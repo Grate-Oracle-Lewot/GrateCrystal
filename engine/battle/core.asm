@@ -157,6 +157,11 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ret
 
 BattleTurn:
+	ldh a, [hInMenu]
+	push af
+	ld a, 1 ; or "xor a" for the value 0
+	ldh [hInMenu], a
+
 .loop
 	call Stubbed_Increments5_a89a
 	call CheckContestBattleOver
@@ -226,6 +231,8 @@ BattleTurn:
 	jp .loop
 
 .quit
+	pop af
+	ldh [hInMenu], a
 	ret
 
 Stubbed_Increments5_a89a:
@@ -294,7 +301,20 @@ HandleBetweenTurnEffects:
 	call LoadTilemapToTempTilemap
 	jp HandleEncore
 
+HasAnyoneFainted:
+	call HasPlayerFainted
+	jp nz, HasEnemyFainted
+	ret
+
 CheckFaint_PlayerThenEnemy:
+.faint_loop
+	call .Function
+	ret c
+	call HasAnyoneFainted
+	ret nz
+	jr .faint_loop
+
+.Function:
 	call HasPlayerFainted
 	jr nz, .PlayerNotFainted
 	call HandlePlayerMonFaint
@@ -319,6 +339,14 @@ CheckFaint_PlayerThenEnemy:
 	ret
 
 CheckFaint_EnemyThenPlayer:
+.faint_loop
+	call .Function
+	ret c
+	call HasAnyoneFainted
+	ret nz
+	jr .faint_loop
+
+.Function:
 	call HasEnemyFainted
 	jr nz, .EnemyNotFainted
 	call HandleEnemyMonFaint
@@ -391,6 +419,16 @@ HandleBerserkGene:
 	call GetBattleVarAddr
 	push af
 	set SUBSTATUS_CONFUSED, [hl]
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerConfuseCount
+	jr z, .set_confuse_count
+	ld hl, wEnemyConfuseCount
+.set_confuse_count
+	call BattleRandom
+	and %11
+	add 2
+	ld [hl], a
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
 	push hl
@@ -4190,11 +4228,13 @@ PursuitSwitch:
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
 	call PlayStereoCry
+	ld a, [wCurBattleMon]
+	push af
 	ld a, [wLastPlayerMon]
-	ld c, a
-	ld hl, wBattleParticipantsNotFainted
-	ld b, RESET_FLAG
-	predef SmallFarFlagAction
+	ld [wCurBattleMon], a
+	call UpdateFaintedPlayerMon
+	pop af
+	ld [wCurBattleMon], a
 	call PlayerMonFaintedAnimation
 	ld hl, BattleText_MonFainted
 	jr .done_fainted
@@ -5759,8 +5799,7 @@ CheckPlayerHasUsableMoves:
 	jr .loop
 
 .done
-	; Bug: this will result in a move with PP Up confusing the game.
-	and a ; should be "and PP_MASK"
+	and PP_MASK
 	ret nz
 
 .force_struggle
@@ -6165,7 +6204,7 @@ LoadEnemyMon:
 
 ; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
 	ld a, [wMagikarpLength]
-	cp HIGH(1536) ; should be "cp 5", since 1536 mm = 5'0", but HIGH(1536) = 6
+	cp 5
 	jr nz, .CheckMagikarpArea
 
 ; 5% chance of skipping both size checks
@@ -6174,7 +6213,7 @@ LoadEnemyMon:
 	jr c, .CheckMagikarpArea
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
-	cp LOW(1616) ; should be "cp 4", since 1616 mm = 5'4", but LOW(1616) = 80
+	cp 4
 	jr nc, .GenerateDVs
 
 ; 20% chance of skipping this check
@@ -6183,29 +6222,16 @@ LoadEnemyMon:
 	jr c, .CheckMagikarpArea
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
-	cp LOW(1600) ; should be "cp 3", since 1600 mm = 5'3", but LOW(1600) = 64
+	cp 3
 	jr nc, .GenerateDVs
 
 .CheckMagikarpArea:
-; The "jr z" checks are supposed to be "jr nz".
-
-; Instead, all maps in GROUP_LAKE_OF_RAGE (Mahogany area)
-; and Routes 20 and 44 are treated as Lake of Rage.
-
-; This also means Lake of Rage Magikarp can be smaller than ones
-; caught elsewhere rather than the other way around.
-
-; Intended behavior enforces a minimum size at Lake of Rage.
-; The real behavior prevents a minimum size in the Lake of Rage area.
-
-; Moreover, due to the check not being translated to feet+inches, all Magikarp
-; smaller than 4'0" may be caught by the filter, a lot more than intended.
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_OF_RAGE
-	jr z, .Happiness
+	jr nz, .Happiness
 	ld a, [wMapNumber]
 	cp MAP_LAKE_OF_RAGE
-	jr z, .Happiness
+	jr nz, .Happiness
 ; 40% chance of not flooring
 	call Random
 	cp 39 percent + 1
@@ -6807,7 +6833,9 @@ BadgeStatBoosts:
 .CheckBadge:
 	ld a, b
 	srl b
+	push af
 	call c, BoostStat
+	pop af
 	inc hl
 	inc hl
 ; Check every other badge.
@@ -6815,8 +6843,6 @@ BadgeStatBoosts:
 	dec c
 	jr nz, .CheckBadge
 ; Check GlacierBadge again for Special Defense.
-; This check is buggy because it assumes that a is set by the "ld a, b" in the above loop,
-; but it can actually be overwritten by the call to BoostStat.
 	srl a
 	call c, BoostStat
 	ret
@@ -7647,16 +7673,22 @@ SendOutMonText:
 	ld a, [hl]
 	ld [wEnemyHPAtTimeOfPlayerSwitch + 1], a
 	ldh [hMultiplicand + 2], a
-	ld a, 25
-	ldh [hMultiplier], a
-	call Multiply
 	ld hl, wEnemyMonMaxHP
 	ld a, [hli]
 	ld b, [hl]
-	srl a
+	ld c, 100
+	and a
+	jr z, .shift_done
+.shift
+	rra
 	rr b
-	srl a
-	rr b
+	srl c
+	and a
+	jr nz, .shift
+.shift_done
+	ld a, c
+	ldh [hMultiplier], a
+	call Multiply
 	ld a, b
 	ld b, 4
 	ldh [hDivisor], a
@@ -7728,16 +7760,22 @@ WithdrawMonText:
 	ld a, [de]
 	sbc b
 	ldh [hMultiplicand + 1], a
-	ld a, 25
-	ldh [hMultiplier], a
-	call Multiply
 	ld hl, wEnemyMonMaxHP
 	ld a, [hli]
 	ld b, [hl]
-	srl a
+	ld c, 100
+	and a
+	jr z, .shift_done
+.shift
+	rra
 	rr b
-	srl a
-	rr b
+	srl c
+	and a
+	jr nz, .shift
+.shift_done
+	ld a, c
+	ldh [hMultiplier], a
+	call Multiply
 	ld a, b
 	ld b, 4
 	ldh [hDivisor], a
