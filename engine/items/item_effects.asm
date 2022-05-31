@@ -338,13 +338,13 @@ PokeBallEffect:
 ; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
 ; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
 ; benefit.
-; Uncomment the line below to fix this.
+; Uncomment the line below to fix this. (Done)
 	ld b, a
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
 	ld c, 10
 	jr nz, .addstatus
-	; ld a, [wEnemyMonStatus]
+	ld a, [wEnemyMonStatus]
 	and a
 	ld c, 5
 	jr nz, .addstatus
@@ -358,11 +358,11 @@ PokeBallEffect:
 
 	; BUG: farcall overwrites a, and GetItemHeldEffect takes b anyway.
 	; This is probably the reason the HELD_CATCH_CHANCE effect is never used.
-	; Uncomment the line below to fix.
+	; Uncomment the line below to fix. (Done)
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
-	; ld b, a
+	ld b, a
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_CATCH_CHANCE
@@ -763,11 +763,11 @@ ParkBallMultiplier:
 HeavyBall_GetDexEntryBank:
 ; This function is buggy.
 ; It gets the wrong bank for Kadabra (64), Tauros (128), and Sunflora (192).
-; Uncomment the line below to fix this.
+; Uncomment the line below to fix this. (Done)
 	push hl
 	push de
 	ld a, [wEnemyMonSpecies]
-	; dec a
+	dec a
 	rlca
 	rlca
 	maskbits NUM_DEX_ENTRY_BANKS
@@ -799,17 +799,24 @@ HeavyBallMultiplier:
 	ld d, 0
 	add hl, de
 	add hl, de
+	add hl, de
+	; d = bank, hl = address
+	ld a, BANK(PokedexDataPointerTable)
+	call GetFarByte
+	push af
+	inc hl
 	ld a, BANK(PokedexDataPointerTable)
 	call GetFarWord
+	pop de
 
 .SkipText:
-	call HeavyBall_GetDexEntryBank
+	ld a, d
 	call GetFarByte
 	inc hl
 	cp "@"
 	jr nz, .SkipText
 
-	call HeavyBall_GetDexEntryBank
+	ld a, d
 	push bc
 	inc hl
 	inc hl
@@ -937,7 +944,7 @@ MoonBallMultiplier:
 	push bc
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	cp MOON_STONE_RED ; BURN_HEAL
+	cp MOON_STONE ; Fixed
 	pop bc
 	ret nz
 
@@ -996,7 +1003,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret nz ; for the intended effect, this should be "ret z"
+	ret z ; for the intended effect, this should be "ret z" (Done)
 
 	sla b
 	jr c, .max
@@ -1034,7 +1041,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .next ; for the intended effect, this should be "jr nz, .loop"
+	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop" (Done)
 	sla b
 	jr c, .max
 
