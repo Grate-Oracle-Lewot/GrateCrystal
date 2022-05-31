@@ -69,9 +69,6 @@ NUM_GROWTH_RATES EQU const_value
 	const EGG_DRAGON        ; e
 	const EGG_NONE          ; f (Undiscovered)
 
-; pokedex entries (see data/pokemon/dex_entries.asm)
-NUM_DEX_ENTRY_BANKS EQU 4
-
 ; party_struct members (see macros/wram.asm)
 rsreset
 MON_SPECIES            rb
