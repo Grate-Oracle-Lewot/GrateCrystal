@@ -555,10 +555,6 @@ EnemyUsedFullRestore:
 	call AI_HealStatus
 	ld a, FULL_RESTORE
 	ld [wCurEnemyItem], a
-	ld hl, wEnemySubStatus3
-	res SUBSTATUS_CONFUSED, [hl]
-	xor a
-	ld [wEnemyConfuseCount], a
 
 FullRestoreContinue:
 	ld de, wCurHPAnimOldHP
@@ -732,14 +728,11 @@ AI_HealStatus:
 	xor a
 	ld [hl], a
 	ld [wEnemyMonStatus], a
-	; Bug: this should reset SUBSTATUS_NIGHTMARE
-	; Uncomment the 2 lines below to fix
-	; ld hl, wEnemySubStatus1
-	; res SUBSTATUS_NIGHTMARE, [hl]
-	; Bug: this should reset SUBSTATUS_CONFUSED
-	; Uncomment the 2 lines below to fix
-	; ld hl, wEnemySubStatus3
-	; res SUBSTATUS_CONFUSED, [hl]
+	ld [wEnemyConfuseCount], a
+	ld hl, wEnemySubStatus1
+	res SUBSTATUS_NIGHTMARE, [hl]
+	ld hl, wEnemySubStatus3
+	res SUBSTATUS_CONFUSED, [hl]
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_TOXIC, [hl]
 	ret
