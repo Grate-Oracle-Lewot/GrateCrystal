@@ -164,9 +164,9 @@ Options_TextSpeed:
 	dw .Slow
 	dw .None
 
-.Fast: db "FAST@"
-.Mid:  db "MEDIUM@"
-.Slow: db "SLOW@"
+.Fast: db "FAST   @"
+.Mid:  db "MEDIUM @"
+.Slow: db "SLOW   @"
 .None: db "INSTANT@"
 
 GetTextSpeed:
@@ -187,17 +187,17 @@ GetTextSpeed:
 
 .slow
 	ld c, OPT_TEXT_SPEED_SLOW
+	lb de, TEXT_DELAY_MED, TEXT_DELAY_NONE
+	ret
+
+.fast
+	ld c, OPT_TEXT_SPEED_FAST
 	lb de, TEXT_DELAY_NONE, TEXT_DELAY_MED
 	ret
 
 .none
 	ld c, OPT_TEXT_SPEED_NONE
 	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_FAST
-	ret
-
-.fast
-	ld c, OPT_TEXT_SPEED_FAST
-	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_MED
 	ret
 
 Options_BattleScene:
