@@ -1,10 +1,10 @@
 	db "BALLOON@" ; species name
 	dw 108, 90 ; height, weight
 
-	db   "When faced with a"
-	next "larger opponent,"
-	next "it swallows as"
+	db   "It boils water in-"
+	next "side its body to"
+	next "inflate itself."
 
-	page "much water as it"
-	next "can to match the"
-	next "opponent's size.@"
+	page "A prick from its"
+	next "quills will burn"
+	next "your skin.@"
