@@ -1,10 +1,10 @@
-	db "PARENT@" ; species name
+	db "PROSTHESIS@" ; species name
 	dw 703, 1760 ; height, weight
 
-	db   "To avoid"
-	next "crushing the"
-	next "baby it carries in"
+	db   "The parent body"
+	next "has no brain. It's"
+	next "controlled by the"
 
-	page "its pouch, it"
-	next "always sleeps"
-	next "standing up.@"
+	page "baby in its pouch"
+	next "like an organic"
+	next "mech suit.@"
