@@ -1,10 +1,10 @@
 	db "SUN@" ; species name
 	dw 207, 190 ; height, weight
 
-	db   "As the hot season"
-	next "approaches, the"
-	next "petals on this"
+	db   "It absorbed so"
+	next "much sunlight as a"
+	next "SUNKERN that it"
 
-	page "#MON's face"
-	next "become more vivid"
-	next "and lively.@"
+	page "can now replicate"
+	next "the power of the"
+	next "sun.@"
