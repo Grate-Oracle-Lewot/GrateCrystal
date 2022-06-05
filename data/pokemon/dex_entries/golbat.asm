@@ -1,10 +1,10 @@
 	db "BAT@" ; species name
 	dw 503, 1210 ; height, weight
 
-	db   "When it plunges"
-	next "its fangs into its"
-	next "prey, it instantly"
+	db   "When sinners die,"
+	next "their souls become"
+	next "lost in a cave"
 
-	page "draws and gulps"
-	next "down more than ten"
-	next "ounces of blood.@"
+	page "filled with"
+	next "nothing but ZUBAT"
+	next "and GOLBAT.@"
