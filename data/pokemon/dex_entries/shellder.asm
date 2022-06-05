@@ -1,10 +1,10 @@
 	db "BIVALVE@" ; species name
 	dw 100, 90 ; height, weight
 
-	db   "Clamping on to an"
-	next "opponent reveals"
-	next "its vulnerable"
+	db   "Its shell is"
+	next "harder than"
+	next "titanium. It"
 
-	page "parts, so it uses"
-	next "this move only as"
-	next "a last resort.@"
+	page "sometimes spits"
+	next "out valuable"
+	next "pearls.@"
