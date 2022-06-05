@@ -1,10 +1,10 @@
 	db "WILD DUCK@" ; species name
 	dw 207, 330 ; height, weight
 
-	db   "In order to pre-"
-	next "vent their"
-	next "extinction, more"
+	db   "To protect a"
+	next "penguin, a machine"
+	next "merged it with a"
 
-	page "people have made"
-	next "an effort to breed"
-	next "these #MON.@"
+	page "kung fu pupil,"
+	next "creating"
+	next "FARFETCH'D.@"
