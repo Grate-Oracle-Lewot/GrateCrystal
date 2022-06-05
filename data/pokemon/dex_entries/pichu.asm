@@ -1,10 +1,10 @@
 	db "TINY MOUSE@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "It is unskilled at"
-	next "storing electric"
-	next "power. Any kind of"
+	db   "Debates rage over"
+	next "whether PICHU or"
+	next "PIKACHU is cuter."
 
-	page "shock causes it to"
-	next "discharge energy"
-	next "spontaneously.@"
+	page "In fact, this was"
+	next "the subject of"
+	next "KANTO's last war.@"
