@@ -1,10 +1,10 @@
 	db "SYMBOL@" ; species name
 	dw 108, 110 ; height, weight
 
-	db   "Because different"
-	next "types of UNOWN"
-	next "exist, it is said"
+	db   "It defies known"
+	next "science of #MON"
+	next "typing. Its many"
 
-	page "that they must"
-	next "have a variety of"
-	next "abilities.@"
+	page "shapes are thought"
+	next "to hold some"
+	next "meaning.@"
