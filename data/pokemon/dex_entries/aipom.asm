@@ -1,4 +1,4 @@
-	db "LONG TAIL@" ; species name
+	db "PREHENSILE@" ; species name
 	dw 207, 250 ; height, weight
 
 	db   "It uses its tail"
