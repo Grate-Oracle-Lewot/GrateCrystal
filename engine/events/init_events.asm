@@ -37,16 +37,16 @@ InitializeEvents:
 	ld hl, InitialVariableSprites
 .sprites_loop
 	ld a, [hli]
-	ld e, a
-	ld d, 0
-	cp -1
+	inc a
 	ret z
+	; subtract 1 to balance the previous 'inc'
+	add LOW(wVariableSprites) - 1
+	ld e, a
+	adc HIGH(wVariableSprites)
+	sub e
+	ld d, a
 	ld a, [hli]
-	push hl
-	ld hl, wVariableSprites
-	add hl, de
-	ld [hl], a
-	pop hl
+	ld [de], a
 	jr .sprites_loop
 
 INCLUDE "data/events/init_events.asm"
