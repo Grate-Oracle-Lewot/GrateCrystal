@@ -1,9 +1,9 @@
 MagnitudePower:
 	; chance, power, magnitude #
-	db   5 percent + 1,  10,  4 ; 5%
-	db  15 percent,      30,  5 ; 10%
-	db  35 percent,      50,  6 ; 20%
-	db  65 percent + 1,  70,  7 ; 30%
-	db  85 percent + 1,  90,  8 ; 20%
-	db  95 percent,     110,  9 ; 10%
-	db 100 percent,     150, 10 ; 5%
+	db  10 percent + 1,   5,  4 ; 10%
+	db  20 percent,      25,  5 ; 10%
+	db  40 percent,      50,  6 ; 20%
+	db  60 percent + 1,  75,  7 ; 20%
+	db  80 percent + 1, 100,  8 ; 20%
+	db  90 percent,     125,  9 ; 10%
+	db 100 percent,     150, 10 ; 10%
