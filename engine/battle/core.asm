@@ -2220,6 +2220,43 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld [wBattleParticipantsNotFainted], a
 	ret
 
+ApplyExperienceAfterEnemyCaught:
+	call IsAnyMonHoldingExpShare
+	jr z, .skip_exp
+	ld hl, wEnemyMonBaseStats
+	ld b, wEnemyMonEnd - wEnemyMonBaseStats
+.loop
+	srl [hl]
+	inc hl
+	dec b
+	jr nz, .loop
+
+.skip_exp
+	ld hl, wEnemyMonBaseStats
+	ld de, wBackupEnemyMonBaseStats
+	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
+	call CopyBytes
+	xor a
+	ld [wGivingExperienceToExpShareHolders], a
+	call GiveExperiencePoints
+	call IsAnyMonHoldingExpShare
+	ret z
+
+	ld a, [wBattleParticipantsNotFainted]
+	push af
+	ld a, d
+	ld [wBattleParticipantsNotFainted], a
+	ld hl, wBackupEnemyMonBaseStats
+	ld de, wEnemyMonBaseStats
+	ld bc, wEnemyMonEnd - wEnemyMonBaseStats
+	call CopyBytes
+	ld a, $1
+	ld [wGivingExperienceToExpShareHolders], a
+	call GiveExperiencePoints
+	pop af
+	ld [wBattleParticipantsNotFainted], a
+	ret
+
 IsAnyMonHoldingExpShare:
 	ld a, [wPartyCount]
 	ld b, a
@@ -7115,6 +7152,13 @@ GiveExperiencePoints:
 	inc de
 	dec c
 	jr nz, .stat_exp_loop
+	pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp MAX_LEVEL
+	jp nc, .next_mon
+	push bc
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7123,7 +7167,7 @@ GiveExperiencePoints:
 	ld a, [wEnemyMonLevel]
 	ldh [hMultiplier], a
 	call Multiply
-	ld a, 7
+	ld a, 4
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
@@ -7413,10 +7457,30 @@ GiveExperiencePoints:
 	ld c, PARTY_LENGTH
 	ld d, 0
 .count_loop
+	push bc
+	push de
+	ld a, [wPartyCount]
+	cp c
+	jr c, .no_mon
+	ld a, c
+	dec a
+	ld hl, wPartyMon1Level
+	call GetPartyLocation
+	ld a, [hl]
+.no_mon
+	cp MAX_LEVEL
+	pop de
+	pop bc
+	jr nz, .gains_exp
+	srl b
+	ld a, d
+	jr .no_exp
+.gains_exp
 	xor a
 	srl b
 	adc d
 	ld d, a
+.no_exp
 	dec c
 	jr nz, .count_loop
 	cp 2
