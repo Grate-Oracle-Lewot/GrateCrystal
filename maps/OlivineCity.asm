@@ -1,8 +1,8 @@
 	object_const_def
 	const OLIVINECITY_SAILOR1
-	const OLIVINECITY_STANDING_YOUNGSTER
+	const OLIVINECITY_YOUNGSTER
 	const OLIVINECITY_SAILOR2
-	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_SILVER
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -28,9 +28,9 @@ OlivineCityRivalSceneTop:
 	special FadeOutMusic
 	pause 15
 	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
+	appear OLIVINECITY_SILVER
 	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement
+	applymovement OLIVINECITY_SILVER, OlivineCityRivalApproachesTopMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext OlivineCityRivalText
@@ -38,12 +38,10 @@ OlivineCityRivalSceneTop:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement
+	applymovement OLIVINECITY_SILVER, OlivineCityRivalLeavesTopMovement
 	setscene SCENE_FINISHED
-	disappear OLIVINECITY_OLIVINE_RIVAL
+	disappear OLIVINECITY_SILVER
 	special RestartMapMusic
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
-	special LoadUsedSpritesGFX
 	end
 
 OlivineCityRivalSceneBottom:
@@ -52,9 +50,9 @@ OlivineCityRivalSceneBottom:
 	special FadeOutMusic
 	pause 15
 	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
+	appear OLIVINECITY_SILVER
 	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement
+	applymovement OLIVINECITY_SILVER, OlivineCityRivalApproachesBottomMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext OlivineCityRivalText
@@ -62,29 +60,27 @@ OlivineCityRivalSceneBottom:
 	closetext
 	applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement
 	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement
-	disappear OLIVINECITY_OLIVINE_RIVAL
+	applymovement OLIVINECITY_SILVER, OlivineCityRivalLeavesBottomMovement
+	disappear OLIVINECITY_SILVER
 	setscene SCENE_FINISHED
 	special RestartMapMusic
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
-	special LoadUsedSpritesGFX
 	end
 
 OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
-OlivineCityStandingYoungsterScript:
+OlivineCityYoungsterScript:
 	faceplayer
 	opentext
 	random 2
 	ifequal 0, .FiftyFifty
-	writetext OlivineCityStandingYoungsterPokegearText
+	writetext OlivineCityYoungsterPokegearText
 	waitbutton
 	closetext
 	end
 
 .FiftyFifty:
-	writetext OlivineCityStandingYoungsterPokedexText
+	writetext OlivineCityYoungsterPokedexText
 	waitbutton
 	closetext
 	end
@@ -166,43 +162,33 @@ OlivineCityPlayerStepsAsideBottomMovement:
 	step_end
 
 OlivineCityRivalText:
-	text "…"
+	text "IT'S YOU,WHAT"
+	line "STANCE TO PUT?"
+	cont "I DON'T COMPETE"
+	cont "WITH YOU AS"
+	cont "WEAK WORM."
+	cont "SPEAK TO WEAKNESS,"
+	cont "THERE IS"
+	cont "NO GYMNASIUM"
+	cont "CURATOR."
+	cont "WHAT ABOUT,"
+	cont "YOU WON'T DO."
 
-	para "You again?"
+	para "I AM CAREFUL"
 
-	para "There's no need to"
-	line "panic. I don't"
-
-	para "bother with wimps"
-	line "like you."
-
-	para "Speaking of weak-"
-	line "lings, the city's"
-
-	para "GYM LEADER isn't"
-	line "here."
-
-	para "Supposedly taking"
-	line "care of a sick"
-
-	para "#MON at the"
-	line "LIGHTHOUSE."
-
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
-
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
-
-	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
-
-	para "Who knows. It may"
-	line "make you a bit"
-	cont "less weak!"
+	para " "
+	line "OF MONSTERS."
+	cont "LAUGHABLE,A WEAK"
+	cont "MONSTER,"
+	cont "DON'T CONCERN"
+	cont "ABOUT IT,"
+	cont "IT CANN'T FIGHT,"
+	cont "AND NO VALUE"
+	cont "I THINK YOU GO"
+	cont "THE BELL TOWER"
+	cont "TO PRACTISE,"
+	cont "THEN YOU MAY BE"
+	cont "STRONGER"
 	done
 
 OlivineCitySailor1Text:
@@ -223,14 +209,14 @@ OlivineCitySailor1Text:
 	line "ship can sail."
 	done
 
-OlivineCityStandingYoungsterPokegearText:
+OlivineCityYoungsterPokegearText:
 	text "That thing you"
 	line "have--it's a #-"
 	cont "GEAR, right? Wow,"
 	cont "that's cool."
 	done
 
-OlivineCityStandingYoungsterPokedexText:
+OlivineCityYoungsterPokedexText:
 	text "Wow, you have a"
 	line "#DEX!"
 
@@ -281,11 +267,6 @@ OlivineCityBattleTowerSignText:
 	line "Opening Now!"
 	done
 
-OlivineCityBattleTowerSignText_NotYetOpen: ; unreferenced
-; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER AHEAD"
-	done
-
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -316,6 +297,6 @@ OlivineCity_MapEvents:
 
 	def_object_events
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
-	object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
+	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
-	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 10, 11, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
