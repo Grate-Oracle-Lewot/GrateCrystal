@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE36_YOUNGSTER1
 	const ROUTE36_YOUNGSTER2
-	const ROUTE36_WEIRD_TREE
+	const ROUTE36_SUDOWOODO
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
 	const ROUTE36_FRUIT_TREE
@@ -53,7 +53,7 @@ SudowoodoScript:
 
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
+	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
 	end
 
 .Fight:
@@ -69,17 +69,17 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	closetext
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
+	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
 	opentext
 	writetext SudowoodoAttackedText
 	waitbutton
 	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	loadwildmon SUDOWOODO, 20
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
 	ifequal DRAW, DidntCatchSudowoodo
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
+	disappear ROUTE36_SUDOWOODO
 	reloadmapafterbattle
 	end
 
@@ -89,10 +89,8 @@ DidntUseSquirtbottleScript:
 
 DidntCatchSudowoodo:
 	reloadmapafterbattle
-	applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	special LoadUsedSpritesGFX
+	applymovement ROUTE36_SUDOWOODO, SudowoodoMovement_Flee
+	disappear ROUTE36_SUDOWOODO
 	special RefreshSprites
 	end
 
@@ -169,7 +167,6 @@ TrainerSchoolboyAlan1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
-	endifjustbattled
 	opentext
 	checkflag ENGINE_ALAN_READY_FOR_REMATCH
 	iftrue .ChooseRematch
@@ -368,7 +365,7 @@ SudowoodoShakeMovement:
 	tree_shake
 	step_end
 
-WeirdTreeMovement_Flee:
+SudowoodoMovement_Flee:
 	fast_jump_step UP
 	fast_jump_step UP
 	step_end
@@ -489,11 +486,6 @@ RockSmashGuyText2:
 	cont "have this."
 	done
 
-Text_ReceivedTM08: ; unreferenced
-	text "<PLAYER> received"
-	line "TM08."
-	done
-
 RockSmashGuyText3:
 	text "That happens to be"
 	line "ROCK SMASH."
@@ -507,18 +499,6 @@ RockSmashGuyText3:
 	para "If any rocks are"
 	line "in your way, just"
 	cont "smash 'em up!"
-	done
-
-UnusedOddTreeText: ; unreferenced
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
-
-	para "I wanted to go see"
-	line "the huge #MON"
-
-	para "CENTER they just"
-	line "opened…"
 	done
 
 Route36LassText:
@@ -679,7 +659,7 @@ Route36_MapEvents:
 	def_object_events
 	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
+	object_event 35,  9, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
