@@ -638,14 +638,14 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_AZALEA_TOWN
 	call PlayMusic
 
 	call RotateFourPalettesRight
 	call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, KAREN
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -683,7 +683,7 @@ OakSpeech:
 
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, KAREN
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
