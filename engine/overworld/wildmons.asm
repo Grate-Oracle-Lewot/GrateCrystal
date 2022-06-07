@@ -294,9 +294,22 @@ ChooseWildEncounter:
 	add hl, bc ; this selects our mon
 	ld a, [hli]
 	ld b, a
-; If the Pokemon is encountered by surfing, we need to give the levels some variety.
-	call CheckOnWater
-	jr nz, .ok
+; If the Pokemon is encountered in a special way, skip randomizing level.
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUICUNE
+	jr z, .ok
+	cp BATTLETYPE_CELEBI
+	jr z, .ok
+	cp BATTLETYPE_ROAMING
+	jr z, .ok
+	cp BATTLETYPE_FORCEITEM
+	jr z, .ok
+	cp BATTLETYPE_TREE
+	jr z, .ok
+	cp BATTLETYPE_TRAP
+	jr z, .ok
+	cp BATTLETYPE_TUTORIAL
+	jr z, .ok
 ; Check if we buff the wild mon, and by how much.
 	call Random
 	cp 35 percent
