@@ -11,7 +11,6 @@
 	const ROUTE40_POKEFAN_M
 	const ROUTE40_LASS2
 	const ROUTE40_YOUNGSTER
-	const ROUTE40_OFFICER
 
 Route40_MapScripts:
 	def_scene_scripts
@@ -70,31 +69,6 @@ TrainerSwimmermRandall:
 	endifjustbattled
 	opentext
 	writetext SwimmermRandallAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerOfficerDisher:
-	faceplayer
-	opentext
-	checktime NITE
-	iffalse .AfterBattle
-	checkevent EVENT_BEAT_OFFICER_DISHER
-	iftrue .AfterBattle
-	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerDisherSeenText
-	waitbutton
-	closetext
-	winlosstext OfficerDisherBeatenText, 0
-	loadtrainer OFFICER, DISHER
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_DISHER
-	closetext
-	end
-
-.AfterBattle:
-	writetext OfficerDisherAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -232,28 +206,6 @@ SwimmerfPaulaAfterBattleText:
 	text "While I float like"
 	line "this, the waves"
 	cont "carry me along."
-	done
-
-OfficerDisherSeenText:
-	text "WAUGH! I wasn't"
-	line "sleeping on the"
-	cont "job!"
-	done
-
-OfficerDisherBeatenText:
-	text "I need backup over"
-	line "here!"
-	done
-
-OfficerDisherAfterBattleText:
-	text "I could go for a"
-	line "donut…"
-
-	para "…What? Oh, come"
-	line "on!"
-
-	para "Everyone loves"
-	line "donuts!"
 	done
 
 Route40Lass1Text:
