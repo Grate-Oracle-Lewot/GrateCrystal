@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE40_OLIVINE_RIVAL1
-	const ROUTE40_OLIVINE_RIVAL2
+	const ROUTE40_SWIMMER_GUY1
+	const ROUTE40_SWIMMER_GUY2
 	const ROUTE40_SWIMMER_GIRL1
 	const ROUTE40_SWIMMER_GIRL2
 	const ROUTE40_ROCK1
@@ -10,7 +10,8 @@
 	const ROUTE40_MONICA
 	const ROUTE40_POKEFAN_M
 	const ROUTE40_LASS2
-	const ROUTE40_STANDING_YOUNGSTER
+	const ROUTE40_YOUNGSTER
+	const ROUTE40_OFFICER
 
 Route40_MapScripts:
 	def_scene_scripts
@@ -73,6 +74,31 @@ TrainerSwimmermRandall:
 	closetext
 	end
 
+TrainerOfficerDisher:
+	faceplayer
+	opentext
+	checktime NITE
+	iffalse .AfterBattle
+	checkevent EVENT_BEAT_OFFICER_DISHER
+	iftrue .AfterBattle
+	playmusic MUSIC_OFFICER_ENCOUNTER
+	writetext OfficerDisherSeenText
+	waitbutton
+	closetext
+	winlosstext OfficerDisherBeatenText, 0
+	loadtrainer OFFICER, DISHER
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_OFFICER_DISHER
+	closetext
+	end
+
+.AfterBattle:
+	writetext OfficerDisherAfterBattleText
+	waitbutton
+	closetext
+	end
+
 Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
 
@@ -87,8 +113,8 @@ Route40PokefanMScript:
 Route40Lass2Script:
 	jumptextfaceplayer Route40Lass2Text
 
-Route40StandingYoungsterScript:
-	jumptextfaceplayer Route40StandingYoungsterText
+Route40YoungsterScript:
+	jumptextfaceplayer Route40YoungsterText
 
 MonicaScript:
 	faceplayer
@@ -134,31 +160,6 @@ Route40Rock:
 
 Route40HiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ROUTE_40_HIDDEN_HYPER_POTION
-
-Route40_StepRightUp6Movement: ; unreferenced
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp5Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp4Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
 
 SwimmermSimonSeenText:
 	text "You have to warm"
@@ -233,6 +234,28 @@ SwimmerfPaulaAfterBattleText:
 	cont "carry me along."
 	done
 
+OfficerDisherSeenText:
+	text "WAUGH! I wasn't"
+	line "sleeping on the"
+	cont "job!"
+	done
+
+OfficerDisherBeatenText:
+	text "I need backup over"
+	line "here!"
+	done
+
+OfficerDisherAfterBattleText:
+	text "I could go for a"
+	line "donut…"
+
+	para "…What? Oh, come"
+	line "on!"
+
+	para "Everyone loves"
+	line "donuts!"
+	done
+
 Route40Lass1Text:
 	text "Although you can't"
 	line "see it from here,"
@@ -269,7 +292,7 @@ Route40Lass2Text:
 	cont "from a big city."
 	done
 
-Route40StandingYoungsterText:
+Route40YoungsterText:
 	text "Have you gone to"
 	line "the BATTLE TOWER?"
 
@@ -348,8 +371,8 @@ Route40_MapEvents:
 	bg_event  7,  8, BGEVENT_ITEM, Route40HiddenHyperPotion
 
 	def_object_events
-	object_event 14, 15, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSimon, -1
-	object_event 18, 30, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerSwimmermRandall, -1
+	object_event 14, 15, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSimon, -1
+	object_event 18, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerSwimmermRandall, -1
 	object_event  3, 19, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfElaine, -1
 	object_event 10, 25, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfPaula, -1
 	object_event  7, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
@@ -359,4 +382,4 @@ Route40_MapEvents:
 	object_event  8, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MonicaScript, EVENT_ROUTE_40_MONICA_OF_MONDAY
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
-	object_event 16,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event 16,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40YoungsterScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
