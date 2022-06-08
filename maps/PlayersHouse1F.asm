@@ -231,18 +231,12 @@ ElmsLookingForYouText:
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
-
-	para "It's essential if"
+	text "It's essential if"
 	line "you want to be a"
 	cont "good trainer."
 
 	para "Oh, the day of the"
 	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
 	done
 
 IsItDSTText:
@@ -263,11 +257,7 @@ ComeHomeForDSTText:
 	done
 
 KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
+	text "OK!"
 	done
 
 DontKnowTheInstructionsText:
@@ -352,35 +342,42 @@ NeighborText:
 	done
 
 PlayersHouse1FStoveText:
-	text "Mom's specialty!"
+	text "Mom's specialty:"
+	line "CINNABAR VOLCANO"
+	cont "BURGER!"
 
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	para "It's been three"
+	line "years since CINNA-"
+	cont "BAR ISLAND was"
+
+	para "destroyed, so MOM"
+	line "says it's OK to"
+	cont "joke about it."
 	done
 
 PlayersHouse1FSinkText:
-	text "The sink is spot-"
-	line "less. Mom likes it"
-	cont "clean."
+	text "The government"
+	line "puts chemicals in"
+	cont "the tap water."
 	done
 
 PlayersHouse1FFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
+	para "SODA, BEER, and"
+	line "HETAP!"
 	done
 
 PlayersHouse1FTVText:
 	text "There's a movie on"
-	line "TV: Stars dot the"
+	line "TV: a guy with a"
 
-	para "sky as two boys"
-	line "ride on a train…"
+	para "towel on his shou-"
+	line "lders sits at a"
 
-	para "I'd better get"
-	line "rolling too!"
+	para "computer, tire-"
+	line "lessly hacking…"
 	done
 
 PlayersHouse1F_MapEvents:
