@@ -72,7 +72,6 @@ PokecenterNurseScript:
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .morn_comcenter
 	farwritetext NurseMornText
-	promptbutton
 	sjump .ok
 .morn_comcenter
 	farwritetext PokeComNurseMornText
@@ -83,7 +82,6 @@ PokecenterNurseScript:
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .day_comcenter
 	farwritetext NurseDayText
-	promptbutton
 	sjump .ok
 .day_comcenter
 	farwritetext PokeComNurseDayText
@@ -94,7 +92,6 @@ PokecenterNurseScript:
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .nite_comcenter
 	farwritetext NurseNiteText
-	promptbutton
 	sjump .ok
 .nite_comcenter
 	farwritetext PokeComNurseNiteText
@@ -142,7 +139,6 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 
-	waitbutton
 	closetext
 	end
 
