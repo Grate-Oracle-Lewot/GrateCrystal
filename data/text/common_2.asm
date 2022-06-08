@@ -105,14 +105,14 @@ _BoostedExpPointsText::
 	scroll "@"
 	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
-	prompt
+	autodone
 
 _ExpPointsText::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
-	prompt
+	autodone
 
 _GoMonText::
 	text "Go! @"
@@ -1505,7 +1505,6 @@ _OakText2::
 	text_end
 
 _OakText3::
-	text_promptbutton
 	text_end
 
 _OakText4::
@@ -1530,6 +1529,6 @@ _OakText5::
 	line "familiar"
 	cont "experience…"
 
-	para "With more than a"
+	para "with more than a"
 	line "few surprises."
 	prompt
