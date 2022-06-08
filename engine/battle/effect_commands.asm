@@ -3644,6 +3644,32 @@ UpdateMoveData:
 	call GetMoveName
 	jp CopyName1
 
+CheckForStatusIfAlreadyHasAny:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	and SLP
+	ld hl, AlreadyAsleepText
+	ret nz
+	
+	ld a, [de]
+	bit FRZ, a
+	ld hl, AlreadyFrozenText
+	ret nz
+	
+	bit PAR, a
+	ld hl, AlreadyParalyzedText
+	ret nz
+	
+	bit PSN, a
+	ld hl, AlreadyPoisonedText
+	ret nz
+	
+	bit BRN, a
+	ld hl, AlreadyBurnedText
+	ret
+
 BattleCommand_SleepTarget:
 ; sleeptarget
 
@@ -3659,13 +3685,7 @@ BattleCommand_SleepTarget:
 	jr .fail
 
 .not_protected_by_item
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	ld a, [de]
-	and SLP
-	ld hl, AlreadyAsleepText
+	call CheckForStatusIfAlreadyHasAny
 	jr nz, .fail
 
 	ld a, [wAttackMissed]
@@ -3675,10 +3695,6 @@ BattleCommand_SleepTarget:
 	ld hl, DidntAffect1Text
 	call .CheckAIRandomFail
 	jr c, .fail
-
-	ld a, [de]
-	and a
-	jr nz, .fail
 
 	call CheckSubstituteOpp
 	jr nz, .fail
@@ -3789,11 +3805,7 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	ld b, a
-	ld hl, AlreadyPoisonedText
-	and 1 << PSN
+	call CheckForStatusIfAlreadyHasAny
 	jp nz, .failed
 
 	call GetOpponentItem
@@ -3807,12 +3819,6 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
-	ld hl, DidntAffect1Text
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and a
-	jr nz, .failed
-
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .dont_sample_failure
@@ -5975,10 +5981,8 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 BattleCommand_Paralyze:
 ; paralyze
 
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	bit PAR, a
-	jr nz, .paralyzed
+	call CheckForStatusIfAlreadyHasAny
+	jr nz, .hasstatus
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
@@ -6015,10 +6019,6 @@ BattleCommand_Paralyze:
 	jr c, .failed
 
 .dont_sample_failure
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	and a
-	jr nz, .failed
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -6040,9 +6040,10 @@ BattleCommand_Paralyze:
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
-.paralyzed
+.hasstatus
+	push hl
 	call AnimateFailedMove
-	ld hl, AlreadyParalyzedText
+	pop hl
 	jp StdBattleTextbox
 
 .failed
@@ -6380,8 +6381,8 @@ PrintDidntAffect:
 
 PrintDidntAffect2:
 	call AnimateFailedMove
-	ld hl, DidntAffect1Text ; 'it didn't affect'
-	ld de, DidntAffect2Text ; 'it didn't affect'
+	ld hl, AvoidStatusText ; 'it didn't affect'
+	ld de, ProtectingItselfText ; 'protecting itself'
 	jp FailText_CheckOpponentProtect
 
 PrintParalyze:
