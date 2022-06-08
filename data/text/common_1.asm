@@ -4,17 +4,15 @@ _FruitBearingTreeText::
 	done
 
 _HeyItsFruitText::
-	text "Hey! It's"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
+	text "Hey! It's got"
+	line "something!"
 	done
 
 _ObtainedFruitText::
 	text "Obtained"
 	line "@"
 	text_ram wStringBuffer3
-	text "!"
+	text " x5!"
 	done
 
 _FruitPackIsFullText::
@@ -97,8 +95,6 @@ _GrewToLevelText::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _CameToItsSensesText::
 	text_ram wStringBuffer1
 	text " came"
@@ -160,12 +156,13 @@ _OakTimeWokeUpText::
 	para "Zzz… Hm? Wha…?"
 	line "You woke me up!"
 
-	para "Will you check the"
-	line "clock for me?"
+	para "Got the ROM run-"
+	line "ning, did you?"
 	prompt
 
 _OakTimeWhatTimeIsItText::
-	text "What time is it?"
+	text "Well, set the"
+	line "clock first."
 	done
 
 _OakTimeWhatHoursText::
@@ -181,7 +178,7 @@ _OakTimeHowManyMinutesText::
 	done
 
 _OakTimeWhoaMinutesText::
-	text "Whoa!@"
+	text "Uh…@"
 	text_end
 
 _OakTimeMinutesQuestionMarkText::
@@ -189,20 +186,18 @@ _OakTimeMinutesQuestionMarkText::
 	done
 
 _OakTimeOversleptText::
-	text "!"
-	line "I overslept!"
+	text "."
+	line "OK, OK, I'm up."
 	done
 
 _OakTimeYikesText::
-	text "!"
-	line "Yikes! I over-"
-	cont "slept!"
+	text "."
+	line "OK, OK, I'm up."
 	done
 
 _OakTimeSoDarkText::
-	text "!"
-	line "No wonder it's so"
-	cont "dark!"
+	text "."
+	line "OK, OK, I'm up."
 	done
 
 _OakTimeWhatDayIsItText::
@@ -434,8 +429,6 @@ _WillTradeText::
 	text_ram wOTTrademonSpeciesName
 	text_end
 
-	text_end ; unreferenced
-
 _ForYourMonWillTradeText::
 	text "for @"
 	text_ram wPlayerTrademonSenderName
@@ -451,8 +444,6 @@ _MobilePlayerWillTradeMonText::
 	line "trade @"
 	text_ram wPlayerTrademonSpeciesName
 	text_end
-
-	text_end ; unreferenced
 
 _MobileForPartnersMonText::
 	text "for @"
@@ -521,8 +512,6 @@ _OPT_OakText1::
 	line "OAK: @"
 	text_ram wMonOrItemNameBuffer
 	text_end
-
-	text_end ; unreferenced
 
 _OPT_OakText2::
 	text_start
@@ -713,8 +702,6 @@ _PokedexShowText::
 	text_ram wStringBuffer1
 	text_end
 
-	text_end ; unreferenced
-
 ; Pokémon Music Channel / Pokémusic
 
 _BenIntroText1::
@@ -803,7 +790,7 @@ _LC_Text6::
 
 _LC_Text7::
 	text_start
-	line "This week's Lucky"
+	line "Today's Lucky"
 	done
 
 _LC_Text8::
@@ -863,8 +850,6 @@ _PnP_Text4::
 	text " @"
 	text_ram wStringBuffer1
 	text_end
-
-	text_end ; unreferenced
 
 _PnP_CuteText::
 	text_start
@@ -951,8 +936,6 @@ _PnP_Text5::
 	line "@"
 	text_ram wStringBuffer1
 	text_end
-
-	text_end ; unreferenced
 
 _RocketRadioText1::
 	text_start
@@ -1105,20 +1088,20 @@ _BuenaOffTheAirText::
 _EnemyWithdrewText::
 	text "<ENEMY>"
 	line "withdrew"
-	cont "@"
+	scroll "@"
 	text_ram wEnemyMonNickname
 	text "!"
-	prompt
+	autodone
 
 _EnemyUsedOnText::
 	text "<ENEMY>"
 	line "used @"
 	text_ram wMonOrItemNameBuffer
 	text_start
-	cont "on @"
+	scroll "on @"
 	text_ram wEnemyMonNickname
 	text "!"
-	prompt
+	autodone
 
 _ThatCantBeUsedRightNowText:: ; unreferenced
 	text "That can't be used"
@@ -1308,6 +1291,15 @@ _RepelWoreOffText::
 	line "wore off."
 	done
 
+_UseAnotherRepelText::
+	text "@"
+	text_ram wStringBuffer3
+	text "'s"
+	line "wore off."
+
+	para "Use another?"
+	done
+
 _PlayerFoundItemText::
 	text "<PLAYER> found"
 	line "@"
@@ -1349,8 +1341,6 @@ _ReceiveItemText::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _NoCoinsText::
 	text "You have no coins."
 	prompt
@@ -1379,8 +1369,6 @@ _NPCTradeFanfareText::
 	sound_dex_fanfare_80_109
 	text_pause
 	text_end
-
-	text_end ; unreferenced
 
 _NPCTradeIntroText1::
 	text "I collect #MON."
@@ -1830,8 +1818,8 @@ _FoundAnEggText::
 	para "my goodness, were"
 	line "we surprised!"
 
-	para "Your #MON had"
-	line "an EGG!"
+	para "Your #MON was"
+	line "holding an EGG!"
 
 	para "We don't know how"
 	line "it got there, but"
