@@ -103,14 +103,14 @@ _BoostedExpPointsText::
 	text_start
 	line "a boosted"
 	cont "@"
-	text_decimal wStringBuffer2, 2, 4
+	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
 	prompt
 
 _ExpPointsText::
 	text_start
 	line "@"
-	text_decimal wStringBuffer2, 2, 4
+	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
 	prompt
 
@@ -302,42 +302,38 @@ _CantUseItemText::
 
 _UseCutText::
 	text_ram wStringBuffer2
-	text " used"
-	line "CUT!"
+	text "A swath was cut!"
 	prompt
 
 _CutNothingText::
 	text "There's nothing to"
-	line "CUT here."
+	line "cut here."
 	prompt
 
 _BlindingFlashText::
-	text "A blinding FLASH"
+	text "A blinding flash"
 	line "lights the area!@"
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _UsedSurfText::
 	text_ram wStringBuffer2
-	text " used"
-	line "SURF!"
+	text "Cowabunga!"
 	done
 
 _CantSurfText::
-	text "You can't SURF"
+	text "You can't use that"
 	line "here."
 	prompt
 
 _AlreadySurfingText::
-	text "You're already"
-	line "SURFING."
+	text "You're already on"
+	line "the water."
 	prompt
 
 _AskSurfText::
 	text "The water is calm."
-	line "Want to SURF?"
+	line "Want to surf?"
 	done
 
 _UseWaterfallText::
@@ -347,8 +343,8 @@ _UseWaterfallText::
 	done
 
 _HugeWaterfallText::
-	text "Wow, it's a huge"
-	line "waterfall."
+	text "It's a roaring"
+	line "waterfall!"
 	done
 
 _AskWaterfallText::
@@ -386,13 +382,13 @@ _CantUseTeleportText::
 
 _AlreadyUsingStrengthText::
 	text "A #MON is using"
-	line "STRENGTH already."
+	line "THE FORCE already."
 	prompt
 
 _UseStrengthText::
 	text_ram wStringBuffer2
 	text " used"
-	line "STRENGTH!"
+	line "THE FORCE!"
 	done
 
 _MoveBoulderText::
@@ -406,7 +402,7 @@ _AskStrengthText::
 	line "able to move this."
 
 	para "Want to use"
-	line "STRENGTH?"
+	line "THE FORCE?"
 	done
 
 _BouldersMoveText::
@@ -421,24 +417,22 @@ _BouldersMayMoveText::
 
 _UseWhirlpoolText::
 	text_ram wStringBuffer2
-	text " used"
-	line "WHIRLPOOL!"
+	text "Whiiiiirl!"
 	prompt
 
 _MayPassWhirlpoolText::
 	text "It's a vicious"
 	line "whirlpool!"
 
-	para "A #MON may be"
-	line "able to pass it."
+	para "There may be some"
+	line "way to dispel it."
 	done
 
 _AskWhirlpoolText::
 	text "A whirlpool is in"
 	line "the way."
 
-	para "Want to use"
-	line "WHIRLPOOL?"
+	para "Want to dispel it?"
 	done
 
 _UseHeadbuttText::
@@ -461,21 +455,19 @@ _AskHeadbuttText::
 
 _UseRockSmashText::
 	text_ram wStringBuffer2
-	text " used"
-	line "ROCK SMASH!"
+	text "Heave ho!"
 	prompt
 
 _MaySmashText::
-	text "Maybe a #MON"
-	line "can break this."
+	text "This rock looks"
+	line "breakable."
 	done
 
 _AskRockSmashText::
 	text "This rock looks"
 	line "breakable."
 
-	para "Want to use ROCK"
-	line "SMASH?"
+	para "Want to smash it?"
 	done
 
 _RodBiteText::
@@ -487,9 +479,8 @@ _RodNothingText::
 	text "Not even a nibble!"
 	prompt
 
-_UnusedNothingHereText::
-	text "Looks like there's"
-	line "nothing here."
+_PocketPCNoSignalText::
+	text "No signal!"
 	prompt
 
 _CantGetOffBikeText::
@@ -513,14 +504,14 @@ _GotOffBikeText::
 
 _AskCutText::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 
-	para "Want to use CUT?"
+	para "Want to cut it?"
 	done
 
 _CanCutText::
 	text "This tree can be"
-	line "CUT!"
+	line "cut!"
 	done
 
 _FoundItemText::
@@ -661,8 +652,8 @@ _YouCantUseItInABattleText::
 	prompt
 
 _AreYouABoyOrAreYouAGirlText::
-	text "Are you a boy?"
-	line "Or are you a girl?"
+	text "Play as a boy or"
+	line "a girl?"
 	done
 
 Text_BattleEffectActivate::
@@ -670,8 +661,6 @@ Text_BattleEffectActivate::
 	line "@"
 	text_ram wStringBuffer2
 	text_end
-
-	text_end ; unreferenced
 
 _BattleStatWentWayUpText::
 	text_pause
@@ -688,8 +677,6 @@ Text_BattleFoeEffectActivate::
 	text_ram wStringBuffer2
 	text_end
 
-	text_end ; unreferenced
-
 _BattleStatSharplyFellText::
 	text_pause
 	text "<SCROLL>sharply fell!"
@@ -702,11 +689,6 @@ _BattleStatFellText::
 Text_BattleUser::
 	text "<USER>@"
 	text_end
-
-_BattleMadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	prompt
 
 _BattleTookSunlightText::
 	text_start
@@ -769,8 +751,6 @@ _BreedEggHatchText::
 	sound_caught_mon
 	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _BreedAskNicknameText::
 	text "Give a nickname to"
@@ -878,8 +858,6 @@ _AnimationTypeText:: ; unreferenced
 	line "Animation type @"
 	text_ram wStringBuffer2
 	text_end
-
-	text_end ; unreferenced
 
 _MonNumberText:: ; unreferenced
 	text "#MON number?"
@@ -1026,8 +1004,6 @@ _KarpGuruRecordText::
 	text_ram wMagikarpRecordHoldersName
 	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _LuckyNumberMatchPartyText::
 	text "Congratulations!"
@@ -1498,52 +1474,52 @@ _MayRegisterItemText::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+	text "Welcome to #MON"
+	line "GRATE CRYSTAL, a"
 
-	para "Welcome to the"
-	line "world of #MON!"
+	para "hack by the GRATE"
+	line "ORACLE LEWOT."
 
-	para "My name is OAK."
+	para "There's not much"
+	line "of a theme here,"
 
-	para "People call me the"
-	line "#MON PROF."
+	para "it's just random"
+	line "changes that I"
+	cont "wanted to make."
 	prompt
 
 _OakText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#MON.@"
+	text "WOOPER, why don't"
+	line "you explain what"
+	cont "all we've changed?"
 	text_end
 
 _OakText3::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _OakText4::
-	text "People and #MON"
-	line "live together by"
+	text "Thank you, WOOPER."
+	line "Now…"
 
-	para "supporting each"
-	line "other."
+	para "This hack was made"
+	line "with github.com."
 
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "Their pokecrystal"
+	line "disassembly makes"
+	cont "hacking easier."
 	prompt
 
 _OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
+	text "Really, most of"
+	line "the actual game"
+	cont "structure is the"
+	cont "same."
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
+	para "So enjoy a"
+	line "familiar"
+	cont "experience…"
 
-	para "That's why I study"
-	line "#MON every day."
+	para "With more than a"
+	line "few surprises."
 	prompt
