@@ -1,28 +1,25 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "Let's take care of"
+	line "your name."
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+	text "<PLAYER>, huh?"
+	line "Alright then."
 
-	para "Your very own"
+	para "Your very own,"
+	line "slightly unusual,"
 	line "#MON story is"
 	cont "about to unfold."
 
 	para "You'll face fun"
 	line "times and tough"
-	cont "challenges."
+	cont "challenges,"
 
-	para "A world of dreams"
-	line "and adventures"
+	para "yatta yatta."
 
-	para "with #MON"
-	line "awaits! Let's go!"
-
-	para "I'll be seeing you"
-	line "later!"
+	para "I'll see you at the"
+	line "INDIGO PLATEAU."
 	done
 
 _ClockTimeMayBeWrongText::
@@ -450,8 +447,6 @@ _CongratulationsYourPokemonText::
 	text_ram wStringBuffer2
 	text_end
 
-	text_end ; unreferenced
-
 _EvolvedIntoText::
 	text_start
 
@@ -618,6 +613,40 @@ _PharmacyNoMoneyText::
 _PharmacyComeAgainText::
 	text "All right."
 	line "See you around."
+	done
+
+BerryShop_IntroText::
+	text "I sell fruit."
+	line "Interested?"
+	done
+
+BerryShop_ComeAgainText::
+	text "Have a nice day."
+	done
+
+BerryShop_HowManyText::
+	text "How many?"
+	done
+
+BerryShop_CostsThisMuchText::
+	text "That'll be"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". Deal?"
+	done
+
+BerryShop_InsufficientFundsText::
+	text "Uh… you ain't got"
+	line "enough."
+	done
+
+BerryShop_BagFullText::
+	text "Uh… you ain't got"
+	line "room."
+	done
+
+BerryShop_HereYouGoText::
+	text "Thanks."
 	done
 
 _NothingToSellText::
@@ -943,8 +972,6 @@ _LearnedMoveText::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _MoveAskForgetText::
 	text "Which move should"
 	next "be forgotten?"
@@ -991,8 +1018,6 @@ Text_MoveForgetCount::
 	text "1, 2 and…@"
 	text_pause
 	text_end
-
-	text_end ; unreferenced
 
 _MoveForgotText::
 	text " Poof!@"
@@ -1052,8 +1077,6 @@ _CardFlipDarnText::
 _GearTodayText::
 	text_today
 	text_end
-
-	text_end ; unreferenced
 
 _GearEllipseText::
 	text "<……>"
@@ -1222,13 +1245,9 @@ Text_BallCaught::
 	sound_caught_mon
 	text_end
 
-	text_end ; unreferenced
-
 _WaitButtonText::
 	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _BallSentToPCText::
 	text_ram wMonOrItemNameBuffer
@@ -1244,8 +1263,6 @@ _NewDexDataText::
 	sound_slot_machine_start
 	text_promptbutton
 	text_end
-
-	text_end ; unreferenced
 
 _AskGiveNicknameText::
 	text "Give a nickname to"
@@ -1292,8 +1309,6 @@ Text_PlayedPokeFlute::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
-
 _BlueCardBalanceText::
 	text "You now have"
 	line "@"
@@ -1306,8 +1321,6 @@ _CoinCaseCountText::
 	line "@"
 	text_decimal wCoins, 2, 4
 	text_end
-
-	text_end ; unreferenced
 
 _RaiseThePPOfWhichMoveText::
 	text "Raise the PP of"
