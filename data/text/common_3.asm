@@ -15,8 +15,7 @@ _OakText7::
 	para "You'll face fun"
 	line "times and tough"
 	cont "challenges,"
-
-	para "yatta yatta."
+	cont "yatta yatta."
 
 	para "I'll see you at the"
 	line "INDIGO PLATEAU."
