@@ -102,7 +102,7 @@ Text_Gained::
 _BoostedExpPointsText::
 	text_start
 	line "a boosted"
-	cont "@"
+	scroll "@"
 	text_decimal wStringBuffer2, 2, 5
 	text " EXP. Points!"
 	prompt
@@ -536,7 +536,7 @@ _WhitedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
+	autopara "<PLAYER> whited"
 	line "out!"
 	done
 
@@ -670,11 +670,11 @@ Text_BattleEffectActivate::
 _BattleStatWentWayUpText::
 	text_pause
 	text "<SCROLL>went way up!"
-	prompt
+	autodone
 
 _BattleStatWentUpText::
 	text " went up!"
-	prompt
+	autodone
 
 Text_BattleFoeEffectActivate::
 	text "<TARGET>'s"
@@ -685,11 +685,11 @@ Text_BattleFoeEffectActivate::
 _BattleStatSharplyFellText::
 	text_pause
 	text "<SCROLL>sharply fell!"
-	prompt
+	autodone
 
 _BattleStatFellText::
 	text " fell!"
-	prompt
+	autodone
 
 Text_BattleUser::
 	text "<USER>@"
@@ -698,32 +698,32 @@ Text_BattleUser::
 _BattleMadeWhirlwindText::
 	text_start
 	line "made a whirlwind!"
-	prompt
+	autodone
 
 _BattleTookSunlightText::
 	text_start
 	line "took in sunlight!"
-	prompt
+	autodone
 
 _BattleLoweredHeadText::
 	text_start
 	line "lowered its head!"
-	prompt
+	autodone
 
 _BattleGlowingText::
 	text_start
 	line "is glowing!"
-	prompt
+	autodone
 
 _BattleFlewText::
 	text_start
 	line "flew up high!"
-	prompt
+	autodone
 
 _BattleDugText::
 	text_start
 	line "dug a hole!"
-	prompt
+	autodone
 
 _ActorNameText::
 	text "<USER>@"
@@ -736,13 +736,13 @@ _UsedMoveText::
 
 _UsedInsteadText::
 	text "instead,"
-	cont "@"
+	scroll "@"
 	text_end
 
 _MoveNameText::
 	text_ram wStringBuffer2
 	text "!"
-	done
+	autodone
 
 Text_BreedHuh::
 	text "Huh?"
@@ -915,11 +915,11 @@ _ContestCaughtMonText::
 	text "Caught @"
 	text_ram wStringBuffer1
 	text "!"
-	prompt
+	autodone
 
 _ContestAskSwitchText::
 	text "Switch #MON?"
-	done
+	autodone
 
 _ContestAlreadyCaughtText::
 	text "You already caught"
@@ -1056,7 +1056,7 @@ _PokecenterPCCantUseText::
 _PlayersPCTurnOnText::
 	text "<PLAYER> turned on"
 	line "the PC."
-	prompt
+	autodone
 
 _PlayersPCAskWhatDoText::
 	text "What do you want"
@@ -1372,7 +1372,7 @@ _ItemsTooImportantText::
 _ItemsOakWarningText::
 	text "OAK: <PLAYER>!"
 	line "This isn't the"
-	cont "time to use that!"
+	scroll "time to use that!"
 	done
 
 _PokemonSwapItemText::
