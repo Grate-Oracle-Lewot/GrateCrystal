@@ -566,15 +566,16 @@ PlayDanger:
 	ldh [rNR14], a
 
 .increment
-	ld a, d	and $e0
+ 	ld a, d
+	and $e0
 	ld e, a
 	ld a, d
 	and $1f
-	inc a
-	cp 30 ; Ending frame
-	jr c, .noreset
+ 	inc a
+ 	cp 30 ; Ending frame
+ 	jr c, .noreset
 	add 2
-.noreset
+ .noreset
 	add e
 	jr nz, .load
 	dec a
