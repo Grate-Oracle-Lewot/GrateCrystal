@@ -304,24 +304,22 @@ ChooseWildEncounter:
 	jr z, .ok
 	cp BATTLETYPE_FORCEITEM
 	jr z, .ok
-	cp BATTLETYPE_TREE
-	jr z, .ok
 	cp BATTLETYPE_TRAP
 	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 ; Check if we buff the wild mon, and by how much.
 	call Random
-	cp 35 percent
+	cp 31 percent
 	jr c, .ok
 	inc b
-	cp 65 percent
+	cp 62 percent
 	jr c, .ok
 	inc b
-	cp 85 percent
+	cp 83 percent
 	jr c, .ok
 	inc b
-	cp 95 percent
+	cp 94 percent
 	jr c, .ok
 	inc b
 ; Store the level
