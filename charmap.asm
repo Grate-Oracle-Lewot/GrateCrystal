@@ -35,11 +35,11 @@
 	charmap "<TRAINER>", $5d ; "TRAINER"
 	charmap "<ROCKET>",  $5e ; "ROCKET"
 	charmap "<DEXEND>",  $5f
+	charmap "<ATPRA>",   $60
+	charmap "<ATDNE>",   $61
 
 ; Actual characters (from gfx/font/font_extra.png)
 
-	charmap "<BOLD_A>",  $60 ; unused
-	charmap "<BOLD_B>",  $61 ; unused
 	charmap "<BOLD_C>",  $62 ; unused
 	charmap "<BOLD_D>",  $63 ; unused
 	charmap "<BOLD_E>",  $64 ; unused
