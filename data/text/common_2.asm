@@ -479,6 +479,11 @@ _RodNothingText::
 	text "Not even a nibble!"
 	prompt
 
+_UnusedNothingHereText::
+	text "Looks like there's"
+	line "nothing here."
+	prompt
+
 _PocketPCNoSignalText::
 	text "No signal!"
 	prompt
@@ -689,6 +694,11 @@ _BattleStatFellText::
 Text_BattleUser::
 	text "<USER>@"
 	text_end
+
+_BattleMadeWhirlwindText::
+	text_start
+	line "made a whirlwind!"
+	prompt
 
 _BattleTookSunlightText::
 	text_start
