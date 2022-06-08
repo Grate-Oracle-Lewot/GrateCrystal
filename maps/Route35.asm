@@ -32,7 +32,6 @@ TrainerJugglerIrwin:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
-	endifjustbattled
 	opentext
 	checkcellnum PHONE_JUGGLER_IRWIN
 	iftrue Route35NumberAcceptedM
@@ -131,12 +130,9 @@ TrainerBugCatcherArnie:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
-	endifjustbattled
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_YANMA_SWARM
-	iftrue .YanmaSwarming
 	checkcellnum PHONE_BUG_CATCHER_ARNIE
 	iftrue Route35NumberAcceptedM
 	checkevent EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
@@ -215,12 +211,6 @@ TrainerBugCatcherArnie:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
-
-.YanmaSwarming:
-	writetext BugCatcherArnieYanmaText
-	waitbutton
-	closetext
 	end
 
 TrainerFirebreatherWalt:
@@ -404,14 +394,6 @@ BugCatcherArnieAfterBattleText:
 
 	para "Contest at the"
 	line "NATIONAL PARK."
-	done
-
-BugCatcherArnieYanmaText:
-	text "Wow… Look at all"
-	line "those YANMA!"
-
-	para "I'm so blown away,"
-	line "I can't move."
 	done
 
 FirebreatherWaltSeenText:
