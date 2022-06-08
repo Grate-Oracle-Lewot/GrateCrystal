@@ -171,7 +171,7 @@ NUM_WATERMON EQU 3 ; data/wild/*_water.asm table size
 
 GRASS_WILDDATA_LENGTH EQU 2 + 3 + NUM_GRASSMON * 2 * 3
 WATER_WILDDATA_LENGTH EQU 2 + 1 + NUM_WATERMON * 2
-FISHGROUP_DATA_LENGTH EQU 1 + 2 * 3
+FISHGROUP_DATA_LENGTH EQU 1 + 2 * 4
 
 NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
 
