@@ -243,7 +243,7 @@ BattleText_EnemyIsAboutToUseWillPlayerChangeMon:
 	line "change #MON?"
 	autodone
 
-BattleText_PluralEnemeyAreAboutToUseWillPlayerChangeMon:
+BattleText_PluralEnemyAreAboutToUseWillPlayerChangeMon:
 	text "<ENEMY>"
 	line "are about to use"
 	scroll "@"
