@@ -473,11 +473,11 @@ _AskRockSmashText::
 _RodBiteText::
 	text "Oh!"
 	line "A bite!"
-	prompt
+	autodone
 
 _RodNothingText::
 	text "Not even a nibble!"
-	prompt
+	autodone
 
 _UnusedNothingHereText::
 	text "Looks like there's"
