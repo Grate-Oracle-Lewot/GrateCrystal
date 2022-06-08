@@ -2264,6 +2264,10 @@ SuperRodEffect:
 	ld e, $2
 	jr UseRod
 
+OddRodEffect:
+	ld e, $3
+	jr UseRod
+
 UseRod:
 	farcall FishFunction
 	ret
