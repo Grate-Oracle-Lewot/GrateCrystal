@@ -1505,6 +1505,7 @@ _OakText2::
 	text_end
 
 _OakText3::
+	text_promptbutton
 	text_end
 
 _OakText4::
