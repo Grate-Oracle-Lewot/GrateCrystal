@@ -1,22 +1,20 @@
 NurseMornText:
-	text "Good morning!"
-	line "Welcome to our"
-	cont "#MON CENTER."
-	done
+	text  "Good morning!"
+	line  "Welcome to our"
+	scroll "#MON CENTER."
+	autodone
 
 NurseDayText:
-	text "Hello!"
-	line "Welcome to our"
-	cont "#MON CENTER."
-	done
+	text   "Hello!"
+	line   "Welcome to our"
+	scroll "#MON CENTER."
+	autodone
 
 NurseNiteText:
-	text "Good evening!"
-	line "You're out late."
-
-	para "Welcome to our"
-	line "#MON CENTER."
-	done
+	text  "Good evening!"
+	line  "Welcome to our"
+	scroll "#MON CENTER."
+	autodone
 
 PokeComNurseMornText:
 	text "Good morning!"
@@ -50,36 +48,24 @@ PokeComNurseNiteText:
 	done
 
 NurseAskHealText:
-	text "We can heal your"
-	line "#MON to perfect"
-	cont "health."
-
-	para "Shall we heal your"
+	text "Shall we heal your"
 	line "#MON?"
-	done
+	autodone
 
 NurseTakePokemonText:
-	text "OK, may I see your"
-	line "#MON?"
-	done
+	text "One moment,"
+	line "please."
+	autodone
 
 NurseReturnPokemonText:
-	text "Thank you for"
-	line "waiting."
-
-	para "Your #MON are"
+	text "Your #MON are"
 	line "fully healed."
-	done
+	autodone
 
 NurseGoodbyeText:
-	text "We hope to see you"
-	line "again."
-	done
-
-; not used
-	text "We hope to see you"
-	line "again."
-	done
+	text "Please, come back"
+	line "any time!"
+	autodone
 
 NursePokerusText:
 	text "Your #MON"
@@ -134,17 +120,35 @@ MagazineBookshelfText:
 	done
 
 TeamRocketOathText:
-	text "TEAM ROCKET OATH"
+	text "TEAM ROCKET MOTTO"
 
-	para "Steal #MON for"
-	line "profit!"
+	para "Prepare for"
+	line "trouble!"
 
-	para "Exploit #MON"
-	line "for profit!"
+	para "Make it double!"
 
-	para "All #MON exist"
-	line "for the glory of"
-	cont "TEAM ROCKET!"
+	para "To protect the"
+	line "world from"
+	cont "devastation!"
+
+	para "To unite all"
+	line "peoples within our"
+	cont "nation!"
+
+	para "To denounce the"
+	line "evils of truth and"
+	cont "love!"
+
+	para "To extend our"
+	line "reach to the stars"
+	cont "above!"
+
+	para "TEAM ROCKET! Blast"
+	line "off at the speed"
+	cont "of light!"
+
+	para "Surrender now or"
+	line "prepare to fight!"
 	done
 
 IncenseBurnerText:
@@ -169,7 +173,9 @@ WindowText:
 	done
 
 TVText:
-	text "It's a TV."
+	text "It's a TV!"
+
+	para "…DIGIMON is on…"
 	done
 
 HomepageText:
@@ -180,26 +186,9 @@ HomepageText:
 	line "updated…"
 	done
 
-; not used
-	text "#MON RADIO!"
-
-	para "Call in with your"
-	line "requests now!"
-	done
-
 TrashCanText:
 	text "There's nothing in"
 	line "here…"
-	done
-
-; not used
-	text "A #MON may be"
-	line "able to move this."
-	done
-
-; not used
-	text "Maybe a #MON"
-	line "can break this."
 	done
 
 PokecenterSignText:
