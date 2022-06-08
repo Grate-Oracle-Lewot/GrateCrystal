@@ -9,7 +9,7 @@ _OakText7::
 
 	para "Your very own,"
 	line "slightly unusual,"
-	line "#MON story is"
+	cont "#MON story is"
 	cont "about to unfold."
 
 	para "You'll face fun"
@@ -1259,7 +1259,7 @@ _NewDexDataText::
 	text_ram wEnemyMonNickname
 	text "'s data"
 	line "was newly added to"
-	cont "the #DEX.@"
+	scroll "the #DEX.@"
 	sound_slot_machine_start
 	text_promptbutton
 	text_end
@@ -1301,7 +1301,7 @@ _PlayedFluteText::
 _FluteWakeUpText::
 	text "All sleeping"
 	line "#MON woke up."
-	prompt
+	autodone
 
 Text_PlayedPokeFlute::
 	text "<PLAYER> played the"
@@ -1388,11 +1388,11 @@ _ItemWontHaveEffectText::
 _BallBlockedText::
 	text "The trainer"
 	line "blocked the BALL!"
-	prompt
+	autodone
 
 _BallDontBeAThiefText::
 	text "Don't be a thief!"
-	prompt
+	autodone
 
 _NoCyclingText::
 	text "Cycling isn't"
@@ -1408,8 +1408,7 @@ _ItemCantGetOnText::
 
 _BallBoxFullText::
 	text "The #MON BOX"
-	line "is full. That"
-	cont "can't be used now."
+	line "is full!"
 	prompt
 
 _ItemUsedText::
