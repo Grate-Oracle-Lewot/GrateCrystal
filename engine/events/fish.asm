@@ -33,6 +33,7 @@ endr
 	; 0: Old
 	; 1: Good
 	; 2: Super
+	; 3: Odd
 	inc hl
 	ld e, b
 	ld d, 0
@@ -62,6 +63,21 @@ endr
 	call z, .TimeEncounter
 
 	ld e, [hl]
+; Check if we buff the mon, and by how much.
+	call Random
+	cp 31 percent
+	jr c, .buffed
+	inc e
+	cp 62 percent
+	jr c, .buffed
+	inc e
+	cp 83 percent
+	jr c, .buffed
+	inc e
+	cp 94 percent
+	jr c, .buffed
+	inc e
+.buffed
 	ret
 
 .no_bite
