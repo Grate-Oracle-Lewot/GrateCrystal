@@ -489,6 +489,19 @@ Paragraph::
 	jr z, .linkbattle
 	call LoadBlinkingCursor
 
+.linkbattle
+	call Text_WaitBGMap
+	call PromptButton
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
+	call ClearBox
+	call UnloadBlinkingCursor
+	ld c, 20
+	call DelayFrames
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	pop de
+	jp NextChar
+
 AutoParagraph::
 	push de
 	call Text_WaitBGMap
@@ -497,19 +510,6 @@ AutoParagraph::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
 	call ClearBox
-	ld c, 20
-	call DelayFrames
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	pop de
-	jp NextChar
-
-.linkbattle
-	call Text_WaitBGMap
-	call PromptButton
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
-	call ClearBox
-	call UnloadBlinkingCursor
 	ld c, 20
 	call DelayFrames
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
