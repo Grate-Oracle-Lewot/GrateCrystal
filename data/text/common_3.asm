@@ -968,7 +968,6 @@ _LearnedMoveText::
 	text_ram wStringBuffer2
 	text "!@"
 	sound_dex_fanfare_50_79
-	text_promptbutton
 	text_end
 
 _MoveAskForgetText::
@@ -1260,7 +1259,6 @@ _NewDexDataText::
 	line "was newly added to"
 	scroll "the #DEX.@"
 	sound_slot_machine_start
-	text_promptbutton
 	text_end
 
 _AskGiveNicknameText::
