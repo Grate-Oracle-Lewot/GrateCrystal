@@ -1207,34 +1207,34 @@ _BallDodgedText::
 	text "It dodged the"
 	line "thrown BALL!"
 
-	para "This #MON"
+	autopara "This #MON"
 	line "can't be caught!"
-	prompt
+	autodone
 
 _BallMissedText::
 	text "You missed the"
 	line "#MON!"
-	prompt
+	autodone
 
 _BallBrokeFreeText::
 	text "Oh no! The #MON"
 	line "broke free!"
-	prompt
+	autodone
 
 _BallAppearedCaughtText::
 	text "Aww! It appeared"
 	line "to be caught!"
-	prompt
+	autodone
 
 _BallAlmostHadItText::
 	text "Aargh!"
 	line "Almost had it!"
-	prompt
+	autodone
 
 _BallSoCloseText::
 	text "Shoot! It was so"
 	line "close too!"
-	prompt
+	autodone
 
 Text_BallCaught::
 	text "Gotcha! @"
@@ -1252,7 +1252,7 @@ _BallSentToPCText::
 	text_ram wMonOrItemNameBuffer
 	text " was"
 	line "sent to BILL's PC."
-	prompt
+	autodone
 
 _NewDexDataText::
 	text_ram wEnemyMonNickname
@@ -1268,7 +1268,7 @@ _AskGiveNicknameText::
 	line "@"
 	text_ram wStringBuffer1
 	text "?"
-	done
+	autodone
 
 _ItemStatRoseText::
 	text_ram wStringBuffer1
