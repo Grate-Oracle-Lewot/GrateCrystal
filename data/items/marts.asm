@@ -35,6 +35,8 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartBerry
+	dw MartApricorn
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -400,8 +402,26 @@ MartUnderground:
 	db REVIVAL_HERB
 	db -1 ; end
 
+MartBerry:
+	db 4 ; # items
+	db BERRY
+	db GOLD_BERRY
+	db MIRACLEBERRY
+	db MYSTERYBERRY
+	db -1 ; end
+
+MartApricorn:
+	db 7 ; # items
+	db RED_APRICORN
+	db BLU_APRICORN
+	db YLW_APRICORN
+	db GRN_APRICORN
+	db WHT_APRICORN
+	db BLK_APRICORN
+	db PNK_APRICORN
+	db -1 ; end
+
 DefaultMart:
-	db 2 ; # items
-	db POKE_BALL
+	db 1 ; # items
 	db POTION
 	db -1 ; end
