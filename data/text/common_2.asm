@@ -569,12 +569,12 @@ _UseSweetScentText::
 	text_ram wStringBuffer3
 	text " used"
 	line "SWEET SCENT!"
-	done
+	autodone
 
 _SweetScentNothingText::
 	text "Looks like there's"
 	line "nothing here…"
-	done
+	autodone
 
 _SquirtbottleNothingText::
 	text "<PLAYER> sprinkled"
@@ -622,8 +622,8 @@ _ThrewAwayText::
 _OakThisIsntTheTimeText::
 	text "OAK: <PLAYER>!"
 	line "This isn't the"
-	cont "time to use that!"
-	prompt
+	scroll "time to use that!"
+	autodone
 
 _YouDontHaveAMonText::
 	text "You don't have a"
@@ -654,7 +654,7 @@ _PackEmptyText::
 _YouCantUseItInABattleText::
 	text "You can't use it"
 	line "in a battle."
-	prompt
+	autodone
 
 _AreYouABoyOrAreYouAGirlText::
 	text "Play as a boy or"
@@ -877,7 +877,7 @@ _WasSentToBillsPCText::
 	text_ram wStringBuffer1
 	text " was"
 	line "sent to BILL's PC."
-	prompt
+	autodone
 
 _PCGottaHavePokemonText::
 	text "You gotta have"
@@ -1108,7 +1108,7 @@ _PlayersPCNoRoomDepositText::
 _PokecenterPCTurnOnText::
 	text "<PLAYER> turned on"
 	line "the PC."
-	prompt
+	autodone
 
 _PokecenterPCWhoseText::
 	text "Access whose PC?"
