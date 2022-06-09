@@ -252,8 +252,8 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	assert_table_length NUM_ATTACKS
 	dw MoveFCDescription
+	assert_table_length NUM_ATTACKS
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
