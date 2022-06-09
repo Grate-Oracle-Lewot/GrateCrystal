@@ -257,5 +257,4 @@ MonMenuIconPals:
 	icon_pals GREEN,  PINK   ; CELEBI
 	icon_pals GREEN,  BLUE   ; YANMEGA
 	icon_pals BROWN,  BROWN  ; WHIMSICOTT
-  assert_table_length NUM_POKEMON
 	icon_pals BROWN,  BROWN  ; EGG
