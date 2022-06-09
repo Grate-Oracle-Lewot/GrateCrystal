@@ -32,13 +32,10 @@ GoldenrodCity_MapScripts:
 	endcallback
 
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
 	checkitem COIN_CASE
 	iffalse .MoveTutorDisappear
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MoveTutorAppear
-	ifequal SATURDAY, .MoveTutorAppear
+	checkevent EVENT_BEAT_WHITNEY
+	iftrue .MoveTutorAppear
 .MoveTutorDisappear:
 	disappear GOLDENRODCITY_MOVETUTOR
 	endcallback
@@ -66,27 +63,35 @@ MoveTutorScript:
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
-	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
-	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
-	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
+	ifequal 1, .Flamethrower
+	ifequal 2, .Thunderbolt
+	ifequal 3, .IceBeam
+	ifequal 4, .TriAttack
 	sjump .Incompatible
 
 .Flamethrower:
-	setval MOVETUTOR_FLAMETHROWER
+	setval FLAMETHROWER
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .Thunderbolt:
-	setval MOVETUTOR_THUNDERBOLT
+	setval THUNDERBOLT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .IceBeam:
-	setval MOVETUTOR_ICE_BEAM
+	setval ICE_BEAM
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.TriAttack:
+	setval TRI_ATTACK
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
@@ -94,16 +99,17 @@ MoveTutorScript:
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	menu_coords 0, 2, 15, TEXTBOX_Y - 0
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 5 ; items
 	db "FLAMETHROWER@"
 	db "THUNDERBOLT@"
 	db "ICE BEAM@"
+	db "TRI ATTACK@"
 	db "CANCEL@"
 
 .Refused:
@@ -474,11 +480,6 @@ GoldenrodCityUndergroundSignNorthText:
 GoldenrodCityUndergroundSignSouthText:
 	text "UNDERGROUND"
 	line "ENTRANCE"
-	done
-
-GoldenrodCityPokeComCenterSignText: ; unreferenced
-	text "For Mobile Tips!"
-	line "#COM CENTER"
 	done
 
 GoldenrodCityFlowerShopSignText:
