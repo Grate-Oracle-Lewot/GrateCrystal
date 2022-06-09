@@ -165,8 +165,6 @@ INCLUDE "data/battle/effect_command_pointers.asm"
 
 
 SECTION "bank10", ROMX
-
-INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
@@ -631,6 +629,12 @@ INCLUDE "data/phone/text/kenji_callee.asm"
 INCLUDE "data/phone/text/parry_callee.asm"
 INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
+
+SECTION "Mewtwo Phone Files", ROMX
+
+INCLUDE "engine/pokedex/pokedex.asm" ; 10
+INCLUDE "engine/phone/scripts/mewtwo.asm"
+INCLUDE "data/phone/text/mewtwo.asm"
 
 
 SECTION "Miscellaneous Text", ROMX
