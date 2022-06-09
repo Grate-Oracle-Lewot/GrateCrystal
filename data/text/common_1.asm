@@ -92,7 +92,6 @@ _GrewToLevelText::
 	text_decimal wCurPartyLevel, 1, 3
 	text "!@"
 	sound_dex_fanfare_50_79 ; plays SFX_DEX_FANFARE_50_79, identical to SFX_LEVEL_UP
-	text_promptbutton
 	text_end
 
 _CameToItsSensesText::
@@ -154,7 +153,7 @@ _OakTimeWokeUpText::
 	line "<……><……><……><……><……><……>"
 
 	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
+	line "Yaaaaawn…"
 
 	para "Got the ROM run-"
 	line "ning, did you?"
