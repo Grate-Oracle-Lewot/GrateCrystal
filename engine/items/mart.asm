@@ -22,6 +22,7 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw BerryShop
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -93,6 +94,16 @@ RooftopSale:
 	ret
 
 INCLUDE "data/items/rooftop_sale.asm"
+
+BerryShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_BerryShop_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_BerryShop_ComeAgain
+	call MartTextbox
+	ret
 
 LoadMartPointer:
 	ld a, b
@@ -394,6 +405,7 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .BerryPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -425,6 +437,14 @@ GetMartDialogGroup:
 	dw PharmacyNoMoneyText
 	dw PharmacyPackFullText
 	dw PharmacyThanksText
+	dw BuyMenuLoop
+
+.BerryPointers:
+	dw Text_BerryShop_HowMany
+	dw Text_BerryShop_CostsThisMuch
+	dw Text_BerryShop_InsufficientFunds
+	dw Text_BerryShop_BagFull
+	dw Text_BerryShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -705,6 +725,34 @@ PharmacyNoMoneyText:
 
 PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
+	text_end
+
+Text_BerryShop_Intro:
+	text_far BerryShop_IntroText
+	text_end
+
+Text_BerryShop_ComeAgain:
+	text_far BerryShop_ComeAgainText
+	text_end
+
+Text_BerryShop_HowMany:
+	text_far BerryShop_HowManyText
+	text_end
+
+Text_BerryShop_CostsThisMuch:
+	text_far BerryShop_CostsThisMuchText
+	text_end
+
+Text_BerryShop_InsufficientFunds:
+	text_far BerryShop_InsufficientFundsText
+	text_end
+
+Text_BerryShop_BagFull:
+	text_far BerryShop_BagFullText
+	text_end
+
+Text_BerryShop_HereYouGo:
+	text_far BerryShop_HereYouGoText
 	text_end
 
 SellMenu:
