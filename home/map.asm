@@ -2205,6 +2205,7 @@ GetMapMusic::
 	cp MUSIC_RADIO_TOWER
 	jr z, .radiotower
 	farcall Function8b342
+	call ChangeMusicIfNight
 	ld e, c
 	ld d, 0
 .done
