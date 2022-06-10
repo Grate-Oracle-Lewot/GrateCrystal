@@ -2921,7 +2921,7 @@ endr
 
 wStoneTableAddress:: dw
 
-	ds 6
+	ds 26
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
