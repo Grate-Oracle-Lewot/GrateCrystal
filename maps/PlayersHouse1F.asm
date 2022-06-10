@@ -267,17 +267,17 @@ DontKnowTheInstructionsText:
 	para "Turn the #GEAR"
 	line "on and select the"
 	cont "PHONE icon."
-	done
 
-InstructionsNextText:
-	text "Phone numbers are"
+	para "Phone numbers are"
 	line "stored in memory."
 
 	para "Just choose a name"
 	line "you want to call."
+	done
 
-	para "Gee, isn't that"
-	line "convenient?"
+InstructionsNextText:
+	text "You'd better get"
+	line "going!"
 	done
 
 HurryUpElmIsWaitingText:
@@ -378,6 +378,9 @@ PlayersHouse1FTVText:
 
 	para "computer, tire-"
 	line "lessly hacking…"
+
+	para "I'd better get"
+	line "cracking, too!"
 	done
 
 PlayersHouse1F_MapEvents:
