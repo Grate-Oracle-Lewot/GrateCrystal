@@ -128,6 +128,10 @@
 	const MUSIC_LAVENDER_TOWN_NIGHT          ; 7a
 	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 7b
 	const MUSIC_SS_ANNE                      ; 7c
+	const MUSIC_CINNABAR_MANSION             ; 7d
+	const MUSIC_SILPH_CO                     ; 7e
+	const MUSIC_GEN_1_SURF                   ; 7f
+	const MUSIC_ROUTE_47                     ; 80
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
