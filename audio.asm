@@ -141,6 +141,15 @@ SECTION "Extra Songs 2", ROMX
 INCLUDE "audio/music/postcredits.asm"
 
 
+SECTION "Extra Songs 3", ROMX
+
+INCLUDE "audio/music/ssanne.asm"
+INCLUDE "audio/music/cinnabarmansion.asm"
+INCLUDE "audio/music/silphco.asm"
+INCLUDE "audio/music/surfing.asm"
+INCLUDE "audio/music/route47.asm"
+
+
 SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"
