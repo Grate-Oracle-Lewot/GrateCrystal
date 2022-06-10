@@ -2296,3 +2296,18 @@ rept 16
 	nop
 endr
 	ret
+
+ChangeMusicIfNight::
+	ld a, [wTimeOfDay]
+  	cp NITE_F
+	ret nz
+	ld hl, NightMusicTable
+.loop
+    ld a, [hli]
+    cp -1
+    ret z
+    cp c
+    ld a, [hli]
+    jr nz, .loop
+    ld c, a
+    ret
