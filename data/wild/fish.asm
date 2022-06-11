@@ -33,7 +33,7 @@ FishGroups:
 .Shore_Super:
 	db  25 percent,     KRABBY,     40
 	db  50 percent,     time_group 1
-	db  75 percent + 1, KRABBY,     42
+	db  75 percent + 1, DONPHAN,    40
 	db 100 percent,     KINGLER,    40
 .Shore_Odd:
 	db  25 percent,     time_group 0
