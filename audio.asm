@@ -21,6 +21,9 @@ INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
+INCLUDE "audio/music/newbarktown.asm"
+INCLUDE "audio/music/goldenrodcity.asm"
+INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
 INCLUDE "audio/music/lookpokemaniac.asm"
@@ -57,10 +60,15 @@ INCLUDE "audio/music/route26.asm"
 INCLUDE "audio/music/ecruteakcity.asm"
 INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
+INCLUDE "audio/music/lavendertown.asm"
+INCLUDE "audio/music/dancinghall.asm"
+INCLUDE "audio/music/contestresults.asm"
+INCLUDE "audio/music/route30.asm"
 
 
 SECTION "Songs 3", ROMX
 
+INCLUDE "audio/music/violetcity.asm"
 INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
@@ -106,6 +114,7 @@ INCLUDE "audio/music/rockettheme.asm"
 INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
 INCLUDE "audio/music/pokeflutechannel.asm"
+INCLUDE "audio/music/bugcatchingcontest.asm"
 
 
 SECTION "Songs 5", ROMX
@@ -134,15 +143,6 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
-INCLUDE "audio/music/newbarktown.asm" ; 1
-INCLUDE "audio/music/goldenrodcity.asm" ; 1
-INCLUDE "audio/music/vermilioncity.asm" ; 1
-INCLUDE "audio/music/lavendertown.asm" ; 2
-INCLUDE "audio/music/dancinghall.asm" ; 2
-INCLUDE "audio/music/contestresults.asm" ; 2
-INCLUDE "audio/music/route30.asm" ; 2
-INCLUDE "audio/music/violetcity.asm" ; 3
-INCLUDE "audio/music/bugcatchingcontest.asm" ; 4
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/silphco.asm"
