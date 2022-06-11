@@ -244,11 +244,11 @@ ENDM
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
 	dict "<PLAY_G>",  PlaceGenderedPlayerName
-	dict "ﾟ",         .place ; should be .diacritic
-	dict "ﾞ",         .place ; should be .diacritic
+	dict "ﾟ",         .diacritic
+	dict "ﾞ",         .diacritic
 	jr .not_diacritic
 
-.diacritic ; unreferenced
+.diacritic
 	ld b, a
 	call Diacritic
 	jp NextChar
@@ -539,14 +539,14 @@ _ContTextNoPause::
 	and TEXT_DELAY_MASK
 	cp TEXT_DELAY_FAST
 	jr nz, .not_instant
-	ld c, 15
+	ld c, 10
 	call DelayFrames
 .not_instant
 	push de
 	call TextScroll
 	call TextScroll
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
-	ld c, 5
+	ld c, 10
 	call DelayFrames
 	pop de
 	jp NextChar
