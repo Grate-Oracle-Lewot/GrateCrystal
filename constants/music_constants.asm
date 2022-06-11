@@ -130,8 +130,7 @@
 	const MUSIC_SS_ANNE                      ; 7c
 	const MUSIC_CINNABAR_MANSION             ; 7d
 	const MUSIC_SILPH_CO                     ; 7e
-	const MUSIC_GEN_1_SURF                   ; 7f
-	const MUSIC_ROUTE_47                     ; 80
+	const MUSIC_ROUTE_47                     ; 7f
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
