@@ -69,10 +69,6 @@ PlayBattleMusic:
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	ld a, [wTimeOfDay]
-	cp NITE_F
-	jr nz, .done
-	ld de, MUSIC_KANTO_WILD_BATTLE_NIGHT
 	jr .done
 
 .trainermusic
