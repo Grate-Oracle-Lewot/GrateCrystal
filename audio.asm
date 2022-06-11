@@ -21,9 +21,6 @@ INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
-INCLUDE "audio/music/newbarktown.asm"
-INCLUDE "audio/music/goldenrodcity.asm"
-INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
 INCLUDE "audio/music/lookpokemaniac.asm"
@@ -138,6 +135,9 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
+INCLUDE "audio/music/newbarktown.asm" ; 1
+INCLUDE "audio/music/goldenrodcity.asm" ; 1
+INCLUDE "audio/music/vermilioncity.asm" ; 1
 INCLUDE "audio/music/lavendertown.asm" ; 2
 INCLUDE "audio/music/dancinghall.asm" ; 2
 INCLUDE "audio/music/contestresults.asm" ; 2
