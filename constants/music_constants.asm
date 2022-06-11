@@ -106,31 +106,10 @@
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
 ; new to Grate Crystal
-	const MUSIC_NEW_BARK_TOWN_NIGHT          ; 67
-	const MUSIC_ROUTE_29_NIGHT               ; 68
-	const MUSIC_CHERRYGROVE_CITY_NIGHT       ; 69
-	const MUSIC_ROUTE_30_NIGHT               ; 6a
-	const MUSIC_VIOLET_CITY_NIGHT            ; 6b
-	const MUSIC_AZALEA_TOWN_NIGHT            ; 6c
-	const MUSIC_ROUTE_36_NIGHT               ; 6d
-	const MUSIC_GOLDENROD_CITY_NIGHT         ; 6e
-	const MUSIC_ECRUTEAK_CITY_NIGHT          ; 6f
-	const MUSIC_ROUTE_37_NIGHT               ; 70
-	const MUSIC_LAKE_OF_RAGE_NIGHT           ; 71
-	const MUSIC_ROUTE_26_NIGHT               ; 72
-	const MUSIC_VIRIDIAN_CITY_NIGHT          ; 73
-	const MUSIC_ROUTE_3_NIGHT                ; 74
-	const MUSIC_ROUTE_12_NIGHT               ; 75
-	const MUSIC_CELADON_CITY_NIGHT           ; 76
-	const MUSIC_VERMILION_CITY_NIGHT         ; 77
-	const MUSIC_PALLET_TOWN_NIGHT            ; 78
-	const MUSIC_ROUTE_1_NIGHT                ; 79
-	const MUSIC_LAVENDER_TOWN_NIGHT          ; 7a
-	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 7b
-	const MUSIC_SS_ANNE                      ; 7c
-	const MUSIC_CINNABAR_MANSION             ; 7d
-	const MUSIC_SILPH_CO                     ; 7e
-	const MUSIC_ROUTE_47                     ; 7f
+	const MUSIC_SS_ANNE                      ; 67
+	const MUSIC_CINNABAR_MANSION             ; 68
+	const MUSIC_SILPH_CO                     ; 69
+	const MUSIC_ROUTE_47                     ; 6a
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
