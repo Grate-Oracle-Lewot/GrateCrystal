@@ -132,6 +132,5 @@ Music:
 	dba Music_SSAnne
 	dba Music_CinnabarMansion
 	dba Music_SilphCo
-	dba Music_Surfing
 	dba Music_Route47
 	assert_table_length NUM_MUSIC_SONGS
