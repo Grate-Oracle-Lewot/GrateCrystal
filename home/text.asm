@@ -128,6 +128,10 @@ SpeechTextbox::
 	ld c, TEXTBOX_INNERW
 	jp Textbox
 
+GameFreakText:: ; unreferenced
+	text "ゲームフりーク！" ; "GAMEFREAK!"
+	done
+
 RadioTerminator::
 	ld hl, .stop
 	ret
@@ -173,29 +177,33 @@ PlaceNextChar::
 	pop hl
 	ret
 
+DummyChar:: ; unreferenced
+	pop de
+	; fallthrough
+
 NextChar::
 	inc de
 	jp PlaceNextChar
 
 CheckDict::
-dict: MACRO
-assert CHARLEN(\1) == 1
-if \1 == 0
-	and a
-else
-	cp \1
-endc
-if ISCONST(\2)
-	; Replace a character with another one
-	jr nz, .not\@
-	ld a, \2
-.not\@:
-elif STRSUB("\2", 1, 1) == "."
-	; Locals can use a short jump
-	jr z, \2
-else
-	jp z, \2
-endc
+MACRO dict
+	assert CHARLEN(\1) == 1
+	if \1 == 0
+		and a
+	else
+		cp \1
+	endc
+	if ISCONST(\2)
+		; Replace a character with another one
+		jr nz, .not\@
+		ld a, \2
+	.not\@:
+	elif STRSUB("\2", 1, 1) == "."
+		; Locals can use a short jump
+		jr z, \2
+	else
+		jp z, \2
+	endc
 ENDM
 
 	dict "<MOBILE>",  MobileScriptChar
@@ -206,7 +214,6 @@ ENDM
 	dict "<SCROLL>",  _ContTextNoPause
 	dict "<_CONT>",   _ContText
 	dict "<PARA>",    Paragraph
-	dict "<ATPRA>",   AutoParagraph
 	dict "<MOM>",     PrintMomsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
@@ -225,7 +232,6 @@ ENDM
 	dict "<CONT>",    ContText
 	dict "<……>",      SixDotsChar
 	dict "<DONE>",    DoneText
-	dict "<ATDNE>",   AutoDoneText
 	dict "<PROMPT>",  PromptText
 	dict "<PKMN>",    PlacePKMN
 	dict "<POKE>",    PlacePOKE
@@ -236,11 +242,11 @@ ENDM
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
 	dict "<PLAY_G>",  PlaceGenderedPlayerName
-	dict "ﾟ",         .diacritic
-	dict "ﾞ",         .diacritic
+	dict "ﾟ",         .place ; should be .diacritic
+	dict "ﾞ",         .place ; should be .diacritic
 	jr .not_diacritic
 
-.diacritic
+.diacritic ; unreferenced
 	ld b, a
 	call Diacritic
 	jp NextChar
@@ -289,7 +295,7 @@ MobileScriptChar::
 	farcall RunMobileScript
 	jp PlaceNextChar
 
-print_name: MACRO
+MACRO print_name
 	push de
 	ld de, \1
 	jp PlaceCommandCharacter
@@ -494,20 +500,6 @@ Paragraph::
 	pop de
 	jp NextChar
 
-AutoParagraph::
-	push de
-	call Text_WaitBGMap
-	ld c, 10
-	call DelayFrames
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
-	call ClearBox
-	ld c, 20
-	call DelayFrames
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	pop de
-	jp NextChar
-
 _ContText::
 	ld a, [wLinkMode]
 	or a
@@ -524,22 +516,13 @@ _ContText::
 	ld a, [wLinkMode]
 	or a
 	call z, UnloadBlinkingCursor
-	jr _ContTextNoPause.not_instant
+	; fallthrough
 
 _ContTextNoPause::
-	ld a, [wOptions]
-	and TEXT_DELAY_MASK
-	cp TEXT_DELAY_FAST
-	jr nz, .not_instant
-	ld c, 15
-	call DelayFrames
-.not_instant
 	push de
 	call TextScroll
 	call TextScroll
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
-	ld c, 5
-	call DelayFrames
 	pop de
 	jp NextChar
 
@@ -589,12 +572,6 @@ DoneText::
 
 .stop:
 	text_end
-
-AutoDoneText::
-	call Text_WaitBGMap
-	ld c, 20
-	call DelayFrames
-	jr DoneText
 
 NullChar::
 	ld a, "?"
@@ -951,6 +928,18 @@ TextCommand_SOUND::
 	pop de
 
 .done
+	pop hl
+	pop bc
+	ret
+
+TextCommand_CRY:: ; unreferenced
+; play a pokemon cry
+	push de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	call PlayMonCry
+	pop de
 	pop hl
 	pop bc
 	ret
