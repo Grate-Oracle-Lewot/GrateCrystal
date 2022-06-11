@@ -63,7 +63,6 @@ INCLUDE "audio/music/magnettrain.asm"
 INCLUDE "audio/music/lavendertown.asm"
 INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
-INCLUDE "audio/music/route30.asm"
 
 
 SECTION "Songs 3", ROMX
@@ -114,7 +113,6 @@ INCLUDE "audio/music/rockettheme.asm"
 INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
 INCLUDE "audio/music/pokeflutechannel.asm"
-INCLUDE "audio/music/bugcatchingcontest.asm"
 
 
 SECTION "Songs 5", ROMX
@@ -143,6 +141,8 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
+INCLUDE "audio/music/route30.asm" ; 2
+INCLUDE "audio/music/bugcatchingcontest.asm" ; 4
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/silphco.asm"
