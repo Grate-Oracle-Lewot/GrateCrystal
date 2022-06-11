@@ -1,5 +1,16 @@
 ; Functions relating to the timer interrupt and the real-time-clock.
 
+Timer:: ; unreferenced
+	push af
+	ldh a, [hMobile]
+	and a
+	jr z, .not_mobile
+	call MobileTimer
+
+.not_mobile
+	pop af
+	reti
+
 LatchClock::
 ; latch clock counter data
 	ld a, 0
@@ -243,6 +254,17 @@ SetClock::
 
 ; cleanup
 	call CloseSRAM ; unlatch clock, disable clock r/w
+	ret
+
+ClearRTCStatus:: ; unreferenced
+; clear sRTCStatusFlags
+	xor a
+	push af
+	ld a, BANK(sRTCStatusFlags)
+	call OpenSRAM
+	pop af
+	ld [sRTCStatusFlags], a
+	call CloseSRAM
 	ret
 
 RecordRTCStatus::
