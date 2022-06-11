@@ -60,9 +60,6 @@ INCLUDE "audio/music/route26.asm"
 INCLUDE "audio/music/ecruteakcity.asm"
 INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
-INCLUDE "audio/music/lavendertown.asm"
-INCLUDE "audio/music/dancinghall.asm"
-INCLUDE "audio/music/contestresults.asm"
 
 
 SECTION "Songs 3", ROMX
@@ -141,6 +138,9 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
+INCLUDE "audio/music/lavendertown.asm" ; 2
+INCLUDE "audio/music/dancinghall.asm" ; 2
+INCLUDE "audio/music/contestresults.asm" ; 2
 INCLUDE "audio/music/route30.asm" ; 2
 INCLUDE "audio/music/bugcatchingcontest.asm" ; 4
 INCLUDE "audio/music/ssanne.asm"
