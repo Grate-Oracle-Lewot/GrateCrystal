@@ -146,9 +146,12 @@ LoadMetatiles::
 	ld e, l
 	ld d, h
 	; Set hl to the address of the current metatile data ([wTilesetBlocksAddress] + (a) tiles).
+	; This is buggy; it wraps around past 128 blocks.
+	; To fix, uncomment the line below.
+	add a ; Comment or delete this line to fix the above bug.
 	ld l, a
 	ld h, 0
-	add hl, hl
+	; add hl, hl
 	add hl, hl
 	add hl, hl
 	add hl, hl
@@ -365,6 +368,14 @@ CheckIndoorMap::
 	cp GATE
 	ret
 
+CheckUnknownMap:: ; unreferenced
+	cp INDOOR
+	ret z
+	cp GATE
+	ret z
+	cp ENVIRONMENT_5
+	ret
+
 LoadMapAttributes::
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
@@ -572,17 +583,19 @@ ReadObjectEvents::
 	ld a, [wCurMapObjectEventCount]
 	call CopyMapObjectEvents
 
-; get NUM_OBJECTS - [wCurMapObjectEventCount] - 1
+; get NUM_OBJECTS - [wCurMapObjectEventCount]
 	ld a, [wCurMapObjectEventCount]
 	ld c, a
-	ld a, NUM_OBJECTS - 1
+	ld a, NUM_OBJECTS ; - 1
 	sub c
 	jr z, .skip
-	jr c, .skip
+	; jr c, .skip
 
 	; could have done "inc hl" instead
 	ld bc, 1
 	add hl, bc
+; Fill the remaining sprite IDs and y coords with 0 and -1, respectively.
+; Bleeds into wObjectMasks due to a bug.  Uncomment the above code to fix.
 	ld bc, MAPOBJECT_LENGTH
 .loop
 	ld [hl],  0
@@ -1096,9 +1109,15 @@ ObjectEventText::
 	text_far _ObjectEventText
 	text_end
 
+BGEvent:: ; unreferenced
+	jumptext BGEventText
+
 BGEventText::
 	text_far _BGEventText
 	text_end
+
+CoordinatesEvent:: ; unreferenced
+	jumptext CoordinatesEventText
 
 CoordinatesEventText::
 	text_far _CoordinatesEventText
@@ -1313,6 +1332,13 @@ UpdateBGMapColumn::
 	jr nz, .loop
 	ld a, SCREEN_HEIGHT
 	ldh [hBGMapTileCount], a
+	ret
+
+ClearBGMapBuffer:: ; unreferenced
+	ld hl, wBGMapBuffer
+	ld bc, wBGMapBufferEnd - wBGMapBuffer
+	xor a
+	call ByteFill
 	ret
 
 LoadTilesetGFX::
@@ -2137,6 +2163,9 @@ GetMapEnvironment::
 	pop hl
 	ret
 
+Map_DummyFunction:: ; unreferenced
+	ret
+
 GetAnyMapEnvironment::
 	push hl
 	push de
@@ -2178,13 +2207,12 @@ GetMapMusic::
 	ld a, c
 	cp MUSIC_MAHOGANY_MART
 	jr z, .mahoganymart
-	cp MUSIC_RADIO_TOWER
-	jr z, .radiotower
+	bit RADIO_TOWER_MUSIC_F, c
+	jr nz, .radiotower
 	farcall Function8b342
-.done
-	call ChangeMusicIfNight
 	ld e, c
 	ld d, 0
+.done
 	pop bc
 	pop hl
 	ret
@@ -2193,22 +2221,26 @@ GetMapMusic::
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
 	jr z, .clearedradiotower
-	ld c, MUSIC_ROCKET_OVERTURE
+	ld de, MUSIC_ROCKET_OVERTURE
 	jr .done
 
 .clearedradiotower
-	ld de, MUSIC_GOLDENROD_CITY
+	; the rest of the byte
+	ld a, c
+	and RADIO_TOWER_MUSIC - 1
+	ld e, a
+	ld d, 0
 	jr .done
 
 .mahoganymart
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F, a
 	jr z, .clearedmahogany
-	ld c, MUSIC_ROCKET_HIDEOUT
+	ld de, MUSIC_ROCKET_HIDEOUT
 	jr .done
 
 .clearedmahogany
-	ld c, MUSIC_CHERRYGROVE_CITY
+	ld de, MUSIC_CHERRYGROVE_CITY
 	jr .done
 
 GetMapTimeOfDay::
@@ -2273,18 +2305,3 @@ rept 16
 	nop
 endr
 	ret
-
-ChangeMusicIfNight::
-	ld a, [wTimeOfDay]
-  	cp NITE_F
-	ret nz
-	ld hl, NightMusicTable
-.loop
-    ld a, [hli]
-    cp -1
-    ret z
-    cp c
-    ld a, [hli]
-    jr nz, .loop
-    ld c, a
-    ret
