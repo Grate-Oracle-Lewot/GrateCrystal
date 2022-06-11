@@ -61,7 +61,6 @@ INCLUDE "audio/music/magnettrain.asm"
 
 SECTION "Songs 3", ROMX
 
-INCLUDE "audio/music/violetcity.asm"
 INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
@@ -142,6 +141,7 @@ INCLUDE "audio/music/lavendertown.asm" ; 2
 INCLUDE "audio/music/dancinghall.asm" ; 2
 INCLUDE "audio/music/contestresults.asm" ; 2
 INCLUDE "audio/music/route30.asm" ; 2
+INCLUDE "audio/music/violetcity.asm" ; 3
 INCLUDE "audio/music/bugcatchingcontest.asm" ; 4
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
