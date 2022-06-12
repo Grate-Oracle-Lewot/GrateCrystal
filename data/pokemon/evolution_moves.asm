@@ -251,6 +251,4 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HO_OH
 	db NO_MOVE      ; CELEBI
-	db TWISTER      ; YANMEGA
-	db NO_MOVE      ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
