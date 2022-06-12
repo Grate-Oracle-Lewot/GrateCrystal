@@ -1518,13 +1518,16 @@ _OakText4::
 	para "Their pokecrystal"
 	line "disassembly makes"
 	cont "hacking easier."
+
+	para "Emphasis on the"
+	line "er."
 	prompt
 
 _OakText5::
 	text "Really, most of"
 	line "the actual game"
-	cont "structure is the"
-	cont "same."
+	cont "structure is still"
+	cont "the same."
 
 	para "So enjoy a"
 	line "familiar"
