@@ -10,10 +10,10 @@ EvolutionMoves::
 	db NO_MOVE      ; WARTORTLE
 	db NO_MOVE      ; BLASTOISE
 	db NO_MOVE      ; CATERPIE
-	db HARDEN       ; METAPOD
+	db BIDE         ; METAPOD
 	db NO_MOVE      ; BUTTERFREE
 	db NO_MOVE      ; WEEDLE
-	db HARDEN       ; KAKUNA
+	db BIDE         ; KAKUNA
 	db NO_MOVE      ; BEEDRILL
 	db NO_MOVE      ; PIDGEY
 	db NO_MOVE      ; PIDGEOTTO
