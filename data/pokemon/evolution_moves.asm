@@ -11,7 +11,7 @@ EvolutionMoves::
 	db NO_MOVE      ; BLASTOISE
 	db NO_MOVE      ; CATERPIE
 	db BIDE         ; METAPOD
-	db NO_MOVE      ; BUTTERFREE
+	db GUST         ; BUTTERFREE
 	db NO_MOVE      ; WEEDLE
 	db BIDE         ; KAKUNA
 	db TWINEEDLE    ; BEEDRILL
