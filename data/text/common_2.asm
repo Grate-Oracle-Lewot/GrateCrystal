@@ -1519,7 +1519,7 @@ _OakText4::
 	line "disassembly makes"
 	cont "hacking easier."
 
-	para "Emphasis on the"
+	para "…Emphasis on the"
 	line "er."
 	prompt
 
