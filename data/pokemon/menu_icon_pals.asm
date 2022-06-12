@@ -3,6 +3,7 @@ icon_pals: MACRO
 ENDM
 
 MonMenuIconPals:
+	table_width 1, MonMenuIconPals
 	;         normal, shiny
 	icon_pals GREEN,  YELLOW ; BULBASAUR
 	icon_pals GREEN,  YELLOW ; IVYSAUR
@@ -131,7 +132,7 @@ MonMenuIconPals:
 	icon_pals YELLOW, GREEN  ; ELECTABUZZ
 	icon_pals RED,    PINK   ; MAGMAR
 	icon_pals BROWN,  GRAY   ; PINSIR
-	icon_pals BROWN,  YELLOW ; TAURUS
+	icon_pals BROWN,  YELLOW ; TAUROS
 	icon_pals RED,    YELLOW ; MAGIKARP
 	icon_pals BLUE,   RED    ; GYARADOS
 	icon_pals BLUE,   PURPLE ; LAPRAS
@@ -214,7 +215,7 @@ MonMenuIconPals:
 	icon_pals GRAY,   BROWN  ; STEELIX
 	icon_pals PINK,   BLUE   ; SNUBBULL
 	icon_pals PURPLE, GRAY   ; GRABULL
-	icon_pals BLUE,   PURPLE ; QUILFISH
+	icon_pals BLUE,   PURPLE ; QWILFISH
 	icon_pals RED,    YELLOW ; SCIZOR
 	icon_pals BROWN,  BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
