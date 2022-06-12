@@ -14,7 +14,7 @@ EvolutionMoves::
 	db NO_MOVE      ; BUTTERFREE
 	db NO_MOVE      ; WEEDLE
 	db BIDE         ; KAKUNA
-	db NO_MOVE      ; BEEDRILL
+	db TWINEEDLE    ; BEEDRILL
 	db NO_MOVE      ; PIDGEY
 	db NO_MOVE      ; PIDGEOTTO
 	db NO_MOVE      ; PIDGEOT
