@@ -255,6 +255,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   RED    ; LUGIA
 	icon_pals RED,    YELLOW ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
-	icon_pals GREEN,  BLUE   ; YANMEGA
-	icon_pals BROWN,  BROWN  ; WHIMSICOTT
-	icon_pals BROWN,  BROWN  ; EGG
+	assert_table_length NUM_POKEMON
+
+	icon_pals RED,    RED    ; 252
+	icon_pals RED,    BLUE   ; EGG
+	icon_pals RED,    RED    ; 254
