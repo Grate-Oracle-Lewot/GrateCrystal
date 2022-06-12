@@ -366,14 +366,14 @@ SpriteAnimOAMData:
 	db 4
 	dbsprite -1, -1,  0,  0, $00, -1
 	dbsprite  0, -1,  0,  0, $01, -1
-	dbsprite -1,  0,  0,  0, $08, PAL_ICON_BLUE
+	dbsprite -1,  0,  0,  0, $08, PAL_ICON_RED
 	dbsprite  0,  0,  0,  0, $03, -1
 
 .OAMData_PartyMonWithMail2:
 	db 4
 	dbsprite -1, -1,  0,  0, $04, -1
 	dbsprite  0, -1,  0,  0, $05, -1
-	dbsprite -1,  0,  0,  0, $08, PAL_ICON_BLUE
+	dbsprite -1,  0,  0,  0, $08, PAL_ICON_RED
 	dbsprite  0,  0,  0,  0, $07, -1
 
 .OAMData_PartyMonWithItem1:
