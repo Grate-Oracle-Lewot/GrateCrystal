@@ -5,6 +5,8 @@ ENDM
 
 StdScripts::
 	add_stdscript PokecenterNurseScript
+	add_stdscript PokecenterChanseyScript
+	add_stdscript PokecenterBlisseyScript
 	add_stdscript DifficultBookshelfScript
 	add_stdscript PictureBookshelfScript
 	add_stdscript MagazineBookshelfScript
@@ -159,6 +161,22 @@ PokecenterNurseScript:
 .pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
 	specialphonecall SPECIALCALL_POKERUS
+	end
+
+PokecenterChanseyScript:
+	opentext
+	farwritetext PokecenterChanseyText
+	cry CHANSEY
+	pause 10
+	closetext
+	end
+
+PokecenterBlisseyScript:
+	opentext
+	farwritetext PokecenterBlisseyText
+	cry BLISSEY
+	pause 10
+	closetext
 	end
 
 DifficultBookshelfScript:
