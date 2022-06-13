@@ -100,6 +100,16 @@ PokeComNursePokerusText:
 	line "you anything more."
 	done
 
+PokecenterChanseyText:
+	text "CHANSEY: Cha-an-"
+	line "sey!"
+	autodone
+
+PokecenterBlisseyText:
+	text "BLISSEY: Bli-i-"
+	line "ssey!"
+	autodone
+
 DifficultBookshelfText:
 	text "It's full of"
 	line "difficult books."
