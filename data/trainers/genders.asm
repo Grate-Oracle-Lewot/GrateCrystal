@@ -13,10 +13,10 @@ BTTrainerClassGenders:
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
 	db MALE   ; POKEMON_PROF
-	db FEMALE ; WILL
+	db MALE   ; WILL
 	db MALE   ; CAL
 	db MALE   ; BRUNO
-	db FEMALE ; KAREN
+	db MALE   ; KAREN
 	db MALE   ; KOGA
 	db MALE   ; CHAMPION
 	db MALE   ; BROCK
@@ -69,4 +69,5 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
-	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN
+	db MALE   ; MYSTICALMAN
+	assert_table_length NUM_TRAINER_CLASSES
