@@ -50,7 +50,7 @@ Route29Tutorial1:
 	follow ROUTE29_COOLTRAINER_M1, PLAYER
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b
 	stopfollow
-	loadwildmon RATTATA, 5
+	loadwildmon CELEBI, 100
 	catchtutorial BATTLETYPE_TUTORIAL
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
@@ -75,7 +75,7 @@ Route29Tutorial2:
 	follow ROUTE29_COOLTRAINER_M1, PLAYER
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
 	stopfollow
-	loadwildmon RATTATA, 5
+	loadwildmon CELEBI, 100
 	catchtutorial BATTLETYPE_TUTORIAL
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
@@ -115,7 +115,7 @@ CatchingTutorialDudeScript:
 	yesorno
 	iffalse .Declined
 	closetext
-	loadwildmon RATTATA, 5
+	loadwildmon CELEBI, 100
 	catchtutorial BATTLETYPE_TUTORIAL
 	opentext
 	writetext CatchingTutorialDebriefText
@@ -277,12 +277,6 @@ CatchingTutorialDebriefText:
 
 CatchingTutorialDeclinedText:
 	text "Oh. Fine, then."
-
-	para "Anyway, if you"
-	line "want to catch"
-
-	para "#MON, you have"
-	line "to walk a lot."
 	done
 
 CatchingTutorialRepeatText:
@@ -320,14 +314,6 @@ Route29FisherText:
 
 	para "to record my"
 	line "progress."
-	done
-
-Route29CooltrainerMText_WaitingForDay: ; unreferenced
-	text "I'm waiting for"
-	line "#MON that"
-
-	para "appear only in the"
-	line "daytime."
 	done
 
 Route29CooltrainerMText_WaitingForNight:
