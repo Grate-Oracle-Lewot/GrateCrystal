@@ -2924,7 +2924,7 @@ endr
 
 wStoneTableAddress:: dw
 
-	ds 16
+	ds 5
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3026,7 +3026,7 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+	ds 3
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -3108,8 +3108,6 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
-
-	ds 9
 
 ; fight counts
 wJackFightCount::    db
