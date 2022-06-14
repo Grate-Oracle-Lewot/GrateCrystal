@@ -159,9 +159,9 @@ MonMenuIconPals:
 	icon_pals GREEN,  BROWN  ; CHIKORITA
 	icon_pals YELLOW, BROWN  ; BAYLEEF
 	icon_pals GREEN,  YELLOW ; MEGANIUM
-	icon_pals BROWN,  PURPLE ; CYNDAQUIL
-	icon_pals BROWN,  PURPLE ; QUILAVA
-	icon_pals BROWN,  PURPLE ; TYPHLOSION
+	icon_pals YELLOW, PURPLE ; CYNDAQUIL
+	icon_pals YELLOW, PURPLE ; QUILAVA
+	icon_pals YELLOW, PURPLE ; TYPHLOSION
 	icon_pals BLUE,   GREEN  ; TOTODILE
 	icon_pals BLUE,   GREEN  ; CROCONAW
 	icon_pals BLUE,   GREEN  ; FERALIGATR
