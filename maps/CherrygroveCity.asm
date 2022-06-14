@@ -317,11 +317,6 @@ CherrygroveCity_RivalPushesYouOutOfTheWay:
 	turn_head UP
 	step_end
 
-CherrygroveCity_UnusedMovementData: ; unreferenced
-	step LEFT
-	turn_head DOWN
-	step_end
-
 CherrygroveCity_RivalExitsStageLeft:
 	big_step LEFT
 	big_step LEFT
@@ -431,56 +426,49 @@ GuideGentNoText:
 	done
 
 CherrygroveRivalText_Seen:
-	text "<……> <……> <……>"
+	text "YOU HAD GAINED"
+	line "MONATERS FROM"
+	cont "GRADUATE SCHOOL,"
+	cont "BUT YOU ARE"
+	cont "SO WEAK,"
+	cont "IT'S A GREAT PITY."
+	cont "WHAT, WHAT DO"
+	cont "YOU SAY ME?."
+	cont "YOU DON'T KNOW,"
+	cont "THERE IS NOTHING"
+	cont "TO DO."
 
-	para "You got a #MON"
-	line "at the LAB."
+	para "I HAVE GOOD"
 
-	para "What a waste."
-	line "A wimp like you."
-
-	para "<……> <……> <……>"
-
-	para "Don't you get what"
-	line "I'm saying?"
-
-	para "Well, I too, have"
-	line "a good #MON."
-
-	para "I'll show you"
-	line "what I mean!"
+	para " "
+	line "MONSTER,WHAT'S"
+	cont "THE MATTER"
+	cont "I TELL YOU."
 	done
 
 SilverCherrygroveWinText:
-	text "Humph. Are you"
-	line "happy you won?"
+	text "ARE YOU GLAD"
+	line "AFTER WINNING?"
 	done
 
 CherrygroveRivalText_YouLost:
-	text "<……> <……> <……>"
-
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	text "I AM. . ."
+	line "I AM A MONSTER"
+	cont "COACH,"
+	cont "THE FIRST MANKIND"
+	cont "ALL OVER THE WORLD."
 	done
 
 SilverCherrygroveLossText:
-	text "Humph. That was a"
-	line "waste of time."
+	text "IT IS WASTE TIME"
 	done
 
 CherrygroveRivalText_YouWon:
-	text "<……> <……> <……>"
-
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	text "I AM. . ."
+	line "I AM A MONSTER"
+	cont "COACH,"
+	cont "THE FIRST MANKIND"
+	cont "ALL OVER THE WORLD."
 	done
 
 CherrygroveTeacherText_NoMapCard:
