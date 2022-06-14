@@ -101,13 +101,11 @@ PokeComNursePokerusText:
 	done
 
 PokecenterChanseyText:
-	text "CHANSEY: Cha-an-"
-	line "sey!"
+	text "CHANSEY: Laaa!"
 	autodone
 
 PokecenterBlisseyText:
-	text "BLISSEY: Bli-i-"
-	line "ssey!"
+	text "BLISSEY: Jiii!"
 	autodone
 
 DifficultBookshelfText:
