@@ -138,7 +138,7 @@ MonMenuIcons:
 	db ICON_FOX         ; VAPOREON
 	db ICON_FOX         ; JOLTEON
 	db ICON_FOX         ; FLAREON
-	db ICON_VOLTORB     ; PORYGON
+	db ICON_SERPENT     ; PORYGON
 	db ICON_SHELL       ; OMANYTE
 	db ICON_SHELL       ; OMASTAR
 	db ICON_SHELL       ; KABUTO
@@ -171,14 +171,14 @@ MonMenuIcons:
 	db ICON_BUG         ; SPINARAK
 	db ICON_BUG         ; ARIADOS
 	db ICON_BAT         ; CROBAT
-	db ICON_FISH        ; CHINCHOU
+	db ICON_POLIWAG     ; CHINCHOU
 	db ICON_FISH        ; LANTURN
 	db ICON_PIKACHU     ; PICHU
 	db ICON_CLEFAIRY    ; CLEFFA
 	db ICON_JIGGLYPUFF  ; IGGLYBUFF
 	db ICON_CLEFAIRY    ; TOGEPI
 	db ICON_BIRD        ; TOGETIC
-	db ICON_BIRD        ; NATU
+	db ICON_VOLTORB     ; NATU
 	db ICON_BIRD        ; XATU
 	db ICON_FOX         ; MAREEP
 	db ICON_MONSTER     ; FLAAFFY
@@ -214,7 +214,7 @@ MonMenuIcons:
 	db ICON_MONSTER     ; GRANBULL
 	db ICON_FISH        ; QWILFISH
 	db ICON_BUG         ; SCIZOR
-	db ICON_SQUIRTLE    ; SHUCKLE
+	db ICON_JELLYFISH   ; SHUCKLE
 	db ICON_BUG         ; HERACROSS
 	db ICON_MONSTER     ; SNEASEL
 	db ICON_MONSTER     ; TEDDIURSA
@@ -225,7 +225,7 @@ MonMenuIcons:
 	db ICON_EQUINE      ; PILOSWINE
 	db ICON_SHELL       ; CORSOLA
 	db ICON_FISH        ; REMORAID
-	db ICON_FISH        ; OCTILLERY
+	db ICON_JELLYFISH   ; OCTILLERY
 	db ICON_BIRD        ; DELIBIRD
 	db ICON_FISH        ; MANTINE
 	db ICON_BIRD        ; SKARMORY
@@ -234,7 +234,7 @@ MonMenuIcons:
 	db ICON_BIGMON      ; KINGDRA
 	db ICON_EQUINE      ; PHANPY
 	db ICON_EQUINE      ; DONPHAN
-	db ICON_VOLTORB     ; PORYGON2
+	db ICON_SERPENT     ; PORYGON2
 	db ICON_EQUINE      ; STANTLER
 	db ICON_MONSTER     ; SMEARGLE
 	db ICON_FIGHTER     ; TYROGUE
