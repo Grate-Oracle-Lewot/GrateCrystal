@@ -199,20 +199,23 @@ Text_WaitPlayer:
 	done
 
 Text_WhatDoYouThinkYoureDoing:
-	text "What do you think"
-	line "you're doing?"
+	text "Your mom paid me"
+	line "to stop you from"
+
+	para "leaving town with-"
+	line "out a #MON."
 	done
 
 Text_ItsDangerousToGoAlone:
-	text "It's dangerous to"
-	line "go out without a"
-	cont "#MON!"
-
-	para "Wild #MON"
+	text "Wild #MON"
 	line "jump out of the"
 
-	para "grass on the way"
-	line "to the next town."
+	para "tall grass. It's"
+	line "dangerous if you"
+
+	para "don't have your"
+	line "own #MON to"
+	cont "protect you."
 	done
 
 Text_YourMonIsAdorable:
@@ -243,20 +246,20 @@ Text_ElmDiscoveredNewMon:
 
 	para "I hear PROF.ELM"
 	line "discovered some"
-	cont "new #MON."
+	cont "new #MON, like"
+	cont "YANMEGA and"
+	cont "WHIMSICOTT."
 	done
 
 NewBarkTownRivalText1:
-	text "<……>"
-
-	para "So this is the"
-	line "famous ELM #MON"
-	cont "LAB…"
+	text "THE FAMOUS WUSIJI"
+	line "MONSTER GRADUATE"
+	cont "SCHOOL"
 	done
 
 NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
+	text "WHAT  DON'T"
+	line "STARE ME ALWAYS"
 	done
 
 NewBarkTownSignText:
