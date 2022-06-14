@@ -1529,9 +1529,8 @@ _OakText5::
 	cont "structure is still"
 	cont "the same."
 
-	para "So enjoy a"
-	line "familiar"
-	cont "experience…"
+	para "So enjoy a famil-"
+	line "iar experience…"
 
 	para "with more than a"
 	line "few surprises."
