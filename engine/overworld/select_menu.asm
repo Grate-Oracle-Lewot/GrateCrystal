@@ -30,6 +30,7 @@ CheckRegisteredItem:
 ; entries correspond to *_POCKET constants
 	dw .CheckItem
 	dw .CheckBall
+	dw .CheckFruit
 	dw .CheckKeyItem
 	dw .CheckTMHM
 
@@ -60,6 +61,7 @@ CheckRegisteredItem:
 
 .CheckBall:
 	ld hl, wNumBalls
+.StandardCheck:
 	call .CheckRegisteredNo
 	jr nc, .NoRegisteredItem
 	inc hl
@@ -70,6 +72,10 @@ CheckRegisteredItem:
 	call .IsSameItem
 	jr c, .NoRegisteredItem
 	ret
+
+.CheckFruit:
+	ld hl, wNumFruits
+	jr .StandardCheck
 
 .CheckTMHM:
 	jr .NoRegisteredItem
