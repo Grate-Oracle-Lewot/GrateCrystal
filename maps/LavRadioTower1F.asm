@@ -9,19 +9,118 @@ LavRadioTower1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .LavRadioTowerOfficerCallback
+
+.LavRadioTowerOfficerCallback:
+	appear LAVRADIOTOWER1F_OFFICER
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .NextCheck
+	endcallback
+
+.NextCheck
+	checkevent EVENT_FOUGHT_MEWTWO
+	iffalse .OfficerMovedUpstairs
+	endcallback
+
+.OfficerMovedUpstairs
+	disappear LAVRADIOTOWER1F_OFFICER
+	endcallback
 
 LavRadioTower1FReceptionistScript:
-	jumptextfaceplayer LavRadioTower1FReceptionistText
+	faceplayer
+	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .ReceptionistBrainwashed
+	writetext LavRadioTower1FReceptionistText
+	waitbutton
+	closetext
+	end
+
+.ReceptionistBrainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .ReceptionistNotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.ReceptionistNotBrainwashed:
+	writetext LavRadioTower1FReceptionistText
+	waitbutton
+	closetext
+	end
 
 LavRadioTower1FOfficerScript:
-	jumptextfaceplayer LavRadioTower1FOfficerText
+	faceplayer
+	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .OfficerBrainwashed
+	writetext LavRadioTower1FOfficerText1
+	waitbutton
+	closetext
+	end
+
+.OfficerBrainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .OfficerNotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.OfficerNotBrainwashed:
+	writetext LavRadioTower1FOfficerText2
+	waitbutton
+	closetext
+	end
 
 LavRadioTower1FSuperNerd1Script:
-	jumptextfaceplayer LavRadioTower1FSuperNerd1Text
+	faceplayer
+	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .SuperNerd1Brainwashed
+	writetext LavRadioTower1FSuperNerd1Text
+	waitbutton
+	closetext
+	end
+
+.SuperNerd1Brainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .SuperNerd1NotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.SuperNerd1NotBrainwashed:
+	writetext LavRadioTower1FSuperNerd1Text
+	waitbutton
+	closetext
+	end
 
 LavRadioTower1FGentlemanScript:
 	faceplayer
 	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .GentlemanBrainwashed
+	checkflag ENGINE_EXPN_CARD
+	iftrue .GotExpnCard
+	checkevent EVENT_RETURNED_MACHINE_PART
+	iftrue .ReturnedMachinePart
+	writetext LavRadioTower1FGentlemanText
+	waitbutton
+	closetext
+	end
+
+.GentlemanBrainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .GentlemanNotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.GentlemanNotBrainwashed:
 	checkflag ENGINE_EXPN_CARD
 	iftrue .GotExpnCard
 	checkevent EVENT_RETURNED_MACHINE_PART
@@ -53,6 +152,24 @@ LavRadioTower1FGentlemanScript:
 LavRadioTower1FSuperNerd2Script:
 	faceplayer
 	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .SuperNerd2Brainwashed
+	checkflag ENGINE_EXPN_CARD
+	iftrue .GotExpnCard
+	writetext LavRadioTower1FSuperNerd2Text
+	waitbutton
+	closetext
+	end
+
+.SuperNerd2Brainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .SuperNerd2NotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.SuperNerd2NotBrainwashed:
 	checkflag ENGINE_EXPN_CARD
 	iftrue .GotExpnCard
 	writetext LavRadioTower1FSuperNerd2Text
@@ -72,18 +189,13 @@ LavRadioTower1FDirectory:
 LavRadioTower1FPokeFluteSign:
 	jumptext LavRadioTower1FPokeFluteSignText
 
-LavRadioTower1FReferenceLibrary: ; unreferenced
-	jumptext LavRadioTower1FReferenceLibraryText
-
 LavRadioTower1FReceptionistText:
-	text "Welcome!"
-	line "Feel free to look"
-
-	para "around anywhere on"
-	line "this floor."
+	text "Welcome to the"
+	line "LAVENDER RADIO"
+	cont "TOWER!"
 	done
 
-LavRadioTower1FOfficerText:
+LavRadioTower1FOfficerText1:
 	text "Sorry, but you can"
 	line "only tour the"
 	cont "ground floor."
@@ -96,6 +208,24 @@ LavRadioTower1FOfficerText:
 
 	para "have had to step"
 	line "up our security."
+	done
+
+LavRadioTower1FOfficerText2:
+	text "That #MON… It"
+	line "took over every-"
+	cont "one's minds!"
+
+	para "No one was hurt,"
+	line "but I get goose-"
+	cont "bumps just think-"
+	cont "ing about it…"
+
+	para "Anyway, we had to"
+	line "increase security"
+	cont "even more!"
+
+	para "So, sorry, but I"
+	line "can't let you up."
 	done
 
 LavRadioTower1FSuperNerd1Text:
@@ -191,6 +321,10 @@ LavRadioTower1FSuperNerd2Text_GotExpnCard:
 	cont "off the air!"
 	done
 
+LavRadioTower1FMewtwoBrainwashText:
+	text "…"
+	done
+
 LavRadioTower1FDirectoryText:
 	text "1F RECEPTION"
 	line "2F SALES"
@@ -225,6 +359,7 @@ LavRadioTower1F_MapEvents:
 	def_warp_events
 	warp_event  2,  7, LAVENDER_TOWN, 7
 	warp_event  3,  7, LAVENDER_TOWN, 7
+	warp_event 15,  0, LAV_RADIO_TOWER_2F, 1
 
 	def_coord_events
 
@@ -234,7 +369,7 @@ LavRadioTower1F_MapEvents:
 
 	def_object_events
 	object_event  6,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FReceptionistScript, -1
-	object_event 15,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FOfficerScript, -1
+	object_event 15,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FOfficerScript, EVENT_LAV_RADIO_TOWER_1F_OFFICER
 	object_event  1,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd1Script, -1
 	object_event  9,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FGentlemanScript, -1
 	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd2Script, -1
