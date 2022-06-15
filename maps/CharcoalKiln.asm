@@ -47,7 +47,7 @@ CharcoalKilnApprentice:
 .Thanks:
 	writetext CharcoalKilnApprenticeText2
 	promptbutton
-	verbosegiveitem CHARCOAL
+	verbosegiveitem SOFT_SAND
 	iffalse .Done
 	setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
 	closetext
@@ -125,12 +125,12 @@ CharcoalKilnApprenticeText2:
 	text "I'm sorry--I for-"
 	line "got to thank you."
 
-	para "This is CHARCOAL"
-	line "that I made."
+	para "I tried to make"
+	line "CHARCOAL, but I"
 
-	para "Fire-type #MON"
-	line "would be happy to"
-	cont "hold that."
+	para "accidentally made"
+	line "this instead. You"
+	cont "can have it."
 	done
 
 CharcoalKilnApprenticeText3:
