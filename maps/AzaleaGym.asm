@@ -35,10 +35,6 @@ AzaleaGymBugsyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
-	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
-	setevent EVENT_BEAT_BUG_CATCHER_BENNY
-	setevent EVENT_BEAT_BUG_CATCHER_AL
-	setevent EVENT_BEAT_BUG_CATCHER_JOSH
 	writetext BugsyText_HiveBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_FURY_CUTTER
@@ -334,17 +330,16 @@ AzaleaGymGuideText:
 	para "bug #MON is for"
 	line "real."
 
-	para "It's going to be"
-	line "tough without my"
-	cont "advice."
+	para "Lucky for you, so"
+	line "is mine!"
 
-	para "Let's see… Bug"
-	line "#MON don't like"
-	cont "fire."
+	para "Rock, flying, and"
+	line "fire are all good"
+	cont "against bug."
 
-	para "Flying-type moves"
-	line "are super-effec-"
-	cont "tive too."
+	para "Grass will strug-"
+	line "gle, and dark or"
+	cont "psychic may too."
 	done
 
 AzaleaGymGuideWinText:
@@ -374,7 +369,7 @@ AzaleaGym_MapEvents:
 
 	def_object_events
 	object_event  5,  7, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
-	object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
+	object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1
 	object_event  8,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1
 	object_event  0,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
