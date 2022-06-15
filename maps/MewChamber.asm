@@ -45,4 +45,4 @@ MewChamber_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 10,  8, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MewChamberMewScript, MEWCHAMBER_MEW
+	object_event 10,  8, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, MewChamberMewScript, MEWCHAMBER_MEW
