@@ -158,74 +158,65 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerSilver_BeforeText:
-	text "<……> <……> <……>"
+	text "I HEARD YOU"
+	line "WERE SLEEPING"
+	cont "THERE,"
 
-	para "…Oh, it's you."
+	para "THE LEGENDARY"
 
-	para "I came looking for"
-	line "some legendary"
+	para " "
+	line "MONSTER LOOKED"
+	cont "FOR YOU SPECIALLY"
+	cont "HOW THAT MONSTER"
+	cont "MIGHT EXIST!"
 
-	para "#MON that they"
-	line "say roosts here."
+	para "I CAME THERE"
 
-	para "But there's"
-	line "nothing here!"
+	para " "
+	line "FOR YOU SPECIALLY,"
+	cont "DON'T SAY SO!"
 
-	para "Nothing after all"
-	line "the trouble of"
+	para "DON'T USE"
 
-	para "coming to this"
-	line "dump? No way!"
+	para " "
+	line "THE METHOD!"
 
-	para "It's all your"
-	line "fault!"
+	para "IT'S GOOD NOT"
+
+	para " "
+	line "TO BLAME YOU!"
 	done
 
 BurnedTowerSilver_WinText:
-	text "…Humph!"
-
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "There's no"
-	line "challenge in it."
+	text "HATE TO FIGHT"
+	line "WITH THE WEAKERS"
 	done
 
 BurnedTowerSilver_AfterText1:
-	text "…Aw, whatever."
-
-	para "You would never be"
-	line "able to catch a"
-
-	para "legendary #MON"
-	line "anyway."
+	text "FORGET IT!"
+	line "IN ANY CASE YOU"
+	cont "WERE NOT GRASPED"
+	cont "BY THE LEGENDARY"
+	cont "MONSTER."
 	done
 
 BurnedTowerSilver_LossText:
-	text "…Humph!"
-
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "It's just a waste"
-	line "of my time."
+	text "HATE TO FIGHT"
+	line "WITH THE WEAKERS"
 	done
 
 BurnedTowerSilver_AfterText2:
-	text "Humph!"
+	text "ER WHICH HOLE?"
+	line "WHAT DROPED?"
 
-	para "What are you doing"
-	line "falling into a"
+	para "FAILING THING,"
 
-	para "hole? Some genius"
-	line "you are!"
-
-	para "Serves you right!"
+	para " "
+	line "SERVE ONE RIGHT!"
 	done
 
 BurnedTower1FEusineIntroText:
-	text "EUSINE: My name's"
-	line "EUSINE."
+	text "My name's EUSINE."
 
 	para "I'm on the trail"
 	line "of a #MON named"
@@ -282,17 +273,6 @@ BurnedTower1F_MapEvents:
 	warp_event  9, 15, ECRUTEAK_CITY, 13
 	warp_event 10, 15, ECRUTEAK_CITY, 13
 	warp_event 10,  9, BURNED_TOWER_B1F, 1
-	warp_event  5,  5, BURNED_TOWER_B1F, 1 ; inaccessible, left over from G/S
-	warp_event  5,  6, BURNED_TOWER_B1F, 1 ; inaccessible, left over from G/S
-	warp_event  4,  6, BURNED_TOWER_B1F, 1 ; inaccessible, left over from G/S
-	warp_event 15,  4, BURNED_TOWER_B1F, 2 ; inaccessible, left over from G/S
-	warp_event 15,  5, BURNED_TOWER_B1F, 2 ; inaccessible, left over from G/S
-	warp_event 10,  7, BURNED_TOWER_B1F, 3 ; inaccessible, left over from G/S
-	warp_event  5, 14, BURNED_TOWER_B1F, 4 ; inaccessible, left over from G/S
-	warp_event  4, 14, BURNED_TOWER_B1F, 4 ; inaccessible, left over from G/S
-	warp_event 14, 14, BURNED_TOWER_B1F, 5 ; inaccessible, left over from G/S
-	warp_event 15, 14, BURNED_TOWER_B1F, 5 ; inaccessible, left over from G/S
-	warp_event  7, 15, BURNED_TOWER_B1F, 6 ; inaccessible, left over from G/S
 
 	def_coord_events
 	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript
