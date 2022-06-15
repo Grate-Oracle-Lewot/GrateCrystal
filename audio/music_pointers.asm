@@ -112,4 +112,5 @@ Music:
 	dba Music_CinnabarMansion
 	dba Music_SilphCo
 	dba Music_Route47
+	dba Music_KantoWildBattleNight
 	assert_table_length NUM_MUSIC_SONGS
