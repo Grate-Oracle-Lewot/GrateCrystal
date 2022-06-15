@@ -79,32 +79,32 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenScript_KarenBeforeText:
-	text "I am KAREN of the"
-	line "ELITE FOUR."
+	text "Hey! You made it!"
 
-	para "You're <PLAYER>?"
-	line "How amusing."
+	para "It's me, the GRATE"
+	line "ORACLE LEWOT."
 
-	para "I love dark-type"
-	line "#MON."
+	para "Are you enjoying"
+	line "the hack?"
 
-	para "I find their wild,"
-	line "tough image to be"
+	para "You met LANCE at"
+	line "the LAKE OF RAGE,"
 
-	para "so appealing. And"
-	line "they're so strong."
+	para "so he's still the"
+	line "CHAMPION."
 
-	para "Think you can take"
-	line "them? Just try to"
-	cont "entertain me."
+	para "But first, you'll"
+	line "have to deal with"
+	cont "me."
 
-	para "Let's go."
+	para "This should be"
+	line "fun…"
 	done
 
 KarenScript_KarenBeatenText:
-	text "Well, aren't you"
-	line "good. I like that"
-	cont "in a trainer."
+	text "The hacker has"
+	line "become the hackee…"
+	cont "or something."
 	done
 
 KarenScript_KarenDefeatText:
@@ -122,12 +122,12 @@ KarenScript_KarenDefeatText:
 	para "try to win with"
 	line "their favorites."
 
-	para "I like your style."
-	line "You understand"
-	cont "what's important."
+	para "…That was KAREN's"
+	line "speech, but it"
+	cont "resonates with me."
 
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "You've come this"
+	line "far… Good luck."
 	done
 
 KarensRoom_MapEvents:
