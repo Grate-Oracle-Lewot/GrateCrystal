@@ -45,11 +45,6 @@ BlackthornGymClairScript:
 	writetext ClairText_GoToDragonsDen
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_COOLTRAINERM_PAUL
-	setevent EVENT_BEAT_COOLTRAINERM_CODY
-	setevent EVENT_BEAT_COOLTRAINERM_MIKE
-	setevent EVENT_BEAT_COOLTRAINERF_FRAN
-	setevent EVENT_BEAT_COOLTRAINERF_LOLA
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
@@ -361,14 +356,15 @@ BlackthornGymGuideText:
 	cont "red dragon-type"
 	cont "#MON."
 
-	para "You can't damage"
-	line "them very easily."
+	para "They're weak to"
+	line "ice and fairy-type"
+	cont "moves."
 
-	para "But you know,"
-	line "they're supposed"
+	para "Their own dragon-"
+	line "type moves are"
 
-	para "to be weak against"
-	line "ice-type moves."
+	para "also super"
+	line "effective!"
 	done
 
 BlackthornGymGuideWinText:
