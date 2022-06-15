@@ -1,5 +1,6 @@
 	object_const_def
 	const ECRUTEAKPOKECENTER1F_NURSE
+	const ECRUTEAKPOKECENTER1F_CHANSEY
 	const ECRUTEAKPOKECENTER1F_POKEFAN_M
 	const ECRUTEAKPOKECENTER1F_COOLTRAINER_F
 	const ECRUTEAKPOKECENTER1F_GYM_GUIDE
@@ -43,6 +44,9 @@ EcruteakPokecenter1F_MapScripts:
 
 .PointlessJump:
 	writetext EcruteakPokecenter1F_BillText2
+	promptbutton
+	giveitem POCKET_PC
+	writetext EcruteakPokecenter1F_BillText3
 	waitbutton
 	closetext
 	turnobject PLAYER, DOWN
@@ -58,13 +62,11 @@ EcruteakPokecenter1F_MapScripts:
 EcruteakPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
-EcruteakPokecenter1FPokefanMScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
+EcruteakPokecenter1FChanseyScript:
+	jumpstd PokecenterChanseyScript
 
-.mobile
-	jumptextfaceplayer EcruteakPokecenter1FPokefanMTextMobile
+EcruteakPokecenter1FPokefanMScript:
+	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
 
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
@@ -107,57 +109,41 @@ EcruteakPokecenter1F_BillText1:
 	done
 
 EcruteakPokecenter1F_BillText2:
-	text "I just finished"
-	line "adjustments on my"
-	cont "TIME CAPSULE."
+	text "Did you know I'm"
+	line "the one who dev-"
+	cont "eloped the #MON"
+	cont "storage system?"
 
-	para "You know that"
-	line "#MON can be"
-	cont "traded, right?"
+	para "Storing #MON in"
+	line "the PC is handy,"
 
-	para "My TIME CAPSULE"
-	line "was developed to"
+	para "but you have to"
+	line "come back to the"
 
-	para "enable trades with"
-	line "the past."
+	para "#MON CENTER to"
+	line "withdraw or depo-"
+	cont "sit them."
 
-	para "But you can't send"
-	line "anything that"
+	para "What if you could"
+	line "access the PC on"
+	cont "the go?"
 
-	para "didn't exist in"
-	line "the past."
+	para "Well, now you can!"
+	line "Check this out!"
+	done
 
-	para "If you did, the PC"
-	line "in the past would"
-	cont "have a breakdown."
+EcruteakPokecenter1F_BillText3:
+	text "It's a POCKET PC!"
+	line "Now you can manage"
+	cont "your party any-"
+	cont "where."
 
-	para "So you have to"
-	line "remove anything"
+	para "Oh, I also devel-"
+	line "oped time travel"
+	cont "upstairs."
 
-	para "that wasn't around"
-	line "in the past."
-
-	para "Put simply, no"
-	line "sending new moves"
-
-	para "or new #MON in"
-	line "the TIME CAPSULE."
-
-	para "Don't you worry."
-	line "I'm done with the"
-	cont "adjustments."
-
-	para "Tomorrow, TIME"
-	line "CAPSULES will be"
-
-	para "running at all"
-	line "#MON CENTERS."
-
-	para "I have to hurry on"
-	line "back to GOLDENROD"
-	cont "and see my folks."
-
-	para "Buh-bye!"
+	para "Anyway, gotta go!"
+	line "Buh-bye!"
 	done
 
 EcruteakPokecenter1FPokefanMText:
@@ -167,22 +153,6 @@ EcruteakPokecenter1FPokefanMText:
 	para "marvelous. Just"
 	line "like the way they"
 	cont "use their #MON."
-	done
-
-EcruteakPokecenter1FPokefanMTextMobile:
-	text "You must be hoping"
-	line "to battle more"
-
-	para "people, right?"
-	line "There's apparently"
-
-	para "some place where"
-	line "trainers gather."
-
-	para "Where, you ask?"
-
-	para "It's a little past"
-	line "OLIVINE CITY."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
@@ -217,7 +187,8 @@ EcruteakPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1
+	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FChanseyScript, -1
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1
 	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
 	object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
