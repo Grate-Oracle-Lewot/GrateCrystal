@@ -6,7 +6,7 @@
 	db BUG, BUG ; type
 	db 120 ; catch rate
 	db 72 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db X_DEFEND, IRON ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 15 ; step cycles to hatch
@@ -14,7 +14,7 @@
 	INCBIN "gfx/pokemon/metapod/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_BUG, EGG_BUG ; egg groups
+	dn EGG_BUG, EGG_WATER_3 ; egg groups
 
 	; tm/hm learnset
 	tmhm
