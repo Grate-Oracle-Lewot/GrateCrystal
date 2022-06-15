@@ -65,7 +65,6 @@ TrainerGuitaristClyde:
 FastShipBed:
 	opentext
 	writetext FastShipBedText1
-	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -77,7 +76,6 @@ FastShipBed:
 	special FadeInQuickly
 	opentext
 	writetext FastShipBedText2
-	waitbutton
 	closetext
 	checkevent EVENT_FAST_SHIP_HAS_ARRIVED
 	iftrue .AlreadyArrived
@@ -201,12 +199,12 @@ GuitaristClydeAfterBattleText:
 FastShipBedText1:
 	text "A comfy bed!"
 	line "Time to sleep…"
-	done
+	autodone
 
 FastShipBedText2:
 	text "Ah, refreshed and"
 	line "restored!"
-	done
+	autodone
 
 FastShipArrivedOlivineText:
 	text "FAST SHIP S.S.AQUA"
