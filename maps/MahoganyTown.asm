@@ -201,17 +201,11 @@ MahoganyTownGrampsText_ClearedRocketHideout:
 	done
 
 MahoganyTownFisherText:
-	text "Since you came"
-	line "this far, take the"
+	text "Some guys in black"
+	line "paid me to stand"
 
-	para "time to do some"
-	line "sightseeing."
-
-	para "You should head"
-	line "north and check"
-
-	para "out LAKE OF RAGE"
-	line "right now."
+	para "here and do noth-"
+	line "ing. Easy money!"
 	done
 
 MahoganyTownLassText:
