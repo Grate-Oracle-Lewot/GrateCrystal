@@ -34,9 +34,6 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_WHITNEY
 	setevent EVENT_MADE_WHITNEY_CRY
 	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
-	setevent EVENT_BEAT_BEAUTY_VICTORIA
-	setevent EVENT_BEAT_BEAUTY_SAMANTHA
-	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
 .FightDone:
 	opentext
@@ -237,12 +234,12 @@ WhitneyPlainBadgeText:
 	text "PLAINBADGE lets"
 	line "your #MON use"
 
-	para "STRENGTH outside"
-	line "of battle."
+	para "a strange power"
+	line "called THE FORCE."
 
-	para "It also boosts"
-	line "your #MON's"
-	cont "SPEED."
+	para "They'll be able to"
+	line "move big rocks"
+	cont "outside battle."
 
 	para "Oh, you can have"
 	line "this too!"
@@ -269,11 +266,11 @@ WhitneyGoodCryText:
 	done
 
 LassCarrieSeenText:
-	text "Don't let my"
-	line "#MON's cute"
+	text "Tee hee… Do you"
+	line "have any moves"
 
-	para "looks fool you."
-	line "They can whip you!"
+	para "that can affect my"
+	line "#MON?"
 	done
 
 LassCarrieBeatenText:
@@ -282,17 +279,20 @@ LassCarrieBeatenText:
 	done
 
 LassCarrieAfterBattleText:
-	text "Do my #MON"
-	line "think I'm cute?"
+	text "GIRAFARIG is"
+	line "Normal/Ghost type."
+
+	para "It's pretty"
+	line "special."
 	done
 
 LassBridgetSeenText:
-	text "I like cute #-"
-	line "MON better than"
-	cont "strong #MON."
+	text "CLEFAIRY's not a"
+	line "normal-type"
+	cont "#MON."
 
-	para "But I have strong"
-	line "and cute #MON!"
+	para "I'll show you what"
+	line "I mean!"
 	done
 
 LassBridgetBeatenText:
@@ -353,9 +353,9 @@ BeautySamanthaBeatenText:
 	done
 
 BeautySamanthaAfterBattleText:
-	text "I taught MEOWTH"
-	line "moves for taking"
-	cont "on any type…"
+	text "MEOWTH is part"
+	line "steel-type, so I"
+	cont "thought I'd win…"
 	done
 
 GoldenrodGymGuideText:
