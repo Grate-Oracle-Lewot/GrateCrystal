@@ -25,14 +25,6 @@ FuchsiaGymJanineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JANINE
-	setevent EVENT_BEAT_LASS_ALICE
-	setevent EVENT_BEAT_LASS_LINDA
-	setevent EVENT_BEAT_PICNICKER_CINDY
-	setevent EVENT_BEAT_CAMPER_BARRY
-	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
-	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
-	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_LASS
-	variablesprite SPRITE_FUCHSIA_GYM_4, SPRITE_YOUNGSTER
 	special LoadUsedSpritesGFX
 	opentext
 	writetext Text_ReceivedSoulBadge
@@ -252,13 +244,13 @@ JanineText_ToughOne:
 	line "tough one. You"
 	cont "definitely won…"
 
-	para "Here's SOULBADGE."
+	para "Here's MARSHBADGE."
 	line "Take it."
 	done
 
 Text_ReceivedSoulBadge:
 	text "<PLAYER> received"
-	line "SOULBADGE."
+	line "MARSHBADGE."
 	done
 
 JanineText_ToxicSpeech:
@@ -370,6 +362,15 @@ FuchsiaGymGuideText:
 
 	para "Which of them is"
 	line "the real JANINE?"
+
+	para "She uses the pois-"
+	line "on type. It's good"
+
+	para "against grass and"
+	line "fairy, and weak"
+
+	para "against psychic"
+	line "and ground."
 	done
 
 FuchsiaGymGuideWinText:
