@@ -86,76 +86,58 @@ MountMoonSilverMovementAfter:
 	step_end
 
 MountMoonSilverTextBefore:
-	text "<……> <……> <……>"
+	text "DON'T MEET FOR"
+	line "A LONG TIME."
+	cont "SINCE I WAS"
+	cont "DEFEATED BY YOU,"
+	cont "I KNEW MY LACK,"
+	cont "BUT NOT WHERE"
+	cont "IT IS."
+	cont "I THOUGHT IT A"
+	cont "LONG TIME WITH"
+	cont "THEM,"
+	cont "FINALLY I FOUND"
+	cont "IT.DO YOU WANT"
+	cont "TO KNOW?"
 
-	para "It's been a while,"
-	line "<PLAYER>."
+	para "I LET YOU"
 
-	para "…Since I lost to"
-	line "you, I thought"
-
-	para "about what I was"
-	line "lacking with my"
-	cont "#MON…"
-
-	para "And we came up"
-	line "with an answer."
-
-	para "<PLAYER>, now we'll"
-	line "show you!"
+	para " "
+	line "SEE NOW"
 	done
 
 MountMoonSilverTextWin:
-	text "<……> <……> <……>"
-
-	para "I thought I raised"
-	line "my #MON to be"
-
-	para "the best they"
-	line "could be…"
-
-	para "…But it still "
-	line "wasn't enough…"
+	text "THE AIM OF"
+	line "TRAIN THE ELFS IS"
+	cont "TO EXERT THEIR"
+	cont "STRENGTH AT MOST,"
+	cont "IT SEEM THAT THE"
+	cont "TEACHING IS"
+	cont "NOT ENOUGH"
 	done
 
 MountMoonSilverTextAfter:
-	text "<……> <……> <……>"
+	text "ACTUALLY I LOSE,"
+	line "I ADMIT IT."
+	cont "BUT DON'T FORGET"
+	cont "IT SIMPLY."
 
-	para "…You won, fair"
-	line "and square."
+	para "ONE DAY I WILL"
 
-	para "I admit it. But"
-	line "this isn't the"
-	cont "end."
-
-	para "I'm going to be"
-	line "the greatest #-"
-	cont "MON trainer ever."
-
-	para "Because these guys"
-	line "are behind me."
-
-	para "…Listen, <PLAYER>."
-
-	para "One of these days"
-	line "I'm going to prove"
-
-	para "how good I am by"
-	line "beating you."
+	para " "
+	line "LET YOU KNOW"
+	cont "I'M THE STRONGEST"
+	cont "COACH,THE FELLOWS"
+	cont "WILL CONSORT WITH"
+	cont "ME.LISTEN,ONE"
+	cont "DAY I WILL BEAT"
+	cont "YOU DOWN,"
+	cont "AND LET YOU"
+	cont "KNOW MY STRENGTH"
 	done
 
 MountMoonSilverTextLoss:
-	text "<……> <……> <……>"
-
-	para "I've repaid my"
-	line "debt to you."
-
-	para "With my #MON,"
-	line "I'm going to beat"
-
-	para "the CHAMPION and"
-	line "become the world's"
-	cont "greatest trainer."
+	text "HAVE A PILLORY"
 	done
 
 MountMoon_MapEvents:
