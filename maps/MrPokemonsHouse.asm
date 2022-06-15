@@ -1,6 +1,7 @@
 	object_const_def
 	const MRPOKEMONSHOUSE_GENTLEMAN
 	const MRPOKEMONSHOUSE_OAK
+	const MRPOKEMONSHOUSE_OAK2
 
 MrPokemonsHouse_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,20 @@ MrPokemonsHouse_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .OakBattle
+
+.OakBattle:
+	checkevent EVENT_BEAT_BLUE
+	iftrue .AppearOakBattle
+	sjump .NoAppearOakBattle
+
+.AppearOakBattle:
+	appear MRPOKEMONSHOUSE_OAK2
+	endcallback
+
+.NoAppearOakBattle:
+	disappear MRPOKEMONSHOUSE_OAK2
+	endcallback
 
 .MeetMrPokemon:
 	sdefer .MrPokemonEvent
@@ -53,8 +68,48 @@ MrPokemonsHouse_MrPokemonScript:
 	checkitem RED_SCALE
 	iftrue .RedScale
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .AlwaysNewDiscoveries
+	iftrue .OddEggCheck
 	writetext MrPokemonText_ImDependingOnYou
+	waitbutton
+	closetext
+	end
+
+.OddEggCheck:
+	checkflag ENGINE_DUNSPARCE_SWARM
+	iftrue .OddEggReward
+	writetext MrPokemonText_AlwaysNewDiscoveries
+	waitbutton
+	closetext
+	end
+
+.OddEggReward:
+	checkflag ENGINE_YANMA_SWARM
+	iftrue .AlwaysNewDiscoveries
+	writetext MrPokemonText_OddEgg
+	yesorno
+	iftrue .AcceptedOddEgg
+	writetext MrPokemonText_RefusedOddEgg
+	waitbutton
+	closetext
+	end
+
+.AcceptedOddEgg
+	closetext
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .OddEggPartyFull
+	special GiveOddEgg
+	opentext
+	writetext MrPokemonsHouse_ReceivedOddEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	setflag ENGINE_YANMA_SWARM
+	end
+
+.OddEggPartyFull:
+	opentext
+	writetext MrPokemonsHouse_PartyFullText
 	waitbutton
 	closetext
 	end
@@ -69,7 +124,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem DISCO_BALL
 	iffalse .full
 	takeitem RED_SCALE
 	sjump .AlwaysNewDiscoveries
@@ -141,6 +196,40 @@ MrPokemonsHouse_OakScript:
 
 .RivalTakesCyndaquil:
 	setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	end
+
+MrPokemonsHouse_OakBattleScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DUNSPARCE_SWARM
+	iftrue .NoRematch
+	writetext MrPokemonsHouse_OakBattleAskText
+	yesorno
+	iftrue .DoBattle
+	writetext MrPokemonsHouse_OakBattleNoText
+	waitbutton
+	closetext
+	end
+
+.NoRematch
+	writetext MrPokemonsHouse_OakNoRematchText
+	waitbutton
+	closetext
+	end
+
+.DoBattle
+	writetext MrPokemonsHouse_OakBattleYesText
+	waitbutton
+	closetext
+	winlosstext MrPokemonsHouse_OakBattleWinText, MrPokemonsHouse_OakBattleLossText
+	loadtrainer POKEMON_PROF, POKEMON_PROF1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DUNSPARCE_SWARM
+	opentext
+	writetext MrPokemonsHouse_OakBattleDoneText
+	waitbutton
+	closetext
 	end
 
 MrPokemonsHouse_ForeignMagazines:
@@ -338,8 +427,10 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
+	line "DISCO BALL. It"
+
+	para "lights dark places"
+	line "without FLASH!"
 	done
 
 MrPokemonText_Disappointed:
@@ -348,11 +439,37 @@ MrPokemonText_Disappointed:
 	cont "to be very rare."
 	done
 
+MrPokemonText_OddEgg:
+	text "Your battle with"
+	line "PROF.OAK was tran-"
+	cont "scendent!"
+
+	para "I'll tell you"
+	line "what…"
+
+	para "The DAY-CARE coup-"
+	line "le gave me another"
+	cont "EGG."
+
+	para "How would you like"
+	line "to have it?"
+	done
+
+MrPokemonText_RefusedOddEgg:
+	text "Oh, well, never"
+	line "mind, then."
+	done
+
+MrPokemonsHouse_PartyFullText:
+	text "I'm afraid your"
+	line "party's full."
+	done
+
 MrPokemonsHouse_ForeignMagazinesText:
 	text "It's packed with"
 	line "foreign magazines."
 
-	para "Can't even read"
+	para "I can't even read"
 	line "their titles…"
 	done
 
@@ -368,6 +485,62 @@ MrPokemonsHouse_StrangeCoinsText:
 
 	para "Maybe they're from"
 	line "another country…"
+	done
+
+MrPokemonsHouse_ReceivedOddEggText:
+	text "<PLAYER> received"
+	line "ODD EGG!"
+	done
+
+MrPokemonsHouse_OakNoRematchText:
+	text "MR.#MON is a"
+	line "hoot, isn't he?"
+	done
+
+MrPokemonsHouse_OakBattleAskText:
+	text "Ah, <PLAY_G>!"
+	line "I was just paying"
+	cont "MR.#MON a vis-"
+	cont "it."
+
+	para "But, seeing you"
+	line "here reminds me…"
+
+	para "After watching you"
+	line "accomplish so many"
+	cont "great things, I've"
+
+	para "gotten the itch to"
+	line "battle you myself!"
+
+	para "What do you say?"
+	done
+
+MrPokemonsHouse_OakBattleYesText:
+	text "Excellent!"
+	line "Let us begin."
+	done
+
+MrPokemonsHouse_OakBattleNoText:
+	text "Oh… Well, perhaps"
+	line "another time."
+	done
+
+MrPokemonsHouse_OakBattleWinText:
+	text "You truly are a"
+	line "prodigy."
+	done
+
+MrPokemonsHouse_OakBattleLossText:
+	text "It seems I still"
+	line "have more to teach"
+	cont "you!"
+	done
+
+MrPokemonsHouse_OakBattleDoneText:
+	text "How thrilling!"
+	line "Let's do it again"
+	cont "sometime."
 	done
 
 MrPokemonsHouse_MapEvents:
@@ -389,3 +562,4 @@ MrPokemonsHouse_MapEvents:
 	def_object_events
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1
 	object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK
+	object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_OakBattleScript, EVENT_MR_POKEMONS_HOUSE_OAK_BATTLE
