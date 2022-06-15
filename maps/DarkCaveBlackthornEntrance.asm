@@ -59,6 +59,12 @@ DarkCaveBlackthornEntrancePharmacistText2:
 	cont "type moves."
 	done
 
+DarkCaveBlackthornEntranceHiddenDuskBall:
+	hiddenitem DUSK_BALL, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_DUSK_BALL
+
+DarkCaveBlackthornEntranceHiddenXSpDefend:
+	hiddenitem X_SP_DEFEND, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_X_SP_DEFEND
+
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -69,6 +75,8 @@ DarkCaveBlackthornEntrance_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  4, 20, BGEVENT_ITEM, DarkCaveBlackthornEntranceHiddenDuskBall
+	bg_event 16, 14, BGEVENT_ITEM, DarkCaveBlackthornEntranceHiddenXSpDefend
 
 	def_object_events
 	object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1
