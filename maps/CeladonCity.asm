@@ -76,12 +76,27 @@ CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityFisherText:
-	text "This POLIWRATH is"
-	line "my partner."
+	text "You can evolve"
+	line "POLIWHIRL into"
 
-	para "I wonder if it'll"
-	line "ever evolve into a"
-	cont "frog #MON."
+	para "POLIWRATH using a"
+	line "WATER STONE."
+
+	para "It can also become"
+	line "POLITOED if it's"
+	cont "happy at night."
+
+	para "If you can't wait,"
+	line "you can trade it"
+
+	para "while it's holdi-"
+	line "ng a KING's ROCK."
+
+	para "That's assuming"
+	line "you can figure out"
+
+	para "how to trade in a"
+	line "hack…"
 	done
 
 CeladonCityPoliwrathText:
