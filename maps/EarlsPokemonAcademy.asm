@@ -1,5 +1,6 @@
 	object_const_def
 	const EARLSPOKEMONACADEMY_EARL
+	const EARLSPOKEMONACADEMY_TEACHER
 	const EARLSPOKEMONACADEMY_YOUNGSTER1
 	const EARLSPOKEMONACADEMY_GAMEBOY_KID1
 	const EARLSPOKEMONACADEMY_GAMEBOY_KID2
@@ -33,6 +34,33 @@ AcademyEarl:
 .Done:
 	writetext AcademyEarlNoMoreToTeachText
 	waitbutton
+	closetext
+	end
+
+TrainerTeacherFrizzle:
+	trainer TEACHER, FRIZZLE, EVENT_BEAT_TEACHER_FRIZZLE, TeacherFrizzleSeenText, TeacherFrizzleBeatenText, 0, .Script
+
+.Script:
+	opentext
+	checkevent EVENT_GOT_EXP_SHARE_FROM_FRIZZLE
+	iftrue .GotExpShare
+	writetext TeacherFrizzleOfferExpShareText
+	promptbutton
+	verbosegiveitem EXP_SHARE
+	iffalse .BagFull
+	setevent EVENT_GOT_EXP_SHARE_FROM_FRIZZLE
+	writetext TeacherFrizzleExplainExpShareText
+	waitbutton
+	closetext
+	end
+
+.GotExpShare:
+	writetext TeacherFrizzleAfterText
+	waitbutton
+	closetext
+	end
+
+.BagFull:
 	closetext
 	end
 
@@ -138,9 +166,6 @@ AcademyNotebook:
 	closetext
 	end
 
-AcademyStickerMachine: ; unreferenced
-	jumptext AcademyStickerMachineText
-
 AcademyBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -227,6 +252,47 @@ AcademyEarlNoMoreToTeachText:
 	line "you must be!"
 	done
 
+TeacherFrizzleSeenText:
+	text "The best way to"
+	line "learn is by doing!"
+	done
+
+TeacherFrizzleBeatenText:
+	text "Excellent!"
+	done
+
+TeacherFrizzleOfferExpShareText:
+	text "Teaching is about"
+	line "sharing my exper-"
+	cont "iences with you,"
+
+	para "so take this as a"
+	line "memento!"
+	done
+
+TeacherFrizzleExplainExpShareText:
+	text "It's called an"
+	line "EXP. SHARE."
+
+	para "If a #MON holds"
+	line "it, they'll gain"
+
+	para "experience from"
+	line "battles even if"
+
+	para "they were never"
+	line "sent out!"
+	done
+
+TeacherFrizzleAfterText:
+	text "To succeed, you"
+	line "must be willing to"
+
+	para "take chances, make"
+	line "mistakes, and get"
+	cont "messy!"
+	done
+
 EarlsPokemonAcademyYoungster1Text:
 	text "I'm taking notes"
 	line "of the teacher's"
@@ -270,10 +336,6 @@ AcademyBlackboardText:
 	line "battle."
 	done
 
-AcademyBlackboardText2: ; unreferenced
-	text "Read which topic?"
-	done
-
 AcademyPoisonText:
 	text "If poisoned, a"
 	line "#MON steadily"
@@ -287,6 +349,11 @@ AcademyPoisonText:
 
 	para "To cure it, use an"
 	line "ANTIDOTE."
+
+	para "To prevent getting"
+	line "it in the first"
+	cont "place, hold an"
+	cont "ANTIVENOM."
 	done
 
 AcademyParalysisText:
@@ -297,6 +364,10 @@ AcademyParalysisText:
 	para "It remains after"
 	line "battle, so use"
 	cont "a PARLYZ HEAL."
+
+	para "To prevent being"
+	line "paralyzed, hold a"
+	cont "LIMBO STICK."
 	done
 
 AcademySleepText:
@@ -305,11 +376,16 @@ AcademySleepText:
 	cont "a move."
 
 	para "A sleeping #MON"
-	line "doesn't wake up"
-	cont "after battle."
+	line "may wake up in"
+	cont "battle, but not"
+	cont "outside of battle."
 
 	para "Wake it up with"
 	line "an AWAKENING."
+
+	para "Prevent sleep by"
+	line "holding a NOISE-"
+	cont "MAKER."
 	done
 
 AcademyBurnText:
@@ -324,6 +400,10 @@ AcademyBurnText:
 
 	para "Use a BURN HEAL as"
 	line "the cure."
+
+	para "Holding ALOE VERA"
+	line "will block burns"
+	cont "from ocurring."
 	done
 
 AcademyFreezeText:
@@ -331,11 +411,21 @@ AcademyFreezeText:
 	line "frozen, it can't"
 	cont "do a thing."
 
-	para "It remains frozen"
+	para "It may defrost"
+	line "during battle, but"
+
+	para "it remains frozen"
 	line "after battle."
 
 	para "Thaw it out with"
 	line "an ICE HEAL."
+
+	para "Holding a HAND-"
+	line "WARMER will block"
+
+	para "freezing from hap-"
+	line "pening in the"
+	cont "first place."
 	done
 
 AcademyNotebookText:
@@ -373,7 +463,12 @@ AcademyNotebookText2:
 
 	para "Leaving battle"
 	line "clears up any"
-	cont "confusion."
+	cont "confusion, and"
+
+	para "holding a DICTIO-"
+	line "NARY prevents con-"
+	cont "fusion from being"
+	cont "inflicted."
 
 	para "Keep reading?"
 	done
@@ -424,6 +519,7 @@ EarlsPokemonAcademy_MapEvents:
 
 	def_object_events
 	object_event  4,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL
+	object_event  7,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerTeacherFrizzle, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1
 	object_event  3, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1
 	object_event  4, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1
