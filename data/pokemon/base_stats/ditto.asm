@@ -1,15 +1,15 @@
 	db DITTO ; 132
 
-	db  48,  48,  48,  48,  48,  48
+	db  50,  50,  50, 250, 50,  50
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
 	db 35 ; catch rate
 	db 61 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db METAL_POWDER, BERSERK_GENE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/ditto/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
