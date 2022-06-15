@@ -96,7 +96,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GENGAR
 	db NO_MOVE      ; ONIX
 	db NO_MOVE      ; DROWZEE
-	db NIGHT_SHADE  ; HYPNO
+	db NO_MOVE      ; HYPNO
 	db NO_MOVE      ; KRABBY
 	db NO_MOVE      ; KINGLER
 	db NO_MOVE      ; VOLTORB
