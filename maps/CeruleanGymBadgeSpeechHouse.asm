@@ -7,12 +7,11 @@ CeruleanGymBadgeSpeechHouse_MapScripts:
 	def_callbacks
 
 CeruleanGymBadgeSpeechHousePokefanMScript:
-	jumptextfaceplayer CeruleanGymBadgeSpeechHousePokefanMText
-
-CeruleanGymBadgeSpeechHousePokefanMText:
-	text "Are you collecting"
-	line "KANTO GYM BADGES?"
-	done
+	faceplayer
+	opentext
+	pokemart MARTTYPE_BERRY, MART_APRICORN
+	closetext
+	end
 
 CeruleanGymBadgeSpeechHouse_MapEvents:
 	db 0, 0 ; filler
