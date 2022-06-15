@@ -128,14 +128,6 @@ TrainerCard_Page1_Joypad:
 	ld [wJumptableIndex], a
 	ret
 
-.KantoBadgeCheck: ; unreferenced
-	ld a, [wKantoBadges]
-	and a
-	ret z
-	ld a, TRAINERCARDSTATE_PAGE3_LOADGFX
-	ld [wJumptableIndex], a
-	ret
-
 TrainerCard_Page2_LoadGFX:
 	call ClearSprites
 	hlcoord 0, 8
@@ -159,28 +151,33 @@ TrainerCard_Page2_Joypad:
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
 	ld a, [hl]
-	and A_BUTTON
-	jr nz, .Quit
-	ld a, [hl]
 	and D_LEFT
-	jr nz, .d_left
+	jr nz, .pressed_left
+	ld a, [wKantoBadges]
+	and a
+	jr nz, .has_kanto_badges
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .quit
+	ret
+.has_kanto_badges
+	ld a, [hl]
+	and D_RIGHT | A_BUTTON
+	jr nz, .pressed_right_a
 	ret
 
-.d_left
+.quit
+	ld a, TRAINERCARDSTATE_QUIT
+	ld [wJumptableIndex], a
+	ret
+
+.pressed_left
 	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
 	ld [wJumptableIndex], a
 	ret
 
-.KantoBadgeCheck: ; unreferenced
-	ld a, [wKantoBadges]
-	and a
-	ret z
+.pressed_right_a
 	ld a, TRAINERCARDSTATE_PAGE3_LOADGFX
-	ld [wJumptableIndex], a
-	ret
-
-.Quit:
-	ld a, TRAINERCARDSTATE_QUIT
 	ld [wJumptableIndex], a
 	ret
 
@@ -208,19 +205,19 @@ TrainerCard_Page3_Joypad:
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_LEFT
-	jr nz, .left
+	jr nz, .pressed_left
 	ld a, [hl]
-	and D_RIGHT
-	jr nz, .right
+	and A_BUTTON
+	jr nz, .pressed_a
 	ret
 
-.left
+.pressed_left
 	ld a, TRAINERCARDSTATE_PAGE2_LOADGFX
 	ld [wJumptableIndex], a
 	ret
 
-.right
-	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
+.pressed_a
+	ld a, TRAINERCARDSTATE_QUIT
 	ld [wJumptableIndex], a
 	ret
 
@@ -560,7 +557,7 @@ TrainerCard_Page2_3_OAMUpdate:
 	db -1
 
 TrainerCard_JohtoBadgesOAM:
-; Template OAM data for each badge on the trainer card.
+; Template OAM data for Johto badges on the trainer card.
 ; Format:
 	; y, x, palette
 	; cycle 1: face tile, in1 tile, in2 tile, in3 tile
@@ -584,9 +581,10 @@ TrainerCard_JohtoBadgesOAM:
 	db $08, $20, $24, $20 | (1 << 7)
 
 	; Fogbadge
+	; X-flips on alternate cycles.
 	db $68, $78, 3
-	db $0c, $20, $24, $20 | (1 << 7)
-	db $0c, $20, $24, $20 | (1 << 7)
+	db $0c,            $20, $24, $20 | (1 << 7)
+	db $0c | (1 << 7), $20, $24, $20 | (1 << 7)
 
 	; Mineralbadge
 	db $80, $38, 5
@@ -594,9 +592,10 @@ TrainerCard_JohtoBadgesOAM:
 	db $10, $20, $24, $20 | (1 << 7)
 
 	; Stormbadge
+	; X-flips on alternate cycles.
 	db $80, $18, 4
-	db $14, $20, $24, $20 | (1 << 7)
-	db $14, $20, $24, $20 | (1 << 7)
+	db $14,            $20, $24, $20 | (1 << 7)
+	db $14 | (1 << 7), $20, $24, $20 | (1 << 7)
 
 	; Glacierbadge
 	db $80, $58, 6
@@ -604,16 +603,65 @@ TrainerCard_JohtoBadgesOAM:
 	db $18, $20, $24, $20 | (1 << 7)
 
 	; Risingbadge
-	; X-flips on alternate cycles.
 	db $80, $78, 7
+	db $1c, $20, $24, $20 | (1 << 7)
+	db $1c, $20, $24, $20 | (1 << 7)
+
+TrainerCard_KantoBadgesOAM:
+; Template OAM data for Kanto badges on the trainer card.
+; Format:
+	; y, x, palette
+	; cycle 1: face tile, in1 tile, in2 tile, in3 tile
+	; cycle 2: face tile, in1 tile, in2 tile, in3 tile
+
+	dw wKantoBadges
+
+	; Boulderbadge
+	db $68, $18, 0
+	db $00, $20, $24, $20 | (1 << 7)
+	db $00, $20, $24, $20 | (1 << 7)
+
+	; Cascadebadge
+	db $68, $38, 0
+	db $04, $20, $24, $20 | (1 << 7)
+	db $04, $20, $24, $20 | (1 << 7)
+
+	; Thunderbadge
+	db $68, $58, 0
+	db $08, $20, $24, $20 | (1 << 7)
+	db $08, $20, $24, $20 | (1 << 7)
+
+	; Rainbowbadge
+	db $68, $78, 0
+	db $0c, $20, $24, $20 | (1 << 7)
+	db $0c, $20, $24, $20 | (1 << 7)
+
+	; Soulbadge
+	db $80, $18, 0
+	db $10, $20, $24, $20 | (1 << 7)
+	db $10, $20, $24, $20 | (1 << 7)
+
+	; Marshbadge
+	db $80, $38, 0
+	db $14, $20, $24, $20 | (1 << 7)
+	db $14, $20, $24, $20 | (1 << 7)
+
+	; Volcanobadge
+	db $80, $58, 0
+	db $18, $20, $24, $20 | (1 << 7)
+	db $18, $20, $24, $20 | (1 << 7)
+
+	; Earthbadge
+	; X-flips on alternate cycles.
+	db $80, $78, 0
 	db $1c,            $20, $24, $20 | (1 << 7)
 	db $1c | (1 << 7), $20, $24, $20 | (1 << 7)
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
 
-LeaderGFX:  INCBIN "gfx/trainer_card/leaders.2bpp"
-LeaderGFX2: INCBIN "gfx/trainer_card/leaders.2bpp"
-BadgeGFX:   INCBIN "gfx/trainer_card/badges.2bpp"
-BadgeGFX2:  INCBIN "gfx/trainer_card/badges.2bpp"
+LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.2bpp"
+LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.2bpp"
+BadgeGFX:   INCBIN "gfx/trainer_card/johto_badges.2bpp"
+BadgeGFX2:  INCBIN "gfx/trainer_card/kanto_badges.2bpp"
 
 CardRightCornerGFX: INCBIN "gfx/trainer_card/card_right_corner.2bpp"
