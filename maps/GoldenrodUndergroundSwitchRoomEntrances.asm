@@ -666,87 +666,55 @@ UndergroundSilverRetreatMovement2:
 	step_end
 
 UndergroundSilverBeforeText:
-	text "Hold it!"
+	text "WAIT."
+	line "I SAW YOU FAR"
+	cont "AWAY,BEHIND YOU"
+	cont "WANT TO DESTROY"
+	cont "MISSILE BOMB?"
 
-	para "I saw you, so I"
-	line "tailed you."
+	para "IT ISN'T BORE TO"
 
-	para "I don't need you"
-	line "underfoot while I"
-
-	para "take care of TEAM"
-	line "ROCKET."
-
-	para "…Wait a second."
-	line "You beat me be-"
-	cont "fore, didn't you?"
-
-	para "That was just a"
-	line "fluke."
-
-	para "But I repay my"
-	line "debts!"
+	para " "
+	line "AFFECT US ALWAYS."
+	cont "REMEMBER IT,"
+	cont "I WAS DEFEATED"
+	cont "BY YOU"
+	cont "THAT WAS"
+	cont "YOUR LUCK"
+	cont "I WANT YOU TO"
+	cont "REPAY THE DEBET."
 	done
 
 UndergroundSilverWinText:
-	text "…Why…"
-	line "Why do I lose?"
-
-	para "I've assembled the"
-	line "toughest #MON."
-
-	para "I didn't ease up"
-	line "on the gas."
-
-	para "So why do I lose?"
+	text "WHY LOST OUT!?"
+	line "HAVING PREPARED"
+	cont "THE STRONGEST ELFS"
+	cont ",WHY LOST OUT?"
 	done
 
 UndergroundSilverAfterText:
-	text "…I don't under-"
-	line "stand…"
+	text "I DON'T UNDERSTAND"
+	line "MY LOVE,"
+	cont "AS DU SAID,"
+	cont "ISN'T ENOUGH"
+	cont "TO ELFS"
+	cont "THE TRUST"
+	cont "ISN'T ENOUGH,"
+	cont "SO DIDN'T WIN"
+	cont "I DON'T KNOW"
+	cont "THE REASON,"
+	cont "BUT THIS"
+	cont "ISN'T OVER"
 
-	para "Is what that LANCE"
-	line "guy said true?"
+	para "IT WON'T ABANDON"
 
-	para "That I don't treat"
-	line "#MON properly?"
-
-	para "Love…"
-
-	para "Trust…"
-
-	para "Are they really"
-	line "what I lack?"
-
-	para "Are they keeping"
-	line "me from winning?"
-
-	para "I… I just don't"
-	line "understand."
-
-	para "But it's not going"
-	line "to end here."
-
-	para "Not now. Not"
-	line "because of this."
-
-	para "I won't give up my"
-	line "dream of becoming"
-
-	para "the world's best"
-	line "#MON trainer!"
+	para " "
+	line "THE DREAM"
+	cont "FOR LOSING ONLY."
 	done
 
 UndergroundSilverLossText:
-	text "Humph. This is my"
-	line "real power, wimp."
-
-	para "I'll make TEAM"
-	line "ROCKET history."
-
-	para "And I'm going to"
-	line "grind that LANCE"
-	cont "under my heels."
+	text "SOLVED BY FIST"
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
