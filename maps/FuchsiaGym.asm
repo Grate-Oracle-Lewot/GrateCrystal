@@ -371,6 +371,11 @@ FuchsiaGymGuideText:
 
 	para "against psychic"
 	line "and ground."
+
+	para "Steel is complete-"
+	line "ly immune to pois-"
+	cont "on, so that's a"
+	cont "good choice."
 	done
 
 FuchsiaGymGuideWinText:
