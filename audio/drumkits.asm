@@ -90,6 +90,78 @@ Drumkit5:
 	dw Snare14
 	dw Snare13
 	dw Kick2
+Drumkit0S: ;6
+	dw Drum00   
+	dw Snare2
+	dw Snare3   
+	dw Snare4 
+	dw Snare4_Soft 
+	dw Drum05  
+	dw Triangle1_Soft
+	dw Triangle2_Soft
+	dw HiHat1_Soft
+	dw Snare5_Soft
+	dw Snare6_Soft
+	dw Snare7_Soft
+	dw HiHat1
+Drumkit1S: ;7
+	dw Drum00
+	dw HiHat1_Soft
+	dw Snare5_Soft
+	dw Snare6_Soft
+	dw Snare7_Soft
+	dw HiHat2_Soft
+	dw HiHat3_Soft
+	dw Snare8_Soft
+	dw Triangle3_Soft
+	dw Triangle4_Soft
+	dw Snare9_Soft
+	dw Snare10_Soft
+	dw Snare11_Soft
+Drumkit_Empty: ;8
+Drumkit3S: ; 9
+	dw Drum21
+	dw Snare12_Soft
+	dw Snare13_Soft
+	dw Snare14_Soft
+	dw Kick1_Soft
+	dw Triangle5_Soft
+	dw Drum20
+	dw Drum27_Soft
+	dw Drum28_Soft
+	dw Drum29_Soft
+	dw Drum21
+	dw Kick2_Soft
+	dw Crash2_Soft
+
+Drumkit4S:
+	dw Drum00
+	dw Drum20
+	dw Snare13_Soft
+	dw Snare14_Soft
+	dw Kick1_Soft
+	dw Drum33_Soft
+	dw Triangle5_Soft
+	dw Drum35_Soft
+	dw Drum31_Soft
+	dw Drum32_Soft
+	dw Drum36_Soft
+	dw Kick2_Soft
+	dw Crash1
+Drumkit5S:
+	dw Drum00
+	dw Snare9_Soft
+	dw Snare10_Soft
+	dw Snare11_Soft
+	dw Drum27_Soft
+	dw Drum28_Soft 
+	dw Drum29_Soft  
+	dw Drum05      
+	dw Triangle1_Soft 
+	dw Crash1
+	dw Snare14_Soft 
+	dw Snare13_Soft
+	dw Kick2_Soft 
 
 Drum00:
 	noise_note 32, 1, 1, 0
