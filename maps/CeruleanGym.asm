@@ -69,9 +69,6 @@ CeruleanGymMistyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MISTY
-	setevent EVENT_BEAT_SWIMMERF_DIANA
-	setevent EVENT_BEAT_SWIMMERF_BRIANA
-	setevent EVENT_BEAT_SWIMMERM_PARKER
 	opentext
 	writetext ReceivedCascadeBadgeText
 	playsound SFX_GET_BADGE
@@ -344,11 +341,21 @@ CeruleanGymGuideText:
 	text "Yo! CHAMP in"
 	line "making!"
 
-	para "Since MISTY was"
-	line "away, I went out"
+	para "You should know by"
+	line "now that water is"
 
-	para "for some fun too."
-	line "He-he-he."
+	para "weak to grass and"
+	line "electric, and"
+
+	para "strong against"
+	line "fire, rock, and"
+	cont "ground."
+
+	para "You may not know"
+	line "that ice and steel"
+
+	para "are bad against"
+	line "water."
 	done
 
 CeruleanGymGuideWinText:
