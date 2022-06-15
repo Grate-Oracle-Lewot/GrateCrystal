@@ -51,20 +51,26 @@ FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
 FuchsiaCityYoungsterText:
-	text "One of the ELITE"
-	line "FOUR used to be"
+	text "KOGA, JANINE's"
+	line "father, got"
 
-	para "the LEADER of"
-	line "FUCHSIA's GYM."
+	para "promoted from GYM"
+	line "LEADER to ELITE"
+
+	para "FOUR member… but"
+	line "then he got ousted"
+
+	para "by some new guy"
+	line "named LUCAS! It's"
+
+	para "so embarrassing"
+	line "for FUCHSIA…"
 	done
 
 FuchsiaCityPokefanMText:
 	text "KOGA's daughter"
 	line "succeeded him as"
-
-	para "the GYM LEADER"
-	line "after he joined"
-	cont "the ELITE FOUR."
+	cont "the GYM LEADER."
 	done
 
 FuchsiaCityTeacherText:
@@ -116,10 +122,8 @@ SafariZoneClosedSignText:
 	done
 
 NoLitteringSignText:
-	text "No littering."
-
-	para "Please take your"
-	line "waste with you."
+	text "Littering punisha-"
+	line "ble by HYPER BEAM."
 	done
 
 FuchsiaCity_MapEvents:
