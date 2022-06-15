@@ -79,52 +79,44 @@ KogasRoom_EnterMovement:
 	step_end
 
 KogaScript_KogaBeforeText:
-	text "Fwahahahaha!"
+	text "Hellooooo…"
 
-	para "I am KOGA of the"
+	para "I'm LUCAS of the"
 	line "ELITE FOUR."
 
-	para "I live in shadows,"
-	line "a ninja!"
+	para "The guy who made"
+	line "this hack is my"
+	cont "brother."
 
-	para "My intricate style"
-	line "will confound and"
-	cont "destroy you!"
+	para "Oh, and the last"
+	line "guy, A.D.? He's"
+	cont "our cousin."
 
-	para "Confusion, sleep,"
-	line "poison…"
+	para "Crying nepotism"
+	line "won't save you"
+	cont "now."
 
-	para "Prepare to be the"
-	line "victim of my sin-"
-	cont "ister technique!"
-
-	para "Fwahahahaha!"
-
-	para "#MON is not"
-	line "merely about brute"
-
-	para "force--you shall"
-	line "see soon enough!"
+	para "The only way past"
+	line "is to beat me!"
 	done
 
 KogaScript_KogaBeatenText:
-	text "Ah!"
-	line "You have proven"
-	cont "your worth!"
+	text "Ravioli, ravioli,"
+	line "give me the"
+	cont "formuoli!"
 	done
 
 KogaScript_KogaDefeatText:
-	text "I subjected you to"
-	line "everything I could"
-	cont "muster."
+	text "I guess I should"
+	line "mention I drew"
 
-	para "But my efforts"
-	line "failed. I must"
-	cont "hone my skills."
+	para "the front sprites"
+	line "for YANMEGA and"
+	cont "WHIMSICOTT."
 
-	para "Go on to the next"
-	line "room, and put your"
-	cont "abilities to test!"
+	para "You'll see both of"
+	line "them ahead…"
+	cont "Mwahaha…"
 	done
 
 KogasRoom_MapEvents:
