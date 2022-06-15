@@ -10,6 +10,7 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_POKE_BALL5
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -411,6 +412,9 @@ IlexForestAntidote:
 IlexForestEther:
 	itemball ETHER
 
+IlexForestHedger:
+	itemball HEDGER
+
 IlexForestHiddenEther:
 	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
 
@@ -419,9 +423,6 @@ IlexForestHiddenSuperPotion:
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
-
-IlexForestBoulder: ; unreferenced
-	jumpstd StrengthBoulderScript
 
 IlexForestSignpost:
 	jumptext IlexForestSignpostText
@@ -963,3 +964,4 @@ IlexForest_MapEvents:
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 25, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHedger, EVENT_ILEX_FOREST_HEDGER
