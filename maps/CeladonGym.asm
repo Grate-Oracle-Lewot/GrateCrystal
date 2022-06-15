@@ -24,10 +24,6 @@ CeladonGymErikaScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ERIKA
-	setevent EVENT_BEAT_LASS_MICHELLE
-	setevent EVENT_BEAT_PICNICKER_TANYA
-	setevent EVENT_BEAT_BEAUTY_JULIA
-	setevent EVENT_BEAT_TWINS_JO_AND_ZOE
 	opentext
 	writetext PlayerReceivedRainbowBadgeText
 	playsound SFX_GET_BADGE
