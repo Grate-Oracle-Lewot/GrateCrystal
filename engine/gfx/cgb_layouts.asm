@@ -730,7 +730,7 @@ _CGB_TrainerCard:
 	ret
 
 .BadgePalettes:
-INCLUDE "gfx/trainer_card/badges.pal"
+INCLUDE "gfx/trainer_card/johto_badges.pal"
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
@@ -831,7 +831,7 @@ _CGB_TrainerCardKanto:
 	ret
 
 .BadgePalettes:
-INCLUDE "gfx/trainer_card/badges.pal"
+INCLUDE "gfx/trainer_card/kanto_badges.pal"
 
 _CGB_MoveList:
 	ld de, wBGPals1
