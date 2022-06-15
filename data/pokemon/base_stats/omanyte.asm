@@ -6,10 +6,10 @@
 	db ROCK, WATER ; type
 	db 45 ; catch rate
 	db 120 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db HARD_STONE, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
-	db 30 ; step cycles to hatch
+	db 15 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/omanyte/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
