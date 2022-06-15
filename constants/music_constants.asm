@@ -110,6 +110,7 @@
 	const MUSIC_CINNABAR_MANSION             ; 68
 	const MUSIC_SILPH_CO                     ; 69
 	const MUSIC_ROUTE_47                     ; 6a
+	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 6b
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
