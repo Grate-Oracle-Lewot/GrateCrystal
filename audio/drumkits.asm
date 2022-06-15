@@ -5,6 +5,12 @@ Drumkits:
 	dw Drumkit3
 	dw Drumkit4
 	dw Drumkit5
+	dw Drumkit0S
+	dw Drumkit1S 
+	dw Drumkit_Empty
+	dw Drumkit3S
+	dw Drumkit4S
+	dw Drumkit5S
 
 Drumkit0:
 	dw Drum00
