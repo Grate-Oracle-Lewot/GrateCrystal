@@ -47,10 +47,6 @@ EcruteakGymMortyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
-	setevent EVENT_BEAT_SAGE_JEFFREY
-	setevent EVENT_BEAT_SAGE_PING
-	setevent EVENT_BEAT_MEDIUM_MARTHA
-	setevent EVENT_BEAT_MEDIUM_GRACE
 	writetext MortyText_FogBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_SHADOW_BALL
@@ -355,14 +351,23 @@ MediumGraceAfterBattleText:
 
 EcruteakGymGuideText:
 	text "The trainers here"
-	line "have secret mo-"
-	cont "tives."
+	line "use ghost-type"
+	cont "#MON."
 
-	para "If you win, they"
-	line "may tell you some"
+	para "Normal-type moves"
+	line "have no effect on"
+	cont "them!"
 
-	para "deep secrets about"
-	line "ECRUTEAK."
+
+	para "Ghost is good ag-"
+	line "ainst itself,"
+	cont "though."
+
+	para "Dark is a good"
+	line "choice too."
+
+	para "I'd avoid using"
+	line "poison."
 	done
 
 EcruteakGymGuideWinText:
@@ -378,10 +383,10 @@ EcruteakGymClosedText:
 	text "MORTY, the GYM"
 	line "LEADER, is absent."
 
-	para "Sorry, but you'll"
-	line "have to leave."
+	para "He paid me to kick"
+	line "out challengers."
 
-	para "Hohohoho."
+	para "That's you, bud."
 	done
 
 EcruteakGym_MapEvents:
