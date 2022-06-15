@@ -143,17 +143,17 @@ BlackthornCityMartSign:
 	jumpstd MartSignScript
 
 Text_ClairIsOut:
-	text "I am sorry."
-
-	para "CLAIR, our GYM"
+	text "CLAIR, our GYM"
 	line "LEADER, entered"
 
 	para "the DRAGON'S DEN"
 	line "behind the GYM."
 
-	para "I have no idea"
-	line "when our LEADER"
-	cont "will return."
+	para "She paid me to"
+	line "stand here until"
+
+	para "she comes back"
+	line "out."
 	done
 
 Text_ClairIsIn:
