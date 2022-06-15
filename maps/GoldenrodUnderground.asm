@@ -11,6 +11,7 @@ GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
 	const GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_GRANNY
+	const GOLDENRODUNDERGROUND_ROCKET
 
 GoldenrodUnderground_MapScripts:
 	def_scene_scripts
@@ -151,6 +152,17 @@ TrainerPokemaniacDonald:
 	endifjustbattled
 	opentext
 	writetext PokemaniacDonaldAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGruntM23:
+	trainer GRUNTM, GRUNTM_23, EVENT_BEAT_ROCKET_GRUNTM_23, GruntM23SeenText, GruntM23BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GruntM23AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -509,6 +521,19 @@ PokemaniacDonaldAfterBattleText:
 	cont "#MON."
 	done
 
+GruntM23SeenText:
+	text "Where do you think"
+	line "you're going?"
+	done
+
+GruntM23BeatenText:
+	text "Grr…"
+	done
+
+GruntM23AfterBattleText:
+	text "Don't talk to me."
+	done
+
 GoldenrodUndergroundTheDoorsLockedText:
 	text "The door's locked…"
 	done
@@ -672,6 +697,7 @@ GoldenrodUnderground_MapEvents:
 	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1
 	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
 	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
+	object_event 17,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM23, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
 	object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
 	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
