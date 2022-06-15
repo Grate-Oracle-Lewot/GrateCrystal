@@ -258,3 +258,136 @@ Kick2:
 	noise_note 32, 10, 8, 107
 	noise_note 32, 7, 1, 0
 	sound_ret
+
+;Softer Noise Notes
+
+Snare12_Soft:
+	noise C#,  1, $81, $33
+	endchannel
+
+Snare13_Soft:
+	noise C#,  1, $41, $32
+	endchannel
+
+Snare14_Soft:
+	noise C#,  1, $71, $31
+	endchannel
+
+Kick1_Soft:
+	noise C#,  1, $78, $6b
+	noise C#,  1, $61, $00
+	endchannel
+
+Triangle5_Soft:
+	noise D_,  1, $81, $18
+	endchannel
+
+Drum27_Soft:
+	noise C#,  8, $82, $10
+	endchannel
+
+Drum28_Soft:
+	noise D_,  4, $81, $00
+	noise D_,  4, $11, $00
+	endchannel
+
+Drum29_Soft:
+	noise D_,  4, $81, $11
+	noise D_,  4, $11, $00
+	endchannel
+
+Drum31_Soft:
+	noise D_,  4, $41, $21
+	noise D_,  4, $11, $11
+	endchannel
+
+Drum32_Soft:
+	noise D_,  4, $41, $50
+	noise D_,  4, $11, $11
+	endchannel
+
+Drum33_Soft: ; e8fa5
+	noise C#,  1, $91, $31
+	endchannel
+
+Drum35_Soft:
+	noise D_,  4, $71, $00
+	noise D_,  4, $11, $00
+	endchannel
+
+Drum36_Soft:
+	noise D_,  4, $71, $21
+	noise D_,  4, $11, $11
+	endchannel
+
+Snare4_Soft:
+	noise C#,  1, $71, $33
+	endchannel
+
+Snare5_Soft:
+	noise C#,  1, $72, $23
+	endchannel
+
+Snare6_Soft:
+	noise C#,  1, $72, $25
+	endchannel
+
+Snare7_Soft:
+	noise C#,  1, $72, $26
+	endchannel
+
+Snare8_Soft:
+	noise C#,  1, $92, $50
+	endchannel
+
+Snare9_Soft:
+	noise C#,  1, $81, $22
+	endchannel
+
+Snare10_Soft:
+	noise C#,  1, $61, $22
+	endchannel
+
+Snare11_Soft:
+	noise C#,  1, $51, $22
+	endchannel
+
+Kick2_Soft:
+	noise C#,  1, $98, $6b
+	noise C#,  1, $61, $00
+	endchannel
+
+Crash2_Soft:
+	noise C#,  1, $74, $12
+	endchannel
+
+Triangle1_Soft:
+	noise C#,  1, $61, $2a
+	endchannel
+
+Triangle2_Soft:
+	noise C#,  2, $31, $2b
+	noise C#,  1, $51, $2a
+	endchannel
+
+Triangle3_Soft:
+	noise C#,  1, $91, $18
+	noise C#,  1, $21, $33
+	endchannel
+
+Triangle4_Soft:
+	noise C#,  3, $81, $28
+	noise C#,  1, $61, $18
+	endchannel
+
+HiHat1_Soft:
+	noise C#,  1, $71, $10
+	endchannel
+
+HiHat2_Soft:
+	noise C#,  1, $91, $10
+	endchannel
+
+HiHat3_Soft:
+	noise C#,  1, $92, $11
+	endchannel
