@@ -6,7 +6,7 @@
 	db ROCK, FLYING ; type
 	db 45 ; catch rate
 	db 202 ; base exp
-	db HARD_STONE, HARD_STONE ; items
+	db HARD_STONE, REVIVAL_HERB ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
 	db 18 ; step cycles to hatch
