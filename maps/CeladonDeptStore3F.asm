@@ -48,19 +48,23 @@ CeladonDeptStore3FDirectory:
 	jumptext CeladonDeptStore3FDirectoryText
 
 CeladonDeptStore3FYoungsterText:
-	text "I can't decide"
-	line "which #MON I"
+	text "Pssst… In this"
+	line "hack, TMs can be"
 
-	para "should use this TM"
-	line "on…"
+	para "used multiple"
+	line "times."
+	
+	para "If you find an"
+	line "extra copy of one,"
+	cont "sell it for cash!"
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
-	text "Uh-oh! I traded my"
-	line "#MON without"
+	text "UP-GRADE evolves"
+	line "PORYGON by trade,"
 
-	para "removing the UP-"
-	line "GRADE from it."
+	para "or by use like an"
+	line "evolution stone."
 	done
 
 CeladonDeptStore3FGameboyKid2Text:
