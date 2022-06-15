@@ -1,5 +1,6 @@
 	object_const_def
 	const CELADONPOKECENTER1F_NURSE
+	const CELADONPOKECENTER1F_CHANSEY
 	const CELADONPOKECENTER1F_GENTLEMAN
 	const CELADONPOKECENTER1F_PHARMACIST
 	const CELADONPOKECENTER1F_COOLTRAINER_F
@@ -12,6 +13,9 @@ CeladonPokecenter1F_MapScripts:
 
 CeladonPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+
+CeladonPokecenter1FChanseyScript:
+	jumpstd PokecenterChanseyScript
 
 CeladonPokecenter1FGentlemanScript:
 	jumpstd HappinessCheckScript
@@ -40,6 +44,11 @@ CeladonEusine:
 
 .HoOh:
 	writetext EusineLeavesCeladonText
+	promptbutton
+	verbosegiveitem RAINBOW_WING
+	closetext
+	setevent EVENT_GOT_RAINBOW_WING
+	writetext EusineRainbowWingText
 	waitbutton
 	closetext
 	readvar VAR_FACING
@@ -117,8 +126,25 @@ EusineLeavesCeladonText:
 	para "now I'm headed to"
 	line "ECRUTEAK."
 
-	para "I'll be seeing"
-	line "you, <PLAYER>!"
+	para "Meet me there,"
+	line "won't you?"
+
+	para "Oh--and take this."
+	done
+
+EusineRainbowWingText:
+	text "I found it at the"
+	line "TIN TOWER after"
+
+	para "you battled SUI-"
+	line "CUNE. It looks"
+
+	para "like it came from"
+	line "HO-OH. It might"
+	cont "come in handy!"
+
+	para "See you at the"
+	line "TOWER!"
 	done
 
 NoBeastsText:
@@ -156,7 +182,8 @@ CeladonPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FNurseScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FNurseScript, -1
+	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FChanseyScript, -1
 	object_event  1,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FGentlemanScript, -1
 	object_event  0,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FPharmacistScript, -1
 	object_event  8,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerFScript, -1
