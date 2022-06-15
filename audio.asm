@@ -72,7 +72,6 @@ INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
-INCLUDE "audio/music/magnettrain.asm"
 INCLUDE "audio/music/printer.asm"
 
 
@@ -143,6 +142,7 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
+INCLUDE "audio/music/magnettrain.asm" ; 2
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/silphco.asm"
