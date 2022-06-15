@@ -35,11 +35,6 @@ MahoganyGymPryceScript:
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
-	setevent EVENT_BEAT_SKIER_ROXANNE
-	setevent EVENT_BEAT_SKIER_CLARISSA
-	setevent EVENT_BEAT_BOARDER_RONALD
-	setevent EVENT_BEAT_BOARDER_BRAD
-	setevent EVENT_BEAT_BOARDER_DOUGLAS
 	writetext PryceText_GlacierBadgeSpeech
 	promptbutton
 	verbosegiveitem TM_ICY_WIND
@@ -199,13 +194,10 @@ Text_ReceivedGlacierBadge:
 
 PryceText_GlacierBadgeSpeech:
 	text "That BADGE will"
-	line "raise the SPECIAL"
-	cont "stats of #MON."
+	line "let your #MON"
 
-	para "It also lets your"
-	line "#MON use WHIRL-"
-	cont "POOL to get across"
-	cont "real whirlpools."
+	para "use WHIRLPOOL"
+	line "outside of battle."
 
 	para "And this… This is"
 	line "a gift from me!"
@@ -345,17 +337,21 @@ MahoganyGymGuideText:
 	para "#MON for some"
 	line "50 years."
 
-	para "He's said to be"
-	line "good at freezing"
+	para "He uses the ice-"
+	line "type. You can"
 
-	para "opponents with"
-	line "ice-type moves."
+	para "probably guess"
+	line "that fire is a"
+	cont "good choice."
 
-	para "That means you"
-	line "should melt him"
+	para "Fighting, rock,"
+	line "or steel will work"
+	cont "too."
 
-	para "with your burning"
-	line "ambition!"
+	para "Ice is good again-"
+	line "st grass, ground,"
+	cont "flying, and drag-"
+	cont "on. Go for it!"
 	done
 
 MahoganyGymGuideWinText:
