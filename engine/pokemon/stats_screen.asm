@@ -870,20 +870,20 @@ LoadOrangePage:
 
 .print
 	ld [wTextDecimalByte], a
-	hlcoord 3, 13
+	hlcoord 3, 14
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
 	ld de, MetAtLevelString
-	hlcoord 1, 12
+	hlcoord 1, 13
 	call PlaceString
-	hlcoord 2, 13
+	hlcoord 2, 14
 	ld [hl], "<LV>"
 	ret
 
 .unknown_level
 	ld de, MetUnknownLevelString
-	hlcoord 2, 12
+	hlcoord 2, 13
 	call PlaceString
 	ret
 
