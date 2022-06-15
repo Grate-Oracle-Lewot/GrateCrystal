@@ -1199,8 +1199,8 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NATIONAL DEX"
-	next "REGIONAL DEX"
+	db   "REGIONAL DEX"
+	next "NATIONAL DEX"
 	next "A to Z MODE"
 	db   "@"
 
