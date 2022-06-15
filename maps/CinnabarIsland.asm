@@ -40,71 +40,63 @@ CinnabarIslandBlueTeleport:
 	step_end
 
 CinnabarIslandBlueText:
-	text "Who are you?"
+	text "Who are you"
+	line "supposed to be?"
 
-	para "Well, it's plain"
-	line "to see that you're"
-	cont "a trainer…"
+	para "…A strong trainer"
+	line "from JOHTO? Ha!"
 
-	para "My name's BLUE."
+	para "I'll buy the JOHTO"
+	line "part, anyway."
 
-	para "I was once the"
-	line "CHAMPION, although"
+	para "Well big shot, I'm"
+	line "BLUE, the LEADER"
+	cont "of VIRIDIAN GYM."
 
-	para "it was for only a"
-	line "short time…"
+	para "I'm investigating"
+	line "what happened"
+	cont "here…"
 
-	para "That meddling RED"
-	line "did me in…"
+	para "Word is, the lab"
+	line "on CINNABAR had"
 
-	para "Anyway, what do"
-	line "you want? You want"
+	para "created a new"
+	line "#MON, but it"
 
-	para "to challenge me or"
-	line "something?"
+	para "went rogue and"
+	line "destroyed the"
+	cont "whole town!"
 
-	para "…I hate to say"
-	line "it, but I'm not in"
+	para "I doubt it's true,"
+	line "but either way"
 
-	para "the mood for a"
-	line "battle now."
+	para "there's not much"
+	line "evidence left."
 
-	para "Take a good look"
-	line "around you…"
+	para "I'm late to the"
+	line "party, anyway."
 
-	para "A volcano erupts,"
-	line "and just like"
+	para "This all went down"
+	line "a few years ago,"
 
-	para "that, a whole town"
-	line "disappears."
+	para "shortly after that"
+	line "meddling RED"
 
-	para "We can go on win-"
-	line "ning and losing in"
+	para "prematurely ended"
+	line "my run as CHAMP."
 
-	para "#MON. But if"
-	line "nature so much as"
+	para "Look, what say we"
+	line "ditch this scene"
 
-	para "twitches, we can"
-	line "lose in a second."
+	para "and head back to"
+	line "my GYM?"
 
-	para "…"
+	para "Meet me in VIR-"
+	line "IDIAN, and we'll"
 
-	para "That's the way it"
-	line "is…"
-
-	para "But, anyway, I'm"
-	line "still a trainer."
-
-	para "If I see a strong"
-	line "opponent, it makes"
-	cont "me want to battle."
-
-	para "If you want to"
-	line "battle me, come to"
-	cont "the VIRIDIAN GYM."
-
-	para "I'll take you on"
-	line "then."
+	para "find out how"
+	line "strong you really"
+	cont "are!"
 	done
 
 CinnabarIslandGymSignText:
