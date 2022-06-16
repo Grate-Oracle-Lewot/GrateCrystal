@@ -727,10 +727,10 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	attackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AllUpHit:
@@ -1127,14 +1127,6 @@ Rage:
 	kingsrock
 	endmove
 
-Mimic:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	mimic
-	endmove
-
 Metronome:
 	checkobedience
 	usedmovetext
@@ -1150,41 +1142,12 @@ LeechSeed:
 	leechseed
 	endmove
 
-Splash:
-	checkobedience
-	usedmovetext
-	doturn
-	splash
-	endmove
-
 Disable:
 	checkobedience
 	usedmovetext
 	doturn
 	checkhit
 	disable
-	endmove
-
-RazorWind:
-	checkcharge
-	checkobedience
-	doturn
-	charge
-	usedmovetext
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
 	endmove
 
 Fly:
@@ -1283,14 +1246,6 @@ Encore:
 	doturn
 	checkhit
 	encore
-	endmove
-
-PainSplit:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	painsplit
 	endmove
 
 Snore:
@@ -1458,28 +1413,6 @@ Nightmare:
 	usedmovetext
 	doturn
 	nightmare
-	endmove
-
-FlameWheel:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	effectchance
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	defrost
-	checkfaint
-	buildopponentrage
-	burntarget
 	endmove
 
 Curse:
@@ -1671,28 +1604,6 @@ Safeguard:
 	safeguard
 	endmove
 
-SacredFire:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	effectchance
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	defrost
-	checkfaint
-	buildopponentrage
-	burntarget
-	endmove
-
 Magnitude:
 	checkobedience
 	usedmovetext
@@ -1817,16 +1728,6 @@ SunnyDay:
 	usedmovetext
 	doturn
 	startsun
-	endmove
-
-FakeOut:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	fakeout
-	moveanim
-	failuretext
 	endmove
 
 BellyDrum:
