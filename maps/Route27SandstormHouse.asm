@@ -72,11 +72,12 @@ SandstormHouseSandstormDescription:
 	line "inflicts damage on"
 	cont "both battlers."
 
-	para "It's for advanced"
-	line "trainers only."
+	para "You'll see natural"
+	line "sandstorms inside"
 
-	para "Use it if you"
-	line "dare. Good luck!"
+	para "VICTORY ROAD, so"
+	line "you'd best learn"
+	cont "to deal with it."
 	done
 
 SandstormHouseWomanDisloyalText:
