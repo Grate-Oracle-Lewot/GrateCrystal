@@ -24,10 +24,6 @@ SaffronGymSabrinaScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SABRINA
-	setevent EVENT_BEAT_MEDIUM_REBECCA
-	setevent EVENT_BEAT_MEDIUM_DORIS
-	setevent EVENT_BEAT_PSYCHIC_FRANKLIN
-	setevent EVENT_BEAT_PSYCHIC_JARED
 	opentext
 	writetext ReceivedMarshBadgeText
 	playsound SFX_GET_BADGE
@@ -153,16 +149,16 @@ SabrinaWinLossText:
 
 	para "OK, you win. You"
 	line "earned yourself"
-	cont "MARSHBADGE."
+	cont "SOULBADGE."
 	done
 
 ReceivedMarshBadgeText:
 	text "<PLAYER> received"
-	line "MARSHBADGE."
+	line "SOULBADGE."
 	done
 
 SabrinaMarshBadgeText:
-	text "SABRINA: MARSH-"
+	text "SABRINA: SOUL-"
 	line "BADGE draws out"
 
 	para "your subliminal"
@@ -268,19 +264,16 @@ SaffronGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
 
-	para "A trainer as"
-	line "skilled as you"
+	para "This GYM is all"
+	line "about the psychic"
+	cont "type."
 
-	para "doesn't need to be"
-	line "told how to deal"
+	para "Dark, ghost, and"
+	line "bug are good"
+	cont "choices."
 
-	para "with psychic-type"
-	line "#MON, right?"
-
-	para "I expect great"
-	line "things from you!"
-
-	para "Good luck!"
+	para "Avoid using fight-"
+	line "ing or poison."
 	done
 
 SaffronGymGuideWinText:
