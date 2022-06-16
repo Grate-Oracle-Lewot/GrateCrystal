@@ -1,158 +1,183 @@
 	object_const_def
-	const TRAINERHOUSE1F_RECEPTIONIST
-	const TRAINERHOUSE1F_COOLTRAINER_M
-	const TRAINERHOUSE1F_COOLTRAINER_F
-	const TRAINERHOUSE1F_YOUNGSTER
-	const TRAINERHOUSE1F_GENTLEMAN
+	const TRAINERHOUSEB1F_RECEPTIONIST
+	const TRAINERHOUSEB1F_CHRIS
 
-TrainerHouse1F_MapScripts:
+TrainerHouseB1F_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
 
 	def_callbacks
 
-TrainerHouse1FReceptionistScript:
-	jumptextfaceplayer TrainerHouse1FReceptionistText
+.DummyScene:
+	end
 
-TrainerHouse1FCooltrainerMScript:
-	jumptextfaceplayer TrainerHouse1FCooltrainerMText
+TrainerHouseReceptionistScript:
+	turnobject PLAYER, UP
+	opentext
+	checkflag ENGINE_FOUGHT_IN_TRAINER_HALL_TODAY
+	iftrue .FoughtTooManyTimes
+	writetext TrainerHouseB1FIntroText
+	promptbutton
+	special TrainerHouse
+	iffalse .GetCal3Name
+	gettrainername STRING_BUFFER_3, CAL, CAL1
+	sjump .GotName
 
-TrainerHouse1FCooltrainerFScript:
-	jumptextfaceplayer TrainerHouse1FCooltrainerFText
+.GetCal3Name:
+	gettrainername STRING_BUFFER_3, CAL, CAL1
+.GotName:
+	writetext TrainerHouseB1FYourOpponentIsText
+	promptbutton
+	writetext TrainerHouseB1FAskWantToBattleText
+	yesorno
+	iffalse .Declined
+	setflag ENGINE_FOUGHT_IN_TRAINER_HALL_TODAY
+	writetext TrainerHouseB1FGoRightInText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_EnterTrainerHouseBattleRoom
+	opentext
+	writetext TrainerHouseB1FCalBeforeText
+	waitbutton
+	closetext
+	special TrainerHouse
+	iffalse .NoSpecialBattle
+	winlosstext TrainerHouseB1FCalBeatenText, 0
+	setlasttalked TRAINERHOUSEB1F_CHRIS
+	loadtrainer CAL, CAL1
+	startbattle
+	reloadmapafterbattle
+	iffalse .End
+.NoSpecialBattle:
+	winlosstext TrainerHouseB1FCalBeatenText, 0
+	setlasttalked TRAINERHOUSEB1F_CHRIS
+	loadtrainer CAL, CAL1
+	startbattle
+	reloadmapafterbattle
+.End:
+	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
+	end
 
-TrainerHouse1FYoungsterScript:
-	jumptextfaceplayer TrainerHouse1FYoungsterText
+.Declined:
+	writetext TrainerHouseB1FPleaseComeAgainText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_TrainerHouseTurnBack
+	end
 
-TrainerHouse1FGentlemanScript:
-	jumptextfaceplayer TrainerHouse1FGentlemanText
+.FoughtTooManyTimes:
+	writetext TrainerHouseB1FSecondChallengeDeniedText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_TrainerHouseTurnBack
+	end
 
-TrainerHouseSign1:
-	jumptext TrainerHouseSign1Text
+Movement_EnterTrainerHouseBattleRoom:
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	turn_head RIGHT
+	step_end
 
-TrainerHouseSign2:
-	jumptext TrainerHouseSign2Text
+Movement_ExitTrainerHouseBattleRoom:
+	step UP
+	step UP
+	step UP
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
 
-TrainerHouseIllegibleBook:
-	jumptext TrainerHouseIllegibleText
+Movement_TrainerHouseTurnBack:
+	step RIGHT
+	turn_head LEFT
+	step_end
 
-TrainerHouse1FReceptionistText:
-	text "Welcome to TRAINER"
-	line "HOUSE, the newest"
+TrainerHouseB1FIntroText:
+	text "Hi. Welcome to our"
+	line "TRAINING HALL."
 
-	para "and most happening"
-	line "place in VIRIDIAN."
-
-	para "We're open to"
-	line "trainers only."
-
-	para "You can battle"
-	line "against the best"
-
-	para "of the best right"
-	line "downstairs."
+	para "You may battle a"
+	line "trainer once per"
+	cont "day."
 	done
 
-TrainerHouse1FCooltrainerMText:
-	text "VIRIDIAN is the"
-	line "town closest to"
-	cont "INDIGO PLATEAU."
-
-	para "They built this"
-	line "place because so"
-
-	para "many trainers pass"
-	line "through on their"
-
-	para "way up to INDIGO"
-	line "PLATEAU."
+TrainerHouseB1FYourOpponentIsText:
+	text_ram wStringBuffer3
+	text " is your"
+	line "opponent today."
 	done
 
-TrainerHouse1FCooltrainerFText:
-	text "They hold practice"
-	line "battles downstairs"
-	cont "here."
-
-	para "I would love to"
-	line "see how well a"
-
-	para "trainer from JOHTO"
-	line "battles."
+TrainerHouseB1FAskWantToBattleText:
+	text "Would you like to"
+	line "battle?"
 	done
 
-TrainerHouse1FYoungsterText:
-	text "I guess you can't"
-	line "become the CHAMP"
+TrainerHouseB1FGoRightInText:
+	text "Please go right"
+	line "through."
 
-	para "unless you go all"
-	line "over the place and"
-
-	para "battle all kinds"
-	line "of people."
-
-	para "The CHAMPION from"
-	line "PALLET traveled to"
-
-	para "all the cities and"
-	line "towns in KANTO."
+	para "You may begin"
+	line "right away."
 	done
 
-TrainerHouse1FGentlemanText:
-	text "Whew… I'm taking a"
-	line "rest from #MON"
-	cont "battles."
+TrainerHouseB1FPleaseComeAgainText:
+	text "Sorry. Only those"
+	line "trainers who will"
+
+	para "be battling are"
+	line "allowed to go in."
 	done
 
-TrainerHouseSign1Text:
-	text "Practice battles"
-	line "are held in the"
+TrainerHouseB1FSecondChallengeDeniedText:
+	text "I'm sorry."
+	line "This would be your"
 
-	para "TRAINING HALL"
-	line "downstairs."
+	para "second time today."
+	line "You're permitted"
 
-	para "Skilled trainers"
-	line "are invited to"
-	cont "participate."
+	para "to enter just once"
+	line "a day."
 	done
 
-TrainerHouseSign2Text:
-	text "There are no rules"
-	line "or regulations for"
-
-	para "practice matches."
-	line "Just like in field"
-
-	para "battles, anything"
-	line "goes!"
+TrainerHouseB1FCalBeatenText:
+	text "I lost…"
+	line "Darn…"
 	done
 
-TrainerHouseIllegibleText:
-	text "…What's this?"
-	line "A strategy memo?"
-
-	para "This writing looks"
-	line "like ONIX tracks…"
-
-	para "It's completely"
-	line "illegible…"
+TrainerHouseB1FCalBeforeText:
+	text "I traveled out"
+	line "here just so I"
+	cont "could battle you."
 	done
 
-TrainerHouse1F_MapEvents:
+TrainerHouseB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2, 13, VIRIDIAN_CITY, 3
-	warp_event  3, 13, VIRIDIAN_CITY, 3
-	warp_event  8,  2, TRAINER_HOUSE_B1F, 1
+	warp_event  9,  4, TRAINER_HOUSE_1F, 3
 
 	def_coord_events
+	coord_event  7,  3, SCENE_DEFAULT, TrainerHouseReceptionistScript
 
 	def_bg_events
-	bg_event  5,  0, BGEVENT_READ, TrainerHouseSign1
-	bg_event  7,  0, BGEVENT_READ, TrainerHouseSign2
-	bg_event  7, 10, BGEVENT_READ, TrainerHouseIllegibleBook
 
 	def_object_events
-	object_event  0, 11, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FReceptionistScript, -1
-	object_event  7, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FCooltrainerMScript, -1
-	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FCooltrainerFScript, -1
-	object_event  4,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FYoungsterScript, -1
-	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouse1FGentlemanScript, -1
+	object_event  7,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6, 11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
