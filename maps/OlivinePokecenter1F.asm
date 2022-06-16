@@ -1,5 +1,6 @@
 	object_const_def
 	const OLIVINEPOKECENTER1F_NURSE
+	const OLIVINEPOKECENTER1F_CHANSEY
 	const OLIVINEPOKECENTER1F_FISHING_GURU
 	const OLIVINEPOKECENTER1F_FISHER
 	const OLIVINEPOKECENTER1F_TEACHER
@@ -12,6 +13,9 @@ OlivinePokecenter1F_MapScripts:
 OlivinePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
+OlivinePokecenter1FChanseyScript:
+	jumpstd PokecenterChanseyScript
+
 OlivinePokecenter1FFishingGuruScript:
 	jumpstd HappinessCheckScript
 
@@ -22,17 +26,23 @@ OlivinePokecenter1FTeacherScript:
 	jumptextfaceplayer OlivinePokecenter1FTeacherText
 
 OlivinePokecenter1FFisherText:
-	text "The SAILOR in the"
+	text "The old man in the"
 	line "OLIVINE CAFE next"
 
-	para "door is really"
-	line "generous."
+	para "door claims to be"
+	line "from outer space."
 
-	para "He taught my"
-	line "#MON STRENGTH."
+	para "He can teach your"
+	line "#MON how to"
 
-	para "Now it can move"
-	line "big boulders."
+	para "move boulders with"
+	line "their minds."
+
+	para "He calls it 'using"
+	line "THE FORCE,' but I"
+
+	para "don't know what"
+	line "that means."
 	done
 
 OlivinePokecenter1FTeacherText:
@@ -58,7 +68,8 @@ OlivinePokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FNurseScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FNurseScript, -1
+	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FChanseyScript, -1
 	object_event  8,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFishingGuruScript, -1
 	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFisherScript, -1
 	object_event  7,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FTeacherScript, -1
