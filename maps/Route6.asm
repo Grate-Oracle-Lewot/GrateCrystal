@@ -37,11 +37,15 @@ Route6UndergroundPathSign:
 	jumptext Route6UndergroundPathSignText
 
 Route6PokefanMText:
-	text "The road is closed"
-	line "until the problem"
+	text "The POWER PLANT's"
+	line "MANAGER paid me to"
 
-	para "at the POWER PLANT"
-	line "is solved."
+	para "stand here until"
+	line "the lights turn"
+	cont "back on."
+
+	para "Sorry, I can't"
+	line "let you through."
 	done
 
 Route6UndergroundPathSignText:
