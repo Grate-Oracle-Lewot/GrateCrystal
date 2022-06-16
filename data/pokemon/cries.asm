@@ -116,7 +116,7 @@ PokemonCries::
 	mon_cry CRY_SEEL,          0,  256 ; LICKITUNG
 	mon_cry CRY_GOLEM,       230,  349 ; KOFFING
 	mon_cry CRY_GOLEM,       255,  383 ; WEEZING
-	mon_cry CRY_CHARMANDER,    0,  256 ; RHYHORN
+	mon_cry CRY_CHARMANDER,    0,  287 ; RHYHORN
 	mon_cry CRY_RHYDON,        0,  256 ; RHYDON
 	mon_cry CRY_PIDGEOTTO,    10,  320 ; CHANSEY
 	mon_cry CRY_GOLEM,         0,  256 ; TANGELA
@@ -137,7 +137,7 @@ PokemonCries::
 	mon_cry CRY_EKANS,       128,  128 ; MAGIKARP
 	mon_cry CRY_EKANS,         0,  256 ; GYARADOS
 	mon_cry CRY_LAPRAS,        0,  256 ; LAPRAS
-	mon_cry CRY_PIDGEY,      255,  383 ; DITTO
+	mon_cry CRY_PIDGEY,      251,  383 ; DITTO
 	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
 	mon_cry CRY_VENONAT,     170,  383 ; VAPOREON
 	mon_cry CRY_VENONAT,      61,  256 ; JOLTEON
@@ -257,9 +257,9 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	mon_cry CRY_TOTODILE,   -420,  420 ; YANMEGA
+	mon_cry CRY_RAIKOU,      100,  560 ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 252
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 253
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
 	assert_table_length $ff
