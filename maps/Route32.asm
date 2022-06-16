@@ -50,15 +50,11 @@ Route32CooltrainerMContinueScene:
 	iftrue .GotMiracleSeed
 	checkflag ENGINE_ZEPHYRBADGE
 	iffalse .DontHaveZephyrBadge
+	checkflag ENGINE_UNLOCKED_UNOWNS_A_TO_K
+	iffalse .DidntUnlockUnowns
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue .GiveMiracleSeed
 	writetext Route32CooltrainerMText_AideIsWaiting
-	waitbutton
-	closetext
-	end
-
-.GoToSproutTower: ; unreferenced
-	writetext Route32CooltrainerMText_UnusedSproutTower
 	waitbutton
 	closetext
 	end
@@ -73,6 +69,12 @@ Route32CooltrainerMContinueScene:
 
 .DontHaveZephyrBadge:
 	writetext Route32CooltrainerMText_VioletGym
+	waitbutton
+	closetext
+	end
+
+.DidntUnlockUnowns:
+	writetext Route32CooltrainerMText_RuinsOfAlph
 	waitbutton
 	closetext
 	end
@@ -168,12 +170,9 @@ TrainerFisherRalph1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_FISHER_RALPH
-	endifjustbattled
 	opentext
 	checkflag ENGINE_RALPH_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkflag ENGINE_QWILFISH_SWARM
-	iftrue .Swarm
 	checkcellnum PHONE_FISHER_RALPH
 	iftrue .NumberAccepted
 	checkevent EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
@@ -254,12 +253,6 @@ TrainerFisherRalph1:
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.Swarm:
-	writetext FisherRalphSwarmText
-	waitbutton
-	closetext
-	end
-
 .AskNumber1:
 	jumpstd AskNumber1MScript
 	end
@@ -304,7 +297,6 @@ TrainerPicnickerLiz1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_LIZ
-	endifjustbattled
 	opentext
 	checkflag ENGINE_LIZ_READY_FOR_REMATCH
 	iftrue .Rematch
@@ -523,8 +515,7 @@ Movement_Route32CooltrainerMReset2:
 	step_end
 
 Route32CooltrainerMText_WhatsTheHurry:
-	text "Wait up!"
-	line "What's the hurry?"
+	text "Whoa, whoa, whoa!"
 	done
 
 Route32CooltrainerMText_AideIsWaiting:
@@ -534,59 +525,51 @@ Route32CooltrainerMText_AideIsWaiting:
 	para "glasses was look-"
 	line "ing for you."
 
-	para "See for yourself."
-	line "He's waiting for"
+	para "In fact, he paid"
+	line "me not to let you"
 
-	para "you at the #MON"
-	line "CENTER."
-	done
-
-Route32CooltrainerMText_UnusedSproutTower:
-	text "Have you gone to"
-	line "SPROUT TOWER?"
-
-	para "If you ever visit"
-	line "VIOLET CITY, "
-
-	para "they'll expect you"
-	line "to train there."
-
-	para "That's basic for"
-	line "trainers. Go to"
-	cont "SPROUT TOWER!"
+	para "through until you"
+	line "meet him at the"
+	cont "#MON CENTER."
 	done
 
 Route32CooltrainerMText_VioletGym:
-	text "Have you gone to"
-	line "the #MON GYM?"
+	text "Sorry, kid, but"
+	line "FALKNER paid me"
 
-	para "You can test your"
-	line "#MON and your-"
-	cont "self there."
+	para "not to let you"
+	line "through until you"
 
-	para "It's a rite of"
-	line "passage for all"
-	cont "trainers!"
+	para "battle him at the"
+	line "VIOLET GYM."
+
+	para "I guess he's gett-"
+	line "ing desperate for"
+	cont "challengers…"
+	done
+
+Route32CooltrainerMText_RuinsOfAlph:
+	text "Nobody's allowed"
+	line "through right now."
+
+	para "The eggheads at"
+	line "the RUINS OF ALPH"
+
+	para "paid me not to let"
+	line "anyone pass until"
+
+	para "somebody solves"
+	line "one of those stone"
+	text "puzzles."
 	done
 
 Route32CooltrainerMText_HaveThisSeed:
-	text "You have some good"
-	line "#MON there."
+	text "Hey, kid. Sorry"
+	line "about blocking the"
+	cont "path."
 
-	para "It must be from"
-	line "the training you"
-
-	para "gave them around"
-	line "VIOLET CITY."
-
-	para "The training at"
-	line "the GYM must have"
-
-	para "been especially"
-	line "helpful."
-
-	para "As a souvenir of"
-	line "VIOLET CITY, take"
+	para "Let me make up for"
+	line "it by giving you"
 	cont "this."
 
 	para "It increases the"
@@ -599,7 +582,7 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 	line "in VIOLET CITY"
 
 	para "should be useful"
-	line "for your journey."
+	line "on your journey."
 	done
 
 Text_MillionDollarSlowpokeTail:
@@ -667,63 +650,13 @@ FisherRalphAfterText:
 	line "long friends!"
 	done
 
-FisherRalphSwarmText:
-	text "One, two, three…"
-	line "Muahahaha, what a"
-
-	para "great haul!"
-	line "I'm done! Go ahead"
-
-	para "and catch as many"
-	line "as you can, kid!"
-	done
-
-Route32UnusedFisher1SeenText: ; unreferenced
-	text "I keep catching"
-	line "the same #MON…"
-
-	para "Maybe a battle"
-	line "will turn things"
-	cont "around for me."
-	done
-
-Route32UnusedFisher1BeatenText: ; unreferenced
-	text "Nothing ever goes"
-	line "right for me now…"
-	done
-
-Route32UnusedFisher1AfterText: ; unreferenced
-	text "How come the guy"
-	line "next to me catches"
-	cont "good #MON?"
-	done
-
-Route32UnusedFisher2SeenText: ; unreferenced
-	text "Heh, I'm on a roll"
-	line "today. How about a"
-	cont "battle, kid?"
-	done
-
-Route32UnusedFisher2BeatenText: ; unreferenced
-	text "Oof. I wasn't"
-	line "lucky that time."
-	done
-
-Route32UnusedFisher2AfterText: ; unreferenced
-	text "You have to have a"
-	line "good ROD if you"
-
-	para "want to catch good"
-	line "#MON."
-	done
-
 FisherHenrySeenText:
 	text "My #MON?"
 	line "Freshly caught!"
 	done
 
 FisherHenryBeatenText:
-	text "SPLASH?"
+	text "Splash?"
 	done
 
 FisherHenryAfterText:
@@ -757,11 +690,11 @@ YoungsterAlbertAfterText:
 	done
 
 YoungsterGordonSeenText:
-	text "I found some good"
+	text "I found a good"
 	line "#MON in the"
 	cont "grass!"
 
-	para "I think they'll do"
+	para "I think it'll do"
 	line "it for me!"
 	done
 
@@ -828,12 +761,6 @@ BirdKeeperPeterAfterText:
 	text "I should train"
 	line "again at the GYM"
 	cont "in VIOLET CITY."
-	done
-
-Route32UnusedText: ; unreferenced
-	text "The fishermen"
-	line "yelled at me for"
-	cont "bugging them…"
 	done
 
 Text_RoarIntro:
