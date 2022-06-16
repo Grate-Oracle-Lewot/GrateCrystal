@@ -235,7 +235,7 @@ RadioTower1FLuckyNumberManAskToPlayText:
 	done
 
 RadioTower1FLuckyNumberManThisWeeksIdIsText:
-	text "This week's ID"
+	text "Today's ID"
 	line "number is @"
 	text_ram wStringBuffer3
 	text "."
@@ -253,7 +253,7 @@ RadioTower1FLuckyNumberManDotDotDotText:
 
 RadioTower1FLuckyNumberManComeAgainText:
 	text "Please come back"
-	line "next week for the"
+	line "tomorrow for the"
 	cont "next LUCKY NUMBER."
 	done
 
@@ -323,39 +323,34 @@ RadioTower1FRadioCardWomanOfferQuizText:
 RadioTower1FRadioCardWomanQuestion1Text:
 	text "Question 1:"
 
-	para "Is there a #MON"
-	line "that appears only"
-	cont "in the morning?"
+	para "Can more than one"
+	line "#MON evolve in-"
+	cont "to BELLOSSOM?"
 	done
 
 RadioTower1FRadioCardWomanQuestion2Text:
 	text "Correct!"
 	line "Question 2:"
 
-	para "Is this statement"
-	line "correct?"
-
-	para "You can't buy a"
-	line "BERRY at a MART."
+	para "Is GYARADOS a dra-"
+	line "gon-type #MON?"
 	done
 
 RadioTower1FRadioCardWomanQuestion3Text:
 	text "Bull's-eye!"
 	line "Question 3:"
 
-	para "Does HM01 contain"
-	line "the move FLASH?"
+	para "Is TRI ATTACK a"
+	line "normal-type move?"
 	done
 
 RadioTower1FRadioCardWomanQuestion4Text:
 	text "So far so good!"
 	line "Question 4:"
 
-	para "Is FALKNER the"
-	line "VIOLET GYM LEADER"
-
-	para "who uses bird"
-	line "#MON?"
+	para "Can dragon-type"
+	line "moves affect fairy-"
+	cont "type #MON?"
 	done
 
 RadioTower1FRadioCardWomanQuestion5Text:
@@ -363,11 +358,9 @@ RadioTower1FRadioCardWomanQuestion5Text:
 	line "Here's the final"
 	cont "question:"
 
-	para "Do GOLDENROD GAME"
-	line "CORNER's slots"
-
-	para "have CHARMANDER"
-	line "on their reels?"
+	para "Is SUNFLORA a pure"
+	line "grass-type #-"
+	cont "MON?"
 	done
 
 RadioTower1FRadioCardWomanYouWinText:
