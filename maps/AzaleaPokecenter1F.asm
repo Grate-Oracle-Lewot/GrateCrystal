@@ -1,6 +1,6 @@
 	object_const_def
 	const AZALEAPOKECENTER1F_NURSE
-	const AZALEAPOKECENTER1F_CHANSEY
+	const AZALEAPOKECENTER1F_SLOWPOKE
 	const AZALEAPOKECENTER1F_GENTLEMAN
 	const AZALEAPOKECENTER1F_FISHING_GURU
 	const AZALEAPOKECENTER1F_POKEFAN_F
@@ -17,8 +17,15 @@ AzaleaPokecenter1F_MapScripts:
 AzaleaPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
-AzaleaPokecenter1FChanseyScript:
-	jumpstd PokecenterChanseyScript
+AzaleaTownPokecenterSlowpokeScript:
+	opentext
+	writetext AzaleaTownPokecenterSlowpokeText1
+	pause 60
+	writetext AzaleaTownPokecenterSlowpokeText2
+	cry SLOWPOKE
+	waitbutton
+	closetext
+	end
 
 AzaleaPokecenter1FGentlemanScript:
 	jumptextfaceplayer AzaleaPokecenter1FGentlemanText
@@ -78,6 +85,16 @@ AzaleaPokecenter1FPokefanFText:
 	line "APRICORNS."
 	done
 
+AzaleaTownPokecenterSlowpokeText1:
+	text "SLOWPOKE: …"
+
+	para "<……> <……> <……>"
+	done
+
+AzaleaTownPokecenterSlowpokeText2:
+	text "<……> <……>Yawn?"
+	done
+
 AzaleaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -92,7 +109,7 @@ AzaleaPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FNurseScript, -1
-	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FChanseyScript, -1
+	object_event  4,  1, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownPokecenterSlowpokeScript, -1
 	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
 	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
