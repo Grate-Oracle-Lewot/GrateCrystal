@@ -386,6 +386,21 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
+	ld a, FEAROWBOT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .not_fearowbot
+	push de
+	ld a, FEAROW
+	call ReadMonMenuIcon
+	ld [wCurIcon], a
+	pop de
+	ld a, e
+	call GetIcon_a
+	ret
+
+.not_fearowbot
 	push de
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
