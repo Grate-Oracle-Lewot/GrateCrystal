@@ -61,18 +61,19 @@ SeafoamGymGuideScript:
 	end
 
 BlaineIntroText:
-	text "BLAINE: Waaah!"
+	text "BLAINE: Waaargh!"
 
-	para "My GYM in CINNABAR"
-	line "burned down."
+	para "My GYM on CINNABAR"
+	line "was destroyed by"
+
+	para "some rogue science"
+	line "experiment!"
 
 	para "My fire-breathing"
 	line "#MON and I are"
 
 	para "homeless because"
-	line "of the volcano."
-
-	para "Waaah!"
+	line "of that thing!"
 
 	para "But I'm back in"
 	line "business as a GYM"
