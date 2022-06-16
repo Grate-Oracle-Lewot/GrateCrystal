@@ -23,7 +23,6 @@ TrainerBlackbeltKenji:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI
-	endifjustbattled
 	opentext
 	checkcellnum PHONE_BLACKBELT_KENJI
 	iftrue .Registered
@@ -149,7 +148,6 @@ TrainerHikerParry:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
-	endifjustbattled
 	opentext
 	checkflag ENGINE_PARRY_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -281,12 +279,6 @@ TrainerCamperQuentin:
 
 .Defeated:
 	writetext CamperQuentinAfterBattleText
-	waitbutton
-	closetext
-	end
-
-Route45DummyScript: ; unreferenced
-	writetext Route45DummyText
 	waitbutton
 	closetext
 	end
