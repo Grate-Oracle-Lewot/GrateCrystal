@@ -21,7 +21,6 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
-	setevent EVENT_BEAT_CAMPER_JERRY
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE
@@ -177,19 +176,23 @@ CamperJerryAfterBattleText:
 
 PewterGymGuideText:
 	text "Yo! CHAMP in"
-	line "making! You're"
+	line "making! BROCK"
 
-	para "really rocking."
-	line "Are you battling"
+	para "uses rock #MON."
+	line "They're weak to"
 
-	para "the GYM LEADERS of"
-	line "KANTO?"
+	para "grass, fighting,"
+	line "water, steel, and"
+	cont "ground."
 
-	para "They're strong and"
-	line "dedicated people,"
+	para "They resist fire,"
+	line "poison, flying and"
+	cont "normal-type moves."
 
-	para "just like JOHTO's"
-	line "GYM LEADERS."
+	para "Rock moves will do"
+	line "extra damage to"
+	cont "bug or ice-type"
+	cont "#MON."
 	done
 
 PewterGymGuideWinText:
