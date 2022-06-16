@@ -345,11 +345,11 @@ OlivinePortFridayShipText:
 	done
 
 OlivinePortFishingGuru1Text:
-	text "SHELLDER are easy"
-	line "to catch here."
+	text "Kids often come"
+	line "here to fish off"
 
-	para "They're kind of"
-	line "rare elsewhere."
+	para "the dock. You"
+	line "should try it!"
 	done
 
 OlivinePortFishingGuru2Text:
