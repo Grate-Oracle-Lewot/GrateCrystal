@@ -23,8 +23,9 @@ Route19FuchsiaGateOfficerScript:
 	end
 
 Route19FuchsiaGateOfficerText:
-	text "CINNABAR's volcano"
-	line "erupted."
+	text "There was a huge"
+	line "explosion on"
+	cont "CINNABAR."
 
 	para "It hurled boulders"
 	line "that cut off ROUTE"
@@ -38,17 +39,19 @@ Route19FuchsiaGateOfficerText:
 Route19FuchsiaGateOfficerText_RocksCleared:
 	text "No CINNABAR citi-"
 	line "zens were injured"
+	cont "by the explosion."
 
-	para "by the eruption."
-	line "That's great!"
+	para "But I wonder what"
+	line "caused it in the"
+	cont "first place?"
 	done
 
 Route19FuchsiaGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, FUCHSIA_CITY, 10
-	warp_event  5,  0, FUCHSIA_CITY, 11
+	warp_event  4,  0, FUCHSIA_CITY, 9
+	warp_event  5,  0, FUCHSIA_CITY, 10
 	warp_event  4,  7, ROUTE_19, 1
 	warp_event  5,  7, ROUTE_19, 1
 
