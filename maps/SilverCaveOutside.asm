@@ -1,3 +1,8 @@
+	object_const_def
+	const SILVERCAVEOUTSIDE_BIKER
+	const SILVERCAVEOUTSIDE_SWIMMER_GIRL
+	const SILVERCAVEOUTSIDE_POKE_BALL
+
 SilverCaveOutside_MapScripts:
 	def_scene_scripts
 
@@ -8,6 +13,31 @@ SilverCaveOutside_MapScripts:
 	setflag ENGINE_FLYPOINT_SILVER_CAVE
 	endcallback
 
+TrainerBikerTBone:
+	trainer BIKER, T_BONE, EVENT_BEAT_BIKER_T_BONE, BikerTBoneSeenText, BikerTBoneBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BikerTBoneAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfMary:
+	trainer SWIMMERF, MARY, EVENT_BEAT_SWIMMERF_MARY, SwimmerfMarySeenText, SwimmerfMaryBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext SwimmerfMaryAfterBattleText
+	waitbutton
+	closetext
+	end
+
+MtSilverOutsideTMNightTerror:
+	itemball TM_NIGHT_TERROR
+
 MtSilverPokecenterSign:
 	jumpstd PokecenterSignScript
 
@@ -16,6 +46,49 @@ MtSilverSign:
 
 SilverCaveOutsideHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
+
+BikerTBoneSeenText:
+	text "I love this place!"
+	line "The #MON are"
+
+	para "super tough, just"
+	line "like me!"
+	done
+
+BikerTBoneBeatenText:
+	text "Bajabbers!"
+	done
+
+BikerTBoneAfterBattleText:
+	text "What's wrong with"
+	line "a tough biker hav-"
+	cont "ing cute baby"
+	cont "#MON?"
+
+	para "Don't spread tox-"
+	line "ic masculinity!"
+	done
+
+SwimmerfMarySeenText:
+	text "Let's do this."
+	done
+
+SwimmerfMaryBeatenText:
+	text "I should've done"
+	line "more than grind"
+	cont "my starter."
+	done
+
+SwimmerfMaryAfterBattleText:
+	text "There's no better"
+	line "way to build up"
+
+	para "swimming stamina"
+	line "than being chased"
+
+	para "by a super-strong"
+	line "#MON!"
+	done
 
 MtSilverSignText:
 	text "MT.SILVER"
@@ -36,3 +109,6 @@ SilverCaveOutside_MapEvents:
 	bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
+	object_event 25, 29, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerBikerTBone, -1
+	object_event 16, 26, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfMary, -1
+	object_event  4, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MtSilverOutsideTMNightTerror, EVENT_SILVER_CAVE_OUTSIDE_TM_NIGHT_TERROR
