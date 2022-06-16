@@ -55,10 +55,8 @@ BattleCommandPointers:
 	dw BattleCommand_Paralyze
 	dw BattleCommand_Substitute
 	dw BattleCommand_RechargeNextTurn
-	dw BattleCommand_Mimic
 	dw BattleCommand_Metronome
 	dw BattleCommand_LeechSeed
-	dw BattleCommand_Splash
 	dw BattleCommand_Disable
 	dw BattleCommand_ClearText
 	dw BattleCommand_Charge
@@ -70,7 +68,6 @@ BattleCommandPointers:
 	dw BattleCommand_ConstantDamage
 	dw BattleCommand_Counter
 	dw BattleCommand_Encore
-	dw BattleCommand_PainSplit
 	dw BattleCommand_Snore
 	dw BattleCommand_Conversion2
 	dw BattleCommand_LockOn
