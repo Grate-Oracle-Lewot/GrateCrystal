@@ -79,51 +79,52 @@ WillsRoom_EnterMovement:
 	step_end
 
 WillScript_WillBeforeText:
-	text "Welcome to #MON"
-	line "LEAGUE, <PLAYER>."
+	text "Oh… hey. A"
+	line "challenger, huh?"
 
-	para "Allow me to intro-"
-	line "duce myself. I am"
-	cont "WILL."
+	para "Call me A.D. I"
+	line "like the mystery"
+	cont "of initials."
 
-	para "I have trained all"
-	line "around the world,"
+	para "Our ELITE FOUR"
+	line "doesn't use type"
+	cont "specialties."
 
-	para "making my psychic"
-	line "#MON powerful."
+	para "You'll have to be"
+	line "adaptable to win."
 
-	para "And, at last, I've"
-	line "been accepted into"
-	cont "the ELITE FOUR."
+	para "Anyway, buy my"
+	line "book, THE CARDS OF"
+	cont "CHAOS, on KINDLE."
 
-	para "I can only keep"
-	line "getting better!"
+	para "Hm? Oh, fine, we"
+	line "can take care of"
+	cont "the battle first."
 
-	para "Losing is not an"
-	line "option!"
+	para "Um…"
+	line "Hiya?"
 	done
 
 WillScript_WillBeatenText:
-	text "I… I can't…"
-	line "believe it…"
+	text "Nice job. Now,"
+	line "about my book…"
 	done
 
 WillScript_WillDefeatText:
-	text "Even though I was"
-	line "defeated, I won't"
-	cont "change my course."
+	text "My other book, THE"
+	line "MOON HOUSE,"
 
-	para "I will continue"
-	line "battling until I"
+	para "might not be out"
+	line "before this hack,"
 
-	para "stand above all"
-	line "trainers!"
+	para "but look for it"
+	line "eventually."
 
-	para "Now, <PLAYER>, move"
-	line "on and experience"
+	para "I've got some more"
+	line "in the works, too."
 
-	para "the true ferocity"
-	line "of the ELITE FOUR."
+	para "Just remember the"
+	line "name: A.D. JANSEN."
 	done
 
 WillsRoom_MapEvents:
@@ -139,4 +140,4 @@ WillsRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
+	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
