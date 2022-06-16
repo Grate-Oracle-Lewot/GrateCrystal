@@ -5,6 +5,11 @@ Route26HealHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .Flypoint
+
+.Flypoint:
+	setflag ENGINE_FLYPOINT_VICTORY_ROAD
+	return
 
 Route26HealHouseTeacherScript:
 	faceplayer
@@ -14,7 +19,6 @@ Route26HealHouseTeacherScript:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	special StubbedTrainerRankings_Healings
 	playmusic MUSIC_HEAL
 	special HealParty
 	pause 60
