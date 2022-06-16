@@ -1,5 +1,9 @@
 	object_const_def
 	const VICTORYROAD_SILVER
+	const VICTORYROAD_GUITARIST
+	const VICTORYROAD_GRANNY
+	const VICTORYROAD_SCIENTIST
+	const VOCTORYROAD_BOULDER
 	const VICTORYROAD_POKE_BALL1
 	const VICTORYROAD_POKE_BALL2
 	const VICTORYROAD_POKE_BALL3
@@ -94,6 +98,42 @@ VictoryRoadRivalNext:
 	closetext
 	end
 
+TrainerGuitaristCasey:
+	trainer GUITARIST, CASEY, EVENT_BEAT_GUITARIST_CASEY, GuitaristCaseySeenText, GuitaristCaseyBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext GuitaristCaseyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerMediumChell:
+	trainer MEDIUM, CHELL, EVENT_BEAT_MEDIUM_CHELL, MediumChellText, MediumChellText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext MediumChellText
+	waitbutton
+	closetext
+	end
+
+TrainerScientistHeinz:
+	trainer SCIENTIST, HEINZ, EVENT_BEAT_SCIENTIST_HEINZ, ScientistHeinzSeenText, ScientistHeinzBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistHeinzAfterBattleText
+	waitbutton
+	closetext
+	end
+
+VictoryRoadBoulder:
+	jumpstd StrengthBoulderScript
+
 VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 
@@ -114,6 +154,9 @@ VictoryRoadHiddenMaxPotion:
 
 VictoryRoadHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL
+
+VictoryRoadHiddenMaxElixer:
+	hiddenitem MAX_ELIXER, EVENT_VICTORY_ROAD_HIDDEN_MAX_ELIXER
 
 VictoryRoadRivalBattleApproachMovement1:
 	step LEFT
@@ -162,78 +205,89 @@ VictoryRoadRivalBattleExitMovement2:
 	step_end
 
 VictoryRoadRivalBeforeText:
-	text "Hold it."
-
-	para "…Are you going to"
-	line "take the #MON"
-	cont "LEAGUE challenge?"
-
-	para "…Don't make me"
-	line "laugh."
-
-	para "You're so much"
-	line "weaker than I am."
-
-	para "I'm not like I was"
-	line "before."
-
-	para "I now have the"
-	line "best and strongest"
-
-	para "#MON with me."
-	line "I'm invincible!"
-
-	para "<PLAYER>!"
-	line "I challenge you!"
+	text "WAIT"
+	line "NOW YOU GO TO"
+	cont "DON'T EXCESSIVELY,"
+	cont "HOW ARE YOU"
+	cont "MY OPPONENT?"
+	cont "I AM NOT THE PAST"
+	cont "ONE.NOW I HAVE"
+	cont "THE STRONGEST"
+	cont "MONSTER,EVERYONE"
+	cont "CANN'T WIN"
+	cont "CONQUER ME."
+	cont "COME TO COMPETE"
+	cont "WITH ME"
 	done
 
 VictoryRoadRivalDefeatText:
-	text "…I couldn't win…"
-
-	para "I gave it every-"
-	line "thing I had…"
-
-	para "What you possess,"
-	line "and what I lack…"
-
-	para "I'm beginning to"
-	line "understand what"
-
-	para "that dragon master"
-	line "said to me…"
+	text "LOST,THOUTH EFFORT"
+	line "NOW I SEE"
+	cont "WHY TO USE DRAGON"
 	done
 
 VictoryRoadRivalAfterText:
-	text "…I haven't given up"
-	line "on becoming the"
-	cont "greatest trainer…"
-
-	para "I'm going to find"
-	line "out why I can't"
-
-	para "win and become"
-	line "stronger…"
-
-	para "When I do, I will"
-	line "challenge you."
-
-	para "And I'll beat you"
-	line "down with all my"
-	cont "power."
-
-	para "…Humph! You keep"
-	line "at it until then."
+	text "I DON'T GIVE UP"
+	line "THE WISH TO BE"
+	cont "A STRONGEST COACH."
+	cont "I WILL FIND MY"
+	cont "LACK,THEN BECOME"
+	cont "STRONGERTO CHALLENGE"
+	line "YOU.UP TO THAT"
+	cont "TIME,I WILL"
+	cont "TRY MY BEST TO"
+	cont "FIGHT WITH YOU."
+	cont "EN TO TRY"
+	cont "HARD IS GOOD"
 	done
 
 VictoryRoadRivalVictoryText:
-	text "…Humph!"
+	text "WINT,THOUTH EFFORT"
+	line "NOW I SEE"
+	cont "WHY TO USE DRAGON"
+	done
 
-	para "When it comes down"
-	line "to it, nothing can"
-	cont "beat power."
+GuitaristCaseySeenText:
+	text "This'll be the day"
+	line "we've waited for!"
+	done
 
-	para "I don't need any-"
-	line "thing else."
+GuitaristCaseyBeatenText:
+	text "Every nightmare"
+	line "just discloses…"
+	done
+
+GuitaristCaseyAfterBattleText:
+	text "Boop."
+	done
+
+MediumChellText:
+	text "…"
+	done
+
+ScientistHeinzSeenText:
+	text "Your timing is"
+	line "exquisite… And by"
+
+	para "that I mean COMPL-"
+	line "ETELY QUISITE!"
+	done
+
+ScientistHeinzBeatenText:
+	text "Curse you <PLAYER>"
+	line "the <PKMN> trainer!"
+	done
+
+ScientistHeinzAfterBattleText:
+	text "If I had a nickel"
+	line "for every time I'd"
+
+	para "been doomed by a"
+	line "kid in a cave…"
+
+	para "Actually, I don't"
+	line "want to finish"
+	cont "that thought."
 	done
 
 VictoryRoad_MapEvents:
@@ -258,9 +312,14 @@ VictoryRoad_MapEvents:
 	def_bg_events
 	bg_event  3, 29, BGEVENT_ITEM, VictoryRoadHiddenMaxPotion
 	bg_event  3, 65, BGEVENT_ITEM, VictoryRoadHiddenFullHeal
+	bg_event 10, 50, BGEVENT_ITEM, VictoryRoadHiddenMaxElixer
 
 	def_object_events
 	object_event 18, 13, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_VICTORY_ROAD
+	object_event  6, 51, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerGuitaristCasey, -1
+	object_event 13, 35, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumChell, -1
+	object_event 16, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerScientistHeinz, -1
+	object_event 14, 50, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadBoulder, -1
 	object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE
 	object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE
