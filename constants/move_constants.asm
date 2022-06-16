@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const SIGNAL_BEAM  ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -107,7 +107,7 @@
 	const RAGE         ; 63
 	const TELEPORT     ; 64
 	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66
+	const IRON_HEAD    ; 66
 	const SCREECH      ; 67
 	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
@@ -137,7 +137,7 @@
 	const SWIFT        ; 81
 	const SKULL_BASH   ; 82
 	const SPIKE_CANNON ; 83
-	const CONSTRICT    ; 84
+	const HAIL         ; 84
 	const AMNESIA      ; 85
 	const KINESIS      ; 86
 	const SOFTBOILED   ; 87
@@ -145,7 +145,7 @@
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c
+	const DAZZLY_GLEAM ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
@@ -155,22 +155,22 @@
 	const SPORE        ; 93
 	const FLASH        ; 94
 	const PSYWAVE      ; 95
-	const SPLASH       ; 96
+	const EARTH_POWER  ; 96
 	const ACID_ARMOR   ; 97
 	const CRABHAMMER   ; 98
-	const EXPLOSION    ; 99
+	const DARK_PULSE   ; 99
 	const FURY_SWIPES  ; 9a
 	const BONEMERANG   ; 9b
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
-	const SHARPEN      ; 9f
+	const SILVER_WIND  ; 9f
 	const CONVERSION   ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
-	const STRUGGLE     ; a5
+	const PLAY_ROUGH   ; a5
 	const SKETCH       ; a6
 	const TRIPLE_KICK  ; a7
 	const THIEF        ; a8
@@ -202,7 +202,7 @@
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const DETECT       ; c5
+	const AURA_SPHERE  ; c5
 	const BONE_RUSH    ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
@@ -225,7 +225,7 @@
 	const PRESENT      ; d9
 	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
-	const PAIN_SPLIT   ; dc
+	const NIGHT_TERROR ; dc
 	const SACRED_FIRE  ; dd
 	const MAGNITUDE    ; de
 	const DYNAMICPUNCH ; df
@@ -257,36 +257,38 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const HAIL         ; fc
+	const FAIRY_WIND   ; fc
+	const DRAIN_KISS   ; fd
+	const MOONBLAST    ; fe
+	const STRUGGLE     ; ff
 NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point
-	const_next $ff
-	const ANIM_SWEET_SCENT_2     ; ff
-	const ANIM_THROW_POKE_BALL   ; 100
-	const ANIM_SEND_OUT_MON      ; 101
-	const ANIM_RETURN_MON        ; 102
-	const ANIM_CONFUSED          ; 103
-	const ANIM_SLP               ; 104
-	const ANIM_BRN               ; 105
-	const ANIM_PSN               ; 106
-	const ANIM_SAP               ; 107
-	const ANIM_FRZ               ; 108
-	const ANIM_PAR               ; 109
-	const ANIM_IN_LOVE           ; 10a
-	const ANIM_IN_SANDSTORM      ; 10b
-	const ANIM_IN_NIGHTMARE      ; 10c
-	const ANIM_IN_WHIRLPOOL      ; 10d
+	const ANIM_SWEET_SCENT_2     ; 100
+	const ANIM_THROW_POKE_BALL   ; 101
+	const ANIM_SEND_OUT_MON      ; 102
+	const ANIM_RETURN_MON        ; 103
+	const ANIM_CONFUSED          ; 104
+	const ANIM_SLP               ; 105
+	const ANIM_BRN               ; 106
+	const ANIM_PSN               ; 107
+	const ANIM_SAP               ; 108
+	const ANIM_FRZ               ; 109
+	const ANIM_PAR               ; 10a
+	const ANIM_IN_LOVE           ; 10b
+	const ANIM_IN_SANDSTORM      ; 10c
+	const ANIM_IN_NIGHTMARE      ; 10d
+	const ANIM_IN_WHIRLPOOL      ; 10e
 ; battle anims
-	const ANIM_MISS              ; 10e
-	const ANIM_ENEMY_DAMAGE      ; 10f
-	const ANIM_ENEMY_STAT_DOWN   ; 110
-	const ANIM_PLAYER_STAT_DOWN  ; 111
-	const ANIM_PLAYER_DAMAGE     ; 112
-	const ANIM_WOBBLE            ; 113
-	const ANIM_SHAKE             ; 114
-	const ANIM_HIT_CONFUSION     ; 115
-	const ANIM_IN_HAIL           ; 116
+	const ANIM_MISS              ; 10f
+	const ANIM_ENEMY_DAMAGE      ; 110
+	const ANIM_ENEMY_STAT_DOWN   ; 111
+	const ANIM_PLAYER_STAT_DOWN  ; 112
+	const ANIM_PLAYER_DAMAGE     ; 113
+	const ANIM_WOBBLE            ; 114
+	const ANIM_SHAKE             ; 115
+	const ANIM_HIT_CONFUSION     ; 116
+	const ANIM_IN_HAIL           ; 117
 NUM_BATTLE_ANIMS EQU const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS
