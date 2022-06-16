@@ -342,45 +342,38 @@ TeamRocketBaseB3FRocketText:
 	done
 
 RocketBaseRivalText:
-	text "…"
+	text "DIDN'T I SAY TO"
+	line "DESTROY MISSLE"
+	cont "BOMB?DRAGON?MY"
+	cont "MONSTER COULDN'T"
+	cont "STAND UP"
+	cont "FORGET IT,"
+	cont "I AM LOST."
+	cont "TO FIND THE"
+	cont "STRONGER MONSTER"
+	cont "AGAIN,"
+	cont "YOU MUST STAND"
+	cont "TO DEFEAT THE GUY."
+	cont "AND I DON'T LIKE"
+	cont "THE ACTOR'S LINES"
 
-	para "Didn't I tell you"
-	line "that I was going"
+	para "IT ISN'T ENOUGH"
 
-	para "to destroy TEAM"
-	line "ROCKET?"
+	para " "
+	line "FOR YOUR LOVE AND"
+	cont "TRUST TO MONSTERS"
 
-	para "…Tell me, who was"
-	line "the guy in the"
+	para "YOU ARE LOST"
 
-	para "cape who used"
-	line "dragon #MON?"
-
-	para "My #MON were no"
-	line "match at all."
-
-	para "I don't care that"
-	line "I lost. I can beat"
-
-	para "him by getting"
-	line "stronger #MON."
-
-	para "It's what he said"
-	line "that bothers me…"
-
-	para "He told me that"
-	line "I don't love and"
-
-	para "trust my #MON"
-	line "enough."
-
-	para "I'm furious that I"
-	line "lost to a bleeding"
-	cont "heart like him."
-
-	para "…Humph! I don't"
-	line "have the time for"
-	cont "the likes of you!"
+	para " "
+	line "TO THE BLOCK"
+	cont "SAYING PLEASANT"
+	cont "WORDS ONLY"
+	cont "GET ANGRY AS SOON"
+	cont "AS THINKING THIS,"
+	cont "YES,OUR LOVE"
+	cont "MUST BECOME"
+	cont "STRENGTH"
 	done
 
 ExecutiveM4BeforeText:
