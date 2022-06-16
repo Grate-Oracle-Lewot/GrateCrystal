@@ -1,5 +1,7 @@
 	object_const_def
 	const OLIVINEGYM_JASMINE
+	const OLIVINEGYM_ROCKER
+	const OLIVINEGYM_POKEFAN_F
 	const OLIVINEGYM_GYM_GUIDE
 
 OlivineGym_MapScripts:
@@ -57,6 +59,28 @@ OlivineGymActivateRockets:
 
 .RadioTowerRockets:
 	jumpstd RadioTowerRocketsScript
+
+TrainerGuitaristJules:
+	trainer GUITARIST, JULES, EVENT_BEAT_GUITARIST_JULES, GuitaristJulesSeenText, GuitaristJulesBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext GuitaristJulesAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanfVi:
+	trainer POKEFANF, VI, EVENT_BEAT_POKEFANF_VI, PokefanfViSeenText, PokefanfViBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext PokefanfViAfterBattleText
+	waitbutton
+	closetext
+	end
 
 OlivineGymGuideScript:
 	faceplayer
@@ -137,17 +161,8 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
-	text "MINERALBADGE"
-	line "raises #MON's"
-	cont "DEFENSE."
-
-	para "…Um… Please take"
+	text "…Um… Please take"
 	line "this too…"
-	done
-
-Text_ReceivedTM09: ; unreferenced
-	text "<PLAYER> received"
-	line "TM09."
 	done
 
 Jasmine_IronTailSpeech:
@@ -162,24 +177,76 @@ Jasmine_GoodLuck:
 	cont "but good luck…"
 	done
 
+GuitaristJulesSeenText:
+	text "Dude! You rock!"
+	line "You got our GYM"
+	cont "LEADER back!"
+
+	para "But that doesn't"
+	line "mean we'll go easy"
+	cont "on you!"
+	done
+
+GuitaristJulesBeatenText:
+	text "Whoooa!"
+	done
+
+GuitaristJulesAfterBattleText:
+	text "That was a wicked"
+	line "battle, dude!"
+
+	para "Your skills are"
+	line "the real deal!"
+	done
+
+PokefanfViSeenText:
+	text "Steel #MON can"
+	line "be cute too, you"
+	cont "know!"
+	done
+
+PokefanfViBeatenText:
+	text "Aww…"
+	done
+
+PokefanfViAfterBattleText:
+	text "Steel can seem"
+	line "overwhelming, but"
+
+	para "if you learn its"
+	line "weaknesses, it's"
+
+	para "not so hard to"
+	line "deal with."
+	done
+
 OlivineGymGuideText:
 	text "JASMINE uses the"
-	line "newly discovered"
-	cont "steel-type."
+	line "steel-type."
 
-	para "I don't know very"
-	line "much about it."
+	para "It resists many"
+	line "types, but it also"
+
+	para "has several"
+	line "weaknesses."
+
+	para "Fire, electric,"
+	line "ground, and"
+
+	para "fighting are all"
+	line "super effective!"
+
+	para "Steel is good ag-"
+	line "ainst rock, ice,"
+	cont "and fairy."
+
+	para "Poison won't do"
+	line "anything at all to"
+	cont "steel!"
 	done
 
 OlivineGymGuideWinText:
 	text "That was awesome."
-
-	para "The steel-type,"
-	line "huh?"
-
-	para "That was a close"
-	line "encounter of an"
-	cont "unknown kind!"
 	done
 
 OlivineGymGuidePreText:
@@ -210,4 +277,6 @@ OlivineGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
+	object_event  3, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristJules, EVENT_OLIVINE_GYM_JASMINE
+	object_event  7,  8, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanfVi, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1
