@@ -204,7 +204,6 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	callasm GetPartyNickname
 	writetext UseCutText
 	reloadmappart
 	callasm CutDownTreeOrGrass
@@ -379,7 +378,6 @@ SurfFunction:
 .DoSurf:
 	call GetSurfType
 	ld [wSurfingPlayerState], a
-	call GetPartyNickname
 	ld hl, SurfFromMenuScript
 	call QueueScript
 	ld a, $81
@@ -504,13 +502,27 @@ TrySurfOW::
 	call CheckEngineFlag
 	jr c, .quit
 
-	ld d, SURF
-	call CheckPartyMove
-	jr c, .quit
-
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .quit
+
+	ld a, FLOATIE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+
+	ld a, BANK(AskSurfScript)
+	ld hl, AskSurfScript
+	call CallScript
+
+	scf
+	ret
+
+.check_mon_move
+	ld d, SURF
+	call CheckPartyMove
+	jr c, .quit
 
 	call GetSurfType
 	ld [wSurfingPlayerState], a
@@ -1164,7 +1176,6 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
-	callasm GetPartyNickname
 	writetext UseWhirlpoolText
 	reloadmappart
 	callasm DisappearWhirlpool
@@ -1189,14 +1200,30 @@ DisappearWhirlpool:
 	ret
 
 TryWhirlpoolOW::
-	ld d, WHIRLPOOL
-	call CheckPartyMove
-	jr c, .failed
 	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .failed
+
 	call TryWhirlpoolMenu
 	jr c, .failed
+
+	ld a, EGG_BEATER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+
+	ld a, BANK(Script_AskWhirlpoolOW)
+	ld hl, Script_AskWhirlpoolOW
+	call CallScript
+	scf
+	ret
+
+.check_mon_move
+	ld d, WHIRLPOOL
+	call CheckPartyMove
+	jr c, .failed
+
 	ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
 	call CallScript
@@ -1360,7 +1387,6 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
-	callasm GetPartyNickname
 	writetext UseRockSmashText
 	closetext
 	special WaitSFX
@@ -1408,6 +1434,16 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
+	ld a, PICKAXE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+
+	xor a
+	jr .done
+
+.check_mon_move
 	ld d, ROCK_SMASH
 	call CheckPartyMove
 	jr nc, .yes
@@ -1801,12 +1837,25 @@ GotOffBikeText:
 	text_end
 
 TryCutOW::
-	ld d, CUT
-	call CheckPartyMove
-	jr c, .cant_cut
-
 	ld de, ENGINE_HIVEBADGE
 	call CheckEngineFlag
+	jr c, .cant_cut
+
+	ld a, HEDGER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+
+	ld a, BANK(AskCutScript)
+	ld hl, AskCutScript
+	call CallScript
+	scf
+	ret
+
+.check_mon_move
+	ld d, CUT
+	call CheckPartyMove
 	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)
