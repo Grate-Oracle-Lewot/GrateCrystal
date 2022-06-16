@@ -2677,6 +2677,8 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	call SandstormSpDefBoost
+
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -2929,6 +2931,8 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+
+	call SandstormSpDefBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
