@@ -886,3 +886,32 @@ BattleTowerOutside_Blocks:
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+UnionCaveSlowpokeWellLink_Blocks:
+	INCBIN "maps/UnionCaveSlowpokeWellLink.blk"
+
+IcePathArticunoChamber_Blocks:
+	INCBIN "maps/IcePathArticunoChamber.blk"
+
+RockTunnelZapdosChamber_Blocks:
+	INCBIN "maps/RockTunnelZapdosChamber.blk"
+
+SilverCaveMoltresChamber_Blocks:
+	INCBIN "maps/SilverCaveMoltresChamber.blk"
+
+MewAntechamber_Blocks:
+	INCBIN "maps/MewAntechamber.blk"
+
+MewChamber_Blocks:
+	INCBIN "maps/MewChamber.blk"
+
+LavRadioTower2F_Blocks:
+	INCBIN "maps/LavRadioTower2F.blk"
+
+SeafoamCave1F_Blocks:
+	INCBIN "maps/SeafoamCave1F.blk"
+
+SeafoamCaveB1F_Blocks:
+	INCBIN "maps/SeafoamCaveB1F.blk"
