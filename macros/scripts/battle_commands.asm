@@ -55,10 +55,8 @@ ENDM
 	command paralyze                ; 30
 	command substitute              ; 31
 	command rechargenextturn        ; 32
-	command mimic                   ; 33
 	command metronome               ; 34
 	command leechseed               ; 35
-	command splash                  ; 36
 	command disable                 ; 37
 	command cleartext               ; 38
 	command charge                  ; 39
@@ -70,7 +68,6 @@ ENDM
 	command constantdamage          ; 3f
 	command counter                 ; 40
 	command encore                  ; 41
-	command painsplit               ; 42
 	command snore                   ; 43
 	command conversion2             ; 44
 	command lockon                  ; 45
