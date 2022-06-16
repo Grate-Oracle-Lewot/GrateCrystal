@@ -251,6 +251,8 @@ Pokered_MonIndices:
 	db SNUBBULL
 	db GRANBULL
 	db QWILFISH
-	db WOBBUFFET
-	db WOBBUFFET
+	db CELEBI
+	db YANMEGA
+	db WHIMSICOTT
+	db UNOWN
 	assert_table_length NUM_POKEMON + 1
