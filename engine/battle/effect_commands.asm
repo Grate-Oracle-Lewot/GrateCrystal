@@ -113,10 +113,10 @@ BattleCommand_CheckTurn:
 
 ; Repurposed as hardcoded turn handling. Useless as a command.
 
-; Move $ff immediately ends the turn.
+; NO_MOVE immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
-	inc a
+	and a ; NO_MOVE?
 	jp z, EndTurn
 
 	xor a
@@ -492,7 +492,7 @@ CheckEnemyTurn:
 	call StdBattleTextbox
 
 	call HitSelfInConfusion
-	call ConfusionDamageCalc
+	call BattleCommand_DamageCalc
 	call BattleCommand_LowerSub
 
 	xor a
@@ -595,7 +595,7 @@ HitConfusion:
 	ld [wCriticalHit], a
 
 	call HitSelfInConfusion
-	call ConfusionDamageCalc
+	call BattleCommand_DamageCalc
 	call BattleCommand_LowerSub
 
 	xor a
@@ -1068,7 +1068,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1202,12 +1201,11 @@ INCLUDE "data/moves/critical_hit_moves.asm"
 
 INCLUDE "data/battle/critical_hit_chances.asm"
 
-INCLUDE "engine/battle/move_effects/triple_kick.asm"
-
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
+	and TYPE_MASK
 	cp STRUGGLE
 	ret z
 
@@ -1236,6 +1234,7 @@ BattleCommand_Stab:
 .go
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	and TYPE_MASK
 	ld [wCurType], a
 
 	push hl
@@ -1283,6 +1282,7 @@ BattleCommand_Stab:
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1874,11 +1874,9 @@ BattleCommand_EffectChance:
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 
-	ld a, [hl]
-	sub 100 percent
-	; If chance was 100%, RNG won't be called (carry not set)
-	; Thus chance will be subtracted from 0, guaranteeing a carry
-	call c, BattleRandom
+	; BUG: 1/256 chance to fail even for a 100% effect chance,
+	; since carry is not set if BattleRandom == [hl] == 255
+	call BattleRandom
 	cp [hl]
 	pop hl
 	ret c
@@ -1904,8 +1902,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -1988,26 +1984,8 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
-	cp EFFECT_TRIPLE_KICK
-	jr z, .triplekick
 	xor a
 	ld [wBattleAnimParam], a
-
-.triplekick
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld e, a
-	ld d, 0
-	call PlayFXAnimID
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	cp FLY
-	jr z, .clear_sprite
-	cp DIG
-	ret nz
-.clear_sprite
-	jp AppearUserLowerSub
 
 .alternate_anim
 	ld a, [wBattleAnimParam]
@@ -2112,8 +2090,6 @@ BattleCommand_FailureText:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .multihit
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .multihit
-	cp EFFECT_BEAT_UP
 	jr z, .multihit
 	jp EndMoveEffect
 
@@ -2444,8 +2420,6 @@ BattleCommand_CheckFaint:
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
-	cp EFFECT_TRIPLE_KICK
-	jr z, .multiple_hit_raise_sub
 	cp EFFECT_BEAT_UP
 	jr nz, .finish
 
@@ -2545,24 +2519,20 @@ DittoMetalPowder:
 	pop bc
 	ret nz
 
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp b
-	jr c, .cap
-	ret nz
-	ld a, LOW(MAX_STAT_VALUE)
-	cp c
+	ld a, c
+	srl a
+	add c
+	ld c, a
 	ret nc
 
-.cap
-	ld bc, MAX_STAT_VALUE
+	srl b
+	ld a, b
+	and a
+	jr nz, .done
+	inc b
+.done
+	scf
+	rr c
 	ret
 
 UnevolvedEviolite:
@@ -2704,15 +2674,12 @@ PlayerAttackDamage:
 	call ThickClubBoost
 
 .done
-	push hl
-	call DittoMetalPowder
-	call UnevolvedEviolite
-	pop hl
-
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
 	ld e, a
+	call DittoMetalPowder
+	call UnevolvedEviolite
 
 	ld a, 1
 	and a
@@ -2873,17 +2840,6 @@ SpeciesItemBoost:
 ; Double the stat
 	sla l
 	rl h
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp h
-	jr c, .cap
-	ret nz
-	ld a, LOW(MAX_STAT_VALUE)
-	cp l
-	ret nc
-
-.cap
-	ld hl, MAX_STAT_VALUE
 	ret
 
 EnemyAttackDamage:
@@ -2954,15 +2910,12 @@ EnemyAttackDamage:
 	call ThickClubBoost
 
 .done
-	push hl
-	call DittoMetalPowder
-	call UnevolvedEviolite
-	pop hl
-
 	call TruncateHL_BC
 
 	ld a, [wEnemyMonLevel]
 	ld e, a
+	call DittoMetalPowder
+	call UnevolvedEviolite
 
 	ld a, 1
 	and a
@@ -3012,8 +2965,6 @@ HitSelfInConfusion:
 	ld d, 40
 	pop af
 	ld e, a
-	ld a, TRUE
-	ld [wIsConfusionDamage], a
 	ret
 
 BattleCommand_DamageCalc:
@@ -3049,11 +3000,6 @@ BattleCommand_DamageCalc:
 	ret z
 
 .skip_zero_damage_check
-	xor a ; Not confusion damage
-	ld [wIsConfusionDamage], a
-	; fallthrough
-
-ConfusionDamageCalc:
 ; Minimum defense value is 1.
 	ld a, c
 	and a
@@ -3108,12 +3054,6 @@ ConfusionDamageCalc:
 	call Divide
 
 ; Item boosts
-
-; Item boosts don't apply to confusion damage
-	ld a, [wIsConfusionDamage]
-	and a
-	jr nz, .DoneItem
-
 	call GetUserItem
 
 	ld a, b
@@ -3136,6 +3076,7 @@ ConfusionDamageCalc:
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	cp b
 	jr nz, .DoneItem
 
@@ -3427,8 +3368,6 @@ INCLUDE "engine/battle/move_effects/counter.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
 
-INCLUDE "engine/battle/move_effects/pain_split.asm"
-
 INCLUDE "engine/battle/move_effects/snore.asm"
 
 INCLUDE "engine/battle/move_effects/conversion2.asm"
@@ -3677,8 +3616,6 @@ DoSubstituteDamage:
 	jr z, .ok
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .ok
-	cp EFFECT_TRIPLE_KICK
-	jr z, .ok
 	cp EFFECT_BEAT_UP
 	jr z, .ok
 	xor a
@@ -3704,32 +3641,6 @@ UpdateMoveData:
 	call GetMoveName
 	jp CopyName1
 
-CheckForStatusIfAlreadyHasAny:
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	and SLP
-	ld hl, AlreadyAsleepText
-	ret nz
-	
-	ld a, [de]
-	bit FRZ, a
-	ld hl, AlreadyFrozenText
-	ret nz
-	
-	bit PAR, a
-	ld hl, AlreadyParalyzedText
-	ret nz
-	
-	bit PSN, a
-	ld hl, AlreadyPoisonedText
-	ret nz
-	
-	bit BRN, a
-	ld hl, AlreadyBurnedText
-	ret
-
 BattleCommand_SleepTarget:
 ; sleeptarget
 
@@ -3745,7 +3656,13 @@ BattleCommand_SleepTarget:
 	jr .fail
 
 .not_protected_by_item
-	call CheckForStatusIfAlreadyHasAny
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	ld a, [de]
+	and SLP
+	ld hl, AlreadyAsleepText
 	jr nz, .fail
 
 	ld a, [wAttackMissed]
@@ -3755,6 +3672,10 @@ BattleCommand_SleepTarget:
 	ld hl, DidntAffect1Text
 	call .CheckAIRandomFail
 	jr c, .fail
+
+	ld a, [de]
+	and a
+	jr nz, .fail
 
 	call CheckSubstituteOpp
 	jr nz, .fail
@@ -3865,7 +3786,11 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
-	call CheckForStatusIfAlreadyHasAny
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	ld b, a
+	ld hl, AlreadyPoisonedText
+	and 1 << PSN
 	jp nz, .failed
 
 	call GetOpponentItem
@@ -3879,6 +3804,12 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
+	ld hl, DidntAffect1Text
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	jr nz, .failed
+
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .dont_sample_failure
@@ -5426,17 +5357,20 @@ BattleCommand_EndLoop:
 	ld a, [hl]
 	cp EFFECT_BEAT_UP
 	jr z, .beat_up
-	cp EFFECT_TRIPLE_KICK
-	jr nz, .not_triple_kick
-.reject_triple_kick_sample
+.not_triple_kick
 	call BattleRandom
 	and $3
-	jr z, .reject_triple_kick_sample
-	dec a
-	jr nz, .double_hit
-	ld a, 1
+	cp 2
+	jr c, .got_number_hits
+	call BattleRandom
+	and $3
+.got_number_hits
+	inc a
+.double_hit
+	ld [de], a
+	inc a
 	ld [bc], a
-	jr .done_loop
+	jr .loop_back_to_critical
 
 .beat_up
 	ldh a, [hBattleTurn]
@@ -5463,21 +5397,6 @@ BattleCommand_EndLoop:
 	call GetBattleVarAddr
 	res SUBSTATUS_IN_LOOP, [hl]
 	ret
-
-.not_triple_kick
-	call BattleRandom
-	and $3
-	cp 2
-	jr c, .got_number_hits
-	call BattleRandom
-	and $3
-.got_number_hits
-	inc a
-.double_hit
-	ld [de], a
-	inc a
-	ld [bc], a
-	jr .loop_back_to_critical
 
 .twineedle
 	ld a, 1
@@ -5527,27 +5446,6 @@ BattleCommand_EndLoop:
 	ld [wBattleScriptBufferAddress + 1], a
 	ld a, l
 	ld [wBattleScriptBufferAddress], a
-	ret
-
-BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5757,10 +5655,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5782,10 +5676,6 @@ BattleCommand_Charge:
 
 .done
 	ret
-
-.BattleMadeWhirlwindText:
-	text_far _BattleMadeWhirlwindText
-	text_end
 
 .BattleTookSunlightText:
 	text_far _BattleTookSunlightText
@@ -6041,8 +5931,10 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 BattleCommand_Paralyze:
 ; paralyze
 
-	call CheckForStatusIfAlreadyHasAny
-	jr nz, .hasstatus
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit PAR, a
+	jr nz, .paralyzed
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
@@ -6079,6 +5971,10 @@ BattleCommand_Paralyze:
 	jr c, .failed
 
 .dont_sample_failure
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -6100,10 +5996,9 @@ BattleCommand_Paralyze:
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
-.hasstatus
-	push hl
+.paralyzed
 	call AnimateFailedMove
-	pop hl
+	ld hl, AlreadyParalyzedText
 	jp StdBattleTextbox
 
 .failed
@@ -6129,6 +6024,7 @@ CheckMoveTypeMatchesTarget:
 
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	cp NORMAL
 	jr z, .normal
 
@@ -6200,8 +6096,6 @@ DoubleDamage:
 INCLUDE "engine/battle/move_effects/mimic.asm"
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
-
-INCLUDE "engine/battle/move_effects/splash.asm"
 
 INCLUDE "engine/battle/move_effects/disable.asm"
 
@@ -6441,8 +6335,8 @@ PrintDidntAffect:
 
 PrintDidntAffect2:
 	call AnimateFailedMove
-	ld hl, AvoidStatusText ; 'it didn't affect'
-	ld de, ProtectingItselfText ; 'protecting itself'
+	ld hl, DidntAffect1Text ; 'it didn't affect'
+	ld de, DidntAffect2Text ; 'it didn't affect'
 	jp FailText_CheckOpponentProtect
 
 PrintParalyze:
