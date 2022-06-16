@@ -13,7 +13,7 @@ Route30BerryHousePokefanMScript:
 	iftrue .GotBerry
 	writetext Route30BerrySpeechHouseMonEatBerriesText
 	promptbutton
-	verbosegiveitem BERRY
+	verbosegiveitem GOLD_BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 .GotBerry:
@@ -30,9 +30,8 @@ Route30BerrySpeechHouseMonEatBerriesText:
 	text "You know, #MON"
 	line "eat BERRIES."
 
-	para "Well, my #MON"
-	line "got healthier by"
-	cont "eating a BERRY."
+	para "But a GOLD BERRY"
+	line "is even better!"
 
 	para "Here. I'll share"
 	line "one with you!"
