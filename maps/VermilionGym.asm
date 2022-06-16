@@ -23,9 +23,6 @@ VermilionGymSurgeScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LTSURGE
-	setevent EVENT_BEAT_GENTLEMAN_GREGORY
-	setevent EVENT_BEAT_GUITARIST_VINCENT
-	setevent EVENT_BEAT_JUGGLER_HORTON
 	opentext
 	writetext ReceivedThunderBadgeText
 	playsound SFX_GET_BADGE
@@ -139,11 +136,7 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
-
-	para "Consider it proof"
+	text "Consider it proof"
 	line "that you defeated"
 
 	para "me. You wear it"
@@ -227,22 +220,23 @@ VermilionGymGuideText:
 	text "Yo! CHAMP in"
 	line "making!"
 
-	para "You lucked out"
-	line "this time."
+	para "LT.SURGE uses el-"
+	line "ectric #MON."
 
-	para "LT.SURGE is very"
-	line "cautious. He has"
+	para "Only one type is"
+	line "good against elec-"
+	cont "tric: ground."
 
-	para "traps set all over"
-	line "the GYM."
+	para "And of course, el-"
+	line "ectric is good ag-"
+	cont "ainst water, fly-"
+	cont "ing, and steel."
 
-	para "But--he-heh--the"
-	line "traps aren't"
-	cont "active right now."
+	para "There used to be"
+	line "traps in this GYM,"
 
-	para "You'll have no"
-	line "problem getting to"
-	cont "LT.SURGE."
+	para "but they're not"
+	line "active right now."
 	done
 
 VermilionGymGuideWinText:
