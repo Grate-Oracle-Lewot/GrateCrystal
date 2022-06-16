@@ -27,7 +27,6 @@ TrainerBugCatcherWade1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE
-	endifjustbattled
 	opentext
 	checkflag ENGINE_WADE_READY_FOR_REMATCH
 	iftrue .WadeRematch
@@ -266,11 +265,12 @@ Route31PokeBall:
 	itemball POKE_BALL
 
 Route31CooltrainerMText:
-	text "DARK CAVE…"
+	text "DARK CAVE is…"
+	line "dark. You can find"
 
-	para "If #MON could"
-	line "light it up, I'd"
-	cont "explore it."
+	para "dark-type #MON"
+	line "like DUNSPARCE and"
+	cont "LARVITAR in there."
 	done
 
 BugCatcherWade1SeenText:
