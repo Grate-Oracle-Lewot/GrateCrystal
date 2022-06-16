@@ -7,18 +7,14 @@ Route16FuchsiaSpeechHouse_MapScripts:
 	def_callbacks
 
 Route16FuchsiaSpeechHouseSuperNerdScript:
-	jumptextfaceplayer Route16FuchsiaSpeechHouseSuperNerdText
+	faceplayer
+	opentext
+	pokemart MARTTYPE_BERRY, MART_BERRY
+	closetext
+	end
 
 Route16FuchsiaSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
-
-Route16FuchsiaSpeechHouseSuperNerdText:
-	text "If you cruise down"
-	line "CYCLING ROAD, you"
-
-	para "will end up in"
-	line "FUCHSIA CITY."
-	done
 
 Route16FuchsiaSpeechHouse_MapEvents:
 	db 0, 0 ; filler
