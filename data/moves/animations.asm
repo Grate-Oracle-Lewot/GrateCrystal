@@ -3156,6 +3156,22 @@ BattleAnim_TripleKick:
 	anim_wait 8
 	anim_ret
 
+.alternate1:
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_KICK, 120, 64, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 120, 64, $0
+	anim_wait 8
+	anim_ret
+
+.alternate2:
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_KICK, 132, 32, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 132, 32, $0
+	anim_wait 8
+	anim_ret
+
 BattleAnim_Thief:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
