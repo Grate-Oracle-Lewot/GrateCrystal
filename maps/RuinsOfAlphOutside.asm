@@ -4,6 +4,7 @@
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_SUPER_NERD
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -110,7 +111,7 @@ TrainerPsychicNathan:
 	closetext
 	end
 
-TrainerSuperNerdStan: ; unreferenced
+TrainerSuperNerdStan:
 	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
 
 .Script:
@@ -198,13 +199,15 @@ SuperNerdStanAfterBattleText:
 	para "Nobody knows who"
 	line "built them."
 
-	para "It's also not"
-	line "known if the #-"
-	cont "MON statues have"
-	cont "any meaning."
+	para "It's rumored that"
+	line "the mysterious"
 
-	para "It's all one big"
-	line "mystery…"
+	para "#MON found here"
+	line "are also seen in"
+
+	para "places where leg-"
+	line "endary #MON can"
+	cont "be glimpsed…"
 	done
 
 PsychicNathanSeenText:
@@ -309,3 +312,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event 12, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdStan, -1
