@@ -1,10 +1,15 @@
 	object_const_def
+	const TOHJOFALLS_ROCK1
+	const TOHJOFALLS_ROCK2
 	const TOHJOFALLS_POKE_BALL
 
 TohjoFalls_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TohjoFallsRock:
+	jumpstd SmashRockScript
 
 TohjoFallsMoonStone:
 	itemball MOON_STONE
@@ -15,10 +20,13 @@ TohjoFalls_MapEvents:
 	def_warp_events
 	warp_event 13, 15, ROUTE_27, 2
 	warp_event 25, 15, ROUTE_27, 3
+	warp_event 13,  1, MEW_ANTECHAMBER, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
+	object_event 12,  2, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsRock, -1
+	object_event 13,  3, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsRock, -1
 	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsMoonStone, EVENT_TOHJO_FALLS_MOON_STONE
