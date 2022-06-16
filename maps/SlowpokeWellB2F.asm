@@ -31,32 +31,32 @@ SlowpokeWellB2FTMRainDance:
 	itemball TM_RAIN_DANCE
 
 SlowpokeWellB2FGymGuideText:
-	text "I'm waiting to see"
-	line "SLOWPOKE's moment"
-	cont "of evolution."
+	text "In this hack,"
+	line "SLOWPOKE evolves"
+	cont "like TYROGUE."
 
-	para "Through observa-"
-	line "tion, I made a new"
-	cont "discovery."
+	para "Higher ATTACK gets"
+	line "you a SLOWKING."
 
-	para "A SLOWPOKE with a"
-	line "KING'S ROCK often"
+	para "Higher DEFENSE, a"
+	line "SLOWBRO."
 
-	para "gets bitten by a"
-	line "SHELLDER."
+	para "If the two are"
+	line "equal, you still"
+	cont "get SLOWBRO."
 
-	para "Here, I'll share a"
-	line "KING'S ROCK with"
-	cont "you."
+	para "Since I don't need"
+	line "this KING'S ROCK,"
+	cont "you can have it."
 	done
 
 SlowpokeWellB2FGymGuideText_GotKingsRock:
-	text "I'm going to be"
-	line "like SLOWPOKE."
+	text "Have a #MON"
+	line "hold KING'S ROCK."
 
-	para "I'll wait patient-"
-	line "ly, so I can see"
-	cont "one evolve."
+	para "The enemy might"
+	line "flinch when it's"
+	cont "hit!"
 	done
 
 SlowpokeWellB2F_MapEvents:
@@ -64,6 +64,7 @@ SlowpokeWellB2F_MapEvents:
 
 	def_warp_events
 	warp_event  9, 11, SLOWPOKE_WELL_B1F, 2
+	warp_event 15,  3, UNION_CAVE_SLOWPOKE_WELL_LINK, 2
 
 	def_coord_events
 
@@ -71,4 +72,4 @@ SlowpokeWellB2F_MapEvents:
 
 	def_object_events
 	object_event  5,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SlowpokeWellB2FGymGuideScript, -1
-	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FTMRainDance, EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
+	object_event 10,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FTMRainDance, EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
