@@ -16,11 +16,11 @@ HouseForSaleSign:
 	jumptext HouseForSaleSignText
 
 Route5PokefanMText:
-	text "The road is closed"
-	line "until the problem"
+	text "The POWER PLANT's"
+	line "MANAGER paid me to"
 
-	para "at the POWER PLANT"
-	line "is solved."
+	para "stand here. I"
+	line "don't care why."
 	done
 
 Route5UndergroundPathSignText:
