@@ -87,11 +87,11 @@ VictoryRoadGateLeftBlackBeltText:
 	line "through without"
 
 	para "permission from"
-	line "PROF. OAK."
+	line "PROF.OAK."
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "PROF. OAK paid me"
+	text "PROF.OAK paid me"
 	line "to stand here"
 
 	para "until you find out"
