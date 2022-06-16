@@ -82,17 +82,23 @@ VictoryRoadGateLeftBlackBeltText:
 	para "You'll see scary-"
 	line "strong #MON out"
 	cont "there."
+
+	para "I can't let you"
+	line "through without"
+
+	para "permission from"
+	line "PROF. OAK."
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "Off to the #MON"
-	line "LEAGUE, are you?"
+	text "PROF. OAK paid me"
+	line "to stand here"
 
-	para "The ELITE FOUR are"
-	line "so strong it's"
+	para "until you find out"
+	line "how to enter the"
 
-	para "scary, and they're"
-	line "ready for you!"
+	para "doorway down the"
+	line "hall behind me."
 	done
 
 VictoryRoadGate_MapEvents:
