@@ -727,10 +727,10 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	attackup
-	statupmessage
 	checkfaint
 	buildopponentrage
+	attackup
+	statupmessage
 	endmove
 
 AllUpHit:
