@@ -20,6 +20,8 @@ ViridianGymBlueScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
+	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	setflag ENGINE_MEWTWO_CALL_ENABLED
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -140,17 +142,16 @@ ViridianGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
 
-	para "How's it going?"
-	line "Looks like you're"
-	cont "on a roll."
+	para "The GYM LEADER"
+	line "here is PROF.OAK's"
+	cont "grandson!"
 
-	para "The GYM LEADER is"
-	line "a guy who battled"
+	para "He doesn't limit"
+	line "himself to one"
+	cont "type of #MON."
 
-	para "the CHAMPION three"
-	line "years ago."
-
-	para "He's no pushover."
+	para "You'll have to be"
+	line "flexible to win."
 
 	para "Give it everything"
 	line "you've got!"
