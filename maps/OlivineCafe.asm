@@ -30,28 +30,31 @@ OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
 
 OlivineCafeStrengthSailorText:
-	text "Hah! Your #MON"
-	line "sure look like"
-	cont "lightweights!"
+	text "A long time ago in"
+	line "a galaxy far, far"
+	cont "away…"
 
-	para "They don't have"
-	line "the power to move"
-	cont "boulders aside."
+	para "A devout order"
+	line "known as the JEDI"
 
-	para "Here, use this"
-	line "and teach them"
-	cont "STRENGTH!"
+	para "learned to tap into"
+	line "the energy field"
+
+	para "given off by all"
+	line "life, THE FORCE."
+
+	para "With this HM, your"
+	line "#MON can do the"
+	cont "same!"
 	done
 
 OlivineCafeStrengthSailorText_GotStrength:
-	text "On the sea, the"
-	line "only thing you can"
+	text "Using THE FORCE,"
+	line "#MON can move"
 
-	para "count on is your"
-	line "own good self!"
-
-	para "I'm so proud of my"
-	line "buff bod!"
+	para "large boulders"
+	line "with the power of"
+	cont "their minds."
 	done
 
 OlivineCafeFishingGuruText:
@@ -88,6 +91,6 @@ OlivineCafe_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
+	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
 	object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
 	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
