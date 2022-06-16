@@ -1,6 +1,7 @@
 	object_const_def
 	const TEAMROCKETBASEB1F_ROCKET1
 	const TEAMROCKETBASEB1F_ROCKET2
+	const TEAMROCKETBASEB1F_ROCKET3
 	const TEAMROCKETBASEB1F_SCIENTIST
 	const TEAMROCKETBASEB1F_POKE_BALL1
 	const TEAMROCKETBASEB1F_POKE_BALL2
@@ -500,6 +501,17 @@ TrainerGruntM16:
 	closetext
 	end
 
+TrainerGruntM26:
+	trainer GRUNTM, GRUNTM_26, EVENT_BEAT_ROCKET_GRUNTM_26, GruntM26SeenText, GruntM26BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GruntM26AfterBattleText
+	waitbutton
+	closetext
+	end
+
 TeamRocketBaseB1FSecurityCamera:
 	jumptext TeamRocketBaseB1FSecurityCameraText
 
@@ -706,6 +718,22 @@ GruntM16AfterBattleText:
 	cont "courage and walk."
 	done
 
+GruntM26SeenText:
+	text "Huh? How'd you get"
+	line "past secuity?"
+	done
+
+GruntM26BeatenText:
+	text "Darn dirty rotten"
+	line "sassafrassin'"
+	cont "little…"
+	done
+
+GruntM26AfterBattleText:
+	text "We need better"
+	line "security."
+	done
+
 TeamRocketBaseB1FSecurityCameraText:
 	text "It's a PERSIAN"
 	line "statue…"
@@ -783,6 +811,7 @@ TeamRocketBaseB1F_MapEvents:
 	def_object_events
 	object_event  0,  0, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_SECURITY_GRUNTS
 	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM16, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event 27, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM26, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 18, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistJed, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 27,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FHyperPotion, EVENT_TEAM_ROCKET_BASE_B1F_HYPER_POTION
 	object_event 14, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FNugget, EVENT_TEAM_ROCKET_BASE_B1F_NUGGET
