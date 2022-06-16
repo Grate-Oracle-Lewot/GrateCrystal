@@ -283,6 +283,7 @@ AI_Items:
 	dbw X_DEFEND,     .XDefend
 	dbw X_SPEED,      .XSpeed
 	dbw X_SPECIAL,    .XSpecial
+	dbw X_SP_DEFEND,  .XSpDefend
 	db -1 ; end
 
 .FullHeal:
@@ -489,6 +490,12 @@ AI_Items:
 	call EnemyUsedXSpecial
 	jp .Use
 
+.XSpDefend:
+	call .XItem
+	jp c, .DontUse
+	call EnemyUsedXSpDefend
+	jp .Use
+
 .XItem:
 	ld a, [wEnemyTurnsTaken]
 	and a
@@ -555,6 +562,10 @@ EnemyUsedFullRestore:
 	call AI_HealStatus
 	ld a, FULL_RESTORE
 	ld [wCurEnemyItem], a
+	ld hl, wEnemySubStatus3
+	res SUBSTATUS_CONFUSED, [hl]
+	xor a
+	ld [wEnemyConfuseCount], a
 
 FullRestoreContinue:
 	ld de, wCurHPAnimOldHP
@@ -728,9 +739,12 @@ AI_HealStatus:
 	xor a
 	ld [hl], a
 	ld [wEnemyMonStatus], a
-	ld [wEnemyConfuseCount], a
+	; Bug: this should reset SUBSTATUS_NIGHTMARE
+	; Uncomment the 2 lines below to fix (Done)
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_NIGHTMARE, [hl]
+	; Bug: this should reset SUBSTATUS_CONFUSED
+	; Uncomment the 2 lines below to fix (Done)
 	ld hl, wEnemySubStatus3
 	res SUBSTATUS_CONFUSED, [hl]
 	ld hl, wEnemySubStatus5
@@ -808,6 +822,11 @@ EnemyUsedXSpeed:
 EnemyUsedXSpecial:
 	ld b, SP_ATTACK
 	ld a, X_SPECIAL
+
+EnemyUsedXSpDefend:
+	ld b, SP_DEFENSE
+	ld a, X_SP_DEFEND
+	jr EnemyUsedXItem
 
 ; Parameter
 ; a = ITEM_CONSTANT
