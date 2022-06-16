@@ -471,3 +471,12 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/UnionCaveSlowpokeWellLink.asm"
+INCLUDE "maps/IcePathArticunoChamber.asm"
+INCLUDE "maps/RockTunnelZapdosChamber.asm"
+INCLUDE "maps/SilverCaveMoltresChamber.asm"
+INCLUDE "maps/MewAntechamber.asm"
+INCLUDE "maps/MewChamber.asm"
+INCLUDE "maps/LavRadioTower2F.asm"
+INCLUDE "maps/SeafoamCave1F.asm"
+INCLUDE "maps/SeafoamCaveB1F.asm"
