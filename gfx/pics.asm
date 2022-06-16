@@ -640,7 +640,6 @@ SkarmoryBackpic:     INCBIN "gfx/pokemon/skarmory/back.2bpp.lz"
 MetapodBackpic:      INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
 JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
 OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
-UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
 
 SECTION "Pics 18", ROMX
@@ -714,6 +713,7 @@ KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
 SnorlaxBackpic:      INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz" ; 13
 SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz" ; 14
+UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz" ; 17
 YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
 YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
 WhimsicottFrontpic:  INCBIN "gfx/pokemon/whimsicott/front.animated.2bpp.lz"
