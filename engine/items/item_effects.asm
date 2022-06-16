@@ -38,7 +38,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
-	dw NoEffect            ; ITEM_19
+	dw EvoStoneEffect      ; LINK_VOUCHER
 	dw VitaminEffect       ; HP_UP
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
@@ -58,12 +58,12 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; ITEM_2D
+	dw NoEffect            ; ANTIVENOM
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; ALOE_VERA
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -103,7 +103,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; ITEM_5A
+	dw NoEffect            ; HANDWARMER
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -113,7 +113,7 @@ ItemEffects:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; ITEM_64
+	dw NoEffect            ; NOISEMAKER
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
@@ -133,7 +133,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; ITEM_78
+	dw NoEffect            ; LIMBO_STICK
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -148,34 +148,34 @@ ItemEffects:
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
-	dw NoEffect            ; ITEM_87
-	dw NoEffect            ; ITEM_88
-	dw NoEffect            ; ITEM_89
+	dw NoEffect            ; DICTIONARY
+	dw OddRodEffect        ; ODD_ROD
+	dw NoEffect            ; EVIOLITE
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
-	dw NoEffect            ; ITEM_8E
-	dw NoEffect            ; METAL_COAT
+	dw PocketPCEffect      ; POCKET_PC
+	dw XItemEffect         ; X_SP_DEFEND
+	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; ITEM_91
+	dw HedgerEffect        ; HEDGER
 	dw NoEffect            ; LEFTOVERS
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
-	dw NoEffect            ; ITEM_95
+	dw FloatieEffect       ; FLOATIE
+	dw DiscoBallEffect     ; DISCO_BALL
+	dw EggBeaterEffect     ; EGG_BEATER
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
-	dw NoEffect            ; ITEM_9B
+	dw PickaxeEffect       ; PICKAXE
+	dw FearowbotEffect     ; FEAROWBOT
+	dw PokeBallEffect      ; DUSK_BALL
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
 	dw PokeBallEffect      ; FAST_BALL
-	dw NoEffect            ; ITEM_A2
+	dw NoEffect            ; X_EVADE
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -185,14 +185,14 @@ ItemEffects:
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
 	dw NoEffect            ; ITEM_AB
-	dw NoEffect            ; UP_GRADE
+	dw EvoStoneEffect      ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
 	dw NoEffect            ; ITEM_B0
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
+	dw NoEffect            ; CANDIED_YAM
 	assert_table_length ITEM_B3
 ; The items past ITEM_B3 do not have effect entries:
 ;	BRICK_PIECE
@@ -338,6 +338,11 @@ PokeBallEffect:
 	jr nz, .statuscheck
 	ld a, 1
 .statuscheck
+; This routine is buggy. It was intended that SLP and FRZ provide a higher
+; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
+; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
+; benefit.
+; Uncomment the line below to fix this. (Done)
 	ld b, a
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
@@ -355,6 +360,9 @@ PokeBallEffect:
 	ld a, $ff
 .max_1
 
+	; BUG: farcall overwrites a, and GetItemHeldEffect takes b anyway.
+	; This is probably the reason the HELD_CATCH_CHANCE effect is never used.
+	; Uncomment the line below to fix. (Done)
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
@@ -442,6 +450,9 @@ PokeBallEffect:
 	push af
 	set SUBSTATUS_TRANSFORMED, [hl]
 
+; This code is buggy. Any wild Pokémon that has Transformed will be
+; caught as a Ditto, even if it was something else like Mew.
+; To fix, do not set [wTempEnemyMonSpecies] to DITTO. (Done)
 	bit SUBSTATUS_TRANSFORMED, a
 	jr nz, .load_data
 
@@ -499,19 +510,6 @@ PokeBallEffect:
 
 	ld hl, Text_GotchaMonWasCaught
 	call PrintText
-
-	ld a, [wTempSpecies]
-	ld l, a
-	ld a, [wCurPartyLevel]
-	ld h, a
-	push hl
-	farcall ApplyExperienceAfterEnemyCaught
-	pop hl
-	ld a, l
-	ld [wCurPartySpecies], a
-	ld [wTempSpecies], a
-	ld a, h
-	ld [wCurPartyLevel], a
 
 	call ClearSprites
 
@@ -729,7 +727,6 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
-	dbw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
@@ -737,6 +734,7 @@ BallMultiplierFunctionTable:
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
+	dbw DUSK_BALL,   DuskBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -746,7 +744,6 @@ UltraBallMultiplier:
 	ld b, $ff
 	ret
 
-SafariBallMultiplier:
 GreatBallMultiplier:
 ParkBallMultiplier:
 ; multiply catch rate by 1.5
@@ -763,7 +760,7 @@ HeavyBallMultiplier:
 ; else add 0 to catch rate if weight < 204.8 kg
 ; else add 20 to catch rate if weight < 307.2 kg
 ; else add 30 to catch rate if weight < 409.6 kg
-; else add 40 to catch rate
+; else add 40 to catch rate (never happens)
 	ld a, [wEnemyMonSpecies]
 	ld hl, PokedexDataPointerTable
 	dec a
@@ -884,6 +881,9 @@ LureBallMultiplier:
 	ret
 
 MoonBallMultiplier:
+; This function is buggy.
+; Intent:  multiply catch rate by 4 if mon evolves with moon stone
+; Reality: no boost
 	push bc
 	ld a, [wTempEnemyMonSpecies]
 	dec a
@@ -907,6 +907,9 @@ MoonBallMultiplier:
 	inc hl
 	inc hl
 
+; Moon Stone's constant from Pokémon Red is used.
+; No Pokémon evolve with Burn Heal,
+; so Moon Balls always have a catch rate of 1×. (Fixed)
 	push bc
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -924,6 +927,9 @@ MoonBallMultiplier:
 	ret
 
 LoveBallMultiplier:
+; This function is buggy.
+; Intent:  multiply catch rate by 8 if mons are of same species, different sex
+; Reality: multiply catch rate by 8 if mons are of same species, same sex
 
 	; does species match?
 	ld a, [wTempEnemyMonSpecies]
@@ -966,7 +972,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret z
+	ret z ; for the intended effect, this should be "ret z"
 
 	sla b
 	jr c, .max
@@ -986,6 +992,11 @@ LoveBallMultiplier:
 	ret
 
 FastBallMultiplier:
+; This function is buggy.
+; Intent:  multiply catch rate by 4 if enemy mon is in one of the three
+;          FleeMons tables.
+; Reality: multiply catch rate by 4 if enemy mon is one of the first three in
+;          the first FleeMons table.
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	ld hl, FleeMons
@@ -999,7 +1010,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .loop
+	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop"
 	sla b
 	jr c, .max
 
@@ -1073,16 +1084,6 @@ DuskBallMultiplier:
 .max
 	ld b, $ff
 	ret
-
-; BallDodgedText and BallMissedText were used in Gen 1.
-
-BallDodgedText: ; unreferenced
-	text_far _BallDodgedText
-	text_end
-
-BallMissedText: ; unreferenced
-	text_far _BallMissedText
-	text_end
 
 BallBrokeFreeText:
 	text_far _BallBrokeFreeText
@@ -2314,7 +2315,7 @@ ItemfinderEffect:
 	farcall ItemFinder
 	ret
 
-PocketPCEffect:
+	PocketPCEffect:
 	farcall PocketPCFunction
 	ret
 
@@ -2954,4 +2955,38 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+HedgerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall CutFunction
+	ret
+
+FloatieEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall SurfFunction
+	ret
+
+DiscoBallEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall FlashFunction
+	ret
+
+EggBeaterEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall WhirlpoolFunction
+	ret
+
+PickaxeEffect:
+	farcall RockSmashFunction
+	ret
+
+FearowbotEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall FlyFunction
 	ret
