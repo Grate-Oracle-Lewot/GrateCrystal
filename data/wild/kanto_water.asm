@@ -7,6 +7,15 @@ KantoWaterWildMons:
 	db 20, GOLDEEN
 	db 20, SLOWPOKE
 	db 20, SEAKING
+	db 15, MARILL
+	end_water_wildmons
+
+	def_water_wildmons MEW_ANTECHAMBER
+	db 1 percent ; encounter rate
+	db 25, SEAKING
+	db 25, UNOWN
+	db 25, SLOWBRO
+	db 25, SLOWKING
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT
@@ -14,6 +23,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 30, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_4
@@ -21,6 +31,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
+	db 5, YANMA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_6
@@ -28,6 +39,7 @@ KantoWaterWildMons:
 	db 10, PSYDUCK
 	db 5, PSYDUCK
 	db 10, GOLDUCK
+	db 10, FARFETCH_D
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_9
@@ -35,6 +47,7 @@ KantoWaterWildMons:
 	db 15, GOLDEEN
 	db 10, GOLDEEN
 	db 15, SEAKING
+	db 10, MAGNEMITE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
@@ -42,6 +55,7 @@ KantoWaterWildMons:
 	db 15, GOLDEEN
 	db 10, GOLDEEN
 	db 15, SEAKING
+	db 10, MAGNEMITE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_12
@@ -49,6 +63,7 @@ KantoWaterWildMons:
 	db 25, TENTACOOL
 	db 25, QUAGSIRE
 	db 25, TENTACRUEL
+	db 25, SEADRA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_13
@@ -56,6 +71,7 @@ KantoWaterWildMons:
 	db 25, TENTACOOL
 	db 25, QUAGSIRE
 	db 25, TENTACRUEL
+	db 25, SEADRA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_19
@@ -63,6 +79,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 30, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_20
@@ -70,6 +87,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 35, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_21
@@ -77,6 +95,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 30, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_22
@@ -84,6 +103,7 @@ KantoWaterWildMons:
 	db 10, POLIWAG
 	db 5, POLIWAG
 	db 10, POLIWHIRL
+	db 5, WOOPER
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_24
@@ -91,6 +111,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
+	db 5, YANMA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_25
@@ -98,6 +119,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
+	db 5, YANMA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_26
@@ -105,6 +127,7 @@ KantoWaterWildMons:
 	db 30, TENTACOOL
 	db 25, TENTACOOL
 	db 30, TENTACRUEL
+	db 25, GOLDUCK
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_27
@@ -112,6 +135,7 @@ KantoWaterWildMons:
 	db 20, TENTACOOL
 	db 15, TENTACOOL
 	db 20, TENTACRUEL
+	db 15, PSYDUCK
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28
@@ -119,6 +143,7 @@ KantoWaterWildMons:
 	db 40, POLIWAG
 	db 35, POLIWAG
 	db 40, POLIWHIRL
+	db 35, YANMEGA
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
@@ -126,6 +151,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 30, TANGELA
 	end_water_wildmons
 
 	def_water_wildmons VIRIDIAN_CITY
@@ -133,6 +159,7 @@ KantoWaterWildMons:
 	db 10, POLIWAG
 	db 5, POLIWAG
 	db 10, POLIWHIRL
+	db 5, WOOPER
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CITY
@@ -140,6 +167,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
+	db 5, YANMA
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY
@@ -147,6 +175,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 30, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons CELADON_CITY
@@ -154,6 +183,7 @@ KantoWaterWildMons:
 	db 20, GRIMER
 	db 15, GRIMER
 	db 15, MUK
+	db 15, QUAGSIRE
 	end_water_wildmons
 
 	def_water_wildmons FUCHSIA_CITY
@@ -161,6 +191,7 @@ KantoWaterWildMons:
 	db 20, MAGIKARP
 	db 15, MAGIKARP
 	db 10, MAGIKARP
+	db 20, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons CINNABAR_ISLAND
@@ -168,6 +199,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 59, UNOWN
 	end_water_wildmons
 
 	db -1 ; end
