@@ -17,7 +17,6 @@ TinTower1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .NPCsCallback
-	callback MAPCALLBACK_TILES, .StairsCallback
 
 .FaceSuicune:
 	sdefer .SuicuneBattle
@@ -72,13 +71,6 @@ TinTower1F_MapScripts:
 	disappear TINTOWER1F_ENTEI
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
-	endcallback
-
-.StairsCallback:
-	checkevent EVENT_GOT_RAINBOW_WING
-	iftrue .DontHideStairs
-	changeblock 10, 2, $09 ; floor
-.DontHideStairs:
 	endcallback
 
 .SuicuneBattle:
@@ -189,29 +181,13 @@ TinTower1FSage5Script:
 	opentext
 	checkevent EVENT_FOUGHT_HO_OH
 	iftrue .FoughtHoOh
-	checkevent EVENT_GOT_RAINBOW_WING
-	iftrue .GotRainbowWing
 	writetext TinTower1FSage5Text1
-	promptbutton
-	verbosegiveitem RAINBOW_WING
-	closetext
-	refreshscreen
-	earthquake 72
-	waitsfx
-	playsound SFX_STRENGTH
-	changeblock 10, 2, $20 ; stairs
-	reloadmappart
-	setevent EVENT_GOT_RAINBOW_WING
-	closetext
-	opentext
-.GotRainbowWing:
-	writetext TinTower1FSage5Text2
 	waitbutton
 	closetext
 	end
 
 .FoughtHoOh:
-	writetext TinTower1FSage5Text3
+	writetext TinTower1FSage5Text2
 	waitbutton
 	closetext
 	end
@@ -423,12 +399,29 @@ TinTower1FSage4Text1:
 	done
 
 TinTower1FSage5Text1:
-	text "This will protect"
-	line "you. Take it."
+	text "HO-OH awaits you"
+	line "on the rooftop."
 	done
 
 TinTower1FSage5Text2:
-	text "Now, go."
+	text "When the legendary"
+	line "#MON appeared…"
+
+	para "They struck terror"
+	line "in those who saw"
+	cont "their rise."
+
+	para "And…"
+
+	para "Some even took to"
+	line "futile attacks."
+
+	para "The legendary"
+	line "#MON, knowing"
+
+	para "their own power,"
+	line "fled, ignoring the"
+	cont "frightened people."
 	done
 
 TinTower1FSage6Text1:
@@ -477,27 +470,6 @@ TinTower1FSage4Text2:
 
 	para "And the rain that"
 	line "put out the fire…"
-	done
-
-TinTower1FSage5Text3:
-	text "When the legendary"
-	line "#MON appeared…"
-
-	para "They struck terror"
-	line "in those who saw"
-	cont "their rise."
-
-	para "And…"
-
-	para "Some even took to"
-	line "futile attacks."
-
-	para "The legendary"
-	line "#MON, knowing"
-
-	para "their own power,"
-	line "fled, ignoring the"
-	cont "frightened people."
 	done
 
 TinTower1FSage6Text2:
