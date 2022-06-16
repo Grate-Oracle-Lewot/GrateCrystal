@@ -173,29 +173,25 @@ SproutTowerElderLecturesRivalText:
 	done
 
 SproutTowerRivalOnlyCareAboutStrongText:
-	text "…"
-	line "…Humph!"
+	text "ER!AFTER THE ELDER"
+	line "SAID,NOBODY"
+	cont "ANSWERED,"
 
-	para "He claims to be"
-	line "the ELDER but"
-	cont "he's weak."
+	para "CERTAINLY"
 
-	para "It stands to"
-	line "reason."
+	para "TO BE KIND OF"
 
-	para "I'd never lose to"
-	line "fools who babble"
+	para " "
+	line "THE MONSTERS,"
 
-	para "about being nice"
-	line "to #MON."
+	para "I DON'T ADMIT"
 
-	para "I only care about"
-	line "strong #MON"
-	cont "that can win."
-
-	para "I really couldn't"
-	line "care less about"
-	cont "weak #MON."
+	para " "
+	line "DEFEAT"
+	cont "I TAKE A FANCY"
+	cont "TO THE STRONG"
+	cont "WINNER.ANYTHING"
+	cont "ELSE IS OK."
 	done
 
 SproutTowerRivalUsedEscapeRopeText:
