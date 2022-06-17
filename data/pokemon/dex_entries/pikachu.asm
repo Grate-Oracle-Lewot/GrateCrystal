@@ -1,10 +1,10 @@
 	db "MOUSE@" ; species name
 	dw 104, 130 ; height, weight
 
-	db   "When it is anger-"
-	next "ed, it immediately"
-	next "discharges the"
+	db   "Though beloved"
+	next "worldwide, it is"
+	next "resistant to"
 
-	page "energy stored in"
-	next "the pouches in its"
-	next "cheeks.@"
+	page "domestication, and"
+	next "wild populations"
+	next "are rare.@"
