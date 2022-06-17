@@ -7,4 +7,4 @@
 
 	page "Now it must mature"
 	next "as a YANMA before"
-	next "evolving."
+	next "evolving.@"
