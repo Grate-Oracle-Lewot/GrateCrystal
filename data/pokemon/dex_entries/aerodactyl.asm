@@ -1,10 +1,10 @@
 	db "FOSSIL@" ; species name
 	dw 511, 1300 ; height, weight
 
-	db   "In prehistoric"
-	next "times, this"
-	next "#MON flew"
+	db   "Its rock-hard"
+	next "scales can't be"
+	next "pierced, but its"
 
-	page "freely and"
-	next "fearlessly through"
-	next "the skies.@"
+	page "blood can be suck-"
+	next "ed from the gaps"
+	next "between them.@"
