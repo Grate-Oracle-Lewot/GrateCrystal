@@ -1,10 +1,10 @@
 	db "WORM@" ; species name
 	dw 100, 60 ; height, weight
 
-	db   "It crawls into"
-	next "foliage where it"
-	next "camouflages itself"
+	db   "A weak larval form"
+	next "of BUTTERFREE that"
+	next "often falls prey"
 
-	page "among leaves that"
-	next "are the same color"
-	next "as its body.@"
+	page "to hungry bird"
+	next "#MON. It eats"
+	next "leaves all day.@"
