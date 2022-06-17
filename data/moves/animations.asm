@@ -841,6 +841,19 @@ BattleAnim_HyperFang:
 	anim_wait 6
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
+	anim_1gfx ANIM_GFX_SPEED
+	anim_obp0 $fc
+	anim_sound 63, 3, SFX_LICK
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $0
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $8
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $10
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $18
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $20
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $28
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $30
+	anim_obj ANIM_OBJ_MIMIC, 132, 44, $38
+	anim_wait 128
+	anim_wait 48
 	anim_ret
 
 BattleAnim_SuperFang:
@@ -1586,6 +1599,7 @@ BattleAnim_Teleport:
 	anim_ret
 
 BattleAnim_Fly:
+BattleAnim_SkyAttack:
 	anim_if_param_equal $1, .turn1
 	anim_if_param_equal $2, .miss
 	anim_1gfx ANIM_GFX_HIT
@@ -2598,25 +2612,6 @@ BattleAnim_Minimize:
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_MON
 	anim_wait 48
 	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
-BattleAnim_SkyAttack:
-	anim_if_param_equal $1, BattleAnim_FocusEnergy
-	anim_1gfx ANIM_GFX_SKY_ATTACK
-	anim_bgeffect ANIM_BG_REMOVE_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 32
-	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
-	anim_wait 64
-	anim_incobj 1
-	anim_wait 21
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-	anim_wait 64
-	anim_incobj 1
-	anim_wait 32
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_NightShade:
