@@ -1,10 +1,10 @@
 	db "DUMMY@" ; species name
 	dw 403, 630 ; height, weight
 
-	db   "It's thought to be"
-	next "an evolved form of"
-	next "UNOWN, but this"
+	db   "It's theorized to"
+	next "evolve from UNOWN"
+	next "in response to"
 
-	page "has yet to be"
-	next "confirmed."
-	next "@"
+	page "stress, but this"
+	next "has not been"
+	next "confirmed.@"
