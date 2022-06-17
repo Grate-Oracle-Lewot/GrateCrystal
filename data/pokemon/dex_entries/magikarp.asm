@@ -1,10 +1,10 @@
-	db "FISH@" ; species name
+	db "KOI@" ; species name
 	dw 211, 220 ; height, weight
 
-	db   "This weak and"
-	next "pathetic #MON"
-	next "gets easily pushed"
+	db   "It eventually"
+	next "evolves out of"
+	next "pure spite. This"
 
-	page "along rivers when"
-	next "there are strong"
-	next "currents.@"
+	page "is why GYARADOS"
+	next "are so aggressive"
+	next "and destructive.@"
