@@ -1714,7 +1714,7 @@ KangaskhanEvosAttacks:
 	db 7, LEER
 	db 13, COMET_PUNCH
 	db 16, STOMP
-	db 19, HEADBUTT
+	db 19, LOW_KICK
 	db 25, MEGA_PUNCH
 	db 31, DIZZY_PUNCH
 	db 34, VITAL_THROW
