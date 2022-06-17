@@ -68,7 +68,7 @@ Moves:
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         SPECIAL,  100, 15,  10
 	move MIST,         EFFECT_MIST,                0, ICE,          STATUS,   100, 30,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,        SPECIAL,  100, 25,   0
-	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,        SPECIAL,   80,  5,   0
+	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,        SPECIAL,   85,  5,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,          SPECIAL,   70,  5,  10
@@ -158,7 +158,7 @@ Moves:
 	move SKY_ATTACK,   EFFECT_FLY,               140, FLYING,       PHYSICAL,  90,  5,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       STATUS,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,        SPECIAL,  100, 30,  10
-	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       PHYSICAL, 100, 10,  20
+	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       PHYSICAL, 100, 10,  30
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,        STATUS,   100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN_HIT,  80, STEEL,        SPECIAL,  100, 10,  10
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC_TYPE, SPECIAL,  100, 15,   0
@@ -250,7 +250,7 @@ Moves:
 	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,        STATUS,   100,  5,   0
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,        STATUS,   100,  5,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, CURSE_TYPE,   SPECIAL,  100, 15,   0
-	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,     PHYSICAL,  80,  5,   0
+	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,     PHYSICAL,  85,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,       SPECIAL,  100, 20,  20
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,        STATUS,   100,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,         STATUS,   100,  5,   0
@@ -266,6 +266,6 @@ Moves:
 	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,         PHYSICAL, 100, 10,   0
 	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY,        SPECIAL,  100, 30,   0
 	move DRAIN_KISS,   EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 10,   0
-	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   80,  5,  30
+	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   85,  5,  30
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       PHYSICAL, 100,  1,   0
 	assert_table_length NUM_ATTACKS
