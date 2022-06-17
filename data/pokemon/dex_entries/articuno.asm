@@ -1,10 +1,10 @@
 	db "FREEZE@" ; species name
 	dw 507, 1220 ; height, weight
 
-	db   "Legendary bird"
-	next "#MON. As it"
-	next "flies through the"
+	db   "It caused the ice"
+	next "age with a sneeze."
+	next "Tickling its beak"
 
-	page "sky, it cools the"
-	next "air, causing snow"
-	next "to fall.@"
+	page "would be inadvis-"
+	next "able."
+	next "@"
