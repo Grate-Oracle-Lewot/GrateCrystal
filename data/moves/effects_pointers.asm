@@ -81,7 +81,6 @@ MoveEffectsPointers:
 	dw Rage
 	dw Metronome
 	dw LeechSeed
-	dw SpecialDefenseDownHit
 	dw Disable
 	dw StaticDamage
 	dw Psywave
