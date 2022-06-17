@@ -1,10 +1,10 @@
 	db "CLEAR WING@" ; species name
 	dw 311, 840 ; height, weight
 
-	db   "It can see in all"
-	next "directions without"
-	next "moving its big"
+	db   "Each of its wings"
+	next "can move indep-"
+	next "endently, letting"
 
-	page "eyes, helping it"
-	next "spot attackers and"
-	next "food right away.@"
+	page "it perform unpar-"
+	next "alleled aerobatics"
+	next "to catch prey.@"
