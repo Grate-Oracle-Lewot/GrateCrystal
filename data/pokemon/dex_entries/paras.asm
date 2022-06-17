@@ -1,10 +1,10 @@
 	db "MUSHROOM@" ; species name
 	dw 100, 120 ; height, weight
 
-	db   "The tochukaso"
-	next "growing on this"
-	next "#MON's back"
+	db   "Mushroom spores"
+	next "infect it while"
+	next "it's inside its"
 
-	page "orders it to"
-	next "extract juice from"
-	next "tree trunks.@"
+	page "EGG, so there's no"
+	next "way to see one"
+	next "without them.@"
