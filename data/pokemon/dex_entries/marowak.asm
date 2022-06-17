@@ -1,10 +1,10 @@
 	db "BONEKEEPER@" ; species name
 	dw 303, 990 ; height, weight
 
-	db   "Somewhere in the"
-	next "world is a ceme-"
-	next "tery just for"
+	db   "Upon CUBONE's"
+	next "death, the skull"
+	next "fuses to its"
 
-	page "MAROWAK. It gets"
-	next "its bones from"
-	next "those graves.@"
+	page "spirit's head. It"
+	next "wanders graveyards"
+	next "aimlessly.@"
