@@ -1,10 +1,10 @@
 	db "MOUSE@" ; species name
 	dw 207, 660 ; height, weight
 
-	db   "If its electric"
-	next "pouches run empty,"
-	next "it raises its tail"
+	db   "Its long tail is"
+	next "used to corral its"
+	next "young without it"
 
-	page "to gather electri-"
-	next "city from the"
-	next "atmosphere.@"
+	page "needing to rise"
+	next "from its resting"
+	next "position.@"
