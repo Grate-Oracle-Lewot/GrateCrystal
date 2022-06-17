@@ -165,9 +165,8 @@ PsyduckEggMoves:
 	db -1 ; end
 
 MankeyEggMoves:
-	db ROCK_SLIDE
-	db FORESIGHT
-	db MEDITATE
+	db LOW_KICK
+	db ROLLING_KICK
 	db COUNTER
 	db REVERSAL
 	db BEAT_UP
@@ -260,10 +259,9 @@ FarfetchDEggMoves:
 
 DoduoEggMoves:
 	db QUICK_ATTACK
-	db SUPERSONIC
-	db HAZE
 	db FAINT_ATTACK
 	db FLAIL
+	db LOW_KICK
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
@@ -475,6 +473,7 @@ AerodactylEggMoves:
 	db -1 ; end
 
 SnorlaxEggMoves:
+	db LOW_KICK
 	db STOMP
 	db SLAM
 	db EGG_BOMB
@@ -648,8 +647,8 @@ YanmaEggMoves:
 	db WHIRLWIND
 	db LEECH_LIFE
 	db DRAGON_RAGE
-	db BITE
 	db SUPER_FANG
+	db HYPER_FANG
 	db -1 ; end
 
 WooperEggMoves:
@@ -737,9 +736,9 @@ ShuckleEggMoves:
 	db -1 ; end
 
 HeracrossEggMoves:
-	db HARDEN
-	db BIDE
 	db FLAIL
+	db BIDE
+	db LOW_KICK
 	db WING_ATTACK
 	db IRON_HEAD
 	db -1 ; end
