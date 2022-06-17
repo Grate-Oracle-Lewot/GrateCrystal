@@ -1,10 +1,10 @@
-	db "NEW SPECIE@" ; species name
+	db "ANCESTOR@" ; species name
 	dw 104, 90 ; height, weight
 
-	db   "Because it can"
-	next "learn any move,"
-	next "some people began"
+	db   "Its DNA contains"
+	next "the DNA of every"
+	next "#MON, and every"
 
-	page "research to see if"
-	next "it is the ancestor"
-	next "of all #MON.@"
+	page "#MON's DNA has"
+	next "remnants of MEW's"
+	next "DNA in it.@"
