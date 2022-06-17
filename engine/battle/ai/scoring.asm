@@ -334,7 +334,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
-	dbw EFFECT_MIMIC,            AI_Smart_Mimic
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,          AI_Smart_Disable
 	dbw EFFECT_COUNTER,          AI_Smart_Counter
@@ -1235,57 +1234,6 @@ AI_Smart_Rage:
 	ret nc
 	dec [hl]
 	ret
-
-.discourage
-	inc [hl]
-	ret
-
-AI_Smart_Mimic:
-; Discourage this move if the player did not use any move last turn.
-	ld a, [wLastPlayerCounterMove]
-	and a
-	jr z, .dismiss
-
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
-
-	push hl
-	ld a, [wLastPlayerCounterMove]
-	call AIGetEnemyMove
-
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop hl
-	jr c, .discourage
-	jr z, .skip_encourage
-
-	call AI_50_50
-	jr c, .skip_encourage
-
-	dec [hl]
-
-.skip_encourage
-	ld a, [wLastPlayerCounterMove]
-	push hl
-	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-
-	pop hl
-	ret nc
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
-.dismiss
-; Dismiss this move if the enemy is faster than the player.
-	call AICompareSpeed
-	jp c, AIDiscourageMove
 
 .discourage
 	inc [hl]
