@@ -1,10 +1,10 @@
 	db "LONG BODY@" ; species name
 	dw 511, 720 ; height, weight
 
-	db   "It lives in narrow"
-	next "burrows that fit"
-	next "its slim body. The"
+	db   "Despite often"
+	next "being called a"
+	next "furry noodle, it"
 
-	page "deeper the nests"
-	next "go, the more maze-"
-	next "like they become.@"
+	page "has an intrinsic"
+	next "fear of pasta of"
+	next "all shapes.@"
