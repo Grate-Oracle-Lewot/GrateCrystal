@@ -2887,10 +2887,10 @@ WooperEvosAttacks:
 	db 1, WATER_GUN
 	db 1, MUD_SLAP
 	db 1, TAIL_WHIP
-	db 11, SLAM
+	db 11, LOW_KICK
 	db 21, AMNESIA
 	db 31, EARTH_POWER
-	db 41, RAIN_DANCE
+	db 41, SLAM
 	db 51, MIST
 	db 51, HAZE
 	db 61, VITAL_THROW
@@ -2901,10 +2901,10 @@ QuagsireEvosAttacks:
 	db 1, WATER_GUN
 	db 1, MUD_SLAP
 	db 1, TAIL_WHIP
-	db 11, SLAM
+	db 11, LOW_KICK
 	db 23, AMNESIA
 	db 35, EARTH_POWER
-	db 47, RAIN_DANCE
+	db 47, SLAM
 	db 59, MIST
 	db 59, HAZE
 	db 71, VITAL_THROW
