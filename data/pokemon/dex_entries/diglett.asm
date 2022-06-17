@@ -1,10 +1,10 @@
 	db "MOLE@" ; species name
 	dw 8, 20 ; height, weight
 
-	db   "It digs under-"
-	next "ground and chews"
-	next "on tree roots,"
+	db   "Those who see a"
+	next "DIGLETT's body are"
+	next "taken in the"
 
-	page "sticking its head"
-	next "out only when the"
-	next "sun isn't bright.@"
+	page "middle of the"
+	next "night and never"
+	next "seen again.@"
