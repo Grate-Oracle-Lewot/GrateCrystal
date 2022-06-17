@@ -1,10 +1,10 @@
-	db "PATIENT@" ; species name
+	db "DUMMY@" ; species name
 	dw 403, 630 ; height, weight
 
-	db   "In order to con-"
-	next "ceal its black"
-	next "tail, it lives in"
+	db   "It's thought to be"
+	next "an evolved form of"
+	next "UNOWN, but this"
 
-	page "a dark cave and"
-	next "only moves about"
-	next "at night.@"
+	page "has yet to be"
+	next "confirmed."
+	next "@"
