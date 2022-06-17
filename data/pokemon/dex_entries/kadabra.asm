@@ -1,10 +1,10 @@
 	db "PSI@" ; species name
 	dw 403, 1250 ; height, weight
 
-	db   "When it closes its"
-	next "eyes, twice as"
-	next "many alpha parti-"
+	db   "Rumors that humans"
+	next "can evolve into"
+	next "KADABRA are un-"
 
-	page "cles come out of"
-	next "the surface of its"
-	next "body.@"
+	page "substantiated, and"
+	next "should be treated"
+	next "as such.@"
