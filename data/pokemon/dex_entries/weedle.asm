@@ -1,10 +1,10 @@
 	db "HAIRY BUG@" ; species name
 	dw 100, 70 ; height, weight
 
-	db   "The barb on top of"
-	next "its head secretes"
-	next "a strong poison."
+	db   "It evolved a pois-"
+	next "onous spike to"
+	next "protect it from"
 
-	page "It uses this toxic"
-	next "barb to protect"
-	next "itself.@"
+	page "predators, but"
+	next "doesn't fare much"
+	next "better for it.@"
