@@ -1,10 +1,10 @@
 	db "HAPPINESS@" ; species name
 	dw 200, 70 ; height, weight
 
-	db   "Although it does"
-	next "not flap its wings"
-	next "very much, it can"
+	db   "It lays its EGGS"
+	next "in the nests of"
+	next "other #MON,"
 
-	page "stay up in the air"
-	next "as it tags along"
-	next "after its trainer.@"
+	page "forcing them to"
+	next "raise its young as"
+	next "their own.@"
