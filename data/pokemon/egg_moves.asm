@@ -836,10 +836,10 @@ PhanpyEggMoves:
 	db -1 ; end
 
 StantlerEggMoves:
-	db REFLECT
 	db SPITE
-	db DISABLE
+	db REFLECT
 	db LIGHT_SCREEN
+	db FORESIGHT
 	db IRON_HEAD
 	db DAZZLY_GLEAM
 	db -1 ; end
