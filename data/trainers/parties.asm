@@ -393,7 +393,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (4)
 	db "GORDON@", TRAINERTYPE_NORMAL
-	db 10, WOOPER
+	db 11, WOOPER
 	db -1 ; end
 
 	; YOUNGSTER (5)
@@ -1642,6 +1642,7 @@ BugCatcherGroup:
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
+	db 1, MAGIKARP
 	db 20, MAGIKARP
 	db -1 ; end
 
