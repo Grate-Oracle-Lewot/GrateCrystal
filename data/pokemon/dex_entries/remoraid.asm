@@ -1,10 +1,10 @@
 	db "JET@" ; species name
 	dw 200, 260 ; height, weight
 
-	db   "To escape from an"
-	next "attacker, it may"
-	next "shoot water out of"
+	db   "Children who catch"
+	next "REMORAID often use"
+	next "them as squirt-"
 
-	page "its mouth, then"
-	next "use that force to"
-	next "swim backward.@"
+	page "guns. Occasional"
+	next "hospitalizations"
+	next "ensue.@"
