@@ -1,10 +1,10 @@
-	db "SEED@" ; species name
+	db "BULB@" ; species name
 	dw 204, 150 ; height, weight
 
-	db   "While it is young,"
-	next "it uses the"
-	next "nutrients that are"
+	db   "It can't survive"
+	next "without the bulb"
+	next "on its back, and"
 
-	page "stored in the"
-	next "seeds on its back"
-	next "in order to grow.@"
+	page "the bulb can't"
+	next "survive without"
+	next "it.@"
