@@ -1,10 +1,10 @@
 	db "OGREDARNER@" ; species name
 	dw 603, 1135 ; height, weight
 
-	db   "It bites off the"
-	next "heads of its prey"
-	next "in mid-flight."
+	db   "In prehistoric"
+	next "times, it was a"
+	next "base form #MON."
 
-	page "Its wings can"
-	next "create shock waves"
-	next "that topple trees."
+	page "Now it must mature"
+	next "as a YANMA before"
+	next "evolving."
