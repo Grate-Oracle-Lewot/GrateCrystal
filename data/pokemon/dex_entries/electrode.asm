@@ -1,10 +1,10 @@
 	db "BALL@" ; species name
 	dw 311, 1470 ; height, weight
 
-	db   "The more energy it"
-	next "charges up, the"
-	next "faster it gets."
+	db   "The HAUNTER trap-"
+	next "ped inside evolved"
+	next "into a GENGAR,"
 
-	page "But this also"
-	next "makes it more"
-	next "likely to explode.@"
+	page "causing VOLTORB to"
+	next "take on a new form"
+	next "as well.@"
