@@ -852,8 +852,8 @@ SporeDescription:
 	next "induces sleep.@"
 
 FlashDescription:
-	db   "Blinds the foe to"
-	next "reduce accuracy.@"
+	db   "Reflects light in"
+	next "the foe's eyes.@"
 
 PsywaveDescription:
 	db   "An attack with"
