@@ -1,10 +1,10 @@
 	db "SHELLFISH@" ; species name
 	dw 108, 250 ; height, weight
 
-	db   "Three hundred"
-	next "million years ago,"
-	next "it hid on the sea"
+	db   "Other #MON may"
+	next "wear it as a hel-"
+	next "met. In return,"
 
-	page "floor. It also has"
-	next "eyes on its back"
-	next "that glow.@"
+	page "it sucks their"
+	next "brain fluid as a"
+	next "snack.@"
