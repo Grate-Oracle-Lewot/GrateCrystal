@@ -932,10 +932,10 @@ AlakazamEvosAttacks:
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, KARATE_CHOP
 	db 1, LEER
 	db 7, FOCUS_ENERGY
-	db 13, KARATE_CHOP
+	db 13, LOW_KICK
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 31, VITAL_THROW
@@ -949,10 +949,10 @@ MachokeEvosAttacks:
 	db EVOLVE_ITEM, LINK_VOUCHER, MACHAMP
 	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, KARATE_CHOP
 	db 1, LEER
 	db 8, FOCUS_ENERGY
-	db 15, KARATE_CHOP
+	db 15, LOW_KICK
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, VITAL_THROW
@@ -964,10 +964,10 @@ MachokeEvosAttacks:
 
 MachampEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, KARATE_CHOP
 	db 1, LEER
 	db 8, FOCUS_ENERGY
-	db 15, KARATE_CHOP
+	db 15, LOW_KICK
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, VITAL_THROW
@@ -2757,7 +2757,7 @@ SudowoodoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ROCK_THROW
 	db 1, MEDITATE
-	db 10, FLAIL
+	db 10, LOW_KICK
 	db 19, MIRROR_MOVE
 	db 28, FAINT_ATTACK
 	db 37, BIDE
