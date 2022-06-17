@@ -1,10 +1,10 @@
 	db "LONELY@" ; species name
 	dw 104, 140 ; height, weight
 
-	db   "It lost its mother"
-	next "after its birth."
-	next "It wears its"
+	db   "A KANGASKHAN whose"
+	next "parent body dies"
+	next "dons the skull to"
 
-	page "mother's skull,"
-	next "never revealing"
-	next "its true face.@"
+	page "become a CUBONE."
+	next "This may occur"
+	next "inside an EGG.@"
