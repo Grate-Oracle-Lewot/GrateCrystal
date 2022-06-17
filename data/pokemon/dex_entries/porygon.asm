@@ -1,10 +1,10 @@
 	db "VIRTUAL@" ; species name
 	dw 207, 800 ; height, weight
 
-	db   "An artificial"
-	next "#MON created"
-	next "due to extensive"
+	db   "While it is fully"
+	next "functional in"
+	next "battle, it is"
 
-	page "research, it can"
-	next "perform only what"
-	next "is in its program.@"
+	page "merely a program"
+	next "and can't feel"
+	next "love.@"
