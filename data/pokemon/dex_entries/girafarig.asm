@@ -1,10 +1,10 @@
-	db "LONG NECK@" ; species name
+	db "PALINDROME@" ; species name
 	dw 411, 910 ; height, weight
 
-	db   "When it is in"
-	next "danger, its tail"
-	next "uses some sort of"
+	db   "One side is kind"
+	next "and the other is"
+	next "cruel. Which one"
 
-	page "mysterious powers"
-	next "to drive away the"
-	next "enemy.@"
+	page "is in charge can"
+	next "change at any"
+	next "moment.@"
