@@ -1,10 +1,10 @@
 	db "BALL@" ; species name
 	dw 108, 230 ; height, weight
 
-	db   "During the study"
-	next "of this #MON,"
-	next "it was discovered"
+	db   "A HAUNTER tried to"
+	next "possess a #"
+	next "BALL and got stuck"
 
-	page "that its compo-"
-	next "nents are not"
-	next "found in nature.@"
+	page "halfway inside,"
+	next "becoming a"
+	next "VOLTORB.@"
