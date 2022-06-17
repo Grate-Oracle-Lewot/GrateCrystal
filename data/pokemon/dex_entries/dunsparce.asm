@@ -1,10 +1,10 @@
-	db "LAND SNAKE@" ; species name
+	db "BEE SNAKE@" ; species name
 	dw 411, 310 ; height, weight
 
-	db   "It hides deep"
-	next "inside caves where"
-	next "no light ever"
+	db   "It sometimes may"
+	next "bite its own tail"
+	next "and roll along."
 
-	page "reaches it and"
-	next "remains virtually"
-	next "motionless there.@"
+	page "Otherwise, it"
+	next "spins its tail tip"
+	next "to burrow.@"
