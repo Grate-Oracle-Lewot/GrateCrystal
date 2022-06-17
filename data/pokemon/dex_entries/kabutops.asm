@@ -1,10 +1,10 @@
 	db "SHELLFISH@" ; species name
 	dw 403, 890 ; height, weight
 
-	db   "It was able to"
-	next "swim quickly thro-"
-	next "ugh the water by"
+	db   "It knows how to"
+	next "slice up its prey"
+	next "so that the organs"
 
-	page "compactly folding"
-	next "up its razor-sharp"
-	next "sickles.@"
+	page "that it prefers to"
+	next "eat remain intact."
+	next "@"
