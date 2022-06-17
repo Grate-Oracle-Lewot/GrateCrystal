@@ -1,10 +1,10 @@
-	db "SEED@" ; species name
+	db "FLOWER@" ; species name
 	dw 607, 2210 ; height, weight
 
-	db   "As it warms it-"
-	next "self and absorbs"
-	next "the sunlight, its"
+	db   "If it sniffs a"
+	next "plant, it can"
+	next "produce pollen "
 
-	page "flower petals"
-	next "release a pleasant"
-	next "fragrance.@"
+	page "compatible with"
+	next "that plant in a"
+	next "few hours.@"
