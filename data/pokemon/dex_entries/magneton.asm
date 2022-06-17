@@ -1,10 +1,10 @@
 	db "MAGNET@" ; species name
 	dw 303, 1320 ; height, weight
 
-	db   "When many"
-	next "MAGNETON gather"
-	next "together, the"
+	db   "When a MAGNEMITE"
+	next "is ready to evolve"
+	next "its magnetic field"
 
-	page "resulting magnetic"
-	next "storm disrupts"
-	next "radio waves.@"
+	page "pulls in two other"
+	next "MAGNEMITE against"
+	next "their will.@"
