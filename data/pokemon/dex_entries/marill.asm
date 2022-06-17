@@ -1,10 +1,10 @@
 	db "AQUAMOUSE@" ; species name
 	dw 104, 190 ; height, weight
 
-	db   "The fur on its"
-	next "body naturally"
-	next "repels water. It"
+	db   "In ancient times,"
+	next "it was known as"
+	next "PIKABLU. It was"
 
-	page "can stay dry, even"
-	next "when it plays in"
-	next "the water.@"
+	page "reclassified after"
+	next "the advent of DNA"
+	next "science.@"
