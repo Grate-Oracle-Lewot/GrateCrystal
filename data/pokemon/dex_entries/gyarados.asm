@@ -1,10 +1,10 @@
 	db "ATROCIOUS@" ; species name
 	dw 2104, 5180 ; height, weight
 
-	db   "It appears when-"
-	next "ever there is"
-	next "world conflict,"
+	db   "Its power is mat-"
+	next "ched only by its"
+	next "hubris. It doesn't"
 
-	page "burning down any"
-	next "place it travels"
-	next "through.@"
+	page "care what it"
+	next "destroys in its"
+	next "rampages.@"
