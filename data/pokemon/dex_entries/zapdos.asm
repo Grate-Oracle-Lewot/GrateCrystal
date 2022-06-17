@@ -1,10 +1,10 @@
 	db "ELECTRIC@" ; species name
 	dw 503, 1160 ; height, weight
 
-	db   "Legendary bird"
-	next "#MON. They say"
-	next "lightning caused"
+	db   "It holds duels"
+	next "against natural"
+	next "thunderstorms."
 
-	page "by the flapping of"
-	next "its wings causes"
-	next "summer storms.@"
+	page "It has never lost,"
+	next "but those watching"
+	next "have.@"
