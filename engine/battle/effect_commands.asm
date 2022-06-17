@@ -1005,7 +1005,6 @@ BattleCommand_DoTurn:
 .player
 	call GetPartyLocation
 	push hl
-	call CheckMimicUsed
 	pop hl
 	ret c
 
@@ -1076,36 +1075,6 @@ BattleCommand_DoTurn:
 	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
 	db -1
-
-CheckMimicUsed:
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wCurMoveNum]
-	jr z, .player
-	ld a, [wCurEnemyMoveNum]
-
-.player
-	ld c, a
-	ld a, MON_MOVES
-	call UserPartyAttr
-
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	cp NO_MOVE
-	jr z, .mimic
-
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	cp NO_MOVE
-	jr nz, .mimic
-
-	scf
-	ret
-
-.mimic
-	and a
-	ret
 
 BattleCommand_Critical:
 ; critical
