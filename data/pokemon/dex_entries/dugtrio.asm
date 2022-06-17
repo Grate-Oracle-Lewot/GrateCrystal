@@ -1,10 +1,10 @@
 	db "MOLE@" ; species name
 	dw 204, 730 ; height, weight
 
-	db   "These DIGLETT"
-	next "triplets dig over"
-	next "60 miles below sea"
+	db   "It is not three"
+	next "DIGLETT, but one"
+	next "that has grown two"
 
-	page "level. No one"
-	next "knows what it's"
-	next "like underground.@"
+	page "extra heads. They"
+	next "never seem to"
+	next "disagree.@"
