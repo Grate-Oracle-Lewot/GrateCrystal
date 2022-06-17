@@ -1,10 +1,10 @@
 	db "MUSHROOM@" ; species name
 	dw 303, 650 ; height, weight
 
-	db   "When nothing's"
-	next "left to extract"
-	next "from the bug, the"
+	db   "The bug is dead,"
+	next "its corpse piloted"
+	next "around by the"
 
-	page "mushrooms on its"
-	next "back leave spores"
-	next "on the bug's egg.@"
+	page "tochukaso mushroom"
+	next "on its back. A"
+	next "grisly fate.@"
