@@ -1,10 +1,10 @@
 	db "PSI@" ; species name
 	dw 411, 1060 ; height, weight
 
-	db   "It has an IQ of"
-	next "5000. It calcu-"
-	next "lates many things"
+	db   "Spoons increase"
+	next "its psychic power,"
+	next "forks decrease it,"
 
-	page "in order to gain"
-	next "the edge in every"
-	next "battle.@"
+	page "and sporks are"
+	next "neutral. Avoid"
+	next "knives.@"
