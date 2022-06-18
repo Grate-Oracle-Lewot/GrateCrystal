@@ -81,16 +81,16 @@ NewBarkTownTeacherScript:
 	writetext Text_GearIsImpressive
 	waitbutton
 	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon YANMEGA, 1
-	startbattle
-	reloadmapafterbattle
 	end
 
 .MonIsAdorable:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon YANMEGA, 1
+	startbattle
+	reloadmapafterbattle
 	end
 
 .TellMomYoureLeaving:
