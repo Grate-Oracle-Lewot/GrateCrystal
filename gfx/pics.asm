@@ -708,13 +708,17 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
-HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz" ; 5
-KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
-SnorlaxBackpic:      INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
-ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz" ; 13
-SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz" ; 14
-UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz" ; 17
-YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
-YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
-WhimsicottFrontpic:  INCBIN "gfx/pokemon/whimsicott/front.animated.2bpp.lz"
-WhimsicottBackpic:   INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
+HeracrossFrontpic:        INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz" ; 5
+KangaskhanBackpic:        INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
+SnorlaxBackpic:           INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
+ElectrodeFrontpic:        INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz" ; 13
+SwinubBackpic:            INCBIN "gfx/pokemon/swinub/back.2bpp.lz" ; 14
+UnownDBackpic:            INCBIN "gfx/pokemon/unown_d/back.2bpp.lz" ; 17
+YanmegaFrontpic:          INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
+YanmegaBackpic:           INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
+WhimsicottFrontpic:       INCBIN "gfx/pokemon/whimsicott/front.animated.2bpp.lz"
+WhimsicottBackpic:        INCBIN "gfx/pokemon/whimsicott/back.2bpp.lz"
+UnownExclamationFrontpic: INCBIN "gfx/pokemon/unown_exclamation/front.2bpp.lz"
+UnownExclamationBackpic:  INCBIN "gfx/pokemon/unown_exclamation/back.2bpp.lz"
+UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.2bpp.lz"
+UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
