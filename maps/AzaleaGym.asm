@@ -325,7 +325,7 @@ AzaleaGymGuideText:
 	text "Yo, challenger!"
 
 	para "BUGSY's young, but"
-	line "his knowledge of"
+	line "their knowledge of"
 
 	para "bug #MON is for"
 	line "real."
