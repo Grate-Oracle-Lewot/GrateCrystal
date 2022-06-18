@@ -1,10 +1,10 @@
 	db "ROCK@" ; species name
 	dw 104, 440 ; height, weight
 
-	db   "Proud of their"
-	next "sturdy bodies,"
-	next "they bash against"
+	db   "It rocks."
+	next " "
+	next " "
 
-	page "each other in a"
-	next "contest to prove"
-	next "whose is harder.@"
+	page "It rolls."
+	next " "
+	next "@"
