@@ -15,10 +15,10 @@ UnlockedUnownLetterSets:
 .End
 
 .Set_A_K:
-	unown_set A, B, C, D, E, F, G, H
+	unown_set A, B, C, D, E, F, G
 .Set_L_R:
-	unown_set I, J, K, L, M, N
+	unown_set H, I, J, K, L, M, N
 .Set_S_W:
-	unown_set O, P, Q, R, S, T
+	unown_set O, P, Q, R, S, T, U
 .Set_X_Z:
-	unown_set U, V, W, X, Y, Z
+	unown_set V, W, X, Y, Z, EXCLAMATION, QUESTION
