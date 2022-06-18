@@ -127,7 +127,8 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
-	loadwildmon YANMEGA, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon WHIMSICOTT, 1
 	startbattle
 	reloadmapafterbattle
 	end
