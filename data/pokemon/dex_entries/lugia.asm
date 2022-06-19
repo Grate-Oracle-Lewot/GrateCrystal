@@ -1,10 +1,10 @@
-	db "DIVING@" ; species name
+	db "MOTHER@" ; species name
 	dw 1701, 4760 ; height, weight
 
-	db   "It has an incred-"
-	next "ible ability to"
-	next "calm raging sto-"
+	db   "If angered, it"
+	next "freezes the oceans"
+	next "solid and won't"
 
-	page "rms. It is said"
-	next "that LUGIA appears"
-	next "when storms start.@"
+	page "restore them until"
+	next "it gets its way."
+	next "@"
