@@ -311,6 +311,9 @@ MT01 EQU const_value
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
 	add_mt TRI_ATTACK
+	add_mt SACRED_FIRE
+	add_mt AEROBLAST
+	add_mt AURA_SPHERE
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
