@@ -167,8 +167,29 @@ RuinsOfAlphResearchCenterPrinter:
 	closetext
 	end
 
-RuinsOfAlphResearchCenterPhoto: ; unreferenced
-	jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText
+RuinsOfAlphResearchCenterMoveTutorScript:
+	faceplayer
+	opentext
+	writetext RuinsOfAlphResearchCenterMoveTutorText1
+	waitbutton
+	writetext RuinsOfAlphResearchCenterMoveTutorText2
+	yesorno
+	iffalse .TutorRefused
+	writebyte AURA_SPHERE
+	writetext RuinsOfAlphResearchCenterMoveTutorClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+.TutorRefused
+	writetext RuinsOfAlphResearchCenterMoveTutorRefused
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext RuinsOfAlphResearchCenterMoveTutorTaught
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
@@ -385,6 +406,34 @@ RuinsOfAlphResearchCenterAcademicBooksText:
 	para "Ancient Ruins…"
 	line "Mysteries of the"
 	cont "Ancients…"
+	done
+
+RuinsOfAlphResearchCenterMoveTutorText1:
+	text "All your work with"
+	line "the UNOWN really"
+
+	para "helped us out. We"
+	line "even disovered a"
+	cont "new move!"
+	done
+
+RuinsOfAlphResearchCenterMoveTutorText2:
+	text "Would you like me"
+	line "to teach your"
+	para "#MON AURA"
+	line "SPHERE"
+
+RuinsOfAlphResearchCenterMoveTutorClear:
+	text ""
+	done
+
+RuinsOfAlphResearchCenterMoveTutorRefused:
+	text "Come back if you"
+	line "change your mind."
+	done
+
+RuinsOfAlphResearchCenterMoveTutorTaught:
+	text "There you go!"
 	done
 
 RuinsOfAlphResearchCenter_MapEvents:
