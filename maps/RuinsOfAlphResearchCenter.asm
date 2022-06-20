@@ -2,6 +2,7 @@
 	const RUINSOFALPHRESEARCHCENTER_SCIENTIST1
 	const RUINSOFALPHRESEARCHCENTER_SCIENTIST2
 	const RUINSOFALPHRESEARCHCENTER_SCIENTIST3
+	const RUINSOFALPHRESEARCHCENTER_SCIENTIST4
 
 RuinsOfAlphResearchCenter_MapScripts:
 	def_scene_scripts
@@ -418,10 +419,11 @@ RuinsOfAlphResearchCenterMoveTutorText1:
 	done
 
 RuinsOfAlphResearchCenterMoveTutorText2:
-	text "Would you like me"
-	line "to teach your"
-	para "#MON AURA"
-	line "SPHERE"
+	text "How would you like"
+	line "me to teach your"
+
+	para "#MON to use AURA"
+	line "SPHERE?"
 
 RuinsOfAlphResearchCenterMoveTutorClear:
 	text ""
@@ -434,6 +436,12 @@ RuinsOfAlphResearchCenterMoveTutorRefused:
 
 RuinsOfAlphResearchCenterMoveTutorTaught:
 	text "There you go!"
+
+	para "AURA SPHERE is"
+	line "like SWIFT, you"
+
+	para "know. It never"
+	line "misses!"
 	done
 
 RuinsOfAlphResearchCenter_MapEvents:
@@ -454,3 +462,4 @@ RuinsOfAlphResearchCenter_MapEvents:
 	object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1
 	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1
 	object_event  2,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist3Script, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
+	object_event  0,  0, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterMoveTutorScript, -1
