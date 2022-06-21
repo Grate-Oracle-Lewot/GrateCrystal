@@ -415,15 +415,15 @@ RuinsOfAlphResearchCenterMoveTutorText1:
 
 	para "helped us out. We"
 	line "even disovered a"
-	cont "new move!"
+	cont "new #MON move!"
 	done
 
 RuinsOfAlphResearchCenterMoveTutorText2:
 	text "How would you like"
 	line "me to teach your"
 
-	para "#MON to use AURA"
-	line "SPHERE?"
+	para "#MON to use"
+	line "AURA SPHERE"
 
 RuinsOfAlphResearchCenterMoveTutorClear:
 	text ""
