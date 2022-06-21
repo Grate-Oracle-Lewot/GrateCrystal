@@ -11,6 +11,7 @@ RuinsOfAlphResearchCenter_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .ScientistCallback
+	callback MAPCALLBACK_OBJECTS, .TutorCallback
 
 .DummyScene0:
 	end
@@ -27,6 +28,19 @@ RuinsOfAlphResearchCenter_MapScripts:
 .ShowScientist:
 	moveobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 3, 7
 	appear RUINSOFALPHRESEARCHCENTER_SCIENTIST3
+	endcallback
+
+.TutorCallback:
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .AppearAuraSphereTutor
+	sjump .NoAppearAuraSphereTutor
+
+.AppearAuraSphereTutor:
+	appear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
+	endcallback
+
+.NoAppearAuraSphereTutor:
+	disappear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
 	endcallback
 
 .GetUnownDexScript:
