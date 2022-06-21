@@ -157,7 +157,7 @@ CeladonCityTutorSacredFireText1:
 CeladonCityTutorSacredFireText2:
 	text "Ah! A GOLD LEAF!"
 
-	para "How about it?"
+	para "How about it"
 
 CeladonCityTutorSacredFireClear:
 	text ""
@@ -208,7 +208,7 @@ CeladonCityTutorAeroblastText1:
 CeladonCityTutorAeroblastText2:
 	text "Oh! A SILVER LEAF!"
 
-	para "May I have it?"
+	para "May I have it"
 
 CeladonCityTutorAeroblastClear:
 	text ""
