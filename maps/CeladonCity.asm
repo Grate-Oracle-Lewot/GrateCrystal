@@ -3,6 +3,7 @@
 	const CELADONCITY_POLIWAG
 	const CELADONCITY_TEACHER1
 	const CELADONCITY_GRAMPS1
+	const CELADONCITY_GRANNY
 	const CELADONCITY_GRAMPS2
 	const CELADONCITY_YOUNGSTER1
 	const CELADONCITY_YOUNGSTER2
@@ -19,6 +20,78 @@ CeladonCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CELADON
 	endcallback
 
+CeladonCityTutorSacredFireScript:
+	faceplayer
+	opentext
+	writetext CeladonCityTutorSacredFireText1
+	waitbutton
+	checkitem GOLD_LEAF
+	iffalse .NoLeaf
+	writetext CeladonCityTutorSacredFireText2
+	yesorno
+	iffalse .TutorRefused
+	writebyte SACRED_FIRE
+	writetext CeladonCityTutorSacredFireClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+
+.TutorRefused
+	writetext CeladonCityTutorSacredFireRefused
+	waitbutton
+	closetext
+	end
+
+.NoLeaf:
+	writetext CeladonCityTutorSacredFireNoLeaf
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext CeladonCityTutorSacredFirePayment
+	takeitem GOLD_LEAF
+	waitbutton
+	writetext CeladonCityTutorSacredFireTaught
+	waitbutton
+	closetext
+	end
+
+CeladonCityTutorAeroblastScript:
+	faceplayer
+	opentext
+	writetext CeladonCityTutorAeroblastText1
+	waitbutton
+	checkitem SILVER_LEAF
+	iffalse .NoLeaf
+	writetext CeladonCityTutorAeroblastText2
+	yesorno
+	iffalse .TutorRefused
+	writebyte AEROBLAST
+	writetext CeladonCityTutorAeroblastClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+
+.TutorRefused
+	writetext CeladonCityTutorAeroblastRefused
+	waitbutton
+	closetext
+	end
+
+.NoLeaf:
+	writetext CeladonCityTutorAeroblastNoLeaf
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext CeladonCityTutorAeroblastPayment
+	takeitem SILVER_LEAF
+	waitbutton
+	writetext CeladonCityTutorAeroblastTaught
+	waitbutton
+	closetext
+	end
+
 CeladonCityFisherScript:
 	jumptextfaceplayer CeladonCityFisherText
 
@@ -32,9 +105,6 @@ CeladonCityPoliwrath:
 
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text
-
-CeladonCityGramps1Script:
-	jumptextfaceplayer CeladonCityGramps1Text
 
 CeladonCityGramps2Script:
 	jumptextfaceplayer CeladonCityGramps2Text
@@ -74,6 +144,110 @@ CeladonCityPokecenterSign:
 
 CeladonCityHiddenPpUp:
 	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
+
+CeladonCityTutorSacredFireText1:
+	text "If you bring me a"
+	line "GOLD LEAF, I can"
+
+	para "teach one of your"
+	line "#MON to use"
+	cont "SACRED FIRE."
+	done
+
+CeladonCityTutorSacredFireText2:
+	text "Ah! A GOLD LEAF!"
+
+	para "How about it?"
+
+CeladonCityTutorSacredFireClear:
+	text ""
+	done
+
+CeladonCityTutorSacredFireRefused:
+	text "Oh. Perhaps some"
+	line "other time."
+	done
+
+CeladonCityTutorSacredFirePayment:
+	text "<PLAYER> gave the"
+	line "man a GOLD LEAF."
+	done
+
+CeladonCityTutorSacredFireTaught:
+	text "There you are."
+
+	para "If you want me to"
+	line "teach the move"
+
+	para "again, bring me"
+	line "another GOLD LEAF."
+	done
+
+CeladonCityTutorSacredFireNoLeaf:
+	text "You don't have a"
+	line "GOLD LEAF on you."
+
+	para "I can tell."
+
+	para "If you want me to"
+	line "teach SACRED FIRE,"
+
+	para "you'll have to"
+	line "hunt one down."
+	done
+
+CeladonCityTutorAeroblastText1:
+	text "If you bring me a"
+	line "SILVER LEAF, I can"
+
+	para "teach one of your"
+	line "#MON to use"
+	cont "ZEROBLAST."
+	done
+
+CeladonCityTutorAeroblastText2:
+	text "Oh! A SILVER LEAF!"
+
+	para "May I have it?"
+
+CeladonCityTutorAeroblastClear:
+	text ""
+	done
+
+CeladonCityTutorAeroblastRefused:
+	text "Then scram, punk."
+	done
+
+CeladonCityTutorAeroblastPayment:
+	text "<PLAYER> gave her"
+	line "a SILVER LEAF."
+	done
+
+CeladonCityTutorAeroblastTaught:
+	text "It's done!"
+
+	para "If you want me to"
+	line "teach the move"
+
+	para "again, bring me"
+	line "another SILVER"
+	cont "LEAF."
+	done
+
+CeladonCityTutorAeroblastNoLeaf:
+	text "You don't have a"
+	line "SILVER LEAF."
+
+	para "I'm afraid I don't"
+	line "teach the move for"
+	cont "free."
+
+	para "Wild WHIMSICOTT"
+	line "may hold GOLD or"
+
+	para "SILVER LEAVES. Try"
+	line "using THIEF!"
+	done
 
 CeladonCityFisherText:
 	text "You can evolve"
@@ -119,21 +293,6 @@ else
 	line "them out too."
 	done
 endc
-
-CeladonCityGramps1Text:
-	text "GRIMER have been"
-	line "appearing lately."
-
-	para "See that pond out"
-	line "in front of the"
-
-	para "house? GRIMER live"
-	line "there now."
-
-	para "Where did they"
-	line "come from? This is"
-	cont "a serious problem…"
-	done
 
 CeladonCityGramps2Text:
 	text "Nihihi! This GYM"
@@ -289,7 +448,8 @@ CeladonCity_MapEvents:
 	object_event 26, 11, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
 	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
 	object_event 20, 24, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
-	object_event 14, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
+	object_event 13, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorSacredFireScript, -1
+	object_event 15, 16, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorAeroblastScript, -1
 	object_event  8, 31, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
 	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
 	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
