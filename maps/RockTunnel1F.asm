@@ -1,11 +1,23 @@
 	object_const_def
 	const ROCKTUNNEL1F_POKE_BALL1
 	const ROCKTUNNEL1F_POKE_BALL2
+	const ROCKTUNNELB1F_YOUNGSTER
 
 RockTunnel1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerCamperDavid:
+	trainer CAMPER, DAVID, EVENT_BEAT_CAMPER_DAVID, CamperDavidSeenText, CamperDavidBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CamperDavidAfterBattleText
+	waitbutton
+	closetext
+	end
 
 RockTunnel1FElixer:
 	itemball ELIXER
@@ -18,6 +30,26 @@ RockTunnel1FHiddenXAccuracy:
 
 RockTunnel1FHiddenXDefend:
 	hiddenitem X_DEFEND, EVENT_ROCK_TUNNEL_1F_HIDDEN_X_DEFEND
+
+CamperDavidSeenText:
+	text "My #MON can"
+	line "defeat any foe,"
+
+	para "no matter how big"
+	line "or strong!"
+	done
+
+CamperDavidBeatenText:
+	text "Oh."
+	done
+
+CamperDavidAfterBattleText:
+	text "I feel bad for"
+	line "CUBONE. They've"
+
+	para "lost their"
+	line "mothers…"
+	done
 
 RockTunnel1F_MapEvents:
 	db 0, 0 ; filler
@@ -39,3 +71,4 @@ RockTunnel1F_MapEvents:
 	def_object_events
 	object_event  4, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RockTunnel1FElixer, EVENT_ROCK_TUNNEL_1F_ELIXER
 	object_event 10, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RockTunnel1FTMSteelWing, EVENT_ROCK_TUNNEL_1F_TM_STEEL_WING
+	object_event  6, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperDavid, -1
