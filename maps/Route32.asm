@@ -560,7 +560,7 @@ Route32CooltrainerMText_RuinsOfAlph:
 
 	para "somebody solves"
 	line "one of those stone"
-	text "puzzles."
+	cont "puzzles."
 	done
 
 Route32CooltrainerMText_HaveThisSeed:
