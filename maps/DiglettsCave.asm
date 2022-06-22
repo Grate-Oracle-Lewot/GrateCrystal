@@ -1,5 +1,6 @@
 	object_const_def
 	const DIGLETTSCAVE_POKEFAN_M
+	const DIGLETTSCAVE_YOUNGSTER
 
 DiglettsCave_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,17 @@ DiglettsCave_MapScripts:
 
 DiglettsCavePokefanMScript:
 	jumptextfaceplayer DiglettsCavePokefanMText
+
+TrainerCamperJohn:
+	trainer CAMPER, JOHN, EVENT_BEAT_CAMPER_JOHN, CamperJohnSeenText, CamperJohnBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CamperJohnAfterBattleText
+	waitbutton
+	closetext
+	end
 
 DiglettsCaveHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
@@ -18,6 +30,25 @@ DiglettsCavePokefanMText:
 
 	para "ground! That was"
 	line "shocking."
+	done
+
+CamperJohnSeenText:
+	text "Just because the"
+	line "ground type can't"
+
+	para "hit flying #MON"
+	line "doesn't mean it's"
+	cont "not good!"
+	done
+
+CamperJohnBeatenText:
+	text "Aw, shoot…"
+	done
+
+CamperJohnAfterBattleText:
+	text "You can find DIG-"
+	line "LETT at many diff-"
+	cont "erent levels here."
 	done
 
 DiglettsCave_MapEvents:
@@ -38,3 +69,4 @@ DiglettsCave_MapEvents:
 
 	def_object_events
 	object_event  3, 31, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1
+	object_event  8, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperJohn, -1
