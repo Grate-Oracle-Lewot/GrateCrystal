@@ -7,11 +7,23 @@
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL2
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL3
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL4
+	const DARKCAVEVIOLETENTRANCE_COOLTRAINER_M
 
 DarkCaveVioletEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerCooltrainermTyler:
+	trainer COOLTRAINERM, TYLER, EVENT_BEAT_COOLTRAINERM_TYLER, CooltrainermTylerSeenText, CooltrainermTylerBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermTylerAfterBattleText
+	waitbutton
+	closetext
+	end
 
 DarkCaveVioletEntrancePotion:
 	itemball POTION
@@ -30,6 +42,24 @@ DarkCaveVioletEntranceRock:
 
 DarkCaveVioletEntranceHiddenElixer:
 	hiddenitem ELIXER, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_ELIXER
+
+CooltrainermTylerSeenText:
+	text "I like training"
+	line "here in the dark."
+
+	para "It's more exciting"
+	line "this way!"
+	done
+
+CooltrainermTylerBeatenText:
+	text "I didn't even see"
+	line "what happened!"
+	done
+
+CooltrainermTylerAfterBattleText:
+	text "Hello darkness, my"
+	line "old friend…"
+	done
 
 DarkCaveVioletEntrance_MapEvents:
 	db 0, 0 ; filler
@@ -53,3 +83,4 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 36, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceFullHeal, EVENT_DARK_CAVE_VIOLET_ENTRANCE_FULL_HEAL
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceHyperPotion, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HYPER_POTION
 	object_event 30, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceDireHit, EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
+	object_event 35, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermTyler, -1
