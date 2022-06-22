@@ -1510,7 +1510,8 @@
 	const EVENT_UNION_CAVE_SLOWPOKE_WELL_LINK_PICKAXE
 	const EVENT_TIN_TOWER_9F_FEAROWBOT
 	const EVENT_SEAFOAM_CAVE_B1F_SACRED_ASH
-; Unused: next 48 (now 27) events
+	const EVENT_ILEX_FOREST_GOLD_LEAF
+; Unused: next 48 (now 26) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
