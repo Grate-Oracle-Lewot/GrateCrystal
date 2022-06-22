@@ -74,9 +74,10 @@ BattleCommand_Teleport:
 	; b = player level / 4
 	srl b
 	srl b
-	; If the random number >= player level / 4, Teleport will succeed
+	; This should be "jr c, .failed"
+	; As written, it makes enemy use of Teleport always succeed if able
 	cp b
-	jr c, .failed
+	jr nc, .run_away
 
 .run_away
 	call UpdateBattleMonInParty
