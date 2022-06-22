@@ -993,13 +993,13 @@ CooltrainermAndySeenText:
 	cont "for me!"
 	done
 
-CooltrainermErickBeatenText:
+CooltrainermAndyBeatenText:
 	text "What do you mean"
 	line "PROF.ELM gives"
 	cont "them out for free?"
 	done
 
-CooltrainermErickAfterBattleText:
+CooltrainermAndyAfterBattleText:
 	text "I guess rarity"
 	line "isn't the only"
 
