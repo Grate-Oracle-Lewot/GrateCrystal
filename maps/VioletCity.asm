@@ -7,6 +7,8 @@
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
+	const VIOLETCITY_SUPER_NERD1
+	const VIOLETCITY_SUPER_NERD2
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -67,6 +69,28 @@ VioletCityGrampsScript:
 
 VioletCityYoungsterScript:
 	jumptextfaceplayer VioletCityYoungsterText
+
+TrainerSupernerdGregg:
+	trainer SUPER_NERD, GREGG, EVENT_BEAT_SUPER_NERD_GREGG, SupernerdGreggSeenText, SupernerdGreggBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SupernerdGreggAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSupernerdJay:
+	trainer SUPER_NERD, JAY, EVENT_BEAT_SUPER_NERD_JAY, SupernerdJaySeenText, SupernerdJayBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SupernerdJayAfterBattleText
+	waitbutton
+	closetext
+	end
 
 VioletCitySign:
 	jumptext VioletCitySignText
@@ -248,6 +272,37 @@ VioletCityYoungsterText:
 	cont "dances! Cool!"
 	done
 
+SupernerdGreggSeenText:
+	text "Ack!"
+	done
+
+SupernerdGreggBeatenText:
+	text "Eek!"
+	done
+
+SupernerdGreggAfterBattleText:
+	text "I thought I'd be"
+	line "alone here…"
+	done
+
+SupernerdJaySeenText:
+	text "SPROUT TOWER is a"
+	line "historic landmark."
+
+	para "It must hold some"
+	line "secrets!"
+	done
+
+SupernerdJayBeatenText:
+	text "Well, that's"
+	line "inconvenient."
+	done
+
+SupernerdJayAfterBattleText:
+	text "How does the pill-"
+	line "ar sway by itself?"
+	done
+
 VioletCitySignText:
 	text "VIOLET CITY"
 
@@ -310,3 +365,5 @@ VioletCity_MapEvents:
 	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event  6,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdGregg, -1
+	object_event 35,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdJay, -1
