@@ -212,9 +212,9 @@ KRIS EQU __trainer_class__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK ; unused
-	const ANDY ; unused
-	const TYLER ; unused
+	const ERICK
+	const ANDY
+	const TYLER
 	const SEAN
 	const KEVIN
 	const STEVE ; unused
@@ -312,7 +312,7 @@ KRIS EQU __trainer_class__
 	const PRESTON
 	const EDWARD
 	const GREGORY
-	const VIRGIL ; unused
+	const VIRGIL
 	const ALFRED
 
 	trainerclass SKIER ; 21
@@ -439,8 +439,8 @@ KRIS EQU __trainer_class__
 	trainerclass SUPER_NERD ; 29
 	const STAN
 	const ERIC
-	const GREGG ; unused
-	const JAY ; unused
+	const GREGG
+	const JAY
 	const DAVE ; unused
 	const SAM
 	const TOM
@@ -448,7 +448,7 @@ KRIS EQU __trainer_class__
 	const SHAWN
 	const TERU
 	const RUSS ; unused
-	const NORTON ; unused
+	const NORTON
 	const HUGH
 	const MARKUS
 
@@ -513,8 +513,8 @@ KRIS EQU __trainer_class__
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
-	const DICK ; unused
-	const NED ; unused
+	const DICK
+	const NED
 	const BURT
 	const BILL
 	const WALT
@@ -600,10 +600,10 @@ KRIS EQU __trainer_class__
 	const TED
 	const TODD2
 	const TODD3
-	const THOMAS ; unused
-	const LEROY ; unused
-	const DAVID ; unused
-	const JOHN ; unused
+	const THOMAS
+	const LEROY
+	const DAVID
+	const JOHN
 	const JERRY
 	const SPENCER
 	const TODD4
