@@ -2,6 +2,7 @@
 	const DARKCAVEBLACKTHORNENTRANCE_PHARMACIST
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2
+	const DARKCAVEBLACKTHORNENTRANCE_SUPER_NERD
 
 DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
@@ -22,6 +23,17 @@ DarkCaveBlackthornEntrancePharmacistScript:
 	writetext DarkCaveBlackthornEntrancePharmacistText2
 	waitbutton
 .PackFull:
+	closetext
+	end
+
+TrainerSupernerdNorton:
+	trainer SUPER_NERD, NORTON, EVENT_BEAT_SUPER_NERD_NORTON, SupernerdNortonSeenText, SupernerdNortonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SupernerdNortonAfterBattleText
+	waitbutton
 	closetext
 	end
 
@@ -82,3 +94,4 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
+	object_event 21, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdNorton, -1
