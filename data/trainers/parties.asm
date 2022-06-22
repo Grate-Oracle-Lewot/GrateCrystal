@@ -3006,16 +3006,6 @@ CamperGroup:
 	db 51, POLIWRATH
 	db -1 ; end
 
-	; CAMPER (9)
-	db "HARVEY@", TRAINERTYPE_NORMAL
-	db 19, NIDORINO
-	db -1 ; end
-
-	; CAMPER (10)
-	db "DALE@", TRAINERTYPE_NORMAL
-	db 19, NIDORINO
-	db -1 ; end
-
 	; CAMPER (11)
 	db "TED@", TRAINERTYPE_NORMAL
 	db 21, MANKEY
