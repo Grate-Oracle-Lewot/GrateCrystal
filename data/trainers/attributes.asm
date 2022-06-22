@@ -58,7 +58,7 @@ TrainerClassAttributes:
 
 ; PokemonProf
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 1 ; base reward
+	db 2 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -202,7 +202,7 @@ TrainerClassAttributes:
 
 ; Teacher
 	db FULL_HEAL, NO_ITEM ; items
-	db 23 ; base reward
+	db 1 ; base reward
 	dw AI_BASIC | AI_OPPORTUNIST | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
