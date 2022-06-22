@@ -79,11 +79,11 @@ SupernerdNortonSeenText:
 	line "ware?"
 	done
 
-SupernerdJayBeatenText:
+SupernerdNortonBeatenText:
 	text "Undo! Undo!"
 	done
 
-SupernerdJayAfterBattleText:
+SupernerdNortonAfterBattleText:
 	text "The way that FLASH"
 	line "can light dark"
 
