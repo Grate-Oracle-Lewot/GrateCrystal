@@ -11,7 +11,6 @@ RuinsOfAlphResearchCenter_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .ScientistCallback
-	callback MAPCALLBACK_OBJECTS, .TutorCallback
 
 .DummyScene0:
 	end
@@ -29,19 +28,6 @@ RuinsOfAlphResearchCenter_MapScripts:
 	moveobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 3, 7
 	appear RUINSOFALPHRESEARCHCENTER_SCIENTIST3
 	endcallback
-
-.TutorCallback:
-	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .AppearAuraSphereTutor
-	disappear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
-	endcallback
-
-.AppearAuraSphereTutor:
-	appear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
-	endcallback
-
-.NoAppearAuraSphereTutor:
-
 
 .GetUnownDexScript:
 	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesComputerMovement
@@ -185,6 +171,14 @@ RuinsOfAlphResearchCenterPrinter:
 RuinsOfAlphResearchCenterMoveTutorScript:
 	faceplayer
 	opentext
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .CanTutor
+	writetext RuinsOfAlphResearchCenterMoveTutorBefore
+	waitbutton
+	closetext
+	end
+
+.CanTutor
 	writetext RuinsOfAlphResearchCenterMoveTutorText1
 	waitbutton
 	writetext RuinsOfAlphResearchCenterMoveTutorText2
@@ -194,6 +188,7 @@ RuinsOfAlphResearchCenterMoveTutorScript:
 	writetext RuinsOfAlphResearchCenterMoveTutorClear
 	special MoveTutor
 	if_equal $0, .TeachMove
+
 .TutorRefused
 	writetext RuinsOfAlphResearchCenterMoveTutorRefused
 	waitbutton
@@ -421,6 +416,21 @@ RuinsOfAlphResearchCenterAcademicBooksText:
 	para "Ancient Ruins…"
 	line "Mysteries of the"
 	cont "Ancients…"
+	done
+
+RuinsOfAlphResearchCenterMoveTutorBefore:
+	text "Science can help"
+	line "us unravel the"
+
+	para "mysteries of #-"
+	line "MON, but it can't"
+
+	para "tell us when to"
+	line "stop…"
+
+	para "What happened on"
+	line "CINNABAR ISLAND is"
+	cont "proof of that…"
 	done
 
 RuinsOfAlphResearchCenterMoveTutorText1:
