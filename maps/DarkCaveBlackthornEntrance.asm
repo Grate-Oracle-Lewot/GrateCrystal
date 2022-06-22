@@ -71,6 +71,26 @@ DarkCaveBlackthornEntrancePharmacistText2:
 	cont "type moves."
 	done
 
+SupernerdNortonSeenText:
+	text "Can I interest you"
+	line "in my proprietary"
+
+	para "antivirus soft-"
+	line "ware?"
+	done
+
+SupernerdJayBeatenText:
+	text "Undo! Undo!"
+	done
+
+SupernerdJayAfterBattleText:
+	text "The way that FLASH"
+	line "can light dark"
+
+	para "caves is like a"
+	line "binary switch!"
+	done
+
 DarkCaveBlackthornEntranceHiddenDuskBall:
 	hiddenitem DUSK_BALL, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_DUSK_BALL
 
