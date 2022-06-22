@@ -3046,18 +3046,18 @@ CamperGroup:
 
 	; CAMPER (16)
 	db "DAVID@", TRAINERTYPE_NORMAL
-	db 48, GOLEM
+	db 48, STEELIX
 	db 46, AERODACTYL
-	db 42, GOLBAT
-	db 44, GOLDUCK
+	db 42, GLIGAR
+	db 44, FARFETCH_D
 	db -1 ; end
 
 	; CAMPER (17)
 	db "JOHN@", TRAINERTYPE_NORMAL
-	db 48, GOLEM
-	db 46, DONPHAN
-	db 42, GOLBAT
-	db 44, GOLDUCK
+	db 48, DUGTRIO
+	db 42, SANDSLASH
+	db 44, STARMIE
+	db 49, DONPHAN
 	db -1 ; end
 
 	; CAMPER (18)
