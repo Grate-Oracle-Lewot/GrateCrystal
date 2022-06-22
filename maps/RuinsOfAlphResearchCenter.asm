@@ -33,15 +33,15 @@ RuinsOfAlphResearchCenter_MapScripts:
 .TutorCallback:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AppearAuraSphereTutor
-	sjump .NoAppearAuraSphereTutor
+	disappear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
+	endcallback
 
 .AppearAuraSphereTutor:
 	appear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
 	endcallback
 
 .NoAppearAuraSphereTutor:
-	disappear RUINSOFALPHRESEARCHCENTER_SCIENTIST4
-	endcallback
+
 
 .GetUnownDexScript:
 	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesComputerMovement
