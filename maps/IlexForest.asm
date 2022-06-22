@@ -11,7 +11,6 @@
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
 	const ILEXFOREST_POKE_BALL5
-	const ILEXFOREST_POKE_BALL6
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -944,8 +943,8 @@ IlexForest_MapEvents:
 
 	def_warp_events
 	warp_event  1,  5, ROUTE_34_ILEX_FOREST_GATE, 3
-	warp_event  3, 52, ILEX_FOREST_AZALEA_GATE, 1
-	warp_event  3, 53, ILEX_FOREST_AZALEA_GATE, 2
+	warp_event  3, 42, ILEX_FOREST_AZALEA_GATE, 1
+	warp_event  3, 43, ILEX_FOREST_AZALEA_GATE, 2
 
 	def_coord_events
 
@@ -969,4 +968,3 @@ IlexForest_MapEvents:
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 25, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHedger, EVENT_ILEX_FOREST_HEDGER
-	object_event 24, 42, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestGoldLeaf, EVENT_ILEX_FOREST_GOLD_LEAF
