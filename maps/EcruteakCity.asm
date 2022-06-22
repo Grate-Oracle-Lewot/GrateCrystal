@@ -6,6 +6,7 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_GENTLEMAN
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
@@ -64,6 +65,17 @@ EcruteakCityFisherScript:
 EcruteakCityYoungsterScript:
 	jumptextfaceplayer EcruteakCityYoungsterText
 
+TrainerGentlemanVirgil:
+	trainer GENTLEMAN, VIRGIL, EVENT_BEAT_GENTLEMAN_VIRGIL, GentlemanVirgilSeenText, GentlemanVirgilBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GentlemanVirgilAfterBattleText
+	waitbutton
+	closetext
+	end
+
 EcruteakCitySign:
 	jumptext EcruteakCitySignText
 
@@ -87,26 +99,6 @@ EcruteakCityMartSign:
 
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
-
-UnusedMissingDaughterText: ; unreferenced
-	text "Oh, no. Oh, no…"
-
-	para "My daughter is"
-	line "missing."
-
-	para "No… She couldn't"
-	line "have gone to the"
-	cont "BURNED TOWER."
-
-	para "I told her not to"
-	line "go near it…"
-
-	para "People seem to"
-	line "disappear there…"
-
-	para "Oh, what should I"
-	line "do…?"
-	done
 
 EcruteakCityGramps1Text:
 	text "ECRUTEAK used to"
@@ -215,6 +207,22 @@ EcruteakCityGramps3Text:
 	cont "Hohoho!"
 	done
 
+GentlemanVirgilSeenText:
+	text "I say! I seem to"
+	line "be stranded!"
+	done
+
+GentlemanVirgilBeatenText:
+	text "By jove!"
+	done
+
+GentlemanVirgilAfterBattleText:
+	text "SURF, you say?"
+
+	para "Erm… can PONYTA"
+	line "learn that?"
+	done
+
 EcruteakCitySignText:
 	text "ECRUTEAK CITY"
 	line "A Historical City"
@@ -296,3 +304,4 @@ EcruteakCity_MapEvents:
 	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 23, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerGentlemanVirgil, -1
