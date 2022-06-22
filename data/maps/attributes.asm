@@ -414,7 +414,6 @@ ENDM
 	map_attributes UnionCave1F, UNION_CAVE_1F, $09, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $09, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
-	map_attributes UnionCaveSlowpokeWellLink, UNION_CAVE_SLOWPOKE_WELL_LINK, $15, 0
 	map_attributes SlowpokeWellB1F, SLOWPOKE_WELL_B1F, $09, 0
 	map_attributes SlowpokeWellB2F, SLOWPOKE_WELL_B2F, $09, 0
 	map_attributes OlivineLighthouse1F, OLIVINE_LIGHTHOUSE_1F, $00, 0
@@ -479,6 +478,7 @@ ENDM
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
+	map_attributes UnionCaveSlowpokeWellLink, UNION_CAVE_SLOWPOKE_WELL_LINK, $15, 0
 	map_attributes IcePathArticunoChamber, ICE_PATH_ARTICUNO_CHAMBER, $19, 0
 	map_attributes RockTunnelZapdosChamber, ROCK_TUNNEL_ZAPDOS_CHAMBER, $09, 0
 	map_attributes SilverCaveMoltresChamber, SILVER_CAVE_MOLTRES_CHAMBER, $00, 0
@@ -607,9 +607,9 @@ ENDM
 	map_attributes LavenderMart, LAVENDER_MART, $00, 0
 	map_attributes SoulHouse, SOUL_HOUSE, $00, 0
 	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $00, 0
-	map_attributes LavRadioTower2F, LAV_RADIO_TOWER_2F, $00, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $00, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0
+	map_attributes LavRadioTower2F, LAV_RADIO_TOWER_2F, $00, 0
 	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
