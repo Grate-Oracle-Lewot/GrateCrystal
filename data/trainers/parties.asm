@@ -3212,33 +3212,18 @@ MediumGroup:
 	db -1 ; end
 
 	; MEDIUM (3)
-	db "BETHANY@", TRAINERTYPE_NORMAL
-	db 25, HAUNTER
-	db -1 ; end
-
-	; MEDIUM (4)
-	db "MARGRET@", TRAINERTYPE_NORMAL
-	db 25, HAUNTER
-	db -1 ; end
-
-	; MEDIUM (5)
-	db "ETHEL@", TRAINERTYPE_NORMAL
-	db 25, HAUNTER
-	db -1 ; end
-
-	; MEDIUM (6)
 	db "REBECCA@", TRAINERTYPE_NORMAL
 	db 55, DROWZEE
 	db 55, HYPNO
 	db -1 ; end
 
-	; MEDIUM (7)
+	; MEDIUM (4)
 	db "DORIS@", TRAINERTYPE_NORMAL
 	db 54, SLOWKING
 	db 54, SLOWBRO
 	db -1 ; end
 
-	; MEDIUM (8)
+	; MEDIUM (5)
 	db "CHELL@", TRAINERTYPE_MOVES
 	db 42, ABRA,      TELEPORT, NO_MOVE, NO_MOVE, NO_MOVE
 	db 37, HYPNO,     HYPNOSIS, DREAM_EATER, NIGHTMARE, PURSUIT
