@@ -50,7 +50,7 @@ Route32CooltrainerMContinueScene:
 	iftrue .GotMiracleSeed
 	checkflag ENGINE_ZEPHYRBADGE
 	iffalse .DontHaveZephyrBadge
-	checkflag ENGINE_UNLOCKED_UNOWNS_A_TO_K
+	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	iffalse .DidntUnlockUnowns
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue .GiveMiracleSeed
