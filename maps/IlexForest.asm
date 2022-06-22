@@ -12,6 +12,8 @@
 	const ILEXFOREST_POKE_BALL4
 	const ILEXFOREST_POKE_BALL5
 	const ILEXFOREST_POKE_BALL6
+	const ILEXFOREST_COOLTRAINER_M1
+	const ILEXFOREST_COOLTRAINER_M2
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -394,6 +396,28 @@ TrainerBugCatcherWayne:
 	endifjustbattled
 	opentext
 	writetext BugCatcherWayneAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermErick:
+	trainer COOLTRAINERM, ERICK, EVENT_BEAT_COOLTRAINERM_ERICK, CooltrainermErickSeenText, CooltrainermErickBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermErickAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermAndy:
+	trainer COOLTRAINERM, ANDY, EVENT_BEAT_COOLTRAINERM_ANDY, CooltrainermAndySeenText, CooltrainermAndyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermAndyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -939,6 +963,51 @@ BugCatcherWayneAfterBattleText:
 	cont "places too."
 	done
 
+CooltrainermErickSeenText:
+	text "I'm searching for"
+	line "the forest's pro-"
+	cont "tector."
+
+	para "It must be a"
+	line "strong #MON!"
+	done
+
+CooltrainermErickBeatenText:
+	text "Drat!"
+	done
+
+CooltrainermErickAfterBattleText:
+	text "No matter how"
+	line "powerful the"
+
+	para "forest's protector"
+	line "is, it can still"
+
+	para "be captured in a"
+	line "BALL. Right?"
+	done
+
+CooltrainermAndySeenText:
+	text "Only the rarest"
+	line "#MON will do"
+	cont "for me!"
+	done
+
+CooltrainermErickBeatenText:
+	text "What do you mean"
+	line "PROF.ELM gives"
+	cont "them out for free?"
+	done
+
+CooltrainermErickAfterBattleText:
+	text "I guess rarity"
+	line "isn't the only"
+
+	para "thing that matters"
+	line "when it comes to"
+	cont "#MON."
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -970,3 +1039,5 @@ IlexForest_MapEvents:
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 25, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHedger, EVENT_ILEX_FOREST_HEDGER
 	object_event 24, 42, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestGoldLeaf, EVENT_ILEX_FOREST_GOLD_LEAF
+	object_event  6, 44, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermErick, -1
+	object_event  0,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAndy, -1
