@@ -126,7 +126,7 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
-	loadwildmon WHIMSICOTT, 1
+	loadwildmon KOFFING, 1
 	startbattle
 	reloadmapafterbattle
 	end
