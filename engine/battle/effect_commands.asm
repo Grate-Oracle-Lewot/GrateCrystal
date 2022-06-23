@@ -3703,8 +3703,6 @@ CheckForStatusIfAlreadyHasAny:
 	ret
 
 BattleCommand_SleepTarget:
-; sleeptarget
-
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_SLEEP
@@ -3717,7 +3715,13 @@ BattleCommand_SleepTarget:
 	jr .fail
 
 .not_protected_by_item
-	call CheckForStatusIfAlreadyHasAny
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	ld a, [de]
+	and SLP_MASK
+	ld hl, AlreadyAsleepText
 	jr nz, .fail
 
 	ld a, [wAttackMissed]
@@ -3728,11 +3732,15 @@ BattleCommand_SleepTarget:
 	call .CheckAIRandomFail
 	jr c, .fail
 
+	ld a, [de]
+	and a
+	jr nz, .fail
+
 	call CheckSubstituteOpp
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, SLP
+	ld b, SLP_MASK
 	ld a, [wInBattleTowerBattle]
 	and a
 	jr z, .random_loop
@@ -3742,7 +3750,7 @@ BattleCommand_SleepTarget:
 	call BattleRandom
 	and b
 	jr z, .random_loop
-	cp SLP
+	cp SLP_MASK
 	jr z, .random_loop
 	inc a
 	ld [de], a
@@ -3827,8 +3835,6 @@ BattleCommand_PoisonTarget:
 	ret
 
 BattleCommand_Poison:
-; poison
-
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
@@ -3837,7 +3843,11 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
-	call CheckForStatusIfAlreadyHasAny
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	ld b, a
+	ld hl, AlreadyPoisonedText
+	and 1 << PSN
 	jp nz, .failed
 
 	call GetOpponentItem
@@ -3851,6 +3861,12 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
+	ld hl, DidntAffect1Text
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	jr nz, .failed
+
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .dont_sample_failure
@@ -5982,10 +5998,10 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	jp PrintDidntAffect2
 
 BattleCommand_Paralyze:
-; paralyze
-
-	call CheckForStatusIfAlreadyHasAny
-	jr nz, .hasstatus
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit PAR, a
+	jr nz, .paralyzed
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
@@ -6022,6 +6038,10 @@ BattleCommand_Paralyze:
 	jr c, .failed
 
 .dont_sample_failure
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -6043,10 +6063,9 @@ BattleCommand_Paralyze:
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
-.hasstatus
-	push hl
+.paralyzed
 	call AnimateFailedMove
-	pop hl
+	ld hl, AlreadyParalyzedText
 	jp StdBattleTextbox
 
 .failed
@@ -6381,8 +6400,8 @@ PrintDidntAffect:
 
 PrintDidntAffect2:
 	call AnimateFailedMove
-	ld hl, AvoidStatusText ; 'it didn't affect'
-	ld de, ProtectingItselfText ; 'protecting itself'
+	ld hl, DidntAffect1Text ; 'it didn't affect'
+	ld de, DidntAffect2Text ; 'it didn't affect'
 	jp FailText_CheckOpponentProtect
 
 PrintParalyze:
