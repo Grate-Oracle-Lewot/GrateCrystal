@@ -611,14 +611,14 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "ROD@", TRAINERTYPE_NORMAL
-	db  7, PIDGEY
-	db  7, SPEAROW
+	db  9, FARFETCH_D
+	db  5, DELIBIRD
 	db -1 ; end
 
 	; BIRD_KEEPER (2)
 	db "ABE@", TRAINERTYPE_NORMAL
-	db  9, FARFETCH_D
-	db  5, DELIBIRD
+	db  7, PIDGEY
+	db  7, SPEAROW
 	db -1 ; end
 
 	; BIRD_KEEPER (3)
@@ -1263,7 +1263,7 @@ GruntMGroup:
 
 	; GRUNTM (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
+	db  9, RATTATA
 	db  9, ZUBAT
 	db  9, BEEDRILL
 	db -1 ; end
@@ -1331,7 +1331,7 @@ GruntMGroup:
 
 	; GRUNTM (12)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 10, HOUNDOUR
+	db 11, HOUNDOUR
 	db -1 ; end
 
 	; GRUNTM (13)
