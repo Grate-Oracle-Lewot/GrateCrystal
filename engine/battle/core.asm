@@ -6336,9 +6336,13 @@ LoadEnemyMon:
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
-; If combined with forced shiny battletype, causes an infinite loop
 	call CheckUnownLetter
-	jr c, .GenerateDVs ; try again
+	jr c, .UnownFailsafe
+
+.UnownFailsafe:
+	call BattleRandom
+	cp 10 percent ; 10% chance to let through a locked Unown, to prevent an infinite loop when none are unlocked
+	jr nc, .GenerateDVs ; reroll DVs
 
 .Magikarp:
 ; These filters are untranslated.
