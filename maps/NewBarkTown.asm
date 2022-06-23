@@ -87,8 +87,7 @@ NewBarkTownTeacherScript:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon YANMEGA, 1
+	loadwildmon UNOWN, 1
 	startbattle
 	reloadmapafterbattle
 	end
@@ -127,7 +126,6 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon WHIMSICOTT, 1
 	startbattle
 	reloadmapafterbattle
