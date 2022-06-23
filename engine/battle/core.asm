@@ -6342,7 +6342,7 @@ LoadEnemyMon:
 .UnownFailsafe:
 	call BattleRandom
 	cp 10 percent ; 10% chance to let through a locked Unown, to prevent an infinite loop when none are unlocked
-	jr nc, .GenerateDVs ; reroll DVs
+	jr c, .GenerateDVs ; reroll DVs
 
 .Magikarp:
 ; These filters are untranslated.
