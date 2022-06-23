@@ -65,16 +65,16 @@ endr
 	ld e, [hl]
 ; Check if we buff the mon, and by how much.
 	call Random
-	cp 31 percent
+	cp 25 percent
 	jr c, .buffed
 	inc e
-	cp 62 percent
+	cp 50 percent
 	jr c, .buffed
 	inc e
-	cp 83 percent
+	cp 70 percent
 	jr c, .buffed
 	inc e
-	cp 94 percent
+	cp 90 percent
 	jr c, .buffed
 	inc e
 .buffed
