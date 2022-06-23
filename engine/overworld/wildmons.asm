@@ -310,16 +310,16 @@ ChooseWildEncounter:
 	jr z, .ok
 ; Check if we buff the wild mon, and by how much.
 	call Random
-	cp 31 percent
+	cp 25 percent
 	jr c, .ok
 	inc b
-	cp 62 percent
+	cp 50 percent
 	jr c, .ok
 	inc b
-	cp 83 percent
+	cp 70 percent
 	jr c, .ok
 	inc b
-	cp 94 percent
+	cp 90 percent
 	jr c, .ok
 	inc b
 ; Store the level
