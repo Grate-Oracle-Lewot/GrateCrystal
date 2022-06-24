@@ -3720,7 +3720,7 @@ BattleCommand_SleepTarget:
 	ld d, h
 	ld e, l
 	ld a, [de]
-	and SLP_MASK
+	and SLP
 	ld hl, AlreadyAsleepText
 	jr nz, .fail
 
@@ -3740,7 +3740,7 @@ BattleCommand_SleepTarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, SLP_MASK
+	ld b, SLP
 	ld a, [wInBattleTowerBattle]
 	and a
 	jr z, .random_loop
@@ -3750,7 +3750,7 @@ BattleCommand_SleepTarget:
 	call BattleRandom
 	and b
 	jr z, .random_loop
-	cp SLP_MASK
+	cp SLP
 	jr z, .random_loop
 	inc a
 	ld [de], a
