@@ -87,9 +87,6 @@ NewBarkTownTeacherScript:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
-	loadwildmon UNOWN, 1
-	startbattle
-	reloadmapafterbattle
 	end
 
 .TellMomYoureLeaving:
@@ -126,9 +123,6 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
-	loadwildmon BUTTERFREE, 18
-	startbattle
-	reloadmapafterbattle
 	end
 
 NewBarkTownSign:
