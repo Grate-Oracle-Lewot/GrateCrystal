@@ -35,15 +35,15 @@ VioletMartGrannyText:
 	done
 
 VioletMartCooltrainerMText:
-	text "#MON can hold"
-	line "items like POTION"
-	cont "and ANTIDOTE."
+	text "X items raise your"
+	line "#MON's stats in"
+	cont "battle."
 
-	para "But they don't"
-	line "appear to know how"
+	para "If you have a"
+	line "#MON hold one,"
 
-	para "to use manmade"
-	line "items."
+	para "it'll activate"
+	line "automatically!"
 	done
 
 VioletMart_MapEvents:
