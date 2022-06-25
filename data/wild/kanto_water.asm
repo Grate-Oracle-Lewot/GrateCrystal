@@ -199,7 +199,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
-	db 59, UNOWN
+	db 95, UNOWN
 	end_water_wildmons
 
 	db -1 ; end
