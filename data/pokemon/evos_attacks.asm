@@ -3003,6 +3003,7 @@ UnownEvosAttacks:
 	db 51, MINIMIZE
 	db 55, DESTINY_BOND
 	db 64, METRONOME
+	db 84, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 WobbuffetEvosAttacks:
