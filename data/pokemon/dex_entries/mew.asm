@@ -1,10 +1,10 @@
 	db "ANCESTOR@" ; species name
 	dw 104, 90 ; height, weight
 
-	db   "Its DNA contains"
-	next "the DNA of every"
-	next "#MON, and every"
+	db   "It can use any"
+	next "battle move"
+	next "skillfully, but it"
 
-	page "#MON's DNA has"
-	next "remnants of MEW's"
-	next "DNA in it.@"
+	page "prefers to play"
+	next "or cuddle."
+	next "@"
