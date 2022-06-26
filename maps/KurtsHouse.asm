@@ -68,7 +68,7 @@ Kurt1:
 .ClearedSlowpokeWell:
 	writetext KurtsHouseKurtHonoredToMakeBallsText
 	promptbutton
-	verbosegiveitem LURE_BALL
+	verbosegiveitem LURE_BALL, 5
 	iffalse .NoRoomForBall
 	setevent EVENT_KURT_GAVE_YOU_LURE_BALL
 .GotLureBall:
