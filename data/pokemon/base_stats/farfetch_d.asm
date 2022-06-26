@@ -1,6 +1,6 @@
 	db FARFETCH_D ; 083
 
-	db  52,  90,  55,  60,  58,  62
+	db  57, 112,  75,  62,  63,  72
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, FLYING ; type
