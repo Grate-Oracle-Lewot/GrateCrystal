@@ -1,10 +1,10 @@
 	db "WEED@" ; species name
 	dw 108, 120 ; height, weight
 
-	db   "During the day, it"
-	next "stays in the cold"
-	next "underground to"
+	db   "Not quite odd, but"
+	next "oddish. Mistaking"
+	next "it for a tasty"
 
-	page "avoid the sun."
-	next "It grows by bath-"
-	next "ing in moonlight.@"
+	page "radish could be"
+	next "fatal."
+	next "@"
