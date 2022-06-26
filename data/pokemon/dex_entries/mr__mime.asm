@@ -1,10 +1,10 @@
-	db "BARRIER@" ; species name
+	db "SILENT@" ; species name
 	dw 403, 1200 ; height, weight
 
-	db   "It uses the"
-	next "mysterious"
-	next "power it has in"
+	db   "Staring for too"
+	next "long into its eyes"
+	next "will result in"
 
-	page "its fingers to"
-	next "solidify air into"
-	next "an invisible wall.@"
+	page "visions too"
+	next "nightmarish to"
+	next "describe.@"
