@@ -1,10 +1,10 @@
 	db "WEED@" ; species name
 	dw 207, 190 ; height, weight
 
-	db   "The smell from its"
-	next "drool-like syrup"
-	next "and the pollen on"
+	db   "Named for its"
+	next "seemingly dour"
+	next "expression,"
 
-	page "its petals is so"
-	next "bad, it may make"
-	next "opponents faint.@"
+	page "studies show it's"
+	next "actually always"
+	next "happy.@"
