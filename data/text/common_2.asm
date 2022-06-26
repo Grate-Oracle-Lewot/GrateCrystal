@@ -301,7 +301,6 @@ _CantUseItemText::
 	prompt
 
 _UseCutText::
-	text_ram wStringBuffer2
 	text "A swath was cut!"
 	prompt
 
@@ -317,7 +316,6 @@ _BlindingFlashText::
 	text_end
 
 _UsedSurfText::
-	text_ram wStringBuffer2
 	text "Cowabunga!"
 	done
 
@@ -416,7 +414,6 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text_ram wStringBuffer2
 	text "Whiiiiirl!"
 	prompt
 
@@ -454,7 +451,6 @@ _AskHeadbuttText::
 	done
 
 _UseRockSmashText::
-	text_ram wStringBuffer2
 	text "Heave ho!"
 	prompt
 
