@@ -1552,20 +1552,20 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (5)
 	db "BENNY@", TRAINERTYPE_NORMAL
-	db  7, WEEDLE
-	db  9, KAKUNA
+	db 12, WEEDLE
+	db 12, KAKUNA
 	db 12, BEEDRILL
 	db -1 ; end
 
 	; BUG_CATCHER (6)
 	db "AL@", TRAINERTYPE_NORMAL
-	db 12, CATERPIE
-	db 12, WEEDLE
+	db 13, PARAS
 	db -1 ; end
 
 	; BUG_CATCHER (7)
 	db "JOSH@", TRAINERTYPE_NORMAL
-	db 13, PARAS
+	db 12, BUTTERFREE
+	db 12, BEEDRILL
 	db -1 ; end
 
 	; BUG_CATCHER (8)
