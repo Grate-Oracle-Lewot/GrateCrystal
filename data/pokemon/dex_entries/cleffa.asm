@@ -1,10 +1,10 @@
 	db "STARSHAPE@" ; species name
 	dw 100, 70 ; height, weight
 
-	db   "If the impact site"
-	next "of a meteorite is"
-	next "found, this"
+	db   "It can survive"
+	next "without oxygen or"
+	next "gravity, but not"
 
-	page "#MON is certain"
-	next "to be within the"
-	next "immediate area.@"
+	page "without love."
+	next " "
+	next "@"
