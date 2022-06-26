@@ -1,10 +1,10 @@
 	db "FAIRY@" ; species name
 	dw 403, 880 ; height, weight
 
-	db   "Said to live in"
-	next "quiet, remote"
-	next "mountains, this"
+	db   "It has now fully"
+	next "adapted to our"
+	next "planet's"
 
-	page "type of fairy has"
-	next "a strong aversion"
-	next "to being seen.@"
+	page "environment, so it"
+	next "can no longer live"
+	next "in space.@"
