@@ -7188,9 +7188,9 @@ GiveExperiencePoints:
 	ld a, [wEnemyMonLevel]
 	ldh [hMultiplier], a
 	call Multiply
-	ld a, 4
+	ld a, 5
 	ldh [hDivisor], a
-	ld b, 6
+	ld b, 4
 	call Divide
 ; Boost Experience for traded Pokemon
 	pop bc
