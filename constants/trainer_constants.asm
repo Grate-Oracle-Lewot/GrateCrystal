@@ -72,6 +72,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass POKEMON_PROF ; a
 	const POKEMON_PROF1
+	const POKEMON_PROF2
 
 	trainerclass WILL ; b
 	const WILL1
