@@ -1,10 +1,10 @@
-	db "SPIKE BALL@" ; species name
+	db "HATCHLING@" ; species name
 	dw 100, 30 ; height, weight
 
-	db   "It is considered"
-	next "to be a symbol of"
-	next "good luck. Its"
+	db   "Anyone who lays"
+	next "eyes on it will be"
+	next "compelled to care"
 
-	page "shell is said to"
-	next "be filled with"
-	next "happiness.@"
+	page "for it as if it"
+	next "were their own"
+	next "child.@"
