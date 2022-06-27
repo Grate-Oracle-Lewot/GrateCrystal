@@ -280,7 +280,7 @@ LassCarrieBeatenText:
 
 LassCarrieAfterBattleText:
 	text "GIRAFARIG is"
-	line "Normal/Ghost type."
+	line "normal/ghost type."
 
 	para "It's pretty"
 	line "special."
