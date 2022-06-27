@@ -6342,7 +6342,7 @@ LoadEnemyMon:
 .UnownFailsafe:
 	call BattleRandom
 	cp 5 percent ; 5% chance to let through a locked Unown, to prevent an infinite loop when none are unlocked
-	jr c, .GenerateDVs ; reroll DVs
+	jr nc, .GenerateDVs ; reroll DVs
 
 .Magikarp:
 ; These filters are untranslated.
@@ -7188,7 +7188,7 @@ GiveExperiencePoints:
 	ld a, [wEnemyMonLevel]
 	ldh [hMultiplier], a
 	call Multiply
-	ld a, 5
+	ld a, 6
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
