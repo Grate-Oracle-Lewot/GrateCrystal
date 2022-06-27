@@ -128,5 +128,7 @@ TypeMatchups:
 ; Foresight removes Ghost's immunities.
 	db NORMAL,       GHOST,        NO_EFFECT
 	db FIGHTING,     GHOST,        NO_EFFECT
+	db GHOST,        NORMAL,       NO_EFFECT
+	db PSYCHIC_TYPE, DARK,         NO_EFFECT
 
 	db -1 ; end
