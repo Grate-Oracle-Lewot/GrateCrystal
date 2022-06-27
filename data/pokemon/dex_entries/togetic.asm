@@ -1,4 +1,4 @@
-	db "HAPPINESS@" ; species name
+	db "PIXIE@" ; species name
 	dw 200, 70 ; height, weight
 
 	db   "It lays its EGGS"
