@@ -40,8 +40,7 @@ RuinsOfAlphInnerChamberStatue:
 	jumptext RuinsOfAlphInnerChamberStatueText
 
 RuinsOfAlphStrangePresenceText:
-	text "There is a strange"
-	line "presence here…"
+	text "Ow…"
 	done
 
 RuinsOfAlphInnerChamberFisherText:
