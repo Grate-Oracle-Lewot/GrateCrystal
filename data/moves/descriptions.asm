@@ -788,8 +788,8 @@ SpikeCannonDescription:
 	next "hit 2-5 times.@"
 
 HailDescription:
-	db   "Inflicts damage"
-	next "every turn.@"
+	db   "Boosts ice and"
+	next "damages each turn.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
