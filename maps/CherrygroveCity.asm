@@ -529,7 +529,7 @@ CherrygroveCitySignText:
 	done
 
 GuideGentsHouseSignText:
-	text "GUIDE GENT'S HOUSE"
+	text "MY HOUSE"
 	done
 
 CherrygroveCity_MapEvents:
