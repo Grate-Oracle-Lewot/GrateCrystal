@@ -81,6 +81,8 @@ PlayBattleMusic:
 	jr z, .done
 	cp RED
 	jr z, .done
+	cp POKEMON_PROF
+	jr z, .done
 
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
