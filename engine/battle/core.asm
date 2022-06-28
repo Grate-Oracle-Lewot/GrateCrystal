@@ -6337,11 +6337,10 @@ LoadEnemyMon:
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jr c, .UnownFailsafe
-
-.UnownFailsafe:
+	jr nc, .Magikarp
+; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
-	cp 5 percent ; 5% chance to let through a locked Unown, to prevent an infinite loop when none are unlocked
+	cp 5 percent
 	jr nc, .GenerateDVs ; reroll DVs
 
 .Magikarp:
