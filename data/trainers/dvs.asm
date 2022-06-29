@@ -69,4 +69,6 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7,  7,  8,  7 ; GRUNTF
 	dn 12, 12, 12, 13 ; MYSTICALMAN
+	dn  0,  0,  0,  0 ; AEROBONES
+	dn  0,  0,  0,  0 ; KABUBONES
 	assert_table_length NUM_TRAINER_CLASSES
