@@ -34,14 +34,6 @@ JohtoWaterWildMons:
 	db 20, GOLBAT
 	end_water_wildmons
 
-	def_water_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
-	db 4 percent ; encounter rate
-	db 20, SLOWBRO
-	db 20, SLOWKING
-	db 15, SLOWPOKE
-	db 20, QUAGSIRE
-	end_water_wildmons
-
 	def_water_wildmons SLOWPOKE_WELL_B1F
 	db 2 percent ; encounter rate
 	db 15, SLOWPOKE
@@ -312,6 +304,14 @@ JohtoWaterWildMons:
 	db 40, POLIWHIRL
 	db 35, POLIWAG
 	db 35, FERALIGATR
+	end_water_wildmons
+
+	def_water_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
+	db 4 percent ; encounter rate
+	db 20, SLOWBRO
+	db 20, SLOWKING
+	db 15, SLOWPOKE
+	db 20, QUAGSIRE
 	end_water_wildmons
 
 	db -1 ; end
