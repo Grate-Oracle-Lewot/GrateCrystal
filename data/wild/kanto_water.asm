@@ -206,8 +206,8 @@ KantoWaterWildMons:
 	db 1 percent ; encounter rate
 	db 1, MAGIKARP
 	db 19, QUAGSIRE
-	db 1, YANMA
-	db 59, YANMEGA
+	db 5, SQUIRTLE
+	db 5, TOTODILE
 	end_water_wildmons
 
 	db -1 ; end
