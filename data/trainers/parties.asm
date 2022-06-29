@@ -3577,3 +3577,15 @@ MysticalmanGroup:
 	db 67, UNOWN
 	db 68, DITTO
 	db -1 ; end
+
+AerobonesGroup:
+	; AEROBONES (1)
+	db "BONES@", TRAINERTYPE_NORMAL
+	db 50, AERODACTYL
+	db -1 ; end
+
+KabubonesGroup:
+	; KABUBONES (1)
+	db "BONES@", TRAINERTYPE_NORMAL
+	db 50, KABUTOPS
+	db -1 ; end
