@@ -404,4 +404,16 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
+; Aerobones
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw NO_AI
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
+; Kabubones
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw NO_AI
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
 	assert_table_length NUM_TRAINER_CLASSES
