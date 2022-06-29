@@ -23,6 +23,21 @@ KabutopsFossilSignScript:
 	closepokepic
 	jumptext KabutopsFossilSignText
 
+GrowlitheBookshelfScript:
+	jumptext GrowlitheBookshelfText
+
+VoltorbBookshelfScript:
+	jumptext VoltorbBookshelfText
+
+TyphlosionBookshelfScript:
+	jumptext TyphlosionBookshelfText
+
+QwilfishBookshelfScript:
+	jumptext QwilfishBookshelfText
+
+SneaselBookshelfScript:
+	jumptext SneaselBookshelfText
+
 PewterMuseum1FScientistText:
 	text "Thanks to our"
 	line "successful fossil"
@@ -89,6 +104,51 @@ KabutopsFossilSignText:
 	para "arms while being"
 	line "protected by its"
 	cont "rocky carapace."
+	done
+
+GrowlitheBookshelfText:
+	text "It's packed with"
+	line "research about an"
+
+	para "ancient fire/rock"
+	line "type form of"
+	cont "GROWLITHE."
+	done
+
+VoltorbBookshelfText:
+	text "It's packed with"
+	line "research about an"
+
+	para "ancient electric/"
+	line "grass type form of"
+	cont "VOLTORB."
+	done
+
+TyphlosionBookshelfText:
+	text "It's packed with"
+	line "research about an"
+
+	para "ancient fire/ghost"
+	line "type form of"
+	cont "TYPHLOSION."
+	done
+
+QwilfishBookshelfText:
+	text "It's packed with"
+	line "research about an"
+
+	para "ancient dark/"
+	line "poison type form"
+	cont "of QWILFISH."
+	done
+
+SneaselBookshelfText:
+	text "It's packed with"
+	line "research about an"
+
+	para "ancient fighting/"
+	line "poison type form"
+	cont "of SNEASEL."
 	done
 
 PewterMuseum1F_MapEvents:
