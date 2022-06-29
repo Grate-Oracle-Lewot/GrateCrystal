@@ -26,6 +26,8 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
+	db AEROBONES
+	db KABUBONES
 .End
 
 FemaleTrainers:
