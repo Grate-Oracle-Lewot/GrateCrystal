@@ -711,4 +711,10 @@ KRIS EQU __trainer_class__
 	const RICO
 	const OLIE
 
+	trainerclass AEROBONES ; 44
+	const AEROBONES1
+
+	trainerclass KABUBONES ; 45
+	const KABUBONES1
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
