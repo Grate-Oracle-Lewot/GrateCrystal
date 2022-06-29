@@ -204,7 +204,7 @@ KantoWaterWildMons:
 
 	def_water_wildmons SAFARI_ZONE
 	db 1 percent ; encounter rate
-	db 31, QUAGSIRE
+	db 33, YANMEGA
 	db 31, POLITOED
 	db 5, SQUIRTLE
 	db 5, TOTODILE
