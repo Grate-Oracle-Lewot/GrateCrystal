@@ -1,6 +1,6 @@
 	object_const_def
 
-MewChamber_MapScripts:
+SafariZone_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -8,7 +8,7 @@ MewChamber_MapScripts:
 SafariZoneTrashcan:
 	jumpstd TrashCanScript
 
-MewChamber_MapEvents:
+SafariZone_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
