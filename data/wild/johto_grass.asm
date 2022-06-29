@@ -560,37 +560,6 @@ JohtoGrassWildMons:
 	db 22, KANGASKHAN
 	end_grass_wildmons
 
-	def_grass_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, SLOWPOKE
-	db 23, DIGLETT
-	db 19, ZUBAT
-	db 21, GOLBAT
-	db 20, GRAVELER
-	db 21, ONIX
-	db 22, SLOWBRO
-	db 22, SLOWKING
-	; day
-	db 20, SLOWPOKE
-	db 23, DIGLETT
-	db 19, ZUBAT
-	db 21, GOLBAT
-	db 20, GRAVELER
-	db 21, ONIX
-	db 22, SLOWBRO
-	db 22, SLOWKING
-	; nite
-	db 20, SLOWPOKE
-	db 23, QUAGSIRE
-	db 19, ZUBAT
-	db 21, GOLBAT
-	db 20, GRAVELER
-	db 21, ONIX
-	db 22, SLOWBRO
-	db 22, SLOWKING
-	end_grass_wildmons
-
 	def_grass_wildmons SLOWPOKE_WELL_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
@@ -963,37 +932,6 @@ JohtoGrassWildMons:
 	db 23, SANDSLASH
 	end_grass_wildmons
 
-	def_grass_wildmons ICE_PATH_ARTICUNO_CHAMBER
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 24, UNOWN
-	db 25, UNOWN
-	db 19, ZUBAT
-	db 20, ZUBAT
-	db 20, GOLBAT
-	db 28, DELIBIRD
-	db 26, UNOWN
-	db 1, UNOWN
-	; day
-	db 24, UNOWN
-	db 25, UNOWN
-	db 19, ZUBAT
-	db 20, ZUBAT
-	db 20, GOLBAT
-	db 28, DELIBIRD
-	db 26, UNOWN
-	db 1, UNOWN
-	; nite
-	db 24, UNOWN
-	db 25, UNOWN
-	db 19, ZUBAT
-	db 20, ZUBAT
-	db 20, GOLBAT
-	db 28, DELIBIRD
-	db 26, UNOWN
-	db 1, UNOWN
-	end_grass_wildmons
-
 	def_grass_wildmons WHIRL_ISLAND_NW
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1364,37 +1302,6 @@ JohtoGrassWildMons:
 	db 48, PUPITAR
 	db 48, QUAGSIRE
 	db 44, MISDREAVUS
-	end_grass_wildmons
-
-	def_grass_wildmons SILVER_CAVE_MOLTRES_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 48, UNOWN
-	db 40, UNOWN
-	db 48, GOLBAT
-	db 40, GOLBAT
-	db 53, CROBAT
-	db 24, UNOWN
-	db 1, UNOWN
-	db 43, CHARIZARD
-	; day
-	db 48, UNOWN
-	db 40, UNOWN
-	db 48, GOLBAT
-	db 40, GOLBAT
-	db 53, CROBAT
-	db 24, UNOWN
-	db 1, UNOWN
-	db 43, CHARIZARD
-	; nite
-	db 48, UNOWN
-	db 40, UNOWN
-	db 48, GOLBAT
-	db 40, GOLBAT
-	db 53, CROBAT
-	db 24, UNOWN
-	db 1, UNOWN
-	db 43, CHARIZARD
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1984,6 +1891,99 @@ JohtoGrassWildMons:
 	db 42, HOUNDOUR
 	db 41, GOLBAT
 	db 41, POLIWHIRL
+	end_grass_wildmons
+
+	def_grass_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, SLOWPOKE
+	db 23, DIGLETT
+	db 19, ZUBAT
+	db 21, GOLBAT
+	db 20, GRAVELER
+	db 21, ONIX
+	db 22, SLOWBRO
+	db 22, SLOWKING
+	; day
+	db 20, SLOWPOKE
+	db 23, DIGLETT
+	db 19, ZUBAT
+	db 21, GOLBAT
+	db 20, GRAVELER
+	db 21, ONIX
+	db 22, SLOWBRO
+	db 22, SLOWKING
+	; nite
+	db 20, SLOWPOKE
+	db 23, QUAGSIRE
+	db 19, ZUBAT
+	db 21, GOLBAT
+	db 20, GRAVELER
+	db 21, ONIX
+	db 22, SLOWBRO
+	db 22, SLOWKING
+	end_grass_wildmons
+
+	def_grass_wildmons ICE_PATH_ARTICUNO_CHAMBER
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, UNOWN
+	db 25, UNOWN
+	db 19, ZUBAT
+	db 20, ZUBAT
+	db 20, GOLBAT
+	db 28, DELIBIRD
+	db 26, UNOWN
+	db 1, UNOWN
+	; day
+	db 24, UNOWN
+	db 25, UNOWN
+	db 19, ZUBAT
+	db 20, ZUBAT
+	db 20, GOLBAT
+	db 28, DELIBIRD
+	db 26, UNOWN
+	db 1, UNOWN
+	; nite
+	db 24, UNOWN
+	db 25, UNOWN
+	db 19, ZUBAT
+	db 20, ZUBAT
+	db 20, GOLBAT
+	db 28, DELIBIRD
+	db 26, UNOWN
+	db 1, UNOWN
+	end_grass_wildmons
+
+	def_grass_wildmons SILVER_CAVE_MOLTRES_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 48, UNOWN
+	db 40, UNOWN
+	db 48, GOLBAT
+	db 40, GOLBAT
+	db 53, CROBAT
+	db 24, UNOWN
+	db 1, UNOWN
+	db 43, CHARIZARD
+	; day
+	db 48, UNOWN
+	db 40, UNOWN
+	db 48, GOLBAT
+	db 40, GOLBAT
+	db 53, CROBAT
+	db 24, UNOWN
+	db 1, UNOWN
+	db 43, CHARIZARD
+	; nite
+	db 48, UNOWN
+	db 40, UNOWN
+	db 48, GOLBAT
+	db 40, GOLBAT
+	db 53, CROBAT
+	db 24, UNOWN
+	db 1, UNOWN
+	db 43, CHARIZARD
 	end_grass_wildmons
 
 	db -1 ; end
