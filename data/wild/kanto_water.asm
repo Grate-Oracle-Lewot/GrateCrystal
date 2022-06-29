@@ -10,14 +10,6 @@ KantoWaterWildMons:
 	db 15, MARILL
 	end_water_wildmons
 
-	def_water_wildmons MEW_ANTECHAMBER
-	db 1 percent ; encounter rate
-	db 25, SEAKING
-	db 25, UNOWN
-	db 25, SLOWBRO
-	db 25, SLOWKING
-	end_water_wildmons
-
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
 	db 35, TENTACOOL
@@ -200,6 +192,22 @@ KantoWaterWildMons:
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
 	db 95, UNOWN
+	end_water_wildmons
+
+	def_water_wildmons MEW_ANTECHAMBER
+	db 1 percent ; encounter rate
+	db 25, SEAKING
+	db 25, UNOWN
+	db 25, SLOWBRO
+	db 25, SLOWKING
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE
+	db 1 percent ; encounter rate
+	db 1, MAGIKARP
+	db 19, QUAGSIRE
+	db 1, YANMA
+	db 59, YANMEGA
 	end_water_wildmons
 
 	db -1 ; end
