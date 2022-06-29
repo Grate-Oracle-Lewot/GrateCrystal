@@ -6373,7 +6373,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6382,7 +6382,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
@@ -6398,7 +6398,7 @@ LoadEnemyMon:
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jr c, .GenerateDVs ; try again
+	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 
