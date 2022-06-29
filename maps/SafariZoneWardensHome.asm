@@ -53,7 +53,7 @@ WardensGranddaughterText2:
 	text "Many people were"
 	line "disappointed that"
 
-	para "SAFARI ZONE closed"
+	para "SAFARI ZONE shut"
 	line "down, but Grandpa"
 	cont "is so stubborn…"
 	done
