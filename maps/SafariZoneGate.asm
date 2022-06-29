@@ -25,6 +25,6 @@ SafariZoneGate_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  8,  0, BGEVENT_READ, SafariZoneGateSign
+	bg_event  6,  0, BGEVENT_READ, SafariZoneGateSign
 
 	def_object_events
