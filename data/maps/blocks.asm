@@ -915,3 +915,9 @@ SeafoamCave1F_Blocks:
 
 SeafoamCaveB1F_Blocks:
 	INCBIN "maps/SeafoamCaveB1F.blk"
+
+SafariZoneGate_Blocks:
+	INCBIN "maps/SafariZoneGate.blk"
+
+SafariZone_Blocks:
+	INCBIN "maps/SafariZone.blk"
