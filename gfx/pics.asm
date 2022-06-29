@@ -707,7 +707,7 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
-QuilavaFrontpic:     INCBIN "gfx/pokemon/quilava/front.animated.2bpp.lz" ; 2
+QuilavaFrontpic:          INCBIN "gfx/pokemon/quilava/front.animated.2bpp.lz" ; 2
 HeracrossFrontpic:        INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz" ; 5
 KangaskhanBackpic:        INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
 SnorlaxBackpic:           INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
@@ -722,3 +722,5 @@ UnownExclamationFrontpic: INCBIN "gfx/pokemon/unown_exclamation/front.animated.2
 UnownExclamationBackpic:  INCBIN "gfx/pokemon/unown_exclamation/back.2bpp.lz"
 UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.animated.2bpp.lz"
 UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
+AerobonesPic:             INCBIN "gfx/trainers/aerobones.2bpp.lz"
+KabubonesPic:             INCBIN "gfx/trainers/kabubones.2bpp.lz"
