@@ -1,9 +1,14 @@
 	object_const_def
+	const SAFARIZONEGATE_ROCK1
+	const SAFARIZONEGATE_ROCK2
 
 SafariZoneGate_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+SafariZoneGateRock:
+	jumpstd SmashRockScript
 
 SafariZoneGateSign:
 	jumptext SafariZoneGateText
@@ -28,3 +33,5 @@ SafariZoneGate_MapEvents:
 	bg_event  6,  0, BGEVENT_READ, SafariZoneGateSign
 
 	def_object_events
+	object_event  4,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneGateRock, -1
+	object_event  5,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneGateRock, -1
