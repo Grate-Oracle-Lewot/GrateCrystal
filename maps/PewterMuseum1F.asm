@@ -1,9 +1,30 @@
 	object_const_def
+	const PEWTERMUSEUM1F_SCIENTIST
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+PewterMuseum1FScientistScript:
+	jumptextfaceplayer PewterMuseum1FScientistText
+
+PewterMuseum1FScientistText:
+	text "Thanks to our"
+	line "successful fossil"
+
+	para "breeding program,"
+	line "you can now find"
+
+	para "once-extinct #-"
+	line "MON in the wild!"
+
+	para "That means fewer"
+	line "people come here"
+
+	para "to see our fossil"
+	line "exhibits, though…"
+	done
 
 PewterMuseum1F_MapEvents:
 	db 0, 0 ; filler
@@ -20,3 +41,4 @@ PewterMuseum1F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 12,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
