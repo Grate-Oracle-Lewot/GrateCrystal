@@ -921,3 +921,9 @@ SafariZoneGate_Blocks:
 
 SafariZone_Blocks:
 	INCBIN "maps/SafariZone.blk"
+
+PewterMuseum1F_Blocks:
+	INCBIN "maps/PewterMuseum1F.blk"
+
+PewterMuseum2F_Blocks:
+	INCBIN "maps/PewterMuseum2F.blk"
