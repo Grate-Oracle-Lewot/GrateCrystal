@@ -126,37 +126,6 @@ KantoGrassWildMons:
 	db 15, MAROWAK
 	end_grass_wildmons
 
-	def_grass_wildmons ROCK_TUNNEL_ZAPDOS_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 24, UNOWN
-	db 25, UNOWN
-	db 9, PIKACHU
-	db 9, MAGNEMITE
-	db 14, JOLTEON
-	db 15, ELECTABUZZ
-	db 26, UNOWN
-	db 1, UNOWN
-	; day
-	db 24, UNOWN
-	db 25, UNOWN
-	db 9, PIKACHU
-	db 9, MAGNEMITE
-	db 14, JOLTEON
-	db 15, ELECTABUZZ
-	db 26, UNOWN
-	db 1, UNOWN
-	; nite
-	db 24, UNOWN
-	db 25, UNOWN
-	db 9, ZUBAT
-	db 10, ZUBAT
-	db 11, ZUBAT
-	db 17, ZUBAT
-	db 26, UNOWN
-	db 1, UNOWN
-	end_grass_wildmons
-
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -217,37 +186,6 @@ KantoGrassWildMons:
 	db 24, GRAVELER
 	db 22, KADABRA
 	db 23, AZUMARILL
-	end_grass_wildmons
-
-	def_grass_wildmons MEW_ANTECHAMBER
-	db 4 percent, 2 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 24, UNOWN
-	db 26, DITTO
-	db 20, SMEARGLE
-	db 23, XATU
-	db 20, IVYSAUR
-	db 20, BAYLEEF
-	db 20, QUILAVA
-	db 1, UNOWN
-	; day
-	db 24, UNOWN
-	db 28, DITTO
-	db 20, SMEARGLE
-	db 22, XATU
-	db 21, IVYSAUR
-	db 21, BAYLEEF
-	db 19, QUILAVA
-	db 1, UNOWN
-	; nite
-	db 24, UNOWN
-	db 24, DITTO
-	db 20, SMEARGLE
-	db 24, XATU
-	db 19, IVYSAUR
-	db 19, BAYLEEF
-	db 21, QUILAVA
-	db 1, UNOWN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1
@@ -992,6 +930,99 @@ KantoGrassWildMons:
 	db 41, HOUNDOUR
 	db 40, GOLBAT
 	db 40, POLIWHIRL
+	end_grass_wildmons
+
+	def_grass_wildmons ROCK_TUNNEL_ZAPDOS_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, UNOWN
+	db 25, UNOWN
+	db 9, PIKACHU
+	db 9, MAGNEMITE
+	db 14, JOLTEON
+	db 15, ELECTABUZZ
+	db 26, UNOWN
+	db 1, UNOWN
+	; day
+	db 24, UNOWN
+	db 25, UNOWN
+	db 9, PIKACHU
+	db 9, MAGNEMITE
+	db 14, JOLTEON
+	db 15, ELECTABUZZ
+	db 26, UNOWN
+	db 1, UNOWN
+	; nite
+	db 24, UNOWN
+	db 25, UNOWN
+	db 9, ZUBAT
+	db 10, ZUBAT
+	db 11, ZUBAT
+	db 17, ZUBAT
+	db 26, UNOWN
+	db 1, UNOWN
+	end_grass_wildmons
+
+	def_grass_wildmons MEW_ANTECHAMBER
+	db 4 percent, 2 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, UNOWN
+	db 26, DITTO
+	db 20, SMEARGLE
+	db 23, XATU
+	db 20, IVYSAUR
+	db 20, BAYLEEF
+	db 20, QUILAVA
+	db 1, UNOWN
+	; day
+	db 24, UNOWN
+	db 28, DITTO
+	db 20, SMEARGLE
+	db 22, XATU
+	db 21, IVYSAUR
+	db 21, BAYLEEF
+	db 19, QUILAVA
+	db 1, UNOWN
+	; nite
+	db 24, UNOWN
+	db 24, DITTO
+	db 20, SMEARGLE
+	db 24, XATU
+	db 19, IVYSAUR
+	db 19, BAYLEEF
+	db 21, QUILAVA
+	db 1, UNOWN
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, TAUROS
+	db 30, MILTANK
+	db 1, IGGLYBUFF
+	db 1, MAGBY
+	db 1, ELEKID
+	db 1, PICHU
+	db 1, TYROGUE
+	db 1, TOGEPI
+	; day
+	db 30, PARAS
+	db 30, RHYHORN
+	db 5, BULBASAUR
+	db 5, CHIKORITA
+	db 5, CHARMANDER
+	db 5, CYNDAQUIL
+	db 19, CHANSEY
+	db 21, KANGASKHAN
+	; nite
+	db 30, HAUNTER
+	db 30, GIRAFARIG
+	db 30, MAROWAK
+	db 30, HYPNO
+	db 33, MISDREAVUS
+	db 33, RATICATE
+	db 1, SMOOCHUM
+	db 1, CLEFFA
 	end_grass_wildmons
 
 	db -1 ; end
