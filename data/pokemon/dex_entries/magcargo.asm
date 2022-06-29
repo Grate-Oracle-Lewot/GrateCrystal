@@ -1,10 +1,10 @@
-	db "LAVA@" ; species name
+	db "IGNEOUS@" ; species name
 	dw 207, 1210 ; height, weight
 
-	db   "Its body is as hot"
-	next "as lava and is"
-	next "always billowing."
+	db   "It's eaten as a"
+	next "delicacy in the"
+	next "KALOS region."
 
-	page "Flames will"
-	next "occasionally burst"
-	next "from its shell.@"
+	page "However, few"
+	next "survive the meal."
+	next "@"
