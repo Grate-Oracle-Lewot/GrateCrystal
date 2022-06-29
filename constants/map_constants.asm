@@ -159,6 +159,7 @@ ENDM
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
 	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 96
 	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 97
+	map_const SAFARI_ZONE,                                 30, 27 ; 98
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -353,6 +354,7 @@ ENDM
 	map_const FUCHSIA_POKECENTER_1F,                        5,  4 ; 10
 	map_const SAFARI_ZONE_WARDENS_HOME,                     5,  4 ; 11
 	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 12
+	map_const SAFARI_ZONE_GATE,                             5,  4 ; 13
 	endgroup
 
 	newgroup LAVENDER                                             ; 18
