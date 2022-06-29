@@ -932,37 +932,6 @@ JohtoGrassWildMons:
 	db 23, SANDSLASH
 	end_grass_wildmons
 
-	def_grass_wildmons WHIRL_ISLAND_NW
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, POLIWHIRL
-	db 21, ZUBAT
-	db 22, POLIWHIRL
-	db 23, GOLBAT
-	db 20, KRABBY
-	db 22, SEEL
-	db 22, KRABBY
-	db 22, LAPRAS
-	; day
-	db 20, POLIWHIRL
-	db 21, ZUBAT
-	db 22, POLIWHIRL
-	db 23, GOLBAT
-	db 20, KRABBY
-	db 22, SEEL
-	db 22, KRABBY
-	db 22, HITMONTOP
-	; nite
-	db 20, POLIWHIRL
-	db 21, ZUBAT
-	db 22, POLIWHIRL
-	db 23, GOLBAT
-	db 20, KRABBY
-	db 22, SEEL
-	db 22, KRABBY
-	db 22, HITMONTOP
-	end_grass_wildmons
-
 	def_grass_wildmons WHIRL_ISLAND_NE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
