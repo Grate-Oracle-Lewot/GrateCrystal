@@ -25,7 +25,15 @@ FuchsiaMartFisherText:
 	line "buy some SAFARI"
 
 	para "ZONE souvenirs,"
-	line "but it's closed…"
+	line "but the place is"
+	cont "all run down."
+
+	para "In a way, though,"
+	line "it might be even"
+
+	para "more exciting to"
+	line "go in and explore"
+	cont "now…"
 	done
 
 FuchsiaMartCooltrainerFText:
