@@ -151,6 +151,14 @@ SneaselBookshelfText:
 	cont "of SNEASEL."
 	done
 
+MewBookshelfText:
+	text "It's packed with"
+	line "research about the"
+
+	para "legendary #MON,"
+	line "MEW."
+	done
+
 PewterMuseum1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -166,6 +174,12 @@ PewterMuseum1F_MapEvents:
 	def_bg_events
 	bg_event  2,  3, BGEVENT_READ, AerodactylFossilSignScript
 	bg_event  2,  6, BGEVENT_READ, KabutopsFossilSignScript
+	bg_event 13,  1, BGEVENT_READ, GrowlitheBookshelfScript
+	bg_event 14,  1, BGEVENT_READ, VoltorbBookshelfScript
+	bg_event 15,  1, BGEVENT_READ, TyphlosionBookshelfScript
+	bg_event 17,  1, BGEVENT_READ, QwilfishBookshelfScript
+	bg_event 18,  1, BGEVENT_READ, SneaselBookshelfScript
+	bg_event 19,  1, BGEVENT_READ, MewBookshelfScript
 
 	def_object_events
-	object_event 12,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
+	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
