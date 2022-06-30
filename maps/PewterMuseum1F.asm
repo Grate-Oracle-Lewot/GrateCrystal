@@ -38,6 +38,9 @@ QwilfishBookshelfScript:
 SneaselBookshelfScript:
 	jumptext SneaselBookshelfText
 
+MewBookshelfScript:
+	jumptext MewBookshelfText
+
 PewterMuseum1FScientistText:
 	text "Thanks to our"
 	line "successful fossil"
