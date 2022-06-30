@@ -2352,3 +2352,13 @@ Script_checkver_duplicate: ; unreferenced
 
 .gs_version:
 	db GS_VERSION
+
+Script_trainerpic:
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wTrainerClass], a
+	farcall Pokepic
+	ret
