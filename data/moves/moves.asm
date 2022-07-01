@@ -139,7 +139,7 @@ Moves:
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,       SPECIAL,  100, 20,  30
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,       PHYSICAL, 100, 20,  10
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,         SPECIAL,   85,  5,  10
-	move WATERFALL,    EFFECT_NORMAL_HIT,         80, WATER,        PHYSICAL, 100, 15,   0
+	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,        PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 10,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,       PHYSICAL, 100, 15,   0
