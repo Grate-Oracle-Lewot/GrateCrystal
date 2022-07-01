@@ -121,8 +121,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - A new version of Seafoam Cave featuring a final, all-Lv100 battle against me (unlocked by beating Red)
 
 ## Miscellaneous
+- NPCs in Kanto that sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
-- Changes to the lists of moves referenced by different enemy trainer AI functions
+- Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
 - Chansey NPCs in Pokémon Centers, and nurses are color-coded based on the city's name
 - Color-coded starter balls
 - Eggs hatch twice as fast
