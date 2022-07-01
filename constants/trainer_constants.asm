@@ -712,9 +712,9 @@ KRIS EQU __trainer_class__
 	const OLIE
 
 	trainerclass AEROBONES ; 44
-	const AEROBONES1
+	const AEROBONES1 ; unused, only meant for museum pic
 
 	trainerclass KABUBONES ; 45
-	const KABUBONES1
+	const KABUBONES1 ; unused, only meant for museum pic
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
