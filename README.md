@@ -89,7 +89,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Many moves have had their types changed to allow for better move variety within rarer types. Tri Attack is now ???-type like Unown.
 
-- HM moves are better in battle, and a few moves have had their effects changed completely. Hyper Fang drains HP, Low Kick lowers Evasion, and Rolling Kick is a guaranteed flinch.
+- HM moves are better in battle, and a few moves have had their effects changed completely. Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, etc.
 
 ## Items added
 - "Pocket PC" obtained from Bill in Ecruteak, letting you access the PC anywhere
@@ -145,6 +145,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
+- Tiles animate even when textboxes are open
 - Overworld sprites are darker at night
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
