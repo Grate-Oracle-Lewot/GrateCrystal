@@ -107,9 +107,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Game Corner prize Pokémon
 
-- Johto: Abra Lv5 (100C), Cubone Lv15 (800C), Wobbuffet Lv15 (1500C) --> Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
+- Johto: Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
 
-- Kanto: Pikachu Lv25 (2222C), Porygon Lv15 (5555C), Larvitar Lv40 (8888C) --> Aerodactyl Lv10 (3000C), Porygon2 Lv30 (4000C), Togetic Lv30 (5000C)
+- Kanto: Aerodactyl Lv10 (3000C), Porygon2 Lv30 (4000C), Togetic Lv30 (5000C)
 
 ## Locations
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
@@ -127,7 +127,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid, Smoochum, and Yanma now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
-- Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon
+- Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
 - Automatic weather in certain areas: sunlight in the National Park and atop the Tin Tower; rain inside Slowpoke Well; Hail in the Ice Path and Lugia's chamber; and Sandstorms in Victory Road and Mt. Silver
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - No more swarm encounters
@@ -155,7 +155,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Town Map item functionality fixed (item still not actually used)
 - Outdoor sprite system fix
 - Event initialization system fix
-- Pokémon animation tile expansion
+- Pokémon animation tile expansion... thing
 - Trainer types refactored into bit flags
 - Trainer card visual upgrades: leader head tops, badge colors, Kanto badge page
 - Correct grammar for plural trainers like Twins
@@ -167,7 +167,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - No experience gained at Lv100
 - Poison damage in the field every 5 steps instead of 4
 - Automatic prompts to use another Repel
-- Evolution moves
+- Certain moves learned upon evolution regardless of level
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
 - I had problems getting the night music to work, or rather, fitting the audionighttable into the home bank. Right now, I just added the night version of the Kanto wild battle theme, to correspond to the existing Johto one. I'd like to use all the night music, but we'll see.
