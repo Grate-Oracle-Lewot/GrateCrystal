@@ -149,18 +149,20 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F1:
-	db 5 ; # items
+	db 6 ; # items
 	db TM_FAIRY_WIND
 	db TM_SNORE
+	db TM_SUBSTITUTE
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db -1 ; end
 
 MartGoldenrod5F2:
-	db 6 ; # items
+	db 7 ; # items
 	db TM_FAIRY_WIND
 	db TM_SNORE
+	db TM_SUBSTITUTE
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -168,9 +170,10 @@ MartGoldenrod5F2:
 	db -1 ; end
 
 MartGoldenrod5F3:
-	db 6 ; # items
+	db 7 ; # items
 	db TM_FAIRY_WIND
 	db TM_SNORE
+	db TM_SUBSTITUTE
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -178,9 +181,10 @@ MartGoldenrod5F3:
 	db -1 ; end
 
 MartGoldenrod5F4:
-	db 7 ; # items
+	db 8 ; # items
 	db TM_FAIRY_WIND
 	db TM_SNORE
+	db TM_SUBSTITUTE
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
