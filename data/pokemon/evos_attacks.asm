@@ -1900,9 +1900,9 @@ PinsirEvosAttacks:
 	db 13, CLAMP
 	db 19, SEISMIC_TOSS
 	db 25, HARDEN
-	db 31, SUBMISSION
+	db 31, CROSS_CHOP
 	db 37, SWORDS_DANCE
-	db 43, CROSS_CHOP
+	db 43, SUBMISSION
 	db 50, GUILLOTINE
 	db 0 ; no more level-up moves
 
