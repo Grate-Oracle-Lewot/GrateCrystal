@@ -191,7 +191,6 @@ ItemNames::
 	li "MIRAGE MAIL"
 	li "CANDIED YAM"
 	li "TERU-SAMA"
-	li "TERU-SAMA"
 	assert_list_length NUM_ITEMS
 	li "TM01"
 	li "TM02"
@@ -249,7 +248,7 @@ ItemNames::
 	li "TM54"
 	li "TM55"
 	li "TM56"
-	assert_list_length NUM_ITEMS + NUM_TMS + 2 ; count ITEM_C3 and ITEM_DC
+	assert_list_length NUM_ITEMS + NUM_TMS
 	li "HM01"
 	li "HM02"
 	li "HM03"
@@ -257,6 +256,7 @@ ItemNames::
 	li "HM05"
 	li "HM06"
 	li "HM07"
-	assert_list_length NUM_ITEMS + NUM_TMS + 2 + NUM_HMS ; count ITEM_C3 and ITEM_DC
+	assert_list_length NUM_ITEMS + NUM_TMS + NUM_HMS
+	li "TERU-SAMA"
 	li "?"
 	assert_list_length $100
