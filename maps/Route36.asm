@@ -75,7 +75,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	waitbutton
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-	loadwildmon SUDOWOODO, 20
+	loadwildmon SUDOWOODO, 25
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
 	ifequal DRAW, DidntCatchSudowoodo
