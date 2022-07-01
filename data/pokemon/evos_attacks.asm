@@ -2986,8 +2986,9 @@ MisdreavusEvosAttacks:
 UnownEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
-	db 2, HIDDEN_POWER
+	db 2, SUBSTITUTE
 	db 3, BEAT_UP
+	db 4, HIDDEN_POWER
 	db 5, HYPNOSIS
 	db 6, BARRIER
 	db 11, DISABLE
