@@ -22,6 +22,8 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally a bit stronger (much stronger in Kanto)
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
+  - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
+  - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto
   - New trainer battles, including one with Professor Oak
 - New dex entries for every Pokémon (still in progress)
