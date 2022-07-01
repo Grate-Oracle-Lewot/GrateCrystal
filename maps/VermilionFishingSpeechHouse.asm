@@ -20,23 +20,23 @@ FishingDudeText:
 	line "DUDE, the elder of"
 	cont "the FISHING BROS."
 
-	para "Have you met the"
-	line "FISHING GURU at"
-	cont "LAKE OF RAGE?"
+	para "What's that? You"
+	line "want a fishing"
+	cont "ROD?"
 
-	para "He dreams about"
-	line "seeing the world's"
-	cont "greatest MAGIKARP."
+	para "Well, I did have"
+	line "one, but I gave it"
+	cont "to someone else."
 
-	para "If you don't mind,"
-	line "could you show him"
+	para "I believe her name"
+	line "was KATE. She was"
 
-	para "any MAGIKARP you"
-	line "catch?"
+	para "a COOLTRAINER from"
+	line "JOHTO. Around"
 
-	para "Who knows, you may"
-	line "catch the MAGIKARP"
-	cont "of his dreams."
+	para "GOLDENROD CITY, if"
+	line "I recall correct-"
+	cont "ly."
 	done
 
 FishingDudesHousePhotoText:
