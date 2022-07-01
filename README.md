@@ -24,6 +24,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto
   - New trainer battles, including one with Professor Oak
+- New dex entries for every Pokémon (still in progress)
 - A few Pokémon have been reverted to their beta designs from the Spaceworld demos, and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
