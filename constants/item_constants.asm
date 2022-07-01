@@ -274,6 +274,7 @@ TM01 EQU const_value
 	add_tm DARK_PULSE   ; f5
 	add_tm HAIL         ; f6
 	add_tm NIGHT_TERROR ; f7
+	add_tm SUBSTITUTE   ; f8
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
