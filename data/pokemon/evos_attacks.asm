@@ -3346,7 +3346,7 @@ DelibirdEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PRESENT
 	db 1, MILK_DRINK
-	db 1, COTTON_SPORE
+	db 1, SUBSTITUTE
 	db 1, BATON_PASS
 	db 10, PAY_DAY
 	db 20, ROCK_THROW
