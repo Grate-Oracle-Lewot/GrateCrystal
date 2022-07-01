@@ -34,7 +34,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 
 ## Pokémon added
 - Yanmega
-- Whimsicott
+- Whimsicott (no Cottonee)
 
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
@@ -191,9 +191,13 @@ Q) Why Yanmega and Whimsicott, then?
 
 A) Favoritism.
 
+Q) But no Cottonee?
+
+A) No room. Sorry.
+
 Q) Why not more moves?
 
-A) Same deal.
+A) Same deal. You'll notice I had to remove a few moves to make room for some of the added ones.
 
 Q) Why not remove the 25% chance for the AI to fail status moves?
 
