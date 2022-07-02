@@ -116,9 +116,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Locations
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
-- Safari Zone (no actual Safari Zone mechanics; the place is still closed down, but you can get in and find rare Pokémon the old-fashioned way)
-- A new room linking Union Cave and Slowpoke Well together
-- A new version of Seafoam Cave featuring a final, all-Lv100 battle against me (unlocked by beating Red)
+- An abandoned version of the Safari Zone
+- A room linking Union Cave and Slowpoke Well together
+- A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 
 ## Miscellaneous
 - The Odd Egg can hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
