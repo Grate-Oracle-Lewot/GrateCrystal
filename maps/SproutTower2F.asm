@@ -56,8 +56,7 @@ SageNicoAfterBattleText:
 	done
 
 SageEdmondSeenText:
-	text "…Sway like leaves"
-	line "in the wind…"
+	text "BE THE LEAF!"
 	done
 
 SageEdmondBeatenText:
