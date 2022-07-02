@@ -121,7 +121,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 
 ## Miscellaneous
-- The Odd Egg can hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
+- The Odd Egg can now hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
 - NPCs in Kanto that sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
@@ -132,8 +132,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid, Smoochum, and Yanma now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
+- All final form starter base stat totals increased to 534
 - Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
-- Automatic weather in certain areas: sunlight in the National Park and atop the Tin Tower; rain inside Slowpoke Well; Hail in the Ice Path and Lugia's chamber; and Sandstorms in Victory Road and Mt. Silver
+- Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
