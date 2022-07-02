@@ -187,6 +187,12 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
+# Known Bugs & Issues
+
+- Pokémon icons don't color on the nicknaming screen
+
+- Enemy trainer Pokémon don't heal with a held Gold Berry
+
 # FAQ
 
 Q) Why not more Pokémon?
