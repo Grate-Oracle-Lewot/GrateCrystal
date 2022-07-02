@@ -189,6 +189,8 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
+- Whimsicott's back sprite is scrambled
+
 - Pokémon icons don't color on the nicknaming screen
 
 - Enemy trainer Pokémon don't heal with a held Gold Berry
