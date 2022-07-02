@@ -794,11 +794,10 @@ RemoraidEggMoves:
 	db -1 ; end
 
 DelibirdEggMoves:
-	db SCARY_FACE
-	db SWORDS_DANCE
 	db SILVER_WIND
 	db DAZZLY_GLEAM
-	db RAZOR_LEAF
+	db SWORDS_DANCE
+	db COTTON_SPORE
 	db AEROBLAST
 	db -1 ; end
 
