@@ -121,20 +121,18 @@ FalknerIntroText:
 	cont "electricity…"
 
 	para "I won't allow such"
-	line "insults to bird"
-	cont "#MON!"
+	line "insults!"
 
 	para "I'll show you the"
 	line "real power of the"
 
-	para "magnificent bird"
+	para "magnificent sky"
 	line "#MON!"
 	done
 
 FalknerWinLossText:
 	text "…Darn! My dad's"
-	line "cherished bird"
-	cont "#MON…"
+	line "cherished #MON…"
 
 	para "All right."
 	line "Take this."
