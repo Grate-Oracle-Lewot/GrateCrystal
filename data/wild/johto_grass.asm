@@ -1188,7 +1188,7 @@ JohtoGrassWildMons:
 	db 45, URSARING
 	db 45, DONPHAN
 	db 46, GOLBAT
-	db 45, PUPITAR
+	db 45, MAGMAR
 	db 46, GRAVELER
 	db 44, STEELIX
 	; day
@@ -1197,16 +1197,16 @@ JohtoGrassWildMons:
 	db 45, URSARING
 	db 45, DONPHAN
 	db 46, GOLBAT
-	db 45, PUPITAR
+	db 45, MAGMAR
 	db 46, GRAVELER
 	db 44, STEELIX
 	; nite
 	db 44, PARASECT
-	db 47, MACHOKE
+	db 47, MISDREAVUS
 	db 45, URSARING
 	db 45, DONPHAN
 	db 46, GOLBAT
-	db 45, MISDREAVUS
+	db 45, PUPITAR
 	db 46, GRAVELER
 	db 44, STEELIX
 	end_grass_wildmons
@@ -1219,8 +1219,8 @@ JohtoGrassWildMons:
 	db 50, GOLEM
 	db 48, URSARING
 	db 48, DONPHAN
-	db 48, MISDREAVUS
-	db 55, TYRANITAR
+	db 53, MAGNETON
+	db 55, DRAGONITE
 	db 59, DRAGONITE
 	; day
 	db 53, CROBAT
@@ -1228,8 +1228,8 @@ JohtoGrassWildMons:
 	db 50, GOLEM
 	db 48, URSARING
 	db 48, DONPHAN
-	db 48, MISDREAVUS
-	db 55, TYRANITAR
+	db 59, DUGTRIO
+	db 55, DRAGONITE
 	db 59, DRAGONITE
 	; nite
 	db 53, CROBAT
@@ -1239,7 +1239,7 @@ JohtoGrassWildMons:
 	db 48, DONPHAN
 	db 48, MISDREAVUS
 	db 55, TYRANITAR
-	db 59, DRAGONITE
+	db 59, TYRANITAR
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
@@ -1250,22 +1250,22 @@ JohtoGrassWildMons:
 	db 47, MAGMAR
 	db 47, URSARING
 	db 47, DONPHAN
-	db 48, PUPITAR
+	db 48, GRAVELER
 	db 48, GOLDUCK
-	db 44, MISDREAVUS
+	db 50, MAGNETON
 	; day
 	db 50, PARASECT
 	db 48, GOLBAT
 	db 47, MAGMAR
 	db 47, URSARING
 	db 47, DONPHAN
-	db 48, PUPITAR
+	db 48, GRAVELER
 	db 48, GOLDUCK
-	db 44, MISDREAVUS
+	db 50, DUGTRIO
 	; nite
 	db 50, PARASECT
 	db 48, GOLBAT
-	db 47, PARASECT
+	db 45, PUPITAR
 	db 47, URSARING
 	db 47, DONPHAN
 	db 48, PUPITAR
