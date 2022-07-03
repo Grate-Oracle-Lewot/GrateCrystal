@@ -42,4 +42,5 @@ IconPointers:
 	dw BigmonIcon
 	dw ChanseyIcon
 	dw CelebiIcon
+	dw FlowerIcon
 	assert_table_length NUM_ICONS + 1
