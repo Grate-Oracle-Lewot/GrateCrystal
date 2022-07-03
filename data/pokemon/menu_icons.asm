@@ -194,7 +194,7 @@ MonMenuIcons:
 	db ICON_HUMANSHAPE  ; AIPOM
 	db ICON_ODDISH      ; SUNKERN
 	db ICON_FLOWER      ; SUNFLORA
-	db ICON_BUG         ; YANMA
+	db ICON_MOTH        ; YANMA
 	db ICON_POLIWAG     ; WOOPER
 	db ICON_HUMANSHAPE  ; QUAGSIRE
 	db ICON_FOX         ; ESPEON
@@ -205,8 +205,8 @@ MonMenuIcons:
 	db ICON_UNOWN       ; UNOWN
 	db ICON_HUMANSHAPE  ; WOBBUFFET
 	db ICON_EQUINE      ; GIRAFARIG
-	db ICON_VOLTORB     ; PINECO
-	db ICON_VOLTORB     ; FORRETRESS
+	db ICON_FLEA        ; PINECO
+	db ICON_FLEA        ; FORRETRESS
 	db ICON_SERPENT     ; DUNSPARCE
 	db ICON_BAT         ; GLIGAR
 	db ICON_CATERPILLAR ; STEELIX
@@ -253,6 +253,6 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
 	db ICON_CELEBI      ; CELEBI
-	db ICON_BUG         ; YANEGMA
+	db ICON_MOTH        ; YANEGMA
 	db ICON_CLEFAIRY    ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
