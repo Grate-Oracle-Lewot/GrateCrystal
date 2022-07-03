@@ -272,7 +272,7 @@ TeacherFrizzleOfferExpShareText:
 
 TeacherFrizzleExplainExpShareText:
 	text "It's called an"
-	line "EXP. SHARE."
+	line "EXP.SHARE."
 
 	para "If a #MON holds"
 	line "it, they'll gain"
