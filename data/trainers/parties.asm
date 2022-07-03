@@ -2588,8 +2588,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (5)
 	db "BILL@", TRAINERTYPE_NORMAL
-	db  7, KOFFING
-	db  7, MAGBY
+	db  9, KOFFING
+	db  9, MAGBY
 	db -1 ; end
 
 	; FIREBREATHER (6)
@@ -2600,7 +2600,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (7)
 	db "RAY@", TRAINERTYPE_NORMAL
-	db 10, VULPIX
+	db 12, VULPIX
 	db -1 ; end
 
 	; FIREBREATHER (8)
@@ -2613,9 +2613,9 @@ FirebreatherGroup:
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  2, VOLTORB
-	db  6, VOLTORB
+	db  8, VOLTORB
 	db 10, VOLTORB
+	db 12, VOLTORB
 	db 14, VOLTORB
 	db -1 ; end
 
