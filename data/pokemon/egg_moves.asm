@@ -375,11 +375,11 @@ ChanseyEggMoves:
 
 TangelaEggMoves:
 	db FLAIL
-	db CONFUSION
 	db REFLECT
 	db AMNESIA
 	db SYNTHESIS
 	db WATER_GUN
+	db ANCIENTPOWER
 	db -1 ; end
 
 KangaskhanEggMoves:
