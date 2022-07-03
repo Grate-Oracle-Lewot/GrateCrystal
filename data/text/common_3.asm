@@ -986,10 +986,10 @@ _DidNotLearnMoveText::
 	text_ram wMonOrItemNameBuffer
 	text_start
 	line "did not learn"
-	cont "@"
+	scroll "@"
 	text_ram wStringBuffer2
 	text "."
-	prompt
+	autodone
 
 _AskForgetMoveText::
 	text_ram wMonOrItemNameBuffer
@@ -1022,15 +1022,15 @@ _MoveForgotText::
 	text_pause
 	text_start
 
-	para "@"
+	autopara "@"
 	text_ram wMonOrItemNameBuffer
 	text " forgot"
 	line "@"
 	text_ram wStringBuffer1
 	text "."
 
-	para "And…"
-	prompt
+	autopara "And…"
+	autodone
 
 _MoveCantForgetHMText::
 	text "HM moves can't be"
