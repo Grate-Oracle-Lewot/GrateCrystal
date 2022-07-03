@@ -2321,9 +2321,9 @@ HikerGroup:
 
 	; HIKER (2)
 	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db  4, GEODUDE
-	db  6, GEODUDE
-	db  8, ONIX
+	db 10, GEODUDE
+	db 10, DIGLETT
+	db 10, ONIX
 	db -1 ; end
 
 	; HIKER (3)
