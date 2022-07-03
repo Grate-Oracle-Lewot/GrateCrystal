@@ -68,6 +68,6 @@ TrainerClassNames::
 	li "OFFICER"
 	li "ROCKET"
 	li "MYSTIC"
-	li "AERODACTYL"
-	li "KABUTOPS"
+	li "FOSSIL"
+	li "FOSSIL"
 	assert_list_length NUM_TRAINER_CLASSES
