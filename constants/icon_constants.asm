@@ -41,6 +41,7 @@
 	const ICON_BIGMON
 	const ICON_CHANSEY
 	const ICON_CELEBI
+	const ICON_FLOWER
 NUM_ICONS EQU const_value - 1
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
