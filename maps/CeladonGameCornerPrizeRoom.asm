@@ -6,7 +6,7 @@ CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 4000
 CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 5000
 
 	object_const_def
-	const CELADONGAMECORNERPRIZEROOM_SERPENT
+	const CELADONGAMECORNERPRIZEROOM_EKANS
 	const CELADONGAMECORNERPRIZEROOM_PHARMACIST
 
 CeladonGameCornerPrizeRoom_MapScripts:
@@ -293,5 +293,5 @@ CeladonGameCornerPrizeRoom_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, CeladonGameCornerPrizeRoomPokemonVendor
 
 	def_object_events
-	object_event  0,  2, SPRITE_SERPENT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPorygonScript, -1
+	object_event  0,  2, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPorygonScript, -1
 	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPharmacistScript, -1
