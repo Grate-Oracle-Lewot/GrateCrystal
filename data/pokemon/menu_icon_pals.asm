@@ -189,7 +189,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE   ; BELLOSSOM
 	icon_pals BLUE,   GREEN  ; MARILL
 	icon_pals BLUE,   BROWN  ; AZUMARILL
-	icon_pals BROWN,  GREEN  ; SUDOWOODO
+	icon_pals GREEN,  RED    ; SUDOWOODO
 	icon_pals GREEN,  GRAY   ; POLITOED
 	icon_pals RED,    GREEN  ; HOPPIP
 	icon_pals GREEN,  PURPLE ; SKIPLOOM
