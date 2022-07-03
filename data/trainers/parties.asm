@@ -397,7 +397,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (3)
 	db "ALBERT@", TRAINERTYPE_NORMAL
-	db  6, RATTATA
+	db  8, RATTATA
 	db  8, ZUBAT
 	db -1 ; end
 
@@ -697,9 +697,9 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (13)
 	db "PETER@", TRAINERTYPE_NORMAL
-	db  6, PIDGEY
-	db  6, PIDGEY
-	db  8, SPEAROW
+	db  9, PIDGEY
+	db  9, HOOTHOOT
+	db  9, SPEAROW
 	db -1 ; end
 
 	; BIRD_KEEPER (14)
