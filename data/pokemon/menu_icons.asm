@@ -49,7 +49,7 @@ MonMenuIcons:
 	db ICON_FLOWER      ; VILEPLUME
 	db ICON_BUG         ; PARAS
 	db ICON_BUG         ; PARASECT
-	db ICON_CATERPILLAR ; VENONAT
+	db ICON_FLEA        ; VENONAT
 	db ICON_MOTH        ; VENOMOTH
 	db ICON_DIGLETT     ; DIGLETT
 	db ICON_DIGLETT     ; DUGTRIO
@@ -57,8 +57,8 @@ MonMenuIcons:
 	db ICON_FOX         ; PERSIAN
 	db ICON_MONSTER     ; PSYDUCK
 	db ICON_MONSTER     ; GOLDUCK
-	db ICON_FIGHTER     ; MANKEY
-	db ICON_FIGHTER     ; PRIMEAPE
+	db ICON_FLEA        ; MANKEY
+	db ICON_FLEA        ; PRIMEAPE
 	db ICON_FOX         ; GROWLITHE
 	db ICON_FOX         ; ARCANINE
 	db ICON_POLIWAG     ; POLIWAG
@@ -166,8 +166,8 @@ MonMenuIcons:
 	db ICON_FOX         ; FURRET
 	db ICON_BIRD        ; HOOTHOOT
 	db ICON_BIRD        ; NOCTOWL
-	db ICON_BUG         ; LEDYBA
-	db ICON_BUG         ; LEDIAN
+	db ICON_FLEA        ; LEDYBA
+	db ICON_FLEA        ; LEDIAN
 	db ICON_BUG         ; SPINARAK
 	db ICON_BUG         ; ARIADOS
 	db ICON_BAT         ; CROBAT
