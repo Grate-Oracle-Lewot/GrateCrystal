@@ -6,7 +6,7 @@ CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 4000
 CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 5000
 
 	object_const_def
-	const CELADONGAMECORNERPRIZEROOM_GENTLEMAN
+	const CELADONGAMECORNERPRIZEROOM_SERPENT
 	const CELADONGAMECORNERPRIZEROOM_PHARMACIST
 
 CeladonGameCornerPrizeRoom_MapScripts:
@@ -14,8 +14,14 @@ CeladonGameCornerPrizeRoom_MapScripts:
 
 	def_callbacks
 
-CeladonGameCornerPrizeRoomGentlemanScript:
-	jumptextfaceplayer CeladonGameCornerPrizeRoomGentlemanText
+CeladonGameCornerPrizeRoomPorygonScript:
+	opentext
+	writetext CeladonGameCornerPrizeRoomPorygonText
+	cry PORYGON
+	pause 10
+	waitbutton
+	closetext
+	end
 
 CeladonGameCornerPrizeRoomPharmacistScript:
 	jumptextfaceplayer CeladonGameCornerPrizeRoomPharmacistText
@@ -207,10 +213,9 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	db "TOGETIC    {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
 	db "CANCEL@"
 
-CeladonGameCornerPrizeRoomGentlemanText:
-	text "I wanted PORYGON2,"
-	line "but I was short by"
-	cont "100 coins…"
+CeladonGameCornerPrizeRoomPorygonText:
+	text "PORYGON: 00110100"
+	line "00110010!"
 	done
 
 CeladonGameCornerPrizeRoomPharmacistText:
@@ -288,5 +293,5 @@ CeladonGameCornerPrizeRoom_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, CeladonGameCornerPrizeRoomPokemonVendor
 
 	def_object_events
-	object_event  0,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomGentlemanScript, -1
+	object_event  0,  2, SPRITE_SERPENT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPorygonScript, -1
 	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPharmacistScript, -1
