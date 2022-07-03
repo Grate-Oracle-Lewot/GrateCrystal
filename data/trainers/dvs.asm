@@ -23,9 +23,9 @@ TrainerClassDVs:
 	dn 12, 11, 11, 12 ; LT_SURGE
 	dn  8,  8,  9,  9 ; SCIENTIST
 	dn 11, 12, 12, 11 ; ERIKA
-	dn  6,  6,  6,  6 ; YOUNGSTER
+	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
-	dn  8,  8,  8,  8 ; BIRD_KEEPER
+	dn  8,  9,  9,  8 ; BIRD_KEEPER
 	dn  7,  8,  7,  7 ; LASS
 	dn 11, 12, 12, 11 ; JANINE
 	dn 10,  9,  9, 10 ; COOLTRAINERM
@@ -33,11 +33,11 @@ TrainerClassDVs:
 	dn  7,  8,  8,  7 ; BEAUTY
 	dn  8,  9,  9,  8 ; POKEMANIAC
 	dn  8,  7,  7,  8 ; GRUNTM
-	dn  8,  8,  8,  8 ; GENTLEMAN
+	dn  8,  9,  9,  8 ; GENTLEMAN
 	dn  9,  8,  8,  9 ; SKIER
 	dn  9,  8,  8,  9 ; TEACHER
 	dn 11, 12, 12, 11 ; SABRINA
-	dn  6,  6,  6,  6 ; BUG_CATCHER
+	dn  6,  7,  7,  6 ; BUG_CATCHER
 	dn  8,  9,  9,  8 ; FISHER
 	dn  8,  9,  9,  8 ; SWIMMERM
 	dn  9,  8,  8,  9 ; SWIMMERF
@@ -48,7 +48,7 @@ TrainerClassDVs:
 	dn  8,  9,  9,  8 ; HIKER
 	dn  8,  9,  9,  8 ; BIKER
 	dn 12, 11, 11, 12 ; BLAINE
-	dn  8,  8,  8,  8 ; BURGLAR
+	dn  8,  9,  9,  8 ; BURGLAR
 	dn  8,  9,  9,  8 ; FIREBREATHER
 	dn  8,  7, 15,  8 ; JUGGLER
 	dn  8,  9,  9,  8 ; BLACKBELT_T
