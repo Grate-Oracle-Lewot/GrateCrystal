@@ -81,7 +81,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 ## Moves
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
-- Removed: Splash, Razor Wind, Barrage, Constrict, Mimic, Detect, and Explosion (Selfdestruct is now as strong as Explosion)
+- Removed: Splash, Razor Wind, Barrage, Pain Split, Constrict, Detect, Sharpen, Mimic, and Explosion (Selfdestruct is now as strong as Explosion)
 
 - Added: Fairy Wind, Play Rough, Moonblast, Draining Kiss (renamed Drain Kiss), Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Silver Wind, Signal Beam, Earth Power, Iron Head, Aura Sphere, Hail, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
