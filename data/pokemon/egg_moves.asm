@@ -679,6 +679,11 @@ MisdreavusEggMoves:
 	db MEGA_DRAIN
 	db -1 ; end
 
+WobbuffetEggMoves:
+	db MEAN_LOOK
+	db ENCORE
+	db -1 ; end
+
 GirafarigEggMoves:
 	db IRON_HEAD
 	db TAKE_DOWN
