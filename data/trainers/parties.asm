@@ -1240,7 +1240,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (11)
 	db "ISSAC@", TRAINERTYPE_MOVES
-	db 12, LICKITUNG,  LICK, SUPERSONIC, CUT, NO_MOVE
+	db 15, LICKITUNG,  LICK, SUPERSONIC, CUT, DRAIN_KISS
 	db -1 ; end
 
 	; POKEMANIAC (12)
@@ -2198,10 +2198,10 @@ SuperNerdGroup:
 
 	; SUPER_NERD (10)
 	db "TERU@", TRAINERTYPE_NORMAL
-	db  7, MAGNEMITE
+	db 11, MAGNEMITE
 	db 11, VOLTORB
-	db  8, PICHU
-	db  9, PIKACHU
+	db 11, PICHU
+	db 11, PIKACHU
 	db -1 ; end
 
 	; SUPER_NERD (11)
@@ -2837,7 +2837,7 @@ PicnickerGroup:
 
 	; PICNICKER (4)
 	db "KIM@", TRAINERTYPE_NORMAL
-	db 15, VULPIX
+	db 16, VULPIX
 	db -1 ; end
 
 	; PICNICKER (5)
