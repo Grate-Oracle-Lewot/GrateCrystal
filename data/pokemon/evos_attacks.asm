@@ -3765,8 +3765,8 @@ WhimsicottEvosAttacks:
 	db 1, ABSORB
 	db 3, FAIRY_WIND
 	db 6, STUN_SPORE
-	db 12, MEGA_DRAIN
-	db 15, RAZOR_LEAF
+	db 12, RAZOR_LEAF
+	db 15, MEGA_DRAIN
 	db 18, GROWTH
 	db 21, POISONPOWDER
 	db 24, GIGA_DRAIN
