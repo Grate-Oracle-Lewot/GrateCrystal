@@ -1,10 +1,10 @@
-	db "FLOWER@" ; species name
+	db "RAFFLESIA@" ; species name
 	dw 311, 410 ; height, weight
 
-	db   "By shaking its big"
-	next "petals, it scat-"
-	next "ters toxic pollen"
+	db   "It smells like"
+	next "rotting meat,"
+	next "which attracts"
 
-	page "into the air,"
-	next "turning the air"
-	next "yellow.@"
+	page "small insects that"
+	next "spread its pollen."
+	next "@"
