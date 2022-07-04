@@ -60,7 +60,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GROWLITHE
 	db NO_MOVE      ; ARCANINE
 	db NO_MOVE      ; POLIWAG
-	db NO_MOVE      ; POLIWHIRL
+	db ENCORE       ; POLIWHIRL
 	db ROLLING_KICK ; POLIWRATH
 	db NO_MOVE      ; ABRA
 	db KINESIS      ; KADABRA
