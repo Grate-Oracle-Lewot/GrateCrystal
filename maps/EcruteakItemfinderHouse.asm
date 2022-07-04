@@ -8,6 +8,9 @@ EcruteakItemfinderHouse_MapScripts:
 	def_callbacks
 
 EcruteakItemfinderGuy:
+	jumptextfaceplayer EcruteakNoItemfinderText
+
+EcruteakItemfinderGuyGiveItemfinder:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_ITEMFINDER
@@ -54,6 +57,20 @@ EcruteakHistoryBook:
 
 ItemFinderHouseRadio:
 	jumpstd Radio2Script
+
+EcruteakNoItemfinderText:
+	text "Sometimes there"
+	line "are items on the"
+
+	para "ground that you"
+	line "can't see until"
+
+	para "you pick them up."
+	line "If only there were"
+
+	para "a way to detect"
+	line "them beforehand…"
+	done
 
 EcruteakItemfinderAdventureText:
 	text "Ah. You're on an"
