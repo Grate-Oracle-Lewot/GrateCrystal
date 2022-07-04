@@ -273,7 +273,6 @@ SeelEggMoves:
 	db SLAM
 	db PLAY_ROUGH
 	db PECK
-	db ENCORE
 	db -1 ; end
 
 GrimerEggMoves:
