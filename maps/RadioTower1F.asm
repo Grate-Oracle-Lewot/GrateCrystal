@@ -349,8 +349,8 @@ RadioTower1FRadioCardWomanQuestion4Text:
 	line "Question 4:"
 
 	para "Can dragon-type"
-	line "moves affect fairy-"
-	cont "type #MON?"
+	line "moves affect fairy"
+	cont "-type #MON?"
 	done
 
 RadioTower1FRadioCardWomanQuestion5Text:
