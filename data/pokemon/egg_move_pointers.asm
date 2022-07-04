@@ -201,7 +201,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw MisdreavusEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw WobbuffetEggMoves
 	dw GirafarigEggMoves
 	dw PinecoEggMoves
 	dw NoEggMoves
