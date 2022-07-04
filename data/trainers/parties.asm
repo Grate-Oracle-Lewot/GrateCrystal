@@ -408,16 +408,16 @@ YoungsterGroup:
 
 	; YOUNGSTER (5)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
-	db  8, SANDSHREW
-	db  8, SPEAROW
-	db 10, PSYDUCK
+	db 11, RATTATA
+	db 11, SANDSHREW
+	db 11, SPEAROW
+	db 11, PSYDUCK
 	db -1 ; end
 
 	; YOUNGSTER (6)
 	db "IAN@", TRAINERTYPE_NORMAL
-	db 12, MANKEY
-	db 12, DIGLETT
+	db 15, MANKEY
+	db 15, DIGLETT
 	db -1 ; end
 
 	; YOUNGSTER (7)
