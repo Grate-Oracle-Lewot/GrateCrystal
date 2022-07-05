@@ -417,12 +417,12 @@ SchoolboyJackTradeMonText:
 	done
 
 PokefanfBeverly1SeenText:
-	text "My #MON are"
+	text "My #MON is"
 	line "simply darling."
 
 	para "Let me tell you"
 	line "how proud my"
-	cont "darlings make me."
+	cont "darling makes me."
 	done
 
 PokefanfBeverly1BeatenText:
