@@ -148,7 +148,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
 - Tiles animate even when textboxes are open
-- Overworld sprites are darker at night
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
