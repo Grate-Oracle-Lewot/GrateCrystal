@@ -39,7 +39,7 @@ Moves:
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         40, FIGHTING,     PHYSICAL, 100, 30,   0
 	move MEGA_KICK,    EFFECT_NORMAL_HIT,        130, NORMAL,       PHYSICAL,  75,  5,   0
 	move JUMP_KICK,    EFFECT_JUMP_KICK,          70, FIGHTING,     PHYSICAL,  95, 25,   0
-	move ROLLING_KICK, EFFECT_FLINCH_HIT,         60, FIGHTING,     PHYSICAL,  75, 15, 100
+	move ROLLING_KICK, EFFECT_FLINCH_HIT,         60, FIGHTING,     PHYSICAL,  70, 15, 100
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,       STATUS,   100, 15,   0
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,       PHYSICAL, 100, 15,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,       PHYSICAL, 100, 25,   0
@@ -63,7 +63,7 @@ Moves:
 	move SUPERSONIC,   EFFECT_CONFUSE,             0, NORMAL,       STATUS,    60, 20,   0
 	move SONICBOOM,    EFFECT_STATIC_DAMAGE,      42, NORMAL,       SPECIAL,   90, 20,   0
 	move DISABLE,      EFFECT_DISABLE,             0, DARK,         STATUS,   100, 20,   0
-	move ACID,         EFFECT_DEFENSE_DOWN_HIT,   50, POISON,       SPECIAL,  100, 30,  30
+	move ACID,         EFFECT_DEFENSE_DOWN_HIT,   50, POISON,       SPECIAL,  100, 30, 100
 	move EMBER,        EFFECT_BURN_HIT,           40, FIRE,         SPECIAL,  100, 25,  10
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         SPECIAL,  100, 15,  10
 	move MIST,         EFFECT_MIST,                0, ICE,          STATUS,   100, 30,   0
