@@ -621,8 +621,8 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "ROD@", TRAINERTYPE_NORMAL
-	db  9, FARFETCH_D
 	db  9, DELIBIRD
+	db  9, FARFETCH_D
 	db -1 ; end
 
 	; BIRD_KEEPER (2)
