@@ -907,9 +907,6 @@ INCBIN "gfx/naming_screen/cursor.2bpp"
 
 INCLUDE "data/text/name_input_chars.asm"
 
-NamingScreenGFX_End: ; unreferenced
-INCBIN "gfx/naming_screen/end.1bpp"
-
 NamingScreenGFX_MiddleLine:
 INCBIN "gfx/naming_screen/middle_line.1bpp"
 
@@ -993,9 +990,6 @@ INCBIN "gfx/icons/mail_big.2bpp"
 	ld a, MAIL_MSG_LENGTH + 1
 	ld [wNamingScreenMaxNameLength], a
 	ret
-
-.PleaseWriteAMailString: ; unreferenced
-	db "メールを　かいてね@"
 
 .InitCharset:
 	call WaitTop
