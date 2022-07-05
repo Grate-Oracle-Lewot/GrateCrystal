@@ -688,9 +688,9 @@ GirafarigEggMoves:
 	db IRON_HEAD
 	db TAKE_DOWN
 	db AMNESIA
-	db FORESIGHT
 	db FUTURE_SIGHT
 	db BEAT_UP
+	db FORESIGHT
 	db -1 ; end
 
 PinecoEggMoves:
