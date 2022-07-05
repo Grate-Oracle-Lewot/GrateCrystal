@@ -1,6 +1,6 @@
 # Pokémon Grate Crystal
 
-URL: https://github.com/Grate-Oracle-Lewot/GrateCrystal
+Disassembly: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
 This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokémon Crystal romhack. It's called "Grate" Crystal because the editing (but not the original disassembling) was done by me, the Grate Oracle Lewot. There's not much of a theme to this project—it's just kind of me figuring out how the whole hacking process works and seeing what all I can get away with. I'll list most of the changes below, but I'm bound to miss more than a few details, so consider the list non-exhaustive.
 
@@ -191,8 +191,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 # Known Bugs & Issues
 
 - Whimsicott's back sprite is scrambled
-
-- Pokémon icons don't color on the nicknaming screen
 
 - Enemy trainer Pokémon don't heal with a held Gold Berry
 
