@@ -1,6 +1,7 @@
 	object_const_def
 	const SEAFOAMGYM_BLAINE
 	const SEAFOAMGYM_GYM_GUIDE
+	const SEAFOAMGYM_FISHER
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
@@ -56,6 +57,17 @@ SeafoamGymGuideScript:
 
 .TalkedToSeafoamGymGuideScript:
 	writetext SeafoamGymGuideWinText2
+	waitbutton
+	closetext
+	end
+
+TrainerFirebreatherIroh:
+	trainer FIREBREATHER, IROH, EVENT_BEAT_FIREBREATHER_IROH, FirebreatherIrohSeenText, FirebreatherIrohBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FirebreatherIrohAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -156,6 +168,40 @@ SeafoamGymGuideWinText2:
 	line "for a building."
 	done
 
+FirebreatherIrohSeenText:
+	text "Sometimes life is"
+	line "like this dark"
+
+	para "tunnel. You can't"
+	line "always see the"
+
+	para "light at the end"
+	line "of the tunnel, but"
+
+	para "if you just keep"
+	line "moving, you will"
+
+	para "come to a better"
+	line "place."
+	done
+
+FirebreatherIrohBeatenText:
+	text "Failure is only"
+	line "the opportunity to"
+	cont "begin again."
+	done
+
+FirebreatherIrohAfterBattleText:
+	text "You are an excell-"
+	line "ent trainer. I"
+
+	para "would love to dis-"
+	line "cuss your tactics"
+
+	para "over a cup of"
+	line "tea!"
+	done
+
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -169,3 +215,4 @@ SeafoamGym_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
 	object_event  6,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
+	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherIroh, -1
