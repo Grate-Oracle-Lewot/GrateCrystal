@@ -3266,13 +3266,13 @@ BoarderGroup:
 PokefanMGroup:
 	; POKEFANM (1)
 	db "WILLIAM@", TRAINERTYPE_ITEM
-	db 14, RAICHU,     BERRY
+	db 19, RAICHU,     BERRY
 	db -1 ; end
 
 	; POKEFANM (2)
 	db "DEREK@", TRAINERTYPE_ITEM
-	db 19, YANMA,      BERRY
-	db 19, WHIMSICOTT, BERRY
+	db 24, YANMA,      BERRY
+	db 24, WHIMSICOTT, BERRY
 	db -1 ; end
 
 	; POKEFANM (3)
@@ -3320,8 +3320,8 @@ PokefanMGroup:
 
 	; POKEFANM (10)
 	db "DEREK@", TRAINERTYPE_ITEM
-	db 21, YANMA,      GOLD_BERRY
-	db 24, WHIMSICOTT, GOLD_BERRY
+	db 30, YANMA,      GOLD_BERRY
+	db 30, WHIMSICOTT, GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (11)
