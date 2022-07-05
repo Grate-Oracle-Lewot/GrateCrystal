@@ -92,7 +92,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - HM moves are better in battle, and a few moves have had their effects changed completely. Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, etc.
 
 ## Items
-- "Pocket PC" obtained from Bill in Ecruteak, letting you access the PC anywhere
+- "Pocket PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves)
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
 - "Link Voucher" for evolving Pokémon that evolve by trade
