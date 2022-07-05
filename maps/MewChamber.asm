@@ -24,7 +24,7 @@ MewChamberMewScript:
 	closetext
 	setevent EVENT_FOUGHT_MEW
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
-	loadwildmon MEW, 40
+	loadwildmon MEW, 42
 	startbattle
 	disappear MEWCHAMBER_MEW
 	reloadmapafterbattle
