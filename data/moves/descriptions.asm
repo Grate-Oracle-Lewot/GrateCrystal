@@ -464,8 +464,8 @@ DisableDescription:
 	next "most recent move.@"
 
 AcidDescription:
-	db   "An attack that may"
-	next "lower DEFENSE.@"
+	db   "An attack that"
+	next "lowers DEFENSE.@"
 
 EmberDescription:
 	db   "An attack that may"
