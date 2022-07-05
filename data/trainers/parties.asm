@@ -2570,14 +2570,14 @@ FirebreatherGroup:
 
 	; FIREBREATHER (2)
 	db "DICK@", TRAINERTYPE_NORMAL
-	db 20, CHARMELEON
+	db 26, CHARMELEON
 	db -1 ; end
 
 	; FIREBREATHER (3)
 	db "NED@", TRAINERTYPE_NORMAL
-	db 16, KOFFING
-	db 16, GROWLITHE
-	db 15, QUILAVA
+	db 21, KOFFING
+	db 21, GROWLITHE
+	db 20, QUILAVA
 	db -1 ; end
 
 	; FIREBREATHER (4)
@@ -2594,8 +2594,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (6)
 	db "WALT@", TRAINERTYPE_NORMAL
-	db 15, SLUGMA
-	db 13, MAGMAR
+	db 17, SLUGMA
+	db 15, MAGMAR
 	db -1 ; end
 
 	; FIREBREATHER (7)
@@ -2618,10 +2618,10 @@ FirebreatherGroup:
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  8, VOLTORB
-	db 10, VOLTORB
-	db 12, VOLTORB
 	db 14, VOLTORB
+	db 15, EXEGGCUTE
+	db 16, JIGGLYPUFF
+	db 17, KOFFING
 	db -1 ; end
 
 	; JUGGLER (2)
@@ -2634,33 +2634,33 @@ JugglerGroup:
 	; JUGGLER (3)
 	db "HORTON@", TRAINERTYPE_NORMAL
 	db 40, ELECTRODE
-	db 42, ELECTRODE
 	db 44, ELECTRODE
 	db 48, ELECTRODE
+	db 60, ELECTRODE
 	db -1 ; end
 
 	; JUGGLER (4)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db  6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
-	db 18, VOLTORB
+	db 17, VOLTORB
+	db 19, EXEGGCUTE
+	db 19, JIGGLYPUFF
+	db 21, KOFFING
 	db -1 ; end
 
 	; JUGGLER (5)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
+	db 29, VOLTORB
+	db 31, EXEGGCUTE
+	db 29, JIGGLYPUFF
+	db 33, KOFFING
 	db -1 ; end
 
 	; JUGGLER (6)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 23, VOLTORB
-	db 29, VOLTORB
-	db 31, ELECTRODE
-	db 35, ELECTRODE
+	db 37, VOLTORB
+	db 40, EXEGGCUTE
+	db 39, JIGGLYPUFF
+	db 41, KOFFING
 	db -1 ; end
 
 BlackbeltGroup:
