@@ -3023,14 +3023,14 @@ GirafarigEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DOUBLE_KICK
 	db 2, GROWL
-	db 3, FORESIGHT
-	db 7, LICK
-	db 13, STOMP
-	db 20, NIGHT_SHADE
-	db 30, SKULL_BASH
-	db 41, PSYBEAM
-	db 54, CRUNCH
-	db 60, NIGHT_TERROR
+	db 4, SPITE
+	db 6, LICK
+	db 11, STOMP
+	db 22, NIGHT_SHADE
+	db 33, SKULL_BASH
+	db 44, PSYBEAM
+	db 55, CRUNCH
+	db 66, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
