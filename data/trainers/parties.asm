@@ -2610,6 +2610,11 @@ FirebreatherGroup:
 	db 44, WEEZING
 	db -1 ; end
 
+	; FIREBREATHER (9)
+	db "IROH@", TRAINERTYPE_NORMAL
+	db 60, NINETALES
+	db -1 ; end
+
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
