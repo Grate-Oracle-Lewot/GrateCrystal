@@ -37,7 +37,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 
 ## Pokémon added
 - Yanmega
-- Whimsicott (no Cottonee)
+- Whimsicott
 
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
@@ -123,7 +123,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Miscellaneous
 - The Odd Egg can now hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
-- NPCs in Kanto that sell Berries and Apricorns
+- NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
 - Chansey NPCs in Pokémon Centers, and nurses are color-coded based on the city's name
@@ -141,7 +141,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - No more badge boosts (stat-based or type-based)
 - Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
 - Text edits, often humorous (or so I'd like to think)
-- In the unedited Crystal, Unown could only be found in the Ruins of Alph, and only after completing at least one of the sliding block puzzles. In the normally-impossible scenario of encountering Unown before any letters are unlocked, the game would get stuck in an infinite loop trying to find an unlocked letter. Because Unown can be encountered in some other locations in Grate Crystal, there is now a 5% chance for the game to let through a locked Unown letter, preventing such infinite loops. As a consequence, all Unown letters are technically available after only one sliding block puzzle is completed, but completing all four puzzles leads to a more even probability distribution.
+- In the unedited Crystal, Unown could only be found in the Ruins of Alph, and only after completing at least one of the sliding block puzzles. In the normally-impossible scenario of encountering Unown before any letters are unlocked, the game would get stuck in an infinite loop trying to find an unlocked letter. Because Unown can be encountered in some other locations in Grate Crystal, there is now a 5% chance for the game to let through a locked Unown letter, preventing such infinite loops. As a consequence, all Unown letters are technically available before completing all (or any!) of the block puzzles.
 
 # Minor Edits
 
@@ -190,9 +190,9 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Whimsicott's back sprite is scrambled
+- Whimsicott's back sprite is scrambled (probably applies to Yanmega and the ! and ? Unowns as well)
 
-- Enemy trainer Pokémon don't heal with a held Gold Berry
+- Enemy trainer Pokémon don't heal with a held Gold Berry (probably Berry Juice too)
 
 # FAQ
 
@@ -213,6 +213,10 @@ A) No room. Sorry.
 Q) Why not more moves?
 
 A) Same deal. You'll notice I had to remove a few moves to make room for some of the added ones.
+
+Q) Why not remove some Pokémon to make room for adding more?
+
+A) My focus is on making "bad" Pokémon better instead of removing them.
 
 Q) Why not remove the 25% chance for the AI to fail status moves?
 
