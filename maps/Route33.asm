@@ -2,6 +2,7 @@
 	const ROUTE33_POKEFAN_M
 	const ROUTE33_LASS
 	const ROUTE33_FRUIT_TREE
+	const ROUTE33_BEAUTY
 
 Route33_MapScripts:
 	def_scene_scripts
@@ -127,6 +128,17 @@ TrainerHikerAnthony:
 	jumpstd RematchMScript
 	end
 
+TrainerBeautyBrenda:
+	trainer BEAUTY, BRENDA, EVENT_BEAT_BEAUTY_BRENDA, BeautyBrendaSeenText, BeautyBrendaBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyBrendaAfterBattleText
+	waitbutton
+	closetext
+	end
+
 Route33Sign:
 	jumptext Route33SignText
 
@@ -183,18 +195,35 @@ Route33SignText:
 	text "ROUTE 33"
 	done
 
+BeautyBrendaSeenText:
+	text "Aren't these flow-"
+	line "ers pretty?"
+	done
+
+BeautyBrendaBeatenText:
+	text "Ooh, you have some"
+	line "real power there!"
+	done
+
+BeautyBrendaAfterBattleText:
+	text "AZALEA is a bit"
+	line "too heavy on the"
+	cont "SLOWPOKE for me."
+	done
+
 Route33_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11,  9, UNION_CAVE_1F, 3
+	warp_event 11,  5, UNION_CAVE_1F, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 11, 11, BGEVENT_READ, Route33Sign
+	bg_event 11,  7, BGEVENT_READ, Route33Sign
 
 	def_object_events
 	object_event  6, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1
 	object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1
 	object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1
+	object_event 13, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBrenda, -1
