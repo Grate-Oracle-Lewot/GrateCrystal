@@ -7,6 +7,10 @@
 	const ROUTE26_FISHER
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
+	const ROUTE26_BEAUTY1
+	const ROUTE26_BEAUTY2
+	const ROUTE26_BEAUTY3
+	const ROUTE26_BEAUTY4
 
 Route26_MapScripts:
 	def_scene_scripts
@@ -241,6 +245,50 @@ TrainerFisherScott:
 	closetext
 	end
 
+TrainerBeautyJulie:
+	trainer BEAUTY, JULIE, EVENT_BEAT_BEAUTY_JULIE, BeautyJulieSeenText, BeautyJulieBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyJulieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyTheresa:
+	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyTheresaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyJaclyn:
+	trainer BEAUTY, JACLYN, EVENT_BEAT_BEAUTY_JACLYN, BeautyJaclynSeenText, BeautyJaclynBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyJaclynAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyCaroline:
+	trainer BEAUTY, CAROLINE, EVENT_BEAT_BEAUTY_CAROLINE, BeautyCarolineSeenText, BeautyCarolineBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyCarolineAfterBattleText
+	waitbutton
+	closetext
+	end
+
 Route26Sign:
 	jumptext Route26SignText
 
@@ -401,6 +449,78 @@ FisherScottAfterBattleText:
 	line "give up."
 	done
 
+BeautyJulieSeenText:
+	text "You've heard of"
+	line "the ELITE FOUR,"
+
+	para "but now you face"
+	line "us--the PETITE"
+	cont "FOUR!"
+	done
+
+BeautyJulieBeatenText:
+	text "You're amazing!"
+	done
+
+BeautyJulieAfterBattleText:
+	text "We're not an offi-"
+	line "cial league, but"
+	cont "we have fun."
+	done
+
+BeautyTheresaSeenText:
+	text "I'm the second"
+	line "PETITE FOUR"
+	cont "member. Come on!"
+	done
+
+BeautyTheresaBeatenText:
+	text "You're incredible!"
+	done
+
+BeautyTheresaAfterBattleText:
+	text "You're the first"
+	line "one to actually"
+	cont "challenge us."
+	done
+
+BeautyJaclynSeenText:
+	text "I'm known as the"
+	line "scariest member of"
+	cont "the PETITE FOUR…"
+	done
+
+BeautyJaclynBeatenText:
+	text "You're awesome!"
+	done
+
+BeautyJaclynAfterBattleText:
+	text "I know, we're not"
+	line "very scary."
+	done
+
+BeautyCarolineSeenText:
+	text "I'm the final"
+	line "challenge of the"
+	cont "PETITE FOUR."
+
+	para "Think you have"
+	line "what it takes?"
+
+	para "Let's find out!"
+	done
+
+BeautyCarolineBeatenText:
+	text "You're the"
+	line "BEEDRILL's knees!"
+	done
+
+BeautyCarolineAfterBattleText:
+	text "Care to join our"
+	line "league as the"
+	cont "CHAMPION?"
+	done
+
 Route26SignText:
 	text "ROUTE 26"
 
@@ -430,3 +550,7 @@ Route26_MapEvents:
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event  1, 87, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulie, -1
+	object_event  1, 88, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBeautyTheresa, -1
+	object_event  1, 89, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerBeautyJaclyn, -1
+	object_event  1, 90, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyCaroline, -1
