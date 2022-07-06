@@ -3,6 +3,7 @@
 	const VICTORYROAD_GUITARIST
 	const VICTORYROAD_GRANNY
 	const VICTORYROAD_SCIENTIST
+	const VICTORYROAD_COOLTRAINER_M
 	const VOCTORYROAD_BOULDER
 	const VICTORYROAD_POKE_BALL1
 	const VICTORYROAD_POKE_BALL2
@@ -127,6 +128,17 @@ TrainerScientistHeinz:
 	endifjustbattled
 	opentext
 	writetext ScientistHeinzAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermSteve:
+	trainer COOLTRAINERM, STEVE, EVENT_BEAT_COOLTRAINERM_STEVE, CooltrainermSteveSeenText, CooltrainermSteveBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext CooltrainermSteveAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -290,6 +302,21 @@ ScientistHeinzAfterBattleText:
 	cont "that thought."
 	done
 
+CooltrainermSteveSeenText:
+	text "This is it, baby!"
+	line "The #MON"
+	cont "LEAGUE!"
+	done
+
+CooltrainermSteveBeatenText:
+	text "Aww, man…"
+	done
+
+CooltrainermSteveAfterBattleText:
+	text "INDIGO PLATEAU is"
+	line "such a cool name."
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -319,6 +346,7 @@ VictoryRoad_MapEvents:
 	object_event  6, 51, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerGuitaristCasey, -1
 	object_event 13, 35, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumChell, -1
 	object_event 16, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerScientistHeinz, -1
+	object_event  4, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermSteve, -1
 	object_event 14, 50, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadBoulder, -1
 	object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE
 	object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE
