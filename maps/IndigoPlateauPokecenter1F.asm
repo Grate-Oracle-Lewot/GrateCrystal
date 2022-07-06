@@ -223,53 +223,42 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	done
 
 PlateauRivalText1:
-	text "Hold it."
+	text "WAIT"
+	line "NOW YOU GO TO"
+	cont "CHALLENGE"
+	cont "THE ELFS"
+	cont "COMPETITION"
+	cont "LEAGUE?"
 
-	para "You're going to"
-	line "take the #MON"
+	para "IT'S IMPOSSIBLE,"
 
-	para "LEAGUE challenge"
-	line "now?"
-
-	para "That's not going"
-	line "to happen."
-
-	para "My super-well-"
-	line "trained #MON"
-
-	para "are going to pound"
-	line "you."
-
-	para "<PLAYER>!"
-	line "I challenge you!"
+	para " "
+	line "THAT THE"
+	cont "ELF I BRED"
+	cont "WILL BE DEFEATED"
+	cont "BY YOURS"
+	cont "LET ELF"
+	cont "COMPETE WITH MINE"
 	done
 
 PlateauRivalWinText:
-	text "…"
-
-	para "OK--I lost…"
+	text "I ACKNOWLEDGED"
+	line "BEING DEFEATED"
 	done
 
 PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
+	text "YOU LOST AGAIN?"
+	line "IT NEED TO USE"
+	cont "YOUR BRAIN,
+	cont "AND CONSIDER TO DO."
+	cont "IT'S VERY IMPORTANT"
+	cont "I SEE"
 
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
-
-	para "Humph! Try not to"
-	line "lose!"
+	para "TO TRY HARD IS A GOOD."
 	done
 
 PlateauRivalLoseText:
-	text "…"
-
-	para "Whew…"
-	line "With my partners,"
-
-	para "I'm going to be"
-	line "the CHAMPION!"
+	text "WIN!!"
 	done
 
 TeleportGuyText1:
