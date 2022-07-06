@@ -12,8 +12,8 @@ ChrisNameMenuHeader:
 MalePlayerNameArray:
 	db "DASHIE@"
 	db "CHUGGA@"
+	db "ARLO@"
 	db "HEGEL@"
-	db "ASH@"
 	db 2 ; title indent
 	db " NAME @" ; title
 
