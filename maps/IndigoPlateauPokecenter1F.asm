@@ -249,7 +249,7 @@ PlateauRivalWinText:
 PlateauRivalText2:
 	text "YOU LOST AGAIN?"
 	line "IT NEED TO USE"
-	cont "YOUR BRAIN,
+	cont "YOUR BRAIN,"
 	cont "AND CONSIDER TO DO."
 	cont "IT'S VERY IMPORTANT"
 	cont "I SEE"
