@@ -606,7 +606,7 @@ OddishEvosAttacks:
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
-	db 23, ACID
+	db 23, SMOG
 	db 27, MEGA_DRAIN
 	db 32, MOONLIGHT
 	db 37, SILVER_WIND
@@ -622,7 +622,7 @@ GloomEvosAttacks:
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
-	db 24, ACID
+	db 24, SMOG
 	db 29, MEGA_DRAIN
 	db 35, MOONLIGHT
 	db 42, SILVER_WIND
