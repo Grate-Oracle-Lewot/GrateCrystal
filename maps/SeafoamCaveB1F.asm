@@ -2,11 +2,20 @@
 	const SEAFOAMCAVEB1F_KAREN
 	const SEAFOAMCAVEB1F_MONSTER
 	const SEAFOAMCAVEB1F_POKE_BALL
+	const SEAFOAMCAVEB1F_OAK1
+	const SEAFOAMCAVEB1F_OAK2
 
 SeafoamCaveB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Setup
+
+.Setup:
+	disappear SEAFOAMCAVEB1F_OAK1
+	disappear SEAFOAMCAVEB1F_OAK2
+	appear SEAFOAMCAVEB1F_MONSTER
+	endcallback
 
 SeafoamCaveB1FKarenScript:
 	faceplayer
@@ -128,22 +137,162 @@ SeafoamCaveB1FKarenThanksForPlayingText:
 	line "me, you know?"
 
 	para "So… Thank you."
+	done
 
-	para "…"
+SeafoamCaveB1FOakCongratulationsText:
+	text "OAK: <PLAY_G>!"
 
-	para "That's all I've"
-	line "got, but you can"
+	para "So MARY's scoop"
+	line "was correct! You"
 
-	para "still run around"
-	line "if you have more"
-	cont "you want to do."
+	para "came to challenge"
+	line "LEWOT at his full"
 
-	para "But first… the"
-	line "third and final"
-	cont "credits roll."
+	para "strength… and you"
+	line "won, too!"
 
-	para "…Seriously,"
-	line "thanks."
+	para "That makes you not"
+	line "only the CHAMPION,"
+
+	para "but the strongest"
+	line "trainer in all of"
+	cont "KANTO and JOHTO!"
+
+	para "You're a true"
+	line "prodigy!"
+
+	para "Cough… pardon me."
+
+	para "I must congratul-"
+	line "ate… cough…"
+
+	para "COUGH! HACK!"
+
+	para "Wh-what… What's"
+	line "happening?"
+	done
+
+SeafoamCaveB1FOakWhoAreYouText:
+	text "OAK: What… what is"
+	line "this?!"
+
+	para "Who are you?"
+	done
+
+SeafoamCaveB1FPoisonOakFufuText:
+	text "???: Fufufu…"
+
+	para "Do you not recog-"
+	line "nize who you see"
+	cont "in the mirror?"
+	done
+
+SeafoamCaveB1FOakItCantBeText:
+	text "OAK: No… it can't"
+	line "be!"
+	done
+
+SeafoamCaveB1FPoisonOakGivePokemonText:
+	text "???: Of course it"
+	line "can, you old fool."
+
+	para "I am your truest"
+	line "self…"
+
+	para "I am every twisted"
+	line "desire you've ever"
+	cont "tried to repress…"
+
+	para "And as such… I"
+	line "demand! All three"
+	cont "of you!"
+
+	para "GIVE ME ALL YOUR"
+	line "#MON!!"
+	done
+
+SeafoamCaveB1FKarenCutOutOfScriptText:
+	text "LEWOT: Uh… dude,"
+	line "you realize I can"
+
+	para "just cut you out"
+	line "of the script,"
+	cont "right?"
+	done
+
+SeafoamCaveB1FPoisonOakButYouDidntText:
+	text "???: Ah, but you"
+	line "didn't. Your need"
+
+	para "for an explosive"
+	line "finale will be"
+	cont "your undoing!"
+	done
+
+SeafoamCaveB1FPoisonOakChampionText:
+	text "You, CHAMPION!"
+	line "Fork 'em over!"
+
+	para "Every #MON must"
+	line "belong to me!"
+	done
+
+SeafoamCaveB1FOakBlitherText:
+	text "OAK: Wh-what is…"
+	line "I don't… how…"
+	done
+
+SeafoamCaveB1FKarenUpToYouText:
+	text "LEWOT: Well,"
+	line "<PLAY_G>, I'd take"
+
+	para "care of this guy,"
+	line "but you just made"
+
+	para "all my #MON"
+	line "faint, so…"
+
+	para "I guess it's up to"
+	line "you!"
+	done
+
+SeafoamCaveB1FPoisonOakBattleText:
+	text "???: You dare to"
+	line "challenge fate?"
+
+	para "Fufufu… then let"
+	line "it be so!"
+	done
+
+SeafoamCaveB1FPoisonOakWinText:
+	text "IMPOSSIBLE!"
+	done
+
+SeafoamCaveB1FPoisonOakLossText:
+	text "The world of"
+	line "#MON is mine!"
+	done
+
+SeafoamCaveB1FPoisonOakNoText:
+	text "POISON OAK:"
+	line "NOOOOOOOOooooooo…!"
+	done
+
+SeafoamCaveB1FKarenThatWasWeirdText:
+	text "LEWOT: Well… that"
+	line "was weird."
+	done
+
+SeafoamCaveB1FOakApologizeText:
+	text "OAK: I… I"
+	line "apologize."
+	done
+
+SeafoamCaveB1FKarenCreditsText:
+	text "LEWOT: …"
+
+	para "Let's just cut to"
+	line "the credits."
 	done
 
 SeafoamCaveB1FFeraligatrText:
@@ -167,5 +316,7 @@ SeafoamCaveB1F_MapEvents:
 
 	def_object_events
 	object_event  9, 15, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FKarenScript, -1
-	object_event 10, 15, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FFeraligatrScript, -1
+	object_event 10, 15, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FFeraligatrScript, EVENT_SEAFOAM_CAVE_B1F_FERALIGATR
 	object_event  5,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB1FSacredAsh, EVENT_SEAFOAM_CAVE_B1F_SACRED_ASH
+	object_event  0,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_OAK
+	object_event  0,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_PSN_OAK
