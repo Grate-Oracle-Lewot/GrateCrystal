@@ -133,7 +133,7 @@ VenonatEggMoves:
 	db BATON_PASS
 	db PSYWAVE
 	db SCREECH
-	db ACID
+	db CONFUSION
 	db SIGNAL_BEAM
 	db -1 ; end
 
