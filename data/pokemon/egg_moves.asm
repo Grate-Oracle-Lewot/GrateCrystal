@@ -118,7 +118,7 @@ OddishEggMoves:
 	db RAZOR_LEAF
 	db FLAIL
 	db SYNTHESIS
-	db SILVER_WIND
+	db ACID
 	db -1 ; end
 
 ParasEggMoves:
