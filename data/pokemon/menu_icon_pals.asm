@@ -48,7 +48,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   GREEN  ; ZUBAT
 	icon_pals BLUE,   GREEN  ; GOLBAT
 	icon_pals GREEN,  YELLOW ; ODDISH
-	icon_pals BROWN,  YELLOW ; GLOOM
+	icon_pals RED,    YELLOW ; GLOOM
 	icon_pals RED,    YELLOW ; VILEPLUME
 	icon_pals RED,    YELLOW ; PARAS
 	icon_pals RED,    YELLOW ; PARASECT
@@ -191,7 +191,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   BROWN  ; AZUMARILL
 	icon_pals GREEN,  RED    ; SUDOWOODO
 	icon_pals GREEN,  GRAY   ; POLITOED
-	icon_pals RED,    GREEN  ; HOPPIP
+	icon_pals GREEN,  GREEN  ; HOPPIP
 	icon_pals GREEN,  PURPLE ; SKIPLOOM
 	icon_pals BLUE,   PINK   ; JUMPLUFF
 	icon_pals PURPLE, PINK   ; AIPOM
