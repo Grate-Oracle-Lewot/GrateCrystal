@@ -673,7 +673,7 @@ VenonatEvosAttacks:
 	db 2, FORESIGHT
 	db 5, SUPERSONIC
 	db 9, DISABLE
-	db 17, CONFUSION
+	db 17, ACID
 	db 20, POISONPOWDER
 	db 25, PSYBEAM
 	db 28, STUN_SPORE
@@ -688,7 +688,7 @@ VenomothEvosAttacks:
 	db 2, FORESIGHT
 	db 5, SUPERSONIC
 	db 9, DISABLE
-	db 17, CONFUSION
+	db 17, ACID
 	db 20, POISONPOWDER
 	db 25, PSYBEAM
 	db 28, STUN_SPORE
