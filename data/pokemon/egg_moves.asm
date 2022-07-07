@@ -489,16 +489,15 @@ DratiniEggMoves:
 	db -1 ; end
 
 ChikoritaEggMoves:
-	db VINE_WHIP
-	db LEECH_SEED
 	db COUNTER
-	db ANCIENTPOWER
 	db FLAIL
+	db VINE_WHIP
+	db STOMP
 	db SWORDS_DANCE
+	db ANCIENTPOWER
 	db -1 ; end
 
 CyndaquilEggMoves:
-	db QUICK_ATTACK
 	db REVERSAL
 	db THRASH
 	db FORESIGHT
@@ -507,7 +506,7 @@ CyndaquilEggMoves:
 	db -1 ; end
 
 TotodileEggMoves:
-	db ROCK_SLIDE
+	db OUTRAGE
 	db ANCIENTPOWER
 	db HYPER_FANG
 	db SUPER_FANG
