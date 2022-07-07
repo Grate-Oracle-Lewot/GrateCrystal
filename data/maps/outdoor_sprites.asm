@@ -180,7 +180,8 @@ AzaleaGroupSprites:
 	db SPRITE_ROCKET
 	db SPRITE_SILVER
 	db SPRITE_LASS
-	; 7 of max 9 walking sprites
+	db SPRITE_BEAUTY
+	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
 	db SPRITE_KURT
