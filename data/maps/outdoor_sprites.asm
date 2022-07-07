@@ -137,7 +137,7 @@ NewBarkGroupSprites:
 CherrygroveGroupSprites:
 ; Route30, Route31, CherrygroveCity
 	db SPRITE_SILVER
-	db SPRITE_TEACHER
+	db SPRITE_BEAUTY
 	db SPRITE_FISHER
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_YOUNGSTER
