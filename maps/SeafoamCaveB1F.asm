@@ -34,6 +34,7 @@ SeafoamCaveB1FKarenScript:
 	winlosstext SeafoamCaveB1FKarenWinText, SeafoamCaveB1FKarenLossText
 	loadtrainer KAREN, KAREN2
 	startbattle
+	disappear SEAFOAMCAVEB1F_MONSTER
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
@@ -41,7 +42,89 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FKarenThanksForPlayingText
 	waitbutton
 	closetext
+	playmusic MUSIC_PROF_OAK
+	appear SEAFOAMCAVEB1F_OAK1
+	applymovement SEAFOAMCAVEB1F_OAK1, SeafoamCaveMovementData_OakWalksUp
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext SeafoamCaveB1FOakCongratulationsText
+	waitbutton
+	closetext
+	special FadeOutMusic
+	special FadeBlackQuickly
+	appear SEAFOAMCAVEB1F_OAK2
+	special FadeInQuickly
+	turnobject SEAFOAMCAVEB1F_OAK1, DOWN
+	turnobject PLAYER, DOWN
+	opentext
+	writetext SeafoamCaveB1FOakWhoAreYouText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FPoisonOakFufuText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FOakItCantBeText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FPoisonOakGivePokemonText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_OAK1, 15
+	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_KAREN, 15
+	opentext
+	writetext SeafoamCaveB1FKarenCutOutOfScriptText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FPoisonOakButYouDidntText
+	waitbutton
+	closetext
+	applymovement SEAFOAMCAVEB1F_OAK2, SeafoamCaveMovementData_PoisonOak
+	opentext
+	writetext SeafoamCaveB1FPoisonOakChampionText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FOakBlitherText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FKarenUpToYouText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FPoisonOakBattleText
+	waitbutton
+	closetext
+	winlosstext SeafoamCaveB1FPoisonOakWinText, SeafoamCaveB1FPoisonOakLossText
+	loadtrainer POKEMON_PROF, POKEMON_PROF2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	special FadeOutMusic
+	opentext
+	writetext SeafoamCaveB1FPoisonOakNoText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	disappear SEAFOAMCAVEB1F_OAK2
+	special FadeInQuickly
 	pause 42
+	opentext
+	writetext SeafoamCaveB1FKarenThatWasWeirdText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FOakApologizeText
+	waitbutton
+	closetext
+	opentext
+	writetext SeafoamCaveB1FKarenCreditsText
+	waitbutton
+	closetext
 	special HealParty
 	refreshscreen
 	credits
@@ -61,6 +144,20 @@ SeafoamCaveB1FSacredAsh:
 
 SeafoamCaveB1FHiddenBerryJuice:
 	hiddenitem BERRY_JUICE, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_BERRY_JUICE
+
+SeafoamCaveMovementData_OakWalksUp:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	turn_head LEFT
+	step_end
+
+SeafoamCaveMovementData_PoisonOak:
+	big_step LEFT
+	turn_head UP
+	step_end
 
 SeafoamCaveB1FKarenEarlyText:
 	text "Oh, hey. I guess"
@@ -194,7 +291,7 @@ SeafoamCaveB1FOakItCantBeText:
 
 SeafoamCaveB1FPoisonOakGivePokemonText:
 	text "???: Of course it"
-	line "can, you old fool."
+	line "can, SAMUEL OAK."
 
 	para "I am your truest"
 	line "self…"
@@ -239,7 +336,7 @@ SeafoamCaveB1FPoisonOakChampionText:
 
 SeafoamCaveB1FOakBlitherText:
 	text "OAK: Wh-what is…"
-	line "I don't… how…"
+	line "I don't… how… wh…"
 	done
 
 SeafoamCaveB1FKarenUpToYouText:
@@ -315,8 +412,8 @@ SeafoamCaveB1F_MapEvents:
 	bg_event 17, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenBerryJuice
 
 	def_object_events
-	object_event  9, 15, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FKarenScript, -1
-	object_event 10, 15, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FFeraligatrScript, EVENT_SEAFOAM_CAVE_B1F_FERALIGATR
+	object_event  9, 14, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FKarenScript, -1
+	object_event 10, 14, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB1FFeraligatrScript, EVENT_SEAFOAM_CAVE_B1F_FERALIGATR
 	object_event  5,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB1FSacredAsh, EVENT_SEAFOAM_CAVE_B1F_SACRED_ASH
-	object_event  0,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_OAK
-	object_event  0,  0, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_PSN_OAK
+	object_event 10, 20, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_OAK
+	object_event 10, 16, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B1F_PSN_OAK
