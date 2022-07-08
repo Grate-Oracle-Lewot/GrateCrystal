@@ -125,6 +125,8 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FKarenCreditsText
 	waitbutton
 	closetext
+	disappear SEAFOAMCAVEB1F_OAK1
+	appear SEAFOAMCAVEB1F_MONSTER
 	special HealParty
 	refreshscreen
 	credits
