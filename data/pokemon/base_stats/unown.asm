@@ -1,6 +1,6 @@
 	db UNOWN ; 201
 
-	db  48,  72,  84,  84,  72,  96
+	db  42,  72,  84,  84,  72,  96
 	;   hp  atk  def  spd  sat  sdf
 
 	db CURSE_TYPE, CURSE_TYPE ; type
