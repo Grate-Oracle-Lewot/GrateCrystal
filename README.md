@@ -128,6 +128,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
 - Chansey NPCs in Pokémon Centers, and nurses are color-coded based on the city's name
 - Color-coded starter balls
+- Happiness builds a bit faster
 - Eggs hatch twice as fast
 - Nidorina and Nidoqueen can breed
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
