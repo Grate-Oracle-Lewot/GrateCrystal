@@ -20,7 +20,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Unown and Delibird learn multiple moves
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
-  - Enemy trainer parties are more diverse and generally a bit stronger (much stronger in Kanto)
+  - Enemy trainer parties are more diverse and generally stronger
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
   - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
