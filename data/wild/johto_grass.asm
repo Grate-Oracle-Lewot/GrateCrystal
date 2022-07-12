@@ -1679,27 +1679,27 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, MANKEY
-	db 14, MAREEP
-	db 13, EKANS
 	db 14, SPEAROW
+	db 14, MAREEP
+	db 13, MANKEY
+	db 13, EKANS
 	db 13, ARBOK
 	db 14, FEAROW
 	db 14, WHIMSICOTT
 	db 14, MARILL
 	; day
-	db 13, MANKEY
-	db 14, MAREEP
-	db 13, EKANS
 	db 14, SPEAROW
+	db 14, MAREEP
+	db 13, MANKEY
+	db 13, EKANS
 	db 13, ARBOK
 	db 14, FEAROW
 	db 13, WHIMSICOTT
 	db 14, MARILL
 	; nite
 	db 13, MANKEY
-	db 14, MAREEP
 	db 13, RATTATA
+	db 14, MAREEP
 	db 14, ZUBAT
 	db 13, RATICATE
 	db 14, GOLBAT
