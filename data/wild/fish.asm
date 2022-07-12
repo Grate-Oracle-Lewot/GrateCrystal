@@ -28,7 +28,7 @@ FishGroups:
 .Shore_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     KRABBY,     19
-	db  75 percent + 1, KRABBY,     20
+	db  75 percent + 1, KRABBY,     21
 	db 100 percent,     time_group 0
 .Shore_Super:
 	db  25 percent,     KRABBY,     40
@@ -37,9 +37,9 @@ FishGroups:
 	db 100 percent,     KINGLER,    40
 .Shore_Odd:
 	db  25 percent,     time_group 0
-	db  50 percent,     CHINCHOU,   19
-	db  75 percent,     OMANYTE,    19
-	db 100 percent,     KABUTO,     19
+	db  50 percent,     CHINCHOU,   21
+	db  75 percent,     OMANYTE,    21
+	db 100 percent,     KABUTO,     21
 
 .Ocean_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -56,10 +56,10 @@ FishGroups:
 	db  75 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
 .Ocean_Odd:
-	db  25 percent,     SLOWBRO,    19
-	db  50 percent,     SLOWKING,   19
-	db  75 percent,     OMANYTE,    19
-	db 100 percent,     KABUTO,     19
+	db  25 percent,     SLOWBRO,    21
+	db  50 percent,     SLOWKING,   21
+	db  75 percent,     OMANYTE,    21
+	db 100 percent,     KABUTO,     21
 
 .Lake_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -68,7 +68,7 @@ FishGroups:
 .Lake_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     GOLDEEN,    19
-	db  75 percent + 1, GOLDEEN,    20
+	db  75 percent + 1, GOLDEEN,    21
 	db 100 percent,     time_group 4
 .Lake_Super:
 	db  25 percent,     GOLDEEN,    40
@@ -76,10 +76,10 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     SEAKING,    40
 .Lake_Odd:
-	db  40 percent,     SLOWPOKE,   19
-	db  80 percent,     PSYDUCK,    19
-	db  90 percent,     FARFETCH_D, 19
-	db 100 percent,     CROCONAW,   19
+	db  40 percent,     SLOWPOKE,   21
+	db  80 percent,     PSYDUCK,    21
+	db  90 percent,     FARFETCH_D, 21
+	db 100 percent,     CROCONAW,   21
 
 .Pond_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -88,7 +88,7 @@ FishGroups:
 .Pond_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     POLIWAG,    19
-	db  75 percent + 1, POLIWAG,    20
+	db  75 percent + 1, POLIWAG,    21
 	db 100 percent,     time_group 6
 .Pond_Super:
 	db  25 percent,     POLIWAG,    40
@@ -96,10 +96,10 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     POLIWAG,    42
 .Pond_Odd:
-	db  40 percent,     WOOPER,     19
-	db  80 percent,     PSYDUCK,    19
-	db  90 percent,     FARFETCH_D, 19
-	db 100 percent,     WARTORTLE,  19
+	db  40 percent,     WOOPER,     21
+	db  80 percent,     PSYDUCK,    21
+	db  90 percent,     FARFETCH_D, 21
+	db 100 percent,     WARTORTLE,  21
 
 .Dratini_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -107,7 +107,7 @@ FishGroups:
 	db 100 percent,     MAGIKARP,   10
 .Dratini_Good:
 	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     MAGIKARP,   20
+	db  50 percent,     MAGIKARP,   21
 	db  75 percent + 1, GYARADOS,   19
 	db 100 percent,     time_group 8
 .Dratini_Super:
@@ -116,18 +116,18 @@ FishGroups:
 	db  75 percent + 1, GYARADOS,   40
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_Odd:
-	db  50 percent,     POLITOED,   19
-	db  75 percent,     DRATINI,    19
-	db 100 percent,     DRAGONAIR,  19
+	db  50 percent,     POLITOED,   21
+	db  75 percent,     DRATINI,    21
+	db 100 percent,     DRAGONAIR,  21
 
 .Gyarados_Old:
 	db  50 percent + 1, MAGIKARP,    8
 	db  75 percent + 1, MAGIKARP,    9
 	db 100 percent,     MAGIKARP,   10
 .Gyarados_Good:
-	db  25 percent,     MAGIKARP,   18
-	db  50 percent,     MAGIKARP,   19
-	db  75 percent + 1, MAGIKARP,   20
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     MAGIKARP,   20
+	db  75 percent + 1, MAGIKARP,   21
 	db 100 percent,     time_group 14
 .Gyarados_Super:
 	db  25 percent,     MAGIKARP,   40
@@ -135,18 +135,18 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     MAGIKARP,   37
 .Gyarados_Odd:
-	db  50 percent,     GYARADOS,   18
-	db  75 percent,     GYARADOS,   19
-	db 100 percent,     GYARADOS,   20
+	db  50 percent,     GYARADOS,   19
+	db  75 percent,     GYARADOS,   20
+	db 100 percent,     GYARADOS,   21
 
 .Dratini_2_Old:
 	db  50 percent + 1, MAGIKARP,    8
 	db  75 percent + 1, MAGIKARP,    9
 	db 100 percent,     MAGIKARP,   10
 .Dratini_2_Good:
-	db  25 percent,     MAGIKARP,   18
-	db  50 percent,     MAGIKARP,   19
-	db  75 percent + 1, MAGIKARP,   20
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     MAGIKARP,   20
+	db  75 percent + 1, MAGIKARP,   21
 	db 100 percent,     time_group 16
 .Dratini_2_Super:
 	db  25 percent,     MAGIKARP,   40
@@ -154,9 +154,9 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_2_Odd:
-	db  50 percent,     POLITOED,   19
-	db  75 percent,     DRATINI,    19
-	db 100 percent,     DRAGONAIR,  19
+	db  50 percent,     POLITOED,   21
+	db  75 percent,     DRATINI,    21
+	db 100 percent,     DRAGONAIR,  21
 
 .WhirlIslands_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -165,7 +165,7 @@ FishGroups:
 .WhirlIslands_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     KRABBY,     19
-	db  75 percent + 1, KRABBY,     20
+	db  75 percent + 1, KRABBY,     21
 	db 100 percent,     time_group 18
 .WhirlIslands_Super:
 	db  25 percent,     KRABBY,     40
@@ -174,8 +174,8 @@ FishGroups:
 	db 100 percent,     SEADRA,     40
 .WhirlIslands_Odd:
 	db  50 percent,     UNOWN,      24
-	db  75 percent,     MARILL,     19
-	db 100 percent,     LAPRAS,     19
+	db  75 percent,     MARILL,     21
+	db 100 percent,     LAPRAS,     21
 
 .Qwilfish_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -184,7 +184,7 @@ FishGroups:
 .Qwilfish_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     TENTACOOL,  19
-	db  75 percent + 1, TENTACOOL,  20
+	db  75 percent + 1, TENTACOOL,  21
 	db 100 percent,     time_group 20
 .Qwilfish_Super:
 	db  25 percent,     TENTACOOL,  40
@@ -193,7 +193,7 @@ FishGroups:
 	db 100 percent,     QWILFISH,   40
 .Qwilfish_Odd:
 	db  20 percent,     time_group 20
-	db 100 percent,     QWILFISH,   19
+	db 100 percent,     QWILFISH,   21
 
 .Remoraid_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -202,7 +202,7 @@ FishGroups:
 .Remoraid_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     POLIWAG,    19
-	db  75 percent + 1, POLIWAG,    20
+	db  75 percent + 1, POLIWAG,    21
 	db 100 percent,     time_group 6
 .Remoraid_Super:
 	db  25 percent,     POLIWAG,    40
@@ -210,9 +210,9 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     REMORAID,   40
 .Remoraid_Odd:
-	db  50 percent,     REMORAID,   19
-	db  75 percent,     OCTILLERY,  19
-	db 100 percent,     QUAGSIRE,   19
+	db  50 percent,     REMORAID,   21
+	db  75 percent,     OCTILLERY,  21
+	db 100 percent,     QUAGSIRE,   21
 
 TimeFishGroups:
 	;  day              nite
