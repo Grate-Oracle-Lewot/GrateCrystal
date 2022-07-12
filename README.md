@@ -128,7 +128,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
 - Chansey NPCs in Pokémon Centers, and nurses are color-coded based on the city's name
 - Color-coded starter balls
-- Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items)
+- Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash)
 - Happiness builds faster
 - Eggs hatch twice as fast
 - Nidorina and Nidoqueen can breed
