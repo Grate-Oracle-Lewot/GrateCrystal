@@ -102,6 +102,11 @@
 	const SPRITE_SUICUNE ; 62
 	const SPRITE_ENTEI ; 63
 	const SPRITE_RAIKOU ; 64
+	const SPRITE_REAL_KAREN ; 65
+	const SPRITE_REAL_KOGA ; 66
+	const SPRITE_JESSIE ; 67
+	const SPRITE_JAMES ; 68
+	const SPRITE_GIOVANNI ; 69
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
