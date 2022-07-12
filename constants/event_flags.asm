@@ -1508,7 +1508,8 @@
 	const EVENT_TIN_TOWER_9F_FEAROWBOT
 	const EVENT_SEAFOAM_CAVE_B1F_SACRED_ASH
 	const EVENT_ILEX_FOREST_GOLD_LEAF
-; Unused: next 48 (now 24) events
+	const EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
+; Unused: next 48 (now 23) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
