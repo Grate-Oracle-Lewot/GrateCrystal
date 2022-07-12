@@ -1282,7 +1282,7 @@ JohtoGrassWildMons:
 	db 4, GEODUDE
 	db 3, ZUBAT
 	db 4, ZUBAT
-	db 2, LARVITAR
+	db 2, TEDDIURSA
 	db 3, TEDDIURSA
 	; day
 	db 2, GEODUDE
@@ -1290,9 +1290,9 @@ JohtoGrassWildMons:
 	db 3, GEODUDE
 	db 4, GEODUDE
 	db 3, ZUBAT
-	db 8, ZUBAT
-	db 2, LARVITAR
+	db 4, ZUBAT
 	db 2, TEDDIURSA
+	db 3, TEDDIURSA
 	; nite
 	db 2, GEODUDE
 	db 2, ZUBAT
@@ -1300,8 +1300,8 @@ JohtoGrassWildMons:
 	db 4, GEODUDE
 	db 3, ZUBAT
 	db 4, ZUBAT
+	db 2, LARVITAR
 	db 3, LARVITAR
-	db 2, TEDDIURSA
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -1313,7 +1313,7 @@ JohtoGrassWildMons:
 	db 31, GOLBAT
 	db 33, WOBBUFFET
 	db 31, URSARING
-	db 27, LARVITAR
+	db 29, WOBBUFFET
 	db 34, TEDDIURSA
 	; day
 	db 30, GEODUDE
@@ -1322,7 +1322,7 @@ JohtoGrassWildMons:
 	db 31, GOLBAT
 	db 33, WOBBUFFET
 	db 31, URSARING
-	db 27, LARVITAR
+	db 29, WOBBUFFET
 	db 34, TEDDIURSA
 	; nite
 	db 30, GEODUDE
@@ -1331,8 +1331,8 @@ JohtoGrassWildMons:
 	db 31, GOLBAT
 	db 28, ZUBAT
 	db 27, LARVITAR
+	db 30, PUPITAR
 	db 31, URSARING
-	db 34, TEDDIURSA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
