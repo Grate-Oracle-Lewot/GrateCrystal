@@ -4,6 +4,7 @@
 	const BATTLETOWEROUTSIDE_SAILOR
 	const BATTLETOWEROUTSIDE_LASS
 	const BATTLETOWEROUTSIDE_OFFICER
+	const BATTLETOWEROUTSIDE_POKE_BALL
 
 BattleTowerOutside_MapScripts:
 	def_scene_scripts
@@ -30,6 +31,9 @@ BattleTowerOutsideSailorScript:
 
 BattleTowerOutsideSign:
 	jumptext BattleTowerOutsideSignText
+
+BattleTowerOutsideTMSubstitute:
+	itemball TM_SUBSTITUTE
 
 BattleTowerOutsideYoungsterText_NotYetOpen: ; unreferenced
 	text "Wow, the BATTLE"
@@ -148,3 +152,4 @@ BattleTowerOutside_MapEvents:
 	object_event 12, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event 12, 24, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 10, 26, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, BattleTowerOutsideTMSubstitute, EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
