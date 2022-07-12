@@ -21,7 +21,7 @@ Route22_MapEvents:
 
 	def_warp_events
 	warp_event 13,  5, VICTORY_ROAD_GATE, 1
-	warp_event 28,  9, VICTORY_ROAD_GATE, 1
+	warp_event 28,  9, ROUTE_22_HOUSE, 1
 
 	def_coord_events
 
