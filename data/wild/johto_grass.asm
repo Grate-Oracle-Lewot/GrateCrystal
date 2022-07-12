@@ -1512,8 +1512,8 @@ JohtoGrassWildMons:
 	db 10, JIGGLYPUFF
 	; nite
 	db 11, HOOTHOOT
-	db 9, RATTATA
 	db 10, DROWZEE
+	db 9, RATTATA
 	db 8, ABRA
 	db 11, RATTATA
 	db 8, DITTO
@@ -1542,11 +1542,11 @@ JohtoGrassWildMons:
 	db 10, YANMA
 	db 10, JIGGLYPUFF
 	; nite
+	db 12, DROWZEE
+	db 11, VULPIX
 	db 10, NIDORAN_F
 	db 10, NIDORAN_M
-	db 11, VULPIX
 	db 9, ABRA
-	db 12, DROWZEE
 	db 9, DITTO
 	db 10, YANMA
 	db 10, CLEFAIRY
