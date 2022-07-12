@@ -717,13 +717,18 @@ GoldenrodPokecenter1FLassText:
 	done
 
 GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText:
-	text "<PLAYER>, isn't it?"
+	text "Excuse me…"
+	line "<PLAYER>, isn't it?"
 
-	para "Congratulations!"
+	para "Someone calling"
+	line "himself a GRATE"
+	cont "ORACLE sent this"
+	cont "for you over the"
+	cont "link connection."
 
-	para "As a special deal,"
-	line "a GS BALL has been"
-	cont "sent just for you!"
+	para "I've never seen a"
+	line "# BALL like"
+	cont "this before…"
 
 	para "Please accept it!"
 	done
