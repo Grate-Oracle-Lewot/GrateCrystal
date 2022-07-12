@@ -1069,7 +1069,8 @@
 	const EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_X_SP_DEFEND
 	const EVENT_ROUTE_32_HIDDEN_DUSK_BALL
 	const EVENT_ROUTE_34_HIDDEN_X_SP_DEFEND
-; Unused: next 116 (now 91) events
+	const EVENT_ROUTE_22_HIDDEN_FULL_RESTORE
+; Unused: next 116 (now 90) events
 
 	const_next 1600
 ; Sprite visibility flags
