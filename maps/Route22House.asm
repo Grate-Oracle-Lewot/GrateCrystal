@@ -5,6 +5,9 @@ Route22House_MapScripts:
 
 	def_callbacks
 
+Route22HouseRadio:
+	jumpstd Radio1Script
+
 Route22House_MapEvents:
 	db 0, 0 ; filler
 
@@ -15,5 +18,6 @@ Route22House_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3,  1, BGEVENT_READ, Route22HouseRadio
 
 	def_object_events
