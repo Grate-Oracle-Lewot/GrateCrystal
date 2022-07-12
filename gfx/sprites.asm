@@ -104,3 +104,11 @@ KrisBikeSpriteGFX::            INCBIN "gfx/sprites/kris_bike.2bpp"
 SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
+
+SECTION "Sprites 3", ROMX
+
+RealKarenSpriteGFX::           INCBIN "gfx/sprites/real_karen.2bpp"
+RealKogaSpriteGFX::            INCBIN "gfx/sprites/real_koga.2bpp"
+JessieSpriteGFX::              INCBIN "gfx/sprites/jessie.2bpp"
+JamesSpriteGFX::               INCBIN "gfx/sprites/james.2bpp"
+GiovanniSpriteGFX::            INCBIN "gfx/sprites/giovanni.2bpp"
