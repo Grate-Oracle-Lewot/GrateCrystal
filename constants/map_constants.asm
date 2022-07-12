@@ -452,6 +452,7 @@ ENDM
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 10
 	map_const ROUTE_2_GATE,                                 5,  4 ; 11
 	map_const VICTORY_ROAD_GATE,                           10,  9 ; 12
+	map_const ROUTE_22_HOUSE,                               5,  4 ; 13
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
