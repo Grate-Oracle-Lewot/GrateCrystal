@@ -216,25 +216,25 @@ FishGroups:
 
 TimeFishGroups:
 	;  day              nite
-	db CORSOLA,    19,  STARYU,     19 ; 0
+	db CORSOLA,    20,  STARYU,     20 ; 0
 	db CORSOLA,    40,  STARMIE,    40 ; 1
-	db SHELLDER,   19,  CLOYSTER,   19 ; 2
+	db SHELLDER,   20,  CLOYSTER,   20 ; 2
 	db CLOYSTER,   40,  SHELLDER,   40 ; 3
-	db GOLDEEN,    19,  TANGELA,    19 ; 4
+	db GOLDEEN,    20,  TANGELA,    20 ; 4
 	db SEAKING,    40,  TANGELA,    40 ; 5
-	db POLIWAG,    19,  GEODUDE,    19 ; 6
+	db POLIWAG,    20,  GEODUDE,    20 ; 6
 	db POLIWHIRL,  40,  POLITOED,   40 ; 7
-	db DRATINI,    19,  DRAGONAIR,  19 ; 8
+	db DRATINI,    20,  DRAGONAIR,  20 ; 8
 	db DRAGONAIR,  40,  DUNSPARCE,  40 ; 9
 	db QWILFISH,   21,  QWILFISH,   19 ; 10
 	db QWILFISH,   42,  QWILFISH,   40 ; 11
-	db REMORAID,   19,  OCTILLERY,  19 ; 12
+	db REMORAID,   20,  OCTILLERY,  20 ; 12
 	db OCTILLERY,  40,  REMORAID,   40 ; 13
 	db GYARADOS,   19,  GYARADOS,   21 ; 14
 	db GYARADOS,   40,  GYARADOS,   42 ; 15
-	db DRATINI,    19,  DRAGONAIR,  19 ; 16
+	db DRATINI,    20,  DRAGONAIR,  20 ; 16
 	db DRATINI,    40,  DUNSPARCE,  40 ; 17
-	db HORSEA,     19,  UNOWN,      24 ; 18
+	db HORSEA,     20,  UNOWN,      24 ; 18
 	db SEADRA,     40,  KINGDRA,    40 ; 19
-	db TENTACOOL,  19,  GRIMER,     19 ; 20
+	db TENTACOOL,  20,  GRIMER,     20 ; 20
 	db TENTACRUEL, 40,  MUK,        40 ; 21
