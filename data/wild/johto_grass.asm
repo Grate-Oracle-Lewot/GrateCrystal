@@ -1158,7 +1158,7 @@ JohtoGrassWildMons:
 	db 42, DONPHAN
 	db 43, GOLBAT
 	db 43, MAGMAR
-	db 41, GOLDUCK
+	db 41, QUAGSIRE
 	db 41, MACHOKE
 	; day
 	db 41, GRAVELER
@@ -1176,7 +1176,7 @@ JohtoGrassWildMons:
 	db 42, DONPHAN
 	db 43, GOLBAT
 	db 43, PUPITAR
-	db 41, QUAGSIRE
+	db 41, PRIMEAPE
 	db 41, MISDREAVUS
 	end_grass_wildmons
 
@@ -1220,8 +1220,8 @@ JohtoGrassWildMons:
 	db 48, URSARING
 	db 48, DONPHAN
 	db 53, MAGNETON
-	db 55, DRAGONITE
-	db 59, DRAGONITE
+	db 55, BLISSEY
+	db 59, BLISSEY
 	; day
 	db 53, CROBAT
 	db 49, STEELIX
@@ -1251,7 +1251,7 @@ JohtoGrassWildMons:
 	db 47, URSARING
 	db 47, DONPHAN
 	db 48, GRAVELER
-	db 48, GOLDUCK
+	db 48, QUAGSIRE
 	db 50, MAGNETON
 	; day
 	db 50, PARASECT
@@ -1269,7 +1269,7 @@ JohtoGrassWildMons:
 	db 47, URSARING
 	db 47, DONPHAN
 	db 48, PUPITAR
-	db 48, QUAGSIRE
+	db 48, PRIMEAPE
 	db 44, MISDREAVUS
 	end_grass_wildmons
 
