@@ -927,3 +927,6 @@ PewterMuseum1F_Blocks:
 
 PewterMuseum2F_Blocks:
 	INCBIN "maps/PewterMuseum2F.blk"
+
+Route22House_Blocks:
+	INCBIN "maps/Route22House.blk"
