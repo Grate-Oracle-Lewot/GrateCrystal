@@ -26,6 +26,6 @@ BallColors:
 	db PARK_BALL
 	RGB 31,31,31, 18,18,05
 	db DUSK_BALL
-	RGB 04,17,04, 06,10,12
+	RGB 04,17,04, 05,05,06
 	db -1 ; end
 	RGB 31,31,31, 16,16,16
