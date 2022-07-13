@@ -26,7 +26,7 @@ LavRadioTower2FMewtwoScript:
 	closetext
 	setevent EVENT_FOUGHT_MEWTWO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
-	loadwildmon MEWTWO, 70
+	loadwildmon MEWTWO, 75
 	startbattle
 	disappear LAVRADIOTOWER2F_MEWTWO
 	reloadmapafterbattle
@@ -100,4 +100,4 @@ LavRadioTower2F_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FOfficerScript, -1
-	object_event 10,  8, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FMewtwoScript, EVENT_LAV_RADIO_TOWER_2F_MEWTWO
+	object_event 10,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FMewtwoScript, EVENT_LAV_RADIO_TOWER_2F_MEWTWO
