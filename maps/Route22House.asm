@@ -5,7 +5,7 @@
 	const ROUTE22HOUSE_JESSIE
 	const ROUTE22HOUSE_JAMES
 	const ROUTE22HOUSE_LANCE
-	const ROUTE22HOUSE_POKE_BALL
+	const ROUTE22HOUSE_GLITCH
 	const ROUTE22HOUSE_MR_FUJI
 	const ROUTE22HOUSE_OFFICER_JENNY
 
@@ -22,7 +22,7 @@ Route22House_MapScripts:
 	disappear ROUTE22HOUSE_JESSIE
 	disappear ROUTE22HOUSE_JAMES
 	disappear ROUTE22HOUSE_LANCE
-	disappear ROUTE22HOUSE_POKE_BALL
+	disappear ROUTE22HOUSE_GLITCH
 	disappear ROUTE22HOUSE_MR_FUJI
 	disappear ROUTE22HOUSE_OFFICER_JENNY
 	readvar VAR_WEEKDAY
@@ -50,7 +50,7 @@ Route22House_MapScripts:
 .AppearMissingno:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .End
-	appear ROUTE22HOUSE_POKE_BALL
+	appear ROUTE22HOUSE_GLITCH
 	endcallback
 
 .AppearJessieJames:
@@ -269,7 +269,7 @@ Route22HouseMissingnoScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	special FadeBlackQuickly
-	disappear ROUTE22HOUSE_POKE_BALL
+	disappear ROUTE22HOUSE_GLITCH
 	special FadeInQuickly
 	end
 
@@ -280,7 +280,7 @@ Route22HouseMissingnoScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	special FadeBlackQuickly
-	disappear ROUTE22HOUSE_POKE_BALL
+	disappear ROUTE22HOUSE_GLITCH
 	special FadeInQuickly
 	end
 
@@ -291,7 +291,7 @@ Route22HouseMissingnoScript:
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	special FadeBlackQuickly
-	disappear ROUTE22HOUSE_POKE_BALL
+	disappear ROUTE22HOUSE_GLITCH
 	special FadeInQuickly
 	end
 
@@ -395,6 +395,49 @@ Route22HouseRealKogaAfterText:
 
 	para "Perhaps we'll meet"
 	line "again."
+	done
+
+Route22HouseLanceBeforeText:
+	text "CHAMPION <PLAY_G>!"
+
+	para "I sometimes spend"
+	line "time here when I'm"
+	cont "not at the LEAGUE."
+
+	para "I've been training"
+	line "since you defeated"
+	cont "me!"
+
+	para "This won't be an"
+	line "official match,"
+
+	para "but how about"
+	line "another battle?"
+
+	para "I promise not to"
+	line "hold back!"
+	done
+
+Route22HouseLanceRefusedText:
+	text "Oh, I understand."
+	line "Being CHAMPION"
+	cont "keeps you busy."
+	done
+
+Route22HouseLanceBeatenText:
+	text "I'm still no match"
+	line "for you."
+	done
+
+Route22HouseLanceAfterText:
+	text "You've defended"
+	line "your title."
+
+	para "I still have more"
+	line "to learn."
+
+	para "Let's both contin-"
+	line "ue getting better!"
 	done
 
 Route22HouseGiovanniBeforeText:
@@ -570,6 +613,6 @@ Route22House_MapEvents:
 	object_event  8,  1, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJessieScript, EVENT_ROUTE_22_HOUSE_JESSIE
 	object_event  7,  1, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJamesScript, EVENT_ROUTE_22_HOUSE_JAMES
 	object_event  2,  4, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseLanceScript, EVENT_ROUTE_22_HOUSE_LANCE
-	object_event  1,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, Route22HouseMissingnoScript, EVENT_ROUTE_22_HOUSE_MISSINGNO
+	object_event  1,  7, SPRITE_GLITCH, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, Route22HouseMissingnoScript, EVENT_ROUTE_22_HOUSE_MISSINGNO
 	object_event  7,  2, SPRITE_MR_FUJI, SPRITEMOVEDATA_STANDING_LEFT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseMrFujiScript, EVENT_ROUTE_22_HOUSE_MR_FUJI
 	object_event  5,  6, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseOfficerJennyScript, EVENT_ROUTE_22_HOUSE_OFFICER_JENNY
