@@ -70,6 +70,10 @@ TrainerPicPointers::
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
+	dba RealKarenPic
+	dba RealKogaPic
+	dba BossPic
+	dba JessiePic
 	dba AerobonesPic
 	dba KabubonesPic
 	assert_table_length NUM_TRAINER_CLASSES
