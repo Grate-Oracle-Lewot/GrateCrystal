@@ -484,4 +484,7 @@ INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZone.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
+
+SECTION "Map Scripts 25", ROMX
+
 INCLUDE "maps/Route22House.asm"
