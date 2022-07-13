@@ -218,7 +218,7 @@ KRIS EQU __trainer_class__
 	const TYLER
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const STEVE
 	const ALLEN
 	const DARIN
 
@@ -248,13 +248,13 @@ KRIS EQU __trainer_class__
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
 	const SAMANTHA
-	const JULIE ; unused
-	const JACLYN ; unused
-	const BRENDA ; unused
+	const JULIE
+	const JACLYN
+	const BRENDA
 	const CASSIE
-	const CAROLINE ; unused
+	const CAROLINE
 	const JULIA
-	const THERESA ; unused
+	const THERESA
 	const VALERIE
 	const OLIVIA
 	const MAEVE
@@ -387,18 +387,10 @@ KRIS EQU __trainer_class__
 	const BERKE
 	const KIRK
 	const MATHEW
-	const HAL ; unused
-	const PATON ; unused
-	const DARYL ; unused
-	const WALTER ; unused
-	const TONY ; unused
 	const JEROME
 	const TUCKER
-	const RICK ; unused
 	const CAMERON
 	const SETH
-	const JAMES ; unused
-	const LEWIS ; unused
 	const PARKER
 
 	trainerclass SWIMMERF ; 27
@@ -409,15 +401,10 @@ KRIS EQU __trainer_class__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA ; unused
-	const JILL ; unused
 	const MARY
-	const KATIE ; unused
 	const DAWN
-	const TARA ; unused
 	const NICOLE
 	const LORI
-	const JODY ; unused
 	const NIKKI
 	const DIANA
 	const BRIANA
