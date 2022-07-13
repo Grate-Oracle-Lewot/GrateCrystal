@@ -119,8 +119,15 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
-- A house on Route 22 where you can fight special trainers depending on the day of the week
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
+- A house on Route 22 where different characters appear (those who are battle-able can be fought once per day):
+  - Monday: Koga, who now uses Fairy types instead of Poison
+  - Tuesday: Officer Jenny, no battle
+  - Wednesday: Jessie and James, with their Pokémon from the anime
+  - Thursday: A trainer version of MissingNo., with three different variants for day, morning, and night
+  - Friday: Giovanni, using Ground types plus Persian
+  - Saturday: Karen, using Dark types; only appears at night
+  - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, a rematch with Lance, similar to the Lance/Clair tag-team rematch in HGSS
 
 ## Miscellaneous
 - The Odd Egg can now hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
