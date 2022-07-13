@@ -1862,40 +1862,6 @@ SwimmerMGroup:
 	db -1 ; end
 
 	; SWIMMERM (9)
-	db "HAL@", TRAINERTYPE_NORMAL
-	db 26, SEEL
-	db 26, DEWGONG
-	db 24, LAPRAS
-	db -1 ; end
-
-	; SWIMMERM (10)
-	db "PATON@", TRAINERTYPE_NORMAL
-	db 28, PILOSWINE
-	db 29, SNORLAX
-	db -1 ; end
-
-	; SWIMMERM (11)
-	db "DARYL@", TRAINERTYPE_NORMAL
-	db 24, SHELLDER
-	db 25, CLOYSTER
-	db 24, SHELLDER
-	db -1 ; end
-
-	; SWIMMERM (12)
-	db "WALTER@", TRAINERTYPE_NORMAL
-	db 15, HORSEA
-	db 22, HORSEA
-	db 20, SEADRA
-	db -1 ; end
-
-	; SWIMMERM (13)
-	db "TONY@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 19, STARMIE
-	db 19, STARYU
-	db -1 ; end
-
-	; SWIMMERM (14)
 	db "JEROME@", TRAINERTYPE_NORMAL
 	db 42, SEADRA
 	db 44, MANTINE
@@ -1903,46 +1869,25 @@ SwimmerMGroup:
 	db 45, SEAKING
 	db -1 ; end
 
-	; SWIMMERM (15)
+	; SWIMMERM (10)
 	db "TUCKER@", TRAINERTYPE_NORMAL
 	db 42, CORSOLA
 	db 41, CLOYSTER
 	db -1 ; end
 
-	; SWIMMERM (16)
-	db "RICK@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 19, STARMIE
-	db 22, HORSEA
-	db -1 ; end
-
-	; SWIMMERM (17)
+	; SWIMMERM (11)
 	db "CAMERON@", TRAINERTYPE_NORMAL
 	db 56, AZUMARILL
 	db -1 ; end
 
-	; SWIMMERM (18)
+	; SWIMMERM (12)
 	db "SETH@", TRAINERTYPE_NORMAL
 	db 40, SLOWBRO
 	db 41, OCTILLERY
 	db 42, QUAGSIRE
 	db -1 ; end
 
-	; SWIMMERM (19)
-	db "JAMES@", TRAINERTYPE_NORMAL
-	db 19, STARYU
-	db 19, STARMIE
-	db 16, HORSEA
-	db -1 ; end
-
-	; SWIMMERM (20)
-	db "LEWIS@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 19, STARMIE
-	db 16, LEDIAN
-	db -1 ; end
-
-	; SWIMMERM (21)
+	; SWIMMERM (13)
 	db "PARKER@", TRAINERTYPE_NORMAL
 	db 47, HORSEA
 	db 48, SEADRA
@@ -1992,55 +1937,30 @@ SwimmerFGroup:
 	db -1 ; end
 
 	; SWIMMERF (8)
-	db "LISA@", TRAINERTYPE_NORMAL
-	db 29, JYNX
-	db -1 ; end
-
-	; SWIMMERF (9)
-	db "JILL@", TRAINERTYPE_NORMAL
-	db 29, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (10)
 	db "MARY@", TRAINERTYPE_NORMAL
 	db 70, BLASTOISE
 	db -1 ; end
 
-	; SWIMMERF (11)
-	db "KATIE@", TRAINERTYPE_NORMAL
-	db 60, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (12)
+	; SWIMMERF (9)
 	db "DAWN@", TRAINERTYPE_NORMAL
 	db 49, SEAKING
 	db 49, KINGLER
 	db -1 ; end
 
-	; SWIMMERF (13)
-	db "TARA@", TRAINERTYPE_NORMAL
-	db 24, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (14)
+	; SWIMMERF (10)
 	db "NICOLE@", TRAINERTYPE_NORMAL
 	db 42, MARILL
 	db 42, AZUMARILL
 	db 43, LAPRAS
 	db -1 ; end
 
-	; SWIMMERF (15)
+	; SWIMMERF (11)
 	db "LORI@", TRAINERTYPE_NORMAL
 	db 42, STARMIE
 	db 50, STARYU
 	db -1 ; end
 
-	; SWIMMERF (16)
-	db "JODY@", TRAINERTYPE_NORMAL
-	db 24, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (17)
+	; SWIMMERF (12)
 	db "NIKKI@", TRAINERTYPE_NORMAL
 	db 42, SHUCKLE
 	db 44, MANTINE
@@ -2048,12 +1968,12 @@ SwimmerFGroup:
 	db 43, DEWGONG
 	db -1 ; end
 
-	; SWIMMERF (18)
+	; SWIMMERF (13)
 	db "DIANA@", TRAINERTYPE_NORMAL
 	db 50, GOLDUCK
 	db -1 ; end
 
-	; SWIMMERF (19)
+	; SWIMMERF (14)
 	db "BRIANA@", TRAINERTYPE_NORMAL
 	db 53, SEAKING
 	db 51, POLITOED
