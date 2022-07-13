@@ -76,6 +76,10 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+INCBIN "gfx/trainers/real_karen.gbcpal", middle_colors
+INCBIN "gfx/trainers/real_koga.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
+INCBIN "gfx/trainers/jessie_james.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerobones.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabubones.gbcpal", middle_colors
 
