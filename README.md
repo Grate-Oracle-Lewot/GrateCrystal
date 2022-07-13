@@ -119,6 +119,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
+- A house on Route 22 where you can fight special trainers depending on the day of the week
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 
 ## Miscellaneous
