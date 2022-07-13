@@ -120,7 +120,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
-- A house on Route 22 where different characters appear (those who are battle-able can be fought once per day):
+- A house on Route 22 where different characters appear, most of whom can be battled once per day
   - Monday: Koga, who now uses Fairy types instead of Poison
   - Tuesday: Officer Jenny, no battle
   - Wednesday: Jessie and James, with their Pokémon from the anime
