@@ -48,19 +48,141 @@ Route22House_MapScripts:
 	endcallback
 
 Route22HouseRealKarenScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	writetext Route22HouseRealKarenBeforeText
+	yesorno
+	iftrue .DoBattle
+	writetext Route22HouseRealKarenRefusedText
+	waitbutton
+	closetext
+	end
 
+.NoRematch:
+	writetext Route22HouseRealKarenAfterText
+	waitbutton
+	closetext
+	end
+
+.DoBattle:
+	winlosstext Route22HouseRealKarenBeatenText, 0
+	loadtrainer REAL_KAREN, REAL_KAREN1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseRealKarenAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseRealKogaScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	writetext Route22HouseRealKogaBeforeText
+	yesorno
+	iftrue .DoBattle
+	writetext Route22HouseRealKogaRefusedText
+	waitbutton
+	closetext
+	end
 
+.NoRematch:
+	writetext Route22HouseRealKogaAfterText
+	waitbutton
+	closetext
+	end
+
+.DoBattle:
+	winlosstext Route22HouseRealKogaBeatenText, 0
+	loadtrainer REAL_KOGA, REAL_KOGA1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseRealKogaAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseGiovanniScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	writetext Route22HouseGiovanniBeforeText
+	winlosstext Route22HouseGiovanniBeatenText, 0
+	loadtrainer BOSS, GIOVANNI
+	startbattle
+	reloadmapafterbattle
+	special RestartMapMusic
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseGiovanniAfterText
+	waitbutton
+	closetext
+	end
 
+.NoRematch:
+	writetext Route22HouseGiovanniAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseJessieScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	writetext Route22HouseJessieBeforeText
+	winlosstext Route22HouseJessieJamesBeatenText, 0
+	loadtrainer JESSIE, JAMES
+	startbattle
+	reloadmapafterbattle
+	special RestartMapMusic
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseJessieAfterText
+	waitbutton
+	closetext
+	end
 
+.NoRematch:
+	writetext Route22HouseJessieAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseJamesScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	writetext Route22HouseJamesBeforeText
+	winlosstext Route22HouseJessieJamesBeatenText, 0
+	loadtrainer JESSIE, JAMES
+	startbattle
+	reloadmapafterbattle
+	special RestartMapMusic
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseJamesAfterText
+	waitbutton
+	closetext
+	end
 
+.NoRematch:
+	writetext Route22HouseJamesAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseRadio:
 	jumpstd Radio2Script
