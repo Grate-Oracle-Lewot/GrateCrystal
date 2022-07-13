@@ -26,6 +26,8 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
+	db REAL_KOGA
+	db BOSS
 	db AEROBONES
 	db KABUBONES
 .End
@@ -41,4 +43,6 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db REAL_KAREN
+	db JESSIE
 .End
