@@ -75,4 +75,5 @@ TrainerClassDVs:
 	dn  8,  8,  8,  8 ; JESSIE
 	dn  0,  0,  0,  0 ; AEROBONES
 	dn  0,  0,  0,  0 ; KABUBONES
+	dn  0,  0,  0,  0 ; MISSINGNO
 	assert_table_length NUM_TRAINER_CLASSES
