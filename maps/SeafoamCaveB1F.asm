@@ -27,7 +27,7 @@ SeafoamCaveB1FKarenScript:
 	closetext
 	end
 
-.AfterRedScript
+.AfterRedScript:
 	writetext SeafoamCaveB1FKarenBattleText
 	waitbutton
 	closetext
