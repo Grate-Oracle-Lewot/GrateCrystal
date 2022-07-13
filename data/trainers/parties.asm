@@ -3559,6 +3559,7 @@ AerobonesGroup:
 	db "???????@", TRAINERTYPE_NORMAL
 	db 50, AERODACTYL
 	db 50, UNOWN
+	db 50, HAUNTER
 	db -1 ; end
 
 KabubonesGroup:
@@ -3566,11 +3567,13 @@ KabubonesGroup:
 	db "(00)@", TRAINERTYPE_NORMAL
 	db 50, KABUTOPS
 	db 50, UNOWN
+	db 50, HAUNTER
 	db -1 ; end
 
 MissingnoGroup:
 	; MISSINGNO1
 	db "NO.@", TRAINERTYPE_NORMAL
+	db 50, BAYLEEF
 	db 50, UNOWN
 	db 50, HAUNTER
 	db -1 ; end
