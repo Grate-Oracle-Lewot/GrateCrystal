@@ -73,6 +73,6 @@ TrainerClassNames::
 	li "BOSS"
 	li "JESSIE and"
 	li "????????????"
-	li "'M"
+	li "3TRAINER#"
 	li "MISSING"
 	assert_list_length NUM_TRAINER_CLASSES
