@@ -30,6 +30,7 @@ MaleTrainers:
 	db BOSS
 	db AEROBONES
 	db KABUBONES
+	db MISSINGNO
 .End
 
 FemaleTrainers:
