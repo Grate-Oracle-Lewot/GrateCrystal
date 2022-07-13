@@ -2775,6 +2775,8 @@ IsPluralTrainer:
 ; return z for plural trainers
 	ld a, [wOtherTrainerClass]
 	cp TWINS
+	ret z
+	cp JESSIE
 	ret
 
 HandlePlayerMonFaint:
