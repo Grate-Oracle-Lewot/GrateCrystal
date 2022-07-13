@@ -41,10 +41,7 @@ GoldenrodCity_MapScripts:
 	endcallback
 
 .MoveTutorAppear:
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .MoveTutorDone
 	appear GOLDENRODCITY_MOVETUTOR
-.MoveTutorDone:
 	endcallback
 
 MoveTutorScript:
@@ -134,19 +131,6 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorFarewellKidText
 	waitbutton
 	closetext
-	readvar VAR_FACING
-	ifequal LEFT, .WalkAroundPlayer
-	applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorEnterGameCornerMovement
-	sjump .GoInside
-
-.WalkAroundPlayer:
-	applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement
-.GoInside:
-	playsound SFX_ENTER_DOOR
-	disappear GOLDENRODCITY_MOVETUTOR
-	clearevent EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
-	setflag ENGINE_DAILY_MOVE_TUTOR
-	waitsfx
 	end
 
 .Incompatible:
@@ -532,8 +516,8 @@ GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	done
 
 GoldenrodCityMoveTutorFarewellKidText:
-	text "Wahahah!"
-	line "Farewell, kid!"
+	text "Let's do business"
+	line "again!"
 	done
 
 GoldenrodCityMoveTutorBButText:
