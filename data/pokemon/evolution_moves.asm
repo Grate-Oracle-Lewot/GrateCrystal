@@ -70,7 +70,7 @@ EvolutionMoves::
 	db COMET_PUNCH  ; MACHAMP
 	db NO_MOVE      ; BELLSPROUT
 	db NO_MOVE      ; WEEPINBELL
-	db RAZOR_LEAF   ; VICTREEBEL
+	db BITE         ; VICTREEBEL
 	db NO_MOVE      ; TENTACOOL
 	db NO_MOVE      ; TENTACRUEL
 	db NO_MOVE      ; GEODUDE
