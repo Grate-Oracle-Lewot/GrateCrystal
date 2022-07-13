@@ -26,22 +26,19 @@ GoldenrodGameCorner_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MoveTutor
 
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .finish
+	checkevent EVENT_BEAT_WHITNEY
+	iftrue .double_check
+	appear GOLDENRODGAMECORNER_MOVETUTOR
+	endcallback
+
+.double_check
 	checkitem COIN_CASE
-	iffalse .move_tutor_inside
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .move_tutor_outside
-	ifequal SATURDAY, .move_tutor_outside
-.move_tutor_inside
+	iftrue .move_tutor_outside
 	appear GOLDENRODGAMECORNER_MOVETUTOR
 	endcallback
 
 .move_tutor_outside
-	checkflag ENGINE_DAILY_MOVE_TUTOR
-	iftrue .finish
 	disappear GOLDENRODGAMECORNER_MOVETUTOR
-.finish
 	endcallback
 
 MoveTutorInsideScript:
