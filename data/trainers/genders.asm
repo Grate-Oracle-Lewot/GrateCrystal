@@ -76,4 +76,5 @@ BTTrainerClassGenders:
 	db FEMALE ; JESSIE
 	db MALE   ; AEROBONES
 	db MALE   ; KABUBONES
+	db MALE   ; MISSINGNO
 	assert_table_length NUM_TRAINER_CLASSES
