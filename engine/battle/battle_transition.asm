@@ -747,6 +747,10 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ret z
 	cp EXECUTIVEF
 	ret z
+	cp BOSS
+	ret z
+	cp JESSIE
+	ret z
 	ld de, PokeBallTransition
 	ret
 
