@@ -93,6 +93,10 @@ PlayBattleMusic:
 	jr z, .done
 	cp EXECUTIVEF
 	jr z, .done
+	cp BOSS
+	jr z, .done
+	cp JESSIE
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
