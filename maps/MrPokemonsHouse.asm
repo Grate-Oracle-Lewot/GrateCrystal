@@ -93,7 +93,7 @@ MrPokemonsHouse_MrPokemonScript:
 	closetext
 	end
 
-.AcceptedOddEgg
+.AcceptedOddEgg:
 	closetext
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .OddEggPartyFull
@@ -211,13 +211,13 @@ MrPokemonsHouse_OakBattleScript:
 	closetext
 	end
 
-.NoRematch
+.NoRematch:
 	writetext MrPokemonsHouse_OakNoRematchText
 	waitbutton
 	closetext
 	end
 
-.DoBattle
+.DoBattle:
 	writetext MrPokemonsHouse_OakBattleYesText
 	waitbutton
 	closetext
