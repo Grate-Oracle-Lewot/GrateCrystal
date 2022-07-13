@@ -62,6 +62,9 @@ Route22HouseJessieScript:
 Route22HouseJamesScript:
 
 
+Route22HouseRadio:
+	jumpstd Radio2Script
+
 Route22HouseRealKarenBeforeText:
 	text "Those who lurk in"
 	line "the night will"
@@ -243,9 +246,6 @@ Route22HouseJessieJamesBeatenText:
 	text "We're blasting off"
 	line "again!"
 	done
-
-Route22HouseRadio:
-	jumpstd Radio1Script
 
 Route22House_MapEvents:
 	db 0, 0 ; filler
