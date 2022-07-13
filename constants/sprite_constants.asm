@@ -107,6 +107,7 @@
 	const SPRITE_JESSIE ; 67
 	const SPRITE_JAMES ; 68
 	const SPRITE_GIOVANNI ; 69
+	const SPRITE_MISSINGNO ; 6a
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -148,7 +149,6 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_LUGIA ; a1
 	const SPRITE_HO_OH ; a2
 	const SPRITE_CHANSEY ; a3
-	const SPRITE_MISSINGNO ; a4
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
