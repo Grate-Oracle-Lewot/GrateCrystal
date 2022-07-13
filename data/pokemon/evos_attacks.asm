@@ -1013,9 +1013,9 @@ WeepinbellEvosAttacks:
 
 VictreebelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SLUDGE_BOMB
-	db 1, SLEEP_POWDER
-	db 1, SWEET_SCENT
+	db 1, BITE
+	db 1, ACID
+	db 1, POISONPOWDER
 	db 1, RAZOR_LEAF
 	db 0 ; no more level-up moves
 
