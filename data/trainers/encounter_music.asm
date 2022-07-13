@@ -77,4 +77,5 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; jessie and james
 	db MUSIC_OFFICER_ENCOUNTER     ; aerobones
 	db MUSIC_OFFICER_ENCOUNTER     ; kabubones
+	db MUSIC_OFFICER_ENCOUNTER     ; missingno
 	assert_table_length NUM_TRAINER_CLASSES + 1
