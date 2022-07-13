@@ -699,8 +699,20 @@ KRIS EQU __trainer_class__
 	const RICO
 	const OLIE
 
-	trainerclass AEROBONES ; 44, used only for museum pic
+	trainerclass REAL_KAREN ; 44
+	const REAL_KAREN1
 
-	trainerclass KABUBONES ; 45, used only for museum pic
+	trainerclass REAL_KOGA ; 45
+	const REAL_KOGA1
+
+	trainerclass BOSS ; 46
+	const GIOVANNI
+
+	trainerclass JESSIE ; 47
+	const JAMES
+
+	trainerclass AEROBONES ; 48, used only for museum pic
+
+	trainerclass KABUBONES ; 49, used only for museum pic
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
