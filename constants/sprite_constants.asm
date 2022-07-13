@@ -109,6 +109,7 @@
 	const SPRITE_GIOVANNI ; 69
 	const SPRITE_MR_FUJI ; 6a
 	const SPRITE_OFFICER_JENNY ; 6b
+	const SPRITE_GLITCH ; 6c
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
