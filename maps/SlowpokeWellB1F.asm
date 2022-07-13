@@ -296,8 +296,7 @@ GruntM12SeenText:
 	done
 
 GruntM12BeatenText:
-	text "I'm blasting off"
-	line "again!"
+	text "This sucks."
 	done
 
 GruntM12AfterBattleText:
