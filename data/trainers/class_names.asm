@@ -72,6 +72,6 @@ TrainerClassNames::
 	li "NINJA"
 	li "BOSS"
 	li "JESSIE and"
-	li "FOSSIL"
-	li "FOSSIL"
+	li "MISSING"
+	li "MISSING"
 	assert_list_length NUM_TRAINER_CLASSES
