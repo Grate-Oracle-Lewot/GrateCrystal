@@ -69,6 +69,10 @@ TrainerClassDVs:
 	dn 10,  9,  7,  8 ; OFFICER
 	dn  7,  8,  8,  7 ; GRUNTF
 	dn 12, 13, 13, 12 ; MYSTICALMAN
+	dn 13, 14, 14, 13 ; REAL_KAREN
+	dn 12, 13, 13, 12 ; REAL_KOGA
+	dn 12, 13, 13, 12 ; BOSS
+	dn  8,  8,  8,  8 ; JESSIE
 	dn  0,  0,  0,  0 ; AEROBONES
 	dn  0,  0,  0,  0 ; KABUBONES
 	assert_table_length NUM_TRAINER_CLASSES
