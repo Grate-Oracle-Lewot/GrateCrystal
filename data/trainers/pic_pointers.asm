@@ -76,4 +76,5 @@ TrainerPicPointers::
 	dba JessiePic
 	dba AerobonesPic
 	dba KabubonesPic
+	dba MissingnoPic
 	assert_table_length NUM_TRAINER_CLASSES
