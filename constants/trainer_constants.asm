@@ -94,6 +94,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass CHAMPION ; 10
 	const LANCE
+	const LANCE2
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -716,5 +717,8 @@ KRIS EQU __trainer_class__
 
 	trainerclass KABUBONES ; 49
 	const KABUBONES1
+
+	trainerclass MISSINGNO ; 50
+	const MISSINGNO1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
