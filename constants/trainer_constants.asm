@@ -711,8 +711,10 @@ KRIS EQU __trainer_class__
 	trainerclass JESSIE ; 47
 	const JAMES
 
-	trainerclass AEROBONES ; 48, used only for museum pic
+	trainerclass AEROBONES ; 48
+	const AEROBONES1
 
-	trainerclass KABUBONES ; 49, used only for museum pic
+	trainerclass KABUBONES ; 49
+	const KABUBONES1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
