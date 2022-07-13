@@ -68,6 +68,10 @@ TrainerClassNames::
 	li "OFFICER"
 	li "ROCKET"
 	li "MYSTIC"
+	li "VETERAN"
+	li "NINJA"
+	li "BOSS"
+	li "JESSIE and"
 	li "FOSSIL"
 	li "FOSSIL"
 	assert_list_length NUM_TRAINER_CLASSES
