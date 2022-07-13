@@ -4,6 +4,10 @@
 	const ROUTE22HOUSE_GIOVANNI
 	const ROUTE22HOUSE_JESSIE
 	const ROUTE22HOUSE_JAMES
+	const ROUTE22HOUSE_LANCE
+	const ROUTE22HOUSE_POKE_BALL
+	const ROUTE22HOUSE_MR_FUJI
+	const ROUTE22HOUSE_OFFICER_JENNY
 
 Route22House_MapScripts:
 	def_scene_scripts
@@ -17,20 +21,36 @@ Route22House_MapScripts:
 	disappear ROUTE22HOUSE_GIOVANNI
 	disappear ROUTE22HOUSE_JESSIE
 	disappear ROUTE22HOUSE_JAMES
+	disappear ROUTE22HOUSE_LANCE
+	disappear ROUTE22HOUSE_POKE_BALL
+	disappear ROUTE22HOUSE_MR_FUJI
+	disappear ROUTE22HOUSE_OFFICER_JENNY
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .AppearKoga
+	ifequal TUESDAY, .AppearJenny
 	ifequal WEDNESDAY, .AppearJessieJames
+	ifequal THURSDAY, .AppearMissingno
 	ifequal FRIDAY, .AppearGiovanni
 	ifequal SATURDAY, .CheckKaren
-	ifequal SUNDAY, .CheckKaren
+	ifequal SUNDAY, .CheckLanceFuji
 	endcallback
 
 .AppearKoga:
 	appear ROUTE22HOUSE_REAL_KOGA
 	endcallback
 
+.AppearJenny:
+	appear ROUTE22HOUSE_OFFICER_JENNY
+	endcallback
+
 .AppearGiovanni:
 	appear ROUTE22HOUSE_GIOVANNI
+	endcallback
+
+.AppearMissingno:
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .End
+	appear ROUTE22HOUSE_POKE_BALL
 	endcallback
 
 .AppearJessieJames:
@@ -43,8 +63,26 @@ Route22House_MapScripts:
 	iftrue .AppearKaren
 	endcallback
 
+.CheckLanceFuji:
+	checktime MORN
+	iftrue .AppearMrFuji
+	checktime DAY
+	iftrue .AppearLance
+	endcallback
+
 .AppearKaren:
 	appear ROUTE22HOUSE_REAL_KAREN
+	endcallback
+
+.AppearMrFuji:
+	appear ROUTE22HOUSE_MR_FUJI
+	endcallback
+
+.AppearLance:
+	appear ROUTE22HOUSE_LANCE
+	endcallback
+
+.End:
 	endcallback
 
 Route22HouseRealKarenScript:
@@ -105,6 +143,37 @@ Route22HouseRealKogaScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKogaAfterText
+	waitbutton
+	closetext
+	end
+
+Route22HouseLanceScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoRematch
+	writetext Route22HouseLanceBeforeText
+	yesorno
+	iftrue .DoBattle
+	writetext Route22HouseLanceRefusedText
+	waitbutton
+	closetext
+	end
+
+.NoRematch:
+	writetext Route22HouseLanceAfterText
+	waitbutton
+	closetext
+	end
+
+.DoBattle:
+	winlosstext Route22HouseLanceBeatenText, 0
+	loadtrainer CHAMPION, LANCE2
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	opentext
+	writetext Route22HouseLanceAfterText
 	waitbutton
 	closetext
 	end
@@ -183,6 +252,54 @@ Route22HouseJamesScript:
 	waitbutton
 	closetext
 	end
+
+Route22HouseMissingnoScript:
+	checktime DAY
+	iftrue .AerobonesBattle
+	checktime MORN
+	iftrue .KabubonesBattle
+	checktime NITE
+	iftrue .MissingnoBattle
+	end
+
+.AerobonesBattle:
+	winlosstext Route22HouseAerobonesBeatenText, 0
+	loadtrainer AEROBONES, AEROBONES1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	special FadeBlackQuickly
+	disappear ROUTE22HOUSE_POKE_BALL
+	special FadeInQuickly
+	end
+
+.KabubonesBattle:
+	winlosstext Route22HouseKabubonesBeatenText, 0
+	loadtrainer KABUBONES, KABUBONES1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	special FadeBlackQuickly
+	disappear ROUTE22HOUSE_POKE_BALL
+	special FadeInQuickly
+	end
+
+.MissingnoBattle:
+	winlosstext Route22HouseMissingnoBeatenText, 0
+	loadtrainer MISSINGNO, MISSINGNO1
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	special FadeBlackQuickly
+	disappear ROUTE22HOUSE_POKE_BALL
+	special FadeInQuickly
+	end
+
+Route22HouseMrFujiScript:
+	jumptextfaceplayer Route22HouseMrFujiText
+
+Route22HouseOfficerJennyScript:
+	jumptextfaceplayer Route22HouseOfficerJennyText
 
 Route22HouseRadio:
 	jumpstd Radio2Script
@@ -345,7 +462,7 @@ Route22HouseJessieAfterText:
 	line "pummel you and"
 
 	para "take your #MON"
-	line "for our boss!"
+	line "for the boss!"
 	done
 
 Route22HouseJamesBeforeText:
@@ -369,6 +486,71 @@ Route22HouseJessieJamesBeatenText:
 	line "again!"
 	done
 
+Route22HouseAerobonesBeatenText:
+	text "?????Z???? ?X??"
+	line "???? ???E??X????"
+	cont "???C???E????."
+	cont "YY? Y-?!! ??X?"
+	cont "??X?!! ??C???X??!!"
+	cont "?? ??? ??????"
+	done
+
+Route22HouseKabubonesBeatenText:
+	text " "
+	done
+
+Route22HouseMissingnoBeatenText:
+	text "LAP?FALLED"
+	line "MISSINGNO WIN"
+	done
+
+Route22HouseMrFujiText:
+	text "Greetings, child."
+	line "I am MR.FUJI."
+
+	para "There was once a"
+	line "place in LAVENDER"
+
+	para "TOWN where the"
+	line "souls of #MON"
+
+	para "who have passed on"
+	line "were honored…"
+
+	para "The building may"
+	line "be gone, but those"
+
+	para "who remember their"
+	line "dear friends will"
+
+	para "always keep them"
+	line "alive in their"
+	cont "hearts."
+
+	para "Be sure to cherish"
+	line "your time with"
+	cont "your #MON."
+	done
+
+Route22HouseOfficerJennyText:
+	text "OFFICER JENNY"
+	line "reporting."
+
+	para "Our sources say"
+	line "that the notorious"
+
+	para "GIOVANNI, former"
+	line "head of TEAM ROCK-"
+	cont "ET, has been seen"
+	cont "in this building."
+
+	para "I'm staking it"
+	line "out, but I can"
+
+	para "never seem to"
+	line "catch him…"
+	done
+
 Route22House_MapEvents:
 	db 0, 0 ; filler
 
@@ -387,3 +569,7 @@ Route22House_MapEvents:
 	object_event  7,  4, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_LEFT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseGiovanniScript, EVENT_ROUTE_22_HOUSE_GIOVANNI
 	object_event  8,  1, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJessieScript, EVENT_ROUTE_22_HOUSE_JESSIE
 	object_event  7,  1, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJamesScript, EVENT_ROUTE_22_HOUSE_JAMES
+	object_event  2,  4, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseLanceScript, EVENT_ROUTE_22_HOUSE_LANCE
+	object_event  1,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, Route22HouseMissingnoScript, EVENT_ROUTE_22_HOUSE_MISSINGNO
+	object_event  7,  2, SPRITE_MR_FUJI, SPRITEMOVEDATA_STANDING_LEFT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseMrFujiScript, EVENT_ROUTE_22_HOUSE_MR_FUJI
+	object_event  5,  6, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseOfficerJennyScript, EVENT_ROUTE_22_HOUSE_OFFICER_JENNY
