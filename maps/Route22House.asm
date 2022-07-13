@@ -257,9 +257,9 @@ Route22HouseMissingnoScript:
 	checktime DAY
 	iftrue .AerobonesBattle
 	checktime MORN
-	iftrue .KabubonesBattle
-	checktime NITE
 	iftrue .MissingnoBattle
+	checktime NITE
+	iftrue .KabubonesBattle
 	end
 
 .AerobonesBattle:
@@ -273,9 +273,9 @@ Route22HouseMissingnoScript:
 	special FadeInQuickly
 	end
 
-.KabubonesBattle:
-	winlosstext Route22HouseKabubonesBeatenText, 0
-	loadtrainer KABUBONES, KABUBONES1
+.MissingnoBattle:
+	winlosstext Route22HouseMissingnoBeatenText, 0
+	loadtrainer MISSINGNO, MISSINGNO1
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -284,9 +284,9 @@ Route22HouseMissingnoScript:
 	special FadeInQuickly
 	end
 
-.MissingnoBattle:
-	winlosstext Route22HouseMissingnoBeatenText, 0
-	loadtrainer MISSINGNO, MISSINGNO1
+.KabubonesBattle:
+	winlosstext Route22HouseKabubonesBeatenText, 0
+	loadtrainer KABUBONES, KABUBONES1
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
