@@ -3564,7 +3564,7 @@ AerobonesGroup:
 
 KabubonesGroup:
 	; KABUBONES1
-	db "(00)@", TRAINERTYPE_NORMAL
+	db "'M@", TRAINERTYPE_NORMAL
 	db 50, KABUTOPS
 	db 50, UNOWN
 	db 50, HAUNTER
