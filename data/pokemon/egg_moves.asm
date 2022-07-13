@@ -207,9 +207,9 @@ MachopEggMoves:
 BellsproutEggMoves:
 	db SWORDS_DANCE
 	db ENCORE
-	db REFLECT
 	db SYNTHESIS
 	db LEECH_LIFE
+	db DRAIN_KISS
 	db -1 ; end
 
 TentacoolEggMoves:
