@@ -114,4 +114,5 @@ OverworldSprites:
 	overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MrFujiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite OfficerJennySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GlitchSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	assert_table_length NUM_OVERWORLD_SPRITES
