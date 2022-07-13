@@ -3545,6 +3545,15 @@ JessieGroup:
 	db -1 ; end
 
 AerobonesGroup:
+	; AEROBONES1
+	db "NO.@", TRAINERTYPE_NORMAL
+	db 50, AERODACTYL
+	db 50, UNOWN
+	db -1 ; end
 
 KabubonesGroup:
-
+	; KABUBONES1
+	db "NO.@", TRAINERTYPE_NORMAL
+	db 50, KABUTOPS
+	db 50, UNOWN
+	db -1 ; end
