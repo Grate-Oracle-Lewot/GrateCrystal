@@ -184,8 +184,9 @@ PoliwagEggMoves:
 	db MIST
 	db HAZE
 	db MIND_READER
-	db TRIPLE_KICK
 	db EARTH_POWER
+	db TRIPLE_KICK
+	db METRONOME
 	db -1 ; end
 
 AbraEggMoves:
@@ -620,9 +621,10 @@ MarillEggMoves:
 SudowoodoEggMoves:
 	db SELFDESTRUCT
 	db ANCIENTPOWER
-	db SWORDS_DANCE
-	db KARATE_CHOP
 	db EARTH_POWER
+	db KARATE_CHOP
+	db SWORDS_DANCE
+	db METRONOME
 	db -1 ; end
 
 HoppipEggMoves:
