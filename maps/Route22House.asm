@@ -79,6 +79,8 @@ Route22House_MapScripts:
 	endcallback
 
 .AppearLance:
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .End
 	appear ROUTE22HOUSE_LANCE
 	endcallback
 
