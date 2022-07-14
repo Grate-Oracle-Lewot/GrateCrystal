@@ -64,7 +64,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; PRIMAPE
 	icon_pals RED,    BROWN  ; GROWLITHE
 	icon_pals RED,    GREEN  ; ARCANINE
-	icon_pals GRAY,   BLUE   ; POLIWAG
+	icon_pals RED,    PINK   ; POLIWAG
 	icon_pals GRAY,   BLUE   ; POLIWHIRL
 	icon_pals BLUE,   GREEN  ; POLIWRATH
 	icon_pals BROWN,  YELLOW ; ABRA
