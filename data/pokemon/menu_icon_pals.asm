@@ -174,7 +174,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  PURPLE ; SPINARAK
 	icon_pals BROWN,  PURPLE ; ARIADOS
 	icon_pals PURPLE, PINK   ; CROBAT
-	icon_pals BLUE,   GRAY   ; CHINCHOU
+	icon_pals YELLOW, GREEN  ; CHINCHOU
 	icon_pals BLUE,   BLUE   ; LANTERN
 	icon_pals YELLOW, BROWN  ; PICHU
 	icon_pals PINK,   PINK   ; CLEFFA
