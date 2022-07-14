@@ -5,30 +5,25 @@ AnthonyAskNumber1Text:
 	para "go to mountains"
 	line "and caves."
 
-	para "I occasionally see"
-	line "rare #MON."
+	para "Since you're on a"
+	line "journey too, we"
 
-	para "I could call you"
-	line "the next time I"
-	cont "see one."
+	para "could exchange"
+	line "travel tips."
 
 	para "Feel like swapping"
 	line "phone numbers?"
 	done
 
 AnthonyAskNumber2Text:
-	text "I could call you"
-	line "when I see some"
-	cont "rare #MON."
-
-	para "Feel like swapping"
+	text "Feel like swapping"
 	line "phone numbers?"
 	done
 
 AnthonyNumberAcceptedText:
 	text "Be patient. I'll"
-	line "find some rare"
-	cont "#MON for you!"
+	line "find some good"
+	cont "caves for you!"
 	done
 
 AnthonyNumberDeclinedText:
