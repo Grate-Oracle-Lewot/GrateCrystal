@@ -127,7 +127,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Thursday: A trainer version of MissingNo., with three different variants for day, morning, and night
   - Friday: Giovanni, using Ground types plus Persian
   - Saturday: Karen, using Dark types; only appears at night
-  - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, a rematch with Lance, similar to the Lance/Clair tag-team rematch in HGSS
+  - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, if you have all 16 Badges, Lance will appear for a rematch with levels similar to the Lance/Clair double battle in HGSS
 
 ## Miscellaneous
 - The Odd Egg can now hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
