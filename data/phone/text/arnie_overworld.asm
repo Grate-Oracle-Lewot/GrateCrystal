@@ -1,19 +1,15 @@
 ArnieAskNumber1Text:
-	text "Do you get the"
-	line "feeling that there"
+	text "I'm a big fan of"
+	line "bug #MON, and I"
 
-	para "are more rare"
-	line "#MON around?"
+	para "can tell that you"
+	line "are too."
 
-	para "I'm positive there"
-	line "are, so I look all"
-	cont "the time."
+	para "I want someone to"
+	line "talk to about all"
 
-	para "If I find one, I"
-	line "want to share the"
-
-	para "good news with"
-	line "everyone I know."
+	para "the cool bug"
+	line "#MON I see!"
 
 	para "I know! Give me"
 	line "your phone number."
@@ -22,7 +18,7 @@ ArnieAskNumber1Text:
 ArnieAskNumber2Text:
 	text "I want to let"
 	line "people know if I"
-	cont "see rare #MON."
+	cont "catch a YANMA."
 
 	para "Please give me"
 	line "your phone number!"
