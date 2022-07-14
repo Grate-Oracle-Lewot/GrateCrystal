@@ -25,7 +25,8 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
   - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto
-  - New trainer battles, including one with Professor Oak
+  - A few new trainer battles
+- After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg
 - New Pokédex entries for every Pokémon (still in progress)
 - A few Pokémon have been reverted to their beta designs from the Spaceworld demos, and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
@@ -130,7 +131,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, if you have all 16 Badges, Lance will appear for a rematch with levels similar to the Lance/Clair double battle in HGSS
 
 ## Miscellaneous
-- The Odd Egg can now hatch into starters as well as babies, and whatever it becomes is a guaranteed shiny
+- The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
