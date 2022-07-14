@@ -184,8 +184,6 @@ TrainerPicnickerTiffany:
 	iftrue .HasPinkBow
 	checkcellnum PHONE_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
-	checkpoke CLEFAIRY
-	iffalse .NoClefairy
 	checkevent EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PicnickerTiffanyWantsPicnicText
@@ -262,12 +260,6 @@ TrainerPicnickerTiffany:
 
 .NoRoom:
 	sjump .PackFull
-
-.NoClefairy:
-	writetext PicnickerTiffanyClefairyText
-	waitbutton
-	closetext
-	end
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
