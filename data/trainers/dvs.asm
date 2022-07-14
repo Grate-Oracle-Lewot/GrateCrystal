@@ -73,7 +73,7 @@ TrainerClassDVs:
 	dn 12, 13, 13, 12 ; REAL_KOGA
 	dn 12, 13, 13, 12 ; BOSS
 	dn  8,  8,  8,  8 ; JESSIE
-	dn  0,  0,  0,  0 ; AEROBONES
-	dn  0,  0,  0,  0 ; KABUBONES
-	dn  0,  0,  0,  0 ; MISSINGNO
+	dn 15,  0,  0,  0 ; AEROBONES
+	dn 15,  0,  0,  0 ; KABUBONES
+	dn 15,  0,  0,  0 ; MISSINGNO
 	assert_table_length NUM_TRAINER_CLASSES
