@@ -76,4 +76,5 @@ TrainerGroups:
 	dw JessieGroup
 	dw AerobonesGroup
 	dw KabubonesGroup
+	dw MissingnoGroup
 	assert_table_length NUM_TRAINER_CLASSES
