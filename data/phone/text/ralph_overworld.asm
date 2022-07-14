@@ -2,31 +2,20 @@ RalphAskNumber1Text:
 	text "Don't young people"
 	line "fish anymore?"
 
-	para "I've seen rare"
-	line "#MON while I've"
-	cont "been fishing…"
-
 	para "You young people"
 	line "like that, right?"
 
 	para "Want to trade"
 	line "phone numbers?"
-
-	para "I'll let you know"
-	line "if I see anything."
 	done
 
 RalphAskNumber2Text:
 	text "Hm? So you do want"
-	line "me to phone if I"
-	cont "see rare #MON?"
+	line "me to phone you?"
 	done
 
 RalphNumberAcceptedText:
-	text "Yep, phone if I"
-	line "see rare #MON."
-
-	para "Don't worry, I"
+	text "Don't worry, I"
 	line "won't forget!"
 	done
 
