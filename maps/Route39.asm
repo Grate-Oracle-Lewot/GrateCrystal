@@ -33,8 +33,6 @@ TrainerPokefanmDerek:
 	iftrue .HasNugget
 	checkcellnum PHONE_POKEFANM_DEREK
 	iftrue .NumberAccepted
-	checkpoke PIKACHU
-	iffalse .WantsPikachu
 	checkevent EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PokefanMDerekText_NotBragging
@@ -62,12 +60,6 @@ TrainerPokefanmDerek:
 
 .NoRoom:
 	sjump .PackFull
-
-.WantsPikachu:
-	writetext PokefanMDerekPikachuIsItText
-	waitbutton
-	closetext
-	end
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
