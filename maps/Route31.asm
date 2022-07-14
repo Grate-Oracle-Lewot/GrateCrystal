@@ -123,19 +123,19 @@ TrainerBugCatcherWade1:
 	checkevent EVENT_WADE_HAS_BITTER_BERRY
 	iftrue .BitterBerry
 .Berry:
-	verbosegiveitem BERRY
+	verbosegiveitem BERRY, 5
 	iffalse .PackFull
 	sjump .Done
 .Psncureberry:
-	verbosegiveitem PSNCUREBERRY
+	verbosegiveitem PSNCUREBERRY, 5
 	iffalse .PackFull
 	sjump .Done
 .Przcureberry:
-	verbosegiveitem PRZCUREBERRY
+	verbosegiveitem PRZCUREBERRY, 5
 	iffalse .PackFull
 	sjump .Done
 .BitterBerry:
-	verbosegiveitem BITTER_BERRY
+	verbosegiveitem BITTER_BERRY, 5
 	iffalse .PackFull
 .Done:
 	clearflag ENGINE_WADE_HAS_ITEM
