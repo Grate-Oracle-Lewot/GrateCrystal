@@ -12,7 +12,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns
-- Berry and Apricorn trees now give out 5 at a time
+- Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
@@ -148,6 +148,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
+- Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
 - Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
