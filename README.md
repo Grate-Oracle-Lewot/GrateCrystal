@@ -182,6 +182,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Short beeping noise for low HP
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified to allow stat equity
+- 25% AI failure chance removed for stat-reduction moves, left in place for Sleep, Poison, and Paralysis
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
 - No experience gained at Lv100
@@ -230,10 +231,6 @@ A) Same deal. You'll notice I had to remove a few moves to make room for some of
 Q) Why not remove some Pokémon to make room for adding more?
 
 A) My focus is on making "bad" Pokémon better instead of removing them.
-
-Q) Why not remove the 25% chance for the AI to fail status moves?
-
-A) Golbat.
 
 Q) How do I make my own hack?
 
