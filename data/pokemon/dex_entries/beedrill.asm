@@ -1,10 +1,10 @@
 	db "POISON BEE@" ; species name
 	dw 303, 650 ; height, weight
 
-	db   "It uses sharp,"
-	next "poisonous stings"
-	next "to defeat prey,"
+	db   "The stingers on"
+	next "its arms are just"
+	next "as potent as the"
 
-	page "then takes the"
-	next "victim back to its"
-	next "nest for food.@"
+	page "one on its abdom-"
+	next "en, defending it"
+	next "from all sides.@"
