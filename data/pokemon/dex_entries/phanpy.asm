@@ -1,10 +1,10 @@
 	db "LONG NOSE@" ; species name
 	dw 108, 740 ; height, weight
 
-	db   "During the desert-"
-	next "ed morning hours,"
-	next "it comes ashore"
+	db   "According to myth,"
+	next "if it holds a"
+	next "PIDGEY's feather"
 
-	page "where it deftly"
-	next "uses its trunk to"
-	next "take a shower.@"
+	page "with its trunk, it"
+	next "can flap its ears"
+	next "to fly.@"
