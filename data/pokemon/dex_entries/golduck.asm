@@ -1,10 +1,10 @@
 	db "DUCK@" ; species name
 	dw 507, 1690 ; height, weight
 
-	db   "It swims grace-"
-	next "fully along on the"
-	next "quiet, slow-moving"
+	db   "If the gem on its"
+	next "head dries out, it"
+	next "can no longer"
 
-	page "rivers and lakes"
-	next "of which it is so"
-	next "fond.@"
+	page "move. It ambushes"
+	next "prey from under-"
+	next "water.@"
