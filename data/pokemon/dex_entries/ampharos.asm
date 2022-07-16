@@ -1,10 +1,10 @@
 	db "LIGHT@" ; species name
 	dw 407, 1360 ; height, weight
 
-	db   "When it gets dark,"
-	next "the light from its"
-	next "bright, shiny tail"
+	db   "There was once a"
+	next "time when these"
+	next "#MON ruled over"
 
-	page "can be seen from"
-	next "far away on the"
-	next "ocean's surface.@"
+	page "humans and made"
+	next "them build giant"
+	next "stone pyramids.@"
