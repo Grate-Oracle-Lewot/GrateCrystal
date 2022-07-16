@@ -365,8 +365,8 @@ PlayersHouse1FFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "SODA, BEER, and"
-	line "HETAP!"
+	para "TEAM FOUR STAR"
+	line "SODA and HETAP!"
 	done
 
 PlayersHouse1FTVText:
