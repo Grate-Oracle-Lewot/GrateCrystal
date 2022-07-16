@@ -8,6 +8,27 @@ PewterMuseum2F_MapScripts:
 MoonRockSignScript:
 	jumptext MoonRockSignText
 
+MoonLandingGrampsText:
+	text "July 20th, 1969…"
+	line "The day man first"
+
+	para "walked on the"
+	line "moon!"
+
+	para "I remember watch-"
+	line "ing the broadcast"
+
+	para "in awe, wondering"
+	line "if I might one"
+
+	para "day set foot there"
+	line "myself…"
+
+	para "You never know!"
+	line "I've still got"
+	line "some zip left!"
+	done
+
 MoonRockSignText:
 	text "These meteorites"
 	line "impacted near MT."
