@@ -1,10 +1,10 @@
 	db "EGG@" ; species name
 	dw 307, 760 ; height, weight
 
-	db   "People try to"
-	next "catch it for its"
-	next "extremely"
+	db   "The CHANSEY empl-"
+	next "oyed at #MON"
+	next "CENTERS now"
 
-	page "nutritious eggs,"
-	next "but it rarely can"
-	next "be found.@"
+	page "outnumber those"
+	next "that can be found"
+	next "in the wild.@"
