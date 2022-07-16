@@ -1,10 +1,10 @@
 	db "LONG LEG@" ; species name
 	dw 307, 740 ; height, weight
 
-	db   "Rather than mak-"
-	next "ing a nest in one"
-	next "specific spot, it"
+	db   "It uses its silk"
+	next "like a lasso to"
+	next "catch prey in"
 
-	page "wanders in search"
-	next "of food after"
-	next "darkness falls.@"
+	page "midair. It immobi-"
+	next "lizes and eats it"
+	next "on the spot.@"
