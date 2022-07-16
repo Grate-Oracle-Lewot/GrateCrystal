@@ -1,10 +1,10 @@
 	db "GAS@" ; species name
 	dw 403, 2 ; height, weight
 
-	db   "It wraps its op-"
-	next "ponent in its gas-"
-	next "like body, slowly"
+	db   "It's created when"
+	next "a mischievous spi-"
+	next "rit bonds with a"
 
-	page "weakening its prey"
-	next "by poisoning it"
-	next "through the skin.@"
+	page "cloud of smog or"
+	next "swamp gas."
+	next "@"
