@@ -3391,7 +3391,7 @@ PokefanFGroup:
 
 	; POKEFANF (4)
 	db "BEVERLY@", TRAINERTYPE_ITEM
-	db 38, GRANBULL,   BERRY
+	db 38, SNUBBULL,   BERRY
 	db -1 ; end
 
 	; POKEFANF (5)
