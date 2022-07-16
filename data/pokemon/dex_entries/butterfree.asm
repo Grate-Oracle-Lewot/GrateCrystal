@@ -1,10 +1,10 @@
 	db "BUTTERFLY@" ; species name
 	dw 307, 710 ; height, weight
 
-	db   "It flits from"
-	next "flower to flower,"
-	next "collecting honey."
+	db   "It looks so diff-"
+	next "erent from its"
+	next "previous stages"
 
-	page "It can even"
-	next "identify distant"
-	next "flowers in bloom.@"
+	page "that it took time"
+	next "to accept them as"
+	next "related.@"
