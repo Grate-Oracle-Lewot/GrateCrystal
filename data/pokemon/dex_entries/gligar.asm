@@ -1,10 +1,10 @@
-	db "FLYSCORPIO@" ; species name
+	db "SCORPION@" ; species name
 	dw 307, 1430 ; height, weight
 
-	db   "It builds its nest"
-	next "on a steep cliff."
-	next "When it is done"
+	db   "One chases prey"
+	next "from above, then"
+	next "another ambushes"
 
-	page "gliding, it hops"
-	next "along the ground"
-	next "back to its nest.@"
+	page "it from under-"
+	next "ground. The two"
+	next "share the meal.@"
