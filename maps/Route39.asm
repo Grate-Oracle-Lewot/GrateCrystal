@@ -53,7 +53,7 @@ TrainerPokefanmDerek:
 
 .HasNugget:
 	scall .Gift
-	verbosegiveitem NUGGET
+	verbosegiveitem STAR_PIECE
 	iffalse .NoRoom
 	clearflag ENGINE_DEREK_HAS_NUGGET
 	sjump .NumberAccepted
