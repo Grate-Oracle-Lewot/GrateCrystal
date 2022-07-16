@@ -1,10 +1,10 @@
 	db "BEAK@" ; species name
 	dw 311, 840 ; height, weight
 
-	db   "It uses its long"
-	next "beak to attack. It"
-	next "has a surprisingly"
+	db   "Its feet never"
+	next "touch the ground"
+	next "unless it faints."
 
-	page "long reach, so it"
-	next "must be treated"
-	next "with caution.@"
+	page "It glides above"
+	next "the clouds while"
+	next "sleeping.@"
