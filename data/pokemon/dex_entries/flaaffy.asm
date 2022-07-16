@@ -1,10 +1,10 @@
 	db "WOOL@" ; species name
 	dw 207, 290 ; height, weight
 
-	db   "Because of its"
-	next "rubbery, electric-"
-	next "ity-resistant"
+	db   "As it learns to"
+	next "store electricity"
+	next "in its skin, its"
 
-	page "skin, it can store"
-	next "lots of electric-"
-	next "ity in its fur.@"
+	page "wool falls off, no"
+	next "longer needed."
+	next "@"
