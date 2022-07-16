@@ -1,10 +1,10 @@
 	db "SLUDGE@" ; species name
 	dw 211, 660 ; height, weight
 
-	db   "When two of these"
-	next "#MON's bodies"
-	next "are combined"
+	db   "If you place a"
+	next "pair of googly"
+	next "eyes on a pile of"
 
-	page "together, new"
-	next "poisons are"
-	next "created.@"
+	page "sludge, it may"
+	next "come to life as a"
+	next "GRIMER.@"
