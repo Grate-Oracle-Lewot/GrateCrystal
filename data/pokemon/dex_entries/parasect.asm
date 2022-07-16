@@ -1,10 +1,10 @@
 	db "MUSHROOM@" ; species name
 	dw 303, 650 ; height, weight
 
-	db   "The bug is dead,"
-	next "its corpse piloted"
-	next "around by the"
+	db   "The mushroom is"
+	next "intelligent enough"
+	next "to know what it"
 
-	page "tochukaso mushroom"
-	next "on its back. A"
-	next "grisly fate.@"
+	page "did to the bug,"
+	next "but it's too late"
+	next "to go back now.@"
