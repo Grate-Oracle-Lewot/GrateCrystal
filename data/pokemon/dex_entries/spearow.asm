@@ -1,10 +1,10 @@
 	db "TINY BIRD@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "To protect its"
-	next "territory, it"
-	next "flies around"
+	db   "It can fly as soon"
+	next "as it hatches. A"
+	next "FEAROW leads each"
 
-	page "ceaselessly,"
-	next "making high-"
-	next "pitched cries.@"
+	page "flock, but SPEAROW"
+	next "may swap between"
+	next "flocks.@"
