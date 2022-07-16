@@ -1,10 +1,10 @@
 	db "STRINGSPIT@" ; species name
 	dw 108, 190 ; height, weight
 
-	db   "If prey becomes"
-	next "ensnared in its"
-	next "nest of spun"
+	db   "It spins a web to"
+	next "catch #MON much"
+	next "larger than it."
 
-	page "string, it waits"
-	next "motionlessly until"
-	next "it becomes dark.@"
+	page "It only feeds on"
+	next "them after dark."
+	next "@"
