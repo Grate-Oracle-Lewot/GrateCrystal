@@ -1,9 +1,5 @@
 DerekAskNumber1Text:
-	text "Oh, wow! PIKACHU!"
-	line "It's so soft and"
-	cont "furry! How cute!"
-
-	para "Let's be friends!"
+	text "Let's be friends!"
 	line "PIKACHU-lovers are"
 	cont "never bad people!"
 
@@ -46,10 +42,6 @@ DerekGiftText:
 	text "I've been looking"
 	line "for you! Here, see"
 	cont "this? This is it!"
-
-	para "I'm certain your"
-	line "PIKACHU will love"
-	cont "my gift too!"
 	done
 
 DerekPackFullText:
