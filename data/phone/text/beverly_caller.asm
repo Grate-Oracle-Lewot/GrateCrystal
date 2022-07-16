@@ -42,8 +42,8 @@ BeverlyHangUpText:
 	done
 
 BeverlyFoundItemText:
-	text "My husband got"
-	line "some NUGGETS."
+	text "I picked some BIG"
+	line "MUSHROOMS."
 
 	para "If you'd like, you"
 	line "could have one as"
@@ -69,8 +69,8 @@ BeverlyLetsChatAboutMonAgainText:
 	done
 
 BeverlyComePickUpText:
-	text "Pardon?"
-	line "Oh, the NUGGET?"
+	text "Pardon? Oh, the"
+	line "BIG MUSHROOM?"
 
 	para "There's no need to"
 	line "hurry. Come see me"
