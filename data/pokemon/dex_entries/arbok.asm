@@ -1,10 +1,10 @@
 	db "COBRA@" ; species name
 	dw 1106, 1430 ; height, weight
 
-	db   "To intimidate"
-	next "foes, it spreads"
-	next "its chest wide and"
+	db   "It flattens its"
+	next "neck to imperson-"
+	next "ate roadkill, then"
 
-	page "makes eerie sounds"
-	next "by expelling air"
-	next "from its mouth.@"
+	page "jumps up and"
+	next "swallows its prey"
+	next "whole.@"
