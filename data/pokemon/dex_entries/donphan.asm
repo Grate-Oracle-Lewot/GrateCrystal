@@ -1,10 +1,10 @@
 	db "ARMOR@" ; species name
 	dw 307, 2650 ; height, weight
 
-	db   "Because this"
-	next "#MON's skin is"
-	next "so tough, a normal"
+	db   "A willing DONPHAN"
+	next "makes a good spare"
+	next "tire in a pinch."
 
-	page "attack won't even"
-	next "leave a scratch on"
-	next "it.@"
+	page "Some are more"
+	next "willing than"
+	next "others.@"
