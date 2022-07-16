@@ -1,10 +1,10 @@
 	db "SHADOW@" ; species name
 	dw 411, 890 ; height, weight
 
-	db   "Hiding in people's"
-	next "shadows at night,"
-	next "it absorbs their"
+	db   "It pretends to be"
+	next "a CLEFABLE's shad-"
+	next "ow, then jumps up"
 
-	page "heat. The chill it"
-	next "causes makes the"
-	next "victims shake.@"
+	page "and scares anyone"
+	next "nearby, enjoying"
+	next "their screams.@"
