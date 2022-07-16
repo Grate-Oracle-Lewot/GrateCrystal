@@ -1,10 +1,10 @@
 	db "SLUDGE@" ; species name
 	dw 311, 660 ; height, weight
 
-	db   "As it moves, a"
-	next "very strong poison"
-	next "leaks from it,"
+	db   "Most scientists"
+	next "agree that eventu-"
+	next "ally, MUK will be"
 
-	page "making the ground"
-	next "there barren for"
-	next "three years.@"
+	page "the only thing"
+	next "left in the"
+	next "world.@"
