@@ -1,10 +1,10 @@
 	db "CORAL@" ; species name
 	dw 200, 110 ; height, weight
 
-	db   "The points on its"
-	next "head absorb"
-	next "nutrients from"
+	db   "What we think of"
+	next "as CORSOLA is act-"
+	next "ually a bunch of"
 
-	page "clean water. They"
-	next "cannot survive in"
-	next "polluted water.@"
+	page "tiny #MON form-"
+	next "ing a rocky mass."
+	next "@"
