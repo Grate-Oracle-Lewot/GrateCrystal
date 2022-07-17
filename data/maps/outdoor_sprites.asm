@@ -290,12 +290,11 @@ DungeonsGroupSprites:
 	db SPRITE_ROCKER
 	db SPRITE_FISHER
 	db SPRITE_SCIENTIST
-	db SPRITE_BIRD
+	db SPRITE_BUG_CATCHER
 	; 9 of max 9 walking sprites
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
 	db SPRITE_POKE_BALL
-	db SPRITE_SLOWPOKE
 	db 0 ; end
 
 FastShipGroupSprites:
