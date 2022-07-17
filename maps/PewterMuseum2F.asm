@@ -1,9 +1,19 @@
 	object_const_def
+	const PEWTERMUSEUM2F_GRAMPS
 
 PewterMuseum2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+PewterMuseum2FGrampsScript:
+	faceplayer
+	opentext
+	writetext MoonLandingGrampsText
+	waitbutton
+	closetext
+	turnobject PEWTERMUSEUM2F_GRAMPS, UP
+	end
 
 MoonRockSignScript:
 	jumptext MoonRockSignText
@@ -64,3 +74,4 @@ PewterMuseum2F_MapEvents:
 	bg_event  2,  5, BGEVENT_READ, MoonRockSignScript
 
 	def_object_events
+	object_event 11,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
