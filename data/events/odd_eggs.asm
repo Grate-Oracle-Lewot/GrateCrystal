@@ -97,7 +97,7 @@ OddEggs:
 
 	db BULBASAUR
 	db NO_ITEM
-	db TACKLE, SWEET_SCENT, PETAL_DANCE, 0
+	db TACKLE, GROWTH, PETAL_DANCE, 0
 	dw 04096 ; OT ID
 	dt 135 ; Exp
 	; Stat exp
@@ -107,7 +107,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 35, 20, 20, 0 ; PP
+	db 35, 40, 15, 0 ; PP
 	db 10 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 5 ; Level
@@ -159,7 +159,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 35, 40, 10, 0 ; PP
+	db 35, 40, 15, 0 ; PP
 	db 10 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 5 ; Level
@@ -383,7 +383,7 @@ OddEggs:
 
 	db TYROGUE
 	db NO_ITEM
-	db TACKLE, MEDITATE, DIZZY_PUNCH, 0
+	db TACKLE, MEDITATE, AURA_SPHERE, 0
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -393,7 +393,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 35, 40, 10, 0 ; PP
+	db 35, 40, 20, 0 ; PP
 	db 10 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 5 ; Level
