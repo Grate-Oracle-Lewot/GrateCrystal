@@ -302,14 +302,11 @@ NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
 NationalParkLassText:
-	text "Look! Check out my"
-	line "bag!"
+	text "It's always sunny"
+	line "in the PARK, even"
 
-	para "I printed out my"
-	line "favorites from my"
-
-	para "#DEX and stuck"
-	line "them on my bag."
+	para "at night. How does"
+	line "that work?"
 	done
 
 NationalParkPokefanFText:
