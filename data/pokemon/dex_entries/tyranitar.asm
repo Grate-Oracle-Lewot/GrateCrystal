@@ -1,10 +1,10 @@
 	db "ARMOR@" ; species name
 	dw 607, 4450 ; height, weight
 
-	db   "In just one of its"
-	next "mighty hands, it"
-	next "has the power to"
+	db   "It fancies itself"
+	next "the king of all"
+	next "#MON, and will"
 
-	page "make the ground"
-	next "shake and moun-"
-	next "tains crumble.@"
+	page "defend this title"
+	next "with its full"
+	next "power.@"
