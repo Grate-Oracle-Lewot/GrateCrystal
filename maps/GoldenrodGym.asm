@@ -199,10 +199,6 @@ WhitneyShouldntBeSoSeriousText:
 
 	para "…Waaaaaaah!"
 	line "You're mean!"
-
-	para "You shouldn't be"
-	line "so serious! You…"
-	cont "you child, you!"
 	done
 
 WhitneyYouMeanieText:
@@ -303,12 +299,6 @@ LassBridgetAfterBattleText:
 	text "I'm trying to beat"
 	line "WHITNEY, but…"
 	cont "It's depressing."
-
-	para "I'm okay! If I"
-	line "lose, I'll just"
-
-	para "try harder next"
-	line "time!"
 	done
 
 BridgetWhitneyCriesText:
@@ -366,9 +356,19 @@ GoldenrodGymGuideText:
 	line "to normal-type"
 	cont "#MON trainers."
 
-	para "I recommend you"
-	line "use fighting-type"
-	cont "#MON."
+	para "The only thing"
+	line "super effective"
+
+	para "against normal is"
+	line "fighting."
+
+	para "Ghost types are"
+	line "immune to normal-"
+	cont "type moves, but"
+
+	para "normal types are"
+	line "immune to ghost"
+	cont "moves too!"
 	done
 
 GoldenrodGymGuideWinText:
