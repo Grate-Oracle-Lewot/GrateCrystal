@@ -1,6 +1,7 @@
 	object_const_def
 	const ROUTE40BATTLETOWERGATE_ROCKER
 	const ROUTE40BATTLETOWERGATE_TWIN
+	const ROUTE40BATTLETOWERGATE_OFFICER
 
 Route40BattleTowerGate_MapScripts:
 	def_scene_scripts
@@ -17,6 +18,31 @@ Route40BattleTowerGateRockerScript:
 
 Route40BattleTowerGateTwinScript:
 	jumptextfaceplayer Route40BattleTowerGateTwinText
+
+TrainerOfficerDisher:
+	faceplayer
+	opentext
+	checktime NITE
+	iffalse .AfterBattle
+	checkevent EVENT_BEAT_OFFICER_DISHER
+	iftrue .AfterBattle
+	playmusic MUSIC_OFFICER_ENCOUNTER
+	writetext OfficerDisherSeenText
+	waitbutton
+	closetext
+	winlosstext OfficerDisherBeatenText, 0
+	loadtrainer OFFICER, DISHER
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_OFFICER_DISHER
+	closetext
+	end
+
+.AfterBattle:
+	writetext OfficerDisherAfterBattleText
+	waitbutton
+	closetext
+	end
 
 Route40BattleTowerGateUnusedText1: ; unreferenced
 	text "Did you come to"
@@ -68,6 +94,28 @@ Route40BattleTowerGateTwinText:
 	line "them now!"
 	done
 
+OfficerDisherSeenText:
+	text "WAUGH! I wasn't"
+	line "sleeping on the"
+	cont "job!"
+	done
+
+OfficerDisherBeatenText:
+	text "I need backup over"
+	line "here!"
+	done
+
+OfficerDisherAfterBattleText:
+	text "I could go for a"
+	line "donut…"
+
+	para "…What? Oh, come"
+	line "on!"
+
+	para "Everyone loves"
+	line "donuts!"
+	done
+
 Route40BattleTowerGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -84,3 +132,4 @@ Route40BattleTowerGate_MapEvents:
 	def_object_events
 	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateTwinScript, -1
+	object_event  1,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerDisher, -1
