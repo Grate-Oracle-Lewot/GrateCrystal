@@ -256,6 +256,9 @@ Route22HouseJamesScript:
 	end
 
 Route22HouseMissingnoScript:
+	faceplayer
+	waitsfx
+	cry NIDORAN_M
 	checktime DAY
 	iftrue .AerobonesBattle
 	checktime MORN
