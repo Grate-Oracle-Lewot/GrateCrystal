@@ -1108,9 +1108,9 @@ CopiedStatsText:
 	autodone
 
 ForesawAttackText:
-	text "<USER> sent"
-	line "an attack into the"
-	scroll "future!"
+	text "<USER>"
+	line "sent an attack"
+	scroll "into the future!"
 	autodone
 
 BeatUpAttackText:
