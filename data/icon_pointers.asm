@@ -41,10 +41,12 @@ IconPointers:
 	dw SudowoodoIcon
 	dw BigmonIcon
 	dw ChanseyIcon
-	dw CelebiIcon
 	dw FlowerIcon
 	dw FleaIcon
+	dw PinecoIcon
+	dw CelebiIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
+	dw MantineIcon
 	assert_table_length NUM_ICONS + 1
