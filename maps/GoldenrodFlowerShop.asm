@@ -30,6 +30,8 @@ FlowerShopTeacherScript:
 	end
 
 .GiveBackSquirtbottle:
+	checkitem SQUIRTBOTTLE
+	iffalse .Lalala
 	opentext
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
 	waitbutton
