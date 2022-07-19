@@ -228,14 +228,10 @@ PlayerReceivedPlainBadgeText:
 
 WhitneyPlainBadgeText:
 	text "PLAINBADGE lets"
-	line "your #MON use"
+	line "your #MON move"
 
-	para "a strange power"
-	line "called THE FORCE."
-
-	para "They'll be able to"
-	line "move big rocks"
-	cont "outside battle."
+	para "heavy boulders"
+	line "outside battle."
 
 	para "Oh, you can have"
 	line "this too!"
