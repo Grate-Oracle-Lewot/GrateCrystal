@@ -163,7 +163,8 @@ EcruteakGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_BUG_CATCHER
 	db SPRITE_SUPER_NERD
-	; 8 of max 9 walking sprites
+	db SPRITE_GENTLEMAN
+	; 9 of max 9 walking sprites
 	db SPRITE_SUDOWOODO
 	db SPRITE_TWIN
 	db SPRITE_POKE_BALL
