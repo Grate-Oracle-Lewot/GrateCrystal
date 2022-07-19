@@ -9,7 +9,7 @@ GoldenrodFlowerShop_MapScripts:
 
 FlowerShopTeacherScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .Lalala
+	iftrue .GiveBackSquirtbottle
 	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .GotSquirtbottle
 	checkevent EVENT_MET_FLORIA
@@ -27,6 +27,18 @@ FlowerShopTeacherScript:
 	closetext
 	setevent EVENT_FLORIA_AT_SUDOWOODO
 	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
+	end
+
+.GiveBackSquirtbottle:
+	opentext
+	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
+	waitbutton
+	takeitem SQUIRTBOTTLE
+	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
+	opentext
+	writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText
+	waitbutton
+	closetext
 	end
 
 .Lalala:
@@ -73,15 +85,6 @@ FlowerShopFloriaScript:
 	closetext
 	end
 
-FlowerShopShelf1: ; unreferenced
-	jumpstd PictureBookshelfScript
-
-FlowerShopShelf2: ; unreferenced
-	jumpstd MagazineBookshelfScript
-
-FlowerShopRadio: ; unreferenced
-	jumpstd Radio2Script
-
 GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 	text "Have you seen that"
 	line "wiggly tree that's"
@@ -122,6 +125,15 @@ GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	text "Don't do anything"
 	line "too dangerous!"
+	done
+
+GoldenrodFlowerShopTeacherTakeBackSquirtbottle:
+	text "Oh, are you done"
+	line "with that"
+	cont "SQUIRTBOTTLE?"
+
+	para "I'll take it back,"
+	line "then."
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
