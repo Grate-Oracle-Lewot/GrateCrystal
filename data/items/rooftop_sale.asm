@@ -1,17 +1,17 @@
 RooftopSaleMart1:
 	db 5
-	dbw POKE_BALL,     150
-	dbw GREAT_BALL,    500
-	dbw SUPER_POTION,  500
-	dbw FULL_HEAL,     500
-	dbw REVIVE,       1200
+	dbw ULTRA_BALL,    500
+	dbw DUSK_BALL,     500
+	dbw FULL_RESTORE, 1000
+	dbw FULL_HEAL,     200
+	dbw REVIVE,        500
 	db -1
 
 RooftopSaleMart2:
 	db 5
-	dbw HYPER_POTION, 1000
-	dbw FULL_RESTORE, 2000
-	dbw FULL_HEAL,     500
-	dbw ULTRA_BALL,   1000
-	dbw PROTEIN,      7800
+	dbw ETHER,      1000
+	dbw MAX_ETHER,  1500
+	dbw ELIXER,     2500
+	dbw MAX_ELIXER, 3500
+	dbw RARE_CANDY, 4000
 	db -1
