@@ -1684,6 +1684,7 @@ PocketPCFunction:
 .PocketPCNoSignal
 	text_far _PocketPCNoSignalText
 	text_end
+	ret
 
 BikeFunction:
 	call .TryBike
