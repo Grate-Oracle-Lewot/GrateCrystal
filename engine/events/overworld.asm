@@ -1682,9 +1682,15 @@ PocketPCFunction:
 	ret
 
 .PocketPCNoSignal
+	opentext
+	writetext NoSignalText
+	waitbutton
+	closetext
+	ret
+
+NoSignalText:
 	text_far _PocketPCNoSignalText
 	text_end
-	ret
 
 BikeFunction:
 	call .TryBike
