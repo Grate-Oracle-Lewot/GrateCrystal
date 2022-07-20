@@ -3,7 +3,7 @@ TrainerClassAttributes:
 	table_width NUM_TRAINER_ATTRIBUTES, TrainerClassAttributes
 
 ; Falkner
-	db POTION, NO_ITEM ; items
+	db SUPER_POTION, NO_ITEM ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -33,7 +33,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Jasmine
-	db HYPER_POTION, NO_ITEM ; items
+	db HYPER_POTION, FULL_HEAL ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -45,7 +45,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Clair
-	db FULL_HEAL, HYPER_POTION ; items
+	db FULL_HEAL, MAX_POTION ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -357,7 +357,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Kimono Girl
-	db FULL_HEAL, SUPER_POTION ; items
+	db FULL_HEAL, HYPER_POTION ; items
 	db 23 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
