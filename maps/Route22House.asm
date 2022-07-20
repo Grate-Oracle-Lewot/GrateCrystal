@@ -174,9 +174,25 @@ Route22HouseLanceScript:
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
+	checkflag ENGINE_QWILFISH_SWARM
 	opentext
+	iftrue .GiveMasterBall
 	writetext Route22HouseLanceAfterText
 	waitbutton
+	closetext
+	end
+
+.GiveMasterBall:
+	writetext Route22HouseLanceMasterBallText
+	waitbutton
+	promptbutton
+	verbosegiveitem MASTER_BALL
+	iffalse .MasterBallBagFull
+	closetext
+	end
+
+.MasterBallBagFull:
+	writetext Route22HouseLanceBagFullText
 	closetext
 	end
 
@@ -301,7 +317,11 @@ Route22HouseMissingnoScript:
 	end
 
 Route22HouseMrFujiScript:
-	jumptextfaceplayer Route22HouseMrFujiText
+	opentext
+	writetext Route22HouseMrFujiText
+	closetext
+	setflag ENGINE_QWILFISH_SWARM
+	end
 
 Route22HouseOfficerJennyScript:
 	jumptextfaceplayer Route22HouseOfficerJennyText
@@ -443,6 +463,25 @@ Route22HouseLanceAfterText:
 
 	para "Let's both contin-"
 	line "ue getting better!"
+	done
+
+Route22HouseLanceMasterBallText:
+	text "That was an extra-"
+	line "ordinary match!"
+
+	para "I learn something"
+	line "every time I"
+	cont "battle you."
+
+	para "I'd like you to"
+	line "have this as a"
+	cont "reward."
+
+Route22HouseLanceBagFullText:
+	text "Oh, your PACK is"
+	line "full…"
+
+	para "Never mind, then."
 	done
 
 Route22HouseGiovanniBeforeText:
