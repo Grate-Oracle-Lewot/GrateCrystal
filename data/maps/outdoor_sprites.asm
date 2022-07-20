@@ -222,6 +222,7 @@ CianwoodGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
 	db SPRITE_YOUNGSTER
 	db 0 ; end
 
