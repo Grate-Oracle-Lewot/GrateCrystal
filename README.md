@@ -34,7 +34,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 ## Type chart changes
 - Fairy merely resists Dragon instead of being totally immune
 - Ice now resists Flying
-- Steel no longer resists Ghost or Psychic, and is now weak to Electric
+- Steel no longer resists Ghost or Psychic
 
 ## Pokémon added
 - Yanmega
