@@ -224,17 +224,14 @@ OlivineGymGuideText:
 	text "JASMINE uses the"
 	line "steel-type."
 
-	para "It resists many"
-	line "types, but it also"
+	para "It resists almost"
+	line "everything!"
 
-	para "has several"
-	line "weaknesses."
+	para "But fighting,"
+	line "ground, and fire"
 
-	para "Fire, electric,"
-	line "ground, and"
-
-	para "fighting are all"
-	line "super effective!"
+	para "are all super"
+	line "effective."
 
 	para "Steel is good ag-"
 	line "ainst rock, ice,"
