@@ -71,7 +71,7 @@ TrainerClassNames::
 	li "VETERAN"
 	li "NINJA"
 	li "BOSS"
-	li "JESSIE and"
+	li "JESSIE &"
 	li "????????????"
 	li "3TRAINER#"
 	li "MISSING"
