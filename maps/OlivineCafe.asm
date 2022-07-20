@@ -37,15 +37,18 @@ OlivineCafeStrengthSailorText:
 	para "A devout order"
 	line "known as the JEDI"
 
-	para "learned to tap into"
-	line "the energy field"
+	para "learned to tap"
+	line "into the energy"
 
-	para "given off by all"
-	line "life, THE FORCE."
+	para "field given off by"
+	line "all life, which"
+
+	para "they called THE"
+	line "FORCE."
 
 	para "With this HM, your"
 	line "#MON can do the"
-	cont "same!"
+	cont "same thing!"
 	done
 
 OlivineCafeStrengthSailorText_GotStrength:
