@@ -346,6 +346,7 @@ BurnedTower1F_MapEvents:
 	warp_event  9, 15, ECRUTEAK_CITY, 13
 	warp_event 10, 15, ECRUTEAK_CITY, 13
 	warp_event 10,  9, BURNED_TOWER_B1F, 1
+	warp_event  7, 15, BURNED_TOWER_B1F, 2
 
 	def_coord_events
 	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript
