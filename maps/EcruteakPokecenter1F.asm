@@ -45,7 +45,7 @@ EcruteakPokecenter1F_MapScripts:
 .PointlessJump:
 	writetext EcruteakPokecenter1F_BillText2
 	promptbutton
-	giveitem POCKET_PC
+	verbosegiveitem POCKET_PC
 	writetext EcruteakPokecenter1F_BillText3
 	waitbutton
 	closetext
