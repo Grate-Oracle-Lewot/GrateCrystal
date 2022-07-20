@@ -31,6 +31,7 @@ Lugia:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_LUGIA
+	takeitem SILVER_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	loadwildmon LUGIA, 60
 	startbattle
