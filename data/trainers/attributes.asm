@@ -446,4 +446,10 @@ TrainerClassAttributes:
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
+; Gambler
+	db DIRE_HIT, NO_ITEM ; items
+	db 30 ; base reward
+	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_AGGRESSIVE | AI_STATUS
+	dw ALWAYS_USE | SWITCH_SOMETIMES
+
 	assert_table_length NUM_TRAINER_CLASSES
