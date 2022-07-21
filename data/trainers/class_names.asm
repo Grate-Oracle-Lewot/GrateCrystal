@@ -75,4 +75,5 @@ TrainerClassNames::
 	li "????????????"
 	li "3TRAINER#"
 	li "MISSING"
+	li "GAMBLER"
 	assert_list_length NUM_TRAINER_CLASSES
