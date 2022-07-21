@@ -723,6 +723,11 @@ KRIS EQU __trainer_class__
 
 	trainerclass GAMBLER ; 4b
 	const LUCKY
+	const HARVEY
+	const ACE
+	const HUCK
+	const THOREAU
+	const P_T
 	const LIU_HAI
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
