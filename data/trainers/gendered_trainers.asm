@@ -31,6 +31,7 @@ MaleTrainers:
 	db AEROBONES
 	db KABUBONES
 	db MISSINGNO
+	db GAMBLER
 .End
 
 FemaleTrainers:
