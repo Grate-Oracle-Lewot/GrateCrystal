@@ -83,5 +83,6 @@ INCBIN "gfx/trainers/jessie_james.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerobones.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabubones.gbcpal", middle_colors
 INCBIN "gfx/trainers/missingno.gbcpal", middle_colors
+INCBIN "gfx/trainers/gambler.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1
