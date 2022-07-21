@@ -76,4 +76,5 @@ TrainerClassDVs:
 	dn 15,  0,  0,  0 ; AEROBONES
 	dn 15,  0,  0,  0 ; KABUBONES
 	dn 15,  0,  0,  0 ; MISSINGNO
+	dn  6,  7,  7,  6 ; GAMBLER
 	assert_table_length NUM_TRAINER_CLASSES
