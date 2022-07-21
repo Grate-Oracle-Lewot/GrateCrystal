@@ -14,16 +14,16 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
 	db MUSIC_PROF_OAK              ; pokemonprof
-	db MUSIC_HIKER_ENCOUNTER       ; will
+	db MUSIC_OFFICER_ENCOUNTER     ; will
 	db MUSIC_OFFICER_ENCOUNTER     ; cal
 	db MUSIC_OFFICER_ENCOUNTER     ; bruno
-	db MUSIC_HIKER_ENCOUNTER       ; karen
-	db MUSIC_HIKER_ENCOUNTER       ; koga
+	db MUSIC_OFFICER_ENCOUNTER     ; karen
+	db MUSIC_OFFICER_ENCOUNTER     ; koga
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
-	db MUSIC_ROCKET_ENCOUNTER      ; scientist
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; scientist
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; youngster
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
@@ -75,7 +75,8 @@ TrainerEncounterMusic::
 	db MUSIC_INDIGO_PLATEAU        ; real koga
 	db MUSIC_ROCKET_ENCOUNTER      ; boss
 	db MUSIC_ROCKET_ENCOUNTER      ; jessie and james
-	db MUSIC_OFFICER_ENCOUNTER     ; aerobones
-	db MUSIC_OFFICER_ENCOUNTER     ; kabubones
-	db MUSIC_OFFICER_ENCOUNTER     ; missingno
+	db MUSIC_SAGE_ENCOUNTER        ; aerobones
+	db MUSIC_SAGE_ENCOUNTER        ; kabubones
+	db MUSIC_SAGE_ENCOUNTER        ; missingno
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; gambler
 	assert_table_length NUM_TRAINER_CLASSES + 1
