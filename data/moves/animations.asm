@@ -3106,14 +3106,13 @@ BattleAnim_TailWhip:
 	anim_ret
 
 BattleAnim_PlayRough:
-	anim_1gfx ANIM_GFX_OBJECTS
-.loop
+	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_ATTRACT
-	anim_obj ANIM_OBJ_ATTRACT, 44, 80, $2
-	anim_wait 8
-	anim_loop 5, .loop
-	anim_wait 128
-	anim_1gfx ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_HEART, 64, 76, $0
+	anim_wait 32
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_HEART, 36, 72, $0
+	anim_wait 32
 	anim_sound 0, 1, SFX_POUND
 	anim_obj ANIM_OBJ_PALM, 120, 72, $0
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
