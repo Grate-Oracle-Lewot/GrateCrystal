@@ -721,4 +721,8 @@ KRIS EQU __trainer_class__
 	trainerclass MISSINGNO ; 4a
 	const MISSINGNO1
 
+	trainerclass GAMBLER ; 4b
+	const LUCKY
+	const LIU_HAI
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
