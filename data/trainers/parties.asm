@@ -2088,6 +2088,8 @@ SuperNerdGroup:
 	; SUPER_NERD (5)
 	db "DAVE@", TRAINERTYPE_NORMAL
 	db 25, DITTO
+	db 25, DITTO
+	db 25, DITTO
 	db -1 ; end
 
 	; SUPER_NERD (6)
