@@ -2560,10 +2560,10 @@ JugglerGroup:
 
 	; JUGGLER (4)
 	db "IRVING@", TRAINERTYPE_NORMAL
-	db 37, VOLTORB
-	db 40, EXEGGCUTE
-	db 39, JIGGLYPUFF
-	db 41, KOFFING
+	db 50, VOLTORB
+	db 50, EXEGGCUTE
+	db 50, JIGGLYPUFF
+	db 50, KOFFING
 	db -1 ; end
 
 BlackbeltGroup:
