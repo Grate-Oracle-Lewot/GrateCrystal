@@ -488,3 +488,4 @@ INCLUDE "maps/PewterMuseum2F.asm"
 SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/Route22House.asm"
+INCLUDE "maps/GoldenrodGameCornerBackroom.asm"
