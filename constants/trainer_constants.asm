@@ -191,8 +191,6 @@ KRIS EQU __trainer_class__
 	const MICHELLE
 	const DANA1
 	const ELLEN
-	const CONNIE2 ; unused
-	const CONNIE3 ; unused
 	const DANA2
 	const DANA3
 	const DANA4
@@ -515,9 +513,7 @@ KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2 ; unused
-	const IRWIN3 ; unused
-	const IRWIN4 ; unused
+	const IRVING ; unused
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1 ; unused
@@ -641,8 +637,6 @@ KRIS EQU __trainer_class__
 	const BRANDON
 	const JEREMY
 	const COLIN
-	const DEREK2 ; unused
-	const DEREK3 ; unused
 	const ALEX
 	const REX
 	const ALLAN
@@ -670,8 +664,6 @@ KRIS EQU __trainer_class__
 	trainerclass POKEFANF ; 3e
 	const BEVERLY1
 	const RUTH
-	const BEVERLY2 ; unused
-	const BEVERLY3 ; unused
 	const GEORGIA
 	const JAIME
 	const VI
