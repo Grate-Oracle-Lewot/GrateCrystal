@@ -930,3 +930,6 @@ PewterMuseum2F_Blocks:
 
 Route22House_Blocks:
 	INCBIN "maps/Route22House.blk"
+
+GoldenrodGameCornerBackroom_Blocks:
+	INCBIN "maps/GoldenrodGameCornerBackroom.blk"
