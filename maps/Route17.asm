@@ -3,6 +3,8 @@
 	const ROUTE17_BIKER2
 	const ROUTE17_BIKER3
 	const ROUTE17_BIKER4
+	const ROUTE17_BIKER5
+	const ROUTE17_BIKER6
 
 Route17_MapScripts:
 	def_scene_scripts
@@ -55,6 +57,28 @@ TrainerBikerGlenn:
 	endifjustbattled
 	opentext
 	writetext BikerGlennAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerBenny:
+	trainer BIKER, BIKER_BENNY, EVENT_BEAT_BIKER_BENNY, BikerBennySeenText, BikerBennyBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BikerBennyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerKazu:
+	trainer BIKER, KAZU, EVENT_BEAT_BIKER_KAZU, BikerKazuSeenText, BikerKazuBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BikerKazuAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -130,6 +154,34 @@ BikerCharlesAfterBattleText:
 	cont "Take it easy!"
 	done
 
+BikerBennySeenText:
+	text "Va-va-va-vroom!"
+	done
+
+BikerBennyBeatenText:
+	text "Peal out!"
+	done
+
+BikerBennyAfterBattleText:
+	text "I started out on a"
+	line "tricycle."
+	done
+
+BikerKazuSeenText:
+	text "You should be wea-"
+	line "ring a helmet!"
+	done
+
+BikerKazuBeatenText:
+	text "You popped my"
+	line "tire!"
+	done
+
+BikerKazuAfterBattleText:
+	text "BIKE safety is"
+	line "important!"
+	done
+
 Route17_MapEvents:
 	db 0, 0 ; filler
 
@@ -148,3 +200,5 @@ Route17_MapEvents:
 	object_event  9, 68, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBikerJoel, -1
 	object_event  3, 53, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerGlenn, -1
 	object_event  6, 80, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1
+	object_event 14,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerBenny, -1
+	object_event 18, 34, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerKazu, -1
