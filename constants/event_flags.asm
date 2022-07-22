@@ -1078,7 +1078,8 @@
 	const EVENT_BEAT_GAMBLER_THOREAU
 	const EVENT_BEAT_GAMBLER_P_T
 	const EVENT_BEAT_GAMBLER_LIU_HAI
-; Unused: next 116 (now 82) events
+	const EVENT_BEAT_SUPER_NERD_RUSS
+; Unused: next 116 (now 81) events
 
 	const_next 1600
 ; Sprite visibility flags
