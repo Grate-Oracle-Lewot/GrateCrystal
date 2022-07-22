@@ -428,7 +428,7 @@ KRIS EQU __trainer_class__
 	const ERIC
 	const GREGG
 	const JAY
-	const DAVE ; unused
+	const DAVE
 	const SAM
 	const TOM
 	const PAT
