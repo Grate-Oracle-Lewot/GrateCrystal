@@ -434,7 +434,7 @@ KRIS EQU __trainer_class__
 	const PAT
 	const SHAWN
 	const TERU
-	const RUSS ; unused
+	const RUSS
 	const NORTON
 	const HUGH
 	const MARKUS
