@@ -291,9 +291,6 @@ GoldenrodGameCornerGentlemanScript:
 GoldenrodGameCornerPokefanM2Script:
 	jumptextfaceplayer GoldenrodGameCornerPokefanM2Text
 
-GoldenrodGameCornerLeftTheirDrinkScript:
-	jumptext GoldenrodGameCornerLeftTheirDrinkText
-
 GoldenrodGameCornerSlotsMachineScript:
 	random 6
 	ifequal 0, GoldenrodGameCornerLuckySlotsMachineScript
@@ -314,6 +311,17 @@ GoldenrodGameCornerCardFlipMachineScript:
 	refreshscreen
 	special CardFlip
 	closetext
+	end
+
+GoldenrodGameCornerPosterScript:
+	opentext
+	writetext GoldenrodGameCornerBehindPosterText
+	closetext
+	special FadeBlackQuickly
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	warp GOLDENROD_GAME_CORNER_BACKROOM, 2, 7
+	special FadeInQuickly
 	end
 
 GoldenrodGameCornerPrizeVendorIntroText:
@@ -466,13 +474,6 @@ MoveTutorInsideText:
 	line "keep rolling in!"
 	done
 
-GoldenrodGameCornerLeftTheirDrinkText:
-	text "Someone left their"
-	line "drink."
-
-	para "It smells sweet."
-	done
-
 GoldenrodGameCornerBehindPosterText:
 	text "…There's something"
 	line "behind the poster!"
@@ -519,7 +520,7 @@ GoldenrodGameCorner_MapEvents:
 	bg_event 18,  9, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
 	bg_event 18, 10, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 12,  1, BGEVENT_LEFT, GoldenrodGameCornerLeftTheirDrinkScript
+	bg_event  9,  0, BGEVENT_READ, GoldenrodGameCornerPosterScript
 
 	def_object_events
 	object_event  3,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCoinVendorScript, -1
