@@ -2434,9 +2434,10 @@ HoothootEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 2, GROWL
-	db 6, FORESIGHT
-	db 11, HYPNOSIS
-	db 16, NIGHTMARE
+	db 3, FORESIGHT
+	db 6, HYPNOSIS
+	db 11, NIGHTMARE
+	db 16, FAINT_ATTACK
 	db 22, REFLECT
 	db 28, TAKE_DOWN
 	db 34, DREAM_EATER
@@ -2449,9 +2450,10 @@ NoctowlEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 2, GROWL
-	db 6, FORESIGHT
-	db 11, HYPNOSIS
-	db 16, NIGHTMARE
+	db 3, FORESIGHT
+	db 6, HYPNOSIS
+	db 11, NIGHTMARE
+	db 16, FAINT_ATTACK
 	db 19, MEAN_LOOK
 	db 25, REFLECT
 	db 33, NIGHT_SHADE
