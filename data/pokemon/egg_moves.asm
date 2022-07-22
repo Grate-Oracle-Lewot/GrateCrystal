@@ -526,8 +526,8 @@ SentretEggMoves:
 
 HoothootEggMoves:
 	db MIRROR_MOVE
+	db SPITE
 	db CONFUSE_RAY
-	db FAINT_ATTACK
 	db WHIRLWIND
 	db SKY_ATTACK
 	db EGG_BOMB
