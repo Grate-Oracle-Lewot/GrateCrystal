@@ -478,8 +478,8 @@ KRIS EQU __trainer_class__
 	const ANTHONY5
 
 	trainerclass BIKER ; 2d
-	const BIKER_BENNY ; unused
-	const KAZU ; unused
+	const BIKER_BENNY
+	const KAZU
 	const DWAYNE
 	const HARRIS
 	const ZEKE
