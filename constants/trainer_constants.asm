@@ -513,7 +513,7 @@ KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRVING ; unused
+	const IRVING
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1 ; unused
