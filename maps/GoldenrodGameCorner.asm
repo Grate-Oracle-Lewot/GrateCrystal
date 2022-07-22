@@ -473,12 +473,18 @@ GoldenrodGameCornerLeftTheirDrinkText:
 	para "It smells sweet."
 	done
 
+GoldenrodGameCornerBehindPosterText:
+	text "…There's something"
+	line "behind the poster!"
+	done
+
 GoldenrodGameCorner_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  2, 13, GOLDENROD_CITY, 10
 	warp_event  3, 13, GOLDENROD_CITY, 10
+	warp_event  0,  0, GOLDENROD_GAME_CORNER_BACKROOM, 1
 
 	def_coord_events
 
