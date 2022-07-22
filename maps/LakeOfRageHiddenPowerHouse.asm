@@ -1,5 +1,6 @@
 	object_const_def
 	const LAKEOFRAGEHIDDENPOWERHOUSE_FISHER
+	const LAKEOFRAGEHIDDENPOWERHOUSE_SUPER_NERD
 
 LakeOfRageHiddenPowerHouse_MapScripts:
 	def_scene_scripts
@@ -24,6 +25,17 @@ HiddenPowerGuy:
 	writetext HiddenPowerGuyText3
 	waitbutton
 .Done:
+	closetext
+	end
+
+TrainerSupernerdDave:
+	trainer SUPER_NERD, DAVE, EVENT_BEAT_SUPER_NERD_DAVE, SupernerdDaveSeenText, SupernerdDaveBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SupernerdDaveAfterBattleText
+	waitbutton
 	closetext
 	end
 
@@ -65,6 +77,24 @@ HiddenPowerGuyText3:
 	text "I am meditating…"
 	done
 
+SupernerdDaveSeenText:
+	text "They ain't the"
+	line "greatest #MON,"
+
+	para "but they're the"
+	line "only ones I've"
+	cont "got!"
+	done
+
+SupernerdDaveBeatenText:
+	text "Bajabbers!"
+	done
+
+SupernerdDaveAfterBattleText:
+	text "I hate you so much"
+	line "right now."
+	done
+
 LakeOfRageHiddenPowerHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -80,3 +110,4 @@ LakeOfRageHiddenPowerHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1
+	object_event  0,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSupernerdDave, -1
