@@ -170,7 +170,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - A few songs imported from Gen I
 - A fourth Pokémon stats page showing caught data
 - One more wild Pokémon slot for both grass and water
-- Water level variance of +0 to +4 applied to all wild encounters, including fishing (exact probabilities altered a bit)
+- Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing, Headbutt, and Rock Smash (exact probabilities of each +1 altered a bit)
 - Time fishgroups actually have different Pokémon at different times
 - Unown ! and ? added (eyes not droopy)
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
