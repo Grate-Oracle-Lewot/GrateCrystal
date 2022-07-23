@@ -1,10 +1,10 @@
 	db "SPIKES@" ; species name
 	dw 303, 2540 ; height, weight
 
-	db   "It can remember"
-	next "only one thing at"
-	next "a time. Once it"
+	db   "Its poor eyesight"
+	next "means that if you"
+	next "huddle together,"
 
-	page "starts rushing, it"
-	next "forgets why it"
-	next "started.@"
+	page "it'll think you're"
+	next "all one big #-"
+	next "MON.@"
