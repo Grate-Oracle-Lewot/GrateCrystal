@@ -1,10 +1,10 @@
 	db "RAT@" ; species name
 	dw 204, 410 ; height, weight
 
-	db   "The webs on its"
-	next "hind legs enable"
-	next "it to cross"
+	db   "If it reaches a"
+	next "new landmass, it"
+	next "devastates the"
 
-	page "rivers. It search-"
-	next "es wide areas for"
-	next "food.@"
+	page "local ecosystem by"
+	next "eating rare #-"
+	next "MON EGGs.@"
