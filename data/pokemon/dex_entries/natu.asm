@@ -1,10 +1,10 @@
 	db "LITTLE BIRD@" ; species name
 	dw 8, 40 ; height, weight
 
-	db   "It is extremely"
-	next "good at climbing"
-	next "tree trunks and"
+	db   "It's so unbothered"
+	next "that it's often"
+	next "used as a ball by"
 
-	page "likes to eat the"
-	next "new sprouts on"
-	next "the trees.@"
+	page "children, and it"
+	next "hardly notices."
+	next "@"
