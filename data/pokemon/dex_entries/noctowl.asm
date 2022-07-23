@@ -1,10 +1,10 @@
 	db "OWL@" ; species name
 	dw 503, 900 ; height, weight
 
-	db   "Its extremely soft"
-	next "feathers make no"
-	next "sound in flight."
+	db   "It floats in the"
+	next "air without need-"
+	next "ing to flap its"
 
-	page "It silently sneaks"
-	next "up on prey without"
-	next "being detected.@"
+	page "wings. It catches"
+	next "prey while they're"
+	next "asleep.@"
