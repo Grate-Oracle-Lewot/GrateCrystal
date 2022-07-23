@@ -1,10 +1,10 @@
 	db "FAIRY@" ; species name
 	dw 407, 1070 ; height, weight
 
-	db   "It can make most"
-	next "any #MON run"
-	next "away simply by"
+	db   "It often becomes"
+	next "too big and rowdy"
+	next "for its wealthy"
 
-	page "opening its mouth"
-	next "wide to reveal its"
-	next "big fangs.@"
+	page "owners to handle,"
+	next "flooding stray"
+	next "shelters.@"
