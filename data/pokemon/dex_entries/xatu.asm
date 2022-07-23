@@ -1,10 +1,10 @@
 	db "MYSTIC@" ; species name
 	dw 411, 330 ; height, weight
 
-	db   "Once it begins to"
-	next "meditate at sun-"
-	next "rise, the entire"
+	db   "Psychics who comm-"
+	next "unicate with it"
+	next "report that it's"
 
-	page "day will pass"
-	next "before it will"
-	next "move again.@"
+	page "waiting for some-"
+	next "thing, but can't"
+	next "explain what.@"
