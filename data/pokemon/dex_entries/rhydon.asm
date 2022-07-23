@@ -1,10 +1,10 @@
 	db "DRILL@" ; species name
 	dw 603, 2650 ; height, weight
 
-	db   "By lightly spin-"
-	next "ning its drill-"
-	next "like horn, it can"
+	db   "It was the first"
+	next "#MON catalogued"
+	next "because it demol-"
 
-	page "easily shatter"
-	next "even a diamond in"
-	next "the rough.@"
+	page "ished the house of"
+	next "the first #DEX"
+	next "author.@"
