@@ -1,10 +1,10 @@
 	db "FLOWER@" ; species name
 	dw 104, 130 ; height, weight
 
-	db   "When these dance"
-	next "together, their"
-	next "petals rub against"
+	db   "A strange mutation"
+	next "in GLOOM or WEEP-"
+	next "INBELL has lost"
 
-	page "each other,"
-	next "making pretty,"
-	next "relaxing sounds.@"
+	page "their poisonous"
+	next "genes, creating"
+	next "this beauty.@"
