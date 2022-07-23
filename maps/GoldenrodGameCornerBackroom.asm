@@ -1,12 +1,12 @@
 	object_const_def
-  const GOLDENRODGAMECORNERBACKROOM_GYM_GUIDE
-  const GOLDENRODGAMECORNERBACKROOM_SAGE1
-  const GOLDENRODGAMECORNERBACKROOM_SAGE2
-  const GOLDENRODGAMECORNERBACKROOM_SAGE3
-  const GOLDENRODGAMECORNERBACKROOM_SAGE4
-  const GOLDENRODGAMECORNERBACKROOM_SAGE5
-  const GOLDENRODGAMECORNERBACKROOM_SAGE6
-  const GOLDENRODGAMECORNERBACKROOM_SAGE7
+	const GOLDENRODGAMECORNERBACKROOM_GYM_GUIDE
+	const GOLDENRODGAMECORNERBACKROOM_SAGE1
+	const GOLDENRODGAMECORNERBACKROOM_SAGE2
+	const GOLDENRODGAMECORNERBACKROOM_SAGE3
+	const GOLDENRODGAMECORNERBACKROOM_SAGE4
+	const GOLDENRODGAMECORNERBACKROOM_SAGE5
+	const GOLDENRODGAMECORNERBACKROOM_SAGE6
+	const GOLDENRODGAMECORNERBACKROOM_SAGE7
 
 GoldenrodGameCornerBackroom_MapScripts:
 	def_scene_scripts
@@ -14,7 +14,7 @@ GoldenrodGameCornerBackroom_MapScripts:
 	def_callbacks
 
 GoldenrodGameCornerBackroomGymGuideScript:
-  jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideText
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideText
 
 TrainerGamblerLucky:
 	trainer GAMBLER, LUCKY, EVENT_BEAT_GAMBLER_LUCKY, GamblerLuckySeenText, GamblerLuckyBeatenText, 0, .Script
@@ -98,7 +98,7 @@ GoldenrodGameCornerBackroomTrashcan:
 
 GoldenrodGameCornerBackroomGymGuideText:
 	text "Yo, CHAMP in"
-  line "making!"
+	line "making!"
 
 	para "Be careful in this"
 	line "room!"
@@ -113,126 +113,126 @@ GoldenrodGameCornerBackroomGymGuideText:
 	para "beat them at a"
 	line "lower level for an"
 
-  para "experience point"
-  line "jackpot!"
+	para "experience point"
+	line "jackpot!"
 
-  para "But on the other"
-  line "hand, you might go"
-  cont "home broke!"
+	para "But on the other"
+	line "hand, you might go"
+	cont "home broke!"
 
-  para "Think carefully"
-  line "about what you"
-  cont "want to do."
+	para "Think carefully"
+	line "about what you"
+	cont "want to do."
 	done
 
 GamblerLuckySeenText:
-  text "I'm gonna win big!"
-  done
+	text "I'm gonna win big!"
+	done
 
 GamblerLuckyBeatenText:
-  text "I lost big!"
-  done
+	text "I lost big!"
+	done
 
 GamblerLuckyAfterBattleText:
-  text "You won big!"
-  done
+	text "You won big!"
+	done
 
 GamblerHarveySeenText:
-  text "Life's nothing but"
-  line "a coin flip."
-  done
+	text "Life's nothing but"
+	line "a coin flip."
+	done
 
 GamblerHarveyBeatenText:
-  text "That coin came up"
-  line "tails for me."
-  done
+	text "That coin came up"
+	line "tails for me."
+	done
 
 GamblerHarveyAfterBattleText:
-  text "That's just how it"
-  line "goes."
-  done
+	text "Don't lose your"
+	line "head."
+	done
 
 GamblerAceSeenText:
-  text "One good roll is"
-  line "all I need!"
-  done
+	text "One good roll is"
+	line "all I need!"
+	done
 
 GamblerAceBeatenText:
-  text "Snake eyes!"
-  done
+	text "Snake eyes!"
+	done
 
 GamblerAceAfterBattleText:
-  text "That's the way the"
-  line "dice tumble."
-  done
+	text "That's the way the"
+	line "dice tumble."
+	done
 
 GamblerHuckSeenText:
-  text "Lady Luck will"
-  line "smile on me"
-  cont "tonight!"
-  done
+	text "Lady Luck will"
+	line "smile on me"
+	cont "tonight!"
+	done
 
 GamblerHuckBeatenText:
-  text "Lady Luck, why"
-  line "have you forsaken"
-  cont "me?!"
-  done
+	text "Lady Luck, why"
+	line "have you forsaken"
+	cont "me?!"
+	done
 
 GamblerHuckAfterBattleText:
-  text "I don't think Lady"
-  line "Luck is on my"
-  cont "side."
-  done
+	text "I don't think Lady"
+	line "Luck is on my"
+	cont "side."
+	done
 
 GamblerThoreauSeenText:
-  text "It's my lucky day!"
-  done
+	text "It's my lucky day!"
+	done
 
 GamblerThoreauBeatenText:
-  text "Don't I get a"
-  line "saving throw?"
-  done
+	text "Don't I get a"
+	line "saving throw?"
+	done
 
 GamblerThoreauAfterBattleText:
-  text "It wasn't my lucky"
-  line "day after all."
-  done
+	text "It wasn't my lucky"
+	line "day after all."
+	done
 
 GamblerPTSeenText:
-  text "It's all about"
-  line "showmanship!"
-  done
+	text "It's all about"
+	line "showmanship!"
+	done
 
 GamblerPTBeatenText:
-  text "Can I convince you"
-  line "that I won?"
-  done
+	text "Can I convince you"
+	line "that I won?"
+	done
 
 GamblerPTAfterBattleText:
-  text "Your skill over-"
-  line "powered my show-"
-  cont "manship."
-  done
+	text "Your skill over-"
+	line "powered my show-"
+	cont "manship."
+	done
 
 GamblerLiuHaiSeenText:
-  text "…"
+	text "…"
 
-  para "Some say I'm the"
-  line "luckiest one here."
+	para "Some say I'm the"
+	line "luckiest one here."
 
-  para "Let's find out."
-  done
+	para "Play your hand and"
+	line "we'll find out."
+	done
 
 GamblerLiuHaiBeatenText:
-  text "All luck runs out"
-  line "eventually…"
-  done
+	text "I fold."
+	done
 
 GamblerLiuHaiAfterBattleText:
-  text "The luck of the"
-  line "draw favors you,"
-  cont "it seems…"
-  done
+	text "The luck of the"
+	line "draw favors you,"
+	cont "it seems…"
+	done
 
 GoldenrodGameCornerBackroom_MapEvents:
 	db 0, 0 ; filler
@@ -244,15 +244,15 @@ GoldenrodGameCornerBackroom_MapEvents:
 	def_coord_events
 
 	def_bg_events
-  bg_event  5,  1, BGEVENT_READ, GoldenrodGameCornerBackroomTrashcan
-  bg_event  9,  7, BGEVENT_READ, GoldenrodGameCornerBackroomTrashcan
+	bg_event  5,  1, BGEVENT_READ, GoldenrodGameCornerBackroomTrashcan
+	bg_event  9,  7, BGEVENT_READ, GoldenrodGameCornerBackroomTrashcan
 
 	def_object_events
-  object_event  1,  7, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerBackroomGymGuideScript, -1
-  object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLucky, -1
-  object_event  2,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHarvey, -1
-  object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerAce, -1
-  object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHuck, -1
-  object_event  7,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerThoreau, -1
-  object_event  8,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerPT, -1
-  object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLiuHai, -1
+	object_event  1,  7, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerBackroomGymGuideScript, -1
+	object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLucky, -1
+	object_event  2,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHarvey, -1
+	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerAce, -1
+	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHuck, -1
+	object_event  7,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerThoreau, -1
+	object_event  8,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerPT, -1
+	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLiuHai, -1
