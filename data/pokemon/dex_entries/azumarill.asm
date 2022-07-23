@@ -1,10 +1,10 @@
 	db "AQUARABBIT@" ; species name
 	dw 207, 630 ; height, weight
 
-	db   "The bubble-like"
-	next "pattern on its"
-	next "stomach helps it"
+	db   "Its long ears can"
+	next "hear from 19 miles"
+	next "away, and 42 miles"
 
-	page "camouflage itself"
-	next "when it's in the"
-	next "water.@"
+	page "when underwater."
+	next "They're also"
+	next "flippy-floppy.@"
