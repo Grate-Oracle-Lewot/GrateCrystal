@@ -1,10 +1,10 @@
 	db "FLYCATCHER@" ; species name
 	dw 507, 340 ; height, weight
 
-	db   "Once ingested into"
-	next "this #MON's"
-	next "body, even the"
+	db   "Its name properly"
+	next "ends with two Ls,"
+	next "but an ancient"
 
-	page "hardest object"
-	next "will melt into"
-	next "nothing.@"
+	page "typographical err-"
+	next "or persists into"
+	next "modern times.@"
