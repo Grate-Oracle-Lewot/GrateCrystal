@@ -1,10 +1,10 @@
 	db "STARSHAPE@" ; species name
 	dw 207, 760 ; height, weight
 
-	db   "When the stars"
-	next "twinkle at night,"
-	next "it floats up from"
+	db   "EEGs of its gem"
+	next "show that it's in"
+	next "a constant state"
 
-	page "the sea floor, and"
-	next "its body's center"
-	next "core flickers.@"
+	page "of dreaming about"
+	next "battling building-"
+	next "sized #MON.@"
