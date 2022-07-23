@@ -1,10 +1,10 @@
 	db "TRANSPORT@" ; species name
 	dw 802, 4850 ; height, weight
 
-	db   "This gentle"
-	next "#MON loves to"
-	next "give people rides"
+	db   "Before the advent"
+	next "of boats, it was"
+	next "the original form"
 
-	page "and provides a ve-"
-	next "ry comfortable way"
-	next "to get around.@"
+	page "of ferry. Some"
+	next "seem to resent"
+	next "losing the role.@"
