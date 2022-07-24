@@ -399,7 +399,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Mysticalman
-	db FULL_HEAL, HYPER_POTION ; items
+	db FULL_HEAL, MAX_POTION ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
