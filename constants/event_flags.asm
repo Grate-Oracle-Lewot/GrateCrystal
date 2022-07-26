@@ -1079,7 +1079,8 @@
 	const EVENT_BEAT_GAMBLER_P_T
 	const EVENT_BEAT_GAMBLER_LIU_HAI
 	const EVENT_BEAT_SUPER_NERD_RUSS
-; Unused: next 116 (now 81) events
+	const EVENT_DARK_CAVE_2F_HIDDEN_AMULET_COIN
+; Unused: next 116 (now 80) events
 
 	const_next 1600
 ; Sprite visibility flags
@@ -1529,7 +1530,8 @@
 	const EVENT_SEAFOAM_CAVE_B1F_SACRED_ASH
 	const EVENT_ILEX_FOREST_GOLD_LEAF
 	const EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
-; Unused: next 48 (now 13) events
+	const EVENT_DARK_CAVE_2F_FOCUS_BAND
+; Unused: next 48 (now 12) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
