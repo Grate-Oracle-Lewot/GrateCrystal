@@ -164,7 +164,7 @@ ItemEffects:
 	dw DiscoBallEffect     ; DISCO_BALL
 	dw EggBeaterEffect     ; EGG_BEATER
 	dw RestorePPEffect     ; MYSTERYBERRY
-	dw NoEffect            ; DRAGON_SCALE
+	dw EvoStoneEffect      ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw PickaxeEffect       ; PICKAXE
 	dw FearowbotEffect     ; FEAROWBOT
