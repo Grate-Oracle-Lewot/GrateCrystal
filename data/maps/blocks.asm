@@ -933,3 +933,6 @@ Route22House_Blocks:
 
 GoldenrodGameCornerBackroom_Blocks:
 	INCBIN "maps/GoldenrodGameCornerBackroom.blk"
+
+DarkCave2F_Blocks:
+	INCBIN "maps/DarkCave2F.blk"
