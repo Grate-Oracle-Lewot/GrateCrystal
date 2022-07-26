@@ -1079,8 +1079,10 @@
 	const EVENT_BEAT_GAMBLER_P_T
 	const EVENT_BEAT_GAMBLER_LIU_HAI
 	const EVENT_BEAT_SUPER_NERD_RUSS
+	const EVENT_BEAT_BLACKBELT_JACKIE
+	const EVENT_BEAT_BLACKBELT_BRUCE
 	const EVENT_DARK_CAVE_2F_HIDDEN_AMULET_COIN
-; Unused: next 116 (now 80) events
+; Unused: next 116 (now 78) events
 
 	const_next 1600
 ; Sprite visibility flags
