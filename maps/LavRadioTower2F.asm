@@ -11,6 +11,7 @@ LavRadioTower2F_MapScripts:
 .Mewtwo:
 	checkevent EVENT_FOUGHT_MEWTWO
 	iftrue .NoAppear
+	endcallback
 
 .NoAppear:
 	disappear LAVRADIOTOWER2F_MEWTWO
