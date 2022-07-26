@@ -1296,7 +1296,8 @@ GruntMGroup:
 	db 20, RATTATA
 	db 27, RATTATA
 	db 34, RATTATA
-	db 40, RATTATA
+	db 41, RATTATA
+	db 48, RATTATA
 	db -1 ; end
 
 	; GRUNTM (6)
