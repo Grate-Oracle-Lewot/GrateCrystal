@@ -147,7 +147,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorina and Nidoqueen can breed
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
-- A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid, Smoochum, and Yanma now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
+- A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat, Dragon Scale, and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid, Smoochum, and Yanma now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
 - All final form starter base stat totals increased to 534
 - Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
