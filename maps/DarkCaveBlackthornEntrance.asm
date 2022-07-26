@@ -66,7 +66,7 @@ DarkCaveBlackthornEntrancePharmacistText1:
 	done
 
 DarkCaveBlackthornEntrancePharmacistText2:
-	text "BLACKGLASSES ups"
+	text "BLACKGLASSES up"
 	line "the power of dark-"
 	cont "type moves."
 	done
