@@ -487,6 +487,7 @@ ENDM
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
 	map_attributes SafariZone, SAFARI_ZONE, $05, 0
+	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
