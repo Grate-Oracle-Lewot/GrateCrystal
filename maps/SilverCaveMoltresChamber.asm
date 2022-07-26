@@ -12,6 +12,7 @@ SilverCaveMoltresChamber_MapScripts:
 .Moltres:
 	checkevent EVENT_FOUGHT_MOLTRES
 	iftrue .NoAppear
+	endcallback
 
 .NoAppear:
 	disappear SILVERCAVEMOLTRESCHAMBER_SLOWKING
