@@ -4634,26 +4634,15 @@ BattleAnim_BeatUp:
 	anim_ret
 
 BattleAnim_DrainKiss:
-	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
+	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS, ANIM_GFX_BUBBLE
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
 	anim_wait 32
-	anim_sound 0, 1, SFX_LICK
+	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj ANIM_OBJ_HEART, 128, 40, $0
-	anim_wait 32
-	anim_1gfx ANIM_GFX_SPEED
-	anim_obp0 $fc
-	anim_sound 63, 3, SFX_LICK
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $0
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $8
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $10
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $18
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $20
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $28
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $30
-	anim_obj ANIM_OBJ_MIMIC, 132, 44, $38
+	anim_call BattleAnimSub_Drain
 	anim_wait 128
-	anim_wait 48
+	anim_wait 42
 	anim_ret
 
 BattleAnim_Moonblast:
