@@ -240,7 +240,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 9 ; # items
+	db 10 ; # items
 	db ULTRA_BALL
 	db DUSK_BALL
 	db HYPER_POTION
