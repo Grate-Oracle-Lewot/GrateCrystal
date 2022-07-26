@@ -160,6 +160,7 @@ ENDM
 	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 96
 	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 97
 	map_const SAFARI_ZONE,                                 30, 27 ; 98
+	map_const DARK_CAVE_2F,                                10,  9 ; 99
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
