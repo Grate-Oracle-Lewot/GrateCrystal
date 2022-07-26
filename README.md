@@ -122,6 +122,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
+- An extra room in Dark Cave
 - A backroom to the Goldenrod Game Corner where you can battle Gamblers whose Pokémon are high-level but use luck-based moves like one-hit-KOs or Metronome
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 - A house on Route 22 where different characters appear, most of whom can be battled once per day
