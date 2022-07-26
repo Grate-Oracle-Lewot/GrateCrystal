@@ -12,6 +12,7 @@ IcePathArticunoChamber_MapScripts:
 .Articuno:
 	checkevent EVENT_FOUGHT_ARTICUNO
 	iftrue .NoAppear
+	endcallback
 
 .NoAppear:
 	disappear ICEPATHARTICUNOCHAMBER_SLOWKING
