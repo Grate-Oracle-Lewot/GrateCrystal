@@ -17,12 +17,12 @@ LavRadioTower1F_MapScripts:
 	iftrue .NextCheck
 	endcallback
 
-.NextCheck
+.NextCheck:
 	checkevent EVENT_FOUGHT_MEWTWO
 	iffalse .OfficerMovedUpstairs
 	endcallback
 
-.OfficerMovedUpstairs
+.OfficerMovedUpstairs:
 	disappear LAVRADIOTOWER1F_OFFICER
 	endcallback
 
