@@ -35,6 +35,7 @@ FlowerShopTeacherScript:
 	opentext
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
 	waitbutton
+	closetext
 	takeitem SQUIRTBOTTLE
 	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
 	opentext
@@ -130,12 +131,16 @@ GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	done
 
 GoldenrodFlowerShopTeacherTakeBackSquirtbottle:
-	text "Oh, are you done"
-	line "with that"
-	cont "SQUIRTBOTTLE?"
+	text "Oh, so the tree"
+	line "was a SUDOWOODO?"
 
-	para "I'll take it back,"
-	line "then."
+	para "I should've known!"
+
+	para "I'll take that"
+	line "SQUIRTBOTTLE back,"
+	cont "then."
+
+	para "Thank you!"
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
