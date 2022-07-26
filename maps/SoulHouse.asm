@@ -8,6 +8,22 @@ SoulHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .MrFujiCallback
+
+.MrFujiCallback:
+	appear SOULHOUSE_MRFUJI
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY, .CheckMorning
+	endcallback
+
+.CheckMorning:
+	checktime MORN
+	iftrue .MrFujiAtRoute22House
+	endcallback
+
+.MrFujiAtRoute22House:
+	disappear SOULHOUSE_MRFUJI
+	endcallback
 
 MrFuji:
 	jumptextfaceplayer MrFujiText
@@ -82,7 +98,7 @@ SoulHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFuji, -1
+	object_event  4,  2, SPRITE_MR_FUJI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFuji, EVENT_SOUL_HOUSE_MR_FUJI
 	object_event  7,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseTeacherScript, -1
 	object_event  2,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseLassScript, -1
 	object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseGrannyScript, -1
