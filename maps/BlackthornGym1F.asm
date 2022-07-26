@@ -365,6 +365,12 @@ BlackthornGymGuideText:
 
 	para "also super"
 	line "effective!"
+
+	para "They're resistant"
+	line "to fire, water,"
+
+	para "grass, and"
+	line "electric."
 	done
 
 BlackthornGymGuideWinText:
