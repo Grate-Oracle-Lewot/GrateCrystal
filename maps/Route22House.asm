@@ -595,33 +595,35 @@ Route22HouseMrFujiText:
 	text "Greetings, child."
 	line "I am MR.FUJI."
 
-	para "There was once a"
-	line "place in LAVENDER"
+	para "I tend to the SOUL"
+	line "HOUSE in LAVENDER"
+	cont "TOWN."
 
-	para "TOWN where the"
-	line "souls of #MON"
+	para "Honoring #MON"
+	line "who have passed on"
 
-	para "who have passed on"
-	line "were honored…"
+	para "is noble work, but"
+	line "some mornings I"
 
-	para "The building may"
-	line "be gone, but those"
+	para "come here to have"
+	line "a little time"
 
-	para "who remember their"
-	line "dear friends will"
+	para "alone, to collect"
+	line "my thoughts."
 
-	para "always keep them"
-	line "alive in their"
-	cont "hearts."
+	para "Remember this ad-"
+	line "vice: you cannot"
 
-	para "Be sure to cherish"
-	line "your time with"
-	cont "your #MON."
+	para "take care of your"
+	line "loved ones if you"
+
+	para "do not take care"
+	line "of yourself."
 	done
 
 Route22HouseOfficerJennyText:
 	text "OFFICER JENNY"
-	line "reporting."
+	line "reporting!"
 
 	para "Our sources say"
 	line "that the notorious"
