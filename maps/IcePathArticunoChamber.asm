@@ -36,9 +36,9 @@ IcePathArticunoChamberArticunoScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	loadwildmon ARTICUNO, 40
 	startbattle
-	reloadmapafterbattle
 	disappear ICEPATHARTICUNOCHAMBER_SLOWKING
 	disappear ICEPATHARTICUNOCHAMBER_ARTICUNO
+	reloadmapafterbattle
 	end
 
 IcePathArticunoChamberSlowkingText:
