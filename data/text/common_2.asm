@@ -708,7 +708,7 @@ _BattleLoweredHeadText::
 
 _BattleGlowingText::
 	text_start
-	line "is glowing!"
+	line "took to the sky!"
 	autodone
 
 _BattleFlewText::
