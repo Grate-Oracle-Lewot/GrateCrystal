@@ -1778,9 +1778,9 @@ FisherGroup:
 
 	; FISHER (21)
 	db "SCOTT@", TRAINERTYPE_NORMAL
-	db 37, QWILFISH
-	db 36, VAPOREON
-	db 35, SEAKING
+	db 42, QWILFISH
+	db 41, VAPOREON
+	db 40, SEAKING
 	db -1 ; end
 
 	; FISHER (22)
