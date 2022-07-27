@@ -1131,12 +1131,12 @@ BeautyGroup:
 
 	; BEAUTY (3)
 	db "JULIE@", TRAINERTYPE_NORMAL
-	db 43, SENTRET
+	db 47, SENTRET
 	db -1 ; end
 
 	; BEAUTY (4)
 	db "JACLYN@", TRAINERTYPE_NORMAL
-	db 43, SNUBBULL
+	db 47, SNUBBULL
 	db -1 ; end
 
 	; BEAUTY (5)
@@ -1152,7 +1152,7 @@ BeautyGroup:
 
 	; BEAUTY (7)
 	db "CAROLINE@", TRAINERTYPE_NORMAL
-	db 43, MARILL
+	db 47, MARILL
 	db -1 ; end
 
 	; BEAUTY (14)
@@ -1164,7 +1164,7 @@ BeautyGroup:
 
 	; BEAUTY (15)
 	db "THERESA@", TRAINERTYPE_NORMAL
-	db 43, JIGGLYPUFF
+	db 47, JIGGLYPUFF
 	db -1 ; end
 
 	; BEAUTY (16)
