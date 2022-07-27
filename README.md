@@ -215,7 +215,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Pokémon icons don't color on the nicknaming screen
 
-- The Fearowbot makes the fly icon palette screwy
+- The Fearowbot makes the Fly icon palette screwy
 
 # FAQ
 
