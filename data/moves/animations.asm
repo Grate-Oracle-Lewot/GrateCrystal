@@ -2840,8 +2840,8 @@ BattleAnim_SilverWind:
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_battlergfx_1row
-	anim_sound 0, 1, SFX_RAZOR_WIND
 .loop
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
 	anim_wait 8
