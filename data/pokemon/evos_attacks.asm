@@ -1852,8 +1852,8 @@ JynxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 1, GROWL
-	db 9, LOVELY_KISS
-	db 13, POWDER_SNOW
+	db 9, POWDER_SNOW
+	db 13, LOVELY_KISS
 	db 17, DRAIN_KISS
 	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
@@ -3553,8 +3553,8 @@ SmoochumEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 1, GROWL
-	db 9, SWEET_KISS
-	db 13, POWDER_SNOW
+	db 9, POWDER_SNOW
+	db 13, SWEET_KISS
 	db 17, DRAIN_KISS
 	db 21, DOUBLESLAP
 	db 25, CONFUSION
