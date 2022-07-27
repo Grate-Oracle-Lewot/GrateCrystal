@@ -211,9 +211,11 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Whimsicott's back sprite is scrambled (probably applies to Yanmega and the ! and ? Unowns as well)
 
-- Enemy trainer Pokémon don't heal with a held Gold Berry (probably Berry Juice too)
+- Enemy trainer Pokémon don't heal with a held Gold Berry
 
 - Pokémon icons don't color on the nicknaming screen
+
+- The Fearowbot makes the fly icon palette screwy
 
 # FAQ
 
