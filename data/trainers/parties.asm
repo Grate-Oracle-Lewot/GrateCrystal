@@ -2230,8 +2230,8 @@ GuitaristGroup:
 
 	; GUITARIST (3)
 	db "CASEY@", TRAINERTYPE_NORMAL
-	db 39, SCIZOR
-	db 39, FORRETRESS
+	db 41, SCIZOR
+	db 41, FORRETRESS
 	db -1 ; end
 
 HikerGroup:
@@ -3139,7 +3139,7 @@ MediumGroup:
 
 	; MEDIUM (5)
 	db "CHELL@", TRAINERTYPE_MOVES
-	db 50, ABRA,      TELEPORT, NO_MOVE, NO_MOVE, NO_MOVE
+	db 100, ABRA,     TELEPORT, NO_MOVE, NO_MOVE, NO_MOVE
 	db 42, HYPNO,     HYPNOSIS, DREAM_EATER, NIGHTMARE, PURSUIT
 	db -1 ; end
 
