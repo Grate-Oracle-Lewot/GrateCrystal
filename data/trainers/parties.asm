@@ -2705,7 +2705,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (9)
 	db "RICHARD@", TRAINERTYPE_NORMAL
-	db 42, ESPEON
+	db 44, ESPEON
 	db -1 ; end
 
 	; PSYCHIC_T (10)
