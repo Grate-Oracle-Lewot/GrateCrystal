@@ -12,7 +12,7 @@ Route32Pokecenter1F_MapScripts:
 
 .Flypoint:
 	setflag ENGINE_FLYPOINT_UNION_CAVE
-	return
+	endcallback
 
 Route32Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
