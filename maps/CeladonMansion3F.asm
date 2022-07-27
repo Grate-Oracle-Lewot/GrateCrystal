@@ -82,14 +82,15 @@ CeladonMansion3FReferenceMaterial:
 	jumptext CeladonMansion3FReferenceMaterialText
 
 GameFreakGameDesignerText:
-	text "Is that right?"
-
-	para "I'm the GAME"
+	text "I'm the GAME"
 	line "DESIGNER!"
 
-	para "Filling up your"
-	line "#DEX is tough,"
-	cont "but don't give up!"
+	para "Have you seen that"
+	line "LEWOT cretin?"
+
+	para "We're trying to"
+	line "arrest him for"
+	cont "hacking our game!"
 	done
 
 GameFreakGameDesignerCompletedPokedexText:
@@ -118,6 +119,16 @@ GameFreakGraphicArtistText:
 	line "ARTIST."
 
 	para "I drew you!"
+
+	para "I don't know about"
+	line "some of the visual"
+
+	para "edits in this"
+	line "hack, but the"
+
+	para "YANEMGA and"
+	line "WHIMSICOTT sprites"
+	cont "are cute."
 	done
 
 GameFreakGraphicArtistPrintDiplomaText:
@@ -147,8 +158,15 @@ GameFreakProgrammerText:
 	text "Who, me? I'm the"
 	line "PROGRAMMER."
 
-	para "Play the slot"
-	line "machines!"
+	para "The legal team may"
+	line "not approve of"
+
+	para "GitHub's disassem-"
+	line "bly, but it is an"
+
+	para "impressive tool"
+	line "for making hacks"
+	cont "like this."
 	done
 
 GameFreakCharacterDesignerText:
@@ -174,10 +192,10 @@ CeladonMansion3FDrawingText:
 
 CeladonMansion3FGameProgramText:
 	text "It's the game"
-	line "program. Messing"
+	line "program. It's been"
 
-	para "with it could put"
-	line "a bug in the game!"
+	para "messed with to"
+	line "create the hack."
 	done
 
 CeladonMansion3FReferenceMaterialText:
