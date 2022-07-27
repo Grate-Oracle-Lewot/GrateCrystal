@@ -108,10 +108,10 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 35, SEAKING
-	db 35, GOLDUCK
-	db 35, GOLDEEN
-	db 35, BLASTOISE
+	db 40, SEAKING
+	db 40, GOLDUCK
+	db 40, GOLDEEN
+	db 40, BLASTOISE
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -132,10 +132,10 @@ JohtoWaterWildMons:
 
 	def_water_wildmons DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
-	db 15, MAGIKARP
-	db 20, YANMA
-	db 15, DRATINI
-	db 20, GYARADOS
+	db 25, MAGIKARP
+	db 30, YANMA
+	db 25, DRATINI
+	db 30, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_PORT
@@ -284,26 +284,26 @@ JohtoWaterWildMons:
 
 	def_water_wildmons LAKE_OF_RAGE
 	db 6 percent ; encounter rate
+	db 20, MAGIKARP
 	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 15, GYARADOS
 	db 20, GYARADOS
+	db 25, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons BLACKTHORN_CITY
 	db 4 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 20, GYARADOS
+	db 25, MAGIKARP
+	db 20, MAGIKARP
+	db 30, GYARADOS
 	db 5, DRATINI
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate
-	db 35, POLIWHIRL
 	db 40, POLIWHIRL
-	db 35, POLIWAG
-	db 35, FERALIGATR
+	db 45, POLIWHIRL
+	db 40, POLIWAG
+	db 40, FERALIGATR
 	end_water_wildmons
 
 	def_water_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
