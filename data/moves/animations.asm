@@ -4651,11 +4651,11 @@ BattleAnim_Moonblast:
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a8
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
-.loop
 	anim_sound 0, 0, SFX_FLASH
-	anim_wait 16
+.loop
+	anim_wait 8
 	anim_loop 8, .loop
-	anim_wait 32
+	anim_wait 8
 	anim_ret
 
 BattleAnim_Struggle:
