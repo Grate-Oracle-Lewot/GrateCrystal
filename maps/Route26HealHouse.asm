@@ -65,4 +65,4 @@ Route26HealHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route26HealHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26HealHouseTeacherScript, -1
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route26HealHouseTeacherScript, -1
