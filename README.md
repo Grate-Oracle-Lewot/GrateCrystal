@@ -25,7 +25,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
   - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto
-  - A few new trainer battles
+  - Some new trainer battles
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg
 - New Pokédex entries for every Pokémon (still in progress)
 - A few Pokémon have been reverted to their beta designs from the Spaceworld demos, and Butterfree and Venomoth have had their sprites swapped
@@ -142,6 +142,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Chansey NPCs in Pokémon Centers, and nurses are color-coded based on the city's name
 - Color-coded starter balls
 - Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash)
+- Trainers give more money upon defeat
 - Happiness builds faster
 - Eggs hatch twice as fast
 - Nidorina and Nidoqueen can breed
