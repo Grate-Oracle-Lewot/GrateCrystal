@@ -180,11 +180,13 @@ BattleCommand_CheckTurn:
 	ld hl, FastAsleepText
 	call StdBattleTextbox
 
-	; Snore and Sleep Talk bypass sleep.
+	; Snore, Sleep Talk, and Night Terror bypass sleep.
 	ld a, [wCurPlayerMove]
 	cp SNORE
 	jr z, .not_asleep
 	cp SLEEP_TALK
+	jr z, .not_asleep
+	cp NIGHT_TERROR
 	jr z, .not_asleep
 
 	call CantMove
@@ -401,11 +403,13 @@ CheckEnemyTurn:
 	jr .not_asleep
 
 .fast_asleep
-	; Snore and Sleep Talk bypass sleep.
+	; Snore, Sleep Talk, and Night Terror bypass sleep.
 	ld a, [wCurEnemyMove]
 	cp SNORE
 	jr z, .not_asleep
 	cp SLEEP_TALK
+	jr z, .not_asleep
+	cp NIGHT_TERROR
 	jr z, .not_asleep
 	call CantMove
 	jp EndTurn
@@ -904,10 +908,12 @@ IgnoreSleepOnly:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
-	; Snore and Sleep Talk bypass sleep.
+	; Snore, Sleep Talk, and Night Terror bypass sleep.
 	cp SNORE
 	jr z, .CheckSleep
 	cp SLEEP_TALK
+	jr z, .CheckSleep
+	cp NIGHT_TERROR
 	jr z, .CheckSleep
 	and a
 	ret
