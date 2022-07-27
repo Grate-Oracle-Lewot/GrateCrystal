@@ -1357,13 +1357,9 @@ BattleAnim_Selfdestruct:
 	anim_ret
 
 BattleAnim_DarkPulse:
-	anim_1gfx ANIM_GFX_HIT
-	anim_bgp $1b
-	anim_obp1 $1b
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgp $1b
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $8
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $10
@@ -1376,8 +1372,6 @@ BattleAnim_DarkPulse:
 	anim_sound 0, 0, SFX_SWORDS_DANCE
 	anim_wait 8
 	anim_loop 12, .loop
-	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
-	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 	anim_incobj 2
 	anim_incobj 3
