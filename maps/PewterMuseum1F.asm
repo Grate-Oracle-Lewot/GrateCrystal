@@ -10,17 +10,9 @@ PewterMuseum1FScientistScript:
 	jumptextfaceplayer PewterMuseum1FScientistText
 
 AerodactylFossilSignScript:
-	refreshscreen $0
-	trainerpic AEROBONES
-	waitbutton
-	closepokepic
 	jumptext AerodactylFossilSignText
 
 KabutopsFossilSignScript:
-	refreshscreen $0
-	trainerpic KABUBONES
-	waitbutton
-	closepokepic
 	jumptext KabutopsFossilSignText
 
 GrowlitheBookshelfScript:
