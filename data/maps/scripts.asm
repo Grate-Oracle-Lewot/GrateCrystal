@@ -490,3 +490,4 @@ SECTION "Map Scripts 26", ROMX
 INCLUDE "maps/Route22House.asm"
 INCLUDE "maps/GoldenrodGameCornerBackroom.asm"
 INCLUDE "maps/DarkCave2F.asm"
+INCLUDE "maps/Route3Pokecenter1F.asm"
