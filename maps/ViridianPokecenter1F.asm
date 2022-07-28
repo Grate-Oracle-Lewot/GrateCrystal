@@ -60,7 +60,7 @@ ViridianPokecenter1FCooltrainerMText_BlueReturned:
 
 ViridianPokecenter1FCooltrainerFText:
 	text "I heard that the"
-	line "GYM in CINNABAR is"
+	line "GYM on CINNABAR is"
 	cont "gone."
 
 	para "I wonder what be-"
