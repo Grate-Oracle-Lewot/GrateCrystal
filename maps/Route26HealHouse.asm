@@ -9,7 +9,7 @@ Route26HealHouse_MapScripts:
 
 .Flypoint:
 	setflag ENGINE_FLYPOINT_VICTORY_ROAD
-	return
+	endcallback
 
 Route26HealHouseTeacherScript:
 	faceplayer
