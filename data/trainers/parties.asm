@@ -1541,15 +1541,15 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 35, BEEDRILL
-	db 35, BUTTERFREE
+	db 50, BEEDRILL
+	db 50, BUTTERFREE
 	db -1 ; end
 
 	; BUG_CATCHER (3)
 	db "ED@", TRAINERTYPE_NORMAL
-	db 30, BEEDRILL
-	db 30, YANMEGA
-	db 30, PINSIR
+	db 45, BEEDRILL
+	db 45, YANMEGA
+	db 45, PINSIR
 	db -1 ; end
 
 	; BUG_CATCHER (4)
@@ -1607,7 +1607,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 50, LEDIAN
+	db 60, LEDIAN
 	db -1 ; end
 
 	; BUG_CATCHER (13)
