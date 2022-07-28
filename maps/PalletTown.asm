@@ -42,9 +42,12 @@ PalletTownFisherText:
 	text "Technology is"
 	line "incredible!"
 
-	para "You can now trade"
-	line "#MON across"
-	cont "time like e-mail."
+	para "You can access a"
+	line "disassembly of a"
+
+	para "game's code and"
+	line "edit it to create"
+	cont "your own hack!"
 	done
 
 PalletTownSignText:
