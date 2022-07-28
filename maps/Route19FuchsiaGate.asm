@@ -23,23 +23,23 @@ Route19FuchsiaGateOfficerScript:
 	end
 
 Route19FuchsiaGateOfficerText:
-	text "There was a huge"
-	line "explosion on"
-	cont "CINNABAR."
+	text "Three years ago,"
+	line "there was a huge"
+
+	para "explosion on"
+	line "CINNABAR ISLAND."
 
 	para "It hurled boulders"
 	line "that cut off ROUTE"
 	cont "19 indefinitely."
-
-	para "I wonder if the"
-	line "people of CINNABAR"
-	cont "are safe…"
 	done
 
 Route19FuchsiaGateOfficerText_RocksCleared:
-	text "No CINNABAR citi-"
-	line "zens were injured"
-	cont "by the explosion."
+	text "After three years,"
+	line "the rubble from"
+
+	para "that explosion is"
+	line "finally gone."
 
 	para "But I wonder what"
 	line "caused it in the"
