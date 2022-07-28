@@ -171,7 +171,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw GravityBuoyDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
@@ -896,7 +896,7 @@ FastBallDesc:
 	next "MON that flee.@"
 
 XEvadeDesc:
-	db   "Raises evasion."
+	db   "Raises EVASION."
 	next "(1 BTL)@"
 
 LightBallDesc:
@@ -931,8 +931,9 @@ PolkadotBowDesc:
 	db   "Powers up fairy-"
 	next "type moves. (HOLD)@"
 
-TeruSama22Desc:
-	db   "?@"
+GravityBuoyDesc:
+	db   "Pulls you up wat-"
+	next "erfalls by itself!@"
 
 UpGradeDesc:
 	db   "Upgrades PORYGON"
