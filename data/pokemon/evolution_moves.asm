@@ -153,7 +153,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MEW
 	db NO_MOVE      ; CHIKORITA
 	db NO_MOVE      ; BAYLEEF
-	db NO_MOVE      ; MEGANIUM
+	db PETAL_DANCE  ; MEGANIUM
 	db NO_MOVE      ; CYNDAQUIL
 	db NO_MOVE      ; QUILAVA
 	db NO_MOVE      ; TYPHLOSION
