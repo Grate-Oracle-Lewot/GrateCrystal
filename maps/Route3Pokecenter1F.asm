@@ -1,8 +1,10 @@
 	object_const_def
-	const PEWTERPOKECENTER1F_NURSE
-	const PEWTERPOKECENTER1F_CHANSEY
+	const ROUTE3POKECENTER1F_NURSE
+	const ROUTE3POKECENTER1F_CHANSEY
+	const ROUTE3POKECENTER1F_GAMEBOY_KID
+	const ROUTE3POKECENTER1F_LASS
 
-PewterPokecenter1F_MapScripts:
+Route3Pokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -12,13 +14,42 @@ PewterPokecenter1F_MapScripts:
 	setflag ENGINE_FLYPOINT_MT_MOON
 	endcallback
 
-PewterPokecenter1FNurseScript:
+Route3Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
-PewterPokecenter1FChanseyScript:
+Route3Pokecenter1FChanseyScript:
 	jumpstd PokecenterChanseyScript
 
-PewterPokecenter1F_MapEvents:
+Route3Pokecenter1FGameboyKidScript:
+	faceplayer
+	opentext
+	writetext Route3Pokecenter1FGameboyKidText
+	waitbutton
+	closetext
+	turnobject ROUTE3POKECENTER1F_GAMEBOY_KID, DOWN
+	end
+
+Route3Pokecenter1FLassScript:
+	jumptextfaceplayer Route3Pokecenter1FLassText
+
+Route3Pokecenter1FGameboyKidText:
+	text "I'm trying to make"
+	line "my own hack."
+
+	para "But it's really"
+	line "hard…"
+	done
+
+Route3Pokecenter1FLassText:
+	text "This #MON CEN-"
+	line "TER is the newest"
+	cont "one in KANTO."
+
+	para "It's got that new"
+	line "building smell!"
+	done
+
+Route3Pokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
@@ -31,5 +62,7 @@ PewterPokecenter1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FNurseScript, -1
-	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FChanseyScript, -1
+	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route3Pokecenter1FNurseScript, -1
+	object_event  4,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, Route3Pokecenter1FChanseyScript, -1
+	object_event  7,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route3Pokecenter1FGameboyKidScript, -1
+	object_event  2,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route3Pokecenter1FLassScript, -1
