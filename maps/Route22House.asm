@@ -324,7 +324,22 @@ Route22HouseMrFujiScript:
 	end
 
 Route22HouseOfficerJennyScript:
-	jumptextfaceplayer Route22HouseOfficerJennyText
+	faceplayer
+	opentext
+	checkflag ENGINE_DAILY_MOVE_TUTOR
+	iftrue .NoCandies
+	writetext Route22HouseOfficerJennyRareCandyText
+	waitbutton
+	closetext
+	verbosegiveitem RARE_CANDY, 6
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	end
+
+.NoCandies:
+	writetext Route22HouseOfficerJennyAfterText
+	waitbutton
+	closetext
+	end
 
 Route22HouseRadio:
 	jumpstd Radio2Script
@@ -621,7 +636,19 @@ Route22HouseMrFujiText:
 	line "of yourself."
 	done
 
-Route22HouseOfficerJennyText:
+Route22HouseOfficerJennyRareCandyText:
+	text "OFFICER JENNY"
+	line "reporting!"
+
+	para "As a special pro-"
+	line "motion by the"
+
+	para "VIRDIAN POLICE"
+	line "DEPARTMENT, I'm"
+	cont "handing out these!"
+	done
+
+Route22HouseOfficerJennyAfterText:
 	text "OFFICER JENNY"
 	line "reporting!"
 
