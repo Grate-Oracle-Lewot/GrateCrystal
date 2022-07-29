@@ -399,7 +399,7 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
-	writetext UsedSurfText ; "used SURF!"
+	writetext UsedSurfText
 	waitbutton
 	closetext
 
@@ -686,7 +686,6 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
-	callasm GetPartyNickname
 	writetext .UseWaterfallText
 	waitbutton
 	closetext
@@ -717,12 +716,29 @@ Script_UsedWaterfall:
 	text_end
 
 TryWaterfallOW::
-	ld d, WATERFALL
-	call CheckPartyMove
-	jr c, .failed
 	ld de, ENGINE_RISINGBADGE
 	call CheckEngineFlag
 	jr c, .failed
+
+	ld a, GRAVITY_BUOY
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+
+	call CheckMapCanWaterfall
+	jr c, .failed
+	ld a, BANK(Script_AskWaterfall)
+	ld hl, Script_AskWaterfall
+	call CallScript
+	scf
+	ret
+
+.check_mon_move
+	ld d, WATERFALL
+	call CheckPartyMove
+	jr c, .failed
+
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
