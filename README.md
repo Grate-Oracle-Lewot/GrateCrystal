@@ -211,7 +211,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Whimsicott's back sprite is scrambled (probably applies to Yanmega and the ! and ? Unowns as well)
 
-- Pokémon icons don't color on the nicknaming screen
+- Pokémon icons don't color on the nicknaming screen, moves screen, or Fly map
 
 - The Fearowbot makes the Fly icon palette screwy
 
