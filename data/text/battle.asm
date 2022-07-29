@@ -114,8 +114,8 @@ BattleText_UserRecoveredPPUsing:
 
 BattleText_TargetWasHitByFutureSight:
 	text "<TARGET>"
-	line "was hit by FUTURE"
-	scroll "SIGHT!"
+	line "got a blast from"
+	scroll "the past!"
 	autodone
 
 BattleText_SafeguardFaded:
