@@ -3003,3 +3003,9 @@ FearowbotEffect:
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ret
+
+GravityBuoyEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall WaterfallFunction
+	ret
