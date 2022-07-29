@@ -126,8 +126,8 @@ SabrinaIntroText:
 	line "to confer BADGES"
 
 	para "on anyone who has"
-	line "proven him- or"
-	cont "herself worthy."
+	line "proven themselves"
+	cont "worthy."
 
 	para "Since you wish it,"
 	line "I will show you my"
