@@ -302,7 +302,7 @@ _CantUseItemText::
 
 _UseCutText::
 	text "A swath was cut!"
-	prompt
+	autodone
 
 _CutNothingText::
 	text "There's nothing to"
@@ -335,10 +335,8 @@ _AskSurfText::
 	done
 
 _UseWaterfallText::
-	text_ram wStringBuffer2
-	text " used"
-	line "WATERFALL!"
-	done
+	text "Going uuup!"
+	autodone
 
 _HugeWaterfallText::
 	text "It's a roaring"
@@ -346,20 +344,19 @@ _HugeWaterfallText::
 	done
 
 _AskWaterfallText::
-	text "Do you want to use"
-	line "WATERFALL?"
+	text "Want to climb it?"
 	done
 
 _UseDigText::
 	text_ram wStringBuffer2
 	text " used"
 	line "DIG!"
-	done
+	autodone
 
 _UseEscapeRopeText::
 	text "<PLAYER> used an"
 	line "ESCAPE ROPE."
-	done
+	autodone
 
 _CantUseDigText::
 	text "Can't use that"
@@ -406,7 +403,7 @@ _AskStrengthText::
 _BouldersMoveText::
 	text "Boulders may now"
 	line "be moved!"
-	done
+	autodone
 
 _BouldersMayMoveText::
 	text "A #MON may be"
@@ -415,7 +412,7 @@ _BouldersMayMoveText::
 
 _UseWhirlpoolText::
 	text "Whiiiiirl!"
-	prompt
+	autodone
 
 _MayPassWhirlpoolText::
 	text "It's a vicious"
@@ -440,7 +437,7 @@ _UseHeadbuttText::
 
 _HeadbuttNothingText::
 	text "Nope. Nothing…"
-	done
+	autodone
 
 _AskHeadbuttText::
 	text "A #MON could be"
@@ -452,7 +449,7 @@ _AskHeadbuttText::
 
 _UseRockSmashText::
 	text "Heave ho!"
-	prompt
+	autodone
 
 _MaySmashText::
 	text "This rock looks"
