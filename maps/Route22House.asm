@@ -332,7 +332,15 @@ Route22HouseOfficerJennyScript:
 	waitbutton
 	closetext
 	verbosegiveitem RARE_CANDY, 6
+	iffalse .RareCandiesBagFull
 	setflag ENGINE_DAILY_MOVE_TUTOR
+	end
+
+.RareCandiesBagFull:
+	opentext
+	writetext Route22HouseOfficerJennyBagFullText
+	waitbutton
+	closetext
 	end
 
 .NoCandies:
@@ -643,9 +651,19 @@ Route22HouseOfficerJennyRareCandyText:
 	para "As a special pro-"
 	line "motion by the"
 
-	para "VIRDIAN POLICE"
+	para "VIRIDIAN POLICE"
 	line "DEPARTMENT, I'm"
-	cont "handing out these!"
+
+	para "handing out these"
+	line "RARE CANDIES!"
+	done
+
+Route22HouseOfficerJennyRareCandyText:
+	text "Oh, it seems your"
+	line "bag is full."
+
+	para "Come back for them"
+	line "later, OK?"
 	done
 
 Route22HouseOfficerJennyAfterText:
