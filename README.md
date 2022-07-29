@@ -213,8 +213,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Pokémon icons don't color on the nicknaming screen, moves screen, or Fly map
 
-- The Fearowbot makes the Fly icon palette screwy
-
 # FAQ
 
 Q) Why not more Pokémon?
