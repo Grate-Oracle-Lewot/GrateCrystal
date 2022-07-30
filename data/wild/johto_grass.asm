@@ -1834,32 +1834,32 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, TANGELA
-	db 40, PONYTA
-	db 43, RAPIDASH
-	db 41, ARBOK
-	db 40, DODUO
-	db 42, DODRIO
-	db 41, URSARING
-	db 41, DONPHAN
+	db 41, TANGELA
+	db 42, PONYTA
+	db 45, RAPIDASH
+	db 43, ARBOK
+	db 42, DODUO
+	db 44, DODRIO
+	db 43, URSARING
+	db 43, DONPHAN
 	; day
-	db 39, TANGELA
-	db 40, PONYTA
-	db 43, RAPIDASH
-	db 41, ARBOK
-	db 40, DODUO
-	db 42, DODRIO
-	db 41, URSARING
-	db 41, DONPHAN
+	db 41, TANGELA
+	db 42, PONYTA
+	db 45, RAPIDASH
+	db 43, ARBOK
+	db 42, DODUO
+	db 44, DODRIO
+	db 43, URSARING
+	db 43, DONPHAN
 	; nite
-	db 39, TANGELA
-	db 40, SNEASEL
-	db 43, RAPIDASH
-	db 41, ARBOK
-	db 40, HOUNDOOM
-	db 42, HOUNDOUR
-	db 41, GOLBAT
-	db 41, POLIWHIRL
+	db 41, TANGELA
+	db 42, SNEASEL
+	db 45, RAPIDASH
+	db 43, ARBOK
+	db 42, HOUNDOOM
+	db 44, HOUNDOUR
+	db 43, GOLBAT
+	db 43, POLIWHIRL
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
