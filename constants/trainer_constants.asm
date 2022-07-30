@@ -195,6 +195,7 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
+	const AZURE
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -516,9 +517,9 @@ KRIS EQU __trainer_class__
 	const IRVING
 
 	trainerclass BLACKBELT_T ; 32
-	const KENJI1 ; unused
+	const KENJI1
 	const YOSHI
-	const KENJI2 ; unused
+	const KENJI2
 	const LAO
 	const NOB
 	const KIYO
