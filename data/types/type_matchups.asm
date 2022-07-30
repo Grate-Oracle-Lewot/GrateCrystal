@@ -117,10 +117,14 @@ TypeMatchups:
 	db FAIRY,        DRAGON,       SUPER_EFFECTIVE
 	db FAIRY,        DARK,         SUPER_EFFECTIVE
 	db FAIRY,        STEEL,        NOT_VERY_EFFECTIVE
+	db CURSE_TYPE,   FIRE,         NOT_VERY_EFFECTIVE
+	db CURSE_TYPE,   GRASS,        SUPER_EFFECTIVE
+	db CURSE_TYPE,   FLYING,       SUPER_EFFECTIVE
+	db CURSE_TYPE,   BUG,          SUPER_EFFECTIVE
 
 	db -2 ; end (with Foresight)
 
-; Foresight removes Ghost's immunities.
+; Foresight removes these immunities.
 	db NORMAL,       GHOST,        NO_EFFECT
 	db FIGHTING,     GHOST,        NO_EFFECT
 	db PSYCHIC_TYPE, DARK,         NO_EFFECT
