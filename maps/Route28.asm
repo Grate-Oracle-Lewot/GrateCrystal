@@ -79,7 +79,7 @@ Route28SignText:
 	text "ROUTE 28"
 
 	para "Someone's scrawled"
-	line "the word 'DANGER!'"
+	line "the word DANGER"
 	cont "underneath…"
 	done
 
