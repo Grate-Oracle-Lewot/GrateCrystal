@@ -904,32 +904,32 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 38, TANGELA
-	db 39, PONYTA
-	db 42, RAPIDASH
-	db 40, ARBOK
-	db 39, DODUO
-	db 41, DODRIO
-	db 40, URSARING
-	db 40, DONPHAN
+	db 40, TANGELA
+	db 41, PONYTA
+	db 44, RAPIDASH
+	db 42, ARBOK
+	db 41, DODUO
+	db 43, DODRIO
+	db 42, URSARING
+	db 42, DONPHAN
 	; day
-	db 38, TANGELA
-	db 39, PONYTA
-	db 42, RAPIDASH
-	db 40, ARBOK
-	db 39, DODUO
-	db 41, DODRIO
-	db 40, URSARING
-	db 40, DONPHAN
+	db 40, TANGELA
+	db 41, PONYTA
+	db 44, RAPIDASH
+	db 42, ARBOK
+	db 41, DODUO
+	db 43, DODRIO
+	db 42, URSARING
+	db 42, DONPHAN
 	; nite
-	db 38, TANGELA
-	db 39, SNEASEL
-	db 42, RAPIDASH
-	db 40, ARBOK
-	db 39, HOUNDOOM
-	db 41, HOUNDOUR
-	db 40, GOLBAT
-	db 40, POLIWHIRL
+	db 40, TANGELA
+	db 41, SNEASEL
+	db 44, RAPIDASH
+	db 42, ARBOK
+	db 41, HOUNDOOM
+	db 43, HOUNDOUR
+	db 42, GOLBAT
+	db 42, POLIWHIRL
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_ZAPDOS_CHAMBER
