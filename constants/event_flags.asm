@@ -1082,7 +1082,8 @@
 	const EVENT_BEAT_BLACKBELT_JACKIE
 	const EVENT_BEAT_BLACKBELT_BRUCE
 	const EVENT_DARK_CAVE_2F_HIDDEN_AMULET_COIN
-; Unused: next 116 (now 78) events
+	const EVENT_BEAT_LASS_AZURE
+; Unused: next 116 (now 77) events
 
 	const_next 1600
 ; Sprite visibility flags
