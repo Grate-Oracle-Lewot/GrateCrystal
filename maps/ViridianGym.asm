@@ -1,5 +1,6 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
+	const VIRIDIANGYM_LASS
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -34,6 +35,17 @@ ViridianGymBlueScript:
 
 .FightDone:
 	writetext LeaderBlueEpilogueText
+	waitbutton
+	closetext
+	end
+
+TrainerLassAzure:
+	trainer LASS, AZURE, EVENT_BEAT_LASS_AZURE, LassAzureSeenText, LassAzureBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext LassAzureAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -138,6 +150,25 @@ LeaderBlueEpilogueText:
 	cont "you. Got it?"
 	done
 
+LassAzureSeenText:
+	text "BLUE, BLUE, he's"
+	line "our man! If he"
+
+	para "can't do it, no"
+	line "one can!"
+	done
+
+LassAzureBeatenText:
+	text "Two, four, six,"
+	line "eight, who did you"
+	cont "humiliate? Me!"
+	done
+
+LassAzureAfterBattleText:
+	text "I can't help but"
+	line "cheer for BLUE!"
+	done
+
 ViridianGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
@@ -182,5 +213,6 @@ ViridianGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassAzure, EVENT_VIRIDIAN_GYM_BLUE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
