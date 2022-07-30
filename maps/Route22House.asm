@@ -188,11 +188,13 @@ Route22HouseLanceScript:
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .MasterBallBagFull
+	waitbutton
 	closetext
 	end
 
 .MasterBallBagFull:
 	writetext Route22HouseLanceBagFullText
+	waitbutton
 	closetext
 	end
 
@@ -207,7 +209,6 @@ Route22HouseGiovanniScript:
 	loadtrainer BOSS, GIOVANNI
 	startbattle
 	reloadmapafterbattle
-	special RestartMapMusic
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseGiovanniAfterText
@@ -232,7 +233,6 @@ Route22HouseJessieScript:
 	loadtrainer JESSIE, JAMES
 	startbattle
 	reloadmapafterbattle
-	special RestartMapMusic
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJessieAfterText
@@ -257,7 +257,6 @@ Route22HouseJamesScript:
 	loadtrainer JESSIE, JAMES
 	startbattle
 	reloadmapafterbattle
-	special RestartMapMusic
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJamesAfterText
@@ -319,6 +318,7 @@ Route22HouseMissingnoScript:
 Route22HouseMrFujiScript:
 	opentext
 	writetext Route22HouseMrFujiText
+	waitbutton
 	closetext
 	setflag ENGINE_QWILFISH_SWARM
 	end
