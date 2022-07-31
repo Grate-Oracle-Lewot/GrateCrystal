@@ -52,9 +52,9 @@ BeautyMaeveAfterBattleText:
 	done
 
 MysticalmanOlieSeenText:
-	text "There's beauty in"
-	line "power, and there's"
-	cont "power in beauty."
+	text "Behold the grace"
+	line "and potency of my"
+	cont "#MON!"
 	done
 
 MysticalmanOlieBeatenText:
