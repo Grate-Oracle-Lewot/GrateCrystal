@@ -1944,7 +1944,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (8)
 	db "MARY@", TRAINERTYPE_NORMAL
-	db 70, BLASTOISE
+	db 80, BLASTOISE
 	db -1 ; end
 
 	; SWIMMERF (9)
