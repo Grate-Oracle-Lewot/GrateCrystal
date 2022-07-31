@@ -113,14 +113,14 @@ PokefanmJoshuaAfterBattleText:
 	done
 
 BirdKeeperPerrySeenText:
-	text "Agility is the key"
-	line "attribute of bird"
-	cont "#MON."
+	text "Not all bird #-"
+	line "MON are flying"
+	cont "types."
 	done
 
 BirdKeeperPerryBeatenText:
-	text "You beat me with"
-	line "your speed…"
+	text "I should've used a"
+	line "flying type…"
 	done
 
 BirdKeeperPerryAfterBattleText:
