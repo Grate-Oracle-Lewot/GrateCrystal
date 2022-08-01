@@ -56,7 +56,9 @@ BikerTBoneSeenText:
 	done
 
 BikerTBoneBeatenText:
-	text "Bajabbers!"
+	text "I said I was super"
+	line "tough, not my"
+	cont "#MON."
 	done
 
 BikerTBoneAfterBattleText:
