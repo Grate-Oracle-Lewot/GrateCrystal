@@ -1835,19 +1835,19 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, TANGELA
-	db 42, PONYTA
 	db 45, RAPIDASH
+	db 42, XATU
 	db 43, ARBOK
-	db 42, DODUO
+	db 42, MAGCARGO
 	db 44, DODRIO
 	db 43, URSARING
 	db 43, DONPHAN
 	; day
 	db 41, TANGELA
-	db 42, PONYTA
 	db 45, RAPIDASH
+	db 42, GRANBULL
 	db 43, ARBOK
-	db 42, DODUO
+	db 42, SCYTHER
 	db 44, DODRIO
 	db 43, URSARING
 	db 43, DONPHAN
@@ -1857,7 +1857,7 @@ JohtoGrassWildMons:
 	db 45, RAPIDASH
 	db 43, ARBOK
 	db 42, HOUNDOOM
-	db 44, HOUNDOUR
+	db 44, PERSIAN
 	db 43, GOLBAT
 	db 43, POLIWHIRL
 	end_grass_wildmons
