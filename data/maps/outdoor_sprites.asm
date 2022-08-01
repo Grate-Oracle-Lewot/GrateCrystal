@@ -280,6 +280,7 @@ SilverGroupSprites:
 	db SPRITE_BIKER
 	db SPRITE_SWIMMER_GIRL
 	; 3 of max 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:
