@@ -130,7 +130,7 @@ GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	line "too dangerous!"
 	done
 
-GoldenrodFlowerShopTeacherTakeBackSquirtbottle:
+GoldenrodFlowerShopTeacherTakeBackSquirtbottleText:
 	text "Oh, so the tree"
 	line "was a SUDOWOODO?"
 
