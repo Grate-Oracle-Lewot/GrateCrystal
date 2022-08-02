@@ -219,7 +219,7 @@ KantoGrassWildMons:
 	db 2, SPINARAK
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_2
+	def_grass_wildmons VIRIDIAN_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, CATERPIE
