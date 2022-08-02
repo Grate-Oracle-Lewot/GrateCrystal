@@ -99,6 +99,7 @@ KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_FAST_SHIP         ; 5f
 	const LANDMARK_SAFARI_ZONE       ; 60
+	const LANDMARK_VIRIDIAN_FOREST   ; 61
 NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData
