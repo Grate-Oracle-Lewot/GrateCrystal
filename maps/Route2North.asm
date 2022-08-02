@@ -15,6 +15,9 @@ Route2NorthDiglettsCaveSign:
 Route2NorthDireHit:
 	itemball DIRE_HIT
 
+Route2NorthHiddenFullHeal:
+	hiddenitem FULL_HEAL, EVENT_ROUTE_2_HIDDEN_FULL_HEAL
+
 Route2NorthSignText:
 	text "ROUTE 2"
 
@@ -40,6 +43,7 @@ Route2North_MapEvents:
 	def_bg_events
 	bg_event  7, 13, BGEVENT_READ, Route2NorthSign
 	bg_event 11,  9, BGEVENT_READ, Route2NorthDiglettsCaveSign
+	bg_event  0, 46, BGEVENT_ITEM, Route2NorthHiddenFullHeal
 
 	def_object_events
 	object_event 11,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2NorthDireHit, EVENT_ROUTE_2_DIRE_HIT
