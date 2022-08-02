@@ -34,7 +34,7 @@ Route2North_MapEvents:
 	def_coord_events
 
 	def_bg_events
-  bg_event  7, 13, BGEVENT_READ, Route2NorthSign
+	bg_event  7, 13, BGEVENT_READ, Route2NorthSign
 	bg_event 11,  9, BGEVENT_READ, Route2NorthDiglettsCaveSign
 
 	def_object_events
