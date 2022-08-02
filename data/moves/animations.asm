@@ -4639,23 +4639,28 @@ BattleAnim_DrainKiss:
 	anim_ret
 
 BattleAnim_Moonblast:
-	anim_1gfx ANIM_GFX_SPEED
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $80
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $88
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $90
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $98
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a8
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
-	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
-	anim_sound 0, 0, SFX_FLASH
-.loop
-	anim_wait 8
-	anim_loop 8, .loop
-	anim_wait 8
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 48, 88, $0
+	anim_obj ANIM_OBJ_MOONLIGHT, 64, 104, $0
+	anim_wait 1
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_wait 42
+	anim_1gfx ANIM_GFX_BEAM
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_wait 42
 	anim_ret
 
 BattleAnim_Struggle:
