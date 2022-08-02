@@ -11,7 +11,7 @@ Route2SouthGateOfficerScript:
 
 Route2SouthGateOfficerText:
 	text "VIRIDIAN FOREST"
-  line "has been spruced"
+	line "has been spruced"
 
 	para "up as something of"
 	line "a park."
