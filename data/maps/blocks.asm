@@ -21,8 +21,11 @@ CeladonCity_Blocks:
 SaffronCity_Blocks:
 	INCBIN "maps/SaffronCity.blk"
 
-Route2_Blocks:
-	INCBIN "maps/Route2.blk"
+Route2North_Blocks:
+	INCBIN "maps/Route2North.blk"
+
+Route2South_Blocks:
+	INCBIN "maps/Route2South.blk"
 
 ElmsHouse_Blocks:
 	INCBIN "maps/ElmsHouse.blk"
@@ -140,7 +143,6 @@ CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
-Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 Route26HealHouse_Blocks:
 DayOfWeekSiblingsHouse_Blocks:
@@ -161,7 +163,7 @@ Route36RuinsOfAlphGate_Blocks:
 Route34IlexForestGate_Blocks:
 Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
-Route2Gate_Blocks:
+Route2SouthGate_Blocks:
 Route29Route46Gate_Blocks:
 Route5SaffronGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
@@ -215,6 +217,7 @@ Route16Gate_Blocks:
 Route7SaffronGate_Blocks:
 Route17Route18Gate_Blocks:
 Route31VioletGate_Blocks:
+Route2NorthGate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
 
 VermilionCity_Blocks:
@@ -937,3 +940,6 @@ GoldenrodGameCornerBackroom_Blocks:
 
 DarkCave2F_Blocks:
 	INCBIN "maps/DarkCave2F.blk"
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"
