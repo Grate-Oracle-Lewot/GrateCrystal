@@ -16,7 +16,11 @@ Route2NorthDireHit:
 	itemball DIRE_HIT
 
 Route2NorthSignText:
-	text "VIRIDIAN FOREST"
+	text "ROUTE 2"
+
+	para "VIRIDIAN CITY -"
+	line "VIRIDIAN FOREST -"
+	cont "PEWTER CITY"
 	done
 
 Route2NorthDiglettsCaveSignText:
