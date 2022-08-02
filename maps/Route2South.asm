@@ -24,7 +24,7 @@ Route2South_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  5, ROUTE_2_SOUTH_GATE, 1
+	warp_event  7,  5, ROUTE_2_SOUTH_GATE, 4
 
 	def_coord_events
 
