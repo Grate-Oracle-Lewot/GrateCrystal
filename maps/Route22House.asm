@@ -658,7 +658,7 @@ Route22HouseOfficerJennyRareCandyText:
 	line "RARE CANDIES!"
 	done
 
-Route22HouseOfficerJennyRareCandyText:
+Route22HouseOfficerJennyBagFullText:
 	text "Oh, it seems your"
 	line "bag is full."
 
