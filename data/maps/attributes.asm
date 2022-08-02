@@ -229,15 +229,17 @@ ENDM
 	connection east, Route45, ROUTE_45, -36
 
 	map_attributes PewterCity, PEWTER_CITY, $0f, SOUTH | EAST
-	connection south, Route2, ROUTE_2, 5
+	connection south, Route2North, ROUTE_2_NORTH, 5
 	connection east, Route3, ROUTE_3, 5
 
-	map_attributes Route2, ROUTE_2, $0f, NORTH | SOUTH
+	map_attributes Route2North, ROUTE_2_NORTH, $0f, NORTH
 	connection north, PewterCity, PEWTER_CITY, -5
+
+	map_attributes Route2South, ROUTE_2_SOUTH, $0f, SOUTH
 	connection south, ViridianCity, VIRIDIAN_CITY, -5
 
 	map_attributes ViridianCity, VIRIDIAN_CITY, $0f, NORTH | SOUTH | WEST
-	connection north, Route2, ROUTE_2, 5
+	connection north, Route2South, ROUTE_2_SOUTH, 5
 	connection south, Route1, ROUTE_1, 10
 	connection west, Route22, ROUTE_22, 4
 
@@ -488,6 +490,7 @@ ENDM
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
 	map_attributes SafariZone, SAFARI_ZONE, $05, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
+	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
@@ -665,8 +668,8 @@ ENDM
 	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $00, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
-	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
-	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
+	map_attributes Route2NorthGate, ROUTE_2_NORTH_GATE, $00, 0
+	map_attributes Route2SouthGate, ROUTE_2_SOUTH_GATE, $00, 0
 	map_attributes VictoryRoadGate, VICTORY_ROAD_GATE, $00, 0
 	map_attributes Route22House, ROUTE_22_HOUSE, $00, 0
 	map_attributes ElmsLab, ELMS_LAB, $00, 0
