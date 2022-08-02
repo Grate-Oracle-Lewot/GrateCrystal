@@ -71,14 +71,8 @@ ViridianForestElixer:
 ViridianForestHiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_ROUTE_2_HIDDEN_MAX_ETHER
 
-ViridianForestHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_ROUTE_2_HIDDEN_FULL_HEAL
-
 ViridianForestHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_ROUTE_2_HIDDEN_FULL_RESTORE
-
-ViridianForestHiddenRevive:
-	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
 
 BugCatcherRobSeenText:
 	text "My bug #MON are"
@@ -179,14 +173,12 @@ Route2_MapEvents:
 
 	def_bg_events
 	bg_event 14, 38, BGEVENT_READ, ViridianForestSign1
-  bg_event 22, 46, BGEVENT_READ, ViridianForestSign2
-  bg_event 25, 23, BGEVENT_READ, ViridianForestSign3
-  bg_event  2, 30, BGEVENT_READ, ViridianForestSign4
-  bg_event  1,  7, BGEVENT_READ, ViridianForestSign5
+	bg_event 22, 46, BGEVENT_READ, ViridianForestSign2
+	bg_event 25, 23, BGEVENT_READ, ViridianForestSign3
+	bg_event  2, 30, BGEVENT_READ, ViridianForestSign4
+	bg_event  1,  7, BGEVENT_READ, ViridianForestSign5
 	bg_event 18, 46, BGEVENT_ITEM, ViridianForestHiddenMaxEther
-	bg_event  0, 46, BGEVENT_ITEM, ViridianForestHiddenFullHeal
 	bg_event 10, 34, BGEVENT_ITEM, ViridianForestHiddenFullRestore
-	bg_event  1,  6, BGEVENT_ITEM, ViridianForestHiddenRevive
 
 	def_object_events
 	object_event  1, 11, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherRob, -1
