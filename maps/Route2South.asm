@@ -12,6 +12,9 @@ Route2SouthSign:
 Route2SouthFruitTree:
 	fruittree FRUITTREE_ROUTE_2
 
+Route2SouthHiddenRevive:
+	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
+
 Route2SouthSignText:
 	text "ROUTE 2"
 
@@ -30,6 +33,7 @@ Route2South_MapEvents:
 
 	def_bg_events
 	bg_event  3,  7, BGEVENT_READ, Route2SouthSign
+	bg_event  6,  9, BGEVENT_ITEM, Route2SouthHiddenRevive
 
 	def_object_events
 	object_event 18,  8, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2SouthFruitTree, -1
