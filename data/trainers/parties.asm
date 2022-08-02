@@ -83,8 +83,8 @@ ClairGroup:
 
 Rival1Group:
 	; RIVAL1 (1)
-	db "?@", TRAINERTYPE_ITEM
-	db  5, CHIKORITA,  BERRY
+	db "?@", TRAINERTYPE_MOVES
+	db  5, CHIKORITA,  PLAY_ROUGH, MOONBLAST, DRAIN_KISS, DARK_PULSE
 	db -1 ; end
 
 	; RIVAL1 (2)
