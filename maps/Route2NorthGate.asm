@@ -14,7 +14,7 @@ Route2NorthGateBugCatcherText:
 
 	para "Nobody was here,"
 	line "so I snuck behind"
-  cont "the counter."
+	cont "the counter."
 
 	para "I'm in charge now!"
 	done
