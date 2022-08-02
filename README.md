@@ -121,6 +121,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Kanto: Aerodactyl Lv10 (3000C), Porygon2 Lv30 (4000C), Togetic Lv30 (5000C)
 
 ## Locations
+- Viridian Forest
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
