@@ -161,6 +161,7 @@ ENDM
 	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 97
 	map_const SAFARI_ZONE,                                 30, 27 ; 98
 	map_const DARK_CAVE_2F,                                10,  9 ; 99
+	map_const VIRIDIAN_FOREST,                             15, 27 ; 100
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -443,19 +444,20 @@ ENDM
 	endgroup
 
 	newgroup VIRIDIAN                                             ; 23
-	map_const ROUTE_2,                                     10, 27 ;  1
-	map_const ROUTE_22,                                    20,  9 ;  2
-	map_const VIRIDIAN_CITY,                               20, 18 ;  3
-	map_const VIRIDIAN_GYM,                                 5,  9 ;  4
-	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  5
-	map_const TRAINER_HOUSE_1F,                             5,  7 ;  6
-	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  7
-	map_const VIRIDIAN_MART,                                6,  4 ;  8
-	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
-	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 10
-	map_const ROUTE_2_GATE,                                 5,  4 ; 11
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 12
-	map_const ROUTE_22_HOUSE,                               5,  4 ; 13
+	map_const ROUTE_2_NORTH,                               10,  9 ;  1
+	map_const ROUTE_2_SOUTH,                               10,  9 ;  2
+	map_const ROUTE_22,                                    20,  9 ;  3
+	map_const VIRIDIAN_CITY,                               20, 18 ;  4
+	map_const VIRIDIAN_GYM,                                 5,  9 ;  5
+	map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE,               4,  4 ;  6
+	map_const TRAINER_HOUSE_1F,                             5,  7 ;  7
+	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  8
+	map_const VIRIDIAN_MART,                                6,  4 ;  9
+	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ; 10
+	map_const ROUTE_2_NORTH_GATE,                           5,  4 ; 11
+	map_const ROUTE_2_SOUTH_GATE,                           5,  4 ; 12
+	map_const VICTORY_ROAD_GATE,                           10,  9 ; 13
+	map_const ROUTE_22_HOUSE,                               5,  4 ; 14
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
