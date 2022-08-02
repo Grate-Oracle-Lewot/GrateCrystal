@@ -1835,8 +1835,8 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, TANGELA
-	db 45, RAPIDASH
 	db 42, XATU
+	db 45, STANTLER
 	db 43, ARBOK
 	db 42, MAGCARGO
 	db 44, DODRIO
