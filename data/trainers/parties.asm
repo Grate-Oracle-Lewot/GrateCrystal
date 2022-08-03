@@ -234,19 +234,26 @@ WillGroup:
 PKMNTrainerGroup:
 	; CAL (1)
 	db "CAL@", TRAINERTYPE_NORMAL
+	db 10, CHIKORITA
+	db 10, CYNDAQUIL
+	db 10, TOTODILE
+	db -1 ; end
+
+	; CAL (2)
+	db "CAL@", TRAINERTYPE_NORMAL
 	db 30, BAYLEEF
 	db 30, QUILAVA
 	db 30, CROCONAW
 	db -1 ; end
 
-	; CAL (2)
+	; CAL (3)
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 50, MEGANIUM
 	db 50, TYPHLOSION
 	db 50, FERALIGATR
 	db -1 ; end
 
-	; CAL (3)
+	; CAL (4)
 	db "IGGY@", TRAINERTYPE_NORMAL
 	db 61, ARTICUNO
 	db 62, ZAPDOS
@@ -254,7 +261,7 @@ PKMNTrainerGroup:
 	db 65, LUGIA
 	db -1 ; end
 
-	; CAL (4)
+	; CAL (5)
 	db "FRED@", TRAINERTYPE_NORMAL
 	db 62, RAIKOU
 	db 62, ENTEI
