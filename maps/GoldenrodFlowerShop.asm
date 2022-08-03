@@ -36,10 +36,19 @@ FlowerShopTeacherScript:
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
 	waitbutton
 	closetext
+	giveitem SACRED_ASH
+	iffalse .BagFull
 	takeitem SQUIRTBOTTLE
 	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
 	opentext
-	writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText
+	writetext GoldenrodFlowerShopTeacherSacredAshText
+	waitbutton
+	closetext
+	end
+
+.BagFull:
+	opentext
+	writetext GoldenrodFlowerShopTeacherBagFullText
 	waitbutton
 	closetext
 	end
@@ -137,10 +146,32 @@ GoldenrodFlowerShopTeacherTakeBackSquirtbottleText:
 	para "I should've known!"
 
 	para "I'll take that"
-	line "SQUIRTBOTTLE back,"
-	cont "then."
+	line "SQUIRTBOTTLE off"
+	cont "your hands, then."
 
-	para "Thank you!"
+	para "You can have this"
+	line "as a thank-you for"
+	cont "returning it!"
+	done
+
+GoldenrodFlowerShopTeacherBagFullText:
+	text "Oh? Your PACK is"
+	line "full. Come back"
+
+	para "after you've made"
+	line "some room, hon!"
+	done
+
+GoldenrodFlowerShopTeacherSacredAshText:
+	text "That's SACRED ASH."
+
+	para "It fully heals"
+	line "your entire party"
+	cont "all at once!"
+
+	para "You can't buy it"
+	line "anywhere, so don't"
+	cont "use it hastily."
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
