@@ -13,6 +13,7 @@ LavRadioTower1F_MapScripts:
 
 .LavRadioTowerOfficerCallback:
 	appear LAVRADIOTOWER1F_OFFICER
+	appear LAVRADIOTOWER1F_SUPER_NERD1
 	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	iftrue .NextCheck
 	endcallback
@@ -24,6 +25,7 @@ LavRadioTower1F_MapScripts:
 
 .OfficerMovedUpstairs:
 	disappear LAVRADIOTOWER1F_OFFICER
+	disappear LAVRADIOTOWER1F_SUPER_NERD1
 	endcallback
 
 LavRadioTower1FReceptionistScript:
@@ -370,6 +372,6 @@ LavRadioTower1F_MapEvents:
 	def_object_events
 	object_event  6,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FReceptionistScript, -1
 	object_event 15,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FOfficerScript, EVENT_LAV_RADIO_TOWER_1F_OFFICER
-	object_event  1,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd1Script, -1
+	object_event  1,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd1Script, EVENT_LAV_RADIO_TOWER_1F_WANDERING_SUPER_NERD
 	object_event  9,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FGentlemanScript, -1
 	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd2Script, -1
