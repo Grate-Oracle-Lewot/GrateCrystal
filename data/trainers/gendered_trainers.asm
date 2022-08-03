@@ -47,4 +47,5 @@ FemaleTrainers:
 	db COOLTRAINERF
 	db REAL_KAREN
 	db JESSIE
+	db CAL_F
 .End
