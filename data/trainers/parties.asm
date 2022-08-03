@@ -83,8 +83,8 @@ ClairGroup:
 
 Rival1Group:
 	; RIVAL1 (1)
-	db "?@", TRAINERTYPE_MOVES
-	db  5, CHIKORITA,  DARK_PULSE, REST, NIGHT_TERROR, NO_MOVE
+	db "?@", TRAINERTYPE_ITEM
+	db  5, CHIKORITA,  GOLD_BERRY
 	db -1 ; end
 
 	; RIVAL1 (2)
