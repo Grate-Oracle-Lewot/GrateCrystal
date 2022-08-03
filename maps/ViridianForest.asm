@@ -141,14 +141,15 @@ ViridianForestSign2Text:
 ViridianForestSign3Text:
 	text "TRAINER TIPS"
 
-	para "The DUSK BALL"
-	line "works better not"
+	para "The DUSK BALL is"
+	line "for catching #-"
+	cont "MON at night."
 
-	para "only at night, but"
-	line "in dark places"
+	para "It also works well"
+	line "in caves, since"
 
-	para "like caves and"
-	line "thick forests."
+	para "they're naturally"
+	line "dark."
 	done
 
 ViridianForestSign4Text:
