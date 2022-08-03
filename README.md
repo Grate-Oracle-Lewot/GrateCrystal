@@ -203,7 +203,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
 - I had problems getting the night music to work, or rather, fitting the audionighttable into the home bank. Right now, I just added the night version of the Kanto wild battle theme, to correspond to the existing Johto one. I'd like to use all the night music, but we'll see.
-- The Trainer House got glitchy, so now it just always loads Cal as your opponent. Considering you're unlikely to be trading and battling with other ROMs, I don't think this is a big deal.
 
 # Bug Fixes
 
