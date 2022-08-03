@@ -76,4 +76,5 @@ TrainerClassNames::
 	li "3TRAINER#"
 	li "MISSING"
 	li "GAMBLER"
+	li "<PKMN> TRAINER"
 	assert_list_length NUM_TRAINER_CLASSES
