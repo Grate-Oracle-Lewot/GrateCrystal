@@ -1381,6 +1381,9 @@ BattleAnim_DarkPulse:
 	anim_incobj 8
 	anim_incobj 9
 	anim_wait 16
+	anim_1gfx ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Acid:
@@ -2855,6 +2858,7 @@ BattleAnim_SilverWind:
 	anim_loop 2, .loop
 	anim_wait 16
 	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 6
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
 	anim_sound 0, 1, SFX_RAZOR_WIND
@@ -4051,9 +4055,10 @@ BattleAnim_Safeguard:
 
 BattleAnim_NightTerror:
 	anim_2gfx ANIM_GFX_ANGELS, ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_BUBBLEBEAM
-	anim_obj ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
-	anim_wait 32
+	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $0
+	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $a0
+	anim_sound 0, 1, SFX_NIGHTMARE
+	anim_wait 84
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
