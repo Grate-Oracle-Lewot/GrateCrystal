@@ -68,7 +68,7 @@ HallOfFame_FadeOutMusic:
 	ld [wVramState], a
 	ldh [hMapAnims], a
 	farcall InitDisplayForHallOfFame
-	ld c, 100
+	ld c, 42
 	jp DelayFrames
 
 HallOfFame_PlayMusicDE:
