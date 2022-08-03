@@ -4060,7 +4060,6 @@ BattleAnim_NightTerror:
 	anim_sound 0, 1, SFX_NIGHTMARE
 	anim_wait 84
 	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_TACKLE
