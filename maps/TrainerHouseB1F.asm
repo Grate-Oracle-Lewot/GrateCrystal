@@ -4,7 +4,7 @@
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script .DummyScene, SCENE_TRAINERHOUSEB1F_ASK_BATTLE
 
 	def_callbacks
 
@@ -18,7 +18,14 @@ TrainerHouseReceptionistScript:
 	iftrue .FoughtTooManyTimes
 	writetext TrainerHouseB1FIntroText
 	promptbutton
-	gettrainername STRING_BUFFER_3, CAL, CAL1
+	special TrainerHouse
+	iffalse .GetCal3Name
+	gettrainername STRING_BUFFER_3, CAL, CAL2
+	sjump .GotName
+
+.GetCal3Name:
+	gettrainername STRING_BUFFER_3, CAL, CAL3
+.GotName:
 	writetext TrainerHouseB1FYourOpponentIsText
 	promptbutton
 	writetext TrainerHouseB1FAskWantToBattleText
@@ -33,11 +40,21 @@ TrainerHouseReceptionistScript:
 	writetext TrainerHouseB1FCalBeforeText
 	waitbutton
 	closetext
+	special TrainerHouse
+	iffalse .NoSpecialBattle
 	winlosstext TrainerHouseB1FCalBeatenText, 0
 	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL1
+	loadtrainer CAL, CAL2
 	startbattle
 	reloadmapafterbattle
+	iffalse .End
+.NoSpecialBattle:
+	winlosstext TrainerHouseB1FCalBeatenText, 0
+	setlasttalked TRAINERHOUSEB1F_CHRIS
+	loadtrainer CAL, CAL3
+	startbattle
+	reloadmapafterbattle
+.End:
 	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
 	end
 
@@ -157,7 +174,7 @@ TrainerHouseB1F_MapEvents:
 	warp_event  9,  4, TRAINER_HOUSE_1F, 3
 
 	def_coord_events
-	coord_event  7,  3, SCENE_DEFAULT, TrainerHouseReceptionistScript
+	coord_event  7,  3, SCENE_TRAINERHOUSEB1F_ASK_BATTLE, TrainerHouseReceptionistScript
 
 	def_bg_events
 
