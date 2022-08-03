@@ -88,7 +88,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). A few other changes to move powers, and almost every move has received an accuracy boost.
 
-- Many moves have had their types changed to allow for better move variety within rarer types.
+- Many moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, etc.
 
@@ -132,7 +132,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Monday: Koga, who now uses Fairy types instead of Poison
   - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies
   - Wednesday: Jessie and James, with their Pokémon from the anime
-  - Thursday: A trainer version of MissingNo., with three different variants for day, morning, and night
+  - Thursday: A trainer version of MissingNo., with three different variants for morning, day, and night
   - Friday: Giovanni, using Ground types plus Persian
   - Saturday: Karen, using Dark types; only appears at night
   - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, if you have access to Mt. Silver, Lance will appear for a rematch with levels similar to the Lance/Clair double battle in HGSS; if you talk to Mr. Fuji the same morning before you battle Lance, Lance will give you another Master Ball upon defeat
@@ -146,7 +146,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Color-coded starter balls
 - Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash)
 - Trainers give more money upon defeat
-- Happiness builds faster
+- Happiness builds a bit faster
 - Eggs hatch twice as fast
 - Nidorina and Nidoqueen can breed
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
@@ -156,13 +156,13 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
-- Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements
+- Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements, but give out lesser sellable items instead of Nuggets
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
 - Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
 - Text edits, often humorous (or so I'd like to think)
-- In the unedited Crystal, Unown could only be found in the Ruins of Alph, and only after completing at least one of the sliding block puzzles. In the normally-impossible scenario of encountering Unown before any letters are unlocked, the game would get stuck in an infinite loop trying to find an unlocked letter. Because Unown can be encountered in some other locations in Grate Crystal, there is now a 5% chance for the game to let through a locked Unown letter, preventing such infinite loops. As a consequence, all Unown letters are technically available before completing all (or any!) of the block puzzles.
+- In the unedited Crystal, Unown could only be found in the Ruins of Alph, and only after completing at least one of the sliding block puzzles. In the normally-impossible scenario of encountering Unown before any letters are unlocked, the game would get stuck in an infinite loop trying to find an unlocked letter. Because Unown can be encountered in some other locations in Grate Crystal, there is now a 5% chance for the game to let through a locked Unown letter, preventing such infinite loops. As a consequence, all Unown letters are technically available before completing all (or any!) of the block puzzles, and completing some but not all puzzles will skew the likeliness of finding some letters over others until all puzzles are solved.
 
 # Minor Edits
 
@@ -173,18 +173,18 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing caught data
+- A fourth Pokémon stats page showing caught data (eventually I want to change this to show DVs)
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing, Headbutt, and Rock Smash (exact probabilities of each +1 altered a bit)
 - Time fishgroups actually have different Pokémon at different times
 - Unown ! and ? added (eyes not droopy)
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
-- Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26
+- Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; a Pokémon Center added to Route 3 with a flypoint
 - Instant text speed option
 - Town Map item functionality fixed (item still not actually used)
 - Default player and rival names changed
-- Outdoor sprite system fix
-- Event initialization system fix
+- Outdoor sprite system improvement
+- Event initialization system improvement
 - Pokémon animation tile expansion... thing
 - Trainer types refactored into bit flags
 - Trainer card visual upgrades: leader head tops, badge colors, Kanto badge page
@@ -192,7 +192,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Short beeping noise for low HP
 - Artificial save delays removed
 - Lucky Number daily instead of weekly
-- Pokémon gender formula modified to allow stat equity
+- Pokémon gender formula modified for stat equity
 - 25% AI failure chance removed for stat-reduction moves, left in place for Sleep, Poison, and Paralysis
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
