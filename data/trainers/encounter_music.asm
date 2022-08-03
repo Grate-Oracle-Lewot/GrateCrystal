@@ -79,4 +79,5 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; kabubones
 	db MUSIC_SAGE_ENCOUNTER        ; missingno
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; gambler
+	db MUSIC_OFFICER_ENCOUNTER     ; cal_f
 	assert_table_length NUM_TRAINER_CLASSES + 1
