@@ -1380,9 +1380,6 @@ BattleAnim_DarkPulse:
 	anim_incobj 7
 	anim_incobj 8
 	anim_incobj 9
-	anim_wait 16
-	anim_1gfx ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 32
 	anim_ret
 
@@ -4054,11 +4051,13 @@ BattleAnim_Safeguard:
 	anim_ret
 
 BattleAnim_NightTerror:
-	anim_2gfx ANIM_GFX_ANGELS, ANIM_GFX_HIT
+	anim_1gfx ANIM_GFX_ANGELS
+	anim_bgp $1b
+	anim_obp0 $f
 	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $0
-	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $a0
 	anim_sound 0, 1, SFX_NIGHTMARE
 	anim_wait 84
+	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
