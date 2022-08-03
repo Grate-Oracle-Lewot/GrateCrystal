@@ -150,6 +150,15 @@ ViridianForestSign3Text:
 
 	para "they're naturally"
 	line "dark."
+
+	para "ILEX FOREST in"
+	line "JOHTO is thick"
+
+	para "enough to block"
+	line "out the sun, but"
+
+	para "the same isn't the"
+	line "case for VIRIDIAN."
 	done
 
 ViridianForestSign4Text:
