@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE2SOUTHGATE_OFFICER
+	const ROUTE2SOUTHGATE_SCIENTIST
 
 Route2SouthGate_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,9 @@ Route2SouthGate_MapScripts:
 
 Route2SouthGateOfficerScript:
 	jumptextfaceplayer Route2SouthGateOfficerText
+
+Route2SouthGateScientistScript:
+	jumptextfaceplayer Route2SouthGateScientistText
 
 Route2SouthGateOfficerText:
 	text "VIRIDIAN FOREST"
@@ -21,6 +25,20 @@ Route2SouthGateOfficerText:
 
 	para "in there, so be"
 	line "careful."
+	done
+
+Route2SouthGateScientistText:
+	text "Are you <PLAY_G>?"
+
+	para "I work as PROF."
+	line "OAK's AIDE."
+
+	para "I had no idea that"
+	line "you were out here."
+
+	para "PROF.OAK's LAB is"
+	line "nearby in PALLET"
+	cont "TOWN."
 	done
 
 Route2SouthGate_MapEvents:
@@ -38,3 +56,4 @@ Route2SouthGate_MapEvents:
 
 	def_object_events
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route2SouthGateOfficerScript, -1
+	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route2SouthGateScientistScript, -1
