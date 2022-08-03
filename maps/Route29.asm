@@ -314,6 +314,9 @@ Route29FisherText:
 
 	para "to record my"
 	line "progress."
+
+	para "Saving is faster"
+	line "in this hack!"
 	done
 
 Route29CooltrainerMText_WaitingForNight:
