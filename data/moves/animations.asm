@@ -1385,6 +1385,7 @@ BattleAnim_DarkPulse:
 	anim_1gfx ANIM_GFX_HIT
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 32
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_Acid:
@@ -1993,17 +1994,21 @@ BattleAnim_AcidArmor:
 	anim_ret
 
 BattleAnim_EarthPower:
-	anim_1gfx ANIM_GFX_ROCKS
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 77, $0
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 136, 77, $20
 	anim_wait 21
 	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 77, $0
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 120, 77, $20
 	anim_wait 21
 	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 152, 77, $0
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 152, 77, $20
 	anim_wait 21
 	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 77, $0
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 136, 77, $20
 	anim_wait 21
 	anim_ret
@@ -4639,7 +4644,7 @@ BattleAnim_DrainKiss:
 	anim_ret
 
 BattleAnim_Moonblast:
-	anim_1gfx ANIM_GFX_SHINE
+	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_BEAM
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
@@ -4650,7 +4655,6 @@ BattleAnim_Moonblast:
 	anim_wait 1
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 42
-	anim_1gfx ANIM_GFX_BEAM
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
 	anim_wait 2
