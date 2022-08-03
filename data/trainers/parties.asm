@@ -3601,5 +3601,4 @@ CalFGroup:
 	db "CALLA@", TRAINERTYPE_NORMAL
 	db 70, CELEBI
 	db 70, MEW
-	db 70, MEWTWO
 	db -1 ; end
