@@ -78,4 +78,5 @@ TrainerPicPointers::
 	dba KabubonesPic
 	dba MissingnoPic
 	dba GamblerPic
+	dba CalfPic
 	assert_table_length NUM_TRAINER_CLASSES
