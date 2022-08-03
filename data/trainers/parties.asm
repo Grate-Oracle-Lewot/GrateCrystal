@@ -457,13 +457,13 @@ YoungsterGroup:
 
 	; YOUNGSTER (9)
 	db "WARREN@", TRAINERTYPE_NORMAL
-	db 51, FEAROW
+	db 61, FEAROW
 	db -1 ; end
 
 	; YOUNGSTER (10)
 	db "JIMMY@", TRAINERTYPE_NORMAL
-	db 41, RATICATE
-	db 43, ARBOK
+	db 63, RATICATE
+	db 65, ARBOK
 	db -1 ; end
 
 	; YOUNGSTER (11)
@@ -516,9 +516,9 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (5)
 	db "DANNY@", TRAINERTYPE_NORMAL
-	db 42, JYNX
-	db 42, ELECTABUZZ
-	db 42, MAGMAR
+	db 64, JYNX
+	db 64, ELECTABUZZ
+	db 64, MAGMAR
 	db -1 ; end
 
 	; SCHOOLBOY (6)
@@ -694,7 +694,7 @@ BirdKeeperGroup:
 	; BIRD_KEEPER (8)
 	db "HANK@", TRAINERTYPE_NORMAL
 	db 13, PIDGEY
-	db 64, PIDGEOT
+	db 70, PIDGEOT
 	db -1 ; end
 
 	; BIRD_KEEPER (9)
@@ -1087,8 +1087,8 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (14)
 	db "QUINN@", TRAINERTYPE_NORMAL
-	db 56, VENUSAUR
-	db 54, STARMIE
+	db 65, VENUSAUR
+	db 63, STARMIE
 	db -1 ; end
 
 	; COOLTRAINERF (15)
@@ -1560,15 +1560,15 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 50, BEEDRILL
-	db 50, BUTTERFREE
+	db 65, BEEDRILL
+	db 65, BUTTERFREE
 	db -1 ; end
 
 	; BUG_CATCHER (3)
 	db "ED@", TRAINERTYPE_NORMAL
-	db 45, BEEDRILL
-	db 45, YANMEGA
-	db 45, PINSIR
+	db 64, BEEDRILL
+	db 64, YANMEGA
+	db 64, PINSIR
 	db -1 ; end
 
 	; BUG_CATCHER (4)
@@ -1626,7 +1626,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 60, LEDIAN
+	db 70, LEDIAN
 	db -1 ; end
 
 	; BUG_CATCHER (13)
@@ -1685,7 +1685,7 @@ FisherGroup:
 
 	; FISHER (3)
 	db "ARNOLD@", TRAINERTYPE_NORMAL
-	db 47, TENTACRUEL
+	db 72, TENTACRUEL
 	db -1 ; end
 
 	; FISHER (4)
@@ -1831,8 +1831,8 @@ FisherGroup:
 SwimmerMGroup:
 	; SWIMMERM (1)
 	db "HAROLD@", TRAINERTYPE_NORMAL
-	db 55, REMORAID
-	db 55, SEADRA
+	db 70, REMORAID
+	db 70, SEADRA
 	db -1 ; end
 
 	; SWIMMERM (2)
@@ -1883,28 +1883,28 @@ SwimmerMGroup:
 
 	; SWIMMERM (9)
 	db "JEROME@", TRAINERTYPE_NORMAL
-	db 42, SEADRA
-	db 44, MANTINE
-	db 43, TENTACRUEL
-	db 45, SEAKING
+	db 63, SEADRA
+	db 65, MANTINE
+	db 64, TENTACRUEL
+	db 66, SEAKING
 	db -1 ; end
 
 	; SWIMMERM (10)
 	db "TUCKER@", TRAINERTYPE_NORMAL
-	db 42, CORSOLA
-	db 41, CLOYSTER
+	db 67, CORSOLA
+	db 66, CLOYSTER
 	db -1 ; end
 
 	; SWIMMERM (11)
 	db "CAMERON@", TRAINERTYPE_NORMAL
-	db 56, AZUMARILL
+	db 65, AZUMARILL
 	db -1 ; end
 
 	; SWIMMERM (12)
 	db "SETH@", TRAINERTYPE_NORMAL
-	db 40, SLOWBRO
-	db 41, OCTILLERY
-	db 42, QUAGSIRE
+	db 69, SLOWBRO
+	db 70, OCTILLERY
+	db 71, QUAGSIRE
 	db -1 ; end
 
 	; SWIMMERM (13)
@@ -1963,29 +1963,29 @@ SwimmerFGroup:
 
 	; SWIMMERF (9)
 	db "DAWN@", TRAINERTYPE_NORMAL
-	db 49, SEAKING
-	db 49, KINGLER
+	db 67, SEAKING
+	db 67, KINGLER
 	db -1 ; end
 
 	; SWIMMERF (10)
 	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 42, MARILL
-	db 42, AZUMARILL
-	db 43, LAPRAS
+	db 56, MARILL
+	db 56, AZUMARILL
+	db 57, LAPRAS
 	db -1 ; end
 
 	; SWIMMERF (11)
 	db "LORI@", TRAINERTYPE_NORMAL
-	db 42, STARMIE
-	db 50, STARYU
+	db 64, STARMIE
+	db 70, STARYU
 	db -1 ; end
 
 	; SWIMMERF (12)
 	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 42, SHUCKLE
-	db 44, MANTINE
-	db 41, CLOYSTER
-	db 43, DEWGONG
+	db 64, SHUCKLE
+	db 66, MANTINE
+	db 63, CLOYSTER
+	db 65, DEWGONG
 	db -1 ; end
 
 	; SWIMMERF (13)
@@ -2504,9 +2504,9 @@ BurglarGroup:
 FirebreatherGroup:
 	; FIREBREATHER (1)
 	db "OTIS@", TRAINERTYPE_NORMAL
-	db 42, MAGMAR
-	db 42, WEEZING
-	db 45, TYPHLOSION
+	db 57, MAGMAR
+	db 57, WEEZING
+	db 60, TYPHLOSION
 	db -1 ; end
 
 	; FIREBREATHER (2)
@@ -2523,8 +2523,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (4)
 	db "BURT@", TRAINERTYPE_NORMAL
-	db 44, WEEZING
-	db 44, MAGCARGO
+	db 60, WEEZING
+	db 60, MAGCARGO
 	db -1 ; end
 
 	; FIREBREATHER (5)
@@ -2777,13 +2777,13 @@ PicnickerGroup:
 
 	; PICNICKER (6)
 	db "HOPE@", TRAINERTYPE_NORMAL
-	db 51, FLAAFFY
+	db 61, FLAAFFY
 	db -1 ; end
 
 	; PICNICKER (7)
 	db "SHARON@", TRAINERTYPE_NORMAL
-	db 42, FURRET
-	db 41, RAPIDASH
+	db 60, FURRET
+	db 59, RAPIDASH
 	db -1 ; end
 
 	; PICNICKER (8)
@@ -2994,10 +2994,10 @@ CamperGroup:
 
 	; CAMPER (17)
 	db "JOHN@", TRAINERTYPE_NORMAL
-	db 48, DUGTRIO
-	db 42, SANDSLASH
-	db 44, STARMIE
-	db 49, DONPHAN
+	db 63, DUGTRIO
+	db 56, SANDSLASH
+	db 60, STARMIE
+	db 64, DONPHAN
 	db -1 ; end
 
 	; CAMPER (18)
