@@ -13,7 +13,7 @@ SafariZone_MapEvents:
 
 	def_warp_events
 	warp_event 30, 47, SAFARI_ZONE_GATE, 1
-	warp_event 30, 48, SAFARI_ZONE_GATE, 2
+	warp_event 31, 47, SAFARI_ZONE_GATE, 2
 
 	def_coord_events
 
