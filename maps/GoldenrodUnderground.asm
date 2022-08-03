@@ -401,6 +401,7 @@ BasementDoorScript::
 	reloadmappart
 	closetext
 	setevent EVENT_USED_BASEMENT_KEY
+	takeitem BASEMENT_KEY
 	end
 
 .Open:
