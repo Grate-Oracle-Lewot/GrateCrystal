@@ -186,7 +186,7 @@ EnterMapWarp:
 	ret z
 	cp MAP_TIN_TOWER_ROOF
 	ret z
-	cp MEW_ANTECHAMBER
+	cp MAP_MEW_ANTECHAMBER
 	ret z
 .not_mt_moon_square_or_tin_tower_roof
 
