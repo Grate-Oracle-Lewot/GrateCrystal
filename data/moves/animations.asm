@@ -1382,10 +1382,6 @@ BattleAnim_DarkPulse:
 	anim_incobj 8
 	anim_incobj 9
 	anim_wait 16
-	anim_1gfx ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
-	anim_wait 32
-	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_Acid:
@@ -2849,10 +2845,13 @@ BattleAnim_SilverWind:
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 16
