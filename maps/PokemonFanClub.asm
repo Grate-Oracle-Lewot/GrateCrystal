@@ -26,7 +26,7 @@ PokemonFanClubChairmanScript:
 .HeardSpeechButBagFull:
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
-	verbosegiveitem RARE_CANDY
+	verbosegiveitem LUCKY_EGG
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext PokemonFanClubChairmanItsARareCandyText
@@ -168,15 +168,14 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
-	line "that makes #MON"
-	cont "stronger."
+	text "It's a LUCKY EGG."
+	line "If a #MON holds"
 
-	para "I prefer making my"
-	line "#MON stronger"
+	para "that, it will gain"
+	line "more experience"
 
-	para "by battling, so"
-	line "you can have it."
+	para "than usual from"
+	line "battles!"
 	done
 
 PokemonFanClubChairmanMoreTalesToTellText:
