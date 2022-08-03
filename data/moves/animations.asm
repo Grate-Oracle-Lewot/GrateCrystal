@@ -1358,7 +1358,6 @@ BattleAnim_Selfdestruct:
 
 BattleAnim_DarkPulse:
 	anim_1gfx ANIM_GFX_CHARGE
-	anim_call BattleAnim_TargetObj_1Row
 	anim_bgp $1b
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $8
@@ -2858,7 +2857,16 @@ BattleAnim_SilverWind:
 	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
 	anim_wait 6
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
-	anim_wait 64
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 32
 	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 4
@@ -4043,22 +4051,18 @@ BattleAnim_Safeguard:
 
 BattleAnim_NightTerror:
 	anim_2gfx ANIM_GFX_ANGELS, ANIM_GFX_HIT
-	anim_bgp $1b
-	anim_obp0 $f
-	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $0
-	anim_obj ANIM_OBJ_NIGHTMARE, 132, 40, $a0
-	anim_sound 0, 1, SFX_NIGHTMARE
-	anim_wait 84
+	anim_sound 0, 0, SFX_BUBBLEBEAM
+	anim_obj ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
+	anim_wait 32
 	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
-	anim_sound 0, 0, SFX_SPARK
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 48, $0
 	anim_wait 6
-	anim_sound 0, 0, SFX_SPARK
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 144, 48, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
