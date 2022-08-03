@@ -78,6 +78,7 @@ KRIS EQU __trainer_class__
 	const WILL1
 
 	trainerclass CAL ; c
+	const CAL1
 	const CAL2
 	const CAL3
 	const IGGY
