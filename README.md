@@ -194,7 +194,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Artificial save delays removed
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
-- 25% AI failure chance removed for stat-reduction moves, left in place for Sleep, Poison, and Paralysis
+- 25% AI failure chance removed
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
 - No experience gained at Lv100
