@@ -4643,7 +4643,7 @@ BattleAnim_DrainKiss:
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
 	anim_wait 32
-	anim_sound 0, 1, SFX_LICK
+	anim_sound 0, 1, SFX_FORESIGHT
 	anim_obj ANIM_OBJ_HEART, 128, 40, $0
 	anim_call BattleAnimSub_Drain
 	anim_wait 128
