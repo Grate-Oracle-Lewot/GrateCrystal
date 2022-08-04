@@ -265,7 +265,7 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        20, WATER,        SPECIAL,  100, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            30, DARK,         PHYSICAL, 100, 10,   0
 	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY,        SPECIAL,  100, 30,   0
-	move DRAIN_KISS,   EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 10,   0
+	move DRAIN_KISS,   EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
 	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   85,  5,  30
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       PHYSICAL, 100,  1,   0
 	assert_table_length NUM_ATTACKS
