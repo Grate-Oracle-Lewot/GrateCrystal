@@ -19,9 +19,10 @@ SetMenuMonIconColor:
 	push bc
 	push af
 
-	ld a, [wd265]
+	ld a, [wTempIconSpecies]
 	ld [wCurPartySpecies], a
 	call GetMenuMonIconPalette
+	ld hl, wVirtualOAMSprite00Attributes
 	jr _ApplyMenuMonIconColor
 
 SetMenuMonIconColor_NoShiny:
@@ -30,10 +31,11 @@ SetMenuMonIconColor_NoShiny:
 	push bc
 	push af
 
-	ld a, [wd265]
+	ld a, [wTempIconSpecies]
 	ld [wCurPartySpecies], a
 	and a
 	call GetMenuMonIconPalette_PredeterminedShininess
+	ld hl, wVirtualOAMSprite00Attributes
 	jr _ApplyMenuMonIconColor
 
 LoadPartyMenuMonIconColors:
@@ -123,7 +125,6 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	swap a
 .shiny
 	and $f
-	ld l, a
 	ret
 
 LoadMenuMonIcon:
