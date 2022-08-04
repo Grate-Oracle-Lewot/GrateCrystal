@@ -7,7 +7,6 @@ TimeCapsule_CatchRateItems:
 	db BICYCLE,      BERRY
 	db COIN_CASE,    BERRY
 	db ITEMFINDER,   BERRY
-	db POKE_FLUTE,   BERRY
 	db OLD_ROD,      BERRY
 	db GOOD_ROD,     BERRY
 	db SUPER_ROD,    BERRY
