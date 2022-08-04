@@ -3114,12 +3114,14 @@ BattleAnim_TailWhip:
 
 BattleAnim_PlayRough:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_ATTRACT
-	anim_obj ANIM_OBJ_HEART, 64, 76, $0
+	anim_obj ANIM_OBJ_HEART, 64, 80, $0
 	anim_wait 32
-	anim_sound 0, 0, SFX_ATTRACT
-	anim_obj ANIM_OBJ_HEART, 36, 72, $0
-	anim_wait 32
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
 	anim_sound 0, 1, SFX_POUND
 	anim_obj ANIM_OBJ_PALM, 120, 72, $0
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
