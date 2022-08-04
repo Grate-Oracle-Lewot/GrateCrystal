@@ -214,9 +214,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Whimsicott's back sprite is scrambled (probably applies to Yanmega and the ! and ? Unowns as well)
-
-- Pokémon icons don't color on the nicknaming screen, moves screen, or Fly map
+- Night Terror's animation kinda lags in the middle; it used to crash the game, so there might still be a possibility of a crash, but I haven't seen one yet
 
 # FAQ
 
