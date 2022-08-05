@@ -117,7 +117,7 @@ ItemNames::
 	li "GS BALL"
 	li "BLUE CARD"
 	li "MIRACLE SEED"
-	li "CUE BONE"
+	li "BONE"
 	li "FOCUS BAND"
 	li "LIMBO STICK"
 	li "ENERGYPOWDER"
