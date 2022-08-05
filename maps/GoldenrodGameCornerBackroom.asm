@@ -14,7 +14,42 @@ GoldenrodGameCornerBackroom_MapScripts:
 	def_callbacks
 
 GoldenrodGameCornerBackroomGymGuideScript:
-	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideText
+	checkevent EVENT_BEAT_GAMBLER_LUCKY
+	iftrue .CheckHarvey
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckHarvey:
+	checkevent EVENT_BEAT_GAMBLER_HARVEY
+	iftrue .CheckAce
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckAce:
+	checkevent EVENT_BEAT_GAMBLER_ACE
+	iftrue .CheckHuck
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckHuck:
+	checkevent EVENT_BEAT_GAMBLER_HUCK
+	iftrue .CheckThoreau
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckThoreau:
+	checkevent EVENT_BEAT_GAMBLER_THOREAU
+	iftrue .CheckPT
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckPT:
+	checkevent EVENT_BEAT_GAMBLER_P_T
+	iftrue .CheckLiuHai
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.CheckLiuHai:
+	checkevent EVENT_BEAT_GAMBLER_LIU_HAI
+	iftrue .AfterScript
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideBeforeText
+
+.AfterScript:
+	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideAfterText
 
 TrainerGamblerLucky:
 	trainer GAMBLER, LUCKY, EVENT_BEAT_GAMBLER_LUCKY, GamblerLuckySeenText, GamblerLuckyBeatenText, 0, .Script
@@ -96,8 +131,8 @@ TrainerGamblerLiuHai:
 GoldenrodGameCornerBackroomTrashcan:
 	jumpstd TrashCanScript
 
-GoldenrodGameCornerBackroomGymGuideText:
-	text "Yo, CHAMP in"
+GoldenrodGameCornerBackroomGymGuideBeforeText:
+	text "Yo, millionaire in"
 	line "making!"
 
 	para "Be careful in this"
@@ -123,6 +158,15 @@ GoldenrodGameCornerBackroomGymGuideText:
 	para "Think carefully"
 	line "about what you"
 	cont "want to do."
+	done
+
+GoldenrodGameCornerBackroomGymGuideAfterText:
+	text "Wow, you beat them"
+	line "all!"
+
+	para "You're either very"
+	line "lucky, very skill-"
+	cont "ed, or both!"
 	done
 
 GamblerLuckySeenText:
@@ -248,7 +292,7 @@ GoldenrodGameCornerBackroom_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, GoldenrodGameCornerBackroomTrashcan
 
 	def_object_events
-	object_event  1,  7, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerBackroomGymGuideScript, -1
+	object_event  1,  6, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerBackroomGymGuideScript, -1
 	object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLucky, -1
 	object_event  2,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHarvey, -1
 	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerAce, -1
