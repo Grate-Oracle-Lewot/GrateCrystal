@@ -317,11 +317,10 @@ GoldenrodGameCornerPosterScript:
 	opentext
 	writetext GoldenrodGameCornerBehindPosterText
 	closetext
-	special FadeBlackQuickly
+	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp GOLDENROD_GAME_CORNER_BACKROOM, 2, 7
-	special FadeInQuickly
 	end
 
 GoldenrodGameCornerPrizeVendorIntroText:
