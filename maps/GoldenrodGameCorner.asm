@@ -485,7 +485,7 @@ GoldenrodGameCorner_MapEvents:
 	def_warp_events
 	warp_event  2, 13, GOLDENROD_CITY, 10
 	warp_event  3, 13, GOLDENROD_CITY, 10
-	warp_event  0,  0, GOLDENROD_GAME_CORNER_BACKROOM, 1
+	warp_event  9,  1, GOLDENROD_GAME_CORNER_BACKROOM, 1
 
 	def_coord_events
 
