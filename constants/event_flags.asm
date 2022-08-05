@@ -1538,7 +1538,8 @@
 	const EVENT_ILEX_FOREST_GOLD_LEAF
 	const EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
 	const EVENT_DARK_CAVE_2F_FOCUS_BAND
-; Unused: next 48 (now 10) events
+	const EVENT_SAFARI_ZONE_THICK_CLUB
+; Unused: next 48 (now 9) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
