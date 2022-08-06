@@ -155,7 +155,7 @@ ENDM
 	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ; 91
 	map_const ROCK_TUNNEL_ZAPDOS_CHAMBER,                  10, 18 ; 92
 	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 10, 18 ; 93
-	map_const MEW_ANTECHAMBER,                              5,  9 ; 94
+	map_const MEW_ANTECHAMBER,                              6, 12 ; 94
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
 	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 96
 	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 97
