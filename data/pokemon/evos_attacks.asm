@@ -682,6 +682,7 @@ VenonatEvosAttacks:
 	db 33, SILVER_WIND
 	db 36, SLEEP_POWDER
 	db 41, PSYCHIC_M
+	db 47, MEGA_KICK
 	db 0 ; no more level-up moves
 
 VenomothEvosAttacks:
@@ -698,6 +699,7 @@ VenomothEvosAttacks:
 	db 36, SILVER_WIND
 	db 42, SLEEP_POWDER
 	db 52, PSYCHIC_M
+	db 60, MEGA_KICK
 	db 0 ; no more level-up moves
 
 DiglettEvosAttacks:
