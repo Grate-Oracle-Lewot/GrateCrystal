@@ -425,10 +425,10 @@ ScytherEggMoves:
 
 PinsirEggMoves:
 	db FURY_ATTACK
-	db FLAIL
 	db KARATE_CHOP
 	db SLASH
 	db CRABHAMMER
+	db MEGAHORN
 	db -1 ; end
 
 LaprasEggMoves:
