@@ -823,6 +823,7 @@ PrimeapeEvosAttacks:
 	db 19, SWAGGER
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
+	db 27, MEGA_PUNCH
 	db 36, SEISMIC_TOSS
 	db 45, CROSS_CHOP
 	db 54, SCREECH
