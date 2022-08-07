@@ -591,7 +591,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (17)
 	db "CHAD@", TRAINERTYPE_NORMAL
-	db 21, MR__MIME
+	db 26, MR__MIME
 	db 21, MAGNEMITE
 	db -1 ; end
 
@@ -783,7 +783,7 @@ LassGroup:
 	; LASS (4)
 	db "KRISE@", TRAINERTYPE_NORMAL
 	db 19, SUNKERN
-	db 17, CUBONE
+	db 17, ELEKID
 	db -1 ; end
 
 	; LASS (5)
@@ -2364,7 +2364,7 @@ HikerGroup:
 
 	; HIKER (17)
 	db "JIM@", TRAINERTYPE_NORMAL
-	db 52, MACHAMP
+	db 64, TYROGUE
 	db -1 ; end
 
 	; HIKER (18)
