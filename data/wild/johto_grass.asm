@@ -1834,30 +1834,30 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 41, TANGELA
-	db 42, XATU
+	db 41, VICTREEBEL
+	db 42, SCYTHER
 	db 45, STANTLER
-	db 43, ARBOK
+	db 44, MAGNETON
+	db 43, PINSIR
 	db 42, MAGCARGO
-	db 44, DODRIO
 	db 43, URSARING
 	db 43, DONPHAN
 	; day
 	db 41, TANGELA
-	db 45, RAPIDASH
-	db 42, GRANBULL
-	db 43, ARBOK
 	db 42, SCYTHER
+	db 45, RAPIDASH
 	db 44, DODRIO
+	db 43, ARBOK
+	db 42, GRANBULL
 	db 43, URSARING
 	db 43, DONPHAN
 	; nite
-	db 41, TANGELA
+	db 41, VILEPLUME
 	db 42, SNEASEL
-	db 45, RAPIDASH
-	db 43, ARBOK
-	db 42, HOUNDOOM
+	db 45, STANTLER
+	db 44, DODRIO
 	db 44, PERSIAN
+	db 42, HOUNDOOM
 	db 43, GOLBAT
 	db 43, POLIWHIRL
 	end_grass_wildmons
