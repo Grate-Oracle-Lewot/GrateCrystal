@@ -187,6 +187,7 @@ ButterfreeEvosAttacks:
 	db 34, PSYBEAM
 	db 40, SAFEGUARD
 	db 45, SILVER_WIND
+	db 50, MIRROR_MOVE
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
@@ -213,7 +214,8 @@ BeedrillEvosAttacks:
 	db 30, PURSUIT
 	db 35, PIN_MISSILE
 	db 40, DRILL_PECK
-	db 45, HORN_DRILL
+	db 45, SPIKE_CANNON
+	db 50, HORN_DRILL
 	db 0 ; no more level-up moves
 
 PidgeyEvosAttacks:
