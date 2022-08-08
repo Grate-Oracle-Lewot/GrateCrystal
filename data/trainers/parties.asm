@@ -1604,8 +1604,8 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (9)
 	db "KEN@", TRAINERTYPE_NORMAL
-	db 44, ARIADOS
-	db 50, PINSIR
+	db 63, ARIADOS
+	db 60, PINSIR
 	db -1 ; end
 
 	; BUG_CATCHER (10)
@@ -2231,7 +2231,7 @@ Rival2Group:
 GuitaristGroup:
 	; GUITARIST (1)
 	db "CLYDE@", TRAINERTYPE_NORMAL
-	db 64, ELECTABUZZ
+	db 67, ELECTABUZZ
 	db -1 ; end
 
 	; GUITARIST (2)
