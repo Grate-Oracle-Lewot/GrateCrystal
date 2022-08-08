@@ -1242,8 +1242,8 @@ PokemaniacGroup:
 
 	; POKEMANIAC (8)
 	db "ETHAN@", TRAINERTYPE_NORMAL
-	db 37, RHYHORN
-	db 37, RHYDON
+	db 60, RHYHORN
+	db 54, RHYDON
 	db -1 ; end
 
 	; POKEMANIAC (9)
