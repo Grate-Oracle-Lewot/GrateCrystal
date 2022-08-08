@@ -162,6 +162,16 @@ ENDM
 	map_const SAFARI_ZONE,                                 30, 27 ; 98
 	map_const DARK_CAVE_2F,                                10,  9 ; 99
 	map_const VIRIDIAN_FOREST,                             15, 27 ; 100
+	map_const SILPH_CO_2F,                                 15,  9 ; 101
+	map_const SILPH_CO_3F,                                 15,  9 ; 102
+	map_const SILPH_CO_4F,                                 15,  9 ; 103
+	map_const SILPH_CO_5F,                                 15,  9 ; 104
+	map_const SILPH_CO_6F,                                 13,  9 ; 105
+	map_const SILPH_CO_7F,                                 13,  9 ; 106
+	map_const SILPH_CO_8F,                                 13,  9 ; 107
+	map_const SILPH_CO_9F,                                 13,  9 ; 108
+	map_const SILPH_CO_10F,                                 8,  9 ; 109
+	map_const SILPH_CO_11F,                                 8,  9 ; 110
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
