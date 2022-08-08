@@ -553,14 +553,14 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (11)
 	db "NATE@", TRAINERTYPE_NORMAL
-	db 42, LEDYBA
-	db 42, EXEGGUTOR
+	db 59, LEDYBA
+	db 59, EXEGGUTOR
 	db -1 ; end
 
 	; SCHOOLBOY (12)
 	db "RICKY@", TRAINERTYPE_NORMAL
-	db 42, AIPOM
-	db 42, DITTO
+	db 59, AIPOM
+	db 59, DITTO
 	db -1 ; end
 
 	; SCHOOLBOY (13)
@@ -1533,7 +1533,7 @@ TeacherGroup:
 
 	; TEACHER (3)
 	db "SHIRLEY@", TRAINERTYPE_NORMAL
-	db 42, WIGGLYTUFF
+	db 68, WIGGLYTUFF
 	db -1 ; end
 
 	; TEACHER (4)
