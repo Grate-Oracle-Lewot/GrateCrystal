@@ -3234,9 +3234,9 @@ PokefanMGroup:
 
 	; POKEFANM (8)
 	db "JEREMY@", TRAINERTYPE_ITEM
-	db 46, MEOWTH,     GOLD_BERRY
-	db 52, MEOWTH,     GOLD_BERRY
-	db 60, MEOWTH,     GOLD_BERRY
+	db 61, MEOWTH,     GOLD_BERRY
+	db 61, PERSIAN,    GOLD_BERRY
+	db 71, PERSIAN,    GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (9)
@@ -3371,11 +3371,11 @@ PokefanFGroup:
 
 	; POKEFANF (3)
 	db "GEORGIA@", TRAINERTYPE_ITEM
-	db 42, SENTRET,    BERRY
-	db 42, EEVEE,      BERRY
-	db 42, LEDIAN,     BERRY
-	db 42, MR__MIME,   BERRY
-	db 42, FURRET,     BERRY
+	db 60, SENTRET,    GOLD_BERRY
+	db 60, EEVEE,      GOLD_BERRY
+	db 60, LEDIAN,     GOLD_BERRY
+	db 60, MR__MIME,   GOLD_BERRY
+	db 60, FURRET,     GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANF (4)
