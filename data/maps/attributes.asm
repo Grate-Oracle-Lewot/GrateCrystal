@@ -491,6 +491,16 @@ ENDM
 	map_attributes SafariZone, SAFARI_ZONE, $05, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
+	map_attributes SilphCo2F, SILPH_CO_2F, $00, 0
+	map_attributes SilphCo3F, SILPH_CO_3F, $00, 0
+	map_attributes SilphCo4F, SILPH_CO_4F, $00, 0
+	map_attributes SilphCo5F, SILPH_CO_5F, $00, 0
+	map_attributes SilphCo6F, SILPH_CO_6F, $00, 0
+	map_attributes SilphCo7F, SILPH_CO_7F, $00, 0
+	map_attributes SilphCo8F, SILPH_CO_8F, $00, 0
+	map_attributes SilphCo9F, SILPH_CO_9F, $00, 0
+	map_attributes SilphCo10F, SILPH_CO_10F, $00, 0
+	map_attributes SilphCo11F, SILPH_CO_11F, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
