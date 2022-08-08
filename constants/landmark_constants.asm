@@ -76,30 +76,31 @@ KANTO_LANDMARK EQU const_value
 	const LANDMARK_LAV_RADIO_TOWER   ; 47
 	const LANDMARK_CELADON_CITY      ; 48
 	const LANDMARK_SAFFRON_CITY      ; 49
-	const LANDMARK_ROUTE_11          ; 4a
-	const LANDMARK_ROUTE_12          ; 4b
-	const LANDMARK_ROUTE_13          ; 4c
-	const LANDMARK_ROUTE_14          ; 4d
-	const LANDMARK_ROUTE_15          ; 4e
-	const LANDMARK_ROUTE_16          ; 4f
-	const LANDMARK_ROUTE_17          ; 50
-	const LANDMARK_ROUTE_18          ; 51
-	const LANDMARK_FUCHSIA_CITY      ; 52
-	const LANDMARK_SAFARI_ZONE       ; 53
-	const LANDMARK_ROUTE_19          ; 54
-	const LANDMARK_ROUTE_20          ; 55
-	const LANDMARK_SEAFOAM_ISLANDS   ; 56
-	const LANDMARK_CINNABAR_ISLAND   ; 57
-	const LANDMARK_ROUTE_21          ; 58
-	const LANDMARK_ROUTE_22          ; 59
-	const LANDMARK_VICTORY_ROAD      ; 5a
-	const LANDMARK_ROUTE_23          ; 5b
-	const LANDMARK_INDIGO_PLATEAU    ; 5c
-	const LANDMARK_ROUTE_26          ; 5d
-	const LANDMARK_ROUTE_27          ; 5e
-	const LANDMARK_TOHJO_FALLS       ; 5f
-	const LANDMARK_ROUTE_28          ; 60
-	const LANDMARK_FAST_SHIP         ; 61
+	const LANDMARK_SILPH_CO          ; 4a
+	const LANDMARK_ROUTE_11          ; 4b
+	const LANDMARK_ROUTE_12          ; 4c
+	const LANDMARK_ROUTE_13          ; 4d
+	const LANDMARK_ROUTE_14          ; 4e
+	const LANDMARK_ROUTE_15          ; 4f
+	const LANDMARK_ROUTE_16          ; 50
+	const LANDMARK_ROUTE_17          ; 51
+	const LANDMARK_ROUTE_18          ; 52
+	const LANDMARK_FUCHSIA_CITY      ; 53
+	const LANDMARK_SAFARI_ZONE       ; 54
+	const LANDMARK_ROUTE_19          ; 55
+	const LANDMARK_ROUTE_20          ; 56
+	const LANDMARK_SEAFOAM_ISLANDS   ; 57
+	const LANDMARK_CINNABAR_ISLAND   ; 58
+	const LANDMARK_ROUTE_21          ; 59
+	const LANDMARK_ROUTE_22          ; 5a
+	const LANDMARK_VICTORY_ROAD      ; 5b
+	const LANDMARK_ROUTE_23          ; 5c
+	const LANDMARK_INDIGO_PLATEAU    ; 5d
+	const LANDMARK_ROUTE_26          ; 5e
+	const LANDMARK_ROUTE_27          ; 5f
+	const LANDMARK_TOHJO_FALLS       ; 60
+	const LANDMARK_ROUTE_28          ; 61
+	const LANDMARK_FAST_SHIP         ; 62
 NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData
