@@ -1,6 +1,5 @@
 	object_const_def
 	const SILPHCO1F_RECEPTIONIST
-	const SILPHCO1F_OFFICER
 
 SilphCo1F_MapScripts:
 	def_scene_scripts
@@ -28,9 +27,15 @@ SilphCoOfficerScript:
 	end
 
 SilphCoReceptionistText:
-	text "Welcome. This is"
-	line "SILPH CO.'s HEAD"
-	cont "OFFICE BUILDING."
+	text "Welcome to SILPH"
+	line "COMPANY."
+
+	para "If you need to"
+	line "speak to the"
+
+	para "CHIEF, his office"
+	line "is on the 11th"
+	cont "floor."
 	done
 
 SilphCoOfficerText:
@@ -59,6 +64,7 @@ SilphCo1F_MapEvents:
 	def_warp_events
 	warp_event  2,  7, SAFFRON_CITY, 7
 	warp_event  3,  7, SAFFRON_CITY, 7
+	warp_event 13,  0, SILPH_CO_2F, 1
 
 	def_coord_events
 
@@ -66,4 +72,3 @@ SilphCo1F_MapEvents:
 
 	def_object_events
 	object_event  4,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
-	object_event 13,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoOfficerScript, -1
