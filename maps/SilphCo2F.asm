@@ -38,4 +38,4 @@ SilphCo2F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo2FSign
 
 	def_object_events
-	object_event 10,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo2FReceptionistScript, -1
+	object_event 10,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo2FReceptionistScript, -1
