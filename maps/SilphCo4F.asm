@@ -1,12 +1,26 @@
 	object_const_def
+	const SILPHCO4F_CLERK
 
 SilphCo4F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
+SilphCo4FClerkScript:
+	jumptextfaceplayer SilphCo4FClerkText
+
 SilphCo4FSign:
 	jumptext SilphCo4FSignText
+
+SilphCo4FClerkText:
+	text "Sorry, we can't"
+	line "open any of these"
+	cont "shutters for you."
+
+	para "It's all just"
+	line "storage space,"
+	cont "anyway."
+	done
 
 SilphCo4FSignText:
 	text "SILPH CO. 4F"
@@ -29,3 +43,4 @@ SilphCo4F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo4FSign
 
 	def_object_events
+	object_event  6, 13, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo4FClerkScript, -1
