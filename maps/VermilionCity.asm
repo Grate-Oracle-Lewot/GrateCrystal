@@ -134,13 +134,15 @@ VermilionCityTeacherText:
 	done
 
 VermilionMachopOwnerText:
-	text "My #MON is"
-	line "preparing the land"
-	cont "for construction."
+	text "My MACHOP got this"
+	line "plot ready for"
 
-	para "But I have no"
-	line "money to start the"
-	cont "project…"
+	para "development three"
+	line "years ago, but"
+
+	para "then I blew all my"
+	line "money at the GAME"
+	cont "CORNER…"
 	done
 
 VermilionMachopText1:
@@ -149,9 +151,8 @@ VermilionMachopText1:
 	done
 
 VermilionMachopText2:
-	text "A MACHOP is growl-"
-	line "ing while stomping"
-	cont "the ground flat."
+	text "MACHOP's annoyed"
+	line "with its trainer…"
 	done
 
 VermilionCitySuperNerdText:
