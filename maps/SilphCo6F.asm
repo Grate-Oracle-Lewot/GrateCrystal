@@ -18,6 +18,7 @@ SilphCo6F_MapEvents:
 	def_warp_events
 	warp_event 13,  2, SILPH_CO_5F, 2
 	warp_event 15,  2, SILPH_CO_7F, 1
+	warp_event  3,  3, SILPH_CO_4F, ?
 
 	def_coord_events
 
