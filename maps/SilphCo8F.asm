@@ -20,6 +20,8 @@ SilphCo8F_MapEvents:
 	warp_event 17,  2, SILPH_CO_9F, 1
 	warp_event  3, 15, SILPH_CO_2F, 3
 	warp_event 11,  5, SILPH_CO_2F, 4
+	warp_event 11,  9, SILPH_CO_8F, 6
+	warp_event  3, 11, SILPH_CO_8F, 5
 
 	def_coord_events
 
