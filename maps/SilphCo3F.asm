@@ -1,12 +1,29 @@
 	object_const_def
+	const SILPHCO3F_CLERK
 
 SilphCo3F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
+SilphCo3FClerkScript:
+	jumptextfaceplayer SilphCo3FClerkText
+
 SilphCo3FSign:
 	jumptext SilphCo3FSignText
+
+SilphCo3FClerkText:
+	text "We used to have an"
+	line "elevator, but it"
+
+	para "was considered a"
+	line "security hazard"
+
+	para "after TEAM ROCKET"
+	line "took us over…"
+
+	para "Sigh…"
+	done
 
 SilphCo3FSignText:
 	text "SILPH CO. 3F"
@@ -32,3 +49,4 @@ SilphCo3F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo3FSign
 
 	def_object_events
+	object_event 26, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo3FClerkScript, -1
