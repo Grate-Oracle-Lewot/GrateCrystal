@@ -1,12 +1,76 @@
 	object_const_def
+	const SILPHCO6F_CLERK1
+	const SILPHCO6F_CLERK2
+	const SILPHCO6F_CLERK3
+	const SILPHCO6F_RECEPTIONIST1
+	const SILPHCO6F_RECEPTIONIST2
 
 SilphCo6F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
+SilphCo6FClerk1Script:
+	jumptextfaceplayer SilphCo6FClerk1Text
+
+SilphCo6FClerk2Script:
+	jumptextfaceplayer SilphCo6FClerk2Text
+
+SilphCo6FClerk3Script:
+	jumptextfaceplayer SilphCo6FClerk3Text
+
+SilphCo6FReceptionist1Script:
+	jumptextfaceplayer SilphCo6FReceptionist1Text
+
+SilphCo6FReceptionist2Script:
+	jumptextfaceplayer SilphCo6FReceptionist2Text
+
 SilphCo6FSign:
 	jumptext SilphCo6FSignText
+
+SilphCo6FClerk1Text:
+	text "I've got this"
+	line "great idea called"
+
+	para "WONDER TRADING,"
+	line "but the higher-ups"
+	cont "won't go for it…"
+	done
+
+SilphCo6FClerk2Text:
+	text "OK, team. We need"
+	line "a new product."
+
+	para "Something cheap to"
+	line "make, but in high"
+	cont "demand!"
+	done
+
+SilphCo6FClerk3Text:
+	text "Install the warp"
+	line "panels, they said…"
+
+	para "It'll make it eas-"
+	line "ier to get around,"
+	cont "they said…"
+	done
+
+SilphCo6FReceptionist1Text:
+	text "This guy was such"
+	line "a coward when TEAM"
+
+	para "ROCKET took over"
+	line "our building."
+	done
+
+SilphCo6FReceptionist2Text:
+	text "You're a kid."
+	line "What are kids into"
+	cont "these days?"
+
+	para "C'mon, gimme some-"
+	line "thing marketable!"
+	done
 
 SilphCo6FSignText:
 	text "SILPH CO. 6F"
@@ -27,3 +91,8 @@ SilphCo6F_MapEvents:
 	bg_event 18,  1, BGEVENT_READ, SilphCo6FSign
 
 	def_object_events
+	object_event 10,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk1Script, -1
+	object_event 19,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk2Script, -1
+	object_event 16, 12, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk3Script, -1
+	object_event 18,  8, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo6FReceptionist1Script, -1
+	object_event 15,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo6FReceptionist2Script, -1
