@@ -1551,7 +1551,9 @@
 	const EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
 	const EVENT_DARK_CAVE_2F_FOCUS_BAND
 	const EVENT_SAFARI_ZONE_THICK_CLUB
-; Unused: next 48 (now 9) events
+	const EVENT_SILPH_CO_5F_SCOPE_LENS
+	const EVENT_SILPH_CO_7F_LIGHT_BALL
+; Unused: next 48 (now 7) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
