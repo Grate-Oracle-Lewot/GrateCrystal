@@ -132,7 +132,7 @@ SilphCoChiefsOfficeSignText:
 	text "CHIEF's OFFICE"
 	done
 
-SilphCo10F_MapEvents:
+SilphCo11F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
