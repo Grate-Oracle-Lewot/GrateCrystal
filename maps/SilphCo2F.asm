@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO2F_SCIENTIST
 	const SILPHCO2F_RECEPTIONIST
 
 SilphCo2F_MapScripts:
@@ -6,11 +7,37 @@ SilphCo2F_MapScripts:
 
 	def_callbacks
 
+TrainerScientistHideo:
+	trainer SCIENTIST, HIDEO, EVENT_BEAT_SCIENTIST_HIDEO, ScientistHideoSeenText, ScientistHideoBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistHideoAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SilphCo2FReceptionistScript:
 	jumptextfaceplayer SilphCo2FReceptionistText
 
 SilphCo2FSign:
 	jumptext SilphCo2FSignText
+
+ScientistHideoSeenText:
+	text "What are you doing"
+	line "in here?"
+	done
+
+ScientistHideoBeatenText:
+	text "Oh, whatever."
+	done
+
+ScientistHideoAfterBattleText:
+	text "Get lost, kid. I'm"
+	line "trying to work"
+	cont "here."
+	done
 
 SilphCo2FReceptionistText:
 	text "Don't bug me, kid."
@@ -38,4 +65,5 @@ SilphCo2F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo2FSign
 
 	def_object_events
+	object_event 26, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistHideo, -1
 	object_event 10,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo2FReceptionistScript, -1
