@@ -116,8 +116,8 @@ KRIS EQU __trainer_class__
 	const HEINZ
 	const HIDEO
 	const CONNOR
-	const TOMONORI
-	const MASAHIRO
+	const HEGEL
+	const MENDEL
 	const BEAU
 	const TAYLOR
 	const ELVIN
