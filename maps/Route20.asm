@@ -115,7 +115,7 @@ Route20_MapEvents:
 
 	def_warp_events
 	warp_event 38,  7, SEAFOAM_GYM, 1
-	warp_event 30,  5, SEAFOAM_CAVE_1F, 1
+	warp_event 30,  5, SEAFOAM_CAVE_PUZZLE_CHAMBER, 1
 
 	def_coord_events
 
