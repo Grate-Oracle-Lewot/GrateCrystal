@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO6F_SCIENTIST
 	const SILPHCO6F_CLERK1
 	const SILPHCO6F_CLERK2
 	const SILPHCO6F_CLERK3
@@ -9,6 +10,17 @@ SilphCo6F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerScientistBeau:
+	trainer SCIENTIST, BEAU, EVENT_BEAT_SCIENTIST_BEAU, ScientistBeauSeenText, ScientistBeauBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistBeauAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SilphCo6FClerk1Script:
 	jumptextfaceplayer SilphCo6FClerk1Text
@@ -27,6 +39,18 @@ SilphCo6FReceptionist2Script:
 
 SilphCo6FSign:
 	jumptext SilphCo6FSignText
+
+ScientistBeauSeenText:
+	text "Who are you?!"
+	done
+
+ScientistBeauBeatenText:
+	text "What?!"
+	done
+
+ScientistBeauAfterBattleText:
+	text "Where am I?!"
+	done
 
 SilphCo6FClerk1Text:
 	text "I've got this"
@@ -91,6 +115,7 @@ SilphCo6F_MapEvents:
 	bg_event 18,  1, BGEVENT_READ, SilphCo6FSign
 
 	def_object_events
+	object_event  1,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerScientistBeau, -1
 	object_event 10,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk1Script, -1
 	object_event 19,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk2Script, -1
 	object_event 16, 12, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk3Script, -1
