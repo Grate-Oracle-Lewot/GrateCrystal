@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO3F_SCIENTIST
 	const SILPHCO3F_CLERK
 
 SilphCo3F_MapScripts:
@@ -6,11 +7,55 @@ SilphCo3F_MapScripts:
 
 	def_callbacks
 
+TrainerScientistConnor:
+	trainer SCIENTIST, CONNOR, EVENT_BEAT_SCIENTIST_CONNOR, ScientistConnorSeenText, ScientistConnorBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistConnorAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SilphCo3FClerkScript:
 	jumptextfaceplayer SilphCo3FClerkText
 
 SilphCo3FSign:
 	jumptext SilphCo3FSignText
+
+ScientistConnorSeenText:
+	text "I'll never spill"
+	line "my secrets!"
+	done
+
+ScientistConnorBeatenText:
+	text "OK, OK, I'll tell!"
+	done
+
+ScientistConnorAfterBattleText:
+	text "Around three years"
+	line "ago, the guys on"
+
+	para "CINNABAR were try-"
+	line "ing to create a"
+
+	para "clone of the lege-"
+	line "ndary #MON MEW."
+
+	para "Thing is, they"
+	line "modified the clone"
+
+	para "to try to make it"
+	line "even stronger."
+
+	para "I don't know exac-"
+	line "tly what happened,"
+
+	para "but I'm sure it's"
+	line "what destroyed the"
+	cont "island!"
+	done
 
 SilphCo3FClerkText:
 	text "We used to have an"
@@ -49,4 +94,5 @@ SilphCo3F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo3FSign
 
 	def_object_events
+	object_event  6,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistConnor, -1
 	object_event 26, 20, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo3FClerkScript, -1
