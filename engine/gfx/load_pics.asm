@@ -45,10 +45,10 @@ GetUnownLetter:
 ; Increment to get 1-29
 	ldh a, [hQuotient + 3]
 	inc a
-; The valid range is 1-28, so use UNOWN_E (5) instead of 29
+; The valid range is 1-28, so use UNOWN_A instead of 29
 	cp NUM_UNOWN + 1
 	jr c, .valid
-	ld a, UNOWN_E
+	ld a, UNOWN_A
 .valid
 	ld [wUnownLetter], a
 	ret
