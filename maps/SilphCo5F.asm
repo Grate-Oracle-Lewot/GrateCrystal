@@ -2,6 +2,9 @@
 	const SILPHCO5F_SUPER_NERD
 	const SILPHCO5F_SCIENTIST
 	const SILPHCO5F_CLERK
+	const SILPHCO5F_PAPER1
+	const SILPHCO5F_PAPER2
+	const SILPHCO5F_PAPER3
 	const SILPHCO5F_POKE_BALL
 
 SilphCo5F_MapScripts:
@@ -33,6 +36,9 @@ TrainerScientistMendel:
 
 SilphCo5FClerkScript:
 	jumptextfaceplayer SilphCo5FClerkText
+
+SilphCo5FPaperScript:
+	jumptext SilphCo5FPaperText
 
 SilphCo5FScopeLens:
 	itemball SCOPE_LENS
@@ -97,6 +103,11 @@ SilphCo5FClerkText:
 	cont "margin."
 	done
 
+SilphCo5FPaperText:
+	text "It's a dry-looking"
+	line "business report."
+	done
+
 SilphCo5FSignText:
 	text "SILPH CO. 5F"
 	done
@@ -121,4 +132,7 @@ SilphCo5F_MapEvents:
 	object_event 18, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerDalton, -1
 	object_event  3,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistMendel, -1
 	object_event 12,  8, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo5FClerkScript, -1
+	object_event 24,  6, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SilphCo5FPaperScript, -1
+	object_event 25, 10, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, SilphCo5FPaperScript, -1
+	object_event 22, 12, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SilphCo5FPaperScript, -1
 	object_event  6, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo5FScopeLens, EVENT_SILPH_CO_5F_SCOPE_LENS
