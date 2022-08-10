@@ -1,6 +1,7 @@
 	object_const_def
 	const SILPHCO3F_SCIENTIST
 	const SILPHCO3F_CLERK
+	const SILPHCO3F_POKE_BALL
 
 SilphCo3F_MapScripts:
 	def_scene_scripts
@@ -19,6 +20,9 @@ TrainerScientistConnor:
 
 SilphCo3FClerkScript:
 	jumptextfaceplayer SilphCo3FClerkText
+
+SilphCo3FLinkVoucher:
+	itemball LINK_VOUCHER
 
 SilphCo3FSign:
 	jumptext SilphCo3FSignText
@@ -93,5 +97,6 @@ SilphCo3F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo3FSign
 
 	def_object_events
-	object_event  6,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistConnor, -1
+	object_event  6,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistConnor, -1
 	object_event 14,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo3FClerkScript, -1
+	object_event 28,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo3FLinkVoucher, EVENT_SILPH_CO_3F_LINK_VOUCHER
