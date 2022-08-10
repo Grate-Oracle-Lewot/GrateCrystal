@@ -20,11 +20,20 @@ SeafoamCavePuzzleChamber_MapScripts:
 	endcallback
 
 SeafoamCaveUbeqcPuzzle:
+	checkevent EVENT_WALL_OPENED_IN_SEAFOAM_CAVE
+	iftrue .AlreadySolved
 	refreshscreen
 	setval UNOWNPUZZLE_UBEQC
 	special UnownPuzzle
 	closetext
 	iftrue .PuzzleComplete
+	end
+
+.AlreadySolved:
+	opentext
+	writetext SeafoamCavePuzzleChamberSolvedText
+	waitbutton
+	closetext
 	end
 
 .PuzzleComplete:
@@ -97,6 +106,11 @@ SeafoamCavePuzzleChamberDescriptionText:
 	text "The GRATE ORACLE"
 	line "LEWOT's personal"
 	cont "symbol of balance."
+	done
+
+SeafoamCavePuzzleChamberSolvedText:
+	text "You already solved"
+	line "this puzzle."
 	done
 
 SeafoamCavePuzzleChamber_MapEvents:
