@@ -34,6 +34,9 @@ TrainerScientistMendel:
 SilphCo5FClerkScript:
 	jumptextfaceplayer SilphCo5FClerkText
 
+SilphCo5FScopeLens:
+	itemball SCOPE_LENS
+
 SilphCo5FSign:
 	jumptext SilphCo5FSignText
 
