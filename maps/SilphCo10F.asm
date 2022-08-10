@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO10F_SCIENTIST
 	const SILPHCO10F_RECEPTIONIST
 
 SilphCo10F_MapScripts:
@@ -6,11 +7,42 @@ SilphCo10F_MapScripts:
 
 	def_callbacks
 
+TrainerScientistSuguru:
+	trainer SCIENTIST, SUGURU, EVENT_BEAT_SCIENTIST_SUGURU, ScientistSuguruSeenText, ScientistSuguruBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistSuguruAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SilphCo10FReceptionistScript:
 	jumptextfaceplayer SilphCo10FReceptionistText
 
 SilphCo10FSign:
 	jumptext SilphCo10FSignText
+
+ScientistSuguruSeenText:
+	text "I don't want to"
+	line "work here anymore…"
+	done
+
+ScientistSuguruBeatenText:
+	text "I don't want to"
+	line "work anywhere else"
+	cont "either…"
+	done
+
+ScientistSuguruAfterBattleText:
+	text "I don't know what's"
+	line "harder, toiling"
+
+	para "under capitalism"
+	line "or overthrowing"
+	cont "it…"
+	done
 
 SilphCo10FReceptionistText:
 	text "We developed the"
@@ -41,4 +73,5 @@ SilphCo10F_MapEvents:
 	bg_event 12,  1, BGEVENT_READ, SilphCo10FSign
 
 	def_object_events
+	object_event 11, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistSuguru, -1
 	object_event  9, 15, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo10FReceptionistScript, -1
