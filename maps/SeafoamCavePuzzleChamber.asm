@@ -112,7 +112,7 @@ SeafoamCavePuzzleChamber_MapEvents:
 	def_bg_events
 	bg_event  2,  3, BGEVENT_READ, SeafoamCavePuzzleChamberAncientReplica
 	bg_event  5,  3, BGEVENT_READ, SeafoamCavePuzzleChamberAncientReplica
-	bg_event  3,  2, BGEVENT_UP, SeafoamCavePuzzleChamberPuzzle
+	bg_event  3,  2, BGEVENT_UP, SeafoamCaveUbeqcPuzzle
 	bg_event  4,  2, BGEVENT_UP, SeafoamCavePuzzleChamberDescriptionSign
 	bg_event  3,  0, BGEVENT_UP, SeafoamCavePuzzleChamberWallPatternLeft
 	bg_event  4,  0, BGEVENT_UP, SeafoamCavePuzzleChamberWallPatternRight
