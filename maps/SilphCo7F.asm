@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO7F_SCIENTIST
 	const SILPHCO7F_CLERK1
 	const SILPHCO7F_CLERK2
 	const SILPHCO7F_CLERK3
@@ -8,6 +9,17 @@ SilphCo7F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerScientistTaylor:
+	trainer SCIENTIST, TAYLOR, EVENT_BEAT_SCIENTIST_TAYLOR, ScientistTaylorSeenText, ScientistTaylorBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistTaylorAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SilphCo7FClerk1Script:
 	jumptextfaceplayer SilphCo7FClerk1Text
@@ -23,6 +35,22 @@ SilphCo7FReceptionistScript:
 
 SilphCo7FSign:
 	jumptext SilphCo7FSignText
+
+ScientistTaylorSeenText:
+	text "Who brought their"
+	line "kid to work?"
+	done
+
+ScientistTaylorBeatenText:
+	text "I'm not a"
+	line "babysitter."
+	done
+
+ScientistTaylorAfterBattleText:
+	text "Look, just… don't"
+	line "cause any trouble,"
+	cont "alright?"
+	done
 
 SilphCo7FClerk1Text:
 	text "This way to the"
@@ -73,6 +101,7 @@ SilphCo7F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo7FSign
 
 	def_object_events
+	object_event 21,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistTaylor, -1
 	object_event  1,  5, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo7FClerk1Script, -1
 	object_event 10, 12, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo7FClerk2Script, -1
 	object_event 11, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo7FClerk3Script, -1
