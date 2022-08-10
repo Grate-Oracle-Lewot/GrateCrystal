@@ -286,6 +286,7 @@ BUG_CONTESTANT_SIZE EQU 4
 	const UNOWNPUZZLE_OMANYTE    ; 1
 	const UNOWNPUZZLE_AERODACTYL ; 2
 	const UNOWNPUZZLE_HO_OH      ; 3
+	const UNOWNPUZZLE_UBEQC      ; 4
 NUM_UNOWN_PUZZLES EQU const_value
 
 ; DisplayUnownWords setval arguments
@@ -295,9 +296,14 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const UNOWNWORDS_LIGHT  ; 1
 	const UNOWNWORDS_WATER  ; 2
 	const UNOWNWORDS_HO_OH  ; 3
+	const UNOWNWORDS_GRATE  ; 4
 
 ; MoveTutor setval arguments
 	const_def 1
 	const MOVETUTOR_FLAMETHROWER ; 1
 	const MOVETUTOR_THUNDERBOLT  ; 2
 	const MOVETUTOR_ICE_BEAM     ; 3
+	const MOVETUTOR_TRI_ATTACK   ; 4
+	const MOVETUTOR_SACRED_FIRE  ; 5
+	const MOVETUTOR_AEROBLAST    ; 6
+	const MOVETUTOR_AURA_SPHERE  ; 7
