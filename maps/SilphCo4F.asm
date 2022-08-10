@@ -1,4 +1,5 @@
 	object_const_def
+	const SILPHCO4F_SCIENTIST
 	const SILPHCO4F_CLERK
 
 SilphCo4F_MapScripts:
@@ -6,11 +7,39 @@ SilphCo4F_MapScripts:
 
 	def_callbacks
 
+TrainerScientistHegel:
+	trainer SCIENTIST, HEGEL, EVENT_BEAT_SCIENTIST_HEGEL, ScientistHegelSeenText, ScientistHegelBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistHegelAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SilphCo4FClerkScript:
 	jumptextfaceplayer SilphCo4FClerkText
 
 SilphCo4FSign:
 	jumptext SilphCo4FSignText
+
+ScientistHegelSeenText:
+	text "I'm developing a"
+	line "realistic econom-"
+	cont "ics system for my"
+	cont "tabletop RPG."
+	done
+
+ScientistHegelBeatenText:
+	text "Quack?"
+	done
+
+ScientistHegelAfterBattleText:
+	text "It's too bad"
+	line "EMPOLEON isn't in"
+	cont "this hack."
+	done
 
 SilphCo4FClerkText:
 	text "Sorry, we can't"
@@ -43,4 +72,5 @@ SilphCo4F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo4FSign
 
 	def_object_events
+	object_event 14,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistHegel, -1
 	object_event  6, 13, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo4FClerkScript, -1
