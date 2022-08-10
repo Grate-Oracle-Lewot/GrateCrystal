@@ -11,7 +11,6 @@ TrainerScientistConnor:
 	trainer SCIENTIST, CONNOR, EVENT_BEAT_SCIENTIST_CONNOR, ScientistConnorSeenText, ScientistConnorBeatenText, 0, .AfterScript
 
 .AfterScript:
-	endifjustbattled
 	opentext
 	writetext ScientistConnorAfterBattleText
 	waitbutton
