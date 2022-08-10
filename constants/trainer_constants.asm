@@ -114,6 +114,17 @@ KRIS EQU __trainer_class__
 	const MARC
 	const RICH
 	const HEINZ
+	const HIDEO
+	const CONNOR
+	const TOMONORI
+	const MASAHIRO
+	const BEAU
+	const TAYLOR
+	const ELVIN
+	const HIDEKI
+	const SUGURU
+	const TRAVIS
+	const 
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -317,6 +328,7 @@ KRIS EQU __trainer_class__
 	const GREGORY
 	const VIRGIL
 	const ALFRED
+	const SYLVAIN
 
 	trainerclass SKIER ; 21
 	const ROXANNE
@@ -517,6 +529,7 @@ KRIS EQU __trainer_class__
 	const FRITZ
 	const HORTON
 	const IRVING
+	const DALTON
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
