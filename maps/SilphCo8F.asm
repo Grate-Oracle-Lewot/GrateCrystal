@@ -1,12 +1,45 @@
 	object_const_def
+	const SILPHCO8F_SCIENTIST
 
 SilphCo8F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
+TrainerScientistElvin:
+	trainer SCIENTIST, ELVIN, EVENT_BEAT_SCIENTIST_ELVIN, ScientistElvinSeenText, ScientistElvinBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext ScientistElvinAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SilphCo8FSign:
 	jumptext SilphCo8FSignText
+
+ScientistElvinSeenText:
+	text "Eeheehee… I'm the"
+	line "one who invented"
+	cont "the SILPH SCOPE!"
+	done
+
+ScientistElvinBeatenText:
+	text "Ooh! You know your"
+	line "ghostbusting!"
+	done
+
+ScientistElvinAfterBattleText:
+	text "Ghost #MON are"
+	line "the most fascinat-"
+	cont "ing kind!"
+
+	para "Why, some of them"
+	line "even used to be"
+	cont "people!"
+	done
 
 SilphCo8FSignText:
 	text "SILPH CO. 8F"
@@ -29,3 +62,4 @@ SilphCo8F_MapEvents:
 	bg_event 20,  1, BGEVENT_READ, SilphCo8FSign
 
 	def_object_events
+	object_event  4,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistElvin, -1
