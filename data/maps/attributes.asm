@@ -486,6 +486,7 @@ ENDM
 	map_attributes SilverCaveMoltresChamber, SILVER_CAVE_MOLTRES_CHAMBER, $00, 0
 	map_attributes MewAntechamber, MEW_ANTECHAMBER, $10, 0
 	map_attributes MewChamber, MEW_CHAMBER, $09, 0
+	map_attributes SeafoamCavePuzzleChamber, SEAFOAM_CAVE_PUZZLE_CHAMBER, $00, 0
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
 	map_attributes SafariZone, SAFARI_ZONE, $05, 0
