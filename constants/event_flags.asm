@@ -1553,7 +1553,8 @@
 	const EVENT_SAFARI_ZONE_THICK_CLUB
 	const EVENT_SILPH_CO_5F_SCOPE_LENS
 	const EVENT_SILPH_CO_7F_LIGHT_BALL
-; Unused: next 48 (now 7) events
+	const EVENT_SILPH_CO_8F_DUSK_BALL
+; Unused: next 48 (now 6) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
