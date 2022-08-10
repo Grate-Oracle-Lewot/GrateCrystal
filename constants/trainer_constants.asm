@@ -124,7 +124,6 @@ KRIS EQU __trainer_class__
 	const HIDEKI
 	const SUGURU
 	const TRAVIS
-	const 
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
