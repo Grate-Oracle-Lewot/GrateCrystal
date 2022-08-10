@@ -1554,7 +1554,8 @@
 	const EVENT_SILPH_CO_5F_SCOPE_LENS
 	const EVENT_SILPH_CO_7F_LIGHT_BALL
 	const EVENT_SILPH_CO_8F_DUSK_BALL
-; Unused: next 48 (now 6) events
+	const EVENT_SILPH_CO_3F_LINK_VOUCHER
+; Unused: next 48 (now 5) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
