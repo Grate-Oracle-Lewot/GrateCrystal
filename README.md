@@ -123,6 +123,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 ## Locations
 - Viridian Forest
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
+- Silph Co. (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
 - An extra room in Dark Cave
