@@ -97,7 +97,20 @@ MrPokemonsHouse_MrPokemonScript:
 	closetext
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .OddEggPartyFull
+	checkpoke MEWTWO
+	iftrue .MewtwoEgg
 	special GiveOddEgg
+	opentext
+	writetext MrPokemonsHouse_ReceivedOddEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	setflag ENGINE_YANMA_SWARM
+	end
+
+.MewtwoEgg:
+	giveegg MEWTWO, EGG_LEVEL
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
 	playsound SFX_KEY_ITEM
