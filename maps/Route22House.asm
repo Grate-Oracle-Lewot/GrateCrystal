@@ -274,8 +274,8 @@ Route22HouseJamesScript:
 
 Route22HouseMissingnoScript:
 	faceplayer
-	waitsfx
 	cry NIDORAN_M
+	waitsfx
 	checktime DAY
 	iftrue .AerobonesBattle
 	checktime MORN
@@ -318,6 +318,7 @@ Route22HouseMissingnoScript:
 	end
 
 Route22HouseMrFujiScript:
+	faceplayer
 	opentext
 	writetext Route22HouseMrFujiText
 	waitbutton
@@ -359,7 +360,7 @@ Route22HouseRealKarenBeforeText:
 	line "the night will"
 
 	para "find themselves in"
-	line "the presence of"
+	line "the company of"
 	cont "dark-type #MON…"
 
 	para "I'm KAREN. I used"
