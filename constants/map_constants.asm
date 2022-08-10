@@ -157,21 +157,22 @@ ENDM
 	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 10, 18 ; 93
 	map_const MEW_ANTECHAMBER,                              6, 12 ; 94
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
-	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 96
-	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 97
-	map_const SAFARI_ZONE,                                 30, 27 ; 98
-	map_const DARK_CAVE_2F,                                10,  9 ; 99
-	map_const VIRIDIAN_FOREST,                             15, 27 ; 100
-	map_const SILPH_CO_2F,                                 15,  9 ; 101
-	map_const SILPH_CO_3F,                                 15,  9 ; 102
-	map_const SILPH_CO_4F,                                 15,  9 ; 103
-	map_const SILPH_CO_5F,                                 15,  9 ; 104
-	map_const SILPH_CO_6F,                                 13,  9 ; 105
-	map_const SILPH_CO_7F,                                 13,  9 ; 106
-	map_const SILPH_CO_8F,                                 13,  9 ; 107
-	map_const SILPH_CO_9F,                                 13,  9 ; 108
-	map_const SILPH_CO_10F,                                 8,  9 ; 109
-	map_const SILPH_CO_11F,                                 8,  9 ; 110
+	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ; 96
+	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 97
+	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 98
+	map_const SAFARI_ZONE,                                 30, 27 ; 99
+	map_const DARK_CAVE_2F,                                10,  9 ; 100
+	map_const VIRIDIAN_FOREST,                             15, 27 ; 101
+	map_const SILPH_CO_2F,                                 15,  9 ; 102
+	map_const SILPH_CO_3F,                                 15,  9 ; 103
+	map_const SILPH_CO_4F,                                 15,  9 ; 104
+	map_const SILPH_CO_5F,                                 15,  9 ; 105
+	map_const SILPH_CO_6F,                                 13,  9 ; 106
+	map_const SILPH_CO_7F,                                 13,  9 ; 107
+	map_const SILPH_CO_8F,                                 13,  9 ; 108
+	map_const SILPH_CO_9F,                                 13,  9 ; 109
+	map_const SILPH_CO_10F,                                 8,  9 ; 110
+	map_const SILPH_CO_11F,                                 8,  9 ; 111
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
