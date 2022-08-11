@@ -204,6 +204,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Certain moves learned upon evolution regardless of level
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
+- Smashing rocks has a chance to give items
 - I had problems getting the night music to work, or rather, fitting the audionighttable into the home bank. Right now, I just added the night version of the Kanto wild battle theme, to correspond to the existing Johto one. I'd like to use all the night music, but we'll see.
 
 # Bug Fixes
