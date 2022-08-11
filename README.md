@@ -216,6 +216,8 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
+- Whiting out is a softlock
+
 - Night Terror's animation kinda lags in the middle; it used to crash the game, so there might still be a possibility of a crash, but I haven't seen one yet
 
 # FAQ
