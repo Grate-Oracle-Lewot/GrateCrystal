@@ -1415,11 +1415,17 @@ RockSmashScript:
 
 	callasm RockMonEncounter
 	readmem wTempWildMonSpecies
-	iffalse .done
+	iffalse .no_battle
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
-.done
+.no_battle
+	callasm RockItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+.no_item
 	end
 
 MovementData_RockSmash:
