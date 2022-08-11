@@ -1,5 +1,6 @@
 	object_const_def
 	const PEWTERMUSEUM1F_SCIENTIST
+	const PEWTERMUSEUM1F_SILVER_TROPHY
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
@@ -8,6 +9,9 @@ PewterMuseum1F_MapScripts:
 
 PewterMuseum1FScientistScript:
 	jumptextfaceplayer PewterMuseum1FScientistText
+
+PewterMuseum1FSilverTrophy:
+	jumptext PewterMuseum1FSilverTrophyText
 
 AerodactylFossilSignScript:
 	jumptext AerodactylFossilSignText
@@ -48,6 +52,11 @@ PewterMuseum1FScientistText:
 
 	para "to see our fossil"
 	line "exhibits, though…"
+	done
+
+PewterMuseum1FSilverTrophyText:
+	text "It's an award for"
+	line "paleontology."
 	done
 
 AerodactylFossilSignText:
@@ -178,3 +187,4 @@ PewterMuseum1F_MapEvents:
 
 	def_object_events
 	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
+	object_event 16,  2, SPRITE_SILVER_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_SILVER, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FSilverTrophy, -1
