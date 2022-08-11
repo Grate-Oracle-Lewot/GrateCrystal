@@ -176,7 +176,7 @@ ItemDescriptions:
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama23Desc
+	dw GoldTeethDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
@@ -951,8 +951,9 @@ SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-TeruSama23Desc:
-	db   "?@"
+GoldTeethDesc:
+	db   "Lost false teeth."
+	next "Sell high.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"
@@ -966,8 +967,8 @@ TeruSama24Desc:
 	db   "?@"
 
 BrickPieceDesc:
-	db   "A rare chunk of"
-	next "tile.@"
+	db   "A chunk of tile."
+	next "Sell low.@"
 
 SurfMailDesc:
 	db   "LAPRAS-print MAIL."
