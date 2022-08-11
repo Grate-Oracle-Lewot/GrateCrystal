@@ -433,8 +433,9 @@ else
 endc
 
 GoldenrodGameCornerCooltrainerFText:
-	text "I won't quit until"
-	line "I win!"
+	text "I've heard voices"
+	line "coming from behind"
+	cont "the back wall…"
 	done
 
 GoldenrodGameCornerGentlemanText:
