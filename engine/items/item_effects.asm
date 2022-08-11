@@ -192,7 +192,7 @@ ItemEffects:
 	dw NoEffect            ; GOLD_TEETH
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; CANDIED_YAM
+	dw NoEffect            ; ITEM_B3
 	dw NoEffect            ; BRICK_PIECE
 	dw NoEffect            ; SURF_MAIL
 	dw NoEffect            ; LITEBLUEMAIL
@@ -203,7 +203,8 @@ ItemEffects:
 	dw NoEffect            ; BLUESKY_MAIL
 	dw NoEffect            ; MUSIC_MAIL
 	dw NoEffect            ; MIRAGE_MAIL
-	dw NoEffect            ; ITEM_BE
+	dw NoEffect            ; CANDIED_YAM
+	dw NoEffect            ; ITEM_C3
 	assert_table_length NUM_ITEMS
 
 PokeBallEffect:
