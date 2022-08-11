@@ -113,16 +113,11 @@ SeafoamCavePuzzleChamberSolvedText:
 	line "into place, the"
 
 	para "stones form a"
-	line "peculiar symbol"
+	line "peculiar symbol:"
 
-	para "composed of three"
-	line "shapes."
-
-	para "This must mean"
-	line "something to"
-
-	para "LEWOT, but you don't"
-	line "know what."
+	para "a square and a"
+	line "circle balance"
+	cont "atop a triangle."
 	done
 
 SeafoamCavePuzzleChamber_MapEvents:
