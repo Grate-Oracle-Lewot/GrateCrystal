@@ -109,8 +109,20 @@ SeafoamCavePuzzleChamberDescriptionText:
 	done
 
 SeafoamCavePuzzleChamberSolvedText:
-	text "You already solved"
-	line "this puzzle."
+	text "After being slid"
+	line "into place, the"
+
+	para "stones form a"
+	line "peculiar symbol"
+
+	para "composed of three"
+	line "shapes."
+
+	para "This must mean"
+	line "something to"
+
+	para "LEWOT, but you don't"
+	line "know what."
 	done
 
 SeafoamCavePuzzleChamber_MapEvents:
