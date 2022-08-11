@@ -36,7 +36,7 @@ MoonLandingGrampsText:
 
 	para "You never know!"
 	line "I've still got"
-	line "some zip left!"
+	cont "some zip left!"
 	done
 
 MoonRockSignText:
