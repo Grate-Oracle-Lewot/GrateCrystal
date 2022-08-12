@@ -90,7 +90,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Many moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
-- HM moves are better in battle, and a few moves have had their effects changed completely. Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, etc.
+- HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, etc.
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
