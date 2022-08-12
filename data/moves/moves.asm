@@ -16,7 +16,7 @@ Moves:
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,       PHYSICAL, 100, 35,   0
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,     PHYSICAL, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          20, FAIRY,        PHYSICAL,  90, 20,   0
-	move COMET_PUNCH,  EFFECT_MULTI_HIT,          21, FIGHTING,     PHYSICAL,  90, 15,   0
+	move COMET_PUNCH,  EFFECT_MULTI_HIT,          25, FIGHTING,     PHYSICAL,  90, 15,   0
 	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         90, NORMAL,       PHYSICAL, 100, 20,   0
 	move PAY_DAY,      EFFECT_PAY_DAY,            40, STEEL,        PHYSICAL, 100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,         PHYSICAL, 100, 15,  10
