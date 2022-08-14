@@ -2878,7 +2878,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, YANMEGA
+	db EVOLVE_LEVEL, 33, YANMEGA
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 2, FORESIGHT
@@ -2889,9 +2889,10 @@ YanmaEvosAttacks:
 	db 22, SUPERSONIC
 	db 30, PURSUIT
 	db 33, SILVER_WIND
-	db 38, HYPNOSIS
-	db 43, CRUNCH
+	db 37, HYPNOSIS
+	db 42, CRUNCH
 	db 46, SCREECH
+	db 50, SLAM
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -3774,8 +3775,9 @@ YanmegaEvosAttacks:
 	db 30, PURSUIT
 	db 33, ANCIENTPOWER
 	db 38, HYPNOSIS
-	db 43, CRUNCH
-	db 46, SCREECH
+	db 44, CRUNCH
+	db 49, SCREECH
+	db 56, SLAM
 	db 0 ; no more level-up moves
 
 WhimsicottEvosAttacks:
