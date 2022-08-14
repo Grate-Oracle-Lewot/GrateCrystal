@@ -484,7 +484,7 @@ ENDM
 	map_attributes IcePathArticunoChamber, ICE_PATH_ARTICUNO_CHAMBER, $19, 0
 	map_attributes RockTunnelZapdosChamber, ROCK_TUNNEL_ZAPDOS_CHAMBER, $09, 0
 	map_attributes SilverCaveMoltresChamber, SILVER_CAVE_MOLTRES_CHAMBER, $00, 0
-	map_attributes MewAntechamber, MEW_ANTECHAMBER, $10, 0
+	map_attributes MewAntechamber, MEW_ANTECHAMBER, $0a, 0
 	map_attributes MewChamber, MEW_CHAMBER, $09, 0
 	map_attributes SeafoamCavePuzzleChamber, SEAFOAM_CAVE_PUZZLE_CHAMBER, $00, 0
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
