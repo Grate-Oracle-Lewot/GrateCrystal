@@ -512,6 +512,7 @@ KRIS EQU __trainer_class__
 	const EDDIE
 	const COREY
 	const FIZBO
+	const RAMON
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
