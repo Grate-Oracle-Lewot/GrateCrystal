@@ -218,7 +218,7 @@ Moves:
 	move ENDURE,       EFFECT_ENDURE,              0, NORMAL,       STATUS,   100, 10,   0
 	move CHARM,        EFFECT_ATTACK_DOWN_2,       0, FAIRY,        STATUS,   100, 20,   0
 	move ROLLOUT,      EFFECT_ROLLOUT,            30, ROCK,         PHYSICAL,  90, 20,   0
-	move FALSE_SWIPE,  EFFECT_FALSE_SWIPE,        40, NORMAL,       PHYSICAL, 100, 40,   0
+	move FALSE_SWIPE,  EFFECT_FALSE_SWIPE,        42, NORMAL,       PHYSICAL, 100, 40,   0
 	move SWAGGER,      EFFECT_SWAGGER,             0, NORMAL,       STATUS,   100, 15, 100
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,       STATUS,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC,     PHYSICAL, 100, 20,  30
