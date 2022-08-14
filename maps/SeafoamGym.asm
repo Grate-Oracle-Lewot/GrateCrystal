@@ -3,6 +3,7 @@
 	const SEAFOAMGYM_GYM_GUIDE
 	const SEAFOAMGYM_FISHER
 	const SEAFOAMGYM_BEAUTY
+	const SEAFOAMGYM_ROCKER
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
@@ -80,6 +81,17 @@ TrainerSkierMikaela:
 	endifjustbattled
 	opentext
 	writetext SkierMikaelaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBurglarRamon:
+	trainer BURGLAR, RAMON, EVENT_BEAT_BURGLAR_RAMON, BurglarRamonSeenText, BurglarRamonBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BurglarRamonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -228,6 +240,18 @@ SkierMikaelaAfterBattleText:
 	line "er in the cave."
 	done
 
+BurglarRamonSeenText:
+	text "Lookin' for loot!"
+	done
+
+BurglarRamonBeatenText:
+	text "Zow!"
+	done
+
+BurglarRamonAfterBattleText:
+	text "No loot here…"
+	done
+
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -244,3 +268,4 @@ SeafoamGym_MapEvents:
 	object_event  7, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
 	object_event  6,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherIroh, -1
 	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSkierMikaela, -1
+	object_event  3,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBurglarRamon, -1
