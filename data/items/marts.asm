@@ -72,8 +72,9 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 7 ; # items
+	db 8 ; # items
 	db CHARCOAL
+	db TM_FALSE_SWIPE
 	db POKE_BALL
 	db POTION
 	db SUPER_POTION
