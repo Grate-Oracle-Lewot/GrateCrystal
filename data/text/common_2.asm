@@ -531,7 +531,7 @@ _WhitedOutText::
 
 	autopara "<PLAYER> whited"
 	line "out!"
-	done
+	autodone
 
 _ItemfinderItemNearbyText::
 	text "Yes! ITEMFINDER"
