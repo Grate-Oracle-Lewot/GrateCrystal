@@ -260,7 +260,7 @@ TM01 EQU const_value
 	add_tm DEFENSE_CURL ; e7
 	add_tm THUNDERPUNCH ; e8
 	add_tm DREAM_EATER  ; e9
-	add_tm SKETCH       ; ea
+	add_tm FALSE_SWIPE  ; ea
 	add_tm REST         ; eb
 	add_tm ATTRACT      ; ec
 	add_tm THIEF        ; ed
