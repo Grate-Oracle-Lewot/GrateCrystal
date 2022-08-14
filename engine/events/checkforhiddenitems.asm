@@ -82,6 +82,48 @@ CheckForHiddenItems:
 	inc hl
 	ret
 
+HeadbuttItemEncounter:
+	ld hl, .HeadbuttItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.HeadbuttItems:
+	db 1, MIRACLE_SEED
+	db 1, GOLD_BERRY
+	db 1, MIRACLEBERRY
+	db 1, GOLD_LEAF
+	db 1, SILVER_LEAF
+	db 1, MYSTERYBERRY
+	db 2, BERRY
+	db 2, BITTER_BERRY
+	db 2, MINT_BERRY
+	db 2, ICE_BERRY
+	db 2, BURNT_BERRY
+	db 2, PRZCUREBERRY
+	db 2, PSNCUREBERRY
+	db 2, RED_APRICORN
+	db 2, BLU_APRICORN
+	db 2, YLW_APRICORN
+	db 2, GRN_APRICORN
+	db 2, WHT_APRICORN
+	db 2, BLK_APRICORN
+	db 2, PNK_APRICORN
+	db -1
+
 RockItemEncounter:
 	ld hl, .RockItems
 	call Random
