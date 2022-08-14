@@ -2,6 +2,7 @@
 	const SEAFOAMGYM_BLAINE
 	const SEAFOAMGYM_GYM_GUIDE
 	const SEAFOAMGYM_FISHER
+	const SEAFOAMGYM_BEAUTY
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
@@ -62,12 +63,23 @@ SeafoamGymGuideScript:
 	end
 
 TrainerFirebreatherIroh:
-	trainer FIREBREATHER, IROH, EVENT_BEAT_FIREBREATHER_IROH, FirebreatherIrohSeenText, FirebreatherIrohBeatenText, 0, .Script
+	trainer FIREBREATHER, IROH, EVENT_BEAT_FIREBREATHER_IROH, FirebreatherIrohSeenText, FirebreatherIrohBeatenText, 0, .AfterScript
 
-.Script:
+.AfterScript:
 	endifjustbattled
 	opentext
 	writetext FirebreatherIrohAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSkierMikaela:
+	trainer SKIER, MIKAELA, EVENT_BEAT_SKIER_MIKAELA, SkierMikaelaSeenText, SkierMikaelaBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext SkierMikaelaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -202,17 +214,33 @@ FirebreatherIrohAfterBattleText:
 	line "tea!"
 	done
 
+SkierMikaelaSeenText:
+	text "It's hot in here,"
+	line "but I'm hotter!"
+	done
+
+SkierMikaelaBeatenText:
+	text "Oop…"
+	done
+
+SkierMikaelaAfterBattleText:
+	text "It gets cold deep-"
+	line "er in the cave."
+	done
+
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5,  5, ROUTE_20, 1
+	warp_event  9, 15, ROUTE_20, 1
+	warp_event  9,  1, SEAFOAM_CAVE_1F, 3
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
-	object_event  6,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
-	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherIroh, -1
+	object_event 10,  7, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
+	object_event  7, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
+	object_event  6,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherIroh, -1
+	object_event 11,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSkierMikaela, -1
