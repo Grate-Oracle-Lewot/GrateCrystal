@@ -1323,8 +1323,10 @@ HeadbuttScript:
 	end
 
 .no_battle
-	writetext HeadbuttNothingText
-	waitbutton
+	callasm HeadbuttItemEncounter
+	iffalse .no_item
+	verbosegiveitem ITEM_FROM_MEM
+.no_item
 	closetext
 	end
 
