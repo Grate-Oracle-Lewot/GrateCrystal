@@ -204,7 +204,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Certain moves learned upon evolution regardless of level
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
-- Smashing rocks has a chance to give items
+- Smashing rocks has a chance to give items (Headbutting trees too!)
 - I had problems getting the night music to work, or rather, fitting the audionighttable into the home bank. Right now, I just added the night version of the Kanto wild battle theme, to correspond to the existing Johto one. I'd like to use all the night music, but we'll see.
 
 # Bug Fixes
@@ -215,8 +215,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
 # Known Bugs & Issues
-
-- Whiting out is a softlock
 
 - Night Terror's animation kinda lags in the middle; it used to crash the game, so there might still be a possibility of a crash, but I haven't seen one yet
 
