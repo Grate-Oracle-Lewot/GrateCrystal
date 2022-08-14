@@ -5,6 +5,7 @@
 	const SILPHCO6F_CLERK3
 	const SILPHCO6F_RECEPTIONIST1
 	const SILPHCO6F_RECEPTIONIST2
+	const SILPHCO6F_POKE_BALL
 
 SilphCo6F_MapScripts:
 	def_scene_scripts
@@ -36,6 +37,9 @@ SilphCo6FReceptionist1Script:
 
 SilphCo6FReceptionist2Script:
 	jumptextfaceplayer SilphCo6FReceptionist2Text
+
+SilphCo6FTMMoonblast:
+	itemball TM_MOONBLAST
 
 SilphCo6FSign:
 	jumptext SilphCo6FSignText
@@ -121,3 +125,4 @@ SilphCo6F_MapEvents:
 	object_event 16, 12, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo6FClerk3Script, -1
 	object_event 18,  8, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo6FReceptionist1Script, -1
 	object_event 15,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo6FReceptionist2Script, -1
+	object_event  1,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, SilphCo6FTMMoonblast, EVENT_SILPH_CO_6F_TM_MOONBLAST
