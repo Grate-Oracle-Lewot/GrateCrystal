@@ -298,6 +298,7 @@ DungeonsGroupSprites:
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
 	db SPRITE_POKE_BALL
+	db SPRITE_BOULDER
 	db 0 ; end
 
 FastShipGroupSprites:
