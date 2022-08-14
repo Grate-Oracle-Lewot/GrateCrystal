@@ -10,7 +10,7 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphHoOhItemRoomGoldBerry:
-	itemball GOLD_BERRY
+	itemball BERRY_JUICE
 
 RuinsOfAlphHoOhItemRoomMysteryberry:
 	itemball MYSTERYBERRY
