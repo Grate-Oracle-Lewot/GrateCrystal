@@ -333,6 +333,7 @@ KRIS EQU __trainer_class__
 	const ROXANNE
 	const CLARISSA
 	const SKYE
+	const MIKAELA
 
 	trainerclass TEACHER ; 22
 	const COLETTE
