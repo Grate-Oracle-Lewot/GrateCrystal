@@ -27,12 +27,12 @@ GoldenrodDeptStore5FClerkScript:
 	opentext
 	checkevent EVENT_GOT_TM02_HEADBUTT
 	iftrue .headbutt
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
 	iftrue .onlyrocksmash
 	sjump .neither
 
 .headbutt
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
 	iftrue .both
 	sjump .onlyheadbutt
 
