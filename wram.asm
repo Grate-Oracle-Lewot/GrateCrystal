@@ -2218,7 +2218,7 @@ wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
 ENDU
 
-	ds 23
+	ds 21
 
 
 SECTION "More WRAM 1", WRAMX
