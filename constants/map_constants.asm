@@ -158,7 +158,7 @@ ENDM
 	map_const MEW_ANTECHAMBER,                              6, 12 ; 94
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
 	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ; 96
-	map_const SEAFOAM_CAVE_1F,                              5,  4 ; 97
+	map_const SEAFOAM_CAVE_1F,                             15,  4 ; 97
 	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 98
 	map_const SAFARI_ZONE,                                 30, 27 ; 99
 	map_const DARK_CAVE_2F,                                10,  9 ; 100
@@ -203,7 +203,7 @@ ENDM
 	newgroup CINNABAR                                             ;  6
 	map_const CINNABAR_POKECENTER_1F,                       5,  4 ;  1
 	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  2
-	map_const SEAFOAM_GYM,                                  5,  4 ;  3
+	map_const SEAFOAM_GYM,                                 10,  9 ;  3
 	map_const ROUTE_19,                                    10, 18 ;  4
 	map_const ROUTE_20,                                    30,  9 ;  5
 	map_const ROUTE_21,                                    10, 18 ;  6
