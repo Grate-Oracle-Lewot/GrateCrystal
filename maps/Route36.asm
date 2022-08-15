@@ -136,9 +136,8 @@ Route36RockSmashGuyScript:
 .ClearedSudowoodo:
 	writetext RockSmashGuyText2
 	promptbutton
-	verbosegiveitem TM_ROCK_SMASH
+	verbosegiveitem HM_ROCK_SMASH
 	iffalse .NoRoomForTM
-	setevent EVENT_GOT_TM08_ROCK_SMASH
 .AlreadyGotRockSmash:
 	writetext RockSmashGuyText3
 	waitbutton
