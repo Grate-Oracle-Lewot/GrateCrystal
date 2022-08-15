@@ -5,6 +5,7 @@
 	const ROUTE8_SUPER_NERD1
 	const ROUTE8_SUPER_NERD2
 	const ROUTE8_FRUIT_TREE
+	const ROUTE8_POKE_BALL
 
 Route8_MapScripts:
 	def_scene_scripts
@@ -74,6 +75,9 @@ Route8UndergroundPathSign:
 
 Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
+
+Route8TMSelfdestruct:
+	itemball TM_SELFDESTRUCT
 
 BikerDwayneSeenText:
 	text "We're the KANTO"
@@ -190,3 +194,4 @@ Route8_MapEvents:
 	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
 	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	object_event 24, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, Route8TMSelfdestruct, EVENT_ROUTE_8_TM_SELFDESTRUCT
