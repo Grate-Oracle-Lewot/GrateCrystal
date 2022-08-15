@@ -734,8 +734,8 @@ QwilfishEggMoves:
 ShuckleEggMoves:
 	db CLAMP
 	db VINE_WHIP
-	db ACID_ARMOR
 	db FLAIL
+	db AMNESIA
 	db -1 ; end
 
 HeracrossEggMoves:
