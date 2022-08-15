@@ -577,7 +577,6 @@ IgglybuffEggMoves:
 	db PRESENT
 	db FAINT_ATTACK
 	db DAZZLY_GLEAM
-	db SELFDESTRUCT
 	db -1 ; end
 
 TogepiEggMoves:
@@ -619,7 +618,6 @@ MarillEggMoves:
 	db -1 ; end
 
 SudowoodoEggMoves:
-	db SELFDESTRUCT
 	db ANCIENTPOWER
 	db EARTH_POWER
 	db KARATE_CHOP
@@ -738,7 +736,6 @@ ShuckleEggMoves:
 	db VINE_WHIP
 	db FLAIL
 	db AMNESIA
-	db SELFDESTRUCT
 	db -1 ; end
 
 HeracrossEggMoves:
