@@ -1563,7 +1563,8 @@
 	const EVENT_SAFARI_ZONE_THICK_CLUB
 	const EVENT_SAFARI_ZONE_GOLD_TEETH
 	const EVENT_ROUTE_30_TM_FAIRY_WIND
-; Unused: next 48 (now 1) events
+	const EVENT_ROUTE_8_TM_SELFDESTRUCT
+; Unused: next 48 (now 0) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
