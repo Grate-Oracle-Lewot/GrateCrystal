@@ -103,7 +103,7 @@ Moves:
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,         PHYSICAL,  90, 15,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,       PHYSICAL, 100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                1, GROUND,       PHYSICAL,  30,  5,   0
-	move DIG,          EFFECT_FLY,                60, GROUND,       PHYSICAL, 100, 10,   0
+	move DIG,          EFFECT_FLY,                70, GROUND,       PHYSICAL, 100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,       STATUS,   100, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, SPECIAL,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE, SPECIAL,  100, 10,  10
@@ -167,7 +167,7 @@ Moves:
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        110, WATER,        PHYSICAL,  85, 10,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,         SPECIAL,  100, 15,  20
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          25, NORMAL,       PHYSICAL,  90, 15,   0
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,       PHYSICAL,  95, 10,   0
+	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,       PHYSICAL,  95, 15,   0
 	move REST,         EFFECT_HEAL,                0, NORMAL,       STATUS,   100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,         PHYSICAL, 100, 10,  30
 	move HYPER_FANG,   EFFECT_LEECH_HIT,          80, NORMAL,       PHYSICAL,  90, 10,   0
