@@ -1,10 +1,10 @@
 	db "KICKING@" ; species name
 	dw 411, 1100 ; height, weight
 
-	db   "It is also called"
-	next "the Kick Master."
-	next "It uses its"
+	db   "It uses its feet"
+	next "for everything,"
+	next "even eating."
 
-	page "elastic legs to"
-	next "execute every"
-	next "known kick.@"
+	page "Its arms seem to"
+	next "exist only for"
+	next "balance.@"
