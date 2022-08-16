@@ -1,10 +1,10 @@
 	db "HANDSTAND@" ; species name
 	dw 407, 1060 ; height, weight
 
-	db   "After doing a"
-	next "handstand to"
-	next "throw off the"
+	db   "While it can stand"
+	next "upright, it pref-"
+	next "ers to balance"
 
-	page "opponent's timing,"
-	next "it presents its"
-	next "fancy kick moves.@"
+	page "upside-down on its"
+	next "head spike and"
+	next "spin around.@"
