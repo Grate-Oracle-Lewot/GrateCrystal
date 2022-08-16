@@ -1,10 +1,10 @@
 	db "PUNCHING@" ; species name
 	dw 407, 1110 ; height, weight
 
-	db   "To increase the"
-	next "strength of all"
-	next "its punch moves,"
+	db   "Some believe that"
+	next "this species is"
+	next "the collective"
 
-	page "it spins its arms"
-	next "just before making"
-	next "contact.@"
+	page "reincarnation of a"
+	next "legendary boxer."
+	next "@"
