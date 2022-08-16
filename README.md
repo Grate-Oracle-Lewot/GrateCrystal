@@ -175,7 +175,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing caught data (eventually I want to change this to show DVs)
+- A fourth Pokémon stats page showing caught data (eventually I want to change this to show DVs and possibly stat experience)
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing, Headbutt, and Rock Smash (exact probabilities of each +1 altered a bit)
 - Time fishgroups actually have different Pokémon at different times
