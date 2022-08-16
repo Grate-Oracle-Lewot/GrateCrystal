@@ -70,7 +70,7 @@ TrainerClassNames::
 	li "MYSTIC"
 	li "VETERAN"
 	li "NINJA"
-	li "BOSS"
+	li "OUTLAW"
 	li "JESSIE &"
 	li "????????????"
 	li "3TRAINER#"
