@@ -87,8 +87,8 @@ MonMenuIcons:
 	db ICON_BIRD        ; FARFETCH_D
 	db ICON_BIRD        ; DODUO
 	db ICON_BIRD        ; DODRIO
-	db ICON_LAPRAS      ; SEEL
-	db ICON_LAPRAS      ; DEWGONG
+	db ICON_SEAL        ; SEEL
+	db ICON_SEAL        ; DEWGONG
 	db ICON_BLOB        ; GRIMER
 	db ICON_BLOB        ; MUK
 	db ICON_SHELL       ; SHELLDER
@@ -139,8 +139,8 @@ MonMenuIcons:
 	db ICON_FOX         ; JOLTEON
 	db ICON_FOX         ; FLAREON
 	db ICON_SERPENT     ; PORYGON
-	db ICON_SHELL       ; OMANYTE
-	db ICON_JELLYFISH   ; OMASTAR
+	db ICON_SPIRAL      ; OMANYTE
+	db ICON_SPIRAL      ; OMASTAR
 	db ICON_SHELL       ; KABUTO
 	db ICON_BUG         ; KABUTOPS
 	db ICON_BIGMON      ; AERODACTYL
@@ -220,7 +220,7 @@ MonMenuIcons:
 	db ICON_SNORLAX     ; TEDDIURSA
 	db ICON_SNORLAX     ; URSARING
 	db ICON_BLOB        ; SLUGMA
-	db ICON_BLOB        ; MAGCARGO
+	db ICON_SPIRAL      ; MAGCARGO
 	db ICON_EQUINE      ; SWINUB
 	db ICON_EQUINE      ; PILOSWINE
 	db ICON_SHELL       ; CORSOLA
