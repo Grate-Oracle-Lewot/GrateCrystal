@@ -48,6 +48,8 @@
 	const ICON_ENTEI
 	const ICON_SUICUNE
 	const ICON_MANTINE
+	const ICON_SPIRAL
+	const ICON_SEAL
 NUM_ICONS EQU const_value - 1
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
