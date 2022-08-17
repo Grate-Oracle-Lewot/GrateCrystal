@@ -43,12 +43,12 @@ IconPointers:
 	dw ChanseyIcon
 	dw FlowerIcon
 	dw FleaIcon
+	dw SpiralIcon
+	dw SealIcon
 	dw PinecoIcon
 	dw CelebiIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
 	dw MantineIcon
-	dw SpiralIcon
-	dw SealIcon
 	assert_table_length NUM_ICONS + 1
