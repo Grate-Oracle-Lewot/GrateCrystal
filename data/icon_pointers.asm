@@ -49,4 +49,6 @@ IconPointers:
 	dw EnteiIcon
 	dw SuicuneIcon
 	dw MantineIcon
+	dw SpiralIcon
+	dw SealIcon
 	assert_table_length NUM_ICONS + 1
