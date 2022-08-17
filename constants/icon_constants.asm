@@ -42,14 +42,14 @@
 	const ICON_CHANSEY
 	const ICON_FLOWER
 	const ICON_FLEA
+	const ICON_SPIRAL
+	const ICON_SEAL
 	const ICON_PINECO
 	const ICON_CELEBI
 	const ICON_RAIKOU
 	const ICON_ENTEI
 	const ICON_SUICUNE
 	const ICON_MANTINE
-	const ICON_SPIRAL
-	const ICON_SEAL
 NUM_ICONS EQU const_value - 1
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
