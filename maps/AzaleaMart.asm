@@ -21,15 +21,12 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "There's no GREAT"
-	line "BALL here. #"
+	text "BUGSY is the first"
+	line "non-binary GYM"
+	cont "LEADER."
 
-	para "BALLS will have"
-	line "to do."
-
-	para "I wish KURT would"
-	line "make me some of"
-	cont "his custom BALLS."
+	para "They're a real"
+	line "inspiration!"
 	done
 
 AzaleaMartBugCatcherText:
