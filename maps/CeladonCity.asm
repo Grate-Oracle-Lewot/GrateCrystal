@@ -189,11 +189,12 @@ CeladonCityTutorSacredFireNoLeaf:
 
 	para "I can tell."
 
-	para "If you want me to"
-	line "teach SACRED FIRE,"
+	para "GOLD and SILVER"
+	line "LEAVES may fall"
 
-	para "you'll have to"
-	line "hunt one down."
+	para "out of small trees"
+	line "when you use"
+	cont "HEADBUTT."
 	done
 
 CeladonCityTutorAeroblastText1:
