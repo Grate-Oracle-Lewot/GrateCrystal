@@ -37,7 +37,6 @@ TimeCapsule_CatchRateItems:
 	db SQUIRTBOTTLE,  GOLD_BERRY
 	db RAINBOW_WING,  GOLD_BERRY
 	db ITEM_B3,       BERRY
-	db ITEM_C3,       BERRY
 	db HM_CUT,        MYSTERYBERRY
 	db HM_FLY,        MYSTERYBERRY
 	db HM_SURF,       MYSTERYBERRY
