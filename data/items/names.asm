@@ -190,7 +190,6 @@ ItemNames::
 	li "MUSIC MAIL"
 	li "MIRAGE MAIL"
 	li "CANDIED YAM"
-	li "TERU-SAMA"
 	assert_list_length NUM_ITEMS
 	li "TM01"
 	li "TM02"
