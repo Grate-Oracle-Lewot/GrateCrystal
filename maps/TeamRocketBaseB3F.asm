@@ -521,23 +521,22 @@ ScientistMitchSeenText:
 	text "I don't care that"
 	line "#MON are hurt"
 	cont "by our experiment."
+
+	para "I'm that evil."
 	done
 
 ScientistMitchBeatenText:
-	text "Thinking is my"
-	line "strong suit, not"
-	cont "battling."
+	text "You're as strong"
+	line "as I am evil!"
 	done
 
 ScientistMitchAfterBattleText:
-	text "If we turn up the"
-	line "power of our radio"
+	text "I once incubated a"
+	line "GROWLITHE EGG just"
 
-	para "signal for broad-"
-	line "cast nationwide…"
-
-	para "The very thought"
-	line "excites me!"
+	para "so I could kick it"
+	line "the moment it"
+	cont "hatched."
 	done
 
 TeamRocketBaseB3FLockedDoorNeedsPasswordText:
