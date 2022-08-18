@@ -519,6 +519,8 @@ ItemAttributes:
 ; HM08 ROCK_SMASH
 	item_attribute 0, HELD_NONE, 0, CANT_SELECT | CANT_TOSS, TM_HM, ITEMMENU_PARTY, ITEMMENU_NOUSE
 	assert_table_length NUM_ITEMS + NUM_TMS + NUM_HMS
+; $ff
+	item_attribute $9999, HELD_NONE, 0, NO_LIMITS, ITEM, ITEMMENU_NOUSE, ITEMMENU_NOUSE
 ; $00
 	item_attribute $9999, HELD_NONE, 0, NO_LIMITS, ITEM, ITEMMENU_NOUSE, ITEMMENU_NOUSE
 	assert_table_length $100
