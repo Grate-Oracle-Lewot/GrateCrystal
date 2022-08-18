@@ -257,5 +257,6 @@ ItemNames::
 	li "HM07"
 	li "HM08"
 	assert_list_length NUM_ITEMS + NUM_TMS + NUM_HMS
+	li "TERU-SAMA"
 	li "?"
 	assert_list_length $100
