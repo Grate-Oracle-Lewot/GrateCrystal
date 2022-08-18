@@ -204,7 +204,6 @@ ItemEffects:
 	dw NoEffect            ; MUSIC_MAIL
 	dw NoEffect            ; MIRAGE_MAIL
 	dw NoEffect            ; CANDIED_YAM
-	dw NoEffect            ; ITEM_C3
 	assert_table_length NUM_ITEMS
 
 PokeBallEffect:
