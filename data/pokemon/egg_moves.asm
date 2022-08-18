@@ -6,10 +6,10 @@ SECTION "Egg Moves", ROMX
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
+	db EARTH_POWER
 	db SKULL_BASH
 	db SAFEGUARD
 	db PETAL_DANCE
-	db EARTH_POWER
 	db ANCIENTPOWER
 	db -1 ; end
 
