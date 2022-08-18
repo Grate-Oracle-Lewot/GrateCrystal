@@ -187,23 +187,6 @@ SelectTreeMon:
 	ld a, [hl]
 	ld [wCurPartyLevel], a
 	scf
-; Check if we buff the mon, and by how much.
-	ld a, [wCurPartyLevel]
-	call Random
-	cp 25 percent
-	jr c, .buffed
-	inc a
-	cp 50 percent
-	jr c, .buffed
-	inc a
-	cp 70 percent
-	jr c, .buffed
-	inc a
-	cp 90 percent
-	jr c, .buffed
-	inc a
-.buffed
-	ld [wCurPartyLevel], a
 	ret
 
 NoTreeMon:
