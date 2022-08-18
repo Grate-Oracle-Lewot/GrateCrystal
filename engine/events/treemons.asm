@@ -185,21 +185,6 @@ SelectTreeMon:
 	ld a, [hli]
 	ld [wTempWildMonSpecies], a
 	ld a, [hl]
-; Check if we buff the mon, and by how much.
-	call Random
-	cp 25 percent
-	jr c, .buffed
-	inc a
-	cp 50 percent
-	jr c, .buffed
-	inc a
-	cp 70 percent
-	jr c, .buffed
-	inc a
-	cp 90 percent
-	jr c, .buffed
-	inc a
-.buffed
 	ld [wCurPartyLevel], a
 	scf
 	ret
