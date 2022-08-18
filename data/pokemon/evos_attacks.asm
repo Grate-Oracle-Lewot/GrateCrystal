@@ -22,29 +22,31 @@ BulbasaurEvosAttacks:
 	db EVOLVE_LEVEL, 16, IVYSAUR
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, GROWTH
+	db 4, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 20, RAZOR_LEAF
 	db 25, SLAM
+	db 29, GROWTH
 	db 32, ACID_ARMOR
 	db 39, SYNTHESIS
 	db 46, SOLARBEAM
 	db 0 ; no more level-up moves
 
 IvysaurEvosAttacks:
-	db EVOLVE_LEVEL, 32, VENUSAUR
+	db EVOLVE_LEVEL, 36, VENUSAUR
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, GROWTH
+	db 4, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
 	db 29, SLAM
+	db 35, GROWTH
 	db 38, ACID_ARMOR
 	db 47, SYNTHESIS
 	db 56, SOLARBEAM
@@ -53,13 +55,14 @@ IvysaurEvosAttacks:
 VenusaurEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, GROWTH
+	db 4, GROWL
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
 	db 29, SLAM
+	db 35, GROWTH
 	db 41, ACID_ARMOR
 	db 53, SYNTHESIS
 	db 65, SOLARBEAM
@@ -283,6 +286,7 @@ RaticateEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 13, HYPER_FANG
+	db 19, SCARY_FACE
 	db 21, FOCUS_ENERGY
 	db 30, PURSUIT
 	db 40, SUPER_FANG
@@ -976,6 +980,7 @@ MachampEvosAttacks:
 	db 13, LOW_KICK
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
+	db 28, COMET_PUNCH
 	db 34, VITAL_THROW
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
@@ -1132,7 +1137,7 @@ RapidashEvosAttacks:
 	db 23, FIRE_SPIN
 	db 27, DAZZLY_GLEAM
 	db 34, TAKE_DOWN
-	db 40, FURY_ATTACK
+	db 39, FURY_ATTACK
 	db 45, MEGAHORN
 	db 47, AGILITY
 	db 59, FIRE_BLAST
@@ -1168,6 +1173,7 @@ SlowbroEvosAttacks:
 	db 20, ACID
 	db 29, DISABLE
 	db 34, HEADBUTT
+	db 36, WITHDRAW
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -2980,6 +2986,7 @@ SlowkingEvosAttacks:
 	db 20, ACID
 	db 29, DISABLE
 	db 34, IRON_HEAD
+	db 36, SWAGGER
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -3698,6 +3705,7 @@ PupitarEvosAttacks:
 	db 15, SCREECH
 	db 22, ROCK_SLIDE
 	db 29, THRASH
+	db 29, HARDEN
 	db 38, SCARY_FACE
 	db 47, CRUNCH
 	db 56, EARTHQUAKE
@@ -3767,7 +3775,7 @@ YanmegaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 2, FORESIGHT
-	db 6, WING_ATTACK
+	db 6, TWISTER
 	db 11, DOUBLE_TEAM
 	db 14, SONICBOOM
 	db 17, LEECH_LIFE
