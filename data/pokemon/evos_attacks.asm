@@ -3550,7 +3550,7 @@ HitmontopEvosAttacks:
 	db 25, DRILL_PECK
 	db 31, COUNTER
 	db 37, AGILITY
-	db 43, PROTECT
+	db 43, FIRE_SPIN
 	db 49, SKULL_BASH
 	db 54, HORN_DRILL
 	db 0 ; no more level-up moves
