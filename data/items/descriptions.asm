@@ -256,6 +256,7 @@ ItemDescriptions:
 	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama26Desc
+	dw TeruSama26Desc
 	assert_table_length $ff
 
 MasterBallDesc:
