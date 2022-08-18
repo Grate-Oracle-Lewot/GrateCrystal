@@ -191,7 +191,6 @@ ItemDescriptions:
 	dw MusicMailDesc
 	dw MirageMailDesc
 	dw CandiedYamDesc
-	dw TeruSama26Desc
 	assert_table_length NUM_ITEMS
 	dw TeruSama26Desc
 	dw TeruSama26Desc
