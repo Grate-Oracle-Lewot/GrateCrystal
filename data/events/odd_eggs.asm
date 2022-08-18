@@ -97,7 +97,7 @@ OddEggs:
 
 	db BULBASAUR
 	db NO_ITEM
-	db TACKLE, GROWTH, PETAL_DANCE, 0
+	db TACKLE, GROWL, PETAL_DANCE, 0
 	dw 04096 ; OT ID
 	dt 135 ; Exp
 	; Stat exp
