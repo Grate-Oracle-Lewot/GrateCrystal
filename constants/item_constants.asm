@@ -196,7 +196,6 @@
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
 	const CANDIED_YAM  ; be
-	const ITEM_C3      ; bf
 NUM_ITEMS EQU const_value - 1
 
 __tmhm_value__ = 1
@@ -218,62 +217,62 @@ ENDM
 
 ; see data/moves/tmhm_moves.asm for moves
 TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; c0
-	add_tm HEADBUTT     ; c1
-	add_tm CURSE        ; c2
-	add_tm ROLLOUT      ; c3
-	add_tm ROAR         ; c4
-	add_tm TOXIC        ; c5
-	add_tm ZAP_CANNON   ; c6
-	add_tm SELFDESTRUCT ; c7
-	add_tm PSYCH_UP     ; c8
-	add_tm HIDDEN_POWER ; c9
-	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb
-	add_tm SNORE        ; cc
-	add_tm BLIZZARD     ; cd
-	add_tm HYPER_BEAM   ; ce
-	add_tm ICY_WIND     ; cf
-	add_tm PROTECT      ; d0
-	add_tm RAIN_DANCE   ; d1
-	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
-	add_tm SOLARBEAM    ; d5
-	add_tm IRON_TAIL    ; d6
-	add_tm DRAGONBREATH ; d7
-	add_tm THUNDER      ; d8
-	add_tm EARTHQUAKE   ; d9
-	add_tm RETURN       ; da
-	add_tm DIG          ; db
-	add_tm PSYCHIC_M    ; dc
-	add_tm SHADOW_BALL  ; dd
-	add_tm MUD_SLAP     ; de
-	add_tm DOUBLE_TEAM  ; ef
-	add_tm ICE_PUNCH    ; e0
-	add_tm SWAGGER      ; e1
-	add_tm SLEEP_TALK   ; e2
-	add_tm SLUDGE_BOMB  ; e3
-	add_tm SANDSTORM    ; e4
-	add_tm FIRE_BLAST   ; e5
-	add_tm SWIFT        ; e6
-	add_tm DEFENSE_CURL ; e7
-	add_tm THUNDERPUNCH ; e8
-	add_tm DREAM_EATER  ; e9
-	add_tm FALSE_SWIPE  ; ea
-	add_tm REST         ; eb
-	add_tm ATTRACT      ; ec
-	add_tm THIEF        ; ed
-	add_tm STEEL_WING   ; ee
-	add_tm FIRE_PUNCH   ; ef
-	add_tm FURY_CUTTER  ; f0
-	add_tm NIGHTMARE    ; f1
-	add_tm FAIRY_WIND   ; f2
-	add_tm MOONBLAST    ; f3
-	add_tm DARK_PULSE   ; f4
-	add_tm HAIL         ; f5
-	add_tm NIGHT_TERROR ; f6
-	add_tm SUBSTITUTE   ; f7
+	add_tm DYNAMICPUNCH ; bf
+	add_tm HEADBUTT     ; c0
+	add_tm CURSE        ; c1
+	add_tm ROLLOUT      ; c2
+	add_tm ROAR         ; c3
+	add_tm TOXIC        ; c4
+	add_tm ZAP_CANNON   ; c5
+	add_tm SELFDESTRUCT ; c6
+	add_tm PSYCH_UP     ; c7
+	add_tm HIDDEN_POWER ; c8
+	add_tm SUNNY_DAY    ; c9
+	add_tm SWEET_SCENT  ; ca
+	add_tm SNORE        ; cb
+	add_tm BLIZZARD     ; cc
+	add_tm HYPER_BEAM   ; cd
+	add_tm ICY_WIND     ; ce
+	add_tm PROTECT      ; cf
+	add_tm RAIN_DANCE   ; d0
+	add_tm GIGA_DRAIN   ; d1
+	add_tm ENDURE       ; d2
+	add_tm FRUSTRATION  ; d3
+	add_tm SOLARBEAM    ; d4
+	add_tm IRON_TAIL    ; d5
+	add_tm DRAGONBREATH ; d6
+	add_tm THUNDER      ; d7
+	add_tm EARTHQUAKE   ; d8
+	add_tm RETURN       ; d9
+	add_tm DIG          ; da
+	add_tm PSYCHIC_M    ; db
+	add_tm SHADOW_BALL  ; dc
+	add_tm MUD_SLAP     ; dd
+	add_tm DOUBLE_TEAM  ; de
+	add_tm ICE_PUNCH    ; df
+	add_tm SWAGGER      ; e0
+	add_tm SLEEP_TALK   ; e1
+	add_tm SLUDGE_BOMB  ; e2
+	add_tm SANDSTORM    ; e3
+	add_tm FIRE_BLAST   ; e4
+	add_tm SWIFT        ; e5
+	add_tm DEFENSE_CURL ; e6
+	add_tm THUNDERPUNCH ; e7
+	add_tm DREAM_EATER  ; e8
+	add_tm FALSE_SWIPE  ; e9
+	add_tm REST         ; ea
+	add_tm ATTRACT      ; eb
+	add_tm THIEF        ; ec
+	add_tm STEEL_WING   ; ed
+	add_tm FIRE_PUNCH   ; ee
+	add_tm FURY_CUTTER  ; ef
+	add_tm NIGHTMARE    ; f0
+	add_tm FAIRY_WIND   ; f1
+	add_tm MOONBLAST    ; f2
+	add_tm DARK_PULSE   ; f3
+	add_tm HAIL         ; f4
+	add_tm NIGHT_TERROR ; f5
+	add_tm SUBSTITUTE   ; f6
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
@@ -288,14 +287,14 @@ HM{02d:HM_VALUE}_MOVE = \1
 ENDM
 
 HM01 EQU const_value
-	add_hm CUT          ; f8
-	add_hm FLY          ; f9
-	add_hm SURF         ; fa
-	add_hm STRENGTH     ; fb
-	add_hm FLASH        ; fc
-	add_hm WHIRLPOOL    ; fd
-	add_hm WATERFALL    ; fe
-	add_hm ROCK_SMASH   ; ff?
+	add_hm CUT          ; f7
+	add_hm FLY          ; f8
+	add_hm SURF         ; f9
+	add_hm STRENGTH     ; fa
+	add_hm FLASH        ; fb
+	add_hm WHIRLPOOL    ; fc
+	add_hm WATERFALL    ; fd
+	add_hm ROCK_SMASH   ; fe
 NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 add_mt: MACRO
