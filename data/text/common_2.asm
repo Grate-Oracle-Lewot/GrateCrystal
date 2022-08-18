@@ -440,7 +440,7 @@ _HeadbuttNothingText::
 	autodone
 
 _AskHeadbuttText::
-	text "A #MON could be"
+	text "Something could be"
 	line "in this tree."
 
 	para "Want to HEADBUTT"
