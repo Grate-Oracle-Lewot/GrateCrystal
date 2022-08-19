@@ -2898,7 +2898,7 @@ YanmaEvosAttacks:
 	db 37, HYPNOSIS
 	db 42, CRUNCH
 	db 46, SCREECH
-	db 50, SLAM
+	db 60, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -3773,6 +3773,7 @@ CelebiEvosAttacks:
 
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, QUICK_ATTACK
 	db 1, ANCIENTPOWER
 	db 2, FORESIGHT
 	db 6, TWISTER
