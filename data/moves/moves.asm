@@ -33,7 +33,7 @@ Moves:
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, FLYING,       STATUS,   100, 20,   0
 	move FLY,          EFFECT_FLY,                70, FLYING,       PHYSICAL, 100, 15,   0
 	move BIND,         EFFECT_TRAP_TARGET,        20, NORMAL,       PHYSICAL,  85, 20,   0
-	move SLAM,         EFFECT_NORMAL_HIT,        100, DRAGON,       PHYSICAL,  80, 20,   0
+	move SLAM,         EFFECT_NORMAL_HIT,        100, DRAGON,       PHYSICAL,  80, 15,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,        PHYSICAL, 100, 10,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,       PHYSICAL, 100, 20,  30
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         40, FIGHTING,     PHYSICAL, 100, 30,   0
@@ -75,7 +75,7 @@ Moves:
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE, SPECIAL,  100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     65, WATER,        SPECIAL,  100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,          SPECIAL,  100, 20,  10
-	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,       SPECIAL,   95,  5,   0
+	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        200, NORMAL,       SPECIAL,   95,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         40, FLYING,       PHYSICAL, 100, 35,   0
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,       PHYSICAL, 100, 20,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         90, FIGHTING,     PHYSICAL,  90, 25,   0
@@ -133,7 +133,7 @@ Moves:
 	move METRONOME,    EFFECT_METRONOME,           0, FAIRY,        STATUS,   100, 10,   0
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, FLYING,       STATUS,   100, 20,   0
 	move SELFDESTRUCT, EFFECT_SELFDESTRUCT,      250, NORMAL,       PHYSICAL, 100,  5,   0
-	move EGG_BOMB,     EFFECT_NORMAL_HIT,        100, NORMAL,       PHYSICAL,  80, 10,   0
+	move EGG_BOMB,     EFFECT_NORMAL_HIT,        100, NORMAL,       PHYSICAL,  80, 20,   0
 	move LICK,         EFFECT_PARALYZE_HIT,       40, GHOST,        PHYSICAL, 100, 30,  30
 	move SMOG,         EFFECT_POISON_HIT,         40, POISON,       SPECIAL,   67, 20, 100
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,       SPECIAL,  100, 20,  30
