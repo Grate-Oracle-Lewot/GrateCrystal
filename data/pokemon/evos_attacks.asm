@@ -3773,7 +3773,7 @@ CelebiEvosAttacks:
 
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
+	db 1, ANCIENTPOWER
 	db 2, FORESIGHT
 	db 6, TWISTER
 	db 11, DOUBLE_TEAM
