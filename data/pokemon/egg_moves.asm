@@ -584,7 +584,7 @@ TogepiEggMoves:
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db PLAY_ROUGH
-	db AURA_SPHERE
+	db SPIKE_CANNON
 	db -1 ; end
 
 NatuEggMoves:
