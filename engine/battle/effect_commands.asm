@@ -3682,32 +3682,6 @@ UpdateMoveData:
 	call GetMoveName
 	jp CopyName1
 
-CheckForStatusIfAlreadyHasAny:
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	and SLP
-	ld hl, AlreadyAsleepText
-	ret nz
-	
-	ld a, [de]
-	bit FRZ, a
-	ld hl, AlreadyFrozenText
-	ret nz
-	
-	bit PAR, a
-	ld hl, AlreadyParalyzedText
-	ret nz
-	
-	bit PSN, a
-	ld hl, AlreadyPoisonedText
-	ret nz
-	
-	bit BRN, a
-	ld hl, AlreadyBurnedText
-	ret
-
 BattleCommand_SleepTarget:
 	call GetOpponentItem
 	ld a, b
@@ -6305,8 +6279,8 @@ PrintDidntAffect:
 
 PrintDidntAffect2:
 	call AnimateFailedMove
-	ld hl, DidntAffect1Text ; 'it didn't affect'
-	ld de, DidntAffect2Text ; 'it didn't affect'
+	ld hl, EvadedText ; 'evaded the attack'
+	ld de, ProtectingItselfText ; 'protecting itself'
 	jp FailText_CheckOpponentProtect
 
 PrintParalyze:
