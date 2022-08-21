@@ -1634,7 +1634,7 @@ BattleCommand_CheckHit:
 
 .LockOn:
 ; Return nz if we are locked-on and aren't trying to use Earthquake,
-; Fissure or Magnitude on a monster that is flying.
+; Fissure, Magnitude, or Earth Power on a monster that is flying.
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_LOCK_ON, [hl]
@@ -1654,6 +1654,8 @@ BattleCommand_CheckHit:
 	cp FISSURE
 	ret z
 	cp MAGNITUDE
+	ret z
+	cp EARTH_POWER
 	ret z
 
 .LockedOn:
@@ -1702,6 +1704,8 @@ BattleCommand_CheckHit:
 	ret z
 	cp TWISTER
 	ret
+	cp SKY_ATTACK
+	ret
 
 .DigMoves:
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1712,6 +1716,8 @@ BattleCommand_CheckHit:
 	cp FISSURE
 	ret z
 	cp MAGNITUDE
+	ret
+	cp EARTH_POWER
 	ret
 
 .ThunderRain:
