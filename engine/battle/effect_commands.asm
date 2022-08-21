@@ -5963,7 +5963,7 @@ BattleCommand_Paralyze:
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
 ; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack).
+; unless the move is ???-type (Tri Attack).
 
 	push hl
 
@@ -5977,7 +5977,7 @@ CheckMoveTypeMatchesTarget:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	and TYPE_MASK
-	cp NORMAL
+	cp CURSE_TYPE
 	jr z, .normal
 
 	cp [hl]
