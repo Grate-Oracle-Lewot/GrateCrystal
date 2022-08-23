@@ -1,6 +1,6 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
-	const VIRIDIANGYM_LASS
+	const VIRIDIANGYM_COOLTRAINER_F
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -22,7 +22,6 @@ ViridianGymBlueScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
-	setflag ENGINE_MEWTWO_CALL_ENABLED
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
@@ -39,13 +38,13 @@ ViridianGymBlueScript:
 	closetext
 	end
 
-TrainerLassAzure:
-	trainer LASS, AZURE, EVENT_BEAT_LASS_AZURE, LassAzureSeenText, LassAzureBeatenText, 0, .Script
+TrainerCooltrainerfAzure:
+	trainer COOLTRAINERF, AZURE, EVENT_BEAT_COOLTRAINER_F_AZURE, CooltrainerfAzureSeenText, CooltrainerfAzureBeatenText, 0, .Script
 
 .Script
 	endifjustbattled
 	opentext
-	writetext LassAzureAfterBattleText
+	writetext CooltrainerfAzureAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -150,7 +149,7 @@ LeaderBlueEpilogueText:
 	cont "you. Got it?"
 	done
 
-LassAzureSeenText:
+CooltrainerfAzureSeenText:
 	text "BLUE, BLUE, he's"
 	line "our man! If he"
 
@@ -158,13 +157,13 @@ LassAzureSeenText:
 	line "one can!"
 	done
 
-LassAzureBeatenText:
+CooltrainerfAzureBeatenText:
 	text "Two, four, six,"
 	line "eight, who did you"
 	cont "humiliate? Me!"
 	done
 
-LassAzureAfterBattleText:
+CooltrainerfAzureAfterBattleText:
 	text "I can't help but"
 	line "cheer for BLUE!"
 	done
@@ -214,5 +213,5 @@ ViridianGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  3,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassAzure, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfAzure, EVENT_VIRIDIAN_GYM_BLUE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
