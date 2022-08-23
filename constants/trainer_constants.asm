@@ -207,7 +207,6 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
-	const AZURE
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -256,6 +255,7 @@ KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
+	const AZURE
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
