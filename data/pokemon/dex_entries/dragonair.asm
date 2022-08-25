@@ -1,10 +1,10 @@
 	db "DRAGON@" ; species name
 	dw 1301, 360 ; height, weight
 
-	db   "It is called the"
-	next "divine #MON."
-	next "When its entire"
+	db   "If the wind is"
+	next "light, it can fly"
+	next "through the air"
 
-	page "body brightens"
-	next "slightly, the"
-	next "weather changes.@"
+	page "just like it swims"
+	next "in the water."
+	next "@"
