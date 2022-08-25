@@ -1,10 +1,10 @@
 	db "ANGLER@" ; species name
 	dw 108, 260 ; height, weight
 
-	db   "Its antennae, whi-"
-	next "ch evolved from a"
-	next "fin, have both po-"
+	db   "One antenna is"
+	next "positively charged"
+	next "and the other"
 
-	page "sitive and neg-"
-	next "ative charges flo-"
-	next "wing through them.@"
+	page "negative, letting"
+	next "it generate high"
+	next "voltage.@"
