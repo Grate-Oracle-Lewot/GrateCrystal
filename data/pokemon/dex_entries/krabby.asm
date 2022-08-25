@@ -1,10 +1,10 @@
 	db "RIVER CRAB@" ; species name
 	dw 104, 140 ; height, weight
 
-	db   "If it is unable"
-	next "to find food, it"
-	next "will absorb"
+	db   "It can only walk"
+	next "sideways, so it"
+	next "gets stuck if it's"
 
-	page "nutrients by"
-	next "swallowing a"
-	next "mouthful of sand.@"
+	page "somehow backed"
+	next "into a corner."
+	next "@"
