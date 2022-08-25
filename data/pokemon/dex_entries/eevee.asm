@@ -1,10 +1,10 @@
 	db "EVOLUTION@" ; species name
 	dw 100, 140 ; height, weight
 
-	db   "Its ability to"
-	next "evolve into many"
-	next "forms allows it to"
+	db   "Kids love it as a"
+	next "pet for its cute-"
+	next "ness, but it's so"
 
-	page "adapt smoothly"
-	next "and perfectly to"
-	next "any environment.@"
+	page "rare that only"
+	next "rich parents can"
+	next "afford it.@"
