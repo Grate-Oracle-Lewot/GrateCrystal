@@ -1,10 +1,10 @@
 	db "POISON GAS@" ; species name
 	dw 311, 210 ; height, weight
 
-	db   "When it inhales"
-	next "poisonous gases"
-	next "from garbage, its"
+	db   "Its smaller head"
+	next "is much smarter,"
+	next "but is too lazy"
 
-	page "body expands, and"
-	next "its insides smell"
-	next "much worse.@"
+	page "to contribute in"
+	next "any way."
+	next "@"
