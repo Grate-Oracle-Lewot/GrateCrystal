@@ -1,10 +1,10 @@
 	db "LIGHT@" ; species name
 	dw 311, 500 ; height, weight
 
-	db   "This #MON uses"
-	next "the bright part of"
-	next "its body, which"
+	db   "Handheld lanterns"
+	next "were named after"
+	next "this #MON. This"
 
-	page "changed from a"
-	next "dorsal fin, to"
-	next "lure prey.@"
+	page "proves its ancient"
+	next "relationship with"
+	next "humans.@"
