@@ -1,10 +1,10 @@
 	db "DRAGON@" ; species name
 	dw 703, 4630 ; height, weight
 
-	db   "It is said that"
-	next "somewhere in the"
-	next "ocean lies an"
+	db   "It flies over the"
+	next "seas, constantly"
+	next "searching for a"
 
-	page "island where these"
-	next "gather. Only they"
-	next "live there.@"
+	page "worthy opponent."
+	next "It helps those in"
+	next "need.@"
