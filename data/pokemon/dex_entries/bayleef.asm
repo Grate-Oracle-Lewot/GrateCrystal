@@ -1,10 +1,10 @@
 	db "LEAF@" ; species name
 	dw 311, 350 ; height, weight
 
-	db   "The scent that"
-	next "wafts from the"
-	next "leaves on its neck"
+	db   "It's playful, but"
+	next "careful not to"
+	next "step on the feet"
 
-	page "causes anyone who"
-	next "smells it to"
-	next "become energetic.@"
+	page "of its trainer as"
+	next "it romps about."
+	next "@"
