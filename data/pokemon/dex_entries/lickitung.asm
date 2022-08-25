@@ -1,10 +1,10 @@
 	db "LICKING@" ; species name
 	dw 311, 1440 ; height, weight
 
-	db   "It has a tongue"
-	next "that is over 6'6''"
-	next "long. It uses this"
+	db   "It can use its"
+	next "tongue to tie"
+	next "knots in twenty"
 
-	page "long tongue to"
-	next "lick its body"
-	next "clean.@"
+	page "cherry stems at"
+	next "the same time."
+	next "@"
