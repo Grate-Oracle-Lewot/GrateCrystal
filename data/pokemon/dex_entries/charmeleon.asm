@@ -1,10 +1,10 @@
 	db "FLAME@" ; species name
 	dw 307, 420 ; height, weight
 
-	db   "If it becomes"
-	next "agitated during"
-	next "battle, it spouts"
+	db   "It burns with"
+	next "teenage angst,"
+	next "often becoming"
 
-	page "intense flames,"
-	next "incinerating its"
-	next "surroundings.@"
+	page "difficult for its"
+	next "trainer to handle."
+	next "@"
