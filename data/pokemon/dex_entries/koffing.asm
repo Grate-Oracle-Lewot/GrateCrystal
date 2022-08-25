@@ -1,10 +1,10 @@
 	db "POISON GAS@" ; species name
 	dw 200, 20 ; height, weight
 
-	db   "If one gets close"
-	next "enough to it when"
-	next "it expels poison-"
+	db   "It's formed when a"
+	next "mischievous nature"
+	next "spirit's home is"
 
-	page "ous gas, the gas"
-	next "swirling inside it"
-	next "can be seen.@"
+	page "overrun with air"
+	next "pollution."
+	next "@"
