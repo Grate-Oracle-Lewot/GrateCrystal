@@ -1,10 +1,10 @@
 	db "ELECTRIC@" ; species name
 	dw 307, 660 ; height, weight
 
-	db   "When two"
-	next "ELECTABUZZ touch,"
-	next "they control the"
+	db   "It tries to chall-"
+	next "enge thunderstorms"
+	next "to boxing matches."
 
-	page "electric currents"
-	next "to communicate"
-	next "their feelings.@"
+	page "Obviously, this"
+	next "doesn't go well."
+	next "@"
