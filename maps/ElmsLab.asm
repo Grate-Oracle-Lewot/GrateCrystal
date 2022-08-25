@@ -740,11 +740,11 @@ ElmText_Intro:
 
 	para "You see…"
 
-	para "I'm writing a"
-	line "paper that I want"
+	para "I'm working on a"
+	line "meme that I want"
 
-	para "to present at a"
-	line "conference."
+	para "to use to pwn my"
+	line "colleagues."
 
 	para "But there are some"
 	line "things I don't"
