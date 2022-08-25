@@ -1,10 +1,10 @@
 	db "BIVALVE@" ; species name
 	dw 411, 2920 ; height, weight
 
-	db   "Even a missile"
-	next "can't break the"
-	next "spikes it uses to"
+	db   "It always sports a"
+	next "smug grin. This"
+	next "evolved to taunt"
 
-	page "stab opponents."
-	next "They're even hard-"
-	next "er than its shell.@"
+	page "foes into wasting"
+	next "energy attacking"
+	next "its hard shell.@"
