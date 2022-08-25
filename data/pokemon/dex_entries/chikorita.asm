@@ -1,10 +1,10 @@
 	db "LEAF@" ; species name
 	dw 211, 140 ; height, weight
 
-	db   "It loves to bask"
-	next "in the sunlight."
-	next "It uses the leaf"
+	db   "It exudes a scent"
+	next "that calms those"
+	next "around it. This"
 
-	page "on its head to"
-	next "seek out warm"
-	next "places.@"
+	page "makes it ideal for"
+	next "new trainers to"
+	next "practice with.@"
