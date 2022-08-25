@@ -1,10 +1,10 @@
 	db "PINCER@" ; species name
 	dw 403, 1320 ; height, weight
 
-	db   "Its oversized claw"
-	next "is very powerful,"
-	next "but when it's not"
+	db   "The one with the"
+	next "biggest claw"
+	next "rules the group,"
 
-	page "in battle, the"
-	next "claw just gets in"
-	next "the way.@"
+	page "no matter how poor"
+	next "its leadership"
+	next "abilities are.@"
