@@ -1,10 +1,10 @@
 	db "COCONUT@" ; species name
 	dw 607, 2650 ; height, weight
 
-	db   "Living in a good"
-	next "environment makes"
-	next "it grow lots of"
+	db   "It can grow its"
+	next "heads back. If"
+	next "it's lost them"
 
-	page "heads. A head that"
-	next "drops off becomes"
-	next "an EXEGGCUTE.@"
+	page "all, it's hard to"
+	next "tell apart from a"
+	next "tree.@"
