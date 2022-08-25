@@ -1,10 +1,10 @@
 	db "DRAGON@" ; species name
 	dw 511, 70 ; height, weight
 
-	db   "It sheds many lay-"
-	next "ers of skin as it"
-	next "grows larger. Dur-"
+	db   "It lives at the"
+	next "bottom of the"
+	next "ocean to protect"
 
-	page "ing this process,"
-	next "it is protected by"
-	next "a rapid waterfall.@"
+	page "itself until it"
+	next "evolves."
+	next "@"
