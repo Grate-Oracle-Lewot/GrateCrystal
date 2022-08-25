@@ -1,10 +1,10 @@
 	db "FLAME@" ; species name
 	dw 507, 2000 ; height, weight
 
-	db   "It uses its wings"
-	next "to fly high. The"
-	next "temperature of its"
+	db   "Its tail flame can"
+	next "withstand the air"
+	next "rushing by as it"
 
-	page "fire increases as"
-	next "it gains exper-"
-	next "ience in battle.@"
+	page "flies at speeds"
+	next "equal to a jet"
+	next "fighter.@"
