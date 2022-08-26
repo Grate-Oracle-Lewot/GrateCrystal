@@ -311,8 +311,8 @@ MtMortarSign2Text:
 Route42Sign2Text:
 	text "ROUTE 42"
 
-	para "ECRUTEAK CITY -"
-	line "MAHOGANY TOWN"
+	para "MAHOGANY TOWN -"
+	line "ECRUTEAK CITY"
 	done
 
 Route42_MapEvents:
