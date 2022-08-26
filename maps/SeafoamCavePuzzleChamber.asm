@@ -103,9 +103,8 @@ SeafoamCavePuzzleChamberAncientReplicaText:
 	done
 
 SeafoamCavePuzzleChamberDescriptionText:
-	text "The GRATE ORACLE"
-	line "LEWOT's personal"
-	cont "symbol of balance."
+	text "There's nothing"
+	line "written here…"
 	done
 
 SeafoamCavePuzzleChamberSolvedText:
