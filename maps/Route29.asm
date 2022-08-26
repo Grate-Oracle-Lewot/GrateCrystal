@@ -390,8 +390,8 @@ TuscanyNotTuesdayText:
 Route29Sign1Text:
 	text "ROUTE 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "NEW BARK TOWN -"
+	line "CHERRYGROVE CITY"
 	done
 
 Route29Sign2Text:
