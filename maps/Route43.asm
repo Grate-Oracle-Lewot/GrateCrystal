@@ -462,8 +462,8 @@ Route43Sign1Text:
 Route43Sign2Text:
 	text "ROUTE 43"
 
-	para "LAKE OF RAGE -"
-	line "MAHOGANY TOWN"
+	para "MAHOGANY TOWN -"
+	line "LAKE OF RAGE"
 	done
 
 Route43TrainerTipsText:
