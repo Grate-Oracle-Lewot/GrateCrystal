@@ -1749,8 +1749,8 @@ BugCatcherGroup:
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db 1, MAGIKARP
-	db 20, MAGIKARP
+	db  8, POLIWAG
+	db  8, POLIWAG
 	db -1 ; end
 
 	; FISHER (2)
@@ -1772,8 +1772,8 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db  8, POLIWAG
-	db  8, POLIWAG
+	db 1, MAGIKARP
+	db 20, MAGIKARP
 	db -1 ; end
 
 	; FISHER (6)
