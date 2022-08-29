@@ -607,8 +607,9 @@ GolbatEvosAttacks:
 OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 7, SWEET_SCENT
+	db 1, SWEET_SCENT
+	db 2, ABSORB
+	db 7, HAZE
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
@@ -623,8 +624,9 @@ GloomEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
 	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 7, SWEET_SCENT
+	db 1, SWEET_SCENT
+	db 2, ABSORB
+	db 7, HAZE
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
@@ -637,8 +639,8 @@ GloomEvosAttacks:
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
 	db 1, SWEET_SCENT
+	db 1, ABSORB
 	db 1, POISONPOWDER
 	db 1, PETAL_DANCE
 	db 0 ; no more level-up moves
