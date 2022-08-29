@@ -126,7 +126,7 @@ Moves:
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 40,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC_TYPE, STATUS,   100, 20,   0
 	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE, STATUS,   100, 25,   0
-	move HAZE,         EFFECT_RESET_STATS,         0, ICE,          STATUS,   100, 30,   0
+	move HAZE,         EFFECT_RESET_STATS,         0, POISON,       STATUS,   100, 30,   0
 	move REFLECT,      EFFECT_REFLECT,             0, PSYCHIC_TYPE, STATUS,   100, 25,   0
 	move FOCUS_ENERGY, EFFECT_FOCUS_ENERGY,        0, FIGHTING,     STATUS,   100, 30,   0
 	move BIDE,         EFFECT_BIDE,                0, NORMAL,       PHYSICAL, 100, 10,   0
