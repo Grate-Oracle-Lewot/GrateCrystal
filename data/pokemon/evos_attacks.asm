@@ -3252,7 +3252,7 @@ TeddiursaEvosAttacks:
 	db 15, BELLY_DRUM
 	db 22, PLAY_ROUGH
 	db 29, REST
-	db 29, SNORE
+	db 29, SLEEP_TALK
 	db 36, SLASH
 	db 43, CRUNCH
 	db 50, THRASH
@@ -3267,7 +3267,7 @@ UrsaringEvosAttacks:
 	db 15, BELLY_DRUM
 	db 22, PLAY_ROUGH
 	db 29, REST
-	db 29, SNORE
+	db 29, SLEEP_TALK
 	db 39, SLASH
 	db 49, CRUNCH
 	db 59, THRASH
