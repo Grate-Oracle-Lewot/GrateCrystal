@@ -335,7 +335,7 @@ EkansEvosAttacks:
 	db 29, SCREECH
 	db 33, DIG
 	db 37, ACID
-	db 43, HAZE
+	db 43, HYPER_FANG
 	db 51, CRUNCH
 	db 64, SLAM
 	db 0 ; no more level-up moves
@@ -350,7 +350,7 @@ ArbokEvosAttacks:
 	db 33, SCREECH
 	db 37, DIG
 	db 43, ACID
-	db 51, HAZE
+	db 51, HYPER_FANG
 	db 64, CRUNCH
 	db 72, SLAM
 	db 0 ; no more level-up moves
