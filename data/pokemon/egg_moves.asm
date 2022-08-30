@@ -609,12 +609,12 @@ MareepEggMoves:
 	db -1 ; end
 
 MarillEggMoves:
+	db FUTURE_SIGHT
+	db SUPERSONIC
+	db PERISH_SONG
+	db AMNESIA
 	db LIGHT_SCREEN
 	db PRESENT
-	db AMNESIA
-	db FUTURE_SIGHT
-	db PERISH_SONG
-	db SUPERSONIC
 	db FORESIGHT
 	db -1 ; end
 
