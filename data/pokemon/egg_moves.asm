@@ -757,12 +757,12 @@ SneaselEggMoves:
 	db -1 ; end
 
 TeddiursaEggMoves:
-	db BITE
-	db TAKE_DOWN
+	db COUNTER
 	db SEISMIC_TOSS
 	db FOCUS_ENERGY
-	db COUNTER
 	db METAL_CLAW
+	db TAKE_DOWN
+	db BITE
 	db -1 ; end
 
 SlugmaEggMoves:
