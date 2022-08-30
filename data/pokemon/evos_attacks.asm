@@ -529,7 +529,7 @@ VulpixEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, ROAR
 	db 19, CONFUSE_RAY
-	db 25, SAFEGUARD
+	db 25, MIST
 	db 29, ICY_WIND
 	db 33, FLAMETHROWER
 	db 37, FIRE_SPIN
@@ -542,7 +542,7 @@ NinetalesEvosAttacks:
 	db 1, EMBER
 	db 1, POWDER_SNOW
 	db 1, CONFUSE_RAY
-	db 1, SAFEGUARD
+	db 1, MIST
 	db 43, FIRE_BLAST
 	db 0 ; no more level-up moves
 
