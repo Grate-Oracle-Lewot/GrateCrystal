@@ -379,7 +379,7 @@ TangelaEggMoves:
 	db AMNESIA
 	db SYNTHESIS
 	db WATER_GUN
-	db ANCIENTPOWER
+	db SPIDER_WEB
 	db -1 ; end
 
 KangaskhanEggMoves:
