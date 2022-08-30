@@ -352,9 +352,9 @@ LickitungEggMoves:
 
 KoffingEggMoves:
 	db SCREECH
-	db MIST
 	db RAPID_SPIN
 	db FLAME_WHEEL
+	db MIST
 	db -1 ; end
 
 RhyhornEggMoves:
