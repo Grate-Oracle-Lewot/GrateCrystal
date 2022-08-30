@@ -2002,7 +2002,7 @@ VaporeonEvosAttacks:
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, AURORA_BEAM
-	db 42, HAZE
+	db 42, MIST
 	db 47, ACID_ARMOR
 	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2031,7 +2031,7 @@ FlareonEvosAttacks:
 	db 30, BITE
 	db 36, FLAME_WHEEL
 	db 42, FLAMETHROWER
-	db 47, LEER
+	db 47, SMOKESCREEN
 	db 52, FIRE_BLAST
 	db 0 ; no more level-up moves
 
