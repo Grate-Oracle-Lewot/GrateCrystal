@@ -59,11 +59,11 @@ SpearowEggMoves:
 
 EkansEggMoves:
 	db PURSUIT
-	db SLAM
 	db SPITE
-	db BEAT_UP
+	db HAZE
 	db EGG_BOMB
 	db SOFTBOILED
+	db SUPER_FANG
 	db -1 ; end
 
 SandshrewEggMoves:
