@@ -2610,11 +2610,14 @@ CleffaEvosAttacks:
 	db 1, POUND
 	db 1, CHARM
 	db 4, ENCORE
-	db 8, SING
-	db 12, FAIRY_WIND
-	db 16, SWEET_KISS
-	db 21, METRONOME
-	db 30, DAZZLY_GLEAM
+	db 8, SWEET_KISS
+	db 11, FAIRY_WIND
+	db 14, DOUBLESLAP
+	db 17, MINIMIZE
+	db 21, LIGHT_SCREEN
+	db 24, METRONOME
+	db 30, MOONLIGHT
+	db 37, DAZZLY_GLEAM
 	db 42, MOONBLAST
 	db 0 ; no more level-up moves
 
