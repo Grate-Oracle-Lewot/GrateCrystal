@@ -566,10 +566,11 @@ PichuEggMoves:
 	db -1 ; end
 
 CleffaEggMoves:
-	db PRESENT
 	db PSYWAVE
 	db AMNESIA
 	db BELLY_DRUM
+	db MIST
+	db PRESENT
 	db -1 ; end
 
 IgglybuffEggMoves:
