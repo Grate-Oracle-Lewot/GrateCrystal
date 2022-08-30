@@ -295,10 +295,10 @@ ShellderEggMoves:
 
 GastlyEggMoves:
 	db PSYWAVE
-	db HAZE
 	db SILVER_WIND
 	db ACID
 	db ACID_ARMOR
+	db HAZE
 	db -1 ; end
 
 OnixEggMoves:
