@@ -2759,8 +2759,9 @@ MarillEvosAttacks:
 	db 18, PLAY_ROUGH
 	db 21, BUBBLEBEAM
 	db 28, DOUBLE_EDGE
-	db 36, RAIN_DANCE
+	db 36, MIST
 	db 42, BELLY_DRUM
+	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
@@ -2773,8 +2774,9 @@ AzumarillEvosAttacks:
 	db 18, PLAY_ROUGH
 	db 25, BUBBLEBEAM
 	db 36, DOUBLE_EDGE
-	db 48, RAIN_DANCE
+	db 48, MIST
 	db 56, BELLY_DRUM
+	db 64, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
