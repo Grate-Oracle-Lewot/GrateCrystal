@@ -32,14 +32,14 @@ FlowerShopTeacherScript:
 .GiveBackSquirtbottle:
 	checkitem SQUIRTBOTTLE
 	iffalse .Lalala
+	faceplayer
 	opentext
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
 	waitbutton
 	closetext
-	giveitem SACRED_ASH
+	verbosegiveitem SACRED_ASH
 	iffalse .BagFull
 	takeitem SQUIRTBOTTLE
-	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
 	opentext
 	writetext GoldenrodFlowerShopTeacherSacredAshText
 	waitbutton
