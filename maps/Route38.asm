@@ -417,11 +417,12 @@ SailorHarryBeatenText:
 	done
 
 SailorHarryAfterBattleText:
-	text "All kinds of peo-"
-	line "ple around the"
+	text "In UNOVA, they have"
+	line "a #MON called"
+	cont "GARBODOR…"
 
-	para "world live happily"
-	line "with #MON."
+	para "It's so much worse"
+	line "than MUK."
 	done
 
 BeautyOliviaSeenText:
