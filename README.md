@@ -244,6 +244,14 @@ Q) Why not remove some Pokémon to make room for adding more?
 
 A) My focus is on making "bad" Pokémon better instead of removing them.
 
+Q) What about the babies? They're pretty pointless.
+
+A) But they're cute.
+
+Q) Shouldn't Tri Attack be bad against Electric and Rock? And shouldn't it be x4 effective against Flying?
+
+A) x4 just seems a bit much, and as for the other two, if you think of each element as 1/3 of the attack, then if only one is bad against the target, it should still be doing 5/6 of its total damage, which is closer to x1 than it is to 1/2. Basically I'm rounding to within the available effectivenesses.
+
 Q) How do I make my own hack?
 
 A) The base game disassembly is at https://github.com/pret/pokecrystal
