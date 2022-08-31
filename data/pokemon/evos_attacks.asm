@@ -386,12 +386,12 @@ SandshrewEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, FURY_SWIPES
+	db 11, METAL_CLAW
 	db 17, FURY_CUTTER
 	db 23, SLASH
 	db 30, SWIFT
 	db 33, DIG
-	db 37, METAL_CLAW
+	db 37, FURY_SWIPES
 	db 42, SANDSTORM
 	db 45, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -401,12 +401,12 @@ SandslashEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, FURY_SWIPES
+	db 11, METAL_CLAW
 	db 17, FURY_CUTTER
 	db 24, SLASH
 	db 33, SWIFT
 	db 36, DIG
-	db 42, METAL_CLAW
+	db 42, FURY_SWIPES
 	db 47, SANDSTORM
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -741,11 +741,11 @@ DugtrioEvosAttacks:
 MeowthEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions
-	db 1, FURY_SWIPES
+	db 1, METAL_CLAW
 	db 2, GROWL
 	db 6, FORESIGHT
 	db 11, BITE
-	db 15, METAL_CLAW
+	db 15, FURY_SWIPES
 	db 20, PAY_DAY
 	db 28, FAINT_ATTACK
 	db 35, SCREECH
@@ -757,11 +757,11 @@ MeowthEvosAttacks:
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_SWIPES
+	db 1, METAL_CLAW
 	db 2, GROWL
 	db 6, FORESIGHT
 	db 11, BITE
-	db 15, METAL_CLAW
+	db 15, FURY_SWIPES
 	db 20, PAY_DAY
 	db 29, FAINT_ATTACK
 	db 38, SCREECH
@@ -3230,9 +3230,9 @@ HeracrossEvosAttacks:
 
 SneaselEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_SWIPES
+	db 1, QUICK_ATTACK
 	db 2, LEER
-	db 9, QUICK_ATTACK
+	db 9, FURY_SWIPES
 	db 17, SCREECH
 	db 25, FAINT_ATTACK
 	db 33, METAL_CLAW
