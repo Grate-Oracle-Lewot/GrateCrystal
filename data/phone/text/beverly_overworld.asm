@@ -1,8 +1,5 @@
 BeverlyAskNumber1Text:
-	text "MARILL is so cute"
-	line "and adorable!"
-
-	para "You love #MON"
+	text "You love #MON"
 	line "just like I do!"
 
 	para "Want to trade"
@@ -13,10 +10,7 @@ BeverlyAskNumber1Text:
 	done
 
 BeverlyAskNumber2Text:
-	text "MARILL is so cute"
-	line "and adorable!"
-
-	para "We should chat, it"
+	text "We should chat, it"
 	line "will be fun."
 
 	para "Can I have your"
