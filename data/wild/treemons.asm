@@ -129,7 +129,7 @@ TreeMonSet_Rock:
 	db 20, GEODUDE,    15
 	db 20, KRABBY,     15
 	db 20, SHELLDER,   15
-	db 20, ARBOK,      15
-	db 10, SHUCKLE,    15
+	db 20, ARBOK,      20
 	db 10, DUNSPARCE,  15
+	db 10, SHUCKLE,    20
 	db -1
