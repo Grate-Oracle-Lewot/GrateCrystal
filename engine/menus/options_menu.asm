@@ -11,6 +11,7 @@
 NUM_OPTIONS EQU const_value    ; 8
 
 _Option:
+	call ClearJoypad
 	ld hl, hInMenu
 	ld a, [hl]
 	push af
