@@ -2060,7 +2060,7 @@ OmanyteEvosAttacks:
 	db 13, BITE
 	db 19, WATER_GUN
 	db 26, ROLLOUT
-	db 31, LEER
+	db 31, SMOKESCREEN
 	db 37, PROTECT
 	db 49, ANCIENTPOWER
 	db 55, HYDRO_PUMP
@@ -2074,7 +2074,7 @@ OmastarEvosAttacks:
 	db 13, BITE
 	db 19, WATER_GUN
 	db 26, ROLLOUT
-	db 31, LEER
+	db 31, SMOKESCREEN
 	db 37, PROTECT
 	db 39, SPIKE_CANNON
 	db 45, MEGAHORN
