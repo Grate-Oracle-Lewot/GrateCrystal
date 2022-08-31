@@ -122,6 +122,7 @@ TypeMatchups:
 	db CURSE_TYPE,   GRASS,        SUPER_EFFECTIVE
 	db CURSE_TYPE,   FLYING,       SUPER_EFFECTIVE
 	db CURSE_TYPE,   BUG,          SUPER_EFFECTIVE
+	db CURSE_TYPE,   ROCK,         NOT_VERY_EFFECTIVE
 	db CURSE_TYPE,   DRAGON,       NOT_VERY_EFFECTIVE
 
 	db -2 ; end (with Foresight)
