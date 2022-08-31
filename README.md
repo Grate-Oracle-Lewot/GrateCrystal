@@ -36,6 +36,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Ice now resists Flying
 - Bug now resists Psychic, is no longer bad against Fire or Ghost, and is now bad against Rock
 - Steel no longer resists Ghost or Psychic
+- Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
 
 ## Pokémon added
 - Yanmega
@@ -163,6 +164,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - No more badge boosts (stat-based or type-based)
 - Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
+- The Marshbadge and Soulbadge have their names and designs swapped
 - Text edits, often humorous (or so I'd like to think)
 - In the unedited Crystal, Unown could only be found in the Ruins of Alph, and only after completing at least one of the sliding block puzzles. In the normally-impossible scenario of encountering Unown before any letters are unlocked, the game would get stuck in an infinite loop trying to find an unlocked letter. Because Unown can be encountered in some other locations in Grate Crystal, there is now a 5% chance for the game to let through a locked Unown letter, preventing such infinite loops. As a consequence, all Unown letters are technically available before completing all (or any!) of the block puzzles, and completing some but not all puzzles will skew the likeliness of finding some letters over others until all puzzles are solved.
 
