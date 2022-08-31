@@ -56,10 +56,10 @@ FishGroups:
 	db  75 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
 .Ocean_Odd:
-	db  25 percent,     SLOWBRO,    21
-	db  50 percent,     SLOWKING,   21
-	db  75 percent,     OMANYTE,    21
-	db 100 percent,     KABUTO,     21
+	db  25 percent,     SLOWBRO,    28
+	db  50 percent,     SLOWKING,   28
+	db  75 percent,     OMANYTE,    28
+	db 100 percent,     KABUTO,     28
 
 .Lake_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -76,10 +76,10 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     SEAKING,    40
 .Lake_Odd:
-	db  40 percent,     SLOWPOKE,   21
-	db  80 percent,     PSYDUCK,    21
-	db  90 percent,     FARFETCH_D, 21
-	db 100 percent,     CROCONAW,   21
+	db  40 percent,     SLOWPOKE,   23
+	db  80 percent,     PSYDUCK,    23
+	db  90 percent,     FARFETCH_D, 23
+	db 100 percent,     CROCONAW,   23
 
 .Pond_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -154,9 +154,9 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_2_Odd:
-	db  50 percent,     POLITOED,   21
-	db  75 percent,     DRATINI,    21
-	db 100 percent,     DRAGONAIR,  21
+	db  50 percent,     POLITOED,   23
+	db  75 percent,     DRATINI,    23
+	db 100 percent,     DRAGONAIR,  23
 
 .WhirlIslands_Old:
 	db  50 percent + 1, MAGIKARP,    8
