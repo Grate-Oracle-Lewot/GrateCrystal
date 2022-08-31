@@ -448,10 +448,10 @@ EeveeEggMoves:
 	db -1 ; end
 
 OmanyteEggMoves:
-	db BUBBLEBEAM
-	db AURORA_BEAM
-	db SLAM
 	db SUPERSONIC
+	db AURORA_BEAM
+	db BUBBLEBEAM
+	db SLAM
 	db HAZE
 	db -1 ; end
 
