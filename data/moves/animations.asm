@@ -1592,9 +1592,16 @@ BattleAnim_Fly:
 BattleAnim_SkyAttack:
 	anim_if_param_equal $1, .turn1
 	anim_if_param_equal $2, .miss
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_1gfx ANIM_GFX_SKY_ATTACK
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
+	anim_wait 64
+	anim_incobj 1
+	anim_wait 21
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_wait 64
+	anim_incobj 1
 	anim_wait 32
 .miss:
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
