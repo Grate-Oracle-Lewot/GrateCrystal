@@ -37,6 +37,9 @@ TrainerGruntM27:
 UnionCaveSlowpokeWellLinkPickaxe:
 	itemball PICKAXE
 
+UnionCaveSlowpokeWellLinkHiddenDuskBall:
+	hiddenitem DUSK_BALL, EVENT_UNION_CAVE_SLOWPOKE_WELL_LINK_HIDDEN_DUSK_BALL
+
 BurglarFizboSeenText:
 	text "Hands up, kid!"
 	line "Gimme your money!"
@@ -85,6 +88,7 @@ UnionCaveSlowpokeWellLink_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event 10,  3, BGEVENT_ITEM, UnionCaveSlowpokeWellLinkHiddenDuskBall
 
 	def_object_events
 	object_event  8,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveSlowpokeWellLinkBoulder, -1
