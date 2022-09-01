@@ -355,13 +355,13 @@ SurfFunction:
 	jr z, .alreadyfail
 	cp PLAYER_SURF_PIKA
 	jr z, .alreadyfail
-	call GetFacingObject
-	jr nc, .cannotsurf
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp WATER_TILE
 	jr nz, .cannotsurf
 	call CheckDirection
+	jr c, .cannotsurf
+	farcall CheckFacingObject
 	jr c, .cannotsurf
 	ld a, $1
 	ret
@@ -1510,12 +1510,12 @@ FishFunction:
 	jr z, .fail
 	cp PLAYER_SURF_PIKA
 	jr z, .fail
-	call GetFacingObject
-	jr nc, .fail
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp WATER_TILE
-	jr z, .facingwater
+	jr nz, .fail
+	farcall CheckFacingObject
+	jr nc, .facingwater
 .fail
 	ld a, $3
 	ret
