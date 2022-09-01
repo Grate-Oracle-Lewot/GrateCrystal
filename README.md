@@ -247,9 +247,9 @@ Q) What about the babies? They're pretty pointless.
 
 A) But they're cute.
 
-Q) Shouldn't Tri Attack be bad against Electric and Rock? And shouldn't it be x4 effective against Flying?
+Q) Tri Attack's effectiveness is all wrong!
 
-A) x4 just seems a bit much, and as for the other two, if you think of each element as 1/3 of the attack, then if only one is bad against the target, it should still be doing 5/6 of its total damage, which is closer to x1 than it is to 1/2. Basically I'm rounding to within the available effectivenesses.
+A) What I did is treat each of the three elements as 1/3 of the total attack, apply effectiveness to them, add the fractions together, and round to the nearest possible effectiveness. For example, Ice is good against Dragon, but Fire and Electric are both bad against it; this means that Ice's 1/3 doubles to 2/3, while the other two get halved to 1/6, and if you add 2/3 + 1/6 + 1/6, it's actually... 1. Not all of them are that clean, but that's why I said I rounded. If you don't like it, make your own hack.
 
 Q) How do I make my own hack?
 
