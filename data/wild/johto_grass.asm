@@ -656,63 +656,63 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, ZUBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, ZUBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	; day
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, ZUBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, ZUBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	; nite
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, GOLBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, GOLBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, ZUBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, ZUBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	; day
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, ZUBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, ZUBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	; nite
-	db 12, MACHOP
-	db 12, GEODUDE
-	db 11, GOLBAT
-	db 13, ZUBAT
-	db 12, RATTATA
-	db 14, RATTATA
-	db 14, RATICATE
-	db 12, MARILL
+	db 22, MACHOP
+	db 22, GEODUDE
+	db 21, GOLBAT
+	db 23, ZUBAT
+	db 22, RATTATA
+	db 24, RATTATA
+	db 24, RATICATE
+	db 22, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
@@ -749,32 +749,32 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, MACHOP
-	db 14, GEODUDE
-	db 13, ZUBAT
-	db 15, ZUBAT
-	db 14, RATTATA
-	db 16, RATTATA
-	db 16, RATICATE
-	db 14, MARILL
+	db 24, MACHOP
+	db 24, GEODUDE
+	db 23, ZUBAT
+	db 25, ZUBAT
+	db 24, RATTATA
+	db 26, RATTATA
+	db 26, RATICATE
+	db 24, AZUMARILL
 	; day
-	db 14, MACHOP
-	db 14, GEODUDE
-	db 13, ZUBAT
-	db 15, ZUBAT
-	db 14, RATTATA
-	db 16, RATTATA
-	db 16, RATICATE
-	db 14, MARILL
+	db 24, MACHOP
+	db 24, GEODUDE
+	db 23, ZUBAT
+	db 25, ZUBAT
+	db 24, RATTATA
+	db 26, RATTATA
+	db 26, RATICATE
+	db 24, MARILL
 	; nite
-	db 14, MACHOP
-	db 14, GEODUDE
-	db 13, GOLBAT
-	db 15, ZUBAT
-	db 14, RATTATA
-	db 16, RATTATA
-	db 16, RATICATE
-	db 14, MARILL
+	db 24, MACHOP
+	db 24, GEODUDE
+	db 23, GOLBAT
+	db 25, ZUBAT
+	db 24, RATTATA
+	db 26, RATTATA
+	db 26, RATICATE
+	db 24, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F
