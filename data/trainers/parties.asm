@@ -1779,9 +1779,9 @@ FisherGroup:
 
 	; FISHER (6)
 	db "MARVIN@", TRAINERTYPE_NORMAL
-	db 10, MAGIKARP
-	db 10, GYARADOS
-	db 25, MAGIKARP
+	db 15, MAGIKARP
+	db 15, GYARADOS
+	db 30, MAGIKARP
 	db 25, GYARADOS
 	db -1 ; end
 
