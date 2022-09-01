@@ -2352,7 +2352,7 @@ BattleAnim_Transform:
 	anim_ret
 
 BattleAnim_PetalDance:
-	anim_sound 0, 0, SFX_MENU
+	anim_sound 0, 1, SFX_MORNING_SUN
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
 .loop
 	anim_obj ANIM_OBJ_PETAL_DANCE, 48, 56, $0
