@@ -1608,33 +1608,6 @@ BattleAnim_Fly:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_SkyAttack:
-	anim_if_param_equal $1, .turn1
-	anim_if_param_equal $2, .miss
-	anim_1gfx ANIM_GFX_SKY_ATTACK
-	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
-	anim_wait 64
-	anim_incobj 1
-	anim_wait 21
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-	anim_wait 64
-	anim_incobj 1
-	anim_wait 32
-.miss:
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 32
-	anim_ret
-
-.turn1:
-	anim_1gfx ANIM_GFX_SPEED
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
-	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
-	anim_call BattleAnimSub_WarpAway
-	anim_wait 64
-	anim_ret
-
 BattleAnim_DoubleTeam:
 	anim_call BattleAnim_TargetObj_2Row
 	anim_sound 0, 0, SFX_PSYBEAM
@@ -2632,6 +2605,33 @@ BattleAnim_Minimize:
 	anim_incbgeffect ANIM_BG_WAVE_DEFORM_MON
 	anim_wait 48
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_SkyAttack:
+	anim_if_param_equal $1, .turn1
+	anim_if_param_equal $2, .miss
+	anim_1gfx ANIM_GFX_SKY_ATTACK
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
+	anim_wait 64
+	anim_incobj 1
+	anim_wait 21
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_wait 64
+	anim_incobj 1
+	anim_wait 32
+.miss:
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 32
+	anim_ret
+
+.turn1:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
+	anim_call BattleAnimSub_WarpAway
+	anim_wait 64
 	anim_ret
 
 BattleAnim_NightShade:
