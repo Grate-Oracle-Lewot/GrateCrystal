@@ -112,7 +112,7 @@ MagikarpLengthRaterText_LakeOfRageHistory:
 	line "you could catch"
 
 	para "lively MAGIKARP"
-	line "there, but…"
+	line "here, but…"
 
 	para "I don't understand"
 	line "what's happening."
