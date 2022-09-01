@@ -342,6 +342,8 @@ CantMove:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
+	cp SKY_ATTACK
+	jr z, .fly_dig
 	cp FLY
 	jr z, .fly_dig
 
@@ -1983,6 +1985,8 @@ BattleCommand_MoveAnimNoSub:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
+	cp SKY_ATTACK
+	jr z, .clear_sprite
 	cp FLY
 	jr z, .clear_sprite
 	cp DIG
@@ -2079,6 +2083,8 @@ BattleCommand_FailureText:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
 
+	cp SKY_ATTACK
+	jr z, .fly_dig
 	cp FLY
 	jr z, .fly_dig
 	cp DIG
@@ -5577,6 +5583,8 @@ BattleCommand_Charge:
 	call LoadMoveAnim
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
+	cp SKY_ATTACK
+	jr z, .flying
 	cp FLY
 	jr z, .flying
 	cp DIG
@@ -5592,6 +5600,8 @@ BattleCommand_Charge:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld b, a
+	cp SKY_ATTACK
+	jr z, .set_flying
 	cp FLY
 	jr z, .set_flying
 	cp DIG
