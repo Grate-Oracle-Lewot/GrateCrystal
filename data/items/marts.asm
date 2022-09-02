@@ -93,25 +93,26 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 7 ; # items
+	db 9 ; # items
 	db POTION
 	db SUPER_POTION
+	db REVIVE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db FULL_HEAL
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
 	db REPEL
-	db REVIVE
-	db FULL_HEAL
 	db POKE_DOLL
+	db EVIOLITE
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -128,7 +129,7 @@ MartGoldenrod3F:
 	db -1 ; end
 
 MartGoldenrod3F2:
-	db 9 ; # items
+	db 8 ; # items
 	db FIRE_STONE
 	db THUNDERSTONE
 	db WATER_STONE
@@ -136,7 +137,6 @@ MartGoldenrod3F2:
 	db MOON_STONE
 	db SUN_STONE
 	db EVERSTONE
-	db EVIOLITE
 	db LINK_VOUCHER
 	db -1 ; end
 
