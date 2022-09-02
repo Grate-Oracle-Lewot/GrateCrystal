@@ -127,7 +127,7 @@ CooltrainerfEmmaSeenText:
 
 CooltrainerfEmmaBeatenText:
 	text "I'd rather pet my"
-	line "babies than this!"
+	line "baby than this!"
 	done
 
 CooltrainerfEmmaAfterBattleText:
