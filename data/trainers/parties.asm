@@ -2170,15 +2170,15 @@ SuperNerdGroup:
 
 	; SUPER_NERD (3)
 	db "GREGG@", TRAINERTYPE_NORMAL
-	db 21, MAGNEMITE
-	db 21, RHYHORN
-	db 21, MEOWTH
+	db 33, MAGNEMITE
+	db 33, RHYHORN
+	db 33, MEOWTH
 	db -1 ; end
 
 	; SUPER_NERD (4)
 	db "JAY@", TRAINERTYPE_NORMAL
-	db 25, KOFFING
-	db 25, AZUMARILL
+	db 33, KOFFING
+	db 33, AZUMARILL
 	db -1 ; end
 
 	; SUPER_NERD (5)
