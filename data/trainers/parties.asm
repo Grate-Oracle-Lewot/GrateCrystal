@@ -2345,15 +2345,15 @@ HikerGroup:
 
 	; HIKER (3)
 	db "PHILLIP@", TRAINERTYPE_NORMAL
-	db 24, ONIX
-	db 24, RHYHORN
-	db 24, GRAVELER
+	db 27, ONIX
+	db 27, RHYHORN
+	db 27, GRAVELER
 	db -1 ; end
 
 	; HIKER (4)
 	db "LEONARD@", TRAINERTYPE_NORMAL
-	db 25, GLIGAR
-	db 25, SUDOWOODO
+	db 28, GLIGAR
+	db 28, SUDOWOODO
 	db -1 ; end
 
 	; HIKER (5)
@@ -2769,7 +2769,7 @@ ExecutiveMGroup:
 PsychicGroup:
 	; PSYCHIC_T (1)
 	db "NATHAN@", TRAINERTYPE_NORMAL
-	db 26, GIRAFARIG
+	db 32, GIRAFARIG
 	db -1 ; end
 
 	; PSYCHIC_T (2)
