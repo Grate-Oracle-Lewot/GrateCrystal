@@ -111,6 +111,7 @@
 	const SPRITE_OFFICER_JENNY ; 6b
 	const SPRITE_GLITCH ; 6c
 	const SPRITE_COOK ; 6d
+	const SPRITE_SITTING_BIRD ; 6e
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
