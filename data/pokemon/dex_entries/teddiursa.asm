@@ -1,10 +1,10 @@
 	db "LITTLE BEAR@" ; species name
 	dw 200, 190 ; height, weight
 
-	db   "It always licks"
-	next "honey. Its palm"
-	next "tastes sweet"
+	db   "A popular line of"
+	next "plush toys is made"
+	next "in its image."
 
-	page "because of all the"
-	next "honey it has"
-	next "absorbed.@"
+	page "These dolls almost"
+	next "never come to life"
+	next "at night.@"
