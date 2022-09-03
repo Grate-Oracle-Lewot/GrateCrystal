@@ -1,10 +1,10 @@
 	db "VOLCANO@" ; species name
 	dw 507, 1750 ; height, weight
 
-	db   "When heat from its"
-	next "body causes the"
-	next "air around it to"
+	db   "Its power has"
+	next "grown too strong"
+	next "to cook food with"
 
-	page "shimmer, this is a"
-	next "sign that it is"
-	next "ready to battle.@"
+	page "its fire anymore."
+	next "This fact fuels"
+	next "its anger.@"
