@@ -1,10 +1,10 @@
 	db "HIBERNANT@" ; species name
 	dw 511, 2770 ; height, weight
 
-	db   "Although it has a"
-	next "large body, it is"
-	next "quite skilled at"
+	db   "It will eat meat,"
+	next "but prefers BERR-"
+	next "IES. It's usually"
 
-	page "climbing trees. It"
-	next "eats and sleeps in"
-	next "the treetops.@"
+	page "only aggressive"
+	next "when defending its"
+	next "young.@"
