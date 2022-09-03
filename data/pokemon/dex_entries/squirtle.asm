@@ -1,10 +1,10 @@
 	db "TINYTURTLE@" ; species name
 	dw 108, 200 ; height, weight
 
-	db   "When it feels"
-	next "threatened, it"
-	next "draws its legs"
+	db   "It's great as a"
+	next "pet not only bec-"
+	next "ause it's friendly"
 
-	page "inside its shell"
-	next "and sprays water"
-	next "from its mouth.@"
+	page "but because its"
+	next "shell protects it"
+	next "from rough play.@"
