@@ -149,7 +149,7 @@ MoveDescriptions::
 	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
-	dw PsywaveDescription
+	dw AirSlashDescription
 	dw EarthPowerDescription
 	dw AcidArmorDescription
 	dw CrabhammerDescription
@@ -352,8 +352,8 @@ VineWhipDescription:
 	next "slender vines.@"
 
 StompDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+	db   "Does double damage"
+	next "to MINIMIZED foes.@"
 
 DoubleKickDescription:
 	db   "Kicks with both"
@@ -377,7 +377,7 @@ SandAttackDescription:
 
 HeadbuttDescription:
 	db   "An attack that may"
-	next "make foe flinch.@"
+	next "cause flinching.@"
 
 HornAttackDescription:
 	db   "An attack using a"
@@ -669,7 +669,7 @@ NightShadeDescription:
 
 IronHeadDescription:
 	db   "An attack that may"
-	next "make foe flinch.@"
+	next "cause flinching.@"
 
 ScreechDescription:
 	db   "Sharply reduces"
@@ -855,9 +855,9 @@ FlashDescription:
 	db   "Reflects light in"
 	next "the foe's eyes.@"
 
-PsywaveDescription:
-	db   "An attack with"
-	next "variable power.@"
+AirSlashDescription:
+	db   "Sharp wind. May"
+	next "cause flinching.@"
 
 EarthPowerDescription:
 	db   "An attack that may"
