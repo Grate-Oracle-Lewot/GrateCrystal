@@ -1516,13 +1516,13 @@ ElectrodeEvosAttacks:
 ExeggcuteEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
 	db 0 ; no more evolutions
-	db 1, PSYWAVE
+	db 1, CONFUSION
 	db 1, ABSORB
 	db 1, HYPNOSIS
 	db 7, REFLECT
 	db 13, LEECH_SEED
 	db 15, MEGA_DRAIN
-	db 19, CONFUSION
+	db 19, PSYBEAM
 	db 25, SOFTBOILED
 	db 31, EGG_BOMB
 	db 37, GIGA_DRAIN
@@ -1532,7 +1532,7 @@ ExeggcuteEvosAttacks:
 
 ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PSYWAVE
+	db 1, CONFUSION
 	db 1, RAZOR_LEAF
 	db 1, SYNTHESIS
 	db 1, STOMP
@@ -2250,7 +2250,7 @@ MewtwoEvosAttacks:
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PSYWAVE
+	db 1, POUND
 	db 10, METRONOME
 	db 20, SAFEGUARD
 	db 30, AURA_SPHERE
@@ -3002,7 +3002,7 @@ SlowkingEvosAttacks:
 
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PSYWAVE
+	db 1, LICK
 	db 2, GROWL
 	db 6, SPITE
 	db 6, BITE
@@ -3018,21 +3018,20 @@ MisdreavusEvosAttacks:
 UnownEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
-	db 2, SUBSTITUTE
+	db 2, HIDDEN_POWER
 	db 3, BEAT_UP
-	db 4, HIDDEN_POWER
+	db 4, SUBSTITUTE
 	db 5, HYPNOSIS
 	db 6, BARRIER
 	db 11, DISABLE
 	db 17, FOCUS_ENERGY
 	db 21, SONICBOOM
-	db 26, PSYWAVE
+	db 26, METRONOME
 	db 33, PSYCH_UP
 	db 37, MIND_READER
 	db 42, FUTURE_SIGHT
 	db 51, MINIMIZE
 	db 55, DESTINY_BOND
-	db 64, METRONOME
 	db 84, SKY_ATTACK
 	db 0 ; no more level-up moves
 
@@ -3514,8 +3513,7 @@ StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 2, LEER
-	db 4, PSYWAVE
-	db 8, DOUBLE_KICK
+	db 8, CONFUSION
 	db 15, HYPNOSIS
 	db 15, NIGHTMARE
 	db 23, STOMP
