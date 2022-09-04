@@ -136,35 +136,21 @@ PrintTempMonDVs:
 	ld a, [wTempMonDVs]
 	and $f0
 	swap a
-	ld [wTempMonPadding + 1], a
-	xor a
-	ld [wTempMonPadding], a
-	ld de, wTempMonPadding
 	lb bc, 2, 3
 	call .PrintDV
 
 	ld a, [wTempMonDVs]
 	and $f
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
-	lb bc, 2, 3
 	call .PrintDV
 
 	ld a, [wTempMonDVs + 1]
 	and $f
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
-	lb bc, 2, 3
 	call .PrintDV
 
 	ld a, [wTempMonDVs + 1]
 	and $f0
 	swap a
-	ld [wTempMonPadding + 1], a
-	ld de, wTempMonPadding
-	lb bc, 2, 3
 	call .PrintDV
-
 	jp PrintNum
 
 .PrintDV:
