@@ -148,7 +148,7 @@ MoveNames::
 	li "DIZZY PUNCH"
 	li "SPORE"
 	li "FLASH"
-	li "PSYWAVE"
+	li "AIR SLASH"
 	li "EARTH POWER"
 	li "ACID ARMOR"
 	li "CRABHAMMER"
