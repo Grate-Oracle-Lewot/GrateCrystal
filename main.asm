@@ -241,7 +241,6 @@ INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
 INCLUDE "engine/pokemon/categories.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
-INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
@@ -632,6 +631,7 @@ INCLUDE "data/phone/text/unused.asm"
 SECTION "Mewtwo Phone Files", ROMX
 
 INCLUDE "engine/pokedex/pokedex.asm" ; 10
+INCLUDE "engine/link/init_list.asm" ; 14
 INCLUDE "engine/phone/scripts/mewtwo.asm"
 INCLUDE "data/phone/text/mewtwo.asm"
 
