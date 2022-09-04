@@ -53,6 +53,7 @@ SpearowEggMoves:
 	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
+	db AIR_SLASH
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
@@ -106,9 +107,9 @@ ZubatEggMoves:
 	db QUICK_ATTACK
 	db PURSUIT
 	db FAINT_ATTACK
-	db GUST
 	db WHIRLWIND
 	db SILVER_WIND
+	db AIR_SLASH
 	db ABSORB
 	db MEGA_DRAIN
 	db -1 ; end
@@ -295,6 +296,7 @@ ShellderEggMoves:
 	db -1 ; end
 
 GastlyEggMoves:
+	db AIR_SLASH
 	db SILVER_WIND
 	db ACID
 	db ACID_ARMOR
@@ -456,16 +458,16 @@ OmanyteEggMoves:
 	db -1 ; end
 
 KabutoEggMoves:
-	db BUBBLEBEAM
 	db AURORA_BEAM
 	db RAPID_SPIN
 	db FLAIL
+	db AIR_SLASH
 	db -1 ; end
 
 AerodactylEggMoves:
-	db WHIRLWIND
-	db PURSUIT
 	db FORESIGHT
+	db AIR_SLASH
+	db PURSUIT
 	db DRAGON_RAGE
 	db OUTRAGE
 	db EGG_BOMB
@@ -485,7 +487,7 @@ DratiniEggMoves:
 	db LIGHT_SCREEN
 	db SILVER_WIND
 	db EARTH_POWER
-	db SKY_ATTACK
+	db AIR_SLASH
 	db AURA_SPHERE
 	db -1 ; end
 
@@ -589,6 +591,7 @@ TogepiEggMoves:
 	db -1 ; end
 
 NatuEggMoves:
+	db AIR_SLASH
 	db HAZE
 	db FAINT_ATTACK
 	db SILVER_WIND
@@ -627,11 +630,11 @@ SudowoodoEggMoves:
 	db -1 ; end
 
 HoppipEggMoves:
-	db GROWL
-	db ENCORE
+	db AIR_SLASH
 	db REFLECT
 	db AMNESIA
 	db SILVER_WIND
+	db ENCORE
 	db -1 ; end
 
 AipomEggMoves:
@@ -814,9 +817,9 @@ MantineEggMoves:
 
 SkarmoryEggMoves:
 	db IRON_HEAD
-	db WHIRLWIND
 	db TWISTER
 	db SILVER_WIND
+	db AIR_SLASH
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
@@ -892,7 +895,7 @@ LarvitarEggMoves:
 	db OUTRAGE
 	db FOCUS_ENERGY
 	db ANCIENTPOWER
-	db AURA_SPHERE
+	db BELLY_DRUM
 	db -1 ; end
 
 WhimsicottEggMoves:
