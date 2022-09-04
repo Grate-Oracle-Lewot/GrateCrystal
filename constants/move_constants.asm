@@ -154,7 +154,7 @@
 	const DIZZY_PUNCH  ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94
-	const PSYWAVE      ; 95
+	const AIR_SLASH    ; 95
 	const EARTH_POWER  ; 96
 	const ACID_ARMOR   ; 97
 	const CRABHAMMER   ; 98
