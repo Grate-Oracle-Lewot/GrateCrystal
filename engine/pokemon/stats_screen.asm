@@ -811,92 +811,16 @@ LoadBluePage:
 	dw wBufferMonOT
 
 LoadOrangePage:
-	call .placeCaughtLocation
-	ld de, MetAtMapString
+	ld de, DVGenesString
 	hlcoord 1, 9
 	call PlaceString
-	call .placeCaughtLevel
+	hlcoord 1, 11
+	ld bc, 6
+	predef PrintTempMonDVs
 	ret
 
-.placeCaughtLocation
-	ld a, [wTempMonCaughtLocation]
-	and CAUGHT_LOCATION_MASK
-	jr z, .unknown_location
-	cp LANDMARK_EVENT
-	jr z, .unknown_location
-	cp LANDMARK_GIFT
-	jr z, .unknown_location
-	ld e, a
-	farcall GetLandmarkName
-	ld de, wStringBuffer1
-	hlcoord 2, 10
-	call PlaceString
-	ld a, [wTempMonCaughtTime]
-	and CAUGHT_TIME_MASK
-	ret z ; no time
-	rlca
-	rlca
-	dec a
-	ld hl, .times
-	call GetNthString
-	ld d, h
-	ld e, l
-	call CopyName1
-	ld de, wStringBuffer2
-	hlcoord 2, 11
-	call PlaceString
-	ret
-
-.unknown_location:
-	ld de, MetUnknownMapString
-	hlcoord 2, 10
-	call PlaceString
-	ret
-
-.times
-	db "MORN@"
-	db "DAY@"
-	db "NITE@"
-
-.placeCaughtLevel
-	; caught level
-	; Limited to between 1 and 63 since it's a 6-bit quantity.
-	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK
-	jr z, .unknown_level
-	cp CAUGHT_EGG_LEVEL ; egg marker value
-	jr nz, .print
-	ld a, EGG_LEVEL ; egg hatch level
-
-.print
-	ld [wTextDecimalByte], a
-	hlcoord 3, 14
-	ld de, wTextDecimalByte
-	lb bc, PRINTNUM_LEFTALIGN | 1, 3
-	call PrintNum
-	ld de, MetAtLevelString
-	hlcoord 1, 13
-	call PlaceString
-	hlcoord 2, 14
-	ld [hl], "<LV>"
-	ret
-
-.unknown_level
-	ld de, MetUnknownLevelString
-	hlcoord 2, 13
-	call PlaceString
-	ret
-
-MetAtMapString:
-	db "MET AT:@"
-
-MetUnknownMapString:
-	db "UNKNOWN@"
-	
-MetAtLevelString:
-	db "MET LEVEL:@"    
-MetUnknownLevelString:
-	db "???@"
+DVGenesString:
+	db "GENES:@"
 
 IDNoString:
 	db "<ID>№.@"
