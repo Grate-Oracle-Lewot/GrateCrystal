@@ -131,9 +131,9 @@ ParasEggMoves:
 
 VenonatEggMoves:
 	db BATON_PASS
-	db PSYWAVE
 	db SCREECH
 	db CONFUSION
+	db NIGHT_SHADE
 	db SIGNAL_BEAM
 	db -1 ; end
 
@@ -151,9 +151,11 @@ MeowthEggMoves:
 	db HYPNOSIS
 	db AMNESIA
 	db BEAT_UP
+	db PRESENT
 	db -1 ; end
 
 PsyduckEggMoves:
+	db PRESENT
 	db HYPNOSIS
 	db PSYBEAM
 	db FORESIGHT
@@ -190,7 +192,6 @@ PoliwagEggMoves:
 	db -1 ; end
 
 AbraEggMoves:
-	db PSYWAVE
 	db LIGHT_SCREEN
 	db ENCORE
 	db BARRIER
@@ -286,15 +287,14 @@ GrimerEggMoves:
 
 ShellderEggMoves:
 	db TAKE_DOWN
-	db BARRIER
 	db RAPID_SPIN
 	db SCREECH
 	db DAZZLY_GLEAM
 	db CRABHAMMER
+	db PRESENT
 	db -1 ; end
 
 GastlyEggMoves:
-	db PSYWAVE
 	db SILVER_WIND
 	db ACID
 	db ACID_ARMOR
@@ -566,7 +566,7 @@ PichuEggMoves:
 	db -1 ; end
 
 CleffaEggMoves:
-	db PSYWAVE
+	db NIGHT_SHADE
 	db AMNESIA
 	db BELLY_DRUM
 	db MIST
