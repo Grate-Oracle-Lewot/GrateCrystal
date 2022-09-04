@@ -83,9 +83,9 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 ## Moves
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
-- Removed: Splash, Razor Wind, Barrage, Pain Split, Constrict, Detect, Sharpen, Mimic, and Explosion (Selfdestruct is now as strong as Explosion)
+- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Constrict, Detect, Sharpen, Mimic, and Explosion (Selfdestruct is now as strong as Explosion)
 
-- Added: Fairy Wind, Play Rough, Moonblast, Draining Kiss (renamed Drain Kiss), Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Silver Wind, Signal Beam, Earth Power, Iron Head, Aura Sphere, Hail, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
+- Added: Fairy Wind, Play Rough, Moonblast, Draining Kiss (renamed Drain Kiss), Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Silver Wind, Signal Beam, Earth Power, Air Slash, Iron Head, Aura Sphere, Hail, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). A few other changes to move powers, and almost every move has received an accuracy boost.
 
@@ -176,7 +176,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing caught data (eventually I want to change this to show DVs and possibly stat experience)
+- A fourth Pokémon stats page showing DVs(?)
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
