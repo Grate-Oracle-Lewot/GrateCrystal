@@ -1655,9 +1655,9 @@ BattleCommand_CheckHit:
 	ret z
 	cp FISSURE
 	ret z
-	cp MAGNITUDE
-	ret z
 	cp EARTH_POWER
+	ret z
+	cp MAGNITUDE
 	ret z
 
 .LockedOn:
