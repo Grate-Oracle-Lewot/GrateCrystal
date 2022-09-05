@@ -2266,7 +2266,7 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, FLY
+	db 1, POUND
 	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
@@ -2364,7 +2364,7 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	db 1, SKY_ATTACK
+	db 1, SCRATCH
 	db 2, TAIL_WHIP
 	db 7, RAGE
 	db 12, WATER_GUN
