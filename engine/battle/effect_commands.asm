@@ -1704,9 +1704,9 @@ BattleCommand_CheckHit:
 	ret z
 	cp THUNDER
 	ret z
-	cp TWISTER
-	ret
 	cp SKY_ATTACK
+	ret z
+	cp TWISTER
 	ret
 
 .DigMoves:
@@ -1717,9 +1717,9 @@ BattleCommand_CheckHit:
 	ret z
 	cp FISSURE
 	ret z
-	cp MAGNITUDE
-	ret
 	cp EARTH_POWER
+	ret z
+	cp MAGNITUDE
 	ret
 
 .ThunderRain:
