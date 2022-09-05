@@ -91,7 +91,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Many moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
-- HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack acts like Fly and can hit a flying target, etc.
+- HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack flies up on the first turn like Fly, etc.
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
@@ -176,7 +176,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing DVs(?)
+- A fourth Pokémon stats page showing DVs
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
@@ -216,6 +216,8 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
 # Known Bugs & Issues
+
+- DVs don't display properly on the stats screen
 
 - Pokémon icons don't color in the Daycare
 
