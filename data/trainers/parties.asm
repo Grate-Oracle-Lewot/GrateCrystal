@@ -758,8 +758,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (8)
 	db "HANK@", TRAINERTYPE_NORMAL
-	db 57, PIDGEY
-	db 64, PIDGEOT
+	db 65, PIDGEY
+	db 65, PIDGEOT
 	db -1 ; end
 
 	; BIRD_KEEPER (9)
