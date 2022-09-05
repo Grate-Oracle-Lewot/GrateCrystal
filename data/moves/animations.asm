@@ -1304,27 +1304,27 @@ BattleAnim_Thunder:
 	anim_ret
 
 BattleAnim_Sonicboom:
-	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
+	anim_1gfx ANIM_GFX_WHIP
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
 .loop
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 80, $3
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 88, $2
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 96, $4
-	anim_wait 8
-	anim_loop 2, .loop
-	anim_wait 32
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_incobj 4
-	anim_incobj 5
-	anim_incobj 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_RAZOR_WIND2, 152, 40, $3
+	anim_wait 4
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_RAZOR_WIND2, 136, 56, $3
+	anim_wait 4
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_RAZOR_WIND2, 152, 64, $3
+	anim_wait 4
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_RAZOR_WIND1, 120, 40, $83
+	anim_wait 4
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_RAZOR_WIND1, 120, 64, $83
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_wait 24
 	anim_ret
 
 BattleAnim_Gust:
@@ -2719,27 +2719,27 @@ BattleAnim_Harden:
 	anim_ret
 
 BattleAnim_AirSlash:
-	anim_1gfx ANIM_GFX_WHIP
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
+	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
 .loop
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_RAZOR_WIND2, 152, 40, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_RAZOR_WIND2, 136, 56, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_RAZOR_WIND2, 152, 64, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_RAZOR_WIND1, 120, 40, $83
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_RAZOR_WIND1, 120, 64, $83
-	anim_wait 4
-	anim_loop 3, .loop
-	anim_wait 24
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 80, $3
+	anim_wait 8
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 88, $2
+	anim_wait 8
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 96, $4
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
+	anim_incobj 4
+	anim_incobj 5
+	anim_incobj 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Glare:
