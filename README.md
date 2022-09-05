@@ -176,7 +176,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing caught data and DVs
+- A fourth Pokémon stats page
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
@@ -216,8 +216,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
 # Known Bugs & Issues
-
-- DVs don't display properly on the stats screen
 
 - Pokémon icons don't color in the Daycare
 
