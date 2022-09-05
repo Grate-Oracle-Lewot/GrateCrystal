@@ -121,53 +121,6 @@ PrintTempMonStats:
 	next "SPEED"
 	next "@"
 
-PrintTempMonDVs:
-; Print wTempMon's DVs at hl, with spacing bc.
-	push bc
-	push hl
-	ld de, .DVNames
-	call PlaceString
-	pop hl
-	pop bc
-	add hl, bc
-	ld bc, SCREEN_WIDTH - 7
-	add hl, bc
-
-	ld a, [wTempMonDVs]
-	and $f0
-	swap a
-	lb bc, 2, 3
-	call .PrintDV
-
-	ld a, [wTempMonDVs]
-	and $f
-	call .PrintDV
-
-	ld a, [wTempMonDVs + 1]
-	and $f
-	call .PrintDV
-
-	ld a, [wTempMonDVs + 1]
-	and $f0
-	swap a
-	call .PrintDV
-	jp PrintNum
-
-.PrintDV:
-	push hl
-	call PrintNum
-	pop hl
-	ld de, SCREEN_WIDTH * 2
-	add hl, de
-	ret
-
-.DVNames:
-	db   "ATTACK"
-	next "DEFENSE"
-	next "SPECIAL"
-	next "SPEED"
-	next "@"
-
 GetGender:
 ; Return the gender of a given monster (wCurPartyMon/wCurOTMon/wCurWildMon).
 ; When calling this function, a should be set to an appropriate wMonType value.
