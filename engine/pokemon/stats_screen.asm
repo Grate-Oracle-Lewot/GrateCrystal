@@ -814,8 +814,6 @@ LoadOrangePage:
 	ld de, DVGenesString
 	hlcoord 0, 15
 	call PlaceString
-	hlcoord 0, 10
-	ld bc, 6
 	predef PrintTempMonDVs
 	ret
 
