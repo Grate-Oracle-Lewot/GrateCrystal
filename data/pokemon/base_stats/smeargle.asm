@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
-	db 106 ; base exp
+	db 108 ; base exp
 	db PP_UP, MYSTERYBERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
