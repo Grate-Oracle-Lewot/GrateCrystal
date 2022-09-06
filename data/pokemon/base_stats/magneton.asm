@@ -5,7 +5,7 @@
 
 	db ELECTRIC, STEEL ; type
 	db 60 ; catch rate
-	db 161 ; base exp
+	db 186 ; base exp
 	db MAGNET, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
