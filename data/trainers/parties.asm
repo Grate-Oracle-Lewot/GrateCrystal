@@ -3552,8 +3552,8 @@ GruntFGroup:
 
 	; GRUNTF (5)
 	db "GRUNT@", TRAINERTYPE_MOVES
-	db 25, EKANS,      WRAP, DIG, TOXIC, BITE
-	db 25, GLOOM,      SWEET_SCENT, TOXIC, CUT, DOUBLE_TEAM
+	db 29, EKANS,      WRAP, DIG, TOXIC, BITE
+	db 29, GLOOM,      SWEET_SCENT, TOXIC, CUT, DOUBLE_TEAM
 	db -1 ; end
 
 MysticalmanGroup:
@@ -3688,7 +3688,7 @@ GamblerGroup:
 
 CalFGroup:
 	; CAL_F (1)
-	db "CALLA@", TRAINERTYPE_NORMAL
+	db "KARA@", TRAINERTYPE_NORMAL
 	db 70, CELEBI
 	db 70, MEW
 	db -1 ; end
