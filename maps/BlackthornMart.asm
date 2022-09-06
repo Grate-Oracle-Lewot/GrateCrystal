@@ -35,13 +35,12 @@ BlackthornMartCooltrainerMText:
 	done
 
 BlackthornMartBlackBeltText:
-	text "MAX REPEL keeps"
-	line "weak #MON away"
-	cont "from you."
+	text "You can't see it"
+	line "from the outside,"
 
-	para "It's the longest"
-	line "lasting of the"
-	cont "REPEL sprays."
+	para "but there's a sec-"
+	line "ret dojo built in-"
+	cont "to DARK CAVE."
 	done
 
 BlackthornMart_MapEvents:
