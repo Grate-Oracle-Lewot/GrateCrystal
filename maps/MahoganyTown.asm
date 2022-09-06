@@ -176,12 +176,21 @@ RageCandyBarMerchantNoRoomText:
 	done
 
 RageCandyBarMerchantSoldOutText:
-	text "RAGECANDYBAR's"
-	line "sold out."
+	text "OK, truth is, the"
+	line "LEADER of BLACK-"
+	cont "THORN GYM paid me"
 
-	para "I'm packing up."
-	line "Don't bother me,"
-	cont "kiddo."
+	para "not to let you"
+	line "through until you"
+
+	para "beat MAHOGANY's"
+	line "LEADER, PRYCE."
+
+	para "She's got some"
+	line "issues… And I've"
+
+	para "got fresh-issued"
+	line "bank notes!"
 	done
 
 MahoganyTownGrampsText:
