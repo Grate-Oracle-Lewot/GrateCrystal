@@ -28,6 +28,7 @@ UnionCaveB2F_MapScripts:
 UnionCaveLapras:
 	faceplayer
 	cry AERODACTYL
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon AERODACTYL, 25
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS
