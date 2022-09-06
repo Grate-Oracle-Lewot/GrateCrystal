@@ -3667,26 +3667,38 @@ BattleAnim_PerishSong:
 	anim_ret
 
 BattleAnim_IcyWind:
-BattleAnim_FairyWind:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_battlergfx_1row
-	anim_sound 0, 0, SFX_PSYCHIC
 .loop
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 16
 	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 6
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
-	anim_wait 64
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 32
 	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 4
@@ -4692,6 +4704,33 @@ BattleAnim_BeatUp:
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_FairyWind:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_battlergfx_1row
+	anim_sound 0, 0, SFX_PSYCHIC
+.loop
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 16
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 4
+	anim_incobj 7
+	anim_wait 1
 	anim_ret
 
 BattleAnim_DrainKiss:
