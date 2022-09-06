@@ -5,7 +5,7 @@
 
 	db GRASS, WATER ; type
 	db 45 ; catch rate
-	db 166 ; base exp
+	db 188 ; base exp
 	db LEMONADE, ALOE_VERA ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
