@@ -5,7 +5,7 @@
 
 	db FAIRY, FLYING ; type
 	db 75 ; catch rate
-	db 114 ; base exp
+	db 167 ; base exp
 	db MAX_REVIVE, PP_UP ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
