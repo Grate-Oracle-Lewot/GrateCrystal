@@ -5,7 +5,7 @@
 
 	db ELECTRIC, ELECTRIC ; type
 	db 45 ; catch rate
-	db 156 ; base exp
+	db 177 ; base exp
 	db TM_THUNDERPUNCH, TM_THUNDER ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
