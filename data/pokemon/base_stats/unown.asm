@@ -5,7 +5,7 @@
 
 	db CURSE_TYPE, CURSE_TYPE ; type
 	db 42 ; catch rate
-	db 84 ; base exp
+	db 103 ; base exp
 	db MYSTERYBERRY, TM_HIDDEN_POWER ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
