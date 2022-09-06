@@ -5,7 +5,7 @@
 
 	db ICE, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
-	db 137 ; base exp
+	db 160 ; base exp
 	db TM_ICE_PUNCH, TM_BLIZZARD ; items
 	db GENDER_F100 ; gender ratio
 	db 100 ; unknown 1
