@@ -1459,15 +1459,15 @@ GruntMGroup:
 
 	; GRUNTM (18)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 27, RATTATA
-	db 27, ZUBAT
-	db 27, MEOWTH
+	db 31, RATTATA
+	db 31, ZUBAT
+	db 31, MEOWTH
 	db -1 ; end
 
 	; GRUNTM (19)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 28, VENONAT
-	db 28, VENOMOTH
+	db 30, VENONAT
+	db 30, VENOMOTH
 	db -1 ; end
 
 	; GRUNTM (20)
