@@ -5,7 +5,7 @@
 
 	db GROUND, FLYING ; type
 	db 60 ; catch rate
-	db 108 ; base exp
+	db 150 ; base exp
 	db ETHER, MAX_ETHER ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
