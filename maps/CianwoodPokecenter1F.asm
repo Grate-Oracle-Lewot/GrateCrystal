@@ -63,15 +63,17 @@ CianwoodGymGuideText:
 	para "LEADER uses the"
 	line "fighting-type."
 
-	para "So you should"
-	line "confound him with"
-	cont "psychic #MON."
+	para "Psychic, flying,"
+	line "and fairy will do"
+	cont "well."
 
-	para "Wipe out his #-"
-	line "MON before they"
+	para "Also, ghost types"
+	line "are immune to"
+	cont "fighting moves!"
 
-	para "can use their"
-	line "physical strength."
+	para "Normal, dark, rock"
+	line "and steel will"
+	cont "have a hard time."
 
 	para "And those boulders"
 	line "in the middle of"
@@ -80,11 +82,8 @@ CianwoodGymGuideText:
 	para "If you don't move"
 	line "them correctly,"
 
-	para "you won't reach"
-	line "the GYM LEADER."
-
-	para "If you get stuck,"
-	line "go outside."
+	para "go outside to"
+	line "reset them."
 	done
 
 CianwoodGymGuideWinText:
