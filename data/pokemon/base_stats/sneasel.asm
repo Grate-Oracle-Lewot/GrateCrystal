@@ -5,7 +5,7 @@
 
 	db DARK, ICE ; type
 	db 60 ; catch rate
-	db 132 ; base exp
+	db 165 ; base exp
 	db QUICK_CLAW, TM_DARK_PULSE ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
