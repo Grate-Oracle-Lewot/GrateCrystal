@@ -5,7 +5,7 @@
 
 	db DARK, FLYING ; type
 	db 45 ; catch rate
-	db 107 ; base exp
+	db 147 ; base exp
 	db BLACKGLASSES, LIMBO_STICK ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
