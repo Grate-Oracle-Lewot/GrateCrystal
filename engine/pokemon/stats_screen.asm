@@ -812,7 +812,7 @@ LoadBluePage:
 
 LoadOrangePage:
 	ld de, DVGenesString
-	hlcoord 1, 16
+	hlcoord 1, 11
 	call PlaceString
 	predef PrintTempMonDVs
 	ret
