@@ -5,7 +5,7 @@
 
 	db ICE, GROUND ; type
 	db 75 ; catch rate
-	db 160 ; base exp
+	db 183 ; base exp
 	db BIG_MUSHROOM, TINYMUSHROOM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
