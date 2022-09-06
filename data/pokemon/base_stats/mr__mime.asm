@@ -5,7 +5,7 @@
 
 	db PSYCHIC_TYPE, FAIRY ; type
 	db 45 ; catch rate
-	db 136 ; base exp
+	db 159 ; base exp
 	db MYSTERYBERRY, BERSERK_GENE ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
