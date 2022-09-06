@@ -6,7 +6,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
-	db 127 ; base exp
+	db 160 ; base exp
 	db SODA_POP, LEFTOVERS ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
