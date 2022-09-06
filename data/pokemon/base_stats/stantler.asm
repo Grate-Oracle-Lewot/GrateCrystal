@@ -5,7 +5,7 @@
 
 	db NORMAL, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
-	db 165 ; base exp
+	db 168 ; base exp
 	db TM_HEADBUTT, NOISEMAKER ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
