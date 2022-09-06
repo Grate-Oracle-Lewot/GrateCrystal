@@ -366,8 +366,8 @@ LtSurgeGroup:
 ScientistGroup:
 	; SCIENTIST (1)
 	db "ROSS@", TRAINERTYPE_NORMAL
-	db 25, KOFFING
-	db 25, GRIMER
+	db 29, KOFFING
+	db 29, GRIMER
 	db -1 ; end
 
 	; SCIENTIST (2)
@@ -1454,7 +1454,7 @@ GruntMGroup:
 
 	; GRUNTM (17)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 31, GOLBAT
+	db 33, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (18)
@@ -1485,12 +1485,12 @@ GruntMGroup:
 
 	; GRUNTM (22)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 41, KOFFING
+	db 42, KOFFING
 	db -1 ; end
 
 	; GRUNTM (23)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 38, VICTREEBEL
+	db 39, VICTREEBEL
 	db -1 ; end
 
 	; GRUNTM (24)
