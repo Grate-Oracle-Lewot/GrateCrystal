@@ -812,13 +812,13 @@ LoadBluePage:
 
 LoadOrangePage:
 	ld de, DVGenesString
-	hlcoord 1, 11
+	hlcoord 7, 10
 	call PlaceString
 	predef PrintTempMonDVs
 	ret
 
 DVGenesString:
-	db "GENES:@"
+	db "GENES@"
 
 IDNoString:
 	db "<ID>№.@"
