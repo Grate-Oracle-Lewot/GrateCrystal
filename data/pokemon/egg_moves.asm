@@ -647,8 +647,8 @@ AipomEggMoves:
 
 YanmaEggMoves:
 	db WHIRLWIND
+	db PURSUIT
 	db BITE
-	db SUPER_FANG
 	db HYPER_FANG
 	db EXTREMESPEED
 	db -1 ; end
