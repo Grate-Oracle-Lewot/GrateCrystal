@@ -5,7 +5,7 @@
 
 	db WATER, FIRE ; type
 	db 45 ; catch rate
-	db 100 ; base exp
+	db 121 ; base exp
 	db SODA_POP, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
