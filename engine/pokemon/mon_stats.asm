@@ -185,7 +185,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 14, 14 ; 1, 5, 9, 13
+	hlcoord 13, 14 ; 1, 5, 9, 13
 	call PrintNum
 
 	; SPC DV
@@ -228,10 +228,8 @@ PrintTempMonDVs:
 	ret
 
 .DVstring:
-	db "HP/ATK/DEF/SPE/SPC@"
+	db "HP ATK DEF SPE SPC@"
 	;   123456789ABCDEF123
-.DVstringalt:
-	db "DVs@"
 
 GetGender:
 ; Return the gender of a given monster (wCurPartyMon/wCurOTMon/wCurWildMon).
