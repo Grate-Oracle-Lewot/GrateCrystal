@@ -5,7 +5,7 @@
 
 	db FIGHTING, FLYING ; type
 	db 45 ; catch rate
-	db 94 ; base exp
+	db 135 ; base exp
 	db STICK, THICK_CLUB ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
