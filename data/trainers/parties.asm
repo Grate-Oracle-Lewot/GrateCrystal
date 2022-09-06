@@ -372,14 +372,14 @@ ScientistGroup:
 
 	; SCIENTIST (2)
 	db "MITCH@", TRAINERTYPE_NORMAL
-	db 30, DITTO
+	db 35, DITTO
 	db -1 ; end
 
 	; SCIENTIST (3)
 	db "JED@", TRAINERTYPE_NORMAL
-	db 23, MAGNEMITE
-	db 23, PIKACHU
-	db 23, RATTATA
+	db 27, MAGNEMITE
+	db 27, PIKACHU
+	db 27, RATTATA
 	db -1 ; end
 
 	; SCIENTIST (4)
@@ -1446,15 +1446,15 @@ GruntMGroup:
 
 	; GRUNTM (16)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25, HOUNDOUR
-	db 25, MURKROW
-	db 25, SNEASEL
-	db 25, LARVITAR
+	db 28, HOUNDOUR
+	db 28, MURKROW
+	db 28, SNEASEL
+	db 28, LARVITAR
 	db -1 ; end
 
 	; GRUNTM (17)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26, GOLBAT
+	db 31, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (18)
@@ -1472,15 +1472,15 @@ GruntMGroup:
 
 	; GRUNTM (20)
 	db "SENTRY@", TRAINERTYPE_NORMAL
-	db 25, DROWZEE
+	db 28, DROWZEE
 	db 28, GLIGAR
 	db -1 ; end
 
 	; GRUNTM (21)
 	db "SENTRY@", TRAINERTYPE_NORMAL
-	db 20, RATTATA
-	db 23, ZUBAT
-	db 23, GRIMER
+	db 27, RATTATA
+	db 27, ZUBAT
+	db 27, GRIMER
 	db -1 ; end
 
 	; GRUNTM (22)
@@ -1507,8 +1507,8 @@ GruntMGroup:
 
 	; GRUNTM (26)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 28, HOUNDOUR
-	db 28, MEOWTH
+	db 29, HOUNDOUR
+	db 29, MEOWTH
 	db -1 ; end
 
 	; GRUNTM (27)
