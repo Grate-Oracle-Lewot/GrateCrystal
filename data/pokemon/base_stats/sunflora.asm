@@ -5,7 +5,7 @@
 
 	db GRASS, FIRE ; type
 	db 120 ; catch rate
-	db 146 ; base exp
+	db 156 ; base exp
 	db SUN_STONE, TM_SUNNY_DAY ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
