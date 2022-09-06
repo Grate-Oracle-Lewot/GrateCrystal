@@ -5,7 +5,7 @@
 
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
-	db 167 ; base exp
+	db 183 ; base exp
 	db TM_FIRE_PUNCH, TM_FIRE_BLAST ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
