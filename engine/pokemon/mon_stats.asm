@@ -122,7 +122,7 @@ PrintTempMonStats:
 	next "@"
 
 PrintTempMonDVs:
-	hlcoord 1, 13
+	hlcoord 1, 12
 	ld de, .DVstring
 	call PlaceString
 	; we're using wPokedexStatus because why not, nobody using it atm lol
