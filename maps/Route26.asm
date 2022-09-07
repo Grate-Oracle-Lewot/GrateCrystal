@@ -453,9 +453,9 @@ BeautyJulieSeenText:
 	text "You've heard of"
 	line "the ELITE FOUR,"
 
-	para "but now you face"
-	line "us--the PETITE"
-	cont "FOUR!"
+	para "but now you must"
+	line "face us--the"
+	cont "PETITE FOUR!"
 	done
 
 BeautyJulieBeatenText:
