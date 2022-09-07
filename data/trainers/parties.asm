@@ -1430,18 +1430,18 @@ GruntMGroup:
 
 	; GRUNTM (13)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 39, MAROWAK
+	db 40, MAROWAK
 	db -1 ; end
 
 	; GRUNTM (14)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 35, RATICATE
-	db 35, GOLBAT
+	db 40, RATICATE
+	db 38, GOLBAT
 	db -1 ; end
 
 	; GRUNTM (15)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40, UMBREON
+	db 42, UMBREON
 	db -1 ; end
 
 	; GRUNTM (16)
@@ -1518,7 +1518,7 @@ GruntMGroup:
 
 	; GRUNTM (28)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30, UMBREON
+	db 32, UMBREON
 	db -1 ; end
 
 	; GRUNTM (29)
