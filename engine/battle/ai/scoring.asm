@@ -2493,8 +2493,11 @@ AI_Smart_Gust:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
+	jr z, .yup
+	cp SKY_ATTACK
 	ret nz
 
+.yup
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_FLYING, a
 	jr z, .couldFly
