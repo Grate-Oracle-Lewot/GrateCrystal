@@ -182,15 +182,12 @@ Text_ClairIsBeaten:
 	done
 
 BlackthornGrampsRefusesEntryText:
-	text "Our GYM LEADER,"
-	line "CLAIR, is training"
+	text "This is the DRAG-"
+	line "ON'S DEN. Only"
 
-	para "in this sacred"
-	line "place. She paid me"
-
-	para "not to let anyone"
-	line "else in until she"
-	cont "comes back out."
+	para "chosen trainers"
+	line "are permitted to"
+	cont "enter."
 	done
 
 BlackthornGrampsGrantsEntryText:
