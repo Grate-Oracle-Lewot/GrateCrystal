@@ -124,10 +124,10 @@ JohtoWaterWildMons:
 
 	def_water_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
 	db 2 percent ; encounter rate
-	db 15, MAGIKARP
-	db 10, MAGIKARP
-	db 5,  MAGIKARP
-	db 10, TANGELA
+	db 30, GOLDUCK
+	db 30, GOLBAT
+	db 30, GYARADOS
+	db 30, TANGELA
 	end_water_wildmons
 
 	def_water_wildmons DRAGONS_DEN_B1F
