@@ -830,7 +830,7 @@ PrimeapeEvosAttacks:
 	db 12, PURSUIT
 	db 15, LOW_KICK
 	db 19, SWAGGER
-	db 21, FURY_SWIPES
+	db 21, COMET_PUNCH
 	db 27, FOCUS_ENERGY
 	db 27, MEGA_PUNCH
 	db 36, SEISMIC_TOSS
