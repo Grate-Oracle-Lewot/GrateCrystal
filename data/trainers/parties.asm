@@ -1363,15 +1363,15 @@ GruntMGroup:
 
 	; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 34, RATICATE
-	db 34, PERSIAN
+	db 38, RATICATE
+	db 38, PERSIAN
 	db -1 ; end
 
 	; GRUNTM (4)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 35, GRIMER
-	db 35, BEEDRILL
-	db 35, MUK
+	db 37, GRIMER
+	db 37, BEEDRILL
+	db 37, MUK
 	db -1 ; end
 
 	; GRUNTM (5)
@@ -1392,28 +1392,28 @@ GruntMGroup:
 
 	; GRUNTM (7)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 33, KOFFING
-	db 33, GRIMER
-	db 33, ZUBAT
-	db 33, RATTATA
+	db 36, KOFFING
+	db 36, GRIMER
+	db 36, ZUBAT
+	db 36, RATTATA
 	db -1 ; end
 
 	; GRUNTM (8)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 37, WEEZING
+	db 39, WEEZING
 	db -1 ; end
 
 	; GRUNTM (9)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 34, LICKITUNG
-	db 34, WOBBUFFET
+	db 37, LICKITUNG
+	db 37, WOBBUFFET
 	db -1 ; end
 
 	; GRUNTM (10)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 35, MEOWTH
-	db 38, GOLBAT
-	db 35, GRIMER
+	db 37, MEOWTH
+	db 39, GOLBAT
+	db 37, GRIMER
 	db -1 ; end
 
 	; GRUNTM (11)
@@ -1495,14 +1495,14 @@ GruntMGroup:
 
 	; GRUNTM (24)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 36, MR__MIME
-	db 36, ARIADOS
+	db 39, MR__MIME
+	db 39, ARIADOS
 	db -1 ; end
 
 	; GRUNTM (25)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 38, YANMEGA
-	db 35, WOBBUFFET
+	db 39, YANMEGA
+	db 37, WOBBUFFET
 	db -1 ; end
 
 	; GRUNTM (26)
