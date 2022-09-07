@@ -3533,7 +3533,7 @@ GruntFGroup:
 
 	; GRUNTF (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 37, ARBOK
+	db 39, ARBOK
 	db -1 ; end
 
 	; GRUNTF (3)
@@ -3544,10 +3544,10 @@ GruntFGroup:
 
 	; GRUNTF (4)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 33, EKANS
-	db 35, REMORAID
-	db 33, HAUNTER
-	db 36, GLOOM
+	db 40, EKANS
+	db 41, REMORAID
+	db 40, HAUNTER
+	db 42, GLOOM
 	db -1 ; end
 
 	; GRUNTF (5)
