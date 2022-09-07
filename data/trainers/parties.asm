@@ -3120,9 +3120,9 @@ CamperGroup:
 
 	; CAMPER (22)
 	db "QUENTIN@", TRAINERTYPE_NORMAL
-	db 31, FEAROW
-	db 31, PRIMEAPE
-	db 31, TAUROS
+	db 37, FEAROW
+	db 36, PRIMEAPE
+	db 39, TAUROS
 	db -1 ; end
 
 ExecutiveFGroup:
