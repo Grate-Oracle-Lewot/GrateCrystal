@@ -1359,7 +1359,7 @@ BattleAnim_Selfdestruct:
 BattleAnim_DarkPulse:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_bgp $1b
-	anim_sound 0, 2, SFX_PERISH_SONG
+	anim_sound 0, 0, SFX_PERISH_SONG
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $8
 	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $10
