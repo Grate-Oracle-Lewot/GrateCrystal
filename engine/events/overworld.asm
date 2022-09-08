@@ -1682,9 +1682,6 @@ UnusedNothingHereText: ; unreferenced
 	text_end
 
 PocketPCFunction:
-	ld a, [wEnvironment]
-	cp CAVE
-	jr z, .LoadNoSignal
 	call .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
@@ -1705,11 +1702,6 @@ PocketPCFunction:
 	ret z
 	ld h, d
 	ld l, e
-	ret
-
-.LoadNoSignal:
-	ld hl, Script_PocketPCNoSignal
-	call CallScript
 	ret
 
 BikeFunction:
@@ -1808,13 +1800,6 @@ Script_LoadPocketPC:
 Script_LoadPocketPC_Register:
 	special PokemonCenterPC
 	reloadmappart
-	end
-
-Script_PocketPCNoSignal:
-	opentext
-	writetext NoSignalText
-	waitbutton
-	closetext
 	end
 
 NoSignalText:
