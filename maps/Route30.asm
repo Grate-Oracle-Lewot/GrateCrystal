@@ -237,7 +237,7 @@ Route30TrainerTips:
 	jumptext Route30TrainerTipsText
 
 Route30Antidote:
-	itemball ANTIDOTE
+	itemball POCKET_PC
 
 Route30TMFairyWind:
 	itemball TM_FAIRY_WIND
