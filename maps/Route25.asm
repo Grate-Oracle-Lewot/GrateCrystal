@@ -189,7 +189,7 @@ Route25Protein:
 	itemball PROTEIN
 
 Route25HiddenPotion:
-	hiddenitem POTION, EVENT_ROUTE_25_HIDDEN_POTION
+	hiddenitem MAX_POTION, EVENT_ROUTE_25_HIDDEN_POTION
 
 Route25MistysDateLeavesMovement1:
 	big_step DOWN
