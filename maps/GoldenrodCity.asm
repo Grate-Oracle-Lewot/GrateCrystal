@@ -96,7 +96,7 @@ MoveTutorScript:
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 0
+	menu_coords 0, 2, 15, TEXTBOX_Y
 	dw .MenuData
 	db 1 ; default option
 
