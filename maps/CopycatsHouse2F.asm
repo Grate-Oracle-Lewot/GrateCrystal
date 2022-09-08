@@ -340,15 +340,14 @@ CopycatText_Female_3:
 	done
 
 CopycatsDodrioText1:
-	text "DODRIO: Gii giii!"
+	text "DODRIO: Mirror…"
+	line "Tell me something…"
 	done
 
 CopycatsDodrioText2:
-	text "MIRROR, MIRROR ON"
-	line "THE WALL, WHO'S"
-
-	para "THE FAIREST ONE OF"
-	line "ALL?"
+	text "Tell me can a"
+	line "heart be turned to"
+	cont "stone?"
 	done
 
 CopycatsHouse2FDollText:
