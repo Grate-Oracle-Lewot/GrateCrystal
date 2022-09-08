@@ -1682,6 +1682,10 @@ UnusedNothingHereText: ; unreferenced
 	text_end
 
 PocketPCFunction:
+	ld a, [wEnvironment]
+	cp CAVE
+	ld hl, .PocketPCNoSignal
+	call z, CallScript
 	call .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
@@ -1703,6 +1707,17 @@ PocketPCFunction:
 	ld h, d
 	ld l, e
 	ret
+
+.PocketPCNoSignal
+	opentext
+	writetext NoSignalText
+	waitbutton
+	closetext
+	ret
+
+NoSignalText:
+	text_far _PocketPCNoSignalText
+	text_end
 
 BikeFunction:
 	call .TryBike
