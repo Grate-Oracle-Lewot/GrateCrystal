@@ -3622,7 +3622,7 @@ JessieGroup:
 
 AerobonesGroup:
 	; AEROBONES (1)
-	db "???????@", TRAINERTYPE_NORMAL
+	db "?????@", TRAINERTYPE_NORMAL
 	db 50, AERODACTYL
 	db 50, UNOWN
 	db 50, HAUNTER
