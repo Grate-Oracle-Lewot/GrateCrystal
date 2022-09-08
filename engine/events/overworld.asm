@@ -1684,11 +1684,15 @@ UnusedNothingHereText: ; unreferenced
 PocketPCFunction:
 	ld a, [wEnvironment]
 	cp CAVE
-	ld hl, .PocketPCNoSignal
-	call z, CallScript
+	jr z, .noSignal
 	call .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
+	ret
+
+.noSignal
+	ld hl, .PocketPCNoSignal
+	call CallScript
 	ret
 	
 .LoadPocketPC:
