@@ -1,10 +1,10 @@
-	db "DRAGON@" ; species name
+	db "SEAHORSE@" ; species name
 	dw 104, 180 ; height, weight
 
-	db   "When they're in a"
-	next "safe location,"
-	next "they can be seen"
+	db   "To fool predators,"
+	next "it latches its"
+	next "tail onto a rock"
 
-	page "playfully tangling"
-	next "their tails"
-	next "together.@"
+	page "and sways with the"
+	next "current, mimicking"
+	next "seaweed.@"
