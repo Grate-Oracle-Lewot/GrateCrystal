@@ -1,10 +1,10 @@
-	db "SCREECH@" ; species name
+	db "JUST AHEAD@" ; species name
 	dw 204, 20 ; height, weight
 
-	db   "It loves to watch"
-	next "people it's scar-"
-	next "ed. It frightens"
+	db   "Rmuored to be the"
+	next "spirits of the de-"
+	next "capitated seeking"
 
-	page "them by screaming"
-	next "loudly or appear-"
-	next "ing suddenly.@"
+	page "petty revenge on"
+	next "indiscriminate"
+	next "victims.@"
