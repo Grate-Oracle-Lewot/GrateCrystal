@@ -1,10 +1,10 @@
 	db "ARMOR BIRD@" ; species name
 	dw 507, 1110 ; height, weight
 
-	db   "The feathers that"
-	next "it sheds are very"
-	next "sharp. It is said"
+	db   "It sees jet planes"
+	next "as competitors and"
+	next "outraces them."
 
-	page "that people once"
-	next "used the feathers"
-	next "as swords.@"
+	page "This has been used"
+	next "to deliver mail"
+	next "more quickly.@"
