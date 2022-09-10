@@ -340,14 +340,15 @@ CopycatText_Female_3:
 	done
 
 CopycatsDodrioText1:
-	text "DODRIO: Mirror…"
-	line "Tell me something…"
+	text "DODRIO: SHAME THAT"
+	line "IT TOOK SO LONG TO"
+	cont "RESCUE ME"
 	done
 
 CopycatsDodrioText2:
-	text "Tell me can a"
-	line "heart be turned to"
-	cont "stone?"
+	text "FROM THE GUILT YOU"
+	line "USED TO TIE ME TO"
+	cont "YOUR FAMILY TREE!"
 	done
 
 CopycatsHouse2FDollText:
