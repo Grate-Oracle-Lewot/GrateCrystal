@@ -1,10 +1,10 @@
-	db "DRAGON@" ; species name
+	db "SEAHORSE@" ; species name
 	dw 311, 550 ; height, weight
 
-	db   "The male raises"
-	next "the young. If it"
-	next "is approached, it"
+	db   "It shoots water"
+	next "from its nose to"
+	next "knock prey out of"
 
-	page "uses its toxic"
-	next "spikes to fend off"
-	next "the intruder.@"
+	page "the air, rushing"
+	next "it before it can"
+	next "swim away.@"
