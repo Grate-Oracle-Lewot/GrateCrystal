@@ -1,10 +1,10 @@
-	db "DRAGON@" ; species name
+	db "SEADRAGON@" ; species name
 	dw 511, 3350 ; height, weight
 
-	db   "It stores energy"
-	next "by sleeping at"
-	next "underwater depths"
+	db   "It's lived at the"
+	next "bottom of the sea"
+	next "for ages, but was"
 
-	page "at which no other"
-	next "life forms can"
-	next "survive.@"
+	page "only recently dis-"
+	next "covered via induc-"
+	next "ing evolution.@"
