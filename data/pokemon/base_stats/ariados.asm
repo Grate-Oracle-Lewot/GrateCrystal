@@ -5,7 +5,7 @@
 
 	db BUG, POISON ; type
 	db 90 ; catch rate
-	db 134 ; base exp
+	db 142 ; base exp
 	db ANTIDOTE, ANTIVENOM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
