@@ -100,8 +100,9 @@ ENDM
 	connection west, Route29, ROUTE_29, 0
 	connection east, Route27, ROUTE_27, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | SOUTH | EAST
 	connection north, Route30, ROUTE_30, 5
+	connection south, Route47, ROUTE_47, 3
 	connection east, Route29, ROUTE_29, 0
 
 	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
@@ -147,7 +148,8 @@ ENDM
 	map_attributes Route26, ROUTE_26, $05, WEST
 	connection west, Route27, ROUTE_27, 45
 
-	map_attributes Route27, ROUTE_27, $35, WEST | EAST
+	map_attributes Route27, ROUTE_27, $35, SOUTH | WEST | EAST
+	connection south, Route48, ROUTE_48, -10
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
@@ -227,6 +229,14 @@ ENDM
 	map_attributes Route46, ROUTE_46, $05, SOUTH | EAST
 	connection south, Route29, ROUTE_29, -10
 	connection east, Route45, ROUTE_45, -36
+
+	map_attributes Route47, ROUTE_47, $53, NORTH | EAST
+	connection north, CherrygroveCity, CHERRYGROVE_CITY, -3
+	connection east, Route48, ROUTE_48, 0
+
+	map_attributes Route48, ROUTE_48, $53, NORTH | WEST
+	connection north, Route27, ROUTE_27, 10
+	connection west Route47, ROUTE_47, 0
 
 	map_attributes PewterCity, PEWTER_CITY, $0f, SOUTH | EAST
 	connection south, Route2North, ROUTE_2_NORTH, 5
@@ -502,6 +512,10 @@ ENDM
 	map_attributes SilphCo9F, SILPH_CO_9F, $00, 0
 	map_attributes SilphCo10F, SILPH_CO_10F, $00, 0
 	map_attributes SilphCo11F, SILPH_CO_11F, $00, 0
+	map_attributes AbandonedLab1F, ABANDONED_LAB_1F, $00, 0
+	map_attributes AbandonedLab2F, ABANDONED_LAB_2F, $00, 0
+	map_attributes AbandonedLabRoof, ABANDONED_LAB_ROOF, $00, 0
+	map_attributes AbandonedLabB1F, ABANDONED_LAB_B1F, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
