@@ -133,8 +133,9 @@ BikerZekeAfterBattleText:
 	done
 
 SupernerdSamSeenText:
-	text "How does the MAG-"
-	line "NET TRAIN work?"
+	text "The MAGNET TRAIN…"
+	line "How does it even"
+	cont "work?"
 	done
 
 SupernerdSamBeatenText:
@@ -143,8 +144,9 @@ SupernerdSamBeatenText:
 	done
 
 SupernerdSamAfterBattleText:
-	text "The power of mag-"
-	line "nets is awesome!"
+	text "Magnetism might"
+	line "just be the key to"
+	cont "clean energy."
 	done
 
 SupernerdTomSeenText:
@@ -158,9 +160,9 @@ SupernerdTomBeatenText:
 	done
 
 SupernerdTomAfterBattleText:
-	text "GYM BADGES give"
-	line "you advantages in"
-	cont "battles."
+	text "There are no GYM"
+	line "BADGES in the"
+	cont "ALOLA region."
 	done
 
 Route8LockedDoorText:
