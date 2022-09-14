@@ -236,7 +236,7 @@ ENDM
 
 	map_attributes Route48, ROUTE_48, $53, NORTH | WEST
 	connection north, Route27, ROUTE_27, 10
-	connection west Route47, ROUTE_47, 0
+	connection west, Route47, ROUTE_47, 0
 
 	map_attributes PewterCity, PEWTER_CITY, $0f, SOUTH | EAST
 	connection south, Route2North, ROUTE_2_NORTH, 5
