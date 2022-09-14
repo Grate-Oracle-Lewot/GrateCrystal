@@ -10,6 +10,14 @@ KantoWaterWildMons:
 	db 25, MARILL
 	end_water_wildmons
 
+	def_water_wildmons VERMILION_PORT
+	db 2 percent ; encounter rate
+	db 35, TENTACOOL
+	db 30, TENTACOOL
+	db 35, TENTACRUEL
+	db 30, MANTINE
+	end_water_wildmons
+
 	def_water_wildmons ROUTE_4
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
