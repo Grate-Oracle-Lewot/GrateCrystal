@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE48_POKE_BALL
 
-GlobalTerminalOutside_MapScripts:
+Route48_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -9,7 +9,7 @@ GlobalTerminalOutside_MapScripts:
 Route48WaterStone:
 	itemball WATER_STONE
 
-GlobalTerminalOutside_MapEvents:
+Route48_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
