@@ -1120,10 +1120,9 @@ PonytaEvosAttacks:
 	db 4, GROWL
 	db 8, TAIL_WHIP
 	db 10, EMBER
-	db 15, FLAME_WHEEL
-	db 16, FAIRY_WIND
+	db 15, FIRE_SPIN
 	db 19, STOMP
-	db 23, FIRE_SPIN
+	db 23, FLAME_WHEEL
 	db 27, DAZZLY_GLEAM
 	db 34, TAKE_DOWN
 	db 43, AGILITY
@@ -1136,10 +1135,9 @@ RapidashEvosAttacks:
 	db 4, GROWL
 	db 8, TAIL_WHIP
 	db 10, EMBER
-	db 15, FLAME_WHEEL
-	db 16, FAIRY_WIND
+	db 15, FIRE_SPIN
 	db 19, STOMP
-	db 23, FIRE_SPIN
+	db 23, FLAME_WHEEL
 	db 27, DAZZLY_GLEAM
 	db 34, TAKE_DOWN
 	db 39, FURY_ATTACK
