@@ -56,6 +56,9 @@ TrainerFirebreatherBurt:
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
 
+Route3PokecenterSign:
+	jumpstd PokecenterSignScript
+
 FirebreatherOtisSeenText:
 	text "Ah! The weather's"
 	line "as fine as ever."
@@ -141,6 +144,7 @@ Route3_MapEvents:
 
 	def_bg_events
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
+	bg_event 48,  5, BGEVENT_READ, Route3PokecenterSign
 
 	def_object_events
 	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
