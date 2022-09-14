@@ -12,6 +12,7 @@ AbandonedLab1FJournal:
 	yesorno
 	iffalse .Done
 	writetext AbandonedLab1FJournalReadText
+	waitbutton
 .Done:
 	closetext
 	end
