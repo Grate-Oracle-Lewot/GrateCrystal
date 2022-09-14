@@ -19,4 +19,4 @@ Route48_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 17, 11, SPRITE_, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route48WaterStone, EVENT_ROUTE_48_WATER_STONE
+	object_event 17, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route48WaterStone, EVENT_ROUTE_48_WATER_STONE
