@@ -138,6 +138,14 @@ JohtoWaterWildMons:
 	db 30, GYARADOS
 	end_water_wildmons
 
+	def_water_wildmons OLIVINE_PORT
+	db 2 percent ; encounter rate
+	db 20, TENTACOOL
+	db 15, TENTACOOL
+	db 20, TENTACRUEL
+	db 20, VAPOREON
+	end_water_wildmons
+
 	def_water_wildmons ROUTE_30
 	db 2 percent ; encounter rate
 	db 20, POLIWAG
@@ -304,22 +312,6 @@ JohtoWaterWildMons:
 	db 20, SLOWKING
 	db 15, SLOWPOKE
 	db 20, QUAGSIRE
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_47
-	db 2 percent ; encounter rate
-	db 20, TENTACOOL
-	db 25, TENTACRUEL
-	db 20, MANTINE
-	db 20, DITTO
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_48
-	db 2 percent ; encounter rate
-	db 20, TENTACOOL
-	db 25, TENTACRUEL
-	db 20, MANTINE
-	db 20, AZUMARILL
 	end_water_wildmons
 
 	db -1 ; end
