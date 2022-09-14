@@ -1562,7 +1562,8 @@
 	const EVENT_SAFARI_ZONE_GOLD_TEETH
 	const EVENT_ROUTE_30_TM_FAIRY_WIND
 	const EVENT_ROUTE_8_TM_HYPER_BEAM
-; Unused: next 48 (now 3) events
+	const EVENT_ROUTE_23_OFFICER
+; Unused: next 48 (now 2) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
