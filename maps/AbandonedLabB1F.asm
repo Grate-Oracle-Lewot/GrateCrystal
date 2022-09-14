@@ -1,6 +1,6 @@
 	object_const_def
 	const ABANDONEDLAB1F_PAPER
-  const ABANDONEDLAB1F_POKE_BALL
+	const ABANDONEDLAB1F_POKE_BALL
 
 AbandonedLabB1F_MapScripts:
 	def_scene_scripts
@@ -68,4 +68,4 @@ AbandonedLabB1F_MapEvents:
 
 	def_object_events
 	object_event  9, 23, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, AbandonedLabB1FPaper, -1
-  object_event  1,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AbandonedLabB1FUpGrade, EVENT_ABANDONED_LAB_B1F_UP_GRADE
+	object_event  1,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AbandonedLabB1FUpGrade, EVENT_ABANDONED_LAB_B1F_UP_GRADE
