@@ -974,3 +974,9 @@ SilphCo10F_Blocks:
 
 SilphCo11F_Blocks:
 	INCBIN "maps/SilphCo11F.blk"
+
+Lounge1F_Blocks:
+	INCBIN "maps/Lounge1F.blk"
+
+Lounge2F_Blocks:
+	INCBIN "maps/Lounge2F.blk"
