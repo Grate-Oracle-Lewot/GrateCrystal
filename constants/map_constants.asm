@@ -356,6 +356,8 @@ ENDM
 	map_const KARENS_ROOM,                                  5,  9 ;  6
 	map_const LANCES_ROOM,                                  5, 12 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
+	map_const LOUNGE_1F,                                   10,  9 ;  9
+	map_const LOUNGE_2F,                                   10,  9 ; 10
 	endgroup
 
 	newgroup FUCHSIA                                              ; 17
