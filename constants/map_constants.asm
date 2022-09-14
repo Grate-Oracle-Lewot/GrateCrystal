@@ -173,10 +173,6 @@ ENDM
 	map_const SILPH_CO_9F,                                 13,  9 ; 109
 	map_const SILPH_CO_10F,                                 8,  9 ; 110
 	map_const SILPH_CO_11F,                                 8,  9 ; 111
-	map_const ABANDONED_LAB_1F,                            15, 14 ; 112
-	map_const ABANDONED_LAB_2F,                            15, 14 ; 113
-	map_const ABANDONED_LAB_ROOF,                          20, 18 ; 114
-	map_const ABANDONED_LAB_B1F,                           15, 14 ; 115
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -489,7 +485,6 @@ ENDM
 	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 11
 	map_const ROUTE_27_SANDSTORM_HOUSE,                     4,  4 ; 12
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 13
-	map_const ROUTE_48,                                    20,  9 ; 14
 	endgroup
 
 	newgroup SAFFRON                                              ; 25
@@ -521,7 +516,6 @@ ENDM
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ; 10
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
-	map_const ROUTE_47,                                    30,  9 ; 12
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 26
