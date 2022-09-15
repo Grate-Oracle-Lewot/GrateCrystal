@@ -17,6 +17,43 @@ Lounge1F_MapScripts:
 LoungeClairScript:
 	jumptextfaceplayer LoungeClairText
 
+LoungeFalknerTalkText:
+	text "Just because rock"
+	line "hits hard against"
+
+	para "flying doesn't"
+	line "mean it's better!"
+	done
+
+LoungeFalknerRematchText:
+	text "<PLAY_G>!"
+	line "Help me show this"
+
+	para "blockhead how"
+	line "great sky #MON"
+	cont "are!"
+
+	para "Let's battle right"
+	line "now!"
+	done
+
+LoungeFalknerRefuseText:
+	text "Ha! See! Even"
+	line "<PLAY_G> is"
+
+	para "scared of my dad's"
+	line "awesome #MON!"
+	done
+
+LoungeFalknerLossText:
+	text "Darn it all…"
+	done
+
+LoungeFalknerAfterText:
+	text "We'll get you next"
+	line "time! I promise!"
+	done
+
 LoungeClairText:
 	text "Oh, it's you. I'm"
 	line "not surprised that"
