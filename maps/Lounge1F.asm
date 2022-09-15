@@ -56,8 +56,8 @@ LoungeFalknerAfterText:
 
 LoungeBrockTalkText:
 	text "This kid really"
-	line "needs to chill"
-	cont "out…"
+	line "has something to"
+	cont "prove…"
 	done
 
 LoungeBrockRematchText:
@@ -89,6 +89,80 @@ LoungeBrockAfterText:
 
 	para "I'll rematch you"
 	line "any time!"
+	done
+
+LoungeBugsyTalkText:
+	text "I don't know MISTY"
+	line "very well, but she"
+	cont "must be cool."
+
+	para "Just look at her--"
+	line "she's overcome"
+
+	para "with awe at seeing"
+	line "my bug #MON!"
+	done
+
+LoungeBugsyRematchText:
+	text "Hey, by the way,"
+	line "fancy a rematch?"
+	done
+
+LoungeBugsyRefuseText:
+	text "Oh well. I've"
+	line "still got my"
+	cont "#MON."
+	done
+
+LoungeBugsyLossText:
+	text "My research still"
+	line "isn't complete."
+	done
+
+LoungeBugsyAfterText:
+	text "That was a fun"
+	line "battle!"
+
+	para "I always learn"
+	line "something new from"
+	cont "you."
+	done
+
+LoungeMistyTalkText:
+	text "Ew, ew, EEEWWW!"
+
+	para "That kid's team is"
+	line "full of icky,"
+	cont "squirmy bugs!"
+
+	para "I can't stand"
+	line "bugs!"
+	done
+
+LoungeMistyRematchText:
+	text "Huh? A rematch?"
+
+	para "Well… I guess it"
+	line "might take my mind"
+	cont "off things."
+
+	para "Alright, but I"
+	line "won't go easy on"
+	cont "you!"
+	done
+
+LoungeMistyLossText:
+	text "You're still a"
+	line "pest!"
+	done
+
+LoungeMistyAfterText:
+	text "Thanks for keeping"
+	line "me entertained."
+
+	para "But I'm going to"
+	line "beat you next"
+	cont "time!"
 	done
 
 LoungeClairText:
