@@ -58,8 +58,6 @@ ElmsLab_MapScripts:
 
 .ElmGetsEmail:
 	writetext ElmText_Accepted
-	promptbutton
-	writetext ElmText_ResearchAmbitions
 	waitbutton
 	closetext
 	playsound SFX_GLASS_TING
