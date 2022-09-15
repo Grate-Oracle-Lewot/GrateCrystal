@@ -14,6 +14,237 @@ Lounge1F_MapScripts:
 
 	def_callbacks
 
+LoungeFalknerScript:
+	turnobject LOUNGE1F_FALKNER, RIGHT
+	opentext
+	writetext LoungeFalknerTalkText
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	faceplayer
+	writetext LoungeFalknerRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeFalknerRefuseText
+	waitbutton
+	closetext
+	turnobject LOUNGE1F_FALKNER, RIGHT
+	end
+
+.DoRematch:
+	winlosstext LoungeFalknerLossText, 0
+	loadtrainer FALKNER, FALKNER2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeFalknerAfterText
+	waitbutton
+	closetext
+	turnobject LOUNGE1F_FALKNER, RIGHT
+	end
+
+LoungeBrockScript:
+	faceplayer
+	opentext
+	writetext LoungeBrockTalkText
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	writetext LoungeBrockRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeBrockRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeBrockLossText, 0
+	loadtrainer BROCK, BROCK1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeBrockAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeBugsyScript:
+	faceplayer
+	opentext
+	writetext LoungeBugsyTalkText
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	writetext LoungeBugsyRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeBugsyRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeBugsyLossText, 0
+	loadtrainer BUGSY, BUGSY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeBugsyAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeMistyScript:
+	faceplayer
+	opentext
+	writetext LoungeMistyTalkText
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .Rematch
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext LoungeMistyRematchText
+	waitbutton
+	closetext
+	winlosstext LoungeMistyLossText, 0
+	loadtrainer MISTY, MISTY1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeMistyAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeWhitneyScript:
+	faceplayer
+	opentext
+	writetext LoungeWhitneyTalkText
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	writetext LoungeWhitneyRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeWhitneyRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeWhitneyLossText, 0
+	loadtrainer WHITNEY, WHITNEY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeWhitneyAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeLtSurgeScript:
+	faceplayer
+	opentext
+	writetext LoungeLtSurgeTalkText
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	writetext LoungeLtSurgeRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeLtSurgeRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeLtSurgeLossText, 0
+	loadtrainer LT_SURGE, LT_SURGE1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeLtSurgeAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeMortyScript:
+	faceplayer
+	opentext
+	writetext LoungeMortyTalkText
+	readvar VAR_WEEKDAY
+	ifequal THURSDAY, .OfferRematch
+	waitbutton
+	closetext
+	end
+
+.OfferRematch:
+	writetext LoungeMortyRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeMortyRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeMortyLossText, 0
+	loadtrainer MORTY, MORTY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeMortyAfterText
+	waitbutton
+	closetext
+	end
+
+LoungeErikaScript:
+	faceplayer
+	opentext
+	writetext LoungeErikaTalkText
+	readvar VAR_WEEKDAY
+	ifequal THURSDAY, .Rematch
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext LoungeErikaRematchText
+	waitbutton
+	closetext
+	winlosstext LoungeErikaLossText, 0
+	loadtrainer ERIKA, ERIKA1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeErikaAfterText
+	waitbutton
+	closetext
+	end
+
 LoungeClairScript:
 	jumptextfaceplayer LoungeClairText
 
