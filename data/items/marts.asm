@@ -307,7 +307,7 @@ MartLavender:
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
+	db 9 ; # items
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -316,6 +316,7 @@ MartVermilion:
 	db AWAKENING
 	db BURN_HEAL
 	db LITEBLUEMAIL
+	db TM_THUNDERPUNCH
 	db -1 ; end
 
 MartCeladon2F1:
