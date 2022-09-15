@@ -229,8 +229,8 @@ VermilionGymGuideText:
 
 	para "And of course, el-"
 	line "ectric is good ag-"
-	cont "ainst water, fly-"
-	cont "ing, and steel."
+	cont "ainst water and"
+	cont "flying."
 
 	para "There used to be"
 	line "traps in this GYM,"
