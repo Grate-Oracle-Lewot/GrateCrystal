@@ -54,6 +54,43 @@ LoungeFalknerAfterText:
 	line "time! I promise!"
 	done
 
+LoungeBrockTalkText:
+	text "This kid really"
+	line "needs to chill"
+	cont "out…"
+	done
+
+LoungeBrockRematchText:
+	text "Oh, hey, <PLAY_G>."
+	line "They let you in"
+	cont "here, huh?"
+
+	para "You must've gotten"
+	line "stronger since we"
+	cont "last fought."
+
+	para "What would you say"
+	line "to a rematch?"
+	done
+
+LoungeBrockRefuseText:
+	text "Oh, okay. Maybe"
+	line "next time."
+	done
+
+LoungeBrockLossText:
+	text "You broke through"
+	line "my defenses!"
+	done
+
+LoungeBrockAfterText:
+	text "Yep, you're as"
+	line "tough as ever!"
+
+	para "I'll rematch you"
+	line "any time!"
+	done
+
 LoungeClairText:
 	text "Oh, it's you. I'm"
 	line "not surprised that"
