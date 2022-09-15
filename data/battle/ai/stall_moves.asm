@@ -8,7 +8,6 @@ StallMoves:
 	db GROWL
 	db DISABLE
 	db MIST
-	db COUNTER
 	db LEECH_SEED
 	db GROWTH
 	db STRING_SHOT
@@ -26,7 +25,9 @@ StallMoves:
 	db FOCUS_ENERGY
 	db BIDE
 	db METRONOME
+	db MIRROR_MOVE
 	db AMNESIA
+	db KINESIS
 	db TRANSFORM
 	db ACID_ARMOR
 	db CONVERSION
