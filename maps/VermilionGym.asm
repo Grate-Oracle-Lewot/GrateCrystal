@@ -34,8 +34,22 @@ VermilionGymSurgeScript:
 	end
 
 .FightDone:
+	checkevent EVENT_GOT_TM_THUNDER_FROM_SURGE
+	iftrue .GotThunderTM
+	writetext LtSurgeGiveThunderTMText
+	promptbutton
+	verbosegiveitem TM_THUNDER
+	iffalse .NoRoomForThunderTM
+	setevent EVENT_GOT_TM_THUNDER_FROM_SURGE
+	writetext LtSurgeExplainThunderTMText
+	waitbutton
+	closetext
+	end
+
+.GotThunderTM:
 	writetext LtSurgeFightDoneText
 	waitbutton
+.NoRoomForThunderTM:
 	closetext
 	end
 
@@ -141,6 +155,21 @@ LtSurgeThunderBadgeText:
 
 	para "me. You wear it"
 	line "proudly, hear?"
+	done
+
+LtSurgeGiveThunderTMText:
+	text "And take this too!"
+	done
+
+LtSurgeExplainThunderTMText:
+	text "It's THUNDER! It's"
+	line "super strong, but"
+	cont "not too accurate."
+
+	para "But do you know?"
+	line "If you use RAIN"
+	cont "DANCE first, it"
+	cont "always hits!"
 	done
 
 LtSurgeFightDoneText:
