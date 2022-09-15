@@ -223,7 +223,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; TEDDIURSA
 	icon_pals BROWN,  GREEN  ; URSARING
 	icon_pals RED,    GRAY   ; SLUGMA
-	icon_pals RED,    BLUE   ; MAGCARGO
+	icon_pals GRAY,   BLUE   ; MAGCARGO
 	icon_pals BROWN,  BLUE   ; SWINUB
 	icon_pals BROWN,  YELLOW ; PILOSWINE
 	icon_pals PINK,   BLUE   ; CORSOLA
