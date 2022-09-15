@@ -23,13 +23,11 @@ TrainerGentlemanSylvain:
 	end
 
 .GiveUpGrade:
-	closetext
 	verbosegiveitem UP_GRADE
 	iffalse .BagFull
 	end
 
 .BagFull:
-	opentext
 	writetext GentlemanSylvainBagFullText
 	waitbutton
 	closetext
