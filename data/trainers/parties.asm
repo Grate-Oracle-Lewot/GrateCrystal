@@ -3159,7 +3159,7 @@ CamperGroup:
 
 	; CAMPER (18)
 	db "JERRY@", TRAINERTYPE_NORMAL
-	db 50, SUDOWOODO
+	db 64, SUDOWOODO
 	db -1 ; end
 
 	; CAMPER (19)
