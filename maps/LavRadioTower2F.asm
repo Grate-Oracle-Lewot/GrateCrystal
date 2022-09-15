@@ -24,6 +24,7 @@ LavRadioTower2FMewtwoScript:
 	faceplayer
 	opentext
 	writetext LavRadioTower2FMewtwoText
+	waitbutton
 	closetext
 	setevent EVENT_FOUGHT_MEWTWO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
