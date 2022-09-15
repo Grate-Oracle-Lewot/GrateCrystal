@@ -25,6 +25,7 @@ StallMoves:
 	db REFLECT
 	db FOCUS_ENERGY
 	db BIDE
+	db METRONOME
 	db AMNESIA
 	db TRANSFORM
 	db ACID_ARMOR
