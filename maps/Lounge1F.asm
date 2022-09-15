@@ -165,6 +165,165 @@ LoungeMistyAfterText:
 	cont "time!"
 	done
 
+LoungeWhitneyTalkText:
+	text "Howdy! It's been a"
+	line "while."
+
+	para "You must've gotten"
+	line "really strong if"
+
+	para "they let you in"
+	line "here!"
+	done
+
+LoungeWhitneyRematchText:
+	text "In fact… I'd say"
+	line "you look strong"
+
+	para "enough for a re-"
+	line "match! C'mon!"
+	done
+
+LoungeWhitneyRefuseText:
+	text "Aww… whassamatter,"
+	line "scared o' li'l old"
+	cont "me? Teehee!"
+	done
+
+LoungeWhitneyLossText:
+	text "Sniff… sob…"
+	done
+
+LoungeWhitneyAfterText:
+	text "Sniff…"
+
+	para "Waaah!"
+	line "Waaah!"
+
+	para "…"
+
+	para "A'ight, pull it"
+	line "together, girl."
+	done
+
+LoungeLtSurgeTalkText:
+	text "That little girl,"
+	line "WHITNEY, is wicked"
+	cont "strong!"
+
+	para "I was in the army,"
+	line "and she scares me!"
+	done
+
+LoungeLtSurgeRematchText:
+	text "Reminds me of an-"
+	line "other strong kid I"
+	cont "know!"
+
+	para "It's time, tyke! A"
+	line "rematch! You, me!"
+	done
+
+LoungeLtSurgeRefuseText:
+	text "What? No? Well,"
+	line "come back if you"
+	cont "change your mind!"
+	done
+
+LoungeLtSurgeLossText:
+	text "Still tough as"
+	line "nails! I like it!"
+	done
+
+LoungeLtSurgeAfterText:
+	text "You're the real"
+	line "deal, <PLAY_G>!"
+	done
+
+LoungeMortyTalkText:
+	text "I'm impressed with"
+	line "ERIKA's zen."
+
+	para "She must hold many"
+	line "secrets about that"
+
+	para "which can't be"
+	line "seen by mortals."
+	done
+
+LoungeMortyRematchText:
+	text "<PLAY_G>…"
+	line "You've grown. I"
+	cont "can sense it."
+
+	para "I think it would"
+	line "benefit us both if"
+	cont "we battled again."
+	done
+
+LoungeMortyRefuseText:
+	text "Hm… Return when"
+	line "you are ready."
+	done
+
+LoungeMortyLossText:
+	text "I see…"
+	done
+
+LoungeMortyAfterText:
+	text "Thank you for the"
+	line "lesson."
+
+	para "I will keep train-"
+	line "ing."
+
+	para "And one day…"
+	done
+
+LoungeErikaTalkText:
+	text "Why, hello there,"
+	line "<PLAY_G>."
+
+	para "This lounge is so"
+	line "cozy, isn't it?"
+
+	para "I get so content"
+	line "watching everyone"
+
+	para "enjoy themselves,"
+	line "I end up just"
+	cont "snoozing…"
+	done
+
+LoungeErikaRematchText:
+	text "Oh, pardon me. I"
+	line "once again mistook"
+
+	para "your intentions"
+	line "for small talk."
+
+	para "Let us proceed."
+	done
+
+LoungeErikaLossText:
+	text "I'm forced to"
+	line "concede again."
+	done
+
+LoungeErikaAfterText:
+	text "You remain very"
+	line "talented…"
+
+	para "Here… take this"
+	line "RAINBOWBADGE…"
+
+	para "What? We already"
+	line "did that?"
+
+	para "Oh my… That's"
+	line "embarrassing."
+	done
+
 LoungeClairText:
 	text "Oh, it's you. I'm"
 	line "not surprised that"
@@ -218,7 +377,7 @@ Lounge1F_MapEvents:
 	object_event 15,  1, SPRITE_BUGSY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LoungeBugsyScript, -1
 	object_event 19,  2, SPRITE_MISTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LoungeMistyScript, -1
 	object_event  1,  2, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LoungeWhitneyScript, -1
-	object_event  1,  5, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LoungeSurgeScript, -1
+	object_event  1,  5, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LoungeLtSurgeScript, -1
 	object_event  8,  6, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeMortyScript, -1
 	object_event  7,  6, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LoungeErikaScript, -1
 	object_event 16, 15, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeClairScript, -1
