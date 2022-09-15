@@ -14,6 +14,7 @@ UsefulMoves:
 	db DAZZLY_GLEAM
 	db SPORE
 	db FLASH
+	db AIR_SLASH
 	db DARK_PULSE
 	db SILVER_WIND
 	db TRI_ATTACK
