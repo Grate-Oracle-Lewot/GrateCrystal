@@ -161,7 +161,16 @@ Route12SignText:
 	done
 
 FishingSpotSignText:
-	text "FISHING SPOT"
+	text "TRAINER TIPS"
+
+	para "If a SHUCKLE holds"
+	line "a BERRY, after a"
+
+	para "while it'll turn"
+	line "into BERRY JUICE."
+
+	para "BERRY JUICE heals"
+	line "a lot more HP!"
 	done
 
 Route12_MapEvents:
