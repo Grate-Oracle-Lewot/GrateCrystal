@@ -210,7 +210,7 @@ TeamRocketBaseB3FFullHeal:
 	itemball FULL_HEAL
 
 TeamRocketBaseB3FIceHeal:
-	itemball ICE_HEAL
+	itemball UP_GRADE
 
 TeamRocketBaseB3FUltraBall:
 	itemball ULTRA_BALL
