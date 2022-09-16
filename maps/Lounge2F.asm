@@ -195,7 +195,36 @@ LoungeBlaineScript:
 	end
 
 LoungeBlueScript:
+	turnobject LOUNGE2F_BLUE, LEFT
+	turnobject LOUNGE2F_RED, RIGHT
+	opentext
+	writetext LoungeBlueTalkText
+	checkflag ENGINE_QWILFISH_SWARM
+	iftrue .OfferRematch
+	waitbutton
+	closetext
+	end
 
+.OfferRematch:
+	faceplayer
+	writetext LoungeBlueRematchText
+	yesorno
+	iftrue .DoRematch
+	writetext LoungeBlueRefuseText
+	waitbutton
+	closetext
+	end
+
+.DoRematch:
+	winlosstext LoungeBlueLossText, 0
+	loadtrainer BLUE, BLUE1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext LoungeBlueAfterText
+	waitbutton
+	closetext
+	end
 
 LoungeRedScript:
 	faceplayer
