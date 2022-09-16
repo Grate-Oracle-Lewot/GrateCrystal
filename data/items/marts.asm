@@ -471,5 +471,5 @@ MartApricorn:
 
 DefaultMart:
 	db 1 ; # items
-	db RARE_CANDY
+	db POTION
 	db -1 ; end
