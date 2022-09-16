@@ -316,6 +316,193 @@ LoungeJanineAfterText:
 	cont "sets in another…"
 	done
 
+LoungeJasmineTalkText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungeJasmineRematchText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungeJasmineRefuseText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungeJasmineLossText:
+	text ""
+	done
+
+LoungeJasmineAfterText:
+	text ""
+	line ""
+	done
+
+LoungeSabrinaTalkText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungeSabrinaRematchText:
+	text ""
+	line ""
+	cont ""
+
+	para ""
+	line ""
+	done
+
+LoungeSabrinaRefuseText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungeSabrinaLossText:
+	text ""
+	line ""
+	done
+
+LoungeSabrinaAfterText:
+	text ""
+	line ""
+	cont ""
+	done
+
+LoungePryceTalkText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungePryceRematchText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungePryceRefuseText:
+	text ""
+	line ""
+
+	para ""
+	line ""
+	done
+
+LoungePryceLossText:
+	text ""
+	done
+
+LoungePryceAfterText:
+	text ""
+	line ""
+	done
+
+LoungeBlaineTalkText:
+	text "At least I can"
+	line "come here, but I"
+
+	para "need to build a"
+	line "real GYM again!"
+
+	para "Maybe in PALLET or"
+	line "LAVENDER…"
+	done
+
+LoungeBlaineRematchText:
+	text "But enough moping!"
+	line "I'm still a GYM"
+	cont "LEADER!"
+
+	para "<PLAY_G>! Let's"
+	line "battle again!"
+	done
+
+LoungeBlaineRefuseText:
+	text "No? Suit yourself."
+	done
+
+LoungeBlaineLossText:
+	text "Doused like a mere"
+	line "campfire…"
+	done
+
+LoungeBlaineAfterText:
+	text "Do me a favor and"
+	line "beat PRYCE here,"
+	cont "too."
+
+	para "Then I won't feel"
+	line "so bad about it!"
+	done
+
+LoungeBlueTalkText:
+	text "I'm just saying,"
+	line "you got to pick"
+	cont "first!"
+
+	para "Whaddid you expect"
+	line "me to do, pick the"
+
+	para "one that was weak"
+	line "against yours?"
+	done
+
+LoungeBlueRematchText:
+	text "Oh, it's the JOHTO"
+	line "kid."
+
+	para "Hey, how about we"
+	line "battle again?"
+
+	para "I need to show RED"
+	line "here I can still"
+	cont "kick butt!"
+	done
+
+LoungeBlueRefuseText:
+	text "Heh. I guess I'd"
+	line "be scared too."
+	done
+
+LoungeBlueLossText:
+	text "Man, again? Fine…"
+	done
+
+LoungeBlueAfterText:
+	text "You just love to"
+	line "show me up, huh?"
+
+	para "You remind me of a"
+	line "young me."
+
+	para "Smell ya later,"
+	line "punk!"
+	done
+
 LoungeRedText:
 	text "…"
 	line "…"
