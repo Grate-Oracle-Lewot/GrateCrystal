@@ -193,20 +193,15 @@ SeafoamGymGuideWinText2:
 	done
 
 FirebreatherIrohSeenText:
-	text "Sometimes life is"
-	line "like this dark"
+	text "You can't always"
+	line "see the light at"
 
-	para "tunnel. You can't"
-	line "always see the"
+	para "the end of the"
+	line "tunnel, but if you"
 
-	para "light at the end"
-	line "of the tunnel, but"
-
-	para "if you just keep"
-	line "moving, you will"
-
-	para "come to a better"
-	line "place."
+	para "just keep moving,"
+	line "you will come to a"
+	cont "better place."
 	done
 
 FirebreatherIrohBeatenText:
