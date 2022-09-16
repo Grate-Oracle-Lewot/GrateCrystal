@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 35 ; catch rate
-	db 61 ; base exp
+	db 84 ; base exp
 	db METAL_POWDER, BERSERK_GENE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
