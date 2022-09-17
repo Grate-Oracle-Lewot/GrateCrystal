@@ -61,6 +61,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Rhyhorn/Rhydon: Ground/Rock -> Steel/Rock
 - Tangela: Grass -> Grass/Water
 - Kangaskhan: Normal -> Normal/Fighting
+- Electabuzz: Electric -> Electric/Fighting
 - Gyarados: Water/Flying -> Water/Dragon
 - Mewtwo: Psychic -> Psychic/Fighting
 - Noctowl: Normal/Flying -> Ghost/Flying
