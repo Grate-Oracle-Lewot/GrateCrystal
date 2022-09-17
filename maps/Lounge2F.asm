@@ -389,36 +389,38 @@ LoungeSabrinaAfterText:
 	done
 
 LoungePryceTalkText:
-	text ""
-	line ""
+	text "Back in my day, we"
+	line "didn't need a new-"
+	cont "fangled clubhouse."
 
-	para ""
-	line ""
+	para "You played outside"
+	line "in the mud and you"
+	cont "liked it!"
 	done
 
 LoungePryceRematchText:
-	text ""
-	line ""
+	text "Bah! Mindless"
+	line "prattle."
 
-	para ""
-	line ""
+	para "You're here for a"
+	line "rematch, yes?"
 	done
 
 LoungePryceRefuseText:
-	text ""
-	line ""
-
-	para ""
-	line ""
+	text "Hm. My mistake."
 	done
 
 LoungePryceLossText:
-	text ""
+	text "Another winter"
+	line "come and gone."
 	done
 
 LoungePryceAfterText:
-	text ""
-	line ""
+	text "For someone your"
+	line "age to have such"
+	cont "talent…"
+
+	para "Don't waste it."
 	done
 
 LoungeBlaineTalkText:
@@ -536,7 +538,7 @@ Lounge2F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 17,  3, SPRITE_CHUCK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LoungeChuckScript, -1
+	object_event 17,  3, SPRITE_CHUCK, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LoungeChuckScript, -1
 	object_event  5,  9, SPRITE_JANINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeJanineScript, -1
 	object_event  3, 10, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LoungeJasmineScript, -1
 	object_event  3,  8, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LoungeSabrinaScript, -1
