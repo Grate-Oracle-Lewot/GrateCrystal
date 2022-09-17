@@ -317,36 +317,38 @@ LoungeJanineAfterText:
 	done
 
 LoungeJasmineTalkText:
-	text ""
-	line ""
+	text "Oh, um… hello"
+	line "again."
 
-	para ""
-	line ""
+	para "How are you doing"
+	line "these days?"
 	done
 
 LoungeJasmineRematchText:
-	text ""
-	line ""
+	text "I do hope you're"
+	line "keeping up with"
+	cont "your training…"
 
-	para ""
-	line ""
+	para "May I request a"
+	line "rematch with you?"
 	done
 
 LoungeJasmineRefuseText:
-	text ""
-	line ""
-
-	para ""
-	line ""
+	text "Oh… um… okay…"
 	done
 
 LoungeJasmineLossText:
-	text ""
+	text "…Um… Well done."
 	done
 
 LoungeJasmineAfterText:
-	text ""
-	line ""
+	text "You have once"
+	line "again proven your-"
+	cont "self a better"
+	cont "trainer than me."
+
+	para "Um… keep at it."
+	line "I will too."
 	done
 
 LoungeSabrinaTalkText:
