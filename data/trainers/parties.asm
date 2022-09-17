@@ -866,6 +866,7 @@ BirdKeeperGroup:
 	; BIRD_KEEPER (15)
 	db "PERRY@", TRAINERTYPE_NORMAL
 	db 48, GOLDUCK
+	db 47, MAGMAR
 	db -1 ; end
 
 	; BIRD_KEEPER (16)
