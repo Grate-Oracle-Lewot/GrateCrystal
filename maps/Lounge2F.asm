@@ -352,42 +352,41 @@ LoungeJasmineAfterText:
 	done
 
 LoungeSabrinaTalkText:
-	text ""
-	line ""
+	text "The mind needs"
+	line "rest and even"
 
-	para ""
-	line ""
+	para "entertainment to"
+	line "function well."
 
-	para ""
-	line ""
+	para "As in all things,"
+	line "balance is key."
 	done
 
 LoungeSabrinaRematchText:
-	text ""
-	line ""
-	cont ""
+	text "…"
 
-	para ""
-	line ""
+	para "I can hear your"
+	line "thoughts."
+
+	para "You want to battle"
+	line "me again."
 	done
 
 LoungeSabrinaRefuseText:
-	text ""
-	line ""
+	text "…"
 
-	para ""
-	line ""
+	para "I know when you're"
+	line "lying."
 	done
 
 LoungeSabrinaLossText:
-	text ""
-	line ""
+	text "Still not enough…"
 	done
 
 LoungeSabrinaAfterText:
-	text ""
-	line ""
-	cont ""
+	text "As I predicted,"
+	line "you are a true"
+	cont "CHAMPION."
 	done
 
 LoungePryceTalkText:
