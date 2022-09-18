@@ -7,7 +7,6 @@
 	const LOUNGE2F_BLAINE
 	const LOUNGE2F_BLUE
 	const LOUNGE2F_RED
-	const LOUNGE2F_GYM_GUIDE
 
 Lounge2F_MapScripts:
 	def_scene_scripts
@@ -240,9 +239,6 @@ LoungeRedScript:
 	reloadmapafterbattle
 .EndConversation:
 	end
-
-LoungeGymGuideScript:
-	jumptextfaceplayer LoungeGymGuideText
 
 LoungeChuckTalkText:
 	text "One! Two! Three!"
@@ -511,23 +507,6 @@ LoungeRedText:
 	line "…"
 	done
 
-LoungeGymGuideText:
-	text "Yo, CHAMPION!"
-
-	para "Pretty snazzy"
-	line "hangout, huh?"
-
-	para "It's a place for"
-	line "the GYM LEADERS to"
-	cont "relax…"
-
-	para "But I bet you can"
-	line "get some rematches"
-
-	para "out of them if you"
-	line "try!"
-	done
-
 Lounge2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -547,4 +526,3 @@ Lounge2F_MapEvents:
 	object_event  9, 14, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeBlaineScript, -1
 	object_event 16,  8, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeBlueScript, -1
 	object_event 15,  8, SPRITE_RED, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LoungeRedScript, -1
-	object_event  6,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LoungeGymGuideScript, -1
