@@ -613,8 +613,6 @@ ENDM
 	map_attributes KarensRoom, KARENS_ROOM, $00, 0
 	map_attributes LancesRoom, LANCES_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
-	map_attributes Lounge1F, LOUNGE_1F, $00, 0
-	map_attributes Lounge2F, LOUNGE_2F, $00, 0
 	map_attributes FuchsiaMart, FUCHSIA_MART, $00, 0
 	map_attributes SafariZoneMainOffice, SAFARI_ZONE_MAIN_OFFICE, $00, 0
 	map_attributes FuchsiaGym, FUCHSIA_GYM, $00, 0
