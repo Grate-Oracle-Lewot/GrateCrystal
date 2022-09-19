@@ -18,7 +18,6 @@ EncoreMoves:
 	db THUNDER_WAVE
 	db MEDITATE
 	db AGILITY
-	db TELEPORT
 	db SCREECH
 	db HARDEN
 	db WITHDRAW
