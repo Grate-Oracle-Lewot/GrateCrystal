@@ -76,7 +76,7 @@ BattleCommand_BatonPass:
 	ld hl, SpikesDamage
 	call CallBattleCore
 
-	jr ResetBatonPassStatus
+	jp ResetBatonPassStatus
 
 BatonPass_LinkPlayerSwitch:
 	ld a, [wLinkMode]
