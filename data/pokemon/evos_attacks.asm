@@ -224,7 +224,7 @@ BeedrillEvosAttacks:
 PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, TELEPORT
 	db 5, SAND_ATTACK
 	db 9, GUST
 	db 13, QUICK_ATTACK
@@ -271,7 +271,7 @@ PidgeotEvosAttacks:
 RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, BATON_PASS
 	db 2, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 10, BITE
@@ -2363,7 +2363,7 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 2, TAIL_WHIP
+	db 2, BATON_PASS
 	db 7, RAGE
 	db 12, WATER_GUN
 	db 17, VICEGRIP
