@@ -40,6 +40,7 @@ StallMoves:
 	db SCARY_FACE
 	db CHARM
 	db FALSE_SWIPE
+	db BATON_PASS
 	db RAIN_DANCE
 	db SUNNY_DAY
 	db PSYCH_UP
