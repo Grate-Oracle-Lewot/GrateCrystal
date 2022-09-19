@@ -25,6 +25,9 @@ TrainerGentlemanSylvain:
 .GiveUpGrade:
 	verbosegiveitem UP_GRADE
 	iffalse .BagFull
+	writetext GentlemanSylvainAfterUpGradeText
+	waitbutton
+	closetext
 	end
 
 .BagFull:
@@ -88,6 +91,14 @@ GentlemanSylvainOfferUpGradeText:
 
 	para "Do you want one"
 	line "now?"
+	done
+
+GentlemanSylvainAfterUpGradeText:
+	text "There you are! You"
+	line "can't buy those"
+
+	para "anywhere yet, you"
+	line "know!"
 	done
 
 GentlemanSylvainRefusedUpGradeText:
