@@ -504,3 +504,8 @@ INCLUDE "maps/SilphCo8F.asm"
 INCLUDE "maps/SilphCo9F.asm"
 INCLUDE "maps/SilphCo10F.asm"
 INCLUDE "maps/SilphCo11F.asm"
+INCLUDE "maps/Lounge1F.asm"
+
+SECTION "Map Scripts 27", ROMX
+
+INCLUDE "maps/Lounge2F.asm"
