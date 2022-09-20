@@ -217,7 +217,7 @@ LoungeBlueScript:
 
 .DoRematch:
 	winlosstext LoungeBlueLossText, 0
-	loadtrainer BLUE, BLUE1
+	loadtrainer BLUE, BLUE2
 	startbattle
 	reloadmapafterbattle
 	opentext
