@@ -183,8 +183,7 @@ ENDM
 	map_const DANCE_THEATRE,                                6,  7 ;  5
 	map_const ECRUTEAK_MART,                                6,  4 ;  6
 	map_const ECRUTEAK_GYM,                                 5,  9 ;  7
-	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ;  8
-	map_const ECRUTEAK_CITY,                               20, 18 ;  9
+	map_const ECRUTEAK_CITY,                               20, 18 ;  8
 	endgroup
 
 	newgroup BLACKTHORN                                           ;  5
@@ -356,6 +355,8 @@ ENDM
 	map_const KARENS_ROOM,                                  5,  9 ;  6
 	map_const LANCES_ROOM,                                  5, 12 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
+	map_const LOUNGE_1F,                                   10,  9 ;  9
+	map_const LOUNGE_2F,                                   10,  9 ; 10
 	endgroup
 
 	newgroup FUCHSIA                                              ; 17
