@@ -160,7 +160,6 @@ BattleCommandPointers:
 	dw BattleCommand_DoubleMinimizeDamage
 	dw BattleCommand_SkipSunCharge
 	dw BattleCommand_ThunderAccuracy
-	dw BattleCommand_Teleport
 	dw BattleCommand_BeatUp
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
