@@ -68,7 +68,7 @@ LoungeBrockScript:
 
 .DoRematch:
 	winlosstext LoungeBrockLossText, 0
-	loadtrainer BROCK, BROCK1
+	loadtrainer BROCK, BROCK2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -122,7 +122,7 @@ LoungeMistyScript:
 	waitbutton
 	closetext
 	winlosstext LoungeMistyLossText, 0
-	loadtrainer MISTY, MISTY1
+	loadtrainer MISTY, MISTY2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -182,7 +182,7 @@ LoungeLtSurgeScript:
 
 .DoRematch:
 	winlosstext LoungeLtSurgeLossText, 0
-	loadtrainer LT_SURGE, LT_SURGE1
+	loadtrainer LT_SURGE, LT_SURGE2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -236,7 +236,7 @@ LoungeErikaScript:
 	waitbutton
 	closetext
 	winlosstext LoungeErikaLossText, 0
-	loadtrainer ERIKA, ERIKA1
+	loadtrainer ERIKA, ERIKA2
 	startbattle
 	reloadmapafterbattle
 	opentext
