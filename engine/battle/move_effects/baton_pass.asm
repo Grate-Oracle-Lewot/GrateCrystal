@@ -12,7 +12,7 @@ BattleCommand_BatonPass:
 	call UpdateBattleMonInParty
 	call AnimateCurrentMove
 
-	ld c, 50
+	ld c, 42
 	call DelayFrames
 
 ; Transition into switchmon menu
@@ -211,7 +211,7 @@ FailedBatonPass:
 	call SetBattleDraw
 	call BattleCommand_LowerSub
 	call LoadMoveAnim
-	ld c, 50
+	ld c, 42
 	call DelayFrames
 	call SetBattleDraw
 
