@@ -5039,8 +5039,6 @@ BattleCommand_Rampage:
 	ld [wSomeoneIsRampaging], a
 	ret
 
-INCLUDE "engine/battle/move_effects/teleport.asm"
-
 SetBattleDraw:
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
