@@ -660,8 +660,8 @@ RageDescription:
 	next "the user is hit.@"
 
 TeleportDescription:
-	db   "A move for fleeing"
-	next "from battle.@"
+	db   "Switches #MON"
+	next "or flees battle.@"
 
 NightShadeDescription:
 	db   "The user's level"
@@ -1164,8 +1164,8 @@ DragonbreathDescription:
 	next "cause paralysis.@"
 
 BatonPassDescription:
-	db   "Switches while"
-	next "keeping effects.@"
+	db   "Switches #MON"
+	next "or flees battle.@"
 
 EncoreDescription:
 	db   "Makes the foe re-"
