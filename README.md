@@ -141,7 +141,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Friday: Giovanni, using Ground types plus Persian
   - Saturday: Karen, using Dark types; only appears at night
   - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, if you have access to Mt. Silver, Lance will appear for a rematch with levels similar to the Lance/Clair double battle in HGSS; if you talk to Mr. Fuji the same morning before you battle Lance, Lance will give you another Master Ball upon defeat
-- A lounge on Route 23, only accessible if you've opened Mt. Silver, where all 16 Gym Leaders and Red can be found and rematched; whichever rematches are available on a given day can be repeated infinitely for easy grinding
+- A lounge on Route 23, only accessible if you've opened Mt. Silver, where Gym Leaders and Red can be found and rematched; whichever rematches are available on a given day can be repeated infinitely for easy grinding (Clair isn't rematched since her team would be too similar to Lance in his rematch above)
   - Monday: Falkner and Brock
   - Tuesday: Bugsy and Misty
   - Wednesday: Whitney and Lt. Surge
