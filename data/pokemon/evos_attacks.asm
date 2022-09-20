@@ -1888,7 +1888,7 @@ ElectabuzzEvosAttacks:
 	db 41, LOW_KICK
 	db 47, THUNDERBOLT
 	db 58, THUNDER
-	db 64, DOUBLE_EDGE
+	db 64, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
@@ -3594,7 +3594,7 @@ ElekidEvosAttacks:
 	db 37, LOW_KICK
 	db 41, THUNDERBOLT
 	db 49, THUNDER
-	db 54, MEGA_KICK
+	db 54, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 MagbyEvosAttacks:
