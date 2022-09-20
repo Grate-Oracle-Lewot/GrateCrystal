@@ -1929,13 +1929,6 @@ Thunder:
 	paralyzetarget
 	endmove
 
-Teleport:
-	checkobedience
-	usedmovetext
-	doturn
-	teleport
-	endmove
-
 BeatUp:
 	checkobedience
 	usedmovetext
