@@ -65,7 +65,7 @@ LoungeJanineScript:
 
 .DoRematch:
 	winlosstext LoungeJanineLossText, 0
-	loadtrainer JANINE, JANINE1
+	loadtrainer JANINE, JANINE2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -125,7 +125,7 @@ LoungeSabrinaScript:
 
 .DoRematch:
 	winlosstext LoungeSabrinaLossText, 0
-	loadtrainer SABRINA, SABRINA1
+	loadtrainer SABRINA, SABRINA2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -185,7 +185,7 @@ LoungeBlaineScript:
 
 .DoRematch:
 	winlosstext LoungeBlaineLossText, 0
-	loadtrainer BLAINE, BLAINE1
+	loadtrainer BLAINE, BLAINE2
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -235,7 +235,7 @@ LoungeRedScript:
 	checkevent EVENT_BEAT_RED
 	iffalse .EndConversation
 	winlosstext LoungeRedText, 0
-	loadtrainer RED, RED1
+	loadtrainer RED, RED2
 	startbattle
 	reloadmapafterbattle
 .EndConversation:
