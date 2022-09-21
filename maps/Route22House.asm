@@ -332,15 +332,14 @@ Route22HouseOfficerJennyScript:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoCandies
 	writetext Route22HouseOfficerJennyRareCandyText
-	waitbutton
-	closetext
 	verbosegiveitem RARE_CANDY, 6
 	iffalse .RareCandiesBagFull
+	waitbutton
+	closetext
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	end
 
 .RareCandiesBagFull:
-	opentext
 	writetext Route22HouseOfficerJennyBagFullText
 	waitbutton
 	closetext
