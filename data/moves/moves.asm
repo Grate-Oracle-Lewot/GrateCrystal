@@ -48,7 +48,7 @@ Moves:
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,       PHYSICAL, 100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,       PHYSICAL, 100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        20, DRAGON,       PHYSICAL,  85, 20,   0
-	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         90, NORMAL,       PHYSICAL,  90, 20,   0
+	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         90, NORMAL,       PHYSICAL,  90, 25,   0
 	move THRASH,       EFFECT_RAMPAGE,            90, NORMAL,       PHYSICAL,  90, 15,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,       PHYSICAL, 100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,       STATUS,   100, 30,   0
