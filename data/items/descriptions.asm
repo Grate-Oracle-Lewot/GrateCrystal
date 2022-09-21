@@ -261,7 +261,7 @@ ItemDescriptions:
 
 MasterBallDesc:
 	db   "The best BALL. It"
-	next "never misses.@"
+	next "always works.@"
 
 UltraBallDesc:
 	db   "A BALL with a high"
@@ -852,8 +852,8 @@ MysteryBerryDesc:
 	next "for PP. (HOLD)@"
 
 DragonScaleDesc:
-	db   "A rare dragon-type"
-	next "item.@"
+	db   "Evolves certain"
+	next "kinds of #MON.@"
 
 BerserkGeneDesc:
 	db   "Boosts ATTACK but"
