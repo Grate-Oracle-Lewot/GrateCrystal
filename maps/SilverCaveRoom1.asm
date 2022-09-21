@@ -5,6 +5,7 @@
 	const SILVERCAVEROOM1_POKE_BALL4
 	const SILVERCAVEROOM1_CHRIS
 	const SILVERCAVEROOM1_KIMONO_GIRL
+	const SILVERCAVEROOM1_SWIMMER_M
 
 SilverCaveRoom1_MapScripts:
 	def_scene_scripts
@@ -41,6 +42,17 @@ TrainerKimonoGirlKyoshi:
 	endifjustbattled
 	opentext
 	writetext KimonoGirlKyoshiAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerMPhelps:
+	trainer SWIMMER_M, PHELPS, EVENT_BEAT_SWIMMERM_PHELPS, SwimmerMPhelpsSeenText, SwimmerMPhelpsBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext SwimmerMPhelpsBattleText
 	waitbutton
 	closetext
 	end
@@ -90,6 +102,24 @@ KimonoGirlKyoshiAfterBattleText:
 	cont "is true."
 	done
 
+SwimmerMPhelpsSeenText:
+	text "That's right, I'm"
+	line "so extreme I'm"
+
+	para "swimming in the"
+	line "solid ground!"
+	done
+
+SwimmerMPhelpsBeatenText:
+	text "Buried alive!"
+	done
+
+SwimmerMPhelpsAfterBattleText:
+	text "You have to be"
+	line "extreme to make it"
+	cont "here in MT.SILVER!"
+	done
+
 SilverCaveRoom1_MapEvents:
 	db 0, 0 ; filler
 
@@ -110,3 +140,4 @@ SilverCaveRoom1_MapEvents:
 	object_event  7, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom1UltraBall, EVENT_SILVER_CAVE_ROOM_1_ULTRA_BALL
 	object_event 11,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, TrainerIggy, -1
 	object_event  6, 21, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlKyoshi, -1
+	object_event 13, 16, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPhelps, -1
