@@ -61,7 +61,7 @@ SupernerdHughAfterBattleText:
 	line "trainer who has a"
 
 	para "SLOWPOKE that can"
-	line "use STRENGTH?"
+	line "use THE FORCE?"
 	done
 
 MountMortar2FInside_MapEvents:
