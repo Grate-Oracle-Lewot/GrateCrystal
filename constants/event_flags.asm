@@ -1102,7 +1102,8 @@
 	const EVENT_BEAT_SCIENTIST_HIDEKI
 	const EVENT_BEAT_SCIENTIST_SUGURU
 	const EVENT_BEAT_SCIENTIST_TRAVIS
-; Unused: next 116 (now 58) events
+	const EVENT_BEAT_SWIMMERM_PHELPS
+; Unused: next 116 (now 57) events
 
 	const_next 1600
 ; Sprite visibility flags
