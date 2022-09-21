@@ -12,7 +12,6 @@ TrainerGentlemanSylvain:
 	trainer GENTLEMAN, SYLVAIN, EVENT_BEAT_GENTLEMAN_SYLVAIN, GentlemanSylvainSeenText, GentlemanSylvainBeatenText, 0, .AfterScript
 
 .AfterScript:
-	endifjustbattled
 	opentext
 	writetext GentlemanSylvainOfferUpGradeText
 	yesorno
