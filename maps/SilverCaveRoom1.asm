@@ -47,7 +47,7 @@ TrainerKimonoGirlKyoshi:
 	end
 
 TrainerSwimmerMPhelps:
-	trainer SWIMMER_M, PHELPS, EVENT_BEAT_SWIMMERM_PHELPS, SwimmerMPhelpsSeenText, SwimmerMPhelpsBeatenText, 0, .AfterScript
+	trainer SWIMMERM, PHELPS, EVENT_BEAT_SWIMMERM_PHELPS, SwimmerMPhelpsSeenText, SwimmerMPhelpsBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
