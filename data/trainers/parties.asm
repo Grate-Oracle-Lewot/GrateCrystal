@@ -2111,6 +2111,11 @@ SwimmerMGroup:
 	db 49, KINGDRA
 	db -1 ; end
 
+	; SWIMMERM (14)
+	db "PHELPS@", TRAINERTYPE_NORMAL
+	db 84, DUGTRIO
+	db -1 ; end
+
 SwimmerFGroup:
 	; SWIMMERF (1)
 	db "ELAINE@", TRAINERTYPE_NORMAL
