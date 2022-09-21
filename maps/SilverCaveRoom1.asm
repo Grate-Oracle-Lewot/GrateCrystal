@@ -115,9 +115,8 @@ SwimmerMPhelpsBeatenText:
 	done
 
 SwimmerMPhelpsAfterBattleText:
-	text "You have to be"
-	line "extreme to make it"
-	cont "here in MT.SILVER!"
+	text "I think I'm stuck"
+	line "in this hole…"
 	done
 
 SilverCaveRoom1_MapEvents:
