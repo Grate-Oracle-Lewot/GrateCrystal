@@ -149,7 +149,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Friday: Chuck and Janine
   - Saturday: Jasmine and Sabrina
   - Sunday: Pryce and Blaine, and Blue can be rematched if you've spoked to Mr. Fuji in the Route 22 house on that day
-  - Red can be rematched any day if you've beaten him at Mt. Silver, now without the credits
+  - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits
 
 ## Miscellaneous
 - The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
