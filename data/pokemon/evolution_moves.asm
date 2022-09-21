@@ -124,7 +124,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MR__MIME
 	db NO_MOVE      ; SCYTHER
 	db LOVELY_KISS  ; JYNX
-	db MEGA_PUNCH   ; ELECTABUZZ
+	db SUBMISSION   ; ELECTABUZZ
 	db NO_MOVE      ; MAGMAR
 	db NO_MOVE      ; PINSIR
 	db NO_MOVE      ; TAUROS
