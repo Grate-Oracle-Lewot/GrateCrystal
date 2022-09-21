@@ -122,7 +122,7 @@ PicnickerCindyScript:
 	iftrue .CindyUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_3, Movement_NinjaSpin
 	faceplayer
-	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_COOLTRAINER_F
+	variablesprite SPRITE_FUCHSIA_GYM_3, SPRITE_LASS
 	special LoadUsedSpritesGFX
 .CindyUnmasked:
 	faceplayer
