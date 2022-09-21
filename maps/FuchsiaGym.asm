@@ -54,7 +54,7 @@ LassAliceScript:
 	iftrue .AliceUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_1, Movement_NinjaSpin
 	faceplayer
-	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_LASS
+	variablesprite SPRITE_FUCHSIA_GYM_1, SPRITE_COOLTRAINER_F
 	special LoadUsedSpritesGFX
 .AliceUnmasked:
 	faceplayer
@@ -88,7 +88,7 @@ LassLindaScript:
 	iftrue .LindaUnmasked
 	applymovement FUCHSIAGYM_FUCHSIA_GYM_2, Movement_NinjaSpin
 	faceplayer
-	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_LASS
+	variablesprite SPRITE_FUCHSIA_GYM_2, SPRITE_COOLTRAINER_F
 	special LoadUsedSpritesGFX
 .LindaUnmasked:
 	faceplayer
