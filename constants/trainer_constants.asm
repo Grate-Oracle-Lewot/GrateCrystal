@@ -419,6 +419,7 @@ KRIS EQU __trainer_class__
 	const CAMERON
 	const SETH
 	const PARKER
+	const PHELPS
 
 	trainerclass SWIMMERF ; 27
 	const ELAINE
