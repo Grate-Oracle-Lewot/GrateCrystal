@@ -2890,7 +2890,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, YANMEGA
+	db EVOLVE_ITEM, DRAGON_SCALE, YANMEGA
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 2, FORESIGHT
