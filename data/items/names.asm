@@ -108,7 +108,7 @@ ItemNames::
 	li "SMOKE BALL"
 	li "NEVERMELTICE"
 	li "MAGNET"
-	li "VERY BERRY"
+	li "FRANKENBERRY"
 	li "PEARL"
 	li "BIG PEARL"
 	li "EVERSTONE"
