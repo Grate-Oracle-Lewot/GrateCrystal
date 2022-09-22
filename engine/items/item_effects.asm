@@ -83,7 +83,7 @@ ItemEffects:
 	dw NoEffect            ; SECRETPOTION
 	dw NoEffect            ; S_S_TICKET
 	dw NoEffect            ; MYSTERY_EGG
-	dw NoEffect            ; CLEAR_BELL
+	dw PokeFluteEffect     ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
 	dw RestoreHPEffect     ; MOOMOO_MILK
 	dw NoEffect            ; QUICK_CLAW
