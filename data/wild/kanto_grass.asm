@@ -1003,8 +1003,8 @@ KantoGrassWildMons:
 	db 5, CHIKORITA
 	db 5, CHARMANDER
 	db 5, CYNDAQUIL
-	db 19, CHANSEY
-	db 21, KANGASKHAN
+	db 19, AIPOM
+	db 45, SUNKERN
 	; day
 	db 30, PARAS
 	db 30, RHYHORN
