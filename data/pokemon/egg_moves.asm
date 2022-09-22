@@ -412,9 +412,9 @@ GoldeenEggMoves:
 
 MrMimeEggMoves:
 	db FUTURE_SIGHT
-	db HYPNOSIS
 	db DRAIN_KISS
 	db PLAY_ROUGH
+	db METRONOME
 	db -1 ; end
 
 ScytherEggMoves:
