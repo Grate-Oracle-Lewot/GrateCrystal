@@ -153,6 +153,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits
 
 ## Miscellaneous
+- The Pokégear can hold 20 phone numbers instead of 10
 - The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
