@@ -1835,16 +1835,16 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, VICTREEBEL
-	db 42, SCYTHER
+	db 42, HERACROSS
 	db 45, STANTLER
 	db 44, MAGNETON
-	db 43, PINSIR
+	db 43, LICKITUNG
 	db 42, MAGCARGO
 	db 43, URSARING
 	db 43, DONPHAN
 	; day
 	db 41, TANGELA
-	db 42, SCYTHER
+	db 42, HERACROSS
 	db 45, RAPIDASH
 	db 44, DODRIO
 	db 43, ARBOK
