@@ -997,21 +997,21 @@ KantoGrassWildMons:
 	def_grass_wildmons SAFARI_ZONE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, TAUROS
-	db 30, MILTANK
-	db 1, IGGLYBUFF
-	db 1, MAGBY
-	db 1, ELEKID
-	db 1, PICHU
-	db 1, TYROGUE
-	db 1, TOGEPI
-	; day
-	db 30, PARAS
-	db 30, RHYHORN
+	db 28, YANMA
+	db 28, WHIMSICOTT
 	db 5, BULBASAUR
 	db 5, CHIKORITA
 	db 5, CHARMANDER
 	db 5, CYNDAQUIL
+	db 19, CHANSEY
+	db 21, KANGASKHAN
+	; day
+	db 30, PARAS
+	db 30, RHYHORN
+	db 30, TAUROS
+	db 30, MILTANK
+	db 33, SCYTHER
+	db 33, PINSIR
 	db 19, CHANSEY
 	db 21, KANGASKHAN
 	; nite
@@ -1021,8 +1021,8 @@ KantoGrassWildMons:
 	db 30, HYPNO
 	db 33, MISDREAVUS
 	db 33, RATICATE
-	db 1, SMOOCHUM
-	db 1, CLEFFA
+	db 30, VENOMOTH
+	db 28, YANMEGA
 	end_grass_wildmons
 
 	db -1 ; end
