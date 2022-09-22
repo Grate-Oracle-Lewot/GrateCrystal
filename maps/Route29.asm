@@ -210,7 +210,7 @@ Route29FruitTree:
 	fruittree FRUITTREE_ROUTE_29
 
 Route29Potion:
-	itemball POKE_FLUTE
+	itemball POTION
 
 DudeMovementData1a:
 	step UP
