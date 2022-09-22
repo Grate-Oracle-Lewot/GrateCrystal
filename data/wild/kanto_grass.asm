@@ -999,10 +999,10 @@ KantoGrassWildMons:
 	; morn
 	db 28, YANMA
 	db 28, WHIMSICOTT
-	db 5, BULBASAUR
-	db 5, CHIKORITA
-	db 5, CHARMANDER
-	db 5, CYNDAQUIL
+	db 1, BULBASAUR
+	db 1, CHIKORITA
+	db 1, CHARMANDER
+	db 1, CYNDAQUIL
 	db 19, AIPOM
 	db 45, SUNKERN
 	; day
