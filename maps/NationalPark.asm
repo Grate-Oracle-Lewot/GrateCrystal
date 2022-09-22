@@ -372,14 +372,14 @@ NationalParkPersianText:
 	done
 
 NationalParkGameboyKidText:
-	text "I'm printing out"
-	line "my #DEX."
+	text "If I'm not using a"
+	line "#MON for a bit,"
 
-	para "You can also print"
-	line "out stuff like"
+	para "I keep it in my"
+	line "#WALKER."
 
-	para "MAIL and your PC"
-	line "BOXES."
+	para "Sometimes it finds"
+	line "items for me!"
 	done
 
 SchoolboyJack1SeenText:
