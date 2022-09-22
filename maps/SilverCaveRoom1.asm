@@ -52,7 +52,7 @@ TrainerSwimmerMPhelps:
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext SwimmerMPhelpsBattleText
+	writetext SwimmerMPhelpsAfterBattleText
 	waitbutton
 	closetext
 	end
