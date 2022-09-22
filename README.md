@@ -109,6 +109,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - X Sp. Defend, Dusk Ball, and Eviolite
 - A few more TMs
 - Itemfinder removed
+- The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 
 ## Move tutors
 
