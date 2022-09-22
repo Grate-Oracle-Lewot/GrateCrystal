@@ -1288,21 +1288,21 @@ _RepelUsedEarlierIsStillInEffectText::
 	prompt
 
 _PlayedFluteText::
-	text "Played the #"
-	line "FLUTE."
+	text "Rang the CLEAR"
+	line "BELL."
 
-	para "Now, that's a"
-	line "catchy tune!"
+	para "…But nothing"
+	line "happened."
 	prompt
 
 _FluteWakeUpText::
 	text "All sleeping"
-	line "#MON woke up."
+	line "#MON woke up!"
 	autodone
 
 Text_PlayedPokeFlute::
-	text "<PLAYER> played the"
-	line "# FLUTE.@"
+	text "<PLAYER> rang the"
+	line "CLEAR BELL.@"
 	text_promptbutton
 	text_end
 
