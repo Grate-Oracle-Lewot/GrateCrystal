@@ -233,7 +233,6 @@ SECTION "bank14", ROMX
 INCLUDE "engine/pokemon/party_menu.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
-INCLUDE "engine/events/squirtbottle.asm"
 INCLUDE "engine/events/card_key.asm"
 INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
@@ -694,6 +693,7 @@ INCLUDE "engine/events/odd_egg.asm"
 SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
+INCLUDE "engine/events/squirtbottle.asm" ; 14
 
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
