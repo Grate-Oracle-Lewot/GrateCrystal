@@ -6,7 +6,6 @@ ItemDescriptions:
 	dw BrightpowderDesc
 	dw GreatBallDesc
 	dw PokeBallDesc
-	dw TownMapDesc
 	dw BicycleDesc
 	dw MoonStoneDesc
 	dw AntidoteDesc
@@ -55,8 +54,6 @@ ItemDescriptions:
 	dw XSpeedDesc
 	dw XSpecialDesc
 	dw CoinCaseDesc
-	dw ItemfinderDesc
-	dw PokeFluteDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -179,7 +176,6 @@ ItemDescriptions:
 	dw GoldTeethDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama24Desc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -192,6 +188,10 @@ ItemDescriptions:
 	dw MirageMailDesc
 	dw CandiedYamDesc
 	assert_table_length NUM_ITEMS
+	dw TeruSama26Desc
+	dw TeruSama26Desc
+	dw TeruSama26Desc
+	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama26Desc
@@ -278,10 +278,6 @@ GreatBallDesc:
 PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
-
-TownMapDesc:
-	db   "A map of JOHTO and"
-	next "KANTO.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -474,14 +470,6 @@ XSpecialDesc:
 CoinCaseDesc:
 	db   "Holds up to 9,999"
 	next "game coins.@"
-
-ItemfinderDesc:
-	db   "Checks for unseen"
-	next "items in the area.@"
-
-PokeFluteDesc:
-	db   "A flute that wakes"
-	next "sleeping #MON.@"
 
 ExpShareDesc:
 	db   "Shares battle EXP."
@@ -962,9 +950,6 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
-
-TeruSama24Desc:
-	db   "?@"
 
 BrickPieceDesc:
 	db   "A chunk of tile."
