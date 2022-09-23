@@ -122,7 +122,7 @@ SquirtleEvosAttacks:
 	db 1, RAPID_SPIN
 	db 4, TAIL_WHIP
 	db 7, BUBBLE
-	db 10, WITHDRAW
+	db 10, DEFENSE_CURL
 	db 13, WATER_GUN
 	db 18, BITE
 	db 23, VITAL_THROW
@@ -138,7 +138,7 @@ WartortleEvosAttacks:
 	db 1, RAPID_SPIN
 	db 4, TAIL_WHIP
 	db 7, BUBBLE
-	db 10, WITHDRAW
+	db 10, DEFENSE_CURL
 	db 13, WATER_GUN
 	db 19, BITE
 	db 25, VITAL_THROW
@@ -153,7 +153,7 @@ BlastoiseEvosAttacks:
 	db 1, RAPID_SPIN
 	db 4, TAIL_WHIP
 	db 7, BUBBLE
-	db 10, WITHDRAW
+	db 10, DEFENSE_CURL
 	db 13, WATER_GUN
 	db 19, BITE
 	db 25, VITAL_THROW
@@ -1176,7 +1176,7 @@ SlowbroEvosAttacks:
 	db 20, ACID
 	db 29, DISABLE
 	db 34, HEADBUTT
-	db 36, WITHDRAW
+	db 36, DEFENSE_CURL
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -1325,7 +1325,7 @@ ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 2, WITHDRAW
+	db 2, HARDEN
 	db 9, SUPERSONIC
 	db 13, CLAMP
 	db 17, AURORA_BEAM
@@ -1339,7 +1339,7 @@ ShellderEvosAttacks:
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPIKE_CANNON
-	db 2, WITHDRAW
+	db 2, HARDEN
 	db 9, SUPERSONIC
 	db 13, CLAMP
 	db 17, AURORA_BEAM
@@ -2056,7 +2056,7 @@ OmanyteEvosAttacks:
 	db EVOLVE_LEVEL, 40, OMASTAR
 	db 0 ; no more evolutions
 	db 1, BIND
-	db 2, WITHDRAW
+	db 2, DEFENSE_CURL
 	db 5, MUD_SLAP
 	db 13, BITE
 	db 19, WATER_GUN
@@ -2070,7 +2070,7 @@ OmanyteEvosAttacks:
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BIND
-	db 2, WITHDRAW
+	db 2, DEFENSE_CURL
 	db 5, MUD_SLAP
 	db 13, BITE
 	db 19, WATER_GUN
@@ -3199,7 +3199,7 @@ ScizorEvosAttacks:
 
 ShuckleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WITHDRAW
+	db 1, HARDEN
 	db 2, BIND
 	db 9, LEECH_LIFE
 	db 14, ROLLOUT
