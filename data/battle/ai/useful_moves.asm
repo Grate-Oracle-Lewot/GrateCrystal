@@ -9,6 +9,7 @@ UsefulMoves:
 	db SURF
 	db ICE_BEAM
 	db DRILL_PECK
+	db SCALD
 	db WATERFALL
 	db SPIKE_CANNON
 	db DAZZLY_GLEAM
