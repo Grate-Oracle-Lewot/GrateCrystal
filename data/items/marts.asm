@@ -287,10 +287,10 @@ MartCerulean:
 	db SUPER_POTION
 	db SUPER_REPEL
 	db FULL_HEAL
-	db X_DEFEND
-	db X_ATTACK
 	db DIRE_HIT
+	db GUARD_SPEC
 	db SURF_MAIL
+	db TM_SCALD
 	db -1 ; end
 
 MartLavender:
@@ -406,15 +406,14 @@ MartFuchsia:
 	db -1 ; end
 
 MartSaffron:
-	db 9 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
-	db X_ATTACK
-	db X_DEFEND
 	db FLOWER_MAIL
+	db TM_HYPNOSIS
 	db TM_DREAM_EATER
 	db -1 ; end
 
