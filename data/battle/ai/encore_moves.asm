@@ -20,7 +20,6 @@ EncoreMoves:
 	db AGILITY
 	db SCREECH
 	db HARDEN
-	db WITHDRAW
 	db DEFENSE_CURL
 	db HAZE
 	db FOCUS_ENERGY
