@@ -6,6 +6,7 @@ RainDanceMoves:
 	db SURF
 	db BUBBLEBEAM
 	db THUNDER
+	db SCALD
 	db WATERFALL
 	db CLAMP
 	db BUBBLE
