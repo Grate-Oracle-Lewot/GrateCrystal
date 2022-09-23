@@ -1859,7 +1859,7 @@ JohtoGrassWildMons:
 	db 44, PERSIAN
 	db 42, HOUNDOOM
 	db 43, GOLBAT
-	db 43, POLIWHIRL
+	db 43, POLIWRATH
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_SLOWPOKE_WELL_LINK
