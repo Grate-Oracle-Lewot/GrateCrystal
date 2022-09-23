@@ -99,7 +99,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
-- The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport.
+- The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
 ## Items
 - "Pocket PC" obtained from Bill in Ecruteak, letting you access the PC anywhere
@@ -108,8 +108,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Link Voucher" for evolving Pokémon that evolve by trade
 - New held items that each completely prevent a specific status condition
 - X Sp. Defend, Dusk Ball, and Eviolite
-- A few more TMs
-- Itemfinder removed
+- 60 TMs and 8 HMs
+- Itemfinder removed (had to for space)
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 
 ## Move tutors
