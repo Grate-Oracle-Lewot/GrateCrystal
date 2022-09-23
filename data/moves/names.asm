@@ -109,7 +109,7 @@ MoveNames::
 	li "MINIMIZE"
 	li "SMOKESCREEN"
 	li "CONFUSE RAY"
-	li "WITHDRAW"
+	li "SCALD"
 	li "DEFENSE CURL"
 	li "BARRIER"
 	li "LIGHT SCREEN"
