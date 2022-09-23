@@ -97,7 +97,6 @@ NidoranMEggMoves:
 
 VulpixEggMoves:
 	db FAINT_ATTACK
-	db HYPNOSIS
 	db PLAY_ROUGH
 	db SPITE
 	db DISABLE
@@ -149,7 +148,6 @@ DiglettEggMoves:
 MeowthEggMoves:
 	db SPITE
 	db CHARM
-	db HYPNOSIS
 	db AMNESIA
 	db BEAT_UP
 	db PRESENT
@@ -157,7 +155,6 @@ MeowthEggMoves:
 
 PsyduckEggMoves:
 	db PRESENT
-	db HYPNOSIS
 	db PSYBEAM
 	db FORESIGHT
 	db LIGHT_SCREEN
