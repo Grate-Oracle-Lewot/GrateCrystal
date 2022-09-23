@@ -3,11 +3,8 @@
 ; item associated with the table entry is used instead.
 
 TimeCapsule_CatchRateItems:
-	db TOWN_MAP,      GOLD_BERRY
 	db BICYCLE,       GOLD_BERRY
 	db COIN_CASE,     GOLD_BERRY
-	db ITEMFINDER,    GOLD_BERRY
-	db POKE_FLUTE,    AWAKENING
 	db OLD_ROD,       GOLD_BERRY
 	db GOOD_ROD,      GOLD_BERRY
 	db SUPER_ROD,     GOLD_BERRY
@@ -37,7 +34,6 @@ TimeCapsule_CatchRateItems:
 	db GRAVITY_BUOY,  GOLD_BERRY
 	db SQUIRTBOTTLE,  GOLD_BERRY
 	db RAINBOW_WING,  GOLD_BERRY
-	db ITEM_B3,       BERRY
 	db HM_CUT,        MYSTERYBERRY
 	db HM_FLY,        MYSTERYBERRY
 	db HM_SURF,       MYSTERYBERRY
