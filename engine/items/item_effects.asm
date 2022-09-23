@@ -19,7 +19,6 @@ ItemEffects:
 	dw NoEffect            ; BRIGHTPOWDER
 	dw PokeBallEffect      ; GREAT_BALL
 	dw PokeBallEffect      ; POKE_BALL
-	dw TownMapEffect       ; TOWN_MAP
 	dw BicycleEffect       ; BICYCLE
 	dw EvoStoneEffect      ; MOON_STONE
 	dw StatusHealingEffect ; ANTIDOTE
@@ -68,8 +67,6 @@ ItemEffects:
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
 	dw CoinCaseEffect      ; COIN_CASE
-	dw ItemfinderEffect    ; ITEMFINDER
-	dw StatusHealingEffect ; POKE_FLUTE
 	dw NoEffect            ; EXP_SHARE
 	dw OldRodEffect        ; OLD_ROD
 	dw GoodRodEffect       ; GOOD_ROD
@@ -192,7 +189,6 @@ ItemEffects:
 	dw NoEffect            ; GOLD_TEETH
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
 	dw NoEffect            ; BRICK_PIECE
 	dw NoEffect            ; SURF_MAIL
 	dw NoEffect            ; LITEBLUEMAIL
