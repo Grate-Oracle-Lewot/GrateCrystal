@@ -243,6 +243,10 @@ ItemNames::
 	li "TM54"
 	li "TM55"
 	li "TM56"
+	li "TM57"
+	li "TM58"
+	li "TM59"
+	li "TM60"
 	assert_list_length NUM_ITEMS + NUM_TMS
 	li "HM01"
 	li "HM02"
