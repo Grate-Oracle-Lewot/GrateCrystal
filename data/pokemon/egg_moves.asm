@@ -434,9 +434,9 @@ PinsirEggMoves:
 	db -1 ; end
 
 LaprasEggMoves:
-	db BUBBLEBEAM
+	db BARRIER
 	db FORESIGHT
-	db WITHDRAW
+	db BUBBLEBEAM
 	db LICK
 	db MEGAHORN
 	db -1 ; end
