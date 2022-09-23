@@ -6,7 +6,7 @@
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 200 ; catch rate
 	db 61 ; base exp
-	db POKE_DOLL, TWISTEDSPOON ; items
+	db TM_TELEPORT, TWISTEDSPOON ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
