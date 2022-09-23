@@ -1,4 +1,4 @@
-## Pokémon Grate Crystal
+# Pokémon Grate Crystal
 
 URL: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
