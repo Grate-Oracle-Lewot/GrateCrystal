@@ -6,7 +6,7 @@
 	db PSYCHIC_TYPE, DARK ; type
 	db 75 ; catch rate
 	db 165 ; base exp
-	db TM_DREAM_EATER, TM_NIGHT_TERROR ; items
+	db TM_HYPNOSIS, TM_DREAM_EATER ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
