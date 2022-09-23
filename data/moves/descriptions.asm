@@ -110,7 +110,7 @@ MoveDescriptions::
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
-	dw WithdrawDescription
+	dw ScaldDescription
 	dw DefenseCurlDescription
 	dw BarrierDescription
 	dw LightScreenDescription
@@ -699,9 +699,9 @@ ConfuseRayDescription:
 	db   "Confuses the foe"
 	next "with a ray.@"
 
-WithdrawDescription:
-	db   "Enters shell to"
-	next "raise DEFENSE.@"
+ScaldDescription:
+	db   "Sprays hot water."
+	next "May BURN the foe.@"
 
 DefenseCurlDescription:
 	db   "Curls up to raise"
