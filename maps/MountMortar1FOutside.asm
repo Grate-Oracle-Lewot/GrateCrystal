@@ -14,8 +14,8 @@ MountMortar1FOutsideEther:
 MountMortar1FOutsideRevive:
 	itemball REVIVE
 
-MountMortar1FOutsideDuskBall:
-	itemball DUSK_BALL
+MountMortar1FOutsideTMScald:
+	itemball TM_SCALD
 
 MountMortar1FOutsideHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
@@ -46,4 +46,4 @@ MountMortar1FOutside_MapEvents:
 	def_object_events
 	object_event 13, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideEther, EVENT_MOUNT_MORTAR_1F_OUTSIDE_ETHER
 	object_event 31, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideRevive, EVENT_MOUNT_MORTAR_1F_OUTSIDE_REVIVE
-	object_event 31,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideDuskBall, EVENT_MOUNT_MORTAR_1F_OUTSIDE_DUSK_BALL
+	object_event 31,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideDuskBall, EVENT_MOUNT_MORTAR_1F_OUTSIDE_TM_SCALD
