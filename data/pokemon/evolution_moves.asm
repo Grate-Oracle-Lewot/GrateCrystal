@@ -79,7 +79,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PONYTA
 	db FURY_ATTACK  ; RAPIDASH
 	db NO_MOVE      ; SLOWPOKE
-	db WITHDRAW     ; SLOWBRO
+	db DEFENSE_CURL ; SLOWBRO
 	db NO_MOVE      ; MAGNEMITE
 	db TRI_ATTACK   ; MAGNETON
 	db NO_MOVE      ; FARFETCH_D
