@@ -2670,7 +2670,7 @@ BattleAnim_Scald:
 	anim_bgeffect ANIM_BG_START_WATER, $0, BG_EFFECT_TARGET, $0
 	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_FIRE
 	anim_call BattleAnim_UserObj_2Row
-	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_sound 16, 2, SFX_BUBBLEBEAM
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 132, 72, $0
 	anim_bgeffect ANIM_BG_WATER, $1c, $0, $0
 	anim_wait 8
