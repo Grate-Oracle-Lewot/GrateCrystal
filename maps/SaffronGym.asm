@@ -29,14 +29,25 @@ SaffronGymSabrinaScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MARSHBADGE
-	writetext SabrinaMarshBadgeText
+.FightDone:
+	checkevent EVENT_GOT_TM_TELEPORT_FROM_SABRINA
+	iftrue .GotTeleportTM
+	writetext SabrinaGiveTeleportTMText
+	promptbutton
+	verbosegiveitem TM_TELEPORT
+	iffalse .NoRoomForTeleportTM
+	setevent EVENT_GOT_TM_TELEPORT_FROM_SABRINA
+	writetext SabrinaExplainTeleportTMText
+	promptbutton
+	writetext SabrinaChampionPredictionText
 	waitbutton
 	closetext
 	end
 
-.FightDone:
+.GotTeleportTM:
 	writetext SabrinaFightDoneText
 	waitbutton
+.NoRoomForTeleportTM
 	closetext
 	end
 
@@ -157,14 +168,27 @@ ReceivedMarshBadgeText:
 	line "SOULBADGE."
 	done
 
-SabrinaMarshBadgeText:
-	text "SABRINA: SOUL-"
-	line "BADGE draws out"
+SabrinaGiveTeleportTMText:
+	text "You've also earn-"
+	line "ed this TM."
+	done
 
-	para "your subliminal"
-	line "powers…"
+SabrinaExplainTeleportTMText:
+	text "TM58 contains"
+	line "TELEPORT."
 
-	para "Although I failed"
+	para "If you use it to"
+	line "switch #MON,"
+
+	para "the one sent out"
+	line "will retain the"
+
+	para "stat increases of"
+	line "its teammate."
+	done
+
+SabrinaChampionPredictionText:
+	text "Although I failed"
 	line "to accurately pre-"
 	cont "dict your power,"
 	cont "this much I know"
