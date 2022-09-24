@@ -169,13 +169,13 @@ ReceivedMarshBadgeText:
 	done
 
 SabrinaGiveTeleportTMText:
-	text "You've also earn-"
-	line "ed this TM."
+	text "SABRINA: You've"
+	line "also earned this."
 	done
 
 SabrinaExplainTeleportTMText:
-	text "TM58 contains"
-	line "TELEPORT."
+	text "SABRINA: TM58"
+	line "contains TELEPORT."
 
 	para "If you use it to"
 	line "switch #MON,"
