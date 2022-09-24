@@ -154,7 +154,8 @@ LtSurgeThunderBadgeText:
 	done
 
 LtSurgeGiveThunderTMText:
-	text "And take this too!"
+	text "SURGE: And take"
+	line "this too!"
 	done
 
 LtSurgeExplainThunderTMText:
