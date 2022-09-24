@@ -27,13 +27,23 @@ PewterGymBrockScript:
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
 	writetext BrockBoulderBadgeText
+.FightDone:
+	checkevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
+	iftrue .GotEarthquakeTM
+	writetext BrockGiveEarthquakeTMText
+	promptbutton
+	verbosegiveitem TM_EARTHQUAKE
+	iffalse .NoRoomForEarthquakeTM
+	setevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
+	writetext BrockExplainEarthquakeTMText
 	waitbutton
 	closetext
 	end
 
-.FightDone:
+.GotEarthquakeTM:
 	writetext BrockFightDoneText
 	waitbutton
+.NoRoomForEarthquakeTM:
 	closetext
 	end
 
@@ -122,12 +132,22 @@ BrockBoulderBadgeText:
 	para "battling you, even"
 	line "though I am a bit"
 	cont "upset."
+	done
 
-	para "That BOULDERBADGE"
-	line "will make your"
+BrockGiveEarthquakeTMText:
+	text "BROCK: You should"
+	line "take this TM, too."
+	done
 
-	para "#MON even more"
-	line "powerful."
+BrockExplainEarthquakeTMText:
+	text "It's EARTHQUAKE."
+	line "Did you know it"
+
+	para "does double damage"
+	line "to an enemy who's"
+
+	para "underground from"
+	line "using DIG?"
 	done
 
 BrockFightDoneText:
