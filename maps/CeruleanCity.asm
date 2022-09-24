@@ -90,34 +90,6 @@ CeruleanCityYoungsterScript:
 	writetext CeruleanCityYoungsterText1
 	waitbutton
 	closetext
-	checkevent EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
-	iffalse .BerserkGenePingsItemfinder
-	end
-
-.BerserkGenePingsItemfinder:
-	waitsfx
-	playsound SFX_SECOND_PART_OF_ITEMFINDER
-	waitsfx
-	playsound SFX_TRANSACTION
-	waitsfx
-	playsound SFX_SECOND_PART_OF_ITEMFINDER
-	waitsfx
-	playsound SFX_TRANSACTION
-	waitsfx
-	playsound SFX_SECOND_PART_OF_ITEMFINDER
-	waitsfx
-	playsound SFX_TRANSACTION
-	waitsfx
-	playsound SFX_SECOND_PART_OF_ITEMFINDER
-	waitsfx
-	playsound SFX_TRANSACTION
-	waitsfx
-	showemote EMOTE_SHOCK, CERULEANCITY_YOUNGSTER, 15
-	turnobject CERULEANCITY_YOUNGSTER, LEFT
-	opentext
-	writetext CeruleanCityYoungsterText2
-	waitbutton
-	closetext
 	end
 
 CeruleanCitySign:
@@ -217,13 +189,13 @@ CeruleanCityYoungsterText1:
 
 	para "horribly powerful"
 	line "#MON in it."
-	done
 
-CeruleanCityYoungsterText2:
-	text "Ayuh?"
+	para "About a year ago,"
+	line "there was a loud"
 
-	para "My ITEMFINDER is"
-	line "responding…"
+	para "rumbling and the"
+	line "cave entrance was"
+	cont "just gone."
 	done
 
 CeruleanCitySignText:
