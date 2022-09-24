@@ -169,7 +169,7 @@ BlaineGiveFireBlastTMText:
 	cont "take this!"
 	done
 
-BlaineGiveFireBlastTMText:
+BlaineExplainFireBlastTMText:
 	text "That's FIRE BLAST."
 
 	para "It's the last copy"
