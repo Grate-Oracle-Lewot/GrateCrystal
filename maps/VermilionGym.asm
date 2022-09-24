@@ -29,10 +29,6 @@ VermilionGymSurgeScript:
 	waitsfx
 	setflag ENGINE_THUNDERBADGE
 	writetext LtSurgeThunderBadgeText
-	waitbutton
-	closetext
-	end
-
 .FightDone:
 	checkevent EVENT_GOT_TM_THUNDER_FROM_SURGE
 	iftrue .GotThunderTM
