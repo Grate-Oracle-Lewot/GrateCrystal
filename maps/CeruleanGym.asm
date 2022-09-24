@@ -75,8 +75,22 @@ CeruleanGymMistyScript:
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
+	checkevent EVENT_GOT_TM_BLIZZARD_FROM_MISTY
+	iftrue .GotBlizzardTM
+	writetext MistyGiveBlizzardTMText
+	promptbutton
+	verbosegiveitem TM_BLIZZARD
+	iffalse .NoRoomForBlizzardTM
+	setevent EVENT_GOT_TM_BLIZZARD_FROM_MISTY
+	writetext MistyExplainBlizzardTMText
+	waitbutton
+	closetext
+	end
+
+.GotBlizzardTM:
 	writetext MistyFightDoneText
 	waitbutton
+.NoRoomForBlizzardTM
 	closetext
 	end
 
@@ -265,6 +279,27 @@ MistyWinLossText:
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
 	line "CASCADEBADGE."
+	done
+
+MistyGiveBlizzardTMText:
+	text "MISTY: And… I guess"
+	line "I should give you"
+	para "this, too."
+	done
+
+MistyExplainBlizzardTMText:
+	text "That TM contains"
+	line "BLIZZARD."
+
+	para "What? Yes, I know"
+	line "you can buy it."
+	cont "Stop being a pest!"
+
+	para "Here's a tip: if"
+	line "it's hailing,"
+
+	para "BLIZZARD always"
+	line "hits."
 	done
 
 MistyFightDoneText:
