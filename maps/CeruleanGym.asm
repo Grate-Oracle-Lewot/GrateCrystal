@@ -288,8 +288,8 @@ MistyGiveBlizzardTMText:
 	done
 
 MistyExplainBlizzardTMText:
-	text "That TM contains"
-	line "BLIZZARD."
+	text "MISTY: That TM"
+	line "contains BLIZZARD."
 
 	para "What? Yes, I know"
 	line "you can buy it."
