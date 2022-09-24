@@ -159,9 +159,11 @@ LtSurgeGiveThunderTMText:
 	done
 
 LtSurgeExplainThunderTMText:
-	text "It's THUNDER! It's"
-	line "super strong, but"
-	cont "not too accurate."
+	text "SURGE: That there"
+	line "is THUNDER! It's"
+
+	para "super strong, but"
+	line "not too accurate."
 
 	para "But do you know?"
 	line "If you use RAIN"
