@@ -35,14 +35,25 @@ SeafoamGymBlaineScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_VOLCANOBADGE
+.FightDone:
+	checkevent EVENT_GOT_TM_FIRE_BLAST_FROM_BLAINE
+	iftrue .GotFireBlastTM
+	writetext BlaineGiveFireBlastTMText
+	promptbutton
+	verbosegiveitem TM_FIRE_BLAST
+	iffalse .NoRoomForFireBlastTM
+	setevent EVENT_GOT_TM_FIRE_BLAST_FROM_BLAINE
+	writetext BlaineExplainFireBlastTMText
+	promptbutton
 	writetext BlaineAfterBattleText
 	waitbutton
 	closetext
 	end
 
-.FightDone:
+.GotFireBlastTM:
 	writetext BlaineFightDoneText
 	waitbutton
+.NoRoomForFireBlastTM
 	closetext
 	end
 
@@ -150,6 +161,19 @@ BlaineAfterBattleText:
 
 	para "we'll have to have"
 	line "a rematch."
+	done
+
+BlaineGiveFireBlastTMText:
+	text "BLAINE: Oh,"
+	line "before I forget,"
+	cont "take this!"
+	done
+
+BlaineGiveFireBlastTMText:
+	text "That's FIRE BLAST."
+
+	para "It's the last copy"
+	line "I have left!"
 	done
 
 BlaineFightDoneText:
