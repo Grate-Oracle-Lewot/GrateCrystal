@@ -140,14 +140,15 @@ BrockGiveEarthquakeTMText:
 	done
 
 BrockExplainEarthquakeTMText:
-	text "It's EARTHQUAKE."
-	line "Did you know it"
+	text "BROCK: It's"
+	line "EARTHQUAKE."
 
-	para "does double damage"
-	line "to an enemy who's"
+	para "Did you know it"
+	line "does double damage"
 
-	para "underground from"
-	line "using DIG?"
+	para "to an enemy who's"
+	line "underground from"
+	cont "using DIG?"
 	done
 
 BrockFightDoneText:
