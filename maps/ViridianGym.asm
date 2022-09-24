@@ -29,13 +29,23 @@ ViridianGymBlueScript:
 	waitsfx
 	setflag ENGINE_EARTHBADGE
 	writetext LeaderBlueAfterText
+.FightDone:
+	checkevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
+	iftrue .GotHyperBeamTM
+	writetext BlueGiveHyperBeamTMText
+	promptbutton
+	verbosegiveitem TM_HYPER_BEAM
+	iffalse .NoRoomForHyperBeamTM
+	setevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
+	writetext BlueExplainHyperBeamTMText
 	waitbutton
 	closetext
 	end
 
-.FightDone:
+.GotHyperBeamTM:
 	writetext LeaderBlueEpilogueText
 	waitbutton
+.NoRoomForHyperBeamTM
 	closetext
 	end
 
@@ -140,6 +150,32 @@ LeaderBlueAfterText:
 
 	para "Don't you forget"
 	line "it!"
+	done
+
+LeaderBlueGiveHyperBeamTMText:
+	text "Here, take your"
+	line "TM."
+	done
+
+LeaderBlueExplainHyperBeamTMText:
+	text "BLUE: It's HYPER"
+	line "BEAM."
+
+	para "Yeah, I know you"
+	line "probably already"
+
+	para "have a copy, but"
+	line "it's what you get."
+
+	para "If you want a good"
+	line "place to train,"
+
+	para "ask Gramps if he"
+	line "can let you into"
+	cont "MT.SILVER."
+
+	para "Only the strongest"
+	line "trainers go there."
 	done
 
 LeaderBlueEpilogueText:
