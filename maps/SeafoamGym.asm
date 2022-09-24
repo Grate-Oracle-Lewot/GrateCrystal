@@ -170,7 +170,8 @@ BlaineGiveFireBlastTMText:
 	done
 
 BlaineExplainFireBlastTMText:
-	text "That's FIRE BLAST."
+	text "BLAINE: That's"
+	line "FIRE BLAST."
 
 	para "It's the last copy"
 	line "I have left!"
