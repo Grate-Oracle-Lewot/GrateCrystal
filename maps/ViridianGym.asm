@@ -32,12 +32,12 @@ ViridianGymBlueScript:
 .FightDone:
 	checkevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
 	iftrue .GotHyperBeamTM
-	writetext BlueGiveHyperBeamTMText
+	writetext LeaderBlueGiveHyperBeamTMText
 	promptbutton
 	verbosegiveitem TM_HYPER_BEAM
 	iffalse .NoRoomForHyperBeamTM
 	setevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
-	writetext BlueExplainHyperBeamTMText
+	writetext LeaderBlueExplainHyperBeamTMText
 	waitbutton
 	closetext
 	end
