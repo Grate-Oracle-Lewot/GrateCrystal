@@ -273,10 +273,10 @@ MartPewter:
 	db GREAT_BALL
 	db SUPER_POTION
 	db SUPER_REPEL
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_ACCURACY
 	db TM_ROLLOUT
 	db -1 ; end
 
@@ -299,10 +299,10 @@ MartLavender:
 	db POTION
 	db SUPER_POTION
 	db MAX_REPEL
-	db ANTIDOTE
-	db PARLYZ_HEAL
+	db REVIVE
+	db POKE_DOLL
 	db AWAKENING
-	db BURN_HEAL
+	db ESCAPE_ROPE
 	db TM_NIGHTMARE
 	db -1 ; end
 
@@ -311,7 +311,7 @@ MartVermilion:
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
-	db REVIVE
+	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
@@ -411,8 +411,8 @@ MartSaffron:
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_POTION
-	db FULL_HEAL
-	db FLOWER_MAIL
+	db X_SPECIAL
+	db X_SP_DEFEND
 	db TM_HYPNOSIS
 	db TM_DREAM_EATER
 	db -1 ; end
