@@ -159,7 +159,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw XEvadeDesc
+	dw SwagBeaconDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -657,8 +657,8 @@ PinkBowDesc:
 	next "type moves. (HOLD)@"
 
 StickDesc:
-	db   "An ordinary leek."
-	next "Sell low.@"
+	db   "Ups critical ratio"
+	next "of FARFETCH'D.@"
 
 SmokeBallDesc:
 	db   "Escape from wild"
@@ -709,8 +709,8 @@ MiracleSeedDesc:
 	next "type moves. (HOLD)@"
 
 ThickClubDesc:
-	db   "A bone of some"
-	next "sort. Sell low.@"
+	db   "x2 ATK for CUBONE"
+	next "or MAROWAK. (HOLD)@"
 
 FocusBandDesc:
 	db   "May prevent faint-"
@@ -883,13 +883,13 @@ FastBallDesc:
 	db   "A BALL for #-"
 	next "MON that flee.@"
 
-XEvadeDesc:
-	db   "Raises EVASION."
-	next "(1 BTL)@"
+SwagBeaconDesc:
+	db   "Points you toward"
+	next "hidden items.@"
 
 LightBallDesc:
-	db   "An odd, electrical"
-	next "orb. (HOLD)@"
+	db   "Doubles SPCL.ATK"
+	next "of PIKACHU. (HOLD)@"
 
 FriendBallDesc:
 	db   "A BALL that makes"
