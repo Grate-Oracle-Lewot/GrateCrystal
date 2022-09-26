@@ -210,7 +210,7 @@ Route29FruitTree:
 	fruittree FRUITTREE_ROUTE_29
 
 Route29Potion:
-	itemball POTION
+	itemball SWAG_BEACON
 
 DudeMovementData1a:
 	step UP
