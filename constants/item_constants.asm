@@ -164,7 +164,7 @@
 	const LEVEL_BALL   ; 9c
 	const LURE_BALL    ; 9d
 	const FAST_BALL    ; 9e
-	const X_EVADE      ; 9f
+	const SWAG_BEACON  ; 9f
 	const LIGHT_BALL   ; a0
 	const FRIEND_BALL  ; a1
 	const MOON_BALL    ; a2
