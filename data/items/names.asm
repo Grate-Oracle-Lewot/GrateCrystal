@@ -158,7 +158,7 @@ ItemNames::
 	li "LEVEL BALL"
 	li "LURE BALL"
 	li "FAST BALL"
-	li "X EVADE"
+	li "SWAG BEACON"
 	li "LIGHT BALL"
 	li "FRIEND BALL"
 	li "MOON BALL"
