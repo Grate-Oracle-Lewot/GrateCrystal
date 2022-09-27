@@ -5,6 +5,7 @@
 	const ROUTE46_FRUIT_TREE1
 	const ROUTE46_FRUIT_TREE2
 	const ROUTE46_POKE_BALL
+	const ROUTE46_POKE_BALL2
 
 Route46_MapScripts:
 	def_scene_scripts
@@ -161,6 +162,9 @@ Route46Sign:
 Route46XSpeed:
 	itemball X_SPEED
 
+Route46SwagBeacon:
+	itemball SWAG_BEACON
+
 Route46FruitTree1:
 	fruittree FRUITTREE_ROUTE_46_1
 
@@ -267,3 +271,4 @@ Route46_MapEvents:
 	object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1
 	object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED
+	object_event  4, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46SwagBeacon, EVENT_ROUTE_46_SWAG_BEACON
