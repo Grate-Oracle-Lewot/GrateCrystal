@@ -534,14 +534,11 @@ _WhitedOutText::
 	autodone
 
 _ItemfinderItemNearbyText::
-	text "Yes! ITEMFINDER"
-	line "indicates there's"
-	cont "an item nearby."
+	text "Swag detected!"
 	prompt
 
 _ItemfinderNopeText::
-	text "Nope! ITEMFINDER"
-	line "isn't responding."
+	text "No reaction…"
 	prompt
 
 _PoisonFaintText::
