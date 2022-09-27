@@ -2319,6 +2319,7 @@ UseRod:
 
 ItemfinderEffect:
 	farcall ItemFinder
+	jp UseDisposableItem
 	ret
 
 PocketPCEffect:
