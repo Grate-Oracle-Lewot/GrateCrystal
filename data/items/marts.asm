@@ -68,7 +68,7 @@ MartViolet:
 	db X_DEFEND
 	db X_ATTACK
 	db X_SPEED
-	db FLOWER_MAIL
+	db SWAG_BEACON
 	db -1 ; end
 
 MartAzalea:
@@ -106,12 +106,13 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 7 ; # items
+	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
 	db REPEL
 	db POKE_DOLL
+	db SWAG_BEACON
 	db EVIOLITE
 	db FLOWER_MAIL
 	db -1 ; end
@@ -221,8 +222,8 @@ MartEcruteak:
 
 MartMahogany1:
 	db 3 ; # items
-	db NUGGET
 	db SLOWPOKETAIL
+	db SWAG_BEACON
 	db TM_THIEF
 	db -1 ; end
 
@@ -307,20 +308,17 @@ MartLavender:
 	db -1 ; end
 
 MartVermilion:
-	db 9 ; # items
+	db 6 ; # items
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
+	db SWAG_BEACON
 	db LITEBLUEMAIL
 	db TM_THUNDERPUNCH
 	db -1 ; end
 
 MartCeladon2F1:
-	db 7 ; # items
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -328,6 +326,7 @@ MartCeladon2F1:
 	db REVIVE
 	db SUPER_REPEL
 	db MAX_REPEL
+	db SWAG_BEACON
 	db -1 ; end
 
 MartCeladon2F2:
