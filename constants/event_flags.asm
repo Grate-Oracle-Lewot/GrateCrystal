@@ -1565,7 +1565,8 @@
 	const EVENT_ROUTE_8_TM_HYPNOSIS
 	const EVENT_MOUNT_MORTAR_1F_OUTSIDE_TM_SCALD
 	const EVENT_ROUTE_46_SWAG_BEACON
-; Unused: next 48 (now 1) events
+	const EVENT_ROUTE_19_SWAG_BEACON
+; Unused: next 48 (now 0) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
