@@ -187,6 +187,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
+- Clock reset procedure simplified
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
 - Tiles animate even when textboxes are open
 - Enemy trainers have maximum happiness for a powerful Return
