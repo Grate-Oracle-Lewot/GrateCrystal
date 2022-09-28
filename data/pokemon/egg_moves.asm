@@ -259,8 +259,8 @@ FarfetchDEggMoves:
 
 DoduoEggMoves:
 	db QUICK_ATTACK
-	db FAINT_ATTACK
 	db FLAIL
+	db THRASH
 	db LOW_KICK
 	db EGG_BOMB
 	db SOFTBOILED
