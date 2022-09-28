@@ -30,10 +30,13 @@ Route23OfficerText:
 	para "That's cute."
 
 	para "You'll need more"
-	line "than that before"
+	line "than that before I"
 
-	para "I can let you in"
+	para "can let you in"
 	line "here."
+
+	para "And yes, I am paid"
+	line "to stand here."
 	done
 
 IndigoPlateauSignText:
