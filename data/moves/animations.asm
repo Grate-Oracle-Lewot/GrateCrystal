@@ -2675,9 +2675,12 @@ BattleAnim_Scald:
 	anim_wait 32
 	anim_sound 0, 1, SFX_EMBER
 	anim_obj ANIM_OBJ_EMBER, 132, 68, $30
-	anim_wait 16
 	anim_bgeffect ANIM_BG_WATER, $1c, $0, $0
-	anim_wait 42
+	anim_wait 8
+	anim_bgeffect ANIM_BG_WATER, $8, $0, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_WATER, $30, $0, $0
+	anim_wait 24
 	anim_call BattleAnim_ShowMon_1
 	anim_bgeffect ANIM_BG_END_WATER, $0, $0, $0
 	anim_ret
