@@ -130,7 +130,7 @@ ItemNames::
 	li "STARDUST"
 	li "STAR PIECE"
 	li "BASEMENT KEY"
-	li "PASS"
+	li "TRAIN PASS"
 	li "DICTIONARY"
 	li "ODD ROD"
 	li "EVIOLITE"
