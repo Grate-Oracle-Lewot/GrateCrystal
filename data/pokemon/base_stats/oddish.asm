@@ -7,7 +7,7 @@
 	db 255 ; catch rate
 	db 78 ; base exp
 	db REVIVAL_HERB, LEAF_STONE ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_F75 ; gender ratio
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
 	db 5 ; unknown 2
