@@ -1241,7 +1241,7 @@ DoduoEvosAttacks:
 	db 30, JUMP_KICK
 	db 33, DRILL_PECK
 	db 37, AGILITY
-	db 42, THRASH
+	db 42, MEGA_KICK
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
@@ -1256,7 +1256,7 @@ DodrioEvosAttacks:
 	db 30, TRIPLE_KICK
 	db 38, DRILL_PECK
 	db 47, AGILITY
-	db 51, THRASH
+	db 51, MEGA_KICK
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
