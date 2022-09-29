@@ -205,6 +205,7 @@ Route22HouseGiovanniScript:
 	iftrue .NoRematch
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	writetext Route22HouseGiovanniBeforeText
+	waitbutton
 	winlosstext Route22HouseGiovanniBeatenText, 0
 	loadtrainer BOSS, GIOVANNI
 	startbattle
@@ -230,6 +231,7 @@ Route22HouseJessieScript:
 	iftrue .NoRematch
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	writetext Route22HouseJessieBeforeText
+	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
 	loadtrainer JESSIE, JAMES
 	startbattle
@@ -255,6 +257,7 @@ Route22HouseJamesScript:
 	iftrue .NoRematch
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	writetext Route22HouseJamesBeforeText
+	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
 	loadtrainer JESSIE, JAMES
 	startbattle
