@@ -50,6 +50,41 @@ WhirlIslandLugiaChamberSlowkingScript:
 	jumptext WhirlIslandLugiaChamberSlowkingDuringText
 
 .AfterLugiaScript
+	checkevent EVENT_OPENED_MT_SILVER
+	iftrue .CheckMoney
+	jumptext WhirlIslandLugiaChamberSlowkingAfterText
+
+.CheckMoney
+	checkmoney YOUR_MONEY, MAX_MONEY
+	ifequal HAVE_LESS, .NotEnoughMoney
+	opentext
+	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
+	yesorno
+	iffalse .RareCandyRefusedScript
+	giveitem RARE_CANDY, 99
+	iffalse .RareCandyNoRoomScript
+	special PlaceMoneyTopRight
+	takemoney YOUR_MONEY, MAX_MONEY
+	playsound SFX_TRANSACTION
+	waitsfx
+	writetext WhirlIslandLugiaChamberSlowkingRareCandyBoughtText
+	waitbutton
+	closetext
+	end
+
+.RareCandyRefusedScript
+	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
+	waitbutton
+	closetext
+	end
+
+.RareCandyNoRoomScript
+	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney
 	jumptext WhirlIslandLugiaChamberSlowkingAfterText
 
 LugiaText:
@@ -109,6 +144,37 @@ WhirlIslandLugiaChamberSlowkingAfterText:
 	para "…"
 
 	para "Please don't tell…"
+	done
+
+WhirlIslandLugiaChamberSlowkingRareCandySellText:
+	text "SLOWKING: …"
+
+	para "Hey, uh, could you"
+	line "do me a favor…?"
+
+	para "…"
+
+	para "If you give me"
+	line "¥999999, I'll give"
+	cont "you 99 RARE"
+	cont "CANDIES…"
+
+	para "…"
+
+	para "What do you say?"
+	done
+
+WhirlIslandLugiaChamberSlowkingRareCandyRefusedText:
+	text "…Oh… okay…"
+	done
+
+WhirlIslandLugiaChamberSlowkingRareCandyNoRoomText:
+	text "…Oh… you can't"
+	line "carry them…"
+	done
+
+WhirlIslandLugiaChamberSlowkingRareCandyBoughtText:
+	text "…Thanks, kid…"
 	done
 
 WhirlIslandLugiaChamber_MapEvents:
