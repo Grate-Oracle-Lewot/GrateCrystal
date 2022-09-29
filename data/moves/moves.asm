@@ -173,7 +173,7 @@ Moves:
 	move HYPER_FANG,   EFFECT_LEECH_HIT,          80, NORMAL,       PHYSICAL,  90, 10,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,          SPECIAL,  100,  5,  10
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,       STATUS,   100, 30,   0
-	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, CURSE_TYPE,   SPECIAL,  100, 10,  33
+	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         90, CURSE_TYPE,   SPECIAL,  100, 10,  33
 	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,       PHYSICAL, 100, 10,   0
 	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,       PHYSICAL, 100, 20,   0
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, FAIRY,        STATUS,   100, 10,   0
