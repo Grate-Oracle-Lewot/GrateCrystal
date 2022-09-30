@@ -82,13 +82,13 @@ SeafoamCavePuzzleChamberWallPatternRight:
 	end
 
 SeafoamCavePuzzleChamberWallPatternLeftText:
-	text "Patterns appeared"
-	line "on the walls…"
+	text "Familiar symbols"
+	line "dot the walls…"
 	done
 
 SeafoamCavePuzzleChamberWallPatternRightText:
-	text "Patterns appeared"
-	line "on the walls…"
+	text "Familiar symbols"
+	line "dot the walls…"
 	done
 
 SeafoamCavePuzzleChamberWallHoleText:
@@ -115,7 +115,7 @@ SeafoamCavePuzzleChamberSolvedText:
 	line "peculiar symbol:"
 
 	para "a square and a"
-	line "circle balance"
+	line "circle balanced"
 	cont "atop a triangle."
 	done
 
