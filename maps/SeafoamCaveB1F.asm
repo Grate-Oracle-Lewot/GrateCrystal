@@ -53,6 +53,8 @@ SeafoamCaveB1FKarenScript:
 	special FadeOutMusic
 	special FadeBlackQuickly
 	appear SEAFOAMCAVEB1F_OAK2
+	playsound SFX_WARP_TO
+	waitsfx
 	special FadeInQuickly
 	turnobject SEAFOAMCAVEB1F_OAK1, DOWN
 	turnobject PLAYER, DOWN
@@ -72,8 +74,8 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FPoisonOakGivePokemonText
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_OAK1, 15
-	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_KAREN, 15
+	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_OAK1, 5
+	showemote EMOTE_SHOCK, SEAFOAMCAVEB1F_KAREN, 10
 	opentext
 	writetext SeafoamCaveB1FKarenCutOutOfScriptText
 	waitbutton
@@ -87,6 +89,7 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FPoisonOakChampionText
 	waitbutton
 	closetext
+	turnobject SEAFOAMCAVEB1F_OAK1, LEFT
 	opentext
 	writetext SeafoamCaveB1FOakBlitherText
 	waitbutton
@@ -111,6 +114,8 @@ SeafoamCaveB1FKarenScript:
 	closetext
 	special FadeBlackQuickly
 	disappear SEAFOAMCAVEB1F_OAK2
+	playsound SFX_WARP_TO
+	waitsfx
 	special FadeInQuickly
 	pause 42
 	opentext
@@ -257,8 +262,8 @@ SeafoamCaveB1FOakCongratulationsText:
 	line "trainer in all of"
 	cont "KANTO and JOHTO!"
 
-	para "You're a true"
-	line "prodigy!"
+	para "You're truly"
+	line "amazing!"
 
 	para "Cough… pardon me."
 
@@ -314,9 +319,8 @@ SeafoamCaveB1FKarenCutOutOfScriptText:
 	text "LEWOT: Uh… dude,"
 	line "you realize I can"
 
-	para "just cut you out"
-	line "of the script,"
-	cont "right?"
+	para "just write you out"
+	line "of the script?"
 	done
 
 SeafoamCaveB1FPoisonOakButYouDidntText:
