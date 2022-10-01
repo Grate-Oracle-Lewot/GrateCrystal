@@ -167,7 +167,7 @@ Moves:
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        110, WATER,        PHYSICAL,  85, 10,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,         SPECIAL,  100, 15,  20
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          25, NORMAL,       PHYSICAL,  90, 15,   0
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,       PHYSICAL,  95, 15,   0
+	move BONEMERANG,   EFFECT_DOUBLE_HIT,         45, GROUND,       PHYSICAL,  95, 15,   0
 	move REST,         EFFECT_HEAL,                0, NORMAL,       STATUS,   100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,         PHYSICAL, 100, 10,  30
 	move HYPER_FANG,   EFFECT_LEECH_HIT,          80, NORMAL,       PHYSICAL,  90, 10,   0
@@ -210,7 +210,7 @@ Moves:
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, GHOST,        STATUS,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,          SPECIAL,  100, 15, 100
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         90, FIGHTING,     SPECIAL,  100, 10,   0
-	move BONE_RUSH,    EFFECT_MULTI_HIT,          40, GROUND,       PHYSICAL,  90, 10,   0
+	move BONE_RUSH,    EFFECT_MULTI_HIT,          30, GROUND,       PHYSICAL,  90, 10,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       STATUS,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,       PHYSICAL,  90, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         STATUS,   100, 10,   0
