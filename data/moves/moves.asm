@@ -180,12 +180,12 @@ Moves:
 	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,        PHYSICAL,  90, 15,  10
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,       STATUS,   100,  1,   0
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        15, FIGHTING,     PHYSICAL, 100, 10,   0
-	move THIEF,        EFFECT_THIEF,              40, DARK,         PHYSICAL, 100, 10, 100
+	move THIEF,        EFFECT_THIEF,              40, DARK,         PHYSICAL, 100, 30, 100
 	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,          STATUS,   100, 10,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, PSYCHIC_TYPE, STATUS,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,   100, 15,   0
 	move FLAME_WHEEL,  EFFECT_BURN_HIT,           60, FIRE,         PHYSICAL, 100, 25,  10
-	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100, 30,  30
+	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100, 20,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,       STATUS,   100, 30,   0
