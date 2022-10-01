@@ -340,50 +340,42 @@ RadioTower5FDirectorDescribeClearBellText:
 	line "tower right here"
 	cont "in GOLDENROD CITY."
 
-	para "But it was old and"
-	line "creaky."
-
-	para "So we replaced it"
-	line "with our RADIO"
-	cont "TOWER."
+	para "But it was torn"
+	line "down to build this"
+	cont "RADIO TOWER."
 
 	para "We dug up that"
 	line "bell during"
 	cont "construction."
 
-	para "I heard that all"
-	line "sorts of #MON"
-
-	para "lived in GOLDENROD"
-	line "in the past."
-
-	para "Perhaps…"
-
-	para "That bell has some"
+	para "It may have some"
 	line "connection to the"
 
-	para "TIN TOWER in"
-	line "ECRUTEAK CITY…"
+	para "two towers in"
+	line "ECRUTEAK…"
 
-	para "Ah!"
+	para "In fact, I heard"
+	line "TEAM ROCKET saying"
 
-	para "That reminds me…"
+	para "something was"
+	line "happening at the"
+	cont "TIN TOWER…"
 
-	para "I overheard TEAM"
-	line "ROCKET whispering."
+	para "At any rate, I'm"
+	line "sure that if you"
 
-	para "Apparently, some-"
-	line "thing is going on"
-	cont "at the TIN TOWER."
+	para "were to ring that"
+	line "bell in battle,"
 
-	para "I have no idea"
-	line "what is happening,"
+	para "sleeping #MON"
+	line "would wake up."
 
-	para "but you might look"
-	line "into it."
+	para "That's bound to"
+	line "come in handy, eh?"
 
-	para "OK, I better go to"
-	line "my OFFICE."
+	para "Well, I'd better"
+	line "get back to my"
+	cont "OFFICE."
 	done
 
 RadioTower5FDirectorText:
