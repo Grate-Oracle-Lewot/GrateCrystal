@@ -91,6 +91,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). A few other changes to move powers, and almost every move has received an accuracy boost.
 
+- PP rebalanced for many moves.
+
 - Many moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Hyper Fang drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
