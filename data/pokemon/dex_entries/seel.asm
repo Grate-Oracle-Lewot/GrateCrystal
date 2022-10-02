@@ -1,10 +1,10 @@
 	db "SEAL@" ; species name
 	dw 307, 1980 ; height, weight
 
-	db   "It's depicted as"
-	next "sticking its tongue"
-	next "out due to its"
+	db   "It's more closely"
+	next "related to eels"
+	next "than seals, hence"
 
-	page "habit of doing so"
-	next "at passersby from"
-	next "atop ice floes.@"
+	page "the spelling of"
+	next "its name."
+	next "@"
