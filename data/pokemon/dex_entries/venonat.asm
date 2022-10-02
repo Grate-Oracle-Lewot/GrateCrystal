@@ -1,10 +1,10 @@
-	db "INSECT@" ; species name
+	db "FUZZBALL@" ; species name
 	dw 303, 660 ; height, weight
 
-	db   "The small bugs it"
-	next "eats appear only"
-	next "at night, so it"
+	db   "It evolved to look"
+	next "like a now-extinct"
+	next "variety of purple"
 
-	page "sleeps in a hole"
-	next "in a tree until"
-	next "night falls.@"
+	page "bush that it used"
+	next "to live inside of."
+	next "@"
