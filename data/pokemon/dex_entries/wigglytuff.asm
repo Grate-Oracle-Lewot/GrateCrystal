@@ -1,10 +1,10 @@
 	db "BALLOON@" ; species name
 	dw 303, 260 ; height, weight
 
-	db   "The rich, fluffy"
-	next "fur that covers"
-	next "its body feels so"
+	db   "Its tall ears can"
+	next "hear so well that"
+	next "it can perfectly"
 
-	page "good that anyone"
-	next "who feels it can't"
-	next "stop touching it.@"
+	page "replicate the song"
+	next "of any person or"
+	next "#MON.@"
