@@ -1,10 +1,10 @@
-	db "DARK@" ; species name
+	db "HECKHOUND@" ; species name
 	dw 200, 240 ; height, weight
 
-	db   "Around dawn, its"
-	next "ominous howl"
-	next "echoes through the"
+	db   "It hunts under"
+	next "cover of darkness,"
+	next "spewing flames if"
 
-	page "area to announce"
-	next "that this is its"
-	next "territory.@"
+	page "it needs to see."
+	next "It sleeps through"
+	next "the day.@"
