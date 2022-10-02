@@ -50,41 +50,6 @@ WhirlIslandLugiaChamberSlowkingScript:
 	jumptext WhirlIslandLugiaChamberSlowkingDuringText
 
 .AfterLugiaScript
-	checkevent EVENT_OPENED_MT_SILVER
-	iftrue .CheckMoney
-	jumptext WhirlIslandLugiaChamberSlowkingAfterText
-
-.CheckMoney
-	checkmoney YOUR_MONEY, MAX_MONEY
-	ifequal HAVE_LESS, .NotEnoughMoney
-	opentext
-	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
-	yesorno
-	iffalse .RareCandyRefusedScript
-	giveitem RARE_CANDY, 99
-	iffalse .RareCandyNoRoomScript
-	special PlaceMoneyTopRight
-	takemoney YOUR_MONEY, MAX_MONEY
-	playsound SFX_TRANSACTION
-	waitsfx
-	writetext WhirlIslandLugiaChamberSlowkingRareCandyBoughtText
-	waitbutton
-	closetext
-	end
-
-.RareCandyRefusedScript
-	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
-	waitbutton
-	closetext
-	end
-
-.RareCandyNoRoomScript
-	writetext WhirlIslandLugiaChamberSlowkingRareCandySellText
-	waitbutton
-	closetext
-	end
-
-.NotEnoughMoney
 	jumptext WhirlIslandLugiaChamberSlowkingAfterText
 
 LugiaText:
