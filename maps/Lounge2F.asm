@@ -242,7 +242,22 @@ LoungeRedScript:
 	end
 
 LoungeGymGuideScript:
-	jumptextfaceplayer LoungeGymGuideText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_RED
+	iftrue .GiveRareCandies
+	writetext LoungeGymGuideBeforeText
+	waitbutton
+	closetext
+	end
+
+.GiveRareCandies
+	writetext LoungeGymGuideAfterText
+	verbosegiveitem RARE_CANDY, 99
+	writetext LoungeGymGuideMoreText
+	waitbutton
+	closetext
+	end
 
 LoungeChuckTalkText:
 	text "One! Two! Three!"
@@ -511,7 +526,7 @@ LoungeRedText:
 	line "…"
 	done
 
-LoungeGymGuideText:
+LoungeGymGuideBeforeText:
 	text "Yo, CHAMPION!"
 
 	para "Pretty snazzy"
@@ -526,6 +541,28 @@ LoungeGymGuideText:
 
 	para "out of them if you"
 	line "try!"
+	done
+
+LoungeGymGuideAfterText:
+	text "Yo, CHAMP!"
+	line "I heard!"
+
+	para "You defeated RED!"
+
+	para "Nobody's done that"
+	line "in three years!"
+
+	para "I think that kind"
+	line "of accomplishment"
+
+	para "deserves a specta-"
+	line "cular reward!"
+	done
+
+LoungeGymGuideMoreText:
+	text "And there's more"
+	line "where that came"
+	cont "from, baby!"
 	done
 
 Lounge2F_MapEvents:
