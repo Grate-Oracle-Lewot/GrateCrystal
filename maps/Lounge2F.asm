@@ -254,7 +254,14 @@ LoungeGymGuideScript:
 .GiveRareCandies
 	writetext LoungeGymGuideAfterText
 	verbosegiveitem RARE_CANDY, 99
+	iffalse .RareCandiesNoRoom
 	writetext LoungeGymGuideMoreText
+	waitbutton
+	closetext
+	end
+
+.RareCandiesNoRoom
+	writetext LoungeGymGuideNoRoomText
 	waitbutton
 	closetext
 	end
@@ -563,6 +570,11 @@ LoungeGymGuideMoreText:
 	text "And there's more"
 	line "where that came"
 	cont "from, baby!"
+	done
+
+LoungeGymGuideNoRoomText:
+	text "Oh, you don't have"
+	line "room… Too bad…"
 	done
 
 Lounge2F_MapEvents:
