@@ -1,10 +1,10 @@
 	db "SEA LION@" ; species name
 	dw 507, 2650 ; height, weight
 
-	db   "Sailors mistook"
-	next "this #MON for a"
-	next "mermaid before"
+	db   "Myths of mermaids"
+	next "originate from"
+	next "sailors catching"
 
-	page "modern science"
-	next "recognized it as a"
-	next "marine musteloid.@"
+	page "distant glimpses"
+	next "of this graceful"
+	next "#MON.@"
