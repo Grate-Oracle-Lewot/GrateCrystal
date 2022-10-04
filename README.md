@@ -109,6 +109,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
 - "Link Voucher" for evolving Pokémon that evolve by trade
 - New held items that each completely prevent a specific status condition
+- Type boost held items now boost their type's power by 19% instead of 10%
 - X Sp. Defend, Dusk Ball, and Eviolite
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
