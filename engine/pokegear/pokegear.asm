@@ -1451,6 +1451,7 @@ LoadPokegearRadioChannelPointer: ; unreferenced
 RadioChannels:
 ; entries correspond to constants/radio_constants.asm
 ; frequency value given here = 4 × ingame_frequency − 2
+	dbw 2, .MewtwoRadio             ; 01.0
 	dbw 16, .PKMNTalkAndPokedexShow ; 04.5
 	dbw 28, .PokemonMusic           ; 07.5
 	dbw 32, .LuckyChannel           ; 08.5
@@ -1531,6 +1532,14 @@ RadioChannels:
 	jr nz, .NoSignal
 .ok
 	jp LoadStation_EvolutionRadio
+
+.MewtwoRadio:
+	ld a, TRUE
+	cp EVENT_LAV_RADIO_TOWER_TAKEOVER
+	jr nz, .NoSignal
+	cp EVENT_FOUGHT_MEWTWO
+	jr z, .NoSignal
+	jp LoadStation_MewtwoRadio
 
 .NoSignal:
 	call NoRadioStation
@@ -1670,6 +1679,17 @@ LoadStation_PokeFluteRadio:
 
 LoadStation_EvolutionRadio:
 	ld a, EVOLUTION_RADIO
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	call Radio_BackUpFarCallParams
+	ld de, UnownStationName
+	ret
+
+LoadStation_MewtwoRadio:
+	ld a, MEWTWO_RADIO
 	ld [wCurRadioLine], a
 	xor a
 	ld [wNumRadioLinesPrinted], a
