@@ -42,7 +42,7 @@ PidgeyEggMoves:
 
 RattataEggMoves:
 	db SCREECH
-	db FLAME_WHEEL
+	db MEAN_LOOK
 	db FURY_SWIPES
 	db COUNTER
 	db REVERSAL
@@ -61,10 +61,10 @@ SpearowEggMoves:
 EkansEggMoves:
 	db PURSUIT
 	db SPITE
-	db HAZE
 	db EGG_BOMB
 	db SOFTBOILED
 	db SUPER_FANG
+	db MEAN_LOOK
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -193,7 +193,7 @@ AbraEggMoves:
 	db LIGHT_SCREEN
 	db ENCORE
 	db BARRIER
-	db AURA_SPHERE
+	db KINESIS
 	db -1 ; end
 
 MachopEggMoves:
@@ -366,10 +366,10 @@ RhyhornEggMoves:
 	db -1 ; end
 
 ChanseyEggMoves:
-	db PRESENT
-	db METRONOME
 	db HEAL_BELL
+	db METRONOME
 	db PLAY_ROUGH
+	db PRESENT
 	db -1 ; end
 
 TangelaEggMoves:
@@ -386,17 +386,17 @@ KangaskhanEggMoves:
 	db FOCUS_ENERGY
 	db SAFEGUARD
 	db DISABLE
-	db AURA_SPHERE
+	db PRESENT
 	db -1 ; end
 
 HorseaEggMoves:
 	db FLAIL
-	db AURORA_BEAM
-	db OCTAZOOKA
 	db DISABLE
 	db DRAGON_RAGE
 	db OUTRAGE
 	db SIGNAL_BEAM
+	db AURORA_BEAM
+	db OCTAZOOKA
 	db -1 ; end
 
 GoldeenEggMoves:
@@ -485,7 +485,7 @@ DratiniEggMoves:
 	db SILVER_WIND
 	db EARTH_POWER
 	db AIR_SLASH
-	db AURA_SPHERE
+	db DOUBLE_EDGE
 	db -1 ; end
 
 ChikoritaEggMoves:
@@ -552,7 +552,7 @@ SpinarakEggMoves:
 ChinchouEggMoves:
 	db SCREECH
 	db BUBBLEBEAM
-	db AURA_SPHERE
+	db THUNDERSHOCK
 	db -1 ; end
 
 PichuEggMoves:
@@ -717,9 +717,9 @@ GligarEggMoves:
 	db -1 ; end
 
 SnubbullEggMoves:
-	db METRONOME
-	db FAINT_ATTACK
 	db REFLECT
+	db METRONOME
+	db MEAN_LOOK
 	db PRESENT
 	db HEAL_BELL
 	db -1 ; end
@@ -728,7 +728,7 @@ QwilfishEggMoves:
 	db FLAIL
 	db HAZE
 	db BUBBLEBEAM
-	db SUPERSONIC
+	db MEAN_LOOK
 	db SPIKE_CANNON
 	db -1 ; end
 
@@ -848,11 +848,11 @@ StantlerEggMoves:
 	db -1 ; end
 
 TyrogueEggMoves:
+	db FISSURE
 	db KARATE_CHOP
 	db SLAM
 	db BIDE
 	db PLAY_ROUGH
-	db AURA_SPHERE
 	db -1 ; end
 
 SmoochumEggMoves:
@@ -887,7 +887,7 @@ MiltankEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
-	db PURSUIT
+	db MEAN_LOOK
 	db STOMP
 	db OUTRAGE
 	db FOCUS_ENERGY
