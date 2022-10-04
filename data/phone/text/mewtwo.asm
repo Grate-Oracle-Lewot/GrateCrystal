@@ -3,7 +3,7 @@ MewtwoPhoneCallerText:
 	line "for the #MON"
 
 	para "trainer known as"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 
 	para "Your presence is"
 	line "requested at the"
