@@ -242,25 +242,6 @@ _CheckMobileAdapterText:: ; unreferenced
 
 ; Mobile Adapter End
 
-_ThePasswordIsText:: ; unreferenced
-	text "The password is:"
-	line ""
-	done
-
-_IsThisOKText:: ; unreferenced
-	text "Is this OK?"
-	done
-
-_EnterTheIDNoText:: ; unreferenced
-	text "Enter the"
-	line "ID no."
-	done
-
-_EnterTheAmountText:: ; unreferenced
-	text "Enter the"
-	line "amount."
-	done
-
 _NothingToChooseText::
 	text "There's nothing to"
 	line "choose."
@@ -1084,6 +1065,56 @@ _BuenaOffTheAirText::
 	line ""
 	done
 
+_MewtwoRadioText1::
+	text_start
+	line "This is a message"
+	done
+
+_MewtwoRadioText2::
+	text_start
+	line "for the #MON"
+	done
+
+_MewtwoRadioText3::
+	text_start
+	line "trainer known as"
+	done
+
+_MewtwoRadioText4::
+	text_start
+	line "<PLAYER>."
+	done
+
+_MewtwoRadioText5::
+	text_start
+	line "Your presence is"
+	done
+
+_MewtwoRadioText6::
+	text_start
+	line "requested at the"
+	done
+
+_MewtwoRadioText7::
+	text_start
+	line "RADIO TOWER in"
+	done
+
+_MewtwoRadioText8::
+	text_start
+	line "LAVENDER TOWN."
+	done
+
+_MewtwoRadioText9::
+	text_start
+	line "Bring powerful"
+	done
+
+_MewtwoRadioText10::
+	text_start
+	line "#MON."
+	done
+
 _EnemyWithdrewText::
 	text "<ENEMY>"
 	line "withdrew"
@@ -1101,109 +1132,6 @@ _EnemyUsedOnText::
 	text_ram wEnemyMonNickname
 	text "!"
 	autodone
-
-_ThatCantBeUsedRightNowText:: ; unreferenced
-	text "That can't be used"
-	line "right now."
-	prompt
-
-_ThatItemCantBePutInThePackText:: ; unreferenced
-	text "That item can't be"
-	line "put in the PACK."
-	done
-
-_TheItemWasPutInThePackText:: ; unreferenced
-	text "The @"
-	text_ram wStringBuffer1
-	text_start
-	line "was put in the"
-	cont "PACK."
-	done
-
-_RemainingTimeText:: ; unreferenced
-	text "Remaining Time"
-	done
-
-_YourMonsHPWasHealedText:: ; unreferenced
-	text "Your #MON's HP"
-	line "was healed."
-	prompt
-
-_WarpingText:: ; unreferenced
-	text "Warping…"
-	done
-
-_ChangeWhichNumberText:: ; unreferenced
-	text "Which number"
-	line "should be changed?"
-	done
-
-_WillYouPlayWithMonText:: ; unreferenced
-	text "Will you play with"
-	line "@"
-	text_ram wStringBuffer2
-	text "?"
-	done
-
-_YouNeedTwoMonForBreedingText:: ; unreferenced
-	text "You need two #-"
-	line "MON for breeding."
-	prompt
-
-_BreedingIsNotPossibleText:: ; unreferenced
-	text "Breeding is not"
-	line "possible."
-	prompt
-
-_CompatibilityShouldTheyBreedText:: ; unreferenced
-	text "The compatibility"
-	line "is @"
-	text_decimal wBreedingCompatibility, 1, 3
-	text "."
-	cont "Should they breed?"
-	done
-
-_ThereIsNoEggText:: ; unreferenced
-	text "There is no EGG."
-	line ""
-	prompt
-
-_ItsGoingToHatchText:: ; unreferenced
-	text "It's going to"
-	line "hatch!"
-	prompt
-
-_TestEventText:: ; unreferenced
-	text "Test event"
-	line "@"
-	text_decimal wStringBuffer2, 1, 2
-	text "?"
-	done
-
-_StartText:: ; unreferenced
-	text "Start!"
-	done
-
-_EndText:: ; unreferenced
-	text "End!"
-	done
-
-_ForABoyText:: ; unreferenced
-	text "For a boy!"
-	done
-
-_ForAGirlText:: ; unreferenced
-	text "For a girl!"
-	done
-
-_DoesntConcernABoyText:: ; unreferenced
-	text "This doesn't"
-	line "concern a boy!"
-	done
-
-_TheBoxIsFullText:: ; unreferenced
-	text "The BOX is full!"
-	done
 
 ; Mobile Adapter
 
@@ -1264,11 +1192,6 @@ _TradingMonForOTMonText::
 	done
 
 ; Mobile Adapter End
-
-_ObtainedTheVoltorbBadgeText:: ; unreferenced
-	text "Obtained the"
-	line "VOLTORBBADGE!"
-	done
 
 _AskFloorElevatorText::
 	text "Which floor?"
