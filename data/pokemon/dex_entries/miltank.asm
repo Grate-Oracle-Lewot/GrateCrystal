@@ -1,10 +1,10 @@
 	db "MILK COW@" ; species name
 	dw 311, 1660 ; height, weight
 
-	db   "In order to milk a"
-	next "MILTANK, one must"
-	next "have a knack for"
+	db   "Its milk is unique"
+	next "among #MON in"
+	next "that it can be"
 
-	page "rhythmically pull-"
-	next "ing up and down"
-	next "on its udders.@"
+	page "safely consumed by"
+	next "any species."
+	next "@"
