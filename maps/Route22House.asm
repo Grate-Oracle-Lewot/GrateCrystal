@@ -451,7 +451,7 @@ Route22HouseRealKogaAfterText:
 	done
 
 Route22HouseLanceBeforeText:
-	text "CHAMPION <PLAY_G>!"
+	text "CHAMPION <PLAYER>!"
 
 	para "I sometimes spend"
 	line "time here when I'm"
