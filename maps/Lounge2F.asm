@@ -270,7 +270,7 @@ LoungeChuckTalkText:
 	text "One! Two! Three!"
 	line "Four!"
 
-	para "Hey, <PLAY_G>!"
+	para "Hey, <PLAYER>!"
 	line "I'm working out!"
 	done
 
@@ -462,7 +462,7 @@ LoungeBlaineRematchText:
 	line "I'm still a GYM"
 	cont "LEADER!"
 
-	para "<PLAY_G>! Let's"
+	para "<PLAYER>! Let's"
 	line "battle again!"
 	done
 
