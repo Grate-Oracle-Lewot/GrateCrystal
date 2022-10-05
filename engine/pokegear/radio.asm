@@ -32,7 +32,7 @@ RadioJumptable:
 	dw PokeFluteRadio    ; $08
 	dw UnownRadio        ; $09
 	dw EvolutionRadio    ; $0a
-	dw MewtwoRadio       ; $0b
+	dw MewtwoRadio1      ; $0b
 	assert_table_length NUM_RADIO_CHANNELS
 ; OaksPKMNTalk
 	dw OaksPKMNTalk2     ; $0c
