@@ -257,7 +257,7 @@ LoungeFalknerTalkText:
 	done
 
 LoungeFalknerRematchText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 	line "Help me show this"
 
 	para "blockhead how"
@@ -270,7 +270,7 @@ LoungeFalknerRematchText:
 
 LoungeFalknerRefuseText:
 	text "Ha! See! Even"
-	line "<PLAY_G> is"
+	line "<PLAYER> is"
 
 	para "scared of my dad's"
 	line "awesome #MON!"
@@ -292,7 +292,7 @@ LoungeBrockTalkText:
 	done
 
 LoungeBrockRematchText:
-	text "Oh, hey, <PLAY_G>."
+	text "Oh, hey, <PLAYER>."
 	line "They let you in"
 	cont "here, huh?"
 
@@ -468,7 +468,7 @@ LoungeLtSurgeLossText:
 
 LoungeLtSurgeAfterText:
 	text "You're the real"
-	line "deal, <PLAY_G>!"
+	line "deal, <PLAYER>!"
 	done
 
 LoungeMortyTalkText:
@@ -483,7 +483,7 @@ LoungeMortyTalkText:
 	done
 
 LoungeMortyRematchText:
-	text "<PLAY_G>…"
+	text "<PLAYER>…"
 	line "You've grown. I"
 	cont "can sense it."
 
@@ -513,7 +513,7 @@ LoungeMortyAfterText:
 
 LoungeErikaTalkText:
 	text "Why, hello there,"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 
 	para "This lounge is so"
 	line "cozy, isn't it?"
