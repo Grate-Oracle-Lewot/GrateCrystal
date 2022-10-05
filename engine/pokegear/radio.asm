@@ -119,6 +119,16 @@ RadioJumptable:
 	dw PokedexShow6      ; $56
 	dw PokedexShow7      ; $57
 	dw PokedexShow8      ; $58
+; Mewtwo Radio
+	dw MewtwoRadio2      ; $59
+	dw MewtwoRadio3      ; $5a
+	dw MewtwoRadio4      ; $5b
+	dw MewtwoRadio5      ; $5c
+	dw MewtwoRadio6      ; $5d
+	dw MewtwoRadio7      ; $5e
+	dw MewtwoRadio8      ; $5f
+	dw MewtwoRadio9      ; $60
+	dw MewtwoRadio10     ; $61
 	assert_table_length NUM_RADIO_SEGMENTS
 
 PrintRadioLine:
@@ -143,21 +153,6 @@ PrintRadioLine:
 	ld [wCurRadioLine], a
 	ld a, 100
 	ld [wRadioTextDelay], a
-	ret
-
-ReplacePeriodsWithSpaces: ; unreferenced
-	push hl
-	ld b, SCREEN_WIDTH * 2
-.loop
-	ld a, [hl]
-	cp "."
-	jr nz, .next
-	ld [hl], " "
-.next
-	inc hl
-	dec b
-	jr nz, .loop
-	pop hl
 	ret
 
 RadioScroll:
