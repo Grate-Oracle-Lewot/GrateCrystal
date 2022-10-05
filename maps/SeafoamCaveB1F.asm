@@ -244,7 +244,7 @@ SeafoamCaveB1FKarenThanksForPlayingText:
 	done
 
 SeafoamCaveB1FOakCongratulationsText:
-	text "OAK: <PLAY_G>!"
+	text "OAK: <PLAYER>!"
 
 	para "So MARY's scoop"
 	line "was correct! You"
@@ -347,7 +347,7 @@ SeafoamCaveB1FOakBlitherText:
 
 SeafoamCaveB1FKarenUpToYouText:
 	text "LEWOT: Well,"
-	line "<PLAY_G>, I'd take"
+	line "<PLAYER>, I'd take"
 
 	para "care of this guy,"
 	line "but you just made"
