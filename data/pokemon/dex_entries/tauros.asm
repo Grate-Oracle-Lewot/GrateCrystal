@@ -1,10 +1,10 @@
 	db "WILD BULL@" ; species name
 	dw 407, 1950 ; height, weight
 
-	db   "These violent"
-	next "#MON fight"
-	next "with other mem-"
+	db   "It's strong enough"
+	next "to break through"
+	next "most fences, but"
 
-	page "bers of their herd"
-	next "in order to prove"
-	next "their strength.@"
+	page "not smart enough"
+	next "to realize it can."
+	next "@"
