@@ -6,5 +6,5 @@
 	next "to align with"
 
 	page "whatever it per-"
-	next "cieves as edgy and"
+	next "ceives as edgy and"
 	next "unpopular.@"
