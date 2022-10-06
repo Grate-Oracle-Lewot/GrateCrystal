@@ -1,10 +1,10 @@
-	db "IMITATION@" ; species name
+	db "PETRIFIED@" ; species name
 	dw 311, 840 ; height, weight
 
-	db   "If a tree branch"
-	next "shakes when there"
-	next "is no wind, it's a"
+	db   "It's so committed"
+	next "to camouflaging as"
+	next "a tree that it"
 
-	page "SUDOWOODO, not a"
-	next "tree. It hides"
-	next "from the rain.@"
+	page "will hold BERRIES"
+	next "for hours despite"
+	next "being hungry.@"
