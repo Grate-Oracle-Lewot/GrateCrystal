@@ -1,10 +1,10 @@
 	db "ARMOR@" ; species name
 	dw 607, 4450 ; height, weight
 
-	db   "It fancies itself"
-	next "the king of all"
-	next "#MON, and will"
+	db   "Small as it is,"
+	next "JOHTO's TYRANITAR"
+	next "population has"
 
-	page "defend this title"
-	next "with its full"
-	next "power.@"
+	page "driven out all the"
+	next "once-abundant"
+	next "DURALUDON.@"
