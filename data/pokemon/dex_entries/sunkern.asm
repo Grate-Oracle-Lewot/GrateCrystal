@@ -1,10 +1,10 @@
 	db "SEED@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "It is very weak."
-	next "Its only means of"
-	next "defense is to"
+	db   "It's adept at"
+	next "hiding, so it's"
+	next "rare to find one."
 
-	page "shake its leaves"
-	next "desperately at its"
-	next "attacker.@"
+	page "It can survive on"
+	next "only sunlight."
+	next "@"
