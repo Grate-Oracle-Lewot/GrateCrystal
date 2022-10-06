@@ -1,10 +1,10 @@
-	db "ROCK SKIN@" ; species name
+	db "PUNK ROCK@" ; species name
 	dw 200, 1590 ; height, weight
 
-	db   "Born deep under-"
-	next "ground, this"
-	next "#MON becomes a"
+	db   "It constantly"
+	next "changes its tastes"
+	next "to align with"
 
-	page "pupa after eating"
-	next "enough dirt to"
-	next "make a mountain.@"
+	page "whatever it per-"
+	next "cieves as edgy and"
+	next "unpopular.@"
