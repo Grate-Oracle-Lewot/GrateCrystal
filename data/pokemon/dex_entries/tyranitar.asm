@@ -1,4 +1,4 @@
-	db "ARMOR@" ; species name
+	db "KING@" ; species name
 	dw 607, 4450 ; height, weight
 
 	db   "Small as it is,"
