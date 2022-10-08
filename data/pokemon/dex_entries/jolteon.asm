@@ -1,10 +1,10 @@
 	db "LIGHTNING@" ; species name
 	dw 207, 540 ; height, weight
 
-	db   "The negatively"
-	next "charged ions"
-	next "generated in its"
+	db   "A hair plucked"
+	next "from this #MON"
+	next "can be used as a"
 
-	page "fur create a"
-	next "constant sparking"
-	next "noise.@"
+	page "short electrical"
+	next "wire. It can fire"
+	next "them at foes.@"
