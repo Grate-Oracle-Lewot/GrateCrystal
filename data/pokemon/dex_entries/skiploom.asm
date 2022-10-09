@@ -1,10 +1,10 @@
 	db "COTTONWEED@" ; species name
 	dw 200, 20 ; height, weight
 
-	db   "As soon as it"
-	next "rains, it closes"
-	next "its flower and"
+	db   "Some bug and bird"
+	next "#MON sip nectar"
+	next "from its flower."
 
-	page "hides in the shade"
-	next "of a tree to avoid"
-	next "getting wet.@"
+	page "They may weigh it"
+	next "down, forcing it"
+	next "to land.@"
