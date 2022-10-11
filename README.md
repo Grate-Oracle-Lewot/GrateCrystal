@@ -276,4 +276,4 @@ Q) How do I make my own hack?
 
 A) The base game disassembly is at https://github.com/pret/pokecrystal
 
-You'll have to make an account on the website, and then you can create your own "fork"—a.k.a., your own copy of the disassembly, which you can then edit however you please. As for how to actually make anything work, though, I'm not the best one to ask. I've linked to all the tutorials already, so start by reading those.
+You'll have to make an account on the website, and then you can create your own "fork"—a.k.a., your own copy of the disassembly, which you can then edit however you please. As for how to actually make anything work, though, don't look to me—between poor coding practices, zero documentation, and generally having little understanding of what I'm actually doing, you'll most likely just confuse yourself by looking at my stuff. I've linked to all the tutorials already, and there's a Discord for asking questions directly, so check those out.
