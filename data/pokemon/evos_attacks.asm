@@ -546,7 +546,8 @@ NinetalesEvosAttacks:
 	db 1, POWDER_SNOW
 	db 1, CONFUSE_RAY
 	db 1, MIST
-	db 43, FIRE_BLAST
+	db 42, FIRE_BLAST
+	db 42, BLIZZARD
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
