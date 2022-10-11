@@ -1,10 +1,10 @@
 	db "FOX@" ; species name
 	dw 307, 440 ; height, weight
 
-	db   "It is said to live"
-	next "a thousand years,"
-	next "and each of its"
+	db   "Most commonly,"
+	next "four of its nine"
+	next "tails are white."
 
-	page "tails is loaded"
-	next "with supernatural"
-	next "powers.@"
+	page "A rare one with"
+	next "five white tails"
+	next "brings good luck.@"
