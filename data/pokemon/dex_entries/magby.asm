@@ -1,10 +1,10 @@
 	db "LIVE COAL@" ; species name
 	dw 204, 470 ; height, weight
 
-	db   "It naturally spits"
-	next "an 1100-degree"
-	next "flame. It is said"
+	db   "Its eggs must be"
+	next "incubated in"
+	next "extremely high"
 
-	page "when many appear,"
-	next "it heralds a"
-	next "volcanic eruption.@"
+	page "temperatures to"
+	next "hatch. It eats dry"
+	next "wood.@"
