@@ -1,10 +1,10 @@
 	db "FIVE STAR@" ; species name
 	dw 407, 780 ; height, weight
 
-	db   "In the daytime"
-	next "when it gets warm,"
-	next "it curls up inside"
+	db   "Its eyes can see"
+	next "through walls, and"
+	next "it scans for prey"
 
-	page "a big leaf and"
-	next "drifts off into"
-	next "a deep slumber.@"
+	page "to pummel with"
+	next "punches from four"
+	next "arms at once.@"
