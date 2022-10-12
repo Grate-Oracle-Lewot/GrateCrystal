@@ -1,9 +1,5 @@
 	object_const_def
 	const LAVRADIOTOWER2F_OFFICER
-	const LAVRADIOTOWER2F_UNOWN1
-	const LAVRADIOTOWER2F_UNOWN2
-	const LAVRADIOTOWER2F_UNOWN3
-	const LAVRADIOTOWER2F_UNOWN4
 	const LAVRADIOTOWER2F_MEWTWO
 
 LavRadioTower2F_MapScripts:
@@ -23,38 +19,6 @@ LavRadioTower2F_MapScripts:
 
 LavRadioTower2FOfficerScript:
 	jumptextfaceplayer LavRadioTower2FOfficerText
-
-LavRadioTower2FUnown1Script:
-	opentext
-	callasm Pokedex_LoadUnownFont
-	writetext LavRadioTower2FUnown1Text
-	waitbutton
-	closetext
-	end
-
-LavRadioTower2FUnown2Script:
-	opentext
-	callasm Pokedex_LoadUnownFont
-	writetext LavRadioTower2FUnown2Text
-	waitbutton
-	closetext
-	end
-
-LavRadioTower2FUnown3Script:
-	opentext
-	callasm Pokedex_LoadUnownFont
-	writetext LavRadioTower2FUnown3Text
-	waitbutton
-	closetext
-	end
-
-LavRadioTower2FUnown4Script:
-	opentext
-	callasm Pokedex_LoadUnownFont
-	writetext LavRadioTower2FUnown4Text
-	waitbutton
-	closetext
-	end
 
 LavRadioTower2FMewtwoScript:
 	faceplayer
@@ -79,27 +43,6 @@ LavRadioTower2FDirectory:
 
 LavRadioTower2FOfficerText:
 	text "…"
-	done
-
-LavRadioTower2FUnown1Text:
-	text "OUR MASTER AWAITS"
-	line "YOU HERE"
-	done
-
-LavRadioTower2FUnown2Text:
-	text "THE HUMANS HERE"
-	line "WILL NOT BE HARMED"
-	done
-
-LavRadioTower2FUnown3Text:
-	text "OUR MASTER WISHES"
-	line "TO BATTLE YOU"
-	done
-
-LavRadioTower2FUnown4Text:
-	text "YOU HAVE BEEN"
-	line "CHOSEN BY OUR"
-	cont "MASTER"
 	done
 
 LavRadioTower2FMewtwoText:
@@ -159,8 +102,4 @@ LavRadioTower2F_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FOfficerScript, -1
-	object_event 17,  4, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FUnown1Script, -1
-	object_event 14, 10, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FUnown2Script, -1
-	object_event 11, 12, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FUnown3Script, -1
-	object_event  6, 10, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FUnown4Script, -1
 	object_event 10,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FMewtwoScript, EVENT_LAV_RADIO_TOWER_2F_MEWTWO
