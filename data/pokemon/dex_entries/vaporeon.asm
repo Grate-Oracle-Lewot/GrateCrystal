@@ -1,10 +1,10 @@
 	db "BUBBLE JET@" ; species name
 	dw 303, 640 ; height, weight
 
-	db   "As it uses the"
-	next "fins on the tip"
-	next "of its tail to"
+	db   "Its skin secretes"
+	next "a waterproof gel"
+	next "that allows it to"
 
-	page "swim, it blends"
-	next "with the water"
-	next "perfectly.@"
+	page "swim more quickly"
+	next "and stops it from"
+	next "drying out.@"
