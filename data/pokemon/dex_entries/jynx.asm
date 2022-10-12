@@ -1,10 +1,10 @@
-	db "HUMANSHAPE@" ; species name
+	db "OPERATIC@" ; species name
 	dw 407, 900 ; height, weight
 
-	db   "It has several"
-	next "different cry pat-"
-	next "terns, each of"
+	db   "Its strange songs"
+	next "flow like music,"
+	next "and its movements"
 
-	page "which seems to"
-	next "have its own"
-	next "meaning.@"
+	page "resemble dance."
+	next "A kiss from one"
+	next "puts you to sleep.@"
