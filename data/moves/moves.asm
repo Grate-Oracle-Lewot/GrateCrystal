@@ -86,7 +86,7 @@ Moves:
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,        SPECIAL,  100, 20,   0
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          60, GRASS,        SPECIAL,  100, 10,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,        STATUS,   100, 10,   0
-	move GROWTH,       EFFECT_SP_ATK_UP,           0, GRASS,        STATUS,   100, 40,   0
+	move GROWTH,       EFFECT_SP_ATK_UP,           0, GRASS,        STATUS,   100, 30,   0
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,        PHYSICAL, 100, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,        SPECIAL,  100, 10,   0
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,       STATUS,    75, 25,   0
@@ -108,7 +108,7 @@ Moves:
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, SPECIAL,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE, SPECIAL,  100, 10,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC_TYPE, STATUS,    70, 20,   0
-	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE, STATUS,   100, 40,   0
+	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE, STATUS,   100, 30,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE, STATUS,   100, 20,   0
 	move QUICK_ATTACK, EFFECT_PRIORITY_HIT,       40, NORMAL,       PHYSICAL, 100, 30,   0
 	move RAGE,         EFFECT_RAGE,               20, NORMAL,       PHYSICAL, 100, 40,   0
