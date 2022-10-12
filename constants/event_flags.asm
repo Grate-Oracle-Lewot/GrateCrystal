@@ -320,8 +320,8 @@
 	const_skip ; unused in Crystal
 	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
-	const_skip ; unused
-	const_skip ; unused
+	const EVENT_VERMILION_GYM_SWITCH_1 ; new to Grate Crystal
+	const EVENT_VERMILION_GYM_SWITCH_2 ; new to Grate Crystal
 	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
