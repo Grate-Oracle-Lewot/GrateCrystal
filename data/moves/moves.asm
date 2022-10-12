@@ -125,9 +125,9 @@ Moves:
 	move SCALD,        EFFECT_BURN_HIT,           80, WATER,        SPECIAL,  100, 15,  30
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 40,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC_TYPE, STATUS,   100, 20,   0
-	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE, STATUS,   100, 25,   0
+	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE, STATUS,   100, 10,   0
 	move HAZE,         EFFECT_RESET_STATS,         0, POISON,       STATUS,   100, 25,   0
-	move REFLECT,      EFFECT_REFLECT,             0, PSYCHIC_TYPE, STATUS,   100, 25,   0
+	move REFLECT,      EFFECT_REFLECT,             0, PSYCHIC_TYPE, STATUS,   100, 10,   0
 	move FOCUS_ENERGY, EFFECT_FOCUS_ENERGY,        0, FIGHTING,     STATUS,   100, 25,   0
 	move BIDE,         EFFECT_BIDE,                0, NORMAL,       PHYSICAL, 100, 10,   0
 	move METRONOME,    EFFECT_METRONOME,           0, FAIRY,        STATUS,   100, 20,   0
