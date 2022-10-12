@@ -1,4 +1,4 @@
-	db "SHELLFISH@" ; species name
+	db "GUN TURTLE@" ; species name
 	dw 503, 1890 ; height, weight
 
 	db   "The cannons that"
