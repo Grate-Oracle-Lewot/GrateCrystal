@@ -2,6 +2,8 @@
 	const PEWTERGYM_BROCK
 	const PEWTERGYM_YOUNGSTER
 	const PEWTERGYM_GYM_GUIDE
+	const PEWTERGYM_ROCK1
+	const PEWTERGYM_ROCK2
 
 PewterGym_MapScripts:
 	def_scene_scripts
@@ -73,6 +75,9 @@ PewterGymGuideScript:
 	waitbutton
 	closetext
 	end
+
+PewterGymRock:
+	jumpstd SmashRockScript
 
 PewterGymStatue:
 	checkflag ENGINE_BOULDERBADGE
@@ -247,3 +252,5 @@ PewterGym_MapEvents:
 	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
 	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1
+	object_event  4,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterGymRock, -1
+	object_event  5,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterGymRock, -1
