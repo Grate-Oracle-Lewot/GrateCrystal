@@ -1,10 +1,10 @@
 	db "BIG JAW@" ; species name
 	dw 307, 550 ; height, weight
 
-	db   "The tips of its"
-	next "fangs are slanted"
-	next "backward. Once"
+	db   "It walks along the"
+	next "bottoms of lakes,"
+	next "stalking prey."
 
-	page "those fangs clamp"
-	next "down, the prey has"
-	next "no hope of escape.@"
+	page "It's clumsy on"
+	next "land, but can"
+	next "still hunt.@"
