@@ -232,7 +232,7 @@ TimeFishGroups:
 	db OCTILLERY,  40,  REMORAID,   40 ; 13
 	db GYARADOS,   19,  GYARADOS,   21 ; 14
 	db GYARADOS,   40,  GYARADOS,   42 ; 15
-	db DRATINI,    20,  DRAGONAIR,  20 ; 16
+	db DRAGONAIR,  20,  DRATINI,    20 ; 16
 	db DRATINI,    40,  DUNSPARCE,  40 ; 17
 	db HORSEA,     20,  UNOWN,      24 ; 18
 	db SEADRA,     40,  KINGDRA,    40 ; 19
