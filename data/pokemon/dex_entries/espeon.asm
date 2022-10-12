@@ -1,4 +1,4 @@
-	db "SUN@" ; species name
+	db "SUNLIGHT@" ; species name
 	dw 211, 580 ; height, weight
 
 	db   "It looks into the"
