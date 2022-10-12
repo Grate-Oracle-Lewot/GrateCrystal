@@ -1,10 +1,10 @@
 	db "COTTONWEED@" ; species name
 	dw 207, 70 ; height, weight
 
-	db   "Even in the fierc-"
-	next "est wind, it can"
-	next "control its fluff"
+	db   "If all its seeds"
+	next "blow out, it can"
+	next "no longer float on"
 
-	page "to make its way to"
-	next "any place in the"
-	next "world it wants.@"
+	page "the wind, and must"
+	next "wait for them to"
+	next "grow back.@"
