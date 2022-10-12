@@ -1,10 +1,10 @@
 	db "THUNDER@" ; species name
 	dw 603, 3920 ; height, weight
 
-	db   "This rough #MON"
-	next "stores energy"
-	next "inside its body,"
+	db   "It runs in a zig-"
+	next "zag pattern resem-"
+	next "bling a lightning"
 
-	page "then sweeps across"
-	next "the land, shooting"
-	next "off electricity.@"
+	page "bolt, scouring the"
+	next "world for the best"
+	next "thunderstorms.@"
