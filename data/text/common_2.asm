@@ -746,8 +746,8 @@ _BreedClearboxText::
 
 _BreedEggHatchText::
 	text_ram wStringBuffer1
-	text " came"
-	line "out of its EGG!@"
+	text " hatched"
+	line "from the EGG!@"
 	sound_caught_mon
 	text_promptbutton
 	text_end
