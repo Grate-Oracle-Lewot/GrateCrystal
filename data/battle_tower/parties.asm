@@ -146,7 +146,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 14, 15, 13 ; DVs
-	db 15, 10, 10, 10 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -224,7 +224,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 13, 14, 11 ; DVs
-	db 5, 15, 15, 10 ; PP
+	db 5, 10, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -240,7 +240,7 @@ BattleTowerMons:
 
 	db SNEASEL
 	db GOLD_BERRY
-	db SLASH, FAINT_ATTACK, SURF, BLIZZARD
+	db SLASH, FAINT_ATTACK, WATERFALL, BLIZZARD
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -406,7 +406,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 14, 15, 15, 7 ; DVs
-	db 15, 10, 20, 15 ; PP
+	db 15, 10, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -591,7 +591,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 11, 13, 11 ; DVs
-	db 10, 10, 15, 10 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -955,7 +955,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 14, 13, 15, 7 ; DVs
-	db 15, 5, 10, 5 ; PP
+	db 10, 5, 10, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -981,7 +981,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 13, 15, 15, 14 ; DVs
-	db 10, 10, 10, 15 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -1059,7 +1059,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 5, 6, 4, 6 ; DVs
-	db 5, 10, 15, 15 ; PP
+	db 5, 10, 10, 15 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -1085,7 +1085,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 5, 5, 4, 7 ; DVs
-	db 20, 10, 15, 5 ; PP
+	db 20, 10, 10, 5 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -1140,7 +1140,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 13, 15, 11 ; DVs
-	db 15, 15, 5, 25 ; PP
+	db 15, 10, 5, 25 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -1166,7 +1166,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 10, 10, 15 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -1478,7 +1478,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 13, 13, 14, 11 ; DVs
-	db 5, 10, 15, 15 ; PP
+	db 5, 10, 10, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -1689,7 +1689,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 14, 15 ; DVs
-	db 15, 20, 5, 5 ; PP
+	db 10, 20, 5, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -1741,7 +1741,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 14, 11 ; DVs
-	db 15, 10, 10, 15 ; PP
+	db 15, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -1819,7 +1819,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 15, 13, 11, 14 ; DVs
-	db 5, 15, 15, 10 ; PP
+	db 5, 15, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -1949,7 +1949,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 11, 15, 12, 15 ; DVs
-	db 15, 10, 10, 5 ; PP
+	db 10, 10, 10, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -2212,7 +2212,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 55000
 	dn 13, 13, 15, 15 ; DVs
-	db 15, 5, 5, 20 ; PP
+	db 10, 5, 5, 20 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2290,7 +2290,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 55000
 	dn 15, 13, 14, 15 ; DVs
-	db 5, 10, 15, 10 ; PP
+	db 5, 10, 10, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2316,7 +2316,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 60000
 	dn 13, 13, 13, 13 ; DVs
-	db 15, 15, 10, 5 ; PP
+	db 15, 10, 10, 5 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2446,7 +2446,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 40000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 10, 15, 15 ; PP
+	db 10, 10, 15, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2696,7 +2696,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db MIRACLEBERRY
-	db HYPER_BEAM, SURF, RAIN_DANCE, ZAP_CANNON
+	db HYPER_BEAM, WATERFALL, RAIN_DANCE, ZAP_CANNON
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2761,7 +2761,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 60000
 	dn 13, 13, 15, 14 ; DVs
-	db 20, 15, 5, 5 ; PP
+	db 20, 10, 5, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -2969,7 +2969,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 13, 13, 15, 13 ; DVs
-	db 5, 15, 15, 15 ; PP
+	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3099,7 +3099,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 10, 15, 12 ; DVs
-	db 15, 15, 15, 10 ; PP
+	db 15, 10, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3177,7 +3177,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 14, 15, 14 ; DVs
-	db 15, 10, 35, 5 ; PP
+	db 10, 10, 35, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3203,7 +3203,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 11, 15, 10 ; DVs
-	db 10, 15, 15, 15 ; PP
+	db 10, 10, 15, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3336,7 +3336,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 50000
 	dn 11, 15, 14, 15 ; DVs
-	db 5, 15, 15, 10 ; PP
+	db 5, 15, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
@@ -3560,7 +3560,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db BRIGHTPOWDER
-	db SURF, THUNDERBOLT, HYPER_BEAM, ROAR
+	db WATERFALL, THUNDERBOLT, HYPER_BEAM, ROAR
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3596,7 +3596,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 14, 13, 13 ; DVs
-	db 10, 15, 10, 15 ; PP
+	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
@@ -3963,7 +3963,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 15, 13, 11 ; DVs
-	db 10, 15, 10, 10 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4067,7 +4067,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 15, 11, 14, 13 ; DVs
-	db 10, 15, 5, 20 ; PP
+	db 10, 10, 5, 20 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4083,7 +4083,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db GOLD_BERRY
-	db THUNDER_WAVE, SURF, THUNDERBOLT, OUTRAGE
+	db THUNDER_WAVE, WATERFALL, THUNDERBOLT, OUTRAGE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4171,7 +4171,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 13, 15, 13, 12 ; DVs
-	db 15, 10, 5, 25 ; PP
+	db 10, 10, 5, 25 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4460,7 +4460,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 60000
 	dn 13, 15, 13, 13 ; DVs
-	db 10, 15, 15, 10 ; PP
+	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -4486,7 +4486,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 11, 13, 15 ; DVs
-	db 5, 5, 15, 30 ; PP
+	db 5, 5, 10, 30 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -4564,7 +4564,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 13, 15, 13, 14 ; DVs
-	db 20, 15, 5, 5 ; PP
+	db 20, 10, 5, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -4616,7 +4616,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 55000
 	dn 11, 13, 14, 15 ; DVs
-	db 10, 15, 15, 10 ; PP
+	db 10, 10, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -4694,7 +4694,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 14, 15, 13 ; DVs
-	db 5, 15, 10, 5 ; PP
+	db 5, 10, 10, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -5009,7 +5009,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 60000
 	dn 13, 15, 15, 14 ; DVs
-	db 15, 20, 10, 10 ; PP
+	db 10, 20, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5165,7 +5165,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 15, 13, 14, 15 ; DVs
-	db 15, 10, 5, 15 ; PP
+	db 10, 10, 5, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5399,7 +5399,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 11, 14, 7 ; DVs
-	db 15, 10, 5, 10 ; PP
+	db 10, 10, 5, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5477,7 +5477,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 6, 5, 7 ; DVs
-	db 15, 15, 5, 10 ; PP
+	db 10, 15, 5, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
