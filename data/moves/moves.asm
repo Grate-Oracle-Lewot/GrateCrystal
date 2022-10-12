@@ -65,11 +65,11 @@ Moves:
 	move DISABLE,      EFFECT_DISABLE,             0, DARK,         STATUS,   100, 10,   0
 	move ACID,         EFFECT_DEFENSE_DOWN_HIT,   50, POISON,       SPECIAL,  100, 25, 100
 	move EMBER,        EFFECT_BURN_HIT,           40, FIRE,         SPECIAL,  100, 30,  10
-	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         SPECIAL,  100, 15,  10
+	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         SPECIAL,  100, 10,  10
 	move MIST,         EFFECT_MIST,                0, ICE,          STATUS,   100, 25,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,        SPECIAL,  100, 35,   0
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,        SPECIAL,   85,  5,   0
-	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        SPECIAL,  100, 15,   0
+	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        SPECIAL,  100, 10,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,          SPECIAL,   75,  5,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE, SPECIAL,  100, 20,  10
@@ -97,7 +97,7 @@ Moves:
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      42, DRAGON,       SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        20, FIRE,         SPECIAL,  100, 15,   0
 	move THUNDERSHOCK, EFFECT_PARALYZE_HIT,       40, ELECTRIC,     SPECIAL,  100, 30,  10
-	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       95, ELECTRIC,     SPECIAL,  100, 15,  10
+	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       95, ELECTRIC,     SPECIAL,  100, 10,  10
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, ELECTRIC,     STATUS,   100, 10,   0
 	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,     SPECIAL,   75, 10,  30
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,         PHYSICAL,  90, 25,   0
