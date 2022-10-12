@@ -1,10 +1,10 @@
 	db "SPITFIRE@" ; species name
 	dw 403, 980 ; height, weight
 
-	db   "It moves more"
-	next "frequently in hot"
-	next "areas. It can heal"
+	db   "It lives inside"
+	next "volcanoes, bathing"
+	next "in lava."
 
-	page "itself by dipping"
-	next "its wound into"
-	next "lava.@"
+	page "Its forehead"
+	next "swells as its"
+	next "power grows.@"
