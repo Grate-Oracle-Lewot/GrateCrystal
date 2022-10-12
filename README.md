@@ -91,7 +91,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). A few other changes to move powers, and almost every move has received an accuracy boost.
 
-- PP rebalanced for many moves.
+- PP rebalanced for most moves.
 
 - Some moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
