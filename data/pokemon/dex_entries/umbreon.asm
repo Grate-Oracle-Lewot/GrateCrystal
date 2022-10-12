@@ -1,10 +1,10 @@
 	db "MOONLIGHT@" ; species name
 	dw 303, 600 ; height, weight
 
-	db   "On the night of a"
-	next "full moon, or when"
-	next "it gets excited,"
+	db   "It can see in pure"
+	next "darkness and move"
+	next "silently. Its"
 
-	page "the ring patterns"
-	next "on its body glow"
-	next "yellow.@"
+	page "yellow rings glow"
+	next "right before it"
+	next "strikes.@"
