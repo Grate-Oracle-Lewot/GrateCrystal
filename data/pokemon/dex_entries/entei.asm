@@ -1,10 +1,10 @@
 	db "VOLCANO@" ; species name
 	dw 607, 4370 ; height, weight
 
-	db   "This brawny"
-	next "#MON courses"
-	next "around the earth,"
+	db   "If in its travels"
+	next "it comes across an"
+	next "orphaned child, it"
 
-	page "spouting flames"
-	next "hotter than a"
-	next "volcano's magma.@"
+	page "will care for them"
+	next "as its own until"
+	next "they mature.@"
