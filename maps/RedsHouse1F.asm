@@ -33,22 +33,20 @@ RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
 RedsMomText1:
-	text "Hi!"
+	text "Hi! You remind me"
+	line "of my son, RED."
 
-	para "RED's been away"
-	line "for a long time."
+	para "He left on his"
+	line "#MON journey"
+	cont "three years ago."
 
-	para "He hasn't called"
-	line "either, so I have"
+	para "He hasn't stopped"
+	line "by in a long time…"
 
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
+	para "He defeated the"
+	line "#MON LEAGUE, so"
 
-	para "They say that no"
-	line "word is proof that"
-
-	para "he's doing fine,"
+	para "I'm sure he's fine,"
 	line "but I do worry"
 	cont "about him."
 	done
@@ -58,12 +56,11 @@ RedsMomText2:
 	line "getting hurt or"
 
 	para "sick, but he's a"
-	line "boy. I'm proud"
+	line "good boy. I'm"
 
-	para "that he is doing"
-	line "what he wants to"
-
-	para "do."
+	para "proud of how far"
+	line "he's come as a"
+	cont "trainer."
 	done
 
 RedsHouse1FTVText:
