@@ -2275,7 +2275,7 @@ ChikoritaEvosAttacks:
 	db 29, BODY_SLAM
 	db 36, EARTH_POWER
 	db 39, LEECH_SEED
-	db 43, SAFEGUARD
+	db 43, ROCK_SMASH
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
