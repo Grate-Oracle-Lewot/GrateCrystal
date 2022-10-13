@@ -7,8 +7,29 @@
 
 VermilionGym_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .HiddenDoors
+
+.DummyScene:
+	end
+
+.HiddenDoors:
+	checkevent EVENT_VERMILION_GYM_SWITCH_1
+	iftrue .NextCheck
+	changeblock 4, 4, $0e ; blocking machines
+	endcallback
+
+.NextCheck:
+	checkevent EVENT_VERMILION_GYM_SWITCH_2
+	iftrue .OpenPath
+	changeblock 4, 4, $0e ; blocking machines
+	endcallback
+
+.OpenPath
+	changeblock 4, 4, $01 ; walkable floor
+	endcallback
 
 VermilionGymSurgeScript:
 	faceplayer
@@ -100,6 +121,59 @@ VermilionGymGuideScript:
 
 VermilionGymTrashCan:
 	jumptext VermilionGymTrashCanText
+
+VermilionGymSwitch1:
+	opentext
+	checkevent EVENT_VERMILION_GYM_SWITCH_1
+	iftrue .AlreadyFlipped
+	writetext VermilionGymSwitch1FlipText
+	waitbutton
+	closetext
+	setevent EVENT_VERMILION_GYM_SWITCH_1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	end
+
+.AlreadyFlipped:
+	writetext VermilionGymSwitchesAfterText
+	waitbutton
+	closetext
+	end
+
+VermilionGymSwitch2:
+	opentext
+	checkevent EVENT_VERMILION_GYM_SWITCH_2
+	iftrue .AlreadyFlipped
+	checkevent EVENT_VERMILION_GYM_SWITCH_1
+	iftrue .CompletePuzzle
+	writetext VermilionGymTrashCanText
+	waitbutton
+	closetext
+	end
+
+.CompletePuzzle:
+	writetext VermilionGymSwitch1FlipText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	pause 21
+	earthquake 42
+	pause 21
+	playsound SFX_STRENGTH
+	changeblock 4, 4, $01 ; walkable floor
+	reloadmappart
+	earthquake 42
+	setevent EVENT_VERMILION_SWITCH_2
+	setscene SCENE_FINISHED
+	closetext
+	end
+
+.AlreadyFlipped:
+	opentext
+	writetext VermilionGymSwitchesAfterText
+	waitbutton
+	closetext
+	end
 
 VermilionGymStatue:
 	checkflag ENGINE_THUNDERBADGE
@@ -218,8 +292,8 @@ GuitaristVincentBeatenText:
 	done
 
 GuitaristVincentAfterBattleText:
-	text "If the GYM's traps"
-	line "were working, you"
+	text "If this were a"
+	line "guitar battle, you"
 
 	para "would have been"
 	line "toast…"
@@ -260,11 +334,12 @@ VermilionGymGuideText:
 	cont "ainst water and"
 	cont "flying."
 
-	para "There used to be"
-	line "traps in this GYM,"
+	para "To reach LT.SURGE,"
+	line "you have to flip"
 
-	para "but they're not"
-	line "active right now."
+	para "two switches hidd-"
+	line "en in the trash"
+	cont "cans."
 	done
 
 VermilionGymGuideWinText:
@@ -278,6 +353,21 @@ VermilionGymGuideWinText:
 VermilionGymTrashCanText:
 	text "Nope! Nothing here"
 	line "but trash."
+	done
+
+VermilionGymSwitch1FlipText:
+	text "A hidden switch!"
+	line "That's one!"
+	done
+
+VermilionGymSwitch2FlipText:
+	text "The second switch!"
+	line "That's both!"
+	done
+
+VermilionGymSwitchesAfterText:
+	text "This switch is al-"
+	line "ready flipped."
 	done
 
 VermilionGym_MapEvents:
@@ -294,9 +384,9 @@ VermilionGym_MapEvents:
 	bg_event  3,  7, BGEVENT_READ, VermilionGymTrashCan
 	bg_event  5,  7, BGEVENT_READ, VermilionGymTrashCan
 	bg_event  7,  7, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  9,  7, BGEVENT_READ, VermilionGymTrashCan
+	bg_event  9,  7, BGEVENT_READ, VermilionGymSwitch2
 	bg_event  1,  9, BGEVENT_READ, VermilionGymTrashCan
-	bg_event  3,  9, BGEVENT_READ, VermilionGymTrashCan
+	bg_event  3,  9, BGEVENT_READ, VermilionGymSwitch1
 	bg_event  5,  9, BGEVENT_READ, VermilionGymTrashCan
 	bg_event  7,  9, BGEVENT_READ, VermilionGymTrashCan
 	bg_event  9,  9, BGEVENT_READ, VermilionGymTrashCan
