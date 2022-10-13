@@ -108,7 +108,7 @@ CreditsStringsPointers:
 
 .SatoshiTajiri:       db " Grate Oracle Lewot@"       ; "たじり　さとし@"
 .JunichiMasuda:       db "      Percivale@"           ; "ますだ　じゅんいち@"
-.TetsuyaWatanabe:     db "       NESLUG@"             ; "わたなべ　てつや@"
+.TetsuyaWatanabe:     db "       Neslug@"             ; "わたなべ　てつや@"
 .ShigekiMorimoto:     db "        LAKE@"              ; "もりもと　しげき@"
 .SousukeTamada:       db "    Lucas Wright@"          ; "たまだ　そうすけ@"
 .TakenoriOota:        db "      PIKACHU25@"           ; "おおた　たけのり@"
