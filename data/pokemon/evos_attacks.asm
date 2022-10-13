@@ -1614,7 +1614,7 @@ HitmonchanEvosAttacks:
 LickitungEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 3, WRAP
+	db 3, BIND
 	db 7, DEFENSE_CURL
 	db 13, DRAIN_KISS
 	db 19, STOMP
