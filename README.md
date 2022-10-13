@@ -246,7 +246,7 @@ Q) Why not more Pokémon?
 
 A) Because I'm not good enough at hacking.
 
-In the code, Pokémon are defined by unseen ID numbers, and because of the way these numbers are stored, they can't go any higher than 255. All available slots are used up by the time you add a measly two more Pokémon; obviously your computer has more filespace than the Game Boy Color, but the ROM doesn't know that, and getting it to understand that would start to become more like coding a new game instead of just modifying an existing one.
+In the code, Pokémon are defined by unseen ID numbers, and because of the way these numbers are stored, they can't go any higher than 255. All available slots are used up by the time you add a measly two more Pokémon; obviously your computer has more filespace than the Game Boy Color, but the ROM doesn't know that, and getting it to understand that would start to become more like coding a new game instead of just modifying an existing one. Somebody else has figured out a way to get around this, at https://github.com/aaaaaa123456789/pokecrystal16 , but I don't understand it well enough to implement it in my hack.
 
 Q) Why Yanmega and Whimsicott, then?
 
