@@ -745,7 +745,7 @@ ElmText_Intro:
 	line "colleagues."
 
 	para "But there are some"
-	line "things I don't"
+	line "nuances I don't"
 
 	para "quite understand"
 	line "yet."
@@ -755,8 +755,9 @@ ElmText_Intro:
 	para "I'd like you to"
 	line "raise a #MON"
 
-	para "that I recently"
-	line "caught."
+	para "and gather infor-"
+	line "mation on your"
+	cont "journey."
 	done
 
 ElmText_Accepted:
@@ -1361,8 +1362,8 @@ ElmsLabPCText:
 	text "OBSERVATIONS ON"
 	line "#MON EVOLUTION"
 
-	para "…It says on the"
-	line "screen…"
+	para "…I'm not reading"
+	line "the whole thing…"
 	done
 
 ElmsLab_MapEvents:
