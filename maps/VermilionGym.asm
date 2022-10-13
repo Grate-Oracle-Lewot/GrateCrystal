@@ -130,7 +130,7 @@ VermilionGymSwitch1:
 	waitbutton
 	closetext
 	setevent EVENT_VERMILION_GYM_SWITCH_1
-	playsound SFX_ENTER_DOOR
+	playsound SFX_TRANSACTION
 	waitsfx
 	end
 
@@ -152,10 +152,10 @@ VermilionGymSwitch2:
 	end
 
 .CompletePuzzle:
-	writetext VermilionGymSwitch1FlipText
+	writetext VermilionGymSwitch2FlipText
 	waitbutton
 	closetext
-	playsound SFX_ENTER_DOOR
+	playsound SFX_TRANSACTION
 	pause 21
 	earthquake 42
 	pause 21
