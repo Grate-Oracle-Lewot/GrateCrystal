@@ -2522,13 +2522,13 @@ SpinarakEvosAttacks:
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 6, SCARY_FACE
-	db 11, LEECH_LIFE
+	db 11, WRAP
 	db 17, NIGHT_SHADE
-	db 23, PIN_MISSILE
+	db 23, LEECH_LIFE
 	db 30, ACID
 	db 37, SPIDER_WEB
 	db 45, AGILITY
-	db 53, PSYCHIC_M
+	db 53, HYPER_FANG
 	db 0 ; no more level-up moves
 
 AriadosEvosAttacks:
@@ -2536,13 +2536,13 @@ AriadosEvosAttacks:
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 6, SCARY_FACE
-	db 11, LEECH_LIFE
+	db 11, WRAP
 	db 17, NIGHT_SHADE
-	db 25, PIN_MISSILE
+	db 25, LEECH_LIFE
 	db 34, ACID
 	db 43, SPIDER_WEB
 	db 53, AGILITY
-	db 63, PSYCHIC_M
+	db 63, HYPER_FANG
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
