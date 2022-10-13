@@ -163,7 +163,7 @@ VermilionGymSwitch2:
 	changeblock 4, 4, $01 ; walkable floor
 	reloadmappart
 	earthquake 42
-	setevent EVENT_VERMILION_SWITCH_2
+	setevent EVENT_VERMILION_GYM_SWITCH_2
 	setscene SCENE_FINISHED
 	closetext
 	end
