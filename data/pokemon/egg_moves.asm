@@ -138,10 +138,11 @@ VenonatEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
-	db FAINT_ATTACK
 	db ANCIENTPOWER
 	db PURSUIT
 	db BEAT_UP
+	db FAINT_ATTACK
+	db IRON_HEAD
 	db TRIPLE_KICK
 	db -1 ; end
 
