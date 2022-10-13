@@ -199,7 +199,7 @@ CreditsStringsPointers:
 .MapDataDesign:       db "    Kurausukun@"            ; "マップデータ　せってい@"
 .MapDesign:           db "   Moustacheski@"           ; "マップ　デザイン@"
 .ProductTesting:      db "   Nescientist@"            ; "デバッグプレイ@"
-.SpecialThanks:       db "   Orphic Okapi@"           ; "スぺシャルサンクス@"
+.SpecialThanks:       db "  Konrad Borowski@"         ; "スぺシャルサンクス@"
 .Producers:           db "     Vulcandth@"            ; "プロデューサー@"
 .ExecutiveProducer:   db "      yenatch@"             ; "エグゼクティブ　プロデューサー@"
 .PokemonAnimation:    db " Mmmmmmmmmmmmmmmmm@"        ; "#　アニメーション@"
