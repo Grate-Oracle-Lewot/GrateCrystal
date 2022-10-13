@@ -636,11 +636,11 @@ HoppipEggMoves:
 	db -1 ; end
 
 AipomEggMoves:
-	db COUNTER
-	db PURSUIT
-	db SLAM
 	db BEAT_UP
 	db TRIPLE_KICK
+	db COUNTER
+	db SLAM
+	db BIND
 	db -1 ; end
 
 YanmaEggMoves:
