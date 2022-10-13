@@ -11,7 +11,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - TMs are infinite-use
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate)
-- Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers
+- Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
