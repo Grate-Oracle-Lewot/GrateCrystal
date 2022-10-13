@@ -715,29 +715,29 @@ VenomothEvosAttacks:
 DiglettEvosAttacks:
 	db EVOLVE_LEVEL, 26, DUGTRIO
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, QUICK_ATTACK
 	db 5, GROWL
-	db 9, MUD_SLAP
-	db 12, MAGNITUDE
+	db 9, SAND_ATTACK
+	db 12, MUD_SLAP
 	db 17, DIG
-	db 25, SAND_ATTACK
+	db 25, MAGNITUDE
 	db 28, EARTH_POWER
-	db 33, SLASH
+	db 33, SKULL_BASH
 	db 41, EARTHQUAKE
 	db 49, FISSURE
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, QUICK_ATTACK
 	db 5, GROWL
-	db 9, MUD_SLAP
-	db 12, MAGNITUDE
+	db 9, SAND_ATTACK
+	db 12, MUD_SLAP
 	db 17, DIG
-	db 25, SAND_ATTACK
+	db 25, MAGNITUDE
 	db 25, TRI_ATTACK
 	db 29, EARTH_POWER
-	db 37, SLASH
+	db 37, SKULL_BASH
 	db 49, EARTHQUAKE
 	db 61, FISSURE
 	db 0 ; no more level-up moves
@@ -1880,7 +1880,7 @@ JynxEvosAttacks:
 
 ElectabuzzEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
+	db 1, MACH_PUNCH
 	db 1, LEER
 	db 9, THUNDERPUNCH
 	db 17, LIGHT_SCREEN
@@ -2859,8 +2859,8 @@ AipomEvosAttacks:
 	db 1, TAIL_WHIP
 	db 6, ENCORE
 	db 12, BATON_PASS
-	db 19, DIZZY_PUNCH
-	db 27, SWIFT
+	db 19, MACH_PUNCH
+	db 27, DIZZY_PUNCH
 	db 33, SCREECH
 	db 36, AGILITY
 	db 42, SEISMIC_TOSS
@@ -3586,7 +3586,7 @@ SmoochumEvosAttacks:
 ElekidEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, ELECTABUZZ
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
+	db 1, MACH_PUNCH
 	db 1, LEER
 	db 9, THUNDERPUNCH
 	db 17, LIGHT_SCREEN
