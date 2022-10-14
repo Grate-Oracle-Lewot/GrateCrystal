@@ -75,13 +75,13 @@ CharmanderEvosAttacks:
 	db 4, GROWL
 	db 7, EMBER
 	db 11, SMOKESCREEN
-	db 15, DRAGONBREATH
+	db 15, FIRE_SPIN
 	db 19, RAGE
 	db 25, SCARY_FACE
 	db 31, FLAMETHROWER
 	db 37, SLASH
 	db 43, DRAGON_RAGE
-	db 49, FIRE_SPIN
+	db 49, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CharmeleonEvosAttacks:
@@ -91,13 +91,13 @@ CharmeleonEvosAttacks:
 	db 4, GROWL
 	db 7, EMBER
 	db 11, SMOKESCREEN
-	db 15, DRAGONBREATH
+	db 15, FIRE_SPIN
 	db 20, RAGE
 	db 27, SCARY_FACE
 	db 34, FLAMETHROWER
 	db 41, SLASH
 	db 48, DRAGON_RAGE
-	db 55, FIRE_SPIN
+	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CharizardEvosAttacks:
@@ -106,14 +106,14 @@ CharizardEvosAttacks:
 	db 4, GROWL
 	db 7, EMBER
 	db 11, SMOKESCREEN
-	db 15, DRAGONBREATH
+	db 15, FIRE_SPIN
 	db 20, RAGE
 	db 27, SCARY_FACE
 	db 34, FLAMETHROWER
 	db 35, AIR_SLASH
 	db 44, SLASH
 	db 54, DRAGON_RAGE
-	db 64, FIRE_SPIN
+	db 64, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 SquirtleEvosAttacks:
