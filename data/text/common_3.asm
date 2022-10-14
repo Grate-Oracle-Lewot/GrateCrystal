@@ -1461,14 +1461,17 @@ _DeleterAskWhichMoveText::
 	prompt
 
 _DeleterIntroText::
-	text "Um… Oh, yes, I'm"
-	line "the MOVE DELETER."
+	text "…Who am I again?"
 
-	para "I can make #MON"
-	line "forget moves."
+	para "Oh, right, I'm a"
+	line "MOVE DELETER!"
 
-	para "Shall I make a"
-	line "#MON forget?"
+	para "I can force your"
+	line "#MON to forget"
+	cont "moves, even HM"
+	cont "moves."
+
+	para "How about it?"
 	done
 
 _DeleterAskWhichMonText::
