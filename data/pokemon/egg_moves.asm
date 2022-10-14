@@ -14,9 +14,9 @@ BulbasaurEggMoves:
 	db -1 ; end
 
 CharmanderEggMoves:
+	db SONICBOOM
 	db BELLY_DRUM
 	db ANCIENTPOWER
-	db ROCK_SLIDE
 	db BITE
 	db OUTRAGE
 	db BEAT_UP
@@ -36,6 +36,7 @@ PidgeyEggMoves:
 	db FAINT_ATTACK
 	db FORESIGHT
 	db PECK
+	db SONICBOOM
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
@@ -50,9 +51,9 @@ RattataEggMoves:
 
 SpearowEggMoves:
 	db FAINT_ATTACK
-	db FALSE_SWIPE
 	db SCARY_FACE
 	db QUICK_ATTACK
+	db SONICBOOM
 	db AIR_SLASH
 	db EGG_BOMB
 	db SOFTBOILED
@@ -351,7 +352,7 @@ LickitungEggMoves:
 	db -1 ; end
 
 KoffingEggMoves:
-	db SCREECH
+	db SONICBOOM
 	db RAPID_SPIN
 	db FLAME_WHEEL
 	db MIST
@@ -417,7 +418,7 @@ MrMimeEggMoves:
 
 ScytherEggMoves:
 	db COUNTER
-	db SAFEGUARD
+	db SONICBOOM
 	db BATON_PASS
 	db REVERSAL
 	db CRABHAMMER
@@ -503,7 +504,6 @@ CyndaquilEggMoves:
 	db THRASH
 	db FORESIGHT
 	db SUBMISSION
-	db SACRED_FIRE
 	db -1 ; end
 
 TotodileEggMoves:
@@ -512,7 +512,6 @@ TotodileEggMoves:
 	db HYPER_FANG
 	db SUPER_FANG
 	db BIDE
-	db AEROBLAST
 	db -1 ; end
 
 SentretEggMoves:
@@ -794,6 +793,7 @@ CorsolaEggMoves:
 RemoraidEggMoves:
 	db SCREECH
 	db SUPERSONIC
+	db SONICBOOM
 	db HYDRO_PUMP
 	db OCTAZOOKA
 	db -1 ; end
@@ -803,7 +803,6 @@ DelibirdEggMoves:
 	db DAZZLY_GLEAM
 	db SWORDS_DANCE
 	db COTTON_SPORE
-	db AEROBLAST
 	db -1 ; end
 
 MantineEggMoves:
@@ -817,6 +816,7 @@ SkarmoryEggMoves:
 	db IRON_HEAD
 	db TWISTER
 	db SILVER_WIND
+	db SONICBOOM
 	db AIR_SLASH
 	db EGG_BOMB
 	db SOFTBOILED
