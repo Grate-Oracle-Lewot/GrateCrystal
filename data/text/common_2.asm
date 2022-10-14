@@ -10,13 +10,13 @@ _EggPhotoText::
 
 _NameRaterHelloText::
 	text "Hello, hello! I'm"
-	line "the NAME RATER."
+	line "a NAME RATER."
 
-	para "I rate the names"
-	line "of #MON."
+	para "I rate #MON"
+	line "nicknames."
 
-	para "Would you like me"
-	line "to rate names?"
+	para "Would you like a"
+	line "nickname rated?"
 	done
 
 _NameRaterWhichMonText::
@@ -32,12 +32,11 @@ _NameRaterBetterNameText::
 	line "That's a fairly"
 	cont "decent name."
 
-	para "But, how about a"
-	line "slightly better"
-	cont "nickname?"
+	para "But, I think we"
+	line "could do better!"
 
-	para "Want me to give it"
-	line "a better name?"
+	para "Want to change its"
+	line "nickname?"
 	done
 
 _NameRaterWhatNameText::
