@@ -167,7 +167,7 @@ CreditsStringsPointers:
 .HideyukiHashimoto:   db "   Thomas Winwood@"         ; "はしもと　ひでゆき@"
 .SatoshiYamato:       db "      AdvanceX@"            ; "やまと　さとし@"
 .ShigeruMiyamoto:     db "     Monkiikong@"           ; "みやもと　しげる@"
-.End:                 db "        END@"               ; "おしまい@"
+.End:                 db "     Katzenbaer@"           ; "おしまい@"
 .Unknown:             db "   Bronzeswagger@"          ; "？？？？？？？？@"
 .GailTilden:          db "   NobodySociety@"
 .NobOgasawara:        db "      The Void@"
