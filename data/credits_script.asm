@@ -49,9 +49,9 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db       MONSTER_DESIGN, 0
-	db         KEN_SUGIMORI, 1
+	db    MOBILE_PRJ_LEADER, 1
 	db    MOTOFUMI_FUJIWARA, 2
-	db     SHIGEKI_MORIMOTO, 3
+	db           TORU_OSAWA, 3
 	db     HIRONOBU_YOSHIDA, 4
 	db         SATOSHI_OOTA, 5
 
@@ -65,7 +65,7 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db    POKEMON_ANIMATION, 1
-	db     HIRONOBU_YOSHIDA, 2
+	db   MOBILE_STADIUM_DIR, 2
 	db          JUN_OKUTANI, 3
 
 	db CREDITS_WAIT, 12
@@ -79,30 +79,30 @@ CreditsScript:
 	db CREDITS_SCENE, 1 ; Smoochum
 
 	db      GRAPHICS_DESIGN, 0
-	db     HIRONOBU_YOSHIDA, 1
-	db          JUN_OKUTANI, 2
+	db           CREDIT_END, 1
+	db     MOBILE_SYSTEM_AD, 2
 	db       ASUKA_IWASHITA, 3
-	db     TETSUYA_WATANABE, 4
+	db    TAKASHI_KAWAGUCHI, 4
 
 	db CREDITS_WAIT, 12
 
 	db         CREDIT_MUSIC, 0
-	db       JUNICHI_MASUDA, 1
+	db          SARUGAKUCHO, 1
 	db        MORIKAZU_AOKI, 2
 	db          GO_ICHINOSE, 3
 
 	db CREDITS_WAIT, 12
 
 	db CREDIT_SOUND_EFFECTS, 0
-	db        MORIKAZU_AOKI, 1
-	db       JUNICHI_MASUDA, 2
-	db     TETSUYA_WATANABE, 3
+	db       CREDIT_UNKNOWN, 1
+	db      TAKAHIRO_HARADA, 2
+	db       NAOKO_KAWAKAMI, 3
 
 	db CREDITS_WAIT, 12
 
 	db          GAME_DESIGN, 0
-	db       JUNICHI_MASUDA, 1
-	db     SHIGEKI_MORIMOTO, 2
+	db      TOHRU_HASHIMOTO, 1
+	db          TAKAO_OHARA, 2
 	db        KOHJI_NISHINO, 3
 
 	db CREDITS_WAIT, 12
@@ -115,7 +115,7 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db        GAME_SCENARIO, 0
-	db       JUNICHI_MASUDA, 1
+	db     NOBORU_MATSUMOTO, 1
 	db        KOHJI_NISHINO, 2
 	db  TOSHINOBU_MATSUMIYA, 3
 	db     KENJI_MATSUSHIMA, 4
@@ -128,8 +128,8 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db     TOOL_PROGRAMMING, 1
-	db       SOUSUKE_TAMADA, 2
-	db        TAKENORI_OOTA, 3
+	db         YUICHIRO_ITO, 2
+	db        TAKAO_SHIMIZU, 3
 
 	db CREDITS_WAIT, 12
 
@@ -201,7 +201,7 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db      US_COORDINATION, 1
-	db       JUNICHI_MASUDA, 2
+	db      TAKEHIRO_IZUSHI, 2
 	db        SETH_MCMAHILL, 3
 
 	db CREDITS_WAIT, 12
