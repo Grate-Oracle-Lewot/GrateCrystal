@@ -126,9 +126,7 @@ FuchsiaGroupSprites:
 
 IndigoGroupSprites:
 ; Route23
-	db SPRITE_BIRD
-	; 1 of max 9 walking sprites
-	db SPRITE_SLOWPOKE
+	; 0 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -214,7 +212,7 @@ CianwoodGroupSprites:
 	db SPRITE_SILVER
 	db SPRITE_SWIMMER_GUY
 	db SPRITE_POKEFAN_M
-	db SPRITE_LASS
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_BEAUTY
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SAILOR
@@ -294,10 +292,11 @@ DungeonsGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKER
-	db SPRITE_FISHER
-	db SPRITE_SCIENTIST
+	db SPRITE_FISHING_GURU
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_BUG_CATCHER
 	; 9 of max 9 walking sprites
+	db SPRITE_SCIENTIST
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
 	db SPRITE_POKE_BALL
@@ -311,9 +310,9 @@ FastShipGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
-	; 5 of max 9 walking sprites
-	db SPRITE_HO_OH
 	db SPRITE_FAIRY
+	; 6 of max 9 walking sprites
+	db SPRITE_HO_OH
 	db SPRITE_ROCK
 	db 0 ; end
 
