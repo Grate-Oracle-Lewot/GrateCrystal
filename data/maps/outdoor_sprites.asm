@@ -118,7 +118,8 @@ FuchsiaGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_SUPER_NERD
 	db SPRITE_BIKER
-	; 7 of max 9 walking sprites
+	db SPRITE_BUG_CATCHER
+	; 8 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -143,8 +144,8 @@ CherrygroveGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_MONSTER
 	db SPRITE_GRAMPS
-	db SPRITE_BUG_CATCHER
-	db SPRITE_COOLTRAINER_F
+	db SPRITE_FISHING_GURU
+	db SPRITE_LASS
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
