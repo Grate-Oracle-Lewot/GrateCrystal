@@ -491,7 +491,6 @@ ENDM
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
 	map_attributes SafariZone, SAFARI_ZONE, $05, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
-	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $00, 0
 	map_attributes SilphCo3F, SILPH_CO_3F, $00, 0
 	map_attributes SilphCo4F, SILPH_CO_4F, $00, 0
@@ -683,6 +682,7 @@ ENDM
 	map_attributes Route2NorthGate, ROUTE_2_NORTH_GATE, $00, 0
 	map_attributes Route2SouthGate, ROUTE_2_SOUTH_GATE, $00, 0
 	map_attributes VictoryRoadGate, VICTORY_ROAD_GATE, $00, 0
+	map_attributes ViridianForest, VIRIDIAN_FOREST, $00, 0
 	map_attributes Route22House, ROUTE_22_HOUSE, $00, 0
 	map_attributes ElmsLab, ELMS_LAB, $00, 0
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
