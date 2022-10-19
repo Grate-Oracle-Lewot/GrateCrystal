@@ -158,7 +158,7 @@ EcruteakGroupSprites:
 ; EcruteakCity
 	db SPRITE_FISHER
 	db SPRITE_LASS
-	db SPRITE_OFFICER
+	db SPRITE_FISHING_GURU
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_COOLTRAINER_M
@@ -168,6 +168,7 @@ EcruteakGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_SUDOWOODO
 	db SPRITE_TWIN
+	db SPRITE_OFFICER
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SUICUNE
@@ -184,9 +185,9 @@ AzaleaGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_BEAUTY
 	; 8 of max 9 walking sprites
+	db SPRITE_KURT
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
-	db SPRITE_KURT
 	db 0 ; end
 
 GoldenrodGroupSprites:
