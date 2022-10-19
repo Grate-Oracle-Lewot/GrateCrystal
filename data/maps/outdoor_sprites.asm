@@ -49,7 +49,7 @@ CinnabarGroupSprites:
 	db SPRITE_BLUE
 	db SPRITE_GRAMPS
 	db SPRITE_BUG_CATCHER
-	db SPRITE_COOLTRAINER_F
+	db SPRITE_LASS
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
