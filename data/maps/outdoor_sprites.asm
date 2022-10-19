@@ -38,7 +38,7 @@ OutdoorSprites:
 PalletGroupSprites:
 ; Route1, PalletTown
 ViridianGroupSprites:
-; Route2, Route22, ViridianCity
+; Route2, Route22, ViridianCity, ViridianForest
 PewterGroupSprites:
 ; Route3, PewterCity
 CinnabarGroupSprites:
@@ -65,7 +65,7 @@ SaffronGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
+	db SPRITE_BUG_CATCHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
