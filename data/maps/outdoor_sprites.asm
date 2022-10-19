@@ -43,7 +43,7 @@ PewterGroupSprites:
 ; Route3, PewterCity
 CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
-	db SPRITE_TEACHER
+	db SPRITE_FISHING_GURU
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_BLUE
