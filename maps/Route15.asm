@@ -142,8 +142,8 @@ SchoolboyKippAfterBattleText:
 	done
 
 SchoolboyTommySeenText:
-	text "Let's battle."
-	line "I won't lose!"
+	text "Are you smarter"
+	line "than a 5th grader?"
 	done
 
 SchoolboyTommyBeatenText:
