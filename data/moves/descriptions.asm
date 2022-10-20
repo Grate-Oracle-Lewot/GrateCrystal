@@ -616,8 +616,8 @@ RockThrowDescription:
 	next "enemy.@"
 
 EarthquakeDescription:
-	db   "Tough but useless"
-	next "vs. flying foes.@"
+	db   "Doubles damage to"
+	next "underground foes.@"
 
 FissureDescription:
 	db   "A ground-type,"
