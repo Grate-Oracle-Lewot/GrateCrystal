@@ -905,13 +905,15 @@ TransformedText:
 	autodone
 
 LightScreenEffectText:
-	text "<USER>'s"
-	line "SPCL.DEF doubled!"
+	text "<USER>"
+	line "doubled its team's"
+	scroll "SPCL.DEF!"
 	autodone
 
 ReflectEffectText:
-	text "<USER>'s"
-	line "DEFENSE doubled!"
+	text "<USER>"
+	line "doubled its team's"
+	scroll "DEFENSE!"
 	autodone
 
 NothingHappenedText:
