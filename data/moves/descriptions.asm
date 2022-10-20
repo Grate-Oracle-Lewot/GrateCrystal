@@ -324,8 +324,8 @@ CutDescription:
 	next "scythes, etc.@"
 
 GustDescription:
-	db   "Whips up a strong"
-	next "gust of wind.@"
+	db   "Doubles damage to"
+	next "a foe in flight.@"
 
 WingAttackDescription:
 	db   "Strikes the target"
@@ -1216,8 +1216,8 @@ CrossChopDescription:
 	next "cal hit ratio.@"
 
 TwisterDescription:
-	db   "Whips up a tornado"
-	next "to attack.@"
+	db   "Doubles damage to"
+	next "a foe in flight.@"
 
 RainDanceDescription:
 	db   "Boosts water-type"
