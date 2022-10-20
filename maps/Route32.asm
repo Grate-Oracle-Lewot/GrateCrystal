@@ -673,7 +673,7 @@ YoungsterAlbertSeenText:
 	line "around before."
 
 	para "So you think you"
-	line "are pretty tough?"
+	line "can dance?"
 	done
 
 YoungsterAlbertBeatenText:
