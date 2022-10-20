@@ -906,12 +906,12 @@ TransformedText:
 
 LightScreenEffectText:
 	text "<USER>'s"
-	line "SPCL.DEF rose!"
+	line "SPCL.DEF doubled!"
 	autodone
 
 ReflectEffectText:
 	text "<USER>'s"
-	line "DEFENSE rose!"
+	line "DEFENSE doubled!"
 	autodone
 
 NothingHappenedText:
