@@ -324,7 +324,7 @@ CutDescription:
 	next "scythes, etc.@"
 
 GustDescription:
-	db   "Doubles damage to"
+	db   "Doubles damage on"
 	next "a foe in flight.@"
 
 WingAttackDescription:
@@ -616,7 +616,7 @@ RockThrowDescription:
 	next "enemy.@"
 
 EarthquakeDescription:
-	db   "Doubles damage to"
+	db   "Doubles damage on"
 	next "underground foes.@"
 
 FissureDescription:
@@ -1216,7 +1216,7 @@ CrossChopDescription:
 	next "cal hit ratio.@"
 
 TwisterDescription:
-	db   "Doubles damage to"
+	db   "Doubles damage on"
 	next "a foe in flight.@"
 
 RainDanceDescription:
