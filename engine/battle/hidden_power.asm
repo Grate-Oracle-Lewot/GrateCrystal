@@ -54,8 +54,8 @@ HiddenPowerDamage:
 	and %0011
 	add b
 
-; Divide by 2 and add 30 + 1
-	srl a
+; Divide by 2 (now don't) and add 30 + 1
+	; srl a
 	add 30
 	inc a
 
