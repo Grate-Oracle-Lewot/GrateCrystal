@@ -110,7 +110,7 @@ ItemNames::
 	li "BIG PEARL"
 	li "EVERSTONE"
 	li "SPELL TAG"
-	li "RAGECANDYBAR"
+	li "CAKE OF RAGE"
 	li "GS BALL"
 	li "BLUE CARD"
 	li "MIRACLE SEED"
