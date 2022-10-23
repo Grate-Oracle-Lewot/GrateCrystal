@@ -239,10 +239,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
-# Known Bugs & Issues
-
-- Pokémon icons don't color in the Daycare
-
 # FAQ
 
 Q) Why not more Pokémon?
