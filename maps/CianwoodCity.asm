@@ -244,16 +244,16 @@ CianwoodCityYoungsterText:
 	done
 
 CianwoodCityPokefanMText:
-	text "Boulders to the"
+	text "The rocks to the"
 	line "north of town can"
-	cont "be crushed."
 
-	para "They may be hiding"
-	line "something."
+	para "be shattered by a"
+	line "#MON using ROCK"
+	cont "SMASH."
 
-	para "Your #MON could"
-	line "use ROCK SMASH to"
-	cont "break them."
+	para "If you don't have"
+	line "a #MON, you can"
+	cont "use a PICKAXE."
 	done
 
 CianwoodCityLassText:
