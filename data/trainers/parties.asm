@@ -2070,8 +2070,8 @@ SwimmerMGroup:
 
 	; SWIMMERM (7)
 	db "KIRK@", TRAINERTYPE_NORMAL
-	db 22, GYARADOS
-	db 22, QUAGSIRE
+	db 26, GYARADOS
+	db 26, QUAGSIRE
 	db -1 ; end
 
 	; SWIMMERM (8)
