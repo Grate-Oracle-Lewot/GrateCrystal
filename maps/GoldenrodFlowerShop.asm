@@ -35,19 +35,16 @@ FlowerShopTeacherScript:
 	faceplayer
 	opentext
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
-	waitbutton
-	closetext
+	promptbutton
 	verbosegiveitem SACRED_ASH
 	iffalse .BagFull
 	takeitem SQUIRTBOTTLE
-	opentext
 	writetext GoldenrodFlowerShopTeacherSacredAshText
 	waitbutton
 	closetext
 	end
 
 .BagFull:
-	opentext
 	writetext GoldenrodFlowerShopTeacherBagFullText
 	waitbutton
 	closetext
