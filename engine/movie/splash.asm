@@ -178,6 +178,8 @@ GameFreakPresents_PlacePresents:
 	ld bc, .end - .presents
 	call CopyBytes
 	call GameFreakPresents_NextScene
+	ld de, SFX_VICEGRIP
+	call PlaySFX
 	ret
 
 .presents
