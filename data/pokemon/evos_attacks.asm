@@ -3245,7 +3245,7 @@ TeddiursaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 2, SWEET_SCENT
-	db 3, LEER
+	db 3, GROWL
 	db 8, FURY_SWIPES
 	db 15, BELLY_DRUM
 	db 22, PLAY_ROUGH
@@ -3260,7 +3260,7 @@ UrsaringEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 2, SWEET_SCENT
-	db 3, LEER
+	db 3, GROWL
 	db 8, FURY_SWIPES
 	db 15, BELLY_DRUM
 	db 22, PLAY_ROUGH
