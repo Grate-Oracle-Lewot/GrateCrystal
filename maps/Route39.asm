@@ -129,8 +129,8 @@ TrainerPsychicNorman:
 TrainerPokefanfJaime:
 	faceplayer
 	opentext
-	checktime NITE
-	iffalse .NotNight
+	checktime MORN
+	iffalse .NotMorning
 	checkevent EVENT_BEAT_POKEFANF_JAIME
 	iftrue .Beaten
 	writetext PokefanfJaimeSeenText
@@ -150,7 +150,7 @@ TrainerPokefanfJaime:
 	closetext
 	end
 
-.NotNight:
+.NotMorning:
 	writetext PokefanfJaimeHopeItGetsDarkText
 	waitbutton
 	closetext
@@ -269,8 +269,8 @@ PsychicNormanAfterBattleText:
 	done
 
 PokefanfJaimeHopeItGetsDarkText:
-	text "Ufufufu… I hope it"
-	line "gets dark soon."
+	text "I'm not up to a"
+	line "battle right now."
 	done
 
 PokefanfJaimeSeenText:
@@ -286,20 +286,16 @@ PokefanfJaimeBeatenText:
 	done
 
 PokefanfJaimeAfterBattleText:
-	text "I met my MEOWTH at"
-	line "night, right here"
-	cont "on ROUTE 39."
+	text "If you train your"
+	line "#MON at the"
 
-	para "I'm not sure why,"
-	line "but it seems to"
+	para "same place where"
+	line "you caught it,"
 
-	para "like it when I"
-	line "train here."
+	para "it will become"
+	line "friendlier much"
 
-	para "It seems to become"
-	line "friendlier by"
-
-	para "training here than"
+	para "more quickly than"
 	line "anywhere else."
 	done
 
