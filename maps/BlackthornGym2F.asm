@@ -116,8 +116,7 @@ CooltrainerfFranAfterBattleText:
 	done
 
 BlackthornGym2FBoulderFellText:
-	text "The boulder fell"
-	line "through!"
+	text "Nothin' but net!"
 	done
 
 BlackthornGym2F_MapEvents:
