@@ -586,8 +586,8 @@ RocketBaseBossFThrashText:
 	done
 
 RocketBaseLanceShareFunText:
-	text "<PLAY_G>! Don't be"
-	line "so selfish!"
+	text "Hey <PLAYER>! Don't"
+	line "be so selfish!"
 
 	para "Spread the fun"
 	line "around!"
