@@ -586,9 +586,11 @@ RocketBaseBossFThrashText:
 	done
 
 RocketBaseLanceShareFunText:
-	text "Hey! Don't be so"
-	line "selfish. Spread"
-	cont "the fun around."
+	text "<PLAY_G>! Don't be"
+	line "so selfish!"
+
+	para "Spread the fun"
+	line "around!"
 	done
 
 RocketBaseBossDontMeddleText:
@@ -661,6 +663,10 @@ RocketBaseLancePostBattleText:
 
 	para "guy I battled in"
 	line "the process…"
+
+	para "He couldn't seem"
+	line "to form a coherent"
+	cont "sentence…"
 	done
 
 RocketBaseLancePowerOffText:
@@ -685,17 +691,17 @@ RockerBaseLanceElectrodeFaintText:
 	para "I don't see a"
 	line "switch on it…"
 
+	para "It seems to be"
+	line "powered by the"
+
+	para "ELECTRODE on"
+	line "either side."
+
 	para "We have no choice."
 	line "We have to make"
 
 	para "all the ELECTRODE"
 	line "faint."
-
-	para "That should stop"
-	line "this machine from"
-
-	para "transmitting that"
-	line "strange signal."
 
 	para "It's no fault of"
 	line "the #MON, so it"
