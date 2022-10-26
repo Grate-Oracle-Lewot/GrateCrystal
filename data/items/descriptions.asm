@@ -441,11 +441,11 @@ FreshWaterDesc:
 
 SodaPopDesc:
 	db   "Restores #MON"
-	next "HP by 60.@"
+	next "HP by 64.@"
 
 LemonadeDesc:
 	db   "Restores #MON"
-	next "HP by 80.@"
+	next "HP by 84.@"
 
 XAttackDesc:
 	db   "Raises ATTACK."
@@ -694,7 +694,7 @@ SpellTagDesc:
 
 RageCandyBarDesc:
 	db   "Restores #MON"
-	next "HP by 20.@"
+	next "HP by 42.@"
 
 GSBallDesc:
 	db   "The mysterious"
@@ -722,11 +722,11 @@ LimboStickDesc:
 
 EnergyPowderDesc:
 	db   "Restores #MON"
-	next "HP by 50. Bitter.@"
+	next "HP by 75. Bitter.@"
 
 EnergyRootDesc:
 	db   "Restores #MON"
-	next "HP by 200. Bitter.@"
+	next "HP by 210. Bitter.@"
 
 HealPowderDesc:
 	db   "Cures all status"
