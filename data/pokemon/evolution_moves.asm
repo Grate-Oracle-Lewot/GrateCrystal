@@ -216,7 +216,7 @@ EvolutionMoves::
 	db NO_MOVE      ; HERACROSS
 	db NO_MOVE      ; SNEASEL
 	db NO_MOVE      ; TEDDIURSA
-	db NO_MOVE      ; URSARING
+	db ROAR         ; URSARING
 	db NO_MOVE      ; SLUGMA
 	db ROLLOUT      ; MAGCARGO
 	db NO_MOVE      ; SWINUB
