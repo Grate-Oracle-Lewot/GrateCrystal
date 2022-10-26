@@ -254,6 +254,10 @@ GruntM8SeenText:
 	text "It feels great"
 	line "ordering #MON"
 	cont "to commit crimes."
+
+	para "Especially when I"
+	line "can tell they feel"
+	cont "guilty about it!"
 	done
 
 GruntM8BeatenText:
