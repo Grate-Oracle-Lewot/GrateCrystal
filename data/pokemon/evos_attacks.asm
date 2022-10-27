@@ -389,8 +389,8 @@ SandshrewEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, METAL_CLAW
-	db 17, FURY_CUTTER
+	db 11, FURY_CUTTER
+	db 17, METAL_CLAW
 	db 23, SLASH
 	db 30, SWIFT
 	db 33, DIG
@@ -404,8 +404,8 @@ SandslashEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, METAL_CLAW
-	db 17, FURY_CUTTER
+	db 11, FURY_CUTTER
+	db 17, METAL_CLAW
 	db 24, SLASH
 	db 33, SWIFT
 	db 36, DIG
