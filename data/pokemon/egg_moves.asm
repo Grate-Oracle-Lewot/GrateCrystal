@@ -860,7 +860,7 @@ SmoochumEggMoves:
 	db MEDITATE
 	db DAZZLY_GLEAM
 	db SCARY_FACE
-	db LOVELY_KISS
+	db SING
 	db -1 ; end
 
 ElekidEggMoves:
