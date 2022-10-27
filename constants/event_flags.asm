@@ -508,7 +508,7 @@
 	const EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
 	const EVENT_MET_BUENA
 	const EVENT_GOT_ODD_EGG
-	const_skip ; unused
+	const EVENT_BROKE_MAGIKARP_RECORD ; new to Grate Crystal
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 ; Unused: next 167 events
 
