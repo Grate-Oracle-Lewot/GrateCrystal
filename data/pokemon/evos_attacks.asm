@@ -1616,7 +1616,7 @@ LickitungEvosAttacks:
 	db 1, LICK
 	db 3, BIND
 	db 7, DEFENSE_CURL
-	db 13, DRAIN_KISS
+	db 13, LOVELY_KISS
 	db 19, STOMP
 	db 25, SEISMIC_TOSS
 	db 31, DISABLE
@@ -1869,7 +1869,7 @@ JynxEvosAttacks:
 	db 1, GROWL
 	db 9, POWDER_SNOW
 	db 13, ATTRACT
-	db 17, DRAIN_KISS
+	db 17, LOVELY_KISS
 	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
@@ -2645,7 +2645,7 @@ TogepiEvosAttacks:
 	db 2, CHARM
 	db 3, ENCORE
 	db 7, METRONOME
-	db 18, DRAIN_KISS
+	db 18, LOVELY_KISS
 	db 25, BATON_PASS
 	db 31, SAFEGUARD
 	db 38, EGG_BOMB
@@ -2660,7 +2660,7 @@ TogeticEvosAttacks:
 	db 2, CHARM
 	db 3, ENCORE
 	db 7, METRONOME
-	db 18, DRAIN_KISS
+	db 18, LOVELY_KISS
 	db 25, BATON_PASS
 	db 31, SAFEGUARD
 	db 38, AIR_SLASH
@@ -3144,7 +3144,7 @@ SnubbullEvosAttacks:
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
-	db 19, DRAIN_KISS
+	db 19, LOVELY_KISS
 	db 26, ROAR
 	db 34, HYPER_FANG
 	db 43, PLAY_ROUGH
@@ -3159,7 +3159,7 @@ GranbullEvosAttacks:
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
-	db 20, DRAIN_KISS
+	db 20, LOVELY_KISS
 	db 28, ROAR
 	db 38, HYPER_FANG
 	db 51, PLAY_ROUGH
@@ -3573,7 +3573,7 @@ SmoochumEvosAttacks:
 	db 1, GROWL
 	db 9, POWDER_SNOW
 	db 13, SWEET_KISS
-	db 17, DRAIN_KISS
+	db 17, LOVELY_KISS
 	db 21, DOUBLESLAP
 	db 25, CONFUSION
 	db 33, CHARM
