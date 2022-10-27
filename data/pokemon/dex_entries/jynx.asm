@@ -6,5 +6,5 @@
 	next "and its movements"
 
 	page "resemble dance."
-	next "A kiss from one"
-	next "puts you to sleep.@"
+	next "It can suck energy"
+	next "out with a kiss.@"
