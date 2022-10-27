@@ -265,7 +265,7 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        20, WATER,        SPECIAL,  100, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            30, DARK,         PHYSICAL, 100, 10,   0
 	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY,        SPECIAL,  100, 35,   0
-	move POWER_GEM,    EFFECT_NORMAL_HIT,         75, ROCK,         SPECIAL,  100, 15,   0
+	move POWER_GEM,    EFFECT_PAY_DAY,            75, ROCK,         SPECIAL,  100, 15,   0
 	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   85,  5,  30
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       PHYSICAL, 100,  1,   0
 	assert_table_length NUM_ATTACKS
