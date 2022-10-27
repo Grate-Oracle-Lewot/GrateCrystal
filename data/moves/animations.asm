@@ -4689,7 +4689,7 @@ BattleAnim_BeatUp:
 	anim_ret
 
 BattleAnim_PowerGem:
-	anim_1gfx ANIM_GFX_SPEED
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_ICE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
 	anim_sound 0, 1, SFX_MORNING_SUN
@@ -4699,10 +4699,13 @@ BattleAnim_PowerGem:
 .loop
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 12
