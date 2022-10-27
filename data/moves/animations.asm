@@ -254,7 +254,7 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_FairyWind
-	dw BattleAnim_DrainKiss
+	dw BattleAnim_PowerGem
 	dw BattleAnim_Moonblast
 	dw BattleAnim_Struggle
 	assert_table_length NUM_ATTACKS + 1
@@ -2415,13 +2415,15 @@ BattleAnim_IronHead:
 	anim_ret
 
 BattleAnim_LovelyKiss:
-	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
+	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS, ANIM_GFX_BUBBLE
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
 	anim_wait 32
-	anim_sound 0, 1, SFX_LICK
+	anim_sound 0, 0, SFX_SWEET_SCENT
 	anim_obj ANIM_OBJ_HEART, 128, 40, $0
-	anim_wait 40
+	anim_call BattleAnimSub_Drain
+	anim_wait 128
+	anim_wait 42
 	anim_ret
 
 BattleAnim_Bonemerang:
@@ -4686,16 +4688,8 @@ BattleAnim_BeatUp:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_DrainKiss:
-	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS, ANIM_GFX_BUBBLE
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
-	anim_wait 32
-	anim_sound 0, 0, SFX_SWEET_SCENT
-	anim_obj ANIM_OBJ_HEART, 128, 40, $0
-	anim_call BattleAnimSub_Drain
-	anim_wait 128
-	anim_wait 42
+BattleAnim_PowerGem:
+
 	anim_ret
 
 BattleAnim_Moonblast:
