@@ -211,7 +211,7 @@ BellsproutEggMoves:
 	db ENCORE
 	db SYNTHESIS
 	db LEECH_LIFE
-	db DRAIN_KISS
+	db LOVELY_KISS
 	db -1 ; end
 
 TentacoolEggMoves:
@@ -411,7 +411,7 @@ GoldeenEggMoves:
 
 MrMimeEggMoves:
 	db FUTURE_SIGHT
-	db DRAIN_KISS
+	db LOVELY_KISS
 	db PLAY_ROUGH
 	db METRONOME
 	db -1 ; end
@@ -703,7 +703,7 @@ PinecoEggMoves:
 DunsparceEggMoves:
 	db BIDE
 	db BITE
-	db DRAIN_KISS
+	db LOVELY_KISS
 	db RAPID_SPIN
 	db GLARE
 	db -1 ; end
@@ -897,7 +897,7 @@ LarvitarEggMoves:
 	db -1 ; end
 
 WhimsicottEggMoves:
-	db DRAIN_KISS
+	db LOVELY_KISS
 	db MIST
 	db HAZE
 	db SMOKESCREEN
