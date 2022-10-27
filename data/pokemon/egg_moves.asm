@@ -101,6 +101,7 @@ VulpixEggMoves:
 	db PLAY_ROUGH
 	db SPITE
 	db DISABLE
+	db POWER_GEM
 	db -1 ; end
 
 ZubatEggMoves:
@@ -141,10 +142,10 @@ VenonatEggMoves:
 DiglettEggMoves:
 	db ANCIENTPOWER
 	db PURSUIT
+	db POWER_GEM
 	db BEAT_UP
 	db FAINT_ATTACK
 	db IRON_HEAD
-	db TRIPLE_KICK
 	db -1 ; end
 
 MeowthEggMoves:
@@ -226,8 +227,6 @@ GeodudeEggMoves:
 	db MEGA_PUNCH
 	db ANCIENTPOWER
 	db EARTH_POWER
-	db THUNDERBOLT
-	db THUNDER
 	db -1 ; end
 
 PonytaEggMoves:
@@ -278,20 +277,21 @@ SeelEggMoves:
 	db -1 ; end
 
 GrimerEggMoves:
+	db POWER_GEM
 	db HAZE
 	db MEAN_LOOK
-	db LICK
 	db FAINT_ATTACK
+	db LICK
 	db BODY_SLAM
 	db -1 ; end
 
 ShellderEggMoves:
-	db TAKE_DOWN
 	db RAPID_SPIN
 	db SCREECH
 	db DAZZLY_GLEAM
 	db CRABHAMMER
 	db PRESENT
+	db POWER_GEM
 	db -1 ; end
 
 GastlyEggMoves:
@@ -306,6 +306,7 @@ OnixEggMoves:
 	db ANCIENTPOWER
 	db FLAIL
 	db SLAM
+	db POWER_GEM
 	db EARTH_POWER
 	db -1 ; end
 
@@ -402,11 +403,10 @@ HorseaEggMoves:
 	db -1 ; end
 
 GoldeenEggMoves:
-	db PSYBEAM
 	db HAZE
 	db HYDRO_PUMP
 	db DRILL_PECK
-	db SIGNAL_BEAM
+	db POWER_GEM
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -488,6 +488,7 @@ DratiniEggMoves:
 	db EARTH_POWER
 	db AIR_SLASH
 	db DOUBLE_EDGE
+	db POWER_GEM
 	db -1 ; end
 
 ChikoritaEggMoves:
@@ -603,7 +604,7 @@ MareepEggMoves:
 	db SAFEGUARD
 	db SCREECH
 	db REFLECT
-	db THUNDERBOLT
+	db POWER_GEM
 	db IRON_HEAD
 	db SPORE
 	db -1 ; end
@@ -671,9 +672,9 @@ MurkrowEggMoves:
 
 MisdreavusEggMoves:
 	db PLAY_ROUGH
-	db DESTINY_BOND
 	db SCREECH
 	db SING
+	db SUPER_FANG
 	db LEECH_LIFE
 	db ABSORB
 	db MEGA_DRAIN
@@ -704,7 +705,7 @@ DunsparceEggMoves:
 	db BIDE
 	db BITE
 	db LOVELY_KISS
-	db RAPID_SPIN
+	db POWER_GEM
 	db GLARE
 	db -1 ; end
 
@@ -766,6 +767,7 @@ TeddiursaEggMoves:
 	db -1 ; end
 
 SlugmaEggMoves:
+	db POWER_GEM
 	db ACID_ARMOR
 	db FLAME_WHEEL
 	db SLUDGE
@@ -799,9 +801,8 @@ RemoraidEggMoves:
 	db -1 ; end
 
 DelibirdEggMoves:
-	db SILVER_WIND
-	db DAZZLY_GLEAM
 	db SWORDS_DANCE
+	db POWER_GEM
 	db COTTON_SPORE
 	db -1 ; end
 
@@ -840,10 +841,10 @@ PhanpyEggMoves:
 	db -1 ; end
 
 StantlerEggMoves:
-	db SPITE
 	db REFLECT
 	db LIGHT_SCREEN
 	db FORESIGHT
+	db POWER_GEM
 	db IRON_HEAD
 	db DAZZLY_GLEAM
 	db -1 ; end
@@ -892,7 +893,7 @@ LarvitarEggMoves:
 	db STOMP
 	db OUTRAGE
 	db FOCUS_ENERGY
-	db ANCIENTPOWER
+	db POWER_GEM
 	db BELLY_DRUM
 	db -1 ; end
 
