@@ -879,7 +879,7 @@ WasDisabledText:
 	autodone
 
 CoinsScatteredText:
-	text "Coins scattered"
+	text "Money scattered"
 	line "everywhere!"
 	autodone
 
