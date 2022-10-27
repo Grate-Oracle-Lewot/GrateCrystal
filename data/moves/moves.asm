@@ -154,7 +154,7 @@ Moves:
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,       STATUS,    60, 30,   0
 	move DAZZLY_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY,        SPECIAL,  100, 15,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,          PHYSICAL, 100, 15,   0
-	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,       STATUS,    84, 15,   0
+	move LOVELY_KISS,  EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
 	move SKY_ATTACK,   EFFECT_FLY,               140, FLYING,       PHYSICAL,  95,  5,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       STATUS,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,        SPECIAL,  100, 35,  20
@@ -265,7 +265,7 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        20, WATER,        SPECIAL,  100, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            30, DARK,         PHYSICAL, 100, 10,   0
 	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY,        SPECIAL,  100, 35,   0
-	move DRAIN_KISS,   EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
+	move POWER_GEM,    EFFECT_NORMAL_HIT,         75, ROCK,         SPECIAL,  100, 15,   0
 	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   85,  5,  30
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       PHYSICAL, 100,  1,   0
 	assert_table_length NUM_ATTACKS
