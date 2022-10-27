@@ -4689,23 +4689,23 @@ BattleAnim_BeatUp:
 	anim_ret
 
 BattleAnim_PowerGem:
-	anim_1gfx ANIM_GFX_HIT
+	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
 	anim_sound 0, 1, SFX_MORNING_SUN
 	anim_wait 72
 	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
 	anim_call BattleAnim_ShowMon_0
-	anim_1gfx ANIM_GFX_ICE
 .loop
-	anim_obj ANIM_OBJ_POWDER_SNOW, 64, 88, $23
-	anim_wait 2
-	anim_obj ANIM_OBJ_POWDER_SNOW, 64, 80, $24
-	anim_wait 2
-	anim_obj ANIM_OBJ_POWDER_SNOW, 64, 96, $23
-	anim_wait 2
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_wait 4
 	anim_loop 2, .loop
-	anim_wait 40
+	anim_wait 12
 	anim_call BattleAnimSub_Ice
 	anim_wait 32
 	anim_ret
