@@ -272,7 +272,7 @@ DragonShrineQuestion1_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "Pal@"
+	db "Partner@"
 	db "Underling@"
 	db "Friend@"
 
@@ -286,7 +286,7 @@ DragonShrineQuestion2_MenuHeader:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
 	db "Strategy@"
-	db "Raising@"
+	db "Training@"
 	db "Cheating@"
 
 DragonShrineQuestion3_MenuHeader:
