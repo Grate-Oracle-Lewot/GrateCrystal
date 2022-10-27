@@ -252,7 +252,7 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "FAIRY WIND"
-	li "DRAIN KISS"
+	li "POWER GEM"
 	li "MOONBLAST"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS
