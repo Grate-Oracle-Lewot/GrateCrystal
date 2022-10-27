@@ -54,7 +54,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MEOWTH
 	db NO_MOVE      ; PERSIAN
 	db NO_MOVE      ; PSYDUCK
-	db PAY_DAY      ; GOLDUCK
+	db POWER_GEM    ; GOLDUCK
 	db NO_MOVE      ; MANKEY
 	db MEGA_PUNCH   ; PRIMEAPE
 	db NO_MOVE      ; GROWLITHE
