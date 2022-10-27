@@ -384,8 +384,8 @@ CooltrainerfBeth1SeenText:
 	line "strong, but…"
 
 	para "It was as if he"
-	line "absolutely had to"
-	cont "win at any cost."
+	line "just spewed words"
+	cont "at random."
 
 	para "I felt sorry for"
 	line "his #MON."
