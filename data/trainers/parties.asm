@@ -3608,7 +3608,7 @@ PokefanFGroup:
 
 	; POKEFANF (4)
 	db "JAIME@", TRAINERTYPE_ITEM
-	db 30, CHANSEY,    BERRY
+	db 30, BLISSEY,    BERRY
 	db -1 ; end
 
 	; POKEFANF (5)
