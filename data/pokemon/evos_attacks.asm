@@ -756,7 +756,6 @@ MeowthEvosAttacks:
 	db 41, PLAY_ROUGH
 	db 46, SLASH
 	db 52, IRON_HEAD
-	db 60, DARK_PULSE
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
@@ -767,12 +766,12 @@ PersianEvosAttacks:
 	db 11, BITE
 	db 15, FURY_SWIPES
 	db 20, PAY_DAY
-	db 29, FAINT_ATTACK
+	db 27, FAINT_ATTACK
+	db 27, POWER_GEM
 	db 38, SCREECH
 	db 46, PLAY_ROUGH
 	db 52, SLASH
 	db 60, IRON_HEAD
-	db 71, DARK_PULSE
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -929,6 +928,7 @@ KadabraEvosAttacks:
 	db 38, PSYCHIC_M
 	db 45, REFLECT
 	db 51, MIND_READER
+	db 58, POWER_GEM
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
@@ -943,6 +943,7 @@ AlakazamEvosAttacks:
 	db 38, PSYCHIC_M
 	db 45, REFLECT
 	db 51, MIND_READER
+	db 58, POWER_GEM
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -1045,7 +1046,7 @@ TentacoolEvosAttacks:
 	db 15, SCREECH
 	db 19, ACID
 	db 25, BUBBLEBEAM
-	db 30, SLAM
+	db 30, POWER_GEM
 	db 36, ACID_ARMOR
 	db 43, SLUDGE_BOMB
 	db 49, HYDRO_PUMP
@@ -1060,7 +1061,7 @@ TentacruelEvosAttacks:
 	db 15, SCREECH
 	db 19, ACID
 	db 25, BUBBLEBEAM
-	db 30, SLAM
+	db 30, POWER_GEM
 	db 38, ACID_ARMOR
 	db 47, SLUDGE_BOMB
 	db 55, HYDRO_PUMP
@@ -1075,8 +1076,8 @@ GeodudeEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 26, DEFENSE_CURL
-	db 31, ROLLOUT
+	db 26, ROLLOUT
+	db 31, POWER_GEM
 	db 36, EARTHQUAKE
 	db 41, ROCK_SLIDE
 	db 44, IRON_HEAD
@@ -1092,8 +1093,8 @@ GravelerEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 27, DEFENSE_CURL
-	db 34, ROLLOUT
+	db 27, ROLLOUT
+	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
 	db 52, IRON_HEAD
@@ -1107,8 +1108,8 @@ GolemEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 27, DEFENSE_CURL
-	db 34, ROLLOUT
+	db 27, ROLLOUT
+	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
 	db 52, IRON_HEAD
@@ -1177,7 +1178,7 @@ SlowbroEvosAttacks:
 	db 20, ACID
 	db 29, DISABLE
 	db 34, HEADBUTT
-	db 36, DEFENSE_CURL
+	db 36, IRON_TAIL
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -1816,8 +1817,9 @@ StaryuEvosAttacks:
 	db 25, PSYBEAM
 	db 31, BUBBLEBEAM
 	db 37, MINIMIZE
-	db 43, LIGHT_SCREEN
+	db 43, POWER_GEM
 	db 50, HYDRO_PUMP
+	db 56, LIGHT_SCREEN
 	db 0 ; no more level-up moves
 
 StarmieEvosAttacks:
@@ -2993,7 +2995,7 @@ SlowkingEvosAttacks:
 	db 20, ACID
 	db 29, DISABLE
 	db 34, IRON_HEAD
-	db 36, SWAGGER
+	db 36, POWER_GEM
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -3009,7 +3011,7 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
-	db 36, SUPER_FANG
+	db 36, POWER_GEM
 	db 41, SHADOW_BALL
 	db 46, PERISH_SONG
 	db 54, NIGHT_TERROR
@@ -3088,7 +3090,7 @@ ForretressEvosAttacks:
 
 DunsparceEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, RAGE
+	db 1, RAPID_SPIN
 	db 2, DEFENSE_CURL
 	db 4, MUD_SLAP
 	db 8, ROLLOUT
@@ -3339,7 +3341,7 @@ CorsolaEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 31, SPIKE_CANNON
 	db 37, MIRROR_COAT
-	db 42, ANCIENTPOWER
+	db 42, POWER_GEM
 	db 50, CRABHAMMER
 	db 0 ; no more level-up moves
 
