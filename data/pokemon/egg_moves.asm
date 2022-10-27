@@ -216,7 +216,7 @@ BellsproutEggMoves:
 	db -1 ; end
 
 TentacoolEggMoves:
-	db AURORA_BEAM
+	db SLAM
 	db MIRROR_COAT
 	db RAPID_SPIN
 	db HAZE
