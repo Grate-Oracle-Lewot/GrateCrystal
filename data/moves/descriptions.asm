@@ -1272,8 +1272,8 @@ FairyWindDescription:
 	next "wind to attack.@"
 
 PowerGemDescription:
-	db   "Fires glowing gems"
-	next "to attack.@"
+	db   "Fires gems. Get"
+	next "them as money.@"
 
 MoonblastDescription:
 	db   "A moonbeam. It may"
