@@ -258,7 +258,7 @@
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
 	const FAIRY_WIND   ; fc
-	const DRAIN_KISS   ; fd
+	const POWER_GEM    ; fd
 	const MOONBLAST    ; fe
 	const STRUGGLE     ; ff
 NUM_ATTACKS EQU const_value - 1
