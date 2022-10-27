@@ -52,7 +52,7 @@ EvolutionMoves::
 	db NO_MOVE      ; DIGLETT
 	db TRI_ATTACK   ; DUGTRIO
 	db NO_MOVE      ; MEOWTH
-	db NO_MOVE      ; PERSIAN
+	db POWER_GEM    ; PERSIAN
 	db NO_MOVE      ; PSYDUCK
 	db POWER_GEM    ; GOLDUCK
 	db NO_MOVE      ; MANKEY
