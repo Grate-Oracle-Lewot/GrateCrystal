@@ -253,7 +253,7 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw FairyWindDescription
-	dw DrainKissDescription
+	dw PowerGemDescription
 	dw MoonblastDescription
 	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
@@ -828,8 +828,8 @@ LeechLifeDescription:
 	next "damage inflicted.@"
 
 LovelyKissDescription:
-	db   "A kiss that puts"
-	next "the foe to sleep.@"
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 SkyAttackDescription:
 	db   "1st turn: Fly"
@@ -1271,9 +1271,9 @@ FairyWindDescription:
 	db   "Stirs up a fairy"
 	next "wind to attack.@"
 
-DrainKissDescription:
-	db   "Steals 1/2 of the"
-	next "damage inflicted.@"
+PowerGemDescription:
+	db   "Fires glowing gems"
+	next "to attack.@"
 
 MoonblastDescription:
 	db   "A moonbeam. It may"
