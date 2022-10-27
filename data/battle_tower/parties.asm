@@ -1182,7 +1182,7 @@ BattleTowerMons:
 
 	db JYNX
 	db GOLD_BERRY
-	db BLIZZARD, LOVELY_KISS, DREAM_EATER, ATTRACT
+	db BLIZZARD, SING, DREAM_EATER, ATTRACT
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1192,7 +1192,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 50000
 	dn 15, 11, 14, 14 ; DVs
-	db 5, 15, 15, 10 ; PP
+	db 5, 25, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -4135,7 +4135,7 @@ BattleTowerMons:
 
 	db JYNX
 	db QUICK_CLAW
-	db LOVELY_KISS, BLIZZARD, DREAM_EATER, PSYCHIC_M
+	db SING, BLIZZARD, DREAM_EATER, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4145,7 +4145,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 15, 13, 15 ; DVs
-	db 15, 5, 15, 10 ; PP
+	db 25, 5, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
