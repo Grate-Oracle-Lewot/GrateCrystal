@@ -123,7 +123,7 @@ EvolutionMoves::
 	db CONFUSION    ; STARMIE
 	db NO_MOVE      ; MR__MIME
 	db NO_MOVE      ; SCYTHER
-	db LOVELY_KISS  ; JYNX
+	db ATTRACT      ; JYNX
 	db SUBMISSION   ; ELECTABUZZ
 	db NO_MOVE      ; MAGMAR
 	db NO_MOVE      ; PINSIR
