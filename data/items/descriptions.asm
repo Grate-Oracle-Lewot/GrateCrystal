@@ -524,8 +524,8 @@ MysteryEggDesc:
 	next "from MR.#MON.@"
 
 ClearBellDesc:
-	db   "Makes a gentle"
-	next "ringing.@"
+	db   "Wakes up sleeping"
+	next "#MON in battle.@"
 
 SilverWingDesc:
 	db   "A strange, silver-"
