@@ -211,6 +211,16 @@ SaffronCityYoungster2Text:
 
 	para "gather from all"
 	line "over the place."
+
+	para "I hear there's"
+	line "another building"
+
+	para "somewhere near"
+	line "there where former"
+
+	para "ELITE FOUR members"
+	line "sometimes hang"
+	cont "out…"
 	done
 
 SaffronCityLass2Text:
