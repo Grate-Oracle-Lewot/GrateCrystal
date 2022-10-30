@@ -112,6 +112,9 @@ CeladonMansionRoofHousePharmacistCurseText:
 
 	para "whittles down the"
 	line "victim's HP."
+
+	para "…If it's used by a"
+	line "ghost type."
 	done
 
 CeladonMansionRoofHouse_MapEvents:
@@ -126,4 +129,4 @@ CeladonMansionRoofHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1
+	object_event  3,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHousePharmacistScript, -1
