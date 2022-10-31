@@ -46,8 +46,7 @@ MrFujisHouseBookshelf:
 MrFujisHouseSuperNerdText:
 	text "MR.FUJI does live"
 	line "here, but he's not"
-
-	para "home now."
+	cont "home now."
 
 	para "He should be at"
 	line "the SOUL HOUSE."
