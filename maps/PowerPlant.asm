@@ -232,8 +232,11 @@ PowerPlantOfficer1CeruleanShadyCharacterText:
 	done
 
 PowerPlantOfficer1CouldIAskForYourCooperationText:
-	text "Could I ask for"
-	line "your cooperation?"
+	text "Hey, random kid,"
+	line "could you check it"
+	cont "out for us?"
+
+	para "Thanks!"
 	done
 
 PowerPlantOfficer1HaveToBeefUpSecurityText:
