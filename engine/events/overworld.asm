@@ -1707,6 +1707,7 @@ PocketPCFunction:
 .PocketPCNoSignal:
 	ld hl, .NoSignalText
 	call MenuTextboxBackup
+	ld a, $80
 	jr .finish
 
 .NoSignalText:
