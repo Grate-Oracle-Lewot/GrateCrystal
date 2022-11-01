@@ -1685,12 +1685,11 @@ PocketPCFunction:
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .PocketPCNoSignal
-	ret z
-	call .LoadPocketPC
+	jr nz, .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
-	
+
 .LoadPocketPC:
 	ld a, [wPlayerState]
 	ld hl, Script_LoadPocketPC
@@ -1711,6 +1710,7 @@ PocketPCFunction:
 .PocketPCNoSignal:
 	ld hl, .NoSignalText
 	call MenuTextboxBackup
+	ld a, $80
 	ret
 
 .NoSignalText:
