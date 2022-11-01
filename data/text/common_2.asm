@@ -609,9 +609,9 @@ _ThrewAwayText::
 	prompt
 
 _OakThisIsntTheTimeText::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	scroll "time to use that!"
+	text "OAK: There's a"
+	line "time and place for"
+	scroll "everything…"
 	autodone
 
 _YouDontHaveAMonText::
@@ -1359,9 +1359,9 @@ _ItemsTooImportantText::
 	prompt
 
 _ItemsOakWarningText::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	scroll "time to use that!"
+	text "OAK: There's a"
+	line "time and place for"
+	scroll "everything…"
 	done
 
 _PokemonSwapItemText::
