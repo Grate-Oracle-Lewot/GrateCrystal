@@ -2323,6 +2323,8 @@ ItemfinderEffect:
 	ret
 
 PocketPCEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
 	farcall PocketPCFunction
 	ret
 
