@@ -1685,6 +1685,7 @@ PocketPCFunction:
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .PocketPCNoSignal
+	ret z
 	call .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
