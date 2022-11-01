@@ -1682,6 +1682,9 @@ UnusedNothingHereText: ; unreferenced
 	text_end
 
 PocketPCFunction:
+	call GetMapEnvironment
+	cp CAVE
+	jr z, .PocketPCNoSignal
 	call .LoadPocketPC
 	and $7f
 	ld [wFieldMoveSucceeded], a
@@ -1703,6 +1706,15 @@ PocketPCFunction:
 	ld h, d
 	ld l, e
 	ret
+
+.PocketPCNoSignal:
+	ld hl, .NoSignalText
+	call MenuTextboxBackup
+	ret
+
+.NoSignalText:
+	text_far _PocketPCNoSignalText
+	text_end
 
 BikeFunction:
 	call .TryBike
