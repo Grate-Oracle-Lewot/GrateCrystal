@@ -259,7 +259,7 @@ Route31FruitTree:
 	fruittree FRUITTREE_ROUTE_31
 
 Route31Potion:
-	itemball POTION
+	itemball POCKET_PC
 
 Route31PokeBall:
 	itemball POKE_BALL
