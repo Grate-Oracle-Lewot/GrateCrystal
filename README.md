@@ -160,6 +160,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 
 ## Miscellaneous
+- When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
