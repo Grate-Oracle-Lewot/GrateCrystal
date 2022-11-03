@@ -175,10 +175,10 @@ ViridianCityDreamEaterFisherGotDreamEaterText:
 	done
 
 ViridianCityYoungsterText:
-	text "I heard that there"
-	line "are many items on"
+	text "I heard that they"
+	line "did a little bit"
 
-	para "the ground in"
+	para "of renovation in"
 	line "VIRIDIAN FOREST."
 	done
 
