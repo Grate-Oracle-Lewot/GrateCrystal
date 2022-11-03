@@ -171,7 +171,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Trainers give more money upon defeat
 - Happiness builds a bit faster
 - Eggs hatch twice as fast
-- Nidorina and Nidoqueen can breed
+- Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat, Dragon Scale, and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid and Smoochum now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
