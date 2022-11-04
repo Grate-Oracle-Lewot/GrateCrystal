@@ -489,7 +489,7 @@ ENDM
 	map_attributes SeafoamCavePuzzleChamber, SEAFOAM_CAVE_PUZZLE_CHAMBER, $00, 0
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
-	map_attributes SafariZone, SAFARI_ZONE, $05, 0
+	map_attributes SafariZone, SAFARI_ZONE, $00, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $00, 0
 	map_attributes SilphCo3F, SILPH_CO_3F, $00, 0
