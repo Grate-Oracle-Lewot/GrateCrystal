@@ -757,6 +757,7 @@ KRIS EQU __trainer_class__
 	const LIU_HAI
 
 	trainerclass CAL_F ; 4c
+	const LINK_KRIS
 	const CALLA
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
