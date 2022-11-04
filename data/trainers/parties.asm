@@ -3846,6 +3846,13 @@ GamblerGroup:
 
 CalFGroup:
 	; CAL_F (1)
+	db "CRYSTAL@", TRAINERTYPE_NORMAL
+	db 10, CHIKORITA
+	db 10, CYNDAQUIL
+	db 10, TOTODILE
+	db -1 ; end
+
+	; CAL_F (2)
 	db "CALLA@", TRAINERTYPE_NORMAL
 	db 70, CELEBI
 	db 70, MEW
