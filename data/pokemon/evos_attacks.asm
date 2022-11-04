@@ -1462,10 +1462,10 @@ KrabbyEvosAttacks:
 	db 16, HARDEN
 	db 19, METAL_CLAW
 	db 23, STOMP
-	db 27, CRABHAMMER
+	db 27, SLAM
 	db 30, SWORDS_DANCE
 	db 34, PROTECT
-	db 38, SLAM
+	db 38, CRABHAMMER
 	db 41, GUILLOTINE
 	db 0 ; no more level-up moves
 
@@ -1478,10 +1478,10 @@ KinglerEvosAttacks:
 	db 16, HARDEN
 	db 19, METAL_CLAW
 	db 23, STOMP
-	db 27, CRABHAMMER
+	db 27, SLAM
 	db 32, SWORDS_DANCE
 	db 38, PROTECT
-	db 42, SLAM
+	db 42, CRABHAMMER
 	db 49, GUILLOTINE
 	db 0 ; no more level-up moves
 
