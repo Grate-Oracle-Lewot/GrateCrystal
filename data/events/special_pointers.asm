@@ -29,6 +29,7 @@ SpecialsPointers::
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
 	add_special UnlockMysteryGift
+	add_special CheckOtherPlayerGender
 
 ; Map events
 	add_special BugContestJudging
@@ -182,4 +183,3 @@ SpecialsPointers::
 
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
-	add_special UnusedDummySpecial ; unused
