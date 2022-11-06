@@ -47,6 +47,9 @@ MagikarpLengthRaterScript:
 	ifequal MAGIKARPLENGTH_REFUSED, .Refused
 	ifequal MAGIKARPLENGTH_TOO_SHORT, .TooShort
 	; MAGIKARPLENGTH_BEAT_RECORD
+	closetext
+	showemote EMOTE_FISH, LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU, 15
+	opentext
 	sjump .GetReward
 
 .GetReward:
