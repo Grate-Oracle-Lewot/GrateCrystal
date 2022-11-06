@@ -45,12 +45,13 @@ Route39BarnTwin2Script:
 	end
 
 MoomooScript:
-	opentext
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue .HappyCow
-	writetext MoomooWeakMooText
 	setval MILTANK
 	special PlaySlowCry
+	showemote EMOTE_SAD, ROUTE39BARN_MOOMOO, 15
+	opentext
+	writetext MoomooWeakMooText
 	promptbutton
 	writetext Route39BarnItsCryIsWeakText
 	checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
@@ -119,8 +120,10 @@ MoomooScript:
 	end
 
 .HappyCow:
-	writetext MoomooHappyMooText
 	cry MILTANK
+	showemote EMOTE_HAPPY, ROUTE39BARN_MOOMOO, 15
+	opentext
+	writetext MoomooHappyMooText
 	waitbutton
 	closetext
 	end
