@@ -45,6 +45,7 @@ OlivineLighthouseJasmine:
 	closetext
 	special RestartMapMusic
 	cry AMPHAROS
+	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_MONSTER, 15
 	special FadeOutPalettes
 	pause 10
 	special FadeInPalettes
@@ -102,12 +103,13 @@ OlivineLighthouseJasmine:
 
 OlivineLighthouseAmphy:
 	faceplayer
-	opentext
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iftrue .HealthyNow
-	writetext AmphyPalPalooText
 	setval AMPHAROS
 	special PlaySlowCry
+	showemote EMOTE_SAD, OLIVINELIGHTHOUSE6F_MONSTER, 15
+	opentext
+	writetext AmphyPalPalooText
 	promptbutton
 	writetext AmphyBreathingLaboredText
 	waitbutton
@@ -115,8 +117,10 @@ OlivineLighthouseAmphy:
 	end
 
 .HealthyNow:
-	writetext AmphyPaluPaluluText
 	cry AMPHAROS
+	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_MONSTER, 15
+	opentext
+	writetext AmphyPaluPaluluText
 	waitbutton
 	closetext
 	special FadeOutPalettes
