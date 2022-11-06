@@ -181,6 +181,7 @@ TrainerBugCatcherWade1:
 
 Route31MailRecipientScript:
 	faceplayer
+	showemote EMOTE_SLEEP, ROUTE31_FISHER, 15
 	opentext
 	checkevent EVENT_GOT_TM50_NIGHTMARE
 	iftrue .DescribeNightmare
@@ -189,6 +190,7 @@ Route31MailRecipientScript:
 	writetext Text_Route31SleepyMan
 	waitbutton
 	closetext
+	showemote EMOTE_SLEEP, ROUTE31_FISHER, 15
 	end
 
 .TryGiveKenya:
@@ -308,8 +310,6 @@ Text_Route31SleepyMan:
 	para "If I were a wild"
 	line "#MON, I'd be"
 	cont "easy to catch…"
-
-	para "…Zzzz…"
 	done
 
 Text_Route31SleepyManGotMail:
