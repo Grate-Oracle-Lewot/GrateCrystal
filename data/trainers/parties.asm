@@ -496,7 +496,7 @@ ScientistGroup:
 	db "HIDEO@", TRAINERTYPE_NORMAL
 	db 42, MAGNETON
 	db 45, ELECTRODE
-	db 45, MAGNETON
+	db 45, JOLTEON
 	db -1 ; end
 
 	; SCIENTIST (8)
