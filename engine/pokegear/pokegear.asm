@@ -1467,7 +1467,7 @@ RadioChannels:
 ; Pokédex Show in the morning
 ; Oak's Pokémon Talk in the afternoon and evening
 	call .InJohto
-	jr nc, .NoSignal
+	jp nc, .NoSignal
 	ld a, [wTimeOfDay]
 	and a
 	jp z, LoadStation_PokedexShow
