@@ -39,6 +39,7 @@ VermilionCitySuperNerdScript:
 	jumptextfaceplayer VermilionCitySuperNerdText
 
 VermilionSnorlax:
+	showemote EMOTE_SLEEP, VERMILIONCITY_BIG_SNORLAX, 20
 	opentext
 	special SnorlaxAwake
 	iftrue .Awake
