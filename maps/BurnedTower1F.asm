@@ -40,7 +40,7 @@ BurnedTower1F_MapScripts:
 
 .MeetEusine:
 	turnobject BURNEDTOWER1F_EUSINE, DOWN
-	showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15
+	showemote EMOTE_QUESTION, BURNEDTOWER1F_EUSINE, 15
 	applymovement BURNEDTOWER1F_EUSINE, BurnedTower1FEusineMovement
 	opentext
 	writetext BurnedTower1FEusineIntroText
@@ -104,7 +104,7 @@ BurnedTowerRivalBattleScript:
 	special FadeOutMusic
 	pause 15
 	earthquake 50
-	showemote EMOTE_SHOCK, PLAYER, 15
+	showemote EMOTE_QUESTION, PLAYER, 15
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	changeblock 10, 8, $25 ; hole
