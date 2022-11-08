@@ -16,17 +16,19 @@ CeruleanTradeSpeechHouseGrampsScript:
 	jumptextfaceplayer CeruleanTradeSpeechHouseGrampsText
 
 CeruleanTradeSpeechHouseKangaskhanScript:
+	cry KANGASKHAN
+	showemote EMOTE_HAPPY, CERULEANTRADESPEECHHOUSE_CHANSEY, 10
 	opentext
 	writetext CeruleanTradeSpeechHouseKangaskhanText
-	cry KANGASKHAN
 	waitbutton
 	closetext
 	end
 
 CeruleanTradeSpeechHouseZubatScript:
+	cry ZUBAT
+	showemote EMOTE_HAPPY, CERULEANTRADESPEECHHOUSE_ZUBAT, 10
 	opentext
 	writetext CeruleanTradeSpeechHouseZubatText
-	cry ZUBAT
 	waitbutton
 	closetext
 	end
