@@ -62,7 +62,7 @@ ElmsLab_MapScripts:
 	closetext
 	playsound SFX_GLASS_TING
 	pause 30
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 10
+	showemote EMOTE_QUESTION, ELMSLAB_ELM, 10
 	turnobject ELMSLAB_ELM, DOWN
 	opentext
 	writetext ElmText_GotAnEmail
