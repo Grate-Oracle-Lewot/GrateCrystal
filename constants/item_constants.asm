@@ -233,7 +233,7 @@ TM01 EQU const_value
 	add_tm RAIN_DANCE   ; cc
 	add_tm GIGA_DRAIN   ; cd
 	add_tm ENDURE       ; ce
-	add_tm FRUSTRATION  ; cf
+	add_tm POISON_JAB   ; cf
 	add_tm SOLARBEAM    ; d0
 	add_tm IRON_TAIL    ; d1
 	add_tm DRAGONBREATH ; d2
