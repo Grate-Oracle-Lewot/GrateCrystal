@@ -223,7 +223,7 @@
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const PRESENT      ; d9
-	const FRUSTRATION  ; da
+	const POISON_JAB   ; da
 	const SAFEGUARD    ; db
 	const NIGHT_TERROR ; dc
 	const SACRED_FIRE  ; dd
