@@ -230,7 +230,7 @@ Moves:
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, NORMAL,       STATUS,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,       PHYSICAL, 100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, FAIRY,        PHYSICAL, 100, 20,   0
-	move FRUSTRATION,  EFFECT_FRUSTRATION,         1, NORMAL,       PHYSICAL, 100, 20,   0
+	move POISON_JAB,   EFFECT_POISON_HIT,         80, POISON,       PHYSICAL, 100, 15,  30
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,       STATUS,   100, 25,   0
 	move NIGHT_TERROR, EFFECT_SNORE,             120, GHOST,        PHYSICAL,  90, 10,  30
 	move SACRED_FIRE,  EFFECT_BURN_HIT,          100, FIRE,         PHYSICAL, 100,  5,  50
