@@ -217,7 +217,7 @@ MoveNames::
 	li "HEAL BELL"
 	li "RETURN"
 	li "PRESENT"
-	li "FRUSTRATION"
+	li "POISON JAB"
 	li "SAFEGUARD"
 	li "NIGHT TERROR"
 	li "SACRED FIRE"
