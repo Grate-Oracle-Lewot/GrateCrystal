@@ -542,10 +542,10 @@ LedybaEggMoves:
 	db -1 ; end
 
 SpinarakEggMoves:
-	db BATON_PASS
 	db PURSUIT
 	db SIGNAL_BEAM
 	db DISABLE
+	db NIGHT_SHADE
 	db BITE
 	db CRUNCH
 	db -1 ; end
