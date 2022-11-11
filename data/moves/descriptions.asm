@@ -218,7 +218,7 @@ MoveDescriptions::
 	dw HealBellDescription
 	dw ReturnDescription
 	dw PresentDescription
-	dw FrustrationDescription
+	dw PoisonJabDescription
 	dw SafeguardDescription
 	dw NightTerrorDescription
 	dw SacredFireDescription
@@ -420,7 +420,7 @@ TailWhipDescription:
 	next "DEFENSE.@"
 
 PoisonStingDescription:
-	db   "An attack that may"
+	db   "A sting that may"
 	next "poison the target.@"
 
 TwineedleDescription:
@@ -1131,9 +1131,9 @@ PresentDescription:
 	db   "A bomb that may"
 	next "restore HP.@"
 
-FrustrationDescription:
-	db   "An attack based on"
-	next "lack of loyalty.@"
+PoisonJabDescription:
+	db   "A stab that may"
+	next "poison the target.@"
 
 SafeguardDescription:
 	db   "Prevents all"
