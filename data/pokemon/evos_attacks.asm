@@ -211,10 +211,10 @@ BeedrillEvosAttacks:
 	db 1, POISON_STING
 	db 1, TWINEEDLE
 	db 10, FURY_ATTACK
-	db 15, FOCUS_ENERGY
+	db 15, RAGE
 	db 20, AGILITY
-	db 25, RAGE
-	db 30, PURSUIT
+	db 25, PURSUIT
+	db 30, POISON_JAB
 	db 35, PIN_MISSILE
 	db 40, DRILL_PECK
 	db 45, SPIKE_CANNON
@@ -465,7 +465,7 @@ NidoranMEvosAttacks:
 	db 12, DOUBLE_KICK
 	db 17, FURY_ATTACK
 	db 23, FOCUS_ENERGY
-	db 30, MEGA_KICK
+	db 30, POISON_JAB
 	db 38, HORN_DRILL
 	db 40, TOXIC
 	db 0 ; no more level-up moves
@@ -480,7 +480,7 @@ NidorinoEvosAttacks:
 	db 12, DOUBLE_KICK
 	db 19, FURY_ATTACK
 	db 27, FOCUS_ENERGY
-	db 36, MEGA_KICK
+	db 36, POISON_JAB
 	db 46, HORN_DRILL
 	db 50, TOXIC
 	db 0 ; no more level-up moves
@@ -2525,9 +2525,9 @@ SpinarakEvosAttacks:
 	db 1, STRING_SHOT
 	db 6, SCARY_FACE
 	db 11, WRAP
-	db 17, NIGHT_SHADE
+	db 17, ACID
 	db 23, LEECH_LIFE
-	db 30, ACID
+	db 30, POISON_JAB
 	db 37, SPIDER_WEB
 	db 45, AGILITY
 	db 53, HYPER_FANG
@@ -2539,9 +2539,9 @@ AriadosEvosAttacks:
 	db 1, STRING_SHOT
 	db 6, SCARY_FACE
 	db 11, WRAP
-	db 17, NIGHT_SHADE
+	db 17, ACID
 	db 25, LEECH_LIFE
-	db 34, ACID
+	db 34, POISON_JAB
 	db 43, SPIDER_WEB
 	db 53, AGILITY
 	db 63, HYPER_FANG
