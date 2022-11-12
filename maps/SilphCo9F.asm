@@ -1,6 +1,6 @@
 	object_const_def
 	const SILPHCO9F_SCIENTIST
-	const SILPHCO9F_RECEPTIONIST
+	const SILPHCO9F_NURSE
 
 SilphCo9F_MapScripts:
 	def_scene_scripts
@@ -18,8 +18,25 @@ TrainerScientistHideki:
 	closetext
 	end
 
-SilphCo9FReceptionistScript:
-	jumptextfaceplayer SilphCo9FReceptionistText
+SilphCo9FNurseScript:
+	faceplayer
+	opentext
+	writetext SilphCo9FNurseBeforeText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext SilphCo9FNurseAfterText
+	waitbutton
+	closetext
+	end
 
 SilphCo9FSign:
 	jumptext SilphCo9FSignText
@@ -40,9 +57,19 @@ ScientistHidekiAfterBattleText:
 	cont "power nap."
 	done
 
-SilphCo9FReceptionistText:
-	text "There must be a"
-	line "better place to"
+SilphCo9FNurseBeforeText:
+	text "I'm the on-site"
+	line "nurse."
+
+	para "Here, let me heal"
+	line "your #MON."
+	done
+
+SilphCo9FNurseAfterText:
+	text "There you are."
+
+	para "Now if only we had"
+	line "a better place to"
 
 	para "store all these"
 	line "statues…"
@@ -68,4 +95,4 @@ SilphCo9F_MapEvents:
 
 	def_object_events
 	object_event 19, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistHideki, -1
-	object_event  5,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SilphCo9FReceptionistScript, -1
+	object_event  5,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SilphCo9FNurseScript, -1
