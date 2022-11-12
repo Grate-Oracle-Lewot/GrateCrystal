@@ -27,8 +27,7 @@ SilphCoOfficerScript:
 	end
 
 SilphCoReceptionistText:
-	text "Welcome to SILPH"
-	line "COMPANY."
+	text "Welcome to SILPH!"
 
 	para "If you need to"
 	line "speak to the"
