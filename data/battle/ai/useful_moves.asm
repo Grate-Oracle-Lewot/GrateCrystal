@@ -9,6 +9,7 @@ UsefulMoves:
 	db SURF
 	db ICE_BEAM
 	db DRILL_PECK
+	db IRON_HEAD
 	db SCALD
 	db WATERFALL
 	db SPIKE_CANNON
@@ -24,4 +25,5 @@ UsefulMoves:
 	db SACRED_FIRE
 	db CRUNCH
 	db ANCIENTPOWER
+	db POWER_GEM
 	db -1 ; end
