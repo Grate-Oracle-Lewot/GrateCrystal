@@ -225,6 +225,7 @@ CianwoodGroupSprites:
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
 	db SPRITE_YOUNGSTER
+	db SPRITE_BUG_CATCHER
 	db 0 ; end
 
 MahoganyGroupSprites:
