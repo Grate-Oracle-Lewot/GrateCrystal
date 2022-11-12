@@ -134,11 +134,18 @@ FisherBarneyAfterBattleText:
 	done
 
 FisherKyleSeenText:
-	text "Do you remember?"
+	text "Gravity is just"
+	line "the direction of"
+	cont "your future."
 	done
 
 FisherKyleBeatenText:
-	text "You do remember?"
+	text "The future exists"
+	line "before you live"
+	cont "it."
+
+	para "I was destined to"
+	line "lose to you…"
 	done
 
 FisherKyleAfterBattleText:
