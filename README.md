@@ -271,7 +271,7 @@ A) But they're cute.
 
 Q) Tri Attack's effectiveness is all wrong!
 
-A) What I did is treat each of the three elements as 1/3 of the total attack, apply effectiveness to them, add the fractions together, and round to the nearest possible effectiveness. For example, Ice is good against Dragon, but Fire and Electric are both bad against it; this means that Ice's 1/3 doubles to 2/3, while the other two get halved to 1/6, and if you add 2/3 + 1/6 + 1/6, it's actually... 1. Not all of them are that clean, but that's why I said I rounded. If you don't like it, make your own hack.
+A) It's based more on vibes than any hard math. If you don't like it, make your own hack.
 
 Q) How do I make my own hack?
 
