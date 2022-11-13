@@ -9,7 +9,7 @@ WhirlIslandB2F_MapScripts:
 	def_callbacks
 
 WhirlIslandB2FFullRestore:
-	itemball EGG_BEATER
+	itemball FULL_RESTORE
 
 WhirlIslandB2FMaxRevive:
 	itemball MAX_REVIVE
