@@ -56,7 +56,7 @@ MagikarpLengthRaterScript:
 	writetext MagikarpLengthRaterText_Memento
 	promptbutton
 	checkevent EVENT_BROKE_MAGIKARP_RECORD
-	iffalse .GiveGravityBuoy
+	iffalse .GiveEggBeater
 	verbosegiveitem MAX_ELIXER
 	iffalse .NoRoom
 	writetext MagikarpLengthRaterText_Bonus
@@ -65,8 +65,8 @@ MagikarpLengthRaterScript:
 	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
 	end
 
-.GiveGravityBuoy:
-	verbosegiveitem GRAVITY_BUOY
+.GiveEggBeater:
+	verbosegiveitem EGG_BEATER
 	iffalse .NoRoom
 	writetext MagikarpLengthRaterText_Bonus
 	waitbutton
