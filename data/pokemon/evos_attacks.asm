@@ -798,7 +798,7 @@ GolduckEvosAttacks:
 	db 16, CONFUSION
 	db 23, SCREECH
 	db 31, PSYCH_UP
-	db 32, PAY_DAY
+	db 32, POWER_GEM
 	db 37, AMNESIA
 	db 44, FUTURE_SIGHT
 	db 58, HYDRO_PUMP
@@ -987,7 +987,7 @@ MachampEvosAttacks:
 	db 13, LOW_KICK
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
-	db 28, COMET_PUNCH
+	db 27, COMET_PUNCH
 	db 34, VITAL_THROW
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
@@ -1340,12 +1340,12 @@ ShellderEvosAttacks:
 
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SPIKE_CANNON
+	db 1, TACKLE
 	db 2, HARDEN
 	db 9, SUPERSONIC
 	db 13, CLAMP
 	db 17, AURORA_BEAM
-	db 25, PAY_DAY
+	db 25, SPIKE_CANNON
 	db 33, IRON_HEAD
 	db 37, DRILL_PECK
 	db 41, MEGAHORN
@@ -2994,8 +2994,8 @@ SlowkingEvosAttacks:
 	db 15, CONFUSION
 	db 20, ACID
 	db 29, DISABLE
-	db 34, IRON_HEAD
 	db 36, POWER_GEM
+	db 37, IRON_HEAD
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
@@ -3268,6 +3268,7 @@ UrsaringEvosAttacks:
 	db 22, PLAY_ROUGH
 	db 29, REST
 	db 29, SLEEP_TALK
+	db 29, ROAR
 	db 39, SLASH
 	db 49, CRUNCH
 	db 59, THRASH
@@ -3469,8 +3470,8 @@ PhanpyEvosAttacks:
 	db EVOLVE_LEVEL, 25, DONPHAN
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
-	db 2, GROWL
-	db 5, DEFENSE_CURL
+	db 2, DEFENSE_CURL
+	db 5, WATER_GUN
 	db 9, STOMP
 	db 17, FLAIL
 	db 24, BODY_SLAM
@@ -3482,12 +3483,11 @@ PhanpyEvosAttacks:
 DonphanEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
-	db 2, GROWL
-	db 5, DEFENSE_CURL
+	db 2, DEFENSE_CURL
+	db 5, WATER_GUN
 	db 9, STOMP
 	db 17, FLAIL
 	db 24, BODY_SLAM
-	db 24, HORN_ATTACK
 	db 25, FURY_ATTACK
 	db 33, ROLLOUT
 	db 41, ENDURE
@@ -3559,11 +3559,10 @@ HitmontopEvosAttacks:
 	db 10, TWISTER
 	db 13, DOUBLESLAP
 	db 19, ROLLING_KICK
-	db 20, TRIPLE_KICK
 	db 25, DRILL_PECK
 	db 31, COUNTER
 	db 37, AGILITY
-	db 43, FIRE_SPIN
+	db 43, TRIPLE_KICK
 	db 49, SKULL_BASH
 	db 54, HORN_DRILL
 	db 0 ; no more level-up moves
@@ -3778,7 +3777,6 @@ CelebiEvosAttacks:
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PURSUIT
-	db 1, ANCIENTPOWER
 	db 2, FORESIGHT
 	db 6, TWISTER
 	db 11, DOUBLE_TEAM
@@ -3787,6 +3785,7 @@ YanmegaEvosAttacks:
 	db 22, DRAGON_RAGE
 	db 28, AIR_SLASH
 	db 33, SILVER_WIND
+	db 33, ANCIENTPOWER
 	db 37, HYPNOSIS
 	db 42, CRUNCH
 	db 46, SCREECH
