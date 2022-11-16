@@ -837,7 +837,7 @@ PhanpyEggMoves:
 	db EARTH_POWER
 	db ANCIENTPOWER
 	db IRON_HEAD
-	db WATER_GUN
+	db HYDRO_PUMP
 	db -1 ; end
 
 StantlerEggMoves:
