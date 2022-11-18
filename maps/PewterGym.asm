@@ -29,6 +29,7 @@ PewterGymBrockScript:
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
 	writetext BrockBoulderBadgeText
+	promptbutton
 .FightDone:
 	checkevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
 	iftrue .GotEarthquakeTM
