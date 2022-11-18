@@ -165,11 +165,9 @@ VermilionGymSwitch2:
 	earthquake 42
 	setevent EVENT_VERMILION_GYM_SWITCH_2
 	setscene SCENE_FINISHED
-	closetext
 	end
 
 .AlreadyFlipped:
-	opentext
 	writetext VermilionGymSwitchesAfterText
 	waitbutton
 	closetext
