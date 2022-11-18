@@ -282,8 +282,8 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyGiveBlizzardTMText:
-	text "MISTY: And… I guess"
-	line "I should give you"
+	text "MISTY: And… I"
+	line "should give you"
 	para "this, too."
 	done
 
@@ -291,8 +291,8 @@ MistyExplainBlizzardTMText:
 	text "MISTY: That TM"
 	line "contains BLIZZARD."
 
-	para "What? Yes, I know"
-	line "you can buy it."
+	para "What? I know it's"
+	line "not water-type."
 	cont "Stop being a pest!"
 
 	para "Here's a tip: if"
