@@ -29,6 +29,7 @@ ViridianGymBlueScript:
 	waitsfx
 	setflag ENGINE_EARTHBADGE
 	writetext LeaderBlueAfterText
+	promptbutton
 .FightDone:
 	checkevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
 	iftrue .GotHyperBeamTM
