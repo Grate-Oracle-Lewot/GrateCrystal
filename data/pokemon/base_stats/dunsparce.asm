@@ -1,6 +1,6 @@
 	db DUNSPARCE ; 206
 
-	db 112,  85,  75,  50,  75,  70
+	db 113,  85,  75,  52,  75,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, FAIRY ; type
