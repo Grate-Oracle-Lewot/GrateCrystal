@@ -1,6 +1,6 @@
 	db DONPHAN ; 232
 
-	db  90, 120, 120,  50,  60,  60
+	db 100, 120, 120,  50,  60,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type
