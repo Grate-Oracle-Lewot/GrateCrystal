@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 60 ; catch rate
-	db 189 ; base exp
+	db 200 ; base exp
 	db BERRY, LEFTOVERS ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
