@@ -1,11 +1,11 @@
 	db DUNSPARCE ; 206
 
-	db 100,  70,  70,  45,  65,  65
+	db 112,  85,  75,  50,  75,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, FAIRY ; type
 	db 190 ; catch rate
-	db 75 ; base exp
+	db 100 ; base exp
 	db BERSERK_GENE, TM_CURSE ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
