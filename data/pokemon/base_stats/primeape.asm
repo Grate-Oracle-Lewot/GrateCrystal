@@ -5,7 +5,7 @@
 
 	db FIGHTING, DARK ; type
 	db 75 ; catch rate
-	db 149 ; base exp
+	db 159 ; base exp
 	db TM_THIEF, TM_IRON_TAIL ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
