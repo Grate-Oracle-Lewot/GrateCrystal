@@ -1,6 +1,6 @@
 	db GIRAFARIG ; 203
 
-	db 111,  88,  66,  88,  99,  66
+	db 111,  88,  69,  88,  96,  69
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, GHOST ; type
