@@ -4083,13 +4083,13 @@ BattleAnim_Present:
 	anim_ret
 
 BattleAnim_PoisonJab:
-	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_HORN, 80, 88, $2
-	anim_wait 8
+	anim_3gfx ANIM_GFX_HORN, ANIM_GFX_HIT, ANIM_GFX_POISON
+	anim_obj ANIM_OBJ_HORN, 72, 80, $1
+	anim_wait 16
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj ANIM_OBJ_HIT, 136, 56, $0
-	anim_wait 8
-	anim_1gfx ANIM_GFX_POISON
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 12
+	anim_clearobjs
 	anim_call BattleAnimSub_Sludge
 	anim_wait 56
 	anim_ret
@@ -4116,6 +4116,7 @@ BattleAnim_NightTerror:
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
+	anim_clearobjs
 	anim_sound 0, 1, SFX_TACKLE
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 48, $0
 	anim_wait 6
