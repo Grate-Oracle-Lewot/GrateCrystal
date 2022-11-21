@@ -683,6 +683,7 @@ MisdreavusEggMoves:
 WobbuffetEggMoves:
 	db MEAN_LOOK
 	db ENCORE
+	db BIDE
 	db -1 ; end
 
 GirafarigEggMoves:
