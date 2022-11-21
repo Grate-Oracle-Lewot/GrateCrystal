@@ -5,6 +5,8 @@
 	const ROUTE2_POKE_BALL1
 	const ROUTE2_POKE_BALL2
 	const ROUTE2_POKE_BALL3
+	const ROUTE2_BUG_CATCHER4
+	const ROUTE2_LASS
 
 ViridianForest_MapScripts:
 	def_scene_scripts
@@ -43,6 +45,12 @@ TrainerBugCatcherDoug:
 	waitbutton
 	closetext
 	end
+
+ViridianForestBugCatcherScript:
+	jumptextfaceplayer ViridianForestBugCatcherText
+
+ViridianForestLassScript:
+	jumptextfaceplayer ViridianForestLassText
 
 ViridianForestSign1:
 	jumptext ViridianForestSign1Text
@@ -128,6 +136,35 @@ BugCatcherDougAfterBattleText:
 	line "feel!"
 	done
 
+ViridianForestBugCatcherText:
+	text "PIKACHU is a"
+	line "mouse!"
+
+	para "I heard that in"
+	line "PALDEA, there's a"
+
+	para "#MON that's two"
+	line "mouses! And"
+
+	para "evolves into three"
+	line "or four mouses!"
+	done
+
+ViridianForestLassText:
+	text "Move accuracy is"
+	line "displayed as a"
+
+	para "fraction of 255"
+	line "instead of 100."
+
+	para "Oh, you already"
+	line "knew that?"
+
+	para "I thought you were"
+	line "just starting from"
+	cont "PALLET TOWN."
+	done
+
 ViridianForestSign1Text:
 	text "VIRIDIAN FOREST"
 	done
@@ -197,3 +234,5 @@ ViridianForest_MapEvents:
 	object_event  8, 34, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestMaxPotion, EVENT_ROUTE_2_MAX_POTION
 	object_event  0, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestCarbos, EVENT_ROUTE_2_CARBOS
 	object_event 27,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ViridianForestElixer, EVENT_ROUTE_2_ELIXER
+	object_event  5, 47, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianForestBugCatcherScript, -1
+	object_event 10, 31, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianForestLassScript, -1
