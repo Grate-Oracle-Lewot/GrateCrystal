@@ -1205,6 +1205,16 @@ PlaceMoveData:
 	predef PrintMoveType
 	ld a, [wCurSpecies]
 	dec a
+	ld hl, Moves + MOVE_ACC
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	hlcoord 16, 12
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	call PrintNum
 	ld hl, Moves + MOVE_POWER
 	ld bc, MOVE_LENGTH
 	call AddNTimes
@@ -1213,16 +1223,6 @@ PlaceMoveData:
 	hlcoord 12, 12
 	cp 2
 	jr c, .no_power
-	ld [wTextDecimalByte], a
-	ld de, wTextDecimalByte
-	lb bc, 1, 3
-	call PrintNum
-	ld hl, Moves + MOVE_ACC
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	hlcoord 16, 12
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3
