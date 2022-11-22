@@ -1,5 +1,5 @@
 HiddenPowerDamage:
-; Override Hidden Power's type and power based on the user's DVs.
+; Override Hidden Power's type based on the user's DVs.
 
 	ld hl, wBattleMonDVs
 	ldh a, [hBattleTurn]
@@ -7,11 +7,6 @@ HiddenPowerDamage:
 	jr z, .got_dvs
 	ld hl, wEnemyMonDVs
 .got_dvs
-
-; Power:
-
-	ld a, 75
-	ld d, a
 
 ; Type:
 
@@ -51,11 +46,6 @@ HiddenPowerDamage:
 	or SPECIAL
 	ld [hl], a
 
-; Get the rest of the damage formula variables
-; based on the new type, but keep base power.
-	ld a, d
-	push af
+; Get the rest of the damage formula variables based on the new type.
 	farcall BattleCommand_DamageStats ; damagestats
-	pop af
-	ld d, a
 	ret
