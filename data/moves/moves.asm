@@ -249,7 +249,7 @@ Moves:
 	move MORNING_SUN,  EFFECT_MORNING_SUN,         0, FIRE,         STATUS,   100,  5,   0
 	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,        STATUS,   100,  5,   0
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,        STATUS,   100,  5,   0
-	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, CURSE_TYPE,   SPECIAL,  100, 15,   0
+	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       75, CURSE_TYPE,   SPECIAL,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        110, FIGHTING,     PHYSICAL,  85,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,       SPECIAL,  100, 25,  20
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,        STATUS,   100,  5,   0
