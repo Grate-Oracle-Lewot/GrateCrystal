@@ -4116,7 +4116,6 @@ BattleAnim_NightTerror:
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
-	anim_clearobjs
 	anim_sound 0, 1, SFX_TACKLE
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 48, $0
 	anim_wait 6
