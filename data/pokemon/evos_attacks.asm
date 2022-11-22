@@ -3043,6 +3043,7 @@ WobbuffetEvosAttacks:
 	db 1, DESTINY_BOND
 	db 1, MIRROR_COAT
 	db 1, COUNTER
+	db 50, BIDE
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
