@@ -1,10 +1,10 @@
 	db "POISON PIN@" ; species name
 	dw 108, 200 ; height, weight
 
-	db   "It constantly"
-	next "moves its large"
-	next "ears in many"
+	db   "Males use their"
+	next "horns to duel for"
+	next "the attention of"
 
-	page "directions in"
-	next "order to detect"
-	next "danger right away.@"
+	page "potential mates,"
+	next "and to fend off"
+	next "predators.@"
