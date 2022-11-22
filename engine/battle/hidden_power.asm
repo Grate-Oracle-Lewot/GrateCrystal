@@ -8,8 +8,6 @@ HiddenPowerDamage:
 	ld hl, wEnemyMonDVs
 .got_dvs
 
-; Type:
-
 	; Def & 3
 	ld a, [hl]
 	and %0011
