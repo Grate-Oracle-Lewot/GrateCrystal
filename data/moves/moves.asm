@@ -37,7 +37,7 @@ Moves:
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,        PHYSICAL, 100, 35,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,       PHYSICAL, 100, 20,  30
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING,     PHYSICAL, 100, 20,   0
-	move MEGA_KICK,    EFFECT_NORMAL_HIT,        130, NORMAL,       PHYSICAL,  75,  5,   0
+	move MEGA_KICK,    EFFECT_NORMAL_HIT,        150, NORMAL,       PHYSICAL,  75,  5,   0
 	move JUMP_KICK,    EFFECT_JUMP_KICK,          75, FIGHTING,     PHYSICAL,  95, 25,   0
 	move ROLLING_KICK, EFFECT_FLINCH_HIT,         55, FIGHTING,     PHYSICAL,  70, 15, 100
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,       STATUS,   100, 15,   0
@@ -142,7 +142,7 @@ Moves:
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,        PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 10,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 20,   0
-	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,       PHYSICAL, 100, 15,   0
+	move SKULL_BASH,   EFFECT_SKULL_BASH,        150, NORMAL,       PHYSICAL, 100,  5,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, STEEL,        PHYSICAL, 100, 15,   0
 	move HAIL,         EFFECT_HAIL,                0, ICE,          STATUS,   100,  5,   0
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE, STATUS,   100, 20,   0
