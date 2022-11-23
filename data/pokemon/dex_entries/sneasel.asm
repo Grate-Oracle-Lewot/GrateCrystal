@@ -1,10 +1,10 @@
 	db "SHARP CLAW@" ; species name
 	dw 211, 620 ; height, weight
 
-	db   "This cunning"
-	next "#MON hides"
-	next "under the cover"
+	db   "Resistant to both"
+	next "cold and darkness,"
+	next "it can ambush prey"
 
-	page "of darkness,"
-	next "waiting to attack"
-	next "its prey.@"
+	page "from the shadows"
+	next "at any time."
+	next "@"
