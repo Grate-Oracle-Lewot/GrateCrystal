@@ -1,10 +1,10 @@
 	db "DRILL@" ; species name
 	dw 407, 1370 ; height, weight
 
-	db   "It uses its thick"
-	next "arms, legs and"
-	next "tail to attack"
+	db   "A NIDOKING and"
+	next "NIDOQUEEN pair"
+	next "will usually rule"
 
-	page "forcefully. Melee"
-	next "combat is its"
-	next "specialty.@"
+	page "over a certain"
+	next "area with their"
+	next "children.@"
