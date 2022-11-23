@@ -1,10 +1,10 @@
 	db "BIRD@" ; species name
 	dw 307, 660 ; height, weight
 
-	db   "It slowly flies in"
-	next "a circular pat-"
-	next "tern, all the"
+	db   "It navigates by"
+	next "sensing the world's"
+	next "magnetic field."
 
-	page "while keeping a"
-	next "sharp lookout for"
-	next "prey.@"
+	page "MAGNEMITE can"
+	next "interfere with its"
+	next "routing.@"
