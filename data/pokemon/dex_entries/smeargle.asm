@@ -1,10 +1,10 @@
 	db "PAINTER@" ; species name
 	dw 311, 1280 ; height, weight
 
-	db   "The color of the"
-	next "mysterious fluid"
-	next "secreted from its"
+	db   "If it paints a"
+	next "picture of a"
+	next "#MON using a"
 
-	page "tail is predeter-"
-	next "mined for each"
-	next "SMEARGLE.@"
+	page "move, it learns to"
+	next "perform that move"
+	next "itself.@"
