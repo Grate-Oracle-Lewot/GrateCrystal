@@ -1,10 +1,10 @@
-	db "MOUSE@" ; species name
+	db "PANGOLIN@" ; species name
 	dw 200, 260 ; height, weight
 
-	db   "It prefers dry,"
-	next "sandy places"
-	next "because it uses"
+	db   "It lives in under-"
+	next "ground burrows and"
+	next "eats small bugs"
 
-	page "the sand to"
-	next "protect itself"
-	next "when threatened.@"
+	page "with a long, flex-"
+	next "ible tongue that's"
+	next "normally hidden.@"
