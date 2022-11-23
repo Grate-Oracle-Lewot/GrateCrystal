@@ -1,10 +1,10 @@
 	db "ROYAL@" ; species name
 	dw 607, 1750 ; height, weight
 
-	db   "Every time it ya-"
-	next "wns, SHELLDER"
-	next "injects more poi-"
+	db   "When TURBIN bites"
+	next "SLOWPOKE's head"
+	next "instead of tail,"
 
-	page "son into it. The"
-	next "poison makes it"
-	next "more intelligent.@"
+	page "it injects poison"
+	next "and creates a"
+	next "SLOWKING.@"
