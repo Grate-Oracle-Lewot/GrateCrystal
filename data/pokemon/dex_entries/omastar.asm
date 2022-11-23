@@ -1,10 +1,10 @@
 	db "SPIRAL@" ; species name
 	dw 303, 770 ; height, weight
 
-	db   "Its heavy shell"
-	next "allowed it to"
-	next "reach only nearby"
+	db   "It was the first"
+	next "#MON known to"
+	next "develop the"
 
-	page "food. This could"
-	next "be the reason it"
-	next "is extinct.@"
+	page "ability to shoot"
+	next "ink as well as"
+	next "spikes.@"
