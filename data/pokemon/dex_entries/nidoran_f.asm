@@ -1,10 +1,10 @@
 	db "POISON PIN@" ; species name
 	dw 104, 150 ; height, weight
 
-	db   "Small and very"
-	next "docile, it pro-"
-	next "tects itself with"
+	db   "Females relax and"
+	next "chat as the males"
+	next "fight over them."
 
-	page "its small, poison-"
-	next "ous horn when"
-	next "attacked.@"
+	page "Poison whiskers"
+	next "deter predators."
+	next "@"
