@@ -366,12 +366,12 @@ PikachuEvosAttacks:
 	db 6, THUNDER_WAVE
 	db 8, QUICK_ATTACK
 	db 11, DOUBLE_TEAM
-	db 15, SKULL_BASH
+	db 15, AGILITY
 	db 20, THUNDERBOLT
 	db 26, DAZZLY_GLEAM
-	db 33, AGILITY
+	db 33, LIGHT_SCREEN
 	db 41, THUNDER
-	db 50, LIGHT_SCREEN
+	db 50, SKULL_BASH
 	db 59, SIGNAL_BEAM
 	db 0 ; no more level-up moves
 
@@ -1271,9 +1271,9 @@ SeelEvosAttacks:
 	db 16, MIST
 	db 21, REST
 	db 26, BUBBLEBEAM
-	db 32, SKULL_BASH
+	db 32, SAFEGUARD
 	db 37, ICE_BEAM
-	db 48, SAFEGUARD
+	db 48, SKULL_BASH
 	db 0 ; no more level-up moves
 
 DewgongEvosAttacks:
@@ -1285,9 +1285,9 @@ DewgongEvosAttacks:
 	db 16, MIST
 	db 21, REST
 	db 26, BUBBLEBEAM
-	db 32, SKULL_BASH
+	db 32, SAFEGUARD
 	db 43, ICE_BEAM
-	db 60, SAFEGUARD
+	db 60, SKULL_BASH
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -1555,8 +1555,8 @@ CuboneEvosAttacks:
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
 	db 30, RAGE
-	db 33, SKULL_BASH
-	db 37, THRASH
+	db 33, THRASH
+	db 37, SKULL_BASH
 	db 41, BONE_RUSH
 	db 47, NIGHT_TERROR
 	db 0 ; no more level-up moves
@@ -1573,8 +1573,8 @@ MarowakEvosAttacks:
 	db 21, BONEMERANG
 	db 27, NIGHT_SHADE
 	db 32, RAGE
-	db 39, SKULL_BASH
-	db 46, THRASH
+	db 39, THRASH
+	db 46, SKULL_BASH
 	db 53, BONE_RUSH
 	db 60, NIGHT_TERROR
 	db 0 ; no more level-up moves
@@ -1736,9 +1736,9 @@ KangaskhanEvosAttacks:
 	db 31, DIZZY_PUNCH
 	db 34, VITAL_THROW
 	db 37, ENDURE
-	db 40, SKULL_BASH
+	db 40, OUTRAGE
 	db 43, REVERSAL
-	db 49, OUTRAGE
+	db 49, SKULL_BASH
 	db 57, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
@@ -1933,9 +1933,9 @@ TaurosEvosAttacks:
 	db 19, SCARY_FACE
 	db 26, PURSUIT
 	db 34, IRON_HEAD
-	db 39, SKULL_BASH
+	db 39, TAKE_DOWN
 	db 43, THRASH
-	db 53, TAKE_DOWN
+	db 53, SKULL_BASH
 	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
@@ -2141,12 +2141,12 @@ SnorlaxEvosAttacks:
 	db 11, BITE
 	db 15, AMNESIA
 	db 22, BELLY_DRUM
-	db 29, SKULL_BASH
+	db 29, MEGA_PUNCH
 	db 36, SNORE
 	db 36, REST
 	db 43, BODY_SLAM
 	db 50, ROLLOUT
-	db 57, MEGA_PUNCH
+	db 57, SKULL_BASH
 	db 61, CRUNCH
 	db 0 ; no more level-up moves
 
@@ -3054,9 +3054,9 @@ GirafarigEvosAttacks:
 	db 6, LICK
 	db 11, STOMP
 	db 22, NIGHT_SHADE
-	db 33, SKULL_BASH
-	db 44, PSYBEAM
-	db 55, CRUNCH
+	db 33, PSYBEAM
+	db 44, CRUNCH
+	db 55, SKULL_BASH
 	db 66, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
