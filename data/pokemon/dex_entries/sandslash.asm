@@ -1,10 +1,10 @@
-	db "MOUSE@" ; species name
+	db "HEDGEHOG@" ; species name
 	dw 303, 650 ; height, weight
 
-	db   "Adept at climbing"
-	next "trees, it rolls"
-	next "into a spiny ball,"
+	db   "SANDSHREW's scales"
+	next "have matured into"
+	next "spikes that help"
 
-	page "then attacks its"
-	next "enemies from"
-	next "above.@"
+	page "protect it from"
+	next "predators, making"
+	next "it more bold.@"
