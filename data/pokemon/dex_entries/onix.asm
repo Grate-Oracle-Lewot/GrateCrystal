@@ -1,10 +1,10 @@
 	db "ROCK SNAKE@" ; species name
 	dw 2810, 4630 ; height, weight
 
-	db   "As it digs through"
-	next "the ground, it"
-	next "absorbs many hard"
+	db   "This rock snake"
+	next "enjoys a rock"
+	next "snack while"
 
-	page "objects. This is"
-	next "what makes its"
-	next "body so solid.@"
+	page "burrowing through"
+	next "a rock stack."
+	next "@"
