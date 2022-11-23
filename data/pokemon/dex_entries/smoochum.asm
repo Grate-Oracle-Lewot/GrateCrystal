@@ -1,10 +1,10 @@
 	db "KISS@" ; species name
 	dw 104, 130 ; height, weight
 
-	db   "The sensitivity of"
-	next "its lips develops"
-	next "most quickly."
+	db   "Its expresses its"
+	next "emotions with a"
+	next "wide range of"
 
-	page "It uses them to"
-	next "try to identify"
-	next "unknown objects.@"
+	page "different kisses."
+	next "Angry kisses drain"
+	next "energy.@"
