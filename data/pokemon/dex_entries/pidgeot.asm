@@ -6,5 +6,5 @@
 	next "feathers were used"
 
 	page "to write messages"
-	next "in TENTACOOL ink."
+	next "in HORSEA ink."
 	next "@"
