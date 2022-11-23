@@ -1,10 +1,10 @@
-	db "FIRE HORSE@" ; species name
+	db "FIRE UNICORN@" ; species name
 	dw 507, 2090 ; height, weight
 
-	db   "It just loves to"
-	next "gallop. The faster"
-	next "it goes, the long-"
+	db   "Two RAPIDASH"
+	next "typically settle"
+	next "their differences"
 
-	page "er the swaying"
-	next "flames of its mane"
-	next "will become.@"
+	page "with a race, but"
+	next "might resort to"
+	next "horn duels.@"
