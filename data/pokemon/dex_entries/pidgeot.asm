@@ -1,10 +1,10 @@
 	db "BIRD@" ; species name
 	dw 411, 870 ; height, weight
 
-	db   "Its outstanding"
-	next "vision allows it"
-	next "to spot splashing"
+	db   "Before pens were"
+	next "invented, PIDGEOT's"
+	next "feathers were used"
 
-	page "MAGIKARP, even"
-	next "while flying at"
-	next "3300 feet.@"
+	page "to write messages"
+	next "in TENTACOOL ink."
+	next "@"
