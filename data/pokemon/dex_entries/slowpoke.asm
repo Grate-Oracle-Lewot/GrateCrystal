@@ -1,10 +1,10 @@
 	db "DOPEY@" ; species name
 	dw 311, 790 ; height, weight
 
-	db   "It is always so"
-	next "absent-minded that"
-	next "it won't react,"
+	db   "Iiiiiiiiiiiiiiiiii"
+	next "tttttttttttttttttt"
+	next "'sssssssssssssssss"
 
-	page "even if its"
-	next "flavorful tail is"
-	next "bitten.@"
+	page "ssssssssssssllllll"
+	next "lllllloooooooooooo"
+	next "wwwwwwwwwwww.@"
