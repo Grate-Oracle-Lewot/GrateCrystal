@@ -1,10 +1,10 @@
 	db "SUPERPOWER@" ; species name
 	dw 503, 2870 ; height, weight
 
-	db   "With four arms"
-	next "that react more"
-	next "quickly than it"
+	db   "The most skilled"
+	next "MACHAMP can perf-"
+	next "orm different"
 
-	page "can think, it can"
-	next "execute many"
-	next "punches at once.@"
+	page "tasks with each of"
+	next "their four arms at"
+	next "the same time.@"
