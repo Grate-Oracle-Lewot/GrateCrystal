@@ -1,10 +1,10 @@
 	db "SUPERPOWER@" ; species name
 	dw 411, 1550 ; height, weight
 
-	db   "This tough #MON"
-	next "always stays in"
-	next "the zone. Its"
+	db   "Some architects"
+	next "design buildings"
+	next "that can be picked"
 
-	page "muscles become"
-	next "thicker after"
-	next "every battle.@"
+	page "up and moved by"
+	next "MACHOKE without"
+	next "breaking.@"
