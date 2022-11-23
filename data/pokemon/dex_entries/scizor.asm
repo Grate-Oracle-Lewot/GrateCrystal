@@ -1,10 +1,10 @@
 	db "SCISSORS@" ; species name
 	dw 511, 2600 ; height, weight
 
-	db   "This #MON's"
-	next "pincers, which"
-	next "contain steel, can"
+	db   "It can crush any"
+	next "hard-shelled food"
+	next "with its claws,"
 
-	page "crush any hard"
-	next "object it gets a"
-	next "hold of into bits.@"
+	page "but can't hold"
+	next "delicate objects"
+	next "very easily.@"
