@@ -1,10 +1,10 @@
-	db "LAVA@" ; species name
+	db "MAGMA SLUG@" ; species name
 	dw 204, 770 ; height, weight
 
-	db   "These group to-"
-	next "gether in areas"
-	next "that are hotter"
+	db   "Only when it oozes"
+	next "out of the ground"
+	next "does it become"
 
-	page "than normal. If it"
-	next "cools off, its"
-	next "skin hardens.@"
+	page "distinct from the"
+	next "molten rock in the"
+	next "planet's core.@"
