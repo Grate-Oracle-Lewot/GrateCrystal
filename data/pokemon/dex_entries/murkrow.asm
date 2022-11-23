@@ -1,10 +1,10 @@
 	db "DARKNESS@" ; species name
 	dw 108, 50 ; height, weight
 
-	db   "It hides any shiny"
-	next "object it finds in"
-	next "a secret location."
+	db   "A traditional"
+	next "companion of those"
+	next "who practice"
 
-	page "MURKROW and"
-	next "MEOWTH loot one"
-	next "another's stashes.@"
+	page "witchcraft and"
+	next "other occult"
+	next "activities.@"
