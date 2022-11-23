@@ -1,10 +1,10 @@
 	db "POISON PIN@" ; species name
 	dw 211, 430 ; height, weight
 
-	db   "It is easily"
-	next "agitated and uses"
-	next "its horn for"
+	db   "It will fight with"
+	next "other NIDORINO,"
+	next "but protects male"
 
-	page "offense as soon as"
-	next "it notices an"
-	next "attacker.@"
+	page "NIDORAN from being"
+	next "bullied in its"
+	next "territory.@"
