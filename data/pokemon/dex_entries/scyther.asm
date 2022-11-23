@@ -1,10 +1,10 @@
 	db "MANTIS@" ; species name
 	dw 411, 1230 ; height, weight
 
-	db   "It's very proud of"
-	next "its speed. It"
-	next "moves so fast that"
+	db   "It can chop food"
+	next "up with precision,"
+	next "but doesn't have"
 
-	page "its opponent does"
-	next "not even know what"
-	next "knocked it down.@"
+	page "thumbs to hold"
+	next "things, so it eats"
+	next "off the floor.@"
