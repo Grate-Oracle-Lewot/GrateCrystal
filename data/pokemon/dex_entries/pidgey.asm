@@ -1,10 +1,10 @@
 	db "TINY BIRD@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "It rapidly flaps"
-	next "its wings in the"
-	next "grass, stirring up"
+	db   "It won't go to the"
+	next "bathroom until it"
+	next "finds a suitable"
 
-	page "a dust cloud that"
-	next "drives insect prey"
-	next "out into the open.@"
+	page "target like a"
+	next "statue or freshly"
+	next "washed car.@"
