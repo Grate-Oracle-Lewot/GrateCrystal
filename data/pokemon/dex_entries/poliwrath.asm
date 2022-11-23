@@ -1,10 +1,10 @@
 	db "TADPOLE@" ; species name
 	dw 403, 1190 ; height, weight
 
-	db   "It can use its"
-	next "well-developed"
-	next "arms and legs to"
+	db   "It's sacrificed"
+	next "adult development"
+	next "for physical"
 
-	page "run on the surface"
-	next "of the water for a"
-	next "split second.@"
+	page "strength. It can"
+	next "outswim Olympic"
+	next "athletes.@"
