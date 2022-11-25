@@ -1,6 +1,6 @@
 	db VULPIX ; 037
 
-	db  38,  41,  40,  65,  50,  65
+	db  48,  42,  40,  75,  70,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, ICE ; type
