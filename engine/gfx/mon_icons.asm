@@ -387,11 +387,10 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
-	ld a, FEAROWBOT
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr nc, .not_fearowbot
+	ld hl, wUsingHMItem
+	ld a, [hl]
+	cp FALSE
+	jr z, .not_fearowbot
 	push de
 	ld a, FEAROW
 	call ReadMonMenuIcon
