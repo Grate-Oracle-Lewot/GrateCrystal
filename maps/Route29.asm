@@ -57,7 +57,6 @@ Route29Tutorial1:
 	writetext CatchingTutorialDebriefText
 	waitbutton
 	closetext
-	setflag ENGINE_STORMBADGE
 	setscene SCENE_ROUTE29_NOTHING
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
 	end
@@ -211,7 +210,7 @@ Route29FruitTree:
 	fruittree FRUITTREE_ROUTE_29
 
 Route29Potion:
-	itemball FEAROWBOT
+	itemball POTION
 
 DudeMovementData1a:
 	step UP
