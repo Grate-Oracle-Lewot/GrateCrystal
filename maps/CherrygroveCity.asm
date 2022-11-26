@@ -365,11 +365,14 @@ GuideGentMartText:
 	text "This is a #MON"
 	line "MART."
 
-	para "They sell BALLS"
-	line "for catching wild"
+	para "They sell useful"
+	line "items, although"
 
-	para "#MON and other"
-	line "useful items."
+	para "they're currently"
+	line "waiting on a fresh"
+
+	para "shipment of #"
+	line "BALLS."
 	done
 
 GuideGentRoute30Text:
