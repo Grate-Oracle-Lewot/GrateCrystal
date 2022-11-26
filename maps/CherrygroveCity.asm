@@ -44,7 +44,13 @@ CherrygroveCityGuideGent:
 	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2
 	turnobject PLAYER, UP
 	opentext
-	writetext GuideGentMartText
+	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	iffalse .NoBalls
+	writetext GuideGentMartHasBallsText
+	sjump .DoneWithBalls
+.NoBalls
+	writetext GuideGentMartNoBallsText
+.DoneWithBalls
 	waitbutton
 	closetext
 	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3
@@ -361,7 +367,7 @@ GuideGentPokecenterText:
 	line "about them."
 	done
 
-GuideGentMartText:
+GuideGentMartNoBallsText:
 	text "This is a #MON"
 	line "MART."
 
@@ -373,6 +379,17 @@ GuideGentMartText:
 
 	para "shipment of #"
 	line "BALLS."
+	done
+
+GuideGentMartHasBallsText:
+	text "This is a #MON"
+	line "MART."
+
+	para "They sell useful"
+	line "items, such as"
+
+	para "BALLS for catching"
+	line "#MON."
 	done
 
 GuideGentRoute30Text:
