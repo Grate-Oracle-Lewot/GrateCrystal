@@ -9,9 +9,6 @@ TinTower9F_MapScripts:
 TinTower9FHPUp:
 	itemball HP_UP
 
-TinTower9FFearowbot:
-	itemball FEAROWBOT
-
 TinTower9F_MapEvents:
 	db 0, 0 ; filler
 
