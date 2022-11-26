@@ -189,7 +189,7 @@ Moves:
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,       STATUS,   100, 30,   0
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, ICE,          SPECIAL,  100,  5,   0
+	move AEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100,  5,   0
 	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,        STATUS,   100, 20,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,     PHYSICAL, 100, 15,   0
 	move SPITE,        EFFECT_SPITE,               0, GHOST,        STATUS,   100, 10,   0
@@ -233,7 +233,7 @@ Moves:
 	move POISON_JAB,   EFFECT_POISON_HIT,         80, POISON,       PHYSICAL, 100, 15,  30
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,       STATUS,   100, 25,   0
 	move NIGHT_TERROR, EFFECT_SNORE,             120, GHOST,        PHYSICAL,  90, 10,  30
-	move SACRED_FIRE,  EFFECT_BURN_HIT,          100, FIRE,         PHYSICAL, 100,  5,  50
+	move SACRED_FIRE,  EFFECT_BURN_HIT,          105, FIRE,         PHYSICAL, 100,  5,  50
 	move MAGNITUDE,    EFFECT_MAGNITUDE,           1, GROUND,       PHYSICAL, 100, 25,   0
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,     PHYSICAL,  50,  5, 100
 	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,          PHYSICAL,  85,  5,   0
