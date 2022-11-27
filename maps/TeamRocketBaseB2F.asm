@@ -221,6 +221,7 @@ TrainerGruntM19:
 
 RocketElectrode1:
 	cry ELECTRODE
+	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE1, 10
 	loadwildmon ELECTRODE, 25
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
@@ -240,6 +241,7 @@ RocketElectrode1:
 
 RocketElectrode2:
 	cry ELECTRODE
+	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE2, 10
 	loadwildmon ELECTRODE, 25
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
@@ -259,6 +261,7 @@ RocketElectrode2:
 
 RocketElectrode3:
 	cry ELECTRODE
+	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE3, 10
 	loadwildmon ELECTRODE, 25
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
