@@ -389,7 +389,7 @@ SandshrewEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, FURY_CUTTER
+	db 11, SPIKES
 	db 17, METAL_CLAW
 	db 23, SLASH
 	db 30, SWIFT
@@ -404,7 +404,7 @@ SandslashEvosAttacks:
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
-	db 11, FURY_CUTTER
+	db 11, SPIKES
 	db 17, METAL_CLAW
 	db 24, SLASH
 	db 33, SWIFT
@@ -2972,9 +2972,9 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 5, SAND_ATTACK
+	db 5, HAZE
 	db 11, PURSUIT
-	db 16, HAZE
+	db 16, SPIKES
 	db 21, WING_ATTACK
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
@@ -3171,10 +3171,9 @@ GranbullEvosAttacks:
 
 QwilfishEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SPIKES
 	db 1, TACKLE
 	db 5, WATER_GUN
-	db 10, HARDEN
+	db 10, SPIKES
 	db 10, MINIMIZE
 	db 19, FLAME_WHEEL
 	db 28, PIN_MISSILE
