@@ -52,6 +52,7 @@ ViridianCityDreamEaterFisher:
 	opentext
 	checkevent EVENT_GOT_TM42_DREAM_EATER
 	iftrue .GotDreamEater
+	showemote EMOTE_SLEEP, VIRIDIANCITY_FISHER, 15
 	writetext ViridianCityDreamEaterFisherText
 	promptbutton
 	verbosegiveitem TM_DREAM_EATER
@@ -60,6 +61,7 @@ ViridianCityDreamEaterFisher:
 .GotDreamEater:
 	writetext ViridianCityDreamEaterFisherGotDreamEaterText
 	waitbutton
+	showemote EMOTE_SLEEP, VIRIDIANCITY_FISHER, 15
 .NoRoomForDreamEater:
 	closetext
 	end
@@ -170,8 +172,6 @@ ViridianCityDreamEaterFisherText:
 ViridianCityDreamEaterFisherGotDreamEaterText:
 	text "TM42 contains"
 	line "DREAM EATER…"
-
-	para "…Zzzzz…"
 	done
 
 ViridianCityYoungsterText:
