@@ -41,6 +41,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CLAIR
+	showemote EMOTE_SAD, BLACKTHORNGYM1F_CLAIR, 20
 	opentext
 	writetext ClairText_GoToDragonsDen
 	waitbutton
