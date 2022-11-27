@@ -37,7 +37,7 @@ SproutTower3FRivalScene:
 	writetext SproutTowerElderLecturesRivalText
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, SPROUTTOWER3F_SILVER, 15
+	showemote EMOTE_QUESTION, SPROUTTOWER3F_SILVER, 15
 	turnobject SPROUTTOWER3F_SILVER, DOWN
 	pause 15
 	applymovement SPROUTTOWER3F_SILVER, SproutTower3FRivalLeavesElderMovement
