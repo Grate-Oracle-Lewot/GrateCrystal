@@ -54,6 +54,7 @@ CeruleanCityCooltrainerFScript:
 	writetext CeruleanCityCooltrainerFText2
 	waitbutton
 	closetext
+	showemote EMOTE_QUESTION, CERULEANCITY_SLOWPOKE, 10
 	opentext
 	writetext CeruleanCitySlowbroText
 	cry SLOWBRO
