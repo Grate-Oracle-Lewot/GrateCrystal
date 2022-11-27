@@ -140,20 +140,20 @@ VenonatEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
-	db ANCIENTPOWER
-	db PURSUIT
 	db POWER_GEM
+	db PURSUIT
 	db BEAT_UP
 	db FAINT_ATTACK
 	db IRON_HEAD
+	db SPIKES
 	db -1 ; end
 
 MeowthEggMoves:
 	db SPITE
 	db CHARM
-	db AMNESIA
 	db BEAT_UP
 	db PRESENT
+	db SPIKES
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -224,6 +224,7 @@ TentacoolEggMoves:
 	db -1 ; end
 
 GeodudeEggMoves:
+	db SPIKES
 	db MEGA_PUNCH
 	db ANCIENTPOWER
 	db EARTH_POWER
@@ -369,9 +370,9 @@ RhyhornEggMoves:
 	db -1 ; end
 
 ChanseyEggMoves:
-	db HEAL_BELL
-	db METRONOME
 	db PLAY_ROUGH
+	db HEAL_BELL
+	db SPIKES
 	db PRESENT
 	db -1 ; end
 
@@ -629,8 +630,8 @@ SudowoodoEggMoves:
 
 HoppipEggMoves:
 	db AIR_SLASH
-	db REFLECT
 	db AMNESIA
+	db SPIKES
 	db SILVER_WIND
 	db ENCORE
 	db -1 ; end
@@ -734,7 +735,7 @@ QwilfishEggMoves:
 	db -1 ; end
 
 ShuckleEggMoves:
-	db CLAMP
+	db SPIKES
 	db VINE_WHIP
 	db FLAIL
 	db AMNESIA
@@ -786,18 +787,18 @@ SwinubEggMoves:
 CorsolaEggMoves:
 	db ROCK_SLIDE
 	db SAFEGUARD
-	db SCREECH
 	db MIST
 	db AMNESIA
 	db IRON_HEAD
+	db SPIKES
 	db -1 ; end
 
 RemoraidEggMoves:
 	db SCREECH
+	db SPIKES
 	db SUPERSONIC
 	db SONICBOOM
 	db HYDRO_PUMP
-	db OCTAZOOKA
 	db -1 ; end
 
 DelibirdEggMoves:
