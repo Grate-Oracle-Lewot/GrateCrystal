@@ -67,6 +67,7 @@ GoldenrodGymWhitneyScript:
 	writetext WhitneyAttractText
 	waitbutton
 	closetext
+	showemote EMOTE_HEART, GOLDENRODGYM_WHITNEY, 10
 	end
 
 .GotAttract:
