@@ -460,6 +460,12 @@ TrainerCooltrainerfKate:
 	verbosegiveitem ODD_ROD
 	iffalse .BagFull
 	setevent EVENT_GOT_SOFT_SAND_FROM_KATE
+	writetext CooltrainerfKateOddRodText
+	waitbutton
+	closetext
+	showemote EMOTE_FISH, ROUTE34_COOLTRAINER_F3, 15
+	end
+
 .GotSoftSand:
 	writetext CooltrainerfKateAfterText
 	waitbutton
@@ -697,6 +703,15 @@ CooltrainerfKateOfferSoftSandText:
 
 	para "Here. You deserve"
 	line "this."
+	done
+
+CooltrainerfKateOddRodText:
+	text "KATE: That's a"
+	line "special fishing"
+	cont "ROD."
+
+	para "It catches rare"
+	line "water #MON!"
 	done
 
 CooltrainerfKateAfterText:
