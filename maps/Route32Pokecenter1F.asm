@@ -34,6 +34,7 @@ Route32Pokecenter1FFishingGuruScript:
 	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
 	waitbutton
 	closetext
+	showemote EMOTE_FISH, ROUTE32POKECENTER1F_FISHING_GURU, 15
 	setevent EVENT_GOT_OLD_ROD
 	end
 
