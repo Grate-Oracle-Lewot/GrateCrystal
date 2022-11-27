@@ -22,7 +22,7 @@ SeafoamCaveB1FKarenScript:
 	opentext
 	checkevent EVENT_BEAT_RED
 	iftrue .AfterRedScript
-	showemote EMOTE_SLEEP, SEAFOAMCAVEB1F_KAREN, 20
+	showemote EMOTE_SLEEP, SEAFOAMCAVEB1F_KAREN, 30
 	writetext SeafoamCaveB1FKarenEarlyText
 	waitbutton
 	closetext
