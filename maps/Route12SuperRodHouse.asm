@@ -19,6 +19,12 @@ Route12SuperRodHouseFishingGuruScript:
 	verbosegiveitem SUPER_ROD
 	iffalse .NoRoom
 	setevent EVENT_GOT_SUPER_ROD
+	writetext GaveSuperRodText
+	waitbutton
+	closetext
+	showemote EMOTE_FISH, ROUTE12SUPERRODHOUSE_FISHING_GURU, 15
+	end
+
 .GotSuperRod:
 	writetext GaveSuperRodText
 	waitbutton
