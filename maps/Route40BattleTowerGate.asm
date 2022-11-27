@@ -26,6 +26,7 @@ TrainerOfficerDisher:
 	iffalse .AfterBattle
 	checkevent EVENT_BEAT_OFFICER_DISHER
 	iftrue .AfterBattle
+	showemote EMOTE_SLEEP, ROUTE40BATTLETOWERGATE_OFFICER, 15
 	playmusic MUSIC_OFFICER_ENCOUNTER
 	writetext OfficerDisherSeenText
 	waitbutton
