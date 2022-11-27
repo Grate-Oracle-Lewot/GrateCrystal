@@ -23,6 +23,7 @@ PokemonFanClubChairmanScript:
 	iffalse .NotListening
 	writetext PokemonFanClubChairmanRapidashText
 	promptbutton
+	showemote EMOTE_HEART, POKEMONFANCLUB_CHAIRMAN, 15
 .HeardSpeechButBagFull:
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
@@ -156,13 +157,14 @@ PokemonFanClubChairmanRapidashText:
 	cont "spectacular…"
 	cont "ravishing… simply"
 	cont "divine…"
-	cont "Oops! Look at the"
-	cont "time! I've kept"
-	cont "you too long!"
 	done
 
 PokemonFanClubChairmanIWantYouToHaveThisText:
-	text "Thanks for hearing"
+	text "Oops! Look at the"
+	line "time! I've kept"
+	cont "you too long!"
+
+	para "Thanks for hearing"
 	line "me out. I want you"
 	cont "to have this!"
 	done
