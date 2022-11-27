@@ -20,6 +20,7 @@ GoodRodGuru:
 	writetext GaveGoodRodText
 	waitbutton
 	closetext
+	showemote EMOTE_FISH, OLIVINEGOODRODHOUSE_FISHING_GURU, 15
 	setevent EVENT_GOT_GOOD_ROD
 	end
 
