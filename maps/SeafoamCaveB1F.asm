@@ -22,6 +22,7 @@ SeafoamCaveB1FKarenScript:
 	opentext
 	checkevent EVENT_BEAT_RED
 	iftrue .AfterRedScript
+	showemote EMOTE_SLEEP, SEAFOAMCAVEB1F_KAREN, 20
 	writetext SeafoamCaveB1FKarenEarlyText
 	waitbutton
 	closetext
@@ -167,35 +168,15 @@ SeafoamCaveMovementData_PoisonOak:
 	step_end
 
 SeafoamCaveB1FKarenEarlyText:
-	text "Oh, hey. I guess"
-	line "you found my sec-"
-	cont "ret hangout."
-
-	para "If you're still"
-	line "here, you must be"
-
-	para "enjoying the hack,"
-	line "which is good."
-
-	para "But if you want to"
-	line "face me in the"
-
-	para "true final battle,"
-	line "you'll have to"
-
-	para "beat RED at MT."
-	line "SILVER first."
-
-	para "'Til then… I'll be"
-	line "here."
+	text "He's asleep…"
 	done
 
 SeafoamCaveB1FKarenBattleText:
-	text "I love snow… I"
-	line "just had to use"
+	text "LEWOT: I love"
+	line "snow… I just had"
 
-	para "this tileset for"
-	line "my final location."
+	para "to use this tile-"
+	line "set one more time."
 
 	para "Erm, anyway, you"
 	line "beat RED, huh?"
@@ -222,8 +203,9 @@ SeafoamCaveB1FKarenLossText:
 	done
 
 SeafoamCaveB1FKarenThanksForPlayingText:
-	text "Well. I'm not sure"
-	line "what to say."
+	text "LEWOT: Well. I'm"
+	line "not sure what to"
+	cont "say."
 
 	para "I put so much work"
 	line "into this hack…"
