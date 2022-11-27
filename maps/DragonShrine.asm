@@ -92,6 +92,7 @@ DragonShrine_MapScripts:
 .WrongAnswer:
 	closetext
 	turnobject DRAGONSHRINE_ELDER1, LEFT
+	showemote EMOTE_QUESTION, DRAGONSHRINE_ELDER1, 10
 	opentext
 	writetext DragonShrineWrongAnswerText1
 	waitbutton
@@ -118,7 +119,7 @@ DragonShrine_MapScripts:
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
-	showemote EMOTE_SHOCK, PLAYER, 15
+	showemote EMOTE_QUESTION, PLAYER, 15
 	playmusic MUSIC_CLAIR
 	appear DRAGONSHRINE_CLAIR
 	waitsfx
