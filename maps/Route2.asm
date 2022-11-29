@@ -1,8 +1,8 @@
 	object_const_def
-	const ROUTE2NORTH_POKE_BALL
-	const ROUTE2SOUTH_FRUIT_TREE
+	const ROUTE2_POKE_BALL
+	const ROUTE2_FRUIT_TREE
 
-Route2North_MapScripts:
+Route2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -10,22 +10,22 @@ Route2North_MapScripts:
 Route2NorthSign:
 	jumptext Route2NorthSignText
 
-Route2NorthDiglettsCaveSign:
-	jumptext Route2NorthDiglettsCaveSignText
-
 Route2SouthSign:
 	jumptext Route2SouthSignText
 
-Route2SouthFruitTree:
+Route2DiglettsCaveSign:
+	jumptext Route2NorthDiglettsCaveSignText
+
+Route2FruitTree:
 	fruittree FRUITTREE_ROUTE_2
 
-Route2NorthDireHit:
+Route2DireHit:
 	itemball DIRE_HIT
 
-Route2NorthHiddenFullHeal:
+Route2HiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ROUTE_2_HIDDEN_FULL_HEAL
 
-Route2SouthHiddenRevive:
+Route2HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
 
 Route2NorthSignText:
@@ -36,10 +36,6 @@ Route2NorthSignText:
 	cont "VIRIDIAN CITY"
 	done
 
-Route2NorthDiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
-	done
-
 Route2SouthSignText:
 	text "ROUTE 2"
 
@@ -48,7 +44,11 @@ Route2SouthSignText:
 	cont "PEWTER CITY"
 	done
 
-Route2North_MapEvents:
+Route2DiglettsCaveSignText:
+	text "DIGLETT'S CAVE"
+	done
+
+Route2_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
@@ -63,10 +63,10 @@ Route2North_MapEvents:
 	def_bg_events
 	bg_event  7, 13, BGEVENT_READ, Route2NorthSign
 	bg_event  3, 35, BGEVENT_READ, Route2SouthSign
-	bg_event 11,  9, BGEVENT_READ, Route2NorthDiglettsCaveSign
-	bg_event 16, 13, BGEVENT_ITEM, Route2NorthHiddenFullHeal
-	bg_event  6, 37, BGEVENT_ITEM, Route2SouthHiddenRevive
+	bg_event 11,  9, BGEVENT_READ, Route2DiglettsCaveSign
+	bg_event 16, 13, BGEVENT_ITEM, Route2HiddenFullHeal
+	bg_event  6, 37, BGEVENT_ITEM, Route2HiddenRevive
 
 	def_object_events
-	object_event 11,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2NorthDireHit, EVENT_ROUTE_2_DIRE_HIT
-	object_event 18, 36, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2SouthFruitTree, -1
+	object_event 11,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2DireHit, EVENT_ROUTE_2_DIRE_HIT
+	object_event 18, 36, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
