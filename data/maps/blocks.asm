@@ -21,11 +21,8 @@ CeladonCity_Blocks:
 SaffronCity_Blocks:
 	INCBIN "maps/SaffronCity.blk"
 
-Route2North_Blocks:
-	INCBIN "maps/Route2North.blk"
-
-Route2South_Blocks:
-	INCBIN "maps/Route2South.blk"
+Route2_Blocks:
+	INCBIN "maps/Route2.blk"
 
 ElmsHouse_Blocks:
 	INCBIN "maps/ElmsHouse.blk"
@@ -143,6 +140,7 @@ CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
+Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 Route26HealHouse_Blocks:
 DayOfWeekSiblingsHouse_Blocks:
