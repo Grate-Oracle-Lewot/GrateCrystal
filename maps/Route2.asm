@@ -14,7 +14,7 @@ Route2SouthSign:
 	jumptext Route2SouthSignText
 
 Route2DiglettsCaveSign:
-	jumptext Route2NorthDiglettsCaveSignText
+	jumptext Route2DiglettsCaveSignText
 
 Route2FruitTree:
 	fruittree FRUITTREE_ROUTE_2
