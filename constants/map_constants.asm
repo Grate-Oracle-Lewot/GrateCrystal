@@ -464,11 +464,12 @@ ENDM
 	map_const TRAINER_HOUSE_B1F,                            5,  8 ;  7
 	map_const VIRIDIAN_MART,                                6,  4 ;  8
 	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
-	map_const ROUTE_2_NORTH_GATE,                           5,  4 ; 10
-	map_const ROUTE_2_SOUTH_GATE,                           5,  4 ; 11
-	map_const VICTORY_ROAD_GATE,                           10,  9 ; 12
-	map_const VIRIDIAN_FOREST,                             15, 27 ; 13
-	map_const ROUTE_22_HOUSE,                               5,  4 ; 14
+	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ; 10
+	map_const ROUTE_2_NORTH_GATE,                           5,  4 ; 11
+	map_const ROUTE_2_SOUTH_GATE,                           5,  4 ; 12
+	map_const VICTORY_ROAD_GATE,                           10,  9 ; 13
+	map_const VIRIDIAN_FOREST,                             15, 27 ; 14
+	map_const ROUTE_22_HOUSE,                               5,  4 ; 15
 	endgroup
 
 	newgroup NEW_BARK                                             ; 24
