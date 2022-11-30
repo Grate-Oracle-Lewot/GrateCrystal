@@ -1,6 +1,6 @@
 	db DELIBIRD ; 225
 
-	db  45,  75,  45,  75,  75,  45
+	db  42,  84,  42,  84,  84,  42
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, FLYING ; type
