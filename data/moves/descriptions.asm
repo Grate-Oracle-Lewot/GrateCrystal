@@ -376,7 +376,7 @@ SandAttackDescription:
 	next "by throwing sand.@"
 
 HeadbuttDescription:
-	db   "An attack that may"
+	db   "A headbutt. May"
 	next "cause flinching.@"
 
 HornAttackDescription:
@@ -668,7 +668,7 @@ NightShadeDescription:
 	next "equals HP damage.@"
 
 IronHeadDescription:
-	db   "An attack that may"
+	db   "Hard headbutt. May"
 	next "cause flinching.@"
 
 ScreechDescription:
