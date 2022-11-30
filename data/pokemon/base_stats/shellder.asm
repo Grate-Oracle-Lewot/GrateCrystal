@@ -1,6 +1,6 @@
 	db SHELLDER ; 090
 
-	db  30,  65, 100,  40,  45,  25
+	db  35,  65, 100,  40,  45,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, STEEL ; type
