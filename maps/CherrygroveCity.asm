@@ -108,7 +108,7 @@ CherrygroveSilverSceneSouth:
 	moveobject CHERRYGROVECITY_SILVER, 39, 7
 CherrygroveSilverSceneNorth:
 	turnobject PLAYER, RIGHT
-	showemote EMOTE_SHOCK, PLAYER, 15
+	showemote EMOTE_QUESTION, PLAYER, 15
 	special FadeOutMusic
 	pause 15
 	appear CHERRYGROVECITY_SILVER
