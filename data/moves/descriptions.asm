@@ -868,7 +868,7 @@ AcidArmorDescription:
 	next "user's DEFENSE.@"
 
 CrabhammerDescription:
-	db   "A claw smash. High"
+	db   "Pincer smash. High"
 	next "critical ratio.@"
 
 DarkPulseDescription:
