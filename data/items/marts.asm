@@ -132,9 +132,9 @@ MartGoldenrod3F:
 MartGoldenrod3F2:
 	db 8 ; # items
 	db FIRE_STONE
-	db THUNDERSTONE
 	db WATER_STONE
 	db LEAF_STONE
+	db THUNDERSTONE
 	db MOON_STONE
 	db SUN_STONE
 	db EVERSTONE
