@@ -849,7 +849,7 @@ BirdKeeperGroup:
 	db "DENIS@", TRAINERTYPE_NORMAL
 	db 19, SPEAROW
 	db 25, FEAROW
-	db 21, SPEAROW
+	db 21, SKARMORY
 	db -1 ; end
 
 	; BIRD_KEEPER (7)
