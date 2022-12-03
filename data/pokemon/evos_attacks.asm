@@ -371,8 +371,8 @@ PikachuEvosAttacks:
 	db 26, DAZZLY_GLEAM
 	db 33, LIGHT_SCREEN
 	db 41, THUNDER
-	db 50, SKULL_BASH
-	db 59, SIGNAL_BEAM
+	db 50, SIGNAL_BEAM
+	db 59, SKULL_BASH
 	db 0 ; no more level-up moves
 
 RaichuEvosAttacks:
@@ -1729,17 +1729,17 @@ KangaskhanEvosAttacks:
 	db 2, TAIL_WHIP
 	db 4, MILK_DRINK
 	db 7, LEER
-	db 13, COMET_PUNCH
+	db 13, LOW_KICK
 	db 16, STOMP
-	db 19, LOW_KICK
+	db 19, COMET_PUNCH
 	db 25, MEGA_PUNCH
 	db 31, DIZZY_PUNCH
 	db 34, VITAL_THROW
 	db 37, ENDURE
 	db 40, OUTRAGE
 	db 43, REVERSAL
-	db 49, SKULL_BASH
-	db 57, DYNAMICPUNCH
+	db 49, DYNAMICPUNCH
+	db 57, SKULL_BASH
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
@@ -1935,8 +1935,8 @@ TaurosEvosAttacks:
 	db 34, IRON_HEAD
 	db 39, TAKE_DOWN
 	db 43, THRASH
-	db 53, SKULL_BASH
-	db 60, OUTRAGE
+	db 53, OUTRAGE
+	db 60, SKULL_BASH
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
@@ -2146,8 +2146,8 @@ SnorlaxEvosAttacks:
 	db 36, REST
 	db 43, BODY_SLAM
 	db 50, ROLLOUT
-	db 57, SKULL_BASH
-	db 61, CRUNCH
+	db 57, CRUNCH
+	db 61, SKULL_BASH
 	db 0 ; no more level-up moves
 
 ArticunoEvosAttacks:
