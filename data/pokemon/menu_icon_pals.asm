@@ -245,7 +245,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, PINK   ; SMOOCHUM
 	icon_pals YELLOW, YELLOW ; ELEKID
 	icon_pals RED,    BROWN  ; MAGBY
-	icon_pals BROWN,  GRAY   ; MILTANK
+	icon_pals PINK,   GRAY   ; MILTANK
 	icon_pals PINK,   PINK   ; BLISSEY
 	icon_pals YELLOW, BROWN  ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
