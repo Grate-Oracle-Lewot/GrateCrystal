@@ -187,9 +187,11 @@ FarmerFText_SnoreSpeech:
 	para "while the #MON"
 	line "is asleep."
 
-	para "You best think how"
-	line "you ought to use"
-	cont "it, hon."
+	para "I hear there's a"
+	line "stronger, rarer"
+
+	para "move that works"
+	line "the same way."
 	done
 
 Route39Farmhouse_MapEvents:
