@@ -357,7 +357,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Kimono Girl
-	db FULL_HEAL, HYPER_POTION ; items
+	db FULL_HEAL, MAX_POTION ; items
 	db 23 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
