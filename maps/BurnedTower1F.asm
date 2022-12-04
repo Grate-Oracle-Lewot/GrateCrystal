@@ -307,8 +307,7 @@ FirebreatherDickBeatenText:
 FirebreatherDickAfterBattleText:
 	text "I was so into my"
 	line "training that I"
-
-	para "burned my shoe…"
+	cont "burned my shoe…"
 	done
 
 FirebreatherNedSeenText:
