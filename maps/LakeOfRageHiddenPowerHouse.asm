@@ -63,14 +63,16 @@ HiddenPowerGuyText2:
 	text "Do you see it? It"
 	line "is HIDDEN POWER!"
 
-	para "It draws out the"
-	line "power of #MON"
-	cont "for attacking."
+	para "It draws out a"
+	line "#MON's inner"
+	cont "potential."
 
-	para "Remember this: its"
-	line "type and power de-"
-	cont "pend on the #-"
-	cont "MON using it."
+	para "Its type depends"
+	line "on the #MON"
+
+	para "using it--not just"
+	line "the species, but"
+	cont "the individual!"
 	done
 
 HiddenPowerGuyText3:
