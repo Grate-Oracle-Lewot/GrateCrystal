@@ -21,13 +21,13 @@ Route40BattleTowerGateTwinScript:
 
 TrainerOfficerDisher:
 	faceplayer
-	opentext
 	checktime NITE
 	iffalse .AfterBattle
 	checkevent EVENT_BEAT_OFFICER_DISHER
 	iftrue .AfterBattle
 	showemote EMOTE_SLEEP, ROUTE40BATTLETOWERGATE_OFFICER, 15
 	playmusic MUSIC_OFFICER_ENCOUNTER
+	opentext
 	writetext OfficerDisherSeenText
 	waitbutton
 	closetext
@@ -40,6 +40,7 @@ TrainerOfficerDisher:
 	end
 
 .AfterBattle:
+	opentext
 	writetext OfficerDisherAfterBattleText
 	waitbutton
 	closetext
