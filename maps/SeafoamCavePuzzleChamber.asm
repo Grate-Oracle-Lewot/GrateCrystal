@@ -97,14 +97,12 @@ SeafoamCavePuzzleChamberWallHoleText:
 	done
 
 SeafoamCavePuzzleChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It looks like a"
+	line "FERALIGATR."
 	done
 
 SeafoamCavePuzzleChamberDescriptionText:
-	text "There's nothing"
-	line "written here…"
+	text "UBEQC"
 	done
 
 SeafoamCavePuzzleChamberSolvedText:
