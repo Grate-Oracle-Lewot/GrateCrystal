@@ -112,17 +112,16 @@ TypeMatchups:
 	db STEEL,        STEEL,        NOT_VERY_EFFECTIVE
 	db STEEL,        FAIRY,        SUPER_EFFECTIVE
 	db FAIRY,        FIRE,         NOT_VERY_EFFECTIVE
+	db FAIRY,        ICE,          NOT_VERY_EFFECTIVE
 	db FAIRY,        FIGHTING,     SUPER_EFFECTIVE
 	db FAIRY,        POISON,       NOT_VERY_EFFECTIVE
 	db FAIRY,        DRAGON,       SUPER_EFFECTIVE
 	db FAIRY,        DARK,         SUPER_EFFECTIVE
 	db FAIRY,        STEEL,        NOT_VERY_EFFECTIVE
 	db CURSE_TYPE,   FIRE,         NOT_VERY_EFFECTIVE
-	db CURSE_TYPE,   WATER,        NOT_VERY_EFFECTIVE
 	db CURSE_TYPE,   GRASS,        SUPER_EFFECTIVE
 	db CURSE_TYPE,   FLYING,       SUPER_EFFECTIVE
 	db CURSE_TYPE,   BUG,          SUPER_EFFECTIVE
-	db CURSE_TYPE,   DRAGON,       NOT_VERY_EFFECTIVE
 
 	db -2 ; end (with Foresight)
 
