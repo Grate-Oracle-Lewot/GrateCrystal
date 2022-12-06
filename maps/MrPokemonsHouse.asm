@@ -131,6 +131,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_AlwaysNewDiscoveries
 	waitbutton
 	closetext
+	showemote EMOTE_HAPPY, MRPOKEMONSHOUSE_GENTLEMAN, 10
 	end
 
 .RedScale:
@@ -316,7 +317,9 @@ MrPokemonIntroText4:
 MrPokemonIntroText5:
 	text "If my assumption"
 	line "is correct, PROF."
-	cont "ELM will know it."
+
+	para "ELM will know what"
+	line "to do about it."
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
