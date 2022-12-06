@@ -25,6 +25,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
   - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
+- Bill now gives you a Surfing Pikachu instead of a normal Eevee
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs from the Spaceworld demos, and Butterfree and Venomoth have had their sprites swapped
@@ -162,6 +163,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 ## Miscellaneous
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
+- The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Changes to the lists of moves referenced by different enemy trainer AI functions, potentially making them smarter
