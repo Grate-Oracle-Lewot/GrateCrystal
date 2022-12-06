@@ -102,7 +102,6 @@ DragonShrine_MapScripts:
 	writetext DragonShrineWrongAnswerText2
 	waitbutton
 	closetext
-	setevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .Question5
