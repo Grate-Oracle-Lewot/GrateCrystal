@@ -335,7 +335,7 @@ MahoganyGymGuideText:
 	line "who has trained"
 
 	para "#MON for some"
-	line "50 years."
+	line "42 years."
 
 	para "He uses the ice-"
 	line "type. You can"
