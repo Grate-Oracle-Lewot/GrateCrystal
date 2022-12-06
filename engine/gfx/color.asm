@@ -490,23 +490,6 @@ LoadPalette_White_Col1_Col2_Black:
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 
-	ld a, [wBattleTimeOfDay]
-	and a
-	jr z, .day
-
-	ld a, LOW(PALRGB_NIGHT)
-	ld [de], a
-	inc de
-	ld a, HIGH(PALRGB_NIGHT)
-	ld [de], a
-	inc de
-
-	call NightColors
-	ld c, 2 * PAL_COLOR_SIZE
-
-	jr .black
-
-.day
 	ld a, LOW(PALRGB_WHITE)
 	ld [de], a
 	inc de
@@ -522,7 +505,6 @@ LoadPalette_White_Col1_Col2_Black:
 	dec c
 	jr nz, .loop
 
-.black
 	xor a
 	ld [de], a
 	inc de
