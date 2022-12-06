@@ -32,7 +32,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 
 ## Type chart changes
 - Fairy merely resists Dragon instead of being totally immune
-- Ice now resists Flying
+- Ice now resists Fairy and Flying
 - Bug now resists Psychic, is no longer bad against Fire or Ghost, and is now bad against Rock
 - Steel no longer resists Ghost or Psychic (but does still resist Dark)
 - Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
