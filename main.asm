@@ -293,6 +293,7 @@ INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
+INCLUDE "engine/events/pikachu.asm"
 
 
 SECTION "bank23", ROMX
