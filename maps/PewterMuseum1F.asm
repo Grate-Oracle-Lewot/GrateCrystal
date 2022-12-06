@@ -157,10 +157,10 @@ SneaselBookshelfText:
 
 MewBookshelfText:
 	text "It's packed with"
-	line "research about the"
+	line "research about"
 
-	para "legendary #MON,"
-	line "MEW."
+	para "something called"
+	line "PARADOX #MON."
 	done
 
 PewterMuseum1F_MapEvents:
@@ -187,4 +187,4 @@ PewterMuseum1F_MapEvents:
 
 	def_object_events
 	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
-	object_event 16,  2, SPRITE_GOLD_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGoldTrophy, -1
+	object_event 16,  2, SPRITE_GOLD_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGoldTrophy, -1
