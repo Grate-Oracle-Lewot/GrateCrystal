@@ -13,6 +13,12 @@ ShowLinkBattleParticipants:
 	ret
 
 FindFirstAliveMonAndStartBattle:
+	call GetMapEnvironment
+	cp CAVE
+	jr z, .nightpal
+	cp INDOOR
+	jr z, .daypal
+
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jr z, .nightpal
