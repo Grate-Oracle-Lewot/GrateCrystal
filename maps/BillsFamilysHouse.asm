@@ -24,7 +24,9 @@ BillScript:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke EEVEE, 20
+	givepoke PIKACHU, 15
+	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
+	special GiveSurfingPikachu
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
 	waitbutton
@@ -109,7 +111,7 @@ BillsHouseRadio:
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
 	line "Do us a favor and"
-	cont "take this EEVEE."
+	cont "take this PIKACHU."
 
 	para "It came over when"
 	line "I was adjusting"
@@ -142,15 +144,19 @@ BillImCountingOnYouText:
 
 ReceivedEeveeText:
 	text "<PLAYER> received"
-	line "EEVEE!"
+	line "PIKACHU!"
 	done
 
 BillEeveeMayEvolveText:
-	text "BILL: PROF.ELM"
-	line "claims EEVEE may"
+	text "BILL: Somehow,"
+	line "that PIKACHU knows"
 
-	para "evolve in new and"
-	line "unknown ways."
+	para "the move SURF. But"
+	line "you can't cross"
+
+	para "the water without"
+	line "ECRUTEAK's GYM"
+	cont "BADGE."
 	done
 
 BillPartyFullText:
@@ -189,7 +195,7 @@ BillsMomText_BeforeEcruteak:
 	para "My husband went"
 	line "off to the GAME"
 
-	para "CORNER without"
+	para "CORNER, without"
 	line "being called…"
 	done
 
