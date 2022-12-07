@@ -1,4 +1,4 @@
-AirGroundMoves::
+FloatMoves::
 	db BONE_CLUB
 	db BONEMERANG
 	db MUD_SLAP
