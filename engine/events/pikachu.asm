@@ -80,8 +80,8 @@ GiveSurfingPikachu:
 ; This is the normal moveset of a level 20 Pikachu
 	db DOUBLE_TEAM
 	db AGILITY
-	db THUNDER_WAVE
 	db THUNDERBOLT
+	db QUICK_ATTACK
 	db 0
 
 .GetNthPartyMon:
