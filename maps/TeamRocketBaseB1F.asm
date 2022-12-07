@@ -544,7 +544,7 @@ TeamRocketBaseB1FHyperPotion:
 	itemball HYPER_POTION
 
 TeamRocketBaseB1FNugget:
-	itemball NUGGET
+	itemball STARDUST
 
 TeamRocketBaseB1FGuardSpec:
 	itemball GUARD_SPEC
