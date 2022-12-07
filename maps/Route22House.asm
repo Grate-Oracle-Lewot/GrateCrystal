@@ -335,7 +335,17 @@ Route22HouseOfficerJennyScript:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoCandies
 	writetext Route22HouseOfficerJennyRareCandyText
+	checkevent EVENT_BEAT_RED
+	iftrue .GiveMaxRevives
 	verbosegiveitem RARE_CANDY, 6
+	iffalse .RareCandiesBagFull
+	waitbutton
+	closetext
+	setflag ENGINE_DAILY_MOVE_TUTOR
+	end
+
+.GiveMaxRevives:
+	verbosegiveitem MAX_REVIVES, 5
 	iffalse .RareCandiesBagFull
 	waitbutton
 	closetext
@@ -657,10 +667,10 @@ Route22HouseOfficerJennyRareCandyText:
 	line "motion by the"
 
 	para "VIRIDIAN POLICE"
-	line "DEPARTMENT, I'm"
+	line "DEPARTMENT, I'd"
 
-	para "handing out these"
-	line "RARE CANDIES!"
+	para "like you to have"
+	line "these!"
 	done
 
 Route22HouseOfficerJennyBagFullText:
