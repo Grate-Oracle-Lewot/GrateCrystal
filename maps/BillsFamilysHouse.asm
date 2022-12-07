@@ -24,7 +24,7 @@ BillScript:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke PIKACHU, 15
+	givepoke PIKACHU, 20
 	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	special GiveSurfingPikachu
 	setevent EVENT_GOT_EEVEE
