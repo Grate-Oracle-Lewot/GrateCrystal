@@ -7,7 +7,13 @@ PewterSnoozeSpeechHouse_MapScripts:
 	def_callbacks
 
 PewterSnoozeSpeechHouseGrampsScript:
-	jumptextfaceplayer PewterSnoozeSpeechHouseGrampsText
+	faceplayer
+	opentext
+	writetext PewterSnoozeSpeechHouseGrampsText
+	waitbutton
+	closetext
+	showemote EMOTE_SLEEP, PEWTERSNOOZESPEECHHOUSE_GRAMPS, 15
+	end
 
 PewterSnoozeSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
@@ -15,7 +21,6 @@ PewterSnoozeSpeechHouseBookshelf:
 PewterSnoozeSpeechHouseGrampsText:
 	text "I like snoozing"
 	line "with the radio on…"
-	cont "…Zzzz…"
 	done
 
 PewterSnoozeSpeechHouse_MapEvents:
