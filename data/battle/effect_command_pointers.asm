@@ -62,7 +62,7 @@ BattleCommandPointers:
 	dw BattleCommand_Charge
 	dw BattleCommand_CheckCharge
 	dw BattleCommand_TrapTarget
-	dw BattleCommand_Unused3C
+	dw BattleCommand_CheckFloatMon
 	dw BattleCommand_Rampage
 	dw BattleCommand_CheckRampage
 	dw BattleCommand_ConstantDamage
