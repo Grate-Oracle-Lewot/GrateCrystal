@@ -5668,7 +5668,28 @@ BattleCommand_Charge:
 	text_end
 
 BattleCommand_CheckFloatMon:
-; effect0x3c
+; if we're not using a Ground move, we don't need to be here
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GROUND
+	ret nz
+; get the defender's species
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .got_species
+	ld a, [wTempEnemyMonSpecies]
+
+.got_species
+	ld hl, FloatMons
+	call IsInByteArray
+	ret nc
+
+	ld a, 1
+	ld [wAttackMissed], a
 	ret
 
 BattleCommand_TrapTarget:
