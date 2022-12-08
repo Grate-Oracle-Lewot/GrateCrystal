@@ -13,18 +13,20 @@ PokemonFanClub_MapScripts:
 
 PokemonFanClubChairmanScript:
 	faceplayer
-	opentext
 	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	iftrue .HeardSpeech
 	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT_BUT_BAG_WAS_FULL
 	iftrue .HeardSpeechButBagFull
+	opentext
 	writetext PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText
 	yesorno
 	iffalse .NotListening
 	writetext PokemonFanClubChairmanRapidashText
 	promptbutton
+	closetext
 	showemote EMOTE_HEART, POKEMONFANCLUB_CHAIRMAN, 15
 .HeardSpeechButBagFull:
+	opentext
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
 	verbosegiveitem LUCKY_EGG
@@ -36,6 +38,7 @@ PokemonFanClubChairmanScript:
 	end
 
 .HeardSpeech:
+	opentext
 	writetext PokemonFanClubChairmanMoreTalesToTellText
 	waitbutton
 	closetext
