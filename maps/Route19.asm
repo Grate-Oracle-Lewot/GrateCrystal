@@ -206,6 +206,10 @@ Route19Fisher2Text:
 	text "Who knows how long"
 	line "it would take to"
 	cont "move this boulder…"
+
+	para "It's almost like"
+	line "someone paid it to"
+	cont "stand here!"
 	done
 
 Route19Fisher2Text_RocksCleared:
