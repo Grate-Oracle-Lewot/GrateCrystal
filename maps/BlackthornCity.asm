@@ -309,8 +309,15 @@ BlackthornCityTrainerTipsText:
 	para "not being flying"
 	line "type."
 
-	para "Ground moves won't"
-	line "work on them!"
+	para "Floating #MON"
+	line "won't be hit by"
+
+	para "moves like EARTH-"
+	line "QUAKE, but they"
+
+	para "can be hit by oth-"
+	line "er ground moves"
+	cont "like BONE CLUB."
 	done
 
 BlackthornCity_MapEvents:
