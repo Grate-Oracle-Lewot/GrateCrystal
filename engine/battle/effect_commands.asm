@@ -5667,7 +5667,7 @@ BattleCommand_Charge:
 	text_far _BattleDugText
 	text_end
 
-BattleCommand_Unused3C:
+BattleCommand_CheckFloatMon:
 ; effect0x3c
 	ret
 
