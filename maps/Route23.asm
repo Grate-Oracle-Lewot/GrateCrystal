@@ -21,8 +21,11 @@ LoungeSign:
 	jumptext LoungeSignText
 
 Route23OfficerText:
-	text "The #MON LEAGUE"
-	line "is further ahead."
+	text "…What? Yes, of"
+	line "course I'm being"
+
+	para "paid to stand"
+	line "here."
 
 	para "Oh? You have all"
 	line "eight badges?"
@@ -34,9 +37,6 @@ Route23OfficerText:
 
 	para "can let you in"
 	line "here."
-
-	para "And yes, I am paid"
-	line "to stand here."
 	done
 
 IndigoPlateauSignText:
