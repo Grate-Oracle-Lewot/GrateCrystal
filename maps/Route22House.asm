@@ -336,7 +336,7 @@ Route22HouseOfficerJennyScript:
 	iftrue .NoCandies
 	writetext Route22HouseOfficerJennyRareCandyText
 	checkevent EVENT_BEAT_RED
-	iftrue .GiveMaxRevives
+	iftrue .GiveLeftovers
 	verbosegiveitem RARE_CANDY, 6
 	iffalse .RareCandiesBagFull
 	waitbutton
@@ -344,8 +344,8 @@ Route22HouseOfficerJennyScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	end
 
-.GiveMaxRevives:
-	verbosegiveitem MAX_REVIVES, 5
+.GiveLeftovers:
+	verbosegiveitem LEFTOVERS
 	iffalse .RareCandiesBagFull
 	waitbutton
 	closetext
