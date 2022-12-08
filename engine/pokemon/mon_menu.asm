@@ -1215,6 +1215,8 @@ PlaceMoveData:
 	ld de, wTextDecimalByte
 	lb bc, 1, 3
 	call PrintNum
+	ld a, [wCurSpecies]
+	dec a
 	ld hl, Moves + MOVE_POWER
 	ld bc, MOVE_LENGTH
 	call AddNTimes
