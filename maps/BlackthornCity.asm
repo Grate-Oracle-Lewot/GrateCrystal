@@ -303,12 +303,14 @@ DragonDensSignText:
 BlackthornCityTrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "A #MON holding"
-	line "a MIRACLEBERRY"
+	para "Some #MON float"
+	line "in the air despite"
 
-	para "will cure itself"
-	line "of any status"
-	cont "problem."
+	para "not being flying"
+	line "type."
+
+	para "Ground moves won't"
+	line "work on them!"
 	done
 
 BlackthornCity_MapEvents:
