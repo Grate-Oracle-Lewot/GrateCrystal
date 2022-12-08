@@ -633,6 +633,7 @@ SpecialDefenseDownHit:
 	stab
 	damagevariation
 	checkhit
+	checkfloatmon
 	effectchance
 	moveanim
 	failuretext
@@ -1162,6 +1163,7 @@ Fly:
 	stab
 	damagevariation
 	checkhit
+	checkfloatmon
 	moveanimnosub
 	raisesub
 	failuretext
@@ -1615,6 +1617,7 @@ Magnitude:
 	stab
 	damagevariation
 	checkhit
+	checkfloatmon
 	doubleundergrounddamage
 	moveanim
 	failuretext
@@ -1815,6 +1818,7 @@ Earthquake:
 	damagevariation
 	doubleundergrounddamage
 	checkhit
+	checkfloatmon
 	effectchance
 	moveanim
 	failuretext
