@@ -144,7 +144,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 - A house on Route 22 where different characters appear, most of whom can be battled once per day
   - Monday: Koga, who now uses Fairy types instead of Poison
-  - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies (or 5 Max Revives after you've beaten Red)
+  - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies (or a Leftovers if you've beaten Red)
   - Wednesday: Jessie and James, with their Pokémon from the anime
   - Thursday: A trainer version of MissingNo., with three different variants for morning, day, and night
   - Friday: Giovanni, using Ground types plus Persian
