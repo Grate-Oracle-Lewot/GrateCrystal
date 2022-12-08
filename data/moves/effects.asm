@@ -917,6 +917,7 @@ OHKOHit:
 	usedmovetext
 	doturn
 	stab
+	checkfloatmon
 	ohko
 	moveanim
 	failuretext
