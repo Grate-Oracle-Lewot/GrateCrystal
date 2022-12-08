@@ -1,4 +1,4 @@
-FloatPokemon::
+FloatMons::
 	db BEEDRILL
 	db VENOMOTH
 	db MAGNEMITE
