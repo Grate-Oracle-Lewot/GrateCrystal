@@ -5674,6 +5674,7 @@ BattleCommand_CheckFloatMon:
 	and TYPE_MASK
 	cp GROUND
 	ret nz
+
 ; get the defender's species
 	ld a, MON_SPECIES
 	call BattlePartyAttr
@@ -5684,10 +5685,12 @@ BattleCommand_CheckFloatMon:
 	ld a, [wTempEnemyMonSpecies]
 
 .got_species
+; check if the species is in the list of floatmons
 	ld hl, FloatMons
 	call IsInByteArray
 	ret nc
 
+; if it's a floatmon, the attack misses
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
