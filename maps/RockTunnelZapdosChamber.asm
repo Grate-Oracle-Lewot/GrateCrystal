@@ -27,8 +27,8 @@ RockTunnelZapdosChamberSlowkingScript:
 
 RockTunnelZapdosChamberZapdosScript:
 	faceplayer
+	showemote EMOTE_BOLT, ROCKTUNNELZAPDOSCHAMBER_ZAPDOS, 15
 	cry ZAPDOS
-	showemote EMOTE_BOLT, ROCKTUNNELZAPDOSCHAMBER_ZAPDOS, 10
 	opentext
 	writetext ZapdosText
 	pause 15
