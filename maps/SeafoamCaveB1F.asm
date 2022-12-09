@@ -19,16 +19,17 @@ SeafoamCaveB1F_MapScripts:
 
 SeafoamCaveB1FKarenScript:
 	faceplayer
-	opentext
 	checkevent EVENT_BEAT_RED
 	iftrue .AfterRedScript
 	showemote EMOTE_SLEEP, SEAFOAMCAVEB1F_KAREN, 30
+	opentext
 	writetext SeafoamCaveB1FKarenEarlyText
 	waitbutton
 	closetext
 	end
 
 .AfterRedScript:
+	opentext
 	writetext SeafoamCaveB1FKarenBattleText
 	waitbutton
 	closetext
