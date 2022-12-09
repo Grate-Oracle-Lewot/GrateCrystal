@@ -49,20 +49,31 @@ ViridianCityGrampsNearGym:
 
 ViridianCityDreamEaterFisher:
 	faceplayer
-	opentext
 	checkevent EVENT_GOT_TM42_DREAM_EATER
 	iftrue .GotDreamEater
 	showemote EMOTE_SLEEP, VIRIDIANCITY_FISHER, 15
+	opentext
 	writetext ViridianCityDreamEaterFisherText
 	promptbutton
 	verbosegiveitem TM_DREAM_EATER
 	iffalse .NoRoomForDreamEater
 	setevent EVENT_GOT_TM42_DREAM_EATER
-.GotDreamEater:
 	writetext ViridianCityDreamEaterFisherGotDreamEaterText
 	waitbutton
+	closetext
 	showemote EMOTE_SLEEP, VIRIDIANCITY_FISHER, 15
+	end
+
+.GotDreamEater:
+	opentext
+	writetext ViridianCityDreamEaterFisherGotDreamEaterText
+	waitbutton
+	closetext
+	showemote EMOTE_SLEEP, VIRIDIANCITY_FISHER, 15
+	end
+
 .NoRoomForDreamEater:
+	waitbutton
 	closetext
 	end
 
