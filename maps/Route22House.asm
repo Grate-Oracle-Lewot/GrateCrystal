@@ -345,7 +345,7 @@ Route22HouseOfficerJennyScript:
 	end
 
 .GiveLeftovers:
-	verbosegiveitem LEFTOVERS
+	verbosegiveitem PP_UP, 6
 	iffalse .RareCandiesBagFull
 	waitbutton
 	closetext
