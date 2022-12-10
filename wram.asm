@@ -138,9 +138,8 @@ wSpriteUpdatesEnabled:: db
 wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
-wBattleTimeOfDay:: db
 
-	ds 2
+	ds 3
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
