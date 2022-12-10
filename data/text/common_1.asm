@@ -12,7 +12,7 @@ _ObtainedFruitText::
 	text "Obtained"
 	line "@"
 	text_ram wStringBuffer3
-	text " x5!"
+	text " ×5!"
 	done
 
 _FruitPackIsFullText::
