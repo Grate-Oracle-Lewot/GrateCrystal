@@ -5695,8 +5695,6 @@ BattleCommand_CheckFloatMon:
 	ld [wAttackMissed], a
 	ret
 
-INCLUDE "data/pokemon/float_mons.asm"
-
 BattleCommand_TrapTarget:
 ; traptarget
 
