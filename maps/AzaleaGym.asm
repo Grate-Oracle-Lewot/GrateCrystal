@@ -240,9 +240,13 @@ BugCatcherBennyBeatenText:
 	done
 
 BugCatcherBennyAfterBattleText:
-	text "#MON become"
-	line "stronger if they"
-	cont "evolve. Really!"
+	text "BEEDRILL can fly"
+	line "even though it's"
+	cont "not a flying type."
+
+	para "EARTHQUAKE won't"
+	line "hit it, but MUD-"
+	cont "SLAP will!"
 	done
 
 BugCatcherAlSeenText:
