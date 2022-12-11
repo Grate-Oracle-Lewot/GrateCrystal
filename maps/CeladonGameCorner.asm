@@ -102,11 +102,8 @@ CeladonGameCornerGrampsScript:
 	turnobject CELADONGAMECORNER_GRAMPS, LEFT
 	end
 
-CeladonGameCornerPoster1Script:
-	jumptext CeladonGameCornerPoster1Text
-
-CeladonGameCornerPoster2Script:
-	jumptext CeladonGameCornerPoster2Text
+CeladonGameCornerPosterScript:
+	jumptext CeladonGameCornerPosterText
 
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
@@ -288,22 +285,14 @@ else
 	done
 endc
 
-CeladonGameCornerPoster1Text:
-	text "Hey!"
+CeladonGameCornerPosterText:
+	text "This poster is"
+	line "advertising some-
+	cont "thing called the"
+	cont "ARPEGGIO system."
 
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
-	done
-
-CeladonGameCornerPoster2Text:
-	text "Hey!"
-
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
+	para "Apparently it's"
+	line "a tabletop RPG?"
 	done
 
 CeladonGameCornerLighterText:
@@ -366,8 +355,8 @@ CeladonGameCorner_MapEvents:
 	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
-	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster2Script
+	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPosterScript
+	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 
 	def_object_events
 	object_event  5,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerClerkScript, -1
