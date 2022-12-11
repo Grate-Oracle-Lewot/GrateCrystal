@@ -155,7 +155,7 @@ Rival1Group:
 
 	; RIVAL1 (2)
 	db "?@", TRAINERTYPE_ITEM
-	db  5, MAGNETON,  GOLD_BERRY
+	db  5, CYNDAQUIL,  GOLD_BERRY
 	db -1 ; end
 
 	; RIVAL1 (3)
