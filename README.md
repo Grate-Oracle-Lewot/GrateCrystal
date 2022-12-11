@@ -12,7 +12,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
-- No Abilities, but Pokémon that would/should have Levitate now have a special immunity to moves like Earthquake, although they can still be hit by some Ground moves such as Bone Club
+- No Abilities, but Pokémon that would/should have Levitate now have a special immunity to moves like Earthquake, although they can still be hit by some Ground moves such as Bone Club (check which Pokémon levitate here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
@@ -269,6 +269,10 @@ A) My focus is on making "bad" Pokémon better instead of removing them.
 Q) What about the babies? They're pretty pointless.
 
 A) But they're cute.
+
+Q) Why aren't you using Newbox? ( https://github.com/vulcandth/pokecrystal/tree/newbox )
+
+A) Again, a bit above my skill level, and I'm not sure I would have room for it with all the other additions I've made. I also like to think that the crappy box system discourages you from abusing the Pocket PC to continually heal your Pokémon.
 
 Q) Tri Attack's effectiveness is all wrong!
 
