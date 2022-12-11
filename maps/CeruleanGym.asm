@@ -284,7 +284,7 @@ ReceivedCascadeBadgeText:
 MistyGiveBlizzardTMText:
 	text "MISTY: And… I"
 	line "should give you"
-	para "this, too."
+	cont "this, too."
 	done
 
 MistyExplainBlizzardTMText:
