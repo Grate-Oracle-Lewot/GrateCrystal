@@ -35,8 +35,8 @@ TrainerCallaBeatenText:
 	done
 
 TrainerCallaAfterBattleText:
-	text "It's not easy"
-	line "bein' green."
+	text "Maybe we're long-"
+	line "lost relatives."
 	done
 
 SilverCaveItemRooms_MapEvents:
