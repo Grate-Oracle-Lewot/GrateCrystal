@@ -294,13 +294,11 @@ TeacherFrizzleAfterText:
 	done
 
 EarlsPokemonAcademyYoungster1Text:
-	text "I'm taking notes"
-	line "of the teacher's"
-	cont "lecture."
+	text "Why is max move"
+	line "accuracy 255"
+	cont "instead of 100?"
 
-	para "I'd better copy"
-	line "the stuff on the"
-	cont "blackboard too."
+	para "It's so confusing…"
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
@@ -498,8 +496,7 @@ AcademyNotebookText3:
 AcademyStickerMachineText:
 	text "This super machine"
 	line "prints data out as"
-
-	para "stickers!"
+	cont "stickers!"
 	done
 
 EarlsPokemonAcademy_MapEvents:
