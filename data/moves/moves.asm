@@ -77,7 +77,7 @@ Moves:
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,          SPECIAL,  100, 20,  10
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        200, NORMAL,       SPECIAL,   95,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         40, FLYING,       PHYSICAL, 100, 35,   0
-	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,       PHYSICAL, 100, 20,   0
+	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,       PHYSICAL, 100, 15,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         90, FIGHTING,     PHYSICAL,  90, 20,   0
 	move LOW_KICK,     EFFECT_EVASION_DOWN_HIT,   50, FIGHTING,     PHYSICAL,  90, 25, 100
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,     PHYSICAL, 100, 20,   0
@@ -223,7 +223,7 @@ Moves:
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,       STATUS,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC,     PHYSICAL, 100, 20,  30
 	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        20, BUG,          PHYSICAL,  95, 30,   0
-	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     70, STEEL,        PHYSICAL,  90, 25,  30
+	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     70, STEEL,        PHYSICAL,  90, 20,  42
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, DARK,         STATUS,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, FAIRY,        STATUS,   100, 10,   0
 	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,       STATUS,   100, 10,   0
