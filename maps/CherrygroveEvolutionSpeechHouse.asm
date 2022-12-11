@@ -25,18 +25,18 @@ CherrygroveEvolutionSpeechHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 CherrygroveEvolutionSpeechHouseYoungsterText:
-	text "#MON gain expe-"
-	line "rience in battle"
+	text "Some non-flying-"
+	line "type #MON can"
 
-	para "and change their"
-	line "form."
+	para "float enough to"
+	line "dodge some ground-"
+	cont "type attacks."
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:
-	text "#MON change?"
-
-	para "I would be shocked"
-	line "if one did that!"
+	text "DIG can't hit"
+	line "floating #MON,"
+	cont "but MUD-SLAP can!"
 	done
 
 CherrygroveEvolutionSpeechHouse_MapEvents:
