@@ -5,6 +5,7 @@ FloatMons::
 	db MAGNETON
 	db GASTLY
 	db HAUNTER
+	db GENGAR
 	db KOFFING
 	db WEEZING
 	db MEW
