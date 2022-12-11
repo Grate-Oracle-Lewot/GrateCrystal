@@ -12,6 +12,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
+- No Abilities, but Pokémon that would/should have Levitate now have a special immunity to moves like Earthquake, although they can still be hit by some Ground moves such as Bone Club
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
@@ -22,8 +23,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
-  - Pokémon that would/should have Levitate as an Ability can now learn Fly, to compensate for the lack of Abilities
-  - Small first-form bird Pokémon can no longer learn Fly, needing to evolve first
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - Bill now gives you a Surfing Pikachu instead of a normal Eevee
