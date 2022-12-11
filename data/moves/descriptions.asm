@@ -520,8 +520,8 @@ PeckDescription:
 	next "a beak or horn.@"
 
 DrillPeckDescription:
-	db   "A spinning beak"
-	next "or horn attack.@"
+	db   "Spinning peck. May"
+	next "lower DEFENSE.@"
 
 SubmissionDescription:
 	db   "An attack that al-"
