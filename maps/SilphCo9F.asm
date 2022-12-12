@@ -59,7 +59,7 @@ ScientistHidekiAfterBattleText:
 
 SilphCo9FNurseBeforeText:
 	text "I'm the on-site"
-	line "nurse."
+	line "physician."
 
 	para "Here, let me heal"
 	line "your #MON."
