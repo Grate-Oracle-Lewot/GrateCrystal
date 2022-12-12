@@ -18,9 +18,9 @@ LoungeFalknerScript:
 	turnobject LOUNGE1F_FALKNER, RIGHT
 	opentext
 	writetext LoungeFalknerTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -51,9 +51,9 @@ LoungeBrockScript:
 	faceplayer
 	opentext
 	writetext LoungeBrockTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -81,9 +81,9 @@ LoungeBugsyScript:
 	faceplayer
 	opentext
 	writetext LoungeBugsyTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal TUESDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -111,9 +111,9 @@ LoungeMistyScript:
 	faceplayer
 	opentext
 	writetext LoungeMistyTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal TUESDAY, .Rematch
-	waitbutton
 	closetext
 	end
 
@@ -135,9 +135,9 @@ LoungeWhitneyScript:
 	faceplayer
 	opentext
 	writetext LoungeWhitneyTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal WEDNESDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -165,9 +165,9 @@ LoungeLtSurgeScript:
 	faceplayer
 	opentext
 	writetext LoungeLtSurgeTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal WEDNESDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -195,9 +195,9 @@ LoungeMortyScript:
 	faceplayer
 	opentext
 	writetext LoungeMortyTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal THURSDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -225,9 +225,9 @@ LoungeErikaScript:
 	faceplayer
 	opentext
 	writetext LoungeErikaTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal THURSDAY, .Rematch
-	waitbutton
 	closetext
 	end
 
