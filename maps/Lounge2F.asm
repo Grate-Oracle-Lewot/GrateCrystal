@@ -18,9 +18,9 @@ LoungeChuckScript:
 	faceplayer
 	opentext
 	writetext LoungeChuckTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal FRIDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -48,9 +48,9 @@ LoungeJanineScript:
 	faceplayer
 	opentext
 	writetext LoungeJanineTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal FRIDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -78,9 +78,9 @@ LoungeJasmineScript:
 	faceplayer
 	opentext
 	writetext LoungeJasmineTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -108,9 +108,9 @@ LoungeSabrinaScript:
 	faceplayer
 	opentext
 	writetext LoungeSabrinaTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -138,9 +138,9 @@ LoungePryceScript:
 	faceplayer
 	opentext
 	writetext LoungePryceTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal SUNDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -168,9 +168,9 @@ LoungeBlaineScript:
 	faceplayer
 	opentext
 	writetext LoungeBlaineTalkText
+	waitbutton
 	readvar VAR_WEEKDAY
 	ifequal SUNDAY, .OfferRematch
-	waitbutton
 	closetext
 	end
 
@@ -199,9 +199,9 @@ LoungeBlueScript:
 	turnobject LOUNGE2F_RED, RIGHT
 	opentext
 	writetext LoungeBlueTalkText
+	waitbutton
 	checkflag ENGINE_QWILFISH_SWARM
 	iftrue .OfferRematch
-	waitbutton
 	closetext
 	end
 
