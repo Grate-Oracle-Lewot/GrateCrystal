@@ -48,7 +48,6 @@ TrainerFisherBarney:
 	trainer FISHER, BARNEY, EVENT_BEAT_FISHER_BARNEY, FisherBarneySeenText, FisherBarneyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherBarneyAfterBattleText
 	waitbutton
