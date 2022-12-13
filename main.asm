@@ -628,12 +628,10 @@ INCLUDE "data/phone/text/parry_callee.asm"
 INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
-SECTION "Mewtwo Phone Files", ROMX
+SECTION "Overflow Files", ROMX
 
 INCLUDE "engine/pokedex/pokedex.asm" ; 10
 INCLUDE "engine/link/init_list.asm" ; 14
-INCLUDE "engine/phone/scripts/mewtwo.asm"
-INCLUDE "data/phone/text/mewtwo.asm"
 
 
 SECTION "Miscellaneous Text", ROMX
