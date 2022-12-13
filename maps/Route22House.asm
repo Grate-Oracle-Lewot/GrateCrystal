@@ -184,7 +184,6 @@ Route22HouseLanceScript:
 
 .GiveMasterBall:
 	writetext Route22HouseLanceMasterBallText
-	waitbutton
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .MasterBallBagFull
@@ -335,6 +334,7 @@ Route22HouseOfficerJennyScript:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoCandies
 	writetext Route22HouseOfficerJennyRareCandyText
+	promptbutton
 	checkevent EVENT_BEAT_RED
 	iftrue .GiveLeftovers
 	verbosegiveitem RARE_CANDY, 6
