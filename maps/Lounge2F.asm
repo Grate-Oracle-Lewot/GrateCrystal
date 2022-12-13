@@ -253,6 +253,7 @@ LoungeGymGuideScript:
 
 .GiveRareCandies
 	writetext LoungeGymGuideAfterText
+	promptbutton
 	verbosegiveitem RARE_CANDY, 99
 	iffalse .RareCandiesNoRoom
 	writetext LoungeGymGuideMoreText
