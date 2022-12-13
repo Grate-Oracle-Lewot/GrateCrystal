@@ -221,20 +221,19 @@ MartEcruteak:
 	db -1 ; end
 
 MartMahogany1:
-	db 3 ; # items
+	db 4 ; # items
 	db SLOWPOKETAIL
 	db SWAG_BEACON
+	db BERSERK_GENE
 	db TM_THIEF
 	db -1 ; end
 
 MartMahogany2:
-	db 10 ; # items
+	db 8 ; # items
 	db RAGECANDYBAR
 	db GREAT_BALL
 	db SUPER_POTION
 	db HYPER_POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
 	db FLOWER_MAIL
@@ -417,12 +416,13 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 7 ; # items
+	db 8 ; # items
 	db POKE_DOLL
 	db FRESH_WATER
 	db SODA_POP
 	db LEMONADE
 	db DUSK_BALL
+	db BERSERK_GENE
 	db PORTRAITMAIL
 	db TM_MOONBLAST
 	db -1 ; end
