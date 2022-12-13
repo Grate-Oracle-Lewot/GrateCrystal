@@ -16,5 +16,4 @@ SpecialPhoneCallList:
 	specialcall SpecialCallWhereverYouAre,  PHONECONTACT_BIKESHOP, BikeShopPhoneCallerScript
 	specialcall SpecialCallWhereverYouAre,  PHONECONTACT_MOM,      MomPhoneLectureScript
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_ELM,      ElmPhoneCallerScript
-	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_MEWTWO,   MewtwoPhoneCallerScript
 	assert_table_length NUM_SPECIALCALLS
