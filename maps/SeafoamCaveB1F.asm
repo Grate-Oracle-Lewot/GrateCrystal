@@ -55,6 +55,7 @@ SeafoamCaveB1FKarenScript:
 	closetext
 	special FadeOutMusic
 	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	appear SEAFOAMCAVEB1F_OAK2
 	playsound SFX_WARP_TO
 	waitsfx
@@ -116,6 +117,7 @@ SeafoamCaveB1FKarenScript:
 	waitbutton
 	closetext
 	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	disappear SEAFOAMCAVEB1F_OAK2
 	playsound SFX_WARP_TO
 	waitsfx
@@ -142,8 +144,7 @@ SeafoamCaveB1FFeraligatrScript:
 	opentext
 	writetext SeafoamCaveB1FFeraligatrText
 	cry FERALIGATR
-	pause 10
-	waitbutton
+	pause 15
 	closetext
 	end
 
