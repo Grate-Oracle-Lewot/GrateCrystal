@@ -248,6 +248,14 @@ LoungeErikaScript:
 LoungeClairScript:
 	jumptextfaceplayer LoungeClairText
 
+Lounge1FPrinter:
+	opentext
+	writetext Lounge1FPrinterText
+	waitbutton
+	special UnownPrinter
+	closetext
+	end
+
 LoungeFalknerTalkText:
 	text "Just because rock"
 	line "hits hard against"
@@ -590,6 +598,11 @@ LoungeClairText:
 	cont "there."
 	done
 
+Lounge1FPrinterText:
+	text "UNOWN may be"
+	line "printed out."
+	done
+
 Lounge1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -601,6 +614,7 @@ Lounge1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  5,  1, BGEVENT_READ, Lounge1FPrinter
 
 	def_object_events
 	object_event  7, 10, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LoungeFalknerScript, -1
