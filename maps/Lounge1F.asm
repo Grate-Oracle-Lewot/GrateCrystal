@@ -249,12 +249,7 @@ LoungeClairScript:
 	jumptextfaceplayer LoungeClairText
 
 Lounge1FPrinter:
-	opentext
-	writetext Lounge1FPrinterText
-	waitbutton
-	special UnownPrinter
-	closetext
-	end
+	jumptext Lounge1FPrinterText
 
 LoungeFalknerTalkText:
 	text "Just because rock"
@@ -599,8 +594,10 @@ LoungeClairText:
 	done
 
 Lounge1FPrinterText:
-	text "UNOWN may be"
-	line "printed out."
+	text "It's a photocopier."
+
+	para "There's a picture"
+	line "of… Oh my…"
 	done
 
 Lounge1F_MapEvents:
