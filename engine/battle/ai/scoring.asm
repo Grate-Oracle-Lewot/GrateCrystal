@@ -1445,9 +1445,6 @@ AI_Smart_Spite:
 	dec [hl]
 	ret
 
-.dismiss ; unreferenced
-	jp AIDiscourageMove
-
 AI_Smart_DestinyBond:
 AI_Smart_Reversal:
 AI_Smart_SkullBash:
