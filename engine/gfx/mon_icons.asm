@@ -387,8 +387,7 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
-	ld hl, wUsingHMItem
-	ld a, [hl]
+	ld a, [wUsingHMItem]
 	cp FALSE
 	jr z, .not_fearowbot
 	push de
