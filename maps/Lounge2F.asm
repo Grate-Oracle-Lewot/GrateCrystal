@@ -256,6 +256,7 @@ LoungeGymGuideScript:
 	promptbutton
 	giveitem RARE_CANDY, 99
 	iffalse .RareCandiesNoRoom
+	playsound SFX_ITEM
 	writetext LoungeReceivedRareCandiesText
 	promptbutton
 	writetext LoungeGymGuideMoreText
