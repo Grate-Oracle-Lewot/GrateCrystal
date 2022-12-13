@@ -1534,13 +1534,8 @@ RadioChannels:
 	jp LoadStation_EvolutionRadio
 
 .MewtwoRadio:
-	ld a, [wStatusFlags]
-	bit EVENT_LAV_RADIO_TOWER_TAKEOVER, a
-	cp FALSE
-	jr z, .NoSignal
-	ld a, [wStatusFlags]
-	bit EVENT_FOUGHT_MEWTWO, a
-	cp TRUE
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_MEWTWO_RADIO_F, a
 	jr z, .NoSignal
 	jp LoadStation_MewtwoRadio
 
