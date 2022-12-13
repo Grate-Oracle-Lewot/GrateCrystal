@@ -254,8 +254,10 @@ LoungeGymGuideScript:
 .GiveRareCandies
 	writetext LoungeGymGuideAfterText
 	promptbutton
-	verbosegiveitem RARE_CANDY, 99
+	giveitem RARE_CANDY, 99
 	iffalse .RareCandiesNoRoom
+	writetext LoungeReceivedRareCandiesText
+	promptbutton
 	writetext LoungeGymGuideMoreText
 	waitbutton
 	closetext
@@ -565,6 +567,11 @@ LoungeGymGuideAfterText:
 
 	para "deserves a specta-"
 	line "cular reward!"
+	done
+
+LoungeReceivedRareCandiesText:
+	text "<PLAYER> received"
+	line "RARE CANDY ×99!"
 	done
 
 LoungeGymGuideMoreText:
