@@ -22,7 +22,7 @@ ViridianGymBlueScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
-	setflag ENGINE_MEWTWO_CALL_ENABLED
+	setflag ENGINE_MEWTWO_RADIO
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
