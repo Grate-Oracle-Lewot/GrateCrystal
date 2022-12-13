@@ -51,6 +51,7 @@ RedCredits::
 	call DisableSpriteUpdates
 	ld a, SPAWN_LANCE
 	ld [wSpawnAfterChampion], a
+	farcall SaveGameData
 	ld a, [wStatusFlags]
 	ld b, a
 	farcall Credits
