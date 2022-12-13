@@ -27,6 +27,7 @@ LavRadioTower2FMewtwoScript:
 	waitbutton
 	closetext
 	setevent EVENT_FOUGHT_MEWTWO
+	clearflag ENGINE_MEWTWO_RADIO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	loadwildmon MEWTWO, 75
 	startbattle
