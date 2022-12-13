@@ -287,12 +287,12 @@ endc
 
 CeladonGameCornerPosterText:
 	text "This poster is"
-	line "advertising some-
+	line "advertising some-"
 	cont "thing called the"
 	cont "ARPEGGIO system."
 
-	para "Apparently it's"
-	line "a tabletop RPG?"
+	para "Apparently it's a"
+	line "tabletop RPG?"
 	done
 
 CeladonGameCornerLighterText:
