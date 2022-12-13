@@ -44,6 +44,7 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FKarenThanksForPlayingText
 	waitbutton
 	closetext
+	showemote EMOTE_QUESTION, SEAFOAMCAVEB1F_KAREN, 10
 	playmusic MUSIC_PROF_OAK
 	appear SEAFOAMCAVEB1F_OAK1
 	applymovement SEAFOAMCAVEB1F_OAK1, SeafoamCaveMovementData_OakWalksUp
@@ -132,8 +133,6 @@ SeafoamCaveB1FKarenScript:
 	writetext SeafoamCaveB1FKarenCreditsText
 	waitbutton
 	closetext
-	disappear SEAFOAMCAVEB1F_OAK1
-	appear SEAFOAMCAVEB1F_MONSTER
 	special HealParty
 	refreshscreen
 	credits
