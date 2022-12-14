@@ -1043,7 +1043,6 @@ INCLUDE "engine/overworld/scripting.asm"
 
 WarpToSpawnPoint::
 	ld hl, wStatusFlags2
-	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	res STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
 	ret
 
