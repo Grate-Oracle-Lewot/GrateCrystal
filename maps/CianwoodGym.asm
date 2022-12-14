@@ -284,9 +284,8 @@ BlackbeltNobAfterText:
 	done
 
 BlackbeltLungSeenText:
-	text "My raging fists"
-	line "will shatter your"
-	cont "#MON!"
+	text "Any problem can be"
+	line "solved by a fist!"
 	done
 
 BlackbeltLungBeatenText:
