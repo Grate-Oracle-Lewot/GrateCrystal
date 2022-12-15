@@ -465,16 +465,14 @@ FloriaText2:
 	done
 
 RockSmashGuyText1:
-	text "Wa-hey!"
+	text "If only that tree"
+	line "were a rock, my"
 
-	para "I was going to"
-	line "snap that tree"
+	para "#MON's trusty"
+	line "ROCK SMASH would"
 
-	para "with my straight-"
-	line "arm punch."
-
-	para "But I couldn't!"
-	line "I'm a failure!"
+	para "have it cleared in"
+	line "no time!"
 	done
 
 RockSmashGuyText2:
