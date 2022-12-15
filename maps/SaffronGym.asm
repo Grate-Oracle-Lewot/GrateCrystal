@@ -341,6 +341,7 @@ SaffronGym_MapEvents:
 	warp_event 15,  3, SAFFRON_GYM, 15
 	warp_event  1,  3, SAFFRON_GYM, 16
 	warp_event 11,  9, SAFFRON_GYM, 17
+	warp_event  9, 11, SAFFRON_GYM, 3
 
 	def_coord_events
 
