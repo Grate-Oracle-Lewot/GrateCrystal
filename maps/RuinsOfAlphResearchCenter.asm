@@ -180,7 +180,7 @@ RuinsOfAlphResearchCenterMoveTutorScript:
 
 .CanTutor
 	writetext RuinsOfAlphResearchCenterMoveTutorText1
-	waitbutton
+	promptbutton
 	writetext RuinsOfAlphResearchCenterMoveTutorText2
 	yesorno
 	iffalse .TutorRefused
