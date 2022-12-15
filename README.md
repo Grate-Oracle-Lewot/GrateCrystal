@@ -186,7 +186,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - No more badge boosts (stat-based or type-based)
 - Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
-- Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, and smashable rocks added to Brock's Gym
+- Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, and a quick exit warp added to Sabrina's Gym
 - The Marshbadge and Soulbadge have their names and designs swapped
 - Female players retain their female sprites in the Link Trade and Battle rooms
 - Text edits, often humorous (or so I'd like to think)
