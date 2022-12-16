@@ -93,6 +93,4 @@ BattleCommand_Substitute:
 	ld a, [wAttackMissed]
 	and a
 	ret z
-
-	ld hl, HasSubstituteText
-	jp StdBattleTextbox
+	jp PrintNothingHappened
