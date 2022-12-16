@@ -84,9 +84,15 @@ BattleCommand_Substitute:
 .already_has_sub
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub
-	call ResetMiss
+	push bc
 	call BattleCommand_DefenseUp
 	call BattleCommand_StatUpMessage
-	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
-	jp BattleCommand_StatUpMessage
+	call BattleCommand_StatUpMessage
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret z
+
+	ld hl, HasSubstituteText
+	jp StdBattleTextbox
