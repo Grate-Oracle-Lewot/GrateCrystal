@@ -158,7 +158,7 @@ MahoganyMart1FRageCandyBarText: ; unreferenced
 	text "Hello, kiddo!"
 
 	para "How would you like"
-	line "some RAGECANDYBAR?"
+	line "a CAKE OF RAGE?"
 
 	para "It's the thing to"
 	line "eat in MAHOGANY!"
