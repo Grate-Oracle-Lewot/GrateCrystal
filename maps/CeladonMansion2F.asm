@@ -13,7 +13,7 @@ CeladonMansion2FBookshelf:
 	jumpstd DifficultBookshelfScript
 
 CeladonMansion2FComputerText:
-	text "<PLAYER> turned on"
+	text "<PLAYER> booted up"
 	line "the PC."
 
 	para "…"
