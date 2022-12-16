@@ -160,10 +160,11 @@ TeamRocketOathText:
 	done
 
 IncenseBurnerText:
-	text "What is this?"
+	text "Is it an incense"
+	line "burner or a"
 
-	para "Oh, it's an"
-	line "incense burner!"
+	para "sculpture of a"
+	line "DIGLETT?"
 	done
 
 MerchandiseShelfText:
