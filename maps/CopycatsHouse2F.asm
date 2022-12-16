@@ -172,9 +172,10 @@ Copycat:
 
 CopycatsDodrio:
 	opentext
-	writetext CopycatsDodrioText1
 	cry DODRIO
+	writetext CopycatsDodrioText1
 	promptbutton
+	cry DODRIO
 	writetext CopycatsDodrioText2
 	waitbutton
 	closetext
