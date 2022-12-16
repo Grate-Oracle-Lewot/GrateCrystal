@@ -1,6 +1,8 @@
 PikachuBitmasksPointers:
 	table_width 2, PikachuBitmasksPointers
-	dw NormalPikachuBitmasks
+	dw CrystalPikachuBitmasks
+	dw GoldPikachuBitmasks
+	dw SilverPikachuBitmasks
 	dw FightingPikachuBitmasks
 	dw SurfingPikachuBitmasks
 	dw FlyingPikachuBitmasks
