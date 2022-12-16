@@ -274,7 +274,7 @@ A) But they're cute.
 
 Q) Why aren't you using Newbox? ( https://github.com/vulcandth/pokecrystal/tree/newbox )
 
-A) Again, a bit above my skill level, and I'm not sure I would have room for it with all the other additions I've made. I also like to think that the crappy box system discourages you from abusing the Pocket PC to continually heal your Pokémon.
+A) Again, a bit above my skill level, and I'm not sure I would have room for it with all the other additions I've made. I also like to think that the crappy box system discourages you from abusing the Game Boy PC to heal your Pokémon.
 
 Q) Tri Attack's effectiveness is all wrong!
 
