@@ -114,7 +114,7 @@ MartGoldenrod2F2:
 	db POKE_DOLL
 	db SWAG_BEACON
 	db EVIOLITE
-	db FLOWER_MAIL
+	db MUSIC_MAIL
 	db -1 ; end
 
 MartGoldenrod3F:
@@ -236,7 +236,7 @@ MartMahogany2:
 	db HYPER_POTION
 	db SUPER_REPEL
 	db REVIVE
-	db FLOWER_MAIL
+	db BLUESKY_MAIL
 	db TM_HAIL
 	db -1 ; end
 
@@ -264,7 +264,7 @@ MartViridian:
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
-	db FLOWER_MAIL
+	db MIRAGE_MAIL
 	db TM_MUD_SLAP
 	db -1 ; end
 
@@ -289,7 +289,7 @@ MartCerulean:
 	db FULL_HEAL
 	db DIRE_HIT
 	db GUARD_SPEC
-	db SURF_MAIL
+	db LITEBLUE_MAIL
 	db TM_SCALD
 	db -1 ; end
 
@@ -312,7 +312,7 @@ MartVermilion:
 	db SUPER_POTION
 	db HYPER_POTION
 	db SWAG_BEACON
-	db LITEBLUEMAIL
+	db MORPH_MAIL
 	db TM_THUNDERPUNCH
 	db -1 ; end
 
@@ -364,9 +364,9 @@ MartCeladon4F:
 	db NOISEMAKER
 	db LIMBO_STICK
 	db DICTIONARY
+	db EVIOLITE
 	db POKE_DOLL
-	db LOVELY_MAIL
-	db SURF_MAIL
+	db PORTRAITMAIL
 	db -1 ; end
 
 MartCeladon5F1:
@@ -399,7 +399,7 @@ MartFuchsia:
 	db HYPER_POTION
 	db FULL_HEAL
 	db MAX_REPEL
-	db FLOWER_MAIL
+	db LOVELY_MAIL
 	db TM_SLUDGE_BOMB
 	db -1 ; end
 
@@ -423,7 +423,7 @@ MartMtMoon:
 	db LEMONADE
 	db DUSK_BALL
 	db BERSERK_GENE
-	db PORTRAITMAIL
+	db EON_MAIL
 	db TM_MOONBLAST
 	db -1 ; end
 
