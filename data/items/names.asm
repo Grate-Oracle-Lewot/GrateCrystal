@@ -137,7 +137,7 @@ ItemNames::
 	li "CHARCOAL"
 	li "BERRY JUICE"
 	li "SCOPE LENS"
-	li "POCKET PC"
+	li "GAME BOY PC"
 	li "X SP.DEFEND"
 	li "METAL COAT"
 	li "DRAGON FANG"
