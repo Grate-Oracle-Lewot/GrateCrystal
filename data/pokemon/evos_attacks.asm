@@ -1202,8 +1202,8 @@ MagnemiteEvosAttacks:
 
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SWIFT
-	db 6, THUNDERSHOCK
+	db 1, SUBSTITUTE
+	db 6, HI_JUMP_KICK
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
@@ -2267,8 +2267,8 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 2, SUBSTITUTE
+	db 1, FLY
+	db 2, EARTHQUAKE
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
