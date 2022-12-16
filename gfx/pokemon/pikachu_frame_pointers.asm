@@ -1,6 +1,8 @@
 PikachuFramesPointers:
 	table_width 2, PikachuFramesPointers
-	dw NormalPikachuFrames
+	dw CrystalPikachuFrames
+	dw GoldPikachuFrames
+	dw SilverPikachuFrames
 	dw FightingPikachuFrames
 	dw SurfingPikachuFrames
 	dw FlyingPikachuFrames
