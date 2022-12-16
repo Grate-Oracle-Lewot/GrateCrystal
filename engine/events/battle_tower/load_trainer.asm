@@ -28,7 +28,6 @@ LoadOpponentTrainerAndPokemon:
 	ld b, a ; b contains the nr of the trainer
 	maskbits BATTLETOWER_NUM_UNIQUE_MON
 	cp BATTLETOWER_NUM_UNIQUE_MON
-endc
 	jr nc, .resample
 	ld b, a
 
