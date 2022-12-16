@@ -1,0 +1,6 @@
+CrystalPikachuFrames: INCLUDE "gfx/pokemon/pikachu_crystal/frames.asm"
+GoldPikachuFrames: INCLUDE "gfx/pokemon/pikachu_gold/frames.asm"
+SilverPikachuFrames: INCLUDE "gfx/pokemon/pikachu_silver/frames.asm"
+FightingPikachuFrames: INCLUDE "gfx/pokemon/pikachu_fighting/frames.asm"
+SurfingPikachuFrames: INCLUDE "gfx/pokemon/pikachu_surfing/frames.asm"
+FlyingPikachuFrames: INCLUDE "gfx/pokemon/pikachu_flying/frames.asm"
