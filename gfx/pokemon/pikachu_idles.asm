@@ -1,0 +1,6 @@
+CrystalPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_crystal/anim_idle.asm"
+GoldPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_gold/anim_idle.asm"
+SilverPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_silver/anim_idle.asm"
+FightingPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_fighting/anim_idle.asm"
+SurfingPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_surfing/anim_idle.asm"
+FlyingPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_flying/anim_idle.asm"
