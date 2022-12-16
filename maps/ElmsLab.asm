@@ -816,10 +816,10 @@ ElmText_MissionFromMrPokemon:
 	line "time it's real."
 
 	para "It is intriguing,"
-	line "but we're busy"
+	line "but it's about"
 
-	para "with our #MON"
-	line "research…"
+	para "time for our next"
+	line "coffee break…"
 
 	para "Wait!"
 
