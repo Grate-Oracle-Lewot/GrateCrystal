@@ -804,8 +804,8 @@ SoftboiledDescription:
 	next "the user's max HP.@"
 
 HiJumpKickDescription:
-	db   "Damages the user"
-	next "if it misses.@"
+	db   "Hits fliers but"
+	next "hurts on a miss.@"
 
 GlareDescription:
 	db   "Paralyzes the foe"
