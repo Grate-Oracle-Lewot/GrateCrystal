@@ -74,15 +74,15 @@ BattleCommand_Substitute:
 	call StdBattleTextbox
 	jp RefreshBattleHuds
 
-.already_has_sub
-	call CheckUserIsCharging
-	call nz, BattleCommand_RaiseSub
-	ld hl, HasSubstituteText
-	jr .jp_stdbattletextbox
-
 .too_weak_to_sub
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub
 	ld hl, TooWeakSubText
 .jp_stdbattletextbox
 	jp StdBattleTextbox
+
+.already_has_sub
+	call CheckUserIsCharging
+	call nz, BattleCommand_RaiseSub
+	call BattleCommand_DefenseUp
+	call BattleCommand_SpecialDefenseUp
