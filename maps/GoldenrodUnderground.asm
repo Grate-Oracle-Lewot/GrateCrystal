@@ -510,16 +510,17 @@ PokemaniacDonaldBeatenText:
 
 PokemaniacDonaldAfterBattleText:
 	text "Are you making a"
-	line "#DEX? Here's a"
-	cont "hot tip."
+	line "#DEX? That's"
+	cont "cool."
 
-	para "The HIKER on ROUTE"
-	line "33, ANTHONY, is a"
-	cont "good guy."
+	para "There are many"
+	line "#MON that are"
 
-	para "He'll phone you if"
-	line "he sees any rare"
-	cont "#MON."
+	para "only found in"
+	line "other regions,"
+
+	para "like HOENN and"
+	line "UNOVA, though."
 	done
 
 GruntM23SeenText:
