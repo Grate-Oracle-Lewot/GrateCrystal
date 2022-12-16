@@ -1,0 +1,6 @@
+CrystalPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_crystal/bitmask.asm"
+GoldPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_gold/bitmask.asm"
+SilverPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_silver/bitmask.asm"
+FightingPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_fighting/bitmask.asm"
+SurfingPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_surfing/bitmask.asm"
+FlyingPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_flying/bitmask.asm"
