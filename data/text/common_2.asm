@@ -1043,8 +1043,8 @@ _PokecenterPCCantUseText::
 	prompt
 
 _PlayersPCTurnOnText::
-	text "<PLAYER> turned on"
-	line "the PC."
+	text "<PLAYER> booted up"
+	line "the home PC."
 	autodone
 
 _PlayersPCAskWhatDoText::
@@ -1095,7 +1095,7 @@ _PlayersPCNoRoomDepositText::
 	prompt
 
 _PokecenterPCTurnOnText::
-	text "<PLAYER> turned on"
+	text "<PLAYER> booted up"
 	line "the PC."
 	autodone
 
