@@ -40,7 +40,7 @@ PewterMartSuperNerdText:
 	line "MAGIKARP from the"
 
 	para "LAKE OF RAGE were"
-	line "excellent."
+	line "the best ones."
 	done
 
 PewterMart_MapEvents:
