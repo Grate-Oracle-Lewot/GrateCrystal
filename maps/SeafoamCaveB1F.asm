@@ -65,16 +65,10 @@ SeafoamCaveB1FKarenScript:
 	opentext
 	writetext SeafoamCaveB1FOakWhoAreYouText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FPoisonOakFufuText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FOakItCantBeText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FPoisonOakGivePokemonText
 	waitbutton
 	closetext
@@ -83,8 +77,6 @@ SeafoamCaveB1FKarenScript:
 	opentext
 	writetext SeafoamCaveB1FKarenCutOutOfScriptText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FPoisonOakButYouDidntText
 	waitbutton
 	closetext
@@ -97,12 +89,8 @@ SeafoamCaveB1FKarenScript:
 	opentext
 	writetext SeafoamCaveB1FOakBlitherText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FKarenUpToYouText
 	waitbutton
-	closetext
-	opentext
 	writetext SeafoamCaveB1FPoisonOakBattleText
 	waitbutton
 	closetext
@@ -141,6 +129,7 @@ SeafoamCaveB1FKarenScript:
 	end
 
 SeafoamCaveB1FFeraligatrScript:
+	faceplayer
 	opentext
 	writetext SeafoamCaveB1FFeraligatrText
 	cry FERALIGATR
