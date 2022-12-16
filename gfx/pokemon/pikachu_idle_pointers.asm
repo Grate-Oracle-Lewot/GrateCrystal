@@ -1,0 +1,7 @@
+PikachuAnimationIdlePointers:
+	table_width 2, PikachuAnimationIdlePointers
+	dw NormalPikachuAnimationIdle
+	dw FightingPikachuAnimationIdle
+	dw SurfingPikachuAnimationIdle
+	dw FlyingPikachuAnimationIdle
+	assert_table_length NUM_PIKACHU_FORMS
