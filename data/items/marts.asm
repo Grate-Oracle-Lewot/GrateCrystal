@@ -289,7 +289,7 @@ MartCerulean:
 	db FULL_HEAL
 	db DIRE_HIT
 	db GUARD_SPEC
-	db LITEBLUE_MAIL
+	db LITEBLUEMAIL
 	db TM_SCALD
 	db -1 ; end
 
