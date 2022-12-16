@@ -1,0 +1,6 @@
+CrystalPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_crystal/anim.asm"
+GoldPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_gold/anim.asm"
+SilverPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_silver/anim.asm"
+FightingPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_fighting/anim.asm"
+SurfingPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_surfing/anim.asm"
+FlyingPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_flying/anim.asm"
