@@ -197,15 +197,14 @@ GoldenrodDeptStore5FLassText:
 	done
 
 GoldenrodDeptStore5FPokefanMText:
-	text "You can't rename a"
-	line "#MON you get in"
-	cont "a trade."
+	text "If a #MON uses"
+	line "SUBSTITUTE when"
 
-	para "The name is a re-"
-	line "flection of the"
+	para "it's already got a"
+	line "SUBSTITUTE up, its"
 
-	para "original trainer's"
-	line "feelings for it."
+	para "defensive stats"
+	line "will both rise!"
 	done
 
 GoldenrodDeptStore5FDirectoryText:
