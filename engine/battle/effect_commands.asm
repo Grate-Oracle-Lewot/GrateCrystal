@@ -1698,6 +1698,8 @@ BattleCommand_CheckHit:
 	ret z
 	cp THUNDER
 	ret z
+	cp HI_JUMP_KICK
+	ret z
 	cp SKY_ATTACK
 	ret z
 	cp TWISTER
