@@ -133,17 +133,21 @@ EcruteakPokecenter1F_BillText2:
 	done
 
 EcruteakPokecenter1F_BillText3:
-	text "It's a POCKET PC!"
-	line "Now you can manage"
-	cont "your party any-"
-	cont "where."
+	text "I modded a GAME"
+	line "BOY to be able to"
+	cont "access the PC!"
 
-	para "Oh, I also devel-"
-	line "oped time travel"
-	cont "upstairs."
+	para "The only problem"
+	line "is, it can't pick"
 
-	para "Anyway, gotta go!"
-	line "Buh-bye!"
+	para "up a signal inside"
+	line "caves. But still!"
+
+	para "Anyway, I need to"
+	line "get back to my"
+
+	para "house in GOLDEN-"
+	line "ROD. Buh-bye!"
 	done
 
 EcruteakPokecenter1FPokefanMText:
