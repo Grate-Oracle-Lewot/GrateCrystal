@@ -1,8 +1,11 @@
 PikachuAnimationPointers:
 	table_width 2, PikachuAnimationPointers
-	dw CrystalPikachuAnimation
+	dw RedPikachuAnimation
+	dw BluePikachuAnimation
+	dw YellowPikachuAnimation
 	dw GoldPikachuAnimation
 	dw SilverPikachuAnimation
+	dw CrystalPikachuAnimation
 	dw FightingPikachuAnimation
 	dw SurfingPikachuCAnimation
 	dw FlyingPikachuAnimation
