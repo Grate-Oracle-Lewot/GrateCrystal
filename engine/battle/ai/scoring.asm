@@ -2131,6 +2131,12 @@ AI_Smart_Safeguard:
 
 AI_Smart_Magnitude:
 AI_Smart_Earthquake:
+; Dismiss this move if the player is a floatmon
+	ld a, [wBattleMonSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	jr c, .dismiss
+
 ; Greatly encourage this move if the player is underground and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	cp DIG
@@ -2157,6 +2163,10 @@ AI_Smart_Earthquake:
 	ret c
 
 	dec [hl]
+	ret
+
+.dismiss
+	call AIDiscourageMove
 	ret
 
 AI_Smart_BatonPass:
