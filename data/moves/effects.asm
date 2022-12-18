@@ -633,7 +633,6 @@ SpecialDefenseDownHit:
 	stab
 	damagevariation
 	checkhit
-	checkfloatmon
 	effectchance
 	moveanim
 	failuretext
@@ -917,7 +916,6 @@ OHKOHit:
 	usedmovetext
 	doturn
 	stab
-	checkfloatmon
 	ohko
 	moveanim
 	failuretext
@@ -1198,7 +1196,6 @@ TrapTarget:
 	endmove
 
 SuperFang:
-Psywave:
 StaticDamage:
 	checkobedience
 	usedmovetext
@@ -1579,27 +1576,6 @@ Present:
 	kingsrock
 	endmove
 
-Frustration:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	frustrationpower
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
-	endmove
-
 Safeguard:
 	checkobedience
 	usedmovetext
@@ -1821,6 +1797,46 @@ Earthquake:
 	checkhit
 	checkfloatmon
 	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	endmove
+
+EarthPower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleundergrounddamage
+	checkhit
+	checkfloatmon
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	specialdefensedown
+	statdownmessage
+	endmove
+
+Fissure:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkfloatmon
+	ohko
 	moveanim
 	failuretext
 	applydamage
