@@ -860,7 +860,7 @@ AirSlashDescription:
 	next "cause flinching.@"
 
 EarthPowerDescription:
-	db   "An attack that may"
+	db   "Hits diggers. May"
 	next "lower SPCL.DEF.@"
 
 AcidArmorDescription:
