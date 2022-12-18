@@ -91,6 +91,7 @@ BurnHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	defrostopponent
 	burntarget
 	endmove
 
@@ -1292,13 +1293,6 @@ Sketch:
 	usedmovetext
 	doturn
 	sketch
-	endmove
-
-DefrostOpponent:
-	checkobedience
-	usedmovetext
-	doturn
-	defrostopponent
 	endmove
 
 SleepTalk:
