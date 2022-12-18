@@ -83,7 +83,7 @@ MoveEffectsPointers:
 	dw LeechSeed
 	dw Disable
 	dw StaticDamage
-	dw Psywave
+	dw EarthPower
 	dw Counter
 	dw Encore
 	dw Snore
@@ -115,7 +115,7 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
+	dw Fissure
 	dw Safeguard
 	dw Magnitude
 	dw BatonPass
