@@ -102,7 +102,7 @@ Moves:
 	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,     SPECIAL,   75,  5,  30
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,         PHYSICAL,  90, 25,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,       PHYSICAL, 100, 10,   0
-	move FISSURE,      EFFECT_OHKO,                1, GROUND,       PHYSICAL,  30,  5,   0
+	move FISSURE,      EFFECT_FISSURE,             1, GROUND,       PHYSICAL,  30,  5,   0
 	move DIG,          EFFECT_FLY,                70, GROUND,       PHYSICAL, 100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,       STATUS,   100,  5,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, SPECIAL,  100, 25,  10
@@ -162,7 +162,7 @@ Moves:
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,        STATUS,   100, 10,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN_HIT,  80, STEEL,        SPECIAL,  100, 10,  20
 	move AIR_SLASH,    EFFECT_FLINCH_HIT,         80, FLYING,       SPECIAL,  100, 15,  20
-	move EARTH_POWER,  EFFECT_SP_DEF_DOWN_HIT,    90, GROUND,       SPECIAL,  100, 10,  10
+	move EARTH_POWER,  EFFECT_EARTH_POWER,        90, GROUND,       SPECIAL,  100, 10,  10
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,       STATUS,   100, 20,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        110, WATER,        PHYSICAL,  84, 10,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,         SPECIAL,  100, 15,  20
