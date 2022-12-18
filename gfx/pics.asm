@@ -1,9 +1,6 @@
 INCLUDE "constants.asm"
 
 
-; PokemonPicPointers and UnownPicPointers are assumed to start at the same
-; address, but in different banks. This is enforced in layout.link.
-
 
 SECTION "Pic Pointers", ROMX
 
@@ -225,7 +222,6 @@ CorsolaFrontpic:     INCBIN "gfx/pokemon/corsola/front.animated.2bpp.lz"
 FirebreatherPic:     INCBIN "gfx/trainers/firebreather.2bpp.lz"
 MachopFrontpic:      INCBIN "gfx/pokemon/machop/front.animated.2bpp.lz"
 ChinchouFrontpic:    INCBIN "gfx/pokemon/chinchou/front.animated.2bpp.lz"
-RattataFrontpic:     INCBIN "gfx/pokemon/rattata/front.animated.2bpp.lz"
 ChampionPic:         INCBIN "gfx/trainers/champion.2bpp.lz"
 SpearowFrontpic:     INCBIN "gfx/pokemon/spearow/front.animated.2bpp.lz"
 MagikarpFrontpic:    INCBIN "gfx/pokemon/magikarp/front.animated.2bpp.lz"
@@ -710,6 +706,7 @@ SECTION "Pics 19", ROMX
 QuilavaFrontpic:          INCBIN "gfx/pokemon/quilava/front.animated.2bpp.lz" ; 2
 HeracrossFrontpic:        INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz" ; 5
 KangaskhanBackpic:        INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
+RattataFrontpic:          INCBIN "gfx/pokemon/rattata/front.animated.2bpp.lz" ; 9
 SnorlaxBackpic:           INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
 ElectrodeFrontpic:        INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz" ; 13
 SwinubBackpic:            INCBIN "gfx/pokemon/swinub/back.2bpp.lz" ; 14
