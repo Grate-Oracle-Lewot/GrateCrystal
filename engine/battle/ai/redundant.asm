@@ -22,7 +22,6 @@ AI_Redundant:
 	dbw EFFECT_CONFUSE,      .Confuse
 	dbw EFFECT_TRANSFORM,    .Transform
 	dbw EFFECT_REFLECT,      .Reflect
-	dbw EFFECT_SUBSTITUTE,   .Substitute
 	dbw EFFECT_LEECH_SEED,   .LeechSeed
 	dbw EFFECT_DISABLE,      .Disable
 	dbw EFFECT_ENCORE,       .Encore
@@ -77,11 +76,6 @@ AI_Redundant:
 .Reflect:
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
-	ret
-
-.Substitute:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .LeechSeed:
