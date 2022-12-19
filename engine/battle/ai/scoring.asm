@@ -336,12 +336,12 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_RAGE,             AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,          AI_Smart_Disable
+	dbw EFFECT_EARTH_POWER,      AI_Smart_EarthPower
 	dbw EFFECT_COUNTER,          AI_Smart_Counter
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
 	dbw EFFECT_SNORE,            AI_Smart_Snore
 	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
-	dbw EFFECT_DEFROST_OPPONENT, AI_Smart_DefrostOpponent
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
@@ -361,6 +361,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
 	dbw EFFECT_FURY_CUTTER,      AI_Smart_FuryCutter
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
+	dbw EFFECT_FISSURE,          AI_Smart_Fissure
 	dbw EFFECT_SAFEGUARD,        AI_Smart_Safeguard
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
@@ -993,6 +994,31 @@ AI_Smart_Ohko:
 	inc [hl]
 	ret
 
+AI_Smart_Fissure:
+; Dismiss this move if the player is a floatmon.
+; Dismiss this move if player's level is higher than enemy's level.
+; Else, discourage this move if player's HP is below 50%.
+	push hl
+	ld a, [wBattleMonSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	pop hl
+	jr c, .dismiss
+
+	ld a, [wBattleMonLevel]
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	cp b
+	jp c, AIDiscourageMove
+	call AICheckPlayerHalfHP
+	ret c
+	inc [hl]
+	ret
+
+.dismiss
+	call AIDiscourageMove
+	ret
+
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp
 
@@ -1100,9 +1126,25 @@ AI_Smart_SpDefenseUp2:
 AI_Smart_Fly:
 ; Fly, Dig
 
+; 50% chance to greatly discourage this move if the player is a floatmon.
 ; Greatly encourage this move if the player is
 ; flying or underground, and slower than the enemy.
 
+	push hl
+	ld a, [wBattleMonSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	pop hl
+	jr nc, .skip_ahead
+
+	call AI_50_50
+	jr c, .skip_ahead
+
+	inc [hl]
+	inc [hl]
+	inc [hl]
+
+.skip_ahead
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret z
@@ -1375,18 +1417,6 @@ AI_Smart_SleepTalk:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_DefrostOpponent:
-; Greatly encourage this move if enemy is frozen.
-; No move has EFFECT_DEFROST_OPPONENT, so this layer is unused.
-
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ
-	ret z
-	dec [hl]
-	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_Spite:
@@ -2129,6 +2159,7 @@ AI_Smart_Safeguard:
 	inc [hl]
 	ret
 
+AI_Smart_EarthPower:
 AI_Smart_Magnitude:
 AI_Smart_Earthquake:
 ; Dismiss this move if the player is a floatmon
