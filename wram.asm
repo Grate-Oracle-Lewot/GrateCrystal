@@ -550,9 +550,6 @@ wEnemyReflectCount:: db
 
 	ds 1
 
-wBattleMonTempStat:: dw
-wEnemyMonTempStat:: dw
-
 wBattleWeather::
 ; 00 normal
 ; 01 rain
