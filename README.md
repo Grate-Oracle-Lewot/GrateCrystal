@@ -12,8 +12,8 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
-- Pokémon like Beedrill or Magnemite who clearly fly but aren't Flying-type now have a special immunity to Ground moves, similar to the Levitate Ability in later generations; however, some Ground moves still hit them, like Bone Club and Mud-Slap. Check which Pokémon levitate here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
+- Pokémon like Beedrill or Magnemite who clearly fly but aren't Flying-type now have a special immunity to Ground moves, similar to the Levitate Ability in later generations; however, some Ground moves still hit them, like Bone Club and Mud-Slap. Check which Pokémon levitate here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
