@@ -6516,10 +6516,6 @@ LoadEnemyMon:
 	ld hl, wEnemyMonStatus
 	ld [hli], a
 
-; Unused byte
-	xor a
-	ld [hli], a
-
 ; Full HP..
 	ld a, [wEnemyMonMaxHP]
 	ld [hli], a
