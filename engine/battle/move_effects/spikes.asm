@@ -23,4 +23,15 @@ BattleCommand_Spikes:
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	call BattleCommand_CheckHit
+	call BattleCommand_FailureText
+	call AnimateCurrentMove
+	push bc
+	ld a, SPEED
+	call BattleCommand_StatDown
+	call BattleCommand_StatDownMessage
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret z
+	jp PrintNothingHappened
