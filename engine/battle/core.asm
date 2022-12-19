@@ -6957,7 +6957,7 @@ ApplyStatLevelMultiplier:
 .okay2
 	pop bc
 	push hl
-	ld hl, StatLevelMultipliers_Applied
+	ld hl, StatLevelMultipliers
 	dec b
 	sla b
 	ld c, b
@@ -7004,8 +7004,6 @@ ApplyStatLevelMultiplier:
 .okay4
 	pop bc
 	ret
-
-INCLUDE "data/battle/stat_multipliers_2.asm"
 
 BoostStat:
 ; Raise stat at hl by 1/8.
