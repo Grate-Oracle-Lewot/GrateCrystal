@@ -2269,7 +2269,7 @@ ChikoritaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, SPIKES
-	db 8, RAZOR_LEAF
+	db 3, SUNNY_DAY
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
