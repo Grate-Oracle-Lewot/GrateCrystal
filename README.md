@@ -105,6 +105,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
 
+- If you use Spikes while Spikes are already up, it lowers the opponent's Speed by one stage.
+
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
 ## Items
