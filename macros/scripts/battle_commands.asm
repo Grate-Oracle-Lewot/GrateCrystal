@@ -174,7 +174,7 @@ ENDM
 	command startloop               ; a8
 	command curl                    ; a9
 	command starthail               ; aa
-NUM_EFFECT_COMMANDS EQU const_value
+NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
 	command endmove                 ; ff
