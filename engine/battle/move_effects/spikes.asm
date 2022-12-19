@@ -23,6 +23,8 @@ BattleCommand_Spikes:
 	jp StdBattleTextbox
 
 .failed
+	call BattleCommand_CheckHit
+	call BattleCommand_FailureText
 	call AnimateCurrentMove
 	push bc
 	ld a, SPEED
