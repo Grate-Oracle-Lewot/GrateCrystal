@@ -348,7 +348,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPITE,            AI_Smart_Spite
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
-	dbw EFFECT_THIEF,            AI_Smart_Thief
+	dbw EFFECT_BURN_HIT,         AI_Smart_BurnHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_CURSE,            AI_Smart_Curse
@@ -1573,12 +1573,16 @@ AI_Smart_PriorityHit:
 	dec [hl]
 	ret
 
-AI_Smart_Thief:
-; Don't use Thief unless it's the only move available.
+AI_Smart_BurnHit:
+; Greatly encourage BurnHit moves when Frozen, as they defrost the user.
 
-	ld a, [hl]
-	add $1e
-	ld [hl], a
+	ld a, [wEnemyMonStatus]
+	bit FRZ, a
+	ret z
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
 
 AI_Smart_Conversion2:
