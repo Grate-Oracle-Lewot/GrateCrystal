@@ -424,6 +424,16 @@ AcademyFreezeText:
 	para "freezing from hap-"
 	line "pening in the"
 	cont "first place."
+
+	para "If a frozen #-"
+	line "MON is hit by an"
+
+	para "attack that can"
+	line "cause a burn, it"
+
+	para "will defrost, but"
+	line "the foe's ATTACK"
+	cont "will go up!"
 	done
 
 AcademyNotebookText:
