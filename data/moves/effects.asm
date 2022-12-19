@@ -89,7 +89,9 @@ BurnHit:
 	applydamage
 	criticaltext
 	supereffectivetext
+	defrost
 	checkfaint
+	defrostopponent
 	buildopponentrage
 	burntarget
 	endmove
