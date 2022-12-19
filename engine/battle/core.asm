@@ -6604,7 +6604,7 @@ LoadEnemyMon:
 	ld bc, NUM_EXP_STATS * 2
 	call CopyBytes
 
-	call ApplyStatusEffectOnEnemyStats
+; BUG: PRZ and BRN stat reductions don't apply to switched Pokémon (see docs/bugs_and_glitches.md)
 	ret
 
 CheckSleepingTreeMon:
