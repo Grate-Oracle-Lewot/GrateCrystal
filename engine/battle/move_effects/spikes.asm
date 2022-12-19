@@ -24,5 +24,12 @@ BattleCommand_Spikes:
 
 .failed
 	call AnimateCurrentMove
+	push bc
 	ld a, SPEED
 	call BattleCommand_StatDown
+	call BattleCommand_StatDownMessage
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret z
+	jp PrintNothingHappened
