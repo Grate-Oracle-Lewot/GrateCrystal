@@ -178,7 +178,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat, Dragon Scale, and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid and Smoochum now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
-- Hail boosts Ice-type moves as well as dealing damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
+- Instead of just Flame Wheel and Sacred Fire thawing out a Frozen user, now any move that can inflict a Burn will do so, and will also thaw out a Frozen target and increase the user's attack one stage if this happens
+- Hail boosts Ice-type moves as well as dealing passive damage, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements, but give out lesser sellable items instead of Nuggets
@@ -186,7 +187,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - All Kanto Gym Leaders give out TMs when defeated (some of these could already be bought or found earlier, but hey, it's something)
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
-- Flame Wheel and Sacred Fire no longer thaw a Frozen user (had to get rid of it for space)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
 - Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, and a quick exit warp added to Sabrina's Gym
 - The Marshbadge and Soulbadge have their names and designs swapped
