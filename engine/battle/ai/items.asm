@@ -256,6 +256,10 @@ AI_TryItem:
 	cp e
 	jr nc, .yes
 
+.no ; unreferenced
+	and a
+	ret
+
 .yes
 	scf
 	ret
