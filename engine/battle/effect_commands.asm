@@ -1012,8 +1012,6 @@ BattleCommand_DoTurn:
 
 .player
 	call GetPartyLocation
-	push hl
-	pop hl
 	ret c
 
 .consume_pp
