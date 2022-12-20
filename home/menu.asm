@@ -287,6 +287,27 @@ MenuBoxCoord2Attr::
 	ld b, a
 	; fallthrough
 
+Coord2Attr::
+; Return the address of wAttrmap(c, b) in hl.
+	xor a
+	ld h, a
+	ld l, b
+	ld a, c
+	ld b, h
+	ld c, l
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	add hl, hl
+	add hl, hl
+	ld c, a
+	xor a
+	ld b, a
+	add hl, bc
+	bccoord 0, 0, wAttrmap
+	add hl, bc
+	ret
+
 LoadMenuHeader::
 	call CopyMenuHeader
 	call PushWindow
