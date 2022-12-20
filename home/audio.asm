@@ -436,11 +436,6 @@ SpecialMapMusic::
 	and a
 	ret
 
-.bike ; unreferenced
-	ld de, MUSIC_BICYCLE
-	scf
-	ret
-
 .surf
 	ld de, MUSIC_SURF
 	scf
