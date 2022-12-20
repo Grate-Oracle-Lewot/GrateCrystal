@@ -234,7 +234,7 @@ Print8BitNumLeftAlign::
 	ld b, PRINTNUM_LEFTALIGN | 1
 	jp PrintNum
 
-GetNthMove:: ; unreferenced
+GetNthMove::
 	ld hl, wListMoves_MoveIndicesBuffer
 	ld c, a
 	ld b, 0
@@ -284,6 +284,7 @@ GetBaseData::
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	jr .end
 
 .end
 ; Replace Pokedex # with species
