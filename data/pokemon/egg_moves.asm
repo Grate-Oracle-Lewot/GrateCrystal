@@ -323,7 +323,7 @@ KrabbyEggMoves:
 	db HAZE
 	db AMNESIA
 	db FLAIL
-	db SLAM
+	db STOMP
 	db CROSS_CHOP
 	db -1 ; end
 
