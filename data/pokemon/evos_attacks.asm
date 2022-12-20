@@ -2368,13 +2368,13 @@ TotodileEvosAttacks:
 	db 1, SCRATCH
 	db 2, TAIL_WHIP
 	db 7, RAGE
-	db 12, WATER_GUN
+	db 12, CLAMP
 	db 17, VICEGRIP
 	db 20, BITE
 	db 26, SCARY_FACE
 	db 30, SCREECH
-	db 35, SLASH
-	db 39, THRASH
+	db 35, THRASH
+	db 39, HYPER_FANG
 	db 43, CRUNCH
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2385,13 +2385,13 @@ CroconawEvosAttacks:
 	db 1, SCRATCH
 	db 2, TAIL_WHIP
 	db 7, RAGE
-	db 12, WATER_GUN
+	db 12, CLAMP
 	db 17, VICEGRIP
 	db 22, BITE
 	db 28, SCARY_FACE
 	db 32, SCREECH
-	db 37, SLASH
-	db 40, THRASH
+	db 37, THRASH
+	db 40, HYPER_FANG
 	db 45, CRUNCH
 	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2401,13 +2401,13 @@ FeraligatrEvosAttacks:
 	db 1, SCRATCH
 	db 2, TAIL_WHIP
 	db 7, RAGE
-	db 12, WATER_GUN
+	db 12, CLAMP
 	db 17, VICEGRIP
 	db 22, BITE
 	db 28, SCARY_FACE
 	db 33, SCREECH
-	db 38, SLASH
-	db 42, THRASH
+	db 38, THRASH
+	db 42, HYPER_FANG
 	db 47, CRUNCH
 	db 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
