@@ -360,7 +360,8 @@ wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
 
-	ds 2
+wBattleMonTempStat:: dw
+wEnemyMonTempStat:: dw
 
 wWildMon:: db
 	ds 1
@@ -497,7 +498,6 @@ wLinkBattleRNCount::
 	db
 
 wEnemyItemState:: db
-	ds 2
 wCurEnemyMoveNum:: db
 
 wEnemyHPAtTimeOfPlayerSwitch:: dw
