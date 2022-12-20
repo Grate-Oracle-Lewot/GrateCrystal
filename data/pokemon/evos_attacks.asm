@@ -1461,7 +1461,7 @@ KrabbyEvosAttacks:
 	db 12, MUD_SLAP
 	db 16, HARDEN
 	db 19, METAL_CLAW
-	db 23, STOMP
+	db 23, CLAMP
 	db 27, SLAM
 	db 30, SWORDS_DANCE
 	db 34, PROTECT
@@ -1477,7 +1477,7 @@ KinglerEvosAttacks:
 	db 12, MUD_SLAP
 	db 16, HARDEN
 	db 19, METAL_CLAW
-	db 23, STOMP
+	db 23, CLAMP
 	db 27, SLAM
 	db 32, SWORDS_DANCE
 	db 38, PROTECT
