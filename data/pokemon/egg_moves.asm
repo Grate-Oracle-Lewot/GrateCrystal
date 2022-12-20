@@ -511,7 +511,7 @@ CyndaquilEggMoves:
 TotodileEggMoves:
 	db OUTRAGE
 	db ANCIENTPOWER
-	db HYPER_FANG
+	db SLASH
 	db SUPER_FANG
 	db BIDE
 	db -1 ; end
