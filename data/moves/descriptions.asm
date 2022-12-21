@@ -1224,8 +1224,8 @@ RainDanceDescription:
 	next "moves for 5 turns.@"
 
 SunnyDayDescription:
-	db   "Boosts fire-type"
-	next "moves for 5 turns.@"
+	db   "Boosts fire power"
+	next "and grass speed.@"
 
 CrunchDescription:
 	db   "A chomp that may"
