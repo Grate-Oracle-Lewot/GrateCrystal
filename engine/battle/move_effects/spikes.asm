@@ -28,7 +28,7 @@ BattleCommand_Spikes:
 	call BattleCommand_FailureText
 	call AnimateCurrentMove
 	push bc
-	ld a, SPEED
+	ld a, EVASION
 	call BattleCommand_StatDown
 	call BattleCommand_StatDownMessage
 	pop bc
