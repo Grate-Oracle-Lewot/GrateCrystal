@@ -215,7 +215,7 @@ MonMenuIconPals:
 	icon_pals GRAY,   BROWN  ; STEELIX
 	icon_pals PINK,   BLUE   ; SNUBBULL
 	icon_pals PURPLE, GRAY   ; GRABULL
-	icon_pals BLUE,   PURPLE ; QWILFISH
+	icon_pals RED,    PURPLE ; QWILFISH
 	icon_pals RED,    YELLOW ; SCIZOR
 	icon_pals BROWN,  BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
