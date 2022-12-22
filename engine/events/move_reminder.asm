@@ -345,7 +345,7 @@ ChooseMoveToLearn:
 	db "TP15@"
 	db "TP16@"
 	db "TP17@"
-	db "CRSE@"
+	db " ???@"
 
 	db "FIRE@"
 	db "WATR@"
@@ -355,6 +355,7 @@ ChooseMoveToLearn:
 	db " ICE@"
 	db "DRGN@"
 	db "GHST@"
+	db "FAIR@"
 
 .PrintMoveDesc
 	push de
@@ -390,17 +391,12 @@ PrintMoveRelearnerText:
 	dw .NoMovesToLearn
 
 .Intro
-	text "Hello! I am the"
-	line "MOVE RELEARNER."
-
-	para "But you can call"
-	line "me HOLDEN."
+	text "Hello there! I'm a"
+	line "MOVE REMINDER."
 
 	para "I know all the"
-	line "moves that can be"
-
-	para "learned for each"
-	line "#MON."
+	line "moves that each"
+	cont "#MON can learn."
 
 	para "For just ¥1000, I"
 	line "can share that"
