@@ -6516,6 +6516,9 @@ LoadEnemyMon:
 	ld hl, wEnemyMonStatus
 	ld [hli], a
 
+	xor a
+	ld [hli], a
+
 ; Full HP..
 	ld a, [wEnemyMonMaxHP]
 	ld [hli], a
