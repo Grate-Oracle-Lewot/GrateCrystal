@@ -11,8 +11,8 @@ FloatMons::
 	db MEW
 	db MISDREAVUS
 	db UNOWN
-	db LUGIA
-	db HO_OH
+	db LUGIA ; no longer Flying type in Grate Crystal
+	db HO_OH ; no longer Flying type in Grate Crystal
 	db CELEBI
-	db YANMEGA
+	db YANMEGA ; no longer Flying type in Grate Crystal
 	db -1
