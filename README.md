@@ -53,6 +53,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Golduck: Water -> Water/Psychic
 - Mankey/Primape: Fighting -> Fighting/Dark
 - Ponyta/Rapidash: Fire -> Fire/Fairy
+- Slowpoke: Water/Psychic -> Psychic
 - Farfetch'd: Normal/Flying -> Fighting/Flying
 - Seel: Water -> Water/Ice
 - Grimer/Muk: Poison -> Poison/Dark
