@@ -13,11 +13,14 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
-- Pokémon like Beedrill or Magnemite who clearly fly but aren't Flying-type now have a special immunity to Ground moves, similar to the Levitate Ability in later generations; however, some Ground moves still hit them, like Bone Club and Mud-Slap. Check which Pokémon levitate here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm
 - Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
+- Pseudo-Abilities:
+  - Pokémon that would/should have Levitate are given a similar special Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap (check which Pokémon this applies to here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
+  - All Grass types get a 50% Speed boost in Sunny weather
+  - All Rock types get a 50% Special Defense boost in Sandstorms
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Unown and Delibird learn multiple moves
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
@@ -27,7 +30,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - Bill now gives you a Surfing Pikachu instead of a normal Eevee
 - New Pokédex entries for every Pokémon
-- A few Pokémon have been reverted to their beta designs from the Spaceworld demos, and Butterfree and Venomoth have had their sprites swapped
+- A few Pokémon have been reverted to their beta designs from the Spaceworld demos, a few have palette changes to reflect their type changes (see below), and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
 ## Type chart changes
@@ -94,6 +97,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - PP rebalanced for most moves.
 
 - Some moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
+
+- Instead of just Flame Wheel and Sacred Fire thawing out a Frozen user, now any move capable of inflicting a Burn will do this. Such moves will also thaw out a Frozen target, but the user's Attack will go up by one stage when this happens.
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
 
@@ -180,13 +185,12 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat, Dragon Scale, and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid and Smoochum now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
-- Hail boosts Ice-type moves as well as buffeting battlers, and Sandstorm gives a 50% Special Defense boost to Rock-type Pokémon like in later generations
+- Hail boosts Ice-type moves as well as dealing its damage
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements, but give out lesser sellable items instead of Nuggets
 - After you've fought Sudowoodo, you can return the Squirtbottle to the Flower Shop and get a Sacred Ash in exchange
 - All Kanto Gym Leaders give out TMs when defeated (some of these could already be bought or found earlier, but hey, it's something)
-- Instead of just Flame Wheel and Sacred Fire thawing out a Frozen user, now any move capable of inflicting a Burn will do this; such moves will also thaw out a Frozen target, but the user's Attack will go up by one stage when this happens
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
