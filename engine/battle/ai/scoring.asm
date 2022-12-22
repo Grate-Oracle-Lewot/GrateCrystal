@@ -2275,6 +2275,7 @@ AI_Smart_HiddenPower:
 	ldh [hBattleTurn], a
 
 ; Calculate Hidden Power's type based on enemy's DVs.
+	callfar HiddenPowerDamage
 	callfar BattleCheckTypeMatchup
 	pop hl
 
