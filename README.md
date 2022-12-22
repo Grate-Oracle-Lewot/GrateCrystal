@@ -109,6 +109,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
+- If you use Focus Energy after having already used it once, it raises both your Attack and Special Attack by one stage each.
+
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
 
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage.
