@@ -136,7 +136,7 @@ VenonatEggMoves:
 	db SCREECH
 	db CONFUSION
 	db NIGHT_SHADE
-	db SIGNAL_BEAM
+	db HI_JUMP_KICK
 	db -1 ; end
 
 DiglettEggMoves:
@@ -159,7 +159,6 @@ MeowthEggMoves:
 PsyduckEggMoves:
 	db PRESENT
 	db PSYBEAM
-	db FORESIGHT
 	db LIGHT_SCREEN
 	db DAZZLY_GLEAM
 	db IRON_HEAD
@@ -168,7 +167,7 @@ PsyduckEggMoves:
 	db -1 ; end
 
 MankeyEggMoves:
-	db LOW_KICK
+	db JUMP_KICK
 	db ROLLING_KICK
 	db COUNTER
 	db REVERSAL
@@ -225,6 +224,7 @@ TentacoolEggMoves:
 
 GeodudeEggMoves:
 	db SPIKES
+	db IRON_HEAD
 	db MEGA_PUNCH
 	db ANCIENTPOWER
 	db EARTH_POWER
@@ -248,10 +248,9 @@ SlowpokeEggMoves:
 	db -1 ; end
 
 FarfetchDEggMoves:
-	db FORESIGHT
 	db MIRROR_MOVE
 	db QUICK_ATTACK
-	db FLAIL
+	db REVERSAL
 	db BONE_CLUB
 	db BONEMERANG
 	db BONE_RUSH
@@ -330,9 +329,9 @@ KrabbyEggMoves:
 ExeggcuteEggMoves:
 	db SYNTHESIS
 	db MOONLIGHT
-	db REFLECT
+	db LIGHT_SCREEN
 	db ANCIENTPOWER
-	db OUTRAGE
+	db BEAT_UP
 	db -1 ; end
 
 CuboneEggMoves:
@@ -405,9 +404,9 @@ HorseaEggMoves:
 
 GoldeenEggMoves:
 	db HAZE
-	db HYDRO_PUMP
+	db SKULL_BASH
+	db IRON_HEAD
 	db DRILL_PECK
-	db POWER_GEM
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -418,10 +417,10 @@ MrMimeEggMoves:
 	db -1 ; end
 
 ScytherEggMoves:
-	db COUNTER
-	db SONICBOOM
 	db BATON_PASS
+	db SONICBOOM
 	db REVERSAL
+	db COUNTER
 	db CRABHAMMER
 	db -1 ; end
 
@@ -442,11 +441,10 @@ LaprasEggMoves:
 	db -1 ; end
 
 EeveeEggMoves:
+	db SKULL_BASH
 	db FLAIL
 	db CHARM
-	db SLAM
 	db EXTREMESPEED
-	db PLAY_ROUGH
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -458,14 +456,14 @@ OmanyteEggMoves:
 	db -1 ; end
 
 KabutoEggMoves:
-	db AURORA_BEAM
+	db ROCK_SLIDE
 	db RAPID_SPIN
 	db FLAIL
 	db AIR_SLASH
 	db -1 ; end
 
 AerodactylEggMoves:
-	db FORESIGHT
+	db IRON_HEAD
 	db AIR_SLASH
 	db PURSUIT
 	db DRAGON_RAGE
@@ -555,10 +553,11 @@ ChinchouEggMoves:
 	db SCREECH
 	db BUBBLEBEAM
 	db THUNDERSHOCK
+	db MIST
 	db -1 ; end
 
 PichuEggMoves:
-	db REVERSAL
+	db TRIPLE_KICK
 	db PRESENT
 	db ENCORE
 	db DOUBLESLAP
@@ -649,7 +648,7 @@ YanmaEggMoves:
 	db PURSUIT
 	db BITE
 	db HYPER_FANG
-	db EXTREMESPEED
+	db SUPER_FANG
 	db -1 ; end
 
 WooperEggMoves:
@@ -707,7 +706,6 @@ DunsparceEggMoves:
 	db BITE
 	db LOVELY_KISS
 	db POWER_GEM
-	db GLARE
 	db -1 ; end
 
 GligarEggMoves:
@@ -729,8 +727,8 @@ SnubbullEggMoves:
 QwilfishEggMoves:
 	db FLAIL
 	db HAZE
-	db BUBBLEBEAM
 	db MEAN_LOOK
+	db FIRE_SPIN
 	db SPIKE_CANNON
 	db -1 ; end
 
@@ -776,7 +774,6 @@ SlugmaEggMoves:
 	db -1 ; end
 
 SwinubEggMoves:
-	db TAKE_DOWN
 	db BITE
 	db BODY_SLAM
 	db ROCK_SLIDE
@@ -852,7 +849,6 @@ StantlerEggMoves:
 
 TyrogueEggMoves:
 	db FISSURE
-	db KARATE_CHOP
 	db SLAM
 	db BIDE
 	db PLAY_ROUGH
@@ -862,14 +858,14 @@ SmoochumEggMoves:
 	db MEDITATE
 	db DAZZLY_GLEAM
 	db SCARY_FACE
-	db SING
+	db PSYBEAM
 	db -1 ; end
 
 ElekidEggMoves:
 	db KARATE_CHOP
 	db BARRIER
 	db ROLLING_KICK
-	db MEDITATE
+	db FOCUS_ENERGY
 	db CROSS_CHOP
 	db -1 ; end
 
