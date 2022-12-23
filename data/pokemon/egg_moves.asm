@@ -196,7 +196,7 @@ AbraEggMoves:
 	db LIGHT_SCREEN
 	db ENCORE
 	db BARRIER
-	db KINESIS
+	db FOCUS_ENERGY
 	db -1 ; end
 
 MachopEggMoves:
