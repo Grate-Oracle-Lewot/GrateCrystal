@@ -812,12 +812,12 @@ MankeyEvosAttacks:
 	db 9, KARATE_CHOP
 	db 12, PURSUIT
 	db 15, LOW_KICK
-	db 19, SWAGGER
+	db 19, SCREECH
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
 	db 33, SEISMIC_TOSS
 	db 39, CROSS_CHOP
-	db 45, SCREECH
+	db 45, SWAGGER
 	db 51, THRASH
 	db 56, OUTRAGE
 	db 0 ; no more level-up moves
@@ -829,13 +829,13 @@ PrimeapeEvosAttacks:
 	db 9, KARATE_CHOP
 	db 12, PURSUIT
 	db 15, LOW_KICK
-	db 19, SWAGGER
+	db 19, SCREECH
 	db 21, COMET_PUNCH
 	db 27, FOCUS_ENERGY
 	db 27, MEGA_PUNCH
 	db 36, SEISMIC_TOSS
 	db 45, CROSS_CHOP
-	db 54, SCREECH
+	db 54, SWAGGER
 	db 63, THRASH
 	db 69, OUTRAGE
 	db 0 ; no more level-up moves
