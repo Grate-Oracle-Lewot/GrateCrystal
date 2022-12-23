@@ -3093,10 +3093,10 @@ DunsparceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
 	db 2, DEFENSE_CURL
-	db 4, MUD_SLAP
+	db 4, SPITE
 	db 8, ROLLOUT
 	db 13, TWISTER
-	db 18, SPITE
+	db 18, GLARE
 	db 21, PURSUIT
 	db 26, PLAY_ROUGH
 	db 30, SCREECH
