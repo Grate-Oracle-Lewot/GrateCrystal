@@ -3587,7 +3587,7 @@ ElekidEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, ELECTABUZZ
 	db 0 ; no more evolutions
 	db 1, MACH_PUNCH
-	db 1, LEER
+	db 1, CHARM
 	db 9, THUNDERPUNCH
 	db 17, LIGHT_SCREEN
 	db 25, LOW_KICK
