@@ -779,9 +779,9 @@ PsyduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, TAIL_WHIP
-	db 5, FURY_SWIPES
+	db 5, CONFUSION
 	db 10, DISABLE
-	db 16, CONFUSION
+	db 16, FURY_SWIPES
 	db 23, SCREECH
 	db 31, PSYCH_UP
 	db 34, AMNESIA
@@ -793,9 +793,9 @@ GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, TAIL_WHIP
-	db 5, FURY_SWIPES
+	db 5, CONFUSION
 	db 10, DISABLE
-	db 16, CONFUSION
+	db 16, FURY_SWIPES
 	db 23, SCREECH
 	db 31, PSYCH_UP
 	db 32, POWER_GEM
