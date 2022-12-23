@@ -1080,7 +1080,7 @@ GeodudeEvosAttacks:
 	db 31, POWER_GEM
 	db 36, EARTHQUAKE
 	db 41, ROCK_SLIDE
-	db 44, IRON_HEAD
+	db 44, SKULL_BASH
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -1097,7 +1097,7 @@ GravelerEvosAttacks:
 	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
-	db 52, IRON_HEAD
+	db 52, SKULL_BASH
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
@@ -1112,7 +1112,7 @@ GolemEvosAttacks:
 	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
-	db 52, IRON_HEAD
+	db 52, SKULL_BASH
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
