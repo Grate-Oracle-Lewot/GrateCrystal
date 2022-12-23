@@ -778,7 +778,7 @@ PsyduckEvosAttacks:
 	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 3, TAIL_WHIP
+	db 3, FORESIGHT
 	db 5, CONFUSION
 	db 10, DISABLE
 	db 16, FURY_SWIPES
@@ -792,7 +792,7 @@ PsyduckEvosAttacks:
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 3, TAIL_WHIP
+	db 3, FORESIGHT
 	db 5, CONFUSION
 	db 10, DISABLE
 	db 16, FURY_SWIPES
