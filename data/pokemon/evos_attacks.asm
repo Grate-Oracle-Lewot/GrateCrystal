@@ -3409,9 +3409,9 @@ SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FURY_ATTACK
 	db 2, LEER
-	db 7, METAL_CLAW
+	db 7, SWIFT
 	db 13, SAND_ATTACK
-	db 16, SWIFT
+	db 16, WHIRLWIND
 	db 20, AGILITY
 	db 26, STEEL_WING
 	db 37, DRILL_PECK
