@@ -2239,7 +2239,7 @@ DragoniteEvosAttacks:
 MewtwoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CONFUSION
-	db 11, PSYCH_UP
+	db 11, FOCUS_ENERGY
 	db 22, DISABLE
 	db 33, AURA_SPHERE
 	db 44, RECOVER
