@@ -3178,8 +3178,8 @@ QwilfishEvosAttacks:
 	db 19, FLAME_WHEEL
 	db 28, PIN_MISSILE
 	db 37, SCALD
-	db 46, HYDRO_PUMP
-	db 55, SELFDESTRUCT
+	db 46, SELFDESTRUCT
+	db 55, HYDRO_PUMP
 	db 64, DESTINY_BOND
 	db 0 ; no more level-up moves
 
