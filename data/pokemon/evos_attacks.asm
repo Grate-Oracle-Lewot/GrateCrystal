@@ -2676,7 +2676,7 @@ NatuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FORESIGHT
-	db 10, TELEPORT
+	db 10, FOCUS_ENERGY
 	db 20, NIGHT_SHADE
 	db 30, FUTURE_SIGHT
 	db 40, CONFUSE_RAY
@@ -2687,7 +2687,7 @@ XatuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FORESIGHT
-	db 10, TELEPORT
+	db 10, FOCUS_ENERGY
 	db 20, NIGHT_SHADE
 	db 35, FUTURE_SIGHT
 	db 50, CONFUSE_RAY
