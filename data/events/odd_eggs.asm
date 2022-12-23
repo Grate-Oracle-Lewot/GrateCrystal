@@ -331,7 +331,7 @@ OddEggs:
 
 	db ELEKID
 	db NO_ITEM
-	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
+	db QUICK_ATTACK, CHARM, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -341,7 +341,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 30, 15, 0 ; PP
+	db 30, 20, 15, 0 ; PP
 	db 10 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 5 ; Level
