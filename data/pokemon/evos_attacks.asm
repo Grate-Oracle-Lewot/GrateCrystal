@@ -2123,11 +2123,11 @@ AerodactylEvosAttacks:
 	db 8, SUPERSONIC
 	db 10, BITE
 	db 16, AGILITY
-	db 22, ROCK_SLIDE
+	db 22, TAKE_DOWN
 	db 29, STEEL_WING
 	db 33, CRUNCH
 	db 36, SCARY_FACE
-	db 43, TAKE_DOWN
+	db 43, ROCK_SLIDE
 	db 50, HYPER_BEAM
 	db 54, SKY_ATTACK
 	db 0 ; no more level-up moves
