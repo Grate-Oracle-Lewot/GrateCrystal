@@ -1912,15 +1912,15 @@ MagmarEvosAttacks:
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BIND
-	db 3, FOCUS_ENERGY
-	db 7, TWINEEDLE
-	db 10, VICEGRIP
+	db 3, HARDEN
+	db 7, VICEGRIP
+	db 10, TWINEEDLE
 	db 13, CLAMP
 	db 19, SEISMIC_TOSS
-	db 25, HARDEN
-	db 31, CROSS_CHOP
+	db 25, FOCUS_ENERGY
+	db 31, SUBMISSION
 	db 37, SWORDS_DANCE
-	db 43, SUBMISSION
+	db 43, CROSS_CHOP
 	db 50, GUILLOTINE
 	db 0 ; no more level-up moves
 
