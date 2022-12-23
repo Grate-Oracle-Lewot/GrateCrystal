@@ -1634,7 +1634,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 7, 6, 7 ; DVs
-	db 25, 30, 15, 25 ; PP
+	db 25, 30, 15, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
