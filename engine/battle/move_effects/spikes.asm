@@ -21,7 +21,7 @@ BattleCommand_Spikes:
 
 	ld hl, SpikesText
 	jp StdBattleTextbox
-	jr .finish
+	jp FailMove
 
 .failed
 	call BattleCommand_CheckHit
@@ -34,8 +34,5 @@ BattleCommand_Spikes:
 	pop bc
 	ld a, [wAttackMissed]
 	and a
-	jr z, .finish
+	ret z
 	jp PrintNothingHappened
-
-.finish
-	jp FailMove
