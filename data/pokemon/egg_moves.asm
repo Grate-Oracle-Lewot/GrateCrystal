@@ -500,10 +500,11 @@ ChikoritaEggMoves:
 	db -1 ; end
 
 CyndaquilEggMoves:
-	db REVERSAL
 	db THRASH
-	db FORESIGHT
 	db SUBMISSION
+	db REVERSAL
+	db EXTREMESPEED
+	db DAZZLY_GLEAM
 	db -1 ; end
 
 TotodileEggMoves:
