@@ -8,7 +8,7 @@
 	const MOVERELEARNERTEXT_NOTENOUGHMONEY
 	const MOVERELEARNERTEXT_NOMOVESTOLEARN
 
-MoveRelearner:
+MoveReminder:
 	ld a, MOVERELEARNERTEXT_INTRO
 	call PrintMoveRelearnerText
 	special PlaceMoneyTopRight
@@ -394,20 +394,18 @@ PrintMoveRelearnerText:
 	text "Hello there! I'm a"
 	line "MOVE REMINDER."
 
-	para "I know all the"
-	line "moves that each"
-	cont "#MON can learn."
-
 	para "For just ¥1000, I"
-	line "can share that"
+	line "can make a #MON"
 
-	para "knowledge with"
-	line "you. How about it?"
+	para "remember a move"
+	line "it's forgotten."
+
+	para "How about it?"
 	done
 .WhichMon
-	text "Excellent! Which"
-	line "#MON should"
-	cont "remember a move?"
+	text "Which #MON"
+	line "should remember"
+	cont "a move?"
 	done
 .WhichMove
 	text "Which move should"
@@ -432,7 +430,7 @@ PrintMoveRelearnerText:
 	line "enough money."
 	done
 .NoMovesToLearn
-	text "This #MON can't"
-	line "learn any moves"
-	cont "from me."
+	text "This #MON has"
+	line "no moves to"
+	cont "remember."
 	done
