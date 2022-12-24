@@ -334,7 +334,7 @@ ChooseMoveToLearn:
 	db "BIRD@"
 	db " BUG@"
 	db "GHST@"
-	db " STL@"
+	db "STEL@"
 
 	db " ---@"
 	db " ---@"
