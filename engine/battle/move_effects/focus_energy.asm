@@ -9,6 +9,7 @@ BattleCommand_FocusEnergy:
 	call AnimateCurrentMove
 	ld hl, GettingPumpedText
 	jp StdBattleTextbox
+	ret
 
 .already_pumped
 	call AnimateCurrentMove
