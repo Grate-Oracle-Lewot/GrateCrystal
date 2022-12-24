@@ -2325,7 +2325,7 @@ CyndaquilEvosAttacks:
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
 	db 31, ROLLOUT
-	db 36, SWIFT
+	db 36, SPARK
 	db 41, FLAMETHROWER
 	db 46, FIRE_BLAST
 	db 0 ; no more level-up moves
@@ -2341,7 +2341,7 @@ QuilavaEvosAttacks:
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 37, ROLLOUT
-	db 42, SWIFT
+	db 42, SPARK
 	db 49, FLAMETHROWER
 	db 54, FIRE_BLAST
 	db 0 ; no more level-up moves
@@ -2356,7 +2356,7 @@ TyphlosionEvosAttacks:
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 40, ROLLOUT
-	db 45, SWIFT
+	db 45, SPARK
 	db 54, FLAMETHROWER
 	db 60, FIRE_BLAST
 	db 0 ; no more level-up moves
