@@ -18,7 +18,6 @@ AI_Redundant:
 	dbw EFFECT_HEAL,         .Heal
 	dbw EFFECT_LIGHT_SCREEN, .LightScreen
 	dbw EFFECT_MIST,         .Mist
-	dbw EFFECT_FOCUS_ENERGY, .FocusEnergy
 	dbw EFFECT_CONFUSE,      .Confuse
 	dbw EFFECT_TRANSFORM,    .Transform
 	dbw EFFECT_REFLECT,      .Reflect
@@ -29,7 +28,6 @@ AI_Redundant:
 	dbw EFFECT_SLEEP_TALK,   .SleepTalk
 	dbw EFFECT_MEAN_LOOK,    .MeanLook
 	dbw EFFECT_NIGHTMARE,    .Nightmare
-	dbw EFFECT_SPIKES,       .Spikes
 	dbw EFFECT_FORESIGHT,    .Foresight
 	dbw EFFECT_PERISH_SONG,  .PerishSong
 	dbw EFFECT_SANDSTORM,    .Sandstorm
@@ -53,11 +51,6 @@ AI_Redundant:
 .Mist:
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_MIST, a
-	ret
-
-.FocusEnergy:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_FOCUS_ENERGY, a
 	ret
 
 .Confuse:
@@ -111,11 +104,6 @@ AI_Redundant:
 	jr z, .Redundant
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_NIGHTMARE, a
-	ret
-
-.Spikes:
-	ld a, [wPlayerScreens]
-	bit SCREENS_SPIKES, a
 	ret
 
 .Foresight:
