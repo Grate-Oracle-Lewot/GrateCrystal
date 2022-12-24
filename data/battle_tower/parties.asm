@@ -3271,7 +3271,7 @@ BattleTowerMons:
 
 	db GOLEM
 	db BRIGHTPOWDER
-	db SELFDESTRUCT, EARTHQUAKE, FIRE_PUNCH, ROCK_SLIDE
+	db SELFDESTRUCT, EARTHQUAKE, FIRE_PUNCH, RETURN
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3281,7 +3281,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 6, 5, 7 ; DVs
-	db 5, 10, 15, 15 ; PP
+	db 5, 10, 15, 20 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
