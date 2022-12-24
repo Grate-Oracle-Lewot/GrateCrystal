@@ -9,17 +9,7 @@ BattleCommand_FocusEnergy:
 	call AnimateCurrentMove
 	ld hl, GettingPumpedText
 	jp StdBattleTextbox
-	ret
 
 .already_pumped
-	call AnimateCurrentMove
-	push bc
-	call BattleCommand_AttackUp
-	call BattleCommand_StatUpMessage
-	call BattleCommand_SpecialAttackUp
-	call BattleCommand_StatUpMessage
-	pop bc
-	ld a, [wAttackMissed]
-	and a
-	ret z
-	jp PrintNothingHappened
+	call AnimateFailedMove
+	jp PrintButItFailed
