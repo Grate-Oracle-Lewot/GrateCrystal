@@ -74,6 +74,13 @@ BattleCommand_Substitute:
 	call StdBattleTextbox
 	jp RefreshBattleHuds
 
+.too_weak_to_sub
+	call CheckUserIsCharging
+	call nz, BattleCommand_RaiseSub
+	ld hl, TooWeakSubText
+.jp_stdbattletextbox
+	jp StdBattleTextbox
+
 .already_has_sub
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub
@@ -85,13 +92,5 @@ BattleCommand_Substitute:
 	pop bc
 	ld a, [wAttackMissed]
 	and a
-	jr z, .jp_stdbattletextbox
-	ld hl, NothingHappenedText
-	jr .jp_stdbattletextbox
-
-.too_weak_to_sub
-	call CheckUserIsCharging
-	call nz, BattleCommand_RaiseSub
-	ld hl, TooWeakSubText
-.jp_stdbattletextbox
-	jp StdBattleTextbox
+	ret z
+	jp PrintNothingHappened
