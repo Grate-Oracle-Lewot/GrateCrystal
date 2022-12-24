@@ -2267,7 +2267,7 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, LEECH_SEED
+	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
@@ -2365,8 +2365,8 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 2, SUBSTITUTE
-	db 3, SPIKES
+	db 2, TAIL_WHIP
+	db 7, RAGE
 	db 12, CLAMP
 	db 17, VICEGRIP
 	db 20, BITE
