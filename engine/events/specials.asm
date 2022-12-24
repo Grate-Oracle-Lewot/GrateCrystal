@@ -52,13 +52,6 @@ FindPartyMonAboveLevel:
 	jr z, FoundNone
 	jr FoundOne
 
-FindPartyMonAtLeastThatHappy:
-	ld a, [wScriptVar]
-	ld b, a
-	farcall _FindPartyMonAtLeastThatHappy
-	jr z, FoundNone
-	jr FoundOne
-
 FindPartyMonThatSpecies:
 	ld a, [wScriptVar]
 	ld b, a
