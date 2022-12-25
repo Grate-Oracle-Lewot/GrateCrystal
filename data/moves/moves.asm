@@ -193,7 +193,7 @@ Moves:
 	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,        STATUS,   100, 20,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,     PHYSICAL, 100, 15,   0
 	move SPITE,        EFFECT_SPITE,               0, GHOST,        STATUS,   100, 10,   0
-	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,          SPECIAL,  100, 30,  10
+	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,          SPECIAL,  100, 30, 100
 	move PROTECT,      EFFECT_PROTECT,             0, NORMAL,       STATUS,   100, 10,   0
 	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, FIGHTING,     PHYSICAL, 100, 30,   0
 	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, NORMAL,       STATUS,   100, 20,   0
