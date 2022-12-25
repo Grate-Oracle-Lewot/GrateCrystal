@@ -25,6 +25,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Unown and Delibird learn multiple moves
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
+  - Items in limited supply can generally be found somewhere as wild held items
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
