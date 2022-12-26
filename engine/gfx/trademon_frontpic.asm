@@ -4,6 +4,7 @@ GetTrademonFrontpic:
 	ld de, vTiles2
 	push de
 	push af
+	predef GetPikachuForm
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
