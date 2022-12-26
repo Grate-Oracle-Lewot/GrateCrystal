@@ -276,6 +276,22 @@ JOHTO_POKEMON EQU const_value
 NUM_POKEMON EQU const_value - 1
 	const EGG        ; fe
 
+; Pikachu forms
+; indexes for:
+; - PikachuPicPointers (see data/pokemon/pikachu_pic_pointers.asm)
+; - PikachuAnimationPointers (see gfx/pokemon/pikachu_anim_pointers.asm)
+; - PikachuAnimationIdlePointers (see gfx/pokemon/pikachu_idle_pointers.asm)
+; - PikachuBitmasksPointers (see gfx/pokemon/pikachu_bitmask_pointers.asm)
+; - PikachuFramesPointers (see gfx/pokemon/pikachu_frame_pointers.asm)
+	const_def 1
+	const PIKACHU_RETRO    ;  1
+	const PIKACHU_SILVER   ;  2
+	const PIKACHU_CRYSTAL  ;  3
+	const PIKACHU_FIGHTING ;  4
+	const PIKACHU_SURFING  ;  5
+	const PIKACHU_FLYING   ;  6
+NUM_PIKACHU_FORMS EQU const_value - 1 ; 6
+
 ; Unown forms
 ; indexes for:
 ; - UnownWords (see data/pokemon/unown_words.asm)
@@ -314,19 +330,3 @@ NUM_POKEMON EQU const_value - 1
 	const UNOWN_EXCLAMATION ; 27
 	const UNOWN_QUESTION    ; 28
 NUM_UNOWN EQU const_value - 1 ; 28
-
-; Pikachu forms
-; indexes for:
-; - PikachuPicPointers (see data/pokemon/pikachu_pic_pointers.asm)
-; - PikachuAnimationPointers (see gfx/pokemon/pikachu_anim_pointers.asm)
-; - PikachuAnimationIdlePointers (see gfx/pokemon/pikachu_idle_pointers.asm)
-; - PikachuBitmasksPointers (see gfx/pokemon/pikachu_bitmask_pointers.asm)
-; - PikachuFramesPointers (see gfx/pokemon/pikachu_frame_pointers.asm)
-	const_def 1
-	const PIKACHU_RETRO    ;  1
-	const PIKACHU_SILVER   ;  2
-	const PIKACHU_CRYSTAL  ;  3
-	const PIKACHU_FIGHTING ;  4
-	const PIKACHU_SURFING  ;  5
-	const PIKACHU_FLYING   ;  6
-NUM_PIKACHU_FORMS EQU const_value - 1 ; 6
