@@ -808,6 +808,7 @@ TradeAnim_AnimateFrontpic:
 TradeAnim_GetFrontpic:
 	push de
 	push af
+	predef GetPikachuForm
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
