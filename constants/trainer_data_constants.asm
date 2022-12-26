@@ -51,4 +51,4 @@ TRAINERTYPE_MOVES      EQU 1 << TRAINERTYPE_MOVES_F
 TRAINERTYPE_ITEM       EQU 1 << TRAINERTYPE_ITEM_F
 TRAINERTYPE_DVS        EQU 1 << TRAINERTYPE_DVS_F
 
-PERFECT_DV EQU $11 ; treated as $FF in enemy party data
+PERFECT_DV EQU $00 ; treated as $FF in enemy party data
