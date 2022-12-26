@@ -113,14 +113,14 @@ ReadTrainerPartyPieces:
 
 ; When reading DVs, treat PERFECT_DV as $ff
 	ld a, [hli]
-	cp PERFECT_DV
+	and a
 	jr nz, .atk_def_dv_ok
 	ld a, $ff
 .atk_def_dv_ok
 	ld [de], a
 	inc de
 	ld a, [hli]
-	cp PERFECT_DV
+	and a
 	jr nz, .spd_spc_dv_ok
 	ld a, $ff
 .spd_spc_dv_ok
