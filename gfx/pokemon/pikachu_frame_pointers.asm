@@ -1,9 +1,6 @@
 PikachuFramesPointers:
 	table_width 2, PikachuFramesPointers
-	dw RedPikachuFrames
-	dw BluePikachuFrames
-	dw YellowPikachuFrames
-	dw GoldPikachuFrames
+	dw RetroPikachuFrames
 	dw SilverPikachuFrames
 	dw CrystalPikachuFrames
 	dw FightingPikachuFrames
