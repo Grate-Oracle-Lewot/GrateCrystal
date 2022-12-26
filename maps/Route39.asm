@@ -188,8 +188,8 @@ Route39TaurosText:
 	done
 
 SailorEugeneSeenText:
-	text "I just got back to"
-	line "OLIVINE."
+	text "Alola! I just got"
+	line "back from the sea."
 
 	para "So how about a"
 	line "#MON battle?"
