@@ -88,8 +88,8 @@ SailorTerrellAfterBattleText:
 	para "The GYM LEADER's"
 	line "#MON type has"
 
-	para "changed without me"
-	line "noticing."
+	para "changed over the"
+	line "years."
 	done
 
 GentlemanPrestonSeenText:
