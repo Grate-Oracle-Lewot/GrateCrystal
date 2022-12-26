@@ -91,7 +91,6 @@ BurnHit:
 	supereffectivetext
 	defrost
 	checkfaint
-	defrostopponent
 	buildopponentrage
 	burntarget
 	endmove
