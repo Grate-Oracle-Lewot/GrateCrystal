@@ -97,9 +97,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - PP rebalanced for most moves.
 
-- Some moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
+- Instead of just Flame Wheel and Sacred Fire thawing out a Frozen user, now any move capable of inflicting a Burn will do this.
 
-- Instead of just Flame Wheel and Sacred Fire thawing out a Frozen user, now any move capable of inflicting a Burn will do this. Such moves will also thaw out a Frozen target, but the user's Attack will go up by one stage when this happens.
+- Some moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion, Rolling Kick is a guaranteed flinch, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
 
