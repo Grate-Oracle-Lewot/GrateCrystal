@@ -7,7 +7,7 @@ Trainers:
 ;    * for TRAINERTYPE_NORMAL:     db level, species
 ;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
 ;    * for TRAINERTYPE_ITEM:       db level, species, item
-;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;    * for TRAINERTYPE_DVS:        db level, species, $ad, $sp
 ; - db -1 ; end
 
 FalknerGroup:
@@ -1083,7 +1083,7 @@ CooltrainerMGroup:
 	db -1 ; end
 
 	; COOLTRAINERM (7)
-	db "GAVEN@", TRAINERTYPE_ITEM_MOVES
+	db "GAVEN@", TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	db 50, VICTREEBEL, LEFTOVERS,    GIGA_DRAIN, TOXIC, POISON_JAB, RAZOR_LEAF
 	db 50, KINGLER,    KINGS_ROCK,   SCALD, STOMP, GUILLOTINE, BLIZZARD
 	db 50, FLAREON,    QUICK_CLAW,   FLAMETHROWER, QUICK_ATTACK, BITE, FIRE_SPIN
@@ -1281,7 +1281,7 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	; COOLTRAINERF (18)
-	db "BETH@", TRAINERTYPE_ITEM_MOVES
+	db "BETH@", TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
 	db 55, RAPIDASH,   FOCUS_BAND,   STOMP, FIRE_SPIN, FURY_ATTACK, FIRE_BLAST
 	db -1 ; end
 
