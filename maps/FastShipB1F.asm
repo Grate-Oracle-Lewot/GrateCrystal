@@ -255,8 +255,8 @@ FastShipB1FOnDutySailorSawLittleGirlText:
 	done
 
 FastShipB1FOnDutySailorDirectionsText:
-	text "The dining room is"
-	line "up ahead."
+	text "Alola! The dining"
+	line "room's up ahead."
 
 	para "The stairs at the"
 	line "end lead to the"
