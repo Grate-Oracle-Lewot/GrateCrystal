@@ -162,7 +162,7 @@ ItemEffects:
 	dw EggBeaterEffect     ; EGG_BEATER
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw EvoStoneEffect      ; DRAGON_SCALE
-	dw NoEffect            ; BERSERK_GENE
+	dw PokeBallEffect      ; TIMER_BALL
 	dw PickaxeEffect       ; PICKAXE
 	dw FearowbotEffect     ; FEAROWBOT
 	dw PokeBallEffect      ; DUSK_BALL
