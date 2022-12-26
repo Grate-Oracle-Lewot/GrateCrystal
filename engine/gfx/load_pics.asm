@@ -54,7 +54,7 @@ GetUnownLetter:
 	ret
 
 GetPikachuForm:
-; Return Pikachu form in wUnownLetter based on DVs at hl
+; Return Pikachu form in wPikachuForm based on DVs at hl
 
 ; Take the middle 2 bits of each DV and place them in order:
 ;	atk  def  spd  spc
@@ -100,7 +100,7 @@ GetPikachuForm:
 ; Increment to get 1-6
 	ldh a, [hQuotient + 3]
 	inc a
-	ld [wUnownLetter], a
+	ld [wPikachuForm], a
 	ret
 
 GetMonFrontpic:
@@ -172,12 +172,18 @@ _GetFrontpic:
 
 GetFrontpicPointer:
 	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr z, .pikachu
 	cp UNOWN
 	jr z, .unown
 	ld hl, PokemonPicPointers
 	ld a, [wCurPartySpecies]
 	ld d, BANK(PokemonPicPointers)
 	jr .ok
+.pikachu
+	ld hl, PikachuPicPointers
+	ld a, [wPikachuForm]
+	ld d, BANK(PikachuPicPointers)
 .unown
 	ld hl, UnownPicPointers
 	ld a, [wUnownLetter]
@@ -300,10 +306,16 @@ GetMonBackpic:
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
 	cp UNOWN
-	jr nz, .ok
+	jr nz, .check_pikachu
 	ld hl, UnownPicPointers
 	ld a, c
 	ld d, BANK(UnownPicPointers)
+.check_pikachu
+	cp PIKACHU
+	jr nz, .ok
+	ld hl, PikachuPicPointers
+	ld a, [wPikachuForm]
+	ld d, BANK(PikachuPicPointers)
 .ok
 	dec a
 	ld bc, 6
