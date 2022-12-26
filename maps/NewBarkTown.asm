@@ -87,6 +87,9 @@ NewBarkTownTeacherScript:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
+	loadwildmon PIKACHU, 1
+	startbattle
+	reloadmapafterbattle
 	end
 
 .TellMomYoureLeaving:
