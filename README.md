@@ -126,6 +126,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - X Sp. Defend, Dusk Ball, and Eviolite
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
+- Berserk Gene removed (had to for space)
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 
 ## Move tutors
