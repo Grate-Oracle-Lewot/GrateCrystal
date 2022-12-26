@@ -434,12 +434,18 @@ INCLUDE "gfx/pokemon/bitmask_pointers.asm"
 INCLUDE "gfx/pokemon/bitmasks.asm"
 INCLUDE "gfx/pokemon/unown_bitmask_pointers.asm"
 INCLUDE "gfx/pokemon/unown_bitmasks.asm"
+INCLUDE "gfx/pokemon/pikachu_anim_pointers.asm"
+INCLUDE "gfx/pokemon/pikachu_anims.asm"
+INCLUDE "gfx/pokemon/pikachu_idle_pointers.asm"
+INCLUDE "gfx/pokemon/pikachu_idles.asm"
 
 
 SECTION "Pic Animations 2", ROMX
 
 INCLUDE "gfx/pokemon/frame_pointers.asm"
 INCLUDE "gfx/pokemon/kanto_frames.asm"
+INCLUDE "gfx/pokemon/pikachu_bitmask_pointers.asm"
+INCLUDE "gfx/pokemon/pikachu_bitmasks.asm"
 
 
 SECTION "Pic Animations 3", ROMX
@@ -447,6 +453,8 @@ SECTION "Pic Animations 3", ROMX
 INCLUDE "gfx/pokemon/johto_frames.asm"
 INCLUDE "gfx/pokemon/unown_frame_pointers.asm"
 INCLUDE "gfx/pokemon/unown_frames.asm"
+INCLUDE "gfx/pokemon/pikachu_frame_pointers.asm"
+INCLUDE "gfx/pokemon/pikachu_frames.asm"
 
 
 SECTION "bank38", ROMX
