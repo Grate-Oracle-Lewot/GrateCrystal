@@ -733,6 +733,7 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
+	dbw DUSK_BALL,   DuskBallMultiplier
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
@@ -740,7 +741,6 @@ BallMultiplierFunctionTable:
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
-	dbw DUSK_BALL,   DuskBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -758,6 +758,37 @@ ParkBallMultiplier:
 	add b
 	ld b, a
 	ret nc
+	ld b, $ff
+	ret
+
+DuskBallMultiplier:
+; no boost indoors, even at night
+	ld a, [wEnvironment]
+	cp INDOOR
+	ret nz
+; is it night?
+	ld a, [wTimeOfDay]
+	cp NITE
+	jr z, .night_or_cave
+; or are we in a cave?
+	ld a, [wEnvironment]
+	cp CAVE
+	ret nz ; neither night nor cave
+
+.night_or_cave
+; b is the catch rate
+; a := b + b + b == b × 3
+	ld a, b
+	add a
+	jr c, .max
+
+	add b
+	jr c, .max
+
+	ld b, a
+	ret
+
+.max
 	ld b, $ff
 	ret
 
@@ -1055,37 +1086,6 @@ LevelBallMultiplier:
 	ret nc ; if player/4 is lower level, we're done here
 	sla b
 	ret nc
-
-.max
-	ld b, $ff
-	ret
-
-DuskBallMultiplier:
-; no boost indoors, even at night
-	ld a, [wEnvironment]
-	cp INDOOR
-	ret nz
-; is it night?
-	ld a, [wTimeOfDay]
-	cp NITE
-	jr z, .night_or_cave
-; or are we in a cave?
-	ld a, [wEnvironment]
-	cp CAVE
-	ret nz ; neither night nor cave
-
-.night_or_cave
-; b is the catch rate
-; a := b + b + b == b × 3
-	ld a, b
-	add a
-	jr c, .max
-
-	add b
-	jr c, .max
-
-	ld b, a
-	ret
 
 .max
 	ld b, $ff
