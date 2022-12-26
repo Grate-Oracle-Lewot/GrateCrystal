@@ -68,7 +68,7 @@ LoungeBrockScript:
 
 .DoRematch:
 	winlosstext LoungeBrockLossText, 0
-	loadtrainer BROCK, BROCK2
+	loadtrainer BROCK, BROCK1
 	startbattle
 	reloadmapafterbattle
 	opentext
