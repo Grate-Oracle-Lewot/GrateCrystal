@@ -1,9 +1,6 @@
 PikachuBitmasksPointers:
 	table_width 2, PikachuBitmasksPointers
-	dw RedPikachuBitmasks
-	dw BluePikachuBitmasks
-	dw YellowPikachuBitmasks
-	dw GoldPikachuBitmasks
+	dw RetroPikachuBitmasks
 	dw SilverPikachuBitmasks
 	dw CrystalPikachuBitmasks
 	dw FightingPikachuBitmasks
