@@ -25,11 +25,11 @@ DiglettsCaveHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
 
 DiglettsCavePokefanMText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
+	text "No cave compares"
+	line "in size to the"
 
-	para "ground! That was"
-	line "shocking."
+	para "underground net-"
+	line "work below SINNOH."
 	done
 
 CamperJohnSeenText:
