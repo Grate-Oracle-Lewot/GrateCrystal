@@ -1,7 +1,4 @@
-RedPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_red/anim_idle.asm"
-BluePikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_blue/anim_idle.asm"
-YellowPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_yellow/anim_idle.asm"
-GoldPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_gold/anim_idle.asm"
+RetroPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_retro/anim_idle.asm"
 SilverPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_silver/anim_idle.asm"
 CrystalPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_crystal/anim_idle.asm"
 FightingPikachuAnimationIdle: INCLUDE "gfx/pokemon/pikachu_fighting/anim_idle.asm"
