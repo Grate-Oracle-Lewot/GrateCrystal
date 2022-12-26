@@ -43,12 +43,8 @@ CONTEXT_USE        EQU 1 << CONTEXT_USE_F
 	const_def
 	const TRAINERTYPE_MOVES_F ; 0
 	const TRAINERTYPE_ITEM_F  ; 1
-	const TRAINERTYPE_DVS_F   ; 2
 
 ; Trainer party types (see data/trainers/parties.asm)
 TRAINERTYPE_NORMAL     EQU 0
 TRAINERTYPE_MOVES      EQU 1 << TRAINERTYPE_MOVES_F
 TRAINERTYPE_ITEM       EQU 1 << TRAINERTYPE_ITEM_F
-TRAINERTYPE_DVS        EQU 1 << TRAINERTYPE_DVS_F
-
-PERFECT_DV EQU $00 ; treated as $FF in enemy party data
