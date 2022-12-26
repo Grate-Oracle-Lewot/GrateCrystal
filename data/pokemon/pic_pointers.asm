@@ -51,8 +51,11 @@ PokemonPicPointers::
 	dba EkansBackpic
 	dba ArbokFrontpic
 	dba ArbokBackpic
-	dba PikachuFrontpic
-	dba PikachuBackpic
+
+	; Pikachu pics have their own table. See PikachuPicPointers
+	dbw -1, -1
+	dbw -1, -1
+
 	dba RaichuFrontpic
 	dba RaichuBackpic
 	dba SandshrewFrontpic
