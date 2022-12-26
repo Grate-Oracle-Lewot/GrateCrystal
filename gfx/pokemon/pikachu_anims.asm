@@ -1,7 +1,4 @@
-RedPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_red/anim.asm"
-BluePikachuAnimation: INCLUDE "gfx/pokemon/pikachu_blue/anim.asm"
-YellowPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_yellow/anim.asm"
-GoldPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_gold/anim.asm"
+RetroPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_retro/anim.asm"
 SilverPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_silver/anim.asm"
 CrystalPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_crystal/anim.asm"
 FightingPikachuAnimation: INCLUDE "gfx/pokemon/pikachu_fighting/anim.asm"
