@@ -44,10 +44,10 @@ SailorKentBeatenText:
 	done
 
 SailorKentAfterBattleText:
-	text "Speaking of sick,"
-	line "I've heard there's"
+	text "Alola! I've heard"
+	line "there's a good"
 
-	para "a good PHARMACY in"
+	para "PHARMACY in"
 	line "CIANWOOD."
 	done
 
