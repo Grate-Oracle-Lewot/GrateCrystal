@@ -9,13 +9,9 @@ SometimesFleeMons:
 	db TANGELA
 	db MR__MIME
 	db EEVEE
-	db PORYGON
-	db PORYGON2
 	db CHIKORITA
 	db CYNDAQUIL
 	db TOGETIC
-	db ESPEON
-	db UMBREON
 	db UNOWN
 	db DUNSPARCE
 	db -1
@@ -23,7 +19,6 @@ SometimesFleeMons:
 OftenFleeMons:
 	db CUBONE
 	db TOGEPI
-	db QUAGSIRE
 	db DELIBIRD
 	db PHANPY
 	db TEDDIURSA
