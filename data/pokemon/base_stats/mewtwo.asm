@@ -6,7 +6,7 @@
 	db PSYCHIC_TYPE, FIGHTING ; type
 	db 5 ; catch rate
 	db 220 ; base exp
-	db X_SPECIAL, BERSERK_GENE ; items
+	db X_SPECIAL, TWISTEDSPOON ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 84 ; step cycles to hatch
