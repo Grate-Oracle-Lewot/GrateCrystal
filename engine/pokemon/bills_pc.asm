@@ -1061,6 +1061,7 @@ PCMonInfo:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
+	predef GetPikachuForm
 	predef GetUnownLetter
 	call GetBaseData
 	ld de, vTiles2 tile $00
@@ -1682,6 +1683,7 @@ StatsScreenDPad:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
+	predef GetPikachuForm
 	predef GetUnownLetter
 	call GetBaseData
 	call BillsPC_CopyMon
