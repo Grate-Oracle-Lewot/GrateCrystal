@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 35 ; catch rate
 	db 84 ; base exp
-	db METAL_POWDER, BERSERK_GENE ; items
+	db METAL_POWDER, EVERSTONE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
