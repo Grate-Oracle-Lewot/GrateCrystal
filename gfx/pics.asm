@@ -10,6 +10,7 @@ INCLUDE "data/pokemon/pic_pointers.asm"
 SECTION "Unown Pic Pointers", ROMX
 
 INCLUDE "data/pokemon/unown_pic_pointers.asm"
+INCLUDE "data/pokemon/pikachu_pic_pointers.asm"
 
 
 SECTION "Trainer Pic Pointers", ROMX
@@ -728,3 +729,15 @@ KabubonesPic:             INCBIN "gfx/trainers/kabubones.2bpp.lz"
 MissingnoPic:             INCBIN "gfx/trainers/missingno.2bpp.lz"
 GamblerPic:               INCBIN "gfx/trainers/gambler.2bpp.lz"
 CalfPic:                  INCBIN "gfx/player/kris.2bpp.lz"
+RetroPikachuFrontpic:     INCBIN "gfx/pokemon/pikachu_retro/front.animated.2bpp.lz"
+SilverPikachuFrontpic:    INCBIN "gfx/pokemon/pikachu_silver/front.animated.2bpp.lz"
+CrystalPikachuFrontpic:   INCBIN "gfx/pokemon/pikachu_crystal/front.animated.2bpp.lz"
+FightingPikachuFrontpic:  INCBIN "gfx/pokemon/pikachu_fighting/front.animated.2bpp.lz"
+SurfingPikachuFrontpic:   INCBIN "gfx/pokemon/pikachu_surfing/front.animated.2bpp.lz"
+FlyingPikachuFrontpic:    INCBIN "gfx/pokemon/pikachu_flying/front.animated.2bpp.lz"
+RetroPikachuBackpic:      INCBIN "gfx/pokemon/pikachu_retro/back.2bpp.lz"
+SilverPikachuBackpic:     INCBIN "gfx/pokemon/pikachu/back.2bpp.lz"
+CrystalPikachuBackpic:    INCBIN "gfx/pokemon/pikachu/back.2bpp.lz"
+FightingPikachuBackpic:   INCBIN "gfx/pokemon/pikachu/back.2bpp.lz"
+SurfingPikachuBackpic:    INCBIN "gfx/pokemon/pikachu/back.2bpp.lz"
+FlyingPikachuBackpic:     INCBIN "gfx/pokemon/pikachu/back.2bpp.lz"
