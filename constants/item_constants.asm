@@ -154,7 +154,7 @@
 	const EGG_BEATER   ; 92
 	const MYSTERYBERRY ; 93
 	const DRAGON_SCALE ; 94
-	const BERSERK_GENE ; 95
+	const TIMER_BALL   ; 95
 	const PICKAXE      ; 96
 	const FEAROWBOT    ; 97
 	const DUSK_BALL    ; 98
