@@ -3303,7 +3303,7 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 18
+	ds 17
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
@@ -3314,6 +3314,7 @@ wEndPokedexSeen::
 wUnownDex:: ds NUM_UNOWN
 wUnlockedUnowns:: db
 wFirstUnownSeen:: db
+wFirstPikachuSeen:: db
 
 wDayCareMan::
 ; bit 7: active
