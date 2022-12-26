@@ -149,7 +149,7 @@ ItemDescriptions:
 	dw EggBeaterDesc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
-	dw BerserkGeneDesc
+	dw TimerBallDesc
 	dw PickaxeDesc
 	dw FearowbotDesc
 	dw DuskBallDesc
@@ -843,9 +843,9 @@ DragonScaleDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-BerserkGeneDesc:
-	db   "Boosts ATTACK but"
-	next "causes confusion.@"
+TimerBallDesc:
+	db   "Works better the"
+	next "longer the battle.@"
 
 PickaxeDesc:
 	db   "Breaks rocks with-"
