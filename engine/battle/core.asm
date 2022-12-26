@@ -3683,6 +3683,18 @@ LoadEnemyMonToSwitchTo:
 	call LoadEnemyMon
 
 	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld a, [wFirstPikachuSeen]
+	and a
+	jr nz, .skip_pikachu
+	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
+	ld a, [wPikachuForm]
+	ld [wFirstPikachuSeen], a
+.skip_pikachu
+
+	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr nz, .skip_unown
 	ld a, [wFirstUnownSeen]
@@ -4271,6 +4283,7 @@ SwitchPlayerMon:
 
 SendOutPlayerMon:
 	ld hl, wBattleMonDVs
+	predef GetPikachuForm
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7
@@ -8141,6 +8154,7 @@ DropPlayerSub:
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
 	ld hl, wBattleMonDVs
+	predef GetPikachuForm
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
@@ -8178,6 +8192,7 @@ DropEnemySub:
 	ld [wCurPartySpecies], a
 	call GetBaseData
 	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
 	predef GetUnownLetter
 	ld de, vTiles2
 	predef GetAnimatedFrontpic
@@ -8353,6 +8368,17 @@ InitEnemyWildmon:
 	ld de, wWildMonPP
 	ld bc, NUM_MOVES
 	call CopyBytes
+	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld a, [wFirstPikachuSeen]
+	and a
+	jr nz, .skip_pikachu
+	ld a, [wPikachuForm]
+	ld [wFirstPikachuSeen], a
+.skip_pikachu
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld a, [wCurPartySpecies]
