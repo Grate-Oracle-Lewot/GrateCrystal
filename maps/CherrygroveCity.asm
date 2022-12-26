@@ -537,8 +537,9 @@ MysticWaterGuyTextBefore:
 	done
 
 MysticWaterGuyTextAfter:
-	text "Back to fishing"
-	line "for me, then."
+	text "They say the HOENN"
+	line "region has the"
+	cont "most water."
 	done
 
 CherrygroveCitySignText:
