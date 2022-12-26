@@ -2770,7 +2770,8 @@ wDudeBalls:: ds 2 * 4 + 1
 ENDU
 
 wOtherTrainerType:: db
-	ds 3
+wTrainerGroupBank:: db
+	ds 2
 
 wd430:: ; mobile
 wBattleAction:: db
