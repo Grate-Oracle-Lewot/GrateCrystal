@@ -221,10 +221,9 @@ MartEcruteak:
 	db -1 ; end
 
 MartMahogany1:
-	db 4 ; # items
+	db 3 ; # items
 	db SLOWPOKETAIL
 	db SWAG_BEACON
-	db BERSERK_GENE
 	db TM_THIEF
 	db -1 ; end
 
@@ -416,13 +415,12 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_DOLL
 	db FRESH_WATER
 	db SODA_POP
 	db LEMONADE
 	db DUSK_BALL
-	db BERSERK_GENE
 	db EON_MAIL
 	db TM_MOONBLAST
 	db -1 ; end
