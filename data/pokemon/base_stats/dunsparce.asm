@@ -6,7 +6,7 @@
 	db DARK, FAIRY ; type
 	db 190 ; catch rate
 	db 100 ; base exp
-	db BERSERK_GENE, TM_CURSE ; items
+	db SWAG_BEACON, TM_CURSE ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
