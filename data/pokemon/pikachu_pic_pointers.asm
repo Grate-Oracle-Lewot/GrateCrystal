@@ -1,14 +1,8 @@
 PikachuPicPointers::
 ; entries correspond to Pikachu forms, two apiece
 	table_width 3 * 2, PikachuPicPointers
-	dba RedPikachuFrontpic
-	dba RedPikachuBackpic
-	dba BluePikachuFrontpic
-	dba BluePikachuBackpic
-	dba YellowPikachuFrontpic
-	dba YellowPikachuBackpic
-	dba GoldPikachuFrontpic
-	dba GoldPikachuBackpic
+	dba RetroPikachuFrontpic
+	dba RetroPikachuBackpic
 	dba SilverPikachuFrontpic
 	dba SilverPikachuBackpic
 	dba CrystalPikachuFrontpic
