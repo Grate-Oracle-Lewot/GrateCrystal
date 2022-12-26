@@ -148,7 +148,7 @@ ItemNames::
 	li "EGG BEATER"
 	li "SILVER BERRY"
 	li "DRAGON SCALE"
-	li "BERSERK GENE"
+	li "TIMER BALL"
 	li "PICKAXE"
 	li "FEAROWBOT"
 	li "DUSK BALL"
