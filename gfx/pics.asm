@@ -9,8 +9,8 @@ INCLUDE "data/pokemon/pic_pointers.asm"
 
 SECTION "Unown Pic Pointers", ROMX
 
-INCLUDE "data/pokemon/unown_pic_pointers.asm"
 INCLUDE "data/pokemon/pikachu_pic_pointers.asm"
+INCLUDE "data/pokemon/unown_pic_pointers.asm"
 
 
 SECTION "Trainer Pic Pointers", ROMX
