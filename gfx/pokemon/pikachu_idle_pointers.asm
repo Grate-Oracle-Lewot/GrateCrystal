@@ -1,9 +1,6 @@
 PikachuAnimationIdlePointers:
 	table_width 2, PikachuAnimationIdlePointers
-	dw RedPikachuAnimationIdle
-	dw BluePikachuAnimationIdle
-	dw YellowPikachuAnimationIdle
-	dw GoldPikachuAnimationIdle
+	dw RetroPikachuAnimationIdle
 	dw SilverPikachuAnimationIdle
 	dw CrystalPikachuAnimationIdle
 	dw FightingPikachuAnimationIdle
