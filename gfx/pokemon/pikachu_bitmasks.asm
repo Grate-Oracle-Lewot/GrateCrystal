@@ -1,7 +1,4 @@
-RedPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_red/bitmask.asm"
-BluePikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_blue/bitmask.asm"
-YellowPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_yellow/bitmask.asm"
-GoldPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_gold/bitmask.asm"
+RetroPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_retro/bitmask.asm"
 SilverPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_silver/bitmask.asm"
 CrystalPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_crystal/bitmask.asm"
 FightingPikachuBitmasks: INCLUDE "gfx/pokemon/pikachu_fighting/bitmask.asm"
