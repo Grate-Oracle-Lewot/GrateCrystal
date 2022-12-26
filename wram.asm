@@ -3403,7 +3403,7 @@ wPokeAnimCurBitmask:: db
 wPokeAnimWaitCounter:: db
 wPokeAnimCommand:: db
 wPokeAnimParameter:: db
-	ds 1
+wPokeAnimPikachuForm:: db
 wPokeAnimBitmaskCurCol:: db
 wPokeAnimBitmaskCurRow:: db
 wPokeAnimBitmaskCurBit:: db
