@@ -827,6 +827,18 @@ OTString:
 	db "OT/@"
 
 StatsScreen_PlaceFrontpic:
+	ld a, [wCurPartySpecies]
+	cp UNOWN
+	jr z, .skip_pikachu
+	ld hl, wTempMonDVs
+	predef GetPikachuForm
+	call StatsScreen_GetAnimationParam
+	jr c, .egg
+	and a
+	jr z, .no_cry
+	jr .cry
+
+.skip_pikachu
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	call StatsScreen_GetAnimationParam
@@ -856,6 +868,8 @@ StatsScreen_PlaceFrontpic:
 	ld hl, wStatsScreenFlags
 	set 5, [hl]
 	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr z, .unown
 	cp UNOWN
 	jr z, .unown
 	hlcoord 0, 0
@@ -871,6 +885,8 @@ StatsScreen_PlaceFrontpic:
 
 .AnimateEgg:
 	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr z, .unownegg
 	cp UNOWN
 	jr z, .unownegg
 	ld a, TRUE
