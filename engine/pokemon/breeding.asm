@@ -626,6 +626,7 @@ GetEggFrontpic:
 	call GetBaseData
 	ld a, MON_DVS
 	call GetPartyParamLocation
+	predef GetPikachuForm
 	predef GetUnownLetter
 	pop de
 	predef_jump GetMonFrontpic
@@ -637,6 +638,7 @@ GetHatchlingFrontpic:
 	call GetBaseData
 	ld a, MON_DVS
 	call GetPartyParamLocation
+	predef GetPikachuForm
 	predef GetUnownLetter
 	pop de
 	predef_jump GetAnimatedFrontpic
