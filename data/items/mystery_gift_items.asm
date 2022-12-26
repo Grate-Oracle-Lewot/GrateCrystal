@@ -3,7 +3,6 @@ MysteryGiftItems:
 	db MAX_ETHER
 	db MAX_ELIXER
 	db MAX_REVIVE
-	db BERSERK_GENE
 	db GOLD_TEETH
 	db CANDIED_YAM
 .End
