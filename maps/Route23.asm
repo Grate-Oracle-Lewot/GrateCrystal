@@ -1,4 +1,5 @@
 	object_const_def
+	const ROUTE23_BLACK_BELT
 	const ROUTE23_OFFICER
 
 Route23_MapScripts:
@@ -11,6 +12,9 @@ Route23_MapScripts:
 	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
 	endcallback
 
+Route23BlackBeltScript:
+	jumptextfaceplayer Route23BlackBeltText
+
 Route23OfficerScript:
 	jumptextfaceplayer Route23OfficerText
 
@@ -19,6 +23,14 @@ IndigoPlateauSign:
 
 LoungeSign:
 	jumptext LoungeSignText
+
+Route23BlackBeltText:
+	text "I hope our #MON"
+	line "LEAGUE never gets"
+
+	para "taken over like"
+	line "TEAM PLASMA did to"
+	cont "UNOVA's."
 
 Route23OfficerText:
 	text "…What? Yes, of"
@@ -69,4 +81,5 @@ Route23_MapEvents:
 	bg_event 13, 21, BGEVENT_READ, LoungeSign
 
 	def_object_events
+	object_event  9, 16, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route23BlackBeltScript, -1
 	object_event 15, 22, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route23OfficerScript, EVENT_OPENED_MT_SILVER
