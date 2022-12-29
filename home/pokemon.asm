@@ -269,6 +269,7 @@ GetBaseData::
 	cp PIKACHU
 	jr nz, .end
 
+	predef GetPikachuForm
 	ld a, [wPikachuForm]
 	cp PIKACHU_SILVER
 	jr z, .normal_type
