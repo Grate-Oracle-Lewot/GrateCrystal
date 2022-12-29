@@ -271,15 +271,15 @@ GetBaseData::
 
 	farcall GetPikachuForm
 	ld a, [wPikachuForm]
-	cp 2
+	cp PIKACHU_SILVER
 	jr z, .normal_type
-	cp 3
+	cp PIKACHU_CRYSTAL
 	jr z, .fairy_type
-	cp 4
+	cp PIKACHU_FIGHTING
 	jr z, .fighting_type
-	cp 5
+	cp PIKACHU_SURFING
 	jr z, .water_type
-	cp 6
+	cp PIKACHU_FLYING
 	jr z, .flying_type
 	jr .end
 
