@@ -827,10 +827,10 @@ OTString:
 	db "OT/@"
 
 StatsScreen_PlaceFrontpic:
+	ld hl, wTempMonDVs
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr z, .skip_pikachu
-	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
@@ -839,7 +839,6 @@ StatsScreen_PlaceFrontpic:
 	jr .cry
 
 .skip_pikachu
-	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
