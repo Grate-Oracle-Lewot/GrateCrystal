@@ -297,7 +297,7 @@ GetBaseData::
 .flying_type
 	ld a, FLYING
 .finish_pikachu
-	ld wBaseType2, a
+	ld [wBaseType2], a
 	jr .end
 
 .egg
