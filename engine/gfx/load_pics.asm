@@ -100,16 +100,11 @@ GetPikachuForm:
 ; Increment to get 1-6
 	ldh a, [hQuotient + 3]
 	inc a
-	cp 0
-	jr z, .low_error
-	cp 7
-	jr z, .high_error
-.low_error
-	ld a, 1
-	jr .final_answer
-.high_error
-	ld a, 6
-.final_answer
+; The valid range is 1-6, so use PIKACHU_CRYSTAL instead of 7
+	cp NUM_PIKACHU_FORMS + 1
+	jr c, .valid
+	ld a, PIKACHU_CRYSTAL
+.valid
 	ld [wPikachuForm], a
 	ret
 
