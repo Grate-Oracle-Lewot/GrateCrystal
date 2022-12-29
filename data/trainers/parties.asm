@@ -461,9 +461,9 @@ ScientistGroup:
 
 	; SCIENTIST (3)
 	db "JED@", TRAINERTYPE_NORMAL
-	db 27, MAGNEMITE
 	db 27, PIKACHU
 	db 27, RATTATA
+	db 27, MAGNEMITE
 	db -1 ; end
 
 	; SCIENTIST (4)
