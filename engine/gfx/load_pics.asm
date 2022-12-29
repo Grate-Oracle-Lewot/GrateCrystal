@@ -86,13 +86,13 @@ GetPikachuForm:
 	srl a
 	or b
 
-; Divide by 42 to get 0-5
+; Divide by 51 to get 0-5
 	ldh [hDividend + 3], a
 	xor a
 	ldh [hDividend], a
 	ldh [hDividend + 1], a
 	ldh [hDividend + 2], a
-	ld a, 42
+	ld a, 51
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
@@ -100,11 +100,6 @@ GetPikachuForm:
 ; Increment to get 1-6
 	ldh a, [hQuotient + 3]
 	inc a
-; The valid range is 1-6, so use PIKACHU_CRYSTAL instead of 7
-	cp NUM_PIKACHU_FORMS + 1
-	jr c, .valid
-	ld a, PIKACHU_CRYSTAL
-.valid
 	ld [wPikachuForm], a
 	ret
 
