@@ -48,6 +48,13 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Rattata/Raticate: Normal -> Normal/Dark
 - Spearow/Fearow: Normal/Flying -> Flying
 - Pichu: Electric -> Electric/Fairy
+- Pikachu has six forms, determined by DVs like Unown letters:
+  - Retro (uses Gen I sprites): pure Electric
+  - Silver (animated Silver Version sprite): Electric/Normal
+  - Crystal (normal Crystal Version sprite): Electric/Fairy
+  - Fighting (kicking pose from Yellow Version intro): Electric/Fighting
+  - Surfing (surfboard sprite from Yellow Version intro): Electric/Water
+  - Flying (balloons sprite from Yellow Version intro): Electric/Flying
 - Vulpix/Ninetales: Fire -> Fire/Ice
 - Meowth/Persian: Normal -> Normal/Steel
 - Golduck: Water -> Water/Psychic
