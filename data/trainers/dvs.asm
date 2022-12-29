@@ -29,11 +29,11 @@ TrainerClassDVs:
 	dn  7,  8,  7,  7 ; LASS
 	dn 11, 12, 12, 11 ; JANINE
 	dn 10,  9,  9, 10 ; COOLTRAINERM
-	dn 11, 10, 10, 11 ; COOLTRAINERF
+	dn  9, 10, 10,  9 ; COOLTRAINERF
 	dn  7,  8,  8,  7 ; BEAUTY
 	dn  8,  9,  9,  8 ; POKEMANIAC
 	dn  8,  7,  7,  8 ; GRUNTM
-	dn 12, 13, 13, 12 ; GENTLEMAN
+	dn  8,  9,  9,  8 ; GENTLEMAN
 	dn  9,  8, 10,  9 ; SKIER
 	dn  9,  8,  8,  9 ; TEACHER
 	dn 11, 12, 12, 11 ; SABRINA
@@ -60,10 +60,10 @@ TrainerClassDVs:
 	dn  8,  9,  9, 10 ; SAGE
 	dn  9,  8,  8, 11 ; MEDIUM
 	dn  8,  9, 11,  8 ; BOARDER
-	dn  8, 11, 11,  8 ; POKEFANM
+	dn  8,  9,  9,  8 ; POKEFANM
 	dn  9, 10, 10,  9 ; KIMONO_GIRL
 	dn  7,  6,  6,  7 ; TWINS
-	dn 11,  8,  8, 11 ; POKEFANF
+	dn  9,  8,  8,  9 ; POKEFANF
 	dn 14, 15, 15, 14 ; RED
 	dn 12, 13, 13, 12 ; BLUE
 	dn 10,  9,  7,  8 ; OFFICER
