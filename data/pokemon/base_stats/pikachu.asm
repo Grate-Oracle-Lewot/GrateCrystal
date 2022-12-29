@@ -3,7 +3,7 @@
 	db  35,  55,  40,  90,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db ELECTRIC, FAIRY ; type
+	db ELECTRIC, ELECTRIC ; type
 	db 190 ; catch rate
 	db 82 ; base exp
 	db BERRY, LIGHT_BALL ; items
