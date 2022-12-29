@@ -184,6 +184,7 @@ GetFrontpicPointer:
 	ld hl, PikachuPicPointers
 	ld a, [wPikachuForm]
 	ld d, BANK(PikachuPicPointers)
+	jr .ok
 .unown
 	ld hl, UnownPicPointers
 	ld a, [wUnownLetter]
@@ -311,6 +312,7 @@ GetMonBackpic:
 	ld a, c
 	ld d, BANK(UnownPicPointers)
 .check_pikachu
+	ld a, b
 	cp PIKACHU
 	jr nz, .ok
 	ld hl, PikachuPicPointers
