@@ -47,7 +47,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
 - Spearow/Fearow: Normal/Flying -> Flying
-- Pichu/Pikachu: Electric -> Electric/Fairy
+- Pichu: Electric -> Electric/Fairy
 - Vulpix/Ninetales: Fire -> Fire/Ice
 - Meowth/Persian: Normal -> Normal/Steel
 - Golduck: Water -> Water/Psychic
