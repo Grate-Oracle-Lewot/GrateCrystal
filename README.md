@@ -267,6 +267,10 @@ A) Because I'm not good enough at hacking.
 
 In the code, Pokémon are defined by unseen ID numbers, and because of the way these numbers are stored, they can't go any higher than 255. All available slots are used up by the time you add a measly two more Pokémon; obviously your computer has more filespace than the Game Boy Color, but the ROM doesn't know that, and getting it to understand that would start to become more like coding a new game instead of just modifying an existing one. Somebody else has figured out a way to get around this, at https://github.com/aaaaaa123456789/pokecrystal16 , but it's a bit above my skill level.
 
+Q) What about those six Pikachu forms?
+
+A) Those are handled differently, and I had to remove bits of code to get them to fit in the memory banks, so I don't think there would be room to do something similar with another Pokémon.
+
 Q) Why Yanmega and Whimsicott, then?
 
 A) Favoritism.
