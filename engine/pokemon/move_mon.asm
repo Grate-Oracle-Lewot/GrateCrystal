@@ -458,6 +458,22 @@ AddTempmonToParty:
 .egg
 
 	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .done_pikachu
+	ld hl, wPartyMon1DVs
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	predef GetPikachuForm
+	ld a, [wFirstPikachuSeen]
+	and a
+	jr nz, .done_pikachu
+	ld a, [wPikachuForm]
+	ld [wFirstPikachuSeen], a
+.done_pikachu
+
+	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr nz, .done
 	ld hl, wPartyMon1DVs
