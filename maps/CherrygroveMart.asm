@@ -35,9 +35,17 @@ CherrygroveMartCooltrainerMScript:
 	writetext CherrygroveMartCooltrainerMText_PokeBallsInStock
 	waitbutton
 	closetext
+	winlosstext CherrygroveMartCooltrainerMText_PokeBallsInStock, 0
+	loadtrainer PICNICKER, BROOKE
+	startbattle
+	reloadmapafterbattle
 	end
 
 CherrygroveMartYoungsterScript:
+	winlosstext CherrygroveMartYoungsterText, 0
+	loadtrainer SCIENTIST, JED
+	startbattle
+	reloadmapafterbattle
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:
