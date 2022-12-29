@@ -8,9 +8,17 @@ CherrygroveGymSpeechHouse_MapScripts:
 	def_callbacks
 
 CherrygroveGymSpeechHousePokefanMScript:
+	winlosstext CherrygroveGymSpeechHousePokefanMText, 0
+	loadtrainer GENTLEMAN, GREGORY
+	startbattle
+	reloadmapafterbattle
 	jumptextfaceplayer CherrygroveGymSpeechHousePokefanMText
 
 CherrygroveGymSpeechHouseBugCatcherScript:
+	winlosstext CherrygroveGymSpeechHouseBugCatcherText, 0
+	loadtrainer SUPER_NERD, SAM
+	startbattle
+	reloadmapafterbattle
 	jumptextfaceplayer CherrygroveGymSpeechHouseBugCatcherText
 
 CherrygroveGymSpeechHouseBookshelf:
