@@ -264,6 +264,40 @@ GetBaseData::
 	ld de, wCurBaseData
 	ld bc, BASE_DATA_SIZE
 	call CopyBytes
+
+	ld a, [wCurSpecies]
+	cp PIKACHU
+	jr nz, .end
+
+	ld a, [wPikachuForm]
+	cp 2
+	jr z, .normal_type
+	cp 3
+	jr z, .fairy_type
+	cp 4
+	jr z, .fighting_type
+	cp 5
+	jr z, .water_type
+	cp 6
+	jr z, .flying_type
+	jr .end
+
+.normal_type
+	ld a, NORMAL
+	jr .finish_pikachu
+.fairy_type
+	ld a, FAIRY
+	jr .finish_pikachu
+.fighting_type
+	ld a, FIGHTING
+	jr .finish_pikachu
+.water_type
+	ld a, WATER
+	jr .finish_pikachu
+.flying_type
+	ld a, FLYING
+.finish_pikachu
+	ld wBaseType2, a
 	jr .end
 
 .egg
