@@ -8,11 +8,8 @@
 	db 151 ; base exp
 	db ENERGY_ROOT, LEAF_STONE ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/weepinbell/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_PLANT, EGG_INDETERMINATE ; egg groups
 
