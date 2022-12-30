@@ -8,11 +8,8 @@
 	db 66 ; base exp
 	db GOLD_BERRY, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
-	db 100 ; unknown 1
 	db 11 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/totodile/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 
