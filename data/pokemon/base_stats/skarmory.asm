@@ -8,11 +8,8 @@
 	db 168 ; base exp
 	db TM_STEEL_WING, SHARP_BEAK ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 13 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/skarmory/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLOW ; growth rate
 	dn EGG_FLYING, EGG_MONSTER ; egg groups
 
