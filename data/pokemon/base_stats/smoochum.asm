@@ -8,11 +8,8 @@
 	db 87 ; base exp
 	db ICE_BERRY, TM_ICE_PUNCH ; items
 	db GENDER_F100 ; gender ratio
-	db 100 ; unknown 1
 	db 13 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/smoochum/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
