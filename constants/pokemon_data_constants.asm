@@ -20,12 +20,8 @@ rsset BASE_ITEMS
 BASE_ITEM_1      rb
 BASE_ITEM_2      rb
 BASE_GENDER      rb
-                 rb_skip
 BASE_EGG_STEPS   rb
-                 rb_skip
 BASE_PIC_SIZE    rb
-BASE_FRONTPIC    rw
-BASE_BACKPIC     rw
 BASE_GROWTH_RATE rb
 BASE_EGG_GROUPS  rb
 BASE_TMHM        rb (NUM_TM_HM_TUTOR + 7) / 8
