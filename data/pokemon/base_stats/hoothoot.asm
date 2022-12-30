@@ -8,11 +8,8 @@
 	db 58 ; base exp
 	db MINT_BERRY, NOISEMAKER ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 8 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/hoothoot/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FAIRY ; egg groups
 
