@@ -22,6 +22,9 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
+	setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	setevent EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+	setevent EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE
