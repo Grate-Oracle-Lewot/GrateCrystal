@@ -140,7 +140,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - The one in Goldenrod who teaches Flamethrower, Thunderbolt, and Ice Beam will now teach moves as soon as you defeat Whitney, appears every day instead of just certain days of the week, can teach multiple moves in one day, only charges 2500 coins per move instead of 4000, and can now also teach Tri Attack
 
-- Two new ones in Kanto: one will teach Sacred Fire in exchange for a Gold Leaf, and one Zeroblast (Aeroblast) for a Silver Leaf
+- Two new ones in Celadon City: one will teach Sacred Fire in exchange for a Gold Leaf, and one Zeroblast (Aeroblast) for a Silver Leaf
 
 - One in the Ruins of Alph research center will teach Aura Sphere for free once you collect all forms of Unown
 
