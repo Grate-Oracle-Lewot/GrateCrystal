@@ -8,11 +8,8 @@
 	db 196 ; base exp
 	db WATER_STONE, WATER_STONE ; items
 	db GENDER_F12_5 ; gender ratio
-	db 100 ; unknown 1
 	db 35 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/vaporeon/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
 
