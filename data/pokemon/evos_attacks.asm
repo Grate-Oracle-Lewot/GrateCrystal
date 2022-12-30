@@ -369,8 +369,9 @@ PikachuEvosAttacks:
 	db 15, AGILITY
 	db 20, THUNDERBOLT
 	db 26, DAZZLY_GLEAM
-	db 33, LIGHT_SCREEN
-	db 41, THUNDER
+	db 31, LIGHT_SCREEN
+	db 36, HYPER_FANG
+	db 43, THUNDER
 	db 50, SKULL_BASH
 	db 0 ; no more level-up moves
 
@@ -2601,8 +2602,9 @@ PichuEvosAttacks:
 	db 14, AGILITY
 	db 20, THUNDERBOLT
 	db 24, DAZZLY_GLEAM
-	db 30, LIGHT_SCREEN
-	db 36, THUNDER
+	db 28, LIGHT_SCREEN
+	db 33, HYPER_FANG
+	db 37, THUNDER
 	db 42, SKULL_BASH
 	db 0 ; no more level-up moves
 
