@@ -8,11 +8,8 @@
 	db 86 ; base exp
 	db EVERSTONE, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 8 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/geodude/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_MINERAL, EGG_HUMANSHAPE ; egg groups
 
