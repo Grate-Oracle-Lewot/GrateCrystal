@@ -8,11 +8,8 @@
 	db 187 ; base exp
 	db QUICK_CLAW, TM_FURY_CUTTER ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 13 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/scyther/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_DRAGON ; egg groups
 
