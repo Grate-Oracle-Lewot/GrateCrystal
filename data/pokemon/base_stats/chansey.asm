@@ -8,11 +8,8 @@
 	db 250 ; base exp
 	db LUCKY_EGG, LUCKY_PUNCH ; items
 	db GENDER_F100 ; gender ratio
-	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/chansey/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_HUMANSHAPE ; egg groups
 
