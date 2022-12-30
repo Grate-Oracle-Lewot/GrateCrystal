@@ -558,11 +558,11 @@ ChinchouEggMoves:
 	db -1 ; end
 
 PichuEggMoves:
-	db TRIPLE_KICK
-	db PRESENT
-	db ENCORE
 	db DOUBLESLAP
+	db TRIPLE_KICK
+	db HI_JUMP_KICK
 	db PLAY_ROUGH
+	db BITE
 	db SIGNAL_BEAM
 	db -1 ; end
 
