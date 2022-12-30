@@ -8,11 +8,8 @@
 	db 167 ; base exp
 	db CLEANSE_TAG, SPELL_TAG ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 13 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/misdreavus/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	dn EGG_INDETERMINATE, EGG_HUMANSHAPE ; egg groups
 
