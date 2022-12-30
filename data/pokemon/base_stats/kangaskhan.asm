@@ -8,11 +8,8 @@
 	db 175 ; base exp
 	db SCOPE_LENS, LEFTOVERS ; items
 	db GENDER_F75 ; gender ratio
-	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/kangaskhan/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLIGHTLY_FAST ; growth rate
 	dn EGG_MONSTER, EGG_HUMANSHAPE ; egg groups
 
