@@ -8,11 +8,8 @@
 	db 217 ; base exp
 	db SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio
-	db 100 ; unknown 1
 	db 42 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/moltres/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLOW ; growth rate
 	dn EGG_FLYING, EGG_MONSTER ; egg groups
 
