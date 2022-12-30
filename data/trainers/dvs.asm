@@ -21,19 +21,19 @@ TrainerClassDVs:
 	dn 12, 11, 11, 12 ; BROCK
 	dn 11, 12, 12, 11 ; MISTY
 	dn 12, 11, 11, 12 ; LT_SURGE
-	dn  8,  8,  9, 11 ; SCIENTIST
+	dn 10,  8,  9, 11 ; SCIENTIST
 	dn 11, 12, 12, 11 ; ERIKA
 	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
 	dn  8,  9, 11,  8 ; BIRD_KEEPER
 	dn  7,  8,  7,  7 ; LASS
 	dn 11, 12, 12, 11 ; JANINE
-	dn 10,  9,  9, 10 ; COOLTRAINERM
-	dn  9, 10, 10,  9 ; COOLTRAINERF
+	dn 12,  9,  9, 10 ; COOLTRAINERM
+	dn 11, 12, 12,  9 ; COOLTRAINERF
 	dn  7,  8,  8,  7 ; BEAUTY
 	dn  8,  9,  9,  8 ; POKEMANIAC
 	dn  8,  7,  7,  8 ; GRUNTM
-	dn  8,  9,  9,  8 ; GENTLEMAN
+	dn  6, 11,  9,  8 ; GENTLEMAN
 	dn  9,  8, 10,  9 ; SKIER
 	dn  9,  8,  8,  9 ; TEACHER
 	dn 11, 12, 12, 11 ; SABRINA
@@ -54,16 +54,16 @@ TrainerClassDVs:
 	dn 12,  9,  9,  8 ; BLACKBELT_T
 	dn 10, 11, 11, 10 ; EXECUTIVEM
 	dn  8,  9,  9, 12 ; PSYCHIC_T
-	dn  7,  6,  6,  7 ; PICNICKER
-	dn  6,  7,  7,  6 ; CAMPER
+	dn  5,  6,  6,  5 ; PICNICKER
+	dn  6,  5,  5,  6 ; CAMPER
 	dn 11, 10, 10, 11 ; EXECUTIVEF
 	dn  8,  9,  9, 10 ; SAGE
 	dn  9,  8,  8, 11 ; MEDIUM
 	dn  8,  9, 11,  8 ; BOARDER
-	dn  8,  9,  9,  8 ; POKEFANM
+	dn 10,  9,  9,  8 ; POKEFANM
 	dn  9, 10, 10,  9 ; KIMONO_GIRL
 	dn  7,  6,  6,  7 ; TWINS
-	dn  9,  8,  8,  9 ; POKEFANF
+	dn 11, 12, 12,  9 ; POKEFANF
 	dn 14, 15, 15, 14 ; RED
 	dn 12, 13, 13, 12 ; BLUE
 	dn 10,  9,  7,  8 ; OFFICER
