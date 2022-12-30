@@ -8,11 +8,8 @@
 	db 202 ; base exp
 	db HARD_STONE, REVIVAL_HERB ; items
 	db GENDER_F12_5 ; gender ratio
-	db 100 ; unknown 1
 	db 18 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/aerodactyl/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLOW ; growth rate
 	dn EGG_FLYING, EGG_DRAGON ; egg groups
 
