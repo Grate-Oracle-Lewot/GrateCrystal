@@ -7,20 +7,20 @@ TypeNames:
 	dw Poison
 	dw Ground
 	dw Rock
-	dw Bird
+	dw CurseType
 	dw Bug
 	dw Ghost
 	dw Steel
 	assert_table_length UNUSED_TYPES
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
-	dw Normal
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
+	dw CurseType
 	dw CurseType
 	assert_table_length UNUSED_TYPES_END
 	dw Fire
@@ -47,7 +47,6 @@ Psychic:   db "PSYCHIC@"
 Ice:       db "ICE@"
 Ground:    db "GROUND@"
 Rock:      db "ROCK@"
-Bird:      db "BIRD@"
 Bug:       db "BUG@"
 Ghost:     db "GHOST@"
 Steel:     db "STEEL@"
