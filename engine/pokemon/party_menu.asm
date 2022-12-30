@@ -762,12 +762,6 @@ TeachWhichPKMNString:
 MoveToWhereString:
 	db "Move to where?@"
 
-ChooseAFemalePKMNString: ; unreferenced
-	db "Choose a ♀<PK><MN>.@"
-
-ChooseAMalePKMNString: ; unreferenced
-	db "Choose a ♂<PK><MN>.@"
-
 ToWhichPKMNString:
 	db "To which <PK><MN>?@"
 
