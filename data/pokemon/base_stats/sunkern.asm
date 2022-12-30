@@ -8,11 +8,8 @@
 	db 52 ; base exp
 	db SUN_STONE, TM_SOLARBEAM ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/sunkern/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_PLANT, EGG_FAIRY ; egg groups
 
