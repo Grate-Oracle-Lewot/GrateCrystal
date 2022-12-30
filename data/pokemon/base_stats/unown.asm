@@ -8,11 +8,8 @@
 	db 103 ; base exp
 	db MYSTERYBERRY, TM_HIDDEN_POWER ; items
 	db GENDER_UNKNOWN ; gender ratio
-	db 100 ; unknown 1
 	db 42 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/unown_a/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
