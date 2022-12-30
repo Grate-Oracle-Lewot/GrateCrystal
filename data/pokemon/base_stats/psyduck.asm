@@ -8,11 +8,8 @@
 	db 80 ; base exp
 	db FRESH_WATER, TM_PSYCHIC_M ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/psyduck/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_FLYING ; egg groups
 
