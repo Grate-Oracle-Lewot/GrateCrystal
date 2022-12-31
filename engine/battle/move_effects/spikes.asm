@@ -24,8 +24,6 @@ BattleCommand_Spikes:
 	jp FailMove
 
 .failed
-	call BattleCommand_CheckHit
-	call BattleCommand_FailureText
 	call AnimateCurrentMove
 	push bc
 	ld a, EVASION
