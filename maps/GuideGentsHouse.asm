@@ -7,17 +7,9 @@ GuideGentsHouse_MapScripts:
 	def_callbacks
 
 GuideGentsHouseGuideGent:
-	winlosstext GuideGentsHouseGuideGentText, 0
-	loadtrainer POKEFANM, JOSHUA
-	startbattle
-	reloadmapafterbattle
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseBookshelf:
-	winlosstext GuideGentsHouseGuideGentText, 0
-	loadtrainer POKEFANF, RUTH
-	startbattle
-	reloadmapafterbattle
 	jumpstd MagazineBookshelfScript
 
 GuideGentsHouseGuideGentText:
