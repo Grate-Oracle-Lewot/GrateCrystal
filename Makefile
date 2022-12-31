@@ -71,6 +71,13 @@ clean: tidy
 	        -o -name "*.sgb.tilemap" \) \
 	     -delete
 	find gfx/pokemon -mindepth 1 \
+	     ! -path "gfx/pokemon/pikachu/*" \
+	     \( -name "bitmask.asm" \
+	        -o -name "frames.asm" \
+	        -o -name "front.animated.tilemap" \
+	        -o -name "front.dimensions" \) \
+	     -delete
+	find gfx/pokemon -mindepth 1 \
 	     ! -path "gfx/pokemon/unown/*" \
 	     \( -name "bitmask.asm" \
 	        -o -name "frames.asm" \
