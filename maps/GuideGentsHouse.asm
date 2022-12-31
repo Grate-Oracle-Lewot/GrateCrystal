@@ -7,6 +7,9 @@ GuideGentsHouse_MapScripts:
 	def_callbacks
 
 GuideGentsHouseGuideGent:
+	loadwildmon PIKACHU, 1
+	startbattle
+	reloadmapafterbattle
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseBookshelf:
