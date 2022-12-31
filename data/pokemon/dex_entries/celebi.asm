@@ -1,4 +1,4 @@
-	db "TIME FAIRY@" ; species name
+	db "TIME ONION@" ; species name
 	dw 200, 110 ; height, weight
 
 	db   "Since it can warp"
