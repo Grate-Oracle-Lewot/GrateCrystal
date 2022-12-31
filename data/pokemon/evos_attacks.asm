@@ -3651,9 +3651,9 @@ RaikouEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 1, EXTREMESPEED
-	db 11, THUNDERSHOCK
+	db 11, THUNDER_WAVE
 	db 21, ROAR
-	db 31, QUICK_ATTACK
+	db 31, SONICBOOM
 	db 41, SPARK
 	db 51, REFLECT
 	db 61, CRUNCH
@@ -3665,12 +3665,12 @@ EnteiEvosAttacks:
 	db 1, BITE
 	db 1, LEER
 	db 1, EXTREMESPEED
-	db 11, EMBER
+	db 11, FIRE_SPIN
 	db 21, ROAR
-	db 31, FIRE_SPIN
-	db 41, STOMP
-	db 51, FLAMETHROWER
-	db 61, SWAGGER
+	db 31, STOMP
+	db 41, FLAMETHROWER
+	db 51, SWAGGER
+	db 61, EARTH_POWER
 	db 71, FIRE_BLAST
 	db 0 ; no more level-up moves
 
