@@ -264,6 +264,7 @@ GetBaseData::
 	ld de, wCurBaseData
 	ld bc, BASE_DATA_SIZE
 	call CopyBytes
+	jr .end
 
 .egg
 	ld de, UnusedEggPic
@@ -273,6 +274,7 @@ GetBaseData::
 	ld hl, wBasePicSize
 	ld [hl], b
 
+.end
 ; Replace Pokedex # with species
 	ld a, [wCurSpecies]
 	ld [wBaseDexNo], a
