@@ -28,7 +28,7 @@ TrainerClassDVs:
 	dn  8,  9, 11,  8 ; BIRD_KEEPER
 	dn  7,  8,  7,  7 ; LASS
 	dn 11, 12, 12, 11 ; JANINE
-	dn 12,  9,  9, 10 ; COOLTRAINERM
+	dn 12, 13,  9, 10 ; COOLTRAINERM
 	dn 11, 12, 12,  9 ; COOLTRAINERF
 	dn  7,  8,  8,  7 ; BEAUTY
 	dn  8,  9,  9,  8 ; POKEMANIAC
@@ -54,8 +54,8 @@ TrainerClassDVs:
 	dn 12,  9,  9,  8 ; BLACKBELT_T
 	dn 10, 11, 11, 10 ; EXECUTIVEM
 	dn  8,  9,  9, 12 ; PSYCHIC_T
-	dn  5,  6,  6,  5 ; PICNICKER
-	dn  6,  5,  5,  6 ; CAMPER
+	dn  7,  6,  6,  7 ; PICNICKER
+	dn  6,  7,  7,  6 ; CAMPER
 	dn 11, 10, 10, 11 ; EXECUTIVEF
 	dn  8,  9,  9, 10 ; SAGE
 	dn  9,  8,  8, 11 ; MEDIUM
