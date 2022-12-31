@@ -240,6 +240,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Artificial save delays removed
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
+- Kurt finishes Apricorn balls instantly
 - 25% AI failure chance removed
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
