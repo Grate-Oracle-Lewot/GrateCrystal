@@ -351,9 +351,12 @@ NationalParkYoungster1Text:
 	done
 
 NationalParkYoungster2Text:
-	text "I get the other"
-	line "guy's #DEX"
-	cont "sticker if I win."
+	text "I like the white"
+	line "belly on RETRO"
+	cont "PIKACHU."
+
+	para "None of the other"
+	line "forms have it!"
 	done
 
 NationalParkTeacher2Text:
