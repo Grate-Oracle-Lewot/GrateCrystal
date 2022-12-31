@@ -268,6 +268,11 @@ GetBaseData::
 .egg
 	ld de, UnusedEggPic
 
+; Sprite dimensions
+	ld b, $55 ; 5x5
+	ld hl, wBasePicSize
+	ld [hl], b
+
 ; Replace Pokedex # with species
 	ld a, [wCurSpecies]
 	ld [wBaseDexNo], a
