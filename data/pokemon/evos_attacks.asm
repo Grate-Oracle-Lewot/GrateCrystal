@@ -3173,9 +3173,9 @@ GranbullEvosAttacks:
 
 QwilfishEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, SPIKES
 	db 5, WATER_GUN
-	db 10, SPIKES
+	db 10, FIRE_SPIN
 	db 10, MINIMIZE
 	db 19, FLAME_WHEEL
 	db 28, PIN_MISSILE
