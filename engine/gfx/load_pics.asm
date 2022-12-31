@@ -344,6 +344,7 @@ GetMonBackpic:
 	ld hl, UnownPicPointers
 	ld a, c
 	ld d, BANK(UnownPicPointers)
+	jr .ok
 .check_pikachu
 	ld a, b
 	cp PIKACHU
