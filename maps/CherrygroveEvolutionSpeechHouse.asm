@@ -12,10 +12,6 @@ CherrygroveEvolutionSpeechHouseYoungsterScript:
 	writetext CherrygroveEvolutionSpeechHouseYoungsterText
 	waitbutton
 	closetext
-	winlosstext CherrygroveEvolutionSpeechHouseYoungsterText, 0
-	loadtrainer COOLTRAINERM, TYLER
-	startbattle
-	reloadmapafterbattle
 	end
 
 CherrygroveEvolutionSpeechHouseLassScript:
@@ -23,10 +19,6 @@ CherrygroveEvolutionSpeechHouseLassScript:
 	writetext CherrygroveEvolutionSpeechHouseLassText
 	waitbutton
 	closetext
-	winlosstext CherrygroveEvolutionSpeechHouseLassText, 0
-	loadtrainer COOLTRAINERF, JOYCE
-	startbattle
-	reloadmapafterbattle
 	end
 
 CherrygroveEvolutionSpeechHouseBookshelf:
