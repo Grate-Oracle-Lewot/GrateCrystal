@@ -55,13 +55,13 @@ PlayersNeighborsDaughterText:
 	para "carried around by"
 	line "balloons."
 
-	para "Each PIKACHU form"
-	line "has a different"
-	cont "secondary type."
+	para "They're always"
+	line "electric type, but"
 
-	para "They all evolve"
-	line "from PICHU and in-"
-	cont "to RAICHU, though."
+	para "some are also nor-"
+	line "mal, fairy, fight-"
+	cont "ing, water, or"
+	cont "flying."
 	done
 
 PlayersNeighborText:
