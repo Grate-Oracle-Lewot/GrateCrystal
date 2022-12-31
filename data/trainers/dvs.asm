@@ -12,9 +12,9 @@ TrainerClassDVs:
 	dn 11, 12, 11, 11 ; CLAIR
 	dn 13, 13, 13, 12 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
-	dn 13, 13, 13, 13 ; WILL
+	dn 11, 15, 15, 13 ; WILL
 	dn 13, 13, 13, 13 ; CAL
-	dn 13, 13, 13, 12 ; BRUNO
+	dn 13, 13, 13, 14 ; BRUNO
 	dn 13, 13, 13, 13 ; KAREN
 	dn 13, 13, 13, 12 ; KOGA
 	dn 13, 13, 13, 12 ; CHAMPION
