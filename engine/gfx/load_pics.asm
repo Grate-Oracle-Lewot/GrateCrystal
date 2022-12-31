@@ -101,39 +101,6 @@ GetPikachuForm:
 	ldh a, [hQuotient + 3]
 	inc a
 	ld [wPikachuForm], a
-
-; Change secondary type in wBaseType2
-	ld a, [wPikachuForm]
-	cp PIKACHU_SILVER
-	jr z, .normal_type
-	cp PIKACHU_CRYSTAL
-	jr z, .fairy_type
-	cp PIKACHU_FIGHTING
-	jr z, .fighting_type
-	cp PIKACHU_SURFING
-	jr z, .water_type
-	cp PIKACHU_FLYING
-	jr z, .flying_type
-	ld a, ELECTRIC
-	jr .end
-
-.normal_type
-	ld a, NORMAL
-	jr .end
-.fairy_type
-	ld a, FAIRY
-	jr .end
-.fighting_type
-	ld a, FIGHTING
-	jr .end
-.water_type
-	ld a, WATER
-	jr .end
-.flying_type
-	ld a, FLYING
-.end
-	ld [wBaseType2], a
-	ld a, [wPikachuForm]
 	ret
 
 GetMonFrontpic:
