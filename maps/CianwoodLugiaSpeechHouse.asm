@@ -35,15 +35,14 @@ CianwoodLugiaSpeechHouseTeacherText:
 	done
 
 CianwoodLugiaSpeechHouseLassText:
-	text "I heard that you"
-	line "can only see it if"
+	text "PIKACHU can learn"
+	line "SURF, even if it's"
 
-	para "you have a SILVER"
-	line "WING."
+	para "not in its SURFING"
+	line "form."
 
-	para "It must have the"
-	line "same scent as the"
-	cont "creature."
+	para "It's fun crossing"
+	line "the sea with it!"
 	done
 
 CianwoodLugiaSpeechHouseTwinText:
