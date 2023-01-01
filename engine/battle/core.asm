@@ -6335,7 +6335,7 @@ LoadEnemyMon:
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .Happiness
+	jp nz, .Happiness
 
 ; Species-specfic:
 
