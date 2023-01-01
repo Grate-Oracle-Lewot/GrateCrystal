@@ -313,7 +313,7 @@ GetMonBackpic:
 	ld d, BANK(UnownPicPointers)
 	jr .ok
 .check_pikachu
-	ld a, b
+	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr nz, .ok
 	ld hl, PikachuPicPointers
