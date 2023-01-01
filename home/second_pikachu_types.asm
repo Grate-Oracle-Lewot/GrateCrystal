@@ -7,4 +7,4 @@ SecondPikachuTypes:
   db FIGHTING ; PIKACHU_FIGHTING
   db WATER    ; PIKACHU_SURFING
   db FLYING   ; PIKACHU_FLYING
-  assert_table_length NUM_PIKACHU_FORMS + 1
+  assert_table_length NUM_PIKACHU_FORMS
