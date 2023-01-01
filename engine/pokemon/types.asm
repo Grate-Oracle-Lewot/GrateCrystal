@@ -4,6 +4,17 @@ PrintMonTypes:
 
 	push hl
 	call GetBaseData
+	ld a, [wPikachuForm]
+	ld hl, SecondPikachuTypes
+
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+
+	ld a, [hl]
+	ld [wBaseType2], a
 	pop hl
 
 	push hl
