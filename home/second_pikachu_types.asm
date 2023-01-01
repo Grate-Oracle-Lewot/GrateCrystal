@@ -1,4 +1,4 @@
-SecondPikachuTypes:
+SecondPikachuTypes::
 ; entries correspond to PIKACHU_* constants
   table_width 1, SecondPikachuTypes
   db ELECTRIC ; PIKACHU_RETRO
