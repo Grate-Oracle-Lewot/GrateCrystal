@@ -9287,7 +9287,7 @@ GetSecondPikachuType:
 ; must be called when [wCurPartySpecies] = PIKACHU
     ; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
     ld a, [wPikachuForm]
-    dec a
+    dec a ; -1 because the Pikachu form constants are offset compared to the secondary types table
     ld hl, SecondPikachuTypes
 
     ; add a to hl, efficiently
