@@ -476,19 +476,6 @@ StatsScreen_InitUpperHalf:
 	dw sBoxMonNicknames
 	dw wBufferMonNickname
 
-StatsScreen_PlaceVerticalDivider: ; unreferenced
-; The Japanese stats screen has a vertical divider.
-	hlcoord 7, 0
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
-.loop
-	ld a, $31 ; vertical divider
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ret
-
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
@@ -1002,9 +989,6 @@ StatsScreen_LoadTextboxSpaceGFX:
 	pop hl
 	ret
 
-StatsScreenSpaceGFX: ; unreferenced
-INCBIN "gfx/font/space.2bpp"
-
 EggStatsScreen:
 	xor a
 	ldh [hBGMapMode], a
@@ -1218,3 +1202,21 @@ CheckFaintedFrzSlp:
 .fainted_frz_slp
 	scf
 	ret
+
+StatsScreen_GetSecondPikachuType:
+; must be called when [wCurPartySpecies] = PIKACHU
+    ; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
+    ld a, [wPikachuForm]
+    ld hl, SecondPikachuTypes
+
+    ; add a to hl, efficiently
+    ; https://github.com/pret/pokecrystal/wiki/Optimizing-assembly-code#add-a-to-a-16-bit-register
+    add l
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+
+    ; get the form and return it in a
+    ld a, [hl]
+    ret
