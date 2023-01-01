@@ -4063,6 +4063,14 @@ InitBattleMon:
 	ld [wBattleMonType1], a
 	ld a, [wBaseType2]
 	ld [wBattleMonType2], a
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld hl, wBattleMonDVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wBattleMonType2], a
+.skip_pikachu
 	ld hl, wPartyMonNicknames
 	ld a, [wCurBattleMon]
 	call SkipNames
@@ -4162,6 +4170,14 @@ InitEnemyMon:
 	ld [de], a
 	; The enemy mon's base Sp. Def isn't needed since its base
 	; Sp. Atk is also used to calculate Sp. Def stat experience.
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
+.skip_pikachu
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
 	ld b, NUM_STATS - 1
@@ -6197,7 +6213,7 @@ LoadEnemyMon:
 ; Failing that, it's all up to chance
 ;  Effective chances:
 ;    58% None
-;    42% Item1
+;    37% Item1
 ;     5% Item2
 
 ; 42% chance of getting an item
@@ -6326,18 +6342,29 @@ LoadEnemyMon:
 ; Unown
 	ld a, [wTempEnemyMonSpecies]
 	cp UNOWN
-	jr nz, .Magikarp
+	jr nz, .Pikachu
 
 ; Get letter based on DVs
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jr nc, .Magikarp
+	jr nc, .Pikachu
 ; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
 	cp 5 percent
 	jr nc, .GenerateDVs ; reroll DVs
+
+.Pikachu:
+	ld a, [wTempEnemyMonSpecies]
+	cp PIKACHU
+	jr nz, .Magikarp
+; Get form based on DVs
+	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
+; Change second type based on form
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
 
 .Magikarp:
 ; These filters are untranslated.
@@ -9254,3 +9281,21 @@ GetWeatherImage:
 	db $88, $14 ; y/x - bottom left
 	db $80, $1c ; y/x - top right
 	db $80, $14 ; y/x - top left
+
+GetSecondPikachuType:
+; must be called when [wCurPartySpecies] = PIKACHU
+    ; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
+    ld a, [wPikachuForm]
+    ld hl, SecondPikachuTypes
+
+    ; add a to hl, efficiently
+    ; https://github.com/pret/pokecrystal/wiki/Optimizing-assembly-code#add-a-to-a-16-bit-register
+    add l
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+
+    ; get the form and return it in a
+    ld a, [hl]
+    ret
