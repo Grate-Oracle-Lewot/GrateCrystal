@@ -854,8 +854,6 @@ StatsScreen_PlaceFrontpic:
 	ld hl, wStatsScreenFlags
 	set 5, [hl]
 	ld a, [wCurPartySpecies]
-	cp PIKACHU
-	jr z, .unown
 	cp UNOWN
 	jr z, .unown
 	hlcoord 0, 0
@@ -871,8 +869,6 @@ StatsScreen_PlaceFrontpic:
 
 .AnimateEgg:
 	ld a, [wCurPartySpecies]
-	cp PIKACHU
-	jr z, .unownegg
 	cp UNOWN
 	jr z, .unownegg
 	ld a, TRUE
