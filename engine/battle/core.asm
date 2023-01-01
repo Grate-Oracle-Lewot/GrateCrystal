@@ -6349,11 +6349,12 @@ LoadEnemyMon:
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jr nc, .Pikachu
+	jr nc, .Magikarp
 ; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
 	cp 5 percent
 	jr nc, .GenerateDVs ; reroll DVs
+	jr .Magikarp
 
 .Pikachu:
 	ld a, [wTempEnemyMonSpecies]
@@ -9286,6 +9287,7 @@ GetSecondPikachuType:
 ; must be called when [wCurPartySpecies] = PIKACHU
     ; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
     ld a, [wPikachuForm]
+    dec a
     ld hl, SecondPikachuTypes
 
     ; add a to hl, efficiently
