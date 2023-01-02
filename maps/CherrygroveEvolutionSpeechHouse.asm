@@ -19,9 +19,6 @@ CherrygroveEvolutionSpeechHouseLassScript:
 	writetext CherrygroveEvolutionSpeechHouseLassText
 	waitbutton
 	closetext
-	loadwildmon UNOWN, 1
-	startbattle
-	reloadmapafterbattle
 	end
 
 CherrygroveEvolutionSpeechHouseBookshelf:
