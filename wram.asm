@@ -2708,7 +2708,7 @@ wMonTriedToEvolve:: db
 
 wTimeOfDay:: db
 
-	ds 1
+wTotalBattleTurns:: db
 
 
 SECTION "Enemy Party", WRAMX
