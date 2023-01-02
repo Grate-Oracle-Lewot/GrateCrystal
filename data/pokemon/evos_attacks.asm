@@ -2267,7 +2267,7 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, POWDER_SNOW
+	db 1, POUND
 	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
@@ -2366,7 +2366,7 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 2, EMBER
+	db 2, TAIL_WHIP
 	db 7, RAGE
 	db 12, CLAMP
 	db 17, VICEGRIP
