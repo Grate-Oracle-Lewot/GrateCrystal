@@ -307,15 +307,14 @@ GetMonBackpic:
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
 	cp UNOWN
-	ld a, b
 	jr nz, .check_pikachu
 	ld hl, UnownPicPointers
 	ld a, c
 	ld d, BANK(UnownPicPointers)
 	jr .ok
 .check_pikachu
-	cp PIKACHU
 	ld a, b
+	cp PIKACHU
 	jr nz, .ok
 	ld hl, PikachuPicPointers
 	ld a, [wPikachuForm]
