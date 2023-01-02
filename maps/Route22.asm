@@ -6,8 +6,8 @@ Route22_MapScripts:
 VictoryRoadEntranceSign:
 	jumptext VictoryRoadEntranceSignText
 
-Route22HiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_ROUTE_22_HIDDEN_FULL_RESTORE
+Route22HiddenTimerBall:
+	hiddenitem TIMER_BALL, EVENT_ROUTE_22_HIDDEN_TIMER_BALL
 
 VictoryRoadEntranceSignText:
 	text "#MON LEAGUE"
@@ -27,6 +27,6 @@ Route22_MapEvents:
 
 	def_bg_events
 	bg_event 15,  7, BGEVENT_READ, VictoryRoadEntranceSign
-	bg_event 30,  2, BGEVENT_ITEM, Route22HiddenFullRestore
+	bg_event 30,  2, BGEVENT_ITEM, Route22HiddenTimerBall
 
 	def_object_events
