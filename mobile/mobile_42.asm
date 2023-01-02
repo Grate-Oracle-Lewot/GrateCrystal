@@ -199,12 +199,12 @@ Function1080b7:
 	ld a, [wPlayerTrademonSpecies]
 	ld hl, wPlayerTrademonDVs
 	ld de, vTiles0 tile $30
-	call MobileTradeAnim_GetFrontpic
+	call MobileTradeAnim_GetFrontpic_Player
 
 	ld a, [wOTTrademonSpecies]
 	ld hl, wOTTrademonDVs
 	ld de, vTiles2 tile $31
-	call MobileTradeAnim_GetFrontpic
+	call MobileTradeAnim_GetFrontpic_OT
 
 	ld a, [wPlayerTrademonSpecies]
 	ld de, wPlayerTrademonSpeciesName
@@ -285,9 +285,25 @@ MobileTradeAnim_ClearBGMap:
 	call ByteFill
 	ret
 
-MobileTradeAnim_GetFrontpic:
+MobileTradeAnim_GetFrontpic_Player:
 	push de
 	push af
+	predef GetPikachuForm
+	ld hl, wPlayerTrademonDVs
+	predef GetUnownLetter
+	pop af
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	call GetBaseData
+	pop de
+	predef GetMonFrontpic
+	ret
+
+MobileTradeAnim_GetFrontpic_OT:
+	push de
+	push af
+	predef GetPikachuForm
+	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
@@ -300,6 +316,8 @@ MobileTradeAnim_GetFrontpic:
 Function108201:
 	push de
 	push af
+	predef GetPikachuForm
+	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
