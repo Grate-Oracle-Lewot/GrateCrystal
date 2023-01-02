@@ -733,6 +733,7 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
+	dbw TIMER_BALL,  TimerBallMultiplier
 	dbw DUSK_BALL,   DuskBallMultiplier
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
@@ -760,6 +761,22 @@ ParkBallMultiplier:
 	ret nc
 	ld b, $ff
 	ret
+
+TimerBallMultiplier:
+; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
+	ld a, [wTotalBattleTurns]
+	ld b, a
+	add a
+	add b
+	add 10
+	cp 40
+	jr c, .nocap
+	ld a, 40
+.nocap
+	ldh [hMultiplier], a
+	call Multiply
+	ln a, 1, 10 ; x0.1 after the above multiplier gives 1.3x, 1.6x, 1.9x, ..., 4x.
+	jp MultiplyAndDivide
 
 DuskBallMultiplier:
 ; no boost indoors, even at night
@@ -1921,20 +1938,6 @@ LoadCurHPIntoBuffer3:
 	ld [wHPBuffer3], a
 	ret
 
-LoadHPIntoBuffer3: ; unreferenced
-	ld a, d
-	ld [wHPBuffer3 + 1], a
-	ld a, e
-	ld [wHPBuffer3], a
-	ret
-
-LoadHPFromBuffer3: ; unreferenced
-	ld a, [wHPBuffer3 + 1]
-	ld d, a
-	ld a, [wHPBuffer3]
-	ld e, a
-	ret
-
 LoadCurHPIntoBuffer2:
 	ld a, MON_HP
 	call GetPartyParamLocation
@@ -2688,18 +2691,6 @@ WontHaveAnyEffectMessage:
 	ld hl, ItemWontHaveEffectText
 	jr CantUseItemMessage
 
-BelongsToSomeoneElseMessage: ; unreferenced
-	ld hl, ItemBelongsToSomeoneElseText
-	jr CantUseItemMessage
-
-CyclingIsntAllowedMessage: ; unreferenced
-	ld hl, NoCyclingText
-	jr CantUseItemMessage
-
-CantGetOnYourBikeMessage: ; unreferenced
-	ld hl, ItemCantGetOnText
-	; fallthrough
-
 CantUseItemMessage:
 ; Item couldn't be used.
 	xor a
@@ -2748,14 +2739,6 @@ BallBoxFullText:
 
 ItemUsedText:
 	text_far _ItemUsedText
-	text_end
-
-ItemGotOnText: ; unreferenced
-	text_far _ItemGotOnText
-	text_end
-
-ItemGotOffText: ; unreferenced
-	text_far _ItemGotOffText
 	text_end
 
 ApplyPPUp:
