@@ -4,7 +4,7 @@ PrintMonTypes:
 
 	push hl
 	call GetBaseData
-	ld hl, wEnemyMonDVs
+	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld a, [wPikachuForm]
 	ld hl, SecondPikachuTypes
