@@ -174,7 +174,6 @@ GetFrontpicPointer:
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr z, .pikachu
-	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr z, .unown
 	ld hl, PokemonPicPointers
