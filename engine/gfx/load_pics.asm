@@ -315,6 +315,8 @@ GetMonBackpic:
 .check_pikachu
 	cp PIKACHU
 	jr nz, .ok
+	ld hl, wBattleMonDVs
+	predef GetPikachuForm
 	ld hl, PikachuPicPointers
 	ld a, [wPikachuForm]
 	ld d, BANK(PikachuPicPointers)
