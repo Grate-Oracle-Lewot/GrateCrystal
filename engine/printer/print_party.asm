@@ -212,6 +212,7 @@ PrintPartyMonPage1:
 	call PlaceGenderAndShininess
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
+	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	ld hl, wBoxAlignment
 	xor a
