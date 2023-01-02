@@ -14,6 +14,7 @@ PrintMonTypes:
 	ld h, a
 
 	ld a, [hl]
+	dec a
 	ld [wBaseType2], a
 	pop hl
 
