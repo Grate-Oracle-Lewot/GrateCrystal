@@ -205,11 +205,11 @@ RunTradeAnimScript:
 	ld a, [wPlayerTrademonSpecies]
 	ld hl, wPlayerTrademonDVs
 	ld de, vTiles0
-	call TradeAnim_GetFrontpic
+	call TradeAnim_GetFrontpic_Player
 	ld a, [wOTTrademonSpecies]
 	ld hl, wOTTrademonDVs
 	ld de, vTiles0 tile $31
-	call TradeAnim_GetFrontpic
+	call TradeAnim_GetFrontpic_OT
 	ld a, [wPlayerTrademonSpecies]
 	ld de, wPlayerTrademonSpeciesName
 	call TradeAnim_GetNicknamename
@@ -805,10 +805,25 @@ TradeAnim_AnimateFrontpic:
 	call TradeAnim_AdvanceScriptPointer
 	ret
 
-TradeAnim_GetFrontpic:
+TradeAnim_GetFrontpic_Player:
 	push de
 	push af
 	predef GetPikachuForm
+	ld hl, wPlayerTrademonDVs
+	predef GetUnownLetter
+	pop af
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	call GetBaseData
+	pop de
+	predef GetMonFrontpic
+	ret
+
+TradeAnim_GetFrontpic_OT:
+	push de
+	push af
+	predef GetPikachuForm
+	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
@@ -1399,45 +1414,6 @@ TradeAnim_WaitAnim2:
 .done
 	call TradeAnim_AdvanceScriptPointer
 	ret
-
-DebugTrade: ; unreferenced
-; This function was meant for use in Japanese versions, so the
-; constant used for copy length was changed by accident.
-
-	ld hl, .DebugTradeData
-
-	ld a, [hli]
-	ld [wPlayerTrademonSpecies], a
-	ld de, wPlayerTrademonSenderName
-	ld c, NAME_LENGTH + 2 ; JP: NAME_LENGTH_JAPANESE + 2
-.loop1
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop1
-
-	ld a, [hli]
-	ld [wOTTrademonSpecies], a
-	ld de, wOTTrademonSenderName
-	ld c, NAME_LENGTH + 2 ; JP: NAME_LENGTH_JAPANESE + 2
-.loop2
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop2
-	ret
-
-debugtrade: MACRO
-; species, ot name, ot id
-	db \1, \2
-	dw \3
-ENDM
-
-.DebugTradeData:
-	debugtrade VENUSAUR,  "ゲーフり@@", $0123 ; GAME FREAK
-	debugtrade CHARIZARD, "クりーチャ@", $0456 ; Creatures Inc.
 
 TradeGameBoyTilemap:  INCBIN "gfx/trade/game_boy.tilemap" ; 6x8
 TradeLinkTubeTilemap: INCBIN "gfx/trade/link_cable.tilemap" ; 12x3
