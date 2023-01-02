@@ -9285,19 +9285,18 @@ GetWeatherImage:
 
 GetSecondPikachuType:
 ; must be called when [wCurPartySpecies] = PIKACHU
-    ; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
-    ld a, [wPikachuForm]
-    dec a ; -1 because the Pikachu form constants are offset compared to the secondary types table
-    ld hl, SecondPikachuTypes
+	; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
+	ld a, [wPikachuForm]
+	ld hl, SecondPikachuTypes
 
-    ; add a to hl, efficiently
-    ; https://github.com/pret/pokecrystal/wiki/Optimizing-assembly-code#add-a-to-a-16-bit-register
-    add l
-    ld l, a
-    adc h
-    sub l
-    ld h, a
+	; add a to hl, efficiently: https://github.com/pret/pokecrystal/wiki/Optimizing-assembly-code#add-a-to-a-16-bit-register
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
 
-    ; get the form and return it in a
-    ld a, [hl]
-    ret
+	; get the form and return it in a
+	ld a, [hl]
+	dec a ; -1 because the Pikachu form constants are offset compared to the secondary types table
+	ret
