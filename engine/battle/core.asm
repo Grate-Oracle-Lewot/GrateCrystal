@@ -4214,6 +4214,7 @@ SwitchPlayerMon:
 SendOutPlayerMon:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7
@@ -8097,6 +8098,7 @@ DropPlayerSub:
 	ld [wCurPartySpecies], a
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
@@ -8135,6 +8137,7 @@ DropEnemySub:
 	call GetBaseData
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
+	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2
 	predef GetAnimatedFrontpic
