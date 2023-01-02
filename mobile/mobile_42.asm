@@ -1218,7 +1218,7 @@ asm_108966:
 
 Function10898a:
 	ld de, vTiles2
-	call MobileTradeAnim_GetFrontpic
+	call MobileTradeAnim_GetFrontpic_OT
 	call WaitTop
 	call MobileTradeAnim_ClearTilemap
 	hlcoord 7, 2
