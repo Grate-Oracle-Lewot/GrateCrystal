@@ -130,7 +130,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - New held items that each completely prevent a specific status condition
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Most Berries renamed for flavor
-- X Sp. Defend, Dusk Ball, and Eviolite
+- X Sp. Defend, Dusk Ball, Timer Ball, and Eviolite
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
 - Berserk Gene removed (had to for space)
