@@ -100,11 +100,6 @@ GetPikachuForm:
 ; Increment to get 1-6
 	ldh a, [hQuotient + 3]
 	inc a
-; The valid range is 1-6, so use PIKACHU_RETRO instead of 7
-	cp NUM_PIKACHU_FORMS + 1
-	jr c, .valid
-	ld a, PIKACHU_RETRO
-.valid
 	ld [wPikachuForm], a
 	ret
 
