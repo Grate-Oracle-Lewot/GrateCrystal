@@ -366,30 +366,22 @@ MrPokemonsHouse_OakText1:
 
 	para "Let's see…"
 
-	para "Hm, I see!"
+	para "Yes, I see it!"
 
-	para "I understand why"
-	line "PROF.ELM gave you"
+	para "Your #MON al-"
+	line "ready trusts you!"
 
-	para "a #MON for this"
-	line "errand."
+	para "You seem to have"
+	line "that same spark as"
 
-	para "To researchers"
-	line "like PROF.ELM and"
+	para "my grandson and"
+	line "his friend."
 
-	para "I, #MON are our"
-	line "friends."
-
-	para "He saw that you"
-	line "would treat your"
-
-	para "#MON with love"
-	line "and care."
+	para "I think you'll go"
+	line "on to become a"
+	cont "great trainer!"
 
 	para "…Ah!"
-
-	para "You seem to be"
-	line "dependable."
 
 	para "How would you like"
 	line "to help me out?"
