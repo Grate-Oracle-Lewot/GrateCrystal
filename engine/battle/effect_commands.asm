@@ -1090,6 +1090,10 @@ BattleCommand_Critical:
 	xor a
 	ld [wCriticalHit], a
 
+	ld a, DRAGON ; Dragon types are immune to critical hits
+	call CheckIfTargetIsGivenType
+	ret z
+
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	and a
@@ -5389,6 +5393,10 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FlinchTarget:
+	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
+	call CheckIfTargetIsGivenType
+	ret z
+
 	call CheckSubstituteOpp
 	ret nz
 
@@ -5425,6 +5433,9 @@ CheckOpponentWentFirst:
 
 BattleCommand_HeldFlinch:
 ; kingsrock
+	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
+	call CheckIfTargetIsGivenType
+	ret z
 
 	ld a, [wAttackMissed]
 	and a
