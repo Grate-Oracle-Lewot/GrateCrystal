@@ -7,16 +7,13 @@ GuideGentsHouse_MapScripts:
 	def_callbacks
 
 GuideGentsHouseGuideGent:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon PIKACHU, 1
 	startbattle
 	reloadmapafterbattle
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseBookshelf:
-	winlosstext GuideGentsHouseGuideGentText, 0
-	loadtrainer PICNICKER, BROOKE
-	startbattle
-	reloadmapafterbattle
 	jumpstd MagazineBookshelfScript
 
 GuideGentsHouseGuideGentText:
