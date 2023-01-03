@@ -217,9 +217,8 @@ ElmsLookingForYouText:
 	para "ELM, was looking"
 	line "for you."
 
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
+	para "He said he needed"
+	line "a favor."
 
 	para "Oh! I almost for-"
 	line "got! Your #MON"
