@@ -9300,5 +9300,4 @@ GetSecondPikachuType:
 
 	; get the form and return it in a
 	ld a, [hl]
-	dec a ; -1 because the Pikachu form constants are offset compared to the secondary types table
 	ret
