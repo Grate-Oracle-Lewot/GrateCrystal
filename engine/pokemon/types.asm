@@ -4,6 +4,9 @@ PrintMonTypes:
 
 	push hl
 	call GetBaseData
+	ld a, [wCurSpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld a, [wPikachuForm]
@@ -18,6 +21,7 @@ PrintMonTypes:
 	ld a, [hl]
 	dec a
 	ld [wBaseType2], a
+.skip_pikachu
 	pop hl
 
 	push hl
