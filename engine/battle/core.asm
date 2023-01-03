@@ -9289,6 +9289,7 @@ GetSecondPikachuType:
 ; must be called when [wCurPartySpecies] = PIKACHU
 	; we want to get the [wPikachuForm]th entry from the SecondPikachuTypes table
 	ld a, [wPikachuForm]
+	dec a ; is evidently necessary
 	ld hl, SecondPikachuTypes
 
 	; add a to hl, efficiently: https://github.com/pret/pokecrystal/wiki/Optimizing-assembly-code#add-a-to-a-16-bit-register
