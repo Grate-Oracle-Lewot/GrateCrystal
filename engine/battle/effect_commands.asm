@@ -3723,7 +3723,11 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsPoisonType
+	ld a, POISON
+	call CheckIfTargetIsGivenType
+	ret z
+	ld a, STEEL
+	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3752,7 +3756,8 @@ BattleCommand_Poison:
 	and $7f
 	jp z, .failed
 
-	call CheckIfTargetIsPoisonType
+	ld a, POISON
+	call CheckIfTargetIsGivenType
 	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -3830,7 +3835,8 @@ BattleCommand_Poison:
 	cp EFFECT_TOXIC
 	ret
 
-CheckIfTargetIsPoisonType:
+CheckIfTargetIsGivenType:
+	ld b, a
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -3839,10 +3845,10 @@ CheckIfTargetIsPoisonType:
 .ok
 	ld a, [de]
 	inc de
-	cp POISON
+	cp b
 	ret z
 	ld a, [de]
-	cp POISON
+	cp b
 	ret
 
 PoisonOpponent:
@@ -3972,6 +3978,9 @@ BattleCommand_BurnTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
+	ld a, WATER ; Don't burn a Water-type
+	call CheckIfTargetIsGivenType
+	ret z
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_BURN
@@ -4040,6 +4049,9 @@ BattleCommand_FreezeTarget:
 	cp WEATHER_SUN
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ret z
+	ld a, FIRE ; Don't freeze a Fire-type
+	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
 	ld a, b
