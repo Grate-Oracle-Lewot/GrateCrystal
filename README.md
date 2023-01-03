@@ -21,6 +21,9 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap (check which Pokémon this applies to here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
   - All Grass types get a 50% Speed boost in Sunny weather
   - All Rock types get a 50% Special Defense boost in Sandstorms
+  - Fire types are immune to being Frozen
+  - Water types are immune to being Burned
+  - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Unown and Delibird learn multiple moves
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
