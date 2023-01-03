@@ -2267,7 +2267,7 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, POWDER_SNOW
+	db 1, POUND
 	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
@@ -2320,8 +2320,8 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, DEFENSE_CURL
-	db 3, SMOKESCREEN
-	db 4, EMBER
+	db 6, SMOKESCREEN
+	db 12, EMBER
 	db 15, FURY_SWIPES
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
