@@ -10,6 +10,7 @@ PrintMonTypes:
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld a, [wPikachuForm]
+	dec a
 	ld hl, SecondPikachuTypes
 
 	add l
