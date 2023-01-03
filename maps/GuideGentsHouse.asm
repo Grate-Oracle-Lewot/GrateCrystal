@@ -13,6 +13,10 @@ GuideGentsHouseGuideGent:
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseBookshelf:
+	winlosstext GuideGentsHouseGuideGentText, 0
+	loadtrainer PICNICKER, BROOKE
+	startbattle
+	reloadmapafterbattle
 	jumpstd MagazineBookshelfScript
 
 GuideGentsHouseGuideGentText:
