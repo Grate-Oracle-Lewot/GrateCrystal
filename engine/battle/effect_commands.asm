@@ -3723,10 +3723,10 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	ld a, POISON
+	ld a, POISON ; Don't poison a Poison-type
 	call CheckIfTargetIsGivenType
 	ret z
-	ld a, STEEL
+	ld a, STEEL ; Don't poison a Steel-type
 	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
@@ -3976,7 +3976,8 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld a, FIRE ; Don't burn a Water-type
+	call CheckIfTargetIsGivenType
 	ret z
 	ld a, WATER ; Don't burn a Water-type
 	call CheckIfTargetIsGivenType
@@ -4048,7 +4049,8 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ld a, ICE ; Don't freeze an Ice-type
+	call CheckIfTargetIsGivenType
 	ret z
 	ld a, FIRE ; Don't freeze a Fire-type
 	call CheckIfTargetIsGivenType
@@ -5946,42 +5948,6 @@ BattleCommand_Paralyze:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
-
-CheckMoveTypeMatchesTarget:
-; Compare move type to opponent type.
-; Return z if matching the opponent type,
-; unless the move is ???-type (Tri Attack).
-
-	push hl
-
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wBattleMonType1
-.ok
-
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
-	cp CURSE_TYPE
-	jr z, .normal
-
-	cp [hl]
-	jr z, .return
-
-	inc hl
-	cp [hl]
-
-.return
-	pop hl
-	ret
-
-.normal
-	ld a, 1
-	and a
-	pop hl
-	ret
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
 
