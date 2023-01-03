@@ -19,7 +19,6 @@ PrintMonTypes:
 	ld h, a
 
 	ld a, [hl]
-	dec a
 	ld [wBaseType2], a
 .skip_pikachu
 	pop hl
