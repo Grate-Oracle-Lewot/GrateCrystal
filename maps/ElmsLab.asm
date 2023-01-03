@@ -724,17 +724,8 @@ ElmText_Intro:
 	text "ELM: <PLAY_G>!"
 	line "There you are!"
 
-	para "I needed to ask"
-	line "you a favor."
-
-	para "I'm conducting new"
-	line "#MON research"
-
-	para "right now. I was"
-	line "wondering if you"
-
-	para "could help me with"
-	line "it, <PLAY_G>."
+	para "I needed your help"
+	line "with something."
 
 	para "You see…"
 
