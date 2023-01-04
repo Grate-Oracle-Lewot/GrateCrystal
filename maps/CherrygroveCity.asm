@@ -550,19 +550,11 @@ CherrygroveCitySignText:
 	done
 
 GuideGentsHouseSignText:
-	text "TRAINER TIPS"
+	text "NOTICE"
 
-	para "Psychic #MON"
-	line "can't flinch."
-
-	para "You'll never get"
-	line "a critical hit"
-
-	para "against a dragon"
-	line "type."
-
-	para "Come inside for"
-	line "more advice!"
+	para "The guy who lives"
+	line "here will talk"
+	cont "your ear off."
 	done
 
 CherrygroveCity_MapEvents:
