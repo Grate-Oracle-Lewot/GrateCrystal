@@ -117,21 +117,22 @@ GoldenrodHappinessRatingText_LooksMean:
 	done
 
 GoldenrodHappinessRaterPokefanMText:
-	text "I keep losing in"
-	line "battles, and my"
+	text "Psychic #MON"
+	line "can see into the"
 
-	para "#MON end up"
-	line "fainting…"
-
-	para "Maybe that's why"
-	line "my #MON don't"
-	cont "like me much…"
+	para "future, so they'll"
+	line "never flinch."
 	done
 
 GoldenrodHappinessRaterTwinText:
-	text "When I use an item"
-	line "on my #MON, it"
-	cont "acts really glad!"
+	text "I heard you can"
+	line "never ever get a"
+
+	para "critical hit on a"
+	line "dragon #MON."
+
+	para "Is that really"
+	line "true?"
 	done
 
 GoldenrodHappinessRater_MapEvents:
