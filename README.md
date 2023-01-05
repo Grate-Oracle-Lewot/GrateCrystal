@@ -28,6 +28,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Dragon types are immune to critical hits
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Unown and Delibird learn multiple moves
+  - All learnsets are generally more interesting, containing what would normally be egg moves, while egg moves now go even farther (but breeding chains are untested)
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - Items in limited supply can generally be found somewhere as wild held items, ensuring they never truly run out
