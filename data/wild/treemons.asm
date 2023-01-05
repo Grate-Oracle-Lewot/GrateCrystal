@@ -21,7 +21,7 @@ TreeMonSet_Canyon:
 ; common
 	db 25, SPEAROW,    10
 	db 20, SPEAROW,    20
-	db 20, SPEAROW,    30
+	db 20, FEAROW,     30
 	db 15, AIPOM,      10
 	db 10, AIPOM,      20
 	db 10, AIPOM,      30
