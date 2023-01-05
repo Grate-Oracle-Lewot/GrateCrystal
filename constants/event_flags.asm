@@ -1103,7 +1103,9 @@
 	const EVENT_BEAT_SCIENTIST_SUGURU
 	const EVENT_BEAT_SCIENTIST_TRAVIS
 	const EVENT_BEAT_SWIMMERM_PHELPS
-; Unused: next 116 (now 57) events
+	const EVENT_SAFARI_ZONE_AERODACTYL
+	const EVENT_SAFARI_ZONE_XATU
+; Unused: next 116 (now 55) events
 
 	const_next 1600
 ; Sprite visibility flags
