@@ -1105,7 +1105,8 @@
 	const EVENT_BEAT_SWIMMERM_PHELPS
 	const EVENT_SAFARI_ZONE_AERODACTYL
 	const EVENT_SAFARI_ZONE_XATU
-; Unused: next 116 (now 55) events
+	const EVENT_CHERRYGROVE_MART_DELIBIRD
+; Unused: next 116 (now 54) events
 
 	const_next 1600
 ; Sprite visibility flags
