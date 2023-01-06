@@ -2353,6 +2353,16 @@ IsAnyMonHoldingExpShare:
 
 	push hl
 	push bc
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp MAX_LEVEL
+	pop bc
+	pop hl
+	jr nc, .next
+
+	push hl
+	push bc
 	ld bc, MON_ITEM
 	add hl, bc
 	pop bc
