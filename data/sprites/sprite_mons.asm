@@ -37,4 +37,6 @@ SpriteMons:
 	db LUGIA
 	db HO_OH
 	db CHANSEY
+	db SUNFLORA
+	db MAGIKARP
 	assert_table_length NUM_POKEMON_SPRITES
