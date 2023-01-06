@@ -1,5 +1,6 @@
 	object_const_def
 	const VIRIDIANMART_CLERK
+	const VIRIDIANMART_BIRD
 	const VIRIDIANMART_LASS
 	const VIRIDIANMART_COOLTRAINER_M
 
@@ -13,6 +14,9 @@ ViridianMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_VIRIDIAN
 	closetext
 	end
+
+ViridianMartDelibirdScript:
+	jumpstd MartDelibirdScript
 
 ViridianMartLassScript:
 	jumptextfaceplayer ViridianMartLassText
@@ -47,5 +51,6 @@ ViridianMart_MapEvents:
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianMartClerkScript, -1
+	object_event  1,  2, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianMartDelibirdScript, -1
 	object_event  7,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartLassScript, -1
 	object_event  1,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianMartCooltrainerMScript, -1
