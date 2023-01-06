@@ -1,6 +1,7 @@
 	object_const_def
 	const SAFARIZONE_BIRD1
 	const SAFARIZONE_BIRD2
+	const SAFARIZONE_LAPRAS
 	const SAFARIZONE_POKE_BALL1
 	const SAFARIZONE_POKE_BALL2
 
@@ -12,7 +13,7 @@ SafariZone_MapScripts:
 SafariZoneAerodactylScript:
 	waitsfx
 	cry AERODACTYL
-	loadwildmon AERODACTYL, 55
+	loadwildmon AERODACTYL, 56
 	startbattle
 	disappear SAFARIZONE_BIRD1
 	reloadmapafterbattle
@@ -24,6 +25,15 @@ SafariZoneXatuScript:
 	loadwildmon XATU, 55
 	startbattle
 	disappear SAFARIZONE_BIRD2
+	reloadmapafterbattle
+	end
+
+SafariZoneLaprasScript:
+	waitsfx
+	cry LAPRAS
+	loadwildmon LAPRAS, 57
+	startbattle
+	disappear SAFARIZONE_LAPRAS
 	reloadmapafterbattle
 	end
 
@@ -51,5 +61,6 @@ SafariZone_MapEvents:
 	def_object_events
 	object_event  5, 22, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, SafariZoneAerodactylScript, EVENT_SAFARI_ZONE_AERODACTYL
 	object_event 53, 12, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneXatuScript, EVENT_SAFARI_ZONE_XATU
+	object_event 19,  8, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SafariZoneLaprasScript, EVENT_SAFARI_ZONE_LAPRAS
 	object_event  0, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneThickClub, EVENT_SAFARI_ZONE_THICK_CLUB
 	object_event 51, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneGoldTeeth, EVENT_SAFARI_ZONE_GOLD_TEETH
