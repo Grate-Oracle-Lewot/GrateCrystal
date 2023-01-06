@@ -1,5 +1,6 @@
 	object_const_def
 	const CHERRYGROVEMART_CLERK
+	const CHERRYGROVEMART_BIRD
 	const CHERRYGROVEMART_COOLTRAINER_M
 	const CHERRYGROVEMART_YOUNGSTER
 
@@ -7,6 +8,17 @@ CherrygroveMart_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Delibird
+
+.Delibird:
+	disappear CHERRYGROVEMART_BIRD
+	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	iftrue .AppearDelibird
+	endcallback
+
+.AppearDelibird:
+	appear CHERRYGROVEMART_BIRD
+	endcallback
 
 CherrygroveMartClerkScript:
 	opentext
@@ -20,6 +32,9 @@ CherrygroveMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
 	closetext
 	end
+
+CherrygroveMartDelibirdScript:
+	jumpstd MartDelibirdScript
 
 CherrygroveMartCooltrainerMScript:
 	faceplayer
@@ -82,5 +97,6 @@ CherrygroveMart_MapEvents:
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1
+	object_event  1,  2, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartDelibirdScript, EVENT_CHERRYGROVE_MART_DELIBIRD
 	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1
