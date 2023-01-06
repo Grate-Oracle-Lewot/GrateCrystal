@@ -1,5 +1,6 @@
 	object_const_def
 	const AZALEAMART_CLERK
+	const AZALEAMART_BIRD
 	const AZALEAMART_COOLTRAINER_M
 	const AZALEAMART_BUG_CATCHER
 
@@ -13,6 +14,9 @@ AzaleaMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_AZALEA
 	closetext
 	end
+
+AzaleaMartDelibirdScript:
+	jumpstd MartDelibirdScript
 
 AzaleaMartCooltrainerMScript:
 	jumptextfaceplayer AzaleaMartCooltrainerMText
@@ -53,5 +57,6 @@ AzaleaMart_MapEvents:
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, AzaleaMartClerkScript, -1
+	object_event  1,  2, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaMartDelibirdScript, -1
 	object_event  2,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaMartCooltrainerMScript, -1
 	object_event  7,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaMartBugCatcherScript, -1
