@@ -1,5 +1,6 @@
 	object_const_def
 	const FUCHSIAMART_CLERK
+	const FUCHSIAMART_BIRD
 	const FUCHSIAMART_FISHER
 	const FUCHSIAMART_COOLTRAINER_F
 
@@ -13,6 +14,9 @@ FuchsiaMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_FUCHSIA
 	closetext
 	end
+
+FuchsiaMartDelibirdScript:
+	jumpstd MartDelibirdScript
 
 FuchsiaMartFisherScript:
 	jumptextfaceplayer FuchsiaMartFisherText
@@ -56,5 +60,6 @@ FuchsiaMart_MapEvents:
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, FuchsiaMartClerkScript, -1
+	object_event  1,  2, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaMartDelibirdScript, -1
 	object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FuchsiaMartFisherScript, -1
 	object_event  7,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaMartCooltrainerFScript, -1
