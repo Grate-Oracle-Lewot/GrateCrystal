@@ -1107,8 +1107,10 @@
 	const EVENT_SAFARI_ZONE_XATU
 	const EVENT_SAFARI_ZONE_LAPRAS
 	const EVENT_SAFARI_ZONE_BLISSEY
+	const EVENT_SAFARI_ZONE_SUNFLORA
+	const EVENT_SAFARI_ZONE_MAGIKARP
 	const EVENT_CHERRYGROVE_MART_DELIBIRD
-; Unused: next 116 (now 52) events
+; Unused: next 116 (now 50) events
 
 	const_next 1600
 ; Sprite visibility flags
