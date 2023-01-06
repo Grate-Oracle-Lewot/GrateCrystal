@@ -2692,8 +2692,8 @@ XatuEvosAttacks:
 	db 10, FOCUS_ENERGY
 	db 20, NIGHT_SHADE
 	db 35, FUTURE_SIGHT
-	db 50, CONFUSE_RAY
-	db 65, PSYCHIC_M
+	db 45, CONFUSE_RAY
+	db 55, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:
