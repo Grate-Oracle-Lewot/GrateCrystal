@@ -180,6 +180,7 @@ PokecenterBlisseyScript:
 	end
 
 MartDelibirdScript:
+	faceplayer
 	opentext
 	farwritetext MartDelibirdText
 	cry DELIBIRD
