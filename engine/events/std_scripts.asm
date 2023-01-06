@@ -16,7 +16,7 @@ StdScripts::
 	add_stdscript TownMapScript
 	add_stdscript WindowScript
 	add_stdscript TVScript
-	add_stdscript HomepageScript ; unused
+	add_stdscript MartDelibirdScript
 	add_stdscript Radio1Script
 	add_stdscript Radio2Script
 	add_stdscript TrashCanScript
@@ -179,6 +179,14 @@ PokecenterBlisseyScript:
 	closetext
 	end
 
+MartDelibirdScript:
+	opentext
+	farwritetext MartDelibirdText
+	cry DELIBIRD
+	pause 10
+	closetext
+	end
+
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText
 
@@ -214,9 +222,6 @@ TVScript:
 	waitbutton
 	closetext
 	end
-
-HomepageScript:
-	farjumptext HomepageText
 
 Radio1Script:
 	opentext
