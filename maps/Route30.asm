@@ -375,6 +375,9 @@ Route30SignText:
 MrPokemonsHouseDirectionsSignText:
 	text "MR.#MON'S HOUSE"
 	line "STRAIGHT AHEAD!"
+
+	para "PREPARE TO BE"
+	line "AMAZED!"
 	done
 
 MrPokemonsHouseSignText:
