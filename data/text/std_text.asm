@@ -108,6 +108,10 @@ PokecenterBlisseyText:
 	text "BLISSEY: Jiii!"
 	autodone
 
+MartDelibirdText:
+	text "DELIBIRD: Delii!"
+	autodone
+
 DifficultBookshelfText:
 	text "It's full of"
 	line "difficult books."
