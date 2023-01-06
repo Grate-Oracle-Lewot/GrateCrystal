@@ -5,6 +5,7 @@
 	const SAFARIZONE_CHANSEY
 	const SAFARIZONE_FLOWER
 	const SAFARIZONE_FISH
+	const SAFARIZONE_SUDOWOODO
 	const SAFARIZONE_POKE_BALL1
 	const SAFARIZONE_POKE_BALL2
 
@@ -52,7 +53,7 @@ SafariZoneBlisseyScript:
 SafariZoneSunfloraScript:
 	waitsfx
 	cry SUNFLORA
-	loadwildmon SUNFLORA, 54
+	loadwildmon SUNFLORA, 53
 	startbattle
 	disappear SAFARIZONE_FLOWER
 	reloadmapafterbattle
@@ -61,9 +62,19 @@ SafariZoneSunfloraScript:
 SafariZoneMagikarpScript:
 	waitsfx
 	cry MAGIKARP
-	loadwildmon MAGIKARP, 53
+	loadwildmon MAGIKARP, 52
 	startbattle
 	disappear SAFARIZONE_FISH
+	reloadmapafterbattle
+	end
+
+SafariZoneSudowoodoScript:
+	waitsfx
+	playsound SFX_SANDSTORM
+	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
+	loadwildmon SUDOWOODO, 54
+	startbattle
+	disappear SAFARIZONE_SUDOWOODO
 	reloadmapafterbattle
 	end
 
@@ -75,6 +86,10 @@ SafariZoneGoldTeeth:
 
 SafariZoneTrashcan:
 	jumpstd TrashCanScript
+
+SafariZoneShakeMovement:
+	tree_shake
+	step_end
 
 SafariZone_MapEvents:
 	db 0, 0 ; filler
@@ -95,5 +110,6 @@ SafariZone_MapEvents:
 	object_event 52, 12, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SafariZoneBlisseyScript, EVENT_SAFARI_ZONE_BLISSEY
 	object_event 11, 31, SPRITE_FLOWER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneSunfloraScript, EVENT_SAFARI_ZONE_SUNFLORA
 	object_event 29, 29, SPRITE_FISH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SafariZoneMagikarpScript, EVENT_SAFARI_ZONE_MAGIKARP
+	object_event  2,  2, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneSudowoodoScript, EVENT_SAFARI_ZONE_SUDOWOODO
 	object_event  0, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneThickClub, EVENT_SAFARI_ZONE_THICK_CLUB
 	object_event 51, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneGoldTeeth, EVENT_SAFARI_ZONE_GOLD_TEETH
