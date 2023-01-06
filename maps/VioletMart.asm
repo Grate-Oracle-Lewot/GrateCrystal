@@ -1,5 +1,6 @@
 	object_const_def
 	const VIOLETMART_CLERK
+	const VIOLETMART_BIRD
 	const VIOLETMART_GRANNY
 	const VIOLETMART_COOLTRAINER_M
 
@@ -13,6 +14,9 @@ VioletMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_VIOLET
 	closetext
 	end
+
+VioletMartDelibirdScript:
+	jumpstd MartDelibirdScript
 
 VioletMartGrannyScript:
 	jumptextfaceplayer VioletMartGrannyText
@@ -59,5 +63,6 @@ VioletMart_MapEvents:
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletMartClerkScript, -1
+	object_event  1,  2, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletMartDelibirdScript, -1
 	object_event  7,  6, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletMartGrannyScript, -1
 	object_event  5,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletMartCooltrainerMScript, -1
