@@ -592,7 +592,7 @@
 	const EVENT_BEAT_BURGLAR_DUNCAN
 	const EVENT_BEAT_BURGLAR_EDDIE
 	const EVENT_BEAT_BURGLAR_COREY
-	const_skip ; unused
+	const EVENT_ROUTE_31_TIMER_BALL ; new to Grate Crystal
 ; Biker
 	const EVENT_BEAT_BIKER_BENNY
 	const EVENT_BEAT_BIKER_KAZU
