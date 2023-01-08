@@ -185,7 +185,7 @@ CreditsStringsPointers:
                     next "      VERSION@"             ; "　　　　スタッフ@"
 .Director:            db "   a hack by the@"          ; "エグゼクティブ　ディレクター@"
 .CoDirector:          db "      GitHub@"              ; "ディレクター@"
-.Programmers:         db "    ???????????@"           ; "プログラム@"
+.Programmers:         db "  ArtUnderTheArch@"         ; "プログラム@"
 .GraphicsDirector:    db "   Emi Monserrate@"         ; "グラフィック　ディレクター@"
 .MonsterDesign:       db "      Rangi42@"             ; "#　デザイン@"
 .GraphicsDesign:      db "      SCMidna@"             ; "グラフィック　デザイン@"
