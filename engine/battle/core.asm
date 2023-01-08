@@ -8107,6 +8107,8 @@ DropPlayerSub:
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
 	ld hl, wBattleMonDVs
+	predef GetPikachuForm
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
