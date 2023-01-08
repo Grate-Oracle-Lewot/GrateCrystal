@@ -6,6 +6,7 @@
 	const ROUTE31_FRUIT_TREE
 	const ROUTE31_POKE_BALL1
 	const ROUTE31_POKE_BALL2
+	const ROUTE31_POKE_BALL3
 
 Route31_MapScripts:
 	def_scene_scripts
@@ -266,6 +267,9 @@ Route31Potion:
 Route31PokeBall:
 	itemball POKE_BALL
 
+Route31TimerBall:
+	itemball TIMER_BALL
+
 Route31CooltrainerMText:
 	text "DARK CAVE is…"
 	line "dark. You can find"
@@ -437,3 +441,4 @@ Route31_MapEvents:
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
+	object_event 11,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31TimerBall, EVENT_ROUTE_31_TIMER_BALL
