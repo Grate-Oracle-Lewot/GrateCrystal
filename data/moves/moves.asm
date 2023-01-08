@@ -123,7 +123,7 @@ Moves:
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, FIRE,         STATUS,   100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,        STATUS,   100, 10,   0
 	move SCALD,        EFFECT_BURN_HIT,           80, WATER,        SPECIAL,  100, 15,  33
-	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 40,   0
+	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 35,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC_TYPE, STATUS,   100, 20,   0
 	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE, STATUS,   100, 10,   0
 	move HAZE,         EFFECT_RESET_STATS,         0, POISON,       STATUS,   100, 25,   0
@@ -226,7 +226,7 @@ Moves:
 	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     70, STEEL,        PHYSICAL,  90, 20,  42
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, DARK,         STATUS,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, FAIRY,        STATUS,   100, 10,   0
-	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,       STATUS,   100, 10,   0
+	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,       STATUS,   100, 15,   0
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, STEEL,        STATUS,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,       PHYSICAL, 100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, FAIRY,        PHYSICAL, 100, 20,   0
