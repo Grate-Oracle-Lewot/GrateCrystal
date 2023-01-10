@@ -17,6 +17,7 @@ SafariZone_MapScripts:
 SafariZoneAerodactylScript:
 	waitsfx
 	cry AERODACTYL
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon AERODACTYL, 56
 	startbattle
 	disappear SAFARIZONE_BIRD1
@@ -26,6 +27,7 @@ SafariZoneAerodactylScript:
 SafariZoneXatuScript:
 	waitsfx
 	cry XATU
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon XATU, 55
 	startbattle
 	disappear SAFARIZONE_BIRD2
@@ -35,6 +37,7 @@ SafariZoneXatuScript:
 SafariZoneLaprasScript:
 	waitsfx
 	cry LAPRAS
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon LAPRAS, 57
 	startbattle
 	disappear SAFARIZONE_LAPRAS
@@ -44,6 +47,7 @@ SafariZoneLaprasScript:
 SafariZoneBlisseyScript:
 	waitsfx
 	cry BLISSEY
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon BLISSEY, 58
 	startbattle
 	disappear SAFARIZONE_CHANSEY
@@ -53,6 +57,7 @@ SafariZoneBlisseyScript:
 SafariZoneSunfloraScript:
 	waitsfx
 	cry SUNFLORA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon SUNFLORA, 53
 	startbattle
 	disappear SAFARIZONE_FLOWER
@@ -62,6 +67,7 @@ SafariZoneSunfloraScript:
 SafariZoneMagikarpScript:
 	waitsfx
 	cry MAGIKARP
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon MAGIKARP, 52
 	startbattle
 	disappear SAFARIZONE_FISH
@@ -72,6 +78,7 @@ SafariZoneSudowoodoScript:
 	waitsfx
 	playsound SFX_SANDSTORM
 	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon SUDOWOODO, 54
 	startbattle
 	disappear SAFARIZONE_SUDOWOODO
