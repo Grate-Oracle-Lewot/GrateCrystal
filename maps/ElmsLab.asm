@@ -1198,12 +1198,6 @@ ElmGiveTicketText2:
 	line "PROF.OAK in KANTO!"
 	done
 
-ElmsLabMonEggText: ; unreferenced
-	text "It's the #MON"
-	line "EGG being studied"
-	cont "by PROF.ELM."
-	done
-
 AideText_GiveYouPotion:
 	text "<PLAY_G>, I want"
 	line "you to have this"
@@ -1211,9 +1205,8 @@ AideText_GiveYouPotion:
 	done
 
 AideText_AlwaysBusy:
-	text "There are only two"
-	line "of us, so we're"
-	cont "always busy."
+	text "I found it under"
+	line "the sink."
 	done
 
 AideText_TheftTestimony:
@@ -1255,7 +1248,7 @@ AideText_ExplainBalls:
 
 	para "Throw # BALLS"
 	line "at wild #MON"
-	cont "to get them."
+	cont "to capture them."
 	done
 
 ElmsLabOfficerText1:
