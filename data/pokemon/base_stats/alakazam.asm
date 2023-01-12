@@ -6,7 +6,7 @@
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 50 ; catch rate
 	db 186 ; base exp
-	db LINK_VOUCHER, TWISTEDSPOON ; items
+	db TWISTEDSPOON, MOON_STONE ; items
 	db GENDER_F25 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/alakazam/front.dimensions"
