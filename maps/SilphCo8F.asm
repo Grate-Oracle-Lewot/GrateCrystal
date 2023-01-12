@@ -18,8 +18,8 @@ TrainerScientistElvin:
 	closetext
 	end
 
-SilphCo8FTimerBall:
-	itemball TIMER_BALL
+SilphCo8FDuskBall:
+	itemball DUSK_BALL
 
 SilphCo8FSign:
 	jumptext SilphCo8FSignText
@@ -67,4 +67,4 @@ SilphCo8F_MapEvents:
 
 	def_object_events
 	object_event  4,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistElvin, -1
-	object_event  3,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo8FTimerBall, EVENT_SILPH_CO_8F_TIMER_BALL
+	object_event  3,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo8FDuskBall, EVENT_SILPH_CO_8F_DUSK_BALL
