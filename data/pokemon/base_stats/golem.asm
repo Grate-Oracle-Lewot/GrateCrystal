@@ -6,7 +6,7 @@
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
 	db 177 ; base exp
-	db LINK_VOUCHER, KINGS_ROCK ; items
+	db MOON_STONE, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/golem/front.dimensions"
