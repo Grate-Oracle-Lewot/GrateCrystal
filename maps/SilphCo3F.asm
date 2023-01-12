@@ -21,8 +21,8 @@ TrainerScientistConnor:
 SilphCo3FClerkScript:
 	jumptextfaceplayer SilphCo3FClerkText
 
-SilphCo3FLinkVoucher:
-	itemball LINK_VOUCHER
+SilphCo3FCatchCharm:
+	itemball CATCH_CHARM
 
 SilphCo3FSign:
 	jumptext SilphCo3FSignText
@@ -99,4 +99,4 @@ SilphCo3F_MapEvents:
 	def_object_events
 	object_event  6,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistConnor, -1
 	object_event 14,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo3FClerkScript, -1
-	object_event 28,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo3FLinkVoucher, EVENT_SILPH_CO_3F_LINK_VOUCHER
+	object_event 28,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo3FCatchCharm, EVENT_SILPH_CO_3F_CATCH_CHARM
