@@ -6,7 +6,7 @@
 	db GHOST, POISON ; type
 	db 45 ; catch rate
 	db 190 ; base exp
-	db LINK_VOUCHER, MAX_REVIVE ; items
+	db MAX_REVIVE, MOON_STONE ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/gengar/front.dimensions"
