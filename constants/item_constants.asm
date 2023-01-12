@@ -29,7 +29,7 @@
 	const FIRE_STONE   ; 15
 	const THUNDERSTONE ; 16
 	const WATER_STONE  ; 17
-	const LINK_VOUCHER ; 18
+	const CATCH_CHARM  ; 18
 	const HP_UP        ; 19
 	const PROTEIN      ; 1a
 	const IRON         ; 1b
