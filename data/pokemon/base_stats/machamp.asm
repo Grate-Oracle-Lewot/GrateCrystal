@@ -6,7 +6,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 45 ; catch rate
 	db 193 ; base exp
-	db LINK_VOUCHER, BLACKBELT_I ; items
+	db BLACKBELT_I, MOON_STONE ; items
 	db GENDER_F25 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/machamp/front.dimensions"
