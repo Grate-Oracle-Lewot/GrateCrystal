@@ -24,7 +24,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw LinkVoucherDesc
+	dw CatchCharmDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -351,9 +351,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-LinkVoucherDesc:
-	db   "Evolves certain"
-	next "kinds of #MON.@"
+CatchCharmDesc:
+	db   "Ups wild catching"
+	next "odds. (HOLD)@"
 
 HPUpDesc:
 	db   "Raises the HP of"
