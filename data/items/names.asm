@@ -23,7 +23,7 @@ ItemNames::
 	li "FIRE STONE"
 	li "THUNDERSTONE"
 	li "WATER STONE"
-	li "LINK VOUCHER"
+	li "CATCH CHARM"
 	li "HP UP"
 	li "PROTEIN"
 	li "IRON"
