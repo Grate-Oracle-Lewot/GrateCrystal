@@ -6,7 +6,7 @@
 	db STEEL, GROUND ; type
 	db 25 ; catch rate
 	db 196 ; base exp
-	db LINK_VOUCHER, METAL_COAT ; items
+	db METAL_COAT, METAL_POWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/steelix/front.dimensions"
