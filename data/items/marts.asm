@@ -106,7 +106,7 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 9 ; # items
+	db 10 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db TIMER_BALL
@@ -115,6 +115,7 @@ MartGoldenrod2F2:
 	db POKE_DOLL
 	db SWAG_BEACON
 	db EVIOLITE
+	db CATCH_CHARM
 	db MUSIC_MAIL
 	db -1 ; end
 
@@ -131,7 +132,7 @@ MartGoldenrod3F:
 	db -1 ; end
 
 MartGoldenrod3F2:
-	db 8 ; # items
+	db 7 ; # items
 	db FIRE_STONE
 	db WATER_STONE
 	db LEAF_STONE
@@ -139,7 +140,6 @@ MartGoldenrod3F2:
 	db MOON_STONE
 	db SUN_STONE
 	db EVERSTONE
-	db LINK_VOUCHER
 	db -1 ; end
 
 MartGoldenrod4F:
@@ -313,7 +313,7 @@ MartVermilion:
 	db -1 ; end
 
 MartCeladon2F1:
-	db 9 ; # items
+	db 10 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -321,6 +321,7 @@ MartCeladon2F1:
 	db REVIVE
 	db SUPER_REPEL
 	db MAX_REPEL
+	db POKE_DOLL
 	db SWAG_BEACON
 	db ESCAPE_ROPE
 	db -1 ; end
@@ -362,7 +363,7 @@ MartCeladon4F:
 	db LIMBO_STICK
 	db DICTIONARY
 	db EVIOLITE
-	db POKE_DOLL
+	db CATCH_CHARM
 	db PORTRAITMAIL
 	db -1 ; end
 
