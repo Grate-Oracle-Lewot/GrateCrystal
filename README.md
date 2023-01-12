@@ -17,7 +17,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
-- Pokémon that evolve by trade all now also have alternate evolution methods, making them more easily obtainable in a ROM
 - Pseudo-Abilities:
   - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap (check which Pokémon this applies to here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
   - All Grass types get a 50% Speed boost in Sunny weather
@@ -33,6 +32,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - Items in limited supply can generally be found somewhere as wild held items, ensuring they never truly run out
+  - Pokémon that evolve by trade all now also have alternate evolution methods, making them more easily obtainable in a ROM
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
