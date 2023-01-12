@@ -17,6 +17,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
+- Pokémon that evolve by trade all now also have alternate evolution methods, making them more easily obtainable in a ROM
 - Pseudo-Abilities:
   - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap (check which Pokémon this applies to here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
   - All Grass types get a 50% Speed boost in Sunny weather
@@ -132,7 +133,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves)
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
-- "Link Voucher" for evolving Pokémon that evolve by trade
 - New held items that each completely prevent a specific status condition
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Most Berries renamed for flavor
@@ -199,7 +199,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
-- A few trade evolutions use a different method instead of the Link Voucher: the Metal Coat, Dragon Scale, and Up-Grade can now just be used like evolution stones, and Slowpoke uses Tyrogue's stat-based evolution method to choose between Slowbro and Slowking; Politoed is a nighttime happiness evolution, and Magby, Elekid and Smoochum now evolve by happiness as well, with Magby being daytime and Smoochum nighttime
 - Hail boosts Ice-type moves as well as dealing its regular damage
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
