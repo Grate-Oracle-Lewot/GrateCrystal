@@ -53,19 +53,22 @@ GoldenrodDeptStore4FBugCatcherText:
 
 GoldenrodDeptStore4FGameboyKidText:
 	text "Some #MON"
-	line "evolve only by"
+	line "evolve by being"
 
-	para "being traded via a"
-	line "Game Link cable."
+	para "traded via a Game"
+	line "Link cable."
 
 	para "…But since that's"
 	line "tricky in a hack,"
 
-	para "you can use a LINK"
-	line "VOUCHER instead."
+	para "they have other"
+	line "methods too, like"
 
-	para "They sell them in"
-	line "this very store!"
+	para "using a MOON"
+	line "STONE."
+
+	para "The method varies"
+	line "with the #MON."
 	done
 
 GoldenrodDeptStore4FDirectoryText:
