@@ -117,8 +117,8 @@ MonMenuIcons:
 	db ICON_CHANSEY     ; CHANSEY
 	db ICON_BLOB        ; TANGELA
 	db ICON_CHANSEY     ; KANGASKHAN
-	db ICON_FISH        ; HORSEA
-	db ICON_FISH        ; SEADRA
+	db ICON_SERPENT     ; HORSEA
+	db ICON_SERPENT     ; SEADRA
 	db ICON_FISH        ; GOLDEEN
 	db ICON_FISH        ; SEAKING
 	db ICON_STARYU      ; STARYU
