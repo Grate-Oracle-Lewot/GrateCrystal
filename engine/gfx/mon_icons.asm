@@ -387,10 +387,10 @@ GetSpeciesIcon:
 	ret
 
 FlyFunction_GetMonIcon:
+	push de
 	ld a, [wUsingHMItem]
 	cp FALSE
 	jr z, .not_fearowbot
-	push de
 	ld a, FEAROW
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
@@ -398,12 +398,9 @@ FlyFunction_GetMonIcon:
 	ld a, e
 	call GetIcon_a
 	ld a, 40 ; 5 = silver palette, 5 x 8 = 40
-	ld e, a ; SetFirstOBJPalette takes its offset parameter in E.
-	farcall SetFirstOBJPalette
-	ret
+	jr .finish
 
 .not_fearowbot
-	push de
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
@@ -418,6 +415,7 @@ FlyFunction_GetMonIcon:
 	add a
 	add a
 	add a ; A x 8.
+.finish
 	ld e, a ; SetFirstOBJPalette takes its offset parameter in E.
 	farcall SetFirstOBJPalette
 	ret
