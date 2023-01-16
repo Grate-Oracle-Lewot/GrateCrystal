@@ -900,13 +900,12 @@ Text_ShrineCelebiEvent:
 	line "the forest's"
 	cont "protector…"
 
-	para "Oh? What is this?"
+	para "Hm… There's a hole"
+	line "in the front…"
 
-	para "It's a hole."
-	line "It looks like the"
-
-	para "GS BALL would fit"
-	line "inside it."
+	para "It looks like the"
+	line "GS BALL would fit"
+	cont "inside."
 
 	para "Want to put the GS"
 	line "BALL here?"
@@ -934,7 +933,8 @@ Text_KurtCaughtCelebi:
 	para "It motivates me to"
 	line "make better BALLS!"
 
-	para "I'm going!"
+	para "I'll head home."
+	line "Don't be scarce!"
 	done
 
 BugCatcherWayneSeenText:
