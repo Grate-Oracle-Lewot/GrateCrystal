@@ -397,7 +397,7 @@ FlyFunction_GetMonIcon:
 	pop de
 	ld a, e
 	call GetIcon_a
-	ld a, 24 ; 3 = brown palette, 3 x 8 = 24
+	ld a, 40 ; 5 = brown palette, 5 x 8 = 40
 	ld e, a ; SetFirstOBJPalette takes its offset parameter in E.
 	farcall SetFirstOBJPalette
 	ret
