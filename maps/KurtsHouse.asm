@@ -576,8 +576,8 @@ KurtsHouseKurtWhatIsThatText:
 	para "It looks a lot"
 	line "like a # BALL,"
 
-	para "but it appears to"
-	line "be something else."
+	para "but I've never"
+	line "seen one like it!"
 
 	para "Let me check it"
 	line "for you."
