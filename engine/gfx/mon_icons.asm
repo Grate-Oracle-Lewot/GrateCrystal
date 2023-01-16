@@ -420,15 +420,6 @@ FlyFunction_GetMonIcon:
 	farcall SetFirstOBJPalette
 	ret
 
-GetMonIconDE: ; unreferenced
-	push de
-	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
-	ld [wCurIcon], a
-	pop de
-	call GetIcon_de
-	ret
-
 GetMemIconGFX:
 	ld a, [wCurIconTile]
 GetIconGFX:
@@ -446,12 +437,6 @@ GetIconGFX:
 HeldItemIcons:
 INCBIN "gfx/icons/mail.2bpp"
 INCBIN "gfx/icons/item.2bpp"
-
-GetIcon_de:
-; Load icon graphics into VRAM starting from tile de.
-	ld l, e
-	ld h, d
-	jr GetIcon
 
 GetIcon_a:
 ; Load icon graphics into VRAM starting from tile a.
