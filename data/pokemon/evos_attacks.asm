@@ -2608,6 +2608,25 @@ PichuEvosAttacks:
 	db 42, SKULL_BASH
 	db 0 ; no more level-up moves
 
+; FlogistanEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, TACKLE
+;	db 2, BATON_PASS
+;	db 6, EMBER
+;	db 9, SUBSTITUTE
+;	db 13, SMOKESCREEN
+;	db 18, FLAIL
+;	db 21, FIRE_SPIN
+;	db 26, SCREECH
+;	db 30, THRASH
+;	db 37, TRANSFORM
+;	db 42, DAZZLY_GLEAM
+;	db 49, SNORE
+;	db 49, REST
+;	db 55, POWER_GEM
+;	db 60, FIRE_BLAST
+;	db 0 ; no more level-up moves
+
 CleffaEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
 	db 0 ; no more evolutions
@@ -2624,6 +2643,24 @@ CleffaEvosAttacks:
 	db 37, DAZZLY_GLEAM
 	db 42, MOONBLAST
 	db 0 ; no more level-up moves
+
+; CottoneeEvosAttacks:
+;	db EVOLVE_ITEM, SUN_STONE, WHIMSICOTT
+;	db 1, ABSORB
+;	db 3, FAIRY_WIND
+;	db 6, STUN_SPORE
+;	db 12, RAZOR_LEAF
+;	db 15, GROWTH
+;	db 18, MEGA_DRAIN
+;	db 21, POISONPOWDER
+;	db 24, CHARM
+;	db 27, LEECH_SEED
+;	db 30, COTTON_SPORE
+;	db 33, GIGA_DRAIN
+;	db 39, SUNNY_DAY
+;	db 42, PLAY_ROUGH
+;	db 48, SOLARBEAM
+;	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
@@ -3615,6 +3652,60 @@ MagbyEvosAttacks:
 	db 54, MEGA_PUNCH
 	db 0 ; no more level-up moves
 
+; SnoconeyEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, QUICK_ATTACK
+;	db 2, SWEET_SCENT
+;	db 7, POWDER_SNOW
+;	db 11, RAZOR_LEAF
+;	db 16, DOUBLE_KICK
+;	db 20, GROWTH
+;	db 23, AURORA_BEAM
+;	db 27, MIST
+;	db 30, HI_JUMP_KICK
+;	db 35, AGILITY
+;	db 39, PETAL_DANCE
+;	db 44, SYNTHESIS
+;	db 50, EXTREMESPEED
+;	db 54, MEGA_KICK
+;	db 0 ; no more level-up moves
+
+; JirkEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, ABSORB
+;	db 1, SPITE
+;	db 5, DISABLE
+;	db 10, LEECH_LIFE
+;	db 15, SAND_ATTACK
+;	db 20, CONFUSE_RAY
+;	db 25, SLEEP_POWDER
+;	db 30, DREAM_EATER
+;	db 35, MINIMIZE
+;	db 40, SPIDER_WEB
+;	db 45, SPORE
+;	db 50, PERISH_SONG
+;	db 55, SILVER_WIND
+;	db 60, HORN_DRILL
+;	db 0 ; no more level-up moves
+
+; CastaweighEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, RAGE
+;	db 2, LEER
+;	db 6, WATER_GUN
+;	db 9, PURSUIT
+;	db 14, SCARY_FACE
+;	db 19, BITE
+;	db 25, FOCUS_ENERGY
+;	db 31, SUBMISSION
+;	db 37, IRON_TAIL
+;	db 42, CRUNCH
+;	db 47, SWORDS_DANCE
+;	db 50, SUPER_FANG
+;	db 56, CRABHAMMER
+;	db 64, DOUBLE_EDGE
+;	db 0 ; no more level-up moves
+
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
@@ -3775,6 +3866,23 @@ CelebiEvosAttacks:
 	db 80, PETAL_DANCE
 	db 90, MINIMIZE
 	db 0 ; no more level-up moves
+
+; FinullEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, NIGHT_SHADE
+;	db 1, FORESIGHT
+;	db 1, HAZE
+;	db 1, DESTINY_BOND
+;	db 10, MIND_READER
+;	db 20, MEAN_LOOK
+;	db 30, PERISH_SONG
+;	db 40, BIDE
+;	db 50, MIRROR_MOVE
+;	db 60, TRANSFORM
+;	db 70, GLARE
+;	db 80, AMNESIA
+;	db 90, FISSURE
+;	db 0 ; no more level-up moves
 
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
