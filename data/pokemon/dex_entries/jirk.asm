@@ -1,5 +1,5 @@
 	db "MOSQUITO@" ; species name
-	dw 210, 168 ; height, weight
+	dw 210, 140 ; height, weight
 
 	db   "It drains mental"
 	next "energy from its"
