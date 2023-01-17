@@ -1,5 +1,5 @@
 	db "CRACKLING@" ; species name
-	dw 211, 384 ; height, weight
+	dw 210, 370 ; height, weight
 
 	db   "It continually"
 	next "gathers sticks to"
