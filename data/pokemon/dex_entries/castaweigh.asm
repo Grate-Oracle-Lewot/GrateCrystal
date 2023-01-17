@@ -1,5 +1,5 @@
 	db "@" ; species name
-	dw 421, 8421 ; height, weight
+	dw 421, 8420 ; height, weight
 
 	db   "They're thought to"
 	next "be vengeful spir-"
