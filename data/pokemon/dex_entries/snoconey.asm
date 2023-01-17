@@ -1,5 +1,5 @@
 	db "YUKI USAGI@" ; species name
-	dw 108, 210 ; height, weight
+	dw 105, 210 ; height, weight
 
 	db   "It's known to build"
 	next "sculptures of it-"
