@@ -397,7 +397,7 @@ FlyFunction_GetMonIcon:
 	pop de
 	ld a, e
 	call GetIcon_a
-	ld a, 40 ; 5 = silver palette, 5 x 8 = 40
+	ld a, PAL_ICON_GRAY
 	jr .finish
 
 .not_fearowbot
@@ -412,10 +412,10 @@ FlyFunction_GetMonIcon:
 	ld a, MON_DVS
 	call GetPartyParamLocation ; HL now points to the params of the curPartyMon, which is needed by GetMenuMonIconPalette.
 	call GetMenuMonIconPalette ; Returns in A the index of PartyMenuOBPals to use.
+.finish
 	add a
 	add a
 	add a ; A x 8.
-.finish
 	ld e, a ; SetFirstOBJPalette takes its offset parameter in E.
 	farcall SetFirstOBJPalette
 	ret
