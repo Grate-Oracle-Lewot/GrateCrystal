@@ -7,9 +7,6 @@ GuideGentsHouse_MapScripts:
 	def_callbacks
 
 GuideGentsHouseGuideGent:
-	setflag ENGINE_STORMBADGE
-	giveitem FEAROWBOT
-	giveitem HM_FLY
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
 GuideGentsHouseBookshelf:
