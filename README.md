@@ -264,7 +264,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - See: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/design_flaws.md
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
-I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to, and a lot of very small and specific glitches have been (theoretically) fixed.
+I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
 
 # FAQ
 
