@@ -566,6 +566,23 @@ PichuEggMoves:
 	db SIGNAL_BEAM
 	db -1 ; end
 
+; FlogistanEggMoves:
+;	db EARTH_POWER
+;	db AIR_SLASH
+;	db SIGNAL_BEAM
+;	db KINESIS
+;	db SOFTBOILED
+;	db -1 ; end
+
+; CottoneeEggMoves:
+;	db LOVELY_KISS
+;	db MIST
+;	db HAZE
+;	db SMOKESCREEN
+;	db SILVER_WIND
+;	db SPORE
+;	db -1 ; end
+
 CleffaEggMoves:
 	db NIGHT_SHADE
 	db AMNESIA
@@ -877,6 +894,34 @@ MagbyEggMoves:
 	db EARTH_POWER
 	db EGG_BOMB
 	db -1 ; end
+
+; SnoconeyEggMoves:
+;	db LICK
+;	db COTTON_SPORE
+;	db LEECH_SEED
+;	db LOW_KICK
+;	db ROLLING_KICK
+;	db -1 ; end
+
+; JirkEggMoves:
+;	db THUNDER_WAVE
+;	db FAINT_ATTACK
+;	db SKY_ATTACK
+;	db DRILL_PECK
+;	db LOCK_ON
+;	db DESTINY_BOND
+;	db SPIKES
+;	db WHIRLWIND
+;	db -1 ; end
+
+; CastaweighEggMoves:
+;	db THRASH
+;	db FLAIL
+;	db BODY_SLAM
+;	db SLAM
+;	db BIND
+;	db HYPER_FANG
+;	db -1 ; end
 
 MiltankEggMoves:
 	db REVERSAL
