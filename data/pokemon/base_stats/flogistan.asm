@@ -1,6 +1,6 @@
 	db FLOGISTAN ; 172
 
-	db  42,  42,  38, 105, 115,  42
+	db  45,  40,  37, 105, 115,  42
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FIRE ; type
