@@ -171,9 +171,9 @@ BitmasksPointers:
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
-	dw PichuBitmasks
-	dw CleffaBitmasks
-	dw IgglybuffBitmasks
+	dw FlogistanBitmasks
+	dw CottoneeBitmasks
+	dw WhimsicottBitmasks
 	dw TogepiBitmasks
 	dw TogeticBitmasks
 	dw NatuBitmasks
@@ -237,9 +237,9 @@ BitmasksPointers:
 	dw SmeargleBitmasks
 	dw TyrogueBitmasks
 	dw HitmontopBitmasks
-	dw SmoochumBitmasks
-	dw ElekidBitmasks
-	dw MagbyBitmasks
+	dw SnoconeyBitmasks
+	dw JirkBitmasks
+	dw CastaweighBitmasks
 	dw MiltankBitmasks
 	dw BlisseyBitmasks
 	dw RaikouBitmasks
@@ -251,6 +251,6 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
+	dw FinullBitmasks
 	dw YanmegaBitmasks
-	dw WhimsicottBitmasks
 	assert_table_length NUM_POKEMON
