@@ -195,7 +195,7 @@ KantoGrassWildMons:
 	db 1, SENTRET
 	db 2, PIDGEY
 	db 2, SENTRET
-	db 3, PIDGEY
+	db 1, FLOGISTAN
 	db 2, PIKACHU
 	db 1, LEDYBA
 	db 2, LEDYBA
@@ -204,7 +204,7 @@ KantoGrassWildMons:
 	db 1, SENTRET
 	db 2, PIDGEY
 	db 2, SENTRET
-	db 3, PIDGEY
+	db 1, FLOGISTAN
 	db 2, RATTATA
 	db 1, PIKACHU
 	db 2, PIKACHU
@@ -213,7 +213,7 @@ KantoGrassWildMons:
 	db 1, RATTATA
 	db 2, HOOTHOOT
 	db 2, RATTATA
-	db 3, HOOTHOOT
+	db 1, FLOGISTAN
 	db 1, PIKACHU
 	db 1, SPINARAK
 	db 2, SPINARAK
@@ -722,7 +722,7 @@ KantoGrassWildMons:
 	db 23, RATTATA
 	db 33, TANGELA
 	db 18, RATICATE
-	db 29, MR__MIME
+	db 28, FLOGISTAN
 	db 28, MR__MIME
 	db 26, MR__MIME
 	db 29, PINSIR
@@ -731,16 +731,16 @@ KantoGrassWildMons:
 	db 23, RATTATA
 	db 33, TANGELA
 	db 18, RATICATE
-	db 26, MR__MIME
+	db 28, FLOGISTAN
 	db 28, MR__MIME
-	db 29, MR__MIME
+	db 26, MR__MIME
 	db 29, PINSIR
 	; nite
 	db 28, TANGELA
 	db 23, RATTATA
 	db 33, TANGELA
 	db 18, RATICATE
-	db 29, PINSIR
+	db 28, FLOGISTAN
 	db 28, PINSIR
 	db 26, PINSIR
 	db 29, MR__MIME
@@ -998,7 +998,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, YANMA
-	db 28, WHIMSICOTT
+	db 28, FLOGISTAN
 	db 1, BULBASAUR
 	db 1, CHIKORITA
 	db 1, CHARMANDER
