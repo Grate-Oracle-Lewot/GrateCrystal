@@ -176,9 +176,9 @@ MonMenuIconPals:
 	icon_pals PURPLE, PINK   ; CROBAT
 	icon_pals YELLOW, GREEN  ; CHINCHOU
 	icon_pals BLUE,   BLUE   ; LANTERN
-	icon_pals YELLOW, BROWN  ; PICHU
-	icon_pals PINK,   PINK   ; CLEFFA
-	icon_pals PINK,   PINK   ; IGGLYBUFF
+	icon_pals BROWN,  BLUE   ; FLOGISTAN
+	icon_pals GREEN,  YELLOW ; COTTONEE
+	icon_pals GREEN,  BLUE   ; WHIMSICOTT
 	icon_pals YELLOW, YELLOW ; TOGEPI
 	icon_pals GRAY,   YELLOW ; TOGETIC
 	icon_pals GREEN,  GREEN  ; NATU
@@ -242,9 +242,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; SMEARGLE
 	icon_pals BROWN,  BLUE   ; TYROGUE
 	icon_pals BROWN,  GRAY   ; HITMONTOP
-	icon_pals PURPLE, PINK   ; SMOOCHUM
-	icon_pals YELLOW, YELLOW ; ELEKID
-	icon_pals RED,    BROWN  ; MAGBY
+	icon_pals GREEN,  BROWN  ; SNOCONEY
+	icon_pals PURPLE, BROWN  ; JIRK
+	icon_pals BLUE,   PINK   ; CASTAWEIGH
 	icon_pals PINK,   GRAY   ; MILTANK
 	icon_pals PINK,   PINK   ; BLISSEY
 	icon_pals YELLOW, BROWN  ; RAIKOU
@@ -256,8 +256,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   RED    ; LUGIA
 	icon_pals RED,    YELLOW ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
+	icon_pals BROWN,  GREEN  ; FINULL
 	icon_pals GREEN,  BLUE   ; YANMEGA
-	icon_pals BROWN,  BROWN  ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
 
 	icon_pals BROWN,  BROWN  ; EGG
