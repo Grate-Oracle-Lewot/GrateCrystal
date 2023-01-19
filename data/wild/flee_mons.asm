@@ -2,18 +2,16 @@ FleeMons:
 ; referenced by TryEnemyFlee and FastBallMultiplier
 
 SometimesFleeMons:
-	db BULBASAUR
-	db SQUIRTLE
 	db PARAS
 	db PSYDUCK
 	db TANGELA
 	db MR__MIME
 	db EEVEE
 	db CHIKORITA
-	db CYNDAQUIL
 	db TOGETIC
 	db UNOWN
 	db DUNSPARCE
+	db SNUBBULL
 	db -1
 
 OftenFleeMons:
