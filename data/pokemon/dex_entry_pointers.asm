@@ -172,9 +172,9 @@ PokedexDataPointerTable:
 	dba CrobatPokedexEntry
 	dba ChinchouPokedexEntry
 	dba LanturnPokedexEntry
-	dba PichuPokedexEntry
-	dba CleffaPokedexEntry
-	dba IgglybuffPokedexEntry
+	dba FlogistanPokedexEntry
+	dba CottoneePokedexEntry
+	dba WhimsicottPokedexEntry
 	dba TogepiPokedexEntry
 	dba TogeticPokedexEntry
 	dba NatuPokedexEntry
@@ -238,9 +238,9 @@ PokedexDataPointerTable:
 	dba SmearglePokedexEntry
 	dba TyroguePokedexEntry
 	dba HitmontopPokedexEntry
-	dba SmoochumPokedexEntry
-	dba ElekidPokedexEntry
-	dba MagbyPokedexEntry
+	dba SnoconeyPokedexEntry
+	dba JirkPokedexEntry
+	dba CastaweighPokedexEntry
 	dba MiltankPokedexEntry
 	dba BlisseyPokedexEntry
 	dba RaikouPokedexEntry
@@ -252,6 +252,6 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+	dba FinullPokedexEntry
 	dba YanmegaPokedexEntry
-	dba WhimsicottPokedexEntry
 	assert_table_length NUM_POKEMON
