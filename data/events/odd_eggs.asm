@@ -10,33 +10,33 @@ OddEggProbabilities:
 	table_width 2, OddEggProbabilities
 prob_total = 0
 ; Eevee
-	prob 9
-; Pichu
+	prob 8
+; Pikachu
 	prob 7
 ; Bulbasaur
 	prob 7
-; Cleffa
+; Clairy
 	prob 7
 ; Charmander
 	prob 7
-; Igglybuff
+; Jigglypuff
 	prob 7
 ; Squirtle
 	prob 7
-; Smoochum
+; Jynx
 	prob 7
 ; Chikorita
 	prob 7
-; Magby
+; Magmar
 	prob 7
 ; Cyndaquil
 	prob 7
-; Elekid
+; Electabuzz
 	prob 7
 ; Totodile
 	prob 7
 ; Tyrogue
-	prob 7
+	prob 8
 	assert_table_length NUM_ODD_EGGS
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
@@ -69,7 +69,7 @@ OddEggs:
 	bigdw 13 ; SDef
 	db "EGG@@@@@@@@"
 
-	db PICHU
+	db PIKACHU
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 00256 ; OT ID
@@ -87,11 +87,11 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 18 ; Max HP
-	bigdw 10 ; Atk
-	bigdw 8 ; Def
-	bigdw 12 ; Spd
-	bigdw 10 ; SAtk
+	bigdw 20 ; Max HP
+	bigdw 12 ; Atk
+	bigdw 9 ; Def
+	bigdw 15 ; Spd
+	bigdw 11 ; SAtk
 	bigdw 10 ; SDef
 	db "EGG@@@@@@@@"
 
@@ -121,7 +121,7 @@ OddEggs:
 	bigdw 13 ; SDef
 	db "EGG@@@@@@@@"
 
-	db CLEFFA
+	db CLEFAIRY
 	db NO_ITEM
 	db POUND, CHARM, ENCORE, DIZZY_PUNCH
 	dw 00768 ; OT ID
@@ -139,12 +139,12 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 21 ; Max HP
-	bigdw 9 ; Atk
-	bigdw 9 ; Def
-	bigdw 8 ; Spd
-	bigdw 11 ; SAtk
-	bigdw 12 ; SDef
+	bigdw 23 ; Max HP
+	bigdw 11 ; Atk
+	bigdw 11 ; Def
+	bigdw 10 ; Spd
+	bigdw 12 ; SAtk
+	bigdw 13 ; SDef
 	db "EGG@@@@@@@@"
 
 	db CHARMANDER
@@ -173,7 +173,7 @@ OddEggs:
 	bigdw 11 ; SDef
 	db "EGG@@@@@@@@"
 
-	db IGGLYBUFF
+	db JIGGLYPUFF
 	db NO_ITEM
 	db SING, CHARM, DEFENSE_CURL, DIZZY_PUNCH
 	dw 00768 ; OT ID
@@ -191,12 +191,12 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 25 ; Max HP
-	bigdw 9 ; Atk
+	bigdw 28 ; Max HP
+	bigdw 11 ; Atk
 	bigdw 8 ; Def
 	bigdw 8 ; Spd
-	bigdw 10 ; SAtk
-	bigdw 8 ; SDef
+	bigdw 11 ; SAtk
+	bigdw 9 ; SDef
 	db "EGG@@@@@@@@"
 
 	db SQUIRTLE
@@ -225,7 +225,7 @@ OddEggs:
 	bigdw 12 ; SDef
 	db "EGG@@@@@@@@"
 
-	db SMOOCHUM
+	db JYNX
 	db NO_ITEM
 	db LICK, GROWL, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
@@ -243,12 +243,12 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 21 ; Max HP
-	bigdw 9 ; Atk
-	bigdw 8 ; Def
-	bigdw 13 ; Spd
-	bigdw 15 ; SAtk
-	bigdw 13 ; SDef
+	bigdw 23 ; Max HP
+	bigdw 11 ; Atk
+	bigdw 10 ; Def
+	bigdw 16 ; Spd
+	bigdw 18 ; SAtk
+	bigdw 16 ; SDef
 	db "EGG@@@@@@@@"
 
 	db CHIKORITA
@@ -277,7 +277,7 @@ OddEggs:
 	bigdw 13 ; SDef
 	db "EGG@@@@@@@@"
 
-	db MAGBY
+	db MAGMAR
 	db NO_ITEM
 	db EMBER, DIZZY_PUNCH, 0, 0
 	dw 00512 ; OT ID
@@ -295,12 +295,12 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 21 ; Max HP
-	bigdw 14 ; Atk
-	bigdw 10 ; Def
-	bigdw 14 ; Spd
-	bigdw 13 ; SAtk
-	bigdw 12 ; SDef
+	bigdw 23 ; Max HP
+	bigdw 16 ; Atk
+	bigdw 12 ; Def
+	bigdw 15 ; Spd
+	bigdw 16 ; SAtk
+	bigdw 15 ; SDef
 	db "EGG@@@@@@@@"
 
 	db CYNDAQUIL
@@ -329,7 +329,7 @@ OddEggs:
 	bigdw 11 ; SDef
 	db "EGG@@@@@@@@"
 
-	db ELEKID
+	db ELECTABUZZ
 	db NO_ITEM
 	db QUICK_ATTACK, CHARM, DIZZY_PUNCH, 0
 	dw 00512 ; OT ID
@@ -347,12 +347,12 @@ OddEggs:
 	db 5 ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
-	bigdw 21 ; Max HP
-	bigdw 12 ; Atk
-	bigdw 10 ; Def
-	bigdw 16 ; Spd
-	bigdw 13 ; SAtk
-	bigdw 12 ; SDef
+	bigdw 23 ; Max HP
+	bigdw 14 ; Atk
+	bigdw 12 ; Def
+	bigdw 17 ; Spd
+	bigdw 16 ; SAtk
+	bigdw 15 ; SDef
 	db "EGG@@@@@@@@"
 
 	db TOTODILE
