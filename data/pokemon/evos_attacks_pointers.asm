@@ -173,9 +173,9 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw PichuEvosAttacks
-	dw CleffaEvosAttacks
-	dw IgglybuffEvosAttacks
+	dw FlogistanEvosAttacks
+	dw CottoneeEvosAttacks
+	dw WhimsicottEvosAttacks
 	dw TogepiEvosAttacks
 	dw TogeticEvosAttacks
 	dw NatuEvosAttacks
@@ -239,9 +239,9 @@ EvosAttacksPointers::
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
-	dw SmoochumEvosAttacks
-	dw ElekidEvosAttacks
-	dw MagbyEvosAttacks
+	dw SnoconeyEvosAttacks
+	dw JirkEvosAttacks
+	dw CastaweighEvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks
@@ -253,6 +253,6 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw FinullEvosAttacks
 	dw YanmegaEvosAttacks
-	dw WhimsicottEvosAttacks
 	assert_table_length NUM_POKEMON
