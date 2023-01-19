@@ -171,9 +171,9 @@ EvolutionMoves::
 	db NO_MOVE      ; CROBAT
 	db NO_MOVE      ; CHINCHOU
 	db NO_MOVE      ; LANTURN
-	db NO_MOVE      ; PICHU
-	db NO_MOVE      ; CLEFFA
-	db NO_MOVE      ; IGGLYBUFF
+	db NO_MOVE      ; FLOGISTAN
+	db NO_MOVE      ; COTTONEE
+	db NO_MOVE      ; WHIMSICOTT
 	db NO_MOVE      ; TOGEPI
 	db WING_ATTACK  ; TOGETIC
 	db NO_MOVE      ; NATU
@@ -237,9 +237,9 @@ EvolutionMoves::
 	db NO_MOVE      ; SMEARGLE
 	db NO_MOVE      ; TYROGUE
 	db ROLLING_KICK ; HITMONTOP
-	db NO_MOVE      ; SMOOCHUM
-	db NO_MOVE      ; ELEKID
-	db NO_MOVE      ; MAGBY
+	db NO_MOVE      ; SNOCONEY
+	db NO_MOVE      ; JIRK
+	db NO_MOVE      ; CASTAWEIGH
 	db NO_MOVE      ; MILTANK
 	db NO_MOVE      ; BLISSEY
 	db NO_MOVE      ; RAIKOU
@@ -251,6 +251,6 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HO_OH
 	db NO_MOVE      ; CELEBI
+	db NO_MOVE      ; FINULL
 	db ANCIENTPOWER ; YANMEGA
-	db NO_MOVE      ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
