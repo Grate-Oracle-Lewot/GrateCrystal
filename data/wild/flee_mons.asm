@@ -12,6 +12,7 @@ SometimesFleeMons:
 	db UNOWN
 	db DUNSPARCE
 	db SNUBBULL
+	db SNOCONEY
 	db -1
 
 OftenFleeMons:
