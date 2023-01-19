@@ -69,25 +69,25 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_19
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
-	db 30, TENTACOOL
 	db 35, TENTACRUEL
-	db 30, MANTINE
+	db 35, CASTAWEIGH
+	db 35, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_20
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
-	db 30, TENTACOOL
 	db 35, TENTACRUEL
+	db 35, CASTAWEIGH
 	db 35, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_21
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
-	db 30, TENTACOOL
 	db 35, TENTACRUEL
-	db 30, MANTINE
+	db 35, CASTAWEIGH
+	db 35, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_22
@@ -133,8 +133,8 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_28
 	db 2 percent ; encounter rate
 	db 40, POLIWAG
-	db 35, POLIWAG
-	db 40, POLIWHIRL
+	db 35, POLIWHIRL
+	db 35, CASTAWEIGH
 	db 35, YANMEGA
 	end_water_wildmons
 
@@ -159,7 +159,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
-	db 5, YANMA
+	db 5, JIRK
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY
@@ -189,7 +189,7 @@ KantoWaterWildMons:
 	def_water_wildmons CINNABAR_ISLAND
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
-	db 30, TENTACOOL
+	db 35, CASTAWEIGH
 	db 35, TENTACRUEL
 	db 95, UNOWN
 	end_water_wildmons
