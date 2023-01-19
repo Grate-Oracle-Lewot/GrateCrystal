@@ -20,6 +20,7 @@ AlphabeticalPokedexOrder:
 	db BLISSEY
 	db BULBASAUR
 	db BUTTERFREE
+	db CASTAWEIGH
 	db CATERPIE
 	db CELEBI
 	db CHANSEY
@@ -30,9 +31,9 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db CLEFFA
 	db CLOYSTER
 	db CORSOLA
+	db COTTONEE
 	db CROBAT
 	db CROCONAW
 	db CUBONE
@@ -54,7 +55,6 @@ AlphabeticalPokedexOrder:
 	db EKANS
 	db ELECTABUZZ
 	db ELECTRODE
-	db ELEKID
 	db ENTEI
 	db ESPEON
 	db EXEGGCUTE
@@ -62,8 +62,10 @@ AlphabeticalPokedexOrder:
 	db FARFETCH_D
 	db FEAROW
 	db FERALIGATR
+	db FINULL
 	db FLAAFFY
 	db FLAREON
+	db FLOGISTAN
 	db FORRETRESS
 	db FURRET
 	db GASTLY
@@ -93,9 +95,9 @@ AlphabeticalPokedexOrder:
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
-	db IGGLYBUFF
 	db IVYSAUR
 	db JIGGLYPUFF
+	db JIRK
 	db JOLTEON
 	db JUMPLUFF
 	db JYNX
@@ -118,7 +120,6 @@ AlphabeticalPokedexOrder:
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
-	db MAGBY
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
@@ -158,7 +159,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY
@@ -204,8 +204,8 @@ AlphabeticalPokedexOrder:
 	db SLOWPOKE
 	db SLUGMA
 	db SMEARGLE
-	db SMOOCHUM
 	db SNEASEL
+	db SNOCONEY
 	db SNORLAX
 	db SNUBBULL
 	db SPEAROW
