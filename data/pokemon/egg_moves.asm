@@ -557,46 +557,46 @@ ChinchouEggMoves:
 	db MIST
 	db -1 ; end
 
-PichuEggMoves:
-	db DOUBLESLAP
-	db TRIPLE_KICK
-	db HI_JUMP_KICK
-	db PLAY_ROUGH
-	db BITE
-	db SIGNAL_BEAM
-	db -1 ; end
-
-; FlogistanEggMoves:
-;	db EARTH_POWER
-;	db AIR_SLASH
+; PichuEggMoves:
+;	db DOUBLESLAP
+;	db TRIPLE_KICK
+;	db HI_JUMP_KICK
+;	db PLAY_ROUGH
+;	db BITE
 ;	db SIGNAL_BEAM
-;	db KINESIS
-;	db SOFTBOILED
 ;	db -1 ; end
 
-; CottoneeEggMoves:
-;	db LOVELY_KISS
-;	db MIST
-;	db HAZE
-;	db SMOKESCREEN
-;	db SILVER_WIND
-;	db SPORE
-;	db -1 ; end
+FlogistanEggMoves:
+	db EARTH_POWER
+	db AIR_SLASH
+	db SIGNAL_BEAM
+	db KINESIS
+	db SOFTBOILED
+	db -1 ; end
 
-CleffaEggMoves:
-	db NIGHT_SHADE
-	db AMNESIA
-	db BELLY_DRUM
+CottoneeEggMoves:
+	db LOVELY_KISS
 	db MIST
-	db PRESENT
+	db HAZE
+	db SMOKESCREEN
+	db SILVER_WIND
+	db SPORE
 	db -1 ; end
 
-IgglybuffEggMoves:
-	db PERISH_SONG
-	db PRESENT
-	db FAINT_ATTACK
-	db DAZZLY_GLEAM
-	db -1 ; end
+; CleffaEggMoves:
+;	db NIGHT_SHADE
+;	db AMNESIA
+;	db BELLY_DRUM
+;	db MIST
+;	db PRESENT
+;	db -1 ; end
+
+; IgglybuffEggMoves:
+;	db PERISH_SONG
+;	db PRESENT
+;	db FAINT_ATTACK
+;	db DAZZLY_GLEAM
+;	db -1 ; end
 
 TogepiEggMoves:
 	db MIRROR_MOVE
@@ -872,56 +872,56 @@ TyrogueEggMoves:
 	db PLAY_ROUGH
 	db -1 ; end
 
-SmoochumEggMoves:
-	db MEDITATE
-	db DAZZLY_GLEAM
-	db SCARY_FACE
-	db PSYBEAM
-	db -1 ; end
+; SmoochumEggMoves:
+;	db MEDITATE
+;	db DAZZLY_GLEAM
+;	db SCARY_FACE
+;	db PSYBEAM
+;	db -1 ; end
 
-ElekidEggMoves:
-	db KARATE_CHOP
-	db BARRIER
-	db ROLLING_KICK
-	db FOCUS_ENERGY
-	db CROSS_CHOP
-	db -1 ; end
-
-MagbyEggMoves:
-	db KARATE_CHOP
-	db BARRIER
-	db SCREECH
-	db EARTH_POWER
-	db EGG_BOMB
-	db -1 ; end
-
-; SnoconeyEggMoves:
-;	db LICK
-;	db COTTON_SPORE
-;	db LEECH_SEED
-;	db LOW_KICK
+; ElekidEggMoves:
+;	db KARATE_CHOP
+;	db BARRIER
 ;	db ROLLING_KICK
+;	db FOCUS_ENERGY
+;	db CROSS_CHOP
 ;	db -1 ; end
 
-; JirkEggMoves:
-;	db THUNDER_WAVE
-;	db FAINT_ATTACK
-;	db SKY_ATTACK
-;	db DRILL_PECK
-;	db LOCK_ON
-;	db DESTINY_BOND
-;	db SPIKES
-;	db WHIRLWIND
+; MagbyEggMoves:
+;	db KARATE_CHOP
+;	db BARRIER
+;	db SCREECH
+;	db EARTH_POWER
+;	db EGG_BOMB
 ;	db -1 ; end
 
-; CastaweighEggMoves:
-;	db THRASH
-;	db FLAIL
-;	db BODY_SLAM
-;	db SLAM
-;	db BIND
-;	db HYPER_FANG
-;	db -1 ; end
+SnoconeyEggMoves:
+	db LICK
+	db COTTON_SPORE
+	db LEECH_SEED
+	db LOW_KICK
+	db ROLLING_KICK
+	db -1 ; end
+
+JirkEggMoves:
+	db THUNDER_WAVE
+	db FAINT_ATTACK
+	db SKY_ATTACK
+	db DRILL_PECK
+	db LOCK_ON
+	db DESTINY_BOND
+	db SPIKES
+	db WHIRLWIND
+	db -1 ; end
+
+CastaweighEggMoves:
+	db THRASH
+	db FLAIL
+	db BODY_SLAM
+	db SLAM
+	db BIND
+	db HYPER_FANG
+	db -1 ; end
 
 MiltankEggMoves:
 	db REVERSAL
@@ -940,14 +940,14 @@ LarvitarEggMoves:
 	db BELLY_DRUM
 	db -1 ; end
 
-WhimsicottEggMoves:
-	db LOVELY_KISS
-	db MIST
-	db HAZE
-	db SMOKESCREEN
-	db SILVER_WIND
-	db SPORE
-	db -1 ; end
+; WhimsicottEggMoves:
+;	db LOVELY_KISS
+;	db MIST
+;	db HAZE
+;	db SMOKESCREEN
+;	db SILVER_WIND
+;	db SPORE
+;	db -1 ; end
 
 NoEggMoves:
 	db -1 ; end
