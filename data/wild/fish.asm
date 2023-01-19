@@ -78,7 +78,7 @@ FishGroups:
 .Lake_Odd:
 	db  40 percent,     SLOWPOKE,   23
 	db  80 percent,     PSYDUCK,    23
-	db  90 percent,     FARFETCH_D, 23
+	db  90 percent + 1, FARFETCH_D, 23
 	db 100 percent,     CROCONAW,   23
 
 .Pond_Old:
@@ -98,7 +98,7 @@ FishGroups:
 .Pond_Odd:
 	db  40 percent,     WOOPER,     21
 	db  80 percent,     PSYDUCK,    21
-	db  90 percent,     FARFETCH_D, 21
+	db  90 percent + 1, FARFETCH_D, 21
 	db 100 percent,     WARTORTLE,  21
 
 .Dratini_Old:
