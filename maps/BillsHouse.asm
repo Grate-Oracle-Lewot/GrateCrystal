@@ -109,7 +109,7 @@ BillsGrandpa:
 	scall .ExcitedToSee
 	special BillsGrandfather
 	iffalse .SaidNo
-	ifnotequal PICHU, .WrongPokemon
+	ifnotequal PIKACHU, .WrongPokemon
 	scall .CorrectPokemon
 	setevent EVENT_SHOWED_PICHU_TO_BILLS_GRANDPA
 	sjump .ShowedPichu
@@ -346,9 +346,7 @@ BillsGrandpaPichuText:
 
 	para "I would love to"
 	line "see what it looks"
-
-	para "like before it"
-	line "evolves."
+	cont "like!"
 	done
 
 BillsHouse_MapEvents:
