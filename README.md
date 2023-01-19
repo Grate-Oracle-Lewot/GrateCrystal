@@ -28,7 +28,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Dragon types are immune to critical hits
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Unown and Delibird learn multiple moves
-  - All learnsets are generally more interesting, containing what would normally be egg moves, while egg moves now go even farther (but breeding chains are untested)
+  - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther (but breeding chains are untested)
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - Items in limited supply can generally be found somewhere as wild held items, ensuring they never truly run out
@@ -186,7 +186,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Miscellaneous
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
-- The Odd Egg can now hatch into starters (including Eevee) as well as babies, and whatever it becomes is a guaranteed shiny
+- The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
@@ -265,49 +265,3 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
-
-# FAQ
-
-Q) Why not more Pokémon?
-
-A) Because I'm not good enough at hacking.
-
-In the code, Pokémon are defined by unseen ID numbers, and because of the way these numbers are stored, they can't go any higher than 255. All available slots are used up by the time you add a measly two more Pokémon; obviously your computer has more filespace than the Game Boy Color, but the ROM doesn't know that, and getting it to understand that would start to become more like coding a new game instead of just modifying an existing one. Somebody else has figured out a way to get around this, at https://github.com/aaaaaa123456789/pokecrystal16 , but it's a bit above my skill level.
-
-Q) What about those six Pikachu forms?
-
-A) Those are handled differently, and I had to remove bits of code to get them to fit in the memory banks, so I don't think there would be room to do something similar with another Pokémon.
-
-Q) Why Yanmega and Whimsicott, then?
-
-A) Favoritism.
-
-Q) But no Cottonee?
-
-A) No room. Sorry.
-
-Q) Why not more moves?
-
-A) Same deal. You'll notice I had to remove a few moves to make room for some of the added ones.
-
-Q) Why not remove some Pokémon to make room for adding more?
-
-A) My focus is on making "bad" Pokémon better instead of removing them.
-
-Q) What about the babies? They're pretty pointless.
-
-A) But they're cute.
-
-Q) Why aren't you using Newbox? ( https://github.com/vulcandth/pokecrystal/tree/newbox )
-
-A) Again, a bit above my skill level, and I'm not sure I would have room for it with all the other additions I've made. I also like to think that the crappy box system discourages you from abusing the Game Boy PC to heal your Pokémon in the field without items.
-
-Q) Tri Attack's effectiveness is all wrong!
-
-A) It's based more on vibes than any hard math. If you don't like it, make your own hack.
-
-Q) How do I make my own hack?
-
-A) The base game disassembly is at https://github.com/pret/pokecrystal
-
-You'll have to make an account on the website, and then you can create your own "fork"—a.k.a., your own copy of the disassembly, which you can then edit however you please. As for how to actually make anything work, though, don't look to me—between poor coding practices, incorrect labeling, zero documentation, potential incompatibility due to updates to the base disassembly, and generally having little understanding of what I'm actually doing, you'll most likely just confuse yourself by looking at my stuff. I've linked to all the tutorials already, and there's a Discord for asking questions directly, so check those out.
