@@ -191,9 +191,9 @@ JOHTO_POKEMON EQU const_value
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const PICHU      ; ac
-	const CLEFFA     ; ad
-	const IGGLYBUFF  ; ae
+	const FLOGISTAN  ; ac
+	const COTTONEE   ; ad
+	const WHIMSICOTT ; ae
 	const TOGEPI     ; af
 	const TOGETIC    ; b0
 	const NATU       ; b1
@@ -257,9 +257,9 @@ JOHTO_POKEMON EQU const_value
 	const SMEARGLE   ; eb
 	const TYROGUE    ; ec
 	const HITMONTOP  ; ed
-	const SMOOCHUM   ; ee
-	const ELEKID     ; ef
-	const MAGBY      ; f0
+	const SNOCONEY   ; ee
+	const JIRK       ; ef
+	const CASTAWEIGH ; f0
 	const MILTANK    ; f1
 	const BLISSEY    ; f2
 	const RAIKOU     ; f3
@@ -271,8 +271,8 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
-	const YANMEGA    ; fc
-	const WHIMSICOTT ; fd
+	const FINULL     ; fc
+	const YANMEGA    ; fd
 NUM_POKEMON EQU const_value - 1
 	const EGG        ; fe
 
