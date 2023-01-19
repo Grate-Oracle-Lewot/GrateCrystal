@@ -108,10 +108,10 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 40, SEAKING
-	db 40, GOLDUCK
-	db 40, GOLDEEN
-	db 40, BLASTOISE
+	db 50, SEAKING
+	db 50, GOLDUCK
+	db 50, CASTAWEIGH
+	db 50, BLASTOISE
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -175,7 +175,7 @@ JohtoWaterWildMons:
 	db 20, TENTACOOL
 	db 15, TENTACOOL
 	db 20, TENTACRUEL
-	db 15, YANMA
+	db 15, JIRK
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_35
@@ -189,9 +189,9 @@ JohtoWaterWildMons:
 	def_water_wildmons ROUTE_40
 	db 6 percent ; encounter rate
 	db 20, TENTACOOL
-	db 15, TENTACOOL
 	db 20, TENTACRUEL
-	db 15, MANTINE
+	db 20, MANTINE
+	db 20, CASTAWEIGH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
@@ -199,7 +199,7 @@ JohtoWaterWildMons:
 	db 20, TENTACOOL
 	db 20, TENTACRUEL
 	db 20, MANTINE
-	db 15, MANTINE
+	db 20, CASTAWEIGH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
@@ -300,8 +300,8 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate
+	db 40, CASTAWEIGH
 	db 40, POLIWHIRL
-	db 45, POLIWHIRL
 	db 40, POLIWAG
 	db 40, FERALIGATR
 	end_water_wildmons
