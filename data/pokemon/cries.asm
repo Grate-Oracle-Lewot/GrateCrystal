@@ -177,9 +177,9 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
-	mon_cry CRY_PICHU,         0,  320 ; PICHU
-	mon_cry CRY_CLEFFA,       97,  145 ; CLEFFA
-	mon_cry CRY_CHIKORITA,   232,  232 ; IGGLYBUFF
+	mon_cry CRY_TYPHLOSION,  242,  142 ; FLOGISTAN
+	mon_cry CRY_RATTATA,     -42,  370 ; COTTONEE
+	mon_cry CRY_SENTRET,     142,  840 ; WHIMSICOTT
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
 	mon_cry CRY_NATU,       -103,  256 ; NATU
@@ -243,9 +243,9 @@ PokemonCries::
 	mon_cry CRY_PICHU,      -538,  496 ; SMEARGLE
 	mon_cry CRY_AIPOM,        44,  264 ; TYROGUE
 	mon_cry CRY_SLUGMA,        0,  256 ; HITMONTOP
-	mon_cry CRY_MARILL,      104,  256 ; SMOOCHUM
-	mon_cry CRY_SUNFLORA,   -728,  180 ; ELEKID
-	mon_cry CRY_TEDDIURSA,   374,   58 ; MAGBY
+	mon_cry CRY_DONPHAN,       0,  210 ; SNOCONEY
+	mon_cry CRY_SUNFLORA,   -421,  180 ; JIRK
+	mon_cry CRY_TYPHLOSION, -421,  184 ; CASTAWEIGH
 	mon_cry CRY_GLIGAR,     -461,  416 ; MILTANK
 	mon_cry CRY_SLOWKING,    659,  320 ; BLISSEY
 	mon_cry CRY_RAIKOU,      558,  288 ; RAIKOU
@@ -257,8 +257,8 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	mon_cry CRY_ENTEI,       168,  273 ; FINULL
 	mon_cry CRY_TOTODILE,   -420,  575 ; YANMEGA
-	mon_cry CRY_SENTRET,     142,  840 ; WHIMSICOTT
 	assert_table_length NUM_POKEMON
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
