@@ -38,7 +38,7 @@ FishGroups:
 .Shore_Odd:
 	db  25 percent,     time_group 0
 	db  50 percent,     CHINCHOU,   21
-	db  75 percent,     OMANYTE,    21
+	db  75 percent + 1, OMANYTE,    21
 	db 100 percent,     KABUTO,     21
 
 .Ocean_Old:
@@ -58,7 +58,7 @@ FishGroups:
 .Ocean_Odd:
 	db  25 percent,     SLOWBRO,    28
 	db  50 percent,     SLOWKING,   28
-	db  75 percent,     OMANYTE,    28
+	db  75 percent + 1, OMANYTE,    28
 	db 100 percent,     KABUTO,     28
 
 .Lake_Old:
@@ -116,8 +116,8 @@ FishGroups:
 	db  75 percent + 1, GYARADOS,   40
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_Odd:
-	db  50 percent,     POLITOED,   21
-	db  75 percent,     DRATINI,    21
+	db  50 percent + 1, POLITOED,   21
+	db  75 percent + 1, DRATINI,    21
 	db 100 percent,     DRAGONAIR,  21
 
 .Gyarados_Old:
@@ -135,8 +135,8 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     MAGIKARP,   37
 .Gyarados_Odd:
-	db  50 percent,     GYARADOS,   19
-	db  75 percent,     GYARADOS,   20
+	db  50 percent + 1, GYARADOS,   19
+	db  75 percent + 1, GYARADOS,   20
 	db 100 percent,     GYARADOS,   21
 
 .Dratini_2_Old:
@@ -154,8 +154,8 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_2_Odd:
-	db  50 percent,     POLITOED,   23
-	db  75 percent,     DRATINI,    23
+	db  50 percent + 1, POLITOED,   23
+	db  75 percent + 1, DRATINI,    23
 	db 100 percent,     DRAGONAIR,  23
 
 .WhirlIslands_Old:
@@ -173,8 +173,8 @@ FishGroups:
 	db  75 percent + 1, KINGLER,    40
 	db 100 percent,     SEADRA,     40
 .WhirlIslands_Odd:
-	db  50 percent,     UNOWN,      24
-	db  75 percent,     MARILL,     21
+	db  50 percent + 1, UNOWN,      24
+	db  75 percent + 1, MARILL,     21
 	db 100 percent,     LAPRAS,     21
 
 .Qwilfish_Old:
@@ -210,8 +210,8 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     REMORAID,   40
 .Remoraid_Odd:
-	db  50 percent,     REMORAID,   21
-	db  75 percent,     OCTILLERY,  21
+	db  50 percent + 1, REMORAID,   21
+	db  75 percent + 1, OCTILLERY,  21
 	db 100 percent,     QUAGSIRE,   21
 
 TimeFishGroups:
