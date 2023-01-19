@@ -46,12 +46,12 @@ FishGroups:
 	db  75 percent + 1, GEODUDE,     8
 	db 100 percent,     TENTACOOL,   8
 .Ocean_Good:
-	db  25 percent,     MAGIKARP,   19
+	db  25 percent,     CASTAWEIGH, 19
 	db  50 percent,     TENTACOOL,  19
 	db  75 percent + 1, CHINCHOU,   19
 	db 100 percent,     time_group 2
 .Ocean_Super:
-	db  25 percent,     CHINCHOU,   40
+	db  25 percent,     CASTAWEIGH, 40
 	db  50 percent,     time_group 3
 	db  75 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
@@ -160,17 +160,17 @@ FishGroups:
 
 .WhirlIslands_Old:
 	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, MAGIKARP,    9
+	db  75 percent + 1, CASTAWEIGH,  8
 	db 100 percent,     KRABBY,      8
 .WhirlIslands_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     KRABBY,     19
-	db  75 percent + 1, KRABBY,     21
+	db  75 percent + 1, CASTAWEIGH, 19
 	db 100 percent,     time_group 18
 .WhirlIslands_Super:
-	db  25 percent,     KRABBY,     40
+	db  25 percent,     KINGLER,    40
 	db  50 percent,     time_group 19
-	db  75 percent + 1, KINGLER,    40
+	db  75 percent + 1, CASTAWEIGH, 40
 	db 100 percent,     SEADRA,     40
 .WhirlIslands_Odd:
 	db  50 percent + 1, UNOWN,      24
@@ -219,7 +219,7 @@ TimeFishGroups:
 	db CORSOLA,    20,  STARYU,     20 ; 0
 	db CORSOLA,    40,  STARMIE,    40 ; 1
 	db SHELLDER,   20,  CLOYSTER,   20 ; 2
-	db CLOYSTER,   40,  SHELLDER,   40 ; 3
+	db CLOYSTER,   40,  CASTAWEIGH, 40 ; 3
 	db GOLDEEN,    20,  TANGELA,    20 ; 4
 	db SEAKING,    40,  TANGELA,    40 ; 5
 	db POLIWAG,    20,  GEODUDE,    20 ; 6
