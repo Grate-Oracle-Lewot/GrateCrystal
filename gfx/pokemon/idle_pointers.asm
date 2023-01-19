@@ -171,9 +171,9 @@ AnimationIdlePointers:
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw PichuAnimationIdle
-	dw CleffaAnimationIdle
-	dw IgglybuffAnimationIdle
+	dw FlogistanAnimationIdle
+	dw CottoneeAnimationIdle
+	dw WhimsicottAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
 	dw NatuAnimationIdle
@@ -237,9 +237,9 @@ AnimationIdlePointers:
 	dw SmeargleAnimationIdle
 	dw TyrogueAnimationIdle
 	dw HitmontopAnimationIdle
-	dw SmoochumAnimationIdle
-	dw ElekidAnimationIdle
-	dw MagbyAnimationIdle
+	dw SnoconeyAnimationIdle
+	dw JirkAnimationIdle
+	dw CastaweighAnimationIdle
 	dw MiltankAnimationIdle
 	dw BlisseyAnimationIdle
 	dw RaikouAnimationIdle
@@ -251,6 +251,6 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
+	dw FinullAnimationIdle
 	dw YanmegaAnimationIdle
-	dw WhimsicottAnimationIdle
 	assert_table_length NUM_POKEMON
