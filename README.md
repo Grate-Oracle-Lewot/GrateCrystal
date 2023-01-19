@@ -4,6 +4,22 @@ URL: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
 This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokémon Crystal romhack. It's called "Grate" Crystal because the editing (but not the original disassembling) was done by me, the Grate Oracle Lewot. There's not much of a theme to this project—it's just kind of me figuring out how the whole hacking process works and seeing what all I can get away with. I'll list most of the changes below, but I'm bound to miss more than a few details, so consider the list non-exhaustive.
 
+# Pokémon removed
+
+- Pichu
+- Cleffa
+- Igglybuff
+- Smoochum
+- Elekid
+- Magby
+
+# Pokémon added
+
+- Cottonee
+- Whimsicott
+- Yanmega
+- 5 new Pokémon based on unused beta designs, one of which is legendary
+
 # Major Edits
 
 - Fairy type added
@@ -46,10 +62,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Bug now resists Psychic, is no longer bad against Fire or Ghost, and is now bad against Rock
 - Steel no longer resists Ghost or Psychic (but does still resist Dark)
 - Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
-
-## Pokémon added
-- Yanmega
-- Whimsicott
 
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
@@ -265,3 +277,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
+
+# Why remove some Pokémon and moves?
+
+In both cases, the maximum number is limited by the size of a byte. (That's 255, but actually a few less because some values are used for other purposes, such as indicating a lack of an entry or the end of the list.) There are possible ways around this, but they're a bit above my skill level, and even if I bypass the numerical limit, I may not have room for more entries in the memory banks, which are much harder to work around. As for deciding to remove the baby Pokémon, I really didn't want to remove any Pokémon even if they were useless in battle, but I was also really excited about adding new Pokémon, and the way I see it, the main purpose of the baby Pokémon is to encourage the breeding mechanic by requiring it for Pokédex completion, but this particular hack is supposed to be pretty silly and breezy, so I doubt anyone will spend time breeding, or even completing the Pokédex for that matter. I kept Togepi because of the free egg and Tyrogue to properly connect the Hitmons, and the rest is recent history.
