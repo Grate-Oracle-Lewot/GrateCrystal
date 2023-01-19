@@ -348,12 +348,12 @@ PokemonPicPointers::
 	dba ChinchouBackpic
 	dba LanturnFrontpic
 	dba LanturnBackpic
-	dba PichuFrontpic
-	dba PichuBackpic
-	dba CleffaFrontpic
-	dba CleffaBackpic
-	dba IgglybuffFrontpic
-	dba IgglybuffBackpic
+	dba FlogistanFrontpic
+	dba FlogistanBackpic
+	dba CottoneeFrontpic
+	dba CottoneeBackpic
+	dba WhimsicottFrontpic
+	dba WhimsicottBackpic
 	dba TogepiFrontpic
 	dba TogepiBackpic
 	dba TogeticFrontpic
@@ -483,12 +483,12 @@ PokemonPicPointers::
 	dba TyrogueBackpic
 	dba HitmontopFrontpic
 	dba HitmontopBackpic
-	dba SmoochumFrontpic
-	dba SmoochumBackpic
-	dba ElekidFrontpic
-	dba ElekidBackpic
-	dba MagbyFrontpic
-	dba MagbyBackpic
+	dba SnoconeyFrontpic
+	dba SnoconeyBackpic
+	dba JirkFrontpic
+	dba JirkBackpic
+	dba CastaweighFrontpic
+	dba CastaweighBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
 	dba BlisseyFrontpic
@@ -511,10 +511,10 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+	dba FinullFrontpic
+	dba FinullBackpic
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
-	dba WhimsicottFrontpic
-	dba WhimsicottBackpic
 	assert_table_length NUM_POKEMON
 	dba EggPic
 	dbw -1, -1 ; unused
