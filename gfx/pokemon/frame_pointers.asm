@@ -171,9 +171,9 @@ FramesPointers:
 	dw CrobatFrames
 	dw ChinchouFrames
 	dw LanturnFrames
-	dw PichuFrames
-	dw CleffaFrames
-	dw IgglybuffFrames
+	dw FlogistanFrames
+	dw CottoneeFrames
+	dw WhimsicottFrames
 	dw TogepiFrames
 	dw TogeticFrames
 	dw NatuFrames
@@ -237,9 +237,9 @@ FramesPointers:
 	dw SmeargleFrames
 	dw TyrogueFrames
 	dw HitmontopFrames
-	dw SmoochumFrames
-	dw ElekidFrames
-	dw MagbyFrames
+	dw SnoconeyFrames
+	dw JirkFrames
+	dw CastaweighFrames
 	dw MiltankFrames
 	dw BlisseyFrames
 	dw RaikouFrames
@@ -251,6 +251,6 @@ FramesPointers:
 	dw LugiaFrames
 	dw HoOhFrames
 	dw CelebiFrames
+	dw FinullFrames
 	dw YanmegaFrames
-	dw WhimsicottFrames
 	assert_table_length NUM_POKEMON
