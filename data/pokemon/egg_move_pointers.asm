@@ -171,9 +171,9 @@ EggMovePointers::
 	dw NoEggMoves
 	dw ChinchouEggMoves
 	dw NoEggMoves
-	dw PichuEggMoves
-	dw CleffaEggMoves
-	dw IgglybuffEggMoves
+	dw FlogistanEggMoves
+	dw CottoneeEggMoves
+	dw NoEggMoves
 	dw TogepiEggMoves
 	dw NoEggMoves
 	dw NatuEggMoves
@@ -237,9 +237,9 @@ EggMovePointers::
 	dw NoEggMoves
 	dw TyrogueEggMoves
 	dw NoEggMoves
-	dw SmoochumEggMoves
-	dw ElekidEggMoves
-	dw MagbyEggMoves
+	dw SnoconeyEggMoves
+	dw JirkEggMoves
+	dw CastaweighEggMoves
 	dw MiltankEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
@@ -252,5 +252,5 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw WhimsicottEggMoves
+	dw NoEggMoves
 	assert_table_length NUM_POKEMON
