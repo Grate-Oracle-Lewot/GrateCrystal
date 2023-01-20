@@ -102,10 +102,6 @@ NewBarkTownTeacherScript:
 	end
 
 NewBarkTownFisherScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon CASTAWEIGH, 1
-	startbattle
-	reloadmapafterbattle
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSilverScript:
@@ -127,10 +123,6 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon JIRK, 1
-	startbattle
-	reloadmapafterbattle
 	end
 
 NewBarkTownSign:
@@ -141,22 +133,19 @@ NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon FLOGISTAN, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon COTTONEE, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon SNOCONEY, 1
+	loadwildmon CASTAWEIGH, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownElmsHouseSignText
