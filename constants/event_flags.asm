@@ -1111,7 +1111,8 @@
 	const EVENT_SAFARI_ZONE_MAGIKARP
 	const EVENT_SAFARI_ZONE_SUDOWOODO
 	const EVENT_CHERRYGROVE_MART_DELIBIRD
-; Unused: next 116 (now 49) events
+	const EVENT_FOUGHT_FINULL
+; Unused: next 116 (now 48) events
 
 	const_next 1600
 ; Sprite visibility flags
