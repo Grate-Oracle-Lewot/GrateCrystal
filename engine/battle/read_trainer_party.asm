@@ -110,6 +110,12 @@ ReadTrainerPartyPieces:
 	ld d, h
 	ld e, l
 	pop hl
+
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
 .no_dvs
 
 ; item?
