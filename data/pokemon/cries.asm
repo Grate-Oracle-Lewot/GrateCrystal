@@ -178,7 +178,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
 	mon_cry CRY_RATTATA,       0,  840 ; FLOGISTAN
-	mon_cry CRY_AMPHAROS,   -142,  142 ; COTTONEE
+	mon_cry CRY_AMPHAROS,   -154,  142 ; COTTONEE
 	mon_cry CRY_SENTRET,     142,  840 ; WHIMSICOTT
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
