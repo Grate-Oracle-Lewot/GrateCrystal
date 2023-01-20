@@ -96,7 +96,7 @@ PokefanmAlexAfterBattleText:
 PokefanmJoshuaSeenText:
 	text "Nihihi! Would you"
 	line "like to battle my"
-	cont "PIKACHU family?"
+	cont "PIKACHU gang?"
 	done
 
 PokefanmJoshuaBeatenText:
@@ -108,8 +108,8 @@ PokefanmJoshuaAfterBattleText:
 	text "You look like you"
 	line "have many #MON,"
 
-	para "but PIKACHU and"
-	line "co. are the best."
+	para "but PIKACHU is"
+	line "still the best."
 	done
 
 BirdKeeperPerrySeenText:
