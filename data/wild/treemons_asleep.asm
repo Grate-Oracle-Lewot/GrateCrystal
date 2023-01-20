@@ -2,12 +2,11 @@
 
 AsleepTreeMonsNite:
 	db CATERPIE
-	db METAPOD
 	db BUTTERFREE
 	db WEEDLE
-	db KAKUNA
 	db BEEDRILL
 	db SPEAROW
+	db FEAROW
 	db EKANS
 	db LEDYBA
 	db AIPOM
