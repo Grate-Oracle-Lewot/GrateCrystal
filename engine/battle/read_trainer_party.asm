@@ -116,11 +116,6 @@ ReadTrainerPartyPieces:
 	inc de
 	ld a, [hli]
 	ld [de], a
-
-	ld hl, wOTPartyMon1DVs
-	predef GetPikachuForm
-	call GetSecondPikachuType
-	ld [wEnemyMonType2], a
 .no_dvs
 
 ; item?
@@ -239,6 +234,11 @@ ReadTrainerPartyPieces:
 	ld [hl], c
 	dec hl
 	ld [hl], b
+
+	ld hl, wOTPartyMon1DVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
 
 	pop hl
 .no_stat_recalc
