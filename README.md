@@ -66,7 +66,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
 - Spearow/Fearow: Normal/Flying -> Flying
-- Pichu: Electric -> Electric/Fairy
 - Pikachu has six forms, determined by DVs (like Unown letters):
   - Retro (uses Gen I sprites): pure Electric
   - Silver (animated Silver Version sprite): Electric/Normal
@@ -105,7 +104,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Qwilfish: Water/Poison -> Water/Fire
 - Stantler: Normal -> Normal/Psychic
 - Hitmontop: Fighting -> Fighting/Fairy
-- Smoochum: Ice/Psychic -> Ice/Fairy
 - Larvitar/Pupitar: Rock/Ground -> Rock/Dark
 - Lugia: Psychic/Flying -> Ice/Dragon (Aeroblast is Ice-type too and called "Zeroblast")
 - Ho-Oh: Fire/Flying -> Fire/Dragon
