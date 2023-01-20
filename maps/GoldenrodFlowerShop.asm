@@ -36,10 +36,10 @@ FlowerShopTeacherScript:
 	opentext
 	writetext GoldenrodFlowerShopTeacherTakeBackSquirtbottleText
 	promptbutton
-	verbosegiveitem SACRED_ASH
+	verbosegiveitem GS_BALL
 	iffalse .BagFull
 	takeitem SQUIRTBOTTLE
-	writetext GoldenrodFlowerShopTeacherSacredAshText
+	writetext GoldenrodFlowerShopTeacherGSBallText
 	waitbutton
 	closetext
 	end
@@ -159,16 +159,32 @@ GoldenrodFlowerShopTeacherBagFullText:
 	line "some room, hon!"
 	done
 
-GoldenrodFlowerShopTeacherSacredAshText:
-	text "That's SACRED ASH."
+GoldenrodFlowerShopTeacherGSBallText:
+	text "My dad worked for"
+	line "the company that"
 
-	para "It fully heals"
-	line "your entire party"
-	cont "all at once!"
+	para "tore down the old"
+	line "tower to make room"
 
-	para "You can't buy it"
-	line "anywhere, so don't"
-	cont "use it hastily."
+	para "for the RADIO"
+	line "TOWER."
+
+	para "He found that BALL"
+	line "when they were"
+	cont "digging."
+
+	para "It's so pretty,"
+	line "but I've never"
+
+	para "been able to get"
+	line "it open!"
+
+	para "I hear there's a"
+	line "BALL maker in"
+	cont "AZALEA TOWN…"
+
+	para "Maybe he would"
+	line "know what to do?"
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
