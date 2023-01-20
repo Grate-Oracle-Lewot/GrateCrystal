@@ -9,9 +9,7 @@ SometimesFleeMons:
 	db EEVEE
 	db CHIKORITA
 	db TOGETIC
-	db UNOWN
 	db DUNSPARCE
-	db SNUBBULL
 	db SNOCONEY
 	db -1
 
