@@ -116,6 +116,11 @@ ReadTrainerPartyPieces:
 	inc de
 	ld a, [hli]
 	ld [de], a
+
+	ld hl, wOTPartyMon1DVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wOTPartyMon1Type2], a
 .no_dvs
 
 ; item?
