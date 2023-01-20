@@ -3426,7 +3426,7 @@ PokefanMGroup:
 	; POKEFANM (4)
 	db "JOSHUA@", TRAINERTYPE_DVS
 	db 42, PIKACHU,    $99, $99
-	db 42, PIKACHU,    $D9, $99
+	db 42, PIKACHU,    $9F, $99
 	db 42, PIKACHU,    $BD, $DD
 	db 42, PIKACHU,    $CC, $CC
 	db 42, PIKACHU,    $FC, $99
