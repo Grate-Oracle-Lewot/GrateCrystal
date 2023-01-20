@@ -117,10 +117,12 @@ ReadTrainerPartyPieces:
 	ld a, [hli]
 	ld [de], a
 
+	push hl
 	ld hl, wOTPartyMon1DVs
 	predef GetPikachuForm
 	call GetSecondPikachuType
-	ld [wOTPartyMon1Type2], a
+	ld [wEnemyMonType2], a
+	pop hl
 .no_dvs
 
 ; item?
