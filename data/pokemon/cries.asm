@@ -178,7 +178,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
 	mon_cry CRY_RATTATA,       0,  840 ; FLOGISTAN
-	mon_cry CRY_AMPHAROS,   -184,  142 ; COTTONEE
+	mon_cry CRY_AMPHAROS,   -142,  142 ; COTTONEE
 	mon_cry CRY_SENTRET,     142,  840 ; WHIMSICOTT
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
@@ -245,7 +245,7 @@ PokemonCries::
 	mon_cry CRY_SLUGMA,        0,  256 ; HITMONTOP
 	mon_cry CRY_DONPHAN,     142,  370 ; SNOCONEY
 	mon_cry CRY_SUNFLORA,   -421,  180 ; JIRK
-	mon_cry CRY_MANTINE,    -842,   84 ; CASTAWEIGH
+	mon_cry CRY_MANTINE,    -842,  100 ; CASTAWEIGH
 	mon_cry CRY_GLIGAR,     -461,  416 ; MILTANK
 	mon_cry CRY_SLOWKING,    659,  320 ; BLISSEY
 	mon_cry CRY_RAIKOU,      558,  288 ; RAIKOU
