@@ -235,10 +235,12 @@ ReadTrainerPartyPieces:
 	dec hl
 	ld [hl], b
 
+	push hl
 	ld hl, wOTPartyMon1DVs
 	predef GetPikachuForm
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
+	pop hl
 
 	pop hl
 .no_stat_recalc
