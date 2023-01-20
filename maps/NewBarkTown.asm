@@ -133,9 +133,6 @@ NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
-	loadwildmon FLOGISTAN, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
