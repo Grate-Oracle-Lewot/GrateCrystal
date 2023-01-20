@@ -29,7 +29,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
-- Access to the GS Ball Celebi event, and new rooms with static encounters for Articuno, Zapdos, Moltres, Mew, and Mewtwo (plus an event of sorts for the new legendary)
+- Special encounters for all legendary Pokémon (return the Squirtbottle to the Flower Shop to get the GS Ball!)
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
