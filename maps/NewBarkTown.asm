@@ -136,15 +136,9 @@ NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
-	loadwildmon COTTONEE, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
-	loadwildmon CASTAWEIGH, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTown_TeacherRunsToYouMovement1:
