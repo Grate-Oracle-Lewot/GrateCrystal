@@ -8,6 +8,7 @@
 
 GoldenrodPokecenter1F_MapScripts:
 	def_scene_scripts
+	scene_const SCENE_GOLDENRODPOKECENTER1F_GS_BALL
 
 	def_callbacks
 
@@ -18,8 +19,9 @@ GoldenrodPokecenter1FChanseyScript:
 	jumpstd PokecenterChanseyScript
 
 GoldenrodPokecenter1F_GSBallSceneLeft:
-	checkflag ENGINE_PLAINBADGE
-	iftrue .gsball
+	setval BATTLETOWERACTION_CHECKMOBILEEVENT
+	special BattleTowerAction
+	ifequal MOBILE_EVENT_OBJECT_GS_BALL, .gsball
 	end
 
 .gsball
@@ -49,8 +51,9 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	end
 
 GoldenrodPokecenter1F_GSBallSceneRight:
-	checkflag ENGINE_PLAINBADGE
-	iftrue .gsball
+	setval BATTLETOWERACTION_CHECKMOBILEEVENT
+	special BattleTowerAction
+	ifequal MOBILE_EVENT_OBJECT_GS_BALL, .gsball
 	end
 
 .gsball
@@ -818,8 +821,8 @@ GoldenrodPokecenter1F_MapEvents:
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
-	coord_event  3,  7, SCENE_DEFAULT, GoldenrodPokecenter1F_GSBallSceneLeft
-	coord_event  4,  7, SCENE_DEFAULT, GoldenrodPokecenter1F_GSBallSceneRight
+	coord_event  3,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneLeft
+	coord_event  4,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneRight
 
 	def_bg_events
 
