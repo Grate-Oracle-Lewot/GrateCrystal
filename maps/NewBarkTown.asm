@@ -102,6 +102,9 @@ NewBarkTownTeacherScript:
 	end
 
 NewBarkTownFisherScript:
+	loadwildmon CASTAWEIGH, 1
+	startbattle
+	reloadmapafterbattle
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSilverScript:
@@ -123,18 +126,33 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
+	loadwildmon JIRK, 1
+	startbattle
+	reloadmapafterbattle
 	end
 
 NewBarkTownSign:
+	loadwildmon FINULL, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
+	loadwildmon FLOGISTAN, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
+	loadwildmon COTTONEE, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
+	loadwildmon SNOCONEY, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTown_TeacherRunsToYouMovement1:
@@ -248,7 +266,7 @@ Text_ElmDiscoveredNewMon:
 	line "discovered some"
 	cont "new #MON, like"
 	cont "YANMEGA and"
-	cont "WHIMSICOTT."
+	cont "CASTAWEIGH."
 	done
 
 NewBarkTownRivalText1:
