@@ -12,6 +12,7 @@ FloatMons::
 	db MEW
 	db MISDREAVUS
 	db UNOWN
+	db JIRK
 	db LUGIA ; no longer Flying type in Grate Crystal
 	db HO_OH ; no longer Flying type in Grate Crystal
 	db CELEBI
