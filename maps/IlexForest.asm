@@ -464,6 +464,8 @@ IlexForestShrineScript:
 	checkitem GS_BALL
 	iftrue .AskCelebiEvent
 .DontDoCelebiEvent:
+	checkevent EVENT_FOUGHT_FINULL
+	iftrue .DontDoFinullEvent
 	checkevent EVENT_FOUGHT_CELEBI
 	iftrue .CheckEliteFour
 	sjump .DontDoFinullEvent
