@@ -697,12 +697,12 @@ RageCandyBarDesc:
 	next "HP by 42.@"
 
 GSBallDesc:
-	db   "The mysterious"
-	next "BALL.@"
+	db   "A gold-and-silver"
+	next "BALL. Won't open.@"
 
 BlueCardDesc:
-	db   "Card to save"
-	next "points.@"
+	db   "A card to save"
+	next "BUENA's points.@"
 
 MiracleSeedDesc:
 	db   "Powers up grass-"
