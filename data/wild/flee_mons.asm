@@ -9,13 +9,13 @@ SometimesFleeMons:
 	db EEVEE
 	db CHIKORITA
 	db TOGETIC
+	db UNOWN
 	db DUNSPARCE
 	db SNOCONEY
 	db -1
 
 OftenFleeMons:
 	db CUBONE
-	db TOGEPI
 	db DELIBIRD
 	db PHANPY
 	db TEDDIURSA
