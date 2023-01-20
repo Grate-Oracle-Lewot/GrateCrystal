@@ -464,6 +464,14 @@ IlexForestShrineScript:
 	checkitem GS_BALL
 	iftrue .AskCelebiEvent
 .DontDoCelebiEvent:
+	checkevent EVENT_FOUGHT_CELEBI
+	iftrue .CheckEliteFour
+	sjump .DontDoFinullEvent
+
+.CheckEliteFour:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .FinullEvent
+.DontDoFinullEvent:
 	jumptext Text_IlexForestShrine
 
 .AskCelebiEvent:
@@ -491,6 +499,7 @@ IlexForestShrineScript:
 	turnobject PLAYER, DOWN
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
+	setevent EVENT_FOUGHT_CELEBI
 	special CelebiShrineEvent
 	loadwildmon CELEBI, 30
 	startbattle
@@ -507,6 +516,21 @@ IlexForestShrineScript:
 	applymovement ILEXFOREST_KURT, IlexForestKurtStepsDownMovement
 	disappear ILEXFOREST_KURT
 .DidntCatchCelebi:
+	end
+
+.FinullEvent:
+	opentext
+	writetext Text_IlexForestShrine
+	waitbutton
+	special FadeOutMusic
+	writetext Text_ShrineFinullEvent
+	waitbutton
+	closetext
+	setevent EVENT_FOUGHT_FINULL
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadwildmon FINULL, 1
+	startbattle
+	reloadmapafterbattle
 	end
 
 MovementData_Farfetchd_Pos1_Pos2:
@@ -935,6 +959,20 @@ Text_KurtCaughtCelebi:
 
 	para "I'll head home."
 	line "Don't be scarce!"
+	done
+
+Text_ShrineFinullEvent:
+	text "The GS BALL is"
+	line "still inside the"
+	cont "SHRINE."
+
+	para "…"
+
+	para "The GS BALL start-"
+	line "ed shaking!"
+
+	para "Something came"
+	line "out!"
 	done
 
 BugCatcherWayneSeenText:
