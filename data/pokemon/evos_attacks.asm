@@ -2629,6 +2629,7 @@ FlogistanEvosAttacks:
 
 CottoneeEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, WHIMSICOTT
+	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 3, FAIRY_WIND
 	db 6, STUN_SPORE
