@@ -3424,13 +3424,13 @@ PokefanMGroup:
 	db -1 ; end
 
 	; POKEFANM (4)
-	db "JOSHUA@", TRAINERTYPE_ITEM
-	db 42, PIKACHU,    GOLD_BERRY
-	db 42, PIKACHU,    GOLD_BERRY
-	db 42, PIKACHU,    GOLD_BERRY
-	db 42, PIKACHU,    GOLD_BERRY
-	db 42, PIKACHU,    GOLD_BERRY
-	db 42, PIKACHU,    GOLD_BERRY
+	db "JOSHUA@", TRAINERTYPE_DVS
+	db 42, PIKACHU,    $99, $99
+	db 42, PIKACHU,    $D9, $99
+	db 42, PIKACHU,    $BD, $DD
+	db 42, PIKACHU,    $CC, $CC
+	db 42, PIKACHU,    $FC, $99
+	db 42, PIKACHU,    $77, $77
 	db -1 ; end
 
 	; POKEFANM (5)
@@ -3452,7 +3452,6 @@ PokefanMGroup:
 
 	; POKEFANM (8)
 	db "JEREMY@", TRAINERTYPE_ITEM
-	db 61, MEOWTH,     GOLD_BERRY
 	db 61, PERSIAN,    GOLD_BERRY
 	db 61, JIRK,       GOLD_BERRY
 	db -1 ; end
