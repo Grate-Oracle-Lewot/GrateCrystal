@@ -56,14 +56,16 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - A few Pokémon have been reverted to their beta designs from the Spaceworld demos, a few have palette changes to reflect their type changes (see below), and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
-## Type chart changes
+# Type chart changes
+
 - Fairy merely resists Dragon instead of being totally immune
 - Ice now resists Fairy and Flying
 - Bug now resists Psychic, is no longer bad against Fire or Ghost, and is now bad against Rock
 - Steel no longer resists Ghost or Psychic (but does still resist Dark)
 - Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
 
-## Pokémon type changes
+# Pokémon type changes
+
 - Rattata/Raticate: Normal -> Normal/Dark
 - Spearow/Fearow: Normal/Flying -> Flying
 - Pikachu has six forms, determined by DVs (like Unown letters):
@@ -110,7 +112,8 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Yanmega: Bug/Flying -> Bug/Dragon
 - Unown's type now appears as "???", and it's neutral to all types
 
-## Moves
+# Moves
+
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
 - Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Sharpen, Withdraw, Mimic, and Explosion (Selfdestruct is now as strong as Explosion)
@@ -139,7 +142,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Flame Wheel and Sacred Fire no longer thaw out a frozen user (had to get rid of it for space).
 
-## Items
+# Items
+
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves)
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
@@ -153,7 +157,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Berserk Gene removed (had to for space)
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 
-## Move tutors
+# Move tutors
 
 - The one in Goldenrod who teaches Flamethrower, Thunderbolt, and Ice Beam will now teach moves as soon as you defeat Whitney, appears every day instead of just certain days of the week, can teach multiple moves in one day, only charges 2500 coins per move instead of 4000, and can now also teach Tri Attack
 
@@ -167,7 +171,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Kanto: Aerodactyl Lv10 (3000C), Porygon2 Lv30 (4000C), Togetic Lv30 (5000C)
 
-## Locations
+# Locations
+
 - Viridian Forest
 - Pewter Museum (no fossil resurrection, since fossil Pokémon can be found in the wild)
 - Silph Co. (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
@@ -194,7 +199,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Sunday: Pryce and Blaine, and Blue can be rematched if you've spoked to Mr. Fuji in the Route 22 house on that day
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 
-## Miscellaneous
+# Miscellaneous
+
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
