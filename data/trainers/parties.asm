@@ -2334,6 +2334,7 @@ SuperNerdGroup:
 	db 11, MAGNEMITE
 	db 11, VOLTORB
 	db 11, PIKACHU
+	db 11, ELECTABUZZ
 	db -1 ; end
 
 	; SUPER_NERD (11)
