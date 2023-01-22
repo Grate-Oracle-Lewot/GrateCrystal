@@ -1892,8 +1892,8 @@ FisherGroup:
 	db "MARVIN@", TRAINERTYPE_NORMAL
 	db 15, MAGIKARP
 	db 15, GYARADOS
+	db 30, MAGIKARP
 	db 25, GYARADOS
-	db 30, CASTAWEIGH
 	db -1 ; end
 
 	; FISHER (7)
