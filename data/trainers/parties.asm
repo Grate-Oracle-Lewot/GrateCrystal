@@ -3454,6 +3454,7 @@ PokefanMGroup:
 	db 61, MEOWTH,     GOLD_BERRY
 	db 61, PERSIAN,    GOLD_BERRY
 	db 61, JIRK,       GOLD_BERRY
+	db 71, PERSIAN,    GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (9)
