@@ -8,8 +8,9 @@ FloatMons::
 	db GENGAR
 	db KOFFING
 	db WEEZING
-	db MEWTWO
 	db MEW
+	db LEDYBA
+	db LEDIAN
 	db MISDREAVUS
 	db UNOWN
 	db JIRK
