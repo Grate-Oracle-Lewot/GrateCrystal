@@ -159,7 +159,7 @@ KantoWaterWildMons:
 	db 10, GOLDEEN
 	db 5, GOLDEEN
 	db 10, SEAKING
-	db 5, JIRK
+	db 5, YANMA
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY
@@ -172,10 +172,10 @@ KantoWaterWildMons:
 
 	def_water_wildmons CELADON_CITY
 	db 2 percent ; encounter rate
-	db 20, GRIMER
 	db 15, GRIMER
 	db 15, MUK
 	db 15, QUAGSIRE
+	db 15, JIRK
 	end_water_wildmons
 
 	def_water_wildmons FUCHSIA_CITY
