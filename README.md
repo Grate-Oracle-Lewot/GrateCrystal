@@ -95,6 +95,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Kabuto/Kabutops: Rock/Water -> Rock/Bug
 - Mewtwo: Psychic -> Psychic/Fighting
 - Noctowl: Normal/Flying -> Ghost/Flying
+- Ledyba/Ledian: Bug/Flying -> Bug/Fairy
 - Ampharos: Electric -> Electric/Dragon
 - Politoed: Water -> Water/Ghost
 - Sunflora: Grass -> Grass/Fire
