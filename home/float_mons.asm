@@ -9,8 +9,8 @@ FloatMons::
 	db KOFFING
 	db WEEZING
 	db MEW
-	db LEDYBA
-	db LEDIAN
+	db LEDYBA ; no longer Flying type in Grate Crystal
+	db LEDIAN ; no longer Flying type in Grate Crystal
 	db MISDREAVUS
 	db UNOWN
 	db JIRK
