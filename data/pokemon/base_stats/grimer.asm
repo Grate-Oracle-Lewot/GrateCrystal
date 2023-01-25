@@ -3,7 +3,7 @@
 	db  80,  80,  50,  25,  40,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, DARK ; type
+	db POISON, POISON ; type
 	db 190 ; catch rate
 	db 90 ; base exp
 	db TINYMUSHROOM, BIG_MUSHROOM ; items
