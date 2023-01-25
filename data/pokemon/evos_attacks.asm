@@ -1751,7 +1751,7 @@ HorseaEvosAttacks:
 	db 15, WATER_GUN
 	db 22, TWISTER
 	db 29, BUBBLEBEAM
-	db 32, DRAGONBREATH
+	db 32, DRAGON_PULSE
 	db 36, AGILITY
 	db 43, HYDRO_PUMP
 	db 47, RAIN_DANCE
@@ -1768,7 +1768,7 @@ SeadraEvosAttacks:
 	db 15, WATER_GUN
 	db 22, TWISTER
 	db 29, BUBBLEBEAM
-	db 35, DRAGONBREATH
+	db 35, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
 	db 55, RAIN_DANCE
@@ -2197,11 +2197,12 @@ DratiniEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 2, FOCUS_ENERGY
-	db 8, THUNDER_WAVE
-	db 15, TWISTER
-	db 22, DRAGON_RAGE
-	db 29, SLAM
-	db 36, AGILITY
+	db 6, THUNDER_WAVE
+	db 12, TWISTER
+	db 19, DRAGON_RAGE
+	db 25, AGILITY
+	db 31, DRAGON_PULSE
+	db 38, SLAM
 	db 43, SAFEGUARD
 	db 50, OUTRAGE
 	db 0 ; no more level-up moves
@@ -2211,11 +2212,12 @@ DragonairEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 2, FOCUS_ENERGY
-	db 8, THUNDER_WAVE
-	db 15, TWISTER
-	db 22, DRAGON_RAGE
-	db 29, SLAM
-	db 38, AGILITY
+	db 6, THUNDER_WAVE
+	db 12, TWISTER
+	db 19, DRAGON_RAGE
+	db 25, AGILITY
+	db 34, DRAGON_PULSE
+	db 40, SLAM
 	db 47, SAFEGUARD
 	db 56, OUTRAGE
 	db 0 ; no more level-up moves
@@ -2224,11 +2226,12 @@ DragoniteEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 2, FOCUS_ENERGY
-	db 8, THUNDER_WAVE
-	db 15, TWISTER
-	db 22, DRAGON_RAGE
-	db 29, SLAM
-	db 38, AGILITY
+	db 6, THUNDER_WAVE
+	db 12, TWISTER
+	db 19, DRAGON_RAGE
+	db 25, AGILITY
+	db 34, DRAGON_PULSE
+	db 40, SLAM
 	db 47, SAFEGUARD
 	db 54, WING_ATTACK
 	db 61, OUTRAGE
@@ -2780,6 +2783,7 @@ AmpharosEvosAttacks:
 	db 29, SIGNAL_BEAM
 	db 29, THUNDERPUNCH
 	db 42, LIGHT_SCREEN
+	db 50, DRAGON_PULSE
 	db 57, THUNDER
 	db 64, SKULL_BASH
 	db 0 ; no more level-up moves
@@ -3507,7 +3511,7 @@ KingdraEvosAttacks:
 	db 15, WATER_GUN
 	db 22, TWISTER
 	db 29, BUBBLEBEAM
-	db 35, DRAGONBREATH
+	db 35, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
 	db 55, RAIN_DANCE
@@ -3793,11 +3797,12 @@ LarvitarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 2, LEER
-	db 8, SANDSTORM
-	db 15, SCREECH
-	db 22, ROCK_SLIDE
-	db 29, THRASH
-	db 36, SCARY_FACE
+	db 6, SANDSTORM
+	db 12, SCREECH
+	db 19, THRASH
+	db 25, ROCK_SLIDE
+	db 31, SCARY_FACE
+	db 38, DRAGON_PULSE
 	db 43, CRUNCH
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -3807,12 +3812,12 @@ PupitarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 2, LEER
-	db 8, SANDSTORM
-	db 15, SCREECH
-	db 22, ROCK_SLIDE
-	db 29, THRASH
-	db 29, HARDEN
-	db 38, SCARY_FACE
+	db 6, SANDSTORM
+	db 12, SCREECH
+	db 19, THRASH
+	db 25, ROCK_SLIDE
+	db 34, SCARY_FACE
+	db 40, DRAGON_PULSE
 	db 47, CRUNCH
 	db 56, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -3821,11 +3826,12 @@ TyranitarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 2, LEER
-	db 8, SANDSTORM
-	db 15, SCREECH
-	db 22, ROCK_SLIDE
-	db 29, THRASH
-	db 38, SCARY_FACE
+	db 6, SANDSTORM
+	db 12, SCREECH
+	db 19, THRASH
+	db 25, ROCK_SLIDE
+	db 34, SCARY_FACE
+	db 40, DRAGON_PULSE
 	db 47, CRUNCH
 	db 61, EARTHQUAKE
 	db 75, HYPER_BEAM
@@ -3837,8 +3843,8 @@ LugiaEvosAttacks:
 	db 11, SAFEGUARD
 	db 22, AEROBLAST
 	db 33, ANCIENTPOWER
-	db 44, HYDRO_PUMP
-	db 55, AIR_SLASH
+	db 44, AIR_SLASH
+	db 55, DRAGON_PULSE
 	db 66, RECOVER
 	db 77, HAIL
 	db 88, MOONBLAST
@@ -3851,8 +3857,8 @@ HoOhEvosAttacks:
 	db 11, SAFEGUARD
 	db 22, SACRED_FIRE
 	db 33, ANCIENTPOWER
-	db 44, FIRE_BLAST
-	db 55, AIR_SLASH
+	db 44, AIR_SLASH
+	db 55, DRAGON_PULSE
 	db 66, RECOVER
 	db 77, SUNNY_DAY
 	db 88, SOLARBEAM
