@@ -280,9 +280,9 @@ GrimerEggMoves:
 	db POWER_GEM
 	db HAZE
 	db MEAN_LOOK
-	db FAINT_ATTACK
+	db MEGA_PUNCH
+	db CRUNCH
 	db LICK
-	db BODY_SLAM
 	db -1 ; end
 
 ShellderEggMoves:
