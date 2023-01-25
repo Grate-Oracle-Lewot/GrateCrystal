@@ -557,14 +557,14 @@ ChinchouEggMoves:
 	db MIST
 	db -1 ; end
 
-; PichuEggMoves:
-;	db DOUBLESLAP
-;	db TRIPLE_KICK
-;	db HI_JUMP_KICK
-;	db PLAY_ROUGH
-;	db BITE
-;	db SIGNAL_BEAM
-;	db -1 ; end
+PichuEggMoves:
+	db DOUBLESLAP
+	db TRIPLE_KICK
+	db HI_JUMP_KICK
+	db PLAY_ROUGH
+	db BITE
+	db SIGNAL_BEAM
+	db -1 ; end
 
 FlogistanEggMoves:
 	db EARTH_POWER
@@ -574,29 +574,20 @@ FlogistanEggMoves:
 	db SOFTBOILED
 	db -1 ; end
 
-CottoneeEggMoves:
-	db LOVELY_KISS
+CleffaEggMoves:
+	db NIGHT_SHADE
+	db AMNESIA
+	db BELLY_DRUM
 	db MIST
-	db HAZE
-	db SMOKESCREEN
-	db SILVER_WIND
-	db SPORE
+	db PRESENT
 	db -1 ; end
 
-; CleffaEggMoves:
-;	db NIGHT_SHADE
-;	db AMNESIA
-;	db BELLY_DRUM
-;	db MIST
-;	db PRESENT
-;	db -1 ; end
-
-; IgglybuffEggMoves:
-;	db PERISH_SONG
-;	db PRESENT
-;	db FAINT_ATTACK
-;	db DAZZLY_GLEAM
-;	db -1 ; end
+IgglybuffEggMoves:
+	db PERISH_SONG
+	db PRESENT
+	db FAINT_ATTACK
+	db DAZZLY_GLEAM
+	db -1 ; end
 
 TogepiEggMoves:
 	db MIRROR_MOVE
@@ -872,28 +863,28 @@ TyrogueEggMoves:
 	db PLAY_ROUGH
 	db -1 ; end
 
-; SmoochumEggMoves:
-;	db MEDITATE
-;	db DAZZLY_GLEAM
-;	db SCARY_FACE
-;	db PSYBEAM
-;	db -1 ; end
+SmoochumEggMoves:
+	db MEDITATE
+	db DAZZLY_GLEAM
+	db SCARY_FACE
+	db PSYBEAM
+	db -1 ; end
 
-; ElekidEggMoves:
-;	db KARATE_CHOP
-;	db BARRIER
-;	db ROLLING_KICK
-;	db FOCUS_ENERGY
-;	db CROSS_CHOP
-;	db -1 ; end
+ElekidEggMoves:
+	db KARATE_CHOP
+	db BARRIER
+	db ROLLING_KICK
+	db FOCUS_ENERGY
+	db CROSS_CHOP
+	db -1 ; end
 
-; MagbyEggMoves:
-;	db KARATE_CHOP
-;	db BARRIER
-;	db SCREECH
-;	db EARTH_POWER
-;	db EGG_BOMB
-;	db -1 ; end
+MagbyEggMoves:
+	db KARATE_CHOP
+	db BARRIER
+	db SCREECH
+	db EARTH_POWER
+	db EGG_BOMB
+	db -1 ; end
 
 SnoconeyEggMoves:
 	db LICK
@@ -940,14 +931,14 @@ LarvitarEggMoves:
 	db BELLY_DRUM
 	db -1 ; end
 
-; WhimsicottEggMoves:
-;	db LOVELY_KISS
-;	db MIST
-;	db HAZE
-;	db SMOKESCREEN
-;	db SILVER_WIND
-;	db SPORE
-;	db -1 ; end
+WhimsicottEggMoves:
+	db LOVELY_KISS
+	db MIST
+	db HAZE
+	db SMOKESCREEN
+	db SILVER_WIND
+	db SPORE
+	db -1 ; end
 
 NoEggMoves:
 	db -1 ; end
