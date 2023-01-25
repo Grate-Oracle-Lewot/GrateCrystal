@@ -139,7 +139,7 @@ MoveDescriptions::
 	dw HiJumpKickDescription
 	dw GlareDescription
 	dw DreamEaterDescription
-	dw PoisonGasDescription
+	dw DragonPulseDescription
 	dw DazzlyGleamDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
@@ -815,9 +815,9 @@ DreamEaterDescription:
 	db   "Steals HP from a"
 	next "sleeping victim.@"
 
-PoisonGasDescription:
-	db   "Gas that poisons"
-	next "the foe.@"
+DragonPulseDescription:
+	db   "Fires a beam from"
+	next "the mouth.@"
 
 DazzlyGleamDescription:
 	db   "Dazzles foes with"
