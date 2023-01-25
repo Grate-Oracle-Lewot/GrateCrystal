@@ -140,7 +140,7 @@ BattleAnimations::
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
-	dw BattleAnim_PoisonGas
+	dw BattleAnim_DragonPulse
 	dw BattleAnim_DazzlyGleam
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
@@ -2219,14 +2219,11 @@ BattleAnim_Smog:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_PoisonGas:
-	anim_1gfx ANIM_GFX_HAZE
-	anim_sound 16, 2, SFX_BUBBLEBEAM
-.loop
-	anim_obj ANIM_OBJ_POISON_GAS, 44, 80, $2
-	anim_wait 8
-	anim_loop 10, .loop
-	anim_wait 128
+BattleAnim_DragonPulse:
+	anim_1gfx ANIM_GFX_BEAM
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_call BattleAnimSub_Beam
+	anim_wait 48
 	anim_ret
 
 BattleAnim_HornAttack:
