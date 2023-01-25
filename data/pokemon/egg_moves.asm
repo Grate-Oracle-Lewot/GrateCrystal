@@ -542,12 +542,12 @@ LedybaEggMoves:
 	db -1 ; end
 
 SpinarakEggMoves:
-	db PURSUIT
-	db SIGNAL_BEAM
 	db DISABLE
-	db NIGHT_SHADE
-	db BITE
-	db CRUNCH
+	db FAINT_ATTACK
+	db SIGNAL_BEAM
+	db PURSUIT
+	db HYPER_FANG
+	db SUPER_FANG
 	db -1 ; end
 
 ChinchouEggMoves:
