@@ -151,7 +151,7 @@ Moves:
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,          95, FIGHTING,     PHYSICAL,  90, 20,   0
 	move GLARE,        EFFECT_PARALYZE,            0, DARK,         STATUS,    84, 15,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE, SPECIAL,  100, 15,   0
-	move POISON_GAS,   EFFECT_POISON,              0, POISON,       STATUS,    60, 30,   0
+	move DRAGON_PULSE, EFFECT_NORMAL_HIT,         90, DRAGON,       SPECIAL,  100, 10,   0
 	move DAZZLY_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY,        SPECIAL,  100, 15,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,          PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
