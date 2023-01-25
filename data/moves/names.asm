@@ -138,7 +138,7 @@ MoveNames::
 	li "HI JUMP KICK"
 	li "GLARE"
 	li "DREAM EATER"
-	li "POISON GAS"
+	li "DRAGON PULSE"
 	li "DAZZLY GLEAM"
 	li "LEECH LIFE"
 	li "LOVELY KISS"
