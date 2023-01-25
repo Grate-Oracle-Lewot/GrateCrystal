@@ -1301,9 +1301,9 @@ GrimerEvosAttacks:
 	db 16, SLUDGE
 	db 20, BITE
 	db 23, MINIMIZE
-	db 31, SCREECH
-	db 40, ACID_ARMOR
-	db 45, CRUNCH
+	db 31, ACID_ARMOR
+	db 40, BODY_SLAM
+	db 45, SCREECH
 	db 50, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
@@ -1317,9 +1317,9 @@ MukEvosAttacks:
 	db 16, SLUDGE
 	db 20, BITE
 	db 23, MINIMIZE
-	db 31, SCREECH
-	db 45, ACID_ARMOR
-	db 55, CRUNCH
+	db 31, ACID_ARMOR
+	db 45, BODY_SLAM
+	db 55, SCREECH
 	db 60, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
