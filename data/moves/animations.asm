@@ -2221,8 +2221,15 @@ BattleAnim_Smog:
 
 BattleAnim_DragonPulse:
 	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_call BattleAnimSub_Beam
+	anim_sound 6, 2, SFX_PSYBEAM
+	anim_obj ANIM_OBJ_BEAM, 64, 92, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
