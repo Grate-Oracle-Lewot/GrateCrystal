@@ -2521,30 +2521,30 @@ LedianEvosAttacks:
 SpinarakEvosAttacks:
 	db EVOLVE_LEVEL, 22, ARIADOS
 	db 0 ; no more evolutions
-	db 1, POISON_STING
+	db 1, WRAP
 	db 1, STRING_SHOT
-	db 6, SCARY_FACE
-	db 11, WRAP
-	db 17, ACID
-	db 23, LEECH_LIFE
-	db 30, POISON_JAB
+	db 6, LEECH_LIFE
+	db 11, SCARY_FACE
+	db 17, BITE
+	db 23, NIGHT_SHADE
+	db 30, TWINEEDLE
 	db 37, SPIDER_WEB
 	db 45, AGILITY
-	db 53, HYPER_FANG
+	db 53, CRUNCH
 	db 0 ; no more level-up moves
 
 AriadosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_STING
+	db 1, WRAP
 	db 1, STRING_SHOT
-	db 6, SCARY_FACE
-	db 11, WRAP
-	db 17, ACID
-	db 25, LEECH_LIFE
-	db 34, POISON_JAB
+	db 6, LEECH_LIFE
+	db 11, SCARY_FACE
+	db 17, BITE
+	db 25, NIGHT_SHADE
+	db 34, TWINEEDLE
 	db 43, SPIDER_WEB
 	db 53, AGILITY
-	db 63, HYPER_FANG
+	db 63, CRUNCH
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
