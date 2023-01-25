@@ -3,7 +3,7 @@
 	db  35,  60,  45,  65,  40,  55
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, POISON ; type
+	db POISON, DARK ; type
 	db 255 ; catch rate
 	db 62 ; base exp
 	db ANTIDOTE, LUCKY_EGG ; items
