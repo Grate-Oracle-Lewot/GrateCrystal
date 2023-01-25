@@ -149,7 +149,7 @@ OddEggs:
 
 	db CHARMANDER
 	db NO_ITEM
-	db SCRATCH, GROWL, OUTRAGE, 0
+	db SCRATCH, GROWL, DRAGON_PULSE, 0
 	dw 04096 ; OT ID
 	dt 135 ; Exp
 	; Stat exp
@@ -159,7 +159,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 40, 15, 0 ; PP
+	db 40, 40, 10, 0 ; PP
 	db 10 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 5 ; Level
