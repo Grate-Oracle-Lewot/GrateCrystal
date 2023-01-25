@@ -13,6 +13,7 @@ UsefulMoves:
 	db SCALD
 	db WATERFALL
 	db SPIKE_CANNON
+	db DRAGON_PULSE
 	db DAZZLY_GLEAM
 	db SPORE
 	db FLASH
