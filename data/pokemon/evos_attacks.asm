@@ -1294,9 +1294,9 @@ GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, POISON_GAS
-	db 5, HARDEN
-	db 7, MUD_SLAP
+	db 2, HARDEN
+	db 5, MUD_SLAP
+	db 7, ACID
 	db 10, DISABLE
 	db 16, SLUDGE
 	db 20, BITE
@@ -1310,9 +1310,9 @@ GrimerEvosAttacks:
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, POISON_GAS
-	db 5, HARDEN
-	db 7, MUD_SLAP
+	db 2, HARDEN
+	db 5, MUD_SLAP
+	db 7, ACID
 	db 10, DISABLE
 	db 16, SLUDGE
 	db 20, BITE
@@ -1630,7 +1630,7 @@ LickitungEvosAttacks:
 KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 35, WEEZING
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
+	db 1, POISONPOWDER
 	db 1, FAIRY_WIND
 	db 9, SMOG
 	db 17, SELFDESTRUCT
@@ -1645,7 +1645,7 @@ KoffingEvosAttacks:
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_GAS
+	db 1, POISONPOWDER
 	db 1, FAIRY_WIND
 	db 9, SMOG
 	db 17, SELFDESTRUCT
