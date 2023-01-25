@@ -73,6 +73,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Fighting (kicking pose from Yellow Version intro): Electric/Fighting
   - Surfing (surfboard sprite from Yellow Version intro): Electric/Water
   - Flying (balloons sprite from Yellow Version intro): Electric/Flying
+- Ekans/Arbok: Poison -> Poison/Dark
 - Vulpix/Ninetales: Fire -> Fire/Ice
 - Meowth/Persian: Normal -> Normal/Steel
 - Golduck: Water -> Water/Psychic
@@ -81,7 +82,6 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
 - Slowpoke: Water/Psychic -> Psychic
 - Farfetch'd: Normal/Flying -> Fighting/Flying
 - Seel: Water -> Water/Ice
-- Grimer/Muk: Poison -> Poison/Dark
 - Shellder/Cloyster: Water(/Ice) -> Water/Steel
 - Drowzee/Hypno: Psychic -> Psychic/Dark
 - Krabby/Kingler: Water -> Water/Bug
