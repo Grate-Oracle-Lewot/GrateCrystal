@@ -6,7 +6,7 @@
 	db BUG, DARK ; type
 	db 255 ; catch rate
 	db 54 ; base exp
-	db ANTIDOTE, ANTIVENOM ; items
+	db ESCAPE_ROPE, ANTIDOTE ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/spinarak/front.dimensions"
