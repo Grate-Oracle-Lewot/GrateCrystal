@@ -6,7 +6,7 @@
 	db BUG, DARK ; type
 	db 90 ; catch rate
 	db 142 ; base exp
-	db ANTIDOTE, ANTIVENOM ; items
+	db DUSK_BALL, ANTIVENOM ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ariados/front.dimensions"
