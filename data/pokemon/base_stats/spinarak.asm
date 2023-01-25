@@ -3,7 +3,7 @@
 	db  50,  60,  50,  37,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, POISON ; type
+	db BUG, DARK ; type
 	db 255 ; catch rate
 	db 54 ; base exp
 	db ANTIDOTE, ANTIVENOM ; items
