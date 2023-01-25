@@ -9,7 +9,6 @@ ResidualMoves:
 	db TOXIC
 	db FOCUS_ENERGY
 	db GLARE
-	db POISON_GAS
 	db TRANSFORM
 	db SPIDER_WEB
 	db BELLY_DRUM
