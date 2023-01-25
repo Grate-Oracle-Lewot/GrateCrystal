@@ -654,7 +654,7 @@ AipomEggMoves:
 
 YanmaEggMoves:
 	db WHIRLWIND
-	db PURSUIT
+	db DRAGON_PULSE
 	db BITE
 	db HYPER_FANG
 	db SUPER_FANG
