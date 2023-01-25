@@ -19,7 +19,7 @@ CharmanderEggMoves:
 	db ANCIENTPOWER
 	db BITE
 	db OUTRAGE
-	db BEAT_UP
+	db DRAGON_PULSE
 	db -1 ; end
 
 SquirtleEggMoves:
@@ -177,7 +177,7 @@ MankeyEggMoves:
 GrowlitheEggMoves:
 	db BODY_SLAM
 	db SAFEGUARD
-	db THRASH
+	db DRAGON_PULSE
 	db FIRE_SPIN
 	db EXTREMESPEED
 	db -1 ; end
@@ -328,10 +328,10 @@ KrabbyEggMoves:
 
 ExeggcuteEggMoves:
 	db SYNTHESIS
-	db MOONLIGHT
 	db LIGHT_SCREEN
 	db ANCIENTPOWER
 	db BEAT_UP
+	db DRAGON_PULSE
 	db -1 ; end
 
 CuboneEggMoves:
@@ -360,10 +360,10 @@ KoffingEggMoves:
 	db -1 ; end
 
 RhyhornEggMoves:
+	db DRAGON_PULSE
 	db CRUNCH
 	db REVERSAL
 	db THRASH
-	db PURSUIT
 	db COUNTER
 	db MAGNITUDE
 	db -1 ; end
@@ -435,7 +435,7 @@ PinsirEggMoves:
 LaprasEggMoves:
 	db BARRIER
 	db FORESIGHT
-	db BUBBLEBEAM
+	db DRAGON_PULSE
 	db LICK
 	db MEGAHORN
 	db -1 ; end
@@ -711,6 +711,7 @@ PinecoEggMoves:
 	db -1 ; end
 
 DunsparceEggMoves:
+	db DRAGON_PULSE
 	db BIDE
 	db BITE
 	db LOVELY_KISS
@@ -801,9 +802,9 @@ CorsolaEggMoves:
 
 RemoraidEggMoves:
 	db SCREECH
-	db SPIKES
 	db SUPERSONIC
 	db SONICBOOM
+	db DRAGON_PULSE
 	db HYDRO_PUMP
 	db -1 ; end
 
