@@ -53,7 +53,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - New Pokédex entries for every Pokémon
-- A few Pokémon have been reverted to their beta designs from the Spaceworld demos, a few have palette changes to reflect their type changes (see below), and Butterfree and Venomoth have had their sprites swapped
+- A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
 ## Type chart changes
