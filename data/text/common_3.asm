@@ -1373,12 +1373,13 @@ _ItemWontHaveEffectText::
 	prompt
 
 _BallBlockedText::
-	text "The trainer"
-	line "blocked the BALL!"
+	text "The BALL bounced"
+	line "off the #MON!"
 	autodone
 
 _BallDontBeAThiefText::
-	text "Don't be a thief!"
+	text "It's already been"
+	line "caught by someone!"
 	autodone
 
 _NoCyclingText::
