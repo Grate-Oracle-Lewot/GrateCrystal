@@ -252,5 +252,5 @@ EvolutionMoves::
 	db NO_MOVE      ; HO_OH
 	db NO_MOVE      ; CELEBI
 	db NO_MOVE      ; FINULL
-	db ANCIENTPOWER ; YANMEGA
+	db NO_MOVE      ; YANMEGA
 	assert_table_length NUM_POKEMON
