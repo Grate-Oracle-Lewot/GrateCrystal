@@ -3705,8 +3705,8 @@ CastaweighEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAGE
 	db 2, LEER
-	db 6, WATER_GUN
-	db 9, PURSUIT
+	db 6, PURSUIT
+	db 9, CLAMP
 	db 14, SCARY_FACE
 	db 19, BITE
 	db 25, FOCUS_ENERGY
