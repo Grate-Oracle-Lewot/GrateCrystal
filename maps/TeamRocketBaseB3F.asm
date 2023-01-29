@@ -421,7 +421,7 @@ RocketBaseMurkrowText:
 	text "MURKROW: The"
 	line "password is…"
 
-	para "ENDRAM-ODAI."
+	para "LECHONK."
 	done
 
 GruntF5SeenText:
@@ -443,7 +443,7 @@ GruntF5AfterBattleText:
 	text "The password to"
 	line "the boss's room is"
 
-	para "UNFEZANT."
+	para "SHAOTANZHITEN."
 
 	para "But it's useless"
 	line "unless you have"
@@ -479,7 +479,7 @@ GruntM28AfterBattleText:
 	para "The password to"
 	line "the boss's room…"
 
-	para "It's LECHONK."
+	para "It's SHAFALIXIAN."
 
 	para "But you need two"
 	line "passwords!"
