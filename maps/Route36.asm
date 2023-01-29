@@ -507,8 +507,7 @@ Route36LassText:
 	para "It's preventing"
 	line "me from shopping."
 
-	para "Something should"
-	line "be done about it."
+	para "It needs to die."
 	done
 
 Route36LassText_ClearedSudowoodo:
