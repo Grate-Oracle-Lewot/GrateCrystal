@@ -3614,6 +3614,8 @@ LoadEnemyMonToSwitchTo:
 	jr nz, .skip_pikachu
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
 	ld a, [wPikachuForm]
 	ld [wFirstPikachuSeen], a
 .skip_pikachu
@@ -8333,6 +8335,8 @@ InitEnemyWildmon:
 	jr nz, .skip_pikachu
 	ld a, [wPikachuForm]
 	ld [wFirstPikachuSeen], a
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
 .skip_pikachu
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
