@@ -39,6 +39,7 @@ FlowerShopTeacherScript:
 	verbosegiveitem GS_BALL
 	iffalse .BagFull
 	takeitem SQUIRTBOTTLE
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	writetext GoldenrodFlowerShopTeacherGSBallText
 	waitbutton
 	closetext
