@@ -6,5 +6,5 @@
 	next "its of those lost"
 
 	page "at sea. They will"
-	next "eat anything."
-	next "@"
+	next "eat anything,"
+	next "including metal.@"
