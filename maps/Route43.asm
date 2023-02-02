@@ -360,8 +360,9 @@ PokemaniacRonSeenText:
 	line "made fun of my"
 	cont "#MON!"
 
-	para "Darn it! My #-"
-	line "MON's great!"
+	para "At least, I think"
+	line "that's what he was"
+	cont "saying…"
 	done
 
 PokemaniacRonBeatenText:
