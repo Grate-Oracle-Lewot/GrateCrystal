@@ -7,4 +7,4 @@
 
 	page "local ecosystem by"
 	next "eating rare #-"
-	next "MON EGGs.@"
+	next "MON EGGS.@"
