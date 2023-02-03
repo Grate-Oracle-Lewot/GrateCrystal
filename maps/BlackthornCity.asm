@@ -182,21 +182,22 @@ Text_ClairIsBeaten:
 	done
 
 BlackthornGrampsRefusesEntryText:
-	text "This is the DRAG-"
-	line "ON'S DEN. Only"
+	text "CLAIR paid me not"
+	line "to let anyone into"
 
-	para "chosen trainers"
-	line "are permitted to"
-	cont "enter."
+	para "the DRAGON'S DEN"
+	line "without her"
+	cont "permission."
 	done
 
 BlackthornGrampsGrantsEntryText:
-	text "If CLAIR allows"
-	line "it, her grand-"
-	cont "father--our MASTER"
-	cont "--will also."
+	text "You have been"
+	line "granted permission"
+	cont "to enter."
 
-	para "You may enter."
+	para "Of course, I'm"
+	line "still being paid"
+	cont "to stand here."
 	done
 
 BlackBeltText_WeirdRadio:
