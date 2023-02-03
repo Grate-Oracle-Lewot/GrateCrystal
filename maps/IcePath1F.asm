@@ -4,6 +4,7 @@
 	const ICEPATH1F_POKE_BALL3
 	const ICEPATH1F_BEAUTY
 	const ICEPATH1F_ROCKER
+	const ICEPATH1F_DRAGONITE
 
 IcePath1F_MapScripts:
 	def_scene_scripts
@@ -41,6 +42,22 @@ TrainerBoarderSvlad:
 	closetext
 	end
 
+IcePath1FDragoniteScript:
+	faceplayer
+	opentext
+	cry DRAGONITE
+	writetext IcePath1FDragoniteText
+	yesorno
+	iftrue .ReadNote
+	closetext
+	end
+
+.ReadNote:
+	writetext IcePath1FDragoniteNoteText
+	waitbutton
+	closetext
+	end
+
 SkierSkyeSeenText:
 	text "Here comes the"
 	line "welcome wagon!"
@@ -73,6 +90,26 @@ BoarderSvladAfterBattleText:
 	cont "yodel."
 	done
 
+IcePath1FDragoniteText:
+	text "DRAGONITE blocks"
+	line "the way."
+
+	para "It's holding a"
+	line "note. Read it?"
+	done
+
+IcePath1FDragoniteNoteText:
+	text "Dear <PLAYER>,"
+
+	para "I've paid this"
+	line "DRAGONITE to stand"
+
+	para "here until you"
+	line "have 7 BADGES."
+
+	para "Sincerely, CLAIR"
+	done
+
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -92,3 +129,4 @@ IcePath1F_MapEvents:
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FProtein, EVENT_ICE_PATH_1F_PROTEIN
 	object_event 11, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSkierSkye, -1
 	object_event 21,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBoarderSvlad, -1
+	object_event 15, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FDragoniteScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
