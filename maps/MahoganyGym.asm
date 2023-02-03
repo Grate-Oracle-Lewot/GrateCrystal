@@ -25,6 +25,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
+	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
 	opentext
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
