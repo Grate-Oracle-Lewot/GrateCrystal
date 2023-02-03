@@ -31,6 +31,7 @@ Route23BlackBeltText:
 	para "taken over like"
 	line "TEAM PLASMA did to"
 	cont "UNOVA's."
+	done
 
 Route23OfficerText:
 	text "…What? Yes, of"
@@ -40,7 +41,7 @@ Route23OfficerText:
 	line "here."
 
 	para "Oh? You have all"
-	line "eight badges?"
+	line "eight BADGES?"
 
 	para "That's cute."
 
