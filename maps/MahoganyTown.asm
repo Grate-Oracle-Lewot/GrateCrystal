@@ -182,7 +182,9 @@ RageCandyBarMerchantSoldOutText:
 
 	para "not to let you"
 	line "through until you"
-	cont "have 7 BADGES."
+
+	para "defeat MAHOGANY's"
+	line "LEADER, PRYCE."
 
 	para "She's got some"
 	line "issues… And I've"
