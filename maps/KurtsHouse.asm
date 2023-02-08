@@ -77,11 +77,11 @@ Kurt1:
 	checkevent EVENT_GAVE_KURT_BLU_APRICORN
 	iftrue .GiveLureBall
 	checkevent EVENT_GAVE_KURT_YLW_APRICORN
-	iftrue .GiveMoonBall
+	iftrue .GiveFastBall
 	checkevent EVENT_GAVE_KURT_GRN_APRICORN
 	iftrue .GiveFriendBall
 	checkevent EVENT_GAVE_KURT_WHT_APRICORN
-	iftrue .GiveFastBall
+	iftrue .GiveMoonBall
 	checkevent EVENT_GAVE_KURT_BLK_APRICORN
 	iftrue .GiveHeavyBall
 	checkevent EVENT_GAVE_KURT_PNK_APRICORN
@@ -218,7 +218,7 @@ Kurt1:
 	promptbutton
 	verbosegiveitemvar MOON_BALL, VAR_KURT_APRICORNS
 	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_YLW_APRICORN
+	clearevent EVENT_GAVE_KURT_WHT_APRICORN
 	sjump ._ThatTurnedOutGreat
 
 .GiveFriendBall:
@@ -238,7 +238,7 @@ Kurt1:
 	promptbutton
 	verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS
 	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_WHT_APRICORN
+	clearevent EVENT_GAVE_KURT_YLW_APRICORN
 	sjump ._ThatTurnedOutGreat
 
 .GiveHeavyBall:
@@ -546,9 +546,8 @@ KurtsHouseKurtDontBotherMeText:
 	done
 
 KurtsHouseKurtJustFinishedYourBallText:
-	text "KURT: Ah, <PLAYER>!"
-	line "I just finished"
-	cont "your BALL. Here!"
+	text "KURT: And here you"
+	line "are!"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
