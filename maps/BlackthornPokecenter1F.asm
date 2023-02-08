@@ -35,8 +35,8 @@ BlackthornPokecenter1FGentlemanText:
 	para "I hear the best"
 	line "trainers gather"
 
-	para "there from around"
-	line "the country."
+	para "there from both"
+	line "JOHTO and KANTO."
 	done
 
 BlackthornPokecenter1FTwinText:
