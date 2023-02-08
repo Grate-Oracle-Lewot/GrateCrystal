@@ -62,7 +62,6 @@ TrainerCooltrainerfEmma:
 	trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfEmmaAfterBattleText
 	waitbutton
