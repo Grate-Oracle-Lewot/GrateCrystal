@@ -478,7 +478,7 @@ ENDM
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
-	map_attributes UnionCaveSlowpokeWellLink, UNION_CAVE_SLOWPOKE_WELL_LINK, $15, 0
+	map_attributes UnionCaveSlowpokeWellLink, UNION_CAVE_SLOWPOKE_WELL_LINK, $09, 0
 	map_attributes IcePathArticunoChamber, ICE_PATH_ARTICUNO_CHAMBER, $19, 0
 	map_attributes RockTunnelZapdosChamber, ROCK_TUNNEL_ZAPDOS_CHAMBER, $09, 0
 	map_attributes SilverCaveMoltresChamber, SILVER_CAVE_MOLTRES_CHAMBER, $00, 0
