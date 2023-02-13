@@ -1,10 +1,10 @@
 	db "ATROCIOUS@" ; species name
 	dw 2104, 5180 ; height, weight
 
-	db   "Its power is mat-"
-	next "ched only by its"
-	next "hubris. It doesn't"
+	db   "Some speculate"
+	next "that GYARADOS are"
+	next "responsible for"
 
-	page "care what it"
-	next "destroys in its"
-	next "rampages.@"
+	page "the old sailor's"
+	next "legend of the"
+	next "SKULL KRAKEN.@"
