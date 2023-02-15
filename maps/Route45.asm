@@ -307,10 +307,6 @@ Route45HiddenPpUp:
 HikerErikSeenText:
 	text "Be prepared for"
 	line "anything!"
-
-	para "Let me see if your"
-	line "#MON have been"
-	cont "raised properly!"
 	done
 
 HikerErikBeatenText:
