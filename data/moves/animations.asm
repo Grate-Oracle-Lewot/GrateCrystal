@@ -4720,6 +4720,7 @@ BattleAnim_Moonblast:
 	anim_wait 1
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 42
+	anim_clearobjs
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
 	anim_wait 2
