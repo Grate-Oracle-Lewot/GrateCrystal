@@ -788,7 +788,7 @@ Text_BattleTowerBugCatcher:
 	line "#MON."
 
 	para "Don't let there be"
-	line "any fire #MON…"
+	line "any rock #MON…"
 	done
 
 BattleTower1F_MapEvents:
