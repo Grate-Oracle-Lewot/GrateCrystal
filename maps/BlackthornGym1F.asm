@@ -4,6 +4,8 @@
 	const BLACKTHORNGYM1F_COOLTRAINER_M2
 	const BLACKTHORNGYM1F_COOLTRAINER_F
 	const BLACKTHORNGYM1F_GYM_GUIDE
+	const BLACKTHORNGYM1F_DRAGONITE
+	const BLACKTHORNGYM1F_DRAGONITE_STATUE
 
 BlackthornGym1F_MapScripts:
 	def_scene_scripts
@@ -142,6 +144,14 @@ BlackthornGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, CLAIR, CLAIR1
 	jumpstd GymStatue2Script
+
+BlackthornGymDragoniteScript:
+	cry DRAGONITE
+	waitsfx
+	end
+
+BlackthornGymDragoniteStatueScript:
+	jumptext BlackthornGymDragoniteStatueText
 
 ClairIntroText:
 	text "I am CLAIR."
@@ -372,6 +382,10 @@ BlackthornGymGuideText:
 
 	para "grass, and"
 	line "electric."
+
+	para "One more thing:"
+	line "critical hits won't"
+	cont "work on dragons!"
 	done
 
 BlackthornGymGuideWinText:
@@ -385,6 +399,16 @@ BlackthornGymGuideWinText:
 	para "You're on the way"
 	line "to becoming the"
 	cont "#MON CHAMPION!"
+	done
+
+BlackthornGymDragoniteText:
+	text "DRAGONITE flew"
+	line "away!"
+	done
+
+BlackthornGymDragoniteStatueText:
+	text "It's a statue of"
+	line "a DRAGONITE."
 	done
 
 BlackthornGym1F_MapEvents:
@@ -411,3 +435,5 @@ BlackthornGym1F_MapEvents:
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
+	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
+	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
