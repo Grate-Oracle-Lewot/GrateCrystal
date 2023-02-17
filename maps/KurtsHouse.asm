@@ -170,7 +170,7 @@ Kurt1:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	playsound SFX_WARP_TO
+	playsound SFX_GOT_SAFARI_BALLS
 	waitsfx
 	pause 42
 	sjump Kurt1
