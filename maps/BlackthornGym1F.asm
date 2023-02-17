@@ -148,6 +148,17 @@ BlackthornGymStatue:
 BlackthornGymDragoniteScript:
 	cry DRAGONITE
 	waitsfx
+	special FadeBlackQuickly
+	setevent EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
+	disappear BLACKTHORNGYM1F_DRAGONITE
+	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
+	playsound SFX_WARP_TO
+	waitsfx
+	special FadeInQuickly
+	opentext
+	writetext BlackthornGymDragoniteText
+	waitbutton
+	closetext
 	end
 
 BlackthornGymDragoniteStatueScript:
