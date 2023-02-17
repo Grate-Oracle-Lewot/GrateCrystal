@@ -298,6 +298,13 @@ SaffronGymGuideText:
 
 	para "Avoid using fight-"
 	line "ing or poison."
+
+	para "And take note:"
+	line "psychic #MON"
+
+	para "can see into the"
+	line "future, so they'll"
+	cont "never flinch!"
 	done
 
 SaffronGymGuideWinText:
