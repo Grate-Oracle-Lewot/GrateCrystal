@@ -10,6 +10,8 @@
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
 	const ROUTE44_POKE_BALL3
+	const ROUTE44_EKANS1
+	const ROUTE44_EKANS2
 
 Route44_MapScripts:
 	def_scene_scripts
@@ -295,6 +297,14 @@ TrainerCooltrainermAllen:
 	closetext
 	end
 
+Route44DragonairScript:
+	opentext
+	cry DRAGONAIR
+	writetext Route44DragonairText
+	waitbutton
+	closetext
+	end
+
 Route44Sign1:
 	jumptext Route44Sign1Text
 
@@ -490,6 +500,11 @@ CooltrainerfCybilAfterBattleText:
 	cont "today--an elite."
 	done
 
+Route44DragonairText:
+	text "DRAGONAIR is crea-"
+	line "ting whirlpools!"
+	done
+
 Route44Sign1Text:
 	text "ROUTE 44"
 	line "ICE PATH AHEAD"
@@ -527,3 +542,5 @@ Route44_MapEvents:
 	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event 25, 12, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, -1
+	object_event 41,  8, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, -1
