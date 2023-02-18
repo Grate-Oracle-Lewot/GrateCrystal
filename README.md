@@ -280,7 +280,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Second Pikachu types don't load for enemy trainer mons
+- Ocasionally an attack will do way more or way less damage than it seemingly should. No idea why. Until I can figure it out, consider it a less predictable and sometimes detrimental version of critical hits.
 
 - Unown letters don't load for the caught Pokémon screen and following Pokédex popup (purely a visual issue; first seen Unown letter does load properly in the Pokédex later)
 
