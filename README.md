@@ -280,7 +280,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Ocasionally an attack will do way more or way less damage than it seemingly should. No idea why. Until I can figure it out, consider it a less predictable and sometimes detrimental version of critical hits.
+- Seems like mon stats aren't loaded properly when switching mons in battle, sometimes. Still trying to figure out exactly what's going on here.
 
 - Unown letters don't load for the caught Pokémon screen and following Pokédex popup (purely a visual issue; first seen Unown letter does load properly in the Pokédex later)
 
