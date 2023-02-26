@@ -1,6 +1,6 @@
 	db SNOCONEY ; 238
 
-	db  42,  90,  42, 142,  84,  42
+	db  42,  94,  42, 142,  84,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, GRASS ; type
