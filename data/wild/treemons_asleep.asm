@@ -2,9 +2,7 @@
 
 AsleepTreeMonsNite:
 	db CATERPIE
-	db BUTTERFREE
 	db WEEDLE
-	db BEEDRILL
 	db SPEAROW
 	db EKANS
 	db LEDYBA
