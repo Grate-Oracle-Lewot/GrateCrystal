@@ -1113,7 +1113,8 @@
 	const EVENT_CHERRYGROVE_MART_DELIBIRD
 	const EVENT_FOUGHT_CELEBI
 	const EVENT_FOUGHT_FINULL
-; Unused: next 116 (now 47) events
+	const EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
+; Unused: next 116 (now 46) events
 
 	const_next 1600
 ; Sprite visibility flags
