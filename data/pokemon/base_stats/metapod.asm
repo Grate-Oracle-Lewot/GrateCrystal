@@ -11,7 +11,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/metapod/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_BUG, EGG_WATER_3 ; egg groups
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
 	tmhm
