@@ -343,7 +343,8 @@ _HugeWaterfallText::
 	done
 
 _AskWaterfallText::
-	text "Want to climb it?"
+	text "Want to climb the"
+	line "waterfall?"
 	done
 
 _UseDigText::
