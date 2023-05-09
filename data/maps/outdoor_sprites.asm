@@ -126,8 +126,9 @@ FuchsiaGroupSprites:
 
 IndigoGroupSprites:
 ; Route23
+	db SPRITE_BLACK_BELT
 	db SPRITE_OFFICER
-	; 1 of max 9 walking sprites
+	; 2 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
