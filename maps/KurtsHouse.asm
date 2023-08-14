@@ -640,12 +640,14 @@ KurtsGranddaughterHelpText:
 
 	para "We'll make good"
 	line "BALLS for you, so"
-	cont "please wait!"
+
+	para "please bring us"
+	line "lots of APRICORNS!"
 	done
 
 KurtsGranddaughterFunText:
 	text "It's fun to make"
-	line "BALLS!"
+	line "# BALLS!"
 	done
 
 KurtsGranddaughterGSBallText:
