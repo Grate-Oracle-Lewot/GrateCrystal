@@ -61,6 +61,10 @@ Pokedex:
 	ld a, [wCurDexMode]
 	ld [wLastDexMode], a
 
+	ld a, [wPokedexShinyToggle]
+	xor a
+	ld [wPokedexShinyToggle], a
+
 	pop af
 	ldh [hInMenu], a
 	pop af
@@ -360,6 +364,9 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [hl]
 	and A_BUTTON
 	jr nz, .do_menu_action
+	ld a, [hl]
+	and SELECT
+	jr nz, .toggle_shininess
 	call Pokedex_NextOrPreviousDexEntry
 	ret nc
 	call Pokedex_IncrementDexPointer
@@ -383,6 +390,24 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [wPrevDexEntryJumptableIndex]
 	ld [wJumptableIndex], a
 	ret
+
+.toggle_shininess
+; toggle the current shininess setting
+	ld a, [wPokedexShinyToggle]
+	xor 1
+	ld [wPokedexShinyToggle], a
+	; refresh palettes
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	; play sound based on setting
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	ld de, SFX_BUMP
+	jr z, .got_sound
+	ld de, SFX_SHINE
+.got_sound
+	call PlaySFX
+	jp WaitSFX
 
 Pokedex_Page:
 	ld a, [wPokedexStatus]
