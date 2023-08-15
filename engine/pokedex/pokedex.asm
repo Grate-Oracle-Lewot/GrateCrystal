@@ -2377,7 +2377,7 @@ Pokedex_LoadSelectedMonTiles:
 	call Pokedex_GetSelectedMon
 	call Pokedex_CheckSeen
 	jr z, .QuestionMark
-	ld a, [wFirstPikachuSeen]
+	ld a, PIKACHU_CRYSTAL
 	ld [wPikachuForm], a
 	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
