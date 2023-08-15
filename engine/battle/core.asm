@@ -3609,15 +3609,10 @@ LoadEnemyMonToSwitchTo:
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr nz, .skip_pikachu
-	ld a, [wFirstPikachuSeen]
-	and a
-	jr nz, .skip_pikachu
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
-	ld a, [wPikachuForm]
-	ld [wFirstPikachuSeen], a
 .skip_pikachu
 
 	ld a, [wCurPartySpecies]
@@ -8330,11 +8325,6 @@ InitEnemyWildmon:
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr nz, .skip_pikachu
-	ld a, [wFirstPikachuSeen]
-	and a
-	jr nz, .skip_pikachu
-	ld a, [wPikachuForm]
-	ld [wFirstPikachuSeen], a
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
 .skip_pikachu
