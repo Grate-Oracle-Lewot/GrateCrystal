@@ -87,6 +87,9 @@ NewBarkTownTeacherScript:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
+	loadwildmon PIKACHU, 1
+	startbattle
+	reloadmapafterbattle
 	end
 
 .TellMomYoureLeaving:
@@ -123,6 +126,9 @@ NewBarkTownSilverScript:
 	playsound SFX_TACKLE
 	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
 	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
+	trainer PICNICKER, BROOKE, EVENT_BEAT_PICNICKER_BROOKE, NewBarkTownRivalText1, NewBarkTownRivalText2, 0, .Script
+
+.Script:
 	end
 
 NewBarkTownSign:
