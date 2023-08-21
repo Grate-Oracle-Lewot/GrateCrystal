@@ -718,9 +718,7 @@ wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
 wPokedexStatus:: db
-wPokedexShinyToggle::
-; bit 0: set if displaying shiny palettes
-	db
+wPokedexShinyToggle:: db
 wPokedexDataEnd::
 	ds 1
 
