@@ -87,6 +87,7 @@ NewBarkTownTeacherScript:
 	writetext Text_YourMonIsAdorable
 	waitbutton
 	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	loadwildmon PIKACHU, 1
 	startbattle
 	reloadmapafterbattle
