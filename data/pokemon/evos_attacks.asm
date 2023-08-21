@@ -2274,8 +2274,6 @@ ChikoritaEvosAttacks:
 	db 1, ABSORB
 	db 1, THIEF
 	db 1, KARATE_CHOP
-	db 12, LIGHT_SCREEN
-	db 15, SLEEP_POWDER
 	db 22, SYNTHESIS
 	db 29, BODY_SLAM
 	db 36, EARTH_POWER
