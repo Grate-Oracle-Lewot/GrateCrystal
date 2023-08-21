@@ -280,7 +280,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Seems like mon stats aren't loaded properly when switching mons in battle, sometimes. Still trying to figure out exactly what's going on here.
+- Seems like mon stats aren't loaded properly when switching mons in battle, sometimes, including secondary types for different Pikachu forms not loading. Still trying to figure out exactly what's going on here, as sometimes it all works fine.
 
 - Unown letters don't load for the caught Pokémon screen and following Pokédex popup (purely a visual issue; first seen Unown letter does load properly in the Pokédex later)
 
