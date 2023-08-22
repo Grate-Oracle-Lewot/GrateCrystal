@@ -26,8 +26,8 @@ GivePokerusAndConvertBerries:
 	and a
 	ret nz
 	ldh a, [hRandomSub]
-	cp 3
-	ret nc ; 3/65536 chance (00 00, 00 01 or 00 02)
+	cp 42 ; 42/65536 chance (originally 3/65536)
+	ret nc
 	ld a, [wPartyCount]
 	ld b, a
 .randomMonSelectLoop
