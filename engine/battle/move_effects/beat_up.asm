@@ -205,7 +205,7 @@ BattleCommand_BeatUpFailText:
 	inc a
 	ld [wAttackMissed], a
 
-	jp PrintNobodyJoinedIn
+	jp PrintButNobodyJoinedIn
 
 GetBeatupMonLocation:
 	push bc
