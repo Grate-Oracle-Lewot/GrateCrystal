@@ -194,12 +194,11 @@ OaksAssistant1Text:
 	done
 
 OaksAssistant2Text:
-	text "Thanks to your"
-	line "work on the #-"
-	cont "DEX, the PROF's"
+	text "Press SELECT on a"
+	line "#MON's page in"
 
-	para "research is coming"
-	line "along great."
+	para "the #DEX to see"
+	line "its shiny colors!"
 	done
 
 OaksAssistant3Text:
