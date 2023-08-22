@@ -6237,6 +6237,11 @@ PrintButItFailed:
 	ld hl, ButItFailedText
 	jp StdBattleTextbox
 
+PrintButNobodyJoinedIn:
+; 'but nobody joined in!'
+	ld hl, ButNobodyJoinedInText
+	jp StdBattleTextbox
+
 FailMove:
 	call AnimateFailedMove
 	; fallthrough
