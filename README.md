@@ -255,7 +255,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Correct grammar for plural trainers like Twins
 - Short beeping noise for low HP
 - Artificial save delays removed
-- Option to show shiny colors in Pokédex
+- Press Select to view shiny colors in the Pokédex
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
 - Kurt finishes Apricorn balls instantly
