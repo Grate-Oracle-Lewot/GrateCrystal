@@ -925,6 +925,11 @@ ButItFailedText:
 	text "But it failed!"
 	autodone
 
+ButNobodyJoinedInText:
+	text "But nobody joined"
+	line "in!"
+	autodone
+
 ItFailedText:
 	text "It failed!"
 	autodone
