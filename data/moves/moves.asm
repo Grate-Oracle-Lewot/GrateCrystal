@@ -68,7 +68,7 @@ Moves:
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         SPECIAL,  100, 10,  10
 	move MIST,         EFFECT_MIST,                0, ICE,          STATUS,   100, 25,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,        SPECIAL,  100, 35,   0
-	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,        SPECIAL,   84,  5,   0
+	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,        SPECIAL,   85,  5,   0
 	move SURF,         EFFECT_NORMAL_HIT,        100, WATER,        SPECIAL,  100, 10,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          SPECIAL,  100, 10,  10
 	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,          SPECIAL,   75,  5,  20
@@ -236,7 +236,7 @@ Moves:
 	move SACRED_FIRE,  EFFECT_BURN_HIT,          105, FIRE,         PHYSICAL, 100,  5,  50
 	move MAGNITUDE,    EFFECT_MAGNITUDE,           1, GROUND,       PHYSICAL, 100, 25,   0
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,     PHYSICAL,  50,  5, 100
-	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,          PHYSICAL,  84,  5,   0
+	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,          PHYSICAL,  85,  5,   0
 	move DRAGONBREATH, EFFECT_PARALYZE_HIT,       60, DRAGON,       SPECIAL,  100, 20,  30
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, FAIRY,        STATUS,   100, 20,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,       STATUS,   100,  5,   0
