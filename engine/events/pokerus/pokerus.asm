@@ -16,11 +16,6 @@ GivePokerusAndConvertBerries:
 	dec b
 	jr nz, .loopMons
 
-; If we haven't been to Goldenrod City at least once,
-; prevent the contraction of Pokerus.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	ldh a, [hRandomAdd]
 	and a
@@ -122,11 +117,6 @@ GivePokerusAndConvertBerries:
 	ret
 
 ConvertBerriesToBerryJuice:
-; If we haven't been to Goldenrod City at least once,
-; prevent Shuckle from turning held Berry into Berry Juice.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	cp 1 out_of 16 ; 6.25% chance
 	ret nc
