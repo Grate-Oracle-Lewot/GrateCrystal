@@ -209,7 +209,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Trainers give more money upon defeat (except Teachers give the minimum, since they don't get paid enough)
 - Happiness builds a bit faster
 - Eggs hatch twice as fast
-- Higher chance to contract Pokérus, and no requirement to reach Goldenrod first
+- Higher chance to contract Pokérus, and no requirement to reach Goldenrod first (no Goldenrod requirement for Shuckle to make Berry Juice either)
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs; Metapod and Kakuna can no longer breed
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
