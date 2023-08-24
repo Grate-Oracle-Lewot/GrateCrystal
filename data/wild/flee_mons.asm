@@ -10,6 +10,7 @@ SometimesFleeMons:
 	db TOGETIC
 	db DUNSPARCE
 	db SNOCONEY
+	db JIRK
 	db -1
 
 OftenFleeMons:
