@@ -2928,7 +2928,7 @@ SunkernEvosAttacks:
 	db 4, GROWTH
 	db 10, MEGA_DRAIN
 	db 19, SUNNY_DAY
-	db 31, SYNTHESIS
+	db 31, MORNING_SUN
 	db 46, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
