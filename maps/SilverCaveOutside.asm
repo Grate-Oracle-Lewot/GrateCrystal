@@ -62,10 +62,11 @@ BikerTBoneBeatenText:
 	done
 
 BikerTBoneAfterBattleText:
-	text "What's wrong with"
-	line "a tough biker hav-"
-	cont "ing cute baby"
-	cont "#MON?"
+	text "Part of being"
+	line "tough is admitting"
+
+	para "when someone else"
+	line "is tougher."
 
 	para "Don't spread tox-"
 	line "ic masculinity!"
