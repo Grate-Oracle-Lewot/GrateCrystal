@@ -68,36 +68,41 @@ NurseGoodbyeText:
 	autodone
 
 NursePokerusText:
-	text "Your #MON"
-	line "appear to be"
+	text "Oh, your #MON"
+	line "appear to have"
+	cont "#RUS."
 
-	para "infected by tiny"
-	line "life forms."
+	para "It's a virus, but"
+	line "it's nothing to"
+	cont "worry about."
 
-	para "Your #MON are"
-	line "healthy and seem"
-	cont "to be fine."
+	para "In fact, #MON"
+	line "stats are said to"
 
-	para "But we can't tell"
-	line "you anything more"
+	para "increase more when"
+	line "they're infected."
 
-	para "at a #MON"
-	line "CENTER."
+	para "It's contagious"
+	line "for a few days."
 	done
 
 PokeComNursePokerusText:
-	text "Your #MON"
-	line "appear to be"
+	text "Oh, your #MON"
+	line "appear to have"
+	cont "#RUS."
 
-	para "infected by tiny"
-	line "life forms."
+	para "It's a virus, but"
+	line "it's nothing to"
+	cont "worry about."
 
-	para "Your #MON are"
-	line "healthy and seem"
-	cont "to be fine."
+	para "In fact, #MON"
+	line "stats are said to"
 
-	para "But we can't tell"
-	line "you anything more."
+	para "increase more when"
+	line "they're infected."
+
+	para "It's contagious"
+	line "for a few days."
 	done
 
 PokecenterChanseyText:
