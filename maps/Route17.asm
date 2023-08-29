@@ -139,19 +139,30 @@ BikerGlennAfterBattleText:
 	done
 
 BikerCharlesSeenText:
-	text "We're fearless"
-	line "highway stars!"
+	text "I'm a heartbreak-"
+	line "er… My name…"
+	cont "Charles."
+
+	para "I'm always at full"
+	line "throttle."
 	done
 
 BikerCharlesBeatenText:
-	text "Arrrgh! Crash and"
-	line "burn!"
+	text "I'm a heartbreak-"
+	line "er… My name…"
+	cont "Charles."
 	done
 
 BikerCharlesAfterBattleText:
-	text "Reckless driving"
-	line "causes accidents!"
-	cont "Take it easy!"
+	text "I'm a heartbreak-"
+	line "er… My name…"
+	cont "Charles."
+
+	para "Riding a bike and"
+	line "becoming the wind"
+
+	para "fits a bad boy"
+	line "like me."
 	done
 
 BikerBennySeenText:
