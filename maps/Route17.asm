@@ -141,7 +141,7 @@ BikerGlennAfterBattleText:
 BikerCharlesSeenText:
 	text "I'm a heartbreak-"
 	line "er… My name…"
-	cont "Charles."
+	cont "CHARLES."
 
 	para "I'm always at full"
 	line "throttle."
@@ -150,13 +150,13 @@ BikerCharlesSeenText:
 BikerCharlesBeatenText:
 	text "I'm a heartbreak-"
 	line "er… My name…"
-	cont "Charles."
+	cont "CHARLES."
 	done
 
 BikerCharlesAfterBattleText:
 	text "I'm a heartbreak-"
 	line "er… My name…"
-	cont "Charles."
+	cont "CHARLES."
 
 	para "Riding a bike and"
 	line "becoming the wind"
