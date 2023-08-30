@@ -62,8 +62,8 @@ TrainerHouse1FCooltrainerMText:
 	para "many trainers pass"
 	line "through on their"
 
-	para "way up to INDIGO"
-	line "PLATEAU."
+	para "way up to the"
+	line "#MON LEAGUE."
 	done
 
 TrainerHouse1FCooltrainerFText:
