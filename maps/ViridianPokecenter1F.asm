@@ -47,15 +47,13 @@ ViridianPokecenter1FCooltrainerMText:
 	done
 
 ViridianPokecenter1FCooltrainerMText_BlueReturned:
-	text "There are no GYM"
-	line "TRAINERS at the"
-	cont "VIRIDIAN GYM."
+	text "VIRIDIAN's GYM"
+	line "LEADER doesn't use"
+	cont "just one type."
 
-	para "The LEADER claims"
-	line "his policy is to"
-
-	para "win without having"
-	line "any underlings."
+	para "He's harder to"
+	line "beat than most"
+	cont "because of that."
 	done
 
 ViridianPokecenter1FCooltrainerFText:
