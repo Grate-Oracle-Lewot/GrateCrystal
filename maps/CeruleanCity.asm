@@ -136,13 +136,9 @@ CeruleanCityCooltrainerMText1:
 	done
 
 CeruleanCityCooltrainerMText2:
-	text "You're collecting"
-	line "every single kind"
-	cont "of #MON?"
-
-	para "That must be quite"
-	line "a challenge, but"
-	cont "it sounds fun too."
+	text "I wish I could"
+	line "afford an ALOLAN"
+	cont "vacation…"
 	done
 
 CeruleanCitySuperNerdText:
