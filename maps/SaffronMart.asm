@@ -31,12 +31,9 @@ SaffronMartCooltrainerMText:
 	done
 
 SaffronMartCooltrainerFText:
-	text "I want to become"
-	line "stronger, but I'm"
-	cont "not good yet…"
-
-	para "Could you show me"
-	line "how sometime?"
+	text "SAFFRON's okay,"
+	line "but I like RYME"
+	cont "CITY better."
 	done
 
 SaffronMart_MapEvents:
