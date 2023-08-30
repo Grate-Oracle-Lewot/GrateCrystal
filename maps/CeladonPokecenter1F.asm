@@ -80,12 +80,13 @@ CeladonEusine:
 	step_end
 
 CeladonPokecenter1FCooltrainerFText:
-	text "ERIKA is a master"
-	line "of grass #MON."
+	text "Some say the uni-"
+	line "verse was created"
+	cont "by a #MON."
 
-	para "She'll make you"
-	line "pay if you don't"
-	cont "watch yourself."
+	para "I guess it makes"
+	line "more sense than a"
+	cont "human."
 	done
 
 CeladonPokecenter1FPharmacistText:
