@@ -47,12 +47,12 @@ MahoganyPokecenter1FYoungsterText:
 	done
 
 MahoganyPokecenter1FCooltrainerFText:
-	text "#MON do become"
-	line "stronger when they"
+	text "Most #MON that"
+	line "evolve with a"
 
-	para "evolve, but they"
-	line "also learn moves"
-	cont "more slowly."
+	para "stone will stop"
+	line "learning moves"
+	cont "after evolving."
 	done
 
 MahoganyPokecenter1F_MapEvents:
