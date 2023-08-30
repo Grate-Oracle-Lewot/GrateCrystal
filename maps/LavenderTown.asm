@@ -53,8 +53,11 @@ LavenderTownPokefanMText:
 	done
 
 LavenderTownTeacherText:
-	text "KANTO has many"
-	line "good radio shows."
+	text "Have you been to"
+	line "GALAR? #MON can"
+
+	para "grow giant during"
+	line "battle there!"
 	done
 
 LavenderTownGrampsText:
