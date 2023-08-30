@@ -109,18 +109,17 @@ EcruteakCityGramps1Text:
 	done
 
 EcruteakCityGramps2Text:
-	text "Ah, child."
-	line "Have you learned"
+	text "Listen to me…"
 
-	para "to dance like the"
-	line "KIMONO GIRLS?"
+	para "I visited KALOS as"
+	line "a young boy…"
 
-	para "If you go to their"
-	line "DANCE THEATER, an"
+	para "I swear to you, I"
+	line "saw a giant man!"
 
-	para "odd old man will"
-	line "give you something"
-	cont "nice, I hear."
+	para "Everyone says it"
+	line "must have been a"
+	cont "#MON, but…"
 	done
 
 EcruteakCityLass1Text:
