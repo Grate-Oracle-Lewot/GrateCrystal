@@ -279,21 +279,20 @@ CeladonCityPoliwrathText:
 	done
 
 CeladonCityTeacher1Text:
-if DEF(_CRYSTAL_AU)
-	text "I lost at the"
-	line "machines."
-	done
-else
-	text "I lost at the slot"
-	line "machines again…"
+	text "I heard that odd"
+	line "#MON have been"
+	cont "sighted in PALDEA."
 
-	para "We girls also play"
-	line "the slots now."
+	para "They resemble"
+	line "familiar #MON"
 
-	para "You should check"
-	line "them out too."
+	para "like DONPHAN and"
+	line "JIGGLYPUFF, but"
+
+	para "some look like"
+	line "robots and some"
+	cont "look prehistoric!"
 	done
-endc
 
 CeladonCityGramps2Text:
 	text "Nihihi! This GYM"
@@ -392,17 +391,10 @@ CeladonCityMansionSignText:
 	done
 
 CeladonCityGameCornerSignText:
-if DEF(_CRYSTAL_AU)
 	text "The Game Area for"
 	line "Grown-ups--CELADON"
 	cont "GAME CORNER"
 	done
-else
-	text "The Playground for"
-	line "Everybody--CELADON"
-	cont "GAME CORNER"
-	done
-endc
 
 CeladonCityTrainerTipsText:
 	text "TRAINER TIPS"
