@@ -25,17 +25,15 @@ CeruleanMart_CooltrainerF:
 	jumptextfaceplayer CeruleanMart_CooltrainerFText
 
 CeruleanMart_CooltrainerMText:
-	text "You'll run into"
-	line "many trainers on"
+	text "I had a dream that"
+	line "I turned into a"
 
-	para "the way to CERU-"
-	line "LEAN's CAPE."
+	para "#MON and had to"
+	line "battle through"
 
-	para "They want to see"
-	line "how they stack"
-
-	para "up against other"
-	line "trainers."
+	para "rooms that were"
+	line "never the same"
+	cont "twice…"
 	done
 
 CeruleanMart_CooltrainerFText:
