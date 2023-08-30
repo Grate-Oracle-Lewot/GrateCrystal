@@ -63,12 +63,9 @@ FuchsiaPokecenter1FJanineImpersonatorSpinMovement:
 	step_end
 
 FuchsiaPokecenter1FCooltrainerMText:
-	text "Hey! You have a"
-	line "brand new kind of"
-	cont "#DEX."
-
-	para "Did PROF.OAK give"
-	line "that to you?"
+	text "I wish mega evo-"
+	line "lution worked here"
+	cont "in JOHTO."
 	done
 
 FuchsiaPokecenter1FCooltrainerFText:
