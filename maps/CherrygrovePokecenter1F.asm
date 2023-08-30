@@ -39,11 +39,12 @@ CherrygrovePokecenter1FTeacherScript:
 	end
 
 CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
+	text "Long ago, SINNOH"
+	line "used to be called"
+	cont "HISUI."
 
-	para "of #MON, and"
-	line "it's all free."
+	para "#MON there were"
+	line "different, too."
 	done
 
 CherrygrovePokecenter1FGentlemanText:
