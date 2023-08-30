@@ -25,11 +25,10 @@ VermilionMartBeautyScript:
 	jumptextfaceplayer VermilionMartBeautyText
 
 VermilionMartSuperNerdText:
-	text "TEAM ROCKET is no"
-	line "longer in KANTO."
+	text "Have you been to"
+	line "the LENTAL REGION?"
 
-	para "That alone makes"
-	line "me happy."
+	para "I have photos!"
 	done
 
 VermilionMartBeautyText:
