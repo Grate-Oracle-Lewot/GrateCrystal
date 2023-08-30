@@ -343,11 +343,13 @@ GoldenrodCityLassText:
 	done
 
 GoldenrodCityGrampsText:
-	text "Whew! This is one"
-	line "big town. I don't"
+	text "My pops was from"
+	line "HOENN."
 
-	para "know where any-"
-	line "thing is."
+	para "He said a battle"
+	line "between two #-"
+	cont "MON created the"
+	cont "continents."
 	done
 
 GoldenrodCityRocketScoutText1:
@@ -424,8 +426,8 @@ GoldenrodGymSignText:
 	line "#MON GYM"
 	cont "LEADER: WHITNEY"
 
-	para "The Incredibly"
-	line "Pretty Girl!"
+	para "She's Not Like"
+	line "Other Girls!"
 	done
 
 GoldenrodCitySignText:
