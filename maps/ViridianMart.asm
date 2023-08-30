@@ -25,17 +25,18 @@ ViridianMartCooltrainerMScript:
 	jumptextfaceplayer ViridianMartCooltrainerMText
 
 ViridianMartLassText:
-	text "The GYM LEADER"
-	line "here is totally"
-	cont "cool."
+	text "Other regions have"
+	line "special battle"
+	cont "phenomena."
 	done
 
 ViridianMartCooltrainerMText:
-	text "Have you been to"
-	line "CINNABAR?"
+	text "The most intense"
+	line "battles I've seen"
+	cont "were in FERRUM."
 
-	para "It's an island way"
-	line "south of here."
+	para "It's a long way"
+	line "from here."
 	done
 
 ViridianMart_MapEvents:
