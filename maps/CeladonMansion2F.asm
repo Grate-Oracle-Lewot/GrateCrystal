@@ -31,11 +31,11 @@ CeladonMansion2FComputerText:
 	para "much things have"
 	line "changed here."
 
-	para "You'll also see"
-	line "many #MON that"
+	para "Almost as if some-"
+	line "one's been messing"
 
-	para "aren't native to"
-	line "JOHTO."
+	para "with the game's"
+	line "code."
 
 	para "To the PRODUCER"
 
