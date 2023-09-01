@@ -182,17 +182,15 @@ Route35GoldenrodGatePokefanFText_FoughtSudowoodo:
 	done
 
 Route35GoldenrodGateFisherText:
-	text "I wonder how many"
-	line "kinds of #MON"
+	text "There's an island"
+	line "in the ORANGE"
+	cont "ARCHIPELAGO where"
+	cont "all #MON are"
+	cont "pink."
 
-	para "there are in the"
-	line "world."
-
-	para "Three years ago,"
-	line "PROF.OAK said that"
-
-	para "there were 150"
-	line "different kinds."
+	para "It must get hard"
+	line "to tell them"
+	cont "apart."
 	done
 
 Route35GoldenrodGate_MapEvents:
