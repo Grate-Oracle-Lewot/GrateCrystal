@@ -195,7 +195,7 @@ SaffronMagnetTrainStationTeacherText:
 	line "TRAIN STATION was"
 
 	para "built, there was a"
-	line "house there."
+	line "house here."
 
 	para "A little girl"
 	line "named COPYCAT used"
@@ -203,14 +203,14 @@ SaffronMagnetTrainStationTeacherText:
 	done
 
 SaffronMagnetTrainStationLassText:
-	text "Hi. Do you have a"
-	line "rail PASS? I have"
+	text "I want to take the"
+	line "MAGNET TRAIN to"
+	cont "SINNOH."
 
-	para "one. All the peo-"
-	line "ple in SAFFRON who"
+	para "Huh? It doesn't go"
+	line "that far?"
 
-	para "ride the MAGNET"
-	line "TRAIN have PASSES."
+	para "Phooey!"
 	done
 
 SaffronMagnetTrainStation_MapEvents:
