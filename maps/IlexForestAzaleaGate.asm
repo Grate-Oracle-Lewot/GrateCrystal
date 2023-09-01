@@ -20,12 +20,12 @@ IlexForestAzaleaGateOfficerText:
 	done
 
 IlexForestAzaleaGateGrannyText:
-	text "The FOREST is"
+	text "The forest is"
 	line "watched over by"
 	cont "its protector."
 
-	para "Stay out of"
-	line "mischief!"
+	para "If you misbehave,"
+	line "it will know!"
 	done
 
 IlexForestAzaleaGate_MapEvents:
