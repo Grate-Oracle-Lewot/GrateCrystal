@@ -22,20 +22,21 @@ CeladonMansion2FComputerText:
 	line "middle of compos-"
 	cont "ing an e-mail."
 
-	para "…I hope you'll"
-	line "come visit KANTO."
+	para "…We've identified"
+	line "the individual as"
 
-	para "I think you'll be"
-	line "surprised at how"
+	para "the GRATE ORACLE"
+	line "LEWOT of the ELITE"
+	cont "FOUR."
 
-	para "much things have"
-	line "changed here."
+	para "We must proceed"
+	line "with caution."
 
-	para "Almost as if some-"
-	line "one's been messing"
+	para "He has the code at"
+	line "his fingertips."
 
-	para "with the game's"
-	line "code."
+	para "But I promise, he"
+	line "will pay for this."
 
 	para "To the PRODUCER"
 
