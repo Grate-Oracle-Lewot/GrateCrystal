@@ -107,14 +107,17 @@ CeladonMansionRoofHousePharmacistStoryText:
 CeladonMansionRoofHousePharmacistCurseText:
 	text "TM03 is CURSE."
 
-	para "It's a terrifying"
-	line "move that slowly"
+	para "If used by a ghost"
+	line "type, it slowly"
 
 	para "whittles down the"
 	line "victim's HP."
 
-	para "…If it's used by a"
-	line "ghost type."
+	para "For others, it ups"
+	line "ATTACK and DEFENSE"
+
+	para "at the cost of"
+	line "SPEED."
 	done
 
 CeladonMansionRoofHouse_MapEvents:
