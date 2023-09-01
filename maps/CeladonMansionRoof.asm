@@ -27,8 +27,7 @@ CeladonMansionRoofGraffitiText:
 	text "There's graffiti"
 	line "on the wall…"
 
-	para "<PLAYER> added a"
-	line "moustache!"
+	para "N WAS RITE"
 	done
 
 CeladonMansionRoof_MapEvents:
