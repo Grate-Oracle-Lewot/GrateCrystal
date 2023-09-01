@@ -28,11 +28,12 @@ Route32RuinsOfAlphGateOfficerText:
 	done
 
 Route32RuinsOfAlphGatePokefanMText:
-	text "You're studying"
-	line "the RUINS?"
+	text "These ruins seem"
+	line "to be related to"
 
-	para "I see a scientist"
-	line "in the making."
+	para "the TANOBY CHAMB-"
+	line "ERS in the SEVII"
+	cont "ISLANDS."
 	done
 
 Route32RuinsOfAlphGateYoungsterText:
