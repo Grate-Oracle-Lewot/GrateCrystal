@@ -163,7 +163,7 @@ RadioTower3FSuperNerdText:
 	line "have been found."
 
 	para "We must have about"
-	line "200 kinds."
+	line "1000 kinds."
 	done
 
 RadioTower3FGymGuideText_Rockets:
