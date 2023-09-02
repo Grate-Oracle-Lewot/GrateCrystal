@@ -33,6 +33,7 @@ ContactMoves:
 	db SUBMISSION
 	db LOW_KICK
 	db COUNTER
+	db SEISMIC_TOSS
 	db DIG
 	db QUICK_ATTACK
 	db RAGE
@@ -60,6 +61,7 @@ ContactMoves:
 	db REVERSAL
 	db MACH_PUNCH
 	db FAINT_ATTACK
+	db SWEET_KISS
 	db OUTRAGE
 	db ROLLOUT
 	db FALSE_SWIPE
