@@ -466,11 +466,6 @@ AddTempmonToParty:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	predef GetPikachuForm
-	ld a, [wFirstPikachuSeen]
-	and a
-	jr nz, .done_pikachu
-	ld a, [wPikachuForm]
-	ld [wFirstPikachuSeen], a
 .done_pikachu
 
 	ld a, [wCurPartySpecies]
