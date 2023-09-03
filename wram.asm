@@ -2631,6 +2631,8 @@ wTrainerClass:: db
 
 wUnownLetter:: db
 
+wPikachuForm:: db
+
 wMoveSelectionMenuType:: db
 
 ; corresponds to the data/pokemon/base_stats/*.asm contents
@@ -2660,7 +2662,7 @@ wBaseTMHM:: flag_array NUM_TM_HM_TUTOR
 wCurBaseDataEnd::
 	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
 
-	ds 6
+	ds 5
 
 wCurDamage:: dw
 
