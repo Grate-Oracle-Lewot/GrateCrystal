@@ -220,8 +220,8 @@ MonMenuIconPals:
 	icon_pals BROWN,  BLUE   ; SHUCKLE
 	icon_pals BLUE,   PURPLE ; HERACROSS
 	icon_pals BROWN,  PINK   ; SNEASEL
-	icon_pals BROWN,  GREEN  ; TEDDIURSA
-	icon_pals BROWN,  GREEN  ; URSARING
+	icon_pals BROWN,  GRAY   ; TEDDIURSA
+	icon_pals BROWN,  GRAY   ; URSARING
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals GRAY,   BLUE   ; MAGCARGO
 	icon_pals BROWN,  BLUE   ; SWINUB
