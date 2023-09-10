@@ -2837,6 +2837,10 @@ ClearChannel:
 
 PlayTrainerEncounterMusic::
 ; input: e = trainer type
+	; no encounter music for null trainers
+	ld a, [OtherTrainerClass]
+	and a
+	ret z
 	; turn fade off
 	xor a
 	ld [wMusicFade], a
