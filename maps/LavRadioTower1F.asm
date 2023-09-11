@@ -33,10 +33,7 @@ LavRadioTower1FReceptionistScript:
 	opentext
 	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	iftrue .ReceptionistBrainwashed
-	writetext LavRadioTower1FReceptionistText
-	waitbutton
-	closetext
-	end
+	sjump .ReceptionistNotBrainwashed
 
 .ReceptionistBrainwashed:
 	checkevent EVENT_FOUGHT_MEWTWO
@@ -81,10 +78,7 @@ LavRadioTower1FSuperNerd1Script:
 	opentext
 	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	iftrue .SuperNerd1Brainwashed
-	writetext LavRadioTower1FSuperNerd1Text
-	waitbutton
-	closetext
-	end
+	sjump .SuperNerd1NotBrainwashed
 
 .SuperNerd1Brainwashed:
 	checkevent EVENT_FOUGHT_MEWTWO
@@ -105,14 +99,7 @@ LavRadioTower1FGentlemanScript:
 	opentext
 	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	iftrue .GentlemanBrainwashed
-	checkflag ENGINE_EXPN_CARD
-	iftrue .GotExpnCard
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext LavRadioTower1FGentlemanText
-	waitbutton
-	closetext
-	end
+	sjump .GentlemanNotBrainwashed
 
 .GentlemanBrainwashed:
 	checkevent EVENT_FOUGHT_MEWTWO
@@ -156,12 +143,7 @@ LavRadioTower1FSuperNerd2Script:
 	opentext
 	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	iftrue .SuperNerd2Brainwashed
-	checkflag ENGINE_EXPN_CARD
-	iftrue .GotExpnCard
-	writetext LavRadioTower1FSuperNerd2Text
-	waitbutton
-	closetext
-	end
+	sjump .SuperNerd2NotBrainwashed
 
 .SuperNerd2Brainwashed:
 	checkevent EVENT_FOUGHT_MEWTWO
