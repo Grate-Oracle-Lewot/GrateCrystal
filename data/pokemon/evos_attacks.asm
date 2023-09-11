@@ -3119,12 +3119,12 @@ PinecoEvosAttacks:
 	db 2, PROTECT
 	db 4, LEECH_SEED
 	db 9, SELFDESTRUCT
-	db 15, TAKE_DOWN
+	db 15, SPIKES
 	db 22, TWISTER
 	db 29, BIDE
 	db 36, IRON_HEAD
-	db 43, SPIKES
-	db 50, DOUBLE_EDGE
+	db 43, DOUBLE_EDGE
+	db 50, SKULL_BASH
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
@@ -3133,12 +3133,12 @@ ForretressEvosAttacks:
 	db 2, PROTECT
 	db 4, LEECH_SEED
 	db 9, SELFDESTRUCT
-	db 15, TAKE_DOWN
+	db 15, SPIKES
 	db 22, TWISTER
 	db 29, BIDE
 	db 39, IRON_HEAD
-	db 49, SPIKES
-	db 59, DOUBLE_EDGE
+	db 49, DOUBLE_EDGE
+	db 59, SKULL_BASH
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
@@ -3248,7 +3248,7 @@ ScizorEvosAttacks:
 	db 36, SLASH
 	db 42, SWORDS_DANCE
 	db 48, AIR_SLASH
-	db 54, CROSS_CHOP
+	db 54, GUILLOTINE
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
