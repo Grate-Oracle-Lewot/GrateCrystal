@@ -15,6 +15,7 @@ SafariZone_MapScripts:
 	def_callbacks
 
 SafariZoneAerodactylScript:
+	faceplayer
 	waitsfx
 	cry AERODACTYL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
@@ -35,6 +36,7 @@ SafariZoneXatuScript:
 	end
 
 SafariZoneLaprasScript:
+	faceplayer
 	waitsfx
 	cry LAPRAS
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
@@ -77,7 +79,7 @@ SafariZoneMagikarpScript:
 SafariZoneSudowoodoScript:
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
+	applymovement SAFARIZONE_SUDOWOODO, SudowoodoShakeMovement
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon SUDOWOODO, 54
 	startbattle
