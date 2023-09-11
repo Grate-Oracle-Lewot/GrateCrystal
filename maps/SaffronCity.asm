@@ -57,20 +57,7 @@ SaffronCityCooltrainerFScript:
 	jumptextfaceplayer SaffronCityCooltrainerFText
 
 SaffronCityFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronCityFisherText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronCityFisherText_ReturnedMachinePart
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SaffronCityFisherText
 
 SaffronCityYoungster1Script:
 	jumptextfaceplayer SaffronCityYoungster1Text
@@ -176,22 +163,22 @@ SaffronCityCooltrainerFText:
 SaffronCityFisherText:
 	text "Chew… Chew…"
 
-	para "I hear there's big"
-	line "trouble brewing at"
-	cont "the POWER PLANT."
+	para "I hear a third"
+	line "team started up in"
+	cont "HOENN."
 
 	para "Chew… Chew…"
-	done
 
-SaffronCityFisherText_ReturnedMachinePart:
-	text "Chew… Chew…"
+	para "Instead of expand-"
+	line "ing the land or"
 
-	para "I hear there was"
-	line "big trouble at the"
-	cont "POWER PLANT."
+	para "sea, they want to"
+	line "expand the sky."
 
 	para "Chew… Chew…"
-	line "Haaah, I'm full!"
+
+	para "That says it all,"
+	line "really."
 	done
 
 SaffronCityYoungster1Text:
