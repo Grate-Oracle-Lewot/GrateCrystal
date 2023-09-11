@@ -4,6 +4,7 @@
 	const LAVRADIOTOWER1F_SUPER_NERD1
 	const LAVRADIOTOWER1F_GENTLEMAN
 	const LAVRADIOTOWER1F_SUPER_NERD2
+	const LAVRADIOTOWER1F_RECEPTIONIST2
 
 LavRadioTower1F_MapScripts:
 	def_scene_scripts
@@ -167,6 +168,36 @@ LavRadioTower1FSuperNerd2Script:
 	closetext
 	end
 
+LavRadioTowerBuenaPrizeReceptionist:
+	faceplayer
+	opentext
+	checkevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	iftrue .LavRadioTowerBuenaPrizeReceptionistBrainwashed
+	sjump .LavRadioTowerBuenaPrizeReceptionistNotBrainwashed
+
+.LavRadioTowerBuenaPrizeReceptionistBrainwashed:
+	checkevent EVENT_FOUGHT_MEWTWO
+	iftrue .LavRadioTowerBuenaPrizeReceptionistNotBrainwashed
+	writetext LavRadioTower1FMewtwoBrainwashText
+	waitbutton
+	closetext
+	end
+
+.LavRadioTowerBuenaPrizeReceptionistNotBrainwashed:
+	checkitem BLUE_CARD
+	iffalse .NoCard
+	writetext LavRadioTowerBuenaReceptionistPointsForPrizesText
+	promptbutton
+	special BuenaPrize
+	closetext
+	end
+
+.NoCard:
+	writetext LavRadioTowerBuenaReceptionistNoCardText
+	promptbutton
+	closetext
+	end
+
 LavRadioTower1FDirectory:
 	jumptext LavRadioTower1FDirectoryText
 
@@ -305,6 +336,23 @@ LavRadioTower1FSuperNerd2Text_GotExpnCard:
 	cont "off the air!"
 	done
 
+LavRadioTowerBuenaReceptionistPointsForPrizesText:
+	text "You can cash in"
+	line "your saved points"
+
+	para "for a lovely prize"
+	line "of your choice!"
+	done
+
+LavRadioTowerBuenaReceptionistNoCardText:
+	text "You can't trade in"
+	line "points without"
+	cont "your BLUE CARD."
+
+	para "Don't forget your"
+	line "BLUE CARD!"
+	done
+
 LavRadioTower1FMewtwoBrainwashText:
 	text "…"
 	done
@@ -357,3 +405,4 @@ LavRadioTower1F_MapEvents:
 	object_event  1,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd1Script, EVENT_LAV_RADIO_TOWER_1F_WANDERING_SUPER_NERD
 	object_event  9,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FGentlemanScript, -1
 	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower1FSuperNerd2Script, -1
+	object_event 19,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavRadioTowerBuenaPrizeReceptionist, -1
