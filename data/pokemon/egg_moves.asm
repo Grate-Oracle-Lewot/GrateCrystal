@@ -235,7 +235,6 @@ PonytaEggMoves:
 	db DOUBLE_KICK
 	db PLAY_ROUGH
 	db CHARM
-	db DRILL_PECK
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -414,6 +413,7 @@ MrMimeEggMoves:
 	db LOVELY_KISS
 	db PLAY_ROUGH
 	db METRONOME
+	db TRANSFORM
 	db -1 ; end
 
 ScytherEggMoves:
