@@ -940,6 +940,8 @@ StatsScreen_GetAnimationParam:
 
 .Tempmon:
 	ld bc, wTempMonSpecies
+
+.CheckEggFaintedFrzSlp:
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .egg
