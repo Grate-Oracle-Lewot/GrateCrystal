@@ -659,7 +659,7 @@ BattleTowerMons:
 
 	db ALAKAZAM
 	db BERRY_JUICE
-	db PSYCHIC_M, PSYCH_UP, TOXIC, THUNDERPUNCH
+	db PSYCHIC_M, PSYCH_UP, PROTECT, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -669,7 +669,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 40000
 	dn 15, 13, 14, 15 ; DVs
-	db 10, 10, 5, 15 ; PP
+	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
