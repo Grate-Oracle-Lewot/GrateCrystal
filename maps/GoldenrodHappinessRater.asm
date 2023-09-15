@@ -25,12 +25,14 @@ GoldenrodHappinessRaterTeacherScript:
 	writetext GoldenrodHappinessRatingText_LovesYouALot
 	waitbutton
 	closetext
+	showemote EMOTE_HEART, GOLDENRODHAPPINESSRATER_TEACHER, 10
 	end
 
 .ReallyTrustsYou:
 	writetext GoldenrodHappinessRatingText_ReallyTrustsYou
 	waitbutton
 	closetext
+	showemote EMOTE_HAPPY, GOLDENRODHAPPINESSRATER_TEACHER, 10
 	end
 
 .SortOfHappy:
@@ -55,6 +57,7 @@ GoldenrodHappinessRaterTeacherScript:
 	writetext GoldenrodHappinessRatingText_LooksMean
 	waitbutton
 	closetext
+	showemote EMOTE_SAD, GOLDENRODHAPPINESSRATER_TEACHER, 10
 	end
 
 GoldenrodHappinessRaterPokefanMScript:
