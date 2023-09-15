@@ -136,8 +136,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
 
-- If you use Focus Energy after having already used it, it raises your Attack and Defense by one stage each.
-
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage. This bypasses accuracy checks.
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
@@ -151,8 +149,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - New held items that each completely prevent a specific status condition
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - Type boost held items now boost their type's power by 19% instead of 10%
+- Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - Most Berries renamed for flavor
-- X Sp. Defend, Dusk Ball, Timer Ball, and Eviolite
+- X Sp. Defend, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
 - Berserk Gene removed (had to for space)
