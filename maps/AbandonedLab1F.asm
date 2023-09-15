@@ -21,7 +21,7 @@ AbandonedLab1FBookshelf:
 	jumpstd DifficultBookshelfScript
 
 AbandonedLab1FHiddenEviolite:
-	hiddenitem EVIOLITE, EVENT_ABANDONED_LAB_1F_HIDDEN_EVIOLITE
+	hiddenitem EVERSTONE, EVENT_ABANDONED_LAB_1F_HIDDEN_EVIOLITE
 
 AbandonedLab1FJournalAskText:
 	text "It's a dusty old"
