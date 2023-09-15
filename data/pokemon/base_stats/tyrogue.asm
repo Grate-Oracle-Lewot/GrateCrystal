@@ -6,7 +6,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 75 ; catch rate
 	db 91 ; base exp
-	db EVIOLITE, BLACKBELT_I ; items
+	db EVERSTONE, BLACKBELT_I ; items
 	db GENDER_F12_5 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/tyrogue/front.dimensions"
