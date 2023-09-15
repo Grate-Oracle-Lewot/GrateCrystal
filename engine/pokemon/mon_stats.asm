@@ -122,7 +122,7 @@ PrintTempMonStats:
 	next "@"
 
 PrintTempMonDVs:
-	hlcoord 1, 12
+	hlcoord 1, 11
 	ld de, .DVstring
 	call PlaceString
 	; we're using wPokedexStatus because why not, nobody using it atm lol
@@ -144,7 +144,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 5, 14 ; 1, 5, 9, 13
+	hlcoord 5, 13 ; 1, 5, 9, 13
 	call PrintNum
 
 	; DEF DV
@@ -164,7 +164,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2
-	hlcoord 9, 14 ; 1, 5, 9, 13
+	hlcoord 9, 13 ; 1, 5, 9, 13
 	call PrintNum
 
 	; SPE DV
@@ -185,7 +185,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 13, 14 ; 1, 5, 9, 13
+	hlcoord 13, 13 ; 1, 5, 9, 13
 	call PrintNum
 
 	; SPC DV
@@ -205,7 +205,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, 1, 2 ; bytes, digits
-	hlcoord 17, 14 ; 1, 4, 7, 10, 13 
+	hlcoord 17, 13 ; 1, 4, 7, 10, 13 
 	call PrintNum
 	; HP
 	; HP DV is determined by the last bit of each of these four DVs
@@ -223,7 +223,7 @@ PrintTempMonDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 1, 14 ; 1, 4, 7, 10, 13 
+	hlcoord 1, 13 ; 1, 4, 7, 10, 13 
 	call PrintNum
 	ret
 
