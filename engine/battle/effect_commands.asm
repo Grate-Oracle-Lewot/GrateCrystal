@@ -2583,7 +2583,7 @@ UnevolvedEviolite:
 	pop hl
 	ret z
 
-; check if the defender's item is Eviolite
+; check if the defender's item has the Eviolite effect
 	push bc
 	call GetOpponentItem
 	ld a, b
