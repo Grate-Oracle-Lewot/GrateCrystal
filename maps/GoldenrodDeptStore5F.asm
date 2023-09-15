@@ -71,6 +71,9 @@ GoldenrodDeptStore5FReceptionistScript:
 	sjump .NotVeryHappy
 
 .VeryHappy:
+	closetext
+	showemote EMOTE_HEART, GOLDENRODDEPTSTORE5F_RECEPTIONIST, 20
+	opentext
 	writetext GoldenrodDeptStore5FReceptionistThisMoveShouldBePerfectText
 	promptbutton
 	verbosegiveitem TM_RETURN
@@ -86,6 +89,9 @@ GoldenrodDeptStore5FReceptionistScript:
 	end
 
 .NotVeryHappy:
+	closetext
+	showemote EMOTE_SAD, GOLDENRODDEPTSTORE5F_RECEPTIONIST, 20
+	opentext
 	writetext GoldenrodDeptStore5FReceptionistItLooksEvilHowAboutThisTMText
 	promptbutton
 	verbosegiveitem TM_POISON_JAB
