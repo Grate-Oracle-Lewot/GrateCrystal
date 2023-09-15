@@ -40,15 +40,14 @@ GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore2FYoungsterText:
-	text "EVIOLITE boosts"
+	text "EVERSTONE boosts"
 	line "the defenses of a"
 
 	para "#MON that holds"
-	line "it, but only if"
+	line "it, as well as"
 
-	para "that #MON can"
-	line "evolve but hasn't"
-	cont "yet."
+	para "stopping it from"
+	line "evolving."
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:
