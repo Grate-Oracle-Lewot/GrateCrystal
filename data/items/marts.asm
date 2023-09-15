@@ -106,7 +106,7 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 10 ; # items
+	db 9 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db TIMER_BALL
@@ -114,7 +114,6 @@ MartGoldenrod2F2:
 	db REPEL
 	db POKE_DOLL
 	db SWAG_BEACON
-	db EVIOLITE
 	db CATCH_CHARM
 	db MUSIC_MAIL
 	db -1 ; end
@@ -362,8 +361,8 @@ MartCeladon4F:
 	db NOISEMAKER
 	db LIMBO_STICK
 	db DICTIONARY
-	db EVIOLITE
 	db CATCH_CHARM
+	db EVERSTONE
 	db PORTRAITMAIL
 	db -1 ; end
 
