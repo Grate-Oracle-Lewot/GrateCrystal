@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
 	db 92 ; base exp
-	db EVIOLITE, PINK_BOW ; items
+	db EVERSTONE, PINK_BOW ; items
 	db GENDER_F12_5 ; gender ratio
 	db 18 ; step cycles to hatch
 	INCBIN "gfx/pokemon/eevee/front.dimensions"
