@@ -243,11 +243,12 @@ CeladonCityTutorAeroblastNoLeaf:
 	line "teach the move for"
 	cont "free."
 
-	para "Wild WHIMSICOTT"
-	line "may hold GOLD or"
+	para "Wild CATERPIE or"
+	line "WHIMSICOTT may"
 
-	para "SILVER LEAVES. Try"
-	line "using THIEF!"
+	para "hold SILVER or"
+	line "GOLD LEAVES. Try"
+	cont "using THIEF!"
 	done
 
 CeladonCityFisherText:
