@@ -799,13 +799,52 @@ LoadBluePage:
 
 LoadOrangePage:
 	ld de, DVGenesString
-	hlcoord 7, 10
+	hlcoord 7, 9
+	call PlaceString
+	ld de, HiddenPowerHiddenString
+	hlcoord 1, 15
+	call PlaceString
+	ld de, HiddenPowerTypeString
+	hlcoord 1, 16
 	call PlaceString
 	predef PrintTempMonDVs
+
+	ld a, [wTempMonDVs]
+	and %0011
+	ld b, a
+	; + (Atk & 3) << 2
+	ld a, [wTempMonDVs]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	; Skip Normal
+	inc a
+	; Skip Bird
+	cp BIRD
+	jr c, .done
+	inc a
+	; Skip unused types
+	cp UNUSED_TYPES
+	jr c, .done
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.done
+	ld [wNamedObjectIndex], a
+	farcall GetTypeName
+	ld de, wStringBuffer1
+	hlcoord 10, 15
+	call PlaceString
 	ret
 
 DVGenesString:
 	db "GENES@"
+
+HiddenPowerHiddenString:
+	db "HIDDEN@"
+
+HiddenPowerTypeString:
+	db "TYPE:@"
 
 IDNoString:
 	db "<ID>№.@"
