@@ -967,7 +967,7 @@ ElmAfterTheftText2:
 	done
 
 ElmAfterTheftText3:
-	text "ELM: This?"
+	text "ELM: This?!"
 	done
 
 ElmAfterTheftText4:
@@ -1100,19 +1100,18 @@ ElmGiveEverstoneText2:
 	text "That's an"
 	line "EVERSTONE."
 
-	para "Some species of"
-	line "#MON evolve"
+	para "A #MON that"
+	line "holds it will be"
 
-	para "when they grow to"
-	line "certain levels."
+	para "prevented from"
+	line "evolving, but will"
 
-	para "A #MON holding"
-	line "the EVERSTONE"
-	cont "won't evolve."
+	para "have better defen-"
+	line "ses in battle."
 
 	para "Give it to a #-"
-	line "MON you don't want"
-	cont "to evolve."
+	line "MON you prefer in"
+	cont "its young form."
 	done
 
 ElmText_CallYou:
