@@ -23,7 +23,7 @@ SilphCo2FReceptionistScript:
 	jumptextfaceplayer SilphCo2FReceptionistText
 
 SilphCo2FEviolite:
-	itemball EVIOLITE
+	itemball EVERSTONE
 
 SilphCo2FSign:
 	jumptext SilphCo2FSignText
