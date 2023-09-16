@@ -801,11 +801,8 @@ LoadOrangePage:
 	ld de, DVGenesString
 	hlcoord 7, 9
 	call PlaceString
-	ld de, HiddenPowerHiddenString
-	hlcoord 1, 15
-	call PlaceString
 	ld de, HiddenPowerTypeString
-	hlcoord 1, 16
+	hlcoord 1, 15
 	call PlaceString
 	predef PrintTempMonDVs
 
@@ -833,18 +830,15 @@ LoadOrangePage:
 	ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
-	hlcoord 10, 15
+	hlcoord 1, 16
 	call PlaceString
 	ret
 
 DVGenesString:
 	db "GENES@"
 
-HiddenPowerHiddenString:
-	db "HIDDEN@"
-
 HiddenPowerTypeString:
-	db "TYPE:@"
+	db "HIDDEN POWER:@"
 
 IDNoString:
 	db "<ID>№.@"
