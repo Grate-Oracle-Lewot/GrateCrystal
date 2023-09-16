@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 35 ; catch rate
 	db 84 ; base exp
-	db PINK_BOW, EVERSTONE ; items
+	db EVERSTONE, TRIDENT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ditto/front.dimensions"
