@@ -1434,7 +1434,7 @@ _NPCTradeAfterText3::
 	done
 
 _NPCTradeCompleteText4::
-	text "Uh? What happened?"
+	text "Did it work?"
 	done
 
 _NPCTradeAfterText4::
