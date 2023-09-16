@@ -20,8 +20,8 @@ AbandonedLab1FJournal:
 AbandonedLab1FBookshelf:
 	jumpstd DifficultBookshelfScript
 
-AbandonedLab1FHiddenEviolite:
-	hiddenitem EVERSTONE, EVENT_ABANDONED_LAB_1F_HIDDEN_EVIOLITE
+AbandonedLab1FHiddenEverstone:
+	hiddenitem EVERSTONE, EVENT_ABANDONED_LAB_1F_HIDDEN_EVERSTONE
 
 AbandonedLab1FJournalAskText:
 	text "It's a dusty old"
@@ -80,7 +80,7 @@ AbandonedLab1F_MapEvents:
 	bg_event 21,  7, BGEVENT_READ, AbandonedLab1FBookshelf
 	bg_event 22,  7, BGEVENT_READ, AbandonedLab1FBookshelf
 	bg_event 23,  7, BGEVENT_READ, AbandonedLab1FBookshelf
-	bg_event 14,  7, BGEVENT_ITEM, AbandonedLab1FHiddenEviolite
+	bg_event 14,  7, BGEVENT_ITEM, AbandonedLab1FHiddenEverstone
 
 	def_object_events
 	object_event 21, 10, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, AbandonedLab1FJournal, -1
