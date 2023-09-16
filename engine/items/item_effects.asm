@@ -47,7 +47,7 @@ ItemEffects:
 	dw RareCandyEffect     ; RARE_CANDY
 	dw XAccuracyEffect     ; X_ACCURACY
 	dw EvoStoneEffect      ; LEAF_STONE
-	dw NoEffect            ; METAL_POWDER
+	dw XItemEffect         ; X_EVADE
 	dw NoEffect            ; NUGGET
 	dw PokeDollEffect      ; POKE_DOLL
 	dw StatusHealingEffect ; FULL_HEAL
@@ -147,7 +147,7 @@ ItemEffects:
 	dw NoEffect            ; PASS
 	dw NoEffect            ; DICTIONARY
 	dw OddRodEffect        ; ODD_ROD
-	dw NoEffect            ; EVIOLITE
+	dw NoEffect            ; TRIDENT
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
