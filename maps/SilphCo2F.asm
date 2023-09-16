@@ -22,8 +22,8 @@ TrainerScientistHideo:
 SilphCo2FReceptionistScript:
 	jumptextfaceplayer SilphCo2FReceptionistText
 
-SilphCo2FEviolite:
-	itemball EVERSTONE
+SilphCo2FTrident:
+	itemball TRIDENT
 
 SilphCo2FSign:
 	jumptext SilphCo2FSignText
@@ -71,4 +71,4 @@ SilphCo2F_MapEvents:
 	def_object_events
 	object_event 26, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistHideo, -1
 	object_event 10,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo2FReceptionistScript, -1
-	object_event  1,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo2FEviolite, EVENT_SILPH_CO_2F_EVIOLITE
+	object_event  1,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo2FTrident, EVENT_SILPH_CO_2F_TRIDENT
