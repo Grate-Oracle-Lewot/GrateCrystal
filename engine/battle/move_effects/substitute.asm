@@ -73,53 +73,23 @@ BattleCommand_Substitute:
 	call StdBattleTextbox
 	jp RefreshBattleHuds
 
-.already_has_sub
-	call CheckUserIsCharging
-	call nz, BattleCommand_RaiseSub
-; new to Grate Crystal: act like Cosmic Power (adapted from Curse)
-	ld bc, wPlayerStatLevels
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go
-	ld bc, wEnemyStatLevels
-
-.go
-; If no stats can be increased, don't.
-
-; Defense
-	inc bc
-	ld a, [bc]
-	cp MAX_STAT_LEVEL
-	jr c, .raise
-
-; Special Defense
-	inc bc
-	inc bc
-	inc bc
-	ld a, [bc]
-	cp MAX_STAT_LEVEL
-	jr nc, .cantraise
-
-.raise
-; Raise Defense and Special Defense.
-	call ResetMiss
-	call BattleCommand_DefenseUp
-	call BattleCommand_StatUpMessage
-	call ResetMiss
-	call BattleCommand_SpecialDefenseUp
-	jp BattleCommand_StatUpMessage
-
-.cantraise
-; Can't raise either stat.
-	ld b, ABILITY + 1
-	call GetStatName
-	call AnimateFailedMove
-	ld hl, WontRiseAnymoreText
-	jr .jp_stdbattletextbox
-
 .too_weak_to_sub
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub
 	ld hl, TooWeakSubText
 .jp_stdbattletextbox
 	jp StdBattleTextbox
+
+.already_has_sub
+	call CheckUserIsCharging
+	call nz, BattleCommand_RaiseSub
+	push bc
+	call BattleCommand_DefenseUp
+	call BattleCommand_StatUpMessage
+	call BattleCommand_SpecialDefenseUp
+	call BattleCommand_StatUpMessage
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret z
+	jp PrintNothingHappened
