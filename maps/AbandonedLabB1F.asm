@@ -19,8 +19,8 @@ AbandonedLabB1FComputer:
 AbandonedLabB1FBookshelf:
 	jumpstd DifficultBookshelfScript
 
-AbandonedLabB1FHiddenMetalPowder:
-	hiddenitem METAL_COAT, EVENT_ABANDONED_LAB_B1F_HIDDEN_METAL_POWDER
+AbandonedLabB1FHiddenMetalCoat:
+	hiddenitem METAL_COAT, EVENT_ABANDONED_LAB_B1F_HIDDEN_METAL_COAT
 
 AbandonedLabB1FPaperText:
 	text "It's a building"
@@ -64,7 +64,7 @@ AbandonedLabB1F_MapEvents:
 	bg_event 21, 19, BGEVENT_READ, AbandonedLabB1FBookshelf
 	bg_event 10, 23, BGEVENT_READ, AbandonedLabB1FBookshelf
 	bg_event 11, 23, BGEVENT_READ, AbandonedLabB1FBookshelf
-	bg_event 14,  7, BGEVENT_ITEM, AbandonedLabB1FHiddenMetalPowder
+	bg_event 14,  7, BGEVENT_ITEM, AbandonedLabB1FHiddenMetalCoat
 
 	def_object_events
 	object_event  9, 23, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, AbandonedLabB1FPaper, -1
