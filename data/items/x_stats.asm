@@ -5,3 +5,4 @@ XItemStats:
 	db X_SPEED,     SPEED
 	db X_SPECIAL,   SP_ATTACK
 	db X_SP_DEFEND, SP_DEFENSE
+	db X_EVADE,     EVASION
