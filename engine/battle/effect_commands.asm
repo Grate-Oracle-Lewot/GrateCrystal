@@ -2510,46 +2510,6 @@ EndMoveEffect:
 	ld [hl], a
 	ret
 
-DittoMetalPowder:
-	ld a, MON_SPECIES
-	call BattlePartyAttr
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr nz, .got_species
-	ld a, [wTempEnemyMonSpecies]
-
-.got_species
-	cp DITTO
-	ret nz
-
-	push bc
-	call GetOpponentItem
-	ld a, [hl]
-	cp METAL_POWDER
-	pop bc
-	ret nz
-
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp b
-	jr c, .cap
-	ret nz
-	ld a, LOW(MAX_STAT_VALUE)
-	cp c
-	ret nc
-
-.cap
-	ld bc, MAX_STAT_VALUE
-	ret
-
 UnevolvedEviolite:
 ; get the defender's species
 	ld a, MON_SPECIES
@@ -2692,7 +2652,6 @@ PlayerAttackDamage:
 
 .done
 	push hl
-	call DittoMetalPowder
 	call UnevolvedEviolite
 	pop hl
 
@@ -2944,7 +2903,6 @@ EnemyAttackDamage:
 
 .done
 	push hl
-	call DittoMetalPowder
 	call UnevolvedEviolite
 	pop hl
 
