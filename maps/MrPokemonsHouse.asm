@@ -99,6 +99,8 @@ MrPokemonsHouse_MrPokemonScript:
 	ifequal PARTY_LENGTH, .OddEggPartyFull
 	checkpoke MEWTWO
 	iftrue .MewtwoEgg
+	checkpoke FINULL
+	iftrue .FinullEgg
 	special GiveOddEgg
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
@@ -111,6 +113,17 @@ MrPokemonsHouse_MrPokemonScript:
 
 .MewtwoEgg:
 	giveegg MEWTWO, EGG_LEVEL
+	opentext
+	writetext MrPokemonsHouse_ReceivedOddEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	setflag ENGINE_YANMA_SWARM
+	end
+
+.FinullEgg:
+	giveegg FINULL, EGG_LEVEL
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
 	playsound SFX_KEY_ITEM
