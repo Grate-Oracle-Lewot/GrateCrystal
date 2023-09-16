@@ -39,7 +39,7 @@
 	const RARE_CANDY   ; 1f
 	const X_ACCURACY   ; 20
 	const LEAF_STONE   ; 21
-	const METAL_POWDER ; 22
+	const X_EVADE      ; 22
 	const NUGGET       ; 23
 	const POKE_DOLL    ; 24
 	const FULL_HEAL    ; 25
@@ -139,7 +139,7 @@
 	const PASS         ; 83
 	const DICTIONARY   ; 84
 	const ODD_ROD      ; 85
-	const EVIOLITE     ; 86
+	const TRIDENT      ; 86
 	const CHARCOAL     ; 87
 	const BERRY_JUICE  ; 88
 	const SCOPE_LENS   ; 89
