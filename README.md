@@ -143,6 +143,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Flame Wheel and Sacred Fire no longer thaw out a frozen user (had to get rid of it for space).
 
 ## Items
+- Removed: Berserk Gene, Metal Powder
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves)
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
@@ -154,7 +155,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - X Sp. Defend, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
-- Berserk Gene removed (had to for space)
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 
 ## Move tutors
