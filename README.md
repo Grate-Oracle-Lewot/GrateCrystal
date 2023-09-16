@@ -44,6 +44,7 @@ This is an edit of GitHub's "pokecrystal" disassembly—in other words, a Pokém
   - Dragon types are immune to critical hits
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
+  - Ditto is now the fastest Pokémon, letting it Transform before getting hit
   - Unown and Delibird learn multiple moves
   - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther (but breeding chains are untested)
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
