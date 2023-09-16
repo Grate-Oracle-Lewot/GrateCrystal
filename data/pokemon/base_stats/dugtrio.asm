@@ -6,7 +6,7 @@
 	db GROUND, GROUND ; type
 	db 50 ; catch rate
 	db 153 ; base exp
-	db TM_DIG, SOFT_SAND ; items
+	db TM_DIG, TRIDENT ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dugtrio/front.dimensions"
