@@ -20,7 +20,7 @@ AbandonedLabB1FBookshelf:
 	jumpstd DifficultBookshelfScript
 
 AbandonedLabB1FHiddenMetalPowder:
-	hiddenitem METAL_POWDER, EVENT_ABANDONED_LAB_B1F_HIDDEN_METAL_POWDER
+	hiddenitem METAL_COAT, EVENT_ABANDONED_LAB_B1F_HIDDEN_METAL_POWDER
 
 AbandonedLabB1FPaperText:
 	text "It's a building"
