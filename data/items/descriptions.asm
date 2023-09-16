@@ -34,7 +34,7 @@ ItemDescriptions:
 	dw RareCandyDesc
 	dw XAccuracyDesc
 	dw LeafStoneDesc
-	dw MetalPowderDesc
+	dw XEvadeDesc
 	dw NuggetDesc
 	dw PokeDollDesc
 	dw FullHealDesc
@@ -134,7 +134,7 @@ ItemDescriptions:
 	dw PassDesc
 	dw DictionaryDesc
 	dw OddRodDesc
-	dw EvioliteDesc
+	dw TridentDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -391,9 +391,9 @@ LeafStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-MetalPowderDesc:
-	db   "Raises DEFENSE of"
-	next "DITTO. (HOLD)@"
+XEvadeDesc:
+	db   "Raises evasion."
+	next "(1 BTL)@"
 
 NuggetDesc:
 	db   "Made of pure gold."
@@ -783,9 +783,9 @@ OddRodDesc:
 	db   "A ROD that fishes"
 	next "up rare #MON.@"
 
-EvioliteDesc:
-	db   "Ups defenses of"
-	next "unevolved #MON.@"
+TridentDesc:
+	db   "Powers up TRI"
+	next "ATTACK. (HOLD)@"
 
 CharcoalDesc:
 	db   "Powers up fire-"
