@@ -154,10 +154,10 @@ BattleTowerMons:
 	bigdw 38 ; HP
 	bigdw 38 ; Max HP
 	bigdw 23 ; Atk
-	bigdw 29 ; Def
+	bigdw 31 ; Def
 	bigdw 19 ; Spd
 	bigdw 24 ; SAtk
-	bigdw 28 ; SDef
+	bigdw 30 ; SDef
 	db "SANI-GO@@@@"
 
 	db MILTANK
