@@ -45,13 +45,19 @@ GoldenrodDeptStore3FSuperNerdText:
 	done
 
 GoldenrodDeptStore3FRockerText:
-	text "Hey! When you bat-"
-	line "tle, do you use X"
-	cont "SPECIAL?"
+	text "Some #MON need"
+	line "special stones to"
+	cont "evolve."
 
-	para "It's awesome. It"
-	line "really jacks up"
-	cont "SPECIAL ATTACK!"
+	para "Holding an EVER-"
+	line "STONE stops #-"
+	cont "MON from evolving,"
+
+	para "but also boosts"
+	line "their defenses…"
+
+	para "Only if they're"
+	line "unevolved, though!"
 	done
 
 GoldenrodDeptStore3FDirectoryText:
