@@ -44,10 +44,10 @@ CeladonDeptStore4FYoungsterText:
 	done
 
 CeladonDeptStore4FDirectoryText:
-	text "Express Yourself"
-	line "With Gifts!"
+	text "Hold On Loosely,"
+	line "Don't Let Go!"
 
-	para "4F: WISEMAN GIFTS"
+	para "4F: ACCOUTREMENTS"
 	done
 
 CeladonDeptStore4F_MapEvents:
