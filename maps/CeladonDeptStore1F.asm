@@ -63,7 +63,7 @@ CeladonDeptStore1FDirectoryText:
 
 	para "3F: TM SHOP"
 
-	para "4F: WISEMAN GIFTS"
+	para "4F: ACCOUTREMENTS"
 
 	para "5F: DRUG STORE"
 
