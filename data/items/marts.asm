@@ -65,8 +65,8 @@ MartViolet:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
 	db X_SPEED
 	db SWAG_BEACON
 	db -1 ; end
@@ -244,8 +244,8 @@ MartBlackthorn:
 	db FULL_HEAL
 	db REVIVE
 	db MAX_REPEL
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
 	db TM_HYPER_BEAM
 	db -1 ; end
 
