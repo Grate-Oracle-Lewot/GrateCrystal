@@ -2188,11 +2188,11 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
-	bigdw 124 ; HP
-	bigdw 124 ; Max HP
-	bigdw 93 ; Atk
-	bigdw 71 ; Def
-	bigdw 111 ; Spd
+	bigdw 128 ; HP
+	bigdw 128 ; Max HP
+	bigdw 109 ; Atk
+	bigdw 75 ; Def
+	bigdw 107 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 95 ; SDef
 	db "EREBU-@@@@@"
@@ -2272,10 +2272,10 @@ BattleTowerMons:
 	bigdw 123 ; HP
 	bigdw 123 ; Max HP
 	bigdw 60 ; Atk
-	bigdw 278 ; Def
+	bigdw 303 ; Def
 	bigdw 52 ; Spd
 	bigdw 59 ; SAtk
-	bigdw 279 ; SDef
+	bigdw 304 ; SDef
 	db "TUBOTUBO@@@"
 
 	db SNORLAX
@@ -4832,10 +4832,10 @@ BattleTowerMons:
 	bigdw 203 ; HP
 	bigdw 203 ; Max HP
 	bigdw 99 ; Atk
-	bigdw 493 ; Def
+	bigdw 538 ; Def
 	bigdw 90 ; Spd
 	bigdw 97 ; SAtk
-	bigdw 493 ; SDef
+	bigdw 538 ; SDef
 	db "TUBOTUBO@@@"
 
 	db FLAREON
