@@ -1615,9 +1615,9 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 96 ; HP
 	bigdw 96 ; Max HP
-	bigdw 75 ; Atk
+	bigdw 78 ; Atk
 	bigdw 61 ; Def
-	bigdw 82 ; Spd
+	bigdw 85 ; Spd
 	bigdw 58 ; SAtk
 	bigdw 58 ; SDef
 	db "ONIDORIRU@@"
@@ -1958,7 +1958,7 @@ BattleTowerMons:
 	bigdw 157 ; Max HP
 	bigdw 95 ; Atk
 	bigdw 126 ; Def
-	bigdw 60 ; Spd
+	bigdw 52 ; Spd
 	bigdw 119 ; SAtk
 	bigdw 103 ; SDef
 	db "YADORAN@@@@"
@@ -2403,7 +2403,7 @@ BattleTowerMons:
 	bigdw 196 ; Max HP
 	bigdw 118 ; Atk
 	bigdw 126 ; Def
-	bigdw 75 ; Spd
+	bigdw 65 ; Spd
 	bigdw 146 ; SAtk
 	bigdw 156 ; SDef
 	db "YADOKINGU@@"
@@ -5224,9 +5224,9 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 324 ; HP
 	bigdw 324 ; Max HP
-	bigdw 270 ; Atk
+	bigdw 280 ; Atk
 	bigdw 216 ; Def
-	bigdw 287 ; Spd
+	bigdw 297 ; Spd
 	bigdw 212 ; SAtk
 	bigdw 212 ; SDef
 	db "ONIDORIRU@@"
