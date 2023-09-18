@@ -1197,13 +1197,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 102 ; HP
-	bigdw 102 ; Max HP
-	bigdw 60 ; Atk
-	bigdw 49 ; Def
+	bigdw 108 ; HP
+	bigdw 108 ; Max HP
+	bigdw 66 ; Atk
+	bigdw 53 ; Def
 	bigdw 83 ; Spd
-	bigdw 98 ; SAtk
-	bigdw 86 ; SDef
+	bigdw 112 ; SAtk
+	bigdw 94 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db DUGTRIO
@@ -3156,13 +3156,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 196 ; HP
-	bigdw 196 ; Max HP
-	bigdw 116 ; Atk
-	bigdw 98 ; Def
+	bigdw 208 ; HP
+	bigdw 208 ; Max HP
+	bigdw 128 ; Atk
+	bigdw 106 ; Def
 	bigdw 168 ; Spd
-	bigdw 189 ; SAtk
-	bigdw 165 ; SDef
+	bigdw 215 ; SAtk
+	bigdw 180 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db BLASTOISE
@@ -4150,13 +4150,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
-	bigdw 264 ; HP
-	bigdw 264 ; Max HP
-	bigdw 149 ; Atk
-	bigdw 127 ; Def
+	bigdw 280 ; HP
+	bigdw 280 ; Max HP
+	bigdw 165 ; Atk
+	bigdw 138 ; Def
 	bigdw 221 ; Spd
-	bigdw 257 ; SAtk
-	bigdw 225 ; SDef
+	bigdw 292 ; SAtk
+	bigdw 245 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db MANTINE
