@@ -601,7 +601,7 @@ BattleTowerMons:
 	bigdw 51 ; Atk
 	bigdw 54 ; Def
 	bigdw 67 ; Spd
-	bigdw 60 ; SAtk
+	bigdw 62 ; SAtk
 	bigdw 54 ; SDef
 	db "SUTA-MI-@@@"
 
@@ -1176,7 +1176,7 @@ BattleTowerMons:
 	bigdw 75 ; Atk
 	bigdw 81 ; Def
 	bigdw 99 ; Spd
-	bigdw 90 ; SAtk
+	bigdw 93 ; SAtk
 	bigdw 81 ; SDef
 	db "SUTA-MI-@@@"
 
@@ -1829,7 +1829,7 @@ BattleTowerMons:
 	bigdw 99 ; Atk
 	bigdw 104 ; Def
 	bigdw 127 ; Spd
-	bigdw 117 ; SAtk
+	bigdw 121 ; SAtk
 	bigdw 105 ; SDef
 	db "SUTA-MI-@@@"
 
@@ -2456,7 +2456,7 @@ BattleTowerMons:
 	bigdw 121 ; Atk
 	bigdw 130 ; Def
 	bigdw 161 ; Spd
-	bigdw 145 ; SAtk
+	bigdw 150 ; SAtk
 	bigdw 130 ; SDef
 	db "SUTA-MI-@@@"
 
@@ -4470,7 +4470,7 @@ BattleTowerMons:
 	bigdw 218 ; Atk
 	bigdw 239 ; Def
 	bigdw 287 ; Spd
-	bigdw 263 ; SAtk
+	bigdw 272 ; SAtk
 	bigdw 236 ; SDef
 	db "SUTA-MI-@@@"
 
