@@ -1587,13 +1587,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 114 ; HP
-	bigdw 114 ; Max HP
-	bigdw 100 ; Atk
-	bigdw 67 ; Def
-	bigdw 53 ; Spd
-	bigdw 65 ; SAtk
-	bigdw 65 ; SDef
+	bigdw 126 ; HP
+	bigdw 126 ; Max HP
+	bigdw 103 ; Atk
+	bigdw 76 ; Def
+	bigdw 52 ; Spd
+	bigdw 56 ; SAtk
+	bigdw 67 ; SDef
 	db "RINGUMA@@@@"
 
 	db FEAROW
@@ -3627,13 +3627,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 262 ; HP
-	bigdw 262 ; Max HP
-	bigdw 245 ; Atk
-	bigdw 166 ; Def
-	bigdw 138 ; Spd
-	bigdw 166 ; SAtk
-	bigdw 166 ; SDef
+	bigdw 290 ; HP
+	bigdw 290 ; Max HP
+	bigdw 252 ; Atk
+	bigdw 187 ; Def
+	bigdw 135 ; Spd
+	bigdw 145 ; SAtk
+	bigdw 169 ; SDef
 	db "RINGUMA@@@@"
 
 	db MR__MIME
