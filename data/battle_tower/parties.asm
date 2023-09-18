@@ -1066,7 +1066,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 74 ; HP
 	bigdw 74 ; Max HP
-	bigdw 52 ; Atk
+	bigdw 56 ; Atk
 	bigdw 46 ; Def
 	bigdw 49 ; Spd
 	bigdw 50 ; SAtk
@@ -1147,7 +1147,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 119 ; HP
 	bigdw 119 ; Max HP
-	bigdw 81 ; Atk
+	bigdw 86 ; Atk
 	bigdw 87 ; Def
 	bigdw 73 ; Spd
 	bigdw 70 ; SAtk
@@ -1252,7 +1252,7 @@ BattleTowerMons:
 	bigdw 109 ; HP
 	bigdw 109 ; Max HP
 	bigdw 76 ; Atk
-	bigdw 81 ; Def
+	bigdw 87 ; Def
 	bigdw 60 ; Spd
 	bigdw 82 ; SAtk
 	bigdw 88 ; SDef
@@ -1565,7 +1565,7 @@ BattleTowerMons:
 	bigdw 101 ; Max HP
 	bigdw 68 ; Atk
 	bigdw 61 ; Def
-	bigdw 96 ; Spd
+	bigdw 99 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 70 ; SDef
 	db "GENGA-@@@@@"
@@ -4024,7 +4024,7 @@ BattleTowerMons:
 	bigdw 247 ; Max HP
 	bigdw 173 ; Atk
 	bigdw 165 ; Def
-	bigdw 248 ; Spd
+	bigdw 256 ; Spd
 	bigdw 277 ; SAtk
 	bigdw 189 ; SDef
 	db "GENGA-@@@@@"
