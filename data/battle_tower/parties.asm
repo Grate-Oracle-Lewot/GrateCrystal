@@ -335,11 +335,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 36 ; HP
 	bigdw 36 ; Max HP
-	bigdw 24 ; Atk
-	bigdw 17 ; Def
+	bigdw 25 ; Atk
+	bigdw 19 ; Def
 	bigdw 25 ; Spd
 	bigdw 28 ; SAtk
-	bigdw 22 ; SDef
+	bigdw 23 ; SDef
 	db "DERUBIRU@@@"
 
 	db GIRAFARIG
@@ -1301,13 +1301,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 108 ; HP
-	bigdw 108 ; Max HP
-	bigdw 84 ; Atk
-	bigdw 59 ; Def
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 87 ; Atk
+	bigdw 65 ; Def
 	bigdw 86 ; Spd
-	bigdw 94 ; SAtk
-	bigdw 76 ; SDef
+	bigdw 100 ; SAtk
+	bigdw 82 ; SDef
 	db "HERUGA-@@@@"
 
 	db MACHAMP
@@ -2243,13 +2243,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
-	bigdw 178 ; HP
-	bigdw 178 ; Max HP
-	bigdw 135 ; Atk
-	bigdw 98 ; Def
+	bigdw 187 ; HP
+	bigdw 187 ; Max HP
+	bigdw 140 ; Atk
+	bigdw 108 ; Def
 	bigdw 145 ; Spd
-	bigdw 157 ; SAtk
-	bigdw 127 ; SDef
+	bigdw 166 ; SAtk
+	bigdw 136 ; SDef
 	db "HERUGA-@@@@"
 
 	db SHUCKLE
@@ -2818,13 +2818,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 212 ; HP
-	bigdw 212 ; Max HP
-	bigdw 165 ; Atk
-	bigdw 113 ; Def
+	bigdw 223 ; HP
+	bigdw 223 ; Max HP
+	bigdw 171 ; Atk
+	bigdw 125 ; Def
 	bigdw 172 ; Spd
-	bigdw 189 ; SAtk
-	bigdw 153 ; SDef
+	bigdw 200 ; SAtk
+	bigdw 164 ; SDef
 	db "HERUGA-@@@@"
 
 	db PORYGON2
@@ -3445,13 +3445,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 245 ; HP
-	bigdw 245 ; Max HP
-	bigdw 187 ; Atk
-	bigdw 133 ; Def
+	bigdw 257 ; HP
+	bigdw 257 ; Max HP
+	bigdw 194 ; Atk
+	bigdw 147 ; Def
 	bigdw 197 ; Spd
-	bigdw 217 ; SAtk
-	bigdw 175 ; SDef
+	bigdw 230 ; SAtk
+	bigdw 188 ; SDef
 	db "HERUGA-@@@@"
 
 	db TYRANITAR
@@ -3916,13 +3916,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
-	bigdw 280 ; HP
-	bigdw 280 ; Max HP
-	bigdw 217 ; Atk
-	bigdw 152 ; Def
+	bigdw 294 ; HP
+	bigdw 294 ; Max HP
+	bigdw 225 ; Atk
+	bigdw 168 ; Def
 	bigdw 224 ; Spd
-	bigdw 245 ; SAtk
-	bigdw 197 ; SDef
+	bigdw 259 ; SAtk
+	bigdw 211 ; SDef
 	db "HERUGA-@@@@"
 
 	db TAUROS
@@ -4777,13 +4777,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
-	bigdw 309 ; HP
-	bigdw 309 ; Max HP
-	bigdw 235 ; Atk
-	bigdw 164 ; Def
+	bigdw 325 ; HP
+	bigdw 325 ; Max HP
+	bigdw 244 ; Atk
+	bigdw 182 ; Def
 	bigdw 252 ; Spd
-	bigdw 277 ; SAtk
-	bigdw 223 ; SDef
+	bigdw 293 ; SAtk
+	bigdw 239 ; SDef
 	db "HERUGA-@@@@"
 
 	db SKARMORY
@@ -4962,13 +4962,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 347 ; HP
-	bigdw 347 ; Max HP
-	bigdw 276 ; Atk
-	bigdw 192 ; Def
+	bigdw 365 ; HP
+	bigdw 365 ; Max HP
+	bigdw 286 ; Atk
+	bigdw 212 ; Def
 	bigdw 284 ; Spd
-	bigdw 312 ; SAtk
-	bigdw 252 ; SDef
+	bigdw 330 ; SAtk
+	bigdw 270 ; SDef
 	db "HERUGA-@@@@"
 
 	db MACHAMP
