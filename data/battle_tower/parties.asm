@@ -3208,13 +3208,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 245 ; HP
-	bigdw 245 ; Max HP
-	bigdw 212 ; Atk
-	bigdw 195 ; Def
+	bigdw 251 ; HP
+	bigdw 251 ; Max HP
+	bigdw 218 ; Atk
+	bigdw 201 ; Def
 	bigdw 104 ; Spd
-	bigdw 104 ; SAtk
-	bigdw 104 ; SDef
+	bigdw 110 ; SAtk
+	bigdw 110 ; SDef
 	db "SAIDON@@@@@"
 
 	db SANDSLASH
@@ -3783,10 +3783,10 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 233 ; HP
-	bigdw 233 ; Max HP
-	bigdw 159 ; Atk
-	bigdw 159 ; Def
+	bigdw 238 ; HP
+	bigdw 238 ; Max HP
+	bigdw 163 ; Atk
+	bigdw 162 ; Def
 	bigdw 152 ; Spd
 	bigdw 180 ; SAtk
 	bigdw 180 ; SDef
@@ -5170,13 +5170,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 404 ; HP
-	bigdw 404 ; Max HP
-	bigdw 350 ; Atk
-	bigdw 329 ; Def
+	bigdw 414 ; HP
+	bigdw 414 ; Max HP
+	bigdw 360 ; Atk
+	bigdw 339 ; Def
 	bigdw 168 ; Spd
-	bigdw 178 ; SAtk
-	bigdw 178 ; SDef
+	bigdw 188 ; SAtk
+	bigdw 188 ; SDef
 	db "SAIDON@@@@@"
 
 	db STEELIX
@@ -5352,12 +5352,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 387 ; HP
-	bigdw 387 ; Max HP
-	bigdw 290 ; Atk
+	bigdw 397 ; HP
+	bigdw 397 ; Max HP
+	bigdw 320 ; Atk
 	bigdw 248 ; Def
-	bigdw 190 ; Spd
-	bigdw 194 ; SAtk
+	bigdw 220 ; Spd
+	bigdw 204 ; SAtk
 	bigdw 194 ; SDef
 	db "INOMU-@@@@@"
 
