@@ -1225,7 +1225,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 81 ; HP
 	bigdw 81 ; Max HP
-	bigdw 77 ; Atk
+	bigdw 89 ; Atk
 	bigdw 56 ; Def
 	bigdw 102 ; Spd
 	bigdw 60 ; SAtk
@@ -1435,9 +1435,9 @@ BattleTowerMons:
 	bigdw 98 ; Max HP
 	bigdw 57 ; Atk
 	bigdw 69 ; Def
-	bigdw 113 ; Spd
-	bigdw 78 ; SAtk
-	bigdw 78 ; SDef
+	bigdw 120 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "MARUMAIN@@@"
 
 	db LAPRAS
@@ -1930,7 +1930,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 108 ; HP
 	bigdw 108 ; Max HP
-	bigdw 103 ; Atk
+	bigdw 119 ; Atk
 	bigdw 78 ; Def
 	bigdw 131 ; Spd
 	bigdw 75 ; SAtk
@@ -2479,7 +2479,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 135 ; HP
 	bigdw 135 ; Max HP
-	bigdw 125 ; Atk
+	bigdw 145 ; Atk
 	bigdw 89 ; Def
 	bigdw 166 ; Spd
 	bigdw 96 ; SAtk
@@ -2507,9 +2507,9 @@ BattleTowerMons:
 	bigdw 161 ; Max HP
 	bigdw 88 ; Atk
 	bigdw 117 ; Def
-	bigdw 185 ; Spd
-	bigdw 126 ; SAtk
-	bigdw 126 ; SDef
+	bigdw 197 ; Spd
+	bigdw 130 ; SAtk
+	bigdw 130 ; SDef
 	db "MARUMAIN@@@"
 
 	db AERODACTYL
@@ -4284,9 +4284,9 @@ BattleTowerMons:
 	bigdw 250 ; Max HP
 	bigdw 153 ; Atk
 	bigdw 181 ; Def
-	bigdw 291 ; Spd
-	bigdw 201 ; SAtk
-	bigdw 201 ; SDef
+	bigdw 310 ; Spd
+	bigdw 207 ; SAtk
+	bigdw 207 ; SDef
 	db "MARUMAIN@@@"
 
 	db DUGTRIO
@@ -4308,7 +4308,7 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 214 ; HP
 	bigdw 214 ; Max HP
-	bigdw 201 ; Atk
+	bigdw 233 ; Atk
 	bigdw 145 ; Def
 	bigdw 261 ; Spd
 	bigdw 145 ; SAtk
@@ -5148,9 +5148,9 @@ BattleTowerMons:
 	bigdw 309 ; Max HP
 	bigdw 190 ; Atk
 	bigdw 222 ; Def
-	bigdw 366 ; Spd
-	bigdw 248 ; SAtk
-	bigdw 248 ; SDef
+	bigdw 390 ; Spd
+	bigdw 256 ; SAtk
+	bigdw 256 ; SDef
 	db "MARUMAIN@@@"
 
 	db RHYDON
