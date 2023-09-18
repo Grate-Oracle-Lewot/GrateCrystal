@@ -960,13 +960,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 82 ; HP
-	bigdw 82 ; Max HP
-	bigdw 40 ; Atk
-	bigdw 52 ; Def
-	bigdw 41 ; Spd
-	bigdw 37 ; SAtk
-	bigdw 49 ; SDef
+	bigdw 88 ; HP
+	bigdw 88 ; Max HP
+	bigdw 44 ; Atk
+	bigdw 56 ; Def
+	bigdw 45 ; Spd
+	bigdw 45 ; SAtk
+	bigdw 53 ; SDef
 	db "MARIRURI@@@"
 
 	db MILTANK
@@ -1017,7 +1017,7 @@ BattleTowerMons:
 	bigdw 47 ; Atk
 	bigdw 35 ; Def
 	bigdw 39 ; Spd
-	bigdw 50 ; SAtk
+	bigdw 54 ; SAtk
 	bigdw 40 ; SDef
 	db "PUKURIN@@@@"
 
@@ -1043,7 +1043,7 @@ BattleTowerMons:
 	bigdw 46 ; Atk
 	bigdw 34 ; Def
 	bigdw 34 ; Spd
-	bigdw 46 ; SAtk
+	bigdw 50 ; SAtk
 	bigdw 36 ; SDef
 	db "PUKURIN@@@@"
 
