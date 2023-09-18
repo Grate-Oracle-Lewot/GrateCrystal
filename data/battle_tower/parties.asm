@@ -1878,11 +1878,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 145 ; HP
 	bigdw 145 ; Max HP
-	bigdw 125 ; Atk
-	bigdw 139 ; Def
+	bigdw 133 ; Atk
+	bigdw 143 ; Def
 	bigdw 74 ; Spd
 	bigdw 80 ; SAtk
-	bigdw 88 ; SDef
+	bigdw 92 ; SDef
 	db "GORO-NIya@@"
 
 	db SCIZOR
@@ -3288,11 +3288,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 205 ; HP
 	bigdw 205 ; Max HP
-	bigdw 171 ; Atk
-	bigdw 194 ; Def
+	bigdw 183 ; Atk
+	bigdw 200 ; Def
 	bigdw 90 ; Spd
 	bigdw 105 ; SAtk
-	bigdw 117 ; SDef
+	bigdw 123 ; SDef
 	db "GORO-NIya@@"
 
 
@@ -5432,11 +5432,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 329 ; HP
 	bigdw 329 ; Max HP
-	bigdw 282 ; Atk
-	bigdw 316 ; Def
+	bigdw 302 ; Atk
+	bigdw 326 ; Def
 	bigdw 146 ; Spd
 	bigdw 170 ; SAtk
-	bigdw 190 ; SDef
+	bigdw 200 ; SDef
 	db "GORO-NIya@@"
 
 	db HITMONCHAN
