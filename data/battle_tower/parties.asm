@@ -1639,13 +1639,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 99 ; HP
-	bigdw 99 ; Max HP
-	bigdw 85 ; Atk
-	bigdw 58 ; Def
-	bigdw 78 ; Spd
-	bigdw 58 ; SAtk
-	bigdw 64 ; SDef
+	bigdw 112 ; HP
+	bigdw 112 ; Max HP
+	bigdw 88 ; Atk
+	bigdw 64 ; Def
+	bigdw 77 ; Spd
+	bigdw 55 ; SAtk
+	bigdw 70 ; SDef
 	db "OKORIZARU@@"
 
 
@@ -3679,13 +3679,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 227 ; HP
-	bigdw 227 ; Max HP
-	bigdw 202 ; Atk
-	bigdw 145 ; Def
-	bigdw 196 ; Spd
-	bigdw 148 ; SAtk
-	bigdw 162 ; SDef
+	bigdw 258 ; HP
+	bigdw 258 ; Max HP
+	bigdw 209 ; Atk
+	bigdw 159 ; Def
+	bigdw 193 ; Spd
+	bigdw 141 ; SAtk
+	bigdw 176 ; SDef
 	db "OKORIZARU@@"
 
 	db GIRAFARIG
