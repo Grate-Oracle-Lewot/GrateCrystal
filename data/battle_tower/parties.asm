@@ -3182,13 +3182,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 209 ; HP
-	bigdw 209 ; Max HP
+	bigdw 211 ; HP
+	bigdw 211 ; Max HP
 	bigdw 155 ; Atk
-	bigdw 174 ; Def
+	bigdw 180 ; Def
 	bigdw 149 ; Spd
 	bigdw 156 ; SAtk
-	bigdw 180 ; SDef
+	bigdw 178 ; SDef
 	db "KAMEtuKUSU@"
 
 	db RHYDON
@@ -3262,9 +3262,9 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 171 ; HP
 	bigdw 171 ; Max HP
-	bigdw 152 ; Atk
+	bigdw 158 ; Atk
 	bigdw 134 ; Def
-	bigdw 72 ; Spd
+	bigdw 96 ; Spd
 	bigdw 120 ; SAtk
 	bigdw 144 ; SDef
 	db "PARASEKUTO@"
@@ -3835,13 +3835,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 231 ; HP
-	bigdw 231 ; Max HP
+	bigdw 233 ; HP
+	bigdw 233 ; Max HP
 	bigdw 161 ; Atk
-	bigdw 183 ; Def
+	bigdw 190 ; Def
 	bigdw 152 ; Spd
 	bigdw 159 ; SAtk
-	bigdw 187 ; SDef
+	bigdw 184 ; SDef
 	db "KAMEtuKUSU@"
 
 
@@ -4338,7 +4338,7 @@ BattleTowerMons:
 	bigdw 151 ; Def
 	bigdw 161 ; Spd
 	bigdw 207 ; SAtk
-	bigdw 143 ; SDef
+	bigdw 159 ; SDef
 	db "UTUBOtuTO@@"
 
 	db PINSIR
