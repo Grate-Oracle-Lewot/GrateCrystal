@@ -311,9 +311,9 @@ BattleTowerMons:
 	bigdw 37 ; Max HP
 	bigdw 24 ; Atk
 	bigdw 24 ; Def
-	bigdw 28 ; Spd
-	bigdw 29 ; SAtk
-	bigdw 29 ; SDef
+	bigdw 30 ; Spd
+	bigdw 31 ; SAtk
+	bigdw 31 ; SDef
 	db "MUUMA@@@@@@"
 
 	db HOUNDOUR
@@ -5252,9 +5252,9 @@ BattleTowerMons:
 	bigdw 309 ; Max HP
 	bigdw 202 ; Atk
 	bigdw 209 ; Def
-	bigdw 258 ; Spd
-	bigdw 263 ; SAtk
-	bigdw 263 ; SDef
+	bigdw 278 ; Spd
+	bigdw 283 ; SAtk
+	bigdw 283 ; SDef
 	db "MUUMA@@@@@@"
 
 	db SNEASEL
