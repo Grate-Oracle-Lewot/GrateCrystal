@@ -359,13 +359,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 39 ; HP
-	bigdw 39 ; Max HP
-	bigdw 28 ; Atk
-	bigdw 24 ; Def
+	bigdw 47 ; HP
+	bigdw 47 ; Max HP
+	bigdw 29 ; Atk
+	bigdw 25 ; Def
 	bigdw 29 ; Spd
-	bigdw 29 ; SAtk
-	bigdw 24 ; SDef
+	bigdw 31 ; SAtk
+	bigdw 25 ; SDef
 	db "KIRINRIKI@@"
 
 	db BLISSEY
@@ -2685,13 +2685,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
-	bigdw 161 ; HP
-	bigdw 161 ; Max HP
-	bigdw 114 ; Atk
-	bigdw 100 ; Def
-	bigdw 120 ; Spd
-	bigdw 126 ; SAtk
-	bigdw 101 ; SDef
+	bigdw 208 ; HP
+	bigdw 208 ; Max HP
+	bigdw 133 ; Atk
+	bigdw 114 ; Def
+	bigdw 128 ; Spd
+	bigdw 136 ; SAtk
+	bigdw 109 ; SDef
 	db "KIRINRIKI@@"
 
 	db GYARADOS
@@ -3705,13 +3705,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 231 ; HP
-	bigdw 231 ; Max HP
-	bigdw 176 ; Atk
-	bigdw 154 ; Def
-	bigdw 183 ; Spd
-	bigdw 187 ; SAtk
-	bigdw 152 ; SDef
+	bigdw 289 ; HP
+	bigdw 289 ; Max HP
+	bigdw 187 ; Atk
+	bigdw 159 ; Def
+	bigdw 187 ; Spd
+	bigdw 196 ; SAtk
+	bigdw 158 ; SDef
 	db "KIRINRIKI@@"
 
 	db HITMONLEE
