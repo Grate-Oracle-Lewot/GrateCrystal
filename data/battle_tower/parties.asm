@@ -255,13 +255,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 38 ; HP
-	bigdw 38 ; Max HP
-	bigdw 31 ; Atk
-	bigdw 22 ; Def
-	bigdw 34 ; Spd
-	bigdw 19 ; SAtk
-	bigdw 27 ; SDef
+	bigdw 40 ; HP
+	bigdw 40 ; Max HP
+	bigdw 34 ; Atk
+	bigdw 23 ; Def
+	bigdw 35 ; Spd
+	bigdw 20 ; SAtk
+	bigdw 28 ; SDef
 	db "NIyu-RA@@@@"
 
 	db PORYGON2
@@ -5274,13 +5274,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 301 ; HP
-	bigdw 301 ; Max HP
-	bigdw 280 ; Atk
-	bigdw 195 ; Def
-	bigdw 316 ; Spd
-	bigdw 160 ; SAtk
-	bigdw 240 ; SDef
+	bigdw 321 ; HP
+	bigdw 321 ; Max HP
+	bigdw 310 ; Atk
+	bigdw 205 ; Def
+	bigdw 326 ; Spd
+	bigdw 170 ; SAtk
+	bigdw 250 ; SDef
 	db "NIyu-RA@@@@"
 
 	db SCIZOR
