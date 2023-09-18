@@ -680,7 +680,7 @@ BattleTowerMons:
 	bigdw 36 ; Def
 	bigdw 69 ; Spd
 	bigdw 75 ; SAtk
-	bigdw 55 ; SDef
+	bigdw 60 ; SDef
 	db "HU-DEiN@@@@"
 
 	db ARCANINE
@@ -1803,8 +1803,8 @@ BattleTowerMons:
 	bigdw 76 ; Atk
 	bigdw 73 ; Def
 	bigdw 135 ; Spd
-	bigdw 147 ; SAtk
-	bigdw 107 ; SDef
+	bigdw 148 ; SAtk
+	bigdw 117 ; SDef
 	db "HU-DEiN@@@@"
 
 	db STARMIE
