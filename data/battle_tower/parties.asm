@@ -112,7 +112,7 @@ BattleTowerMons:
 	db MIRACLEBERRY
 	db REVERSAL, HYPER_BEAM, EARTHQUAKE, ATTRACT
 	dw 0 ; OT ID
-	dt 1000 ; Exp
+	dt 1720 ; Exp
 	; Stat exp
 	bigdw 40000
 	bigdw 30000
@@ -424,7 +424,7 @@ BattleTowerMons:
 	db KINGS_ROCK
 	db TOXIC, GIGA_DRAIN, THIEF, CONFUSION
 	dw 0 ; OT ID
-	dt 1000 ; Exp
+	dt 560 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
@@ -583,7 +583,7 @@ BattleTowerMons:
 	db GOLD_BERRY
 	db RECOVER, PSYCHIC_M, SURF, PSYCH_UP
 	dw 0 ; OT ID
-	dt 8000 ; Exp
+	dt 5460 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -739,7 +739,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db HYPER_BEAM, PSYCHIC_M, TOXIC, DREAM_EATER
 	dw 0 ; OT ID
-	dt 8000 ; Exp
+	dt 5740 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 50000
@@ -1158,7 +1158,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db THUNDER_WAVE, PSYCHIC_M, RECOVER, SURF
 	dw 0 ; OT ID
-	dt 27000 ; Exp
+	dt 21760 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -1236,7 +1236,7 @@ BattleTowerMons:
 	db BRIGHTPOWDER
 	db EARTH_POWER, SUNNY_DAY, SOLARBEAM, DOUBLE_TEAM
 	dw 0 ; OT ID
-	dt 27000 ; Exp
+	dt 38180 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 45000
@@ -1470,7 +1470,7 @@ BattleTowerMons:
 	db GOLD_BERRY
 	db RAIN_DANCE, THUNDER, SURF, FLAIL
 	dw 0 ; OT ID
-	dt 27000 ; Exp
+	dt 21760 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 40000
@@ -1522,7 +1522,7 @@ BattleTowerMons:
 	db KINGS_ROCK
 	db WRAP, TOXIC, SLUDGE_BOMB, BUBBLEBEAM
 	dw 0 ; OT ID
-	dt 27000 ; Exp
+	dt 21760 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 45000
@@ -1811,7 +1811,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db BLIZZARD, THUNDERBOLT, SURF, PSYCHIC_M
 	dw 0 ; OT ID
-	dt 64000 ; Exp
+	dt 56660 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -1863,7 +1863,7 @@ BattleTowerMons:
 	db FOCUS_BAND
 	db SELFDESTRUCT, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
-	dt 64000 ; Exp
+	dt 79930 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 50000
@@ -1941,7 +1941,7 @@ BattleTowerMons:
 	db MIRACLEBERRY
 	db SURF, PSYCHIC_M, EARTHQUAKE, BLIZZARD
 	dw 0 ; OT ID
-	dt 64000 ; Exp
+	dt 63970 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 50000
@@ -2097,7 +2097,7 @@ BattleTowerMons:
 	db BRIGHTPOWDER
 	db EGG_BOMB, STOMP, PSYCH_UP, CONFUSION
 	dw 0 ; OT ID
-	dt 64000 ; Exp
+	dt 56660 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -2256,7 +2256,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db SANDSTORM, REST, TOXIC, WRAP
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 143680 ; Exp
 	; Stat exp
 	bigdw 60000
 	bigdw 60000
@@ -2386,7 +2386,7 @@ BattleTowerMons:
 	db MINT_BERRY
 	db REST, SLUDGE_BOMB, PSYCHIC_M, AMNESIA
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 118720 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 40000
@@ -2438,7 +2438,7 @@ BattleTowerMons:
 	db SCOPE_LENS
 	db THUNDER_WAVE, RECOVER, THUNDERBOLT, SURF
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 117360 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 44000
@@ -3273,7 +3273,7 @@ BattleTowerMons:
 	db BRIGHTPOWDER
 	db SELFDESTRUCT, EARTHQUAKE, FIRE_PUNCH, RETURN
 	dw 0 ; OT ID
-	dt 216000 ; Exp
+	dt 233930 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
@@ -3510,7 +3510,7 @@ BattleTowerMons:
 	db MIRACLEBERRY
 	db REST, SELFDESTRUCT, PSYCHIC_M, GIGA_DRAIN
 	dw 0 ; OT ID
-	dt 343000 ; Exp
+	dt 344960 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 50000
@@ -4452,7 +4452,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db RECOVER, THUNDERBOLT, SURF, PSYCHIC_M
 	dw 0 ; OT ID
-	dt 729000 ; Exp
+	dt 762160 ; Exp
 	; Stat exp
 	bigdw 60000
 	bigdw 60000
@@ -4478,7 +4478,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db SELFDESTRUCT, BLIZZARD, SURF, PAY_DAY
 	dw 0 ; OT ID
-	dt 729000 ; Exp
+	dt 744440 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -4816,7 +4816,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db TOXIC, WRAP, PROTECT, ENCORE
 	dw 0 ; OT ID
-	dt 729000 ; Exp
+	dt 708680 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -5339,7 +5339,7 @@ BattleTowerMons:
 	db MINT_BERRY
 	db REST, BLIZZARD, HYPER_BEAM, EARTHQUAKE
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -5365,7 +5365,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db PSYCHIC_M, TOXIC, SELFDESTRUCT, GIGA_DRAIN
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -5417,7 +5417,7 @@ BattleTowerMons:
 	db BRIGHTPOWDER
 	db SELFDESTRUCT, EARTHQUAKE, ROCK_SLIDE, FIRE_BLAST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
@@ -5469,7 +5469,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db SURF, DAZZLY_GLEAM, ZAP_CANNON, CONFUSE_RAY
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
