@@ -884,11 +884,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 73 ; HP
 	bigdw 73 ; Max HP
-	bigdw 73 ; Atk
-	bigdw 60 ; Def
+	bigdw 81 ; Atk
+	bigdw 68 ; Def
 	bigdw 47 ; Spd
 	bigdw 43 ; SAtk
-	bigdw 53 ; SDef
+	bigdw 57 ; SDef
 	db "HAtuSAMU@@@"
 
 	db HITMONCHAN
@@ -1904,11 +1904,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 139 ; HP
 	bigdw 139 ; Max HP
-	bigdw 139 ; Atk
-	bigdw 117 ; Def
+	bigdw 147 ; Atk
+	bigdw 133 ; Def
 	bigdw 89 ; Spd
 	bigdw 82 ; SAtk
-	bigdw 102 ; SDef
+	bigdw 110 ; SDef
 	db "HAtuSAMU@@@"
 
 	db DUGTRIO
@@ -2375,11 +2375,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 169 ; HP
 	bigdw 169 ; Max HP
-	bigdw 175 ; Atk
-	bigdw 145 ; Def
+	bigdw 195 ; Atk
+	bigdw 165 ; Def
 	bigdw 111 ; Spd
 	bigdw 99 ; SAtk
-	bigdw 124 ; SDef
+	bigdw 134 ; SDef
 	db "HAtuSAMU@@@"
 
 	db SLOWKING
@@ -5302,11 +5302,11 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 333 ; HP
 	bigdw 333 ; Max HP
-	bigdw 350 ; Atk
-	bigdw 282 ; Def
+	bigdw 390 ; Atk
+	bigdw 322 ; Def
 	bigdw 220 ; Spd
 	bigdw 196 ; SAtk
-	bigdw 246 ; SDef
+	bigdw 266 ; SDef
 	db "HAtuSAMU@@@"
 
 	db BLISSEY
