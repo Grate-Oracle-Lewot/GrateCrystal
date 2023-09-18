@@ -124,11 +124,10 @@ GameFreakGraphicArtistText:
 	line "some of the visual"
 
 	para "edits in this"
-	line "hack, but the"
+	line "hack, but PERCY's"
 
-	para "YANEMGA and"
-	line "WHIMSICOTT sprites"
-	cont "are cute."
+	para "sprite is really"
+	line "cool."
 	done
 
 GameFreakGraphicArtistPrintDiplomaText:
