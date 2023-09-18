@@ -474,7 +474,7 @@ BattleTowerMons:
 
 	db UNOWN
 	db BERRY
-	db HIDDEN_POWER, BEAT_UP, PSYCHIC_M, TRI_ATTACK
+	db SUBSTITUTE, BEAT_UP, PSYCHIC_M, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -484,7 +484,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 10, 10, 10 ; PP
+	db 10, 10, 10, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -541,12 +541,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 34 ; HP
-	bigdw 34 ; Max HP
-	bigdw 19 ; Atk
-	bigdw 22 ; Def
-	bigdw 28 ; Spd
-	bigdw 30 ; SAtk
+	bigdw 38 ; HP
+	bigdw 38 ; Max HP
+	bigdw 22 ; Atk
+	bigdw 23 ; Def
+	bigdw 26 ; Spd
+	bigdw 31 ; SAtk
 	bigdw 34 ; SDef
 	db "BARIYA-DO@@"
 
@@ -3653,12 +3653,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 195 ; HP
-	bigdw 195 ; Max HP
-	bigdw 120 ; Atk
-	bigdw 151 ; Def
-	bigdw 190 ; Spd
-	bigdw 198 ; SAtk
+	bigdw 223 ; HP
+	bigdw 223 ; Max HP
+	bigdw 141 ; Atk
+	bigdw 158 ; Def
+	bigdw 176 ; Spd
+	bigdw 205 ; SAtk
 	bigdw 226 ; SDef
 	db "BARIYA-DO@@"
 
