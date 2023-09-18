@@ -2611,7 +2611,7 @@ BattleTowerMons:
 	bigdw 164 ; Max HP
 	bigdw 125 ; Atk
 	bigdw 179 ; Def
-	bigdw 116 ; Spd
+	bigdw 136 ; Spd
 	bigdw 83 ; SAtk
 	bigdw 113 ; SDef
 	db "EA-MUDO@@@@"
@@ -3056,7 +3056,7 @@ BattleTowerMons:
 	bigdw 196 ; Max HP
 	bigdw 152 ; Atk
 	bigdw 218 ; Def
-	bigdw 138 ; Spd
+	bigdw 162 ; Spd
 	bigdw 99 ; SAtk
 	bigdw 135 ; SDef
 	db "EA-MUDO@@@@"
@@ -4176,8 +4176,8 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
-	bigdw 256 ; HP
-	bigdw 256 ; Max HP
+	bigdw 288 ; HP
+	bigdw 288 ; Max HP
 	bigdw 132 ; Atk
 	bigdw 181 ; Def
 	bigdw 180 ; Spd
@@ -4206,7 +4206,7 @@ BattleTowerMons:
 	bigdw 258 ; Max HP
 	bigdw 196 ; Atk
 	bigdw 286 ; Def
-	bigdw 183 ; Spd
+	bigdw 215 ; Spd
 	bigdw 137 ; SAtk
 	bigdw 185 ; SDef
 	db "EA-MUDO@@@@"
@@ -4807,7 +4807,7 @@ BattleTowerMons:
 	bigdw 279 ; Max HP
 	bigdw 223 ; Atk
 	bigdw 333 ; Def
-	bigdw 207 ; Spd
+	bigdw 243 ; Spd
 	bigdw 139 ; SAtk
 	bigdw 193 ; SDef
 	db "EA-MUDO@@@@"
