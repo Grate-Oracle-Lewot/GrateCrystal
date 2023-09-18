@@ -489,13 +489,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 36 ; HP
-	bigdw 36 ; Max HP
+	bigdw 35 ; HP
+	bigdw 35 ; Max HP
 	bigdw 26 ; Atk
-	bigdw 21 ; Def
-	bigdw 21 ; Spd
+	bigdw 29 ; Def
+	bigdw 29 ; Spd
 	bigdw 26 ; SAtk
-	bigdw 21 ; SDef
+	bigdw 31 ; SDef
 	db "ANNO-N@@@@@"
 
 	db TAUROS
