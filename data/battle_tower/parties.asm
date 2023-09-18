@@ -859,10 +859,10 @@ BattleTowerMons:
 	bigdw 58 ; HP
 	bigdw 58 ; Max HP
 	bigdw 44 ; Atk
-	bigdw 32 ; Def
+	bigdw 36 ; Def
 	bigdw 58 ; Spd
 	bigdw 41 ; SAtk
-	bigdw 37 ; SDef
+	bigdw 41 ; SDef
 	db "PIKATIyuU@@"
 
 	db SCIZOR
