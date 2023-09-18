@@ -443,7 +443,7 @@ BattleTowerMons:
 	bigdw 29 ; Def
 	bigdw 23 ; Spd
 	bigdw 37 ; SAtk
-	bigdw 25 ; SDef
+	bigdw 27 ; SDef
 	db "NAtuSI-@@@@"
 
 	db HERACROSS
@@ -758,7 +758,7 @@ BattleTowerMons:
 	bigdw 55 ; Def
 	bigdw 43 ; Spd
 	bigdw 70 ; SAtk
-	bigdw 46 ; SDef
+	bigdw 50 ; SDef
 	db "NAtuSI-@@@@"
 
 	db AERODACTYL
@@ -2116,7 +2116,7 @@ BattleTowerMons:
 	bigdw 100 ; Def
 	bigdw 82 ; Spd
 	bigdw 132 ; SAtk
-	bigdw 84 ; SDef
+	bigdw 92 ; SDef
 	db "NAtuSI-@@@@"
 
 	db HYPNO
@@ -3529,7 +3529,7 @@ BattleTowerMons:
 	bigdw 177 ; Def
 	bigdw 140 ; Spd
 	bigdw 235 ; SAtk
-	bigdw 151 ; SDef
+	bigdw 165 ; SDef
 	db "NAtuSI-@@@@"
 
 	db UMBREON
@@ -5384,7 +5384,7 @@ BattleTowerMons:
 	bigdw 258 ; Def
 	bigdw 200 ; Spd
 	bigdw 338 ; SAtk
-	bigdw 218 ; SDef
+	bigdw 238 ; SDef
 	db "NAtuSI-@@@@"
 
 	db OMASTAR
