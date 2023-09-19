@@ -6305,36 +6305,7 @@ BattleCommand_ArenaTrap:
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 
-BattleCommand_Defrost:
-; defrost
-
-; Thaw the user.
-
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVarAddr
-	bit FRZ, [hl]
-	ret z
-	res FRZ, [hl]
-
-; Don't update the enemy's party struct in a wild battle.
-
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .party
-
-	ld a, [wBattleMode]
-	dec a
-	jr z, .done
-
-.party
-	ld a, MON_STATUS
-	call UserPartyAttr
-	res FRZ, [hl]
-
-.done
-	call RefreshBattleHuds
-	ld hl, WasDefrostedText
-	jp StdBattleTextbox
+INCLUDE "engine/battle/move_effects/flame_wheel.asm"
 
 INCLUDE "engine/battle/move_effects/curse.asm"
 
