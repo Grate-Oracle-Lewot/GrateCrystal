@@ -101,6 +101,7 @@ MoveEffectsPointers:
 	dw Thief
 	dw MeanLook
 	dw Nightmare
+	dw FlameWheel
 	dw Curse
 	dw Protect
 	dw Spikes
