@@ -948,8 +948,8 @@ NightmareDescription:
 	next "1/4 HP every turn.@"
 
 FlameWheelDescription:
-	db   "A spin that may"
-	next "cause a burn.@"
+	db   "Doubles power aft-"
+	next "er DEFENSE CURL.@"
 
 SnoreDescription:
 	db   "Hits while asleep."
