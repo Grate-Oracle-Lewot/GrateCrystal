@@ -83,7 +83,7 @@ ENDM
 	command thief                   ; 4c
 	command arenatrap               ; 4d
 	command nightmare               ; 4e
-	command defrost                 ; 4f
+	command flamewheel              ; 4f
 	command curse                   ; 50
 	command protect                 ; 51
 	command spikes                  ; 52
