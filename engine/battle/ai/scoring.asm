@@ -386,6 +386,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
+	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1417,6 +1418,17 @@ AI_Smart_SleepTalk:
 	inc [hl]
 	inc [hl]
 	inc [hl]
+	ret
+
+AI_Smart_FlameWheel:
+; Greatly encourage this move if enemy is curled.
+
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	ret z
+	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
 
 AI_Smart_Spite:
