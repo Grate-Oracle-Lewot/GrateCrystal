@@ -1428,7 +1428,6 @@ AI_Smart_FlameWheel:
 	ret z
 	dec [hl]
 	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_Spite:
