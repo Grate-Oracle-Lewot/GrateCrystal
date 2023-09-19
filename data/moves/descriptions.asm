@@ -705,7 +705,7 @@ ScaldDescription:
 
 DefenseCurlDescription:
 	db   "Ups DEFENSE and"
-	next "ROLLOUT power.@"
+	next "rolling power.@"
 
 BarrierDescription:
 	db   "Sharply increases"
