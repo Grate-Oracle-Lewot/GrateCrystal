@@ -2319,7 +2319,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (8)
 	db "PAT@", TRAINERTYPE_ITEM
-	db 45, PORYGON,    EVIOLITE
+	db 45, PORYGON,    EVERSTONE
 	db -1 ; end
 
 	; SUPER_NERD (9)
@@ -3597,7 +3597,7 @@ PokefanFGroup:
 
 	; POKEFANF (4)
 	db "JAIME@", TRAINERTYPE_ITEM
-	db 30, BLISSEY,    EVIOLITE
+	db 30, BLISSEY,    SLOWPOKETAIL
 	db -1 ; end
 
 	; POKEFANF (5)
