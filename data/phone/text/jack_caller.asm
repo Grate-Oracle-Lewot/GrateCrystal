@@ -68,11 +68,11 @@ JackThunderTriviaText:
 JackRolloutTriviaText:
 	text "Did you know…?"
 
-	para "If you use DEFENSE"
-	line "CURL, ROLLOUT's"
+	para "Using DEFENSE CURL"
+	line "powers up both"
 
-	para "power goes way up"
-	line "past normal."
+	para "ROLLOUT and FLAME"
+	line "WHEEL."
 	done
 
 JackSolarbeamTriviaText:
