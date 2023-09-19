@@ -1409,6 +1409,28 @@ Nightmare:
 	nightmare
 	endmove
 
+FlameWheel:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	flamewheel
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	defrost
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
 Curse:
 	checkobedience
 	usedmovetext
