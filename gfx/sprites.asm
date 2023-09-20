@@ -107,6 +107,8 @@ RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 
 SECTION "Sprites 3", ROMX
 
+ChrisRunSpriteGFX::            INCBIN "gfx/sprites/chris_run.2bpp"
+KrisRunSpriteGFX::             INCBIN "gfx/sprites/kris_run.2bpp"
 RealKarenSpriteGFX::           INCBIN "gfx/sprites/real_karen.2bpp"
 RealKogaSpriteGFX::            INCBIN "gfx/sprites/real_koga.2bpp"
 JessieSpriteGFX::              INCBIN "gfx/sprites/jessie.2bpp"
