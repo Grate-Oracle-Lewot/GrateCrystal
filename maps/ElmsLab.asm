@@ -979,7 +979,8 @@ ElmAfterTheftText4:
 	done
 
 ElmAfterTheftText5:
-	text "ELM: What?!?"
+	text "ELM: What?!?!?!?!?"
+	line "!?!?!?!?!?!?!?!?!?"
 
 	para "PROF.OAK gave you"
 	line "a #DEX?"
