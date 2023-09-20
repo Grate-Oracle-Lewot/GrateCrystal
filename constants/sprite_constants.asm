@@ -102,15 +102,17 @@
 	const SPRITE_SUICUNE ; 62
 	const SPRITE_ENTEI ; 63
 	const SPRITE_RAIKOU ; 64
-	const SPRITE_REAL_KAREN ; 65
-	const SPRITE_REAL_KOGA ; 66
-	const SPRITE_JESSIE ; 67
-	const SPRITE_JAMES ; 68
-	const SPRITE_GIOVANNI ; 69
-	const SPRITE_OFFICER_JENNY ; 6a
-	const SPRITE_GLITCH ; 6b
-	const SPRITE_COOK ; 6c
-	const SPRITE_SITTING_BIRD ; 6d
+	const SPRITE_CHRIS_RUN ; 65
+	const SPRITE_KRIS_RUN ; 66
+	const SPRITE_REAL_KAREN ; 67
+	const SPRITE_REAL_KOGA ; 68
+	const SPRITE_JESSIE ; 69
+	const SPRITE_JAMES ; 6a
+	const SPRITE_GIOVANNI ; 6b
+	const SPRITE_OFFICER_JENNY ; 6c
+	const SPRITE_GLITCH ; 6d
+	const SPRITE_COOK ; 6e
+	const SPRITE_SITTING_BIRD ; 6f
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
