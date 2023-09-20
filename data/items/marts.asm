@@ -236,7 +236,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 10 ; # items
+	db 9 ; # items
 	db ULTRA_BALL
 	db DUSK_BALL
 	db HYPER_POTION
@@ -244,8 +244,7 @@ MartBlackthorn:
 	db FULL_HEAL
 	db REVIVE
 	db MAX_REPEL
-	db X_ATTACK
-	db X_DEFEND
+	db X_EVADE
 	db TM_HYPER_BEAM
 	db -1 ; end
 
@@ -270,8 +269,8 @@ MartPewter:
 	db SUPER_REPEL
 	db X_ATTACK
 	db X_DEFEND
-	db X_SPEED
 	db X_ACCURACY
+	db X_EVADE
 	db TM_ROLLOUT
 	db -1 ; end
 
@@ -377,13 +376,14 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 8 ; # items
+	db 9 ; # items
 	db X_ATTACK
 	db X_DEFEND
 	db X_SPECIAL
 	db X_SP_DEFEND
 	db X_SPEED
 	db X_ACCURACY
+	db X_EVADE
 	db DIRE_HIT
 	db GUARD_SPEC
 	db -1 ; end
