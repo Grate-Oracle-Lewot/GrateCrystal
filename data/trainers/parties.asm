@@ -159,7 +159,7 @@ Rival1Group:
 
 	; RIVAL1 (3)
 	db "?@", TRAINERTYPE_ITEM
-	db  5, TOTODILE,   GOLD_BERRY
+	db  5, TOTODILE,   X_EVADE
 	db -1 ; end
 
 	; RIVAL1 (4)
