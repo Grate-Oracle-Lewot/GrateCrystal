@@ -1114,7 +1114,9 @@
 	const EVENT_FOUGHT_CELEBI
 	const EVENT_FOUGHT_FINULL
 	const EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
-; Unused: next 116 (now 46) events
+	const EVENT_ROUTE_19_HIDDEN_X_EVADE
+	const EVENT_CIANWOOD_CITY_HIDDEN_X_EVADE
+; Unused: next 116 (now 44) events
 
 	const_next 1600
 ; Sprite visibility flags
