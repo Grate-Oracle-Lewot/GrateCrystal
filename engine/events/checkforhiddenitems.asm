@@ -150,7 +150,7 @@ RockItemEncounter:
 	db 4, MAX_ETHER
 	db 6, ETHER
 	db 6, REVIVE
-	db 8, BERRY_JUICE
+	db 8, KINGS_ROCK
 	db 8, NUGGET
 	db 16, HARD_STONE
 	db 16, SOFT_SAND
