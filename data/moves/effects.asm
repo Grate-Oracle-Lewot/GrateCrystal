@@ -1427,7 +1427,6 @@ FlameWheel:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	kingsrock
 	burntarget
 	endmove
 
