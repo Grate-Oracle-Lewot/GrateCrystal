@@ -1991,7 +1991,7 @@ BattleTowerMons:
 
 	db ARCANINE
 	db CHARCOAL
-	db FLAME_WHEEL, LEER, BODY_SLAM, ROAR
+	db FLAME_WHEEL, DEFENSE_CURL, BODY_SLAM, ROAR
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2001,7 +2001,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 14, 11, 11 ; DVs
-	db 25, 30, 15, 20 ; PP
+	db 20, 30, 15, 20 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
