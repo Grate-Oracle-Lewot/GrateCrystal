@@ -148,6 +148,9 @@ CianwoodCityHiddenRevive:
 CianwoodCityHiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER
 
+CianwoodCityHiddenXEvade:
+	hiddenitem X_EVADE, EVENT_CIANWOOD_CITY_HIDDEN_X_EVADE
+
 CianwoodCitySuicuneApproachMovement:
 	set_sliding
 	fast_jump_step DOWN
@@ -401,6 +404,7 @@ CianwoodCity_MapEvents:
 	bg_event  8, 24, BGEVENT_READ, CianwoodPokeSeerSign
 	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
+	bg_event 18, 15, BGEVENT_ITEM, CianwoodCityHiddenXEvade
 
 	def_object_events
 	object_event 21, 37, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
