@@ -1419,6 +1419,7 @@ FlameWheel:
 	damagevariation
 	flamewheel
 	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1427,6 +1428,7 @@ FlameWheel:
 	checkfaint
 	buildopponentrage
 	kingsrock
+	burntarget
 	endmove
 
 Curse:
