@@ -152,7 +152,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - Most Berries renamed for flavor
-- X Sp. Defend, Dusk Ball, and Timer Ball
+- X Sp. Defend, X Evade, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
