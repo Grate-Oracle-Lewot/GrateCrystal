@@ -133,6 +133,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
+- Flame Wheel now doubles in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
+
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
@@ -140,8 +142,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage. This bypasses accuracy checks.
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
-
-- Flame Wheel and Sacred Fire no longer thaw out a frozen user (had to get rid of it for space).
 
 ## Items
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves)
