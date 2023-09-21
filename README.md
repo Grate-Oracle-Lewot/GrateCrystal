@@ -284,7 +284,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Seems like mon stats aren't loaded properly when switching mons in battle, sometimes, including secondary types for Pikachu forms not loading. Still trying to figure out exactly what's going on here, as sometimes it all works fine.
+- Occasionally, Pokémon seem to suddenly have the wrong stats mid-battle, and/or Pikachu forms will be missing their secondary types. I can never replicate this, so I don't know what triggers it, but it might have to do with switching and/or leveling up. The effect isn't permanent.
 
 - Don't try to trade with any ROM other than this one. It's not supposed to work, and I have no idea what will happen.
 
