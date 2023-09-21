@@ -188,7 +188,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db LEFTOVERS
-	db HYPER_BEAM, SUPERSONIC, EARTHQUAKE, BITE
+	db SKY_ATTACK, SUPERSONIC, EARTHQUAKE, BITE
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -763,7 +763,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db GOLD_BERRY
-	db REST, HYPER_BEAM, EARTHQUAKE, DRAGON_RAGE
+	db REST, SKY_ATTACK, EARTHQUAKE, DRAGON_RAGE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -867,7 +867,7 @@ BattleTowerMons:
 
 	db SCIZOR
 	db FOCUS_BAND
-	db STEEL_WING, SLASH, TOXIC, SANDSTORM
+	db STEEL_WING, CUT, TOXIC, SANDSTORM
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -877,7 +877,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 15, 13, 15, 14 ; DVs
-	db 20, 20, 5, 5 ; PP
+	db 20, 15, 5, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -1572,7 +1572,7 @@ BattleTowerMons:
 
 	db URSARING
 	db GOLD_BERRY
-	db HEADBUTT, PROTECT, ROAR, LEER
+	db HEADBUTT, PROTECT, ROAR, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1582,7 +1582,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 7, 4, 5 ; DVs
-	db 15, 10, 20, 30 ; PP
+	db 15, 10, 20, 15 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -1887,7 +1887,7 @@ BattleTowerMons:
 
 	db SCIZOR
 	db SCOPE_LENS
-	db SLASH, STEEL_WING, PURSUIT, HYPER_BEAM
+	db CUT, STEEL_WING, PURSUIT, CRABHAMMER
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -1897,7 +1897,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 50000
 	dn 11, 13, 15, 14 ; DVs
-	db 20, 20, 30, 5 ; PP
+	db 15, 20, 30, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -1913,7 +1913,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, HYPER_BEAM, TRI_ATTACK, MUD_SLAP
+	db EARTHQUAKE, SKULL_BASH, TRI_ATTACK, MUD_SLAP
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2332,7 +2332,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db KINGS_ROCK
-	db THUNDERBOLT, THUNDER_WAVE, SHADOW_BALL, HIDDEN_POWER
+	db THUNDERBOLT, THUNDER_WAVE, SHADOW_BALL, AURA_SPHERE
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2342,7 +2342,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 55000
 	dn 14, 13, 15, 15 ; DVs
-	db 10, 10, 15, 20 ; PP
+	db 10, 10, 15, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2358,7 +2358,7 @@ BattleTowerMons:
 
 	db SCIZOR
 	db LEFTOVERS
-	db HYPER_BEAM, SLASH, AGILITY, METAL_CLAW
+	db CRABHAMMER, CUT, AGILITY, METAL_CLAW
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2368,7 +2368,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 13, 15, 14, 13 ; DVs
-	db 5, 20, 20, 30 ; PP
+	db 5, 15, 20, 30 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2462,7 +2462,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, SLASH, HYPER_BEAM, TRI_ATTACK
+	db EARTHQUAKE, SLASH, SKULL_BASH, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2514,7 +2514,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db KINGS_ROCK
-	db HYPER_BEAM, EARTHQUAKE, FIRE_BLAST, IRON_TAIL
+	db SKY_ATTACK, EARTHQUAKE, FIRE_BLAST, IRON_TAIL
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2933,7 +2933,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db LEFTOVERS
-	db HYPER_BEAM, SUPERSONIC, EARTHQUAKE, BITE
+	db SKY_ATTACK, SUPERSONIC, EARTHQUAKE, BITE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -2959,7 +2959,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db MIRACLEBERRY
-	db HYPER_BEAM, ICY_WIND, THUNDERBOLT, SURF
+	db SKY_ATTACK, ICY_WIND, THUNDERBOLT, SURF
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3245,7 +3245,7 @@ BattleTowerMons:
 
 	db PARASECT
 	db GOLD_BERRY
-	db SPORE, GIGA_DRAIN, HYPER_BEAM, SLUDGE_BOMB
+	db SPORE, GIGA_DRAIN, CRABHAMMER, SLUDGE_BOMB
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -4239,7 +4239,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db MIRACLEBERRY
-	db HYPER_BEAM, REST, EARTHQUAKE, ROAR
+	db SKY_ATTACK, REST, EARTHQUAKE, ROAR
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4343,7 +4343,7 @@ BattleTowerMons:
 
 	db PINSIR
 	db GOLD_BERRY
-	db HYPER_BEAM, SUBMISSION, STRENGTH, TOXIC
+	db CROSS_CHOP, TWINEEDLE, STRENGTH, TOXIC
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4353,7 +4353,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 4, 6, 4 ; DVs
-	db 5, 25, 15, 5 ; PP
+	db 5, 20, 15, 5 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4424,7 +4424,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db QUICK_CLAW
-	db FIRE_BLAST, HYPER_BEAM, OUTRAGE, BLIZZARD
+	db FIRE_BLAST, SKY_ATTACK, OUTRAGE, BLIZZARD
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4840,7 +4840,7 @@ BattleTowerMons:
 
 	db FLAREON
 	db MINT_BERRY
-	db HYPER_BEAM, FLAMETHROWER, SHADOW_BALL, ROAR
+	db SACRED_FIRE, FLAMETHROWER, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -5155,7 +5155,7 @@ BattleTowerMons:
 
 	db RHYDON
 	db MIRACLEBERRY
-	db SURF, EARTHQUAKE, HYPER_BEAM, ROCK_SLIDE
+	db SURF, EARTHQUAKE, MEGAHORN, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5181,7 +5181,7 @@ BattleTowerMons:
 
 	db STEELIX
 	db LEFTOVERS
-	db EARTHQUAKE, HYPER_BEAM, SWAGGER, IRON_HEAD
+	db EARTHQUAKE, SKULL_BASH, SWAGGER, IRON_HEAD
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5285,7 +5285,7 @@ BattleTowerMons:
 
 	db SCIZOR
 	db QUICK_CLAW
-	db STEEL_WING, HYPER_BEAM, SLASH, TOXIC
+	db STEEL_WING, CRABHAMMER, CUT, TOXIC
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5295,7 +5295,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 15, 11, 15, 14 ; DVs
-	db 20, 5, 20, 5 ; PP
+	db 20, 5, 15, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
