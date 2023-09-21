@@ -488,7 +488,7 @@ HydroPumpDescription:
 	next "of water.@"
 
 SurfDescription:
-	db   "Sends a wave over"
+	db   "Rides a wave over"
 	next "over the foe.@"
 
 IceBeamDescription:
@@ -628,12 +628,12 @@ DigDescription:
 	next "2nd turn: Attack@"
 
 ToxicDescription:
-	db   "A poison move with"
+	db   "Poisons foes with"
 	next "increasing damage.@"
 
 ConfusionDescription:
-	db   "Messes up the"
-	next "foe's thoughts.@"
+	db   "Scrambles the foe's"
+	next "mind. May confuse.@"
 
 PsychicMDescription:
 	db   "A mindwave. It may"
@@ -736,8 +736,8 @@ MetronomeDescription:
 	next "#MON move.@"
 
 MirrorMoveDescription:
-	db   "Counters with the"
-	next "same move.@"
+	db   "Uses the foe's"
+	next "last move.@"
 
 SelfdestructDescription:
 	db   "Powerful but makes"
@@ -745,7 +745,7 @@ SelfdestructDescription:
 
 EggBombDescription:
 	db   "An exploding egg."
-	next "It may burn.@"
+	next "May burn the foe.@"
 
 LickDescription:
 	db   "Licks the foe. May"
@@ -836,8 +836,8 @@ SkyAttackDescription:
 	next "2nd turn: Attack@"
 
 TransformDescription:
-	db   "Turns into a copy"
-	next "of the foe.@"
+	db   "Copies foe's type,"
+	next "moves, and stats.@"
 
 BubbleDescription:
 	db   "Spits bubbles. May"
@@ -848,12 +848,12 @@ DizzyPunchDescription:
 	next "cause confusion.@"
 
 SporeDescription:
-	db   "A move that"
+	db   "Fungal powder that"
 	next "induces sleep.@"
 
 FlashDescription:
-	db   "Reflects light in"
-	next "the foe's eyes.@"
+	db   "Reflects light."
+	next "May drop ACCURACY.@"
 
 AirSlashDescription:
 	db   "Sharp wind. May"
@@ -872,7 +872,7 @@ CrabhammerDescription:
 	next "critical ratio.@"
 
 DarkPulseDescription:
-	db   "A pulse that may"
+	db   "Bad vibes that may"
 	next "cause flinching.@"
 
 FurySwipesDescription:
@@ -1000,8 +1000,8 @@ ScaryFaceDescription:
 	next "the foe's SPEED.@"
 
 FaintAttackDescription:
-	db   "An attack that"
-	next "never misses.@"
+	db   "Strikes from shad-"
+	next "ows. Never misses.@"
 
 SweetKissDescription:
 	db   "A kiss that causes"
@@ -1033,7 +1033,7 @@ ZapCannonDescription:
 
 ForesightDescription:
 	db   "Negates accuracy"
-	next "reduction moves.@"
+	next "reduction.@"
 
 DestinyBondDescription:
 	db   "The foe faints if"
@@ -1116,12 +1116,12 @@ AttractDescription:
 	next "gender infatuated.@"
 
 SleepTalkDescription:
-	db   "Randomly attacks"
+	db   "Uses other moves"
 	next "while asleep.@"
 
 HealBellDescription:
-	db   "Eliminates all"
-	next "status problems.@"
+	db   "Cures the whole"
+	next "party's status.@"
 
 ReturnDescription:
 	db   "Turns friendship"
@@ -1145,7 +1145,7 @@ NightTerrorDescription:
 
 SacredFireDescription:
 	db   "A flaming tackle"
-	next "that may burn.@"
+	next "that often burns.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1229,7 +1229,7 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "A chomp that may"
-	next "lower SPCL.DEF.@"
+	next "lower DEFENSE.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."
