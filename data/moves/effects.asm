@@ -1211,7 +1211,6 @@ TrapTarget:
 	checkfaint
 	buildopponentrage
 	traptarget
-	kingsrock
 	endmove
 
 SuperFang:
