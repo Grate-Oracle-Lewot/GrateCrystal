@@ -176,7 +176,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CYNDAQUIL, 5, GOLD_BERRY
+	givepoke CYNDAQUIL, 5, KINGS_ROCK
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
