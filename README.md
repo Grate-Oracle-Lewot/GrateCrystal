@@ -151,6 +151,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
+- King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exception being Future Sight)
 - Most Berries renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
@@ -241,7 +242,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones
 - A few songs imported from Gen I
-- A fourth Pokémon stats page showing DVs
+- A fourth Pokémon stats page showing DVs and Hidden Power type
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
