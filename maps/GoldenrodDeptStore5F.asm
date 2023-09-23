@@ -25,34 +25,7 @@ GoldenrodDeptStore5F_MapScripts:
 GoldenrodDeptStore5FClerkScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM02_HEADBUTT
-	iftrue .headbutt
-	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
-	iftrue .onlyrocksmash
-	sjump .neither
-
-.headbutt
-	checkevent EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
-	iftrue .both
-	sjump .onlyheadbutt
-
-.neither
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_1
-	closetext
-	end
-
-.onlyheadbutt
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_2
-	closetext
-	end
-
-.onlyrocksmash
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_3
-	closetext
-	end
-
-.both
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_4
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F
 	closetext
 	end
 
