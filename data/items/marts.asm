@@ -320,7 +320,7 @@ MartCeladon3F:
 	db -1 ; end
 
 MartCeladon4F1:
-	db 9 ; # items
+	db 10 ; # items
 	db ANTIVENOM
 	db ALOE_VERA
 	db HANDWARMER
@@ -329,6 +329,7 @@ MartCeladon4F1:
 	db DICTIONARY
 	db CATCH_CHARM
 	db EVERSTONE
+	db QUICK_CLAW
 	db PORTRAITMAIL
 	db -1 ; end
 
