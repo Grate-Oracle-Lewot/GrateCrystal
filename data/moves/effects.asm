@@ -939,6 +939,7 @@ OHKOHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endmove
 
 RecoilHit:
@@ -1211,6 +1212,7 @@ TrapTarget:
 	checkfaint
 	buildopponentrage
 	traptarget
+	kingsrock
 	endmove
 
 SuperFang:
