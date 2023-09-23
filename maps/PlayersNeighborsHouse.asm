@@ -62,6 +62,13 @@ PlayersNeighborsDaughterText:
 	line "mal, fairy, fight-"
 	cont "ing, water, or"
 	cont "flying."
+
+	para "…But, uh… This IS"
+	line "a hack, so forgive"
+
+	para "us if sometimes"
+	line "the second types"
+	cont "don't load."
 	done
 
 PlayersNeighborText:
