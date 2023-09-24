@@ -234,7 +234,7 @@ ScriptCommandTable:
 	dw Script_getname                    ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
-	dw Script_trainerpic                 ; aa
+	dw Script_givedecoration             ; aa
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2350,12 +2350,32 @@ Script_checkver_duplicate: ; unreferenced
 .gs_version:
 	db GS_VERSION
 
-Script_trainerpic:
+Script_givedecoration:
+; parameters: decoration (byte)
+
 	call GetScriptByte
-	and a
-	jr nz, .ok
-	ld a, [wScriptVar]
-.ok
-	ld [wTrainerClass], a
-	farcall Pokepic
-	ret
+	ld c, a
+	push bc
+	ld b, SET_FLAG
+	farcall DecorationFlagAction_c
+	pop bc
+	ld de, wStringBuffer1
+	farcall GetDecorationName_c_de
+	call OpenText
+	ld hl, .text
+	ld b, BANK(.text)
+	call MapTextbox
+	call WaitButton
+	jp Script_closetext
+
+.text
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer1
+	text "!@"
+	sound_item
+	text ""
+
+	para "<PLAYER> sent the"
+	line "decoration home."
+	done
