@@ -1064,10 +1064,10 @@ checksave: MACRO
 	db checksave_command
 ENDM
 
-	const trainerpic_command ; $aa
-trainerpic: MACRO
-	db trainerpic_command
-	db \1 ; trainer
+	const givedecoration_command ; $aa
+givedecoration: MACRO
+	db givedecoration_command
+	db \1 ; decoration
 ENDM
 
 NUM_EVENT_COMMANDS EQU const_value
