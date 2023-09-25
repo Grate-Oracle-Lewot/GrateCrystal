@@ -2354,13 +2354,5 @@ Script_givedecoration:
 	jp Script_closetext
 
 .text
-	text "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer1
-	text "!@"
-	sound_item
-	text ""
-
-	para "<PLAYER> sent the"
-	line "decoration home."
-	done
+	text_far _ReceivedDecorationText
+	text_end
