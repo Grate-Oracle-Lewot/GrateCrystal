@@ -43,11 +43,6 @@ VioletGymFalknerScript:
 	iffalse .NoRoomForMudSlap
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext FalknerTMMudSlapText
-	promptbutton
-	writetext FalknerGiveDecorationText
-	promptbutton
-	givedecoration DECO_PIKACHU_DOLL
-	writetext FalknerExplainDecorationText
 	waitbutton
 	closetext
 	end
