@@ -234,7 +234,6 @@ ScriptCommandTable:
 	dw Script_getname                    ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
-	dw Script_givedecoration             ; aa
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
