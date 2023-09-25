@@ -1064,10 +1064,4 @@ checksave: MACRO
 	db checksave_command
 ENDM
 
-	const givedecoration_command ; $aa
-givedecoration: MACRO
-	db givedecoration_command
-	db \1 ; decoration
-ENDM
-
 NUM_EVENT_COMMANDS EQU const_value
