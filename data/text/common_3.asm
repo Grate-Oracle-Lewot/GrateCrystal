@@ -224,19 +224,10 @@ _MoveMonWOMailSaveText::
 	cont "will be saved. OK?"
 	done
 
-_WindowAreaExceededErrorText:: ; unreferenced
-	text "The window save"
-	line "area was exceeded."
-	done
-
 _WindowPoppingErrorText::
 	text "No windows avail-"
 	line "able for popping."
 	done
-
-_CorruptedEventText:: ; unreferenced
-	text "Corrupted event!"
-	prompt
 
 _ObjectEventText::
 	text "Object event"
@@ -273,6 +264,18 @@ _PocketIsFullText::
 	text_start
 	line "is full…"
 	prompt
+
+_ReceivedDecorationText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer1
+	text "!@"
+	sound_item
+	text ""
+
+	para "<PLAYER> sent the"
+	line "decoration home."
+	done
 
 _SeerSeeAllText::
 	text "I see all."
@@ -931,10 +934,6 @@ _PhoneJustTalkToThemText::
 
 _PhoneThankYouText::
 	text "Thank you!"
-	done
-
-_SpaceSpaceColonText:: ; unreferenced
-	text "  :"
 	done
 
 _PasswordAskResetText::
