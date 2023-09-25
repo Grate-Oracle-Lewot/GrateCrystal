@@ -2334,25 +2334,3 @@ Script_checksave:
 	ld a, c
 	ld [wScriptVar], a
 	ret
-
-Script_givedecoration:
-; parameters: decoration (byte)
-
-	call GetScriptByte
-	ld c, a
-	push bc
-	ld b, SET_FLAG
-	farcall DecorationFlagAction_c
-	pop bc
-	ld de, wStringBuffer1
-	farcall GetDecorationName_c_de
-	call OpenText
-	ld hl, .text
-	ld b, BANK(.text)
-	call MapTextbox
-	call WaitButton
-	jp Script_closetext
-
-.text
-	text_far _ReceivedDecorationText
-	text_end
