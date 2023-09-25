@@ -72,16 +72,14 @@ PlayersNeighborsDaughterText:
 	done
 
 PlayersNeighborText:
-	text "My daughter is"
-	line "adamant about"
+	text "Look, we did the"
+	line "best we could, but"
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "hacking is hard."
+	line "Sometimes things"
 
-	para "She really loves"
-	line "#MON!"
-
-	para "But then, so do I!"
+	para "go wrong. Just try"
+	line "to roll with it."
 	done
 
 PlayerNeighborRadioText1:
