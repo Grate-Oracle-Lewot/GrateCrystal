@@ -2404,14 +2404,14 @@ BattleAnim_PayDay:
 BattleAnim_IronHead:
 	anim_2gfx ANIM_GFX_REFLECT, ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect BATTLE_BG_EFFECT_WITHDRAW, $0, BG_EFFECT_USER, $50
-	anim_wait 21
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, BG_EFFECT_USER, $50
+	anim_wait 16
 	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_WITHDRAW, 48, 88, $0
+	anim_obj ANIM_OBJ_WITHDRAW, 48, 88, $0
 	anim_wait 42
 	anim_incobj 2
 	anim_wait 1
-	anim_incbgeffect BATTLE_BG_EFFECT_WITHDRAW
+	anim_incbgeffect ANIM_BG_WITHDRAW
 	anim_call BattleAnim_ShowMon_0
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
