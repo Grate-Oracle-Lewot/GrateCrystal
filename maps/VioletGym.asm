@@ -41,13 +41,9 @@ VioletGymFalknerScript:
 	promptbutton
 	verbosegiveitem TM_MUD_SLAP
 	iffalse .NoRoomForMudSlap
+	givedecoration DECO_PIKACHU_DOLL
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext FalknerTMMudSlapText
-	promptbutton
-	writetext FalknerGiveDecorationText
-	promptbutton
-	givedecoration DECO_PIKACHU_DOLL
-	writetext FalknerExplainDecorationText
 	waitbutton
 	closetext
 	end
@@ -191,28 +187,6 @@ FalknerTMMudSlapText:
 	cont "and offensive."
 	done
 
-FalknerGiveDecorationText:
-	text "I have one last"
-	line "gift for you!"
-	done
-
-FalknerExplainDecorationText:
-	text "You can decorate"
-	line "your room at home"
-
-	para "with dolls and"
-	line "other objects."
-
-	para "It's traditional"
-	line "for GYM LEADERS to"
-
-	para "give out decora-"
-	line "tions, but you"
-
-	para "might find them"
-	line "elsewhere too!"
-	done
-
 FalknerFightDoneText:
 	text "There are #MON"
 	line "GYMS in cities and"
@@ -225,8 +199,8 @@ FalknerFightDoneText:
 	para "I'm going to train"
 	line "harder to become"
 
-	para "the greatest bird"
-	line "master!"
+	para "the greatest fly-"
+	line "ing master!"
 	done
 
 BirdKeeperRodSeenText:
