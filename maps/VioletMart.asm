@@ -13,6 +13,10 @@ VioletMartClerkScript:
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_VIOLET
 	closetext
+	loadwildmon PIKACHU, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
 	end
 
 VioletMartDelibirdScript:
