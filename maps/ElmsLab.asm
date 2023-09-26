@@ -540,6 +540,10 @@ AideScript_AfterTheft:
 	writetext AideText_AfterTheft
 	waitbutton
 	closetext
+	loadwildmon PIKACHU, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
 	end
 
 MeetCopScript2:
