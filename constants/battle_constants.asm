@@ -1,6 +1,6 @@
 ; significant level values
 MAX_LEVEL EQU 100
-MIN_LEVEL EQU 2
+MIN_LEVEL EQU 1
 EGG_LEVEL EQU 5
 
 ; maximum moves known per mon
@@ -73,8 +73,8 @@ STAT_MIN_HP EQU 10
 MAX_STAT_VALUE EQU 999
 
 ; shiny dvs
-ATKDEFDV_SHINY EQU $FF
-SPDSPCDV_SHINY EQU $FF
+ATKDEFDV_SHINY EQU $00
+SPDSPCDV_SHINY EQU $00
 
 ; battle classes (wBattleMode values)
 	const_def 1
