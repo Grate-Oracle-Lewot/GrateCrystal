@@ -14,7 +14,43 @@ ElmsSon:
 	jumptextfaceplayer ElmsSonText
 
 ElmsHousePC:
-	jumptext ElmsHousePCText
+	opentext
+	writetext ElmsHousePCText
+	promptbutton
+	closetext
+	refreshscreen
+	pokepic MUK
+	waitbutton
+	closepokepic
+	opentext
+	writetext ElmsHouseMukMemeText
+	promptbutton
+	closetext
+	refreshscreen
+	pokepic MEOWTH
+	waitbutton
+	closepokepic
+	opentext
+	writetext ElmsHouseMeowthMemeText
+	promptbutton
+	closetext
+	refreshscreen
+	pokepic LICKITUNG
+	waitbutton
+	closepokepic
+	opentext
+	writetext ElmsHouseLickitungMemeText
+	promptbutton
+	closetext
+	refreshscreen
+	pokepic SMEARGLE
+	waitbutton
+	closepokepic
+	opentext
+	writetext ElmsHouseSmeargleMemeText
+	waitbutton
+	closetext
+	end
 
 ElmsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -43,40 +79,27 @@ ElmsSonText:
 	cont "professor!"
 	done
 
-ElmsHouseLabFoodText: ; unreferenced
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
-
-ElmsHousePokemonFoodText: ; unreferenced
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
-	done
-
 ElmsHousePCText:
-	text "#MON. Where do"
-	line "they come from? "
+	text "It's PROF.ELM's"
+	line "meme collection."
+	done
 
-	para "Where are they"
-	line "going?"
+ElmsHouseMukMemeText:
+	text "get muk'd"
+	done
 
-	para "Why has no one"
-	line "ever witnessed a"
-	cont "#MON's birth?"
+ElmsHouseMeowthMemeText:
+	text "i can has"
+	line "leftovers?"
+	done
 
-	para "I want to know! I"
-	line "will dedicate my"
+ElmsHouseLickitungMemeText:
+	text "do u even lick bro"
+	done
 
-	para "life to the study"
-	line "of #MON!"
-
-	para "…"
-
-	para "It's a part of"
-	line "PROF.ELM's re-"
-	cont "search papers."
+ElmsHouseSmeargleMemeText:
+	text "draw me like 1 of"
+	line "ur kalos girls"
 	done
 
 ElmsHouse_MapEvents:
