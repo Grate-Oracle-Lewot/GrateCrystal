@@ -209,6 +209,12 @@ FuchsiaGymStatue:
 	gettrainername STRING_BUFFER_4, JANINE, JANINE1
 	jumpstd GymStatue2Script
 
+FuchsiaGymKogaPhoto:
+	jumptext FuchsiaGymKogaPhotoText
+
+FuchsiaGymRoxiePhoto:
+	jumptext FuchsiaGymRoxiePhotoText
+
 Movement_NinjaSpin:
 	turn_head DOWN
 	turn_head LEFT
@@ -384,6 +390,25 @@ FuchsiaGymGuideWinText:
 	cont "from JOHTO!"
 	done
 
+FuchsiaGymKogaPhotoText:
+	text "It's a framed photo"
+	line "of JANINE and KOGA"
+
+	para "from when JANINE"
+	line "was a little girl."
+	done
+
+FuchsiaGymRoxiePhotoText:
+	text "It's a framed photo"
+	line "of JANINE and a"
+
+	para "girl with a"
+	line "guitar. The"
+	cont "autograph reads…"
+
+	para "ROXIE?"
+	done
+
 FuchsiaGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -396,6 +421,8 @@ FuchsiaGym_MapEvents:
 	def_bg_events
 	bg_event  3, 15, BGEVENT_READ, FuchsiaGymStatue
 	bg_event  6, 15, BGEVENT_READ, FuchsiaGymStatue
+	bg_event  4,  0, BGEVENT_READ, FuchsiaGymRoxiePhoto
+	bg_event  5,  0, BGEVENT_READ, FuchsiaGymKogaPhoto
 
 	def_object_events
 	object_event  1, 10, SPRITE_JANINE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaGymJanineScript, -1
