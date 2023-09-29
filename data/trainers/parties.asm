@@ -3597,7 +3597,7 @@ PokefanFGroup:
 
 	; POKEFANF (4)
 	db "JAIME@", TRAINERTYPE_ITEM
-	db 30, BLISSEY,    GOLD_BERRY
+	db 30, CHANSEY,    EVERSTONE
 	db -1 ; end
 
 	; POKEFANF (5)
