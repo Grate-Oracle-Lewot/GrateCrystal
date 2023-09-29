@@ -1,21 +1,21 @@
 BadgeTypeBoosts:
 ; entries correspond to wJohtoBadges constants
-	db BIRD         ; ZEPHYRBADGE
-	db BIRD         ; HIVEBADGE
-	db BIRD         ; PLAINBADGE
-	db BIRD         ; FOGBADGE
-	db BIRD         ; MINERALBADGE
-	db BIRD         ; STORMBADGE
-	db BIRD         ; GLACIERBADGE
-	db BIRD         ; RISINGBADGE
+	db FLYING       ; ZEPHYRBADGE
+	db BUG          ; HIVEBADGE
+	db NORMAL       ; PLAINBADGE
+	db GHOST        ; FOGBADGE
+	db STEEL        ; MINERALBADGE
+	db FIGHTING     ; STORMBADGE
+	db ICE          ; GLACIERBADGE
+	db DRAGON       ; RISINGBADGE
 	; fallthrough
 ; entries correspond to wKantoBadges constants
-	db BIRD         ; BOULDERBADGE
-	db BIRD         ; CASCADEBADGE
-	db BIRD         ; THUNDERBADGE
-	db BIRD         ; RAINBOWBADGE
-	db BIRD         ; SOULBADGE
-	db BIRD         ; MARSHBADGE
-	db BIRD         ; VOLCANOBADGE
-	db BIRD         ; EARTHBADGE
+	db ROCK         ; BOULDERBADGE
+	db WATER        ; CASCADEBADGE
+	db ELECTRIC     ; THUNDERBADGE
+	db GRASS        ; RAINBOWBADGE
+	db POISON       ; SOULBADGE
+	db PSYCHIC      ; MARSHBADGE
+	db FIRE         ; VOLCANOBADGE
+	db GROUND       ; EARTHBADGE
 	db -1 ; end
