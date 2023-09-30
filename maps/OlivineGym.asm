@@ -188,7 +188,8 @@ GuitaristJulesSeenText:
 	done
 
 GuitaristJulesBeatenText:
-	text "Whoooa!"
+	text "FLAREON my WAILORD"
+	line "son."
 	done
 
 GuitaristJulesAfterBattleText:
