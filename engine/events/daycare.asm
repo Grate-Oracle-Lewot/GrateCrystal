@@ -591,18 +591,31 @@ DayCare_InitBreeding:
 	ld a, EGG_LEVEL
 	ld [wCurPartyLevel], a
 
-; Nidorans can give birth to either gender of Nidoran
+; Nidorans can give birth to either gender of Nidoran, and Miltank and Tauros can birth each other
 	ld a, [wCurPartySpecies]
 	cp NIDORAN_F
 	jr z, .RandomizeNidorans
 	cp NIDORAN_M
-	jr nz, .GotEggSpecies
+	jr nz, .CheckCattle
 .RandomizeNidorans:
 	call Random
 	cp 50 percent + 1
 	ld a, NIDORAN_F
 	jr c, .GotEggSpecies
 	ld a, NIDORAN_M
+	jr .GotEggSpecies
+.CheckCattle:
+	ld a, [wCurPartySpecies]
+	cp MILTANK
+	jr z, .RandomizeCattle
+	cp TAUROS
+	jr nz, .GotEggSpecies
+.RandomizeCattle:
+	call Random
+	cp 50 percent + 1
+	ld a, MILTANK
+	jr c, .GotEggSpecies
+	ld a, TAUROS
 .GotEggSpecies:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
