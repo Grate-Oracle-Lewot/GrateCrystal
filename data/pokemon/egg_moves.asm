@@ -440,6 +440,10 @@ EeveeEggMoves:
 	db -1 ; end
 
 PorygonEggMoves:
+	db SOLARBEAM
+	db DRILL_PECK
+	db BODY_SLAM
+	db MIRROR_COAT
 	db TRANSFORM
 	db -1 ; end
 
