@@ -439,6 +439,10 @@ EeveeEggMoves:
 	db EXTREMESPEED
 	db -1 ; end
 
+PorygonEggMoves:
+	db TRANSFORM
+	db -1 ; end
+
 OmanyteEggMoves:
 	db SUPERSONIC
 	db AURORA_BEAM
