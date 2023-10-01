@@ -881,7 +881,6 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_TRADE, KINGS_ROCK, POLITOED
 	db EVOLVE_HAPPINESS, TR_NITE, POLITOED
 	db 0 ; no more evolutions
 	db 1, BUBBLE
@@ -916,7 +915,6 @@ AbraEvosAttacks:
 
 KadabraEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, ALAKAZAM
-	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, KINESIS
@@ -964,7 +962,6 @@ MachopEvosAttacks:
 
 MachokeEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, MACHAMP
-	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
 	db 1, KARATE_CHOP
 	db 3, LEER
@@ -1085,7 +1082,6 @@ GeodudeEvosAttacks:
 
 GravelerEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GOLEM
-	db EVOLVE_TRADE, -1, GOLEM
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, HARDEN
@@ -1152,7 +1148,6 @@ SlowpokeEvosAttacks:
 	db EVOLVE_STAT, 37, ATK_LT_DEF, SLOWBRO
 	db EVOLVE_STAT, 37, ATK_GT_DEF, SLOWKING
 	db EVOLVE_STAT, 37, ATK_EQ_DEF, SLOWBRO
-	db EVOLVE_TRADE, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1371,7 +1366,6 @@ GastlyEvosAttacks:
 
 HaunterEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GENGAR
-	db EVOLVE_TRADE, -1, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1405,7 +1399,6 @@ GengarEvosAttacks:
 
 OnixEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, STEELIX
-	db EVOLVE_TRADE, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
@@ -1760,7 +1753,6 @@ HorseaEvosAttacks:
 
 SeadraEvosAttacks:
 	db EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
-	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, LEER
@@ -1850,7 +1842,6 @@ MrMimeEvosAttacks:
 
 ScytherEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, SCIZOR
-	db EVOLVE_TRADE, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2041,7 +2032,6 @@ FlareonEvosAttacks:
 
 PorygonEvosAttacks:
 	db EVOLVE_ITEM, UP_GRADE, PORYGON2
-	db EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, CONVERSION
@@ -2053,6 +2043,8 @@ PorygonEvosAttacks:
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
 	db 44, ZAP_CANNON
+	db 50, LIGHT_SCREEN
+	db 55, REFLECT
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:
@@ -3560,6 +3552,8 @@ Porygon2EvosAttacks:
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
 	db 44, ZAP_CANNON
+	db 50, LIGHT_SCREEN
+	db 55, REFLECT
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
