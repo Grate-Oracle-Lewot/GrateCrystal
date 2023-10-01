@@ -8,7 +8,7 @@
 	db 177 ; base exp
 	db TM_THUNDERPUNCH, TM_THUNDER ; items
 	db GENDER_F25 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/electabuzz/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_MONSTER ; egg groups
