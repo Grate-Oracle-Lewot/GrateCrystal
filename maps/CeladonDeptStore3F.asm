@@ -61,9 +61,10 @@ CeladonDeptStore3FYoungsterText:
 
 CeladonDeptStore3FGameboyKid1Text:
 	text "UP-GRADE evolves"
-	line "PORYGON by trade,"
+	line "PORYGON into"
+	cont "PORYGON2."
 
-	para "or by use like an"
+	para "Use it like an"
 	line "evolution stone."
 	done
 
@@ -79,9 +80,8 @@ CeladonDeptStore3FGameboyKid2Text:
 
 	para "…Huh?"
 
-	para "The traded PORYGON"
-	line "turned into a dif-"
-	cont "ferent #MON!"
+	para "Why didn't it"
+	line "evolve by trade?"
 	done
 
 CeladonDeptStore3FSuperNerdText:
