@@ -8,7 +8,7 @@
 	db 183 ; base exp
 	db TM_FIRE_PUNCH, TM_FIRE_BLAST ; items
 	db GENDER_F25 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magmar/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_FLYING ; egg groups
