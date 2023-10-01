@@ -52,23 +52,20 @@ GoldenrodDeptStore4FBugCatcherText:
 	done
 
 GoldenrodDeptStore4FGameboyKidText:
-	text "Some #MON"
-	line "evolve by being"
-
-	para "traded via a Game"
-	line "Link cable."
-
-	para "…But since that's"
+	text "Trading #MON is"
 	line "tricky in a hack,"
 
-	para "they have other"
-	line "methods too, like"
+	para "so we replaced"
+	line "trade evolutions"
 
-	para "using a MOON"
-	line "STONE."
+	para "with other methods"
+	line "like MOON STONE."
 
 	para "The method varies"
-	line "with the #MON."
+	line "with the #MON,"
+
+	para "so try different"
+	line "things out!"
 	done
 
 GoldenrodDeptStore4FDirectoryText:
