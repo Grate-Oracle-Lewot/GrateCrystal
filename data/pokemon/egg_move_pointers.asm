@@ -28,10 +28,10 @@ EggMovePointers::
 	dw NoEggMoves
 	dw SandshrewEggMoves
 	dw NoEggMoves
-	dw NidoranFEggMoves
+	dw NidoranEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw NidoranMEggMoves
+	dw NidoranEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw CleffaEggMoves
@@ -127,7 +127,7 @@ EggMovePointers::
 	dw ElekidEggMoves
 	dw MagbyEggMoves
 	dw PinsirEggMoves
-	dw NoEggMoves
+	dw CattleEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw LaprasEggMoves
@@ -240,7 +240,7 @@ EggMovePointers::
 	dw SnoconeyEggMoves
 	dw JirkEggMoves
 	dw CastaweighEggMoves
-	dw MiltankEggMoves
+	dw CattleEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
