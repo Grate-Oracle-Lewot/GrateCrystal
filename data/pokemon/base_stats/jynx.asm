@@ -8,7 +8,7 @@
 	db 160 ; base exp
 	db TM_ICE_PUNCH, TM_BLIZZARD ; items
 	db GENDER_F100 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jynx/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_FAIRY ; egg groups
