@@ -357,7 +357,7 @@ OddEggs:
 
 	db TOTODILE
 	db NO_ITEM
-	db SCRATCH, AEROBLAST, 0
+	db SCRATCH, AEROBLAST, 0, 0
 	dw 02420 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
