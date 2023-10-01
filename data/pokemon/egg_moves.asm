@@ -76,22 +76,14 @@ SandshrewEggMoves:
 	db EARTH_POWER
 	db -1 ; end
 
-NidoranFEggMoves:
-	db SUPERSONIC
-	db DISABLE
-	db PLAY_ROUGH
-	db FOCUS_ENERGY
-	db CHARM
-	db COUNTER
-	db BEAT_UP
-	db -1 ; end
-
-NidoranMEggMoves:
+NidoranEggMoves:
 	db SUPERSONIC
 	db DISABLE
 	db TAKE_DOWN
-	db CONFUSION
+	db PLAY_ROUGH
+	db FOCUS_ENERGY
 	db AMNESIA
+	db CHARM
 	db COUNTER
 	db BEAT_UP
 	db -1 ; end
@@ -915,12 +907,13 @@ CastaweighEggMoves:
 	db HYPER_FANG
 	db -1 ; end
 
-MiltankEggMoves:
+CattleEggMoves:
+	db IRON_HEAD
+	db FLAME_WHEEL
+	db ROLLING_KICK
 	db REVERSAL
 	db EARTH_POWER
-	db ROLLING_KICK
-	db PRESENT
-	db IRON_HEAD
+	db DOUBLE_EDGE
 	db -1 ; end
 
 LarvitarEggMoves:
