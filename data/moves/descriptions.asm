@@ -973,7 +973,7 @@ AeroblastDescription:
 
 CottonSporeDescription:
 	db   "Sharply reduces"
-	next "the foe's SPEED.@"
+	next "the foe's SPCL.ATK.@"
 
 ReversalDescription:
 	db   "Stronger if the"
