@@ -1,0 +1,5 @@
+PinsirAnimationIdlePointers:
+	table_width 2, PinsirAnimationIdlePointers
+	dw FemalePinsirAnimationIdle
+	dw MalePinsirAnimationIdle
+	assert_table_length NUM_PINSIR_GENDERS
