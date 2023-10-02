@@ -302,7 +302,7 @@ NUM_PIKACHU_FORMS EQU const_value - 1 ; 6
 	const_def 1
 	const PINSIR_FEMALE    ;  1
 	const PINSIR_MALE      ;  2
-NUM_PINSIR_FORMS EQU const_value - 1 ; 2
+NUM_PINSIR_GENDERS EQU const_value - 1 ; 2
 
 ; Unown forms
 ; indexes for:
