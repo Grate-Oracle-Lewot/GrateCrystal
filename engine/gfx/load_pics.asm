@@ -86,13 +86,13 @@ GetPikachuForm:
 	srl a
 	or b
 
-; Divide by 51 to get 0-5
+; Divide by 43 to get 0-5
 	ldh [hDividend + 3], a
 	xor a
 	ldh [hDividend], a
 	ldh [hDividend + 1], a
 	ldh [hDividend + 2], a
-	ld a, 51
+	ld a, 43
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
