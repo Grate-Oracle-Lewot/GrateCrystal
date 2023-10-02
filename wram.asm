@@ -2662,7 +2662,9 @@ wCurBaseDataEnd::
 
 wPikachuForm:: db
 
-	ds 5
+wPinsirGender:: db
+
+	ds 4
 
 wCurDamage:: dw
 
