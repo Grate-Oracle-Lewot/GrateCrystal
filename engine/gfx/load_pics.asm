@@ -103,6 +103,12 @@ GetPikachuForm:
 	ld [wPikachuForm], a
 	ret
 
+GetPinsirGender:
+; Return Pinsir gender (gender +1) in wPinsirGender based on DVs at hl
+	farcall GetGender
+	inc a
+	ld [wPinsirGender], a
+
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
