@@ -123,8 +123,8 @@ EvolutionMoves::
 	db CONFUSION    ; STARMIE
 	db NO_MOVE      ; MR__MIME
 	db NO_MOVE      ; SCYTHER
-	db ATTRACT      ; JYNX
-	db SUBMISSION   ; ELECTABUZZ
+	db NO_MOVE      ; JYNX
+	db NO_MOVE      ; ELECTABUZZ
 	db NO_MOVE      ; MAGMAR
 	db NO_MOVE      ; PINSIR
 	db NO_MOVE      ; TAUROS
