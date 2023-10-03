@@ -60,7 +60,7 @@ PredefPointers::
 	add_predef Pokedex_GetArea
 	add_predef GetPikachuForm
 	add_predef DoBattleTransition
-	add_predef DummyPredef35
+	add_predef GetPinsirGender
 	add_predef DummyPredef36
 	add_predef PlayBattleAnim
 	add_predef DummyPredef38
