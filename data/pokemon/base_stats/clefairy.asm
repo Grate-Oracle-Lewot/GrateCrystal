@@ -8,7 +8,7 @@
 	db 68 ; base exp
 	db STARDUST, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/clefairy/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_HUMANSHAPE ; egg groups
