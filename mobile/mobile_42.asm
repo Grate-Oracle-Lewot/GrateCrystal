@@ -290,6 +290,8 @@ MobileTradeAnim_GetFrontpic_Player:
 	push af
 	predef GetPikachuForm
 	ld hl, wPlayerTrademonDVs
+	predef GetPinsirGender
+	ld hl, wPlayerTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
@@ -304,6 +306,8 @@ MobileTradeAnim_GetFrontpic_OT:
 	push af
 	predef GetPikachuForm
 	ld hl, wOTTrademonDVs
+	predef GetPinsirGender
+	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
@@ -317,6 +321,8 @@ Function108201:
 	push de
 	push af
 	predef GetPikachuForm
+	ld hl, wOTTrademonDVs
+	predef GetPinsirGender
 	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
