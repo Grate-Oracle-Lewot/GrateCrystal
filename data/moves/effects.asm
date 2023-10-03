@@ -1438,7 +1438,6 @@ FlameWheel:
 	damagevariation
 	flamewheel
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1446,7 +1445,6 @@ FlameWheel:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	burntarget
 	kingsrock
 	endmove
 
