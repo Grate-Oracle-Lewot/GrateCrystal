@@ -1063,6 +1063,8 @@ PCMonInfo:
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld hl, wTempMonDVs
+	predef GetPinsirGender
+	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	call GetBaseData
 	ld de, vTiles2 tile $00
@@ -1685,6 +1687,8 @@ StatsScreenDPad:
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
+	ld hl, wTempMonDVs
+	predef GetPinsirGender
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	call GetBaseData
