@@ -179,7 +179,7 @@ PoliwagEggMoves:
 	db HAZE
 	db MIND_READER
 	db EARTH_POWER
-	db TRIPLE_KICK
+	db HI_JUMP_KICK
 	db METRONOME
 	db -1 ; end
 
