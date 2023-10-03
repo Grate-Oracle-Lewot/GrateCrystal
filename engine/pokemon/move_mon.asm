@@ -469,6 +469,17 @@ AddTempmonToParty:
 .done_pikachu
 
 	ld a, [wCurPartySpecies]
+	cp PINSIR
+	jr nz, .done_pinsir
+	ld hl, wPartyMon1DVs
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	predef GetPinsirGender
+.done_pinsir
+
+	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr nz, .done
 	ld hl, wPartyMon1DVs
