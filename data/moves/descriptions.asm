@@ -368,8 +368,8 @@ JumpKickDescription:
 	next "if it misses.@"
 
 RollingKickDescription:
-	db   "Inaccurate but a"
-	next "guaranteed flinch.@"
+	db   "Doubles power aft-"
+	next "er DEFENSE CURL.@"
 
 SandAttackDescription:
 	db   "Reduces accuracy"
