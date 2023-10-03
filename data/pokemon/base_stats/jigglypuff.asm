@@ -8,7 +8,7 @@
 	db 76 ; base exp
 	db MINT_BERRY, PINK_BOW ; items
 	db GENDER_F75 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jigglypuff/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_INDETERMINATE ; egg groups
