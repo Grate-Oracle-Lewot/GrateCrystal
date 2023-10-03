@@ -629,6 +629,9 @@ GetEggFrontpic:
 	predef GetPikachuForm
 	ld a, MON_DVS
 	call GetPartyParamLocation
+	predef GetPinsirGender
+	ld a, MON_DVS
+	call GetPartyParamLocation
 	predef GetUnownLetter
 	pop de
 	predef_jump GetMonFrontpic
@@ -641,6 +644,9 @@ GetHatchlingFrontpic:
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	predef GetPikachuForm
+	ld a, MON_DVS
+	call GetPartyParamLocation
+	predef GetPinsirGender
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	predef GetUnownLetter
