@@ -2379,6 +2379,8 @@ Pokedex_LoadSelectedMonTiles:
 	jr z, .QuestionMark
 	ld a, PIKACHU_CRYSTAL
 	ld [wPikachuForm], a
+	ld a, PINSIR_FEMALE
+	ld [wPinsirGender], a
 	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
 	ld a, [wTempSpecies]
