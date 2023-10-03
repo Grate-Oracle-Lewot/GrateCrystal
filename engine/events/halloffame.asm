@@ -238,6 +238,8 @@ AnimateHOFMonEntrance:
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld hl, wTempMonDVs
+	predef GetPinsirGender
+	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -468,6 +470,8 @@ DisplayHOFMon:
 	ld [wTextDecimalByte], a
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
+	ld hl, wTempMonDVs
+	predef GetPinsirGender
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	xor a
