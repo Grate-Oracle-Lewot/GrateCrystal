@@ -4222,6 +4222,8 @@ SendOutPlayerMon:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
+	farcall GetPinsirGender
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7
@@ -6351,7 +6353,7 @@ LoadEnemyMon:
 ; Unown
 	ld a, [wTempEnemyMonSpecies]
 	cp UNOWN
-	jr nz, .Pikachu
+	jr nz, .Pinsir
 
 ; Get letter based on DVs
 	ld hl, wEnemyMonDVs
@@ -6363,7 +6365,16 @@ LoadEnemyMon:
 	call BattleRandom
 	cp 5 percent
 	jr nc, .GenerateDVs ; reroll DVs
-	jr .Magikarp
+	jr .Happiness
+
+.Pinsir:
+	ld a, [wTempEnemyMonSpecies]
+	cp PINSIR
+	jr nz, .Pikachu
+; Get form based on DVs
+	ld hl, wEnemyMonDVs
+	farcall GetPinsirGender
+	jr .Happiness
 
 .Pikachu:
 	ld a, [wTempEnemyMonSpecies]
@@ -6375,6 +6386,7 @@ LoadEnemyMon:
 ; Change second type based on form
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
+	jr .Happiness
 
 .Magikarp:
 ; These filters are untranslated.
@@ -8106,6 +8118,8 @@ DropPlayerSub:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
+	farcall GetPinsirGender
+	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
@@ -8144,6 +8158,8 @@ DropEnemySub:
 	call GetBaseData
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
+	ld hl, wEnemyMonDVs
+	farcall GetPinsirGender
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2
@@ -8321,18 +8337,24 @@ InitEnemyWildmon:
 	ld bc, NUM_MOVES
 	call CopyBytes
 	ld hl, wEnemyMonDVs
-	predef GetPikachuForm
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr nz, .skip_pikachu
+	predef GetPikachuForm
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
 .skip_pikachu
+	ld a, [wCurPartySpecies]
+	cp PINSIR
+	jr nz, .skip_pinsir
 	ld hl, wEnemyMonDVs
-	predef GetUnownLetter
+	farcall GetPinsirGender
+.skip_pinsir
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr nz, .skip_unown
+	ld hl, wEnemyMonDVs
+	predef GetUnownLetter
 	ld a, [wFirstUnownSeen]
 	and a
 	jr nz, .skip_unown
