@@ -4222,7 +4222,7 @@ SendOutPlayerMon:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	farcall GetPinsirGender
+	predef GetPinsirGender
 	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	hlcoord 1, 5
@@ -6373,7 +6373,7 @@ LoadEnemyMon:
 	jr nz, .Pikachu
 ; Get form based on DVs
 	ld hl, wEnemyMonDVs
-	farcall GetPinsirGender
+	predef GetPinsirGender
 	jr .Happiness
 
 .Pikachu:
@@ -8118,7 +8118,7 @@ DropPlayerSub:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	farcall GetPinsirGender
+	predef GetPinsirGender
 	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
@@ -8159,7 +8159,7 @@ DropEnemySub:
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
 	ld hl, wEnemyMonDVs
-	farcall GetPinsirGender
+	predef GetPinsirGender
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2
@@ -8348,7 +8348,7 @@ InitEnemyWildmon:
 	cp PINSIR
 	jr nz, .skip_pinsir
 	ld hl, wEnemyMonDVs
-	farcall GetPinsirGender
+	predef GetPinsirGender
 .skip_pinsir
 	ld a, [wCurPartySpecies]
 	cp UNOWN
