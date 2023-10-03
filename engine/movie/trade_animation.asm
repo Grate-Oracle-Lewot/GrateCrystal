@@ -810,6 +810,8 @@ TradeAnim_GetFrontpic_Player:
 	push af
 	predef GetPikachuForm
 	ld hl, wPlayerTrademonDVs
+	predef GetPinsirGender
+	ld hl, wPlayerTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
@@ -823,6 +825,8 @@ TradeAnim_GetFrontpic_OT:
 	push de
 	push af
 	predef GetPikachuForm
+	ld hl, wOTTrademonDVs
+	predef GetPinsirGender
 	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
