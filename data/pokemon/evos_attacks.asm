@@ -3665,7 +3665,7 @@ SnoconeyEvosAttacks:
 	db 2, SWEET_SCENT
 	db 7, POWDER_SNOW
 	db 11, RAZOR_LEAF
-	db 16, DOUBLE_KICK
+	db 16, ROLLING_KICK
 	db 20, GROWTH
 	db 23, AURORA_BEAM
 	db 27, MIST
