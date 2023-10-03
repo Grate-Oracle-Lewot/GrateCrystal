@@ -857,7 +857,9 @@ StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
 	ld a, [wCurPartySpecies]
 	cp UNOWN
-	jr z, .skip_pikachu
+	jr z, .unown_letter
+	cp PINSIR
+	jr z, .pinsir_gender
 	predef GetPikachuForm
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
@@ -865,7 +867,15 @@ StatsScreen_PlaceFrontpic:
 	jr z, .no_cry
 	jr .cry
 
-.skip_pikachu
+.pinsir_gender
+	farcall GetPinsirGender
+	call StatsScreen_GetAnimationParam
+	jr c, .egg
+	and a
+	jr z, .no_cry
+	jr .cry
+
+.unown_letter
 	predef GetUnownLetter
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
