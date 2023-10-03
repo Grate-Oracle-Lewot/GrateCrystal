@@ -1,6 +1,6 @@
 PinsirPicPointers::
 ; entries correspond to Pinsir genders, two apiece
-	table_width 3 * 2, PikachuPicPointers
+	table_width 3 * 2, PinsirPicPointers
 	dba FemalePinsirFrontpic
 	dba FemalePinsirBackpic
 	dba MalePinsirFrontpic
