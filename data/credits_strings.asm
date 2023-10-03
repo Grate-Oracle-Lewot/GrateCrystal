@@ -195,7 +195,7 @@ CreditsStringsPointers:
 .GameScenario:        db "   Rena Kunisaki@"          ; "シナりオ@"
 .ToolProgramming:     db "      KDLPro@"              ; "ツール　プログラム@"
 .ParametricDesign:    db "    FlamingZelda@"          ; "パラメーター　せってい@"
-.ScriptDesign:        db "      Xavion@"              ; "スクりプト　せってい@"
+.ScriptDesign:        db " Xavion     ISSOtm@"        ; "スクりプト　せってい@"
 .MapDataDesign:       db "    Kurausukun@"            ; "マップデータ　せってい@"
 .MapDesign:           db "    Moustacheski@"          ; "マップ　デザイン@"
 .ProductTesting:      db "    Nescientist@"           ; "デバッグプレイ@"
