@@ -742,5 +742,9 @@ SurfingPikachuBackpic:    INCBIN "gfx/pokemon/pikachu_surfing/back.2bpp.lz"
 FlyingPikachuBackpic:     INCBIN "gfx/pokemon/pikachu_flying/back.2bpp.lz"
 FemalePinsirFrontpic:     INCBIN "gfx/pokemon/pinsir_f/front.animated.2bpp.lz"
 FemalePinsirBackpic:      INCBIN "gfx/pokemon/pinsir_f/back.2bpp.lz"
+
+
+SECTION "Pics 20", ROMX
+
 MalePinsirFrontpic:       INCBIN "gfx/pokemon/pinsir_m/front.animated.2bpp.lz"
 MalePinsirBackpic:        INCBIN "gfx/pokemon/pinsir_m/back.2bpp.lz"
