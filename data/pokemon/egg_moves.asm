@@ -916,12 +916,13 @@ CastaweighEggMoves:
 	db -1 ; end
 
 CattleEggMoves:
-	db IRON_HEAD
-	db FLAME_WHEEL
-	db ROLLING_KICK
 	db REVERSAL
 	db EARTH_POWER
+	db ROLLING_KICK
+	db FLAME_WHEEL
+	db MEGA_KICK
 	db DOUBLE_EDGE
+	db IRON_HEAD
 	db -1 ; end
 
 LarvitarEggMoves:
