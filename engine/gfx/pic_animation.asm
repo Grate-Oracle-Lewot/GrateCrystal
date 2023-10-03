@@ -320,6 +320,11 @@ PokeAnim_InitPicAttributes:
 	call GetFarWRAMByte
 	ld [wPokeAnimPikachuForm], a
 
+	ld a, BANK(wPinsirGender)
+	ld hl, wPinsirGender
+	call GetFarWRAMByte
+	ld [wPokeAnimPinsirGender], a
+
 	ld a, BANK(wUnownLetter)
 	ld hl, wUnownLetter
 	call GetFarWRAMByte
@@ -460,6 +465,11 @@ PokeAnim_StopWaitAnim:
 PokeAnim_IsPikachu:
 	ld a, [wPokeAnimSpecies]
 	cp PIKACHU
+	ret
+
+PokeAnim_IsPinsir:
+	ld a, [wPokeAnimSpecies]
+	cp PINSIR
 	ret
 
 PokeAnim_IsUnown:
@@ -905,16 +915,21 @@ GetMonAnimPointer:
 	ld hl, UnownAnimationPointers
 	ld de, UnownAnimationIdlePointers
 	call PokeAnim_IsUnown
-	jr z, .unown_or_pikachu
+	jr z, .unown_pikachu_pinsir
+	ld c, BANK(PinsirAnimationPointers) ; aka BANK(PinsirAnimationIdlePointers)
+	ld hl, PinsirAnimationPointers
+	ld de, PinsirAnimationIdlePointers
+	call PokeAnim_IsPinsir
+	jr z, .unown_pikachu_pinsir
 	ld c, BANK(PikachuAnimationPointers) ; aka BANK(PikachuAnimationIdlePointers)
 	ld hl, PikachuAnimationPointers
 	ld de, PikachuAnimationIdlePointers
 	call PokeAnim_IsPikachu
-	jr z, .unown_or_pikachu
+	jr z, .unown_pikachu_pinsir
 	ld c, BANK(AnimationPointers) ; aka BANK(AnimationIdlePointers)
 	ld hl, AnimationPointers
 	ld de, AnimationIdlePointers
-.unown_or_pikachu
+.unown_pikachu_pinsir
 
 	ld a, [wPokeAnimIdleFlag]
 	and a
@@ -980,6 +995,11 @@ GetMonFramesPointer:
 	ld c, BANK(UnownsFrames)
 	ld hl, UnownFramesPointers
 	jr z, .got_frames
+	call PokeAnim_IsPinsir
+	ld b, BANK(PinsirFramesPointers)
+	ld c, BANK(PinsirsFrames)
+	ld hl, PinsirFramesPointers
+	jr z, .got_frames
 	call PokeAnim_IsPikachu
 	ld b, BANK(PikachuFramesPointers)
 	ld c, BANK(PikachusFrames)
@@ -1028,14 +1048,18 @@ GetMonBitmaskPointer:
 	call PokeAnim_IsUnown
 	ld a, BANK(UnownBitmasksPointers)
 	ld hl, UnownBitmasksPointers
-	jr z, .unown_or_pikachu
+	jr z, .unown_pikachu_pinsir
+	call PokeAnim_IsPinsir
+	ld a, BANK(PinsirBitmasksPointers)
+	ld hl, PinsirBitmasksPointers
+	jr z, .unown_pikachu_pinsir
 	call PokeAnim_IsPikachu
 	ld a, BANK(PikachuBitmasksPointers)
 	ld hl, PikachuBitmasksPointers
-	jr z, .unown_or_pikachu
+	jr z, .unown_pikachu_pinsir
 	ld a, BANK(BitmasksPointers)
 	ld hl, BitmasksPointers
-.unown_or_pikachu
+.unown_pikachu_pinsir
 	ld [wPokeAnimBitmaskBank], a
 
 	ld a, [wPokeAnimSpeciesOrUnown]
@@ -1066,6 +1090,8 @@ GetMonBitmaskPointer:
 PokeAnim_GetSpeciesOrUnown:
 	call PokeAnim_IsUnown
 	jr z, .unown
+	call PokeAnim_IsPinsir
+	jr z, .pinsir
 	call PokeAnim_IsPikachu
 	jr z, .pikachu
 	ld a, [wPokeAnimSpecies]
@@ -1073,6 +1099,10 @@ PokeAnim_GetSpeciesOrUnown:
 
 .unown
 	ld a, [wPokeAnimUnownLetter]
+	ret
+
+.pinsir
+	ld a, [wPokeAnimPinsirGender]
 	ret
 
 .pikachu
