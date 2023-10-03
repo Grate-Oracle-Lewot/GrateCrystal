@@ -868,7 +868,7 @@ StatsScreen_PlaceFrontpic:
 	jr .cry
 
 .pinsir_gender
-	farcall GetPinsirGender
+	predef GetPinsirGender
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a
