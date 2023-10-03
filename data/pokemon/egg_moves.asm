@@ -891,8 +891,8 @@ SnoconeyEggMoves:
 	db LICK
 	db COTTON_SPORE
 	db LEECH_SEED
+	db DOUBLE_KICK
 	db LOW_KICK
-	db ROLLING_KICK
 	db -1 ; end
 
 JirkEggMoves:
