@@ -10,6 +10,7 @@ INCLUDE "data/pokemon/pic_pointers.asm"
 SECTION "Unown Pic Pointers", ROMX
 
 INCLUDE "data/pokemon/pikachu_pic_pointers.asm"
+INCLUDE "data/pokemon/pinsir_pic_pointers.asm"
 INCLUDE "data/pokemon/unown_pic_pointers.asm"
 
 
@@ -739,3 +740,5 @@ CrystalPikachuBackpic:    INCBIN "gfx/pokemon/pikachu_crystal/back.2bpp.lz"
 FightingPikachuBackpic:   INCBIN "gfx/pokemon/pikachu_fighting/back.2bpp.lz"
 SurfingPikachuBackpic:    INCBIN "gfx/pokemon/pikachu_surfing/back.2bpp.lz"
 FlyingPikachuBackpic:     INCBIN "gfx/pokemon/pikachu_flying/back.2bpp.lz"
+MalePinsirFrontpic:       INCBIN "gfx/pokemon/pinsir_m/front.animated.2bpp.lz"
+MalePinsirBackpic:        INCBIN "gfx/pokemon/pinsir_m/back.2bpp.lz"
