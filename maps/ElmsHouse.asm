@@ -48,6 +48,14 @@ ElmsHousePC:
 	closepokepic
 	opentext
 	writetext ElmsHouseSmeargleMemeText
+	promptbutton
+	closetext
+	refreshscreen
+	pokepic WOOPER
+	waitbutton
+	closepokepic
+	opentext
+	writetext ElmsHouseWooperMemeText
 	waitbutton
 	closetext
 	end
@@ -100,6 +108,10 @@ ElmsHouseLickitungMemeText:
 ElmsHouseSmeargleMemeText:
 	text "draw me like 1 of"
 	line "ur kalos girls"
+	done
+
+ElmsHouseWooperMemeText:
+	text "w00p"
 	done
 
 ElmsHouse_MapEvents:
