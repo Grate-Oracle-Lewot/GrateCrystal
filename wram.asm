@@ -3400,7 +3400,8 @@ wPokeAnimBitmaskCurCol:: db
 wPokeAnimBitmaskCurRow:: db
 wPokeAnimBitmaskCurBit:: db
 wPokeAnimBitmaskBuffer:: ds 7
-	ds 2
+	ds 1
+wPokeAnimPinsirGender:: db
 wPokeAnimStructEnd::
 
 
