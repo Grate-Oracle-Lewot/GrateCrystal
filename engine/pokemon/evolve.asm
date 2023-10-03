@@ -303,6 +303,22 @@ EvolveAfterBattle_MasterLoop:
 	call SetSeenAndCaughtMon
 
 	ld a, [wTempSpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+
+	ld hl, wTempMonDVs
+	predef GetPikachuForm
+
+.skip_pikachu
+	ld a, [wTempSpecies]
+	cp PINSIR
+	jr nz, .skip_pinsir
+
+	ld hl, wTempMonDVs
+	predef GetPinsirGender
+
+.skip_pinsir
+	ld a, [wTempSpecies]
 	cp UNOWN
 	jr nz, .skip_unown
 
