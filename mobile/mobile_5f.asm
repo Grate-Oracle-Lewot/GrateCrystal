@@ -393,7 +393,7 @@ Function17d1f1:
 
 	ld a, [wCurPartySpecies]
 	cp UNOWN
-	jr nz, .asm_17d223
+	jr nz, .check_pinsir
 
 	ld hl, wPartyMon1DVs
 	ld a, [wPartyCount]
@@ -409,7 +409,30 @@ Function17d1f1:
 	ld a, [wUnownLetter]
 	ld [wFirstUnownSeen], a
 
-.asm_17d223
+.check_pinsir
+	ld a, [wCurPartySpecies]
+	cp PINSIR
+	jr nz, .check_pikachu
+
+	ld hl, wPartyMon1DVs
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	predef GetPinsirGender
+	ret
+
+.check_pikachu
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	ret nz
+
+	ld hl, wPartyMon1DVs
+	ld a, [wPartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	predef GetPikachuForm
 	ret
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
