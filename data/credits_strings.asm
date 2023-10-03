@@ -210,8 +210,8 @@ CreditsStringsPointers:
 .Coordination:        db "    i0brendan0@"            ; "コーディネーター@"
 .UsVersionStaff:      db " Rangi42     Sylvie@"
 .UsCoordination:      db "    FrenchOrange@"
-.TextTranslation:     db "      ariscop@"
-.PaadTesting:         db "      anmart@"
+.TextTranslation:     db "     EXGomora@"
+.PaadTesting:         db " anmart   ariscope@"
 
 .Copyright:
 	;    (C) 1  9  9  5 - 2  0  0  1     N  i  n  t  e  n  d  o
