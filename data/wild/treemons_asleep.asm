@@ -10,15 +10,10 @@ AsleepTreeMonsNite:
 	db -1 ; end
 
 AsleepTreeMonsDay:
+AsleepTreeMonsMorn:
 	db VENONAT
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
 	db HERACROSS
-	db -1 ; end
-
-AsleepTreeMonsMorn:
-	db HOOTHOOT
-	db NOCTOWL
-	db SPINARAK
 	db -1 ; end
