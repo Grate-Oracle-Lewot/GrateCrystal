@@ -1457,6 +1457,7 @@ HandleMysteryberry:
 	ld a, c
 	cp NUM_MOVES
 	jr nz, .loop
+	ret
 
 .restore
 	; lousy hack
