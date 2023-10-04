@@ -5906,6 +5906,7 @@ MoveInfoBox:
 	ld b, a
 	hlcoord 2, 10
 	predef PrintMoveType
+	ret
 
 .Disabled:
 	db "Disabled!@"
