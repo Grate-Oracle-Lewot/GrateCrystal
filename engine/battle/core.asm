@@ -5911,11 +5911,6 @@ MoveInfoBox:
 
 .PrintPP:
 	hlcoord 5, 11
-	ld a, [wLinkMode] ; What's the point of this check?
-	cp LINK_MOBILE
-	jr c, .ok
-	hlcoord 5, 11
-.ok
 	push hl
 	ld de, wStringBuffer1
 	lb bc, 1, 2
