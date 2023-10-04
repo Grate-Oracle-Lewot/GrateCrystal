@@ -1416,7 +1416,7 @@ HandleMysteryberry:
 	callfar GetUserItem
 	ld a, b
 	cp HELD_RESTORE_PP
-	jr nz, .quit
+	ret nz
 	ld hl, wPartyMon1PP
 	ld a, [wCurBattleMon]
 	call GetPartyLocation
@@ -6347,7 +6347,7 @@ LoadEnemyMon:
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jr nc, .Happiness
+	jp nc, .Happiness
 ; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
 	cp 5 percent
