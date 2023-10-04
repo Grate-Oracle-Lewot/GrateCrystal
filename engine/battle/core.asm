@@ -4672,7 +4672,7 @@ UseConfusionHealingItem:
 	ret
 
 HandleStatBoostingHeldItems:
-; The effects handled here are not used in-game.
+; The effects handled here are not used in the vanilla game. In Grate Crystal they're used for the X items.
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
@@ -5858,7 +5858,7 @@ MoveInfoBox:
 	hlcoord 1, 10
 	ld de, .Disabled
 	call PlaceString
-	jr .done
+	ret
 
 .not_disabled
 	ld hl, wMenuCursorY
@@ -5905,9 +5905,6 @@ MoveInfoBox:
 	ld b, a
 	hlcoord 2, 10
 	predef PrintMoveType
-
-.done
-	ret
 
 .Disabled:
 	db "Disabled!@"
