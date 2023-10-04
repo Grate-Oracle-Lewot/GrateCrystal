@@ -8652,7 +8652,7 @@ ReadAndPrintLinkBattleRecord:
 	hlcoord 6, 4
 	ld de, sLinkBattleWins
 	call .PrintZerosIfNoSaveFileExists
-	jr c, .quit
+	ret c
 
 	lb bc, 2, 4
 	call PrintNum
@@ -8670,8 +8670,6 @@ ReadAndPrintLinkBattleRecord:
 
 	lb bc, 2, 4
 	call PrintNum
-
-.quit
 	ret
 
 .PrintZerosIfNoSaveFileExists:
