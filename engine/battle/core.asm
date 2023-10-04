@@ -6345,7 +6345,7 @@ LoadEnemyMon:
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jr nc, .Magikarp
+	jr nc, .Happiness
 ; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
 	cp 5 percent
