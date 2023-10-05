@@ -9,7 +9,7 @@
 	db PROTEIN, SCOPE_LENS ; items
 	db GENDER_F50 ; gender ratio
 	db 13 ; step cycles to hatch
-	INCBIN "gfx/pokemon/pinsir_f/front.dimensions"
+	INCBIN "gfx/pokemon/pinsir/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_BUG, EGG_WATER_3 ; egg groups
 
