@@ -6,8 +6,6 @@ GetTrademonFrontpic:
 	push af
 	predef GetPikachuForm
 	ld hl, wOTTrademonDVs
-	predef GetPinsirGender
-	ld hl, wOTTrademonDVs
 	predef GetUnownLetter
 	pop af
 	ld [wCurPartySpecies], a
