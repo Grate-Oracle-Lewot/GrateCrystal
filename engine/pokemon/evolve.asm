@@ -311,14 +311,6 @@ EvolveAfterBattle_MasterLoop:
 
 .skip_pikachu
 	ld a, [wTempSpecies]
-	cp PINSIR
-	jr nz, .skip_pinsir
-
-	ld hl, wTempMonDVs
-	predef GetPinsirGender
-
-.skip_pinsir
-	ld a, [wTempSpecies]
 	cp UNOWN
 	jr nz, .skip_unown
 
