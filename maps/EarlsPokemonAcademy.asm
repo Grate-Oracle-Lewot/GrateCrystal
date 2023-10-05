@@ -18,15 +18,8 @@ AcademyEarl:
 	opentext
 	writetext AcademyEarlIntroText
 	yesorno
-	iffalse .Part1
+	iffalse .Done
 	writetext AcademyEarlTeachHowToWinText
-	yesorno
-	iffalse .Done
-.Part1:
-	writetext AcademyEarlTeachMoreText
-	yesorno
-	iffalse .Done
-	writetext AcademyEarlTeachHowToRaiseWellText
 	waitbutton
 	closetext
 	end
@@ -211,20 +204,6 @@ AcademyEarlTeachHowToWinText:
 	para "Change order in"
 	line "list, make battle"
 	cont "easy, maybe!"
-
-	para "More from me you"
-	line "want to hear?"
-	done
-
-AcademyEarlTeachMoreText:
-	text "So, want to know"
-	line "how to raise"
-	cont "#MON well?"
-	done
-
-AcademyEarlTeachHowToRaiseWellText:
-	text "Fine! Teach you,"
-	line "I will!"
 
 	para "If #MON come"
 	line "out in battle even"
@@ -426,6 +405,9 @@ AcademyFreezeText:
 
 	para "Thaw it out with"
 	line "an ICE HEAL."
+
+	para "Getting burned"
+	line "will also thaw it."
 
 	para "Holding a HAND-"
 	line "WARMER will block"
