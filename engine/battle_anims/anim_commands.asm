@@ -911,8 +911,6 @@ BattleAnimCmd_Transform:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	predef GetPinsirGender
-	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles0 tile $00
 	predef GetMonFrontpic
@@ -923,8 +921,6 @@ BattleAnimCmd_Transform:
 	ld [wCurPartySpecies], a
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
-	ld hl, wEnemyMonDVs
-	predef GetPinsirGender
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles0 tile $00
@@ -1150,8 +1146,6 @@ BattleAnimCmd_BeatUp:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	predef GetPinsirGender
-	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $00
 	predef GetMonFrontpic
@@ -1160,8 +1154,6 @@ BattleAnimCmd_BeatUp:
 .player
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
-	ld hl, wEnemyMonDVs
-	predef GetPinsirGender
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
