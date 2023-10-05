@@ -258,11 +258,8 @@ PokemonPicPointers::
 	dba ElectabuzzBackpic
 	dba MagmarFrontpic
 	dba MagmarBackpic
-
-	; Pinsir pics have their own table. See PinsirPicPointers
-	dbw -1, -1
-	dbw -1, -1
-
+	dba PinsirFrontpic
+	dba PinsirBackpic
 	dba TaurosFrontpic
 	dba TaurosBackpic
 	dba MagikarpFrontpic
