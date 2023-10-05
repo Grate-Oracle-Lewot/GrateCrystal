@@ -4218,8 +4218,6 @@ SendOutPlayerMon:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	predef GetPinsirGender
-	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	hlcoord 1, 5
 	ld b, 7
@@ -6340,27 +6338,18 @@ LoadEnemyMon:
 ; Unown
 	ld a, [wTempEnemyMonSpecies]
 	cp UNOWN
-	jr nz, .Pinsir
+	jr nz, .Pikachu
 
 ; Get letter based on DVs
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 	call CheckUnownLetter
-	jp nc, .Happiness
+	jr nc, .Happiness
 ; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
 	call BattleRandom
 	cp 5 percent
 	jr nc, .GenerateDVs ; reroll DVs
-	jr .Happiness
-
-.Pinsir:
-	ld a, [wTempEnemyMonSpecies]
-	cp PINSIR
-	jr nz, .Pikachu
-; Get form based on DVs
-	ld hl, wEnemyMonDVs
-	predef GetPinsirGender
 	jr .Happiness
 
 .Pikachu:
@@ -8105,8 +8094,6 @@ DropPlayerSub:
 	ld hl, wBattleMonDVs
 	predef GetPikachuForm
 	ld hl, wBattleMonDVs
-	predef GetPinsirGender
-	ld hl, wBattleMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2 tile $31
 	predef GetMonBackpic
@@ -8145,8 +8132,6 @@ DropEnemySub:
 	call GetBaseData
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
-	ld hl, wEnemyMonDVs
-	predef GetPinsirGender
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 	ld de, vTiles2
@@ -8331,12 +8316,6 @@ InitEnemyWildmon:
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
 .skip_pikachu
-	ld a, [wCurPartySpecies]
-	cp PINSIR
-	jr nz, .skip_pinsir
-	ld hl, wEnemyMonDVs
-	predef GetPinsirGender
-.skip_pinsir
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr nz, .skip_unown
