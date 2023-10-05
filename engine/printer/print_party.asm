@@ -213,16 +213,12 @@ PrintPartyMonPage1:
 	ld hl, wTempMonDVs
 	predef GetPikachuForm
 	ld hl, wTempMonDVs
-	predef GetPinsirGender
-	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	ld hl, wBoxAlignment
 	xor a
 	ld [hl], a
 	ld a, [wCurPartySpecies]
 	cp UNOWN
-	jr z, .got_alignment
-	cp PINSIR
 	jr z, .got_alignment
 	cp PIKACHU
 	jr z, .got_alignment
