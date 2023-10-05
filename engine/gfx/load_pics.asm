@@ -103,12 +103,6 @@ GetPikachuForm:
 	ld [wPikachuForm], a
 	ret
 
-GetPinsirGender:
-; Return Pinsir gender (gender +1) in wPinsirGender based on DVs at hl
-	farcall GetGender
-	inc a
-	ld [wPinsirGender], a
-
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -180,8 +174,6 @@ GetFrontpicPointer:
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr z, .pikachu
-	cp PINSIR
-	jr z, .pinsir
 	cp UNOWN
 	jr z, .unown
 	ld hl, PokemonPicPointers
@@ -192,11 +184,6 @@ GetFrontpicPointer:
 	ld hl, PikachuPicPointers
 	ld a, [wPikachuForm]
 	ld d, BANK(PikachuPicPointers)
-	jr .ok
-.pinsir
-	ld hl, PinsirPicPointers
-	ld a, [wPinsirGender]
-	ld d, BANK(PinsirPicPointers)
 	jr .ok
 .unown
 	ld hl, UnownPicPointers
@@ -320,19 +307,10 @@ GetMonBackpic:
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
 	cp UNOWN
-	jr nz, .check_pinsir
+	jr nz, .check_pikachu
 	ld hl, UnownPicPointers
 	ld a, c
 	ld d, BANK(UnownPicPointers)
-	jr .ok
-.check_pinsir
-	cp PINSIR
-	jr nz, .check_pikachu
-	ld hl, wBattleMonDVs
-	predef GetPinsirGender
-	ld hl, PinsirPicPointers
-	ld a, [wPinsirGender]
-	ld d, BANK(PinsirPicPointers)
 	jr .ok
 .check_pikachu
 	cp PIKACHU
