@@ -858,17 +858,7 @@ StatsScreen_PlaceFrontpic:
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr z, .unown_letter
-	cp PINSIR
-	jr z, .pinsir_gender
 	predef GetPikachuForm
-	call StatsScreen_GetAnimationParam
-	jr c, .egg
-	and a
-	jr z, .no_cry
-	jr .cry
-
-.pinsir_gender
-	predef GetPinsirGender
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a
