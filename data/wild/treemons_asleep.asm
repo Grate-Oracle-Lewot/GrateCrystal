@@ -15,4 +15,5 @@ AsleepTreeMonsMorn:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
+	db HERACROSS
 	db -1 ; end
