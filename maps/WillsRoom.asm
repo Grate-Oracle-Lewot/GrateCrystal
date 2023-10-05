@@ -111,17 +111,18 @@ WillScript_WillBeatenText:
 	done
 
 WillScript_WillDefeatText:
-	text "My other book, THE"
-	line "MOON HOUSE,"
+	text "I've got some more"
+	line "books in the"
 
-	para "might not be out"
-	line "before this hack,"
+	cont "works, like THE"
+	cont "MOON HOUSE and"
+	cont "DREAMSEA."
 
-	para "but look for it"
-	line "eventually."
+	para "Depending on when"
+	line "you're playing"
 
-	para "I've got some more"
-	line "in the works, too."
+	para "this, they might"
+	line "be out already."
 
 	para "Just remember the"
 	line "name: A.D. JANSEN."
