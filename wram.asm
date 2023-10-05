@@ -2662,9 +2662,7 @@ wCurBaseDataEnd::
 
 wPikachuForm:: db
 
-wPinsirGender:: db
-
-	ds 4
+	ds 5
 
 wCurDamage:: dw
 
@@ -3400,8 +3398,7 @@ wPokeAnimBitmaskCurCol:: db
 wPokeAnimBitmaskCurRow:: db
 wPokeAnimBitmaskCurBit:: db
 wPokeAnimBitmaskBuffer:: ds 7
-	ds 1
-wPokeAnimPinsirGender:: db
+	ds 2
 wPokeAnimStructEnd::
 
 
