@@ -218,7 +218,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - Hail boosts Ice-type moves as well as dealing its regular damage
-- Automatic weather in certain areas: sunlight in the National Park and the top of the Tin Tower, rain inside Slowpoke Well and the Whirl Islands, Hail in the Ice Path and Lugia's chamber, and Sandstorm in Victory Road
+- Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements, but give out lesser sellable items instead of Nuggets
 - All Kanto Gym Leaders give out TMs when defeated (some of these could already be bought or found earlier, but hey, it's something)
