@@ -292,18 +292,6 @@ NUM_POKEMON EQU const_value - 1
 	const PIKACHU_FLYING   ;  6
 NUM_PIKACHU_FORMS EQU const_value - 1 ; 6
 
-; Pinsir forms
-; indexes for:
-; - PinsirPicPointers (see data/pokemon/pinsir_pic_pointers.asm)
-; - PinsirAnimationPointers (see gfx/pokemon/pinsir_anim_pointers.asm)
-; - PinsirAnimationIdlePointers (see gfx/pokemon/pinsir_idle_pointers.asm)
-; - PinsirBitmasksPointers (see gfx/pokemon/pinsir_bitmask_pointers.asm)
-; - PinsirFramesPointers (see gfx/pokemon/pinsir_frame_pointers.asm)
-	const_def 1
-	const PINSIR_FEMALE    ;  1
-	const PINSIR_MALE      ;  2
-NUM_PINSIR_GENDERS EQU const_value - 1 ; 2
-
 ; Unown forms
 ; indexes for:
 ; - UnownWords (see data/pokemon/unown_words.asm)
