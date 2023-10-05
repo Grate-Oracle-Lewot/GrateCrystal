@@ -12,20 +12,24 @@ auto_weather_map: MACRO
 ENDM
 	auto_weather_map NATIONAL_PARK, AUTOMATIC_SUN
 	auto_weather_map NATIONAL_PARK_BUG_CONTEST, AUTOMATIC_SUN
+	auto_weather_map SEAFOAM_GYM, AUTOMATIC_SUN
 	auto_weather_map TIN_TOWER_ROOF, AUTOMATIC_SUN
 	auto_weather_map SLOWPOKE_WELL_B1F, AUTOMATIC_RAIN
 	auto_weather_map SLOWPOKE_WELL_B2F, AUTOMATIC_RAIN
+	auto_weather_map CERULEAN_GYM, AUTOMATIC_RAIN
 	auto_weather_map WHIRL_ISLAND_SW, AUTOMATIC_RAIN
 	auto_weather_map WHIRL_ISLAND_SE, AUTOMATIC_RAIN
 	auto_weather_map WHIRL_ISLAND_B1F, AUTOMATIC_RAIN
 	auto_weather_map WHIRL_ISLAND_B2F, AUTOMATIC_RAIN
 	auto_weather_map WHIRL_ISLAND_LUGIA_CHAMBER, AUTOMATIC_HAIL
+	auto_weather_map MAHOGANY_GYM, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_1F, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B1F, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B2F_MAHOGANY_SIDE, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B2F_BLACKTHORN_SIDE, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B3F, AUTOMATIC_HAIL
 	auto_weather_map VICTORY_ROAD, AUTOMATIC_SANDSTORM
+	auto_weather_map PEWTER_GYM, AUTOMATIC_SANDSTORM
 	db 0 ; end
 
 AutomaticWeatherEffects:
