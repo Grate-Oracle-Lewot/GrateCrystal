@@ -352,6 +352,11 @@ AcademyPoisonText:
 	line "it in the first"
 	cont "place, hold an"
 	cont "ANTIVENOM."
+
+	para "Poison-type #-"
+	line "MON can't be pois-"
+	cont "oned, nor can"
+	cont "steel-types."
 	done
 
 AcademyParalysisText:
@@ -378,8 +383,8 @@ AcademySleepText:
 	cont "battle, but not"
 	cont "outside of battle."
 
-	para "Wake it up with"
-	line "an AWAKENING."
+	para "Cure sleep with an"
+	line "AWAKENING."
 
 	para "Prevent sleep by"
 	line "holding a NOISE-"
@@ -402,6 +407,10 @@ AcademyBurnText:
 	para "Holding ALOE VERA"
 	line "will block burns"
 	cont "from ocurring."
+
+	para "Fire- and water-"
+	line "types can't be"
+	cont "burned."
 	done
 
 AcademyFreezeText:
@@ -425,15 +434,9 @@ AcademyFreezeText:
 	line "pening in the"
 	cont "first place."
 
-	para "If a frozen #-"
-	line "MON is hit by an"
-
-	para "attack that can"
-	line "cause a burn, it"
-
-	para "will defrost, but"
-	line "the foe's ATTACK"
-	cont "will go up!"
+	para "Ice and fire #-"
+	line "MON are immune to"
+	cont "being frozen."
 	done
 
 AcademyNotebookText:
