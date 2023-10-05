@@ -2,9 +2,13 @@
 
 AsleepTreeMonsNite:
 	db CATERPIE
+	db BUTTERFREE
 	db WEEDLE
+	db BEEDRILL
 	db SPEAROW
+	db FEAROW
 	db EKANS
+	db ARBOK
 	db LEDYBA
 	db AIPOM
 	db -1 ; end
@@ -15,5 +19,4 @@ AsleepTreeMonsMorn:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
-	db HERACROSS
 	db -1 ; end
