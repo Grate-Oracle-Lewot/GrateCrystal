@@ -1,4 +1,4 @@
-	db "WORM@" ; species name
+	db "VERIHUNGRY@" ; species name
 	dw 100, 60 ; height, weight
 
 	db   "A weak larval form"
