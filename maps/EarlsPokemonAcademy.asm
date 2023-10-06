@@ -406,9 +406,6 @@ AcademyFreezeText:
 	para "Thaw it out with"
 	line "an ICE HEAL."
 
-	para "Getting burned"
-	line "will also thaw it."
-
 	para "Holding a HAND-"
 	line "WARMER will block"
 
