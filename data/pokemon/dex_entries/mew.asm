@@ -1,10 +1,10 @@
 	db "ANCESTOR@" ; species name
 	dw 104, 90 ; height, weight
 
-	db   "It can use any"
-	next "battle move"
-	next "skillfully, but it"
+	db   "Alone for eons as"
+	next "the last remnant"
+	next "of an extinct"
 
-	page "prefers to play"
-	next "or cuddle."
-	next "@"
+	page "ecosystem, all"
+	next "modern life evolv-"
+	next "ed from it.@"
