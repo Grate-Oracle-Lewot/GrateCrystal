@@ -126,9 +126,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon PIKACHU, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
