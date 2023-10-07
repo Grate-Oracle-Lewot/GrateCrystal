@@ -508,7 +508,7 @@ StatsScreen_PlaceFloatIcon:
 	call IsInByteArray
 	ret nc
 	hlcoord 7, 0
-	ld [hl], "<BOLD_M>"
+	ld [hl], "<DO>"
 	ret
 
 StatsScreen_LoadGFX:
