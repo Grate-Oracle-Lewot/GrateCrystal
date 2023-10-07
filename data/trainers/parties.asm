@@ -1489,7 +1489,7 @@ GruntMGroup:
 	; GRUNTM (6)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 35, PRIMEAPE
-	db 36, PRIMEAPE
+	db 38, GRANBULL
 	db -1 ; end
 
 	; GRUNTM (7)
