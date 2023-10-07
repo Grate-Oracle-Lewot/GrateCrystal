@@ -3185,9 +3185,9 @@ SteelixEvosAttacks:
 SnubbullEvosAttacks:
 	db EVOLVE_LEVEL, 23, GRANBULL
 	db 0 ; no more evolutions
-	db 1, RAGE
+	db 1, LICK
 	db 2, TAIL_WHIP
-	db 4, LICK
+	db 4, VICEGRIP
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
@@ -3200,9 +3200,9 @@ SnubbullEvosAttacks:
 
 GranbullEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, RAGE
+	db 1, LICK
 	db 2, TAIL_WHIP
-	db 4, LICK
+	db 4, VICEGRIP
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
