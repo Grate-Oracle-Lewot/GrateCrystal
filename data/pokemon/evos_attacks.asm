@@ -954,10 +954,9 @@ MachopEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 31, VITAL_THROW
-	db 37, CROSS_CHOP
-	db 43, SCARY_FACE
-	db 49, SUBMISSION
-	db 52, DYNAMICPUNCH
+	db 37, SCARY_FACE
+	db 43, SUBMISSION
+	db 49, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
@@ -970,10 +969,9 @@ MachokeEvosAttacks:
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
 	db 34, VITAL_THROW
-	db 43, CROSS_CHOP
-	db 52, SCARY_FACE
-	db 61, SUBMISSION
-	db 64, DYNAMICPUNCH
+	db 43, SCARY_FACE
+	db 52, SUBMISSION
+	db 61, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 MachampEvosAttacks:
@@ -986,10 +984,9 @@ MachampEvosAttacks:
 	db 25, FORESIGHT
 	db 27, COMET_PUNCH
 	db 34, VITAL_THROW
-	db 43, CROSS_CHOP
-	db 52, SCARY_FACE
-	db 61, SUBMISSION
-	db 64, DYNAMICPUNCH
+	db 43, SCARY_FACE
+	db 52, SUBMISSION
+	db 61, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 BellsproutEvosAttacks:
@@ -1352,7 +1349,8 @@ GastlyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 4, SPITE
+	db 9, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
@@ -1369,7 +1367,8 @@ HaunterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 4, SPITE
+	db 9, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
@@ -1385,7 +1384,8 @@ GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
-	db 8, SPITE
+	db 4, SPITE
+	db 9, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
