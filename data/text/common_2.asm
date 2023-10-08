@@ -1373,14 +1373,14 @@ _PokemonSwapItemText::
 	text_ram wStringBuffer1
 	text " and"
 
-	para "made it hold"
+	para "had it hold"
 	line "@"
 	text_ram wStringBuffer2
 	text "."
 	prompt
 
 _PokemonHoldItemText::
-	text "Made @"
+	text "Had @"
 	text_ram wMonOrItemNameBuffer
 	text_start
 	line "hold @"
