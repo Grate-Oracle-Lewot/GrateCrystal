@@ -1897,7 +1897,6 @@ MagmarEvosAttacks:
 	db 42, FLAMETHROWER
 	db 49, CONFUSE_RAY
 	db 57, FIRE_BLAST
-	db 64, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
@@ -2604,6 +2603,40 @@ LanturnEvosAttacks:
 ;	db 42, SKULL_BASH
 ;	db 0 ; no more level-up moves
 
+; CleffaEvosAttacks:
+;	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
+;	db 0 ; no more evolutions
+;	db 1, POUND
+;	db 1, CHARM
+;	db 4, ENCORE
+;	db 8, SWEET_KISS
+;	db 11, FAIRY_WIND
+;	db 14, DOUBLESLAP
+;	db 17, MINIMIZE
+;	db 21, LIGHT_SCREEN
+;	db 24, METRONOME
+;	db 30, MOONLIGHT
+;	db 37, DAZZLY_GLEAM
+;	db 42, MOONBLAST
+;	db 0 ; no more level-up moves
+
+; IgglybuffEvosAttacks:
+;	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
+;	db 0 ; no more evolutions
+;	db 1, SING
+;	db 1, CHARM
+;	db 4, DEFENSE_CURL
+;	db 9, POUND
+;	db 12, FAIRY_WIND
+;	db 16, SWEET_KISS
+;	db 19, ROLLOUT
+;	db 23, PLAY_ROUGH
+;	db 27, REST
+;	db 32, BODY_SLAM
+;	db 37, DOUBLE_EDGE
+;	db 42, BELLY_DRUM
+;	db 0 ; no more level-up moves
+
 FlogistanEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
@@ -2649,40 +2682,6 @@ WhimsicottEvosAttacks:
 	db 1, LEECH_SEED
 	db 1, COTTON_SPORE
 	db 0 ; no more level-up moves
-
-; CleffaEvosAttacks:
-;	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
-;	db 0 ; no more evolutions
-;	db 1, POUND
-;	db 1, CHARM
-;	db 4, ENCORE
-;	db 8, SWEET_KISS
-;	db 11, FAIRY_WIND
-;	db 14, DOUBLESLAP
-;	db 17, MINIMIZE
-;	db 21, LIGHT_SCREEN
-;	db 24, METRONOME
-;	db 30, MOONLIGHT
-;	db 37, DAZZLY_GLEAM
-;	db 42, MOONBLAST
-;	db 0 ; no more level-up moves
-
-; IgglybuffEvosAttacks:
-;	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
-;	db 0 ; no more evolutions
-;	db 1, SING
-;	db 1, CHARM
-;	db 4, DEFENSE_CURL
-;	db 9, POUND
-;	db 12, FAIRY_WIND
-;	db 16, SWEET_KISS
-;	db 19, ROLLOUT
-;	db 23, PLAY_ROUGH
-;	db 27, REST
-;	db 32, BODY_SLAM
-;	db 37, DOUBLE_EDGE
-;	db 42, BELLY_DRUM
-;	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
@@ -2995,7 +2994,7 @@ EspeonEvosAttacks:
 	db 23, QUICK_ATTACK
 	db 30, SWIFT
 	db 36, PSYBEAM
-	db 42, PSYCH_UP
+	db 42, BARRIER
 	db 47, PSYCHIC_M
 	db 52, MORNING_SUN
 	db 0 ; no more level-up moves
