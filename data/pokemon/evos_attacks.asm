@@ -2257,7 +2257,7 @@ MewEvosAttacks:
 	db 60, RECOVER
 	db 70, FUTURE_SIGHT
 	db 80, ANCIENTPOWER
-	db 90, MOONBLAST
+	db 90, BARRIER
 	db 0 ; no more level-up moves
 
 ChikoritaEvosAttacks:
