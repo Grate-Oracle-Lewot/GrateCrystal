@@ -2045,6 +2045,7 @@ PorygonEvosAttacks:
 	db 44, ZAP_CANNON
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
+	db 60, BARRIER
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:
@@ -3554,6 +3555,7 @@ Porygon2EvosAttacks:
 	db 44, ZAP_CANNON
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
+	db 60, BARRIER
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
