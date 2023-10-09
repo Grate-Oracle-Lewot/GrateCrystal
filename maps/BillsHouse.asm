@@ -71,8 +71,7 @@ BillsGrandpa:
 	sjump .ShowedStaryu
 
 .GotWaterStone:
-	checkver
-	iftrue .AskVulpix
+	sjump .AskVulpix
 	writetext BillsGrandpaGrowlitheText
 	promptbutton
 	writetext BillsGrandpaAskToSeeMonText
