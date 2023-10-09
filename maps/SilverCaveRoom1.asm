@@ -95,7 +95,7 @@ KimonoGirlKyoshiBeatenText:
 KimonoGirlKyoshiAfterBattleText:
 	text "You must be the"
 	line "one who defeated"
-	cont "my five daughters."
+	cont "my granddaughters."
 
 	para "Now I understand"
 	line "how. Your spirit"
