@@ -17,6 +17,10 @@ BillsBrotherText:
 	text "My grandpa is at "
 	line "my brother BILL's"
 	cont "on CERULEAN CAPE."
+
+	para "My grandma went to"
+	line "train at the cave"
+	cont "in MT.SILVER."
 	done
 
 BillsBrothersHouseYoungsterText:
