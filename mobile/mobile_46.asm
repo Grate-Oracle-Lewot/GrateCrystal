@@ -3945,15 +3945,7 @@ BattleTower_UbersCheck:
 	ld a, [wPartyCount]
 .loop
 	push af
-	ld a, [de]
-	cp MEWTWO
-	jr z, .uber
-	cp MEW
-	jr z, .uber
-	cp LUGIA
-	jr c, .next
-	cp NUM_POKEMON + 1
-	jr nc, .next
+	jr .next ; ubers allowed at low levels in Grate Crystal
 .uber
 	ld a, [hl]
 	cp 70
