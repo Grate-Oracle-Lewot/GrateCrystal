@@ -24,9 +24,11 @@ BillsBrotherText:
 	done
 
 BillsBrothersHouseYoungsterText:
-	text "I saw these weird,"
-	line "slow #MON on"
-	cont "CYCLING ROAD."
+	text "Our family's pretty"
+	line "big. I have two"
+
+	para "brothers and six"
+	line "sisters!"
 	done
 
 BillsBrothersHouse_MapEvents:
