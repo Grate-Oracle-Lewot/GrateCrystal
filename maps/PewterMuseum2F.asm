@@ -9,8 +9,20 @@ PewterMuseum2F_MapScripts:
 PewterMuseum2FGrampsScript:
 	faceplayer
 	opentext
-	writetext MoonLandingGrampsText
+	writetext MuseumGrampsMoonText
 	waitbutton
+	checkevent EVENT_GOT_SILVER_WING
+	iftrue .GotSilverWing
+	writetext MuseumGrampsPontificateText
+	yesorno
+	iffalse .SaidNo
+	writetext MuseumGrampsSilverWingText
+	promptbutton
+	verbosegiveitem SILVER_WING
+	setevent EVENT_GOT_SILVER_WING
+.SaidNo:
+	writetext MuseumGrampsNoText
+.GotSilverWing:
 	closetext
 	turnobject PEWTERMUSEUM2F_GRAMPS, UP
 	end
@@ -18,7 +30,7 @@ PewterMuseum2FGrampsScript:
 MoonRockSignScript:
 	jumptext MoonRockSignText
 
-MoonLandingGrampsText:
+MuseumGrampsMoonText:
 	text "July 20th, 1969…"
 	line "The day man first"
 
@@ -37,6 +49,68 @@ MoonLandingGrampsText:
 	para "You never know!"
 	line "I've still got"
 	cont "some zip left!"
+	done
+
+MuseumGrampsPontificateText:
+	text "Oh! Pardon me. I"
+	line "don't suppose"
+
+	para "you came here to"
+	line "hear an old man"
+	cont "pontificate."
+	done
+
+MuseumGrampsNoText:
+	text "I'll let you alone"
+	line "now."
+	done
+
+MuseumGrampsSilverWingText:
+	text "Oho! You've got"
+	line "some wit, I see!"
+
+	para "In that case,"
+	line "here's another"
+	cont "tale…"
+
+	para "Once as a wee lad,"
+	line "I was fishing in a"
+	cont "little dinghy…"
+
+	para "I got caught in a"
+	line "storm and couldn't"
+
+	para "find my way to"
+	line "shore…"
+
+	para "Just as a huge"
+	line "wave rose above"
+
+	para "me, a #MON's"
+	line "attack came out of"
+
+	para "nowhere and froze"
+	line "the wave solid!"
+
+	para "I never saw the"
+	line "#MON, but I did"
+
+	para "find a strange"
+	line "feather in my boat"
+
+	para "when I made it"
+	line "back home."
+
+	para "I've carried that"
+	line "feather around to"
+
+	para "this very day. But"
+	line "I'd like to keep"
+
+	para "the story going."
+	line "So…"
+
+	para "Here you go!"
 	done
 
 MoonRockSignText:
