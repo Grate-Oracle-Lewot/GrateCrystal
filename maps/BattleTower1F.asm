@@ -605,11 +605,11 @@ Text_BattleTowerRules:
 	line "hold must also be"
 	cont "different."
 
-	para "Certain #MON"
-	line "may also have"
+	para "#MON are healed"
+	line "between battles."
 
-	para "level restrictions"
-	line "placed on them."
+	para "Defeat seven"
+	line "opponents to win."
 	done
 
 Text_BattleTower_LeftWithoutSaving:
