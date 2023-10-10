@@ -22,22 +22,7 @@ PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
 
 PewterCityGrampsScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_SILVER_WING
-	iftrue .GotSilverWing
-	writetext PewterCityGrampsText
-	promptbutton
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
-	closetext
-	end
-
-.GotSilverWing:
-	writetext PewterCityGrampsText_GotSilverWing
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PewterCityGrampsText
 
 PewterCitySign:
 	jumptext PewterCitySignText
@@ -88,30 +73,23 @@ PewterCityGrampsText:
 	line "the way out here"
 	cont "from JOHTO?"
 
-	para "That brings back"
-	line "memories. When I"
+	para "I've heard stories"
+	line "that two bird-like"
 
-	para "was young, I went"
-	line "to JOHTO to train."
+	para "dragons once lived"
+	line "atop two towers in"
+	cont "JOHTO."
 
-	para "You remind me so"
-	line "much of what I was"
+	para "One represented"
+	line "the sun, and the"
+	cont "other, the moon."
 
-	para "like as a young"
-	line "man."
+	para "Speaking of, the"
+	line "MUSEUM in town has"
 
-	para "Here. I want you"
-	line "to have this item"
-	cont "I found in JOHTO."
-	done
-
-PewterCityGrampsText_GotSilverWing:
-	text "Going to new, un-"
-	line "known places and"
-	cont "seeing new people…"
-
-	para "Those are the joys"
-	line "of travel."
+	para "moon science dis-"
+	line "plays. You should"
+	cont "go and see!"
 	done
 
 PewterCitySignText:
