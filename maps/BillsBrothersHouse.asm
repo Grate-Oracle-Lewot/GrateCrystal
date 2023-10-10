@@ -24,11 +24,12 @@ BillsBrotherText:
 	done
 
 BillsBrothersHouseYoungsterText:
-	text "Our family's pretty"
-	line "big. I have two"
+	text "You're not allowed"
+	line "to walk CYCLING"
+	cont "ROAD."
 
-	para "brothers and six"
-	line "sisters!"
+	para "You have to ride a"
+	line "bike."
 	done
 
 BillsBrothersHouse_MapEvents:
