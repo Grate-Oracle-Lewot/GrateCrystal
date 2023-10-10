@@ -412,9 +412,9 @@ MartSaffron:
 MartMtMoon:
 	db 7 ; # items
 	db POKE_DOLL
-	db FRESH_WATER
-	db SODA_POP
-	db LEMONADE
+	db BRIGHTPOWDER
+	db SMOKE_BALL
+	db LIGHT_BALL
 	db DUSK_BALL
 	db EON_MAIL
 	db TM_MOONBLAST
