@@ -1153,12 +1153,6 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4f], a
 	ld a, $1
 	ldh [rSVBK], a
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	jr nz, .asm_11896b
-	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
-	ld a, 5                 ; 4 levels to choose from, including 'Cancel'-option
-	jr .asm_118970
 
 .asm_11896b
 	ld hl, Strings_L10ToL100 ; Address to list of strings with the choosable levels
