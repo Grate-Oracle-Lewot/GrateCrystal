@@ -285,7 +285,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- Occasionally, Pokémon seem to suddenly have the wrong effective stats mid-battle, and/or Pikachu forms will be missing their secondary types. I can never replicate this, so I don't know what triggers it, but it might have to do with switching out. The effect isn't permanent.
+- Occasionally, at random, yours or the opponent's Pokémon will suddenly seem to have minimal effective stats in mid-battle, despite no changes to displayed stat values. This is probably a RAM error, but I have no idea how to fix it, or to debug it since it doesn't happen consistently. The effect isn't permanent, so your save file won't be ruined, but you'll probably end up losing the battle if you're the one afflicted.
 
 - Don't try to trade with any ROM other than this one. It's not supposed to work, and I have no idea what will happen.
 
