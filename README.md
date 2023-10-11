@@ -292,3 +292,25 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 # Why remove some Pokémon and moves?
 
 In both cases, the maximum number is limited by the size of a byte. (That's 256, but actually a few less because some values are used for other purposes, such as indicating a lack of an entry or the end of the list.) There are possible ways around this, but they're a bit above my skill level, and even if I bypass the numerical limit, I may not have room for more entries in the memory banks, which are much harder to work around. As for deciding to remove the baby Pokémon, I really didn't want to remove any Pokémon even if they were useless in battle (I think Pichu is cuter than Pikachu!), but I was also really excited about adding new Pokémon, and the way I see it, the main purpose of the baby Pokémon is to encourage the breeding mechanic by requiring it for Pokédex completion, but this particular hack is supposed to be pretty silly and breezy, so I doubt anyone will spend time breeding in it, or even completing the Pokédex for that matter. I kept Togepi because of the free egg and Tyrogue to properly connect the Hitmons, and the rest is recent history.
+
+# Credits
+
+Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, and Nayru62.
+
+ArtUnderTheArch - Percy trainer sprites, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
+
+Lucas Wright - Yanmega and Whimsicott frontsprites
+
+SCMidna - Unown ! and ? sprites and animations
+
+Tom Wang - Chris running sprite
+
+Seasick - Kris running sprite
+
+Bronzeswagger - original Hail weather icon
+
+Mmmmmmmmmmmmmmmmm - Route 47 theme demix
+
+Cottonee fronsprite and Cottonee, Whimsicott, and Yanmega backsprites - edited from a sheet that credits LostImpact, Neslug, Gold Z, Chaos Rush, Solo, lakeofdance, Blue Emerald, bloodless, Pokekoks, boonzeet, and Rangi
+
+Some Pokémon icons taken from sheets by Emi Monserrate, LuigiTKO, Chamber, Solo0993, Blue Emerald, Lake, Neslug, and Pikachu25
