@@ -1153,6 +1153,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4f], a
 	ld a, $1
 	ldh [rSVBK], a
+; fallthrough: low levels always selectable in Grate Crystal
 
 .asm_11896b
 	ld hl, Strings_L10ToL100 ; Address to list of strings with the choosable levels
