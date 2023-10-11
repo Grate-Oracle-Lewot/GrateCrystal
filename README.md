@@ -297,7 +297,7 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, and Nayru62.
 
-ArtUnderTheArch - Percy trainer sprites, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
+ArtUnderTheArch - Percy trainer sprite, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
 
 Lucas Wright - Yanmega and Whimsicott frontsprites
 
