@@ -65,18 +65,18 @@ BrentHangUpText:
 
 BrentFatherGossipText:
 	text "Did you know…?"
-	line "BILL's father is"
+	line "BILL's father can"
 
-	para "supposed to be a"
-	line "great #MANIAC."
+	para "teach #MON"
+	line "powerful moves."
 	done
 
 BrentGrandpaGossipText:
 	text "Did you know…?"
-	line "Apparently BILL's"
+	line "Apparently, the"
 
-	para "grandpa isn't a"
-	line "#MANIAC."
+	para "KIMONO GIRLS are"
+	line "BILL's cousins."
 	done
 
 BrentGoldenrodGossipText:
