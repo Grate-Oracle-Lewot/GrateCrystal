@@ -105,7 +105,7 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 9 ; # items
+	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db TIMER_BALL
@@ -113,7 +113,6 @@ MartGoldenrod2F2:
 	db REPEL
 	db POKE_DOLL
 	db SWAG_BEACON
-	db CATCH_CHARM
 	db MUSIC_MAIL
 	db -1 ; end
 
@@ -320,16 +319,15 @@ MartCeladon3F:
 	db -1 ; end
 
 MartCeladon4F1:
-	db 10 ; # items
+	db 9 ; # items
 	db ANTIVENOM
 	db ALOE_VERA
 	db HANDWARMER
 	db NOISEMAKER
 	db LIMBO_STICK
 	db DICTIONARY
-	db FOCUS_BAND
-	db QUICK_CLAW
-	db SCOPE_LENS
+	db SMOKE_BALL
+	db CATCH_CHARM
 	db PORTRAITMAIL
 	db -1 ; end
 
@@ -410,12 +408,14 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 7 ; # items
+	db 9 ; # items
 	db POKE_DOLL
-	db BRIGHTPOWDER
-	db SMOKE_BALL
-	db LIGHT_BALL
 	db DUSK_BALL
+	db STICK
+	db LUCKY_PUNCH
+	db THICK_CLUB
+	db LIGHT_BALL
+	db CLEANSE_TAG
 	db EON_MAIL
 	db TM_MOONBLAST
 	db -1 ; end
