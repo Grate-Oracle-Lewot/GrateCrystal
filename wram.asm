@@ -3393,12 +3393,13 @@ wPokeAnimCurBitmask:: db
 wPokeAnimWaitCounter:: db
 wPokeAnimCommand:: db
 wPokeAnimParameter:: db
-wPokeAnimPikachuForm:: db
+	ds 1
 wPokeAnimBitmaskCurCol:: db
 wPokeAnimBitmaskCurRow:: db
 wPokeAnimBitmaskCurBit:: db
 wPokeAnimBitmaskBuffer:: ds 7
-	ds 2
+	ds 1
+wPokeAnimPikachuForm:: db
 wPokeAnimStructEnd::
 
 
