@@ -304,9 +304,9 @@ Lucas Wright - Yanmega and Whimsicott frontsprites
 
 SCMidna - Unown ! and ? sprites and animations
 
-Tom Wang - Chris running frames
+Tom Wang - male player running frames
 
-Seasick - Kris running frames
+Seasick - female player running frames
 
 Bronzeswagger - original Hail weather icon
 
