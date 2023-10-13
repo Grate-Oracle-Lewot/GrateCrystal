@@ -1,4 +1,4 @@
-	db "GAS@" ; species name
+	db "GHAST@" ; species name
 	dw 503, 2 ; height, weight
 
 	db   "Scientists tried"
