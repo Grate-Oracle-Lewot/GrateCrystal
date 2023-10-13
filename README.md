@@ -151,10 +151,11 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
-- King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exception being Future Sight)
+- King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the sole exception being Future Sight)
 - Most Berries renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
+- Buena's Password prizes are better
 - Itemfinder replaced with consumable versions called Swag Beacons
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 - Removed: Berserk Gene, Metal Powder
