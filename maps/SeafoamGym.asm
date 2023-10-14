@@ -269,7 +269,11 @@ BurglarRamonBeatenText:
 	done
 
 BurglarRamonAfterBattleText:
-	text "No loot here…"
+	text "Maybe you'll know"
+	line "the answer to this."
+
+	para "Does TM28 contain"
+	line "TOMBSTONER?"
 	done
 
 SeafoamGym_MapEvents:
