@@ -157,7 +157,7 @@ Jasmine_BetterTrainer:
 
 Text_ReceivedMineralBadge:
 	text "<PLAYER> received"
-	line "MINERALBADGE."
+	line "MINERALBADGE!"
 	done
 
 Jasmine_BadgeSpeech:
