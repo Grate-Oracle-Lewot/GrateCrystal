@@ -146,7 +146,7 @@ BlaineWinLossText:
 
 ReceivedVolcanoBadgeText:
 	text "<PLAYER> received"
-	line "VOLCANOBADGE."
+	line "VOLCANOBADGE!"
 	done
 
 BlaineAfterBattleText:
