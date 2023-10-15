@@ -256,7 +256,7 @@ JanineText_ToughOne:
 
 Text_ReceivedSoulBadge:
 	text "<PLAYER> received"
-	line "MARSHBADGE."
+	line "MARSHBADGE!"
 	done
 
 JanineText_ToxicSpeech:
