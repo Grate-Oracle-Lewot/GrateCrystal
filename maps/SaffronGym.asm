@@ -165,7 +165,7 @@ SabrinaWinLossText:
 
 ReceivedMarshBadgeText:
 	text "<PLAYER> received"
-	line "SOULBADGE."
+	line "SOULBADGE!"
 	done
 
 SabrinaGiveTeleportTMText:
