@@ -548,10 +548,10 @@ DragonShrineSilverIsInTrainingText:
 	line "your age is in"
 	cont "training here."
 
-	para "He is much like"
-	line "CLAIR when she was"
+	para "He doesn't seem"
+	line "to understand how"
 
-	para "younger. It is a"
+	para "words work. It's a"
 	line "little worrisome…"
 	done
 
@@ -630,7 +630,7 @@ DragonShrineHereRisingBadgeText:
 
 DragonShrinePlayerReceivedRisingBadgeText:
 	text "<PLAYER> received"
-	line "RISINGBADGE."
+	line "RISINGBADGE!"
 	done
 
 DragonShrineRisingBadgeExplanationText:
