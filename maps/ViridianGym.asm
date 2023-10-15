@@ -134,7 +134,7 @@ LeaderBlueWinText:
 
 Text_ReceivedEarthBadge:
 	text "<PLAYER> received"
-	line "EARTHBADGE."
+	line "EARTHBADGE!"
 	done
 
 LeaderBlueAfterText:
