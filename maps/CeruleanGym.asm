@@ -278,7 +278,7 @@ MistyWinLossText:
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "CASCADEBADGE."
+	line "CASCADEBADGE!"
 	done
 
 MistyGiveBlizzardTMText:
