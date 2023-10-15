@@ -224,7 +224,7 @@ WhitneyWhatDoYouWantText:
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "PLAINBADGE."
+	line "PLAINBADGE!"
 	done
 
 WhitneyPlainBadgeText:
