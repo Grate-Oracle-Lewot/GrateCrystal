@@ -176,6 +176,8 @@ ChuckIntroText3:
 	para "do with #MON?"
 	line "That's true!"
 
+	para "…"
+
 	para "Come on. We shall"
 	line "do battle!"
 	done
@@ -191,7 +193,7 @@ ChuckLossText:
 
 GetStormBadgeText:
 	text "<PLAYER> received"
-	line "STORMBADGE."
+	line "STORMBADGE!"
 	done
 
 ChuckExplainBadgeText:
