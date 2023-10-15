@@ -147,7 +147,7 @@ FalknerWinLossText:
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZEPHYRBADGE."
+	line "ZEPHYRBADGE!"
 	done
 
 FalknerZephyrBadgeText:
