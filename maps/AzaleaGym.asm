@@ -175,7 +175,7 @@ BugsyText_ResearchIncomplete:
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HIVEBADGE."
+	line "HIVEBADGE!"
 	done
 
 BugsyText_HiveBadgeSpeech:
