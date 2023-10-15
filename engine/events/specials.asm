@@ -206,6 +206,9 @@ CardFlip:
 	call StartGameCornerGame
 	ret
 
+UnusedMemoryGame:
+	ret
+
 StartGameCornerGame:
 	call FarQueueScript
 	call FadeToMenu
