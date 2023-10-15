@@ -288,6 +288,8 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Occasionally, at random, yours or the opponent's Pokémon will suddenly seem to have minimal effective stats in mid-battle, despite no changes to displayed stat values. This is probably a RAM error, but I have no idea how to fix it, or to debug it since it doesn't happen consistently. The effect isn't permanent, so your save file won't be ruined, but you'll probably lose the battle if you're the one afflicted.
 
+- Second types for Pikachu forms may not load in battle. Might be related to the above issue.
+
 - Sometimes the wrong Unown letter is shown upon catching one and adding it to the Pokédex. This is only a temporary visual error, as when you look at the Pokédex later, the correct letter has been recorded.
 
 # Why remove some Pokémon and moves?
