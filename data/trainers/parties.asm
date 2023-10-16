@@ -1769,7 +1769,7 @@ BugCatcherGroup:
 	; BUG_CATCHER (5)
 	db "BENNY@", TRAINERTYPE_NORMAL
 	db 12, WEEDLE
-	db 12, KAKUNA
+	db 12, METAPOD
 	db 12, BEEDRILL
 	db -1 ; end
 
