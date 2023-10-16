@@ -322,7 +322,16 @@ Route22HouseMissingnoScript:
 Route22HouseMrFujiScript:
 	faceplayer
 	opentext
+	checkpoke MEWTWO
+	iftrue .FujiMewtwo
 	writetext Route22HouseMrFujiText
+	waitbutton
+	closetext
+	setflag ENGINE_QWILFISH_SWARM
+	end
+
+.FujiMewtwo:
+	writetext Route22HouseMrFujiMewtwoText
 	waitbutton
 	closetext
 	setflag ENGINE_QWILFISH_SWARM
@@ -657,6 +666,20 @@ Route22HouseMrFujiText:
 
 	para "do not take care"
 	line "of yourself."
+	done
+
+Route22HouseMrFujiMewtwoText:
+	text "…!"
+
+	para "That #MON…"
+
+	para "…I see."
+
+	para "It seems to have"
+	line "found some measure"
+	cont "of peace with you."
+
+	para "I am glad."
 	done
 
 Route22HouseOfficerJennyRareCandyText:
