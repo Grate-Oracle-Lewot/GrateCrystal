@@ -2,6 +2,8 @@
 
 URL: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
+Recommended Emulator: BGB
+
 This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in other words, a Pokémon Crystal romhack. It's called "Grate" Crystal because the editing (but not the original disassembling) was done by me, the Grate Oracle Lewot. There's not much of a theme to this project—it's just kind of me figuring out how the whole hacking process works and seeing what all I can get away with. I'll list most of the changes below, but I'm bound to miss more than a few details, so consider the list non-exhaustive.
 
 # Pokémon removed
