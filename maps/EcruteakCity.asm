@@ -170,11 +170,11 @@ EcruteakCityFisherText_JasmineReturned:
 	done
 
 EcruteakCityYoungsterText:
-	text "I hear #MON are"
-	line "rampaging at the"
+	text "Ghost-type #MON"
+	line "are immaterial,"
 
-	para "LAKE OF RAGE. I'd"
-	line "like to see that."
+	para "so they can't be"
+	line "trapped in battle."
 	done
 
 EcruteakCityGramps3Text:
