@@ -169,9 +169,9 @@ Kurt1:
 	waitbutton
 	closetext
 	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
 	playsound SFX_GOT_SAFARI_BALLS
 	waitsfx
+	special ReloadSpritesNoPalettes
 	pause 42
 	sjump Kurt1
 	end
