@@ -73,7 +73,7 @@ GoldenrodDeptStore1FDirectoryText:
 
 	para "6F TRANQUIL SQUARE"
 
-	para "ROOFTOP LOOKOUT"
+	para "7F ROOFTOP LOOKOUT"
 	done
 
 GoldenrodDeptStore1F_MapEvents:
