@@ -111,15 +111,12 @@ BillTakeThisEeveeText:
 	line "Do us a favor and"
 	cont "take this EEVEE."
 
-	para "It came over when"
-	line "I was adjusting"
-	cont "the TIME CAPSULE."
+	para "It may be my favo-"
+	line "rite #MON, but"
 
-	para "Someone has to"
-	line "take care of it,"
-
-	para "but I don't like"
-	line "being outside."
+	para "we've got too many"
+	line "of them running"
+	cont "around already."
 
 	para "Can I count on you"
 	line "to play with it,"
