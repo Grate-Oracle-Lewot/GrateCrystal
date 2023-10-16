@@ -172,6 +172,10 @@ SetBoxmonOrEggmonCaughtData:
 	rrca
 	ld b, a
 	ld a, [wCurPartyLevel]
+	cp 63
+	jr c, .valid_range
+	ld a, NULL
+.valid_range
 	or b
 	ld [hli], a
 	ld a, [wMapGroup]
