@@ -126,6 +126,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	loadwildmon MAGNEMITE, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
