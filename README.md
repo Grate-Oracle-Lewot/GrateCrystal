@@ -42,7 +42,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it)
   - Psychic types are immune to flinching
   - Dragon types are immune to critical hits
-  - Ghost types are immune to Mean Look and Spider Web
+  - Ghost types are immune to trapping (Mean Look, Fire Spin, etc.)
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit
