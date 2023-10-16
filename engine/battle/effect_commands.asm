@@ -6280,6 +6280,10 @@ INCLUDE "engine/battle/move_effects/thief.asm"
 BattleCommand_ArenaTrap:
 ; arenatrap
 
+	ld a, GHOST ; Ghost types are immune to trapping
+	call CheckIfTargetIsGivenType
+	jr z, .failed
+
 ; Doesn't work on an absent opponent.
 
 	call CheckHiddenOpponent
