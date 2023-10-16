@@ -32,7 +32,7 @@ Moves:
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,       PHYSICAL, 100, 25,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, FLYING,       STATUS,   100, 15,   0
 	move FLY,          EFFECT_FLY,                70, FLYING,       PHYSICAL, 100, 15,   0
-	move BIND,         EFFECT_TRAP_TARGET,        20, NORMAL,       PHYSICAL,  85, 20,   0
+	move BIND,         EFFECT_TRAP_TARGET,        20, NORMAL,       PHYSICAL,  85, 25,   0
 	move SLAM,         EFFECT_NORMAL_HIT,        100, DRAGON,       PHYSICAL,  80, 20,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,        PHYSICAL, 100, 35,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,       PHYSICAL, 100, 20,  30
@@ -140,7 +140,7 @@ Moves:
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,       PHYSICAL, 100, 20,  10
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,         SPECIAL,   84,  5,  20
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,        PHYSICAL, 100, 15,  20
-	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 10,   0
+	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 15,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        150, NORMAL,       PHYSICAL, 100,  5,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, STEEL,        PHYSICAL, 100, 15,   0
