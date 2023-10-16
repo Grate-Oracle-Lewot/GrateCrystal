@@ -344,6 +344,10 @@ AzaleaGymGuideText:
 	para "Grass will strug-"
 	line "gle, and dark or"
 	cont "psychic may too."
+
+	para "Bug and fighting"
+	line "are both bad agai-"
+	cont "nst each other."
 	done
 
 AzaleaGymGuideWinText:
