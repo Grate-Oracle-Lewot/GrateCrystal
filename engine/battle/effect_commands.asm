@@ -5660,6 +5660,9 @@ BattleCommand_TrapTarget:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
+	ld a, GHOST ; Ghost types are immune to trapping
+	call CheckIfTargetIsGivenType
+	ret z
 	call BattleRandom
 	; trapped for 2-5 turns
 	and %11
