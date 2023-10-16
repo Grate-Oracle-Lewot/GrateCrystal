@@ -370,7 +370,6 @@ BulbasaurFrontpic:   INCBIN "gfx/pokemon/bulbasaur/front.animated.2bpp.lz"
 
 SECTION "Pics 13", ROMX
 
-StarmieBackpic:      INCBIN "gfx/pokemon/starmie/back.2bpp.lz"
 OmanyteBackpic:      INCBIN "gfx/pokemon/omanyte/back.2bpp.lz"
 PidgeyBackpic:       INCBIN "gfx/pokemon/pidgey/back.2bpp.lz"
 ScientistPic:        INCBIN "gfx/trainers/scientist.2bpp.lz"
@@ -417,6 +416,7 @@ CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 
 SECTION "Pics 14", ROMX
 
+StarmieBackpic:      INCBIN "gfx/pokemon/starmie/back.2bpp.lz"
 SudowoodoBackpic:    INCBIN "gfx/pokemon/sudowoodo/back.2bpp.lz"
 FlaaffyBackpic:      INCBIN "gfx/pokemon/flaaffy/back.2bpp.lz"
 SentretFrontpic:     INCBIN "gfx/pokemon/sentret/front.animated.2bpp.lz"
