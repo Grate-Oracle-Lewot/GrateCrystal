@@ -4991,7 +4991,7 @@ DrawEnemyHUD:
 	ld a, [wCurSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
-	jr nc .skip_floaticon
+	jr nc, .skip_floaticon
 	hlcoord 10, 1
 	ld [hl], "<DO>"
 .skip_floaticon
