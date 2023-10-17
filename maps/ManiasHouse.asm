@@ -95,7 +95,7 @@ ManiaScript:
 	closetext
 	end
 
-ManiasHouseUnusedBookshelf: ; unreferenced
+ManiasHouseUnusedBookshelf:
 	jumpstd PictureBookshelfScript
 
 ManiaText_AskLookAfterShuckle:
@@ -207,6 +207,8 @@ ManiasHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, ManiasHouseUnusedBookshelf
+	bg_event  1,  1, BGEVENT_READ, ManiasHouseUnusedBookshelf
 
 	def_object_events
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1
