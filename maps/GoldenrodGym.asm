@@ -366,6 +366,10 @@ GoldenrodGymGuideText:
 	para "normal types are"
 	line "immune to ghost"
 	cont "moves too!"
+
+	para "Rock and steel"
+	line "both resist normal"
+	cont "moves."
 	done
 
 GoldenrodGymGuideWinText:
