@@ -244,7 +244,7 @@ MartCerulean:
 	db 9 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
-	db SUPER_POTION
+	db MOOMOO_MILK
 	db SUPER_REPEL
 	db FULL_HEAL
 	db DIRE_HIT
