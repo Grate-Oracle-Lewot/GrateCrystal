@@ -26,10 +26,10 @@ MahoganyRedGyaradosSpeechHouseTeacherScript:
 	closetext
 	end
 
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf1: ; unreferenced
+MahoganyRedGyaradosSpeechHouseUnusedBookshelf1:
 	jumpstd PictureBookshelfScript
 
-MahoganyRedGyaradosSpeechHouseUnusedBookshelf2: ; unreferenced
+MahoganyRedGyaradosSpeechHouseUnusedBookshelf2:
 	jumpstd MagazineBookshelfScript
 
 MahoganyRedGyaradosSpeechHouseBlackBeltText:
@@ -68,6 +68,8 @@ MahoganyRedGyaradosSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, MahoganyRedGyaradosSpeechHouseUnusedBookshelf1
+	bg_event  1,  1, BGEVENT_READ, MahoganyRedGyaradosSpeechHouseUnusedBookshelf2
 
 	def_object_events
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyRedGyaradosSpeechHouseBlackBeltScript, -1
