@@ -763,19 +763,19 @@ ParkBallMultiplier:
 	ret
 
 TimerBallMultiplier:
-; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
+; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 10
 	ld a, [wTotalBattleTurns]
 	ld b, a
 	add a
 	add b
 	add 10
-	cp 40
+	cp 100
 	jr c, .nocap
-	ld a, 40
+	ld a, 100
 .nocap
 	ldh [hMultiplier], a
 	call Multiply
-	ln a, 1, 10 ; x0.1 after the above multiplier gives 1.3x, 1.6x, 1.9x, ..., 4x.
+	ln a, 1, 10 ; x0.1 after the above multiplier gives 1.3x, 1.6x, 1.9x, ..., 10x.
 	jp MultiplyAndDivide
 
 DuskBallMultiplier:
