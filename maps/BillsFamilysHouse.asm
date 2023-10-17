@@ -2,6 +2,7 @@
 	const BILLSFAMILYSHOUSE_BILL
 	const BILLSFAMILYSHOUSE_POKEFAN_F
 	const BILLSFAMILYSHOUSE_TWIN
+	const BILLSFAMILYSHOUSE_EEVEE
 
 BillsFamilysHouse_MapScripts:
 	def_scene_scripts
@@ -96,6 +97,14 @@ BillsSisterScript:
 	writetext BillsSisterPhoneFullText
 	promptbutton
 	sjump .Refused
+
+BillsFamilysHouseEevee:
+	opentext
+	writetext BillsFamilysHouseEeveeText
+	cry EEVEE
+	waitbutton
+	closetext
+	end
 
 BillsHouseBookshelf1:
 	jumpstd PictureBookshelfScript
@@ -237,6 +246,10 @@ BillsSisterStorageSystemText:
 	line "system."
 	done
 
+BillsFamilysHouseEeveeText:
+	text "EEVEE: Vreevree!"
+	done
+
 BillsFamilysHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -255,3 +268,4 @@ BillsFamilysHouse_MapEvents:
 	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, EVENT_MET_BILL
 	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsMomScript, -1
 	object_event  5,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsSisterScript, -1
+	object_event  4,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BillsFamilysHouseEevee, -1
