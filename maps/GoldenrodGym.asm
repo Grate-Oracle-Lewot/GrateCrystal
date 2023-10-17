@@ -369,7 +369,9 @@ GoldenrodGymGuideText:
 
 	para "Rock and steel"
 	line "both resist normal"
-	cont "moves."
+
+	para "moves, so they can"
+	line "help defensively."
 	done
 
 GoldenrodGymGuideWinText:
