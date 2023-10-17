@@ -18,10 +18,10 @@ BlackthornDragonSpeechHouseDratiniScript:
 	closetext
 	end
 
-BlackthornDragonSpeechHousePictureBookshelf: ; unreferenced
+BlackthornDragonSpeechHousePictureBookshelf:
 	jumpstd PictureBookshelfScript
 
-BlackthornDragonSpeechHouseMagazineBookshelf: ; unreferenced
+BlackthornDragonSpeechHouseMagazineBookshelf:
 	jumpstd MagazineBookshelfScript
 
 BlackthornDragonSpeechHouseGrannyText:
@@ -53,6 +53,8 @@ BlackthornDragonSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, BlackthornDragonSpeechHousePictureBookshelf
+	bg_event  1,  1, BGEVENT_READ, BlackthornDragonSpeechHouseMagazineBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseGrannyScript, -1
