@@ -164,7 +164,7 @@ MartOlivine:
 	db 5 ; # items
 	db GREAT_BALL
 	db SUPER_POTION
-	db HYPER_POTION
+	db MOOMOO_MILK
 	db SUPER_REPEL
 	db SURF_MAIL
 	db -1 ; end
@@ -193,7 +193,7 @@ MartMahogany2:
 	db 8 ; # items
 	db RAGECANDYBAR
 	db GREAT_BALL
-	db SUPER_POTION
+	db MOOMOO_MILK
 	db HYPER_POTION
 	db SUPER_REPEL
 	db REVIVE
@@ -269,7 +269,7 @@ MartLavender:
 MartVermilion:
 	db 6 ; # items
 	db ULTRA_BALL
-	db SUPER_POTION
+	db MOOMOO_MILK
 	db HYPER_POTION
 	db SWAG_BEACON
 	db MORPH_MAIL
