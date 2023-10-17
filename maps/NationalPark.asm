@@ -52,7 +52,6 @@ NationalParkTeacher2Script:
 	jumptextfaceplayer NationalParkTeacher2Text
 
 NationalParkPersian:
-	faceplayer
 	opentext
 	writetext NationalParkPersianText
 	cry PERSIAN
