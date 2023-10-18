@@ -36,7 +36,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
 - Pseudo-Abilities:
-  - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap (check which Pokémon this applies to here: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/home/float_mons.asm )
+  - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap; a custom symbol is shown to indicate this attribute in battle and on the stats screen
   - All Grass types get a 50% Speed boost in Sunny weather
   - All Rock types get a 50% Special Defense boost in Sandstorms
   - Fire types are immune to being Frozen
