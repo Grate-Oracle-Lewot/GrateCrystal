@@ -2147,7 +2147,7 @@ BattleTowerMons:
 
 	db MUK
 	db QUICK_CLAW
-	db SCREECH, TOXIC, SLUDGE, HARDEN
+	db SCREECH, TOXIC, SLUDGE, ACID_ARMOR
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2157,7 +2157,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 5, 6, 11 ; DVs
-	db 32, 8, 32, 63 ; PP
+	db 32, 8, 32, 32 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
