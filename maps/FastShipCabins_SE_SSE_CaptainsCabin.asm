@@ -16,9 +16,6 @@ FastShipCabins_SE_SSE_CaptainsCabin_MapScripts:
 
 	def_callbacks
 
-.DummyScene: ; unreferenced
-	end
-
 SSAquaCaptain:
 	faceplayer
 	opentext
