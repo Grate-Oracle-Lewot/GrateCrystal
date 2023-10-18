@@ -3,12 +3,8 @@
 
 Route6SaffronGate_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene
 
 	def_callbacks
-
-.DummyScene:
-	end
 
 Route6SaffronGuardScript:
 	faceplayer
