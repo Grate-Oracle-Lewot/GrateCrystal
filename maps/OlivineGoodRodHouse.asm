@@ -48,7 +48,7 @@ OfferGoodRodText:
 	cont "bound to be fish!"
 
 	para "I've fished here"
-	line "for 30 years."
+	line "for 42 years."
 
 	para "Would you like to"
 	line "face the sea and"
