@@ -12,7 +12,7 @@ FishingDude:
 FishingDudesHousePhoto:
 	jumptext FishingDudesHousePhotoText
 
-FishingDudesHouseBookshelf: ; unreferenced
+FishingDudesHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 FishingDudeText:
@@ -57,6 +57,8 @@ VermilionFishingSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, FishingDudesHouseBookshelf
+	bg_event  1,  1, BGEVENT_READ, FishingDudesHouseBookshelf
 	bg_event  3,  0, BGEVENT_READ, FishingDudesHousePhoto
 
 	def_object_events
