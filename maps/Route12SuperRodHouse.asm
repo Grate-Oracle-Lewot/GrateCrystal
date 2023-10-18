@@ -38,7 +38,7 @@ Route12SuperRodHouseFishingGuruScript:
 	closetext
 	end
 
-SuperRodHouseBookshelf: ; unreferenced
+SuperRodHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 OfferSuperRodText:
@@ -92,6 +92,8 @@ Route12SuperRodHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, SuperRodHouseBookshelf
+	bg_event  1,  1, BGEVENT_READ, SuperRodHouseBookshelf
 
 	def_object_events
 	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
