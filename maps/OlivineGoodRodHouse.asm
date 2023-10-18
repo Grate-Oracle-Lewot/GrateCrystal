@@ -36,7 +36,7 @@ GoodRodGuru:
 	closetext
 	end
 
-GoodRodHouseBookshelf: ; unreferenced
+GoodRodHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 OfferGoodRodText:
@@ -90,6 +90,8 @@ OlivineGoodRodHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  0,  1, BGEVENT_READ, GoodRodHouseBookshelf
+	bg_event  1,  1, BGEVENT_READ, GoodRodHouseBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoodRodGuru, -1
