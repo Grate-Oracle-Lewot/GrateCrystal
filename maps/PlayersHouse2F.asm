@@ -11,9 +11,6 @@ PlayersHouse2F_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .InitializeRoom
 	callback MAPCALLBACK_TILES, .SetUpTileDecorations
 
-.DummyScene: ; unreferenced
-	end
-
 .InitializeRoom:
 	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
