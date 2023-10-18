@@ -3010,9 +3010,11 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 3
+	ds 1
 
 ; map scene ids
+wPewterMuseumSceneID::                            db
+wFightingDojoSceneID::                            db
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
