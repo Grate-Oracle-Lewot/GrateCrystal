@@ -7,12 +7,8 @@
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene
 
 	def_callbacks
-
-.DummyScene:
-	end
 
 SeafoamGymBlaineScript:
 	faceplayer
