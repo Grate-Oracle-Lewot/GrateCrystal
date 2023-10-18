@@ -2,7 +2,8 @@
 	const BILLSFAMILYSHOUSE_BILL
 	const BILLSFAMILYSHOUSE_POKEFAN_F
 	const BILLSFAMILYSHOUSE_TWIN
-	const BILLSFAMILYSHOUSE_EEVEE
+	const BILLSFAMILYSHOUSE_EEVEE1
+	const BILLSFAMILYSHOUSE_EEVEE2
 
 BillsFamilysHouse_MapScripts:
 	def_scene_scripts
@@ -98,9 +99,17 @@ BillsSisterScript:
 	promptbutton
 	sjump .Refused
 
-BillsFamilysHouseEevee:
+BillsFamilysHouseEevee1:
 	opentext
-	writetext BillsFamilysHouseEeveeText
+	writetext BillsFamilysHouseEevee1Text
+	cry EEVEE
+	waitbutton
+	closetext
+	end
+
+BillsFamilysHouseEevee2:
+	opentext
+	writetext BillsFamilysHouseEevee2Text
 	cry EEVEE
 	waitbutton
 	closetext
@@ -246,8 +255,12 @@ BillsSisterStorageSystemText:
 	line "system."
 	done
 
-BillsFamilysHouseEeveeText:
+BillsFamilysHouseEevee1Text:
 	text "EEVEE: Vreevree!"
+	done
+
+BillsFamilysHouseEevee2Text:
+	text "EEVEE: Eeeeev!"
 	done
 
 BillsFamilysHouse_MapEvents:
