@@ -354,9 +354,9 @@ EcruteakGymGuideText:
 	line "use ghost-type"
 	cont "#MON."
 
-	para "Normal-type moves"
-	line "have no effect on"
-	cont "them!"
+	para "Normal and fight-"
+	line "ing moves have no"
+	cont "effect on them!"
 
 
 	para "Ghost is good ag-"
