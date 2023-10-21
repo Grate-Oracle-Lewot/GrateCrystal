@@ -1421,11 +1421,15 @@ AI_Smart_SleepTalk:
 	ret
 
 AI_Smart_FlameWheel:
-; Greatly encourage this move if enemy is curled.
+; 80% chance to greatly encourage this move if enemy is curled.
 
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CURLED, a
 	ret z
+
+	call AI_80_20
+	ret c
+
 	dec [hl]
 	dec [hl]
 	ret
