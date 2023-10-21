@@ -260,7 +260,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Default player and rival names changed
 - Outdoor sprite system improvement
 - Event initialization system improvement
-- Pokémon animation tile expansion... thing
+- Increased max number of tiles for Pokémon animations
 - Trainer types refactored into bit flags
 - Trainer card visual upgrades: leader head tops, badge colors, Kanto badge page
 - Correct grammar for plural trainers like Twins
