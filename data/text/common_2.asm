@@ -529,7 +529,7 @@ _WhitedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	autopara "<PLAYER> whited"
+	autopara "<PLAYER> blacked"
 	line "out!"
 	autodone
 
@@ -551,7 +551,7 @@ _PoisonWhiteoutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	prompt
 
