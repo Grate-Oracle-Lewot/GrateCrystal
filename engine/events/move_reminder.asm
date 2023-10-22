@@ -1,6 +1,4 @@
-;based on an old commit of Rangi's Polished Crystal, which was in turn based off TPP Anniversary Crystal
-;https://github.com/Rangi42/polishedcrystal/blob/39bf603531d74254e7ab2740677d38ec3ef9b6bd/event/move_reminder.asm
-;https://github.com/TwitchPlaysPokemon/tppcrystal251pub/blob/public/event/move_relearner.asm
+; stolen from Idain who stole it from Rangi who stole it from TPP
 
 MoveReminder:
 	ld hl, Text_MoveReminderIntro
@@ -285,7 +283,6 @@ ld hl, wStringBuffer1
 	push de
 	dec a
 
-if DEF(PSS)
 	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_CATEGORY
 	call AddNTimes
@@ -310,7 +307,6 @@ if DEF(PSS)
 
 	ld a, [wMenuSelection]
 	dec a
-endc
 
 	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_TYPE
