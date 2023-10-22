@@ -1672,6 +1672,15 @@ AI_Smart_Disable:
 	ret
 
 AI_Smart_MeanLook:
+; Dismiss this move if the player is Ghost-type and therefore immune.
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jp z, AIDiscourageMove
+
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jp z, AIDiscourageMove
+
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
