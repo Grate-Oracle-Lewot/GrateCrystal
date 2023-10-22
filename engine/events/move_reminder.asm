@@ -1,19 +1,15 @@
-	const_def
-	const MOVERELEARNERTEXT_INTRO
-	const MOVERELEARNERTEXT_WHICHMON
-	const MOVERELEARNERTEXT_WHICHMOVE
-	const MOVERELEARNERTEXT_COMEAGAIN
-	const MOVERELEARNERTEXT_EGG
-	const MOVERELEARNERTEXT_NOTAPOKEMON
-	const MOVERELEARNERTEXT_NOTENOUGHMONEY
-	const MOVERELEARNERTEXT_NOMOVESTOLEARN
+;based on an old commit of Rangi's Polished Crystal, which was in turn based off TPP Anniversary Crystal
+;https://github.com/Rangi42/polishedcrystal/blob/39bf603531d74254e7ab2740677d38ec3ef9b6bd/event/move_reminder.asm
+;https://github.com/TwitchPlaysPokemon/tppcrystal251pub/blob/public/event/move_relearner.asm
 
 MoveReminder:
-	ld a, MOVERELEARNERTEXT_INTRO
-	call PrintMoveRelearnerText
-	special PlaceMoneyTopRight
+	ld hl, Text_MoveReminderIntro
+	call PrintText
 	call YesNoBox
 	jp c, .cancel
+
+	call JoyWaitAorB
+
 	ld hl, .cost_to_relearn
 	ld de, hMoneyTemp
 	ld bc, 3
@@ -22,8 +18,14 @@ MoveReminder:
 	ld de, wMoney
 	farcall CompareMoney
 	jp c, .not_enough_money
-	ld a, MOVERELEARNERTEXT_WHICHMON
-	call PrintMoveRelearnerText
+
+	ld hl, Text_MoveReminderPrompt
+	call PrintText
+	call YesNoBox
+	jp c, .cancel
+
+	ld hl, Text_MoveReminderWhichMon
+	call PrintText
 	call JoyWaitAorB
 
 	ld b, $6
@@ -31,24 +33,24 @@ MoveReminder:
 	jr c, .cancel
 
 	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
 	cp EGG
 	jr z, .egg
 
 	call IsAPokemon
 	jr c, .no_mon
 
-	call GetRelearnableMoves
+	call GetRemindableMoves
 	jr z, .no_moves
 
-	ld a, MOVERELEARNERTEXT_WHICHMOVE
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderWhichMove
+	call PrintText
 	call JoyWaitAorB
 
 	call ChooseMoveToLearn
 	jr c, .skip_learn
+
 	ld a, [wMenuSelection]
-	ld [wNamedObjectIndex], a
+	ld [wd265], a
 	call GetMoveName
 	ld hl, wStringBuffer1
 	ld de, wStringBuffer2
@@ -59,6 +61,7 @@ MoveReminder:
 	ld a, b
 	and a
 	jr z, .skip_learn
+
 	ld hl, .cost_to_relearn
 	ld de, hMoneyTemp
 	ld bc, 3
@@ -69,76 +72,93 @@ MoveReminder:
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
+
 .skip_learn
-	call CloseSubmenu
-	call SpeechTextbox
+	call ReturnToMapWithSpeechTextbox
 .cancel
-	ld a, MOVERELEARNERTEXT_COMEAGAIN
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderCancel
+	call PrintText
 	ret
+
 .egg
-	ld a, MOVERELEARNERTEXT_EGG
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderEgg
+	call PrintText
 	ret
+
 .not_enough_money
-	ld a, MOVERELEARNERTEXT_NOTENOUGHMONEY
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderNoPay
+	call PrintText
 	ret
+
 .no_mon
-	ld a, MOVERELEARNERTEXT_NOTAPOKEMON
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderNoMon
+	call PrintText
 	ret
+
 .no_moves
-	ld a, MOVERELEARNERTEXT_NOMOVESTOLEARN
-	call PrintMoveRelearnerText
+	ld hl, Text_MoveReminderNoMoves
+	call PrintText
 	ret
 
 .cost_to_relearn
-	dt 1000
+	dt 500
 
-GetRelearnableMoves:
-	GLOBAL EvosAttacksPointers, EvosAttacks
-	; Get moves relearnable by CurPartyMon
-	; Returns z if no moves can be relearned.
-	ld hl, wRelearner
+GetRemindableMoves:
+; Get moves remindable by CurPartyMon
+; Returns z if no moves can be reminded.
+;	EXPORT EvosAttacksPointers, EvosAttacks
+	ld hl, wd002
 	xor a
 	ld [hli], a
 	ld [hl], $ff
-	ld a, MON_SPECIES	
+
+	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurPartySpecies], a
+
 	push af
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 	ld a, [hl]
 	ld [wCurPartyLevel], a
+
 	ld b, 0
-	ld de, wRelearner + 1
+	ld de, wd002 + 1
+; based on GetEggMove in engine/breeding/egg.asm
 .loop
-	push bc
 	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld bc, EvosAttacksPointers - 2
-	add hl, hl
+	dec a
+	push bc
+	ld b, 0
+	ld c, a
+	ld hl, EvosAttacksPointers
+rept 2
 	add hl, bc
+endr
 	ld a, BANK(EvosAttacksPointers)
 	call GetFarWord
+.skip_evos
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	inc hl
+	and a
+	jr nz, .skip_evos
 
-	call FarSkipEvolutions
-	
 .loop_moves
-	ld a, BANK(EvosAttacks)
-	call GetFarByte2
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	inc hl
 	and a
 	jr z, .done
 	ld c, a
 	ld a, [wCurPartyLevel]
 	cp c
-	ld a, BANK(EvosAttacks)
-	call GetFarByte2
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	inc hl
 	jr c, .loop_moves
-.okay
+
 	ld c, a
 	call CheckAlreadyInList
 	jr c, .loop_moves
@@ -153,24 +173,24 @@ GetRelearnableMoves:
 	inc b
 	push bc
 	jr .loop_moves
+
 .done
-	callfar GetLowestEvolutionStage
 	pop bc
-	jr c, .loop
 	pop af
 	ld [wCurPartySpecies], a
 	ld a, b
-	ld [wRelearner], a
+	ld [wd002], a
 	and a
 	ret
 
 CheckAlreadyInList:
 	push hl
-	ld hl, wRelearner + 1
+	ld hl, wd002 + 1
 .loop
 	ld a, [hli]
-	cp $ff
+	inc a
 	jr z, .nope
+	dec a
 	cp c
 	jr nz, .loop
 	pop hl
@@ -182,8 +202,6 @@ CheckAlreadyInList:
 	ret
 
 CheckPokemonAlreadyKnowsMove:
-	; Check if move c is in the selected pokemon's movepool already.
-	; Returns c if yes.
 	push hl
 	push bc
 	ld a, MON_MOVES
@@ -206,15 +224,8 @@ CheckPokemonAlreadyKnowsMove:
 	ret
 
 ChooseMoveToLearn:
-	; Open a full-screen scrolling menu
-	; Number of items stored in wRelearner
-	; List of items stored in wRelearner + 1
-	; Print move names, PP, details, and descriptions
-	; Enable Up, Down, A, and B
-	; Up scrolls up
-	; Down scrolls down
-	; A confirms selection
-	; B backs out
+	; Number of items stored in wd002
+	; List of items stored in wd002 + 1
 	call FadeToMenu
 	farcall BlankScreen
 	call UpdateSprites
@@ -222,7 +233,6 @@ ChooseMoveToLearn:
 	call CopyMenuHeader
 	xor a
 	ld [wMenuCursorPosition], a
-	ld a, 1
 	ld [wMenuScrollPosition], a
 	call ScrollingMenu
 	call SpeechTextbox
@@ -238,19 +248,18 @@ ChooseMoveToLearn:
 	scf
 	ret
 
-.MenuDataHeader: ; 0x15e18
+.MenuDataHeader:
 	db $40 ; flags
-	db 01, 01 ; start coords
+	db 1, 1 ; start coords
 	db 11, 19 ; end coords
-	dw .menudata2
+	dw .MenuData
 	db 1 ; default option
-; 0x15e20
 
-.menudata2: ; 0x15e20
+.MenuData:
 	db $30 ; pointers
-	db 5, 8 ; rows, columns
+	db 5, SCREEN_WIDTH + 2 ; rows, columns
 	db 1 ; horizontal spacing
-	dbw 0, wRelearner
+	dbw 0, wd002
 	dba .PrintMoveName
 	dba .PrintDetails
 	dba .PrintMoveDesc
@@ -258,48 +267,101 @@ ChooseMoveToLearn:
 .PrintMoveName
 	push de
 	ld a, [wMenuSelection]
-	ld [wNamedObjectIndex], a
+	ld [wd265], a
 	call GetMoveName
 	pop hl
 	call PlaceString
 	ret
+
 .PrintDetails
-	ld hl, wStringBuffer1
+ld hl, wStringBuffer1
 	ld bc, wStringBuffer2 - wStringBuffer1
 	ld a, " "
 	call ByteFill
 	ld a, [wMenuSelection]
-	cp $ff
+	inc a
 	ret z
+	dec a
 	push de
 	dec a
+
+if DEF(PSS)
+	ld bc, MOVE_LENGTH
+	ld hl, Moves + MOVE_CATEGORY
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	and CATEGORY_MASK
+	; bc = a * 4
+	ld c, a
+	add a
+	add a
+	ld b, 0
+	ld c, a
+	ld hl, .Types
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld hl, wStringBuffer1
+	ld bc, 3
+	call PlaceString
+	ld hl, wStringBuffer1 + 3
+	ld [hl], "/"
+
+	ld a, [wMenuSelection]
+	dec a
+endc
+
 	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_TYPE
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld [wNamedObjectIndex], a
-	; get move type
-	and $3f
-	; 5 characters
+	ld [wd265], a
+	; bc = a * 4
 	ld c, a
 	add a
 	add a
-	add c
-	ld c, a
 	ld b, 0
+	ld c, a
 	ld hl, .Types
 	add hl, bc
 	ld d, h
 	ld e, l
-
-	ld hl, wStringBuffer1 + 5
-	ld bc, 5
+	ld hl, wStringBuffer1 + 4
+	ld bc, 3
 	call PlaceString
-	ld hl, wStringBuffer1 + 9
+	ld hl, wStringBuffer1 + 7
 	ld [hl], "/"
-	; get move class
 
+	ld a, [wMenuSelection]
+	dec a
+	
+	ld bc, MOVE_LENGTH
+	ld hl, Moves + MOVE_POWER
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld hl, wStringBuffer1 + 8
+	and a
+	jr z, .no_power
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	call PrintNum
+	jr .got_power
+.no_power
+	ld de, .ThreeDashes
+	ld bc, 3
+	call PlaceString
+.got_power
+	ld hl, wStringBuffer1 + 8 + 3
+	ld [hl], "/"
+
+	ld a, [wMenuSelection]
+	dec a
+
+;print PP (works)
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
@@ -307,130 +369,99 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld [wEngineBuffer1], a
-	ld hl, wStringBuffer1 + 10
-	ld de, wEngineBuffer1
-	ld bc, $102
-	call PrintNum
+	ld [wBuffer1], a
 	ld hl, wStringBuffer1 + 12
+	ld de, wBuffer1
+	lb bc, 1, 2
+	call PrintNum
+	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
 
-	ld hl, SCREEN_WIDTH - 5
-	pop de
-	add hl, de
-	push de
+	pop hl
 	ld de, wStringBuffer1
-	call PlaceString
-	pop de
-	ret
-
+	jp PlaceString
+	
+.ThreeDashes
+	db "---@"
+	
 .Types
-	db "NORM@"
-	db "FIGH@"
-	db " FLY@"
-	db "POIS@"
-	db "GRND@"
-	db "ROCK@"
-	db "BIRD@"
-	db " BUG@"
-	db "GHST@"
-	db "STEL@"
-
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ---@"
-	db " ???@"
-
-	db "FIRE@"
-	db "WATR@"
-	db "GRAS@"
-	db "ELEC@"
-	db "PSYC@"
-	db " ICE@"
-	db "DRGN@"
-	db "DARK@"
-	db "FAIR@"
+	db "NRM@"
+	db "FIT@"
+	db "FLY@"
+	db "PSN@"
+	db "GRD@"
+	db "RCK@"
+	db "ERR@"
+	db "BUG@"
+	db "GST@"
+	db "STL@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "ERR@"
+	db "???@"
+	db "FIR@"
+	db "WTR@"
+	db "GRS@"
+	db "ELC@"
+	db "PSY@"
+	db "ICE@"
+	db "DRG@"
+	db "DRK@"
+	db "FAR@"
 
 .PrintMoveDesc
 	push de
 	call SpeechTextbox
 	ld a, [wMenuSelection]
-	cp $ff
+	inc a
 	pop de
 	ret z
+	dec a
 	ld [wCurSpecies], a
 	hlcoord 1, 14
 	predef PrintMoveDescription
 	ret
 
-PrintMoveRelearnerText:
-    ld e, a
-    ld d, 0
-    ld hl, .TextPointers
-    add hl, de
-    add hl, de
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    call PrintText
-    ret
-.TextPointers
-	dw .Intro
-	dw .WhichMon
-	dw .WhichMove
-	dw .ComeAgain
-	dw .Egg
-	dw .NotMon
-	dw .NotEnoughMoney
-	dw .NoMovesToLearn
 
-.Intro
-	text "Hello there! I'm a"
-	line "MOVE REMINDER."
+Text_MoveReminderIntro:
+	text_far _MoveReminderIntro
+	text_end
 
-	para "For just ¥1000, I"
-	line "can make a #MON"
+Text_MoveReminderPrompt:
+	text_far _MoveReminderPrompt
+	text_end
+	
+Text_MoveReminderWhichMon:
+	text_far _MoveReminderWhichMon
+	text_end
 
-	para "remember a move"
-	line "it's forgotten."
+Text_MoveReminderWhichMove:
+	text_far _MoveReminderWhichMove
+	text_end
 
-	para "How about it?"
-	done
-.WhichMon
-	text "Which #MON"
-	line "should remember"
-	cont "a move?"
-	done
-.WhichMove
-	text "Which move should"
-	line "it remember?"
-	done
-.ComeAgain
-	text "If you want your"
-	line "#MON to remem-"
-	cont "ber moves, come"
-	cont "back to me."
-	done
-.Egg
-	text "An EGG can't learn"
-	line "moves."
-	done
-.NotMon
-	text "What?! That's not"
-	line "a #MON!"
-	done
-.NotEnoughMoney
-	text "You don't have"
-	line "enough money."
-	done
-.NoMovesToLearn
-	text "This #MON has"
-	line "no moves to"
-	cont "remember."
-	done
+Text_MoveReminderCancel:
+	text_far _MoveReminderCancel
+	text_end
+	
+Text_MoveReminderEgg:
+	text_far _MoveReminderEgg
+	text_end
+
+Text_MoveReminderNoPay:
+	text_far _MoveReminderNoPay
+	text_end
+
+Text_MoveReminderNoMon:
+	text_far _MoveReminderNoMon
+	text_end
+	
+Text_MoveReminderNoMoves:
+	text_far _MoveReminderNoMoves
+	text_end
+
