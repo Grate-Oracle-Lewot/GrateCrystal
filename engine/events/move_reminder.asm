@@ -283,35 +283,11 @@ ld hl, wStringBuffer1
 	dec a
 
 	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_CATEGORY
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	and CATEGORY_MASK
-	; bc = a * 4
-	ld c, a
-	add a
-	add a
-	ld b, 0
-	ld c, a
-	ld hl, .Types
-	add hl, bc
-	ld d, h
-	ld e, l
-	ld hl, wStringBuffer1
-	ld bc, 3
-	call PlaceString
-	ld hl, wStringBuffer1 + 3
-	ld [hl], "/"
-
-	ld a, [wMenuSelection]
-	dec a
-
-	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_TYPE
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
+	and TYPE_MASK
 	ld [wd265], a
 	; bc = a * 4
 	ld c, a
