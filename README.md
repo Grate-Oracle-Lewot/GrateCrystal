@@ -54,7 +54,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther (but breeding chains are untested)
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
-  - All items are more widely available, either in shops or as wild held items
+  - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
   - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
@@ -160,7 +160,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Most Berries and some other items renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
-- Buena's Password prizes are better
 - Itemfinder replaced with consumable versions called Swag Beacons
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 - Removed: Berserk Gene, Metal Powder
