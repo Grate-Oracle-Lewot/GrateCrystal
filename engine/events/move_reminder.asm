@@ -124,7 +124,6 @@ GetRemindableMoves:
 	ld b, 0
 	ld de, wd002 + 1
 ; based on GetEggMove in engine/breeding/egg.asm
-.loop
 	ld a, [wCurPartySpecies]
 	dec a
 	push bc
