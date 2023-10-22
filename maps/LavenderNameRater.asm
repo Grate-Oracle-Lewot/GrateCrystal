@@ -2,6 +2,7 @@
 	const LAVENDERNAMERATER_NAME_RATER
 	const LAVENDERNAMERATER_SUPER_NERD
 	const LAVENDERNAMERATER_TEACHER
+	const LAVENDERNAMERATER_GRANNY
 
 LavenderNameRater_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,14 @@ LavenderMoveDeleter:
 	faceplayer
 	opentext
 	special MoveDeletion
+	waitbutton
+	closetext
+	end
+
+LavenderSeerScript:
+	faceplayer
+	opentext
+	special MoveReminder
 	waitbutton
 	closetext
 	end
@@ -138,3 +147,4 @@ LavenderNameRater_MapEvents:
 	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderNameRater, -1
 	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavenderMoveDeleter, -1
 	object_event  6,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderHappinessRater, -1
+	object_event  0,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderSeerScript, -1
