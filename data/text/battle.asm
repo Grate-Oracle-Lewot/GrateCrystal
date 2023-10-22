@@ -663,11 +663,6 @@ GotAnEncoreText:
 	line "got an ENCORE!"
 	autodone
 
-SharedPainText:
-	text "The battlers"
-	line "shared pain!"
-	autodone
-
 TookAimText:
 	text "<USER>"
 	line "took aim!"
@@ -807,7 +802,7 @@ EnemyHitTimesText:
 
 MistText:
 	text "<USER>'s"
-	line "shrouded in MIST!"
+	line "stats won't fall!"
 	autodone
 
 ProtectedByMistText:
@@ -818,7 +813,8 @@ ProtectedByMistText:
 GettingPumpedText:
 	text_pause
 	text "<USER>'s"
-	line "getting pumped!"
+	line "critical hit ratio"
+	scroll "went up!"
 	autodone
 
 RecoilText:
@@ -849,7 +845,7 @@ SubTookDamageText:
 
 SubFadedText:
 	text "<TARGET>'s"
-	line "SUBSTITUTE faded!"
+	line "SUBSTITUTE broke!"
 	autodone
 
 MimicLearnedMoveText:
@@ -1058,7 +1054,8 @@ FellInLoveText:
 
 CoveredByVeilText:
 	text "<USER>'s"
-	line "covered by a veil!"
+	line "protected from"
+	scroll "status problems!"
 	autodone
 
 SafeguardProtectText:
