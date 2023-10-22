@@ -386,6 +386,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
+	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	db -1 ; end
 
@@ -2049,6 +2050,25 @@ AI_Smart_Hail:
 	db POWDER_SNOW
 	db ICY_WIND
 	db -1 ; end
+
+AI_Smart_Blizzard:
+; Do nothing if the player is Ice-type.
+	ld a, [wBattleMonType1]
+	cp ICE
+	ret z
+
+	ld a, [wBattleMonType2]
+	cp ICE
+	ret z
+
+; Otherwise, greatly encourage this move in Hail.
+	ld a, [wBattleWeather]
+	cp HAIL
+	ret nz
+
+	dec [hl]
+	dec [hl]
+	ret
 
 AI_Smart_Endure:
 ; Greatly discourage this move if the enemy already used Protect.
