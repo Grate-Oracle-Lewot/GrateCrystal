@@ -2041,7 +2041,13 @@ AI_Smart_Hail:
 	ret
 
 .GoodHailMoves
+	db ICE_PUNCH
+	db ICE_BEAM
 	db BLIZZARD
+	db AURORA_BEAM
+	db AEROBLAST
+	db POWDER_SNOW
+	db ICY_WIND
 	db -1 ; end
 
 AI_Smart_Endure:
