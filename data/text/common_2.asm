@@ -1297,6 +1297,14 @@ _TrainerRankingNoDataText:: ; unreferenced
 	para ""
 	done
 
+_MemoryGameYeahText::
+	text " , yeah!"
+	done
+
+_MemoryGameDarnText::
+	text "Darn…"
+	done
+
 _StartMenuContestEndText::
 	text "Would you like to"
 	line "end the Contest?"
