@@ -1478,6 +1478,66 @@ _DeleterAskWhichMonText::
 	text "Which #MON?"
 	prompt
 
+_MoveReminderIntro::
+	text "Those who forget"
+	line "the past are doom-"
+	cont "ed to repeat it."
+
+	para "I can help your"
+	line "#MON remember"
+
+	para "moves they've for-"
+	line "gotten… for a"
+	cont "small fee."
+
+	para "Are you"
+	line "interested?"
+	done
+/*
+_MoveReminderPrompt::
+	text "Are you"
+	line "interested?"
+	done
+/*
+_MoveReminderWhichMon::
+	text "Which #MON are"
+	line "we working with?"
+	done
+
+_MoveReminderWhichMove::
+	text "Which move should"
+	line "it remember?"
+	done
+
+_MoveReminderCancel::
+	text "Remember to come"
+	line "back!"
+	done
+
+_MoveReminderEgg::
+	text "Hey! What am I"
+	line "supposed to teach"
+	cont "an EGG?"
+	done
+/*
+_MoveReminderNoPay::
+	text "Sorry, kid, but"
+	line "money makes the"
+	cont "world go round."
+	done
+*/
+_MoveReminderNoMon::
+	text "You don't have a"
+	line "#MON that can"
+	cont "remember a move."
+	done
+
+_MoveReminderNoMoves::
+	text "There are no moves"
+	line "for this #MON"
+	cont "to learn."
+	done
+
 _DSTIsThatOKText::
 	text " DST,"
 	line "is that OK?"
