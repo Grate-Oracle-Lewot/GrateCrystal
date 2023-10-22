@@ -156,8 +156,8 @@ KimonoGirlSayoSeenText:
 	text "I always dance"
 	line "with my #MON."
 
-	para "Of course, I also"
-	line "train them."
+	para "Of course, we also"
+	line "train."
 	done
 
 KimonoGirlSayoBeatenText:
@@ -294,6 +294,10 @@ SurfGuyElegantKimonoGirlsText:
 RhydonText:
 	text "RHYDON: Gugooh"
 	line "gugogooh!"
+
+	para "RHYDON is a surp-"
+	line "risingly graceful"
+	cont "dancer."
 	done
 
 DanceTheatreCooltrainerMText:
