@@ -510,7 +510,9 @@
 	const EVENT_GOT_ODD_EGG
 	const EVENT_BROKE_MAGIKARP_RECORD ; new to Grate Crystal
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-; Unused: next 167 events
+	const EVENT_BROCK_IN_PEWTER_MUSEUM
+	const EVENT_SABRINA_IN_FIGHTING_DOJO
+; Unused: next 165 events
 
 	const_next 1000
 ; Trainer flags
