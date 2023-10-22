@@ -1493,12 +1493,12 @@ _MoveReminderIntro::
 	para "Are you"
 	line "interested?"
 	done
-/*
+
 _MoveReminderPrompt::
 	text "Are you"
 	line "interested?"
 	done
-/*
+
 _MoveReminderWhichMon::
 	text "Which #MON are"
 	line "we working with?"
@@ -1519,13 +1519,13 @@ _MoveReminderEgg::
 	line "supposed to teach"
 	cont "an EGG?"
 	done
-/*
+
 _MoveReminderNoPay::
 	text "Sorry, kid, but"
 	line "money makes the"
 	cont "world go round."
 	done
-*/
+
 _MoveReminderNoMon::
 	text "You don't have a"
 	line "#MON that can"
