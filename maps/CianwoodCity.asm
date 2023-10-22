@@ -118,9 +118,6 @@ CianwoodCityPokefanM:
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
 
-CianwoodCityUnusedScript: ; unreferenced
-	jumptextfaceplayer CianwoodCityUnusedText
-
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
 
@@ -239,11 +236,13 @@ ChucksWifeChubbyText:
 	done
 
 CianwoodCityYoungsterText:
-	text "If you use FLY,"
-	line "you can get back"
+	text "There are several"
+	line "islands between"
+	cont "here and OLIVINE."
 
-	para "to OLIVINE in-"
-	line "stantly."
+	para "A mythical sea"
+	line "creature supposed-"
+	cont "ly lives there."
 	done
 
 CianwoodCityPokefanMText:
@@ -265,16 +264,6 @@ CianwoodCityLassText:
 
 	para "his fighting #-"
 	line "MON."
-	done
-
-CianwoodCityUnusedText:
-	text "There are several"
-	line "islands between"
-	cont "here and OLIVINE."
-
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
 	done
 
 EusineSuicuneText:
@@ -376,8 +365,8 @@ CianwoodPhotoStudioSignText:
 	done
 
 CianwoodPokeSeerSignText:
-	text "THE # SEER"
-	line "AHEAD"
+	text "MEMORY GURU'S"
+	line "HOUSE AHEAD"
 	done
 
 CianwoodCity_MapEvents:
