@@ -29,6 +29,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Fairy type added
 - Physical/Special split
 - TMs are infinite-use
+- Poké Seer replaced with move reminder
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
