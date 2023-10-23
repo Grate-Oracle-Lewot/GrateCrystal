@@ -1487,8 +1487,7 @@ _MoveReminderIntro::
 	line "#MON remember"
 
 	para "moves they've for-"
-	line "gotten… for a"
-	cont "small fee."
+	line "gotten… for ¥500."
 
 	para "Are you"
 	line "interested?"
