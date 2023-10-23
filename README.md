@@ -157,7 +157,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
-- King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the sole exception being Future Sight)
+- King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
 - Most Berries and some other items renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball
 - 60 TMs and 8 HMs
