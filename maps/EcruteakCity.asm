@@ -170,11 +170,13 @@ EcruteakCityFisherText_JasmineReturned:
 	done
 
 EcruteakCityYoungsterText:
-	text "Ghost-type #MON"
-	line "are immaterial,"
+	text "You can't scare a"
+	line "ghost #MON with"
+	cont "MEAN LOOK."
 
-	para "so they can't be"
-	line "trapped in battle."
+	para "You can trap them"
+	line "with FIRE SPIN,"
+	cont "though."
 	done
 
 EcruteakCityGramps3Text:
