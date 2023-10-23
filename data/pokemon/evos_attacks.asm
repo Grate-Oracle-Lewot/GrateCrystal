@@ -2374,7 +2374,7 @@ TotodileEvosAttacks:
 	db 43, CRUNCH
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
-*\
+*/
 
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
