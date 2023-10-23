@@ -3,10 +3,9 @@
 MoveReminder:
 	ld hl, Text_MoveReminderIntro
 	call PrintText
+	farcall PlaceMoneyTopRight
 	call YesNoBox
 	jp c, .cancel
-
-	call JoyWaitAorB
 
 	ld hl, .cost_to_relearn
 	ld de, hMoneyTemp
@@ -16,11 +15,6 @@ MoveReminder:
 	ld de, wMoney
 	farcall CompareMoney
 	jp c, .not_enough_money
-
-	ld hl, Text_MoveReminderPrompt
-	call PrintText
-	call YesNoBox
-	jp c, .cancel
 
 	ld hl, Text_MoveReminderWhichMon
 	call PrintText
@@ -271,7 +265,7 @@ ChooseMoveToLearn:
 	ret
 
 .PrintDetails
-ld hl, wStringBuffer1
+	ld hl, wStringBuffer1
 	ld bc, wStringBuffer2 - wStringBuffer1
 	ld a, " "
 	call ByteFill
@@ -316,8 +310,8 @@ ld hl, wStringBuffer1
 	ld hl, wStringBuffer1 + 8
 	and a
 	jr z, .no_power
-	ld [wBuffer1], a
-	ld de, wBuffer1
+	ld [wTempSpecies], a
+	ld de, wTempSpecies
 	lb bc, 1, 3
 	call PrintNum
 	jr .got_power
@@ -332,7 +326,7 @@ ld hl, wStringBuffer1
 	ld a, [wMenuSelection]
 	dec a
 
-;print PP (works)
+; print PP
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
@@ -340,9 +334,9 @@ ld hl, wStringBuffer1
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld [wBuffer1], a
+	ld [wEngineBuffer1], a
 	ld hl, wStringBuffer1 + 12
-	ld de, wBuffer1
+	ld de, wEngineBuffer1
 	lb bc, 1, 2
 	call PrintNum
 	ld hl, wStringBuffer1 + 14
