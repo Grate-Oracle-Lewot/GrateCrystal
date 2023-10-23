@@ -244,11 +244,11 @@ CeladonCityTutorAeroblastNoLeaf:
 	cont "free."
 
 	para "Wild CATERPIE or"
-	line "WHIMSICOTT may"
+	line "COTTONEE may hold"
 
-	para "hold SILVER or"
-	line "GOLD LEAVES. Try"
-	cont "using THIEF!"
+	para "SILVER or GOLD"
+	line "LEAVES. Try using"
+	cont "THIEF!"
 	done
 
 CeladonCityFisherText:
