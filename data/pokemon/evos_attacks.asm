@@ -2357,38 +2357,21 @@ TyphlosionEvosAttacks:
 	db 60, FIRE_BLAST
 	db 0 ; no more level-up moves
 
-;TotodileEvosAttacks:
-;	db EVOLVE_LEVEL, 18, CROCONAW
-;	db 0 ; no more evolutions
-;	db 1, SCRATCH
-;	db 2, TAIL_WHIP
-;	db 7, RAGE
-;	db 12, CLAMP
-;	db 17, VICEGRIP
-;	db 20, BITE
-;	db 26, SCARY_FACE
-;	db 30, SCREECH
-;	db 35, THRASH
-;	db 39, HYPER_FANG
-;	db 43, CRUNCH
-;	db 50, HYDRO_PUMP
-;	db 0 ; no more level-up moves
-
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, WATER_GUN
-	db 1, FAIRY_WIND
-	db 1, BITE
-	db 1, AEROBLAST
-	db 1, GIGA_DRAIN
-	db 1, TRI_ATTACK
-	db 1, FLAMETHROWER
-	db 1, HI_JUMP_KICK
-	db 1, WING_ATTACK
-	db 1, THUNDERBOLT
-	db 1, PSYBEAM
+	db 2, TAIL_WHIP
+	db 7, RAGE
+	db 12, CLAMP
+	db 17, VICEGRIP
+	db 20, BITE
+	db 26, SCARY_FACE
+	db 30, SCREECH
+	db 35, THRASH
+	db 39, HYPER_FANG
+	db 43, CRUNCH
+	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 CroconawEvosAttacks:
