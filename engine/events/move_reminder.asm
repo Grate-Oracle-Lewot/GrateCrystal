@@ -117,7 +117,7 @@ GetRemindableMoves:
 
 	ld b, 0
 	ld de, wd002 + 1
-; based on GetEggMove in engine/breeding/egg.asm
+
 	ld a, [wCurPartySpecies]
 	dec a
 	push bc
@@ -429,4 +429,3 @@ Text_MoveReminderNoMon:
 Text_MoveReminderNoMoves:
 	text_far _MoveReminderNoMoves
 	text_end
-
