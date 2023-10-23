@@ -4895,7 +4895,7 @@ PrintPlayerHUD:
 	predef PlaceNonFaintStatus
 	pop hl
 	pop bc
-	ret nz
+	jr nz, .place_floaticon
 	ld a, b
 	cp " "
 	jr nz, .copy_level ; male or female
@@ -4905,6 +4905,7 @@ PrintPlayerHUD:
 	ld a, [wBattleMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
+.place_floaticon
 	ld a, [wCurSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
