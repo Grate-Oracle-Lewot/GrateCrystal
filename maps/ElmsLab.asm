@@ -763,20 +763,6 @@ ElmText_Refused:
 	line "need your help!"
 	done
 
-ElmText_ResearchAmbitions:
-	text "When I announce my"
-	line "findings, I'm sure"
-
-	para "we'll delve a bit"
-	line "deeper into the"
-
-	para "many mysteries of"
-	line "#MON."
-
-	para "You can count on"
-	line "it!"
-	done
-
 ElmText_GotAnEmail:
 	text "Oh, hey! I got an"
 	line "e-mail!"
@@ -947,8 +933,7 @@ ElmsLabHealingMachineText1:
 	done
 
 ElmsLabHealingMachineText2:
-	text "Would you like to"
-	line "heal your #MON?"
+	text "Heal #MON?"
 	autodone
 
 ElmAfterTheftText1:
@@ -1068,17 +1053,17 @@ ShowElmTogepiText1:
 	done
 
 ShowElmTogepiText2:
-	text "What?"
-	line "That #MON!?!"
+	text "What?!?!?!?!?!?!?!"
+	line "That #MON?!?!?!"
 	done
 
 ShowElmTogepiText3:
 	text "The EGG hatched!"
-	line "So, #MON are"
-	cont "born from EGGS…"
+	line "So, it's a baby"
+	cont "form of TOGETIC…"
 
-	para "No, perhaps not"
-	line "all #MON are."
+	para "That's an extremely"
+	line "rare #MON!"
 
 	para "Wow, there's still"
 	line "a lot of research"
@@ -1220,18 +1205,6 @@ AideText_TheftTestimony:
 	para "It's unbelievable"
 	line "that anyone would"
 	cont "do that!"
-
-	para "…sigh… That"
-	line "stolen #MON."
-
-	para "I wonder how it's"
-	line "doing."
-
-	para "They say a #MON"
-	line "raised by a bad"
-
-	para "person turns bad"
-	line "itself."
 	done
 
 AideText_GiveYouBalls:
