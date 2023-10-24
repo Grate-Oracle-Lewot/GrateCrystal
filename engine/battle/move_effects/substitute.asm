@@ -86,6 +86,7 @@ BattleCommand_Substitute:
 	push bc
 	call BattleCommand_DefenseUp
 	call BattleCommand_StatUpMessage
+	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
 	call BattleCommand_StatUpMessage
 	pop bc
