@@ -33,7 +33,7 @@ Lugia:
 	setevent EVENT_FOUGHT_LUGIA
 	takeitem SILVER_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
-	loadwildmon LUGIA, 60
+	loadwildmon LUGIA, 64
 	startbattle
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
 	reloadmapafterbattle
