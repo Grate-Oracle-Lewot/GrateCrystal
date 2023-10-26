@@ -32,7 +32,7 @@ TinTowerHoOh:
 	setevent EVENT_FOUGHT_HO_OH
 	takeitem RAINBOW_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
-	loadwildmon HO_OH, 60
+	loadwildmon HO_OH, 64
 	startbattle
 	disappear TINTOWERROOF_HO_OH
 	reloadmapafterbattle
