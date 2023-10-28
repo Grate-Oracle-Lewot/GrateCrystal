@@ -1059,8 +1059,9 @@ ShowElmTogepiText2:
 
 ShowElmTogepiText3:
 	text "The EGG hatched!"
-	line "So, it's a baby"
-	cont "form of TOGETIC…"
+
+	para "So, it was a baby"
+	line "form of TOGETIC…"
 
 	para "That's an extremely"
 	line "rare #MON!"
