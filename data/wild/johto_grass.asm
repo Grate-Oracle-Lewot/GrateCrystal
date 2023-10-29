@@ -725,7 +725,7 @@ JohtoGrassWildMons:
 	db 28, HITMONLEE
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
-	db 26, AZUMARILL
+	db 26, MARILL
 	; day
 	db 30, MACHOKE
 	db 29, GRAVELER
@@ -734,7 +734,7 @@ JohtoGrassWildMons:
 	db 28, HITMONLEE
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
-	db 26, AZUMARILL
+	db 26, MARILL
 	; nite
 	db 30, MACHOKE
 	db 29, GRAVELER
@@ -743,7 +743,7 @@ JohtoGrassWildMons:
 	db 28, HITMONLEE
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
-	db 26, AZUMARILL
+	db 26, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F
@@ -756,7 +756,7 @@ JohtoGrassWildMons:
 	db 24, RATTATA
 	db 26, RATTATA
 	db 26, RATICATE
-	db 24, AZUMARILL
+	db 24, MARILL
 	; day
 	db 24, MACHOP
 	db 24, GEODUDE
