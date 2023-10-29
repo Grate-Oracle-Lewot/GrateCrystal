@@ -1579,15 +1579,15 @@ _DayCareManIntroEggText::
 	line "MAN. Do you know"
 	cont "about EGGS?"
 
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
+	para "If you leave two"
+	line "#MON with us,"
 
-	para "We were shocked to"
-	line "find an EGG!"
+	para "We might find a"
+	line "#MON EGG."
 
-	para "How incredible is"
-	line "that?"
+	para "It will hatch into"
+	line "the mother #-"
+	cont "MON's species."
 
 	para "So, want me to"
 	line "raise a #MON?"
@@ -1606,15 +1606,13 @@ _DayCareLadyIntroEggText::
 	line "LADY. Do you know"
 	cont "about EGGS?"
 
-	para "My husband and I"
-	line "were raising some"
-	cont "#MON, you see."
+	para "A hatched #MON"
+	line "may inherit moves"
+	cont "from its father."
 
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible"
-	line "could that be?"
+	para "These may be moves"
+	line "it can't normally"
+	cont "learn."
 
 	para "Should I raise a"
 	line "#MON for you?"
