@@ -1735,17 +1735,11 @@ _FoundAnEggText::
 	para "We were raising"
 	line "your #MON, and"
 
-	para "my goodness, were"
-	line "we surprised!"
+	para "the next thing we"
+	line "knew, they had an"
+	cont "EGG!"
 
-	para "Your #MON was"
-	line "holding an EGG!"
-
-	para "We don't know how"
-	line "it got there, but"
-
-	para "your #MON had"
-	line "it. You want it?"
+	para "Do you want it?"
 	done
 
 _ReceivedEggText::
