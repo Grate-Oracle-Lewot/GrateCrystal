@@ -167,7 +167,7 @@ KantoGrassWildMons:
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, AZUMARILL
+	db 23, MARILL
 	; day
 	db 20, ZUBAT
 	db 20, RATICATE
@@ -176,7 +176,7 @@ KantoGrassWildMons:
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, AZUMARILL
+	db 23, MARILL
 	; nite
 	db 20, ZUBAT
 	db 20, RATICATE
@@ -185,7 +185,7 @@ KantoGrassWildMons:
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, AZUMARILL
+	db 23, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1
