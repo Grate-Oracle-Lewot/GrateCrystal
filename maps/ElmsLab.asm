@@ -933,7 +933,7 @@ ElmsLabHealingMachineText1:
 	done
 
 ElmsLabHealingMachineText2:
-	text "Heal #MON?"
+	text "Heal?"
 	autodone
 
 ElmAfterTheftText1:
@@ -1282,8 +1282,8 @@ ElmsLabTravelTip2Text:
 
 	para "Travel Tip 2:"
 
-	para "Record your trip"
-	line "with SAVE!"
+	para "Hold the B Button"
+	line "and move to run!"
 	done
 
 ElmsLabTravelTip3Text:
