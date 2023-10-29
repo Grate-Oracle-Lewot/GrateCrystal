@@ -915,6 +915,7 @@ AbraEvosAttacks:
 
 KadabraEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, ALAKAZAM
+	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, KINESIS
@@ -961,6 +962,7 @@ MachopEvosAttacks:
 
 MachokeEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, MACHAMP
+	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
 	db 1, KARATE_CHOP
 	db 3, LEER
@@ -1079,6 +1081,7 @@ GeodudeEvosAttacks:
 
 GravelerEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GOLEM
+	db EVOLVE_TRADE, -1, GOLEM
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, HARDEN
@@ -1364,6 +1367,7 @@ GastlyEvosAttacks:
 
 HaunterEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GENGAR
+	db EVOLVE_TRADE, -1, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1399,6 +1403,7 @@ GengarEvosAttacks:
 
 OnixEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, STEELIX
+	db EVOLVE_TRADE, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
@@ -1753,6 +1758,7 @@ HorseaEvosAttacks:
 
 SeadraEvosAttacks:
 	db EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
+	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, LEER
@@ -1842,6 +1848,7 @@ MrMimeEvosAttacks:
 
 ScytherEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, SCIZOR
+	db EVOLVE_TRADE, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2795,7 +2802,7 @@ BellossomEvosAttacks:
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
-	db EVOLVE_LEVEL, 18, AZUMARILL
+	db EVOLVE_ITEM, WATER_STONE, AZUMARILL
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 3, TAIL_WHIP
@@ -2813,16 +2820,9 @@ MarillEvosAttacks:
 AzumarillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 3, TAIL_WHIP
-	db 6, DEFENSE_CURL
-	db 10, WATER_GUN
-	db 15, ROLLOUT
-	db 18, PLAY_ROUGH
-	db 25, BUBBLEBEAM
-	db 36, DOUBLE_EDGE
-	db 48, MIST
-	db 56, BELLY_DRUM
-	db 64, HYDRO_PUMP
+	db 1, TAIL_WHIP
+	db 1, ROLLOUT
+	db 1, BUBBLEBEAM
 	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
