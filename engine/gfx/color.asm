@@ -1081,7 +1081,6 @@ endr
 	ld bc, 4
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-	ret
 
 	; Day Care outdoor palettes
 	ld a, [wMapGroup]
@@ -1148,6 +1147,7 @@ endr
 	ld bc, 1 palettes - 2
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
+	ret
 
 ; Input: E must contain the offset of the selected palette from PartyMenuOBPals.
 SetFirstOBJPalette::
