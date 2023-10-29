@@ -223,6 +223,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs; Miltank and Tauros can produce each other's eggs, and Metapod, Kakuna, and Porygon can no longer breed (Porygon2 still can)
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
+- Marill now evolves with a Water Stone instead of level up
 - Hail boosts Ice-type moves as well as dealing its regular damage
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
