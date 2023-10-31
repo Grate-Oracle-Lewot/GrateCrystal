@@ -120,8 +120,8 @@ SurfGuyAlreadyGaveSurf:
 
 DanceTheaterRhydon:
 	opentext
-	writetext RhydonText
 	cry RHYDON
+	writetext RhydonText
 	waitbutton
 	closetext
 	end
