@@ -16,8 +16,8 @@ AnthonyAskNumber1Text:
 	done
 
 AnthonyAskNumber2Text:
-	text "I like trading"
-	line "adventuring advice."
+	text "I like trading ad-"
+	line "venturing advice."
 
 	para "Feel like swapping"
 	line "phone numbers?"
