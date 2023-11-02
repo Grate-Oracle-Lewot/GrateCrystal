@@ -1205,7 +1205,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (7)
 	db "KELLY@", TRAINERTYPE_NORMAL
-	db 38, AZUMARILL
+	db 38, MARILL
 	db 36, WARTORTLE
 	db 37, PIKACHU
 	db -1 ; end
