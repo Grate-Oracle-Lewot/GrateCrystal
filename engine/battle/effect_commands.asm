@@ -1704,7 +1704,13 @@ BattleCommand_CheckHit:
 	ret z
 	cp SKY_ATTACK
 	ret z
+	cp SILVER_WIND
+	ret z
+	cp ICY_WIND
+	ret z
 	cp TWISTER
+	ret z
+	cp FAIRY_WIND
 	ret
 
 .DigMoves:
