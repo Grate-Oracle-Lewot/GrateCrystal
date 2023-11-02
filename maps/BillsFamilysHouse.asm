@@ -115,6 +115,14 @@ BillsFamilysHouseEevee2:
 	closetext
 	end
 
+BillsFamilysHouseEevee3:
+	opentext
+	writetext BillsFamilysHouseEevee3Text
+	cry EEVEE
+	waitbutton
+	closetext
+	end
+
 BillsHouseBookshelf1:
 	jumpstd PictureBookshelfScript
 
@@ -183,8 +191,8 @@ BillPopWontWorkText:
 	text "BILL: My pop, he"
 	line "won't work. All he"
 
-	para "does is goof off"
-	line "all day long."
+	para "does is gamble all"
+	line "day long."
 
 	para "He's getting to be"
 	line "a real headache…"
@@ -261,6 +269,10 @@ BillsFamilysHouseEevee1Text:
 
 BillsFamilysHouseEevee2Text:
 	text "EEVEE: Eeeeev!"
+	done
+
+BillsFamilysHouseEevee3Text:
+	text "EEVEE: Eevuh?"
 	done
 
 BillsFamilysHouse_MapEvents:
