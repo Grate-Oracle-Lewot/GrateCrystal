@@ -1458,6 +1458,7 @@ _OakText1::
 
 	para "hack by the GRATE"
 	line "ORACLE LEWOT."
+	cont "(That's me.)"
 
 	para "There's not much"
 	line "of a theme here,"
