@@ -1,6 +1,6 @@
 # Pokémon Grate Crystal
 
-URL: https://github.com/Grate-Oracle-Lewot/GrateCrystal
+Repository: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
 Recommended Emulator: BGB
 
