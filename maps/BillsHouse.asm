@@ -208,6 +208,9 @@ BillsGrandpa:
 	closetext
 	end
 
+BillsHousePhoto:
+	jumptext BillsHousePhotoText
+
 BillsGrandpaIntroText:
 	text "Hm? You know BILL?"
 	line "He's my grandson."
@@ -348,6 +351,14 @@ BillsGrandpaPichuText:
 	cont "like!"
 	done
 
+BillsHousePhotoText:
+	text "It's a photo of"
+	line "BILL's family."
+
+	para "There are too many"
+	line "people to count!"
+	done
+
 BillsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -358,6 +369,7 @@ BillsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3,  0, BGEVENT_READ, BillsHousePhoto
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
