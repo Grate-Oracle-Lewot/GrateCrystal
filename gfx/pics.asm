@@ -461,7 +461,6 @@ ClefairyBackpic:     INCBIN "gfx/pokemon/clefairy/back.2bpp.lz"
 VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
 Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
-SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 
 
 SECTION "Pics 15", ROMX
@@ -709,6 +708,7 @@ HeracrossFrontpic:        INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz" 
 KangaskhanBackpic:        INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz" ; 7
 SnorlaxBackpic:           INCBIN "gfx/pokemon/snorlax/back.2bpp.lz" ; 11
 ElectrodeFrontpic:        INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz" ; 13
+SwinubBackpic:            INCBIN "gfx/pokemon/swinub/back.2bpp.lz" ; 14
 UnownDBackpic:            INCBIN "gfx/pokemon/unown_d/back.2bpp.lz" ; 17
 YanmegaFrontpic:          INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
 YanmegaBackpic:           INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
