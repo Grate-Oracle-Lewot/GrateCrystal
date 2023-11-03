@@ -133,6 +133,9 @@ BillsHouseBookshelf2:
 BillsHouseRadio:
 	jumpstd Radio2Script
 
+BillsFamilysHousePhoto:
+	jumptext BillsFamilysHousePhotoText
+
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
 	line "Do us a favor and"
@@ -276,6 +279,14 @@ BillsFamilysHouseEevee3Text:
 	text "EEVEE: Eevuh?"
 	done
 
+BillsFamilysHousePhotoText:
+	text "It's a photo of"
+	line "BILL's family."
+
+	para "There are too many"
+	line "people to count!"
+	done
+
 BillsFamilysHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -289,6 +300,7 @@ BillsFamilysHouse_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2
 	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
 	bg_event  7,  1, BGEVENT_READ, BillsHouseRadio
+	bg_event  3,  0, BGEVENT_READ, BillsFamilysHousePhoto
 
 	def_object_events
 	object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, EVENT_MET_BILL
