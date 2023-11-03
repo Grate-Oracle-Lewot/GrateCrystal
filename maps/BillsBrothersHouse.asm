@@ -13,6 +13,9 @@ BillsBrotherScript:
 BillsBrothersHouseYoungsterScript:
 	jumptextfaceplayer BillsBrothersHouseYoungsterText
 
+BillsBrothersHousePhoto:
+	jumptext BillsBrothersHousePhotoText
+
 BillsBrotherText:
 	text "My grandpa is at "
 	line "my brother BILL's"
@@ -32,6 +35,14 @@ BillsBrothersHouseYoungsterText:
 	line "bike."
 	done
 
+BillsBrothersHousePhotoText:
+	text "It's a photo of"
+	line "BILL's family."
+
+	para "There are too many"
+	line "people to count!"
+	done
+
 BillsBrothersHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -42,6 +53,7 @@ BillsBrothersHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3,  0, BGEVENT_READ, BillsBrothersHousePhoto
 
 	def_object_events
 	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BillsBrotherScript, -1
