@@ -896,8 +896,8 @@ HyperFangDescription:
 	next "damage inflicted.@"
 
 SilverWindDescription:
-	db   "A breeze that may"
-	next "raise all stats.@"
+	db   "May up all stats."
+	next "Hits flying foes.@"
 
 ConversionDescription:
 	db   "Change user's type"
@@ -1044,8 +1044,8 @@ PerishSongDescription:
 	next "faint in 3 turns.@"
 
 IcyWindDescription:
-	db   "A cold breeze that"
-	next "lowers SPEED.@"
+	db   "Lowers SPEED. Can"
+	next "hit flying foes.@"
 
 AuraSphereDescription:
 	db   "A ki ball that"
@@ -1268,8 +1268,8 @@ BeatUpDescription:
 	next "party #MON.@"
 
 FairyWindDescription:
-	db   "Blows wind with"
-	next "pixie dust in it.@"
+	db   "Doubles damage on"
+	next "a foe in flight.@"
 
 PowerGemDescription:
 	db   "Fires gems. Get"
