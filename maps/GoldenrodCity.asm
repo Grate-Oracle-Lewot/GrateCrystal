@@ -350,17 +350,6 @@ GoldenrodCityGrampsText:
 	line "between two #-"
 	cont "MON created the"
 	cont "continents."
-
-	para "I've heard SINNOH"
-	line "folk say that a"
-
-
-	para "MON pulled the"
-	line "continents with"
-	cont "ropes."
-
-	para "That seems a bit"
-	line "ridiculous."
 	done
 
 GoldenrodCityRocketScoutText1:
