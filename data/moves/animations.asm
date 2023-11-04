@@ -2763,6 +2763,7 @@ BattleAnim_Glare:
 
 BattleAnim_Thrash:
 	anim_1gfx ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $20, $1, $0
 	anim_sound 0, 1, SFX_POUND
 	anim_obj ANIM_OBJ_PALM, 120, 72, $0
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
