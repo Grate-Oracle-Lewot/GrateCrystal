@@ -53,6 +53,12 @@ MahoganyPokecenter1FCooltrainerFText:
 	para "stone will stop"
 	line "learning moves"
 	cont "after evolving."
+
+	para "Even the MEMORY"
+	line "GURU can't recover"
+
+	para "many moves after"
+	line "that."
 	done
 
 MahoganyPokecenter1F_MapEvents:
