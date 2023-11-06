@@ -72,14 +72,20 @@ PlayersNeighborsDaughterText:
 	done
 
 PlayersNeighborText:
-	text "Look, we did the"
-	line "best we could, but"
+	text "Sometimes when"
+	line "#MON battle,"
 
-	para "hacking is hard."
-	line "Sometimes things"
+	para "they'll suddenly"
+	line "get exhausted and"
 
-	para "go wrong. Just try"
-	line "to roll with it."
+	para "take more damage"
+	line "but deal little."
+
+	para "This is totally an"
+	line "intended mechanic"
+	cont "and not a glitch."
+
+	para "Definitely."
 	done
 
 PlayerNeighborRadioText1:
