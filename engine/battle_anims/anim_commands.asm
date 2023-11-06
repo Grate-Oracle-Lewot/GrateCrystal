@@ -1072,7 +1072,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 .CopyTile
 	ld bc, 1 tiles
 	ld a, BANK(GetSubstitutePic)
-	jmp FarCopyBytes
+	jp FarCopyBytes
 
 BattleAnimCmd_MinimizeOpp:
 	ldh a, [rSVBK]
