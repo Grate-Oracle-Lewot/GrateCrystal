@@ -218,25 +218,6 @@ ClearActorHud:
 	call ClearBox
 	ret
 
-PlaceWindowOverBattleTextbox: ; unreferenced
-	xor a
-	ldh [hBGMapMode], a
-	; bgcoord hBGMapAddress, 0, 20
-	ld a, LOW(vBGMap0 + 20 * BG_MAP_WIDTH)
-	ldh [hBGMapAddress], a
-	ld a, HIGH(vBGMap0 + 20 * BG_MAP_WIDTH)
-	ldh [hBGMapAddress + 1], a
-	call WaitBGMap2
-	ld a, (SCREEN_HEIGHT - TEXTBOX_HEIGHT) * TILE_WIDTH
-	ldh [hWY], a
-	; bgcoord hBGMapAddress, 0, 0
-	xor a ; LOW(vBGMap0)
-	ldh [hBGMapAddress], a
-	ld a, HIGH(vBGMap0)
-	ldh [hBGMapAddress + 1], a
-	call BattleAnimDelayFrame
-	ret
-
 BattleAnim_ClearOAM:
 	ld a, [wBattleAnimFlags]
 	bit BATTLEANIM_KEEPSPRITES_F, a
@@ -979,7 +960,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 
 	ld hl, SubstituteFrontpic
 	ld a, BANK(SubstituteFrontpic)
-	assert wTempTileMap == WRAM1_Begin
+	assert wTempTilemap == WRAM1_Begin
 	call FarDecompress
 	call .CopyPic
 	ld hl, vTiles2 tile $00
@@ -991,7 +972,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 .player
 	ld hl, SubstituteBackpic
 	ld a, BANK(SubstituteBackpic)
-	assert wTempTileMap == WRAM1_Begin
+	assert wTempTilemap == WRAM1_Begin
 	call FarDecompress
 	call .CopyPic
 	ld hl, vTiles2 tile $31
@@ -1023,7 +1004,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ret
 
 .GetTile:
-	; hl = wTempTileMap + (4 - b) * 4 tiles + (4 - c) tiles
+	; hl = wTempTilemap + (4 - b) * 4 tiles + (4 - c) tiles
 	; de = sScratch + (1 + 4 - c) * 7 tiles + (2 + 4 - b) tiles if enemy
 	; de = sScratch + (1 + 4 - c) * 6 tiles + (1 + 4-b) tiles if player
 	ld a, 4
@@ -1060,7 +1041,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	pop bc
 	push bc
 	ld a, b
-	ld hl, wTempTileMap
+	ld hl, wTempTilemap
 	ld bc, 4 tiles
 	rst AddNTimes
 	pop bc
@@ -1119,6 +1100,9 @@ GetMinimizePic:
 	ld de, sScratch
 	lb bc, BANK(GetMinimizePic), 6 * 6
 	ret
+
+SubstituteFrontpic: INCBIN "gfx/battle_anims/sub_front.2bpp.lz"
+SubstituteBackpic:  INCBIN "gfx/battle_anims/sub_back.2bpp.lz"
 
 CopyMinimizePic:
 	ld hl, MinimizePic
