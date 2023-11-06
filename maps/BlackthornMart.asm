@@ -25,17 +25,11 @@ BlackthornMartBlackBeltScript:
 	jumptextfaceplayer BlackthornMartBlackBeltText
 
 BlackthornMartCooltrainerMText:
-	text "You can't buy MAX"
-	line "REVIVE, but it"
+	text "I was hoping they"
+	line "would sell MAX"
 
-	para "fully restores a"
-	line "fainted #MON."
-
-	para "Beware--it won't"
-	line "restore PP, the"
-
-	para "POWER POINTS"
-	line "needed for moves."
+	para "REVIVE here, but"
+	line "no dice."
 	done
 
 BlackthornMartBlackBeltText:
