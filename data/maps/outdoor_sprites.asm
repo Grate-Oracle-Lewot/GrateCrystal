@@ -242,6 +242,7 @@ MahoganyGroupSprites:
 	db SPRITE_FISHER
 	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
+	db SPRITE_EKANS
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE
 	db 0 ; end
