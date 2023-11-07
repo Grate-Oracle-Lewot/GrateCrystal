@@ -149,11 +149,11 @@ BlackthornGymDragoniteScript:
 	cry DRAGONITE
 	waitsfx
 	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	playsound SFX_WARP_TO
 	setevent EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
 	disappear BLACKTHORNGYM1F_DRAGONITE
 	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
-	playsound SFX_WARP_TO
-	waitsfx
 	special FadeInQuickly
 	opentext
 	writetext BlackthornGymDragoniteText
@@ -447,4 +447,4 @@ BlackthornGym1F_MapEvents:
 	object_event  9,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
 	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
-	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE
+	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
