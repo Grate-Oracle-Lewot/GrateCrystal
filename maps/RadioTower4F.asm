@@ -22,7 +22,19 @@ RadioTower4FDJMaryScript:
 	iftrue .GotPinkBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRockets
-	writetext RadioTower4FDJMaryText
+	writetext RadioTower4FDJMaryHealText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext RadioTower4FDJMarySaveUsText
 	waitbutton
 	closetext
 	end
@@ -112,12 +124,18 @@ RadioTower4FFisherText:
 	line "broadcast there."
 	done
 
-RadioTower4FDJMaryText:
-	text "MARY: Why? Why do"
-	line "I have to suffer"
-	cont "through this?"
+RadioTower4FDJMaryHealText:
+	text "MARY: Are you"
+	line "trying to stop"
+	cont "this madness?"
 
-	para "MEOWTH, help me!"
+	para "In that case, I'll"
+	line "heal your #MON."
+	done
+
+RadioTower4FDJMarySaveUsText:
+	text "MARY: Now go save"
+	line "us!!"
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
