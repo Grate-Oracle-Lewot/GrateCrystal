@@ -8,6 +8,7 @@
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
 	const INDIGOPLATEAUPOKECENTER1F_ROCKER
+	const INDIGOPLATEAUPOKECENTER1F_GRANNY
 
 IndigoPlateauPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -192,6 +193,14 @@ IndigoMoveDeleter:
 	closetext
 	end
 
+IndigoSeerScript:
+	faceplayer
+	opentext
+	special MoveReminder
+	waitbutton
+	closetext
+	end
+
 PlateauRivalMovement1:
 	step UP
 	step UP
@@ -334,3 +343,4 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
 	object_event  8,  7, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, IndigoMoveDeleter, -1
+	object_event 13,  7, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IndigoSeerScript, -1
