@@ -503,6 +503,15 @@ CooltrainerfCybilAfterBattleText:
 Route44DragonairText:
 	text "DRAGONAIR is crea-"
 	line "ting whirlpools!"
+
+	para "It's holding MAIL…"
+	line "It says…"
+
+	para "<PLAYER>, consider"
+	line "this part of your"
+	cont "GYM challenge."
+
+	para "Love, CLAIR"
 	done
 
 Route44Sign1Text:
