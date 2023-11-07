@@ -995,8 +995,16 @@ AI_Smart_Poison:
 	ret
 
 AI_Smart_LeechSeed:
-; Discourage this move if player's HP is below 50%.
+; Dismiss this move if the player is Grass-type and therefore immune.
+	ld a, [wBattleMonType1]
+	cp GRASS
+	jp z, AIDiscourageMove
 
+	ld a, [wBattleMonType2]
+	cp GRASS
+	jp z, AIDiscourageMove
+
+; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
