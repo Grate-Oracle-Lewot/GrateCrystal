@@ -126,29 +126,7 @@ TrainerTwinsLeaandpia2:
 	end
 
 DragonsDenB1FDragonFangScript:
-; This whole script is written out rather than as an itemball
-; because it's left over from the GS event.
-	giveitem DRAGON_FANG
-	iffalse .BagFull
-	disappear DRAGONSDENB1F_POKE_BALL1
-	opentext
-	getitemname STRING_BUFFER_3, DRAGON_FANG
-	writetext Text_FoundDragonFang
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
-	closetext
-	end
-
-.BagFull:
-	opentext
-	getitemname STRING_BUFFER_3, DRAGON_FANG
-	writetext Text_FoundDragonFang
-	promptbutton
-	writetext Text_NoRoomForDragonFang
-	waitbutton
-	closetext
-	end
+	itemball DRAGON_FANG
 
 DragonsDenB1FSilverScript:
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -390,19 +368,6 @@ TwinsLeaandpia2AfterBattleText:
 	line "angry with you."
 	done
 
-Text_FoundDragonFang:
-	text "<PLAYER> found"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
-	done
-
-Text_NoRoomForDragonFang:
-	text "But <PLAYER> can't"
-	line "carry any more"
-	cont "items."
-	done
-
 DragonsDenB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -420,7 +385,7 @@ DragonsDenB1F_MapEvents:
 	bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
-	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
+	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
 	object_event 20, 23, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FSilverScript, EVENT_RIVAL_DRAGONS_DEN
 	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1
