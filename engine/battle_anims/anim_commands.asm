@@ -1025,7 +1025,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ld bc, 7 tiles
 	ld hl, sScratch + 1 tiles
 .okay1
-	rst AddNTimes
+	call AddNTimes
 	pop bc
 	inc b
 	ldh a, [hBattleTurn]
@@ -1035,7 +1035,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 .okay2
 	ld a, b
 	ld bc, 1 tiles
-	rst AddNTimes
+	call AddNTimes
 	ld d, h
 	ld e, l
 	pop bc
@@ -1043,7 +1043,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ld a, b
 	ld hl, wTempTilemap
 	ld bc, 4 tiles
-	rst AddNTimes
+	call AddNTimes
 	pop bc
 	swap c
 	ld b, 0
