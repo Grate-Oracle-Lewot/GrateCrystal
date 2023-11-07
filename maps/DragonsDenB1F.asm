@@ -265,32 +265,27 @@ DragonShrineSignpostText:
 	done
 
 SilverText_Training1:
-	text "…"
-	line "What? <PLAYER>?"
+	text "HOW ARE YOU,"
+	line "<PLAYER> I AM"
+	cont "FEEL SHY"
+	cont "DON'T LET THEM"
+	cont "TO BE YOUR"
+	cont "OPPOSITE."
 
-	para "…No, I won't"
-	line "battle you now…"
-
-	para "My #MON aren't"
-	line "ready to beat you."
-
-	para "I can't push them"
-	line "too hard now."
-
-	para "I have to be dis-"
-	line "ciplined to become"
-
-	para "the greatest #-"
-	line "MON trainer…"
+	para "NONE OF THEM CAN"
+	line " "
+	cont "WIN YOU"
+	cont "I DON'T DO"
+	cont "OUTRAGEOUS THING,"
+	cont "OR YOU DOESN'T"
+	cont "BECOME THE"
+	cont "STRONGEST COACH"
 	done
 
 SilverText_Training2:
-	text "…"
-
-	para "Whew…"
-
-	para "Learn to stay out"
-	line "of my way…"
+	text "WU!"
+	line "DON'T AFFECT"
+	cont "OTHERS"
 	done
 
 CooltrainermDarinSeenText:
