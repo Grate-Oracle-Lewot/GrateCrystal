@@ -159,13 +159,13 @@ DragonShrine_MapScripts:
 	writetext DragonShrineHereRisingBadgeText
 	waitbutton
 	setflag ENGINE_RISINGBADGE
-	playsound SFX_GET_BADGE
-	waitsfx
-	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_FINISHED
 	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 	writetext DragonShrinePlayerReceivedRisingBadgeText
+	playsound SFX_GET_BADGE
+	waitsfx
+	special RestartMapMusic
 	promptbutton
 	writetext DragonShrineRisingBadgeExplanationText
 	waitbutton
