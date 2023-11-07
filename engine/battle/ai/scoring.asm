@@ -329,6 +329,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
+	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
@@ -351,6 +352,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BURN_HIT,         AI_Smart_BurnHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
+	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
 	dbw EFFECT_FORESIGHT,        AI_Smart_Foresight
@@ -387,12 +389,19 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
-	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	db -1 ; end
 
 AI_Smart_Sleep:
+; Dismiss sleep inducing moves if the player's held item immunizes against them.
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
+
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	call GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_SLEEP
+	jp z, AIDiscourageMove
 
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
@@ -962,6 +971,21 @@ AI_Smart_Moonlight:
 	ret
 
 AI_Smart_Toxic:
+AI_Smart_Poison:
+; Dismiss this move if the player's held item immunizes against poisoning.
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	call GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_POISON
+	jp z, AIDiscourageMove
+
+; Discourage this move if player's HP is below 50%.
+	call AICheckPlayerHalfHP
+	ret c
+	inc [hl]
+	ret
+
 AI_Smart_LeechSeed:
 ; Discourage this move if player's HP is below 50%.
 
@@ -1168,6 +1192,14 @@ AI_Smart_SuperFang:
 	ret
 
 AI_Smart_Paralyze:
+; Dismiss this move if the player's held item immunizes against Paralysis.
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	call GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_PARALYZE
+	jp z, AIDiscourageMove
+
 ; 50% chance to discourage this move if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
 	jr nc, .discourage
