@@ -1101,9 +1101,6 @@ GetMinimizePic:
 	lb bc, BANK(GetMinimizePic), 6 * 6
 	ret
 
-SubstituteFrontpic: INCBIN "gfx/battle_anims/sub_front.2bpp.lz"
-SubstituteBackpic:  INCBIN "gfx/battle_anims/sub_back.2bpp.lz"
-
 CopyMinimizePic:
 	ld hl, MinimizePic
 	ld bc, $10
