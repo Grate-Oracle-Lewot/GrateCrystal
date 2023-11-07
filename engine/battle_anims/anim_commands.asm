@@ -958,11 +958,19 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	and a
 	jr z, .player
 
-	ld hl, SubstituteFrontpic
-	ld a, BANK(SubstituteFrontpic)
-	assert wTempTilemap == WRAM1_Begin
-	call FarDecompress
-	call .CopyPic
+	ld hl, MonsterSpriteGFX + 0 tiles
+	ld de, sScratch + (2 * 7 + 5) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 1 tiles
+	ld de, sScratch + (3 * 7 + 5) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 2 tiles
+	ld de, sScratch + (2 * 7 + 6) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 3 tiles
+	ld de, sScratch + (3 * 7 + 6) tiles
+	call .CopyTile
+
 	ld hl, vTiles2 tile $00
 	ld de, sScratch
 	lb bc, BANK(GetSubstitutePic), 7 * 7
@@ -970,11 +978,19 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	jr .done
 
 .player
-	ld hl, SubstituteBackpic
-	ld a, BANK(SubstituteBackpic)
-	assert wTempTilemap == WRAM1_Begin
-	call FarDecompress
-	call .CopyPic
+	ld hl, MonsterSpriteGFX + 4 tiles
+	ld de, sScratch + (2 * 6 + 4) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 5 tiles
+	ld de, sScratch + (3 * 6 + 4) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 6 tiles
+	ld de, sScratch + (2 * 6 + 5) tiles
+	call .CopyTile
+	ld hl, MonsterSpriteGFX + 7 tiles
+	ld de, sScratch + (3 * 6 + 5) tiles
+	call .CopyTile
+
 	ld hl, vTiles2 tile $31
 	ld de, sScratch
 	lb bc, BANK(GetSubstitutePic), 6 * 6
@@ -986,7 +1002,7 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ldh [rSVBK], a
 	ret
 
-.CopyPic
+.CopyTile:
 	ld b, 4
 .loop1
 	push bc
@@ -1004,56 +1020,10 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ret
 
 .GetTile:
-	; hl = wTempTilemap + (4 - b) * 4 tiles + (4 - c) tiles
-	; de = sScratch + (1 + 4 - c) * 7 tiles + (2 + 4 - b) tiles if enemy
-	; de = sScratch + (1 + 4 - c) * 6 tiles + (1 + 4-b) tiles if player
-	ld a, 4
-	sub b
-	ld b, a
-	ld a, 4
-	sub c
-	ld c, a
-	push bc
-	push bc
-	inc c
-	ldh a, [hBattleTurn]
-	and a
-	ld a, c
-	ld bc, 6 tiles
-	ld hl, sScratch
-	jr z, .okay1
-	ld bc, 7 tiles
-	ld hl, sScratch + 1 tiles
-.okay1
-	call AddNTimes
-	pop bc
-	inc b
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .okay2
-	inc b
-.okay2
-	ld a, b
 	ld bc, 1 tiles
-	call AddNTimes
-	ld d, h
-	ld e, l
-	pop bc
-	push bc
-	ld a, b
-	ld hl, wTempTilemap
-	ld bc, 4 tiles
-	call AddNTimes
-	pop bc
-	swap c
-	ld b, 0
-	add hl, bc
+	ld a, BANK(MonsterSpriteGFX)
+	call FarCopyBytes
 	ret
-
-.CopyTile
-	ld bc, 1 tiles
-	ld a, BANK(GetSubstitutePic)
-	jp FarCopyBytes
 
 BattleAnimCmd_MinimizeOpp:
 	ldh a, [rSVBK]
