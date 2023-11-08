@@ -217,7 +217,7 @@ CeruleanBikeShopSignText:
 
 	para "The BIKE SHOP has"
 	line "moved to GOLDENROD"
-	cont "CITY in JOHTO…"
+	cont "CITY in JOHTO."
 	done
 
 CeruleanPoliceSignText:
