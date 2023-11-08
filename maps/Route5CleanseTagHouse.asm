@@ -52,7 +52,7 @@ Route5CleanseTagHouseTeacherText:
 	line "warding off evil"
 	cont "spirits."
 
-	para "I'm sorry that she"
+	para "I'm sorry if she"
 	line "startled you."
 	done
 
