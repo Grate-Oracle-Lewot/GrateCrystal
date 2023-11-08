@@ -166,7 +166,7 @@ VermilionCitySuperNerdText:
 
 VermilionCitySnorlaxSleepingText:
 	text "SNORLAX is snoring"
-	line "peacefully…"
+	line "laxly."
 	done
 
 VermilionCityRadioNearSnorlaxText:
