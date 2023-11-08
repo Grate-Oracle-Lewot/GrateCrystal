@@ -99,34 +99,33 @@ ElmPhoneInvestigatingEggMovesText:
 ElmPhoneDiscoveredPokerusText:
 	text "Hello, <PLAY_G>?"
 
-	para "I discovered an"
-	line "odd thing."
-
-	para "Apparently there's"
-	line "something called"
-
-	para "#RUS that in-"
-	line "fects #MON."
+	para "I heard your #-"
+	line "MON caught #-"
+	cont "RUS."
 
 	para "Yes, it's like a"
 	line "virus, so it's"
 	cont "called #RUS."
 
-	para "It multiplies fast"
-	line "and infects other"
+	para "It's not dangerous"
+	line "though, so don't"
+	cont "worry."
 
-	para "#MON too. But"
-	line "that's all."
+	para "It does infect"
+	line "other #MON, but"
 
-	para "It doesn't seem to"
-	line "do anything, and"
+	para "it also helps them"
+	line "increase their"
 
-	para "it goes away over"
-	line "time."
+	para "stats more as they"
+	line "win battles."
 
-	para "I guess it's"
-	line "nothing to worry"
-	cont "about. Bye!"
+	para "Try to spread it"
+	line "to your other"
+
+	para "#MON before it"
+	line "loses its contagi-"
+	cont "ousness!"
 	done
 
 ElmPhoneDisasterText:
