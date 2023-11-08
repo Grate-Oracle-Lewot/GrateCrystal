@@ -70,7 +70,7 @@ Route10SignText:
 	text "ROUTE 10"
 
 	para "LAVENDER TOWN -"
-	line "CERULEAN CITY"
+	line "ROCK TUNNEL"
 	done
 
 Route10South_MapEvents:
