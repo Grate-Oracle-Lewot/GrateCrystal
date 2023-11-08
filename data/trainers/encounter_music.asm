@@ -68,7 +68,7 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; pokefanf
 	db MUSIC_HIKER_ENCOUNTER       ; red
 	db MUSIC_RIVAL_ENCOUNTER       ; blue
-	db MUSIC_HIKER_ENCOUNTER       ; officer
+	db MUSIC_OFFICER_ENCOUNTER     ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_MYSTICALMAN_ENCOUNTER ; mysticalman
 	db MUSIC_INDIGO_PLATEAU        ; real karen
@@ -79,5 +79,5 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; kabubones
 	db MUSIC_SAGE_ENCOUNTER        ; missingno
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; gambler
-	db MUSIC_OFFICER_ENCOUNTER     ; cal_f
+	db MUSIC_CLAIR                 ; cal_f
 	assert_table_length NUM_TRAINER_CLASSES + 1
