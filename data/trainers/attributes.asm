@@ -56,7 +56,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; PokemonProf
+; Prof.
 	db FULL_RESTORE, FULL_RESTORE ; items
 	db 2 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -158,13 +158,13 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Cooltrainerm
+; CooltrainerM
 	db DIRE_HIT, MAX_POTION ; items
 	db 17 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Cooltrainerf
+; CooltrainerF
 	db GUARD_SPEC, MAX_POTION ; items
 	db 17 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -182,7 +182,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Gruntm
+; GruntM
 	db NO_ITEM, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -224,13 +224,13 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Swimmerm
+; SwimmerM
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OFFENSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Swimmerf
+; SwimmerF
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS
@@ -302,14 +302,14 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Executivem
+; ExecutiveM
 	db FULL_HEAL, HYPER_POTION ; items
 	db 23 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Psychic T
-	db X_SPECIAL, X_SP_DEFEND ; items
+	db X_SPECIAL, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -326,7 +326,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Executivef
+; ExecutiveF
 	db FULL_HEAL, HYPER_POTION ; items
 	db 23 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -339,7 +339,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Medium
-	db NO_ITEM, NO_ITEM ; items
+	db X_SP_DEFEND, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -350,7 +350,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Pokefanm
+; PokefanM
 	db NO_ITEM, NO_ITEM ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
@@ -368,7 +368,7 @@ TrainerClassAttributes:
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Pokefanf
+; PokefanF
 	db NO_ITEM, NO_ITEM ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
@@ -392,13 +392,13 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Gruntf
+; GruntF
 	db NO_ITEM, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Mysticalman
+; Mystic
 	db FULL_HEAL, MAX_POTION ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
@@ -422,7 +422,7 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Jessie and James
+; Jessie & James
 	db NO_ITEM, NO_ITEM ; items
 	db 21 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
