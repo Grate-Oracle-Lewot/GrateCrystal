@@ -11,7 +11,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; pryce
 	db MUSIC_LASS_ENCOUNTER        ; jasmine
 	db MUSIC_OFFICER_ENCOUNTER     ; chuck
-	db MUSIC_BEAUTY_ENCOUNTER      ; clair
+	db MUSIC_CLAIR                 ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
 	db MUSIC_PROF_OAK              ; pokemonprof
 	db MUSIC_OFFICER_ENCOUNTER     ; will
@@ -19,7 +19,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; bruno
 	db MUSIC_OFFICER_ENCOUNTER     ; karen
 	db MUSIC_OFFICER_ENCOUNTER     ; koga
-	db MUSIC_OFFICER_ENCOUNTER     ; champion
+	db MUSIC_CLAIR                 ; champion
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
