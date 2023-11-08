@@ -356,13 +356,14 @@ TinTower1FSage2Text:
 	para "A rainbow-colored"
 	line "#MON…"
 
-	para "In other words…"
+	para "In other words,"
+	line "HO-OH…"
 
-	para "HO-OH descended"
-	line "from the sky and"
+	para "descended from the"
+	line "sky and gave new"
 
-	para "gave new life to"
-	line "the three #MON."
+	para "life to the three"
+	line "#MON."
 
 	para "They are…"
 
