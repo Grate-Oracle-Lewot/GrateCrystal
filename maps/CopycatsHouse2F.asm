@@ -172,11 +172,7 @@ Copycat:
 
 CopycatsDodrio:
 	opentext
-	cry DODRIO
-	writetext CopycatsDodrioText1
-	promptbutton
-	cry DODRIO
-	writetext CopycatsDodrioText2
+	writetext CopycatsDodrioText
 	waitbutton
 	closetext
 	end
@@ -340,14 +336,12 @@ CopycatText_Female_3:
 	line "and do?"
 	done
 
-CopycatsDodrioText1:
+CopycatsDodrioText:
 	text "DODRIO: SHAME THAT"
 	line "IT TOOK SO LONG TO"
 	cont "RESCUE ME"
-	done
 
-CopycatsDodrioText2:
-	text "FROM THE GUILT YOU"
+	para "FROM THE GUILT YOU"
 	line "USED TO TIE ME TO"
 	cont "YOUR FAMILY TREE!"
 	done
