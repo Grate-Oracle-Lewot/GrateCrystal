@@ -304,8 +304,8 @@ ScratchDescription:
 	next "sharp claws.@"
 
 VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
+	db   "Grips with mouth,"
+	next "pincers, etc.@"
 
 GuillotineDescription:
 	db   "A one-hit KO,"
