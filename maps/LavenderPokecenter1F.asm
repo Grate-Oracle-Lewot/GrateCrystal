@@ -65,13 +65,13 @@ LavenderPokecenter1FYoungsterText:
 	line "run either…"
 
 	para "It also means the"
-	line "RADIO STATION"
-	cont "can't broadcast…"
+	line "RADIO TOWER can't"
+	cont "broadcast…"
 	done
 
 LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
 	text "The DIRECTOR of"
-	line "the RADIO STATION"
+	line "the RADIO TOWER"
 	cont "sure was happy."
 
 	para "He said they're"
