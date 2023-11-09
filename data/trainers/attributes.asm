@@ -117,7 +117,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Scientist
-	db FULL_HEAL, HYPER_POTION ; items
+	db X_ACCURACY, FULL_RESTORE ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
