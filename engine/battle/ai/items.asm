@@ -254,22 +254,13 @@ AI_TryItem:
 	call AddNTimes
 	ld a, [hl]
 	cp e
-	jr nc, .yes
-
-.no ; unreferenced
-	and a
-	ret
-
-.yes
 	scf
 	ret
 
 AI_Items:
 	dbw FULL_RESTORE, .FullRestore
 	dbw MAX_POTION,   .MaxPotion
-	dbw HYPER_POTION, .HyperPotion
 	dbw SUPER_POTION, .SuperPotion
-	dbw POTION,       .Potion
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw GUARD_SPEC,   .GuardSpec
@@ -374,25 +365,11 @@ AI_Items:
 .UseHealItem:
 	jp .Use
 
-.HyperPotion:
-	call .HealItem
-	jp c, .DontUse
-	ld b, 200
-	call EnemyUsedHyperPotion
-	jp .Use
-
 .SuperPotion:
 	call .HealItem
 	jp c, .DontUse
 	ld b, 50
 	call EnemyUsedSuperPotion
-	jp .Use
-
-.Potion:
-	call .HealItem
-	jp c, .DontUse
-	ld b, 20
-	call EnemyUsedPotion
 	jp .Use
 
 .XAccuracy:
@@ -535,19 +512,10 @@ FullRestoreContinue:
 	ld [wEnemyMonHP], a
 	jr EnemyPotionFinish
 
-EnemyUsedPotion:
-	ld a, POTION
-	ld b, 20
-	jr EnemyPotionContinue
-
 EnemyUsedSuperPotion:
 	ld a, SUPER_POTION
 	ld b, 50
-	jr EnemyPotionContinue
-
-EnemyUsedHyperPotion:
-	ld a, HYPER_POTION
-	ld b, 200
+	; fallthrough
 
 EnemyPotionContinue:
 	ld [wCurEnemyItem], a
@@ -731,11 +699,12 @@ EnemyUsedXSpeed:
 EnemyUsedXSpecial:
 	ld b, SP_ATTACK
 	ld a, X_SPECIAL
+	jr EnemyUsedXItem
 
 EnemyUsedXSpDefend:
 	ld b, SP_DEFENSE
 	ld a, X_SP_DEFEND
-	jr EnemyUsedXItem
+	; fallthrough
 
 ; Parameter
 ; a = ITEM_CONSTANT
