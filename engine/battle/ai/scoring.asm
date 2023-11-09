@@ -378,7 +378,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
-	dbw EFFECT_SKULL_BASH,       AI_Smart_SkullBash
 	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
@@ -1024,7 +1023,7 @@ AI_Smart_Reflect:
 
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
-; Else, discourage this move is player's HP is below 50%.
+; Else, discourage this move if player's HP is below 50%.
 
 	ld a, [wBattleMonLevel]
 	ld b, a
@@ -1058,8 +1057,7 @@ AI_Smart_Fissure:
 	ret
 
 .dismiss
-	call AIDiscourageMove
-	ret
+	jp AIDiscourageMove
 
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp
@@ -1079,7 +1077,7 @@ AI_Smart_TrapTarget:
 	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
 	jr nz, .encourage
 
-; Else, 50% chance to greatly encourage this move if it's the player's Pokemon first turn.
+; Else, 50% chance to greatly encourage this move if it's the player's Pokemon's first turn.
 	ld a, [wPlayerTurnsTaken]
 	and a
 	jr z, .encourage
@@ -1545,7 +1543,6 @@ AI_Smart_Spite:
 
 AI_Smart_DestinyBond:
 AI_Smart_Reversal:
-AI_Smart_SkullBash:
 ; Discourage this move if enemy's HP is above 25%.
 
 	call AICheckEnemyQuarterHP
@@ -1800,7 +1797,7 @@ AICheckLastPlayerMon:
 AI_Smart_Nightmare:
 ; 50% chance to encourage this move.
 ; The AI_Basic layer will make sure that
-; Dream Eater is only used against sleeping targets.
+; Nightmare is only used against sleeping targets.
 
 	call AI_50_50
 	ret c
@@ -2081,7 +2078,7 @@ AI_Smart_Hail:
 	call AICheckPlayerHalfHP
 	jr nc, .discourage
 
-; Encourage move if AI has good Hail moves
+; Encourage this move if AI has good Hail moves.
 	push hl
 	ld hl, .GoodHailMoves
 	call AIHasMoveInArray
@@ -2276,7 +2273,7 @@ AI_Smart_Safeguard:
 AI_Smart_EarthPower:
 AI_Smart_Magnitude:
 AI_Smart_Earthquake:
-; Dismiss this move if the player is a floatmon
+; Dismiss this move if the player is a floatmon.
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
@@ -2313,8 +2310,7 @@ AI_Smart_Earthquake:
 	ret
 
 .dismiss
-	call AIDiscourageMove
-	ret
+	jp AIDiscourageMove
 
 AI_Smart_BatonPass:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
@@ -3043,7 +3039,7 @@ AI_Aggressive:
 ; Nothing we can do if no attacks did damage.
 	ld a, c
 	and a
-	jr z, .done
+	ret z
 
 ; Discourage moves that do less damage unless they're reckless too.
 	ld hl, wEnemyAIMoveScores - 1
@@ -3053,7 +3049,7 @@ AI_Aggressive:
 	inc b
 	ld a, b
 	cp NUM_MOVES + 1
-	jr z, .done
+	ret z
 
 ; Ignore this move if it is the highest damaging one.
 	cp c
@@ -3065,7 +3061,7 @@ AI_Aggressive:
 	call AIGetEnemyMove
 
 ; Ignore this move if its power is 0 or 1.
-; Moves such as Seismic Toss, Hidden Power,
+; Moves such as Seismic Toss, Hidden Power (not anymore),
 ; Counter and Fissure have a base power of 1.
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	cp 2
@@ -3087,9 +3083,6 @@ AI_Aggressive:
 ; If we made it this far, discourage this move.
 	inc [hl]
 	jr .checkmove2
-
-.done
-	ret
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
 
