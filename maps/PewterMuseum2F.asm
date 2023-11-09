@@ -22,8 +22,8 @@ PewterMuseum2FGrampsScript:
 	setevent EVENT_GOT_SILVER_WING
 .SaidNo:
 	writetext MuseumGrampsNoText
-.GotSilverWing:
 	waitbutton
+.GotSilverWing:
 	closetext
 	turnobject PEWTERMUSEUM2F_GRAMPS, UP
 	end
