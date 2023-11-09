@@ -23,6 +23,7 @@ PewterMuseum2FGrampsScript:
 .SaidNo:
 	writetext MuseumGrampsNoText
 .GotSilverWing:
+	waitbutton
 	closetext
 	turnobject PEWTERMUSEUM2F_GRAMPS, UP
 	end
