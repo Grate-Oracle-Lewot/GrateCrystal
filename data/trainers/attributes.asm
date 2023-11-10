@@ -365,7 +365,7 @@ TrainerClassAttributes:
 ; Twins
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
-	dw NO_AI
+	dw AI_BASIC
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; PokefanF
@@ -399,7 +399,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Mystic
-	db FULL_HEAL, MAX_POTION ; items
+	db X_ACCURACY, FULL_RESTORE ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -417,7 +417,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Boss
-	db FULL_HEAL, FULL_RESTORE ; items
+	db GUARD_SPEC, FULL_RESTORE ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
