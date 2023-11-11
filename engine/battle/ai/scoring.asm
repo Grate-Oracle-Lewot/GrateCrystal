@@ -1164,9 +1164,9 @@ AI_Smart_SpDefenseUp2:
 	ret
 
 AI_Smart_Fly:
-; Fly, Dig
+; Fly, Dig, and now Sky Attack
 
-; 50% chance to greatly discourage this move if the player is a floatmon.
+; 50% chance to dismiss this move if the player is a floatmon.
 ; Greatly encourage this move if the player is
 ; flying or underground, and slower than the enemy.
 
@@ -1180,9 +1180,7 @@ AI_Smart_Fly:
 	call AI_50_50
 	jr c, .skip_ahead
 
-	inc [hl]
-	inc [hl]
-	inc [hl]
+	jp AIDiscourageMove
 
 .skip_ahead
 	ld a, [wPlayerSubStatus3]
