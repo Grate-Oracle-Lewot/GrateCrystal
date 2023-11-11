@@ -2362,10 +2362,9 @@ BattleAnim_PetalDance:
 	anim_obj ANIM_OBJ_PETAL_DANCE, 48, 56, $0
 	anim_wait 11
 	anim_loop 8, .loop
-	anim_wait 22
 	anim_sound 0, 0, SFX_SKETCH
-	anim_wait 42
 	anim_wait 128
+	anim_wait 64
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 16
