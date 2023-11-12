@@ -384,7 +384,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_GUST,             AI_Smart_Gust
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
-	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
@@ -2709,20 +2708,6 @@ AI_Smart_Solarbeam:
 
 	dec [hl]
 	dec [hl]
-	ret
-
-AI_Smart_Thunder:
-; 90% chance to discourage this move when it's sunny.
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	ret nz
-
-	call Random
-	cp 10 percent
-	ret c
-
-	inc [hl]
 	ret
 
 AICompareSpeed:
