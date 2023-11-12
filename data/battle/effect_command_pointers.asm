@@ -156,7 +156,7 @@ BattleCommandPointers:
 	dw BattleCommand_FutureSight
 	dw BattleCommand_DoubleMinimizeDamage
 	dw BattleCommand_SkipSunCharge
-	dw BattleCommand_ThunderAccuracy
+	dw BattleCommand_StartHail
 	dw BattleCommand_BeatUp
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
@@ -172,5 +172,4 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
-	dw BattleCommand_StartHail
 	assert_table_length NUM_EFFECT_COMMANDS
