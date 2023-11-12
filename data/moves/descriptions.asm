@@ -496,8 +496,8 @@ IceBeamDescription:
 	next "freeze the foe.@"
 
 BlizzardDescription:
-	db   "A storm that may"
-	next "freeze the foe.@"
+	db   "May freeze. Sure"
+	next "to hit in hail.@"
 
 PsybeamDescription:
 	db   "A beam that may"
@@ -608,8 +608,8 @@ ThunderWaveDescription:
 	next "into paralysis.@"
 
 ThunderDescription:
-	db   "A storm that may"
-	next "cause paralysis.@"
+	db   "May paralyze. Sure"
+	next "to hit in rain.@"
 
 RockThrowDescription:
 	db   "Drops rocks on the"
