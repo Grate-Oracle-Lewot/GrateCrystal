@@ -1,6 +1,6 @@
 	db DODRIO ; 085
 
-	db  60, 110,  70, 110,  60,  60
+	db  66, 111,  69, 111,  66,  66
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
