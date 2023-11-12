@@ -924,6 +924,8 @@ AI_Smart_ResetStats:
 	ret
 
 AI_Smart_Bide:
+AI_Smart_LightScreen:
+AI_Smart_Reflect:
 ; 90% chance to discourage this move unless enemy's HP is full.
 
 	call AICheckEnemyMaxHP
@@ -1005,18 +1007,6 @@ AI_Smart_LeechSeed:
 
 ; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
-
-AI_Smart_LightScreen:
-AI_Smart_Reflect:
-; Over 90% chance to discourage this move unless enemy's HP is full.
-
-	call AICheckEnemyMaxHP
-	ret c
-	call Random
-	cp 8 percent
 	ret c
 	inc [hl]
 	ret
@@ -2108,12 +2098,17 @@ AI_Smart_Hail:
 	db -1 ; end
 
 AI_Smart_Blizzard:
-; Do nothing if the player is Ice-type.
+; Do nothing if the player is Fire- or Ice-type,
+; and therefore immune to being frozen.
 	ld a, [wBattleMonType1]
+	cp FIRE
+	ret z
 	cp ICE
 	ret z
 
 	ld a, [wBattleMonType2]
+	cp FIRE
+	ret z
 	cp ICE
 	ret z
 
@@ -2688,13 +2683,16 @@ AI_Smart_Stomp:
 
 AI_Smart_Solarbeam:
 ; 80% chance to encourage this move when it's sunny.
-; 90% chance to discourage this move when it's raining.
+; 90% chance to discourage this move when it's raining or hailing.
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	jr z, .encourage
 
 	cp WEATHER_RAIN
+	ret nz
+
+	cp WEATHER_HAIL
 	ret nz
 
 	call Random
@@ -3274,7 +3272,6 @@ endr
 	jr .checkmove
 
 INCLUDE "data/battle/ai/risky_effects.asm"
-
 
 AI_None:
 	ret
