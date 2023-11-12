@@ -156,7 +156,7 @@ ENDM
 	command futuresight             ; 95
 	command doubleminimizedamage    ; 96
 	command skipsuncharge           ; 97
-	command thunderaccuracy         ; 98
+	command starthail               ; 98
 	command beatup                  ; 99
 	command ragedamage              ; 9a
 	command resettypematchup        ; 9b
@@ -172,7 +172,6 @@ ENDM
 	command supereffectivelooptext  ; a5
 	command startloop               ; a6
 	command curl                    ; a7
-	command starthail               ; a8
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
