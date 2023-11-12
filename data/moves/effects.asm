@@ -1170,6 +1170,7 @@ Disable:
 	endmove
 
 Fly:
+Dig:
 	checkcharge
 	checkobedience
 	doturn
