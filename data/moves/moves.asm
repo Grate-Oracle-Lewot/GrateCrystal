@@ -103,7 +103,7 @@ Moves:
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,         PHYSICAL,  90, 25,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,       PHYSICAL, 100, 10,   0
 	move FISSURE,      EFFECT_FISSURE,             1, GROUND,       PHYSICAL,  30,  5,   0
-	move DIG,          EFFECT_FLY,                70, GROUND,       PHYSICAL, 100, 15,   0
+	move DIG,          EFFECT_DIG,                70, GROUND,       PHYSICAL, 100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,       STATUS,   100,  5,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, SPECIAL,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE, SPECIAL,  100, 10,  10
