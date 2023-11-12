@@ -1971,7 +1971,6 @@ Thunder:
 	critical
 	damagestats
 	damagecalc
-	thunderaccuracy
 	checkhit
 	effectchance
 	stab
