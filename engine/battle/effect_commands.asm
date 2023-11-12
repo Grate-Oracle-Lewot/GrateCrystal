@@ -1080,6 +1080,7 @@ BattleCommand_DoTurn:
 	db EFFECT_ROLLOUT
 	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
+	db EFFECT_DIG
 	db -1
 
 BattleCommand_Critical:
@@ -1900,6 +1901,8 @@ BattleCommand_LowerSub:
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
+	jr z, .charge_turn
+	cp EFFECT_DIG
 	jr z, .charge_turn
 
 .already_charged
