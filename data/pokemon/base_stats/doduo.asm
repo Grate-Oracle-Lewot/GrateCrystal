@@ -1,6 +1,6 @@
 	db DODUO ; 084
 
-	db  35,  85,  45,  75,  35,  35
+	db  40,  88,  42,  80,  40,  40
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
