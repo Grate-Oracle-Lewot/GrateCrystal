@@ -172,7 +172,6 @@ ENDM
 	command supereffectivelooptext  ; a5
 	command startloop               ; a6
 	command curl                    ; a7
-	command dig                     ; a8
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
