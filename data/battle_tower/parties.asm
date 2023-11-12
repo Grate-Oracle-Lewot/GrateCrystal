@@ -440,7 +440,7 @@ BattleTowerMons:
 	bigdw 45 ; HP
 	bigdw 45 ; Max HP
 	bigdw 31 ; Atk
-	bigdw 29 ; Def
+	bigdw 28 ; Def
 	bigdw 23 ; Spd
 	bigdw 37 ; SAtk
 	bigdw 27 ; SDef
@@ -752,11 +752,11 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 83 ; HP
-	bigdw 83 ; Max HP
+	bigdw 84 ; HP
+	bigdw 84 ; Max HP
 	bigdw 60 ; Atk
-	bigdw 55 ; Def
-	bigdw 43 ; Spd
+	bigdw 54 ; Def
+	bigdw 42 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 50 ; SDef
 	db "NAtuSI-@@@@"
@@ -2110,12 +2110,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
-	bigdw 158 ; HP
-	bigdw 158 ; Max HP
+	bigdw 159 ; HP
+	bigdw 159 ; Max HP
 	bigdw 115 ; Atk
-	bigdw 100 ; Def
-	bigdw 82 ; Spd
-	bigdw 132 ; SAtk
+	bigdw 99 ; Def
+	bigdw 81 ; Spd
+	bigdw 133 ; SAtk
 	bigdw 92 ; SDef
 	db "NAtuSI-@@@@"
 
@@ -3523,12 +3523,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 268 ; HP
-	bigdw 268 ; Max HP
-	bigdw 194 ; Atk
-	bigdw 177 ; Def
-	bigdw 140 ; Spd
-	bigdw 235 ; SAtk
+	bigdw 269 ; HP
+	bigdw 269 ; Max HP
+	bigdw 196 ; Atk
+	bigdw 175 ; Def
+	bigdw 138 ; Spd
+	bigdw 236 ; SAtk
 	bigdw 165 ; SDef
 	db "NAtuSI-@@@@"
 
@@ -5378,12 +5378,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 375 ; HP
-	bigdw 375 ; Max HP
-	bigdw 280 ; Atk
-	bigdw 258 ; Def
-	bigdw 200 ; Spd
-	bigdw 338 ; SAtk
+	bigdw 377 ; HP
+	bigdw 377 ; Max HP
+	bigdw 282 ; Atk
+	bigdw 256 ; Def
+	bigdw 198 ; Spd
+	bigdw 340 ; SAtk
 	bigdw 238 ; SDef
 	db "NAtuSI-@@@@"
 
