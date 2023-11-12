@@ -5621,6 +5621,7 @@ BattleCommand_Charge:
 
 BattleCommand_CheckFloatMon:
 ; if we're not using a Ground move, we don't need to be here
+; (used only to differentiate Dig from Fly)
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	and TYPE_MASK
