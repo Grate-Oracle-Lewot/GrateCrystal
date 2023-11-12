@@ -387,6 +387,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
+	dbw EFFECT_DIG,              AI_Smart_Dig
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1152,26 +1153,22 @@ AI_Smart_SpDefenseUp2:
 	inc [hl]
 	ret
 
-AI_Smart_Fly:
-; Fly, Dig, and now Sky Attack
-
-; 50% chance to dismiss this move if the player is a floatmon.
-; Greatly encourage this move if the player is
-; flying or underground, and slower than the enemy.
-
+AI_Smart_Dig:
+; Dismiss this move if the player is a floatmon
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jr nc, .skip_ahead
+	jp c, AIDiscourageMove
+; otherwise, fall through
 
-	call AI_50_50
-	jr c, .skip_ahead
+AI_Smart_Fly:
+; Fly and Sky Attack
 
-	jp AIDiscourageMove
+; Greatly encourage this move if the player is
+; flying or underground, and slower than the enemy.
 
-.skip_ahead
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret z
