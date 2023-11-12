@@ -1223,13 +1223,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 81 ; HP
-	bigdw 81 ; Max HP
+	bigdw 82 ; HP
+	bigdw 82 ; Max HP
 	bigdw 89 ; Atk
-	bigdw 56 ; Def
+	bigdw 57 ; Def
 	bigdw 102 ; Spd
-	bigdw 60 ; SAtk
-	bigdw 72 ; SDef
+	bigdw 61 ; SAtk
+	bigdw 71 ; SDef
 	db "DAGUTORIO@@"
 
 	db BELLOSSOM
@@ -1930,10 +1930,10 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 108 ; HP
 	bigdw 108 ; Max HP
-	bigdw 119 ; Atk
-	bigdw 78 ; Def
+	bigdw 118 ; Atk
+	bigdw 79 ; Def
 	bigdw 131 ; Spd
-	bigdw 75 ; SAtk
+	bigdw 76 ; SAtk
 	bigdw 91 ; SDef
 	db "DAGUTORIO@@"
 
@@ -2477,13 +2477,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
-	bigdw 135 ; HP
-	bigdw 135 ; Max HP
-	bigdw 145 ; Atk
-	bigdw 89 ; Def
+	bigdw 136 ; HP
+	bigdw 136 ; Max HP
+	bigdw 144 ; Atk
+	bigdw 90 ; Def
 	bigdw 166 ; Spd
-	bigdw 96 ; SAtk
-	bigdw 116 ; SDef
+	bigdw 97 ; SAtk
+	bigdw 115 ; SDef
 	db "DAGUTORIO@@"
 
 	db ELECTRODE
@@ -4306,13 +4306,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
-	bigdw 214 ; HP
-	bigdw 214 ; Max HP
-	bigdw 233 ; Atk
-	bigdw 145 ; Def
+	bigdw 215 ; HP
+	bigdw 215 ; Max HP
+	bigdw 231 ; Atk
+	bigdw 147 ; Def
 	bigdw 261 ; Spd
-	bigdw 145 ; SAtk
-	bigdw 177 ; SDef
+	bigdw 147 ; SAtk
+	bigdw 176 ; SDef
 	db "DAGUTORIO@@"
 
 	db VICTREEBEL
