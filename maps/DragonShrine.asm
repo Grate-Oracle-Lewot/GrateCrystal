@@ -475,7 +475,8 @@ DragonShrineMustIInformLanceText:
 	cont "BADGE!"
 
 	para "…Or must I inform"
-	line "LANCE of this?"
+	line "your cousin of"
+	cont "your behavior?"
 	done
 
 DragonShrineElderScoldsClairText:
@@ -576,9 +577,6 @@ DragonShrineElder2Text:
 	para "trainer has gained"
 	line "our MASTER's rare"
 	cont "approval."
-
-	para "In fact, not since"
-	line "Master LANCE."
 	done
 
 DragonShrineElder3Text:
