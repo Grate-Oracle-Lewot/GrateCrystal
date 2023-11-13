@@ -101,7 +101,7 @@ GoldenrodPokecenter1FPokefanF:
 	waitbutton
 	writetext GoldenrodPokecenter1FPokefanFThisIsForYouText
 	waitbutton
-	verbosegiveitem MAX_REVIVE
+	verbosegiveitem SACRED_ASH
 	iffalse .NoRoom
 	writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
 	waitbutton
