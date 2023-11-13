@@ -265,8 +265,8 @@ BurglarRamonBeatenText:
 	done
 
 BurglarRamonAfterBattleText:
-	text "Maybe you'll know"
-	line "the answer to this."
+	text "Maybe you can"
+	line "answer this."
 
 	para "Does TM28 contain"
 	line "TOMBSTONER?"
