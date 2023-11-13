@@ -709,7 +709,7 @@ MiracleSeedDesc:
 	next "type moves. (HOLD)@"
 
 ThickClubDesc:
-	db   "x2 ATK for CUBONE"
+	db   "×2 ATK for CUBONE"
 	next "or MAROWAK. (HOLD)@"
 
 FocusBandDesc:
