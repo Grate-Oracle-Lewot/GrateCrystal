@@ -43,6 +43,7 @@ MapGroupPointers::
 	dw MapGroup_NewBark     ; 24
 	dw MapGroup_Saffron     ; 25
 	dw MapGroup_Cherrygrove ; 26
+	dw MapGroup_Safari      ; 27
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Olivine:
