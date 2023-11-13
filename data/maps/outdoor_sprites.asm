@@ -30,6 +30,7 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
+	dw SafariGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
 ; Route1 and ViridianCity are connected
@@ -323,4 +324,16 @@ FastShipGroupSprites:
 CableClubGroupSprites:
 ; (no outdoor maps)
 	; 0 of max 9 walking sprites
+	db 0 ; end
+
+SafariGroupSprites:
+; Safari Zone
+	db SPRITE_BIRD
+	db SPRITE_SURF
+	; 2 of max 9 walking sprites
+	db SPRITE_CHANSEY
+	db SPRITE_FLOWER
+	db SPRITE_FISH
+	db SPRITE_SUDOWOODO
+	db SPRITE_POKE_BALL
 	db 0 ; end
