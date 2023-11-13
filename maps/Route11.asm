@@ -141,6 +141,12 @@ PsychicFidelAfterBattleText:
 
 Route11SignText:
 	text "ROUTE 11"
+
+	para "NORTHEAST TO"
+	line "LAVENDER TOWN"
+
+	para "SOUTHWEST TO"
+	line "FUCHSIA CITY"
 	done
 
 Route11_MapEvents:
