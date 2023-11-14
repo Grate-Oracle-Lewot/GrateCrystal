@@ -393,6 +393,8 @@ FlyFunction_GetMonIcon:
 	cp FALSE
 	jr z, .not_fearowbot
 	ld a, FEAROW
+	ld [wTempIconSpecies], a
+	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	pop de
