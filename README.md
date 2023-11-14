@@ -304,7 +304,7 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 # Credits
 
-Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, and Nayru62.
+Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, and Nayru62. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
 
 ArtUnderTheArch - Percy trainer sprite, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
 
