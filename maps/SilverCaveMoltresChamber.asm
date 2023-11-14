@@ -58,11 +58,6 @@ SilverCaveMoltresChamberSlowkingText:
 	para "…That's why he"
 	line "doesn't have any"
 	cont "hair left…"
-
-	para "…"
-
-	para "…Try not to meet"
-	line "the same fate…"
 	done
 
 MoltresText:
