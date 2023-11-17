@@ -43,6 +43,10 @@ VioletGymFalknerScript:
 	iffalse .NoRoomForMudSlap
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext FalknerTMMudSlapText
+	setevent EVENT_DECO_PIKACHU_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext FalknerDecorationText
 	waitbutton
 	closetext
 	end
@@ -184,6 +188,12 @@ FalknerTMMudSlapText:
 	para "In other words, it"
 	line "is both defensive"
 	cont "and offensive."
+
+	para "I have one last"
+	line "gift for you!"
+
+	para "<PLAYER> received"
+	line "PIKACHU DOLL!"
 	done
 
 FalknerDecorationText:
