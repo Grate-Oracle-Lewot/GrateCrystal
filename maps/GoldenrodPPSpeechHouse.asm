@@ -26,14 +26,18 @@ GoldenrodPPSpeechHouseFisherText:
 	text "Once while I was"
 	line "battling, my"
 
-	para "#MON couldn't"
-	line "make any moves."
+	para "#MON ran out of"
+	line "POWER POINTS, or"
 
-	para "The POWER POINTS,"
-	line "or PP, of its"
+	para "PP, for all of its"
+	line "moves."
 
-	para "moves were all"
-	line "gone."
+	para "At that point, all"
+	line "it could do was"
+
+	para "STRUGGLE, which"
+	line "hurt it with the"
+	cont "recoil."
 	done
 
 GoldenrodPPSpeechHouseLassText:
