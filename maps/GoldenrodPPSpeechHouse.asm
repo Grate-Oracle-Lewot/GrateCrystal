@@ -37,16 +37,15 @@ GoldenrodPPSpeechHouseFisherText:
 	done
 
 GoldenrodPPSpeechHouseLassText:
-	text "Sometimes, a"
-	line "healthy #MON"
+	text "When you deposit a"
+	line "#MON in the PC,"
 
-	para "may be unable to"
-	line "use its moves."
+	para "it will restore"
+	line "its HP, but not"
+	cont "its PP."
 
-	para "If that happens,"
-	line "heal it at a #-"
-	cont "MON CENTER or use"
-	cont "an item."
+	para "For that, go to a"
+	line "#MON CENTER."
 	done
 
 GoldenrodPPSpeechHouse_MapEvents:
