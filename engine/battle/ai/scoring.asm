@@ -65,7 +65,6 @@ AI_Basic:
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
-
 AI_Setup:
 ; Use stat-modifying moves on turn 1.
 
@@ -2966,7 +2965,6 @@ AI_Opportunist:
 
 INCLUDE "data/battle/ai/stall_moves.asm"
 
-
 AI_Aggressive:
 ; Use whatever does the most damage.
 
@@ -3130,7 +3128,6 @@ AI_Cautious:
 	jr .loop
 
 INCLUDE "data/battle/ai/residual_moves.asm"
-
 
 AI_Status:
 ; Dismiss status moves that don't affect the player.
