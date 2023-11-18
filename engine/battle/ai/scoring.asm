@@ -1107,8 +1107,8 @@ AI_Smart_Confuse:
 	jp AIDiscourageMove
 
 .skip_immune
-; Discourage this move if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
+; Discourage this move if player's HP is below 50%.
+	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
 	ret
