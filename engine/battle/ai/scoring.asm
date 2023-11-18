@@ -1093,16 +1093,21 @@ AI_Smart_TrapTarget:
 	ret
 
 AI_Smart_Confuse:
-; 90% chance to discourage this move if player's HP is between 25% and 50%.
-	call AICheckPlayerHalfHP
-	ret c
-	call Random
-	cp 10 percent
-	jr c, .skipdiscourage
-	inc [hl]
+; 50% chance to dismiss this move if the player's held item immunizes against confusion.
+	push hl
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	pop hl
+	call GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_CONFUSE
+	jr nz, .skip_immune
+	call AI_50_50
+	jr c, .skip_immune
+	jp AIDiscourageMove
 
-.skipdiscourage
-; Discourage again if player's HP is below 25%.
+.skip_immune
+; Discourage this move if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
 	ret c
 	inc [hl]
