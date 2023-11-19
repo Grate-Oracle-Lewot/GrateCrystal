@@ -394,19 +394,19 @@ AI_Smart_Sleep:
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
-	push hl
-	ld hl, wBattleMonItem
-	ld b, [hl]
-	pop hl
-	call GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_SLEEP
-	jr nz, .skip_immune
-	call AI_50_50
-	jr c, .skip_immune
-	jp AIDiscourageMove
+;	push hl
+;	ld hl, wBattleMonItem
+;	ld b, [hl]
+;	pop hl
+;	call GetItemHeldEffect
+;	ld a, b
+;	cp HELD_PREVENT_SLEEP
+;	jr nz, .skip_immune
+;	call AI_50_50
+;	jr c, .skip_immune
+;	jp AIDiscourageMove
 
-.skip_immune
+;.skip_immune
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
 	jr c, .encourage
@@ -980,19 +980,19 @@ AI_Smart_Moonlight:
 AI_Smart_Toxic:
 AI_Smart_Poison:
 ; 50% chance to dismiss this move if the player's held item immunizes against poisoning.
-	push hl
-	ld hl, wBattleMonItem
-	ld b, [hl]
-	pop hl
-	call GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_POISON
-	jr nz, .skip_immune
-	call AI_50_50
-	jr c, .skip_immune
-	jp AIDiscourageMove
+;	push hl
+;	ld hl, wBattleMonItem
+;	ld b, [hl]
+;	pop hl
+;	call GetItemHeldEffect
+;	ld a, b
+;	cp HELD_PREVENT_POISON
+;	jr nz, .skip_immune
+;	call AI_50_50
+;	jr c, .skip_immune
+;	jp AIDiscourageMove
 
-.skip_immune
+;.skip_immune
 ; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	ret c
@@ -1094,19 +1094,19 @@ AI_Smart_TrapTarget:
 
 AI_Smart_Confuse:
 ; 50% chance to dismiss this move if the player's held item immunizes against confusion.
-	push hl
-	ld hl, wBattleMonItem
-	ld b, [hl]
-	pop hl
-	call GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	jr nz, .skip_immune
-	call AI_50_50
-	jr c, .skip_immune
-	jp AIDiscourageMove
+;	push hl
+;	ld hl, wBattleMonItem
+;	ld b, [hl]
+;	pop hl
+;	call GetItemHeldEffect
+;	ld a, b
+;	cp HELD_PREVENT_CONFUSE
+;	jr nz, .skip_immune
+;	call AI_50_50
+;	jr c, .skip_immune
+;	jp AIDiscourageMove
 
-.skip_immune
+;.skip_immune
 ; Discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	ret c
@@ -1200,19 +1200,19 @@ AI_Smart_SuperFang:
 
 AI_Smart_Paralyze:
 ; 50% chance to dismiss this move if the player's held item immunizes against Paralysis.
-	push hl
-	ld hl, wBattleMonItem
-	ld b, [hl]
-	pop hl
-	call GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	jr nz, .skip_immune
-	call AI_50_50
-	jr c, .skip_immune
-	jp AIDiscourageMove
+;	push hl
+;	ld hl, wBattleMonItem
+;	ld b, [hl]
+;	pop hl
+;	call GetItemHeldEffect
+;	ld a, b
+;	cp HELD_PREVENT_PARALYZE
+;	jr nz, .skip_immune
+;	call AI_50_50
+;	jr c, .skip_immune
+;	jp AIDiscourageMove
 
-.skip_immune
+;.skip_immune
 ; 50% chance to discourage this move if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
 	jr nc, .discourage
