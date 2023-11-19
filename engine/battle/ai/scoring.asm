@@ -1038,7 +1038,7 @@ AI_Smart_Fissure:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jr c, .dismiss
+	jp c, AIDiscourageMove
 
 	ld a, [wBattleMonLevel]
 	ld b, a
@@ -1049,9 +1049,6 @@ AI_Smart_Fissure:
 	ret c
 	inc [hl]
 	ret
-
-.dismiss
-	jp AIDiscourageMove
 
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp
@@ -2279,7 +2276,7 @@ AI_Smart_Earthquake:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jr c, .dismiss
+	jp c, AIDiscourageMove
 
 ; Greatly encourage this move if the player is underground and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
@@ -2308,9 +2305,6 @@ AI_Smart_Earthquake:
 
 	dec [hl]
 	ret
-
-.dismiss
-	jp AIDiscourageMove
 
 AI_Smart_BatonPass:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
