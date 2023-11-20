@@ -37,6 +37,12 @@ CeladonGymErikaScript:
 	verbosegiveitem TM_GIGA_DRAIN
 	iffalse .GotGigaDrain
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
+	writetext ErikaGiveJumboPlantText
+	setevent EVENT_DECO_PLANT_3
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext ErikaExplainJumboPlantText
+	promptbutton
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
 	waitbutton
@@ -166,9 +172,20 @@ ErikaExplainTMText:
 	para "half the damage it"
 	line "inflicts to heal"
 	cont "your #MON."
+	done
 
-	para "Please use it if"
-	line "it pleases you…"
+ErikaGiveJumboPlantText:
+	text "ERIKA: And, of"
+	line "course, take this"
+	cont "as well."
+
+	para "<PLAYER> received"
+	line "JUMBO PLANT!"
+	done
+
+ErikaExplainJumboPlantText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 ErikaAfterBattleText:
