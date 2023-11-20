@@ -105,6 +105,10 @@ WhitneyCriesScript:
 	turnobject PLAYER, DOWN
 	opentext
 	writetext BridgetWhitneyCriesText
+	setevent EVENT_DECO_POSTER_3
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BridgetClefairyPosterText
 	waitbutton
 	closetext
 	applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement
@@ -307,6 +311,17 @@ BridgetWhitneyCriesText:
 
 	para "always cries when"
 	line "she loses."
+
+	para "Here, in the mean-"
+	line "time, take this."
+
+	para "<PLAYER> received"
+	line "CLEFAIRY POSTER!"
+	done
+
+BridgetClefairyPosterText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 BeautyVictoriaSeenText:
