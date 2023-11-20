@@ -53,6 +53,10 @@ EcruteakGymMortyScript:
 	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetext MortyText_ShadowBallSpeech
+	setevent EVENT_DECO_GENGAR_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext MortyText_GengarDoll
 	waitbutton
 	closetext
 	end
@@ -251,8 +255,16 @@ MortyText_ShadowBallSpeech:
 	para "and may reduce"
 	line "SPCL.DEF."
 
-	para "Use it if it"
-	line "appeals to you."
+	para "And take this as"
+	line "well."
+
+	para "<PLAYER> received"
+	line "GENGAR DOLL!"
+	done
+
+MortyText_GengarDoll:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 MortyFightDoneText:
