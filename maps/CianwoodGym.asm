@@ -58,6 +58,10 @@ CianwoodGymChuckScript:
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText
+	setevent EVENT_DECO_MACHOP_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext ChuckExplainDollText
 	waitbutton
 	closetext
 	end
@@ -222,6 +226,25 @@ ChuckExplainTMText:
 
 	para "does, it causes"
 	line "confusion!"
+
+	para "And you've earned"
+	line "this, too!"
+
+	para "<PLAYER> received"
+	line "MACHOP DOLL!"
+	done
+
+ChuckExplainDollText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+
+	para "CHUCK: That's the"
+	line "most rockin',"
+
+	para "sockin', hard-"
+	line "hittin' action"
+	cont "figure you'll ever"
+	cont "see!"
 	done
 
 ChuckAfterText:
