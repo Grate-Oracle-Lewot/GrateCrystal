@@ -38,6 +38,10 @@ OlivineGymJasmineScript:
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext Jasmine_IronTailSpeech
+	setevent EVENT_DECO_SHELLDER_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext Jasmine_ShellderDollText
 	waitbutton
 	closetext
 	end
@@ -169,6 +173,16 @@ Jasmine_IronTailSpeech:
 	text "…You could use"
 	line "that TM to teach"
 	cont "IRON TAIL."
+
+	para "And… take this."
+
+	para "<PLAYER> received"
+	line "SHELLDER DOLL!"
+	done
+
+Jasmine_ShellderDollText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 Jasmine_GoodLuck:
