@@ -3,9 +3,9 @@ DecorationNames:
 	list_start DecorationNames
 	li "CANCEL"
 	li "PUT IT AWAY"
-	li "MAGNAPLANT"
-	li "TROPICPLANT"
-	li "JUMBOPLANT"
+	li "MAGNA PLANT"
+	li "TROPIC PLANT"
+	li "JUMBO PLANT"
 	li "TOWN MAP"
 	li "NES"
 	li "SUPER NES"
