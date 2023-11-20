@@ -83,6 +83,10 @@ CeruleanGymMistyScript:
 	iffalse .NoRoomForBlizzardTM
 	setevent EVENT_GOT_TM_BLIZZARD_FROM_MISTY
 	writetext MistyExplainBlizzardTMText
+	setevent EVENT_DECO_STARMIE_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext MistyStaryuDollText
 	waitbutton
 	closetext
 	end
@@ -270,7 +274,7 @@ MistyWinLossText:
 	line "are good…"
 
 	para "I'll admit that"
-	line "you are skilled…"
+	line "you have skill…"
 
 	para "Here you go. It's"
 	line "CASCADEBADGE."
@@ -300,6 +304,17 @@ MistyExplainBlizzardTMText:
 
 	para "BLIZZARD always"
 	line "hits."
+
+	para "And I suppose you"
+	line "want a DOLL, too."
+
+	para "<PLAYER> received"
+	line "STARYU DOLL!"
+	done
+
+MistyStaryuDollText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 MistyFightDoneText:
