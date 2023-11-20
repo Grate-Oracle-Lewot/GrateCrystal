@@ -340,7 +340,7 @@ endc
 	jr z, .loop3
 	dec hl
 	ld de, wLinkOTMail
-	ld bc, wLinkDataEnd - wLinkOTMail ; should be wLinkOTMailEnd - wLinkOTMail
+	ld bc, wLinkOTMailEnd - wLinkOTMail
 	call CopyBytes
 	ld hl, wLinkOTMail
 	ld bc, (MAIL_MSG_LENGTH + 1) * PARTY_LENGTH
