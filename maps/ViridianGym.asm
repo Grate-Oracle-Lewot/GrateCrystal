@@ -39,6 +39,10 @@ ViridianGymBlueScript:
 	iffalse .NoRoomForHyperBeamTM
 	setevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
 	writetext LeaderBlueExplainHyperBeamTMText
+	setevent EVENT_DECO_CARPET_2
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext LeaderBlueDecorationText
 	waitbutton
 	closetext
 	end
@@ -177,6 +181,20 @@ LeaderBlueExplainHyperBeamTMText:
 
 	para "Only the strongest"
 	line "trainers go there."
+
+	para "Oh… and I guess"
+	line "you get this too."
+
+	para "<PLAYER> received"
+	line "BLUE CARPET!"
+	done
+
+LeaderBlueDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+
+	para "BLUE: It matches"
+	line "my name, see?"
 	done
 
 LeaderBlueEpilogueText:
