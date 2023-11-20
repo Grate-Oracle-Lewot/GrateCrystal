@@ -203,7 +203,8 @@
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	const EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
-; Unused: next 5 events
+	const EVENT_BEAT_FINALE
+; Unused: next 4 events
 
 	const_next 200
 ; Kanto story events
