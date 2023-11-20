@@ -12,38 +12,47 @@ Route2NuggetHouseFisherScript:
 	checkevent EVENT_GOT_NUGGET_FROM_GUY
 	iftrue .GotNugget
 	writetext Route2NuggetHouseFisherText
-	promptbutton
-	verbosegiveitem NUGGET
-	iffalse .NoRoom
+	setevent EVENT_DECO_DIGLETT_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext Route2NuggetHouseFisher_DecorationText
 	setevent EVENT_GOT_NUGGET_FROM_GUY
+	sjump .End
+
 .GotNugget:
 	writetext Route2NuggetHouseFisherText_GotNugget
+.End:
 	waitbutton
-.NoRoom:
 	closetext
 	end
 
 Route2NuggetHouseFisherText:
-	text "Hi! Wow, I'm glad"
-	line "to see you."
+	text "Hi! Did you come"
+	line "through DIGLETT'S"
+	cont "CAVE?"
 
-	para "You're the first"
-	line "visitor I've had"
-	cont "in a long time."
+	para "DIGLETT are cute,"
+	line "aren't they?"
 
-	para "I'm super-happy!"
-	line "Let me give you a"
-	cont "little present."
+	para "Why don't you take"
+	line "this as a little"
+	cont "present?"
+
+	para "<PLAYER> received"
+	line "DIGLETT DOLL!"
+	done
+
+Route2NuggetHouseFisher_DecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 Route2NuggetHouseFisherText_GotNugget:
-	text "That's a NUGGET."
+	text "I don't get many"
+	line "visitors."
 
-	para "I can't give you"
-	line "any nuggets of"
-
-	para "wisdom, so that'll"
-	line "have to do!"
+	para "You're the first in"
+	line "a while."
 	done
 
 Route2NuggetHouse_MapEvents:
