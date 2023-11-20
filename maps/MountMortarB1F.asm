@@ -40,6 +40,12 @@ MountMortarB1FKiyoScript:
 	waitsfx
 	givepoke TYROGUE, 10
 	setevent EVENT_GOT_TYROGUE_FROM_KIYO
+	writetext MountMortarKiyoGiveDollText
+	setevent EVENT_DECO_MACHOP_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext MountMortarKiyoExplainDollText
+	promptbutton
 .GotTyrogue:
 	writetext MountMortarB1FKiyoGotTyrogueText
 	waitbutton
@@ -114,7 +120,20 @@ MountMortarB1FTyrogueRewardText:
 
 MountMortarB1FReceiveMonText:
 	text "<PLAYER> received"
-	line "TYROGUE."
+	line "TYROGUE!"
+	done
+
+MountMortarKiyoGiveDollText:
+	text "And I'll also give"
+	line "you this."
+
+	para "<PLAYER> received"
+	line "MACHOP DOLL!"
+	done
+
+MountMortarKiyoExplainDollText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 MountMortarB1FKiyoGotTyrogueText:
