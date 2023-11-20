@@ -42,6 +42,10 @@ MahoganyGymPryceScript:
 	iffalse MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
+	setevent EVENT_DECO_BIG_LAPRAS_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext PryceText_BigLaprasDoll
 	waitbutton
 	closetext
 	end
@@ -214,6 +218,21 @@ PryceText_IcyWindSpeech:
 	para "It demonstrates"
 	line "the harshness of"
 	cont "winter."
+
+	para "You're making great"
+	line "headway on your"
+	cont "#MON journey.
+
+	para "You've earned"
+	line "this."
+
+	para "<PLAYER> received"
+	line "BIG LAPRAS DOLL!"
+	done
+
+PryceText_BigLaprasDoll:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 PryceText_CherishYourPokemon:
