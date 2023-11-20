@@ -67,9 +67,11 @@ Kurt1:
 
 .ClearedSlowpokeWell:
 	writetext KurtsHouseKurtHonoredToMakeBallsText
+	setevent EVENT_DECO_BED_2
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext KurtsHouseKurtDecorationText
 	promptbutton
-	verbosegiveitem LURE_BALL, 5
-	iffalse .NoRoomForBall
 	setevent EVENT_KURT_GAVE_YOU_LURE_BALL
 .GotLureBall:
 	checkevent EVENT_GAVE_KURT_RED_APRICORN
@@ -507,8 +509,23 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	para "a trainer like"
 	line "you."
 
-	para "This is all I have"
-	line "now, but take it."
+	para "I'd also like you"
+	line "to have this spec-"
+	cont "ial gift."
+
+	para "<PLAYER> received"
+	line "PINK BED!"
+	done
+
+KurtsHouseKurtDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+
+	para "KURT: It matches"
+	line "SLOWPOKE's color."
+
+	para "Think of it as a"
+	line "memento from them."
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
