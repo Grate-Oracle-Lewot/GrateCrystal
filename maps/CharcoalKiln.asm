@@ -45,11 +45,13 @@ CharcoalKilnApprentice:
 	end
 
 .Thanks:
-	writetext CharcoalKilnApprenticeText2
-	promptbutton
-	verbosegiveitem SOFT_SAND
-	iffalse .Done
 	setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
+	writetext CharcoalKilnApprenticeText2
+	setevent EVENT_DECO_PLANT_1
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext CharcoalKilnApprenticeText2AndAHalf
+	waitbutton
 	closetext
 	end
 
@@ -125,12 +127,15 @@ CharcoalKilnApprenticeText2:
 	text "I'm sorry--I for-"
 	line "got to thank you."
 
-	para "I tried to make"
-	line "CHARCOAL, but I"
+	para "Please take this."
 
-	para "accidentally made"
-	line "this instead. You"
-	cont "can have it."
+	para "<PLAYER> received"
+	line "MAGNA PLANT!"
+	done
+
+CharcoalKilnApprenticeText2AndAHalf:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 CharcoalKilnApprenticeText3:
