@@ -221,7 +221,7 @@ PryceText_IcyWindSpeech:
 
 	para "You're making great"
 	line "headway on your"
-	cont "#MON journey.
+	cont "#MON journey."
 
 	para "You've earned"
 	line "this."
