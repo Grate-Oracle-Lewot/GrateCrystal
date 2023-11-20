@@ -58,7 +58,7 @@ CianwoodGymChuckScript:
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText
-	setevent EVENT_DECO_MACHOP_DOLL
+	setevent EVENT_DECO_POLIWAG_DOLL
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
 	writetext ChuckExplainDollText
@@ -231,7 +231,7 @@ ChuckExplainTMText:
 	line "this, too!"
 
 	para "<PLAYER> received"
-	line "MACHOP DOLL!"
+	line "POLIWAG DOLL!"
 	done
 
 ChuckExplainDollText:
