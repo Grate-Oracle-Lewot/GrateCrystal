@@ -43,6 +43,12 @@ FuchsiaGymJanineScript:
 	verbosegiveitem TM_TOXIC
 	iffalse .AfterTM
 	setevent EVENT_GOT_TM06_TOXIC
+	writetext JanineText_GrimerDoll
+	setevent EVENT_DECO_GRIMER_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext JanineText_DecorationHome
+	promptbutton
 .AfterTM:
 	writetext JanineText_ApplyMyself
 	waitbutton
@@ -269,6 +275,22 @@ JanineText_ToxicSpeech:
 
 	para "steadily saps the"
 	line "victim's HP."
+	done
+
+JanineText_GrimerDoll:
+	text "JANINE: Oh! And"
+	line "I'm supposed to"
+
+	para "give you this,"
+	line "too."
+
+	para "<PLAYER> received"
+	line "GRIMER DOLL!"
+	done
+
+JanineText_DecorationHome:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 JanineText_ApplyMyself:
