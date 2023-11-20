@@ -42,6 +42,10 @@ RuinsOfAlphResearchCenter_MapScripts:
 	turnobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, DOWN
 	opentext
 	writetext RuinsOfAlphResearchCenterModifiedDexText
+	setevent EVENT_DECO_FAMICOM
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext RuinsOfAlphResearchCenterFamicomText
 	waitbutton
 	closetext
 	applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesPlayerMovement
@@ -220,25 +224,37 @@ RuinsOfAlphResearchCenterLeavesPlayerMovement:
 	step_end
 
 RuinsOfAlphResearchCenterModifiedDexText:
-	text "Done!"
-
-	para "I modified your"
-	line "#DEX."
+	text "Done! I modified"
+	line "your #DEX."
 
 	para "I added an"
 	line "optional #DEX"
 
 	para "to store UNOWN"
-	line "data."
+	line "form data."
 
 	para "It records them in"
 	line "the sequence that"
 	cont "they were caught."
+
+	para "As a thank-you for"
+	line "helping with our"
+
+	para "research, please"
+	line "take this."
+
+	para "<PLAYER> received"
+	line "FAMICOM!"
 	done
 
 RuinsOfAlphResearchCenterDexUpgradedText:
 	text "<PLAYER>'s #DEX"
 	line "was upgraded."
+	done
+
+RuinsOfAlphResearchCenterFamicomText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 RuinsOfAlphResearchCenterScientist3Text:
