@@ -39,6 +39,10 @@ PewterGymBrockScript:
 	iffalse .NoRoomForEarthquakeTM
 	setevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
 	writetext BrockExplainEarthquakeTMText
+	setevent EVENT_DECO_BIG_ONIX_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BrockBigOnixDollText
 	waitbutton
 	closetext
 	end
@@ -155,6 +159,17 @@ BrockExplainEarthquakeTMText:
 	para "to an enemy who's"
 	line "underground from"
 	cont "using DIG?"
+
+	para "And, don't forget"
+	line "to take this!"
+
+	para "<PLAYER> received"
+	line "BIG ONIX DOLL!"
+	done
+
+BrockBigOnixDollText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 BrockFightDoneText:
