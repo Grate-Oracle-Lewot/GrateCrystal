@@ -202,10 +202,12 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
+; new to Grate Crystal
 	const EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
+	const EVENT_GOT_SURF_PIKACHU_DOLL_FROM_GAMBLER
 	const EVENT_GOT_RED_CARPET_FROM_VICTORY_ROAD
 	const EVENT_BEAT_FINALE
-; Unused: next 3 events
+; Unused: next 2 events
 
 	const_next 200
 ; Kanto story events
