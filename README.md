@@ -207,7 +207,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 
 ## Miscellaneous
-- All bedroom decorations obtained throughout the game
+- All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
