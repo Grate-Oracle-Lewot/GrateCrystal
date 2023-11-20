@@ -41,6 +41,10 @@ AzaleaGymBugsyScript:
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
+	setevent EVENT_DECO_WEEDLE_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BugsyText_WeedleDoll
 	waitbutton
 	closetext
 	end
@@ -211,8 +215,19 @@ BugsyText_FuryCutterSpeech:
 	line "battle goes, the"
 	cont "better it gets."
 
-	para "Isn't that great?"
-	line "I discovered it!"
+	para "And, finally, you"
+	line "can have this."
+
+	para "<PLAYER> received"
+	line "WEEDLE DOLL!"
+	done
+
+BugsyText_WeedleDoll:
+	text "<PLAYER> sent the"
+	line "decoration home."
+
+	para "BUGSY: Isn't it"
+	line "cute?"
 	done
 
 BugsyText_BugMonsAreDeep:
