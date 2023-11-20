@@ -202,7 +202,8 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
-; Unused: next 6 events
+	const EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
+; Unused: next 5 events
 
 	const_next 200
 ; Kanto story events
