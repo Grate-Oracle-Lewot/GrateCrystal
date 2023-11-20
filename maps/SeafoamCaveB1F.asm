@@ -124,6 +124,11 @@ SeafoamCaveB1FKarenScript:
 	waitbutton
 	closetext
 	special HealParty
+	checkevent EVENT_BEAT_FINALE
+	iftrue .EndFinale
+	giveitem GORGEOUS_BOX
+	setevent EVENT_BEAT_FINALE
+.EndFinale:
 	refreshscreen
 	credits
 	end
