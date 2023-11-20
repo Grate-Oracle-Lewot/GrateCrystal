@@ -73,6 +73,10 @@ BlackthornGymClairScript:
 	itemnotify
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymClairText_DescribeTM24
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BlackthornGymClairText_MagikarpDoll
 	promptbutton
 	sjump .GotTM24
 
@@ -259,9 +263,18 @@ BlackthornGymClairText_DescribeTM24:
 	line "have anything to"
 	cont "do with my breath."
 
-	para "If you don't want"
-	line "it, you don't have"
-	cont "to take it."
+	para "…What? A DOLL?"
+
+	para "Fine. You can have"
+	cont "this one."
+
+	para "<PLAYER> received"
+	line "MAGIKARP DOLL!"
+	done
+
+BlackthornGymClairText_MagikarpDoll:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 BlackthornGymClairText_BagFull:
