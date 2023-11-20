@@ -148,6 +148,10 @@ TinTower1F_MapScripts:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext TinTower1FEusineSuicuneText
+	setevent EVENT_DECO_BED_3
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext TinTower1FEusineDecorationText
 	waitbutton
 	closetext
 	applymovement TINTOWER1F_EUSINE, TinTower1FEusineLeavesMovement
@@ -311,14 +315,16 @@ TinTower1FEusineSuicuneText:
 	para "will cause that"
 	line "#MON to appear."
 
-	para "I'm going to study"
-	line "the legends more."
+	para "For now, please"
+	line "accept this gift."
 
-	para "Thanks for showing"
-	line "me that fantastic"
-	cont "battle."
+	para "<PLAYER> received"
+	line "POLKADOT BED!"
+	done
 
-	para "Later, <PLAYER>!"
+TinTower1FEusineDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 TinTower1FSage1Text:
