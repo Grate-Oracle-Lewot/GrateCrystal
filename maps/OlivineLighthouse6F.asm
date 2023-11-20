@@ -64,6 +64,10 @@ OlivineLighthouseJasmine:
 	faceplayer
 	opentext
 	writetext JasmineThankYouText
+	setevent EVENT_DECO_CARPET_3
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext JasmineYellowCarpetText
 	waitbutton
 	closetext
 	setevent EVENT_JASMINE_RETURNED_TO_GYM
@@ -96,9 +100,6 @@ OlivineLighthouseJasmine:
 	writetext JasmineAmphyHangOnText
 	waitbutton
 	closetext
-	end
-
-.Unused: ; unreferenced
 	end
 
 OlivineLighthouseAmphy:
@@ -232,8 +233,18 @@ JasmineThankYouText:
 	para "Thank you so very,"
 	line "very much."
 
-	para "…I will return to"
-	line "the GYM…"
+	para "Please, take this…"
+
+	para "<PLAYER> received"
+	line "YELLOW CARPET!"
+	done
+
+JasmineYellowCarpetText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+
+	para "JASMINE: …I will"
+	line "return to the GYM…"
 	done
 
 JasmineISeeText:
