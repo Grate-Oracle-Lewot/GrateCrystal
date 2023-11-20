@@ -117,8 +117,12 @@ BillsGrandpa:
 	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 	iftrue .GotEverstone
 	scall .ReceiveItem
-	verbosegiveitem FLOATIE
-	iffalse .BagFull
+	writetext BillsGrandpaSNESText
+	setevent EVENT_DECO_SNES
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BillsGrandpaDecorationHomeText
+	waitbutton
 	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	closetext
@@ -128,8 +132,12 @@ BillsGrandpa:
 	checkevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
 	iftrue .GotLeafStone
 	scall .ReceiveItem
-	verbosegiveitem LEAF_STONE
-	iffalse .BagFull
+	writetext BillsGrandpaGreenCarpetText
+	setevent EVENT_DECO_CARPET_4
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BillsGrandpaDecorationHomeText
+	waitbutton
 	setevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	closetext
@@ -139,7 +147,7 @@ BillsGrandpa:
 	checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
 	iftrue .GotWaterStone
 	scall .ReceiveItem
-	verbosegiveitem WATER_STONE
+	verbosegiveitem FLOATIE
 	iffalse .BagFull
 	setevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -150,8 +158,12 @@ BillsGrandpa:
 	checkevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
 	iftrue .GotFireStone
 	scall .ReceiveItem
-	verbosegiveitem FIRE_STONE
-	iffalse .BagFull
+	writetext BillsGrandpaN64Text
+	setevent EVENT_DECO_N64
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BillsGrandpaDecorationHomeText
+	waitbutton
 	setevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	closetext
@@ -159,8 +171,12 @@ BillsGrandpa:
 
 .ShowedPichu:
 	scall .ReceiveItem
-	verbosegiveitem THUNDERSTONE
-	iffalse .BagFull
+	writetext BillsGrandpaPikachuPosterText
+	setevent EVENT_DECO_POSTER_2
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext BillsGrandpaDecorationHomeText
+	waitbutton
 	setevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
 	closetext
 	end
@@ -254,6 +270,31 @@ BillsGrandpaTokenOfAppreciationText:
 
 	para "This is a token of"
 	line "my appreciation."
+	done
+
+BillsGrandpaSNESText:
+	text "<PLAYER> received"
+	line "SUPER NES!"
+	done
+
+BillsGrandpaGreenCarpetText:
+	text "<PLAYER> received"
+	line "GREEN CARPET!"
+	done
+
+BillsGrandpaN64Text:
+	text "<PLAYER> received"
+	line "NINTENDO 64!"
+	done
+
+BillsGrandpaPikachuPosterText:
+	text "<PLAYER> received"
+	line "PIKACHU POSTER!"
+	done
+
+BillsGrandpaDecorationHomeText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 BillsGrandpaComeAgainText:
