@@ -60,6 +60,10 @@ VermilionGymSurgeScript:
 	iffalse .NoRoomForThunderTM
 	setevent EVENT_GOT_TM_THUNDER_FROM_SURGE
 	writetext LtSurgeExplainThunderTMText
+	setevent EVENT_DECO_BED_
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext LtSurgePikachuBedText
 	waitbutton
 	closetext
 	end
@@ -242,6 +246,18 @@ LtSurgeExplainThunderTMText:
 	line "If you use RAIN"
 	cont "DANCE first, it"
 	cont "always hits!"
+
+	para "I like you, kid."
+	line "Here's a really"
+	cont "special reward!"
+
+	para "<PLAYER> received"
+	line "PIKACHU BED!"
+	done
+
+LtSurgePikachuBedText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 LtSurgeFightDoneText:
