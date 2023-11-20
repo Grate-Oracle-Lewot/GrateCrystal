@@ -10,7 +10,7 @@ Red:
 	special FadeOutMusic
 	faceplayer
 	opentext
-	writetext RedSeenText
+	writetext RedText
 	waitbutton
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
@@ -20,7 +20,7 @@ Red:
 	reloadmapafterbattle
 	special FadeOutMusic
 	opentext
-	writetext RedLeavesText
+	writetext RedText
 	waitbutton
 	closetext
 	special FadeBlackQuickly
@@ -29,24 +29,23 @@ Red:
 	pause 15
 	special FadeInQuickly
 	pause 30
-	setevent EVENT_BEAT_RED
 	special HealParty
+	checkevent EVENT_BEAT_RED
+	iftrue .EndRed
+	giveitem NORMAL_BOX
+	setevent EVENT_BEAT_RED
+.EndRed:
 	refreshscreen
 	credits
 	end
 
-RedSeenText:
+RedText:
 	text "<……>"
 	line "<……>"
 	done
 
 RedWinLossText:
 	text "…"
-	done
-
-RedLeavesText:
-	text "<……>"
-	line "<……>"
 	done
 
 SilverCaveRoom3_MapEvents:
