@@ -38,6 +38,10 @@ SaffronGymSabrinaScript:
 	iffalse .NoRoomForTeleportTM
 	setevent EVENT_GOT_TM_TELEPORT_FROM_SABRINA
 	writetext SabrinaExplainTeleportTMText
+	setevent EVENT_DECO_VIRTUAL_BOY
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext SabrinaVirtualBoyText
 	promptbutton
 	writetext SabrinaChampionPredictionText
 	waitbutton
@@ -185,14 +189,29 @@ SabrinaExplainTeleportTMText:
 
 	para "stat increases of"
 	line "its teammate."
+
+	para "And…"
+
+	para "Use this to help"
+	line "awaken your true"
+	cont "potential!"
+
+	para "<PLAYER> received"
+	line "VIRTUAL BOY!"
+	done
+
+SabrinaVirtualBoyText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 SabrinaChampionPredictionText:
-	text "Although I failed"
-	line "to accurately pre-"
-	cont "dict your power,"
-	cont "this much I know"
-	cont "to be true."
+	text "SABRINA: Although"
+	line "I failed to accur-"
+	cont "ately predict your"
+
+	para "power, this much I"
+	line "know to be true."
 
 	para "You will become a"
 	line "celebrated and"
