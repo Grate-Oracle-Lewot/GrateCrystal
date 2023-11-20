@@ -38,7 +38,7 @@ FirstStepIntoKantoScene_Continue:
 	writetext Route27FisherHeyText
 	promptbutton
 	writetext Route27FisherText
-	setevent EVENT_DECO_POSTER_2
+	setevent EVENT_DECO_POSTER_4
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
 	writetext Route27FisherDecorationText
@@ -333,7 +333,7 @@ Route27FisherText:
 	cont "take this!"
 
 	para "<PLAYER> received"
-	line "PIKACHU POSTER!"
+	line "JIGGLYPUFF POSTER!"
 	done
 
 Route27FisherDecorationText:
