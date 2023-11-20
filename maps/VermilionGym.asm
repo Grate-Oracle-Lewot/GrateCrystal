@@ -60,7 +60,7 @@ VermilionGymSurgeScript:
 	iffalse .NoRoomForThunderTM
 	setevent EVENT_GOT_TM_THUNDER_FROM_SURGE
 	writetext LtSurgeExplainThunderTMText
-	setevent EVENT_DECO_BED_
+	setevent EVENT_DECO_BED_4
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
 	writetext LtSurgePikachuBedText
