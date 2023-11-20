@@ -329,8 +329,8 @@ Route27FisherText:
 	cont "KANTO."
 
 	para "To commemorate the"
-	line "event, please take"
-	cont "this!"
+	line "occasion, please"
+	cont "take this!"
 
 	para "<PLAYER> received"
 	line "PIKACHU POSTER!"
