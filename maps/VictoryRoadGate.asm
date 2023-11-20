@@ -24,6 +24,8 @@ VictoryRoadGateOfficerScript:
 	faceplayer
 VictoryRoadGateBadgeCheckScript:
 	opentext
+	checkevent EVENT_GOT_RED_CARPET_FROM_VICTORY_ROAD
+	iftrue .GotRedCarpet
 	writetext VictoryRoadGateOfficerText
 	promptbutton
 	readvar VAR_BADGES
@@ -36,9 +38,20 @@ VictoryRoadGateBadgeCheckScript:
 
 .AllEightBadges:
 	writetext VictoryRoadGateEightBadgesText
+	setevent EVENT_DECO_CARPET_1
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext VictoryRoadGateDecorationText
 	waitbutton
 	closetext
+	setevent EVENT_GOT_RED_CARPET_FROM_VICTORY_ROAD
 	setscene SCENE_FINISHED
+	end
+
+.GotRedCarpet
+	writetext VictoryRoadGateAfterText
+	waitbutton
+	closetext
 	end
 
 VictoryRoadGateLeftBlackBeltScript:
@@ -71,8 +84,24 @@ VictoryRoadGateEightBadgesText:
 	text "Oh! The eight"
 	line "BADGES of JOHTO!"
 
-	para "Please, go right"
-	line "on through!"
+	para "Please, accept"
+	line "this gift!"
+
+	para "<PLAYER> received"
+	line "RED CARPET!"
+	done
+
+VictoryRoadGateDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+	done
+
+VictoryRoadGateAfterText:
+	text "Ahead is VICTORY"
+	line "ROAD."
+
+	para "Beware the SAND-"
+	line "STORMS inside."
 	done
 
 VictoryRoadGateLeftBlackBeltText:
