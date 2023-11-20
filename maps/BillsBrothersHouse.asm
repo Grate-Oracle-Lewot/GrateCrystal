@@ -27,12 +27,11 @@ BillsBrotherText:
 	done
 
 BillsBrothersHouseYoungsterText:
-	text "You're not allowed"
-	line "to walk CYCLING"
-	cont "ROAD."
+	text "When you're biking"
+	line "on CYCLING ROAD,"
 
-	para "You have to ride a"
-	line "bike."
+	para "you can hold B to"
+	line "brake."
 	done
 
 BillsBrothersHousePhotoText:
