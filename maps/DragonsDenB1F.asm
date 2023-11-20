@@ -62,6 +62,10 @@ DragonsDenB1F_ClairScene:
 	itemnotify
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext ClairText_DescribeDragonbreathDragonDen
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext ClairText_MagikarpDoll
 	promptbutton
 	writetext ClairText_WhatsTheMatterDragonDen
 	waitbutton
@@ -205,9 +209,13 @@ ClairText_DescribeDragonbreathDragonDen:
 	line "have anything to"
 	cont "do with my breath."
 
-	para "If you don't want"
-	line "it, you don't have"
-	cont "to take it."
+	para "…What? A DOLL?"
+
+	para "Fine. Take this"
+	cont "one."
+
+	para "<PLAYER> received"
+	line "MAGIKARP DOLL!"
 	done
 
 ClairText_NoRoom:
@@ -219,6 +227,11 @@ ClairText_NoRoom:
 
 	para "room, then come"
 	line "see me there."
+	done
+
+ClairText_MagikarpDoll:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 ClairText_WhatsTheMatterDragonDen:
