@@ -38,13 +38,17 @@ FirstStepIntoKantoScene_Continue:
 	writetext Route27FisherHeyText
 	promptbutton
 	writetext Route27FisherText
+	setevent EVENT_DECO_POSTER_2
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext Route27FisherDecorationText
 	waitbutton
 	closetext
 	setscene SCENE_FINISHED
 	end
 
 Route27FisherScript:
-	jumptextfaceplayer Route27FisherText
+	jumptextfaceplayer Route27FisherAfterText
 
 TrainerPsychicGilbert:
 	trainer PSYCHIC_T, GILBERT, EVENT_BEAT_PSYCHIC_GILBERT, PsychicGilbertSeenText, PsychicGilbertBeatenText, 0, .Script
@@ -324,8 +328,23 @@ Route27FisherText:
 	line "first step into"
 	cont "KANTO."
 
-	para "Check your #-"
-	line "GEAR MAP and see."
+	para "To commemorate the"
+	line "event, please take"
+	cont "this!"
+
+	para "<PLAYER> received"
+	line "PIKACHU POSTER!"
+	done
+
+Route27FisherDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
+	done
+
+Route27FisherAfterText:
+	text "Check your map to"
+	line "see if you're in"
+	cont "KANTO or JOHTO."
 	done
 
 CooltrainermBlakeSeenText:
