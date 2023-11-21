@@ -209,8 +209,8 @@ SeafoamCaveB1FKarenThanksForPlayingText:
 	line "wasn't easy."
 
 	para "So the idea that"
-	line "anyone would actu-"
-	cont "ally play it all"
+	line "anyone would act-"
+	cont "ually play it all"
 	cont "the way to the"
 	cont "end…"
 
