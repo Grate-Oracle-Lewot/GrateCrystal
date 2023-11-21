@@ -1,12 +1,12 @@
 	frame 0, 42
-	frame 1, 10
-	frame 2, 10
-	frame 3, 10
-	frame 4, 10
+	frame 1, 08
+	frame 2, 08
+	frame 3, 08
+	frame 4, 08
 	frame 5, 21
-	frame 4, 10
-	frame 3, 10
-	frame 2, 10
-	frame 1, 10
+	frame 4, 08
+	frame 3, 08
+	frame 2, 08
+	frame 1, 08
 	frame 0, 42
 	endanim
