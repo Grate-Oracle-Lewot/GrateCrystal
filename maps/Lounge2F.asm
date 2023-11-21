@@ -256,8 +256,10 @@ LoungeGymGuideScript:
 	promptbutton
 	giveitem RARE_CANDY, 99
 	iffalse .RareCandiesNoRoom
-	playsound SFX_ITEM
 	writetext LoungeReceivedRareCandiesText
+	playsound SFX_ITEM
+	waitsfx
+	writetext LoungePutAwayRareCandiesText
 	promptbutton
 	writetext LoungeGymGuideMoreText
 	waitbutton
@@ -573,6 +575,12 @@ LoungeGymGuideAfterText:
 LoungeReceivedRareCandiesText:
 	text "<PLAYER> received"
 	line "RARE CANDY ×99!"
+	done
+
+LoungePutAwayRareCandiesText:
+	text "<PLAYER> put the"
+	line "RARE CANDIES in"
+	cont "the ITEM POCKET."
 	done
 
 LoungeGymGuideMoreText:
