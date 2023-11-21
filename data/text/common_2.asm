@@ -376,8 +376,8 @@ _CantUseTeleportText::
 	done
 
 _AlreadyUsingStrengthText::
-	text "A #MON is using"
-	line "THE FORCE already."
+	text "THE FORCE is with"
+	line "you already."
 	prompt
 
 _UseStrengthText::
@@ -393,8 +393,8 @@ _MoveBoulderText::
 	prompt
 
 _AskStrengthText::
-	text "A #MON may be"
-	line "able to move this."
+	text "This boulder may"
+	line "be movable."
 
 	para "Want to use"
 	line "THE FORCE?"
@@ -406,8 +406,8 @@ _BouldersMoveText::
 	autodone
 
 _BouldersMayMoveText::
-	text "A #MON may be"
-	line "able to move this."
+	text "This boulder may"
+	line "be movable."
 	done
 
 _UseWhirlpoolText::
