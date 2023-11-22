@@ -117,12 +117,8 @@ BillsGrandpa:
 	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 	iftrue .GotEverstone
 	scall .ReceiveItem
-	writetext BillsGrandpaSNESText
-	setevent EVENT_DECO_SNES
-	playsound SFX_GET_EGG_UNUSED
-	waitsfx
-	writetext BillsGrandpaDecorationHomeText
-	waitbutton
+	verbosegiveitem SACRED_ASH
+	iffalse .BagFull
 	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	closetext
@@ -270,11 +266,6 @@ BillsGrandpaTokenOfAppreciationText:
 
 	para "This is a token of"
 	line "my appreciation."
-	done
-
-BillsGrandpaSNESText:
-	text "<PLAYER> received"
-	line "SUPER NES!"
 	done
 
 BillsGrandpaGreenCarpetText:
