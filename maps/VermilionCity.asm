@@ -88,14 +88,15 @@ VermilionGymBadgeGuy:
 
 .AllBadges:
 	writetext VermilionCityBadgeGuyAllBadgesText
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext VermilionCityBadgeGuyDecorationText
 	promptbutton
-	verbosegiveitem PP_UP
-	iffalse .Done
 	setevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
 .AlreadyGotItem:
 	writetext VermilionCityBadgeGuyBattleEdgeText
 	waitbutton
-.Done:
 	closetext
 	end
 
@@ -220,16 +221,18 @@ VermilionCityBadgeGuyAllBadgesText:
 
 	para "I've got a reward"
 	line "for your efforts."
+
+	para "<PLAYER> received"
+	line "SURF PIKACHU DOLL!"
+	done
+
+VermilionCityBadgeGuyDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 VermilionCityBadgeGuyBattleEdgeText:
-	text "Having a variety"
-	line "of #MON types"
-
-	para "should give you an"
-	line "edge in battle."
-
-	para "I'm sure the KANTO"
+	text "I'm sure the KANTO"
 	line "GYM BADGES will"
 	cont "help you."
 	done
