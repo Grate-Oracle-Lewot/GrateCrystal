@@ -121,20 +121,9 @@ TrainerGamblerLiuHai:
 	trainer GAMBLER, LIU_HAI, EVENT_BEAT_GAMBLER_LIU_HAI, GamblerLiuHaiSeenText, GamblerLiuHaiBeatenText, 0, .Script
 
 .Script:
+	endifjustbattled
 	opentext
-	checkevent EVENT_GOT_SURF_PIKACHU_DOLL_FROM_GAMBLER
-	iftrue .GotSurfPikachuDoll
-	writetext GamblerLiuHaiSurfPikachuText
-	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
-	playsound SFX_GET_EGG_UNUSED
-	waitsfx
-	writetext GamblerLiuHaiDecorationText
-	setevent EVENT_GOT_SURF_PIKACHU_DOLL_FROM_GAMBLER
-	sjump .LiuHaiEnd
-
-.GotSurfPikachuDoll:
 	writetext GamblerLiuHaiAfterBattleText
-.LiuHaiEnd:
 	waitbutton
 	closetext
 	end
@@ -287,22 +276,6 @@ GamblerLiuHaiAfterBattleText:
 	text "The luck of the"
 	line "draw favors you,"
 	cont "it seems…"
-	done
-
-GamblerLiuHaiSurfPikachuText:
-	text "The luck of the"
-	line "draw favors you,"
-	cont "it seems…"
-
-	para "You deserve this."
-
-	para "<PLAYER> received"
-	line "SURF PIKACHU DOLL!"
-	done
-
-GamblerLiuHaiDecorationText:
-	text "<PLAYER> sent the"
-	line "decoration home."
 	done
 
 GoldenrodGameCornerBackroom_MapEvents:
