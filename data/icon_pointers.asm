@@ -51,4 +51,9 @@ IconPointers:
 	dw EnteiIcon
 	dw SuicuneIcon
 	dw MantineIcon
+	dw PikachuDollIcon
+	dw ClefairyDollIcon
+	dw JigglypuffDollIcon
+	dw ShellderDollIcon
+	dw TentacoolDollIcon
 	assert_table_length NUM_ICONS + 1
