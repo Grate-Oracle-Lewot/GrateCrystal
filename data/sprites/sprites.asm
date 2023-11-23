@@ -118,4 +118,9 @@ OverworldSprites:
 	overworld_sprite GlitchSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite CookSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SittingBirdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite PikachuDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite ClefairyDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite JigglypuffDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite ShellderDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite TentacoolDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES
