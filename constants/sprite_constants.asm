@@ -113,6 +113,11 @@
 	const SPRITE_GLITCH ; 6d
 	const SPRITE_COOK ; 6e
 	const SPRITE_SITTING_BIRD ; 6f
+	const SPRITE_PIKACHU_DOLL ; 70
+	const SPRITE_CLEFAIRY_DOLL ; 71
+	const SPRITE_JIGGLYPUFF_DOLL ; 72
+	const SPRITE_SHELLDER_DOLL ; 73
+	const SPRITE_TENTACOOL_DOLL ; 74
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
