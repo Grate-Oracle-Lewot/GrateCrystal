@@ -50,6 +50,11 @@
 	const ICON_ENTEI
 	const ICON_SUICUNE
 	const ICON_MANTINE
+	const ICON_PIKACHU_DOLL
+	const ICON_CLEFAIRY_DOLL
+	const ICON_JIGGLYPUFF_DOLL
+	const ICON_SHELLDER_DOLL
+	const ICON_TENTACOOL_DOLL
 NUM_ICONS EQU const_value - 1
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
