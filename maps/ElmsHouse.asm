@@ -27,7 +27,7 @@ ElmsHousePC:
 	promptbutton
 	closetext
 	refreshscreen
-	trainerpic AEROBONES
+	pokepic MEOWTH
 	waitbutton
 	closepokepic
 	opentext
