@@ -14,10 +14,26 @@ PewterMuseum1FGoldTrophy:
 	jumptext PewterMuseum1FGoldTrophyText
 
 AerodactylFossilSignScript:
-	jumptext AerodactylFossilSignText
+	refreshscreen
+	trainerpic AEROBONES
+	waitbutton
+	closepokepic
+	opentext
+	writetext AerodactylFossilSignText
+	waitbutton
+	closetext
+	end
 
 KabutopsFossilSignScript:
-	jumptext KabutopsFossilSignText
+	refreshscreen
+	trainerpic KABUBONES
+	waitbutton
+	closepokepic
+	opentext
+	writetext KabutopsFossilSignText
+	waitbutton
+	closetext
+	end
 
 GrowlitheBookshelfScript:
 	jumptext GrowlitheBookshelfText
