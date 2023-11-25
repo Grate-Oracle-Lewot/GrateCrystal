@@ -243,6 +243,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
+- Brake on Cycling Road by holding B
 - Unused experience growth rates given to some Pokémon, and a few other rates changed
 - Clock reset procedure simplified
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
