@@ -133,7 +133,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Some moves (mostly Normal ones) have had their types changed to allow for better move variety within rarer types.
 
-- HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
+- HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Cotton Spore sharply lowers Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
 
 - Hidden Power always has a base power of 75; the type still changes based on DVs, but it can now be Fairy type.
 
