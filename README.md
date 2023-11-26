@@ -139,7 +139,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
-- Flame Wheel and Rolling Kick now double in power after you've used Defense Curl. (However, Flame Wheel no longer thaws out a Frozen user.)
+- Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel no longer thaws out a Frozen user.)
 
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
