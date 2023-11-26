@@ -1677,6 +1677,7 @@ RapidSpin:
 	damagecalc
 	stab
 	damagevariation
+	flamewheel
 	checkhit
 	moveanim
 	failuretext
