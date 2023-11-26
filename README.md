@@ -259,7 +259,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
 - Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; a Pokémon Center added to Route 3 with a flypoint
 - Instant text speed option
-- Town Map item functionality fixed (item still not actually used)
 - Default player and rival names changed
 - Outdoor sprite system improvement
 - Event initialization system improvement
