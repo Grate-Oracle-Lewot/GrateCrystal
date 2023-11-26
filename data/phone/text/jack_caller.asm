@@ -71,8 +71,9 @@ JackRolloutTriviaText:
 	para "Using DEFENSE CURL"
 	line "powers up ROLLOUT,"
 
-	para "FLAME WHEEL, and"
-	line "ROLLING KICK."
+	para "FLAME WHEEL, RAPID"
+	line "SPIN, and ROLLING"
+	cont "KICK."
 	done
 
 JackSolarbeamTriviaText:
