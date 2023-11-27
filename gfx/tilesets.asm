@@ -346,3 +346,12 @@ INCBIN "data/tilesets/museum_metatiles.bin"
 
 TilesetMuseumColl::
 INCLUDE "data/tilesets/museum_collision.asm"
+
+TilesetSpinnersGFX::
+INCBIN "gfx/tilesets/spinners.2bpp.lz"
+
+TilesetSpinnersMeta::
+INCBIN "data/tilesets/spinners_metatiles.bin"
+
+TilesetSpinnersColl::
+INCLUDE "data/tilesets/spinners_collision.asm"
