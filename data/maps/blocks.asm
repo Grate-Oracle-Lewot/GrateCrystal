@@ -102,7 +102,6 @@ FuchsiaCity_Blocks:
 Route38_Blocks:
 	INCBIN "maps/Route38.blk"
 
-OlivineTimsHouse_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
@@ -917,6 +916,9 @@ SeafoamCave1F_Blocks:
 
 SeafoamCaveB1F_Blocks:
 	INCBIN "maps/SeafoamCaveB1F.blk"
+
+SeafoamCaveB2F_Blocks:
+	INCBIN "maps/SeafoamCaveB2F.blk"
 
 SafariZoneGate_Blocks:
 	INCBIN "maps/SafariZoneGate.blk"
