@@ -460,7 +460,6 @@ ENDM
 	map_attributes TohjoFalls, TOHJO_FALLS, $09, 0
 	map_attributes OlivinePokecenter1F, OLIVINE_POKECENTER_1F, $00, 0
 	map_attributes OlivineGym, OLIVINE_GYM, $00, 0
-	map_attributes OlivineTimsHouse, OLIVINE_TIMS_HOUSE, $00, 0
 	map_attributes OlivinePunishmentSpeechHouse, OLIVINE_PUNISHMENT_SPEECH_HOUSE, $00, 0
 	map_attributes OlivineGoodRodHouse, OLIVINE_GOOD_ROD_HOUSE, $00, 0
 	map_attributes OlivineCafe, OLIVINE_CAFE, $00, 0
@@ -486,7 +485,8 @@ ENDM
 	map_attributes MewChamber, MEW_CHAMBER, $09, 0
 	map_attributes SeafoamCavePuzzleChamber, SEAFOAM_CAVE_PUZZLE_CHAMBER, $00, 0
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
-	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $19, 0
+	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $2e, 0
+	map_attributes SeafoamCaveB2F, SEAFOAM_CAVE_B2F, $19, 0
 	map_attributes SafariZone, SAFARI_ZONE, $00, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $00, 0
