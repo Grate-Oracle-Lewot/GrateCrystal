@@ -210,7 +210,6 @@ SECTION "Map Scripts 12", ROMX
 
 INCLUDE "maps/OlivinePokecenter1F.asm"
 INCLUDE "maps/OlivineGym.asm"
-INCLUDE "maps/OlivineTimsHouse.asm"
 INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/OlivineCafe.asm"
@@ -231,6 +230,7 @@ INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
+INCLUDE "maps/SeafoamCaveB1F.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -480,7 +480,7 @@ INCLUDE "maps/MewChamber.asm"
 INCLUDE "maps/LavRadioTower2F.asm"
 INCLUDE "maps/SeafoamCavePuzzleChamber.asm"
 INCLUDE "maps/SeafoamCave1F.asm"
-INCLUDE "maps/SeafoamCaveB1F.asm"
+INCLUDE "maps/SeafoamCaveB2F.asm"
 INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZone.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
