@@ -80,13 +80,13 @@ OverworldSprites:
 	overworld_sprite BigLaprasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GymGuideSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SailorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PharmacistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MonsterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite FairySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BirdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DragonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BigOnixSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite N64SpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SudowoodoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -119,8 +119,15 @@ OverworldSprites:
 	overworld_sprite CookSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SittingBirdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PikachuDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
-	overworld_sprite ClefairyDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite JigglypuffDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite ClefairyDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_PINK
+	overworld_sprite JigglypuffDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_PINK
 	overworld_sprite ShellderDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite TentacoolDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite BulbasaurDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
+	overworld_sprite SquirtleDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite DiglettDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite OddishDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
+	overworld_sprite GrimerDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite GeodudeDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite MachopDollSpriteGFX, 4, STILL_SPRITE, PAL_OW_SILVER
 	assert_table_length NUM_OVERWORLD_SPRITES
