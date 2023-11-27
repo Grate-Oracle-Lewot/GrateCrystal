@@ -656,10 +656,7 @@ AI_Smart_EvasionUp:
 	inc [hl]
 	inc [hl]
 
-; 30% chance to end up here if enemy's HP is full and player is not badly poisoned.
-; 77% chance to end up here if enemy's HP is above 50% but not full.
-; 100% chance to end up here if enemy's HP is below 50%.
-; In other words, we only end up here if the move has not been encouraged or dismissed.
+; We only end up here if the move has not been encouraged or dismissed.
 .not_encouraged
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
@@ -820,7 +817,7 @@ AI_Smart_AccuracyDown:
 	inc [hl]
 	inc [hl]
 
-; We only end up here if the move has not been already encouraged.
+; We only end up here if the move has not been encouraged or dismissed.
 .not_encouraged
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
