@@ -38,17 +38,16 @@ ENDM
 	newgroup OLIVINE                                              ;  1
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
 	map_const OLIVINE_GYM,                                  5,  8 ;  2
-	map_const OLIVINE_TIMS_HOUSE,                           4,  4 ;  3
-	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,              4,  4 ;  4
-	map_const OLIVINE_GOOD_ROD_HOUSE,                       4,  4 ;  5
-	map_const OLIVINE_CAFE,                                 4,  4 ;  6
-	map_const OLIVINE_MART,                                 6,  4 ;  7
-	map_const ROUTE_38_ECRUTEAK_GATE,                       5,  4 ;  8
-	map_const ROUTE_39_BARN,                                4,  4 ;  9
-	map_const ROUTE_39_FARMHOUSE,                           4,  4 ; 10
-	map_const ROUTE_38,                                    20,  9 ; 11
-	map_const ROUTE_39,                                    10, 18 ; 12
-	map_const OLIVINE_CITY,                                20, 18 ; 13
+	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,              4,  4 ;  3
+	map_const OLIVINE_GOOD_ROD_HOUSE,                       4,  4 ;  4
+	map_const OLIVINE_CAFE,                                 4,  4 ;  5
+	map_const OLIVINE_MART,                                 6,  4 ;  6
+	map_const ROUTE_38_ECRUTEAK_GATE,                       5,  4 ;  7
+	map_const ROUTE_39_BARN,                                4,  4 ;  8
+	map_const ROUTE_39_FARMHOUSE,                           4,  4 ;  9
+	map_const ROUTE_38,                                    20,  9 ; 10
+	map_const ROUTE_39,                                    10, 18 ; 11
+	map_const OLIVINE_CITY,                                20, 18 ; 12
 	endgroup
 
 	newgroup MAHOGANY                                             ;  2
@@ -159,18 +158,19 @@ ENDM
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
 	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ; 96
 	map_const SEAFOAM_CAVE_1F,                             15,  4 ; 97
-	map_const SEAFOAM_CAVE_B1F,                            10, 18 ; 98
-	map_const DARK_CAVE_2F,                                10,  9 ; 99
-	map_const SILPH_CO_2F,                                 15,  9 ; 100
-	map_const SILPH_CO_3F,                                 15,  9 ; 101
-	map_const SILPH_CO_4F,                                 15,  9 ; 102
-	map_const SILPH_CO_5F,                                 15,  9 ; 103
-	map_const SILPH_CO_6F,                                 13,  9 ; 104
-	map_const SILPH_CO_7F,                                 13,  9 ; 105
-	map_const SILPH_CO_8F,                                 13,  9 ; 106
-	map_const SILPH_CO_9F,                                 13,  9 ; 107
-	map_const SILPH_CO_10F,                                 8,  9 ; 108
-	map_const SILPH_CO_11F,                                 8,  9 ; 109
+	map_const SEAFOAM_CAVE_B1F,                            30, 27 ; 98
+	map_const SEAFOAM_CAVE_B2F,                            10, 18 ; 99
+	map_const DARK_CAVE_2F,                                10,  9 ; 100
+	map_const SILPH_CO_2F,                                 15,  9 ; 101
+	map_const SILPH_CO_3F,                                 15,  9 ; 102
+	map_const SILPH_CO_4F,                                 15,  9 ; 103
+	map_const SILPH_CO_5F,                                 15,  9 ; 104
+	map_const SILPH_CO_6F,                                 13,  9 ; 105
+	map_const SILPH_CO_7F,                                 13,  9 ; 106
+	map_const SILPH_CO_8F,                                 13,  9 ; 107
+	map_const SILPH_CO_9F,                                 13,  9 ; 108
+	map_const SILPH_CO_10F,                                 8,  9 ; 109
+	map_const SILPH_CO_11F,                                 8,  9 ; 110
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
