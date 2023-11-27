@@ -634,15 +634,9 @@ AI_Smart_EvasionUp:
 	ret
 
 .hp_mismatch_1
-
 ; Greatly discourage this move if enemy's HP is below 25%.
 	call AICheckEnemyQuarterHP
 	jr nc, .hp_mismatch_2
-
-; If enemy's HP is above 25% but not full, 4% chance to greatly encourage this move.
-	call Random
-	cp 4 percent
-	jr c, .greatly_encourage
 
 ; If enemy's HP is between 25% and 50%,...
 	call AICheckEnemyHalfHP
@@ -664,8 +658,7 @@ AI_Smart_EvasionUp:
 
 ; 30% chance to end up here if enemy's HP is full and player is not badly poisoned.
 ; 77% chance to end up here if enemy's HP is above 50% but not full.
-; 96% chance to end up here if enemy's HP is between 25% and 50%.
-; 100% chance to end up here if enemy's HP is below 25%.
+; 100% chance to end up here if enemy's HP is below 50%.
 ; In other words, we only end up here if the move has not been encouraged or dismissed.
 .not_encouraged
 	ld a, [wPlayerSubStatus5]
@@ -805,15 +798,9 @@ AI_Smart_AccuracyDown:
 	ret
 
 .hp_mismatch_1
-
 ; Greatly discourage this move if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
 	jr nc, .hp_mismatch_2
-
-; If player's HP is above 25% but not full, 4% chance to greatly encourage this move.
-	call Random
-	cp 4 percent
-	jr c, .greatly_encourage
 
 ; If player's HP is between 25% and 50%,...
 	call AICheckPlayerHalfHP
