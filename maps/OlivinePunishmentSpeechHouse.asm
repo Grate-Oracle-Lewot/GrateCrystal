@@ -1,6 +1,7 @@
 	object_const_def
 	const OLIVINEPUNISHMENTSPEECHHOUSE_POKEFAN_M
 	const OLIVINEPUNISHMENTSPEECHHOUSE_LASS
+	const OLIVINEPUNISHMENTSPEECHHOUSE_TIM
 
 OlivinePunishmentSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,14 @@ OlivinePunishmentSpeechHouseDad:
 
 OlivinePunishmentSpeechHouseDaughter:
 	jumptextfaceplayer OlivinePunishmentSpeechHouseDaughterText
+
+Tim:
+	faceplayer
+	opentext
+	trade NPC_TRADE_TIM
+	waitbutton
+	closetext
+	end
 
 OlivinePunishmentSpeechHouseBookshelf2:
 	jumpstd PictureBookshelfScript
@@ -41,8 +50,8 @@ OlivinePunishmentSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, OLIVINE_CITY, 4
-	warp_event  3,  7, OLIVINE_CITY, 4
+	warp_event  2,  7, OLIVINE_CITY, 3
+	warp_event  3,  7, OLIVINE_CITY, 3
 
 	def_coord_events
 
@@ -53,3 +62,4 @@ OlivinePunishmentSpeechHouse_MapEvents:
 	def_object_events
 	object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDad, -1
 	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDaughter, -1
+	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Tim, -1
