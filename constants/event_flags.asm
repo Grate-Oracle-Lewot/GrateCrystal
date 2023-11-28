@@ -208,7 +208,8 @@
 	const EVENT_BEAT_FINALE
 	const EVENT_SEAFOAM_CAVE_B1F_HIDDEN_TIMER_BALL
 	const EVENT_SEAFOAM_CAVE_B1F_X_ACCURACY
-; Unused: next 1 event
+	const EVENT_SEAFOAM_CAVE_B1F_HIDDEN_MAX_POTION
+; No unused events here anymore
 
 	const_next 200
 ; Kanto story events
