@@ -126,7 +126,14 @@ SeafoamCaveB2FKarenScript:
 	special HealParty
 	checkevent EVENT_BEAT_FINALE
 	iftrue .EndFinale
-	giveitem GORGEOUS_BOX
+	opentext
+	writetext SeafoamCaveTrophyText
+	setevent EVENT_DECO_GOLD_TROPHY
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext SeafoamCaveDecorationText
+	waitbutton
+	closetext
 	setevent EVENT_BEAT_FINALE
 .EndFinale:
 	refreshscreen
@@ -373,6 +380,19 @@ SeafoamCaveB2FKarenCreditsText:
 
 	para "Let's just cut to"
 	line "the credits."
+	done
+
+SeafoamCaveGoldTrophyText:
+	text "…Oh, but first,"
+	line "take this."
+
+	para "<PLAYER> received"
+	line "GOLD TROPHY!"
+	done
+
+SeafoamCaveDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 SeafoamCaveB2FFeraligatrText:
