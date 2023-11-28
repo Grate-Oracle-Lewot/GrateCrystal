@@ -222,7 +222,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS
-	dw CONTEXT_USE | SWITCH_OFTEN
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; SwimmerM
 	db NO_ITEM, NO_ITEM ; items
@@ -294,7 +294,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Blackbelt T
 	db X_ATTACK, NO_ITEM ; items
