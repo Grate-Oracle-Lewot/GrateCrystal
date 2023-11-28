@@ -83,8 +83,8 @@ SeafoamCaveB1F_MapEvents:
 	bg_event 11, 21, BGEVENT_READ, SeafoamCaveStatue
 	bg_event 21, 29, BGEVENT_READ, SeafoamCaveStatue
 	bg_event 26, 29, BGEVENT_READ, SeafoamCaveStatue
-	bg_event 16, 22, BGEVENT_READ, FastShipBed
-	bg_event 16, 23, BGEVENT_READ, FastShipBed
+	bg_event 16, 22, BGEVENT_READ, SeafoamCaveBed
+	bg_event 16, 23, BGEVENT_READ, SeafoamCaveBed
 	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveB1FHiddenTimerBall
 	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenMaxPotion
 
