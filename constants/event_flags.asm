@@ -207,7 +207,8 @@
 	const EVENT_GOT_RED_CARPET_FROM_VICTORY_ROAD
 	const EVENT_BEAT_FINALE
 	const EVENT_SEAFOAM_CAVE_B1F_HIDDEN_TIMER_BALL
-; Unused: next 2 events
+	const EVENT_SEAFOAM_CAVE_B1F_X_ACCURACY
+; Unused: next 1 event
 
 	const_next 200
 ; Kanto story events
