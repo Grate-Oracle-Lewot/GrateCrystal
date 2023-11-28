@@ -158,7 +158,7 @@ ENDM
 	map_const MEW_CHAMBER,                                 10,  9 ; 95
 	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ; 96
 	map_const SEAFOAM_CAVE_1F,                             15,  4 ; 97
-	map_const SEAFOAM_CAVE_B1F,                            30, 27 ; 98
+	map_const SEAFOAM_CAVE_B1F,                            24, 22 ; 98
 	map_const SEAFOAM_CAVE_B2F,                            10, 18 ; 99
 	map_const DARK_CAVE_2F,                                10,  9 ; 100
 	map_const SILPH_CO_2F,                                 15,  9 ; 101
