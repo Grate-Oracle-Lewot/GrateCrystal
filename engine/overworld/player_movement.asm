@@ -261,9 +261,9 @@ DoPlayerMovement::
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
-	jr z, .TrySurf
+	jp z, .TrySurf
 	cp PLAYER_SURF_PIKA
-	jr z, .TrySurf
+	jp z, .TrySurf
 
 	call .CheckLandPerms
 	jr c, .bump
