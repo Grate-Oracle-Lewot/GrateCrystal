@@ -39,6 +39,9 @@ SeafoamCaveB1FXAccuracy:
 SeafoamCaveB1FHiddenTimerBall:
 	hiddenitem TIMER_BALL, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_TIMER_BALL
 
+SeafoamCaveB1FHiddenMaxPotion:
+	hiddenitem MAX_POTION, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_MAX_POTION
+
 SeafoamCaveStatueText:
 	text "It's a statue of a"
 	line "FERALIGATR."
@@ -78,9 +81,12 @@ SeafoamCaveB1F_MapEvents:
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, SeafoamCaveRadio
 	bg_event 11, 21, BGEVENT_READ, SeafoamCaveStatue
+	bg_event 21, 29, BGEVENT_READ, SeafoamCaveStatue
+	bg_event 26, 29, BGEVENT_READ, SeafoamCaveStatue
 	bg_event 16, 22, BGEVENT_READ, FastShipBed
 	bg_event 16, 23, BGEVENT_READ, FastShipBed
 	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveB1FHiddenTimerBall
+	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenMaxPotion
 
 	def_object_events
 	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HitchhikersGuideScript, -1
