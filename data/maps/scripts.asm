@@ -419,6 +419,7 @@ INCLUDE "maps/Route31.asm"
 INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
+INCLUDE "maps/Route12.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -482,7 +483,7 @@ INCLUDE "maps/SeafoamCaveB2F.asm"
 INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZone.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
-INCLUDE "maps/PewterMuseum2F.asm"
+
 
 SECTION "Map Scripts 26", ROMX
 
@@ -503,8 +504,9 @@ INCLUDE "maps/SilphCo10F.asm"
 INCLUDE "maps/SilphCo11F.asm"
 INCLUDE "maps/Lounge1F.asm"
 
+
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/Route12.asm" ; 22
+INCLUDE "maps/PewterMuseum2F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
