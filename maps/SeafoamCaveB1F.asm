@@ -1,4 +1,5 @@
 	object_const_def
+	const SEAFOAMCAVEB1F_POKEDEX
 
 SeafoamCaveB1F_MapScripts:
 	def_scene_scripts
@@ -10,6 +11,9 @@ SeafoamCaveRadio:
 
 SeafoamCaveStatue:
 	jumptext SeafoamCaveStatueText
+
+HitchhikersGuideScript:
+	jumptext HitchhikersGuideText
 
 SeafoamCaveBed:
 	opentext
@@ -34,6 +38,18 @@ SeafoamCaveB1FHiddenTimerBall:
 SeafoamCaveStatueText:
 	text "It's a statue of a"
 	line "FERALIGATR."
+	done
+
+HitchhikersGuideText:
+	text "It's a big blue"
+	line "book called the"
+
+	para "ULTIMATE HITCH-"
+	line "HIKER'S GUIDE."
+
+	para "It seems to be a"
+	line "collection of five"
+	cont "novels."
 	done
 
 SeafoamCaveBedText1:
@@ -63,3 +79,4 @@ SeafoamCaveB1F_MapEvents:
 	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveB1FHiddenTimerBall
 
 	def_object_events
+	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HitchhikersGuideScript, -1
