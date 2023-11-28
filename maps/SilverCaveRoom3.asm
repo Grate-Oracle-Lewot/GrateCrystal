@@ -32,7 +32,14 @@ Red:
 	special HealParty
 	checkevent EVENT_BEAT_RED
 	iftrue .EndRed
-	giveitem NORMAL_BOX
+	opentext
+	writetext RedSilverTrophyText
+	setevent EVENT_DECO_SILVER_TROPHY
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext RedDecorationText
+	waitbutton
+	closetext
 	setevent EVENT_BEAT_RED
 .EndRed:
 	refreshscreen
@@ -46,6 +53,16 @@ RedText:
 
 RedWinLossText:
 	text "…"
+	done
+
+RedSilverTrophyText:
+	text "<PLAYER> received"
+	line "SILVER TROPHY!"
+	done
+
+RedDecorationText:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 SilverCaveRoom3_MapEvents:
