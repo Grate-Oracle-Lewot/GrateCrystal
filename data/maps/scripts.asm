@@ -230,7 +230,6 @@ INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
-INCLUDE "maps/SeafoamCaveB1F.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -508,3 +507,4 @@ INCLUDE "maps/Lounge1F.asm"
 SECTION "Map Scripts 27", ROMX
 
 INCLUDE "maps/Lounge2F.asm"
+INCLUDE "maps/SeafoamCaveB1F.asm"
