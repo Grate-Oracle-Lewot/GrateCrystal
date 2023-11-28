@@ -127,7 +127,7 @@ SeafoamCaveB2FKarenScript:
 	checkevent EVENT_BEAT_FINALE
 	iftrue .EndFinale
 	opentext
-	writetext SeafoamCaveTrophyText
+	writetext SeafoamCaveGoldTrophyText
 	setevent EVENT_DECO_GOLD_TROPHY
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
