@@ -206,7 +206,8 @@
 	const EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
 	const EVENT_GOT_RED_CARPET_FROM_VICTORY_ROAD
 	const EVENT_BEAT_FINALE
-; Unused: next 3 events
+	const EVENT_SEAFOAM_CAVE_B1F_HIDDEN_TIMER_BALL
+; Unused: next 2 events
 
 	const_next 200
 ; Kanto story events
