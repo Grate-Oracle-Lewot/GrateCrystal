@@ -56,7 +56,9 @@ HitchhikersGuideText:
 
 	para "It seems to be a"
 	line "collection of five"
-	cont "novels."
+
+	para "novels, plus a"
+	line "short story."
 	done
 
 SeafoamCaveBedText1:
