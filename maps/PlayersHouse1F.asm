@@ -97,8 +97,6 @@ MeetMomScript:
 .Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
-	setevent EVENT_BEAT_RED
-	warp ROUTE_20, 30, 6
 	end
 
 MeetMomTalkedScript:
