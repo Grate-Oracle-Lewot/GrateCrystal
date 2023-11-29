@@ -55,8 +55,8 @@ SeafoamCaveB2FKarenScript:
 	closetext
 	special FadeOutMusic
 	special FadeBlackQuickly
-	pause 10
 	special ReloadSpritesNoPalettes
+	pause 10
 	appear SEAFOAMCAVEB2F_OAK2
 	playsound SFX_WARP_TO
 	waitsfx
