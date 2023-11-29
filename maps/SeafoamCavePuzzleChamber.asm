@@ -40,7 +40,7 @@ SeafoamCaveUBEQCPuzzle:
 	setevent EVENT_WALL_OPENED_IN_SEAFOAM_CAVE
 	pause 30
 	earthquake 30
-	pause 60
+	pause 90
 	showemote EMOTE_QUESTION, PLAYER, 20
 	pause 30
 	playsound SFX_STRENGTH
