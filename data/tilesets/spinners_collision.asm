@@ -29,7 +29,7 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; 1c
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 1d
 	tilecoll FLOOR, WALL, WALL, WALL ; 1e
-	tilecoll FLOOR, FLOOR, SPIN_RIGHT, STOP_SPIN ; 1f
+	tilecoll FLOOR, FLOOR, SPIN_LEFT, STOP_SPIN ; 1f
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 20
 	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; 21
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 22
