@@ -106,7 +106,7 @@ SeafoamCavePuzzleChamberDescriptionText:
 	text "The Universal"
 	line "Balance of the"
 	cont "Eternal Quantum"
-	cont "Colors"
+	cont "Colors (UBEQC)"
 	done
 
 SeafoamCavePuzzleChamberSolvedText:
