@@ -249,5 +249,5 @@ SeafoamCaveB1F_MapEvents:
 	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenMaxPotion
 
 	def_object_events
-	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HitchhikersGuideScript, -1
+	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBook, -1
 	object_event  6, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB1FXAccuracy, EVENT_SEAFOAM_CAVE_B1F_X_ACCURACY
