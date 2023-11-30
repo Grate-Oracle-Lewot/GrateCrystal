@@ -25,6 +25,15 @@ SeafoamCaveBook:
 	yesorno
 	iffalse .Done
 	writetext SeafoamCaveBookText4
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText5
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText6
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText7
 	waitbutton
 .Done:
 	closetext
@@ -100,6 +109,29 @@ SeafoamCaveBookText2:
 	done
 
 SeafoamCaveBookText3:
+	text "LEWOT is TOWEL"
+	line "spelled backwards."
+
+	para "This is a refer-"
+	line "ence to the"
+
+	para "HITCHHIKER'S GUIDE"
+	line "TO THE GALAXY."
+
+	para "My name and title"
+	line "originate from a"
+
+	para "now-defunct TOWEL"
+	line "DAY forum."
+
+	para "TOWEL DAY is a ho-"
+	line "liday celebrating"
+	cont "the GUIDE."
+
+	para "Keep reading?"
+	done
+
+SeafoamCaveBookText4:
 	text "My very favorite"
 	line "#MON is YANMA."
 
@@ -122,7 +154,7 @@ SeafoamCaveBookText3:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText4:
+SeafoamCaveBookText5:
 	text "My favorite video"
 	line "games of all time"
 	cont "are, in order:"
@@ -138,6 +170,53 @@ SeafoamCaveBookText4:
 	para "Obviously, Gen II"
 	line "#MON is up"
 	cont "there as well."
+
+	para "Keep reading?"
+	done
+
+SeafoamCaveBookText6:
+	text "You're probably"
+	line "wondering about"
+	cont "that UBEQC thing."
+
+	para "The square is pur-"
+	line "ple and represents"
+
+	para "the number of good"
+	line "people in the"
+	cont "universe."
+
+	para "The circle's green"
+	line "and represents the"
+
+	para "number of evil"
+	cont "people."
+
+	para "The triangle is"
+	line "orange and repre-"
+	cont "sents the balanc-"
+	cont "ing forces of…"
+
+	para "Let's call it"
+	line "chaos."
+
+	para "So it's basically"
+	line "my version of a"
+	cont "yin-yang."
+
+	para "Keep reading?"
+	done
+
+SeafoamCaveBookText7:
+	text "What about that"
+	line "GOLDGEM on the"
+	cont "title screen?"
+
+	para "That stands for"
+	line "GRATE ORACLE"
+	cont "LEWOT'S DUBIOUS"
+	cont "GAMES and EXTRAN-"
+	cont "EOUS MERCHANDISE."
 	done
 
 SeafoamCaveBedText1:
