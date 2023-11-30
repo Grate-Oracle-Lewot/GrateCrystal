@@ -13,8 +13,22 @@ SeafoamCaveRadio:
 SeafoamCaveStatue:
 	jumptext SeafoamCaveStatueText
 
-HitchhikersGuideScript:
-	jumptext HitchhikersGuideText
+SeafoamCaveBook:
+	opentext
+	writetext SeafoamCaveBookText1
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText2
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText3
+	yesorno
+	iffalse .Done
+	writetext SeafoamCaveBookText4
+	waitbutton
+.Done:
+	closetext
+	end
 
 SeafoamCaveBed:
 	opentext
@@ -47,18 +61,83 @@ SeafoamCaveStatueText:
 	line "FERALIGATR."
 	done
 
-HitchhikersGuideText:
-	text "It's a big blue"
-	line "book called the"
+SeafoamCaveBookText1:
+	text "It's a book titled"
+	line "EVERYTHING YOU"
 
-	para "ULTIMATE HITCH-"
-	line "HIKER'S GUIDE."
+	para "NEVER WANTED TO"
+	line "KNOW ABOUT THE"
 
-	para "It seems to be a"
-	line "collection of five"
+	para "GRATE ORACLE"
+	line "LEWOT. Read it?"
+	done
 
-	para "novels, plus a"
-	line "short story."
+SeafoamCaveBookText2:
+	text "What does it mean"
+	line "to be a GRATE"
+	cont "ORACLE?"
+
+	para "Simply that my"
+	line "psychic powers"
+
+	para "depend on my prox-"
+	line "imity to grates."
+
+	para "More candidly, it's"
+	line "a self-deprecating"
+	cont "joke."
+
+	para "You're supposed to"
+	line "hear GREAT but"
+
+	para "then realize it's"
+	line "actually GRATE."
+
+	para "That's just my kind"
+	line "of humor."
+
+	para "Keep reading?"
+	done
+
+SeafoamCaveBookText3:
+	text "My very favorite"
+	line "#MON is YANMA."
+
+	para "I like YANMEGA,"
+	line "but I like YANMA a"
+	cont "bit more."
+
+	para "I like HAUNTER"
+	line "more than GENGAR,"
+
+	para "and PICHU more"
+	line "than PIKACHU."
+
+	para "I know I took"
+	line "PICHU out, but"
+
+	para "hacking is hard,"
+	line "okay?"
+
+	para "Keep reading?"
+	done
+
+SeafoamCaveBookText4:
+	text "My favorite video"
+	line "games of all time"
+	cont "are, in order:"
+
+	para "PAPER MARIO, its"
+	line "first sequel,"
+
+	para "TEARS OF THE KING-"
+	line "DOM, BREATH OF THE"
+	cont "WILD, and DONKEY"
+	cont "KONG 64."
+
+	para "Obviously, Gen II"
+	line "#MON is up"
+	cont "there as well."
 	done
 
 SeafoamCaveBedText1:
