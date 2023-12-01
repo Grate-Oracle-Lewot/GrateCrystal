@@ -160,8 +160,12 @@ AI_TryItem:
 	ret z
 
 	call .IsHighestLevel
+	jr c, .good_mon_choice
+
+	callfar FindAliveEnemyMons
 	ret nc
 
+.good_mon_choice
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
