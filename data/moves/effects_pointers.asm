@@ -147,5 +147,4 @@ MoveEffectsPointers:
 	dw FreezeHit
 	dw Hail
 	dw Dig
-	dw NormalHit
 	assert_table_length NUM_MOVE_EFECTS
