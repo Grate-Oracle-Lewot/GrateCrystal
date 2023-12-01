@@ -387,7 +387,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
 	dbw EFFECT_DIG,              AI_Smart_Dig
-	dbw EFFECT_EXTREMESPEED,     AI_Smart_Extremespeed
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1585,7 +1584,6 @@ AI_Smart_HealBell:
 
 
 AI_Smart_PriorityHit:
-AI_Smart_Extremespeed:
 	call AICompareSpeed
 	ret c
 
