@@ -27,6 +27,12 @@ ViridianCityCoffeeGramps:
 
 .no:
 	writetext ViridianCityCoffeeGrampsDoubtedText
+	winlosstext ViridianCityCoffeeGrampsBeatenText, 0
+	loadtrainer SAGE, OLDMAN
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext ViridianCityCoffeeGrampsDefeatText
 	waitbutton
 	closetext
 	end
@@ -129,12 +135,15 @@ ViridianCityCoffeeGrampsBelievedText:
 ViridianCityCoffeeGrampsDoubtedText:
 	text "What? You little"
 	line "whelp!"
+	done
 
-	para "If I were just a"
-	line "bit younger, I'd"
+ViridianCityCoffeeGrampsBeatenText:
+	text "Consarnit!"
+	done
 
-	para "show you a thing"
-	line "or two. Humph!"
+ViridianCityCoffeeGrampsDefeatText:
+	text "Well, I'll get you"
+	line "next time."
 	done
 
 ViridianCityGrampsNearGymText:
