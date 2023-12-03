@@ -142,8 +142,8 @@ ViridianCityCoffeeGrampsBeatenText:
 	done
 
 ViridianCityCoffeeGrampsDefeatText:
-	text "Well, I'll get you"
-	line "next time."
+	text "Grr… Where's my"
+	line "coffee?"
 	done
 
 ViridianCityGrampsNearGymText:
