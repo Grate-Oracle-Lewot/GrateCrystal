@@ -78,4 +78,5 @@ TrainerClassDVs:
 	dn 15,  0,  0,  0 ; MISSINGNO
 	dn  6,  7,  7,  6 ; GAMBLER
 	dn 13, 14, 14, 13 ; CAL_F
+	dn  6,  5,  5,  6 ; OLD
 	assert_table_length NUM_TRAINER_CLASSES
