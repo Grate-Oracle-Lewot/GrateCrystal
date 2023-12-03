@@ -32,6 +32,7 @@ MaleTrainers:
 	db KABUBONES
 	db MISSINGNO
 	db GAMBLER
+	db OLD
 .End
 
 FemaleTrainers:
