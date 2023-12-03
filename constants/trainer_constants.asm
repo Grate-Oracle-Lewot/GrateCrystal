@@ -642,7 +642,6 @@ KRIS EQU __trainer_class__
 	const GAKU
 	const MASA
 	const KOJI
-	const OLDMAN
 
 	trainerclass MEDIUM ; 39
 	const MARTHA
@@ -757,5 +756,8 @@ KRIS EQU __trainer_class__
 	trainerclass CAL_F ; 4c
 	const LINK_KRIS
 	const CALLA
+
+	trainerclass OLD ; 4d
+	const MAN
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
