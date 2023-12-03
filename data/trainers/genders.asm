@@ -79,4 +79,5 @@ BTTrainerClassGenders:
 	db MALE   ; MISSINGNO
 	db MALE   ; GAMBLER
 	db FEMALE ; CAL_F
+	db MALE   ; OLD
 	assert_table_length NUM_TRAINER_CLASSES
