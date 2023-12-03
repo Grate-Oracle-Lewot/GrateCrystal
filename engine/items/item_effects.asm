@@ -1223,7 +1223,7 @@ VitaminEffect:
 	cp 235
 	jr nc, NoEffectMessage
 
-	add 15
+	add 19
 	ld [hl], a
 	call UpdateStatsAfterItem
 
