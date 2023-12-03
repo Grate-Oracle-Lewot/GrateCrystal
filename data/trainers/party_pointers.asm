@@ -79,4 +79,5 @@ TrainerGroups:
 	dw MissingnoGroup
 	dw GamblerGroup
 	dw CalFGroup
+	dw OldGroup
 	assert_table_length NUM_TRAINER_CLASSES
