@@ -28,7 +28,7 @@ ViridianCityCoffeeGramps:
 .no:
 	writetext ViridianCityCoffeeGrampsDoubtedText
 	winlosstext ViridianCityCoffeeGrampsBeatenText, 0
-	loadtrainer SAGE, OLDMAN
+	loadtrainer OLD, MAN
 	startbattle
 	reloadmapafterbattle
 	opentext
