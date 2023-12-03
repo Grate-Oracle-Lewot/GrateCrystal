@@ -80,4 +80,5 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER        ; missingno
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; gambler
 	db MUSIC_CLAIR                 ; cal_f
+	db MUSIC_YOUNGSTER_ENCOUNTER   ; old
 	assert_table_length NUM_TRAINER_CLASSES + 1
