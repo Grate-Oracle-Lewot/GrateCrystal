@@ -77,4 +77,5 @@ BTTrainerClassSprites:
 	db SPRITE_SCIENTIST
 	db SPRITE_SAGE
 	db SPRITE_KRIS
+	db SPRITE_SAGE
 	assert_table_length NUM_TRAINER_CLASSES
