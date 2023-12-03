@@ -36,7 +36,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Special encounters for all legendary Pokémon (return the Squirtbottle to the Flower Shop to get the GS Ball!)
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
-- Double stat exp gained from battles, 1.5x from vitamins, and vitamins now keep working until near max stat exp
+- Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
 - Pseudo-Abilities:
