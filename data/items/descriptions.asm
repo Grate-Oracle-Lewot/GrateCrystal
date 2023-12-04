@@ -164,8 +164,8 @@ ItemDescriptions:
 	dw FriendBallDesc
 	dw MoonBallDesc
 	dw LoveBallDesc
-	dw NormalBoxDesc
-	dw GorgeousBoxDesc
+	dw HelixFossilDesc
+	dw DomeFossilDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
 	dw GravityBuoyDesc
@@ -903,11 +903,11 @@ LoveBallDesc:
 	db   "For catching the"
 	next "opposite gender.@"
 
-NormalBoxDesc:
+HelixFossilDesc:
 	db   "A fossil of a"
 	next "spiral shell.@"
 
-GorgeousBoxDesc:
+DomeFossilDesc:
 	db   "A fossil of a"
 	next "domed shell.@"
 
