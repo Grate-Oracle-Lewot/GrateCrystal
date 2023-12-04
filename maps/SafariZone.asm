@@ -90,8 +90,8 @@ SafariZoneSudowoodoScript:
 SafariZoneThickClub:
 	itemball THICK_CLUB
 
-SafariZoneGoldTeeth:
-	itemball GOLD_TEETH
+SafariZoneCalcium:
+	itemball CALCIUM
 
 SafariZoneTrashcan:
 	jumpstd TrashCanScript
@@ -121,4 +121,4 @@ SafariZone_MapEvents:
 	object_event 29, 29, SPRITE_FISH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SafariZoneMagikarpScript, EVENT_SAFARI_ZONE_MAGIKARP
 	object_event  2,  2, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneSudowoodoScript, EVENT_SAFARI_ZONE_SUDOWOODO
 	object_event  0, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneThickClub, EVENT_SAFARI_ZONE_THICK_CLUB
-	object_event 51, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneGoldTeeth, EVENT_SAFARI_ZONE_GOLD_TEETH
+	object_event 51, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneCalcium, EVENT_SAFARI_ZONE_CALCIUM
