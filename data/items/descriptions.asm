@@ -173,7 +173,7 @@ ItemDescriptions:
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw GoldTeethDesc
+	dw OldAmberDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw BrickPieceDesc
@@ -939,9 +939,9 @@ SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-GoldTeethDesc:
-	db   "Lost false teeth."
-	next "Sell high.@"
+OldAmberDesc:
+	db   "Amber with a bug"
+	next "trapped inside.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"
