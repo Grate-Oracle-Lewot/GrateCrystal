@@ -233,8 +233,8 @@ CeladonGymGuideText:
 	line "enough coins for a"
 	cont "prize #MON."
 
-	para "But I don't have"
-	line "enough coins yet…"
+	para "But it, uh… takes"
+	line "a while."
 	done
 
 CeladonGameCornerGrampsText:
