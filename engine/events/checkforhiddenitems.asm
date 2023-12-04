@@ -144,6 +144,9 @@ RockItemEncounter:
 	ret
 	
 .RockItems:
+	db 1, OLD_AMBER
+	db 1, DOME_FOSSIL
+	db 1, HELIX_FOSSIL
 	db 2, MAX_REVIVE
 	db 2, MAX_ELIXER
 	db 4, ELIXER
