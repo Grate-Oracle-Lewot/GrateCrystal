@@ -172,7 +172,7 @@ ItemNames::
 	li "BERRY"
 	li "GOLD BERRY"
 	li "SQUIRTBOTTLE"
-	li "GOLD TEETH"
+	li "OLD AMBER"
 	li "PARK BALL"
 	li "RAINBOW WING"
 	li "BRICK PIECE"
