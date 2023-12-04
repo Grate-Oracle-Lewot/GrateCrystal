@@ -275,7 +275,11 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
-; Unused: next 339 events
+; new to Grate Crystal
+	const EVENT_GAVE_SCIENTIST_OLD_AMBER
+	const EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	const EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+; Unused: next 336 events
 
 	const_next 600
 ; Kurt Apricorn events
