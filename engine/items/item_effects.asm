@@ -177,8 +177,8 @@ ItemEffects:
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
-	dw NormalBoxEffect     ; NORMAL_BOX
-	dw GorgeousBoxEffect   ; GORGEOUS_BOX
+	dw NoEffect            ; NORMAL_BOX
+	dw NoEffect            ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
 	dw GravityBuoyEffect   ; GRAVITY_BUOY
@@ -2599,24 +2599,6 @@ SacredAshEffect:
 	ret nz
 	call UseDisposableItem
 	ret
-
-NormalBoxEffect:
-	ld c, DECOFLAG_SILVER_TROPHY_DOLL
-	jr OpenBox
-
-GorgeousBoxEffect:
-	ld c, DECOFLAG_GOLD_TROPHY_DOLL
-OpenBox:
-	farcall SetSpecificDecorationFlag
-
-	ld hl, .SentTrophyHomeText
-	call PrintText
-
-	jp UseDisposableItem
-
-.SentTrophyHomeText:
-	text_far _SentTrophyHomeText
-	text_end
 
 NoEffect:
 	jp IsntTheTimeMessage
