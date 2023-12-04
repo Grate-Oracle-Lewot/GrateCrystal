@@ -310,6 +310,6 @@ NUM_UNOWN_PUZZLES EQU const_value
 
 ; FossilScientist setval arguments
 	const_def 1
-	const REVIVE_OLD_AMBER    ; 1
-	const REVIVE_HELIX_FOSSIL  ; 2
-	const REVIVE_DOME_FOSSIL ; 3
+	const REVIVE_HELIX_FOSSIL ; 1
+	const REVIVE_DOME_FOSSIL  ; 2
+	const REVIVE_OLD_AMBER    ; 3
