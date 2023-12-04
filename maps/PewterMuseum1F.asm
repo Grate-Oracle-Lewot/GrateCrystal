@@ -8,7 +8,168 @@ PewterMuseum1F_MapScripts:
 	def_callbacks
 
 PewterMuseum1FScientistScript:
-	jumptextfaceplayer PewterMuseum1FScientistText
+	faceplayer
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .GaveScientistFossil
+	checkevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	iftrue .GiveAerodactyl
+	checkevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	iftrue .GiveKabuto
+	checkevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	iftrue .GiveOmanyte
+	writetext PewterMuseum1FScientistIntroText
+	waitbutton
+	checkitem HELIX_FOSSIL
+	iftrue .HaveFossil
+	checkitem DOME_FOSSIL
+	iftrue .HaveFossil
+	checkitem OLD_AMBER
+	iftrue .HaveFossil
+	closetext
+	end
+
+.HaveFossil:
+	writetext PewterMuseum1FScientistHaveFossilText
+	waitbutton
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal REVIVE_HELIX_FOSSIL, .HelixFossil
+	ifequal REVIVE_DOME_FOSSIL, .DomeFossil
+	ifequal REVIVE_OLD_AMBER, .OldAmber
+	sjump .Cancel
+
+.HelixFossil:
+	checkitem HELIX_FOSSIL
+	iffalse .Cancel
+	getmonname STRING_BUFFER_3, OMANYTE
+	writetext PewterMuseum1FScientistMonText
+	promptbutton
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	takeitem HELIX_FOSSIL
+	writetext PewterMuseum1FScientistGiveText
+	waitbutton
+	sjump .GaveScientistFossil
+
+.DomeFossil:
+	checkitem DOME_FOSSIL
+	iffalse .Cancel
+	getmonname STRING_BUFFER_3, KABUTO
+	writetext PewterMuseum1FScientistMonText
+	promptbutton
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	takeitem DOME_FOSSIL
+	opentext
+	writetext PewterMuseum1FScientistGiveText
+	waitbutton
+	sjump .GaveScientistFossil
+
+.OldAmber
+	checkitem OLD_AMBER
+	iffalse .Cancel
+	getmonname STRING_BUFFER_3, AERODACTYL
+	writetext PewterMuseum1FScientistMonText
+	promptbutton
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	setevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	takeitem OLD_AMBER
+	writetext PewterMuseum1FScientistGiveText
+	waitbutton
+	sjump .GaveScientistFossil
+
+.Cancel
+	writetext PewterMuseum1FScientistCancelText
+	waitbutton
+	closetext
+	end
+
+.WrongFossil
+	writetext PewterMuseum1FScientistWrongFossilText
+	waitbutton
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal REVIVE_HELIX_FOSSIL, .HelixFossil
+	ifequal REVIVE_DOME_FOSSIL, .DomeFossil
+	ifequal REVIVE_OLD_AMBER, .OldAmber
+	sjump .Cancel
+
+.GaveScientistFossil:
+	writetext PewterMuseum1FScientistTimeText
+	waitbutton
+	closetext
+	end
+
+.GiveAerodactyl:
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
+	writetext PewterMuseum1FScientistDoneText
+	promptbutton
+	getmonname STRING_BUFFER_3, AERODACTYL
+	writetext PewterMuseum1FScientistReceiveText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	waitbutton
+	writetext PewterMuseum1FScientistMonText
+	givepoke AERODACTYL, 1
+	closetext
+	end
+
+.GiveKabuto:
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	writetext PewterMuseum1FScientistDoneText
+	promptbutton
+	getmonname STRING_BUFFER_3, KABUTO
+	writetext PewterMuseum1FScientistReceiveText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	waitbutton
+	writetext PewterMuseum1FScientistMonText
+	givepoke KABUTO, 1
+	closetext
+	end
+
+.GiveOmanyte:
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	writetext PewterMuseum1FScientistDoneText
+	promptbutton
+	getmonname STRING_BUFFER_3, OMANYTE
+	writetext PewterMuseum1FScientistReceiveText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	waitbutton
+	writetext PewterMuseum1FScientistMonText
+	givepoke OMANYTE, 1
+	closetext
+	end
+
+.NoRoom:
+	writetext PewterMuseum1FScientistPartyFullText
+	waitbutton
+	closetext
+	end
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "HELIX FOSSIL@"
+	db "DOME FOSSIL@"
+	db "OLD AMBER@"
+	db "CANCEL@"
 
 PewterMuseum1FGoldTrophy:
 	jumptext PewterMuseum1FGoldTrophyText
@@ -53,7 +214,7 @@ SneaselBookshelfScript:
 MewBookshelfScript:
 	jumptext MewBookshelfText
 
-PewterMuseum1FScientistText:
+PewterMuseum1FScientistIntroText:
 	text "Thanks to our"
 	line "successful fossil"
 
@@ -68,6 +229,69 @@ PewterMuseum1FScientistText:
 
 	para "to see our fossil"
 	line "exhibits, though…"
+	done
+
+PewterMuseum1FScientistHaveFossilText:
+	text "Oh! You have a"
+	line "fossil?"
+
+	para "I may be able to"
+	line "revive it."
+
+	para "Which one should I"
+	line "work on?"
+	done
+
+PewterMuseum1FScientistCancelText:
+	text "Oh… never mind…"
+	done
+
+PewterMuseum1FScientistWrongFossilText:
+	text "You don't have one"
+	line "of those."
+	done
+
+PewterMuseum1FScientistPartyFullText:
+	text "Your party's full…"
+	done
+
+PewterMuseum1FScientistTimeText:
+	text "This will take a"
+	line "little time."
+
+	para "Please come back"
+	line "in a bit."
+	done
+
+PewterMuseum1FScientistDoneText:
+	text "Success!"
+
+	para "Here's your fossil"
+	line "#MON!"
+	done
+
+PewterMuseum1FScientistMonText:
+	text "Ah! That's a"
+	line "fossil of"
+
+	para "@"
+	text_ram wStringBuffer3
+	text "!"
+
+	para "I should be able"
+	line "to resurrect it!"
+	done
+
+PewterMuseum1FScientistGiveText:
+	text "<PLAYER> handed"
+	line "over the fossil."
+	done
+
+PewterMuseum1FScientistReceiveText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
 	done
 
 PewterMuseum1FGoldTrophyText:
