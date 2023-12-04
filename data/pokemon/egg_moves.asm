@@ -934,7 +934,7 @@ LarvitarEggMoves:
 	db BELLY_DRUM
 	db -1 ; end
 
-WhimsicottEggMoves:
+CottoneeEggMoves:
 	db LOVELY_KISS
 	db MIST
 	db HAZE
