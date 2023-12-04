@@ -1687,6 +1687,7 @@ CoinVendor_IntroScript:
 	closewindow
 	ifequal 1, .Buy50
 	ifequal 2, .Buy500
+	ifequal 3, .Buy5000
 	sjump .Cancel
 
 .Buy50:
@@ -1715,6 +1716,19 @@ CoinVendor_IntroScript:
 	waitbutton
 	sjump .loop
 
+.Buy5000:
+	checkcoins MAX_COINS - 5000
+	ifequal HAVE_MORE, .CoinCaseFull
+	checkmoney YOUR_MONEY, 100000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	givecoins 5000
+	takemoney YOUR_MONEY, 100000
+	waitsfx
+	playsound SFX_TRANSACTION
+	farwritetext CoinVendor_Buy5000CoinsText
+	waitbutton
+	sjump .loop
+
 .NotEnoughMoney:
 	farwritetext CoinVendor_NotEnoughMoneyText
 	waitbutton
@@ -1735,16 +1749,16 @@ CoinVendor_IntroScript:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 4, 15, TEXTBOX_Y - 1
+	menu_coords 0, 4, 16, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db " 50 :  ¥1000@"
-	db "500 : ¥10000@"
-	db "CANCEL@"
+	db "  50:   ¥1000@"
+	db " 500:  ¥10000@"
+	db "5000: ¥100000@"
 
 HappinessCheckScript:
 	faceplayer
