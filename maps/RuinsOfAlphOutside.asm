@@ -4,6 +4,7 @@
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_SUPER_NERD
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -110,6 +111,17 @@ TrainerPsychicNathan:
 	closetext
 	end
 
+TrainerSuperNerdStan:
+	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdStanAfterBattleText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
 
@@ -163,6 +175,39 @@ RuinsOfAlphOutsideScientistText:
 	para "I know! Let me up-"
 	line "grade your #-"
 	cont "DEX. Follow me."
+	done
+
+SuperNerdStanSeenText:
+	text "What do you want?"
+	line "I'm studying--"
+	cont "don't disturb me!"
+	done
+
+SuperNerdStanBeatenText:
+	text "Sorry…"
+	line "I'm frustrated by"
+
+	para "our lack of real"
+	line "understanding…"
+	done
+
+SuperNerdStanAfterBattleText:
+	text "The RUINS are from"
+	line "about 1500 years"
+	cont "ago."
+
+	para "Nobody knows who"
+	line "built them."
+
+	para "It's rumored that"
+	line "the mysterious"
+
+	para "#MON found here"
+	line "are also seen in"
+
+	para "places where leg-"
+	line "endary #MON can"
+	cont "be glimpsed…"
 	done
 
 PsychicNathanSeenText:
@@ -267,3 +312,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 13, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event 12, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdStan, -1
