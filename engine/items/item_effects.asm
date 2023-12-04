@@ -177,8 +177,8 @@ ItemEffects:
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
-	dw NoEffect            ; NORMAL_BOX
-	dw NoEffect            ; GORGEOUS_BOX
+	dw NoEffect            ; HELIX_FOSSIL
+	dw NoEffect            ; DOME_FOSSIL
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
 	dw GravityBuoyEffect   ; GRAVITY_BUOY
