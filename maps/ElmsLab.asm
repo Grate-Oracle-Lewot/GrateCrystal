@@ -176,7 +176,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CYNDAQUIL, 100, GOLD_BERRY
+	givepoke CYNDAQUIL, 5, GOLD_BERRY
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -1328,8 +1328,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, VIRIDIAN_CITY, 1
-	warp_event  5, 11, VIRIDIAN_CITY, 1
+	warp_event  4, 11, NEW_BARK_TOWN, 1
+	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
