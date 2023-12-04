@@ -1,8 +1,3 @@
 MysteryGiftItems:
-	db MASTER_BALL
-	db MAX_ETHER
-	db MAX_ELIXER
-	db MAX_REVIVE
-	db GOLD_TEETH
-	db CANDIED_YAM
+	db GOLD_BERRY
 .End
