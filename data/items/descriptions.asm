@@ -904,12 +904,12 @@ LoveBallDesc:
 	next "opposite gender.@"
 
 NormalBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
+	db   "A fossil of a"
+	next "spiral shell.@"
 
 GorgeousBoxDesc:
-	db   "Open it and see"
-	next "what's inside.@"
+	db   "A fossil of a"
+	next "domed shell.@"
 
 SunStoneDesc:
 	db   "Evolves certain"
