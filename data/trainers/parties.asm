@@ -2934,9 +2934,9 @@ PsychicGroup:
 	db -1 ; end
 
 	; PSYCHIC_T (8)
-	db "PHIL@", TRAINERTYPE_ITEM
-	db 35, NATU,       FOCUS_BAND
-	db 37, KADABRA,    TWISTEDSPOON
+	db "PHIL@", TRAINERTYPE_NORMAL
+	db 35, NATU
+	db 37, KADABRA
 	db -1 ; end
 
 	; PSYCHIC_T (9)
