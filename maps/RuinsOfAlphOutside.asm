@@ -112,15 +112,7 @@ TrainerPsychicNathan:
 	end
 
 TrainerSuperNerdStan:
-	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SuperNerdStanAfterBattleText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SuperNerdStanAfterBattleText
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
