@@ -204,8 +204,8 @@ KantoWaterWildMons:
 
 	def_water_wildmons SAFARI_ZONE
 	db 1 percent ; encounter rate
-	db 35, OMANYTE
-	db 35, KABUTO
+	db 35, LAPRAS
+	db 35, YANMA
 	db 5, SQUIRTLE
 	db 5, TOTODILE
 	end_water_wildmons
