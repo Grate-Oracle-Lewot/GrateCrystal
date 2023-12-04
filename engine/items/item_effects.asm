@@ -186,7 +186,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; GOLD_TEETH
+	dw NoEffect            ; OLD_AMBER
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; BRICK_PIECE
