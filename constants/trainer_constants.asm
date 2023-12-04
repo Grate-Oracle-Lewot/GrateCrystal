@@ -451,7 +451,6 @@ KRIS EQU __trainer_class__
 	const HUEY4
 
 	trainerclass SUPER_NERD ; 29
-	const STAN
 	const ERIC
 	const GREGG
 	const JAY
