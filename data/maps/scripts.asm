@@ -482,7 +482,7 @@ INCLUDE "maps/SeafoamCave1F.asm"
 INCLUDE "maps/SeafoamCaveB2F.asm"
 INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZone.asm"
-INCLUDE "maps/PewterMuseum1F.asm"
+INCLUDE "maps/PewterMuseum2F.asm"
 
 
 SECTION "Map Scripts 26", ROMX
@@ -507,6 +507,6 @@ INCLUDE "maps/Lounge1F.asm"
 
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/PewterMuseum2F.asm"
+INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
