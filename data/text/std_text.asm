@@ -332,6 +332,11 @@ CoinVendor_Buy500CoinsText:
 	line "are 500 coins."
 	done
 
+CoinVendor_Buy5000CoinsText:
+	text "Thank you! Here"
+	line "are 5000 coins."
+	done
+
 CoinVendor_NotEnoughMoneyText:
 	text "You don't have"
 	line "enough money."
