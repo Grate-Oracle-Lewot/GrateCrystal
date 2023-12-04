@@ -3844,5 +3844,6 @@ CalFGroup:
 OldGroup:
 	; OLD (1)
 	db "MAN@", TRAINERTYPE_NORMAL
+	db 84, WEEDLE
 	db 84, RATTATA
 	db -1 ; end
