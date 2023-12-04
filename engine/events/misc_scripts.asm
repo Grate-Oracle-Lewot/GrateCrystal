@@ -53,3 +53,13 @@ FindItemInBallScript::
 	ld a, $1
 	ld [wScriptVar], a
 	ret
+
+GetFossilMonLevel:
+; RandomRange returns a random number between 0 and 38
+; the range is in a, not inclusive
+; We want a possible range of 1-39 so we add 1 after
+	ld a, 39
+	call RandomRange
+	add 1
+	ld [wScriptVar], a
+	ret
