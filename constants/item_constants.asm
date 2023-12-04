@@ -178,7 +178,7 @@
 	const BERRY        ; aa
 	const GOLD_BERRY   ; ab
 	const SQUIRTBOTTLE ; ac
-	const GOLD_TEETH   ; ad
+	const OLD_AMBER    ; ad
 	const PARK_BALL    ; ae
 	const RAINBOW_WING ; af
 	const BRICK_PIECE  ; b0
