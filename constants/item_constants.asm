@@ -169,8 +169,8 @@
 	const FRIEND_BALL  ; a1
 	const MOON_BALL    ; a2
 	const LOVE_BALL    ; a3
-	const NORMAL_BOX   ; a4
-	const GORGEOUS_BOX ; a5
+	const HELIX_FOSSIL ; a4
+	const DOME_FOSSIL  ; a5
 	const SUN_STONE    ; a6
 	const POLKADOT_BOW ; a7
 	const GRAVITY_BUOY ; a8
