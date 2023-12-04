@@ -307,3 +307,9 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const MOVETUTOR_SACRED_FIRE  ; 5
 	const MOVETUTOR_AEROBLAST    ; 6
 	const MOVETUTOR_AURA_SPHERE  ; 7
+
+; FossilScientist setval arguments
+	const_def 1
+	const REVIVE_OLD_AMBER    ; 1
+	const REVIVE_HELIX_FOSSIL  ; 2
+	const REVIVE_DOME_FOSSIL ; 3
