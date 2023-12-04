@@ -27,6 +27,8 @@ ViridianCityCoffeeGramps:
 
 .no:
 	writetext ViridianCityCoffeeGrampsDoubtedText
+	waitbutton
+	closetext
 	winlosstext ViridianCityCoffeeGrampsBeatenText, 0
 	loadtrainer OLD, MAN
 	startbattle
