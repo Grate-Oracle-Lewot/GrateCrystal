@@ -272,7 +272,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Press Select to view shiny colors in the Pokédex
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
-- Kurt finishes Apricorn balls instantly
+- Kurt finishes Apricorn balls quickly
 - 25% AI failure chance removed
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
