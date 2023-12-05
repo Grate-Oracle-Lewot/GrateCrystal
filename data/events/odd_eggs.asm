@@ -45,7 +45,7 @@ OddEggs:
 
 	db EEVEE
 	db NO_ITEM
-	db TACKLE, CHARM, EXTREMESPEED, 0
+	db TACKLE, TAIL_WHIP, CHARM, EXTREMESPEED
 	dw 02048 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
@@ -55,7 +55,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 20, 5, 0 ; PP
+	db 40, 30, 20, 5 ; PP
 	db 18 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -97,7 +97,7 @@ OddEggs:
 
 	db BULBASAUR
 	db NO_ITEM
-	db TACKLE, PETAL_DANCE, 0, 0
+	db TACKLE, CHARM, PETAL_DANCE, 0
 	dw 04096 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -107,7 +107,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 15, 0, 0 ; PP
+	db 40, 20, 15, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -123,7 +123,7 @@ OddEggs:
 
 	db CLEFAIRY
 	db NO_ITEM
-	db POUND, CHARM, DIZZY_PUNCH, 0
+	db POUND, CHARM, KINESIS, DIZZY_PUNCH
 	dw 00768 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -133,7 +133,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 20, 15, 0 ; PP
+	db 40, 20, 20, 15 ; PP
 	db 5 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -149,7 +149,7 @@ OddEggs:
 
 	db CHARMANDER
 	db NO_ITEM
-	db SCRATCH, DRAGON_PULSE, 0, 0
+	db SCRATCH, CHARM, DRAGON_PULSE, 0
 	dw 04296 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -159,7 +159,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 10, 0, 0 ; PP
+	db 40, 20, 10, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -175,7 +175,7 @@ OddEggs:
 
 	db JIGGLYPUFF
 	db NO_ITEM
-	db SING, CHARM, DIZZY_PUNCH, 0
+	db SING, CHARM, SCREECH, DIZZY_PUNCH
 	dw 00720 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -185,7 +185,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 25, 20, 15, 0 ; PP
+	db 25, 20, 20, 15 ; PP
 	db 5 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -201,7 +201,7 @@ OddEggs:
 
 	db SQUIRTLE
 	db NO_ITEM
-	db RAPID_SPIN, CRABHAMMER, 0, 0
+	db RAPID_SPIN, CHARM, CRABHAMMER, 0
 	dw 03584 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -211,7 +211,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 35, 5, 0, 0 ; PP
+	db 35, 20, 5, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -227,7 +227,7 @@ OddEggs:
 
 	db JYNX
 	db NO_ITEM
-	db LICK, GROWL, DIZZY_PUNCH, 0
+	db LICK, CHARM, SCARY_FACE, DIZZY_PUNCH
 	dw 00512 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
@@ -237,7 +237,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 40, 15, 0 ; PP
+	db 30, 20, 20, 15 ; PP
 	db 13 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -253,7 +253,7 @@ OddEggs:
 
 	db CHIKORITA
 	db NO_ITEM
-	db POUND, ANCIENTPOWER, 0, 0
+	db POUND, CHARM, ANCIENTPOWER, 0
 	dw 02560 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -263,7 +263,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 10, 0, 0 ; PP
+	db 40, 20, 10, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -279,7 +279,7 @@ OddEggs:
 
 	db MAGMAR
 	db NO_ITEM
-	db EMBER, DIZZY_PUNCH, 0, 0
+	db EMBER, SCARY_FACE, DIZZY_PUNCH, 0
 	dw 00419 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
@@ -289,7 +289,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 15, 0, 0 ; PP
+	db 30, 20, 15, 0 ; PP
 	db 13 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -305,7 +305,7 @@ OddEggs:
 
 	db CYNDAQUIL
 	db NO_ITEM
-	db TACKLE, SACRED_FIRE, 0, 0
+	db TACKLE, CHARM, SACRED_FIRE, 0
 	dw 03072 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -315,7 +315,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 5, 0, 0 ; PP
+	db 40, 20, 5, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -331,7 +331,7 @@ OddEggs:
 
 	db ELECTABUZZ
 	db NO_ITEM
-	db MACH_PUNCH, DIZZY_PUNCH, 0, 0
+	db MACH_PUNCH, LEER, SCARY_FACE, DIZZY_PUNCH
 	dw 00421 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
@@ -341,7 +341,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 25, 15, 0, 0 ; PP
+	db 25, 40, 20, 15 ; PP
 	db 13 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -357,7 +357,7 @@ OddEggs:
 
 	db TOTODILE
 	db NO_ITEM
-	db SCRATCH, AEROBLAST, 0, 0
+	db SCRATCH, CHARM, AEROBLAST, 0
 	dw 02420 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -367,7 +367,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 5, 0, 0 ; PP
+	db 40, 20, 5, 0 ; PP
 	db 11 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
@@ -383,7 +383,7 @@ OddEggs:
 
 	db TYROGUE
 	db NO_ITEM
-	db TACKLE, MEDITATE, AURA_SPHERE, 0
+	db TACKLE, MEDITATE, SCARY_FACE, AURA_SPHERE
 	dw 00242 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
@@ -393,7 +393,7 @@ OddEggs:
 	bigdw 0
 	bigdw 0
 	dn 15, 15, 15, 15 ; DVs
-	db 40, 30, 10, 0 ; PP
+	db 40, 30, 20, 10 ; PP
 	db 13 ; Step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level
