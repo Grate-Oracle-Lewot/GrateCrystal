@@ -31,7 +31,6 @@ PewterMuseum1FScientistScript:
 
 .HaveFossil:
 	writetext PewterMuseum1FScientistHaveFossilText
-	waitbutton
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
@@ -42,7 +41,7 @@ PewterMuseum1FScientistScript:
 
 .HelixFossil:
 	checkitem HELIX_FOSSIL
-	iffalse .Cancel
+	iffalse .WrongFossil
 	getmonname STRING_BUFFER_3, OMANYTE
 	writetext PewterMuseum1FScientistMonText
 	promptbutton
@@ -55,7 +54,7 @@ PewterMuseum1FScientistScript:
 
 .DomeFossil:
 	checkitem DOME_FOSSIL
-	iffalse .Cancel
+	iffalse .WrongFossil
 	getmonname STRING_BUFFER_3, KABUTO
 	writetext PewterMuseum1FScientistMonText
 	promptbutton
@@ -69,7 +68,7 @@ PewterMuseum1FScientistScript:
 
 .OldAmber
 	checkitem OLD_AMBER
-	iffalse .Cancel
+	iffalse .WrongFossil
 	getmonname STRING_BUFFER_3, AERODACTYL
 	writetext PewterMuseum1FScientistMonText
 	promptbutton
@@ -114,7 +113,6 @@ PewterMuseum1FScientistScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	waitbutton
-	writetext PewterMuseum1FScientistMonText
 	givepoke AERODACTYL, 1
 	closetext
 	end
@@ -130,7 +128,6 @@ PewterMuseum1FScientistScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	waitbutton
-	writetext PewterMuseum1FScientistMonText
 	givepoke KABUTO, 1
 	closetext
 	end
@@ -146,7 +143,6 @@ PewterMuseum1FScientistScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	waitbutton
-	writetext PewterMuseum1FScientistMonText
 	givepoke OMANYTE, 1
 	closetext
 	end
@@ -264,7 +260,8 @@ PewterMuseum1FScientistTimeText:
 	done
 
 PewterMuseum1FScientistDoneText:
-	text "Success!"
+	text "What took you so"
+	line "long?"
 
 	para "Here's your fossil"
 	line "#MON!"
@@ -272,7 +269,7 @@ PewterMuseum1FScientistDoneText:
 
 PewterMuseum1FScientistMonText:
 	text "Ah! That's a"
-	line "fossil of"
+	line "fossil of…"
 
 	para "@"
 	text_ram wStringBuffer3
