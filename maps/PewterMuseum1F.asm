@@ -87,7 +87,6 @@ PewterMuseum1FScientistScript:
 
 .WrongFossil
 	writetext PewterMuseum1FScientistWrongFossilText
-	waitbutton
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
@@ -245,6 +244,9 @@ PewterMuseum1FScientistCancelText:
 PewterMuseum1FScientistWrongFossilText:
 	text "You don't have one"
 	line "of those."
+
+	para "Which one should I"
+	line "work on?"
 	done
 
 PewterMuseum1FScientistPartyFullText:
