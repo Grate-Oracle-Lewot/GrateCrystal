@@ -74,6 +74,8 @@ Kurt1:
 	promptbutton
 	setevent EVENT_KURT_GAVE_YOU_LURE_BALL
 .GotLureBall:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .WaitForApricorns
 	checkevent EVENT_GAVE_KURT_RED_APRICORN
 	iftrue .GiveLevelBall
 	checkevent EVENT_GAVE_KURT_BLU_APRICORN
@@ -167,16 +169,10 @@ Kurt1:
 
 .GaveKurtApricorns:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+.WaitForApricorns:
 	writetext KurtsHouseKurtItWillTakeADayText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
-	playsound SFX_GOT_SAFARI_BALLS
-	waitsfx
-	pause 42
-	special FadeInQuickly
-	sjump Kurt1
 	end
 
 .Cancel:
@@ -549,8 +545,11 @@ KurtsHouseKurtAskYouHaveAnApricornText:
 	done
 
 KurtsHouseKurtItWillTakeADayText:
-	text "Kurt: I'll get"
-	line "started right now!"
+	text "KURT: It'll take a"
+	line "moment."
+
+	para "Come back in a"
+	line "little while."
 	done
 
 KurtsHouseKurtThatsALetdownText:
