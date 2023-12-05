@@ -111,7 +111,6 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	waitbutton
 	givepoke AERODACTYL, 1
 	closetext
 	end
@@ -126,7 +125,6 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	waitbutton
 	givepoke KABUTO, 1
 	closetext
 	end
@@ -141,7 +139,6 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	waitbutton
 	givepoke OMANYTE, 1
 	closetext
 	end
