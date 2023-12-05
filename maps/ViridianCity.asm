@@ -17,6 +17,8 @@ ViridianCity_MapScripts:
 ViridianCityCoffeeGramps:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_OLD_MAN
+	iftrue .after
 	writetext ViridianCityCoffeeGrampsQuestionText
 	yesorno
 	iffalse .no
@@ -33,7 +35,9 @@ ViridianCityCoffeeGramps:
 	loadtrainer OLD, MAN
 	startbattle
 	reloadmapafterbattle
+	setevent EVENT_BEAT_OLD_MAN
 	opentext
+.after:
 	writetext ViridianCityCoffeeGrampsDefeatText
 	waitbutton
 	closetext
