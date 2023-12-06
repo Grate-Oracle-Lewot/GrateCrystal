@@ -6804,6 +6804,14 @@ BattleCommand_UndergroundFlyer:
 ; This calls and therefore replaces BattleCommand_Stab in data/moves/effects.asm:
 ; for Earth Power, Fissure, Magnitude, and Earthquake.
 
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	jr z, .underground
+	call BattleCommand_Stab
+	ret
+
+.underground
 	ld a, FLYING
 	ld b, a
 	ld a, BIRD
