@@ -5628,6 +5628,12 @@ BattleCommand_CheckFloatMon:
 	cp GROUND
 	ret nz
 
+; if the target is underground, the move should hit
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret z
+
 ; get the defender's species
 	ld a, MON_SPECIES
 	call BattlePartyAttr
