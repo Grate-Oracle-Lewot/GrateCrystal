@@ -6798,3 +6798,72 @@ SandstormSpDefBoost:
 	ld b, h
 	ld c, l
 	ret
+
+BattleCommand_UndergroundFlyer:
+; Hit Flying-types with Ground moves if they're currently underground.
+; This calls and therefore replaces BattleCommand_Stab in data/moves/effects.asm:
+; for Earth Power, Fissure, Magnitude, and Earthquake.
+
+	ld a, FLYING
+	ld b, a
+	ld a, BIRD
+	ld c, a
+	call SwapBCTypes
+	call BattleCommand_Stab
+	ld a, BIRD
+	ld b, a
+	ld a, FLYING
+	ld c, a
+	call SwapBCTypes
+	ret
+
+SwapBCTypes:
+; Load target's types and replace the one in b with the one in c.
+; Changes Flying to Bird in order to remove Ground immunity.
+; Swaps them back when used again afterward.
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy_check1
+	ld de, wBattleMonType1
+
+	ld a, [de]
+	cp b
+	jr z, .override_player1
+.player_check2
+	inc de
+	ld a, [de]
+	cp b
+	jr z, .override_player2
+	ret
+
+.override_player1
+	ld a, c
+	ld [wBattleMonType1], a
+	jr .player_check2
+
+.override_player2
+	ld a, c
+	ld [wBattleMonType2], a
+	ret
+
+.enemy_check1
+	ld a, [de]
+	cp b
+	jr z, .override_enemy1
+.enemy_check2
+	inc de
+	ld a, [de]
+	cp b
+	jr z, .override_enemy2
+	ret
+
+.override_enemy1
+	ld a, c
+	ld [wEnemyMonType1], a
+	jr .enemy_check2
+
+.override_enemy2
+	ld a, c
+	ld [wEnemyMonType2], a
+	ret
