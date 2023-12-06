@@ -1093,7 +1093,6 @@ SkyAttack:
 	checkfaint
 	buildopponentrage
 	flinchtarget
-	kingsrock
 	endmove
 
 Substitute:
@@ -1831,7 +1830,6 @@ Earthquake:
 	doubleundergrounddamage
 	checkhit
 	checkfloatmon
-	effectchance
 	moveanim
 	failuretext
 	applydamage
