@@ -1624,7 +1624,7 @@ Magnitude:
 	damagestats
 	getmagnitude
 	damagecalc
-	stab
+	undergroundflyer
 	damagevariation
 	checkhit
 	checkfloatmon
@@ -1825,7 +1825,7 @@ Earthquake:
 	critical
 	damagestats
 	damagecalc
-	stab
+	undergroundflyer
 	damagevariation
 	doubleundergrounddamage
 	checkhit
@@ -1847,7 +1847,7 @@ EarthPower:
 	critical
 	damagestats
 	damagecalc
-	stab
+	undergroundflyer
 	damagevariation
 	doubleundergrounddamage
 	checkhit
@@ -1869,7 +1869,7 @@ Fissure:
 	checkobedience
 	usedmovetext
 	doturn
-	stab
+	undergroundflyer
 	checkfloatmon
 	ohko
 	moveanim
