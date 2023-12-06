@@ -5632,7 +5632,7 @@ BattleCommand_CheckFloatMon:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
-	ret z
+	ret nz
 
 ; get the defender's species
 	ld a, MON_SPECIES
@@ -6807,7 +6807,7 @@ BattleCommand_UndergroundFlyer:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
-	jr z, .underground
+	jr nz, .underground
 	call BattleCommand_Stab
 	ret
 
