@@ -1486,7 +1486,7 @@ KinglerEvosAttacks:
 VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, DIG
 	db 9, SCREECH
 	db 13, SPARK
 	db 17, SONICBOOM
@@ -2270,7 +2270,7 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, GROWL
+	db 2, EARTHQUAKE
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
@@ -3153,7 +3153,7 @@ DunsparceEvosAttacks:
 
 GligarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POISON_STING
+	db 1, DIG
 	db 3, WING_ATTACK
 	db 6, SAND_ATTACK
 	db 13, HARDEN
