@@ -2165,7 +2165,7 @@ ArticunoEvosAttacks:
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DIG
+	db 1, PECK
 	db 1, THUNDERSHOCK
 	db 13, THUNDER_WAVE
 	db 25, THUNDERBOLT
@@ -2270,7 +2270,7 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, EARTHQUAKE
+	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
@@ -3862,7 +3862,7 @@ HoOhEvosAttacks:
 
 CelebiEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DIG
+	db 1, LEECH_SEED
 	db 1, CONFUSION
 	db 1, RECOVER
 	db 1, HEAL_BELL
