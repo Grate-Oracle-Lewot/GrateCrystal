@@ -1486,7 +1486,7 @@ KinglerEvosAttacks:
 VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
-	db 1, DIG
+	db 1, RAPID_SPIN
 	db 9, SCREECH
 	db 13, SPARK
 	db 17, SONICBOOM
@@ -1501,7 +1501,7 @@ VoltorbEvosAttacks:
 
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, RAPID_SPIN
 	db 9, SCREECH
 	db 13, SPARK
 	db 17, SONICBOOM
@@ -2165,7 +2165,7 @@ ArticunoEvosAttacks:
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, DIG
 	db 1, THUNDERSHOCK
 	db 13, THUNDER_WAVE
 	db 25, THUNDERBOLT
@@ -3153,7 +3153,7 @@ DunsparceEvosAttacks:
 
 GligarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DIG
+	db 1, POISON_STING
 	db 3, WING_ATTACK
 	db 6, SAND_ATTACK
 	db 13, HARDEN
@@ -3862,7 +3862,7 @@ HoOhEvosAttacks:
 
 CelebiEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
+	db 1, DIG
 	db 1, CONFUSION
 	db 1, RECOVER
 	db 1, HEAL_BELL
