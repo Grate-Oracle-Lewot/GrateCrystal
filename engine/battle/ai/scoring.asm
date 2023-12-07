@@ -317,17 +317,17 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
-	dbw EFFECT_BIDE,             AI_Smart_Bide
+	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_HEAL,             AI_Smart_Heal
-	dbw EFFECT_TOXIC,            AI_Smart_Toxic
-	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_LightScreen
+	dbw EFFECT_TOXIC,            AI_Smart_Poison
+	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_Bide_Screens
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
-	dbw EFFECT_REFLECT,          AI_Smart_Reflect
+	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
@@ -336,15 +336,15 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_RAGE,             AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,          AI_Smart_Disable
-	dbw EFFECT_EARTH_POWER,      AI_Smart_EarthPower
+	dbw EFFECT_EARTH_POWER,      AI_Smart_Earthquake
 	dbw EFFECT_COUNTER,          AI_Smart_Counter
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
-	dbw EFFECT_SNORE,            AI_Smart_Snore
+	dbw EFFECT_SNORE,            AI_Smart_Snore_SleepTalk
 	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
-	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
-	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
-	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
+	dbw EFFECT_SLEEP_TALK,       AI_Smart_Snore_SleepTalk
+	dbw EFFECT_DESTINY_BOND,     AI_Smart_Reversal_DestinyBond
+	dbw EFFECT_REVERSAL,         AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_SPITE,            AI_Smart_Spite
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
@@ -359,28 +359,28 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SANDSTORM,        AI_Smart_Sandstorm
 	dbw EFFECT_ENDURE,           AI_Smart_Endure
 	dbw EFFECT_ROLLOUT,          AI_Smart_Rollout
-	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
+	dbw EFFECT_SWAGGER,          AI_Smart_Swagger_Attract
 	dbw EFFECT_FURY_CUTTER,      AI_Smart_FuryCutter
-	dbw EFFECT_ATTRACT,          AI_Smart_Attract
+	dbw EFFECT_ATTRACT,          AI_Smart_Swagger_Attract
 	dbw EFFECT_FISSURE,          AI_Smart_Fissure
 	dbw EFFECT_SAFEGUARD,        AI_Smart_Safeguard
-	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
+	dbw EFFECT_MAGNITUDE,        AI_Smart_Earthquake
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,          AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
-	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
-	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
-	dbw EFFECT_MOONLIGHT,        AI_Smart_Moonlight
+	dbw EFFECT_MORNING_SUN,      AI_Smart_Heal
+	dbw EFFECT_SYNTHESIS,        AI_Smart_Heal
+	dbw EFFECT_MOONLIGHT,        AI_Smart_Heal
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
-	dbw EFFECT_TWISTER,          AI_Smart_Twister
+	dbw EFFECT_TWISTER,          AI_Smart_Gust_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
-	dbw EFFECT_GUST,             AI_Smart_Gust
+	dbw EFFECT_GUST,             AI_Smart_Gust_Twister
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_FLY,              AI_Smart_Fly
@@ -562,7 +562,6 @@ AI_Smart_LockOn:
 	jp AIDiscourageMove
 
 AI_Smart_Selfdestruct:
-
 ; Unless this is the enemy's last Pokemon...
 	push hl
 	farcall FindAliveEnemyMons
@@ -909,9 +908,7 @@ AI_Smart_ResetStats:
 	inc [hl]
 	ret
 
-AI_Smart_Bide:
-AI_Smart_LightScreen:
-AI_Smart_Reflect:
+AI_Smart_Bide_Screens:
 ; 90% chance to discourage this move unless enemy's HP is full.
 
 	call AICheckEnemyMaxHP
@@ -939,9 +936,6 @@ AI_Smart_ForceSwitch:
 	ret
 
 AI_Smart_Heal:
-AI_Smart_MorningSun:
-AI_Smart_Synthesis:
-AI_Smart_Moonlight:
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
@@ -961,7 +955,6 @@ AI_Smart_Moonlight:
 	dec [hl]
 	ret
 
-AI_Smart_Toxic:
 AI_Smart_Poison:
 ; 50% chance to dismiss this move if the player's held item immunizes against poisoning.
 	push hl
@@ -998,6 +991,15 @@ AI_Smart_LeechSeed:
 	ret c
 	inc [hl]
 	ret
+AI_Smart_Fissure:
+; Dismiss this move if the player is a floatmon.
+	push hl
+	ld a, [wBattleMonSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	pop hl
+	jp c, AIDiscourageMove
+	; fallthrough
 
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
@@ -1013,29 +1015,8 @@ AI_Smart_Ohko:
 	inc [hl]
 	ret
 
-AI_Smart_Fissure:
-; Dismiss this move if the player is a floatmon.
-; Dismiss this move if player's level is higher than enemy's level.
-; Else, discourage this move if player's HP is below 50%.
-	push hl
-	ld a, [wBattleMonSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	pop hl
-	jp c, AIDiscourageMove
-
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	cp b
-	jp c, AIDiscourageMove
-	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
-
 AI_Smart_TrapTarget:
-; Bind, Wrap, Fire Spin, Clamp
+; Bind, Wrap, Fire Spin, Clamp, Whirlpool
 
 ; 50% chance to discourage this move if the player is already trapped.
 	ld a, [wPlayerWrapCount]
@@ -1151,7 +1132,7 @@ AI_Smart_Dig:
 	call IsInByteArray
 	pop hl
 	jp c, AIDiscourageMove
-; otherwise, fall through
+	; fallthrough
 
 AI_Smart_Fly:
 ; Fly and Sky Attack
@@ -1426,8 +1407,7 @@ AI_Smart_Encore:
 
 INCLUDE "data/battle/ai/encore_moves.asm"
 
-AI_Smart_Snore:
-AI_Smart_SleepTalk:
+AI_Smart_Snore_SleepTalk:
 ; Greatly encourage this move if enemy is fast asleep.
 ; Greatly discourage this move otherwise.
 
@@ -1517,8 +1497,7 @@ AI_Smart_Spite:
 	dec [hl]
 	ret
 
-AI_Smart_DestinyBond:
-AI_Smart_Reversal:
+AI_Smart_Reversal_DestinyBond:
 ; Discourage this move if enemy's HP is above 25%.
 
 	call AICheckEnemyQuarterHP
@@ -2220,8 +2199,7 @@ AI_Smart_Rollout:
 	inc [hl]
 	ret
 
-AI_Smart_Swagger:
-AI_Smart_Attract:
+AI_Smart_Swagger_Attract:
 ; 80% chance to encourage this move during the first turn of player's Pokemon.
 ; 80% chance to discourage this move otherwise.
 
@@ -2251,28 +2229,18 @@ AI_Smart_Safeguard:
 	inc [hl]
 	ret
 
-AI_Smart_EarthPower:
-AI_Smart_Magnitude:
 AI_Smart_Earthquake:
-; Dismiss this move if the player is a floatmon.
-	push hl
-	ld a, [wBattleMonSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	pop hl
-	jp c, AIDiscourageMove
-
 ; Greatly encourage this move if the player is underground and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	cp DIG
-	ret nz
+	jr nz, .discourage_float
 
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_UNDERGROUND, a
 	jr z, .could_dig
 
 	call AICompareSpeed
-	ret nc
+	jr nc, .discourage_float
 	dec [hl]
 	dec [hl]
 	ret
@@ -2282,12 +2250,22 @@ AI_Smart_Earthquake:
 
 	; 50% chance to encourage this move if the enemy is slower than the player.
 	call AICompareSpeed
-	ret c
+	jr c, .discourage_float
 
 	call AI_50_50
-	ret c
+	jr c, .discourage_float
 
 	dec [hl]
+	ret
+
+.discourage_float
+; Dismiss this move if the player is a floatmon.
+	push hl
+	ld a, [wBattleMonSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	pop hl
+	jp c, AIDiscourageMove
 	ret
 
 AI_Smart_BatonPass:
@@ -2610,8 +2588,7 @@ AI_Smart_MirrorCoat:
 	inc [hl]
 	ret
 
-AI_Smart_Twister:
-AI_Smart_Gust:
+AI_Smart_Gust_Twister:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
