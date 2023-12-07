@@ -126,15 +126,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon ZAPDOS, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
-	loadwildmon CELEBI, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
