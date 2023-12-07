@@ -1691,7 +1691,7 @@ ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 1, SWEET_KISS
+	db 1, DEFENSE_CURL
 	db 4, TAIL_WHIP
 	db 7, CHARM
 	db 10, SOFTBOILED
@@ -1699,7 +1699,7 @@ ChanseyEvosAttacks:
 	db 18, MINIMIZE
 	db 23, SING
 	db 28, EGG_BOMB
-	db 33, DEFENSE_CURL
+	db 33, REFLECT
 	db 40, LIGHT_SCREEN
 	db 47, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -2599,7 +2599,7 @@ LanturnEvosAttacks:
 ;	db 1, THUNDERSHOCK
 ;	db 2, CHARM
 ;	db 6, THUNDER_WAVE
-;	db 8, SWEET_KISS
+;       db 8, QUICK_ATTACK
 ;	db 11, DOUBLE_TEAM
 ;	db 14, AGILITY
 ;	db 20, THUNDERBOLT
@@ -2616,7 +2616,7 @@ LanturnEvosAttacks:
 ;	db 1, POUND
 ;	db 1, CHARM
 ;	db 4, ENCORE
-;	db 8, SWEET_KISS
+;	db 8, SING
 ;	db 11, FAIRY_WIND
 ;	db 14, DOUBLESLAP
 ;	db 17, MINIMIZE
@@ -2635,7 +2635,7 @@ LanturnEvosAttacks:
 ;	db 4, DEFENSE_CURL
 ;	db 9, POUND
 ;	db 12, FAIRY_WIND
-;	db 16, SWEET_KISS
+;	db 16, DISABLE
 ;	db 19, ROLLOUT
 ;	db 23, PLAY_ROUGH
 ;	db 27, REST
@@ -3620,7 +3620,7 @@ HitmontopEvosAttacks:
 ;	db 1, LICK
 ;	db 1, GROWL
 ;	db 9, POWDER_SNOW
-;	db 13, SWEET_KISS
+;	db 13, ATTRACT
 ;	db 17, LOVELY_KISS
 ;	db 21, DOUBLESLAP
 ;	db 25, CONFUSION
@@ -3732,7 +3732,7 @@ MiltankEvosAttacks:
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 1, SWEET_KISS
+	db 1, DEFENSE_CURL
 	db 5, TAIL_WHIP
 	db 9, CHARM
 	db 13, SOFTBOILED
@@ -3740,7 +3740,7 @@ BlisseyEvosAttacks:
 	db 23, MINIMIZE
 	db 29, SING
 	db 35, EGG_BOMB
-	db 41, DEFENSE_CURL
+	db 41, REFLECT
 	db 49, LIGHT_SCREEN
 	db 57, DOUBLE_EDGE
 	db 0 ; no more level-up moves
