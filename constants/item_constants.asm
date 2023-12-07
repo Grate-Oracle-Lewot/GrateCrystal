@@ -269,7 +269,7 @@ TM01 EQU const_value
 	add_tm HAIL         ; f0
 	add_tm NIGHT_TERROR ; f1
 	add_tm SUBSTITUTE   ; f2
-	add_tm HYPNOSIS     ; f3
+	add_tm SHADOW_CLAW  ; f3
 	add_tm TELEPORT     ; f4
 	add_tm SCALD        ; f5
 	add_tm SKETCH       ; f6
