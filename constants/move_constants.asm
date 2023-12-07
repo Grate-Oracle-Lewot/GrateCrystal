@@ -191,7 +191,7 @@
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
 	const FAINT_ATTACK ; b9
-	const SWEET_KISS   ; ba
+	const SHADOW_CLAW  ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const MUD_SLAP     ; bd
