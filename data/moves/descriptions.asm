@@ -186,7 +186,7 @@ MoveDescriptions::
 	dw MachPunchDescription
 	dw ScaryFaceDescription
 	dw FaintAttackDescription
-	dw SweetKissDescription
+	dw ShadowClawDescription
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
@@ -1003,9 +1003,9 @@ FaintAttackDescription:
 	db   "Strikes from shad-"
 	next "ows. Never misses.@"
 
-SweetKissDescription:
-	db   "A kiss that causes"
-	next "confusion.@"
+ShadowClawDescription:
+	db   "Ghostly claw. High"
+	next "critical ratio.@"
 
 BellyDrumDescription:
 	db   "Reduces own HP to"
