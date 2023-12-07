@@ -149,14 +149,15 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F:
-	db 8 ; # items
+	db 9 ; # items
 	db TM_FAIRY_WIND
+	db TM_HEADBUTT
+	db TM_SWIFT
 	db TM_SNORE
 	db TM_SUBSTITUTE
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
-	db TM_HEADBUTT
 	db TM_SELFDESTRUCT
 	db -1 ; end
 
@@ -306,8 +307,8 @@ MartCeladon2F2:
 
 MartCeladon3F:
 	db 10 ; # items
-	db TM_SWIFT
 	db TM_HIDDEN_POWER
+	db TM_SHADOW_CLAW
 	db TM_PROTECT
 	db TM_REST
 	db TM_PSYCH_UP
@@ -395,7 +396,7 @@ MartFuchsia:
 	db -1 ; end
 
 MartSaffron:
-	db 9 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db TIMER_BALL
@@ -403,7 +404,6 @@ MartSaffron:
 	db MAX_POTION
 	db X_SPECIAL
 	db X_SP_DEFEND
-	db TM_HYPNOSIS
 	db TM_DREAM_EATER
 	db -1 ; end
 
