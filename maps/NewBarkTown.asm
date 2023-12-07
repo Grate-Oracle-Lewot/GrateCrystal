@@ -126,12 +126,15 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon MEW, 1
+	loadwildmon GLIGAR, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
+	loadwildmon VOLTORB, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
