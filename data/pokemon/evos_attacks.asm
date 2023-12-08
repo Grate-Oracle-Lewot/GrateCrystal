@@ -1372,7 +1372,6 @@ HaunterEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 25, SHADOW_CLAW
 	db 26, FAINT_ATTACK
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
@@ -1390,7 +1389,6 @@ GengarEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 25, SHADOW_CLAW
 	db 26, FAINT_ATTACK
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
@@ -1404,14 +1402,16 @@ OnixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
-	db 10, RAGE
+	db 5, RAGE
+	db 10, SCREECH
 	db 14, ROCK_THROW
-	db 23, SCREECH
+	db 23, MAGNITUDE
 	db 27, IRON_HEAD
 	db 31, DRAGONBREATH
 	db 36, ROCK_SLIDE
 	db 40, IRON_TAIL
 	db 45, SKULL_BASH
+	db 50, FISSURE
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
@@ -3168,14 +3168,16 @@ SteelixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
-	db 10, RAGE
+	db 5, RAGE
+	db 10, SCREECH
 	db 14, ROCK_THROW
-	db 23, SCREECH
+	db 23, MAGNITUDE
 	db 27, IRON_HEAD
 	db 31, DAZZLY_GLEAM
-	db 36, ROCK_SLIDE
-	db 40, IRON_TAIL
+	db 37, ROCK_SLIDE
+	db 42, IRON_TAIL
 	db 49, SKULL_BASH
+	db 59, FISSURE
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
