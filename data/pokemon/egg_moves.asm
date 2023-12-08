@@ -91,7 +91,7 @@ NidoranEggMoves:
 VulpixEggMoves:
 	db FAINT_ATTACK
 	db PLAY_ROUGH
-	db SPITE
+	db HYPNOSIS
 	db DISABLE
 	db POWER_GEM
 	db -1 ; end
@@ -188,6 +188,7 @@ AbraEggMoves:
 	db ENCORE
 	db BARRIER
 	db FOCUS_ENERGY
+	db HYPNOSIS
 	db -1 ; end
 
 MachopEggMoves:
@@ -758,11 +759,11 @@ HeracrossEggMoves:
 	db -1 ; end
 
 SneaselEggMoves:
+	db FORESIGHT
 	db COUNTER
 	db SPITE
-	db FORESIGHT
-	db REFLECT
 	db PLAY_ROUGH
+	db METAL_CLAW
 	db BITE
 	db -1 ; end
 
