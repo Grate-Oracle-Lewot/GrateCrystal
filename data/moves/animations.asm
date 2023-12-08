@@ -3525,9 +3525,8 @@ BattleAnim_FaintAttack:
 
 BattleAnim_ShadowClaw:
 	anim_1gfx ANIM_GFX_CUT
-	anim_bgp $1b
 	anim_obp0 $f
-	anim_sound 0, 1, SFX_SCRATCH
+	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
 	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
 	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
