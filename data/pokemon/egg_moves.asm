@@ -329,9 +329,9 @@ ExeggcuteEggMoves:
 CuboneEggMoves:
 	db ROCK_SLIDE
 	db EARTH_POWER
-	db SCREECH
 	db PERISH_SONG
 	db SWORDS_DANCE
+	db SLAM
 	db IRON_HEAD
 	db -1 ; end
 
