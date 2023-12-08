@@ -779,11 +779,11 @@ PsyduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, FORESIGHT
-	db 5, CONFUSION
-	db 10, DISABLE
+	db 5, HYPNOSIS
+	db 10, CONFUSION
 	db 16, FURY_SWIPES
 	db 23, SCREECH
-	db 31, PSYCH_UP
+	db 31, DISABLE
 	db 34, AMNESIA
 	db 40, FUTURE_SIGHT
 	db 50, HYDRO_PUMP
@@ -793,11 +793,11 @@ GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, FORESIGHT
-	db 5, CONFUSION
-	db 10, DISABLE
+	db 5, HYPNOSIS
+	db 10, CONFUSION
 	db 16, FURY_SWIPES
 	db 23, SCREECH
-	db 31, PSYCH_UP
+	db 31, DISABLE
 	db 32, POWER_GEM
 	db 37, AMNESIA
 	db 44, FUTURE_SIGHT
@@ -915,7 +915,6 @@ AbraEvosAttacks:
 
 KadabraEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, ALAKAZAM
-	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, KINESIS
@@ -962,7 +961,6 @@ MachopEvosAttacks:
 
 MachokeEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, MACHAMP
-	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
 	db 1, KARATE_CHOP
 	db 3, LEER
@@ -1081,7 +1079,6 @@ GeodudeEvosAttacks:
 
 GravelerEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GOLEM
-	db EVOLVE_TRADE, -1, GOLEM
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, HARDEN
@@ -1367,7 +1364,6 @@ GastlyEvosAttacks:
 
 HaunterEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GENGAR
-	db EVOLVE_TRADE, -1, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1376,7 +1372,8 @@ HaunterEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 25, FAINT_ATTACK
+	db 25, SHADOW_CLAW
+	db 26, FAINT_ATTACK
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, SHADOW_BALL
@@ -1393,7 +1390,8 @@ GengarEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
-	db 25, FAINT_ATTACK
+	db 25, SHADOW_CLAW
+	db 26, FAINT_ATTACK
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, SHADOW_BALL
@@ -1403,7 +1401,6 @@ GengarEvosAttacks:
 
 OnixEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, STEELIX
-	db EVOLVE_TRADE, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
@@ -1535,7 +1532,7 @@ ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, RAZOR_LEAF
-	db 1, SYNTHESIS
+	db 1, SOFTBOILED
 	db 1, STOMP
 	db 31, EGG_BOMB
 	db 42, OUTRAGE
@@ -1758,7 +1755,6 @@ HorseaEvosAttacks:
 
 SeadraEvosAttacks:
 	db EVOLVE_ITEM, DRAGON_SCALE, KINGDRA
-	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, LEER
@@ -1833,6 +1829,7 @@ StarmieEvosAttacks:
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BARRIER
+	db 1, HYPNOSIS
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
 	db 16, MIRROR_MOVE
@@ -1848,7 +1845,6 @@ MrMimeEvosAttacks:
 
 ScytherEvosAttacks:
 	db EVOLVE_ITEM, METAL_COAT, SCIZOR
-	db EVOLVE_TRADE, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2942,7 +2938,7 @@ YanmaEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 2, FORESIGHT
 	db 6, GUST
-	db 11, DOUBLE_TEAM
+	db 11, HYPNOSIS
 	db 14, SUPERSONIC
 	db 17, LEECH_LIFE
 	db 22, SONICBOOM
@@ -3279,10 +3275,10 @@ SneaselEvosAttacks:
 	db 9, FURY_SWIPES
 	db 17, SCREECH
 	db 25, FAINT_ATTACK
-	db 33, METAL_CLAW
-	db 37, ICY_WIND
+	db 33, SLASH
+	db 37, SHADOW_CLAW
 	db 41, AGILITY
-	db 49, SLASH
+	db 49, ICE_PUNCH
 	db 57, BEAT_UP
 	db 0 ; no more level-up moves
 
@@ -3899,7 +3895,7 @@ YanmegaEvosAttacks:
 	db 1, PURSUIT
 	db 2, FORESIGHT
 	db 6, TWISTER
-	db 11, DOUBLE_TEAM
+	db 11, HYPNOSIS
 	db 14, SUPERSONIC
 	db 17, LEECH_LIFE
 	db 22, DRAGON_RAGE
