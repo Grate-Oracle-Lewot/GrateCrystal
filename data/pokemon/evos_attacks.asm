@@ -786,6 +786,7 @@ PsyduckEvosAttacks:
 	db 31, DISABLE
 	db 34, AMNESIA
 	db 40, FUTURE_SIGHT
+	db 45, PSYCH_UP
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -801,6 +802,7 @@ GolduckEvosAttacks:
 	db 32, POWER_GEM
 	db 37, AMNESIA
 	db 44, FUTURE_SIGHT
+	db 52, PSYCH_UP
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1546,10 +1548,10 @@ CuboneEvosAttacks:
 	db 3, TAIL_WHIP
 	db 5, BONE_CLUB
 	db 9, HEADBUTT
-	db 13, LEER
+	db 13, RAGE
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
-	db 30, RAGE
+	db 30, SLASH
 	db 33, THRASH
 	db 37, SKULL_BASH
 	db 41, BONE_RUSH
@@ -1563,11 +1565,11 @@ MarowakEvosAttacks:
 	db 3, TAIL_WHIP
 	db 5, BONE_CLUB
 	db 9, HEADBUTT
-	db 13, LEER
+	db 13, RAGE
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
 	db 27, NIGHT_SHADE
-	db 32, RAGE
+	db 32, SHADOW_CLAW
 	db 39, THRASH
 	db 46, SKULL_BASH
 	db 53, BONE_RUSH
