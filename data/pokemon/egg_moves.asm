@@ -552,10 +552,10 @@ SpinarakEggMoves:
 	db -1 ; end
 
 ChinchouEggMoves:
-	db SCREECH
 	db BUBBLEBEAM
 	db THUNDERSHOCK
 	db MIST
+	db HYPNOSIS
 	db -1 ; end
 
 PichuEggMoves:
