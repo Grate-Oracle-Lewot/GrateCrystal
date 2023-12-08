@@ -1862,9 +1862,9 @@ ScytherEvosAttacks:
 JynxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 1, GROWL
+	db 1, CHARM
 	db 9, POWDER_SNOW
-	db 13, ATTRACT
+	db 13, SING
 	db 17, LOVELY_KISS
 	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
@@ -3616,15 +3616,15 @@ HitmontopEvosAttacks:
 ;	db EVOLVE_HAPPINESS, TR_NITE, JYNX
 ;	db 0 ; no more evolutions
 ;	db 1, LICK
-;	db 1, GROWL
+;	db 1, CHARM
 ;	db 9, POWDER_SNOW
-;	db 13, ATTRACT
+;	db 13, SING
 ;	db 17, LOVELY_KISS
 ;	db 21, DOUBLESLAP
 ;	db 25, CONFUSION
-;	db 33, CHARM
+;	db 33, ICE_PUNCH
 ;	db 37, PLAY_ROUGH
-;	db 45, SING
+;	db 45, PERISH_SONG
 ;	db 49, BLIZZARD
 ;	db 0 ; no more level-up moves
 
