@@ -2363,7 +2363,7 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, SHADOW_CLAW
 	db 2, TAIL_WHIP
 	db 7, RAGE
 	db 12, CLAMP
