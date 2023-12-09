@@ -832,8 +832,8 @@ LovelyKissDescription:
 	next "damage inflicted.@"
 
 SkyAttackDescription:
-	db   "1st turn: Fly"
-	next "2nd turn: Attack@"
+	db   "Stronger FLY. May"
+	next "cause a flinch.@"
 
 TransformDescription:
 	db   "Copies foe's type,"
