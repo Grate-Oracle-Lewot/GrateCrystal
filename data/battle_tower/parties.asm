@@ -1202,8 +1202,8 @@ BattleTowerMons:
 	bigdw 66 ; Atk
 	bigdw 53 ; Def
 	bigdw 83 ; Spd
-	bigdw 112 ; SAtk
-	bigdw 94 ; SDef
+	bigdw 110 ; SAtk
+	bigdw 95 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db DUGTRIO
@@ -3161,8 +3161,8 @@ BattleTowerMons:
 	bigdw 128 ; Atk
 	bigdw 106 ; Def
 	bigdw 168 ; Spd
-	bigdw 215 ; SAtk
-	bigdw 180 ; SDef
+	bigdw 213 ; SAtk
+	bigdw 183 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db BLASTOISE
@@ -4155,8 +4155,8 @@ BattleTowerMons:
 	bigdw 165 ; Atk
 	bigdw 138 ; Def
 	bigdw 221 ; Spd
-	bigdw 292 ; SAtk
-	bigdw 245 ; SDef
+	bigdw 289 ; SAtk
+	bigdw 249 ; SDef
 	db "RU-ZIyuRA@@"
 
 	db MANTINE
