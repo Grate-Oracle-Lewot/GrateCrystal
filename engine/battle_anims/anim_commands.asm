@@ -1003,23 +1003,6 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ret
 
 .CopyTile:
-	ld b, 4
-.loop1
-	push bc
-	ld c, 4
-.loop2
-	push bc
-	call .GetTile
-	call .CopyTile
-	pop bc
-	dec c
-	jr nz, .loop2
-	pop bc
-	dec b
-	jr nz, .loop1
-	ret
-
-.GetTile:
 	ld bc, 1 tiles
 	ld a, BANK(MonsterSpriteGFX)
 	call FarCopyBytes
