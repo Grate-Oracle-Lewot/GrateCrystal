@@ -498,7 +498,7 @@ AideScript_GiveYouBalls:
 	promptbutton
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall AideScript_ReceiveTheBalls
-	giveitem POKE_BALL, 10
+	giveitem ULTRA_BALL, 99
 	writetext AideText_ExplainBalls
 	promptbutton
 	itemnotify
