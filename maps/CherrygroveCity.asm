@@ -363,13 +363,13 @@ GuideGentPokecenterText:
 	para "You'll be relying"
 	line "on them a lot, so"
 
-	para "you better learn"
-	line "about them."
+	para "you'd better get"
+	line "familiar."
 	done
 
 GuideGentMartNoBallsText:
 	text "This is a #MON"
-	line "MART."
+	line "MART, or #MART."
 
 	para "They sell useful"
 	line "items, although"
@@ -383,7 +383,7 @@ GuideGentMartNoBallsText:
 
 GuideGentMartHasBallsText:
 	text "This is a #MON"
-	line "MART."
+	line "MART, or #MART."
 
 	para "They sell useful"
 	line "items, such as"
