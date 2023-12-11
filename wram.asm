@@ -3010,7 +3010,7 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 1
+wEggTutorBricks:: db
 
 ; map scene ids
 wPewterMuseumSceneID::                            db
