@@ -157,10 +157,7 @@ BattleAnimRestoreHuds:
 	ld a, BANK(wCurBattleMon) ; aka BANK(wTempMon), BANK(wPartyMon1), and several others
 	ldh [rSVBK], a
 
-; this block should just be "call UpdateBattleHuds"
-	ld hl, UpdateBattleHuds
-	ld a, BANK(UpdatePlayerHUD)
-	rst FarCall
+	call UpdateBattleHuds
 
 	pop af
 	ldh [rSVBK], a
@@ -1453,7 +1450,7 @@ BattleAnim_UpdateOAM_All:
 	call BattleAnimOAMUpdate
 	pop de
 	pop hl
-	jr c, .done
+	ret c
 
 .next
 	ld bc, BATTLEANIMSTRUCT_LENGTH
@@ -1466,10 +1463,7 @@ BattleAnim_UpdateOAM_All:
 .loop2
 	ld a, l
 	cp LOW(wVirtualOAMEnd)
-	jr nc, .done
+	ret nc
 	xor a
 	ld [hli], a
 	jr .loop2
-
-.done
-	ret
