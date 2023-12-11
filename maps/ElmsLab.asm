@@ -496,18 +496,15 @@ AideScript_GiveYouBalls:
 	opentext
 	writetext AideText_GiveYouBalls
 	promptbutton
-	getitemname STRING_BUFFER_4, POKE_BALL
-	scall AideScript_ReceiveTheBalls
-	giveitem ULTRA_BALL, 99
+	waitsfx
+	writetext ReceivedPokeBallsText
+	playsound SFX_ITEM
+	waitsfx
+	giveitem POKE_BALL, 10
 	writetext AideText_ExplainBalls
-	promptbutton
-	itemnotify
+	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOTHING
-	end
-
-AideScript_ReceiveTheBalls:
-	jumpstd ReceiveItemScript
 	end
 
 ElmsAideScript:
@@ -1213,6 +1210,11 @@ AideText_GiveYouBalls:
 
 	para "Use these on your"
 	line "#DEX quest!"
+	done
+
+ReceivedPokeBallsText:
+	text "<PLAYER> received"
+	line "# BALL ×10!"
 	done
 
 AideText_ExplainBalls:
