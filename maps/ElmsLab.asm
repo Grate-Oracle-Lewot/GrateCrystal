@@ -500,7 +500,7 @@ AideScript_GiveYouBalls:
 	writetext ReceivedPokeBallsText
 	playsound SFX_ITEM
 	waitsfx
-	giveitem POKE_BALL, 10
+	giveitem MASTER_BALL, 10
 	writetext AideText_ExplainBalls
 	waitbutton
 	closetext
@@ -595,9 +595,6 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
-
-ElmsLabTrashcan2: ; unreferenced
-	jumpstd TrashCanScript
 
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
