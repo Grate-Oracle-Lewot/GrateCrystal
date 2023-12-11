@@ -500,7 +500,7 @@ AideScript_GiveYouBalls:
 	writetext ReceivedPokeBallsText
 	playsound SFX_ITEM
 	waitsfx
-	giveitem MASTER_BALL, 10
+	giveitem POKE_BALL, 10
 	writetext AideText_ExplainBalls
 	waitbutton
 	closetext
