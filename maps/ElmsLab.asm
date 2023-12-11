@@ -1215,7 +1215,11 @@ ReceivedPokeBallsText:
 	done
 
 AideText_ExplainBalls:
-	text "To add to your"
+	text "<PLAYER> put the"
+	line "# BALLS in the"
+	cont "BALL POCKET."
+
+	para "To add to your"
 	line "#DEX, you have"
 	cont "to catch #MON."
 
