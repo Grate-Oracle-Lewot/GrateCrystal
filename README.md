@@ -317,7 +317,7 @@ SCMidna - Unown ! and ? sprites and animations
 
 Tom Wang - male player running frames
 
-Seasick/Mauve Sea - female player running frames
+Seasick/Mauve Sea - female player running frames, Mary sprites
 
 Bronzeswagger - original Hail weather icon
 
