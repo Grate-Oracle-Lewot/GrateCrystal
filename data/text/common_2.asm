@@ -1485,9 +1485,12 @@ _OakText4::
 	para "This hack was made"
 	line "with github.com."
 
-	para "Their pokecrystal"
-	line "disassembly makes"
-	cont "hacking easier."
+	para "The pret community"
+	line "made a disassembly"
+
+	para "called pokecrystal"
+	line "that makes hacks"
+	cont "like this easier."
 
 	para "…Emphasis on the"
 	line "er."
