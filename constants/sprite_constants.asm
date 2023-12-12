@@ -125,6 +125,7 @@
 	const SPRITE_GRIMER_DOLL ; 79
 	const SPRITE_GEODUDE_DOLL ; 7a
 	const SPRITE_MACHOP_DOLL ; 7b
+	const SPRITE_MARY ; 7c
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
