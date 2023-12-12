@@ -245,7 +245,7 @@ SeafoamCaveB1F_MapEvents:
 
 	def_warp_events
 	warp_event 11, 16, SEAFOAM_CAVE_1F, 2
-	warp_event 24, 27, SEAFOAM_CAVE_B2F, 1
+	warp_event  6, 41, SEAFOAM_CAVE_B2F, 1
 
 	def_coord_events
 
