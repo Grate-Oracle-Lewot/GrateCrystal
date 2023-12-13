@@ -349,9 +349,6 @@ ChooseMoveToLearn:
 .ThreeDashes
 	db "---@"
 
-.PPString
-	db "PP@"
-
 .Types
 	db "NRM@"
 	db "FIT@"
