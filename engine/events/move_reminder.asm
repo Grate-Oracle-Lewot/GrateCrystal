@@ -345,10 +345,13 @@ ChooseMoveToLearn:
 	pop hl
 	ld de, wStringBuffer1
 	jp PlaceString
-	
+
 .ThreeDashes
 	db "---@"
-	
+
+.PPString
+	db "PP@"
+
 .Types
 	db "NRM@"
 	db "FIT@"
