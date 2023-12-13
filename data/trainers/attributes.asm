@@ -132,7 +132,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 9 ; base reward
 	dw AI_BASIC | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Schoolboy
 	db NO_ITEM, NO_ITEM ; items
@@ -450,7 +450,7 @@ TrainerClassAttributes:
 	db DIRE_HIT, NO_ITEM ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_AGGRESSIVE | AI_STATUS
-	dw ALWAYS_USE | SWITCH_SOMETIMES
+	dw ALWAYS_USE | SWITCH_RARELY
 
 ; Cal F
 	db FULL_RESTORE, FULL_RESTORE ; items
