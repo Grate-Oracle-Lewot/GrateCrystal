@@ -45,7 +45,7 @@ PlaceDiplomaOnScreen:
 	db   "This certifies"
 	next "that you have"
 	next "completed the"
-	next "new #DEX."
+	next "#DEX."
 	next "Congratulations!"
 	db   "@"
 
@@ -86,6 +86,3 @@ INCBIN "gfx/diploma/page1.tilemap"
 
 DiplomaPage2Tilemap:
 INCBIN "gfx/diploma/page2.tilemap"
-
-Diploma_DummyFunction: ; unreferenced
-	ret
