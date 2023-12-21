@@ -118,6 +118,8 @@ PewterMuseum1FScientistScript:
 .GiveKabuto:
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+	callasm GetFossilEvolution
+	iftrue .GiveKabutops
 	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
 	writetext PewterMuseum1FScientistDoneText
 	promptbutton
@@ -129,9 +131,23 @@ PewterMuseum1FScientistScript:
 	closetext
 	end
 
+.GiveKabutops:
+	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
+	writetext PewterMuseum1FScientistEvolutionText
+	promptbutton
+	getmonname STRING_BUFFER_3, KABUTOPS
+	writetext PewterMuseum1FScientistReceiveText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke KABUTOPS, 1
+	closetext
+	end
+
 .GiveOmanyte:
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
+	callasm GetFossilEvolution
+	iftrue .GiveOmastar
 	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
 	writetext PewterMuseum1FScientistDoneText
 	promptbutton
@@ -140,6 +156,18 @@ PewterMuseum1FScientistScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke OMANYTE, 1
+	closetext
+	end
+
+.GiveOmastar:
+	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
+	writetext PewterMuseum1FScientistEvolutionText
+	promptbutton
+	getmonname STRING_BUFFER_3, OMASTAR
+	writetext PewterMuseum1FScientistReceiveText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke OMASTAR, 1
 	closetext
 	end
 
@@ -247,7 +275,11 @@ PewterMuseum1FScientistWrongFossilText:
 	done
 
 PewterMuseum1FScientistPartyFullText:
-	text "Your party's full…"
+	text "Hey! Here's your"
+	line "fossil #MON!"
+
+	para "Oh, wait… Your"
+	line "party's full…"
 	done
 
 PewterMuseum1FScientistTimeText:
@@ -264,6 +296,19 @@ PewterMuseum1FScientistDoneText:
 
 	para "Here's your fossil"
 	line "#MON!"
+	done
+
+PewterMuseum1FScientistEvolutionText:
+	text "It's you!"
+	line "So…"
+
+	para "As it turns out,"
+	line "this #MON was"
+
+	para "fossilized in its"
+	line "evolved form!"
+
+	para "Here you go!"
 	done
 
 PewterMuseum1FScientistMonText:
