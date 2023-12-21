@@ -59,7 +59,10 @@ FindItemInBallScript::
 GetFossilEvolution:
 	call Random
 	cp 20 percent - 1
-	ld a, FALSE
-	ret c
+	jr c, .false
 	ld a, TRUE
+	ret
+
+.false
+	ld a, FALSE
 	ret
