@@ -56,7 +56,7 @@ FindItemInBallScript::
 	ld [wScriptVar], a
 	ret
 
-GetFossilEvolution:
+GetFossilEvolution::
 	call Random
 	cp 20 percent - 1
 	jr c, .false
