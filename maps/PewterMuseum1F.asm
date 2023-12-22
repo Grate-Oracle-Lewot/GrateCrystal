@@ -467,5 +467,5 @@ PewterMuseum1F_MapEvents:
 	bg_event 19,  1, BGEVENT_READ, MewBookshelfScript
 
 	def_object_events
-	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
+	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
 	object_event 16,  2, SPRITE_GOLD_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGoldTrophy, -1
