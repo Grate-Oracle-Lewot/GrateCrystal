@@ -184,7 +184,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Locations
 - Viridian Forest
-- Pewter Museum (with fossil resurrection)
+- Pewter Museum (with fossil resurrection; fossils come out at Lv.1, with a 19% chance to start in their evolved form, e.g. Kabutops instead of Kabuto, still at Lv.1)
 - Silph Co. (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
