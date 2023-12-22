@@ -148,8 +148,11 @@ ViridianCityCoffeeGrampsBeatenText:
 	done
 
 ViridianCityCoffeeGrampsDefeatText:
-	text "Grr… Where's my"
-	line "coffee?"
+	text "I'm great at catch-"
+	line "ing #MON."
+
+	para "I'm not so good at"
+	line "training them."
 	done
 
 ViridianCityGrampsNearGymText:
