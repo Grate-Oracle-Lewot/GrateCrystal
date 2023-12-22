@@ -2070,6 +2070,7 @@ OmanyteEvosAttacks:
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BIND
+	db 1, SPIKE_CANNON
 	db 2, DEFENSE_CURL
 	db 5, MUD_SLAP
 	db 13, BITE
@@ -2101,6 +2102,7 @@ KabutoEvosAttacks:
 KabutopsEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_LIFE
+	db 1, CROSS_CHOP
 	db 2, HARDEN
 	db 5, MUD_SLAP
 	db 10, METAL_CLAW
