@@ -46,7 +46,7 @@ OddEggs:
 	db EEVEE
 	db NO_ITEM
 	db TACKLE, TAIL_WHIP, CHARM, EXTREMESPEED
-	dw 02048 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
@@ -72,7 +72,7 @@ OddEggs:
 	db PIKACHU
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
-	dw 00256 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
@@ -98,7 +98,7 @@ OddEggs:
 	db BULBASAUR
 	db NO_ITEM
 	db TACKLE, CHARM, PETAL_DANCE, 0
-	dw 04096 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -124,7 +124,7 @@ OddEggs:
 	db CLEFAIRY
 	db NO_ITEM
 	db POUND, CHARM, KINESIS, DIZZY_PUNCH
-	dw 00768 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -150,7 +150,7 @@ OddEggs:
 	db CHARMANDER
 	db NO_ITEM
 	db SCRATCH, CHARM, DRAGON_PULSE, 0
-	dw 04296 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -176,7 +176,7 @@ OddEggs:
 	db JIGGLYPUFF
 	db NO_ITEM
 	db SING, CHARM, SCREECH, DIZZY_PUNCH
-	dw 00720 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -202,7 +202,7 @@ OddEggs:
 	db SQUIRTLE
 	db NO_ITEM
 	db RAPID_SPIN, CHARM, CRABHAMMER, 0
-	dw 03584 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -228,7 +228,7 @@ OddEggs:
 	db JYNX
 	db NO_ITEM
 	db LICK, CHARM, SCARY_FACE, DIZZY_PUNCH
-	dw 00512 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
@@ -254,7 +254,7 @@ OddEggs:
 	db CHIKORITA
 	db NO_ITEM
 	db POUND, CHARM, ANCIENTPOWER, 0
-	dw 02560 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -280,7 +280,7 @@ OddEggs:
 	db MAGMAR
 	db NO_ITEM
 	db EMBER, SCARY_FACE, DIZZY_PUNCH, 0
-	dw 00419 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
@@ -306,7 +306,7 @@ OddEggs:
 	db CYNDAQUIL
 	db NO_ITEM
 	db TACKLE, CHARM, SACRED_FIRE, 0
-	dw 03072 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -332,7 +332,7 @@ OddEggs:
 	db ELECTABUZZ
 	db NO_ITEM
 	db MACH_PUNCH, LEER, SCARY_FACE, DIZZY_PUNCH
-	dw 00421 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
@@ -358,7 +358,7 @@ OddEggs:
 	db TOTODILE
 	db NO_ITEM
 	db SCRATCH, CHARM, AEROBLAST, 0
-	dw 02420 ; OT ID
+	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
@@ -384,7 +384,7 @@ OddEggs:
 	db TYROGUE
 	db NO_ITEM
 	db TACKLE, MEDITATE, SCARY_FACE, AURA_SPHERE
-	dw 00242 ; OT ID
+	dw 0 ; OT ID
 	dt 1 ; Exp
 	; Stat exp
 	bigdw 0
