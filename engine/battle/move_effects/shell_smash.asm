@@ -49,7 +49,7 @@ BattleCommand_ShellSmash:
 	call BattleCommand_SpecialAttackUp2
  	call BattleCommand_StatUpMessage
 	call ResetMiss
-  call BattleCommand_SpeedUp2
+	call BattleCommand_SpeedUp2
 	jp BattleCommand_StatUpMessage
 
 .cantraise
