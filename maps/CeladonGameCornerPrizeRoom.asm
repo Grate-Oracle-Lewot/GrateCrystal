@@ -1,9 +1,9 @@
 CELADONGAMECORNERPRIZEROOM_TM32_COINS EQU 4200
 CELADONGAMECORNERPRIZEROOM_TM29_COINS EQU 4200
 CELADONGAMECORNERPRIZEROOM_TM57_COINS EQU 4200
-CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS  EQU 3000
-CELADONGAMECORNERPRIZEROOM_PORYGON_COINS  EQU 4000
-CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS EQU 5000
+CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS  EQU 4000
+CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS   EQU 5000
+CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS EQU 9999
 
 	object_const_def
 	const CELADONGAMECORNERPRIZEROOM_EKANS
@@ -41,7 +41,7 @@ CeladonPrizeRoom_tmcounterloop:
 	closewindow
 	ifequal 1, .DoubleTeam
 	ifequal 2, .Psychic
-	ifequal 3, .HyperBeam
+	ifequal 3, .ShadowClaw
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
 .DoubleTeam:
@@ -66,13 +66,13 @@ CeladonPrizeRoom_tmcounterloop:
 	takecoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
 	sjump CeladonPrizeRoom_purchased
 
-.HyperBeam:
+.ShadowClaw:
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM57_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_SHADOW_CLAW
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_HYPER_BEAM
+	giveitem TM_SHADOW_CLAW
 	iffalse CeladonPrizeRoom_notenoughroom
 	takecoins CELADONGAMECORNERPRIZEROOM_TM57_COINS
 	sjump CeladonPrizeRoom_purchased
@@ -140,31 +140,13 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Pikachu
-	ifequal 2, .Porygon
-	ifequal 3, .Larvitar
+	ifequal 1, .Porygon2
+	ifequal 2, .Togetic
+	ifequal 3, .Dragonite
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
-.Pikachu:
-	checkcoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
-	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
-	getmonname STRING_BUFFER_3, AERODACTYL
-	scall CeladonPrizeRoom_askbuy
-	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext CeladonPrizeRoom_HereYouGoText
-	waitbutton
-	setval AERODACTYL
-	special GameCornerPrizeMonCheckDex
-	givepoke AERODACTYL, 10
-	takecoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
-	sjump .loop
-
-.Porygon:
-	checkcoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
+.Porygon2:
+	checkcoins CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
@@ -177,12 +159,12 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval PORYGON2
 	special GameCornerPrizeMonCheckDex
-	givepoke PORYGON2, 30
-	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
+	givepoke PORYGON2, 40
+	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS
 	sjump .loop
 
-.Larvitar:
-	checkcoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
+.Togetic:
+	checkcoins CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
@@ -195,8 +177,26 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval TOGETIC
 	special GameCornerPrizeMonCheckDex
-	givepoke TOGETIC, 30
-	takecoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
+	givepoke TOGETIC, 50
+	takecoins CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS
+	sjump .loop
+
+.Dragonite:
+	checkcoins CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS
+	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
+	getmonname STRING_BUFFER_3, DRAGONITE
+	scall CeladonPrizeRoom_askbuy
+	iffalse CeladonPrizeRoom_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext CeladonPrizeRoom_HereYouGoText
+	waitbutton
+	setval DRAGONITE
+	special GameCornerPrizeMonCheckDex
+	givepoke DRAGONITE, 60
+	takecoins CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS
 	sjump .loop
 
 .MenuHeader:
@@ -208,9 +208,9 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "AERODACTYL {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
-	db "PORYGON2   {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
-	db "TOGETIC    {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
+	db "PORYGON2   {d:CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS}@"
+	db "TOGETIC    {d:CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS}@"
+	db "DRAGONITE  {d:CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS}@"
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomPorygonText:
