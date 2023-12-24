@@ -2,7 +2,7 @@ GOLDENRODGAMECORNER_TM25_COINS EQU 5000
 GOLDENRODGAMECORNER_TM14_COINS EQU 5000
 GOLDENRODGAMECORNER_TM38_COINS EQU 5000
 GOLDENRODGAMECORNER_ABRA_COINS      EQU 500
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 1000
+GOLDENRODGAMECORNER_PORYGON_COINS   EQU 1000
 GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
 
 	object_const_def
@@ -149,9 +149,9 @@ GoldenrodGameCornerTMVendorMenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "TM25    5000@"
-	db "TM14    5000@"
-	db "TM38    5000@"
+	db "TM25    {d:GOLDENRODGAMECORNER_TM25_COINS}@"
+	db "TM14    {d:GOLDENRODGAMECORNER_TM14_COINS}@"
+	db "TM38    {d:GOLDENRODGAMECORNER_TM38_COINS}@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPrizeMonVendorScript:
@@ -168,7 +168,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	verticalmenu
 	closewindow
 	ifequal 1, .Abra
-	ifequal 2, .Cubone
+	ifequal 2, .Porygon
 	ifequal 3, .Wobbuffet
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
@@ -190,8 +190,8 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	takecoins GOLDENRODGAMECORNER_ABRA_COINS
 	sjump .loop
 
-.Cubone:
-	checkcoins GOLDENRODGAMECORNER_CUBONE_COINS
+.Porygon:
+	checkcoins GOLDENRODGAMECORNER_PORYGON_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
@@ -205,7 +205,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	setval PORYGON
 	special GameCornerPrizeMonCheckDex
 	givepoke PORYGON, 10
-	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
+	takecoins GOLDENRODGAMECORNER_PORYGON_COINS
 	sjump .loop
 
 .Wobbuffet:
@@ -235,9 +235,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "ABRA        500@"
-	db "PORYGON    1000@"
-	db "WOBBUFFET  1500@"
+	db "ABRA        {d:GOLDENRODGAMECORNER_ABRA_COINS}@"
+	db "PORYGON    {d:GOLDENRODGAMECORNER_PORYGON_COINS}@"
+	db "WOBBUFFET  {d:GOLDENRODGAMECORNER_WOBBUFFET_COINS}@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:
