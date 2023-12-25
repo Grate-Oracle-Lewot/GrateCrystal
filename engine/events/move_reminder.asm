@@ -1,4 +1,5 @@
 ; stolen from Idain who stole it from Rangi who stole it from TPP
+; (egg part stolen from Nayru who stole it from the same chain of thieves)
 
 MoveReminder:
 	ld hl, Text_MoveReminderIntro
@@ -95,6 +96,101 @@ MoveReminder:
 .cost_to_relearn
 	dt 500
 
+EggMoveTutor:
+	ld hl, Text_EggMoveTutorIntro
+	call PrintText
+	farcall PlaceMoneyTopRight
+	call YesNoBox
+	jp c, .cancel
+
+	ld hl, .cost_to_relearn
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	jp c, .not_enough_money
+
+	ld hl, Text_MoveReminderWhichMon
+	call PrintText
+	call JoyWaitAorB
+
+	ld b, $6
+	farcall SelectMonFromParty
+	jr c, .cancel
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .egg
+
+	call IsAPokemon
+	jr c, .no_mon
+
+	call GetEggRemindableMoves
+	jr z, .no_moves
+
+	ld hl, Text_EggMoveTutorWhichMove
+	call PrintText
+	call JoyWaitAorB
+
+	call ChooseMoveToLearn
+	jr c, .skip_learn
+
+	ld a, [wMenuSelection]
+	ld [wd265], a
+	call GetMoveName
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+	ld bc, wStringBuffer2 - wStringBuffer1
+	call CopyBytes
+	ld b, 0
+	predef LearnMove
+	ld a, b
+	and a
+	jr z, .skip_learn
+
+	ld hl, .cost_to_relearn
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall TakeMoney
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+
+.skip_learn
+	call ReturnToMapWithSpeechTextbox
+.cancel
+	ld hl, Text_EggMoveTutorCancel
+	call PrintText
+	ret
+
+.egg
+	ld hl, Text_EggMoveTutorEgg
+	call PrintText
+	ret
+
+.not_enough_money
+	ld hl, Text_EggMoveTutorNoPay
+	call PrintText
+	ret
+
+.no_mon
+	ld hl, Text_EggMoveTutorNoMon
+	call PrintText
+	ret
+
+.no_moves
+	ld hl, Text_EggMoveTutorNoMoves
+	call PrintText
+	ret
+
+.cost_to_relearn
+	dt 5000
+
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
 ; Returns z if no moves can be reminded.
@@ -124,9 +220,8 @@ GetRemindableMoves:
 	ld b, 0
 	ld c, a
 	ld hl, EvosAttacksPointers
-rept 2
 	add hl, bc
-endr
+	add hl, bc
 	ld a, BANK(EvosAttacksPointers)
 	call GetFarWord
 .skip_evos
@@ -151,6 +246,71 @@ endr
 	jr c, .loop_moves
 
 	ld c, a
+	call CheckAlreadyInList
+	jr c, .loop_moves
+	call CheckPokemonAlreadyKnowsMove
+	jr c, .loop_moves
+	ld a, c
+	ld [de], a
+	inc de
+	ld a, $ff
+	ld [de], a
+	pop bc
+	inc b
+	push bc
+	jr .loop_moves
+
+.done
+	pop bc
+	pop af
+	ld [wCurPartySpecies], a
+	ld a, b
+	ld [wd002], a
+	and a
+	ret
+
+GetEggRemindableMoves:
+; Get moves remindable by CurPartyMon
+; Returns z if no moves can be reminded.
+
+	ld hl, wd002
+	xor a
+	ld [hli], a
+	ld [hl], $ff
+
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+
+	push af
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurPartyLevel], a
+
+	ld b, 0
+	ld de, wd002 + 1
+
+; Based on GetEggMove in engine/pokemon/breeding.asm
+	ld a, [wCurPartySpecies]
+	dec a
+	push bc
+	ld c, a
+	ld hl, EggMovePointers ; EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EggMovePointers)
+	call GetFarWord
+
+.loop_moves
+	ld a, BANK("Egg Moves")
+	call GetFarByte
+	inc hl
+	cp -1 ; last entry in egg move table is -1
+	jr z, .done
+	ld c, a
+    
 	call CheckAlreadyInList
 	jr c, .loop_moves
 	call CheckPokemonAlreadyKnowsMove
@@ -393,13 +553,8 @@ ChooseMoveToLearn:
 	predef PrintMoveDescription
 	ret
 
-
 Text_MoveReminderIntro:
 	text_far _MoveReminderIntro
-	text_end
-
-Text_MoveReminderPrompt:
-	text_far _MoveReminderPrompt
 	text_end
 	
 Text_MoveReminderWhichMon:
@@ -428,4 +583,32 @@ Text_MoveReminderNoMon:
 	
 Text_MoveReminderNoMoves:
 	text_far _MoveReminderNoMoves
+	text_end
+
+Text_EggMoveTutorIntro:
+	text_far _EggMoveTutorIntro
+	text_end
+
+Text_EggMoveTutorWhichMove:
+	text_far _EggMoveTutorWhichMove
+	text_end
+
+Text_EggMoveTutorCancel:
+	text_far _EggMoveTutorCancel
+	text_end
+	
+Text_EggMoveTutorEgg:
+	text_far _EggMoveTutorEgg
+	text_end
+
+Text_EggMoveTutorNoPay:
+	text_far _EggMoveTutorNoPay
+	text_end
+
+Text_EggMoveTutorNoMon:
+	text_far _EggMoveTutorNoMon
+	text_end
+	
+Text_EggMoveTutorNoMoves:
+	text_far _EggMoveTutorNoMoves
 	text_end
