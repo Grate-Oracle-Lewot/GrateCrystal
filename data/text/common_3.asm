@@ -1561,7 +1561,7 @@ _EggMoveTutorNoPay::
 	line "enough money!"
 
 	para "Come back with"
-	line "more!
+	line "more!"
 	done
 
 _EggMoveTutorNoMon::
