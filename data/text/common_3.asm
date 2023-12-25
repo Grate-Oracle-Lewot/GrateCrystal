@@ -1487,11 +1487,6 @@ _MoveReminderIntro::
 	line "interested?"
 	done
 
-_MoveReminderPrompt::
-	text "Are you"
-	line "interested?"
-	done
-
 _MoveReminderWhichMon::
 	text "Which #MON are"
 	line "we working with?"
@@ -1529,6 +1524,56 @@ _MoveReminderNoMoves::
 	text "There are no moves"
 	line "for this #MON"
 	cont "to learn."
+	done
+
+_EggMoveTutorIntro::
+	text "I can teach your"
+	line "#MON moves that"
+
+	para "they can otherwise"
+	line "only learn through"
+	cont "breeding."
+
+	para "Each move will"
+	line "cost ¥5000."
+
+	para "What do you say?"
+	done
+
+_EggMoveTutorWhichMove::
+	text "Which egg move"
+	line "should it learn?"
+	done
+
+_EggMoveTutorCancel::
+	text "Oh… where am I"
+	line "supposed to get my"
+	cont "funds now?"
+	done
+
+_EggMoveTutorEgg::
+	text "You think that's"
+	line "funny, do you?"
+	done
+
+_EggMoveTutorNoPay::
+	text "Hey! You don't have"
+	line "enough money!"
+
+	para "Come back with"
+	line "more!
+	done
+
+_EggMoveTutorNoMon::
+	text "You don't have a"
+	line "#MON that can"
+	cont "learn egg moves."
+	done
+
+_EggMoveTutorNoMoves::
+	text "I'm sorry, this"
+	line "#MON can't learn"
+	cont "any egg moves."
 	done
 
 _DSTIsThatOKText::
