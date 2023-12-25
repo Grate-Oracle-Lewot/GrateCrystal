@@ -271,12 +271,6 @@ ScriptReturnCarry:
 	ld [wScriptVar], a
 	ret
 
-UnusedCheckUnusedTwoDayTimer:
-	farcall CheckUnusedTwoDayTimer
-	ld a, [wUnusedTwoDayTimer]
-	ld [wScriptVar], a
-	ret
-
 ActivateFishingSwarm:
 	ld a, [wScriptVar]
 	ld [wFishingSwarmFlag], a
