@@ -184,10 +184,7 @@ TrainerHikerBenjamin:
 Route42Sign1:
 	jumptext Route42Sign1Text
 
-MtMortarSign1:
-	jumptext MtMortarSignText
-
-MtMortarSign2:
+MtMortarSign:
 	jumptext MtMortarSignText
 
 Route42Sign2:
@@ -323,8 +320,8 @@ Route42_MapEvents:
 
 	def_bg_events
 	bg_event  4, 10, BGEVENT_READ, Route42Sign1
-	bg_event  7,  5, BGEVENT_READ, MtMortarSign1
-	bg_event 45,  9, BGEVENT_READ, MtMortarSign2
+	bg_event  7,  5, BGEVENT_READ, MtMortarSign
+	bg_event 45,  9, BGEVENT_READ, MtMortarSign
 	bg_event 54,  8, BGEVENT_READ, Route42Sign2
 	bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion
 
