@@ -428,7 +428,6 @@ INCLUDE "maps/NewBarkTown.asm"
 INCLUDE "maps/VioletCity.asm"
 INCLUDE "maps/OlivineCity.asm"
 INCLUDE "maps/Route37.asm"
-INCLUDE "maps/Route42.asm"
 INCLUDE "maps/Route46.asm"
 INCLUDE "maps/ViridianCity.asm"
 INCLUDE "maps/CeladonCity.asm"
@@ -507,6 +506,7 @@ INCLUDE "maps/Lounge1F.asm"
 
 SECTION "Map Scripts 27", ROMX
 
+INCLUDE "maps/Route42.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
