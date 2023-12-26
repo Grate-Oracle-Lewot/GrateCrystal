@@ -279,7 +279,9 @@
 	const EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
 	const EVENT_GAVE_SCIENTIST_DOME_FOSSIL
 	const EVENT_GAVE_SCIENTIST_OLD_AMBER
-; Unused: next 336 events
+	const EVENT_GOT_EGG_TUTOR_BRICK_QUEST
+	const EVENT_UNLOCKED_EGG_MOVE_TUTOR
+; Unused: next 334 events
 
 	const_next 600
 ; Kurt Apricorn events
