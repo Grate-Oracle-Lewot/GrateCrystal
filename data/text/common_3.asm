@@ -1546,9 +1546,8 @@ _EggMoveTutorWhichMove::
 	done
 
 _EggMoveTutorCancel::
-	text "Oh… where am I"
-	line "supposed to get my"
-	cont "funds now?"
+	text "Please come back!"
+	line "I need money!"
 	done
 
 _EggMoveTutorEgg::
