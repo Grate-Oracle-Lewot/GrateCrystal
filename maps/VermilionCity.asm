@@ -19,8 +19,58 @@ VermilionCity_MapScripts:
 VermilionCityTeacherScript:
 	jumptextfaceplayer VermilionCityTeacherText
 
-VermilionMachopOwner:
-	jumptextfaceplayer VermilionMachopOwnerText
+VermilionEggMoveTutor:
+	faceplayer
+	opentext
+	checkevent EVENT_UNLOCKED_EGG_MOVE_TUTOR
+	iftrue .TeachEggMoves
+	checkevent EVENT_GOT_EGG_TUTOR_BRICK_QUEST
+	iftrue .CountBrickPieces
+	writetext EggTutorIntroText
+	promptbutton
+	setevent EVENT_GOT_EGG_TUTOR_BRICK_QUEST
+.CountBrickPieces:
+	writetext EggTutorAskGiveBrickText
+	yesorno
+	iffalse .RefusedToGiveBrick
+	checkitem BRICK_PIECE
+	iffalse .NoBricksInBag
+	takeitem BRICK_PIECE
+	readmem wEggTutorBricks
+	addval 1
+	writemem wEggTutorBricks
+	ifequal 7, .BetterWay
+	writetext EggTutorGiveBrickText
+	waitbutton
+	closetext
+	end
+
+.BetterWay:
+	writetext EggTutorGiveBrickText
+	promptbutton
+	writetext EggTutorBetterWayText
+	waitbutton
+	closetext
+	setevent EVENT_UNLOCKED_EGG_MOVE_TUTOR
+	end
+
+.NoBricksInBag:
+	writetext EggTutorNoBricksText
+	waitbutton
+	closetext
+	end
+
+.RefusedToGiveBrick:
+	writetext EggTutorNoGiveBrickText
+	waitbutton
+	closetext
+	end
+
+.TeachEggMoves:
+	special EggMoveTutor
+	waitbutton
+	closetext
+	end
 
 VermilionMachop:
 	opentext
@@ -30,7 +80,15 @@ VermilionMachop:
 	closetext
 	earthquake 30
 	opentext
+	checkevent EVENT_UNLOCKED_EGG_MOVE_TUTOR
+	iftrue .MachopEggMoves
 	writetext VermilionMachopText2
+	waitbutton
+	closetext
+	end
+
+.MachopEggMoves:
+	writetext VermilionMachopText3
 	waitbutton
 	closetext
 	end
@@ -134,7 +192,7 @@ VermilionCityTeacherText:
 	cont "dock here."
 	done
 
-VermilionMachopOwnerText:
+EggTutorIntroText:
 	text "My MACHOP got this"
 	line "plot ready for"
 
@@ -144,6 +202,109 @@ VermilionMachopOwnerText:
 	para "then I blew all my"
 	line "money at the GAME"
 	cont "CORNER…"
+
+	para "I need to find a"
+	line "way to gather the"
+
+	para "building materials"
+	line "myself…"
+
+	para "Hmm…"
+
+	para "Have you noticed"
+	line "that when you"
+
+	para "smash rocks, you"
+	line "sometimes find a"
+	cont "BRICK PIECE?"
+
+	para "If you bring me"
+	line "BRICK PIECES, I'll"
+
+	para "be sure to reward"
+	line "you."
+	done
+
+EggTutorAskGiveBrickText:
+	text "May I have a BRICK"
+	line "PIECE?"
+	done
+
+EggTutorNoGiveBrickText:
+	text "But…"
+	line "I need materials…"
+	done
+
+EggTutorNoBricksText:
+	text "Oh, you don't have"
+	line "one…"
+	done
+
+EggTutorGiveBrickText:
+	text "A BRICK PIECE!"
+	line "Thank you!"
+	done
+
+EggTutorBetterWayText:
+	text "…"
+
+	para "Sigh…"
+
+	para "This is going to"
+	line "take forever."
+
+	para "There must be a"
+	line "better way…"
+
+	para "Aha! I've got it!"
+
+	para "Did you know that"
+	line "when a #MON"
+
+	para "hatches from an"
+	line "EGG, it may know"
+
+	para "moves learned by"
+	line "its parent?"
+
+	para "Including moves"
+	line "it can't normally"
+	cont "learn!"
+
+	para "I'm actually an"
+	line "expert in this"
+	cont "subject."
+
+	para "I can teach your"
+	line "#MON to use"
+
+	para "these moves after"
+	line "they're already"
+	cont "hatched!"
+
+	para "It will cost you"
+	line "some money for"
+
+	para "these special"
+	line "moves, but I'll"
+
+	para "use the funds to"
+	line "buy the materials"
+	cont "for my project!"
+
+	para "The building I"
+	line "want to put up is"
+
+	para "supposed to be a"
+	line "school for #-"
+	cont "MON to learn egg"
+	cont "moves, you see."
+
+	para "So please, take a"
+	line "look and see if"
+
+	para "any of these moves"
+	line "interest you!"
 	done
 
 VermilionMachopText1:
@@ -154,6 +315,11 @@ VermilionMachopText1:
 VermilionMachopText2:
 	text "MACHOP's annoyed"
 	line "with its trainer…"
+	done
+
+VermilionMachopText3:
+	text "MACHOP is practic-"
+	line "ing egg moves!"
 	done
 
 VermilionCitySuperNerdText:
@@ -298,7 +464,7 @@ VermilionCity_MapEvents:
 
 	def_object_events
 	object_event 18,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionCityTeacherScript, -1
-	object_event 23,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionMachopOwner, -1
+	object_event 23,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, VermilionEggMoveTutor, -1
 	object_event 26,  7, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, VermilionMachop, -1
 	object_event 14, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionCitySuperNerdScript, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionSnorlax, EVENT_VERMILION_CITY_SNORLAX
