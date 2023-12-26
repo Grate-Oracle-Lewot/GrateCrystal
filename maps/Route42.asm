@@ -185,10 +185,10 @@ Route42Sign1:
 	jumptext Route42Sign1Text
 
 MtMortarSign1:
-	jumptext MtMortarSign1Text
+	jumptext MtMortarSignText
 
 MtMortarSign2:
-	jumptext MtMortarSign2Text
+	jumptext MtMortarSignText
 
 Route42Sign2:
 	jumptext Route42Sign2Text
@@ -294,14 +294,7 @@ Route42Sign1Text:
 	line "MAHOGANY TOWN"
 	done
 
-MtMortarSign1Text:
-	text "MT.MORTAR"
-
-	para "WATERFALL CAVE"
-	line "INSIDE"
-	done
-
-MtMortarSign2Text:
+MtMortarSignText:
 	text "MT.MORTAR"
 
 	para "WATERFALL CAVE"
