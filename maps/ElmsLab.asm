@@ -500,7 +500,7 @@ AideScript_GiveYouBalls:
 	writetext ReceivedPokeBallsText
 	playsound SFX_ITEM
 	waitsfx
-	giveitem POKE_BALL, 10
+	giveitem BRICK_PIECE, 10
 	writetext AideText_ExplainBalls
 	waitbutton
 	closetext
@@ -1332,7 +1332,7 @@ ElmsLab_MapEvents:
 
 	def_warp_events
 	warp_event  4, 11, NEW_BARK_TOWN, 1
-	warp_event  5, 11, NEW_BARK_TOWN, 1
+	warp_event  5, 11, VERMILION_CITY, 1
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
