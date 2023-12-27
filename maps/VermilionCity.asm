@@ -256,6 +256,8 @@ EggTutorBetterWayText:
 	para "There must be a"
 	line "better way…"
 
+	para "…"
+
 	para "Aha! I've got it!"
 
 	para "Did you know that"
