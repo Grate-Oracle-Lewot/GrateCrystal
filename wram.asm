@@ -2874,7 +2874,10 @@ wStartSecond:: db
 
 wRTC:: ds 4
 
-	ds 4
+wPokedexEntryType::     db
+wPokedexEntryPageNum::  db
+wPokedexEvoStage2::     db
+wPokedexEvoStage3::     db
 
 wDST::
 ; bit 7: dst
