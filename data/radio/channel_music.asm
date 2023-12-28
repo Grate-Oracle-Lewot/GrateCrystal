@@ -13,4 +13,5 @@ RadioChannelSongs:
 	dw MUSIC_RUINS_OF_ALPH_RADIO
 	dw MUSIC_LAKE_OF_RAGE_ROCKET_RADIO
 	dw MUSIC_RUINS_OF_ALPH_RADIO
+	dw MUSIC_SS_AQUA ; fishing radar placeholder
 	assert_table_length NUM_RADIO_CHANNELS
