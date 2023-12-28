@@ -567,7 +567,7 @@ Cherrygrove_Map_Names: ; newgroup CHERRYGROVE
 	assert_table_length NUM_CHERRYGROVE_MAPS
 
 Safari_Map_Names: ; newgroup SAFARI
-	tablewidth 2, Safari_Map_Names
+	table_width 2, Safari_Map_Names
 	dw Safari_Map_Name1 ; map_const SAFARI_ZONE
 	assert_table_length NUM_SAFARI_MAPS
 
