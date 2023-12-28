@@ -700,6 +700,15 @@ INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/squirtbottle.asm" ; 14
 
 
+SECTION "DEX GFX 2", ROMX
+
+Pokedex_ExtraTiles:
+INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
+
+Pokedex_PageNumTiles:
+INCBIN "gfx/pokedex/dex_pagenums.2bpp"
+
+
 SECTION "Map GroupNums Names", ROMX
 
 INCLUDE "data/maps/map_names.asm"
