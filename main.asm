@@ -476,13 +476,10 @@ INCLUDE "engine/movie/intro.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
-INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
 
@@ -701,6 +698,18 @@ SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
 INCLUDE "engine/events/squirtbottle.asm" ; 14
+
+
+SECTION "Map GroupNums Names", ROMX
+
+INCLUDE "data/maps/map_names.asm"
+
+
+SECTION "Bank3E Overflow", ROMX
+
+INCLUDE "engine/link/time_capsule.asm"
+INCLUDE "engine/link/time_capsule_2.asm"
+INCLUDE "engine/events/magikarp.asm"
 
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
