@@ -241,6 +241,7 @@ TimeFishGroups:
 
 FishGroups_Names::
 	table_width 2, FishGroups_Names
+	dw Group0_Name
 	dw Group1_Name
 	dw Group2_Name
 	dw Group3_Name
@@ -251,8 +252,10 @@ FishGroups_Names::
 	dw Group8_Name
 	dw Group9_Name
 	dw Group10_Name
-	assert_table_length NUM_FISHGROUPS ; (10, NONE is not included in the count)
+	assert_table_length NUM_FISHGROUPS + 1 ; to include NONE group
 
+Group0_Name:
+	db "NONE@"
 Group1_Name:
 	db "SHORE@"
 Group2_Name:
@@ -277,7 +280,6 @@ Group10_Name:
 GetFishGroupName:
 ; given fishing group num in 'a'
 ; return str ptr in 'de'
-	dec a
 	add a ; doubles the index since ptrs are 2 bytes
 	ld hl, FishGroups_Names
 	ld d, 0
@@ -309,14 +311,6 @@ GetMapsFishGroup::
 	add hl, bc
 	ld a, BANK(MapGroupPointers)
 	call GetFarByte
-	; ld a, [hl] ; fishing group
-	cp FISHGROUP_NONE
-	jr z, .fishgroup_none
 	call GetFishGroupName
 	; ptr to fishgroup name is in de
-	ret
-.fishgroup_none
-	xor a
-	ld d, a
-	ld e, a
 	ret
