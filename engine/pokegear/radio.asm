@@ -21,114 +21,117 @@ PlayRadioShow:
 RadioJumptable:
 ; entries correspond to constants/radio_constants.asm
 	table_width 2, RadioJumptable
-	dw OaksPKMNTalk1     ; $00
-	dw PokedexShow1      ; $01
-	dw BenMonMusic1      ; $02
-	dw LuckyNumberShow1  ; $03
-	dw BuenasPassword1   ; $04
-	dw PeoplePlaces1     ; $05
-	dw FernMonMusic1     ; $06
-	dw RocketRadio1      ; $07
-	dw PokeFluteRadio    ; $08
-	dw UnownRadio        ; $09
-	dw EvolutionRadio    ; $0a
-	dw MewtwoRadio1      ; $0b
+	dw OaksPKMNTalk1      ; $00
+	dw PokedexShow1       ; $01
+	dw BenMonMusic1       ; $02
+	dw LuckyNumberShow1   ; $03
+	dw BuenasPassword1    ; $04
+	dw PeoplePlaces1      ; $05
+	dw FernMonMusic1      ; $06
+	dw RocketRadio1       ; $07
+	dw PokeFluteRadio     ; $08
+	dw UnownRadio         ; $09
+	dw EvolutionRadio     ; $0a
+	dw MewtwoRadio1       ; $0b
+	dw FishingGroupRadar1 ; $0c
 	assert_table_length NUM_RADIO_CHANNELS
 ; OaksPKMNTalk
-	dw OaksPKMNTalk2     ; $0c
-	dw OaksPKMNTalk3     ; $0d
-	dw OaksPKMNTalk4     ; $0e
-	dw OaksPKMNTalk5     ; $0f
-	dw OaksPKMNTalk6     ; $10
-	dw OaksPKMNTalk7     ; $11
-	dw OaksPKMNTalk8     ; $12
-	dw OaksPKMNTalk9     ; $13
-	dw PokedexShow2      ; $14
-	dw PokedexShow3      ; $15
-	dw PokedexShow4      ; $16
-	dw PokedexShow5      ; $17
+	dw OaksPKMNTalk2      ; $0c
+	dw OaksPKMNTalk3      ; $0d
+	dw OaksPKMNTalk4      ; $0e
+	dw OaksPKMNTalk5      ; $0f
+	dw OaksPKMNTalk6      ; $10
+	dw OaksPKMNTalk7      ; $11
+	dw OaksPKMNTalk8      ; $12
+	dw OaksPKMNTalk9      ; $13
+	dw PokedexShow2       ; $14
+	dw PokedexShow3       ; $15
+	dw PokedexShow4       ; $16
+	dw PokedexShow5       ; $17
 ; Ben Music
-	dw BenMonMusic2      ; $18
-	dw BenMonMusic3      ; $19
-	dw BenFernMusic4     ; $1a
-	dw BenFernMusic5     ; $1b
-	dw BenFernMusic6     ; $1c
-	dw BenFernMusic7     ; $1d
-	dw FernMonMusic2     ; $1e
+	dw BenMonMusic2       ; $18
+	dw BenMonMusic3       ; $19
+	dw BenFernMusic4      ; $1a
+	dw BenFernMusic5      ; $1b
+	dw BenFernMusic6      ; $1c
+	dw BenFernMusic7      ; $1d
+	dw FernMonMusic2      ; $1e
 ; Lucky Number Show
-	dw LuckyNumberShow2  ; $1f
-	dw LuckyNumberShow3  ; $20
-	dw LuckyNumberShow4  ; $21
-	dw LuckyNumberShow5  ; $22
-	dw LuckyNumberShow6  ; $23
-	dw LuckyNumberShow7  ; $24
-	dw LuckyNumberShow8  ; $25
-	dw LuckyNumberShow9  ; $26
-	dw LuckyNumberShow10 ; $27
-	dw LuckyNumberShow11 ; $28
-	dw LuckyNumberShow12 ; $29
-	dw LuckyNumberShow13 ; $2a
-	dw LuckyNumberShow14 ; $2b
-	dw LuckyNumberShow15 ; $2c
+	dw LuckyNumberShow2   ; $1f
+	dw LuckyNumberShow3   ; $20
+	dw LuckyNumberShow4   ; $21
+	dw LuckyNumberShow5   ; $22
+	dw LuckyNumberShow6   ; $23
+	dw LuckyNumberShow7   ; $24
+	dw LuckyNumberShow8   ; $25
+	dw LuckyNumberShow9   ; $26
+	dw LuckyNumberShow10  ; $27
+	dw LuckyNumberShow11  ; $28
+	dw LuckyNumberShow12  ; $29
+	dw LuckyNumberShow13  ; $2a
+	dw LuckyNumberShow14  ; $2b
+	dw LuckyNumberShow15  ; $2c
 ; People & Places
-	dw PeoplePlaces2     ; $2d
-	dw PeoplePlaces3     ; $2e
-	dw PeoplePlaces4     ; $2f
-	dw PeoplePlaces5     ; $30
-	dw PeoplePlaces6     ; $31
-	dw PeoplePlaces7     ; $32
+	dw PeoplePlaces2      ; $2d
+	dw PeoplePlaces3      ; $2e
+	dw PeoplePlaces4      ; $2f
+	dw PeoplePlaces5      ; $30
+	dw PeoplePlaces6      ; $31
+	dw PeoplePlaces7      ; $32
 ; Rocket Radio
-	dw RocketRadio2      ; $33
-	dw RocketRadio3      ; $34
-	dw RocketRadio4      ; $35
-	dw RocketRadio5      ; $36
-	dw RocketRadio6      ; $37
-	dw RocketRadio7      ; $38
-	dw RocketRadio8      ; $39
-	dw RocketRadio9      ; $3a
-	dw RocketRadio10     ; $3b
+	dw RocketRadio2       ; $33
+	dw RocketRadio3       ; $34
+	dw RocketRadio4       ; $35
+	dw RocketRadio5       ; $36
+	dw RocketRadio6       ; $37
+	dw RocketRadio7       ; $38
+	dw RocketRadio8       ; $39
+	dw RocketRadio9       ; $3a
+	dw RocketRadio10      ; $3b
 ; More Pokemon Channel stuff
-	dw OaksPKMNTalk10    ; $3c
-	dw OaksPKMNTalk11    ; $3d
-	dw OaksPKMNTalk12    ; $3e
-	dw OaksPKMNTalk13    ; $3f
-	dw OaksPKMNTalk14    ; $40
+	dw OaksPKMNTalk10     ; $3c
+	dw OaksPKMNTalk11     ; $3d
+	dw OaksPKMNTalk12     ; $3e
+	dw OaksPKMNTalk13     ; $3f
+	dw OaksPKMNTalk14     ; $40
 ; Buenas Password
-	dw BuenasPassword2   ; $41
-	dw BuenasPassword3   ; $42
-	dw BuenasPassword4   ; $43
-	dw BuenasPassword5   ; $44
-	dw BuenasPassword6   ; $45
-	dw BuenasPassword7   ; $46
-	dw BuenasPassword8   ; $47
-	dw BuenasPassword9   ; $48
-	dw BuenasPassword10  ; $49
-	dw BuenasPassword11  ; $4a
-	dw BuenasPassword12  ; $4b
-	dw BuenasPassword13  ; $4c
-	dw BuenasPassword14  ; $4d
-	dw BuenasPassword15  ; $4e
-	dw BuenasPassword16  ; $4f
-	dw BuenasPassword17  ; $50
-	dw BuenasPassword18  ; $51
-	dw BuenasPassword19  ; $52
-	dw BuenasPassword20  ; $53
-	dw BuenasPassword21  ; $54
-	dw RadioScroll       ; $55
+	dw BuenasPassword2    ; $41
+	dw BuenasPassword3    ; $42
+	dw BuenasPassword4    ; $43
+	dw BuenasPassword5    ; $44
+	dw BuenasPassword6    ; $45
+	dw BuenasPassword7    ; $46
+	dw BuenasPassword8    ; $47
+	dw BuenasPassword9    ; $48
+	dw BuenasPassword10   ; $49
+	dw BuenasPassword11   ; $4a
+	dw BuenasPassword12   ; $4b
+	dw BuenasPassword13   ; $4c
+	dw BuenasPassword14   ; $4d
+	dw BuenasPassword15   ; $4e
+	dw BuenasPassword16   ; $4f
+	dw BuenasPassword17   ; $50
+	dw BuenasPassword18   ; $51
+	dw BuenasPassword19   ; $52
+	dw BuenasPassword20   ; $53
+	dw BuenasPassword21   ; $54
+	dw RadioScroll        ; $55
 ; More Pokemon Channel stuff
-	dw PokedexShow6      ; $56
-	dw PokedexShow7      ; $57
-	dw PokedexShow8      ; $58
+	dw PokedexShow6       ; $56
+	dw PokedexShow7       ; $57
+	dw PokedexShow8       ; $58
 ; Mewtwo Radio
-	dw MewtwoRadio2      ; $59
-	dw MewtwoRadio3      ; $5a
-	dw MewtwoRadio4      ; $5b
-	dw MewtwoRadio5      ; $5c
-	dw MewtwoRadio6      ; $5d
-	dw MewtwoRadio7      ; $5e
-	dw MewtwoRadio8      ; $5f
-	dw MewtwoRadio9      ; $60
-	dw MewtwoRadio10     ; $61
+	dw MewtwoRadio2       ; $59
+	dw MewtwoRadio3       ; $5a
+	dw MewtwoRadio4       ; $5b
+	dw MewtwoRadio5       ; $5c
+	dw MewtwoRadio6       ; $5d
+	dw MewtwoRadio7       ; $5e
+	dw MewtwoRadio8       ; $5f
+	dw MewtwoRadio9       ; $60
+	dw MewtwoRadio10      ; $61
+; Fishing Radar
+	dw FishingGroupRadar2 ; $62
 	assert_table_length NUM_RADIO_SEGMENTS
 
 PrintRadioLine:
@@ -1855,6 +1858,40 @@ MewtwoRadioText9:
 MewtwoRadioText10:
 	text_far _MewtwoRadioText10
 	text_end
+
+FishingGroupRadar1:
+	call StartRadioStation
+	; Fishing group
+	; d = map num
+	; e = map group
+	ld a, [wMapGroup]
+	ld e, a
+	ld a, [wMapNumber]
+	ld d, a
+	; given map info in 'de'
+	; return: string ptr in 'de'
+	; if 'de' is zero, no fishing group on map
+	farcall GetMapsFishGroup
+	ld a, BANK(FishGroups_Names)
+	hlcoord 1, 14
+	call PlaceFarString
+	ld a, FISHING_GROUP_RADIO2
+	ld [wNextRadioLine], a
+	ld a, 1
+	ld [wNumRadioLinesPrinted], a	
+	ret
+
+FishingGroupRadar2:
+	ld a, FISHING_GROUP_RADIO2
+	ld [wNextRadioLine], a
+	ld a, 1
+	ld [wNumRadioLinesPrinted], a
+
+	ld a, RADIO_SCROLL
+	ld [wCurRadioLine], a
+	ld a, 100
+	ld [wRadioTextDelay], a
+	ret
 
 CopyRadioTextToRAM:
 	ld a, [hl]
