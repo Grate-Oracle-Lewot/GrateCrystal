@@ -48,7 +48,7 @@ SetDexMonIconColor_NoShiny:
 	ld [wCurPartySpecies], a
 	and a
 	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wShadowOAMSprite00Attributes
+	ld hl, wVirtualOAMSprite00Attributes
 	push af
 	ldh a, [hObjectStructIndex]
 	swap a
@@ -73,7 +73,7 @@ SetDexMonIconColor_SpritePage:
 	scf
 .not_shiny
 	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wShadowOAMSprite00Attributes
+	ld hl, wVirtualOAMSprite00Attributes
 	push af
 	ldh a, [hObjectStructIndex]
 	swap a
@@ -441,7 +441,7 @@ Pokedex_InitAnimatedMonIcon:
 	ld e, $19 ; $20
 .setxdone
 ; type is partymon icon
-	ld a, SPRITE_ANIM_OBJ_PARTY_MON
+	ld a, SPRITE_ANIM_INDEX_PARTY_MON
 	call _InitSpriteAnimStruct
 
 	ld a, [wCurIconTile]
@@ -452,7 +452,7 @@ Pokedex_InitAnimatedMonIcon:
 
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld [hl], SPRITE_ANIM_FUNC_NULL
+	ld [hl], SPRITE_ANIM_SEQ_NULL
 	
 	pop af
 	ld [wCurPartySpecies], a
