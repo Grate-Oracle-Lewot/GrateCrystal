@@ -1532,9 +1532,9 @@ RadioChannels:
 	dbw 16, .PKMNTalkAndPokedexShow ; 04.5
 	dbw 28, .PokemonMusic           ; 07.5
 	dbw 32, .LuckyChannel           ; 08.5
+	dbw 38, .FishingGroupRadar      ; 10.0
 	dbw 40, .BuenasPassword         ; 10.5
 	dbw 52, .RuinsOfAlphRadio       ; 13.5
-	dbw 58, .FishingGroupRadar
 	dbw 64, .PlacesAndPeople        ; 16.5
 	dbw 72, .LetsAllSing            ; 18.5
 	dbw 78, .PokeFluteRadio         ; 20.0
