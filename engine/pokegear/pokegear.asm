@@ -1858,7 +1858,7 @@ UnownStationName:      db "?????@"
 PlacesAndPeopleName:   db "Places & People@"
 LetsAllSingName:       db "Let's All Sing!@"
 PokeFluteStationName:  db "# FLUTE@"
-FishingGroupRadarName: db "Fishing Radar@"
+FishingGroupRadarName: db "Fish Biome Radar@"
 
 _TownMap:
 	ld hl, wOptions
