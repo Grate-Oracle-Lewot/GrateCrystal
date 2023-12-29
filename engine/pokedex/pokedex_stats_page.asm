@@ -298,7 +298,7 @@ Pokedex_Get_EggGroup:
 .EggG_Grass_text:
 	db "Grass@"
 .EggG_HumanLike_text:
-	db "Humane-Like@"
+	db "Human-Like@"
 .EggG_Invertebrate_text:
 	db "Invertebrate@"
 .EggG_Mineral_text:
@@ -407,17 +407,17 @@ Pokedex_Get_Growth::
 ; .BS_Growth_text:
 ; 	db "GROWTH RATE: @"
 .growth_Medfast:
-	db "Med. Fast Growth@"
+	db "Medium Fast@"
 .growth_slightfast
-	db "Sml. Fast Growth@"
+	db "Slightly Fast@"
 .growth_slightslow
-	db "Sml. Slow Growth@"
+	db "Slightly Slow@"
 .growth_medslow
-	db "Med. Slow Growth@"
+	db "Medium Slow@"
 .growth_fast
-	db "Fast Growth@"
+	db "Fast@"
 .growth_slow
-	db "Slow Growth@"
+	db "Slow@"
 
 Pokedex_PrintBaseExp:
 ; wBaseExp
