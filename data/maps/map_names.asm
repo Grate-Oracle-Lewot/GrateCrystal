@@ -779,7 +779,7 @@ Dungeons_Map_Name82: ; DRAGON_SHRINE
 Dungeons_Map_Name83: ; TOHJO_FALLS
 	db "TOHJO FALLS@"
 Dungeons_Map_Name84: ; DIGLETTS_CAVE
-	db "DIGLETTS CAVE@"
+	db "DIGLETT'S CAVE@"
 Dungeons_Map_Name85: ; MOUNT_MOON
 	db "MT. MOON@"
 Dungeons_Map_Name86: ; UNDERGROUND_PATH
