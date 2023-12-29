@@ -689,7 +689,7 @@ Dungeons_Map_Name37: ; UNION_CAVE_1F
 Dungeons_Map_Name38: ; UNION_CAVE_B1F
 	db "UNION CAVE B1F@"
 Dungeons_Map_Name39: ; UNION_CAVE_B2F
-	db "UNION CAVE B2F E@"
+	db "UNION CAVE B2F S@"
 Dungeons_Map_Name40: ; SLOWPOKE_WELL_B1F
 	db "SLOWPOKEWELL B1F@"
 Dungeons_Map_Name41: ; SLOWPOKE_WELL_B2F
@@ -791,7 +791,7 @@ Dungeons_Map_Name88: ; ROCK_TUNNEL_B1F
 Dungeons_Map_Name89: ; VICTORY_ROAD
 	db "VICTORY ROAD@"
 Dungeons_Map_Name90: ; UNION_CAVE_SLOWPOKE_WELL_LINK
-	db "UNION PASSAGE@"
+	db "UNION CAVE B2F N@"
 Dungeons_Map_Name91: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
 Dungeons_Map_Name92: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
@@ -1054,7 +1054,7 @@ Vermilion_Map_Name10: ; VERMILION_GYM
 Vermilion_Map_Name11: ; ROUTE_6_SAFFRON_GATE
 	db "ROUTE 6 GATE@"
 Vermilion_Map_Name12: ; ROUTE_6_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 6 HOUSE@"
+	db "ROUTE 6 UTILITY@"
 
 Pallet_Map_Name1: ; ROUTE_1
 	db "ROUTE 1@"
@@ -1109,9 +1109,9 @@ Fast_Ship_Map_Name8: ; OLIVINE_PORT_PASSAGE
 Fast_Ship_Map_Name9: ; VERMILION_PORT_PASSAGE
 	db "VERMILION PORT@"
 Fast_Ship_Map_Name10: ; MOUNT_MOON_SQUARE
-	db "MT. MOON SQUARE@"
+	db "MT.MOON SQUARE@"
 Fast_Ship_Map_Name11: ; MOUNT_MOON_GIFT_SHOP
-	db "MT. MOON SHOP@"
+	db "MT.MOON SHOP@"
 Fast_Ship_Map_Name12: ; TIN_TOWER_ROOF
 	db "TIN TOWER ROOF@"
 
@@ -1245,7 +1245,7 @@ Celadon_Map_Name14: ; CELADON_MANSION_3F
 Celadon_Map_Name15: ; CELADON_MANSION_ROOF
 	db "CEL. MANSION ROOF@"
 Celadon_Map_Name16: ; CELADON_MANSION_ROOF_HOUSE
-	db "CEL. ROOF HOUSE@"
+	db "CEL. PENTHOUSE@"
 Celadon_Map_Name17: ; CELADON_POKECENTER_1F
 	db "CELADON ", $E1, $E2, "CENTER@"
 Celadon_Map_Name18: ; CELADON_GAME_CORNER
@@ -1317,7 +1317,7 @@ Viridian_Map_Name8: ; VIRIDIAN_MART
 Viridian_Map_Name9: ; VIRIDIAN_POKECENTER_1F
 	db "VIRIDIAN ", $E1, $E2, "CENTER@"
 Viridian_Map_Name10: ; ROUTE_2_NUGGET_HOUSE
-	db "ROUTE 2 HOUSE@"
+	db "ROUTE 2 CABIN@"
 Viridian_Map_Name11: ; ROUTE_2_NORTH_GATE
 	db "ROUTE 2 GATE N@"
 Viridian_Map_Name12: ; ROUTE_2_SOUTH_GATE
@@ -1327,7 +1327,7 @@ Viridian_Map_Name13: ; VICTORY_ROAD_GATE
 Viridian_Map_Name14: ; VIRIDIAN_FOREST
 	db "VIRIDIAN FOREST@"
 Viridian_Map_Name15: ; ROUTE_22_HOUSE
-	db "ROUTE 22 HOUSE@"
+	db "ROUTE 22 LODGE@"
 
 New_Bark_Map_Name1: ; ROUTE_26
 	db "ROUTE 26@"
@@ -1348,11 +1348,11 @@ New_Bark_Map_Name8: ; PLAYERS_NEIGHBORS_HOUSE
 New_Bark_Map_Name9: ; ELMS_HOUSE
 	db "ELM'S HOUSE@"
 New_Bark_Map_Name10: ; ROUTE_26_HEAL_HOUSE
-	db "ROUTE 26 HOUSE@"
+	db "ROUTE 26 HOSTEL@"
 New_Bark_Map_Name11: ; DAY_OF_WEEK_SIBLINGS_HOUSE
-	db "DAY SIBLING HOUSE@"
+	db "DAY SIBLINGS'@"
 New_Bark_Map_Name12: ; ROUTE_27_SANDSTORM_HOUSE
-	db "ROUTE 27 HOUSE@"
+	db "ROUTE 27 CABIN@"
 New_Bark_Map_Name13: ; ROUTE_29_ROUTE_46_GATE
 	db "ROUTE 29 GATE@"
 
@@ -1379,11 +1379,11 @@ Saffron_Map_Name10: ; COPYCATS_HOUSE_1F
 Saffron_Map_Name11: ; COPYCATS_HOUSE_2F
 	db "COPYCAT'S 2F@"
 Saffron_Map_Name12: ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 5 HOUSE@"
+	db "ROUTE 5 UTILITY@"
 Saffron_Map_Name13: ; ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
 Saffron_Map_Name14: ; ROUTE_5_CLEANSE_TAG_HOUSE
-	db "ROUTE 5 HOUSE@"
+	db "ROUTE 5 CABIN@"
 
 Cherrygrove_Map_Name1: ; ROUTE_30
 	db "ROUTE 30@"
@@ -1402,7 +1402,7 @@ Cherrygrove_Map_Name7: ; GUIDE_GENTS_HOUSE
 Cherrygrove_Map_Name8: ; CHERRYGROVE_EVOLUTION_SPEECH_HOUSE
 	db "CHERRYGROVE HOUSE@"
 Cherrygrove_Map_Name9: ; ROUTE_30_BERRY_HOUSE
-	db "ROUTE 30 HOUSE@"
+	db "ROUTE 30 CABIN@"
 Cherrygrove_Map_Name10: ; MR_POKEMONS_HOUSE
 	db "MR. #MON'S@"
 Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
