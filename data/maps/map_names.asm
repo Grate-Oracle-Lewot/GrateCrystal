@@ -581,7 +581,7 @@ Olivine_Map_Name3: ; map_const OLIVINE_TIMS_HOUSE
 Olivine_Map_Name4: ; map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE
 	db "OLIVINE ANGLER@"
 Olivine_Map_Name5: ; map_const OLIVINE_CAFE
-	db "OLIVINE CAFE@"
+	db "OLIVINE CAFé@"
 Olivine_Map_Name6: ; map_const OLIVINE_MART
 	db "OLIVINE ", $70, $71, "MART@"
 Olivine_Map_Name7: ; map_const ROUTE_38_ECRUTEAK_GATE
@@ -723,7 +723,7 @@ Dungeons_Map_Name54: ; map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
 Dungeons_Map_Name55: ; map_const GOLDENROD_DEPT_STORE_B1F
 	db "GOLD. DEPT B1F@"
 Dungeons_Map_Name56: ; map_const GOLDENROD_UNDERGROUND_WAREHOUSE
-	db "GOLD. WAREHOUSE@"
+	db "UNDER. WAREHOUSE@"
 Dungeons_Map_Name57: ; map_const MOUNT_MORTAR_1F_OUTSIDE
 	db "MT. MORTAR@"
 Dungeons_Map_Name58: ; map_const MOUNT_MORTAR_1F_INSIDE
@@ -836,7 +836,7 @@ Dungeons_Map_Name110: ; map_const SILPH_CO_11F
 Ecruteak_Map_Name1: ; map_const ECRUTEAK_TIN_TOWER_ENTRANCE
 	db "BELLCHIME TRAIL@"
 Ecruteak_Map_Name2: ; map_const WISE_TRIOS_ROOM
-	db "WISE TRIO ROOM@"
+	db "BELLCHIME SHRINE@"
 Ecruteak_Map_Name3: ; map_const ECRUTEAK_POKECENTER_1F
 	db "ECRUTEAK ", $E1, $E2, "CENTER@"
 Ecruteak_Map_Name4: ; map_const ECRUTEAK_LUGIA_SPEECH_HOUSE
@@ -935,7 +935,7 @@ Azalea_Map_Name7: ; map_const AZALEA_TOWN
 Lake_of_Rage_Map_Name1: ; map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE
 	db "HIDDEN LAKEHOUSE@"
 Lake_of_Rage_Map_Name2: ; map_const LAKE_OF_RAGE_MAGIKARP_HOUSE
-	db "MAGIKARP HOUSE@"
+	db "MAGIKARP ANGLER@"
 Lake_of_Rage_Map_Name3: ; map_const ROUTE_43_MAHOGANY_GATE
 	db "RT 43 GATE S@"
 Lake_of_Rage_Map_Name4: ; map_const ROUTE_43_GATE
@@ -1044,17 +1044,17 @@ Vermilion_Map_Name5: ; map_const VERMILION_POKECENTER_1F
 Vermilion_Map_Name6: ; map_const POKEMON_FAN_CLUB
 	db "#MON FAN CLUB@"
 Vermilion_Map_Name7: ; map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE
-	db "VERMILION HOUSE 1@"
+	db "VERMILION HOUSE@"
 Vermilion_Map_Name8: ; map_const VERMILION_MART
 	db "VERMILION ", $70, $71, "MART@"
 Vermilion_Map_Name9: ; map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE
-	db "VERMILION HOUSE 2@"
+	db "VERMILION HOUSE@"
 Vermilion_Map_Name10: ; map_const VERMILION_GYM
 	db "VERMILION GYM@"
 Vermilion_Map_Name11: ; map_const ROUTE_6_SAFFRON_GATE
 	db "ROUTE 6 GATE@"
 Vermilion_Map_Name12: ; map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 6 UNDER.@"
+	db "ROUTE 6 HOUSE@"
 
 Pallet_Map_Name1: ; map_const ROUTE_1
 	db "ROUTE 1@"
@@ -1074,7 +1074,7 @@ Pewter_Map_Name1: ; map_const ROUTE_3
 Pewter_Map_Name2: ; map_const PEWTER_CITY
 	db "PEWTER CITY@"
 Pewter_Map_Name3: ; map_const PEWTER_NIDORAN_SPEECH_HOUSE
-	db "PEWTER HOUSE 1@"
+	db "PEWTER HOUSE@"
 Pewter_Map_Name4: ; map_const PEWTER_GYM
 	db "PEWTER GYM@"
 Pewter_Map_Name5: ; map_const PEWTER_MART
@@ -1082,7 +1082,7 @@ Pewter_Map_Name5: ; map_const PEWTER_MART
 Pewter_Map_Name6: ; map_const PEWTER_POKECENTER_1F
 	db "PEWTER ", $E1, $E2, "CENTER@"
 Pewter_Map_Name7: ; map_const PEWTER_SNOOZE_SPEECH_HOUSE
-	db "PEWTER HOUSE 2@"
+	db "PEWTER HOUSE@"
 Pewter_Map_Name8: ; map_const PEWTER_MUSEUM_1F
 	db "PEWTER MUSEUM 1F@"
 Pewter_Map_Name9: ; map_const PEWTER_MUSEUM_2F
@@ -1195,7 +1195,7 @@ Lavender_Map_Name14: ; map_const LAV_RADIO_TOWER_2F
 Silver_Map_Name1: ; map_const ROUTE_28
 	db "ROUTE 28@"
 Silver_Map_Name2: ; map_const SILVER_CAVE_OUTSIDE
-	db "MT. SILVER@"	
+	db "MT.SILVER PASS@"
 Silver_Map_Name3: ; map_const SILVER_CAVE_POKECENTER_1F
 	db "SILVER ", $E1, $E2, "CENTER@"
 Silver_Map_Name4: ; map_const ROUTE_28_STEEL_WING_HOUSE
@@ -1255,7 +1255,7 @@ Celadon_Map_Name19: ; map_const CELADON_GAME_CORNER_PRIZE_ROOM
 Celadon_Map_Name20: ; map_const CELADON_GYM
 	db "CELADON GYM@"
 Celadon_Map_Name21: ; map_const CELADON_CAFE
-	db "CELADON CAFE@"
+	db "CELADON CAFé@"
 Celadon_Map_Name22: ; map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE
 	db "APRICORN SHOP@"
 Celadon_Map_Name23: ; map_const ROUTE_16_GATE
@@ -1288,7 +1288,7 @@ Cianwood_Map_Name10: ; map_const POKE_SEERS_HOUSE
 Cianwood_Map_Name11: ; map_const BATTLE_TOWER_1F
 	db "BATTLE TOWER 1F@"
 Cianwood_Map_Name12: ; map_const BATTLE_TOWER_BATTLE_ROOM
-	db "BATTLE TOWER ROOM@"
+	db "BATTLE TOWER@"
 Cianwood_Map_Name13: ; map_const BATTLE_TOWER_ELEVATOR
 	db "BATTLE TOWER LIFT@"
 Cianwood_Map_Name14: ; map_const BATTLE_TOWER_HALLWAY
@@ -1296,7 +1296,7 @@ Cianwood_Map_Name14: ; map_const BATTLE_TOWER_HALLWAY
 Cianwood_Map_Name15: ; map_const ROUTE_40_BATTLE_TOWER_GATE
 	db "ROUTE 40 GATE@"
 Cianwood_Map_Name16: ; map_const BATTLE_TOWER_OUTSIDE
-	db "BATTLE TOWER@"
+	db "BATTLE TOWER LOT@"
 
 Viridian_Map_Name1: ; map_const ROUTE_2
 	db "ROUTE 2@"
@@ -1369,17 +1369,17 @@ Saffron_Map_Name5: ; map_const SAFFRON_MART
 Saffron_Map_Name6: ; map_const SAFFRON_POKECENTER_1F
 	db "SAFFRON ", $E1, $E2, "CENTER@"
 Saffron_Map_Name7: ; map_const MR_PSYCHICS_HOUSE
-	db "MR.PSYCHIC's HOUSE@"
+	db "MR. PSYCHIC'S@"
 Saffron_Map_Name8: ; map_const SAFFRON_MAGNET_TRAIN_STATION
 	db "SAFFRON STATION@"
 Saffron_Map_Name9: ; map_const SILPH_CO_1F
 	db "SILPH CO. 1F@"
 Saffron_Map_Name10: ; map_const COPYCATS_HOUSE_1F
-	db "COPYCAT HOUSE 1F@"
+	db "COPYCAT'S 1F@"
 Saffron_Map_Name11: ; map_const COPYCATS_HOUSE_2F
-	db "COPYCAT HOUSE 2F@"
+	db "COPYCAT'S 2F@"
 Saffron_Map_Name12: ; map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 5 UNDER.@"
+	db "ROUTE 5 HOUSE@"
 Saffron_Map_Name13: ; map_const ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
 Saffron_Map_Name14: ; map_const ROUTE_5_CLEANSE_TAG_HOUSE
@@ -1396,15 +1396,15 @@ Cherrygrove_Map_Name4: ; map_const CHERRYGROVE_MART
 Cherrygrove_Map_Name5: ; map_const CHERRYGROVE_POKECENTER_1F
 	db "CHERRYGROVE ", $E1, $E2, "CEN@"
 Cherrygrove_Map_Name6: ; map_const CHERRYGROVE_GYM_SPEECH_HOUSE
-	db "CHERRY. HOUSE 1@"
+	db "CHERRYGROVE HOUSE@"
 Cherrygrove_Map_Name7: ; map_const GUIDE_GENTS_HOUSE
-	db "GUIDE GENT's HOUSE@"
+	db "GUIDE GENT'S@"
 Cherrygrove_Map_Name8: ; map_const CHERRYGROVE_EVOLUTION_SPEECH_HOUSE
-	db "CHERRY. HOUSE 2@"
+	db "CHERRYGROVE HOUSE@"
 Cherrygrove_Map_Name9: ; map_const ROUTE_30_BERRY_HOUSE
 	db "ROUTE 30 HOUSE@"
 Cherrygrove_Map_Name10: ; map_const MR_POKEMONS_HOUSE
-	db "MR.#MON's HOUSE@"
+	db "MR. #MON'S@"
 Cherrygrove_Map_Name11: ; map_const ROUTE_31_VIOLET_GATE
 	db "ROUTE 31 GATE@"
 
