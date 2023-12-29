@@ -21,7 +21,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	ld [wCurPartySpecies], a
 	hlcoord 1, 1
 	
-;;; Taken from _PrepMonFrontPic
+; Taken from _PrepMonFrontPic
 	push hl
 	ld de, vTiles2
 	predef GetMonFrontpic
