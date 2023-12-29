@@ -571,7 +571,7 @@ Safari_Map_Names: ; newgroup SAFARI
 	dw Safari_Map_Name1 ; map_const SAFARI_ZONE
 	assert_table_length NUM_SAFARI_MAPS
 
-; MAX LENGTH: 17
+; MAX LENGTH: 17 (preferred: 16)
 Olivine_Map_Name1: ; map_const OLIVINE_POKECENTER_1F
 	db "OLIVINE¯", $E1, $E2, "CENTER@"
 Olivine_Map_Name2: ; map_const OLIVINE_GYM
