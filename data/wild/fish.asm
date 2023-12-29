@@ -261,13 +261,13 @@ Group1_Name:
 Group2_Name:
 	db "Fish Type: OCEAN@"
 Group3_Name:
-	db "Fish Type: LAKE@"
+	db "Fish Type: LAGOON@"
 Group4_Name:
 	db "Fish Type: POND@"
 Group5_Name:
 	db "Fish Type: COVE@"
 Group6_Name:
-	db "Fish Type: LAGOON@"
+	db "Fish Type: LAKE@"
 Group7_Name:
 	db "Fish Type: CENOTE@"
 Group8_Name:
