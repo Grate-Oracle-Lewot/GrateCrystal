@@ -255,27 +255,27 @@ FishGroups_Names::
 	assert_table_length NUM_FISHGROUPS + 1 ; to include NONE group
 
 Group0_Name:
-	db "NONE@"
+	db "Fish Type: NONE@"
 Group1_Name:
-	db "SHORE@"
+	db "Fish Type: SHORE@"
 Group2_Name:
-	db "OCEAN@"
+	db "Fish Type: OCEAN@"
 Group3_Name:
-	db "LAKE@"
+	db "Fish Type: LAKE@"
 Group4_Name:
-	db "POND@"
+	db "Fish Type: POND@"
 Group5_Name:
-	db "DRAGON@"
+	db "Fish Type: DRAGON@"
 Group6_Name:
-	db "RAGE@"
+	db "Fish Type: RAGE@"
 Group7_Name:
-	db "RARE@"
+	db "Fish Type: RARE@"
 Group8_Name:
-	db "WHIRL@"
+	db "Fish Type: WHIRL@"
 Group9_Name:
-	db "HOT@"
+	db "Fish Type: HOT@"
 Group10_Name:
-	db "RAID@"
+	db "Fish Type: RAID@"
 
 GetFishGroupName:
 ; given fishing group num in 'a'
