@@ -416,7 +416,7 @@ EVO_stats:
 	
 	inc hl ; stats const needed byte
 	push hl ; stats const needed byte
-;print lvl
+; print lvl
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	call EVO_inchlcoord
@@ -709,7 +709,7 @@ EVO_DrawSpriteBox:
 	call FillBoxWithByte
 	pop hl
 	inc hl
-;white sprite box fill
+; white sprite box fill
 	lb bc, 2, 2
 	ld a, $62 ; $7f
 	push hl
