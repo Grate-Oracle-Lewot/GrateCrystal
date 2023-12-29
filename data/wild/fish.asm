@@ -265,17 +265,17 @@ Group3_Name:
 Group4_Name:
 	db "Fish Type: POND@"
 Group5_Name:
-	db "Fish Type: DRAGON@"
+	db "Fish Type: COVE@"
 Group6_Name:
-	db "Fish Type: RAGE@"
+	db "Fish Type: LAGOON@"
 Group7_Name:
-	db "Fish Type: RARE@"
+	db "Fish Type: CENOTE@"
 Group8_Name:
-	db "Fish Type: WHIRL@"
+	db "Fish Type: ISLE@"
 Group9_Name:
 	db "Fish Type: HOT@"
 Group10_Name:
-	db "Fish Type: RAID@"
+	db "Fish Type: RIVER@"
 
 GetFishGroupName:
 ; given fishing group num in 'a'
