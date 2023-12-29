@@ -275,7 +275,7 @@ Group8_Name:
 Group9_Name:
 	db "Habitat: RIVER@"
 Group10_Name:
-	db "Habitat: FJORD@"
+	db "Habitat: STREAM@"
 
 GetFishGroupName:
 ; given fishing group num in 'a'
