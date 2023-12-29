@@ -590,7 +590,7 @@ Pokegear_UpdateClock:
 	jr z, .Day
 	ld de, .NiteStr
 .got_tod		
-	hlcoord 12, 6
+	hlcoord 11, 6
 	call PlaceString
 
 	hlcoord 11, 0
@@ -852,7 +852,7 @@ PokegearRadio_Joypad:
 	jr nz, .left
 	ld a, [hl]
 	and D_RIGHT ; act like you have no phone and no map going left, takes to clock
-	jr nz, .right
+	jr nz, .no_map
 	ld a, [wPokegearRadioChannelAddr]
 	ld l, a
 	ld a, [wPokegearRadioChannelAddr + 1]
@@ -870,7 +870,6 @@ PokegearRadio_Joypad:
 	ld c, POKEGEARSTATE_PHONEINIT
 	ld b, POKEGEARCARD_PHONE
 	jr .switch_page
-.right
 
 .no_phone
 	ld a, [wPokegearFlags]
