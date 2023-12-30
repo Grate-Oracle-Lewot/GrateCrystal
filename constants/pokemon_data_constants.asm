@@ -171,6 +171,9 @@ FISHGROUP_DATA_LENGTH EQU 1 + 2 * 4
 
 NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
 
+NUM_ROAMMONS EQU 2 ; G/S is three, and wram still has 3 roamers
+; but  Crystal only has 2. Change this if you want to use the 3rd
+
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
