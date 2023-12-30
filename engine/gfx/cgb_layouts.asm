@@ -524,7 +524,7 @@ CheckPokedexColor:
 .Mewtwo
 	cp DEXCOLOR_MEWTWO
 	jr nz, .Red
-	ld a, PREDEFPAL_CGB_BADGE
+	ld a, PREDEFPAL_SHINY_MEWMON
 	ret
 
 .Red
