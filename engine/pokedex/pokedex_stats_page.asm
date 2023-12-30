@@ -202,7 +202,7 @@ Pokedex_EggG_SetUp:
 	ld a, b
 	cp c
 	jr z, .EggGroups_DONE
-;;; Print second egg group
+; Print second egg group
 	hlcoord 3, 10
 	ld de, .BS_Egg_text2
 	push bc
@@ -221,8 +221,8 @@ Pokedex_EggG_SetUp:
 
 
 Pokedex_Get_EggGroup:
-;; have the fixed group num in 'a' already
-;; return 'de' as the text for matching group
+; have the fixed group num in 'a' already
+; return 'de' as the text for matching group
 	ld a, b
 	ld de, .EggG_Monster_text
 	cp EGG_MONSTER
@@ -282,7 +282,7 @@ Pokedex_Get_EggGroup:
 	ld de, DexEntry_NONE_text
 .Eggret
 	ret
-;;;Egg Groups
+; Egg Groups
 .EggG_Monster_text:
 	db "Monster@"
 .EggG_Amphibian_text:
