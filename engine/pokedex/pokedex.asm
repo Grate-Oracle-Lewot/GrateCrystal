@@ -1919,6 +1919,7 @@ Pokedex_DrawColorScreenBG:
 
  .MenuAction_Mewtwo
 	ld b, DEXCOLOR_MEWTWO
+	; fallthrough
 	
  .ChangeColor:
 	ld a, [wCurPokedexColor]
