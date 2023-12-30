@@ -724,7 +724,7 @@ Pokedex_PrintFieldMoves:
 	push bc
 	hlcoord 3, 11
 	call DexEntry_adjusthlcoord
-	ld [hl], $00 ; <NULL>
+	ld [hl], $5d ; <LVL>
 	inc hl
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	ld a, e
@@ -787,7 +787,7 @@ Pokedex_PrintFieldMoves:
 	push de
 	hlcoord 3, 11
 	call DexEntry_adjusthlcoord
-	ld [hl], $00 ; <NULL>
+	ld [hl], $5d ; <LVL>
 	inc hl
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	ld a, e
