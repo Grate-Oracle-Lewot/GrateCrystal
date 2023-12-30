@@ -560,19 +560,6 @@ _CGB_BillsPC:
 	ldh [hCGBPalUpdate], a
 	ret
 
-.GotPalette:
-	call WipeAttrmap
-	hlcoord 1, 1, wAttrmap
-	lb bc, 7, 7
-	ld a, $1 ; mon palette
-	call FillBoxCGB
-	call InitPartyMenuOBPals
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
 BillsPCOrangePalette:
 INCLUDE "gfx/pc/orange.pal"
 
