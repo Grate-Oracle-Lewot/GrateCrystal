@@ -368,12 +368,6 @@ MrPokemonsHouse_OakText1:
 	line "ing my old friend"
 	cont "MR.#MON."
 
-	para "I heard you were"
-	line "running an errand"
-
-	para "for PROF.ELM, so I"
-	line "waited here."
-
 	para "Oh! What's this?"
 	line "A rare #MON!"
 
@@ -409,8 +403,11 @@ MrPokemonsHouse_OakText1:
 	para "#MON you've"
 	line "seen or caught."
 
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "This edition has"
+	line "advanced features"
+
+	para "designed by my"
+	line "colleague NAYRU!"
 	done
 
 MrPokemonsHouse_GetDexText:
