@@ -113,4 +113,5 @@ Music:
 	dba Music_SilphCo
 	dba Music_Route47
 	dba Music_KantoWildBattleNight
+	dba Music_Surfing
 	assert_table_length NUM_MUSIC_SONGS
