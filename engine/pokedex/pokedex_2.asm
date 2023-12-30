@@ -2911,40 +2911,40 @@ Fishing_Inc_Index:
 	inc hl ; need to skip extra byte for fishgrp bite rate
 	ret
 
-Dex_Check_BugContest:
-; all entries are unique, i.e. Caterpie wont be on the list twice
-; but theoretically could, if wanted different ranges to have different encounter rates
-; so we should check the rest of the table anyways in the main Contest function
-; ContestMons:
-;	encounter %, species,   min lvl, max lvl
-;	db 10, CATERPIE,    1, 20
-	ld hl, ContestMons
-.loop
-	push hl ; no map group/num in this table
-	inc hl ; skip enounter rate, now pointing to species
-	ld a, [wCurSpecies]
-	ld b, a
-	ld a, BANK(ContestMons)
-	call GetFarByte
-	cp b
-	jr z, .found
-	pop hl ; points to map group/num
-	ld a, [wPokedexStatus] ; increment how many entries we've checked so far
-	inc a
-	ld [wPokedexStatus], a
-	ld b, 0
-	ld c, 4 ; contest data length is not defined , unlike GRASS_WILDDATA_LENGTH etc, but it's 4 bytes
-	add hl, bc
-	; check to see if there is a next entry
-	ld a, BANK(ContestMons)
-	call GetFarByte ; hl is preserved
-	cp -1 ; we reched the end of the table without finding a species match
-	ret z
-	jr .loop
-.found
-	pop hl
-	xor a
-	ret
+;Dex_Check_BugContest:
+;; all entries are unique, i.e. Caterpie wont be on the list twice
+;; but theoretically could, if wanted different ranges to have different encounter rates
+;; so we should check the rest of the table anyways in the main Contest function
+;; ContestMons:
+;;	encounter %, species,   min lvl, max lvl
+;;	db 10, CATERPIE,    1, 20
+;	ld hl, ContestMons
+;.loop
+;	push hl ; no map group/num in this table
+;	inc hl ; skip enounter rate, now pointing to species
+;	ld a, [wCurSpecies]
+;	ld b, a
+;	ld a, BANK(ContestMons)
+;	call GetFarByte
+;	cp b
+;	jr z, .found
+;	pop hl ; points to map group/num
+;	ld a, [wPokedexStatus] ; increment how many entries we've checked so far
+;	inc a
+;	ld [wPokedexStatus], a
+;	ld b, 0
+;	ld c, 4 ; contest data length is not defined , unlike GRASS_WILDDATA_LENGTH etc, but it's 4 bytes
+;	add hl, bc
+;	; check to see if there is a next entry
+;	ld a, BANK(ContestMons)
+;	call GetFarByte ; hl is preserved
+;	cp -1 ; we reched the end of the table without finding a species match
+;	ret z
+;	jr .loop
+;.found
+;	pop hl
+;	xor a
+;	ret
 
 Dex_Check_TreesRocks:
 	xor a
