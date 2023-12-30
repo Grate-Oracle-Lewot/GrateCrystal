@@ -1195,7 +1195,7 @@ Pokedex_DetailedArea:
 	call Pokedex_DetailedArea_rocksmash
 	jr .skip_empty_area_check
 .contest
-	call Pokedex_DetailedArea_contest
+	call Pokedex_DetailedArea_bugcontest
 	jr .skip_empty_area_check
 .roaming
 	call Pokedex_DetailedArea_roaming
@@ -1248,7 +1248,7 @@ Dex_FindFirstList:
 	and a
 	jr z, .rocksmash
 
-	call Dex_Check_contest
+	call Dex_Check_bugcontest
 	and a
 	jr z, .contest
 
@@ -2553,39 +2553,126 @@ AnyRemaining_RockSmash:
 	ld a, 1
 	ret
 
-Dex_Check_BugContest:
-; all entries are unique, i.e. Caterpie wont be on the list twice
-; but theoretically could, if wanted different ranges to have different encounter rates
-; so we should check the rest of the table anyways in the main Contest function
-; ContestMons:
-	; encounter %, species,   min lvl, max lvl
-	; db 20, CATERPIE,    7, 18
+Dex_Check_bugcontest:
 	ld hl, ContestMons
+; ContestMons:
+; 	   %, species,   min, max
+; 	db 20, CATERPIE,    7, 18
+
+; given 'hl', point in ContestMons, check for any further matching mons
+; return zero in 'a' if found, else 1 in 'a'
 .loop
-	push hl ; no map group/num in this table
-	inc hl ; skip enounter rate, now pointing to species
-	ld a, [wCurSpecies]
-	ld b, a
 	ld a, BANK(ContestMons)
-	call GetFarByte
-	cp b
+	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
+	cp -1
+	jr z, .notfound
+	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	inc hl
+	ld a, BANK(ContestMons)
+	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
+	ld c, a ; pokemon species of entry in ContestMons
+	ld a, [wCurSpecies] ; current pokedex entry species
+	cp c
 	jr z, .found
-	pop hl ; points to map group/num
-	ld a, [wPokedexStatus] ; increment how many entries we've checked so far
-	inc a
-	ld [wPokedexStatus], a
-	ld b, 0
-	ld c, 4 ; contest data length is not defined , unlike GRASS_WILDDATA_LENGTH etc, but it's 4 bytes
-	add hl, bc
-	; check to see if there is a next entry
-	ld a, BANK(ContestMons)
-	call GetFarByte ; hl is preserved
-	cp -1 ; we reched the end of the table without finding a species match
-	ret z
+	; species didnt match, inc hl by 3, need to check for -1
+	inc hl
+	inc hl
+	inc hl
 	jr .loop
 .found
-	pop hl
 	xor a
+	ret
+.notfound
+	ld a, 1
+	ret
+
+Pokedex_DetailedArea_bugcontest:
+	call Dex_Check_bugcontest
+	and a
+	jp nz, Pokedex_Skip_Empty_Area_Category
+	
+	xor a
+	ld [wPokedexEvoStage2], a
+	ld [wPokedexEvoStage3], a
+
+	; print the title, BUG CONTEST
+	hlcoord 1, 9
+	ld de, .bugcontest_text
+	call PlaceString
+	hlcoord 1, 10
+	ld de, .park_text
+	call PlaceString
+
+	ld hl, ContestMons
+	ld e, 0
+.loop
+	ld a, BANK(ContestMons)
+	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
+	ld d, a ; encounter %
+	cp -1
+	jr z, .done
+	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	inc hl
+	ld a, BANK(ContestMons)
+	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
+	ld c, a ; pokemon species of entry in ContestMons
+	ld a, [wCurSpecies] ; current pokedex entry species
+	cp c
+	jr z, .found
+	; species didnt match, inc hl by 3, need to check for -1
+.continue
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+.found
+	; 'e' is the accumulated %, in case of multiple species entries
+	ld a, d
+	add e
+	ld e, a
+	jr .continue
+.done
+	; if 'e' is above zero, print
+	xor a
+	cp e
+	jr z, .donedone
+	call BugContest_Print
+.donedone
+	ld a, [wPokedexEntryType] ; bug
+	inc a
+	call DexEntry_NextCategory
+	ret
+.bugcontest_text:
+	db "BUG-CATCH CONTEST@"
+.park_text:
+	db "-NATIONAL PARK@"
+
+BugContest_Print:
+	ld b, e ; encounter %
+	hlcoord 3, 11 ; same position regardless
+	ld [hl], $65 ; day icon tile
+	ld de, 6
+	add hl, de
+	ld [hl], $6b ; day icon tile
+	add hl, de
+	ld [hl], $6c ; nite icon tile 
+	hlcoord 7, 11
+	ld [hl], "<%>"
+	ld de, 6
+	add hl, de
+	ld [hl], "<%>"
+	add hl, de
+	ld [hl], "<%>"
+	ld a, b ; encounter %
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	hlcoord 16, 11
+	lb bc, 1, 3
+	call PrintNum
+	hlcoord 10, 11
+	call PrintNum
+	hlcoord 4, 11
+	call PrintNum
 	ret
 
 Dex_Check_roaming:
