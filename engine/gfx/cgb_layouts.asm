@@ -517,6 +517,12 @@ CheckPokedexColor:
 
 .Gray
 	cp DEXCOLOR_GRAY
+	jr nz, .Mewtwo
+	ld a, PREDEFPAL_CGB_BADGE
+	ret
+
+.Mewtwo
+	cp DEXCOLOR_MEWTWO
 	jr nz, .Red
 	ld a, PREDEFPAL_CGB_BADGE
 	ret
