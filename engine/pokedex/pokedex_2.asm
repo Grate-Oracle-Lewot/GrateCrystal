@@ -1,25 +1,22 @@
 	const_def
-	const DEXENTRY_LORE             ;  0 ; bit 0, $1
-	const DEXENTRY_BASESTATS        ;  1 ; bit 1, $2
-	const DEXENTRY_LVLUP            ;  2 ; bit 2, $4
-	const DEXENTRY_FIELD            ;  3 ; bit 3, $8
-	const DEXENTRY_EGG              ;  4 ; bit 4, $10, 16
-	const DEXENTRY_TMS              ;  5 ; bit 5, $20, 32
-	const DEXENTRY_HMS              ;  6 ; bit 6, $40, 64
-	const DEXENTRY_MTS              ;  7 ; bit 7, $80, 128
-	const DEXENTRY_EVO              ;  8
-	const DEXENTRY_PICS             ;  9
-	const DEXENTRY_AREA_NONE	; 10
-	const DEXENTRY_AREA_GRASS_JOHTO ; 11
-	const DEXENTRY_AREA_GRASS_KANTO ; 12
-	const DEXENTRY_AREA_SURF_JOHTO  ; 13
-	const DEXENTRY_AREA_SURF_KANTO  ; 14
-	const DEXENTRY_AREA_TREES       ; 15
+	const DEXENTRY_LORE             ;  0
+	const DEXENTRY_BASESTATS        ;  1
+	const DEXENTRY_LVLUP            ;  2
+	const DEXENTRY_EGG              ;  3
+	const DEXENTRY_TMS              ;  4
+	const DEXENTRY_HMS              ;  5
+	const DEXENTRY_MTS              ;  6
+	const DEXENTRY_EVO              ;  7
+	const DEXENTRY_PICS             ;  8
+	const DEXENTRY_AREA_NONE	;  9
+	const DEXENTRY_AREA_GRASS_JOHTO ; 10
+	const DEXENTRY_AREA_GRASS_KANTO ; 11
+	const DEXENTRY_AREA_SURF_JOHTO  ; 12
+	const DEXENTRY_AREA_SURF_KANTO  ; 13
 	
 EXPORT DEXENTRY_LORE
 EXPORT DEXENTRY_BASESTATS
 EXPORT DEXENTRY_LVLUP
-EXPORT DEXENTRY_FIELD
 EXPORT DEXENTRY_EGG
 EXPORT DEXENTRY_TMS
 EXPORT DEXENTRY_HMS
@@ -33,10 +30,8 @@ EXPORT DEXENTRY_AREA_GRASS_KANTO
 EXPORT DEXENTRY_AREA_SURF_JOHTO
 EXPORT DEXENTRY_AREA_SURF_KANTO
 
-EXPORT DEXENTRY_AREA_TREES
 EXPORT DEXENTRY_AREA_NONE
 
-DEF NUM_FIELD_MOVES EQU 14 
 DEF MOVESPAGES_CONT_MASK EQU %00000011
 
 AnimateDexSearchSlowpoke:
@@ -518,19 +513,17 @@ DisplayDexMonMoves::
 	call Pokedex_Clearbox
 
 	; the byte flag that tells us which type of table we're currently on
-	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 = FIELD, 4 =  EGG, 5 = TMs, 6 = HMs, 7 = MTs
+	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 =  EGG, 4 = TMs, 5 = HMs, 6 = MTs
 	
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_LVLUP
 	jr z, .LvlUpLearnset
 	cp DEXENTRY_EGG
 	jr z, .EggMoves
-	cp DEXENTRY_FIELD
-	jr z, .Field_Moves
 	cp DEXENTRY_TMS
 	jr z, .TMs
-	bit DEXENTRY_HMS, a
-	jr nz, .HMs
+	cp DEXENTRY_HMS
+	jr z, .HMs
 	cp DEXENTRY_MTS
 	jr z, .MTs
 .LvlUpLearnset_new
@@ -548,12 +541,6 @@ DisplayDexMonMoves::
 	call Pokedex_Calc_EggMovesPtr
 	ret z
 	call Pokedex_Print_Egg_moves
-	ret
-.Field_Moves
-	ld a, DEXENTRY_FIELD
-	ld [wPokedexEntryType], a
-
-	call Pokedex_PrintFieldMoves
 	ret
 .TMs
 	ld a, DEXENTRY_TMS
@@ -656,233 +643,11 @@ Pokedex_Print_NextLvlMoves:
 	call DexEntry_IncPageNum
 	ret
 .FoundEnd
-	ld a, DEXENTRY_FIELD
+	ld a, DEXENTRY_EGG
 	call DexEntry_NextCategory
 	ret
 .lvl_moves_text:
 	db "LVL-UP MOVES@"
-
-Pokedex_PrintFieldMoves:
-; CheckLvlUpMoves, 1 for fail, 0 for yes, in c
-	hlcoord 2, 9
-	ld de, .Field_Moves_text
-	call PlaceString
-	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld a, [wPokedexStatus] ; machine moves index
-	ld b, a
-	ld c, 0 ; current line
-.fm_loop
-	push bc
-	ld c, b
-	ld b, 0
-	ld hl, Field_Moves_List
-	add hl, bc
-	ld a, [hl]
-	ld d, a
-	call Pokedex_CheckLvlUpMoves
-	ld a, c ; c has lvl we learn move
-	ld e, c
-	pop bc
-	and a
-	jr nz, .print_move_name
-.check_machines
-; check TM/HM
-	push bc
-	ld c, b 
-	ld b, 0
-	ld hl, Field_Moves_List
-	add hl, bc
-	ld a, [hl]
-	ld d, a
-	ld [wPutativeTMHMMove], a
-	farcall CanLearnTMHMMove
-	ld a, c
-	pop bc
-	and a
-	jr z, .notcompatible
-; check TM/HM done
-.print_move_name
-	push de
-	ld a, d
-	ld [wNamedObjectIndex], a
-	call GetMoveName
-	push bc ; our count is in c
-	hlcoord 7, 11
-	call DexEntry_adjusthlcoord
-	call PlaceString
-	pop bc
-; print TM/HM num
-	ld d, 0
-	ld e, b
-	ld hl, Field_Moves_Method_List
-	add hl, de
-	ld a, [hl]
-	pop de
-	and a
-	jr nz, .tm_or_hm
-.printlvlupmove	
-	push bc
-	hlcoord 3, 11
-	call DexEntry_adjusthlcoord
-	ld [hl], $5d ; <LVL>
-	inc hl
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	ld a, e
-	ld [wTextDecimalByte], a
-	ld de, wTextDecimalByte
-	call PrintNum
-	pop bc
-	jr .inc_line_count  
-.tm_or_hm
-	; a has the item id of the tm/hm/mt
-	push af
-	ld a, e ; lvl at which they learn move?
-	and a
-	jr nz, .BothLvlUpandTMHMMT
-	pop af
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	push bc
-	hlcoord 2, 11
-	call DexEntry_adjusthlcoord
-	call PlaceString
-	pop bc
-; print TM/HM num done
-.inc_line_count
-	inc c ; since we printed a line
-	ld a, $5
-	cp c
-	jr nz, .notcompatible ; not yet printed all 5 slots
-	; We've printed all 5 slots
-	; check if we need to move to next category or if there are moves left
-	call Pokedex_anymoreFieldMoves
-	jr z, .done ; there are no moves left
-	; moves left
-	call DexEntry_IncPageNum
-	ret
-.notcompatible
-	ld a, NUM_FIELD_MOVES - 1
-	cp b
-	jr z, .done
-	inc b
-	ld a, b
-	ld [wPokedexStatus], a ; moves machines index
-	jp .fm_loop
-.done
-	ld a, DEXENTRY_EGG
-	call DexEntry_NextCategory
-	ld a, c
-	and a
-	ret nz ; we've had at least one HM Move
-	hlcoord 4, 11
-	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
-.both_no_more_room
-	pop af
-	jr .inc_line_count	
-.BothLvlUpandTMHMMT
-	; we're print number regardless
-	push bc
-	push de
-	hlcoord 3, 11
-	call DexEntry_adjusthlcoord
-	ld [hl], $5d ; <LVL>
-	inc hl
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	ld a, e
-	ld [wTextDecimalByte], a
-	ld de, wTextDecimalByte
-	call PrintNum
-	pop de
-	pop bc
-
-	ld a, c
-	dec b ; so it will do dig again on next page
-	cp 4
-	jr z, .both_no_more_room ; we only have 1 space left, so prioritize lvl up
-	inc b ; we have room, so fix the field move counter
-	; print name again
-	inc c ; line counter
-	push bc
-	push de
-	ld a, d
-	ld [wNamedObjectIndex], a
-	call GetMoveName
-	; push bc ; our count is in c
-	hlcoord 7, 11
-	call DexEntry_adjusthlcoord
-	call PlaceString
-	pop de
-	pop bc
-
-	xor a ; so we dont get flagged as both again
-	ld e, a
-	pop af ; tm/hm/mt item id
-	jp .tm_or_hm
-	; a needs to be the TM/HM/MT item id	
-	; do not increment index, so it will print both on next page
-.Field_Moves_text:
-	db "FIELD MOVES@"
-
-Field_Moves_List:
-	db SOFTBOILED, MILK_DRINK, HEADBUTT, SWEET_SCENT, DIG, TELEPORT, CUT, FLY, SURF, STRENGTH, FLASH, WATERFALL, WHIRLPOOL, ROCK_SMASH
-Field_Moves_Method_List:
-	db 0, 0, TM01 + 1, TM01 + 11, TM01 + 27, TM01 + 57, HM01, HM01 + 1, HM01 + 2, HM01 + 3, HM01 + 4, HM01 + 5, HM01 + 6, HM01 + 7
-
-Pokedex_anymoreFieldMoves:
-	ld a, NUM_FIELD_MOVES - 1
-	cp b
-	jr z, .none	
-	; b has the current machine index
-	inc b
-.fmloop
-	push bc
-	ld d, 0
-	ld e, b 
-	ld hl, Field_Moves_List
-	add hl, de
-	ld a, [hl]
-	ld d, a
-
-	call Pokedex_CheckLvlUpMoves
-	ld a, c ; c has lvl we learn move
-	ld d, a ; to preserve it for later
-	pop bc
-	and a
-	jr nz, .yes
-	push bc
-	ld d, 0
-	ld e, b
-	ld hl, Field_Moves_Method_List
-	add hl, de
-	ld a, [hl]
-	and a
-	jr z, .not_tm_or_hm
-	ld [wCurItem], a
-	farcall GetTMHMItemMove
-	ld a, [wTempTMHM]	
-	ld [wPutativeTMHMMove], a
-	farcall CanLearnTMHMMove
-	ld a, c
-	pop bc
-	and a
-	jr nz, .yes
-.not_tm_or_hm
-	ld a, NUM_FIELD_MOVES - 1
-	cp b
-	jr z, .none
-	inc b
-	jr .fmloop	
-.yes
-	ld a, b
-	ld [wPokedexStatus], a ; so we can start off at the next learnable machine
-	ld a, 1
-	and a
-	ret
-.none
-	xor a
-	ret
 
 Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
 ; move looking for in 'd'
@@ -1366,9 +1131,6 @@ Pokedex_DetailedArea:
 	ld hl, KantoWaterWildMons
 	cp DEXENTRY_AREA_SURF_KANTO
 	jr z, .surf
-
-	cp DEXENTRY_AREA_TREES
-	jr z, .trees
 	
 	; loop back around as if we are arriving for the first time, creating a closed-loop rotation
 .first
@@ -1402,7 +1164,7 @@ Pokedex_DetailedArea:
 .surf
 	call Pokedex_DetailedArea_surf
 	jr .skip_empty_area_check
-.trees
+
 .skip_empty_area_check
 	cp -1 ; -1 means we skipped, 0 is normal
 	jp z, .checkpoint
@@ -1414,7 +1176,7 @@ Pokedex_DetailedArea:
 	db "NONE IN WILD@"
 
 Dex_FindFirstList:
-; grass, trees(+rocks), surf
+; grass, surf
 	ld hl, JohtoGrassWildMons
 	ld a, BANK(JohtoGrassWildMons)
 	call Dex_Check_Grass
@@ -1438,10 +1200,6 @@ Dex_FindFirstList:
 	and a
 	jr z, .surf_kanto
 
-	call Dex_Check_TreesRocks
-	and a
-	jr z, .treesrocks
-
 ; none found
 	ld a, DEXENTRY_AREA_NONE
 	ret
@@ -1456,9 +1214,6 @@ Dex_FindFirstList:
 	ret
 .surf_kanto
 	ld a, DEXENTRY_AREA_SURF_KANTO
-	ret
-.treesrocks
-	ld a, DEXENTRY_AREA_TREES
 	ret
 
 Print_area_entry:
@@ -2250,63 +2005,5 @@ Pokedex_LookCheck_surf:
 	ret
 .found
 	pop af
-	xor a
-	ret
-
-Dex_Check_TreesRocks:
-	xor a
-	ld [wStatsScreenFlags], a
-	ld hl, TreeMons
-	ld bc, 0 ; NUM_TREEMON_SETS
-.loop
-	push bc
-	push hl ; points to TreeMons + 2n
-	; skip map encounter rates
-	ld a, BANK(TreeMons)
-	call GetFarWord ; TreeMonSet_City, etc encounter %
-	inc hl ; now pointing to species
-.mini_loop
-	ld a, [wCurSpecies]
-	ld b, a
-	ld a, BANK(TreeMons)
-	call GetFarByte
-	cp b
-	jr z, .found_end_miniloop
-	inc hl
-	inc hl
-	ld a, BANK(TreeMons)
-	call GetFarByte
-	cp -1
-	jr z, .found_end_miniloop
-	inc hl
-	jr .mini_loop
-.found_end_miniloop
-	cp -1
-	jr nz, .found
-	ld a, [wStatsScreenFlags]
-	and a
-	jr nz, .rare_done
-	inc a
-	ld [wStatsScreenFlags], a
-	inc hl
-	inc hl
-	jr .mini_loop
-.rare_done
-	pop hl ; points to TreeMons + 2n
-	ld b, 0
-	ld c, 2 ; contest not defined, aka GRASS_WILDDATA_LENGTH
-	add hl, bc ; points to TreeMons + 2n
-	pop bc
-	inc c
-	ld a, NUM_TREEMON_SETS
-	cp c
-	ret z
-	ld a, [wPokedexStatus]
-	inc a
-	ld [wPokedexStatus], a
-	jr .loop
-.found
-	pop hl
-	pop bc
 	xor a
 	ret
