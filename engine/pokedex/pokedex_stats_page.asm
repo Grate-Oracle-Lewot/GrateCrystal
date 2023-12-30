@@ -449,16 +449,16 @@ Pokedex_PrintHatchSteps:
 
 Pokedex_HeightWeight:
 ; height string
-	hlcoord 3, 14
+	hlcoord 3, 11
 	ld de, .Height
 	call PlaceString
 
 ; weight string	
-	hlcoord 3, 15
+	hlcoord 3, 13
 	ld de, .Weight
 	call PlaceString
 ; lbs string
-	hlcoord 11, 15
+	hlcoord 11, 13
 	ld de, .Pounds
 	call PlaceString
 
@@ -487,7 +487,7 @@ Pokedex_HeightWeight:
 	ld [wPoisonStepCount + 1], a
 	ld de, wPoisonStepCount
 ; Print the height, with two of the four digits in front of the decimal point
-	hlcoord 7, 14
+	hlcoord 7, 11
 	lb bc, 2, (2 << 4) | 4
 	call PrintNum
 ; get weight
@@ -502,12 +502,12 @@ Pokedex_HeightWeight:
 	ld [wPoisonStepCount + 1], a
 	ld de, wPoisonStepCount
 ; Print the weight, with four of the five digits in front of the decimal point
-	hlcoord 5, 15
+	hlcoord 5, 13
 	lb bc, 2, (4 << 4) | 5
 	call PrintNum
 
 ; Replace the decimal point with a ft symbol
-	hlcoord 9, 14
+	hlcoord 9, 11
 	ld [hl], $5e
 	inc hl
 	inc hl
