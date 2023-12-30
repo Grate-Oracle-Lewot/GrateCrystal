@@ -491,24 +491,24 @@ DisplayDexMonStats::
 	jr z, .print_page3
 	jr .print_page4
 .print_page1
+	call Pokedex_HeightWeight ; 2 lines
+	xor a
+	ld [wPokedexEntryPageNum], a
+	jp DexEntry_IncPageNum
+.print_page2
 	call Pokedex_GBS_Stats ; 4 lines
 	call Pokedex_CatchRate ; 1 line
 	jp DexEntry_IncPageNum
-.print_page2
+.print_page3
 	call Pokedex_Get_Items ; 3 lines
 	call Pokedex_PrintBaseExp ; 1 line
 	call Pokedex_Get_Growth ; 1 lines
 	jp DexEntry_IncPageNum
-.print_page3
+.print_page4
 	; these ones NEED to be in this order
 	call Pokedex_EggG_SetUp ; 3 lines
 	call Pokedex_PrintHatchSteps ; 1 line
-	call Pokedex_Get_GenderRatio ; 1 line	
-	jp DexEntry_IncPageNum
-.print_page4
-	call Pokedex_HeightWeight ; 2 lines
-	xor a
-	ld [wPokedexEntryPageNum], a
+	call Pokedex_Get_GenderRatio ; 1 line
 	ret
 .Base_stats_text:
 	db "BASE STATS@"
