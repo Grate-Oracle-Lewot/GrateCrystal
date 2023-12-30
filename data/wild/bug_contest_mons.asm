@@ -1,4 +1,4 @@
-ContestMons:
+ContestMons::
 	;   %, species,   min, max
 	db 10, CATERPIE,    1, 20
 	db 10, WEEDLE,      1, 20
