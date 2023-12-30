@@ -301,10 +301,10 @@ DisplayDexMonType_CustomGFX:
 ; Skip Bird
 	cp BIRD
 	jr c, .type1_adjust_done
-	cp UNUSED_TYPES
+	cp UNUSED_TYPES - 1
 	dec a
 	jr c, .type1_adjust_done
-	sub UNUSED_TYPES
+	sub UNUSED_TYPES - 1
 .type1_adjust_done
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -339,10 +339,10 @@ DisplayDexMonType_CustomGFX:
 ; Skip Bird
 	cp BIRD
 	jr c, .type2_adjust_done
-	cp UNUSED_TYPES
+	cp UNUSED_TYPES - 1
 	dec a
 	jr c, .type2_adjust_done
-	sub UNUSED_TYPES
+	sub UNUSED_TYPES - 1
 .type2_adjust_done
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
@@ -391,6 +391,7 @@ DEX_PrintType_Short:
 	db "BUG@"
 	db "GST@"
 	db "STL@"
+	db "???@"
 	db "FIR@"
 	db "WTR@"
 	db "GRS@"
