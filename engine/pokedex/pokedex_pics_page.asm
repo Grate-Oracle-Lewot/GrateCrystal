@@ -221,10 +221,12 @@ Dex_Pics_DrawBorder:
 	call FillBoxWithByte
 
 	; print b > back
-	hlcoord 16, 16
-	ld de, .back_page_text
-	call PlaceString
+	ld b, SCGB_POKEDEX_PICS
+	call GetSGBLayout
+
+	ld de, Pokedex_ExtraTiles
+	ld hl, vTiles4 tile $67
+	lb bc, BANK(Pokedex_ExtraTiles)
+	call Request2bpp
 	call WaitBGMap
 	ret
-.back_page_text:
-	db $67, $68, $69, $6a, "@"
