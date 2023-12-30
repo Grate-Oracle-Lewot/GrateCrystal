@@ -147,6 +147,7 @@ INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/silphco.asm"
 INCLUDE "audio/music/route47.asm"
+INCLUDE "audio/music/surfing.asm"
 
 
 SECTION "Sound Effects", ROMX
