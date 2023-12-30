@@ -1689,7 +1689,7 @@ Pokedex_DetailedArea_grass:
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
 	ret
 .grass_walk_text:
-	db "GRASS/CAVE@"
+	db "GRASS/CAVES@"
 .johto_text:
 	db "JOHTO@"
 .kanto_text:
