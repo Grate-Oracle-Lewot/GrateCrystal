@@ -369,7 +369,6 @@ DisplayDexMonType_CustomGFX:
 
 DEX_PrintType_Short:
 ; Print type a at hl.
-	ld b,b
 	; shouldnt need to double index
 	push hl
 	ld hl, .Types
@@ -2322,10 +2321,9 @@ Pokedex_DetailedArea_rods:
 	; print the first rod, then check if we're odd, if not, inc Index and check
 	; again, check if we're odd, if we ARE, check and inc
 	push bc ; line counter, rod in b, maps in c
-	pop bc ; ; line counter, rod in b, maps in c
+	pop bc ; line counter, rod in b, maps in c
 	; push hl ; points to fishgroup, specific rod ptr
 	ld a, [wPokedexStatus] ; fish group starting at bit 3
-	; ld b, b
 
 	call Fishing_Print_Rod
 	push bc ; line counter, rod in b, maps in c, b has been inc'd
@@ -2334,7 +2332,6 @@ Pokedex_DetailedArea_rods:
 	ld [wPokedexEvoStage2], a
 	ld [wPokedexEvoStage3], a
 
-	; ld b, b
 	ld a, [wPokedexStatus] ; fish group starting at bit 3
 	and 3 ; rod type mask, first 2 bits
 	cp 3 ; did we just print an odd rod?
@@ -2342,7 +2339,7 @@ Pokedex_DetailedArea_rods:
 	cp 2 ; did we just print a super rod?
 	jr z, .super2odd ; we just printed a super rod, inc index and check, print if not 0
 	cp 1 ; did we just print a good rod?
-	jr z, .good2super ; we just printed a good rod, inc index and check, print if not 0
+	jr z, .good2super ; we just printed a good rod, inc index and check
 	; now we can assume we are an old rod
 	call Fishing_Inc_Index ; we are now indexed on the good rod
 	call Fishing_MonIndex_Addr
@@ -2351,7 +2348,6 @@ Pokedex_DetailedArea_rods:
 	jr z, .good2super ; since we're on the good rod, we still need to check the super rod entry	
 
 	ld a, [wPokedexStatus] ; fish group starting at bit 3
-	; ld b, b
 
 	pop bc ; line counter, rod in b, maps in c
 	call Fishing_Print_Rod
@@ -2360,7 +2356,7 @@ Pokedex_DetailedArea_rods:
 	xor a
 	ld [wPokedexEvoStage2], a
 	ld [wPokedexEvoStage3], a
-.good2super
+.super2odd
 	call Fishing_Inc_Index ; we are now indexed on the odd rod
 	call Fishing_MonIndex_Addr
 	call Check_this_rod
@@ -2368,7 +2364,6 @@ Pokedex_DetailedArea_rods:
 	jr z, .print_rods_done
 
 	ld a, [wPokedexStatus] ; fish group starting at bit 3
-	; ld b, b
 
 	pop bc ; line counter, rod in b, maps in c
 	call Fishing_Print_Rod
@@ -2377,8 +2372,26 @@ Pokedex_DetailedArea_rods:
 	xor a
 	ld [wPokedexEvoStage2], a
 	ld [wPokedexEvoStage3], a
-	; do we fall through to prep loop or skip directly to max print?
-	; should probably fall through, so double check we dont double inc
+	jr .print_rods_done
+
+.good2super
+	call Fishing_Inc_Index ; we are now indexed on the super rod
+	call Fishing_MonIndex_Addr
+	call Check_this_rod
+	and a
+	jr z, .super2odd
+
+	ld a, [wPokedexStatus] ; fish group starting at bit 3
+
+	pop bc ; line counter, rod in b, maps in c
+	call Fishing_Print_Rod
+	push bc ; line counter, rod in b, maps in c, now has been inc'd
+	; zero the cumulative bytes
+	xor a
+	ld [wPokedexEvoStage2], a
+	ld [wPokedexEvoStage3], a
+	jr .super2odd
+
 .print_rods_done
 	; pop hl ; points to fishgroup+rod table ; eventually get rid of the hl stack here?
 	; call Fishing_MonIndex_Addr ; eventually get rid of the hl stack here? 
@@ -2386,7 +2399,6 @@ Pokedex_DetailedArea_rods:
 	pop bc ; line counter, rod in b, maps in c
 
 	ld hl, FishGroups_Names
-	; ld b, b
 	push bc ; line counter, rod in b, maps in c
 	; call GetFarWord
 	ld a, [wPokedexStatus]
@@ -2446,7 +2458,6 @@ Pokedex_DetailedArea_rods:
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
 	ret
 .max_print
-	; ld b, b
 	call Fishing_MonIndex_Addr
 	call Rods_check_any_remaining ; if entries remaining for this species, will return 0
 	and a
@@ -2473,8 +2484,7 @@ Fishing_Print_Rod:
 	push bc ; b has rods printed, c is current maps printed
 	push de ; day (e) /nite (d) encounter rates
 
-; time of day icons	
-	; ld b, b
+; time of day icons
 	hlcoord 9, 10 ; same position regardless
 	call FishEntry_adjusthlcoord_rod ; current print line needs to be in c
 	ld [hl], $6b ; day icon tile
@@ -2536,7 +2546,6 @@ Fishing_Print_Rod:
 	ld c, 4
 	call DelayFrames
 	; call WaitBGMap
-	; ld b, b
 
 	pop bc ; line counter
 	inc b ; we've printed one rod
@@ -2683,7 +2692,6 @@ Check_Rods:
 Check_this_rod:
 ; day cumulative encounter %: ldh [hMultiplier], a
 ; nite cumulative encounter %: ldh [hMultiplicand],
-	; ld b, b
 	push hl
 	ld a, BANK(FishGroups)
 	call GetFarWord	
