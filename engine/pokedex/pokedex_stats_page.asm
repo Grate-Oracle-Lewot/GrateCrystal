@@ -407,17 +407,17 @@ Pokedex_Get_Growth::
 ; .BS_Growth_text:
 ; 	db "GROWTH RATE: @"
 .growth_Medfast:
-	db "Medium Fast@"
+	db "Med. Fast Growth@"
 .growth_slightfast
-	db "Slightly Fast@"
+	db "Bit Fast Growth@"
 .growth_slightslow
-	db "Slightly Slow@"
+	db "Bit Slow Growth@"
 .growth_medslow
-	db "Medium Slow@"
+	db "Med. Slow Growth@"
 .growth_fast
-	db "Fast@"
+	db "Fast Growth@"
 .growth_slow
-	db "Slow@"
+	db "Slow Growth@"
 
 Pokedex_PrintBaseExp:
 ; wBaseExp
