@@ -25,19 +25,6 @@ SetMenuMonIconColor:
 	ld hl, wVirtualOAMSprite00Attributes
 	jp _ApplyMenuMonIconColor
 
-SetMenuMonIconColor_NoShiny:
-	push hl
-	push de
-	push bc
-	push af
-
-	ld a, [wTempIconSpecies]
-	ld [wCurPartySpecies], a
-	and a
-	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wVirtualOAMSprite00Attributes
-	jp _ApplyMenuMonIconColor
-
 SetDexMonIconColor_NoShiny:
 	push hl
 	push de
