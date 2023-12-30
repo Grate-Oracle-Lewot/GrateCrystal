@@ -2,10 +2,10 @@
 	const DEXENTRY_LORE              ;  0
 	const DEXENTRY_BASESTATS         ;  1
 	const DEXENTRY_LVLUP             ;  2
-	const DEXENTRY_EGG               ;  3
-	const DEXENTRY_TMS               ;  4
-	const DEXENTRY_HMS               ;  5
-	const DEXENTRY_MTS               ;  6
+	const DEXENTRY_TMS               ;  3
+	const DEXENTRY_HMS               ;  4
+	const DEXENTRY_MTS               ;  5
+	const DEXENTRY_EGG               ;  6
 	const DEXENTRY_EVO               ;  7
 	const DEXENTRY_PICS              ;  8
 	const DEXENTRY_AREA_NONE	 ;  9
@@ -22,10 +22,10 @@
 EXPORT DEXENTRY_LORE
 EXPORT DEXENTRY_BASESTATS
 EXPORT DEXENTRY_LVLUP
-EXPORT DEXENTRY_EGG
 EXPORT DEXENTRY_TMS
 EXPORT DEXENTRY_HMS
 EXPORT DEXENTRY_MTS
+EXPORT DEXENTRY_EGG
 EXPORT DEXENTRY_EVO
 EXPORT DEXENTRY_PICS
 
@@ -503,13 +503,8 @@ DisplayDexMonStats::
 	call Pokedex_EggG_SetUp ; 3 lines
 	call Pokedex_PrintHatchSteps ; 1 line
 	call Pokedex_Get_GenderRatio ; 1 line	
-	; call Pokedex_HeightWeight ; 2 lines
-	; call Pokedex_Get_Items ; 3 lines
 	jp DexEntry_IncPageNum
 .print_page4
-	; call Pokedex_EggG_SetUp ; 3 lines
-	; call Pokedex_PrintHatchSteps ; 1 line
-	; call Pokedex_Get_GenderRatio ; 1 line
 	call Pokedex_HeightWeight ; 2 lines
 	xor a
 	ld [wPokedexEntryPageNum], a
@@ -524,19 +519,19 @@ DisplayDexMonMoves::
 	call Pokedex_Clearbox
 
 	; the byte flag that tells us which type of table we're currently on
-	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 =  EGG, 4 = TMs, 5 = HMs, 6 = MTs
+	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 =  TMs, 4 = HMs, 5 = MTs, 6 = EGG
 	
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_LVLUP
 	jr z, .LvlUpLearnset
-	cp DEXENTRY_EGG
-	jr z, .EggMoves
 	cp DEXENTRY_TMS
 	jr z, .TMs
 	cp DEXENTRY_HMS
 	jr z, .HMs
 	cp DEXENTRY_MTS
 	jr z, .MTs
+	cp DEXENTRY_EGG
+	jr z, .EggMoves
 .LvlUpLearnset_new
 	ld a, DEXENTRY_LVLUP
 	call DexEntry_NextCategory
@@ -545,13 +540,6 @@ DisplayDexMonMoves::
 	ld [wPokedexEntryType], a
 	call Pokedex_Calc_LvlMovesPtr
 	call Pokedex_Print_NextLvlMoves
-	ret
-.EggMoves
-	ld a, DEXENTRY_EGG
-	ld [wPokedexEntryType], a
-	call Pokedex_Calc_EggMovesPtr
-	ret z
-	call Pokedex_Print_Egg_moves
 	ret
 .TMs
 	ld a, DEXENTRY_TMS
@@ -567,6 +555,13 @@ DisplayDexMonMoves::
 	ld a, DEXENTRY_MTS
 	ld [wPokedexEntryType], a
 	call Pokedex_PrintMTs
+	ret
+.EggMoves
+	ld a, DEXENTRY_EGG
+	ld [wPokedexEntryType], a
+	call Pokedex_Calc_EggMovesPtr
+	ret z
+	call Pokedex_Print_Egg_moves
 	ret
 
 Pokedex_Calc_LvlMovesPtr:
@@ -654,7 +649,7 @@ Pokedex_Print_NextLvlMoves:
 	call DexEntry_IncPageNum
 	ret
 .FoundEnd
-	ld a, DEXENTRY_EGG
+	ld a, DEXENTRY_TMS
 	call DexEntry_NextCategory
 	ret
 .lvl_moves_text:
@@ -712,108 +707,6 @@ Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
 .notfound
 	xor a
 	ld c, a
-	ret
-
-Pokedex_Calc_EggMovesPtr:
-	ld a, DEXENTRY_EGG
-	ld [wPokedexEntryType], a
-	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld a, [wPokedexEntryPageNum]
-	ld c, 5 ; we can print 5 Egg moves per page
-	call SimpleMultiply ; double this num and add to first byte after Evo's 0
-	ld b, 0
-	ld c, a
-	push bc
-; Step 4: Get First byte of learnset
-	; push af ; preserve current species or else move sets will be messed up for stage2+ mons
-	callfar GetPreEvolution ; changes wCurPartyMon
-	callfar GetPreEvolution ; changes wCurPartyMon
-	ld a, [wCurPartySpecies]
-	dec a ; Bulbasaur is No 1 but entry ZERO
-	ld b, 0
-	ld c, a
-	ld hl, EggMovePointers
-	add hl, bc ; trying to add the species number in only 'a' will overflow a
-	add hl, bc ; add twice to double the index, words/PTRs are TWO bytes ea
-	; pop af ; preserve current species or else move sets will be messed up for stage2+ mons
-	ld a, [wCurSpecies]
-	ld [wCurPartySpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
-
-	ld a, BANK(EggMovePointers)
-	call GetFarWord
-.check_if_any
-	ld a, BANK("Egg Moves")
-	call GetFarByte
-	pop bc
-	add hl, bc
-	push af ; -1 if no egg moves
-	push hl
-	hlcoord 2, 9
-	ld de, .EggMoves_text
-	call PlaceString
-	pop hl
-	pop af
-	cp -1
-	ret nz
-	; if we reach here, the mon has no egg moves at all
-	; will not call Pokedex_Print_Egg_moves
-	; increment to next category
-	ld a, DEXENTRY_TMS
-	call DexEntry_NextCategory
-	;print NONE
-	hlcoord 3, 11
-	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
-.EggMoves_text:
-	db "EGG MOVES@"
-
-Pokedex_Print_Egg_moves:
-; Print No more than 5 moves
-	ld b, 0
-	ld c, 0 ; our move counter, max of 4 for 5 moves
-	; our adjusted pointer based on page num is in hl
-.Egg_loop
-	ld a, BANK("Egg Moves")
-	call GetFarByte ; EGG Move, or -1 for end
-	cp -1
-	jr z, .FoundEnd
-	inc hl ; Moves HL to next Byte
-	push hl
-	ld [wNamedObjectIndex], a ; all the "Name" Funcs use this 
-	call GetMoveName ; returns the string pointer in de
-	hlcoord 3, 11
-	call DexEntry_adjusthlcoord
-	push bc
-	call PlaceString ; places Move Name
-	pop bc
-	pop hl
-	ld a, $4 ; means we just printed 5th move
-	cp c
-	jr z, .MaxedPage
-	inc c
-	jr .Egg_loop
-.MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
-; CheckNextByte, we dont want blank screen if we just printed last move in slot 5
-	ld a, BANK("Egg Moves")
-	call GetFarByte; Move # returned in "a"
-	cp -1
-	jr z, .FoundEnd
-	call DexEntry_IncPageNum
-	ld a, [wCurPartySpecies]
-	ld [wCurSpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
-	ret
-.FoundEnd
-	ld a, DEXENTRY_TMS
-	call DexEntry_NextCategory
-	ld a, [wCurPartySpecies]
-	ld [wCurSpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
 	ret
 
 Pokedex_PrintTMs:
@@ -876,7 +769,6 @@ Pokedex_PrintTMs:
 	jr .tm_loop
 .done
 	ld a, DEXENTRY_HMS
-	ld a, DEXENTRY_MTS
 	call DexEntry_NextCategory
 	ld a, c
 	and a
@@ -921,97 +813,6 @@ Pokedex_anymoreTMs:
 .none
 	xor a
 	ld [wPokedexStatus], a
-	ret
-
-Pokedex_PrintMTs:
-	hlcoord 2, 9
-	ld de, .dex_MT_text
-	call PlaceString
-	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld a, [wPokedexStatus] ; moves machines index
-	ld b, a ; result of simple multiply in a
-	ld c, 0 ; current line
-.mt_loop
-	push bc
-	ld a, MT01
-	add b
-	ld [wCurItem], a
-	farcall GetTMHMItemMove
-	ld a, [wTempTMHM]
-	ld [wPutativeTMHMMove], a
-	farcall CanLearnTMHMMove
-	ld a, c
-	pop bc
-	and a
-	jr z, .notcompatible
-	call GetMoveName
-	push bc ; our count is in c
-	hlcoord 3, 11
-	call DexEntry_adjusthlcoord
-	call PlaceString
-	pop bc
-	inc c ; since we printed a line
-	ld a, $5
-	cp c
-	jr nz, .notcompatible
-	; We've printed all 5 slots
-	; check if we need to move to next category or if there are moves left
-	call Pokedex_anymoreMTs
-	jr z, .done ; there are no moves left
-	; moves left
-	call DexEntry_IncPageNum
-	ret
-.notcompatible
-	ld a, NUM_TUTORS - 1
-	cp b
-	jr z, .done
-	inc b
-	ld a, b
-	ld [wPokedexStatus], a ; moves machines index
-	jr .mt_loop
-.done
-	ld a, DEXENTRY_LVLUP
-	call DexEntry_NextCategory
-	ld a, c
-	and a
-	ret nz ; we've had at least one HM Move
-	hlcoord 4, 11
-	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
-.dex_MT_text:
-	db "MOVE TUTORS@"
-
-Pokedex_anymoreMTs:
-	ld a, NUM_TUTORS - 1
-	cp b
-	jr z, .none
-	; b has the current HM index
-	inc b
-.mtloop
-	push bc
-	ld a, MT01
-	add b
-	ld [wCurItem], a
-	farcall GetTMHMItemMove
-	ld a, [wTempTMHM]	
-	ld [wPutativeTMHMMove], a
-	farcall CanLearnTMHMMove
-	ld a, c
-	pop bc
-	and a
-	jr nz, .yes
-	ld a, NUM_TUTORS - 1
-	cp b
-	jr z, .none
-	inc b
-	jr .mtloop	
-.yes
-	ld a, 1
-	and a
-	ret
-.none
-	xor a
 	ret
 
 Pokedex_PrintHMs:
@@ -1109,6 +910,199 @@ Pokedex_anymoreHMs:
 .none
 	xor a
 	ld [wPokedexStatus], a
+	ret
+
+Pokedex_PrintMTs:
+	hlcoord 2, 9
+	ld de, .dex_MT_text
+	call PlaceString
+	call Pokedex_PrintPageNum ; page num is also returned in a
+	ld a, [wPokedexStatus] ; moves machines index
+	ld b, a ; result of simple multiply in a
+	ld c, 0 ; current line
+.mt_loop
+	push bc
+	ld a, MT01
+	add b
+	ld [wCurItem], a
+	farcall GetTMHMItemMove
+	ld a, [wTempTMHM]
+	ld [wPutativeTMHMMove], a
+	farcall CanLearnTMHMMove
+	ld a, c
+	pop bc
+	and a
+	jr z, .notcompatible
+	call GetMoveName
+	push bc ; our count is in c
+	hlcoord 3, 11
+	call DexEntry_adjusthlcoord
+	call PlaceString
+	pop bc
+	inc c ; since we printed a line
+	ld a, $5
+	cp c
+	jr nz, .notcompatible
+	; We've printed all 5 slots
+	; check if we need to move to next category or if there are moves left
+	call Pokedex_anymoreMTs
+	jr z, .done ; there are no moves left
+	; moves left
+	call DexEntry_IncPageNum
+	ret
+.notcompatible
+	ld a, NUM_TUTORS - 1
+	cp b
+	jr z, .done
+	inc b
+	ld a, b
+	ld [wPokedexStatus], a ; moves machines index
+	jr .mt_loop
+.done
+	ld a, DEXENTRY_EGG
+	call DexEntry_NextCategory
+	ld a, c
+	and a
+	ret nz ; we've had at least one HM Move
+	hlcoord 4, 11
+	ld de, DexEntry_NONE_text
+	call PlaceString
+	ret
+.dex_MT_text:
+	db "MOVE TUTORS@"
+
+Pokedex_anymoreMTs:
+	ld a, NUM_TUTORS - 1
+	cp b
+	jr z, .none
+	; b has the current HM index
+	inc b
+.mtloop
+	push bc
+	ld a, MT01
+	add b
+	ld [wCurItem], a
+	farcall GetTMHMItemMove
+	ld a, [wTempTMHM]	
+	ld [wPutativeTMHMMove], a
+	farcall CanLearnTMHMMove
+	ld a, c
+	pop bc
+	and a
+	jr nz, .yes
+	ld a, NUM_TUTORS - 1
+	cp b
+	jr z, .none
+	inc b
+	jr .mtloop	
+.yes
+	ld a, 1
+	and a
+	ret
+.none
+	xor a
+	ret
+
+Pokedex_Calc_EggMovesPtr:
+	ld a, DEXENTRY_EGG
+	ld [wPokedexEntryType], a
+	call Pokedex_PrintPageNum ; page num is also returned in a
+	ld a, [wPokedexEntryPageNum]
+	ld c, 5 ; we can print 5 Egg moves per page
+	call SimpleMultiply ; double this num and add to first byte after Evo's 0
+	ld b, 0
+	ld c, a
+	push bc
+; Step 4: Get First byte of learnset
+	; push af ; preserve current species or else move sets will be messed up for stage2+ mons
+	callfar GetPreEvolution ; changes wCurPartyMon
+	callfar GetPreEvolution ; changes wCurPartyMon
+	ld a, [wCurPartySpecies]
+	dec a ; Bulbasaur is No 1 but entry ZERO
+	ld b, 0
+	ld c, a
+	ld hl, EggMovePointers
+	add hl, bc ; trying to add the species number in only 'a' will overflow a
+	add hl, bc ; add twice to double the index, words/PTRs are TWO bytes ea
+	; pop af ; preserve current species or else move sets will be messed up for stage2+ mons
+	ld a, [wCurSpecies]
+	ld [wCurPartySpecies], a
+	ld [wTempSpecies], a
+	ld [wTempMonSpecies], a
+
+	ld a, BANK(EggMovePointers)
+	call GetFarWord
+.check_if_any
+	ld a, BANK("Egg Moves")
+	call GetFarByte
+	pop bc
+	add hl, bc
+	push af ; -1 if no egg moves
+	push hl
+	hlcoord 2, 9
+	ld de, .EggMoves_text
+	call PlaceString
+	pop hl
+	pop af
+	cp -1
+	ret nz
+	; if we reach here, the mon has no egg moves at all
+	; will not call Pokedex_Print_Egg_moves
+	; increment to next category
+	ld a, DEXENTRY_LVLUP
+	call DexEntry_NextCategory
+	; print NONE
+	hlcoord 3, 11
+	ld de, DexEntry_NONE_text
+	call PlaceString
+	ret
+.EggMoves_text:
+	db "EGG MOVES@"
+
+Pokedex_Print_Egg_moves:
+; Print No more than 5 moves
+	ld b, 0
+	ld c, 0 ; our move counter, max of 4 for 5 moves
+	; our adjusted pointer based on page num is in hl
+.Egg_loop
+	ld a, BANK("Egg Moves")
+	call GetFarByte ; EGG Move, or -1 for end
+	cp -1
+	jr z, .FoundEnd
+	inc hl ; Moves HL to next Byte
+	push hl
+	ld [wNamedObjectIndex], a ; all the "Name" Funcs use this 
+	call GetMoveName ; returns the string pointer in de
+	hlcoord 3, 11
+	call DexEntry_adjusthlcoord
+	push bc
+	call PlaceString ; places Move Name
+	pop bc
+	pop hl
+	ld a, $4 ; means we just printed 5th move
+	cp c
+	jr z, .MaxedPage
+	inc c
+	jr .Egg_loop
+.MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
+; CheckNextByte, we dont want blank screen if we just printed last move in slot 5
+	ld a, BANK("Egg Moves")
+	call GetFarByte; Move # returned in "a"
+	cp -1
+	jr z, .FoundEnd
+	call DexEntry_IncPageNum
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	ld [wTempSpecies], a
+	ld [wTempMonSpecies], a
+	ret
+.FoundEnd
+	ld a, DEXENTRY_LVLUP
+	call DexEntry_NextCategory
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	ld [wTempSpecies], a
+	ld [wTempMonSpecies], a
 	ret
 
 Pokedex_DetailedArea:
