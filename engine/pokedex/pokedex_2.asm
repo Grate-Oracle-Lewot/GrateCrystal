@@ -1460,9 +1460,9 @@ Dex_FindFirstList:
 	and a
 	jr z, .treesrocks
 
-	call Dex_Check_BugContest
-	and a
-	jr z, .contest
+;	call Dex_Check_BugContest
+;	and a
+;	jr z, .contest
 
 ; none found
 	ld a, DEXENTRY_AREA_NONE
@@ -1485,9 +1485,9 @@ Dex_FindFirstList:
 .treesrocks
 	ld a, DEXENTRY_AREA_TREES
 	ret
-.contest
-	ld a, DEXENTRY_AREA_CONTEST
-	ret
+;.contest
+;	ld a, DEXENTRY_AREA_CONTEST
+;	ret
 
 Print_area_entry:
 ; morn, day, nite, space, map name
