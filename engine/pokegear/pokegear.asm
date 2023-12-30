@@ -73,16 +73,6 @@ PokeGear:
 .InitTilemap:
 	call ClearBGPalettes
 	call ClearTilemap
-; time of day icons
-	push af
-	xor a
-	ldh [hBGMapMode], a
-	ld de, Pokedex_ExtraTiles tile $f
-	ld hl, vTiles2 tile $63
-	lb bc, BANK(Pokedex_ExtraTiles), 3 ; tiles
-	call Request2bpp
-	pop af
-	ldh [hBGMapMode], a
 
 	call ClearSprites
 	call DisableLCD
