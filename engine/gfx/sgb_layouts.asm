@@ -28,6 +28,8 @@ SGBLayoutJumptable:
 	dw .SGB_PokegearPals
 	dw .SGB_StatsScreenHPPals
 	dw .SGB_Pokedex
+	dw .SGB_Pokedex_EvoPage
+	dw .SGB_Pokedex_PicsPage
 	dw .SGB_SlotMachine
 	dw .SGB_BetaTitleScreen
 	dw .SGB_GSIntro
@@ -36,7 +38,6 @@ SGBLayoutJumptable:
 	dw .SGB_PartyMenu
 	dw .SGB_Evolution
 	dw .SGB_GSTitleScreen
-	dw .SGB_Unused0D
 	dw .SGB_MoveList
 	dw .SGB_BetaPikachuMinigame
 	dw .SGB_PokedexSearchOption
@@ -54,7 +55,6 @@ SGBLayoutJumptable:
 	dw .SGB_TradeTube
 	dw .SGB_TrainerOrMonFrontpicPals
 	dw .SGB_MysteryGift
-	dw .SGB_Unused1E
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
@@ -224,6 +224,10 @@ SGBLayoutJumptable:
 	ld [wSGBPals + 12], a
 	ld hl, wSGBPals
 	ld de, BlkPacket_Pokedex_PC
+	ret
+
+.SGB_Pokedex_EvoPage:
+.SGB_Pokedex_PicsPage:
 	ret
 
 .SGB_BillsPC:
@@ -400,7 +404,6 @@ endr
 	ld de, BlkPacket_AllPal0
 	ret
 
-.SGB_Unused0D:
 .SGB_TrainerCard:
 .SGB_TrainerCardKanto:
 	ld hl, PalPacket_Diploma
@@ -439,38 +442,6 @@ endr
 	ld [hl], a
 	ld hl, wSGBPals
 	ld de, wSGBPals + PALPACKET_LENGTH
-	ret
-
-.SGB_Unused1E:
-	ld hl, PalPacket_Pal01
-	ld de, wSGBPals
-	ld bc, PALPACKET_LENGTH
-	call CopyBytes
-	ld a, [wCurPartySpecies]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld de, PokemonPalettes
-	add hl, de
-	ld a, [wUnusedSGB1eColorOffset]
-	and 3
-	sla a
-	sla a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hli]
-	ld [wSGBPals + 3], a
-	ld a, [hli]
-	ld [wSGBPals + 4], a
-	ld a, [hli]
-	ld [wSGBPals + 5], a
-	ld a, [hl]
-	ld [wSGBPals + 6], a
-	ld hl, wSGBPals
-	ld de, BlkPacket_AllPal0
 	ret
 
 .SGB_GamefreakLogo:
