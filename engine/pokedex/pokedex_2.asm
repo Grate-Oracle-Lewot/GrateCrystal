@@ -16,7 +16,8 @@
 	const DEXENTRY_AREA_TREES_COMMON ; 14
 	const DEXENTRY_AREA_TREES_RARE   ; 15
 	const DEXENTRY_AREA_ROCKSMASH    ; 16
-	const DEXENTRY_AREA_ROAMING      ; 17
+	const DEXENTRY_AREA_CONTEST      ; 17
+	const DEXENTRY_AREA_ROAMING      ; 18
 	
 EXPORT DEXENTRY_LORE
 EXPORT DEXENTRY_BASESTATS
@@ -37,6 +38,7 @@ EXPORT DEXENTRY_AREA_SURF_KANTO
 EXPORT DEXENTRY_AREA_TREES_COMMON
 EXPORT DEXENTRY_AREA_TREES_RARE
 EXPORT DEXENTRY_AREA_ROCKSMASH
+EXPORT DEXENTRY_AREA_CONTEST
 EXPORT DEXENTRY_AREA_ROAMING
 
 EXPORT DEXENTRY_AREA_NONE
@@ -1148,6 +1150,9 @@ Pokedex_DetailedArea:
 	cp DEXENTRY_AREA_ROCKSMASH
 	jr z, .rocksmash
 
+	cp DEXENTRY_AREA_CONTEST
+	jr z, .contest
+
 	cp DEXENTRY_AREA_ROAMING
 	jr z, .roaming
 
@@ -1189,6 +1194,9 @@ Pokedex_DetailedArea:
 .rocksmash
 	call Pokedex_DetailedArea_rocksmash
 	jr .skip_empty_area_check
+.contest
+	call Pokedex_DetailedArea_contest
+	jr .skip_empty_area_check
 .roaming
 	call Pokedex_DetailedArea_roaming
 	; fallthrough
@@ -1204,7 +1212,7 @@ Pokedex_DetailedArea:
 	db "NONE IN WILD@"
 
 Dex_FindFirstList:
-; grass, surf, trees(+rocks), roaming
+; grass, surf, trees(+rocks), contest, roaming
 	ld hl, JohtoGrassWildMons
 	ld a, BANK(JohtoGrassWildMons)
 	call Dex_Check_Grass
@@ -1240,6 +1248,10 @@ Dex_FindFirstList:
 	and a
 	jr z, .rocksmash
 
+	call Dex_Check_contest
+	and a
+	jr z, .contest
+
 	call Dex_Check_roaming
 	and a
 	jr z, .roaming
@@ -1267,6 +1279,9 @@ Dex_FindFirstList:
 	ret
 .rocksmash
 	ld a, DEXENTRY_AREA_ROCKSMASH
+	ret
+.contest
+	ld a, DEXENTRY_AREA_CONTEST
 	ret
 .roaming
 	ld a, DEXENTRY_AREA_ROAMING
@@ -2536,6 +2551,41 @@ AnyRemaining_RockSmash:
 	jr .map_loop
 .notfound
 	ld a, 1
+	ret
+
+Dex_Check_BugContest:
+; all entries are unique, i.e. Caterpie wont be on the list twice
+; but theoretically could, if wanted different ranges to have different encounter rates
+; so we should check the rest of the table anyways in the main Contest function
+; ContestMons:
+	; encounter %, species,   min lvl, max lvl
+	; db 20, CATERPIE,    7, 18
+	ld hl, ContestMons
+.loop
+	push hl ; no map group/num in this table
+	inc hl ; skip enounter rate, now pointing to species
+	ld a, [wCurSpecies]
+	ld b, a
+	ld a, BANK(ContestMons)
+	call GetFarByte
+	cp b
+	jr z, .found
+	pop hl ; points to map group/num
+	ld a, [wPokedexStatus] ; increment how many entries we've checked so far
+	inc a
+	ld [wPokedexStatus], a
+	ld b, 0
+	ld c, 4 ; contest data length is not defined , unlike GRASS_WILDDATA_LENGTH etc, but it's 4 bytes
+	add hl, bc
+	; check to see if there is a next entry
+	ld a, BANK(ContestMons)
+	call GetFarByte ; hl is preserved
+	cp -1 ; we reched the end of the table without finding a species match
+	ret z
+	jr .loop
+.found
+	pop hl
+	xor a
 	ret
 
 Dex_Check_roaming:
