@@ -702,6 +702,12 @@ INCLUDE "engine/events/squirtbottle.asm" ; 14
 
 SECTION "DEX GFX 2", ROMX
 
+PokedexLZ:
+INCBIN "gfx/pokedex/pokedex.2bpp.lz"
+
+PokedexSlowpokeLZ:
+INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+
 Pokedex_ExtraTiles:
 INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
 
