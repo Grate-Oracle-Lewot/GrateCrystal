@@ -309,7 +309,7 @@ DisplayDexMonType_CustomGFX:
 	sub UNUSED_TYPES
 	jr .type1_adjust_done
 .type1_handle_curse
-	ld a, 18
+	ld a, 17
 .type1_adjust_done
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -340,7 +340,7 @@ DisplayDexMonType_CustomGFX:
 	ld b, a
 	ld a, [wBaseType2]
 	cp b
-	ret z
+	jr z, .check_floatmon
 	cp CURSE_TYPE
 	jr z, .type2_handle_curse
 ; Skip Bird
@@ -352,7 +352,7 @@ DisplayDexMonType_CustomGFX:
 	sub UNUSED_TYPES
 	jr .type2_adjust_done
 .type2_handle_curse
-	ld a, 18
+	ld a, 17
 .type2_adjust_done
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
@@ -377,40 +377,15 @@ DisplayDexMonType_CustomGFX:
 	ld [hl], $7e
 	ld a, $0
 	ldh [rVBK], a
+
+.check_floatmon
+	ld a, [wCurSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	ret nc
+	hlcoord 17, 6
+	ld [hl], $b6
 	ret
-
-DEX_PrintType_Short:
-; Print type a at hl.
-	; shouldnt need to double index
-	push hl
-	ld hl, .Types
-	ld bc, 4 ; since each entry is 4 bytes
-	call AddNTimes
-	ld d, h
-	ld e, l
-	pop hl
-	jp PlaceString
-
-.Types
-	db "NRM@"
-	db "FIT@"
-	db "FLY@"
-	db "PSN@"
-	db "GRD@"
-	db "RCK@"
-	db "BUG@"
-	db "GST@"
-	db "STL@"
-	db "???@"
-	db "FIR@"
-	db "WTR@"
-	db "GRS@"
-	db "ELC@"
-	db "PSY@"
-	db "ICE@"
-	db "DRG@"
-	db "DRK@"
-	db "FAR@"
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
 INCLUDE "engine/pokedex/pokedex_evolution_page.asm"
