@@ -482,7 +482,7 @@ CheckPokedexColor:
 .Purple
 	cp DEXCOLOR_PURPLE
 	jr nz, .Brown
-	ld a, PREDEFPAL_RB_PURPLEMON
+	ld a, PREDEFPAL_47
 	ret
 
 .Brown
@@ -524,7 +524,7 @@ CheckPokedexColor:
 .Mewtwo
 	cp DEXCOLOR_MEWTWO
 	jr nz, .Red
-	ld a, PREDEFPAL_SHINY_MEWMON
+	ld a, PREDEFPAL_RB_PURPLEMON
 	ret
 
 .Red
