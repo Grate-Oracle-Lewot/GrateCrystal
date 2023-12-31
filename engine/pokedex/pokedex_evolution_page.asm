@@ -630,8 +630,6 @@ EVO_adjust_type_index:
 	cp BIRD
 	jr c, .done
 	cp UNUSED_TYPES
-	jr z, .done ; CURSE_TYPE
-	dec a
 	jr c, .done
 	sub UNUSED_TYPES
 .done
