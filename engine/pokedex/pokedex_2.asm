@@ -302,6 +302,7 @@ DisplayDexMonType_CustomGFX:
 	cp BIRD
 	jr c, .type1_adjust_done
 	cp UNUSED_TYPES
+	dec a
 	jr c, .type1_adjust_done
 	sub UNUSED_TYPES
 .type1_adjust_done
@@ -339,6 +340,7 @@ DisplayDexMonType_CustomGFX:
 	cp BIRD
 	jr c, .type2_adjust_done
 	cp UNUSED_TYPES
+	dec a
 	jr c, .type2_adjust_done
 	sub UNUSED_TYPES
 .type2_adjust_done
