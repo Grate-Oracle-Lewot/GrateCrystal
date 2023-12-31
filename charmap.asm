@@ -164,6 +164,7 @@
 	charmap "=",         $bc
 	charmap "+",         $bd
 	charmap "<%>",       $be
+	charmap "<FLOAT>",   $bf ; floatmon arrow
 
 	charmap "Ä",         $c0
 	charmap "Ö",         $c1
