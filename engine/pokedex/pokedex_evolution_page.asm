@@ -626,6 +626,8 @@ EVO_type2_gethlcoord:
 
 EVO_adjust_type_index:
 	ld a, c
+	cp CURSE_TYPE
+	jr z, .handle_curse
 ; Skip Bird
 	cp BIRD
 	jr c, .done
@@ -634,6 +636,11 @@ EVO_adjust_type_index:
 	jr c, .done
 	sub UNUSED_TYPES
 .done
+	ld c, a
+	ret
+
+.handle_curse
+	ld a, FAIRY + 1
 	ld c, a
 	ret
 
