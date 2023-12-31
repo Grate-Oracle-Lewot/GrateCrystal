@@ -1344,7 +1344,7 @@ TypeIconPals:
 ; FAIRY
 	RGB 31, 20, 29
 ; CURSE_TYPE
-	RGB 13, 19, 19
+;	RGB 13, 19, 19
 
 LoadPokemonPalette:
 	ld a, [wCurPartySpecies]
