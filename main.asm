@@ -714,6 +714,9 @@ INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
 Pokedex_PageNumTiles:
 INCBIN "gfx/pokedex/dex_pagenums.2bpp"
 
+PokedexPicsKey:
+INCBIN "gfx/pokedex/slowpoke.2bpp"
+
 
 SECTION "Map GroupNums Names", ROMX
 
