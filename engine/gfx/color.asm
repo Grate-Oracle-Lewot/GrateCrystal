@@ -1325,8 +1325,6 @@ TypeIconPals:
 	RGB 15, 11, 18
 ; STEEL
 	RGB 23, 23, 25
-; CURSE_TYPE
-	RGB 13, 19, 19
 ; FIRE
 	RGB 31, 15, 04
 ; WATER
@@ -1345,6 +1343,8 @@ TypeIconPals:
 	RGB 15, 11, 09
 ; FAIRY
 	RGB 31, 20, 29
+; CURSE_TYPE
+	RGB 13, 19, 19
 
 LoadPokemonPalette:
 	ld a, [wCurPartySpecies]
