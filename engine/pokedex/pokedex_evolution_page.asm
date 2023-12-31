@@ -630,6 +630,7 @@ EVO_adjust_type_index:
 	cp BIRD
 	jr c, .done
 	cp UNUSED_TYPES
+	dec a
 	jr c, .done
 	sub UNUSED_TYPES
 .done
