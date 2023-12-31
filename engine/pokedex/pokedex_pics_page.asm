@@ -219,14 +219,4 @@ Dex_Pics_DrawBorder:
 	lb bc, 9, 1
 	ld a, $7f
 	call FillBoxWithByte
-
-	; print b > back
-	ld b, SCGB_POKEDEX_PICS
-	call GetSGBLayout
-
-	ld de, Pokedex_ExtraTiles
-	ld hl, vTiles4 tile $67
-	lb bc, BANK(Pokedex_ExtraTiles)
-	call Request2bpp
-	call WaitBGMap
 	ret
