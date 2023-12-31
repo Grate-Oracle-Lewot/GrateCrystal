@@ -298,6 +298,8 @@ endr
 DisplayDexMonType_CustomGFX:
 	call GetBaseData
 	ld a, [wBaseType1]
+	cp CURSE_TYPE
+	jr z, .type1_handle_curse
 ; Skip Bird
 	cp BIRD
 	jr c, .type1_adjust_done
@@ -305,6 +307,9 @@ DisplayDexMonType_CustomGFX:
 	dec a
 	jr c, .type1_adjust_done
 	sub UNUSED_TYPES
+	jr .type1_adjust_done
+.type1_handle_curse
+	ld a, FAIRY + 1
 .type1_adjust_done
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -336,6 +341,8 @@ DisplayDexMonType_CustomGFX:
 	ld a, [wBaseType2]
 	cp b
 	ret z
+	cp CURSE_TYPE
+	jr z, .type2_handle_curse
 ; Skip Bird
 	cp BIRD
 	jr c, .type2_adjust_done
@@ -343,6 +350,9 @@ DisplayDexMonType_CustomGFX:
 	dec a
 	jr c, .type2_adjust_done
 	sub UNUSED_TYPES
+	jr .type2_adjust_done
+.type2_handle_curse
+	ld a, FAIRY + 1
 .type2_adjust_done
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
