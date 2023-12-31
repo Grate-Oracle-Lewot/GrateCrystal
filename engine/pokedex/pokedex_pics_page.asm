@@ -223,4 +223,19 @@ Dex_Pics_DrawBorder:
 	lb bc, 9, 1
 	ld a, $7f
 	call FillBoxWithByte
+
+	; select > color
+	hlcoord 14, 15
+	ld de, .select_color_text
+	call PlaceString
+	; b > back
+	hlcoord 16, 16
+	ld de, .b_back_text
+	call PlaceString
+	call WaitBGMap
 	ret
+.select_color_text:
+	db $c9, $ca, $cb, $cc, $cd, $ce, "@"
+.b_back_text:
+	db $db, $dc, $de, $df, "@"
+
