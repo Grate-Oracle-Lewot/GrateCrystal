@@ -7,6 +7,8 @@ Pokedex_PlaceAnimatedFrontpic:
 	farcall Pokedex_GetSelectedMon
 	call GetBaseData
 	ld hl, wTempMonDVs
+	predef GetPikachuForm
+	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	ld bc, wTempSpecies
 	call SetPalettes
@@ -99,6 +101,8 @@ Pokedex_PlaceBackPic:
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
 	call GetBaseData
+	ld hl, wTempMonDVs
+	predef GetPikachuForm
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	ld de, vTiles0 tile $80
