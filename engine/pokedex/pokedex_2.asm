@@ -384,7 +384,7 @@ DisplayDexMonType_CustomGFX:
 	call IsInByteArray
 	ret nc
 	hlcoord 17, 6
-	ld [hl], $bf
+	ld [hl], "<FLOAT>"
 	ret
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
