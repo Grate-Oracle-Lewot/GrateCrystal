@@ -219,4 +219,13 @@ Dex_Pics_DrawBorder:
 	lb bc, 9, 1
 	ld a, $7f
 	call FillBoxWithByte
+
+	; print b > back
+	hlcoord 16, 16
+	ld de, .back_page_text
+	call PlaceString
+	call WaitBGMap
+	ret
+.back_page_text:
+	db $9e, $9f, $a0, $a1, "@"
 	ret
