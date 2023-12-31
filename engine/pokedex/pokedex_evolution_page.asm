@@ -634,6 +634,7 @@ EVO_adjust_type_index:
 	dec a
 	jr c, .done
 	sub UNUSED_TYPES
+	add 1
 .done
 	ld c, a
 	ret
