@@ -640,7 +640,7 @@ EVO_adjust_type_index:
 	ret
 
 .handle_curse
-	ld a, FAIRY + 1
+	ld a, 18
 	ld c, a
 	ret
 
