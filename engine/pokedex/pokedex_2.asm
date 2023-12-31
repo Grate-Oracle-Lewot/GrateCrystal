@@ -309,7 +309,7 @@ DisplayDexMonType_CustomGFX:
 	sub UNUSED_TYPES
 	jr .type1_adjust_done
 .type1_handle_curse
-	ld a, FAIRY + 1
+	ld a, 18
 .type1_adjust_done
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -352,7 +352,7 @@ DisplayDexMonType_CustomGFX:
 	sub UNUSED_TYPES
 	jr .type2_adjust_done
 .type2_handle_curse
-	ld a, FAIRY + 1
+	ld a, 18
 .type2_adjust_done
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
