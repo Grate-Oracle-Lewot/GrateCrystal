@@ -301,10 +301,11 @@ DisplayDexMonType_CustomGFX:
 ; Skip Bird
 	cp BIRD
 	jr c, .type1_adjust_done
-	cp UNUSED_TYPES - 1
+	cp UNUSED_TYPES
+	jr z, .type1_adjust_done ; CURSE_TYPE
 	dec a
 	jr c, .type1_adjust_done
-	sub UNUSED_TYPES - 1
+	sub UNUSED_TYPES
 .type1_adjust_done
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -339,10 +340,11 @@ DisplayDexMonType_CustomGFX:
 ; Skip Bird
 	cp BIRD
 	jr c, .type2_adjust_done
-	cp UNUSED_TYPES - 1
+	cp UNUSED_TYPES
+	jr z, .type2_adjust_done ; CURSE_TYPE
 	dec a
 	jr c, .type2_adjust_done
-	sub UNUSED_TYPES - 1
+	sub UNUSED_TYPES
 .type2_adjust_done
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
