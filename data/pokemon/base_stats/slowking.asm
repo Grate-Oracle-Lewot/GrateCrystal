@@ -8,9 +8,9 @@
 	db 164 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/slowking/front.dimensions"
-	db GROWTH_SLIGHTLY_FAST ; growth rate
+	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 
 	; tm/hm learnset
