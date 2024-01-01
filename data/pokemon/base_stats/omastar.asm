@@ -8,7 +8,7 @@
 	db 199 ; base exp
 	db HARD_STONE, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
-	db 30 ; step cycles to hatch
+	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/omastar/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_WATER_3 ; egg groups
