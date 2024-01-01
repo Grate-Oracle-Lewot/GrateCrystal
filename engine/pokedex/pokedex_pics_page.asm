@@ -6,10 +6,10 @@ Pokedex_PlaceAnimatedFrontpic:
 	ld [wCurPartySpecies], a
 	farcall Pokedex_GetSelectedMon
 	call GetBaseData
-	ld hl, wTempMonDVs
-	predef GetPikachuForm
-	ld hl, wTempMonDVs
-	predef GetUnownLetter
+	ld a, PIKACHU_CRYSTAL
+	ld [wPikachuForm], a
+	ld a, wFirstUnownSeen
+	ld [wUnownLetter], a
 	ld bc, wTempSpecies
 	call SetPalettes
 	call .AnimateMon
@@ -101,10 +101,10 @@ Pokedex_PlaceBackPic:
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
 	call GetBaseData
-	ld hl, wTempMonDVs
-	predef GetPikachuForm
-	ld hl, wTempMonDVs
-	predef GetUnownLetter
+	ld a, PIKACHU_CRYSTAL
+	ld [wPikachuForm], a
+	ld a, wFirstUnownSeen
+	ld [wUnownLetter], a
 	ld de, vTiles0 tile $80
 	predef GetMonBackpic
 	ld a, $80
