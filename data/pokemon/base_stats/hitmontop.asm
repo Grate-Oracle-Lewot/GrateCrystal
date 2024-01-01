@@ -8,7 +8,7 @@
 	db 138 ; base exp
 	db FOCUS_BAND, BLACKBELT_I ; items
 	db GENDER_F12_5 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hitmontop/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_FAIRY ; egg groups
