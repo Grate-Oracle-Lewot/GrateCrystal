@@ -8,7 +8,7 @@
 	db 138 ; base exp
 	db ENERGYPOWDER, SILVERPOWDER ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/venomoth/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_WATER_3 ; egg groups
