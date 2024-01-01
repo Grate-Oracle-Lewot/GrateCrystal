@@ -8,7 +8,7 @@
 	db 163 ; base exp
 	db SOFT_SAND, BERRY ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/sandslash/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
