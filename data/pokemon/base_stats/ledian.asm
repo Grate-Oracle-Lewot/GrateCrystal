@@ -8,7 +8,7 @@
 	db 142 ; base exp
 	db STARDUST, STAR_PIECE ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ledian/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_BUG, EGG_FAIRY ; egg groups
