@@ -5,7 +5,7 @@
 
 	db FIGHTING, FIGHTING ; type
 	db 45 ; catch rate
-	db 140 ; base exp
+	db 142 ; base exp
 	db TM_DYNAMICPUNCH, BLACKBELT_I ; items
 	db GENDER_F12_5 ; gender ratio
 	db 13 ; step cycles to hatch
