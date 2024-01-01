@@ -8,7 +8,7 @@
 	db 180 ; base exp
 	db UP_GRADE, UP_GRADE ; items
 	db GENDER_UNKNOWN ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/porygon2/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_INDETERMINATE ; egg groups
