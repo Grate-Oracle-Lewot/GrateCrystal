@@ -8,7 +8,7 @@
 	db 196 ; base exp
 	db METAL_COAT, NUGGET ; items
 	db GENDER_F50 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/steelix/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_DRAGON ; egg groups
