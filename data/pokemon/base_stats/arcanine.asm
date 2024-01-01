@@ -8,7 +8,7 @@
 	db 213 ; base exp
 	db THICK_CLUB, FIRE_STONE ; items
 	db GENDER_F25 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/arcanine/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_GROUND, EGG_MONSTER ; egg groups
