@@ -173,7 +173,7 @@
 	charmap "ö",         $c4
 	charmap "ü",         $c5
 
-; $c9 through $ce: "SELECT > COLOR" used for Pokedex pics page
+; $c9 through $ce: "SELECT > COLOR", used for Pokedex pics page
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1
@@ -183,7 +183,7 @@
 	charmap "'t",        $d5
 	charmap "'v",        $d6
 
-; $db through $df: "B > BACK" used for Pokedex pics page
+; $db through $de: "B > BACK", used for Pokedex pics page
 
 	charmap "←",         $df
 	charmap "'",         $e0
