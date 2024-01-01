@@ -8,7 +8,7 @@
 	db 171 ; base exp
 	db TM_PSYCH_UP, TM_PSYCHIC_M ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/xatu/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FAIRY ; egg groups
