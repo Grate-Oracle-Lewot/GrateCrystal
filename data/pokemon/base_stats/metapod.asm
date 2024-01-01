@@ -8,7 +8,7 @@
 	db 72 ; base exp
 	db X_DEFEND, IRON ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/metapod/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
