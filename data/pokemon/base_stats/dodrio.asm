@@ -5,10 +5,10 @@
 
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
-	db 158 ; base exp
+	db 159 ; base exp
 	db EXP_SHARE, TRIDENT ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dodrio/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_GROUND ; egg groups
