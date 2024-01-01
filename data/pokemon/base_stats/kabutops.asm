@@ -8,7 +8,7 @@
 	db 201 ; base exp
 	db QUICK_CLAW, KINGS_ROCK ; items
 	db GENDER_F12_5 ; gender ratio
-	db 30 ; step cycles to hatch
+	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kabutops/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_WATER_3 ; egg groups
