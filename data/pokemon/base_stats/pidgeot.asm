@@ -8,7 +8,7 @@
 	db 172 ; base exp
 	db TM_RETURN, TM_SWIFT ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pidgeot/front.dimensions"
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_FLYING, EGG_GROUND ; egg groups
