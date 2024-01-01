@@ -8,7 +8,7 @@
 	db 210 ; base exp
 	db HARD_STONE, METAL_COAT ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/rhydon/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
