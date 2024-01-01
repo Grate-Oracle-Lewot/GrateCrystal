@@ -8,7 +8,7 @@
 	db 210 ; base exp
 	db GOLD_BERRY, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/feraligatr/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
