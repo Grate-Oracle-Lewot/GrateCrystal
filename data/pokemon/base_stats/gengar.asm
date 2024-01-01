@@ -8,7 +8,7 @@
 	db 190 ; base exp
 	db MAX_REVIVE, MOON_STONE ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/gengar/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_INDETERMINATE, EGG_HUMANSHAPE ; egg groups
