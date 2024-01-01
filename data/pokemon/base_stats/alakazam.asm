@@ -8,7 +8,7 @@
 	db 186 ; base exp
 	db TWISTEDSPOON, MOON_STONE ; items
 	db GENDER_F25 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/alakazam/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_HUMANSHAPE, EGG_FAIRY ; egg groups
