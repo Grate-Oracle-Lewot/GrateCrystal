@@ -8,7 +8,7 @@
 	db 150 ; base exp
 	db ULTRA_BALL, POKE_BALL ; items
 	db GENDER_UNKNOWN ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/electrode/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_GROUND ; egg groups
