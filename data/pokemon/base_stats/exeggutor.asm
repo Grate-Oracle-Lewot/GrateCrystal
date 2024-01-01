@@ -8,7 +8,7 @@
 	db 212 ; base exp
 	db BERRY, LUCKY_EGG ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/exeggutor/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_PLANT, EGG_DRAGON ; egg groups
