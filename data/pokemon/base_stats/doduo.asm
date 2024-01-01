@@ -8,7 +8,7 @@
 	db 96 ; base exp
 	db SHARP_BEAK, EXP_SHARE ; items
 	db GENDER_F50 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/doduo/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_GROUND ; egg groups
