@@ -5,10 +5,10 @@
 
 	db WATER, POISON ; type
 	db 42 ; catch rate
-	db 210 ; base exp
+	db 201 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/turbin/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_WATER_3, EGG_MINERAL ; egg groups
