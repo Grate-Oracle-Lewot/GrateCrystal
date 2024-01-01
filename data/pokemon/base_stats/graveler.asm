@@ -8,7 +8,7 @@
 	db 134 ; base exp
 	db EVERSTONE, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/graveler/front.dimensions"
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_MINERAL, EGG_HUMANSHAPE ; egg groups
