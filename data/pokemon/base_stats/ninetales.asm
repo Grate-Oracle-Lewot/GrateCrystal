@@ -8,7 +8,7 @@
 	db 178 ; base exp
 	db BURNT_BERRY, FIRE_STONE ; items
 	db GENDER_F75 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ninetales/front.dimensions"
 	db GROWTH_SLIGHTLY_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
