@@ -8,7 +8,7 @@
 	db 118 ; base exp
 	db IRON, BRICK_PIECE ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/forretress/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_MINERAL ; egg groups
