@@ -8,7 +8,7 @@
 	db 194 ; base exp
 	db PRZCUREBERRY, DRAGON_FANG ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ampharos/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
