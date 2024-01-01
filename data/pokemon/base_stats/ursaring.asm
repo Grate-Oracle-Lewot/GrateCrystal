@@ -8,7 +8,7 @@
 	db 200 ; base exp
 	db BERRY, LEFTOVERS ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ursaring/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_HUMANSHAPE ; egg groups
