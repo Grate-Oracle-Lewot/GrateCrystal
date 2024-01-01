@@ -8,7 +8,7 @@
 	db 176 ; base exp
 	db MIRACLEBERRY, MIRACLE_SEED ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jumpluff/front.dimensions"
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_FAIRY, EGG_PLANT ; egg groups
