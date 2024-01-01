@@ -8,7 +8,7 @@
 	db 137 ; base exp
 	db LIMBO_STICK, SOFT_SAND ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/quagsire/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_GROUND ; egg groups
