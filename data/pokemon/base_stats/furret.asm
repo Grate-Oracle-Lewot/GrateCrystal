@@ -8,7 +8,7 @@
 	db 116 ; base exp
 	db BERRY, GOLD_BERRY ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/furret/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
