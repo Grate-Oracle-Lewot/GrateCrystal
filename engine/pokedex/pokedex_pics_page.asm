@@ -8,7 +8,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	call GetBaseData
 	ld a, PIKACHU_CRYSTAL
 	ld [wPikachuForm], a
-	ld a, wFirstUnownSeen
+	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
 	ld bc, wTempSpecies
 	call SetPalettes
@@ -103,7 +103,7 @@ Pokedex_PlaceBackPic:
 	call GetBaseData
 	ld a, PIKACHU_CRYSTAL
 	ld [wPikachuForm], a
-	ld a, wFirstUnownSeen
+	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
 	ld de, vTiles0 tile $80
 	predef GetMonBackpic
