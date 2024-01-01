@@ -276,8 +276,8 @@ GreatBallDesc:
 	next "cent success rate.@"
 
 PokeBallDesc:
-	db   "An item for catch-"
-	next "ing #MON.@"
+	db   "Throw at a #-"
+	next "MON to catch it.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
