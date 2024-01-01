@@ -8,7 +8,7 @@
 	db 156 ; base exp
 	db ENERGYPOWDER, BRIGHTPOWDER ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lanturn/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_WATER_2, EGG_WATER_1 ; egg groups
