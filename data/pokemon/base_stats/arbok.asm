@@ -8,7 +8,7 @@
 	db 147 ; base exp
 	db ANTIDOTE, LUCKY_EGG ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/arbok/front.dimensions"
 	db GROWTH_SLIGHTLY_FAST ; growth rate
 	dn EGG_GROUND, EGG_DRAGON ; egg groups
