@@ -8,7 +8,7 @@
 	db 185 ; base exp
 	db WATER_STONE, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/poliwrath/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_WATER_1, EGG_INDETERMINATE ; egg groups
