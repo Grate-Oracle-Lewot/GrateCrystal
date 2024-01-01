@@ -8,7 +8,7 @@
 	db 192 ; base exp
 	db POLKADOT_BOW, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/rapidash/front.dimensions"
 	db GROWTH_SLIGHTLY_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
