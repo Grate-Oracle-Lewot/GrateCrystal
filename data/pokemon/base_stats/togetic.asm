@@ -8,7 +8,7 @@
 	db 167 ; base exp
 	db MAX_REVIVE, PP_UP ; items
 	db GENDER_F12_5 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/togetic/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_FLYING, EGG_FAIRY ; egg groups
