@@ -8,7 +8,7 @@
 	db 162 ; base exp
 	db NOISEMAKER, TM_DREAM_EATER ; items
 	db GENDER_F50 ; gender ratio
-	db 15 ; step cycles to hatch
+	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/noctowl/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FAIRY ; egg groups
