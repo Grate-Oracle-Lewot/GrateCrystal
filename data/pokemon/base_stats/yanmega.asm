@@ -8,7 +8,7 @@
 	db 198 ; base exp
 	db SILVERPOWDER, BRIGHTPOWDER ; items
 	db GENDER_F50 ; gender ratio
-	db 21 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/yanmega/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_DRAGON ; egg groups
