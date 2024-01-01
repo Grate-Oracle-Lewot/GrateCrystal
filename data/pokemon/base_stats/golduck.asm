@@ -8,7 +8,7 @@
 	db 174 ; base exp
 	db TM_PSYCHIC_M, FRESH_WATER ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/golduck/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_FLYING ; egg groups
