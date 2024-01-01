@@ -8,7 +8,7 @@
 	db 157 ; base exp
 	db BIG_MUSHROOM, NUGGET ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/muk/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_INDETERMINATE, EGG_MINERAL ; egg groups
