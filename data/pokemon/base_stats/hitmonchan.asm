@@ -8,7 +8,7 @@
 	db 140 ; base exp
 	db TM_DYNAMICPUNCH, BLACKBELT_I ; items
 	db GENDER_F12_5 ; gender ratio
-	db 25 ; step cycles to hatch
+	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hitmonchan/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_FAIRY ; egg groups
