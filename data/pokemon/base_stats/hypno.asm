@@ -8,7 +8,7 @@
 	db 165 ; base exp
 	db MINT_BERRY, TM_DREAM_EATER ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hypno/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_GROUND ; egg groups
