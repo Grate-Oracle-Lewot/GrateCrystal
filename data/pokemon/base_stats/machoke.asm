@@ -8,7 +8,7 @@
 	db 146 ; base exp
 	db BLACKBELT_I, X_ATTACK ; items
 	db GENDER_F25 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/machoke/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_HUMANSHAPE, EGG_GROUND ; egg groups
