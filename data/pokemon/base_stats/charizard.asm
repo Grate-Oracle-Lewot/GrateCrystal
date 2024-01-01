@@ -5,7 +5,7 @@
 
 	db FIRE, FLYING ; type
 	db 45 ; catch rate
-	db 209 ; base exp
+	db 210 ; base exp
 	db GOLD_BERRY, CHARCOAL ; items
 	db GENDER_F12_5 ; gender ratio
 	db 11 ; step cycles to hatch
