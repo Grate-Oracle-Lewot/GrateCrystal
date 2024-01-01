@@ -10,7 +10,7 @@
 	db GENDER_F50 ; gender ratio
 	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/slowpoke/front.dimensions"
-	db GROWTH_SLIGHTLY_FAST ; growth rate
+	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 
 	; tm/hm learnset
