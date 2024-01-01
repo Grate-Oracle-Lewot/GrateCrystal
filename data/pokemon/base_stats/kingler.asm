@@ -8,7 +8,7 @@
 	db 206 ; base exp
 	db PROTEIN, PEARL ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kingler/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_3, EGG_BUG ; egg groups
