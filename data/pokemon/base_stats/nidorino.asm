@@ -8,7 +8,7 @@
 	db 118 ; base exp
 	db POISON_BARB, MOON_STONE ; items
 	db GENDER_F0 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/nidorino/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
