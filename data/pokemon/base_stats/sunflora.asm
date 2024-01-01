@@ -8,7 +8,7 @@
 	db 156 ; base exp
 	db SUN_STONE, TM_SUNNY_DAY ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/sunflora/front.dimensions"
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
 	dn EGG_PLANT, EGG_FAIRY ; egg groups
