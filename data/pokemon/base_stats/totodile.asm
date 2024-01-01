@@ -5,7 +5,7 @@
 
 	db WATER, WATER ; type
 	db 45 ; catch rate
-	db 66 ; base exp
+	db 65 ; base exp
 	db GOLD_BERRY, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
 	db 11 ; step cycles to hatch
