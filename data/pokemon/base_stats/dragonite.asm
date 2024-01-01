@@ -8,7 +8,7 @@
 	db 218 ; base exp
 	db DRAGON_FANG, DRAGON_SCALE ; items
 	db GENDER_F50 ; gender ratio
-	db 40 ; step cycles to hatch
+	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dragonite/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_1, EGG_DRAGON ; egg groups
