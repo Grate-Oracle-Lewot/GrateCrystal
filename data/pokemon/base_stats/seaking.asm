@@ -8,7 +8,7 @@
 	db 170 ; base exp
 	db FRESH_WATER, MYSTIC_WATER ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/seaking/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_2, EGG_WATER_1 ; egg groups
