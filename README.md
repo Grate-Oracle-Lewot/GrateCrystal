@@ -55,7 +55,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit
   - Unown and Delibird learn multiple moves
-  - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther (but breeding chains are untested)
+  - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther
   - All non-legendary Pokémon can be obtained prior to the Pokémon League
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
