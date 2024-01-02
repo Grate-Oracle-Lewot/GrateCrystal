@@ -8,7 +8,7 @@
 	db 183 ; base exp
 	db BIG_MUSHROOM, TINYMUSHROOM ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/piloswine/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_GROUND, EGG_MONSTER ; egg groups
