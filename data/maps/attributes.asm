@@ -440,11 +440,7 @@ ENDM
 	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $19, 0
 	map_attributes IcePathB2FBlackthornSide, ICE_PATH_B2F_BLACKTHORN_SIDE, $19, 0
 	map_attributes IcePathB3F, ICE_PATH_B3F, $19, 0
-	map_attributes WhirlIslandNW, WHIRL_ISLAND_NW, $09, 0
-	map_attributes WhirlIslandNE, WHIRL_ISLAND_NE, $09, 0
-	map_attributes WhirlIslandSW, WHIRL_ISLAND_SW, $09, 0
-	map_attributes WhirlIslandCave, WHIRL_ISLAND_CAVE, $09, 0
-	map_attributes WhirlIslandSE, WHIRL_ISLAND_SE, $0f, 0
+	map_attributes WhirlIsland1F, WHIRL_ISLAND_1F, $09, 0
 	map_attributes WhirlIslandB1F, WHIRL_ISLAND_B1F, $09, 0
 	map_attributes WhirlIslandB2F, WHIRL_ISLAND_B2F, $2e, 0
 	map_attributes WhirlIslandLugiaChamber, WHIRL_ISLAND_LUGIA_CHAMBER, $0f, 0
