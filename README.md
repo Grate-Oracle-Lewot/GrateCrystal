@@ -324,7 +324,7 @@ Tom Wang - male player running frames
 
 Seasick/Mauve Sea - female player running frames, Mary sprites
 
-Bronzeswagger - original Hail weather icon
+Bronzeswagger - Hail weather icon (before I edited it)
 
 Mmmmmmmmmmmmmmmmm - Route 47 theme demix
 
