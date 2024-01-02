@@ -2748,7 +2748,7 @@ Dex_Print_Roamer_Info:
 	call PlaceFarString
 	pop bc ; current print line in c
 
-	;print roamer's lvl	
+	; print roamer's lvl	
 	ld a, [wPokedexEvoStage2]
 	cp 100
 	jr nz, .two_digits
