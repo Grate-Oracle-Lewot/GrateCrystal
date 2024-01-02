@@ -126,7 +126,7 @@ ENDM
 	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
 	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ; 64
 	map_const ICE_PATH_B3F,                                10,  9 ; 65
-	map_const WHIRL_ISLAND_1F,                             20, 18 ; 66
+	map_const WHIRL_ISLAND_1F,                             20, 28 ; 66
 	map_const WHIRL_ISLAND_B1F,                            20, 18 ; 67
 	map_const WHIRL_ISLAND_B2F,                            10, 18 ; 68
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ; 69
