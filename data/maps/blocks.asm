@@ -530,20 +530,8 @@ IcePathB2FBlackthornSide_Blocks:
 IcePathB3F_Blocks:
 	INCBIN "maps/IcePathB3F.blk"
 
-WhirlIslandNW_Blocks:
-	INCBIN "maps/WhirlIslandNW.blk"
-
-WhirlIslandNE_Blocks:
-	INCBIN "maps/WhirlIslandNE.blk"
-
-WhirlIslandSW_Blocks:
-	INCBIN "maps/WhirlIslandSW.blk"
-
-WhirlIslandCave_Blocks:
-	INCBIN "maps/WhirlIslandCave.blk"
-
-WhirlIslandSE_Blocks:
-	INCBIN "maps/WhirlIslandSE.blk"
+WhirlIsland1F_Blocks:
+	INCBIN "maps/WhirlIsland1F.blk"
 
 WhirlIslandB1F_Blocks:
 	INCBIN "maps/WhirlIslandB1F.blk"
