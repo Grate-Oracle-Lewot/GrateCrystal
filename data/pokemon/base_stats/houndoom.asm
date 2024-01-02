@@ -8,7 +8,7 @@
 	db 204 ; base exp
 	db THICK_CLUB, BLACKGLASSES ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/houndoom/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_GROUND, EGG_MONSTER ; egg groups
