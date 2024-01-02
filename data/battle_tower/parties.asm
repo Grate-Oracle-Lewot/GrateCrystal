@@ -1941,7 +1941,7 @@ BattleTowerMons:
 	db MIRACLEBERRY
 	db SURF, PSYCHIC_M, EARTHQUAKE, BLIZZARD
 	dw 0 ; OT ID
-	dt 63970 ; Exp
+	dt 80000 ; Exp
 	; Stat exp
 	bigdw 45000
 	bigdw 50000
@@ -2386,7 +2386,7 @@ BattleTowerMons:
 	db MINT_BERRY
 	db REST, SLUDGE_BOMB, PSYCHIC_M, AMNESIA
 	dw 0 ; OT ID
-	dt 118720 ; Exp
+	dt 156250 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 40000
