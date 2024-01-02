@@ -342,10 +342,10 @@ Route41_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 12, 17, WHIRL_ISLAND_NW, 1
-	warp_event 36, 19, WHIRL_ISLAND_NE, 1
-	warp_event 12, 37, WHIRL_ISLAND_SW, 1
-	warp_event 36, 45, WHIRL_ISLAND_SE, 1
+	warp_event 12, 17, WHIRL_ISLAND_1F, 1
+	warp_event 36, 19, WHIRL_ISLAND_1F, 5
+	warp_event 12, 37, WHIRL_ISLAND_1F, 8
+	warp_event 36, 45, WHIRL_ISLAND_1F, 13
 
 	def_coord_events
 
