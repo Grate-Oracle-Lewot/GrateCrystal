@@ -102,6 +102,7 @@ FuchsiaCity_Blocks:
 Route38_Blocks:
 	INCBIN "maps/Route38.blk"
 
+OlivineTimsHouse_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
