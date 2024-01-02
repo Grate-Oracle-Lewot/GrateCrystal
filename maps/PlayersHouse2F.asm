@@ -47,7 +47,7 @@ PlayersHouseRadioScript:
 	giveitem DISCO_BALL
 	giveitem FLOATIE
 	giveitem EGG_BEATER
-	warp KURTS_HOUSE, 12, 19
+	warp ROUTE_41, 12, 19
 	end
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
