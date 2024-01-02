@@ -204,7 +204,8 @@ Ecruteak_Map_Names: ; ECRUTEAK
 	dw Ecruteak_Map_Name5 ; DANCE_THEATRE
 	dw Ecruteak_Map_Name6 ; ECRUTEAK_MART
 	dw Ecruteak_Map_Name7 ; ECRUTEAK_GYM
-	dw Ecruteak_Map_Name8 ; ECRUTEAK_CITY
+	dw Ecruteak_Map_Name8 ; ECRUTEAK_ITEMFINDER_HOUSE
+	dw Ecruteak_Map_Name9 ; ECRUTEAK_CITY
 	assert_table_length NUM_ECRUTEAK_MAPS
 
 Blackthorn_Map_Names: ; BLACKTHORN
@@ -825,7 +826,7 @@ Dungeons_Map_Name106: ; SILPH_CO_11F
 	db "SILPH CO. 11F@"
 
 Ecruteak_Map_Name1: ; ECRUTEAK_TIN_TOWER_ENTRANCE
-	db "BELLCHIME TRAIL@"
+	db "BELLCHIME SHRINE@"
 Ecruteak_Map_Name2: ; WISE_TRIOS_ROOM
 	db "BELLCHIME SHRINE@"
 Ecruteak_Map_Name3: ; ECRUTEAK_POKECENTER_1F
@@ -838,7 +839,9 @@ Ecruteak_Map_Name6: ; ECRUTEAK_MART
 	db "ECRUTEAK ", $70, $71, "MART@"
 Ecruteak_Map_Name7: ; ECRUTEAK_GYM
 	db "ECRUTEAK GYM@"
-Ecruteak_Map_Name8: ; ECRUTEAK_CITY
+Ecruteak_Map_Name8: ; ECRUTEAK_ITEMFINDER_HOUSE
+	db "ECRUTEAK HOUSE@"
+Ecruteak_Map_Name9: ; ECRUTEAK_CITY
 	db "ECRUTEAK CITY@"
 
 Blackthorn_Map_Name1: ; BLACKTHORN_GYM_1F
