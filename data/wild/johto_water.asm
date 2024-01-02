@@ -82,7 +82,7 @@ JohtoWaterWildMons:
 	db 20, GOLBAT
 	end_water_wildmons
 
-	def_water_wildmons WHIRL_ISLAND_SW
+	def_water_wildmons WHIRL_ISLAND_1F
 	db 4 percent ; encounter rate
 	db 20, TENTACOOL
 	db 15, HORSEA
