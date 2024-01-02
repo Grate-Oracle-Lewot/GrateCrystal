@@ -8,7 +8,7 @@
 	db 92 ; base exp
 	db EVERSTONE, PINK_BOW ; items
 	db GENDER_F12_5 ; gender ratio
-	db 18 ; step cycles to hatch
+	db 19 ; step cycles to hatch
 	INCBIN "gfx/pokemon/eevee/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
