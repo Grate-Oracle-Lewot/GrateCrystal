@@ -1190,7 +1190,7 @@ Silver_Map_Name2: ; SILVER_CAVE_OUTSIDE
 Silver_Map_Name3: ; SILVER_CAVE_POKECENTER_1F
 	db "SILVER ", $E1, $E2, "CENTER@"
 Silver_Map_Name4: ; ROUTE_28_STEEL_WING_HOUSE
-	db "ROUTE 28 CABIN@"
+	db "ROUTE 28 HOUSE@"
 
 Cable_Club_Map_Name1: ; POKECENTER_2F
 	db $E1, $E2, " CENTER 2F@"
@@ -1308,7 +1308,7 @@ Viridian_Map_Name8: ; VIRIDIAN_MART
 Viridian_Map_Name9: ; VIRIDIAN_POKECENTER_1F
 	db "VIRIDIAN ", $E1, $E2, "CENTER@"
 Viridian_Map_Name10: ; ROUTE_2_NUGGET_HOUSE
-	db "ROUTE 2 CABIN@"
+	db "ROUTE 2 HOUSE@"
 Viridian_Map_Name11: ; ROUTE_2_NORTH_GATE
 	db "ROUTE 2 GATE N@"
 Viridian_Map_Name12: ; ROUTE_2_SOUTH_GATE
@@ -1343,7 +1343,7 @@ New_Bark_Map_Name10: ; ROUTE_26_HEAL_HOUSE
 New_Bark_Map_Name11: ; DAY_OF_WEEK_SIBLINGS_HOUSE
 	db "DAY SIBLINGS'@"
 New_Bark_Map_Name12: ; ROUTE_27_SANDSTORM_HOUSE
-	db "ROUTE 27 CABIN@"
+	db "ROUTE 27 HOUSE@"
 New_Bark_Map_Name13: ; ROUTE_29_ROUTE_46_GATE
 	db "ROUTE 29 GATE@"
 
@@ -1374,7 +1374,7 @@ Saffron_Map_Name12: ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
 Saffron_Map_Name13: ; ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
 Saffron_Map_Name14: ; ROUTE_5_CLEANSE_TAG_HOUSE
-	db "ROUTE 5 CABIN@"
+	db "ROUTE 5 HOUSE@"
 
 Cherrygrove_Map_Name1: ; ROUTE_30
 	db "ROUTE 30@"
@@ -1393,7 +1393,7 @@ Cherrygrove_Map_Name7: ; GUIDE_GENTS_HOUSE
 Cherrygrove_Map_Name8: ; CHERRYGROVE_EVOLUTION_SPEECH_HOUSE
 	db "CHERRYGROVE HOUSE@"
 Cherrygrove_Map_Name9: ; ROUTE_30_BERRY_HOUSE
-	db "ROUTE 30 CABIN@"
+	db "ROUTE 30 HOUSE@"
 Cherrygrove_Map_Name10: ; MR_POKEMONS_HOUSE
 	db "MR. #MON'S@"
 Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
