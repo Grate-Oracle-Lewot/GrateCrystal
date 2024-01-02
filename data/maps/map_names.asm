@@ -59,16 +59,17 @@ Olivine_Map_Names: ; OLIVINE
 	table_width 2, Olivine_Map_Names
 	dw Olivine_Map_Name1 ; OLIVINE_POKECENTER_1F
 	dw Olivine_Map_Name2 ; OLIVINE_GYM
-	dw Olivine_Map_Name3 ; OLIVINE_PUNISHMENT_SPEECH_HOUSE
-	dw Olivine_Map_Name4 ; OLIVINE_GOOD_ROD_HOUSE
-	dw Olivine_Map_Name5 ; OLIVINE_CAFE
-	dw Olivine_Map_Name6 ; OLIVINE_MART
-	dw Olivine_Map_Name7 ; ROUTE_38_ECRUTEAK_GATE
-	dw Olivine_Map_Name8 ; ROUTE_39_BARN
-	dw Olivine_Map_Name9 ; ROUTE_39_FARMHOUSE
-	dw Olivine_Map_Name10 ; ROUTE_38
-	dw Olivine_Map_Name11 ; ROUTE_39
-	dw Olivine_Map_Name12 ; OLIVINE_CITY
+	dw Olivine_Map_Name3 ; OLIVINE_TIMS_HOUSE
+	dw Olivine_Map_Name4 ; OLIVINE_PUNISHMENT_SPEECH_HOUSE
+	dw Olivine_Map_Name5 ; OLIVINE_GOOD_ROD_HOUSE
+	dw Olivine_Map_Name6 ; OLIVINE_CAFE
+	dw Olivine_Map_Name7 ; OLIVINE_MART
+	dw Olivine_Map_Name8 ; ROUTE_38_ECRUTEAK_GATE
+	dw Olivine_Map_Name9 ; ROUTE_39_BARN
+	dw Olivine_Map_Name10 ; ROUTE_39_FARMHOUSE
+	dw Olivine_Map_Name11 ; ROUTE_38
+	dw Olivine_Map_Name12 ; ROUTE_39
+	dw Olivine_Map_Name13 ; OLIVINE_CITY
 	assert_table_length NUM_OLIVINE_MAPS
 
 Mahogany_Map_Names: ; MAHOGANY
@@ -575,22 +576,24 @@ Olivine_Map_Name2: ; OLIVINE_GYM
 Olivine_Map_Name3: ; OLIVINE_TIMS_HOUSE
 	db "TIM'S HOUSE@"
 Olivine_Map_Name4: ; OLIVINE_PUNISHMENT_SPEECH_HOUSE
+	db "OLIVINE HOUSE@"
+Olivine_Map_Name5: ; OLIVINE_GOOD_ROD_HOUSE
 	db "OLIVINE ANGLER@"
-Olivine_Map_Name5: ; OLIVINE_CAFE
+Olivine_Map_Name6: ; OLIVINE_CAFE
 	db "OLIVINE CAFé@"
-Olivine_Map_Name6: ; OLIVINE_MART
+Olivine_Map_Name7: ; OLIVINE_MART
 	db "OLIVINE ", $70, $71, "MART@"
-Olivine_Map_Name7: ; ROUTE_38_ECRUTEAK_GATE
+Olivine_Map_Name8: ; ROUTE_38_ECRUTEAK_GATE
 	db "ROUTE 38 GATE@"
-Olivine_Map_Name8: ; ROUTE_39_BARN
+Olivine_Map_Name9: ; ROUTE_39_BARN
 	db "MOOMOO BARN@"
-Olivine_Map_Name9: ; ROUTE_39_FARMHOUSE
+Olivine_Map_Name10: ; ROUTE_39_FARMHOUSE
 	db "MOOMOO FARMHOUSE@"
-Olivine_Map_Name10: ; ROUTE_38
+Olivine_Map_Name11: ; ROUTE_38
 	db "ROUTE 38@"
-Olivine_Map_Name11: ; ROUTE_39
+Olivine_Map_Name12: ; ROUTE_39
 	db "ROUTE 39@"
-Olivine_Map_Name12: ; OLIVINE_CITY
+Olivine_Map_Name13: ; OLIVINE_CITY
 	db "OLIVINE CITY@"
 
 Mahogany_Map_Name1: ; MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
