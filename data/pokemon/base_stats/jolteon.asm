@@ -8,7 +8,7 @@
 	db 197 ; base exp
 	db THUNDERSTONE, THUNDERSTONE ; items
 	db GENDER_F12_5 ; gender ratio
-	db 18 ; step cycles to hatch
+	db 19 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jolteon/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
