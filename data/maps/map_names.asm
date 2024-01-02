@@ -150,51 +150,47 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name63 ; ICE_PATH_B2F_MAHOGANY_SIDE
 	dw Dungeons_Map_Name64 ; ICE_PATH_B2F_BLACKTHORN_SIDE
 	dw Dungeons_Map_Name65 ; ICE_PATH_B3F
-	dw Dungeons_Map_Name66 ; WHIRL_ISLAND_NW
-	dw Dungeons_Map_Name67 ; WHIRL_ISLAND_NE
-	dw Dungeons_Map_Name68 ; WHIRL_ISLAND_SW
-	dw Dungeons_Map_Name69 ; WHIRL_ISLAND_CAVE
-	dw Dungeons_Map_Name70 ; WHIRL_ISLAND_SE
-	dw Dungeons_Map_Name71 ; WHIRL_ISLAND_B1F
-	dw Dungeons_Map_Name72 ; WHIRL_ISLAND_B2F
-	dw Dungeons_Map_Name73 ; WHIRL_ISLAND_LUGIA_CHAMBER
-	dw Dungeons_Map_Name74 ; SILVER_CAVE_ROOM_1
-	dw Dungeons_Map_Name75 ; SILVER_CAVE_ROOM_2
-	dw Dungeons_Map_Name76 ; SILVER_CAVE_ROOM_3
-	dw Dungeons_Map_Name77 ; SILVER_CAVE_ITEM_ROOMS
-	dw Dungeons_Map_Name78 ; DARK_CAVE_VIOLET_ENTRANCE
-	dw Dungeons_Map_Name79 ; DARK_CAVE_BLACKTHORN_ENTRANCE
-	dw Dungeons_Map_Name80 ; DRAGONS_DEN_1F
-	dw Dungeons_Map_Name81 ; DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name82 ; DRAGON_SHRINE
-	dw Dungeons_Map_Name83 ; TOHJO_FALLS
-	dw Dungeons_Map_Name84 ; DIGLETTS_CAVE
-	dw Dungeons_Map_Name85 ; MOUNT_MOON
-	dw Dungeons_Map_Name86 ; UNDERGROUND_PATH
-	dw Dungeons_Map_Name87 ; ROCK_TUNNEL_1F
-	dw Dungeons_Map_Name88 ; ROCK_TUNNEL_B1F
-	dw Dungeons_Map_Name89 ; VICTORY_ROAD
-	dw Dungeons_Map_Name90 ; UNION_CAVE_SLOWPOKE_WELL_LINK
-	dw Dungeons_Map_Name91 ; ICE_PATH_ARTICUNO_CHAMBER
-	dw Dungeons_Map_Name92 ; ROCK_TUNNEL_ZAPDOS_CHAMBER
-	dw Dungeons_Map_Name93 ; SILVER_CAVE_MOLTRES_CHAMBER
-	dw Dungeons_Map_Name94 ; MEW_ANTECHAMBER
-	dw Dungeons_Map_Name95 ; MEW_CHAMBER
-	dw Dungeons_Map_Name96 ; SEAFOAM_CAVE_PUZZLE_CHAMBER
-	dw Dungeons_Map_Name97 ; SEAFOAM_CAVE_1F
-	dw Dungeons_Map_Name98 ; SEAFOAM_CAVE_B1F
-	dw Dungeons_Map_Name99 ; SEAFOAM_CAVE_B2F
-	dw Dungeons_Map_Name100 ; DARK_CAVE_2F
-	dw Dungeons_Map_Name101 ; SILPH_CO_2F
-	dw Dungeons_Map_Name102 ; SILPH_CO_3F
-	dw Dungeons_Map_Name103 ; SILPH_CO_4F
-	dw Dungeons_Map_Name104 ; SILPH_CO_5F
-	dw Dungeons_Map_Name105 ; SILPH_CO_6F
-	dw Dungeons_Map_Name106 ; SILPH_CO_7F
-	dw Dungeons_Map_Name107 ; SILPH_CO_8F
-	dw Dungeons_Map_Name108 ; SILPH_CO_9F
-	dw Dungeons_Map_Name109 ; SILPH_CO_10F
-	dw Dungeons_Map_Name110 ; SILPH_CO_11F
+	dw Dungeons_Map_Name66 ; WHIRL_ISLAND_1F
+	dw Dungeons_Map_Name67 ; WHIRL_ISLAND_B1F
+	dw Dungeons_Map_Name68 ; WHIRL_ISLAND_B2F
+	dw Dungeons_Map_Name69 ; WHIRL_ISLAND_LUGIA_CHAMBER
+	dw Dungeons_Map_Name70 ; SILVER_CAVE_ROOM_1
+	dw Dungeons_Map_Name71 ; SILVER_CAVE_ROOM_2
+	dw Dungeons_Map_Name72 ; SILVER_CAVE_ROOM_3
+	dw Dungeons_Map_Name73 ; SILVER_CAVE_ITEM_ROOMS
+	dw Dungeons_Map_Name74 ; DARK_CAVE_VIOLET_ENTRANCE
+	dw Dungeons_Map_Name75 ; DARK_CAVE_BLACKTHORN_ENTRANCE
+	dw Dungeons_Map_Name76 ; DRAGONS_DEN_1F
+	dw Dungeons_Map_Name77 ; DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name78 ; DRAGON_SHRINE
+	dw Dungeons_Map_Name79 ; TOHJO_FALLS
+	dw Dungeons_Map_Name80 ; DIGLETTS_CAVE
+	dw Dungeons_Map_Name81 ; MOUNT_MOON
+	dw Dungeons_Map_Name82 ; UNDERGROUND_PATH
+	dw Dungeons_Map_Name83 ; ROCK_TUNNEL_1F
+	dw Dungeons_Map_Name84 ; ROCK_TUNNEL_B1F
+	dw Dungeons_Map_Name85 ; VICTORY_ROAD
+	dw Dungeons_Map_Name86 ; UNION_CAVE_SLOWPOKE_WELL_LINK
+	dw Dungeons_Map_Name87 ; ICE_PATH_ARTICUNO_CHAMBER
+	dw Dungeons_Map_Name88 ; ROCK_TUNNEL_ZAPDOS_CHAMBER
+	dw Dungeons_Map_Name89 ; SILVER_CAVE_MOLTRES_CHAMBER
+	dw Dungeons_Map_Name90 ; MEW_ANTECHAMBER
+	dw Dungeons_Map_Name91 ; MEW_CHAMBER
+	dw Dungeons_Map_Name92 ; SEAFOAM_CAVE_PUZZLE_CHAMBER
+	dw Dungeons_Map_Name93 ; SEAFOAM_CAVE_1F
+	dw Dungeons_Map_Name94 ; SEAFOAM_CAVE_B1F
+	dw Dungeons_Map_Name95 ; SEAFOAM_CAVE_B2F
+	dw Dungeons_Map_Name96 ; DARK_CAVE_2F
+	dw Dungeons_Map_Name97 ; SILPH_CO_2F
+	dw Dungeons_Map_Name98 ; SILPH_CO_3F
+	dw Dungeons_Map_Name99 ; SILPH_CO_4F
+	dw Dungeons_Map_Name100 ; SILPH_CO_5F
+	dw Dungeons_Map_Name101 ; SILPH_CO_6F
+	dw Dungeons_Map_Name102 ; SILPH_CO_7F
+	dw Dungeons_Map_Name103 ; SILPH_CO_8F
+	dw Dungeons_Map_Name104 ; SILPH_CO_9F
+	dw Dungeons_Map_Name105 ; SILPH_CO_10F
+	dw Dungeons_Map_Name106 ; SILPH_CO_11F
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -742,95 +738,87 @@ Dungeons_Map_Name64: ; ICE_PATH_B2F_BLACKTHORN_SIDE
 	db "ICE PATH B2F E@"
 Dungeons_Map_Name65: ; ICE_PATH_B3F
 	db "ICE PATH B3F@"
-Dungeons_Map_Name66: ; WHIRL_ISLAND_NW
-	db "WHIRL ISL NW@"
-Dungeons_Map_Name67: ; WHIRL_ISLAND_NE
-	db "WHIRL ISL NE@"
-Dungeons_Map_Name68: ; WHIRL_ISLAND_SW
-	db "WHIRL ISL SW@"
-Dungeons_Map_Name69: ; WHIRL_ISLAND_CAVE
-	db "WHIRL ISL CAVE@"
-Dungeons_Map_Name70: ; WHIRL_ISLAND_SE
-	db "WHIRL ISL SE@"
-Dungeons_Map_Name71: ; WHIRL_ISLAND_B1F
+Dungeons_Map_Name66: ; WHIRL_ISLAND_1F
+	db "WHIRL ISLANDS@"
+Dungeons_Map_Name67: ; WHIRL_ISLAND_B1F
 	db "WHIRL ISL B1F@"
-Dungeons_Map_Name72: ; WHIRL_ISLAND_B2F
+Dungeons_Map_Name68: ; WHIRL_ISLAND_B2F
 	db "WHIRL ISL B2F@"
-Dungeons_Map_Name73: ; WHIRL_ISLAND_LUGIA_CHAMBER
+Dungeons_Map_Name69: ; WHIRL_ISLAND_LUGIA_CHAMBER
 	db "WHIRL ISL DEPTHS@"
-Dungeons_Map_Name74: ; SILVER_CAVE_ROOM_1
+Dungeons_Map_Name70: ; SILVER_CAVE_ROOM_1
 	db "MT.SILVER FOYER@"
-Dungeons_Map_Name75: ; SILVER_CAVE_ROOM_2
+Dungeons_Map_Name71: ; SILVER_CAVE_ROOM_2
 	db "MT.SILVER CORE@"
-Dungeons_Map_Name76: ; SILVER_CAVE_ROOM_3
+Dungeons_Map_Name72: ; SILVER_CAVE_ROOM_3
 	db "MT.SILVER ARENA@"
-Dungeons_Map_Name77: ; SILVER_CAVE_ITEM_ROOMS
+Dungeons_Map_Name73: ; SILVER_CAVE_ITEM_ROOMS
 	db "MT.SILVER DEPTHS@"	
-Dungeons_Map_Name78: ; DARK_CAVE_VIOLET_ENTRANCE
+Dungeons_Map_Name74: ; DARK_CAVE_VIOLET_ENTRANCE
 	db "DARK CAVE WEST@"
-Dungeons_Map_Name79: ; DARK_CAVE_BLACKTHORN_ENTRANCE
+Dungeons_Map_Name75: ; DARK_CAVE_BLACKTHORN_ENTRANCE
 	db "DARK CAVE EAST@"
-Dungeons_Map_Name80: ; DRAGONS_DEN_1F
+Dungeons_Map_Name76: ; DRAGONS_DEN_1F
 	db "DRAGON'S DEN 1F@"
-Dungeons_Map_Name81: ; DRAGONS_DEN_B1F
+Dungeons_Map_Name77: ; DRAGONS_DEN_B1F
 	db "DRAGON'S DEN B1F@"
-Dungeons_Map_Name82: ; DRAGON_SHRINE
+Dungeons_Map_Name78: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
-Dungeons_Map_Name83: ; TOHJO_FALLS
+Dungeons_Map_Name79: ; TOHJO_FALLS
 	db "TOHJO FALLS@"
-Dungeons_Map_Name84: ; DIGLETTS_CAVE
+Dungeons_Map_Name80: ; DIGLETTS_CAVE
 	db "DIGLETT'S CAVE@"
-Dungeons_Map_Name85: ; MOUNT_MOON
+Dungeons_Map_Name81: ; MOUNT_MOON
 	db "MT. MOON@"
-Dungeons_Map_Name86: ; UNDERGROUND_PATH
+Dungeons_Map_Name82: ; UNDERGROUND_PATH
 	db "UNDERGROUND PATH@"
-Dungeons_Map_Name87: ; ROCK_TUNNEL_1F
+Dungeons_Map_Name83: ; ROCK_TUNNEL_1F
 	db "ROCK TUNNEL 1F@"
-Dungeons_Map_Name88: ; ROCK_TUNNEL_B1F
+Dungeons_Map_Name84: ; ROCK_TUNNEL_B1F
 	db "ROCK TUNNEL B1F@"
-Dungeons_Map_Name89: ; VICTORY_ROAD
+Dungeons_Map_Name85: ; VICTORY_ROAD
 	db "VICTORY ROAD@"
-Dungeons_Map_Name90: ; UNION_CAVE_SLOWPOKE_WELL_LINK
+Dungeons_Map_Name86: ; UNION_CAVE_SLOWPOKE_WELL_LINK
 	db "UNION CAVE B2F N@"
-Dungeons_Map_Name91: ; ICE_PATH_ARTICUNO_CHAMBER
+Dungeons_Map_Name87: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
-Dungeons_Map_Name92: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
+Dungeons_Map_Name88: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
 	db "DEEP ROCK TUNNEL@"
-Dungeons_Map_Name93: ; SILVER_CAVE_MOLTRES_CHAMBER
+Dungeons_Map_Name89: ; SILVER_CAVE_MOLTRES_CHAMBER
 	db "MT.SILVER RUINS@"
-Dungeons_Map_Name94: ; MEW_ANTECHAMBER
+Dungeons_Map_Name90: ; MEW_ANTECHAMBER
 	db "TOHJO GROTTO@"
-Dungeons_Map_Name95: ; MEW_CHAMBER
+Dungeons_Map_Name91: ; MEW_CHAMBER
 	db "COSMIC CHAMBER@"
-Dungeons_Map_Name96: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
+Dungeons_Map_Name92: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
 	db "UBEQC CHAMBER@"
-Dungeons_Map_Name97: ; SEAFOAM_CAVE_1F
+Dungeons_Map_Name93: ; SEAFOAM_CAVE_1F
 	db "SEAFOAM CAVE@"
-Dungeons_Map_Name98: ; SEAFOAM_CAVE_B1F
+Dungeons_Map_Name94: ; SEAFOAM_CAVE_B1F
 	db "LEWOT'S HIDEOUT@"
-Dungeons_Map_Name99: ; SEAFOAM_CAVE_B2F
+Dungeons_Map_Name95: ; SEAFOAM_CAVE_B2F
 	db "SEAFOAM DEPTHS@"
-Dungeons_Map_Name100: ; DARK_CAVE_2F
+Dungeons_Map_Name96: ; DARK_CAVE_2F
 	db "DARK CAVE DOJO@"
-Dungeons_Map_Name101: ; SILPH_CO_2F
+Dungeons_Map_Name97: ; SILPH_CO_2F
 	db "SILPH CO. 2F@"
-Dungeons_Map_Name102: ; SILPH_CO_3F
+Dungeons_Map_Name98: ; SILPH_CO_3F
 	db "SILPH CO. 3F@"
-Dungeons_Map_Name103: ; SILPH_CO_4F
+Dungeons_Map_Name99: ; SILPH_CO_4F
 	db "SILPH CO. 4F@"
-Dungeons_Map_Name104: ; SILPH_CO_5F
+Dungeons_Map_Name100: ; SILPH_CO_5F
 	db "SILPH CO. 5F@"
-Dungeons_Map_Name105: ; SILPH_CO_6F
+Dungeons_Map_Name101: ; SILPH_CO_6F
 	db "SILPH CO. 6F@"
-Dungeons_Map_Name106: ; SILPH_CO_7F
+Dungeons_Map_Name102: ; SILPH_CO_7F
 	db "SILPH CO. 7F@"
-Dungeons_Map_Name107: ; SILPH_CO_8F
+Dungeons_Map_Name103: ; SILPH_CO_8F
 	db "SILPH CO. 8F@"
-Dungeons_Map_Name108: ; SILPH_CO_9F
+Dungeons_Map_Name104: ; SILPH_CO_9F
 	db "SILPH CO. 9F@"
-Dungeons_Map_Name109: ; SILPH_CO_10F
+Dungeons_Map_Name105: ; SILPH_CO_10F
 	db "SILPH CO. 10F@"
-Dungeons_Map_Name110: ; SILPH_CO_11F
+Dungeons_Map_Name106: ; SILPH_CO_11F
 	db "SILPH CO. 11F@"
 
 Ecruteak_Map_Name1: ; ECRUTEAK_TIN_TOWER_ENTRANCE
