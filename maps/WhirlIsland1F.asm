@@ -23,21 +23,21 @@ WhirlIsland1F_MapEvents:
 	warp_event  3, 15, WHIRL_ISLAND_SW, 4
 	warp_event  7, 15, WHIRL_ISLAND_CAVE, 2
 ; NE
-	warp_event  3, 13, ROUTE_41, 2
-	warp_event 17,  3, WHIRL_ISLAND_B1F, 2
-	warp_event 13, 11, WHIRL_ISLAND_B1F, 3
+	warp_event 17, 13, ROUTE_41, 2
+	warp_event 31,  3, WHIRL_ISLAND_B1F, 2
+	warp_event 27, 11, WHIRL_ISLAND_B1F, 3
 ; SW
-	warp_event  5,  7, ROUTE_41, 3
-	warp_event 17,  3, WHIRL_ISLAND_B1F, 5
-	warp_event  3,  3, WHIRL_ISLAND_B1F, 4
-	warp_event  3, 15, WHIRL_ISLAND_NW, 3
-	warp_event 17, 15, WHIRL_ISLAND_B2F, 4
+	warp_event  5, 27, ROUTE_41, 3
+	warp_event 17, 23, WHIRL_ISLAND_B1F, 5
+	warp_event  3, 23, WHIRL_ISLAND_B1F, 4
+	warp_event  3, 35, WHIRL_ISLAND_NW, 3
+	warp_event 17, 35, WHIRL_ISLAND_B2F, 4
 ; SE
-	warp_event  5, 13, ROUTE_41, 4
-	warp_event  5,  3, WHIRL_ISLAND_B1F, 6
+	warp_event 31, 39, ROUTE_41, 4
+	warp_event 31, 29, WHIRL_ISLAND_B1F, 6
 ; CAVE
-	warp_event  7,  5, WHIRL_ISLAND_B1F, 9
-	warp_event  3, 13, WHIRL_ISLAND_NW, 4
+	warp_event  7, 45, WHIRL_ISLAND_B1F, 9
+	warp_event  3, 53, WHIRL_ISLAND_NW, 4
 
 	def_coord_events
 
