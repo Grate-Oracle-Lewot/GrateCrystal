@@ -41,6 +41,14 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_GLACIERBADGE
+	giveitem DISCO_BALL
+	giveitem FLOATIE
+	giveitem EGG_BEATER
+	warp KURTS_HOUSE, 12, 19
+	end
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
