@@ -1189,7 +1189,7 @@ Pokedex_DetailedArea:
 	ret
 
 .none_wild_text:
-	db "NONE IN WILD@"
+	db "AREA UNKNOWN@"
 
 Dex_FindFirstList:
 ; grass, surf, trees(+rocks), contest, roaming
