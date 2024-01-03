@@ -27,7 +27,7 @@ OlivinePokecenter1FTeacherScript:
 
 OlivinePokecenter1FFisherText:
 	text "The old man in the"
-	line "OLIVINE CAFE next"
+	line "OLIVINE CAFé next"
 
 	para "door claims to be"
 	line "from outer space."
