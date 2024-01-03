@@ -531,7 +531,6 @@ Pokegear_UpdateClock:
 	call PlaceHLTextAtBC
 
 	; draw border
-	; Fix center Box since i cant find the func that originally drew this one
 	hlcoord 0, 4
 	ld [hl], $06 ; left upper corner
 	hlcoord 19, 4
@@ -580,7 +579,7 @@ Pokegear_UpdateClock:
 	jr z, .Day
 	ld de, .NiteStr
 .got_tod		
-	hlcoord 11, 6
+	hlcoord 12, 6
 	call PlaceString
 
 	hlcoord 11, 0
@@ -600,9 +599,9 @@ Pokegear_UpdateClock:
 	jr .got_tod
 
 .MornStr:
-	db "MORNING@"
+	db "MORN@"
 .DayStr:
-	db "DAYTIME@"
+	db " @"
 .NiteStr:
 	db "NIGHT@"
 
