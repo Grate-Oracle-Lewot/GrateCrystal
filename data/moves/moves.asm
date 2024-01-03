@@ -241,7 +241,7 @@ Moves:
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, FAIRY,        STATUS,   100, 20,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,       STATUS,   100,  5,   0
 	move PURSUIT,      EFFECT_PURSUIT,            42, DARK,         PHYSICAL, 100, 30,   0
-	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         40, NORMAL,       PHYSICAL, 100, 35,   0
+	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         40, NORMAL,       PHYSICAL, 100, 30,   0
 	move SWEET_SCENT,  EFFECT_EVASION_DOWN,        0, GRASS,        STATUS,   100, 40,   0
 	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,        PHYSICAL,  80, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,        PHYSICAL, 100, 30,  10
