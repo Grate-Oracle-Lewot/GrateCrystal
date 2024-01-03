@@ -2209,7 +2209,7 @@ Pokedex_DetailedArea_rods:
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
 	ld [wPokedexEntryPageNum], a ; page num
-	ld a, [wPokedexEntryType] ; johto, janto, swarm
+	ld a, [wPokedexEntryType] ; johto, kanto
 	inc a
 	call DexEntry_NextCategory
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
