@@ -8,7 +8,7 @@
 	db 58 ; base exp
 	db BERRY, MYSTIC_WATER ; items
 	db GENDER_F50 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/marill/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_WATER_1, EGG_FAIRY ; egg groups
