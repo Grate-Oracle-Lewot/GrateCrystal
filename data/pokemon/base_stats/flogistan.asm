@@ -8,7 +8,7 @@
 	db 121 ; base exp
 	db SWAG_BEACON, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
-	db 10 ; step cycles to hatch
+	db 7 ; step cycles to hatch
 	INCBIN "gfx/pokemon/flogistan/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
