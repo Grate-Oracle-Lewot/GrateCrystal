@@ -8,7 +8,7 @@
 	db 42 ; base exp
 	db BERRY, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
-	db 5 ; step cycles to hatch
+	db 6 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pichu/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
