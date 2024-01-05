@@ -496,6 +496,7 @@ ENDM
 	map_attributes SilphCo9F, SILPH_CO_9F, $00, 0
 	map_attributes SilphCo10F, SILPH_CO_10F, $00, 0
 	map_attributes SilphCo11F, SILPH_CO_11F, $00, 0
+	map_attributes RuinsOfAlphAntechamber, RUINS_OF_ALPH_ANTECHAMBER, $00, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
