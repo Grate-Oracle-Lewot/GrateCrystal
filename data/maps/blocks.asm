@@ -969,3 +969,6 @@ Lounge1F_Blocks:
 
 Lounge2F_Blocks:
 	INCBIN "maps/Lounge2F.blk"
+
+RuinsOfAlphAntechamber_Blocks:
+	INCBIN "maps/RuinsOfAlphAntechamber.blk"
