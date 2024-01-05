@@ -192,6 +192,7 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name104 ; SILPH_CO_9F
 	dw Dungeons_Map_Name105 ; SILPH_CO_10F
 	dw Dungeons_Map_Name106 ; SILPH_CO_11F
+	dw Dungeons_Map_Name107 ; RUINS_OF_ALPH_ANTECHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -793,7 +794,7 @@ Dungeons_Map_Name89: ; SILVER_CAVE_MOLTRES_CHAMBER
 Dungeons_Map_Name90: ; MEW_ANTECHAMBER
 	db "TOHJO GROTTO@"
 Dungeons_Map_Name91: ; MEW_CHAMBER
-	db "COSMIC CHAMBER@"
+	db "????????????????@"
 Dungeons_Map_Name92: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
 	db "UBEQC CHAMBER@"
 Dungeons_Map_Name93: ; SEAFOAM_CAVE_1F
@@ -824,6 +825,8 @@ Dungeons_Map_Name105: ; SILPH_CO_10F
 	db "SILPH CO. 10F@"
 Dungeons_Map_Name106: ; SILPH_CO_11F
 	db "SILPH CO. 11F@"
+Dungeons_Map_Name107: ; RUINS_OF_ALPH_ANTECHAMBER
+	db "ALPH ANTECHAMBER@"
 
 Ecruteak_Map_Name1: ; ECRUTEAK_TIN_TOWER_ENTRANCE
 	db "BELLCHIME SHRINE@"
