@@ -8,7 +8,7 @@
 	db 175 ; base exp
 	db X_ATTACK, SLOWPOKETAIL ; items
 	db GENDER_F50 ; gender ratio
-	db 20 ; step cycles to hatch
+	db 19 ; step cycles to hatch
 	INCBIN "gfx/pokemon/castaweigh/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_2, EGG_DRAGON ; egg groups
