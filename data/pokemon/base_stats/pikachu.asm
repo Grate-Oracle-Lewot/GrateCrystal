@@ -8,7 +8,7 @@
 	db 82 ; base exp
 	db BERRY, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
-	db 5 ; step cycles to hatch
+	db 6 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pikachu_crystal/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
