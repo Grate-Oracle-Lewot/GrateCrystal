@@ -281,7 +281,7 @@ RuinsOfAlphOutside_MapEvents:
 	warp_event 14,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1
 	warp_event  2, 29, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1
 	warp_event 16, 33, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1
-	warp_event 10, 13, RUINS_OF_ALPH_INNER_CHAMBER, 1
+	warp_event 10, 13, RUINS_OF_ALPH_ANTECHAMBER, 1
 	warp_event 17, 11, RUINS_OF_ALPH_RESEARCH_CENTER, 1
 	warp_event  6, 19, UNION_CAVE_B1F, 1
 	warp_event  6, 27, UNION_CAVE_B1F, 2
