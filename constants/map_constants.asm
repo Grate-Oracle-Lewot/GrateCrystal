@@ -168,6 +168,7 @@ ENDM
 	map_const SILPH_CO_9F,                                 13,  9 ; 104
 	map_const SILPH_CO_10F,                                 8,  9 ; 105
 	map_const SILPH_CO_11F,                                 8,  9 ; 106
+	map_const RUINS_OF_ALPH_ANTECHAMBER,                    4,  5 ; 107
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
