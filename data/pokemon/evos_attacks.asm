@@ -272,7 +272,7 @@ RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 2, FOCUS_ENERGY
+	db 2, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 13, PURSUIT
@@ -2368,7 +2368,7 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 2, FOCUS_ENERGY
+	db 2, TAIL_WHIP
 	db 7, RAGE
 	db 12, CLAMP
 	db 17, VICEGRIP
