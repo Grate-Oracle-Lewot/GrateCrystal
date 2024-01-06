@@ -7,7 +7,6 @@ ResidualMoves:
 	db STUN_SPORE
 	db THUNDER_WAVE
 	db TOXIC
-	db FOCUS_ENERGY
 	db GLARE
 	db TRANSFORM
 	db SPIDER_WEB
