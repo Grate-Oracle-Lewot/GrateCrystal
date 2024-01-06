@@ -1070,13 +1070,13 @@ if DEF(_DEBUG)
 endc
 	ld a, [wTempMonHappiness] ; egg status
 	ld de, EggSoonString
-	cp $6
+	cp $5
 	jr c, .picked
 	ld de, EggCloseString
-	cp $b
+	cp $a
 	jr c, .picked
 	ld de, EggMoreTimeString
-	cp $29
+	cp $1e
 	jr c, .picked
 	ld de, EggALotMoreTimeString
 .picked
