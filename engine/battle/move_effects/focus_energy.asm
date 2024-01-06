@@ -11,5 +11,14 @@ BattleCommand_FocusEnergy:
 	jp StdBattleTextbox
 
 .already_pumped
-	call AnimateFailedMove
+	push bc
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_StatUpMessage
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	ret z
 	jp PrintButItFailed
