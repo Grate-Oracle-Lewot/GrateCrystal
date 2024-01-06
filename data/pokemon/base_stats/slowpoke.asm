@@ -5,7 +5,7 @@
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 190 ; catch rate
-	db 99 ; base exp
+	db 100 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
 	db 37 ; step cycles to hatch
