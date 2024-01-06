@@ -1,6 +1,6 @@
 	db SLOWPOKE ; 079
 
-	db  90,  65,  65,  10,  40,  40
+	db  90,  65,  65,  10,  45,  45
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
