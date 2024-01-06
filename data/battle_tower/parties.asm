@@ -1954,9 +1954,9 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
-	bigdw 157 ; HP
-	bigdw 157 ; Max HP
-	bigdw 95 ; Atk
+	bigdw 160 ; HP
+	bigdw 160 ; Max HP
+	bigdw 99 ; Atk
 	bigdw 126 ; Def
 	bigdw 52 ; Spd
 	bigdw 119 ; SAtk
@@ -2399,9 +2399,9 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
-	bigdw 196 ; HP
-	bigdw 196 ; Max HP
-	bigdw 118 ; Atk
+	bigdw 201 ; HP
+	bigdw 201 ; Max HP
+	bigdw 123 ; Atk
 	bigdw 126 ; Def
 	bigdw 65 ; Spd
 	bigdw 146 ; SAtk
