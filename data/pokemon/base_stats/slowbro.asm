@@ -1,11 +1,11 @@
 	db SLOWBRO ; 080
 
-	db  95,  75, 110,  20, 100,  80
+	db 100,  80, 110,  20, 100,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC_TYPE ; type
 	db 75 ; catch rate
-	db 164 ; base exp
+	db 165 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
 	db 37 ; step cycles to hatch
