@@ -352,13 +352,7 @@ _CGB_Pokedex_EvoPage:
 	call WipeAttrmap
 
 	ld de, wBGPals1
-	; ld a, PREDEFPAL_POKEDEX
 	call CheckPokedexColor
-	call GetPredefPal
-	call LoadHLPaletteIntoDE ; dex interface palette
-
-	ld de, wBGPals1 palette 6
-	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette	
 
@@ -404,7 +398,6 @@ _CGB_Pokedex_EvoPage:
 _CGB_Pokedex_PicsPage:
 	call WipeAttrmap
 	ld de, wBGPals1
-	; ld a, PREDEFPAL_POKEDEX
 	call CheckPokedexColor
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
@@ -421,8 +414,8 @@ _CGB_Pokedex_PicsPage:
 .not_shiny
 	call LoadPalette_White_Col1_Col2_Black ; mon palette
 ; secondary pokedex pal
-	ld de, wBGPals1 palette 6
-	ld a, PREDEFPAL_POKEDEX
+	ld de, wBGPals1
+	call CheckPokedexColor
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette	
 	
@@ -451,7 +444,7 @@ _CGB_Pokedex_PicsPage:
 	ld a, 0
 	set 3, a
 	call FillBoxCGB
-; ; back pic
+; back pic
 	hlcoord 11, 2, wAttrmap
 	lb bc, 6, 6
 	ld a, 1
@@ -571,7 +564,7 @@ INCLUDE "gfx/pc/orange.pal"
 
 _CGB_PokedexUnownMode:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	call CheckPokedexColor
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	ld a, [wCurPartySpecies]
@@ -1078,7 +1071,7 @@ _CGB_BetaPikachuMinigame:
 
 _CGB_PokedexSearchOption:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	call CheckPokedexColor
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	call WipeAttrmap
