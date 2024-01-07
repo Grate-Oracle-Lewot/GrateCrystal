@@ -1504,18 +1504,18 @@ Pokedex_DetailedArea_grass:
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
 	push bc ; current print line
-	ld c, 14 ; 7 entries * 2 bytes
+	ld c, 16 ; 8 entries * 2 bytes
 	call SimpleMultiply
 	ld b, 0
 	ld c, a ; time of day adjustment
 	add hl, bc
-	ld c, 0; up to NUM_GRASSMON ; * 3 ; total mon entries, morn/day/nite, 7 per
+	ld c, 0; up to NUM_GRASSMON * 3, total mon entries, morn/day/nite, 8 per
 	ld b, 0 ; for calcing encounter %
 	; 25%, 25%, 10%, 10%, 10%, 10%, 5%, 5%
 	push bc ; % and NUM_GRASSMON
 .map_loop
 	ld a, BANK(JohtoGrassWildMons)
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
+	call GetFarByte
 	; a is species
 	inc hl ; pointing to next mon lvl
 	inc hl ; pointing to next mon species
@@ -1711,7 +1711,7 @@ Pokedex_DetailedArea_surf:
 .landmark_loop
 	ld a, BANK(JohtoWaterWildMons)
 	call GetFarWord
-	pop hl  ; points to map group/num
+	pop hl ; points to map group/num
 	pop bc ; line counter
 	push bc ; line counter
 	push hl ; points to map group/num
@@ -1792,13 +1792,13 @@ Pokedex_DetailedArea_surf:
 Pokedex_Parse_surf:
 	push hl ; first species byte, surfing has no time of day
 	push bc ; current print line
-	ld c, 0; up to NUM_WATERMON ; unlike grass, which is 21, this is only 3. and no time of day shenanigans
+	ld c, 0 ; up to NUM_WATERMON ; unlike grass, which is 24, this is only 4. and no time of day shenanigans
 	ld b, 0 ; for calcing encounter %
 	; 40%, 40%, 10%, 10%
 	push bc ; % and NUM_WATERMON
 .map_loop
 	ld a, BANK(JohtoWaterWildMons)
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
+	call GetFarByte
 	; a is species
 	inc hl ; pointing to next mon lvl
 	inc hl ; pointing to next mon species
@@ -1951,14 +1951,14 @@ Dex_Check_Grass:
 	ret
 
 Pokedex_LookCheck_grass:
-	ld bc, 0; up to NUM_GRASSMON ; * 3 ; total mon entries, morn/day/nite, 7 per
+	ld bc, 0 ; up to NUM_GRASSMON * 3, total mon entries, morn/day/nite, 8 per
 	; push bc ; up to NUM_GRASSMON * 3
 	push af ; bank
 .map_loop
 	pop af
 	push af
 	push bc
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
+	call GetFarByte
 	; a is species
 	inc hl ; pointing to next mon lvl
 	inc hl ; pointing to next mon species
@@ -2024,14 +2024,14 @@ Dex_Check_Surf:
 	ret
 
 Pokedex_LookCheck_surf:
-	ld bc, 0; up to NUM_WATERMON ; * 3 ; total mon entries, 1 per day, 3 per
+	ld bc, 0 ; up to NUM_WATERMON * 3, total mon entries, 1 per day, 4 per
 	; push bc ; up to NUM_WATERMON * 3
 	push af ; bank
 .map_loop
 	pop af
 	push af
 	push bc
-	call GetFarByte ; bkup hl and change to getfarword for pk16?
+	call GetFarByte
 	; a is species
 	inc hl ; pointing to next mon lvl
 	inc hl ; pointing to next mon species
@@ -2684,7 +2684,7 @@ Pokedex_DetailedArea_Trees:
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, TreeMonMaps
 	ld bc, 3 ; bytes per entry in TreeMonMaps, two for map group and ID, and one for tree set
-	ld a, [wPokedexStatus]; TreeMonMaps entry index
+	ld a, [wPokedexStatus] ; TreeMonMaps entry index
 	call AddNTimes
 	; check for -1
 	ld a, BANK(TreeMonMaps)
@@ -2799,7 +2799,7 @@ AnyRemaining_trees:
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, TreeMonMaps
 	ld bc, 3 ; bytes per entry in TreeMonMaps, two for map group& and ID, and one for rocksmash set
-	ld a, [wPokedexStatus]; TreeMonMaps entry index
+	ld a, [wPokedexStatus] ; TreeMonMaps entry index
 	call AddNTimes
 	; check for -1
 	ld a, BANK(TreeMonMaps)
@@ -3025,7 +3025,7 @@ Pokedex_DetailedArea_rocksmash:
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, RockMonMaps
 	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group& and ID, and one for rocksmash set
-	ld a, [wPokedexStatus]; RockMonMaps entry index
+	ld a, [wPokedexStatus] ; RockMonMaps entry index
 	call AddNTimes
 	; check for -1
 	ld a, BANK(RockMonMaps)
@@ -3114,7 +3114,7 @@ AnyRemaining_RockSmash:
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, RockMonMaps
 	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group& and ID, and one for rocksmash set
-	ld a, [wPokedexStatus]; RockMonMaps entry index
+	ld a, [wPokedexStatus] ; RockMonMaps entry index
 	call AddNTimes
 	; check for -1
 	ld a, BANK(RockMonMaps)
@@ -3400,7 +3400,7 @@ Dex_Print_Roamer_Info:
 	pop bc ; current print line in c
 	pop hl ; now pointing to DVs
 ; check if shiny
-	push bc  ; current print line in c
+	push bc ; current print line in c
 	; check if DVs are init'd
 	and a ; will still be zero if we jumped here after DV check, else will be 1
 	jr z, .not_shiny
