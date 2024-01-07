@@ -162,8 +162,7 @@ AI_TryItem:
 	call .IsHighestLevel
 	jr c, .good_mon_choice
 
-	ld a, [wOTPartyCount]
-	cp 2
+	callfar FindAliveEnemyMons
 	ret nc
 
 .good_mon_choice
