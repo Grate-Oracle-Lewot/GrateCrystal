@@ -19,7 +19,7 @@ SeafoamCave1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 26,  2, BGEVENT_ITEM, SeafoamCave1FHiddenXSpDefend
+	bg_event 17,  4, BGEVENT_ITEM, SeafoamCave1FHiddenXSpDefend
 
 	def_object_events
 
