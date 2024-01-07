@@ -468,56 +468,56 @@ _CGB_Pokedex_PicsPage:
 CheckPokedexColor:
 	ld a, [wCurPokedexColor]
 	cp DEXCOLOR_BLUE
-	jr nz, .Purple
-	ld a, PREDEFPAL_TRADE_TUBE
-	ret
-
-.Purple
-	cp DEXCOLOR_PURPLE
-	jr nz, .Brown
-	ld a, PREDEFPAL_47
-	ret
-
-.Brown
-	cp DEXCOLOR_BROWN
-	jr nz, .Green
-	ld a, PREDEFPAL_RB_BROWNMON
-	ret
-
-.Green
-	cp DEXCOLOR_GREEN
-	jr nz, .Pink
-	ld a, PREDEFPAL_RB_GREENMON
-	ret
-
-.Pink
-	cp DEXCOLOR_PINK
 	jr nz, .Yellow
-	ld a, PREDEFPAL_RB_PINKMON
+	ld a, PREDEFPAL_TRADE_TUBE
 	ret
 
 .Yellow
 	cp DEXCOLOR_YELLOW
-	jr nz, .Cyan
+	jr nz, .Green
 	ld a, PREDEFPAL_RB_YELLOWMON
+	ret
+
+.Green
+	cp DEXCOLOR_GREEN
+	jr nz, .Purple
+	ld a, PREDEFPAL_RB_GREENMON
+	ret
+
+.Purple
+	cp DEXCOLOR_PURPLE
+	jr nz, .Pink
+	ld a, PREDEFPAL_47
+	ret
+
+.Pink
+	cp DEXCOLOR_PINK
+	jr nz, .Cyan
+	ld a, PREDEFPAL_RB_PINKMON
 	ret
 
 .Cyan
 	cp DEXCOLOR_CYAN
-	jr nz, .Gray
+	jr nz, .Lilac
 	ld a, PREDEFPAL_RB_CYANMON
+	ret
+
+.Lilac
+	cp DEXCOLOR_LILAC
+	jr nz, .Brown
+	ld a, PREDEFPAL_RB_PURPLEMON
+	ret
+
+.Brown
+	cp DEXCOLOR_BROWN
+	jr nz, .Gray
+	ld a, PREDEFPAL_RB_BROWNMON
 	ret
 
 .Gray
 	cp DEXCOLOR_GRAY
-	jr nz, .Mewtwo
-	ld a, PREDEFPAL_CGB_BADGE
-	ret
-
-.Mewtwo
-	cp DEXCOLOR_MEWTWO
 	jr nz, .Red
-	ld a, PREDEFPAL_RB_PURPLEMON
+	ld a, PREDEFPAL_CGB_BADGE
 	ret
 
 .Red
