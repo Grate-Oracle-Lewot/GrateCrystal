@@ -25,35 +25,35 @@ Pokedex_GBS_Stats:
 
 	hlcoord 7, 10
 	ld de, wBaseHP
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 	hlcoord 16, 10
 	ld de, wBaseSpeed
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 
 	hlcoord 7, 11
 	ld de, wBaseAttack
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 	hlcoord 16, 11
 	ld de, wBaseDefense
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 
 	hlcoord 7, 12
 	ld de, wBaseSpecialAttack
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 	hlcoord 16, 12
 	ld de, wBaseSpecialDefense
-	ld c, 3 ;digits
-	ld b, 1 ;bytes
+	ld c, 3 ; digits
+	ld b, 1 ; bytes
 	call PrintNum
 
 	hlcoord 3, 14
