@@ -174,7 +174,7 @@ SetBoxmonOrEggmonCaughtData:
 	ld a, [wCurPartyLevel]
 	cp 63
 	jr c, .valid_range
-	ld a, NULL
+	ld a, $0
 .valid_range
 	or b
 	ld [hli], a
