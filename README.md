@@ -2,6 +2,8 @@
 
 Repository: https://github.com/Grate-Oracle-Lewot/GrateCrystal
 
+Recommended RGBDS version: 0.5.2
+
 Recommended Emulator: BGB
 
 *Not link-compatible with unaltered Crystal Version*
