@@ -1,7 +1,9 @@
 NewPokedexEntry:
-	ld a, [wPokedexShinyToggle]
-	xor a
+; make sure new entry starts on lore page 1 and shows non-shiny colors
+	ld a, NULL
+	ld [wPokedexEntryPageNum], a
 	ld [wPokedexShinyToggle], a
+
 	ldh a, [hMapAnims]
 	push af
 	xor a
