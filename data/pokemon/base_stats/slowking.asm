@@ -3,7 +3,7 @@
 	db 100,  80,  80,  20, 100, 110
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, PSYCHIC_TYPE ; type
+	db PSYCHIC_TYPE, POISON ; type
 	db 70 ; catch rate
 	db 165 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
