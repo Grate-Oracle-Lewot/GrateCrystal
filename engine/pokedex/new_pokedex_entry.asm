@@ -1,6 +1,6 @@
 NewPokedexEntry:
 ; make sure new entry starts on lore page 1 and shows non-shiny colors
-	ld a, NULL
+	ld a, $0
 	ld [wPokedexEntryPageNum], a
 	ld [wPokedexShinyToggle], a
 
