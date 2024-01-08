@@ -128,12 +128,11 @@ BS_ATK_text:
 BS_DEF_text:
 	db "DEF@"
 BS_SPCL_text:
-	db "SPA@"
+	db "SpA@"
 BS_SPCLDEF_text:
-	db "SPD@"
+	db "SpD@"
 
 Pokedex_Get_Items:
-; TODO: Add code to differentiate same items in both entries, special cases
 	hlcoord 3, 10
 	ld de, .BS_ITEM_text
 	call PlaceString
@@ -211,7 +210,7 @@ Pokedex_EggG_SetUp:
 	ld b, c
 	call Pokedex_Get_EggGroup
 	hlcoord 4, 12
-	call PlaceString ;no longer need to preserve bc
+	call PlaceString ; no longer need to preserve bc
 .EggGroups_DONE
 	ret
 .BS_Egg_text1:
@@ -375,10 +374,7 @@ Pokedex_CatchRate:
 	db "Catch Rate: @"
 
 Pokedex_Get_Growth::
-;Growth rate
-	; hlcoord 3, 14
-	; ld de, .BS_Growth_text
-	; call PlaceString
+; Experience growth rate
 	ld a, [wBaseGrowthRate]
 	ld de, .growth_Medfast
 	cp GROWTH_MEDIUM_FAST
@@ -404,8 +400,6 @@ Pokedex_Get_Growth::
 	hlcoord 3, 15
 	call PlaceString
 	ret
-; .BS_Growth_text:
-; 	db "GROWTH RATE: @"
 .growth_Medfast:
 	db "Med. Fast Growth@"
 .growth_slightfast
