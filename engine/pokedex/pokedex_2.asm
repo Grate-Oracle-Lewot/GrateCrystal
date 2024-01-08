@@ -383,7 +383,7 @@ DisplayDexMonType_CustomGFX:
 	ld hl, FloatMons
 	call IsInByteArray
 	ret nc
-	hlcoord 18, 6
+	hlcoord 17, 6
 	ld [hl], "<FLOAT>"
 	ret
 
