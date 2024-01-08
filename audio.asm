@@ -129,7 +129,6 @@ INCLUDE "audio/music/mobilecenter.asm"
 
 SECTION "Extra Songs 1", ROMX
 
-INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/clair.asm"
 INCLUDE "audio/music/mobileadapter.asm"
 
@@ -142,6 +141,7 @@ INCLUDE "audio/music/postcredits.asm"
 SECTION "Extra Songs 3", ROMX
 
 INCLUDE "audio/music/route36.asm" ; 1
+INCLUDE "audio/music/credits.asm" ; 1
 INCLUDE "audio/music/magnettrain.asm" ; 2
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
