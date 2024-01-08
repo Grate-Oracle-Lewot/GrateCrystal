@@ -162,6 +162,7 @@ AI_TryItem:
 	call .IsHighestLevel
 	jr c, .good_mon_choice
 
+	ccf
 	callfar FindAliveEnemyMons
 	ret nc
 
