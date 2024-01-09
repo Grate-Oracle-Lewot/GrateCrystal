@@ -29,7 +29,7 @@ TreeMonMaps:
 	treemon_map VIOLET_CITY,               TREEMON_SET_TOWN
 	treemon_map AZALEA_TOWN,               TREEMON_SET_TOWN
 	treemon_map GOLDENROD_CITY,            TREEMON_SET_TOWN
-	treemon_map OLIVINE_CITY,              TREEMON_SET_CITY
+	treemon_map BATTLE_TOWER_OUTSIDE,      TREEMON_SET_CITY
 	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
 	treemon_map MAHOGANY_TOWN,             TREEMON_SET_TOWN
 	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
