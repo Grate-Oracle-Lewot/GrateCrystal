@@ -535,11 +535,6 @@ PokeBallEffect:
 	call CheckReceivedDex
 	jr z, .skip_pokedex
 
-; skip new dex entry in bug contest, because Nayru's dex screws up the caught mon comparison display
-	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jp z, .catch_bug_contest_mon
-
 	ld hl, NewDexDataText
 	call PrintText
 
@@ -551,6 +546,8 @@ PokeBallEffect:
 
 .skip_pokedex
 	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jp z, .catch_bug_contest_mon
 	cp BATTLETYPE_CELEBI
 	jr nz, .not_celebi
 	ld hl, wBattleResult
