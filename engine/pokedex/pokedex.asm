@@ -1635,7 +1635,7 @@ Pokedex_DrawDexEntryScreenBG:
 	call ByteFill
 
 	hlcoord 2, 17
-	ld bc, $7 tiles
+	ld bc, $7
 	ld a, $7f ; black square
 	call ByteFill
 	ld c, 4
