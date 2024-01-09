@@ -106,4 +106,4 @@ GoldenrodBikeShop_MapEvents:
 	bg_event  7,  6, BGEVENT_READ, GoldenrodBikeShopBicycle
 
 	def_object_events
-	object_event  7,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopClerkScript, -1
+	object_event  7,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopClerkScript, -1
