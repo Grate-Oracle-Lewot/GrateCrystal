@@ -884,11 +884,11 @@ _ContestCaughtMonText::
 	text "Caught @"
 	text_ram wStringBuffer1
 	text "!"
-	autodone
+	prompt
 
 _ContestAskSwitchText::
 	text "Switch #MON?"
-	autodone
+	done
 
 _ContestAlreadyCaughtText::
 	text "You already caught"
