@@ -120,8 +120,10 @@ SurfGuyAlreadyGaveSurf:
 
 DanceTheaterRhydon:
 	opentext
+	writetext RhydonText1
 	cry RHYDON
-	writetext RhydonText
+	promptbutton
+	writetext RhydonText2
 	waitbutton
 	closetext
 	end
@@ -291,11 +293,13 @@ SurfGuyElegantKimonoGirlsText:
 	cont "the KIMONO GIRLS…"
 	done
 
-RhydonText:
+RhydonText1:
 	text "RHYDON: Gugooh"
 	line "gugogooh!"
+	done
 
-	para "RHYDON is a surp-"
+RhydonText2:
+	text "RHYDON is a surp-"
 	line "risingly graceful"
 	cont "dancer."
 	done
