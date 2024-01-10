@@ -390,9 +390,9 @@ Route30TrainerTipsText:
 	para "No stealing other"
 	line "people's #MON!"
 
-	para "# BALLS are to"
-	line "be thrown only at"
-	cont "wild #MON!"
+	para "# BALLS will"
+	line "just bounce off of"
+	cont "them!"
 	done
 
 YoungsterJoeyText_GiveHPUpAfterBattle:
