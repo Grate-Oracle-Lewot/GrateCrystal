@@ -533,9 +533,9 @@ VulpixEvosAttacks:
 	db 13, ROAR
 	db 19, CONFUSE_RAY
 	db 25, MIST
-	db 29, ICY_WIND
-	db 33, FLAMETHROWER
-	db 37, FIRE_SPIN
+	db 29, FIRE_SPIN
+	db 33, AURORA_BEAM
+	db 37, FLAMETHROWER
 	db 43, ICE_BEAM
 	db 50, TRI_ATTACK
 	db 0 ; no more level-up moves
@@ -2152,7 +2152,7 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
-	db 1, POWDER_SNOW
+	db 1, ICY_WIND
 	db 13, MIST
 	db 25, AIR_SLASH
 	db 37, MIND_READER
