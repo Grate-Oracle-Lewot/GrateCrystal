@@ -269,7 +269,7 @@ BlackbeltYoshiSeenText:
 	done
 
 BlackbeltYoshiBeatenText:
-	text "This isn't real!"
+	text "Belm!"
 	done
 
 BlackbeltYoshiAfterText:
