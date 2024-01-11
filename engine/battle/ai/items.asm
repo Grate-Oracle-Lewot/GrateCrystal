@@ -148,7 +148,7 @@ SwitchSometimes:
 	jp AI_TrySwitch
 
 AI_TryItem:
-	; items are not allowed in the Battle Tower
+; items are not allowed in the Battle Tower
 	ld a, [wInBattleTowerBattle]
 	and a
 	ret nz
@@ -159,14 +159,54 @@ AI_TryItem:
 	or b
 	ret z
 
-	call .IsHighestLevel
-	jr c, .good_mon_choice
+; if only one mon in party, use items on it
+	ld a, [wOTPartyCount]
+	cp 2
+	jr c, .only_one_mon
 
-	ccf
-	callfar FindAliveEnemyMons
+; else, check if more than one mon is still alive
+	ld d, a
+	ld e, 0
+	ld b, 1 << (PARTY_LENGTH - 1)
+	ld c, 0
+	ld hl, wOTPartyMon1HP
+
+.loop_alive
+	ld a, [wCurOTMon]
+	cp e
+	jr z, .next_alive
+
+	push bc
+	ld b, [hl]
+	inc hl
+	ld a, [hld]
+	or b
+	pop bc
+	jr z, .next_alive
+
+	ld a, c
+	or b
+	ld c, a
+
+.next_alive
+	srl b
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	inc e
+	dec d
+	jr nz, .loop_alive
+
+	ld a, c
+	and a
+	jr z, .only_one_mon
+; if only one mon is alive, use items on it
+; if more than one are alive, only use items on highest level mon
+	call .IsHighestLevel
 	ret nc
 
-.good_mon_choice
+.only_one_mon
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
