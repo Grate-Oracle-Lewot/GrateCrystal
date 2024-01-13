@@ -954,7 +954,6 @@ AI_Smart_Heal:
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
-; Presently, these are all in range to use jr instead of jp.
 	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
@@ -1064,7 +1063,7 @@ AI_Smart_Confuse:
 	jp AIDiscourageMove
 
 .skip_immune
-	jr AI_DiscourageIfPlayerHPBelowHalf
+	jp AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_SpDefenseUp2:
 ; Discourage this move if enemy's HP is lower than 50%.
