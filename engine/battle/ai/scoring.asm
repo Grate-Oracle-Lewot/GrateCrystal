@@ -991,6 +991,7 @@ AI_Smart_LeechSeed:
 	ret c
 	inc [hl]
 	ret
+
 AI_Smart_Fissure:
 ; Dismiss this move if the player is a floatmon.
 	push hl
