@@ -143,8 +143,7 @@ AI_Setup:
 AI_Types:
 ; Dismiss any move that the player is immune to.
 ; Encourage super-effective moves.
-; Discourage not very effective moves unless
-; all damaging moves are of the same type.
+; Discourage not very effective moves unless all damaging moves are of the same type.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -348,7 +347,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPITE,            AI_Smart_Spite
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
-	dbw EFFECT_BURN_HIT,         AI_Smart_BurnHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
@@ -583,8 +581,7 @@ AI_Smart_Selfdestruct:
 	call AICheckEnemyQuarterHP
 	ret nc
 
-; If enemy's HP is between 25% and 50%,
-; over 90% chance to greatly discourage this move.
+; If enemy's HP is between 25% and 50%, over 90% chance to greatly discourage this move.
 	call Random
 	cp 8 percent
 	ret c
@@ -597,8 +594,7 @@ AI_Smart_Selfdestruct:
 
 AI_Smart_DreamEater:
 ; 90% chance to greatly encourage this move.
-; The AI_Basic layer will make sure that
-; Dream Eater is only used against sleeping targets.
+; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
 	call Random
 	cp 10 percent
 	ret c
@@ -749,10 +745,10 @@ AI_Smart_MirrorMove:
 	call IsInArray
 	pop hl
 
-; ...do nothing if he didn't use a useful move.
+; ...do nothing if they didn't use a useful move.
 	ret nc
 
-; If he did, 50% chance to encourage this move...
+; If they did, 50% chance to encourage this move...
 	call AI_50_50
 	ret c
 
@@ -955,6 +951,15 @@ AI_Smart_Heal:
 	dec [hl]
 	ret
 
+AI_DiscourageIfPlayerHPBelowHalf:
+; Discourage this move if player's HP is below 50%.
+; Several smart AI routines jump to this to save space.
+; Presently, these are all in range to use jr instead of jp.
+	call AICheckPlayerHalfHP
+	ret c
+	inc [hl]
+	ret
+
 AI_Smart_Poison:
 ; 50% chance to dismiss this move if the player's held item immunizes against poisoning.
 	push hl
@@ -970,11 +975,7 @@ AI_Smart_Poison:
 	jp AIDiscourageMove
 
 .skip_immune
-; Discourage this move if player's HP is below 50%.
-	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
+	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_LeechSeed:
 ; Dismiss this move if the player is Grass-type and therefore immune.
@@ -986,11 +987,7 @@ AI_Smart_LeechSeed:
 	cp GRASS
 	jp z, AIDiscourageMove
 
-; Discourage this move if player's HP is below 50%.
-	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
+	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Fissure:
 ; Dismiss this move if the player is a floatmon.
@@ -1011,10 +1008,7 @@ AI_Smart_Ohko:
 	ld a, [wEnemyMonLevel]
 	cp b
 	jp c, AIDiscourageMove
-	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
+	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp, Whirlpool
@@ -1070,11 +1064,7 @@ AI_Smart_Confuse:
 	jp AIDiscourageMove
 
 .skip_immune
-; Discourage this move if player's HP is below 50%.
-	call AICheckPlayerHalfHP
-	ret c
-	inc [hl]
-	ret
+	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_SpDefenseUp2:
 ; Discourage this move if enemy's HP is lower than 50%.
@@ -1136,10 +1126,8 @@ AI_Smart_Dig:
 	; fallthrough
 
 AI_Smart_Fly:
-; Fly and Sky Attack
-
-; Greatly encourage this move if the player is
-; flying or underground, and slower than the enemy.
+; Fly, Sky Attack
+; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
 
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -1594,22 +1582,10 @@ AI_Smart_PriorityHit:
 	dec [hl]
 	ret
 
-AI_Smart_BurnHit:
-; Greatly encourage BurnHit moves when Frozen, as they defrost the user.
-
-	ld a, [wEnemyMonStatus]
-	bit FRZ, a
-	ret z
-
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
 AI_Smart_Conversion2:
 	ld a, [wLastPlayerMove]
 	and a
-	jr z, .discourage ; should be jr z
+	jr z, .discourage
 
 	push hl
 	dec a
@@ -1752,8 +1728,7 @@ AICheckLastPlayerMon:
 
 AI_Smart_Nightmare:
 ; 50% chance to encourage this move.
-; The AI_Basic layer will make sure that
-; Nightmare is only used against sleeping targets.
+; The AI_Basic layer will make sure that Nightmare is only used against sleeping targets.
 
 	call AI_50_50
 	ret c
@@ -2066,8 +2041,7 @@ AI_Smart_Hail:
 	db -1 ; end
 
 AI_Smart_Blizzard:
-; Do nothing if the player is Fire- or Ice-type,
-; and therefore immune to being frozen.
+; Do nothing if the player is Fire- or Ice-type, and therefore immune to being frozen.
 	ld a, [wBattleMonType1]
 	cp FIRE
 	ret z
@@ -2155,7 +2129,6 @@ AI_Smart_FuryCutter:
 	dec [hl]
 	dec [hl]
 	dec [hl]
-
 	; fallthrough
 
 AI_Smart_Rollout:
@@ -2621,8 +2594,7 @@ AI_Smart_Gust_Twister:
 	ret
 
 AI_Smart_FutureSight:
-; Greatly encourage this move if the player is
-; flying or underground, and slower than the enemy.
+; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
 
 	call AICompareSpeed
 	ret nc
@@ -2903,12 +2875,12 @@ AI_Opportunist:
 .checkmove
 	inc hl
 	dec c
-	jr z, .done
+	ret z
 
 	ld a, [de]
 	inc de
 	and a
-	jr z, .done
+	ret z
 
 	push hl
 	push de
@@ -2925,17 +2897,13 @@ AI_Opportunist:
 	inc [hl]
 	jr .checkmove
 
-.done
-	ret
-
 INCLUDE "data/battle/ai/stall_moves.asm"
 
 AI_Aggressive:
 ; Use whatever does the most damage.
 
 ; Discourage all damaging moves but the one that does the most damage.
-; If no damaging move deals damage to the player (immune),
-; no move will be discouraged
+; If no damaging move deals damage to the player (immune), no move will be discouraged.
 
 ; Figure out which attack does the most damage and put it in c.
 	ld hl, wEnemyMonMoves
@@ -3009,8 +2977,7 @@ AI_Aggressive:
 	call AIGetEnemyMove
 
 ; Ignore this move if its power is 0 or 1.
-; Moves such as Seismic Toss, Hidden Power (not anymore),
-; Counter and Fissure have a base power of 1.
+; Moves such as Seismic Toss, Counter and Fissure have a base power of 1.
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	cp 2
 	jr c, .checkmove2
@@ -3132,8 +3099,12 @@ AI_Status:
 	ld a, [wBattleMonType1]
 	cp POISON
 	jr z, .immune
+	cp STEEL
+	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
+	jr z, .immune
+	cp STEEL
 	jr z, .immune
 
 .typeimmunity
@@ -3154,7 +3125,6 @@ AI_Status:
 .immune
 	call AIDiscourageMove
 	jr .checkmove
-
 
 AI_Risky:
 ; Use any move that will KO the target.
