@@ -968,20 +968,16 @@ AI_Smart_Poison:
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_POISON
-	jr nz, .skip_immune
+	jr nz, AI_DiscourageIfPlayerHPBelowHalf
 	call AI_50_50
-	jr c, .skip_immune
+	jr c, AI_DiscourageIfPlayerHPBelowHalf
 	jp AIDiscourageMove
-
-.skip_immune
-	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_LeechSeed:
 ; Dismiss this move if the player is Grass-type and therefore immune.
 	ld a, [wBattleMonType1]
 	cp GRASS
 	jp z, AIDiscourageMove
-
 	ld a, [wBattleMonType2]
 	cp GRASS
 	jp z, AIDiscourageMove
@@ -1008,6 +1004,20 @@ AI_Smart_Ohko:
 	cp b
 	jp c, AIDiscourageMove
 	jr AI_DiscourageIfPlayerHPBelowHalf
+
+AI_Smart_Confuse:
+; 50% chance to dismiss this move if the player's held item immunizes against confusion.
+	push hl
+	ld hl, wBattleMonItem
+	ld b, [hl]
+	pop hl
+	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_CONFUSE
+	jr nz, AI_DiscourageIfPlayerHPBelowHalf
+	call AI_50_50
+	jr c, AI_DiscourageIfPlayerHPBelowHalf
+	jp AIDiscourageMove
 
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp, Whirlpool
@@ -1047,23 +1057,6 @@ AI_Smart_TrapTarget:
 	dec [hl]
 	dec [hl]
 	ret
-
-AI_Smart_Confuse:
-; 50% chance to dismiss this move if the player's held item immunizes against confusion.
-	push hl
-	ld hl, wBattleMonItem
-	ld b, [hl]
-	pop hl
-	farcall GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	jr nz, .skip_immune
-	call AI_50_50
-	jr c, .skip_immune
-	jp AIDiscourageMove
-
-.skip_immune
-	jp AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_SpDefenseUp2:
 ; Discourage this move if enemy's HP is lower than 50%.
