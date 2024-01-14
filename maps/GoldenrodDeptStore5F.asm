@@ -89,6 +89,7 @@ Carrie:
 	setevent EVENT_DECO_PLANT_2
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
+	setevent EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
 	writetext CarrieDecorationReceivedText
 	sjump .EndCarrie
 
