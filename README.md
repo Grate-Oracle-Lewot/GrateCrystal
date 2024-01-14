@@ -117,6 +117,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Girafarig: Normal/Psychic -> Normal/Ghost
 - Dunsparce: Normal -> Dark/Fairy
 - Qwilfish: Water/Poison -> Water/Fire
+- Phanpy/Donphan: Ground -> Normal/Ground
 - Stantler: Normal -> Normal/Psychic
 - Hitmontop: Fighting -> Fighting/Fairy
 - Larvitar/Pupitar: Rock/Ground -> Rock/Dark
