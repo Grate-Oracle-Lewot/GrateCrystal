@@ -3,7 +3,7 @@
 	db 100, 120, 120,  50,  60,  75
 	;   hp  atk  def  spd  sat  sdf
 
-	db GROUND, GROUND ; type
+	db NORMAL, GROUND ; type
 	db 60 ; catch rate
 	db 189 ; base exp
 	db TM_ROLLOUT, LEFTOVERS ; items
