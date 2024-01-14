@@ -262,11 +262,11 @@ BoarderRonaldBeatenText:
 	done
 
 BoarderRonaldAfterBattleText:
-	text "I think there's a"
-	line "move a #MON"
+	text "Frozen #MON"
+	line "can't do a thing,"
 
-	para "can use while it's"
-	line "frozen."
+	para "but the chance of"
+	line "a freeze is low."
 	done
 
 BoarderBradSeenText:
@@ -371,7 +371,12 @@ MahoganyGymGuideText:
 	para "Ice is good again-"
 	line "st grass, ground,"
 	cont "flying, and drag-"
-	cont "on. Go for it!"
+	cont "on."
+
+	para "It also resists"
+	line "fairy."
+
+	para "Go for it!"
 	done
 
 MahoganyGymGuideWinText:
