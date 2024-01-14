@@ -3513,7 +3513,7 @@ KingdraEvosAttacks:
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
-	db EVOLVE_LEVEL, 25, DONPHAN
+	db EVOLVE_LEVEL, 30, DONPHAN
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
 	db 2, DEFENSE_CURL
@@ -3521,9 +3521,9 @@ PhanpyEvosAttacks:
 	db 9, STOMP
 	db 17, FLAIL
 	db 24, BODY_SLAM
-	db 33, ROLLOUT
-	db 41, ENDURE
-	db 49, EARTHQUAKE
+	db 32, ROLLOUT
+	db 40, EARTHQUAKE
+	db 47, SKULL_BASH
 	db 0 ; no more level-up moves
 
 DonphanEvosAttacks:
@@ -3534,10 +3534,10 @@ DonphanEvosAttacks:
 	db 9, STOMP
 	db 17, FLAIL
 	db 24, BODY_SLAM
-	db 25, FURY_ATTACK
-	db 33, ROLLOUT
-	db 41, ENDURE
-	db 49, EARTHQUAKE
+	db 29, FURY_ATTACK
+	db 34, ROLLOUT
+	db 42, EARTHQUAKE
+	db 50, SKULL_BASH
 	db 64, MEGAHORN
 	db 0 ; no more level-up moves
 
