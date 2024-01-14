@@ -61,8 +61,10 @@ OlivineLighthouseJasmine:
 	pause 10
 	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	pause 10
-	faceplayer
 	opentext
+	writetext JasmineRelievedText
+	promptbutton
+	faceplayer
 	writetext JasmineThankYouText
 	setevent EVENT_DECO_CARPET_3
 	playsound SFX_GET_EGG_UNUSED
@@ -165,7 +167,7 @@ OlivineLighthouseJasmineLeavesRightMovement:
 	step_end
 
 JasmineCianwoodPharmacyText:
-	text "JASMINE: … This"
+	text "JASMINE: …This"
 	line "#MON always"
 
 	para "kept the sea lit"
@@ -223,14 +225,16 @@ JasmineAmphyHowAreYouFeelingText:
 	line "feeling?"
 	done
 
-JasmineThankYouText:
+JasmineRelievedText:
 	text "JASMINE: …Oh, I'm"
 	line "so relieved…"
 
 	para "This is just so"
 	line "wonderful…"
+	done
 
-	para "Thank you so very,"
+JasmineThankYouText:
+	text "Thank you so very,"
 	line "very much."
 
 	para "Please, take this…"
