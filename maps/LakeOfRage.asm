@@ -120,7 +120,19 @@ LakeOfRageGrampsScript:
 	end
 
 LakeOfRageSuperNerdScript:
-	jumptextfaceplayer LakeOfRageSuperNerdText
+	faceplayer
+	opentext
+	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+	iftrue .SuperNerdAfterText
+	writetext LakeOfRageSuperNerdBeforeText
+	sjump .SuperNerdEndText
+
+.SuperNerdAfterText:
+	writetext LakeOfRageSuperNerdAfterText
+.SuperNerdEndText:
+	waitbutton
+	closetext
+	end
 
 LakeOfRageCooltrainerFScript:
 	jumptextfaceplayer LakeOfRageCooltrainerFText
@@ -331,7 +343,7 @@ LakeOfRageGrampsText_ClearedRocketHideout:
 	line "KARP are biting!"
 	done
 
-LakeOfRageSuperNerdText:
+LakeOfRageSuperNerdBeforeText:
 	text "I heard this lake"
 	line "was made by ram-"
 	cont "paging GYARADOS."
@@ -341,6 +353,16 @@ LakeOfRageSuperNerdText:
 
 	para "to their mass out-"
 	line "break now?"
+	done
+
+LakeOfRageSuperNerdAfterText:
+	text "I heard this lake"
+	line "was made by ram-"
+	cont "paging GYARADOS."
+
+	para "That would've been"
+	line "quite the sight to"
+	cont "witness!"
 	done
 
 LakeOfRageCooltrainerFText:
