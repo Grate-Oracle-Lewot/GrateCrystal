@@ -219,6 +219,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 ## Miscellaneous
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
+- A few shiny colors changed
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - NPCs in Kanto who sell Berries and Apricorns
