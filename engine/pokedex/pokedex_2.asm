@@ -3372,7 +3372,7 @@ Dex_Print_Roamer_Info:
 	; print lvl symbol
 	hlcoord 3, 11
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], "<DEX_LV>" ; lvl symbol
+	ld [hl], $5d ; lvl symbol
 
 ; if HP is 0, means the DVs havent been init'd yet upon seeing it in battle for the first time
 ; if HP is 0, don't print
@@ -3409,13 +3409,13 @@ Dex_Print_Roamer_Info:
 	ld c, l
 	farcall CheckShininess ; ptr needs to be in bc
 	; scf if shiny
-	; jr nc, .not_shiny
+	jr nc, .not_shiny
 	; shiny tile is $64
 	pop bc ; current print line in c
 	push bc ; current print line in c
 	hlcoord 1, 11
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], "<DEX_⁂>"
+	ld [hl], $64
 ; shiny check done
 .not_shiny
 	pop bc ; line counter in c
