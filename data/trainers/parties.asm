@@ -2330,7 +2330,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (10)
 	db "RUSS@", TRAINERTYPE_NORMAL
-	db 46, MAGNETON
+	db 46, SNORLAX
 	db 46, HITMONLEE
 	db 46, HITMONCHAN
 	db -1 ; end
