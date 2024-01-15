@@ -41,6 +41,30 @@ HallOfFame_MapScripts:
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
 .SkipPhoneCall:
+	setval ARTICUNO
+	special MonCheck
+	iftrue .SkipArticuno
+	clearevent EVENT_FOUGHT_ARTICUNO
+	clearevent EVENT_ICE_PATH_ARTICUNO_CHAMBER_ARTICUNO
+.SkipArticuno:
+	setval ZAPDOS
+	special MonCheck
+	iftrue .SkipZapdos
+	clearevent EVENT_FOUGHT_ZAPDOS
+	clearevent EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_ZAPDOS
+.SkipZapdos:
+	setval MOLTRES
+	special MonCheck
+	iftrue .SkipMoltres
+	clearevent EVENT_FOUGHT_MOLTRES
+	clearevent EVENT_SILVER_CAVE_MOLTRES_CHAMBER_MOLTRES
+.SkipMoltres:
+	setval MEW
+	special MonCheck
+	iftrue .SkipMew
+	clearevent EVENT_FOUGHT_MEW
+	clearevent EVENT_MEW_CHAMBER_MEW
+.SkipMew:
 	halloffame
 	end
 
