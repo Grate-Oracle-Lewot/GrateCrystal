@@ -2030,7 +2030,7 @@ FlareonEvosAttacks:
 	db 30, BITE
 	db 36, FLAME_WHEEL
 	db 42, FLAMETHROWER
-	db 47, SMOKESCREEN
+	db 47, COTTON_SPORE
 	db 52, FIRE_BLAST
 	db 0 ; no more level-up moves
 
