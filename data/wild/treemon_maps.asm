@@ -17,13 +17,13 @@ TreeMonMaps:
 	treemon_map ROUTE_36,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_37,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_38,                  TREEMON_SET_ROUTE
-	treemon_map ROUTE_39,                  TREEMON_SET_CANYON
+	treemon_map ROUTE_39,                  TREEMON_SET_CITY
 	treemon_map ROUTE_41,                  TREEMON_SET_LAKE
 	treemon_map ROUTE_42,                  TREEMON_SET_TOWN
 	treemon_map ROUTE_43,                  TREEMON_SET_LAKE
-	treemon_map ROUTE_44,                  TREEMON_SET_CANYON
-	treemon_map ROUTE_45,                  TREEMON_SET_CANYON
-	treemon_map ROUTE_46,                  TREEMON_SET_CANYON
+	treemon_map ROUTE_44,                  TREEMON_SET_CITY
+	treemon_map ROUTE_45,                  TREEMON_SET_CITY
+	treemon_map ROUTE_46,                  TREEMON_SET_CITY
 	treemon_map NEW_BARK_TOWN,             TREEMON_SET_TOWN
 	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_TOWN
 	treemon_map VIOLET_CITY,               TREEMON_SET_TOWN
