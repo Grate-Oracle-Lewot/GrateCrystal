@@ -212,7 +212,7 @@ ClairText_DescribeDragonbreathDragonDen:
 	para "…What? A DOLL?"
 
 	para "Fine. Take this"
-	cont "one."
+	line "one."
 
 	para "<PLAYER> received"
 	line "MAGIKARP DOLL!"
