@@ -267,7 +267,7 @@ BlackthornGymClairText_DescribeTM24:
 	para "…What? A DOLL?"
 
 	para "Fine. You can have"
-	cont "this one."
+	line "this one."
 
 	para "<PLAYER> received"
 	line "MAGIKARP DOLL!"
