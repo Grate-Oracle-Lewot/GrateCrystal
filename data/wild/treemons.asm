@@ -2,7 +2,6 @@ TreeMons::
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2, TreeMons
 	dw TreeMonSet_City
-	dw TreeMonSet_Canyon
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
 	dw TreeMonSet_Kanto
@@ -15,7 +14,6 @@ TreeMons::
 ;	db  %, species, level
 
 TreeMonSet_City:
-TreeMonSet_Canyon:
 ; common
 	db 25, SPEAROW,    10
 	db 20, SPEAROW,    20
@@ -130,7 +128,6 @@ RockSmashMons::
 	dw TreeMonSet_Rock
 	assert_table_length NUM_ROCKSMASH_SETS
 
-; Rock smash sets dont have common/rare tables
 ; can have as many entries as you want as long as the % adds up to 100
 TreeMonSet_Rock:
 	db 20, GEODUDE,    15
