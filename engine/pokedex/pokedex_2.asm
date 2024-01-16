@@ -1125,6 +1125,9 @@ Pokedex_DetailedArea:
 	cp DEXENTRY_AREA_SURF_KANTO
 	jr z, .surf
 
+;	cp DEXENTRY_AREA_RODS
+;	jr z, .rods
+
 	cp DEXENTRY_AREA_TREES_COMMON
 	jr z, .trees
 	cp DEXENTRY_AREA_TREES_RARE
@@ -1170,6 +1173,9 @@ Pokedex_DetailedArea:
 .surf
 	call Pokedex_DetailedArea_surf
 	jr .skip_empty_area_check
+; .rods
+;	call Pokedex_DetailedArea_rods
+;	jr .skip_empty_area_check
 .trees
 	call Pokedex_DetailedArea_Trees
 	jr .skip_empty_area_check	
@@ -1218,6 +1224,13 @@ Dex_FindFirstList:
 	and a
 	jr z, .surf_kanto
 
+;	xor a
+;	ld [wPokedexStatus], a
+;	ld hl, FishGroups ; we want to start at the beginning
+;	call Dex_Check_Fishing
+;	and a
+;	jr z, .rods
+
 	call Dex_Check_Trees_firstcommon
 	and a
 	jr z, .commontrees
@@ -1253,6 +1266,9 @@ Dex_FindFirstList:
 .surf_kanto
 	ld a, DEXENTRY_AREA_SURF_KANTO
 	ret
+; .rods
+;	ld a, DEXENTRY_AREA_RODS
+;	ret
 .commontrees
 	ld a, DEXENTRY_AREA_TREES_COMMON
 	ret
