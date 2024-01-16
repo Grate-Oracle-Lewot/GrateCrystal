@@ -346,8 +346,8 @@ CooltrainermGavenAfterText:
 	para "But VICTORY ROAD"
 	line "is tough."
 
-	para "Practically nobody"
-	line "goes there!"
+	para "It's full of natu-"
+	line "ral SANDSTORMS!"
 	done
 
 CooltrainerfJoyceSeenText:
