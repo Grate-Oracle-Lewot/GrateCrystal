@@ -2798,7 +2798,7 @@ AnyRemaining_trees:
 ; RockMonMaps::
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, TreeMonMaps
-	ld bc, 3 ; bytes per entry in TreeMonMaps, two for map group& and ID, and one for rocksmash set
+	ld bc, 3 ; bytes per entry in TreeMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; TreeMonMaps entry index
 	call AddNTimes
 	; check for -1
@@ -3024,7 +3024,7 @@ Pokedex_DetailedArea_rocksmash:
 ; RockMonMaps::
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, RockMonMaps
-	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group& and ID, and one for rocksmash set
+	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; RockMonMaps entry index
 	call AddNTimes
 	; check for -1
@@ -3113,7 +3113,7 @@ AnyRemaining_RockSmash:
 ; RockMonMaps::
 ; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	ld hl, RockMonMaps
-	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group& and ID, and one for rocksmash set
+	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; RockMonMaps entry index
 	call AddNTimes
 	; check for -1
