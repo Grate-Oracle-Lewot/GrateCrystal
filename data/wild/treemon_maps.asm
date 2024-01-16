@@ -28,24 +28,24 @@ TreeMonMaps:
 	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_TOWN
 	treemon_map VIOLET_CITY,               TREEMON_SET_TOWN
 	treemon_map AZALEA_TOWN,               TREEMON_SET_TOWN
-	treemon_map GOLDENROD_CITY,            TREEMON_SET_TOWN
-	treemon_map BATTLE_TOWER_OUTSIDE,      TREEMON_SET_CITY
 	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
 	treemon_map MAHOGANY_TOWN,             TREEMON_SET_TOWN
-	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
 	treemon_map BLACKTHORN_CITY,           TREEMON_SET_CITY
-	treemon_map SILVER_CAVE_OUTSIDE,       TREEMON_SET_KANTO
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
+	treemon_map BATTLE_TOWER_OUTSIDE,      TREEMON_SET_CITY
+	treemon_map LAKE_OF_RAGE,              TREEMON_SET_LAKE
+	treemon_map DRAGONS_DEN_B1F,           TREEMON_SET_LAKE
 	treemon_map MEW_ANTECHAMBER,           TREEMON_SET_FOREST
+	treemon_map SILVER_CAVE_OUTSIDE,       TREEMON_SET_KANTO
 	db -1
 
 RockMonMaps:
-	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
+	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, TREEMON_SET_ROCK
 	treemon_map SLOWPOKE_WELL_B1F,         TREEMON_SET_ROCK
 	treemon_map ICE_PATH_B3F,              TREEMON_SET_ROCK
-	treemon_map ROCK_TUNNEL_B1F,           TREEMON_SET_ROCK
 	treemon_map TOHJO_FALLS,               TREEMON_SET_ROCK
+	treemon_map ROCK_TUNNEL_B1F,           TREEMON_SET_ROCK
 	treemon_map SAFARI_ZONE_GATE,          TREEMON_SET_ROCK
 	db -1
