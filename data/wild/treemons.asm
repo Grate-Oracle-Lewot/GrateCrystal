@@ -100,9 +100,9 @@ TreeMonSet_Lake:
 	db 25, HOOTHOOT,   10
 	db 20, PINECO,     10
 	db 20, PINECO,     15
-	db 15, EXEGGCUTE,  10
-	db 10, EXEGGCUTE,   5
-	db 10, EXEGGCUTE,  15
+	db 15, SUNKERN,    10
+	db 10, SUNKERN,     5
+	db 10, SUNKERN,    15
 	db -1
 
 TreeMonSet_Forest:
