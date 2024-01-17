@@ -4479,9 +4479,9 @@ CheckMist:
 	jr c, .dont_check_mist
 	cp EFFECT_EVASION_DOWN_HIT + 1
 	jr c, .check_mist
+.dont_check_mist
 	cp EFFECT_EARTH_POWER
 	jr z, .check_mist
-.dont_check_mist
 	xor a
 	ret
 
