@@ -38,18 +38,18 @@ Route26HealHouseRestAWhileText:
 	text "Your #MON look"
 	line "a little tired."
 
-	para "You should rest"
+	autopara "You should rest"
 	line "them a while."
-	done
+	autodone
 
 Route26HealHouseKeepAtItText:
 	text "There!"
 
-	para "Your #MON are"
+	autopara "Your #MON are"
 	line "looking good!"
 
-	para "Keep at it!"
-	done
+	autopara "Keep at it!"
+	autodone
 
 Route26HealHouse_MapEvents:
 	db 0, 0 ; filler
