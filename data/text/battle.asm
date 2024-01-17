@@ -648,9 +648,11 @@ NotVeryEffectiveText:
 	autodone
 
 TookDownWithItText:
-	text "<TARGET> took"
-	line "<USER> down"
-	scroll "with it!"
+	text "<TARGET>"
+	line "took"
+
+	autopara "<USER>"
+	line "down with it!"
 	autodone
 
 RageBuildingText:
