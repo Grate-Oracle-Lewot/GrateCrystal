@@ -154,7 +154,7 @@ GameFreakProgrammerText:
 	para "The legal team may"
 	line "not approve of"
 
-	para "GitHub's disassem-"
+	para "a public disassem-"
 	line "bly, but it is an"
 
 	para "impressive tool"
