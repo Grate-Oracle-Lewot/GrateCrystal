@@ -14,6 +14,8 @@ GymLeaders:
 	db BRUNO
 	db KAREN
 	db KOGA
+	db CHAMPION
+	db RED
 ; fallthrough
 KantoGymLeaders:
 	db BROCK
