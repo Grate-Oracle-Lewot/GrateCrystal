@@ -1950,7 +1950,7 @@ GyaradosEvosAttacks:
 	db 35, OUTRAGE
 	db 40, HYDRO_PUMP
 	db 45, HYPER_FANG
-	db 50, HYPER_BEAM
+	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 LaprasEvosAttacks:
