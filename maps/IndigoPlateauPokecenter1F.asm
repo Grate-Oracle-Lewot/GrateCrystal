@@ -3,11 +3,11 @@
 	const INDIGOPLATEAUPOKECENTER1F_CHANSEY
 	const INDIGOPLATEAUPOKECENTER1F_CLERK
 	const INDIGOPLATEAUPOKECENTER1F_BIRD
-	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
+	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_F
 	const INDIGOPLATEAUPOKECENTER1F_SILVER
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
-	const INDIGOPLATEAUPOKECENTER1F_ROCKER
+	const INDIGOPLATEAUPOKECENTER1F_SUPER_NERD
 	const INDIGOPLATEAUPOKECENTER1F_GRANNY
 
 IndigoPlateauPokecenter1F_MapScripts:
@@ -153,8 +153,8 @@ IndigoPlateauPokecenter1FClerkScript:
 IndigoPlateauPokecenter1FDelibirdScript:
 	jumpstd MartDelibirdScript
 
-IndigoPlateauPokecenter1FCooltrainerMScript:
-	jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerMText
+IndigoPlateauPokecenter1FCooltrainerFScript:
+	jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerFText
 
 TeleportGuyScript:
 	faceplayer
@@ -227,7 +227,7 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step_end
 
-IndigoPlateauPokecenter1FCooltrainerMText:
+IndigoPlateauPokecenter1FCooltrainerFText:
 	text "Two of the ELITE"
 	line "FOUR, LUCAS and"
 
@@ -338,9 +338,9 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  4,  7, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FBlisseyScript, -1
 	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 12,  7, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FDelibirdScript, -1
-	object_event 11, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
+	object_event 11, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerFScript, -1
 	object_event 16,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
-	object_event  8,  7, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, IndigoMoveDeleter, -1
+	object_event  8,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, IndigoMoveDeleter, -1
 	object_event 13,  7, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IndigoSeerScript, -1
