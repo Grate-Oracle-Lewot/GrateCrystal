@@ -202,7 +202,7 @@ CreditsStringsPointers:
 .SpecialThanks:       db "  Konrad Borowski@"         ; "スぺシャルサンクス@"
 .Producers:           db "      Vulcandth@"           ; "プロデューサー@"
 .ExecutiveProducer:   db "    Lucas Wright@"          ; "エグゼクティブ　プロデューサー@"
-.PokemonAnimation:    db " Mmmmmmmmmmmmmmmmm@"        ; "#　アニメーション@"
+.PokemonAnimation:    db " Mmmmmmmmmmmmmmmmmm@"       ; "#　アニメーション@"
 .PokedexText:         db "   MajorAgnostic@"          ; "ずかん　テキスト@"
 .MobilePrjLeader:     db "   Bryan Bishop@"           ; "モバイルプロジェクト　りーダー@"
 .MobileSystemAd:      db " Bradley Carpenter@"        ; "モバイル　システムアドバイザー@"
