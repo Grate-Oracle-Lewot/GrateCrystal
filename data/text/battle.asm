@@ -648,8 +648,8 @@ NotVeryEffectiveText:
 	autodone
 
 TookDownWithItText:
-	text "<TARGET>"
-	line "took"
+	text "<TARGET>'s"
+	line "DESTINY BOND took"
 
 	autopara "<USER>"
 	line "down with it!"
