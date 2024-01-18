@@ -194,6 +194,9 @@ HikerSidneyAfterBattleText:
 	text "The POWER PLANT is"
 	line "across a small"
 	cont "river."
+
+	para "Okay, it's not much"
+	line "of a secret."
 	done
 
 Route9SignText:
