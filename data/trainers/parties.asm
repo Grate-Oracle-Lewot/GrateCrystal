@@ -929,7 +929,7 @@ LassGroup:
 
 	; LASS (3)
 	db "ALICE@", TRAINERTYPE_NORMAL
-	db 45, SNOCONEY
+	db 45, SLOWKING
 	db 47, ARBOK
 	db 45, VILEPLUME
 	db -1 ; end
@@ -961,8 +961,8 @@ LassGroup:
 
 	; LASS (8)
 	db "SHANNON@", TRAINERTYPE_NORMAL
-	db 41, PARAS
 	db 43, WHIMSICOTT
+	db 45, SNOCONEY
 	db 47, PARASECT
 	db -1 ; end
 
