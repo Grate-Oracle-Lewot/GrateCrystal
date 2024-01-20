@@ -1,10 +1,10 @@
 	db "COIL SHELL@" ; species name
 	dw 411, 2920 ; height, weight
 
-	db   "SHELLDER only evo-"
-	next "lves into TURBIN"
-	next "when it bites a"
+	db   "It eats anything,"
+	next "a trashbin of the"
+	next "sea. But when it"
 
-	page "SLOWPOKE, so it's"
-	next "never seen on its"
-	next "own in the wild.@"
+	page "tastes a SLOWPOKE,"
+	next "it bites down and"
+	next "never lets go.@"
