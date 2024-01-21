@@ -132,7 +132,6 @@ WartortleFrontpic:   INCBIN "gfx/pokemon/wartortle/front.animated.2bpp.lz"
 LaprasFrontpic:      INCBIN "gfx/pokemon/lapras/front.animated.2bpp.lz"
 GolemFrontpic:       INCBIN "gfx/pokemon/golem/front.animated.2bpp.lz"
 PoliwhirlFrontpic:   INCBIN "gfx/pokemon/poliwhirl/front.animated.2bpp.lz"
-UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front.animated.2bpp.lz"
 HoundoomFrontpic:    INCBIN "gfx/pokemon/houndoom/front.animated.2bpp.lz"
 KabutopsFrontpic:    INCBIN "gfx/pokemon/kabutops/front.animated.2bpp.lz"
 AmpharosFrontpic:    INCBIN "gfx/pokemon/ampharos/front.animated.2bpp.lz"
@@ -170,7 +169,6 @@ StarmieFrontpic:     INCBIN "gfx/pokemon/starmie/front.animated.2bpp.lz"
 PidgeottoFrontpic:   INCBIN "gfx/pokemon/pidgeotto/front.animated.2bpp.lz"
 LedybaFrontpic:      INCBIN "gfx/pokemon/ledyba/front.animated.2bpp.lz"
 GengarFrontpic:      INCBIN "gfx/pokemon/gengar/front.animated.2bpp.lz"
-OmastarFrontpic:     INCBIN "gfx/pokemon/omastar/front.animated.2bpp.lz"
 PiloswineFrontpic:   INCBIN "gfx/pokemon/piloswine/front.animated.2bpp.lz"
 DugtrioFrontpic:     INCBIN "gfx/pokemon/dugtrio/front.animated.2bpp.lz"
 MagnetonFrontpic:    INCBIN "gfx/pokemon/magneton/front.animated.2bpp.lz"
@@ -740,3 +738,9 @@ FightingPikachuBackpic:   INCBIN "gfx/pokemon/pikachu_fighting/back.2bpp.lz"
 SurfingPikachuBackpic:    INCBIN "gfx/pokemon/pikachu_surfing/back.2bpp.lz"
 FlyingPikachuBackpic:     INCBIN "gfx/pokemon/pikachu_flying/back.2bpp.lz"
 OldPic:                   INCBIN "gfx/trainers/old.2bpp.lz"
+
+
+SECTION "Pics 20", ROMX
+
+UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front.animated.2bpp.lz" ; 6
+OmastarFrontpic:     INCBIN "gfx/pokemon/omastar/front.animated.2bpp.lz" ; 7
