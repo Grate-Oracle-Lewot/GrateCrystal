@@ -2372,12 +2372,6 @@ FlyMap:
 	call FillJohtoMap
 	call .MapHud
 	pop af
-; don't draw the player icon if we're flying with the Fearowbot,
-; since I can't figure out how to separate their palettes
-	ld a, [wUsingHMItem]
-	cp TRUE
-	ret z
-	call TownMapPlayerIcon
 	ret
 
 .KantoFlyMap:
@@ -2404,12 +2398,6 @@ FlyMap:
 	call FillKantoMap
 	call .MapHud
 	pop af
-; don't draw the player icon if we're flying with the Fearowbot,
-; since I can't figure out how to separate their palettes
-	ld a, [wUsingHMItem]
-	cp TRUE
-	ret z
-	call TownMapPlayerIcon
 	ret
 
 .NoKanto:
