@@ -35,7 +35,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  RED    ; SANDSLASH
 	icon_pals BLUE,   PINK   ; NIDORAN_F
 	icon_pals BLUE,   PINK   ; NIDORINA
-	icon_pals BLUE,   GRAY   ; NIDOQUEEN
+	icon_pals BLUE,   PURPLE ; NIDOQUEEN
 	icon_pals PINK,   BLUE   ; NIDORAN_M
 	icon_pals PURPLE, BLUE   ; NIDORINO
 	icon_pals PURPLE, BLUE   ; NIDOKING
@@ -70,9 +70,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  YELLOW ; ABRA
 	icon_pals BROWN,  YELLOW ; KADABRA
 	icon_pals BROWN,  GREEN  ; ALAKAZAM
-	icon_pals GRAY,   GRAY   ; MACHOP
+	icon_pals GRAY,   GREEN  ; MACHOP
 	icon_pals GRAY,   GRAY   ; MACHOKE
-	icon_pals GRAY,   GRAY   ; MACHAMP
+	icon_pals GRAY,   GREEN  ; MACHAMP
 	icon_pals GREEN,  GRAY   ; BELLSPROUT
 	icon_pals GREEN,  YELLOW ; WEEPINBELL
 	icon_pals GREEN,  YELLOW ; VICTREEBEL
