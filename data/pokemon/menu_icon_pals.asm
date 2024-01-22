@@ -24,7 +24,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; PIDGEOTTO
 	icon_pals BROWN,  GREEN  ; PIDGEOT
 	icon_pals PURPLE, GRAY   ; RATTATA
-	icon_pals BROWN,  BROWN  ; RATICATE
+	icon_pals BROWN,  PURPLE ; RATICATE
 	icon_pals BROWN,  YELLOW ; SPEAROW
 	icon_pals BROWN,  GRAY   ; FEAROW
 	icon_pals PURPLE, GRAY   ; EKANS
@@ -56,8 +56,8 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; VENOMOTH
 	icon_pals BROWN,  BROWN  ; DIGLETT
 	icon_pals BROWN,  BROWN  ; DUGTRIO
-	icon_pals YELLOW, YELLOW ; MEOWTH
-	icon_pals YELLOW, YELLOW ; PERSIAN
+	icon_pals YELLOW, GRAY   ; MEOWTH
+	icon_pals YELLOW, GRAY   ; PERSIAN
 	icon_pals YELLOW, BLUE   ; PSYDUCK
 	icon_pals BLUE,   BLUE   ; GOLDUCK
 	icon_pals BROWN,  GREEN  ; MANKEY
@@ -115,8 +115,8 @@ MonMenuIconPals:
 	icon_pals PINK,   YELLOW ; LICKITUNG
 	icon_pals PURPLE, BLUE   ; KOFFING
 	icon_pals PURPLE, BLUE   ; WEEZING
-	icon_pals GRAY,   GRAY   ; RHYHORN
-	icon_pals GRAY,   GRAY   ; RHYDON
+	icon_pals GRAY,   BROWN  ; RHYHORN
+	icon_pals GRAY,   BROWN  ; RHYDON
 	icon_pals PINK,   YELLOW ; CHANSEY
 	icon_pals BLUE,   GREEN  ; TANGELA
 	icon_pals BROWN,  GRAY   ; KANGASKHAN
@@ -227,7 +227,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  BLUE   ; SWINUB
 	icon_pals BROWN,  YELLOW ; PILOSWINE
 	icon_pals PINK,   BLUE   ; CORSOLA
-	icon_pals GRAY,   GRAY   ; REMORAID
+	icon_pals GRAY,   PINK   ; REMORAID
 	icon_pals RED,    BROWN  ; OCTILLERY
 	icon_pals RED,    PINK   ; DELIBIRD
 	icon_pals BLUE,   BLUE   ; MANTINE
