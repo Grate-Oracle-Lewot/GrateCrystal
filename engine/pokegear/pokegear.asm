@@ -2811,7 +2811,7 @@ TownMapMon:
 	ld [wTempIconSpecies], a
 ; Get FlyMon icon
 	ld e, $08 ; starting tile in VRAM
-	farcall GetSpeciesIcon
+	farcall FlyFunction_GetMonIcon ; changed from GetSpeciesIcon to make Fearowbot icon work
 ; Animation/palette
 	depixel 0, 0
 	ld a, SPRITE_ANIM_INDEX_PARTY_MON
