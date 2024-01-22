@@ -392,16 +392,7 @@ FlyFunction_InitGFX:
 	ld hl, vTiles0 tile FIELDMOVE_GRASS
 	lb bc, BANK(CutGrassGFX), 4
 	call Request2bpp
-	ld a, [wUsingHMItem]
-	cp FALSE
-	jr z, .not_fearowbot
-	ld a, FEAROW
-	ld [wTempIconSpecies], a
-	ld a, [wTempIconSpecies]
-	jr .got_icon_mon
-.not_fearowbot
 	ld a, [wCurPartyMon]
-.got_icon_mon
 	ld hl, wPartySpecies
 	ld e, a
 	ld d, 0
