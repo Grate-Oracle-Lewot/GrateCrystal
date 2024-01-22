@@ -59,7 +59,7 @@ MonMenuIconPals:
 	icon_pals YELLOW, GRAY   ; MEOWTH
 	icon_pals YELLOW, GRAY   ; PERSIAN
 	icon_pals YELLOW, BLUE   ; PSYDUCK
-	icon_pals BLUE,   BLUE   ; GOLDUCK
+	icon_pals BLUE,   YELLOW ; GOLDUCK
 	icon_pals BROWN,  GREEN  ; MANKEY
 	icon_pals BROWN,  GREEN  ; PRIMAPE
 	icon_pals RED,    BROWN  ; GROWLITHE
