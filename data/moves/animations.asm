@@ -2880,6 +2880,7 @@ BattleAnim_Meditate:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_IcyWind:
 BattleAnim_SilverWind:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
@@ -3679,7 +3680,6 @@ BattleAnim_PerishSong:
 	anim_wait 112
 	anim_ret
 
-BattleAnim_IcyWind:
 BattleAnim_FairyWind:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
