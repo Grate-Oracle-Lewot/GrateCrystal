@@ -751,7 +751,6 @@ ShuckleEggMoves:
 	db -1 ; end
 
 HeracrossEggMoves:
-	db FLAIL
 	db BIDE
 	db LOW_KICK
 	db WING_ATTACK
@@ -847,6 +846,7 @@ PhanpyEggMoves:
 	db ANCIENTPOWER
 	db IRON_HEAD
 	db HYDRO_PUMP
+	db FLAME_WHEEL
 	db -1 ; end
 
 StantlerEggMoves:
