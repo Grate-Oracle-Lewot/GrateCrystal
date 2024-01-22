@@ -27,9 +27,9 @@ BugContestant_BugCatcherDon:
 
 BugContestant_BugCatcherEd:
 	db BUG_CATCHER, ED
-	dbw BUTTERFREE, 386
+	dbw HERACROSS,  386
 	dbw BUTTERFREE, 351
-	dbw CATERPIE,   287
+	dbw YANMA,      287
 
 BugContestant_CooltrainerMNick:
 	db COOLTRAINERM, NICK
@@ -40,14 +40,14 @@ BugContestant_CooltrainerMNick:
 BugContestant_PokefanMWilliam:
 	db POKEFANM, WILLIAM
 	dbw PINSIR,     432
-	dbw BUTTERFREE, 424
+	dbw BEEDRILL,   424
 	dbw VENONAT,    321
 
 BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, BUG_CATCHER_BENNY
-	dbw BUTTERFREE, 418
-	dbw WEEDLE,     345
-	dbw CATERPIE,   335
+	dbw HERACROSS,  418
+	dbw SPINARAK,   345
+	dbw LEDYBA,     335
 
 BugContestant_CamperBarry:
 	db CAMPER, BARRY
@@ -64,17 +64,17 @@ BugContestant_PicnickerCindy:
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, JOSH
 	dbw SCYTHER,    426
-	dbw BUTTERFREE, 392
+	dbw BEEDRILL,   392
 	dbw METAPOD,    382
 
 BugContestant_YoungsterSamuel:
 	db YOUNGSTER, SAMUEL
-	dbw WEEDLE,     270
-	dbw PINSIR,     382
-	dbw CATERPIE,   251
+	dbw LEDYBA,     270
+	dbw YANMA,      382
+	dbw SPINARAK,   251
 
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP
 	dbw VENONAT,    277
 	dbw PARAS,      264
-	dbw KAKUNA,     269
+	dbw JIRK,       269
