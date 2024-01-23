@@ -2975,6 +2975,10 @@ EggBeaterEffect:
 	ld a, $2
 	ret
 
+FailHMItem:
+	ld a, $3
+	ret
+
 PickaxeEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
@@ -3013,8 +3017,4 @@ GravityBuoyEffect:
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-FailHMItem:
-	ld a, $3
 	ret
