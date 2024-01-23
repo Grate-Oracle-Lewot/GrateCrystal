@@ -2935,40 +2935,86 @@ HedgerEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall CutFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $1
+	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
 	ret
 
 FloatieEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall SurfFunction
+	ld a, [wFieldMoveSucceeded]
+	and a
+	jr z, FailHMItem
+	ld b, $4
+	ld a, $2
 	ret
 
 DiscoBallEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall FlashFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $1
+	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
 	ret
 
 EggBeaterEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $1
+	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
 	ret
 
 PickaxeEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall RockSmashFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $1
+	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
 	ret
 
 FearowbotEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall FlyFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $2
+	jr z, FailHMItem
+	cp $0
+	jr z, .Error
+	farcall StubbedTrainerRankings_Fly
+	ld b, $4
+	ld a, $2
+	ret
+
+.Error:
+	ld a, $0
 	ret
 
 GravityBuoyEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall WaterfallFunction
+	ld a, [wFieldMoveSucceeded]
+	cp $1
+	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
+	ret
+
+FailHMItem:
+	ld a, $3
 	ret
