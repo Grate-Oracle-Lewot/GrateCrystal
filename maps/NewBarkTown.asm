@@ -126,11 +126,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	setflag ENGINE_STORMBADGE
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
-	giveitem FEAROWBOT
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
