@@ -2937,13 +2937,9 @@ HedgerEffect:
 	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 PickaxeEffect:
@@ -2952,13 +2948,9 @@ PickaxeEffect:
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 DiscoBallEffect:
@@ -2967,13 +2959,9 @@ DiscoBallEffect:
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 FearowbotEffect:
@@ -2982,7 +2970,7 @@ FearowbotEffect:
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
-	jr z, .Fail
+	jr z, FailHMItem
 	cp $0
 	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
@@ -2990,12 +2978,12 @@ FearowbotEffect:
 	ld a, $2
 	ret
 
-.Fail:
-	ld a, $3
-	ret
-
 .Error:
 	ld a, $0
+	ret
+
+FailHMItem:
+	ld a, $3
 	ret
 
 FloatieEffect:
@@ -3004,13 +2992,9 @@ FloatieEffect:
 	farcall SurfFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
-	jr z, .Fail
+	jr z, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 EggBeaterEffect:
@@ -3019,13 +3003,9 @@ EggBeaterEffect:
 	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 GravityBuoyEffect:
@@ -3034,11 +3014,7 @@ GravityBuoyEffect:
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
