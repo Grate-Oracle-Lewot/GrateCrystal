@@ -2972,10 +2972,14 @@ FearowbotEffect:
 	cp $2
 	jr z, FailHMItem
 	cp $0
-	jr z, FailHMItem
+	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
 	ld b, $4
 	ld a, $2
+	ret
+
+.Error:
+	ld a, $0
 	ret
 
 FailHMItem:
