@@ -472,13 +472,6 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	giveitem DISCO_BALL
-	giveitem HEDGER
-	giveitem PICKAXE
-	giveitem FLOATIE
-	giveitem FEAROWBOT
-	giveitem EGG_BEATER
-	giveitem GRAVITY_BUOY
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
