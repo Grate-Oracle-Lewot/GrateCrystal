@@ -472,6 +472,7 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
+	giveitem FEAROWBOT
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
