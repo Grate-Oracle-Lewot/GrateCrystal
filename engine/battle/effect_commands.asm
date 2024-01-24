@@ -6071,7 +6071,7 @@ BattleCommand_Heal:
 	ld [hl], REST_SLEEP_TURNS + 1
 	ld hl, WentToSleepText
 	jr z, .no_status_to_heal
-	ld hl, RestedText
+	ld hl, WentToSleepText
 .no_status_to_heal
 	call StdBattleTextbox
 	ldh a, [hBattleTurn]
