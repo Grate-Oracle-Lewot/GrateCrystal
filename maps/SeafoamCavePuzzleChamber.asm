@@ -38,9 +38,9 @@ SeafoamCaveUBEQCPuzzle:
 
 .PuzzleComplete:
 	setevent EVENT_WALL_OPENED_IN_SEAFOAM_CAVE
-	pause 30
+	pause 20
 	earthquake 30
-	pause 90
+	pause 75
 	showemote EMOTE_QUESTION, PLAYER, 20
 	pause 30
 	playsound SFX_STRENGTH
