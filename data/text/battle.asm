@@ -586,12 +586,6 @@ WentToSleepText:
 	line "went to sleep!"
 	autodone
 
-RestedText:
-	text "<USER>"
-	line "fell asleep and"
-	scroll "became healthy!"
-	autodone
-
 RegainedHealthText:
 	text "<USER>"
 	line "regained health!"
