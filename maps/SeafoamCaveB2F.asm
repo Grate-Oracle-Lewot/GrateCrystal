@@ -124,9 +124,9 @@ SeafoamCaveB2FKarenScript:
 	writetext SeafoamCaveB2FKarenCreditsText
 	waitbutton
 	closetext
-	special HealParty
 	checkevent EVENT_BEAT_FINALE
 	iftrue .EndFinale
+	turnobject PLAYER, UP
 	opentext
 	writetext SeafoamCaveGoldTrophyText
 	setevent EVENT_DECO_GOLD_TROPHY
@@ -137,6 +137,7 @@ SeafoamCaveB2FKarenScript:
 	closetext
 	setevent EVENT_BEAT_FINALE
 .EndFinale:
+	special HealParty
 	refreshscreen
 	credits
 	end
