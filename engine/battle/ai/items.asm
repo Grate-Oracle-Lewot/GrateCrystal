@@ -153,6 +153,7 @@ AI_TryItem:
 	and a
 	ret nz
 
+; check if trainer class has items
 	ld a, [wEnemyTrainerItem1]
 	ld b, a
 	ld a, [wEnemyTrainerItem2]
@@ -279,6 +280,12 @@ AI_TryItem:
 	ret
 
 .IsHighestLevel:
+; if current enemy mon is Perish Songed, don't use items on it
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	ret nz
+
+; set carry if current mon is highest-leveled one in party
 	ld a, [wOTPartyCount]
 	ld d, a
 	ld e, 0
