@@ -201,7 +201,7 @@ SeafoamCaveBookText6:
 	line "and represents the"
 
 	para "number of evil"
-	cont "people."
+	line "people."
 
 	para "The triangle is"
 	line "orange and repre-"
@@ -228,6 +228,9 @@ SeafoamCaveBookText7:
 	cont "LEWOT'S DUBIOUS"
 	cont "GAMES and EXTRAN-"
 	cont "EOUS MERCHANDISE."
+
+	para "It's… not exactly"
+	line "a real company."
 	done
 
 SeafoamCaveBedText1:
