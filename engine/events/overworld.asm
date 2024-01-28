@@ -594,14 +594,10 @@ FlyFunction:
 	ret
 
 .nostormbadge
-	call CloseWindow
-	call WaitBGMap
 	ld a, $82
 	ret
 
 .indoors
-	call CloseWindow
-	call WaitBGMap
 	ld a, $2
 	ret
 
