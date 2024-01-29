@@ -278,7 +278,7 @@ NUM_ATTACKS EQU const_value - 1
 	const ANIM_IN_LOVE           ; 10b
 	const ANIM_IN_SANDSTORM      ; 10c
 	const ANIM_IN_NIGHTMARE      ; 10d
-	const ANIM_IN_WHIRLPOOL      ; 10e
+	const ANIM_IN_HAIL           ; 10e
 ; battle anims
 	const ANIM_MISS              ; 10f
 	const ANIM_ENEMY_DAMAGE      ; 110
@@ -288,7 +288,6 @@ NUM_ATTACKS EQU const_value - 1
 	const ANIM_WOBBLE            ; 114
 	const ANIM_SHAKE             ; 115
 	const ANIM_HIT_CONFUSION     ; 116
-	const ANIM_IN_HAIL           ; 117
 NUM_BATTLE_ANIMS EQU const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS
