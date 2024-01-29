@@ -229,7 +229,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash, brown for the Coin Case)
 - Trainers give more money upon defeat (except Teachers give the minimum, since they don't get paid enough)
 - Happiness builds a bit faster
-- Eggs hatch twice as fast, and come out at Lv.1 instead of Lv.5
+- Eggs hatch roughly twice as fast, and come out at Lv.1 instead of Lv.5
 - Higher chance to contract Pokérus, and no requirement to reach Goldenrod first (no Goldenrod requirement for Shuckle to make Berry Juice either)
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs; Miltank and Tauros can produce each other's eggs, and Metapod, Kakuna, and Porygon can no longer breed (Porygon2 still can)
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
