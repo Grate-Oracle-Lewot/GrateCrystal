@@ -63,7 +63,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
   - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
-  - All Pokémon that only belonged to one Egg Group now belong to two, and legendaries can now breed with Ditto (except for Mewtwo)
+  - All Pokémon that only belonged to one Egg Group now belong to two, Ditto can breed with itself, and legendaries can now breed with Ditto (except for Mewtwo)
 - After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), a few shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
