@@ -635,7 +635,7 @@ FlyFunction:
 
 .ReturnFromFly:
 	ld a, 0
-	ld [wUsingHMItem], a
+	ld [wFlyingWithFearowbot], a
 	ld e, PAL_OW_RED
 	farcall SetFirstOBJPalette
 	farcall RespawnPlayer
