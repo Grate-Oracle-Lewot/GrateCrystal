@@ -41,16 +41,10 @@ CheckBreedmonCompatibility:
 	ld c, $0
 	ld a, [wBreedMon1Species]
 	cp DITTO
-	jr z, .ditto1
+	jr z, .compute
 	ld a, [wBreedMon2Species]
 	cp DITTO
 	jr nz, .done
-	jr .compute
-
-.ditto1
-	ld a, [wBreedMon2Species]
-	cp DITTO
-	jr z, .done
 
 .compute
 	call .CheckDVs
