@@ -309,7 +309,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Second types for Pikachu forms may not load in battle. Might be related to the above issue.
 
-- Fearowbot crashes the game if used in a map that can't be Flown from.
+- Fearowbot uses the wrong icon for the overworld animation, despite using the right one on the map.
 
 - Haven't worked out how to make Nayru's dex show fishing encounter rates in light of the Odd Rod.
 
