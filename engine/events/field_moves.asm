@@ -397,14 +397,7 @@ FlyFunction_InitGFX:
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld a, [wUsingHMItem]
-	cp FALSE
-	jr z, .not_fearowbot
-	ld a, FEAROW
-	jr .got_icon_mon
-.not_fearowbot
 	ld a, [hl]
-.got_icon_mon
 	ld [wTempIconSpecies], a
 	ld e, FIELDMOVE_FLY
 	farcall FlyFunction_GetMonIcon
