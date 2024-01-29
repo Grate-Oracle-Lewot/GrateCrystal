@@ -2965,12 +2965,12 @@ DiscoBallEffect:
 	ret
 
 FearowbotEffect:
-	ld a, 2
+	ld a, 1
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
-	jr z, .Fail
+	jr z, FailHMItem
 	cp $0
 	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
@@ -2981,14 +2981,6 @@ FearowbotEffect:
 .Error:
 	ld a, $0
 	ld [wItemEffectSucceeded], a
-	ld [wUsingHMItem], a
-	ret
-
-.Fail:
-	ld a, $0
-	ld [wItemEffectSucceeded], a
-	ld [wUsingHMItem], a
-	ld a, $3
 	ret
 
 FailHMItem:
