@@ -2965,7 +2965,7 @@ DiscoBallEffect:
 	ret
 
 FearowbotEffect:
-	ld a, 1
+	ld a, 2
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
