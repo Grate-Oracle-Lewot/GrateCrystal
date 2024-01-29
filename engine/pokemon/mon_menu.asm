@@ -613,6 +613,7 @@ MonMenu_Cut:
 
 MonMenu_Fly:
 	ld a, 0
+	ld [wFlyingWithFearowbot], a
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
