@@ -2992,6 +2992,8 @@ FearowbotEffect:
 	ret
 
 FailHMItem:
+	ld a, $0
+	ld [wItemEffectSucceeded], a
 	ld a, $3
 	ret
 
