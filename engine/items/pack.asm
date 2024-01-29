@@ -501,14 +501,12 @@ UseItem:
 	call DoItemEffect
 	ld a, [wItemEffectSucceeded]
 	and a
-	ld b, a ; store a because of Fearowbot check
 
 	ld hl, wUsingHMItem
 	ld a, [hl]
 	cp 2 ; only Fearowbot should set this to 2
 	jr z, .fearowbot_skip
 	ld [hl], 0 ; reset wUsingHMItem. Fearowbot doesn't reset it until later, in order to set the mon icon
-	ld a, b
 	jr z, .tryOak
 
 .fearowbot_skip
