@@ -508,7 +508,7 @@ UseItem:
 	ld [hl], 0
 
 	jr z, .tryOak
-	ld a, PACKSTATE_QUITNOSCRIPT
+	ld a, PACKSTATE_QUITRUNSCRIPT
 	ld [wJumptableIndex], a
 	ret
 
