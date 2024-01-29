@@ -2966,6 +2966,7 @@ DiscoBallEffect:
 
 FearowbotEffect:
 	ld a, 1
+	ld [wFlyingWithFearowbot], a
 	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
