@@ -272,7 +272,6 @@ BattleAnimations::
 	dw BattleAnim_InLove
 	dw BattleAnim_InSandstorm
 	dw BattleAnim_InNightmare
-	dw BattleAnim_InWhirlpool
 	dw BattleAnim_Miss
 	dw BattleAnim_EnemyDamage
 	dw BattleAnim_EnemyStatDown
@@ -586,18 +585,6 @@ BattleAnim_InNightmare:
 	anim_sound 0, 0, SFX_BUBBLEBEAM
 	anim_obj ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
 	anim_wait 40
-	anim_ret
-
-BattleAnim_InWhirlpool:
-	anim_1gfx ANIM_GFX_WIND
-	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
-	anim_sound 0, 1, SFX_SURF
-.loop
-	anim_obj ANIM_OBJ_GUST, 132, 72, $0
-	anim_wait 6
-	anim_loop 6, .loop
-	anim_incbgeffect ANIM_BG_WHIRLPOOL
-	anim_wait 1
 	anim_ret
 
 BattleAnim_HitConfusion:
