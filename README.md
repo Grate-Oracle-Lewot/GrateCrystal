@@ -35,7 +35,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
 - Text scrolls automatically in battle (and at a few other key points)
-- Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers)
+- Run at bike speed by holding B (no effect on wild encounter rate or spinning trainers); Brake on Cycling Road by holding B
 - Greatly increased pack and PC storage space, including a separate "Fruit" pocket for Berries and Apricorns, and doubled space for phone numbers in the Pokégear
 - Berry and Apricorn trees now give out 5 at a time, as do phone contacts who give Berries
 - Special encounters for all legendary Pokémon (return the Squirtbottle to the Flower Shop to get the GS Ball!)
@@ -253,7 +253,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
-- Brake on Cycling Road by holding B
 - Unused experience growth rates given to some Pokémon, and a few other rates changed
 - Clock reset procedure simplified
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
