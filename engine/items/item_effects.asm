@@ -2970,7 +2970,7 @@ FearowbotEffect:
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
-	jr z, FailHMItem
+	jr z, .Fail
 	cp $0
 	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
@@ -2981,11 +2981,17 @@ FearowbotEffect:
 .Error:
 	ld a, $0
 	ld [wItemEffectSucceeded], a
+	ld [wUsingHMItem], a
+	ret
+
+.Fail:
+	ld a, $0
+	ld [wItemEffectSucceeded], a
+	ld [wUsingHMItem], a
+	ld a, $3
 	ret
 
 FailHMItem:
-	ld a, $0
-	ld [wItemEffectSucceeded], a
 	ld a, $3
 	ret
 
