@@ -33,7 +33,6 @@ SquirtleEggMoves:
 
 PidgeyEggMoves:
 	db PURSUIT
-	db FAINT_ATTACK
 	db FORESIGHT
 	db PECK
 	db SONICBOOM
@@ -746,6 +745,7 @@ QwilfishEggMoves:
 ShuckleEggMoves:
 	db SPIKES
 	db VINE_WHIP
+	db ENCORE
 	db FLAIL
 	db AMNESIA
 	db -1 ; end
