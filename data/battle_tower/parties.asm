@@ -2254,7 +2254,7 @@ BattleTowerMons:
 
 	db SHUCKLE
 	db LEFTOVERS
-	db SANDSTORM, REST, TOXIC, WRAP
+	db SANDSTORM, REST, TOXIC, BIND
 	dw 0 ; OT ID
 	dt 143680 ; Exp
 	; Stat exp
@@ -4814,7 +4814,7 @@ BattleTowerMons:
 
 	db SHUCKLE
 	db LEFTOVERS
-	db TOXIC, WRAP, PROTECT, ENCORE
+	db TOXIC, BIND, PROTECT, ENCORE
 	dw 0 ; OT ID
 	dt 708680 ; Exp
 	; Stat exp
