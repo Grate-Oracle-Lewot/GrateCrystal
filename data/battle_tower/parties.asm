@@ -4814,7 +4814,7 @@ BattleTowerMons:
 
 	db SHUCKLE
 	db LEFTOVERS
-	db TOXIC, BIND, PROTECT, ENCORE
+	db TOXIC, WHIRLPOOL, PROTECT, ENCORE
 	dw 0 ; OT ID
 	dt 708680 ; Exp
 	; Stat exp
