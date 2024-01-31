@@ -177,13 +177,13 @@ NUM_ROAMMONS EQU 2 ; G/S is three, and wram still has 3 roamers
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_NONE
-	const TREEMON_SET_CITY
-	const TREEMON_SET_TOWN
-	const TREEMON_SET_ROUTE
-	const TREEMON_SET_KANTO
-	const TREEMON_SET_LAKE
-	const TREEMON_SET_FOREST
+	const TREEMON_SET_NONE   ; 0
+	const TREEMON_SET_CITY   ; 1
+	const TREEMON_SET_TOWN   ; 2
+	const TREEMON_SET_ROUTE  ; 3
+	const TREEMON_SET_KANTO  ; 4
+	const TREEMON_SET_LAKE   ; 5
+	const TREEMON_SET_FOREST ; 6
 NUM_TREEMON_SETS EQU const_value
 
 ; treemon scores
