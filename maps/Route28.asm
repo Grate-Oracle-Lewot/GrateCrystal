@@ -94,7 +94,7 @@ Route28_MapEvents:
 
 	def_bg_events
 	bg_event 31,  5, BGEVENT_READ, Route28Sign
-	bg_event 25,  2, BGEVENT_ITEM, Route28HiddenRareCandy
+	bg_event 25,  3, BGEVENT_ITEM, Route28HiddenRareCandy
 
 	def_object_events
 	object_event 16, 14, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyMaeve, -1
