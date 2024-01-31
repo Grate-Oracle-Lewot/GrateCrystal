@@ -1,6 +1,7 @@
 TreeMons::
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2, TreeMons
+	dw TreeMonSet_None
 	dw TreeMonSet_City
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
@@ -13,6 +14,7 @@ TreeMons::
 ; Structure:
 ;	db  %, species, level
 
+TreeMonSet_None:
 TreeMonSet_City:
 ; common
 	db 25, SPEAROW,    10
