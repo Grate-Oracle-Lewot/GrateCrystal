@@ -54,9 +54,10 @@ CinnabarGroupSprites:
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
-	db SPRITE_BLUE
-	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_BLUE
+	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
@@ -74,8 +75,8 @@ SaffronGroupSprites:
 	db SPRITE_ROCKET
 	db SPRITE_MISTY
 	; max 9 of 9 walking sprites
-	db SPRITE_POKE_BALL
 	db SPRITE_SLOWPOKE
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 CeladonGroupSprites:
@@ -89,9 +90,9 @@ CeladonGroupSprites:
 	db SPRITE_OFFICER
 	db SPRITE_GRANNY
 	; 7 of max 9 walking sprites
+	db SPRITE_FRUIT_TREE
 	db SPRITE_POLIWAG
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 ; Route12 is connected to both Route11 and Route13
@@ -111,9 +112,10 @@ FuchsiaGroupSprites:
 	db SPRITE_BUG_CATCHER
 	; 8 of max 9 walking sprites
 	db SPRITE_BIG_SNORLAX
-	db SPRITE_MACHOP
-	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_MACHOP
+	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 IndigoGroupSprites:
@@ -139,8 +141,8 @@ CherrygroveGroupSprites:
 	db SPRITE_FISHING_GURU
 	db SPRITE_LASS
 	; max 9 of 9 walking sprites
-	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 ; Route37 and EcruteakCity are connected
@@ -158,11 +160,11 @@ EcruteakGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_GENTLEMAN
 	; 9 of max 9 walking sprites
-	db SPRITE_SUDOWOODO
+	db SPRITE_FRUIT_TREE
 	db SPRITE_TWIN
 	db SPRITE_OFFICER
+	db SPRITE_SUDOWOODO
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db SPRITE_SUICUNE
 	db 0 ; end
 
@@ -213,13 +215,13 @@ CianwoodGroupSprites:
 	db SPRITE_POKEFAN_F
 	db SPRITE_SUPER_NERD
 	; 9 of max 9 walking sprites
-	db SPRITE_TAUROS
-	db SPRITE_SUICUNE
 	db SPRITE_FRUIT_TREE
-	db SPRITE_ROCK
-	db SPRITE_POKE_BALL
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
+	db SPRITE_TAUROS
+	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
+	db SPRITE_SUICUNE
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -250,8 +252,8 @@ LakeOfRageGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_YOUNGSTER
 	; 8 of max 9 walking sprites
-	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
+	db SPRITE_GYARADOS
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -308,8 +310,8 @@ FastShipGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_FAIRY
 	; 6 of max 9 walking sprites
-	db SPRITE_HO_OH
 	db SPRITE_ROCK
+	db SPRITE_HO_OH
 	db 0 ; end
 
 CableClubGroupSprites:
