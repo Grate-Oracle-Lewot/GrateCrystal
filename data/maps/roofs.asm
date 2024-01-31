@@ -30,7 +30,7 @@ MapGroupRoofs:
 	db -1             ; 16
 	db -1             ; 17
 	db -1             ; 18
-	db ROOF_GOLDENROD ; 19 (Silver Cave)
+	db ROOF_NEW_BARK  ; 19 (Silver Cave)
 	db -1             ; 20
 	db -1             ; 21
 	db ROOF_OLIVINE   ; 22 (Cianwood)
