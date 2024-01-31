@@ -3,6 +3,7 @@
 	const ROUTE3_YOUNGSTER1
 	const ROUTE3_YOUNGSTER2
 	const ROUTE3_FISHER2
+	const ROUTE3_ROCK
 
 Route3_MapScripts:
 	def_scene_scripts
@@ -52,6 +53,9 @@ TrainerFirebreatherBurt:
 	waitbutton
 	closetext
 	end
+
+Route3Rock:
+	jumpstd SmashRockScript
 
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
@@ -151,3 +155,4 @@ Route3_MapEvents:
 	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerYoungsterWarren, -1
 	object_event 16,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJimmy, -1
 	object_event 48,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
+	object_event 41,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3Rock, -1
