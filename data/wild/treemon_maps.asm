@@ -39,7 +39,6 @@ TreeMonMaps:
 RockMonMaps:
 	treemon_map ROUTE_3,                   TREEMON_SET_ROCK
 	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
-	treemon_map VERMILION_CITY,            TREEMON_SET_ROCK
 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, TREEMON_SET_ROCK
 	treemon_map ICE_PATH_B3F,              TREEMON_SET_ROCK
