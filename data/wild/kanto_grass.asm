@@ -847,7 +847,7 @@ KantoGrassWildMons:
 	db 39, FURRET
 	db 35, ARBOK
 	db 35, SANDSLASH
-	db 33, BUTTERFREE
+	db 33, BEEDRILL
 	db 35, PIDGEOT
 	db 36, DODRIO
 	; day
@@ -856,7 +856,7 @@ KantoGrassWildMons:
 	db 39, FURRET
 	db 35, ARBOK
 	db 35, SANDSLASH
-	db 33, BUTTERFREE
+	db 33, BEEDRILL
 	db 35, PIDGEOT
 	db 36, DODRIO
 	; nite
@@ -865,7 +865,7 @@ KantoGrassWildMons:
 	db 39, RATICATE
 	db 35, ARBOK
 	db 35, SANDSLASH
-	db 33, BEEDRILL
+	db 35, VENOMOTH
 	db 37, NOCTOWL
 	db 36, DODRIO
 	end_grass_wildmons
@@ -878,7 +878,7 @@ KantoGrassWildMons:
 	db 38, FURRET
 	db 34, ARBOK
 	db 34, SANDSLASH
-	db 32, BUTTERFREE
+	db 33, BUTTERFREE
 	db 34, PIDGEOT
 	db 35, DODRIO
 	; day
@@ -887,7 +887,7 @@ KantoGrassWildMons:
 	db 38, FURRET
 	db 34, ARBOK
 	db 34, SANDSLASH
-	db 32, BUTTERFREE
+	db 33, BUTTERFREE
 	db 34, PIDGEOT
 	db 35, DODRIO
 	; nite
@@ -896,7 +896,7 @@ KantoGrassWildMons:
 	db 38, RATICATE
 	db 34, ARBOK
 	db 34, SANDSLASH
-	db 32, BEEDRILL
+	db 33, VENOMOTH
 	db 36, NOCTOWL
 	db 35, DODRIO
 	end_grass_wildmons
