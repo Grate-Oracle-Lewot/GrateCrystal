@@ -472,8 +472,6 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	setflag ENGINE_FLYPOINT_SILVER_CAVE
-	setflag ENGINE_STORMBADGE
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
