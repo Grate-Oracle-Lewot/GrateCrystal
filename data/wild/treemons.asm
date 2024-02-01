@@ -71,19 +71,19 @@ TreeMonSet_Route:
 
 TreeMonSet_Kanto:
 ; common
-	db 25, HOOTHOOT,   20
-	db 20, EKANS,      20
-	db 20, NOCTOWL,    40
-	db 15, EXEGGCUTE,  20
-	db 10, EXEGGCUTE,  10
+	db 25, NOCTOWL,    40
+	db 20, METAPOD,    40
+	db 20, KAKUNA,     40
+	db 15, EXEGGCUTE,  40
 	db 10, EXEGGCUTE,  30
+	db 10, EXEGGCUTE,  50
 	db -1
 ; rare
-	db 25, HOOTHOOT,   20
-	db 20, PINECO,     20
-	db 20, FORRETRESS, 40
-	db 15, EXEGGCUTE,  30
-	db 10, EXEGGCUTE,  10
+	db 25, FORRETRESS, 40
+	db 20, LEDIAN,     40
+	db 20, ARIADOS,    40
+	db 15, AIPOM,      40
+	db 10, EXEGGCUTE,  30
 	db 10, EXEGGCUTE,  50
 	db -1
 
