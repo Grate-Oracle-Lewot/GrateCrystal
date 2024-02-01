@@ -343,10 +343,10 @@ GoldenrodCityLassText:
 	done
 
 GoldenrodCityGrampsText:
-	text "My pops was from"
+	text "My mother was from"
 	line "HOENN."
 
-	para "He said a battle"
+	para "She said a battle"
 	line "between two #-"
 	cont "MON created the"
 	cont "continents."
