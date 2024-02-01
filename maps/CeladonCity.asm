@@ -195,6 +195,10 @@ CeladonCityTutorSacredFireNoLeaf:
 	para "out of small trees"
 	line "when you use"
 	cont "HEADBUTT."
+
+	para "These trees can"
+	line "only be found in"
+	cont "JOHTO."
 	done
 
 CeladonCityTutorAeroblastText1:
@@ -285,10 +289,8 @@ CeladonCityTeacher1Text:
 
 CeladonCityGramps2Text:
 	text "Nihihi! This GYM"
-	line "is great! Only"
-
-	para "girls are allowed"
-	line "here!"
+	line "is great! It's"
+	cont "full of women!"
 	done
 
 CeladonCityYoungster1Text:
@@ -363,7 +365,7 @@ CeladonCityMansionSignText:
 
 CeladonCityGameCornerSignText:
 	text "The Game Area for"
-	line "Grown-ups--CELADON"
+	line "Grown-Ups--CELADON"
 	cont "GAME CORNER"
 	done
 
