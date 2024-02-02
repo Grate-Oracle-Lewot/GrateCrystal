@@ -1144,3 +1144,17 @@ PeltedByHailText:
 	text "<USER>"
 	line "is pelted by HAIL!"
 	autodone
+
+StaticParalysisText:
+	text "USER"
+	line "was paralyzed by"
+	scroll "static shock!"
+	autodone
+
+CuteCharmText:
+	text "<USER>"
+	line "was infatuated by"
+
+	autopara "<TARGET>'s"
+	line "cuteness!"
+	autodone
