@@ -6874,3 +6874,6 @@ SwapBCTypes:
 	ld a, c
 	ld [wEnemyMonType2], a
 	ret
+
+BattleCommand_CheckContact:
+	ret
