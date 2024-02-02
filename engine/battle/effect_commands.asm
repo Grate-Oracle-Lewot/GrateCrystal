@@ -6557,7 +6557,7 @@ GetOpponentItem:
 	ld hl, wBattleMonItem
 .go
 	ld b, [hl]
-	jp GetItemHeldEffect
+	; fallthrough
 
 GetItemHeldEffect:
 ; Return the effect of item b in bc.
@@ -6876,4 +6876,162 @@ SwapBCTypes:
 	ret
 
 BattleCommand_CheckContact:
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld hl, ContactMoves
+	call IsInByteArray
+	ret nc
+
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckTargetType
+	ld hl, wBattleMonType1
+
+.CheckTargetType:
+	ld a, [hli]
+	cp ELECTRIC
+	jr z, .Static
+	cp FAIRY
+	jr z, .CuteCharm
+	ld a, [hl]
+	cp ELECTRIC
+	jr z, .Static
+	cp FAIRY
+	jr z, .CuteCharm
+	ret
+
+.Static:
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckGroundImmunity
+	ld hl, wEnemyMonType1
+.CheckGroundImmunity:
+	ld a, [hli]
+	cp GROUND
+	jr z, .DoublecheckFairy
+	ld a, [hl]
+	cp GROUND
+	jr z, .DoublecheckFairy
+
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	and a
+	jr nz, .DoublecheckFairy
+
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyMonItem
+.go
+	ld b, [hl]
+	call GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_PARALYZE
+	jr z, .DoublecheckFairy
+
+	ld hl, wPlayerScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld hl, wEnemyScreens
+.got_turn
+	bit SCREENS_SAFEGUARD, [hl]
+	jr nz, .DoublecheckFairy
+
+	call BattleRandom
+	cp 30 percent
+	jr nc, .DoublecheckFairy
+
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	set PAR, [hl]
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go2
+	call UpdateEnemyMonInParty
+.go2
+	call UpdateBattleMonInParty
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	ld a, [wBattleMonStatus]
+	and 1 << PAR
+	jr z, .StaticAnim
+	ld hl, wBattleMonSpeed + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .player_ok
+	ld b, $1 ; min speed
+
+.player_ok
+	ld [hl], b
+	jr .StaticAnim
+
+.enemy
+	ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jr z, .StaticAnim
+	ld hl, wEnemyMonSpeed + 1
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .enemy_ok
+	ld b, $1 ; min speed
+
+.enemy_ok
+	ld [hl], b
+
+.StaticAnim:
+	ld de, ANIM_PAR
+	call PlayUserBattleAnim
+	call RefreshBattleHuds
+	ld hl, StaticParalysisText
+	call StdBattleTextbox
+	ld hl, UseHeldStatusHealingItem
+	call CallBattleCore
+
+.DoublecheckFairy:
+	ld a, [hli]
+	cp FAIRY
+	jr z, .CuteCharm
+	ld a, [hl]
+	cp FAIRY
+	ret nz
+
+.CuteCharm:
+	call CheckOppositeGender
+	ret c
+
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	bit SUBSTATUS_IN_LOVE, [hl]
+	ret nz
+
+	call BattleRandom
+	cp 30 percent
+	ret nc
+
+	set SUBSTATUS_IN_LOVE, [hl]
+	ld de, ANIM_IN_LOVE
+	call PlayUserBattleAnim
+	call RefreshBattleHuds
+	ld hl, CuteCharmText
+	call StdBattleTextbox
 	ret
