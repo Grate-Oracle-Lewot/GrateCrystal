@@ -54,7 +54,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 15, PSYDUCK
 	db 15, PINECO
-	db 15, GOLDUCK
+	db 15, FARFETCH_D
 	db 15, MARILL
 	end_water_wildmons
 
@@ -255,7 +255,7 @@ JohtoWaterWildMons:
 	db 20, POLIWAG
 	db 15, POLIWAG
 	db 20, POLIWHIRL
-	db 15, PINECO
+	db 15, JIRK
 	end_water_wildmons
 
 	def_water_wildmons CIANWOOD_CITY
@@ -279,7 +279,7 @@ JohtoWaterWildMons:
 	db 20, POLIWAG
 	db 15, POLIWAG
 	db 20, POLIWHIRL
-	db 20, PINECO
+	db 20, JIRK
 	end_water_wildmons
 
 	def_water_wildmons LAKE_OF_RAGE
