@@ -6893,12 +6893,12 @@ BattleCommand_CheckContact:
 	cp ELECTRIC
 	jr z, .Static
 	cp FAIRY
-	jr z, .CuteCharm
+	jp z, .CuteCharm
 	ld a, [hl]
 	cp ELECTRIC
 	jr z, .Static
 	cp FAIRY
-	jr z, .CuteCharm
+	jp z, .CuteCharm
 	ret
 
 .Static:
@@ -6910,15 +6910,15 @@ BattleCommand_CheckContact:
 .CheckGroundImmunity:
 	ld a, [hli]
 	cp GROUND
-	jr z, .DoublecheckFairy
+	jp z, .DoublecheckFairy
 	ld a, [hl]
 	cp GROUND
-	jr z, .DoublecheckFairy
+	jp z, .DoublecheckFairy
 
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	and a
-	jr nz, .DoublecheckFairy
+	jp nz, .DoublecheckFairy
 
 	ld hl, wBattleMonItem
 	ldh a, [hBattleTurn]
