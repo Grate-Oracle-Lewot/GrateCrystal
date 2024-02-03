@@ -5,7 +5,7 @@ JohtoWaterWildMons:
 	def_water_wildmons RUINS_OF_ALPH_OUTSIDE
 	db 2 percent ; encounter rate
 	db 15, WOOPER
-	db 15, GOLDEEN
+	db 15, PSYDUCK
 	db 15, POLIWAG
 	db 15, SLOWPOKE
 	end_water_wildmons
