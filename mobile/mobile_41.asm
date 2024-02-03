@@ -334,7 +334,6 @@ StubbedTrainerRankings_LinkBattles:
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Splash:
-	ret
 	; Only counts if it’s the player’s turn
 	ldh a, [hBattleTurn]
 	and a
@@ -505,8 +504,8 @@ DeleteMobileEventIndex:
 	call CloseSRAM
 	ret
 
-InitializeTrainerRankings: ; unreferenced
-; Initializes Trainer Rankings data for a new save file in JP Crystal.
+InitializeTrainerRankings:
+; Initializes Trainer Rankings data for a new save file.
 	ld hl, sTrainerRankings
 	ld bc, sTrainerRankingsEnd - sTrainerRankings
 	xor a
