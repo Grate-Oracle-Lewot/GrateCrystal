@@ -191,6 +191,7 @@
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
 
+	charmap "<INV_QU>",  $e5 ; inverted question mark
 	charmap "?",         $e6
 	charmap "!",         $e7
 	charmap ".",         $e8
