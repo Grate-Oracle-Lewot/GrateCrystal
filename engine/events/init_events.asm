@@ -7,7 +7,7 @@ InitializeEvents:
 	ld a, [hli]
 	ld d, a
 	and e
-	cp -1
+	inc a
 	jr z, .events_done
 	ld b, SET_FLAG
 	push hl
@@ -24,7 +24,7 @@ InitializeEvents:
 	ld a, [hli]
 	ld d, a
 	and e
-	cp -1
+	inc a
 	jr z, .flags_done
 	ld b, SET_FLAG
 	push hl
@@ -38,7 +38,7 @@ InitializeEvents:
 .sprites_loop
 	ld a, [hli]
 	inc a
-	ret z
+	jr z, .sprites_done
 	; subtract 1 to balance the previous 'inc'
 	add LOW(wVariableSprites) - 1
 	ld e, a
@@ -48,5 +48,9 @@ InitializeEvents:
 	ld a, [hli]
 	ld [de], a
 	jr .sprites_loop
+.sprites_done
+
+	farcall InitializeTrainerRankings
+	ret
 
 INCLUDE "data/events/init_events.asm"
