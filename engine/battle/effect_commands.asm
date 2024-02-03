@@ -6882,6 +6882,11 @@ BattleCommand_CheckContact:
 	call IsInByteArray
 	ret nc
 
+	xor a
+	ld [wNumHits], a
+	call CheckSubstituteOpp
+	ret nz
+
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
