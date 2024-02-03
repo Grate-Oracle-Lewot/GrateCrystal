@@ -32,7 +32,7 @@ ScientistHegelSeenText:
 	done
 
 ScientistHegelBeatenText:
-	text "Quack?"
+	text "<INV_QU>Quack!"
 	done
 
 ScientistHegelAfterBattleText:
