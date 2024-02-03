@@ -20,10 +20,10 @@ JohtoWaterWildMons:
 
 	def_water_wildmons UNION_CAVE_B1F
 	db 2 percent ; encounter rate
-	db 15, WOOPER
-	db 20, QUAGSIRE
-	db 15, QUAGSIRE
 	db 20, WOOPER
+	db 20, QUAGSIRE
+	db 15, WOOPER
+	db 15, QUAGSIRE
 	end_water_wildmons
 
 	def_water_wildmons UNION_CAVE_B2F
