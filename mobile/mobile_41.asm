@@ -3,7 +3,6 @@
 
 ; Copies certain values at the time the player enters the Hall of Fame.
 StubbedTrainerRankings_HallOfFame2::
-	ret
 	ld a, BANK(sTrainerRankingGameTimeHOF)
 	call OpenSRAM
 
@@ -34,7 +33,6 @@ StubbedTrainerRankings_HallOfFame2::
 	ret
 
 StubbedTrainerRankings_MagikarpLength:
-	ret
 	ld a, BANK(sTrainerRankingLongestMagikarp)
 	call OpenSRAM
 	ld de, wMagikarpLength
@@ -102,7 +100,6 @@ StubbedTrainerRankings_MagikarpLength:
 	ret
 
 StubbedTrainerRankings_BugContestScore:
-	ret
 	ld a, BANK(sTrainerRankingBugContestScore)
 	call OpenSRAM
 	ldh a, [hProduct]
@@ -131,7 +128,6 @@ StubbedTrainerRankings_BugContestScore:
 	ret
 
 StubbedTrainerRankings_AddToSlotsWinStreak:
-	ret
 	ld a, BANK(sTrainerRankingCurrentSlotsStreak)
 	call OpenSRAM
 
@@ -171,7 +167,6 @@ StubbedTrainerRankings_AddToSlotsWinStreak:
 	ret
 
 StubbedTrainerRankings_EndSlotsWinStreak:
-	ret
 	ld a, BANK(sTrainerRankingCurrentSlotsStreak)
 	call OpenSRAM
 	ld hl, sTrainerRankingCurrentSlotsStreak
@@ -183,7 +178,6 @@ StubbedTrainerRankings_EndSlotsWinStreak:
 	ret
 
 StubbedTrainerRankings_AddToSlotsPayouts:
-	ret
 	ld a, BANK(sTrainerRankingTotalSlotsPayouts)
 	call OpenSRAM
 	ld hl, sTrainerRankingTotalSlotsPayouts + 3
@@ -211,7 +205,6 @@ StubbedTrainerRankings_AddToSlotsPayouts:
 	ret
 
 StubbedTrainerRankings_AddToBattlePayouts:
-	ret
 	ld a, BANK(sTrainerRankingTotalBattlePayouts)
 	call OpenSRAM
 	ld hl, sTrainerRankingTotalBattlePayouts + 3
@@ -241,12 +234,10 @@ StubbedTrainerRankings_AddToBattlePayouts:
 	ret
 
 StubbedTrainerRankings_StepCount:
-	ret
 	ld hl, sTrainerRankingStepCount
 	jp StubbedTrainerRankings_Increment4Byte
 
 StubbedTrainerRankings_BattleTowerWins: ; unreferenced
-	ret
 	ld a, BANK(s5_aa8d)
 	call OpenSRAM
 	ld a, [s5_aa8d]
@@ -257,12 +248,10 @@ StubbedTrainerRankings_BattleTowerWins: ; unreferenced
 	jp StubbedTrainerRankings_Increment2Byte
 
 StubbedTrainerRankings_TMsHMsTaught:
-	ret
 	ld hl, sTrainerRankingTMsHMsTaught
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Battles:
-	ret
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
 	ret z
@@ -270,7 +259,6 @@ StubbedTrainerRankings_Battles:
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_WildBattles:
-	ret
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
 	ret z
@@ -278,97 +266,70 @@ StubbedTrainerRankings_WildBattles:
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_TrainerBattles:
-	ret
 	ld hl, sTrainerRankingTrainerBattles
 	jp StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Unused1: ; unreferenced
-	ret
-	ld hl, sTrainerRankingUnused1
-	jp StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_HallOfFame::
-	ret
 	ld hl, sTrainerRankingHOFEntries
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_WildMonsCaught:
-	ret
 	ld hl, sTrainerRankingWildMonsCaught
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_HookedEncounters:
-	ret
 	ld hl, sTrainerRankingHookedEncounters
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_EggsHatched:
-	ret
 	ld hl, sTrainerRankingEggsHatched
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_MonsEvolved:
-	ret
 	ld hl, sTrainerRankingMonsEvolved
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_FruitPicked:
-	ret
 	ld hl, sTrainerRankingFruitPicked
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Healings:
-	ret
 	ld hl, sTrainerRankingHealings
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_MysteryGift:
-	ret
 	ld hl, sTrainerRankingMysteryGift
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Trades:
-	ret
 	ld hl, sTrainerRankingTrades
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Fly:
-	ret
 	ld hl, sTrainerRankingFly
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Surf:
-	ret
 	ld hl, sTrainerRankingSurf
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Waterfall:
-	ret
 	ld hl, sTrainerRankingWaterfall
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_WhiteOuts:
-	ret
 	ld hl, sTrainerRankingWhiteOuts
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_LuckyNumberShow:
-	ret
 	ld hl, sTrainerRankingLuckyNumberShow
 	jr StubbedTrainerRankings_Increment2Byte
 
 StubbedTrainerRankings_PhoneCalls:
-	ret
 	ld hl, sTrainerRankingPhoneCalls
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Unused2: ; unreferenced
-	ret
-	ld hl, sTrainerRankingUnused2
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_LinkBattles:
-	ret
 	ld hl, sTrainerRankingLinkBattles
 	jr StubbedTrainerRankings_Increment3Byte
 
@@ -382,33 +343,22 @@ StubbedTrainerRankings_Splash:
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_TreeEncounters:
-	ret
 	ld hl, sTrainerRankingTreeEncounters
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Unused3: ; unreferenced
-	ret
-	ld hl, sTrainerRankingUnused3
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_ColosseumWins: ; win
-	ret
 	ld hl, sTrainerRankingColosseumWins
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_ColosseumLosses: ; lose
-	ret
 	ld hl, sTrainerRankingColosseumLosses
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_ColosseumDraws: ; draw
-	ret
 	ld hl, sTrainerRankingColosseumDraws
 	jr StubbedTrainerRankings_Increment3Byte
 
-; Counts uses of both Selfdestruct and Explosion.
 StubbedTrainerRankings_Selfdestruct:
-	ret
 	; Only counts if it’s the player’s turn
 	ldh a, [hBattleTurn]
 	and a
@@ -1002,7 +952,6 @@ Function106453:
 	ret
 
 Stubbed_Function106462:
-	ret
 	ret
 
 Function106464::
