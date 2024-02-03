@@ -81,5 +81,4 @@ ContactMoves::
 	db CRUNCH
 	db EXTREMESPEED
 	db ROCK_SMASH
-	db BEAT_UP
 	db STRUGGLE ; -1
