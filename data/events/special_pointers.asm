@@ -70,7 +70,7 @@ SpecialsPointers::
 	add_special UpdateSprites ; bank 0
 	add_special UpdatePlayerSprite ; bank 0
 	add_special GameCornerPrizeMonCheckDex
-	add_special UnusedSetSeenMon ; unused
+	add_special UnusedSetSeenMon ; used now for beasts in Burned Tower
 	add_special WaitSFX ; bank 0
 	add_special PlayMapMusic ; bank 0
 	add_special RestartMapMusic ; bank 0
