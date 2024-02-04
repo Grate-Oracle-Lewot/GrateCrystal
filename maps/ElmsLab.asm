@@ -927,7 +927,7 @@ ElmsLabHealingMachineText1:
 	done
 
 ElmsLabHealingMachineText2:
-	text "Heal?"
+	text "Heal #MON?"
 	autodone
 
 ElmAfterTheftText1:
