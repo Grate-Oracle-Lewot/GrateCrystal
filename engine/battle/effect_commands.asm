@@ -6876,6 +6876,7 @@ SwapBCTypes:
 	ret
 
 BattleCommand_CheckContact:
+	ret ; dummied out for now
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld hl, ContactMoves
@@ -7004,12 +7005,12 @@ BattleCommand_CheckContact:
 	ld [hl], b
 
 .StaticAnim:
-	ld de, ANIM_PAR
+	ld de, ANIM_PAR ; doesn't seem to work
 	call PlayUserBattleAnim
 	call RefreshBattleHuds
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
-	ld hl, UseHeldStatusHealingItem
+	ld hl, UseHeldStatusHealingItem ; I think this would use the opponent's item...
 	call CallBattleCore
 
 ; Static should be doublechecked too if you have any Fairy/Electric (as opposed to Electric/Fairy) types
