@@ -39,7 +39,7 @@ GameCornerPrizeMonCheckDex:
 	call ExitAllMenus
 	ret
 
-UnusedSetSeenMon:
+UnusedSetSeenMon: ; used now for beasts in Burned Tower
 	ld a, [wScriptVar]
 	dec a
 	call SetSeenMon
