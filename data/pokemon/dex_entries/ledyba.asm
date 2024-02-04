@@ -5,6 +5,6 @@
 	next "shell houses wings"
 	next "that let it flit"
 
-	page "from place to place"
-	next "while it's active,"
+	page "about while it's"
+	next "active, which is"
 	next "around dawn.@"
