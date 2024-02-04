@@ -256,10 +256,19 @@ CheckCoinsAndCoinCase:
 	text_far _NoCoinCaseText
 	text_end
 
-ClearBGPalettesBufferScreen:
-	call ClearBGPalettes
-	call BufferScreen
-	ret
+FillPokedex:
+	ld a, BULBASAUR
+	ld [wScriptVar], a
+.loop
+	ld a, [wScriptVar]
+	dec a
+	call SetSeenAndCaughtMon
+	ld a, [wScriptVar]
+	inc a
+	cp EGG
+	ret z
+	ld [wScriptVar], a
+	jr .loop
 
 ScriptReturnCarry:
 	jr c, .carry
