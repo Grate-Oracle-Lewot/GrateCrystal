@@ -57,7 +57,7 @@ SpecialsPointers::
 	add_special SlotMachine
 	add_special CardFlip
 	add_special MoveReminder
-	add_special ClearBGPalettesBufferScreen ; unused
+	add_special FillPokedex ; used for testing
 	add_special FadeOutPalettes
 	add_special BattleTowerFade
 	add_special FadeBlackQuickly
@@ -66,7 +66,7 @@ SpecialsPointers::
 	add_special ReloadSpritesNoPalettes ; bank 0
 	add_special ClearBGPalettes ; bank 0
 	add_special UpdateTimePals ; bank 0
-	add_special ClearTilemap ; bank 0; unused as special
+	add_special ClearTilemap ; bank 0, unused as special
 	add_special UpdateSprites ; bank 0
 	add_special UpdatePlayerSprite ; bank 0
 	add_special GameCornerPrizeMonCheckDex
