@@ -7012,6 +7012,7 @@ BattleCommand_CheckContact:
 	ld hl, UseHeldStatusHealingItem
 	call CallBattleCore
 
+; Static should be doublechecked too if you have any Fairy/Electric (as opposed to Electric/Fairy) types
 .DoublecheckFairy:
 	ld a, [hli]
 	cp FAIRY
