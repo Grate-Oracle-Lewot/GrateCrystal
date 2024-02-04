@@ -1146,7 +1146,7 @@ PeltedByHailText:
 	autodone
 
 StaticParalysisText:
-	text "USER"
+	text "<USER>"
 	line "was paralyzed by"
 	scroll "static shock!"
 	autodone
