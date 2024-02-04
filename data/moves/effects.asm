@@ -17,7 +17,7 @@ NormalHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -48,7 +48,7 @@ PoisonHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	poisontarget
@@ -71,7 +71,7 @@ LeechHit:
 	criticaltext
 	supereffectivetext
 	draintarget
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -93,7 +93,7 @@ BurnHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	burntarget
@@ -116,7 +116,7 @@ FreezeHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	freezetarget
@@ -139,7 +139,7 @@ ParalyzeHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	paralyzetarget
@@ -562,7 +562,7 @@ AttackDownHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	attackdown
@@ -586,7 +586,7 @@ DefenseDownHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	defensedown
@@ -702,7 +702,7 @@ EvasionDownHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	evasiondown
@@ -728,7 +728,7 @@ DefenseUpHit:
 	supereffectivetext
 	defenseup
 	statupmessage
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -752,7 +752,7 @@ AttackUpHit:
 	supereffectivetext
 	attackup
 	statupmessage
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -826,7 +826,7 @@ Bide:
 	moveanim
 	bidefailtext
 	applydamage
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -850,7 +850,7 @@ Rampage:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -883,7 +883,7 @@ MultiHit:
 	criticaltext
 	cleartext
 	supereffectivelooptext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	endloop
@@ -935,7 +935,7 @@ FlinchHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	flinchtarget
@@ -952,7 +952,7 @@ OHKOHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -974,7 +974,7 @@ RecoilHit:
 	criticaltext
 	supereffectivetext
 	recoil
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1019,7 +1019,7 @@ ConfuseHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	confusetarget
@@ -1108,7 +1108,7 @@ SkyAttack:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	flinchtarget
@@ -1159,7 +1159,7 @@ Rage:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1208,7 +1208,7 @@ Dig:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1230,7 +1230,7 @@ TrapTarget:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	traptarget
@@ -1248,7 +1248,7 @@ StaticDamage:
 	moveanim
 	failuretext
 	applydamage
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1265,7 +1265,7 @@ Reversal:
 	failuretext
 	applydamage
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1279,7 +1279,7 @@ Counter:
 	moveanim
 	failuretext
 	applydamage
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1310,7 +1310,7 @@ Snore:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	flinchtarget
@@ -1377,7 +1377,7 @@ FalseSwipe:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1410,7 +1410,7 @@ TripleKick:
 	criticaltext
 	cleartext
 	supereffectivelooptext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kickcounter
@@ -1436,7 +1436,7 @@ Thief:
 	criticaltext
 	supereffectivetext
 	thief
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1472,7 +1472,7 @@ FlameWheel:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1545,7 +1545,7 @@ Rollout:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1585,7 +1585,7 @@ FuryCutter:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1615,7 +1615,7 @@ Return:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1695,7 +1695,7 @@ Pursuit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1718,7 +1718,7 @@ RapidSpin:
 	criticaltext
 	supereffectivetext
 	clearhazards
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1823,7 +1823,7 @@ SkullBash:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	kingsrock
@@ -1972,7 +1972,7 @@ Stomp:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkcontact
+;	checkcontact
 	checkfaint
 	buildopponentrage
 	flinchtarget
