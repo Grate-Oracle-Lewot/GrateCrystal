@@ -7,4 +7,4 @@
 
 	page "becomes a SLOWBRO,"
 	next "gaining strength"
-	next "if not speed."
+	next "if not speed.@"
