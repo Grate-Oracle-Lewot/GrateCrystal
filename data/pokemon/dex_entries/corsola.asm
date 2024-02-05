@@ -5,6 +5,6 @@
 	next "as CORSOLA is act-"
 	next "ually a bunch of"
 
-	page "tiny #MON form-"
-	next "ing a rocky mass."
-	next "@"
+	page "microscopic #-"
+	next "MON forming a"
+	next "rocky mass.@"
