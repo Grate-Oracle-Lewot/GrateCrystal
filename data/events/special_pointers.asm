@@ -76,8 +76,8 @@ SpecialsPointers::
 	add_special RestartMapMusic ; bank 0
 	add_special HealMachineAnim
 	add_special SurfStartStep
-	add_special FindPartyMonAboveLevel ; unused
-	add_special FindPartyMonAtLeastThatHappy ; unused
+	add_special InitRoamingRaikou
+	add_special InitRoamingEntei
 	add_special FindPartyMonThatSpecies
 	add_special FindPartyMonThatSpeciesYourTrainerID
 	add_special EggMoveTutor
