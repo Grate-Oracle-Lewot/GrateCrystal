@@ -17,6 +17,7 @@ AsleepTreeMonsNite:
 AsleepTreeMonsDay:
 AsleepTreeMonsMorn:
 	db VENONAT
+	db VENOMOTH
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
