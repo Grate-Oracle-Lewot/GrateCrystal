@@ -122,7 +122,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; KANGASKHAN
 	icon_pals BLUE,   BLUE   ; HORSEA
 	icon_pals BLUE,   BLUE   ; SEADRA
-	icon_pals PINK,   BROWN  ; GOLDEEN
+	icon_pals PINK,   YELLOW ; GOLDEEN
 	icon_pals RED,    YELLOW ; SEAKING
 	icon_pals BROWN,  GRAY   ; STARYU
 	icon_pals PURPLE, BLUE   ; STARMIE
