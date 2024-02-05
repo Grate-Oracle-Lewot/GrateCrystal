@@ -148,9 +148,9 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; KABUTOPS
 	icon_pals GRAY,   PURPLE ; AERODACTYL
 	icon_pals GRAY,   BLUE   ; SNORLAX
-	icon_pals BLUE,   GRAY   ; ARTICUNO
+	icon_pals BLUE,   PURPLE ; ARTICUNO
 	icon_pals YELLOW, BROWN  ; ZAPDOS
-	icon_pals RED,    RED    ; MOLTRES
+	icon_pals RED,    BLUE   ; MOLTRES
 	icon_pals BLUE,   PINK   ; DRATINI
 	icon_pals BLUE,   PURPLE ; DRAGONAIR
 	icon_pals BROWN,  GREEN  ; DRAGONITE
