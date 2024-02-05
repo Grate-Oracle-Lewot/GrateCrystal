@@ -246,7 +246,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, BROWN  ; JIRK
 	icon_pals BLUE,   RED    ; CASTAWEIGH
 	icon_pals PINK,   GRAY   ; MILTANK
-	icon_pals PINK,   PINK   ; BLISSEY
+	icon_pals PINK,   PURPLE ; BLISSEY
 	icon_pals YELLOW, BROWN  ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   GRAY   ; SUICUNE
