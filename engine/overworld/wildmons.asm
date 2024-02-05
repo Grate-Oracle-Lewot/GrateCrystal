@@ -488,6 +488,10 @@ InitRoamMons:
 InitRoamingRaikou:
 ; for respawning Raikou after beating the League
 
+; check if Raikou is still alive, if so do nothing
+	ld a, [wRoamMon1Species]
+	ret nz
+
 ; species
 	ld a, RAIKOU
 	ld [wRoamMon1Species], a
@@ -509,6 +513,10 @@ InitRoamingRaikou:
 
 InitRoamingEntei:
 ; for respawning Entei after beating the League
+
+; check if Entei is still alive, if so do nothing
+	ld a, [wRoamMon2Species]
+	ret nz
 
 ; species
 	ld a, ENTEI
