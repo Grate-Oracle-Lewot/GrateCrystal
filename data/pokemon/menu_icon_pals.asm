@@ -203,7 +203,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, GREEN  ; ESPEON
 	icon_pals GRAY,   GRAY   ; UMBREON
 	icon_pals BROWN,  PURPLE ; MURKROW
-	icon_pals PINK,   PURPLE ; SLOWKING
+	icon_pals PINK,   PINK   ; SLOWKING
 	icon_pals PURPLE, RED    ; MISDREAVUS
 	icon_pals BROWN,  BLUE   ; UNOWN
 	icon_pals BLUE,   PINK   ; WOBBUFFET
