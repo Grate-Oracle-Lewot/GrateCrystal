@@ -61,7 +61,7 @@ MonMenuIconPals:
 	icon_pals YELLOW, BLUE   ; PSYDUCK
 	icon_pals BLUE,   YELLOW ; GOLDUCK
 	icon_pals BROWN,  GREEN  ; MANKEY
-	icon_pals BROWN,  RED    ; PRIMAPE
+	icon_pals BROWN,  PINK   ; PRIMAPE
 	icon_pals RED,    BROWN  ; GROWLITHE
 	icon_pals RED,    GREEN  ; ARCANINE
 	icon_pals RED,    PINK   ; POLIWAG
