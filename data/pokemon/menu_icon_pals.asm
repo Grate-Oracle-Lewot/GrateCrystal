@@ -16,7 +16,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   GREEN  ; BLASTOISE
 	icon_pals GREEN,  YELLOW ; CATERPIE
 	icon_pals GREEN,  BROWN  ; METAPOD
-	icon_pals PURPLE, BLUE   ; BUTTERFREE
+	icon_pals BLUE,   PURPLE ; BUTTERFREE
 	icon_pals BROWN,  GREEN  ; WEEDLE
 	icon_pals YELLOW, GREEN  ; KAKUNA
 	icon_pals YELLOW, GRAY   ; BEEDRILL
