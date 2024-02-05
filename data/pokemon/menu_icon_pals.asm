@@ -139,7 +139,7 @@ MonMenuIconPals:
 	icon_pals PINK,   BLUE   ; DITTO
 	icon_pals BROWN,  GRAY   ; EEVEE
 	icon_pals BLUE,   PURPLE ; VAPOREON
-	icon_pals YELLOW, BROWN  ; JOLTEON
+	icon_pals YELLOW, BLUE   ; JOLTEON
 	icon_pals RED,    BLUE   ; FLAREON
 	icon_pals PINK,   BLUE   ; PORYGON
 	icon_pals BLUE,   GRAY   ; OMANYTE
@@ -228,7 +228,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  YELLOW ; PILOSWINE
 	icon_pals PINK,   BLUE   ; CORSOLA
 	icon_pals GRAY,   PINK   ; REMORAID
-	icon_pals RED,    BROWN  ; OCTILLERY
+	icon_pals RED,    GREEN  ; OCTILLERY
 	icon_pals RED,    PINK   ; DELIBIRD
 	icon_pals BLUE,   BLUE   ; MANTINE
 	icon_pals GRAY,   GREEN  ; SKARMORY
