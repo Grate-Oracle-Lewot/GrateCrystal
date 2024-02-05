@@ -545,8 +545,8 @@ Pokedex_ReinitDexEntryScreen:
 	cp DEXENTRY_BASESTATS
 	jr nz, .moves_done
 	; if a is now DEXENTRY_BASESTATS, we know we were in LVLUP moves category
-	; meaning, the last actually printed category was for the last const, DEXENTRY_MTS 
-	ld a, DEXENTRY_MTS
+	; meaning, the last actually printed category was for the last const, DEXENTRY_EGG
+	ld a, DEXENTRY_EGG
 	ld [wPokedexEntryType], a
 .moves_done
 	xor a
@@ -809,7 +809,7 @@ Evos_Page:
 .right_dpad
 	ld a, [wCurDamage + 1]
 	cp -1
-	jp nz, .inc_evopage; .nextpage_jump
+	jp nz, .inc_evopage ; .nextpage_jump
 	xor a
 	ld [wCurDamage], a
 	jp .nextpage_jump
@@ -2294,9 +2294,8 @@ Pokedex_DrawFootprint:
 	ret
 
 Pokedex_GetSelectedMon:
-; Gets the species of the currently selected Pokémon. This corresponds to the
-; position of the cursor in the main listing, but this function can be used
-; on all Pokédex screens.
+; Gets the species of the currently selected Pokémon. This corresponds to the position
+; of the cursor in the main listing, but this function can be used on all Pokédex screens.
 	ld a, [wDexListingCursor]
 	ld hl, wDexListingScrollOffset
 	add [hl]
@@ -2662,14 +2661,11 @@ Pokedex_SearchForMons:
 
 .zero_remaining_mons
 	cp NUM_POKEMON
-	jr z, .done
+	ret z
 	ld [hl], c
 	inc hl
 	inc a
 	jr .zero_remaining_mons
-
-.done
-	ret
 
 INCLUDE "data/types/search_types.asm"
 
@@ -3167,7 +3163,7 @@ Pokedex_LoadGFX:
 
 Pokedex_LoadPageNums:
 ; load pagenum tiles to vram1
-; lcd needs to be enabled or it will crash !!!
+; lcd needs to be enabled or it will crash!!!
 	ldh a, [rLCDC]
 	push af ; preserve the state of lcd for after we're done
 	bit rLCDC_ENABLE, a
