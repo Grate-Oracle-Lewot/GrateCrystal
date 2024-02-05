@@ -1,4 +1,4 @@
-	db "FOSSIL@" ; species name
+	db "TERROR SOAR@" ; species name
 	dw 511, 1300 ; height, weight
 
 	db   "Its rock-hard"
