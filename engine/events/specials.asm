@@ -306,8 +306,7 @@ CheckLuckyNumberShowFlag:
 	ret
 
 SnorlaxAwake:
-; Check if the Poké Flute channel is playing, and if the player is standing
-; next to Snorlax.
+; Check if the Poké Flute channel is playing, and if the player is standing next to Snorlax.
 
 ; outputs:
 ; wScriptVar is 1 if the conditions are met, otherwise 0.
