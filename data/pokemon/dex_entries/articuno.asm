@@ -1,4 +1,4 @@
-	db "FREEZE@" ; species name
+	db "FIRST@" ; species name
 	dw 507, 1220 ; height, weight
 
 	db   "It caused the ice"
