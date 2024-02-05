@@ -1,4 +1,4 @@
-	db "JET@" ; species name
+	db "TANK@" ; species name
 	dw 211, 630 ; height, weight
 
 	db   "When a group of"
