@@ -483,7 +483,50 @@ InitRoamMons:
 	xor a ; generate new stats
 	ld [wRoamMon1HP], a
 	ld [wRoamMon2HP], a
+	ret
 
+InitRoamingRaikou:
+; for respawning Raikou after beating the League
+
+; species
+	ld a, RAIKOU
+	ld [wRoamMon1Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon1Level], a
+
+; starting map
+	ld a, GROUP_ROUTE_42
+	ld [wRoamMon1MapGroup], a
+	ld a, MAP_ROUTE_42
+	ld [wRoamMon1MapNumber], a
+
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon1HP], a
+	ret
+
+InitRoamingEntei:
+; for respawning Entei after beating the League
+
+; species
+	ld a, ENTEI
+	ld [wRoamMon2Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon2Level], a
+
+; starting map
+	ld a, GROUP_ROUTE_37
+	ld [wRoamMon2MapGroup], a
+	ld a, MAP_ROUTE_37
+	ld [wRoamMon2MapNumber], a
+
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon2HP], a
 	ret
 
 CheckEncounterRoamMon:
