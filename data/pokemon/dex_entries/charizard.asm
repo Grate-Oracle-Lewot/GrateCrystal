@@ -1,4 +1,4 @@
-	db "FLAME@" ; species name
+	db "DRACOID@" ; species name
 	dw 507, 2000 ; height, weight
 
 	db   "Its tail flame can"
