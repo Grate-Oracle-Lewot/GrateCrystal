@@ -143,7 +143,7 @@ DisplayDexEntry:
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
 .check_caught
-; Check to see if we caught it.  Get out of here if we haven't.
+; Check to see if we caught it. Get out of here if we haven't.
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
@@ -507,7 +507,7 @@ DisplayDexMonMoves::
 	call Pokedex_Clearbox
 
 	; the byte flag that tells us which type of table we're currently on
-	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 =  TMs, 4 = HMs, 5 = MTs, 6 = EGG
+	; 0 = Lore, 1 = Stats, 2 = Level Moves, 3 =  TMs, 4 = HMs, 5 = Move Tutors, 6 = Egg Moves
 	
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_LVLUP
@@ -573,12 +573,10 @@ Pokedex_Calc_LvlMovesPtr:
 	ld c, 5
 	call SimpleMultiply 
 	; double this num and add to first byte after Evo's 0
-	; for p16, triple the num
 	ld b, 0
 	ld c, a
 	add hl, bc
 	add hl, bc
-	; add hl, bc
 	ret
 
 Pokedex_Print_NextLvlMoves:
@@ -1075,7 +1073,7 @@ Pokedex_Print_Egg_moves:
 .MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
 ; CheckNextByte, we don't want blank screen if we just printed last move in slot 5
 	ld a, BANK("Egg Moves")
-	call GetFarByte; Move # returned in "a"
+	call GetFarByte ; Move # returned in "a"
 	cp -1
 	jr z, .FoundEnd
 	call DexEntry_IncPageNum
@@ -1192,7 +1190,7 @@ Pokedex_DetailedArea:
 .skip_empty_area_check
 	cp -1 ; -1 means we skipped, 0 is normal
 	jp z, .checkpoint
-; .done
+
 	xor a
 	ret
 
@@ -1293,7 +1291,7 @@ Print_area_entry:
 	push de ; day (e) /nite (d) encounter rates
 	hlcoord 3, 11 ; same position regardless
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], $65 ; day icon tile
+	ld [hl], $65 ; morn icon tile
 	ld de, 6
 	add hl, de
 	ld [hl], $6b ; day icon tile
@@ -1420,7 +1418,7 @@ Pokedex_DetailedArea_grass:
 	ld c, a ; result of simple multiply in a
 	; ld hl, JohtoGrassWildMons
 	pop hl ; JohtoGrassWildMons or KantoGrassWildMons
-	add hl, bc; pointing to map group and num?
+	add hl, bc ; pointing to map group and num?
 	ld bc, 0 ; printed line count
 	push bc ; printed line count
 	push hl ; points to map group/num
@@ -1480,11 +1478,11 @@ Pokedex_DetailedArea_grass:
 	pop bc ; print counter
 	; check to see if there is a next entry
 	ld a, BANK(JohtoGrassWildMons)
-	call GetFarByte ; hl is preserved, also wont clobber print line counter in c
+	call GetFarByte ; hl is preserved, also won't clobber print line counter in c
 	cp -1
 	jr z, .reached_end
 
-	; no need to handle hving printed all 3 slots if we had already reached the end of the table
+	; no need to handle having printed all 3 slots if we had already reached the end of the table
 	ld a, c
 	cp $6 ; 3 entries, 6 rows
 	jr z, .max_print
@@ -1499,7 +1497,7 @@ Pokedex_DetailedArea_grass:
 	ld a, [wPokedexEntryType] ; johto, kanto
 	inc a
 	call DexEntry_NextCategory
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .max_print
 	call Grass_check_any_remaining
@@ -1510,7 +1508,7 @@ Pokedex_DetailedArea_grass:
 	ld [wPokedexStatus], a ; wildmon index
 	call DexEntry_IncPageNum
 	; page number is currently in a
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .grass_walk_text:
 	db "GRASS/CAVES@"
@@ -1527,7 +1525,7 @@ Pokedex_Parse_grass:
 	ld b, 0
 	ld c, a ; time of day adjustment
 	add hl, bc
-	ld c, 0; up to NUM_GRASSMON * 3, total mon entries, morn/day/nite, 8 per
+	ld c, 0 ; up to NUM_GRASSMON * 3, total mon entries, morn/day/nite, 8 per
 	ld b, 0 ; for calcing encounter %
 	; 25%, 25%, 10%, 10%, 10%, 10%, 5%, 5%
 	push bc ; % and NUM_GRASSMON
@@ -1722,7 +1720,7 @@ Pokedex_DetailedArea_surf:
 	ld c, a ; result of simple multiply in a
 	; ld hl, JohtoWaterWildMons
 	pop hl ; JohtoWaterWildMons or KantoWaterWildMons
-	add hl, bc; pointing to map group and num?
+	add hl, bc ; pointing to map group and num?
 	ld bc, 0 ; printed line count
 	push bc ; printed line count
 	push hl ; points to map group/num
@@ -1787,7 +1785,7 @@ Pokedex_DetailedArea_surf:
 	ld a, [wPokedexEntryType] ; johto, kanto
 	inc a
 	call DexEntry_NextCategory
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .max_print
 	call Surf_check_any_remaining
@@ -1798,7 +1796,7 @@ Pokedex_DetailedArea_surf:
 	ld [wPokedexStatus], a ; wildmon index
 	call DexEntry_IncPageNum
 	; page number is currently in a
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .surfing_text:
 	db "SURFING@"
@@ -2078,7 +2076,7 @@ Pokedex_LookCheck_surf:
 
 ;;;;;;;;;;;;;;;;;;;;;;; FISHING RODS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Pokedex_DetailedArea_rods:
-	ld a, [wPokedexStatus] ; wildmon entry index, 0 we havent started yet, 1 is old-shore, 2 is good-shore, 3 is super-shore, 4 is old-ocean, etc
+	ld a, [wPokedexStatus] ; wildmon entry index, 0 we haven't started yet, 1 is old-shore, 2 is good-shore, 3 is super-shore, 4 is old-ocean, etc
 	and a
 	; if not zero, we know that there are Fishing entries
 	jr nz, .auto_cont
@@ -2133,7 +2131,7 @@ Pokedex_DetailedArea_rods:
 	cp 2 ; did we just print a super rod?
 	jr z, .print_rods_done ; we do not inc the index, prep loop will, and calcs new hl
 	cp 1 ; did we just print a good rod?
-	jr z, .good2super ; we just printed an good rod, inc index and check, print if not 0
+	jr z, .good2super ; we just printed a good rod, inc index and check, print if not 0
 	; now we can assume we are an old rod
 	call Fishing_Inc_Index ; we are now indexed on the good rod
 	call Fishing_MonIndex_Addr
@@ -2171,7 +2169,6 @@ Pokedex_DetailedArea_rods:
 	pop bc ; line counter, rod in b, maps in c
 
 ; map name
-
 	ld hl, FishGroups_Names
 	push bc ; line counter, rod in b, maps in c
 	; call GetFarWord
@@ -2229,7 +2226,7 @@ Pokedex_DetailedArea_rods:
 	ld a, [wPokedexEntryType] ; johto, kanto
 	inc a
 	call DexEntry_NextCategory
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .max_print
 	call Fishing_MonIndex_Addr
@@ -2239,7 +2236,7 @@ Pokedex_DetailedArea_rods:
 
 	call DexEntry_IncPageNum
 	; page number is currently in a
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 .fishing_text:
 	db "FISHING RODS@"
@@ -2356,7 +2353,7 @@ FishEntry_adjusthlcoord_map:
 	push af
 	push de	
 	push bc
-	ld c, b ; can be 1, 2, or 3, we wouldn't be here if we havent printed a rod
+	ld c, b ; can be 1, 2, or 3, we wouldn't be here if we haven't printed a rod
 	ld a, 20
 	call SimpleMultiply ; uses c as the other number
 	; result in a
@@ -2365,13 +2362,13 @@ FishEntry_adjusthlcoord_map:
 	add hl, de ; allows us to print on the proper row by adjusting the pre-calcd hlcoord
 	pop bc ; now we need to add more lines depending on how many maps we've already printed
 	push bc
-	; should always be 0 since we havent implemented that yet
+	; should always be 0 since we haven't implemented that yet
 	ld a, 10
 	call SimpleMultiply ; uses c as the other number
 	; result in a
 	ld d, 0
 	ld e, a
-	add hl, de ; allows us to print on the proper row by adjusting the pre-calcd hlcoord	
+	add hl, de ; allows us to print on the proper row by adjusting the pre-calc'd hlcoord	
 
 	pop bc
 	pop de
@@ -2451,14 +2448,14 @@ Check_Rods:
 	call Fishing_Inc_Index
 	pop hl
 	pop bc
-	inc c ; 0 -> 1, good rod, 1 ->2 super rod
+	inc c ; 0 -> 1, good rod, 1 -> 2 super rod
 	ld a, 3 
 	; will most likely move this check to parent function and be able to query based on rod
 	cp c
 	ret z ; means we've checked 3rd rod, super rod, done, no match
 	jr .rod_loop
 
-; Look for Species in this Group's Rod, report encounter % for day and nite in 2-byte (WRAM?) that's its not being used during calcs
+; Look for Species in this Group's Rod, report encounter % for day and nite in 2-byte (WRAM?) that's not being used during calcs
 Check_this_rod:
 ; day cumulative encounter %: ldh [hMultiplier], a
 ; nite cumulative encounter %: ldh [hMultiplicand],
@@ -2486,7 +2483,7 @@ Check_this_rod:
 	call z, Dex_FishTimeGroupsGet ; if zero, not the species, 
 	; looks at Daytime table to determine the species
 	ld a, [wCurSpecies]
-	; we cannot assume we didnt call the ToD table, which can hold two species, so check both d and e
+	; we cannot assume we didn't call the ToD table, which can hold two species, so check both d and e
 	cp d
 	jr z, .found
 	cp e
@@ -2494,7 +2491,7 @@ Check_this_rod:
 	; pop af ; don't need this value (diff of entry %), clean stack
 .resume
 	ld a, b
-	cp 255 ; this is how we tell if we are looking at the last entry of the table (FF)
+	cp 255 ; this is how we tell if we are looking at the last entry of the table (ff)
 	jr z, .end
 	; we have not reached the end, increment to next entry % loop
 	inc hl ; species
@@ -2642,7 +2639,7 @@ Rods_check_any_remaining:
 	call Fishing_Inc_Index
 .check_rods
 	; hl was already set properly to beginning of Fish group when this func is called
-	dec hl ; Dex_Check_Fishing assumed you havent already accounted for Fishing Group's bite rate bit
+	dec hl ; Dex_Check_Fishing assumed you haven't already accounted for Fishing Group's bite rate bit
 	call Dex_Check_Fishing ; 0 means found
 	; and a
 	; jr z, .found
@@ -2683,7 +2680,7 @@ Fishing_Inc_Index:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Pokedex_DetailedArea_Trees:
-	ld a, [wPokedexStatus] ; TreeMonMaps entry index, will be zero if we havent started yet
+	ld a, [wPokedexStatus] ; TreeMonMaps entry index, will be zero if we haven't started yet
 	and a
 	jr nz, .start
 	call Dex_Check_Trees
@@ -2852,7 +2849,7 @@ Print_Trees_Rocksmash:
 ; map info in de, encounter % in wPokedexEvoStage3
 	farcall GetMapGroupNum_Name ; map info needs to be in de
 	; map name ptr is in de
-	hlcoord 2 , 10
+	hlcoord 2, 10
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
@@ -2863,7 +2860,7 @@ Print_Trees_Rocksmash:
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a	
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], $65 ; day icon tile
+	ld [hl], $65 ; morn icon tile
 	ld de, 6
 	add hl, de
 	ld [hl], $6b ; day icon tile
@@ -2941,7 +2938,7 @@ Dex_Check_commontree_rocksmash_set:
 	cp -1
 	jr z, .done
 	ld b, a ; encounter %
-	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	; we aren't at the end, so increment ptr by 1 and check species, that's all we care about
 	inc hl
 	ld a, BANK(TreeMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -2949,7 +2946,7 @@ Dex_Check_commontree_rocksmash_set:
 	ld a, [wCurSpecies] ; current pokedex entry species
 	cp c
 	call z, .found
-	; species didnt match, inc hl by 3, need to check for -1
+	; species didn't match, inc hl by 3, need to check for -1
 	inc hl
 	inc hl
 	jr .loop
@@ -2964,8 +2961,7 @@ Dex_Check_commontree_rocksmash_set:
 	xor a
 	cp b
 	ret nz
-	; fallthrough
-; .notfound
+
 	ld a, 1
 	ret	
 
@@ -2993,7 +2989,7 @@ Dex_Check_raretree_set:
 	cp -1
 	jr z, .done
 	ld b, a ; encounter %
-	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	; we aren't at the end, so increment ptr by 1 and check species, that's all we care about
 	inc hl
 	ld a, BANK(TreeMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -3001,7 +2997,7 @@ Dex_Check_raretree_set:
 	ld a, [wCurSpecies] ; current pokedex entry species
 	cp c
 	call z, .found
-	; species didnt match, inc hl by 3, need to check for -1
+	; species didn't match, inc hl by 3, need to check for -1
 	inc hl
 	inc hl
 	jr .loop2
@@ -3016,13 +3012,12 @@ Dex_Check_raretree_set:
 	xor a
 	cp b
 	ret nz
-	; fallthrough
-; .notfound
+
 	ld a, 1
 	ret
 
 Pokedex_DetailedArea_rocksmash:
-	ld a, [wPokedexStatus] ; RockMonMaps entry index, will be zero if we havent started yet
+	ld a, [wPokedexStatus] ; RockMonMaps entry index, will be zero if we haven't started yet
 	and a
 	jr nz, .start
 	call Dex_Check_rocksmash
@@ -3169,7 +3164,7 @@ Dex_Check_bugcontest:
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
 	cp -1
 	jr z, .notfound
-	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	; we aren't at the end, so increment ptr by 1 and check species, that's all we care about
 	inc hl
 	ld a, BANK(ContestMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -3177,7 +3172,7 @@ Dex_Check_bugcontest:
 	ld a, [wCurSpecies] ; current pokedex entry species
 	cp c
 	jr z, .found
-	; species didnt match, inc hl by 3, need to check for -1
+	; species didn't match, inc hl by 3, need to check for -1
 	inc hl
 	inc hl
 	inc hl
@@ -3214,7 +3209,7 @@ Pokedex_DetailedArea_bugcontest:
 	ld d, a ; encounter %
 	cp -1
 	jr z, .done
-	; we arent at the end, so increment ptr by 1 and check species, that's all we care about
+	; we aren't at the end, so increment ptr by 1 and check species, that's all we care about
 	inc hl
 	ld a, BANK(ContestMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -3222,7 +3217,7 @@ Pokedex_DetailedArea_bugcontest:
 	ld a, [wCurSpecies] ; current pokedex entry species
 	cp c
 	jr z, .found
-	; species didnt match, inc hl by 3, need to check for -1
+	; species didn't match, inc hl by 3, need to check for -1
 .continue
 	inc hl
 	inc hl
@@ -3253,7 +3248,7 @@ Pokedex_DetailedArea_bugcontest:
 BugContest_Print:
 	ld b, e ; encounter %
 	hlcoord 3, 11 ; same position regardless
-	ld [hl], $65 ; day icon tile
+	ld [hl], $65 ; morn icon tile
 	ld de, 6
 	add hl, de
 	ld [hl], $6b ; day icon tile
@@ -3364,7 +3359,7 @@ Dex_Print_Roamer_Info:
 
 	farcall GetMapGroupNum_Name ; map info in 'de'
 	; map name ptr is in de
-	hlcoord 2 , 10
+	hlcoord 2, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld a, BANK(MapGroupNum_Names)
 	push bc ; current print line in c
@@ -3391,7 +3386,7 @@ Dex_Print_Roamer_Info:
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld [hl], $5d ; lvl symbol
 
-; if HP is 0, means the DVs havent been init'd yet upon seeing it in battle for the first time
+; if HP is 0, means the DVs haven't been init'd yet upon seeing it in battle for the first time
 ; if HP is 0, don't print
 	push bc ; current print line in c
 	ld a, [wPokedexEvoStage3] ; Roamer's HP
