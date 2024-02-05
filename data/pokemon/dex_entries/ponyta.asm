@@ -1,4 +1,4 @@
-	db "FIRE HORSE@" ; species name
+	db "HORSEPOWER@" ; species name
 	dw 303, 660 ; height, weight
 
 	db   "If its flames go"
