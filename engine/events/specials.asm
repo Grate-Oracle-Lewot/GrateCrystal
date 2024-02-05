@@ -257,6 +257,8 @@ CheckCoinsAndCoinCase:
 	text_end
 
 FillPokedex:
+	ld a, UNOWN_QUESTION
+	ld [wFirstUnownSeen], a
 	ld a, BULBASAUR
 	ld [wScriptVar], a
 .loop
