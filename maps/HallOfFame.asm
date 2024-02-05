@@ -65,6 +65,18 @@ HallOfFame_MapScripts:
 	clearevent EVENT_FOUGHT_MEW
 	clearevent EVENT_MEW_CHAMBER_MEW
 .SkipMew:
+	checkevent EVENT_RELEASED_THE_BEASTS
+	iffalse .FinishRespawns
+	setval RAIKOU
+	special MonCheck
+	iftrue .SkipRaikou
+	special InitRoamingRaikou
+.SkipRaikou:
+	setval ENTEI
+	special MonCheck
+	iftrue .FinishRespawns
+	special InitRoamingEntei
+.FinishRespawns:
 	halloffame
 	end
 
