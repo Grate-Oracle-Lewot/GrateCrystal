@@ -1,4 +1,4 @@
-	db "FIRE UNICORN@" ; species name
+	db "UNICORN@" ; species name
 	dw 507, 2090 ; height, weight
 
 	db   "Two RAPIDASH"
