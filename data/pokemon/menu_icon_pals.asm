@@ -53,7 +53,7 @@ MonMenuIconPals:
 	icon_pals RED,    YELLOW ; PARAS
 	icon_pals RED,    YELLOW ; PARASECT
 	icon_pals PURPLE, BLUE   ; VENONAT
-	icon_pals BLUE,   PINK   ; VENOMOTH
+	icon_pals PURPLE, PINK   ; VENOMOTH
 	icon_pals BROWN,  BROWN  ; DIGLETT
 	icon_pals BROWN,  BROWN  ; DUGTRIO
 	icon_pals YELLOW, PINK   ; MEOWTH
