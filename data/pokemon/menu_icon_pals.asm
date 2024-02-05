@@ -27,7 +27,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  RED    ; RATICATE
 	icon_pals BROWN,  YELLOW ; SPEAROW
 	icon_pals BROWN,  GRAY   ; FEAROW
-	icon_pals PURPLE, GRAY   ; EKANS
+	icon_pals PURPLE, GREEN  ; EKANS
 	icon_pals PURPLE, GRAY   ; ARBOK
 	icon_pals YELLOW, BROWN  ; PIKACHU
 	icon_pals BROWN,  YELLOW ; RAICHU
