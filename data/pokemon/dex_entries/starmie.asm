@@ -6,5 +6,5 @@
 	next "YU's dream state"
 
 	page "into vast psycho-"
-	next "kinetic potential…"
+	next "kinetic potential,"
 	next "and extra arms.@"
