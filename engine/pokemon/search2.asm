@@ -25,69 +25,6 @@ _FindPartyMonThatSpeciesYourTrainerID:
 	xor a
 	ret
 
-FindAtLeastThatHappy:
-; Sets the bits for the Pokemon that have a happiness greater than or equal to b.
-; The lowest bits are used.  Sets z if no Pokemon in your party is at least that happy.
-	ld c, $0
-	ld a, [wPartyCount]
-	ld d, a
-.loop
-	ld a, d
-	dec a
-	push hl
-	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop bc
-	ld a, b
-	cp [hl]
-	pop hl
-	jr z, .greater_equal
-	jr nc, .lower
-
-.greater_equal
-	ld a, c
-	or $1
-	ld c, a
-
-.lower
-	sla c
-	dec d
-	jr nz, .loop
-	call RetroactivelyIgnoreEggs
-	ld a, c
-	and a
-	ret
-
-FindAboveLevel:
-	ld c, $0
-	ld a, [wPartyCount]
-	ld d, a
-.loop
-	ld a, d
-	dec a
-	push hl
-	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop bc
-	ld a, b
-	cp [hl]
-	pop hl
-	jr c, .greater
-	ld a, c
-	or $1
-	ld c, a
-
-.greater
-	sla c
-	dec d
-	jr nz, .loop
-	call RetroactivelyIgnoreEggs
-	ld a, c
-	and a
-	ret
-
 FindThatSpecies:
 ; Find species b in your party.
 ; If you have no Pokemon, returns c = -1 and z.
