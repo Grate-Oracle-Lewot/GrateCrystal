@@ -244,7 +244,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; HITMONTOP
 	icon_pals GREEN,  BROWN  ; SNOCONEY
 	icon_pals PURPLE, BROWN  ; JIRK
-	icon_pals BLUE,   PINK   ; CASTAWEIGH
+	icon_pals BLUE,   RED    ; CASTAWEIGH
 	icon_pals PINK,   GRAY   ; MILTANK
 	icon_pals PINK,   PINK   ; BLISSEY
 	icon_pals YELLOW, BROWN  ; RAIKOU
