@@ -1,4 +1,4 @@
-	db "FLAME@" ; species name
+	db "THIRD@" ; species name
 	dw 607, 1320 ; height, weight
 
 	db   "Its wings burn"
