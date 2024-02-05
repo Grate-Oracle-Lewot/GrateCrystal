@@ -629,7 +629,7 @@ Pokedex_Print_NextLvlMoves:
 	jr nz, .learnset_loop
 	jr .MaxedPage
 .MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
-	; check to see if really any moves left, we dont want a blank page
+	; check to see if really any moves left, we don't want a blank page
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	and a
@@ -1073,7 +1073,7 @@ Pokedex_Print_Egg_moves:
 	inc c
 	jr .Egg_loop
 .MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
-; CheckNextByte, we dont want blank screen if we just printed last move in slot 5
+; CheckNextByte, we don't want blank screen if we just printed last move in slot 5
 	ld a, BANK("Egg Moves")
 	call GetFarByte; Move # returned in "a"
 	cp -1
@@ -1374,7 +1374,7 @@ Pokedex_Skip_Empty_Area_Category:
 Pokedex_DetailedArea_grass:
 	push hl ; JohtoGrassWildMons or KantoGrassWildMons. still need this push because the function probably clobbers hl
 	; need to preserve Wildmon Index
-	ld a, [wPokedexStatus]; wildmon entry index
+	ld a, [wPokedexStatus] ; wildmon entry index
 	push af ; wildmon index
 	ld a, BANK(JohtoGrassWildMons) ; same bank for all 3 thankfully
 	call Dex_Check_Grass ; since we automatically roll into the next category, we need to check if there's even anything there for us again
@@ -1630,8 +1630,8 @@ Grass_check_any_remaining:
 	xor a
 	ret
 .entries_remaining
-	pop hl ; realign stack, dont care about values
-	pop bc ; realign stack, dont care about values
+	pop hl ; realign stack, don't care about values
+	pop bc ; realign stack, don't care about values
 	
 	pop bc
 	pop de
@@ -1676,7 +1676,7 @@ Add_encounter_percent_grass:
 Pokedex_DetailedArea_surf:
 	push hl ; JohtoWaterWildMons or KantoWaterWildMons. still need this push because the function probably clobbers hl
 	; need to preserve Wildmon Index
-	ld a, [wPokedexStatus]; wildmon entry index
+	ld a, [wPokedexStatus] ; wildmon entry index
 	push af ; wildmon index
 	ld a, BANK(JohtoWaterWildMons) ; same bank for all 3 thankfully
 	call Dex_Check_Surf ; since we automatically roll into the next category, we need to check if there's even anything there for us again
@@ -1773,7 +1773,7 @@ Pokedex_DetailedArea_surf:
 	cp -1 ; if we've printed a 3rd entry, this doesn't get checked
 	jr z, .reached_end
 
-	; we dont need to handle having printed all 3 slots if we were at the end of the table
+	; we don't need to handle having printed all 3 slots if we were at the end of the table
 	ld a, c
 	cp $6 ; 3 entries, 6 rows
 	jr z, .max_print
@@ -1899,8 +1899,8 @@ Surf_check_any_remaining:
 	xor a
 	ret
 .entries_remaining
-	pop hl ; realign stack, dont care about values
-	pop bc ; realign stack, dont care about values
+	pop hl ; realign stack, don't care about values
+	pop bc ; realign stack, don't care about values
 	
 	pop bc
 	pop de
@@ -1915,20 +1915,19 @@ Add_encounter_percent_water:
 	and a
 	jr nz, .slot2
 	ld a, 40
-	jr .done
+	ret
 .slot2
 	cp 1
 	jr nz, .slot3
 	ld a, 40
-	jr .done
+	ret
 .slot3
 	cp 2
 	jr nz, .slot4
 	ld a, 10
-	jr .done
+	ret
 .slot4
 	ld a, 10
-.done
 	; whatever value is currently in a will added to b
 	ret
 
@@ -2079,7 +2078,7 @@ Pokedex_LookCheck_surf:
 
 ;;;;;;;;;;;;;;;;;;;;;;; FISHING RODS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Pokedex_DetailedArea_rods:
-	ld a, [wPokedexStatus]; wildmon entry index, 0 we havent started yet, 1 is old-shore, 2 is good-shore, 3 is super-shore, 4 is old-ocean, etc
+	ld a, [wPokedexStatus] ; wildmon entry index, 0 we havent started yet, 1 is old-shore, 2 is good-shore, 3 is super-shore, 4 is old-ocean, etc
 	and a
 	; if not zero, we know that there are Fishing entries
 	jr nz, .auto_cont
@@ -2164,7 +2163,7 @@ Pokedex_DetailedArea_rods:
 	ld [wPokedexEvoStage2], a
 	ld [wPokedexEvoStage3], a
 	; do we fall through to prep loop or skip directly to max print?
-	; should probably fall through, so double check we dont double inc
+	; should probably fall through, so double check we don't double inc
 .print_rods_done
 	; pop hl ; points to fishgroup+rod table ; eventually get rid of the hl stack here?
 	; call Fishing_MonIndex_Addr ; eventually get rid of the hl stack here? 
@@ -2492,7 +2491,7 @@ Check_this_rod:
 	jr z, .found
 	cp e
 	jr z, .found
-	; pop af ; dont need this value (diff of entry %), clean stack
+	; pop af ; don't need this value (diff of entry %), clean stack
 .resume
 	ld a, b
 	cp 255 ; this is how we tell if we are looking at the last entry of the table (FF)
@@ -2652,7 +2651,7 @@ Rods_check_any_remaining:
 	xor a
 	ret
 	; call Dex_Check_Fishing with hl aligned to new fish group old rod
-	; we are about to exit so we dont need to align the hl addr with new incremented Wildmon index
+	; we are about to exit so we don't need to align the hl addr with new incremented Wildmon index
 	; when we come back, will auto calculate new Wildmon Index addr
 
 Fishing_Inc_Index:
@@ -2684,7 +2683,7 @@ Fishing_Inc_Index:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Pokedex_DetailedArea_Trees:
-	ld a, [wPokedexStatus]; TreeMonMaps entry index, will be zero if we havent started yet
+	ld a, [wPokedexStatus] ; TreeMonMaps entry index, will be zero if we havent started yet
 	and a
 	jr nz, .start
 	call Dex_Check_Trees
