@@ -685,11 +685,9 @@ Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
 	call GetFarByte
 	inc hl
 	cp d ; 'd' is not clobbered in any of the used funcs or farcalls
-	jr z, .found
+	ret z ; lvl learned move in c, move is in lvl up learnset
 	jr .find_move
-.found
-	; lvl learned move in c
-	ret ; move is in lvl up learnset
+
 .notfound
 	xor a
 	ld c, a
