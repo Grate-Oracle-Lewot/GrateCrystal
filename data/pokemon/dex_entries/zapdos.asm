@@ -1,4 +1,4 @@
-	db "ELECTRIC@" ; species name
+	db "SECOND@" ; species name
 	dw 503, 1160 ; height, weight
 
 	db   "It holds duels"
