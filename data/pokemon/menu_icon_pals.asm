@@ -167,7 +167,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   GREEN  ; FERALIGATR
 	icon_pals BROWN,  YELLOW ; SENTRET
 	icon_pals BROWN,  PINK   ; FURRET
-	icon_pals BROWN,  GREEN  ; HOOTHOOT
+	icon_pals BROWN,  YELLOW ; HOOTHOOT
 	icon_pals BROWN,  GREEN  ; NOCTOWL
 	icon_pals RED,    YELLOW ; LEDYBA
 	icon_pals RED,    YELLOW ; LEDIAN
