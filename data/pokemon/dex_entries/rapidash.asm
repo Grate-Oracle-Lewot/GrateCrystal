@@ -1,4 +1,4 @@
-	db "UNICORN@" ; species name
+	db "UNIQUE HORN@" ; species name
 	dw 507, 2090 ; height, weight
 
 	db   "Two RAPIDASH"
