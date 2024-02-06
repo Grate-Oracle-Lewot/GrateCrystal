@@ -1,6 +1,6 @@
 	db PINECO ; 204
 
-	db  50,  65,  90,  15,  35,  35
+	db  50,  65, 100,  45,  35,  35
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, BUG ; type
