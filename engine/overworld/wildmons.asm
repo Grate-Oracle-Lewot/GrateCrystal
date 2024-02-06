@@ -540,27 +540,51 @@ InitRoamingEntei:
 InitRoamingSuicune:
 ; for respawning Suicune after beating the League (as a roamer instead of cutscene)
 
-; check if Suicune is already roaming, if so do nothing
-	ld a, [wRoamMon3Species]
-	ret nz
+; check for a free roaming slot (no logic for slot 3 in battle core)
+	ld a, [wRoamMon1Species]
+	jr z, .slot_one
+	ld a, [wRoamMon2Species]
+	jr z, .slot_two
+	ret
 
+.slot_one
 ; species
 	ld a, SUICUNE
-	ld [wRoamMon3Species], a
+	ld [wRoamMon1Species], a
 
 ; level
 	ld a, 40
-	ld [wRoamMon3Level], a
+	ld [wRoamMon1Level], a
 
 ; starting map
 	ld a, GROUP_ROUTE_38
-	ld [wRoamMon3MapGroup], a
+	ld [wRoamMon1MapGroup], a
 	ld a, MAP_ROUTE_38
-	ld [wRoamMon3MapNumber], a
+	ld [wRoamMon1MapNumber], a
 
 ; hp
 	xor a ; generate new stats
-	ld [wRoamMon3HP], a
+	ld [wRoamMon1HP], a
+	ret
+
+.slot_two
+; species
+	ld a, SUICUNE
+	ld [wRoamMon2Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon2Level], a
+
+; starting map
+	ld a, GROUP_ROUTE_38
+	ld [wRoamMon2MapGroup], a
+	ld a, MAP_ROUTE_38
+	ld [wRoamMon2MapNumber], a
+
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon2HP], a
 	ret
 
 CheckEncounterRoamMon:
