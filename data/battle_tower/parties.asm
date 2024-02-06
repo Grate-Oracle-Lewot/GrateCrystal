@@ -151,13 +151,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 38 ; HP
-	bigdw 38 ; Max HP
-	bigdw 23 ; Atk
-	bigdw 31 ; Def
+	bigdw 41 ; HP
+	bigdw 41 ; Max HP
+	bigdw 24 ; Atk
+	bigdw 33 ; Def
 	bigdw 19 ; Spd
-	bigdw 24 ; SAtk
-	bigdw 30 ; SDef
+	bigdw 25 ; SAtk
+	bigdw 31 ; SDef
 	db "SANI-GO@@@@"
 
 	db MILTANK
