@@ -2035,10 +2035,10 @@ BattleTowerMons:
 	bigdw 140 ; HP
 	bigdw 140 ; Max HP
 	bigdw 111 ; Atk
-	bigdw 147 ; Def
+	bigdw 155 ; Def
 	bigdw 64 ; Spd
 	bigdw 87 ; SAtk
-	bigdw 87 ; SDef
+	bigdw 107 ; SDef
 	db "HUoRETOSU@@"
 
 	db OMASTAR
@@ -2636,10 +2636,10 @@ BattleTowerMons:
 	bigdw 169 ; HP
 	bigdw 169 ; Max HP
 	bigdw 134 ; Atk
-	bigdw 189 ; Def
+	bigdw 199 ; Def
 	bigdw 84 ; Spd
 	bigdw 103 ; SAtk
-	bigdw 103 ; SDef
+	bigdw 128 ; SDef
 	db "HUoRETOSU@@"
 
 	db STEELIX
@@ -4049,10 +4049,10 @@ BattleTowerMons:
 	bigdw 273 ; HP
 	bigdw 273 ; Max HP
 	bigdw 217 ; Atk
-	bigdw 293 ; Def
+	bigdw 309 ; Def
 	bigdw 133 ; Spd
 	bigdw 165 ; SAtk
-	bigdw 165 ; SDef
+	bigdw 205 ; SDef
 	db "HUoRETOSU@@"
 
 	db KINGDRA
