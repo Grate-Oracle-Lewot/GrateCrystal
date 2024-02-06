@@ -537,6 +537,32 @@ InitRoamingEntei:
 	ld [wRoamMon2HP], a
 	ret
 
+InitRoamingSuicune:
+; for respawning Suicune after beating the League (as a roamer instead of cutscene)
+
+; check if Suicune is already roaming, if so do nothing
+	ld a, [wRoamMon3Species]
+	ret nz
+
+; species
+	ld a, SUICUNE
+	ld [wRoamMon3Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon3Level], a
+
+; starting map
+	ld a, GROUP_ROUTE_38
+	ld [wRoamMon3MapGroup], a
+	ld a, MAP_ROUTE_38
+	ld [wRoamMon3MapNumber], a
+
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon3HP], a
+	ret
+
 CheckEncounterRoamMon:
 	push hl
 ; Don't trigger an encounter if we're on water.
