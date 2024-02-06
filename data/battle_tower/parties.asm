@@ -1012,13 +1012,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 98 ; HP
-	bigdw 98 ; Max HP
-	bigdw 47 ; Atk
-	bigdw 35 ; Def
-	bigdw 39 ; Spd
-	bigdw 54 ; SAtk
-	bigdw 40 ; SDef
+	bigdw 102 ; HP
+	bigdw 102 ; Max HP
+	bigdw 49 ; Atk
+	bigdw 37 ; Def
+	bigdw 43 ; Spd
+	bigdw 58 ; SAtk
+	bigdw 44 ; SDef
 	db "PUKURIN@@@@"
 
 	db WIGGLYTUFF
@@ -1038,13 +1038,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 97 ; HP
-	bigdw 97 ; Max HP
-	bigdw 46 ; Atk
-	bigdw 34 ; Def
-	bigdw 34 ; Spd
-	bigdw 50 ; SAtk
-	bigdw 36 ; SDef
+	bigdw 101 ; HP
+	bigdw 101 ; Max HP
+	bigdw 48 ; Atk
+	bigdw 36 ; Def
+	bigdw 38 ; Spd
+	bigdw 54 ; SAtk
+	bigdw 40 ; SDef
 	db "PUKURIN@@@@"
 
 	db NIDOKING
