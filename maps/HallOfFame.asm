@@ -74,8 +74,15 @@ HallOfFame_MapScripts:
 .SkipRaikou:
 	setval ENTEI
 	special MonCheck
-	iftrue .FinishRespawns
+	iftrue .SkipEntei
 	special InitRoamingEntei
+.SkipEntei:
+	checkevent EVENT_FOUGHT_SUICUNE
+	iffalse .FinishRespawns
+	setval SUICUNE
+	special MonCheck
+	iftrue .FinishRespawns
+	special InitRoamingSuicune
 .FinishRespawns:
 	halloffame
 	end
