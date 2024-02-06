@@ -657,13 +657,7 @@ Script_fruittree:
 	jp ScriptJump
 
 Script_swarm:
-	call GetScriptByte
-	ld c, a
-	call GetScriptByte
-	ld d, a
-	call GetScriptByte
-	ld e, a
-	farcall StoreSwarmMapIndices
+; no swarms in Grate Crystal
 	ret
 
 Script_trainertext:
