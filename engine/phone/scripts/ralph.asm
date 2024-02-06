@@ -3,6 +3,13 @@ RalphPhoneCalleeScript:
 	checkflag ENGINE_RALPH_READY_FOR_REMATCH
 	iftrue .Rematch
 	farscall PhoneScript_AnswerPhone_Male
+	checkflag ENGINE_RALPH_WEDNESDAY_MORNING
+	iftrue .NotWednesdayMorning
+	readvar VAR_WEEKDAY
+	ifnotequal WEDNESDAY, .NotWednesdayMorning
+	checktime MORN
+	iftrue Ralph_WednesdayMorning
+.NotWednesdayMorning:
 	farsjump RalphNoItemScript
 
 .Rematch:
