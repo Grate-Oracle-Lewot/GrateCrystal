@@ -148,7 +148,6 @@ MeowthEggMoves:
 	db -1 ; end
 
 PsyduckEggMoves:
-	db PRESENT
 	db PSYBEAM
 	db LIGHT_SCREEN
 	db DAZZLY_GLEAM
