@@ -3049,7 +3049,7 @@ SlowkingEvosAttacks:
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 2, GROWL
+	db 2, FORESIGHT
 	db 6, SPITE
 	db 6, BITE
 	db 12, CONFUSE_RAY
