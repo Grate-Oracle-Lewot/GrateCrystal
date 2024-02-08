@@ -187,6 +187,7 @@ AbraEggMoves:
 	db ENCORE
 	db BARRIER
 	db FOCUS_ENERGY
+	db FORESIGHT
 	db HYPNOSIS
 	db -1 ; end
 
@@ -288,6 +289,7 @@ ShellderEggMoves:
 GastlyEggMoves:
 	db AIR_SLASH
 	db SILVER_WIND
+	db FORESIGHT
 	db ACID
 	db ACID_ARMOR
 	db HAZE
@@ -901,7 +903,7 @@ JirkEggMoves:
 	db FAINT_ATTACK
 	db SKY_ATTACK
 	db DRILL_PECK
-	db LOCK_ON
+	db MIND_READER
 	db DESTINY_BOND
 	db SPIKES
 	db WHIRLWIND
@@ -912,7 +914,6 @@ CastaweighEggMoves:
 	db FLAIL
 	db BODY_SLAM
 	db SLAM
-	db BIND
 	db HYPER_FANG
 	db -1 ; end
 
