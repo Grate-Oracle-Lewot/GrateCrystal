@@ -1429,7 +1429,7 @@ DrowzeeEvosAttacks:
 	db 36, MEDITATE
 	db 40, PSYCHIC_M
 	db 43, NIGHTMARE
-	db 45, PSYCH_UP
+	db 45, FORESIGHT
 	db 49, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
@@ -1445,7 +1445,7 @@ HypnoEvosAttacks:
 	db 40, MEDITATE
 	db 46, PSYCHIC_M
 	db 50, NIGHTMARE
-	db 55, PSYCH_UP
+	db 55, FORESIGHT
 	db 60, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
