@@ -584,10 +584,10 @@ CleffaEggMoves:
 	db -1 ; end
 
 IgglybuffEggMoves:
-	db PERISH_SONG
-	db PRESENT
-	db FAINT_ATTACK
 	db DAZZLY_GLEAM
+	db SONICBOOM
+	db SCREECH
+	db SUPERSONIC
 	db -1 ; end
 
 TogepiEggMoves:
