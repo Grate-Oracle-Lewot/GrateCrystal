@@ -555,8 +555,8 @@ JigglypuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 1, CHARM
-	db 4, DEFENSE_CURL
-	db 9, POUND
+	db 4, POUND
+	db 9, DEFENSE_CURL
 	db 12, FAIRY_WIND
 	db 16, DISABLE
 	db 19, ROLLOUT
