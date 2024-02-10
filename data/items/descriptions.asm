@@ -685,8 +685,8 @@ BigPearlDesc:
 	next "pearl. Sell high.@"
 
 EverStoneDesc:
-	db   "Stops evolution"
-	next "and ups defenses.@"
+	db   "Blocks evolution."
+	next "Ups un-evo'd bulk.@"
 
 SpellTagDesc:
 	db   "Powers up ghost-"
