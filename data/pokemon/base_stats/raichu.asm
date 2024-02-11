@@ -5,7 +5,7 @@
 
 	db ELECTRIC, ELECTRIC ; type
 	db 75 ; catch rate
-	db 122 ; base exp
+	db 126 ; base exp
 	db BERRY, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
 	db 6 ; step cycles to hatch
