@@ -540,6 +540,26 @@ Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft:
 	turn_head LEFT
 	step_end
 
+Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight:
+	slow_step LEFT
+	turn_head RIGHT
+	step_end
+
+Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft:
+	slow_step RIGHT
+	turn_head LEFT
+	step_end
+
+Pokecenter2FMovementData_ReceptionistStepsLeftLooksDown:
+	slow_step LEFT
+	turn_head DOWN
+	step_end
+
+Pokecenter2FMovementData_ReceptionistStepsRightLooksDown:
+	slow_step RIGHT
+	turn_head DOWN
+	step_end
+
 Text_BattleReceptionistMobile:
 	text "Would you like to"
 	line "battle over a GAME"
@@ -606,6 +626,11 @@ Text_LinkTimedOut:
 
 Text_PleaseComeAgain:
 	text "Please come again."
+	prompt
+
+Text_CantLinkToThePast:
+	text "You can't link to"
+	line "that version."
 	prompt
 
 Text_IncompatibleRooms:
