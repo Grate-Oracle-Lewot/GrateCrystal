@@ -718,16 +718,6 @@ Text_OhPleaseWait:
 	text "Oh, please wait."
 	done
 
-Text_ChangeTheLook:
-	text "We need to change"
-	line "the look here…"
-	done
-
-Text_LikeTheLook:
-	text "How does this"
-	line "style look to you?"
-	done
-
 Text_BrokeStadiumRules:
 	text "Excuse me!"
 
