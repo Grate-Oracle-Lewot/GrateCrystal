@@ -355,7 +355,7 @@ LinkReceptionistScript_GenderSwap:
 	pause 10
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
-	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
 	end
 
 .Cancel:
@@ -623,7 +623,7 @@ Pokecenter2FMovementData_ReceptionistStepsLeftLooksDown:
 	turn_head DOWN
 	step_end
 
-Pokecenter2FMovementData_ReceptionistStepsRightLooksDown:
+Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2:
 	slow_step RIGHT
 	turn_head DOWN
 	step_end
