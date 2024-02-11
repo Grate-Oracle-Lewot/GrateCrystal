@@ -291,7 +291,75 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
+	faceplayer
+	opentext
+	writetext Text_AskSwapGender
+	yesorno
+	iffalse .Cancel
+	writetext Text_PleaseStepInside
+	closetext
+	readvar VAR_FACING
+	ifequal RIGHT, .FacingRight
+	ifequal LEFT, .FacingLeft
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromBottom
+	sjump .Continue
 
+.FacingRight:
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromLeft
+.Continue:
+	playsound SFX_ENTER_DOOR
+	pause 30
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .FTMRight
+	clearflag ENGINE_KRIS_IN_CABLE_CLUB
+	setflag ENGINE_PLAYER_IS_FEMALE
+	setval (PAL_NPC_BLUE << 4)
+	sjump .DoneRight
+.FTMRight:
+	setflag ENGINE_KRIS_IN_CABLE_CLUB
+	clearflag ENGINE_PLAYER_IS_FEMALE
+	setval (PAL_NPC_RED << 4)
+.DoneRight:
+	special SetPlayerPalette
+	special UpdatePlayerSprite
+	playsound SFX_MOVE_DELETED
+	waitsfx
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsLeftLooksDown
+	end
+
+.FacingLeft:
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromRight
+	playsound SFX_ENTER_DOOR
+	pause 30
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .FTMLeft
+	clearflag ENGINE_KRIS_IN_CABLE_CLUB
+	setflag ENGINE_PLAYER_IS_FEMALE
+	setval (PAL_NPC_BLUE << 4)
+	sjump .DoneLeft
+.FTMLeft:
+	setflag ENGINE_KRIS_IN_CABLE_CLUB
+	clearflag ENGINE_PLAYER_IS_FEMALE
+	setval (PAL_NPC_RED << 4)
+.DoneLeft:
+	special SetPlayerPalette
+	special UpdatePlayerSprite
+	playsound SFX_MOVE_DELETED
+	waitsfx
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
+	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown
+	end
+
+.Cancel:
+	closetext
 	end
 
 Script_LeftCableTradeCenter:
