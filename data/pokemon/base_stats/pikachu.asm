@@ -3,9 +3,9 @@
 	db  35,  55,  40,  90,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db ELECTRIC, ELECTRIC ; type
+	db ELECTRIC, CURSE_TYPE ; type
 	db 190 ; catch rate
-	db 82 ; base exp
+	db 84 ; base exp
 	db BERRY, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
 	db 6 ; step cycles to hatch
