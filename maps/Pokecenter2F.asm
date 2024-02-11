@@ -738,6 +738,25 @@ Text_BrokeStadiumRules:
 	line "when you're ready."
 	done
 
+Text_AskSwapGender:
+	text "This is the BINARY"
+	line "GENDER INVERTER."
+
+	para "You can use it to"
+	line "change from a boy"
+
+	para "to a girl or vice"
+	line "versa."
+
+	para "Do you want to"
+	line "swap your gender?"
+	done
+
+Text_PleaseStepInside:
+	text "Please step"
+	line "inside."
+	done
+
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
