@@ -560,6 +560,33 @@ Pokecenter2FMovementData_ReceptionistStepsRightLooksDown:
 	turn_head DOWN
 	step_end
 
+Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromLeft:
+	step RIGHT
+	step UP
+	hide_person
+	turn_head DOWN
+	step_end
+
+Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromRight:
+	step LEFT
+	step UP
+	hide_person
+	turn_head DOWN
+	step_end
+
+Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromBottom:
+	step UP
+	step UP
+	hide_person
+	turn_head DOWN
+	step_end
+
+Pokecenter2FMovementData_PlayerExitTimeCapsule:
+	show_person
+	step DOWN
+	step DOWN
+	step_end
+
 Text_BattleReceptionistMobile:
 	text "Would you like to"
 	line "battle over a GAME"
