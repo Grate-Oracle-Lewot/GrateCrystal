@@ -474,8 +474,8 @@ ScientistGroup:
 	db -1 ; end
 
 	; SCIENTIST (6)
-	db "HEINZ@", TRAINERTYPE_NORMAL
-	db 55, DITTO
+	db "HEINZ@", TRAINERTYPE_ITEM
+	db 55, DITTO,      X_SPEED
 	db -1 ; end
 
 	; SCIENTIST (7)
