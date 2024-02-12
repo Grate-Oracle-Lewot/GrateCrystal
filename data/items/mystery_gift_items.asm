@@ -1,3 +1,3 @@
 MysteryGiftItems:
-	db GOLD_BERRY
+	db SACRED_ASH
 .End
