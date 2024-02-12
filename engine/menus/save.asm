@@ -157,17 +157,6 @@ AddHallOfFameEntry:
 	ld bc, wHallOfFamePokemonListEnd - wHallOfFamePokemonList + 1
 	call CopyBytes
 	call CloseSRAM
-; This vc_hook causes the Virtual Console to set [sMobileEventIndex] and [sMobileEventIndexBackup]
-; to MOBILE_EVENT_OBJECT_GS_BALL, which enables you to get the GS Ball, take it to Kurt, and
-; encounter Celebi. It assumes that sMobileEventIndex and sMobileEventIndexBackup are at their
-; original addresses.
-	vc_hook Enable_GS_Ball_mobile_event
-	vc_assert BANK(sMobileEventIndex) == $1 && sMobileEventIndex == $be3c, \
-		"sMobileEventIndex is no longer located at 01:be3c."
-	vc_assert BANK(sMobileEventIndexBackup) == $1 && sMobileEventIndexBackup == $be44, \
-		"sMobileEventIndexBackup is no longer located at 01:be44."
-	vc_assert MOBILE_EVENT_OBJECT_GS_BALL == $0b, \
-		"MOBILE_EVENT_OBJECT_GS_BALL is no longer equal to $0b."
 	ret
 
 AskOverwriteSaveFile:
@@ -385,7 +374,7 @@ EraseHallOfFame:
 	jp CloseSRAM
 
 Function14d18: ; unreferenced
-	ld a, BANK(s4_a007) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a007) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	ld hl, .Data
 	ld de, s4_a007
@@ -411,7 +400,7 @@ SaveData:
 	ret
 
 Function14d6c: ; unreferenced
-	ld a, BANK(s4_a60b) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a60b) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	ld a, [s4_a60b] ; address of MBC30 bank
 	ld b, $0
@@ -426,7 +415,7 @@ Function14d6c: ; unreferenced
 	ret
 
 Function14d83: ; unreferenced
-	ld a, BANK(s4_a60c) ; aka BANK(s4_a60d) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a60c) ; aka BANK(s4_a60d) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	xor a
 	ld [s4_a60c], a ; address of MBC30 bank
@@ -435,7 +424,7 @@ Function14d83: ; unreferenced
 	ret
 
 Function14d93: ; unreferenced
-	ld a, BANK(s7_a000) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s7_a000) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	xor a
 	ld [s7_a000], a ; address of MBC30 bank
