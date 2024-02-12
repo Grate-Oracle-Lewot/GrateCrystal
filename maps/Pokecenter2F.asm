@@ -297,6 +297,7 @@ LinkReceptionistScript_GenderSwap:
 	yesorno
 	iffalse .Cancel
 	writetext Text_PleaseStepInside
+	waitbutton
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, .FacingRight
