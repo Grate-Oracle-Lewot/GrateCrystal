@@ -299,7 +299,6 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
-	sjump Script_TimeCapsuleClosed ; dummied out for now
 	faceplayer
 	opentext
 	writetext Text_AskSwapGender
@@ -383,11 +382,13 @@ LinkReceptionistScript_GenderSwap:
 .SetWRAMMale:
 	ld a, FALSE
 	ld [wPlayerGender], a
+	ld [wAlteredPlayerGender], a
 	ret
 
 .SetWRAMFemale:
 	ld a, TRUE
 	ld [wPlayerGender], a
+	ld [wAlteredPlayerGender], a
 	ret
 
 Script_LeftCableTradeCenter:
