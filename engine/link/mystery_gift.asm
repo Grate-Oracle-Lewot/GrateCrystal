@@ -37,9 +37,18 @@ DoMysteryGift:
 	; Prepare the first of two messages for wMysteryGiftPartnerData
 	farcall StageDataForMysteryGift
 	call ClearMysteryGiftTrainer
+	vc_patch infrared_fake_0
+if DEF(_CRYSTAL11_VC)
 	farcall StagePartyDataForMysteryGift
 	call ClearMysteryGiftTrainer
 	nop
+else
+	ld a, 2
+	ld [wMysteryGiftMessageCount], a
+	ld a, wMysteryGiftPartnerDataEnd - wMysteryGiftPartnerData
+	ld [wMysteryGiftStagedDataLength], a
+endc
+	vc_patch_end
 
 	ldh a, [rIE]
 	push af
@@ -261,6 +270,8 @@ DoMysteryGift:
 
 ExchangeMysteryGiftData:
 	vc_hook infrared_fake_2
+	vc_patch infrared_fake_1
+if DEF(_CRYSTAL11_VC)
 	ld d, $ef
 .loop
 	dec d
@@ -277,7 +288,17 @@ ExchangeMysteryGiftData:
 	cp MG_OKAY
 	jr nz, ExchangeMysteryGiftData
 	ret
+else
+	di
+	farcall ClearChannels
+	call InitializeIRCommunicationInterrupts
 
+.restart
+	call BeginIRCommunication
+	call InitializeIRCommunicationRoles
+	ldh a, [hMGStatusFlags]
+endc
+	vc_patch_end
 	cp MG_CANCELED
 	jp z, EndOrContinueMysteryGiftIRCommunication
 	cp MG_OKAY
