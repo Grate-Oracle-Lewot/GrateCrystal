@@ -3017,7 +3017,7 @@ wEggTutorBricks:: db
 
 ; map scene ids
 wPewterMuseumSceneID::                            db
-wFightingDojoSceneID::                            db
+wCeladonGymSceneID::                              db
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
