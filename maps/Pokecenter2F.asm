@@ -67,6 +67,14 @@ Script_BattleRoomClosed:
 	closetext
 	end
 
+Script_TimeCapsuleClosed:
+	faceplayer
+	opentext
+	writetext Text_TimeCapsuleClosed
+	waitbutton
+	closetext
+	end
+
 LinkReceptionistScript_Trade:
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iffalse Script_TradeCenterClosed
@@ -291,6 +299,7 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
+	sjump Script_TimeCapsuleClosed
 	faceplayer
 	opentext
 	writetext Text_AskSwapGender
@@ -824,6 +833,12 @@ Text_AskSwapGender:
 Text_PleaseStepInside:
 	text "Please step"
 	line "inside."
+	done
+
+Text_TimeCapsuleClosed:
+	text "I'm sorry--the"
+	line "TIME CAPSULE is"
+	cont "being adjusted."
 	done
 
 Pokecenter2F_MapEvents:
