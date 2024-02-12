@@ -323,13 +323,11 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
 	setflag ENGINE_PLAYER_IS_FEMALE
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
 	clearflag ENGINE_PLAYER_IS_FEMALE
-	setflag ENGINE_KRIS_IN_CABLE_CLUB
 	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
@@ -351,13 +349,11 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
 	setflag ENGINE_PLAYER_IS_FEMALE
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
 	clearflag ENGINE_PLAYER_IS_FEMALE
-	setflag ENGINE_KRIS_IN_CABLE_CLUB
 	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
