@@ -678,8 +678,8 @@ Pokecenter2FMovementData_PlayerEnterTimeCapsuleFromBottom:
 
 Pokecenter2FMovementData_PlayerExitTimeCapsule:
 	show_person
-	step DOWN
-	step DOWN
+	slow_step DOWN
+	slow_step DOWN
 	step_end
 
 Text_BattleReceptionistMobile:
