@@ -1554,10 +1554,6 @@ InitMysteryGiftLayout:
 	ld b, 5
 	jr .gfx_loop
 
-.Load6GFX: ; unreferenced
-	ld b, 6
-	jr .gfx_loop
-
 .Load16GFX:
 	ld b, 16
 
@@ -1741,7 +1737,7 @@ StageDataForNameCard:
 	ld a, [sCrystalData + 0]
 	ld [de], a
 	inc de
-	ld a, BANK(s4_a603) ; aka BANK(s4_a007) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a603) ; aka BANK(s4_a007) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	ld hl, s4_a603 ; address of MBC30 bank
 	ld bc, 8
