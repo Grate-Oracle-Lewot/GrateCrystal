@@ -3230,7 +3230,9 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-	ds 6
+wAlteredPlayerGender:: db
+
+	ds 5
 
 wLuckyNumberShowFlag:: db
 wRepelType:: db
