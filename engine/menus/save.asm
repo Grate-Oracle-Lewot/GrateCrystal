@@ -473,6 +473,8 @@ SaveOptions:
 	jp CloseSRAM
 
 SavePlayerData:
+	ld a, [wPlayerGender]
+	ld [wAlteredPlayerGender], a
 	ld a, BANK(sPlayerData)
 	call OpenSRAM
 	ld hl, wPlayerData
@@ -534,6 +536,8 @@ SaveBackupOptions:
 	ret
 
 SaveBackupPlayerData:
+	ld a, [wPlayerGender]
+	ld [wAlteredPlayerGender], a
 	ld a, BANK(sBackupPlayerData)
 	call OpenSRAM
 	ld hl, wPlayerData
@@ -714,6 +718,8 @@ LoadPlayerData:
 	ld de, wPlayerData
 	ld bc, wPlayerDataEnd - wPlayerData
 	call CopyBytes
+	ld a, [wAlteredPlayerGender]
+	ld [wPlayerGender], a
 	ld hl, sCurMapData
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
@@ -769,6 +775,8 @@ LoadBackupPlayerData:
 	ld de, wPlayerData
 	ld bc, wPlayerDataEnd - wPlayerData
 	call CopyBytes
+	ld a, [wAlteredPlayerGender]
+	ld [wPlayerGender], a
 	ld hl, sBackupCurMapData
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
