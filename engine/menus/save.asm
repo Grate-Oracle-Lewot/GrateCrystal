@@ -475,7 +475,7 @@ SaveOptions:
 SavePlayerData:
 	ld a, BANK(sPlayerData)
 	call OpenSRAM
-	ld a, wPlayerGender
+	ld a, [wPlayerGender]
 	ld [sPlayerGender], a
 	ld hl, wPlayerData
 	ld de, sPlayerData
@@ -538,7 +538,7 @@ SaveBackupOptions:
 SaveBackupPlayerData:
 	ld a, BANK(sBackupPlayerData)
 	call OpenSRAM
-	ld a, wPlayerGender
+	ld a, [wPlayerGender]
 	ld [sBackupPlayerGender], a
 	ld hl, wPlayerData
 	ld de, sBackupPlayerData
@@ -714,7 +714,7 @@ CheckBackupSaveFile:
 LoadPlayerData:
 	ld a, BANK(sPlayerData)
 	call OpenSRAM
-	ld a, sPlayerGender
+	ld a, [sPlayerGender]
 	ld [wPlayerGender], a
 	ld hl, sPlayerData
 	ld de, wPlayerData
@@ -771,7 +771,7 @@ VerifyChecksum:
 LoadBackupPlayerData:
 	ld a, BANK(sBackupPlayerData)
 	call OpenSRAM
-	ld a, sBackupPlayerGender
+	ld a, [sBackupPlayerGender]
 	ld [wPlayerGender], a
 	ld hl, sBackupPlayerData
 	ld de, wPlayerData
