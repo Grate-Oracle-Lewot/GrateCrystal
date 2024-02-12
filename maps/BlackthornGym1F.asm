@@ -12,6 +12,7 @@ BlackthornGym1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .Boulders
+	callback MAPCALLBACK_OBJECTS, .Dragonite
 
 .Boulders:
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1
@@ -26,6 +27,23 @@ BlackthornGym1F_MapScripts:
 	iffalse .skip3
 	changeblock 8, 6, $3b ; fallen boulder 2
 .skip3
+	endcallback
+
+.Dragonite:
+	disappear BLACKTHORNGYM1F_DRAGONITE
+	checkevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
+	iftrue .DisappearBoth
+	appear BLACKTHORNGYM1F_DRAGONITE_STATUE
+	checkevent EVENT_BLACKTHORN_GYM_TALKED_TO_STATUE
+	iftrue .AppearDragonite
+	endcallback
+
+.DisappearBoth:
+	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
+	endcallback
+
+.AppearDragonite:
+	appear BLACKTHORNGYM1F_DRAGONITE
 	endcallback
 
 BlackthornGymClairScript:
@@ -154,7 +172,7 @@ BlackthornGymDragoniteScript:
 	waitsfx
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	setevent EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
+	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
 	disappear BLACKTHORNGYM1F_DRAGONITE
 	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
 	playsound SFX_WARP_TO
@@ -167,7 +185,22 @@ BlackthornGymDragoniteScript:
 	end
 
 BlackthornGymDragoniteStatueScript:
-	jumptext BlackthornGymDragoniteStatueText
+	opentext
+	writetext BlackthornGymDragoniteStatueText
+	waitbutton
+	closetext
+	checkevent EVENT_BLACKTHORN_GYM_TALKED_TO_STATUE
+	iftrue .AlreadyTalked
+	pause 10
+	cry DRAGONITE
+	waitsfx
+	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_STATUE
+	opentext
+	writetext BlackthornGymDragoniteStatueDragoniteAppearText
+	waitbutton
+	closetext
+.AlreadyTalked:
+	end
 
 ClairIntroText:
 	text "I am CLAIR."
@@ -436,6 +469,11 @@ BlackthornGymDragoniteStatueText:
 	line "a DRAGONITE."
 	done
 
+BlackthornGymDragoniteStatueDragoniteAppearText:
+	text "A #MON's cry"
+	line "echoed…!?"
+	done
+
 BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -460,5 +498,5 @@ BlackthornGym1F_MapEvents:
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
-	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
-	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_BLACKTHORN_GYM_DRAGONITE_AND_STATUE
+	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE
+	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_BLACKTHORN_GYM_STATUE
