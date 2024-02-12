@@ -3230,9 +3230,9 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-wAlteredPlayerGender:: db ; needed for genderswapping because wPlayerGender isn't included within wPlayerData
-
 	ds 5
+
+wAlteredPlayerGender:: db ; needed for genderswapping because wPlayerGender isn't included within wPlayerData
 
 wLuckyNumberShowFlag:: db
 wRepelType:: db
