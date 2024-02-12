@@ -66,6 +66,8 @@ sBackupOptions:: ds wOptionsEnd - wOptions
 
 sBackupCheckValue1:: db ; loaded with SAVE_CHECK_VALUE_1, used to check save corruption
 
+sBackupPlayerGender:: db ; new to Grate Crystal, needed for gender swapping
+
 sBackupGameData::
 sBackupPlayerData::  ds wPlayerDataEnd - wPlayerData
 sBackupCurMapData::  ds wCurMapDataEnd - wCurMapData
@@ -94,6 +96,8 @@ SECTION "Save", SRAM
 sOptions:: ds wOptionsEnd - wOptions
 
 sCheckValue1:: db ; loaded with SAVE_CHECK_VALUE_1, used to check save corruption
+
+sPlayerGender:: db ; new to Grate Crystal, needed for gender swapping
 
 sGameData::
 sPlayerData::  ds wPlayerDataEnd - wPlayerData
