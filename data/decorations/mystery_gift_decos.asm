@@ -1,3 +1,3 @@
 MysteryGiftDecos:
-	db DECOFLAG_MAGIKARP_DOLL
+	db DECOFLAG_TOWN_MAP_POSTER
 .End
