@@ -299,7 +299,6 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
-	sjump Script_TimeCapsuleClosed
 	faceplayer
 	opentext
 	writetext Text_AskSwapGender
@@ -323,13 +322,17 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	setflag ENGINE_PLAYER_IS_FEMALE
+	setflag PLAYERGENDER_FEMALE_F
+	clearflag ENGINE_KRIS_IN_CABLE_CLUB
+	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
-	setflag ENGINE_KRIS_IN_CABLE_CLUB
 	clearflag ENGINE_PLAYER_IS_FEMALE
+	clearflag PLAYERGENDER_FEMALE_F
+	setflag ENGINE_KRIS_IN_CABLE_CLUB
+	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
 	special SetPlayerPalette
@@ -349,13 +352,17 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
-	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	setflag ENGINE_PLAYER_IS_FEMALE
+	setflag PLAYERGENDER_FEMALE_F
+	clearflag ENGINE_KRIS_IN_CABLE_CLUB
+	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
-	setflag ENGINE_KRIS_IN_CABLE_CLUB
 	clearflag ENGINE_PLAYER_IS_FEMALE
+	clearflag PLAYERGENDER_FEMALE_F
+	setflag ENGINE_KRIS_IN_CABLE_CLUB
+	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
 	special SetPlayerPalette
@@ -371,6 +378,16 @@ LinkReceptionistScript_GenderSwap:
 .Cancel:
 	closetext
 	end
+
+.SetWRAMMale:
+	ld a, FALSE
+	ld [wPlayerGender], a
+	ret
+
+.SetWRAMFemale:
+	ld a, TRUE
+	ld [wPlayerGender], a
+	ret
 
 Script_LeftCableTradeCenter:
 	special WaitForOtherPlayerToExit
