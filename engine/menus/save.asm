@@ -473,8 +473,6 @@ SaveOptions:
 	jp CloseSRAM
 
 SavePlayerData:
-;	ld a, [wPlayerGender]
-;	ld [wAlteredPlayerGender], a
 	ld a, BANK(sPlayerData)
 	call OpenSRAM
 	ld hl, wPlayerData
@@ -536,8 +534,6 @@ SaveBackupOptions:
 	ret
 
 SaveBackupPlayerData:
-;	ld a, [wPlayerGender]
-;	ld [wAlteredPlayerGender], a
 	ld a, BANK(sBackupPlayerData)
 	call OpenSRAM
 	ld hl, wPlayerData
@@ -718,8 +714,6 @@ LoadPlayerData:
 	ld de, wPlayerData
 	ld bc, wPlayerDataEnd - wPlayerData
 	call CopyBytes
-;	ld a, [wAlteredPlayerGender]
-;	ld [wPlayerGender], a
 	ld hl, sCurMapData
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
@@ -775,8 +769,6 @@ LoadBackupPlayerData:
 	ld de, wPlayerData
 	ld bc, wPlayerDataEnd - wPlayerData
 	call CopyBytes
-;	ld a, [wAlteredPlayerGender]
-;	ld [wPlayerGender], a
 	ld hl, sBackupCurMapData
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
@@ -823,18 +815,6 @@ _SaveData:
 	ld de, sCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
 	call CopyBytes
-
-	; This block originally had some mobile functionality, but since we're still in
-	; BANK(sCrystalData), it instead overwrites the sixteen wEventFlags starting at 1:s4_a60e with
-	; garbage from wd479. This isn't an issue, since ErasePreviousSave is followed by a regular
-	; save that unwrites the garbage.
-
-	ld hl, wd479
-	ld a, [hli]
-	ld [s4_a60e + 0], a
-	ld a, [hli]
-	ld [s4_a60e + 1], a
-
 	jp CloseSRAM
 
 _LoadData:
@@ -844,16 +824,6 @@ _LoadData:
 	ld de, wCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
 	call CopyBytes
-
-	; This block originally had some mobile functionality to mirror _SaveData above, but instead it
-	; (harmlessly) writes the aforementioned wEventFlags to the unused wd479.
-
-	ld hl, wd479
-	ld a, [s4_a60e + 0]
-	ld [hli], a
-	ld a, [s4_a60e + 1]
-	ld [hli], a
-
 	jp CloseSRAM
 
 GetBoxAddress:
@@ -884,8 +854,7 @@ endr
 
 SaveBoxAddress:
 ; Save box via wBoxPartialData.
-; We do this in three steps because the size of wBoxPartialData is less than
-; the size of sBox.
+; We do this in three steps because the size of wBoxPartialData is less than the size of sBox.
 	push hl
 ; Load the first part of the active box.
 	push af
@@ -959,8 +928,7 @@ SaveBoxAddress:
 
 LoadBoxAddress:
 ; Load box via wBoxPartialData.
-; We do this in three steps because the size of wBoxPartialData is less than
-; the size of sBox.
+; We do this in three steps because the size of wBoxPartialData is less than the size of sBox.
 	push hl
 	ld l, e
 	ld h, d
