@@ -234,6 +234,7 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+	setfalg ENGINE_PLAINBADGE
 	givepoke MEGANIUM, 100, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
