@@ -100,6 +100,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
+	call _SaveBackupData
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
@@ -263,6 +264,7 @@ SaveGameData:
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
+	call _SaveBackupData
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
@@ -571,6 +573,7 @@ SaveBackupChecksum:
 TryLoadSaveFile:
 	call VerifyChecksum
 	jr nz, .backup
+	call _LoadData
 	call LoadPlayerData
 	call LoadPokemonData
 	call LoadBox
@@ -579,6 +582,7 @@ TryLoadSaveFile:
 	farcall RestoreMysteryGift
 	call ValidateBackupSave
 	call SaveBackupOptions
+	call _SaveBackupData
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
@@ -588,6 +592,7 @@ TryLoadSaveFile:
 .backup
 	call VerifyBackupChecksum
 	jr nz, .corrupt
+	call _LoadBackupData
 	call LoadBackupPlayerData
 	call LoadBackupPokemonData
 	call LoadBox
@@ -811,10 +816,28 @@ _SaveData:
 	call CopyBytes
 	jp CloseSRAM
 
+_SaveBackupData:
+	ld a, BANK(sBackupCrystalData)
+	call OpenSRAM
+	ld hl, wCrystalData
+	ld de, sBackupCrystalData
+	ld bc, wCrystalDataEnd - wCrystalData
+	call CopyBytes
+	jp CloseSRAM
+
 _LoadData:
 	ld a, BANK(sCrystalData)
 	call OpenSRAM
 	ld hl, sCrystalData
+	ld de, wCrystalData
+	ld bc, wCrystalDataEnd - wCrystalData
+	call CopyBytes
+	jp CloseSRAM
+
+_LoadBackupData:
+	ld a, BANK(sBackupCrystalData)
+	call OpenSRAM
+	ld hl, sBackupCrystalData
 	ld de, wCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
 	call CopyBytes
