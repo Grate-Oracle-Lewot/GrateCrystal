@@ -322,11 +322,11 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
-	callasm .SetWRAMFemale
+	setflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
-	callasm .SetWRAMMale
+	clearflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
 	special SetPlayerPalette
@@ -346,11 +346,11 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
-	callasm .SetWRAMFemale
+	setflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
-	callasm .SetWRAMMale
+	clearflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
 	special SetPlayerPalette
