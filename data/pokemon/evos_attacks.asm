@@ -2313,7 +2313,7 @@ MeganiumEvosAttacks:
 	db 31, PETAL_DANCE
 	db 41, EARTH_POWER
 	db 47, LEECH_SEED
-	db 51, STRENGTH
+	db 51, SAFEGUARD
 	db 60, SOLARBEAM
 	db 0 ; no more level-up moves
 
