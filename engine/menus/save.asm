@@ -94,7 +94,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
-	call SaveData
+	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveChecksum
@@ -256,7 +256,7 @@ SaveGameData:
 	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
-	call SaveData
+	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveBox
@@ -349,7 +349,7 @@ ErasePreviousSave:
 	call EraseHallOfFame
 	call EraseLinkBattleStats
 	call EraseMysteryGift
-	call SaveData
+	call _SaveData
 	call EraseBattleTowerStatus
 	ld a, BANK(sStackTop)
 	call OpenSRAM
@@ -600,7 +600,7 @@ TryLoadSaveFile:
 	farcall RestoreMysteryGift
 	call ValidateSave
 	call SaveOptions
-	call SaveData
+	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveChecksum
