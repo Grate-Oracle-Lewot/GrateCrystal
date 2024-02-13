@@ -94,6 +94,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
+	call SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveChecksum
@@ -255,6 +256,7 @@ SaveGameData:
 	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
+	call SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveBox
@@ -598,6 +600,7 @@ TryLoadSaveFile:
 	farcall RestoreMysteryGift
 	call ValidateSave
 	call SaveOptions
+	call SaveData
 	call SavePlayerData
 	call SavePokemonData
 	call SaveChecksum
@@ -804,11 +807,6 @@ VerifyBackupChecksum:
 	ret
 
 _SaveData:
-	; This is called within two scenarios:
-	;   a) ErasePreviousSave (the process of erasing the save from a previous game file)
-	;   b) unused mobile functionality
-	; It is not part of a regular save.
-
 	ld a, BANK(sCrystalData)
 	call OpenSRAM
 	ld hl, wCrystalData
