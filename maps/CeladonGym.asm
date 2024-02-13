@@ -5,11 +5,32 @@
 	const CELADONGYM_BEAUTY
 	const CELADONGYM_TWIN1
 	const CELADONGYM_TWIN2
+	const CELADONGYM_BEAUTY2
 
 CeladonGym_MapScripts:
 	def_scene_scripts
+	scene_script .ForcedToLeave ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Bouncer
+
+.ForcedToLeave:
+	sdefer CeladonGymSexism
+	end
+
+.DummyScene:
+	end
+
+.Bouncer:
+	appear CELADONGYM_BEAUTY2
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DisappearBouncer
+	endcallback
+
+.DisapperBouncer:
+	disappear CELADONGYM_BEAUTY2
+	endcallback
 
 CeladonGymErikaScript:
 	faceplayer
@@ -111,6 +132,36 @@ CeladonGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, ERIKA, ERIKA1
 	jumpstd GymStatue2Script
+
+CeladonGymSexism:
+	applymovement PLAYER, CeladonGymPlayerStepUpMovement
+	applymovement CELADONGYM_BEAUTY2, CeladonGymBeautySlowStepDownMovement
+	opentext
+	writetext CeladonGymSexismText
+	waitbutton
+	closetext
+	follow PLAYER, CELADONGYM_BEAUTY2
+	applymovement PLAYER, CeladonGymPlayerSlowStepDownMovement
+	stopfollow
+	special FadeOutPalettes
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	warp CELADON_CITY, 10, 29
+	end
+
+CeladonGymPlayerStepUpMovement:
+	step UP
+	step_end
+
+CeladonGymPlayerSlowStepDownMovement:
+	fix_facing
+	slow_step DOWN
+	remove_fixed_facing
+	step_end
+
+CeladonGymBeautySlowStepDownMovement:
+	slow_step DOWN
+	step_end
 
 ErikaBeforeBattleText:
 	text "ERIKA: Hello…"
@@ -278,6 +329,15 @@ TwinsJoAndZoe2AfterBattleText:
 	line "much stronger!"
 	done
 
+CeladonGymSexismText:
+	text "Hey! Only girls"
+	line "are allowed in"
+	cont "this GYM!"
+
+	para "You'll have to"
+	line "leave."
+	done
+
 CeladonGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -298,3 +358,4 @@ CeladonGym_MapEvents:
 	object_event  3,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
 	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1
+	object_event  4, 14, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CELADON_GYM_BOUNCER
