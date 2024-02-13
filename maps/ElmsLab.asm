@@ -272,6 +272,8 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
+	setfalg ENGINE_HIVEBADGE
+	giveitem HEDGER
 	end
 
 ElmDescribesMrPokemonScript:
@@ -1336,8 +1338,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, NEW_BARK_TOWN, 1
-	warp_event  5, 11, NEW_BARK_TOWN, 1
+	warp_event  4, 11, CELADON_CITY, 1
+	warp_event  5, 11, CELADON_CITY, 1
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
