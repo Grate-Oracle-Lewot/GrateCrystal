@@ -324,12 +324,10 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
 	setflag ENGINE_PLAYER_IS_FEMALE
-	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
 	clearflag ENGINE_PLAYER_IS_FEMALE
-	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
 	special SetPlayerPalette
@@ -350,12 +348,10 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
 	setflag ENGINE_PLAYER_IS_FEMALE
-	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
 	clearflag ENGINE_PLAYER_IS_FEMALE
-	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
 	special SetPlayerPalette
@@ -371,18 +367,6 @@ LinkReceptionistScript_GenderSwap:
 .Cancel:
 	closetext
 	end
-
-.SetWRAMMale:
-	ld a, FALSE
-	ld [wPlayerGender], a
-	ld [wAlteredPlayerGender], a
-	ret
-
-.SetWRAMFemale:
-	ld a, TRUE
-	ld [wPlayerGender], a
-	ld [wAlteredPlayerGender], a
-	ret
 
 Script_LeftCableTradeCenter:
 	special WaitForOtherPlayerToExit
