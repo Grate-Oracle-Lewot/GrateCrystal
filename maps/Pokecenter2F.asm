@@ -299,6 +299,7 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
+	sjump Script_TimeCapsuleClosed ; dummied out for now
 	faceplayer
 	opentext
 	writetext Text_AskSwapGender
@@ -323,10 +324,12 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
 	setflag ENGINE_PLAYER_IS_FEMALE
+	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
 	clearflag ENGINE_PLAYER_IS_FEMALE
+	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
 	special SetPlayerPalette
@@ -347,10 +350,12 @@ LinkReceptionistScript_GenderSwap:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
 	setflag ENGINE_PLAYER_IS_FEMALE
+	callasm .SetWRAMFemale
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
 	clearflag ENGINE_PLAYER_IS_FEMALE
+	callasm .SetWRAMMale
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
 	special SetPlayerPalette
