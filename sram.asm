@@ -387,3 +387,7 @@ s7_a000::
 	ds $800
 
 s7_a800:: db
+
+SECTION "SRAM Backup Crystal Data", SRAM
+
+sBackupCrystalData:: ds wCrystalDataEnd - wCrystalData
