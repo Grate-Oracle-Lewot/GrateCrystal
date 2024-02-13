@@ -322,10 +322,12 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMRight
+	setmapscene CELADON_GYM, SCENE_FINISHED
 	setflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneRight
 .FTMRight:
+	setmapscene CELADON_GYM, SCENE_DEFAULT
 	clearflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_RED << 4)
 .DoneRight:
@@ -346,10 +348,12 @@ LinkReceptionistScript_GenderSwap:
 	pause 30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FTMLeft
+	setmapscene CELADON_GYM, SCENE_FINISHED
 	setflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_BLUE << 4)
 	sjump .DoneLeft
 .FTMLeft:
+	setmapscene CELADON_GYM, SCENE_DEFAULT
 	clearflag ENGINE_PLAYER_IS_FEMALE
 	setval (PAL_NPC_RED << 4)
 .DoneLeft:
