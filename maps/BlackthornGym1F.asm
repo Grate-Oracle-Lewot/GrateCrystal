@@ -168,6 +168,7 @@ BlackthornGymStatue:
 	jumpstd GymStatue2Script
 
 BlackthornGymDragoniteScript:
+	faceplayer
 	cry DRAGONITE
 	waitsfx
 	special FadeBlackQuickly
@@ -191,7 +192,8 @@ BlackthornGymDragoniteStatueScript:
 	closetext
 	checkevent EVENT_BLACKTHORN_GYM_TALKED_TO_STATUE
 	iftrue .AlreadyTalked
-	pause 10
+	pause 5
+	appear BLACKTHORNGYM1F_DRAGONITE
 	cry DRAGONITE
 	waitsfx
 	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_STATUE
