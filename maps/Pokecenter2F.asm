@@ -299,7 +299,6 @@ LinkReceptionistScript_Battle:
 	end
 
 LinkReceptionistScript_GenderSwap:
-	sjump Script_TimeCapsuleClosed ; dummied out for now
 	faceplayer
 	opentext
 	writetext Text_AskSwapGender
