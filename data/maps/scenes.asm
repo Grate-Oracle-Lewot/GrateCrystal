@@ -6,7 +6,7 @@ ENDM
 
 MapScenes::
 	scene_var PEWTER_MUSEUM_1F,                            wPewterMuseumSceneID ; unused
-	scene_var CELADON_GYM,                                 wCeladonGymSceneID ; will use if I can get genderswapping to work
+	scene_var CELADON_GYM,                                 wCeladonGymSceneID
 	scene_var POKECENTER_2F,                               wPokecenter2FSceneID
 	scene_var TRADE_CENTER,                                wTradeCenterSceneID
 	scene_var COLOSSEUM,                                   wColosseumSceneID
