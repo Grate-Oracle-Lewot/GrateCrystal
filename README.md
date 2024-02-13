@@ -32,6 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Physical/Special split
 - TMs are infinite-use
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
+- Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
 - Text scrolls automatically in battle (and at a few other key points)
