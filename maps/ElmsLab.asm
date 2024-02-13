@@ -340,6 +340,11 @@ ElmAfterTheftScript:
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
+	setmapscene CELADON_GYM, SCENE_FINISHED
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .SkipBouncer
+	setmapscene CELADON_GYM, SCENE_DEFAULT
+.SkipBouncer:
 	writetext ElmAfterTheftText6
 	waitbutton
 	closetext
