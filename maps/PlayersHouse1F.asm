@@ -33,6 +33,11 @@ MeetMomRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
+	setmapscene CELADON_GYM, SCENE_FINISHED
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .SkipBouncer
+	setmapscene CELADON_GYM, SCENE_DEFAULT
+.SkipBouncer:
 	opentext
 	writetext ElmsLookingForYouText
 	promptbutton
