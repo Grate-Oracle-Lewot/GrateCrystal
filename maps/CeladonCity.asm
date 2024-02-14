@@ -288,9 +288,21 @@ CeladonCityTeacher1Text:
 	done
 
 CeladonCityGramps2Text:
-	text "Nihihi! This GYM"
-	line "is great! It's"
-	cont "full of women!"
+	text "This GYM only"
+	line "allows girls"
+	cont "inside."
+
+	para "But there must be"
+	line "a way for boys to"
+	cont "battle the LEADER…"
+
+	para "I think a friend"
+	line "of mine has the"
+	cont "BADGE…"
+
+	para "I'll ask about it"
+	line "while we're trading"
+	cont "#MON."
 	done
 
 CeladonCityYoungster1Text:
