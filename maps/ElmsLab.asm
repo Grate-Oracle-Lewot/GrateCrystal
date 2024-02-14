@@ -272,8 +272,6 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
-	setflag ENGINE_HIVEBADGE
-	giveitem HEDGER
 	end
 
 ElmDescribesMrPokemonScript:
@@ -342,11 +340,6 @@ ElmAfterTheftScript:
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
-	setmapscene CELADON_GYM, SCENE_FINISHED
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .SkipBouncer
-	setmapscene CELADON_GYM, SCENE_DEFAULT
-.SkipBouncer:
 	writetext ElmAfterTheftText6
 	waitbutton
 	closetext
@@ -1338,8 +1331,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, CELADON_CITY, 1
-	warp_event  5, 11, CELADON_CITY, 1
+	warp_event  4, 11, NEW_BARK_TOWN, 1
+	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
