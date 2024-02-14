@@ -76,7 +76,7 @@ Script_TimeCapsuleClosed:
 	end
 
 LinkReceptionistScript_Trade:
-	checkflag ENGINE_ZEPHYRBADGE
+	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iffalse Script_TradeCenterClosed
 	opentext
 	writetext Text_TradeReceptionistIntro
@@ -179,7 +179,7 @@ BattleTradeMobile_WalkIn:
 	end
 
 LinkReceptionistScript_Battle:
-	checkflag ENGINE_ZEPHYRBADGE
+	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iffalse Script_BattleRoomClosed
 	opentext
 	writetext Text_BattleReceptionistIntro
