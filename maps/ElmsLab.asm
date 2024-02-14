@@ -272,7 +272,7 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
-	setfalg ENGINE_HIVEBADGE
+	setflag ENGINE_HIVEBADGE
 	giveitem HEDGER
 	end
 
