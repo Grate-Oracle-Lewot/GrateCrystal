@@ -281,7 +281,8 @@
 	const EVENT_GAVE_SCIENTIST_OLD_AMBER
 	const EVENT_GOT_EGG_TUTOR_BRICK_QUEST
 	const EVENT_UNLOCKED_EGG_MOVE_TUTOR
-; Unused: next 334 events
+	const EVENT_CELADON_GYM_BOUNCER
+; Unused: next 333 events
 
 	const_next 600
 ; Kurt Apricorn events
