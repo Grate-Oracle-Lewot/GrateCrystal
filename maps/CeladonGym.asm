@@ -28,7 +28,7 @@ CeladonGym_MapScripts:
 	iftrue .DisappearBouncer
 	endcallback
 
-.DisapperBouncer:
+.DisappearBouncer:
 	disappear CELADONGYM_BEAUTY2
 	endcallback
 
