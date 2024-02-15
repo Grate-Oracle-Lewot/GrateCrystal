@@ -707,6 +707,7 @@ GirafarigEggMoves:
 PinecoEggMoves:
 	db REFLECT
 	db PIN_MISSILE
+	db SPARK
 	db FLAIL
 	db FLAME_WHEEL
 	db -1 ; end
