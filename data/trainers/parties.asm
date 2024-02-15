@@ -299,16 +299,12 @@ WillGroup:
 PKMNTrainerGroup:
 	; CAL (1)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 10, CHIKORITA
-	db 10, CYNDAQUIL
-	db 10, TOTODILE
+	db 10, DITTO
 	db -1 ; end
 
 	; CAL (2)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 30, BAYLEEF
-	db 30, QUILAVA
-	db 30, CROCONAW
+	db 30, DITTO
 	db -1 ; end
 
 	; CAL (3)
@@ -454,8 +450,8 @@ ScientistGroup:
 	db -1 ; end
 
 	; SCIENTIST (2)
-	db "MITCH@", TRAINERTYPE_NORMAL
-	db 35, DITTO
+	db "MITCH@", TRAINERTYPE_ITEM
+	db 35, DITTO,      GOLD_BERRY
 	db -1 ; end
 
 	; SCIENTIST (3)
@@ -2973,8 +2969,8 @@ PicnickerGroup:
 	db -1 ; end
 
 	; PICNICKER (3)
-	db "BROOKE@", TRAINERTYPE_MOVES
-	db 21, PIKACHU,    THUNDERSHOCK, TAIL_WHIP, QUICK_ATTACK, DOUBLE_TEAM
+	db "BROOKE@", TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
+	db 21, PIKACHU,    BERRY,        THUNDERSHOCK, TAIL_WHIP, QUICK_ATTACK, DOUBLE_TEAM
 	db -1 ; end
 
 	; PICNICKER (4)
@@ -3212,8 +3208,8 @@ CamperGroup:
 	db -1 ; end
 
 	; CAMPER (18)
-	db "JERRY@", TRAINERTYPE_NORMAL
-	db 64, SUDOWOODO
+	db "JERRY@", TRAINERTYPE_ITEM
+	db 64, SUDOWOODO,  GOLD_BERRY
 	db -1 ; end
 
 	; CAMPER (19)
@@ -3287,8 +3283,8 @@ SageGroup:
 	db -1 ; end
 
 	; SAGE (5)
-	db "JEFFREY@", TRAINERTYPE_NORMAL
-	db 28, GIRAFARIG
+	db "JEFFREY@", TRAINERTYPE_ITEM
+	db 28, GIRAFARIG,  MIRACLEBERRY
 	db -1 ; end
 
 	; SAGE (6)
