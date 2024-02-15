@@ -2091,7 +2091,7 @@ KabutoEvosAttacks:
 	db 2, HARDEN
 	db 5, MUD_SLAP
 	db 10, METAL_CLAW
-	db 19, LEER
+	db 19, SWORDS_DANCE
 	db 27, FURY_CUTTER
 	db 35, ENDURE
 	db 39, SLASH
@@ -2106,7 +2106,7 @@ KabutopsEvosAttacks:
 	db 2, HARDEN
 	db 5, MUD_SLAP
 	db 10, METAL_CLAW
-	db 19, LEER
+	db 19, SWORDS_DANCE
 	db 27, FURY_CUTTER
 	db 35, ENDURE
 	db 39, SLASH
