@@ -3825,7 +3825,7 @@ GamblerGroup:
 
 CalFGroup:
 	; CAL_F (1)
-	db "CRYSTAL@", TRAINERTYPE_NORMAL
+	db "CALLA@", TRAINERTYPE_NORMAL
 	db 10, DITTO
 	db -1 ; end
 
