@@ -449,7 +449,7 @@ PorygonEggMoves:
 	db -1 ; end
 
 OmanyteEggMoves:
-	db SUPERSONIC
+	db KINESIS
 	db AURORA_BEAM
 	db BUBBLEBEAM
 	db SLAM
