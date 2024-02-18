@@ -821,7 +821,7 @@ _SaveData:
 	call OpenSRAM
 	ld a, TRUE
 	ld [sMysteryGiftTrainerHouseFlag], a
-	ld hl, wMysteryGiftTrainer
+	ld hl, wMysteryGiftStaging
 	ld de, sMysteryGiftTrainer
 	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 	call CopyBytes
