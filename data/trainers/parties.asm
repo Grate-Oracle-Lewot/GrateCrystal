@@ -304,7 +304,7 @@ PKMNTrainerGroup:
 
 	; CAL (2)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 30, DITTO
+	db 100, DITTO
 	db -1 ; end
 
 	; CAL (3)
