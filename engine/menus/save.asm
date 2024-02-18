@@ -815,14 +815,19 @@ _SaveData:
 	ld bc, wCrystalDataEnd - wCrystalData
 	call CopyBytes
 	call CloseSRAM
+
+	farcall StagePartyDataForMysteryGift
+	ld a, BANK(sMysteryGiftData)
+	call OpenSRAM
 	ld a, TRUE
 	ld [sMysteryGiftTrainerHouseFlag], a
-	farcall StagePartyDataForMysteryGift
-	ld a, BANK(sMysteryGiftTrainer)
-	call OpenSRAM
 	ld hl, wMysteryGiftTrainer
 	ld de, sMysteryGiftTrainer
 	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
+	call CopyBytes
+	ld hl, wPlayerName
+	ld de, sMysteryGiftPartnerName
+	ld bc, NAME_LENGTH
 	call CopyBytes
 	jp CloseSRAM
 
