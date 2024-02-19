@@ -111,8 +111,8 @@ TrainerPsychicNathan:
 	closetext
 	end
 
-SuperNerdStan:
-	jumptextfaceplayer SuperNerdStanText
+TrainerSuperNerdStan:
+	jumptextfaceplayer SuperNerdStanAfterBattleText
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
@@ -169,7 +169,21 @@ RuinsOfAlphOutsideScientistText:
 	cont "DEX. Follow me."
 	done
 
-SuperNerdStanText:
+SuperNerdStanSeenText:
+	text "What do you want?"
+	line "I'm studying--"
+	cont "don't disturb me!"
+	done
+
+SuperNerdStanBeatenText:
+	text "Sorry…"
+	line "I'm frustrated by"
+
+	para "our lack of real"
+	line "understanding…"
+	done
+
+SuperNerdStanAfterBattleText:
 	text "The RUINS are from"
 	line "about 1500 years"
 	cont "ago."
@@ -290,4 +304,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 13, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
-	object_event 12, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SuperNerdStan, -1
+	object_event 12, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TrainerSuperNerdStan, -1
