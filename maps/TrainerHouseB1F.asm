@@ -19,12 +19,12 @@ TrainerHouseReceptionistScript:
 	writetext TrainerHouseB1FIntroText
 	promptbutton
 	special TrainerHouse
-	iffalse .GetCal2Name
-	gettrainername STRING_BUFFER_3, CAL, CAL1
+	iffalse .GetCal3Name
+	gettrainername STRING_BUFFER_3, CAL, CAL2
 	sjump .GotName
 
-.GetCal2Name:
-	gettrainername STRING_BUFFER_3, CAL, CAL2
+.GetCal3Name:
+	gettrainername STRING_BUFFER_3, CAL, CAL3
 .GotName:
 	writetext TrainerHouseB1FYourOpponentIsText
 	promptbutton
@@ -44,14 +44,14 @@ TrainerHouseReceptionistScript:
 	iffalse .NoSpecialBattle
 	winlosstext TrainerHouseB1FCalBeatenText, 0
 	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL1
+	loadtrainer CAL, CAL2
 	startbattle
 	reloadmapafterbattle
 	iffalse .End
 .NoSpecialBattle:
 	winlosstext TrainerHouseB1FCalBeatenText, 0
 	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL2
+	loadtrainer CAL, CAL3
 	startbattle
 	reloadmapafterbattle
 .End:
