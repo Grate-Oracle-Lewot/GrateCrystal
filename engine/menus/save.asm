@@ -859,8 +859,6 @@ _SaveData:
 .party_end
 	ld a, -1
 	ld [de], a
-	ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
-	ld [wUnusedMysteryGiftStagedDataLength], a
 	call CloseSRAM
 
 	ld a, BANK(sMysteryGiftData)
@@ -871,10 +869,9 @@ _SaveData:
 	ld de, sMysteryGiftPartnerName
 	ld bc, NAME_LENGTH
 	call CopyBytes
-	ld a, [wUnusedMysteryGiftStagedDataLength]
 	ld hl, wMysteryGiftTrainer
 	ld de, sMysteryGiftTrainer
-	ld bc, a
+	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 	call CopyBytes
 	jp CloseSRAM
 
