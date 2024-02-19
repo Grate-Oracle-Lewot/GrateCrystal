@@ -304,12 +304,15 @@ PKMNTrainerGroup:
 
 	; CAL (2)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 50, MEGANIUM
-	db 50, TYPHLOSION
-	db 50, FERALIGATR
+	db 100, DITTO
 	db -1 ; end
 
 	; CAL (3)
+	db "CAL@", TRAINERTYPE_NORMAL
+	db 100, DITTO
+	db -1 ; end
+
+	; CAL (4)
 	db "IGGY@", TRAINERTYPE_NORMAL
 	db 61, ARTICUNO
 	db 62, ZAPDOS
@@ -317,7 +320,7 @@ PKMNTrainerGroup:
 	db 65, LUGIA
 	db -1 ; end
 
-	; CAL (4)
+	; CAL (5)
 	db "FRED@", TRAINERTYPE_NORMAL
 	db 62, RAIKOU
 	db 62, ENTEI
