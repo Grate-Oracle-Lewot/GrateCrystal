@@ -20,12 +20,12 @@ ReadTrainerParty:
 
 	ld a, [wOtherTrainerClass]
 	cp CAL
-	jr nz, .not_cal1
+	jr nz, .not_cal2
 	ld a, [wOtherTrainerID]
-	cp CAL1
-	jr z, .cal1
+	cp CAL2
+	jr z, .cal2
 	ld a, [wOtherTrainerClass]
-.not_cal1
+.not_cal2
 
 	dec a
 	ld c, a
@@ -63,7 +63,7 @@ ReadTrainerParty:
 .done
 	jp ComputeTrainerReward
 
-.cal1
+.cal2
 	ld a, BANK(sMysteryGiftTrainer)
 	call OpenSRAM
 	ld a, TRAINERTYPE_MOVES
@@ -215,14 +215,14 @@ Battle_GetTrainerName::
 GetTrainerName::
 	ld a, c
 	cp CAL
-	jr nz, .not_cal1
+	jr nz, .not_cal2
 
 	ld a, BANK(sMysteryGiftTrainerHouseFlag)
 	call OpenSRAM
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	and a
 	call CloseSRAM
-	jr z, .not_cal1
+	jr z, .not_cal2
 
 	ld a, BANK(sMysteryGiftPartnerName)
 	call OpenSRAM
@@ -230,7 +230,7 @@ GetTrainerName::
 	call CopyTrainerName
 	jp CloseSRAM
 
-.not_cal1
+.not_cal2
 	dec c
 	push bc
 	ld b, 0
