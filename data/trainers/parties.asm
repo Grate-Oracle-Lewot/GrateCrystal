@@ -503,8 +503,8 @@ ScientistGroup:
 	db -1 ; end
 
 	; SCIENTIST (11)
-	db "BEAU@", TRAINERTYPE_NORMAL
-	db 64, DITTO
+	db "BEAU@", TRAINERTYPE_ITEM
+	db 64, DITTO,      MYSTERYBERRY
 	db -1 ; end
 
 	; SCIENTIST (12)
