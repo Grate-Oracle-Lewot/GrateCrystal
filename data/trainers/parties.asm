@@ -297,17 +297,17 @@ WillGroup:
 	db -1 ; end
 
 PKMNTrainerGroup:
-	; CAL (1) party is never read; data read from sMysteryGiftTrainer instead
+	; CAL (1)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 100, DITTO
+	db 50, MEGANIUM
+	db 50, TYPHLOSION
+	db 50, FERALIGATR
+	db 50, VENUSAUR
+	db 50, CHARIZARD
+	db 50, BLASTOISE
 	db -1 ; end
 
-	; CAL (2) used in Trainer House in absence of Mystery Gift data
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 100, DITTO
-	db -1 ; end
-
-	; CAL (3)
+	; CAL (2)
 	db "IGGY@", TRAINERTYPE_NORMAL
 	db 61, ARTICUNO
 	db 62, ZAPDOS
@@ -315,7 +315,7 @@ PKMNTrainerGroup:
 	db 65, LUGIA
 	db -1 ; end
 
-	; CAL (4)
+	; CAL (3)
 	db "FRED@", TRAINERTYPE_NORMAL
 	db 62, RAIKOU
 	db 62, ENTEI
