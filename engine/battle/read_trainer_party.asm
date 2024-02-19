@@ -66,6 +66,9 @@ ReadTrainerParty:
 .cal1
 	ld a, BANK(sMysteryGiftTrainer)
 	call OpenSRAM
+	ld a, [sMysteryGiftTrainerHouseFlag]
+	cp TRUE
+	jr nz, .not_cal1
 	ld a, TRAINERTYPE_MOVES
 	ld [wOtherTrainerType], a
 	ld de, sMysteryGiftTrainer
