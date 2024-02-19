@@ -871,9 +871,10 @@ _SaveData:
 	ld de, sMysteryGiftPartnerName
 	ld bc, NAME_LENGTH
 	call CopyBytes
+	ld a, [wUnusedMysteryGiftStagedDataLength]
 	ld hl, wMysteryGiftTrainer
 	ld de, sMysteryGiftTrainer
-	ld bc, [wUnusedMysteryGiftStagedDataLength]
+	ld bc, a
 	call CopyBytes
 	jp CloseSRAM
 
