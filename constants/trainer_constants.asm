@@ -464,6 +464,7 @@ KRIS EQU __trainer_class__
 	const NORTON
 	const HUGH
 	const MARKUS
+;	const STAN
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
