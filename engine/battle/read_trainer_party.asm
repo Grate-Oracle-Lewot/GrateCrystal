@@ -219,6 +219,9 @@ GetTrainerName::
 	ld a, c
 	cp CAL
 	jr nz, .not_cal1
+	ld a, b
+	cp CAL1
+	jr nz, .not_cal1
 
 	ld a, BANK(sMysteryGiftTrainerHouseFlag)
 	call OpenSRAM
