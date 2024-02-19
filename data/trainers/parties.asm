@@ -2348,6 +2348,11 @@ SuperNerdGroup:
 	db 21, SLOWPOKE,   CURSE, SURF, POISON_JAB, STRENGTH
 	db -1 ; end
 
+	; SUPER_NERD (14)
+;	db "STAN@", TRAINERTYPE_NORMAL
+;	db 30, GRIMER
+;	db -1 ; end
+
 Rival2Group:
 	; RIVAL2 (1)
 	db "?@", TRAINERTYPE_MOVES
