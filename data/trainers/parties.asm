@@ -297,17 +297,17 @@ WillGroup:
 	db -1 ; end
 
 PKMNTrainerGroup:
-	; CAL (1)
+	; CAL (1) unused, but seemingly necessary for Trainer House
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
 
-	; CAL (2)
+	; CAL (2) party is never read, data read from sMysteryGiftTrainer instead
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
 
-	; CAL (3)
+	; CAL (3) used in Trainer House in absence of Mystery Gift data
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
