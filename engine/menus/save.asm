@@ -816,17 +816,11 @@ _SaveData:
 	call CopyBytes
 	call CloseSRAM
 
-	ld a, BANK(sMysteryGiftData)
+	ld a, BANK(sPokemonData)
 	call OpenSRAM
-	ld a, TRUE
-	ld [sMysteryGiftTrainerHouseFlag], a
-	ld hl, wPlayerName
-	ld de, sMysteryGiftPartnerName
-	ld bc, NAME_LENGTH
-	call CopyBytes
-	ld hl, wPartyMons
-	ld de, sMysteryGiftTrainer
-	ld bc, PARTY_LENGTH
+	ld hl, sPokemonData + wPartySpecies - wPokemonData
+	ld de, wMysteryGiftTrainer
+	ld bc, sPokemonData + wPartyMons - wPokemonData
 .loop
 	ld a, [hli]
 	cp -1
@@ -865,6 +859,22 @@ _SaveData:
 .party_end
 	ld a, -1
 	ld [de], a
+	ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
+	ld [wUnusedMysteryGiftStagedDataLength], a
+	call CloseSRAM
+
+	ld a, BANK(sMysteryGiftData)
+	call OpenSRAM
+	ld a, TRUE
+	ld [sMysteryGiftTrainerHouseFlag], a
+	ld hl, wPlayerName
+	ld de, sMysteryGiftPartnerName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+	ld hl, wMysteryGiftTrainer
+	ld de, sMysteryGiftTrainer
+	ld bc, [wUnusedMysteryGiftStagedDataLength]
+	call CopyBytes
 	jp CloseSRAM
 
 _SaveBackupData:
