@@ -84,8 +84,7 @@ KRIS EQU __trainer_class__
 	const WILL1
 
 	trainerclass CAL ; c
-	const CAL1 ; party is never read; data read from sMysteryGiftTrainer instead
-	const CAL2 ; used in Trainer House in absence of Mystery Gift data
+	const CAL1
 	const IGGY
 	const FRED
 
