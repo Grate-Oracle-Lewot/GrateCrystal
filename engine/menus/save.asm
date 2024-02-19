@@ -814,65 +814,6 @@ _SaveData:
 	ld de, sCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
 	call CopyBytes
-	call CloseSRAM
-
-	ld a, BANK(sPokemonData)
-	call OpenSRAM
-	ld hl, sPokemonData + wPartySpecies - wPokemonData
-	ld de, wMysteryGiftTrainer
-	ld bc, sPokemonData + wPartyMons - wPokemonData
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .party_end
-	cp EGG
-	jr z, .next
-	push hl
-	; copy level
-	ld hl, MON_LEVEL
-	add hl, bc
-	ld a, [hl]
-	ld [de], a
-	inc de
-	; copy species
-	ld hl, MON_SPECIES
-	add hl, bc
-	ld a, [hl]
-	ld [de], a
-	inc de
-	; copy moves
-	ld hl, MON_MOVES
-	add hl, bc
-	push bc
-	ld bc, NUM_MOVES
-	call CopyBytes
-	pop bc
-	pop hl
-.next
-	push hl
-	ld hl, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	ld b, h
-	ld c, l
-	pop hl
-	jr .loop
-.party_end
-	ld a, -1
-	ld [de], a
-	call CloseSRAM
-
-	ld a, BANK(sMysteryGiftData)
-	call OpenSRAM
-	ld a, TRUE
-	ld [sMysteryGiftTrainerHouseFlag], a
-	ld hl, wPlayerName
-	ld de, sMysteryGiftPartnerName
-	ld bc, NAME_LENGTH
-	call CopyBytes
-	ld hl, wMysteryGiftTrainer
-	ld de, sMysteryGiftTrainer
-	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
-	call CopyBytes
 	jp CloseSRAM
 
 _SaveBackupData:
