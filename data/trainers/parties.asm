@@ -297,22 +297,17 @@ WillGroup:
 	db -1 ; end
 
 PKMNTrainerGroup:
-	; CAL (1) unused, but seemingly necessary for Trainer House
+	; CAL (1) party is never read; data read from sMysteryGiftTrainer instead
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
 
-	; CAL (2) party is never read, data read from sMysteryGiftTrainer instead
+	; CAL (2) used in Trainer House in absence of Mystery Gift data
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
 
-	; CAL (3) used in Trainer House in absence of Mystery Gift data
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 100, DITTO
-	db -1 ; end
-
-	; CAL (4)
+	; CAL (3)
 	db "IGGY@", TRAINERTYPE_NORMAL
 	db 61, ARTICUNO
 	db 62, ZAPDOS
@@ -320,7 +315,7 @@ PKMNTrainerGroup:
 	db 65, LUGIA
 	db -1 ; end
 
-	; CAL (5)
+	; CAL (4)
 	db "FRED@", TRAINERTYPE_NORMAL
 	db 62, RAIKOU
 	db 62, ENTEI
@@ -2349,9 +2344,9 @@ SuperNerdGroup:
 	db -1 ; end
 
 	; SUPER_NERD (14)
-;	db "STAN@", TRAINERTYPE_NORMAL
-;	db 30, GRIMER
-;	db -1 ; end
+	db "STAN@", TRAINERTYPE_NORMAL
+	db 30, GRIMER
+	db -1 ; end
 
 Rival2Group:
 	; RIVAL2 (1)
