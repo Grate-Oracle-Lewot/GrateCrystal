@@ -302,9 +302,7 @@ PKMNTrainerGroup:
 	db 50, MEGANIUM
 	db 50, TYPHLOSION
 	db 50, FERALIGATR
-	db 50, VENUSAUR
-	db 50, CHARIZARD
-	db 50, BLASTOISE
+	db 100, DITTO
 	db -1 ; end
 
 	; CAL (2)
