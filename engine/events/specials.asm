@@ -377,7 +377,7 @@ PrintDiploma:
 	call ExitAllMenus
 	ret
 
-TrainerHouse:
+TrainerHouse: ; unused
 	ld a, BANK(sMysteryGiftTrainerHouseFlag)
 	call OpenSRAM
 	ld a, [sMysteryGiftTrainerHouseFlag]
