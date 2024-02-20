@@ -24,6 +24,7 @@ ReadTrainerParty:
 	ld a, [wOtherTrainerID]
 	cp CAL1
 	jr z, .cal1
+.no_mystery_gift_trainer
 	ld a, [wOtherTrainerClass]
 .not_cal1
 
@@ -62,14 +63,11 @@ ReadTrainerParty:
 	jp ComputeTrainerReward
 
 .cal1
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
+	ld a, BANK(sMysteryGiftTrainer)
 	call OpenSRAM
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	and a
-	call CloseSRAM
-	jr z, .not_cal1
-	ld a, BANK(sMysteryGiftTrainer)
-	call OpenSRAM
+	jr z, .no_mystery_gift_trainer
 	ld a, TRAINERTYPE_MOVES
 	ld [wOtherTrainerType], a
 	ld de, sMysteryGiftTrainer
