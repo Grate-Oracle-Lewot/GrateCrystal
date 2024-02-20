@@ -1410,8 +1410,7 @@ GetMysteryGiftBank:
 
 StagePartyDataForMysteryGift:
 ; You will be sending this data to your mystery gift partner.
-; Structure is the same as a trainer with species and moves
-; defined.
+; Structure is the same as a trainer with species and moves defined.
 	ld a, BANK(sPokemonData)
 	call OpenSRAM
 	ld de, wMysteryGiftStaging
