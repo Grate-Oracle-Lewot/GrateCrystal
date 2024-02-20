@@ -33,25 +33,25 @@ AI_SwitchOrTryItem:
 
 .ok
 	bit SWITCH_OFTEN_F, [hl]
-	jp nz, SwitchOften
+	jr nz, SwitchOften
 	bit SWITCH_RARELY_F, [hl]
-	jp nz, SwitchRarely
+	jr nz, SwitchRarely
 	bit SWITCH_SOMETIMES_F, [hl]
-	jp nz, SwitchSometimes
-	jp AI_TryItem
+	jr nz, SwitchSometimes
+	jr AI_TryItem
 
 SwitchOften:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jp z, AI_TryItem
+	jr z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call Random
 	cp 50 percent + 1
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_10
 
 	cp $20
@@ -59,13 +59,13 @@ SwitchOften:
 	call Random
 	cp 79 percent - 1
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_20
 
 	; $30
 	call Random
 	cp 4 percent
-	jp c, AI_TryItem
+	jr c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
@@ -79,14 +79,14 @@ SwitchRarely:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jp z, AI_TryItem
+	jr z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call Random
 	cp 8 percent
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_10
 
 	cp $20
@@ -94,13 +94,13 @@ SwitchRarely:
 	call Random
 	cp 12 percent
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_20
 
 	; $30
 	call Random
 	cp 79 percent - 1
-	jp c, AI_TryItem
+	jr c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
@@ -113,14 +113,14 @@ SwitchSometimes:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jp z, AI_TryItem
+	jr z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call Random
 	cp 20 percent - 1
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_10
 
 	cp $20
@@ -128,13 +128,13 @@ SwitchSometimes:
 	call Random
 	cp 50 percent + 1
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_20
 
 	; $30
 	call Random
 	cp 20 percent - 1
-	jp c, AI_TryItem
+	jr c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
@@ -413,58 +413,58 @@ AI_Items:
 
 .SuperPotion:
 	call .HealItem
-	jp c, .DontUse
+	jr c, .DontUse
 	ld b, 50
 	call EnemyUsedSuperPotion
-	jp .Use
+	jr .Use
 
 .XAccuracy:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXAccuracy
-	jp .Use
+	jr .Use
 
 .GuardSpec:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedGuardSpec
-	jp .Use
+	jr .Use
 
 .DireHit:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedDireHit
-	jp .Use
+	jr .Use
 
 .XAttack:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXAttack
-	jp .Use
+	jr .Use
 
 .XDefend:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXDefend
-	jp .Use
+	jr .Use
 
 .XSpeed:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXSpeed
-	jp .Use
+	jr .Use
 
 .XSpecial:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXSpecial
-	jp .Use
+	jr .Use
 
 .XSpDefend:
 	call .XItem
-	jp c, .DontUse
+	jr c, .DontUse
 	call EnemyUsedXSpDefend
-	jp .Use
+	jr .Use
 
 .XItem:
 	ld a, [wEnemyTurnsTaken]
@@ -472,25 +472,25 @@ AI_Items:
 	jr nz, .notfirstturnout
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
-	jp nz, .Use
+	jr nz, .Use
 	call Random
 	cp 50 percent + 1
-	jp c, .DontUse
+	jr c, .DontUse
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
-	jp nz, .Use
+	jr nz, .Use
 	call Random
 	cp 50 percent + 1
-	jp c, .DontUse
-	jp .Use
+	jr c, .DontUse
+	jr .Use
 .notfirstturnout
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
-	jp z, .DontUse
+	jr z, .DontUse
 	call Random
 	cp 20 percent - 1
-	jp nc, .DontUse
-	jp .Use
+	jr nc, .DontUse
+	jr .Use
 
 .DontUse:
 	scf
@@ -635,7 +635,7 @@ AI_TrySwitch:
 
 	ld a, d
 	cp 2
-	jp nc, AI_Switch
+	jr nc, AI_Switch
 	and a
 	ret
 
