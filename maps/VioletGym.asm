@@ -49,6 +49,7 @@ VioletGymFalknerScript:
 	writetext FalknerDecorationText
 	waitbutton
 	closetext
+	special UnlockMysteryGift
 	end
 
 .SpeechAfterTM:
