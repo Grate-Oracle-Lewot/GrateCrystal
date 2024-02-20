@@ -28,7 +28,7 @@ SpecialsPointers::
 	add_special CableClubCheckWhichChris
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift
+	add_special UnlockMysteryGift ; unused in Grate Crystal
 	add_special CheckOtherPlayerGender
 
 ; Map events
@@ -159,7 +159,7 @@ SpecialsPointers::
 	add_special Function102142
 	add_special CelebiShrineEvent
 	add_special CheckCaughtCelebi
-	add_special PokeSeer
+	add_special PokeSeer ; unused in Grate Crystal
 	add_special BuenasPassword
 	add_special BuenaPrize
 	add_special GiveDratini
