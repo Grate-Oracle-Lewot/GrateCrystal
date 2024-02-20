@@ -28,6 +28,7 @@ SaveAfterLinkTrade:
 	farcall StageRTCTimeForSave
 	farcall BackupMysteryGift
 	call SavePokemonData
+	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
@@ -97,6 +98,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
+	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
@@ -260,6 +262,7 @@ SaveGameData:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
+	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveBox
 	call SaveChecksum
 	call ValidateBackupSave
@@ -604,6 +607,7 @@ TryLoadSaveFile:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
+	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	and a
 	ret
@@ -840,6 +844,22 @@ _LoadBackupData:
 	ld hl, sBackupCrystalData
 	ld de, wCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
+	call CopyBytes
+	jp CloseSRAM
+
+CopyPlayerPartyToMysteryGiftTrainer:
+	farcall StagePartyDataForMysteryGift
+	ld a, BANK(sMysteryGiftData)
+	call OpenSRAM
+	ld a, TRUE
+	ld [sMysteryGiftTrainerHouseFlag], a
+	ld hl, wPlayerName
+	ld de, sMysteryGiftPartnerName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+	ld hl, wMysteryGiftStaging
+	ld de, sMysteryGiftTrainer
+	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 	call CopyBytes
 	jp CloseSRAM
 
