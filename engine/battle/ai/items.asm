@@ -38,20 +38,20 @@ AI_SwitchOrTryItem:
 	jr nz, SwitchRarely
 	bit SWITCH_SOMETIMES_F, [hl]
 	jr nz, SwitchSometimes
-	jr AI_TryItem
+	jp AI_TryItem
 
 SwitchOften:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jr z, AI_TryItem
+	jp z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call Random
 	cp 50 percent + 1
 	jr c, .switch
-	jr AI_TryItem
+	jp AI_TryItem
 .not_10
 
 	cp $20
@@ -59,13 +59,13 @@ SwitchOften:
 	call Random
 	cp 79 percent - 1
 	jr c, .switch
-	jr AI_TryItem
+	jp AI_TryItem
 .not_20
 
 	; $30
 	call Random
 	cp 4 percent
-	jr c, AI_TryItem
+	jp c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
@@ -413,10 +413,10 @@ AI_Items:
 
 .SuperPotion:
 	call .HealItem
-	jr c, .DontUse
+	jp c, .DontUse
 	ld b, 50
 	call EnemyUsedSuperPotion
-	jr .Use
+	jp .Use
 
 .XAccuracy:
 	call .XItem
