@@ -50,7 +50,7 @@ PokeComNurseNiteText:
 NurseAskHealText:
 	text "Shall we heal your"
 	line "#MON?"
-	autodone
+	done
 
 NurseTakePokemonText:
 	text "One moment,"
