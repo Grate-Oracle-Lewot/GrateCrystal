@@ -12,7 +12,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 
 # Pokémon removed
 
-- Pichu
+- Pichu (still cameos in the intro cinematic)
 - Cleffa
 - Igglybuff
 - Smoochum
