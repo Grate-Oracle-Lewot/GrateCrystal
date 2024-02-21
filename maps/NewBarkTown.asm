@@ -126,7 +126,8 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon PIKACHU, 1
+	winlosstext 0, 0
+	loadtrainer KAREN, KAREN2
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
