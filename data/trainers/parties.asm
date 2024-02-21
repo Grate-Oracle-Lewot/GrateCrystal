@@ -3569,7 +3569,7 @@ PokefanFGroup:
 
 	; POKEFANF (2)
 	db "RUTH@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 26, PIKACHU,    "CHEEKS@",     BERRY
+	db 26, PIKACHU,    "CHEEKY@",     BERRY
 	db -1 ; end
 
 	; POKEFANF (3)
