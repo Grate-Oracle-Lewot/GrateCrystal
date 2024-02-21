@@ -552,7 +552,7 @@ ErikaGroup:
 YoungsterGroup:
 	; YOUNGSTER (1)
 	db "JOEY@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db  4, "RATSPUTIN@", RATTATA
+	db  4, RATTATA,    "RATSPUTIN@"
 	db -1 ; end
 
 	; YOUNGSTER (2)
@@ -805,11 +805,11 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (4)
 	db "THEO@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db 13, "@",          PIDGEY
-	db 17, "FIDGEY@",    PIDGEY
-	db 21, "SQUIDGY@",   PIDGEY
-	db 25, "ABRIDGEY@",  PIDGEY
-	db 29, "BEMIDJI@",   PIDGEY
+	db 13, PIDGEY,     "@"
+	db 17, PIDGEY,     "FIDGEY@"
+	db 21, PIDGEY,     "SQUIDGY@"
+	db 25, PIDGEY,     "ABRIDGEY@"
+	db 29, PIDGEY,     "BEMIDGEY@"
 	db -1 ; end
 
 	; BIRD_KEEPER (5)
@@ -2028,12 +2028,12 @@ SwimmerMGroup:
 
 	; SWIMMERM (5)
 	db "GEORGE@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db 25, "@",           TENTACOOL
-	db 26, "TENTAFOOL@",  TENTACOOL
-	db 27, "TENTAPOOL@",  TENTACOOL
-	db 28, "TENTAGHOUL@", TENTACOOL
-	db 29, "TENTAYULE@",  TENTACOOL
-	db 30, "TENTAZUUL@",  TENTACOOL
+	db 25, TENTACOOL,  "@"
+	db 26, TENTACOOL,  "TENTAFOOL@"
+	db 27, TENTACOOL,  "TENTAPOOL@"
+	db 28, TENTACOOL,  "TENTAGHOUL@"
+	db 29, TENTACOOL,  "TENTAYULE@"
+	db 30, TENTACOOL,  "TENTAZUUL@"
 	db -1 ; end
 
 	; SWIMMERM (6)
@@ -2329,8 +2329,8 @@ SuperNerdGroup:
 	db -1 ; end
 
 	; SUPER_NERD (12)
-	db "HUGH@", TRAINERTYPE_MOVES
-	db 42, SEADRA,     SMOKESCREEN, TWISTER, SURF, WATERFALL
+	db "HUGH@", TRAINERTYPE_NICKNAME | TRAINERTYPE_MOVES
+	db 42, SEADRA,     "SEADRAMON@",  SMOKESCREEN, TWISTER, SURF, WATERFALL
 	db -1 ; end
 
 	; SUPER_NERD (13)
@@ -3755,25 +3755,25 @@ JessieGroup:
 AerobonesGroup:
 	; AEROBONES (1)
 	db "?????@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db 50, "??????????@", AERODACTYL
-	db 50, "???@",        UNOWN
-	db 50, "GHOST@",      HAUNTER
+	db 50, AERODACTYL, "??????????@"
+	db 50, UNOWN,      "???@"
+	db 50, HAUNTER,    "GHOST@"
 	db -1 ; end
 
 KabubonesGroup:
 	; KABUBONES (1)
 	db "'M@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db 50, "SMOOCHUM@",   KABUTOPS
-	db 50, "ARCEUS@",     UNOWN
-	db 50, "PIKABLU@",    HAUNTER
+	db 50, KABUTOPS,   "SMOOCHUM@"
+	db 50, UNOWN,      "ARCEUS@"
+	db 50, HAUNTER,    "PIKABLU@"
 	db -1 ; end
 
 MissingnoGroup:
 	; MISSINGNO (1)
 	db "NO.@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db 50, "          @", BAYLEEF
-	db 50, " @",          UNOWN
-	db 50, "         ?@", HAUNTER
+	db 50, BAYLEEF,    "          @"
+	db 50, UNOWN,      " @"
+	db 50, HAUNTER,    "         ?@"
 	db -1 ; end
 
 GamblerGroup:
