@@ -1,13 +1,13 @@
-INCLUDE "data/trainers/party_pointers.asm"
-
-Trainers:
 ; Trainer data structure:
-; - db "NAME@", TRAINERTYPE_* constant
+; - db "NAME@", TRAINERTYPE_* constants |ed together
 ; - 1 to 6 Pokémon:
-;    * for TRAINERTYPE_NORMAL:     db level, species
-;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
-;    * for TRAINERTYPE_ITEM:       db level, species, item
++;    * in all cases:              db level, species
++;    * with TRAINERTYPE_NICKNAME: db "NICKNAME@"
++;    * with TRAINERTYPE_ITEM:     db item
++;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
 ; - db -1 ; end
+
+SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	; FALKNER (1)
@@ -299,9 +299,7 @@ WillGroup:
 PKMNTrainerGroup:
 	; CAL (1)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 50, MEGANIUM
-	db 50, TYPHLOSION
-	db 50, FERALIGATR
+	db 100, DITTO
 	db -1 ; end
 
 	; CAL (2)
@@ -3389,6 +3387,8 @@ BoarderGroup:
 	db "SVLAD@", TRAINERTYPE_NORMAL
 	db 42, DELIBIRD
 	db -1 ; end
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 PokefanMGroup:
 	; POKEFANM (1)
