@@ -551,8 +551,8 @@ ErikaGroup:
 
 YoungsterGroup:
 	; YOUNGSTER (1)
-	db "JOEY@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
-	db  4, RATTATA,    "RATSPUTIN@"
+	db "JOEY@", TRAINERTYPE_NORMAL
+	db  4, RATTATA
 	db -1 ; end
 
 	; YOUNGSTER (2)
