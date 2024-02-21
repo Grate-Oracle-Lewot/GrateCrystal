@@ -169,6 +169,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
+- Lucky Punch works for Blissey as well as Chansey
 - Most Berries and some other items renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball (Timer Ball can tick up to x10 catch chance)
 - 60 TMs and 8 HMs
@@ -226,6 +227,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Tweaks to enemy trainer AI
+- Pokefans and a few other trainers use nicknames for their Pokémon
 - Chansey NPCs in Pokémon Centers, Delibird NPCs in Poké Marts, and nurses and clerks are color-coded based on the city's name
 - Color-coded starter balls
 - Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash, brown for the Coin Case)
