@@ -65,7 +65,8 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
   - All Pokémon that only belonged to one Egg Group now belong to two, Ditto can breed with itself, and legendaries can now breed with Ditto (except for Mewtwo)
-- After defeating Blue, you can battle Prof. Oak at Mr. Pokémon's house once per day, and if you win, Mr. Pokémon will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
+- Mr. Pokémon is now named Pokey Man
+- After defeating Blue, you can battle Prof. Oak at Pokey Man's house once per day, and if you win, Pokey Man will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons (Charizard's still purple, bite me), and Butterfree and Venomoth have had their sprites swapped
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
