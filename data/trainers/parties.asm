@@ -1388,8 +1388,8 @@ PokemaniacGroup:
 	db -1 ; end
 
 	; POKEMANIAC (5)
-	db "BEN@", TRAINERTYPE_NORMAL
-	db 27, SLOWBRO
+	db "BEN@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
+	db 27, SLOWBRO,    "BRUH@",       SLOWPOKETAIL
 	db -1 ; end
 
 	; POKEMANIAC (6)
