@@ -771,8 +771,8 @@ ElmText_MissionFromMrPokemon:
 	text "Hey, listen."
 
 	para "I have an acquain-"
-	line "tance called MR."
-	cont "#MON."
+	line "tance called"
+	cont "POKEY MAN."
 
 	para "He keeps finding"
 	line "weird things and"
@@ -865,7 +865,7 @@ ReceivedStarterText:
 	done
 
 ElmDirectionsText1:
-	text "MR.#MON lives a"
+	text "POKEY MAN lives a"
 	line "little bit beyond"
 
 	para "CHERRYGROVE, the"
@@ -906,7 +906,7 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
-	text "MR.#MON goes"
+	text "POKEY MAN goes"
 	line "everywhere and"
 	cont "finds rarities."
 
@@ -935,7 +935,7 @@ ElmAfterTheftText1:
 	line "is terrible…"
 
 	para "Oh, yes, what was"
-	line "MR.#MON's big"
+	line "POKEY MAN's big"
 	cont "discovery?"
 	done
 
