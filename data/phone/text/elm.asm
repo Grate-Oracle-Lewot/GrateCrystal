@@ -12,8 +12,8 @@ ElmPhoneHealYourMonText:
 ElmPhoneSawMrPokemonText:
 	text "Hello, <PLAY_G>?"
 
-	para "Did you meet MR."
-	line "#MON? Great!"
+	para "Did you meet"
+	line "POKEY MAN? Great!"
 	cont "Come back safely!"
 	done
 
