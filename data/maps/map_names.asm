@@ -1401,7 +1401,7 @@ Cherrygrove_Map_Name8: ; CHERRYGROVE_EVOLUTION_SPEECH_HOUSE
 Cherrygrove_Map_Name9: ; ROUTE_30_BERRY_HOUSE
 	db "ROUTE 30 COTTAGE@"
 Cherrygrove_Map_Name10: ; MR_POKEMONS_HOUSE
-	db "MR. #MON'S@"
+	db "POKEY MAN'S HOUSE@"
 Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
 	db "ROUTE 31 GATE@"
 
