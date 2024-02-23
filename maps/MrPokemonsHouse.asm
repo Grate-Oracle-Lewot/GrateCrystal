@@ -366,7 +366,7 @@ MrPokemonsHouse_OakText1:
 
 	para "I was just visit-"
 	line "ing my old friend"
-	cont "MR.#MON."
+	cont "POKEY MAN."
 
 	para "Oh! What's this?"
 	line "A rare #MON!"
@@ -511,15 +511,14 @@ MrPokemonsHouse_ReceivedOddEggText:
 	done
 
 MrPokemonsHouse_OakNoRematchText:
-	text "MR.#MON is a"
+	text "POKEY MAN is a"
 	line "hoot, isn't he?"
 	done
 
 MrPokemonsHouse_OakBattleAskText:
 	text "Ah, <PLAY_G>!"
 	line "I was just paying"
-	cont "MR.#MON a vis-"
-	cont "it."
+	cont "POKEY MAN a visit."
 
 	para "But, seeing you"
 	line "here reminds me…"
