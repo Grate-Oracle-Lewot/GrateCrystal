@@ -753,6 +753,7 @@ KRIS EQU __trainer_class__
 	const LIU_HAI
 
 	trainerclass CAL_F ; 4c
+	const CAL_F1
 	const CALLA
 
 	trainerclass OLD ; 4d
