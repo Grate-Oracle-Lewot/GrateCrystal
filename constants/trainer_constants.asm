@@ -84,7 +84,7 @@ KRIS EQU __trainer_class__
 	const WILL1
 
 	trainerclass CAL ; c
-	const CAL1
+	const CAL1 ; party is never read; data read from sMysteryGiftTrainer instead
 	const IGGY
 	const FRED
 
@@ -753,7 +753,7 @@ KRIS EQU __trainer_class__
 	const LIU_HAI
 
 	trainerclass CAL_F ; 4c
-	const CAL_F1
+	const CAL_F1 ; unused
 	const CALLA
 
 	trainerclass OLD ; 4d
