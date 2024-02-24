@@ -302,7 +302,7 @@ WillGroup:
 	db -1 ; end
 
 PKMNTrainerGroup:
-	; CAL (1)
+	; CAL (1) party is never read; data read from sMysteryGiftTrainer instead
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 100, DITTO
 	db -1 ; end
@@ -3843,7 +3843,12 @@ GamblerGroup:
 	db -1 ; end
 
 CalFGroup:
-	; CAL_F (1)
+	; CAL_F (1) unused
+	db "CALLA@", TRAINERTYPE_NORMAL
+	db 100, DITTO
+	db -1 ; end
+
+	; CAL_F (2)
 	db "CALLA@", TRAINERTYPE_NORMAL
 	db 70, CELEBI
 	db 70, MEW
