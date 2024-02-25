@@ -208,8 +208,6 @@ PlayerEvents:
 	and a
 	ret nz
 
-	call Dummy_CheckScriptFlags2Bit5 ; This is a waste of time
-
 	call CheckTrainerBattle_GetPlayerEvent
 	jr c, .ok
 
@@ -359,12 +357,6 @@ SetMinTwoStepWildEncounterCooldown:
 	ret nc
 	ld a, 2
 	ld [wWildEncounterCooldown], a
-	ret
-
-Dummy_CheckScriptFlags2Bit5:
-	call CheckBit5_ScriptFlags2
-	ret z
-	call SetXYCompareFlags
 	ret
 
 RunSceneScript:
