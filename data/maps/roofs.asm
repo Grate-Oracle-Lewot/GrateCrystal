@@ -13,8 +13,8 @@ MapGroupRoofs:
 	table_width 1, MapGroupRoofs
 	db -1             ;  0
 	db -1             ;  1
-	db ROOF_AZALEA    ;  2 (Lake of Rage)
-	db ROOF_NEW_BARK  ;  3 (Silver Cave)
+	db -1             ;  2
+	db -1             ;  3
 	db -1             ;  4
 	db -1             ;  5
 	db -1             ;  6
@@ -24,20 +24,20 @@ MapGroupRoofs:
 	db -1             ; 10
 	db -1             ; 11
 	db -1             ; 12
-	db -1             ; 13
-	db -1             ; 14
-	db -1             ; 15
-	db -1             ; 16
-	db ROOF_NEW_BARK  ; 17 (New Bark)
-	db ROOF_NEW_BARK  ; 18 (Cherrygrove)
-	db ROOF_VIOLET    ; 19 (Violet)
-	db ROOF_AZALEA    ; 20 (Azalea)
-	db ROOF_GOLDENROD ; 21 (Goldenrod)
-	db ROOF_VIOLET    ; 22 (Ecruteak)
-	db ROOF_OLIVINE   ; 23 (Olivine)
-	db ROOF_OLIVINE   ; 24 (Cianwood)
-	db ROOF_AZALEA    ; 25 (Mahogany)
-	db ROOF_AZALEA    ; 26 (Blackthorn)
+	db ROOF_NEW_BARK  ; 13 (Silver Cave)
+	db ROOF_NEW_BARK  ; 14 (New Bark)
+	db ROOF_NEW_BARK  ; 15 (Cherrygrove)
+	db ROOF_VIOLET    ; 16 (Violet)
+	db ROOF_AZALEA    ; 17 (Azalea)
+	db ROOF_GOLDENROD ; 18 (Goldenrod)
+	db ROOF_VIOLET    ; 19 (Ecruteak)
+	db ROOF_OLIVINE   ; 20 (Olivine)
+	db ROOF_OLIVINE   ; 21 (Cianwood)
+	db ROOF_AZALEA    ; 22 (Mahogany)
+	db ROOF_AZALEA    ; 23 (Lake of Rage)
+	db ROOF_AZALEA    ; 24 (Blackthorn)
+	db -1             ; 25
+	db -1             ; 26
 	db -1             ; 27
 	assert_table_length NUM_MAP_GROUPS + 1
 
