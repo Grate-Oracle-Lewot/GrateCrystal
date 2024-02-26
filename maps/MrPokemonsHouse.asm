@@ -175,6 +175,7 @@ MrPokemonsHouse_OakScript:
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
+	special FillPokedex
 	writetext MrPokemonsHouse_OakText2
 	waitbutton
 	closetext
