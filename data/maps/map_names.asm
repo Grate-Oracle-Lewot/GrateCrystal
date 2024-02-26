@@ -709,21 +709,23 @@ Lavender_Map_Name4: ; LAV_RADIO_TOWER_1F
 	db "KANTO RADIO TOWER@"
 Lavender_Map_Name5: ; LAV_RADIO_TOWER_2F
 	db "KANTO RADIO TOWER@"
-Lavender_Map_Name6: ; LAVENDER_NAME_RATER
+Lavender_Map_Name6: ; SOUL_HOUSE
+	db "SOUL HOUSE@"
+Lavender_Map_Name7: ; LAVENDER_NAME_RATER
 	db $E1, $E2, " SERVICE CLUB@"
-Lavender_Map_Name7: ; MR_FUJIS_HOUSE
+Lavender_Map_Name8: ; MR_FUJIS_HOUSE
 	db "MR.FUJI'S HOUSE@"
-Lavender_Map_Name8: ; LAVENDER_SPEECH_HOUSE
+Lavender_Map_Name9: ; LAVENDER_SPEECH_HOUSE
 	db "LAVENDER HOUSE@"
-Lavender_Map_Name9: ; ROUTE_8
+Lavender_Map_Name10: ; ROUTE_8
 	db "ROUTE 8@"
-Lavender_Map_Name10: ; ROUTE_8_SAFFRON_GATE
+Lavender_Map_Name11: ; ROUTE_8_SAFFRON_GATE
 	db "ROUTE 8 GATE@"
-Lavender_Map_Name11: ; ROUTE_10_SOUTH
+Lavender_Map_Name12: ; ROUTE_10_SOUTH
 	db "ROUTE 10 SOUTH@"
-Lavender_Map_Name12: ; ROUTE_12
+Lavender_Map_Name13: ; ROUTE_12
 	db "ROUTE 12@"
-Lavender_Map_Name13: ; ROUTE_12_SUPER_ROD_HOUSE
+Lavender_Map_Name14: ; ROUTE_12_SUPER_ROD_HOUSE
 	db "ROUTE 12 ANGLER@"
 
 Celadon_Map_Name1: ; CELADON_CITY
