@@ -3016,12 +3016,11 @@ wFarfetchdPosition:: db
 wEggTutorBricks:: db
 
 ; map scene ids
-wPewterMuseumSceneID::                            db
+wPewterMuseumSceneID::                            db ; unused
 wCeladonGymSceneID::                              db
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
-wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
 wCeruleanGymSceneID::                             db
 wRoute25SceneID::                                 db
@@ -3094,7 +3093,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 4
+	ds 5
 
 ; fight counts
 wJackFightCount::    db
