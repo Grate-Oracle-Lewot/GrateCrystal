@@ -2,192 +2,6 @@
 
 KantoGrassWildMons:
 
-	def_grass_wildmons DIGLETTS_CAVE
-	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
-	; morn
-	db 2, DIGLETT
-	db 6, DIGLETT
-	db 10, DIGLETT
-	db 23, DIGLETT
-	db 22, DUGTRIO
-	db 26, DUGTRIO
-	db 30, DUGTRIO
-	db 34, DUGTRIO
-	; day
-	db 2, DIGLETT
-	db 6, DIGLETT
-	db 10, DIGLETT
-	db 14, DIGLETT
-	db 14, DUGTRIO
-	db 18, DUGTRIO
-	db 22, DUGTRIO
-	db 26, DUGTRIO
-	; nite
-	db 5, DIGLETT
-	db 10, DIGLETT
-	db 15, DIGLETT
-	db 30, DIGLETT
-	db 30, DUGTRIO
-	db 34, DUGTRIO
-	db 38, DUGTRIO
-	db 42, DUGTRIO
-	end_grass_wildmons
-
-	def_grass_wildmons MOUNT_MOON
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 4, ZUBAT
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 9, PARAS
-	db 9, GEODUDE
-	db 6, CLEFAIRY
-	db 5, TOGETIC
-	db 10, WHIMSICOTT
-	; day
-	db 4, ZUBAT
-	db 6, GEODUDE
-	db 6, SANDSHREW
-	db 10, PARAS
-	db 9, GEODUDE
-	db 6, CLEFAIRY
-	db 7, CLEFAIRY
-	db 7, WHIMSICOTT
-	; nite
-	db 4, ZUBAT
-	db 6, GEODUDE
-	db 6, CLEFAIRY
-	db 11, PARAS
-	db 9, GEODUDE
-	db 10, CLEFAIRY
-	db 11, CLEFAIRY
-	db 8, WOBBUFFET
-	end_grass_wildmons
-
-	def_grass_wildmons ROCK_TUNNEL_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 8, CUBONE
-	db 9, GEODUDE
-	db 10, MACHOP
-	db 10, ZUBAT
-	db 13, MACHOKE
-	db 10, MAROWAK
-	db 11, MAROWAK
-	db 14, CUBONE
-	; day
-	db 8, CUBONE
-	db 9, GEODUDE
-	db 11, MACHOP
-	db 10, ZUBAT
-	db 12, MACHOKE
-	db 10, MAROWAK
-	db 11, MAROWAK
-	db 15, CUBONE
-	; nite
-	db 10, ZUBAT
-	db 9, GEODUDE
-	db 10, GEODUDE
-	db 15, HAUNTER
-	db 13, ZUBAT
-	db 10, MAROWAK
-	db 11, MAROWAK
-	db 15, MAROWAK
-	end_grass_wildmons
-
-	def_grass_wildmons ROCK_TUNNEL_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 10, CUBONE
-	db 12, GEODUDE
-	db 14, ONIX
-	db 10, ZUBAT
-	db 13, MAROWAK
-	db 13, KANGASKHAN
-	db 14, KANGASKHAN
-	db 15, MAROWAK
-	; day
-	db 10, CUBONE
-	db 12, GEODUDE
-	db 14, ONIX
-	db 10, ZUBAT
-	db 13, MAROWAK
-	db 13, KANGASKHAN
-	db 14, KANGASKHAN
-	db 15, MAROWAK
-	; nite
-	db 10, ZUBAT
-	db 12, GEODUDE
-	db 14, ONIX
-	db 13, ZUBAT
-	db 13, HAUNTER
-	db 13, GOLBAT
-	db 14, GOLBAT
-	db 15, MAROWAK
-	end_grass_wildmons
-
-	def_grass_wildmons VICTORY_ROAD
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 35, GRAVELER
-	db 35, RHYHORN
-	db 34, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, SNORLAX
-	db 40, STEELIX
-	db 41, RHYDON
-	; day
-	db 35, GRAVELER
-	db 35, RHYHORN
-	db 34, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, MACHOKE
-	db 40, STEELIX
-	db 41, RHYDON
-	; nite
-	db 35, GRAVELER
-	db 35, RHYHORN
-	db 34, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, ARBOK
-	db 40, STEELIX
-	db 41, RHYDON
-	end_grass_wildmons
-
-	def_grass_wildmons TOHJO_FALLS
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 20, ZUBAT
-	db 20, RATICATE
-	db 22, GOLBAT
-	db 18, RATTATA
-	db 26, GLIGAR
-	db 24, GRAVELER
-	db 22, KADABRA
-	db 23, MARILL
-	; day
-	db 20, ZUBAT
-	db 20, RATICATE
-	db 22, GOLBAT
-	db 18, RATTATA
-	db 26, GLIGAR
-	db 24, GRAVELER
-	db 22, KADABRA
-	db 23, MARILL
-	; nite
-	db 20, ZUBAT
-	db 20, RATICATE
-	db 22, GOLBAT
-	db 18, RATTATA
-	db 26, GLIGAR
-	db 24, GRAVELER
-	db 22, KADABRA
-	db 23, MARILL
-	end_grass_wildmons
-
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -217,37 +31,6 @@ KantoGrassWildMons:
 	db 1, PIKACHU
 	db 1, SPINARAK
 	db 2, SPINARAK
-	end_grass_wildmons
-
-	def_grass_wildmons VIRIDIAN_FOREST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 2, CATERPIE
-	db 2, LEDYBA
-	db 3, PIDGEY
-	db 5, BUTTERFREE
-	db 5, LEDIAN
-	db 2, PIKACHU
-	db 4, PIKACHU
-	db 5, BULBASAUR
-	; day
-	db 2, CATERPIE
-	db 2, PIDGEY
-	db 3, PIDGEY
-	db 5, BUTTERFREE
-	db 5, PIDGEOTTO
-	db 2, PIKACHU
-	db 4, PIKACHU
-	db 4, BULBASAUR
-	; nite
-	db 2, HOOTHOOT
-	db 2, SPINARAK
-	db 3, HOOTHOOT
-	db 5, NOCTOWL
-	db 5, ARIADOS
-	db 2, NOCTOWL
-	db 4, NOCTOWL
-	db 2, BULBASAUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
@@ -932,6 +715,161 @@ KantoGrassWildMons:
 	db 42, POLIWHIRL
 	end_grass_wildmons
 
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 2, CATERPIE
+	db 2, LEDYBA
+	db 3, PIDGEY
+	db 5, BUTTERFREE
+	db 5, LEDIAN
+	db 2, PIKACHU
+	db 4, PIKACHU
+	db 5, BULBASAUR
+	; day
+	db 2, CATERPIE
+	db 2, PIDGEY
+	db 3, PIDGEY
+	db 5, BUTTERFREE
+	db 5, PIDGEOTTO
+	db 2, PIKACHU
+	db 4, PIKACHU
+	db 4, BULBASAUR
+	; nite
+	db 2, HOOTHOOT
+	db 2, SPINARAK
+	db 3, HOOTHOOT
+	db 5, NOCTOWL
+	db 5, ARIADOS
+	db 2, NOCTOWL
+	db 4, NOCTOWL
+	db 2, BULBASAUR
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 4, ZUBAT
+	db 6, GEODUDE
+	db 6, SANDSHREW
+	db 9, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 5, TOGETIC
+	db 10, WHIMSICOTT
+	; day
+	db 4, ZUBAT
+	db 6, GEODUDE
+	db 6, SANDSHREW
+	db 10, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 7, CLEFAIRY
+	db 7, WHIMSICOTT
+	; nite
+	db 4, ZUBAT
+	db 6, GEODUDE
+	db 6, CLEFAIRY
+	db 11, PARAS
+	db 9, GEODUDE
+	db 10, CLEFAIRY
+	db 11, CLEFAIRY
+	db 8, WOBBUFFET
+	end_grass_wildmons
+
+	def_grass_wildmons DIGLETTS_CAVE
+	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
+	; morn
+	db 2, DIGLETT
+	db 6, DIGLETT
+	db 10, DIGLETT
+	db 23, DIGLETT
+	db 22, DUGTRIO
+	db 26, DUGTRIO
+	db 30, DUGTRIO
+	db 34, DUGTRIO
+	; day
+	db 2, DIGLETT
+	db 6, DIGLETT
+	db 10, DIGLETT
+	db 14, DIGLETT
+	db 14, DUGTRIO
+	db 18, DUGTRIO
+	db 22, DUGTRIO
+	db 26, DUGTRIO
+	; nite
+	db 5, DIGLETT
+	db 10, DIGLETT
+	db 15, DIGLETT
+	db 30, DIGLETT
+	db 30, DUGTRIO
+	db 34, DUGTRIO
+	db 38, DUGTRIO
+	db 42, DUGTRIO
+	end_grass_wildmons
+
+	def_grass_wildmons ROCK_TUNNEL_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 8, CUBONE
+	db 9, GEODUDE
+	db 10, MACHOP
+	db 10, ZUBAT
+	db 13, MACHOKE
+	db 10, MAROWAK
+	db 11, MAROWAK
+	db 14, CUBONE
+	; day
+	db 8, CUBONE
+	db 9, GEODUDE
+	db 11, MACHOP
+	db 10, ZUBAT
+	db 12, MACHOKE
+	db 10, MAROWAK
+	db 11, MAROWAK
+	db 15, CUBONE
+	; nite
+	db 10, ZUBAT
+	db 9, GEODUDE
+	db 10, GEODUDE
+	db 15, HAUNTER
+	db 13, ZUBAT
+	db 10, MAROWAK
+	db 11, MAROWAK
+	db 15, MAROWAK
+	end_grass_wildmons
+
+	def_grass_wildmons ROCK_TUNNEL_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 10, CUBONE
+	db 12, GEODUDE
+	db 14, ONIX
+	db 10, ZUBAT
+	db 13, MAROWAK
+	db 13, KANGASKHAN
+	db 14, KANGASKHAN
+	db 15, MAROWAK
+	; day
+	db 10, CUBONE
+	db 12, GEODUDE
+	db 14, ONIX
+	db 10, ZUBAT
+	db 13, MAROWAK
+	db 13, KANGASKHAN
+	db 14, KANGASKHAN
+	db 15, MAROWAK
+	; nite
+	db 10, ZUBAT
+	db 12, GEODUDE
+	db 14, ONIX
+	db 13, ZUBAT
+	db 13, HAUNTER
+	db 13, GOLBAT
+	db 14, GOLBAT
+	db 15, MAROWAK
+	end_grass_wildmons
+
 	def_grass_wildmons ROCK_TUNNEL_ZAPDOS_CHAMBER
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -961,6 +899,68 @@ KantoGrassWildMons:
 	db 17, ZUBAT
 	db 26, UNOWN
 	db 1, UNOWN
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, YANMA
+	db 28, FLOGISTAN
+	db 1, BULBASAUR
+	db 1, CHIKORITA
+	db 1, CHARMANDER
+	db 1, CYNDAQUIL
+	db 19, AIPOM
+	db 45, SUNKERN
+	; day
+	db 30, PARAS
+	db 30, RHYHORN
+	db 30, TAUROS
+	db 30, MILTANK
+	db 33, SCYTHER
+	db 33, PINSIR
+	db 19, CHANSEY
+	db 21, KANGASKHAN
+	; nite
+	db 30, HAUNTER
+	db 30, GIRAFARIG
+	db 30, MAROWAK
+	db 30, HYPNO
+	db 33, MISDREAVUS
+	db 33, RATICATE
+	db 30, VENOMOTH
+	db 28, YANMEGA
+	end_grass_wildmons
+
+	def_grass_wildmons TOHJO_FALLS
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 20, ZUBAT
+	db 20, RATICATE
+	db 22, GOLBAT
+	db 18, RATTATA
+	db 26, GLIGAR
+	db 24, GRAVELER
+	db 22, KADABRA
+	db 23, MARILL
+	; day
+	db 20, ZUBAT
+	db 20, RATICATE
+	db 22, GOLBAT
+	db 18, RATTATA
+	db 26, GLIGAR
+	db 24, GRAVELER
+	db 22, KADABRA
+	db 23, MARILL
+	; nite
+	db 20, ZUBAT
+	db 20, RATICATE
+	db 22, GOLBAT
+	db 18, RATTATA
+	db 26, GLIGAR
+	db 24, GRAVELER
+	db 22, KADABRA
+	db 23, MARILL
 	end_grass_wildmons
 
 	def_grass_wildmons MEW_ANTECHAMBER
@@ -994,35 +994,35 @@ KantoGrassWildMons:
 	db 1, UNOWN
 	end_grass_wildmons
 
-	def_grass_wildmons SAFARI_ZONE
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons VICTORY_ROAD
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, YANMA
-	db 28, FLOGISTAN
-	db 1, BULBASAUR
-	db 1, CHIKORITA
-	db 1, CHARMANDER
-	db 1, CYNDAQUIL
-	db 19, AIPOM
-	db 45, SUNKERN
+	db 35, GRAVELER
+	db 35, RHYHORN
+	db 34, ONIX
+	db 34, GOLBAT
+	db 35, SANDSLASH
+	db 35, SNORLAX
+	db 40, STEELIX
+	db 41, RHYDON
 	; day
-	db 30, PARAS
-	db 30, RHYHORN
-	db 30, TAUROS
-	db 30, MILTANK
-	db 33, SCYTHER
-	db 33, PINSIR
-	db 19, CHANSEY
-	db 21, KANGASKHAN
+	db 35, GRAVELER
+	db 35, RHYHORN
+	db 34, ONIX
+	db 34, GOLBAT
+	db 35, SANDSLASH
+	db 35, MACHOKE
+	db 40, STEELIX
+	db 41, RHYDON
 	; nite
-	db 30, HAUNTER
-	db 30, GIRAFARIG
-	db 30, MAROWAK
-	db 30, HYPNO
-	db 33, MISDREAVUS
-	db 33, RATICATE
-	db 30, VENOMOTH
-	db 28, YANMEGA
+	db 35, GRAVELER
+	db 35, RHYHORN
+	db 34, ONIX
+	db 34, GOLBAT
+	db 35, SANDSLASH
+	db 35, ARBOK
+	db 40, STEELIX
+	db 41, RHYDON
 	end_grass_wildmons
 
 	db -1 ; end
