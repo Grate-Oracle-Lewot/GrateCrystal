@@ -12,33 +12,33 @@ MapGroupRoofs:
 ; values are indexes for Roofs (see below)
 	table_width 1, MapGroupRoofs
 	db -1             ;  0
-	db -1             ;  1
-	db -1             ;  2
-	db -1             ;  3
-	db -1             ;  4
-	db -1             ;  5
-	db -1             ;  6
-	db -1             ;  7
-	db -1             ;  8
-	db -1             ;  9
-	db -1             ; 10
-	db -1             ; 11
-	db -1             ; 12
-	db ROOF_NEW_BARK  ; 13 (Silver Cave)
-	db ROOF_NEW_BARK  ; 14 (New Bark)
-	db ROOF_NEW_BARK  ; 15 (Cherrygrove)
-	db ROOF_VIOLET    ; 16 (Violet)
-	db ROOF_AZALEA    ; 17 (Azalea)
-	db ROOF_GOLDENROD ; 18 (Goldenrod)
-	db ROOF_VIOLET    ; 19 (Ecruteak)
-	db ROOF_OLIVINE   ; 20 (Olivine)
-	db ROOF_OLIVINE   ; 21 (Cianwood)
-	db ROOF_AZALEA    ; 22 (Mahogany)
-	db ROOF_AZALEA    ; 23 (Lake of Rage)
-	db ROOF_AZALEA    ; 24 (Blackthorn)
-	db -1             ; 25
-	db -1             ; 26
-	db -1             ; 27
+	db -1             ;  1 (Cable Club)
+	db -1             ;  2 (Pallet)
+	db -1             ;  3 (Viridian)
+	db -1             ;  4 (Pewter)
+	db -1             ;  5 (Cerulean)
+	db -1             ;  6 (Vermilion)
+	db -1             ;  7 (Lavender)
+	db -1             ;  8 (Celadon)
+	db -1             ;  9 (Fuchsia)
+	db -1             ; 10 (Safari)
+	db -1             ; 11 (Saffron)
+	db -1             ; 12 (Cinnabar)
+	db -1             ; 13 (Indigo)
+	db ROOF_NEW_BARK  ; 14 (Silver Cave)
+	db ROOF_NEW_BARK  ; 15 (New Bark)
+	db ROOF_NEW_BARK  ; 16 (Cherrygrove)
+	db ROOF_VIOLET    ; 17 (Violet)
+	db ROOF_AZALEA    ; 18 (Azalea)
+	db ROOF_GOLDENROD ; 19 (Goldenrod)
+	db ROOF_VIOLET    ; 20 (Ecruteak)
+	db ROOF_OLIVINE   ; 21 (Olivine)
+	db ROOF_OLIVINE   ; 22 (Cianwood)
+	db ROOF_AZALEA    ; 23 (Mahogany)
+	db ROOF_AZALEA    ; 24 (Lake of Rage)
+	db ROOF_AZALEA    ; 25 (Blackthorn)
+	db -1             ; 26 (Fast Ship)
+	db -1             ; 27 (Dungeons)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:
