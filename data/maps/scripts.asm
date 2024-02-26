@@ -329,9 +329,9 @@ INCLUDE "maps/Route6UndergroundPathEntrance.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
-INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/MobileTradeRoom.asm"
 INCLUDE "maps/MobileBattleRoom.asm"
+INCLUDE "maps/RuinsOfAlphAntechamber.asm"
 
 
 SECTION "Map Scripts 18", ROMX
@@ -508,4 +508,3 @@ INCLUDE "maps/Route42.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
-INCLUDE "maps/RuinsOfAlphAntechamber.asm"
