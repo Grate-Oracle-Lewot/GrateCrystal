@@ -3,12 +3,8 @@
 
 Route16Gate_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_DEFAULT
 
 	def_callbacks
-
-.DummyScene:
-	end
 
 Route16GateOfficerScript:
 	jumptextfaceplayer Route16GateOfficerText
