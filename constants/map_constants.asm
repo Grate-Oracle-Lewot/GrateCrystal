@@ -460,9 +460,9 @@ ENDM
 	map_const SLOWPOKE_WELL_B1F,                           10,  9 ;  47
 	map_const SLOWPOKE_WELL_B2F,                           10,  9 ;  48
 	map_const ILEX_FOREST,                                 15, 27 ;  49
-	map_const GOLDENROD_UNDERGROUND,                       15, 18 ;  50
-	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ;  51
-	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ;  52
+	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ;  50
+	map_const GOLDENROD_UNDERGROUND,                       15, 18 ;  51
+	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ;  52
 	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ;  53
 	map_const RADIO_TOWER_1F,                               9,  4 ;  54
 	map_const RADIO_TOWER_2F,                               9,  4 ;  55
