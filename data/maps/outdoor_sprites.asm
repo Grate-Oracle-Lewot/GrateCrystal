@@ -4,103 +4,38 @@
 OutdoorSprites:
 ; entries correspond to MAPGROUP_* constants
 	table_width 2, OutdoorSprites
-	dw DungeonsGroupSprites
-	dw LakeOfRageGroupSprites
-	dw SilverGroupSprites
-	dw SafariGroupSprites
-	dw FastShipGroupSprites
-	dw PalletGroupSprites
-	dw ViridianGroupSprites
-	dw PewterGroupSprites
-	dw CeruleanGroupSprites
-	dw VermilionGroupSprites
-	dw LavenderGroupSprites
-	dw CeladonGroupSprites
-	dw FuchsiaGroupSprites
-	dw SaffronGroupSprites
-	dw CinnabarGroupSprites
-	dw IndigoGroupSprites
-	dw NewBarkGroupSprites
-	dw CherrygroveGroupSprites
-	dw VioletGroupSprites
-	dw AzaleaGroupSprites
-	dw GoldenrodGroupSprites
-	dw EcruteakGroupSprites
-	dw OlivineGroupSprites
-	dw CianwoodGroupSprites
-	dw MahoganyGroupSprites
-	dw BlackthornGroupSprites
-	dw CableClubGroupSprites
+	dw CableClubGroupSprites   ;  1
+	dw PalletGroupSprites      ;  2
+	dw ViridianGroupSprites    ;  3
+	dw PewterGroupSprites      ;  4
+	dw CeruleanGroupSprites    ;  5
+	dw VermilionGroupSprites   ;  6
+	dw LavenderGroupSprites    ;  7
+	dw CeladonGroupSprites     ;  8
+	dw FuchsiaGroupSprites     ;  9
+	dw SafariGroupSprites      ; 10
+	dw SaffronGroupSprites     ; 11
+	dw CinnabarGroupSprites    ; 12
+	dw IndigoGroupSprites      ; 13
+	dw SilverGroupSprites      ; 14
+	dw NewBarkGroupSprites     ; 15
+	dw CherrygroveGroupSprites ; 16
+	dw VioletGroupSprites      ; 17
+	dw AzaleaGroupSprites      ; 18
+	dw GoldenrodGroupSprites   ; 19
+	dw EcruteakGroupSprites    ; 20
+	dw OlivineGroupSprites     ; 21
+	dw CianwoodGroupSprites    ; 22
+	dw MahoganyGroupSprites    ; 23
+	dw LakeOfRageGroupSprites  ; 24
+	dw BlackthornGroupSprites  ; 25
+	dw FastShipGroupSprites    ; 26
+	dw DungeonsGroupSprites    ; 27
 	assert_table_length NUM_MAP_GROUPS
 
-DungeonsGroupSprites:
-; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
-	db SPRITE_LASS
-	db SPRITE_POKEFAN_F
-	db SPRITE_TEACHER
-	db SPRITE_YOUNGSTER
-	db SPRITE_POKEFAN_M
-	db SPRITE_SCIENTIST
-	db SPRITE_FISHING_GURU
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_BUG_CATCHER
-	; 9 of max 9 walking sprites
-	db SPRITE_ROCKER
-	db SPRITE_GAMEBOY_KID
-	db SPRITE_GROWLITHE
-	db SPRITE_POKE_BALL
-	db SPRITE_BOULDER
-	db 0 ; end
-
-LakeOfRageGroupSprites:
-; Route43, LakeOfRage
-	db SPRITE_LANCE
-	db SPRITE_GRAMPS
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_LASS
-	db SPRITE_YOUNGSTER
-	; 8 of max 9 walking sprites
-	db SPRITE_FRUIT_TREE
-	db SPRITE_GYARADOS
-	db SPRITE_POKE_BALL
-	db 0 ; end
-
-SilverGroupSprites:
-; Route28, SilverCaveOutside
-	db SPRITE_BEAUTY
-	db SPRITE_SUPER_NERD
-	db SPRITE_BIKER
-	db SPRITE_SWIMMER_GIRL
-	; 3 of max 9 walking sprites
-	db SPRITE_POKE_BALL
-	db 0 ; end
-
-SafariGroupSprites:
-; Safari Zone
-	db SPRITE_BIRD
-	db SPRITE_SURF
-	; 2 of max 9 walking sprites
-	db SPRITE_CHANSEY
-	db SPRITE_FLOWER
-	db SPRITE_FISH
-	db SPRITE_SUDOWOODO
-	db SPRITE_POKE_BALL
-	db 0 ; end
-
-FastShipGroupSprites:
-; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
-	db SPRITE_SAILOR
-	db SPRITE_FISHING_GURU
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_YOUNGSTER
-	db SPRITE_FAIRY
-	; 6 of max 9 walking sprites
-	db SPRITE_ROCK
-	db SPRITE_HO_OH
+CableClubGroupSprites:
+; (no outdoor maps)
+	; 0 of max 9 walking sprites
 	db 0 ; end
 
 ; Route1 and ViridianCity are connected
@@ -172,6 +107,18 @@ FuchsiaGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
+SafariGroupSprites:
+; Safari Zone
+	db SPRITE_BIRD
+	db SPRITE_SURF
+	; 2 of max 9 walking sprites
+	db SPRITE_CHANSEY
+	db SPRITE_FLOWER
+	db SPRITE_FISH
+	db SPRITE_SUDOWOODO
+	db SPRITE_POKE_BALL
+	db 0 ; end
+
 CeladonGroupSprites:
 ; Route7, Route16, Route17, CeladonCity
 	db SPRITE_FISHER
@@ -193,6 +140,16 @@ IndigoGroupSprites:
 	db SPRITE_BLACK_BELT
 	db SPRITE_OFFICER
 	; 2 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db 0 ; end
+
+SilverGroupSprites:
+; Route28, SilverCaveOutside
+	db SPRITE_BEAUTY
+	db SPRITE_SUPER_NERD
+	db SPRITE_BIKER
+	db SPRITE_SWIMMER_GIRL
+	; 3 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -311,6 +268,22 @@ MahoganyGroupSprites:
 	db SPRITE_SUICUNE
 	db 0 ; end
 
+LakeOfRageGroupSprites:
+; Route43, LakeOfRage
+	db SPRITE_LANCE
+	db SPRITE_GRAMPS
+	db SPRITE_SUPER_NERD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_FISHER
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_LASS
+	db SPRITE_YOUNGSTER
+	; 8 of max 9 walking sprites
+	db SPRITE_FRUIT_TREE
+	db SPRITE_GYARADOS
+	db SPRITE_POKE_BALL
+	db 0 ; end
+
 BlackthornGroupSprites:
 ; Route45, Route46, BlackthornCity
 	db SPRITE_GRAMPS
@@ -326,7 +299,34 @@ BlackthornGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-CableClubGroupSprites:
-; (no outdoor maps)
-	; 0 of max 9 walking sprites
+FastShipGroupSprites:
+; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
+	db SPRITE_SAILOR
+	db SPRITE_FISHING_GURU
+	db SPRITE_SUPER_NERD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_YOUNGSTER
+	db SPRITE_FAIRY
+	; 6 of max 9 walking sprites
+	db SPRITE_ROCK
+	db SPRITE_HO_OH
+	db 0 ; end
+
+DungeonsGroupSprites:
+; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
+	db SPRITE_LASS
+	db SPRITE_POKEFAN_F
+	db SPRITE_TEACHER
+	db SPRITE_YOUNGSTER
+	db SPRITE_POKEFAN_M
+	db SPRITE_SCIENTIST
+	db SPRITE_FISHING_GURU
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_BUG_CATCHER
+	; 9 of max 9 walking sprites
+	db SPRITE_ROCKER
+	db SPRITE_GAMEBOY_KID
+	db SPRITE_GROWLITHE
+	db SPRITE_POKE_BALL
+	db SPRITE_BOULDER
 	db 0 ; end
