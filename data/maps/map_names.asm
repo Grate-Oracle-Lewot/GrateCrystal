@@ -1,32 +1,32 @@
 MapGroupNum_Names::
 	table_width 2, MapGroupNum_Names
-	dw Pallet_Map_Names       ;  1
-	dw Viridian_Map_Names     ;  2
-	dw Pewter_Map_Names       ;  3
-	dw Cerulean_Map_Names     ;  4
-	dw Vermilion_Map_Names    ;  5
-	dw Lavender_Map_Names     ;  6
-	dw Celadon_Map_Names      ;  7
-	dw Fuchsia_Map_Names      ;  8
-	dw Safari_Map_Names       ;  9
-	dw Saffron_Map_Names      ; 10
-	dw Cinnabar_Map_Names     ; 11
-	dw Indigo_Map_Names       ; 12
-	dw Silver_Map_Names       ; 13
-	dw New_Bark_Map_Names     ; 14
-	dw Cherrygrove_Map_Names  ; 15
-	dw Azalea_Map_Names       ; 16
-	dw Violet_Map_Names       ; 17
-	dw Goldenrod_Map_Names    ; 18
-	dw Ecruteak_Map_Names     ; 19
-	dw Olivine_Map_Names      ; 20
-	dw Cianwood_Map_Names     ; 21
-	dw Mahogany_Map_Names     ; 22
-	dw Lake_of_Rage_Map_Names ; 23
-	dw Blackthorn_Map_Names   ; 24
-	dw Fast_Ship_Map_Names    ; 25
-	dw Dungeons_Map_Names     ; 26
-	dw Cable_Club_Map_Names   ; 27
+	dw Cable_Club_Map_Names   ;  1
+	dw Pallet_Map_Names       ;  2
+	dw Viridian_Map_Names     ;  3
+	dw Pewter_Map_Names       ;  4
+	dw Cerulean_Map_Names     ;  5
+	dw Vermilion_Map_Names    ;  6
+	dw Lavender_Map_Names     ;  7
+	dw Celadon_Map_Names      ;  8
+	dw Fuchsia_Map_Names      ;  9
+	dw Safari_Map_Names       ; 10
+	dw Saffron_Map_Names      ; 11
+	dw Cinnabar_Map_Names     ; 12
+	dw Indigo_Map_Names       ; 13
+	dw Silver_Map_Names       ; 14
+	dw New_Bark_Map_Names     ; 15
+	dw Cherrygrove_Map_Names  ; 16
+	dw Azalea_Map_Names       ; 17
+	dw Violet_Map_Names       ; 18
+	dw Goldenrod_Map_Names    ; 19
+	dw Ecruteak_Map_Names     ; 20
+	dw Olivine_Map_Names      ; 21
+	dw Cianwood_Map_Names     ; 22
+	dw Mahogany_Map_Names     ; 23
+	dw Lake_of_Rage_Map_Names ; 24
+	dw Blackthorn_Map_Names   ; 25
+	dw Fast_Ship_Map_Names    ; 26
+	dw Dungeons_Map_Names     ; 27
 	assert_table_length NUM_MAP_GROUPS
 
 GetMapGroupNum_Name::
@@ -54,6 +54,16 @@ GetMapGroupNum_Name::
 	ld d, a
 	; return string ptr in de
 	ret
+
+Cable_Club_Map_Names: ; CABLE_CLUB
+	table_width 2, Cable_Club_Map_Names
+	dw Cable_Club_Map_Name1 ; POKECENTER_2F
+	dw Cable_Club_Map_Name2 ; TRADE_CENTER
+	dw Cable_Club_Map_Name3 ; COLOSSEUM
+	dw Cable_Club_Map_Name4 ; TIME_CAPSULE
+	dw Cable_Club_Map_Name5 ; MOBILE_TRADE_ROOM
+	dw Cable_Club_Map_Name6 ; MOBILE_BATTLE_ROOM
+	assert_table_length NUM_CABLE_CLUB_MAPS
 
 Pallet_Map_Names: ; PALLET
 	table_width 2, Pallet_Map_Names
@@ -558,17 +568,19 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name107 ; RUINS_OF_ALPH_ANTECHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 
-Cable_Club_Map_Names: ; CABLE_CLUB
-	table_width 2, Cable_Club_Map_Names
-	dw Cable_Club_Map_Name1 ; POKECENTER_2F
-	dw Cable_Club_Map_Name2 ; TRADE_CENTER
-	dw Cable_Club_Map_Name3 ; COLOSSEUM
-	dw Cable_Club_Map_Name4 ; TIME_CAPSULE
-	dw Cable_Club_Map_Name5 ; MOBILE_TRADE_ROOM
-	dw Cable_Club_Map_Name6 ; MOBILE_BATTLE_ROOM
-	assert_table_length NUM_CABLE_CLUB_MAPS
-
 ; MAX LENGTH: 17 (preferred: 16)
+Cable_Club_Map_Name1: ; POKECENTER_2F
+	db $E1, $E2, " CENTER 2F@"
+Cable_Club_Map_Name2: ; TRADE_CENTER
+	db $E1, $E2, " TRADE CENTER@"
+Cable_Club_Map_Name3: ; COLOSSEUM
+	db $E1, $E2, " COLOSSEUM@"
+Cable_Club_Map_Name4: ; TIME_CAPSULE
+	db "TIME CAPSULE@"
+Cable_Club_Map_Name5: ; MOBILE_TRADE_ROOM
+	db "MOBILE TRADE@"
+Cable_Club_Map_Name6: ; MOBILE_BATTLE_ROOM
+	db "MOBILE BATTLE@"
 
 Pallet_Map_Name1: ; ROUTE_1
 	db "ROUTE 1@"
@@ -1393,16 +1405,3 @@ Dungeons_Map_Name106: ; SILPH_CO_11F
 	db "SILPH CO. 11F@"
 Dungeons_Map_Name107: ; RUINS_OF_ALPH_ANTECHAMBER
 	db "ALPH ANTECHAMBER@"
-
-Cable_Club_Map_Name1: ; POKECENTER_2F
-	db $E1, $E2, " CENTER 2F@"
-Cable_Club_Map_Name2: ; TRADE_CENTER
-	db $E1, $E2, " TRADE CENTER@"
-Cable_Club_Map_Name3: ; COLOSSEUM
-	db $E1, $E2, " COLOSSEUM@"
-Cable_Club_Map_Name4: ; TIME_CAPSULE
-	db "TIME CAPSULE@"
-Cable_Club_Map_Name5: ; MOBILE_TRADE_ROOM
-	db "MOBILE TRADE@"
-Cable_Club_Map_Name6: ; MOBILE_BATTLE_ROOM
-	db "MOBILE BATTLE@"
