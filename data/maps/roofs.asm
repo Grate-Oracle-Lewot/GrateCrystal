@@ -25,7 +25,7 @@ MapGroupRoofs:
 	db -1             ; 11 (Saffron)
 	db -1             ; 12 (Cinnabar)
 	db -1             ; 13 (Indigo)
-	db ROOF_NEW_BARK  ; 14 (Silver Cave)
+	db ROOF_NEW_BARK  ; 14 (Silver)
 	db ROOF_NEW_BARK  ; 15 (New Bark)
 	db ROOF_NEW_BARK  ; 16 (Cherrygrove)
 	db ROOF_VIOLET    ; 17 (Violet)
