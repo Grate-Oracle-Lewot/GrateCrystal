@@ -2,22 +2,6 @@
 
 KantoWaterWildMons:
 
-	def_water_wildmons TOHJO_FALLS
-	db 4 percent ; encounter rate
-	db 30, GOLDEEN
-	db 30, SLOWPOKE
-	db 30, SEAKING
-	db 25, MARILL
-	end_water_wildmons
-
-	def_water_wildmons VERMILION_PORT
-	db 2 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	db 30, MANTINE
-	end_water_wildmons
-
 	def_water_wildmons ROUTE_4
 	db 4 percent ; encounter rate
 	db 10, GOLDEEN
@@ -138,6 +122,22 @@ KantoWaterWildMons:
 	db 35, YANMEGA
 	end_water_wildmons
 
+	def_water_wildmons TOHJO_FALLS
+	db 4 percent ; encounter rate
+	db 30, GOLDEEN
+	db 30, SLOWPOKE
+	db 30, SEAKING
+	db 25, MARILL
+	end_water_wildmons
+
+	def_water_wildmons MEW_ANTECHAMBER
+	db 1 percent ; encounter rate
+	db 25, SEAKING
+	db 25, UNOWN
+	db 25, SLOWBRO
+	db 25, SLOWKING
+	end_water_wildmons
+
 	def_water_wildmons PALLET_TOWN
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
@@ -170,6 +170,14 @@ KantoWaterWildMons:
 	db 30, MANTINE
 	end_water_wildmons
 
+	def_water_wildmons VERMILION_PORT
+	db 2 percent ; encounter rate
+	db 35, TENTACOOL
+	db 30, TENTACOOL
+	db 35, TENTACRUEL
+	db 30, MANTINE
+	end_water_wildmons
+
 	def_water_wildmons CELADON_CITY
 	db 2 percent ; encounter rate
 	db 15, GRIMER
@@ -186,28 +194,20 @@ KantoWaterWildMons:
 	db 20, GYARADOS
 	end_water_wildmons
 
-	def_water_wildmons CINNABAR_ISLAND
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 35, CASTAWEIGH
-	db 35, TENTACRUEL
-	db 95, UNOWN
-	end_water_wildmons
-
-	def_water_wildmons MEW_ANTECHAMBER
-	db 1 percent ; encounter rate
-	db 25, SEAKING
-	db 25, UNOWN
-	db 25, SLOWBRO
-	db 25, SLOWKING
-	end_water_wildmons
-
 	def_water_wildmons SAFARI_ZONE
 	db 1 percent ; encounter rate
 	db 35, LAPRAS
 	db 35, YANMA
 	db 5, SQUIRTLE
 	db 5, TOTODILE
+	end_water_wildmons
+
+	def_water_wildmons CINNABAR_ISLAND
+	db 6 percent ; encounter rate
+	db 35, TENTACOOL
+	db 35, CASTAWEIGH
+	db 35, TENTACRUEL
+	db 95, UNOWN
 	end_water_wildmons
 
 	db -1 ; end
