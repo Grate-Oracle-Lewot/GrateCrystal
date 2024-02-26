@@ -340,7 +340,6 @@ Colosseum_Blocks:
 	INCBIN "maps/Colosseum.blk"
 
 TradeCenter_Blocks:
-TimeCapsule_Blocks:
 	INCBIN "maps/TradeCenter.blk"
 
 EcruteakLugiaSpeechHouse_Blocks:
