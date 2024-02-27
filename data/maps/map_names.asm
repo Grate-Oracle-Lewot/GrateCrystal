@@ -16,8 +16,8 @@ MapGroupNum_Names::
 	dw Silver_Map_Names       ; 14
 	dw New_Bark_Map_Names     ; 15
 	dw Cherrygrove_Map_Names  ; 16
-	dw Azalea_Map_Names       ; 17
-	dw Violet_Map_Names       ; 18
+	dw Violet_Map_Names       ; 17
+	dw Azalea_Map_Names       ; 18
 	dw Goldenrod_Map_Names    ; 19
 	dw Ecruteak_Map_Names     ; 20
 	dw Olivine_Map_Names      ; 21
