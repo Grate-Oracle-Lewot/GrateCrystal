@@ -201,6 +201,9 @@ IndigoSeerScript:
 	closetext
 	end
 
+PokemonLeagueStatue:
+	jumptext PokemonLeagueStatueText
+
 PlateauRivalMovement1:
 	step UP
 	step UP
@@ -318,6 +321,11 @@ AbraText:
 	text "ABRA: Aabra…"
 	done
 
+PokemonLeagueStatueText:
+	text "INDIGO PLATEAU"
+	line "#MON LEAGUE"
+	done
+
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -332,6 +340,8 @@ IndigoPlateauPokecenter1F_MapEvents:
 	coord_event 17,  4, SCENE_DEFAULT, PlateauRivalBattle2
 
 	def_bg_events
+	bg_event 14,  1, BGEVENT_READ, PokemonLeagueStatue
+	bg_event 17,  1, BGEVENT_READ, PokemonLeagueStatue
 
 	def_object_events
 	object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
