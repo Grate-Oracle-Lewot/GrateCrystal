@@ -1797,6 +1797,9 @@ Pokedex_DrawColorScreenBG:
 	call Pokedex_PlaceString
 	hlcoord 3, 12
 	ld de, .Gray
+	call Pokedex_PlaceString
+	hlcoord 3, 13
+	ld de, .Mewtwo
 	jp Pokedex_PlaceString
 
 .Title:
@@ -1832,6 +1835,9 @@ Pokedex_DrawColorScreenBG:
 .Gray
 	db "GRAY   ", $4f, -1	
 
+.Mewtwo
+	db "MEWTWO ", $4f, -1	
+
 Pokedex_UpdateColorOption:
 	ld de, .ArrowCursorData
 	call Pokedex_MoveArrowCursor
@@ -1856,6 +1862,7 @@ Pokedex_UpdateColorOption:
 	dwcoord 2,  10 ; Lilac
 	dwcoord 2,  11 ; Brown
 	dwcoord 2,  12 ; Gray
+	dwcoord 2,  13 ; Mewtwo
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -1880,6 +1887,7 @@ Pokedex_UpdateColorOption:
 	dw .MenuAction_Lilac
 	dw .MenuAction_Brown
 	dw .MenuAction_Gray
+	dw .MenuAction_Mewtwo
 
 .MenuAction_Red
 	ld b, DEXCOLOR_RED
@@ -1919,6 +1927,10 @@ Pokedex_UpdateColorOption:
 
 .MenuAction_Gray
 	ld b, DEXCOLOR_GRAY
+	jr .ChangeColor
+
+.MenuAction_Mewtwo
+	ld b, DEXCOLOR_MEWTWO
 	; fallthrough
 
 .ChangeColor:
