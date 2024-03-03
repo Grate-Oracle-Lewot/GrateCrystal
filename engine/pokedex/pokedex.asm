@@ -1851,7 +1851,7 @@ Pokedex_UpdateColorOption:
 	ret
 
 .ArrowCursorData:
-	db D_UP | D_DOWN, 10
+	db D_UP | D_DOWN, 11
 	dwcoord 2,  3  ; Red
 	dwcoord 2,  4  ; Blue
 	dwcoord 2,  5  ; Yellow
