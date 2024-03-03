@@ -8,23 +8,24 @@ AUTO_INPUT EQU $ff
 
 ; wCurDexMode::
 	const_def
-	const DEXMODE_NEW
-	const DEXMODE_OLD
-	const DEXMODE_ABC
-	const DEXMODE_UNOWN
+	const DEXMODE_NEW   ; 0
+	const DEXMODE_OLD   ; 1
+	const DEXMODE_ABC   ; 2
+	const DEXMODE_UNOWN ; 3
 
 ; wPokedexColor
 	const_def
-	const DEXCOLOR_RED
-	const DEXCOLOR_BLUE
-	const DEXCOLOR_YELLOW
-	const DEXCOLOR_GREEN
-	const DEXCOLOR_PURPLE
-	const DEXCOLOR_PINK
-	const DEXCOLOR_CYAN
-	const DEXCOLOR_LILAC
-	const DEXCOLOR_BROWN
-	const DEXCOLOR_GRAY
+	const DEXCOLOR_RED    ; 0
+	const DEXCOLOR_BLUE   ; 1
+	const DEXCOLOR_YELLOW ; 2
+	const DEXCOLOR_GREEN  ; 3
+	const DEXCOLOR_PURPLE ; 4
+	const DEXCOLOR_PINK   ; 5
+	const DEXCOLOR_CYAN   ; 6
+	const DEXCOLOR_LILAC  ; 7
+	const DEXCOLOR_BROWN  ; 8
+	const DEXCOLOR_GRAY   ; 9
+	const DEXCOLOR_MEWTWO ; 10
 
 ; wMonType::
 	const_def
@@ -230,26 +231,26 @@ MOM_SAVING_MONEY_MASK EQU (1 << MOM_SAVING_SOME_MONEY_F) | (1 << MOM_SAVING_HALF
 
 ; wJohtoBadges::
 	const_def
-	const ZEPHYRBADGE
-	const HIVEBADGE
-	const PLAINBADGE
-	const FOGBADGE
-	const MINERALBADGE
-	const STORMBADGE
-	const GLACIERBADGE
-	const RISINGBADGE
+	const ZEPHYRBADGE  ; 0
+	const HIVEBADGE    ; 1
+	const PLAINBADGE   ; 2
+	const FOGBADGE     ; 3
+	const MINERALBADGE ; 4
+	const STORMBADGE   ; 5
+	const GLACIERBADGE ; 6
+	const RISINGBADGE  ; 7
 NUM_JOHTO_BADGES EQU const_value
 
 ; wKantoBadges::
 	const_def
-	const BOULDERBADGE
-	const CASCADEBADGE
-	const THUNDERBADGE
-	const RAINBOWBADGE
-	const SOULBADGE
-	const MARSHBADGE
-	const VOLCANOBADGE
-	const EARTHBADGE
+	const BOULDERBADGE ; 0
+	const CASCADEBADGE ; 1
+	const THUNDERBADGE ; 2
+	const RAINBOWBADGE ; 3
+	const SOULBADGE    ; 4
+	const MARSHBADGE   ; 5
+	const VOLCANOBADGE ; 6
+	const EARTHBADGE   ; 7
 NUM_KANTO_BADGES EQU const_value
 NUM_BADGES EQU NUM_JOHTO_BADGES + NUM_KANTO_BADGES
 
