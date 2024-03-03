@@ -15,17 +15,19 @@ AUTO_INPUT EQU $ff
 
 ; wPokedexColor
 	const_def
-	const DEXCOLOR_RED    ; 0
-	const DEXCOLOR_BLUE   ; 1
-	const DEXCOLOR_YELLOW ; 2
-	const DEXCOLOR_GREEN  ; 3
-	const DEXCOLOR_PURPLE ; 4
-	const DEXCOLOR_PINK   ; 5
-	const DEXCOLOR_CYAN   ; 6
-	const DEXCOLOR_LILAC  ; 7
-	const DEXCOLOR_BROWN  ; 8
-	const DEXCOLOR_GRAY   ; 9
-	const DEXCOLOR_MEWTWO ; 10
+	const DEXCOLOR_RED    ;  0
+	const DEXCOLOR_BLUE   ;  1
+	const DEXCOLOR_YELLOW ;  2
+	const DEXCOLOR_PURPLE ;  3
+	const DEXCOLOR_ORANGE ;  4
+	const DEXCOLOR_GREEN  ;  5
+	const DEXCOLOR_PINK   ;  6
+	const DEXCOLOR_CYAN   ;  7
+	const DEXCOLOR_LILAC  ;  8
+	const DEXCOLOR_BROWN  ;  9
+	const DEXCOLOR_BLACK  ; 10
+	const DEXCOLOR_GRAY   ; 11
+	const DEXCOLOR_WHITE  ; 12
 
 ; wMonType::
 	const_def
