@@ -474,20 +474,26 @@ CheckPokedexColor:
 
 .Yellow
 	cp DEXCOLOR_YELLOW
-	jr nz, .Green
-	ld a, PREDEFPAL_RB_YELLOWMON
-	ret
-
-.Green
-	cp DEXCOLOR_GREEN
 	jr nz, .Purple
-	ld a, PREDEFPAL_RB_GREENMON
+	ld a, PREDEFPAL_RB_YELLOWMON
 	ret
 
 .Purple
 	cp DEXCOLOR_PURPLE
-	jr nz, .Pink
+	jr nz, .Orange
 	ld a, PREDEFPAL_47
+	ret
+
+.Orange
+	cp DEXCOLOR_ORANGE
+	jr nz, .Green
+	ld a, PREDEFPAL_BETA_POKEGEAR
+	ret
+
+.Green
+	cp DEXCOLOR_GREEN
+	jr nz, .Pink
+	ld a, PREDEFPAL_RB_GREENMON
 	ret
 
 .Pink
@@ -510,20 +516,26 @@ CheckPokedexColor:
 
 .Brown
 	cp DEXCOLOR_BROWN
-	jr nz, .Gray
+	jr nz, .Black
 	ld a, PREDEFPAL_RB_BROWNMON
+	ret
+
+.Black
+	cp DEXCOLOR_BLACK
+	jr nz, .Gray
+	ld a, PREDEFPAL_BLACKOUT
 	ret
 
 .Gray
 	cp DEXCOLOR_GRAY
-	jr nz, .Mewtwo
+	jr nz, .White
 	ld a, PREDEFPAL_CGB_BADGE
 	ret
 
-.Mewtwo
-	cp DEXCOLOR_MEWTWO
+.White
+	cp DEXCOLOR_WHITE
 	jr nz, .Red
-	ld a, PREDEFPAL_DIPLOMA
+	ld a, PREDEFPAL_BETA_RADIO
 	ret
 
 .Red
