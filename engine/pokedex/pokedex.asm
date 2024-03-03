@@ -1778,28 +1778,34 @@ Pokedex_DrawColorScreenBG:
 	ld de, .Yellow
 	call Pokedex_PlaceString
 	hlcoord 3, 6
-	ld de, .Green
-	call Pokedex_PlaceString
-	hlcoord 3, 7
 	ld de, .Purple
 	call Pokedex_PlaceString
+	hlcoord 3, 7
+	ld de, .Orange
+	call Pokedex_PlaceString
 	hlcoord 3, 8
-	ld de, .Pink
+	ld de, .Green
 	call Pokedex_PlaceString
 	hlcoord 3, 9
-	ld de, .Cyan
+	ld de, .Pink
 	call Pokedex_PlaceString
 	hlcoord 3, 10
-	ld de, .Lilac
+	ld de, .Cyan
 	call Pokedex_PlaceString
 	hlcoord 3, 11
-	ld de, .Brown
+	ld de, .Lilac
 	call Pokedex_PlaceString
 	hlcoord 3, 12
-	ld de, .Gray
+	ld de, .Brown
 	call Pokedex_PlaceString
 	hlcoord 3, 13
-	ld de, .Mewtwo
+	ld de, .Black
+	call Pokedex_PlaceString
+	hlcoord 3, 14
+	ld de, .Gray
+	call Pokedex_PlaceString
+	hlcoord 3, 15
+	ld de, .White
 	jp Pokedex_PlaceString
 
 .Title:
@@ -1814,11 +1820,14 @@ Pokedex_DrawColorScreenBG:
 .Yellow
 	db "YELLOW ", $4f, -1
 
-.Green
-	db "GREEN  ", $4f, -1
-
 .Purple
 	db "PURPLE ", $4f, -1	
+
+.Orange
+	db "ORANGE ", $4f, -1
+
+.Green
+	db "GREEN  ", $4f, -1
 
 .Pink
 	db "PINK   ", $4f, -1	
@@ -1832,11 +1841,14 @@ Pokedex_DrawColorScreenBG:
 .Brown
 	db "BROWN  ", $4f, -1	
 
+.Black
+	db "BLACK  ", $4f, -1
+
 .Gray
 	db "GRAY   ", $4f, -1	
 
-.Mewtwo
-	db "MEWTWO ", $4f, -1	
+.White
+	db "WHITE  ", $4f, -1	
 
 Pokedex_UpdateColorOption:
 	ld de, .ArrowCursorData
@@ -1851,18 +1863,20 @@ Pokedex_UpdateColorOption:
 	ret
 
 .ArrowCursorData:
-	db D_UP | D_DOWN, 11
+	db D_UP | D_DOWN, 13
 	dwcoord 2,  3  ; Red
 	dwcoord 2,  4  ; Blue
 	dwcoord 2,  5  ; Yellow
-	dwcoord 2,  6  ; Green
-	dwcoord 2,  7  ; Purple
-	dwcoord 2,  8  ; Pink
-	dwcoord 2,  9  ; Cyan
-	dwcoord 2,  10 ; Lilac
-	dwcoord 2,  11 ; Brown
-	dwcoord 2,  12 ; Gray
-	dwcoord 2,  13 ; Mewtwo
+	dwcoord 2,  6  ; Purple
+	dwcoord 2,  7  ; Orange
+	dwcoord 2,  8  ; Green
+	dwcoord 2,  9  ; Pink
+	dwcoord 2,  10 ; Cyan
+	dwcoord 2,  11 ; Lilac
+	dwcoord 2,  12 ; Brown
+	dwcoord 2,  13 ; Black
+	dwcoord 2,  14 ; Gray
+	dwcoord 2,  15 ; White
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -1880,14 +1894,16 @@ Pokedex_UpdateColorOption:
 	dw .MenuAction_Red
 	dw .MenuAction_Blue
 	dw .MenuAction_Yellow
-	dw .MenuAction_Green
 	dw .MenuAction_Purple
+	dw .MenuAction_Orange
+	dw .MenuAction_Green
 	dw .MenuAction_Pink
 	dw .MenuAction_Cyan
 	dw .MenuAction_Lilac
 	dw .MenuAction_Brown
+	dw .MenuAction_Black
 	dw .MenuAction_Gray
-	dw .MenuAction_Mewtwo
+	dw .MenuAction_White
 
 .MenuAction_Red
 	ld b, DEXCOLOR_RED
@@ -1901,12 +1917,16 @@ Pokedex_UpdateColorOption:
 	ld b, DEXCOLOR_YELLOW
 	jr .ChangeColor
 
-.MenuAction_Green
-	ld b, DEXCOLOR_GREEN
-	jr .ChangeColor
-
 .MenuAction_Purple
 	ld b, DEXCOLOR_PURPLE
+	jr .ChangeColor
+
+.MenuAction_Orange
+	ld b, DEXCOLOR_ORANGE
+	jr .ChangeColor
+
+.MenuAction_Green
+	ld b, DEXCOLOR_GREEN
 	jr .ChangeColor
 
 .MenuAction_Pink
@@ -1925,12 +1945,16 @@ Pokedex_UpdateColorOption:
 	ld b, DEXCOLOR_BROWN
 	jr .ChangeColor
 
+.MenuAction_Black
+	ld b, DEXCOLOR_BLACK
+	jr .ChangeColor
+
 .MenuAction_Gray
 	ld b, DEXCOLOR_GRAY
 	jr .ChangeColor
 
-.MenuAction_Mewtwo
-	ld b, DEXCOLOR_MEWTWO
+.MenuAction_White
+	ld b, DEXCOLOR_WHITE
 	; fallthrough
 
 .ChangeColor:
