@@ -24,10 +24,11 @@ AUTO_INPUT EQU $ff
 	const DEXCOLOR_PINK   ;  6
 	const DEXCOLOR_CYAN   ;  7
 	const DEXCOLOR_LILAC  ;  8
-	const DEXCOLOR_BROWN  ;  9
-	const DEXCOLOR_BLACK  ; 10
-	const DEXCOLOR_GRAY   ; 11
-	const DEXCOLOR_WHITE  ; 12
+	const DEXCOLOR_LIME   ;  9
+	const DEXCOLOR_BROWN  ; 10
+	const DEXCOLOR_BLACK  ; 11
+	const DEXCOLOR_GRAY   ; 12
+	const DEXCOLOR_WHITE  ; 13
 
 ; wMonType::
 	const_def
