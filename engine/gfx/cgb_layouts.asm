@@ -510,8 +510,14 @@ CheckPokedexColor:
 
 .Lilac
 	cp DEXCOLOR_LILAC
-	jr nz, .Brown
+	jr nz, .Lime
 	ld a, PREDEFPAL_RB_PURPLEMON
+	ret
+
+.Lime
+	cp DEXCOLOR_LIME
+	jr nz, .Brown
+	ld a, PREDEFPAL_BETA_INTRO_VENUSAUR
 	ret
 
 .Brown
