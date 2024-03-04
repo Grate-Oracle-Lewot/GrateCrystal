@@ -1796,15 +1796,18 @@ Pokedex_DrawColorScreenBG:
 	ld de, .Lilac
 	call Pokedex_PlaceString
 	hlcoord 3, 12
-	ld de, .Brown
+	ld de, .Lime
 	call Pokedex_PlaceString
 	hlcoord 3, 13
-	ld de, .Black
+	ld de, .Brown
 	call Pokedex_PlaceString
 	hlcoord 3, 14
-	ld de, .Gray
+	ld de, .Black
 	call Pokedex_PlaceString
 	hlcoord 3, 15
+	ld de, .Gray
+	call Pokedex_PlaceString
+	hlcoord 3, 16
 	ld de, .White
 	jp Pokedex_PlaceString
 
@@ -1838,6 +1841,9 @@ Pokedex_DrawColorScreenBG:
 .Lilac
 	db "LILAC  ", $4f, -1
 
+.Lime
+	db "LIME   ", $4f, -1
+
 .Brown
 	db "BROWN  ", $4f, -1	
 
@@ -1863,7 +1869,7 @@ Pokedex_UpdateColorOption:
 	ret
 
 .ArrowCursorData:
-	db D_UP | D_DOWN, 13
+	db D_UP | D_DOWN, 14
 	dwcoord 2,  3  ; Red
 	dwcoord 2,  4  ; Blue
 	dwcoord 2,  5  ; Yellow
@@ -1873,10 +1879,11 @@ Pokedex_UpdateColorOption:
 	dwcoord 2,  9  ; Pink
 	dwcoord 2,  10 ; Cyan
 	dwcoord 2,  11 ; Lilac
-	dwcoord 2,  12 ; Brown
-	dwcoord 2,  13 ; Black
-	dwcoord 2,  14 ; Gray
-	dwcoord 2,  15 ; White
+	dwcoord 2,  12 ; Lime
+	dwcoord 2,  13 ; Brown
+	dwcoord 2,  14 ; Black
+	dwcoord 2,  15 ; Gray
+	dwcoord 2,  16 ; White
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -1900,6 +1907,7 @@ Pokedex_UpdateColorOption:
 	dw .MenuAction_Pink
 	dw .MenuAction_Cyan
 	dw .MenuAction_Lilac
+	dw .MenuAction_Lime
 	dw .MenuAction_Brown
 	dw .MenuAction_Black
 	dw .MenuAction_Gray
@@ -1939,6 +1947,10 @@ Pokedex_UpdateColorOption:
 
 .MenuAction_Lilac
 	ld b, DEXCOLOR_LILAC
+	jr .ChangeColor
+
+.MenuAction_Lime
+	ld b, DEXCOLOR_LIME
 	jr .ChangeColor
 
 .MenuAction_Brown
