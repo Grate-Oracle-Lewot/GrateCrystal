@@ -758,8 +758,11 @@ ElmText_Refused:
 	done
 
 ElmText_GotAnEmail:
-	text "Oh, hey! I got an"
-	line "e-mail!"
+	text "Huh?"
+
+	para "Oh, something got"
+	line "through my spam"
+	cont "filter…"
 
 	para "<……><……><……>"
 	line "Hm… Uh-huh…"
