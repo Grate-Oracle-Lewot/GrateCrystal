@@ -758,9 +758,7 @@ ElmText_Refused:
 	done
 
 ElmText_GotAnEmail:
-	text "Huh?"
-
-	para "Oh, something got"
+	text "Oh, something got"
 	line "through my spam"
 	cont "filter…"
 
