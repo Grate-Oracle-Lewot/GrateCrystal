@@ -52,10 +52,11 @@ CianwoodPhotoStudio_MapEvents:
 	def_warp_events
 	warp_event  2,  7, CIANWOOD_CITY, 5
 	warp_event  3,  7, CIANWOOD_CITY, 5
+	warp_event  0,  2, CIANWOOD_DARKROOM, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPhotoStudioFishingGuruScript, -1
+	object_event  3,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodPhotoStudioFishingGuruScript, -1
