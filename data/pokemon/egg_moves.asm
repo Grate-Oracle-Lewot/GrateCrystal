@@ -819,8 +819,8 @@ DelibirdEggMoves:
 MantineEggMoves:
 	db TWISTER
 	db HAZE
-	db SLAM
 	db SILVER_WIND
+	db OCTAZOOKA
 	db -1 ; end
 
 SkarmoryEggMoves:
