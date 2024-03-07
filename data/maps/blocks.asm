@@ -136,7 +136,6 @@ CeladonMansionRoofHouse_Blocks:
 Route16FuchsiaSpeechHouse_Blocks:
 ManiasHouse_Blocks:
 CianwoodPharmacy_Blocks:
-CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
@@ -968,3 +967,6 @@ Lounge2F_Blocks:
 
 RuinsOfAlphAntechamber_Blocks:
 	INCBIN "maps/RuinsOfAlphAntechamber.blk"
+
+CianwoodPhotoStudio_Blocks:
+	INCBIN "maps/CianwoodPhotoStudio.blk"
