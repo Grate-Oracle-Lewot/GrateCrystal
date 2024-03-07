@@ -80,4 +80,8 @@ BTTrainerClassGenders:
 	db MALE   ; GAMBLER
 	db FEMALE ; CAL_F
 	db MALE   ; OLD
+	db FEMALE ; LORELEI
+	db FEMALE ; AGATHA
+	db MALE   ; REAL_BRUNO
+	db MALE   ; REAL_WILL
 	assert_table_length NUM_TRAINER_CLASSES
