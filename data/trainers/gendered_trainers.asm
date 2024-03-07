@@ -33,6 +33,8 @@ MaleTrainers:
 	db MISSINGNO
 	db GAMBLER
 	db OLD
+	db REAL_BRUNO
+	db REAL_WILL
 .End
 
 FemaleTrainers:
@@ -49,4 +51,6 @@ FemaleTrainers:
 	db REAL_KAREN
 	db JESSIE
 	db CAL_F
+	db LORELEI
+	db AGATHA
 .End
