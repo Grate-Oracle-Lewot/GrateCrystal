@@ -1148,14 +1148,13 @@ SlowpokeEvosAttacks:
 	db EVOLVE_STAT, 37, ATK_GT_DEF, SLOWKING
 	db EVOLVE_STAT, 37, ATK_EQ_DEF, SLOWBRO
 	db 0 ; no more evolutions
-	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
 	db 29, DISABLE
-	db 34, HEADBUTT
+	db 34, BODY_SLAM
 	db 43, AMNESIA
 	db 48, PSYCHIC_M
 	db 54, VITAL_THROW
@@ -1164,14 +1163,13 @@ SlowpokeEvosAttacks:
 
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
 	db 29, DISABLE
-	db 34, HEADBUTT
+	db 34, BODY_SLAM
 	db 36, IRON_TAIL
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
@@ -3031,13 +3029,13 @@ MurkrowEvosAttacks:
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
 	db 29, DISABLE
+	db 34, BODY_SLAM
 	db 36, POWER_GEM
 	db 37, IRON_HEAD
 	db 46, AMNESIA
