@@ -296,6 +296,7 @@ GastlyEggMoves:
 
 OnixEggMoves:
 	db ANCIENTPOWER
+	db CRUNCH
 	db FLAIL
 	db SLAM
 	db POWER_GEM
