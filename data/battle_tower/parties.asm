@@ -2141,7 +2141,7 @@ BattleTowerMons:
 	bigdw 86 ; Atk
 	bigdw 83 ; Def
 	bigdw 81 ; Spd
-	bigdw 88 ; SAtk
+	bigdw 89 ; SAtk
 	bigdw 122 ; SDef
 	db "SURI-PA-@@@"
 
