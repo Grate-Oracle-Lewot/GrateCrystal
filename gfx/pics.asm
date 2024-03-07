@@ -744,3 +744,7 @@ SECTION "Pics 20", ROMX
 
 UrsaringFrontpic:    INCBIN "gfx/pokemon/ursaring/front.animated.2bpp.lz" ; 6
 OmastarFrontpic:     INCBIN "gfx/pokemon/omastar/front.animated.2bpp.lz" ; 7
+LoreleiPic:          INCBIN "gfx/trainers/lorelei.2bpp.lz"
+AgathaPic:           INCBIN "gfx/trainers/agatha.2bpp.lz"
+RealBrunoPic:        INCBIN "gfx/trainers/real_bruno.2bpp.lz"
+RealWillPic:         INCBIN "gfx/trainers/real_will.2bpp.lz"
