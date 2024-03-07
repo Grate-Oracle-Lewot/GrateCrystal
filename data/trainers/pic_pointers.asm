@@ -80,4 +80,8 @@ TrainerPicPointers::
 	dba GamblerPic
 	dba CalfPic
 	dba OldPic
+	dba LoreleiPic
+	dba AgathaPic
+	dba RealBrunoPic
+	dba RealWillPic
 	assert_table_length NUM_TRAINER_CLASSES
