@@ -81,4 +81,8 @@ TrainerEncounterMusic::
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; gambler
 	db MUSIC_CLAIR                 ; cal_f
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; old
+	db MUSIC_CLAIR                 ; lorelei
+	db MUSIC_SAGE_ENCOUNTER        ; agatha
+	db MUSIC_HIKER_ENCOUNTER       ; real bruno
+	db MUSIC_YOUNGSTER_ENCOUNTER   ; real will
 	assert_table_length NUM_TRAINER_CLASSES + 1
