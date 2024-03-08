@@ -392,16 +392,17 @@ Cianwood_Map_Names: ; CIANWOOD
 	dw Cianwood_Map_Name4  ; CIANWOOD_PHARMACY
 	dw Cianwood_Map_Name5  ; POKE_SEERS_HOUSE
 	dw Cianwood_Map_Name6  ; CIANWOOD_PHOTO_STUDIO
-	dw Cianwood_Map_Name7  ; MANIAS_HOUSE
-	dw Cianwood_Map_Name8  ; CIANWOOD_LUGIA_SPEECH_HOUSE
-	dw Cianwood_Map_Name9  ; ROUTE_40
-	dw Cianwood_Map_Name10 ; ROUTE_40_BATTLE_TOWER_GATE
-	dw Cianwood_Map_Name11 ; ROUTE_41
-	dw Cianwood_Map_Name12 ; BATTLE_TOWER_OUTSIDE
-	dw Cianwood_Map_Name13 ; BATTLE_TOWER_1F
-	dw Cianwood_Map_Name14 ; BATTLE_TOWER_ELEVATOR
-	dw Cianwood_Map_Name15 ; BATTLE_TOWER_HALLWAY
-	dw Cianwood_Map_Name16 ; BATTLE_TOWER_BATTLE_ROOM
+	dw Cianwood_Map_Name7  ; CIANWOOD_DARKROOM
+	dw Cianwood_Map_Name8  ; MANIAS_HOUSE
+	dw Cianwood_Map_Name9  ; CIANWOOD_LUGIA_SPEECH_HOUSE
+	dw Cianwood_Map_Name10 ; ROUTE_40
+	dw Cianwood_Map_Name11 ; ROUTE_40_BATTLE_TOWER_GATE
+	dw Cianwood_Map_Name12 ; ROUTE_41
+	dw Cianwood_Map_Name13 ; BATTLE_TOWER_OUTSIDE
+	dw Cianwood_Map_Name14 ; BATTLE_TOWER_1F
+	dw Cianwood_Map_Name15 ; BATTLE_TOWER_ELEVATOR
+	dw Cianwood_Map_Name16 ; BATTLE_TOWER_HALLWAY
+	dw Cianwood_Map_Name17 ; BATTLE_TOWER_BATTLE_ROOM
 	assert_table_length NUM_CIANWOOD_MAPS
 
 Mahogany_Map_Names: ; MAHOGANY
@@ -1089,26 +1090,28 @@ Cianwood_Map_Name4: ; CIANWOOD_PHARMACY
 Cianwood_Map_Name5: ; POKE_SEERS_HOUSE
 	db "MEMORY GURU'S@"
 Cianwood_Map_Name6: ; CIANWOOD_PHOTO_STUDIO
-	db "CIANWOOD STUDIO@"
-Cianwood_Map_Name7: ; MANIAS_HOUSE
+	db "PHOTO STUDIO@"
+Cianwood_Map_Name7: ; CIANWOOD_DARKROOM
+	db "PHOTO DARKROOM@"
+Cianwood_Map_Name8: ; MANIAS_HOUSE
 	db "MANIA'S HOUSE@"
-Cianwood_Map_Name8: ; CIANWOOD_LUGIA_SPEECH_HOUSE
+Cianwood_Map_Name9: ; CIANWOOD_LUGIA_SPEECH_HOUSE
 	db "CIANWOOD HOUSE@"
-Cianwood_Map_Name9: ; ROUTE_40
+Cianwood_Map_Name10: ; ROUTE_40
 	db "ROUTE 40@"
-Cianwood_Map_Name10: ; ROUTE_40_BATTLE_TOWER_GATE
+Cianwood_Map_Name11: ; ROUTE_40_BATTLE_TOWER_GATE
 	db "ROUTE 40 GATE@"
-Cianwood_Map_Name11: ; ROUTE_41
+Cianwood_Map_Name12: ; ROUTE_41
 	db "ROUTE 41@"
-Cianwood_Map_Name12: ; BATTLE_TOWER_OUTSIDE
+Cianwood_Map_Name13: ; BATTLE_TOWER_OUTSIDE
 	db "BATTLE TOWER LOT@"
-Cianwood_Map_Name13: ; BATTLE_TOWER_1F
+Cianwood_Map_Name14: ; BATTLE_TOWER_1F
 	db "BATTLE TOWER 1F@"
-Cianwood_Map_Name14: ; BATTLE_TOWER_ELEVATOR
+Cianwood_Map_Name15: ; BATTLE_TOWER_ELEVATOR
 	db "BATTLE TOWER LIFT@"
-Cianwood_Map_Name15: ; BATTLE_TOWER_HALLWAY
+Cianwood_Map_Name16: ; BATTLE_TOWER_HALLWAY
 	db "BATTLE TOWER HALL@"
-Cianwood_Map_Name16: ; BATTLE_TOWER_BATTLE_ROOM
+Cianwood_Map_Name17: ; BATTLE_TOWER_BATTLE_ROOM
 	db "BATTLE TOWER@"
 
 Mahogany_Map_Name1: ; MAHOGANY_TOWN
