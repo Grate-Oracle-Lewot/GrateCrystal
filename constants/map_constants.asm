@@ -351,16 +351,17 @@ ENDM
 	map_const CIANWOOD_PHARMACY,                            4,  4 ;  4
 	map_const POKE_SEERS_HOUSE,                             4,  4 ;  5
 	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ;  6
-	map_const MANIAS_HOUSE,                                 4,  4 ;  7
-	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
-	map_const ROUTE_40,                                    10, 18 ;  9
-	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 10
-	map_const ROUTE_41,                                    25, 27 ; 11
-	map_const BATTLE_TOWER_OUTSIDE,                        10, 14 ; 12
-	map_const BATTLE_TOWER_1F,                              8,  5 ; 13
-	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 14
-	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 15
-	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 16
+	map_const CIANWOOD_DARKROOM,                            6,  6 ;  7
+	map_const MANIAS_HOUSE,                                 4,  4 ;  8
+	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
+	map_const ROUTE_40,                                    10, 18 ; 10
+	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 11
+	map_const ROUTE_41,                                    25, 27 ; 12
+	map_const BATTLE_TOWER_OUTSIDE,                        10, 14 ; 13
+	map_const BATTLE_TOWER_1F,                              8,  5 ; 14
+	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 15
+	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 16
+	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 17
 	endgroup
 
 	newgroup MAHOGANY                                       ; group 23
