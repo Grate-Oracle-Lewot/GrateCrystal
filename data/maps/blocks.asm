@@ -970,3 +970,6 @@ RuinsOfAlphAntechamber_Blocks:
 
 CianwoodPhotoStudio_Blocks:
 	INCBIN "maps/CianwoodPhotoStudio.blk"
+
+CianwoodDarkroom_Blocks:
+	INCBIN "maps/CianwoodDarkroom.blk"
