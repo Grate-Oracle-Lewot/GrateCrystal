@@ -507,3 +507,4 @@ SECTION "Map Scripts 27", ROMX
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
+INCLUDE "maps/CianwoodDarkroom.asm"
