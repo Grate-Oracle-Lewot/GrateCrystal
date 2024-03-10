@@ -39,7 +39,7 @@ VictoryRoadGateBadgeCheckScript:
 .AllEightBadges:
 	writetext VictoryRoadGateEightBadgesText
 	setevent EVENT_DECO_CARPET_1
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext VictoryRoadGateDecorationText
 	waitbutton
