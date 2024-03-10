@@ -84,7 +84,7 @@ CeruleanGymMistyScript:
 	setevent EVENT_GOT_TM_BLIZZARD_FROM_MISTY
 	writetext MistyExplainBlizzardTMText
 	setevent EVENT_DECO_STARMIE_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext MistyStaryuDollText
 	waitbutton
