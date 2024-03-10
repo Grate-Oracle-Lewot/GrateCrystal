@@ -36,7 +36,7 @@ GoldenrodPokecenter1FPokefanF:
 	promptbutton
 	writetext GoldenrodPokecenter1FPokefanFThisIsForYouText
 	setevent EVENT_DECO_SNES
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext GoldenrodPokecenter1FPokefanFDecorationText
 	promptbutton
