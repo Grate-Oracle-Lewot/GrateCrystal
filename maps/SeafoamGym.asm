@@ -41,7 +41,7 @@ SeafoamGymBlaineScript:
 	setevent EVENT_GOT_TM_FIRE_BLAST_FROM_BLAINE
 	writetext BlaineExplainFireBlastTMText
 	setevent EVENT_DECO_CHARMANDER_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BlaineCharmanderDollText
 	promptbutton
