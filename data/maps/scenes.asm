@@ -48,6 +48,7 @@ MapScenes::
 	scene_var ECRUTEAK_TIN_TOWER_ENTRANCE,                 wEcruteakTinTowerEntranceSceneID
 	scene_var OLIVINE_CITY,                                wOlivineCitySceneID
 	scene_var CIANWOOD_CITY,                               wCianwoodCitySceneID
+	scene_var CIANWOOD_DARKROOM,                           wCianwoodDarkroomSceneID
 	scene_var BATTLE_TOWER_1F,                             wBattleTower1FSceneID
 	scene_var BATTLE_TOWER_ELEVATOR,                       wBattleTowerElevatorSceneID
 	scene_var BATTLE_TOWER_HALLWAY,                        wBattleTowerHallwaySceneID
