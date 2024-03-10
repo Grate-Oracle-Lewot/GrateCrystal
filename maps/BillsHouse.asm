@@ -130,7 +130,7 @@ BillsGrandpa:
 	scall .ReceiveItem
 	writetext BillsGrandpaGreenCarpetText
 	setevent EVENT_DECO_CARPET_4
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
@@ -156,7 +156,7 @@ BillsGrandpa:
 	scall .ReceiveItem
 	writetext BillsGrandpaN64Text
 	setevent EVENT_DECO_N64
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
@@ -169,7 +169,7 @@ BillsGrandpa:
 	scall .ReceiveItem
 	writetext BillsGrandpaPikachuPosterText
 	setevent EVENT_DECO_POSTER_2
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
