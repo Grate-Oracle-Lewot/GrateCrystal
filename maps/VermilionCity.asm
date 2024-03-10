@@ -147,7 +147,7 @@ VermilionGymBadgeGuy:
 .AllBadges:
 	writetext VermilionCityBadgeGuyAllBadgesText
 	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext VermilionCityBadgeGuyDecorationText
 	promptbutton
