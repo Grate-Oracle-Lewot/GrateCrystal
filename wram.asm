@@ -3059,6 +3059,7 @@ wWiseTriosRoomSceneID::                           db
 wEcruteakTinTowerEntranceSceneID::                db
 wOlivineCitySceneID::                             db
 wCianwoodCitySceneID::                            db
+wCianwoodDarkroomSceneID::                        db
 wBattleTower1FSceneID::                           db
 wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
@@ -3093,7 +3094,7 @@ wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
 wVictoryRoadSceneID::                             db
 
-	ds 5
+	ds 4
 
 ; fight counts
 wJackFightCount::    db
