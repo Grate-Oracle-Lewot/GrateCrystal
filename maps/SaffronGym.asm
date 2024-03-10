@@ -39,7 +39,7 @@ SaffronGymSabrinaScript:
 	setevent EVENT_GOT_TM_TELEPORT_FROM_SABRINA
 	writetext SabrinaExplainTeleportTMText
 	setevent EVENT_DECO_VIRTUAL_BOY
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext SabrinaVirtualBoyText
 	promptbutton
