@@ -43,7 +43,7 @@ MahoganyGymPryceScript:
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
 	setevent EVENT_DECO_BIG_LAPRAS_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext PryceText_BigLaprasDoll
 	waitbutton
