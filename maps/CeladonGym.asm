@@ -60,7 +60,7 @@ CeladonGymErikaScript:
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 	writetext ErikaGiveJumboPlantText
 	setevent EVENT_DECO_PLANT_3
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext ErikaExplainJumboPlantText
 	promptbutton
