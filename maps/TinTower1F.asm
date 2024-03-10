@@ -149,7 +149,7 @@ TinTower1F_MapScripts:
 	opentext
 	writetext TinTower1FEusineSuicuneText
 	setevent EVENT_DECO_BED_3
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext TinTower1FEusineDecorationText
 	waitbutton
