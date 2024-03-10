@@ -61,7 +61,7 @@ VermilionGymSurgeScript:
 	setevent EVENT_GOT_TM_THUNDER_FROM_SURGE
 	writetext LtSurgeExplainThunderTMText
 	setevent EVENT_DECO_BED_4
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext LtSurgePikachuBedText
 	waitbutton
