@@ -40,7 +40,7 @@ ViridianGymBlueScript:
 	setevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
 	writetext LeaderBlueExplainHyperBeamTMText
 	setevent EVENT_DECO_CARPET_2
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext LeaderBlueDecorationText
 	waitbutton
