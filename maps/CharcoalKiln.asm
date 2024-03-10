@@ -48,7 +48,7 @@ CharcoalKilnApprentice:
 	setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN
 	writetext CharcoalKilnApprenticeText2
 	setevent EVENT_DECO_PLANT_1
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext CharcoalKilnApprenticeText2AndAHalf
 	waitbutton
