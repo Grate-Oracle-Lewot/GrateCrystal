@@ -87,7 +87,7 @@ Carrie:
 	iftrue .AlreadyGavePlant
 	writetext CarrieGiveTropicPlantText
 	setevent EVENT_DECO_PLANT_2
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	setevent EVENT_GOT_TROPIC_PLANT_FROM_CARRIE
 	writetext CarrieDecorationReceivedText
