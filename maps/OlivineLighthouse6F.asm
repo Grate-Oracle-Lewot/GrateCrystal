@@ -67,7 +67,7 @@ OlivineLighthouseJasmine:
 	faceplayer
 	writetext JasmineThankYouText
 	setevent EVENT_DECO_CARPET_3
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext JasmineYellowCarpetText
 	waitbutton
