@@ -40,7 +40,7 @@ PewterGymBrockScript:
 	setevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
 	writetext BrockExplainEarthquakeTMText
 	setevent EVENT_DECO_BIG_ONIX_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BrockBigOnixDollText
 	waitbutton
