@@ -54,7 +54,7 @@ EcruteakGymMortyScript:
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetext MortyText_ShadowBallSpeech
 	setevent EVENT_DECO_GENGAR_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext MortyText_GengarDoll
 	waitbutton
