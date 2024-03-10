@@ -42,7 +42,7 @@ AzaleaGymBugsyScript:
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
 	setevent EVENT_DECO_WEEDLE_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext BugsyText_WeedleDoll
 	waitbutton
