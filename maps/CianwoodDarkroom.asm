@@ -15,36 +15,159 @@ CianwoodDarkroomLoreleiPhoto:
 	opentext
 	writetext CianwoodDarkroomLoreleiPhotoIntroText
 	promptbutton
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iftrue .CheckFought
+.NoBattle:
 	writetext CianwoodDarkroomLoreleiPhotoNoBattleText
 	waitbutton
 	closetext
+	end
+
+.CheckFought:
+	checkevent EVENT_DARKROOM_BEAT_LORELEI
+	iftrue .NoBattle
+	writetext CianwoodDarkroomLoreleiPhotoBattleText
+	waitbutton
+	closetext
+	winlosstext CianwoodDarkroomLoreleiPhotoWinLossText, CianwoodDarkroomLoreleiPhotoWinLossText
+	loadtrainer LORELEI, LORELEI1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_DARKROOM_BEAT_LORELEI
+	checkevent EVENT_DARKROOM_BEAT_AGATHA
+	iftrue .CheckBruno
+	end
+
+.CheckBruno:
+	checkevent EVENT_DARKROOM_BEAT_BRUNO
+	iftrue .CheckWill
+	end
+
+.CheckWill:
+	checkevent EVENT_DARKROOM_BEAT_WILL
+	iftrue EndGauntlet
 	end
 
 CianwoodDarkroomAgathaPhoto:
 	opentext
 	writetext CianwoodDarkroomAgathaPhotoIntroText
 	promptbutton
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iftrue .CheckFought
+.NoBattle:
 	writetext CianwoodDarkroomAgathaPhotoNoBattleText
 	waitbutton
 	closetext
+	end
+
+.CheckFought:
+	checkevent EVENT_DARKROOM_BEAT_AGATHA
+	iftrue .NoBattle
+	writetext CianwoodDarkroomAgathaPhotoBattleText
+	waitbutton
+	closetext
+	winlosstext CianwoodDarkroomAgathaPhotoWinLossText, CianwoodDarkroomAgathaPhotoWinLossText
+	loadtrainer AGATHA, AGATHA1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_DARKROOM_BEAT_AGATHA
+	checkevent EVENT_DARKROOM_BEAT_LORELEI
+	iftrue .CheckBruno
+	end
+
+.CheckBruno:
+	checkevent EVENT_DARKROOM_BEAT_BRUNO
+	iftrue .CheckWill
+	end
+
+.CheckWill:
+	checkevent EVENT_DARKROOM_BEAT_WILL
+	iftrue EndGauntlet
 	end
 
 CianwoodDarkroomBrunoPhoto:
 	opentext
 	writetext CianwoodDarkroomBrunoPhotoIntroText
 	promptbutton
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iftrue .CheckFought
+.NoBattle:
 	writetext CianwoodDarkroomBrunoPhotoNoBattleText
 	waitbutton
 	closetext
+	end
+
+.CheckFought:
+	checkevent EVENT_DARKROOM_BEAT_BRUNO
+	iftrue .NoBattle
+	writetext CianwoodDarkroomBrunoPhotoBattleText
+	waitbutton
+	closetext
+	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
+	loadtrainer REAL_BRUNO, REAL_BRUNO1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_DARKROOM_BEAT_BRUNO
+	checkevent EVENT_DARKROOM_BEAT_LORELEI
+	iftrue .CheckAgatha
+	end
+
+.CheckAgatha:
+	checkevent EVENT_DARKROOM_BEAT_AGATHA
+	iftrue .CheckWill
+	end
+
+.CheckWill:
+	checkevent EVENT_DARKROOM_BEAT_WILL
+	iftrue EndGauntlet
 	end
 
 CianwoodDarkroomWillPhoto:
 	opentext
 	writetext CianwoodDarkroomWillPhotoIntroText
 	promptbutton
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iftrue .CheckFought
+.NoBattle:
 	writetext CianwoodDarkroomWillPhotoNoBattleText
 	waitbutton
 	closetext
+	end
+
+.CheckFought:
+	checkevent EVENT_DARKROOM_BEAT_WILL
+	iftrue .NoBattle
+	writetext CianwoodDarkroomWillPhotoBattleText
+	waitbutton
+	closetext
+	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
+	loadtrainer REAL_WILL, REAL_WILL1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_DARKROOM_BEAT_WILL
+	checkevent EVENT_DARKROOM_BEAT_LORELEI
+	iftrue .CheckAgatha
+	end
+
+.CheckAgatha:
+	checkevent EVENT_DARKROOM_BEAT_AGATHA
+	iftrue .CheckBruno
+	end
+
+.CheckBruno:
+	checkevent EVENT_DARKROOM_BEAT_BRUNO
+	iftrue EndGauntlet
+	end
+
+EndGauntlet:
+	clearevent EVENT_DARKROOM_BEAT_LORELEI
+	clearevent EVENT_DARKROOM_BEAT_AGATHA
+	clearevent EVENT_DARKROOM_BEAT_BRUNO
+	clearevent EVENT_DARKROOM_BEAT_WILL
+	clearevent EVENT_DARKROOM_GAUNTLET
+	special FadeOutPalettes
+	pause 15
+	warp CIANWOOD_PHOTO_STUDIO, 1, 2
 	end
 
 CianwoodDarkroom_PlayerMovement:
@@ -84,6 +207,11 @@ CianwoodDarkroomLoreleiPhotoBattleText:
 	line "chill…"
 	done
 
+CianwoodDarkroomLoreleiPhotoWinLossText:
+	text "The LORELEI"
+	line "illusion faded!"
+	done
+
 CianwoodDarkroomAgathaPhotoIntroText:
 	text "It's a photo of"
 	line "AGATHA, a former"
@@ -102,6 +230,11 @@ CianwoodDarkroomAgathaPhotoBattleText:
 
 	para "You feel a ghostly"
 	line "presence…"
+	done
+
+CianwoodDarkroomAgathaPhotoWinLossText:
+	text "The AGATHA"
+	line "illusion faded!"
 	done
 
 CianwoodDarkroomBrunoPhotoIntroText:
@@ -124,6 +257,11 @@ CianwoodDarkroomBrunoPhotoBattleText:
 	line "fighting spirit!"
 	done
 
+CianwoodDarkroomBrunoPhotoWinLossText:
+	text "The BRUNO illusion"
+	line "faded away!"
+	done
+
 CianwoodDarkroomWillPhotoIntroText:
 	text "It's a photo of"
 	line "WILL, a former"
@@ -143,6 +281,11 @@ CianwoodDarkroomWillPhotoBattleText:
 
 	para "You feel a strong"
 	line "mental presence…"
+	done
+
+CianwoodDarkroomWillPhotoWinLossText:
+	text "The WILL illusion"
+	line "faded away!"
 	done
 
 CianwoodDarkroom_MapEvents:
