@@ -6,144 +6,144 @@ CianwoodDarkroom_MapScripts:
 	def_callbacks
 
 CianwoodDarkroomSign:
-  jumptext CianwoodDarkroomSignText
+	jumptext CianwoodDarkroomSignText
 
 CianwoodDarkroomMachine:
-  jumptext CianwoodDarkroomMachineText
+	jumptext CianwoodDarkroomMachineText
 
 CianwoodDarkroomLoreleiPhoto:
-  opentext
-  writetext CianwoodDarkroomLoreleiPhotoIntroText
-  promptbutton
-  writetext CianwoodDarkroomLoreleiPhotoNoBattleText
-  waitbutton
-  closetext
-  end
+	opentext
+	writetext CianwoodDarkroomLoreleiPhotoIntroText
+	promptbutton
+	writetext CianwoodDarkroomLoreleiPhotoNoBattleText
+	waitbutton
+	closetext
+	end
 
 CianwoodDarkroomAgathaPhoto:
-  opentext
-  writetext CianwoodDarkroomAgathaPhotoIntroText
-  promptbutton
-  writetext CianwoodDarkroomAgathaPhotoNoBattleText
-  waitbutton
-  closetext
-  end
+	opentext
+	writetext CianwoodDarkroomAgathaPhotoIntroText
+	promptbutton
+	writetext CianwoodDarkroomAgathaPhotoNoBattleText
+	waitbutton
+	closetext
+	end
 
 CianwoodDarkroomBrunoPhoto:
-  opentext
-  writetext CianwoodDarkroomBrunoPhotoIntroText
-  promptbutton
-  writetext CianwoodDarkroomBrunoPhotoNoBattleText
-  waitbutton
-  closetext
-  end
+	opentext
+	writetext CianwoodDarkroomBrunoPhotoIntroText
+	promptbutton
+	writetext CianwoodDarkroomBrunoPhotoNoBattleText
+	waitbutton
+	closetext
+	end
 
 CianwoodDarkroomWillPhoto:
-  opentext
-  writetext CianwoodDarkroomWillPhotoIntroText
-  promptbutton
-  writetext CianwoodDarkroomWillPhotoNoBattleText
-  waitbutton
-  closetext
-  end
+	opentext
+	writetext CianwoodDarkroomWillPhotoIntroText
+	promptbutton
+	writetext CianwoodDarkroomWillPhotoNoBattleText
+	waitbutton
+	closetext
+	end
 
 CianwoodDarkroom_PlayerMovement:
 	turn_head LEFT
 	step_end
 
 CianwoodDarkroomSignText:
-  text "PLEASE ASK FOR"
-  line "ASSISTANCE WITH"
-  cont "DEVELOPING PHOTOS"
-  done
+	text "PLEASE ASK FOR"
+	line "ASSISTANCE WITH"
+	cont "DEVELOPING PHOTOS"
+	done
 
 CianwoodDarkroomMachineText:
-  text "It's some kind of"
-  line "photo development"
-  cont "equipment."
-  done
+	text "It's some kind of"
+	line "photo development"
+	cont "equipment."
+	done
 
 CianwoodDarkroomLoreleiPhotoIntroText:
-  text "It's a photo of"
-  line "LORELEI, a former"
+	text "It's a photo of"
+	line "LORELEI, a former"
 
-  para "member of the"
-  line "ELITE FOUR."
-  done
+	para "member of the"
+	line "ELITE FOUR."
+	done
 
 CianwoodDarkroomLoreleiPhotoNoBattleText:
-  text "She's sitting on"
-  line "the back of a"
-  cont "LAPRAS at sea."
-  done
+	text "She's sitting on"
+	line "the back of a"
+	cont "LAPRAS at sea."
+	done
 
 CianwoodDarkroomLoreleiPhotoBattleText:
-  text "…"
+	text "…"
 
-  para "You feel a sudden"
-  line "chill…"
-  done
+	para "You feel a sudden"
+	line "chill…"
+	done
 
 CianwoodDarkroomAgathaPhotoIntroText:
-  text "It's a photo of"
-  line "AGATHA, a former"
+	text "It's a photo of"
+	line "AGATHA, a former"
 
-  para "member of the"
-  line "ELITE FOUR."
-  done
+	para "member of the"
+	line "ELITE FOUR."
+	done
 
 CianwoodDarkroomAgathaPhotoNoBattleText:
-  text "Is that PROF.OAK"
-  line "in the background?"
-  done
+	text "Is that PROF.OAK"
+	line "in the background?"
+	done
 
 CianwoodDarkroomAgathaPhotoBattleText:
-  text "…"
+	text "…"
 
-  para "You feel a ghostly"
-  line "presence…"
-  done
+	para "You feel a ghostly"
+	line "presence…"
+	done
 
 CianwoodDarkroomBrunoPhotoIntroText:
-  text "It's a photo of"
-  line "BRUNO, a former"
+	text "It's a photo of"
+	line "BRUNO, a former"
 
-  para "member of the"
-  line "ELITE FOUR."
-  done
+	para "member of the"
+	line "ELITE FOUR."
+	done
 
 CianwoodDarkroomBrunoPhotoNoBattleText:
-  text "He's sparring with"
-  line "a MACHAMP!"
-  done
+	text "He's sparring with"
+	line "a MACHAMP!"
+	done
 
 CianwoodDarkroomBrunoPhotoBattleText:
-  text "…"
+	text "…"
 
-  para "You feel a strong"
-  line "fighting spirit!"
-  done
+	para "You feel a strong"
+	line "fighting spirit!"
+	done
 
 CianwoodDarkroomWillPhotoIntroText:
-  text "It's a photo of"
-  line "WILL, a former"
+	text "It's a photo of"
+	line "WILL, a former"
 
-  para "member of the"
-  line "ELITE FOUR."
-  done
+	para "member of the"
+	line "ELITE FOUR."
+	done
 
 CianwoodDarkroomWillPhotoNoBattleText:
-  text "He's meditating"
-  line "with a XATU on top"
-  cont "of a mountain."
-  done
+	text "He's meditating"
+	line "with a XATU on top"
+	cont "of a mountain."
+	done
 
 CianwoodDarkroomWillPhotoBattleText:
-  text "…"
+	text "…"
 
-  para "You feel a strong"
-  line "mental presence…"
-  done
+	para "You feel a strong"
+	line "mental presence…"
+	done
 
 CianwoodDarkroom_MapEvents:
 	db 0, 0 ; filler
