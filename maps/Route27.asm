@@ -39,7 +39,7 @@ FirstStepIntoKantoScene_Continue:
 	promptbutton
 	writetext Route27FisherText
 	setevent EVENT_DECO_POSTER_4
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext Route27FisherDecorationText
 	waitbutton
