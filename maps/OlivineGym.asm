@@ -39,7 +39,7 @@ OlivineGymJasmineScript:
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext Jasmine_IronTailSpeech
 	setevent EVENT_DECO_SHELLDER_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext Jasmine_ShellderDollText
 	waitbutton
