@@ -45,7 +45,7 @@ FuchsiaGymJanineScript:
 	setevent EVENT_GOT_TM06_TOXIC
 	writetext JanineText_GrimerDoll
 	setevent EVENT_DECO_GRIMER_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext JanineText_DecorationHome
 	promptbutton
