@@ -42,7 +42,7 @@ MountMortarB1FKiyoScript:
 	setevent EVENT_GOT_TYROGUE_FROM_KIYO
 	writetext MountMortarKiyoGiveDollText
 	setevent EVENT_DECO_MACHOP_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext MountMortarKiyoExplainDollText
 	promptbutton
