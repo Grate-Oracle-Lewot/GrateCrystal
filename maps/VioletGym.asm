@@ -44,7 +44,7 @@ VioletGymFalknerScript:
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext FalknerTMMudSlapText
 	setevent EVENT_DECO_PIKACHU_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext FalknerDecorationText
 	waitbutton
