@@ -92,7 +92,7 @@ BlackthornGymClairScript:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymClairText_DescribeTM24
 	setevent EVENT_DECO_MAGIKARP_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_3RD_PLACE
 	waitsfx
 	writetext BlackthornGymClairText_MagikarpDoll
 	promptbutton
