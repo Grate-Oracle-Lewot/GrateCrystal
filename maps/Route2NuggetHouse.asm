@@ -13,7 +13,7 @@ Route2NuggetHouseFisherScript:
 	iftrue .GotNugget
 	writetext Route2NuggetHouseFisherText
 	setevent EVENT_DECO_DIGLETT_DOLL
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext Route2NuggetHouseFisher_DecorationText
 	setevent EVENT_GOT_NUGGET_FROM_GUY
