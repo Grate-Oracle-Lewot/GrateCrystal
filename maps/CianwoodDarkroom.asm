@@ -2,14 +2,56 @@
 
 CianwoodDarkroom_MapScripts:
 	def_scene_scripts
+	scene_script .ResetGauntlet ; SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
+	scene_script .DummyScene1 ; SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
+	scene_script .DummyScene2 ; SCENE_CIANWOODDARKROOM_NOTHING
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .DarkroomStairs
+
+.ResetGauntlet:
+	sdefer ResetGauntletScript
+	end
+
+.DummyScene1:
+	end
+
+.DummyScene2:
+	end
+
+.DarkroomStairs:
+	changeblock 1, 3, $2c
+	endcallback
+
+ResetGauntletScript:
+	clearevent EVENT_DARKROOM_GAUNTLET
+	clearevent EVENT_DARKROOM_BEAT_LORELEI
+	clearevent EVENT_DARKROOM_BEAT_AGATHA
+	clearevent EVENT_DARKROOM_BEAT_BRUNO
+	clearevent EVENT_DARKROOM_BEAT_WILL
+	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
+	end
 
 CianwoodDarkroomSign:
 	jumptext CianwoodDarkroomSignText
 
 CianwoodDarkroomMachine:
 	jumptext CianwoodDarkroomMachineText
+
+CianwoodDarkroomGauntletScene:
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iftrue .End
+	readvar VAR_BADGES
+	ifless NUM_BADGES, .End
+	changeblock 1, 3, $1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	setevent EVENT_DARKROOM_GAUNTLET
+.End:
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
+	end
 
 CianwoodDarkroomLoreleiPhoto:
 	opentext
@@ -29,9 +71,11 @@ CianwoodDarkroomLoreleiPhoto:
 	writetext CianwoodDarkroomLoreleiPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomLoreleiPhotoWinLossText, CianwoodDarkroomLoreleiPhotoWinLossText
 	loadtrainer LORELEI, LORELEI1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_LORELEI
 	checkevent EVENT_DARKROOM_BEAT_AGATHA
@@ -66,9 +110,11 @@ CianwoodDarkroomAgathaPhoto:
 	writetext CianwoodDarkroomAgathaPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomAgathaPhotoWinLossText, CianwoodDarkroomAgathaPhotoWinLossText
 	loadtrainer AGATHA, AGATHA1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_AGATHA
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
@@ -103,9 +149,11 @@ CianwoodDarkroomBrunoPhoto:
 	writetext CianwoodDarkroomBrunoPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
 	loadtrainer REAL_BRUNO, REAL_BRUNO1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_BRUNO
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
@@ -140,9 +188,11 @@ CianwoodDarkroomWillPhoto:
 	writetext CianwoodDarkroomWillPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
 	loadtrainer REAL_WILL, REAL_WILL1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_WILL
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
@@ -160,19 +210,13 @@ CianwoodDarkroomWillPhoto:
 	end
 
 EndGauntlet:
-	clearevent EVENT_DARKROOM_BEAT_LORELEI
-	clearevent EVENT_DARKROOM_BEAT_AGATHA
-	clearevent EVENT_DARKROOM_BEAT_BRUNO
-	clearevent EVENT_DARKROOM_BEAT_WILL
-	clearevent EVENT_DARKROOM_GAUNTLET
+	pause 10
 	special FadeOutPalettes
-	pause 15
+	playsound SFX_WARP_TO
+	waitsfx
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	warp CIANWOOD_PHOTO_STUDIO, 1, 2
 	end
-
-CianwoodDarkroom_PlayerMovement:
-	turn_head LEFT
-	step_end
 
 CianwoodDarkroomSignText:
 	text "PLEASE ASK FOR"
@@ -295,6 +339,7 @@ CianwoodDarkroom_MapEvents:
 	warp_event  2,  7, CIANWOOD_PHOTO_STUDIO, 3
 
 	def_coord_events
+	coord_event  5,  7, SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET, CianwoodDarkroomGauntletScene
 
 	def_bg_events
 	bg_event  0,  3, BGEVENT_READ, CianwoodDarkroomSign
