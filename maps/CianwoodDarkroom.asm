@@ -20,7 +20,7 @@ CianwoodDarkroom_MapScripts:
 	end
 
 .DarkroomStairs:
-	changeblock 1, 3, $2c
+	changeblock 2, 6, $2c
 	endcallback
 
 ResetGauntletScript:
@@ -43,7 +43,7 @@ CianwoodDarkroomGauntletScene:
 	iftrue .End
 	readvar VAR_BADGES
 	ifless NUM_BADGES, .End
-	changeblock 1, 3, $1
+	changeblock 2, 6, $1
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	turnobject PLAYER, LEFT
