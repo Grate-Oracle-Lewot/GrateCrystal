@@ -35,7 +35,7 @@ Red:
 	opentext
 	writetext RedSilverTrophyText
 	setevent EVENT_DECO_SILVER_TROPHY
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_1ST_PLACE
 	waitsfx
 	writetext RedDecorationText
 	waitbutton
