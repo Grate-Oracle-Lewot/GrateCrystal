@@ -68,7 +68,7 @@ Kurt1:
 .ClearedSlowpokeWell:
 	writetext KurtsHouseKurtHonoredToMakeBallsText
 	setevent EVENT_DECO_BED_2
-	playsound SFX_GET_EGG_UNUSED
+	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext KurtsHouseKurtDecorationText
 	promptbutton
