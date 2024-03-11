@@ -486,11 +486,11 @@ ChooseMoveToLearn:
 	ld a, [wMenuSelection]
 	dec a
 
-; print PP
+; print accuracy
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_PP
+	ld hl, Moves + MOVE_ACC
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
