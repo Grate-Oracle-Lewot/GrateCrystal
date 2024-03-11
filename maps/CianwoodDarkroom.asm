@@ -16,7 +16,7 @@ CianwoodDarkroom_MapScripts:
 .DummyScene1:
 	end
 
-.DummyScene2:
+.DummyScene2: ; unused
 	end
 
 .DarkroomStairs:
