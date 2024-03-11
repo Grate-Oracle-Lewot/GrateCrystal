@@ -1,4 +1,4 @@
-; stolen from Idain who stole it from Rangi who stole it from TPP
+; stolen from Idain who stole it from Rangi who stole it from TPP (ax)
 ; (egg part stolen from Nayru who stole it from the same chain of thieves)
 
 MoveReminder:
@@ -486,11 +486,11 @@ ChooseMoveToLearn:
 	ld a, [wMenuSelection]
 	dec a
 
-; print accuracy
+; print PP
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_ACC
+	ld hl, Moves + MOVE_PP
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
