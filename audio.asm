@@ -149,6 +149,7 @@ INCLUDE "audio/music/silphco.asm"
 INCLUDE "audio/music/route47.asm"
 INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/finalbattle.asm"
+INCLUDE "audio/music/wildbattle.asm"
 
 
 SECTION "Sound Effects", ROMX
