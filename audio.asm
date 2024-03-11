@@ -150,6 +150,7 @@ INCLUDE "audio/music/route47.asm"
 INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/wildbattle.asm"
+INCLUDE "audio/music/bikeriding.asm"
 
 
 SECTION "Sound Effects", ROMX
