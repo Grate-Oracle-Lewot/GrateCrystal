@@ -114,4 +114,5 @@ Music:
 	dba Music_Route47
 	dba Music_KantoWildBattleNight
 	dba Music_Surfing
+	dba Music_FinalBattle
 	assert_table_length NUM_MUSIC_SONGS
