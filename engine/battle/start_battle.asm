@@ -44,7 +44,7 @@ PlayBattleMusic:
 	ld de, MUSIC_SUICUNE_BATTLE
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
-	jp z, .done
+	jp z, .mewtwo_music
 	cp BATTLETYPE_CELEBI
 	jp z, .done
 	cp BATTLETYPE_ROAMING
@@ -147,6 +147,13 @@ PlayBattleMusic:
 	pop de
 	pop hl
 	ret
+
+.mewtwo_music
+	ld a, [wTempWildMonSpecies]
+	cp MEWTWO
+	jr nz, .done
+	ld de, MUSIC_MEWTWO_BATTLE
+	jr .done
 
 ClearBattleRAM:
 	xor a
