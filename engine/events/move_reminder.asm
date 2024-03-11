@@ -453,10 +453,10 @@ ChooseMoveToLearn:
 	add hl, bc
 	ld d, h
 	ld e, l
-	ld hl, wStringBuffer1 + 4
+	ld hl, wStringBuffer1 + 3
 	ld bc, 3
 	call PlaceString
-	ld hl, wStringBuffer1 + 7
+	ld hl, wStringBuffer1 + 6
 	ld [hl], "/"
 
 	ld a, [wMenuSelection]
@@ -467,7 +467,7 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld hl, wStringBuffer1 + 8
+	ld hl, wStringBuffer1 + 7
 	and a
 	jr z, .no_power
 	ld [wBuffer1], a
@@ -480,24 +480,24 @@ ChooseMoveToLearn:
 	ld bc, 3
 	call PlaceString
 .got_power
-	ld hl, wStringBuffer1 + 8 + 3
+	ld hl, wStringBuffer1 + 7 + 3
 	ld [hl], "/"
 
 	ld a, [wMenuSelection]
 	dec a
 
-; print PP
+; print accuracy
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_PP
+	ld hl, Moves + MOVE_ACC
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
 	ld [wBuffer1], a
-	ld hl, wStringBuffer1 + 12
+	ld hl, wStringBuffer1 + 11
 	ld de, wBuffer1
-	lb bc, 1, 2
+	lb bc, 1, 3
 	call PrintNum
 	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
