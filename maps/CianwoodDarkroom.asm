@@ -7,6 +7,7 @@ CianwoodDarkroom_MapScripts:
 	scene_script .DummyScene2 ; SCENE_CIANWOODDARKROOM_NOTHING
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .DarkroomStairs
 
 .ResetGauntlet:
 	sdefer ResetGauntletScript
@@ -17,6 +18,13 @@ CianwoodDarkroom_MapScripts:
 
 .DummyScene2:
 	end
+
+.DarkroomStairs:
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iffalse .DoNothing
+	changeblock 2, 6, $1
+.DoNothing:
+	endcallback
 
 ResetGauntletScript:
 	clearevent EVENT_DARKROOM_GAUNTLET
