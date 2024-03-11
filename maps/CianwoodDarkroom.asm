@@ -7,7 +7,6 @@ CianwoodDarkroom_MapScripts:
 	scene_script .DummyScene2 ; SCENE_CIANWOODDARKROOM_NOTHING
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .DarkroomStairs
 
 .ResetGauntlet:
 	sdefer ResetGauntletScript
@@ -18,11 +17,6 @@ CianwoodDarkroom_MapScripts:
 
 .DummyScene2: ; unused
 	end
-
-.DarkroomStairs:
-	changeblock 2, 6, $2c
-	reloadmappart
-	endcallback
 
 ResetGauntletScript:
 	clearevent EVENT_DARKROOM_GAUNTLET
@@ -44,6 +38,7 @@ CianwoodDarkroomGauntletScene:
 	iftrue .End
 	readvar VAR_BADGES
 	ifless NUM_BADGES, .End
+	refreshscreen
 	changeblock 2, 6, $1
 	reloadmappart
 	playsound SFX_ENTER_DOOR
