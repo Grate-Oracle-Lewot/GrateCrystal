@@ -115,4 +115,5 @@ Music:
 	dba Music_KantoWildBattleNight
 	dba Music_Surfing
 	dba Music_FinalBattle
+	dba Music_WildBattle
 	assert_table_length NUM_MUSIC_SONGS
