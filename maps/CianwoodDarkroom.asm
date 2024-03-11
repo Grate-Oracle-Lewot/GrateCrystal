@@ -15,7 +15,7 @@ CianwoodDarkroom_MapScripts:
 .DummyScene1:
 	end
 
-.DummyScene2: ; unused
+.DummyScene2:
 	end
 
 ResetGauntletScript:
@@ -35,9 +35,9 @@ CianwoodDarkroomMachine:
 
 CianwoodDarkroomGauntletScene:
 	checkevent EVENT_DARKROOM_GAUNTLET
-	iftrue .End
+	iftrue .NoGauntlet
 	readvar VAR_BADGES
-	ifless NUM_BADGES, .End
+	ifless NUM_BADGES, .NoGauntlet
 	refreshscreen
 	changeblock 2, 6, $1
 	reloadmappart
@@ -46,7 +46,10 @@ CianwoodDarkroomGauntletScene:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
-.End:
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
+	end
+
+.NoGauntlet:
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	end
 
@@ -68,9 +71,11 @@ CianwoodDarkroomLoreleiPhoto:
 	writetext CianwoodDarkroomLoreleiPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomLoreleiPhotoWinLossText, CianwoodDarkroomLoreleiPhotoWinLossText
 	loadtrainer LORELEI, LORELEI1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_LORELEI
 	checkevent EVENT_DARKROOM_BEAT_AGATHA
@@ -105,9 +110,11 @@ CianwoodDarkroomAgathaPhoto:
 	writetext CianwoodDarkroomAgathaPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomAgathaPhotoWinLossText, CianwoodDarkroomAgathaPhotoWinLossText
 	loadtrainer AGATHA, AGATHA1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_AGATHA
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
@@ -142,9 +149,11 @@ CianwoodDarkroomBrunoPhoto:
 	writetext CianwoodDarkroomBrunoPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
 	loadtrainer REAL_BRUNO, REAL_BRUNO1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_BRUNO
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
@@ -179,9 +188,11 @@ CianwoodDarkroomWillPhoto:
 	writetext CianwoodDarkroomWillPhotoBattleText
 	waitbutton
 	closetext
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
 	loadtrainer REAL_WILL, REAL_WILL1
 	startbattle
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_WILL
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
