@@ -79,10 +79,12 @@ CianwoodDarkroomLoreleiPhoto:
 	writetext CianwoodDarkroomLoreleiPhotoBattleText
 	waitbutton
 	closetext
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomLoreleiPhotoWinLossText, CianwoodDarkroomLoreleiPhotoWinLossText
 	loadtrainer LORELEI, LORELEI1
 	startbattle
+	setevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_LORELEI
@@ -118,10 +120,12 @@ CianwoodDarkroomAgathaPhoto:
 	writetext CianwoodDarkroomAgathaPhotoBattleText
 	waitbutton
 	closetext
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomAgathaPhotoWinLossText, CianwoodDarkroomAgathaPhotoWinLossText
 	loadtrainer AGATHA, AGATHA1
 	startbattle
+	setevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_AGATHA
@@ -157,10 +161,12 @@ CianwoodDarkroomBrunoPhoto:
 	writetext CianwoodDarkroomBrunoPhotoBattleText
 	waitbutton
 	closetext
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
 	loadtrainer REAL_BRUNO, REAL_BRUNO1
 	startbattle
+	setevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_BRUNO
@@ -196,10 +202,12 @@ CianwoodDarkroomWillPhoto:
 	writetext CianwoodDarkroomWillPhotoBattleText
 	waitbutton
 	closetext
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
 	loadtrainer REAL_WILL, REAL_WILL1
 	startbattle
+	setevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_WILL
@@ -222,6 +230,7 @@ EndGauntlet:
 	special FadeOutPalettes
 	playsound SFX_WARP_TO
 	waitsfx
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	warp CIANWOOD_PHOTO_STUDIO, 1, 2
 	end
