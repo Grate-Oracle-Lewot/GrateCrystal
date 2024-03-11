@@ -116,4 +116,5 @@ Music:
 	dba Music_Surfing
 	dba Music_FinalBattle
 	dba Music_WildBattle
+	dba Music_BikeRiding
 	assert_table_length NUM_MUSIC_SONGS
