@@ -114,6 +114,7 @@
 	const MUSIC_FISHING_RADAR                ; 6c
 	const MUSIC_DARKROOM_BATTLE              ; 6d
 	const MUSIC_MEWTWO_BATTLE                ; 6e
+	const MUSIC_MASKED_RIDER                 ; 6f
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
