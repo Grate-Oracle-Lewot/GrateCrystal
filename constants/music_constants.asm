@@ -112,6 +112,7 @@
 	const MUSIC_ROUTE_47                     ; 6a
 	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 6b
 	const MUSIC_FISHING_RADAR                ; 6c
+	const MUSIC_DARKROOM_BATTLE              ; 6d
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
