@@ -113,6 +113,16 @@ PlayBattleMusic:
 	cp RIVAL2
 	jr z, .done
 
+	ld de, MUSIC_DARKROOM_BATTLE
+	cp LORELEI
+	jr z, .done
+	cp AGATHA
+	jr z, .done
+	cp REAL_BRUNO
+	jr z, .done
+	cp REAL_WILL
+	jr z, .done
+
 .othertrainer
 	ld a, [wLinkMode]
 	and a
