@@ -117,6 +117,7 @@
 	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 6f
 	const MUSIC_MASKED_RIDER                 ; 70
 	const MUSIC_POINT_BREAK                  ; 71
+	const MUSIC_DEPARTED_SOULS               ; 72
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
