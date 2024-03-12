@@ -2,9 +2,8 @@
 
 CianwoodDarkroom_MapScripts:
 	def_scene_scripts
-	scene_script .ResetGauntlet ; SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
-	scene_script .DummyScene1 ; SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
-	scene_script .DummyScene2 ; SCENE_CIANWOODDARKROOM_NOTHING
+	scene_script .ResetGauntlet ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .DarkroomStairs
@@ -13,10 +12,11 @@ CianwoodDarkroom_MapScripts:
 	sdefer ResetGauntletScript
 	end
 
-.DummyScene1:
+.DummyScene:
 	end
 
-.DummyScene2:
+.MidGauntlet:
+	sdefer MidGauntletScript
 	end
 
 .DarkroomStairs:
@@ -27,12 +27,15 @@ CianwoodDarkroom_MapScripts:
 	endcallback
 
 ResetGauntletScript:
+	checkjustbattled
+	iftrue .End
 	clearevent EVENT_DARKROOM_GAUNTLET
 	clearevent EVENT_DARKROOM_BEAT_LORELEI
 	clearevent EVENT_DARKROOM_BEAT_AGATHA
 	clearevent EVENT_DARKROOM_BEAT_BRUNO
 	clearevent EVENT_DARKROOM_BEAT_WILL
-	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
+	setscene SCENE_FINISHED
+.End:
 	end
 
 CianwoodDarkroomSign:
@@ -54,11 +57,8 @@ CianwoodDarkroomGauntletScene:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
-	setscene SCENE_CIANWOODDARKROOM_NOTHING
-	end
-
 .NoGauntlet:
-	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
+	setscene SCENE_DEFAULT
 	end
 
 CianwoodDarkroomLoreleiPhoto:
@@ -215,7 +215,7 @@ EndGauntlet:
 	playsound SFX_WARP_TO
 	waitsfx
 	clearevent EVENT_DARKROOM_GAUNTLET
-	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
+	setscene SCENE_DEFAULT
 	warp CIANWOOD_PHOTO_STUDIO, 1, 2
 	end
 
@@ -340,7 +340,7 @@ CianwoodDarkroom_MapEvents:
 	warp_event  2,  7, CIANWOOD_PHOTO_STUDIO, 3
 
 	def_coord_events
-	coord_event  5,  7, SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET, CianwoodDarkroomGauntletScene
+	coord_event  5,  7, SCENE_FINISHED, CianwoodDarkroomGauntletScene
 
 	def_bg_events
 	bg_event  0,  3, BGEVENT_READ, CianwoodDarkroomSign
