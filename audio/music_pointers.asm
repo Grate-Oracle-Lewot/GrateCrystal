@@ -117,4 +117,5 @@ Music:
 	dba Music_FinalBattle
 	dba Music_WildBattle
 	dba Music_BikeRiding
+	dba Music_SurfingPikachu
 	assert_table_length NUM_MUSIC_SONGS
