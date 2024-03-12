@@ -111,13 +111,13 @@
 	const MUSIC_SILPH_CO                     ; 69
 	const MUSIC_ROUTE_47                     ; 6a
 	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 6b
-	const MUSIC_FISHING_RADAR                ; 6c
-	const MUSIC_DARKROOM_BATTLE              ; 6d
-	const MUSIC_MEWTWO_BATTLE                ; 6e
-	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 6f
-	const MUSIC_ABANDONED_LAB                ; 70
-	const MUSIC_MASKED_RIDER                 ; 71
-	const MUSIC_POINT_BREAK                  ; 72
+	const MUSIC_JOHTO_FISHING_RADIO          ; 6c
+	const MUSIC_KANTO_FISHING_RADIO          ; 6d
+	const MUSIC_DARKROOM_BATTLE              ; 6e
+	const MUSIC_MEWTWO_BATTLE                ; 6f
+	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 70
+	const MUSIC_ABANDONED_LAB                ; 71
+	const MUSIC_CYCLING_ROAD                 ; 72
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
