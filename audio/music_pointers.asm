@@ -117,7 +117,7 @@ Music:
 	dba Music_FinalBattle
 	dba Music_WildBattle
 	dba Music_MeetJessieJames
+	dba Music_PokemonTower
 	dba Music_BikeRiding
 	dba Music_SurfingPikachu
-	dba Music_PokemonTower
 	assert_table_length NUM_MUSIC_SONGS
