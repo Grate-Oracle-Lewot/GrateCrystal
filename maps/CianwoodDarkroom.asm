@@ -2,9 +2,9 @@
 
 CianwoodDarkroom_MapScripts:
 	def_scene_scripts
-	scene_script .ResetGauntlet ; SCENE_CIANDWOODDARKROOM_RESET_GAUNTLET
-	scene_script .DummyScene ; SCENE_CIANDWOODDARKROOM_BEGIN_GAUNTLET
-	scene_script .DummyScene ; SCENE_CIANDWOODDARKROOM_NOTHING
+	scene_script .ResetGauntlet ; SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
+	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
+	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_NOTHING
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .DarkroomStairs
@@ -29,7 +29,7 @@ ResetGauntletScript:
 	clearevent EVENT_DARKROOM_BEAT_AGATHA
 	clearevent EVENT_DARKROOM_BEAT_BRUNO
 	clearevent EVENT_DARKROOM_BEAT_WILL
-	setscene SCENE_CIANDWOODDARKROOM_BEGIN_GAUNTLET
+	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
 	end
 
 CianwoodDarkroomSign:
@@ -52,7 +52,7 @@ CianwoodDarkroomGauntletScene:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
 .NoGauntlet:
-	setscene SCENE_CIANDWOODDARKROOM_NOTHING
+	setscene SCENE_CIANWOODDARKROOM_NOTHING
 	end
 
 CianwoodDarkroomLoreleiPhoto:
