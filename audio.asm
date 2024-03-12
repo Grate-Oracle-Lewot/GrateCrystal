@@ -150,9 +150,9 @@ INCLUDE "audio/music/route47.asm"
 INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/wildbattle.asm"
+INCLUDE "audio/music/meetjessiejames.asm"
 INCLUDE "audio/music/bikeriding.asm"
 INCLUDE "audio/music/surfingpikachu.asm"
-INCLUDE "audio/music/meetjessiejames.asm"
 
 
 SECTION "Sound Effects", ROMX
