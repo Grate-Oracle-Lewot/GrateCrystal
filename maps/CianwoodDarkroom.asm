@@ -15,10 +15,6 @@ CianwoodDarkroom_MapScripts:
 .DummyScene:
 	end
 
-.MidGauntlet:
-	sdefer MidGauntletScript
-	end
-
 .DarkroomStairs:
 	checkevent EVENT_DARKROOM_GAUNTLET
 	iffalse .DoNothing
