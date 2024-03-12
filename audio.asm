@@ -151,9 +151,9 @@ INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/wildbattle.asm"
 INCLUDE "audio/music/meetjessiejames.asm"
+INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/bikeriding.asm"
 INCLUDE "audio/music/surfingpikachu.asm"
-INCLUDE "audio/music/pokemontower.asm"
 
 
 SECTION "Sound Effects", ROMX
