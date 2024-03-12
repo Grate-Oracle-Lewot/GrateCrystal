@@ -4,7 +4,7 @@ CianwoodDarkroom_MapScripts:
 	def_scene_scripts
 	scene_script .ResetGauntlet ; SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
-	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_NOTHING
+	scene_script .Waiting ; SCENE_CIANWOODDARKROOM_WAITING
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .DarkroomStairs
@@ -14,6 +14,10 @@ CianwoodDarkroom_MapScripts:
 	end
 
 .DummyScene:
+	end
+
+.Waiting:
+	sdefer WaitingScript
 	end
 
 .DarkroomStairs:
@@ -30,6 +34,13 @@ ResetGauntletScript:
 	clearevent EVENT_DARKROOM_BEAT_BRUNO
 	clearevent EVENT_DARKROOM_BEAT_WILL
 	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
+	end
+
+WaitingScript:
+	checkjustbattled
+	iftrue .End
+	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
+.End:
 	end
 
 CianwoodDarkroomSign:
@@ -52,7 +63,7 @@ CianwoodDarkroomGauntletScene:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
 .NoGauntlet:
-	setscene SCENE_CIANWOODDARKROOM_NOTHING
+	setscene SCENE_CIANWOODDARKROOM_SCENE_CIANWOODDARKROOM_WAITING
 	end
 
 CianwoodDarkroomLoreleiPhoto:
