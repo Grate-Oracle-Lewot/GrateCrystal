@@ -115,6 +115,7 @@
 	const MUSIC_DARKROOM_BATTLE              ; 6d
 	const MUSIC_MEWTWO_BATTLE                ; 6e
 	const MUSIC_MASKED_RIDER                 ; 6f
+	const MUSIC_POINT_BREAK                  ; 70
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
