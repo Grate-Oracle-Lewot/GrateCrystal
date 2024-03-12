@@ -33,8 +33,8 @@ RadioJumptable:
 	dw UnownRadio         ; $09
 	dw EvolutionRadio     ; $0a
 	dw MewtwoRadio1       ; $0b
-	dw FishingGroupRadar1 ; $0c
-	dw MaskedRiderRadio   ; $0d
+	dw JohtoFishingRadio1 ; $0c
+	dw KantoFishingRadio1 ; $0d
 	assert_table_length NUM_RADIO_CHANNELS
 ; OaksPKMNTalk
 	dw OaksPKMNTalk2      ; $0e
@@ -131,8 +131,10 @@ RadioJumptable:
 	dw MewtwoRadio8       ; $61
 	dw MewtwoRadio9       ; $62
 	dw MewtwoRadio10      ; $63
-; Fishing Radar
-	dw FishingGroupRadar2 ; $64
+; Johto Fishing Radio
+	dw JohtoFishingRadio2 ; $64
+; Kanto Fishing Radio
+	dw KantoFishingRadio2 ; $65
 	assert_table_length NUM_RADIO_SEGMENTS
 
 PrintRadioLine:
@@ -1851,7 +1853,7 @@ MewtwoRadioText10:
 	text_far _MewtwoRadioText10
 	text_end
 
-FishingGroupRadar1:
+JohtoFishingRadio1:
 	call StartRadioStation
 	; Fishing group
 	; d = map num
@@ -1867,14 +1869,48 @@ FishingGroupRadar1:
 	ld a, BANK(FishGroups_Names)
 	hlcoord 1, 14
 	call PlaceFarString
-	ld a, FISHING_GROUP_RADIO2
+	ld a, JOHTO_FISHING_RADIO2
 	ld [wNextRadioLine], a
 	ld a, 1
 	ld [wNumRadioLinesPrinted], a	
 	ret
 
-FishingGroupRadar2:
-	ld a, FISHING_GROUP_RADIO2
+JohtoFishingRadio2:
+	ld a, JOHTO_FISHING_RADIO2
+	ld [wNextRadioLine], a
+	ld a, 1
+	ld [wNumRadioLinesPrinted], a
+
+	ld a, RADIO_SCROLL
+	ld [wCurRadioLine], a
+	ld a, 100
+	ld [wRadioTextDelay], a
+	ret
+
+KantoFishingRadio1:
+	call StartRadioStation
+	; Fishing group
+	; d = map num
+	; e = map group
+	ld a, [wMapGroup]
+	ld e, a
+	ld a, [wMapNumber]
+	ld d, a
+	; given map info in 'de'
+	; return: string ptr in 'de'
+	; if 'de' is zero, no fishing group on map
+	farcall GetMapsFishGroup
+	ld a, BANK(FishGroups_Names)
+	hlcoord 1, 14
+	call PlaceFarString
+	ld a, KANTO_FISHING_RADIO2
+	ld [wNextRadioLine], a
+	ld a, 1
+	ld [wNumRadioLinesPrinted], a	
+	ret
+
+KantoFishingRadio2:
+	ld a, KANTO_FISHING_RADIO2
 	ld [wNextRadioLine], a
 	ld a, 1
 	ld [wNumRadioLinesPrinted], a
