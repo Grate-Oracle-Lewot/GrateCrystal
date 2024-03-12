@@ -1521,10 +1521,10 @@ RadioChannels:
 	dbw 16, .PKMNTalkAndPokedexShow ; 04.5
 	dbw 28, .PokemonMusic           ; 07.5
 	dbw 32, .LuckyChannel           ; 08.5
-	dbw 38, .FishingGroupRadar      ; 10.0
+	dbw 38, .JohtoFishingRadio      ; 10.0
 	dbw 40, .BuenasPassword         ; 10.5
 	dbw 52, .RuinsOfAlphRadio       ; 13.5
-	dbw 58, .MaskedRiderRadio       ; 15.0
+	dbw 58, .KantoFishingRadio      ; 15.0
 	dbw 64, .PlacesAndPeople        ; 16.5
 	dbw 72, .LetsAllSing            ; 18.5
 	dbw 78, .PokeFluteRadio         ; 20.0
@@ -1561,14 +1561,6 @@ RadioChannels:
 	cp LANDMARK_RUINS_OF_ALPH
 	jr nz, .NoSignal
 	jp LoadStation_UnownRadio
-
-.MaskedRiderRadio:
-	call .InJohto
-	jr c, .NoSignal
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_EXPN_CARD_F, a
-	jr z, .NoSignal
-	jp LoadStation_MaskedRiderRadio
 
 .PlacesAndPeople:
 	call .InJohto
@@ -1615,8 +1607,8 @@ RadioChannels:
 	jr z, .NoSignal
 	jp LoadStation_MewtwoRadio
 
-.FishingGroupRadar:
-	jp LoadStation_FishingGroupRadar
+.JohtoFishingRadio:
+	jp LoadStation_JohtoFishingRadio
 
 .NoSignal:
 	call NoRadioStation
@@ -1710,17 +1702,6 @@ LoadStation_UnownRadio:
 	ld de, UnownStationName
 	ret
 
-LoadStation_MaskedRiderRadio:
-	ld a, MASKED_RIDER_RADIO
-	ld [wCurRadioLine], a
-	xor a
-	ld [wNumRadioLinesPrinted], a
-	ld a, BANK(PlayRadioShow)
-	ld hl, PlayRadioShow
-	call Radio_BackUpFarCallParams
-	ld de, MaskedRiderStationName
-	ret
-
 LoadStation_PlacesAndPeople:
 	ld a, PLACES_AND_PEOPLE
 	ld [wCurRadioLine], a
@@ -1787,15 +1768,25 @@ LoadStation_MewtwoRadio:
 	ld de, UnownStationName
 	ret
 
-LoadStation_FishingGroupRadar:
-	ld a, FISHING_GROUP_RADIO
+LoadStation_JohtoFishingRadio:
+	ld a, JOHTO_FISHING_RADIO
 	ld [wCurRadioLine], a
 	xor a
 	ld [wNumRadioLinesPrinted], a
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
-	ld de, FishingGroupRadarName
+	ld de, JohtoFishingRadioName
+
+LoadStation_KantoFishingRadio:
+	ld a, KANTO_FISHING_RADIO
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	call Radio_BackUpFarCallParams
+	ld de, KantoFishingRadioName
 
 RadioMusicRestartDE:
 	push de
@@ -1863,11 +1854,12 @@ PokedexShowName:        db "#DEX Show@"
 PokemonMusicName:       db "#MON Music@"
 LuckyChannelName:       db "Lucky Channel@"
 UnownStationName:       db "?????@"
-MaskedRiderStationName: db "Masked Rider@"
+JohtoFishingRadioName:  db "Fish Biome Radar@"
+
 PlacesAndPeopleName:    db "Places & People@"
 LetsAllSingName:        db "Let's All Sing!@"
 PokeFluteStationName:   db "# FLUTE@"
-FishingGroupRadarName:  db "Fish Biome Radar@"
+KantoFishingRadioName:  db "Fish Biome Radar@"
 
 _TownMap:
 	ld hl, wOptions
