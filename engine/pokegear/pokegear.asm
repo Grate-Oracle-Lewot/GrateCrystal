@@ -1608,7 +1608,17 @@ RadioChannels:
 	jp LoadStation_MewtwoRadio
 
 .JohtoFishingRadio:
+	call .InJohto
+	jr nc, .NoSignal
 	jp LoadStation_JohtoFishingRadio
+
+.KantoFishingRadio:
+	call .InJohto
+	jr c, .NoSignal
+	ld a, [wPokegearFlags]
+	bit POKEGEAR_EXPN_CARD_F, a
+	jr z, .NoSignal
+	jp LoadStation_KantoFishingRadio
 
 .NoSignal:
 	call NoRadioStation
