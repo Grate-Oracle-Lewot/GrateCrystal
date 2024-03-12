@@ -9,6 +9,7 @@ PnP_HiddenPeople:
 	db MISSINGNO
 	db CAL
 	db CAL_F
+	db OLD
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
 	db CHAMPION
