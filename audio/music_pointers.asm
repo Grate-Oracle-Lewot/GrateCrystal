@@ -114,10 +114,10 @@ Music:
 	dba Music_Route47
 	dba Music_KantoWildBattleNight
 	dba Music_Surfing
+	dba Music_SurfingPikachu
 	dba Music_FinalBattle
 	dba Music_WildBattle
 	dba Music_MeetJessieJames
 	dba Music_PokemonTower
 	dba Music_BikeRiding
-	dba Music_SurfingPikachu
 	assert_table_length NUM_MUSIC_SONGS
