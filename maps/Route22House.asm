@@ -228,7 +228,7 @@ Route22HouseJessieScript:
 	opentext
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	writetext Route22HouseJessieBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
@@ -254,7 +254,7 @@ Route22HouseJamesScript:
 	opentext
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	writetext Route22HouseJamesBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
