@@ -107,7 +107,6 @@ NUM_RADIO_CHANNELS EQU const_value
 	const MEWTWO_RADIO_9         ; 62
 	const MEWTWO_RADIO_10        ; 63
 	const FISHING_GROUP_RADIO2   ; 64
-	const MASKED_RIDER_RADIO2    ; 65
 NUM_RADIO_SEGMENTS EQU const_value
 
 ; PlayRadioStationPointers indexes (see engine/pokegear/pokegear.asm)
