@@ -4,7 +4,7 @@ CianwoodDarkroom_MapScripts:
 	def_scene_scripts
 	scene_script .ResetGauntlet ; SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
-	scene_script .Waiting ; SCENE_CIANWOODDARKROOM_WAITING
+	scene_script .DummyScene ; SCENE_CIANWOODDARKROOM_WAITING
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .DarkroomStairs
@@ -18,10 +18,6 @@ CianwoodDarkroom_MapScripts:
 	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
 	end
 
-.Waiting:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .DummyScene
-	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 .DummyScene:
 	end
 
@@ -46,8 +42,6 @@ CianwoodDarkroomGauntletScene:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
 .NoGauntlet:
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setscene SCENE_CIANWOODDARKROOM_WAITING
 	end
 
@@ -78,9 +72,7 @@ CianwoodDarkroomLoreleiPhoto:
 	winlosstext CianwoodDarkroomLoreleiPhotoWinLossText, CianwoodDarkroomLoreleiPhotoWinLossText
 	loadtrainer LORELEI, LORELEI1
 	startbattle
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	reloadmapafterbattle
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_DARKROOM_BEAT_LORELEI
 	checkevent EVENT_DARKROOM_BEAT_AGATHA
 	iftrue .CheckBruno
@@ -117,9 +109,7 @@ CianwoodDarkroomAgathaPhoto:
 	winlosstext CianwoodDarkroomAgathaPhotoWinLossText, CianwoodDarkroomAgathaPhotoWinLossText
 	loadtrainer AGATHA, AGATHA1
 	startbattle
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	reloadmapafterbattle
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_DARKROOM_BEAT_AGATHA
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
 	iftrue .CheckBruno
@@ -156,9 +146,7 @@ CianwoodDarkroomBrunoPhoto:
 	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
 	loadtrainer REAL_BRUNO, REAL_BRUNO1
 	startbattle
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	reloadmapafterbattle
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_DARKROOM_BEAT_BRUNO
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
 	iftrue .CheckAgatha
@@ -195,9 +183,7 @@ CianwoodDarkroomWillPhoto:
 	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
 	loadtrainer REAL_WILL, REAL_WILL1
 	startbattle
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	reloadmapafterbattle
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_DARKROOM_BEAT_WILL
 	checkevent EVENT_DARKROOM_BEAT_LORELEI
 	iftrue .CheckAgatha
