@@ -12,6 +12,7 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .bug_contest
