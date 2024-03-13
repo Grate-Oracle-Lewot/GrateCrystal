@@ -24,6 +24,7 @@ FuchsiaGymJanineScript:
 	loadtrainer JANINE, JANINE1
 	startbattle
 	reloadmapafterbattle
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_JANINE
 	special LoadUsedSpritesGFX
