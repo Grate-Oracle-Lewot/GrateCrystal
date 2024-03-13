@@ -7,6 +7,7 @@ CianwoodPhotoStudio_MapScripts:
 	def_callbacks
 
 CianwoodPhotoStudioFishingGuruScript:
+	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
 	setflag ENGINE_PLAINBADGE
