@@ -23,6 +23,7 @@ SaffronGymSabrinaScript:
 	loadtrainer SABRINA, SABRINA1
 	startbattle
 	reloadmapafterbattle
+	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_SABRINA
 	opentext
 	writetext ReceivedMarshBadgeText
