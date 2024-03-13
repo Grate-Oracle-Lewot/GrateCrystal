@@ -44,6 +44,7 @@ CeladonGymErikaScript:
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
+	clearevent EVENT_DARKROOM_GAUNTLET
 	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_ERIKA
 	opentext
