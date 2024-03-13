@@ -1535,7 +1535,7 @@ RadioChannels:
 ; Pokédex Show in the morning
 ; Oak's Pokémon Talk in the afternoon and evening
 	call .InJohto
-	jp nc, .NoSignal
+	jr nc, .NoSignal
 	ld a, [wTimeOfDay]
 	and a
 	jp z, LoadStation_PokedexShow
@@ -1601,6 +1601,10 @@ RadioChannels:
 .ok
 	jp LoadStation_EvolutionRadio
 
+.NoSignal:
+	call NoRadioStation
+	ret
+
 .MewtwoRadio:
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_MEWTWO_RADIO_F, a
@@ -1619,10 +1623,6 @@ RadioChannels:
 	bit POKEGEAR_EXPN_CARD_F, a
 	jr z, .NoSignal
 	jp LoadStation_KantoFishingRadio
-
-.NoSignal:
-	call NoRadioStation
-	ret
 
 .InJohto:
 ; if in Johto or on the S.S. Aqua, set carry
