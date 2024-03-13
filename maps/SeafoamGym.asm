@@ -25,6 +25,7 @@ SeafoamGymBlaineScript:
 	appear SEAFOAMGYM_GYM_GUIDE
 .ReturnAfterBattle:
 	reloadmapafterbattle
+	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_BLAINE
 	opentext
 	writetext ReceivedVolcanoBadgeText
