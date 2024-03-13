@@ -63,7 +63,7 @@ CianwoodDarkroomGauntletScene:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
 .NoGauntlet:
-	setscene SCENE_CIANWOODDARKROOM_SCENE_CIANWOODDARKROOM_WAITING
+	setscene SCENE_CIANWOODDARKROOM_WAITING
 	end
 
 CianwoodDarkroomLoreleiPhoto:
