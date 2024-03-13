@@ -207,6 +207,12 @@ TotodilePokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke FERALIGATR, 100, GOLD_BERRY
+	givepoke MEWTWO, 100, GOLD_BERRY
+	givepoke LUGIA, 100, GOLD_BERRY
+	givepoke HO_OH, 100, GOLD_BERRY
+	givepoke MEGANIUM, 100, GOLD_BERRY
+	givepoke ZAPDOS, 100, GOLD_BERRY
+	giveitem FULL_RESTORE, 99
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
