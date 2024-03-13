@@ -43,6 +43,7 @@ VermilionGymSurgeScript:
 	loadtrainer LT_SURGE, LT_SURGE1
 	startbattle
 	reloadmapafterbattle
+	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_LTSURGE
 	opentext
 	writetext ReceivedThunderBadgeText
