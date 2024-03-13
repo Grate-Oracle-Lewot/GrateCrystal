@@ -228,7 +228,7 @@ StartMenu::
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 1, 16
+	decoord 1, 1
 	farcall PrintHoursMins
 	pop hl
 	pop de
@@ -335,7 +335,7 @@ endr
 ._DrawMenuClockTextBox:
 	call .IsMenuClockOn
 	ret z
-	hlcoord 0, 15
+	hlcoord 0, 0
 	lb bc, 1, 8
 	jp Textbox
 
