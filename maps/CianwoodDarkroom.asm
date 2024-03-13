@@ -10,24 +10,6 @@ CianwoodDarkroom_MapScripts:
 	callback MAPCALLBACK_TILES, .DarkroomStairs
 
 .ResetGauntlet:
-	sdefer ResetGauntletScript
-	end
-
-.DummyScene:
-	end
-
-.Waiting:
-	sdefer WaitingScript
-	end
-
-.DarkroomStairs:
-	checkevent EVENT_DARKROOM_GAUNTLET
-	iffalse .DoNothing
-	changeblock 2, 6, $1
-.DoNothing:
-	endcallback
-
-ResetGauntletScript:
 	clearevent EVENT_DARKROOM_GAUNTLET
 	clearevent EVENT_DARKROOM_BEAT_LORELEI
 	clearevent EVENT_DARKROOM_BEAT_AGATHA
@@ -36,18 +18,22 @@ ResetGauntletScript:
 	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
 	end
 
-WaitingScript:
+.Waiting:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .End
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 .End:
 	end
 
-CianwoodDarkroomSign:
-	jumptext CianwoodDarkroomSignText
+.DummyScene:
+	end
 
-CianwoodDarkroomMachine:
-	jumptext CianwoodDarkroomMachineText
+.DarkroomStairs:
+	checkevent EVENT_DARKROOM_GAUNTLET
+	iffalse .DoNothing
+	changeblock 2, 6, $1
+.DoNothing:
+	endcallback
 
 CianwoodDarkroomGauntletScene:
 	checkevent EVENT_DARKROOM_GAUNTLET
@@ -63,9 +49,16 @@ CianwoodDarkroomGauntletScene:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_DARKROOM_GAUNTLET
 .NoGauntlet:
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setscene SCENE_CIANWOODDARKROOM_WAITING
 	end
+
+CianwoodDarkroomSign:
+	jumptext CianwoodDarkroomSignText
+
+CianwoodDarkroomMachine:
+	jumptext CianwoodDarkroomMachineText
 
 CianwoodDarkroomLoreleiPhoto:
 	opentext
