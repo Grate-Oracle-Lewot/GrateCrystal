@@ -20,6 +20,7 @@ ViridianGymBlueScript:
 	loadtrainer BLUE, BLUE1
 	startbattle
 	reloadmapafterbattle
+	setmapscene CIANWOOD_DARKROOM, SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	setflag ENGINE_MEWTWO_RADIO
