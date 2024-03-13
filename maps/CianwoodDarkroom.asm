@@ -20,11 +20,8 @@ CianwoodDarkroom_MapScripts:
 
 .Waiting:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .End
+	iftrue .DummyScene
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
-.End:
-	end
-
 .DummyScene:
 	end
 
