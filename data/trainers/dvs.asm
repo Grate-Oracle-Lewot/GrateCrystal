@@ -10,14 +10,14 @@ TrainerClassDVs:
 	dn 11, 10, 10, 11 ; JASMINE
 	dn 10, 10, 10, 10 ; CHUCK
 	dn 11, 12, 11, 11 ; CLAIR
-	dn 13, 13, 13, 12 ; RIVAL1
+	dn 12, 13, 13, 12 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 11, 15, 15, 13 ; WILL
-	dn 13, 13, 13, 13 ; CAL
+	dn 14, 13, 13, 14 ; CAL
 	dn 13, 13, 13, 14 ; BRUNO
-	dn 13, 13, 13, 13 ; KAREN
+	dn 14, 14, 14, 14 ; KAREN
 	dn 13, 13, 13, 12 ; KOGA
-	dn 13, 13, 13, 12 ; CHAMPION
+	dn 14, 14, 14, 14 ; CHAMPION
 	dn 12, 11, 11, 12 ; BROCK
 	dn 11, 12, 12, 11 ; MISTY
 	dn 12, 11, 11, 12 ; LT_SURGE
@@ -43,7 +43,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  9 ; SWIMMERF
 	dn 10,  9,  9,  8 ; SAILOR
 	dn  8,  9,  9,  8 ; SUPER_NERD
-	dn 13, 13, 13, 12 ; RIVAL2
+	dn 12, 13, 13, 12 ; RIVAL2
 	dn  8,  9,  9,  8 ; GUITARIST
 	dn  8, 13,  9,  8 ; HIKER
 	dn  8,  9, 11,  8 ; BIKER
@@ -65,7 +65,7 @@ TrainerClassDVs:
 	dn  7,  6,  6,  7 ; TWINS
 	dn 11, 12, 12,  9 ; POKEFANF
 	dn 14, 15, 15, 14 ; RED
-	dn 12, 13, 13, 12 ; BLUE
+	dn 14, 13, 13, 14 ; BLUE
 	dn 10,  9,  7,  8 ; OFFICER
 	dn  7,  8,  8,  7 ; GRUNTF
 	dn 12, 13, 13, 12 ; MYSTICALMAN
@@ -81,6 +81,6 @@ TrainerClassDVs:
 	dn  6,  5,  5,  6 ; OLD
 	dn 13, 14, 14, 13 ; LORELEI
 	dn 13, 14, 14, 13 ; AGATHA
-	dn 13, 13, 13, 13 ; REAL_BRUNO
-	dn 13, 13, 13, 13 ; REAL_WILL
+	dn 14, 13, 13, 14 ; REAL_BRUNO
+	dn 14, 13, 13, 14 ; REAL_WILL
 	assert_table_length NUM_TRAINER_CLASSES
