@@ -279,7 +279,7 @@ AI_TryItem:
 ; if current enemy mon is Perish Songed, don't use items on it
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
-	ret nz
+	jr nz, .no
 
 ; set carry if current mon is highest-leveled one in party
 	ld a, [wOTPartyCount]
@@ -302,6 +302,13 @@ AI_TryItem:
 	call AddNTimes
 	ld a, [hl]
 	cp e
+	jr nc, .yes
+
+.no
+	and a
+	ret
+
+.yes
 	scf
 	ret
 
