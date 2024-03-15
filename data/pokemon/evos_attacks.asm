@@ -76,11 +76,10 @@ CharmanderEvosAttacks:
 	db 7, EMBER
 	db 11, SMOKESCREEN
 	db 15, FIRE_SPIN
-	db 19, RAGE
+	db 19, DRAGON_RAGE
 	db 25, SCARY_FACE
-	db 31, FLAMETHROWER
-	db 37, SLASH
-	db 43, DRAGON_RAGE
+	db 31, SLASH
+	db 37, FLAMETHROWER
 	db 49, FIRE_BLAST
 	db 0 ; no more level-up moves
 
@@ -92,11 +91,10 @@ CharmeleonEvosAttacks:
 	db 7, EMBER
 	db 11, SMOKESCREEN
 	db 15, FIRE_SPIN
-	db 20, RAGE
+	db 20, DRAGON_RAGE
 	db 27, SCARY_FACE
-	db 34, FLAMETHROWER
-	db 41, SLASH
-	db 48, DRAGON_RAGE
+	db 34, SLASH
+	db 41, FLAMETHROWER
 	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
@@ -107,12 +105,12 @@ CharizardEvosAttacks:
 	db 7, EMBER
 	db 11, SMOKESCREEN
 	db 15, FIRE_SPIN
-	db 20, RAGE
+	db 20, DRAGON_RAGE
 	db 27, SCARY_FACE
-	db 34, FLAMETHROWER
-	db 35, AIR_SLASH
-	db 44, SLASH
-	db 54, DRAGON_RAGE
+	db 34, SLASH
+	db 35, WING_ATTACK
+	db 44, FLAMETHROWER
+	db 54, AIR_SLASH
 	db 64, FIRE_BLAST
 	db 0 ; no more level-up moves
 
@@ -445,6 +443,7 @@ NidorinaEvosAttacks:
 
 NidoqueenEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, MEGA_PUNCH
 	db 1, TACKLE
 	db 1, POISON_STING
 	db 1, DOUBLE_KICK
@@ -487,6 +486,7 @@ NidorinoEvosAttacks:
 
 NidokingEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, DOUBLE_EDGE
 	db 1, HORN_ATTACK
 	db 1, POISON_STING
 	db 1, DOUBLE_KICK
@@ -1818,6 +1818,7 @@ StaryuEvosAttacks:
 
 StarmieEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, CONFUSION
 	db 1, RAPID_SPIN
 	db 1, RECOVER
 	db 1, BUBBLEBEAM
@@ -2792,11 +2793,8 @@ BellossomEvosAttacks:
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
 	db 35, EARTH_POWER
-	db 45, MORNING_SUN
-	db 45, MOONLIGHT
-	db 50, SUNNY_DAY
-	db 55, SOLARBEAM
-	db 60, MOONBLAST
+	db 50, MORNING_SUN
+	db 50, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
@@ -3120,7 +3118,7 @@ PinecoEvosAttacks:
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
-	db 2, PROTECT
+	db 2, HARDEN
 	db 4, LEECH_SEED
 	db 9, SELFDESTRUCT
 	db 15, SPIKES
@@ -3518,8 +3516,8 @@ PhanpyEvosAttacks:
 	db 5, WATER_GUN
 	db 9, STOMP
 	db 17, FLAIL
-	db 24, BODY_SLAM
-	db 32, ROLLOUT
+	db 24, ROLLOUT
+	db 32, BODY_SLAM
 	db 40, EARTHQUAKE
 	db 47, SKULL_BASH
 	db 0 ; no more level-up moves
@@ -3531,9 +3529,9 @@ DonphanEvosAttacks:
 	db 5, WATER_GUN
 	db 9, STOMP
 	db 17, FLAIL
-	db 24, BODY_SLAM
+	db 24, ROLLOUT
 	db 29, FURY_ATTACK
-	db 34, ROLLOUT
+	db 34, BODY_SLAM
 	db 42, EARTHQUAKE
 	db 50, SKULL_BASH
 	db 64, MEGAHORN
@@ -3811,6 +3809,7 @@ PupitarEvosAttacks:
 	db 12, SCREECH
 	db 19, THRASH
 	db 25, ROCK_SLIDE
+	db 29, HARDEN
 	db 34, SCARY_FACE
 	db 40, DRAGON_PULSE
 	db 47, CRUNCH
