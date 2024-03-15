@@ -2707,7 +2707,7 @@ TogepiEvosAttacks:
 TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FAIRY_WIND
-	db 1, WING_ATTACK
+	db 1, GUST
 	db 2, CHARM
 	db 3, ENCORE
 	db 7, METRONOME
