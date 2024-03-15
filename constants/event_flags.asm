@@ -1141,7 +1141,9 @@
 	const EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
 	const EVENT_ROUTE_19_HIDDEN_X_EVADE
 	const EVENT_CIANWOOD_CITY_HIDDEN_X_EVADE
-; Unused: next 116 (now 40) events
+	const EVENT_BEAT_PSYCHIC_MELVIN
+	const EVENT_BEAT_FIREBREATHER_GROVER
+; Unused: next 116 (now 38) events
 
 	const_next 1600
 ; Sprite visibility flags
