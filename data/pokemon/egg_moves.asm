@@ -16,6 +16,7 @@ BulbasaurEggMoves:
 CharmanderEggMoves:
 	db BELLY_DRUM
 	db ANCIENTPOWER
+	db RAGE
 	db BITE
 	db OUTRAGE
 	db DRAGON_PULSE
