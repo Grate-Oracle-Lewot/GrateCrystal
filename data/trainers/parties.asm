@@ -2763,6 +2763,11 @@ FirebreatherGroup:
 	db 64, QWILFISH,   BERRY_JUICE,  FLAME_WHEEL, HYDRO_PUMP, POISON_JAB, ROLLOUT
 	db -1 ; end
 
+	; FIREBREATHER (10)
+	db "GROVER@", TRAINERTYPE_NORMAL
+	db 45, VULPIX
+	db -1 ; end
+
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
@@ -2963,6 +2968,12 @@ PsychicGroup:
 	db "RODNEY@", TRAINERTYPE_NORMAL
 	db 46, JIRK
 	db 46, HYPNO
+	db -1 ; end
+
+	; PSYCHIC_T (13)
+	db "MELVIN@", TRAINERTYPE_NORMAL
+	db 40, JYNX
+	db 40, MR__MIME
 	db -1 ; end
 
 PicnickerGroup:
@@ -3408,6 +3419,7 @@ BoarderGroup:
 	; BOARDER (4)
 	db "SVLAD@", TRAINERTYPE_ITEM
 	db 42, DELIBIRD,   GOLD_BERRY
+	db 42, SNOCONEY,   NO_ITEM
 	db -1 ; end
 
 SECTION "Enemy Trainer Parties 2", ROMX
