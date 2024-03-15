@@ -175,7 +175,7 @@ EvolutionMoves::
 	db NO_MOVE      ; COTTONEE
 	db NO_MOVE      ; WHIMSICOTT
 	db NO_MOVE      ; TOGEPI
-	db WING_ATTACK  ; TOGETIC
+	db GUST         ; TOGETIC
 	db NO_MOVE      ; NATU
 	db NO_MOVE      ; XATU
 	db NO_MOVE      ; MAREEP
