@@ -2764,8 +2764,8 @@ FirebreatherGroup:
 	db -1 ; end
 
 	; FIREBREATHER (10)
-	db "GROVER@", TRAINERTYPE_NORMAL
-	db 45, VULPIX
+	db "GROVER@", TRAINERTYPE_ITEM
+	db 45, VULPIX,     EVERSTONE
 	db -1 ; end
 
 JugglerGroup:
@@ -2971,9 +2971,9 @@ PsychicGroup:
 	db -1 ; end
 
 	; PSYCHIC_T (13)
-	db "MELVIN@", TRAINERTYPE_NORMAL
-	db 40, JYNX
-	db 40, MR__MIME
+	db "MELVIN@", TRAINERTYPE_MOVES
+	db 40, MR__MIME,   REFLECT, LIGHT_SCREEN, SUBSTITUTE, BATON_PASS
+	db 40, JYNX,       LOVELY_KISS, SING, DREAM_EATER, ICE_PUNCH
 	db -1 ; end
 
 PicnickerGroup:
