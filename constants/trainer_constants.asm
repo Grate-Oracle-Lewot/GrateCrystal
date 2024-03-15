@@ -535,6 +535,7 @@ KRIS EQU __trainer_class__
 	const RAY
 	const LYLE
 	const IROH
+	const GROVER
 
 	trainerclass JUGGLER ; 31
 	const IRWIN1
@@ -573,6 +574,7 @@ KRIS EQU __trainer_class__
 	const GILBERT
 	const JARED
 	const RODNEY
+	const MELVIN
 
 	trainerclass PICNICKER ; 35
 	const LIZ1
