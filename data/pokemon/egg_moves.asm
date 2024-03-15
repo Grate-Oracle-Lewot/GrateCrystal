@@ -14,7 +14,6 @@ BulbasaurEggMoves:
 	db -1 ; end
 
 CharmanderEggMoves:
-	db SONICBOOM
 	db BELLY_DRUM
 	db ANCIENTPOWER
 	db BITE
