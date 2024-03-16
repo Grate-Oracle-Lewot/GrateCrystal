@@ -126,6 +126,10 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	loadwildmon UNOWN, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
