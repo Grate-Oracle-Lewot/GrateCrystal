@@ -5,6 +5,7 @@
 	const ICEPATH1F_BEAUTY
 	const ICEPATH1F_ROCKER
 	const ICEPATH1F_DRAGONITE
+	const ICEPATH1F_FISHER
 
 IcePath1F_MapScripts:
 	def_scene_scripts
@@ -42,6 +43,17 @@ TrainerBoarderSvlad:
 	closetext
 	end
 
+TrainerFirebreatherGrover:
+	trainer FIREBREATHER, GROVER, EVENT_BEAT_FIREBREATHER_GROVER, FirebreatherGroverSeenText, FirebreatherGroverBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext FirebreatherGroverAfterBattleText
+	waitbutton
+	closetext
+	end
+
 IcePath1FDragoniteScript:
 	faceplayer
 	opentext
@@ -74,7 +86,7 @@ SkierSkyeAfterBattleText:
 
 BoarderSvladSeenText:
 	text "Watch me do a"
-	line "180!"
+	line "360!"
 	done
 
 BoarderSvladBeatenText:
@@ -88,6 +100,21 @@ BoarderSvladAfterBattleText:
 	para "thing you don't"
 	line "want to do is"
 	cont "yodel."
+	done
+
+FirebreatherGroverSeenText:
+	text "Let me light up"
+	line "your life!"
+	done
+
+FirebreatherGroverBeatenText:
+	text "You set my heart"
+	line "ablaze!"
+	done
+
+FirebreatherGroverAfterBattleText:
+	text "I could go for a"
+	line "hot cup of cocoa."
 	done
 
 IcePath1FDragoniteText:
@@ -130,3 +157,4 @@ IcePath1F_MapEvents:
 	object_event 11, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSkierSkye, -1
 	object_event 21,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBoarderSvlad, -1
 	object_event 15, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FDragoniteScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	object_event 34, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherGrover, -1
