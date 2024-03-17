@@ -316,8 +316,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Second types for Pikachu forms may not load in battle. Might be related to the above issue.
 
-- Border tiles get scrambled into game-crashing nonsense if the game is saved when the menu clock is positioned over them. This doesn't happen if the clock is covered by a text box, so I'll move it back down if Nick doesn't find a better fix.
-
 - Haven't worked out how to make Nayru's dex show fishing encounter rates in light of the Odd Rod.
 
 # Why remove some Pokémon and moves?
