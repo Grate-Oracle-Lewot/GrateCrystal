@@ -126,6 +126,7 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	giveitem MASTER_BALL
 	loadwildmon UNOWN, 1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
