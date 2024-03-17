@@ -3076,6 +3076,12 @@ ConfusionDamageCalc:
 	and a
 	jr nz, .DoneItem
 
+; Struggle isn't boosted by Pink Bow
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	cp STRUGGLE
+	jr z, .DoneItem
+
 	call GetUserItem
 
 	ld a, b
