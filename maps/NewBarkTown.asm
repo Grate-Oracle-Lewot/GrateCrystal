@@ -126,12 +126,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	giveitem MASTER_BALL
-	giveitem TM_HIDDEN_POWER
-	loadwildmon PIKACHU, 1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
