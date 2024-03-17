@@ -1740,7 +1740,7 @@ wInBattleTowerBattle::
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wAskingToSave:: db
 
 wFXAnimID:: dw
 
