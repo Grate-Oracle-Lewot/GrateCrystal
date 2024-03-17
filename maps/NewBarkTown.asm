@@ -127,7 +127,8 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	giveitem MASTER_BALL
-	loadwildmon UNOWN, 1
+	giveitem TM_HIDDEN_POWER
+	loadwildmon PIKACHU, 1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
