@@ -1191,6 +1191,8 @@ INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
+
+; Struggle doesn't get the boost
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp STRUGGLE
