@@ -25,6 +25,8 @@ Route32Pokecenter1FFishingGuruScript:
 	opentext
 	checkevent EVENT_GOT_OLD_ROD
 	iftrue .GotOldRod
+	checkflag ENGINE_POKEDEX
+	iffalse .GotOldRod
 	writetext Route32Pokecenter1FFishingGuruText_Question
 	yesorno
 	iffalse .Refused
@@ -54,33 +56,50 @@ Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
 
 Route32Pokecenter1FFishingGuruText_Question:
-	text "This is a great"
-	line "fishing spot."
+	text "Oh, you have that"
+	line "fancy new #DEX"
+	cont "of NAYRU's!"
 
-	para "You saw people"
-	line "fishing? How"
-	cont "about you?"
+	para "It's convenient how"
+	line "it shows detailed"
 
-	para "Would you like a"
-	line "fishing ROD?"
+	para "encounter rates"
+	line "for wild #MON…"
+
+	para "But have you"
+	line "noticed… It"
+
+	para "doesn't say any-"
+	line "thing about what"
+
+	para "kinds of #MON"
+	line "you'll catch with"
+	cont "fishing rods?"
+
+	para "I guess it can't"
+	line "scan underwater."
+
+	para "But you know… that"
+	line "makes fishing an"
+	cont "exciting mystery!"
+
+	para "Don't you agree?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
-	text "Heh, that's good"
-	line "to hear."
-
-	para "Now you're an"
-	line "angler too!"
+	text "That's the spirit!"
+	line "I'll give you this!"
 	done
 
 Route32Pokecenter1FFishingGuruText_GiveOldRod:
-	text "Fishing is great!"
+	text "Try out that ROD"
+	line "in any body of"
 
-	para "If there's water,"
-	line "be it the sea or a"
+	para "water, and see"
+	line "what wonderful"
 
-	para "stream, try out"
-	line "your ROD."
+	para "things you fish"
+	line "up!"
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
