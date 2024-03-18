@@ -190,7 +190,7 @@
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
-
+	charmap "<INV_EX>",  $e4 ; inverted exclamation mark
 	charmap "<INV_QU>",  $e5 ; inverted question mark
 	charmap "?",         $e6
 	charmap "!",         $e7
