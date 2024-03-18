@@ -3792,7 +3792,7 @@ AerobonesGroup:
 	; AEROBONES (1)
 	db "?????@", TRAINERTYPE_NICKNAME
 	db 50, AERODACTYL, "??????????@"
-	db 50, UNOWN,      "???@"
+	db 50, UNOWN,      "<INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU>@"
 	db 50, HAUNTER,    "GHOST@"
 	db -1 ; end
 
@@ -3809,7 +3809,7 @@ MissingnoGroup:
 	db "NO.@", TRAINERTYPE_NICKNAME
 	db 50, BAYLEEF,    "          @"
 	db 50, UNOWN,      " @"
-	db 50, HAUNTER,    "<INV_QU>        ?@"
+	db 50, HAUNTER,    "         ?@"
 	db -1 ; end
 
 GamblerGroup:
