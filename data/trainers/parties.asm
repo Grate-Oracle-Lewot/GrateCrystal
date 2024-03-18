@@ -3809,7 +3809,7 @@ MissingnoGroup:
 	db "NO.@", TRAINERTYPE_NICKNAME
 	db 50, BAYLEEF,    "          @"
 	db 50, UNOWN,      " @"
-	db 50, HAUNTER,    "         ?@"
+	db 50, HAUNTER,    "<INV_QU>        ?@"
 	db -1 ; end
 
 GamblerGroup:
