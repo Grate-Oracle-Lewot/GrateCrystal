@@ -13,5 +13,5 @@ MailEntry_Lowercase:
 	db "k l m n o p q r s t"
 	db "u v w x y z   . - /"
 	db "'d 'l 'm 'r 's 't 'v & ( )"
-	db "“ ” [ ] ' : ;      "
+	db "“ ” [ ] ' : ; <INV_QU> <INV_EX> <FLOAT>"
 	db "UPPER  DEL   END   "
