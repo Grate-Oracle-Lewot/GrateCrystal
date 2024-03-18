@@ -139,6 +139,12 @@ SeafoamCaveBookText3:
 	line "liday celebrating"
 	cont "the GUIDE."
 
+	para "In my circles, it's"
+	line "on May 25th, but"
+
+	para "other dates have"
+	line "been proposed."
+
 	para "Keep reading?"
 	done
 
@@ -162,6 +168,15 @@ SeafoamCaveBookText4:
 	para "hacking is hard,"
 	line "okay?"
 
+	para "WHIMSICOTT is"
+	line "PERCY's favorite."
+
+	para "I would've put"
+	line "JUMPLUFF on my"
+
+	para "team if PERCY"
+	line "didn't have it."
+
 	para "Keep reading?"
 	done
 
@@ -182,6 +197,15 @@ SeafoamCaveBookText5:
 	line "#MON is up"
 	cont "there as well."
 
+	para "It's my favorite"
+	line "generation, but"
+
+	para "I'm not averse to"
+	line "the newer games."
+
+	para "HGSS is peak for"
+	line "me, though."
+
 	para "Keep reading?"
 	done
 
@@ -191,11 +215,13 @@ SeafoamCaveBookText6:
 	cont "that UBEQC thing."
 
 	para "The square is pur-"
-	line "ple and represents"
+	line "ple, and its size"
 
-	para "the number of good"
-	line "people in the"
-	cont "universe."
+	para "represents the"
+	line "number of good"
+
+	para "people in the"
+	line "universe."
 
 	para "The circle's green"
 	line "and represents the"
