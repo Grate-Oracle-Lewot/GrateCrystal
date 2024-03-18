@@ -11,6 +11,8 @@ GoodRodGuru:
 	opentext
 	checkevent EVENT_GOT_GOOD_ROD
 	iftrue .AlreadyGotItem
+	checkflag ENGINE_RADIO_CARD
+	iffalse .NoRadioCard
 	writetext OfferGoodRodText
 	yesorno
 	iffalse .DontWantIt
@@ -36,23 +38,43 @@ GoodRodGuru:
 	closetext
 	end
 
+.NoRadioCard:
+	writetext GoodRodNoRadioCardText
+	waitbutton
+	closetext
+	end
+
 GoodRodHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 OfferGoodRodText:
-	text "OLIVINE is on the"
-	line "sea!"
+	text "Your #GEAR is"
+	line "cool…"
 
-	para "And if it's on the"
-	line "sea, there are"
-	cont "bound to be fish!"
+	para "Oh! You have a"
+	line "RADIO CARD!"
 
-	para "I've fished here"
-	line "for 42 years."
+	para "Have you run acr-"
+	line "oss a station"
 
-	para "Would you like to"
-	line "face the sea and"
-	cont "fish?"
+	para "called the Fish"
+	line "Biome Radar?"
+
+	para "It scans the area"
+	line "to determine the"
+
+	para "local habitat for"
+	line "water-dwelling"
+	cont "#MON."
+
+	para "With that kind of"
+	line "technology, you"
+
+	para "need a suitable"
+	line "ROD to match!"
+
+	para "How would you like"
+	line "this GOOD ROD?"
 	done
 
 GiveGoodRodText:
@@ -78,6 +100,17 @@ DontWantGoodRodText:
 HaveGoodRodText:
 	text "How are things?"
 	line "Land the big one?"
+	done
+
+GoodRodNoRadioCardText:
+	text "Your #GEAR is"
+	line "cool…"
+
+	para "I heard you can"
+	line "get a CARD for it"
+
+	para "that lets you lis-"
+	line "ten to the radio."
 	done
 
 OlivineGoodRodHouse_MapEvents:
