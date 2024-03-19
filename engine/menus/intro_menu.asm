@@ -632,6 +632,8 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
+	call StartPCItem
+
 	ld de, MUSIC_AZALEA_TOWN
 	call PlayMusic
 
@@ -737,6 +739,15 @@ OakText6:
 OakText7:
 	text_far _OakText7
 	text_end
+
+StartPCItem:
+    ld a, PORTRAITMAIL
+    ld [wCurItem], a
+    ld a, 1
+    ld [wItemQuantityChange], a
+    ld hl, wNumPCItems
+    call ReceiveItem
+    ret
 
 NamePlayer:
 	farcall MovePlayerPicRight
