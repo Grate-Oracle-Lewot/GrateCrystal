@@ -236,8 +236,9 @@ ENDM
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
 	dict "<PLAY_G>",  PlaceGenderedPlayerName
-	dict "ﾟ",         .diacritic
-	dict "ﾞ",         .diacritic
+; Next two lines dummied out because they interfered with using <INV_QU> and <INV_EX> in the naming menu.
+;	dict "ﾟ",         .diacritic
+;	dict "ﾞ",         .diacritic
 	jr .not_diacritic
 
 .diacritic
