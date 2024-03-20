@@ -126,10 +126,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
-	loadwildmon MEWTWO, 75
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
