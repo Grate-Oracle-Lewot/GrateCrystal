@@ -25,6 +25,9 @@ CianwoodPhotoStudioFishingGuruScript:
 	closetext
 	end
 
+CianwoodPhotoStudioSketchbook:
+	jumptext CianwoodPhotoStudioSketchbookText
+
 CianwoodPhotoStudioLandscapeShot:
 	jumptext CianwoodPhotoStudioLandscapeShotText
 
@@ -73,6 +76,7 @@ CianwoodPhotoStudio_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3,  4, BGEVENT_READ, CianwoodPhotoStudioSketchbook
 	bg_event  3,  0, BGEVENT_READ, CianwoodPhotoStudioLandscapeShot
 	bg_event  5,  0, BGEVENT_READ, CianwoodPhotoStudioLandscapeShot
 
