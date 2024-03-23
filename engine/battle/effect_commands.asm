@@ -7018,13 +7018,14 @@ BattleCommand_CheckContact:
 	ld [hl], b
 
 .StaticAnim:
-	ld de, ANIM_PAR ; doesn't seem to work
+	call BattleCommand_SwitchTurn
+	ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
+	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
-;	ld hl, UseHeldStatusHealingItem
-;	call CallBattleCore
+	call CureStaticWithHeldItem
 
 ; Static should be doublechecked too if you have any Fairy/Electric (as opposed to Electric/Fairy) types
 .DoublecheckFairy:
@@ -7049,8 +7050,14 @@ BattleCommand_CheckContact:
 	ret nc
 
 	set SUBSTATUS_IN_LOVE, [hl]
+	call BattleCommand_SwitchTurn
 	ld de, ANIM_IN_LOVE
 	call PlayOpponentBattleAnim
+	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
+
+CureStaticWithHeldItem:
+
+	ret
