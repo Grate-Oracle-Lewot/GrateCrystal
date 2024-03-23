@@ -49,6 +49,14 @@ CianwoodPhotoStudioFishingGuruText_No:
 	line "memento…"
 	done
 
+CianwoodPhotoStudioSketchbookText:
+	text "Based on his"
+	line "sketches, there's"
+
+	para "a reason he went"
+	line "into photography…"
+	done
+
 CianwoodPhotoStudioLandscapeShotText:
 	text "It's a beautiful"
 	line "landscape shot."
