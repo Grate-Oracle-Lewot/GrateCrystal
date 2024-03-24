@@ -1157,3 +1157,11 @@ CuteCharmText:
 	scroll "<TARGET>'s"
 	scroll "cuteness!"
 	autodone
+
+StaticPrzcureberryText:
+	text "<USER>"
+	line "recovered using a"
+	scroll "@"
+	text_ram wStringBuffer1
+	text "!"
+	autodone
