@@ -7100,8 +7100,9 @@ CureStaticWithHeldItem:
 	ld hl, wOTPartyMon1Item
 	ld de, wEnemyMonItem
 .found_user
-	ld [hl], NO_ITEM
-	ld [de], NO_ITEM
+	ld a, NO_ITEM
+	ld [hl], a
+	ld [de], a
 
 	ld hl, StaticPrzcureberryText
 	jp StdBattleTextbox
