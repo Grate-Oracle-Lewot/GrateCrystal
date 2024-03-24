@@ -7029,6 +7029,12 @@ BattleCommand_CheckContact:
 
 ; Static should be doublechecked too if you have any Fairy/Electric (as opposed to Electric/Fairy) types
 .DoublecheckFairy:
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .DoublecheckTargetType
+	ld hl, wBattleMonType1
+.DoublecheckTargetType:
 	ld a, [hli]
 	cp FAIRY
 	jr z, .CuteCharm
@@ -7059,5 +7065,30 @@ BattleCommand_CheckContact:
 	jp StdBattleTextbox
 
 CureStaticWithHeldItem:
+	call GetUserItem
+	ld a, b
+	cp HELD_HEAL_PARALYZE
+	ret nz
 
-	ret
+	push hl
+	push de
+	push bc
+	call EmptyBattleTextbox
+	ld a, RECOVER
+	ld [wFXAnimID], a
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	pop bc
+	pop de
+	pop hl
+
+	call RefreshBattleHuds
+	call GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	callfar ConsumeHeldItem
+	ld hl, RecoveredUsingText
+	jp StdBattleTextbox
