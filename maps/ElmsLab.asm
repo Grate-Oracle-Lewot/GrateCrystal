@@ -753,8 +753,8 @@ ElmText_Accepted:
 	done
 
 ElmText_Refused:
-	text "But… Please, I"
-	line "need your help!"
+	text "…It wasn't a"
+	line "question."
 	done
 
 ElmText_GotAnEmail:
