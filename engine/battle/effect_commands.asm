@@ -7084,13 +7084,11 @@ CureStaticWithHeldItem:
 	pop de
 	pop hl
 
-	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
-	call GetUserItem
+	call GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
-	call BattleCommand_SwitchTurn
 	jp StdBattleTextbox
