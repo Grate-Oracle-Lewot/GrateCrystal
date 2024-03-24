@@ -25,7 +25,7 @@ MonMenuIcons:
 	db ICON_BIRD        ; SPEAROW
 	db ICON_BIRD        ; FEAROW
 	db ICON_SERPENT     ; EKANS
-	db ICON_SERPENT     ; ARBOK
+	db ICON_ARBOK       ; ARBOK
 	db ICON_PIKACHU     ; PIKACHU
 	db ICON_PIKACHU     ; RAICHU
 	db ICON_MONSTER     ; SANDSHREW
@@ -45,8 +45,8 @@ MonMenuIcons:
 	db ICON_BAT         ; ZUBAT
 	db ICON_BAT         ; GOLBAT
 	db ICON_ODDISH      ; ODDISH
-	db ICON_ODDISH      ; GLOOM
-	db ICON_FLOWER      ; VILEPLUME
+	db ICON_VILEPLUME   ; GLOOM
+	db ICON_VILEPLUME   ; VILEPLUME
 	db ICON_BUG         ; PARAS
 	db ICON_BUG         ; PARASECT
 	db ICON_FLEA        ; VENONAT
