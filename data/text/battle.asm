@@ -1154,7 +1154,6 @@ StaticParalysisText:
 CuteCharmText:
 	text "<USER>"
 	line "was infatuated by"
-
-	autopara "<TARGET>'s"
-	line "cuteness!"
+	scroll "<TARGET>'s"
+	scroll "cuteness!"
 	autodone
