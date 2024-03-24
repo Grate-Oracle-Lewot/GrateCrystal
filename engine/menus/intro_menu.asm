@@ -88,10 +88,7 @@ AreYouABoyOrAreYouAGirl:
 ResetWRAM:
 	xor a
 	ldh [hBGMapMode], a
-	call _ResetWRAM
-	ret
 
-_ResetWRAM:
 	ld hl, wVirtualOAM
 	ld bc, wOptions - wVirtualOAM
 	xor a
