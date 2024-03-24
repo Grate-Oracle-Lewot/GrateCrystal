@@ -7084,6 +7084,7 @@ CureStaticWithHeldItem:
 	pop de
 	pop hl
 
+	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
 	call GetUserItem
 	ld a, [hl]
@@ -7091,4 +7092,5 @@ CureStaticWithHeldItem:
 	call GetItemName
 	callfar ConsumeHeldItem
 	ld hl, RecoveredUsingText
+	call BattleCommand_SwitchTurn
 	jp StdBattleTextbox
