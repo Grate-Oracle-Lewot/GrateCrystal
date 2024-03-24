@@ -7092,7 +7092,12 @@ CureStaticWithHeldItem:
 	call UpdateEnemyMonInParty
 	call RefreshBattleHuds
 
-	call GetUserItem
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_item
+	ld hl, wEnemyMonItem
+.got_item
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
