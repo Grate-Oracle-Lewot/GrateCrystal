@@ -6954,9 +6954,9 @@ BattleCommand_CheckContact:
 	ld hl, wPlayerScreens
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .got_turn
+	jr z, .go2
 	ld hl, wEnemyScreens
-.got_turn
+.go2
 	bit SCREENS_SAFEGUARD, [hl]
 	jr nz, .DoublecheckFairy
 
@@ -6969,9 +6969,9 @@ BattleCommand_CheckContact:
 	set PAR, [hl]
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .go2
+	jr z, .go3
 	call UpdateEnemyMonInParty
-.go2
+.go3
 	call UpdateBattleMonInParty
 
 	ldh a, [hBattleTurn]
@@ -7070,9 +7070,6 @@ CureStaticWithHeldItem:
 	cp HELD_HEAL_PARALYZE
 	ret nz
 
-	push hl
-	push de
-	push bc
 	call EmptyBattleTextbox
 	ld a, RECOVER
 	ld [wFXAnimID], a
@@ -7080,15 +7077,31 @@ CureStaticWithHeldItem:
 	ld [wNumHits], a
 	ld [wFXAnimID + 1], a
 	predef PlayBattleAnim
-	pop bc
-	pop de
-	pop hl
 
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld [hl], 0
+	call CalcPlayerStats
+	call UpdateBattleMonInParty
+	call CalcEnemyStats
+	call UpdateEnemyMonInParty
 	call RefreshBattleHuds
-	call GetOpponentItem
+
+	call GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
-	callfar ConsumeHeldItem
-	ld hl, RecoveredUsingText
+
+	ld hl, wPartyMon1Item
+	ld de, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .found_user
+	ld hl, wOTPartyMon1Item
+	ld de, wEnemyMonItem
+.found_user
+	ld [hl], NO_ITEM
+	ld [de], NO_ITEM
+
+	ld hl, StaticPrzcureberryText
 	jp StdBattleTextbox
