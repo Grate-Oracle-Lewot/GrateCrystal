@@ -7068,9 +7068,14 @@ CureStaticWithHeldItem:
 	call GetUserItem
 	ld a, b
 	cp HELD_HEAL_PARALYZE
+	jr z, .heal
+	cp HELD_HEAL_STATUS
 	ret nz
 
-	call EmptyBattleTextbox
+.heal
+	ld hl, .empty_text
+	call BattleTextbox
+
 	ld a, RECOVER
 	ld [wFXAnimID], a
 	xor a
@@ -7106,3 +7111,6 @@ CureStaticWithHeldItem:
 
 	ld hl, StaticPrzcureberryText
 	jp StdBattleTextbox
+
+.empty_text:
+	text_end
