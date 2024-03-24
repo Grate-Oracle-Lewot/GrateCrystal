@@ -40,4 +40,5 @@ SpriteMons:
 	db SUNFLORA
 	db MAGIKARP
 	db DRAGONITE
+	db ABRA
 	assert_table_length NUM_POKEMON_SPRITES
