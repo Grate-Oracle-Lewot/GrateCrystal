@@ -297,9 +297,13 @@ LassBridgetBeatenText:
 	done
 
 LassBridgetAfterBattleText:
-	text "I'm trying to beat"
-	line "WHITNEY, but…"
-	cont "It's depressing."
+	text "If your #MON"
+	line "touches a fairy-"
+	cont "type, it may get"
+	cont "infatuated!"
+
+	para "But only if it's"
+	line "the other gender."
 	done
 
 BridgetWhitneyCriesText:
@@ -338,9 +342,9 @@ BeautyVictoriaBeatenText:
 	done
 
 BeautyVictoriaAfterBattleText:
-	text "Wow, you must be"
-	line "good to beat me!"
-	cont "Keep it up!"
+	text "I'm trying to beat"
+	line "WHITNEY, but…"
+	cont "It's depressing."
 	done
 
 BeautySamanthaSeenText:
