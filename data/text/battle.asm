@@ -1162,6 +1162,6 @@ StaticPrzcureberryText:
 	text "<USER>"
 	line "recovered using a"
 	scroll "@"
-	text_ram wStringBuffer3
+	text_ram wStringBuffer1
 	text "!"
 	autodone
