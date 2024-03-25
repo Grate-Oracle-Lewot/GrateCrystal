@@ -30,7 +30,6 @@ ReadTrainerParty:
 	ld a, [wOtherTrainerID]
 	cp CAL1
 	jr z, .cal1
-.no_mystery_gift_trainer
 	ld a, [wOtherTrainerClass]
 .not_cal1
 
@@ -83,6 +82,11 @@ ReadTrainerParty:
 	call ReadTrainerPartyPieces
 	call CloseSRAM
 	jp ComputeTrainerReward
+
+.no_mystery_gift_trainer
+	call CloseSRAM
+	ld a, [wOtherTrainerClass]
+	jr .not_cal1
 
 ReadTrainerPartyPieces:
 	ld h, d
