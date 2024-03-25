@@ -350,6 +350,20 @@ AcademyParalysisText:
 	para "To prevent being"
 	line "paralyzed, hold a"
 	cont "LIMBO STICK."
+
+	para "If an electric-"
+	line "type is hit by a"
+
+	para "move that makes"
+	line "contact, the"
+
+	para "attacker may be"
+	line "paralyzed by"
+	cont "static shock."
+
+	para "However, ground-"
+	line "types needn't fear"
+	cont "static."
 	done
 
 AcademySleepText:
@@ -368,6 +382,10 @@ AcademySleepText:
 	para "Prevent sleep by"
 	line "holding a NOISE-"
 	cont "MAKER."
+
+	para "Some special moves"
+	line "can only be used"
+	cont "while asleep."
 	done
 
 AcademyBurnText:
