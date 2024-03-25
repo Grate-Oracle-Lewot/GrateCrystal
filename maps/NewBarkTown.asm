@@ -126,7 +126,8 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon PIKACHU, 1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon MAREEP, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
