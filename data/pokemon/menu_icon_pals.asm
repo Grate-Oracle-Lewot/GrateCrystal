@@ -29,8 +29,8 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; FEAROW
 	icon_pals PURPLE, GREEN  ; EKANS
 	icon_pals PURPLE, GRAY   ; ARBOK
-	icon_pals YELLOW, BROWN  ; PIKACHU
-	icon_pals BROWN,  YELLOW ; RAICHU
+	icon_pals YELLOW, GREEN  ; PIKACHU
+	icon_pals BROWN,  PURPLE ; RAICHU
 	icon_pals BROWN,  GRAY   ; SANDSHREW
 	icon_pals BROWN,  RED    ; SANDSLASH
 	icon_pals BLUE,   PINK   ; NIDORAN_F
