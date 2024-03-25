@@ -46,6 +46,8 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
 - Pseudo-Abilities:
   - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap; an up arrow is shown to indicate levitation in battle and on the stats screen
+  - All Electric types have a 30% chance to Paralyze attackers on contact (but Ground types are immune to this)
+  - All Fairy types have a 30% chance to infatuate opposite-gender attackers on contact
   - All Grass types get a 50% Speed boost in Sunny weather
   - All Rock types get a 50% Special Defense boost in Sandstorms
   - Fire types are immune to being Frozen
