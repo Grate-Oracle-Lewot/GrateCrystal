@@ -126,10 +126,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
-	loadwildmon MAREEP, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
