@@ -1,9 +1,4 @@
 _SacredAsh:
-	ld a, $0
-	ld [wItemEffectSucceeded], a
-	call CheckAnyFaintedMon
-	ret nc
-
 	ld hl, SacredAshScript
 	call QueueScript
 	ld a, $1
