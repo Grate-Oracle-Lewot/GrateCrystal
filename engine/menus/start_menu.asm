@@ -127,7 +127,10 @@ StartMenu::
 	call ExitMenu
 	ld a, HMENURETURN_SCRIPT
 	ldh [hMenuReturn], a
-	jr .ReturnEnd2
+	call CloseText
+	call UpdateTimePals
+	call RefreshScreen
+	ret
 
 .ExitMenuCallFuncCloseText:
 	call ExitMenu
