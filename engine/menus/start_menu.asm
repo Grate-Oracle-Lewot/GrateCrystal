@@ -129,7 +129,7 @@ StartMenu::
 	ldh [hMenuReturn], a
 	call CloseText
 	call UpdateTimePals
-	call RefreshScreen
+	call Script_reloadmap
 	ret
 
 .ExitMenuCallFuncCloseText:
