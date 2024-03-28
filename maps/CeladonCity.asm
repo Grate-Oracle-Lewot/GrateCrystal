@@ -309,9 +309,8 @@ CeladonCityYoungster1Text:
 	text "Want to know a"
 	line "secret?"
 
-	para "CELADON MANSION"
-	line "has a hidden back"
-	cont "door."
+	para "The CONDOS have a"
+	line "hidden back door."
 	done
 
 CeladonCityYoungster2Text:
@@ -372,7 +371,8 @@ CeladonCityDeptStoreSignText:
 	done
 
 CeladonCityMansionSignText:
-	text "CELADON MANSION"
+	text "CELADON"
+	line "CONDOMINIUMS"
 	done
 
 CeladonCityGameCornerSignText:
