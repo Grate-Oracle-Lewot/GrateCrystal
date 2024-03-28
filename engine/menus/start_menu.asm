@@ -337,17 +337,8 @@ endr
 	jp .MenuClockText
 
 .IsMenuClockOn:
-; Hide the clock while saving.
-	ld a, [wAskingToSave]
-	jr nz, .hide_clock
-
-; If not saving, check if the clock option is on or off.
 	ld a, [wOptions2]
 	and 1 << MENU_CLOCK
-	ret
-
-.hide_clock
-	ld a, 0
 	ret
 
 .DrawBugContestStatusBox:
@@ -395,20 +386,13 @@ StartMenu_Quit:
 StartMenu_Save:
 ; Save the game.
 
-; Hide the menu clock while saving.
-	ld a, 1
-	ld [wAskingToSave], a
-
 	call BufferScreen
 	farcall SaveMenu
 	jr nc, .saved
 	ld a, 0
-	ld [wAskingToSave], a
 	ret
 
 .saved
-	ld a, 0
-	ld [wAskingToSave], a
 	ld a, 1
 	ret
 
