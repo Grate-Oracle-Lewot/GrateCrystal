@@ -175,6 +175,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
 - Lucky Punch works for Blissey as well as Chansey
+- Sacred Ash can be used even if no party Pokémon are currently fainted
 - Most Berries and some other items renamed for flavor
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball (Timer Ball can tick up to x10 catch chance)
 - 60 TMs and 8 HMs
