@@ -126,19 +126,7 @@ StartMenu::
 	call ExitMenu
 	ld a, HMENURETURN_SCRIPT
 	ldh [hMenuReturn], a
-	call CloseText
-	call UpdateTimePals
-
-; reload map to fix border block glitch
-	xor a
-	ld [wBattleScriptFlags], a
-	ld a, MAPSETUP_RELOADMAP
-	ldh [hMapEntryMethod], a
-	ld a, MAPSTATUS_ENTER
-	call LoadMapStatus
-	ld hl, wScriptFlags
-	res SCRIPT_RUNNING, [hl]
-	ret
+	jr .ReturnEnd2
 
 .ExitMenuCallFuncCloseText:
 	call ExitMenu
