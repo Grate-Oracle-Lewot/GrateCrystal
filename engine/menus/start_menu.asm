@@ -89,7 +89,8 @@ StartMenu::
 	call ExitMenu
 .ReturnEnd2:
 	call CloseText
-	jp UpdateTimePals
+	call UpdateTimePals
+	ret
 
 .GetInput:
 ; Return carry on exit, and no-carry on selection.
@@ -163,7 +164,8 @@ StartMenu::
 	call .DrawBugContestStatus
 	call UpdateSprites
 	call GSReloadPalettes
-	jp FinishExitMenu
+	call FinishExitMenu
+	ret
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -227,7 +229,8 @@ StartMenu::
 	ld d, [hl]
 	ld e, a
 	pop hl
-	jp PlaceString
+	call PlaceString
+	ret
 
 .MenuClockText:
 	push bc
