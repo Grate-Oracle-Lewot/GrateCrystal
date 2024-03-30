@@ -28,14 +28,12 @@ SaveAfterLinkTrade:
 	farcall StageRTCTimeForSave
 	farcall BackupMysteryGift
 	call SavePokemonData
-	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
 	farcall BackupPartyMonMail
 	farcall SaveRTC
-	call ResumeGameLogic
-	ret
+	jp ResumeGameLogic
 
 ChangeBoxSaveGame:
 	push de
@@ -62,13 +60,11 @@ ChangeBoxSaveGame:
 
 Link_SaveGame:
 	call AskOverwriteSaveFile
-	jr c, .refused
+	ret c
 	call PauseGameLogic
 	call SavedTheGame
 	call ResumeGameLogic
 	and a
-
-.refused
 	ret
 
 MoveMonWOMail_SaveGame:
@@ -79,8 +75,7 @@ MoveMonWOMail_SaveGame:
 	ld a, e
 	ld [wCurBox], a
 	call LoadBox
-	call ResumeGameLogic
-	ret
+	jp ResumeGameLogic
 
 MoveMonWOMail_InsertMon_SaveGame:
 	call PauseGameLogic
@@ -98,7 +93,6 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
-	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
@@ -262,7 +256,6 @@ SaveGameData:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
-	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveBox
 	call SaveChecksum
 	call ValidateBackupSave
@@ -283,8 +276,7 @@ SaveGameData:
 	xor a
 	ld [sBattleTowerChallengeState], a
 .ok
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 UpdateStackTop:
 ; sStackTop appears to be unused.
@@ -311,8 +303,7 @@ UpdateStackTop:
 	ld [sStackTop + 1], a
 
 .done
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 FindStackTop:
 ; Find the furthest point that sp has traversed to.
@@ -403,8 +394,7 @@ Function14d6c: ; unreferenced
 .ok
 	ld a, b
 	ld [s4_a60b], a ; address of MBC30 bank
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Function14d83: ; unreferenced
 	ld a, BANK(s4_a60c) ; aka BANK(s4_a60d) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
@@ -412,23 +402,20 @@ Function14d83: ; unreferenced
 	xor a
 	ld [s4_a60c], a ; address of MBC30 bank
 	ld [s4_a60d], a ; address of MBC30 bank
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 Function14d93: ; unreferenced
 	ld a, BANK(s7_a000) ; MBC30 bank used by JP Crystal, inaccessible by MBC3
 	call OpenSRAM
 	xor a
 	ld [s7_a000], a ; address of MBC30 bank
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 HallOfFame_InitSaveIfNeeded:
 	ld a, [wSavedAtLeastOnce]
 	and a
 	ret nz
-	call ErasePreviousSave
-	ret
+	jp ErasePreviousSave
 
 ValidateSave:
 	ld a, BANK(sCheckValue1) ; aka BANK(sCheckValue2)
@@ -472,12 +459,67 @@ SavePokemonData:
 	ld bc, wPokemonDataEnd - wPokemonData
 	call CopyBytes
 	call CloseSRAM
-	ret
+	; fallthrough
+
+CopyPlayerPartyToMysteryGiftTrainer:
+	ld a, BANK(sMysteryGiftData)
+	call OpenSRAM
+
+	ld a, TRUE
+	ld [sMysteryGiftTrainerHouseFlag], a
+
+	ld hl, wPlayerName
+	ld de, sMysteryGiftPartnerName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+
+	ld hl, wPartySpecies
+	ld de, sMysteryGiftTrainer
+	ld bc, wPartyMons
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .party_end
+	cp EGG
+	jr z, .next
+	push hl
+	; copy level
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	ld [de], a
+	inc de
+	; copy species
+	ld hl, MON_SPECIES
+	add hl, bc
+	ld a, [hl]
+	ld [de], a
+	inc de
+	; copy moves
+	ld hl, MON_MOVES
+	add hl, bc
+	push bc
+	ld bc, NUM_MOVES
+	call CopyBytes
+	pop bc
+	pop hl
+.next
+	push hl
+	ld hl, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	pop hl
+	jr .loop
+.party_end
+	ld a, -1
+	ld [de], a
+
+	jp CloseSRAM
 
 SaveBox:
 	call GetBoxAddress
-	call SaveBoxAddress
-	ret
+	jp SaveBoxAddress
 
 SaveChecksum:
 	ld hl, sGameData
@@ -489,8 +531,7 @@ SaveChecksum:
 	ld [sChecksum + 0], a
 	ld a, d
 	ld [sChecksum + 1], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 ValidateBackupSave:
 	ld a, BANK(sBackupCheckValue1) ; aka BANK(sBackupCheckValue2)
@@ -499,8 +540,7 @@ ValidateBackupSave:
 	ld [sBackupCheckValue1], a
 	ld a, SAVE_CHECK_VALUE_2
 	ld [sBackupCheckValue2], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SaveBackupOptions:
 	ld a, BANK(sBackupOptions)
@@ -509,8 +549,7 @@ SaveBackupOptions:
 	ld de, sBackupOptions
 	ld bc, wOptionsEnd - wOptions
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SaveBackupPlayerData:
 	ld a, BANK(sBackupPlayerData)
@@ -523,8 +562,7 @@ SaveBackupPlayerData:
 	ld de, sBackupCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SaveBackupPokemonData:
 	ld a, BANK(sBackupPokemonData)
@@ -533,8 +571,7 @@ SaveBackupPokemonData:
 	ld de, sBackupPokemonData
 	ld bc, wPokemonDataEnd - wPokemonData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 SaveBackupChecksum:
 	ld hl, sBackupGameData
@@ -546,8 +583,7 @@ SaveBackupChecksum:
 	ld [sBackupChecksum + 0], a
 	ld a, d
 	ld [sBackupChecksum + 1], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 TryLoadSaveFile:
 	call VerifyChecksum
@@ -583,7 +619,6 @@ TryLoadSaveFile:
 	call _SaveData
 	call SavePlayerData
 	call SavePokemonData
-	call CopyPlayerPartyToMysteryGiftTrainer
 	call SaveChecksum
 	and a
 	ret
@@ -618,8 +653,7 @@ TryLoadSaveData:
 	ld de, wStatusFlags
 	ld a, [hl]
 	ld [de], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .backup
 	call CheckBackupSaveFile
@@ -637,16 +671,14 @@ TryLoadSaveData:
 	ld de, wStatusFlags
 	ld a, [hl]
 	ld [de], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .corrupt
 	ld hl, DefaultOptions
 	ld de, wOptions
 	ld bc, wOptionsEnd - wOptions
 	call CopyBytes
-	call ClearClock
-	ret
+	jp ClearClock
 
 INCLUDE "data/default_options.asm"
 
@@ -668,8 +700,7 @@ CheckPrimarySaveFile:
 	ld [wSaveFileExists], a
 
 .nope
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 CheckBackupSaveFile:
 	ld a, BANK(sBackupCheckValue1) ; aka BANK(sBackupCheckValue2)
@@ -688,8 +719,7 @@ CheckBackupSaveFile:
 	ld [wSaveFileExists], a
 
 .nope
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 LoadPlayerData:
 	ld a, BANK(sPlayerData)
@@ -711,8 +741,7 @@ LoadPlayerData:
 	ld a, BATTLETOWER_WON_CHALLENGE
 	ld [sBattleTowerChallengeState], a
 .not_4
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 LoadPokemonData:
 	ld a, BANK(sPokemonData)
@@ -721,13 +750,11 @@ LoadPokemonData:
 	ld de, wPokemonData
 	ld bc, wPokemonDataEnd - wPokemonData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 LoadBox:
 	call GetBoxAddress
-	call LoadBoxAddress
-	ret
+	jp LoadBoxAddress
 
 VerifyChecksum:
 	ld hl, sGameData
@@ -757,8 +784,7 @@ LoadBackupPlayerData:
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 LoadBackupPokemonData:
 	ld a, BANK(sBackupPokemonData)
@@ -767,8 +793,7 @@ LoadBackupPokemonData:
 	ld de, wPokemonData
 	ld bc, wPokemonDataEnd - wPokemonData
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 VerifyBackupChecksum:
 	ld hl, sBackupGameData
@@ -820,22 +845,6 @@ _LoadBackupData:
 	ld hl, sBackupCrystalData
 	ld de, wCrystalData
 	ld bc, wCrystalDataEnd - wCrystalData
-	call CopyBytes
-	jp CloseSRAM
-
-CopyPlayerPartyToMysteryGiftTrainer:
-	farcall StagePartyDataForMysteryGift
-	ld a, BANK(sMysteryGiftData)
-	call OpenSRAM
-	ld a, TRUE
-	ld [sMysteryGiftTrainerHouseFlag], a
-	ld hl, wPlayerName
-	ld de, sMysteryGiftPartnerName
-	ld bc, NAME_LENGTH
-	call CopyBytes
-	ld hl, wMysteryGiftStaging
-	ld de, sMysteryGiftTrainer
-	ld bc, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 	call CopyBytes
 	jp CloseSRAM
 
