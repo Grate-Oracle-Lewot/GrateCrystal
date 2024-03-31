@@ -29,8 +29,7 @@ MartDialog:
 	ld [wMartType], a
 	xor a ; STANDARDMART_HOWMAYIHELPYOU
 	ld [wMartJumptableIndex], a
-	call StandardMart
-	ret
+	jp StandardMart
 
 HerbShop:
 	call FarReadMart
@@ -39,8 +38,7 @@ HerbShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, HerbalLadyComeAgainText
-	call MartTextbox
-	ret
+	jp MartTextbox
 
 BargainShop:
 	ld b, BANK(BargainShopData)
@@ -60,8 +58,7 @@ BargainShop:
 
 .skip_set
 	ld hl, BargainShopComeAgainText
-	call MartTextbox
-	ret
+	jp MartTextbox
 
 Pharmacist:
 	call FarReadMart
@@ -70,8 +67,7 @@ Pharmacist:
 	call MartTextbox
 	call BuyMenu
 	ld hl, PharmacyComeAgainText
-	call MartTextbox
-	ret
+	jp MartTextbox
 
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
@@ -90,8 +86,7 @@ RooftopSale:
 	call MartTextbox
 	call BuyMenu
 	ld hl, MartComeAgainText
-	call MartTextbox
-	ret
+	jp MartTextbox
 
 INCLUDE "data/items/rooftop_sale.asm"
 
@@ -102,8 +97,7 @@ BerryShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, Text_BerryShop_ComeAgain
-	call MartTextbox
-	ret
+	jp MartTextbox
 
 LoadMartPointer:
 	ld a, b
@@ -246,14 +240,11 @@ FarReadMart:
 	ld a, [de]
 	inc de
 	cp -1
-	jr z, .done
+	ret z
 	push de
 	call GetMartItemPrice
 	pop de
 	jr .ReadMartItem
-
-.done
-	ret
 
 GetMartItemPrice:
 ; Return the price of item a in BCD at hl and in tiles at wStringBuffer1.
@@ -355,8 +346,7 @@ BuyMenu:
 .loop
 	call BuyMenuLoop ; menu loop
 	jr nc, .loop
-	call CloseSubmenu
-	ret
+	jp CloseSubmenu
 
 LoadBuyMenuText:
 ; load text from a nested table
@@ -375,8 +365,7 @@ LoadBuyMenuText:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call PrintText
-	ret
+	jp PrintText
 
 MartAskPurchaseQuantity:
 	call GetMartDialogGroup ; gets a pointer from GetMartDialogGroup.MartTextFunctionPointers
@@ -524,15 +513,13 @@ StandardMartAskPurchaseQuantity:
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
 	farcall SelectQuantityToBuy
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 MartConfirmPurchase:
 	predef PartyMonItemName
 	ld a, MARTTEXT_COSTS_THIS_MUCH
 	call LoadBuyMenuText
-	call YesNoBox
-	ret
+	jp YesNoBox
 
 BargainShopAskPurchaseQuantity:
 	ld a, 1
@@ -581,8 +568,7 @@ RooftopSaleAskPurchaseQuantity:
 	ld a, MAX_ITEM_STACK
 	ld [wItemQuantity], a
 	farcall RooftopSale_SelectQuantityToBuy
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 .GetSalePrice:
 	ld a, [wMartItemID]
@@ -640,8 +626,7 @@ MenuHeader_Buy:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
-	call PrintBCDNumber
-	ret
+	jp PrintBCDNumber
 
 HerbShopLadyIntroText:
 	text_far _HerbShopLadyIntroText
@@ -904,11 +889,9 @@ MartBoughtText:
 PlayTransactionSound:
 	call WaitSFX
 	ld de, SFX_TRANSACTION
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 MartTextbox:
 	call MenuTextbox
 	call JoyWaitAorB
-	call ExitMenu
-	ret
+	jp ExitMenu
