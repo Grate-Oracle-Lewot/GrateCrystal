@@ -46,7 +46,6 @@ RockMonEncounter:
 
 	call SelectTreeMon
 	jr nc, .no_battle
-
 	ret
 
 .no_battle
@@ -159,8 +158,7 @@ GetTreeMon:
 	ld a, [hli]
 	cp -1
 	jr nz, .skip
-	call SelectTreeMon
-	ret
+	; fallthrough
 
 SelectTreeMon:
 ; Read a TreeMons table and pick one monster at random.
