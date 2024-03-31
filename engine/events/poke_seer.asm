@@ -29,24 +29,18 @@ PokeSeer:
 	jr z, .egg
 
 	call IsAPokemon
-	jr c, .no_mon
+	ret c
 
 	call ReadCaughtData
-	call SeerAction
-	ret
+	jp SeerAction
 
 .cancel
 	ld a, SEER_CANCEL
-	call PrintSeerText
-	ret
-
-.no_mon
-	ret
+	jp PrintSeerText
 
 .egg
 	ld a, SEER_EGG
-	call PrintSeerText
-	ret
+	jp PrintSeerText
 
 SeerAction:
 	ld a, [wSeerAction]
@@ -66,8 +60,7 @@ SeerAction0:
 	call PrintSeerText
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
-	call SeerAdvice
-	ret
+	jp SeerAdvice
 
 SeerAction1:
 	call GetCaughtOT
@@ -75,24 +68,20 @@ SeerAction1:
 	call PrintSeerText
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
-	call SeerAdvice
-	ret
+	jp SeerAdvice
 
 SeerAction2:
 	ld a, SEER_CANT_TELL
-	call PrintSeerText
-	ret
+	jp PrintSeerText
 
 SeerAction3:
 	ld a, SEER_CANT_TELL
-	call PrintSeerText
-	ret
+	jp PrintSeerText
 
 SeerAction4:
 	ld a, SEER_LEVEL_ONLY
 	call PrintSeerText
-	call SeerAdvice
-	ret
+	jp SeerAdvice
 
 ReadCaughtData:
 	ld a, MON_CAUGHTDATA
@@ -142,8 +131,7 @@ GetCaughtName:
 	call AddNTimes
 	ld de, wSeerNickname
 	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 GetCaughtLevel:
 	ld a, "@"
@@ -165,15 +153,13 @@ GetCaughtLevel:
 	ld hl, wSeerCaughtLevelString
 	ld de, wSeerCaughtLevel
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
-	call PrintNum
-	ret
+	jp PrintNum
 
 .unknown
 	ld de, wSeerCaughtLevelString
 	ld hl, .unknown_level
 	ld bc, 4
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .unknown_level
 	db "???@"
@@ -197,8 +183,7 @@ GetCaughtTime:
 
 .none
 	ld de, wSeerTimeOfDay
-	call UnknownCaughtData
-	ret
+	jp UnknownCaughtData
 
 .times
 	db "Morning@"
@@ -208,8 +193,7 @@ GetCaughtTime:
 UnknownCaughtData:
 	ld hl, .unknown
 	ld bc, NAME_LENGTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .unknown
 	db "Unknown@"
@@ -283,8 +267,7 @@ PrintSeerText:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call PrintText
-	ret
+	jp PrintText
 
 SeerTexts:
 	dw SeerSeeAllText
@@ -351,8 +334,7 @@ SeerAdvice:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call PrintText
-	ret
+	jp PrintText
 
 SeerAdviceTexts:
 ; level, text
