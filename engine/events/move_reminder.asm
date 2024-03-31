@@ -70,28 +70,23 @@ MoveReminder:
 	call ReturnToMapWithSpeechTextbox
 .cancel
 	ld hl, Text_MoveReminderCancel
-	call PrintText
-	ret
+	jp PrintText
 
 .egg
 	ld hl, Text_MoveReminderEgg
-	call PrintText
-	ret
+	jp PrintText
 
 .not_enough_money
 	ld hl, Text_MoveReminderNoPay
-	call PrintText
-	ret
+	jp PrintText
 
 .no_mon
 	ld hl, Text_MoveReminderNoMon
-	call PrintText
-	ret
+	jp PrintText
 
 .no_moves
 	ld hl, Text_MoveReminderNoMoves
-	call PrintText
-	ret
+	jp PrintText
 
 .cost_to_relearn
 	dt 500
@@ -165,28 +160,23 @@ EggMoveTutor:
 	call ReturnToMapWithSpeechTextbox
 .cancel
 	ld hl, Text_EggMoveTutorCancel
-	call PrintText
-	ret
+	jp PrintText
 
 .egg
 	ld hl, Text_EggMoveTutorEgg
-	call PrintText
-	ret
+	jp PrintText
 
 .not_enough_money
 	ld hl, Text_EggMoveTutorNoPay
-	call PrintText
-	ret
+	jp PrintText
 
 .no_mon
 	ld hl, Text_EggMoveTutorNoMon
-	call PrintText
-	ret
+	jp PrintText
 
 .no_moves
 	ld hl, Text_EggMoveTutorNoMoves
-	call PrintText
-	ret
+	jp PrintText
 
 .cost_to_relearn
 	dt 5000
@@ -421,8 +411,7 @@ ChooseMoveToLearn:
 	ld [wd265], a
 	call GetMoveName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 .PrintDetails
 	ld hl, wStringBuffer1
