@@ -79,8 +79,7 @@ Magikarp_LoadFeetInchesChars:
 	ld hl, vTiles2 tile "′" ; $6e
 	ld de, .feetinchchars
 	lb bc, BANK(.feetinchchars), 2
-	call Request2bpp
-	ret
+	jp Request2bpp
 
 .feetinchchars
 INCBIN "gfx/font/feet_inches.2bpp"
@@ -304,8 +303,7 @@ MagikarpHouseSign:
 	ld [wMagikarpLength + 1], a
 	call PrintMagikarpLength
 	ld hl, .KarpGuruRecordText
-	call PrintText
-	ret
+	jp PrintText
 
 .KarpGuruRecordText:
 	text_far _KarpGuruRecordText
