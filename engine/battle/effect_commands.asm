@@ -5595,24 +5595,22 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
-	jr z, .done
+	ret z
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
+	ret z
 
 	cp SKY_ATTACK
 	ld hl, .BattleGlowingText
-	jr z, .done
+	ret z
 
 	cp FLY
 	ld hl, .BattleFlewText
-	jr z, .done
+	ret z
 
 	cp DIG
 	ld hl, .BattleDugText
-
-.done
 	ret
 
 .BattleTookSunlightText:
@@ -5995,12 +5993,11 @@ DoubleDamage:
 	sla [hl]
 	dec hl
 	rl [hl]
-	jr nc, .quit
+	ret nc
 
 	ld a, $ff
 	ld [hli], a
 	ld [hl], a
-.quit
 	ret
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
@@ -6821,8 +6818,7 @@ BattleCommand_UndergroundFlyer:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	jr nz, .underground
-	call BattleCommand_Stab
-	ret
+	jp BattleCommand_Stab
 
 .underground
 	ld a, FLYING
@@ -6835,13 +6831,12 @@ BattleCommand_UndergroundFlyer:
 	ld b, a
 	ld a, FLYING
 	ld c, a
-	call SwapBCTypes
-	ret
+	; fallthrough
 
 SwapBCTypes:
 ; Load target's types and replace the one in b with the one in c.
-; Changes Flying to Bird in order to remove Ground immunity.
-; Swaps them back when used again afterward.
+; Changes Flying to Bird in order to remove Ground immunity during Dig.
+; Swaps them back again after falling through.
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
