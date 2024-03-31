@@ -2,13 +2,11 @@ HoOhChamber:
 	ld hl, wPartySpecies
 	ld a, [hl]
 	cp HO_OH ; is Ho-oh the first Pokémon in the party?
-	jr nz, .done ; if not, we're done
+	ret nz ; if not, we're done
 	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	ld b, SET_FLAG
-	call EventFlagAction
-.done
-	ret
+	jp EventFlagAction
 
 OmanyteChamber:
 	call GetMapAttributesPointer ; pointless?
@@ -17,7 +15,7 @@ OmanyteChamber:
 	call EventFlagAction
 	ld a, c
 	and a
-	jr nz, .nope
+	ret nz
 
 	ld a, WATER_STONE
 	ld [wCurItem], a
@@ -30,7 +28,7 @@ OmanyteChamber:
 	inc b
 .loop
 	dec b
-	jr z, .nope
+	ret z
 	ld a, b
 	dec a
 	ld [wCurPartyMon], a
@@ -46,10 +44,7 @@ OmanyteChamber:
 	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	ld b, SET_FLAG
-	call EventFlagAction
-
-.nope
-	ret
+	jp EventFlagAction
 
 SpecialAerodactylChamber:
 	push de
@@ -145,8 +140,7 @@ DisplayUnownWords:
 	call WaitBGMap2
 	call JoyWaitAorB
 	call PlayClickSFX
-	call CloseWindow
-	ret
+	jp CloseWindow
 
 INCLUDE "data/events/unown_walls.asm"
 
