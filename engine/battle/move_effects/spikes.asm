@@ -21,7 +21,6 @@ BattleCommand_Spikes:
 
 	ld hl, SpikesText
 	jp StdBattleTextbox
-	jp FailMove
 
 .failed
 	call AnimateCurrentMove
