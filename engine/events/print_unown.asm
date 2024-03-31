@@ -133,9 +133,6 @@ endc
 	inc [hl]
 
 .return
-	call .UpdateUnownFrontpic
-	ret
-
 .UpdateUnownFrontpic:
 	ld a, [wJumptableIndex]
 	cp NUM_UNOWN
@@ -199,8 +196,7 @@ endc
 	call Get2bpp
 	call CloseSRAM
 	ld c, 20
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 AlphRuinsStampString:
 	db " ALPH RUINS STAMP@"
