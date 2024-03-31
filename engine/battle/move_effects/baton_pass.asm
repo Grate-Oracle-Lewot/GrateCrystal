@@ -41,8 +41,7 @@ BattleCommand_BatonPass:
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
-	call ResetBatonPassStatus
-	ret
+	jp ResetBatonPassStatus
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -271,13 +270,11 @@ CheckAnyOtherAliveEnemyMons:
 	ld d, a
 	ld a, [wCurOTMon]
 	ld e, a
-
 	; fallthrough
 
 CheckAnyOtherAliveMons:
 ; Check for nonzero HP starting from partymon
 ; HP at hl for d partymons, besides current mon e.
-
 ; Return nz if any are alive.
 
 	xor a
