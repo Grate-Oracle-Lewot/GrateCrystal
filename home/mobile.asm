@@ -149,8 +149,7 @@ Function3eea::
 	call Function3f35
 	pop bc
 	pop hl
-	call MobileHome_PlaceBox
-	ret
+	jp MobileHome_PlaceBox
 
 Function3efd:: ; unreferenced
 	push hl
@@ -159,8 +158,7 @@ Function3efd:: ; unreferenced
 	ld c, 18
 	call .fill_attr
 	pop hl
-	call PrintTextboxText
-	ret
+	jp PrintTextboxText
 
 .fill_attr
 	push hl
@@ -174,8 +172,7 @@ Function3efd:: ; unreferenced
 	call Function3f35
 	pop bc
 	pop hl
-	call TextboxBorder
-	ret
+	jp TextboxBorder
 
 Function3f20::
 	hlcoord 0, 0, wAttrmap
@@ -185,8 +182,7 @@ Function3f20::
 	hlcoord 0, 0
 	ld b,  4
 	ld c, 18
-	call MobileHome_PlaceBox
-	ret
+	jp MobileHome_PlaceBox
 
 Function3f35::
 	ld a, 6
@@ -215,8 +211,7 @@ MobileHome_PlaceBox:
 	pop bc
 	dec b
 	jr nz, .RowLoop
-	call .FillBottom
-	ret
+	jr .FillBottom
 
 .FillTop:
 	ld a, $63
@@ -254,8 +249,7 @@ Function3f7c::
 	call GetMenuBoxDims
 	dec b
 	dec c
-	call Function3eea
-	ret
+	jp Function3eea
 
 Function3f88::
 	ld hl, wDecompressScratch
