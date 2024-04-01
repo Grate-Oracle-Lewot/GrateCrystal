@@ -168,8 +168,8 @@ Pokedex_Get_Items:
 	call GetItemName
 .Item2Done
 	hlcoord 7, 12
-	call PlaceString
-	ret
+	jp PlaceString
+
 .ThreeDashes:
 	db "---@"
 .BS_ITEM_text:
@@ -200,7 +200,7 @@ Pokedex_EggG_SetUp:
 	pop bc
 	ld a, b
 	cp c
-	jr z, .EggGroups_DONE
+	ret z
 ; Print second egg group
 	hlcoord 3, 10
 	ld de, .BS_Egg_text2
@@ -210,9 +210,8 @@ Pokedex_EggG_SetUp:
 	ld b, c
 	call Pokedex_Get_EggGroup
 	hlcoord 4, 12
-	call PlaceString ; no longer need to preserve bc
-.EggGroups_DONE
-	ret
+	jp PlaceString ; no longer need to preserve bc
+
 .BS_Egg_text1:
 	db "Egg Group: @"
 .BS_Egg_text2:
@@ -342,8 +341,7 @@ Pokedex_Get_GenderRatio::
 	ld de, DexEntry_NONE_text
 .GR_print
 	hlcoord 14, 15
-	call PlaceString
-	ret
+	jp PlaceString
 
 .GR_Text
 	db "Gender <%>: @"
@@ -367,9 +365,8 @@ Pokedex_CatchRate:
 	hlcoord 15, 15
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	ld de, wBaseCatchRate
-	call PrintNum
-	ret
-;Catch Rate
+	jp PrintNum
+
 .BS_Catchrate:
 	db "Catch Rate: @"
 
@@ -398,8 +395,8 @@ Pokedex_Get_Growth::
 	ld de, .growth_slow
 .Growth_print
 	hlcoord 3, 15
-	call PlaceString
-	ret
+	jp PlaceString
+
 .growth_Medfast:
 	db "Med. Fast Growth@"
 .growth_slightfast
@@ -422,8 +419,8 @@ Pokedex_PrintBaseExp:
 	ld de, wBaseExp
 	; lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	lb bc, 1, 3
-	call PrintNum
-	ret
+	jp PrintNum
+
 .Exp_text:
 	db "EXP Yield:@"
 
@@ -435,11 +432,10 @@ Pokedex_PrintHatchSteps:
 	hlcoord 14, 13
 	ld de, wBaseEggSteps
 	lb bc, 1, 3
-	call PrintNum
-	ret
+	jp PrintNum
+
 .HatchSteps_text:
 	db "Egg Cycles:@"
-
 
 Pokedex_HeightWeight:
 ; height string
@@ -508,6 +504,7 @@ Pokedex_HeightWeight:
 	inc hl
 	ld [hl], $5f
 	ret
+
 .Height:
 	db "HT@" ;   ? ?? @" ; HT  ?'??"
 .Weight:
