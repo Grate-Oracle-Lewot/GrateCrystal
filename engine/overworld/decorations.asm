@@ -79,8 +79,7 @@ _PlayerDecorationMenu:
 	ld hl, wStringBuffer2
 	ld de, wDecoNameBuffer
 	ld bc, ITEM_NAME_LENGTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .ClearStringBuffer2:
 	ld hl, wStringBuffer2
@@ -88,8 +87,7 @@ _PlayerDecorationMenu:
 	ld [hli], a
 	ld bc, ITEM_NAME_LENGTH - 1
 	ld a, -1
-	call ByteFill
-	ret
+	jp ByteFill
 
 .AppendToStringBuffer2:
 	ld hl, wStringBuffer2
@@ -108,7 +106,7 @@ _PlayerDecorationMenu:
 	ld a, [hli]
 	ld d, a
 	or e
-	jr z, .done
+	ret z
 	push hl
 	call _de_
 	pop hl
@@ -120,8 +118,6 @@ _PlayerDecorationMenu:
 .next
 	inc hl
 	jr .loop
-.done
-	ret
 
 .owned_pointers:
 	table_width 3, _PlayerDecorationMenu.owned_pointers
@@ -142,14 +138,13 @@ Deco_FillTempWithMinusOne:
 	assert wNumOwnedDecoCategories + 1 == wOwnedDecoCategories
 	ld a, -1
 	ld bc, 16
-	call ByteFill
-	ret
+	jp ByteFill
 
 CheckAllDecorationFlags:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .done
+	ret z
 	push hl
 	push af
 	ld b, CHECK_FLAG
@@ -161,9 +156,6 @@ CheckAllDecorationFlags:
 	call nz, AppendDecoIndex
 	pop hl
 	jr .loop
-
-.done
-	ret
 
 AppendDecoIndex:
 	ld hl, wNumOwnedDecoCategories
@@ -353,10 +345,8 @@ PopulateDecoCategoryMenu:
 	call DoNthMenu
 	jr c, .no_action_1
 	call DoDecorationAction2
-
 .no_action_1
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 .beyond_eight
 	ld hl, wNumOwnedDecoCategories
@@ -379,15 +369,12 @@ PopulateDecoCategoryMenu:
 	cp B_BUTTON
 	jr z, .no_action_2
 	call DoDecorationAction2
-
 .no_action_2
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 .empty
 	ld hl, .NothingToChooseText
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .NothingToChooseText:
 	text_far _NothingToChooseText
@@ -424,16 +411,14 @@ PopulateDecoCategoryMenu:
 GetDecorationData:
 	ld hl, DecorationAttributes
 	ld bc, DECOATTR_STRUCT_LENGTH
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 GetDecorationName:
 	push hl
 	call GetDecorationData
 	call GetDecoName
 	pop hl
-	call CopyName2
-	ret
+	jp CopyName2
 
 DecorationMenuFunction:
 	ld a, [wMenuSelection]
@@ -441,8 +426,7 @@ DecorationMenuFunction:
 	call GetDecorationData
 	call GetDecoName
 	pop hl
-	call PlaceString
-	ret
+	jp PlaceString
 
 DoDecorationAction2:
 	ld a, [wMenuSelection]
@@ -486,8 +470,7 @@ DecorationFlagAction:
 	push bc
 	call GetDecorationFlag
 	pop bc
-	call EventFlagAction
-	ret
+	jp EventFlagAction
 
 GetDecorationSprite:
 	ld a, c
@@ -754,6 +737,7 @@ DecoAction_putawayornament:
 
 .incave
 	call DecoAction_PutItAway_Ornament
+	; fallthrough
 
 DecoAction_FinishUp_Ornament:
 	call QueryWhichSide
@@ -916,8 +900,7 @@ GetDecorationName_c_de:
 	ld a, c
 	ld h, d
 	ld l, e
-	call GetDecorationName
-	ret
+	jp GetDecorationName
 
 DecorationFlagAction_c:
 	ld a, c
@@ -936,8 +919,7 @@ SetSpecificDecorationFlag:
 	ld a, c
 	call GetDecorationID
 	ld b, SET_FLAG
-	call DecorationFlagAction
-	ret
+	jp DecorationFlagAction
 
 GetDecorationID:
 	push hl
@@ -956,15 +938,12 @@ SetAllDecorationFlags: ; unreferenced
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .done
+	ret z
 	push hl
 	ld b, SET_FLAG
 	call DecorationFlagAction
 	pop hl
 	jr .loop
-
-.done
-	ret
 
 INCLUDE "data/decorations/decorations.asm"
 
@@ -1152,8 +1131,7 @@ ToggleDecorationsVisibility:
 	ld de, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
 	ld hl, wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS
 	ld a, [wDecoBigDoll]
-	call ToggleDecorationVisibility
-	ret
+	jp ToggleDecorationVisibility
 
 ToggleDecorationVisibility:
 	and a
@@ -1185,5 +1163,4 @@ PadCoords_de:
 	ld a, e
 	add 4
 	ld e, a
-	call GetBlockLocation
-	ret
+	jp GetBlockLocation
