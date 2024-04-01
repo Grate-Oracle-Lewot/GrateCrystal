@@ -42,15 +42,14 @@ FindNest:
 	ld hl, JohtoWaterWildMons
 	call .FindWater
 	call .RoamMon1
-	call .RoamMon2
-	ret
+	jp .RoamMon2
 
 .kanto
 	decoord 0, 0
 	ld hl, KantoGrassWildMons
 	call .FindGrass
 	ld hl, KantoWaterWildMons
-	jp .FindWater
+	jr .FindWater
 
 .FindGrass:
 	ld a, [hl]
