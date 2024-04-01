@@ -13,8 +13,7 @@ Pokedex_PlaceAnimatedFrontpic:
 	ld bc, wTempSpecies
 	call SetPalettes
 	call .AnimateMon
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .AnimateMon:
 	ld hl, wStatsScreenFlags
@@ -63,8 +62,7 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	xor a
 	ld [wPokedexEntryType], a
 
-	call WaitBGMap
-	ret
+	jp WaitBGMap
 
 .PokedexWaitCry:
 	ld a, [wPokedexEntryType]
@@ -79,8 +77,7 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	jr nz, .try_anim
 	bit 5, [hl]
 	jr nz, .finish
-	call DelayFrame
-	ret
+	jp DelayFrame
 .try_anim
 	farcall SetUpPokeAnim
 	jr nc, .finish
@@ -232,8 +229,8 @@ Dex_Pics_DrawBorder:
 	hlcoord 15, 16
 	ld de, .b_back_text
 	call PlaceString
-	call WaitBGMap
-	ret
+	jp WaitBGMap
+
 .select_color_text:
 	db $c9, $ca, $cb, $cc, $cd, $ce, "@"
 .b_back_text:
