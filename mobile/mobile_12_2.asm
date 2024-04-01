@@ -31,8 +31,7 @@ MobileCheckOwnMonAnywhere:
 .asm_4a873
 	call .CheckMatch
 	jr nc, .asm_4a87c
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .asm_4a87c
 	push bc
@@ -82,8 +81,7 @@ MobileCheckOwnMonAnywhere:
 	call .CheckMatch
 	jr nc, .asm_4a8c4
 	pop bc
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 .asm_4a8c4
 	push bc
@@ -221,7 +219,7 @@ Function4a94e:
 	ld bc, 3
 	call ByteFill
 	scf
-	jr .asm_4a9af
+	ret
 
 .asm_4a9a1
 	call Function4a9c3
@@ -230,8 +228,6 @@ Function4a94e:
 	jr c, .asm_4a974
 	call CloseSubmenu
 	and a
-
-.asm_4a9af
 	ret
 
 .asm_4a9b0
@@ -290,8 +286,7 @@ Function4a9d7:
 	call CopyBytes
 	ld hl, MobileUseTheseThreeMonText
 	call PrintText
-	call YesNoBox
-	ret
+	jp YesNoBox
 
 MobileUseTheseThreeMonText:
 	text_far _MobileUseTheseThreeMonText
@@ -317,15 +312,13 @@ Function4aa34:
 	call SetPalettes
 	call DelayFrame
 	call Function4ab1a
-	jr z, .asm_4aa66
+	ret z
 	push af
 	call Function4aafb
 	jr c, .asm_4aa67
 	call Function4ab06
 	jr c, .asm_4aa67
 	pop af
-
-.asm_4aa66
 	ret
 
 .asm_4aa67
@@ -386,13 +379,11 @@ Function4aa7a:
 	pop de
 	dec d
 	jr nz, .loop
-	jr .finished
+	ret
 
 .done
 	pop hl
 	pop de
-
-.finished
 	ret
 
 Function4aab6:
@@ -401,7 +392,7 @@ Function4aab6:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .done
+	ret z
 	push de
 	push hl
 	hlcoord 0, 1
@@ -412,8 +403,6 @@ Function4aab6:
 	pop de
 	dec d
 	jr nz, .loop
-
-.done
 	ret
 
 Function4aad3:
@@ -462,10 +451,8 @@ Function4ab06:
 	ld b, a
 	ld a, [hl]
 	or b
-	jr nz, .NotFainted
+	ret nz
 	scf
-
-.NotFainted:
 	ret
 
 Function4ab1a:
@@ -732,11 +719,8 @@ Function4acaa:
 	bit 0, a
 	jr nz, .asm_4acf4
 	bit 1, a
-	jr nz, .asm_4acf3
+	ret nz
 	jr .asm_4acaa
-
-.asm_4acf3
-	ret
 
 .asm_4acf4
 	ld a, [wd019]
@@ -749,13 +733,13 @@ Function4acaa:
 	jp z, Function4ad56
 	cp $3
 	jp z, Function4ad60
-	jr .asm_4acf3
+	ret
 
 .asm_4ad0e
 	ld a, [wMenuCursorY]
 	cp $1
 	jr z, Function4ad56
-	jr .asm_4acf3
+	ret
 
 Function4ad17:
 	call Function4adb2
@@ -773,8 +757,7 @@ Function4ad17:
 	ld de, SFX_WRONG
 	call WaitPlaySFX
 	ld hl, MobileOnlyThreeMonMayEnterText
-	call PrintText
-	ret
+	jp PrintText
 
 .asm_4ad39
 	ld a, [wCurPartyMon]
@@ -789,8 +772,7 @@ Function4ad17:
 .asm_4ad4a
 	ld a, $ff
 	ld [hl], a
-	call Function4adc2
-	ret
+	jp Function4adc2
 
 MobileOnlyThreeMonMayEnterText:
 	text_far _MobileOnlyThreeMonMayEnterText
@@ -798,14 +780,10 @@ MobileOnlyThreeMonMayEnterText:
 
 Function4ad56:
 	farcall OpenPartyStats
-	call WaitBGMap2
-	ret
+	jp WaitBGMap2
 
 Function4ad60:
 	farcall ManagePokemonMoves
-	ret
-
-Function4ad67: ; unreferenced
 	ret
 
 Function4ad68:
@@ -823,8 +801,7 @@ Function4ad68:
 	ld de, String_4ad9a
 
 .asm_4ad84
-	call PlaceString
-	ret
+	jp PlaceString
 
 String_4ad88:
 	db   "つよさをみる"
