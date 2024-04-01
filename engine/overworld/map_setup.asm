@@ -10,8 +10,7 @@ RunMapSetupScript::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call ReadMapSetupScript
-	ret
+	jp ReadMapSetupScript
 
 INCLUDE "data/maps/setup_scripts.asm"
 
@@ -82,9 +81,6 @@ LoadMapObjects:
 	farcall InitializeVisibleSprites
 	ret
 
-MapSetup_DummyFunction: ; unreferenced
-	ret
-
 ResetPlayerObjectAction:
 	ld hl, wPlayerSpriteSetupFlags
 	set PLAYERSPRITESETUP_RESET_ACTION_F, [hl]
@@ -98,15 +94,11 @@ SkipUpdateMapSprites:
 CheckUpdatePlayerSprite:
 	nop
 	call .CheckBiking
-	jr c, .ok
+	jp c, UpdatePlayerSprite
 	call .CheckSurfing
-	jr c, .ok
+	jp c, UpdatePlayerSprite
 	call .CheckSurfing2
-	jr c, .ok
-	ret
-
-.ok
-	call UpdatePlayerSprite
+	jp c, UpdatePlayerSprite
 	ret
 
 .CheckBiking:
@@ -171,8 +163,7 @@ CheckUpdatePlayerSprite:
 
 FadeOutMapMusic:
 	ld a, 6
-	call SkipMusic
-	ret
+	jp SkipMusic
 
 ApplyMapPalettes:
 	farcall _UpdateTimePals
@@ -185,8 +176,7 @@ FadeMapMusicAndPalettes:
 	ld a, [wMusicFadeID + 1]
 	ld a, $4
 	ld [wMusicFade], a
-	call RotateThreePalettesRight
-	ret
+	jp RotateThreePalettesRight
 
 ForceMapMusic:
 	ld a, [wPlayerState]
@@ -196,5 +186,4 @@ ForceMapMusic:
 	ld a, $88
 	ld [wMusicFade], a
 .notbiking
-	call TryRestartMapMusic
-	ret
+	jp TryRestartMapMusic
