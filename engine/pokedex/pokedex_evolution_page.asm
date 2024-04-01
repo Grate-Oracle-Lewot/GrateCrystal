@@ -53,8 +53,8 @@ DisplayDexMonEvos:
 	jr nz, .does_evo
 	hlcoord 3, 6
 	ld de, .doesnt_evo_text
-	call PlaceString
-	ret ; no Evos
+	jp PlaceString
+	; no Evos
 .does_evo
 	push hl
 	push af ; manner of evo
@@ -243,8 +243,8 @@ DisplayDexMonEvos:
 
 	ld de, .cont_page_text
 	hlcoord 12, 16
-	call PlaceString
-	ret
+	jp PlaceString
+
 .stage1_text:
 	db $6b, $6c, $6d, "1@"
 .stage2_text:
@@ -263,8 +263,7 @@ DisplayDexMonEvos:
 
 	ld de, .cont_page_text
 	hlcoord 12, 16
-	call PlaceString
-	ret
+	jp PlaceString
 
 EVO_sethlcoord:
 	push af
@@ -316,8 +315,7 @@ EVO_level:
 	inc hl
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum ; lvl evolved at
-	call EVO_inchlcoord	
-	ret
+	jp EVO_inchlcoord	
 
 EVO_item:
 	ld a, BANK("Evolutions and Attacks")
@@ -333,8 +331,8 @@ EVO_item:
 
 	call EVO_inchlcoord
 	call PlaceString
-	call EVO_inchlcoord
-	ret
+	jp EVO_inchlcoord
+
 .item_text:
 	db "ITEM@"
 
@@ -364,8 +362,8 @@ EVO_trade:
 	call EVO_inchlcoord
 	call PlaceString
 .done
-	call EVO_inchlcoord
-	ret
+	jp EVO_inchlcoord
+
 .trade_text:
 	db "TRADE@"
 .hold_text:
@@ -391,8 +389,8 @@ EVO_happiness:
 .done
 	call EVO_inchlcoord
 	call PlaceString
-	call EVO_inchlcoord
-	ret
+	jp EVO_inchlcoord
+
 .happiness_text:
 	db $6e, "@"; "HAPPINESS@"
 .anytime_text:
@@ -438,8 +436,7 @@ EVO_stats:
 .done
 	call EVO_inchlcoord
 	call PlaceString
-	call EVO_inchlcoord
-	ret
+	jp EVO_inchlcoord
 
 .atk_eq_def_text:
 	db "ATK = DEF@"
@@ -818,8 +815,7 @@ EVO_set_multi_page_ptr:
 	add hl, bc
 	add hl, bc
 	ld a, BANK(EvosAttacksPointers)
-	call GetFarWord	
-	ret
+	jp GetFarWord
 
 EVO_place_CaughtIcon:
 	push hl
@@ -924,7 +920,7 @@ EVO_Draw_border:
 	hlcoord 16, 16
 	ld de, .back_page_text
 	call PlaceString
-	call WaitBGMap
-	ret
+	jp WaitBGMap
+
 .back_page_text:
 	db $67, $68, $69, $6a, "@"
