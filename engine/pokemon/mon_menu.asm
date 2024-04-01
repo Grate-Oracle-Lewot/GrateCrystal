@@ -248,12 +248,12 @@ GiveTakePartyMonItem:
 
 	ld a, [wCurPocket]
 	cp KEY_ITEM_POCKET
-	ret z
+	jr z, .next
 
 	call CheckTossableItem
 	ld a, [wItemAttributeValue]
 	and a
-	ret nz
+	jr nz, .next
 
 	jp TryGiveItemToPartymon
 
