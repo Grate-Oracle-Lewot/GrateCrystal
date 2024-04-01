@@ -52,8 +52,7 @@ GetClock::
 	ldh [hRTCDayHi], a
 
 ; unlatch clock / disable clock r/w
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 FixDays::
 ; fix day count
@@ -186,8 +185,7 @@ InitTime::
 
 ClearClock::
 	call .ClearhRTC
-	call SetClock
-	ret
+	jp SetClock
 
 .ClearhRTC:
 	xor a
@@ -242,8 +240,7 @@ SetClock::
 	ld [de], a
 
 ; cleanup
-	call CloseSRAM ; unlatch clock, disable clock r/w
-	ret
+	jp CloseSRAM ; unlatch clock, disable clock r/w
 
 RecordRTCStatus::
 ; append flags to sRTCStatusFlags
@@ -254,13 +251,11 @@ RecordRTCStatus::
 	pop af
 	or [hl]
 	ld [hl], a
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 CheckRTCStatus::
 ; check sRTCStatusFlags
 	ld a, BANK(sRTCStatusFlags)
 	call OpenSRAM
 	ld a, [sRTCStatusFlags]
-	call CloseSRAM
-	ret
+	jp CloseSRAM
