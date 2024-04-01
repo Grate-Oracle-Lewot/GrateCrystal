@@ -30,8 +30,7 @@ HandleObjectStep:
 	call CheckObjectStillVisible
 	ret c
 	call HandleStepType
-	call HandleObjectAction
-	ret
+	jp HandleObjectAction
 
 CheckObjectStillVisible:
 	ld hl, OBJECT_FLAGS2
@@ -112,7 +111,7 @@ HandleStepType:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit FROZEN_F, [hl]
-	jr nz, .frozen
+	ret nz
 	cp STEP_TYPE_FROM_MOVEMENT
 	jr z, .one
 	jr .ok3
@@ -122,7 +121,7 @@ HandleStepType:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit FROZEN_F, [hl]
-	jr nz, .frozen
+	ret nz
 .one
 	call StepFunction_FromMovement
 	ld hl, OBJECT_STEP_TYPE
@@ -135,9 +134,6 @@ HandleStepType:
 .ok3
 	ld hl, StepTypesJumptable
 	rst JumpTable
-	ret
-
-.frozen
 	ret
 
 HandleObjectAction:
@@ -176,8 +172,7 @@ CallObjectAction:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call _hl_
-	ret
+	jp _hl_
 
 INCLUDE "engine/overworld/map_object_action.asm"
 
@@ -204,8 +199,7 @@ CopyNextCoordsTileToStandingCoordsTile:
 	ld hl, OBJECT_NEXT_TILE
 	add hl, bc
 	ld a, [hl]
-	call UselessAndA
-	ret
+	jp UselessAndA
 
 CopyStandingCoordsTileToNextCoordsTile:
 	ld hl, OBJECT_MAP_X
@@ -240,8 +234,7 @@ UpdateTallGrassFlags:
 	ld hl, OBJECT_STANDING_TILE
 	add hl, bc
 	ld a, [hl]
-	call UselessAndA
-	ret
+	jp UselessAndA
 
 SetTallGrassFlags:
 	call CheckSuperTallGrassTile
@@ -819,8 +812,7 @@ _MovementSpinRepeat:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_SLEEP
-	call ObjectMovementByte_IncAnonJumptableIndex
-	ret
+	jp ObjectMovementByte_IncAnonJumptableIndex
 
 _MovementSpinTurnLeft:
 	ld de, .facings_counterclockwise
@@ -858,8 +850,7 @@ _MovementSpinNextFacing:
 	ld a, [hl]
 	pop hl
 	ld [hl], a
-	call ObjectMovementByte_DecAnonJumptableIndex
-	ret
+	jp ObjectMovementByte_DecAnonJumptableIndex
 
 MovementFunction_Shadow:
 	call InitMovementField1dField1e
@@ -1144,8 +1135,7 @@ StepFunction_NPCJump:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	res OVERHEAD_F, [hl]
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .Land:
 	call AddStepVector
@@ -1186,8 +1176,7 @@ StepFunction_PlayerJump:
 	ld hl, wPlayerStepFlags
 	set PLAYERSTEP_STOP_F, [hl]
 	set PLAYERSTEP_MIDAIR_F, [hl]
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .initland
 	call GetNextTile
@@ -1233,8 +1222,7 @@ StepFunction_TeleportFrom:
 	add hl, bc
 	dec [hl]
 	ret nz
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .InitSpinRise:
 	ld hl, OBJECT_STEP_FRAME
@@ -1295,8 +1283,7 @@ StepFunction_TeleportTo:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], 16
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .DoWait:
 	ld hl, OBJECT_STEP_DURATION
@@ -1314,8 +1301,7 @@ StepFunction_TeleportTo:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], 16
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .DoDescent:
 	ld hl, OBJECT_ACTION
@@ -1341,8 +1327,7 @@ StepFunction_TeleportTo:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld [hl], 16
-	call Field1c_IncAnonJumptableIndex
-	ret
+	jp Field1c_IncAnonJumptableIndex
 
 .DoFinalSpin:
 	ld hl, OBJECT_ACTION
@@ -1732,7 +1717,7 @@ StepFunction_ScreenShake:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	dec [hl]
-	jr z, .ok
+	jp z, DeleteMapObject
 	ld a, [hl]
 	call .GetSign
 	ld hl, OBJECT_1D
@@ -1742,10 +1727,6 @@ StepFunction_ScreenShake:
 	ld a, [wPlayerStepVectorY]
 	add d
 	ld [wPlayerStepVectorY], a
-	ret
-
-.ok
-	call DeleteMapObject
 	ret
 
 .GetSign:
@@ -1861,8 +1842,7 @@ GetPlayerNextMovementByte:
 
 GetMovementByte:
 	ld hl, wMovementDataBank
-	call _GetMovementByte
-	ret
+	jp _GetMovementByte
 
 GetIndexedMovementByte1:
 	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
@@ -2200,15 +2180,13 @@ RespawnPlayerAndOpponent:
 	jr z, .skip_opponent
 	call RespawnObject
 .skip_opponent
-	call _UpdateSprites
-	ret
+	jp _UpdateSprites
 
 RespawnPlayer:
 	call HideAllObjects
 	ld a, PLAYER
 	call RespawnObject
-	call _UpdateSprites
-	ret
+	jp _UpdateSprites
 
 RespawnObject:
 	cp NUM_OBJECTS
@@ -2224,8 +2202,7 @@ RespawnObject:
 	call GetObjectStruct
 	call DoesObjectHaveASprite
 	ret z
-	call UpdateRespawnedObjectFrozen
-	ret
+	jp UpdateRespawnedObjectFrozen
 
 HideAllObjects:
 	xor a
@@ -2439,8 +2416,7 @@ CheckObjectCoveredByTextbox:
 
 HandleNPCStep::
 	call ResetStepVector
-	call DoStepsForAllObjects
-	ret
+	jp DoStepsForAllObjects
 
 ResetStepVector:
 	xor a
@@ -2480,8 +2456,7 @@ RefreshPlayerSprite:
 	call TryResetPlayerAction
 	farcall CheckWarpFacingDown
 	call c, SpawnInFacingDown
-	call SpawnInCustomFacing
-	ret
+	jp SpawnInCustomFacing
 
 TryResetPlayerAction:
 	ld hl, wPlayerSpriteSetupFlags
@@ -2508,8 +2483,7 @@ SpawnInFacingDown:
 	ld a, DOWN
 _ContinueSpawnFacing:
 	ld bc, wPlayerStruct
-	call SetSpriteDirection
-	ret
+	jp SetSpriteDirection
 
 _SetPlayerPalette:
 	ld a, d
@@ -2554,8 +2528,7 @@ SetLeaderIfVisible:
 
 StopFollow::
 	call ResetLeader
-	call ResetFollower
-	ret
+	jp ResetFollower
 
 ResetLeader:
 	ld a, -1
@@ -2815,8 +2788,7 @@ InitSprites:
 	ld c, PRIORITY_NORM
 	call .InitSpritesByPriority
 	ld c, PRIORITY_LOW
-	call .InitSpritesByPriority
-	ret
+	jp .InitSpritesByPriority
 
 .DeterminePriorities:
 	xor a
