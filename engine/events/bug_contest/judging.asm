@@ -177,8 +177,7 @@ DetermineContestWinners:
 	ld bc, BUG_CONTESTANT_SIZE
 	call CopyBytes
 	ld hl, wBugContestFirstPlaceWinnerID
-	call CopyTempContestant
-	jr .done
+	jp CopyTempContestant
 
 .not_first_place
 	ld de, wBugContestTempScore
@@ -191,8 +190,7 @@ DetermineContestWinners:
 	ld bc, BUG_CONTESTANT_SIZE
 	call CopyBytes
 	ld hl, wBugContestSecondPlaceWinnerID
-	call CopyTempContestant
-	ret
+	jp CopyTempContestant
 
 .not_second_place
 	ld de, wBugContestTempScore
