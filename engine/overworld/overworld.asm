@@ -12,8 +12,7 @@ _UpdatePlayerSprite::
 	ldh [hUsedSpriteIndex], a
 	ld a, [wUsedSprites + 1]
 	ldh [hUsedSpriteTile], a
-	call GetUsedSprite
-	ret
+	jp GetUsedSprite
 
 _RefreshSprites: ; mobile
 	ld hl, wSpriteFlags
@@ -39,8 +38,7 @@ _ClearSprites: ; mobile
 
 RefreshSprites::
 	call .Refresh
-	call LoadUsedSpritesGFX
-	ret
+	jp LoadUsedSpritesGFX
 
 .Refresh:
 	xor a
@@ -49,8 +47,7 @@ RefreshSprites::
 	call ByteFill
 	call GetPlayerSprite
 	call AddMapSprites
-	call LoadAndSortSprites
-	ret
+	jp LoadAndSortSprites
 
 GetPlayerSprite:
 ; Get Chris or Kris's sprite.
@@ -94,12 +91,8 @@ INCLUDE "data/sprites/player_sprites.asm"
 AddMapSprites:
 	call GetMapEnvironment
 	call CheckOutdoorMap
-	jr z, .outdoor
-	call AddIndoorSprites
-	ret
-
-.outdoor
-	call AddOutdoorSprites
+	jp z, AddOutdoorSprites
+	jp AddIndoorSprites
 	ret
 
 AddIndoorSprites:
@@ -139,8 +132,7 @@ LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES
 	call RunMapCallback
 	call GetUsedSprites
-	call LoadMiscTiles
-	ret
+	jp LoadMiscTiles
 
 LoadMiscTiles:
 	ld a, [wSpriteFlags]
@@ -300,8 +292,7 @@ _GetSpritePalette::
 
 LoadAndSortSprites:
 	call LoadSpriteGFX
-	call ArrangeUsedSprites
-	ret
+	jp ArrangeUsedSprites
 
 AddSpriteGFX:
 ; Add any new sprite ids to a list of graphics to be loaded.
@@ -347,15 +338,13 @@ LoadSpriteGFX:
 .loop
 	ld a, [hli]
 	and a
-	jr z, .done
+	ret z
 	push hl
 	call .LoadSprite
 	pop hl
 	ld [hli], a
 	dec b
 	jr nz, .loop
-
-.done
 	ret
 
 .LoadSprite:
@@ -376,7 +365,7 @@ ArrangeUsedSprites:
 ; Keep going until the end of the list.
 	ld a, [hli]
 	and a
-	jr z, .quit
+	ret z
 
 	ld a, [hl]
 	call GetSpriteLength
@@ -404,14 +393,14 @@ ArrangeUsedSprites:
 ; Keep going until the end of the list.
 	ld a, [hli]
 	and a
-	jr z, .quit
+	ret z
 
 	ld a, [hl]
 	call GetSpriteLength
 
 ; There are only two tables, so don't go any further than that.
 	add b
-	jr c, .quit
+	ret c
 
 	ld [hl], b
 	ld b, a
@@ -419,8 +408,6 @@ ArrangeUsedSprites:
 
 	dec c
 	jr nz, .SecondTableLength
-
-.quit
 	ret
 
 GetSpriteLength:
@@ -455,7 +442,7 @@ GetUsedSprites:
 
 	ld a, [hli]
 	and a
-	jr z, .done
+	ret z
 	ldh [hUsedSpriteIndex], a
 
 	ld a, [hli]
@@ -476,8 +463,6 @@ GetUsedSprites:
 	pop bc
 	dec c
 	jr nz, .loop
-
-.done
 	ret
 
 GetUsedSprite:
@@ -508,21 +493,18 @@ endr
 
 	ld a, [wSpriteFlags]
 	bit 5, a
-	jr nz, .done
+	ret nz
 	bit 6, a
-	jr nz, .done
+	ret nz
 
 	ldh a, [hUsedSpriteIndex]
 	call _DoesSpriteHaveFacings
-	jr c, .done
+	ret c
 
 	ld a, h
 	add HIGH(vTiles1 - vTiles0)
 	ld h, a
-	call .CopyToVram
-
-.done
-	ret
+	jp .CopyToVram
 
 .GetTileAddr:
 ; Return the address of tile (a) in (hl).
@@ -582,8 +564,7 @@ LoadEmote::
 	ld a, c
 	and a
 	ret z
-	call GetEmote2bpp
-	ret
+	jp GetEmote2bpp
 
 INCLUDE "data/sprites/emotes.asm"
 
