@@ -78,8 +78,7 @@ TossItemFromPC:
 
 .CantToss:
 	ld hl, .ItemsTooImportantText
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .ItemsTooImportantText:
 	text_far _ItemsTooImportantText
@@ -87,8 +86,7 @@ TossItemFromPC:
 
 CantUseItem:
 	ld hl, ItemsOakWarningText
-	call MenuTextboxWaitButton
-	ret
+	jp MenuTextboxWaitButton
 
 ItemsOakWarningText:
 	text_far _ItemsOakWarningText
@@ -98,8 +96,7 @@ PartyMonItemName:
 	ld a, [wCurItem]
 	ld [wNamedObjectIndex], a
 	call GetItemName
-	call CopyName1
-	ret
+	jp CopyName1
 
 CancelPokemonAction:
 	farcall InitPartyMenuWithCancel
@@ -198,8 +195,7 @@ SwitchPartyMons:
 .DontSwitch:
 	xor a
 	ld [wPartyMenuActionText], a
-	call CancelPokemonAction
-	ret
+	jp CancelPokemonAction
 
 GiveTakePartyMonItem:
 ; Eggs can't hold items!
@@ -248,27 +244,23 @@ GiveTakePartyMonItem:
 
 	ld a, [wPackUsedItem]
 	and a
-	jr z, .quit
+	ret z
 
 	ld a, [wCurPocket]
 	cp KEY_ITEM_POCKET
-	jr z, .next
+	ret z
 
 	call CheckTossableItem
 	ld a, [wItemAttributeValue]
 	and a
-	jr nz, .next
+	ret nz
 
-	call TryGiveItemToPartymon
-	jr .quit
+	jp TryGiveItemToPartymon
 
 .next
 	ld hl, ItemCantHeldText
 	call MenuTextboxBackup
 	jr .loop
-
-.quit
-	ret
 
 TryGiveItemToPartymon:
 	call SpeechTextbox
@@ -290,20 +282,18 @@ TryGiveItemToPartymon:
 	call GiveItemToPokemon
 	ld hl, PokemonHoldItemText
 	call MenuTextboxBackup
-	call GivePartyItem
-	ret
+	jp GivePartyItem
 
 .please_remove_mail
 	ld hl, PokemonRemoveMailText
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .already_holding_item
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ld hl, PokemonAskSwapItemText
 	call StartMenuYesNo
-	jr c, .abort
+	ret c
 
 	call GiveItemToPokemon
 	ld a, [wNamedObjectIndex]
@@ -319,18 +309,14 @@ TryGiveItemToPartymon:
 	call MenuTextboxBackup
 	ld a, [wNamedObjectIndex]
 	ld [wCurItem], a
-	call GivePartyItem
-	ret
+	jp GivePartyItem
 
 .bag_full
 	ld a, [wNamedObjectIndex]
 	ld [wCurItem], a
 	call ReceiveItemFromPokemon
 	ld hl, ItemStorageFullText
-	call MenuTextboxBackup
-
-.abort
-	ret
+	jp MenuTextboxBackup
 
 GivePartyItem:
 	call GetPartyItemLocation
@@ -338,11 +324,8 @@ GivePartyItem:
 	ld [hl], a
 	ld d, a
 	farcall ItemIsMail
-	jr nc, .done
-	call ComposeMailMessage
-
-.done
-	ret
+	ret nc
+	jp ComposeMailMessage
 
 TakePartyItem:
 	call SpeechTextbox
@@ -363,19 +346,16 @@ TakePartyItem:
 	call GetItemName
 	ld hl, PokemonTookItemText
 	call MenuTextboxBackup
-	jr .done
+	ret
 
 .not_holding_item
 	ld hl, PokemonNotHoldingText
 	call MenuTextboxBackup
-	jr .done
+	ret
 
 .item_storage_full
 	ld hl, ItemStorageFullText
-	call MenuTextboxBackup
-
-.done
-	ret
+	jp MenuTextboxBackup
 
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
@@ -471,8 +451,7 @@ ComposeMailMessage:
 	ld a, BANK(sPartyMail)
 	call OpenSRAM
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 MonMailAction:
 ; If in the time capsule or trade center,
@@ -1264,8 +1243,7 @@ String_MoveNoPower:
 
 PlaceMoveScreenArrows:
 	call PlaceMoveScreenLeftArrow
-	call PlaceMoveScreenRightArrow
-	ret
+	jp PlaceMoveScreenRightArrow
 
 PlaceMoveScreenLeftArrow:
 	ld a, [wCurPartyMon]
