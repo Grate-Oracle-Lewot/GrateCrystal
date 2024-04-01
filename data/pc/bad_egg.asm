@@ -17,7 +17,6 @@ BadEgg:
 	db 0, 0, 0 ; Pokérus, Caught data
 	db EGG_LEVEL ; Level
 	db 0 ; Status
-	db 0 ; unused
 	bigdw 0 ; HP
 	bigdw 11 ; Max HP
 	bigdw 5 ; Atk
