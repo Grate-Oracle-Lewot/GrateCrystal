@@ -592,7 +592,6 @@ _PushWindow::
 
 .done
 	pop hl
-	call .ret ; empty function
 	ld a, h
 	ld [de], a
 	dec de
