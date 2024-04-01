@@ -4,8 +4,7 @@ ClearUnusedMapBuffer::
 	ld hl, wUnusedMapBuffer
 	ld bc, wUnusedMapBufferEnd - wUnusedMapBuffer
 	ld a, 0
-	call ByteFill
-	ret
+	jp ByteFill
 
 CheckScenes::
 ; Checks wCurMapSceneScriptPointer.  If it's empty, returns -1 in a.  Otherwise, returns the active scene ID in a.
@@ -93,8 +92,7 @@ GetMapSceneID::
 
 OverworldTextModeSwitch::
 	call LoadMapPart
-	call SwapTextboxPalettes
-	ret
+	jp SwapTextboxPalettes
 
 LoadMapPart::
 	ldh a, [hROMBank]
@@ -226,8 +224,7 @@ CheckWarpTile::
 WarpCheck::
 	call GetDestinationWarpNumber
 	ret nc
-	call CopyWarpData
-	ret
+	jp CopyWarpData
 
 GetDestinationWarpNumber::
 	farcall CheckWarpCollision
@@ -370,24 +367,21 @@ LoadMapAttributes::
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
 	xor a ; do not skip object events
-	call ReadMapEvents
-	ret
+	jp ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
 	ld a, TRUE ; skip object events
-	call ReadMapEvents
-	ret
+	jp ReadMapEvents
 
 CopyMapPartialAndAttributes::
 	call CopyMapPartial
 	call SwitchToMapAttributesBank
 	call GetMapAttributesPointer
 	call CopyMapAttributes
-	call GetMapConnections
-	ret
+	jp GetMapConnections
 
 ReadMapEvents::
 	push af
@@ -405,8 +399,7 @@ ReadMapEvents::
 	and a ; skip object events?
 	ret nz
 
-	call ReadObjectEvents
-	ret
+	jp ReadObjectEvents
 
 ReadMapScripts::
 	ld hl, wMapScriptsPointer
@@ -414,8 +407,7 @@ ReadMapScripts::
 	ld h, [hl]
 	ld l, a
 	call ReadMapSceneScripts
-	call ReadMapCallbacks
-	ret
+	jp ReadMapCallbacks
 
 CopyMapAttributes::
 	ld de, wMapAttributes
@@ -457,12 +449,9 @@ GetMapConnections::
 .no_west
 
 	bit EAST_F, b
-	jr z, .no_east
+	ret z
 	ld de, wEastMapConnection
-	call GetMapConnection
-.no_east
-
-	ret
+	jp GetMapConnection
 
 GetMapConnection::
 ; Load map connection struct at hl into de.
@@ -488,8 +477,7 @@ ReadMapSceneScripts::
 	ret z
 
 	ld bc, SCENE_SCRIPT_SIZE
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 ReadMapCallbacks::
 	ld a, [hli]
@@ -504,8 +492,7 @@ ReadMapCallbacks::
 	ret z
 
 	ld bc, CALLBACK_SIZE
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 ReadWarps::
 	ld a, [hli]
@@ -519,8 +506,7 @@ ReadWarps::
 	and a
 	ret z
 	ld bc, WARP_EVENT_SIZE
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 ReadCoordEvents::
 	ld a, [hli]
@@ -536,8 +522,7 @@ ReadCoordEvents::
 	ret z
 
 	ld bc, COORD_EVENT_SIZE
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 ReadBGEvents::
 	ld a, [hli]
@@ -553,8 +538,7 @@ ReadBGEvents::
 	ret z
 
 	ld bc, BG_EVENT_SIZE
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 ReadObjectEvents::
 	push hl
@@ -690,8 +674,7 @@ LoadBlockData::
 	call ChangeMap
 	call FillMapConnections
 	ld a, MAPCALLBACK_TILES
-	call RunMapCallback
-	ret
+	jp RunMapCallback
 
 ChangeMap::
 	ldh a, [hROMBank]
@@ -815,7 +798,7 @@ FillMapConnections::
 .East:
 	ld a, [wEastConnectedMapGroup]
 	cp $ff
-	jr z, .Done
+	ret z
 	ld b, a
 	ld a, [wEastConnectedMapNumber]
 	ld c, a
@@ -833,10 +816,7 @@ FillMapConnections::
 	ld b, a
 	ld a, [wEastConnectedMapWidth]
 	ldh [hConnectionStripLength], a
-	call FillEastConnectionStrip
-
-.Done:
-	ret
+	jp FillEastConnectionStrip
 
 FillNorthConnectionStrip::
 FillSouthConnectionStrip::
@@ -1533,8 +1513,7 @@ GetMovementPermissions::
 	dec e
 	call GetCoordTile
 	ld [wTileUp], a
-	call .Up
-	ret
+	jp .Up
 
 .LeftRight:
 	ld a, [wPlayerStandingMapX]
@@ -1552,8 +1531,7 @@ GetMovementPermissions::
 	inc d
 	call GetCoordTile
 	ld [wTileRight], a
-	call .Right
-	ret
+	jp .Right
 
 .Down:
 	call .CheckHiNybble
@@ -1705,8 +1683,7 @@ GetCoordTile::
 
 .nocarry2
 	ld a, [wTilesetCollisionBank]
-	call GetFarByte
-	ret
+	jp GetFarByte
 
 .nope
 	ld a, -1
@@ -1883,8 +1860,7 @@ FadeToMenu::
 	call LoadStandardMenuHeader
 	farcall FadeOutPalettes
 	call ClearSprites
-	call DisableSpriteUpdates
-	ret
+	jp DisableSpriteUpdates
 
 CloseSubmenu::
 	call ClearBGPalettes
@@ -1906,8 +1882,7 @@ FinishExitMenu::
 	farcall LoadOW_BGPal7
 	call WaitBGMap2
 	farcall FadeInPalettes
-	call EnableSpriteUpdates
-	ret
+	jp EnableSpriteUpdates
 
 ReturnToMapWithSpeechTextbox::
 	push af
@@ -1954,8 +1929,7 @@ ReloadTilesetAndPalettes::
 	pop af
 	rst Bankswitch
 
-	call EnableLCD
-	ret
+	jp EnableLCD
 
 GetMapPointer::
 	ld a, [wMapGroup]
@@ -1990,8 +1964,7 @@ GetAnyMapPointer::
 	dec c
 	ld b, 0
 	ld a, MAP_LENGTH
-	call AddNTimes
-	ret
+	jp AddNTimes
 
 GetMapField::
 ; Extract data from the current map's group entry.
