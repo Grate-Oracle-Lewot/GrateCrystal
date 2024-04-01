@@ -10,8 +10,8 @@
 	const DEXENTRY_PICS              ;  8
 	const DEXENTRY_AREA_NONE	 ;  9
 	const DEXENTRY_AREA_GRASS_JOHTO  ; 10
-	const DEXENTRY_AREA_GRASS_KANTO  ; 11
-	const DEXENTRY_AREA_SURF_JOHTO   ; 12
+	const DEXENTRY_AREA_SURF_JOHTO   ; 11
+	const DEXENTRY_AREA_GRASS_KANTO  ; 12
 	const DEXENTRY_AREA_SURF_KANTO   ; 13
 ;	const DEXENTRY_AREA_RODS
 	const DEXENTRY_AREA_TREES_COMMON ; 14
@@ -31,16 +31,18 @@ EXPORT DEXENTRY_EVO
 EXPORT DEXENTRY_PICS
 
 EXPORT DEXENTRY_AREA_GRASS_JOHTO
-EXPORT DEXENTRY_AREA_GRASS_KANTO
-
 EXPORT DEXENTRY_AREA_SURF_JOHTO
+
+EXPORT DEXENTRY_AREA_GRASS_KANTO
 EXPORT DEXENTRY_AREA_SURF_KANTO
 
 ; EXPORT DEXENTRY_AREA_RODS
 EXPORT DEXENTRY_AREA_TREES_COMMON
 EXPORT DEXENTRY_AREA_TREES_RARE
 EXPORT DEXENTRY_AREA_ROCKSMASH
+
 EXPORT DEXENTRY_AREA_CONTEST
+
 EXPORT DEXENTRY_AREA_ROAMING
 
 EXPORT DEXENTRY_AREA_NONE
@@ -75,8 +77,7 @@ AnimateDexSearchSlowpoke:
 	ld [wDexSearchSlowpokeFrame], a
 	call DoDexSearchSlowpokeFrame
 	ld c, 32
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 .FrameIDs:
 	; frame ID, duration
@@ -211,8 +212,7 @@ DisplayDexEntry:
 	push af
 	call PlaceFarString
 	pop bc
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 
 ; Page 2
 .page2
@@ -495,8 +495,8 @@ DisplayDexMonStats::
 	; these ones NEED to be in this order
 	call Pokedex_EggG_SetUp ; 3 lines
 	call Pokedex_PrintHatchSteps ; 1 line
-	call Pokedex_Get_GenderRatio ; 1 line
-	ret
+	jp Pokedex_Get_GenderRatio ; 1 line
+
 .Base_stats_text:
 	db "BASE STATS@"
 
@@ -527,30 +527,25 @@ DisplayDexMonMoves::
 	ld a, DEXENTRY_LVLUP
 	ld [wPokedexEntryType], a
 	call Pokedex_Calc_LvlMovesPtr
-	call Pokedex_Print_NextLvlMoves
-	ret
+	jp Pokedex_Print_NextLvlMoves
 .TMs
 	ld a, DEXENTRY_TMS
 	ld [wPokedexEntryType], a
-	call Pokedex_PrintTMs
-	ret
+	jp Pokedex_PrintTMs
 .HMs
  	ld a, DEXENTRY_HMS
  	ld [wPokedexEntryType], a
- 	call Pokedex_PrintHMs
- 	ret
+ 	jp Pokedex_PrintHMs
 .MTs
 	ld a, DEXENTRY_MTS
 	ld [wPokedexEntryType], a
-	call Pokedex_PrintMTs
-	ret
+	jp Pokedex_PrintMTs
 .EggMoves
 	ld a, DEXENTRY_EGG
 	ld [wPokedexEntryType], a
 	call Pokedex_Calc_EggMovesPtr
 	ret z
-	call Pokedex_Print_Egg_moves
-	ret
+	jp Pokedex_Print_Egg_moves
 
 Pokedex_Calc_LvlMovesPtr:
 	ld a, [wTempSpecies]
@@ -632,12 +627,11 @@ Pokedex_Print_NextLvlMoves:
 	call GetFarByte
 	and a
 	jr z, .FoundEnd
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 .FoundEnd
 	ld a, DEXENTRY_TMS
-	call DexEntry_NextCategory
-	ret
+	jp DexEntry_NextCategory
+
 .lvl_moves_text:
 	db "LVL-UP MOVES@"
 
@@ -741,8 +735,7 @@ Pokedex_PrintTMs:
 	call Pokedex_anymoreTMs
 	jr z, .done ; there are no moves left
 	; moves left
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 .notcompatible
 	ld a, NUM_TMS - 1
 	cp b
@@ -759,8 +752,8 @@ Pokedex_PrintTMs:
 	ret nz ; we've had at least one HM Move
 	hlcoord 4, 11
 	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
+	jp PlaceString
+
 .dex_TM_text:
 	db "TECHNICAL MACHINES@"
 
@@ -842,8 +835,7 @@ Pokedex_PrintHMs:
 	jr nz, .notcompatible
 	call Pokedex_anymoreHMs
 	jr z, .done
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 .notcompatible
 	ld a, NUM_HMS - 1
 	cp b
@@ -858,8 +850,8 @@ Pokedex_PrintHMs:
 	ret nz ; we've had at least one HM Move
 	hlcoord 4, 11
 	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
+	jp PlaceString
+
 .dex_HM_text:
 	db "HIDDEN MACHINES@"
 
@@ -932,8 +924,7 @@ Pokedex_PrintMTs:
 	call Pokedex_anymoreMTs
 	jr z, .done ; there are no moves left
 	; moves left
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 .notcompatible
 	ld a, NUM_TUTORS - 1
 	cp b
@@ -950,8 +941,8 @@ Pokedex_PrintMTs:
 	ret nz ; we've had at least one HM Move
 	hlcoord 4, 11
 	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
+	jp PlaceString
+
 .dex_MT_text:
 	db "MOVE TUTORS@"
 
@@ -1038,8 +1029,8 @@ Pokedex_Calc_EggMovesPtr:
 	; print NONE
 	hlcoord 3, 11
 	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
+	jp PlaceString
+
 .EggMoves_text:
 	db "EGG MOVES@"
 
@@ -1109,14 +1100,14 @@ Pokedex_DetailedArea:
 
 	ld hl, JohtoGrassWildMons
 	cp DEXENTRY_AREA_GRASS_JOHTO
-	jr z, .grass ; _johto
-	ld hl, KantoGrassWildMons
-	cp DEXENTRY_AREA_GRASS_KANTO
-	jr z, .grass ; _kanto
-	
-	ld hl,JohtoWaterWildMons
+	jr z, .grass
+	ld hl, JohtoWaterWildMons
 	cp DEXENTRY_AREA_SURF_JOHTO
 	jr z, .surf
+
+	ld hl, KantoGrassWildMons
+	cp DEXENTRY_AREA_GRASS_KANTO
+	jr z, .grass
 	ld hl, KantoWaterWildMons
 	cp DEXENTRY_AREA_SURF_KANTO
 	jr z, .surf
@@ -1152,15 +1143,13 @@ Pokedex_DetailedArea:
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
 	ld [wPokedexEntryPageNum], a ; page num
-	call Pokedex_PrintPageNum
-	ret
+	jp Pokedex_PrintPageNum
 .found
 	ld [wPokedexEntryType], a
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
 	ld [wPokedexEntryPageNum], a ; page num
-	call Pokedex_DetailedArea
-	ret
+	jp Pokedex_DetailedArea
 
 .grass
 	; hl contains the table we are looking at, JohtoGrassWildMons or KantoGrassWildMons	
@@ -1202,17 +1191,18 @@ Dex_FindFirstList:
 	call Dex_Check_Grass
 	and a
 	jr z, .grass_johto
-	ld hl, KantoGrassWildMons
-	ld a, BANK(KantoGrassWildMons)
-	call Dex_Check_Grass
-	and a
-	jr z, .grass_kanto
 
 	ld hl, JohtoWaterWildMons
 	ld a, BANK(JohtoWaterWildMons)
 	call Dex_Check_Surf
 	and a
 	jr z, .surf_johto
+
+	ld hl, KantoGrassWildMons
+	ld a, BANK(KantoGrassWildMons)
+	call Dex_Check_Grass
+	and a
+	jr z, .grass_kanto
 
 	ld hl, KantoWaterWildMons
 	ld a, BANK(KantoWaterWildMons)
@@ -1508,6 +1498,7 @@ Pokedex_DetailedArea_grass:
 	; page number is currently in a
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
+
 .grass_walk_text:
 	db "GRASS/CAVES@"
 .johto_text:
@@ -1796,6 +1787,7 @@ Pokedex_DetailedArea_surf:
 	; page number is currently in a
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
+
 .surfing_text:
 	db "SURFING@"
 .johto_text:
@@ -1924,7 +1916,7 @@ Add_encounter_percent_water:
 	ret
 .slot4
 	ld a, 10
-	; whatever value is currently in a will added to b
+	; whatever value is currently in a will be added to b
 	ret
 
 Dex_Check_Grass:
@@ -2131,8 +2123,7 @@ Pokedex_DetailedArea_Trees:
 .donedone
 	ld a, [wPokedexEntryType] ; rocksmash
 	inc a
-	call DexEntry_NextCategory	
-	ret
+	jp DexEntry_NextCategory
 .print_tree
 	call Print_Trees_Rocksmash ; map info in de, encounter % in wPokedexEvoStage3
 	call inc_trees_rocksmash_map_index
@@ -2149,8 +2140,7 @@ Pokedex_DetailedArea_Trees:
 	call AnyRemaining_trees
 	and a
 	jr nz, .donedone
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
 
 Dex_Check_Trees_firstcommon:
 	ld a, DEXENTRY_AREA_TREES_RARE
@@ -2290,8 +2280,7 @@ Print_Trees_Rocksmash:
 	ld c, a		
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
-	call PrintNum
-	ret
+	jp PrintNum
 
 Print_TreeTitle:
 	ld a, [wPokedexEntryType]
@@ -2299,13 +2288,12 @@ Print_TreeTitle:
 	jr z, .common
 	hlcoord 1, 9
 	ld de, .headbutt_tree_rare_text
-	call PlaceString
-	ret	
+	jp PlaceString	
 .common
 	hlcoord 1, 9
 	ld de, .headbutt_tree_common_text
-	call PlaceString
-	ret
+	jp PlaceString
+
 .headbutt_tree_common_text:
 	db "COMMON SHAKE-TREES@"
 .headbutt_tree_rare_text:
@@ -2463,8 +2451,7 @@ Pokedex_DetailedArea_rocksmash:
 .donedone
 	ld a, [wPokedexEntryType] ; rocksmash
 	inc a
-	call DexEntry_NextCategory	
-	ret
+	jp DexEntry_NextCategory	
 .print_rocksmash
 	call Print_Trees_Rocksmash ; map info in de, encounter % in wPokedexEvoStage3
 	call inc_trees_rocksmash_map_index
@@ -2482,8 +2469,8 @@ Pokedex_DetailedArea_rocksmash:
 	call AnyRemaining_RockSmash
 	and a
 	jr nz, .donedone
-	call DexEntry_IncPageNum
-	ret
+	jp DexEntry_IncPageNum
+
 .rocksmash_text:
 	db "SMASHABLE ROCKS@"
 
@@ -2631,8 +2618,8 @@ Pokedex_DetailedArea_bugcontest:
 .donedone
 	ld a, [wPokedexEntryType] ; bug
 	inc a
-	call DexEntry_NextCategory
-	ret
+	jp DexEntry_NextCategory
+
 .bugcontest_text:
 	db "BUG-CATCH CONTEST@"
 .park_text:
@@ -2663,8 +2650,7 @@ BugContest_Print:
 	hlcoord 10, 11
 	call PrintNum
 	hlcoord 4, 11
-	call PrintNum
-	ret
+	jp PrintNum
 
 Dex_Check_roaming:
 	ld a, [wCurSpecies]
@@ -2726,8 +2712,8 @@ Pokedex_DetailedArea_roaming:
 .donedone
 	ld a, [wPokedexEntryType] ; roaming
 	inc a
-	call DexEntry_NextCategory
-	ret
+	jp DexEntry_NextCategory
+
 .roaming_text:
 	db "ROAMING@"
 
@@ -2827,5 +2813,6 @@ Dex_Print_Roamer_Info:
 	inc c ; for next print, in case there are mult roamers of same species
 	inc c
 	ret
+
 .hp_text:
 	db "HP:@"
