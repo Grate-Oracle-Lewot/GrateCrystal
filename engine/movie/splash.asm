@@ -111,16 +111,14 @@ GameFreakPresentsInit:
 	ld a, 144
 	ldh [hWY], a
 	lb de, %11100100, %11100100
-	call DmgToCgbObjPals
-	ret
+	jp DmgToCgbObjPals
 
 GameFreakPresentsEnd:
 	farcall ClearSpriteAnims
 	call ClearTilemap
 	call ClearSprites
 	ld c, 16
-	call DelayFrames
-	ret
+	jp DelayFrames
 
 GameFreakPresentsScene:
 	jumptable .scenes, wJumptableIndex
@@ -155,8 +153,7 @@ GameFreakPresents_PlaceGameFreak:
 	call CopyBytes
 	call GameFreakPresents_NextScene
 	ld de, SFX_GAME_FREAK_PRESENTS
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .game_freak
 	db $00, $01, $02, $03, $0d, $04, $05, $03, $01, $06
@@ -179,8 +176,7 @@ GameFreakPresents_PlacePresents:
 	call CopyBytes
 	call GameFreakPresents_NextScene
 	ld de, SFX_VICEGRIP
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .presents
 	db $07, $08, $09, $0a, $0b, $0c
@@ -270,8 +266,7 @@ GameFreakLogo_Bounce:
 	sub 48
 	ld [hl], a
 	ld de, SFX_DITTO_BOUNCE
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 .done
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
@@ -281,8 +276,7 @@ GameFreakLogo_Bounce:
 	add hl, bc
 	ld [hl], 0
 	ld de, SFX_DITTO_POP_UP
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 GameFreakLogo_Ditto:
 ; Wait a little, then start transforming
@@ -302,8 +296,7 @@ GameFreakLogo_Ditto:
 	add hl, bc
 	ld [hl], 0
 	ld de, SFX_DITTO_TRANSFORM
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 GameFreakLogo_Transform:
 	ld hl, SPRITEANIMSTRUCT_VAR2 ; frame count
@@ -339,7 +332,8 @@ GameFreakLogo_Transform:
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	inc [hl]
-	call GameFreakPresents_NextScene
+	jp GameFreakPresents_NextScene
+
 GameFreakLogo_Done:
 	ret
 
