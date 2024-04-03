@@ -202,7 +202,7 @@ CianwoodDarkroomWillPhoto:
 EndGauntlet:
 	pause 10
 	special FadeOutPalettes
-	playsound SFX_WARP_TO
+	playsound SFX_THIEF_2
 	waitsfx
 	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
