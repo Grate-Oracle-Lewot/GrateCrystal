@@ -1,10 +1,10 @@
 	db "PSI@" ; species name
 	dw 211, 430 ; height, weight
 
-	db   "It is technically"
-	next "always asleep. Its"
-	next "long nap lets it"
+	db   "Just one of its"
+	next "brain cells is"
+	next "smarter than most"
 
-	page "build up psychic"
-	next "power for"
-	next "evolution.@"
+	page "humans. As such,"
+	next "it avoids battles"
+	next "and naps all day.@"
