@@ -1840,7 +1840,7 @@ JohtoGrassWildMons:
 	db 40, GOLBAT
 	db 53, CROBAT
 	db 24, UNOWN
-	db 1, UNOWN
+	db 24, SLUGMA
 	db 43, CHARIZARD
 	; day
 	db 48, UNOWN
@@ -1849,7 +1849,7 @@ JohtoGrassWildMons:
 	db 40, GOLBAT
 	db 53, CROBAT
 	db 24, UNOWN
-	db 1, UNOWN
+	db 48, MAGCARGO
 	db 43, CHARIZARD
 	; nite
 	db 48, UNOWN
