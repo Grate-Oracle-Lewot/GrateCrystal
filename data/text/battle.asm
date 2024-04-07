@@ -1165,3 +1165,10 @@ StaticPrzcureberryText:
 	text_ram wStringBuffer1
 	text "!"
 	autodone
+
+QuillsText:
+	text "<USER>"
+	line "was hurt by"
+	scroll "<TARGET>'s"
+	scroll "quills!"
+	autodone
