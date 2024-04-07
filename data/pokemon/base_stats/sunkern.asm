@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type
-	db 235 ; catch rate
+	db 230 ; catch rate
 	db 52 ; base exp
 	db SUN_STONE, TM_SOLARBEAM ; items
 	db GENDER_F50 ; gender ratio
