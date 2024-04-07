@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, FIRE ; type
-	db 120 ; catch rate
+	db 100 ; catch rate
 	db 156 ; base exp
 	db SUN_STONE, TM_SUNNY_DAY ; items
 	db GENDER_F50 ; gender ratio
