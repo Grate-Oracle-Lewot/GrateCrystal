@@ -10,13 +10,10 @@ PewterMuseum1F_MapScripts:
 	def_callbacks
 
 .MuseumBrockScene:
-	sdefer .MuseumBrockSceneScript
+
 	end
 
 .DummyScene:
-	end
-
-.MuseumBrockSceneScript:
 	end
 
 PewterMuseum1FScientistScript:
