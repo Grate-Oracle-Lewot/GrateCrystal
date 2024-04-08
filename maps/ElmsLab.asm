@@ -1206,8 +1206,12 @@ AideText_TheftTestimony:
 AideText_GiveYouBalls:
 	text "<PLAY_G>!"
 
-	para "Use these on your"
-	line "#DEX quest!"
+	para "If you're going to"
+	line "complete your"
+
+	para "#DEX, you'll"
+	line "need these to"
+	cont "catch #MON!"
 	done
 
 ReceivedPokeBallsText:
@@ -1220,13 +1224,11 @@ AideText_ExplainBalls:
 	line "# BALLS in the"
 	cont "BALL POCKET."
 
-	para "To add to your"
-	line "#DEX, you have"
-	cont "to catch #MON."
-
 	para "Throw # BALLS"
 	line "at wild #MON"
-	cont "to capture them."
+
+	para "during battle to"
+	cont "capture them."
 	done
 
 ElmsLabOfficerText1:
@@ -1287,7 +1289,7 @@ ElmsLabTravelTip2Text:
 	para "Travel Tip 2:"
 
 	para "Hold the B Button"
-	line "and move to run!"
+	line "and move to run."
 	done
 
 ElmsLabTravelTip3Text:
