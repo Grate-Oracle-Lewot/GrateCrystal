@@ -7,6 +7,7 @@
 	const SAFFRONCITY_YOUNGSTER1
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
+	const SAFFRONCITY_BUG_CATCHER
 
 SaffronCity_MapScripts:
 	def_scene_scripts
@@ -67,6 +68,9 @@ SaffronCityYoungster2Script:
 
 SaffronCityLass2Script:
 	jumptextfaceplayer SaffronCityLass2Text
+
+SaffronCityBugCatcherScript:
+	jumptext SaffronCityBugCatcherText
 
 SaffronCitySign:
 	jumptext SaffronCitySignText
@@ -223,6 +227,16 @@ SaffronCityLass2Text:
 	cont "too."
 	done
 
+SaffronCityBugCatcherText:
+	text "Must… serve…"
+	line "SABRINA…"
+
+	para "Must… block… door…"
+
+	para "Hope… will be…"
+	line "paid… after…"
+	done
+
 SaffronCitySignText:
 	text "SAFFRON CITY"
 
@@ -301,3 +315,4 @@ SaffronCity_MapEvents:
 	object_event 15, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
+	object_event 34,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityBugCatcherScript, EVENT_SABRINA_IN_MOUNT_MORTAR
