@@ -24,6 +24,7 @@ NewBarkTown_MapScripts:
 
 NewBarkTown_TeacherStopsYouScene1:
 	playmusic MUSIC_MOM
+	showemote EMOTE_SHOCK, NEWBARKTOWN_TEACHER, 10
 	turnobject NEWBARKTOWN_TEACHER, LEFT
 	opentext
 	writetext Text_WaitPlayer
