@@ -4,6 +4,7 @@
 	const PEWTERCITY_GRAMPS
 	const PEWTERCITY_FRUIT_TREE1
 	const PEWTERCITY_FRUIT_TREE2
+	const PEWTERCITY_YOUNGSTER
 
 PewterCity_MapScripts:
 	def_scene_scripts
@@ -23,6 +24,9 @@ PewterCityBugCatcherScript:
 
 PewterCityGrampsScript:
 	jumptextfaceplayer PewterCityGrampsText
+
+PewterCityYoungsterScript:
+	jumptextfaceplayer PewterCityYoungsterText
 
 PewterCitySign:
 	jumptext PewterCitySignText
@@ -92,6 +96,24 @@ PewterCityGrampsText:
 	cont "go and see!"
 	done
 
+PewterCityYoungsterText:
+	text "The alarm went off"
+	line "at the MUSEUM, so"
+
+	para "BROCK went to"
+	line "investigate."
+
+	para "What's that? Did"
+	line "he pay me to stand"
+	cont "here?"
+
+	para "I mean… I'm employ-"
+	line "ed as his GYM"
+	cont "trainer, so…"
+
+	para "Kind of?"
+	done
+
 PewterCitySignText:
 	text "PEWTER CITY"
 	line "A Stone Gray City"
@@ -153,3 +175,4 @@ PewterCity_MapEvents:
 	object_event 29, 17, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterCityGrampsScript, -1
 	object_event 32,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
 	object_event 30,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
+	object_event 16, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityYoungsterScript, EVENT_BROCK_IN_PEWTER_MUSEUM
