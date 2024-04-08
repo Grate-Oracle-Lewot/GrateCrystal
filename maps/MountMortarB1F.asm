@@ -10,8 +10,18 @@
 
 MountMortarB1F_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_EARLY
+	scene_script .SabrinaVsKiyo ; SCENE_MOUNTMORTARB1F_SABRINA
+	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_NOTHING
 
 	def_callbacks
+
+.DummyScene:
+	end
+
+.SabrinaVsKiyo:
+
+	end
 
 MountMortarB1FKiyoScript:
 	faceplayer
