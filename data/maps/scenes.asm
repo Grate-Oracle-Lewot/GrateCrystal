@@ -12,7 +12,7 @@ MapScenes::
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var TRAINER_HOUSE_B1F,                           wTrainerHouseB1FSceneID
 	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
-	scene_var PEWTER_MUSEUM_1F,                            wPewterMuseumSceneID ; unused
+	scene_var PEWTER_MUSEUM_1F,                            wPewterMuseumSceneID
 	scene_var CERULEAN_GYM,                                wCeruleanGymSceneID
 	scene_var POWER_PLANT,                                 wPowerPlantSceneID
 	scene_var ROUTE_25,                                    wRoute25SceneID
@@ -75,6 +75,7 @@ MapScenes::
 	scene_var BURNED_TOWER_1F,                             wBurnedTower1FSceneID
 	scene_var BURNED_TOWER_B1F,                            wBurnedTowerB1FSceneID
 	scene_var TIN_TOWER_1F,                                wTinTower1FSceneID
+	scene_var MOUNT_MORTAR_B1F,                            wMountMortarB1FSceneID
 	scene_var MAHOGANY_MART_1F,                            wMahoganyMart1FSceneID
 	scene_var TEAM_ROCKET_BASE_B1F,                        wTeamRocketBaseB1FSceneID
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
