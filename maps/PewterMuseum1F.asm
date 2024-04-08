@@ -4,8 +4,20 @@
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
+	scene_script .MuseumBrockScene ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+
+.MuseumBrockScene:
+	sdefer .MuseumBrockSceneScript
+	end
+
+.DummyScene:
+	end
+
+.MuseumBrockSceneScript:
+	end
 
 PewterMuseum1FScientistScript:
 	faceplayer
