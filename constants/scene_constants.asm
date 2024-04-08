@@ -12,54 +12,54 @@ SCENE_ALWAYS   EQU -1
 
 ; wPokecenter2FSceneID
 	const_def 1
-	const SCENE_POKECENTER2F_LEAVE_TRADE_CENTER       ; 1
-	const SCENE_POKECENTER2F_LEAVE_COLOSSEUM          ; 2
-	const SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE       ; 3
-	const SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM  ; 4
-	const SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM ; 5
+	const SCENE_POKECENTER2F_LEAVE_TRADE_CENTER             ; 1
+	const SCENE_POKECENTER2F_LEAVE_COLOSSEUM                ; 2
+	const SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE             ; 3
+	const SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM        ; 4
+	const SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM       ; 5
 
 ; wCeruleanGymSceneID
 	const_def
-	const SCENE_CERULEANGYM_NOTHING        ; 0
-	const SCENE_CERULEANGYM_GRUNT_RUNS_OUT ; 1
+	const SCENE_CERULEANGYM_NOTHING                         ; 0
+	const SCENE_CERULEANGYM_GRUNT_RUNS_OUT                  ; 1
 
 ; wPowerPlantSceneID
 	const_def
-	const SCENE_POWERPLANT_NOTHING               ; 0
-	const SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL ; 1
+	const SCENE_POWERPLANT_NOTHING                          ; 0
+	const SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL            ; 1
 
 ; wRoute25SceneID
 	const_def
-	const SCENE_ROUTE25_NOTHING     ; 0
-	const SCENE_ROUTE25_MISTYS_DATE ; 1
+	const SCENE_ROUTE25_NOTHING                             ; 0
+	const SCENE_ROUTE25_MISTYS_DATE                         ; 1
 
 ; wLancesRoomSceneID
 	const_def 1
-	const SCENE_LANCESROOM_APPROACH_LANCE ; 1
+	const SCENE_LANCESROOM_APPROACH_LANCE                   ; 1
 
 ; wElmsLabSceneID
 	const_def 1
-	const SCENE_ELMSLAB_CANT_LEAVE            ; 1
-	const SCENE_ELMSLAB_NOTHING               ; 2
-	const SCENE_ELMSLAB_MEET_OFFICER          ; 3
-	const SCENE_ELMSLAB_UNUSED                ; 4
-	const SCENE_ELMSLAB_AIDE_GIVES_POTION     ; 5
-	const SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS ; 6
+	const SCENE_ELMSLAB_CANT_LEAVE                          ; 1
+	const SCENE_ELMSLAB_NOTHING                             ; 2
+	const SCENE_ELMSLAB_MEET_OFFICER                        ; 3
+	const SCENE_ELMSLAB_UNUSED                              ; 4
+	const SCENE_ELMSLAB_AIDE_GIVES_POTION                   ; 5
+	const SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS               ; 6
 
 ; wRoute29SceneID
 	const_def
-	const SCENE_ROUTE29_NOTHING        ; 0
-	const SCENE_ROUTE29_CATCH_TUTORIAL ; 1
+	const SCENE_ROUTE29_NOTHING                             ; 0
+	const SCENE_ROUTE29_CATCH_TUTORIAL                      ; 1
 
 ; wCherrygroveCitySceneID
 	const_def
-	const SCENE_CHERRYGROVECITY_NOTHING    ; 0
-	const SCENE_CHERRYGROVECITY_MEET_RIVAL ; 1
+	const SCENE_CHERRYGROVECITY_NOTHING                     ; 0
+	const SCENE_CHERRYGROVECITY_MEET_RIVAL                  ; 1
 
 ; wRoute32SceneID
 	const_def 1
-	const SCENE_ROUTE32_OFFER_SLOWPOKETAIL ; 1
-	const SCENE_ROUTE32_NOTHING            ; 2
+	const SCENE_ROUTE32_OFFER_SLOWPOKETAIL                  ; 1
+	const SCENE_ROUTE32_NOTHING                             ; 2
 
 ; wRoute35NationalParkGateSceneID
 	const_def
@@ -80,93 +80,93 @@ SCENE_ALWAYS   EQU -1
 
 ; wAzaleaTownSceneID
 	const_def
-	const SCENE_AZALEATOWN_NOTHING              ; 0
-	const SCENE_AZALEATOWN_RIVAL_BATTLE         ; 1
-	const SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL ; 2
+	const SCENE_AZALEATOWN_NOTHING                          ; 0
+	const SCENE_AZALEATOWN_RIVAL_BATTLE                     ; 1
+	const SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL             ; 2
 
 ; wGoldenrodGymSceneID
 	const_def
-	const SCENE_GOLDENRODGYM_NOTHING              ; 0
-	const SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING ; 1
+	const SCENE_GOLDENRODGYM_NOTHING                        ; 0
+	const SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING           ; 1
 
 ; wRadioTower5FSceneID
 	const_def 1
-	const SCENE_RADIOTOWER5F_ROCKET_BOSS ; 1
-	const SCENE_RADIOTOWER5F_NOTHING     ; 2
+	const SCENE_RADIOTOWER5F_ROCKET_BOSS                    ; 1
+	const SCENE_RADIOTOWER5F_NOTHING                        ; 2
 
 ; wCianwoodCitySceneID
 	const_def
-	const SCENE_CIANWOODCITY_NOTHING            ; 0
-	const SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE ; 1
+	const SCENE_CIANWOODCITY_NOTHING                        ; 0
+	const SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE             ; 1
 
 ; wCianwoodDarkroomSceneID
 	const_def
-	const SCENE_CIANWOODDARKROOM_RESET_GAUNTLET     ; 0
-	const SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET     ; 1
-	const SCENE_CIANWOODDARKROOM_WAITING            ; 2
+	const SCENE_CIANWOODDARKROOM_RESET_GAUNTLET             ; 0
+	const SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET             ; 1
+	const SCENE_CIANWOODDARKROOM_WAITING                    ; 2
 
 ; wRoute42SceneID
 	const_def
-	const SCENE_ROUTE42_NOTHING ; 0
-	const SCENE_ROUTE42_SUICUNE ; 1
+	const SCENE_ROUTE42_NOTHING                             ; 0
+	const SCENE_ROUTE42_SUICUNE                             ; 1
 
 ; wMahoganyMart1FSceneID
 	const_def
-	const SCENE_MAHOGANYMART1F_NOTHING               ; 0
-	const SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS ; 1
+	const SCENE_MAHOGANYMART1F_NOTHING                      ; 0
+	const SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS        ; 1
 
 ; wFastShip1FSceneID
 	const_def 1
-	const SCENE_FASTSHIP1F_ENTER_SHIP   ; 1
-	const SCENE_FASTSHIP1F_MEET_GRANDPA ; 2
+	const SCENE_FASTSHIP1F_ENTER_SHIP                       ; 1
+	const SCENE_FASTSHIP1F_MEET_GRANDPA                     ; 2
 
 ; wVermilionPortSceneID
 	const_def 1
-	const SCENE_VERMILIONPORT_LEAVE_SHIP ; 1
+	const SCENE_VERMILIONPORT_LEAVE_SHIP                    ; 1
 
 ; wOlivinePortSceneID
 	const_def 1
-	const SCENE_OLIVINEPORT_LEAVE_SHIP ; 1
+	const SCENE_OLIVINEPORT_LEAVE_SHIP                      ; 1
 
 ; wRuinsOfAlphOutsideSceneID
 	const_def
-	const SCENE_RUINSOFALPHOUTSIDE_NOTHING       ; 0
-	const SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX ; 1
+	const SCENE_RUINSOFALPHOUTSIDE_NOTHING                  ; 0
+	const SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX            ; 1
 
 ; wRuinsOfAlphInnerChamberSceneID
 	const_def
-	const SCENE_RUINSOFALPHINNERCHAMBER_NOTHING          ; 0
-	const SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE ; 1
+	const SCENE_RUINSOFALPHINNERCHAMBER_NOTHING             ; 0
+	const SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE    ; 1
 
 ; wRuinsOfAlphResearchCenterSceneID
 	const_def
-	const SCENE_RUINSOFALPHRESEARCHCENTER_NOTHING       ; 0
-	const SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX ; 1
+	const SCENE_RUINSOFALPHRESEARCHCENTER_NOTHING           ; 0
+	const SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX     ; 1
 
 ; wBurnedTower1FSceneID
 	const_def 1
-	const SCENE_BURNEDTOWER1F_RIVAL_BATTLE ; 1
-	const SCENE_BURNEDTOWER1F_NOTHING      ; 2
+	const SCENE_BURNEDTOWER1F_RIVAL_BATTLE                  ; 1
+	const SCENE_BURNEDTOWER1F_NOTHING                       ; 2
 
 ; wMountMortarB1FSceneID
 	const_def
-	const SCENE_MOUNTMORTARB1F_EARLY       ; 0
-	const SCENE_MOUNTMORTARB1F_SABRINA     ; 1
-	const SCENE_MOUNTMORTARB1F_NOTHING     ; 2
+	const SCENE_MOUNTMORTARB1F_EARLY                        ; 0
+	const SCENE_MOUNTMORTARB1F_SABRINA                      ; 1
+	const SCENE_MOUNTMORTARB1F_NOTHING                      ; 2
 
 ; wTeamRocketBaseB2FSceneID
 	const_def 1
-	const SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS ; 1
-	const SCENE_TEAMROCKETBASEB2F_ELECTRODES  ; 2
-	const SCENE_TEAMROCKETBASEB2F_NOTHING     ; 3
+	const SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS               ; 1
+	const SCENE_TEAMROCKETBASEB2F_ELECTRODES                ; 2
+	const SCENE_TEAMROCKETBASEB2F_NOTHING                   ; 3
 
 ; wTeamRocketBaseB3FSceneID
 	const_def 1
-	const SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER ; 1
-	const SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS     ; 2
-	const SCENE_TEAMROCKETBASEB3F_NOTHING         ; 3
+	const SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER           ; 1
+	const SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS               ; 2
+	const SCENE_TEAMROCKETBASEB3F_NOTHING                   ; 3
 
 ; wDragonsDenB1FSceneID
 	const_def
-	const SCENE_DRAGONSDENB1F_NOTHING        ; 0
-	const SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM ; 1
+	const SCENE_DRAGONSDENB1F_NOTHING                       ; 0
+	const SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM                ; 1
