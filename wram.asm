@@ -3023,7 +3023,7 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wTrainerHouseB1FSceneID::                         db
 wVictoryRoadGateSceneID::                         db
-wPewterMuseumSceneID::                            db ; unused
+wPewterMuseumSceneID::                            db
 wCeruleanGymSceneID::                             db
 wPowerPlantSceneID::                              db
 wRoute25SceneID::                                 db
@@ -3086,6 +3086,7 @@ wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
 wBurnedTower1FSceneID::                           db
 wBurnedTowerB1FSceneID::                          db
 wTinTower1FSceneID::                              db
+wMountMortarB1FSceneID::                          db
 wMahoganyMart1FSceneID::                          db
 wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
@@ -3094,11 +3095,11 @@ wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
 wVictoryRoadSceneID::                             db
 
-	ds 4
+	ds 3
 
 ; fight counts
 wJackFightCount::    db
-wBeverlyFightCount:: db ; unreferenced
+wBeverlyFightCount:: db
 wHueyFightCount::    db
 wGavenFightCount::   db
 wBethFightCount::    db
@@ -3111,18 +3112,18 @@ wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
 wGinaFightCount::    db
-wIrwinFightCount::   db ; unreferenced
+wIrwinFightCount::   db
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db
 wChadFightCount::    db
-wDerekFightCount::   db ; unreferenced
+wDerekFightCount::   db
 wTullyFightCount::   db
 wBrentFightCount::   db
 wTiffanyFightCount:: db
 wVanceFightCount::   db
 wWiltonFightCount::  db
-wKenjiFightCount::   db ; unreferenced
+wKenjiFightCount::   db
 wParryFightCount::   db
 wErinFightCount::    db
 
