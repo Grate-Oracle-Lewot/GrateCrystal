@@ -1,6 +1,8 @@
 	object_const_def
 	const PEWTERMUSEUM1F_SCIENTIST
 	const PEWTERMUSEUM1F_GOLD_TROPHY
+	const PEWTERMUSEUM1F_PHARMACIST
+	const PEWTERMUSEUM1F_BROCK
 
 PewterMuseum1F_MapScripts:
 	def_scene_scripts
@@ -8,12 +10,45 @@ PewterMuseum1F_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .BrockAndBurglar
 
 .MuseumBrockScene:
-
+	pause 5
+	playsound SFX_TACKLE
+	applymovement PEWTERMUSEUM1F_PHARMACIST, PewterMuseum1F_BurglarKickedMovement
+	opentext
+	writetext PewterMuseum1FBrockText1
+	waitbutton
+	closetext
+	applymovement PEWTERMUSEUM1F_PHARMACIST, PewterMuseum1F_BurglarRunsMovement
+	playsound SFX_EXIT_BUILDING
+	disappear PEWTERMUSEUM1F_PHARMACIST
+	applymovement PEWTERMUSEUM1F_BROCK, PewterMuseum1F_BrockAppearsMovement
+	opentext
+	writetext PewterMuseum1FBrockText2
+	waitbutton
+	closetext
+	applymovement PEWTERMUSEUM1F_BROCK, PewterMuseum1F_BrockLeavesMovement
+	playsound SFX_EXIT_BUILDING
+	disappear PEWTERMUSEUM1F_BROCK
+	applymovement PLAYER, PewterMuseum1F_PlayerTurnsMovement
+	setevent EVENT_BROCK_IN_PEWTER_MUSEUM
+	setscene SCENE_FINISHED
 	end
 
 .DummyScene:
+	end
+
+.BrockAndBurglar:
+	checkevent EVENT_BROCK_IN_PEWTER_MUSEUM
+	iftrue .Disappear
+	appear PEWTERMUSEUM1F_PHARMACIST
+	appear PEWTERMUSEUM1F_BROCK
+	end
+
+.Disappear:
+	disappear PEWTERMUSEUM1F_PHARMACIST
+	disappear PEWTERMUSEUM1F_BROCK
 	end
 
 PewterMuseum1FScientistScript:
@@ -242,6 +277,63 @@ SneaselBookshelfScript:
 
 MewBookshelfScript:
 	jumptext MewBookshelfText
+
+PewterMuseum1F_BurglarKickedMovement:
+	fix_facing
+	jump_step DOWN
+	remove_fixed_facing
+	step_end
+
+PewterMuseum1F_BurglarRunsMovement:
+	big_step RIGHT
+	big_step DOWN
+	step_end
+
+PewterMuseum1F_BrockAppearsMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+PewterMuseum1F_BrockLeavesMovement:
+	step RIGHT
+	step DOWN
+	step_end
+
+PewterMuseum1F_PlayerTurnsMovement:
+	turn_head RIGHT
+	turn_head DOWN
+	step_end
+
+PewterMuseum1FBrockText1:
+	text "And stay out!"
+	done
+
+PewterMuseum1FBrockText2:
+	text "BROCK: Oh, hey"
+	line "there."
+
+	para "Were you looking"
+	line "for a GYM battle?"
+
+	para "Sorry, I had to"
+	line "respond to the"
+
+	para "MUSEUM's burglar"
+	line "alarm."
+
+	para "I love fossils, so"
+	line "there's no way I'm"
+
+	para "letting anyone"
+	line "steal them!"
+
+	para "I'll head back to"
+	line "the GYM now."
+
+	para "Come find me if"
+	line "you want!"
+	done
 
 PewterMuseum1FScientistIntroText:
 	text "Thanks to our"
@@ -478,3 +570,5 @@ PewterMuseum1F_MapEvents:
 	def_object_events
 	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FScientistScript, -1
 	object_event 16,  2, SPRITE_GOLD_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterMuseum1FGoldTrophy, -1
+	object_event 10,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PEWTERMUSEUM1F_PHARMACIST
+	object_event 10,  3, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PEWTERMUSEUM1F_BROCK
