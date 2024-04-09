@@ -20,6 +20,7 @@ PewterMuseum1F_MapScripts:
 	writetext PewterMuseum1FBrockText1
 	waitbutton
 	closetext
+	playsound SFX_RUN
 	applymovement PEWTERMUSEUM1F_PHARMACIST, PewterMuseum1F_BurglarRunsMovement
 	playsound SFX_EXIT_BUILDING
 	disappear PEWTERMUSEUM1F_PHARMACIST
