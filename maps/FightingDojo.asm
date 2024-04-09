@@ -32,14 +32,22 @@ FightingDojoFocusBand:
 	itemball FOCUS_BAND
 
 FightingDojoBlackBeltText:
-	text "Hello!"
+	text "I'm sorry. Our"
+	line "KARATE KING is not"
+	cont "here."
 
-	para "KARATE KING, the"
-	line "FIGHTING DOJO's"
+	para "He is training to"
+	line "challenge SABRINA"
 
-	para "master, is in a"
-	line "cave in JOHTO for"
-	cont "training."
+	para "for the title of"
+	line "GYM LEADER."
+
+	para "He sought out a"
+	line "cave in JOHTO as a"
+	cont "training ground."
+
+	para "I believe it was"
+	line "called MT.MORTAR."
 	done
 
 JugglerIrvingSeenText:
