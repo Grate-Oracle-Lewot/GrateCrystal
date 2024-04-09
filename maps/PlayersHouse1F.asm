@@ -33,6 +33,21 @@ MeetMomRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	giveitem FEAROWBOT
+	giveitem HEDGER
+	giveitem DISCO_BALL
+	giveitem PICKAXE
+	giveitem FLOATIE
+	giveitem EGG_BEATER
+	giveitem GRAVITY_BUOY
 	setmapscene CELADON_GYM, SCENE_FINISHED
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .SkipBouncer
