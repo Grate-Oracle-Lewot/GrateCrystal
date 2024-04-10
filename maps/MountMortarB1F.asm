@@ -16,8 +16,22 @@ MountMortarB1F_MapScripts:
 	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_NOTHING
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Sabrina
 
 .DummyScene:
+	end
+
+.Sabrina:
+	checkevent EVENT_SABRINA_IN_MOUNT_MORTAR
+	iftrue .Disappear
+	checkscene
+	ifequal SCENE_MOUNTMORTARB1F_SABRINA, .Appear
+.Disappear:
+	disappear MOUNTMORTARB1F_SABRINA
+	end
+
+.Appear:
+	appear MOUNTMORTARB1F_SABRINA
 	end
 
 MountMortarB1FSabrinaScene:
