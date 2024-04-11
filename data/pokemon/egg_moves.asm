@@ -732,6 +732,7 @@ GligarEggMoves:
 SnubbullEggMoves:
 	db REFLECT
 	db METRONOME
+	db CLAMP
 	db MEAN_LOOK
 	db PRESENT
 	db HEAL_BELL
