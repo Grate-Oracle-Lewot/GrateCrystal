@@ -1,5 +1,5 @@
 DefaultOptions:
-; wOptions: med text speed
+; wOptions: fast text speed
 	db TEXT_DELAY_FAST
 ; wSaveFileExists: no
 	db FALSE
