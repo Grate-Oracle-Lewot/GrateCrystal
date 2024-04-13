@@ -1,4 +1,4 @@
-	db "BEAK@" ; species name
+	db "BOID@" ; species name
 	dw 311, 840 ; height, weight
 
 	db   "Its feet never"
