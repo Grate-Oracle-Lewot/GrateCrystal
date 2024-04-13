@@ -99,7 +99,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, BLUE   ; GASTLY
 	icon_pals PURPLE, BLUE   ; HAUNTER
 	icon_pals PURPLE, GREEN  ; GENGAR
-	icon_pals GRAY,   GREEN  ; ONIX
+	icon_pals GRAY,   BLUE   ; ONIX
 	icon_pals YELLOW, PURPLE ; DROWZEE
 	icon_pals YELLOW, PINK   ; HYPNO
 	icon_pals RED,    BROWN  ; KRABBY
@@ -225,7 +225,7 @@ MonMenuIconPals:
 	icon_pals RED,    GRAY   ; SLUGMA
 	icon_pals GRAY,   BLUE   ; MAGCARGO
 	icon_pals BROWN,  BLUE   ; SWINUB
-	icon_pals BROWN,  YELLOW ; PILOSWINE
+	icon_pals BROWN,  GRAY   ; PILOSWINE
 	icon_pals PINK,   BLUE   ; CORSOLA
 	icon_pals GRAY,   PINK   ; REMORAID
 	icon_pals RED,    GREEN  ; OCTILLERY
@@ -250,9 +250,9 @@ MonMenuIconPals:
 	icon_pals YELLOW, BROWN  ; RAIKOU
 	icon_pals RED,    BROWN  ; ENTEI
 	icon_pals BLUE,   GRAY   ; SUICUNE
-	icon_pals GREEN,  YELLOW ; LARVITAR
-	icon_pals BLUE,   PURPLE ; PUPITAR
-	icon_pals GREEN,  RED    ; TYRANITAR
+	icon_pals GREEN,  PINK   ; LARVITAR
+	icon_pals BLUE,   GREEN  ; PUPITAR
+	icon_pals GREEN,  PURPLE ; TYRANITAR
 	icon_pals BLUE,   RED    ; LUGIA
 	icon_pals RED,    YELLOW ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
