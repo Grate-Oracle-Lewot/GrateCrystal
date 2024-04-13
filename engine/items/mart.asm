@@ -464,7 +464,6 @@ BuyMenuLoop:
 	jr c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
-	ld a, 3 ; useless load
 	call CompareMoney
 	jr c, .insufficient_funds
 	ld hl, wNumItems
@@ -607,7 +606,7 @@ MenuHeader_Buy:
 	db 4, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wCurMartCount
-	dba PlaceMenuItemName
+	dba PlaceMartMenuItemName
 	dba .PrintBCDPrices
 	dba UpdateItemDescription
 
@@ -837,9 +836,6 @@ MartSellHowManyText:
 MartSellPriceText:
 	text_far _MartSellPriceText
 	text_end
-
-UnusedDummyString: ; unreferenced
-	db "！ダミー！@" ; "!Dummy!"
 
 MartWelcomeText:
 	text_far _MartWelcomeText
