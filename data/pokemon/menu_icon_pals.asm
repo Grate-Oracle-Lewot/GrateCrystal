@@ -128,7 +128,7 @@ MonMenuIconPals:
 	icon_pals PURPLE, BLUE   ; STARMIE
 	icon_pals PINK,   GRAY   ; MR__MIME
 	icon_pals GREEN,  PINK   ; SCYTHER
-	icon_pals RED,    PINK   ; JYNX
+	icon_pals RED,    BLUE   ; JYNX
 	icon_pals YELLOW, BLUE   ; ELECTABUZZ
 	icon_pals RED,    PINK   ; MAGMAR
 	icon_pals BROWN,  GRAY   ; PINSIR
