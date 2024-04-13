@@ -296,7 +296,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Command queue system reduced to just stone tables
 - No experience gained at Lv100
 - Poison damage in the field every 5 steps instead of 4
-- TM and HM move names shown upon acquisition
+- TM and HM move names shown upon acquisition and in marts
 - Automatic prompts to use another Repel
 - Certain moves learned upon evolution regardless of level
 - Icons shown for active weather when selecting moves in battle
