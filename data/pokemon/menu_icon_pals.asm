@@ -10,7 +10,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  YELLOW ; VENUSAUR
 	icon_pals RED,    YELLOW ; CHARMANDER
 	icon_pals RED,    BLUE   ; CHARMELEON
-	icon_pals RED,    PURPLE ; CHARIZARD
+	icon_pals RED,    GRAY   ; CHARIZARD
 	icon_pals BLUE,   BLUE   ; SQUIRTLE
 	icon_pals BLUE,   BLUE   ; WARTORTLE
 	icon_pals BLUE,   GREEN  ; BLASTOISE
