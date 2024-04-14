@@ -148,12 +148,6 @@ SCENE_ALWAYS   EQU -1
 	const SCENE_BURNEDTOWER1F_RIVAL_BATTLE                  ; 1
 	const SCENE_BURNEDTOWER1F_NOTHING                       ; 2
 
-; wMountMortarB1FSceneID
-	const_def
-	const SCENE_MOUNTMORTARB1F_EARLY                        ; 0
-	const SCENE_MOUNTMORTARB1F_SABRINA                      ; 1
-	const SCENE_MOUNTMORTARB1F_NOTHING                      ; 2
-
 ; wTeamRocketBaseB2FSceneID
 	const_def 1
 	const SCENE_TEAMROCKETBASEB2F_ROCKET_BOSS               ; 1
