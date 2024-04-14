@@ -530,10 +530,12 @@
 	const EVENT_BROKE_MAGIKARP_RECORD ; new to Grate Crystal
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 	const EVENT_SABRINA_IN_FIGHTING_DOJO ; new to Grate Crystal
+	const EVENT_FIGHTINGDOJO_KIYO ; new to Grate Crystal
+	const EVENT_FIGHTINGDOJO_SABRINA ; new to Grate Crystal
 	const EVENT_BROCK_IN_PEWTER_MUSEUM ; new to Grate Crystal
 	const EVENT_PEWTERMUSEUM1F_PHARMACIST ; new to Grate Crystal
 	const EVENT_PEWTERMUSEUM1F_BROCK ; new to Grate Crystal
-; Unused: next 163 events
+; Unused: next 161 events
 
 	const_next 1000
 ; Trainer flags
