@@ -3030,6 +3030,7 @@ wRoute25SceneID::                                 db
 wCeladonGymSceneID::                              db
 wRoute16GateSceneID::                             db
 wRoute17Route18GateSceneID::                      db
+wFightingDojoSceneID::                            db
 wSaffronMagnetTrainStationSceneID::               db
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db
@@ -3086,7 +3087,6 @@ wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db
 wBurnedTower1FSceneID::                           db
 wBurnedTowerB1FSceneID::                          db
 wTinTower1FSceneID::                              db
-wMountMortarB1FSceneID::                          db
 wMahoganyMart1FSceneID::                          db
 wTeamRocketBaseB1FSceneID::                       db
 wTeamRocketBaseB2FSceneID::                       db
