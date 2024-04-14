@@ -19,6 +19,7 @@ MapScenes::
 	scene_var CELADON_GYM,                                 wCeladonGymSceneID
 	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
 	scene_var ROUTE_17_ROUTE_18_GATE,                      wRoute17Route18GateSceneID
+	scene_var FIGHTING_DOJO,                               wFightingDojoSceneID
 	scene_var SAFFRON_MAGNET_TRAIN_STATION,                wSaffronMagnetTrainStationSceneID
 	scene_var INDIGO_PLATEAU_POKECENTER_1F,                wIndigoPlateauPokecenter1FSceneID
 	scene_var WILLS_ROOM,                                  wWillsRoomSceneID
@@ -75,7 +76,6 @@ MapScenes::
 	scene_var BURNED_TOWER_1F,                             wBurnedTower1FSceneID
 	scene_var BURNED_TOWER_B1F,                            wBurnedTowerB1FSceneID
 	scene_var TIN_TOWER_1F,                                wTinTower1FSceneID
-	scene_var MOUNT_MORTAR_B1F,                            wMountMortarB1FSceneID
 	scene_var MAHOGANY_MART_1F,                            wMahoganyMart1FSceneID
 	scene_var TEAM_ROCKET_BASE_B1F,                        wTeamRocketBaseB1FSceneID
 	scene_var TEAM_ROCKET_BASE_B2F,                        wTeamRocketBaseB2FSceneID
