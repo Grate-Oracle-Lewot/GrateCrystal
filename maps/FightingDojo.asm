@@ -2,11 +2,57 @@
 	const FIGHTINGDOJO_BLACK_BELT
 	const FIGHTINGDOJO_SUPER_NERD
 	const FIGHTINGDOJO_POKE_BALL
+	const FIGHTINGDOJO_SABRINA
+	const FIGHTINGDOJO_KIYO
 
 FightingDojo_MapScripts:
 	def_scene_scripts
+	scene_script .DojoSabrinaScene ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .SabrinaAndKiyo
+
+.DojoSabrinaScene:
+	pause 30
+	opentext
+	writetext FightingDojoSabrinaSceneText1
+	waitbutton
+	closetext
+	applymovement FIGHTINGDOJO_KIYO, FightingDojo_KiyoMovement
+	playsound SFX_EXIT_BUILDING
+	disappear FIGHTINGDOJO_KIYO
+	turnobject PLAYER, RIGHT
+	pause 30
+	opentext
+	writetext FightingDojoSabrinaSceneText2
+	waitbutton
+	closetext
+	applymovement FIGHTINGDOJO_SABRINA, FightingDojo_SabrinaMovement
+	opentext
+	writetext FightingDojoSabrinaSceneText3
+	waitbutton
+	closetext
+	playsound SFX_EXIT_BUILDING
+	disappear FIGHTINGDOJO_SABRINA
+	setevent EVENT_SABRINA_IN_FIGHTING_DOJO
+	setscene SCENE_FINISHED
+	end
+
+.DummyScene:
+	end
+
+.SabrinaAndKiyo:
+	checkevent EVENT_SABRINA_IN_FIGHTING_DOJO
+	iftrue .Disappear
+	appear FIGHTINGDOJO_KIYO
+	appear FIGHTINGDOJO_SABRINA
+	end
+
+.Disappear:
+	disappear FIGHTINGDOJO_KIYO
+	disappear FIGHTINGDOJO_SABRINA
+	end
 
 FightingDojoBlackBelt:
 	jumptextfaceplayer FightingDojoBlackBeltText
@@ -30,6 +76,17 @@ FightingDojoSign2:
 
 FightingDojoFocusBand:
 	itemball FOCUS_BAND
+
+FightingDojo_KiyoMovement:
+	step DOWN
+	step DOWN
+	step_end
+
+FightingDojo_SabrinaMovement:
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
 
 FightingDojoBlackBeltText:
 	text "I'm sorry. Our"
@@ -65,6 +122,29 @@ JugglerIrvingAfterBattleText:
 	cont "shame."
 	done
 
+FightingDojoSabrinaSceneText1:
+	text "SABRINA: How many"
+	line "times must we"
+
+	para "battle before you"
+	line "realize what it is"
+	cont "that you lack?"
+
+	para "KIYO: Hurrrgh!"
+
+	para "I will train hard-"
+	line "er than ever!"
+	done
+
+FightingDojoSabrinaSceneText2:
+	text "SABRINA: Sigh…"
+	done
+
+FightingDojoSabrinaSceneText3:
+	text "SABRINA: …See you"
+	line "soon…"
+	done
+
 FightingDojoSign1Text:
 	text "What goes around"
 	line "comes around!"
@@ -92,3 +172,5 @@ FightingDojo_MapEvents:
 	object_event  4,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FightingDojoBlackBelt, -1
 	object_event  6,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerIrving, -1
 	object_event  3,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FightingDojoFocusBand, EVENT_PICKED_UP_FOCUS_BAND
+	object_event  5,  9, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIGHTINGDOJO_KIYO
+	object_event  4,  9, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIGHTINGDOJO_SABRINA
