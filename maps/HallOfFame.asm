@@ -41,10 +41,6 @@ HallOfFame_MapScripts:
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
 .SkipPhoneCall:
-	checkevent EVENT_SABRINA_IN_MOUNT_MORTAR
-	iftrue .SkipSabrina
-	setmapscene MOUNT_MORTAR_B1F, SCENE_MOUNTMORTARB1F_SABRINA
-.SkipSabrina:
 	setval ARTICUNO
 	special MonCheck
 	iftrue .SkipArticuno
