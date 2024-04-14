@@ -164,7 +164,6 @@ MountMortarB1F_MapEvents:
 	warp_event 19, 29, MOUNT_MORTAR_1F_OUTSIDE, 7
 
 	def_coord_events
-	coord_event 12,  4, SCENE_MOUNTMORTARB1F_SABRINA, MountMortarB1FSabrinaScene
 
 	def_bg_events
 	bg_event  4,  6, BGEVENT_ITEM, MountMortarB1FHiddenMaxRevive
