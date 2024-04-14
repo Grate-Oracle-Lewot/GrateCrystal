@@ -7,47 +7,11 @@
 	const MOUNTMORTARB1F_POKE_BALL4
 	const MOUNTMORTARB1F_POKE_BALL5
 	const MOUNTMORTARB1F_POKE_BALL6
-	const MOUNTMORTARB1F_SABRINA
 
 MountMortarB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_EARLY
-	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_SABRINA
-	scene_script .DummyScene ; SCENE_MOUNTMORTARB1F_NOTHING
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Sabrina
-
-.DummyScene:
-	end
-
-.Sabrina:
-	checkevent EVENT_SABRINA_IN_MOUNT_MORTAR
-	iftrue .Disappear
-	checkscene
-	ifequal SCENE_MOUNTMORTARB1F_SABRINA, .Appear
-.Disappear:
-	disappear MOUNTMORTARB1F_SABRINA
-	end
-
-.Appear:
-	appear MOUNTMORTARB1F_SABRINA
-	end
-
-MountMortarB1FSabrinaScene:
-	checkevent EVENT_SABRINA_IN_MOUNT_MORTAR
-	iftrue .AlreadyHappened
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext MountMortarB1FSabrinaText
-	waitbutton
-	closetext
-	playsound SFX_WARP_TO
-	applymovement MOUNTMORTARB1F_SABRINA, MountMortarB1FSabrinaTeleport
-	disappear MOUNTMORTARB1F_SABRINA
-.AlreadyHappened:
-	setscene SCENE_MOUNTMORTARB1F_NOTHING
-	end
 
 MountMortarB1FKiyoScript:
 	faceplayer
@@ -117,10 +81,6 @@ MountMortarB1FGravityBuoy:
 
 MountMortarB1FHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
-
-MountMortarB1FSabrinaTeleport:
-	teleport_from
-	step_end
 
 MountMortarB1FKiyoIntroText:
 	text "Hey!"
@@ -196,29 +156,6 @@ MountMortarB1FKiyoFullPartyText:
 	line "in your party!"
 	done
 
-MountMortarB1FSabrinaText:
-	text "SABRINA: …"
-
-	para "How many times"
-	line "must we battle"
-
-	para "before you realize"
-	line "what it is that"
-	cont "you lack?"
-
-	para "KIYO: …Grumble…"
-
-	para "SABRINA: Continue"
-	line "your training…"
-
-	para "I must return to"
-	line "SAFFRON."
-
-	para "This young chall-"
-	line "enger behind us"
-	cont "grows impatient."
-	done
-
 MountMortarB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -241,4 +178,3 @@ MountMortarB1F_MapEvents:
 	object_event 32,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FMaxEther, EVENT_MOUNT_MORTAR_B1F_MAX_ETHER
 	object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP
 	object_event 11,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FGravityBuoy, EVENT_MOUNT_MORTAR_B1F_GRAVITY_BUOY
-	object_event 15,  4, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SABRINA_IN_MOUNT_MORTAR
