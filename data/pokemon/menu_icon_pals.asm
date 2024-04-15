@@ -184,7 +184,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  PINK   ; NATU
 	icon_pals GREEN,  BLUE   ; XATU
 	icon_pals BROWN,  PINK   ; MAREEP
-	icon_pals PINK,   PINK   ; FLAAFFY
+	icon_pals PINK,   YELLOW ; FLAAFFY
 	icon_pals YELLOW, GRAY   ; AMPHAROS
 	icon_pals GREEN,  BLUE   ; BELLOSSOM
 	icon_pals BLUE,   GREEN  ; MARILL
@@ -235,7 +235,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  BLUE   ; HOUNDOUR
 	icon_pals BROWN,  BLUE   ; HOUNDOOM
 	icon_pals BLUE,   PURPLE ; KINGDRA
-	icon_pals BLUE,   GRAY   ; PHANPY
+	icon_pals BLUE,   YELLOW ; PHANPY
 	icon_pals GRAY,   BROWN  ; DONPHAN
 	icon_pals PINK,   BLUE   ; PORYGON2
 	icon_pals BROWN,  GREEN  ; STANTLER
