@@ -1228,7 +1228,7 @@ AideText_ExplainBalls:
 	line "at wild #MON"
 
 	para "during battle to"
-	cont "capture them."
+	line "capture them."
 	done
 
 ElmsLabOfficerText1:
@@ -1289,7 +1289,7 @@ ElmsLabTravelTip2Text:
 	para "Travel Tip 2:"
 
 	para "Hold the B Button"
-	line "and move to run."
+	line "and move to run!"
 	done
 
 ElmsLabTravelTip3Text:
