@@ -14,7 +14,7 @@ FightingDojo_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .SabrinaAndKiyo
 
 .DojoSabrinaScene:
-	pause 30
+	pause 5
 	opentext
 	writetext FightingDojoSabrinaSceneText1
 	waitbutton
