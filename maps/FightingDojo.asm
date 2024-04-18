@@ -35,6 +35,7 @@ FightingDojo_MapScripts:
 	closetext
 	playsound SFX_EXIT_BUILDING
 	disappear FIGHTINGDOJO_SABRINA
+	turnobject PLAYER, DOWN
 	setevent EVENT_SABRINA_IN_FIGHTING_DOJO
 	setscene SCENE_FINISHED
 	end
@@ -78,8 +79,17 @@ FightingDojoFocusBand:
 	itemball FOCUS_BAND
 
 FightingDojo_KiyoMovement:
+	turn_head UP
+	turn_head RIGHT
 	step DOWN
+	turn_head RIGHT
+	turn_head UP
+	turn_head LEFT
 	step DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
 	step_end
 
 FightingDojo_SabrinaMovement:
