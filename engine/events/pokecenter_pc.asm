@@ -455,6 +455,10 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
+	ld a, [wPackUsedItem]
+	cp $f7
+	jr nc, .CantDeposit
+
 	ld a, [wSpriteUpdatesEnabled]
 	push af
 	ld a, FALSE
@@ -466,6 +470,14 @@ PlayerDepositItemMenu:
 	pop af
 	ld [wSpriteUpdatesEnabled], a
 	ret
+
+.CantDeposit:
+	ld hl, .CantDepositText
+	jp MenuTextboxBackup ; push text to queue
+
+.CantDepositText:
+	text_far _CantDepositText
+	text_end
 
 .dw
 ; entries correspond to ITEMMENU_* constants
