@@ -472,6 +472,10 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
+	giveitem TM_HEADBUTT
+	giveitem TM_SKETCH
+	giveitem HM_CUT
+	giveitem HM_WATERFALL
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
