@@ -455,10 +455,6 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
-	ld a, [wPackUsedItem]
-	cp $f7
-	jr nc, .CantDeposit
-
 	ld a, [wSpriteUpdatesEnabled]
 	push af
 	ld a, FALSE
