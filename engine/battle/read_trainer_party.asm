@@ -264,6 +264,7 @@ Battle_GetTrainerName::
 	ld b, a
 	ld a, [wOtherTrainerClass]
 	ld c, a
+	; fallthrough
 
 GetTrainerName::
 	ld a, c
