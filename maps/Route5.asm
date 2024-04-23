@@ -12,9 +12,6 @@ Route5PokefanMScript:
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
 
-HouseForSaleSign:
-	jumptext HouseForSaleSignText
-
 Route5PokefanMText:
 	text "The POWER PLANT's"
 	line "MANAGER paid me to"
