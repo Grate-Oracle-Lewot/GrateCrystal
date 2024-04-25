@@ -130,24 +130,21 @@ TrainerHouseB1FPleaseComeAgainText:
 
 TrainerHouseB1FSecondChallengeDeniedText:
 	text "I'm sorry."
-	line "This would be your"
-
-	para "second time today."
 	line "You're permitted"
 
 	para "to enter just once"
-	line "a day."
+	line "per day."
 	done
 
 TrainerHouseB1FCalBeatenText:
-	text "I lost…"
-	line "Darn…"
+	text "Darn… I'll get you"
+	line "next time!"
 	done
 
 TrainerHouseB1FCalBeforeText:
-	text "I traveled out"
-	line "here just so I"
-	cont "could battle you."
+	text "I'm excited to test"
+	line "my mettle against"
+	cont "a real opponent."
 	done
 
 TrainerHouseB1F_MapEvents:
