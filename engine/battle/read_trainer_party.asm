@@ -117,17 +117,10 @@ ReadTrainerPartyPieces:
 	bit TRAINERTYPE_NICKNAME_F, a
 	jr z, .no_nickname
 
-	call GetNextTrainerDataByte
-	cp "@"
-	jr z, .no_nickname
-
- 	push de
-
+	push de
 	ld de, wStringBuffer2
-	ld [de], a
-	inc de
 .copy_nickname
-	call GetNextTrainerDataByte
+	ld a, [hli]
 	ld [de], a
 	inc de
 	cp "@"
