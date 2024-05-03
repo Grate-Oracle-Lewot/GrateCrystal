@@ -410,6 +410,7 @@ ENDM
 	map_attributes CeruleanTradeSpeechHouse, CERULEAN_TRADE_SPEECH_HOUSE, $00, 0
 	map_attributes Route10Pokecenter1F, ROUTE_10_POKECENTER_1F, $00, 0
 	map_attributes PowerPlant, POWER_PLANT, $00, 0
+	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
 	map_attributes BillsHouse, BILLS_HOUSE, $00, 0
 	map_attributes VermilionPokecenter1F, VERMILION_POKECENTER_1F, $00, 0
 	map_attributes VermilionMart, VERMILION_MART, $00, 0
