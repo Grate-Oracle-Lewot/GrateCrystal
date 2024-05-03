@@ -76,7 +76,7 @@ TrainerPicPointers::
 	dba JessiePic
 	dba AerobonesPic
 	dba KabubonesPic
-	dba MissingnoPic
+	dba MissingnoTPic
 	dba GamblerPic
 	dba CalfPic
 	dba OldPic
