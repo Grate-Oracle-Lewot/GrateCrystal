@@ -82,4 +82,5 @@ BTTrainerClassSprites:
 	db SPRITE_GRANNY
 	db SPRITE_BLACK_BELT
 	db SPRITE_PHARMACIST
+	db SPRITE_POKEFAN_M
 	assert_table_length NUM_TRAINER_CLASSES
