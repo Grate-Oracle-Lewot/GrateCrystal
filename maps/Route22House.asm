@@ -299,7 +299,7 @@ Route22HouseMissingnoScript:
 
 .MissingnoBattle:
 	winlosstext Route22HouseMissingnoBeatenText, 0
-	loadtrainer MISSINGNO, MISSINGNO1
+	loadtrainer MISSINGNO_T, MISSINGNO_T1
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
