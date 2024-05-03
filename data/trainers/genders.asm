@@ -76,7 +76,7 @@ BTTrainerClassGenders:
 	db FEMALE ; JESSIE
 	db MALE   ; AEROBONES
 	db MALE   ; KABUBONES
-	db MALE   ; MISSINGNO
+	db MALE   ; MISSINGNO_T
 	db MALE   ; GAMBLER
 	db FEMALE ; CAL_F
 	db MALE   ; OLD
