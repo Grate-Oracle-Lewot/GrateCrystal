@@ -14,7 +14,6 @@ BasePickupTable:
   db STARDUST
   db SWAG_BEACON
   db BRICK_PIECE
-  db -1 ; end
 
 RarePickupTable:
   db ULTRA_BALL
@@ -32,4 +31,3 @@ RarePickupTable:
   db STAR_PIECE
   db TIMER_BALL
   db DUSK_BALL
-  db -1 ; end
