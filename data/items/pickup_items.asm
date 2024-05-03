@@ -1,0 +1,35 @@
+BasePickupTable:
+  db GREAT_BALL
+  db POKE_BALL
+  db SUPER_POTION
+  db POTION
+  db ESCAPE_ROPE
+  db REVIVE
+  db FRESH_WATER
+  db SODA_POP
+  db LEMONADE
+  db ETHER
+  db ELIXER
+  db TINYMUSHROOM
+  db STARDUST
+  db SWAG_BEACON
+  db BRICK_PIECE
+  db -1 ; end
+
+RarePickupTable:
+  db ULTRA_BALL
+  db FULL_RESTORE
+  db MAX_POTION
+  db HYPER_POTION
+  db MAX_ELIXER
+  db RARE_CANDY
+  db NUGGET
+  db MAX_REVIVE
+  db SILVER_LEAF
+  db GOLD_LEAF
+  db MAX_ETHER
+  db BIG_MUSHROOM
+  db STAR_PIECE
+  db TIMER_BALL
+  db DUSK_BALL
+  db -1 ; end
