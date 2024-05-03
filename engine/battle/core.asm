@@ -3531,6 +3531,7 @@ ScoreMonTypeMatchups:
 	ld a, [hl]
 	or c
 	jr z, .loop5
+	ret
 
 LoadEnemyMonToSwitchTo:
 	; 'b' contains the PartyNr of the mon the AI will switch to
