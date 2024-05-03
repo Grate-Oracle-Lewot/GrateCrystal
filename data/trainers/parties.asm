@@ -3807,8 +3807,8 @@ KabubonesGroup:
 	db 50, HAUNTER,    "PIKABLU@"
 	db -1 ; end
 
-MissingnoGroup:
-	; MISSINGNO (1)
+MissingnoTGroup:
+	; MISSINGNO_T (1)
 	db "NO.@", TRAINERTYPE_NICKNAME
 	db 50, BAYLEEF,    "          @"
 	db 50, UNOWN,      " @"
