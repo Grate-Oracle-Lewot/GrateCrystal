@@ -85,4 +85,5 @@ TrainerEncounterMusic::
 	db MUSIC_SAGE_ENCOUNTER         ; agatha
 	db MUSIC_HIKER_ENCOUNTER        ; real_bruno
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; real_will
+	db MUSIC_HIKER_ENCOUNTER        ; engineer
 	assert_table_length NUM_TRAINER_CLASSES + 1
