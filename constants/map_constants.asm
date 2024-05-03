@@ -97,9 +97,10 @@ ENDM
 	map_const ROUTE_10_NORTH,                              10,  9 ; 10
 	map_const ROUTE_10_POKECENTER_1F,                       5,  4 ; 11
 	map_const POWER_PLANT,                                 10,  9 ; 12
-	map_const ROUTE_24,                                    10,  9 ; 13
-	map_const ROUTE_25,                                    30,  9 ; 14
-	map_const BILLS_HOUSE,                                  4,  4 ; 15
+	map_const POWER_PLANT_2F,                              20, 18 ; 13
+	map_const ROUTE_24,                                    10,  9 ; 14
+	map_const ROUTE_25,                                    30,  9 ; 15
+	map_const BILLS_HOUSE,                                  4,  4 ; 16
 	endgroup
 
 	newgroup VERMILION                                      ; group  6
