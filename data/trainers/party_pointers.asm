@@ -76,7 +76,7 @@ TrainerGroups:
 	dba JessieGroup
 	dba AerobonesGroup
 	dba KabubonesGroup
-	dba MissingnoGroup
+	dba MissingnoTGroup
 	dba GamblerGroup
 	dba CalFGroup
 	dba OldGroup
