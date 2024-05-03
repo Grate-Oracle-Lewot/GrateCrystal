@@ -211,21 +211,21 @@ PowerPlant2FManagerMyBelovedGeneratorText:
 	done
 
 EngineerBailySeenText:
-	para "Whoa! What's a kid"
+	text "Whoa! What's a kid"
 	line "doing in here?!"
 	done
 
 EngineerBailyBeatenText:
-	para "Huhwhah?!"
+	text "Huhwhah?!"
 	done
 
 EngineerBailyAfterBattleText:
-	para "The MANAGER? He's"
+	text "The MANAGER? He's"
 	line "in the back."
 	done
 
 EngineerBernieSeenText:
-	para "It's time for the"
+	text "It's time for the"
 	line "workers to rise"
 
 	para "up against the"
@@ -233,12 +233,12 @@ EngineerBernieSeenText:
 	done
 
 EngineerBernieBeatenText:
-	para "You rose to the"
+	text "You rose to the"
 	line "occasion!"
 	done
 
 EngineerBernieAfterBattleText:
-	para "I guess I'm not"
+	text "I guess I'm not"
 	line "strong enough to"
 
 	para "lead a revolution…"
@@ -246,31 +246,31 @@ EngineerBernieAfterBattleText:
 	done
 
 EngineerBraxtonSeenText:
-	para "What? Don't interr-"
+	text "What? Don't interr-"
 	line "upt my work!"
 	done
 
 EngineerBraxtonBeatenText:
-	para "How'd that happen?"
+	text "How'd that happen?"
 	done
 
 EngineerBraxtonAfterBattleText:
-	para "I need to get back"
+	text "I need to get back"
 	line "to work."
 	done
 
 EngineerDylanSeenText:
-	para "I need a break."
+	text "I need a break."
 	line "Howbout a battle?"
 	done
 
 EngineerDylanBeatenText:
-	para "You worked me into"
+	text "You worked me into"
 	line "the ground!"
 	done
 
 EngineerDylanAfterBattleText:
-	para "To be honest, this"
+	text "To be honest, this"
 	line "place is a bit"
 
 	para "overkill for one"
@@ -278,16 +278,16 @@ EngineerDylanAfterBattleText:
 	done
 
 EngineerCamdenSeenText:
-	para "Whose kid is this?"
+	text "Whose kid is this?"
 	done
 
 EngineerCamdenBeatenText:
-	para "Whoever's kid this"
+	text "Whoever's kid this"
 	line "is beat me."
 	done
 
 EngineerCamdenAfterBattleText:
-	para "Pure water is act-"
+	text "Pure water is act-"
 	line "ually an insulator"
 
 	para "against electrical"
@@ -299,21 +299,21 @@ EngineerCamdenAfterBattleText:
 	done
 
 EngineerFlintSeenText:
-	para "A battle? Eh…"
+	text "A battle? Eh…"
 	line "Alright."
 	done
 
 EngineerFlintBeatenText:
-	para "Battle's over."
+	text "Battle's over."
 	done
 
 EngineerFlintAfterBattleText:
-	para "Righty tighty,"
+	text "Righty tighty,"
 	line "lefty loosey…"
 	done
 
 PowerPlant2FTrapdoorText:
-	para "Huh?"
+	text "Huh?"
 
 	para "There's a hidden"
 	line "trapdoor!"
