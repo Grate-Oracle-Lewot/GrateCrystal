@@ -440,7 +440,7 @@ TrainerClassAttributes:
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Missingno
+; Missingno T
 	db NO_ITEM, NO_ITEM ; items
 	db 1 ; base reward
 	dw NO_AI
