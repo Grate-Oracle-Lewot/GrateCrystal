@@ -71,18 +71,18 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER      ; officer
 	db MUSIC_ROCKET_ENCOUNTER       ; gruntf
 	db MUSIC_MYSTICALMAN_ENCOUNTER  ; mysticalman
-	db MUSIC_INDIGO_PLATEAU         ; real karen
-	db MUSIC_INDIGO_PLATEAU         ; real koga
+	db MUSIC_INDIGO_PLATEAU         ; real_karen
+	db MUSIC_INDIGO_PLATEAU         ; real_koga
 	db MUSIC_ROCKET_ENCOUNTER       ; boss
-	db MUSIC_JESSIE_JAMES_ENCOUNTER ; jessie and james
+	db MUSIC_JESSIE_JAMES_ENCOUNTER ; jessie & james
 	db MUSIC_SAGE_ENCOUNTER         ; aerobones
 	db MUSIC_SAGE_ENCOUNTER         ; kabubones
-	db MUSIC_SAGE_ENCOUNTER         ; missingno
+	db MUSIC_SAGE_ENCOUNTER         ; missingno_t
 	db MUSIC_POKEMANIAC_ENCOUNTER   ; gambler
 	db MUSIC_CLAIR                  ; cal_f
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; old
 	db MUSIC_CLAIR                  ; lorelei
 	db MUSIC_SAGE_ENCOUNTER         ; agatha
-	db MUSIC_HIKER_ENCOUNTER        ; real bruno
-	db MUSIC_YOUNGSTER_ENCOUNTER    ; real will
+	db MUSIC_HIKER_ENCOUNTER        ; real_bruno
+	db MUSIC_YOUNGSTER_ENCOUNTER    ; real_will
 	assert_table_length NUM_TRAINER_CLASSES + 1
