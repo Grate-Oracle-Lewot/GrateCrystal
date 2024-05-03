@@ -973,3 +973,6 @@ CianwoodPhotoStudio_Blocks:
 
 CianwoodDarkroom_Blocks:
 	INCBIN "maps/CianwoodDarkroom.blk"
+
+PowerPlant2F_Blocks:
+	INCBIN "maps/PowerPlant2F.blk"
