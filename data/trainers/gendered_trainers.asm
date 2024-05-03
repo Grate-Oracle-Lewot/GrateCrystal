@@ -30,7 +30,7 @@ MaleTrainers:
 	db BOSS
 	db AEROBONES
 	db KABUBONES
-	db MISSINGNO
+	db MISSINGNO_T
 	db GAMBLER
 	db OLD
 	db REAL_BRUNO
