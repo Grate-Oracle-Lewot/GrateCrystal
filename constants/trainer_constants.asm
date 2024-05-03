@@ -742,8 +742,8 @@ KRIS EQU __trainer_class__
 	trainerclass KABUBONES ; 49
 	const KABUBONES1
 
-	trainerclass MISSINGNO ; 4a
-	const MISSINGNO1
+	trainerclass MISSINGNO_T ; 4a
+	const MISSINGNO_T1
 
 	trainerclass GAMBLER ; 4b
 	const LUCKY
