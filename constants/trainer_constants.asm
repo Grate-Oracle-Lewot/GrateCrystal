@@ -773,4 +773,12 @@ KRIS EQU __trainer_class__
 	trainerclass REAL_WILL ; 51
 	const REAL_WILL1
 
+	trainerclass ENGINEER ; 52
+	const BAILY
+	const BERNIE
+	const BRAXTON
+	const DYLAN
+	const CAMDEN
+	const FLINT
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
