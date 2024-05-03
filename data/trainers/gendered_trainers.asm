@@ -35,6 +35,7 @@ MaleTrainers:
 	db OLD
 	db REAL_BRUNO
 	db REAL_WILL
+	db ENGINEER
 .End
 
 FemaleTrainers:
