@@ -393,7 +393,7 @@ PlayersHouse1F_MapEvents:
 	def_warp_events
 	warp_event  6,  7, NEW_BARK_TOWN, 2
 	warp_event  7,  7, NEW_BARK_TOWN, 2
-	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
+	warp_event  9,  0, POWER_PLANT, 1
 
 	def_coord_events
 	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
