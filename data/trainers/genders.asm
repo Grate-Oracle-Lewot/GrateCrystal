@@ -84,4 +84,5 @@ BTTrainerClassGenders:
 	db FEMALE ; AGATHA
 	db MALE   ; REAL_BRUNO
 	db MALE   ; REAL_WILL
+	db MALE   ; ENGINEER
 	assert_table_length NUM_TRAINER_CLASSES
