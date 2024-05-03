@@ -84,4 +84,5 @@ TrainerPicPointers::
 	dba AgathaPic
 	dba RealBrunoPic
 	dba RealWillPic
+	dba EngineerPic
 	assert_table_length NUM_TRAINER_CLASSES
