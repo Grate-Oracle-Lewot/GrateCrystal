@@ -6,7 +6,7 @@ PnP_HiddenPeople:
 	db JESSIE
 	db AEROBONES
 	db KABUBONES
-	db MISSINGNO
+	db MISSINGNO_T
 	db CAL
 	db CAL_F
 	db OLD
