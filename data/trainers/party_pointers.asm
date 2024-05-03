@@ -84,4 +84,5 @@ TrainerGroups:
 	dba AgathaGroup
 	dba RealBrunoGroup
 	dba RealWillGroup
+	dba EngineerGroup
 	assert_table_length NUM_TRAINER_CLASSES
