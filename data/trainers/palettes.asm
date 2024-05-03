@@ -82,7 +82,7 @@ INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
 INCBIN "gfx/trainers/jessie_james.gbcpal", middle_colors
 INCBIN "gfx/trainers/aerobones.gbcpal", middle_colors
 INCBIN "gfx/trainers/kabubones.gbcpal", middle_colors
-INCBIN "gfx/trainers/missingno.gbcpal", middle_colors
+INCBIN "gfx/trainers/missingno_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/gambler.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/old.gbcpal", middle_colors
