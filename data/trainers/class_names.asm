@@ -82,4 +82,5 @@ TrainerClassNames::
 	li "VETERAN♀"
 	li "VETERAN♂"
 	li "VETERAN♂"
+	li "ENGINEER"
 	assert_list_length NUM_TRAINER_CLASSES
