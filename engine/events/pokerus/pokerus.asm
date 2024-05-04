@@ -1,5 +1,6 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
+	call ProduceMooMooMilk
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -145,6 +146,40 @@ ConvertBerriesToBerryJuice:
 
 .convertToJuice
 	ld a, BERRY_JUICE
+	ld [hl], a
+	pop hl
+	pop af
+	ret
+
+ProduceMooMooMilk:
+	call Random
+	cp 1 out_of 20 ; 5% chance
+	ret nc
+	ld hl, wPartyMons
+	ld a, [wPartyCount]
+.partyMonLoop
+	push af
+	push hl
+	ld a, [hl]
+	cp MILTANK
+	jr nz, .loopMon
+	ld bc, MON_ITEM
+	add hl, bc
+	ld a, [hl]
+	cp NO_ITEM
+	jr z, .produceMilk
+
+.loopMon
+	pop hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop af
+	dec a
+	jr nz, .partyMonLoop
+	ret
+
+.produceMilk
+	ld a, MOOMOO_MILK
 	ld [hl], a
 	pop hl
 	pop af
