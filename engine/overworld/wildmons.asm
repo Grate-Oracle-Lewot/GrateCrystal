@@ -307,6 +307,14 @@ ChooseWildEncounter:
 	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
+; Check if we're on Route 29
+	ld a, [wMapGroup]
+	cp NEW_BARK
+	jr nz, .regular_buff
+	ld a, [wMapNumber]
+	cp ROUTE_29
+	jr z, .route_29_buff
+.regular_buff
 ; Check if we buff the wild mon, and by how much.
 	call Random
 	cp 25 percent
@@ -352,6 +360,17 @@ ChooseWildEncounter:
 .startwildbattle
 	xor a
 	ret
+
+.route_29_buff
+; Don't buff mons as much on Route 29, in case we've just gotten our Lv5 starter
+	call Random
+	cp 50 percent
+	jr c, .ok
+	inc b
+	cp 75 percent
+	jr c, .ok
+	inc b
+	jr .ok
 
 INCLUDE "data/wild/probabilities.asm"
 
