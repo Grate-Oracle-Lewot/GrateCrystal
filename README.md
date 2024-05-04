@@ -201,7 +201,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Viridian Forest
 - Pewter Museum (fossils can be resurrected at Lv.1, with a random chance to start in their evolved form, e.g. Kabutops instead of Kabuto)
 - Silph Co. (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
-- A second floor to the Power Plant (similar layout to Gen I, no wild encounters; navigate to find the Manager, with optional Engineer battles)
+- A second floor to the Power Plant (similar layout to Gen I, no wild encounters; navigate to find the Manager, with optional battles against Engineers)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
 - An extra room in Dark Cave
