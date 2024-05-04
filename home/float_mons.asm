@@ -18,4 +18,4 @@ FloatMons::
 	db HO_OH ; no longer Flying type in Grate Crystal
 	db CELEBI
 	db YANMEGA ; no longer Flying type in Grate Crystal
-	db -1
+	db -1 ; end
