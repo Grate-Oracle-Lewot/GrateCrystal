@@ -83,5 +83,5 @@ TrainerClassDVs:
 	dn 13, 14, 14, 13 ; AGATHA
 	dn 14, 13, 13, 14 ; REAL_BRUNO
 	dn 14, 13, 13, 14 ; REAL_WILL
-	dn 10,  8,  9, 11 ; ENGINEER
+	dn  6,  7,  7, 14 ; ENGINEER
 	assert_table_length NUM_TRAINER_CLASSES
