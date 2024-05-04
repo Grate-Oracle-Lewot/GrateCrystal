@@ -309,10 +309,10 @@ ChooseWildEncounter:
 	jr z, .ok
 ; Check if we're on Route 29
 	ld a, [wMapGroup]
-	cp NEW_BARK
+	cp GROUP_ROUTE_29
 	jr nz, .regular_buff
 	ld a, [wMapNumber]
-	cp ROUTE_29
+	cp MAP_ROUTE_29
 	jr z, .route_29_buff
 .regular_buff
 ; Check if we buff the wild mon, and by how much.
