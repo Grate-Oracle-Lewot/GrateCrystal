@@ -1,6 +1,5 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
-	call ProduceMooMooMilk
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -151,7 +150,7 @@ ConvertBerriesToBerryJuice:
 	pop af
 	ret
 
-ProduceMooMooMilk:
+ProduceMooMooMilk: ; doesn't seem to work
 	call Random
 	cp 1 out_of 20 ; 5% chance
 	ret nc
