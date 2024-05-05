@@ -440,9 +440,6 @@ GuideGentPokegearText:
 GuideGentNoText:
 	text "Oh… It's something"
 	line "I enjoy doing…"
-
-	para "Fine. Come see me"
-	line "when you like."
 	done
 
 CherrygroveRivalText_Seen:
@@ -514,15 +511,17 @@ CherrygroveYoungsterText_NoPokedex:
 	done
 
 CherrygroveYoungsterText_HavePokedex:
-	text "I battled the"
-	line "trainers on the"
-	cont "road."
+	text "Fairy #MON are"
+	line "cute, so they must"
+	cont "be harmless…"
 
-	para "My #MON lost."
-	line "They're a mess! I"
+	para "WRONG!"
 
-	para "must take them to"
-	line "a #MON CENTER."
+	para "They're SO cute,"
+	line "your #MON might"
+
+	para "get infatuated by"
+	line "making contact!"
 	done
 
 MysticWaterGuyTextBefore:
