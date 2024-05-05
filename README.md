@@ -57,7 +57,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Dragon types are immune to critical hits
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
-  - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit
   - Unown and Delibird learn multiple moves
