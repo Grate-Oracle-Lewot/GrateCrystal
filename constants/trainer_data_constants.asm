@@ -41,8 +41,8 @@ CONTEXT_USE        EQU 1 << CONTEXT_USE_F
 
 ; TrainerTypes bits (see engine/battle/read_trainer_party.asm)
 	const_def
-	const TRAINERTYPE_MOVES_F ; 0
-	const TRAINERTYPE_ITEM_F  ; 1
+	const TRAINERTYPE_MOVES_F    ; 0
+	const TRAINERTYPE_ITEM_F     ; 1
 	const TRAINERTYPE_NICKNAME_F ; 2
 
 ; Trainer party types (see data/trainers/parties.asm)
