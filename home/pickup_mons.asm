@@ -1,8 +1,8 @@
 PickupMons::
 	db MEOWTH
+	db GROWLITHE
 	db AIPOM
 	db MURKROW
-	db TEDDIURSA
 	db DELIBIRD
 	db PHANPY
 	db -1 ; end
