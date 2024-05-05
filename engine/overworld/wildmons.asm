@@ -362,12 +362,12 @@ ChooseWildEncounter:
 	ret
 
 .route_29_buff
-; Don't buff mons as much on Route 29, in case we've just gotten our Lv5 starter
+; Don't buff mons as much on Route 29, in case we've just gotten our Lv5 starter.
 	call Random
-	cp 40 percent
+	cp 20 percent
 	jr c, .ok
 	inc b
-	cp 70 percent
+	cp 80 percent
 	jr c, .ok
 	inc b
 	jr .ok
