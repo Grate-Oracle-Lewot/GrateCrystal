@@ -7065,7 +7065,6 @@ FinishBattleAnim:
 	ret
 
 GiveExperiencePoints:
-	ld b, b
 ; Give experience.
 ; Don't give experience if linked or in the Battle Tower.
 	ld a, [wLinkMode]
