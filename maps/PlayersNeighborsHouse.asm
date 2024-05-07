@@ -62,30 +62,24 @@ PlayersNeighborsDaughterText:
 	line "mal, fairy, fight-"
 	cont "ing, water, or"
 	cont "flying."
-
-	para "…But, uh… This IS"
-	line "a hack, so forgive"
-
-	para "us if sometimes"
-	line "the second types"
-	cont "don't load."
 	done
 
 PlayersNeighborText:
-	text "Sometimes when"
-	line "#MON battle,"
+	text "Some moves that"
+	line "#MON use make"
 
-	para "they'll suddenly"
-	line "get exhausted and"
+	para "contact with the"
+	line "opponent, and some"
+	cont "don't."
 
-	para "take more damage"
-	line "but deal little."
+	para "Making contact can"
+	line "have negative"
 
-	para "This is totally an"
-	line "intended mechanic"
-	cont "and not a glitch."
+	para "effects, like"
+	line "getting paralyzed"
 
-	para "Definitely."
+	para "by an electric"
+	line "type."
 	done
 
 PlayerNeighborRadioText1:
