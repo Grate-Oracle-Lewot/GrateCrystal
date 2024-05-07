@@ -3,6 +3,7 @@
 
 ; This table is identical to data/battle/stat_multipliers_2.asm.
 ; This one is used by CalcBattleStats.
+; Duplication is needed because of bank shenanigans.
 
 StatLevelMultipliers:
 	db  25, 100 ; -6 =  25%
