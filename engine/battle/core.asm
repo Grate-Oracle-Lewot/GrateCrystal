@@ -6871,7 +6871,7 @@ ApplyStatLevelMultiplier:
 .okay2
 	pop bc
 	push hl
-	ld hl, StatLevelMultipliers
+	ld hl, StatLevelMultipliers_Applied
 	dec b
 	sla b
 	ld c, b
