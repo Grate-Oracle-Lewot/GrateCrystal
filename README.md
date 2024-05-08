@@ -50,6 +50,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All Fairy types have a 30% chance to infatuate opposite-gender attackers on contact
   - All Grass types get a 50% Speed boost in Sunny weather
   - All Rock types get a 50% Special Defense boost in Sandstorms
+  - All Ice types get a 50% Defense boost in Hail
   - Fire types are immune to being Frozen
   - Water types are immune to being Burned
   - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it)
@@ -247,7 +248,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - Marill now evolves with a Water Stone, increasing parallels to Pikachu
-- Hail boosts Ice-type moves as well as dealing its regular damage
 - Automatic weather in certain areas: sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
 - Phone contacts who required specific Pokémon in the player's party to be registered no longer have those requirements, but give out lesser sellable items instead of Nuggets
