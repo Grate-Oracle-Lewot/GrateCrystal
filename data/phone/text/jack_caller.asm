@@ -133,8 +133,8 @@ JackMagnitudeTriviaText:
 	para "Ice type #MON"
 	line "won't be hurt by"
 
-	para "HAIL, and ice-type"
-	line "moves hit harder."
+	para "HAIL, and their"
+	line "DEFENSE goes up."
 	done
 
 JackSandstormTriviaText:
