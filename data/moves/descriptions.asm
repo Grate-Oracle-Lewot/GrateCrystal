@@ -788,8 +788,8 @@ SpikeCannonDescription:
 	next "hit 2-5 times.@"
 
 HailDescription:
-	db   "Boosts ice and"
-	next "damages each turn.@"
+	db   "Hurts every turn."
+	next "Ups ice DEFENSE.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
@@ -1064,8 +1064,8 @@ OutrageDescription:
 	next "and confuses user.@"
 
 SandstormDescription:
-	db   "Inflicts damage"
-	next "every turn.@"
+	db   "Hurts every turn."
+	next "Ups rock SPCL.DEF.@"
 
 GigaDrainDescription:
 	db   "Steals 1/2 of the"
