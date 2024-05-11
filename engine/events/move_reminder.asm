@@ -499,7 +499,7 @@ ChooseMoveToLearn:
 	db "---@"
 
 .Types
-	db "NRM@"
+	db "NML@"
 	db "FIT@"
 	db "FLY@"
 	db "PSN@"
