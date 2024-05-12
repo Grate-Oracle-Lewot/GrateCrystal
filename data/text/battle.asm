@@ -1172,3 +1172,9 @@ QuillsText:
 	scroll "<TARGET>'s"
 	scroll "quills!"
 	autodone
+
+LiquidOozeText:
+	text "<USER>"
+	line "absorbed toxins"
+	scroll "instead of health!"
+	autodone
