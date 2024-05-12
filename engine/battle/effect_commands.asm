@@ -4346,8 +4346,18 @@ BattleCommand_SpecialDefenseDown:
 
 BattleCommand_AccuracyDown:
 ; accuracydown
+
+; Fail if type-immune. Added to Grate Crystal to make Flying-types immune to Sand-Attack.
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
+
 	ld a, ACCURACY
 	jr BattleCommand_StatDown
+
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect
 
 BattleCommand_EvasionDown:
 ; evasiondown
