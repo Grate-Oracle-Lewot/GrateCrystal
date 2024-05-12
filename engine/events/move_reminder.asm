@@ -525,7 +525,7 @@ ChooseMoveToLearn:
 	db "ELC@"
 	db "PSY@"
 	db "ICE@"
-	db "DRG@"
+	db "DGN@"
 	db "DRK@"
 	db "FAR@"
 
