@@ -40,7 +40,7 @@ Moves:
 	move MEGA_KICK,    EFFECT_NORMAL_HIT,        150, NORMAL,       PHYSICAL,  75,  5,   0
 	move JUMP_KICK,    EFFECT_JUMP_KICK,          75, FIGHTING,     PHYSICAL,  95, 25,   0
 	move ROLLING_KICK, EFFECT_FLAME_WHEEL,        75, FIGHTING,     PHYSICAL,  90, 15,   0
-	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,       STATUS,   100, 15,   0
+	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,       STATUS,   100, 20,   0
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,       PHYSICAL, 100, 20,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,       PHYSICAL, 100, 25,   0
 	move FURY_ATTACK,  EFFECT_MULTI_HIT,          20, FLYING,       PHYSICAL,  90, 20,   0
@@ -120,7 +120,7 @@ Moves:
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,       STATUS,   100, 10,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, ROCK,         STATUS,   100, 40,   0
 	move MINIMIZE,     EFFECT_EVASION_UP,          0, FAIRY,        STATUS,   100, 20,   0
-	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, FIRE,         STATUS,   100, 20,   0
+	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, FIRE,         STATUS,   100, 15,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,        STATUS,   100, 10,   0
 	move SCALD,        EFFECT_BURN_HIT,           80, WATER,        SPECIAL,  100, 15,  33
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 30,   0
