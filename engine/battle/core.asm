@@ -6278,7 +6278,7 @@ LoadEnemyMon:
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .Happiness
+	jr nz, .Happiness
 
 ; Species-specfic:
 
@@ -6291,12 +6291,9 @@ LoadEnemyMon:
 	ld hl, wEnemyMonDVs
 	predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
+; Only applies to Ruins of Alph to prevent infinite loops
 	call CheckUnownLetter
-	jr nc, .Happiness
-; 5% chance to let through a locked letter, to prevent an infinite loop when none are unlocked
-	call BattleRandom
-	cp 5 percent
-	jr nc, .GenerateDVs ; reroll DVs
+	jr c, .GenerateDVs ; reroll DVs
 	jr .Happiness
 
 .Pikachu:
@@ -6313,13 +6310,10 @@ LoadEnemyMon:
 
 .Magikarp:
 ; These filters are untranslated.
-; They expect at wMagikarpLength a 2-byte value in mm,
-; but the value is in feet and inches (one byte each).
+; They expect at wMagikarpLength a 2-byte value in mm, but the value is in feet and inches (one byte each).
 
-; The first filter is supposed to make very large Magikarp even rarer,
-; by targeting those 1600 mm (= 5'3") or larger.
-; After the conversion to feet, it is unable to target any,
-; since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
+; The first filter is supposed to make very large Magikarp even rarer, by targeting those 1600 mm (= 5'3") or larger.
+; After the conversion to feet, it is unable to target any, since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
 	ld a, [wTempEnemyMonSpecies]
 	cp MAGIKARP
 	jr nz, .Happiness
@@ -6341,7 +6335,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jp nc, .GenerateDVs
+	jr nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6350,7 +6344,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jp nc, .GenerateDVs
+	jr nc, .GenerateDVs
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
@@ -6366,7 +6360,7 @@ LoadEnemyMon:
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
 	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jp c, .GenerateDVs ; try again
+	jr c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 
@@ -6621,6 +6615,14 @@ INCLUDE "data/wild/treemons_asleep.asm"
 CheckUnownLetter:
 ; Return carry if the Unown letter hasn't been unlocked yet
 
+; Allow any letter if we're not inside the Ruins of Alph
+	ld a, [wMapGroup]
+	cp GROUP_RUINS_OF_ALPH_INNER_CHAMBER
+	jr nz, .not_alph
+	ld a, [wMapNumber]
+	cp MAP_RUINS_OF_ALPH_INNER_CHAMBER
+	jr nz, .not_alph
+
 	ld a, [wUnlockedUnowns]
 	ld c, a
 	ld de, 0
@@ -6660,6 +6662,9 @@ CheckUnownLetter:
 	scf
 	ret
 
+.not_alph
+	ld a, [wUnownLetter]
+	; fallthrough
 .match
 ; Valid letter
 	and a
