@@ -53,7 +53,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All Ice types get a 50% Defense boost in Hail
   - Fire types are immune to being Frozen
   - Water types are immune to being Burned
-  - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it; this feature is now available as a tutorial: https://github.com/pret/pokecrystal/wiki/Prevent-Steel-types-from-being-poisoned-by-Twineedle)
+  - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it; this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Prevent-Steel%E2%80%90types-from-being-poisoned-by-Twineedle))
   - Psychic types are immune to flinching
   - Dragon types are immune to critical hits
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
@@ -229,7 +229,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Miscellaneous
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
-- Due to no Mystery Gift, the Trainer House now has you fight a copy of your own party from the last time you saved (this feature is now available as a tutorial: https://github.com/pret/pokecrystal/wiki/Fight-a-copy-of-your-own-party-in-the-Trainer-House)
+- Due to no Mystery Gift, the Trainer House now has you fight a copy of your own party from the last time you saved (this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Fight-a-copy-of-your-own-party-in-the-Trainer-House))
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
