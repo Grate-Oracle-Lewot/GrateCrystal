@@ -3701,7 +3701,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	jr nz, .no_fade_in
 
 	ld a, [wTempMonSpecies]
-	cp UNWON
+	cp UNOWN
 	jr nz, .no_fade_in
 
 	ld a, 2 ; fade anim
@@ -6292,7 +6292,7 @@ LoadEnemyMon:
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .Happiness
+	jp nz, .Happiness
 
 ; Species-specfic:
 
