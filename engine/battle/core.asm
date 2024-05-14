@@ -3696,20 +3696,6 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call Call_PlayBattleAnim
 
 .not_shiny
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jr nz, .no_fade_in
-
-	ld a, [wTempMonSpecies]
-	cp UNOWN
-	jr nz, .no_fade_in
-
-	ld a, 2 ; fade anim
-	ld [wBattleAnimParam], a
-	ld de, ANIM_SEND_OUT_MON
-	call Call_PlayBattleAnim
-
-.no_fade_in
 	ld bc, wTempMonSpecies
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
