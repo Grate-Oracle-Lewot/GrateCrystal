@@ -62,6 +62,10 @@ PlayersNeighborsDaughterText:
 	line "mal, fairy, fight-"
 	cont "ing, water, or"
 	cont "flying."
+
+	para "They all evolve"
+	line "into the same"
+	cont "RAICHU, though."
 	done
 
 PlayersNeighborText:
