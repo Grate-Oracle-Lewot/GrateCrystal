@@ -9065,7 +9065,7 @@ BattleStartMessage:
 
 	ld hl, WantToBattlePluralText
 	call IsPluralTrainer
-	jr z, .PlaceBattleStartText
+	jp z, .PlaceBattleStartText
 	ld hl, WantsToBattleText
 	jr .PlaceBattleStartText
 
