@@ -9074,6 +9074,10 @@ BattleStartMessage:
 	cp UNOWN
 	jr nz, .no_fade_in
 
+	xor a
+	ld [wNumHits], a
+	ld a, 1
+	ldh [hBattleTurn], a
 	ld a, 2 ; fade anim
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
