@@ -9065,25 +9065,11 @@ BattleStartMessage:
 
 	ld hl, WantToBattlePluralText
 	call IsPluralTrainer
-	jp z, .PlaceBattleStartText
+	jr z, .PlaceBattleStartText
 	ld hl, WantsToBattleText
 	jr .PlaceBattleStartText
 
 .wild
-	ld a, [wTempWildMonSpecies]
-	cp UNOWN
-	jr nz, .no_fade_in
-
-	xor a
-	ld [wNumHits], a
-	ld a, 1
-	ldh [hBattleTurn], a
-	ld a, 2 ; fade anim
-	ld [wBattleAnimParam], a
-	ld de, ANIM_SEND_OUT_MON
-	call Call_PlayBattleAnim
-
-.no_fade_in
 	call BattleCheckEnemyShininess
 	jr nc, .not_shiny
 
