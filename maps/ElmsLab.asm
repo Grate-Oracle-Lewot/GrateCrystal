@@ -954,8 +954,8 @@ ElmAfterTheftText4:
 	text "But… Is it a"
 	line "#MON EGG?"
 
-	para "If it is, it is a"
-	line "great discovery!"
+	para "I've never seen one"
+	line "quite like it."
 	done
 
 ElmAfterTheftText5:
