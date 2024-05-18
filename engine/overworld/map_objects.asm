@@ -19,7 +19,7 @@ DeleteMapObject::
 	bit 7, a
 	jr nz, .ok
 	call GetMapObject
-	ld hl, OBJECT_SPRITE
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
 	add hl, bc
 	ld [hl], -1
 .ok
