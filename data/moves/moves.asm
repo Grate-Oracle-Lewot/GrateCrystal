@@ -141,7 +141,7 @@ Moves:
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,         SPECIAL,   84,  5,  20
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,        PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 15,   0
-	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 20,   0
+	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 25,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        150, NORMAL,       PHYSICAL, 100,  5,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, STEEL,        PHYSICAL, 100, 15,   0
 	move HAIL,         EFFECT_HAIL,                0, ICE,          STATUS,   100,  5,   0
