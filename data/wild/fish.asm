@@ -311,6 +311,5 @@ GetMapsFishGroup::
 	add hl, bc
 	ld a, BANK(MapGroupPointers)
 	call GetFarByte
-	call GetFishGroupName
+	jp GetFishGroupName
 	; ptr to fishgroup name is in de
-	ret
