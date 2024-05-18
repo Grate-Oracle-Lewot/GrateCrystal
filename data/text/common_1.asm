@@ -1453,20 +1453,24 @@ _MomLeavingText1::
 
 	para "…"
 
-	para "So, you're leaving"
-	line "on an adventure…"
+	para "OK… I don't know"
+	line "what a “meme” is,"
 
-	para "OK!"
-	line "I'll help too."
+	para "but I guess you're"
+	line "going on an"
+	cont "adventure."
 
-	para "But what can I do"
-	line "for you?"
+	para "I knew this would"
+	line "happen someday."
 
-	para "I know! I'll save"
-	line "money for you."
+	para "If you like, I can"
+	line "save some of your"
 
-	para "On a long journey,"
-	line "money's important."
+	para "money for you, so"
+	line "that if you run"
+
+	para "out, you can come"
+	line "home and get more."
 
 	para "Do you want me to"
 	line "save your money?"
