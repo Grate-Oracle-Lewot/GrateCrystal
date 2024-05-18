@@ -3670,10 +3670,6 @@ BattleCommand_SleepTarget:
 
 	call AnimateCurrentMove
 	ld b, SLP
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .random_loop
-	ld b, %011
 
 .random_loop
 	call BattleRandom
