@@ -45,8 +45,3 @@ BattleCommand_Mimic:
 	call AnimateCurrentMove
 	ld hl, MimicLearnedMoveText
 	jp StdBattleTextbox
-
-FailMimic:
-	ld hl, ButItFailedText ; 'but it failed!'
-	ld de, ItFailedText    ; 'it failed!'
-	jp FailText_CheckOpponentProtect
