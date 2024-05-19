@@ -10,7 +10,6 @@ BattleCommand_Curse:
 	ld bc, wEnemyStatLevels
 
 .go
-
 ; Curse is different for Ghost-types.
 
 	ld a, [de]
@@ -35,7 +34,6 @@ BattleCommand_Curse:
 	jr nc, .cantraise
 
 .raise
-
 ; Raise Attack and Defense, and lower Speed.
 
 	ld a, $1
@@ -54,7 +52,6 @@ BattleCommand_Curse:
 	jp BattleCommand_StatUpMessage
 
 .ghost
-
 ; Cut HP in half and put a curse on the opponent.
 
 	call CheckHiddenOpponent
@@ -83,7 +80,6 @@ BattleCommand_Curse:
 	jp PrintButItFailed
 
 .cantraise
-
 ; Can't raise either stat.
 
 	ld b, ABILITY + 1
