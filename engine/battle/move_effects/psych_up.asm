@@ -14,8 +14,7 @@ BattleCommand_PsychUp:
 .pointers_correct
 	push hl
 	ld b, NUM_LEVEL_STATS
-; If any of the enemy's stats is modified from its base level,
-; the move succeeds.  Otherwise, it fails.
+; If any of the enemy's stats is modified from its base level, the move succeeds.  Otherwise, it fails.
 .loop
 	ld a, [hli]
 	cp BASE_STAT_LEVEL
