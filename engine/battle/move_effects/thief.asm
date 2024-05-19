@@ -77,8 +77,7 @@ BattleCommand_Thief:
 	and a
 	ret nz
 
-; If the enemy steals your item,
-; it's gone for good if you don't get it back.
+; If the enemy steals your item, it's gone for good if you don't get it back.
 
 	call .playeritem
 	xor a
