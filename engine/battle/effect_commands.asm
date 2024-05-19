@@ -3660,7 +3660,6 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-
 	ld a, [de]
 	and a
 	jr nz, .fail
@@ -3773,11 +3772,15 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
+	ld hl, ProtectingItselfText
 	call CheckSubstituteOpp
 	jr nz, .failed
+
+	ld hl, EvadedText
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
+
 	call .check_toxic
 	jr z, .toxic
 
