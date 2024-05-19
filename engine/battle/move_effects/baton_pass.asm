@@ -144,28 +144,8 @@ FailedBatonPass:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .failed
-	; b = player level
-	ld a, [wCurPartyLevel]
-	ld b, a
-	; If player level >= enemy level, Teleport will succeed
-	ld a, [wBattleMonLevel]
-	cp b
-	jr nc, .run_away
-	; c = player level + enemy level + 1
-	add b
-	ld c, a
-	inc c
-	; Generate a number less than c
-.loop_player
-	call BattleRandom
-	cp c
-	jr nc, .loop_player
-	; b = enemy level / 4
-	srl b
-	srl b
-	; If the random number >= enemy level / 4, Teleport will succeed
-	cp b
-	jr nc, .run_away
+
+	jr .run_away
 
 .failed
 	call AnimateFailedMove
@@ -176,29 +156,8 @@ FailedBatonPass:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .failed
-	; b = enemy level
-	ld a, [wBattleMonLevel]
-	ld b, a
-	; If enemy level >= player level, Teleport will succeed
-	ld a, [wCurPartyLevel]
-	cp b
-	jr nc, .run_away
-	; c = enemy level + player level + 1
-	add b
-	ld c, a
-	inc c
-	; Generate a number less than c
-.loop_enemy
-	call BattleRandom
-	cp c
-	jr nc, .loop_enemy
-	; b = player level / 4
-	srl b
-	srl b
-	; This should be "jr c, .failed"
-	; As written, it makes enemy use of Teleport always succeed if able
-	cp b
-	jr nc, .run_away
+
+	; fallthrough
 
 .run_away
 	call UpdateBattleMonInParty
