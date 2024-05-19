@@ -3857,17 +3857,11 @@ BattleCommand_DrainTarget:
 
 BattleCommand_EatDream:
 ; eatdream
-	call EatDreamSapHealth
+	call SapHealth
 	ld hl, DreamEatenText
 	jp StdBattleTextbox
 
 SapHealth:
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jp z, LiquidOoze
-	; fallthrough
-
-EatDreamSapHealth:
 	; Divide damage by 2, store it in hDividend
 	ld hl, wCurDamage
 	ld a, [hli]
@@ -3959,67 +3953,6 @@ EatDreamSapHealth:
 	predef AnimateHPBar
 	call RefreshBattleHuds
 	jp UpdateBattleMonInParty
-
-LiquidOoze:
-	; check if user is also Poison-type
-	call BattleCommand_SwitchTurn
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jr z, .no_ooze
-	call BattleCommand_SwitchTurn
-
-	; Divide damage by 2, store it in wHPBuffer1
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ldh [wHPBuffer1], a
-	ld b, a
-	ld a, [hl]
-	rr a
-	ldh [wHPBuffer1 + 1], a
-	or b
-	jr nz, .at_least_one
-	ld a, 1
-	ldh [wHPBuffer1 + 1], a
-	ld a, [wHPBuffer1]
-	ld bc, a
-.at_least_one
-
-	call SubtractHPFromUser
-	ld hl, LiquidOozeText
-	call StdBattleTextbox
-
-	ldh a, [hBattleTurn]
-	and a
-	hlcoord 10, 9
-	ld a, $1
-	jr z, .hp_bar
-	hlcoord 2, 2
-	xor a
-.hp_bar
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
-	call RefreshBattleHuds
-	call UpdateBattleMonInParty
-
-	call HasUserFainted
-	jr z, .fainted
-	ret
-
-.no_ooze
-	; Poison-types can drain each other without being hurt
-	call BattleCommand_SwitchTurn
-	jp EatDreamSapHealth
-
-.fainted
-	call RefreshBattleHuds
-	ld c, 20
-	call DelayFrames
-
-	ldh a, [hBattleTurn]
-	and a
-	jp z, HandlePlayerMonFaint
-	jp HandleEnemyMonFaint
 
 BattleCommand_BurnTarget:
 ; burntarget
