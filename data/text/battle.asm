@@ -1176,5 +1176,5 @@ QuillsText:
 LiquidOozeText:
 	text "<USER>"
 	line "absorbed toxins"
-	scroll "instead of health!"
+	scroll "and was poisoned!"
 	autodone
