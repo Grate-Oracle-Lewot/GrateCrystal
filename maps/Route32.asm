@@ -759,9 +759,9 @@ BirdKeeperPeterBeatenText:
 	done
 
 BirdKeeperPeterAfterText:
-	text "I should train"
-	line "again at the GYM"
-	cont "in VIOLET CITY."
+	text "Everybody knows"
+	line "that the bird is"
+	cont "the word!"
 	done
 
 Text_RoarIntro:
