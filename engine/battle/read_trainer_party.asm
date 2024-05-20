@@ -120,7 +120,7 @@ ReadTrainerPartyPieces:
 	push de
 	ld de, wStringBuffer2
 .copy_nickname
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 	inc de
 	cp "@"
