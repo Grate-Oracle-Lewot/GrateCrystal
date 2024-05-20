@@ -1,4 +1,4 @@
-	db "SPIKES@" ; species name
+	db "NOSE@" ; species name
 	dw 303, 2540 ; height, weight
 
 	db   "Its poor eyesight"
