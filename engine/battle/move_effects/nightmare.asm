@@ -19,6 +19,10 @@ BattleCommand_Nightmare:
 	jp StdBattleTextbox
 
 .not_protected_by_item
+; If target has a Substitute, fail completely.
+	call CheckSubstituteOpp
+	jr nz, .failed
+
 ; If target is already Sleeping, move on to inflicting Nightmare.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -28,23 +32,19 @@ BattleCommand_Nightmare:
 	and SLP
 	jr nz, .done_sleep
 
-; If Sleep-infliction missed, move on to inflicting Nightmare, in case target was already Sleeping. Might be redundant.
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .done_sleep
-
 ; If target has a status other than Sleep, fail completely.
 	ld a, [de]
 	and a
 	jr nz, .failed
 
-; If target has a Substitute, fail completely.
-	call CheckSubstituteOpp
-	jr nz, .failed
+; If Sleep-infliction missed, move on to trying to inflict Nightmare.
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .done_sleep
 
 ; Animate Nightmare once when inflicting Sleep. Animation will play a second time later when inflicting Nightmare.
 	call AnimateCurrentMove
-	ld b, SLP
+	ld b, %101
 
 ; Determine Sleep turn count etc.
 .random_loop
