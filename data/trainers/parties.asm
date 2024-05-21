@@ -2352,8 +2352,8 @@ SuperNerdGroup:
 	db -1 ; end
 
 	; SUPER_NERD (14)
-	db "STAN@", TRAINERTYPE_NORMAL
-	db 30, GRIMER
+	db "STAN@", TRAINERTYPE_ITEM
+	db 30, GRIMER,     SLOWPOKETAIL
 	db -1 ; end
 
 Rival2Group:
