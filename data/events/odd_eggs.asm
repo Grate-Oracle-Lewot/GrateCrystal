@@ -47,7 +47,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, TAIL_WHIP, CHARM, EXTREMESPEED
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
@@ -73,7 +73,7 @@ OddEggs:
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
@@ -229,7 +229,7 @@ OddEggs:
 	db NO_ITEM
 	db LICK, CHARM, SCARY_FACE, DIZZY_PUNCH
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
@@ -281,7 +281,7 @@ OddEggs:
 	db NO_ITEM
 	db EMBER, SCARY_FACE, DIZZY_PUNCH, 0
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
@@ -333,7 +333,7 @@ OddEggs:
 	db NO_ITEM
 	db MACH_PUNCH, LEER, SCARY_FACE, DIZZY_PUNCH
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
@@ -385,7 +385,7 @@ OddEggs:
 	db NO_ITEM
 	db TACKLE, MEDITATE, SCARY_FACE, AURA_SPHERE
 	dw 0 ; OT ID
-	dt 1 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 0
 	bigdw 0
