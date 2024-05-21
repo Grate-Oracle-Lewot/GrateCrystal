@@ -421,8 +421,9 @@ HurtItselfText:
 	autodone
 
 ConfusedNoMoreText:
-	text "<USER>'s"
-	line "confused no more!"
+	text "<USER>"
+	line "snapped out of"
+	scroll "confusion!"
 	autodone
 
 BecameConfusedText:
@@ -519,9 +520,9 @@ InLoveWithText:
 	autodone
 
 InfatuationText:
-	text "<USER>'s"
-	line "infatuation kept"
-	scroll "it from attacking!"
+	text "<USER>"
+	line "couldn't bring"
+	scroll "itself to attack!"
 	autodone
 
 DisabledMoveText:
@@ -1164,17 +1165,4 @@ StaticPrzcureberryText:
 	scroll "@"
 	text_ram wStringBuffer1
 	text "!"
-	autodone
-
-QuillsText:
-	text "<USER>"
-	line "was hurt by"
-	scroll "<TARGET>'s"
-	scroll "quills!"
-	autodone
-
-LiquidOozeText:
-	text "<USER>"
-	line "absorbed toxins"
-	scroll "and was poisoned!"
 	autodone
