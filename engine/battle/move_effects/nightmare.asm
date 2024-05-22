@@ -10,7 +10,7 @@ BattleCommand_Nightmare:
 ; Only works on a Sleeping opponent.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
-	and SLP_MASK
+	and SLP
 	jr z, .failed
 
 ; Fail if the opponent is already having a Nightmare.
