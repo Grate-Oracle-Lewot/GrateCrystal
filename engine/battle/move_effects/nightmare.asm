@@ -19,10 +19,6 @@ BattleCommand_Nightmare:
 	jp StdBattleTextbox
 
 .not_protected_by_item
-; If target has a Substitute, fail completely.
-	call CheckSubstituteOpp
-	jr nz, .failed
-
 ; If target is already Sleeping, move on to inflicting Nightmare.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -41,6 +37,10 @@ BattleCommand_Nightmare:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .done_sleep
+
+; If target has a Substitute, fail completely.
+	call CheckSubstituteOpp
+	jr nz, .failed
 
 ; Animate Nightmare once when inflicting Sleep. Animation will play a second time later when inflicting Nightmare.
 	call AnimateCurrentMove
@@ -65,10 +65,14 @@ BattleCommand_Nightmare:
 
 	call z, OpponentCantMove
 
-; Check whether the actual Nightmare status should be inflicted. Substitute has already been accounted for.
+; Check whether the actual Nightmare status should be inflicted.
 .done_sleep
 ; Can't hit an absent target. For Sleep, this was acconted for with wAttackMissed.
 	call CheckHiddenOpponent
+	jr nz, .failed
+
+; Check Substitute again. Checking it once before wAttackMissed seems to make Sleep ignore accuracy.
+	call CheckSubstituteOpp
 	jr nz, .failed
 
 ; Only works on a Sleeping target. This part matters in case Nightmare's own Sleep infliction fails.
