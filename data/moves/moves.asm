@@ -183,7 +183,7 @@ Moves:
 	move THIEF,        EFFECT_THIEF,              40, DARK,         PHYSICAL, 100, 30, 100
 	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,          STATUS,   100, 10,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, PSYCHIC_TYPE, STATUS,   100,  5,   0
-	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,    55, 10,   0
+	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,   100, 15,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,         PHYSICAL, 100, 20,   0
 	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100, 20,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100, 10,   0
