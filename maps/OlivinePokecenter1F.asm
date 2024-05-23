@@ -38,8 +38,8 @@ OlivinePokecenter1FFisherText:
 	para "move boulders with"
 	line "their minds."
 
-	para "He calls it using"
-	line "THE FORCE, but I"
+	para "He calls it “using"
+	line "THE FORCE,” but I"
 
 	para "don't know what"
 	line "that means."
