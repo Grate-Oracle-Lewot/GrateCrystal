@@ -1453,6 +1453,8 @@ Nightmare:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
+	checksafeguard
 	nightmare
 	endmove
 
