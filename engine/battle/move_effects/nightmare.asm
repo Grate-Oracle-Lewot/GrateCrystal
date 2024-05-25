@@ -19,11 +19,29 @@ BattleCommand_Nightmare:
 	jp StdBattleTextbox
 
 .not_protected_by_item
+; Check if target has Safeguard up.
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld hl, wPlayerScreens
+.got_turn
+	bit SCREENS_SAFEGUARD, [hl]
+	jr z, .not_safeguarded
+
+; Fail completely with "protected by Safeguard" text.
+	ld hl, SafeguardProtectText
+	push hl
+	call AnimateFailedMove
+	pop hl
+	jp StdBattleTextbox
+
+.not_safeguarded
 ; If target has a Substitute, fail completely.
 	call CheckSubstituteOpp
 	jr nz, .failed
 
-; If target is already Sleeping, move on to influcting Nightmare.
+; If target is already Sleeping, move on to inflicting Nightmare.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -72,7 +90,7 @@ BattleCommand_Nightmare:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
-; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction missed. Safeguard is handled by forcing a miss.
+; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction missed.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and SLP
