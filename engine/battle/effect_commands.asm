@@ -2714,9 +2714,7 @@ TruncateHL_BC:
 	inc l
 
 .finish
-; If we go back to the loop point,
-; it's the same as doing this exact
-; same check twice.
+; If we go back to the loop point, it's the same as doing this exact same check twice.
 	ld a, h
 	or b
 	jr nz, .loop
@@ -2726,8 +2724,7 @@ TruncateHL_BC:
 
 CheckDamageStatsCritical:
 ; Return carry if boosted stats should be used in damage calculations.
-; Unboosted stats should be used if the attack is a critical hit,
-;  and the stage of the opponent's defense is higher than the user's attack.
+; Unboosted stats should be used if the attack is a critical hit, and the stage of the opponent's defense is higher than the user's attack.
 
 	ld a, [wCriticalHit]
 	and a
@@ -2773,8 +2770,7 @@ CheckDamageStatsCritical:
 ThickClubBoost:
 ; Return in hl the stat value at hl.
 
-; If the attacking monster is Cubone or Marowak and
-; it's holding a Thick Club, double it.
+; If the attacking monster is Cubone or Marowak and it's holding a Thick Club, double it.
 	push bc
 	push de
 	ld b, CUBONE
@@ -2788,8 +2784,7 @@ ThickClubBoost:
 LightBallBoost:
 ; Return in hl the stat value at hl.
 
-; If the attacking monster is Pikachu and it's
-; holding a Light Ball, double it.
+; If the attacking monster is Pikachu and it's holding a Light Ball, double it.
 	push bc
 	push de
 	ld b, PIKACHU
@@ -2803,8 +2798,7 @@ LightBallBoost:
 SpeciesItemBoost:
 ; Return in hl the stat value at hl.
 
-; If the attacking monster is species b or c and
-; it's holding item d, double it.
+; If the attacking monster is species b or c and it's holding item d, double it.
 
 	ld a, [hli]
 	ld l, [hl]
