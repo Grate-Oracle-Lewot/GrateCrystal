@@ -62,8 +62,9 @@ BattleCommand_Nightmare:
 	call StdBattleTextbox
 
 	farcall UseHeldStatusHealingItem
-
-	call z, OpponentCantMove
+; If Nightmare-induced Sleep is cured by a held item, don't bother trying to inflict Nightmare due to grammatical awkwardness of "but it failed" in that case.
+	ret nz
+	call OpponentCantMove
 
 ; Try to inflict the actual Nightmare status. Substitute has already been accounted for by this point.
 .done_sleep
@@ -71,7 +72,7 @@ BattleCommand_Nightmare:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
-; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction missed or was cured by a held item.
+; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction missed. Safeguard is handled by forcing a miss.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and SLP
