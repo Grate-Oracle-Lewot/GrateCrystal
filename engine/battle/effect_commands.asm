@@ -6791,12 +6791,13 @@ SandstormSpDefBoost:
 .ok
 	ld a, [hli]
 	cp ROCK
-	jr z, .start_boost
+	jr z, FinishWeatherStatBoost
 	ld a, [hl]
 	cp ROCK
 	ret nz
+	; fallthrough
 
-.start_boost
+FinishWeatherStatBoost:
 	ld h, b
 	ld l, c
 	srl b
@@ -6821,20 +6822,11 @@ HailDefenseBoost:
 .ok
 	ld a, [hli]
 	cp ICE
-	jr z, .start_boost
+	jr z, FinishWeatherStatBoost
 	ld a, [hl]
 	cp ICE
 	ret nz
-
-.start_boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
+	jr FinishWeatherStatBoost
 
 BattleCommand_UndergroundFlyer:
 ; Hit Flying-types with Ground moves if they're currently underground.
