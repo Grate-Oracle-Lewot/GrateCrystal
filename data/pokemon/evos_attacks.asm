@@ -2269,9 +2269,9 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, GROWL
-	db 8, RAZOR_LEAF
-	db 12, REFLECT
+	db 1, SUBSTITUTE
+	db 1, SAFEGUARD
+	db 1, REST
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
 	db 22, SYNTHESIS
