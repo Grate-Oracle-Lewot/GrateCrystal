@@ -2,26 +2,15 @@ BattleCommand_Nightmare:
 ; In Grate Crystal, Nightmare inflicts both Sleep and the actual Nightmare status in one turn.
 ; Sleep is affected by the move's accuracy, but Nightmare isn't, meaning that if they were already Sleeping, Nightmare status is always inflicted.
 
-; Check if target's held item blocks Sleep.
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_SLEEP
-	jr nz, .not_protected_by_item
-
-; Fail completely with "protected by item" text.
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetItemName
-	ld hl, ProtectedByText
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jp StdBattleTextbox
-
-.not_protected_by_item
 ; If target has a Substitute, fail completely.
 	call CheckSubstituteOpp
 	jr nz, .failed
+
+; If target's held item blocks Sleep, move on to trying to inflict Nightmare, in case target used Rest or napped due to disobedience.
+	call GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_SLEEP
+	jr z, .done_sleep
 
 ; If target is already Sleeping, move on to inflicting Nightmare.
 	ld a, BATTLE_VARS_STATUS_OPP
