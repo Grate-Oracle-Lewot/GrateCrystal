@@ -63,7 +63,7 @@ BattleCommand_Nightmare:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
-; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction missed.
+; Only works on a Sleeping opponent. Must be checked in case Nightmare's own Sleep-infliction failed.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and SLP
@@ -81,7 +81,7 @@ BattleCommand_Nightmare:
 	ld hl, StartedNightmareText
 	jp StdBattleTextbox
 
-; Fail Sleep and/or Nightmare with "but it failed" text.
+; Fail Sleep and/or Nightmare with "but it failed" text. Above checks are designed to avoid showing multiple failure messages.
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
