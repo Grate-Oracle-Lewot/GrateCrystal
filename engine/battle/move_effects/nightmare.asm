@@ -19,24 +19,6 @@ BattleCommand_Nightmare:
 	jp StdBattleTextbox
 
 .not_protected_by_item
-; Check if target has Safeguard up.
-	ld hl, wEnemyScreens
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_turn
-	ld hl, wPlayerScreens
-.got_turn
-	bit SCREENS_SAFEGUARD, [hl]
-	jr z, .not_safeguarded
-
-; Fail completely with "protected by Safeguard" text.
-	ld hl, SafeguardProtectText
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jp StdBattleTextbox
-
-.not_safeguarded
 ; If target has a Substitute, fail completely.
 	call CheckSubstituteOpp
 	jr nz, .failed
@@ -56,6 +38,8 @@ BattleCommand_Nightmare:
 	jr nz, .failed
 
 ; If Nightmare's Sleep-infliction missed, move on to trying to inflict Nightmare, in case target was already Sleeping.
+; Safeguard works by forcing a miss, which matters in case Safeguarded target used Rest or napped due to disobedience.
+; (Safeguard does not protect against the Nightmare status, which is consistent with vanilla.)
 	ld a, [wAttackMissed]
 	and a
 	jp nz, .done_sleep
