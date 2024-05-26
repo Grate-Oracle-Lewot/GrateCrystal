@@ -1454,7 +1454,6 @@ Nightmare:
 	usedmovetext
 	doturn
 	checkhit
-	checksafeguard
 	nightmare
 	endmove
 
