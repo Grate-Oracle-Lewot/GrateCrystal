@@ -147,6 +147,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion, Leer lowers Special Defense, Kinesis sharply raises Special Attack, Cotton Spore sharply lowers Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying (and has a 10% flinch chance), etc.
 
+- Nightmare now inflicts both Sleep and the Nightmare status all in one turn. Since this is powerful, it now has low accuracy, but if the target is already asleep, the Nightmare status will be inflicted without fail, just like how the move worked before.
+
 - Hidden Power always has a base power of 70; the type still changes based on DVs, but it can now be Fairy type.
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
