@@ -1705,14 +1705,26 @@ AICheckLastPlayerMon:
 	inc c
 	dec b
 	jr nz, .loop
-
 	ret
 
 AI_Smart_Nightmare:
 ; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
 
+; Greatly encourage this move if the player is asleep.
+; Dismiss this move if the player has any status other than sleep.
+	ld a, [wBattleMonStatus]
+	jr z, .no_status
+	and SLP
+	jp z, AIDiscourageMove
+	dec [hl]
+	dec [hl]
 
-	ret
+; If the player has no status, dismiss this move if the player is Safeguarded, otherwise jump to AI_Smart_Sleep.
+.no_status
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jp nz, AIDiscourageMove
+	jp AI_Smart_Sleep
 
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]
