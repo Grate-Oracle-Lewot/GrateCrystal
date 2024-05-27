@@ -76,7 +76,7 @@ LeechSeedSapsText:
 
 HasANightmareText:
 	text "<USER>"
-	line "has a NIGHTMARE!"
+	line "had a NIGHTMARE!"
 	autodone
 
 HurtByCurseText:
