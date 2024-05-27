@@ -53,6 +53,10 @@ AI_Basic:
 	and a
 	jr nz, .discourage
 
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .discourage
+
 ; Dismiss Safeguard if it's already active.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
@@ -1719,11 +1723,19 @@ AI_Smart_Nightmare:
 	dec [hl]
 	dec [hl]
 
-; If the player has no status, dismiss this move if the player is Safeguarded, otherwise jump to AI_Smart_Sleep.
+; If the player has no status...
 .no_status
+; ...dismiss this move if the player is Safeguarded...
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jp nz, AIDiscourageMove
+
+; ...or has a Substitute...
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, AIDiscourageMove
+
+; ...otherwise, reuse AI_Smart_Sleep.
 	jp AI_Smart_Sleep
 
 AI_Smart_Curse:
