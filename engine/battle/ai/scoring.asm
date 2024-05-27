@@ -24,8 +24,7 @@ AI_Basic:
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	ld c, a
 
-; Dismiss moves with special effects if they are
-; useless or not a good choice right now.
+; Dismiss moves with special effects if they are useless or not a good choice right now.
 ; For example, healing moves, weather moves, Dream Eater...
 	push hl
 	push de
@@ -185,8 +184,7 @@ AI_Types:
 	jr .checkmove
 
 .noteffective
-; Discourage this move if there are any moves
-; that do damage of a different type.
+; Discourage this move if there are any moves that do damage of a different type.
 	push hl
 	push de
 	push bc
@@ -600,7 +598,6 @@ AI_Smart_DreamEater:
 	ret c
 	dec [hl]
 	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_EvasionUp:
@@ -918,8 +915,7 @@ AI_Smart_Bide_Screens:
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 
-; Discourage this move if the player has not shown
-; a super-effective move against the enemy.
+; Discourage this move if the player has not shown a super-effective move against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 
 	push hl
@@ -1027,8 +1023,7 @@ AI_Smart_TrapTarget:
 	and a
 	jr nz, .discourage
 
-; 50% chance to greatly encourage this move if player is either
-; badly poisoned, in love, identified, stuck in Rollout, or has a Nightmare.
+; 50% chance to greatly encourage this move if player is either badly poisoned, in love, identified, stuck in Rollout, or has a Nightmare.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
@@ -1068,9 +1063,7 @@ AI_Smart_SpDefenseUp2:
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 
-; 80% chance to greatly encourage this move if
-; enemy's Special Defense level is lower than +2,
-; and the player's Pokémon is Special-oriented.
+; 80% chance to greatly encourage this move if enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
@@ -1091,8 +1084,7 @@ AI_Smart_SpDefenseUp2:
 	ld a, BANK(BaseData)
 	call GetFarByte
 	pop hl
-; If its base Attack is greater than its base Special Attack,
-; don't encourage this move.
+; If its base Attack is greater than its base Special Attack, don't encourage this move.
 	cp d
 	ret c
 
@@ -1160,8 +1152,7 @@ AI_Smart_Paralyze:
 	call AICheckPlayerQuarterHP
 	jr nc, .discourage
 
-; 80% chance to greatly encourage this move
-; if enemy is slower than player and its HP is above 25%.
+; 80% chance to greatly encourage this move if enemy is slower than player and its HP is above 25%.
 	call AICompareSpeed
 	ret c
 	call AICheckEnemyQuarterHP
@@ -1667,8 +1658,7 @@ AI_Smart_MeanLook:
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 
-; 80% chance to greatly encourage this move if the player is either
-; in love, identified, stuck in Rollout, or has a Nightmare.
+; 80% chance to greatly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
 	ld a, [wPlayerSubStatus1]
 	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
 	jr nz, .encourage
@@ -1719,12 +1709,9 @@ AICheckLastPlayerMon:
 	ret
 
 AI_Smart_Nightmare:
-; 50% chance to encourage this move.
-; The AI_Basic layer will make sure that Nightmare is only used against sleeping targets.
+; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
 
-	call AI_50_50
-	ret c
-	dec [hl]
+
 	ret
 
 AI_Smart_Curse:
@@ -2133,8 +2120,7 @@ AI_Smart_Rollout:
 	bit PAR, a
 	jr nz, .maybe_discourage
 
-; 80% chance to discourage this move if the enemy's HP is below 25%,
-; or if accuracy or evasion modifiers favour the player.
+; 80% chance to discourage this move if the enemy's HP is below 25%, or if accuracy or evasion modifiers favour the player.
 	call AICheckEnemyQuarterHP
 	jr nc, .maybe_discourage
 
@@ -2260,8 +2246,7 @@ AI_Smart_Pursuit:
 	ret
 
 AI_Smart_RapidSpin:
-; 80% chance to greatly encourage this move if the enemy is
-; trapped (Bind effect), seeded, scattered with spikes, or curled.
+; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, scattered with spikes, or curled.
 
 	ld a, [wEnemyWrapCount]
 	and a
@@ -2359,8 +2344,7 @@ AI_Smart_SunnyDay:
 AI_Smart_WeatherMove:
 ; Rain Dance, Sunny Day
 
-; Greatly discourage this move if the enemy doesn't have
-; one of the useful Rain Dance or Sunny Day moves.
+; Greatly discourage this move if the enemy doesn't have one of the useful Rain Dance or Sunny Day moves.
 	call AIHasMoveInArray
 	pop hl
 	jr nc, AIBadWeatherType
