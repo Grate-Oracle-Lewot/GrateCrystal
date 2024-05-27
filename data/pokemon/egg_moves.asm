@@ -858,8 +858,8 @@ StantlerEggMoves:
 	db LIGHT_SCREEN
 	db FORESIGHT
 	db POWER_GEM
+	db HI_JUMP_KICK
 	db IRON_HEAD
-	db DAZZLY_GLEAM
 	db -1 ; end
 
 TyrogueEggMoves:
