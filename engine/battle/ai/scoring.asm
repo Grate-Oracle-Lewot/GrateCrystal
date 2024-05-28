@@ -57,7 +57,6 @@ AI_Basic:
 	bit SUBSTATUS_SUBSTITUTE, a
 	jr nz, .discourage
 
-; Dismiss Safeguard if it's already active.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jr z, .checkmove
