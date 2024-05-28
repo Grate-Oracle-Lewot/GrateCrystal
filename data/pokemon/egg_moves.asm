@@ -931,11 +931,12 @@ CattleEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
+	db POWER_GEM
+	db BIDE
 	db MEAN_LOOK
 	db STOMP
 	db OUTRAGE
 	db FOCUS_ENERGY
-	db POWER_GEM
 	db BELLY_DRUM
 	db -1 ; end
 
