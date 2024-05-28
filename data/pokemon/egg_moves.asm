@@ -528,6 +528,7 @@ SentretEggMoves:
 
 HoothootEggMoves:
 	db MIRROR_MOVE
+	db LIGHT_SCREEN
 	db SPITE
 	db CONFUSE_RAY
 	db WHIRLWIND
