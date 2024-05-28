@@ -1347,7 +1347,7 @@ CloysterEvosAttacks:
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
 	db 0 ; no more evolutions
-	db 1, NIGHTMARE
+	db 1, HYPNOSIS
 	db 1, LICK
 	db 4, SPITE
 	db 9, SMOG
@@ -1358,7 +1358,7 @@ GastlyEvosAttacks:
 	db 28, CONFUSE_RAY
 	db 33, DREAM_EATER
 	db 36, SHADOW_BALL
-	db 41, DARK_PULSE
+	db 41, NIGHTMARE
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
 
@@ -1376,7 +1376,7 @@ HaunterEvosAttacks:
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, SHADOW_BALL
-	db 53, DARK_PULSE
+	db 53, NIGHTMARE
 	db 59, DESTINY_BOND
 	db 0 ; no more level-up moves
 
@@ -1393,7 +1393,7 @@ GengarEvosAttacks:
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
 	db 48, SHADOW_BALL
-	db 53, DARK_PULSE
+	db 53, NIGHTMARE
 	db 59, DESTINY_BOND
 	db 0 ; no more level-up moves
 
