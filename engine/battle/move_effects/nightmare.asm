@@ -1,6 +1,7 @@
 BattleCommand_Nightmare:
 ; In Grate Crystal, Nightmare inflicts both Sleep and the actual Nightmare status in one turn.
 ; Sleep is affected by the move's accuracy, but Nightmare isn't, meaning that if they were already Sleeping, Nightmare status is always inflicted.
+; For accuracy to affect anything, you must add checkhit to Nightmare's effect in data/moves/effects.asm.
 
 ; If target has a Substitute, fail completely.
 	call CheckSubstituteOpp
