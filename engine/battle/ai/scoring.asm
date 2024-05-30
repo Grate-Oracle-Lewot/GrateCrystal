@@ -1713,6 +1713,11 @@ AICheckLastPlayerMon:
 AI_Smart_Nightmare:
 ; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
 
+; Dismiss this move if the player has a Substitute.
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, AIDiscourageMove
+
 ; Greatly encourage this move if the player is asleep.
 ; Dismiss this move if the player has any status other than sleep.
 	ld a, [wBattleMonStatus]
@@ -1727,11 +1732,6 @@ AI_Smart_Nightmare:
 ; ...dismiss this move if the player is Safeguarded...
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
-	jp nz, AIDiscourageMove
-
-; ...or has a Substitute...
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, AIDiscourageMove
 
 ; ...otherwise, reuse AI_Smart_Sleep.
