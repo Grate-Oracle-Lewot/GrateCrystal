@@ -332,8 +332,8 @@ Text_Route31HandOverMailMon:
 Text_Route31ReadingMail:
 	text "Let's see…"
 
-	para "…DARK CAVE leads"
-	line "to another road…"
+	para "“DARK CAVE leads"
+	line "to another road…”"
 
 	para "That's good to"
 	line "know."
@@ -345,28 +345,29 @@ Text_Route31ReadingMail:
 	line "guy, and you're"
 	cont "swell too!"
 
-	para "I'd like to do"
-	line "something good in"
-	cont "return too!"
-
-	para "I know! I want you"
-	line "to have this!"
+	para "I'd like to give"
+	line "you something in"
+	cont "return!"
 	done
 
 Text_Route31DescribeNightmare:
 	text "TM50 is NIGHTMARE."
+	line "It puts the foe to"
 
-	para "It's a wicked move"
-	line "that steadily cuts"
+	para "sleep and gives"
+	line "them bad dreams"
 
-	para "the HP of a sleep-"
-	line "ing enemy."
+	para "that deal damage"
+	line "each turn."
 
-	para "Ooooh…"
-	line "That's scary…"
+	para "It's not exactly"
+	line "accurate, but if"
 
-	para "I don't want to"
-	line "have bad dreams."
+	para "the foe is already"
+	line "asleep, it'll give"
+
+	para "them the nightmare"
+	line "without fail!"
 	done
 
 Text_Route31WrongMail:
