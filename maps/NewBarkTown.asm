@@ -128,9 +128,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon PINECO, 2
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
