@@ -3,6 +3,14 @@ BattleCommand_Nightmare:
 ; Sleep is affected by the move's accuracy, but Nightmare isn't, meaning that if they were already Sleeping, Nightmare status is always inflicted.
 ; For accuracy to affect anything, you must add checkhit to Nightmare's effect in data/moves/effects.asm.
 
+; If target has Protect up, fail completely.
+; This bypasses the Protect check contained in checkhit in order to fail at the Nightmare status, which otherwise would hit through Protect if the target was already Sleeping.
+; That could only happen if Sleep Talk called Protect and the user of Sleep Talk was faster than the user of Nightmare, but there you are.
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_PROTECT, a
+	jr nz, .failed
+
 ; If target has a Substitute, fail completely.
 	call CheckSubstituteOpp
 	jr nz, .failed
