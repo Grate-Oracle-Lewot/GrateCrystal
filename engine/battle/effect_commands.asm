@@ -3662,7 +3662,7 @@ BattleCommand_SleepTarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, %101
+	ld b, %101 ; 5 turns
 
 .random_loop
 	call BattleRandom
