@@ -1,11 +1,11 @@
 BattleCommand_Nightmare:
 ; In Grate Crystal, Nightmare inflicts both Sleep and the actual Nightmare status in one turn.
 ; Sleep is affected by the move's accuracy, but Nightmare isn't, meaning that if they were already Sleeping, Nightmare status is always inflicted.
-; For accuracy to affect anything, you must add checkhit to Nightmare's effect in data/moves/effects.asm.
+; For accuracy to affect anything, you must add "checkhit" to Nightmare's effect in data/moves/effects.asm.
 
 ; If target has Protect up, fail completely.
-; This bypasses the Protect check contained in checkhit in order to fail at the Nightmare status, which otherwise would hit through Protect if the target was already Sleeping.
-; That could only happen if Sleep Talk called Protect and the user of Sleep Talk was faster than the user of Nightmare, but there you are.
+; If Sleep Talk calls Protect and the user of it is faster than the user of Nightmare, this will block the Nightmare status with the Protect status.
+; Otherwise, this is redundant since checkhit will cause Nightmare's Sleep-infliction to always miss if Protect is up, and thus Nightmare status can't be inflicted.
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_PROTECT, a
@@ -16,7 +16,7 @@ BattleCommand_Nightmare:
 	jr nz, .failed
 
 ; If target is already Sleeping, move on to inflicting Nightmare.
-; This includes targets who are Safeguarded or holding a Noisemaker but who have used Rest or napped due to disobedience.
+; This includes targets who are Safeguarded or holding a Sleep-blocking item but who have used Rest or napped due to disobedience.
 ; Safeguard does not protect against the Nightmare status, which is consistent with vanilla.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -49,7 +49,7 @@ BattleCommand_Nightmare:
 
 ; Animate Nightmare for Sleep-infliction. Animation will play again later for Nightmare-infliction.
 	call AnimateCurrentMove
-	ld b, %101
+	ld b, %101 ; 5 turns
 
 ; Determine Sleep turn count etc.
 .random_loop
@@ -74,7 +74,7 @@ BattleCommand_Nightmare:
 
 ; Try to inflict the actual Nightmare status. Substitute has already been accounted for by this point.
 .done_sleep
-; Can't hit an absent opponent. For Sleep, this was accounted for with wAttackMissed.
+; Can't hit an absent opponent. For Sleep, this was accounted for with checkhit/wAttackMissed.
 	call CheckHiddenOpponent
 	jr nz, .failed
 
