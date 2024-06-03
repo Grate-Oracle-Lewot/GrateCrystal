@@ -651,8 +651,7 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
-	; If the monster's id doesn't match the player's,
-	; some conditions need to be met.
+	; If the monster's id doesn't match the player's, some conditions need to be met.
 	ld a, MON_ID
 	call BattlePartyAttr
 
@@ -673,9 +672,19 @@ BattleCommand_CheckObedience:
 	ld a, MAX_LEVEL + 1
 	jr nz, .getlevel
 
+	; glacierbadge
+	bit GLACIERBADGE, [hl]
+	ld a, 80
+	jr nz, .getlevel
+
+	; mineralbadge
+	bit MINERALBADGE, [hl]
+	ld a, 70
+	jr nz, .getlevel
+
 	; stormbadge
 	bit STORMBADGE, [hl]
-	ld a, 70
+	ld a, 60
 	jr nz, .getlevel
 
 	; fogbadge
@@ -683,9 +692,19 @@ BattleCommand_CheckObedience:
 	ld a, 50
 	jr nz, .getlevel
 
+	; plainbadge
+	bit PLAINBADGE, [hl]
+	ld a, 40
+	jr nz, .getlevel
+
 	; hivebadge
 	bit HIVEBADGE, [hl]
 	ld a, 30
+	jr nz, .getlevel
+
+	; zephyrbadge
+	bit ZEPHYRBADGE, [hl]
+	ld a, 20
 	jr nz, .getlevel
 
 	; no badges
@@ -722,13 +741,11 @@ BattleCommand_CheckObedience:
 	cp b
 	jr nc, .rand1
 
-; The higher above the obedience level the monster is,
-; the more likely it is to disobey.
+; The higher above the obedience level the monster is, the more likely it is to disobey.
 	cp c
 	ret c
 
-; Sleep-only moves have separate handling, and a higher chance of
-; being ignored. Lazy monsters like their sleep.
+; Sleep-only moves have separate handling, and a higher chance of being ignored. Lazy monsters like their sleep.
 	call IgnoreSleepOnly
 	ret c
 
@@ -765,11 +782,13 @@ BattleCommand_CheckObedience:
 	jp .EndDisobedience
 
 .Nap:
+	ld b, %101 ; 5 turns
+.nap_loop
 	call BattleRandom
 	add a
 	swap a
-	and SLP
-	jr z, .Nap
+	and b
+	jr z, .nap_loop
 
 	ld [wBattleMonStatus], a
 
