@@ -2042,7 +2042,6 @@ BeatUp:
 	applydamage
 	criticaltext
 	cleartext
-	supereffectivetext
 	checkfaint
 	buildopponentrage
 	endloop
