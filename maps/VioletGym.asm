@@ -161,6 +161,12 @@ FalknerZephyrBadgeText:
 	para "if they have it,"
 	line "anytime."
 
+	para "#MON that you"
+	line "receive in trades"
+
+	para "will also obey you"
+	line "up to Lv20."
+
 	para "Here--take this"
 	line "too."
 	done
