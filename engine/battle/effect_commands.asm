@@ -6991,9 +6991,15 @@ BattleCommand_CheckContact:
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wBattleMonStatus]
-	and 1 << PAR
+
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FLYING
 	jr z, .StaticAnim
+	ld a, [hl]
+	cp FLYING
+	jr z, .StaticAnim
+
 	ld hl, wBattleMonSpeed + 1
 	ld a, [hld]
 	ld b, a
@@ -7012,9 +7018,14 @@ BattleCommand_CheckContact:
 	jr .StaticAnim
 
 .enemy
-	ld a, [wEnemyMonStatus]
-	and 1 << PAR
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	cp FLYING
 	jr z, .StaticAnim
+	ld a, [hl]
+	cp FLYING
+	jr z, .StaticAnim
+
 	ld hl, wEnemyMonSpeed + 1
 	ld a, [hld]
 	ld b, a
