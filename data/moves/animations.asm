@@ -2883,9 +2883,10 @@ BattleAnim_SilverWind:
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
-	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 2, .loop
+	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 16
 	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 1, SFX_RAZOR_WIND
