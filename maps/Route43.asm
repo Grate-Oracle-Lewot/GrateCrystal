@@ -404,8 +404,8 @@ FisherMarvinAfterBattleText:
 	para "catching hooked"
 	line "#MON."
 
-	para "It's much more"
-	line "effective than a"
+	para "It's even more"
+	line "effective than an"
 	cont "ULTRA BALL."
 	done
 
