@@ -6796,6 +6796,15 @@ ApplyBrnEffectOnAttack:
 	ld a, [wBattleMonStatus]
 	and 1 << BRN
 	ret z
+
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FIGHTING
+	ret z
+	ld a, [hl]
+	cp FIGHTING
+	ret z
+
 	ld hl, wBattleMonAttack + 1
 	ld a, [hld]
 	ld b, a
@@ -6815,6 +6824,15 @@ ApplyBrnEffectOnAttack:
 	ld a, [wEnemyMonStatus]
 	and 1 << BRN
 	ret z
+
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	cp FIGHTING
+	ret z
+	ld a, [hl]
+	cp FIGHTING
+	ret z
+
 	ld hl, wEnemyMonAttack + 1
 	ld a, [hld]
 	ld b, a
