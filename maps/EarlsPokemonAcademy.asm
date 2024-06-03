@@ -336,6 +336,12 @@ AcademyPoisonText:
 	line "MON can't be pois-"
 	cont "oned, nor can"
 	cont "steel-types."
+
+	para "The move TOXIC"
+	line "poisons badly,"
+
+	para "which hurts more"
+	line "as time goes on."
 	done
 
 AcademyParalysisText:
@@ -364,6 +370,10 @@ AcademyParalysisText:
 	para "However, ground-"
 	line "types needn't fear"
 	cont "static."
+
+	para "Also, flying types"
+	line "don't lose speed"
+	cont "while paralyzed."
 	done
 
 AcademySleepText:
@@ -408,6 +418,10 @@ AcademyBurnText:
 	para "Fire- and water-"
 	line "types can't be"
 	cont "burned."
+
+	para "Fighting types"
+	line "don't lose attack"
+	cont "while burned."
 	done
 
 AcademyFreezeText:
