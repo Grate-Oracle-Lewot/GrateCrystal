@@ -716,6 +716,7 @@ PinecoEggMoves:
 
 DunsparceEggMoves:
 	db DRAGON_PULSE
+	db MEGAHORN
 	db BIDE
 	db BITE
 	db LOVELY_KISS
