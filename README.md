@@ -57,6 +57,8 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Psychic types are immune to flinching
   - Dragon types are immune to critical hits
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
+  - Fighting types don't lose Attack while Burned
+  - Flying types don't lose Speed while Paralyzed
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
