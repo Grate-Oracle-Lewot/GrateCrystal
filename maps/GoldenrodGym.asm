@@ -238,6 +238,10 @@ WhitneyPlainBadgeText:
 	para "heavy boulders"
 	line "outside battle."
 
+	para "Traded #MON"
+	line "will also obey you"
+	cont "up to Lv40."
+
 	para "Oh, you can have"
 	line "this too!"
 	done
