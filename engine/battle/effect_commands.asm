@@ -6963,7 +6963,7 @@ BattleCommand_CheckContact:
 	call GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
-	jr z, .DoublecheckFairy
+	jp z, .DoublecheckFairy
 
 	ld hl, wPlayerScreens
 	ldh a, [hBattleTurn]
