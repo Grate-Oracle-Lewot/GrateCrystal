@@ -466,25 +466,25 @@ TrainerClassAttributes:
 
 ; Lorelei
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 1 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Agatha
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 1 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Real Bruno
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 1 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Real Will
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 1 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
