@@ -430,13 +430,13 @@ TrainerClassAttributes:
 
 ; Aerobones
 	db NO_ITEM, NO_ITEM ; items
-	db 1 ; base reward
+	db 0 ; base reward
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Kabubones
 	db NO_ITEM, NO_ITEM ; items
-	db 1 ; base reward
+	db 30 ; base reward
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
