@@ -2354,6 +2354,7 @@ SuperNerdGroup:
 	; SUPER_NERD (14)
 	db "STAN@", TRAINERTYPE_ITEM
 	db 30, GRIMER,     SLOWPOKETAIL
+	db 30, SCYTHER,    EVERSTONE
 	db -1 ; end
 
 Rival2Group:
