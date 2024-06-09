@@ -436,7 +436,7 @@ TrainerClassAttributes:
 
 ; Kabubones
 	db NO_ITEM, NO_ITEM ; items
-	db 30 ; base reward
+	db 42 ; base reward
 	dw NO_AI
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
