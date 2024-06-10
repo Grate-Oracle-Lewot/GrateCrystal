@@ -6,7 +6,7 @@
 	db GRASS, FLYING ; type
 	db 255 ; catch rate
 	db 74 ; base exp
-	db MIRACLEBERRY, MIRACLE_SEED ; items
+	db NO_ITEM, MIRACLEBERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoppip/front.dimensions"
