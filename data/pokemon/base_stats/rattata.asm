@@ -6,7 +6,7 @@
 	db NORMAL, DARK ; type
 	db 255 ; catch rate
 	db 57 ; base exp
-	db BERRY, GOLD_BERRY ; items
+	db NO_ITEM, BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/rattata/front.dimensions"
