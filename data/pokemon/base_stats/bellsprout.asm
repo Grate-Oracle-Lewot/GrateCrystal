@@ -6,7 +6,7 @@
 	db GRASS, POISON ; type
 	db 255 ; catch rate
 	db 84 ; base exp
-	db ENERGY_ROOT, LEAF_STONE ; items
+	db ENERGY_ROOT, ENERGY_ROOT ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/bellsprout/front.dimensions"
