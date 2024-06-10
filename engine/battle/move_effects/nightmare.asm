@@ -16,7 +16,7 @@ BattleCommand_Nightmare:
 	jr nz, .failed
 
 ; If target is already Sleeping, move on to inflicting Nightmare.
-; This includes targets who are Safeguarded or holding a Sleep-blocking item but who have used Rest or napped due to disobedience.
+; This includes targets who are Safeguarded or holding a Sleep-blocking item but who have used Rest, napped due to disobedience, or fell out of a tree.
 ; Safeguard does not protect against the Nightmare status, which is consistent with vanilla.
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -72,7 +72,7 @@ BattleCommand_Nightmare:
 	ret nz
 	call OpponentCantMove
 
-; Try to inflict the actual Nightmare status. Substitute has already been accounted for by this point.
+; Try to inflict the actual Nightmare status.
 .done_sleep
 ; Can't hit an absent opponent. For Sleep, this was accounted for with checkhit/wAttackMissed.
 	call CheckHiddenOpponent
@@ -102,7 +102,7 @@ BattleCommand_Nightmare:
 	jp PrintButItFailed
 
 ; Fail Sleep and Nightmare with "protected by item" text.
-; In the event that an item holder used Rest or napped due to disobedience, we never make it here because Sleep was checked for before the item.
+; In the event that an item holder used Rest, napped due to disobedience, or fell from a tree, we never make it here because Sleep was checked for before the item.
 .item_fail
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
@@ -111,7 +111,7 @@ BattleCommand_Nightmare:
 	jr .special_fail
 
 ; Fail Sleep and Nightmare with "protected by Safeguard" text.
-; In the event that a Safeguarded target used Rest or napped due to disobedience, we never make it here because Sleep was checked for before Safeguard.
+; In the event that a Safeguarded target used Rest, napped due to disobedience, or fell from a tree, we never make it here because Sleep was checked for before Safeguard.
 .safeguard_fail
 	ld hl, SafeguardProtectText
 .special_fail
