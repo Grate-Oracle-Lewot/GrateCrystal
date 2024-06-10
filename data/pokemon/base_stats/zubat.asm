@@ -6,7 +6,7 @@
 	db POISON, FLYING ; type
 	db 255 ; catch rate
 	db 54 ; base exp
-	db BITTER_BERRY, DICTIONARY ; items
+	db BITTER_BERRY, PSNCUREBERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/zubat/front.dimensions"
