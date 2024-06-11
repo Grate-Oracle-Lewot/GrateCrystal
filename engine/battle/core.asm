@@ -2503,6 +2503,10 @@ WinTrainerBattle:
 	call PrintWinLossText
 .skip_win_loss_text
 
+; Don't show money award text if base reward = 0
+	ld a, [wEnemyTrainerBaseReward]
+	cp 0
+	ret z
 	jp .give_money
 
 .mobile
