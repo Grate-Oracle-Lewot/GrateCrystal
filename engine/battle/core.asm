@@ -2531,10 +2531,6 @@ WinTrainerBattle:
 	jp ClearBGPalettes
 
 .give_money
-	ld a, [wBattleReward]
-	cp 0
-	ret z
-
 	ld a, [wAmuletCoin]
 	and a
 	call nz, .DoubleReward
