@@ -79,7 +79,18 @@ BrunosRoom_EnterMovement:
 	step_end
 
 BrunoScript_BrunoBeforeText:
-	text "i'm gay"
+	text "Hi! I'm PERCIVAL,"
+	line "but people call me"
+	cont "PERCY."
+
+	para "Me and LEWOTY are"
+	line "besties."
+
+	para "I like weird fruit"
+	line "because I am a"
+	cont "weird fruit."
+
+	para "Now! En garde!"
 	done
 
 BrunoScript_BrunoBeatenText:
@@ -87,7 +98,8 @@ BrunoScript_BrunoBeatenText:
 	done
 
 BrunoScript_BrunoDefeatText:
-	text "i'm gay"
+	text "I'm gonna go make"
+	line "collage art."
 	done
 
 BrunosRoom_MapEvents:
