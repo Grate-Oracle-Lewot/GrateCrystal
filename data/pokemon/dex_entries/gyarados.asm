@@ -1,4 +1,4 @@
-	db "ATROCIOUS@" ; species name
+	db "FISHIOUS@" ; species name
 	dw 2104, 5180 ; height, weight
 
 	db   "Some speculate"
