@@ -325,6 +325,10 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 In both cases, the maximum number is limited by the size of a byte. (That's 256, but actually a few less because some values are used for other purposes, such as indicating a lack of an entry or the end of the list.) There are possible ways around this, but they're a bit above my skill level, and even if I bypass the numerical limit, I may not have room for more entries in the memory banks, which are much harder to work around. As for deciding to remove the baby Pokémon, I really didn't want to remove any Pokémon even if they were useless in battle (I think Pichu is cuter than Pikachu!), but I was also really excited about adding new Pokémon, and the way I see it, the main purpose of the baby Pokémon is to encourage the breeding mechanic by requiring it for Pokédex completion, but this particular hack is supposed to be pretty silly and breezy, so I doubt anyone will spend time breeding in it, or even completing the Pokédex for that matter. I kept Togepi because of the free egg and Tyrogue to properly connect the Hitmons, and the rest is recent history.
 
+# Why did you use THIS beta mon instead of THAT one?
+
+Along with personal preference, I prioritized the ones that could most reasonably be given unique type combinations (unique within this hack, that is), thus allowing for wider type variety overall.
+
 # Why aren't you using newbox?
 
 Again, above my skill level. It also has some requirements like variable-width font and certain pixel restrictions on Pokémon icons, and I don't really want to deal with all that.
