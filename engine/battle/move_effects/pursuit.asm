@@ -2,6 +2,9 @@ BattleCommand_Pursuit:
 ; pursuit
 ; Double damage if the opponent is switching.
 
+	ld a, $1 ; beta animation
+	ld [wBattleAnimParam], a
+
 	ld hl, wEnemyIsSwitching
 	ldh a, [hBattleTurn]
 	and a
