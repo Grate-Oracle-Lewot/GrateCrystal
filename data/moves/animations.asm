@@ -2885,7 +2885,7 @@ BattleAnim_IcyWind:
 	anim_sound 6, 2, SFX_SHINE
 	anim_wait 8
 	anim_loop 2, .loop
-	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_sound 6, 2, SFX_SHINE
 	anim_wait 16
 	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
 	anim_sound 6, 2, SFX_SHINE
