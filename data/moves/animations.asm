@@ -2868,6 +2868,46 @@ BattleAnim_Meditate:
 	anim_ret
 
 BattleAnim_IcyWind:
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_battlergfx_1row
+.loop
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_wait 16
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 6
+	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 8
+	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 4
+	anim_incobj 7
+	anim_wait 1
+	anim_ret
+
 BattleAnim_SilverWind:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
@@ -4214,30 +4254,10 @@ BattleAnim_Encore:
 
 BattleAnim_Pursuit:
 	anim_1gfx ANIM_GFX_HIT
-	anim_if_param_equal $1, .pursued
+	anim_obp0 $f
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
-	anim_ret
-
-.pursued:
-	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_TARGET, $0
-	anim_wait 4
-	anim_call BattleAnim_UserObj_1Row
-	anim_obj ANIM_OBJ_BETA_PURSUIT, 132, 64, $0
-	anim_wait 64
-	anim_obj ANIM_OBJ_BETA_PURSUIT, 132, 64, $1
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_bgeffect ANIM_BG_ENTER_MON, $0, BG_EFFECT_TARGET, $0
-	anim_wait 64
-	anim_incobj 3
-	anim_wait 16
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 56, $0
-	anim_bgeffect ANIM_BG_BETA_PURSUIT, $0, BG_EFFECT_TARGET, $0
-	anim_wait 16
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
 	anim_ret
 
 BattleAnim_RapidSpin:
