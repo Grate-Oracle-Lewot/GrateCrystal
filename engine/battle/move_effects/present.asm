@@ -62,16 +62,15 @@ BattleCommand_Present:
 	call StdBattleTextbox
 	call BattleCommand_SwitchTurn
 	call UpdateOpponentInParty
-	jr .do_animation
+	jp EndMoveEffect
 
 .already_fully_healed
 	call BattleCommand_SwitchTurn
 	call _CheckBattleScene
-	jr nc, .do_animation
+	jp nc, EndMoveEffect
 	call AnimateFailedMove
 	ld hl, PresentFailedText
 	call StdBattleTextbox
-.do_animation
 	jp EndMoveEffect
 
 INCLUDE "data/moves/present_power.asm"
