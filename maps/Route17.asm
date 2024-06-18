@@ -112,7 +112,7 @@ Route17KogaScript:
 	writetext Route17KogaOutroText
 	waitbutton
 	closetext
-	playsound SFX_WARP_TO
+	playsound SFX_EMBER
 	applymovement ROUTE17_CHRIS_BIKE, Route17KogaTeleport
 	disappear ROUTE17_CHRIS_BIKE
 	setevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
