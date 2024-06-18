@@ -5,16 +5,28 @@
 	const ROUTE17_BIKER4
 	const ROUTE17_BIKER5
 	const ROUTE17_BIKER6
+	const ROUTE17_CHRIS_BIKE
 
 Route17_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
+	callback MAPCALLBACK_OBJECTS, .CheckLucas
 
 .AlwaysOnBike:
 	setflag ENGINE_ALWAYS_ON_BIKE
 	setflag ENGINE_DOWNHILL
+	endcallback
+
+.CheckLucas:
+	disappear ROUTE17_CHRIS_BIKE
+	checkevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
+	iffalse .AppearLucas
+	endcallback
+
+.AppearLucas:
+	appear ROUTE17_CHRIS_BIKE
 	endcallback
 
 TrainerBikerCharles:
@@ -83,11 +95,38 @@ TrainerBikerKazu:
 	closetext
 	end
 
+Route17KogaScript:
+	faceplayer
+	opentext
+	writetext Route17KogaIntroText
+	promptbutton
+	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
+	iftrue .FoundPercy
+	writetext Route17KogaNoPercyText
+	sjump .Continue
+
+.FoundPercy:
+	writetext Route17KogaFoundPercyText
+.Continue:
+	promptbutton
+	writetext Route17KogaOutroText
+	waitbutton
+	closetext
+	playsound SFX_WARP_TO
+	applymovement ROUTE17_CHRIS_BIKE, Route17KogaTeleport
+	disappear ROUTE17_CHRIS_BIKE
+	setevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
+	end
+
 Route17HiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_ROUTE_17_HIDDEN_MAX_ETHER
 
 Route17HiddenMaxElixer:
 	hiddenitem MAX_ELIXER, EVENT_ROUTE_17_HIDDEN_MAX_ELIXER
+
+Route17KogaTeleport:
+	teleport_from
+	step_end
 
 BikerRileySeenText:
 	text "Hey, you! You're"
@@ -193,6 +232,36 @@ BikerKazuAfterBattleText:
 	line "important!"
 	done
 
+Route17KogaIntroText:
+	text "LUCAS: What's up?"
+	done
+
+Route17KogaNoPercyText:
+	text "You found me, but"
+	line "you still have to"
+	cont "find PERCY."
+
+	para "At least, if you"
+	line "want to get into"
+	cont "that…"
+	done
+
+Route17KogaFoundPercyText:
+	text "You found both of"
+	line "us, so now you can"
+	cont "go into that…"
+	done
+
+Route17KogaOutroText:
+	text "SECRET TUNNEEEEEL!"
+
+	para "…In the SEAFOAM"
+	line "ISLANDS."
+
+	para "Rocket bike,"
+	line "activate!"
+	done
+
 Route17_MapEvents:
 	db 0, 0 ; filler
 
@@ -213,3 +282,4 @@ Route17_MapEvents:
 	object_event  6, 80, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1
 	object_event 14,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerBenny, -1
 	object_event 18, 34, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerKazu, -1
+	object_event  8, 42, SPRITE_CHRIS_BIKE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route17KogaScript, EVENT_ROUTE_17_LUCAS
