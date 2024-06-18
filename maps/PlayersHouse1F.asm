@@ -102,6 +102,19 @@ MeetMomScript:
 .Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	giveitem BICYCLE
+	giveitem HEDGER
+	giveitem PICKAXE
+	giveitem FLOATIE
+	giveitem FEAROWBOT
 	end
 
 MeetMomTalkedScript:
@@ -132,19 +145,6 @@ MomScript:
 	writetext HurryUpElmIsWaitingText
 	waitbutton
 	closetext
-	setflag ENGINE_ZEPHYRBADGE
-	setflag ENGINE_HIVEBADGE
-	setflag ENGINE_PLAINBADGE
-	setflag ENGINE_FOGBADGE
-	setflag ENGINE_STORMBADGE
-	setflag ENGINE_MINERALBADGE
-	setflag ENGINE_GLACIERBADGE
-	setflag ENGINE_RISINGBADGE
-	giveitem BICYCLE
-	giveitem HEDGER
-	giveitem PICKAXE
-	giveitem FLOATIE
-	giveitem FEAROWBOT
 	end
 
 .GotAPokemon:
