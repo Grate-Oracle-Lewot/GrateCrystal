@@ -173,9 +173,6 @@ GrateCrystal11_debug_base = dbg
 
 ### LZ compression rules
 
-# Delete this line if you don't care about matching and just want optimal compression.
-include gfx/lz.mk
-
 %.lz: %
 	tools/lzcomp $(LZFLAGS) -- $< $@
 
