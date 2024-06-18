@@ -2,15 +2,32 @@
 	const ROUTE20_SWIMMER_GIRL1
 	const ROUTE20_SWIMMER_GIRL2
 	const ROUTE20_SWIMMER_GUY
+	const ROUTE20_GENTLEMAN
 
 Route20_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .ClearRocks
+	callback MAPCALLBACK_OBJECTS, .CheckAD
 
 .ClearRocks:
 	setevent EVENT_CINNABAR_ROCKS_CLEARED
+	endcallback
+
+.CheckAD:
+	appear ROUTE20_GENTLEMAN
+	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
+	iftrue .NextCheck
+	endcallback
+
+.NextCheck:
+	checkevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
+	iftrue .DisappearAD
+	endcallback
+
+.DisappearAD:
+	disappear ROUTE20_GENTLEMAN
 	endcallback
 
 TrainerSwimmerfNicole:
@@ -45,6 +62,9 @@ TrainerSwimmermCameron:
 	waitbutton
 	closetext
 	end
+
+Route20WillScript:
+	jumptextfaceplayer Route20WillText
 
 CinnabarGymSign:
 	jumptext CinnabarGymSignText
@@ -102,6 +122,29 @@ SwimmermCameronAfterBattleText:
 	cont "ponds and rivers."
 	done
 
+Route20WillText:
+	text "Ah, it's you."
+
+	para "I'm A.D. from the"
+	line "ELITE FOUR,"
+	cont "remember?"
+
+	para "I'm supposed to"
+	line "stand here until"
+
+	para "you find LUCAS and"
+	line "PERCY hiding some-"
+	cont "where in KANTO."
+
+	para "So, uh, you'd"
+	line "better go do that,"
+	cont "I guess."
+
+	para "And no, rematching"
+	line "them at the LEAGUE"
+	cont "doesn't count."
+	done
+
 CinnabarGymSignText:
 	text "What does this"
 	line "sign say?"
@@ -126,3 +169,4 @@ Route20_MapEvents:
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+	object_event 30,  6, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route20WillScript, EVENT_ROUTE_20_A_D
