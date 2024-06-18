@@ -60,8 +60,9 @@ CinnabarGroupSprites:
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
 	db SPRITE_FRUIT_TREE
-	db SPRITE_BLUE
 	db SPRITE_ROCK
+	db SPRITE_BLUE
+	db SPRITE_WILL
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -81,6 +82,7 @@ SaffronGroupSprites:
 	db SPRITE_MISTY
 	; max 9 of 9 walking sprites
 	db SPRITE_SLOWPOKE
+	db SPRITE_BRUNO
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -129,7 +131,8 @@ CeladonGroupSprites:
 	db SPRITE_BIKER
 	db SPRITE_OFFICER
 	db SPRITE_GRANNY
-	; 7 of max 9 walking sprites
+	db SPRITE_CHRIS_BIKE
+	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POLIWAG
 	db SPRITE_POKE_BALL
