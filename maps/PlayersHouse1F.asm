@@ -102,19 +102,6 @@ MeetMomScript:
 .Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
-	setflag ENGINE_ZEPHYRBADGE
-	setflag ENGINE_HIVEBADGE
-	setflag ENGINE_PLAINBADGE
-	setflag ENGINE_FOGBADGE
-	setflag ENGINE_STORMBADGE
-	setflag ENGINE_MINERALBADGE
-	setflag ENGINE_GLACIERBADGE
-	setflag ENGINE_RISINGBADGE
-	giveitem BICYCLE
-	giveitem HEDGER
-	giveitem PICKAXE
-	giveitem FLOATIE
-	giveitem FEAROWBOT
 	end
 
 MeetMomTalkedScript:
@@ -404,7 +391,7 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, ROUTE_20, 2
+	warp_event  6,  7, NEW_BARK_TOWN, 2
 	warp_event  7,  7, NEW_BARK_TOWN, 2
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
