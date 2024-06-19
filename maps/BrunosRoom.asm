@@ -98,8 +98,8 @@ BrunoScript_BrunoBeatenText:
 	done
 
 BrunoScript_BrunoDefeatText:
-	text "I'm gonna go make"
-	line "collage art."
+	text "I'm gonna go play"
+	line "with stationery."
 	done
 
 BrunosRoom_MapEvents:
