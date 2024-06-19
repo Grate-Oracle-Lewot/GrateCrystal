@@ -31,7 +31,7 @@ KrisNameMenuHeader:
 FemalePlayerNameArray:
 	db "EGGIE@"
 	db "ILYANA@"
-	db "MASAE@"
 	db "MOIRA@"
+	db "VIVIAN@"
 	db 2 ; title indent
 	db " NAME @" ; title
