@@ -116,6 +116,7 @@ Route17KogaScript:
 	applymovement ROUTE17_CHRIS_BIKE, Route17KogaTeleport
 	disappear ROUTE17_CHRIS_BIKE
 	setevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
+	waitsfx
 	end
 
 Route17HiddenMaxEther:
