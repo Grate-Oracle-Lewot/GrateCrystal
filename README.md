@@ -337,6 +337,10 @@ Again, above my skill level. It also has some requirements like variable-width f
 
 Because I added the Odd Rod, the code would have to be adjusted, and I don't know how. My design theory excuse is that some people get a thrill out of not knowing what Pokémon is going to pop up, so fishing caters to them. Of course, you can always just check the encounters in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/wild/fish.asm
 
+# Can I copy your code?
+
+Yes, but to call this repository "disorganized" would be flattery. Don't say I didn't warn you.
+
 # Credits
 
 Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially Nayru62, ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, and DamienDoury. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
