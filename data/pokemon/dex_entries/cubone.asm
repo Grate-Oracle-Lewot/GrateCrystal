@@ -1,10 +1,10 @@
 	db "LONELY@" ; species name
 	dw 104, 140 ; height, weight
 
-	db   "A KANGASKHAN whose"
-	next "parent body dies"
-	next "dons the skull to"
+	db   "It spread rumors"
+	next "about wearing its"
+	next "mother's skull to"
 
-	page "become a CUBONE."
-	next "This may occur"
-	next "inside an EGG.@"
+	page "elicit sympathy."
+	next "It's really a clay"
+	next "sculpture.@"
