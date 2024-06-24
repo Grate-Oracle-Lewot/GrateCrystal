@@ -1066,7 +1066,7 @@ TentacruelEvosAttacks:
 GeodudeEvosAttacks:
 	db EVOLVE_LEVEL, 25, GRAVELER
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, RAPID_SPIN
 	db 2, HARDEN
 	db 6, ROCK_THROW
 	db 11, SPARK
@@ -1082,7 +1082,7 @@ GeodudeEvosAttacks:
 GravelerEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GOLEM
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, RAPID_SPIN
 	db 2, HARDEN
 	db 6, ROCK_THROW
 	db 11, SPARK
@@ -1097,7 +1097,7 @@ GravelerEvosAttacks:
 
 GolemEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, RAPID_SPIN
 	db 2, HARDEN
 	db 6, ROCK_THROW
 	db 11, SPARK
