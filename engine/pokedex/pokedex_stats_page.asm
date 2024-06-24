@@ -224,62 +224,62 @@ Pokedex_Get_EggGroup:
 	ld a, b
 	ld de, .EggG_Monster_text
 	cp EGG_MONSTER
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Amphibian_text
 	cp EGG_WATER_1
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Bug_text
 	cp EGG_BUG
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Flying_text
 	cp EGG_FLYING
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Field_text
 	cp EGG_GROUND
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Fairy_text
 	cp EGG_FAIRY
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Grass_text
 	cp EGG_PLANT
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_HumanLike_text
 	cp EGG_HUMANSHAPE
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Invertebrate_text
 	cp EGG_WATER_3
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Mineral_text
 	cp EGG_MINERAL
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Amorphous_text
 	cp EGG_INDETERMINATE
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Fish_text
 	cp EGG_WATER_2
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Dragon_text
 	cp EGG_DRAGON
-	jr z, .Eggret
+	ret z
 	ld a, b
 	ld de, .EggG_Ditto_text
 	cp EGG_DITTO
-	jr z, .Eggret
+	ret z
 	ld de, DexEntry_NONE_text
-.Eggret
 	ret
+
 ; Egg Groups
 .EggG_Monster_text:
 	db "Monster@"
@@ -373,7 +373,7 @@ Pokedex_CatchRate:
 Pokedex_Get_Growth::
 ; Experience growth rate
 	ld a, [wBaseGrowthRate]
-	ld de, .growth_Medfast
+	ld de, .growth_medfast
 	cp GROWTH_MEDIUM_FAST
 	jr z, .Growth_print
 	ld a, [wBaseGrowthRate]
@@ -397,7 +397,7 @@ Pokedex_Get_Growth::
 	hlcoord 3, 15
 	jp PlaceString
 
-.growth_Medfast:
+.growth_medfast:
 	db "Med. Fast Growth@"
 .growth_slightfast
 	db "Bit Fast Growth@"
