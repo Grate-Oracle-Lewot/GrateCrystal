@@ -1148,7 +1148,7 @@ SlowpokeEvosAttacks:
 	db EVOLVE_STAT, 37, ATK_GT_DEF, SLOWKING
 	db EVOLVE_STAT, 37, ATK_EQ_DEF, SLOWBRO
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POUND
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
@@ -1163,7 +1163,7 @@ SlowpokeEvosAttacks:
 
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POUND
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
@@ -2800,7 +2800,7 @@ BellossomEvosAttacks:
 MarillEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, AZUMARILL
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POUND
 	db 3, TAIL_WHIP
 	db 6, DEFENSE_CURL
 	db 10, WATER_GUN
@@ -2815,7 +2815,7 @@ MarillEvosAttacks:
 
 AzumarillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POUND
 	db 1, DEFENSE_CURL
 	db 1, ROLLOUT
 	db 1, BUBBLEBEAM
@@ -3027,7 +3027,7 @@ MurkrowEvosAttacks:
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POUND
 	db 6, GROWL
 	db 10, WATER_GUN
 	db 15, CONFUSION
