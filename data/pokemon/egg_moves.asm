@@ -518,12 +518,12 @@ TotodileEggMoves:
 	db -1 ; end
 
 SentretEggMoves:
+	db FOCUS_ENERGY
+	db REVERSAL
+	db SUPER_FANG
 	db DOUBLE_EDGE
 	db PURSUIT
 	db SLASH
-	db FOCUS_ENERGY
-	db REVERSAL
-	db PLAY_ROUGH
 	db -1 ; end
 
 HoothootEggMoves:
