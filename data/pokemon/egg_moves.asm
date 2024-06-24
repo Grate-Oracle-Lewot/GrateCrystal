@@ -799,6 +799,7 @@ SwinubEggMoves:
 	db -1 ; end
 
 CorsolaEggMoves:
+	db RAPID_SPIN
 	db ROCK_SLIDE
 	db SAFEGUARD
 	db MIST
