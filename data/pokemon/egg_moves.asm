@@ -708,6 +708,7 @@ GirafarigEggMoves:
 
 PinecoEggMoves:
 	db REFLECT
+	db SPIKE_CANNON
 	db PIN_MISSILE
 	db SPARK
 	db FLAIL
