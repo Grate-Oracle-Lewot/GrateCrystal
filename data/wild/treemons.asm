@@ -127,10 +127,12 @@ RockSmashMons::
 	; broke off from the above table, for nayru's pokedex
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
+	dw TreeMonSet_RockNone ; buffer
 	dw TreeMonSet_Rock
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; can have as many entries as you want as long as the % adds up to 100
+TreeMonSet_RockNone:
 TreeMonSet_Rock:
 	db 20, GEODUDE,    15
 	db 20, KRABBY,     15
