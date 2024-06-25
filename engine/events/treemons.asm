@@ -280,7 +280,7 @@ GetRockMons:
 
 	ld e, a
 	ld d, 0
-	ld hl, RockMons
+	ld hl, RockSmashMons
 	add hl, de
 	add hl, de
 
