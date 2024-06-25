@@ -499,15 +499,7 @@ KurtsHouseKurtHonoredToMakeBallsText:
 
 	para "I like your style!"
 
-	para "I would be honored"
-	line "to make BALLS for"
-
-	para "a trainer like"
-	line "you."
-
-	para "I'd also like you"
-	line "to have this spec-"
-	cont "ial gift."
+	para "Please, take this."
 
 	para "<PLAYER> received"
 	line "PINK BED!"
