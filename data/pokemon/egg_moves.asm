@@ -227,6 +227,7 @@ PonytaEggMoves:
 	db DOUBLE_KICK
 	db PLAY_ROUGH
 	db CHARM
+	db EXTREMESPEED
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -502,10 +503,10 @@ ChikoritaEggMoves:
 	db -1 ; end
 
 CyndaquilEggMoves:
-	db THRASH
 	db SUBMISSION
 	db REVERSAL
 	db EXTREMESPEED
+	db FIRE_SPIN
 	db DAZZLY_GLEAM
 	db -1 ; end
 
@@ -746,7 +747,6 @@ QwilfishEggMoves:
 	db FLAIL
 	db HAZE
 	db MEAN_LOOK
-	db FIRE_SPIN
 	db SPIKE_CANNON
 	db -1 ; end
 
