@@ -177,7 +177,7 @@ NUM_ROAMMONS EQU 3 ; G/S is three, and wram still has 3 roamers
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_NONE   ; 0, buffer
+	const TREEMON_SET_NONE   ; 0
 	const TREEMON_SET_CITY   ; 1
 	const TREEMON_SET_TOWN   ; 2
 	const TREEMON_SET_ROUTE  ; 3
@@ -195,7 +195,7 @@ NUM_TREEMON_SETS EQU const_value
 ; rock smash groups, for Nayru's pokedex
 ; const TREEMON_SET_ROCK is originally within NUM_TREEMON_SETS
 	const_def
-	const TREEMON_SET_ROCK_NONE ; 0, buffer
+	const TREEMON_SET_ROCK_NONE ; 0
 	const TREEMON_SET_ROCK      ; 1
 NUM_ROCKSMASH_SETS EQU const_value
 
