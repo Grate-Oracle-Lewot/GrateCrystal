@@ -1392,7 +1392,6 @@ RocketRadioText10:
 PokeFluteRadio:
 UnownRadio:
 EvolutionRadio:
-MaskedRiderRadio:
 	call StartRadioStation
 	ld a, 1
 	ld [wNumRadioLinesPrinted], a
