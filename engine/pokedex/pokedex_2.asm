@@ -620,7 +620,7 @@ Pokedex_Print_NextLvlMoves:
 	ld a, 5
 	cp c
 	jr nz, .learnset_loop
-	jr .MaxedPage
+
 .MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
 	; check to see if really any moves left, we don't want a blank page
 	ld a, BANK("Evolutions and Attacks")
