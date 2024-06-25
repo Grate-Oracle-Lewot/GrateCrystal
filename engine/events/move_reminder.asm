@@ -527,7 +527,7 @@ ChooseMoveToLearn:
 	db "ICE@"
 	db "DGN@"
 	db "DRK@"
-	db "FAR@"
+	db "FAE@"
 
 .PrintMoveDesc
 	push de
