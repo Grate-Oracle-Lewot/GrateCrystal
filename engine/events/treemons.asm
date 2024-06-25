@@ -1,3 +1,6 @@
+INCLUDE "data/wild/treemon_maps.asm"
+INCLUDE "data/wild/treemons.asm"
+
 TreeMonEncounter:
 	farcall StubbedTrainerRankings_TreeEncounters
 
@@ -26,35 +29,8 @@ TreeMonEncounter:
 	ld [wScriptVar], a
 	ret
 
-RockMonEncounter:
-	xor a
-	ld [wTempWildMonSpecies], a
-	ld [wCurPartyLevel], a
-
-	ld hl, RockMonMaps
-	call GetTreeMonSet
-	jr nc, .no_battle
-
-	call GetTreeMons
-	jr nc, .no_battle
-
-	; 40% chance of an encounter
-	ld a, 10
-	call RandomRange
-	cp 4
-	jr nc, .no_battle
-
-	call SelectTreeMon
-	jr nc, .no_battle
-	ret
-
-.no_battle
-	xor a
-	ret
-
 GetTreeMonSet:
-; Return carry and treemon set in a
-; if the current map is in table hl.
+; Return carry and treemon set in a if the current map is in table hl.
 	ld a, [wMapNumber]
 	ld e, a
 	ld a, [wMapGroup]
@@ -88,8 +64,6 @@ GetTreeMonSet:
 	scf
 	ret
 
-INCLUDE "data/wild/treemon_maps.asm"
-
 GetTreeMons:
 ; Return the address of TreeMon table a in hl.
 ; Return nc if table a doesn't exist.
@@ -116,8 +90,6 @@ GetTreeMons:
 .quit
 	xor a
 	ret
-
-INCLUDE "data/wild/treemons.asm"
 
 GetTreeMon:
 	push hl
@@ -268,4 +240,57 @@ GetTreeScore:
 	ld b, 2
 	call Divide
 	ldh a, [hRemainder]
+	ret
+
+RockMonEncounter:
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, RockMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetRockMons
+	jr nc, .no_battle
+
+	; 40% chance of an encounter
+	ld a, 10
+	call RandomRange
+	cp 4
+	jr nc, .no_battle
+
+	call SelectTreeMon
+	jr nc, .no_battle
+	ret
+
+.no_battle
+	xor a
+	ret
+
+GetRockMons:
+; Return the address of RockMon table a in hl.
+; Return nc if table a doesn't exist.
+
+	cp NUM_ROCKSMASH_SETS
+	jr nc, .quit
+
+	and a
+	jr z, .quit
+
+	ld e, a
+	ld d, 0
+	ld hl, RockMons
+	add hl, de
+	add hl, de
+
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	scf
+	ret
+
+.quit
+	xor a
 	ret
