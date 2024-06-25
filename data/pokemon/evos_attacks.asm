@@ -2418,7 +2418,7 @@ SentretEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 2, GROWL
-	db 5, DEFENSE_CURL
+	db 5, TAIL_WHIP
 	db 11, QUICK_ATTACK
 	db 17, FURY_SWIPES
 	db 25, RETURN
@@ -2434,7 +2434,7 @@ FurretEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 2, GROWL
-	db 5, DEFENSE_CURL
+	db 5, TAIL_WHIP
 	db 11, QUICK_ATTACK
 	db 18, FURY_SWIPES
 	db 28, RETURN
@@ -2852,7 +2852,7 @@ HoppipEvosAttacks:
 	db EVOLVE_LEVEL, 18, SKIPLOOM
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 2, TAIL_WHIP
+	db 2, GROWTH
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
@@ -2868,7 +2868,7 @@ SkiploomEvosAttacks:
 	db EVOLVE_LEVEL, 27, JUMPLUFF
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 2, TAIL_WHIP
+	db 2, GROWTH
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
@@ -2883,7 +2883,7 @@ SkiploomEvosAttacks:
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 2, TAIL_WHIP
+	db 2, GROWTH
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
