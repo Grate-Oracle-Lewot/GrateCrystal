@@ -151,11 +151,10 @@ ViridianForestBugCatcherText:
 	done
 
 ViridianForestLassText:
-	text "Move accuracy is"
-	line "displayed as a"
-
-	para "fraction of 255"
-	line "instead of 100."
+	text "Fire burns grass,"
+	line "grass absorbs"
+	cont "water, and water"
+	line "puts out fire."
 
 	para "Oh, you already"
 	line "knew that?"
