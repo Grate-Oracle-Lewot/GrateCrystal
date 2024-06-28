@@ -1746,29 +1746,28 @@ AI_Smart_Curse:
 	jr z, .ghost_curse
 
 	call AICheckEnemyHalfHP
-	jr nc, .encourage
+	jr nc, .discourage
 
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .encourage
+	jr nc, .discourage
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jr z, .greatly_encourage
 	call AI_80_20
 	ret c
+
+.greatly_encourage
 	dec [hl]
 	dec [hl]
 	ret
 
-.approve
+.cancel
 	inc [hl]
 	inc [hl]
-.greatly_encourage
+.greatly_discourage
 	inc [hl]
-.encourage
+.discourage
 	inc [hl]
 	ret
 
@@ -1785,8 +1784,7 @@ AI_Smart_Curse:
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
-	jr nz, .approve
-
+	jr nz, .cancel
 	jr .ghost_continue
 
 .notlastmon
@@ -1797,10 +1795,10 @@ AI_Smart_Curse:
 
 .ghost_continue
 	call AICheckEnemyQuarterHP
-	jp nc, .approve
+	jp nc, .cancel
 
 	call AICheckEnemyHalfHP
-	jr nc, .greatly_encourage
+	jr nc, .greatly_discourage
 
 	call AICheckEnemyMaxHP
 	ret nc
@@ -1812,10 +1810,7 @@ AI_Smart_Curse:
 .maybe_greatly_encourage
 	call AI_50_50
 	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
+	jr .greatly_encourage
 
 AI_Smart_Protect:
 ; Greatly discourage this move if the enemy already used Protect.
@@ -1823,10 +1818,10 @@ AI_Smart_Protect:
 	and a
 	jr nz, .greatly_discourage
 
-; Discourage this move if the player is locked on.
+; Encourage this move if the player is locked on.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .discourage
+	jr nz, .encourage
 
 ; Encourage this move if the player's Fury Cutter is boosted enough.
 	ld a, [wPlayerFuryCutterCount]
@@ -1849,7 +1844,7 @@ AI_Smart_Protect:
 	bit SUBSTATUS_CURSE, a
 	jr nz, .encourage
 
-; Discourage this move if the player's Rollout count is not boosted enough.
+; 92% chance to discourage this move if the player's Rollout count is not boosted enough.
 	bit SUBSTATUS_ROLLOUT, a
 	jr z, .discourage
 	ld a, [wPlayerRolloutCount]
@@ -1857,10 +1852,10 @@ AI_Smart_Protect:
 	jr c, .discourage
 
 ; 80% chance to encourage this move otherwise.
-.encourage
 	call AI_80_20
 	ret c
 
+.encourage
 	dec [hl]
 	ret
 
