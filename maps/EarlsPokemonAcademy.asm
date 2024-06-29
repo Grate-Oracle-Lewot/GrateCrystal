@@ -273,11 +273,13 @@ TeacherFrizzleAfterText:
 	done
 
 EarlsPokemonAcademyYoungster1Text:
-	text "Why is max move"
-	line "accuracy 255"
-	cont "instead of 100?"
-
-	para "It's so confusing…"
+	text "In the MOVE menu,"
+	line "EFF is the effect"
+	cont "chance, or the"
+	cont "percent of time"
+	cont "that an effect"
+	cont "like poison or"
+	cont "burn will occur."
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
