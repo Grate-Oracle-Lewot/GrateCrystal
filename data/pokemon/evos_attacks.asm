@@ -1660,9 +1660,9 @@ RhyhornEvosAttacks:
 	db 3, TAIL_WHIP
 	db 13, STOMP
 	db 19, FURY_ATTACK
-	db 24, ROCK_SLIDE
+	db 24, IRON_HEAD
 	db 31, SCARY_FACE
-	db 37, IRON_HEAD
+	db 37, ROCK_SLIDE
 	db 41, TAKE_DOWN
 	db 49, IRON_TAIL
 	db 55, HORN_DRILL
@@ -1675,9 +1675,9 @@ RhydonEvosAttacks:
 	db 3, TAIL_WHIP
 	db 13, STOMP
 	db 19, FURY_ATTACK
-	db 24, ROCK_SLIDE
+	db 24, IRON_HEAD
 	db 31, SCARY_FACE
-	db 37, IRON_HEAD
+	db 37, ROCK_SLIDE
 	db 43, TAKE_DOWN
 	db 54, IRON_TAIL
 	db 65, HORN_DRILL
