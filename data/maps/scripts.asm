@@ -71,7 +71,6 @@ INCLUDE "maps/Route42.asm"
 
 SECTION "Map Scripts 5", ROMX
 
-INCLUDE "maps/Route11.asm"
 INCLUDE "maps/VioletMart.asm"
 INCLUDE "maps/VioletGym.asm"
 INCLUDE "maps/EarlsPokemonAcademy.asm"
@@ -503,7 +502,8 @@ INCLUDE "maps/Lounge1F.asm"
 
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/OlivineGoodRodHouse.asm" ; 12
+INCLUDE "maps/Route11.asm"
+INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
