@@ -254,10 +254,10 @@ RockMonEncounter:
 	call GetRockMons
 	jr nc, .no_battle
 
-	; 40% chance of an encounter
-	ld a, 10
+	; 42% chance of an encounter
+	ld a, 100
 	call RandomRange
-	cp 4
+	cp 42
 	jr nc, .no_battle
 
 	call SelectTreeMon
