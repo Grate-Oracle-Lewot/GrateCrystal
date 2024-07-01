@@ -1655,8 +1655,8 @@ GentlemanGroup:
 	db -1 ; end
 
 	; GENTLEMAN (4)
-	db "VIRGIL@", TRAINERTYPE_NORMAL
-	db 30, PONYTA
+	db "VIRGIL@", TRAINERTYPE_ITEM
+	db 30, PONYTA,     EVERSTONE
 	db -1 ; end
 
 	; GENTLEMAN (5)
