@@ -64,7 +64,19 @@ OlivineLighthouseJasmine:
 	opentext
 	writetext JasmineRelievedText
 	promptbutton
-	faceplayer
+	readvar VAR_FACING
+	ifequal DOWN, .TurnJasmineUp
+	ifequal RIGHT, .TurnJasmineLeft
+	turnobject OLIVINELIGHTHOUSE6F_JASMINE, DOWN
+	sjump .DoneFacing
+
+.TurnJasmineUp:
+	turnobject OLIVINELIGHTHOUSE6F_JASMINE, UP
+	sjump .DoneFacing
+
+.TurnJasmineLeft:
+	turnobject OLIVINELIGHTHOUSE6F_JASMINE, LEFT
+.DoneFacing:
 	writetext JasmineThankYouText
 	setevent EVENT_DECO_CARPET_3
 	playsound SFX_2ND_PLACE
