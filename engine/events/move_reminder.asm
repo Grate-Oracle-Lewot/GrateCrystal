@@ -483,6 +483,7 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
+	call ConvertPercentages
 	ld [wBuffer1], a
 	ld hl, wStringBuffer1 + 11
 	ld de, wBuffer1
