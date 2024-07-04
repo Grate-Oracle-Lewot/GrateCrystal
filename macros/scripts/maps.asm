@@ -161,13 +161,6 @@ conditional_event: MACRO
 	dw \1, \2
 ENDM
 
-cmdqueue: MACRO
-;\1: type: a CMDQUEUE_* constant
-;\2: data pointer
-	dbw \1, \2
-	dw 0 ; filler
-ENDM
-
 stonetable: MACRO
 ;\1: warp id
 ;\2: object_event id
