@@ -1,0 +1,18 @@
+MoonBallMons:
+	db NIDORAN_F
+	db NIDORINA
+	db NIDORAN_M
+	db NIDORINO
+	db CLEFAIRY
+	db JIGGLYPUFF
+	db ABRA
+	db KADABRA
+	db MACHOP
+	db MACHOKE
+	db GEODUDE
+	db GRAVELER
+	db GASTLY
+	db HAUNTER
+;	db CLEFFA
+;	db IGGLYBUFF
+	db -1 ; end
