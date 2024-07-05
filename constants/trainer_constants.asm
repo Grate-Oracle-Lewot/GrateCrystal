@@ -535,7 +535,7 @@ KRIS EQU __trainer_class__
 	const RAY
 	const LYLE
 	const IROH
-	const GROVER
+	const SVEN
 
 	trainerclass JUGGLER ; 31
 	const IRWIN1
