@@ -331,11 +331,6 @@ PokeBallEffect:
 	jr nz, .statuscheck
 	ld a, 1
 .statuscheck
-; This routine is buggy. It was intended that SLP and FRZ provide a higher
-; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
-; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
-; benefit.
-; Uncomment the line below to fix this. (Done)
 	ld b, a
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
@@ -353,9 +348,6 @@ PokeBallEffect:
 	ld a, $ff
 .max_1
 
-	; BUG: farcall overwrites a, and GetItemHeldEffect takes b anyway.
-	; This is probably the reason the HELD_CATCH_CHANCE effect is never used.
-	; Uncomment the line below to fix. (Done)
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
@@ -443,9 +435,6 @@ PokeBallEffect:
 	push af
 	set SUBSTATUS_TRANSFORMED, [hl]
 
-; This code is buggy. Any wild Pokémon that has Transformed will be
-; caught as a Ditto, even if it was something else like Mew.
-; To fix, do not set [wTempEnemyMonSpecies] to DITTO. (Done)
 	bit SUBSTATUS_TRANSFORMED, a
 	jr nz, .load_data
 
@@ -729,8 +718,7 @@ PokeBallEffect:
 	ret
 
 BallMultiplierFunctionTable:
-; table of routines that increase or decrease the catch rate based on
-; which ball is used in a certain situation.
+; table of routines that increase or decrease the catch rate based on which ball is used in a certain situation
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
 	dbw TIMER_BALL,  TimerBallMultiplier
@@ -935,55 +923,30 @@ LureBallMultiplier:
 	ret
 
 MoonBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if mon evolves with moon stone
-; Reality: no boost
-	push bc
 	ld a, [wTempEnemyMonSpecies]
-	dec a
 	ld c, a
-	ld b, 0
-	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-	ld a, BANK(EvosAttacksPointers)
-	call GetFarWord
-	pop bc
+	ld hl, MoonBallMons
 
-	push bc
-	ld a, BANK("Evolutions and Attacks")
-	call GetFarByte
-	cp EVOLVE_ITEM
-	pop bc
-	ret nz
-
+.loop
+	ld a, [hl]
 	inc hl
-	inc hl
-	inc hl
-
-; Moon Stone's constant from Pokémon Red is used.
-; No Pokémon evolve with Burn Heal,
-; so Moon Balls always have a catch rate of 1×. (Fixed)
-	push bc
-	ld a, BANK("Evolutions and Attacks")
-	call GetFarByte
-	cp MOON_STONE
-	pop bc
-	ret nz
-
+	cp -1
+	ret z
+	cp c
+	jr nz, .loop
 	sla b
 	jr c, .max
+
 	sla b
 	ret nc
+
 .max
 	ld b, $ff
 	ret
 
-LoveBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 8 if mons are of same species, different sex
-; Reality: multiply catch rate by 8 if mons are of same species, same sex
+INCLUDE "engine/items/moon_ball_mons.asm"
 
+LoveBallMultiplier:
 	; does species match?
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
@@ -1025,7 +988,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret z ; for the intended effect, this should be "ret z"
+	ret z
 
 	sla b
 	jr c, .max
@@ -1045,11 +1008,6 @@ LoveBallMultiplier:
 	ret
 
 FastBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if enemy mon is in one of the three
-;          FleeMons tables.
-; Reality: multiply catch rate by 4 if enemy mon is one of the first three in
-;          the first FleeMons table.
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	ld hl, FleeMons
@@ -1063,7 +1021,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop"
+	jr nz, .loop
 	sla b
 	jr c, .max
 
