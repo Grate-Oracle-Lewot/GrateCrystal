@@ -360,7 +360,7 @@ TeamRocketBaseB2FTMThief:
 	itemball TM_THIEF
 
 TeamRocketBaseB2FComputerScript:
-	jumptext TeamRocketBaseB2FComputerText
+	jumptext RocketBaseB2FComputerText
 
 TeamRocketBaseB2FHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_TEAM_ROCKET_BASE_B2F_HIDDEN_FULL_HEAL
