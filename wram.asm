@@ -3098,34 +3098,7 @@ wVictoryRoadSceneID::                             db
 	ds 3
 
 ; fight counts
-wJackFightCount::    db
-wBeverlyFightCount:: db
-wHueyFightCount::    db
-wGavenFightCount::   db
-wBethFightCount::    db
-wJoseFightCount::    db
-wReenaFightCount::   db
-wJoeyFightCount::    db
-wWadeFightCount::    db
-wRalphFightCount::   db
-wLizFightCount::     db
-wAnthonyFightCount:: db
-wToddFightCount::    db
-wGinaFightCount::    db
-wIrwinFightCount::   db
-wArnieFightCount::   db
-wAlanFightCount::    db
-wDanaFightCount::    db
-wChadFightCount::    db
-wDerekFightCount::   db
-wTullyFightCount::   db
-wBrentFightCount::   db
-wTiffanyFightCount:: db
-wVanceFightCount::   db
-wWiltonFightCount::  db
-wKenjiFightCount::   db
-wParryFightCount::   db
-wErinFightCount::    db
+	ds 28
 
 wEventFlags:: flag_array NUM_EVENTS
 
