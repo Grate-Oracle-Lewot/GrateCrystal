@@ -522,6 +522,10 @@ CherrygroveYoungsterText_HavePokedex:
 
 	para "get infatuated by"
 	line "making contact!"
+
+	para "But it won't happen"
+	line "to dark types…"
+	cont "They're too wily."
 	done
 
 MysticWaterGuyTextBefore:
