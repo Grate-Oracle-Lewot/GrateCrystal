@@ -6922,18 +6922,7 @@ SwapBCTypes:
 	ld [wEnemyMonType2], a
 	ret
 
-BattleCommand_CheckContact:
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld hl, ContactMoves
-	call IsInByteArray
-	ret nc
-
-	xor a
-	ld [wNumHits], a
-	call CheckSubstituteOpp
-	ret nz
-
+ContactStatic:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -6944,14 +6933,9 @@ BattleCommand_CheckContact:
 	ld a, [hli]
 	cp ELECTRIC
 	jr z, .Static
-	cp FAIRY
-	jp z, .CuteCharm
 	ld a, [hl]
 	cp ELECTRIC
-	jr z, .Static
-	cp FAIRY
-	jp z, .CuteCharm
-	ret
+	ret nz
 
 .Static:
 	ld hl, wBattleMonType1
@@ -6962,15 +6946,15 @@ BattleCommand_CheckContact:
 .CheckGroundImmunity:
 	ld a, [hli]
 	cp GROUND
-	jp z, .DoublecheckFairy
+	ret z
 	ld a, [hl]
 	cp GROUND
-	jp z, .DoublecheckFairy
+	ret z
 
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	and a
-	jp nz, .DoublecheckFairy
+	ret nz
 
 	ld hl, wBattleMonItem
 	ldh a, [hBattleTurn]
@@ -6982,7 +6966,7 @@ BattleCommand_CheckContact:
 	call GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
-	jp z, .DoublecheckFairy
+	ret z
 
 	ld hl, wPlayerScreens
 	ldh a, [hBattleTurn]
@@ -6991,11 +6975,11 @@ BattleCommand_CheckContact:
 	ld hl, wEnemyScreens
 .go2
 	bit SCREENS_SAFEGUARD, [hl]
-	jr nz, .DoublecheckFairy
+	ret nz
 
 	call BattleRandom
 	cp 30 percent
-	jr nc, .DoublecheckFairy
+	ret nc
 
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
@@ -7069,46 +7053,7 @@ BattleCommand_CheckContact:
 	call RefreshBattleHuds
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
-	call CureStaticWithHeldItem
 
-; Static should be doublechecked too if you have any Fairy/Electric (as opposed to Electric/Fairy) types
-.DoublecheckFairy:
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .DoublecheckTargetType
-	ld hl, wBattleMonType1
-.DoublecheckTargetType:
-	ld a, [hli]
-	cp FAIRY
-	jr z, .CuteCharm
-	ld a, [hl]
-	cp FAIRY
-	ret nz
-
-.CuteCharm:
-	call CheckOppositeGender
-	ret c
-
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	bit SUBSTATUS_IN_LOVE, [hl]
-	ret nz
-
-	call BattleRandom
-	cp 30 percent
-	ret nc
-
-	set SUBSTATUS_IN_LOVE, [hl]
-	call BattleCommand_SwitchTurn
-	ld de, ANIM_IN_LOVE
-	call PlayOpponentBattleAnim
-	call BattleCommand_SwitchTurn
-	call RefreshBattleHuds
-	ld hl, CuteCharmText
-	jp StdBattleTextbox
-
-CureStaticWithHeldItem:
 	call GetUserItem
 	ld a, b
 	cp HELD_HEAL_PARALYZE
@@ -7163,3 +7108,69 @@ CureStaticWithHeldItem:
 
 .empty_text:
 	text_end
+
+BattleCommand_CheckContact:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld hl, ContactMoves
+	call IsInByteArray
+	ret nc
+
+	call ContactStatic
+	; fallthrough
+
+ContactCuteCharm:
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckTargetType
+	ld hl, wBattleMonType1
+.CheckTargetType:
+	ld a, [hli]
+	cp FAIRY
+	jr z, .CuteCharm
+	ld a, [hl]
+	cp FAIRY
+	ret nz
+
+.CuteCharm:
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckDarkImmunity
+	ld hl, wEnemyMonType1
+.CheckDarkImmunity:
+	ld a, [hli]
+	cp DARK
+	ret z
+	ld a, [hl]
+	cp DARK
+	ret z
+
+	call CheckOppositeGender
+	ret c
+
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	bit SUBSTATUS_IN_LOVE, [hl]
+	ret nz
+
+	call BattleRandom
+	cp 30 percent
+	ret nc
+
+	set SUBSTATUS_IN_LOVE, [hl]
+	call BattleCommand_SwitchTurn
+	ld de, ANIM_IN_LOVE
+	call PlayOpponentBattleAnim
+	call BattleCommand_SwitchTurn
+	call RefreshBattleHuds
+	ld hl, CuteCharmText
+	jp StdBattleTextbox
