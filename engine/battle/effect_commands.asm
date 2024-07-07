@@ -7087,6 +7087,19 @@ BattleCommand_CheckContact:
 	ret nz
 
 .CuteCharm:
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckDarkImmunity
+	ld hl, wEnemyMonType1
+.CheckDarkImmunity:
+	ld a, [hli]
+	cp DARK
+	ret z
+	ld a, [hl]
+	cp DARK
+	ret z
+
 	call CheckOppositeGender
 	ret c
 
