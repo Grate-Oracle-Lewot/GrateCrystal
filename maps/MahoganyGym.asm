@@ -204,10 +204,6 @@ PryceText_GlacierBadgeSpeech:
 	para "use WHIRLPOOL"
 	line "outside of battle."
 
-	para "Tradees will now"
-	line "obey you all the"
-	cont "way up to Lv80."
-
 	para "And this… This is"
 	line "a gift from me!"
 	done
