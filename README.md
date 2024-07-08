@@ -284,6 +284,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Time fishgroups actually have different Pokémon at different times
 - Unown ! and ? added (eyes not droopy)
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
+- Trainers automatically offer their phone numbers when defeated, and their rematch parties are based solely on event progress instead of fight count
 - Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; a Pokémon Center added to Route 3 with a flypoint
 - Instant text speed option
 - Default player and rival names changed
@@ -319,7 +320,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - See: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/design_flaws.md
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
-I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to.
+I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to. The Moon Ball has been recoded, and now has a higher catch chance even on pre-evolutions of Moon Stone evolvers.
 
 # Why remove some Pokémon and moves?
 
