@@ -300,6 +300,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
 - Kurt finishes Apricorn balls quickly
+- Accuracy, effect chance, and physicality shown on move menu
 - 25% AI failure chance removed
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
