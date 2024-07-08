@@ -672,18 +672,8 @@ BattleCommand_CheckObedience:
 	ld a, MAX_LEVEL + 1
 	jr nz, .getlevel
 
-	; glacierbadge
-	bit GLACIERBADGE, [hl]
-	ld a, 80
-	jr nz, .getlevel
-
 	; mineralbadge
 	bit MINERALBADGE, [hl]
-	ld a, 70
-	jr nz, .getlevel
-
-	; stormbadge
-	bit STORMBADGE, [hl]
 	ld a, 60
 	jr nz, .getlevel
 
