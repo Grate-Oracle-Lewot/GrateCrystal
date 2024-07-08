@@ -420,15 +420,6 @@ Script_SpecialBillCall::
 	ld e, PHONE_BILL
 	jp LoadCallerScript
 
-Script_SpecialElmCall: ; unreferenced
-	callasm .LoadElmScript
-	pause 30
-	sjump Script_ReceivePhoneCall
-
-.LoadElmScript:
-	ld e, PHONE_ELM
-	jp LoadCallerScript
-
 RingTwice_StartCall:
 	call .Ring
 	call .Ring
@@ -505,10 +496,6 @@ Phone_CallEnd:
 	call HangUp_BoopOff
 	jp HangUp_Wait20Frames
 
-HangUp_ShutDown: ; unreferenced
-	ld de, SFX_SHUT_DOWN_PC
-	jp PlaySFX
-
 HangUp_Beep:
 	ld hl, PhoneClickText
 	call PrintText
@@ -540,8 +527,6 @@ Phone_StartRinging:
 	ret
 
 HangUp_Wait20Frames:
-	jr Phone_Wait20Frames
-
 Phone_Wait20Frames:
 	ld c, 20
 	call DelayFrames
@@ -686,12 +671,4 @@ PhoneScript_JustTalkToThem:
 
 PhoneJustTalkToThemText:
 	text_far _PhoneJustTalkToThemText
-	text_end
-
-PhoneThankYouTextScript: ; unreferenced
-	writetext PhoneThankYouText
-	end
-
-PhoneThankYouText:
-	text_far _PhoneThankYouText
 	text_end
