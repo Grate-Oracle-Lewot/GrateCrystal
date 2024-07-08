@@ -201,13 +201,7 @@ GetStormBadgeText:
 	done
 
 ChuckExplainBadgeText:
-	text "STORMBADGE makes"
-	line "all #MON up to"
-
-	para "Lv60 obey, even"
-	line "traded ones."
-
-	para "It also lets your"
+	text "STORMBADGE lets"
 	line "#MON use FLY"
 
 	para "when you're not in"
