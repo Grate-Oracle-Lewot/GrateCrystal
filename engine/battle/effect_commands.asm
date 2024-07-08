@@ -3893,19 +3893,8 @@ LiquidOoze:
 	ld hl, LiquidOozeText
 	call StdBattleTextbox
 
-	ldh a, [hBattleTurn]
-	and a
-	hlcoord 10, 9
-	ld a, $1
-	jr z, .hp_bar
-	hlcoord 2, 2
-	xor a
-.hp_bar
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
 	call RefreshBattleHuds
 	call UpdateBattleMonInParty
-
 	call HasUserFainted
 	jr z, .fainted
 	ret
