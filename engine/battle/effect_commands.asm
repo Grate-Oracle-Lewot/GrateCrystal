@@ -3854,65 +3854,9 @@ PoisonOpponent:
 
 BattleCommand_DrainTarget:
 ; draintarget
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jr z, LiquidOoze
-	; fallthrough
-
-PoisonOnPoisonDrain:
 	call SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
-
-LiquidOoze:
-	; check if user is also Poison-type
-	call BattleCommand_SwitchTurn
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jr z, .no_ooze
-	call BattleCommand_SwitchTurn
-
-	; Divide damage by 2, store it in wHPBuffer1
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ldh [wHPBuffer1], a
-	ld b, a
-	ld a, [hl]
-	rr a
-	ldh [wHPBuffer1 + 1], a
-	or b
-	jr nz, .at_least_one
-	ld a, 1
-	ldh [wHPBuffer1 + 1], a
-	ld a, [wHPBuffer1]
-	ld bc, a
-.at_least_one
-
-	call SubtractHPFromUser
-	ld hl, LiquidOozeText
-	call StdBattleTextbox
-
-	call RefreshBattleHuds
-	call UpdateBattleMonInParty
-	call HasUserFainted
-	jr z, .fainted
-	ret
-
-.no_ooze
-	; Poison-types can drain each other without being hurt
-	call BattleCommand_SwitchTurn
-	jp PoisonOnPoisonDrain
-
-.fainted
-	call RefreshBattleHuds
-	ld c, 20
-	call DelayFrames
-
-	ldh a, [hBattleTurn]
-	and a
-	jp z, HandlePlayerMonFaint
-	jp HandleEnemyMonFaint
 
 BattleCommand_EatDream:
 ; eatdream
