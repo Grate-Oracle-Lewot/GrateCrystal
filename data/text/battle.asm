@@ -1166,3 +1166,9 @@ StaticPrzcureberryText:
 	text_ram wStringBuffer1
 	text "!"
 	autodone
+
+LiquidOozeText:
+	text "<USER>"
+	line "absorbed toxins"
+	scroll "and was poisoned!"
+	autodone
