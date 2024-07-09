@@ -129,7 +129,7 @@ CreditsStringsPointers:
 .SatoruIwata:         db "     FieryMewtwo@"          ; "いわた　さとる@"
 .NobuhiroSeya:        db "    PikalaxALT@"            ; "せや　のぶひろ@"
 .KazuhitoSekine:      db "    futuresushi@"           ; "せきね　かずひと@"
-.TetsujiOota:         db "      SourApple@"           ; "おおた　てつじ@"
+.TetsujiOota:         db "     SourApple@"            ; "おおた　てつじ@"
 .NclSuperMarioClub:   db " JimB16  AndrewC101@"       ; "スーパーマりオクラブ@"
 .Sarugakucho:         db "   LAKE     MCboy@"         ; "さるがくちょう@"
 .AkitoMori:           db "    Ryan Tandy@"            ; "もり　あきと@"
