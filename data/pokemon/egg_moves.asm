@@ -506,6 +506,7 @@ CyndaquilEggMoves:
 	db SUBMISSION
 	db REVERSAL
 	db EXTREMESPEED
+	db PURSUIT
 	db FIRE_SPIN
 	db DAZZLY_GLEAM
 	db -1 ; end
