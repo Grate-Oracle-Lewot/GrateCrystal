@@ -1813,7 +1813,7 @@ AI_Smart_Curse:
 	jr .greatly_encourage
 
 AI_Smart_Protect:
-; Greatly discourage this move if the enemy already used Protect.
+; Discourage this move if the enemy already used Protect. 92% chance to discourage further.
 	ld a, [wEnemyProtectCount]
 	and a
 	jr nz, .greatly_discourage
@@ -1823,17 +1823,17 @@ AI_Smart_Protect:
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .discourage
 
-; Encourage this move if the player's Fury Cutter is boosted enough.
+; 80% chance to encourage this move if the player's Fury Cutter is boosted enough.
 	ld a, [wPlayerFuryCutterCount]
 	cp 3
 	jr nc, .encourage
 
-; Encourage this move if the player has charged a two-turn move.
+; 80% chance to encourage this move if the player has charged a two-turn move.
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CHARGED, a
 	jr nz, .encourage
 
-; Encourage this move if the player is affected by Toxic, Leech Seed, or Curse.
+; 80% chance to encourage this move if the player is affected by Toxic, Leech Seed, or Curse.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
@@ -1852,10 +1852,10 @@ AI_Smart_Protect:
 	jr c, .discourage
 
 ; 80% chance to encourage this move otherwise.
+.encourage
 	call AI_80_20
 	ret c
 
-.encourage
 	dec [hl]
 	ret
 
