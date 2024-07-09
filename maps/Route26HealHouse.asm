@@ -15,7 +15,6 @@ Route26HealHouseTeacherScript:
 	faceplayer
 	opentext
 	writetext Route26HealHouseRestAWhileText
-	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -27,7 +26,6 @@ Route26HealHouseTeacherScript:
 	special RestartMapMusic
 	opentext
 	writetext Route26HealHouseKeepAtItText
-	waitbutton
 	closetext
 	end
 
