@@ -723,6 +723,7 @@ KRIS EQU __trainer_class__
 	const EUSINE
 	const RICO
 	const OLIE
+	const GROVER
 
 	trainerclass REAL_KAREN ; 44
 	const REAL_KAREN1
