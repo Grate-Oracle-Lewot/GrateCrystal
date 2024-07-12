@@ -67,6 +67,10 @@ VermilionPokecenter1FSailorText:
 
 	para "meet and battle"
 	line "trainers."
+
+	para "You can fight them"
+	line "again every time"
+	cont "you ride!"
 	done
 
 VermilionPokecenter1FBugCatcherText:
