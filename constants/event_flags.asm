@@ -1159,7 +1159,8 @@
 	const EVENT_CIANWOOD_CITY_HIDDEN_X_EVADE
 	const EVENT_BEAT_PSYCHIC_MELVIN
 	const EVENT_BEAT_FIREBREATHER_SVEN
-; Unused: next 116 (now 37) events
+	const EVENT_BEAT_POKEMANIAC_TANNER
+; Unused: next 116 (now 36) events
 
 	const_next 1600
 ; Sprite visibility flags
