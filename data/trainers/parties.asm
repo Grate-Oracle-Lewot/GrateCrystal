@@ -1445,6 +1445,16 @@ PokemaniacGroup:
 	db 19, NIDOQUEEN
 	db -1 ; end
 
+	; POKEMANIAC (16)
+	db "TANNER@", TRAINERTYPE_NORMAL
+	db 50, FLOGISTAN
+	db 50, SNOCONEY
+	db 50, JIRK
+	db 50, CASTAWEIGH
+	db 50, YANMEGA
+	db 50, WHIMSICOTT
+	db -1 ; end
+
 GruntMGroup:
 	; GRUNTM (1)
 	db "LEAD@", TRAINERTYPE_NORMAL
