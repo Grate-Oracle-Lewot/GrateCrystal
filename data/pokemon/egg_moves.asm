@@ -69,10 +69,11 @@ EkansEggMoves:
 
 SandshrewEggMoves:
 	db FLAIL
-	db SAFEGUARD
 	db COUNTER
-	db RAPID_SPIN
+	db SAFEGUARD
+	db SUBMISSION
 	db EARTH_POWER
+	db RAPID_SPIN
 	db -1 ; end
 
 NidoranEggMoves:
@@ -503,7 +504,6 @@ ChikoritaEggMoves:
 	db -1 ; end
 
 CyndaquilEggMoves:
-	db SUBMISSION
 	db REVERSAL
 	db EXTREMESPEED
 	db PURSUIT
