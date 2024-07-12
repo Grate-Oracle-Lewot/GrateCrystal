@@ -1,10 +1,10 @@
 	db "ROYAL@" ; species name
 	dw 607, 1750 ; height, weight
 
-	db   "When TURBIN bites"
-	next "SLOWPOKE's head"
-	next "instead of tail,"
+	db   "It has delusions"
+	next "of grandeur due to"
+	next "the part of its"
 
-	page "it injects poison"
-	next "and creates a"
-	next "SLOWKING.@"
+	page "brain that TURBIN"
+	next "is sucking on."
+	next "Thus, a king.@"
