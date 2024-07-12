@@ -311,7 +311,7 @@ ArthurScript:
 .MetArthur:
 	writetext ArthurGivesGiftText
 	promptbutton
-	verbosegiveitem HARD_STONE
+	verbosegiveitem TWISTEDSPOON
 	iffalse .BagFull
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
 	writetext ArthurGaveGiftText
@@ -557,13 +557,13 @@ ArthurGivesGiftText:
 
 ArthurGaveGiftText:
 	text "ARTHUR: A #MON"
-	line "that uses rock-"
+	line "that uses psychic-"
 
 	para "type moves should"
 	line "hold on to that."
 
-	para "It pumps up rock-"
-	line "type attacks."
+	para "It pumps up those"
+	line "attacks."
 	done
 
 ArthurThursdayText:
