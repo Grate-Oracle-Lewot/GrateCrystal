@@ -71,6 +71,7 @@ TrainerEngineerBaily:
 	trainer ENGINEER, BAILY, EVENT_BEAT_ENGINEER_BAILY, EngineerBailySeenText, EngineerBailyBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerBailyAfterBattleText
 	waitbutton
@@ -81,6 +82,7 @@ TrainerEngineerBernie:
 	trainer ENGINEER, BERNIE, EVENT_BEAT_ENGINEER_BERNIE, EngineerBernieSeenText, EngineerBernieBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerBernieAfterBattleText
 	waitbutton
@@ -91,6 +93,7 @@ TrainerEngineerBraxton:
 	trainer ENGINEER, BRAXTON, EVENT_BEAT_ENGINEER_BRAXTON, EngineerBraxtonSeenText, EngineerBraxtonBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerBraxtonAfterBattleText
 	waitbutton
@@ -101,6 +104,7 @@ TrainerEngineerDylan:
 	trainer ENGINEER, DYLAN, EVENT_BEAT_ENGINEER_DYLAN, EngineerDylanSeenText, EngineerDylanBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerDylanAfterBattleText
 	waitbutton
@@ -111,6 +115,7 @@ TrainerEngineerCamden:
 	trainer ENGINEER, CAMDEN, EVENT_BEAT_ENGINEER_CAMDEN, EngineerCamdenSeenText, EngineerCamdenBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerCamdenAfterBattleText
 	waitbutton
@@ -121,6 +126,7 @@ TrainerEngineerFlint:
 	trainer ENGINEER, FLINT, EVENT_BEAT_ENGINEER_FLINT, EngineerFlintSeenText, EngineerFlintBeatenText, 0, .AfterScript
 
 .AfterScript:
+	endifjustbattled
 	opentext
 	writetext EngineerFlintAfterBattleText
 	waitbutton
