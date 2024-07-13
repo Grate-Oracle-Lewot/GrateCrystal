@@ -140,6 +140,7 @@ PowerPlant2FTrapdoorScript:
 	closetext
 	special FadeBlackQuickly
 	playsound SFX_ENTER_DOOR
+	waitsfx
 	warp POWER_PLANT, 2, 1
 	end
 
