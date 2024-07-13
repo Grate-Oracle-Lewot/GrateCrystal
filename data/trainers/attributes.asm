@@ -184,7 +184,7 @@ TrainerClassAttributes:
 
 ; GruntM
 	db NO_ITEM, NO_ITEM ; items
-	db 15 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -304,7 +304,7 @@ TrainerClassAttributes:
 
 ; ExecutiveM
 	db FULL_HEAL, MAX_POTION ; items
-	db 23 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -328,7 +328,7 @@ TrainerClassAttributes:
 
 ; ExecutiveF
 	db FULL_HEAL, MAX_POTION ; items
-	db 23 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
@@ -394,7 +394,7 @@ TrainerClassAttributes:
 
 ; GruntF
 	db NO_ITEM, NO_ITEM ; items
-	db 15 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
