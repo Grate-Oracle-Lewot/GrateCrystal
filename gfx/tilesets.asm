@@ -355,3 +355,12 @@ INCBIN "data/tilesets/spinners_metatiles.bin"
 
 TilesetSpinnersColl::
 INCLUDE "data/tilesets/spinners_collision.asm"
+
+TilesetViridianGymGFX::
+INCBIN "gfx/tilesets/viridian_gym.2bpp.lz"
+
+TilesetViridianGymMeta::
+INCBIN "data/tilesets/viridian_gym_metatiles.bin"
+
+TilesetViridianGymColl::
+INCLUDE "data/tilesets/viridian_gym_collision.asm"
