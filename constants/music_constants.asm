@@ -117,6 +117,7 @@
 	const MUSIC_MEWTWO_BATTLE                ; 6f
 	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 70
 	const MUSIC_CYCLING_ROAD                 ; 71
+	const MUSIC_SAFARI_ZONE                  ; 72
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
