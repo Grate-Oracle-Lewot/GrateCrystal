@@ -318,3 +318,20 @@ ENDM
 sound_ret: MACRO
 	db sound_ret_cmd
 ENDM
+
+
+load_wave: MACRO
+	db $f3
+	IF _NARG > 16
+		REPT 16
+		dn \1, \2
+		SHIFT
+		SHIFT
+		ENDR
+	ELSE
+		REPT 16
+		db \1
+		SHIFT
+		ENDR
+	ENDC
+ENDM
