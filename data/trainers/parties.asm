@@ -1164,6 +1164,7 @@ CooltrainerMGroup:
 	db "TEAL@", TRAINERTYPE_NORMAL
 	db 65, FEAROW
 	db 65, SANDSLASH
+	db 65, HERACROSS
 	db -1 ; end
 
 CooltrainerFGroup:
@@ -1696,6 +1697,7 @@ GentlemanGroup:
 	; GENTLEMAN (7)
 	db "NAVY@", TRAINERTYPE_NORMAL
 	db 69, NINETALES
+	db 69, DITTO
 	db -1 ; end
 
 SkierGroup:
