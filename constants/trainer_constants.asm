@@ -240,6 +240,7 @@ KRIS EQU __trainer_class__
 	const STEVE
 	const ALLEN
 	const DARIN
+	const TEAL
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN
@@ -278,6 +279,7 @@ KRIS EQU __trainer_class__
 	const VALERIE
 	const OLIVIA
 	const MAEVE
+	const BERYL
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
@@ -337,6 +339,7 @@ KRIS EQU __trainer_class__
 	const VIRGIL
 	const ALFRED
 	const SYLVAIN
+	const NAVY
 
 	trainerclass SKIER ; 21
 	const ROXANNE
@@ -478,6 +481,7 @@ KRIS EQU __trainer_class__
 	const VINCENT
 	const JULES
 	const CASEY
+	const COBALT
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -544,6 +548,7 @@ KRIS EQU __trainer_class__
 	const HORTON
 	const IRVING
 	const DALTON
+	const CYAN
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
