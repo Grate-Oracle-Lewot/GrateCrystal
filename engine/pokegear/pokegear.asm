@@ -1758,6 +1758,7 @@ LoadStation_JohtoFishingRadio:
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
 	ld de, JohtoFishingRadioName
+	ret
 
 LoadStation_KantoFishingRadio:
 	ld a, KANTO_FISHING_RADIO
@@ -1768,6 +1769,7 @@ LoadStation_KantoFishingRadio:
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
 	ld de, KantoFishingRadioName
+	ret
 
 RadioMusicRestartDE:
 	push de
