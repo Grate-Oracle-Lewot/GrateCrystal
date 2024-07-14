@@ -119,4 +119,5 @@ Music:
 	dba Music_WildBattle
 	dba Music_MeetJessieJames
 	dba Music_BikeRiding
+	dba Music_PokemonTower
 	assert_table_length NUM_MUSIC_SONGS
