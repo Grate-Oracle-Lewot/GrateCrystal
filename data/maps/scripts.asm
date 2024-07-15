@@ -203,7 +203,6 @@ INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/Route2NorthGate.asm"
 INCLUDE "maps/Route2SouthGate.asm"
-INCLUDE "maps/VictoryRoadGate.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -504,6 +503,7 @@ SECTION "Map Scripts 27", ROMX
 
 INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
+INCLUDE "maps/VictoryRoadGate.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/Lounge2F.asm"
 INCLUDE "maps/SeafoamCaveB1F.asm"
