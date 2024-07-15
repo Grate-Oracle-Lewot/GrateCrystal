@@ -25,7 +25,7 @@ PewterMuseum1F_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	disappear PEWTERMUSEUM1F_PHARMACIST
 	applymovement PEWTERMUSEUM1F_BROCK, PewterMuseum1F_BrockAppearsMovement
-	playmusic MUSIC_CLAIR
+	playmusic MUSIC_GYM
 	opentext
 	writetext PewterMuseum1FBrockText2
 	waitbutton
