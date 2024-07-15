@@ -13,7 +13,7 @@ PewterMuseum1F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .BrockAndBurglar
 
 .MuseumBrockScene:
-	pause 5
+	special FadeOutMusic
 	playsound SFX_TACKLE
 	applymovement PEWTERMUSEUM1F_PHARMACIST, PewterMuseum1F_BurglarKickedMovement
 	opentext
@@ -25,6 +25,7 @@ PewterMuseum1F_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	disappear PEWTERMUSEUM1F_PHARMACIST
 	applymovement PEWTERMUSEUM1F_BROCK, PewterMuseum1F_BrockAppearsMovement
+	playmusic MUSIC_CLAIR
 	opentext
 	writetext PewterMuseum1FBrockText2
 	waitbutton
@@ -33,6 +34,7 @@ PewterMuseum1F_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	disappear PEWTERMUSEUM1F_BROCK
 	applymovement PLAYER, PewterMuseum1F_PlayerTurnsMovement
+	special RestartMapMusic
 	setevent EVENT_BROCK_IN_PEWTER_MUSEUM
 	setscene SCENE_FINISHED
 	end
