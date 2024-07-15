@@ -110,3 +110,6 @@ INCLUDE "gfx/tilesets/battle_tower_outside_palette_map.asm"
 
 TilesetSpinnersPalMap:
 INCLUDE "gfx/tilesets/spinners_palette_map.asm"
+
+TilesetViridianGymPalMap:
+INCLUDE "gfx/tilesets/viridian_gym_palette_map.asm"
