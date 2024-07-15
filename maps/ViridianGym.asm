@@ -1,6 +1,11 @@
 	object_const_def
 	const VIRIDIANGYM_BLUE
 	const VIRIDIANGYM_COOLTRAINER_F
+	const VIRIDIANGYM_COOLTRAINER_M
+	const VIRIDIANGYM_BEAUTY
+	const VIRIDIANGYM_GENTLEMAN
+	const VIRIDIANGYM_ROCKER
+	const VIRIDIANGYM_SUPER_NERD
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -63,6 +68,61 @@ TrainerCooltrainerfAzure:
 	endifjustbattled
 	opentext
 	writetext CooltrainerfAzureAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermTeal:
+	trainer COOLTRAINERM, TEAL, EVENT_BEAT_COOLTRAINERM_TEAL, CooltrainermTealSeenText, CooltrainermTealBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext CooltrainermTealAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyBeryl:
+	trainer BEAUTY, BERYL, EVENT_BEAT_BEAUTY_BERYL, BeautyBerylSeenText, BeautyBerylBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext BeautyBerylAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGentlemanNavy:
+	trainer GENTLEMAN, NAVY, EVENT_BEAT_GENTLEMAN_NAVY, GentlemanNavySeenText, GentlemanNavyBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext GentlemanNavyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGuitaristCobalt:
+	trainer GUITARIST, COBALT, EVENT_BEAT_GUITARIST_COBALT, GuitaristCobaltSeenText, GuitaristCobaltBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext GuitaristCobaltAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerJugglerCyan:
+	trainer JUGGLER, CYAN, EVENT_BEAT_JUGGLER_CYAN, JugglerCyanSeenText, JugglerCyanBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext JugglerCyanAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -226,6 +286,75 @@ CooltrainerfAzureAfterBattleText:
 	line "cheer for BLUE!"
 	done
 
+CooltrainermTealSeenText:
+	text "This GYM's the best"
+	line "of the best!"
+	done
+
+CooltrainermTealBeatenText:
+	text "How?!"
+	done
+
+CooltrainermTealAfterBattleText:
+	text "You're the best of"
+	line "the best!"
+	done
+
+BeautyBerylSeenText:
+	text "You must be nice"
+	line "and burly to"
+	cont "challenge us!"
+	done
+
+BeautyBerylBeatenText:
+	text "Mmmmm, yes…"
+	done
+
+BeautyBerylAfterBattleText:
+	text "You're a fine spec-"
+	line "imen indeed!"
+	done
+
+GentlemanNavySeenText:
+	text "I'm afraid I've"
+	line "been contracted to"
+	cont "battle you."
+	done
+
+GentlemanNavyBeatenText:
+	text "I say!"
+	done
+
+GentlemanNavyAfterBattleText:
+	text "When's tea time?"
+	done
+
+GuitaristCobaltSeenText:
+	text "Feel the rhythm!"
+	done
+
+GuitaristCobaltBeatenText:
+	text "Yowza zowza!"
+	done
+
+GuitaristCobaltAfterBattleText:
+	text "Just go with the"
+	line "flow, man."
+	done
+
+JugglerCyanSeenText:
+	text "Which way's which?"
+	done
+
+JugglerCyanBeatenText:
+	text "Done and done."
+	done
+
+JugglerCyanAfterBattleText:
+	text "Do you know how to"
+	line "juggle?"
+	done
+
 ViridianGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
@@ -260,16 +389,21 @@ ViridianGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, VIRIDIAN_CITY, 1
-	warp_event  5, 17, VIRIDIAN_CITY, 1
+	warp_event 16, 17, VIRIDIAN_CITY, 1
+	warp_event 17, 17, VIRIDIAN_CITY, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3, 13, BGEVENT_READ, ViridianGymStatue
-	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
+	bg_event 15, 15, BGEVENT_READ, ViridianGymStatue
+	bg_event 18, 15, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
 	object_event  3,  1, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event 10,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfAzure, EVENT_VIRIDIAN_GYM_BLUE
+	object_event 10,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfAzure, EVENT_VIRIDIAN_GYM_BLUE
+	object_event 13,  5, SPRITE_, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermTeal, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  3,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBeryl, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  6,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanNavy, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  2, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGuitaristCobalt, EVENT_VIRIDIAN_GYM_BLUE
+	object_event 10,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerJugglerCyan, EVENT_VIRIDIAN_GYM_BLUE
 	object_event 16, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
