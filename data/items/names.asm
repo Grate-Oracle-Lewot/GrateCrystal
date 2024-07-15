@@ -44,7 +44,7 @@ ItemNames::
 	li "MAX REPEL"
 	li "DIRE HIT"
 	li "ANTIVENOM"
-	li "FRESH WATER"
+	li "SPRING WATER"
 	li "SODA POP"
 	li "LEMONADE"
 	li "X ATTACK"
