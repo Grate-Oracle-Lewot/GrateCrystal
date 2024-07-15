@@ -15,6 +15,7 @@ FightingDojo_MapScripts:
 
 .DojoSabrinaScene:
 	pause 5
+	playmusic MUSIC_GYM
 	opentext
 	writetext FightingDojoSabrinaSceneText1
 	waitbutton
@@ -36,6 +37,7 @@ FightingDojo_MapScripts:
 	playsound SFX_EXIT_BUILDING
 	disappear FIGHTINGDOJO_SABRINA
 	turnobject PLAYER, DOWN
+	special RestartMapMusic
 	setevent EVENT_SABRINA_IN_FIGHTING_DOJO
 	setscene SCENE_FINISHED
 	end
