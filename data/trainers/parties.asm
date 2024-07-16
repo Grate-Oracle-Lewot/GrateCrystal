@@ -2478,7 +2478,7 @@ GuitaristGroup:
 	db "COBALT@", TRAINERTYPE_NORMAL
 	db 63, CASTAWEIGH
 	db 64, CORSOLA
-	db 67, PIKACHU
+	db 63, LANTURN
 	db -1 ; end
 
 HikerGroup:
