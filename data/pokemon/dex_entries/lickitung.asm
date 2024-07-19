@@ -1,4 +1,4 @@
-	db "LICKING@" ; species name
+	db "GUSTO@" ; species name
 	dw 311, 1440 ; height, weight
 
 	db   "It can use its"
