@@ -1,4 +1,4 @@
-	db "PSI@" ; species name
+	db "MINDBENDER@" ; species name
 	dw 211, 430 ; height, weight
 
 	db   "Just one of its"
