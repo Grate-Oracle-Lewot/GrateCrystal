@@ -75,6 +75,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - If you have all 16 Badges, you can fight former Elite Four members in a secondary gauntlet at the Cianwood Photo Studio
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
+- Unused mine cart graphics added to some caves
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
 ## Type chart changes
