@@ -126,6 +126,7 @@ RockSmashMons::
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
 	dw TreeMonSet_Rock
+	dw TreeMonSet_Rock_Kanto
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; can have as many entries as you want as long as the % adds up to 100
@@ -136,4 +137,13 @@ TreeMonSet_Rock:
 	db 20, ARBOK,      20
 	db 10, DUNSPARCE,  15
 	db 10, SHUCKLE,    20
+	db -1
+
+TreeMonSet_Rock_Kanto:
+	db 20, GRAVELER,   40
+	db 20, KINGLER,    40
+	db 20, CLOYSTER,   40
+	db 20, ARBOK,      40
+	db 10, DUNSPARCE,  40
+	db 10, SHUCKLE,    40
 	db -1
