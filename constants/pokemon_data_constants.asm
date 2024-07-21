@@ -171,19 +171,17 @@ FISHGROUP_DATA_LENGTH EQU 1 + 2 * 4
 
 NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
 
-NUM_ROAMMONS EQU 3 ; G/S is three, and wram still has 3 roamers
-; but  Crystal only has 2. Change this if you want to use the 3rd
+NUM_ROAMMONS EQU 3
 
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_NONE   ; 0
-	const TREEMON_SET_CITY   ; 1
-	const TREEMON_SET_TOWN   ; 2
-	const TREEMON_SET_ROUTE  ; 3
-	const TREEMON_SET_KANTO  ; 4
-	const TREEMON_SET_LAKE   ; 5
-	const TREEMON_SET_FOREST ; 6
+	const TREEMON_SET_CITY   ; 0
+	const TREEMON_SET_TOWN   ; 1
+	const TREEMON_SET_ROUTE  ; 2
+	const TREEMON_SET_KANTO  ; 3
+	const TREEMON_SET_LAKE   ; 4
+	const TREEMON_SET_FOREST ; 5
 NUM_TREEMON_SETS EQU const_value
 
 ; treemon scores
@@ -195,8 +193,7 @@ NUM_TREEMON_SETS EQU const_value
 ; rock smash groups, for Nayru's pokedex
 ; const TREEMON_SET_ROCK is originally within NUM_TREEMON_SETS
 	const_def
-	const TREEMON_SET_ROCK_NONE ; 0
-	const TREEMON_SET_ROCK      ; 1
+	const TREEMON_SET_ROCK ; 0
 NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
