@@ -208,7 +208,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Locations
 - Viridian Forest
-- Old layout for Viridian Gym, but with new Lego tiles
 - Pewter Museum (fossils can be resurrected at Lv.1, with a random chance to start in their evolved form, e.g. Kabutops instead of Kabuto)
 - Silph Co. (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
 - A second floor to the Power Plant (similar layout to Gen I, no wild encounters; navigate to find the Manager, with optional battles against Engineers)
@@ -264,7 +263,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
-- Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, and a quick exit warp added to Sabrina's Gym
+- Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, a quick exit warp added to Sabrina's Gym, and Viridian Gym's old layout recreated with its Gen 2 Lego tiles
 - The Marshbadge and Soulbadge have their names and designs swapped
 - Female players retain their female sprites in the Link Trade and Battle rooms
 - Text edits, often humorous (or so I'd like to think)
