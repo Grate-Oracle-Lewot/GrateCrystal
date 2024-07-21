@@ -71,9 +71,6 @@ GetTreeMons:
 	cp NUM_TREEMON_SETS
 	jr nc, .quit
 
-	and a
-	jr z, .quit
-
 	ld e, a
 	ld d, 0
 	ld hl, TreeMons
@@ -274,9 +271,6 @@ GetRockMons:
 
 	cp NUM_ROCKSMASH_SETS
 	jr nc, .quit
-
-	and a
-	jr z, .quit
 
 	ld e, a
 	ld d, 0
