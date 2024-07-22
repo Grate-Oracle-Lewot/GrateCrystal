@@ -241,10 +241,10 @@ ENDM
 	connection north, PalletTown, PALLET_TOWN, 0
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0
 
-	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
+	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $71, EAST
 	connection east, Route28, ROUTE_28, 9
 
-	map_attributes Route28, ROUTE_28, $2c, WEST
+	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, WEST | EAST
