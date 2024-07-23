@@ -345,18 +345,16 @@ Route22HouseOfficerJennyScript:
 	writetext Route22HouseOfficerJennyRareCandyText
 	promptbutton
 	checkevent EVENT_BEAT_RED
-	iftrue .GiveLeftovers
+	iftrue .GivePPUps
 	verbosegiveitem RARE_CANDY, 6
 	iffalse .RareCandiesBagFull
-	waitbutton
 	closetext
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	end
 
-.GiveLeftovers:
+.GivePPUps:
 	verbosegiveitem PP_UP, 6
 	iffalse .RareCandiesBagFull
-	waitbutton
 	closetext
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	end
