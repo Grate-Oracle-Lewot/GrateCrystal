@@ -338,20 +338,22 @@ ChooseWildEncounter:
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
+; Check Unown letters
 	cp UNOWN
-	jr nz, .done
+	jr nz, .loadwildmon
 
+; Allow any letter if we're not inside the Ruins of Alph
+	ld a, [wMapGroup]
+	cp GROUP_RUINS_OF_ALPH_INNER_CHAMBER
+	jr nz, .loadwildmon
+	ld a, [wMapNumber]
+	cp MAP_RUINS_OF_ALPH_INNER_CHAMBER
+	jr nz, .loadwildmon
+
+; If no letters are unlocked, don't trigger a battle
 	ld a, [wUnlockedUnowns]
 	and a
 	jr z, .nowildbattle
-
-.done
-	jr .loadwildmon
-
-.nowildbattle
-	ld a, 1
-	and a
-	ret
 
 .loadwildmon
 	ld a, b
@@ -359,6 +361,11 @@ ChooseWildEncounter:
 
 .startwildbattle
 	xor a
+	ret
+
+.nowildbattle
+	ld a, 1
+	and a
 	ret
 
 .route_29_buff
@@ -655,7 +662,7 @@ CheckEncounterRoamMon:
 UpdateRoamMons:
 	ld a, [wRoamMon1MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipRaikou
+	jr z, .Skip
 	ld b, a
 	ld a, [wRoamMon1MapNumber]
 	ld c, a
@@ -665,10 +672,10 @@ UpdateRoamMons:
 	ld a, c
 	ld [wRoamMon1MapNumber], a
 
-.SkipRaikou:
+.Skip:
 	ld a, [wRoamMon2MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipEntei
+	jr z, .Finished
 	ld b, a
 	ld a, [wRoamMon2MapNumber]
 	ld c, a
@@ -677,19 +684,6 @@ UpdateRoamMons:
 	ld [wRoamMon2MapGroup], a
 	ld a, c
 	ld [wRoamMon2MapNumber], a
-
-.SkipEntei:
-	ld a, [wRoamMon3MapGroup]
-	cp GROUP_N_A
-	jr z, .Finished
-	ld b, a
-	ld a, [wRoamMon3MapNumber]
-	ld c, a
-	call .Update
-	ld a, b
-	ld [wRoamMon3MapGroup], a
-	ld a, c
-	ld [wRoamMon3MapNumber], a
 
 .Finished:
 	jp _BackUpMapIndices
@@ -754,32 +748,22 @@ UpdateRoamMons:
 JumpRoamMons:
 	ld a, [wRoamMon1MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipRaikou
+	jr z, .Skip
 	call JumpRoamMon
 	ld a, b
 	ld [wRoamMon1MapGroup], a
 	ld a, c
 	ld [wRoamMon1MapNumber], a
 
-.SkipRaikou:
+.Skip:
 	ld a, [wRoamMon2MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipEntei
+	jr z, .Finished
 	call JumpRoamMon
 	ld a, b
 	ld [wRoamMon2MapGroup], a
 	ld a, c
 	ld [wRoamMon2MapNumber], a
-
-.SkipEntei:
-	ld a, [wRoamMon3MapGroup]
-	cp GROUP_N_A
-	jr z, .Finished
-	call JumpRoamMon
-	ld a, b
-	ld [wRoamMon3MapGroup], a
-	ld a, c
-	ld [wRoamMon3MapNumber], a
 
 .Finished:
 	jp _BackUpMapIndices
@@ -836,7 +820,7 @@ _BackUpMapIndices:
 INCLUDE "data/wild/roammon_maps.asm"
 
 ValidateTempWildMonSpecies:
-; Due to a development oversight, this function is called with the wild Pokemon's level, not its species, in a.
+; Takes the wildmon's species in a as input.
 	and a
 	jr z, .nowildmon ; = 0
 	cp NUM_POKEMON + 1 ; 252
