@@ -171,7 +171,8 @@ FISHGROUP_DATA_LENGTH EQU 1 + 2 * 4
 
 NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
 
-NUM_ROAMMONS EQU 3
+NUM_ROAMMONS EQU 2 ; GS has 3. Suicune is changed to a static encounter in Crystal.
+; In Grate Crystal, Suicune may respawn as a roamer if one of the two slots is free. Using the third slot requires more than just changing this constant.
 
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
