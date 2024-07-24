@@ -114,7 +114,7 @@ FindNest:
 
 .found
 	pop af
-	jp .AppendNest
+	; fallthrough
 
 .AppendNest:
 	push de
