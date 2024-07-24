@@ -459,113 +459,115 @@ Fast_Ship_Map_Names: ; FAST_SHIP
 
 Dungeons_Map_Names: ; DUNGEONS
 	table_width 2, Dungeons_Map_Names
-	dw Dungeons_Map_Name1   ; MOUNT_MOON
-	dw Dungeons_Map_Name2   ; UNDERGROUND_PATH
-	dw Dungeons_Map_Name3   ; DIGLETTS_CAVE
-	dw Dungeons_Map_Name4   ; ROCK_TUNNEL_1F
-	dw Dungeons_Map_Name5   ; ROCK_TUNNEL_B1F
-	dw Dungeons_Map_Name6   ; ROCK_TUNNEL_ZAPDOS_CHAMBER
-	dw Dungeons_Map_Name7   ; SILPH_CO_2F
-	dw Dungeons_Map_Name8   ; SILPH_CO_3F
-	dw Dungeons_Map_Name9   ; SILPH_CO_4F
-	dw Dungeons_Map_Name10  ; SILPH_CO_5F
-	dw Dungeons_Map_Name11  ; SILPH_CO_6F
-	dw Dungeons_Map_Name12  ; SILPH_CO_7F
-	dw Dungeons_Map_Name13  ; SILPH_CO_8F
-	dw Dungeons_Map_Name14  ; SILPH_CO_9F
-	dw Dungeons_Map_Name15  ; SILPH_CO_10F
-	dw Dungeons_Map_Name16  ; SILPH_CO_11F
-	dw Dungeons_Map_Name17  ; SEAFOAM_CAVE_PUZZLE_CHAMBER
-	dw Dungeons_Map_Name18  ; SEAFOAM_CAVE_1F
-	dw Dungeons_Map_Name19  ; SEAFOAM_CAVE_B1F
-	dw Dungeons_Map_Name20  ; SEAFOAM_CAVE_B2F
-	dw Dungeons_Map_Name21  ; DARK_CAVE_VIOLET_ENTRANCE
-	dw Dungeons_Map_Name22  ; DARK_CAVE_BLACKTHORN_ENTRANCE
-	dw Dungeons_Map_Name23  ; DARK_CAVE_2F
-	dw Dungeons_Map_Name24  ; SPROUT_TOWER_1F
-	dw Dungeons_Map_Name25  ; SPROUT_TOWER_2F
-	dw Dungeons_Map_Name26  ; SPROUT_TOWER_3F
-	dw Dungeons_Map_Name27  ; RUINS_OF_ALPH_OUTSIDE
-	dw Dungeons_Map_Name28  ; RUINS_OF_ALPH_ANTECHAMBER
-	dw Dungeons_Map_Name29  ; RUINS_OF_ALPH_INNER_CHAMBER
-	dw Dungeons_Map_Name30  ; RUINS_OF_ALPH_KABUTO_CHAMBER
-	dw Dungeons_Map_Name31  ; RUINS_OF_ALPH_KABUTO_ITEM_ROOM
-	dw Dungeons_Map_Name32  ; RUINS_OF_ALPH_KABUTO_WORD_ROOM
-	dw Dungeons_Map_Name33  ; RUINS_OF_ALPH_OMANYTE_CHAMBER
-	dw Dungeons_Map_Name34  ; RUINS_OF_ALPH_OMANYTE_ITEM_ROOM
-	dw Dungeons_Map_Name35  ; RUINS_OF_ALPH_OMANYTE_WORD_ROOM
-	dw Dungeons_Map_Name36  ; RUINS_OF_ALPH_AERODACTYL_CHAMBER
-	dw Dungeons_Map_Name37  ; RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM
-	dw Dungeons_Map_Name38  ; RUINS_OF_ALPH_AERODACTYL_WORD_ROOM
-	dw Dungeons_Map_Name39  ; RUINS_OF_ALPH_HO_OH_CHAMBER
-	dw Dungeons_Map_Name40  ; RUINS_OF_ALPH_HO_OH_ITEM_ROOM
-	dw Dungeons_Map_Name41  ; RUINS_OF_ALPH_HO_OH_WORD_ROOM
-	dw Dungeons_Map_Name42  ; RUINS_OF_ALPH_RESEARCH_CENTER
-	dw Dungeons_Map_Name43  ; UNION_CAVE_1F
-	dw Dungeons_Map_Name44  ; UNION_CAVE_B1F
-	dw Dungeons_Map_Name45  ; UNION_CAVE_B2F
-	dw Dungeons_Map_Name46  ; UNION_CAVE_SLOWPOKE_WELL_LINK
-	dw Dungeons_Map_Name47  ; SLOWPOKE_WELL_B1F
-	dw Dungeons_Map_Name48  ; SLOWPOKE_WELL_B2F
-	dw Dungeons_Map_Name49  ; ILEX_FOREST
-	dw Dungeons_Map_Name50  ; GOLDENROD_DEPT_STORE_B1F
-	dw Dungeons_Map_Name51  ; GOLDENROD_UNDERGROUND
-	dw Dungeons_Map_Name52  ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
-	dw Dungeons_Map_Name53  ; GOLDENROD_UNDERGROUND_WAREHOUSE
-	dw Dungeons_Map_Name54  ; RADIO_TOWER_1F
-	dw Dungeons_Map_Name55  ; RADIO_TOWER_2F
-	dw Dungeons_Map_Name56  ; RADIO_TOWER_3F
-	dw Dungeons_Map_Name57  ; RADIO_TOWER_4F
-	dw Dungeons_Map_Name58  ; RADIO_TOWER_5F
-	dw Dungeons_Map_Name59  ; NATIONAL_PARK
-	dw Dungeons_Map_Name60  ; NATIONAL_PARK_BUG_CONTEST
-	dw Dungeons_Map_Name61  ; BURNED_TOWER_1F
-	dw Dungeons_Map_Name62  ; BURNED_TOWER_B1F
-	dw Dungeons_Map_Name63  ; TIN_TOWER_1F
-	dw Dungeons_Map_Name64  ; TIN_TOWER_2F
-	dw Dungeons_Map_Name65  ; TIN_TOWER_3F
-	dw Dungeons_Map_Name66  ; TIN_TOWER_4F
-	dw Dungeons_Map_Name67  ; TIN_TOWER_5F
-	dw Dungeons_Map_Name68  ; TIN_TOWER_6F
-	dw Dungeons_Map_Name69  ; TIN_TOWER_7F
-	dw Dungeons_Map_Name70  ; TIN_TOWER_8F
-	dw Dungeons_Map_Name71  ; TIN_TOWER_9F
-	dw Dungeons_Map_Name72  ; OLIVINE_LIGHTHOUSE_1F
-	dw Dungeons_Map_Name73  ; OLIVINE_LIGHTHOUSE_2F
-	dw Dungeons_Map_Name74  ; OLIVINE_LIGHTHOUSE_3F
-	dw Dungeons_Map_Name75  ; OLIVINE_LIGHTHOUSE_4F
-	dw Dungeons_Map_Name76  ; OLIVINE_LIGHTHOUSE_5F
-	dw Dungeons_Map_Name77  ; OLIVINE_LIGHTHOUSE_6F
-	dw Dungeons_Map_Name78  ; WHIRL_ISLAND_1F
-	dw Dungeons_Map_Name79  ; WHIRL_ISLAND_B1F
-	dw Dungeons_Map_Name80  ; WHIRL_ISLAND_B2F
-	dw Dungeons_Map_Name81  ; WHIRL_ISLAND_LUGIA_CHAMBER
-	dw Dungeons_Map_Name82  ; MOUNT_MORTAR_1F_OUTSIDE
-	dw Dungeons_Map_Name83  ; MOUNT_MORTAR_1F_INSIDE
-	dw Dungeons_Map_Name84  ; MOUNT_MORTAR_2F_INSIDE
-	dw Dungeons_Map_Name85  ; MOUNT_MORTAR_B1F
-	dw Dungeons_Map_Name86  ; MAHOGANY_MART_1F
-	dw Dungeons_Map_Name87  ; TEAM_ROCKET_BASE_B1F
-	dw Dungeons_Map_Name88  ; TEAM_ROCKET_BASE_B2F
-	dw Dungeons_Map_Name89  ; TEAM_ROCKET_BASE_B3F
-	dw Dungeons_Map_Name90  ; ICE_PATH_1F
-	dw Dungeons_Map_Name91  ; ICE_PATH_B1F
-	dw Dungeons_Map_Name92  ; ICE_PATH_B2F_MAHOGANY_SIDE
-	dw Dungeons_Map_Name93  ; ICE_PATH_B2F_BLACKTHORN_SIDE
-	dw Dungeons_Map_Name94  ; ICE_PATH_B3F
-	dw Dungeons_Map_Name95  ; ICE_PATH_ARTICUNO_CHAMBER
-	dw Dungeons_Map_Name96  ; DRAGONS_DEN_1F
-	dw Dungeons_Map_Name97  ; DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name98  ; DRAGON_SHRINE
-	dw Dungeons_Map_Name99  ; TOHJO_FALLS
-	dw Dungeons_Map_Name100 ; MEW_ANTECHAMBER
-	dw Dungeons_Map_Name101 ; MEW_CHAMBER
-	dw Dungeons_Map_Name102 ; VICTORY_ROAD
-	dw Dungeons_Map_Name103 ; SILVER_CAVE_ROOM_1
-	dw Dungeons_Map_Name104 ; SILVER_CAVE_ROOM_2
-	dw Dungeons_Map_Name105 ; SILVER_CAVE_ROOM_3
-	dw Dungeons_Map_Name106 ; SILVER_CAVE_ITEM_ROOMS
-	dw Dungeons_Map_Name107 ; SILVER_CAVE_MOLTRES_CHAMBER
+	dw Dungeons_Map_Name1   ; MOUNT_MOON_1F
+	dw Dungeons_Map_Name2   ; MOUNT_MOON_B1F
+	dw Dungeons_Map_Name3   ; MOUNT_MOON_B2F
+	dw Dungeons_Map_Name4   ; UNDERGROUND_PATH
+	dw Dungeons_Map_Name5   ; DIGLETTS_CAVE
+	dw Dungeons_Map_Name6   ; ROCK_TUNNEL_1F
+	dw Dungeons_Map_Name7   ; ROCK_TUNNEL_B1F
+	dw Dungeons_Map_Name8   ; ROCK_TUNNEL_ZAPDOS_CHAMBER
+	dw Dungeons_Map_Name9   ; SILPH_CO_2F
+	dw Dungeons_Map_Name10  ; SILPH_CO_3F
+	dw Dungeons_Map_Name11  ; SILPH_CO_4F
+	dw Dungeons_Map_Name12  ; SILPH_CO_5F
+	dw Dungeons_Map_Name13  ; SILPH_CO_6F
+	dw Dungeons_Map_Name14  ; SILPH_CO_7F
+	dw Dungeons_Map_Name15  ; SILPH_CO_8F
+	dw Dungeons_Map_Name16  ; SILPH_CO_9F
+	dw Dungeons_Map_Name17  ; SILPH_CO_10F
+	dw Dungeons_Map_Name18  ; SILPH_CO_11F
+	dw Dungeons_Map_Name19  ; SEAFOAM_CAVE_PUZZLE_CHAMBER
+	dw Dungeons_Map_Name20  ; SEAFOAM_CAVE_1F
+	dw Dungeons_Map_Name21  ; SEAFOAM_CAVE_B1F
+	dw Dungeons_Map_Name22  ; SEAFOAM_CAVE_B2F
+	dw Dungeons_Map_Name23  ; DARK_CAVE_VIOLET_ENTRANCE
+	dw Dungeons_Map_Name24  ; DARK_CAVE_BLACKTHORN_ENTRANCE
+	dw Dungeons_Map_Name25  ; DARK_CAVE_2F
+	dw Dungeons_Map_Name26  ; SPROUT_TOWER_1F
+	dw Dungeons_Map_Name27  ; SPROUT_TOWER_2F
+	dw Dungeons_Map_Name28  ; SPROUT_TOWER_3F
+	dw Dungeons_Map_Name29  ; RUINS_OF_ALPH_OUTSIDE
+	dw Dungeons_Map_Name30  ; RUINS_OF_ALPH_ANTECHAMBER
+	dw Dungeons_Map_Name31  ; RUINS_OF_ALPH_INNER_CHAMBER
+	dw Dungeons_Map_Name32  ; RUINS_OF_ALPH_KABUTO_CHAMBER
+	dw Dungeons_Map_Name33  ; RUINS_OF_ALPH_KABUTO_ITEM_ROOM
+	dw Dungeons_Map_Name34  ; RUINS_OF_ALPH_KABUTO_WORD_ROOM
+	dw Dungeons_Map_Name35  ; RUINS_OF_ALPH_OMANYTE_CHAMBER
+	dw Dungeons_Map_Name36  ; RUINS_OF_ALPH_OMANYTE_ITEM_ROOM
+	dw Dungeons_Map_Name37  ; RUINS_OF_ALPH_OMANYTE_WORD_ROOM
+	dw Dungeons_Map_Name38  ; RUINS_OF_ALPH_AERODACTYL_CHAMBER
+	dw Dungeons_Map_Name39  ; RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM
+	dw Dungeons_Map_Name40  ; RUINS_OF_ALPH_AERODACTYL_WORD_ROOM
+	dw Dungeons_Map_Name41  ; RUINS_OF_ALPH_HO_OH_CHAMBER
+	dw Dungeons_Map_Name42  ; RUINS_OF_ALPH_HO_OH_ITEM_ROOM
+	dw Dungeons_Map_Name43  ; RUINS_OF_ALPH_HO_OH_WORD_ROOM
+	dw Dungeons_Map_Name44  ; RUINS_OF_ALPH_RESEARCH_CENTER
+	dw Dungeons_Map_Name45  ; UNION_CAVE_1F
+	dw Dungeons_Map_Name46  ; UNION_CAVE_B1F
+	dw Dungeons_Map_Name47  ; UNION_CAVE_B2F
+	dw Dungeons_Map_Name48  ; UNION_CAVE_SLOWPOKE_WELL_LINK
+	dw Dungeons_Map_Name49  ; SLOWPOKE_WELL_B1F
+	dw Dungeons_Map_Name50  ; SLOWPOKE_WELL_B2F
+	dw Dungeons_Map_Name51  ; ILEX_FOREST
+	dw Dungeons_Map_Name52  ; GOLDENROD_DEPT_STORE_B1F
+	dw Dungeons_Map_Name53  ; GOLDENROD_UNDERGROUND
+	dw Dungeons_Map_Name54  ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
+	dw Dungeons_Map_Name55  ; GOLDENROD_UNDERGROUND_WAREHOUSE
+	dw Dungeons_Map_Name56  ; RADIO_TOWER_1F
+	dw Dungeons_Map_Name57  ; RADIO_TOWER_2F
+	dw Dungeons_Map_Name58  ; RADIO_TOWER_3F
+	dw Dungeons_Map_Name59  ; RADIO_TOWER_4F
+	dw Dungeons_Map_Name60  ; RADIO_TOWER_5F
+	dw Dungeons_Map_Name61  ; NATIONAL_PARK
+	dw Dungeons_Map_Name62  ; NATIONAL_PARK_BUG_CONTEST
+	dw Dungeons_Map_Name63  ; BURNED_TOWER_1F
+	dw Dungeons_Map_Name64  ; BURNED_TOWER_B1F
+	dw Dungeons_Map_Name65  ; TIN_TOWER_1F
+	dw Dungeons_Map_Name66  ; TIN_TOWER_2F
+	dw Dungeons_Map_Name67  ; TIN_TOWER_3F
+	dw Dungeons_Map_Name68  ; TIN_TOWER_4F
+	dw Dungeons_Map_Name69  ; TIN_TOWER_5F
+	dw Dungeons_Map_Name70  ; TIN_TOWER_6F
+	dw Dungeons_Map_Name71  ; TIN_TOWER_7F
+	dw Dungeons_Map_Name72  ; TIN_TOWER_8F
+	dw Dungeons_Map_Name73  ; TIN_TOWER_9F
+	dw Dungeons_Map_Name74  ; OLIVINE_LIGHTHOUSE_1F
+	dw Dungeons_Map_Name75  ; OLIVINE_LIGHTHOUSE_2F
+	dw Dungeons_Map_Name76  ; OLIVINE_LIGHTHOUSE_3F
+	dw Dungeons_Map_Name77  ; OLIVINE_LIGHTHOUSE_4F
+	dw Dungeons_Map_Name78  ; OLIVINE_LIGHTHOUSE_5F
+	dw Dungeons_Map_Name79  ; OLIVINE_LIGHTHOUSE_6F
+	dw Dungeons_Map_Name80  ; WHIRL_ISLAND_1F
+	dw Dungeons_Map_Name81  ; WHIRL_ISLAND_B1F
+	dw Dungeons_Map_Name82  ; WHIRL_ISLAND_B2F
+	dw Dungeons_Map_Name83  ; WHIRL_ISLAND_LUGIA_CHAMBER
+	dw Dungeons_Map_Name84  ; MOUNT_MORTAR_1F_OUTSIDE
+	dw Dungeons_Map_Name85  ; MOUNT_MORTAR_1F_INSIDE
+	dw Dungeons_Map_Name86  ; MOUNT_MORTAR_2F_INSIDE
+	dw Dungeons_Map_Name87  ; MOUNT_MORTAR_B1F
+	dw Dungeons_Map_Name88  ; MAHOGANY_MART_1F
+	dw Dungeons_Map_Name89  ; TEAM_ROCKET_BASE_B1F
+	dw Dungeons_Map_Name90  ; TEAM_ROCKET_BASE_B2F
+	dw Dungeons_Map_Name91  ; TEAM_ROCKET_BASE_B3F
+	dw Dungeons_Map_Name92  ; ICE_PATH_1F
+	dw Dungeons_Map_Name93  ; ICE_PATH_B1F
+	dw Dungeons_Map_Name94  ; ICE_PATH_B2F_MAHOGANY_SIDE
+	dw Dungeons_Map_Name95  ; ICE_PATH_B2F_BLACKTHORN_SIDE
+	dw Dungeons_Map_Name96  ; ICE_PATH_B3F
+	dw Dungeons_Map_Name97  ; ICE_PATH_ARTICUNO_CHAMBER
+	dw Dungeons_Map_Name98  ; DRAGONS_DEN_1F
+	dw Dungeons_Map_Name99  ; DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name100 ; DRAGON_SHRINE
+	dw Dungeons_Map_Name101 ; TOHJO_FALLS
+	dw Dungeons_Map_Name102 ; MEW_ANTECHAMBER
+	dw Dungeons_Map_Name103 ; MEW_CHAMBER
+	dw Dungeons_Map_Name104 ; VICTORY_ROAD
+	dw Dungeons_Map_Name105 ; SILVER_CAVE_ROOM_1
+	dw Dungeons_Map_Name106 ; SILVER_CAVE_ROOM_2
+	dw Dungeons_Map_Name107 ; SILVER_CAVE_ROOM_3
+	dw Dungeons_Map_Name108 ; SILVER_CAVE_ITEM_ROOMS
+	dw Dungeons_Map_Name109 ; SILVER_CAVE_MOLTRES_CHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 
 ; MAX LENGTH: 17 (preferred: 16)
@@ -1191,217 +1193,221 @@ Fast_Ship_Map_Name11: ; OLIVINE_PORT
 Fast_Ship_Map_Name12: ; TIN_TOWER_ROOF
 	db "TIN TOWER ROOF@"
 
-Dungeons_Map_Name1: ; MOUNT_MOON
-	db "MT. MOON@"
-Dungeons_Map_Name2: ; UNDERGROUND_PATH
+Dungeons_Map_Name1: ; MOUNT_MOON_1F
+	db "MT.MOON LANDING@"
+Dungeons_Map_Name2: ; MOUNT_MOON_B1F
+	db "MT.MOON DEPTHS@"
+Dungeons_Map_Name3: ; MOUNT_MOON_B2F
+	db "MT.MOON CORE@"
+Dungeons_Map_Name4: ; UNDERGROUND_PATH
 	db "UNDERGROUND PATH@"
-Dungeons_Map_Name3: ; DIGLETTS_CAVE
+Dungeons_Map_Name5: ; DIGLETTS_CAVE
 	db "DIGLETT'S CAVE@"
-Dungeons_Map_Name4: ; ROCK_TUNNEL_1F
+Dungeons_Map_Name6: ; ROCK_TUNNEL_1F
 	db "ROCK TUNNEL 1F@"
-Dungeons_Map_Name5: ; ROCK_TUNNEL_B1F
+Dungeons_Map_Name7: ; ROCK_TUNNEL_B1F
 	db "ROCK TUNNEL B1F@"
-Dungeons_Map_Name6: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
+Dungeons_Map_Name8: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
 	db "DEEP ROCK TUNNEL@"
-Dungeons_Map_Name7: ; SILPH_CO_2F
+Dungeons_Map_Name9: ; SILPH_CO_2F
 	db "SILPH CO. 2F@"
-Dungeons_Map_Name8: ; SILPH_CO_3F
+Dungeons_Map_Name10: ; SILPH_CO_3F
 	db "SILPH CO. 3F@"
-Dungeons_Map_Name9: ; SILPH_CO_4F
+Dungeons_Map_Name11: ; SILPH_CO_4F
 	db "SILPH CO. 4F@"
-Dungeons_Map_Name10: ; SILPH_CO_5F
+Dungeons_Map_Name12: ; SILPH_CO_5F
 	db "SILPH CO. 5F@"
-Dungeons_Map_Name11: ; SILPH_CO_6F
+Dungeons_Map_Name13: ; SILPH_CO_6F
 	db "SILPH CO. 6F@"
-Dungeons_Map_Name12: ; SILPH_CO_7F
+Dungeons_Map_Name14: ; SILPH_CO_7F
 	db "SILPH CO. 7F@"
-Dungeons_Map_Name13: ; SILPH_CO_8F
+Dungeons_Map_Name15: ; SILPH_CO_8F
 	db "SILPH CO. 8F@"
-Dungeons_Map_Name14: ; SILPH_CO_9F
+Dungeons_Map_Name16: ; SILPH_CO_9F
 	db "SILPH CO. 9F@"
-Dungeons_Map_Name15: ; SILPH_CO_10F
+Dungeons_Map_Name17: ; SILPH_CO_10F
 	db "SILPH CO. 10F@"
-Dungeons_Map_Name16: ; SILPH_CO_11F
+Dungeons_Map_Name18: ; SILPH_CO_11F
 	db "SILPH CO. 11F@"
-Dungeons_Map_Name17: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
+Dungeons_Map_Name19: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
 	db "UBEQC CHAMBER@"
-Dungeons_Map_Name18: ; SEAFOAM_CAVE_1F
+Dungeons_Map_Name20: ; SEAFOAM_CAVE_1F
 	db "SEAFOAM CAVE@"
-Dungeons_Map_Name19: ; SEAFOAM_CAVE_B1F
+Dungeons_Map_Name21: ; SEAFOAM_CAVE_B1F
 	db "LEWOT'S HIDEOUT@"
-Dungeons_Map_Name20: ; SEAFOAM_CAVE_B2F
+Dungeons_Map_Name22: ; SEAFOAM_CAVE_B2F
 	db "SEAFOAM DEPTHS@"
-Dungeons_Map_Name21: ; DARK_CAVE_VIOLET_ENTRANCE
+Dungeons_Map_Name23: ; DARK_CAVE_VIOLET_ENTRANCE
 	db "DARK CAVE WEST@"
-Dungeons_Map_Name22: ; DARK_CAVE_BLACKTHORN_ENTRANCE
+Dungeons_Map_Name24: ; DARK_CAVE_BLACKTHORN_ENTRANCE
 	db "DARK CAVE EAST@"
-Dungeons_Map_Name23: ; DARK_CAVE_2F
+Dungeons_Map_Name25: ; DARK_CAVE_2F
 	db "DARK CAVE DOJO@"
-Dungeons_Map_Name24: ; SPROUT_TOWER_1F
+Dungeons_Map_Name26: ; SPROUT_TOWER_1F
 	db "SPROUT TOWER 1F@"
-Dungeons_Map_Name25: ; SPROUT_TOWER_2F
+Dungeons_Map_Name27: ; SPROUT_TOWER_2F
 	db "SPROUT TOWER 2F@"
-Dungeons_Map_Name26: ; SPROUT_TOWER_3F
+Dungeons_Map_Name28: ; SPROUT_TOWER_3F
 	db "SPROUT TOWER 3F@"
-Dungeons_Map_Name27: ; RUINS_OF_ALPH_OUTSIDE
+Dungeons_Map_Name29: ; RUINS_OF_ALPH_OUTSIDE
 	db "ALPH GROUNDS@"
-Dungeons_Map_Name28: ; RUINS_OF_ALPH_ANTECHAMBER
+Dungeons_Map_Name30: ; RUINS_OF_ALPH_ANTECHAMBER
 	db "ALPH ANTECHAMBER@"
-Dungeons_Map_Name29: ; RUINS_OF_ALPH_INNER_CHAMBER
+Dungeons_Map_Name31: ; RUINS_OF_ALPH_INNER_CHAMBER
 	db "ALPH MAIN CHAMBER@"
-Dungeons_Map_Name30: ; RUINS_OF_ALPH_KABUTO_CHAMBER
+Dungeons_Map_Name32: ; RUINS_OF_ALPH_KABUTO_CHAMBER
 	db "EARTH CHAMBER@"
-Dungeons_Map_Name31: ; RUINS_OF_ALPH_KABUTO_ITEM_ROOM
+Dungeons_Map_Name33: ; RUINS_OF_ALPH_KABUTO_ITEM_ROOM
 	db "EARTH ALTAR@"
-Dungeons_Map_Name32: ; RUINS_OF_ALPH_KABUTO_WORD_ROOM
+Dungeons_Map_Name34: ; RUINS_OF_ALPH_KABUTO_WORD_ROOM
 	db "EARTH MISSIVE@"
-Dungeons_Map_Name33: ; RUINS_OF_ALPH_OMANYTE_CHAMBER
+Dungeons_Map_Name35: ; RUINS_OF_ALPH_OMANYTE_CHAMBER
 	db "WATER CHAMBER@"
-Dungeons_Map_Name34: ; RUINS_OF_ALPH_OMANYTE_ITEM_ROOM
+Dungeons_Map_Name36: ; RUINS_OF_ALPH_OMANYTE_ITEM_ROOM
 	db "WATER ALTAR@"
-Dungeons_Map_Name35: ; RUINS_OF_ALPH_OMANYTE_WORD_ROOM
+Dungeons_Map_Name37: ; RUINS_OF_ALPH_OMANYTE_WORD_ROOM
 	db "WATER MISSIVE@"
-Dungeons_Map_Name36: ; RUINS_OF_ALPH_AERODACTYL_CHAMBER
+Dungeons_Map_Name38: ; RUINS_OF_ALPH_AERODACTYL_CHAMBER
 	db "AIR CHAMBER@"
-Dungeons_Map_Name37: ; RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM
+Dungeons_Map_Name39: ; RUINS_OF_ALPH_AERODACTYL_ITEM_ROOM
 	db "AIR ALTAR@"
-Dungeons_Map_Name38: ; RUINS_OF_ALPH_AERODACTYL_WORD_ROOM
+Dungeons_Map_Name40: ; RUINS_OF_ALPH_AERODACTYL_WORD_ROOM
 	db "AIR MISSIVE@"
-Dungeons_Map_Name39: ; RUINS_OF_ALPH_HO_OH_CHAMBER
+Dungeons_Map_Name41: ; RUINS_OF_ALPH_HO_OH_CHAMBER
 	db "FIRE CHAMBER@"
-Dungeons_Map_Name40: ; RUINS_OF_ALPH_HO_OH_ITEM_ROOM
+Dungeons_Map_Name42: ; RUINS_OF_ALPH_HO_OH_ITEM_ROOM
 	db "FIRE ALTAR@"
-Dungeons_Map_Name41: ; RUINS_OF_ALPH_HO_OH_WORD_ROOM
+Dungeons_Map_Name43: ; RUINS_OF_ALPH_HO_OH_WORD_ROOM
 	db "FIRE MISSIVE@"
-Dungeons_Map_Name42: ; RUINS_OF_ALPH_RESEARCH_CENTER
+Dungeons_Map_Name44: ; RUINS_OF_ALPH_RESEARCH_CENTER
 	db "ALPH SURVEY LAB@"
-Dungeons_Map_Name43: ; UNION_CAVE_1F
+Dungeons_Map_Name45: ; UNION_CAVE_1F
 	db "UNION CAVE 1F@"
-Dungeons_Map_Name44: ; UNION_CAVE_B1F
+Dungeons_Map_Name46: ; UNION_CAVE_B1F
 	db "UNION CAVE B1F@"
-Dungeons_Map_Name45: ; UNION_CAVE_B2F
+Dungeons_Map_Name47: ; UNION_CAVE_B2F
 	db "UNION GROTTO@"
-Dungeons_Map_Name46: ; UNION_CAVE_SLOWPOKE_WELL_LINK
+Dungeons_Map_Name48: ; UNION_CAVE_SLOWPOKE_WELL_LINK
 	db "UNION WELLSPRING@"
-Dungeons_Map_Name47: ; SLOWPOKE_WELL_B1F
+Dungeons_Map_Name49: ; SLOWPOKE_WELL_B1F
 	db "SLOWPOKEWELL B1F@"
-Dungeons_Map_Name48: ; SLOWPOKE_WELL_B2F
+Dungeons_Map_Name50: ; SLOWPOKE_WELL_B2F
 	db "SLOWPOKEWELL B2F@"
-Dungeons_Map_Name49: ; ILEX_FOREST
+Dungeons_Map_Name51: ; ILEX_FOREST
 	db "ILEX FOREST@"
-Dungeons_Map_Name50: ; GOLDENROD_DEPT_STORE_B1F
+Dungeons_Map_Name52: ; GOLDENROD_DEPT_STORE_B1F
 	db "GOLD. DEPT B1F@"
-Dungeons_Map_Name51: ; GOLDENROD_UNDERGROUND
+Dungeons_Map_Name53: ; GOLDENROD_UNDERGROUND
 	db "GOLD. UNDERGROUND@"
-Dungeons_Map_Name52: ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
+Dungeons_Map_Name54: ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
 	db "UND. SWITCH ROOM@"
-Dungeons_Map_Name53: ; GOLDENROD_UNDERGROUND_WAREHOUSE
+Dungeons_Map_Name55: ; GOLDENROD_UNDERGROUND_WAREHOUSE
 	db "UNDER. WAREHOUSE@"
-Dungeons_Map_Name54: ; RADIO_TOWER_1F
+Dungeons_Map_Name56: ; RADIO_TOWER_1F
 	db "RADIO TOWER 1F@"
-Dungeons_Map_Name55: ; RADIO_TOWER_2F
+Dungeons_Map_Name57: ; RADIO_TOWER_2F
 	db "RADIO TOWER 2F@"
-Dungeons_Map_Name56: ; RADIO_TOWER_3F
+Dungeons_Map_Name58: ; RADIO_TOWER_3F
 	db "RADIO TOWER 3F@"
-Dungeons_Map_Name57: ; RADIO_TOWER_4F
+Dungeons_Map_Name59: ; RADIO_TOWER_4F
 	db "RADIO TOWER 4F@"
-Dungeons_Map_Name58: ; RADIO_TOWER_5F
+Dungeons_Map_Name60: ; RADIO_TOWER_5F
 	db "RADIO TOWER 5F@"
-Dungeons_Map_Name59: ; NATIONAL_PARK
+Dungeons_Map_Name61: ; NATIONAL_PARK
 	db "NATIONAL PARK@"
-Dungeons_Map_Name60: ; NATIONAL_PARK_BUG_CONTEST
+Dungeons_Map_Name62: ; NATIONAL_PARK_BUG_CONTEST
 	db "BUG CONTEST@"
-Dungeons_Map_Name61: ; BURNED_TOWER_1F
+Dungeons_Map_Name63: ; BURNED_TOWER_1F
 	db "BURNED TOWER 1F@"
-Dungeons_Map_Name62: ; BURNED_TOWER_B1F
+Dungeons_Map_Name64: ; BURNED_TOWER_B1F
 	db "BURNED TOWER B1F@"
-Dungeons_Map_Name63: ; TIN_TOWER_1F
+Dungeons_Map_Name65: ; TIN_TOWER_1F
 	db "TIN TOWER 1F@"
-Dungeons_Map_Name64: ; TIN_TOWER_2F
+Dungeons_Map_Name66: ; TIN_TOWER_2F
 	db "TIN TOWER 2F@"
-Dungeons_Map_Name65: ; TIN_TOWER_3F
+Dungeons_Map_Name67: ; TIN_TOWER_3F
 	db "TIN TOWER 3F@"
-Dungeons_Map_Name66: ; TIN_TOWER_4F
+Dungeons_Map_Name68: ; TIN_TOWER_4F
 	db "TIN TOWER 4F@"
-Dungeons_Map_Name67: ; TIN_TOWER_5F
+Dungeons_Map_Name69: ; TIN_TOWER_5F
 	db "TIN TOWER 5F@"
-Dungeons_Map_Name68: ; TIN_TOWER_6F
+Dungeons_Map_Name70: ; TIN_TOWER_6F
 	db "TIN TOWER 6F@"
-Dungeons_Map_Name69: ; TIN_TOWER_7F
+Dungeons_Map_Name71: ; TIN_TOWER_7F
 	db "TIN TOWER 7F@"
-Dungeons_Map_Name70: ; TIN_TOWER_8F
+Dungeons_Map_Name72: ; TIN_TOWER_8F
 	db "TIN TOWER 8F@"
-Dungeons_Map_Name71: ; TIN_TOWER_9F
+Dungeons_Map_Name73: ; TIN_TOWER_9F
 	db "TIN TOWER 9F@"
-Dungeons_Map_Name72: ; OLIVINE_LIGHTHOUSE_1F
+Dungeons_Map_Name74: ; OLIVINE_LIGHTHOUSE_1F
 	db "LIGHTHOUSE 1F@"
-Dungeons_Map_Name73: ; OLIVINE_LIGHTHOUSE_2F
+Dungeons_Map_Name75: ; OLIVINE_LIGHTHOUSE_2F
 	db "LIGHTHOUSE 2F@"
-Dungeons_Map_Name74: ; OLIVINE_LIGHTHOUSE_3F
+Dungeons_Map_Name76: ; OLIVINE_LIGHTHOUSE_3F
 	db "LIGHTHOUSE 3F@"
-Dungeons_Map_Name75: ; OLIVINE_LIGHTHOUSE_4F
+Dungeons_Map_Name77: ; OLIVINE_LIGHTHOUSE_4F
 	db "LIGHTHOUSE 4F@"
-Dungeons_Map_Name76: ; OLIVINE_LIGHTHOUSE_5F
+Dungeons_Map_Name78: ; OLIVINE_LIGHTHOUSE_5F
 	db "LIGHTHOUSE 5F@"
-Dungeons_Map_Name77: ; OLIVINE_LIGHTHOUSE_6F
+Dungeons_Map_Name79: ; OLIVINE_LIGHTHOUSE_6F
 	db "LIGHTHOUSE 6F@"
-Dungeons_Map_Name78: ; WHIRL_ISLAND_1F
+Dungeons_Map_Name80: ; WHIRL_ISLAND_1F
 	db "WHIRL ISLANDS@"
-Dungeons_Map_Name79: ; WHIRL_ISLAND_B1F
+Dungeons_Map_Name81: ; WHIRL_ISLAND_B1F
 	db "WHIRL ISL B1F@"
-Dungeons_Map_Name80: ; WHIRL_ISLAND_B2F
+Dungeons_Map_Name82: ; WHIRL_ISLAND_B2F
 	db "WHIRL ISL B2F@"
-Dungeons_Map_Name81: ; WHIRL_ISLAND_LUGIA_CHAMBER
+Dungeons_Map_Name83: ; WHIRL_ISLAND_LUGIA_CHAMBER
 	db "WHIRL ISL DEPTHS@"
-Dungeons_Map_Name82: ; MOUNT_MORTAR_1F_OUTSIDE
+Dungeons_Map_Name84: ; MOUNT_MORTAR_1F_OUTSIDE
 	db "MT.MORTAR FALLS@"
-Dungeons_Map_Name83: ; MOUNT_MORTAR_1F_INSIDE
+Dungeons_Map_Name85: ; MOUNT_MORTAR_1F_INSIDE
 	db "MT. MORTAR 1F@"
-Dungeons_Map_Name84: ; MOUNT_MORTAR_2F_INSIDE
+Dungeons_Map_Name86: ; MOUNT_MORTAR_2F_INSIDE
 	db "MT. MORTAR 2F@"
-Dungeons_Map_Name85: ; MOUNT_MORTAR_B1F
+Dungeons_Map_Name87: ; MOUNT_MORTAR_B1F
 	db "MT. MORTAR B1F@"
-Dungeons_Map_Name86: ; MAHOGANY_MART_1F
+Dungeons_Map_Name88: ; MAHOGANY_MART_1F
 	db "MAHOGANY ", $70, $71, "MART@"
-Dungeons_Map_Name87: ; TEAM_ROCKET_BASE_B1F
+Dungeons_Map_Name89: ; TEAM_ROCKET_BASE_B1F
 	db "ROCKET BASE B1F@"
-Dungeons_Map_Name88: ; TEAM_ROCKET_BASE_B2F
+Dungeons_Map_Name90: ; TEAM_ROCKET_BASE_B2F
 	db "ROCKET BASE B2F@"
-Dungeons_Map_Name89: ; TEAM_ROCKET_BASE_B3F
+Dungeons_Map_Name91: ; TEAM_ROCKET_BASE_B3F
 	db "ROCKET BASE B3F@"
-Dungeons_Map_Name90: ; ICE_PATH_1F
+Dungeons_Map_Name92: ; ICE_PATH_1F
 	db "ICE PATH 1F@"
-Dungeons_Map_Name91: ; ICE_PATH_B1F
+Dungeons_Map_Name93: ; ICE_PATH_B1F
 	db "ICE PATH B1F@"
-Dungeons_Map_Name92: ; ICE_PATH_B2F_MAHOGANY_SIDE
+Dungeons_Map_Name94: ; ICE_PATH_B2F_MAHOGANY_SIDE
 	db "ICE PATH B2F W@"
-Dungeons_Map_Name93: ; ICE_PATH_B2F_BLACKTHORN_SIDE
+Dungeons_Map_Name95: ; ICE_PATH_B2F_BLACKTHORN_SIDE
 	db "ICE PATH B2F E@"
-Dungeons_Map_Name94: ; ICE_PATH_B3F
+Dungeons_Map_Name96: ; ICE_PATH_B3F
 	db "ICE PATH B3F@"
-Dungeons_Map_Name95: ; ICE_PATH_ARTICUNO_CHAMBER
+Dungeons_Map_Name97: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
-Dungeons_Map_Name96: ; DRAGONS_DEN_1F
+Dungeons_Map_Name98: ; DRAGONS_DEN_1F
 	db "DRAGON'S DEN 1F@"
-Dungeons_Map_Name97: ; DRAGONS_DEN_B1F
+Dungeons_Map_Name99: ; DRAGONS_DEN_B1F
 	db "DRAGON'S DEN B1F@"
-Dungeons_Map_Name98: ; DRAGON_SHRINE
+Dungeons_Map_Name100: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
-Dungeons_Map_Name99: ; TOHJO_FALLS
+Dungeons_Map_Name101: ; TOHJO_FALLS
 	db "TOHJO FALLS@"
-Dungeons_Map_Name100: ; MEW_ANTECHAMBER
+Dungeons_Map_Name102: ; MEW_ANTECHAMBER
 	db "TOHJO GROTTO@"
-Dungeons_Map_Name101: ; MEW_CHAMBER
+Dungeons_Map_Name103: ; MEW_CHAMBER
 	db "????????????????@"
-Dungeons_Map_Name102: ; VICTORY_ROAD
+Dungeons_Map_Name104: ; VICTORY_ROAD
 	db "VICTORY ROAD@"
-Dungeons_Map_Name103: ; SILVER_CAVE_ROOM_1
+Dungeons_Map_Name105: ; SILVER_CAVE_ROOM_1
 	db "MT.SILVER FOYER@"
-Dungeons_Map_Name104: ; SILVER_CAVE_ROOM_2
+Dungeons_Map_Name106: ; SILVER_CAVE_ROOM_2
 	db "MT.SILVER FALLS@"
-Dungeons_Map_Name105: ; SILVER_CAVE_ROOM_3
+Dungeons_Map_Name107: ; SILVER_CAVE_ROOM_3
 	db "MT.SILVER SHAFT@"
-Dungeons_Map_Name106: ; SILVER_CAVE_ITEM_ROOMS
+Dungeons_Map_Name108: ; SILVER_CAVE_ITEM_ROOMS
 	db "MT.SILVER DEPTHS@"
-Dungeons_Map_Name107: ; SILVER_CAVE_MOLTRES_CHAMBER
+Dungeons_Map_Name109: ; SILVER_CAVE_MOLTRES_CHAMBER
 	db "MT.SILVER RUINS@"
