@@ -1,9 +1,14 @@
 	object_const_def
+	const MOUNTMOONB2F_ROCK1
+	const MOUNTMOONB2F_ROCK2
 
 MountMoonB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+MountMoonB2FRock:
+	jumpstd SmashRockScript
 
 MountMoonB2F_MapEvents:
 	db 0, 0 ; filler
@@ -21,3 +26,5 @@ MountMoonB2F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 13,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FRock, -1
+	object_event 14,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FRock, -1
