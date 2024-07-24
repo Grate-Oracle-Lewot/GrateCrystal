@@ -1,7 +1,7 @@
 	object_const_def
 	const MOUNTMOON_SILVER
 
-MountMoon_MapScripts:
+MountMoon1F_MapScripts:
 	def_scene_scripts
 	scene_script .RivalEncounter ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINISHED
@@ -136,7 +136,7 @@ MountMoonSilverTextAfter:
 	cont "KNOW MY STRENGTH"
 	done
 
-MountMoon_MapEvents:
+MountMoon1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
