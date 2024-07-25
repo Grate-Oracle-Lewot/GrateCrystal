@@ -214,6 +214,7 @@ KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
+	const LUNA
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -241,6 +242,7 @@ KRIS EQU __trainer_class__
 	const ALLEN
 	const DARIN
 	const TEAL
+	const BUZZ
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN
@@ -265,6 +267,7 @@ KRIS EQU __trainer_class__
 	const REENA3
 	const CARA
 	const AZURE
+	const STELLA
 
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
@@ -377,6 +380,7 @@ KRIS EQU __trainer_class__
 	const ARNIE4
 	const ARNIE5
 	const WAYNE
+	const LOUIE
 
 	trainerclass FISHER ; 25
 	const JUSTIN
@@ -507,6 +511,7 @@ KRIS EQU __trainer_class__
 	const PARRY3
 	const ANTHONY4
 	const ANTHONY5
+	const HOUSTON
 
 	trainerclass BIKER ; 2d
 	const BIKER_BENNY
