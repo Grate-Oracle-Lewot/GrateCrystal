@@ -1,4 +1,9 @@
 	object_const_def
+	const MOUNTMOON1F_BUG_CATCHER
+	const MOUNTMOON1F_LASS
+	const MOUNTMOON1F_POKEFAN_M
+	const MOUNTMOON1F_COOLTRAINER_M
+	const MOUNTMOON1F_COOLTRAINER_F
 	const MOUNTMOON_SILVER
 
 MountMoon1F_MapScripts:
@@ -69,6 +74,67 @@ MountMoon1F_MapScripts:
 	playmapmusic
 	end
 
+TrainerBugCatcherLouie:
+	trainer BUG_CATCHER, LOUIE, EVENT_BEAT_BUG_CATCHER_LOUIE, BugCatcherLouieSeenText, BugCatcherLouieBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BugCatcherLouieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerLassLuna:
+	trainer LASS, LUNA, EVENT_BEAT_LASS_LUNA, LassLunaSeenText, LassLunaBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext LassLunaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerHikerHouston:
+	trainer HIKER, HOUSTON, EVENT_BEAT_HIKER_HOUSTON, HikerHoustonSeenText, HikerHoustonBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext HikerHoustonAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermBuzz:
+	trainer COOLTRAINERM, BUZZ, EVENT_BEAT_COOLTRAINERM_BUZZ, CooltrainermBuzzSeenText, CooltrainermBuzzBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext CooltrainermBuzzAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfStella:
+	trainer COOLTRAINERF, STELLA, EVENT_BEAT_COOLTRAINERF_STELLA, CooltrainerfStellaSeenText, CooltrainerfStellaBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext CooltrainerfStellaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+MountMoon1FHiddenMoonBall:
+	hiddenitem MOON_BALL, EVENT_MOUNT_MOON_1F_HIDDEN_MOON_BALL
+
+MountMoon1FHiddenStardust:
+	hiddenitem STARDUST, EVENT_MOUNT_MOON_1F_HIDDEN_STARDUST
+
 MountMoonSilverMovementBefore:
 	step DOWN
 	step DOWN
@@ -136,6 +202,85 @@ MountMoonSilverTextAfter:
 	cont "KNOW MY STRENGTH"
 	done
 
+BugCatcherLouieSeenText:
+	text "I'm the king of"
+	line "bugs!"
+	done
+
+BugCatcherLouieBeatenText:
+	text "D'oh…"
+	done
+
+BugCatcherLouieAfterBattleText:
+	text "I'm hungry…"
+	done
+
+LassLunaSeenText:
+	text "I'll reduce you to"
+	line "a crater!"
+	done
+
+LassLunaBeatenText:
+	text "Never mind…"
+	done
+
+LassLunaAfterBattleText:
+	text "I'll work on my"
+	line "smack talk."
+	done
+
+HikerHoustonSeenText:
+	text "This cave… is this"
+	line "what the surface"
+
+	para "of the moon is"
+	line "like?"
+	done
+
+HikerHoustonBeatenText:
+	text "I got distracted!"
+	done
+
+HikerHoustonAfterBattleText:
+	text "For hiking, you"
+	line "need a good stick."
+	done
+
+CooltrainermBuzzSeenText:
+	text "This is one small"
+	line "step for man…"
+
+	para "One giant leap for"
+	line "#MON!"
+	done
+
+CooltrainermBuzzBeatenText:
+	text "I needed a bigger"
+	line "leap."
+	done
+
+CooltrainermBuzzAfterBattleText:
+	text "I'll follow my"
+	line "footprints to find"
+	cont "my way out."
+	done
+
+CooltrainerfStellaSeenText:
+	text "I have a rare and"
+	line "mysterious #-"
+	cont "MON!"
+	done
+
+CooltrainerfStellaBeatenText:
+	text "Hmm… didn't cut it."
+	done
+
+CooltrainerfStellaAfterBattleText:
+	text "There must be a"
+	line "rarer #MON than"
+	cont "CLEFAIRY here…"
+	done
+
 MountMoon1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -148,6 +293,13 @@ MountMoon1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  4, 27, BGEVENT_ITEM, MountMoon1FHiddenMoonBall
+	bg_event 20, 33, BGEVENT_ITEM, MountMoon1FHiddenStardust
 
 	def_object_events
+	object_event  5, 22, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherLouie, -1
+	object_event 30,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassLuna, -1
+	object_event  5,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerHouston, -1
+	object_event 30, 27, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermBuzz, -1
+	object_event 24, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfStella, -1
 	object_event 15, 29, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
