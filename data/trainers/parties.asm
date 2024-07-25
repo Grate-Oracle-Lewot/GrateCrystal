@@ -1908,6 +1908,7 @@ BugCatcherGroup:
 	db "LOUIE@", TRAINERTYPE_NORMAL
 	db 63, ARIADOS
 	db 63, PARASECT
+	db 63, SHUCKLE
 	db -1 ; end
 
 FisherGroup:
