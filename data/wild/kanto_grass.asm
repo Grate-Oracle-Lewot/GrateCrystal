@@ -746,7 +746,7 @@ KantoGrassWildMons:
 	db 2, BULBASAUR
 	end_grass_wildmons
 
-	def_grass_wildmons MOUNT_MOON
+	def_grass_wildmons MOUNT_MOON_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, ZUBAT
@@ -755,8 +755,8 @@ KantoGrassWildMons:
 	db 9, PARAS
 	db 9, GEODUDE
 	db 6, CLEFAIRY
-	db 5, TOGETIC
-	db 10, WHIMSICOTT
+	db 5, CLEFABLE
+	db 10, COTTONEE
 	; day
 	db 4, ZUBAT
 	db 6, GEODUDE
@@ -765,7 +765,7 @@ KantoGrassWildMons:
 	db 9, GEODUDE
 	db 6, CLEFAIRY
 	db 7, CLEFAIRY
-	db 7, WHIMSICOTT
+	db 7, COTTONEE
 	; nite
 	db 4, ZUBAT
 	db 6, GEODUDE
@@ -775,6 +775,68 @@ KantoGrassWildMons:
 	db 10, CLEFAIRY
 	db 11, CLEFAIRY
 	db 8, WOBBUFFET
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, ZUBAT
+	db 6, GEODUDE
+	db 7, SANDSHREW
+	db 9, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 5, TOGETIC
+	db 10, WHIMSICOTT
+	; day
+	db 5, ZUBAT
+	db 6, GEODUDE
+	db 7, SANDSHREW
+	db 10, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 7, CLEFAIRY
+	db 7, COTTONEE
+	; nite
+	db 5, ZUBAT
+	db 6, GEODUDE
+	db 6, CLEFAIRY
+	db 11, PARAS
+	db 9, GEODUDE
+	db 10, CLEFAIRY
+	db 11, CLEFABLE
+	db 9, WOBBUFFET
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 6, ZUBAT
+	db 6, GEODUDE
+	db 9, SANDSHREW
+	db 9, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 5, TOGETIC
+	db 10, WHIMSICOTT
+	; day
+	db 6, ZUBAT
+	db 6, GEODUDE
+	db 9, SANDSHREW
+	db 10, PARAS
+	db 9, GEODUDE
+	db 6, CLEFAIRY
+	db 7, CLEFABLE
+	db 7, WHIMSICOTT
+	; nite
+	db 6, ZUBAT
+	db 6, GEODUDE
+	db 6, CLEFAIRY
+	db 11, PARAS
+	db 10, GEODUDE
+	db 10, CLEFAIRY
+	db 11, CLEFABLE
+	db 10, WOBBUFFET
 	end_grass_wildmons
 
 	def_grass_wildmons DIGLETTS_CAVE
