@@ -208,7 +208,8 @@ BugCatcherLouieSeenText:
 	done
 
 BugCatcherLouieBeatenText:
-	text "D'oh…"
+	text "Long live the"
+	line "king."
 	done
 
 BugCatcherLouieAfterBattleText:
