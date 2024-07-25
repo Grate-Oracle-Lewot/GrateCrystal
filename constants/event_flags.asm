@@ -1165,7 +1165,8 @@
 	const EVENT_BEAT_GENTLEMAN_NAVY
 	const EVENT_BEAT_GUITARIST_COBALT
 	const EVENT_BEAT_JUGGLER_CYAN
-; Unused: next 116 (now 31) events
+	const EVENT_MOUNT_MOON_B2F_STAR_PIECE
+; Unused: next 116 (now 30) events
 
 	const_next 1600
 ; Sprite visibility flags
