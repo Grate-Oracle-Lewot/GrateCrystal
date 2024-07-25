@@ -3073,7 +3073,7 @@ wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wVermilionPortSceneID::                           db
 wOlivinePortSceneID::                             db
-wMountMoonSceneID::                               db
+wMountMoon1FSceneID::                             db
 wSproutTower3FSceneID::                           db
 wRuinsOfAlphOutsideSceneID::                      db
 wRuinsOfAlphInnerChamberSceneID::                 db
