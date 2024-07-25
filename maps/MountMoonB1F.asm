@@ -5,6 +5,9 @@ MountMoonB1F_MapScripts:
 
 	def_callbacks
 
+MountMoonB1FHiddenMaxRepel:
+	hiddenitem MAX_REPEL, EVENT_MOUNT_MOON_B1F_HIDDEN_MAX_REPEL
+
 MountMoonB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -25,5 +28,6 @@ MountMoonB1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event 28, 21, BGEVENT_ITEM, MountMoonB1FHiddenMaxRepel
 
 	def_object_events
