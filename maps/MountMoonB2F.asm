@@ -1,11 +1,15 @@
 	object_const_def
 	const MOUNTMOONB2F_ROCK1
 	const MOUNTMOONB2F_ROCK2
+	const MOUNTMOONB2F_POKE_BALL
 
 MountMoonB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+MountMoonB2FStarPiece:
+	itemball STAR_PIECE
 
 MountMoonB2FRock:
 	jumpstd SmashRockScript
@@ -28,3 +32,4 @@ MountMoonB2F_MapEvents:
 	def_object_events
 	object_event 13,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FRock, -1
 	object_event 14,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMoonB2FRock, -1
+	object_event 20,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FStarPiece, EVENT_MOUNT_MOON_B2F_STAR_PIECE
