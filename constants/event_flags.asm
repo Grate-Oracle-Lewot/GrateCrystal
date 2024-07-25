@@ -293,12 +293,13 @@
 	const EVENT_BEAT_ENGINEER_DYLAN
 	const EVENT_BEAT_ENGINEER_CAMDEN
 	const EVENT_BEAT_ENGINEER_FLINT
+	const EVENT_BEAT_SUPER_NERD_NEIL
 	const EVENT_ROUTE_4_PERCY
 	const EVENT_ROUTE_17_LUCAS
 	const EVENT_ROUTE_20_A_D
 	const EVENT_FOUND_PERCY_ON_ROUTE_4
 	const EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
-; Unused: next 317 events
+; Unused: next 316 events
 
 	const_next 600
 ; Kurt Apricorn events
