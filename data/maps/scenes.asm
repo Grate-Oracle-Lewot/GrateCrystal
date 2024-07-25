@@ -62,7 +62,7 @@ MapScenes::
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var VERMILION_PORT,                              wVermilionPortSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
-	scene_var MOUNT_MOON,                                  wMountMoonSceneID
+	scene_var MOUNT_MOON_1F,                               wMountMoon1FSceneID
 	scene_var SPROUT_TOWER_3F,                             wSproutTower3FSceneID
 	scene_var RUINS_OF_ALPH_OUTSIDE,                       wRuinsOfAlphOutsideSceneID
 	scene_var RUINS_OF_ALPH_INNER_CHAMBER,                 wRuinsOfAlphInnerChamberSceneID
