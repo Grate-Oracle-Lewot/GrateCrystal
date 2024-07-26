@@ -415,7 +415,7 @@ ENDM
 	newgroup DUNGEONS                                       ; group 27
 	map_const MOUNT_MOON_1F,                               20, 18 ;   1
 	map_const MOUNT_MOON_B1F,                              20, 18 ;   2
-	map_const MOUNT_MOON_B2F,                              20, 18 ;   3
+	map_const MOUNT_MOON_B2F,                              26, 19 ;   3
 	map_const UNDERGROUND_PATH,                             3, 14 ;   4
 	map_const DIGLETTS_CAVE,                               10, 18 ;   5
 	map_const ROCK_TUNNEL_1F,                              15, 18 ;   6
