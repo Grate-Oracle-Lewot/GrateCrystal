@@ -41,6 +41,7 @@ MeetMomScript:
 	opentext
 	writetext ElmsLookingForYouText
 	promptbutton
+	giveitem PICKAXE
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
