@@ -605,7 +605,7 @@ ENDM
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
 	map_attributes MountMoon1F, MOUNT_MOON_1F, $09, 0
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $09, 0
-	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $00, 0
+	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $02, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
