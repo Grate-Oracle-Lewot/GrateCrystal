@@ -1,10 +1,10 @@
 	db "SYMBOL@" ; species name
 	dw 108, 110 ; height, weight
 
-	db   "It defies known"
-	next "science of #MON"
-	next "typing. Its many"
+	db   "It seems to be"
+	next "merely a tendril"
+	next "of something"
 
-	page "shapes are thought"
-	next "to hold some"
-	next "meaning.@"
+	page "reaching in from"
+	next "beyond our dimens-"
+	next "ional bounds.@"
