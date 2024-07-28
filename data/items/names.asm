@@ -24,7 +24,7 @@ ItemNames::
 	li "THUNDERSTONE"
 	li "WATER STONE"
 	li "CATCH CHARM"
-	li "HP UP"
+	li "FIBER"
 	li "PROTEIN"
 	li "IRON"
 	li "CARBOS"
