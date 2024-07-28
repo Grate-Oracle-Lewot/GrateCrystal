@@ -288,9 +288,9 @@ ShellderEggMoves:
 	db -1 ; end
 
 GastlyEggMoves:
-	db AIR_SLASH
 	db SILVER_WIND
 	db FORESIGHT
+	db LEER
 	db ACID
 	db ACID_ARMOR
 	db HAZE
