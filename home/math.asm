@@ -101,9 +101,9 @@ ConvertPercentages::
 	add hl, hl
 	add hl, hl
 
-	; Set the "l" register to 0.5, otherwise the rounded value may be lower than expected.
+	; Set the "l" register to 0.6, otherwise the rounded value may be lower than expected.
 	; Round the high byte to nearest and drop the low byte.
-	ld l, 0.5
+	ld l, 0.6
 	sla l
 	sbc a
 	and 1
