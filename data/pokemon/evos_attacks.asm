@@ -3039,7 +3039,7 @@ SlowkingEvosAttacks:
 	db 46, AMNESIA
 	db 54, PSYCHIC_M
 	db 60, VITAL_THROW
-	db 68, CRABHAMMER
+	db 68, SKULL_BASH
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
