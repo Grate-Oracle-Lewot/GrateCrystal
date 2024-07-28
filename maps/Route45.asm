@@ -329,9 +329,9 @@ HikerMichaelBeatenText:
 
 HikerMichaelAfterBattleText:
 	text "Boy, do I love"
-	line "HP UP! Mmmm, yum!"
+	line "FIBER! Mmmm, yum!"
 
-	para "I keep drinking my"
+	para "I keep eating my"
 	line "#MON's!"
 
 	para "I can't help it!"
@@ -475,15 +475,6 @@ CooltrainerfKellyAfterBattleText:
 	para "I want to win, but"
 	line "I also don't want"
 	cont "to harm #MON."
-	done
-
-Route45DummyText:
-	text "I'm really, really"
-	line "tough!"
-
-	para "Is there anywhere"
-	line "I can prove how"
-	cont "tough I really am?"
 	done
 
 CamperQuentinSeenText:
