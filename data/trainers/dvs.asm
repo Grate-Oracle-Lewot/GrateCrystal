@@ -74,8 +74,8 @@ TrainerClassDVs:
 	dn 12, 13, 13, 12 ; BOSS
 	dn  8,  8,  8,  8 ; JESSIE &
 	dn 15,  0,  0,  0 ; AEROBONES
-	dn 15,  0,  0,  0 ; KABUBONES
-	dn 15,  0,  0,  0 ; MISSINGNO_T
+	dn 15, 14, 14, 14 ; KABUBONES
+	dn  0,  0,  0,  0 ; MISSINGNO_T
 	dn  6,  7,  7,  6 ; GAMBLER
 	dn 13, 14, 14, 13 ; CAL_F
 	dn  6,  5,  5,  6 ; OLD
