@@ -288,7 +288,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
 - Trainers automatically offer their phone numbers when defeated, and their rematch parties are based solely on event progress instead of fight count
 - Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; a Pokémon Center added to Route 3 with a flypoint
-- Instant text speed option
+- Default Fast text speed and Instant speed option
 - Default player and rival names changed
 - Outdoor sprite system improvement
 - Event initialization system improvement
