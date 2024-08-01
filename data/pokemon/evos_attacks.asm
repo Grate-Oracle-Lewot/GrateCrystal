@@ -2567,8 +2567,8 @@ ChinchouEvosAttacks:
 	db EVOLVE_LEVEL, 27, LANTURN
 	db 0 ; no more evolutions
 	db 1, FLAIL
-	db 2, THUNDER_WAVE
-	db 5, SUPERSONIC
+	db 2, SUPERSONIC
+	db 5, THUNDER_WAVE
 	db 13, AURORA_BEAM
 	db 17, SPARK
 	db 25, SIGNAL_BEAM
@@ -2581,8 +2581,8 @@ ChinchouEvosAttacks:
 LanturnEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FLAIL
-	db 2, THUNDER_WAVE
-	db 5, SUPERSONIC
+	db 2, SUPERSONIC
+	db 5, THUNDER_WAVE
 	db 13, AURORA_BEAM
 	db 17, SPARK
 	db 25, SIGNAL_BEAM
