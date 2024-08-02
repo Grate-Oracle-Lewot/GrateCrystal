@@ -267,19 +267,20 @@ CooltrainermBuzzAfterBattleText:
 	done
 
 CooltrainerfStellaSeenText:
-	text "I have a rare and"
-	line "mysterious #-"
-	cont "MON!"
+	text "I heard something"
+	line "about a rabbit on"
+	cont "the moon."
+
+	para "Is it a #MON?"
 	done
 
 CooltrainerfStellaBeatenText:
-	text "Hmm… didn't cut it."
+	text "Hey diddle diddle…"
 	done
 
 CooltrainerfStellaAfterBattleText:
-	text "There must be a"
-	line "rarer #MON than"
-	cont "CLEFAIRY here…"
+	text "Shine on you crazy"
+	line "diamond."
 	done
 
 MountMoon1F_MapEvents:
