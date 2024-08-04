@@ -372,7 +372,7 @@ Route22HouseOfficerJennyScript:
 	end
 
 Route22HouseRadio:
-	jumpstd Radio2Script
+	jumptext Route22HouseRadioText
 
 Route22HouseRealKarenBeforeText:
 	text "Those who lurk in"
@@ -719,6 +719,10 @@ Route22HouseOfficerJennyAfterText:
 
 	para "never seem to"
 	line "catch him…"
+	done
+
+Route22HouseRadioText:
+	text "Dead battery…"
 	done
 
 Route22House_MapEvents:
