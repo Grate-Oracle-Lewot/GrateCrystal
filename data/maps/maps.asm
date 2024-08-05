@@ -17,33 +17,34 @@ ENDM
 MapGroupPointers::
 ; pointers to the first map of each map group
 	table_width 2, MapGroupPointers
-	dw MapGroup_CableClub   ;  1
-	dw MapGroup_Pallet      ;  2
-	dw MapGroup_Viridian    ;  3
-	dw MapGroup_Pewter      ;  4
-	dw MapGroup_Cerulean    ;  5
-	dw MapGroup_Vermilion   ;  6
-	dw MapGroup_Lavender    ;  7
-	dw MapGroup_Celadon     ;  8
-	dw MapGroup_Fuchsia     ;  9
-	dw MapGroup_Safari      ; 10
-	dw MapGroup_Saffron     ; 11
-	dw MapGroup_Cinnabar    ; 12
-	dw MapGroup_Indigo      ; 13
-	dw MapGroup_Silver      ; 14
-	dw MapGroup_NewBark     ; 15
-	dw MapGroup_Cherrygrove ; 16
-	dw MapGroup_Violet      ; 17
-	dw MapGroup_Azalea      ; 18
-	dw MapGroup_Goldenrod   ; 19
-	dw MapGroup_Ecruteak    ; 20
-	dw MapGroup_Olivine     ; 21
-	dw MapGroup_Cianwood    ; 22
-	dw MapGroup_Mahogany    ; 23
-	dw MapGroup_LakeOfRage  ; 24
-	dw MapGroup_Blackthorn  ; 25
-	dw MapGroup_FastShip    ; 26
-	dw MapGroup_Dungeons    ; 27
+	dw MapGroup_CableClub     ;  1
+	dw MapGroup_Pallet        ;  2
+	dw MapGroup_Viridian      ;  3
+	dw MapGroup_Pewter        ;  4
+	dw MapGroup_Cerulean      ;  5
+	dw MapGroup_Vermilion     ;  6
+	dw MapGroup_Lavender      ;  7
+	dw MapGroup_Celadon       ;  8
+	dw MapGroup_Fuchsia       ;  9
+	dw MapGroup_Safari        ; 10
+	dw MapGroup_Saffron_Inner ; 11
+	dw MapGroup_Saffron_Outer ; 12
+	dw MapGroup_Cinnabar      ; 13
+	dw MapGroup_Indigo        ; 14
+	dw MapGroup_Silver        ; 15
+	dw MapGroup_NewBark       ; 16
+	dw MapGroup_Cherrygrove   ; 17
+	dw MapGroup_Violet        ; 18
+	dw MapGroup_Azalea        ; 19
+	dw MapGroup_Goldenrod     ; 20
+	dw MapGroup_Ecruteak      ; 21
+	dw MapGroup_Olivine       ; 22
+	dw MapGroup_Cianwood      ; 23
+	dw MapGroup_Mahogany      ; 24
+	dw MapGroup_LakeOfRage    ; 25
+	dw MapGroup_Blackthorn    ; 26
+	dw MapGroup_FastShip      ; 27
+	dw MapGroup_Dungeons      ; 28
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_CableClub:
@@ -203,8 +204,8 @@ MapGroup_Safari:
 	map SafariZone, TILESET_PARK, ROUTE, LANDMARK_SAFARI_ZONE, MUSIC_SAFARI_ZONE, TRUE, PALETTE_AUTO, FISHGROUP_DRATINI
 	assert_table_length NUM_SAFARI_MAPS
 
-MapGroup_Saffron:
-	table_width MAP_LENGTH, MapGroup_Saffron
+MapGroup_Saffron_Inner:
+	table_width MAP_LENGTH, MapGroup_Saffron_Inner
 	map SaffronCity, TILESET_KANTO, TOWN, LANDMARK_SAFFRON_CITY, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	map SaffronPokecenter1F, TILESET_POKECENTER, INDOOR, LANDMARK_SAFFRON_CITY, MUSIC_POKEMON_CENTER, FALSE, PALETTE_DAY, FISHGROUP_NONE
 	map SaffronMart, TILESET_MART, INDOOR, LANDMARK_SAFFRON_CITY, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
@@ -215,11 +216,14 @@ MapGroup_Saffron:
 	map CopycatsHouse1F, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_SAFFRON_CITY, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
 	map CopycatsHouse2F, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_SAFFRON_CITY, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
 	map MrPsychicsHouse, TILESET_HOUSE, INDOOR, LANDMARK_SAFFRON_CITY, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
+	assert_table_length NUM_SAFFRON_INNER_MAPS
+
+MapGroup_Saffron_Outer:
 	map Route5, TILESET_KANTO, ROUTE, LANDMARK_ROUTE_5, MUSIC_ROUTE_3, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	map Route5UndergroundPathEntrance, TILESET_GATE, GATE, LANDMARK_ROUTE_5, MUSIC_ROUTE_3, FALSE, PALETTE_DAY, FISHGROUP_NONE
 	map Route5CleanseTagHouse, TILESET_HOUSE, INDOOR, LANDMARK_ROUTE_5, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
 	map Route5SaffronGate, TILESET_GATE, GATE, LANDMARK_ROUTE_5, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_DAY, FISHGROUP_NONE
-	assert_table_length NUM_SAFFRON_MAPS
+	assert_table_length NUM_SAFFRON_OUTER_MAPS
 
 MapGroup_Cinnabar:
 	table_width MAP_LENGTH, MapGroup_Cinnabar
