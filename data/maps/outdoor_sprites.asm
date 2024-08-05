@@ -4,33 +4,34 @@
 OutdoorSprites:
 ; entries correspond to MAPGROUP_* constants
 	table_width 2, OutdoorSprites
-	dw CableClubGroupSprites   ;  1
-	dw PalletGroupSprites      ;  2
-	dw ViridianGroupSprites    ;  3
-	dw PewterGroupSprites      ;  4
-	dw CeruleanGroupSprites    ;  5
-	dw VermilionGroupSprites   ;  6
-	dw LavenderGroupSprites    ;  7
-	dw CeladonGroupSprites     ;  8
-	dw FuchsiaGroupSprites     ;  9
-	dw SafariGroupSprites      ; 10
-	dw SaffronGroupSprites     ; 11
-	dw CinnabarGroupSprites    ; 12
-	dw IndigoGroupSprites      ; 13
-	dw SilverGroupSprites      ; 14
-	dw NewBarkGroupSprites     ; 15
-	dw CherrygroveGroupSprites ; 16
-	dw VioletGroupSprites      ; 17
-	dw AzaleaGroupSprites      ; 18
-	dw GoldenrodGroupSprites   ; 19
-	dw EcruteakGroupSprites    ; 20
-	dw OlivineGroupSprites     ; 21
-	dw CianwoodGroupSprites    ; 22
-	dw MahoganyGroupSprites    ; 23
-	dw LakeOfRageGroupSprites  ; 24
-	dw BlackthornGroupSprites  ; 25
-	dw FastShipGroupSprites    ; 26
-	dw DungeonsGroupSprites    ; 27
+	dw CableClubGroupSprites    ;  1
+	dw PalletGroupSprites       ;  2
+	dw ViridianGroupSprites     ;  3
+	dw PewterGroupSprites       ;  4
+	dw CeruleanGroupSprites     ;  5
+	dw VermilionGroupSprites    ;  6
+	dw LavenderGroupSprites     ;  7
+	dw CeladonGroupSprites      ;  8
+	dw FuchsiaGroupSprites      ;  9
+	dw SafariGroupSprites       ; 10
+	dw SaffronInnerGroupSprites ; 11
+	dw SaffronOuterGroupSprites ; 12
+	dw CinnabarGroupSprites     ; 13
+	dw IndigoGroupSprites       ; 14
+	dw SilverGroupSprites       ; 15
+	dw NewBarkGroupSprites      ; 16
+	dw CherrygroveGroupSprites  ; 17
+	dw VioletGroupSprites       ; 18
+	dw AzaleaGroupSprites       ; 19
+	dw GoldenrodGroupSprites    ; 20
+	dw EcruteakGroupSprites     ; 21
+	dw OlivineGroupSprites      ; 22
+	dw CianwoodGroupSprites     ; 23
+	dw MahoganyGroupSprites     ; 24
+	dw LakeOfRageGroupSprites   ; 25
+	dw BlackthornGroupSprites   ; 26
+	dw FastShipGroupSprites     ; 27
+	dw DungeonsGroupSprites     ; 28
 	assert_table_length NUM_MAP_GROUPS
 
 CableClubGroupSprites:
@@ -69,8 +70,8 @@ CinnabarGroupSprites:
 ; CeruleanCity and Route5 are connected
 CeruleanGroupSprites:
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
-SaffronGroupSprites:
-; Route5, SaffronCity
+SaffronOuterGroupSprites:
+; Route5
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
@@ -119,6 +120,18 @@ SafariGroupSprites:
 	db SPRITE_FISH
 	db SPRITE_SUDOWOODO
 	db SPRITE_POKE_BALL
+	db 0 ; end
+
+SaffronInnerGroupSprites:
+; SaffronCity
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_POKEFAN_M
+	db SPRITE_FISHER
+	; max 6 of 9 walking sprites
+	db SPRITE_PIKACHU
 	db 0 ; end
 
 CeladonGroupSprites:
