@@ -194,6 +194,7 @@ ENDM
 	map_const COPYCATS_HOUSE_1F,                            4,  4 ;  8
 	map_const COPYCATS_HOUSE_2F,                            5,  3 ;  9
 	map_const MR_PSYCHICS_HOUSE,                            4,  4 ; 10
+	endgroup
 
 	newgroup SAFFRON_OUTER                                  ; group 12
 	map_const ROUTE_5,                                     10,  9 ;  1
