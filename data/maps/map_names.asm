@@ -1,32 +1,33 @@
 MapGroupNum_Names::
 	table_width 2, MapGroupNum_Names
-	dw Cable_Club_Map_Names   ;  1
-	dw Pallet_Map_Names       ;  2
-	dw Viridian_Map_Names     ;  3
-	dw Pewter_Map_Names       ;  4
-	dw Cerulean_Map_Names     ;  5
-	dw Vermilion_Map_Names    ;  6
-	dw Lavender_Map_Names     ;  7
-	dw Celadon_Map_Names      ;  8
-	dw Fuchsia_Map_Names      ;  9
-	dw Safari_Map_Names       ; 10
-	dw Saffron_Map_Names      ; 11
-	dw Cinnabar_Map_Names     ; 12
-	dw Indigo_Map_Names       ; 13
-	dw Silver_Map_Names       ; 14
-	dw New_Bark_Map_Names     ; 15
-	dw Cherrygrove_Map_Names  ; 16
-	dw Violet_Map_Names       ; 17
-	dw Azalea_Map_Names       ; 18
-	dw Goldenrod_Map_Names    ; 19
-	dw Ecruteak_Map_Names     ; 20
-	dw Olivine_Map_Names      ; 21
-	dw Cianwood_Map_Names     ; 22
-	dw Mahogany_Map_Names     ; 23
-	dw Lake_of_Rage_Map_Names ; 24
-	dw Blackthorn_Map_Names   ; 25
-	dw Fast_Ship_Map_Names    ; 26
-	dw Dungeons_Map_Names     ; 27
+	dw Cable_Club_Map_Names    ;  1
+	dw Pallet_Map_Names        ;  2
+	dw Viridian_Map_Names      ;  3
+	dw Pewter_Map_Names        ;  4
+	dw Cerulean_Map_Names      ;  5
+	dw Vermilion_Map_Names     ;  6
+	dw Lavender_Map_Names      ;  7
+	dw Celadon_Map_Names       ;  8
+	dw Fuchsia_Map_Names       ;  9
+	dw Safari_Map_Names        ; 10
+	dw Saffron_Inner_Map_Names ; 11
+	dw Saffron_Outer_Map_Names ; 12
+	dw Cinnabar_Map_Names      ; 13
+	dw Indigo_Map_Names        ; 14
+	dw Silver_Map_Names        ; 15
+	dw New_Bark_Map_Names      ; 16
+	dw Cherrygrove_Map_Names   ; 17
+	dw Violet_Map_Names        ; 18
+	dw Azalea_Map_Names        ; 19
+	dw Goldenrod_Map_Names     ; 20
+	dw Ecruteak_Map_Names      ; 21
+	dw Olivine_Map_Names       ; 22
+	dw Cianwood_Map_Names      ; 23
+	dw Mahogany_Map_Names      ; 24
+	dw Lake_of_Rage_Map_Names  ; 25
+	dw Blackthorn_Map_Names    ; 26
+	dw Fast_Ship_Map_Names     ; 27
+	dw Dungeons_Map_Names      ; 28
 	assert_table_length NUM_MAP_GROUPS
 
 GetMapGroupNum_Name::
@@ -212,22 +213,25 @@ Safari_Map_Names: ; SAFARI
 	dw Safari_Map_Name1 ; SAFARI_ZONE
 	assert_table_length NUM_SAFARI_MAPS
 
-Saffron_Map_Names: ; SAFFRON
-	table_width 2, Saffron_Map_Names
-	dw Saffron_Map_Name1  ; SAFFRON_CITY
-	dw Saffron_Map_Name2  ; SAFFRON_POKECENTER_1F
-	dw Saffron_Map_Name3  ; SAFFRON_MART
-	dw Saffron_Map_Name4  ; SAFFRON_GYM
-	dw Saffron_Map_Name5  ; FIGHTING_DOJO
-	dw Saffron_Map_Name6  ; SILPH_CO_1F
-	dw Saffron_Map_Name7  ; SAFFRON_MAGNET_TRAIN_STATION
-	dw Saffron_Map_Name8  ; COPYCATS_HOUSE_1F
-	dw Saffron_Map_Name9  ; COPYCATS_HOUSE_2F
-	dw Saffron_Map_Name10 ; MR_PSYCHICS_HOUSE
-	dw Saffron_Map_Name11 ; ROUTE_5
-	dw Saffron_Map_Name12 ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	dw Saffron_Map_Name13 ; ROUTE_5_CLEANSE_TAG_HOUSE
-	dw Saffron_Map_Name14 ; ROUTE_5_SAFFRON_GATE
+Saffron_Inner_Map_Names: ; SAFFRON_INNER
+	table_width 2, Saffron_Inner_Map_Names
+	dw Saffron_Inner_Map_Name1  ; SAFFRON_CITY
+	dw Saffron_Inner_Map_Name2  ; SAFFRON_POKECENTER_1F
+	dw Saffron_Inner_Map_Name3  ; SAFFRON_MART
+	dw Saffron_Inner_Map_Name4  ; SAFFRON_GYM
+	dw Saffron_Inner_Map_Name5  ; FIGHTING_DOJO
+	dw Saffron_Inner_Map_Name6  ; SILPH_CO_1F
+	dw Saffron_Inner_Map_Name7  ; SAFFRON_MAGNET_TRAIN_STATION
+	dw Saffron_Inner_Map_Name8  ; COPYCATS_HOUSE_1F
+	dw Saffron_Inner_Map_Name9  ; COPYCATS_HOUSE_2F
+	dw Saffron_Inner_Map_Name10 ; MR_PSYCHICS_HOUSE
+
+Saffron_Outer_Map_Names: ; SAFFRON_OUTER
+	table_width 2, Saffron_Outer_Map_Names
+	dw Saffron_Outer_Map_Name1 ; ROUTE_5
+	dw Saffron_Outer_Map_Name2 ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
+	dw Saffron_Outer_Map_Name3 ; ROUTE_5_CLEANSE_TAG_HOUSE
+	dw Saffron_Outer_Map_Name4 ; ROUTE_5_SAFFRON_GATE
 	assert_table_length NUM_SAFFRON_MAPS
 
 Cinnabar_Map_Names: ; CINNABAR
@@ -815,33 +819,34 @@ Fuchsia_Map_Name13: ; ROUTE_18
 Safari_Map_Name1: ; SAFARI_ZONE
 	db "SAFARI ZONE@"
 
-Saffron_Map_Name1: ; SAFFRON_CITY
+Saffron_Inner_Map_Name1: ; SAFFRON_CITY
 	db "SAFFRON CITY@"
-Saffron_Map_Name2: ; SAFFRON_POKECENTER_1F
+Saffron_Inner_Map_Name2: ; SAFFRON_POKECENTER_1F
 	db "SAFFRON ", $E1, $E2, "CENTER@"
-Saffron_Map_Name3: ; SAFFRON_MART
+Saffron_Inner_Map_Name3: ; SAFFRON_MART
 	db "SAFFRON ", $70, $71, "MART@"
-Saffron_Map_Name4: ; SAFFRON_GYM
+Saffron_Inner_Map_Name4: ; SAFFRON_GYM
 	db "SAFFRON GYM@"
-Saffron_Map_Name5: ; FIGHTING_DOJO
+Saffron_Inner_Map_Name5: ; FIGHTING_DOJO
 	db "FIGHTING DOJO@"
-Saffron_Map_Name6: ; SILPH_CO_1F
+Saffron_Inner_Map_Name6: ; SILPH_CO_1F
 	db "SILPH CO. 1F@"
-Saffron_Map_Name7: ; SAFFRON_MAGNET_TRAIN_STATION
+Saffron_Inner_Map_Name7: ; SAFFRON_MAGNET_TRAIN_STATION
 	db "SAFFRON STATION@"
-Saffron_Map_Name8: ; COPYCATS_HOUSE_1F
+Saffron_Inner_Map_Name8: ; COPYCATS_HOUSE_1F
 	db "COPYCAT'S HOUSE@"
-Saffron_Map_Name9: ; COPYCATS_HOUSE_2F
+Saffron_Inner_Map_Name9: ; COPYCATS_HOUSE_2F
 	db "COPYCAT'S ROOM@"
-Saffron_Map_Name10: ; MR_PSYCHICS_HOUSE
+Saffron_Inner_Map_Name10: ; MR_PSYCHICS_HOUSE
 	db "MR. PSYCHIC'S@"
-Saffron_Map_Name11: ; ROUTE_5
+
+Saffron_Outer_Map_Name1: ; ROUTE_5
 	db "ROUTE 5@"
-Saffron_Map_Name12: ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
+Saffron_Outer_Map_Name2: ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
 	db "ROUTE 5 UTILITY@"
-Saffron_Map_Name13: ; ROUTE_5_CLEANSE_TAG_HOUSE
+Saffron_Outer_Map_Name3: ; ROUTE_5_CLEANSE_TAG_HOUSE
 	db "ROUTE 5 COTTAGE@"
-Saffron_Map_Name14: ; ROUTE_5_SAFFRON_GATE
+Saffron_Outer_Map_Name4: ; ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
 
 Cinnabar_Map_Name1: ; CINNABAR_ISLAND
