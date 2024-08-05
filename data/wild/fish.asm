@@ -154,7 +154,8 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     DRAGONAIR,  40
 .Dratini_2_Odd:
-	db  50 percent + 1, POLITOED,   23
+	db  25 percent,     OCTILLERY,  23
+	db  50 percent,     CASTAWEIGH, 23
 	db  75 percent + 1, DRATINI,    23
 	db 100 percent,     DRAGONAIR,  23
 
