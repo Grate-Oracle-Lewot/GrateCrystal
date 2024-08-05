@@ -225,6 +225,7 @@ Saffron_Inner_Map_Names: ; SAFFRON_INNER
 	dw Saffron_Inner_Map_Name8  ; COPYCATS_HOUSE_1F
 	dw Saffron_Inner_Map_Name9  ; COPYCATS_HOUSE_2F
 	dw Saffron_Inner_Map_Name10 ; MR_PSYCHICS_HOUSE
+	assert_table_length NUM_SAFFRON_INNER_MAPS
 
 Saffron_Outer_Map_Names: ; SAFFRON_OUTER
 	table_width 2, Saffron_Outer_Map_Names
@@ -232,7 +233,7 @@ Saffron_Outer_Map_Names: ; SAFFRON_OUTER
 	dw Saffron_Outer_Map_Name2 ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
 	dw Saffron_Outer_Map_Name3 ; ROUTE_5_CLEANSE_TAG_HOUSE
 	dw Saffron_Outer_Map_Name4 ; ROUTE_5_SAFFRON_GATE
-	assert_table_length NUM_SAFFRON_MAPS
+	assert_table_length NUM_SAFFRON_OUTER_MAPS
 
 Cinnabar_Map_Names: ; CINNABAR
 	table_width 2, Cinnabar_Map_Names
