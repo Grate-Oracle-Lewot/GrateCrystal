@@ -1700,36 +1700,65 @@ Pokedex_DrawDexEntryScreenBG:
 	call Pokedex_FillColumn
 	ld [hl], $39
 
+; SELECT > SHINY, START > MAP
+	; SELECT > $48, $49, $4a
+	; > SHINY $61-63
+	hlcoord	1, 0
+	ld [hl], $57 ; new curved text border, left
+	inc hl
+	ld a, $48 ; SELECT 1
+	ld [hli], a
+	inc a ; $49, SELECT 2
+	ld [hli], a
+	inc a ; $4a, SELECT 3
+	ld [hli], a
+	ld a, $61 ; SHINY 1
+	ld [hli], a
+	inc a ; $62, SHINY 2
+	ld [hli], a
+	inc a ; $63, SHINY 2
+	ld [hli], a
+	ld [hl], $58 ; new curved text border, right
+; clear the row for bottom menu
 	hlcoord 1, 17
-	ld bc, 18
+	ld bc, SCREEN_WIDTH - 2
 	ld a, " "
-	call ByteFill
-
-	hlcoord 2, 17
-	ld bc, $7
-	ld a, $7f ; black square
 	call ByteFill
 	ld c, 4
 	call DelayFrames
-
-	lb bc, 8, SCREEN_WIDTH - 1
-	hlcoord 1, 8
+; erase the bottom half of screen where info will go
+	lb bc, 8, SCREEN_WIDTH - 1 ; 8 tiles high, 19 tiles wide
+	hlcoord 1, 8 
 	call ClearBox
-	
+; horizonal skinny line ending in the page num tab
 	hlcoord 1, 8
 	ld bc, 19
 	ld a, $55
 	call ByteFill
+; category enclosure
+; ; corners
+; 	hlcoord 8, 5
+; 	ld [hl], $6f
+; 	inc hl
+; plaine horizontal line
+	hlcoord 8, 5
+	ld a, $4e ; VRAM 1
+	ld bc, 12
+	call ByteFill
+; ; vertical lateral lines	
+; 	hlcoord 8, 6
+; 	ld [hl], $6e
+; 	hlcoord 8, 7
+; 	ld [hl], $6e	
+; place species name
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
 	farcall DisplayDexMonType_CustomGFX
 	call GetPokemonName
-	hlcoord 9, 4
+	hlcoord 9, 3
 	call PlaceString ; mon species	
-
-.print_dex_num
-; Print dex number
-	hlcoord 9, 2
+; .print_dex_num ; Print dex number
+	hlcoord 10, 1
 	ld a, $5c ; No
 	ld [hli], a
 	ld a, $e8 ; .
@@ -1737,7 +1766,12 @@ Pokedex_DrawDexEntryScreenBG:
 	ld de, wTempSpecies
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
-
+; up/down arrow indicators
+	hlcoord 19, 0
+	ld [hl], $3f
+	hlcoord 19, 16
+	ld [hl], $40
+; place bottom row menu
 	hlcoord 0, 17
 	ld de, .MenuItems
 	call Pokedex_PlaceString
@@ -1747,7 +1781,8 @@ Pokedex_DrawDexEntryScreenBG:
 	dec a
 	call CheckCaughtMon
 	ret z
-	hlcoord 14, 2
+; place Caught ball icon
+	hlcoord 16, 1
 	ld [hl], $4f ; pokeball icon
 	ret
 
