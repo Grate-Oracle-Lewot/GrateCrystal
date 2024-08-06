@@ -212,7 +212,7 @@ Pokedex_PrintTMs:
 	; check if we need to move to next category or if there are moves left
 	call Pokedex_anymoreTMs
 	jr z, .done ; there are no moves left
-	; moves left
+	; there are moves left
 	jp DexEntry_IncPageNum
 
 .notcompatible
@@ -228,13 +228,13 @@ Pokedex_PrintTMs:
 	call DexEntry_NextCategory
 	ld a, c
 	and a
-	ret nz ; we've had at least one HM Move
+	ret nz
 	hlcoord 4, 9
 	ld de, DexEntry_NONE_text
 	jp PlaceString
 
 Pokedex_anymoreTMs:
-	; b has the current HM index
+	; b has the current TM index
 	ld a, NUM_TMS - 1
 	cp b
 	jr z, .none
@@ -263,6 +263,7 @@ Pokedex_anymoreTMs:
 	ld a, 1
 	and a
 	ret
+
 .none
 	xor a
 	ld [wPokedexStatus], a
@@ -270,15 +271,14 @@ Pokedex_anymoreTMs:
 
 Pokedex_PrintHMs:
 	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld c, $5
-	ld a, [wPokedexStatus]
+	ld a, [wPokedexStatus] ; machine moves index
 	ld b, a
 	ld c, 0 ; current line
 .hm_loop
 	push bc
 	ld a, HM01
-	add b
-	ld [wCurItem], a
+	add b ; machine moves index
+	ld [wCurItem], a ; machine moves index
 	farcall GetTMHMItemMove
 	ld a, [wTempTMHM]
 	ld [wPutativeTMHMMove], a
@@ -289,47 +289,53 @@ Pokedex_PrintHMs:
 	jr z, .notcompatible
  	call GetMoveName
 	push bc ; our count is in c
-	hlcoord 7, 11
+	hlcoord 7, 9
 	call DexEntry_adjusthlcoord
 	call PlaceString
 	pop bc
 	ld a, HM01
-	add b
+	add b ; machine moves index
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	push bc
-	hlcoord 2, 11
+	hlcoord 2, 9
 	call DexEntry_adjusthlcoord
 	call PlaceString
 	pop bc
 	inc c ; since we printed a line
-	ld a, $5
+	ld a, MAX_NUM_MOVES
 	cp c
-	jr nz, .notcompatible
+	jr nz, .notcompatible ; not yet printed all slots
+	; We've printed all MAX_NUM_MOVES slots
+	; check if we need to move to next category or if there are moves left
 	call Pokedex_anymoreHMs
-	jr z, .done
+	jr z, .done ; there are no moves left
+	; there are moves left
 	jp DexEntry_IncPageNum
+
 .notcompatible
 	ld a, NUM_HMS - 1
 	cp b
 	jr z, .done
 	inc b
+	ld a, b
+	ld [wPokedexStatus], a ; moves machines index
 	jr .hm_loop
 .done
 	ld a, DEXENTRY_MTS
 	call DexEntry_NextCategory
 	ld a, c
 	and a
-	ret nz ; we've had at least one HM Move
-	hlcoord 4, 11
+	ret nz
+	hlcoord 4, 9
 	ld de, DexEntry_NONE_text
 	jp PlaceString
 
 Pokedex_anymoreHMs:
+	; b has the current HM index
 	ld a, NUM_HMS - 1
 	cp b
 	jr z, .none
-	; b has the current HM index
 	inc b
 .hmloop
 	push bc
@@ -350,18 +356,18 @@ Pokedex_anymoreHMs:
 	inc b
 	jr .hmloop	
 .yes
+	ld a, b
+	ld [wPokedexStatus], a ; so we can start off at the next learnable machine
 	ld a, 1
 	and a
 	ret
+
 .none
 	xor a
 	ld [wPokedexStatus], a
 	ret
 
 Pokedex_PrintMTs:
-	hlcoord 2, 9
-	ld de, .dex_MT_text
-	call PlaceString
 	call Pokedex_PrintPageNum ; page num is also returned in a
 	ld a, [wPokedexStatus] ; moves machines index
 	ld b, a ; result of simple multiply in a
@@ -408,13 +414,10 @@ Pokedex_PrintMTs:
 	call DexEntry_NextCategory
 	ld a, c
 	and a
-	ret nz ; we've had at least one HM Move
+	ret nz
 	hlcoord 4, 11
 	ld de, DexEntry_NONE_text
 	jp PlaceString
-
-.dex_MT_text:
-	db "MOVE TUTORS@"
 
 Pokedex_anymoreMTs:
 	ld a, NUM_TUTORS - 1
