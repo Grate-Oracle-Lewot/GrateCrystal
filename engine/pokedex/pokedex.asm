@@ -1105,26 +1105,32 @@ Pokedex_UpdateOptionScreen:
 	ret
 
 .NoUnownModeArrowCursorData:
-	db D_UP | D_DOWN, 4
-	dwcoord 2,  3 ; NEW
-	dwcoord 2,  4 ; OLD
-	dwcoord 2,  5 ; ABC
-	dwcoord 2,  6 ; COLOR
+	db D_UP | D_DOWN, 5
+	dwcoord 2,  3 ; NAYRU'S DEX INFO PAGE
+	dwcoord 2,  4 ; NEW
+	dwcoord 2,  5 ; OLD
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  7 ; COLOR
 
 .ArrowCursorData:
-	db D_UP | D_DOWN, 5
-	dwcoord 2,  3 ; NEW
-	dwcoord 2,  4 ; OLD
-	dwcoord 2,  5 ; ABC
-	dwcoord 2,  6 ; COLOR
-	dwcoord 2,  7 ; UNOWN
+	db D_UP | D_DOWN, 6
+	dwcoord 2,  3 ; NAYRU'S DEX INFO PAGE
+	dwcoord 2,  4 ; NEW
+	dwcoord 2,  5 ; OLD
+	dwcoord 2,  6 ; ABC
+	dwcoord 2,  7 ; COLOR
+	dwcoord 2,  8 ; UNOWN
 
 .MenuActionJumptable:
+	dw .MenuAction_NayDexInfoPage
 	dw .MenuAction_NewMode
 	dw .MenuAction_OldMode
 	dw .MenuAction_ABCMode
 	dw .MenuAction_ColorOption
 	dw .MenuAction_UnownMode
+
+.MenuAction_NayDexInfoPage
+	ret
 
 .MenuAction_NewMode:
 	ld b, DEXMODE_NEW
