@@ -165,7 +165,7 @@ Pokedex_Print_NextLvlMoves:
 	jp DexEntry_IncPageNum
 
 .FoundEnd
-	ld a, DEXENTRY_FIELD
+	ld a, DEXENTRY_TMS
 	jp DexEntry_NextCategory
 
 Pokedex_PrintTMs:
