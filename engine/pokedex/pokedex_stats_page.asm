@@ -222,7 +222,60 @@ Pokedex_CatchRate:
 	jp PrintNum
 
 .BS_Catchrate:
-	db "Catch Rate: @"
+	db "Catch Rate:@"
+
+Pokedex_PrintBaseExp:
+; wBaseExp
+	hlcoord 2, 11
+	ld de, .Exp_text
+	call PlaceString
+	hlcoord 14, 11
+	ld de, wBaseExp
+	lb bc, 1, 3 ; 1 byte, 3 possible digits
+	jp PrintNum
+
+.Exp_text:
+	db "EXP Yield:@"
+
+Pokedex_Get_Growth::
+; Experience growth rate
+	ld a, [wBaseGrowthRate]
+	ld de, .growth_medfast
+	cp GROWTH_MEDIUM_FAST
+	jr z, .Growth_print
+	ld a, [wBaseGrowthRate]
+	ld de, .growth_slightfast
+	cp GROWTH_SLIGHTLY_FAST
+	jr z, .Growth_print
+	ld a, [wBaseGrowthRate]
+	ld de, .growth_slightslow
+	cp GROWTH_SLIGHTLY_SLOW
+	jr z, .Growth_print
+	ld a, [wBaseGrowthRate]
+	ld de, .growth_medslow
+	cp GROWTH_MEDIUM_SLOW
+	jr z, .Growth_print
+	ld a, [wBaseGrowthRate]
+	ld de, .growth_fast
+	cp GROWTH_FAST
+	jr z, .Growth_print
+	ld de, .growth_slow
+.Growth_print
+	hlcoord 2, 13
+	jp PlaceString
+
+.growth_medfast:
+	db "Med. Fast Growth@"
+.growth_slightfast
+	db "Bit Fast Growth@"
+.growth_slightslow
+	db "Bit Slow Growth@"
+.growth_medslow
+	db "Med. Slow Growth@"
+.growth_fast
+	db "Fast Growth@"
+.growth_slow
+	db "Slow Growth@"
 
 Pokedex_EggG_SetUp:
 	ld a, [wBaseEggGroups]
@@ -233,13 +286,13 @@ Pokedex_EggG_SetUp:
 	and $f0
 	swap a
 	ld c, a
-	hlcoord 3, 10
+	hlcoord 2, 11
 	ld de, .BS_Egg_text1
 	push bc
 	call PlaceString
 	pop bc
 	call Pokedex_Get_EggGroup
-	hlcoord 4, 11
+	hlcoord 4, 12
 	push bc
 	call PlaceString
 	pop bc
@@ -247,21 +300,20 @@ Pokedex_EggG_SetUp:
 	cp c
 	ret z
 ; Print second egg group
-	hlcoord 3, 10
+	hlcoord 2, 11
 	ld de, .BS_Egg_text2
 	push bc
 	call PlaceString
 	pop bc
 	ld b, c
 	call Pokedex_Get_EggGroup
-	hlcoord 4, 12
+	hlcoord 4, 13
 	jp PlaceString ; no longer need to preserve bc
 
 .BS_Egg_text1:
-	db "Egg Group: @"
+	db "Egg Group:@"
 .BS_Egg_text2:
-	db "Egg Groups: @"
-
+	db "Egg Groups:@"
 
 Pokedex_Get_EggGroup:
 ; have the fixed group num in 'a' already
@@ -350,13 +402,13 @@ Pokedex_Get_EggGroup:
 	db "Amorphous@"
 .EggG_Fish_text:
 	db "Fish@"
-.EggG_Ditto_text:
-	db "ALL@"
 .EggG_Dragon_text:
 	db "Dragon@"
+.EggG_Ditto_text:
+	db "ALL@"
 
 Pokedex_Get_GenderRatio::
-	hlcoord 3, 15
+	hlcoord 2, 14
 	ld de, .GR_Text
 	call PlaceString
 	ld a, [wBaseGender]
@@ -385,11 +437,11 @@ Pokedex_Get_GenderRatio::
 	jr z, .GR_print
 	ld de, DexEntry_NONE_text
 .GR_print
-	hlcoord 14, 15
+	hlcoord 4, 15
 	jp PlaceString
 
 .GR_Text
-	db "Gender <%>: @"
+	db "Gender Ratio:@"
 .GR_always_fem:
 	db "♀ Only@"
 .GR_always_male
@@ -403,86 +455,26 @@ Pokedex_Get_GenderRatio::
 .GR_MostMale
 	db "8♂:1♀@"
 
-Pokedex_Get_Growth::
-; Experience growth rate
-	ld a, [wBaseGrowthRate]
-	ld de, .growth_medfast
-	cp GROWTH_MEDIUM_FAST
-	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
-	ld de, .growth_slightfast
-	cp GROWTH_SLIGHTLY_FAST
-	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
-	ld de, .growth_slightslow
-	cp GROWTH_SLIGHTLY_SLOW
-	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
-	ld de, .growth_medslow
-	cp GROWTH_MEDIUM_SLOW
-	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
-	ld de, .growth_fast
-	cp GROWTH_FAST
-	jr z, .Growth_print
-	ld de, .growth_slow
-.Growth_print
-	hlcoord 3, 15
-	jp PlaceString
-
-.growth_medfast:
-	db "Med. Fast Growth@"
-.growth_slightfast
-	db "Bit Fast Growth@"
-.growth_slightslow
-	db "Bit Slow Growth@"
-.growth_medslow
-	db "Med. Slow Growth@"
-.growth_fast
-	db "Fast Growth@"
-.growth_slow
-	db "Slow Growth@"
-
-Pokedex_PrintBaseExp:
-; wBaseExp
-	hlcoord 3, 14
-	ld de, .Exp_text
-	call PlaceString
-	hlcoord 14, 14
-	ld de, wBaseExp
-	; lb bc, PRINTNUM_LEFTALIGN | 1, 3
-	lb bc, 1, 3
-	jp PrintNum
-
-.Exp_text:
-	db "EXP Yield:@"
-
 Pokedex_PrintHatchSteps:
 ; wBaseEggSteps
-	hlcoord 3, 13
+	hlcoord 2, 9
 	ld de, .HatchSteps_text
 	call PlaceString
-	hlcoord 14, 13
+	hlcoord 13, 9
 	ld de, wBaseEggSteps
-	lb bc, 1, 3
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	jp PrintNum
 
 .HatchSteps_text:
 	db "Egg Cycles:@"
 
 Pokedex_HeightWeight:
+	push hl
+	push bc
+	push de
 ; height string
-	hlcoord 3, 11
-	ld de, .Height
-	call PlaceString
-
-; weight string	
-	hlcoord 3, 13
-	ld de, .Weight
-	call PlaceString
-; lbs string
-	hlcoord 11, 13
-	ld de, .Pounds
+	hlcoord 2, 15
+	ld de, .String_HeightWeight_blank
 	call PlaceString
 
 ; get pokemon's dex entry ptr in b:de
@@ -505,14 +497,16 @@ Pokedex_HeightWeight:
 	push af ; keep bank
 	call GetFarWord
 	ld a, h
-	ld [wPoisonStepCount], a
+	ld [wPoisonStepCount], a ; weight ptr, 2 bytes
 	ld a, l
-	ld [wPoisonStepCount + 1], a
-	ld de, wPoisonStepCount
+	ld [wPoisonStepCount + 1], a ; weight ptr, 2 bytes
+	ld de, wPoisonStepCount ; weight ptr, 2 bytes
 ; Print the height, with two of the four digits in front of the decimal point
-	hlcoord 7, 11
+	hlcoord 4, 15
 	lb bc, 2, (2 << 4) | 4
 	call PrintNum
+	hlcoord 6, 15
+	ld [hl], "′"
 ; get weight
 	pop af ; bank
 	pop hl ; ptr
@@ -520,27 +514,61 @@ Pokedex_HeightWeight:
 	inc hl
 	call GetFarWord
 	ld a, h
-	ld [wPoisonStepCount], a
+	ld [wPoisonStepCount], a ; weight ptr, 2 bytes
 	ld a, l
-	ld [wPoisonStepCount + 1], a
-	ld de, wPoisonStepCount
-; Print the weight, with four of the five digits in front of the decimal point
-	hlcoord 5, 13
-	lb bc, 2, (4 << 4) | 5
+	ld [wPoisonStepCount + 1], a ; weight ptr, 2 bytes
+	ld de, wPoisonStepCount ; weight ptr, 2 bytes
+; 2 digit weight (actually 3, but we are cutting off decimal since it's always 0)
+	ld a, h
+	cp 3
+	jr c, .normal_weight
+	cp 4
+	jr nc, .heavy_weight
+	jr z, .heavy_weight
+	ld a, l
+	cp $e8
+	jr c, .normal_weight
+.heavy_weight	
+
+	hlcoord 14, 15
+	lb bc, 2, (3 << 4) | 4
 	call PrintNum
 
-; Replace the decimal point with a ft symbol
-	hlcoord 9, 11
-	ld [hl], $5e
-	inc hl
-	inc hl
-	inc hl
-	ld [hl], $5f
+	hlcoord 17, 15
+	ld de, .String_pounds
+	call PlaceString
+	jr .done
+
+; 3 digit weight (actually 4, but we are cutting off decimal since it's always 0)
+.normal_weight	
+	; Print the weight, with 3 of the 4 digits in front of the decimal point
+	hlcoord 13, 15
+	lb bc, 2, (3 << 4) | 4
+	call PrintNum
+
+	hlcoord 16, 15
+	ld de, .String_pounds
+	call PlaceString
+.done	
+	pop de
+	pop bc
+	pop hl	
 	ret
 
-.Height:
-	db "HT@" ;   ? ?? @" ; HT  ?'??"
-.Weight:
-	db "WT@" ;   ???lb@"
-.Pounds:
-	db "0lbs@"
+.String_HeightWeight_blank:
+	db "HT     ″ WT       @" ; HT  ?'??"
+.String_pounds:
+	db "lbs@"
+
+BS_HP_text:
+	db " HP@"
+BS_SPEED_text:
+	db "SPE@"
+BS_ATK_text:
+	db "ATK@"
+BS_DEF_text:
+	db "DEF@"
+BS_SPCL_text:
+	db "SpA@"
+BS_SPCLDEF_text:
+	db "SpD@"
