@@ -159,21 +159,18 @@
 	charmap "y",         $b8
 	charmap "z",         $b9
 
-	charmap ">",         $ba
-	charmap "<",         $bb
-	charmap "=",         $bc
-	charmap "+",         $bd
-	charmap "<%>",       $be
+	charmap "<INV_EX>",  $bd ; inverted exclamation mark
+	charmap "<INV_QU>",  $be ; inverted question mark
 	charmap "<FLOAT>",   $bf ; floatmon arrow
 
-	charmap "Ä",         $c0
-	charmap "Ö",         $c1
-	charmap "Ü",         $c2
-	charmap "ä",         $c3
-	charmap "ö",         $c4
-	charmap "ü",         $c5
+	charmap ">",         $c0
+	charmap "<",         $c1
+	charmap "=",         $c2
+	charmap "+",         $c3
+	charmap "<%>",       $c4
 
-; $c9 through $ce: "SELECT > COLOR", used for Pokedex pics page
+	charmap "<FEET>",    $ce ; ′
+	charmap "<INCH>",    $cf ; ″
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1
@@ -183,15 +180,22 @@
 	charmap "'t",        $d5
 	charmap "'v",        $d6
 
-; $db through $de: "B > BACK", used for Pokedex pics page
+	charmap "<SQUARE>",  $d7 ; ■
+	charmap "<UP>",      $d8 ; ▲
+	charmap "<PHONE>",   $d9 ; ☎
+	charmap "<VS1>",     $da ; bold V
+	charmap "<VS2>",     $db ; bold S
+	charmap "<COLON2>",  $dc ; same as <COLON> but in gfx/font/font.png
+	charmap "<QUOP>",    $dd ; “
+	charmap "<QUOS>",    $de ; ”
 
 	charmap "←",         $df
 	charmap "'",         $e0
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
-	charmap "<INV_EX>",  $e4 ; inverted exclamation mark
-	charmap "<INV_QU>",  $e5 ; inverted question mark
+	charmap "<PO2>",     $e4 ; same as <PO> but in gfx/font/font.png
+	charmap "<KE2>",     $e5 ; same as <KE> but in gfx/font/font.png
 	charmap "?",         $e6
 	charmap "!",         $e7
 	charmap ".",         $e8
@@ -205,7 +209,7 @@
 	charmap "♂",         $ef
 	charmap "¥",         $f0
 	charmap "×",         $f1
-	charmap "<DOT>",     $f2 ; decimal point; same as "." in English
+	charmap "<ELPS>",    $f2 ; …
 	charmap "/",         $f3
 	charmap ",",         $f4
 	charmap "♀",         $f5
