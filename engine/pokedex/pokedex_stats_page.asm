@@ -212,6 +212,18 @@ Pokedex_Get_Items:
 .BS_ITEM2:
 	db "[ 5<%>]@"
 
+Pokedex_CatchRate:
+	hlcoord 2, 9
+	ld de, .BS_Catchrate
+	call PlaceString
+	hlcoord 15, 9
+	lb bc, PRINTNUM_LEFTALIGN | 1, 3
+	ld de, wBaseCatchRate
+	jp PrintNum
+
+.BS_Catchrate:
+	db "Catch Rate: @"
+
 Pokedex_EggG_SetUp:
 	ld a, [wBaseEggGroups]
 	push af
@@ -390,18 +402,6 @@ Pokedex_Get_GenderRatio::
 	db "4♀:1♂@"
 .GR_MostMale
 	db "8♂:1♀@"
-
-Pokedex_CatchRate:
-	hlcoord 3, 15
-	ld de, .BS_Catchrate
-	call PlaceString
-	hlcoord 15, 15
-	lb bc, PRINTNUM_LEFTALIGN | 1, 3
-	ld de, wBaseCatchRate
-	jp PrintNum
-
-.BS_Catchrate:
-	db "Catch Rate: @"
 
 Pokedex_Get_Growth::
 ; Experience growth rate
