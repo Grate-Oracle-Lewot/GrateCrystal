@@ -170,69 +170,140 @@ Pokedex_place_Mon_Icon:
 	ret
 
 Dex_Pics_DrawBorder:
-	hlcoord 0, 0
-	ld [hl], $77 
-	inc hl
+	hlcoord 1, 0
+	ld a, $72
+	ld bc, SCREEN_WIDTH - 3
+	call ByteFill ; preserves 'a'
 
-	ld bc, 17
-	ld a, $7b
-	call ByteFill
-	ld [hl], $78
+	hlcoord 0, 0
+	ld [hl], $70 
+	inc hl
 
 	hlcoord 8, 0
-	ld [hl], $78
+	ld [hl], $70
 	inc hl
 	inc hl
-	ld [hl], $77
+	ld [hl], $70
 
 	hlcoord 0, 8
-	ld [hl], $79
+	ld [hl], $70
 	inc hl
 
 	ld bc, 17
-	ld a, $7c
+	ld a, $72
 	call ByteFill
-	ld [hl], $7a
+	ld [hl], $70
 
 	hlcoord 8, 8
-	ld [hl], $7a
+	ld [hl], $70
 	inc hl
 	inc hl
-	ld [hl], $79
+	ld [hl], $70
 
 	hlcoord 0, 1
 	lb bc, 7, 1
-	ld a, $7d
+	ld a, $71
 	call FillBoxWithByte
 	hlcoord 10, 1
 	lb bc, 7, 1
-	ld a, $7d
+	ld a, $71
 	call FillBoxWithByte
 	hlcoord 8, 1
 	lb bc, 7, 1
-	ld a, $7e
+	ld a, $71
 	call FillBoxWithByte
 	hlcoord 18, 1
 	lb bc, 7, 1
-	ld a, $7e
+	ld a, $71
 	call FillBoxWithByte
 	hlcoord 9, 0
 	lb bc, 9, 1
 	ld a, $7f
 	call FillBoxWithByte
 
-	; select > color
-	hlcoord 13, 15
-	ld de, .select_color_text
-	call PlaceString
-	; b > back
-	hlcoord 15, 16
-	ld de, .b_back_text
-	call PlaceString
-	jp WaitBGMap
+	ld a, [wTempSpecies]
+	dec a
+	call CheckCaughtMon
+	jr z, .caught_ball_done
+	hlcoord 5, 11
+	ld [hl], $4f ; pokeball icon
+.caught_ball_done	
+	hlcoord 3, 11
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], "<DEX_⁂>"
+	jr .shiny_done
+.not_shiny
+	ld [hl], " "
+.shiny_done
+; SELECT > SHINY START > CRY
+	hlcoord 0, 17
+	ld a, $32 ; color block, bottom left corner
+	ld [hli], a
+	ld a, $3b ; text border, left side of SELECT > SHINY
+	ld [hli], a
+	ld a, $48 ; SELECT >
+	ld [hli], a
+	ld a, $49 ; SELECT >
+	ld [hli], a
+	ld a, $4a ; SELECT >
+	ld [hli], a
+	ld a, $61 ; > SHINY
+	ld [hli], a
+	inc a ; ld a, $72 ; > SHINY
+	ld [hli], a
+	inc a ; ld a, $73 ; > SHINY
+	ld [hli], a
+	ld a, $3c ; text border right side of SELECT > SHINY
+	ld [hli], a
+	ld a, $32 ; color block
+	ld [hli], a		
+	ld a, $3b ; text border, left side of START > CRY
+	ld [hli], a	
+	; hlcoord 10, 17
+	ld a, $41 ; START >
+	ld [hli], a
+	inc a ; ld a, $42 ; START >
+	ld [hli], a
+	inc a ; ld a, $43 ; START >
+	ld [hli], a
+	ld a, $6e ; > CRY [VRAM 1] @ 15, 17
+	ld [hli], a
+	inc a ; ld a, $6f ; > CRY [VRAM 1] @ 14, 17
+	ld [hli], a	
+	ld a, $3c ; curvest text border, right side of START > CRY
+	ld [hli], a
+	ld a, $32 ; color block
+	ld bc, 3
+	call ByteFill
+	
+; up/down arrows	
+	hlcoord 18, 0
+	ld [hl], $3f
+	; inc hl
+	; ld [hl], $72
+	hlcoord 18, 17
+	ld [hl], $40
 
-.select_color_text:
-	db $c9, $ca, $cb, $cc, $cd, $ce, "@"
-.b_back_text:
-	db $db, $dc, $dd, $de, "@"
-
+; ribbons for name/caught/shiny
+	; above species name
+	hlcoord 0, 10
+	ld bc, SCREEN_WIDTH
+	ld a, $39
+	call ByteFill
+	hlcoord 0, 11
+	ld [hl], $32 ; color block
+	inc hl
+	ld [hl], $3b ; curved text border left side
+	hlcoord 17, 11
+	ld [hl], $3c ; curved text border right side side
+	inc hl
+	ld a, $32 ; color block
+	ld [hli], a
+	ld [hl], a
+	; border under species name
+	hlcoord 0, 12
+	ld bc, SCREEN_WIDTH
+	ld a, $34
+	jp ByteFill
