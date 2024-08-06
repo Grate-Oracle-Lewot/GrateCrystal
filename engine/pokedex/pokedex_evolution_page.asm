@@ -12,6 +12,7 @@ DisplayDexMonEvos:
 	lb bc, SCREEN_HEIGHT - 4, SCREEN_WIDTH
 	call ClearBox
 	call EVO_Draw_border
+
 	ld a, [wTempSpecies]
 	callfar GetPreEvolution
 	callfar GetPreEvolution
@@ -23,6 +24,15 @@ DisplayDexMonEvos:
 	ld de, .stage1_text
 	hlcoord 6, 1
 	call PlaceString
+
+	ld a, [wCurDamage + 2]
+	ld b, a
+	ld a, [wCurPartySpecies]
+	cp b
+	jr nz, .dont_arrow_stage1
+	hlcoord 5, 2
+	ld [hl], "→"
+.dont_arrow_stage1
 	hlcoord 6, 2
 	call EVO_sethlcoord
 	call GetPokemonName
@@ -53,8 +63,11 @@ DisplayDexMonEvos:
 	jr nz, .does_evo
 	hlcoord 3, 6
 	ld de, .doesnt_evo_text
-	jp PlaceString
-	; no Evos
+	call PlaceString
+	hlcoord 5, 2
+	ld [hl], " "
+	ret ; no Evos
+
 .does_evo
 	push hl
 	push af ; manner of evo
@@ -110,6 +123,21 @@ DisplayDexMonEvos:
 	call GetPokemonName ; uses NamedObjectIndex
 	call EVO_gethlcoord
 	call PlaceString
+
+	push af ; manner of evo
+	push bc ; count and stage
+	ld a, [wCurDamage + 2]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	jr nz, .dont_print_arrow
+	dec hl
+	ld [hl], "→"
+	inc hl
+.dont_print_arrow
+	pop bc ; count and stage
+	pop af ; manner of evo
+
 	call EVO_DrawSpriteBox
 	call EVO_place_CaughtIcon
 	call EVO_place_Mon_Types
@@ -273,6 +301,7 @@ EVO_sethlcoord:
 	ld [wPokedexEvoStage3], a
 	pop af
 	ret
+
 EVO_gethlcoord::
 	push af
 	ld a, [wPokedexEvoStage2]
@@ -280,7 +309,8 @@ EVO_gethlcoord::
 	ld a, [wPokedexEvoStage3]
 	ld l, a
 	pop af
-	ret	
+	ret
+
 EVO_inchlcoord:
 	push af
 	push bc
@@ -304,7 +334,7 @@ EVO_inchlcoord:
 EVO_level:
 	push hl ; pointing to lvl byte
 	call EVO_gethlcoord
-	ld [hl], $75 ; $5d
+	ld [hl], "<DEX_LV>" ; lvl icon
 
 	pop hl ; pointing to lvl byte
 	ld a, BANK("Evolutions and Attacks")
