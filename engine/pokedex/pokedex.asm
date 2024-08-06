@@ -2584,37 +2584,48 @@ Pokedex_DisplayModeDescription:
 	ld e, l
 	ld d, h
 	hlcoord 1, 14
-	call PlaceString
+	call Pokedex_PlaceString
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
 
 .Modes:
+	dw .NayDexInfo
 	dw .NewMode
 	dw .OldMode
 	dw .ABCMode
 	dw .Color
 	dw .UnownMode
 
+.NayDexInfo:	
+	db   $41, $42, $43, $56, " FULL AREA MAP", $37, $36, \
+		 "                  ", $37, $36, \
+		 $48, $49, $4a, $56, " TOGGLE SHINY", -1	
+
 .NewMode:
-	db   "<PK><MN> are listed by"
-	next "evolution family.@"
+	db   "<PK><MN> are listed by  ", $37, $36, \
+		 "                  ", $37, $36, \
+		 "evolution family.", -1
 
 .OldMode:
-	db   "<PK><MN> are listed by"
-	next "official number.@"
+	db   "<PK><MN> are listed by  ", $37, $36, \
+		 "                  ", $37, $36, \
+		 "official number.", -1
 
 .ABCMode:
-	db   "<PK><MN> are listed"
-	next "alphabetically.@"
+	db   "<PK><MN> are listed     ", $37, $36, \
+		 "                  ", $37, $36, \
+		 "alphabetically.", -1
 
 .Color
-	db   "Change the color"
-	next "of the #DEX.@"
+	db   "Change the color  ", $37, $36, \
+		 "                  ", $37, $36, \
+		 "of the #DEX.", -1
 
 .UnownMode:
-	db   "UNOWN are listed"
-	next "in catching order.@"
+	db   "UNOWN are listed  ", $37, $36, \
+		 "                  ", $37, $36, \
+		 "in catching order.", -1
 
 Pokedex_DisplayChangingModesMessage:
 	xor a
