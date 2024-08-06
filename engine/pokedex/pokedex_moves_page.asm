@@ -44,23 +44,44 @@ DisplayDexMonMoves::
 	ld a, DEXENTRY_LVLUP
 	call DexEntry_NextCategory
 .LvlUpLearnset
+; place category name
+	ld de, String_LVL_text
+	call Print_Category_MOVES_text
+
 	ld a, DEXENTRY_LVLUP
 	ld [wPokedexEntryType], a
 	call Pokedex_Calc_LvlMovesPtr
 	jp Pokedex_Print_NextLvlMoves
 .TMs
+; place category name
+	ld de, String_TECH_text
+	call Print_Category_MACHINES_text
+
 	ld a, DEXENTRY_TMS
 	ld [wPokedexEntryType], a
 	jp Pokedex_PrintTMs
 .HMs
+; place category name
+	ld de, String_HIDDEN_text
+	call Print_Category_MACHINES_text
+
  	ld a, DEXENTRY_HMS
  	ld [wPokedexEntryType], a
  	jp Pokedex_PrintHMs
 .MTs
+; place category name
+	ld de, String_MOVE_text
+	ld hl, String_TUTOR_text
+	call Print_Category_text
+
 	ld a, DEXENTRY_MTS
 	ld [wPokedexEntryType], a
 	jp Pokedex_PrintMTs
 .EggMoves
+; place category name
+	ld de, String_EGG_text
+	call Print_Category_MOVES_text
+
 	ld a, DEXENTRY_EGG
 	ld [wPokedexEntryType], a
 	call Pokedex_Calc_EggMovesPtr
@@ -85,7 +106,7 @@ Pokedex_Calc_LvlMovesPtr:
 	jr nz, .SkipEvoBytes
 .CalcPageoffset
 	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld c, 5
+	ld c, MAX_NUM_MOVES
 	call SimpleMultiply 
 	; double this num and add to first byte after Evo's 0
 	ld b, 0
@@ -95,16 +116,9 @@ Pokedex_Calc_LvlMovesPtr:
 	ret
 
 Pokedex_Print_NextLvlMoves:
-; Print No more than 5 moves
+; Print No more than MAX_NUM_MOVES moves
 	ld b, 0
-	ld c, 0 ; our move counter, max of 5
-	push bc ; our move counter
-	push hl ; our offset for the start of Moves
-	ld de, .lvl_moves_text
-	hlcoord 2, 9
-	call PlaceString ; TEXT for 'LVL - Move'
-	pop hl
-	pop bc
+	ld c, 0 ; our move counter, max of MAX_NUM_MOVES
 .learnset_loop
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -112,10 +126,10 @@ Pokedex_Print_NextLvlMoves:
 	jr z, .FoundEnd
 	push hl
 	ld [wTextDecimalByte], a
-	hlcoord 2, 11
+	hlcoord 2, 9
 	call DexEntry_adjusthlcoord
-	ld [hl], $5d
-	hlcoord 3, 11
+	ld [hl], "<DEX_LV>"
+	hlcoord 3, 9
 	call DexEntry_adjusthlcoord
 	ld de, wTextDecimalByte
 	push bc
@@ -129,7 +143,7 @@ Pokedex_Print_NextLvlMoves:
 	call GetFarByte
 	ld [wNamedObjectIndex], a
 	call GetMoveName
-	hlcoord 7, 11
+	hlcoord 7, 9
 	call DexEntry_adjusthlcoord
 	push bc
 	call PlaceString
@@ -137,23 +151,22 @@ Pokedex_Print_NextLvlMoves:
 	pop hl
 	inc hl
 	inc bc
-	ld a, 5
+	ld a, MAX_NUM_MOVES
 	cp c
 	jr nz, .learnset_loop
+	; fallthrough
 
-.MaxedPage ; Printed 5 moves. Moves are still left. Inc the Page counter
-	; check to see if really any moves left, we don't want a blank page
+.MaxedPage ; Printed MAX_NUM_MOVES moves. Moves are still left. Inc the Page counter
+	; check to see if really any moves left, we dont want a blank page
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	and a
 	jr z, .FoundEnd
 	jp DexEntry_IncPageNum
-.FoundEnd
-	ld a, DEXENTRY_TMS
-	jp DexEntry_NextCategory
 
-.lvl_moves_text:
-	db "LVL-UP MOVES@"
+.FoundEnd
+	ld a, DEXENTRY_FIELD
+	jp DexEntry_NextCategory
 
 Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
 ; move looking for in 'd'
