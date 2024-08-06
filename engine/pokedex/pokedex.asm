@@ -363,8 +363,11 @@ Pokedex_UpdateDexEntryScreen:
 	and A_BUTTON
 	jr nz, .do_menu_action
 	ld a, [hl]
+	and START
+	jp nz, Area_Page_map
+	ld a, [hl]
 	and SELECT
-	jr nz, .toggle_shininess
+	call nz, Pokedex_toggle_shininess_Entry
 	call Pokedex_NextOrPreviousDexEntry
 	ret nc
 	jp Pokedex_IncrementDexPointer
@@ -388,24 +391,6 @@ Pokedex_UpdateDexEntryScreen:
 	ld [wJumptableIndex], a
 	ret
 
-.toggle_shininess
-; toggle the current shininess setting
-	ld a, [wPokedexShinyToggle]
-	xor 1
-	ld [wPokedexShinyToggle], a
-	; refresh palettes
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
-	; play sound based on setting
-	ld a, [wPokedexShinyToggle]
-	bit 0, a
-	ld de, SFX_BUMP
-	jr z, .got_sound
-	ld de, SFX_SHINE
-.got_sound
-	call PlaySFX
-	jp WaitSFX
-
 Pokedex_Page:
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
@@ -416,15 +401,35 @@ Pokedex_toggle_shininess_Entry:
 	call Pokedex_toggle_shininess1
 ; refresh palettes
 	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout	
-	jp Pokedex_toggle_shininess2
+	call Pokedex_GetSGBLayout
+
+	; add or remove shiny icon
+	hlcoord 8, 1
+	ld a, [hl]
+	cp "<DEX_⁂>"
+	jr z, .shinyicon_set
+	ld [hl], "<DEX_⁂>"
+	jr Pokedex_toggle_shininess2
+.shinyicon_set
+	ld [hl], " "
+	jr Pokedex_toggle_shininess2
 
 Pokedex_toggle_shininess_Pics:
 	call Pokedex_toggle_shininess1
 ; refresh palettes
 	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout	
-	jp Pokedex_toggle_shininess2
+	call Pokedex_GetSGBLayout
+
+	; add or remove shiny icon
+	hlcoord 3, 11 ; 1, 9 ; 9, 7 ; 0, 9
+	ld a, [hl]
+	cp "<DEX_⁂>"
+	jr z, .shinyicon_set
+	ld [hl], "<DEX_⁂>"
+	jr Pokedex_toggle_shininess2
+.shinyicon_set
+	ld [hl], " "
+	jr Pokedex_toggle_shininess2
 
 Pokedex_toggle_shininess1:
 ; toggle the current shininess setting
