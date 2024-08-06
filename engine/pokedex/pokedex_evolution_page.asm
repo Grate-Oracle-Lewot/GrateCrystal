@@ -479,12 +479,9 @@ EVO_place_Mon_Types:
 	push af
 	push bc
 	push hl
-	ld a, [wTempMonSpecies]
-	ld a, [wTempSpecies]
 	ld a, [wCurSpecies]
 	push af
 	ld a, [wCurPartySpecies]
-	
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a	
 	call GetBaseData
@@ -575,6 +572,7 @@ EVO_place_Mon_Types:
 	pop bc
 	pop af
 	ret
+
 .determine_mon_slot1:
 	ld a, [wStatsScreenFlags]
 	ld b, $40
@@ -592,6 +590,7 @@ EVO_place_Mon_Types:
 	ld b, $58
 	ld hl, vTiles2 tile $58
 	ret
+
 .determine_mon_slot2:
 	ld a, [wStatsScreenFlags]
 	ld b, $44
@@ -609,6 +608,7 @@ EVO_place_Mon_Types:
 	ld b, $5c
 	ld hl, vTiles2 tile $5c
 	ret
+
 .determine_paladdr:
 	ld a, [wStatsScreenFlags]
 	ld de, wBGPals1 palette 1 ; + 2
@@ -718,11 +718,11 @@ EVO_DrawSpriteBox:
 	hlcoord 1, 1
 .start
 ; top left corner
-	ld [hl], $77
+	ld [hl], $7a ; 3x1 corner, VRAM1
 	push hl
 	inc hl
 ; top border
-	ld a, $7b
+	ld a, $79 ; VRAM1
 	ld bc, 2
 	push hl
 	call ByteFill
@@ -730,7 +730,7 @@ EVO_DrawSpriteBox:
 ; top right corner
 	inc hl
 	inc hl	
-	ld [hl], $78
+	ld [hl], $7b ; VRAM1
 
 	pop hl
 	ld bc, SCREEN_WIDTH
@@ -739,13 +739,13 @@ EVO_DrawSpriteBox:
 ; left side	
 	push hl
 	lb bc, 2, 1
-	ld a, $7d
+	ld a, $7c ; VRAM1
 	call FillBoxWithByte
 	pop hl
 	inc hl
-; white sprite box fill
+;white sprite box fill
 	lb bc, 2, 2
-	ld a, $62 ; $7f
+	ld a, $62 ; $VRAM1
 	push hl
 	call FillBoxWithByte
 	pop hl
@@ -753,7 +753,7 @@ EVO_DrawSpriteBox:
 	inc hl
 	inc hl
 	lb bc, 2, 1
-	ld a, $7e
+	ld a, $7d ; VRAM1
 	call FillBoxWithByte
 
 ; bottom left corner
@@ -761,10 +761,10 @@ EVO_DrawSpriteBox:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	add hl, bc
-	ld [hl], $79
+	ld [hl], $7a ; VRAM1
 ; bottom border
 	inc hl
-	ld a, $7c
+	ld a, $79 ; VRAM1
 	ld bc, 2
 	push hl
 	call ByteFill
@@ -772,7 +772,7 @@ EVO_DrawSpriteBox:
 ; bottom right corner
 	inc hl
 	inc hl
-	ld [hl], $7a
+	ld [hl], $7b ; VRAM1
 .notslot4
 	pop af
 	pop bc
