@@ -1,5 +1,25 @@
 MAX_NUM_MOVES EQU 7
 
+String_LVL_text:
+	db "LVL-UP     @"
+String_EGG_text:
+	db "EGG        @"
+String_MOVES_text:
+	db " MOVES     @"
+String_TECH_text:
+	db "TECHNICAL  @"
+String_HIDDEN_text:
+	db "HIDDEN     @"
+String_MACHINES_text:
+	db " MACHINES  @"
+String_MOVE_text:
+	db "MOVE       @"
+String_TUTOR_text:
+	db " TUTORS    @"
+Print_Category_MOVES_text:
+	ld hl, String_MOVES_text
+	jp Print_Category_text
+
 DisplayDexMonMoves::
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
