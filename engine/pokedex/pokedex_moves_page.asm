@@ -169,9 +169,6 @@ Pokedex_Print_NextLvlMoves:
 	jp DexEntry_NextCategory
 
 Pokedex_PrintTMs:
-	hlcoord 2, 9
-	ld de, .dex_TM_text
-	call PlaceString
 	call Pokedex_PrintPageNum ; page num is also returned in a
 	ld a, [wPokedexStatus] ; machine moves index
 	ld b, a
@@ -179,8 +176,8 @@ Pokedex_PrintTMs:
 .tm_loop
 	push bc
 	ld a, TM01
-	add b
-	ld [wCurItem], a
+	add b ; machine moves index
+	ld [wCurItem], a ; machine moves index
 	farcall GetTMHMItemMove
 	ld a, [wTempTMHM]
 	ld [wPutativeTMHMMove], a
@@ -191,7 +188,7 @@ Pokedex_PrintTMs:
 	jr z, .notcompatible
 	call GetMoveName
 	push bc ; our count is in c
-	hlcoord 7, 11
+	hlcoord 7, 9
 	call DexEntry_adjusthlcoord
 	call PlaceString
 	pop bc
@@ -199,24 +196,25 @@ Pokedex_PrintTMs:
 	ld a, [wPokedexStatus]
 	ld b, a
 	ld a, TM01
-	add b
+	add b ; machine moves index
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	push bc
-	hlcoord 2, 11
+	hlcoord 2, 9
 	call DexEntry_adjusthlcoord
 	call PlaceString
 	pop bc
 	inc c ; since we printed a line
-	ld a, $5
+	ld a, MAX_NUM_MOVES
 	cp c
-	jr nz, .notcompatible ; not yet printed all 5 slots
-	; We've printed all 5 slots
+	jr nz, .notcompatible ; not yet printed all slots
+	; We've printed all MAX_NUM_MOVES slots
 	; check if we need to move to next category or if there are moves left
 	call Pokedex_anymoreTMs
 	jr z, .done ; there are no moves left
 	; moves left
 	jp DexEntry_IncPageNum
+
 .notcompatible
 	ld a, NUM_TMS - 1
 	cp b
@@ -231,12 +229,9 @@ Pokedex_PrintTMs:
 	ld a, c
 	and a
 	ret nz ; we've had at least one HM Move
-	hlcoord 4, 11
+	hlcoord 4, 9
 	ld de, DexEntry_NONE_text
 	jp PlaceString
-
-.dex_TM_text:
-	db "TECHNICAL MACHINES@"
 
 Pokedex_anymoreTMs:
 	; b has the current HM index
