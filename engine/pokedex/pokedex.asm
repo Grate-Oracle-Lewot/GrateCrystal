@@ -1829,26 +1829,32 @@ Pokedex_DrawOptionScreenBG:
 	ld de, .Title
 	call Pokedex_PlaceString
 	hlcoord 3, 3
+	ld de, .NayrusPokedex
+	call PlaceString	
+	hlcoord 3, 4	
 	ld de, .NewMode
 	call PlaceString
-	hlcoord 3, 4
+	hlcoord 3, 5
 	ld de, .OldMode
 	call PlaceString
-	hlcoord 3, 5
+	hlcoord 3, 6
 	ld de, .AtoZMode
 	call PlaceString
-	hlcoord 3, 6
+	hlcoord 3, 7
 	ld de, .Color
 	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
 	ret z
-	hlcoord 3, 7
+	hlcoord 3, 8
 	ld de, .UnownMode
 	jp PlaceString
 
 .Title:
 	db $3b, " OPTION ", $3c, -1
+
+.NayrusPokedex:
+	db "#DEX INFO@"
 
 .NewMode:
 	db "REGIONAL DEX@"
