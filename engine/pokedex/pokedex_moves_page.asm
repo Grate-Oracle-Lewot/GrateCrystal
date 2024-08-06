@@ -269,9 +269,6 @@ Pokedex_anymoreTMs:
 	ret
 
 Pokedex_PrintHMs:
-	hlcoord 2, 9
-	ld de, .dex_HM_text
-	call PlaceString
 	call Pokedex_PrintPageNum ; page num is also returned in a
 	ld c, $5
 	ld a, [wPokedexStatus]
@@ -327,9 +324,6 @@ Pokedex_PrintHMs:
 	hlcoord 4, 11
 	ld de, DexEntry_NONE_text
 	jp PlaceString
-
-.dex_HM_text:
-	db "HIDDEN MACHINES@"
 
 Pokedex_anymoreHMs:
 	ld a, NUM_HMS - 1
