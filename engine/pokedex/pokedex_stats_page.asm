@@ -48,64 +48,52 @@ DisplayDexMonStats::
 	db "BASE STATS@"
 
 Pokedex_GBS_Stats:
-	ld de, BS_HP_text
-	hlcoord 3, 10
-	call PlaceString ; TEXT for 'HP' name
-	
-	ld de, BS_ATK_text
-	hlcoord 3, 11
-	call PlaceString ; TEXT for 'ATK' name
-	
-	ld de, BS_DEF_text
-	hlcoord 12, 11
-	call PlaceString ; TEXT for 'DEF' name
-	
-	ld de, BS_SPCL_text
-	hlcoord 3, 12
-	call PlaceString ; TEXT for 'SPCL' name
-	
-	ld de, BS_SPCLDEF_text
-	hlcoord 12, 12
-	call PlaceString 
-	
-	ld de, BS_SPEED_text
-	hlcoord 12, 10
-	call PlaceString 
+	hlcoord 1, 9
+	ld de, .String_abbrv_BS_text1
+	call PlaceString
+	hlcoord 1, 10
+	ld de, .String_abbrv_BS_text2
+	call PlaceString
+	hlcoord 1, 11
+	ld de, .String_abbrv_BS_text3
+	call PlaceString
 
-	hlcoord 7, 10
+	hlcoord 6, 9
 	ld de, wBaseHP
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	call PrintNum
-	hlcoord 16, 10
+	hlcoord 15, 9
 	ld de, wBaseSpeed
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	call PrintNum
 
-	hlcoord 7, 11
+	hlcoord 6, 10
 	ld de, wBaseAttack
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	call PrintNum
-	hlcoord 16, 11
+	hlcoord 15, 10
 	ld de, wBaseDefense
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	call PrintNum
 
-	hlcoord 7, 12
+	hlcoord 6, 11
 	ld de, wBaseSpecialAttack
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
+	lb bc, 1, 3 ; 1 byte, 3 digits
 	call PrintNum
-	hlcoord 16, 12
+	hlcoord 15, 11
 	ld de, wBaseSpecialDefense
-	ld c, 3 ; digits
-	ld b, 1 ; bytes
-	call PrintNum
+	lb bc, 1, 3 ; 1 byte, 3 digits
+	jp PrintNum
 
-	hlcoord 3, 14
+.String_abbrv_BS_text1:
+	db "  HP      SPE     @"
+.String_abbrv_BS_text2:
+	db " ATK      DEF     @"
+.String_abbrv_BS_text3:
+	db " SPA      SPD     @"
+
+Pokedex_BST:
+	hlcoord 2, 9
 	ld de, .BS_Total_text
 	call PlaceString
 
@@ -156,7 +144,7 @@ Pokedex_GBS_Stats:
 	ld a, l
 	ld [wCurDamage + 1], a
 
-	hlcoord 15, 14
+	hlcoord 15, 9
 	ld de, wCurDamage
 	lb bc, 2, 3
 	call PrintNum
@@ -165,30 +153,22 @@ Pokedex_GBS_Stats:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 	ret
+
 .BS_Total_text:
 	db "Base Total:@"
 
-BS_HP_text:
-	db " HP@"
-BS_SPEED_text:
-	db "SPE@"
-BS_ATK_text:
-	db "ATK@"
-BS_DEF_text:
-	db "DEF@"
-BS_SPCL_text:
-	db "SpA@"
-BS_SPCLDEF_text:
-	db "SpD@"
-
 Pokedex_Get_Items:
-	hlcoord 3, 10
+; TODO: Add code to differentiate same items in both entries, special cases
+	ld a, [wCurSpecies]
+	push af
+
+	hlcoord 2, 13
 	ld de, .BS_ITEM_text
 	call PlaceString
-	hlcoord 3, 11
+	hlcoord 2, 14
 	ld de, .BS_ITEM1
 	call PlaceString
-	hlcoord 3, 12
+	hlcoord 2, 15
 	ld de, .BS_ITEM2
 	call PlaceString
 
@@ -203,7 +183,7 @@ Pokedex_Get_Items:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 .Item1Done
-	hlcoord 7, 11
+	hlcoord 7, 14
 	call PlaceString
 .WildHeldItems2:
 	ld de, .ThreeDashes
@@ -216,17 +196,21 @@ Pokedex_Get_Items:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 .Item2Done
-	hlcoord 7, 12
-	jp PlaceString
+	hlcoord 7, 15
+	call PlaceString
+	pop af
+	ld [wCurSpecies], a
+	ld [wTempSpecies], a	
+	ret
 
 .ThreeDashes:
 	db "---@"
 .BS_ITEM_text:
 	db "Wild Held Items:@"
 .BS_ITEM1:
-	db "[1]@"
+	db "[37<%>]@"
 .BS_ITEM2:
-	db "[2]@"
+	db "[ 5<%>]@"
 
 Pokedex_EggG_SetUp:
 	ld a, [wBaseEggGroups]
