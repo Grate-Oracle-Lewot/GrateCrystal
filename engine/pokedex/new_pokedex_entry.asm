@@ -1,12 +1,10 @@
 NewPokedexEntry:
-; make sure new entry starts on lore page 1 and shows non-shiny colors
-	ld a, $0
-	ld [wPokedexEntryPageNum], a
-	ld [wPokedexShinyToggle], a
-
 	ldh a, [hMapAnims]
 	push af
 	xor a
+	ld [wPokedexShinyToggle], a
+	ld [wPokedexEntryPageNum], a
+
 	ldh [hMapAnims], a
 	call LowVolume
 	call ClearBGPalettes
