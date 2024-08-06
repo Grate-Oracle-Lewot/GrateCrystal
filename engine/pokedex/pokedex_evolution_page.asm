@@ -950,6 +950,13 @@ EVO_Draw_border:
 	hlcoord 16, 16
 	ld de, .back_page_text
 	call PlaceString
+
+	; print up/down arrows
+	hlcoord 19, 0
+	ld [hl], $3f
+	hlcoord 19, 17
+	ld [hl], $40
+
 	jp WaitBGMap
 
 .back_page_text:
