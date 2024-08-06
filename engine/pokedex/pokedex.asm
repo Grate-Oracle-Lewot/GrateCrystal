@@ -598,12 +598,33 @@ DexEntryScreen_MenuActionJumptable:
 	dw Evos_Page
 	dw Pics_Page ; .SpriteAnim
 
+Handle_Button_Banner:
+	hlcoord 2, 0
+	ld a, [hl]
+	cp $41 ; first tile of START > MAP button banner
+	ret nz
+; overwrite the button banner
+	ld a, $48 ; SELECT 1
+	ld [hli], a
+	inc a ; $49, SELECT 2
+	ld [hli], a
+	inc a ; $4a, SELECT 3
+	ld [hli], a
+	ld a, $61 ; SHINY 1
+	ld [hli], a
+	inc a ; $62, SHINY 2
+	ld [hli], a
+	ld [hl], $63 ; SHINY 2
+	ret
+
 BaseStat_Page:
+	call Handle_Button_Banner
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexMonStats
 	ret
 
 Moves_Page:
+	call Handle_Button_Banner
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexMonMoves
 	ld a, [wCurPartySpecies]
@@ -618,6 +639,27 @@ Area_Page:
 	call Pokedex_GetSelectedMon
 	xor a
 	ldh [hBGMapMode], a
+	; print button banner based on the current category being displayed
+	; only print map banner when you've pressed AREA first
+; print map button banner, START > MAP
+	; START > $41, $42, $43
+	; > MAP $5e, $5f, $60
+	hlcoord 2, 0
+	ld a, [hl]
+	cp $48 ; first tile of SELECT > SHINY
+	jr nz, .button_done
+	ld a, $41 ; START #1
+	ld [hli], a
+	inc a ; $42, START #2
+	ld [hli], a
+	inc a ; $43, START #3
+	ld [hli], a
+	ld a, $5e ; MAP #1
+	ld [hli], a
+	inc a ; $5f, MAP #2
+	ld [hli], a
+	ld [hl], $60 ; MAP #3
+.button_done
 	farcall Pokedex_DetailedArea
 	call WaitBGMap
 	pop af
@@ -702,17 +744,8 @@ Evos_Page:
 	ld a, $1
 	ldh [rVBK], a
 	ld de, Pokedex_ExtraTiles ; tile 19
-	ld hl, vTiles2 tile $62 ; $76
-	lb bc, BANK(Pokedex_ExtraTiles), 30 ; 10
-	call Request2bpp
-; replace icon borders for evo page
-	ld de, Pokedex_ExtraTiles tile 32
-	ld hl, vTiles2 tile $77
-	lb bc, BANK(Pokedex_ExtraTiles), 4
-	call Request2bpp
-	ld de, Pokedex_ExtraTiles tile 36
-	ld hl, vTiles2 tile $7d
-	lb bc, BANK(Pokedex_ExtraTiles), 2
+	ld hl, vTiles2 tile $62
+	lb bc, BANK(Pokedex_ExtraTiles), 31 ; 30 ; 10
 	call Request2bpp
 
 	call Pokedex_LoadInversedFont
@@ -808,6 +841,16 @@ Evos_Page:
 	call z, Evos_Page
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
+
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], "<DEX_⁂>"
+	jr .shiny_done
+.not_shiny
+	ld [hl], " "
+.shiny_done
 	jp WaitBGMap
 
 .right_dpad
