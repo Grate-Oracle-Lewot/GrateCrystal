@@ -1,3 +1,5 @@
+MAX_NUM_MOVES EQU 7
+
 DisplayDexMonMoves::
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
