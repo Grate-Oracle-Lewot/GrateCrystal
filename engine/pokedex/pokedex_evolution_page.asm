@@ -436,7 +436,7 @@ EVO_happiness:
 EVO_stats:
 	push hl ; level Needed byte
 	call EVO_gethlcoord
-	ld [hl], $75 ; for vram1 side
+	ld [hl], "<DEX_LV>" ; for vram1 side
 
 	pop hl ; level needed byte
 	ld a, BANK("Evolutions and Attacks")
@@ -449,7 +449,7 @@ EVO_stats:
 	ld de, wTextDecimalByte
 	call EVO_inchlcoord
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	inc hl ;
+	inc hl
 	call PrintNum
 	
 	pop hl ; stats const needed byte
