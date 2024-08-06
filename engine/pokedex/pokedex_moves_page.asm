@@ -27,7 +27,7 @@ DisplayDexMonMoves::
 	call Pokedex_Clearbox
 
 	; the byte flag that tells us which type of table we're currently on
-	; 0 = Lore, 1 = Stats, 2 = Level Moves, 3 =  TMs, 4 = HMs, 5 = Move Tutors, 6 = Egg Moves
+	; 0 = Info, 1 = Stats, 2 = Level Moves, 3 =  TMs, 4 = HMs, 5 = Move Tutors, 6 = Egg Moves
 	
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_LVLUP
@@ -40,9 +40,9 @@ DisplayDexMonMoves::
 	jr z, .MTs
 	cp DEXENTRY_EGG
 	jr z, .EggMoves
-.LvlUpLearnset_new
 	ld a, DEXENTRY_LVLUP
 	call DexEntry_NextCategory
+
 .LvlUpLearnset
 ; place category name
 	ld de, String_LVL_text
@@ -223,6 +223,7 @@ Pokedex_PrintTMs:
 	ld a, b
 	ld [wPokedexStatus], a ; moves machines index
 	jr .tm_loop
+
 .done
 	ld a, DEXENTRY_HMS
 	call DexEntry_NextCategory
@@ -256,7 +257,8 @@ Pokedex_anymoreTMs:
 	cp b
 	jr z, .none
 	inc b
-	jr .tmloop	
+	jr .tmloop
+
 .yes
 	ld a, b
 	ld [wPokedexStatus], a ; so we can start off at the next learnable machine
@@ -321,6 +323,7 @@ Pokedex_PrintHMs:
 	ld a, b
 	ld [wPokedexStatus], a ; moves machines index
 	jr .hm_loop
+
 .done
 	ld a, DEXENTRY_MTS
 	call DexEntry_NextCategory
@@ -354,7 +357,8 @@ Pokedex_anymoreHMs:
 	cp b
 	jr z, .none
 	inc b
-	jr .hmloop	
+	jr .hmloop
+
 .yes
 	ld a, b
 	ld [wPokedexStatus], a ; so we can start off at the next learnable machine
@@ -387,20 +391,21 @@ Pokedex_PrintMTs:
 	jr z, .notcompatible
 	call GetMoveName
 	push bc ; our count is in c
-	hlcoord 3, 11
+	hlcoord 3, 9
 	call DexEntry_adjusthlcoord
 	call PlaceString
 	pop bc
 	inc c ; since we printed a line
-	ld a, $5
+	ld a, MAX_NUM_MOVES
 	cp c
 	jr nz, .notcompatible
-	; We've printed all 5 slots
+	; We've printed all MAX_NUM_MOVES slots
 	; check if we need to move to next category or if there are moves left
 	call Pokedex_anymoreMTs
 	jr z, .done ; there are no moves left
-	; moves left
+	; there are moves left
 	jp DexEntry_IncPageNum
+
 .notcompatible
 	ld a, NUM_TUTORS - 1
 	cp b
@@ -409,13 +414,14 @@ Pokedex_PrintMTs:
 	ld a, b
 	ld [wPokedexStatus], a ; moves machines index
 	jr .mt_loop
+
 .done
 	ld a, DEXENTRY_EGG
 	call DexEntry_NextCategory
 	ld a, c
 	and a
 	ret nz
-	hlcoord 4, 11
+	hlcoord 4, 9
 	ld de, DexEntry_NONE_text
 	jp PlaceString
 
@@ -423,7 +429,7 @@ Pokedex_anymoreMTs:
 	ld a, NUM_TUTORS - 1
 	cp b
 	jr z, .none
-	; b has the current HM index
+	; b has the current MT index
 	inc b
 .mtloop
 	push bc
@@ -442,11 +448,13 @@ Pokedex_anymoreMTs:
 	cp b
 	jr z, .none
 	inc b
-	jr .mtloop	
+	jr .mtloop
+
 .yes
 	ld a, 1
 	and a
 	ret
+
 .none
 	xor a
 	ret
