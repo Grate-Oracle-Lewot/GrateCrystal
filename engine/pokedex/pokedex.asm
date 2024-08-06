@@ -907,11 +907,24 @@ Pics_Page:
 	ldh [hWY], a
 
 	ld a, $1
-	ldh [rVBK], a
-	ld de, Pokedex_ExtraTiles tile 21
-	ld hl, vTiles2 tile $77
-	lb bc, BANK(Pokedex_ExtraTiles), 9
+	ldh [rVBK], a ; Switch to VRAM 1
+
+; Load skinny side color border
+	ld de, Pokedex_ExtraTiles tile 37
+	ld hl, vTiles2 tile $7e ; same as EVO page
+	lb bc, BANK(Pokedex_ExtraTiles), 1
 	call Request2bpp
+	ld de, Pokedex_ExtraTiles tile 19
+	ld hl, vTiles2 tile $6e
+	lb bc, BANK(Pokedex_ExtraTiles), 2
+	call Request2bpp
+
+; 1x1 inner corner and x1 white + x1 black vertical + horiz line
+	ld de, Pokedex_ExtraTiles tile 21
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(Pokedex_ExtraTiles), 8
+	call Request2bpp
+
 	ld a, $0
 	ldh [rVBK], a
 
@@ -928,7 +941,7 @@ Pics_Page:
 	lb bc, SCREEN_HEIGHT, SCREEN_WIDTH
 	call ClearBox	
 
-	hlcoord 1, 9
+	hlcoord 6, 11 ; 2, 11 ; 1, 9
 	call GetPokemonName
 	call PlaceString	
 	farcall Pokedex_PlaceBackPic
@@ -947,6 +960,9 @@ Pics_Page:
 	ld a, [hl]
 	and SELECT
 	jp nz, .toggle_shininess
+	ld a, [hl]
+	and START
+	call nz, .toCry
 	ld a, [hl]
 	bit B_BUTTON_F, a
 	jr nz, .sprite_b
@@ -1008,6 +1024,15 @@ Pics_Page:
 	ld a, [wLastDexMode]
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], "<DEX_⁂>"
+	jr .shiny_done
+.not_shiny
+	ld [hl], " "
+.shiny_done
 	jp WaitBGMap
 
 .toggle_shininess:
@@ -1019,6 +1044,14 @@ Pics_Page:
 	farcall SetDexMonIconColor_SpritePage
 	call WaitBGMap
 	jp .spritepage_loop
+
+.toCry:
+	call Pokedex_GetSelectedMon
+	ld a, [wTempSpecies]
+	call GetCryIndex
+	ld e, c
+	ld d, b
+	jp PlayCry
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
