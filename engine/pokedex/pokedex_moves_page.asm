@@ -168,58 +168,6 @@ Pokedex_Print_NextLvlMoves:
 	ld a, DEXENTRY_FIELD
 	jp DexEntry_NextCategory
 
-Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
-; move looking for in 'd'
-	ld a, [wCurPartySpecies]
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-	ld a, BANK(EvosAttacksPointers)
-	ld b, a
-	call GetFarWord
-	ld a, b
-	call GetFarByte
-	inc hl
-	and a
-	jr z, .find_move ; does not evolve
-	dec hl
-; Skip Evo Bytes
-; Receives a pointer to the evos and attacks for a mon in b:hl, and skips to the attacks.
-.skip_evo_bytes	
-	ld a, b
-	call GetFarByte
-	inc hl
-	and a
-	jr z, .find_move ; found end
-	cp EVOLVE_STAT
-	jr nz, .no_extra_skip
-	inc hl
-.no_extra_skip
-	inc hl
-	inc hl
-	jr .skip_evo_bytes
-.find_move
-	ld a, BANK(EvosAttacksPointers)
-	call GetFarByte
-	inc hl
-	and a
-	jr z, .notfound ; end of mon's lvl up learnset
-	ld c, a ; the lvl we learn move
-	ld a, BANK(EvosAttacksPointers)
-	call GetFarByte
-	inc hl
-	cp d ; 'd' is not clobbered in any of the used funcs or farcalls
-	ret z ; lvl learned move in c, move is in lvl up learnset
-	jr .find_move
-
-.notfound
-	xor a
-	ld c, a
-	ret
-
 Pokedex_PrintTMs:
 	hlcoord 2, 9
 	ld de, .dex_TM_text
