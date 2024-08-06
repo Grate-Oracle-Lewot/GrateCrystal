@@ -225,6 +225,11 @@
 	charmap "8",         $fe
 	charmap "9",         $ff
 
+; stuff for Nayru's dex
+
+	charmap "<DEX_LV>,   $2c ; lvl icon
+	charmap "<DEX_FLT>", $50 ; float icon
+
 ; Japanese control characters (see home/text.asm)
 
 	charmap "<JP_18>",   $18 ; "ノ゛" (ungrammatical)
