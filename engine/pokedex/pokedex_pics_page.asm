@@ -131,28 +131,28 @@ Pokedex_place_Mon_Icon:
 	ld [hld], a
 ; sprite box border
 	hlcoord 1, 13
-	ld [hl], $77
+	ld [hl], $70
 	inc hl
-	ld a, $7b
+	ld a, $72
 	ld [hli], a
 	ld [hli], a
-	ld [hl], $78
+	ld [hl], $70
 	hlcoord 1, 14
-	ld [hl], $7d
+	ld [hl], $71
 	hlcoord 1, 15
-	ld [hl], $7d
-	hlcoord 1, 16
-	ld [hl], $79
-	ld a, $7c
-	inc hl
-	ld [hli], a
-	ld [hli], a
-	ld [hl], $7a
+	ld [hl], $71
+
 	hlcoord 4, 14
-	ld [hl], $7e
+	ld [hl], $71
 	hlcoord 4, 15
-	ld [hl], $7e
-	; call Dex_Pics_DrawBorder
+	ld [hl], $71
+	hlcoord 1, 16
+	ld [hl], $70
+	inc hl
+	ld bc, 2
+	ld a, $72
+	call ByteFill
+	ld [hl], $70
 ; load the icon sprite
 	ld a, 11
 	ld [wStatsScreenFlags], a
