@@ -3322,12 +3322,31 @@ Pokedex_LoadPageNums:
 	ldh [rVBK], a
 	ld de, Pokedex_PageNumTiles tile 0
 	ld hl, vTiles2 tile $60
-	lb bc, BANK(Pokedex_ExtraTiles), 12
+	lb bc, BANK(Pokedex_PageNumTiles), 14
 	call Request2bpp
+; ; corner of box	
+	; ld de, Pokedex_PageNumTiles tile 16
+	; ld hl, vTiles2 tile $6f
+	; lb bc, BANK(Pokedex_PageNumTiles), 1
+	; call Request2bpp
+; plain line		
+	ld de, Pokedex_PageNumTiles tile 13
+	ld hl, vTiles2 tile $4e
+	lb bc, BANK(Pokedex_PageNumTiles), 1
+	call Request2bpp
+; ; vertical line
+; 	ld de, Pokedex_PageNumTiles tile 15
+; 	ld hl, vTiles2 tile $5a
+; 	lb bc, BANK(Pokedex_PageNumTiles), 1
+; 	call Request2bpp	
 ; single black tile at vram1 $7f
-	ld de, Pokedex_PageNumTiles tile 12
+	ld de, Pokedex_ExtraTiles tile 31
 	ld hl, vTiles2 tile $7f
 	lb bc, BANK(Pokedex_ExtraTiles), 1
+	call Request2bpp
+	ld de, Pokedex_ExtraTiles tile 38
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(Pokedex_ExtraTiles), 7
 	call Request2bpp
 
 	ld a, $0
@@ -3343,7 +3362,6 @@ Pokedex_LoadInversedFont:
 	lb bc, BANK(FontInversed), 128 ; $80 tiles
 	ld de, FontInversed
 	ld a, BANK(FontInversed)
-
 	call Get1bpp ; ViaHDMA
 
 	ld a, $0
