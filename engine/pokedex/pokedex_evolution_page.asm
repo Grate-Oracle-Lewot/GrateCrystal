@@ -743,7 +743,7 @@ EVO_DrawSpriteBox:
 	call FillBoxWithByte
 	pop hl
 	inc hl
-;white sprite box fill
+; white sprite box fill
 	lb bc, 2, 2
 	ld a, $62 ; $VRAM1
 	push hl
@@ -866,18 +866,18 @@ EVO_place_CaughtIcon:
 	cp 2
 	jr z, .slot4
 ; slot 1
-	hlcoord 5, 5 ; 0, 4
+	hlcoord 5, 4 ; 5, 5
 	jr .start
 .slot3
-	hlcoord 5, 9 ; 0, 8
+	hlcoord 5, 8 ; 5, 9
 	jr .start
 .slot4
-	hlcoord 5, 13 ; 0, 12
+	hlcoord 5, 12 ; 5, 13
 	jr .start
 .stage1
-	hlcoord 5, 2 ; 0, 0
+	hlcoord 5, 1 ; 5, 2
 .start
-	ld [hl], $76 ; pokeball icon
+	ld [hl], $70 ; pokeball icon, VRAM1
 .done
 	pop af
 	pop bc
