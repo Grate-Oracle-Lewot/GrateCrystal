@@ -403,6 +403,10 @@ INCLUDE "engine/pokedex/pokedex_area_page.asm"
 INCLUDE "engine/pokedex/pokedex_evolution_page.asm"
 INCLUDE "engine/pokedex/pokedex_pics_page.asm"
 
+TypeLightIconGFX:: INCBIN "gfx/pokedex/types_light.2bpp"
+
+TypeDarkIconGFX:: INCBIN "gfx/pokedex/types_dark.2bpp"
+
 Pokedex_Clearbox:
 	lb bc, 7, SCREEN_WIDTH - 1
 	hlcoord 1, 9
