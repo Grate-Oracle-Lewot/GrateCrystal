@@ -556,3 +556,5 @@ Pokedex_Print_Egg_moves:
 	ld [wTempMonSpecies], a
 	ret
  
+DexEntry_NONE_text:
+	db "NONE@"
