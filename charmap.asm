@@ -227,8 +227,9 @@
 
 ; stuff for Nayru's dex
 
-	charmap "<DEX_LV>,   $2c ; lvl icon
-	charmap "<DEX_FLT>", $50 ; float icon
+	charmap "<DEX_LV>,   $5d ; lvl icon
+	charmap "<DEX_⁂>",  $64 ; shiny icon
+	charmap "<DEX_FLT>", $80 ; float icon
 
 ; Japanese control characters (see home/text.asm)
 
