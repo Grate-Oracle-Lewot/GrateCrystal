@@ -333,7 +333,7 @@ DisplayDexMonType_CustomGFX:
 	lb bc, BANK(TypeLightIconGFX), 4
 	call Request2bpp
 
-	hlcoord 9, 6
+	hlcoord 9, 4
 	ld [hl], $77
 	inc hl
 	ld [hl], $78
@@ -388,12 +388,12 @@ DisplayDexMonType_CustomGFX:
 	ldh [rVBK], a
 
 .check_floatmon
-	ld a, [wCurSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	ret nc
-	hlcoord 17, 6
-	ld [hl], "<FLOAT>"
+;	ld a, [wCurSpecies]
+;	ld hl, FloatMons
+;	call IsInByteArray
+;	ret nc
+;	hlcoord 17, 6
+;	ld [hl], "<DEX_FLT>"
 	ret
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
