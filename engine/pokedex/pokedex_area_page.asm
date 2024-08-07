@@ -437,7 +437,7 @@ Pokedex_DetailedArea_grass:
 	ret
 
 .grass_walk_text:
-	db "GRASS/CAVES@"
+	db " GRASS/CAVES @"
 
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
@@ -685,7 +685,7 @@ Pokedex_DetailedArea_surf:
 	ret
 
 .surfing_text:
-	db "SURFING@"
+	db " SURFING @"
 
 Pokedex_Parse_surf:
 	push hl ; first species byte, surfing has no time of day
@@ -1462,12 +1462,22 @@ Pokedex_DetailedArea_bugcontest:
 	ld [wPokedexEvoStage2], a
 	ld [wPokedexEvoStage3], a
 
-	; print the title, BUG CONTEST
-	hlcoord 1, 9
+	; print the title
 	ld de, .bugcontest_text
-	call PlaceString
-	hlcoord 1, 10
+	ld hl, .contest_text
+	call Print_Category_text
+
+	hlcoord 1, 9
 	ld de, .park_text
+	call PlaceString
+	hlcoord 2, 10
+	ld de, .String_Tuesday
+	call PlaceString
+	hlcoord 2, 11
+	ld de, .String_Thursday
+	call PlaceString
+	hlcoord 2, 12
+	ld de, .String_Saturday
 	call PlaceString
 
 	ld hl, ContestMons
@@ -1510,20 +1520,28 @@ Pokedex_DetailedArea_bugcontest:
 	jp DexEntry_NextCategory
 
 .bugcontest_text:
-	db "BUG-CATCH CONTEST@"
+	db "BUG       @"
+.contest_text:
+	db " CONTEST @"
 .park_text:
-	db "-NATIONAL PARK@"
+	db " NATIONAL PARK@"
+.String_Tuesday:
+	db " Tuesdays@"
+.String_Thursday:
+	db " Thursdays@"
+.String_Saturday:
+	db " Saturdays@"
 
 BugContest_Print:
 	ld b, e ; encounter %
-	hlcoord 3, 11 ; same position regardless
+	hlcoord 2, 14 ; same position regardless
 	ld [hl], $65 ; morn icon tile
 	ld de, 6
 	add hl, de
 	ld [hl], $6b ; day icon tile
 	add hl, de
 	ld [hl], $6c ; nite icon tile 
-	hlcoord 7, 11
+	hlcoord 6, 14
 	ld [hl], "<%>"
 	ld de, 6
 	add hl, de
@@ -1533,12 +1551,12 @@ BugContest_Print:
 	ld a, b ; encounter %
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
-	hlcoord 16, 11
+	hlcoord 15, 14
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 10, 11
+	hlcoord 9, 14
 	call PrintNum
-	hlcoord 4, 11
+	hlcoord 3, 14
 	jp PrintNum
 
 Dex_Check_roaming:
