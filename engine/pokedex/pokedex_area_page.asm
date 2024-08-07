@@ -218,7 +218,7 @@ Print_area_entry:
 	push hl ; pointer to map groupnum/name
 	push bc ; b has morn encounter rate, c is current print line?
 	push de ; day (e) /nite (d) encounter rates
-	hlcoord 3, 11 ; same position regardless
+	hlcoord 2, 10 ; same position regardless
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld [hl], $65 ; morn icon tile
 	ld de, 6
@@ -226,7 +226,7 @@ Print_area_entry:
 	ld [hl], $6b ; day icon tile
 	add hl, de
 	ld [hl], $6c ; nite icon tile 
-	hlcoord 7, 11
+	hlcoord 6, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld [hl], "<%>"
 	ld de, 6
@@ -241,7 +241,7 @@ Print_area_entry:
 	ld a, d
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
-	hlcoord 16, 11
+	hlcoord 15, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
 	call PrintNum
@@ -252,7 +252,7 @@ Print_area_entry:
 	ld a, e
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
-	hlcoord 10, 11
+	hlcoord 9, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
 	call PrintNum
@@ -262,7 +262,7 @@ Print_area_entry:
 	ld a, b
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
-	hlcoord 4, 11
+	hlcoord 3, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
 	call PrintNum
@@ -278,7 +278,7 @@ Print_area_entry:
 	ld e, l
 	farcall GetMapGroupNum_Name
 	; map name ptr is in de
-	hlcoord 2 , 10
+	hlcoord 2 , 9
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld a, BANK(MapGroupNum_Names)
 	push bc
