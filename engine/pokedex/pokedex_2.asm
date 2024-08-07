@@ -376,7 +376,7 @@ DisplayDexMonType_CustomGFX:
 	ld hl, vTiles2 tile $7b
 	lb bc, BANK(TypeDarkIconGFX), 4
 	call Request2bpp
-	hlcoord 13, 6
+	hlcoord 13, 4
 	ld [hl], $7b
 	inc hl
 	ld [hl], $7c
