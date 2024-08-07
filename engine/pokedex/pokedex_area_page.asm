@@ -288,6 +288,12 @@ Print_area_entry:
 	pop bc ; line counter
 	ret
 
+DexArea_IncWildMonIndex:
+	ld a, [wPokedexStatus]
+	inc a
+	ld [wPokedexStatus], a
+	ret
+
 Pokedex_Skip_Empty_Area_Category:
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
@@ -314,24 +320,19 @@ Pokedex_DetailedArea_grass:
 	jp nz, Pokedex_Skip_Empty_Area_Category
 
 	push hl ; JohtoGrassWildMons or KantoGrassWildMons
-	hlcoord 7, 9
-	ld de, .grass_walk_text
-	call PlaceString
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_AREA_GRASS_JOHTO
 	jr nz, .chk_kanto
-	hlcoord 1, 9
-	ld de, .johto_text
-	call PlaceString
+	ld de, String_johto_text
 	jr .title_done
 .chk_kanto
 	cp DEXENTRY_AREA_GRASS_KANTO
-	jr nz, .title_done
-	hlcoord 1, 9
-	ld de, .kanto_text
-	call PlaceString
-
+	jr nz, .swarm
+	ld de, String_kanto_text
 .title_done
+	ld hl, .grass_walk_text
+	call Print_Category_text
+
 	ld a, [wPokedexStatus] ; wildmon index
 	ldh [hMultiplicand + 2], a
 	xor a
@@ -396,29 +397,25 @@ Pokedex_DetailedArea_grass:
 	push hl
 .done
 	pop hl ; points to map group/num
-	pop bc ; line counter in c
-	ld a, [wPokedexStatus] ; wildmon index
-	inc a
-	ld [wPokedexStatus], a ; wildmon index
-	push bc ; line counter in c
 	ld b, 0
 	ld c, GRASS_WILDDATA_LENGTH
 	add hl, bc
-	pop bc ; print counter
 	; check to see if there is a next entry
 	ld a, BANK(JohtoGrassWildMons)
-	call GetFarByte ; hl is preserved, also won't clobber print line counter in c
-	cp -1
-	jr z, .reached_end
-
-	; no need to handle having printed all 3 slots if we had already reached the end of the table
+	call GetFarByte ; hl is preserved
+	pop bc ; line counter in c
+	cp -1 ; if we've printed a 3rd entry, this doesn't get checked
+	jr z, .reached_end ; end of data table 
+	; we dont need to handle having printed all 3 slots if we were at the end of the table
 	ld a, c
 	cp $6 ; 3 entries, 6 rows
 	jr z, .max_print
 
+	call DexArea_IncWildMonIndex
 	push bc ; print line counter in c
 	push hl
 	jr .landmark_loop
+
 .reached_end
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
@@ -428,13 +425,12 @@ Pokedex_DetailedArea_grass:
 	call DexEntry_NextCategory
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
+
 .max_print
 	call Grass_check_any_remaining
 	and a
 	jr z, .reached_end
-	ld a, [wPokedexStatus] ; wildmon index
-	inc a 
-	ld [wPokedexStatus], a ; wildmon index
+	; call DexArea_IncWildMonIndex
 	call DexEntry_IncPageNum
 	; page number is currently in a
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
@@ -442,10 +438,6 @@ Pokedex_DetailedArea_grass:
 
 .grass_walk_text:
 	db "GRASS/CAVES@"
-.johto_text:
-	db "JOHTO@"
-.kanto_text:
-	db "KANTO@"
 
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
@@ -490,30 +482,15 @@ Pokedex_Parse_grass:
 	ret
 
 Grass_check_any_remaining:
-	push hl
+	push hl ; pointing to next index's first entry byte: map group/num
 	push de
 	push bc
 
-	ld b, 0
-	ld c, GRASS_WILDDATA_LENGTH
-	add hl, bc
-	ld bc, 0 ; fake print line counter
-	push bc
-	push hl
 .landmark_loop
-	ld a, BANK(JohtoGrassWildMons)
-	call GetFarWord
-	pop hl ; points to map group/num
-	pop bc ; line counter
-	push bc ; line counter
-	push hl ; points to map group/num
-	; skip map encounter rates
-	inc hl
-	inc hl
-	inc hl
-	inc hl
-	inc hl ; should now point to lvl of encounter slot
-	inc hl ; now pointing to species
+	call DexArea_IncWildMonIndex
+	ld bc, 6
+	add hl, bc
+	push hl ; now pointing to species
 ; morn
 	ld a, 0 ; morn
 	call Pokedex_Parse_grass ; encounter % in a
@@ -525,6 +502,7 @@ Grass_check_any_remaining:
 	call Pokedex_Parse_grass ; encounter % in a
 	ld d, a
 	ld a, b
+	pop hl ; now pointing to species
 	and a
 	jr nz, .entries_remaining
 	ld a, e
@@ -533,39 +511,26 @@ Grass_check_any_remaining:
 	ld a, d
 	and a
 	jr nz, .entries_remaining
-.done
-	pop hl ; points to map group/num
-	pop bc ; line counter in c
-	push bc ; line counter in c
+
 	ld b, 0
-	ld c, GRASS_WILDDATA_LENGTH
-	add hl, bc
-	pop bc ; print counter
-	; check to see if there is a next entry
+	ld c, GRASS_WILDDATA_LENGTH - 6 ; to be at the right pointer to read the -1 if it's there, aka the mapgroup/num ptr
+	add hl, bc ; increment index without touching our wram index
+	; check to see if we've reached the end of the wild data file, -1
 	ld a, BANK(JohtoGrassWildMons)
 	call GetFarByte ; hl is preserved
 	cp -1
-	jr z, .reached_end
-	push bc
-	push hl
-	jr .landmark_loop
+	jr nz, .landmark_loop
+	xor a ; ret with 0 means none left, shift to next area category
+.done
+	pop bc
+	pop de
+	pop hl
+	ret
 
-.reached_end
-	pop bc
-	pop de
-	pop hl
-	; 0 means none left
-	xor a
-	ret
 .entries_remaining
-	pop hl ; realign stack, don't care about values
-	pop bc ; realign stack, don't care about values
-	
-	pop bc
-	pop de
-	pop hl
-	ld a, 1
-	ret
+; since we've been incrementing the index, it now doesn't have to do so much searching to "find" this pointer again
+	ld a, 1 ; if a is not 0 when we return, it means that the pokemon is ahead in an upcoming entry, increment page and index
+	jr .done
 
 Add_encounter_percent_grass:
 	; total in b
@@ -575,6 +540,7 @@ Add_encounter_percent_grass:
 	ld a, b
 	pop bc
 	ret
+
 .body:
 	ld a, c
 	ld b, 25
