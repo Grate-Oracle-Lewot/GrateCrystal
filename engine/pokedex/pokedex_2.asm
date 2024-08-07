@@ -140,25 +140,34 @@ HandlePageNumReset:
 DisplayDexEntry:
 	ld a, [wPokedexEntryType]
 	and a
-	jr nz, .check_caught
+	jr nz, .next
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
-.check_caught
-; Check to see if we caught it. Get out of here if we haven't.
-	ld a, [wTempSpecies]
-	dec a
-	call CheckCaughtMon
-	ret z
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], "<DEX_⁂>"
+	jr .next
 
+.not_shiny
+	ld [hl], " "	
+.next
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
-
+; erase bottom half of page
+	hlcoord 1, 8
 	lb bc, 8, SCREEN_WIDTH - 1
-	hlcoord 1, 8
 	call ClearBox
-
+; take away page num and A press since we're assuming we haven't seen the mon
+; will re-print if we have, later
+	hlcoord 17, 5
+	ld bc, 3 ; box 2 tiles high, 9 wide
+	ld a, $4e ; category box horizontal line
+	call ByteFill
+; skinny horizontal line halfway down page
 	hlcoord 1, 8
-	ld bc, 19
+	ld bc, SCREEN_WIDTH - 1
 	ld a, $55
 	call ByteFill
 
@@ -167,29 +176,24 @@ DisplayDexEntry:
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 2, 9
+	hlcoord 9, 6
 	call PlaceFarString ; dex species nickname
+	push bc ; bank?
+	push de ; dex entry ptr
+	hlcoord 9, 7
+	ld de, String_pokemon
+	call PlaceString
+	pop de ; dex entry ptr
+	pop bc ; bank?
 	ld h, b
 	ld l, c
-	push de
-	hlcoord 12, 9
-.check_tile
-	; this prints the "PKMN" symbols after the species nickname
-	ld a, [hld]
-	cp $e2
-	jr z, .cont
-	cp $7f ; empty tile
-	jr z, .check_tile
-	inc hl
-	inc hl
-	ld [hl], " "
-	inc hl
-	ld [hl], $e1
-	inc hl
-	ld [hl], $e2 
-.cont
-	pop hl
-	pop bc
+	push de ; dex entry ptr
+	ld a, [wTempSpecies]
+	dec a
+	call CheckCaughtMon
+	pop hl ; dex entry ptr
+	pop bc ; bank?
+	jp z, UncaughtMon_Info_Erase_PageNum ; ret z ; leave if we havent caught
 ; Get the height of the Pokemon.
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -208,25 +212,25 @@ DisplayDexEntry:
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 2, 10
 	push af
 	call PlaceFarString
 	pop bc
-	jp DexEntry_IncPageNum
-
+	call DexEntry_IncPageNum
+	ret
 ; Page 2
 .page2
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 2, 10
 	push af
 	call PlaceFarString
 	pop bc
 	push bc
 	push de
 	lb bc, 5, SCREEN_WIDTH - 1
-	hlcoord 1, 11
+	hlcoord 1, 10
 	call ClearBox
 	hlcoord 1, 8
 	ld bc, 19
@@ -236,11 +240,14 @@ DisplayDexEntry:
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 2, 10
 	call PlaceFarString
 	xor a
 	ld [wPokedexEntryPageNum], a
 	ret
+
+String_pokemon:
+	db " #MON @"
 
 GetDexEntryPointer:
 ; return dex entry pointer b:de
