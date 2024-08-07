@@ -583,24 +583,17 @@ Pokedex_DetailedArea_surf:
 	jp nz, Pokedex_Skip_Empty_Area_Category
 
 	push hl ; JohtoWaterWildMons or KantoWaterWildMons
-	hlcoord 7, 9
-	ld de, .surfing_text
-	call PlaceString
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_AREA_SURF_JOHTO
 	jr nz, .chk_kanto
-	hlcoord 1, 9
-	ld de, .johto_text
-	call PlaceString
+	ld de, String_johto_text
 	jr .title_done
 .chk_kanto
-	cp DEXENTRY_AREA_SURF_KANTO
-	jr nz, .title_done
-	hlcoord 1, 9
-	ld de, .kanto_text
-	call PlaceString
-
+	ld de, String_kanto_text
 .title_done
+	ld hl, .surfing_text
+	call Print_Category_text
+
 	ld a, [wPokedexStatus] ; wildmon index
 	ldh [hMultiplicand + 2], a
 	xor a
@@ -652,28 +645,25 @@ Pokedex_DetailedArea_surf:
 	push hl
 .done
 	pop hl ; points to map group/num
-	pop bc ; line counter in c
-	ld a, [wPokedexStatus] ; wildmon index
-	inc a
-	ld [wPokedexStatus], a ; wildmon index
-	push bc ; line counter in c
 	ld b, 0
 	ld c, WATER_WILDDATA_LENGTH
 	add hl, bc
-	pop bc ; print counter
 	; check to see if there is a next entry
 	ld a, BANK(JohtoWaterWildMons)
 	call GetFarByte ; hl is preserved
+	pop bc ; line counter in c
 	cp -1 ; if we've printed a 3rd entry, this doesn't get checked
-	jr z, .reached_end
-
-	; we don't need to handle having printed all 3 slots if we were at the end of the table
+	jr z, .reached_end ; end of data table 
+	; we dont need to handle having printed all 3 slots if we were at the end of the table
 	ld a, c
 	cp $6 ; 3 entries, 6 rows
 	jr z, .max_print
+
+	call DexArea_IncWildMonIndex
 	push bc ; print counter
 	push hl
 	jr .landmark_loop
+
 .reached_end
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
@@ -683,13 +673,12 @@ Pokedex_DetailedArea_surf:
 	call DexEntry_NextCategory
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
+
 .max_print
 	call Surf_check_any_remaining
 	and a
 	jr z, .reached_end
-	ld a, [wPokedexStatus] ; wildmon index
-	inc a 
-	ld [wPokedexStatus], a ; wildmon index
+	call DexArea_IncWildMonIndex
 	call DexEntry_IncPageNum
 	; page number is currently in a
 	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
@@ -697,10 +686,6 @@ Pokedex_DetailedArea_surf:
 
 .surfing_text:
 	db "SURFING@"
-.johto_text:
-	db "JOHTO@"
-.kanto_text:
-	db "KANTO@"
 
 Pokedex_Parse_surf:
 	push hl ; first species byte, surfing has no time of day
@@ -793,6 +778,7 @@ Surf_check_any_remaining:
 	; 0 means none left
 	xor a
 	ret
+
 .entries_remaining
 	pop hl ; realign stack, don't care about values
 	pop bc ; realign stack, don't care about values
