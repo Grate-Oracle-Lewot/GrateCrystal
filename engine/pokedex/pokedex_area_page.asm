@@ -830,9 +830,7 @@ Dex_Check_Grass:
 	and a
 	jr z, .found
 	pop hl ; points to map group/num
-	ld a, [wPokedexStatus]
-	inc a
-	ld [wPokedexStatus], a
+	call DexArea_IncWildMonIndex
 	ld b, 0
 	ld c, GRASS_WILDDATA_LENGTH
 	add hl, bc
