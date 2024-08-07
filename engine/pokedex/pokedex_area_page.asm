@@ -1592,11 +1592,11 @@ Pokedex_DetailedArea_roaming:
 	ld [wPokedexEvoStage3], a
 
 	; print the title, ROAMING
-	hlcoord 1, 9
 	ld de, .roaming_text
-	call PlaceString
-	ld bc, 0 ; print line counter for 'DexEntry_adjusthlcoord' in 'c'
+	ld hl, String_pokemon
+	call Print_Category_text
 
+	ld bc, 0 ; print line counter for 'DexEntry_adjusthlcoord' in 'c'
 	ld a, [wCurSpecies]
 	ld hl, wRoamMon1Species
 	cp [hl]
@@ -1622,7 +1622,7 @@ Pokedex_DetailedArea_roaming:
 	jp DexEntry_NextCategory
 
 .roaming_text:
-	db "ROAMING@"
+	db "ROAMING   @"
 
 Dex_Print_Roamer_Info:
 	; push bc ; line counter in c
@@ -1645,7 +1645,7 @@ Dex_Print_Roamer_Info:
 
 	farcall GetMapGroupNum_Name ; map info in 'de'
 	; map name ptr is in de
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld a, BANK(MapGroupNum_Names)
 	push bc ; current print line in c
@@ -1656,10 +1656,10 @@ Dex_Print_Roamer_Info:
 	ld a, [wPokedexEvoStage2]
 	cp 100
 	jr nz, .two_digits
-	hlcoord 4, 11
+	hlcoord 4, 10
 	jr .lvl_spot_decided
 .two_digits
-	hlcoord 3, 11
+	hlcoord 3, 10
 .lvl_spot_decided
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	push bc ; current print line in c
@@ -1668,9 +1668,9 @@ Dex_Print_Roamer_Info:
 	call PrintNum
 	pop bc ; current print line in c
 	; print lvl symbol
-	hlcoord 3, 11
+	hlcoord 3, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], $5d ; lvl symbol
+	ld [hl], "<DEX_LV>" ; lvl symbol
 
 ; if HP is 0, means the DVs haven't been init'd yet upon seeing it in battle for the first time
 ; if HP is 0, don't print
@@ -1679,14 +1679,14 @@ Dex_Print_Roamer_Info:
 	and a
 	jr z, .not_initd
 ; HP string and /
-	hlcoord 8, 11
+	hlcoord 8, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld de, .hp_text
 	call PlaceString
 	pop bc ; current print line in c
 	; current HP
 	
-	hlcoord 12, 11
+	hlcoord 12, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld de, wPokedexEvoStage3 ; Roamer's HP
 	push bc ; current print line in c
@@ -1706,14 +1706,12 @@ Dex_Print_Roamer_Info:
 	ld b, h
 	ld c, l
 	farcall CheckShininess ; ptr needs to be in bc
-	; scf if shiny
 	jr nc, .not_shiny
-	; shiny tile is $64
 	pop bc ; current print line in c
 	push bc ; current print line in c
-	hlcoord 1, 11
+	hlcoord 1, 10
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
-	ld [hl], $64
+	ld [hl], "<DEX_⁂>"
 ; shiny check done
 .not_shiny
 	pop bc ; line counter in c
