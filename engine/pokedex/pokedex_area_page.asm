@@ -1001,6 +1001,7 @@ Pokedex_DetailedArea_Trees:
 	jr z, .rare
 	call Dex_Check_commontree_rocksmash_set
 	jr .setcheckdone
+
 .rare
 	call Dex_Check_raretree_set
 .setcheckdone	
@@ -1009,10 +1010,12 @@ Pokedex_DetailedArea_Trees:
 	jr z, .print_tree
 	call inc_trees_rocksmash_map_index
 	jr .map_loop
+
 .donedone
 	ld a, [wPokedexEntryType] ; rocksmash
 	inc a
 	jp DexEntry_NextCategory
+
 .print_tree
 	call Print_Trees_Rocksmash ; map info in de, encounter % in wPokedexEvoStage3
 	call inc_trees_rocksmash_map_index
@@ -1024,6 +1027,7 @@ Pokedex_DetailedArea_Trees:
 	cp 6
 	jr z, .thispagedone
 	jr .map_loop
+
 .thispagedone
 	; check if any remaining entries
 	call AnyRemaining_trees
@@ -1032,7 +1036,7 @@ Pokedex_DetailedArea_Trees:
 	jp DexEntry_IncPageNum
 
 Dex_Check_Trees_firstcommon:
-	ld a, DEXENTRY_AREA_TREES_RARE
+	ld a, DEXENTRY_AREA_TREES_COMMON
 	jr Dex_Check_Trees_firstrare.stub
 Dex_Check_Trees_firstrare:
 	ld a, DEXENTRY_AREA_TREES_RARE
@@ -1046,9 +1050,9 @@ Dex_Check_Trees_firstrare:
 	ret
 
 Dex_Check_Trees:
-; check for matching mons in RockSmashMons
+; check for matching mons in TreeMons
 ; return zero in 'a' if found, else 1 in 'a'
-	ld hl, TreeMons ; table of pointers, NUM_ROCKSMASH_SETS
+	ld hl, TreeMons ; table of pointers, NUM_TREEMON_SETS
 	ld b, 0 ; corresponds to NUM_TREEMON_SETS, so we check each entry
 .setloop	
 	push bc ; tree set index
@@ -1059,6 +1063,7 @@ Dex_Check_Trees:
 .common
 	call Dex_Check_commontree_rocksmash_set
 	jr .setcheckdone
+
 .rare
 	call Dex_Check_raretree_set
 .setcheckdone	
@@ -1080,9 +1085,7 @@ Dex_Check_Trees:
 
 AnyRemaining_trees:
 	; given map index in wPokedexStatus, return 0 if species match, else 1
-.map_loop	
-; RockMonMaps::
-; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
+.map_loop
 	ld hl, TreeMonMaps
 	ld bc, 3 ; bytes per entry in TreeMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; TreeMonMaps entry index
@@ -1106,6 +1109,7 @@ AnyRemaining_trees:
 	jr z, .rare
 	call Dex_Check_commontree_rocksmash_set
 	jr .setcheckdone
+
 .rare
 	call Dex_Check_raretree_set
 .setcheckdone
@@ -1121,14 +1125,14 @@ Print_Trees_Rocksmash:
 ; map info in de, encounter % in wPokedexEvoStage3
 	farcall GetMapGroupNum_Name ; map info needs to be in de
 	; map name ptr is in de
-	hlcoord 2, 10
+	hlcoord 2, 9
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	ld a, BANK(MapGroupNum_Names)
 	call PlaceFarString
 
-	hlcoord 3, 11 ; same position regardless
+	hlcoord 2, 10 ; same position regardless
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a	
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
@@ -1138,7 +1142,7 @@ Print_Trees_Rocksmash:
 	ld [hl], $6b ; day icon tile
 	add hl, de
 	ld [hl], $6c ; nite icon tile 
-	hlcoord 7, 11
+	hlcoord 6, 10
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a		
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
@@ -1150,21 +1154,21 @@ Print_Trees_Rocksmash:
 	ld [hl], "<%>"
 
 	ld de, wPokedexEvoStage3 ; encounter %
-	hlcoord 4, 11
+	hlcoord 3, 10
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a	
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
 	call PrintNum
 
-	hlcoord 10, 11
+	hlcoord 9, 10
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a		
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
 	lb bc, 1, 3
 	call PrintNum
 
-	hlcoord 16, 11
+	hlcoord 15, 10
 	ld a, [wPokedexEvoStage2] ; lines printed
 	ld c, a		
 	call DexEntry_adjusthlcoord ; current print line needs to be in c
@@ -1175,18 +1179,20 @@ Print_TreeTitle:
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_AREA_TREES_COMMON
 	jr z, .common
-	hlcoord 1, 9
 	ld de, .headbutt_tree_rare_text
-	jp PlaceString	
+	jr .print
 .common
-	hlcoord 1, 9
 	ld de, .headbutt_tree_common_text
-	jp PlaceString
+.print	
+	ld hl, .trees_text
+	jp Print_Category_text
 
 .headbutt_tree_common_text:
-	db "COMMON SHAKE-TREES@"
+	db "COMMON     @"
 .headbutt_tree_rare_text:
-	db "RARE SHAKE-TREES@"
+	db "RARE       @"
+.trees_text:	
+	db " TREES   @"
 
 inc_trees_rocksmash_map_index:
 	ld a, [wPokedexStatus]
@@ -1200,8 +1206,6 @@ Dex_Check_commontree_rocksmash_set:
 	; get the ptr from the double ptr in hl
 	ld a, BANK(TreeMons)
 	call GetFarWord
-; TreeMonSet_Rock::
-; 	db 90, KRABBY,     15
 .loop
 	ld a, BANK(TreeMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -1220,11 +1224,13 @@ Dex_Check_commontree_rocksmash_set:
 	inc hl
 	inc hl
 	jr .loop
+
 .found
 	ld a, [wPokedexEvoStage3]
 	add b ; this encounter %
 	ld [wPokedexEvoStage3], a ; encounter % total
 	ret
+
 .done
 	ld a, [wPokedexEvoStage3]
 	ld b, a
@@ -1241,7 +1247,6 @@ Dex_Check_raretree_set:
 	; get the ptr from the double ptr in hl
 	ld a, BANK(TreeMons)
 	call GetFarWord
-; 	db 10, AIPOM,      10
 .loop1 ; get past the common table
 	ld a, BANK(TreeMons)
 	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
@@ -1251,6 +1256,7 @@ Dex_Check_raretree_set:
 	inc hl
 	inc hl
 	jr .loop1
+
 .loop2setup
 	inc hl
 .loop2
@@ -1271,11 +1277,13 @@ Dex_Check_raretree_set:
 	inc hl
 	inc hl
 	jr .loop2
+
 .found
 	ld a, [wPokedexEvoStage3]
 	add b ; this encounter %
 	ld [wPokedexEvoStage3], a ; encounter % total
 	ret
+
 .done
 	ld a, [wPokedexEvoStage3]
 	ld b, a
@@ -1298,13 +1306,11 @@ Pokedex_DetailedArea_rocksmash:
 	ld [wPokedexEvoStage2], a ; lines printed
 	ld [wPokedexEvoStage3], a ; encounter % total
 	; print the title, ROCK SMASH
-	hlcoord 1, 9
-	ld de, .rocksmash_text
-	call PlaceString
+	ld hl, .rocksmash_text2
+	ld de, .rocksmash_text1
+	call Print_Category_text
 	; using wPokedexStatus/RockMonMaps entry index, calculate ptr
-.map_loop	
-; RockMonMaps::
-; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
+.map_loop
 	ld hl, RockMonMaps
 	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; RockMonMaps entry index
@@ -1337,10 +1343,12 @@ Pokedex_DetailedArea_rocksmash:
 	jr z, .print_rocksmash
 	call inc_trees_rocksmash_map_index
 	jr .map_loop
+
 .donedone
 	ld a, [wPokedexEntryType] ; rocksmash
 	inc a
-	jp DexEntry_NextCategory	
+	jp DexEntry_NextCategory
+
 .print_rocksmash
 	call Print_Trees_Rocksmash ; map info in de, encounter % in wPokedexEvoStage3
 	call inc_trees_rocksmash_map_index
@@ -1360,8 +1368,10 @@ Pokedex_DetailedArea_rocksmash:
 	jr nz, .donedone
 	jp DexEntry_IncPageNum
 
-.rocksmash_text:
-	db "SMASHABLE ROCKS@"
+.rocksmash_text1:
+	db "ROCK      @"
+.rocksmash_text2:	
+	db " SMASH   @"
 
 Dex_Check_rocksmash:
 ; check for matching mons in RockSmashMons
@@ -1390,9 +1400,7 @@ Dex_Check_rocksmash:
 
 AnyRemaining_RockSmash:
 	; given map index in wPokedexStatus, return 0 if species match, else 1
-.map_loop	
-; RockMonMaps::
-; 	treemon_map CIANWOOD_CITY,             TREEMON_SET_ROCK
+.map_loop
 	ld hl, RockMonMaps
 	ld bc, 3 ; bytes per entry in RockMonMaps, two for map group and ID, and one for rocksmash set
 	ld a, [wPokedexStatus] ; RockMonMaps entry index
@@ -1416,6 +1424,7 @@ AnyRemaining_RockSmash:
 	ret z
 	call inc_trees_rocksmash_map_index
 	jr .map_loop
+
 .notfound
 	ld a, 1
 	ret
