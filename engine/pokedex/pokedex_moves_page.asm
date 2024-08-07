@@ -19,6 +19,9 @@ String_TUTOR_text:
 Print_Category_MOVES_text:
 	ld hl, String_MOVES_text
 	jp Print_Category_text
+Print_Category_MACHINES_text:
+	ld hl, String_MACHINES_text
+	jp Print_Category_text
 
 DisplayDexMonMoves::
 	ld a, [wTempSpecies]
