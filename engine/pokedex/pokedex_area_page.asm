@@ -1,3 +1,8 @@
+String_johto_text:
+	db "JOHTO:     @"
+String_kanto_text:
+	db "KANTO:     @"
+
 Pokedex_DetailedArea:
 	xor a
 	ld [wCurDamage], a
@@ -61,7 +66,25 @@ Pokedex_DetailedArea:
 	xor a
 	ld [wPokedexStatus], a ; wildmon entry index
 	ld [wPokedexEntryPageNum], a ; page num
-	jp Pokedex_PrintPageNum
+
+; erase category banner, page number and A > indicator	
+	hlcoord 9, 6
+	lb bc, 2, 11 ; erase a box 2 tiles high, 9 wide, ; to 18, 7
+	call ClearBox
+; overwrite the A button with plain line
+	hlcoord 18, 5
+	ld bc, 2
+	ld a, $4e ; category box border
+	call ByteFill
+; ; corners, lateral sides
+; 	hlcoord 19, 5
+; 	ld [hl], $6f
+; 	hlcoord 19, 6
+; 	ld [hl], $6e
+; 	hlcoord 19, 7
+; 	ld [hl], $6e	
+	ret
+
 .found
 	ld [wPokedexEntryType], a
 	xor a
