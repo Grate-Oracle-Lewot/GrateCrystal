@@ -326,8 +326,6 @@ Pokedex_DetailedArea_grass:
 	ld de, String_johto_text
 	jr .title_done
 .chk_kanto
-	cp DEXENTRY_AREA_GRASS_KANTO
-	jr nz, .swarm
 	ld de, String_kanto_text
 .title_done
 	ld hl, .grass_walk_text
