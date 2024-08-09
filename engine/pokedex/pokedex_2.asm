@@ -307,19 +307,10 @@ endr
 DisplayDexMonType_CustomGFX:
 	call GetBaseData
 	ld a, [wBaseType1]
-	cp CURSE_TYPE
-	jr z, .type1_handle_curse
-; Skip Bird
-	cp BIRD
-	jr c, .type1_adjust_done
-	cp UNUSED_TYPES
-	dec a
-	jr c, .type1_adjust_done
-	sub UNUSED_TYPES
-	jr .type1_adjust_done
-.type1_handle_curse
-	ld a, 18
-.type1_adjust_done
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
 ; load the tiles
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
@@ -350,19 +341,10 @@ DisplayDexMonType_CustomGFX:
 	ld a, [wBaseType2]
 	cp b
 	jr z, .check_floatmon
-	cp CURSE_TYPE
-	jr z, .type2_handle_curse
-; Skip Bird
-	cp BIRD
-	jr c, .type2_adjust_done
-	cp UNUSED_TYPES
-	dec a
-	jr c, .type2_adjust_done
-	sub UNUSED_TYPES
-	jr .type2_adjust_done
-.type2_handle_curse
-	ld a, 18
-.type2_adjust_done
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
