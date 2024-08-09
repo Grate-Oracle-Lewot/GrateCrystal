@@ -125,7 +125,7 @@
 	charmap "└",         $be ; because they would show up as pieces of the border.
 	charmap "┘",         $bf
 
-	charmap ">",         $c0 ; c0 through cd (ce?) are used for the map entry sign border.
+	charmap ">",         $c0 ; c0 through cd are used for the map entry sign border.
 	charmap "<",         $c1 ; This is only used when gfx/font/overworld.png is loaded,
 	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
 	charmap "+",         $c3 ; However, none of those characters can be used in map names.
