@@ -35,8 +35,8 @@
 	charmap "<TRAINER>", $5d ; "TRAINER"
 	charmap "<ROCKET>",  $5e ; "ROCKET"
 	charmap "<DEXEND>",  $5f
-	charmap "<ATPRA>",   $60
-	charmap "<ATDNE>",   $61
+	charmap "<ATPRA>",   $60 ; autopara
+	charmap "<ATDNE>",   $61 ; autodone
 
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
@@ -118,8 +118,8 @@
 	charmap "y",         $b8
 	charmap "z",         $b9
 
-	charmap "┌",         $ba ; These characters represent the pieces of the textbox border.
-	charmap "─",         $bb ; They are not present in the font graphics files because they just get overwritten anyway,
+	charmap "┌",         $ba ; ba through bf are the pieces of the textbox border.
+	charmap "─",         $bb ; They are blank in the font graphics files because they just get overwritten anyway,
 	charmap "┐",         $bc ; by whichever customizable border design the player chooses.
 	charmap "│",         $bd ; I think this means you can't use these positions for characters,
 	charmap "└",         $be ; because they would show up as pieces of the border.
