@@ -42,7 +42,7 @@
 
 	charmap "<LV>",      $6e
 
-	charmap "<DO>",      $70 ; floatmon symbol
+	charmap "<DO>",      $70 ; floatmon arrow
 	charmap "◀",         $71
 	charmap "『",         $72 ; Japanese opening quote, unused
 	charmap "<ID>",      $73
@@ -121,11 +121,11 @@
 	charmap "┌",         $ba ; ba through bf are the pieces of the textbox border.
 	charmap "─",         $bb ; They are blank in the font graphics files because they just get overwritten anyway,
 	charmap "┐",         $bc ; by whichever customizable border design the player chooses.
-	charmap "│",         $bd ; I think this means you can't use these positions for characters,
+	charmap "│",         $bd ; I think this means you can't use these slots for characters,
 	charmap "└",         $be ; because they would show up as pieces of the border.
 	charmap "┘",         $bf
 
-	charmap ">",         $c0 ; c0 through cd are used for the map entry sign border.
+	charmap ">",         $c0 ; c0 through cd (ce?) are used for the map entry sign border.
 	charmap "<",         $c1 ; This is only used when gfx/font/overworld.png is loaded,
 	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
 	charmap "+",         $c3 ; However, none of those characters can be used in map names.
@@ -149,8 +149,10 @@
 	charmap "■",         $d7
 	charmap "▲",         $d8
 	charmap "☎",         $d9
-	charmap "<BOLD_V>",  $da
-	charmap "<BOLD_S>",  $db
+
+	charmap "<BOLD_V>",  $da ; bold V in "VS" for link battles
+	charmap "<BOLD_S>",  $db ; bold S in "VS" for link battles
+
 	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
 	charmap "“",         $dd ; opening quote
 	charmap "”",         $de ; closing quote
@@ -195,9 +197,9 @@
 
 ; Special characters in gfx/pokedex/pokedex.png, for Nayru's dex
 
-	charmap "<DEX_LV>",  $5d ; lvl icon
-	charmap "<DEX_⁂>",  $64 ; shiny icon
-	charmap "<DEX_FLT>", $80 ; float icon
+	charmap "<DEX_LV>",  $5d ; level icon
+	charmap "<DEX_⁂>",  $64 ; shiny sparkles
+	charmap "<DEX_FLT>", $80 ; floatmon arrow
 
 ; Japanese control characters (see home/text.asm)
 
