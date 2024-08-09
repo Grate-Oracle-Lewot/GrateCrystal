@@ -128,7 +128,7 @@
 	charmap ">",         $c0 ; c0 through cd are used for the map entry sign border.
 	charmap "<",         $c1 ; This is only used when gfx/font/overworld.png is loaded,
 	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
-	charmap "+",         $c3 ; However, none of those characters can be used in map names.
+	charmap "+",         $c3 ; However, none of those characters can be used in landmark names.
 	charmap "<%>",       $c4
 
 	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
