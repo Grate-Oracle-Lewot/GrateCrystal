@@ -38,40 +38,6 @@
 	charmap "<ATPRA>",   $60
 	charmap "<ATDNE>",   $61
 
-; Actual characters (from gfx/font/font_extra.png)
-
-	charmap "<BOLD_C>",  $62 ; unused
-	charmap "<BOLD_D>",  $63 ; unused
-	charmap "<BOLD_E>",  $64 ; unused
-	charmap "<BOLD_F>",  $65 ; unused
-	charmap "<BOLD_G>",  $66 ; unused
-	charmap "<BOLD_H>",  $67 ; unused
-	charmap "<BOLD_I>",  $68 ; unused
-	charmap "<BOLD_V>",  $69
-	charmap "<BOLD_S>",  $6a
-	charmap "<BOLD_L>",  $6b ; unused
-	charmap "<BOLD_M>",  $6c ; unused
-	charmap "<COLON>",   $6d ; colon with tinier dots than ":"
-	charmap "ぃ",         $6e ; hiragana small i, unused
-	charmap "ぅ",         $6f ; hiragana small u, unused
-	charmap "<PO>",      $70
-	charmap "<KE>",      $71
-	charmap "“",         $72 ; opening quote
-	charmap "”",         $73 ; closing quote
-	charmap "·",         $74 ; middle dot, unused
-	charmap "…",         $75 ; ellipsis
-	charmap "ぁ",         $76 ; hiragana small a, unused
-	charmap "ぇ",         $77 ; hiragana small e, unused
-	charmap "ぉ",         $78 ; hiragana small o, unused
-
-	charmap "┌",         $79
-	charmap "─",         $7a
-	charmap "┐",         $7b
-	charmap "│",         $7c
-	charmap "└",         $7d
-	charmap "┘",         $7e
-	charmap " ",         $7f
-
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
 	charmap "<LV>",      $6e
@@ -84,14 +50,7 @@
 
 ; Actual characters (from other graphics files)
 
-	; needed for _LoadFontsExtra1 (see engine/gfx/load_font.asm)
-	charmap "■",         $60 ; gfx/font/black.2bpp
-	charmap "▲",         $61 ; gfx/font/up_arrow.png
-	charmap "☎",         $62 ; gfx/font/phone_icon.2bpp
-
-	; needed for MagikarpHouseSign (see engine/events/magikarp.asm)
-	charmap "′",         $6e ; gfx/font/feet_inches.png
-	charmap "″",         $6f ; gfx/font/feet_inches.png
+	charmap " ",         $7f ; gfx/frames/space.png
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
 	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
@@ -159,18 +118,25 @@
 	charmap "y",         $b8
 	charmap "z",         $b9
 
-	charmap "<INV_EX>",  $bd ; inverted exclamation mark
-	charmap "<INV_QU>",  $be ; inverted question mark
-	charmap "<FLOAT>",   $bf ; floatmon arrow
+	charmap "┌",         $ba ; These characters represent the pieces of the textbox border.
+	charmap "─",         $bb ; They are not present in the font graphics files because they just get overwritten anyway,
+	charmap "┐",         $bc ; by whichever customizable border design the player chooses.
+	charmap "│",         $bd ; I think this means you can't use these positions for characters,
+	charmap "└",         $be ; because they would show up as pieces of the border.
+	charmap "┘",         $bf
 
-	charmap ">",         $c0
-	charmap "<",         $c1
-	charmap "=",         $c2
-	charmap "+",         $c3
+	charmap ">",         $c0 ; c0 through cd are used for the map entry sign border.
+	charmap "<",         $c1 ; This is only used when gfx/font/overworld.png is loaded,
+	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
+	charmap "+",         $c3 ; However, none of those characters can be used in map names.
 	charmap "<%>",       $c4
 
-	charmap "<FEET>",    $ce ; ′
-	charmap "<INCH>",    $cf ; ″
+	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
+	charmap "<INV_QU>",  $c6 ; inverted question mark
+	charmap "<FLOAT>",   $c7 ; floatmon arrow
+
+	charmap "′",         $ce
+	charmap "″",         $cf
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1
@@ -180,22 +146,24 @@
 	charmap "'t",        $d5
 	charmap "'v",        $d6
 
-	charmap "<SQUARE>",  $d7 ; ■
-	charmap "<UP>",      $d8 ; ▲
-	charmap "<PHONE>",   $d9 ; ☎
-	charmap "<VS1>",     $da ; bold V
-	charmap "<VS2>",     $db ; bold S
-	charmap "<COLON2>",  $dc ; same as <COLON> but in gfx/font/font.png
-	charmap "<QUOP>",    $dd ; “
-	charmap "<QUOS>",    $de ; ”
+	charmap "■",         $d7
+	charmap "▲",         $d8
+	charmap "☎",         $d9
+	charmap "<BOLD_V>",  $da
+	charmap "<BOLD_S>",  $db
+	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
+	charmap "“",         $dd ; opening quote
+	charmap "”",         $de ; closing quote
 
 	charmap "←",         $df
 	charmap "'",         $e0
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
-	charmap "<PO2>",     $e4 ; same as <PO> but in gfx/font/font.png
-	charmap "<KE2>",     $e5 ; same as <KE> but in gfx/font/font.png
+
+	charmap "<PO>",      $e4
+	charmap "<KE>",      $e5
+
 	charmap "?",         $e6
 	charmap "!",         $e7
 	charmap ".",         $e8
@@ -209,7 +177,7 @@
 	charmap "♂",         $ef
 	charmap "¥",         $f0
 	charmap "×",         $f1
-	charmap "<ELPS>",    $f2 ; …
+	charmap "…",         $f2
 	charmap "/",         $f3
 	charmap ",",         $f4
 	charmap "♀",         $f5
@@ -225,7 +193,7 @@
 	charmap "8",         $fe
 	charmap "9",         $ff
 
-; stuff for Nayru's dex
+; Special characters in gfx/pokedex/pokedex.png, for Nayru's dex
 
 	charmap "<DEX_LV>",  $5d ; lvl icon
 	charmap "<DEX_⁂>",  $64 ; shiny icon
