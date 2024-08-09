@@ -21,9 +21,6 @@ _LoadStandardFont::
 	lb bc, BANK(Font), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
-_LoadFontsExtra2::
-	ret
-
 _LoadFontsBattleExtra::
 	ld de, FontBattleExtra
 	ld hl, vTiles2 tile $60
