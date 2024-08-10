@@ -321,8 +321,7 @@ _CGB_Pokedex:
 ; mon base types
 	hlcoord 9, 6, wAttrmap
 	lb bc, 1, 8
-	ld a, $7 ; mon base type pals
-	set 3, a ; VRAM 1
+	ld a, 7 | VRAM_BANK_1 ; mon base type pals ; VRAM 1
 	call FillBoxCGB
 
 	call InitPartyMenuOBPals
@@ -332,12 +331,15 @@ _CGB_Pokedex:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-; page nums
+; category enclosure + page nums + A >
+	hlcoord 18, 5, wAttrmap
+	ld bc, 2
+	ld a, 0 | VRAM_BANK_1 ; dex pal PREDEFPAL_POKEDEX
+	call ByteFill
 	hlcoord 18, 7, wAttrmap
-	lb bc, 1, 2
-	ld a, $0 ; dex pal
-	set 3, a ; vram1
-	call FillBoxCGB
+	ld bc, 2
+	ld a, 0 | VRAM_BANK_1 ; dex pal PREDEFPAL_POKEDEX
+	call ByteFill
 
 	call ApplyAttrmap
 	call ApplyPals
