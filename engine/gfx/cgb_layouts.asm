@@ -50,6 +50,7 @@ CGBLayoutJumptable:
 	dw _CGB_PokedexSearchOption
 	dw _CGB_BetaPoker
 	dw _CGB_Pokepic
+	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
 	dw _CGB_TrainerCardKanto
@@ -1254,6 +1255,24 @@ _CGB_Pokepic:
 	ld a, PAL_BG_GRAY
 	call FillBoxCGB
 	jp ApplyAttrmap
+
+_CGB_MagnetTrain: ; unused placeholder to match up with SGB set
+	ld hl, PalPacket_MagnetTrain + 1
+	call CopyFourPalettes
+	call WipeAttrmap
+	hlcoord 0, 4, wAttrmap
+	lb bc, 10, SCREEN_WIDTH
+	ld a, PAL_BG_GREEN
+	call FillBoxCGB
+	hlcoord 0, 6, wAttrmap
+	lb bc, 6, SCREEN_WIDTH
+	ld a, PAL_BG_RED
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
 
 _CGB_GamefreakLogo:
 	ld de, wBGPals1
