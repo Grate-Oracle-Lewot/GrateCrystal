@@ -50,7 +50,6 @@ CGBLayoutJumptable:
 	dw _CGB_PokedexSearchOption
 	dw _CGB_BetaPoker
 	dw _CGB_Pokepic
-	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
 	dw _CGB_TrainerCard
 	dw _CGB_TrainerCardKanto
