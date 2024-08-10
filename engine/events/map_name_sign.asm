@@ -1,4 +1,4 @@
-MAP_NAME_SIGN_START EQU $60
+MAP_NAME_SIGN_START EQU $c0
 
 InitMapNameSign::
 	xor a
