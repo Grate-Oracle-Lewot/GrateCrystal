@@ -1244,9 +1244,9 @@ Dungeons_Map_Name21: ; SEAFOAM_CAVE_B1F
 Dungeons_Map_Name22: ; SEAFOAM_CAVE_B2F
 	db "SEAFOAM DEPTHS@"
 Dungeons_Map_Name23: ; DARK_CAVE_VIOLET_ENTRANCE
-	db "DARK CAVE WEST@"
+	db "DARK CAVE SW@"
 Dungeons_Map_Name24: ; DARK_CAVE_BLACKTHORN_ENTRANCE
-	db "DARK CAVE EAST@"
+	db "DARK CAVE NE@"
 Dungeons_Map_Name25: ; DARK_CAVE_2F
 	db "DARK CAVE DOJO@"
 Dungeons_Map_Name26: ; SPROUT_TOWER_1F
