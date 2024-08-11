@@ -296,10 +296,6 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl::
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
-TilesetBetaWordRoomMeta::
-INCBIN "data/tilesets/beta_word_room_metatiles.bin"
-
-TilesetBetaWordRoomColl::
 TilesetHoOhWordRoomColl::
 TilesetKabutoWordRoomColl::
 TilesetOmanyteWordRoomColl::
@@ -310,7 +306,6 @@ INCLUDE "data/tilesets/beta_word_room_collision.asm"
 SECTION "Tileset Data 7", ROMX
 
 TilesetRuinsOfAlphGFX::
-TilesetBetaWordRoomGFX::
 TilesetHoOhWordRoomGFX::
 TilesetKabutoWordRoomGFX::
 TilesetOmanyteWordRoomGFX::
