@@ -232,7 +232,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - Thursday: Morty and Erika
   - Friday: Chuck and Janine
   - Saturday: Jasmine and Sabrina
-  - Sunday: Pryce and Blaine, and Blue can be rematched if you've spoken to Mr. Fuji in the Route 22 house on that day
+  - Sunday: Pryce and Blaine, and Blue can be rematched if you've spoken to Mr. Fuji in the Route 22 house on that day (or anytime after you've beaten Red)
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 
 ## Miscellaneous
