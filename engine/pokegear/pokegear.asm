@@ -2850,6 +2850,9 @@ LoadTownMapGFX:
 	lb bc, BANK(TownMapGFX), 48
 	jp DecompressRequest2bpp
 
+PokeGear_TimeofDayIcons:
+INCBIN "gfx/pokegear/pokegear_timeofday_icons.2bpp"
+
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"
 
