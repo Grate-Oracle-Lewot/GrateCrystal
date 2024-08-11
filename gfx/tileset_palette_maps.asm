@@ -65,7 +65,6 @@ TilesetParkPalMap:
 INCLUDE "gfx/tilesets/park_palette_map.asm"
 
 TilesetRuinsOfAlphPalMap:
-TilesetBetaWordRoomPalMap:
 TilesetHoOhWordRoomPalMap:
 TilesetKabutoWordRoomPalMap:
 TilesetOmanyteWordRoomPalMap:
