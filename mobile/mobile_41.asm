@@ -475,17 +475,6 @@ RestoreMobileEventIndex:
 	ld [sMobileEventIndex], a
 	jp CloseSRAM
 
-VerifyTrainerRankingsChecksum: ; unreferenced
-	call CalculateTrainerRankingsChecksum
-	ld hl, sTrainerRankingsChecksum
-	ld a, d
-	cp [hl]
-	ret nz
-	inc hl
-	ld a, e
-	cp [hl]
-	ret
-
 DeleteMobileEventIndex:
 	ld a, BANK(sMobileEventIndex)
 	call OpenSRAM
@@ -741,42 +730,6 @@ Mobile_AlwaysReturnNotCarry:
 	or a
 	ret
 
-Function106331: ; unreferenced
-; called by Mobile_DummyReturnFalse in JP Crystal
-	; check ~[s4_b000] == [s7_a800]
-	ld a, BANK(s4_b000)
-	call OpenSRAM
-	ld a, [s4_b000]
-	cpl
-	ld b, a
-	call CloseSRAM
-	ld a, BANK(s7_a800)
-	call OpenSRAM
-	ld a, [s7_a800]
-	ld c, a
-	call CloseSRAM
-	ld a, c
-	cp b
-	jr nz, .nope
-
-	; check [s7_a800] != 0
-	and a
-	jr z, .nope
-
-	; check !([s7_a800] & %01110000)
-	and %10001111
-	cp c
-	jr nz, .nope
-
-	ld c, a
-	scf
-	ret
-
-.nope
-	xor a
-	ld c, a
-	ret
-
 Function10635c:
 	ld a, [wMobileCommsJumptableIndex]
 	bit 7, a
@@ -953,24 +906,6 @@ Function106464::
 	farcall LoadFrame
 	ret
 
-Function10649b: ; unreferenced
-	ld a, [wTextboxFrame]
-	maskbits NUM_FRAMES
-	ld bc, 6 * LEN_1BPP_TILE
-	ld hl, Frames
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, vTiles2 tile "┌" ; $79
-	ld c, 6 ; "┌" to "┘"
-	ld b, BANK(Frames)
-	call Function1064c3
-	ld hl, vTiles2 tile " " ; $7f
-	ld de, TextboxSpaceGFX
-	ld c, 1
-	ld b, BANK(TextboxSpaceGFX)
-	jp Function1064c3
-
 Function1064c3:
 	ldh a, [rSVBK]
 	push af
@@ -985,23 +920,7 @@ Function1064c3:
 	pop bc
 	pop af
 	ldh [rSVBK], a
-	jr asm_1064ed
-
-Function1064d8: ; unreferenced
-	ldh a, [rSVBK]
-	push af
-	ld a, $6
-	ldh [rSVBK], a
-	push bc
-	push hl
-	ld hl, Function3f9f
-	ld a, b
-	rst FarCall
-	pop hl
-	pop bc
-	pop af
-	ldh [rSVBK], a
-	jr asm_1064ed
+	; fallthrough
 
 asm_1064ed:
 	ld de, wDecompressScratch
@@ -1020,11 +939,6 @@ asm_1064ed:
 	pop af
 	ldh [rSVBK], a
 	ret
-
-Function10650a: ; unreferenced
-	ld de, MobilePhoneTilesGFX
-	lb bc, BANK(MobilePhoneTilesGFX), 17
-	jp Get2bpp
 
 MobileDialingFrameGFX:
 INCBIN "gfx/mobile/dialing_frame.2bpp"
