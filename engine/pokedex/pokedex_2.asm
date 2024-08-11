@@ -1,24 +1,25 @@
 	const_def
-	const DEXENTRY_LORE              ;  0
-	const DEXENTRY_BASESTATS         ;  1
-	const DEXENTRY_LVLUP             ;  2
-	const DEXENTRY_TMS               ;  3
-	const DEXENTRY_HMS               ;  4
-	const DEXENTRY_MTS               ;  5
-	const DEXENTRY_EGG               ;  6
-	const DEXENTRY_EVO               ;  7
-	const DEXENTRY_PICS              ;  8
-	const DEXENTRY_AREA_NONE	 ;  9
-	const DEXENTRY_AREA_GRASS_JOHTO  ; 10
-	const DEXENTRY_AREA_SURF_JOHTO   ; 11
-	const DEXENTRY_AREA_GRASS_KANTO  ; 12
-	const DEXENTRY_AREA_SURF_KANTO   ; 13
+	const DEXENTRY_LORE               ;  0
+	const DEXENTRY_BASESTATS          ;  1
+	const DEXENTRY_LVLUP              ;  2
+	const DEXENTRY_TMS                ;  3
+	const DEXENTRY_HMS                ;  4
+	const DEXENTRY_MTS                ;  5
+	const DEXENTRY_EGG                ;  6
+	const DEXENTRY_EVO                ;  7
+	const DEXENTRY_PICS               ;  8
+	const DEXENTRY_AREA_NONE	  ;  9
+	const DEXENTRY_AREA_GRASS_JOHTO   ; 10
+	const DEXENTRY_AREA_SURF_JOHTO    ; 11
+	const DEXENTRY_AREA_GRASS_KANTO   ; 12
+	const DEXENTRY_AREA_SURF_KANTO    ; 13
 ;	const DEXENTRY_AREA_RODS
-	const DEXENTRY_AREA_TREES_COMMON ; 14
-	const DEXENTRY_AREA_TREES_RARE   ; 15
-	const DEXENTRY_AREA_ROCKSMASH    ; 16
-	const DEXENTRY_AREA_CONTEST      ; 17
-	const DEXENTRY_AREA_ROAMING      ; 18
+	const DEXENTRY_AREA_TREES_COMMON  ; 14
+	const DEXENTRY_AREA_TREES_RARE    ; 15
+	const DEXENTRY_AREA_ROCKSMASH     ; 16
+	const DEXENTRY_AREA_CONTEST       ; 17
+	const DEXENTRY_AREA_ROAMING       ; 18
+	const DEXENTRY_AREA_EVENTWILDMONS ; 19
 	
 EXPORT DEXENTRY_LORE
 EXPORT DEXENTRY_BASESTATS
@@ -44,6 +45,8 @@ EXPORT DEXENTRY_AREA_ROCKSMASH
 EXPORT DEXENTRY_AREA_CONTEST
 
 EXPORT DEXENTRY_AREA_ROAMING
+
+EXPORT DEXENTRY_AREA_EVENTWILDMONS
 
 EXPORT DEXENTRY_AREA_NONE
 
