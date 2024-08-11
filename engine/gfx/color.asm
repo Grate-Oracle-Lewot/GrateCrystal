@@ -1292,43 +1292,43 @@ SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
 
 TypeIconPals:
-; NORMAL
+; NORMAL      (0)
 	RGB 21, 21, 14
-; FIGHTING
+; FIGHTING    (1)
 	RGB 25, 05, 02
-; FLYING
+; FLYING      (2)
 	RGB 22, 17, 30
-; POISON
+; POISON      (3)
 	RGB 22, 07, 19
-; GROUND
+; GROUND      (4)
 	RGB 29, 24, 12
-; ROCK
+; ROCK        (5)
 	RGB 24, 20, 07
-; BUG
+; BUG         (6)
 	RGB 21, 23, 06
-; GHOST
+; GHOST       (7)
 	RGB 15, 11, 18
-; STEEL
+; STEEL       (8)
 	RGB 23, 23, 25
-; FIRE
+; FIRE        (9)
 	RGB 31, 15, 04
-; WATER
+; WATER      (10)
 	RGB 11, 18, 30
-; GRASS
+; GRASS      (11)
 	RGB 11, 25, 11
-; ELECTRIC
+; ELECTRIC   (12)
 	RGB 31, 24, 06
-; PSYCHIC_T
+; PSYCHIC_T  (13)
 	RGB 31, 09, 15
-; ICE
+; ICE        (14)
 	RGB 16, 27, 27
-; DRAGON
+; DRAGON     (15)
 	RGB 15, 07, 31
-; DARK
+; DARK       (16)
 	RGB 15, 11, 09
-; FAIRY
+; FAIRY      (17)
 	RGB 31, 20, 29
-; CURSE_TYPE
+; CURSE_TYPE (18)
 	RGB 13, 19, 19
 
 LoadPokemonPalette:
