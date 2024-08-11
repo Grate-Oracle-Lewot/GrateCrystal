@@ -435,7 +435,7 @@ Pokedex_DetailedArea_grass:
 	ret
 
 .grass_walk_text:
-	db " GRASS/CAVES @"
+	db "GRASS/CAVES@"
 
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
@@ -683,7 +683,7 @@ Pokedex_DetailedArea_surf:
 	ret
 
 .surfing_text:
-	db " SURFING @"
+	db "SURFING@"
 
 Pokedex_Parse_surf:
 	push hl ; first species byte, surfing has no time of day
@@ -1190,7 +1190,7 @@ Print_TreeTitle:
 .headbutt_tree_rare_text:
 	db "RARE       @"
 .trees_text:	
-	db " TREES   @"
+	db "TREES@"
 
 inc_trees_rocksmash_map_index:
 	ld a, [wPokedexStatus]
@@ -1369,7 +1369,7 @@ Pokedex_DetailedArea_rocksmash:
 .rocksmash_text1:
 	db "ROCK      @"
 .rocksmash_text2:	
-	db " SMASH   @"
+	db "SMASH@"
 
 Dex_Check_rocksmash:
 ; check for matching mons in RockSmashMons
@@ -1529,15 +1529,15 @@ Pokedex_DetailedArea_bugcontest:
 .bugcontest_text:
 	db "BUG       @"
 .contest_text:
-	db " CONTEST @"
+	db "CONTEST@"
 .park_text:
-	db " NATIONAL PARK@"
+	db "NATIONAL PARK@"
 .String_Tuesday:
-	db " Tuesdays@"
+	db "Tuesdays@"
 .String_Thursday:
-	db " Thursdays@"
+	db "Thursdays@"
 .String_Saturday:
-	db " Saturdays@"
+	db "Saturdays@"
 
 BugContest_Print:
 	ld b, e ; encounter %
