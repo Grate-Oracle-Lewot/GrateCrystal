@@ -31,14 +31,13 @@
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_DARK_CAVE            ; 1e
 	const TILESET_FOREST               ; 1f
-	const TILESET_BETA_WORD_ROOM       ; 20
-	const TILESET_HO_OH_WORD_ROOM      ; 21
-	const TILESET_KABUTO_WORD_ROOM     ; 22
-	const TILESET_OMANYTE_WORD_ROOM    ; 23
-	const TILESET_AERODACTYL_WORD_ROOM ; 24
-	const TILESET_MUSEUM               ; 25
-	const TILESET_SPINNERS             ; 26
-	const TILESET_VIRIDIAN_GYM         ; 27
+	const TILESET_HO_OH_WORD_ROOM      ; 20
+	const TILESET_KABUTO_WORD_ROOM     ; 21
+	const TILESET_OMANYTE_WORD_ROOM    ; 22
+	const TILESET_AERODACTYL_WORD_ROOM ; 23
+	const TILESET_MUSEUM               ; 24
+	const TILESET_SPINNERS             ; 25
+	const TILESET_VIRIDIAN_GYM         ; 26
 NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size
