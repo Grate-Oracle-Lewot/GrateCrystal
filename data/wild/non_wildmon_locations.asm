@@ -1,3 +1,11 @@
+specialencounter: MACRO
+; requested mon, offered mon, item, OT ID, OT name, gender requested
+	db \1
+	dw \2
+	map_id \3
+	dw \4
+ENDM
+
 EventWildMons::
 ; 	specialencounter SPECIES,	EVENT_FLAG,					map_id, blurb string ptr
 	specialencounter OMANYTE,	-1,						PEWTER_MUSEUM_1F, OmanyteFossil_Str
