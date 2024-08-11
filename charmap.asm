@@ -129,7 +129,7 @@
 	charmap "<",         $c1 ; This is only used when gfx/font/overworld.png is loaded,
 	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
 	charmap "+",         $c3 ; However, none of those characters can be used in landmark names.
-	charmap "<%>",       $c4
+	charmap "<%>",       $c4 ; Codes like <PLAYER> can't be used in landmark names since they may contain those characters.
 
 	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
 	charmap "<INV_QU>",  $c6 ; inverted question mark
