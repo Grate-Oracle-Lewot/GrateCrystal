@@ -404,7 +404,7 @@ Pokedex_toggle_shininess_Entry:
 	call Pokedex_GetSGBLayout
 
 	; add or remove shiny icon
-	hlcoord 8, 1
+	hlcoord 9, 1
 	ld a, [hl]
 	cp "<DEX_⁂>"
 	jr z, .shinyicon_set
@@ -543,7 +543,7 @@ Pokedex_ReinitDexEntryScreen:
 .cont	
 	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
-	hlcoord 8, 1
+	hlcoord 9, 1
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
@@ -832,7 +832,7 @@ Evos_Page:
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
 
-	hlcoord 8, 1
+	hlcoord 9, 1
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
@@ -1014,7 +1014,7 @@ Pics_Page:
 	ld a, [wLastDexMode]
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
-	hlcoord 8, 1
+	hlcoord 9, 1
 	ld a, [wPokedexShinyToggle]
 	bit 0, a
 	jr z, .not_shiny
