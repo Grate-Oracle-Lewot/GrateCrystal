@@ -1,3 +1,5 @@
+INCLUDE "data/wild/non_wildmon_locations.asm"
+
 String_johto_text:
 	db "JOHTO:     @"
 String_kanto_text:
@@ -1729,3 +1731,142 @@ Dex_Print_Roamer_Info:
 .hp_text:
 	db "HP:@"
  
+Dex_Check_eventmons:
+; EventWildMons in 'hl'
+; return zero in 'a' if found, else 1 in 'a'
+	; species, EVENT_FLAG, map_id, blurb string ptr
+	; ends with -1
+.loop
+	ld a, BANK(EventWildMons)
+	call GetFarByte ; will be -1 at the end, otherwise it's the % chance to encounter
+	cp -1
+	jr z, .notfound
+	; we aren't at the end yet, so this byte is the species
+	ld c, a ; pokemon species of entry in EventWildMons
+	ld a, [wCurSpecies] ; current pokedex entry species
+	cp c
+	jr z, .found
+	; species didn't match, inc hl by 7, need to check for -1
+	ld de, 7 ; size of specialencounter entry, 7 bytes
+	add hl, de
+	jr .loop
+
+.found
+	xor a
+	ret
+
+.notfound
+	ld a, 1
+	ret
+
+Pokedex_DetailedArea_eventmons:
+	; 'hl' is EventWildMons
+	ld c, 7 ; specialencounter is 7 bytes, need to check for -1
+	ld a, [wPokedexStatus] ; wildmon index
+	call AddNTimes
+.loop	
+	ld a, BANK(EventWildMons)
+	call GetFarByte ; will be -1 at the end, otherwise it's the species
+	cp -1
+	jr z, .donedone
+
+	ld c, a ; pokemon species of entry in EventWildMons/GiftMons
+	ld a, [wCurSpecies] ; current pokedex entry species
+	cp c
+	jr z, .found
+.notfound	
+	; species didn't match, inc hl by 7, need to check for -1
+	ld de, 7 ; size of specialencounter entry, 7 bytes
+	add hl, de ; pointing to next species byte
+	call DexArea_IncWildMonIndex
+	jr .loop
+
+.found
+	; check event flag
+	inc hl ; now pointing to event flag
+	push hl ; pointing to event flag constant
+	ld a, BANK(EventWildMons)
+	call GetFarWord ; event flag constant in 'hl'
+	
+	ld d, h ; event flag
+	ld e, l ; event flag
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	pop hl ; pointing to event flag constant
+	and a
+
+	; get map name
+	inc hl
+	inc hl ; now pointing to map_id
+	push hl ; pointing to map_id
+	ld a, BANK(EventWildMons)
+	call GetFarWord ; map_id in 'hl'	
+	ld d, h 
+	ld e, l
+	pop hl ; pointing to map_id
+	
+	; get blurb str
+	inc hl
+	inc hl ; now pointing to hint blurb str double ptr
+	push hl ; pointing to hint blurb str double ptr
+	ld a, BANK(EventWildMons)
+	call GetFarWord ; blurb hint ptr in 'hl'
+	call Dex_Print_EventMon_Info
+	pop hl ; pointing to hint blurb str double ptr
+
+	; check any remaining
+	inc hl
+	inc hl ; now pointing to next species index
+	call Dex_Check_eventmons ; 0 means found
+	and a
+	jr z, .inc_page
+
+.donedone
+	ld a, [wPokedexEntryType] ; event mon
+	inc a
+	jp DexEntry_NextCategory
+
+.inc_page
+	call DexArea_IncWildMonIndex
+	call DexEntry_IncPageNum
+	; page number is currently in a
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
+	ret
+
+Dex_Print_EventMon_Info:
+	push hl ; blurb/hint str ptr
+
+	farcall GetMapGroupNum_Name ; map info in 'de'
+	; map name ptr is in de
+	hlcoord 2 , 9
+	ld a, BANK(MapGroupNum_Names)
+	call PlaceFarString
+
+	pop de ; blurb/hint str ptr
+	hlcoord 2 , 11
+	ld a, BANK(EventWildMons)
+	jp PlaceFarString	
+
+Pokedex_DetailedArea_eventwildmons:
+	ld hl, EventWildMons
+	call Dex_Check_eventmons
+	and a
+	jp nz, Pokedex_Skip_Empty_Area_Category
+	
+	xor a
+	ld [wPokedexEvoStage2], a
+	ld [wPokedexEvoStage3], a
+
+	; print the title, SPECIAL ENCOUNTER
+	ld de, .eventwildmon_text
+	ld hl, .eventwildmon_text2
+	call Print_Category_text	
+
+	ld hl, EventWildMons
+	jp Pokedex_DetailedArea_eventmons
+	
+.eventwildmon_text:
+	db "SPECIAL   @"
+.eventwildmon_text2:
+	db "ENCOUNTER@"
