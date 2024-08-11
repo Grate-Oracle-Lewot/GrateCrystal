@@ -577,11 +577,11 @@ Dungeons_Map_Names: ; DUNGEONS
 
 ; MAX LENGTH: 17 (preferred: 16)
 Cable_Club_Map_Name1: ; POKECENTER_2F
-	db $E1, $E2, " CENTER 2F@"
+	db "<PKMN> CENTER 2F@"
 Cable_Club_Map_Name2: ; TRADE_CENTER
-	db $E1, $E2, " TRADE CENTER@"
+	db "<PKMN> TRADE CENTER@"
 Cable_Club_Map_Name3: ; COLOSSEUM
-	db $E1, $E2, " COLOSSEUM@"
+	db "<PKMN> COLOSSEUM@"
 Cable_Club_Map_Name4: ; MOBILE_TRADE_ROOM
 	db "MOBILE TRADE@"
 Cable_Club_Map_Name5: ; MOBILE_BATTLE_ROOM
@@ -603,9 +603,9 @@ Pallet_Map_Name6: ; ROUTE_1
 Viridian_Map_Name1: ; VIRIDIAN_CITY
 	db "VIRIDIAN CITY@"
 Viridian_Map_Name2: ; VIRIDIAN_POKECENTER_1F
-	db "VIRIDIAN ", $E1, $E2, "CENTER@"
+	db "VIRIDIAN <PKMN>CENTER@"
 Viridian_Map_Name3: ; VIRIDIAN_MART
-	db "VIRIDIAN ", $70, $71, "MART@"
+	db "VIRIDIAN <POKE>MART@"
 Viridian_Map_Name4: ; VIRIDIAN_GYM
 	db "VIRIDIAN GYM@"
 Viridian_Map_Name5: ; TRAINER_HOUSE_1F
@@ -634,9 +634,9 @@ Viridian_Map_Name15: ; VICTORY_ROAD_GATE
 Pewter_Map_Name1: ; PEWTER_CITY
 	db "PEWTER CITY@"
 Pewter_Map_Name2: ; PEWTER_POKECENTER_1F
-	db "PEWTER ", $E1, $E2, "CENTER@"
+	db "PEWTER <PKMN>CENTER@"
 Pewter_Map_Name3: ; PEWTER_MART
-	db "PEWTER ", $70, $71, "MART@"
+	db "PEWTER <POKE>MART@"
 Pewter_Map_Name4: ; PEWTER_GYM
 	db "PEWTER GYM@"
 Pewter_Map_Name5: ; PEWTER_MUSEUM_1F
@@ -650,14 +650,14 @@ Pewter_Map_Name8: ; PEWTER_SNOOZE_SPEECH_HOUSE
 Pewter_Map_Name9: ; ROUTE_3
 	db "ROUTE 3@"
 Pewter_Map_Name10: ; ROUTE_3_POKECENTER_1F
-	db "ROUTE 3 ", $E1, $E2, "CENTER@"
+	db "ROUTE 3 <PKMN>CENTER@"
 
 Cerulean_Map_Name1: ; CERULEAN_CITY
 	db "CERULEAN CITY@"
 Cerulean_Map_Name2: ; CERULEAN_POKECENTER_1F
-	db "CERULEAN ", $E1, $E2, "CENTER@"
+	db "CERULEAN <PKMN>CENTER@"
 Cerulean_Map_Name3: ; CERULEAN_MART
-	db "CERULEAN ", $70, $71, "MART@"
+	db "CERULEAN <POKE>MART@"
 Cerulean_Map_Name4: ; CERULEAN_GYM
 	db "CERULEAN GYM@"
 Cerulean_Map_Name5: ; CERULEAN_GYM_BADGE_SPEECH_HOUSE
@@ -673,7 +673,7 @@ Cerulean_Map_Name9: ; ROUTE_9
 Cerulean_Map_Name10: ; ROUTE_10_NORTH
 	db "ROUTE 10 NORTH@"
 Cerulean_Map_Name11: ; ROUTE_10_POKECENTER_1F
-	db "ROUTE 10 ", $E1, $E2, "CENTER@"
+	db "ROUTE 10 <PKMN>CENTER@"
 Cerulean_Map_Name12: ; POWER_PLANT
 	db "POWER PLANT 1F@"
 Cerulean_Map_Name13: ; POWER_PLANT_2F
@@ -688,9 +688,9 @@ Cerulean_Map_Name16: ; BILLS_HOUSE
 Vermilion_Map_Name1: ; VERMILION_CITY
 	db "VERMILION CITY@"
 Vermilion_Map_Name2: ; VERMILION_POKECENTER_1F
-	db "VERMILION ", $E1, $E2, "CEN.@"
+	db "VERMILION <PKMN>CEN.@"
 Vermilion_Map_Name3: ; VERMILION_MART
-	db "VERMILION ", $70, $71, "MART@"
+	db "VERMILION <POKE>MART@"
 Vermilion_Map_Name4: ; VERMILION_GYM
 	db "VERMILION GYM@"
 Vermilion_Map_Name5: ; POKEMON_FAN_CLUB
@@ -713,9 +713,9 @@ Vermilion_Map_Name12: ; ROUTE_11
 Lavender_Map_Name1: ; LAVENDER_TOWN
 	db "LAVENDER TOWN@"
 Lavender_Map_Name2: ; LAVENDER_POKECENTER_1F
-	db "LAVENDER ", $E1, $E2, "CENTER@"
+	db "LAVENDER <PKMN>CENTER@"
 Lavender_Map_Name3: ; LAVENDER_MART
-	db "LAVENDER ", $70, $71, "MART@"
+	db "LAVENDER <POKE>MART@"
 Lavender_Map_Name4: ; LAV_RADIO_TOWER_1F
 	db "KANTO RADIO TOWER@"
 Lavender_Map_Name5: ; LAV_RADIO_TOWER_2F
@@ -723,7 +723,7 @@ Lavender_Map_Name5: ; LAV_RADIO_TOWER_2F
 Lavender_Map_Name6: ; SOUL_HOUSE
 	db "SOUL HOUSE@"
 Lavender_Map_Name7: ; LAVENDER_NAME_RATER
-	db $E1, $E2, " SERVICE CLUB@"
+	db "<PKMN> SERVICE CLUB@"
 Lavender_Map_Name8: ; MR_FUJIS_HOUSE
 	db "MR.FUJI'S HOUSE@"
 Lavender_Map_Name9: ; LAVENDER_SPEECH_HOUSE
@@ -742,7 +742,7 @@ Lavender_Map_Name14: ; ROUTE_12_SUPER_ROD_HOUSE
 Celadon_Map_Name1: ; CELADON_CITY
 	db "CELADON CITY@"
 Celadon_Map_Name2: ; CELADON_POKECENTER_1F
-	db "CELADON ", $E1, $E2, "CENTER@"
+	db "CELADON <PKMN>CENTER@"
 Celadon_Map_Name3: ; CELADON_DEPT_STORE_1F
 	db "CELADON DEPT 1F@"
 Celadon_Map_Name4: ; CELADON_DEPT_STORE_2F
@@ -793,9 +793,9 @@ Celadon_Map_Name25: ; ROUTE_17_ROUTE_18_GATE
 Fuchsia_Map_Name1: ; FUCHSIA_CITY
 	db "FUCHSIA CITY@"
 Fuchsia_Map_Name2: ; FUCHSIA_POKECENTER_1F
-	db "FUCHSIA ", $E1, $E2, "CENTER@"
+	db "FUCHSIA <PKMN>CENTER@"
 Fuchsia_Map_Name3: ; FUCHSIA_MART
-	db "FUCHSIA ", $70, $71, "MART@"
+	db "FUCHSIA <POKE>MART@"
 Fuchsia_Map_Name4: ; FUCHSIA_GYM
 	db "FUCHSIA GYM@"
 Fuchsia_Map_Name5: ; BILLS_BROTHERS_HOUSE
@@ -823,9 +823,9 @@ Safari_Map_Name1: ; SAFARI_ZONE
 Saffron_Inner_Map_Name1: ; SAFFRON_CITY
 	db "SAFFRON CITY@"
 Saffron_Inner_Map_Name2: ; SAFFRON_POKECENTER_1F
-	db "SAFFRON ", $E1, $E2, "CENTER@"
+	db "SAFFRON <PKMN>CENTER@"
 Saffron_Inner_Map_Name3: ; SAFFRON_MART
-	db "SAFFRON ", $70, $71, "MART@"
+	db "SAFFRON <POKE>MART@"
 Saffron_Inner_Map_Name4: ; SAFFRON_GYM
 	db "SAFFRON GYM@"
 Saffron_Inner_Map_Name5: ; FIGHTING_DOJO
@@ -853,7 +853,7 @@ Saffron_Outer_Map_Name4: ; ROUTE_5_SAFFRON_GATE
 Cinnabar_Map_Name1: ; CINNABAR_ISLAND
 	db "CINNABAR ISLAND@"
 Cinnabar_Map_Name2: ; CINNABAR_POKECENTER_1F
-	db "CINNABAR ", $E1, $E2, "CENTER@"
+	db "CINNABAR <PKMN>CENTER@"
 Cinnabar_Map_Name3: ; ROUTE_19
 	db "ROUTE 19@"
 Cinnabar_Map_Name4: ; ROUTE_19_FUCHSIA_GATE
@@ -893,7 +893,7 @@ Silver_Map_Name2: ; ROUTE_28_STEEL_WING_HOUSE
 Silver_Map_Name3: ; SILVER_CAVE_OUTSIDE
 	db "MT.SILVER PASS@"
 Silver_Map_Name4: ; SILVER_CAVE_POKECENTER_1F
-	db "SILVER ", $E1, $E2, "CENTER@"
+	db "SILVER <PKMN>CENTER@"
 
 New_Bark_Map_Name1: ; NEW_BARK_TOWN
 	db "NEW BARK TOWN@"
@@ -925,7 +925,7 @@ New_Bark_Map_Name13: ; ROUTE_29_ROUTE_46_GATE
 Cherrygrove_Map_Name1: ; CHERRYGROVE_CITY
 	db "CHERRYGROVE CITY@"
 Cherrygrove_Map_Name2: ; CHERRYGROVE_POKECENTER_1F
-	db "CHERRYGROVE ", $E1, $E2, "CEN@"
+	db "CHERRYGROVE <PKMN>CEN@"
 Cherrygrove_Map_Name3: ; CHERRYGROVE_MART
 	db "CHERRYGROVE MART@"
 Cherrygrove_Map_Name4: ; GUIDE_GENTS_HOUSE
@@ -948,9 +948,9 @@ Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
 Violet_Map_Name1: ; VIOLET_CITY
 	db "VIOLET CITY@"
 Violet_Map_Name2: ; VIOLET_POKECENTER_1F
-	db "VIOLET ", $E1, $E2, "CENTER@"
+	db "VIOLET <PKMN>CENTER@"
 Violet_Map_Name3: ; VIOLET_MART
-	db "VIOLET ", $70, $71, "MART@"
+	db "VIOLET <POKE>MART@"
 Violet_Map_Name4: ; VIOLET_GYM
 	db "VIOLET GYM@"
 Violet_Map_Name5: ; EARLS_POKEMON_ACADEMY
@@ -962,7 +962,7 @@ Violet_Map_Name7: ; VIOLET_NICKNAME_SPEECH_HOUSE
 Violet_Map_Name8: ; ROUTE_32
 	db "ROUTE 32@"
 Violet_Map_Name9: ; ROUTE_32_POKECENTER_1F
-	db "ROUTE 32 ", $E1, $E2, "CENTER@"
+	db "ROUTE 32 <PKMN>CENTER@"
 Violet_Map_Name10: ; ROUTE_32_RUINS_OF_ALPH_GATE
 	db "ROUTE 32 GATE@"
 Violet_Map_Name11: ; ROUTE_35
@@ -983,9 +983,9 @@ Violet_Map_Name17: ; ROUTE_37
 Azalea_Map_Name1: ; AZALEA_TOWN
 	db "AZALEA TOWN@"
 Azalea_Map_Name2: ; AZALEA_POKECENTER_1F
-	db "AZALEA ", $E1, $E2, "CENTER@"
+	db "AZALEA <PKMN>CENTER@"
 Azalea_Map_Name3: ; AZALEA_MART
-	db "AZALEA ", $70, $71, "MART@"
+	db "AZALEA <POKE>MART@"
 Azalea_Map_Name4: ; AZALEA_GYM
 	db "AZALEA GYM@"
 Azalea_Map_Name5: ; KURTS_HOUSE
@@ -998,7 +998,7 @@ Azalea_Map_Name7: ; ROUTE_33
 Goldenrod_Map_Name1: ; GOLDENROD_CITY
 	db "GOLDENROD CITY@"
 Goldenrod_Map_Name2: ; GOLDENROD_POKECENTER_1F
-	db "GOLDENROD ", $E1, $E2, "CEN.@"
+	db "GOLDENROD <PKMN>CEN.@"
 Goldenrod_Map_Name3: ; GOLDENROD_DEPT_STORE_1F
 	db "GOLD. DEPT 1F@"
 Goldenrod_Map_Name4: ; GOLDENROD_DEPT_STORE_2F
@@ -1047,9 +1047,9 @@ Goldenrod_Map_Name24: ; ILEX_FOREST_AZALEA_GATE
 Ecruteak_Map_Name1: ; ECRUTEAK_CITY
 	db "ECRUTEAK CITY@"
 Ecruteak_Map_Name2: ; ECRUTEAK_POKECENTER_1F
-	db "ECRUTEAK ", $E1, $E2, "CENTER@"
+	db "ECRUTEAK <PKMN>CENTER@"
 Ecruteak_Map_Name3: ; ECRUTEAK_MART
-	db "ECRUTEAK ", $70, $71, "MART@"
+	db "ECRUTEAK <POKE>MART@"
 Ecruteak_Map_Name4: ; ECRUTEAK_GYM
 	db "ECRUTEAK GYM@"
 Ecruteak_Map_Name5: ; DANCE_THEATRE
@@ -1066,9 +1066,9 @@ Ecruteak_Map_Name9: ; ECRUTEAK_LUGIA_SPEECH_HOUSE
 Olivine_Map_Name1: ; OLIVINE_CITY
 	db "OLIVINE CITY@"
 Olivine_Map_Name2: ; OLIVINE_POKECENTER_1F
-	db "OLIVINE ", $E1, $E2, "CENTER@"
+	db "OLIVINE <PKMN>CENTER@"
 Olivine_Map_Name3: ; OLIVINE_MART
-	db "OLIVINE ", $70, $71, "MART@"
+	db "OLIVINE <POKE>MART@"
 Olivine_Map_Name4: ; OLIVINE_GYM
 	db "OLIVINE GYM@"
 Olivine_Map_Name5: ; OLIVINE_CAFE
@@ -1093,7 +1093,7 @@ Olivine_Map_Name13: ; ROUTE_39_BARN
 Cianwood_Map_Name1: ; CIANWOOD_CITY
 	db "CIANWOOD CITY@"
 Cianwood_Map_Name2: ; CIANWOOD_POKECENTER_1F
-	db "CIANWOOD ", $E1, $E2, "CENTER@"
+	db "CIANWOOD <PKMN>CENTER@"
 Cianwood_Map_Name3: ; CIANWOOD_GYM
 	db "CIANWOOD GYM@"
 Cianwood_Map_Name4: ; CIANWOOD_PHARMACY
@@ -1128,7 +1128,7 @@ Cianwood_Map_Name17: ; BATTLE_TOWER_BATTLE_ROOM
 Mahogany_Map_Name1: ; MAHOGANY_TOWN
 	db "MAHOGANY TOWN@"
 Mahogany_Map_Name2: ; MAHOGANY_POKECENTER_1F
-	db "MAHOGANY ", $E1, $E2, "CENTER@"
+	db "MAHOGANY <PKMN>CENTER@"
 Mahogany_Map_Name3: ; MAHOGANY_GYM
 	db "MAHOGANY GYM@"
 Mahogany_Map_Name4: ; MAHOGANY_RED_GYARADOS_SPEECH_HOUSE
@@ -1156,9 +1156,9 @@ Lake_of_Rage_Map_Name6: ; ROUTE_43_MAHOGANY_GATE
 Blackthorn_Map_Name1: ; BLACKTHORN_CITY
 	db "BLACKTHORN CITY@"
 Blackthorn_Map_Name2: ; BLACKTHORN_POKECENTER_1F
-	db "BLACKTHORN ", $E1, $E2, "CEN.@"
+	db "BLACKTHORN <PKMN>CEN.@"
 Blackthorn_Map_Name3: ; BLACKTHORN_MART
-	db "BLACKTHORN ", $70, $71, "MART@"
+	db "BLACKTHORN <POKE>MART@"
 Blackthorn_Map_Name4: ; BLACKTHORN_GYM_1F
 	db "BLACKTHORN GYM 1F@"
 Blackthorn_Map_Name5: ; BLACKTHORN_GYM_2F
@@ -1177,7 +1177,7 @@ Blackthorn_Map_Name10: ; ROUTE_46
 Fast_Ship_Map_Name1: ; MOUNT_MOON_SQUARE
 	db "MT.MOON SQUARE@"
 Fast_Ship_Map_Name2: ; MOUNT_MOON_GIFT_SHOP
-	db "MT.MOON SHOP@"
+	db "MT.MOON BOUTIQUE@"
 Fast_Ship_Map_Name3: ; FAST_SHIP_1F
 	db "S.S. AQUA DECK@"
 Fast_Ship_Map_Name4: ; FAST_SHIP_CABINS_NNW_NNE_NE
@@ -1374,7 +1374,7 @@ Dungeons_Map_Name86: ; MOUNT_MORTAR_2F_INSIDE
 Dungeons_Map_Name87: ; MOUNT_MORTAR_B1F
 	db "MT. MORTAR B1F@"
 Dungeons_Map_Name88: ; MAHOGANY_MART_1F
-	db "MAHOGANY ", $70, $71, "MART@"
+	db "MAHOGANY BOUTIQUE@"
 Dungeons_Map_Name89: ; TEAM_ROCKET_BASE_B1F
 	db "ROCKET BASE B1F@"
 Dungeons_Map_Name90: ; TEAM_ROCKET_BASE_B2F
