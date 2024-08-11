@@ -200,6 +200,8 @@ LoungeBlueScript:
 	opentext
 	writetext LoungeBlueTalkText
 	waitbutton
+	checkevent EVENT_BEAT_RED
+	iftrue .OfferRematch
 	checkflag ENGINE_QWILFISH_SWARM
 	iftrue .OfferRematch
 	closetext
