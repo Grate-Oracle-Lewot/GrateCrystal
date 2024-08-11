@@ -1177,7 +1177,7 @@ Blackthorn_Map_Name10: ; ROUTE_46
 Fast_Ship_Map_Name1: ; MOUNT_MOON_SQUARE
 	db "MT.MOON SQUARE@"
 Fast_Ship_Map_Name2: ; MOUNT_MOON_GIFT_SHOP
-	db "MT.MOON BOUTIQUE@"
+	db "MT.MOON GIFT SHOP@"
 Fast_Ship_Map_Name3: ; FAST_SHIP_1F
 	db "S.S. AQUA DECK@"
 Fast_Ship_Map_Name4: ; FAST_SHIP_CABINS_NNW_NNE_NE
