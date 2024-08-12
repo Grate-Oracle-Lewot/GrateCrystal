@@ -327,7 +327,7 @@ _CGB_Pokedex:
 	call FillBoxCGB
 
 ; mon base types
-	hlcoord 9, 6, wAttrmap
+	hlcoord 9, 4, wAttrmap
 	lb bc, 1, 8
 	ld a, 7 | VRAM_BANK_1 ; mon base type pals ; VRAM 1
 	call FillBoxCGB
