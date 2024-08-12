@@ -144,6 +144,8 @@ DisplayDexEntry:
 	ld a, [wPokedexEntryType]
 	and a
 	jr nz, .next
+	; shiny icon check dummied out
+.next
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
 ; erase bottom half of page
