@@ -2538,7 +2538,7 @@ Pokedex_DisplayModeDescription:
 .Color
 	db   "Change the color  ", $37, $36, \
 		 "                  ", $37, $36, \
-		 "of the #DEX.", -1
+		 "of the DEX border.", -1
 
 .UnownMode:
 	db   "UNOWN are listed  ", $37, $36, \
