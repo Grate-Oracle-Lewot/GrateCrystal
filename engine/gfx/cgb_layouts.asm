@@ -491,14 +491,11 @@ _CGB_Pokedex_PicsPage:
 	ld bc, 2
 	ld a, 0 | Y_FLIP | VRAM_BANK_1
 	call ByteFill
-
-if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
 ; > CRY, set VRAM	
-	hlcoord 14, 0, wAttrmap
+	hlcoord 14, 17, wAttrmap
 	lb bc, 1, 2
 	ld a, 0 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
-ENDC
 
 	call InitPartyMenuOBPals
 	call ApplyAttrmap
