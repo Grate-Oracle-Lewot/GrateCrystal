@@ -3577,7 +3577,8 @@ wScratchTilemap:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
 wScratchAttrmap:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
 
 NEXTU
-wDecompressScratch:: ds $100 tiles
+wDecompressScratch:: ds $80 tiles
+wDecompressEnemyFrontpic:: ds $80 tiles
 
 NEXTU
 ; unidentified uses
