@@ -20,7 +20,7 @@
 	const DEXENTRY_AREA_CONTEST       ; 17
 	const DEXENTRY_AREA_ROAMING       ; 18
 	const DEXENTRY_AREA_EVENTWILDMONS ; 19
-	
+
 EXPORT DEXENTRY_LORE
 EXPORT DEXENTRY_BASESTATS
 EXPORT DEXENTRY_LVLUP
@@ -361,12 +361,12 @@ DisplayDexMonType_CustomGFX:
 	ldh [rVBK], a
 
 .check_floatmon
-;	ld a, [wCurSpecies]
-;	ld hl, FloatMons
-;	call IsInByteArray
-;	ret nc
-;	hlcoord 17, 6
-;	ld [hl], "<FLOAT>"
+	ld a, [wCurSpecies]
+	ld hl, FloatMons
+	call IsInByteArray
+	ret nc
+	hlcoord 17, 4
+	ld [hl], "<FLOAT>"
 	ret
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
