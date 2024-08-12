@@ -334,7 +334,7 @@ EVO_inchlcoord:
 EVO_level:
 	push hl ; pointing to lvl byte
 	call EVO_gethlcoord
-	ld [hl], "<LV>" ; lvl icon
+	ld [hl], "<EVO_LV>" ; lvl icon
 
 	pop hl ; pointing to lvl byte
 	ld a, BANK("Evolutions and Attacks")
@@ -436,7 +436,7 @@ EVO_happiness:
 EVO_stats:
 	push hl ; level Needed byte
 	call EVO_gethlcoord
-	ld [hl], "<LV>"
+	ld [hl], "<EVO_LV>"
 
 	pop hl ; level needed byte
 	ld a, BANK("Evolutions and Attacks")
