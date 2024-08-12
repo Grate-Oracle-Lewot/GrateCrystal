@@ -120,33 +120,6 @@ Pokedex_place_Mon_Icon:
 	push de
 	push hl
 
-if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
-; sprite box border
-	hlcoord 1, 13
-	ld [hl], $70
-	inc hl
-	ld a, $72
-	ld [hli], a
-	ld [hli], a
-	ld [hl], $70
-	hlcoord 1, 14
-	ld [hl], $71
-	hlcoord 1, 15
-	ld [hl], $71
-
-	hlcoord 4, 14
-	ld [hl], $71
-	hlcoord 4, 15
-	ld [hl], $71
-	hlcoord 1, 16
-	ld [hl], $70
-	inc hl
-	ld bc, 2
-	ld a, $72
-	call ByteFill
-	ld [hl], $70
-ENDC
-
 ; load the icon sprite
 	ld a, 11
 	ld [wStatsScreenFlags], a
@@ -185,10 +158,6 @@ Dex_Pics_DrawBorder:
 	ld [hli], a
 	ld a, $58 ; $3c ; text border right side of SELECT > SHINY
 	ld [hli], a
-if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
-	ld a, $34
-	ld [hli], a
-ENDC
 	ld a, $57 ; $3b ; text border, left side of START > CRY
 	ld [hli], a	
 	; hlcoord 10, 17
@@ -199,13 +168,6 @@ ENDC
 	inc a ; ld a, $43 ; START >
 	ld [hli], a
 
-if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
-	ld a, $6e ; > CRY [VRAM 1] @ 15, 17
-	ld [hli], a
-	inc a ; ld a, $6f ; > CRY [VRAM 1] @ 14, 17
-	ld [hli], a
-ELSE
-; using expanded mon animation
 	ld a, $56 ; arrow cap
 	ld [hli], a
 	ld de, cry_text
@@ -213,7 +175,7 @@ ELSE
 	inc hl
 	inc hl
 	inc hl	
-ENDC
+
 	ld a, $58 ; $3c ; curvest text border, right side of START > CRY
 	ld [hli], a
 	ld a, $34 ; $39 ; $32 ; color block
@@ -271,7 +233,5 @@ ENDC
 	ld a, $34
 	jp ByteFill
 
-if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
 cry_text:
 	db "CRY@"
-ENDC
