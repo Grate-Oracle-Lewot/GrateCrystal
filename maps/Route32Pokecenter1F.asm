@@ -66,40 +66,37 @@ Route32Pokecenter1FFishingGuruText_Question:
 	para "encounter rates"
 	line "for wild #MON…"
 
-	para "But have you"
-	line "noticed… It"
+	para "Have you noticed"
+	line "the fishing enc-"
+	cont "ounters?"
 
-	para "doesn't say any-"
-	line "thing about what"
+	para "You'll need a ROD"
+	line "to pull those up."
 
-	para "kinds of #MON"
-	line "you'll catch with"
-	cont "fishing rods?"
+	para "I have an old one"
+	line "that I don't need"
+	cont "anymore."
 
-	para "I guess it can't"
-	line "scan underwater."
-
-	para "But you know… that"
-	line "makes fishing an"
-	cont "exciting mystery!"
-
-	para "Don't you agree?"
+	para "How would you like"
+	line "it to be yours?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
-	text "That's the spirit!"
-	line "I'll give you this!"
+	text "Heh, that's good"
+	line "to hear."
+
+	para "Now you're an"
+	line "angler too!"
 	done
 
 Route32Pokecenter1FFishingGuruText_GiveOldRod:
-	text "Try out that ROD"
-	line "in any body of"
+	text "Fishing is great!"
 
-	para "water, and see"
-	line "what wonderful"
+	para "If there's water,"
+	line "be it the sea or a"
 
-	para "things you fish"
-	line "up!"
+	para "stream, try out"
+	line "your ROD."
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
