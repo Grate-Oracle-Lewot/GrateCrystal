@@ -448,23 +448,13 @@ _CGB_Pokedex_PicsPage:
 	ld de, wBGPals1 palette 7	
 	call LoadSingleBlackPal
 
-; animated front pic + border
-	hlcoord 0, 0, wAttrmap
-	lb bc, 9, 9
-	ld a, 0 | VRAM_BANK_1 ; VRAM 1
-	call FillBoxCGB
 ; animated front pic
 	hlcoord 1, 1, wAttrmap
 	lb bc, 7, 7
 	ld a, 1 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
 
-; back pic border
-	hlcoord 10, 0, wAttrmap
-	lb bc, 9, 9
-	ld a, 0 | VRAM_BANK_1 ; VRAM 1
-	call FillBoxCGB
-; ; back pic
+; back pic
 	hlcoord 11, 2, wAttrmap
 	lb bc, 6, 6
 	ld a, 1 | VRAM_BANK_1 ; VRAM 1
@@ -479,38 +469,8 @@ _CGB_Pokedex_PicsPage:
 ; page/up down arrows
 	hlcoord 9, 0, wAttrmap
 	ld [hl], 0 ; remove VRAM 1 bit
-	hlcoord 18, 0, wAttrmap
+	hlcoord 19, 0, wAttrmap
 	ld [hl], 0 ; remove VRAM 1 bit
-
-; front/back pic bottom border fix
-	hlcoord 0, 8, wAttrmap
-	ld bc, SCREEN_WIDTH
-	ld a, 0 | Y_FLIP | VRAM_BANK_1
-	call ByteFill
-; lower right corner of front pic
-	hlcoord 8, 8, wAttrmap
-	ld [hl], 0 | Y_FLIP | X_FLIP | VRAM_BANK_1
-	inc hl
-	ld [hl], 0 ; remove VRAM 1 bit
-; lower right corner of back pic
-	hlcoord 18, 8, wAttrmap
-	ld [hl], 0 | X_FLIP | Y_FLIP | VRAM_BANK_1
-	inc hl
-	ld [hl], 0 ; remove VRAM 1 bit
-
-; upper right corner of front pic
-	hlcoord 8, 0, wAttrmap
-	ld [hl], 0 | X_FLIP | VRAM_BANK_1
-; front pic right vertical side fix
-	hlcoord 8, 1, wAttrmap
-	lb bc, 7, 1
-	ld a, 0 | X_FLIP | Y_FLIP | VRAM_BANK_1 ; VRAM 1
-	call FillBoxCGB
-; back pic right vertical side fix	
-	hlcoord 18, 1, wAttrmap
-	lb bc, 7, 1
-	ld a, 0 | X_FLIP | VRAM_BANK_1 ; VRAM 1
-	call FillBoxCGB	
 
 ; animated icon, upper right corner fix
 	hlcoord 4, 13, wAttrmap
@@ -531,11 +491,14 @@ _CGB_Pokedex_PicsPage:
 	ld bc, 2
 	ld a, 0 | Y_FLIP | VRAM_BANK_1
 	call ByteFill
+
+if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
 ; > CRY, set VRAM	
-	hlcoord 14, 17, wAttrmap
+	hlcoord 14, 0, wAttrmap
 	lb bc, 1, 2
 	ld a, 0 | VRAM_BANK_1 ; VRAM 1
 	call FillBoxCGB
+ENDC
 
 	call InitPartyMenuOBPals
 	call ApplyAttrmap
