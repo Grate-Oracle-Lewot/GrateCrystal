@@ -195,13 +195,11 @@
 	charmap "8",         $fe
 	charmap "9",         $ff
 
-; Special characters for Nayru's dex
+; Special characters in gfx/pokedex/pokedex.png, for Nayru's dex
 
-	charmap "<DEX_LV>",  $5d ; level icon in gfx/pokedex/pokedex.png
-	charmap "<DEX_⁂>",  $64 ; shiny sparkles in gfx/pokedex/pokedex.png
-	charmap "<DEX_FLT>", $80 ; floatmon arrow in gfx/pokedex/pokedex.png
-
-	charmap "<EVO_LV>",  $63 ; level icon in rangi_dex_tiles.png
+	charmap "<DEX_LV>",  $5d ; level icon
+	charmap "<DEX_⁂>",  $64 ; shiny sparkles
+	charmap "<DEX_FLT>", $80 ; floatmon arrow
 
 ; Japanese control characters (see home/text.asm)
 
