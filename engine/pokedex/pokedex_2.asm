@@ -176,9 +176,9 @@ DisplayDexEntry:
 	ld bc, 11
 	call ByteFill
 	pop bc
+
 	pop af
 	push af
-
 	hlcoord 9, 6
 	call PlaceFarString ; dex species nickname
 	push bc ; bank?
@@ -450,7 +450,7 @@ DexEntry_NextCategory:
 
 Print_Category_text:
 	; given: hl is bottom str ptr, de is top string ptr
-	; they all go at 8,6 and 8,7, all strings are 12 chars
+	; they all go at 9,6 and 9,7, all strings are 12 chars
 	push bc
 	push hl ; bottom str ptr
 	hlcoord 9, 6
