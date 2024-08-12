@@ -169,6 +169,16 @@ DisplayDexEntry:
 	call GetDexEntryPointer
 	ld a, b
 	push af
+
+	push bc
+	hlcoord 9, 6
+	ld a, " "
+	ld bc, 11
+	call ByteFill
+	pop bc
+	pop af
+	push af
+
 	hlcoord 9, 6
 	call PlaceFarString ; dex species nickname
 	push bc ; bank?
@@ -441,13 +451,25 @@ DexEntry_NextCategory:
 Print_Category_text:
 	; given: hl is bottom str ptr, de is top string ptr
 	; they all go at 8,6 and 8,7, all strings are 12 chars
+	push bc
 	push hl ; bottom str ptr
+	hlcoord 9, 6
+	ld a, " "
+	ld bc, 11
+	call ByteFill
+	hlcoord 9, 7
+	ld a, " "
+	ld bc, 9
+	call ByteFill
+
 	hlcoord 9, 6
 	; de is already loaded
 	call PlaceString
 	hlcoord 9, 7
 	pop de ; bottom string ptr
-	jp PlaceString
+	call PlaceString
+	pop bc
+	ret
 
 UncaughtMon_Info_Erase_PageNum:
 ; overwrite the A button with plain line
