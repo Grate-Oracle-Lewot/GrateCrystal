@@ -134,6 +134,7 @@
 	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
 	charmap "<INV_QU>",  $c6 ; inverted question mark
 	charmap "<FLOAT>",   $c7 ; floatmon arrow
+	charmap "<EVO_LV>",  $c8 ; level icon, added for dex evo page because I can't get it to work otherwise
 
 	charmap "′",         $ce
 	charmap "″",         $cf
