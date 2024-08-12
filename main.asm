@@ -704,11 +704,11 @@ INCLUDE "gfx/weather_images.asm"
 
 SECTION "DEX GFX 2", ROMX
 
-PokedexLZ:
-INCBIN "gfx/pokedex/pokedex.2bpp.lz"
+PokedexGFX:
+INCBIN "gfx/pokedex/pokedex.2bpp"
 
-PokedexSlowpokeLZ:
-INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+PokedexSlowpokeGFX:
+INCBIN "gfx/pokedex/slowpoke.2bpp"
 
 Pokedex_ExtraTiles:
 INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
