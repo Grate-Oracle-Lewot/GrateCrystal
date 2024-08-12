@@ -469,7 +469,7 @@ _CGB_Pokedex_PicsPage:
 ; page/up down arrows
 	hlcoord 9, 0, wAttrmap
 	ld [hl], 0 ; remove VRAM 1 bit
-	hlcoord 18, 0, wAttrmap
+	hlcoord 19, 0, wAttrmap
 	ld [hl], 0 ; remove VRAM 1 bit
 
 ; animated icon, upper right corner fix
