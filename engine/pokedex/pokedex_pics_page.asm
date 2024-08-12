@@ -119,16 +119,8 @@ Pokedex_place_Mon_Icon:
 	push bc
 	push de
 	push hl
-	; farcall InitPartyMenuOBPals
-; white box	
-	hlcoord 2, 14
-	ld a, $7f
-	ld [hli], a
-	ld [hld], a
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	ld [hli], a
-	ld [hld], a
+
+if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
 ; sprite box border
 	hlcoord 1, 13
 	ld [hl], $70
@@ -153,6 +145,8 @@ Pokedex_place_Mon_Icon:
 	ld a, $72
 	call ByteFill
 	ld [hl], $70
+ENDC
+
 ; load the icon sprite
 	ld a, 11
 	ld [wStatsScreenFlags], a
@@ -170,56 +164,60 @@ Pokedex_place_Mon_Icon:
 	ret
 
 Dex_Pics_DrawBorder:
-	hlcoord 1, 0
-	ld a, $72
-	ld bc, SCREEN_WIDTH - 3
-	call ByteFill ; preserves 'a'
-
 	hlcoord 0, 0
-	ld [hl], $70 
-	inc hl
-
-	hlcoord 8, 0
-	ld [hl], $70
-	inc hl
-	inc hl
-	ld [hl], $70
-
-	hlcoord 0, 8
-	ld [hl], $70
-	inc hl
-
-	ld bc, 17
-	ld a, $72
+	ld a, $34 ; $39 ; $32 ; color block, bottom left corner
+	ld bc, SCREEN_WIDTH
 	call ByteFill
-	ld [hl], $70
+	hlcoord 1, 0
+	ld a, $57 ; $3b ; text border, left side of SELECT > SHINY
+	ld [hli], a
+	ld a, $48 ; SELECT >
+	ld [hli], a
+	ld a, $49 ; SELECT >
+	ld [hli], a
+	ld a, $4a ; SELECT >
+	ld [hli], a
+	ld a, $61 ; > SHINY
+	ld [hli], a
+	inc a ; ld a, $72 ; > SHINY
+	ld [hli], a
+	inc a ; ld a, $73 ; > SHINY
+	ld [hli], a
+	ld a, $58 ; $3c ; text border right side of SELECT > SHINY
+	ld [hli], a
+if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
+	ld a, $34
+	ld [hli], a
+ENDC
+	ld a, $57 ; $3b ; text border, left side of START > CRY
+	ld [hli], a	
+	; hlcoord 10, 17
+	ld a, $41 ; START >
+	ld [hli], a
+	inc a ; ld a, $42 ; START >
+	ld [hli], a
+	inc a ; ld a, $43 ; START >
+	ld [hli], a
 
-	hlcoord 8, 8
-	ld [hl], $70
+if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
+	ld a, $6e ; > CRY [VRAM 1] @ 15, 17
+	ld [hli], a
+	inc a ; ld a, $6f ; > CRY [VRAM 1] @ 14, 17
+	ld [hli], a
+ELSE
+; using expanded mon animation
+	ld a, $56 ; arrow cap
+	ld [hli], a
+	ld de, cry_text
+	call PlaceString
 	inc hl
 	inc hl
-	ld [hl], $70
-
-	hlcoord 0, 1
-	lb bc, 7, 1
-	ld a, $71
-	call FillBoxWithByte
-	hlcoord 10, 1
-	lb bc, 7, 1
-	ld a, $71
-	call FillBoxWithByte
-	hlcoord 8, 1
-	lb bc, 7, 1
-	ld a, $71
-	call FillBoxWithByte
-	hlcoord 18, 1
-	lb bc, 7, 1
-	ld a, $71
-	call FillBoxWithByte
-	hlcoord 9, 0
-	lb bc, 9, 1
-	ld a, $7f
-	call FillBoxWithByte
+	inc hl	
+ENDC
+	ld a, $58 ; $3c ; curvest text border, right side of START > CRY
+	ld [hli], a
+	ld a, $34 ; $39 ; $32 ; color block
+	ld [hl], a
 
 	ld a, [wTempSpecies]
 	dec a
@@ -239,51 +237,16 @@ Dex_Pics_DrawBorder:
 .shiny_done
 ; SELECT > SHINY START > CRY
 	hlcoord 0, 17
-	ld a, $32 ; color block, bottom left corner
-	ld [hli], a
-	ld a, $3b ; text border, left side of SELECT > SHINY
-	ld [hli], a
-	ld a, $48 ; SELECT >
-	ld [hli], a
-	ld a, $49 ; SELECT >
-	ld [hli], a
-	ld a, $4a ; SELECT >
-	ld [hli], a
-	ld a, $61 ; > SHINY
-	ld [hli], a
-	inc a ; ld a, $72 ; > SHINY
-	ld [hli], a
-	inc a ; ld a, $73 ; > SHINY
-	ld [hli], a
-	ld a, $3c ; text border right side of SELECT > SHINY
-	ld [hli], a
-	ld a, $32 ; color block
-	ld [hli], a		
-	ld a, $3b ; text border, left side of START > CRY
-	ld [hli], a	
-	; hlcoord 10, 17
-	ld a, $41 ; START >
-	ld [hli], a
-	inc a ; ld a, $42 ; START >
-	ld [hli], a
-	inc a ; ld a, $43 ; START >
-	ld [hli], a
-	ld a, $6e ; > CRY [VRAM 1] @ 15, 17
-	ld [hli], a
-	inc a ; ld a, $6f ; > CRY [VRAM 1] @ 14, 17
-	ld [hli], a	
-	ld a, $3c ; curvest text border, right side of START > CRY
-	ld [hli], a
-	ld a, $32 ; color block
-	ld bc, 3
+	ld a, $39
+	ld bc, SCREEN_WIDTH - 1
 	call ByteFill
 	
 ; up/down arrows	
-	hlcoord 18, 0
+	hlcoord 19, 0
 	ld [hl], $3f
 	; inc hl
 	; ld [hl], $72
-	hlcoord 18, 17
+	hlcoord 19, 17
 	ld [hl], $40
 
 ; ribbons for name/caught/shiny
@@ -307,3 +270,8 @@ Dex_Pics_DrawBorder:
 	ld bc, SCREEN_WIDTH
 	ld a, $34
 	jp ByteFill
+
+if (DEF(sEnemyFrontpicTileCount) && DEF(sPaddedEnemyFrontpic))
+cry_text:
+	db "CRY@"
+ENDC
