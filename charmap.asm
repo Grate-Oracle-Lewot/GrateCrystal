@@ -201,7 +201,7 @@
 	charmap "<DEX_⁂>",  $64 ; shiny sparkles in gfx/pokedex/pokedex.png
 	charmap "<DEX_FLT>", $80 ; floatmon arrow in gfx/pokedex/pokedex.png
 
-	charmap "<EVO_LV>",  $63 ; ; level icon in rangi_dex_tiles.png
+	charmap "<EVO_LV>",  $63 ; level icon in rangi_dex_tiles.png
 
 ; Japanese control characters (see home/text.asm)
 
