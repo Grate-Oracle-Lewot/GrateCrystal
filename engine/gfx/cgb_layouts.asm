@@ -302,7 +302,7 @@ _CGB_Pokedex:
 ; load the 1st type pal 
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7
-	farcall LoadMonBaseTypePal    ; loads type color into slot 2 of pal 7
+	farcall LoadMonBaseTypePal ; loads type color into slot 2 of pal 7
 ; mon type 2
 	ld a, [wBaseType2]
 	ld c, a ; farcall will clobber a for the bank
