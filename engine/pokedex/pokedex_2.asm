@@ -146,18 +146,6 @@ DisplayDexEntry:
 	jr nz, .next
 	ld a, DEXENTRY_LORE
 	call HandlePageNumReset
-	hlcoord 8, 1
-	ld a, [wPokedexShinyToggle]
-	bit 0, a
-	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
-	jr .next
-
-.not_shiny
-	ld [hl], " "	
-.next
-	ld a, DEXENTRY_LORE
-	call HandlePageNumReset
 ; erase bottom half of page
 	hlcoord 1, 8
 	lb bc, 8, SCREEN_WIDTH - 1
