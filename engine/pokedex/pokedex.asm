@@ -402,16 +402,6 @@ Pokedex_toggle_shininess_Entry:
 ; refresh palettes
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
-
-	; add or remove shiny icon
-	hlcoord 9, 1
-	ld a, [hl]
-	cp "<DEX_⁂>"
-	jr z, .shinyicon_set
-	ld [hl], "<DEX_⁂>"
-	jr Pokedex_toggle_shininess2
-.shinyicon_set
-	ld [hl], " "
 	jr Pokedex_toggle_shininess2
 
 Pokedex_toggle_shininess_Pics:
@@ -419,16 +409,6 @@ Pokedex_toggle_shininess_Pics:
 ; refresh palettes
 	ld a, SCGB_POKEDEX_PICS
 	call Pokedex_GetSGBLayout
-
-	; add or remove shiny icon
-	hlcoord 3, 11 ; 1, 9 ; 9, 7 ; 0, 9
-	ld a, [hl]
-	cp "<DEX_⁂>"
-	jr z, .shinyicon_set
-	ld [hl], "<DEX_⁂>"
-	jr Pokedex_toggle_shininess2
-.shinyicon_set
-	ld [hl], " "
 	jr Pokedex_toggle_shininess2
 
 Pokedex_toggle_shininess1:
@@ -543,15 +523,6 @@ Pokedex_ReinitDexEntryScreen:
 .cont	
 	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
-	hlcoord 9, 1
-	ld a, [wPokedexShinyToggle]
-	bit 0, a
-	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
-	jr .shiny_done
-.not_shiny
-	ld [hl], " "
-.shiny_done
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
@@ -831,16 +802,6 @@ Evos_Page:
 	call z, Evos_Page
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
-
-	hlcoord 9, 1
-	ld a, [wPokedexShinyToggle]
-	bit 0, a
-	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
-	jr .shiny_done
-.not_shiny
-	ld [hl], " "
-.shiny_done
 	jp WaitBGMap
 
 .right_dpad
@@ -1014,15 +975,6 @@ Pics_Page:
 	ld a, [wLastDexMode]
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
-	hlcoord 9, 1
-	ld a, [wPokedexShinyToggle]
-	bit 0, a
-	jr z, .not_shiny
-	ld [hl], "<DEX_⁂>"
-	jr .shiny_done
-.not_shiny
-	ld [hl], " "
-.shiny_done
 	jp WaitBGMap
 
 .toggle_shininess:
