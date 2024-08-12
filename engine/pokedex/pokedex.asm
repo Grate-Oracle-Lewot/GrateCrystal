@@ -409,6 +409,16 @@ Pokedex_toggle_shininess_Pics:
 ; refresh palettes
 	ld a, SCGB_POKEDEX_PICS
 	call Pokedex_GetSGBLayout
+
+	; add or remove shiny icon
+	hlcoord 3, 11 ; 1, 9 ; 9, 7 ; 0, 9
+	ld a, [hl]
+	cp "<DEX_⁂>"
+	jr z, .shinyicon_set
+	ld [hl], "<DEX_⁂>"
+	jr Pokedex_toggle_shininess2
+.shinyicon_set
+	ld [hl], " "
 	jr Pokedex_toggle_shininess2
 
 Pokedex_toggle_shininess1:
