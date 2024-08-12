@@ -4,6 +4,7 @@ String_BASE_text:
 	db "BASE       @" ; @ 8, 6
 String_STATS_text:
 	db " STATS     @" ; @ 8, 7
+
 DisplayDexMonStats::
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
@@ -29,12 +30,14 @@ DisplayDexMonStats::
 	call Pokedex_GBS_Stats ; 4 lines
 	call Pokedex_Get_Items ; 3 lines
 	jp DexEntry_IncPageNum
+
 .print_page2
 	call Pokedex_CatchRate ; 1 line
 	call Pokedex_Get_Growth ; 1 lines
 	call Pokedex_PrintBaseExp ; 1 line
 	call Pokedex_HeightWeight ; 1 line
 	jp DexEntry_IncPageNum
+
 .print_page3
 	; these ones NEED to be in this order
 	call Pokedex_EggG_SetUp ; 3 lines
@@ -43,9 +46,6 @@ DisplayDexMonStats::
 	xor a
 	ld [wPokedexEntryPageNum], a
 	ret
-
-.Base_stats_text:
-	db "BASE STATS@"
 
 Pokedex_GBS_Stats:
 	hlcoord 1, 9
@@ -90,7 +90,7 @@ Pokedex_GBS_Stats:
 .String_abbrv_BS_text2:
 	db " ATK      DEF     @"
 .String_abbrv_BS_text3:
-	db " SPA      SPD     @"
+	db " SpA      SpD     @"
 
 Pokedex_BST:
 	hlcoord 2, 9
@@ -267,9 +267,9 @@ Pokedex_Get_Growth::
 .growth_medfast:
 	db "Med. Fast Growth@"
 .growth_slightfast
-	db "Bit Fast Growth@"
+	db "Sltly Fast Growth@"
 .growth_slightslow
-	db "Bit Slow Growth@"
+	db "Sltly Slow Growth@"
 .growth_medslow
 	db "Med. Slow Growth@"
 .growth_fast
@@ -447,11 +447,11 @@ Pokedex_Get_GenderRatio::
 .GR_always_male
 	db "♂ Only@"
 .GR_QuarterF
-	db "1♀:4♂@"
+	db "1♀:3♂@"
 .GR_Equal
 	db "1♂:1♀@"
 .GR_QuartM
-	db "4♀:1♂@"
+	db "3♀:1♂@"
 .GR_MostMale
 	db "7♂:1♀@"
 
@@ -466,7 +466,7 @@ Pokedex_PrintHatchSteps:
 	jp PrintNum
 
 .HatchSteps_text:
-	db "Egg Cycles:@"
+	db "Hatch Rate:@"
 
 Pokedex_HeightWeight:
 	push hl
@@ -559,16 +559,3 @@ Pokedex_HeightWeight:
 	db "HT     ″ WT       @" ; HT  ?'??"
 .String_pounds:
 	db "lbs@"
-
-BS_HP_text:
-	db " HP@"
-BS_SPEED_text:
-	db "SPE@"
-BS_ATK_text:
-	db "ATK@"
-BS_DEF_text:
-	db "DEF@"
-BS_SPCL_text:
-	db "SpA@"
-BS_SPCLDEF_text:
-	db "SpD@"
