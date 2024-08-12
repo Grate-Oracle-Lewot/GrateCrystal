@@ -3278,11 +3278,30 @@ Pokedex_LoadPageNums:
 Pokedex_LoadInversedFont:
 	ld a, 1
 	ldh [rVBK], a
+
 	ld hl, vTiles1
 	lb bc, BANK(FontInversed), 128 ; $80 tiles
 	ld de, FontInversed
 	ld a, BANK(FontInversed)
-	call Get1bpp ; ViaHDMA
+	call Get1bpp
+
+	ld hl, vTiles0 tile $bb
+	lb bc, BANK(Pokedex_MathTiles), 5 ; 5 tiles
+	ld de, Pokedex_MathTiles
+	ld a, BANK(Pokedex_MathTiles)
+	call Get1bpp
+	
+	ld hl, vTiles0 tile $ce
+	lb bc, BANK(Pokedex_Imperial_Tiles), 2 ; 4 tiles
+	ld de, Pokedex_Imperial_Tiles
+	ld a, BANK(Pokedex_Imperial_Tiles)
+	call Get1bpp
+	
+	ld hl, vTiles0 tile $eb
+	lb bc, BANK(Pokedex_RightArrow_Tile), 1 ; 1 tiles
+	ld de, Pokedex_RightArrow_Tile
+	ld a, BANK(Pokedex_RightArrow_Tile)
+	call Get1bpp
 
 	ld a, $0
 	ldh [rVBK], a
@@ -3302,7 +3321,18 @@ Pokedex_InvertTiles:
 	ld a, b
 	or c
 	jr nz, .loop
-	ret
+
+	ld hl, vTiles0 tile $bb
+	lb bc, BANK(Pokedex_MathTiles), 5 ; 5 tiles
+	ld de, Pokedex_MathTiles
+	ld a, BANK(Pokedex_MathTiles)
+	call Get1bpp
+
+	ld hl, vTiles0 tile $ce
+	lb bc, BANK(Pokedex_Imperial_Tiles), 2 ; 2 tiles
+	ld de, Pokedex_Imperial_Tiles
+	ld a, BANK(Pokedex_Imperial_Tiles)
+	jp Get1bpp
 
 Pokedex_CheckSGB:
 	ldh a, [hCGB]
