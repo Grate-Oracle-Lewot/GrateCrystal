@@ -1687,21 +1687,13 @@ Pokedex_DrawDexEntryScreenBG:
 	ld bc, 19
 	ld a, $55
 	call ByteFill
-; category enclosure
-; ; corners
-; 	hlcoord 8, 5
-; 	ld [hl], $6f
-; 	inc hl
-; plaine horizontal line
+
+; plain horizontal line
 	hlcoord 8, 5
 	ld a, $4e ; VRAM 1
 	ld bc, 12
 	call ByteFill
-; ; vertical lateral lines	
-; 	hlcoord 8, 6
-; 	ld [hl], $6e
-; 	hlcoord 8, 7
-; 	ld [hl], $6e	
+
 ; place species name
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
@@ -1709,7 +1701,7 @@ Pokedex_DrawDexEntryScreenBG:
 	call GetPokemonName
 	hlcoord 9, 3
 	call PlaceString ; mon species	
-; .print_dex_num ; Print dex number
+.print_dex_num ; Print dex number
 	hlcoord 10, 1
 	ld a, $5c ; No
 	ld [hli], a
