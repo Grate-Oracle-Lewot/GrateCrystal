@@ -1612,7 +1612,7 @@ String_SELECT_OPTION:
 	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > OPTION
 	; fallthrough
 String_START_SEARCH:
-	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $4e, $3c, $31 ; START > SEARCH
+	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $31, $3c, -1 ; START > SEARCH
 
 Pokedex_DrawDexEntryScreenBG:
 	hlcoord 0, 0
