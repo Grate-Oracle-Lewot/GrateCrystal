@@ -35,16 +35,28 @@ DisplayDexMonEvos:
 .dont_arrow_stage1
 	hlcoord 6, 2
 	call EVO_sethlcoord
+
+	; will be overwritten if we haven't seen mon
 	call GetPokemonName
+	call EVO_CheckSeenMon
+	jr nz, .seen_1
+	ld de, EVO_Unseen_Mon_text
+.seen_1
 	call PlaceString
+
 	ld a, -1
 	ld [wStatsScreenFlags], a
 	call EVO_DrawSpriteBox
-	call EVO_place_CaughtIcon
+
 	hlcoord 6, 2
 	call EVO_sethlcoord
 	call EVO_place_Mon_Types
+
+	call EVO_CheckSeenMon
+	jr z, .unseen_no_gfx_2
+	call EVO_place_CaughtIcon
 	call EVO_place_Mon_Icon
+.unseen_no_gfx_2
 	xor a
 	ld [wStatsScreenFlags], a
 	
@@ -120,7 +132,13 @@ DisplayDexMonEvos:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte ; species
 	ld [wNamedObjectIndex], a
+
+	; will be overwritten if we haven't seen mon
 	call GetPokemonName ; uses NamedObjectIndex
+	call EVO_CheckSeenMon
+	jr nz, .seen_2
+	ld de, EVO_Unseen_Mon_text
+.seen_2
 	call EVO_gethlcoord
 	call PlaceString
 
@@ -139,8 +157,15 @@ DisplayDexMonEvos:
 	pop af ; manner of evo
 
 	call EVO_DrawSpriteBox
-	call EVO_place_CaughtIcon
 	call EVO_place_Mon_Types
+	push af
+	push bc
+	call EVO_CheckSeenMon
+	jr z, .unseen_no_gfx_1
+	call EVO_place_CaughtIcon
+.unseen_no_gfx_1
+	pop bc
+	pop af
 	call EVO_place_Mon_Icon
 	call EVO_inchlcoord
 
@@ -486,15 +511,36 @@ EVO_place_Mon_Types:
 	ld [wCurSpecies], a	
 	call GetBaseData
 
+	call EVO_CheckSeenMon
+	jr nz, .seen_done_1
+	ld c, 18 ; index of ???
+	jr .skip_to_unk_1
+.seen_done_1
+
 ; set up the palette based on the current mon slot
 	ld a, [wBaseType1]
 	ld c, a
 	call EVO_adjust_type_index
+.skip_to_unk_1
 	ld d, c
 	ld a, [wBaseType2]
 	ld c, a ; type 2
 	call EVO_adjust_type_index
 	ld b, d
+
+	push de
+	push bc
+	call EVO_CheckSeenMon
+	jr nz, .seen_done_2
+	pop bc
+	pop de
+	ld c, 18 ; index of ???
+	jr .skip_to_unk_2
+.seen_done_2
+	pop bc
+	pop de
+.skip_to_unk_2
+
 	call .determine_paladdr ; pal 1, 2, 3, or 4
 	farcall LoadDexTypePals
 	call SetPalettes
@@ -504,6 +550,17 @@ EVO_place_Mon_Types:
 	ld c, a
 	call EVO_adjust_type_index
 	ld a, c
+
+	push af
+	call EVO_CheckSeenMon
+	jr nz, .seen_done_3
+	pop af ; unload stack
+	ld a, 18 ; index of ???
+	jr .done_3
+.seen_done_3
+	pop af
+.done_3
+
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
@@ -535,10 +592,21 @@ EVO_place_Mon_Types:
 	ld a, [wBaseType2]
 	cp b
 	jp z, .done
+
 	ld c, a ; type 2
 	call EVO_adjust_type_index
-
 	ld a, c ; type 2
+
+	push af
+	call EVO_CheckSeenMon
+	jr nz, .seen_done_4
+	pop af
+	ld a, 18 ; index of ???
+	jr .skip_to_unk_4
+.seen_done_4
+	pop af
+.skip_to_unk_4
+
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX ; DexTypeDarkIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
@@ -961,3 +1029,19 @@ EVO_Draw_border:
 
 .back_page_text:
 	db $67, $68, $69, $6a, "@"
+
+EVO_CheckSeenMon:
+	push de
+	push hl
+	ld a, [wNamedObjectIndex]
+	dec a
+	call CheckSeenMon
+	pop hl
+	pop de
+	and a ; 0 means unseen, 1 is seen
+	ret nz
+	ld de, .EVO_Unseen_Mon_text
+	ret
+
+EVO_Unseen_Mon_text:
+	db "?????@"
