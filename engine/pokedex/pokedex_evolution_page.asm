@@ -104,6 +104,7 @@ DisplayDexMonEvos:
 	call PlaceString
 	ld b, 1 ; stage 3
 	jr .cont
+
 .normal_line
 	hlcoord 6, 4
 	ld de, .stage2_text
@@ -212,7 +213,8 @@ DisplayDexMonEvos:
 	cp 3
 	jp z, .exit_early_print_cont
 	pop af
-	jr .main_loop
+	jp .main_loop
+
 .done_stage
 	xor a
 	cp b
@@ -273,6 +275,7 @@ DisplayDexMonEvos:
 	pop hl ; manner of evo byte
 	inc hl ; manner of evo byte +1
 	jp .main_loop
+
 .done
 	xor a
 	ld [wPokedexEvoStage2], a
@@ -287,6 +290,7 @@ DisplayDexMonEvos:
 	xor a
 	ld [wStatsScreenFlags], a
 	ret
+
 .done_multi
 	ld a, b
 	inc a
@@ -308,6 +312,7 @@ DisplayDexMonEvos:
 	db $63, $64, $65, $66, "@"
 .doesnt_evo_text:
 	db "DOES NOT EVOLVE@"
+
 .exit_early_print_cont
 	pop af
 .exit_early_print_cont2
@@ -447,16 +452,13 @@ EVO_happiness:
 	jp EVO_inchlcoord
 
 .happiness_text:
-	db $6e, "@"; "HAPPINESS@"
+	db $6e, "@"
 .anytime_text:
 	db $6e, "@"
-	; db "ANYTIME@"
 .sunup_text:
 	db $6e, $71, $72, "@"
-	; db "MORN/DAY@"
 .nite_text:
 	db $6e, $73, "@"
-	; db "NITE@"
 
 EVO_stats:
 	push hl ; level Needed byte
@@ -736,8 +738,7 @@ EVO_adjust_type_index:
 
 .handle_curse
 	ld a, 18
-	ld c, a
-	ret
+	jr .done
 
 EVO_place_Mon_Icon:
 	push af
@@ -894,6 +895,7 @@ EVO_set_multi_page_ptr:
 	inc hl ; species byte
 	inc hl ; next EVO manner byte
 	jr .loop
+
 .get_stage2:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte ; manner of evo ; if zero, no evos
