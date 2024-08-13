@@ -6,5 +6,5 @@
 	next "it for a tasty"
 
 	page "radish could be"
-	next "fatal."
-	next "@"
+	next "fatal, as it's"
+	next "quite toxic.@"
