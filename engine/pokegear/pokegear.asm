@@ -577,11 +577,11 @@ Pokegear_UpdateClock:
 	hlcoord 12, 6
 	call PlaceString
 
-	hlcoord 11, 0
+	hlcoord 10, 0
 	ld [hl], $30 ; round edge
 	inc hl
 	ld [hl], $7f
-	hlcoord 11, 2
+	hlcoord 10, 2
 	ld [hl], $32
 	inc hl
 	ld [hl], $7f
