@@ -111,7 +111,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; CUBONE
 	icon_pals BROWN,  GRAY   ; MAROWAK
 	icon_pals BROWN,  RED    ; HITMONLEE
-	icon_pals PINK,   BLUE   ; HITMONCHAN
+	icon_pals BROWN,  GRAY   ; HITMONCHAN
 	icon_pals PINK,   YELLOW ; LICKITUNG
 	icon_pals PURPLE, BLUE   ; KOFFING
 	icon_pals PURPLE, BLUE   ; WEEZING
@@ -241,7 +241,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; STANTLER
 	icon_pals BROWN,  GREEN  ; SMEARGLE
 	icon_pals BROWN,  BLUE   ; TYROGUE
-	icon_pals BROWN,  GRAY   ; HITMONTOP
+	icon_pals PINK,   BLUE   ; HITMONTOP
 	icon_pals GREEN,  BROWN  ; SNOCONEY
 	icon_pals PURPLE, BROWN  ; JIRK
 	icon_pals BLUE,   RED    ; CASTAWEIGH
