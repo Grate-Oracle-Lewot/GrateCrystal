@@ -1665,6 +1665,8 @@ RodNothingText:
 	text_end
 
 PocketPCFunction:
+	call CheckIfInPokemonLeague
+	jr c, .PocketPCNoSignal
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .PocketPCNoSignal
@@ -1696,6 +1698,31 @@ PocketPCFunction:
 .NoSignalText:
 	text_far _PocketPCNoSignalText
 	text_end
+
+CheckIfInPokemonLeague:
+	ld a, [wMapGroup]
+ 	cp GROUP_WILLS_ROOM
+	jr nz, .no_carry
+	ld a, [wMapNumber]
+	cp MAP_WILLS_ROOM
+	jr z, .carry
+	cp MAP_KOGAS_ROOM
+	jr z, .carry
+	cp MAP_BRUNOS_ROOM
+	jr z, .carry
+	cp MAP_KARENS_ROOM
+	jr z, .carry
+	cp MAP_LANCES_ROOM
+	jr z, .carry
+	; fallthrough
+
+.no_carry
+	xor a ; clear carry flag
+	ret
+
+.carry
+	scf
+	ret
 
 BikeFunction:
 	call .TryBike
