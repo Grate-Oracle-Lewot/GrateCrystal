@@ -1042,8 +1042,8 @@ EVO_CheckSeenMon:
 	pop de
 	and a ; 0 means unseen, 1 is seen
 	ret nz
-	ld de, .EVO_Unseen_Mon_text
+	ld de, EVO_Unseen_Mon_text
 	ret
 
-.EVO_Unseen_Mon_text:
+EVO_Unseen_Mon_text:
 	db "?????@"
