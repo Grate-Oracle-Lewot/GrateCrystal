@@ -408,7 +408,7 @@ Pokedex_Get_EggGroup:
 	db "ALL@"
 
 Pokedex_Get_GenderRatio::
-	hlcoord 2, 14
+	hlcoord 2, 15
 	ld de, .GR_Text
 	call PlaceString
 	ld a, [wBaseGender]
@@ -437,11 +437,11 @@ Pokedex_Get_GenderRatio::
 	jr z, .GR_print
 	ld de, DexEntry_NONE_text
 .GR_print
-	hlcoord 4, 15
+	hlcoord 10, 15
 	jp PlaceString
 
 .GR_Text
-	db "Gender Ratio:@"
+	db "Gender:@"
 .GR_always_fem:
 	db "♀ Only@"
 .GR_always_male
