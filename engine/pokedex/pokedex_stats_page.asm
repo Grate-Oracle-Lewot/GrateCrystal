@@ -311,9 +311,9 @@ Pokedex_EggG_SetUp:
 	jp PlaceString ; no longer need to preserve bc
 
 .BS_Egg_text1:
-	db "Egg Group:@"
+	db "Breeding Group:@"
 .BS_Egg_text2:
-	db "Egg Groups:@"
+	db "Breeding Groups:@"
 
 Pokedex_Get_EggGroup:
 ; have the fixed group num in 'a' already
