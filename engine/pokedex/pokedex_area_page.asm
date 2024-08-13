@@ -53,6 +53,9 @@ Pokedex_DetailedArea:
 	cp DEXENTRY_AREA_ROAMING
 	jr z, .roaming
 
+	cp DEXENTRY_AREA_EVENTWILDMONS
+	jp z, .eventwildmons
+
 	; loop back around as if we are arriving for the first time, creating a closed-loop rotation
 .first
 	xor a
@@ -115,6 +118,9 @@ Pokedex_DetailedArea:
 	jr .skip_empty_area_check
 .roaming
 	call Pokedex_DetailedArea_roaming
+	jr .skip_empty_area_check
+.eventwildmons
+	call Pokedex_DetailedArea_eventwildmons
 	; fallthrough
 
 .skip_empty_area_check
@@ -125,7 +131,7 @@ Pokedex_DetailedArea:
 	ret
 
 .none_wild_text:
-	db "AREA UNKNOWN!@"
+	db "AREA UNKNOWN!!@"
 
 Dex_FindFirstList:
 ; grass, surf, trees(+rocks), contest, roaming
@@ -180,6 +186,11 @@ Dex_FindFirstList:
 	and a
 	jr z, .roaming
 
+	ld hl, EventWildMons
+	call Dex_Check_eventmons
+	and a
+	jr z, .eventwildmons
+
 ; none found
 	ld a, DEXENTRY_AREA_NONE
 	ret
@@ -212,6 +223,9 @@ Dex_FindFirstList:
 	ret
 .roaming
 	ld a, DEXENTRY_AREA_ROAMING
+	ret
+.eventwildmons
+	ld a, DEXENTRY_AREA_EVENTWILDMONS
 	ret
 
 Print_area_entry:
