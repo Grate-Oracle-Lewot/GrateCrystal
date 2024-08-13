@@ -666,7 +666,11 @@ UpdateRoamMons:
 	ld b, a
 	ld a, [wRoamMon1MapNumber]
 	ld c, a
+	call Random
+	cp 127 ; ~50% chance to stay on the current map
+	jr c, .stay_put1
 	call .Update
+.stay_put1
 	ld a, b
 	ld [wRoamMon1MapGroup], a
 	ld a, c
@@ -679,7 +683,11 @@ UpdateRoamMons:
 	ld b, a
 	ld a, [wRoamMon2MapNumber]
 	ld c, a
+	call Random
+	cp 127 ; ~50% chance to stay on the current map
+	jr c, .stay_put2
 	call .Update
+.stay_put2
 	ld a, b
 	ld [wRoamMon2MapGroup], a
 	ld a, c
