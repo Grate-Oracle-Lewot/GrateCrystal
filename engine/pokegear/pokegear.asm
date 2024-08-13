@@ -241,11 +241,6 @@ InitPokegearTilemap:
 	ld a, $4f
 	call ByteFill
 
-	ld de, PokeGear_TimeofDayIcons
-	ld hl, vTiles2 tile $6d
-	lb bc, BANK(PokeGear_TimeofDayIcons), 3
-	call Request2bpp
-
 	ld a, [wPokegearCard]
 	maskbits NUM_POKEGEAR_CARDS
 	add a
@@ -565,33 +560,29 @@ Pokegear_UpdateClock:
 	hlcoord 2, 8
 	call PlaceFarString
 .print_tod
-	hlcoord 10, 1
 	ld a, [wTimeOfDay]
 	and a
 	jr z, .Morn
 	cp 1
 	jr z, .Day
-	ld [hl], $6f ; nite icon
 	ld de, .NiteStr
 .got_tod		
 	hlcoord 12, 6
 	call PlaceString
 
-	hlcoord 10, 0
+	hlcoord 11, 0
 	ld [hl], $30 ; round edge
 	inc hl
 	ld [hl], $7f
-	hlcoord 10, 2
+	hlcoord 11, 2
 	ld [hl], $32
 	inc hl
 	ld [hl], $7f
 	ret
 .Morn
-	ld [hl], $6d ; morn icon
 	ld de, .MornStr
 	jr .got_tod
 .Day
-	ld [hl], $6e ; day icon
 	ld de, .DayStr
 	jr .got_tod
 
