@@ -1045,5 +1045,5 @@ EVO_CheckSeenMon:
 	ld de, .EVO_Unseen_Mon_text
 	ret
 
-EVO_Unseen_Mon_text:
+.EVO_Unseen_Mon_text:
 	db "?????@"
