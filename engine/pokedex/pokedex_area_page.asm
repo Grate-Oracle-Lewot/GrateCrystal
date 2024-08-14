@@ -1724,7 +1724,7 @@ Dex_Print_Roamer_Info:
 	push bc ; current print line in c
 	; check if DVs are init'd
 	and a ; will still be zero if we jumped here after DV check, else will be 1
-	jr nz, .not_shiny ; should be jr z, temporarily reversed to test shiny icon
+;	jr z, .not_shiny
 
 	ld b, h
 	ld c, l
