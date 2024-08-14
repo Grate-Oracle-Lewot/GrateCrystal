@@ -435,7 +435,7 @@ Pokedex_Get_GenderRatio::
 	ld de, .GR_MostMale
 	cp GENDER_F12_5
 	jr z, .GR_print
-	ld de, DexEntry_NONE_text
+	ld de, .GR_Unknown_text
 .GR_print
 	hlcoord 10, 15
 	jp PlaceString
@@ -454,6 +454,8 @@ Pokedex_Get_GenderRatio::
 	db "3♀:1♂@"
 .GR_MostMale
 	db "7♂:1♀@"
+.GR_Unknown_text
+	db "Unknown"
 
 Pokedex_PrintHatchSteps:
 ; wBaseEggSteps
