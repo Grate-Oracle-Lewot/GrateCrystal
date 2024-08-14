@@ -1,12 +1,26 @@
 	object_const_def
 	const OLIVINELIGHTHOUSE6F_JASMINE
-	const OLIVINELIGHTHOUSE6F_MONSTER
+	const OLIVINELIGHTHOUSE6F_AMPHY1
+	const OLIVINELIGHTHOUSE6F_AMPHY2
 	const OLIVINELIGHTHOUSE6F_POKE_BALL
 
 OlivineLighthouse6F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Amphy
+
+.Amphy:
+	disappear OLIVINELIGHTHOUSE6F_AMPHY1
+	disappear OLIVINELIGHTHOUSE6F_AMPHY2
+	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	iftrue .Healed
+	appear OLIVINELIGHTHOUSE6F_AMPHY1
+	endcallback
+
+.Healed:
+	appear OLIVINELIGHTHOUSE6F_AMPHY2
+	endcallback
 
 OlivineLighthouseJasmine:
 	faceplayer
@@ -36,16 +50,18 @@ OlivineLighthouseJasmine:
 	closetext
 	turnobject OLIVINELIGHTHOUSE6F_JASMINE, RIGHT
 	pause 15
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY1, LEFT
 	opentext
 	playmusic MUSIC_HEAL
 	writetext JasmineAmphyHowAreYouFeelingText
 	pause 60
+	appear OLIVINELIGHTHOUSE6F_AMPHY2
+	disappear OLIVINELIGHTHOUSE6F_AMPHY1
 	promptbutton
 	closetext
 	special RestartMapMusic
 	cry AMPHAROS
-	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_MONSTER, 15
+	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_AMPHY2, 15
 	special FadeOutPalettes
 	pause 10
 	special FadeInPalettes
@@ -53,13 +69,13 @@ OlivineLighthouseJasmine:
 	writetext AmphyPaluPaluluText
 	waitbutton
 	closetext
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY2, RIGHT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY2, LEFT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY2, RIGHT
 	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY2, LEFT
 	pause 10
 	opentext
 	writetext JasmineRelievedText
@@ -109,7 +125,7 @@ OlivineLighthouseJasmine:
 	closetext
 	turnobject OLIVINELIGHTHOUSE6F_JASMINE, RIGHT
 	pause 15
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
+	turnobject OLIVINELIGHTHOUSE6F_AMPHY1, LEFT
 	opentext
 	writetext JasmineAmphyHangOnText
 	waitbutton
@@ -122,7 +138,7 @@ OlivineLighthouseAmphy:
 	iftrue .HealthyNow
 	setval AMPHAROS
 	special PlaySlowCry
-	showemote EMOTE_SAD, OLIVINELIGHTHOUSE6F_MONSTER, 15
+	showemote EMOTE_SAD, OLIVINELIGHTHOUSE6F_AMPHY1, 15
 	opentext
 	writetext AmphyPalPalooText
 	promptbutton
@@ -133,7 +149,7 @@ OlivineLighthouseAmphy:
 
 .HealthyNow:
 	cry AMPHAROS
-	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_MONSTER, 15
+	showemote EMOTE_BOLT, OLIVINELIGHTHOUSE6F_AMPHY2, 15
 	opentext
 	writetext AmphyPaluPaluluText
 	waitbutton
@@ -300,5 +316,6 @@ OlivineLighthouse6F_MapEvents:
 
 	def_object_events
 	object_event  8,  8, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseJasmine, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
-	object_event  9,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, -1
+	object_event  9,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_OLIVINE_LIGHTHOUSE6F_AMPHY_SICK
+	object_event  9,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, EVENT_OLIVINE_LIGHTHOUSE6F_AMPHY_HEALTHY
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
