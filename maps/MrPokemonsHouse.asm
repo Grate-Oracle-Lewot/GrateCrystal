@@ -566,7 +566,7 @@ MrPokemonsHouse_MapEvents:
 
 	def_warp_events
 	warp_event  2,  7, ROUTE_30, 2
-	warp_event  3,  7, ROUTE_30, 2
+	warp_event  3,  7, BURNED_TOWER_B1F, 2
 
 	def_coord_events
 
