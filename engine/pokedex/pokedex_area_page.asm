@@ -1724,12 +1724,12 @@ Dex_Print_Roamer_Info:
 	push bc ; current print line in c
 	; check if DVs are init'd
 	and a ; will still be zero if we jumped here after DV check, else will be 1
-;	jr z, .not_shiny
+	jr z, .not_shiny
 
 	ld b, h
 	ld c, l
 	farcall CheckShininess ; ptr needs to be in bc
-	jr nc, .not_shiny
+;	jr nc, .not_shiny
 	pop bc ; current print line in c
 	push bc ; current print line in c
 	hlcoord 1, 10
