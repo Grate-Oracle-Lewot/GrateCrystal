@@ -1,12 +1,26 @@
 	object_const_def
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
-	const ROUTE39BARN_MOOMOO
+	const ROUTE39BARN_MOOMOO1
+	const ROUTE39BARN_MOOMOO2
 
 Route39Barn_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Moomoo
+
+.Moomoo:
+	disappear ROUTE39BARN_MOOMOO1
+	disappear ROUTE39BARN_MOOMOO2
+	checkevent EVENT_HEALED_MOOMOO
+	iftrue .Healed
+	appear ROUTE39BARN_MOOMOO1
+	endcallback
+
+.Healed:
+	appear ROUTE39BARN_MOOMOO2
+	endcallback
 
 Route39BarnTwin1Script:
 	faceplayer
@@ -49,7 +63,7 @@ MoomooScript:
 	iftrue .HappyCow
 	setval MILTANK
 	special PlaySlowCry
-	showemote EMOTE_SAD, ROUTE39BARN_MOOMOO, 15
+	showemote EMOTE_SAD, ROUTE39BARN_MOOMOO1, 15
 	opentext
 	writetext MoomooWeakMooText
 	promptbutton
@@ -99,6 +113,8 @@ MoomooScript:
 	playmusic MUSIC_HEAL
 	writetext Route39BarnGaveBerryText
 	pause 60
+	appear ROUTE39BARN_MOOMOO2
+	disappear ROUTE39BARN_MOOMOO1
 	promptbutton
 	special RestartMapMusic
 	writetext Route39BarnTotallyHealthyText
@@ -121,7 +137,7 @@ MoomooScript:
 
 .HappyCow:
 	cry MILTANK
-	showemote EMOTE_HAPPY, ROUTE39BARN_MOOMOO, 15
+	showemote EMOTE_HAPPY, ROUTE39BARN_MOOMOO2, 15
 	opentext
 	writetext MoomooHappyMooText
 	waitbutton
@@ -203,4 +219,5 @@ Route39Barn_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
 	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
-	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, MoomooScript, EVENT_ROUTE39_BARN_MOOMOO_SICK
+	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MoomooScript, EVENT_ROUTE39_BARN_MOOMOO_HEALTHY
