@@ -56,8 +56,8 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	call .Pokedex_WaitAnim
 	call .PokedexWaitCry
 	ld a, [wPokedexEntryType]
-	;bit 7, a
-	cp 150
+;	bit 7, a
+	cp 255
 	jr nz, .loop
 	xor a
 	ld [wPokedexEntryType], a
@@ -78,12 +78,14 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	bit 5, [hl]
 	jr nz, .finish
 	jp DelayFrame
+
 .try_anim
 	farcall SetUpPokeAnim
 	jr nc, .finish
 	ld hl, wStatsScreenFlags
 	res 6, [hl]
 	ret
+
 .finish
 	ld hl, wStatsScreenFlags
 	res 5, [hl]
@@ -194,6 +196,7 @@ Dex_Pics_DrawBorder:
 	jr z, .not_shiny
 	ld [hl], "<DEX_⁂>"
 	jr .shiny_done
+
 .not_shiny
 	ld [hl], " "
 .shiny_done
