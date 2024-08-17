@@ -49,7 +49,6 @@ MeetMomScript:
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	giveitem SECRETPOTION
 	writetext MomGivesPokegearText
 	promptbutton
 	special SetDayOfWeek
@@ -394,7 +393,7 @@ PlayersHouse1F_MapEvents:
 	def_warp_events
 	warp_event  6,  7, NEW_BARK_TOWN, 2
 	warp_event  7,  7, NEW_BARK_TOWN, 2
-	warp_event  9,  0, OLIVINE_LIGHTHOUSE_6F, 1
+	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
 	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
