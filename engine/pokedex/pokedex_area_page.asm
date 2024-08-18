@@ -1118,7 +1118,7 @@ Pokedex_DetailedArea_rods:
 	ld a, [wPokedexEntryType] ; johto, janto, swarm
 	inc a
 	call DexEntry_NextCategory
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 
 .max_print
@@ -1129,7 +1129,7 @@ Pokedex_DetailedArea_rods:
 
 	call DexEntry_IncPageNum
 	; page number is currently in a
-	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
+	xor a ; to ensure a isn't actually returned at -1. 0 is for normal
 	ret
 
 .fishing_text:
