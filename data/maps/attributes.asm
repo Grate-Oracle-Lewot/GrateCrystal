@@ -95,7 +95,7 @@ endc
 endc
 ENDM
 
-	map_attributes PalletTown, PALLET_TOWN, $0f, NORTH | SOUTH
+	map_attributes PalletTown, PALLET_TOWN, $0b, NORTH | SOUTH
 	connection north, Route1, ROUTE_1, 0
 	connection south, Route21, ROUTE_21, 0
 
