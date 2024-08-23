@@ -7,7 +7,7 @@ specialencounter: MACRO
 ENDM
 
 EventWildMons::
-; 	specialencounter SPECIES,	EVENT_FLAG,					map_id, blurb string ptr
+;	specialencounter SPECIES,	EVENT_FLAG,					map_id, blurb string ptr
 	specialencounter OMANYTE,	-1,						PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter OMASTAR,	-1,						PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter KABUTO,	-1,						PEWTER_MUSEUM_1F, KabutoFossil_Str
@@ -17,6 +17,11 @@ EventWildMons::
 	db -1
 
 ; LoadWildMon Dex Hints, max 18 chars per line
+ClefairyDanceStr:
+	db   "Two dance around"
+	next "a MOON STONE each"
+	next "Monday night."
+
 OmanyteFossil_Str:
 	db   "Revive from HELIX"
 	next "FOSSILS found by"
