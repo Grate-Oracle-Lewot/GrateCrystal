@@ -3971,6 +3971,9 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret z
 	ld a, FIRE ; Don't burn a Fire-type
 	call CheckIfTargetIsGivenType
 	ret z
