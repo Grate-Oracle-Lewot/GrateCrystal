@@ -450,6 +450,16 @@ AcademyFreezeText:
 	para "Ice and fire #-"
 	line "MON are immune to"
 	cont "being frozen."
+
+	para "#MON won't be"
+	line "frozen during"
+	cont "harsh sunlight,"
+
+	para "but if they were"
+	line "already frozen,"
+
+	para "they won't thaw"
+	line "out any faster."
 	done
 
 AcademyNotebookText:
