@@ -424,6 +424,13 @@ AcademyBurnText:
 	para "Fighting types"
 	line "don't lose attack"
 	cont "while burned."
+
+	para "Nobody will be"
+	line "burned if it's"
+
+	para "raining, but rain"
+	line "won't cure exist-"
+	cont "ing burns."
 	done
 
 AcademyFreezeText:
