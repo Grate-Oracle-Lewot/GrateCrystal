@@ -150,8 +150,6 @@ CutFunction:
 	ret
 
 .FailCut:
-	ld hl, CutNothingText
-	call MenuTextboxBackup
 	ld a, $80
 	ret
 
@@ -380,8 +378,6 @@ SurfFunction:
 	ret
 
 .FailSurf:
-	ld hl, CantSurfText
-	call MenuTextboxBackup
 	ld a, $80
 	ret
 
@@ -600,12 +596,12 @@ FlyFunction:
 .illegal
 	call CloseWindow
 	ld a, [wFlyingWithFearowbot]
-	cp 2
-	jr nz, .select
+	cp 1
+	jr nz, .skip_pack_tiles
 	farcall Pack_InitGFX ; gets the pack GFX when exiting out of Fly by pressing B
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
-.select
+.skip_pack_tiles
 	call WaitBGMap
 	ld a, $80
 	ret
