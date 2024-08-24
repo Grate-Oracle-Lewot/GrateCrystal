@@ -39,7 +39,7 @@ VermilionEggMoveTutor:
 	readmem wEggTutorBricks
 	addval 1
 	writemem wEggTutorBricks
-	ifequal 7, .BetterWay
+	ifequal 10, .BetterWay
 	writetext EggTutorGiveBrickText
 	waitbutton
 	closetext
