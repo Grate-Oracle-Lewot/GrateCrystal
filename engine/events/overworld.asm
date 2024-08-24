@@ -599,9 +599,13 @@ FlyFunction:
 
 .illegal
 	call CloseWindow
+	ld a, [wFlyingWithFearowbot]
+	cp 2
+	jr nz, .select
 	farcall Pack_InitGFX ; gets the pack GFX when exiting out of Fly by pressing B
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
+.select
 	call WaitBGMap
 	ld a, $80
 	ret
