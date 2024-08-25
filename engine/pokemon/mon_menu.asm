@@ -576,8 +576,6 @@ OpenPartyStats:
 	ret
 
 MonMenu_Cut:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -591,9 +589,8 @@ MonMenu_Cut:
 	ret
 
 MonMenu_Fly:
-	ld a, 0
+	xor a
 	ld [wFlyingWithFearowbot], a
-	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
@@ -614,8 +611,6 @@ MonMenu_Fly:
 	ret
 
 MonMenu_Flash:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -642,8 +637,6 @@ MonMenu_Strength:
 	ret
 
 MonMenu_Whirlpool:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -657,8 +650,6 @@ MonMenu_Whirlpool:
 	ret
 
 MonMenu_Waterfall:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -685,8 +676,6 @@ MonMenu_Teleport:
 	ret
 
 MonMenu_Surf:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall SurfFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
@@ -767,8 +756,6 @@ MonMenu_Headbutt:
 	ret
 
 MonMenu_RockSmash:
-	ld a, 0
-	ld [wUsingHMItem], a
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
