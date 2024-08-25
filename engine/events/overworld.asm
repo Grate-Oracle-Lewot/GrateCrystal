@@ -151,7 +151,7 @@ CutFunction:
 
 .FailCut:
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	ld hl, CutNothingText
 	call MenuTextboxBackup
@@ -295,7 +295,7 @@ FlashFunction:
 
 .notadarkcave
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	call FieldMoveFailed
 .skip_text
@@ -389,7 +389,7 @@ SurfFunction:
 
 .FailSurf:
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	ld hl, CantSurfText
 	call MenuTextboxBackup
@@ -399,7 +399,7 @@ SurfFunction:
 
 .AlreadySurfing:
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	ld hl, AlreadySurfingText
 	call MenuTextboxBackup
@@ -632,7 +632,7 @@ FlyFunction:
 
 .FailFly:
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	call FieldMoveFailed
 .skip_text
@@ -686,7 +686,7 @@ WaterfallFunction:
 
 .failed
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	call FieldMoveFailed
 .skip_text
@@ -1168,7 +1168,7 @@ WhirlpoolFunction:
 
 .FailWhirlpool:
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	call FieldMoveFailed
 .skip_text
@@ -1396,7 +1396,7 @@ TryRockSmashFromMenu:
 
 .no_rock
 	ld a, [wUsingHMItem]
-	cp 0
+	cp 1
 	jr z, .skip_text
 	call FieldMoveFailed
 .skip_text
