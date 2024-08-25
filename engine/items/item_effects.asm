@@ -2278,8 +2278,6 @@ ItemfinderEffect:
 	ret
 
 PocketPCEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall PocketPCFunction
 	ret
 
@@ -2881,8 +2879,6 @@ GetMthMoveOfCurrentMon:
 	ret
 
 HedgerEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -2892,8 +2888,6 @@ HedgerEffect:
 	ret
 
 PickaxeEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -2903,8 +2897,6 @@ PickaxeEffect:
 	ret
 
 DiscoBallEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -2916,7 +2908,6 @@ DiscoBallEffect:
 FearowbotEffect:
 	ld a, 1
 	ld [wFlyingWithFearowbot], a
-	ld [wUsingHMItem], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
@@ -2940,8 +2931,6 @@ FailHMItem:
 	ret
 
 FloatieEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall SurfFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
@@ -2951,8 +2940,6 @@ FloatieEffect:
 	ret
 
 EggBeaterEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -2962,8 +2949,6 @@ EggBeaterEffect:
 	ret
 
 GravityBuoyEffect:
-	ld a, 1
-	ld [wUsingHMItem], a
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
