@@ -54,4 +54,5 @@ IconPointers:
 	dw ArbokIcon
 	dw VileplumeIcon
 	dw AbraIcon
+	dw JynxIcon
 	assert_table_length NUM_ICONS + 1
