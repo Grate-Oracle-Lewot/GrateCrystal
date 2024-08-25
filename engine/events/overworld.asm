@@ -403,9 +403,7 @@ SurfFunction:
 	jr z, .skip_text
 	ld hl, AlreadySurfingText
 	call MenuTextboxBackup
-.skip_text
-	ld a, $80
-	ret
+	jr .skip_text
 
 SurfFromMenuScript:
 	special UpdateTimePals
