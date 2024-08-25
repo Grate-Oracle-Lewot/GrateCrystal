@@ -2266,7 +2266,7 @@ SuperRodEffect:
 
 OddRodEffect:
 	ld e, $3
-	jr UseRod
+	; fallthrough
 
 UseRod:
 	farcall FishFunction
