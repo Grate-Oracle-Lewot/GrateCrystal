@@ -186,7 +186,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  PINK   ; MAREEP
 	icon_pals PINK,   YELLOW ; FLAAFFY
 	icon_pals YELLOW, GRAY   ; AMPHAROS
-	icon_pals GREEN,  BLUE   ; BELLOSSOM
+	icon_pals RED,    RED    ; BELLOSSOM
 	icon_pals BLUE,   GREEN  ; MARILL
 	icon_pals BLUE,   BROWN  ; AZUMARILL
 	icon_pals GREEN,  RED    ; SUDOWOODO
