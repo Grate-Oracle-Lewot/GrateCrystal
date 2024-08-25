@@ -150,6 +150,12 @@ CutFunction:
 	ret
 
 .FailCut:
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
+	ld hl, CutNothingText
+	call MenuTextboxBackup
+.skip_text
 	ld a, $80
 	ret
 
@@ -288,7 +294,11 @@ FlashFunction:
 	ret
 
 .notadarkcave
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	call FieldMoveFailed
+.skip_text
 	ld a, $80
 	ret
 
@@ -378,12 +388,22 @@ SurfFunction:
 	ret
 
 .FailSurf:
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
+	ld hl, CantSurfText
+	call MenuTextboxBackup
+.skip_text
 	ld a, $80
 	ret
 
 .AlreadySurfing:
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	ld hl, AlreadySurfingText
 	call MenuTextboxBackup
+.skip_text
 	ld a, $80
 	ret
 
@@ -613,7 +633,11 @@ FlyFunction:
 	ret
 
 .FailFly:
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	call FieldMoveFailed
+.skip_text
 	ld a, $82
 	ret
 
@@ -663,7 +687,11 @@ WaterfallFunction:
 	ret
 
 .failed
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	call FieldMoveFailed
+.skip_text
 	ld a, $80
 	ret
 
@@ -1141,7 +1169,11 @@ WhirlpoolFunction:
 	ret
 
 .FailWhirlpool:
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	call FieldMoveFailed
+.skip_text
 	ld a, $80
 	ret
 
@@ -1365,7 +1397,11 @@ TryRockSmashFromMenu:
 	ret
 
 .no_rock
+	ld a, [wUsingHMItem]
+	cp 0
+	jr z, .skip_text
 	call FieldMoveFailed
+.skip_text
 	ld a, $80
 	ret
 
