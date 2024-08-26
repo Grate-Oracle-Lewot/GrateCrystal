@@ -115,20 +115,13 @@ CheckGrassTile::
 	ld d, a
 	and $f0
 	cp HI_NYBBLE_TALL_GRASS
-	jr z, .grass
+	jr z, .grass_water
 	cp HI_NYBBLE_WATER
-	jr z, .water
+	jr z, .grass_water
 	scf
 	ret
 
-.grass
-	ld a, d
-	and LO_NYBBLE_GRASS
-	ret z
-	scf
-	ret
-; For some reason, the above code is duplicated down here.
-.water
+.grass_water
 	ld a, d
 	and LO_NYBBLE_GRASS
 	ret z
