@@ -674,21 +674,11 @@ BattleCommand_CheckObedience:
 
 	; mineralbadge
 	bit MINERALBADGE, [hl]
-	ld a, 60
-	jr nz, .getlevel
-
-	; fogbadge
-	bit FOGBADGE, [hl]
 	ld a, 50
 	jr nz, .getlevel
 
 	; plainbadge
 	bit PLAINBADGE, [hl]
-	ld a, 40
-	jr nz, .getlevel
-
-	; hivebadge
-	bit HIVEBADGE, [hl]
 	ld a, 30
 	jr nz, .getlevel
 
