@@ -607,12 +607,13 @@ FlyFunction:
 	farcall Pack_InitGFX ; gets the pack GFX when exiting out of Fly by pressing B
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
-	jr .done_tiles
+.done_tiles
+	call WaitBGMap
+	jr .all_done
 
 .map
 	call ReturnToMapFromSubmenu
-.done_tiles
-	call WaitBGMap
+.all_done
 	ld a, $80
 	ret
 
