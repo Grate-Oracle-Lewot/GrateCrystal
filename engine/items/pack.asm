@@ -462,11 +462,11 @@ UseItem:
 
 .Oak:
 	ld a, [wUsingHMItem]
-	cp 1
-	ret z
+	and a
+	ret nz
 	ld a, [wUsingItemWithSelect]
 	and a
-	ret z
+	ret nz
 	ld hl, OakThisIsntTheTimeText
 	jp Pack_PrintTextNoScroll
 
