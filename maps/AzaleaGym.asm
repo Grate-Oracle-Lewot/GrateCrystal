@@ -183,21 +183,20 @@ Text_ReceivedHiveBadge:
 	done
 
 BugsyText_HiveBadgeSpeech:
-	text "Do you know the"
-	line "benefits of HIVE-"
-	cont "BADGE?"
-
-	para "If you have it,"
-	line "#MON up to Lv30"
-
-	para "will obey you,"
-	line "even traded ones."
+	text "Now that you hold"
+	line "the HIVEBADGE,"
 
 	para "#MON that know"
 	line "CUT will be able"
 
 	para "to use it outside"
-	line "of battle too."
+	line "of battle."
+
+	para "Did you know you"
+	line "can use it on tall"
+
+	para "grass as well as"
+	line "obstructive trees?"
 
 	para "Here, I also want"
 	line "you to have this."
