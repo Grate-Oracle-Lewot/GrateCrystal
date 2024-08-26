@@ -305,15 +305,15 @@ DebugColor_InitScreen:
 	hlcoord 1, 3
 	lb bc, 7, 18
 	ld a, DEBUGTEST_WHITE
-	call DebugColor_FillBoxWithByte
+	call FillBoxWithByte
 	hlcoord 11, 0
 	lb bc, 2, 3
 	ld a, DEBUGTEST_LIGHT
-	call DebugColor_FillBoxWithByte
+	call FillBoxWithByte
 	hlcoord 16, 0
 	lb bc, 2, 3
 	ld a, DEBUGTEST_DARK
-	call DebugColor_FillBoxWithByte
+	call FillBoxWithByte
 	call DebugColor_LoadRGBMeter
 	call DebugColor_SetRGBMeter
 	ld a, [wDebugColorCurMon]
@@ -899,23 +899,6 @@ endr
 	ld [hli], a
 	dec c
 	jr nz, .loop
-	ret
-
-DebugColor_FillBoxWithByte:
-; For some reason, we have another copy of FillBoxWithByte here
-.row
-	push bc
-	push hl
-.col
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .row
 	ret
 
 DebugColor_PushSGBPals:
