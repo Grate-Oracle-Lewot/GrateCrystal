@@ -172,6 +172,9 @@ UseRegisteredItem:
 	call RefreshScreen
 
 ._cantuse
+	ld a, [wUsingHMItem]
+	and a
+	ret nz
 	call CantUseItem
 	call CloseText
 	and a
