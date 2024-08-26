@@ -461,6 +461,9 @@ UseItem:
 	dw .Field   ; ITEMMENU_CLOSE
 
 .Oak:
+	ld a, [wUsingHMItem]
+	cp 1
+	ret z
 	ld hl, OakThisIsntTheTimeText
 	jp Pack_PrintTextNoScroll
 
