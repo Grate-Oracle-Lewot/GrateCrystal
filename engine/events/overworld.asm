@@ -601,11 +601,19 @@ FlyFunction:
 	ld a, [wFlyingWithFearowbot]
 	and a
 	jr z, .done_tiles
+	ld a, [wUsingItemWithSelect]
+	and a
+	jr nz, .map
 	farcall Pack_InitGFX ; gets the pack GFX when exiting out of Fly by pressing B
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
 .done_tiles
 	call WaitBGMap
+	jr .all_done
+
+.map
+	call ExitAllMenus
+.all_done
 	ld a, $80
 	ret
 
