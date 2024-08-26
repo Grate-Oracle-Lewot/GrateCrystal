@@ -563,7 +563,6 @@ FlyFunction:
  	dw .FailFly
 
 .TryFly:
-; Fly
 	ld de, ENGINE_STORMBADGE
 	call CheckBadge
 	jr c, .nostormbadge
@@ -600,12 +599,19 @@ FlyFunction:
 .illegal
 	call CloseWindow
 	ld a, [wFlyingWithFearowbot]
-	cp 1
-	jr nz, .skip_pack_tiles
+	and a
+	jr z, .done_tiles
+	ld a, [wUsingItemWithSelect]
+	and a
+	jr nz, .map
 	farcall Pack_InitGFX ; gets the pack GFX when exiting out of Fly by pressing B
 	farcall WaitBGMap_DrawPackGFX
 	farcall Pack_InitColors
-.skip_pack_tiles
+	jr .done_tiles
+
+.map
+	call ReturnToMapFromSubmenu
+.done_tiles
 	call WaitBGMap
 	ld a, $80
 	ret
