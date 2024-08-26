@@ -637,7 +637,7 @@ FlyFunction:
 	end
 
 .ReturnFromFly:
-	ld a, 0
+	xor a
 	ld [wFlyingWithFearowbot], a
 	ld e, PAL_OW_RED
 	farcall SetFirstOBJPalette
