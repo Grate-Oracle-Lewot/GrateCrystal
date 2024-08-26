@@ -240,7 +240,7 @@ WhitneyPlainBadgeText:
 
 	para "Traded #MON"
 	line "will also obey you"
-	cont "up to Lv40."
+	cont "up to <EVO_LV>30."
 
 	para "Oh, you can have"
 	line "this too!"
