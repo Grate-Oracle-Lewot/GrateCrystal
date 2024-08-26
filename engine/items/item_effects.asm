@@ -2915,12 +2915,6 @@ FearowbotEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	ld [wFlyingWithFearowbot], a
-	ld a, [wUsingItemWithSelect]
-	and a
-	jr z, .skip
-	ld a, 2
-	ld [wFlyingWithFearowbot], a
-.skip
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
