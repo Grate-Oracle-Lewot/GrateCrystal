@@ -174,8 +174,9 @@ UseRegisteredItem:
 ._cantuse
 	ld a, [wUsingHMItem]
 	and a
-	ret nz
+	jr nz, .skip_oak
 	call CantUseItem
+.skip_oak
 	call CloseText
 	and a
 	ret
