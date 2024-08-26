@@ -464,6 +464,9 @@ UseItem:
 	ld a, [wUsingHMItem]
 	cp 1
 	ret z
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
 	ld hl, OakThisIsntTheTimeText
 	jp Pack_PrintTextNoScroll
 
