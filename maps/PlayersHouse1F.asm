@@ -46,13 +46,8 @@ MeetMomScript:
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
 	addcellnum PHONE_MOM
-	giveitem HEDGER
-	giveitem PICKAXE
-	giveitem DISCO_BALL
-	giveitem FLOATIE
-	giveitem EGG_BEATER
-	giveitem GRAVITY_BUOY
 	giveitem FEAROWBOT
+	setflag ENGINE_STORMBADGE
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
