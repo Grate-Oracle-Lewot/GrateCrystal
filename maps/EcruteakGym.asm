@@ -233,16 +233,13 @@ Text_ReceivedFogBadge:
 
 MortyText_FogBadgeSpeech:
 	text "By having FOG-"
-	line "BADGE, #MON up"
+	line "BADGE, #MON who"
 
-	para "to Lv50 will obey"
-	line "you."
+	para "know SURF will be"
+	line "able to use it to"
 
-	para "Also, #MON that"
-	line "know SURF will be"
-
-	para "able to use that"
-	line "move anytime."
+	para "ferry you across"
+	line "the water."
 
 	para "I want you to have"
 	line "this too."
