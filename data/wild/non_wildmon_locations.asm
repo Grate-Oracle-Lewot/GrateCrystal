@@ -7,12 +7,12 @@ specialencounter: MACRO
 ENDM
 
 EventWildMons::
-;	specialencounter SPECIES,      EVENT_FLAG,     map_id, blurb string ptr
+;	specialencounter SPECIES,      EVENT_FLAG,     map_id,           blurb string ptr
 	specialencounter OMANYTE,      -1,             PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter OMASTAR,      -1,             PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter KABUTO,       -1,             PEWTER_MUSEUM_1F, KabutoFossil_Str
 	specialencounter KABUTOPS,     -1,             PEWTER_MUSEUM_1F, KabutoFossil_Str
-	specialencounter AERODACTYL,   -1,             UNION_CAVE_B2F, AerodactylFriday_Str
+	specialencounter AERODACTYL,   -1,             UNION_CAVE_B2F,   AerodactylFriday_Str
 	specialencounter AERODACTYL,   -1,             PEWTER_MUSEUM_1F, AerodactylFossil_Str
 	db -1
 
