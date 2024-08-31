@@ -1,9 +1,8 @@
 Music_OldGameCorner:
-	channel_count 4
+	channel_count 3
 	channel 1, Music_OldGameCorner_Ch1
 	channel 2, Music_OldGameCorner_Ch2
 	channel 3, Music_OldGameCorner_Ch3
-	channel 4, Music_OldGameCorner_Ch4
 
 Music_OldGameCorner_Ch1::
 	tempo 120
