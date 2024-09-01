@@ -130,8 +130,8 @@ SaffronInnerGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
 	db SPRITE_FISHER
-	; max 6 of 9 walking sprites
-	db SPRITE_PIKACHU
+	db SPRITE_YELLOW_PIKACHU
+	; max 7 of 9 walking sprites
 	db 0 ; end
 
 CeladonGroupSprites:
