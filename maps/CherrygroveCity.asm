@@ -164,6 +164,7 @@ CherrygroveSilverSceneNorth:
 	sjump .FinishRival
 
 .AfterYourDefeat:
+	setevent EVENT_LOST_FIRST_RIVAL_BATTLE
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost
