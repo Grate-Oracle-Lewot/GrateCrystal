@@ -73,7 +73,7 @@ SaffronCityLass2Script:
 SaffronCityBugCatcherScript:
 	jumptext SaffronCityBugCatcherText
 
-SaffronCityFisherScript:
+SaffronCityYellowPikachuScript:
 	faceplayer
 	opentext
 	writetext SaffronCityYellowPikachuText
