@@ -8,6 +8,7 @@
 	const SAFFRONCITY_YOUNGSTER2
 	const SAFFRONCITY_LASS2
 	const SAFFRONCITY_POKEFAN_M2
+	const SAFFRONCITY_YELLOW_PIKACHU
 
 SaffronCity_MapScripts:
 	def_scene_scripts
@@ -71,6 +72,15 @@ SaffronCityLass2Script:
 
 SaffronCityBugCatcherScript:
 	jumptext SaffronCityBugCatcherText
+
+SaffronCityFisherScript:
+	faceplayer
+	opentext
+	writetext SaffronCityYellowPikachuText
+	cry PIKACHU
+	waitbutton
+	closetext
+	end
 
 SaffronCitySign:
 	jumptext SaffronCitySignText
@@ -237,6 +247,10 @@ SaffronCityBugCatcherText:
 	line "paid… after…"
 	done
 
+SaffronCityYellowPikachuText:
+	text "PIKACHU: Chu… Chu…"
+	done
+
 SaffronCitySignText:
 	text "SAFFRON CITY"
 
@@ -316,3 +330,4 @@ SaffronCity_MapEvents:
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
 	object_event 34,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityBugCatcherScript, EVENT_SABRINA_IN_FIGHTING_DOJO
+	object_event 28, 12, SPRITE_YELLOW_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SaffronCityYellowPikachuScript, -1
