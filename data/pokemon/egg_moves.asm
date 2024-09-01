@@ -954,5 +954,10 @@ CottoneeEggMoves:
 	db SPORE
 	db -1 ; end
 
+; MissingnoEggMoves:
+;	db PAY_DAY
+;	db BIND
+;	db -1 ; end
+
 NoEggMoves:
 	db -1 ; end
