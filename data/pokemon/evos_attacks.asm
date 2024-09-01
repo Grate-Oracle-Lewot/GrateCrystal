@@ -3908,3 +3908,10 @@ YanmegaEvosAttacks:
 	db 46, SCREECH
 	db 50, SLAM
 	db 0 ; no more level-up moves
+
+; MissingnoEvosAttacks:
+;	db EVOLVE_TRADE, -1, RHYDON
+;	db 0 ; no more evolutions
+;	db 1, WATER_GUN
+;	db 1, SKY_ATTACK
+;	db 0 ; no more level-up moves
