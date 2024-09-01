@@ -127,6 +127,7 @@
 	const SPRITE_MACHOP_DOLL ; 7b
 	const SPRITE_MARY ; 7c
 	const SPRITE_LOTUS_LADY ; 7d
+	const SPRITE_YELLOW_PIKACHU ; 7e
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
