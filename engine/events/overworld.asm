@@ -613,15 +613,14 @@ FlyFunction:
 	ret
 
 .map
-	call ExitAllMenus
+	; need to load overworld tiles here
 	jr .done_tiles
 
 .DoFly:
 	ld a, [wUsingItemWithSelect]
 	and a
 	jr z, .done_select
-	call ExitAllMenus
-	call WaitBGMap
+	; need to load overworld tiles here
 .done_select
 	ld hl, .FlyScript
 	call QueueScript
