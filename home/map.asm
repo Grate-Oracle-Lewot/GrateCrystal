@@ -1873,6 +1873,7 @@ CloseSubmenu::
 ExitAllMenus::
 	call ClearBGPalettes
 	call Call_ExitMenu
+ExitFlyMap::
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call GSReloadPalettes
