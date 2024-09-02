@@ -610,6 +610,11 @@ FlyFunction:
 	ret
 
 .DoFly:
+	ld a, [wUsingItemWithSelect]
+	and a
+	jr z, .done_select
+	call ReturnToMapFromSubmenu
+.done_select
 	ld hl, .FlyScript
 	call QueueScript
 	ld a, $81
