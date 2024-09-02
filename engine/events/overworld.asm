@@ -609,19 +609,19 @@ FlyFunction:
 	farcall Pack_InitColors
 .done_tiles
 	call WaitBGMap
-	jr .all_done
-
-.map
-	; need to load overworld tiles here
-.all_done
 	ld a, $80
 	ret
+
+.map
+	call ExitAllMenus
+	jr .done_tiles
 
 .DoFly:
 	ld a, [wUsingItemWithSelect]
 	and a
 	jr z, .done_select
-	; need to load overworld tiles here
+	call ExitAllMenus
+	call WaitBGMap
 .done_select
 	ld hl, .FlyScript
 	call QueueScript
