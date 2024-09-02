@@ -1873,7 +1873,7 @@ CloseSubmenu::
 ExitAllMenus::
 	call ClearBGPalettes
 	call Call_ExitMenu
-ExitFlyMap::
+ExitFlyMap:: ; for when Fearowbot is registered to Select
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call GSReloadPalettes
