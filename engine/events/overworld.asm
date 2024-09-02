@@ -613,7 +613,7 @@ FlyFunction:
 	ld a, [wUsingItemWithSelect]
 	and a
 	jr z, .done_select
-	call ReturnToMapFromSubmenu
+	call ExitAllMenus
 .done_select
 	ld hl, .FlyScript
 	call QueueScript
