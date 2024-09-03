@@ -2927,12 +2927,12 @@ FearowbotEffect:
 	ret
 
 .Error:
-	ld a, $0
+	xor a
 	ld [wItemEffectSucceeded], a
 	ret
 
 FailHMItem:
-	ld a, $0
+	xor a
 	ld [wItemEffectSucceeded], a
 	ld a, $3
 	ret
