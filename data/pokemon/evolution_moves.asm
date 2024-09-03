@@ -131,7 +131,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MAGIKARP
 	db BITE         ; GYARADOS
 	db NO_MOVE      ; LAPRAS
-	db NO_MOVE      ; DITTO
+	db TRANSFORM    ; DITTO
 	db NO_MOVE      ; EEVEE
 	db WATER_GUN    ; VAPOREON
 	db THUNDERSHOCK ; JOLTEON
@@ -183,7 +183,7 @@ EvolutionMoves::
 	db THUNDERPUNCH ; AMPHAROS
 	db PETAL_DANCE  ; BELLOSSOM
 	db NO_MOVE      ; MARILL
-	db NO_MOVE      ; AZUMARILL
+	db BUBBLEBEAM   ; AZUMARILL
 	db NO_MOVE      ; SUDOWOODO
 	db LICK         ; POLITOED
 	db NO_MOVE      ; HOPPIP
@@ -224,7 +224,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CORSOLA
 	db NO_MOVE      ; REMORAID
 	db OCTAZOOKA    ; OCTILLERY
-	db NO_MOVE      ; DELIBIRD
+	db PRESENT      ; DELIBIRD
 	db NO_MOVE      ; MANTINE
 	db NO_MOVE      ; SKARMORY
 	db NO_MOVE      ; HOUNDOUR
@@ -241,7 +241,7 @@ EvolutionMoves::
 	db NO_MOVE      ; JIRK
 	db NO_MOVE      ; CASTAWEIGH
 	db NO_MOVE      ; MILTANK
-	db NO_MOVE      ; BLISSEY
+	db RETURN       ; BLISSEY
 	db NO_MOVE      ; RAIKOU
 	db NO_MOVE      ; ENTEI
 	db NO_MOVE      ; SUICUNE
