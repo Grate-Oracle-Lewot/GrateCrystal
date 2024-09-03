@@ -448,6 +448,8 @@ UseItem:
 	ld a, [wItemAttributeValue]
 	ld hl, .dw
 	rst JumpTable
+	xor a
+	ld [wUsingHMItem], a
 	ret
 
 .dw
