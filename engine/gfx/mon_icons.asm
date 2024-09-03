@@ -467,7 +467,7 @@ GetSpeciesIcon:
 FlyFunction_GetMonIcon:
 	push de
 	ld a, [wFlyingWithFearowbot]
-	cp FALSE
+	and a
 	jr z, .not_fearowbot
 	ld a, FEAROW
 	ld [wTempIconSpecies], a
