@@ -176,7 +176,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Items
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP).
-- New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move (but you still need the corresponding badge)
+- New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move, all usable with Select (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
 - New held items that each completely prevent a specific status condition
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
