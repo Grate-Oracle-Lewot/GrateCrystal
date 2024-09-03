@@ -118,6 +118,8 @@ UseRegisteredItem:
 	ld a, [wItemAttributeValue]
 	ld hl, .SwitchTo
 	rst JumpTable
+	xor a
+	ld [wUsingHMItem], a
 	ret
 
 .SwitchTo:
