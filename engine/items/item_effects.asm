@@ -2057,6 +2057,7 @@ MaxRepelEffect:
 
 RepelEffect:
 	ld b, 100
+	; fallthrough
 
 UseRepel:
 	ld a, [wRepelEffect]
