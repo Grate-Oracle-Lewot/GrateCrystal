@@ -90,7 +90,7 @@ FlowerShopFloriaScript:
 	end
 
 .FoughtSudowoodo:
-	writetext GoldenrodFlowerShopFloriaItReallyWasAMonText
+	trade NPC_TRADE_FLORIA
 	waitbutton
 	closetext
 	end
@@ -214,11 +214,6 @@ GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
 GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	text "Wow, you beat"
 	line "WHITNEY? Cool!"
-	done
-
-GoldenrodFlowerShopFloriaItReallyWasAMonText:
-	text "So it really was a"
-	line "#MON!"
 	done
 
 GoldenrodFlowerShop_MapEvents:
