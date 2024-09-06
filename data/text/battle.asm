@@ -1167,8 +1167,7 @@ StaticPrzcureberryText:
 	text "!"
 	autodone
 
-LiquidOozeText:
-	text "<USER>"
-	line "absorbed toxins"
-	scroll "and was poisoned!"
+PoisonHealText:
+	text "<USER>'s"
+	line "healed by poison!"
 	autodone
