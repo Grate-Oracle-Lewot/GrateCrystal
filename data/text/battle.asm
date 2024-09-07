@@ -1166,3 +1166,8 @@ StaticPrzcureberryText:
 	text_ram wStringBuffer1
 	text "!"
 	autodone
+
+_PoisonHealText:
+	text "<TARGET>'s"
+	line "healed by poison!"
+	autodone
