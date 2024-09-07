@@ -128,9 +128,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon KOFFING, 1
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
