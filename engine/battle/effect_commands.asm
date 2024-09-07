@@ -7185,6 +7185,5 @@ ContactCuteCharm:
 	jp StdBattleTextbox
 
 PoisonHealText:
-	text "<TARGET>'s"
-	line "healed by poison!"
-	autodone
+	text_far _PoisonHealText
+	text_end
