@@ -3700,9 +3700,9 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	ld a, POISON ; Don't poison a Poison-type
+	ld a, POISON
 	call CheckIfTargetIsGivenType
-	ret z
+	jr z, PoisonHeal
 	ld a, STEEL ; Don't poison a Steel-type
 	call CheckIfTargetIsGivenType
 	ret z
@@ -3727,6 +3727,32 @@ BattleCommand_PoisonTarget:
 	farcall UseHeldStatusHealingItem
 	ret
 
+PoisonHeal:
+	ld hl, wEnemyMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wBattleMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+	call RestoreHP
+	ld hl, PoisonHealText
+	jp StdBattleTextbox
+
 BattleCommand_Poison:
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
@@ -3735,7 +3761,7 @@ BattleCommand_Poison:
 
 	ld a, POISON
 	call CheckIfTargetIsGivenType
-	jp z, .failed
+	jr z, PoisonHeal
 
 	ld a, STEEL
 	call CheckIfTargetIsGivenType
@@ -7157,3 +7183,8 @@ ContactCuteCharm:
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
+
+PoisonHealText:
+	text "<TARGET>'s"
+	line "healed by poison!"
+	autodone
