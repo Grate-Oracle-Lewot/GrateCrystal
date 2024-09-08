@@ -170,7 +170,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
-- Triple Kick always hits 3 times.
+- Triple Kick always hits 3 times. (It may hit fewer after accuracy drops.)
 
 - Spite always reduces PP by 5.
 
