@@ -1,5 +1,4 @@
-; These lists determine the battle music and victory music, and whether to
-; award HAPPINESS_GYMBATTLE for winning.
+; These lists determine the battle music and victory music, and whether to award HAPPINESS_GYMBATTLE for winning.
 
 GymLeaders:
 	db FALKNER
