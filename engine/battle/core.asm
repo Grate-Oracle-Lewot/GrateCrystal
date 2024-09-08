@@ -1034,13 +1034,13 @@ PlayerTurn_EndOpponentProtectEndureDestinyBond:
 	call SetPlayerTurn
 	call EndUserDestinyBond
 	callfar DoPlayerTurn
-	jp EndOpponentProtectEndureDestinyBond
+	jr EndOpponentProtectEndureDestinyBond
 
 EnemyTurn_EndOpponentProtectEndureDestinyBond:
 	call SetEnemyTurn
 	call EndUserDestinyBond
 	callfar DoEnemyTurn
-	jp EndOpponentProtectEndureDestinyBond
+	; fallthrough
 
 EndOpponentProtectEndureDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
