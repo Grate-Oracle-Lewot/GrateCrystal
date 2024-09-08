@@ -3844,12 +3844,6 @@ PoisonOpponent:
 
 BattleCommand_DrainTarget:
 ; draintarget
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jp z, LiquidOoze
-	; fallthrough
-
-PoisonOnPoisonDrain:
 	call SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
