@@ -234,7 +234,7 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke ZUBAT, 5, GOLD_BERRY
+	givepoke HOPPIP, 5, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
