@@ -1199,7 +1199,7 @@ HandlePerishSong:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .EnemyFirst:
 	call SetEnemyTurn
@@ -1267,7 +1267,7 @@ HandleWrap:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .EnemyFirst:
 	call SetEnemyTurn
@@ -1337,7 +1337,7 @@ HandleLeftovers:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .DoEnemyFirst:
 	call SetEnemyTurn
@@ -1522,7 +1522,7 @@ HandleFutureSight:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .enemy_first
 	call SetEnemyTurn
