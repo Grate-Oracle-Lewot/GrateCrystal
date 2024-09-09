@@ -3861,7 +3861,8 @@ LiquidOoze:
 	call CheckIfTargetIsGivenType
 	jr z, .no_ooze
 	call BattleCommand_SwitchTurn
-	jp _LiquidOoze
+	farcall _LiquidOoze
+	ret
 
 .no_ooze
 	; Poison-types can drain each other without being hurt
