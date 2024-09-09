@@ -3854,6 +3854,20 @@ PoisonOnPoisonDrain:
 	ld hl, SuckedHealthText
 	jp StdBattleTextbox
 
+LiquidOoze:
+	; check if user is also Poison-type
+	call BattleCommand_SwitchTurn
+	ld a, POISON
+	call CheckIfTargetIsGivenType
+	jr z, .no_ooze
+	call BattleCommand_SwitchTurn
+	jp _LiquidOoze
+
+.no_ooze
+	; Poison-types can drain each other without being hurt
+	call BattleCommand_SwitchTurn
+	jr PoisonOnPoisonDrain
+
 BattleCommand_EatDream:
 ; eatdream
 	call SapHealth
