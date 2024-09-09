@@ -9169,14 +9169,7 @@ GetWeatherImage:
 	db $80, $1c ; y/x - top right
 	db $80, $14 ; y/x - top left
 
-LiquidOoze:
-	; check if user is also Poison-type
-	call SwitchTurnCore
-	ld a, POISON
-	call CheckIfTargetIsGivenType
-	jr z, .no_ooze
-	call SwitchTurnCore
-
+_LiquidOoze:
 	; Divide damage by 2, store it in wHPBuffer1
 	ld hl, wCurDamage
 	ld a, [hli]
@@ -9200,15 +9193,8 @@ LiquidOoze:
 	call RefreshBattleHuds
 	call UpdateBattleMonInParty
 	call HasUserFainted
-	jr z, .fainted
-	ret
+	ret nz
 
-.no_ooze
-	; Poison-types can drain each other without being hurt
-	call SwitchTurnCore
-	jp PoisonOnPoisonDrain
-
-.fainted
 	call RefreshBattleHuds
 	ld c, 20
 	call DelayFrames
