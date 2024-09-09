@@ -73,12 +73,14 @@ RuinsOfAlphOutsideFisherScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TALKED_TO_RUINS_COWARD
-	iftrue .Next
+	iftrue .Trade
 	setevent EVENT_TALKED_TO_RUINS_COWARD
-	writetext RuinsOfAlphOutsideFisherText1
-	promptbutton
-.Next:
-	writetext RuinsOfAlphOutsideFisherText2
+	writetext RuinsOfAlphOutsideFisherText
+	sjump .End
+
+.Trade:
+	trade NPC_TRADE_KOJI
+.End:
 	waitbutton
 	closetext
 	end
@@ -242,7 +244,7 @@ RuinsOfAlphResearchCenterSignText:
 	line "THE RUINS OF ALPH"
 	done
 
-RuinsOfAlphOutsideFisherText1:
+RuinsOfAlphOutsideFisherText:
 	text "While exploring"
 	line "the RUINS, we"
 
@@ -254,13 +256,6 @@ RuinsOfAlphOutsideFisherText1:
 
 	para "You should be"
 	line "careful too."
-	done
-
-RuinsOfAlphOutsideFisherText2:
-	text "The RUINS hide a"
-	line "huge secret!"
-
-	para "…I think…"
 	done
 
 RuinsOfAlphOutsideYoungster1Text:
