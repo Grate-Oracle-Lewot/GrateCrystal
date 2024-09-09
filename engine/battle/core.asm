@@ -3739,7 +3739,7 @@ ResetEnemyStatLevels:
 	ret
 
 CheckPlayerPartyForFitMon:
-; Has the player any mon in his Party that can fight?
+; Has the player any mon in their Party that can fight?
 	ld a, [wPartyCount]
 	ld e, a
 	xor a
