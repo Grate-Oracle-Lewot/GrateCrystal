@@ -8370,7 +8370,7 @@ ShowLinkBattleParticipantsAfterEnd:
 DisplayLinkBattleResult:
 	farcall CheckMobileBattleError
 	jp c, .Mobile_InvalidBattle
-	call IsMobileBattle2
+	call IsMobileBattle
 	jr nz, .proceed
 
 	ld hl, wcd2a
@@ -8415,7 +8415,7 @@ DisplayLinkBattleResult:
 
 	call CloseSRAM
 
-	call IsMobileBattle2
+	call IsMobileBattle
 	jr z, .mobile
 	call WaitPressAorB_BlinkCursor
 	jp ClearTilemap
@@ -8442,11 +8442,6 @@ DisplayLinkBattleResult:
 
 .InvalidBattle:
 	db "INVALID BATTLE@"
-
-IsMobileBattle2:
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	ret
 
 _DisplayLinkRecord:
 	ld a, BANK(sLinkBattleStats)
@@ -9115,7 +9110,7 @@ BattleStartMessage:
 	pop hl
 	call StdBattleTextbox
 
-	call IsMobileBattle2
+	call IsMobileBattle
 	ret nz
 
 	ld c, $2 ; start
