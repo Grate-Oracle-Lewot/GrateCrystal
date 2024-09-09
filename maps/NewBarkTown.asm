@@ -128,6 +128,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	loadwildmon ZUBAT, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
