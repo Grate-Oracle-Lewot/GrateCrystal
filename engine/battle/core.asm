@@ -3409,8 +3409,7 @@ LookUpTheEffectivenessOfEveryMove:
 	ret
 
 IsThePlayerMonTypesEffectiveAgainstOTMon:
-; Calculates the effectiveness of the types of the PlayerMon
-; against the OTMon
+; Calculates the effectiveness of the types of the PlayerMon against the OTMon
 	push bc
 	ld hl, wOTPartyCount
 	ld a, b
