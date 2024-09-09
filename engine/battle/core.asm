@@ -4271,9 +4271,12 @@ SpikesDamage:
 	call SubtractHPFromTarget
 
 	pop hl
-	call hl
+	call .hl
 
 	jp WaitBGMap
+
+.hl ; apparently you can jp hl but you can't call hl
+	jp hl
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
