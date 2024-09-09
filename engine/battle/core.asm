@@ -8087,8 +8087,7 @@ GetEnemyMonFrontpic_DoAnim:
 
 StartBattle:
 ; This check prevents you from entering a battle without any Pokemon.
-; Those using walk-through-walls to bypass getting a Pokemon experience
-; the effects of this check.
+; Those using walk-through-walls to bypass getting a Pokemon experience the effects of this check.
 	ld a, [wPartyCount]
 	and a
 	ret z
