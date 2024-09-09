@@ -3040,8 +3040,7 @@ LostBattle:
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
 	ret nz
-	call PrintWinLossText
-	ret
+	jp PrintWinLossText
 
 .battle_tower
 ; Remove the enemy from the screen.
