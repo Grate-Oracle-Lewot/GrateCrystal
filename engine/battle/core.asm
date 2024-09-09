@@ -6562,8 +6562,7 @@ LoadEnemyMon:
 	jp ApplyStatusEffectOnEnemyStats
 
 CheckSleepingTreeMon:
-; Return carry if species is in the list
-; for the current time of day
+; Return carry if species is in the list for the current time of day
 
 ; Don't do anything if this isn't a tree encounter
 	ld a, [wBattleType]
