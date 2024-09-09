@@ -6141,7 +6141,7 @@ LoadEnemyMon:
 
 ; 42% chance of getting an item
 	call BattleRandom
-	cp 58 percent + 1
+	cp 58 percent
 	ld a, NO_ITEM
 	jr c, .UpdateItem
 
