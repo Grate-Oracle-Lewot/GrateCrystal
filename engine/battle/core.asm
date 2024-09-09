@@ -7417,16 +7417,13 @@ GiveExperiencePoints:
 	ld a, [wCurPartyMon]
 	inc a
 	cp b
-	jr z, .done
+	jp z, ResetBattleParticipants
 	ld [wCurPartyMon], a
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld b, h
 	ld c, l
 	jp .loop
-
-.done
-	jp ResetBattleParticipants
 
 .EvenlyDivideExpAmongParticipants:
 ; count number of battle participants
