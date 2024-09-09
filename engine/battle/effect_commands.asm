@@ -3846,7 +3846,7 @@ BattleCommand_DrainTarget:
 ; draintarget
 	ld a, POISON
 	call CheckIfTargetIsGivenType
-	jp z, LiquidOoze
+	jr z, LiquidOoze
 	; fallthrough
 
 PoisonOnPoisonDrain:
