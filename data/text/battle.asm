@@ -272,10 +272,6 @@ BattleText_AnEGGCantBattle:
 	line "battle!"
 	autodone
 
-BattleText_CantEscape2:
-	text "Can't escape!"
-	autodone
-
 BattleText_TheresNoEscapeFromTrainerBattle:
 	text "No! There's no"
 	line "running from a"
