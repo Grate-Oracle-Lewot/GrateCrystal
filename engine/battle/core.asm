@@ -9177,15 +9177,15 @@ _LiquidOoze:
 	ld hl, wCurDamage
 	ld a, [hli]
 	srl a
-	ldh [wHPBuffer1], a
+	ld [wHPBuffer1], a
 	ld b, a
 	ld a, [hl]
 	rr a
-	ldh [wHPBuffer1 + 1], a
+	ld [wHPBuffer1 + 1], a
 	or b
 	jr nz, .at_least_one
 	ld a, 1
-	ldh [wHPBuffer1 + 1], a
+	ld [wHPBuffer1 + 1], a
 .at_least_one
 
 	ld bc, wHPBuffer1
