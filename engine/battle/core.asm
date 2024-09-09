@@ -8270,17 +8270,14 @@ InitEnemyWildmon:
 	ret
 
 ExitBattle:
-	call .HandleEndOfBattle
-	jr CleanUpBattleRAM
-
-.HandleEndOfBattle:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
 	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
-	jp DisplayLinkBattleResult
+	call DisplayLinkBattleResult
+	jr CleanUpBattleRAM
 
 .not_linked
 	ld a, [wBattleResult]
@@ -8291,7 +8288,7 @@ ExitBattle:
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
-	ret
+	; fallthrough
 
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
