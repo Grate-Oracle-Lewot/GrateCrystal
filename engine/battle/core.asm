@@ -9172,24 +9172,25 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
-	; Divide damage by 2, store it in hDividend
+	; Divide damage by 2, store it in wHPBuffer1
 	ld hl, wCurDamage
 	ld a, [hli]
 	srl a
-	ldh [hDividend], a
+	ld [wHPBuffer1], a
 	ld b, a
 	ld a, [hl]
 	rr a
-	ldh [hDividend + 1], a
+	ld [wHPBuffer1 + 1], a
 	or b
 	jr nz, .at_least_one
 	ld a, 1
-	ldh [hDividend + 1], a
+	ld [wHPBuffer1 + 1], a
 .at_least_one
 
-	ldh a, [hDividend]
+	ld hl, wHPBuffer1
+	ld a, [hli]
 	ld b, a
-	ldh a, [hDividend + 1]
+	ld a, [hl]
 	ld c, a
 
 	call SubtractHPFromUser
