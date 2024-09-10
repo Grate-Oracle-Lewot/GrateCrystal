@@ -1057,8 +1057,7 @@ CheckIfHPIsZero:
 	ret
 
 ResidualDamage:
-; Return z if the user fainted before
-; or as a result of residual damage.
+; Return z if the user fainted before or as a result of residual damage.
 ; For Sandstorm damage, see HandleWeather.
 
 	call HasUserFainted
