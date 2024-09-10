@@ -9172,36 +9172,7 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
-	; Divide damage by 2, store it in wHPBuffer1
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ld [wHPBuffer1], a
-	ld b, a
-	ld a, [hl]
-	rr a
-	ld [wHPBuffer1 + 1], a
-	or b
-	jr nz, .at_least_one
-	ld a, 1
-	ld [wHPBuffer1 + 1], a
-.at_least_one
-
-	ld bc, wHPBuffer1
+	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 	ld hl, LiquidOozeText
-	call StdBattleTextbox
-
-	call RefreshBattleHuds
-	call UpdateBattleMonInParty
-	call HasUserFainted
-	ret nz
-
-	call RefreshBattleHuds
-	ld c, 20
-	call DelayFrames
-
-	ldh a, [hBattleTurn]
-	and a
-	jp z, HandlePlayerMonFaint
-	jp HandleEnemyMonFaint
+	jp StdBattleTextbox
