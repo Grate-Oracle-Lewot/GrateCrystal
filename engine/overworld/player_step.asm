@@ -63,14 +63,6 @@ HandlePlayerStep:
 	dw BufferScreen
 	dw .mobile
 	dw .fail
-; The rest are never used.  Ever.
-	dw .fail
-	dw .fail
-	dw .fail
-	dw .fail
-	dw .fail
-	dw .fail
-	dw .fail
 
 .fail
 	ret
