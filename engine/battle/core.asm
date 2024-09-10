@@ -9172,6 +9172,7 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
+	ld b, b
 	; Divide damage by 2, store it in wHPBuffer1
 	ld hl, wCurDamage
 	ld a, [hli]
