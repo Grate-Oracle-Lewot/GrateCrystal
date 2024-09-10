@@ -1166,5 +1166,5 @@ StaticPrzcureberryText:
 LiquidOozeText:
 	text "<USER>"
 	line "absorbed toxins"
-	scroll "and was poisoned!"
+	scroll "and was hurt!"
 	autodone
