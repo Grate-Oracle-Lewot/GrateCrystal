@@ -9187,6 +9187,7 @@ _LiquidOoze::
 	ld [wHPBuffer1 + 1], a
 .at_least_one
 
+	ld a, [wHPBuffer1]
 	ld [bc], a
 	call SubtractHPFromUser
 	ld hl, LiquidOozeText
