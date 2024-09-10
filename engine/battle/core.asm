@@ -9187,9 +9187,9 @@ _LiquidOoze::
 	ldh [hDividend + 1], a
 .at_least_one
 
-	ldh a, [hDividend + 1]
-	ld b, a
 	ldh a, [hDividend]
+	ld b, a
+	ldh a, [hDividend + 1]
 	ld c, a
 
 	call SubtractHPFromUser
