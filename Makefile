@@ -103,7 +103,7 @@ tools:
 	$(MAKE) -C tools/
 
 free_space:
-	tools/free_space.awk BANK=all pokecrystal.map
+	tools/free_space.awk BANK=all GrateCrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`
