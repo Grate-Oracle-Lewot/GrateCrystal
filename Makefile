@@ -55,7 +55,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
+all: crystal free_space
 crystal:         GrateCrystal.gbc
 crystal11:       GrateCrystal11.gbc
 crystal_au:      GrateCrystal_au.gbc
@@ -102,6 +102,8 @@ compare: $(roms) $(patches)
 tools:
 	$(MAKE) -C tools/
 
+free_space:
+	tools/free_space.awk BANK=all pokecrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`
