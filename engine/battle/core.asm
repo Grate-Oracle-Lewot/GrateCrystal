@@ -9187,7 +9187,11 @@ _LiquidOoze::
 	ld [wHPBuffer1 + 1], a
 .at_least_one
 
-	ld [bc], wHPBuffer1
+	ld a, [wHPBuffer1 + 1]
+	ld b, a
+	ld a, [wHPBuffer1]
+	ld c, a
+
 	call SubtractHPFromUser
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
