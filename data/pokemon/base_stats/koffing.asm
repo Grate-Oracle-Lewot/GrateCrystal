@@ -7,7 +7,7 @@
 	db 190 ; catch rate
 	db 114 ; base exp
 	db SMOKE_BALL, ANTIVENOM ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_UNKNOWN ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/koffing/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
