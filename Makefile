@@ -55,7 +55,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal free_space
+all: crystal
 crystal:         GrateCrystal.gbc
 crystal11:       GrateCrystal11.gbc
 crystal_au:      GrateCrystal_au.gbc
@@ -102,7 +102,7 @@ compare: $(roms) $(patches)
 tools:
 	$(MAKE) -C tools/
 
-free_space:
+all:
 	tools/free_space.awk BANK=all GrateCrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
