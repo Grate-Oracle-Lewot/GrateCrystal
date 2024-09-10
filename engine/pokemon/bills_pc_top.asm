@@ -3,7 +3,7 @@ _BillsPC:
 	ret c
 	call .LogIn
 	call .UseBillsPC
-	jp .LogOut
+	jp CloseSubmenu
 
 .CheckCanUsePC:
 	ld a, [wPartyCount]
@@ -36,9 +36,6 @@ _BillsPC:
 .PCWhatText:
 	text_far _PCWhatText
 	text_end
-
-.LogOut:
-	jp CloseSubmenu
 
 .UseBillsPC:
 	ld hl, .MenuHeader
