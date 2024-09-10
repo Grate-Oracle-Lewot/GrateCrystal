@@ -9172,7 +9172,22 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
-	call GetSixteenthMaxHP
+	; Divide damage by 2, store it in wHPBuffer1
+	ld hl, wCurDamage
+	ld a, [hli]
+	srl a
+	ld [wHPBuffer1], a
+	ld b, a
+	ld a, [hl]
+	rr a
+	ld [wHPBuffer1 + 1], a
+	or b
+	jr nz, .at_least_one
+	ld a, 1
+	ld [wHPBuffer1 + 1], a
+.at_least_one
+
+	ld [bc], a
 	call SubtractHPFromUser
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
