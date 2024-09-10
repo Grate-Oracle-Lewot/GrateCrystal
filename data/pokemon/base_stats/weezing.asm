@@ -7,7 +7,7 @@
 	db 60 ; catch rate
 	db 173 ; base exp
 	db SMOKE_BALL, EXP_SHARE ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_UNKNOWN ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/weezing/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
