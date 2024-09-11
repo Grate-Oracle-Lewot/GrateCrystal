@@ -9194,5 +9194,7 @@ _LiquidOoze::
 	ld c, a
 
 	call SubtractHPFromUser
+	ld c, 20
+	call DelayFrames
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
