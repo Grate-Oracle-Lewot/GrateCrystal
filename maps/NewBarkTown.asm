@@ -130,7 +130,6 @@ NewBarkTownSilverScript:
 NewBarkTownSign:
 	opentext
 	givepoke HOPPIP, 5, GOLD_BERRY
-	waitbutton
 	closetext
 	loadwildmon ZUBAT, 1
 	startbattle
