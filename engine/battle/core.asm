@@ -9173,6 +9173,8 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
+	call GetMaxHP
+
 	ld hl, wCurDamage
 	ld a, [hli]
 	ld b, a
@@ -9186,11 +9188,6 @@ _LiquidOoze::
 	jr nz, .got_damage
 	inc c
 .got_damage
-
-	ld a, b
-	ld [wHPBuffer1], a
-	ld a, c
-	ld [wHPBuffer1 + 1], a
 
 	call SubtractHPFromUser
 	ld c, 20
