@@ -9186,6 +9186,11 @@ _LiquidOoze::
 	inc c
 .got_damage
 
+	ld a, b
+	ld [wHPBuffer1 + 1], a
+	ld a, c
+	ld [wHPBuffer1], a
+
 	call SubtractHPFromUser
 	ld c, 20
 	call DelayFrames
