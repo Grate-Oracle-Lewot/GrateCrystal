@@ -9173,8 +9173,11 @@ GetWeatherImage:
 	db $80, $14 ; y/x - top left
 
 _LiquidOoze::
+; GetMaxHP puts it into both bc and wHPBuffer1.
+; The former is overwritten below, but the latter is needed to animate the HP bar correctly.
 	call GetMaxHP
 
+; Put current damage into bc and halve it.
 	ld hl, wCurDamage
 	ld a, [hli]
 	ld b, a
