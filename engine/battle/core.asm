@@ -9191,8 +9191,11 @@ _LiquidOoze::
 	ld a, c
 	ld [wHPBuffer1], a
 
+	call SwitchTurnCore
 	call SubtractHPFromUser
 	ld c, 20
 	call DelayFrames
+	call SwitchTurnCore
+
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
