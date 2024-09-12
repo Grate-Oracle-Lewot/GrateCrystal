@@ -407,9 +407,11 @@ FuchsiaGymGuideText:
 	cont "on, so that's a"
 	cont "good choice."
 
-	para "But remember: you"
-	line "can't drain health"
-	cont "from poison types!"
+	para "But remember: only"
+	line "poison types can"
+
+	para "drain HP from oth-"
+	line "er poison types!"
 
 	para "Here's a real tip,"
 	line "though…"
