@@ -9197,3 +9197,20 @@ _LiquidOoze::
 	call DelayFrames
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
+
+CheckGivenTypeCore:
+; input: type to be checked in a
+	ld b, a
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
+	ret
