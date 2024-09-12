@@ -406,6 +406,16 @@ FuchsiaGymGuideText:
 	line "ly immune to pois-"
 	cont "on, so that's a"
 	cont "good choice."
+
+	para "But remember: you"
+	line "can't drain health"
+	cont "from poison types!"
+
+	para "Here's a real tip,"
+	line "though…"
+
+	para "DREAM EATER still"
+	line "works!"
 	done
 
 FuchsiaGymGuideWinText:
