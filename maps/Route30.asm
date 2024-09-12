@@ -344,11 +344,15 @@ Route30YoungsterText_EveryoneIsBattling:
 	done
 
 Route30CooltrainerFText:
-	text "I'm not a trainer."
+	text "My HOPPIP used"
+	line "ABSORB on a ZUBAT,"
 
-	para "But if you look"
-	line "one in the eyes,"
-	cont "prepare to battle."
+	para "but it got hurt"
+	line "instead of healed!"
+
+	para "I guess you can't"
+	line "drain poison-type"
+	cont "#MON…"
 	done
 
 Route30SignText:
