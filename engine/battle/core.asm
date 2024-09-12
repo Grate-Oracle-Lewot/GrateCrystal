@@ -9198,9 +9198,7 @@ _LiquidOoze::
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
 
-CheckGivenTypeCore:
-; input: type to be checked in a
-	ld b, a
+CheckIfTargetIsPoisonType:
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -9209,8 +9207,8 @@ CheckGivenTypeCore:
 .ok
 	ld a, [de]
 	inc de
-	cp b
+	cp POISON
 	ret z
 	ld a, [de]
-	cp b
+	cp POISON
 	ret
