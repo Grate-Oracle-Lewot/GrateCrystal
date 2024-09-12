@@ -3820,7 +3820,8 @@ BattleCommand_Poison:
 	cp EFFECT_TOXIC
 	ret
 
-CheckIfTargetIsGivenType:
+CheckIfTargetIsGivenType::
+; input: type to be checked in a
 	ld b, a
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
