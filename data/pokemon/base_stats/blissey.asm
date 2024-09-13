@@ -3,7 +3,7 @@
 	db 255,  10,  10,  55,  75, 135
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, POISON ; type
 	db 30 ; catch rate
 	db 255 ; base exp
 	db LUCKY_EGG, LUCKY_PUNCH ; items
