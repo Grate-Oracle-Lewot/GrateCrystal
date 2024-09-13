@@ -128,12 +128,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke GRIMER, 5, GOLD_BERRY
-	closetext
-	loadwildmon NIDORAN_F, 5
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
