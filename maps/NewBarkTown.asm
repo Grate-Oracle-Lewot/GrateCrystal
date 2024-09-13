@@ -129,9 +129,9 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	opentext
-	givepoke HOPPIP, 20, GOLD_BERRY
+	givepoke GRIMER, 5, GOLD_BERRY
 	closetext
-	loadwildmon NIDORAN_F, 20
+	loadwildmon NIDORAN_F, 5
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
