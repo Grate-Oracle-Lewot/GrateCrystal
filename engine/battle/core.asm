@@ -9227,11 +9227,11 @@ _LiquidOoze::
 	jp StdBattleTextbox
 
 CheckForPoisonType:
-	ld de, wEnemyMonType1
+	ld de, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
-	ld de, wBattleMonType1
+	ld de, wEnemyMonType1
 .ok
 	ld a, [de]
 	inc de
