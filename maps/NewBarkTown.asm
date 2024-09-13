@@ -129,9 +129,9 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	opentext
-	givepoke HOPPIP, 20, GOLD_BERRY
+	givepoke BLISSEY, 5, GOLD_BERRY
 	closetext
-	loadwildmon BLISSEY, 16
+	loadwildmon ZUBAT, 1
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
