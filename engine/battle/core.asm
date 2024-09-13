@@ -1131,9 +1131,13 @@ ResidualDamage:
 
 	call GetEighthMaxHP
 	call SubtractHPFromUser
+	call CheckForPoisonType
+	jp z, .HandlePoisonLeechSeed
+.non_poison_leech
 	ld a, $1
 	ldh [hBGMapMode], a
 	call RestoreHP
+.finish_leech_seed
 	ld hl, LeechSeedSapsText
 	call StdBattleTextbox
 .not_seeded
@@ -1190,6 +1194,30 @@ ResidualDamage:
 	call DelayFrames
 	xor a
 	ret
+
+.HandlePoisonLeechSeed
+	call SwitchTurnCore
+	call CheckForPoisonType
+	jr z, .HotPoisonOnPoisonAction
+
+	ld hl, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonMaxHP
+.ok
+	ld a, [hli]
+	ld [wHPBuffer1 + 1], a
+	ld a, [hl]
+	ld [wHPBuffer1], a
+
+	call SubtractHPFromUser
+	call SwitchTurnCore
+	jp .finish_leech_seed
+
+.HotPoisonOnPoisonAction
+	call SwitchTurnCore
+	jp .non_poison_leech
 
 HandlePerishSong:
 	ldh a, [hSerialConnectionStatus]
@@ -9198,7 +9226,7 @@ _LiquidOoze::
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
 
-CheckIfTargetIsPoisonType:
+CheckForPoisonType:
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
