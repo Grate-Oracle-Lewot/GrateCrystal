@@ -1285,7 +1285,7 @@ DewgongEvosAttacks:
 GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
+	db 1, POUND
 	db 2, HARDEN
 	db 5, MUD_SLAP
 	db 7, ACID
