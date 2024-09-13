@@ -171,7 +171,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
-- Triple Kick always hits 3 times. (It may hit fewer after accuracy drops.)
+- Triple Kick always hits 3 times. (It may hit fewer after accuracy drops, since each hit checks accuracy separately.)
 
 - Spite always reduces PP by 5.
 
@@ -244,6 +244,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
 - Due to no Mystery Gift, the Trainer House now has you fight a copy of your own party from the last time you saved (this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Fight-a-copy-of-your-own-party-in-the-Trainer-House))
+- Two new NPC trades, both of which make Pokémon available earlier, plus some changes to existing trades
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - When the player crosses map borders, roaming beasts now only change maps 50% of the time, making them potentially easier to ambush
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
