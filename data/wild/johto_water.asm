@@ -21,9 +21,9 @@ JohtoWaterWildMons:
 	def_water_wildmons ROUTE_32
 	db 6 percent ; encounter rate
 	db 15, TENTACOOL
-	db 20, QUAGSIRE
+	db 15, SEEL
 	db 20, TENTACRUEL
-	db 15, YANMA
+	db 20, QUAGSIRE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_34
