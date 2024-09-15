@@ -37,7 +37,7 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_12
 	db 6 percent ; encounter rate
 	db 25, TENTACOOL
-	db 25, QUAGSIRE
+	db 25, SEEL
 	db 25, TENTACRUEL
 	db 25, SEADRA
 	end_water_wildmons
@@ -45,7 +45,7 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_13
 	db 6 percent ; encounter rate
 	db 25, TENTACOOL
-	db 25, QUAGSIRE
+	db 25, SEEL
 	db 25, TENTACRUEL
 	db 25, SEADRA
 	end_water_wildmons
