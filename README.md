@@ -32,6 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Physical/Special split
 - TMs are infinite-use
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
+- On the title screen, simply press Select to reset the clock, and B to delete your save data
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
@@ -283,7 +284,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 See: https://github.com/pret/pokecrystal/wiki/Tutorials
 
 - Unused experience growth rates given to some Pokémon, and a few other rates changed
-- Clock reset procedure simplified
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
 - Tiles animate even when textboxes are open
 - Enemy trainers have maximum happiness for a powerful Return
