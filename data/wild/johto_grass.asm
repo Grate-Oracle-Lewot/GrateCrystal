@@ -183,7 +183,7 @@ JohtoGrassWildMons:
 	db 11, RATTATA
 	db 10, ABRA
 	db 13, RATTATA
-	db 10, DITTO
+	db 12, GRIMER
 	db 10, SNUBBULL
 	db 12, CLEFAIRY
 	end_grass_wildmons
@@ -214,7 +214,7 @@ JohtoGrassWildMons:
 	db 12, NIDORAN_F
 	db 12, NIDORAN_M
 	db 11, ABRA
-	db 11, DITTO
+	db 9, GRIMER
 	db 12, YANMA
 	db 12, CLEFAIRY
 	end_grass_wildmons
