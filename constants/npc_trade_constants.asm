@@ -23,6 +23,7 @@ NPCTRADE_STRUCT_LENGTH EQU _RS
 	const NPC_TRADE_FOREST ; 6
 	const NPC_TRADE_FLORIA ; 7
 	const NPC_TRADE_KOJI   ; 8
+	const NPC_TRADE_LIAM   ; 9
 NUM_NPC_TRADES EQU const_value
 
 ; trade gender limits
