@@ -298,7 +298,7 @@ JohtoGrassWildMons:
 	db 23, MAGNEMITE
 	db 23, SNUBBULL
 	db 23, MEOWTH
-	db 23, RATICATE
+	db 23, PONYTA
 	db 20, MILTANK
 	db 20, TAUROS
 	; nite
