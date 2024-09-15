@@ -263,7 +263,7 @@ Moves:
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,       84, PSYCHIC_TYPE, SPECIAL,  100, 15,   0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING,     PHYSICAL, 100, 15, 100
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        20, WATER,        SPECIAL,  100, 15,   0
-	move BEAT_UP,      EFFECT_BEAT_UP,            30, DARK,         PHYSICAL, 100, 10,   0
+	move BEAT_UP,      EFFECT_BEAT_UP,            40, DARK,         PHYSICAL, 100, 10,   0
 	move FAIRY_WIND,   EFFECT_GUST,               40, FAIRY,        SPECIAL,  100, 30,   0
 	move POWER_GEM,    EFFECT_PAY_DAY,            75, ROCK,         SPECIAL,  100, 15,   0
 	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   84,  5,  30
