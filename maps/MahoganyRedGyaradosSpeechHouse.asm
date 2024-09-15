@@ -8,7 +8,12 @@ MahoganyRedGyaradosSpeechHouse_MapScripts:
 	def_callbacks
 
 MahoganyRedGyaradosSpeechHouseBlackBeltScript:
-	jumptextfaceplayer MahoganyRedGyaradosSpeechHouseBlackBeltText
+	faceplayer
+	opentext
+	trade NPC_TRADE_LIAM
+	waitbutton
+	closetext
+	end
 
 MahoganyRedGyaradosSpeechHouseTeacherScript:
 	faceplayer
@@ -31,18 +36,6 @@ MahoganyRedGyaradosSpeechHouseUnusedBookshelf1:
 
 MahoganyRedGyaradosSpeechHouseUnusedBookshelf2:
 	jumpstd MagazineBookshelfScript
-
-MahoganyRedGyaradosSpeechHouseBlackBeltText:
-	text "I heard that a red"
-	line "GYARADOS appeared"
-	cont "at the LAKE."
-
-	para "That's odd, since"
-	line "even ordinary"
-
-	para "GYARADOS are rare"
-	line "in that lake…"
-	done
 
 MahoganyRedGyaradosSpeechHouseTeacherText:
 	text "My favorite radio"
