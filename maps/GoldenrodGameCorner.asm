@@ -4,6 +4,9 @@ GOLDENRODGAMECORNER_TM38_COINS EQU 5000
 GOLDENRODGAMECORNER_ABRA_COINS      EQU 500
 GOLDENRODGAMECORNER_PORYGON_COINS   EQU 1000
 GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
+GOLDENRODGAMECORNER_SWINUB_COINS    EQU 1000
+GOLDENRODGAMECORNER_GLIGAR_COINS    EQU 3000
+GOLDENRODGAMECORNER_SKARMORY_COINS  EQU 3000
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -161,6 +164,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	checkitem COIN_CASE
 	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
+	readvar VAR_WEEKDAY
+	ifequal SATURDAY, GoldenrodGameCornerPrizeMonVendorWeekendScript
+	ifequal SUNDAY, GoldenrodGameCornerPrizeMonVendorWeekendScript
 .loop
 	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
 	special DisplayCoinCaseBalance
@@ -238,6 +244,86 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db "ABRA        {d:GOLDENRODGAMECORNER_ABRA_COINS}@"
 	db "PORYGON    {d:GOLDENRODGAMECORNER_PORYGON_COINS}@"
 	db "WOBBUFFET  {d:GOLDENRODGAMECORNER_WOBBUFFET_COINS}@"
+	db "CANCEL@"
+
+GoldenrodGameCornerPrizeMonVendorWeekendScript:
+.loop
+	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
+	special DisplayCoinCaseBalance
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Swinub
+	ifequal 2, .Gligar
+	ifequal 3, .Skarmory
+	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+
+.Swinub:
+	checkcoins GOLDENRODGAMECORNER_SWINUB_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	getmonname STRING_BUFFER_3, SWINUB
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	setval SWINUB
+	special GameCornerPrizeMonCheckDex
+	givepoke ABRA, 15
+	takecoins GOLDENRODGAMECORNER_SWINUB_COINS
+	sjump .loop
+
+.Gligar:
+	checkcoins GOLDENRODGAMECORNER_GLIGAR_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	getmonname STRING_BUFFER_3, GLIGAR
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	setval GLIGAR
+	special GameCornerPrizeMonCheckDex
+	givepoke GLIGAR, 15
+	takecoins GOLDENRODGAMECORNER_GLIGAR_COINS
+	sjump .loop
+
+.Skarmory:
+	checkcoins GOLDENRODGAMECORNER_SKARMORY_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	getmonname STRING_BUFFER_3, SKARMORY
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	setval SKARMORY
+	special GameCornerPrizeMonCheckDex
+	givepoke SKARMORY, 15
+	takecoins GOLDENRODGAMECORNER_SKARMORY_COINS
+	sjump .loop
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 17, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "SWINUB     {d:GOLDENRODGAMECORNER_SWINUB_COINS}@"
+	db "GLIGAR     {d:GOLDENRODGAMECORNER_GLIGAR_COINS}@"
+	db "SKARMORY   {d:GOLDENRODGAMECORNER_SKARMORY_COINS}@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:
@@ -385,9 +471,15 @@ GoldenrodGameCornerPokefanM1Text:
 	done
 
 GoldenrodGameCornerCooltrainerMText:
-	text "Life is a gamble."
-	line "I'm going to flip"
-	cont "cards till I drop!"
+	text "The prize #MON"
+	line "are different on"
+	cont "the weekends!"
+
+	para "I'm going to flip"
+	line "cards until I have"
+
+	para "enough coins for a"
+	line "SKARMORY!"
 	done
 
 GoldenrodGameCornerPokefanFText:
