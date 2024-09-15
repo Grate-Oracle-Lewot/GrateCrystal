@@ -252,7 +252,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons CHERRYGROVE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
+	db 15, SEEL
 	db 15, TENTACOOL
 	db 20, TENTACRUEL
 	db 15, TANGELA
