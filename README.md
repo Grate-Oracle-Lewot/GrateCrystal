@@ -205,7 +205,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Game Corner prize Pokémon
 
-- Johto: Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
+- Johto:
+  - Monday-Friday: Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
+  - Saturday-Sunday: Swinub Lv15 (1000C), Gligar Lv15 (3000C), Skarmory Lv15 (3000C)
 
 - Kanto: Porygon2 Lv40 (4000C), Togetic Lv50 (5000C), Dragonite Lv60 (9999C)
 
@@ -244,7 +246,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
 - Due to no Mystery Gift, the Trainer House now has you fight a copy of your own party from the last time you saved (this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Fight-a-copy-of-your-own-party-in-the-Trainer-House))
-- Two new NPC trades, both of which make Pokémon available earlier, plus some changes to existing trades
+- Three new NPC trades, and some alterations to existing ones
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - When the player crosses map borders, roaming beasts now only change maps 50% of the time, making them potentially easier to ambush
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
