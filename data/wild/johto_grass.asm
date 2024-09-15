@@ -723,7 +723,7 @@ JohtoGrassWildMons:
 	db 4, ZUBAT
 	db 6, ZUBAT
 	db 5, ONIX
-	db 6, ONIX
+	db 6, CUBONE
 	db 5, RHYHORN
 	db 6, SANDSHREW
 	; day
