@@ -382,7 +382,7 @@ JohtoGrassWildMons:
 	db 23, MAREEP
 	db 23, FLAAFFY
 	db 24, FURRET
-	db 25, FARFETCH_D
+	db 23, DODUO
 	db 23, COTTONEE
 	db 23, GIRAFARIG
 	; day
@@ -391,7 +391,7 @@ JohtoGrassWildMons:
 	db 23, MAREEP
 	db 23, FLAAFFY
 	db 24, FURRET
-	db 24, PIDGEOTTO
+	db 23, DODUO
 	db 23, COTTONEE
 	db 23, GIRAFARIG
 	; nite
@@ -400,7 +400,7 @@ JohtoGrassWildMons:
 	db 22, GIRAFARIG
 	db 24, GIRAFARIG
 	db 24, RATICATE
-	db 24, NOCTOWL
+	db 23, DODUO
 	db 23, MAREEP
 	db 23, FLAAFFY
 	end_grass_wildmons
