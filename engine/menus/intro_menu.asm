@@ -386,6 +386,9 @@ PostCreditsSpawn:
 	ret
 
 Continue_MobileAdapterMenu:
+	farcall Mobile_AlwaysReturnNotCarry ; mobile check
+	ret nc
+
 	ld hl, wd479
 	bit 1, [hl]
 	ret nz
