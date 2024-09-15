@@ -376,6 +376,7 @@ Continue:
 SpawnAfterRed:
 	ld a, SPAWN_MT_SILVER
 	ld [wDefaultSpawnpoint], a
+	; fallthrough
 
 PostCreditsSpawn:
 	xor a
@@ -385,11 +386,6 @@ PostCreditsSpawn:
 	ret
 
 Continue_MobileAdapterMenu:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile check
-	ret nc
-
-; the rest of this stuff is never reached because
-; the previous function returns with carry not set
 	ld hl, wd479
 	bit 1, [hl]
 	ret nz
@@ -465,15 +461,15 @@ DisplaySaveInfoOnContinue:
 	and %10000000
 	jr z, .clock_ok
 	lb de, 4, 8
-	jp DisplayContinueDataWithRTCError
+	jr DisplayContinueDataWithRTCError
 
 .clock_ok
 	lb de, 4, 8
-	jp DisplayNormalContinueData
+	jr DisplayNormalContinueData
 
 DisplaySaveInfoOnSave:
 	lb de, 4, 0
-	jr DisplayNormalContinueData
+	; fallthrough
 
 DisplayNormalContinueData:
 	call Continue_LoadMenuHeader
@@ -943,7 +939,6 @@ IntroSequence:
 	callfar SplashScreen
 	jr c, StartTitleScreen
 	farcall CrystalIntro
-
 	; fallthrough
 
 StartTitleScreen:
@@ -1111,22 +1106,22 @@ TitleScreenMain:
 	dec hl
 	ld [hl], e
 
-; Save data can be deleted by pressing Up + B + Select.
+; Save data can be deleted by pressing B.
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
-	and D_UP + B_BUTTON + SELECT
-	cp  D_UP + B_BUTTON + SELECT
+	and B_BUTTON
+	cp  B_BUTTON
 	jr z, .delete_save_data
 
-	; To bring up the clock reset dialog, press Down + B + Select.
+	; To bring up the clock reset dialog, press Select.
 	ldh a, [hClockResetTrigger]
 	cp $34
 	jr z, .reset_clock
 
 	ld a, [hl]
-	and D_DOWN + B_BUTTON + SELECT
-	cp  D_DOWN + B_BUTTON + SELECT
+	and SELECT
+	cp  SELECT
 	jr nz, .check_start
 
 	ld a, $34
