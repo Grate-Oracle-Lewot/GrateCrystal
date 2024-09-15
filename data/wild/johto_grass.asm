@@ -897,7 +897,7 @@ JohtoGrassWildMons:
 	db 6, PSYDUCK
 	db 7, HOOTHOOT
 	db 6, PARAS
-	db 7, PARAS
+	db 7, MANKEY
 	db 5, BULBASAUR
 	end_grass_wildmons
 
