@@ -73,14 +73,7 @@ NewGame:
 	jp FinishContinueFunction
 
 AreYouABoyOrAreYouAGirl:
-;	farcall Mobile_AlwaysReturnNotCarry ; mobile
-;	jr c, .ok
-;	farcall InitGender
-;	ret
-
-.ok
-	ld c, 0
-	farcall InitMobileProfile ; mobile
+	farcall InitGender
 	ret
 
 ResetWRAM:
@@ -287,7 +280,7 @@ InitializeNPCNames:
 
 .Rival:  db "???@"
 .Red:    db "RED@"
-.Green:  db "GREEN@"
+.Green:  db "BLUE@"
 .Mom:    db "MOM@"
 
 InitializeWorld:
@@ -350,7 +343,6 @@ Continue:
 	ld a, HIGH(MUSIC_NONE)
 	ld [wMusicFadeID + 1], a
 	call ClearBGPalettes
-	call Continue_MobileAdapterMenu
 	call CloseWindow
 	call ClearTilemap
 	ld c, 20
@@ -383,10 +375,7 @@ PostCreditsSpawn:
 	ldh [hMapEntryMethod], a
 	ret
 
-Continue_MobileAdapterMenu:
-;	farcall Mobile_AlwaysReturnNotCarry ; mobile check
-;	ret nc
-
+Continue_MobileAdapterMenu: ; unreferenced
 	ld hl, wd479
 	bit 1, [hl]
 	ret nz
