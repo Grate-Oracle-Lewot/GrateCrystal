@@ -716,7 +716,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons VIRIDIAN_FOREST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 10 percent, 8 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, CATERPIE
 	db 2, LEDYBA
@@ -747,7 +747,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, ZUBAT
 	db 6, GEODUDE
@@ -778,7 +778,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 5, ZUBAT
 	db 6, GEODUDE
@@ -809,7 +809,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_B2F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 6, ZUBAT
 	db 6, GEODUDE
@@ -871,7 +871,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, CUBONE
 	db 9, GEODUDE
@@ -902,7 +902,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, CUBONE
 	db 12, GEODUDE
@@ -933,7 +933,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_ZAPDOS_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, UNOWN
 	db 25, UNOWN
@@ -964,7 +964,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SAFARI_ZONE
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, YANMA
 	db 28, FLOGISTAN
@@ -995,7 +995,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 20, ZUBAT
 	db 20, RATICATE
