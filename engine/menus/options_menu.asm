@@ -5,7 +5,7 @@
 	const OPT_BATTLE_STYLE ; 2
 	const OPT_SOUND        ; 3
 	const OPT_PRINT        ; 4
-	const OPT_MENU_CLOCK   ; 5
+	const OPT_BATTLE_ITEMS ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
 NUM_OPTIONS EQU const_value    ; 8
@@ -101,7 +101,7 @@ GetOptionPointer:
 	dw Options_BattleStyle
 	dw Options_Sound
 	dw Options_Print
-	dw Options_MenuClock
+	dw Options_BattleItems
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -425,33 +425,33 @@ GetPrinterSetting:
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
 
-Options_MenuClock:
+Options_BattleItems:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_ITEMS, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_ITEMS, [hl]
 	jr z, .ToggleOn
 	jr .ToggleOff
 
 .NonePressed:
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_ITEMS, [hl]
 	jr nz, .ToggleOn
 
 .ToggleOff:
-	res MENU_CLOCK, [hl]
+	res BATTLE_ITEMS, [hl]
 	ld de, .Off
 	jr .Display
 
 .ToggleOn:
-	set MENU_CLOCK, [hl]
+	set BATTLE_ITEMS, [hl]
 	ld de, .On
 
 .Display:
@@ -518,15 +518,15 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckMenuClock
+	jr nz, .CheckBattleItems
 	ld [hl], OPT_TEXT_SPEED ; first option
 	scf
 	ret
 
-.CheckMenuClock: ; I have no idea why this exists...
-	cp OPT_MENU_CLOCK
+.CheckBattleItems: ; I have no idea why this exists...
+	cp OPT_BATTLE_ITEMS
 	jr nz, .Increase
-	ld [hl], OPT_MENU_CLOCK
+	ld [hl], OPT_BATTLE_ITEMS
 
 .Increase:
 	inc [hl]
@@ -539,7 +539,7 @@ OptionsControl:
 ; Another thing where I'm not sure why it exists
 	cp OPT_FRAME
 	jr nz, .NotFrame
-	ld [hl], OPT_MENU_CLOCK
+	ld [hl], OPT_BATTLE_ITEMS
 	scf
 	ret
 
