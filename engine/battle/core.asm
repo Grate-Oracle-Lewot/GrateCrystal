@@ -5121,9 +5121,9 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
-	ld a, [wOptions]
+	ld a, [wOptions2]
 	bit BATTLE_ITEMS, a
-	jp nz, .ItemsCantBeUsed
+	jp z, .ItemsCantBeUsed
 
 	call LoadStandardMenuHeader
 
