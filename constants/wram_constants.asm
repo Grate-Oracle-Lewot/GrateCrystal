@@ -85,7 +85,7 @@ GBPRINTER_DARKEST  EQU $7f
 
 ; wOptions2::
 	const_def
-	const MENU_CLOCK ; 0
+	const BATTLE_ITEMS ; 0
 
 ; wWalkingDirection::
 	const_def -1
