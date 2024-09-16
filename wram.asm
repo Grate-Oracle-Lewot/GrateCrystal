@@ -1784,7 +1784,7 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 1: menu clock off/on
+; bit 1: battle items off/on
 	db
 	ds 2
 wOptionsEnd::
