@@ -1761,7 +1761,7 @@ wFlyingWithFearowbot:: db
 wOptions::
 ; bit 0-2: number of frames to delay when printing text
 ;   fast 1; mid 3; slow 5
-; bit 3: battle items off/on
+; bit 3: ?
 ; bit 4: no text delay
 ; bit 5: stereo off/on
 ; bit 6: battle style shift/set
