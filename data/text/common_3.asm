@@ -22,11 +22,8 @@ _OakText7::
 	done
 
 _ClockTimeMayBeWrongText::
-	text "The clock's time"
-	line "may be wrong."
-
-	para "Please reset the"
-	line "time."
+	text "Please reset the"
+	line "clock's time."
 	prompt
 
 _ClockSetWithControlPadText::
@@ -926,8 +923,11 @@ _PhoneThankYouText::
 	done
 
 _PasswordAskResetText::
-	text "Select CONTINUE &"
-	line "reset settings."
+	text "You will be asked"
+	line "to set the clock"
+
+	para "when you select"
+	line "CONTINUE."
 	prompt
 
 _PasswordAskResetClockText::
