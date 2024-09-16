@@ -45,6 +45,8 @@ RestartClock:
 	set NO_TEXT_SCROLL, [hl]
 	call LoadStandardMenuHeader
 	call ClearTilemap
+	ld hl, .ClockSetWithControlPadText
+	call PrintText
 	call .SetClock
 	call ExitMenu
 	pop bc
@@ -55,6 +57,10 @@ RestartClock:
 
 .ClockTimeMayBeWrongText:
 	text_far _ClockTimeMayBeWrongText
+	text_end
+
+.ClockSetWithControlPadText:
+	text_far _ClockSetWithControlPadText
 	text_end
 
 .SetClock:
