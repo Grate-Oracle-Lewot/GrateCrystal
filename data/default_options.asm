@@ -9,8 +9,8 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
 	db GBPRINTER_NORMAL
-; wOptions2: menu clock on
-	db 1 << MENU_CLOCK
+; wOptions2: battle items on
+	db 1 << BATTLE_ITEMS
 
 	db $00
 	db $00
