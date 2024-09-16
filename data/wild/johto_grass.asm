@@ -625,7 +625,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
 	db 5 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 26, FLOGISTAN
+	db 24, LICKITUNG
 	db 28, NATU
 	db 30, NATU
 	db 32, NATU
@@ -634,7 +634,7 @@ JohtoGrassWildMons:
 	db 26, EEVEE
 	db 25, KANGASKHAN
 	; day
-	db 26, FLOGISTAN
+	db 24, LICKITUNG
 	db 28, NATU
 	db 30, NATU
 	db 32, NATU
@@ -643,7 +643,7 @@ JohtoGrassWildMons:
 	db 26, EEVEE
 	db 25, KANGASKHAN
 	; nite
-	db 26, FLOGISTAN
+	db 24, LICKITUNG
 	db 28, NATU
 	db 30, NATU
 	db 32, NATU
