@@ -321,22 +321,13 @@ endr
 	ret
 
 .DrawMenuClockTextBox:
-	call .IsMenuClockOn
-	ret z
 	hlcoord 0, 0
 	lb bc, 1, 8
 	jp Textbox
 
 .PrintMenuClock:
-	call .IsMenuClockOn
-	ret z
 	call .DrawMenuClockTextBox
 	jp .MenuClockText
-
-.IsMenuClockOn:
-	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
-	ret
 
 .DrawBugContestStatusBox:
 	ld hl, wStatusFlags2
