@@ -499,7 +499,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, GEODUDE
 	db 2, ZUBAT
@@ -530,7 +530,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, GEODUDE
 	db 28, ZUBAT
@@ -623,7 +623,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 5 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, FLOGISTAN
 	db 28, NATU
@@ -871,7 +871,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ILEX_FOREST
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 4 percent, 5 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 7, CATERPIE
 	db 7, WEEDLE
@@ -902,7 +902,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 9, SUNKERN
 	db 12, SUNKERN
@@ -933,7 +933,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_1F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 4 percent, 3 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 11, RATTATA
 	db 12, KOFFING
@@ -964,7 +964,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 5 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 12, RATTATA
 	db 12, KOFFING
@@ -1336,7 +1336,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, UNOWN
 	db 25, UNOWN
@@ -1491,7 +1491,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 28, SWINUB
 	db 29, SEEL
@@ -1522,7 +1522,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B1F
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, SWINUB
 	db 30, SEEL
@@ -1553,7 +1553,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B2F_MAHOGANY_SIDE
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, SWINUB
 	db 30, DEWGONG
@@ -1584,7 +1584,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B2F_BLACKTHORN_SIDE
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, SWINUB
 	db 30, DEWGONG
@@ -1615,7 +1615,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_B3F
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 32, PILOSWINE
 	db 30, DEWGONG
@@ -1646,7 +1646,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_ARTICUNO_CHAMBER
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, UNOWN
 	db 25, UNOWN
@@ -1708,7 +1708,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_1
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, GRAVELER
 	db 41, STEELIX
@@ -1739,7 +1739,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_2
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 7 percent ; encounter rates: morn/day/nite
 	; morn
 	db 44, PARASECT
 	db 47, MACHOKE
@@ -1770,7 +1770,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_3
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 53, CROBAT
 	db 49, STEELIX
@@ -1832,7 +1832,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_MOLTRES_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 48, UNOWN
 	db 40, UNOWN
