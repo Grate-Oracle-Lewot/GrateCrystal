@@ -73,10 +73,10 @@ NewGame:
 	jp FinishContinueFunction
 
 AreYouABoyOrAreYouAGirl:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile
-	jr c, .ok
-	farcall InitGender
-	ret
+;	farcall Mobile_AlwaysReturnNotCarry ; mobile
+;	jr c, .ok
+;	farcall InitGender
+;	ret
 
 .ok
 	ld c, 0
@@ -384,8 +384,8 @@ PostCreditsSpawn:
 	ret
 
 Continue_MobileAdapterMenu:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile check
-	ret nc
+;	farcall Mobile_AlwaysReturnNotCarry ; mobile check
+;	ret nc
 
 	ld hl, wd479
 	bit 1, [hl]
