@@ -85,7 +85,7 @@ StringOptions:
 	db "        :<LF>"
 	db "PRINT<LF>"
 	db "        :<LF>"
-	db "MENU CLOCK<LF>"
+	db "BATTLE ITEMS<LF>"
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
