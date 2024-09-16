@@ -3224,8 +3224,7 @@ wDigWarpNumber:: db
 wDigMapGroup::   db
 wDigMapNumber::  db
 
-; used on maps like second floor pokécenter, which are reused, so we know which
-; map to return to
+; used on maps like second floor pokécenter, which are reused, so we know which map to return to
 wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
