@@ -335,14 +335,12 @@ Continue:
 	call DelayFrames
 	call ConfirmContinue
 	jr nc, .Check1Pass
-	call CloseWindow
-	ret
+	jp CloseWindow
 
 .Check1Pass:
 	call Continue_CheckRTC_RestartClock
 	jr nc, .Check2Pass
-	call CloseWindow
-	ret
+	jp CloseWindow
 
 .Check2Pass:
 	ld a, $8
