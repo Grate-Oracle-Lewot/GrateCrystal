@@ -473,7 +473,7 @@ GoldenrodGameCornerPokefanM1Text:
 GoldenrodGameCornerCooltrainerMText:
 	text "The prize #MON"
 	line "are different on"
-	cont "the weekends!"
+	cont "weekends!"
 
 	para "I'm going to flip"
 	line "cards until I have"
