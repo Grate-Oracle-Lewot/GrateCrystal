@@ -1357,10 +1357,8 @@ _ItemWontHaveEffectText::
 _BallBlockedText::
 	text "The BALL bounced"
 	line "off the #MON!"
-	autodone
 
-_BallDontBeAThiefText::
-	text "It's already been"
+	autopara "It's already been"
 	line "caught by someone!"
 	autodone
 
