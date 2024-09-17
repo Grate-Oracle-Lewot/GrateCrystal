@@ -3,9 +3,9 @@
 	const OPT_TEXT_SPEED   ; 0
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
-	const OPT_SOUND        ; 3
-	const OPT_PRINT        ; 4
-	const OPT_BATTLE_ITEMS ; 5
+	const OPT_BATTLE_ITEMS ; 3
+	const OPT_SOUND        ; 4
+	const OPT_PRINT        ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
 NUM_OPTIONS EQU const_value    ; 8
@@ -81,11 +81,11 @@ StringOptions:
 	db "        :<LF>"
 	db "BATTLE STYLE<LF>"
 	db "        :<LF>"
+	db "BATTLE ITEMS<LF>"
+	db "        :<LF>"
 	db "SOUND<LF>"
 	db "        :<LF>"
 	db "PRINT<LF>"
-	db "        :<LF>"
-	db "BATTLE ITEMS<LF>"
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
@@ -99,9 +99,9 @@ GetOptionPointer:
 	dw Options_TextSpeed
 	dw Options_BattleScene
 	dw Options_BattleStyle
+	dw Options_BattleItems
 	dw Options_Sound
 	dw Options_Print
-	dw Options_BattleItems
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -278,6 +278,44 @@ Options_BattleStyle:
 .Shift: db "SHIFT@"
 .Set:   db "SET  @"
 
+Options_BattleItems:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit BATTLE_ITEMS, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit BATTLE_ITEMS, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
+
+.NonePressed:
+	bit BATTLE_ITEMS, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res BATTLE_ITEMS, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set BATTLE_ITEMS, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 11, 13
+	call PlaceString
+	and a
+	ret
+
+.Off: db "OFF@"
+.On:  db "ON @"
+
 Options_Sound:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
@@ -424,44 +462,6 @@ GetPrinterSetting:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
-
-Options_BattleItems:
-	ld hl, wOptions2
-	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
-	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	bit BATTLE_ITEMS, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
-
-.LeftPressed:
-	bit BATTLE_ITEMS, [hl]
-	jr z, .ToggleOn
-	jr .ToggleOff
-
-.NonePressed:
-	bit BATTLE_ITEMS, [hl]
-	jr nz, .ToggleOn
-
-.ToggleOff:
-	res BATTLE_ITEMS, [hl]
-	ld de, .Off
-	jr .Display
-
-.ToggleOn:
-	set BATTLE_ITEMS, [hl]
-	ld de, .On
-
-.Display:
-	hlcoord 11, 13
-	call PlaceString
-	and a
-	ret
-
-.Off: db "OFF@"
-.On:  db "ON @"
 
 Options_Frame:
 	ld hl, wTextboxFrame
