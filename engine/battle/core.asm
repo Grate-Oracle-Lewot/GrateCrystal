@@ -5121,10 +5121,6 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
-	ld a, [wOptions2]
-	bit BATTLE_ITEMS, a
-	jp z, .ItemsCantBeUsed
-
 	call LoadStandardMenuHeader
 
 	ld a, [wBattleType]
@@ -5176,8 +5172,17 @@ BattleMenu_Pack:
 	ld a, [wItemAttributeValue]
 	cp BALL
 	jr z, .ball
-	call ClearBGPalettes
 
+; forbid use of non-BALL items when BATTLE_ITEMS are OFF
+	ld a, [wOptions2]
+	bit BATTLE_ITEMS, a
+	jr nz, .items_allowed
+	ld hl, BattleText_ItemsCantBeUsedHere
+	call StdBattleTextbox
+	jr .didnt_use_item
+
+.items_allowed
+	call ClearBGPalettes
 .ball
 	xor a
 	ldh [hBGMapMode], a
