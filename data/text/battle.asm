@@ -86,7 +86,7 @@ HurtByCurseText:
 	autodone
 
 SandstormHitsText:
-	text "The SANDSTORM hits"
+	text "The sandstorm hits"
 	line "<USER>!"
 	autodone
 
@@ -147,7 +147,7 @@ BattleText_TheSunlightIsStrong:
 	autodone
 
 BattleText_TheSandstormRages:
-	text "The SANDSTORM"
+	text "The sandstorm"
 	line "rages."
 	autodone
 
@@ -165,7 +165,7 @@ BattleText_TheSunlightFaded:
 	autodone
 
 BattleText_TheSandstormSubsided:
-	text "The SANDSTORM"
+	text "The sandstorm"
 	line "subsided."
 	autodone
 
@@ -801,7 +801,7 @@ MistText:
 
 ProtectedByMistText:
 	text "<TARGET>'s"
-	line "protected by MIST."
+	line "protected by MIST!"
 	autodone
 
 GettingPumpedText:
@@ -923,12 +923,7 @@ ItFailedText:
 	text "It failed!"
 	autodone
 
-DidntAffect1Text:
-	text "It didn't affect"
-	line "<TARGET>!"
-	autodone
-
-DidntAffect2Text:
+DidntAffectText:
 	text "It didn't affect"
 	line "<TARGET>!"
 	autodone
@@ -1032,7 +1027,7 @@ StartPerishText:
 	autodone
 
 SandstormBrewedText:
-	text "A SANDSTORM"
+	text "A sandstorm"
 	line "brewed!"
 	autodone
 
@@ -1134,13 +1129,13 @@ BattleText_LinkErrorBattleCanceled:
 	prompt
 
 ItStartedToHailText:
-	text "It started"
-	line "to hail!"
+	text "It started to"
+	line "hail!"
 	autodone
 
 PeltedByHailText:
 	text "<USER>"
-	line "is pelted by HAIL!"
+	line "is pelted by hail!"
 	autodone
 
 StaticParalysisText:
@@ -1152,8 +1147,9 @@ StaticParalysisText:
 CuteCharmText:
 	text "<USER>"
 	line "was infatuated by"
-	scroll "<TARGET>'s"
-	scroll "cuteness!"
+
+	autopara "<TARGET>'s"
+	line "cuteness!"
 	autodone
 
 StaticPrzcureberryText:
