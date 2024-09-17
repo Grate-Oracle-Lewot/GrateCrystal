@@ -5176,13 +5176,9 @@ BattleMenu_Pack:
 ; forbid use of non-BALL items when BATTLE_ITEMS are OFF
 	ld a, [wOptions2]
 	bit BATTLE_ITEMS, a
-	jr nz, .items_allowed
-	ld hl, BattleText_ItemsCantBeUsedHere
-	call StdBattleTextbox
-	jr .didnt_use_item
-
-.items_allowed
+	jr z, .ItemsCantBeUsed
 	call ClearBGPalettes
+
 .ball
 	xor a
 	ldh [hBGMapMode], a
