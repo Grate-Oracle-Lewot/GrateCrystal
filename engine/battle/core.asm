@@ -5172,11 +5172,6 @@ BattleMenu_Pack:
 	ld a, [wItemAttributeValue]
 	cp BALL
 	jr z, .ball
-
-; forbid use of non-BALL items when BATTLE_ITEMS are OFF
-	ld a, [wOptions2]
-	bit BATTLE_ITEMS, a
-	jr z, .ItemsCantBeUsed
 	call ClearBGPalettes
 
 .ball
