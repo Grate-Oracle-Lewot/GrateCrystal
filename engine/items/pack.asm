@@ -688,7 +688,7 @@ BattlePack:
 
 	ld a, [wOptions2]
 	bit BATTLE_ITEMS, a
-	jp z, ItemSubmenu.NoUse
+	jp z, TMHMSubmenu.NoUse
 	jp ItemSubmenu
 
 .InitKeyItemsPocket:
@@ -718,7 +718,7 @@ BattlePack:
 
 	ld a, [wOptions2]
 	bit BATTLE_ITEMS, a
-	jp z, ItemSubmenu.NoUse
+	jp z, TMHMSubmenu.NoUse
 	jp ItemSubmenu
 
 .InitTMHMPocket:
@@ -795,7 +795,7 @@ BattlePack:
 
 	ld a, [wOptions2]
 	bit BATTLE_ITEMS, a
-	jr z, ItemSubmenu.NoUse
+	jr z, TMHMSubmenu.NoUse
 	; fallthrough
 
 ItemSubmenu:
