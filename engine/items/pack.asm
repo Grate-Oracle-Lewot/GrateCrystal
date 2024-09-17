@@ -685,6 +685,10 @@ BattlePack:
 	ld c, PACKSTATE_INITBALLSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
+
+	ld a, [wOptions2]
+	bit BATTLE_ITEMS, a
+	jp z, ItemSubmenu.NoUse
 	jp ItemSubmenu
 
 .InitKeyItemsPocket:
@@ -711,6 +715,10 @@ BattlePack:
 	ld c, PACKSTATE_INITTMHMPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
+
+	ld a, [wOptions2]
+	bit BATTLE_ITEMS, a
+	jp z, ItemSubmenu.NoUse
 	jp ItemSubmenu
 
 .InitTMHMPocket:
@@ -784,7 +792,11 @@ BattlePack:
 	ld c, PACKSTATE_INITKEYITEMSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
-	jp ItemSubmenu
+
+	ld a, [wOptions2]
+	bit BATTLE_ITEMS, a
+	jr z, ItemSubmenu.NoUse
+	; fallthrough
 
 ItemSubmenu:
 	farcall CheckItemContext
