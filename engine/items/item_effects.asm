@@ -2583,8 +2583,6 @@ UseBallInTrainerBattle:
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText
-	ld hl, BallDontBeAThiefText
-	call PrintText
 	jr UseDisposableItem
 
 WontHaveAnyEffect_NotUsedMessage:
@@ -2649,10 +2647,6 @@ ItemWontHaveEffectText:
 
 BallBlockedText:
 	text_far _BallBlockedText
-	text_end
-
-BallDontBeAThiefText:
-	text_far _BallDontBeAThiefText
 	text_end
 
 NoCyclingText:
