@@ -3652,7 +3652,7 @@ BattleCommand_SleepTarget:
 	and a
 	jp nz, PrintDidntAffect2
 
-	ld hl, DidntAffect1Text
+	ld hl, DidntAffectText
 	ld a, [de]
 	and a
 	jr nz, .fail
@@ -3759,7 +3759,7 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
-	ld hl, DidntAffect1Text
+	ld hl, DidntAffectText
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and a
@@ -6258,7 +6258,7 @@ FailMimic:
 
 PrintDidntAffect:
 ; 'it didn't affect'
-	ld hl, DidntAffect1Text
+	ld hl, DidntAffectText
 	jp StdBattleTextbox
 
 PrintDidntAffect2:
