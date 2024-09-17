@@ -308,7 +308,7 @@ Options_BattleItems:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 13
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -353,7 +353,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -407,7 +407,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
