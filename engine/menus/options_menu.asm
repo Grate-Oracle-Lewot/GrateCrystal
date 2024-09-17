@@ -535,7 +535,7 @@ OptionsControl:
 	dec [hl]
 	jr .Done
 
-Roll_Down:
+.Roll_Down:
 	ld [hl], OPT_CANCEL ; maximum option index
 	jr .Done
 
