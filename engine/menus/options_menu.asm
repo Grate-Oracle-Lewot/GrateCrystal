@@ -518,40 +518,26 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckBattleItems
-	ld [hl], OPT_TEXT_SPEED ; first option
-	scf
-	ret
-
-.CheckBattleItems: ; I have no idea why this exists...
-	cp OPT_BATTLE_ITEMS
-	jr nz, .Increase
-	ld [hl], OPT_BATTLE_ITEMS
-
-.Increase:
+	jr z, .Roll_Up
 	inc [hl]
+	jr .Done
+
+.Roll_Up:
+	ld [hl], OPT_TEXT_SPEED ; minimum option index
+.Done:
 	scf
 	ret
 
 .UpPressed:
 	ld a, [hl]
-
-; Another thing where I'm not sure why it exists
-	cp OPT_FRAME
-	jr nz, .NotFrame
-	ld [hl], OPT_BATTLE_ITEMS
-	scf
-	ret
-
-.NotFrame:
 	and a ; OPT_TEXT_SPEED, minimum option index
-	jr nz, .Decrease
-	ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
-
-.Decrease:
+	jr z, .Roll_Down
 	dec [hl]
-	scf
-	ret
+	jr .Done
+
+Roll_Down:
+	ld [hl], OPT_CANCEL ; maximum option index
+	jr .Done
 
 Options_UpdateCursorPosition:
 	hlcoord 1, 1
