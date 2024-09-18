@@ -7,7 +7,7 @@
 	db 45 ; catch rate
 	db 159 ; base exp
 	db CLEANSE_TAG, HANDWARMER ; items
-	db GENDER_F12_5 ; gender ratio
+	db GENDER_F0 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mr__mime/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
