@@ -671,7 +671,7 @@ Cerulean_Map_Name8: ; ROUTE_4
 Cerulean_Map_Name9: ; ROUTE_9
 	db "ROUTE 9@"
 Cerulean_Map_Name10: ; ROUTE_10_NORTH
-	db "ROUTE 10 NORTH@"
+	db "ROUTE 10@"
 Cerulean_Map_Name11: ; ROUTE_10_POKECENTER_1F
 	db "ROUTE 10 <PKMN>CENTER@"
 Cerulean_Map_Name12: ; POWER_PLANT
@@ -733,7 +733,7 @@ Lavender_Map_Name10: ; ROUTE_8
 Lavender_Map_Name11: ; ROUTE_8_SAFFRON_GATE
 	db "ROUTE 8 GATE@"
 Lavender_Map_Name12: ; ROUTE_10_SOUTH
-	db "ROUTE 10 SOUTH@"
+	db "ROUTE 10@"
 Lavender_Map_Name13: ; ROUTE_12
 	db "ROUTE 12@"
 Lavender_Map_Name14: ; ROUTE_12_SUPER_ROD_HOUSE
