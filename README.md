@@ -348,6 +348,10 @@ Again, above my skill level. It also has some requirements like variable-width f
 
 Along with personal preference, I prioritized the ones that could most reasonably be given unique type combinations (unique within this hack, that is), thus allowing for wider type variety overall.
 
+# How come turning off battle items doesn't stop the computer from using them?
+
+The whole point of that setting is to make the game harder. Turning off computer items along with yours would be more of a sidegrade. Anyway, both are off in the Battle Tower.
+
 # Can I copy your code?
 
 Yes, but to call this repository "disorganized" would be flattery. Don't say I didn't warn you.
