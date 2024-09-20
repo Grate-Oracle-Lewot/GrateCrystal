@@ -262,7 +262,7 @@ JohtoGrassWildMons:
 	db 23, LEDIAN
 	db 23, GROWLITHE
 	; day
-	db 21, STANTLER
+	db 21, PONYTA
 	db 21, PIDGEY
 	db 20, TAUROS
 	db 23, PIDGEOTTO
@@ -309,7 +309,7 @@ JohtoGrassWildMons:
 	db 23, MEOWTH
 	db 23, RATICATE
 	db 19, FARFETCH_D
-	db 21, STANTLER
+	db 22, STANTLER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
@@ -329,7 +329,7 @@ JohtoGrassWildMons:
 	db 23, MAGNEMITE
 	db 23, SNUBBULL
 	db 23, MEOWTH
-	db 24, RATICATE
+	db 23, PONYTA
 	db 22, MILTANK
 	db 22, TAUROS
 	; nite
@@ -340,7 +340,7 @@ JohtoGrassWildMons:
 	db 23, MEOWTH
 	db 24, RATICATE
 	db 21, FARFETCH_D
-	db 21, STANTLER
+	db 23, STANTLER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
