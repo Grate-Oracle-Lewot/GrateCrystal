@@ -937,7 +937,7 @@ KantoGrassWildMons:
 	; morn
 	db 24, UNOWN
 	db 25, UNOWN
-	db 9, PIKACHU
+	db 9, VOLTORB
 	db 9, MAGNEMITE
 	db 14, JOLTEON
 	db 15, ELECTABUZZ
@@ -946,7 +946,7 @@ KantoGrassWildMons:
 	; day
 	db 24, UNOWN
 	db 25, UNOWN
-	db 9, PIKACHU
+	db 9, VOLTORB
 	db 9, MAGNEMITE
 	db 14, JOLTEON
 	db 15, ELECTABUZZ
