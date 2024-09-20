@@ -227,7 +227,7 @@ JohtoGrassWildMons:
 	db 13, NIDORAN_F
 	db 13, NIDORAN_M
 	db 11, BELLSPROUT
-	db 13, GROWLITHE
+	db 15, DITTO
 	db 15, LEDYBA
 	db 13, STANTLER
 	; day
@@ -236,16 +236,16 @@ JohtoGrassWildMons:
 	db 13, NIDORAN_F
 	db 13, NIDORAN_M
 	db 11, BELLSPROUT
-	db 13, GROWLITHE
-	db 13, LEDYBA
-	db 13, STANTLER
+	db 15, DITTO
+	db 13, HOPPIP
+	db 13, ABRA
 	; nite
 	db 12, VULPIX
 	db 14, HOOTHOOT
 	db 13, NIDORAN_F
 	db 13, NIDORAN_M
 	db 11, BELLSPROUT
-	db 13, VULPIX
+	db 14, DROWZEE
 	db 13, SPINARAK
 	db 15, STANTLER
 	end_grass_wildmons
@@ -264,7 +264,7 @@ JohtoGrassWildMons:
 	; day
 	db 21, PONYTA
 	db 21, PIDGEY
-	db 20, TAUROS
+	db 23, STANTLER
 	db 23, PIDGEOTTO
 	db 20, COTTONEE
 	db 21, GROWLITHE
