@@ -339,8 +339,8 @@ JohtoGrassWildMons:
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 24, RATICATE
-	db 19, FARFETCH_D
-	db 25, FARFETCH_D
+	db 21, FARFETCH_D
+	db 21, STANTLER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
