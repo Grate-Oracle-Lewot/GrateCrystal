@@ -264,7 +264,7 @@ JohtoGrassWildMons:
 	; day
 	db 21, STANTLER
 	db 21, PIDGEY
-	db 23, STANTLER
+	db 20, TAUROS
 	db 23, PIDGEOTTO
 	db 20, COTTONEE
 	db 21, GROWLITHE
@@ -309,7 +309,7 @@ JohtoGrassWildMons:
 	db 23, MEOWTH
 	db 23, RATICATE
 	db 19, FARFETCH_D
-	db 21, FARFETCH_D
+	db 21, STANTLER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
