@@ -687,7 +687,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, TANGELA
+	db 40, JUMPLUFF
 	db 41, PONYTA
 	db 44, RAPIDASH
 	db 42, ARBOK
@@ -696,7 +696,7 @@ KantoGrassWildMons:
 	db 42, URSARING
 	db 42, DONPHAN
 	; day
-	db 40, TANGELA
+	db 40, JUMPLUFF
 	db 41, PONYTA
 	db 44, RAPIDASH
 	db 42, ARBOK
