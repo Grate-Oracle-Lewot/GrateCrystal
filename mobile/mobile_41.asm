@@ -415,7 +415,6 @@ StubbedTrainerRankings_Increment:
 
 ; Used when SRAM bank 5 isn’t already loaded — what’s the point of this?
 UpdateTrainerRankingsChecksum2:
-	ret
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
 	call UpdateTrainerRankingsChecksum
