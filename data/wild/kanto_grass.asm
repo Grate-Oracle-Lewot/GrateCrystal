@@ -1029,7 +1029,7 @@ KantoGrassWildMons:
 	db 4 percent, 2 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, UNOWN
-	db 26, DITTO
+	db 24, DITTO
 	db 20, SMEARGLE
 	db 23, XATU
 	db 20, IVYSAUR
@@ -1047,7 +1047,7 @@ KantoGrassWildMons:
 	db 1, UNOWN
 	; nite
 	db 24, UNOWN
-	db 24, DITTO
+	db 26, HAUNTER
 	db 20, SMEARGLE
 	db 24, XATU
 	db 19, IVYSAUR
