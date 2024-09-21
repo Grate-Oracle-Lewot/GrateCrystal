@@ -80,15 +80,7 @@ Pokedex_DetailedArea:
 	hlcoord 18, 5
 	ld bc, 2
 	ld a, $4e ; category box border
-	call ByteFill
-; ; corners, lateral sides
-; 	hlcoord 19, 5
-; 	ld [hl], $6f
-; 	hlcoord 19, 6
-; 	ld [hl], $6e
-; 	hlcoord 19, 7
-; 	ld [hl], $6e	
-	ret
+	jp ByteFill
 
 .found
 	ld [wPokedexEntryType], a
@@ -131,7 +123,7 @@ Pokedex_DetailedArea:
 	ret
 
 .none_wild_text:
-	db "AREA UNKNOWN!!@"
+	db "AREA UNKNOWN!@"
 
 Dex_FindFirstList:
 ; grass, surf, trees(+rocks), contest, roaming
