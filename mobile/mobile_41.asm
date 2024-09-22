@@ -371,11 +371,7 @@ StubbedTrainerRankings_Increment3Byte:
 StubbedTrainerRankings_Increment2Byte:
 	push bc
 	ld bc, 1
-	jr StubbedTrainerRankings_Increment
-
-StubbedTrainerRankings_Increment1Byte: ; unreferenced
-	push bc
-	ld bc, 0
+	; fallthrough
 
 ; Increments a big-endian value of bc + 1 bytes at hl
 StubbedTrainerRankings_Increment:
