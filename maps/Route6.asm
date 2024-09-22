@@ -41,11 +41,10 @@ Route6PokefanMText:
 	line "MANAGER paid me to"
 
 	para "stand here until"
-	line "the lights turn"
-	cont "back on."
+	line "their generator is"
+	cont "fixed."
 
-	para "Sorry, I can't"
-	line "let you through."
+	para "My legs hurt…"
 	done
 
 Route6UndergroundPathSignText:
