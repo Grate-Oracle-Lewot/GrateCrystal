@@ -188,7 +188,6 @@ SlotsLoop:
 	ld [wCurSpriteOAMAddr], a
 	callfar DoNextFrameForFirst16Sprites
 	call .PrintCoinsAndPayout
-	call .Stubbed_AlternateMatchingSevensPalette
 	call DelayFrame
 	and a
 	ret
@@ -197,9 +196,7 @@ SlotsLoop:
 	scf
 	ret
 
-.Stubbed_AlternateMatchingSevensPalette:
-; dummied out
-	ret
+.AlternateMatchingSevensPalette: ; unreferenced
 	ld a, [wReel1ReelAction]
 	and a
 	ret nz
