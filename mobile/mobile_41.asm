@@ -712,7 +712,6 @@ Mobile_DummyReturnFalse:
 	ret
 
 Stubbed_Function106314:
-	ret
 	ld a, BANK(s4_b000)
 	call OpenSRAM
 	ld a, c
@@ -846,7 +845,6 @@ Function106403:
 	or c
 	inc a
 	ld c, a
-	call Stubbed_Function106314
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
@@ -864,7 +862,6 @@ Function106403:
 
 .asm_106435
 	ld c, $0
-	call Stubbed_Function106314
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
@@ -887,9 +884,6 @@ Function106453:
 	nop
 	ld a, $4
 	ld [wcf64], a
-	ret
-
-Stubbed_Function106462:
 	ret
 
 Function106464::
