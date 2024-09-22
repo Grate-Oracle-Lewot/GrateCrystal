@@ -37,7 +37,6 @@ Function100022:
 	ld a, b
 	ld [wcd24], a
 	farcall Function10127e
-	farcall Stubbed_Function106462
 	farcall Function106464 ; load broken gfx
 	farcall Function11615a ; init RAM
 	ld hl, wVramState
@@ -2877,7 +2876,6 @@ Function1013aa:
 
 Function1013c0:
 	farcall BlankScreen
-	farcall Stubbed_Function106462
 	farcall Function106464
 	jp FinishExitMenu
 
