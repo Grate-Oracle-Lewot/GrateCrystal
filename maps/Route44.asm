@@ -351,7 +351,7 @@ FisherWiltonHugePoliwagText:
 	cont "It was huge."
 
 	para "I swear it must've"
-	line "been 16 feet long!"
+	line "been 19 feet long!"
 	done
 
 FisherEdgarSeenText:
@@ -398,8 +398,8 @@ BirdKeeperVanceLegendaryBirdsText:
 	line "ary bird #MON."
 
 	para "I heard there are"
-	line "other legendary"
-	cont "birds, though."
+	line "two bird-like"
+	cont "dragons, too."
 	done
 
 BirdKeeperVance2BeatenText:
