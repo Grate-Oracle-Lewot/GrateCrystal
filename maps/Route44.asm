@@ -31,13 +31,15 @@ Route44_MapScripts:
 	endcallback
 
 .CheckDragonairs:
-	disappear EVENT_ROUTE_44_DRAGONAIRS
+	disappear ROUTE44_EKANS1
+	disappear ROUTE44_EKANS2
 	checkflag ENGINE_RISINGBADGE
 	iffalse .AppearDragonairs
 	endcallback
 
 .AppearDragonairs:
-	appear EVENT_ROUTE_44_DRAGONAIRS
+	appear ROUTE44_EKANS1
+	appear ROUTE44_EKANS2
 	endcallback
 
 TrainerBirdKeeperVance1:
