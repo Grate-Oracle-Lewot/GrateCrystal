@@ -17,6 +17,28 @@ Route44_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .CheckWhirlpools
+	callback MAPCALLBACK_OBJECTS, .CheckDragonairs
+
+.CheckWhirlpools:
+	checkflag ENGINE_RISINGBADGE
+	iftrue .DisappearWhirlpools
+	endcallback
+
+.DisappearWhirlpools:
+	changeblock 26, 12, $36
+	changeblock 42, 8, $36
+	endcallback
+
+.CheckDragonairs:
+	disappear EVENT_ROUTE_44_DRAGONAIRS
+	checkflag ENGINE_RISINGBADGE
+	iffalse .AppearDragonairs
+	endcallback
+
+.AppearDragonairs:
+	appear EVENT_ROUTE_44_DRAGONAIRS
+	endcallback
 
 TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
@@ -535,5 +557,5 @@ Route44_MapEvents:
 	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
-	object_event 27, 12, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, -1
-	object_event 41,  8, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, -1
+	object_event 27, 12, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, EVENT_ROUTE_44_DRAGONAIRS
+	object_event 41,  8, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route44DragonairScript, EVENT_ROUTE_44_DRAGONAIRS
