@@ -25,6 +25,8 @@ GoldenrodPokecenter1FLassScript:
 GoldenrodPokecenter1FPokefanF:
 	faceplayer
 	opentext
+	checkevent EVENT_GAVE_EON_MAIL_TO_GOLDENROD_POKEFAN_F
+	iftrue .Done
 	writetext GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText
 	promptbutton
 	writetext GoldenrodPokecenter1FAskGiveAwayAnEonMailText
@@ -40,6 +42,7 @@ GoldenrodPokecenter1FPokefanF:
 	waitsfx
 	writetext GoldenrodPokecenter1FPokefanFDecorationText
 	promptbutton
+.Done:
 	writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText
 	waitbutton
 	closetext
