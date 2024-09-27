@@ -139,7 +139,11 @@ wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
 
-	ds 3
+	ds 1
+
+wCurLevelCap:: db
+
+	ds 1
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
