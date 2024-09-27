@@ -261,12 +261,14 @@ PushLYOverrides::
 	ret
 
 GetLevelCap::
+; clobbers basically everything
+
+; If level caps are off, determine obedience cap
 	ld hl, wOptions2
 	bit LEVEL_CAPS_ON_OFF, [hl]
 	jr z, .no_cap
 
-; Return current level cap in a and in wCurLevelCap
-; For obedience-based capping, level will be capped at MAX_LEVEL instead of wCurLevelCap
+; Else, return current level cap in a
 	ld hl, wEventFlags
 	ld b, CHECK_FLAG
 	ld de, EVENT_BEAT_RED
@@ -357,12 +359,26 @@ GetLevelCap::
 
 .max_cap
 	ld a, MAX_LEVEL
-	jr .finish
+	jr .done
 
 .mid_cap
 	ld a, 56
 .finish
+	ld b, a
+	ld hl, wOptions2
+	bit LEVEL_CAPS_OBEDIENCE, [hl]
+	ld a, b
+	jr z, .obedience
+
+.done
+; Return current level cap in wCurLevelCap as well as in a
 	ld [wCurLevelCap], a
+	ret
+
+.obedience
+; Return MAX_LEVEL in wCurLevelCap and above-determined obedience cap in a
+	ld b, MAX_LEVEL
+	ld [wCurLevelCap], b
 	ret
 
 .no_cap
