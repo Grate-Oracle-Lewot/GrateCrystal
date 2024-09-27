@@ -181,9 +181,14 @@ BillEeveeMayEvolveText:
 	done
 
 BillPartyFullText:
-	text "Whoa, wait. You"
-	line "can't carry any"
-	cont "more #MON."
+	text "Oh, your party's"
+	line "full."
+
+	para "This is a perfect"
+	line "time to try out"
+
+	para "that GAME BOY PC I"
+	line "gave you!"
 	done
 
 BillNoEeveeText:
