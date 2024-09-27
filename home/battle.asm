@@ -265,6 +265,8 @@ GetLevelCap::
 	bit LEVEL_CAPS_ON_OFF, [hl]
 	jr z, .no_cap
 
+; Return current level cap in a and in wCurLevelCap
+; For obedience-based capping, level will be capped at MAX_LEVEL instead of wCurLevelCap
 	ld hl, wEventFlags
 	ld b, CHECK_FLAG
 	ld de, EVENT_BEAT_RED
@@ -354,7 +356,7 @@ GetLevelCap::
 	jr .finish
 
 .max_cap
-	ld a, MAX_LEVEL + 1
+	ld a, MAX_LEVEL
 	jr .finish
 
 .mid_cap
@@ -364,25 +366,27 @@ GetLevelCap::
 	ret
 
 .no_cap
-	ld a, MAX_LEVEL + 1
+; Return MAX_LEVEL in wCurLevelCap and current obedience cap in a
+	ld a, MAX_LEVEL
 	ld [wCurLevelCap], a
 
 	ld hl, wJohtoBadges
 
 	bit RISINGBADGE, [hl]
+	ld a, MAX_LEVEL + 1
 	ret nz
 
 	bit MINERALBADGE, [hl]
 	ld a, 50
-	jr nz, .finish
+	ret nz
 
 	bit PLAINBADGE, [hl]
 	ld a, 30
-	jr nz, .finish
+	ret nz
 
 	bit ZEPHYRBADGE, [hl]
 	ld a, 20
-	jr nz, .finish
+	ret nz
 
 	; no badges
 	ld a, 10
