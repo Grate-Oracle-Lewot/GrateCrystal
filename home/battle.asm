@@ -259,3 +259,129 @@ PushLYOverrides::
 	ld a, (wLYOverridesEnd - wLYOverrides) / LEN_2BPP_TILE
 	ld [wRequested2bppSize], a
 	ret
+
+GetLevelCap::
+	ld hl, wOptions2
+	bit LEVEL_CAPS_ON_OFF, [hl]
+	jr z, .no_cap
+
+	ld hl, wEventFlags
+	ld b, CHECK_FLAG
+	ld de, EVENT_BEAT_RED
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .max_cap
+
+	ld hl, wKantoBadges
+
+	bit EARTHBADGE, [hl]
+	ld a, 88
+	jr nz, .finish
+
+	bit VOLCANOBADGE, [hl]
+	ld a, 68
+	jr nz, .finish
+
+	bit BOULDERBADGE, [hl]
+	ld a, 65
+	jr nz, .finish
+
+	bit SOULBADGE, [hl]
+	ld a, 64
+	jr nz, .finish
+
+	bit MARSHBADGE, [hl]
+	ld a, 59
+	jr nz, .finish
+
+	bit CASCADEBADGE, [hl]
+	ld a, 58
+	jr nz, .finish
+
+	bit RAINBOWBADGE, [hl]
+	ld a, 57
+	jr nz, .finish
+
+	bit THUNDERBADGE, [hl]
+	ld a, 57
+	jr nz, .finish
+
+	ld hl, wEventFlags
+	ld b, CHECK_FLAG
+	ld de, EVENT_BEAT_ELITE_FOUR
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .mid_cap
+
+	ld hl, wJohtoBadges
+
+	bit RISINGBADGE, [hl]
+	ld a, 50
+	jr nz, .finish
+
+	bit GLACIERBADGE, [hl]
+	ld a, 45
+	jr nz, .finish
+
+	bit MINERALBADGE, [hl]
+	ld a, 42
+	jr nz, .finish
+
+	bit STORMBADGE, [hl]
+	ld a, 38
+	jr nz, .finish
+
+	bit FOGBADGE, [hl]
+	ld a, 35
+	jr nz, .finish
+
+	bit PLAINBADGE, [hl]
+	ld a, 30
+	jr nz, .finish
+
+	bit HIVEBADGE, [hl]
+	ld a, 23
+	jr nz, .finish
+
+	bit ZEPHYRBADGE, [hl]
+	ld a, 16
+	jr nz, .finish
+
+	; no badges
+	ld a, 11
+	jr .finish
+
+.max_cap
+	ld a, MAX_LEVEL + 1
+	jr .finish
+
+.mid_cap
+	ld a, 56
+	jr .finish
+
+.no_cap
+	ld hl, wJohtoBadges
+
+	bit RISINGBADGE, [hl]
+	jr nz, .max_cap
+
+	bit MINERALBADGE, [hl]
+	ld a, 50
+	jr nz, .finish
+
+	bit PLAINBADGE, [hl]
+	ld a, 30
+	jr nz, .finish
+
+	bit ZEPHYRBADGE, [hl]
+	ld a, 20
+	jr nz, .finish
+
+	; no badges
+	ld a, 10
+
+.finish
+	ld [wCurLevelCap], a
+	ret
