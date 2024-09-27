@@ -359,13 +359,18 @@ GetLevelCap::
 
 .mid_cap
 	ld a, 56
-	jr .finish
+.finish
+	ld [wCurLevelCap], a
+	ret
 
 .no_cap
+	ld a, MAX_LEVEL + 1
+	ld [wCurLevelCap], a
+
 	ld hl, wJohtoBadges
 
 	bit RISINGBADGE, [hl]
-	jr nz, .max_cap
+	ret nz
 
 	bit MINERALBADGE, [hl]
 	ld a, 50
@@ -381,7 +386,4 @@ GetLevelCap::
 
 	; no badges
 	ld a, 10
-
-.finish
-	ld [wCurLevelCap], a
 	ret
