@@ -367,9 +367,8 @@ GetLevelCap::
 	ld b, a
 	ld hl, wOptions2
 	bit LEVEL_CAPS_OBEDIENCE, [hl]
-	ld a, b
 	jr z, .obedience
-
+	ld a, b
 .done
 ; Return current level cap in wCurLevelCap as well as in a
 	ld [wCurLevelCap], a
@@ -377,8 +376,9 @@ GetLevelCap::
 
 .obedience
 ; Return MAX_LEVEL in wCurLevelCap and above-determined obedience cap in a
-	ld b, MAX_LEVEL
-	ld [wCurLevelCap], b
+	ld a, MAX_LEVEL
+	ld [wCurLevelCap], a
+	ld a, b
 	ret
 
 .no_cap
