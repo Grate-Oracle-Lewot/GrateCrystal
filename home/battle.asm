@@ -266,7 +266,7 @@ GetLevelCap::
 ; If level caps are off, determine obedience cap
 	ld hl, wOptions2
 	bit LEVEL_CAPS_ON_OFF, [hl]
-	jr z, .no_cap
+	jp z, .no_cap
 
 ; Else, return current level cap in a
 	ld hl, wEventFlags
