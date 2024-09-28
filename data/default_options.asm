@@ -11,6 +11,8 @@ DefaultOptions:
 	db GBPRINTER_NORMAL
 ; wOptions2: battle items on
 	db 1 << BATTLE_ITEMS
+	; LEVEL_CAPS_ON_OFF: 0 (OFF)
+	; LEVEL_CAPS_OBEDIENCE: 0 (DISOBEY)
 
 	db $00
 	db $00
