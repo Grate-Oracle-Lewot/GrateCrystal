@@ -1,8 +1,12 @@
 InitializeEvents:
+; initialize level cap (probably unnecessary)
+	ld a, MAX_LEVEL
+	ld [wCurLevelCap], a
+
 ; zero out sMysteryGiftTrainerHouseFlag to prevent glitchy Cal
 	ld a, BANK(sMysteryGiftTrainerHouseFlag)
 	call OpenSRAM
-	ld a, FALSE
+	xor a
 	ld [sMysteryGiftTrainerHouseFlag], a
 	call CloseSRAM
 
