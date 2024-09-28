@@ -630,7 +630,7 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
-	; Can't disobey if in the middle of charging a two-turn move
+	; Can't disobey in the middle of charging a two-turn move
 	call CheckUserIsCharging
 	ret nz
 
@@ -652,6 +652,13 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
+	; If level caps are on, even monsters with the player's id disobey, if their levels are too high.
+	; Doesn't matter if caps are set to obedience or hard cap, because hard cap won't allow you to exceed obedience cap.
+	; This means a monster caught or traded above the hard cap will disobey on the hard cap setting, which seems reasonable.
+	ld hl, wOptions2
+	bit LEVEL_CAPS_ON_OFF, [hl]
+	jr nz, .obeylevel
+
 	; If the monster's id doesn't match the player's, some conditions need to be met.
 	ld a, MON_ID
 	call BattlePartyAttr
@@ -665,33 +672,8 @@ BattleCommand_CheckObedience:
 	ret z
 
 .obeylevel
-	; The maximum obedience level is constrained by owned badges:
-	ld hl, wJohtoBadges
+	call GetLevelCap
 
-	; risingbadge
-	bit RISINGBADGE, [hl]
-	ld a, MAX_LEVEL + 1
-	jr nz, .getlevel
-
-	; mineralbadge
-	bit MINERALBADGE, [hl]
-	ld a, 50
-	jr nz, .getlevel
-
-	; plainbadge
-	bit PLAINBADGE, [hl]
-	ld a, 30
-	jr nz, .getlevel
-
-	; zephyrbadge
-	bit ZEPHYRBADGE, [hl]
-	ld a, 20
-	jr nz, .getlevel
-
-	; no badges
-	ld a, 10
-
-.getlevel
 ; c = obedience level
 ; d = monster level
 ; b = c + d
