@@ -260,6 +260,28 @@ PushLYOverrides::
 	ld [wRequested2bppSize], a
 	ret
 
+LEVEL_CAP_FALKNER EQU 11
+LEVEL_CAP_BUGSY EQU 16
+LEVEL_CAP_WHITNEY EQU 23
+LEVEL_CAP_MORTY EQU 30
+LEVEL_CAP_CHUCK EQU 35
+LEVEL_CAP_JASMINE EQU 38
+LEVEL_CAP_PRYCE EQU 42
+LEVEL_CAP_CLAIR EQU 45
+LEVEL_CAP_CHAMPION EQU 50
+LEVEL_CAP_SURGE_ERIKA EQU 56
+LEVEL_CAP_MISTY EQU 57
+LEVEL_CAP_SABRINA EQU 58
+LEVEL_CAP_JANINE EQU 59
+LEVEL_CAP_BROCK EQU 64
+LEVEL_CAP_BLAINE EQU 65
+LEVEL_CAP_BLUE EQU 68
+LEVEL_CAP_RED EQU 88
+OBEDIENCE_CAP_NO_BADGES EQU 10
+OBEDIENCE_CAP_ZEPHYRBADGE EQU 20
+OBEDIENCE_CAP_PLAINBADGE EQU 30
+OBEDIENCE_CAP_MINERALBADGE EQU 50
+
 GetLevelCap::
 ; clobbers basically everything
 
@@ -280,35 +302,35 @@ GetLevelCap::
 	ld hl, wKantoBadges
 
 	bit EARTHBADGE, [hl]
-	ld a, 88
+	ld a, LEVEL_CAP_RED
 	jr nz, .finish
 
 	bit VOLCANOBADGE, [hl]
-	ld a, 68
+	ld a, LEVEL_CAP_BLUE
 	jr nz, .finish
 
 	bit BOULDERBADGE, [hl]
-	ld a, 65
+	ld a, LEVEL_CAP_BLAINE
 	jr nz, .finish
 
 	bit SOULBADGE, [hl]
-	ld a, 64
+	ld a, LEVEL_CAP_BROCK
 	jr nz, .finish
 
 	bit MARSHBADGE, [hl]
-	ld a, 59
+	ld a, LEVEL_CAP_JANINE
 	jr nz, .finish
 
 	bit CASCADEBADGE, [hl]
-	ld a, 58
+	ld a, LEVEL_CAP_SABRINA
 	jr nz, .finish
 
 	bit RAINBOWBADGE, [hl]
-	ld a, 57
+	ld a, LEVEL_CAP_MISTY
 	jr nz, .finish
 
 	bit THUNDERBADGE, [hl]
-	ld a, 57
+	ld a, LEVEL_CAP_MISTY
 	jr nz, .finish
 
 	ld hl, wEventFlags
@@ -322,39 +344,39 @@ GetLevelCap::
 	ld hl, wJohtoBadges
 
 	bit RISINGBADGE, [hl]
-	ld a, 50
+	ld a, LEVEL_CAP_CHAMPION
 	jr nz, .finish
 
 	bit GLACIERBADGE, [hl]
-	ld a, 45
+	ld a, LEVEL_CAP_CLAIR
 	jr nz, .finish
 
 	bit MINERALBADGE, [hl]
-	ld a, 42
+	ld a, LEVEL_CAP_PRYCE
 	jr nz, .finish
 
 	bit STORMBADGE, [hl]
-	ld a, 38
+	ld a, LEVEL_CAP_JASMINE
 	jr nz, .finish
 
 	bit FOGBADGE, [hl]
-	ld a, 35
+	ld a, LEVEL_CAP_CHUCK
 	jr nz, .finish
 
 	bit PLAINBADGE, [hl]
-	ld a, 30
+	ld a, LEVEL_CAP_MORTY
 	jr nz, .finish
 
 	bit HIVEBADGE, [hl]
-	ld a, 23
+	ld a, LEVEL_CAP_WHITNEY
 	jr nz, .finish
 
 	bit ZEPHYRBADGE, [hl]
-	ld a, 16
+	ld a, LEVEL_CAP_BUGSY
 	jr nz, .finish
 
 	; no badges
-	ld a, 11
+	ld a, LEVEL_CAP_FALKNER
 	jr .finish
 
 .max_cap
@@ -362,7 +384,7 @@ GetLevelCap::
 	jr .done
 
 .mid_cap
-	ld a, 56
+	ld a, LEVEL_CAP_SURGE_ERIKA
 .finish
 	ld b, a
 	ld hl, wOptions2
@@ -393,17 +415,17 @@ GetLevelCap::
 	ret nz
 
 	bit MINERALBADGE, [hl]
-	ld a, 50
+	ld a, OBEDIENCE_CAP_MINERALBADGE
 	ret nz
 
 	bit PLAINBADGE, [hl]
-	ld a, 30
+	ld a, OBEDIENCE_CAP_PLAINBADGE
 	ret nz
 
 	bit ZEPHYRBADGE, [hl]
-	ld a, 20
+	ld a, OBEDIENCE_CAP_ZEPHYRBADGE
 	ret nz
 
 	; no badges
-	ld a, 10
+	ld a, OBEDIENCE_CAP_NO_BADGES
 	ret
