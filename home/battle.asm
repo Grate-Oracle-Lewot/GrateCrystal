@@ -382,7 +382,7 @@ GetLevelCap::
 	ret
 
 .no_cap
-; Return MAX_LEVEL in wCurLevelCap and current obedience cap in a
+; Return MAX_LEVEL in wCurLevelCap and below-determined obedience cap in a
 	ld a, MAX_LEVEL
 	ld [wCurLevelCap], a
 
