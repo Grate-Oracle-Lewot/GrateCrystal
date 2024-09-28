@@ -4,8 +4,8 @@
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
 	const OPT_BATTLE_ITEMS ; 3
-	const OPT_SOUND        ; 4
-	const OPT_PRINT        ; 5
+	const OPT_PRINT        ; 4
+	const OPT_SOUND        ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
 NUM_OPTIONS EQU const_value    ; 8
@@ -83,9 +83,9 @@ StringOptions:
 	db "        :<LF>"
 	db "BATTLE ITEMS<LF>"
 	db "        :<LF>"
-	db "SOUND<LF>"
-	db "        :<LF>"
 	db "PRINT<LF>"
+	db "        :<LF>"
+	db "SOUND<LF>"
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
@@ -100,8 +100,8 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_BattleItems
-	dw Options_Sound
 	dw Options_Print
+	dw Options_Sound
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -171,8 +171,7 @@ Options_TextSpeed:
 .None: db "INSTANT@"
 
 GetTextSpeed:
-; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c,
-; with previous/next TEXT_DELAY_* values in d/e
+; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c, with previous/next TEXT_DELAY_* values in d/e
 	ld a, [wOptions]
 	and TEXT_DELAY_MASK
 	cp TEXT_DELAY_SLOW
@@ -316,58 +315,6 @@ Options_BattleItems:
 .Off: db "OFF@"
 .On:  db "ON @"
 
-Options_Sound:
-	ld hl, wOptions
-	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
-	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	bit STEREO, [hl]
-	jr nz, .SetMono
-	jr .SetStereo
-
-.LeftPressed:
-	bit STEREO, [hl]
-	jr z, .SetStereo
-	jr .SetMono
-
-.NonePressed:
-	bit STEREO, [hl]
-	jr nz, .ToggleStereo
-	jr .ToggleMono
-
-.SetMono:
-	res STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleMono:
-	ld de, .Mono
-	jr .Display
-
-.SetStereo:
-	set STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleStereo:
-	ld de, .Stereo
-
-.Display:
-	hlcoord 11, 11
-	call PlaceString
-	and a
-	ret
-
-.Mono:   db "MONO  @"
-.Stereo: db "STEREO@"
-
-	const_def
-	const OPT_PRINT_LIGHTEST ; 0
-	const OPT_PRINT_LIGHTER  ; 1
-	const OPT_PRINT_NORMAL   ; 2
-	const OPT_PRINT_DARKER   ; 3
-	const OPT_PRINT_DARKEST  ; 4
-
 Options_Print:
 	call GetPrinterSetting
 	ldh a, [hJoyPressed]
@@ -407,7 +354,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 13
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -426,9 +373,15 @@ Options_Print:
 .Darker:   db "DARKER  @"
 .Darkest:  db "DARKEST @"
 
+	const_def
+	const OPT_PRINT_LIGHTEST ; 0
+	const OPT_PRINT_LIGHTER  ; 1
+	const OPT_PRINT_NORMAL   ; 2
+	const OPT_PRINT_DARKER   ; 3
+	const OPT_PRINT_DARKEST  ; 4
+
 GetPrinterSetting:
-; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,
-; with previous/next GBPRINTER_* values in d/e
+; converts GBPRINTER_* value in a to OPT_PRINT_* value in c, with previous/next GBPRINTER_* values in d/e
 	ld a, [wGBPrinterBrightness]
 	and a
 	jr z, .IsLightest
@@ -462,6 +415,51 @@ GetPrinterSetting:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
+
+Options_Sound:
+	ld hl, wOptions
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit STEREO, [hl]
+	jr nz, .SetMono
+	jr .SetStereo
+
+.LeftPressed:
+	bit STEREO, [hl]
+	jr z, .SetStereo
+	jr .SetMono
+
+.NonePressed:
+	bit STEREO, [hl]
+	jr nz, .ToggleStereo
+	jr .ToggleMono
+
+.SetMono:
+	res STEREO, [hl]
+	call RestartMapMusic
+
+.ToggleMono:
+	ld de, .Mono
+	jr .Display
+
+.SetStereo:
+	set STEREO, [hl]
+	call RestartMapMusic
+
+.ToggleStereo:
+	ld de, .Stereo
+
+.Display:
+	hlcoord 11, 13
+	call PlaceString
+	and a
+	ret
+
+.Mono:   db "MONO  @"
+.Stereo: db "STEREO@"
 
 Options_Frame:
 	ld hl, wTextboxFrame
