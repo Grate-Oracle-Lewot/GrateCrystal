@@ -181,7 +181,7 @@ BillEeveeMayEvolveText:
 	done
 
 BillPartyFullText:
-	text "Oh, your party's"
+	text "Whoa, your party's"
 	line "full."
 
 	para "This is a perfect"
