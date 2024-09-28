@@ -630,6 +630,7 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
+	; Can't disobey if in the middle of charging a two-turn move
 	call CheckUserIsCharging
 	ret nz
 
@@ -641,12 +642,12 @@ BattleCommand_CheckObedience:
 	xor a
 	ld [wAlreadyDisobeyed], a
 
-	; No obedience in link battles
-	; (since no handling exists for enemy)
+	; No obedience in link battles (since no handling exists for enemy)
 	ld a, [wLinkMode]
 	and a
 	ret nz
 
+	; No obedience in the Battle Tower
 	ld a, [wInBattleTowerBattle]
 	and a
 	ret nz
@@ -725,7 +726,7 @@ BattleCommand_CheckObedience:
 	cp c
 	ret c
 
-; Sleep-only moves have separate handling, and a higher chance of being ignored. Lazy monsters like their sleep.
+; Sleep-only moves have separate handling, and will always be ignored. Lazy monsters like their sleep.
 	call IgnoreSleepOnly
 	ret c
 
@@ -910,13 +911,15 @@ IgnoreSleepOnly:
 	call GetBattleVar
 
 	; Snore, Sleep Talk, and Night Terror bypass sleep.
+	; Disobedient monsters will always refuse to use them if selected.
+	; Maybe because randomizing to another move would be problematic?
 	cp SNORE
 	jr z, .CheckSleep
 	cp SLEEP_TALK
 	jr z, .CheckSleep
 	cp NIGHT_TERROR
 	jr z, .CheckSleep
-	and a
+	and a ; clear carry
 	ret
 
 .CheckSleep:
