@@ -142,12 +142,15 @@ StepHappiness::
 DayCareStep::
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
+	call GetLevelCap
+	ld b, [wCurLevelCap]
+
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, .day_care_lady
 
 	ld a, [wBreedMon1Level] ; level
-	cp MAX_LEVEL
+	cp b ; wCurLevelCap
 	jr nc, .day_care_lady
 	ld hl, wBreedMon1Exp + 2 ; exp
 	inc [hl]
@@ -169,7 +172,7 @@ DayCareStep::
 	jr z, .check_egg
 
 	ld a, [wBreedMon2Level] ; level
-	cp MAX_LEVEL
+	cp b ; wCurLevelCap
 	jr nc, .check_egg
 	ld hl, wBreedMon2Exp + 2 ; exp
 	inc [hl]
