@@ -53,11 +53,12 @@ LavenderTownPokefanMText:
 	done
 
 LavenderTownTeacherText:
-	text "Have you been to"
-	line "GALAR? #MON can"
+	text "In merry old"
+	line "GALAR, #MON can"
 
 	para "grow giant during"
-	line "battle there!"
+	line "battle! It's a"
+	cont "sight to behold!"
 	done
 
 LavenderTownGrampsText:
