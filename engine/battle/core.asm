@@ -2323,8 +2323,9 @@ IsAnyMonHoldingExpShare:
 	push bc
 	ld bc, MON_LEVEL
 	add hl, bc
+	ld a, [wCurLevelCap]
+	ld b, a
 	ld a, [hl]
-	ld b, [wCurLevelCap]
 	cp b
 	pop bc
 	pop hl
@@ -7167,8 +7168,9 @@ GiveExperiencePoints:
 	ld hl, MON_LEVEL
 	add hl, bc
 	push bc
+	ld a, [wCurLevelCap]
+	ld b, a
 	ld a, [hl]
-	ld b, [wCurLevelCap]
 	cp b
 	pop bc
 	jp nc, .next_mon
@@ -7472,8 +7474,9 @@ GiveExperiencePoints:
 	ld a, e
 	ld hl, wPartyMon1Level
 	call GetPartyLocation
+	ld a, [wCurLevelCap]
+	ld b, a
 	ld a, [hl]
-	ld b, [wCurLevelCap]
 	cp b
 	pop de
 	pop bc
