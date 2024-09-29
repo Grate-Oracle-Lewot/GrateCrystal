@@ -4,11 +4,22 @@
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
 	const OPT_BATTLE_ITEMS ; 3
-	const OPT_PRINT        ; 4
+	const OPT_LEVEL_CAPS   ; 4
 	const OPT_SOUND        ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
 NUM_OPTIONS EQU const_value    ; 8
+
+	const_def
+	const OPT_TEXT_SPEED_FAST ; 0
+	const OPT_TEXT_SPEED_MED  ; 1
+	const OPT_TEXT_SPEED_SLOW ; 2
+	const OPT_TEXT_SPEED_NONE ; 3
+
+	const_def
+	const OPT_LEVELCAPS_NONE    ; 0
+	const OPT_LEVELCAPS_DISOBEY ; 1
+	const OPT_LEVELCAPS_HARDCAP ; 2
 
 _Option:
 	call ClearJoypad
@@ -83,7 +94,7 @@ StringOptions:
 	db "        :<LF>"
 	db "BATTLE ITEMS<LF>"
 	db "        :<LF>"
-	db "PRINT<LF>"
+	db "LEVEL CAPS<LF>"
 	db "        :<LF>"
 	db "SOUND<LF>"
 	db "        :<LF>"
@@ -100,16 +111,10 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_BattleItems
-	dw Options_Print
+	dw Options_LevelCaps
 	dw Options_Sound
 	dw Options_Frame
 	dw Options_Cancel
-
-	const_def
-	const OPT_TEXT_SPEED_FAST ; 0
-	const OPT_TEXT_SPEED_MED  ; 1
-	const OPT_TEXT_SPEED_SLOW ; 2
-	const OPT_TEXT_SPEED_NONE ; 3
 
 Options_TextSpeed:
 	call GetTextSpeed
@@ -315,36 +320,51 @@ Options_BattleItems:
 .Off: db "OFF@"
 .On:  db "ON @"
 
-Options_Print:
-	call GetPrinterSetting
+Options_LevelCaps:
+	call GetLevelCapSetting
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	ld a, c
-	cp OPT_PRINT_DARKEST
+	ld a, c ; right pressed
+	cp OPT_LEVELCAPS_HARDCAP
 	jr c, .Increase
-	ld c, OPT_PRINT_LIGHTEST - 1
+	ld c, OPT_LEVELCAPS_NONE - 1
 
 .Increase:
 	inc c
-	ld a, e
 	jr .Save
 
 .LeftPressed:
 	ld a, c
 	and a
 	jr nz, .Decrease
-	ld c, OPT_PRINT_DARKEST + 1
+	ld c, OPT_LEVELCAPS_HARDCAP + 1
 
 .Decrease:
 	dec c
-	ld a, d
 
 .Save:
-	ld b, a
-	ld [wGBPrinterBrightness], a
+	ld a, c
+	and a
+	jr z, .SetNone
+	ld a, c
+	cp OPT_LEVELCAPS_DISOBEY
+	jr z, .SetDisobey
+; .SetHardCap:
+	set LEVEL_CAPS_ON_OFF, [hl]
+	set LEVEL_CAPS_OBEDIENCE, [hl]
+	jr .NonePressed
+
+.SetDisobey:
+	set LEVEL_CAPS_ON_OFF, [hl]
+	res LEVEL_CAPS_OBEDIENCE, [hl]
+	jr .NonePressed
+
+.SetNone:
+	res LEVEL_CAPS_ON_OFF, [hl]
+	res LEVEL_CAPS_OBEDIENCE, [hl]
 
 .NonePressed:
 	ld b, 0
@@ -360,60 +380,30 @@ Options_Print:
 	ret
 
 .Strings:
-; entries correspond to OPT_PRINT_* constants
-	dw .Lightest
-	dw .Lighter
-	dw .Normal
-	dw .Darker
-	dw .Darkest
+; entries correspond to OPT_LEVELCAPS_* constants
+	dw .None
+	dw .Disobey
+	dw .HardCap
 
-.Lightest: db "LIGHTEST@"
-.Lighter:  db "LIGHTER @"
-.Normal:   db "NORMAL  @"
-.Darker:   db "DARKER  @"
-.Darkest:  db "DARKEST @"
+.None:    db "NONE    @"
+.Disobey: db "DISOBEY @"
+.HardCap: db "HARD CAP@"
 
-	const_def
-	const OPT_PRINT_LIGHTEST ; 0
-	const OPT_PRINT_LIGHTER  ; 1
-	const OPT_PRINT_NORMAL   ; 2
-	const OPT_PRINT_DARKER   ; 3
-	const OPT_PRINT_DARKEST  ; 4
-
-GetPrinterSetting:
-; converts GBPRINTER_* value in a to OPT_PRINT_* value in c, with previous/next GBPRINTER_* values in d/e
-	ld a, [wGBPrinterBrightness]
-	and a
-	jr z, .IsLightest
-	cp GBPRINTER_LIGHTER
-	jr z, .IsLight
-	cp GBPRINTER_DARKER
-	jr z, .IsDark
-	cp GBPRINTER_DARKEST
-	jr z, .IsDarkest
-	; none of the above
-	ld c, OPT_PRINT_NORMAL
-	lb de, GBPRINTER_LIGHTER, GBPRINTER_DARKER
+GetLevelCapSetting:
+; reads current level cap settings to return OPT_LEVELCAPS_* value in c
+	ld hl, wOptions2
+	bit LEVEL_CAPS_ON_OFF, [hl]
+	jr z, .None
+	bit LEVEL_CAPS_OBEDIENCE, [hl]
+	jr z, .Disobey
+; .HardCap:
+	ld c, OPT_LEVELCAPS_HARDCAP
 	ret
-
-.IsLightest:
-	ld c, OPT_PRINT_LIGHTEST
-	lb de, GBPRINTER_DARKEST, GBPRINTER_LIGHTER
+.None:
+	ld c, OPT_LEVELCAPS_NONE
 	ret
-
-.IsLight:
-	ld c, OPT_PRINT_LIGHTER
-	lb de, GBPRINTER_LIGHTEST, GBPRINTER_NORMAL
-	ret
-
-.IsDark:
-	ld c, OPT_PRINT_DARKER
-	lb de, GBPRINTER_NORMAL, GBPRINTER_DARKEST
-	ret
-
-.IsDarkest:
-	ld c, OPT_PRINT_DARKEST
-	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
+.Disobey:
+	ld c, OPT_LEVELCAPS_DISOBEY
 	ret
 
 Options_Sound:
