@@ -2324,7 +2324,8 @@ IsAnyMonHoldingExpShare:
 	ld bc, MON_LEVEL
 	add hl, bc
 	ld a, [hl]
-	cp MAX_LEVEL
+	ld b, [wCurLevelCap]
+	cp b
 	pop bc
 	pop hl
 	jr nc, .next
@@ -7165,8 +7166,11 @@ GiveExperiencePoints:
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
+	push bc
 	ld a, [hl]
-	cp MAX_LEVEL
+	ld b, [wCurLevelCap]
+	cp b
+	pop bc
 	jp nc, .next_mon
 	push bc
 	xor a
@@ -7469,7 +7473,8 @@ GiveExperiencePoints:
 	ld hl, wPartyMon1Level
 	call GetPartyLocation
 	ld a, [hl]
-	cp MAX_LEVEL
+	ld b, [wCurLevelCap]
+	cp b
 	pop de
 	pop bc
 	jr c, .gains_exp
@@ -8131,6 +8136,7 @@ StartBattle:
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
+	call GetLevelCap ; only needed once, can't change cap settings mid-battle
 	call LoadTrainerOrWildMonPic
 	xor a
 	ld [wTempBattleMonSpecies], a
