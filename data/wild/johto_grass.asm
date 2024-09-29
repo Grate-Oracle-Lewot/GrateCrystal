@@ -1741,7 +1741,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ROOM_2
 	db 6 percent, 6 percent, 7 percent ; encounter rates: morn/day/nite
 	; morn
-	db 44, PARASECT
+	db 44, PILOSWINE
 	db 47, MACHOKE
 	db 45, URSARING
 	db 45, DONPHAN
@@ -1750,7 +1750,7 @@ JohtoGrassWildMons:
 	db 46, GRAVELER
 	db 44, STEELIX
 	; day
-	db 44, PARASECT
+	db 44, PILOSWINE
 	db 47, MACHOKE
 	db 45, URSARING
 	db 45, DONPHAN
@@ -1759,7 +1759,7 @@ JohtoGrassWildMons:
 	db 46, GRAVELER
 	db 44, STEELIX
 	; nite
-	db 44, PARASECT
+	db 44, PILOSWINE
 	db 47, MISDREAVUS
 	db 45, URSARING
 	db 45, DONPHAN
