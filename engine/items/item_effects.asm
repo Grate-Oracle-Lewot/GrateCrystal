@@ -1279,6 +1279,10 @@ RareCandy_StatBooster_GetParameters:
 	jp GetNickname
 
 RareCandyEffect:
+	push de
+	call GetLevelCap
+	pop de
+
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
@@ -1290,7 +1294,8 @@ RareCandyEffect:
 	call GetPartyParamLocation
 
 	ld a, [hl]
-	cp MAX_LEVEL
+	ld b, [wCurLevelCap]
+	cp b
 	jp nc, NoEffectMessage
 
 	inc a
