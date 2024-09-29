@@ -1,10 +1,10 @@
-	db "DRAGON@" ; species name
+	db "SNAKELET@" ; species name
 	dw 511, 70 ; height, weight
 
-	db   "It lives at the"
-	next "bottom of the"
-	next "ocean to protect"
+	db   "Its parents must"
+	next "hide it away at"
+	next "the bottom of the"
 
-	page "itself until it"
-	next "evolves."
-	next "@"
+	page "ocean because it's"
+	next "too trusting of"
+	next "strangers.@"
