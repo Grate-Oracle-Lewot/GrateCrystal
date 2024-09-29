@@ -415,7 +415,7 @@ KantoGrassWildMons:
 	db 27, SLUGMA
 	db 28, MUK
 	db 29, MUK
-	db 29, SNORLAX
+	db 29, LICKITUNG
 	; day
 	db 24, GRIMER
 	db 25, FEAROW
