@@ -143,7 +143,8 @@ DayCareStep::
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
 	call GetLevelCap
-	ld b, [wCurLevelCap]
+	ld a, [wCurLevelCap]
+	ld b, a
 
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
