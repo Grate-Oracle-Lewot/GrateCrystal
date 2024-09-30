@@ -230,7 +230,7 @@ DayCareStep::
 	push de
 	push hl
 	call GetLevelCap
-	pop bc
-	pop de
 	pop hl
+	pop de
+	pop bc
 	ret
