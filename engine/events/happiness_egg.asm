@@ -142,17 +142,10 @@ StepHappiness::
 DayCareStep::
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
-	push bc
-	push de
-	push hl
-	call GetLevelCap
-	pop bc
-	pop de
-	pop hl
-
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, .day_care_lady
+	call .getlevelcap
 
 	ld a, [wCurLevelCap]
 	ld b, a
@@ -177,6 +170,7 @@ DayCareStep::
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
 	jr z, .check_egg
+	call .getlevelcap
 
 	ld a, [wCurLevelCap]
 	ld b, a
@@ -229,4 +223,14 @@ DayCareStep::
 	ld hl, wDayCareMan
 	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 	set DAYCAREMAN_HAS_EGG_F, [hl]
+	ret
+
+.getlevelcap
+	push bc
+	push de
+	push hl
+	call GetLevelCap
+	pop bc
+	pop de
+	pop hl
 	ret
