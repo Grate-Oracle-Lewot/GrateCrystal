@@ -142,15 +142,17 @@ StepHappiness::
 DayCareStep::
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
+; No experience gained on Hard Cap setting.
+	ld hl, wOptions2
+	bit LEVEL_CAPS_OBEDIENCE, [hl]
+	jr nz, .check_egg
+
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, .day_care_lady
-	call .getlevelcap
 
-	ld a, [wCurLevelCap]
-	ld b, a
 	ld a, [wBreedMon1Level] ; level
-	cp b
+	cp MAX_LEVEL
 	jr nc, .day_care_lady
 	ld hl, wBreedMon1Exp + 2 ; exp
 	inc [hl]
@@ -170,12 +172,9 @@ DayCareStep::
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
 	jr z, .check_egg
-	call .getlevelcap
 
-	ld a, [wCurLevelCap]
-	ld b, a
 	ld a, [wBreedMon2Level] ; level
-	cp b
+	cp MAX_LEVEL
 	jr nc, .check_egg
 	ld hl, wBreedMon2Exp + 2 ; exp
 	inc [hl]
@@ -225,7 +224,7 @@ DayCareStep::
 	set DAYCAREMAN_HAS_EGG_F, [hl]
 	ret
 
-.getlevelcap
+.getlevelcap ; unreferenced
 	push bc
 	push de
 	push hl
