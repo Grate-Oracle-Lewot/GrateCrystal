@@ -30,53 +30,6 @@ CalcLevel:
 	dec d
 	ret
 
-CalcCappedLevel:
-; alternate version of CalcLevel to make the Daycare work with level caps
-
-	push bc
-	push de
-	push hl
-	call GetLevelCap
-	pop bc
-	pop de
-	pop hl
-
-	ld a, [wTempMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld d, 1
-.next_level
-	inc d
-	ld a, [wCurLevelCap]
-	inc a
-	push bc
-	ld b, a
-	ld a, d
-	cp b
-	pop bc
-	jr nc, .got_level
-	call CalcExpAtLevel
-	push hl
-	ld hl, wTempMonExp + 2
-	ldh a, [hProduct + 3]
-	ld c, a
-	ld a, [hld]
-	sub c
-	ldh a, [hProduct + 2]
-	ld c, a
-	ld a, [hld]
-	sbc c
-	ldh a, [hProduct + 1]
-	ld c, a
-	ld a, [hl]
-	sbc c
-	pop hl
-	jr nc, .next_level
-
-.got_level
-	dec d
-	ret
-
 CalcExpAtLevel:
 ; (a/b)*n**3 + c*n**2 + d*n - e
 	ld a, d
