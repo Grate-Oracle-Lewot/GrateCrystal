@@ -31,7 +31,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Fairy type added
 - Physical/Special split
 - TMs are infinite-use
-- Toggleable option to prevent player item use in battle
+- Difficulty settings in the options menu for disabling items in battle and setting level caps (via either disobedience or hard caps)
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - On the title screen, simply press Select to reset the clock, and B to delete your save data
 - Time Capsule replaced with player gender swap machine
