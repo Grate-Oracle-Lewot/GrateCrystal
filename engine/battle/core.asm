@@ -7264,7 +7264,8 @@ GiveExperiencePoints:
 	ld [wCurSpecies], a
 	call GetBaseData
 	push bc
-	ld d, MAX_LEVEL
+	ld a, [wCurLevelCap]
+	ld d, a
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
