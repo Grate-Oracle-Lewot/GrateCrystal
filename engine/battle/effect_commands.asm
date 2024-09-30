@@ -692,7 +692,7 @@ BattleCommand_CheckObedience:
 	ld b, $ff
 
 .checklevel
-; If the monster's level is lower than the obedience level, it will obey.
+; If the monster's level is lower than or equal to the obedience level, it will obey.
 	ld a, c
 	cp d
 	ret nc
