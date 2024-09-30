@@ -154,15 +154,15 @@ DayCareStep::
 	jr nc, .day_care_lady
 	ld hl, wBreedMon1Exp + 2 ; exp
 	inc [hl]
-	jr nz, .day_care_lady_cap
+	jr nz, .day_care_lady
 	dec hl
 	inc [hl]
-	jr nz, .day_care_lady_cap
+	jr nz, .day_care_lady
 	dec hl
 	inc [hl]
 	ld a, [hl]
 	cp HIGH(MAX_DAY_CARE_EXP >> 8)
-	jr c, .day_care_lady_cap
+	jr c, .day_care_lady
 	ld a, HIGH(MAX_DAY_CARE_EXP >> 8)
 	ld [hl], a
 
@@ -171,14 +171,7 @@ DayCareStep::
 	bit DAYCARELADY_HAS_MON_F, a
 	jr z, .check_egg
 	call .getlevelcap
-	jr .got_level_cap
 
-.day_care_lady_cap
-	ld a, [wDayCareLady]
-	bit DAYCARELADY_HAS_MON_F, a
-	jr z, .check_egg
-
-.got_level_cap
 	ld a, [wCurLevelCap]
 	ld b, a
 	ld a, [wBreedMon2Level] ; level
