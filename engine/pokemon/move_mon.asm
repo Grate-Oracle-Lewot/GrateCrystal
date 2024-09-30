@@ -506,8 +506,7 @@ SendGetMonIntoFromBox:
 	ld hl, wBreedMon1Species
 	jr z, .breedmon
 
-	; we want to sent a mon into the Box
-	; so check if there's enough space
+	; we want to send a mon into the Box so check if there's enough space
 	ld hl, sBoxCount
 	ld a, [hl]
 	cp MONS_PER_BOX
@@ -746,7 +745,7 @@ RetrieveMonFromDayCareLady:
 	ld [wCurPartyLevel], a
 	ld a, PC_DEPOSIT
 	ld [wPokemonWithdrawDepositParameter], a
-	jp RetrieveBreedmon ; pointless
+	; fallthrough
 
 RetrieveBreedmon:
 	ld hl, wPartyCount
@@ -899,8 +898,8 @@ DepositBreedmon:
 	jp CopyBytes
 
 SendMonIntoBox:
-; Sends the mon into one of Bills Boxes
-; the data comes mainly from 'wEnemyMon:'
+; Sends the mon into one of Bill's Boxes.
+; The data comes mainly from 'wEnemyMon:'
 	ld a, BANK(sBoxCount)
 	call OpenSRAM
 	ld de, sBoxCount
@@ -1084,9 +1083,8 @@ GiveEgg::
 	ld a, [wCurPartySpecies]
 	dec a
 
-; TryAddMonToParty sets Seen and Caught flags
-; when it is successful.  This routine will make
-; sure that we aren't newly setting flags.
+; TryAddMonToParty sets Seen and Caught flags when it is successful.
+; This routine will make sure that we aren't newly setting flags.
 	push af
 	call CheckCaughtMon
 	pop af
@@ -1096,9 +1094,7 @@ GiveEgg::
 
 	call TryAddMonToParty
 
-; If we haven't caught this Pokemon before receiving
-; the Egg, reset the flag that was just set by
-; TryAddMonToParty.
+; If we haven't caught this Pokemon before receiving the Egg, reset the flag that was just set by TryAddMonToParty.
 	pop bc
 	ld a, c
 	and a
@@ -1112,9 +1108,7 @@ GiveEgg::
 	predef SmallFarFlagAction
 
 .skip_caught_flag
-; If we haven't seen this Pokemon before receiving
-; the Egg, reset the flag that was just set by
-; TryAddMonToParty.
+; If we haven't seen this Pokemon before receiving the Egg, reset the flag that was just set by TryAddMonToParty.
 	pop bc
 	ld a, c
 	and a
