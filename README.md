@@ -173,11 +173,11 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
+- Struggle is no longer boosted by the Pink Bow. Beat Up and Future Sight are still boosted by the Blackglasses and Twistedspoon despite still being functionally typeless, because frankly they need the help.
+
 - Triple Kick always hits 3 times. (It may hit fewer after accuracy drops, since each hit checks accuracy separately.)
 
 - Spite always reduces PP by 5.
-
-- Struggle is no longer boosted by the Pink Bow.
 
 ## Items
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP).
