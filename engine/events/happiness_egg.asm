@@ -149,10 +149,10 @@ DayCareStep::
 
 	ld a, [wCurLevelCap]
 	ld b, a
-	ld a, [wBreedMon1Level] ; level
+	ld a, [wBreedMon1Level]
 	cp b
 	jr nc, .day_care_lady
-	ld hl, wBreedMon1Exp + 2 ; exp
+	ld hl, wBreedMon1Exp + 2
 	inc [hl]
 	jr nz, .day_care_lady
 	dec hl
@@ -174,10 +174,10 @@ DayCareStep::
 
 	ld a, [wCurLevelCap]
 	ld b, a
-	ld a, [wBreedMon2Level] ; level
+	ld a, [wBreedMon2Level]
 	cp b
 	jr nc, .check_egg
-	ld hl, wBreedMon2Exp + 2 ; exp
+	ld hl, wBreedMon2Exp + 2
 	inc [hl]
 	jr nz, .check_egg
 	dec hl
