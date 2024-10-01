@@ -12,9 +12,9 @@ EarlsPokemonAcademy_MapScripts:
 
 	def_callbacks
 
-EndText:
+EarlsAcademy_EndText:
 	waitbutton
-BagFull:
+EarlsAcademy_BagFull:
 	closetext
 	end
 
@@ -26,11 +26,11 @@ AcademyEarl:
 	yesorno
 	iffalse .Done
 	writetext AcademyEarlTeachHowToWinText
-	sjump EndText
+	sjump EarlsAcademy_EndText
 
 .Done:
 	writetext AcademyEarlNoMoreToTeachText
-	sjump EndText
+	sjump EarlsAcademy_EndText
 
 TrainerTeacherFrizzle:
 	trainer TEACHER, FRIZZLE, EVENT_BEAT_TEACHER_FRIZZLE, TeacherFrizzleSeenText, TeacherFrizzleBeatenText, 0, .Script
@@ -42,14 +42,14 @@ TrainerTeacherFrizzle:
 	writetext TeacherFrizzleOfferExpShareText
 	promptbutton
 	verbosegiveitem EXP_SHARE
-	iffalse BagFull
+	iffalse EarlsAcademy_BagFull
 	setevent EVENT_GOT_EXP_SHARE_FROM_FRIZZLE
 	writetext TeacherFrizzleExplainExpShareText
-	sjump EndText
+	sjump EarlsAcademy_EndText
 
 .GotExpShare:
 	writetext TeacherFrizzleAfterText
-	sjump EndText
+	sjump EarlsAcademy_EndText
 
 EarlsPokemonAcademyYoungster1Script:
 	jumptextfaceplayer EarlsPokemonAcademyYoungster1Text
@@ -87,7 +87,7 @@ AcademyBlackboard:
 	ifequal 3, .Sleep
 	ifequal 4, .Burn
 	ifequal 5, .Freeze
-	sjump BagFull
+	sjump EarlsAcademy_BagFull
 
 .Poison:
 	writetext AcademyPoisonText
