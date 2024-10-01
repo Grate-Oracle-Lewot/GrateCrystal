@@ -12,6 +12,12 @@ EarlsPokemonAcademy_MapScripts:
 
 	def_callbacks
 
+EndText:
+	waitbutton
+BagFull:
+	closetext
+	end
+
 AcademyEarl:
 	applymovement EARLSPOKEMONACADEMY_EARL, AcademyEarlSpinMovement
 	faceplayer
@@ -20,15 +26,11 @@ AcademyEarl:
 	yesorno
 	iffalse .Done
 	writetext AcademyEarlTeachHowToWinText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .Done:
 	writetext AcademyEarlNoMoreToTeachText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 TrainerTeacherFrizzle:
 	trainer TEACHER, FRIZZLE, EVENT_BEAT_TEACHER_FRIZZLE, TeacherFrizzleSeenText, TeacherFrizzleBeatenText, 0, .Script
@@ -40,22 +42,14 @@ TrainerTeacherFrizzle:
 	writetext TeacherFrizzleOfferExpShareText
 	promptbutton
 	verbosegiveitem EXP_SHARE
-	iffalse .BagFull
+	iffalse BagFull
 	setevent EVENT_GOT_EXP_SHARE_FROM_FRIZZLE
 	writetext TeacherFrizzleExplainExpShareText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .GotExpShare:
 	writetext TeacherFrizzleAfterText
-	waitbutton
-	closetext
-	end
-
-.BagFull:
-	closetext
-	end
+	sjump EndText
 
 EarlsPokemonAcademyYoungster1Script:
 	jumptextfaceplayer EarlsPokemonAcademyYoungster1Text
@@ -93,8 +87,7 @@ AcademyBlackboard:
 	ifequal 3, .Sleep
 	ifequal 4, .Burn
 	ifequal 5, .Freeze
-	closetext
-	end
+	sjump BagFull
 
 .Poison:
 	writetext AcademyPoisonText
@@ -397,7 +390,12 @@ AcademySleepText:
 
 	para "Some special moves"
 	line "can only be used"
-	cont "while asleep."
+
+	para "while asleep, and"
+	line "DREAM EATER only"
+
+	para "works on sleeping"
+	line "opponents."
 	done
 
 AcademyBurnText:
