@@ -62,6 +62,11 @@ MrPokemonsHouse_MapScripts:
 	closetext
 	sjump MrPokemonsHouse_OakScript
 
+MrPokemonsHouse_EndText:
+	waitbutton
+	closetext
+	end
+
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
@@ -70,13 +75,13 @@ MrPokemonsHouse_MrPokemonScript:
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .OddEggCheck
 	writetext MrPokemonText_ImDependingOnYou
-	sjump .EndText
+	sjump MrPokemonsHouse_EndText
 
 .OddEggCheck:
 	checkflag ENGINE_DUNSPARCE_SWARM
 	iftrue .OddEggReward
 	writetext MrPokemonText_AlwaysNewDiscoveries
-	sjump .EndText
+	sjump MrPokemonsHouse_EndText
 
 .OddEggReward:
 	checkflag ENGINE_YANMA_SWARM
@@ -85,7 +90,7 @@ MrPokemonsHouse_MrPokemonScript:
 	yesorno
 	iftrue .AcceptedOddEgg
 	writetext MrPokemonText_RefusedOddEgg
-	sjump .EndText
+	sjump MrPokemonsHouse_EndText
 
 .AcceptedOddEgg:
 	closetext
@@ -130,10 +135,7 @@ MrPokemonsHouse_MrPokemonScript:
 .OddEggPartyFull:
 	opentext
 	writetext MrPokemonsHouse_PartyFullText
-.EndText:
-	waitbutton
-	closetext
-	end
+	sjump MrPokemonsHouse_EndText
 
 .AlwaysNewDiscoveries:
 	writetext MrPokemonText_AlwaysNewDiscoveries
@@ -230,14 +232,11 @@ MrPokemonsHouse_OakBattleScript:
 	yesorno
 	iftrue .DoBattle
 	writetext MrPokemonsHouse_OakBattleNoText
-	sjump .EndText
+	sjump MrPokemonsHouse_EndText
 
 .NoRematch:
 	writetext MrPokemonsHouse_OakNoRematchText
-.EndText:
-	waitbutton
-	closetext
-	end
+	sjump MrPokemonsHouse_EndText
 
 .DoBattle:
 	writetext MrPokemonsHouse_OakBattleYesText
@@ -250,7 +249,7 @@ MrPokemonsHouse_OakBattleScript:
 	setflag ENGINE_DUNSPARCE_SWARM
 	opentext
 	writetext MrPokemonsHouse_OakBattleDoneText
-	sjump .EndText
+	sjump MrPokemonsHouse_EndText
 
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText
