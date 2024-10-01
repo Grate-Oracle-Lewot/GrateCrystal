@@ -70,17 +70,13 @@ MrPokemonsHouse_MrPokemonScript:
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .OddEggCheck
 	writetext MrPokemonText_ImDependingOnYou
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .OddEggCheck:
 	checkflag ENGINE_DUNSPARCE_SWARM
 	iftrue .OddEggReward
 	writetext MrPokemonText_AlwaysNewDiscoveries
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .OddEggReward:
 	checkflag ENGINE_YANMA_SWARM
@@ -89,9 +85,7 @@ MrPokemonsHouse_MrPokemonScript:
 	yesorno
 	iftrue .AcceptedOddEgg
 	writetext MrPokemonText_RefusedOddEgg
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .AcceptedOddEgg:
 	closetext
@@ -136,6 +130,7 @@ MrPokemonsHouse_MrPokemonScript:
 .OddEggPartyFull:
 	opentext
 	writetext MrPokemonsHouse_PartyFullText
+.EndText:
 	waitbutton
 	closetext
 	end
@@ -235,12 +230,11 @@ MrPokemonsHouse_OakBattleScript:
 	yesorno
 	iftrue .DoBattle
 	writetext MrPokemonsHouse_OakBattleNoText
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .NoRematch:
 	writetext MrPokemonsHouse_OakNoRematchText
+.EndText:
 	waitbutton
 	closetext
 	end
@@ -256,9 +250,7 @@ MrPokemonsHouse_OakBattleScript:
 	setflag ENGINE_DUNSPARCE_SWARM
 	opentext
 	writetext MrPokemonsHouse_OakBattleDoneText
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText
