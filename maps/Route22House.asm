@@ -85,7 +85,7 @@ Route22House_MapScripts:
 .End:
 	endcallback
 
-EndText:
+Route22House_EndText:
 	waitbutton
 	closetext
 	end
@@ -99,11 +99,11 @@ Route22HouseRealKarenScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseRealKarenRefusedText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseRealKarenAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .DoBattle:
 	winlosstext Route22HouseRealKarenBeatenText, 0
@@ -113,7 +113,7 @@ Route22HouseRealKarenScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKarenAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseRealKogaScript:
 	faceplayer
@@ -124,11 +124,11 @@ Route22HouseRealKogaScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseRealKogaRefusedText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseRealKogaAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .DoBattle:
 	winlosstext Route22HouseRealKogaBeatenText, 0
@@ -138,7 +138,7 @@ Route22HouseRealKogaScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKogaAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseLanceScript:
 	faceplayer
@@ -149,11 +149,11 @@ Route22HouseLanceScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseLanceRefusedText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseLanceAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .DoBattle:
 	winlosstext Route22HouseLanceBeatenText, 0
@@ -165,18 +165,18 @@ Route22HouseLanceScript:
 	opentext
 	iftrue .GiveMasterBall
 	writetext Route22HouseLanceAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .GiveMasterBall:
 	writetext Route22HouseLanceMasterBallText
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .MasterBallBagFull
-	sjump EndText
+	sjump Route22House_EndText
 
 .MasterBallBagFull:
 	writetext Route22HouseLanceBagFullText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseGiovanniScript:
 	faceplayer
@@ -193,11 +193,11 @@ Route22HouseGiovanniScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseGiovanniAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseGiovanniAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseJessieScript:
 	faceplayer
@@ -215,11 +215,11 @@ Route22HouseJessieScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJessieAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseJessieAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseJamesScript:
 	faceplayer
@@ -237,11 +237,11 @@ Route22HouseJamesScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJamesAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoRematch:
 	writetext Route22HouseJamesAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseMissingnoScript:
 	faceplayer
@@ -260,21 +260,21 @@ Route22HouseMissingnoScript:
 	loadtrainer AEROBONES, AEROBONES1
 	startbattle
 	reloadmapafterbattle
-	sjump EndGlitch
+	sjump Route22House_EndGlitch
 
 .MissingnoBattle:
 	winlosstext Route22HouseMissingnoBeatenText, 0
 	loadtrainer MISSINGNO_T, MISSINGNO_T1
 	startbattle
 	reloadmapafterbattle
-	sjump EndGlitch
+	sjump Route22House_EndGlitch
 
 .KabubonesBattle:
 	winlosstext Route22HouseKabubonesBeatenText, 0
 	loadtrainer KABUBONES, KABUBONES1
 	startbattle
 	reloadmapafterbattle
-.EndGlitch:
+Route22House_EndGlitch:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	special FadeBlackQuickly
 	disappear ROUTE22HOUSE_GLITCH
@@ -323,11 +323,11 @@ Route22HouseOfficerJennyScript:
 
 .RareCandiesBagFull:
 	writetext Route22HouseOfficerJennyBagFullText
-	sjump EndText
+	sjump Route22House_EndText
 
 .NoCandies:
 	writetext Route22HouseOfficerJennyAfterText
-	sjump EndText
+	sjump Route22House_EndText
 
 Route22HouseRadio:
 	jumptext Route22HouseRadioText
