@@ -11,6 +11,11 @@ BillsFamilysHouse_MapScripts:
 
 	def_callbacks
 
+EndText:
+	waitbutton
+	closetext
+	end
+
 BillScript:
 	faceplayer
 	opentext
@@ -30,27 +35,19 @@ BillScript:
 	givepoke EEVEE, 20
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRoom:
 	writetext BillPartyFullText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .Refused:
 	writetext BillNoEeveeText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .GotEevee:
 	writetext BillPopWontWorkText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 BillsMomScript:
 	faceplayer
@@ -58,15 +55,11 @@ BillsMomScript:
 	checkevent EVENT_MET_BILL
 	iffalse .HaventMetBill
 	writetext BillsMomText_BeforeEcruteak
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .HaventMetBill:
 	writetext BillsMomText_AfterEcruteak
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 BillsSisterScript:
 	faceplayer
@@ -85,15 +78,11 @@ BillsSisterScript:
 	promptbutton
 .GotBillsNumber:
 	writetext BillsSisterStorageSystemText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .Refused:
 	writetext BillsSisterRefusedNumberText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRoom:
 	writetext BillsSisterPhoneFullText
@@ -103,22 +92,17 @@ BillsSisterScript:
 BillsFamilysHouseEevee1:
 	opentext
 	writetext BillsFamilysHouseEevee1Text
-	cry EEVEE
-	waitbutton
-	closetext
-	end
+	sjump EndEevee
 
 BillsFamilysHouseEevee2:
 	opentext
 	writetext BillsFamilysHouseEevee2Text
-	cry EEVEE
-	waitbutton
-	closetext
-	end
+	sjump EndEevee
 
 BillsFamilysHouseEevee3:
 	opentext
 	writetext BillsFamilysHouseEevee3Text
+EndEevee:
 	cry EEVEE
 	waitbutton
 	closetext
@@ -178,6 +162,9 @@ BillEeveeMayEvolveText:
 
 	para "five different"
 	line "#MON."
+
+	para "It's unique in that"
+	line "way."
 	done
 
 BillPartyFullText:
@@ -241,7 +228,7 @@ BillsSisterUsefulNumberText:
 
 	para "I've got a useful"
 	line "phone number for"
-	cont "you."
+	cont "you!"
 	done
 
 RecordedBillsNumberText:
@@ -262,6 +249,7 @@ BillsSisterRefusedNumberText:
 BillsSisterPhoneFullText:
 	text "You can't record"
 	line "any more numbers."
+	cont "Too bad."
 	done
 
 BillsSisterStorageSystemText:
