@@ -184,9 +184,7 @@ BillsGrandpa:
 
 .SaidNo:
 	writetext BillsGrandpaYouDontHaveItTextText
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .CorrectPokemon:
 	writetext BillsGrandpaShownPokemonText
@@ -200,22 +198,16 @@ BillsGrandpa:
 
 .JustShowedSomething:
 	writetext BillsGrandpaComeAgainText
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .GotThunderstone:
 	writetext BillsGrandpaShownAllThePokemonText
-	waitbutton
-	closetext
-	end
+	sjump .EndText
 
 .WrongPokemon:
 	writetext BillsGrandpaWrongPokemonText
+.EndText:
 	waitbutton
-	closetext
-	end
-
 .BagFull:
 	closetext
 	end
