@@ -85,6 +85,11 @@ Route22House_MapScripts:
 .End:
 	endcallback
 
+EndText:
+	waitbutton
+	closetext
+	end
+
 Route22HouseRealKarenScript:
 	faceplayer
 	opentext
@@ -94,15 +99,11 @@ Route22HouseRealKarenScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseRealKarenRefusedText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseRealKarenAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .DoBattle:
 	winlosstext Route22HouseRealKarenBeatenText, 0
@@ -112,9 +113,7 @@ Route22HouseRealKarenScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKarenAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseRealKogaScript:
 	faceplayer
@@ -125,15 +124,11 @@ Route22HouseRealKogaScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseRealKogaRefusedText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseRealKogaAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .DoBattle:
 	winlosstext Route22HouseRealKogaBeatenText, 0
@@ -143,9 +138,7 @@ Route22HouseRealKogaScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKogaAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseLanceScript:
 	faceplayer
@@ -156,15 +149,11 @@ Route22HouseLanceScript:
 	yesorno
 	iftrue .DoBattle
 	writetext Route22HouseLanceRefusedText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseLanceAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .DoBattle:
 	winlosstext Route22HouseLanceBeatenText, 0
@@ -176,24 +165,18 @@ Route22HouseLanceScript:
 	opentext
 	iftrue .GiveMasterBall
 	writetext Route22HouseLanceAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .GiveMasterBall:
 	writetext Route22HouseLanceMasterBallText
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .MasterBallBagFull
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .MasterBallBagFull:
 	writetext Route22HouseLanceBagFullText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseGiovanniScript:
 	faceplayer
@@ -210,15 +193,11 @@ Route22HouseGiovanniScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseGiovanniAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseGiovanniAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseJessieScript:
 	faceplayer
@@ -236,15 +215,11 @@ Route22HouseJessieScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJessieAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseJessieAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseJamesScript:
 	faceplayer
@@ -262,15 +237,11 @@ Route22HouseJamesScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseJamesAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoRematch:
 	writetext Route22HouseJamesAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseMissingnoScript:
 	faceplayer
@@ -289,28 +260,21 @@ Route22HouseMissingnoScript:
 	loadtrainer AEROBONES, AEROBONES1
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_DAILY_MOVE_TUTOR
-	special FadeBlackQuickly
-	disappear ROUTE22HOUSE_GLITCH
-	special FadeInQuickly
-	end
+	sjump EndGlitch
 
 .MissingnoBattle:
 	winlosstext Route22HouseMissingnoBeatenText, 0
 	loadtrainer MISSINGNO_T, MISSINGNO_T1
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_DAILY_MOVE_TUTOR
-	special FadeBlackQuickly
-	disappear ROUTE22HOUSE_GLITCH
-	special FadeInQuickly
-	end
+	sjump EndGlitch
 
 .KabubonesBattle:
 	winlosstext Route22HouseKabubonesBeatenText, 0
 	loadtrainer KABUBONES, KABUBONES1
 	startbattle
 	reloadmapafterbattle
+.EndGlitch:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	special FadeBlackQuickly
 	disappear ROUTE22HOUSE_GLITCH
@@ -359,15 +323,11 @@ Route22HouseOfficerJennyScript:
 
 .RareCandiesBagFull:
 	writetext Route22HouseOfficerJennyBagFullText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 .NoCandies:
 	writetext Route22HouseOfficerJennyAfterText
-	waitbutton
-	closetext
-	end
+	sjump EndText
 
 Route22HouseRadio:
 	jumptext Route22HouseRadioText
