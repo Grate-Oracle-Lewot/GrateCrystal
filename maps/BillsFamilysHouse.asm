@@ -11,7 +11,7 @@ BillsFamilysHouse_MapScripts:
 
 	def_callbacks
 
-EndText:
+BillsFamilys_EndText:
 	waitbutton
 	closetext
 	end
@@ -35,19 +35,19 @@ BillScript:
 	givepoke EEVEE, 20
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .NoRoom:
 	writetext BillPartyFullText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .Refused:
 	writetext BillNoEeveeText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .GotEevee:
 	writetext BillPopWontWorkText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 BillsMomScript:
 	faceplayer
@@ -55,11 +55,11 @@ BillsMomScript:
 	checkevent EVENT_MET_BILL
 	iffalse .HaventMetBill
 	writetext BillsMomText_BeforeEcruteak
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .HaventMetBill:
 	writetext BillsMomText_AfterEcruteak
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 BillsSisterScript:
 	faceplayer
@@ -78,11 +78,11 @@ BillsSisterScript:
 	promptbutton
 .GotBillsNumber:
 	writetext BillsSisterStorageSystemText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .Refused:
 	writetext BillsSisterRefusedNumberText
-	sjump EndText
+	sjump BillsFamilys_EndText
 
 .NoRoom:
 	writetext BillsSisterPhoneFullText
@@ -92,17 +92,17 @@ BillsSisterScript:
 BillsFamilysHouseEevee1:
 	opentext
 	writetext BillsFamilysHouseEevee1Text
-	sjump EndEevee
+	sjump BillsFamilys_EndEevee
 
 BillsFamilysHouseEevee2:
 	opentext
 	writetext BillsFamilysHouseEevee2Text
-	sjump EndEevee
+	sjump BillsFamilys_EndEevee
 
 BillsFamilysHouseEevee3:
 	opentext
 	writetext BillsFamilysHouseEevee3Text
-EndEevee:
+BillsFamilys_EndEevee:
 	cry EEVEE
 	waitbutton
 	closetext
