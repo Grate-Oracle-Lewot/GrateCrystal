@@ -9,29 +9,28 @@ LavenderNameRater_MapScripts:
 
 	def_callbacks
 
+LavNameRater_EndText:
+	waitbutton
+	closetext
+	end
+
 LavenderNameRater:
 	faceplayer
 	opentext
 	special NameRater
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 LavenderMoveDeleter:
 	faceplayer
 	opentext
 	special MoveDeletion
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 LavenderSeerScript:
 	faceplayer
 	opentext
 	special MoveReminder
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 LavenderHappinessRater:
 	faceplayer
@@ -62,21 +61,15 @@ LavenderHappinessRater:
 
 .SortOfHappy:
 	writetext LavenderHappinessRatingText_SortOfHappy
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 .QuiteCute:
 	writetext LavenderHappinessRatingText_QuiteCute
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 .NotUsedToYou:
 	writetext LavenderHappinessRatingText_NotUsedToYou
-	waitbutton
-	closetext
-	end
+	sjump LavNameRater_EndText
 
 .LooksMean:
 	writetext LavenderHappinessRatingText_LooksMean
