@@ -11,6 +11,11 @@ PokemonFanClub_MapScripts:
 
 	def_callbacks
 
+PokemonFanClub_EndText:
+	waitbutton
+	closetext
+	end
+
 PokemonFanClubChairmanScript:
 	faceplayer
 	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
@@ -33,16 +38,12 @@ PokemonFanClubChairmanScript:
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext PokemonFanClubChairmanItsARareCandyText
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 .HeardSpeech:
 	opentext
 	writetext PokemonFanClubChairmanMoreTalesToTellText
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 .NotListening:
 	writetext PokemonFanClubChairmanHowDisappointingText
@@ -62,17 +63,13 @@ PokemonFanClubClefairyGuyScript:
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .FoundClefairyDoll
 	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 .FoundClefairyDoll:
 	writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
 	checkevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
 	iftrue .MetCopycat
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 .MetCopycat:
 	promptbutton
@@ -92,15 +89,11 @@ PokemonFanClubClefairyGuyScript:
 
 .GotLostItem:
 	writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 .NoRoom:
 	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 PokemonFanClubTeacherScript:
 	jumptextfaceplayer PokemonFanClubTeacherText
@@ -112,9 +105,7 @@ PokemonFanClubBayleefScript:
 	opentext
 	writetext PokemonFanClubBayleefText
 	cry BAYLEEF
-	waitbutton
-	closetext
-	end
+	sjump PokemonFanClub_EndText
 
 PokemonFanClubListenSign:
 	jumptext PokemonFanClubListenSignText
