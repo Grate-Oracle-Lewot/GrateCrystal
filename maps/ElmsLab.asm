@@ -9,11 +9,11 @@
 ElmsLab_MapScripts:
 	def_scene_scripts
 	scene_script .MeetElm ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_ELMSLAB_CANT_LEAVE
-	scene_script .DummyScene2 ; SCENE_ELMSLAB_NOTHING
-	scene_script .DummyScene3 ; SCENE_ELMSLAB_MEET_OFFICER
-	scene_script .DummyScene4 ; SCENE_ELMSLAB_UNUSED
-	scene_script .DummyScene5 ; SCENE_ELMSLAB_AIDE_GIVES_POTION
+	scene_script .DummyScene ; SCENE_ELMSLAB_CANT_LEAVE
+	scene_script .DummyScene ; SCENE_ELMSLAB_NOTHING
+	scene_script .DummyScene ; SCENE_ELMSLAB_MEET_OFFICER
+	scene_script .DummyScene ; SCENE_ELMSLAB_UNUSED
+	scene_script .DummyScene ; SCENE_ELMSLAB_AIDE_GIVES_POTION
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .MoveElmCallback
@@ -22,19 +22,7 @@ ElmsLab_MapScripts:
 	sdefer .WalkUpToElm
 	end
 
-.DummyScene1:
-	end
-
-.DummyScene2:
-	end
-
-.DummyScene3:
-	end
-
-.DummyScene4:
-	end
-
-.DummyScene5:
+.DummyScene:
 	end
 
 .MoveElmCallback:
@@ -84,6 +72,11 @@ ElmsLab_MapScripts:
 	closetext
 	end
 
+ElmsLab_EndText:
+	waitbutton
+	closetext
+	end
+
 ProfElmScript:
 	faceplayer
 	opentext
@@ -110,9 +103,7 @@ ElmCheckEverstone:
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
 	writetext ElmThoughtEggHatchedText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmEggHatchedScript:
 	setval TOGEPI
@@ -140,9 +131,7 @@ ElmCheckGotEggAgain:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue ElmDescribesMrPokemonScript
 	writetext ElmText_LetYourMonBattleIt
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 LabTryToLeaveScript:
 	turnobject ELMSLAB_ELM, DOWN
@@ -244,9 +233,7 @@ ChikoritaPokeBallScript:
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmDirectionsScript:
 	turnobject PLAYER, UP
@@ -279,25 +266,19 @@ ElmDirectionsScript:
 
 ElmDescribesMrPokemonScript:
 	writetext ElmDescribesMrPokemonText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 LookAtElmPokeBallScript:
 	opentext
 	writetext ElmPokeBallText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmsLabHealingMachine:
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 .CanHeal:
 	writetext ElmsLabHealingMachineText2
@@ -317,15 +298,10 @@ ElmsLabHealingMachine_HealParty:
 	closetext
 	end
 
-ElmAfterTheftDoneScript:
-	waitbutton
-	closetext
-	end
-
 ElmAfterTheftScript:
 	writetext ElmAfterTheftText1
 	checkitem MYSTERY_EGG
-	iffalse ElmAfterTheftDoneScript
+	iffalse ElmsLab_EndText
 	promptbutton
 	writetext ElmAfterTheftText2
 	waitbutton
@@ -351,21 +327,15 @@ ElmAfterTheftScript:
 
 ElmStudyingEggScript:
 	writetext ElmStudyingEggText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmAideHasEggScript:
 	writetext ElmAideHasEggText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmWaitingEggHatchScript:
 	writetext ElmWaitingEggHatchText
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ShowElmTogepiScript:
 	writetext ShowElmTogepiText1
@@ -414,9 +384,7 @@ ElmGiveTicketScript:
 	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmJumpBackScript1:
 	closetext
@@ -520,27 +488,19 @@ ElmsAideScript:
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue AideScript_TheftTestimony
 	writetext AideText_AlwaysBusy
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 AideScript_TheftTestimony:
 	writetext AideText_TheftTestimony
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 AideScript_ExplainBalls:
 	writetext AideText_ExplainBalls
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 AideScript_AfterTheft:
 	writetext AideText_AfterTheft
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 MeetCopScript2:
 	applymovement PLAYER, MeetCopScript2_StepLeft
@@ -571,15 +531,11 @@ ElmsLabWindow:
 
 .BreakIn:
 	writetext ElmsLabWindowText2
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 .Normal:
 	writetext ElmsLabWindowText1
-	waitbutton
-	closetext
-	end
+	sjump ElmsLab_EndText
 
 ElmsLabTravelTip1:
 	jumptext ElmsLabTravelTip1Text
