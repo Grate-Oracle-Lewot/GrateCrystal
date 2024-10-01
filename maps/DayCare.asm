@@ -26,7 +26,12 @@ DayCareManScript_Inside:
 	checkevent EVENT_GOT_ODD_EGG
 	iftrue .AlreadyHaveOddEgg
 	writetext DayCareManText_GiveOddEgg
-	promptbutton
+	yesorno
+	iftrue .GiveOddEgg
+	writetext DayCareText_RefusedOddEgg
+	sjump .FinishOddEgg
+
+.GiveOddEgg:
 	closetext
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
@@ -36,6 +41,7 @@ DayCareManScript_Inside:
 	playsound SFX_KEY_ITEM
 	waitsfx
 	writetext DayCareText_DescribeOddEgg
+.FinishOddEgg:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_ODD_EGG
@@ -65,7 +71,7 @@ DayCareLadyScript:
 	end
 
 .HusbandWasLookingForYou:
-	writetext Text_GrampsLookingForYou
+	writetext Text_HusbandLookingForYou
 	waitbutton
 	closetext
 	end
@@ -73,32 +79,9 @@ DayCareLadyScript:
 DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
 
-Text_GrampsLookingForYou:
-	text "Gramps was looking"
-	line "for you."
-	done
-
-Text_DayCareManTalksAboutEggTicket: ; unreferenced
-	text "I'm the DAY-CARE"
-	line "MAN."
-
-	para "There's something"
-	line "new in GOLDENROD"
-
-	para "called the TRADE"
-	line "CORNER."
-
-	para "I was given an EGG"
-	line "TICKET that can be"
-
-	para "traded in for a"
-	line "ODD EGG."
-
-	para "But since we run a"
-	line "DAY-CARE, we don't"
-
-	para "need it. You may"
-	line "as well have it."
+Text_HusbandLookingForYou:
+	text "My husband was"
+	line "looking for you."
 	done
 
 DayCareManText_GiveOddEgg:
@@ -120,13 +103,11 @@ DayCareManText_GiveOddEgg:
 
 	para "Well, wouldn't you"
 	line "like this EGG?"
-
-	para "Then fine, this is"
-	line "yours to keep!"
 	done
 
-DayCareText_ComeAgain: ; unreferenced
-	text "Come again."
+DayCareText_RefusedOddEgg:
+	text "Oh, very well. I'll"
+	line "keep it, then."
 	done
 
 DayCareText_GotOddEgg:
@@ -149,8 +130,8 @@ DayCareText_DescribeOddEgg:
 	done
 
 DayCareText_PartyFull:
-	text "You've no room for"
-	line "this."
+	text "You've no room in"
+	line "your party."
 	done
 
 DayCare_MapEvents:
