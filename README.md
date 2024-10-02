@@ -243,6 +243,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 
 ## Miscellaneous
+- If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. This is an unfortunate necessity of the interactions between how Daycare experience and leveling work with the ability to turn the level caps on and off at any time.
 - The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
