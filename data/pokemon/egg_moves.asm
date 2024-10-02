@@ -794,8 +794,9 @@ SlugmaEggMoves:
 
 SwinubEggMoves:
 	db BITE
-	db BODY_SLAM
+	db LOVELY_KISS
 	db ROCK_SLIDE
+	db BODY_SLAM
 	db EARTH_POWER
 	db ANCIENTPOWER
 	db -1 ; end
