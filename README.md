@@ -68,7 +68,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
   - Unown and Delibird learn multiple moves
   - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther
-  - All non-legendary Pokémon can be obtained prior to the Pokémon League
+  - All non-legendary Pokémon can be obtained prior to the Pokémon League, with the vast majority available around mid-Johto
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
   - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
