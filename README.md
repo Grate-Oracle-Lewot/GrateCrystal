@@ -326,7 +326,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
 - Smashing rocks has a chance to give items (Headbutting trees too!)
-- Customizable Pokédex color
+- Customizable Pokédex color (14 choices)
 - Night arrangement for the Kanto wild battle theme, to go along with the existing Johto one
 - Menu account replaced with clock
 
