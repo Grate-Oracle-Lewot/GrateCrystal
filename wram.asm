@@ -2824,22 +2824,14 @@ wMapReentryScriptQueueFlag:: db
 wMapReentryScriptBank:: db
 wMapReentryScriptAddress:: dw
 
-	ds 4
-
 wTimeCyclesSinceLastCall:: db
 wReceiveCallDelay_MinsRemaining:: db
 wReceiveCallDelay_StartTime:: ds 3
 
-	ds 3
-
 wBugContestMinsRemaining:: db
 wBugContestSecsRemaining:: db
 
-	ds 2
-
 wMapStatusEnd::
-
-	ds 2
 
 wCrystalData::
 wPlayerGender::
@@ -2894,11 +2886,7 @@ wGameTimeMinutes:: db
 wGameTimeSeconds:: db
 wGameTimeFrames::  db
 
-	ds 2
-
 wCurDay:: db
-
-	ds 1
 
 wObjectFollow_Leader:: db
 wObjectFollow_Follower:: db
@@ -2914,8 +2902,6 @@ wObject{d:n}Struct:: object_struct wObject{d:n}
 endr
 
 wStoneTableAddress:: dw
-
-	ds 5
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -2935,8 +2921,6 @@ wTimeOfDayPal:: db
 wTimeOfDayPalFlags:: db
 wTimeOfDayPalset:: db
 wCurTimeOfDay:: db
-
-	ds 1
 
 wSecretID:: dw
 wStatusFlags::
@@ -3097,24 +3081,15 @@ wDragonsDenB1FSceneID::                           db
 wDragonShrineSceneID::                            db
 wVictoryRoadSceneID::                             db
 
-	ds 3
-
-; fight counts
-	ds 28
-
 wEventFlags:: flag_array NUM_EVENTS
 
 wCurBox:: db
-
-	ds 2
 
 wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES
 
 wCelebiEvent::
 ; bit 2: forest is restless
 	db
-
-	ds 1
 
 wBikeFlags::
 ; bit 0: using strength
@@ -3138,8 +3113,6 @@ wCurMapSceneScriptCount:: db
 wCurMapSceneScriptsPointer:: dw
 wCurMapCallbackCount:: db
 wCurMapCallbacksPointer:: dw
-
-	ds 2
 
 ; Sprite id of each decoration
 wDecoBed::           db
@@ -3166,8 +3139,6 @@ wTimerEventStartDay:: db
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
 
-	ds 2
-
 wLuckyNumberDayTimer:: dw
 	ds 2
 wSpecialPhoneCallID:: db
@@ -3192,8 +3163,6 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
-
 wStepCount:: db
 wPoisonStepCount:: db
 	ds 2
@@ -3205,8 +3174,6 @@ wSafariBallsRemaining:: db
 wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
-
-	ds 6
 
 wLuckyNumberShowFlag:: db
 wRepelType:: db
@@ -3230,8 +3197,6 @@ wDigMapNumber::  db
 wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
-
-	ds 3
 
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db
