@@ -772,7 +772,7 @@ SneaselEggMoves:
 	db SPITE
 	db PLAY_ROUGH
 	db METAL_CLAW
-	db BITE
+	db SWORDS_DANCE
 	db -1 ; end
 
 TeddiursaEggMoves:
