@@ -1602,7 +1602,9 @@ GivePoke::
 .failed
 	ld a, [wCurPartySpecies]
 	ld [wTempEnemyMonSpecies], a
-	callfar LoadEnemyMon
+
+	call LoadEnemyMonOutsideBattle
+
 	call SendMonIntoBox
 	jp nc, .FailedToGiveMon
 	ld a, BOXMON
@@ -1771,4 +1773,72 @@ InitNickname:
 	ld a, $4 ; ExitAllMenus is in bank 0; maybe it used to be in bank 4
 	ld hl, ExitAllMenus
 	rst FarCall
+	ret
+
+LoadEnemyMonOutsideBattle:
+	ld a, [wTempEnemyMonSpecies]
+	ld [wEnemyMonSpecies], a
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	ld [wNamedObjectIndex], a
+
+	call GetBaseData
+
+	call Random
+	ld b, a
+	call Random
+	ld c, a
+
+	ld hl, wEnemyMonDVs
+	ld a, b
+	ld [hli], a
+	ld [hl], c
+
+	ld a, BASE_HAPPINESS
+	ld [wEnemyMonHappiness], a
+
+	ld a, [wCurPartyLevel]
+	ld [wEnemyMonLevel], a
+
+	ld de, wEnemyMonMaxHP
+	ld b, FALSE
+	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
+	predef CalcMonStats
+
+	ld a, [wEnemyMonMaxHP]
+	ld [hli], a
+	ld a, [wEnemyMonMaxHP + 1]
+	ld [hl], a
+
+	xor a
+	ld [wEnemyMonItem], a
+	ld hl, wEnemyMonStatus
+	ld [hli], a
+	ld [hli], a
+
+	ld h, d
+	ld l, e
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld [wSkipMovesBeforeLevelUp], a
+	predef FillMoves
+
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+	predef FillPP
+
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wEnemyMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	ld c, a
+	ld b, SET_FLAG
+	ld hl, wPokedexSeen
+	predef SmallFarFlagAction
 	ret
