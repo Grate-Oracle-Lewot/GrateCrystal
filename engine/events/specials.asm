@@ -170,17 +170,14 @@ SlotMachine:
 	ret c
 	ld a, BANK(_SlotMachine)
 	ld hl, _SlotMachine
-	jp StartGameCornerGame
+	jr StartGameCornerGame
 
 CardFlip:
 	call CheckCoinsAndCoinCase
 	ret c
 	ld a, BANK(_CardFlip)
 	ld hl, _CardFlip
-	jp StartGameCornerGame
-
-UnusedMemoryGame:
-	ret
+	; fallthrough
 
 StartGameCornerGame:
 	call FarQueueScript
