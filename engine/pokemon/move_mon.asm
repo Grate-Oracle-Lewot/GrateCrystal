@@ -1776,14 +1776,17 @@ InitNickname:
 	ret
 
 LoadEnemyMonOutsideBattle:
+; species
 	ld a, [wTempEnemyMonSpecies]
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wNamedObjectIndex], a
 
+; base stats
 	call GetBaseData
 
+; dvs
 	call Random
 	ld b, a
 	call Random
@@ -1794,12 +1797,7 @@ LoadEnemyMonOutsideBattle:
 	ld [hli], a
 	ld [hl], c
 
-	ld a, BASE_HAPPINESS
-	ld [wEnemyMonHappiness], a
-
-	ld a, [wCurPartyLevel]
-	ld [wEnemyMonLevel], a
-
+; hp
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
 	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
@@ -1810,12 +1808,9 @@ LoadEnemyMonOutsideBattle:
 	ld a, [wEnemyMonMaxHP + 1]
 	ld [hl], a
 
+; moves
+	ld de, wEnemyMonMoves
 	xor a
-	ld [wEnemyMonItem], a
-	ld hl, wEnemyMonStatus
-	ld [hli], a
-	ld [hli], a
-
 	ld h, d
 	ld l, e
 	ld [hli], a
@@ -1825,16 +1820,19 @@ LoadEnemyMonOutsideBattle:
 	ld [wSkipMovesBeforeLevelUp], a
 	predef FillMoves
 
+; pp
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonPP
 	predef FillPP
 
+; name
 	call GetPokemonName
 	ld hl, wStringBuffer1
 	ld de, wEnemyMonNickname
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
+; seen flag
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	ld c, a
