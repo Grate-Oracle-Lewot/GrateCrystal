@@ -241,6 +241,11 @@ FillPokedex:
 	ld [wScriptVar], a
 	jr .loop
 
+CheckPokerus:
+; Check if a monster in your party has Pokerus
+	farcall _CheckPokerus
+	; fallthrough
+
 ScriptReturnCarry:
 	jr c, .carry
 	xor a
@@ -250,11 +255,6 @@ ScriptReturnCarry:
 	ld a, 1
 	ld [wScriptVar], a
 	ret
-
-CheckPokerus:
-; Check if a monster in your party has Pokerus
-	farcall _CheckPokerus
-	jp ScriptReturnCarry
 
 ResetLuckyNumberShowFlag:
 	farcall LoadOrRegenerateLuckyIDNumber
