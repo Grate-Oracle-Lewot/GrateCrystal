@@ -18,7 +18,7 @@ _HandlePlayerStep::
 
 .update_player_coords
 	call UpdatePlayerCoords
-	jr .finish
+	; fallthrough
 
 .finish
 	call HandlePlayerStep
