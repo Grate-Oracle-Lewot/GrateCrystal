@@ -1776,6 +1776,12 @@ InitNickname:
 	ret
 
 LoadEnemyMonOutsideBattle:
+; Clear the whole enemy mon struct (wEnemyMon)
+	xor a
+	ld hl, wEnemyMonSpecies
+	ld bc, wEnemyMonEnd - wEnemyMon
+	call ByteFill
+
 ; species
 	ld a, [wTempEnemyMonSpecies]
 	ld [wEnemyMonSpecies], a
@@ -1785,6 +1791,10 @@ LoadEnemyMonOutsideBattle:
 
 ; base stats
 	call GetBaseData
+
+; held item
+	ld a, [wCurItem]
+	ld [wEnemyMonItem], a
 
 ; dvs
 	call Random
