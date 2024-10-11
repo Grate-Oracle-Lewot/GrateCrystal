@@ -182,7 +182,10 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins GOLDENRODGAMECORNER_ABRA_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetAbra
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetAbra:
 	getmonname STRING_BUFFER_3, ABRA
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -200,7 +203,10 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins GOLDENRODGAMECORNER_PORYGON_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetPorygon
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetPorygon:
 	getmonname STRING_BUFFER_3, PORYGON
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -218,7 +224,10 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetWobbuffet
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetWobbuffet:
 	getmonname STRING_BUFFER_3, WOBBUFFET
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -262,7 +271,10 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	checkcoins GOLDENRODGAMECORNER_SWINUB_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetSwinub
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetSwinub:
 	getmonname STRING_BUFFER_3, SWINUB
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -280,7 +292,10 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	checkcoins GOLDENRODGAMECORNER_GLIGAR_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetGligar:
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetGligar:
 	getmonname STRING_BUFFER_3, GLIGAR
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -298,7 +313,10 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	checkcoins GOLDENRODGAMECORNER_SKARMORY_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	ifless PARTY_LENGTH, .GetSkarmory
+	readvar VAR_BOXSPACE
+	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+.GetSkarmory:
 	getmonname STRING_BUFFER_3, SKARMORY
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -438,8 +456,8 @@ GoldenrodGameCornerPrizeVendorNeedMoreCoinsText:
 	done
 
 GoldenrodGameCornerPrizeVendorNoMoreRoomText:
-	text "Sorry. You can't"
-	line "carry any more."
+	text "You have no room"
+	line "for this prize!"
 	done
 
 GoldenrodGameCornerPrizeVendorQuitText:
