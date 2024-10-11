@@ -34,7 +34,10 @@ MountMortarB1FKiyoScript:
 	promptbutton
 	waitsfx
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifless PARTY_LENGTH, .GetTyrogue
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+.GetTyrogue:
 	writetext MountMortarB1FReceiveMonText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -153,7 +156,7 @@ MountMortarB1FKiyoGotTyrogueText:
 
 MountMortarB1FKiyoFullPartyText:
 	text "You have no room"
-	line "in your party!"
+	line "in your PC box!"
 	done
 
 MountMortarB1F_MapEvents:
