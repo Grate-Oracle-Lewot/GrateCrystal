@@ -28,7 +28,10 @@ BillScript:
 	promptbutton
 	waitsfx
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifless PARTY_LENGTH, .GetEevee
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+.GetEevee:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -168,7 +171,7 @@ BillEeveeMayEvolveText:
 	done
 
 BillPartyFullText:
-	text "Whoa, your party's"
+	text "Whoa, your box is"
 	line "full."
 
 	para "This is a perfect"
