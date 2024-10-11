@@ -149,7 +149,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	checkcoins CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
+	ifless PARTY_LENGTH, .GetPorygon2
+	readvar VAR_BOXSPACE
+	ifequal 0, CeladonPrizeRoom_notenoughroom
+.GetPorygon2:
 	getmonname STRING_BUFFER_3, PORYGON2
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
@@ -167,7 +170,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	checkcoins CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
+	ifless PARTY_LENGTH, .GetTogetic
+	readvar VAR_BOXSPACE
+	ifequal 0, CeladonPrizeRoom_notenoughroom
+.GetTogetic:
 	getmonname STRING_BUFFER_3, TOGETIC
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
@@ -185,7 +191,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	checkcoins CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, CeladonPrizeRoom_notenoughroom
+	ifless PARTY_LENGTH, .GetDragonite
+	readvar VAR_BOXSPACE
+	ifequal 0, CeladonPrizeRoom_notenoughroom
+.GetDragonite:
 	getmonname STRING_BUFFER_3, DRAGONITE
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
