@@ -150,7 +150,10 @@ PewterMuseum1FScientistScript:
 
 .GiveAerodactyl:
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifless PARTY_LENGTH, .GetAerodactyl
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+.GetAerodactyl:
 	clearevent EVENT_GAVE_SCIENTIST_OLD_AMBER
 	writetext PewterMuseum1FScientistDoneText
 	promptbutton
@@ -164,7 +167,10 @@ PewterMuseum1FScientistScript:
 
 .GiveKabuto:
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifless PARTY_LENGTH, .GetKabuto
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+.GetKabuto:
 	callasm GetFossilEvolution
 	iftrue .GiveKabutops
 	clearevent EVENT_GAVE_SCIENTIST_DOME_FOSSIL
@@ -192,7 +198,10 @@ PewterMuseum1FScientistScript:
 
 .GiveOmanyte:
 	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
+	ifless PARTY_LENGTH, .GetOmanyte
+	readvar VAR_BOXSPACE
+	ifequal 0, .NoRoom
+.GetOmanyte:
 	callasm GetFossilEvolution
 	iftrue .GiveOmastar
 	clearevent EVENT_GAVE_SCIENTIST_HELIX_FOSSIL
@@ -383,7 +392,7 @@ PewterMuseum1FScientistPartyFullText:
 	line "fossil #MON!"
 
 	para "Oh, wait… Your"
-	line "party's full…"
+	line "box is full…"
 	done
 
 PewterMuseum1FScientistTimeText:
