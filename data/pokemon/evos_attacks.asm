@@ -3728,7 +3728,7 @@ MiltankEvosAttacks:
 
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
+	db 1, POUND
 	db 1, DEFENSE_CURL
 	db 5, TAIL_WHIP
 	db 9, CHARM
