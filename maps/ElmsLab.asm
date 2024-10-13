@@ -195,34 +195,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	giveitem HELIX_FOSSIL
 	givepoke TOTODILE, 5, GOLD_BERRY
-	givepoke TOTODILE, 10
-	givepoke TOTODILE, 20
-	givepoke TOTODILE, 30
-	givepoke TOTODILE, 40
-	givepoke TOTODILE, 50
-	givepoke RATTATA, 1
-	givepoke RATTATA, 2
-	givepoke RATTATA, 3
-	givepoke RATTATA, 4
-	givepoke RATTATA, 5
-	givepoke RATTATA, 6
-	givepoke RATTATA, 7
-	givepoke RATTATA, 8
-	givepoke RATTATA, 9
-	givepoke RATTATA, 10
-	givepoke RATTATA, 11
-	givepoke RATTATA, 12
-	givepoke RATTATA, 13
-	givepoke RATTATA, 14
-	givepoke RATTATA, 15
-	givepoke RATTATA, 16
-	givepoke RATTATA, 17
-	givepoke RATTATA, 18
-	givepoke RATTATA, 19
-	givepoke RATTATA, 20
-	givepoke MUK, 20
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -1317,7 +1290,7 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, PEWTER_CITY, 1
+	warp_event  4, 11, NEW_BARK_TOWN, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
