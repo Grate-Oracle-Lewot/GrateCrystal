@@ -292,7 +292,7 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	checkcoins GOLDENRODGAMECORNER_GLIGAR_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
-	ifless PARTY_LENGTH, .GetGligar:
+	ifless PARTY_LENGTH, .GetGligar
 	readvar VAR_BOXSPACE
 	ifequal 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 .GetGligar:
