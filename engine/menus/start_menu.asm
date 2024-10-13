@@ -227,10 +227,20 @@ StartMenu::
 	ld c, a
 	decoord 1, 1
 	farcall PrintHoursMins
+	ld hl, wOptions2
+	bit LEVEL_CAPS_ON_OFF, [hl]
+	jr z, .DoneClockText
+	hlcoord 1, 1
+	ld de, .CapString
+	call PlaceString
+.DoneClockText:
 	pop hl
 	pop de
 	pop bc
 	ret
+
+.CapString:
+	db "CAP <EVO_LV>"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
@@ -322,6 +332,12 @@ endr
 
 .DrawMenuClockTextBox:
 	hlcoord 0, 0
+	lb bc, 1, 8
+	call Textbox
+	ld hl, wOptions2
+	bit LEVEL_CAPS_ON_OFF, [hl]
+	ret z
+	hlcoord 0, 1
 	lb bc, 1, 8
 	jp Textbox
 
