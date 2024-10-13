@@ -578,6 +578,7 @@ FlogistanEggMoves:
 	db SIGNAL_BEAM
 	db KINESIS
 	db SOFTBOILED
+	db BELLY_DRUM
 	db -1 ; end
 
 CleffaEggMoves:
