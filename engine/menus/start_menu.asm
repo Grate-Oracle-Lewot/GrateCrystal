@@ -234,9 +234,12 @@ StartMenu::
 	ld de, .CapString
 	call PlaceString
 	call GetLevelCap
-	hlcoord 5, 4
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	ld b, 1 ; number of bytes
 	ld c, 3 ; number of digits
-	call Print8BitNumLeftAlign
+	hlcoord 5, 4
+	call PrintNum
 .DoneClockText:
 	pop hl
 	pop de
