@@ -329,7 +329,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Smashing rocks has a chance to give items (Headbutting trees too!)
 - Customizable Pokédex color (14 choices)
 - Night arrangement for the Kanto wild battle theme, to go along with the existing Johto one
-- Menu account replaced with clock
+- Menu account replaced with clock and level cap display
 
 # Bug Fixes
 
