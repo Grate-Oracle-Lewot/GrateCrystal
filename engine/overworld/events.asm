@@ -131,8 +131,6 @@ MapEvents:
 	call PlayerEvents
 	call DisableEvents
 	farcall ScriptEvents
-	ret
-
 .no_events:
 	ret
 
