@@ -230,9 +230,13 @@ StartMenu::
 	ld hl, wOptions2
 	bit LEVEL_CAPS_ON_OFF, [hl]
 	jr z, .DoneClockText
-	hlcoord 1, 1
+	hlcoord 1, 4
 	ld de, .CapString
 	call PlaceString
+	call GetLevelCap
+	hlcoord 6, 4
+	ld de, wCurLevelCap
+	call PrintNum
 .DoneClockText:
 	pop hl
 	pop de
@@ -240,7 +244,7 @@ StartMenu::
 	ret
 
 .CapString:
-	db "CAP <EVO_LV>"
+	db "CAP <EVO_LV>@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
@@ -337,7 +341,7 @@ endr
 	ld hl, wOptions2
 	bit LEVEL_CAPS_ON_OFF, [hl]
 	ret z
-	hlcoord 0, 1
+	hlcoord 0, 3
 	lb bc, 1, 8
 	jp Textbox
 
