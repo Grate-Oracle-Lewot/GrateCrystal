@@ -1212,7 +1212,7 @@ Dungeons_Map_Name5: ; DIGLETTS_CAVE
 Dungeons_Map_Name6: ; ROCK_TUNNEL_1F
 	db "ROCK TUNNEL 1F@"
 Dungeons_Map_Name7: ; ROCK_TUNNEL_B1F
-	db "ROCK TUNNEL B1F@"
+	db "ROCK TUNNEL B1@"
 Dungeons_Map_Name8: ; ROCK_TUNNEL_ZAPDOS_CHAMBER
 	db "DEEP ROCK TUNNEL@"
 Dungeons_Map_Name9: ; SILPH_CO_2F
@@ -1290,19 +1290,19 @@ Dungeons_Map_Name44: ; RUINS_OF_ALPH_RESEARCH_CENTER
 Dungeons_Map_Name45: ; UNION_CAVE_1F
 	db "UNION CAVE 1F@"
 Dungeons_Map_Name46: ; UNION_CAVE_B1F
-	db "UNION CAVE B1F@"
+	db "UNION CAVE B1@"
 Dungeons_Map_Name47: ; UNION_CAVE_B2F
 	db "UNION GROTTO@"
 Dungeons_Map_Name48: ; UNION_CAVE_SLOWPOKE_WELL_LINK
 	db "UNION WELLSPRING@"
 Dungeons_Map_Name49: ; SLOWPOKE_WELL_B1F
-	db "SLOWPOKEWELL B1F@"
+	db "SLOWPOKEWELL B1@"
 Dungeons_Map_Name50: ; SLOWPOKE_WELL_B2F
-	db "SLOWPOKEWELL B2F@"
+	db "SLOWPOKEWELL B2@"
 Dungeons_Map_Name51: ; ILEX_FOREST
 	db "ILEX FOREST@"
 Dungeons_Map_Name52: ; GOLDENROD_DEPT_STORE_B1F
-	db "GOLD. DEPT B1F@"
+	db "GOLD. DEPT B1@"
 Dungeons_Map_Name53: ; GOLDENROD_UNDERGROUND
 	db "GOLD. UNDERGROUND@"
 Dungeons_Map_Name54: ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
@@ -1326,7 +1326,7 @@ Dungeons_Map_Name62: ; NATIONAL_PARK_BUG_CONTEST
 Dungeons_Map_Name63: ; BURNED_TOWER_1F
 	db "BURNED TOWER 1F@"
 Dungeons_Map_Name64: ; BURNED_TOWER_B1F
-	db "BURNED TOWER B1F@"
+	db "BURNED TOWER B1@"
 Dungeons_Map_Name65: ; TIN_TOWER_1F
 	db "TIN TOWER 1F@"
 Dungeons_Map_Name66: ; TIN_TOWER_2F
@@ -1360,9 +1360,9 @@ Dungeons_Map_Name79: ; OLIVINE_LIGHTHOUSE_6F
 Dungeons_Map_Name80: ; WHIRL_ISLAND_1F
 	db "WHIRL ISLANDS@"
 Dungeons_Map_Name81: ; WHIRL_ISLAND_B1F
-	db "WHIRL ISL B1F@"
+	db "WHIRL ISL B1@"
 Dungeons_Map_Name82: ; WHIRL_ISLAND_B2F
-	db "WHIRL ISL B2F@"
+	db "WHIRL ISL B2@"
 Dungeons_Map_Name83: ; WHIRL_ISLAND_LUGIA_CHAMBER
 	db "WHIRL ISL DEPTHS@"
 Dungeons_Map_Name84: ; MOUNT_MORTAR_1F_OUTSIDE
@@ -1372,31 +1372,31 @@ Dungeons_Map_Name85: ; MOUNT_MORTAR_1F_INSIDE
 Dungeons_Map_Name86: ; MOUNT_MORTAR_2F_INSIDE
 	db "MT. MORTAR 2F@"
 Dungeons_Map_Name87: ; MOUNT_MORTAR_B1F
-	db "MT. MORTAR B1F@"
+	db "MT. MORTAR B1@"
 Dungeons_Map_Name88: ; MAHOGANY_MART_1F
 	db "MAHOGANY BOUTIQUE@"
 Dungeons_Map_Name89: ; TEAM_ROCKET_BASE_B1F
-	db "ROCKET BASE B1F@"
+	db "ROCKET BASE B1@"
 Dungeons_Map_Name90: ; TEAM_ROCKET_BASE_B2F
-	db "ROCKET BASE B2F@"
+	db "ROCKET BASE B2@"
 Dungeons_Map_Name91: ; TEAM_ROCKET_BASE_B3F
-	db "ROCKET BASE B3F@"
+	db "ROCKET BASE B3@"
 Dungeons_Map_Name92: ; ICE_PATH_1F
 	db "ICE PATH 1F@"
 Dungeons_Map_Name93: ; ICE_PATH_B1F
-	db "ICE PATH B1F@"
+	db "ICE PATH B1@"
 Dungeons_Map_Name94: ; ICE_PATH_B2F_MAHOGANY_SIDE
-	db "ICE PATH B2F W@"
+	db "ICE PATH B2 W@"
 Dungeons_Map_Name95: ; ICE_PATH_B2F_BLACKTHORN_SIDE
-	db "ICE PATH B2F E@"
+	db "ICE PATH B2 E@"
 Dungeons_Map_Name96: ; ICE_PATH_B3F
-	db "ICE PATH B3F@"
+	db "ICE PATH B3@"
 Dungeons_Map_Name97: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
 Dungeons_Map_Name98: ; DRAGONS_DEN_1F
 	db "DRAGON'S DEN 1F@"
 Dungeons_Map_Name99: ; DRAGONS_DEN_B1F
-	db "DRAGON'S DEN B1F@"
+	db "DRAGON'S DEN B1@"
 Dungeons_Map_Name100: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
 Dungeons_Map_Name101: ; TOHJO_FALLS
