@@ -655,6 +655,7 @@ BattleCommand_CheckObedience:
 	; If level caps are on, even monsters with the player's id disobey, if their levels are too high.
 	; Doesn't matter if caps are set to obedience or hard cap, because hard cap won't allow you to exceed obedience cap.
 	; This means a monster caught or traded above the hard cap will disobey on the hard cap setting, which seems reasonable.
+	; More importantly, it gives some consequence to turning the cap off, leveling above it, and turning it back on.
 	ld hl, wOptions2
 	bit LEVEL_CAPS_ON_OFF, [hl]
 	jr nz, .obeylevel
