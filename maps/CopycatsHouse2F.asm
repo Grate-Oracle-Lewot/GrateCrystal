@@ -174,6 +174,8 @@ Copycat:
 
 .TradeDitto:
 	trade NPC_TRADE_COPYCAT
+	waitbutton
+	closetext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .TradeDitto_Female
 	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
@@ -182,8 +184,7 @@ Copycat:
 .TradeDitto_Female:
 	applymovement COPYCATSHOUSE2F_COPYCAT2, CopycatSpinAroundMovementData
 .TradeDitto_Merge:
-	waitbutton
-	closetext
+	faceplayer
 	variablesprite SPRITE_COPYCAT, SPRITE_LASS
 	special LoadUsedSpritesGFX
 	end
