@@ -234,9 +234,9 @@ StartMenu::
 	ld de, .CapString
 	call PlaceString
 	call GetLevelCap
-	ld [wTempMonLevel], a
 	hlcoord 5, 4
-	call PrintLevel_Force3Digits
+	ld c, 3 ; number of digits
+	call Print8BitNumLeftAlign
 .DoneClockText:
 	pop hl
 	pop de
