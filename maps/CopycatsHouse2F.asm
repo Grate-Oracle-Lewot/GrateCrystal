@@ -142,6 +142,8 @@ Copycat:
 .GotPass_Merge_1:
 	special LoadUsedSpritesGFX
 	opentext
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .TradeDitto
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .GotPass_Female_2
 	writetext CopycatText_Male_3
@@ -168,6 +170,22 @@ Copycat:
 	waitbutton
 .Cancel:
 	closetext
+	end
+
+.TradeDitto:
+	trade NPC_TRADE_COPYCAT
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .TradeDitto_Female
+	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
+	sjump .TradeDitto_Merge
+
+.TradeDitto_Female:
+	applymovement COPYCATSHOUSE2F_COPYCAT2, CopycatSpinAroundMovementData
+.TradeDitto_Merge:
+	waitbutton
+	closetext
+	variablesprite SPRITE_COPYCAT, SPRITE_LASS
+	special LoadUsedSpritesGFX
 	end
 
 CopycatsDodrio:
