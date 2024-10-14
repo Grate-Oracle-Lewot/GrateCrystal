@@ -344,16 +344,6 @@ SetUpFiveStepWildEncounterCooldown:
 	ld [wWildEncounterCooldown], a
 	ret
 
-SetMinTwoStepWildEncounterCooldown:
-; dummied out
-	ret
-	ld a, [wWildEncounterCooldown]
-	cp 2
-	ret nc
-	ld a, 2
-	ld [wWildEncounterCooldown], a
-	ret
-
 RunSceneScript:
 	ld a, [wCurMapSceneScriptCount]
 	and a
@@ -567,17 +557,8 @@ ObjectEventTypeArray:
 	ret
 
 .three
-	xor a
-	ret
-
 .four
-	xor a
-	ret
-
 .five
-	xor a
-	ret
-
 .six
 	xor a
 	ret
@@ -727,12 +708,7 @@ PlayerMovementPointers:
 
 .normal:
 .finish:
-	xor a
-	ld c, a
-	ret
-
 .jump:
-	call SetMinTwoStepWildEncounterCooldown
 	xor a
 	ld c, a
 	ret
