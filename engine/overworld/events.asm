@@ -476,6 +476,7 @@ PlayTalkObject:
 TryObjectEvent:
 	farcall CheckFacingObject
 	jr c, .IsObject
+.nope
 	xor a
 	ret
 
@@ -507,10 +508,6 @@ TryObjectEvent:
 	ld h, [hl]
 	ld l, a
 	jp hl
-
-.nope
-	xor a
-	ret
 
 ObjectEventTypeArray:
 	table_width 3, ObjectEventTypeArray
