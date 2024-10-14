@@ -234,9 +234,8 @@ StartMenu::
 	ld de, .CapString
 	call PlaceString
 	call GetLevelCap
-	ld a, [wCurLevelCap]
 	ld [wTempMonLevel], a
-	hlcoord 4, 4
+	hlcoord 5, 4
 	call PrintLevel_Force3Digits
 .DoneClockText:
 	pop hl
@@ -245,7 +244,7 @@ StartMenu::
 	ret
 
 .CapString:
-	db "CAP@"
+	db "CAP <EVO_LV>@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
