@@ -557,6 +557,7 @@ SpinarakEggMoves:
 	db -1 ; end
 
 ChinchouEggMoves:
+	db AMNESIA
 	db BUBBLEBEAM
 	db THUNDERSHOCK
 	db MIST
