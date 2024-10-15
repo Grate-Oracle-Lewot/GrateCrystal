@@ -133,4 +133,5 @@ OverworldSprites:
 	overworld_sprite MarySpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite LotusLadySpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite YellowPikachuSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES
