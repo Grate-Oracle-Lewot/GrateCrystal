@@ -1,6 +1,6 @@
 	object_const_def
 	const ROUTE28_BEAUTY
-	const ROUTE28_SUPER_NERD
+	const ROUTE28_EUSINE
 
 Route28_MapScripts:
 	def_scene_scripts
@@ -98,4 +98,4 @@ Route28_MapEvents:
 
 	def_object_events
 	object_event 16, 14, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyMaeve, -1
-	object_event  4,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerMysticalmanOlie, -1
+	object_event  4,  9, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerMysticalmanOlie, -1
