@@ -256,7 +256,7 @@ CianwoodGroupSprites:
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SAILOR
 	db SPRITE_POKEFAN_F
-	db SPRITE_SUPER_NERD
+	db SPRITE_EUSINE
 	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_YOUNGSTER
