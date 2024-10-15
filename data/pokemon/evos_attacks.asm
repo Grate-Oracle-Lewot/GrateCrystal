@@ -3765,7 +3765,7 @@ EnteiEvosAttacks:
 	db 21, ROAR
 	db 31, STOMP
 	db 41, FLAMETHROWER
-	db 51, SWAGGER
+	db 51, SAFEGUARD
 	db 61, EARTH_POWER
 	db 71, FIRE_BLAST
 	db 0 ; no more level-up moves
