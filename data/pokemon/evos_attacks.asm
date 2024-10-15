@@ -2151,7 +2151,7 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
-	db 1, POWDER_SNOW
+	db 1, ICY_WIND
 	db 13, MIST
 	db 25, AIR_SLASH
 	db 37, MIND_READER
