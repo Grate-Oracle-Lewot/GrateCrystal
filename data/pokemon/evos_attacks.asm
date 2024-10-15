@@ -2151,7 +2151,7 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
-	db 1, ICY_WIND
+	db 1, POWDER_SNOW
 	db 13, MIST
 	db 25, AIR_SLASH
 	db 37, MIND_READER
@@ -2182,7 +2182,7 @@ MoltresEvosAttacks:
 	db 1, EMBER
 	db 13, FIRE_SPIN
 	db 25, SOLARBEAM
-	db 37, ENDURE
+	db 37, FOCUS_ENERGY
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
 	db 73, SKY_ATTACK
@@ -3249,7 +3249,7 @@ ShuckleEvosAttacks:
 	db 14, ROLLOUT
 	db 23, SAFEGUARD
 	db 28, BIDE
-	db 37, REST
+	db 37, RECOVER
 	db 42, SPIDER_WEB
 	db 64, ACID_ARMOR
 	db 0 ; no more level-up moves
@@ -3838,7 +3838,7 @@ LugiaEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
-	db 66, RECOVER
+	db 66, MOONLIGHT
 	db 77, HAIL
 	db 88, MOONBLAST
 	db 99, OUTRAGE
@@ -3852,7 +3852,7 @@ HoOhEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
-	db 66, RECOVER
+	db 66, MORNING_SUN
 	db 77, SUNNY_DAY
 	db 88, SOLARBEAM
 	db 99, OUTRAGE
@@ -3862,7 +3862,7 @@ CelebiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_SEED
 	db 1, CONFUSION
-	db 1, RECOVER
+	db 1, SYNTHESIS
 	db 1, HEAL_BELL
 	db 10, SAFEGUARD
 	db 20, ANCIENTPOWER
