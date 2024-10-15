@@ -162,7 +162,7 @@ IndigoGroupSprites:
 SilverGroupSprites:
 ; Route28, SilverCaveOutside
 	db SPRITE_BEAUTY
-	db SPRITE_SUPER_NERD
+	db SPRITE_EUSINE
 	db SPRITE_BIKER
 	db SPRITE_SWIMMER_GIRL
 	; 3 of max 9 walking sprites
