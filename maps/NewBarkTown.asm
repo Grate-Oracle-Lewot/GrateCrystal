@@ -128,6 +128,12 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	opentext
+	givepoke QWILFISH, 10
+	closetext
+	loadwildmon QWILFISH, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
