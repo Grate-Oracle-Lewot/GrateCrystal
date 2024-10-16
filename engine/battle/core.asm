@@ -4294,6 +4294,17 @@ SpikesDamage:
 
 	push bc
 
+	; Floatmons aren't affected by Spikes.
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .ok2
+	ld a, [wEnemyMonSpecies]
+.ok2
+	ld hl, FloatMons
+	call IsInByteArray
+	ret c
+
 	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
 	call StdBattleTextbox
 
