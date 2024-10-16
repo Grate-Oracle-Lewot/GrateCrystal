@@ -4301,7 +4301,7 @@ SpikesDamage:
 .ok2
 	ld hl, FloatMons
 	call IsInByteArray
-	ret nc
+	ret c
 
 	push bc
 
