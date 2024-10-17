@@ -129,6 +129,7 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	opentext
+	givepoke QWILFISH, 10
 	givepoke MEW, 10
 	closetext
 	loadwildmon QWILFISH, 1
