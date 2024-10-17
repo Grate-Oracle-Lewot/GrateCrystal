@@ -160,10 +160,6 @@ DayCareAskDepositPokemon:
 	scf
 	ret
 
-.DaycareDummyText: ; unreferenced
-	text_far _DaycareDummyText
-	text_end
-
 DayCare_DepositPokemonText:
 	ld a, DAYCARETEXT_DEPOSIT
 	call PrintDayCareText
@@ -264,26 +260,26 @@ PrintDayCareText:
 
 .TextTable:
 ; entries correspond to DAYCARETEXT_* constants
-	dw .DayCareManIntroText ; 00
-	dw .DayCareManIntroEggText ; 01
-	dw .DayCareLadyIntroText ; 02
+	dw .DayCareManIntroText     ; 00
+	dw .DayCareManIntroEggText  ; 01
+	dw .DayCareLadyIntroText    ; 02
 	dw .DayCareLadyIntroEggText ; 03
-	dw .WhatShouldIRaiseText ; 04
-	dw .IllRaiseYourMonText ; 05
-	dw .CantAcceptEggText ; 06
-	dw .OnlyOneMonText ; 07
-	dw .LastHealthyMonText ; 08
-	dw .ComeBackLaterText ; 09
-	dw .RemoveMailText ; 0a
-	dw .AreWeGeniusesText ; 0b
-	dw .YourMonHasGrownText ; 0c
+	dw .WhatShouldIRaiseText    ; 04
+	dw .IllRaiseYourMonText     ; 05
+	dw .CantAcceptEggText       ; 06
+	dw .OnlyOneMonText          ; 07
+	dw .LastHealthyMonText      ; 08
+	dw .ComeBackLaterText       ; 09
+	dw .RemoveMailText          ; 0a
+	dw .AreWeGeniusesText       ; 0b
+	dw .YourMonHasGrownText     ; 0c
 	dw .PerfectHeresYourMonText ; 0d
-	dw .GotBackMonText ; 0e
-	dw .BackAlreadyText ; 0f
-	dw .HaveNoRoomText ; 10
-	dw .NotEnoughMoneyText ; 11
-	dw .OhFineThenText ; 12
-	dw .ComeAgainText ; 13
+	dw .GotBackMonText          ; 0e
+	dw .BackAlreadyText         ; 0f
+	dw .HaveNoRoomText          ; 10
+	dw .NotEnoughMoneyText      ; 11
+	dw .OhFineThenText          ; 12
+	dw .ComeAgainText           ; 13
 
 .DayCareManIntroText:
 	text_far _DayCareManIntroText
