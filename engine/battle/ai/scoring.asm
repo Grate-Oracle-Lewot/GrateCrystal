@@ -918,9 +918,22 @@ AI_Smart_Bide_Screens:
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 
+; Dismiss this move if the player has only one Pokemon [remaining].
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, AIDiscourageMove
+
+; Encourage this move if the player has Spikes around them.
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jr z, .no_spikes
+	dec [hl]
+	ret
+
 ; Discourage this move if the player has not shown a super-effective move against the enemy.
 ; Consider player's type(s) if its moves are unknown.
-
+.no_spikes
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
@@ -1481,9 +1494,8 @@ AI_Smart_Reversal_DestinyBond:
 	ret
 
 AI_Smart_HealBell:
-; Dismiss this move if none of the opponent's Pokemon is statused.
-; Encourage this move if the enemy is statused.
-; 50% chance to greatly encourage this move if the enemy is fast asleep or frozen.
+; Dismiss this move if none of the enemy's Pokemon are statused.
+; Encourage this move if any of the enemy's Pokemon are statused.
 
 	push hl
 	ld a, [wOTPartyCount]
@@ -1515,27 +1527,14 @@ AI_Smart_HealBell:
 	pop hl
 	ld a, c
 	and a
-	jr z, .no_status
+	jr nz, .encourage
 
 	ld a, [wEnemyMonStatus]
 	and a
-	jr z, .ok
-	dec [hl]
-.ok
-	and 1 << FRZ | SLP
-	ret z
-	call AI_50_50
-	ret c
-	dec [hl]
+	jp z, AIDiscourageMove
+.encourage
 	dec [hl]
 	ret
-
-.no_status
-	ld a, [wEnemyMonStatus]
-	and a
-	ret nz
-	jp AIDiscourageMove
-
 
 AI_Smart_PriorityHit:
 	call AICompareSpeed
@@ -1639,6 +1638,12 @@ AI_Smart_Disable:
 	ret
 
 AI_Smart_MeanLook:
+; Dismiss this move if the player has only one Pokemon [remaining].
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, AIDiscourageMove
+
 ; Dismiss this move if the player is Ghost-type and therefore immune.
 	ld a, [wBattleMonType1]
 	cp GHOST
@@ -1650,11 +1655,6 @@ AI_Smart_MeanLook:
 
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
-
-	push hl
-	call AICheckLastPlayerMon
-	pop hl
-	jp z, AIDiscourageMove
 
 ; 80% chance to greatly encourage this move if the player is badly poisoned.
 	ld a, [wPlayerSubStatus5]
