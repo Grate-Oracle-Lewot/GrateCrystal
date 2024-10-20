@@ -1,7 +1,6 @@
 CheckPlayerMoveTypeMatchups:
-; Check how well the moves you've already used
-; fare against the enemy's Pokemon.  Used to
-; score a potential switch.
+; Check how well the moves you've already used fare against the enemy's Pokemon.
+; Used to score a potential switch.
 	push hl
 	push de
 	push bc
@@ -81,13 +80,12 @@ CheckPlayerMoveTypeMatchups:
 .ok
 	ld a, [wBattleMonType2]
 	cp b
-	jr z, .ok2
+	jr z, .done
 	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1 ; 1.0 + 0.1
-	jr c, .ok2
+	jr c, .done
 	call .DecreaseScore
-.ok2
 
 .done
 	call .CheckEnemyMoveMatchups
@@ -510,7 +508,6 @@ FindEnemyMonsWithASuperEffectiveMove:
 	ld a, d
 	or b
 	ld d, a
-	jr .next ; such a long jump
 
 .next
 	; next pokemon?
