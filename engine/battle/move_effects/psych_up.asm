@@ -1,6 +1,4 @@
 BattleCommand_PsychUp:
-; psychup
-
 	ld hl, wEnemyStatLevels
 	ld de, wPlayerStatLevels
 	ldh a, [hBattleTurn]
@@ -12,28 +10,13 @@ BattleCommand_PsychUp:
 	ld l, e
 	pop de
 .pointers_correct
-	push hl
 	ld b, NUM_LEVEL_STATS
-; If any of the enemy's stats is modified from its base level, the move succeeds.  Otherwise, it fails.
 .loop
-	ld a, [hli]
-	cp BASE_STAT_LEVEL
-	jr nz, .break
-	dec b
-	jr nz, .loop
-	pop hl
-	call AnimateFailedMove
-	jp PrintButItFailed
-
-.break
-	pop hl
-	ld b, NUM_LEVEL_STATS
-.loop2
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec b
-	jr nz, .loop2
+	jr nz, .loop
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .calc_enemy_stats
