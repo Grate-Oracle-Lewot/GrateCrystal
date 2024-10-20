@@ -26,6 +26,24 @@ BattleCommand_PsychUp:
 .calc_enemy_stats
 	call CalcEnemyStats
 .merge
+; Copy Focus Energy's crit rate boost
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_FOCUS_ENERGY, [hl]
+	jr z, .res
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	set SUBSTATUS_FOCUS_ENERGY, [hl]
+	jr .done
+
+.res
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_FOCUS_ENERGY, [hl]
+.done
 	call AnimateCurrentMove
 	ld hl, CopiedStatsText
 	jp StdBattleTextbox
