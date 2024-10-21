@@ -841,7 +841,7 @@ BattleTowerMons:
 
 	db PIKACHU
 	db LIGHT_BALL
-	db THUNDERBOLT, THUNDER_WAVE, DAZZLY_GLEAM, TOXIC
+	db THUNDERBOLT, THUNDER_WAVE, DAZZLY_GLEAM, SURF
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -851,7 +851,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 12, 15, 14 ; DVs
-	db 16, 16, 24, 8 ; PP
+	db 16, 16, 24, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
