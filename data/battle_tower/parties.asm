@@ -500,7 +500,7 @@ BattleTowerMons:
 
 	db TAUROS
 	db KINGS_ROCK
-	db HEADBUTT, SWAGGER, TAIL_WHIP, ICY_WIND
+	db HEADBUTT, SWAGGER, TAIL_WHIP, WATERFALL
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -919,7 +919,7 @@ BattleTowerMons:
 
 	db TAUROS
 	db BRIGHTPOWDER
-	db THUNDERBOLT, EARTHQUAKE, HYPER_BEAM, BLIZZARD
+	db FLAME_WHEEL, EARTHQUAKE, SKULL_BASH, WATERFALL
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -929,7 +929,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 11, 14, 15 ; DVs
-	db 16, 16, 8, 8 ; PP
+	db 32, 16, 8, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -4892,7 +4892,7 @@ BattleTowerMons:
 
 	db TAUROS
 	db PINK_BOW
-	db THUNDERBOLT, HYPER_BEAM, ATTRACT, EARTHQUAKE
+	db FLAME_WHEEL, SKULL_BASH, ATTRACT, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4902,7 +4902,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 6, 5, 7, 6 ; DVs
-	db 16, 8, 16, 16 ; PP
+	db 32, 8, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -5051,7 +5051,7 @@ BattleTowerMons:
 
 	db TAUROS
 	db KINGS_ROCK
-	db HYPER_BEAM, EARTHQUAKE, IRON_TAIL, THUNDERBOLT
+	db SKULL_BASH, EARTHQUAKE, IRON_TAIL, FLAME_WHEEL
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5061,7 +5061,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 14, 15 ; DVs
-	db 8, 16, 24, 16 ; PP
+	db 8, 16, 24, 32 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
