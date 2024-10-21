@@ -2722,7 +2722,7 @@ BattleTowerMons:
 
 	db ARTICUNO
 	db BERRY_JUICE
-	db BLIZZARD, HYPER_BEAM, ROAR, ICY_WIND
+	db ICE_BEAM, HYPER_BEAM, TRI_ATTACK, AIR_SLASH
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2732,7 +2732,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 4, 5, 5, 6 ; DVs
-	db 8, 8, 32, 24 ; PP
+	db 16, 8, 16, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
