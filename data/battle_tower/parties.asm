@@ -1598,7 +1598,7 @@ BattleTowerMons:
 
 	db FEAROW
 	db BRIGHTPOWDER
-	db MIRROR_MOVE, PURSUIT, PECK, SWIFT
+	db MIRROR_MOVE, PURSUIT, FURY_ATTACK, SWIFT
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1608,7 +1608,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 6, 7, 7, 7 ; DVs
-	db 32, 48, 56, 40 ; PP
+	db 32, 48, 32, 40 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -5207,7 +5207,7 @@ BattleTowerMons:
 
 	db FEAROW
 	db KINGS_ROCK
-	db DRILL_PECK, STEEL_WING, HYPER_BEAM, MUD_SLAP
+	db DRILL_PECK, STEEL_WING, EGG_BOMB, MUD_SLAP
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5217,7 +5217,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 15, 13, 12, 15 ; DVs
-	db 24, 32, 8, 16 ; PP
+	db 24, 32, 32, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
