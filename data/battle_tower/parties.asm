@@ -57,7 +57,7 @@ BattleTowerMons:
 	db "E-HUi@@@@@@"
 
 	db UMBREON
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SHADOW_BALL, IRON_TAIL, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -161,7 +161,7 @@ BattleTowerMons:
 	db "SANI-GO@@@@"
 
 	db MILTANK
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db BLIZZARD, EARTHQUAKE, HYPER_BEAM, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -239,7 +239,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db SNEASEL
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SLASH, FAINT_ATTACK, WATERFALL, BLIZZARD
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -1181,7 +1181,7 @@ BattleTowerMons:
 	db "SUTA-MI-@@@"
 
 	db JYNX
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db BLIZZARD, SING, DREAM_EATER, ATTRACT
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1337,7 +1337,7 @@ BattleTowerMons:
 	db "KAIRIKI-@@@"
 
 	db CROBAT
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db ATTRACT, CONFUSE_RAY, TOXIC, WING_ATTACK
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1467,7 +1467,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db LANTURN
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db RAIN_DANCE, THUNDER, SURF, FLAIL
 	dw 0 ; OT ID
 	dt 21760 ; Exp
@@ -1545,7 +1545,7 @@ BattleTowerMons:
 	db "DOKUKURAGE@"
 
 	db GENGAR
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db THIEF, LICK, NIGHT_SHADE, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1571,7 +1571,7 @@ BattleTowerMons:
 	db "GENGA-@@@@@"
 
 	db URSARING
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db HEADBUTT, PROTECT, ROAR, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1652,7 +1652,7 @@ BattleTowerMons:
 ; BattleTowerMons group 4
 
 	db TAUROS
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db RETURN, HYPER_BEAM, EARTHQUAKE, IRON_TAIL
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -1756,7 +1756,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db STEELIX
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SANDSTORM, IRON_TAIL, EARTHQUAKE, TOXIC
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -1834,7 +1834,7 @@ BattleTowerMons:
 	db "SUTA-MI-@@@"
 
 	db WOBBUFFET
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2042,7 +2042,7 @@ BattleTowerMons:
 	db "HUoRETOSU@@"
 
 	db OMASTAR
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db CURSE, WATER_GUN, ANCIENTPOWER, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2201,7 +2201,7 @@ BattleTowerMons:
 ; BattleTowerMons group 5
 
 	db KINGDRA
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SURF, HYPER_BEAM, BLIZZARD, DRAGONBREATH
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2305,7 +2305,7 @@ BattleTowerMons:
 	db "KABIGON@@@@"
 
 	db LAPRAS
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db THUNDERBOLT, SURF, CONFUSE_RAY, BLIZZARD
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2409,7 +2409,7 @@ BattleTowerMons:
 	db "YADOKINGU@@"
 
 	db MACHAMP
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db CROSS_CHOP, EARTHQUAKE, FIRE_BLAST, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2591,7 +2591,7 @@ BattleTowerMons:
 	db "SANDA-@@@@@"
 
 	db SKARMORY
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SANDSTORM, FLY, STEEL_WING, TOXIC
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2721,7 +2721,7 @@ BattleTowerMons:
 	db "GIyaRADOSU@"
 
 	db ARTICUNO
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db BLIZZARD, HYPER_BEAM, ROAR, ICY_WIND
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2776,7 +2776,7 @@ BattleTowerMons:
 	db "KINGUDORA@@"
 
 	db TYRANITAR
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db CRUNCH, EARTHQUAKE, ROCK_SLIDE, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -2906,7 +2906,7 @@ BattleTowerMons:
 	db "SANDA-@@@@@"
 
 	db WOBBUFFET
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db COUNTER, MIRROR_COAT, DESTINY_BOND, SAFEGUARD
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -2984,7 +2984,7 @@ BattleTowerMons:
 	db "KAIRIyu-@@@"
 
 	db UMBREON
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db MUD_SLAP, MOONLIGHT, PSYCHIC_M, FAINT_ATTACK
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3166,7 +3166,7 @@ BattleTowerMons:
 	db "RU-ZIyuRA@@"
 
 	db BLASTOISE
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SURF, EARTHQUAKE, RAPID_SPIN, BLIZZARD
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3244,7 +3244,7 @@ BattleTowerMons:
 	db "SANDOPAN@@@"
 
 	db PARASECT
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SPORE, GIGA_DRAIN, CRABHAMMER, SLUDGE_BOMB
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3351,7 +3351,7 @@ BattleTowerMons:
 	db "SIyaWA-ZU@@"
 
 	db UMBREON
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db FAINT_ATTACK, MOONLIGHT, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3377,7 +3377,7 @@ BattleTowerMons:
 	db "BURAtuKI-@@"
 
 	db BLISSEY
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db COUNTER, SOFTBOILED, SHADOW_BALL, THUNDERBOLT
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3481,7 +3481,7 @@ BattleTowerMons:
 	db "BANGIRASU@@"
 
 	db ZAPDOS
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db THUNDERBOLT, DRILL_PECK, THUNDER_WAVE, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3533,7 +3533,7 @@ BattleTowerMons:
 	db "NAtuSI-@@@@"
 
 	db UMBREON
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db MOONLIGHT, FAINT_ATTACK, PSYCHIC_M, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3689,7 +3689,7 @@ BattleTowerMons:
 	db "OKORIZARU@@"
 
 	db GIRAFARIG
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db AGILITY, BATON_PASS, CRUNCH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3926,7 +3926,7 @@ BattleTowerMons:
 	db "HERUGA-@@@@"
 
 	db TAUROS
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db EARTHQUAKE, BODY_SLAM, IRON_TAIL, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4082,7 +4082,7 @@ BattleTowerMons:
 	db "KINGUDORA@@"
 
 	db DRAGONITE
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db THUNDER_WAVE, WATERFALL, THUNDERBOLT, OUTRAGE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4160,7 +4160,7 @@ BattleTowerMons:
 	db "RU-ZIyuRA@@"
 
 	db MANTINE
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db SURF, CONFUSE_RAY, BLIZZARD, WING_ATTACK
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4342,7 +4342,7 @@ BattleTowerMons:
 	db "UTUBOtuTO@@"
 
 	db PINSIR
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db CROSS_CHOP, TWINEEDLE, STRENGTH, TOXIC
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4501,7 +4501,7 @@ BattleTowerMons:
 	db "PARUSIeN@@@"
 
 	db CROBAT
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db WING_ATTACK, HAZE, HYPER_BEAM, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -4631,7 +4631,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db ESPEON
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db PSYCHIC_M, SHADOW_BALL, SUNNY_DAY, MORNING_SUN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -4946,7 +4946,7 @@ BattleTowerMons:
 ; BattleTowerMons group 10
 
 	db HOUNDOOM
-	db MINT_BERRY
+	db BERRY_JUICE
 	db CRUNCH, FLAMETHROWER, ROAR, REST
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
