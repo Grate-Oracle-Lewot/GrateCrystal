@@ -364,6 +364,7 @@ RhyhornEggMoves:
 	db -1 ; end
 
 ChanseyEggMoves:
+	db COUNTER
 	db PLAY_ROUGH
 	db HEAL_BELL
 	db SPIKES
@@ -371,9 +372,9 @@ ChanseyEggMoves:
 	db -1 ; end
 
 TangelaEggMoves:
-	db FLAIL
 	db REFLECT
 	db AMNESIA
+	db FLAIL
 	db SYNTHESIS
 	db WATER_GUN
 	db SPIDER_WEB
