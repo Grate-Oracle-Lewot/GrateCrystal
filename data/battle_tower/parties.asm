@@ -3927,7 +3927,7 @@ BattleTowerMons:
 
 	db TAUROS
 	db BERRY_JUICE
-	db EARTHQUAKE, BODY_SLAM, IRON_TAIL, HYPER_BEAM
+	db EARTHQUAKE, HEADBUTT, IRON_TAIL, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -3937,7 +3937,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 50000
 	dn 15, 13, 13, 14 ; DVs
-	db 16, 24, 24, 8 ; PP
+	db 16, 32, 24, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
