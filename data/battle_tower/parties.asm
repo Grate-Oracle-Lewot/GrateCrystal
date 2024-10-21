@@ -1442,7 +1442,7 @@ BattleTowerMons:
 
 	db LAPRAS
 	db LEFTOVERS
-	db RAIN_DANCE, WATER_GUN, ICY_WIND, STRENGTH
+	db RAIN_DANCE, SURF, ICY_WIND, STRENGTH
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1452,7 +1452,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 30000
 	dn 15, 13, 14, 11 ; DVs
-	db 8, 56, 24, 24 ; PP
+	db 8, 16, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
