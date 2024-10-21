@@ -2043,7 +2043,7 @@ BattleTowerMons:
 
 	db OMASTAR
 	db BERRY_JUICE
-	db CURSE, WATER_GUN, ANCIENTPOWER, ROCK_SMASH
+	db KINESIS, SURF, ANCIENTPOWER, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2053,7 +2053,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
-	db 16, 56, 16, 24 ; PP
+	db 24, 16, 16, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
