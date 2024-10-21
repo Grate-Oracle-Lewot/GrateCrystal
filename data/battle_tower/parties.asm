@@ -2959,7 +2959,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db MIRACLEBERRY
-	db SKY_ATTACK, ICY_WIND, THUNDERBOLT, SURF
+	db SKY_ATTACK, ICE_PUNCH, THUNDERPUNCH, WATERFALL
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -2969,7 +2969,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 13, 13, 15, 13 ; DVs
-	db 8, 24, 16, 16 ; PP
+	db 8, 24, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -4083,7 +4083,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db BERRY_JUICE
-	db THUNDER_WAVE, WATERFALL, THUNDERBOLT, OUTRAGE
+	db THUNDER_WAVE, WATERFALL, TRI_ATTACK, OUTRAGE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4424,7 +4424,7 @@ BattleTowerMons:
 
 	db DRAGONITE
 	db QUICK_CLAW
-	db FIRE_BLAST, SKY_ATTACK, OUTRAGE, BLIZZARD
+	db FIRE_PUNCH, SKY_ATTACK, OUTRAGE, ICE_PUNCH
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4434,7 +4434,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 60000
 	dn 15, 13, 14, 13 ; DVs
-	db 8, 8, 24, 8 ; PP
+	db 24, 8, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
