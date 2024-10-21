@@ -4946,7 +4946,7 @@ BattleTowerMons:
 ; BattleTowerMons group 10
 
 	db HOUNDOOM
-	db BERRY_JUICE
+	db MINT_BERRY
 	db CRUNCH, FLAMETHROWER, ROAR, REST
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
