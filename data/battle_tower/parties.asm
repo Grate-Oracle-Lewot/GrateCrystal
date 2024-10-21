@@ -4135,7 +4135,7 @@ BattleTowerMons:
 
 	db JYNX
 	db QUICK_CLAW
-	db SING, BLIZZARD, DREAM_EATER, PSYCHIC_M
+	db SING, BLIZZARD, DREAM_EATER, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
