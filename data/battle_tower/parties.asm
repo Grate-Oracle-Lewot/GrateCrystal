@@ -1494,7 +1494,7 @@ BattleTowerMons:
 
 	db ESPEON
 	db MIRACLEBERRY
-	db CONFUSION, SWIFT, TOXIC, PSYCH_UP
+	db PSYCHIC_M, SWIFT, TOXIC, PSYCH_UP
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1504,7 +1504,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
-	db 40, 40, 8, 16 ; PP
+	db 16, 40, 8, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
