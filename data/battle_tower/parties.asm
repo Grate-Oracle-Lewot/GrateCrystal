@@ -1546,7 +1546,7 @@ BattleTowerMons:
 
 	db GENGAR
 	db BERRY_JUICE
-	db THIEF, LICK, NIGHT_SHADE, GIGA_DRAIN
+	db THIEF, SHADOW_BALL, NIGHT_SHADE, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1556,7 +1556,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 7, 15, 7 ; DVs
-	db 48, 48, 32, 8 ; PP
+	db 48, 24, 32, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
