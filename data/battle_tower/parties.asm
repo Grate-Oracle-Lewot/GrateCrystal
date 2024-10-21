@@ -3089,7 +3089,7 @@ BattleTowerMons:
 
 	db SNORLAX
 	db PINK_BOW
-	db ROCK_SLIDE, SURF, BODY_SLAM, EARTHQUAKE
+	db IRON_HEAD, SURF, BODY_SLAM, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3404,7 +3404,7 @@ BattleTowerMons:
 
 	db SNORLAX
 	db LEFTOVERS
-	db ROCK_SLIDE, EARTHQUAKE, BLIZZARD, SHADOW_BALL
+	db IRON_HEAD, EARTHQUAKE, BLIZZARD, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3875,7 +3875,7 @@ BattleTowerMons:
 
 	db SNORLAX
 	db LEFTOVERS
-	db REST, BELLY_DRUM, SNORE, EARTHQUAKE
+	db REST, BELLY_DRUM, NIGHT_TERROR, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -3885,7 +3885,7 @@ BattleTowerMons:
 	bigdw 55500
 	bigdw 60000
 	dn 13, 11, 14, 13 ; DVs
-	db 8, 16, 32, 16 ; PP
+	db 8, 16, 16, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
