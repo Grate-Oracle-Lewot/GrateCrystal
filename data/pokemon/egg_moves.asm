@@ -703,11 +703,11 @@ WobbuffetEggMoves:
 	db -1 ; end
 
 GirafarigEggMoves:
+	db AGILITY
 	db IRON_HEAD
 	db TAKE_DOWN
 	db AMNESIA
 	db FUTURE_SIGHT
-	db BEAT_UP
 	db FORESIGHT
 	db -1 ; end
 
