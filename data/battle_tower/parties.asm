@@ -3768,7 +3768,7 @@ BattleTowerMons:
 
 	db VENUSAUR
 	db BRIGHTPOWDER
-	db SUNNY_DAY, SOLARBEAM, SYNTHESIS, HYPER_BEAM
+	db SUNNY_DAY, SOLARBEAM, SYNTHESIS, SLUDGE_BOMB
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3778,7 +3778,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 6, 4, 4 ; DVs
-	db 8, 16, 8, 8 ; PP
+	db 8, 16, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
