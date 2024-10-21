@@ -1093,10 +1093,10 @@ BellyDrumText:
 
 CopiedStatsText:
 	text "<USER>"
-	line "copied the stat"
+	line "copied"
 
-	autopara "changes of"
-	line "<TARGET>!"
+	autopara "<TARGET>'s"
+	line "stat changes!"
 	autodone
 
 ForesawAttackText:
