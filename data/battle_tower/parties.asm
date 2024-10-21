@@ -2069,7 +2069,7 @@ BattleTowerMons:
 
 	db CHARIZARD
 	db KINGS_ROCK
-	db FIRE_SPIN, DRAGON_RAGE, AIR_SLASH, SLASH
+	db FIRE_SPIN, DRAGON_RAGE, AIR_SLASH, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2079,7 +2079,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 14, 15, 14 ; DVs
-	db 24, 16, 24, 32 ; PP
+	db 24, 16, 24, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -3794,7 +3794,7 @@ BattleTowerMons:
 
 	db CHARIZARD
 	db SCOPE_LENS
-	db SLASH, EARTHQUAKE, HYPER_BEAM, FLAMETHROWER
+	db SLASH, SHADOW_CLAW, HYPER_BEAM, FLAMETHROWER
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3804,7 +3804,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 5, 6, 4, 4 ; DVs
-	db 32, 16, 8, 16 ; PP
+	db 32, 24, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
@@ -5103,7 +5103,7 @@ BattleTowerMons:
 
 	db CHARIZARD
 	db SCOPE_LENS
-	db FLAMETHROWER, EARTHQUAKE, SLASH, AIR_SLASH
+	db FLAMETHROWER, SHADOW_CLAW, SLASH, AIR_SLASH
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5113,7 +5113,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 55000
 	dn 15, 14, 13, 15 ; DVs
-	db 16, 16, 32, 24 ; PP
+	db 16, 24, 32, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
