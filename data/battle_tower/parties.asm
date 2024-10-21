@@ -2696,7 +2696,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db MIRACLEBERRY
-	db HYPER_BEAM, WATERFALL, RAIN_DANCE, ZAP_CANNON
+	db OUTRAGE, WATERFALL, RAIN_DANCE, THUNDER
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2706,7 +2706,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 7, 5, 6, 5 ; DVs
-	db 8, 24, 8, 8 ; PP
+	db 24, 24, 8, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -3560,7 +3560,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db BRIGHTPOWDER
-	db WATERFALL, THUNDERBOLT, HYPER_BEAM, ROAR
+	db WATERFALL, THUNDERBOLT, OUTRAGE, ROAR
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3570,7 +3570,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 11, 14, 15 ; DVs
-	db 24, 16, 8, 32 ; PP
+	db 24, 16, 24, 32 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
