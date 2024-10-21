@@ -1835,7 +1835,7 @@ BattleTowerMons:
 
 	db WOBBUFFET
 	db BERRY_JUICE
-	db COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
+	db COUNTER, MIRROR_COAT, ENCORE, MEAN_LOOK
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -1845,7 +1845,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 11, 15, 14, 7 ; DVs
-	db 32, 32, 40, 8 ; PP
+	db 32, 32, 8, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
