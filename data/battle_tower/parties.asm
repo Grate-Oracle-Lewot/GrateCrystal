@@ -162,7 +162,7 @@ BattleTowerMons:
 
 	db MILTANK
 	db GOLD_BERRY
-	db BLIZZARD, EARTHQUAKE, HYPER_BEAM, TOXIC
+	db ICE_PUNCH, EARTHQUAKE, MEGA_KICK, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -172,7 +172,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 35000
 	dn 11, 11, 13, 15 ; DVs
-	db 8, 16, 8, 8 ; PP
+	db 24, 16, 8, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -971,7 +971,7 @@ BattleTowerMons:
 
 	db MILTANK
 	db KINGS_ROCK
-	db EARTHQUAKE, THUNDER, ATTRACT, SURF
+	db EARTHQUAKE, THUNDERPUNCH, ATTRACT, SURF
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -981,7 +981,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 13, 15, 15, 14 ; DVs
-	db 16, 8, 16, 16 ; PP
+	db 16, 24, 16, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
