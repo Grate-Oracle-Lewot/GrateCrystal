@@ -4476,7 +4476,7 @@ BattleTowerMons:
 
 	db CLOYSTER
 	db LEFTOVERS
-	db SELFDESTRUCT, BLIZZARD, SURF, PAY_DAY
+	db DRILL_PECK, SURF, POISON_JAB, SPIKE_CANNON
 	dw 0 ; OT ID
 	dt 744440 ; Exp
 	; Stat exp
@@ -4486,7 +4486,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 11, 13, 15 ; DVs
-	db 8, 8, 16, 48 ; PP
+	db 24, 16, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
