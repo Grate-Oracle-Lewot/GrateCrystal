@@ -1494,7 +1494,7 @@ BattleTowerMons:
 
 	db ESPEON
 	db MIRACLEBERRY
-	db PSYCHIC_M, SWIFT, TOXIC, PSYCH_UP
+	db PSYCHIC_M, AURA_SPHERE, TOXIC, PSYCH_UP
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1504,7 +1504,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
-	db 16, 40, 8, 16 ; PP
+	db 16, 16, 8, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -2173,7 +2173,7 @@ BattleTowerMons:
 
 	db ELECTABUZZ
 	db KINGS_ROCK
-	db LIGHT_SCREEN, THUNDERPUNCH, SWIFT, SNORE
+	db LIGHT_SCREEN, THUNDERPUNCH, AURA_SPHERE, NIGHT_TERROR
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2183,7 +2183,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 6, 5, 7, 7 ; DVs
-	db 16, 24, 40, 32 ; PP
+	db 16, 24, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -3219,7 +3219,7 @@ BattleTowerMons:
 
 	db SANDSLASH
 	db SCOPE_LENS
-	db EARTHQUAKE, SLASH, ICE_PUNCH, SNORE
+	db EARTHQUAKE, SLASH, ICE_PUNCH, NIGHT_TERROR
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3229,7 +3229,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 11, 7, 6, 7 ; DVs
-	db 16, 32, 24, 32 ; PP
+	db 16, 32, 24, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
