@@ -2147,7 +2147,7 @@ BattleTowerMons:
 
 	db MUK
 	db QUICK_CLAW
-	db SCREECH, TOXIC, SLUDGE, ACID_ARMOR
+	db SCREECH, TOXIC, POISON_JAB, ACID_ARMOR
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2157,7 +2157,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 5, 6, 11 ; DVs
-	db 32, 8, 32, 32 ; PP
+	db 32, 8, 24, 32 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -4918,7 +4918,7 @@ BattleTowerMons:
 
 	db MUK
 	db QUICK_CLAW
-	db TOXIC, SLUDGE_BOMB, ATTRACT, GIGA_DRAIN
+	db TOXIC, POISON_JAB, ATTRACT, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4928,7 +4928,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 5, 4, 4, 4 ; DVs
-	db 8, 16, 16, 8 ; PP
+	db 8, 24, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
