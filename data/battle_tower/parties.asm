@@ -57,7 +57,7 @@ BattleTowerMons:
 	db "E-HUi@@@@@@"
 
 	db UMBREON
-	db BERRY_JUICE
+	db GOLD_BERRY
 	db SHADOW_BALL, IRON_TAIL, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -161,7 +161,7 @@ BattleTowerMons:
 	db "SANI-GO@@@@"
 
 	db MILTANK
-	db BERRY_JUICE
+	db GOLD_BERRY
 	db BLIZZARD, EARTHQUAKE, HYPER_BEAM, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -239,7 +239,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db SNEASEL
-	db BERRY_JUICE
+	db GOLD_BERRY
 	db SLASH, FAINT_ATTACK, WATERFALL, BLIZZARD
 	dw 0 ; OT ID
 	dt 1000 ; Exp
