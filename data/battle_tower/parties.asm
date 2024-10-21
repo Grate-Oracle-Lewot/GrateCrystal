@@ -1130,7 +1130,7 @@ BattleTowerMons:
 
 	db POLIWRATH
 	db BRIGHTPOWDER
-	db DOUBLE_TEAM, SURF, FISSURE, SUBMISSION
+	db DOUBLE_TEAM, SURF, EARTHQUAKE, SUBMISSION
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1140,7 +1140,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 13, 15, 11 ; DVs
-	db 24, 16, 8, 40 ; PP
+	db 24, 16, 16, 40 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
