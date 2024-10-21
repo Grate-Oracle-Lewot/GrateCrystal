@@ -3716,7 +3716,7 @@ BattleTowerMons:
 
 	db HITMONLEE
 	db FOCUS_BAND
-	db REVERSAL, ENDURE, BODY_SLAM, MEGA_KICK
+	db REVERSAL, SUBSTITUTE, HI_JUMP_KICK, MEGA_KICK
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3726,7 +3726,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 14, 15, 14 ; DVs
-	db 24, 16, 24, 8 ; PP
+	db 24, 16, 32, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
