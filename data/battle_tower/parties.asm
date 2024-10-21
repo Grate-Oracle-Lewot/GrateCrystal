@@ -4161,7 +4161,7 @@ BattleTowerMons:
 
 	db MANTINE
 	db BERRY_JUICE
-	db SURF, CONFUSE_RAY, BLIZZARD, WING_ATTACK
+	db SURF, CONFUSE_RAY, BLIZZARD, AIR_SLASH
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4171,7 +4171,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 13, 15, 13, 12 ; DVs
-	db 16, 16, 8, 40 ; PP
+	db 16, 16, 8, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -4369,7 +4369,7 @@ BattleTowerMons:
 
 	db GRANBULL
 	db BRIGHTPOWDER
-	db ROAR, SHADOW_BALL, LOVELY_KISS, THUNDERPUNCH
+	db ROAR, SHADOW_CLAW, LOVELY_KISS, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
