@@ -789,7 +789,7 @@ BattleTowerMons:
 
 	db BLISSEY
 	db BRIGHTPOWDER
-	db PSYCHIC_M, SUBMISSION, SOFTBOILED, COUNTER
+	db PSYCHIC_M, DOUBLE_EDGE, SOFTBOILED, COUNTER
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -799,7 +799,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 50000
 	dn 11, 13, 15, 14 ; DVs
-	db 16, 40, 16, 32 ; PP
+	db 16, 24, 16, 32 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
