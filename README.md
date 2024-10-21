@@ -163,6 +163,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
+- Psych Up no longer fails if the target has no stat changes, and now also copies the target's "pumped" status from Focus Energy.
+
 - Moves like Earthquake that can hit while the opponent is underground with Dig can now do so even if the digger is Flying-type (or a pseudo-Levitater).
 
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
