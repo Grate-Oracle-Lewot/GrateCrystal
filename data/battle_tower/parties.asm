@@ -658,7 +658,7 @@ BattleTowerMons:
 	db "HAGANE-RU@@"
 
 	db ALAKAZAM
-	db BERRY_JUICE
+	db GOLD_BERRY
 	db PSYCHIC_M, PSYCH_UP, PROTECT, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1048,7 +1048,7 @@ BattleTowerMons:
 	db "PUKURIN@@@@"
 
 	db NIDOKING
-	db BERRY
+	db GOLD_BERRY
 	db BLIZZARD, EARTHQUAKE, SURF, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 8000 ; Exp
