@@ -421,7 +421,7 @@ BattleTowerMons:
 	db "KABIGON@@@@"
 
 	db EXEGGUTOR
-	db KINGS_ROCK
+	db NO_ITEM
 	db TOXIC, GIGA_DRAIN, THIEF, CONFUSION
 	dw 0 ; OT ID
 	dt 560 ; Exp
@@ -1156,7 +1156,7 @@ BattleTowerMons:
 
 	db STARMIE
 	db LEFTOVERS
-	db THUNDER_WAVE, PSYCHIC_M, RECOVER, SURF
+	db THUNDERBOLT, PSYCHIC_M, RECOVER, SURF
 	dw 0 ; OT ID
 	dt 21760 ; Exp
 	; Stat exp
@@ -1208,7 +1208,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, TRI_ATTACK, SLASH, MUD_SLAP
+	db EARTHQUAKE, TRI_ATTACK, HEADBUTT, MUD_SLAP
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -2436,7 +2436,7 @@ BattleTowerMons:
 
 	db STARMIE
 	db SCOPE_LENS
-	db THUNDER_WAVE, RECOVER, THUNDERBOLT, SURF
+	db NIGHTMARE, RECOVER, THUNDERBOLT, SURF
 	dw 0 ; OT ID
 	dt 117360 ; Exp
 	; Stat exp
@@ -2462,7 +2462,7 @@ BattleTowerMons:
 
 	db DUGTRIO
 	db KINGS_ROCK
-	db EARTHQUAKE, SLASH, SKULL_BASH, TRI_ATTACK
+	db EARTHQUAKE, ROCK_SLIDE, SKULL_BASH, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2472,7 +2472,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 15, 7, 15, 14 ; DVs
-	db 16, 32, 8, 16 ; PP
+	db 16, 24, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -4004,7 +4004,7 @@ BattleTowerMons:
 	db "BANGIRASU@@"
 
 	db GENGAR
-	db NO_ITEM
+	db BERRY_JUICE
 	db THUNDERBOLT, SHADOW_BALL, CONFUSE_RAY, THIEF
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4290,8 +4290,8 @@ BattleTowerMons:
 	db "MARUMAIN@@@"
 
 	db DUGTRIO
-	db SCOPE_LENS
-	db SLASH, EARTHQUAKE, THIEF, MUD_SLAP
+	db NO_ITEM
+	db HEADBUTT, EARTHQUAKE, THIEF, MUD_SLAP
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
