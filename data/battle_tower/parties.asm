@@ -2121,7 +2121,7 @@ BattleTowerMons:
 
 	db HYPNO
 	db BRIGHTPOWDER
-	db CONFUSION, THUNDERPUNCH, NIGHT_TERROR, DISABLE
+	db PSYCHIC_M, THUNDERPUNCH, DARK_PULSE, DISABLE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2131,7 +2131,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 7, 7, 7, 10 ; DVs
-	db 40, 24, 16, 16 ; PP
+	db 16, 24, 24, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
