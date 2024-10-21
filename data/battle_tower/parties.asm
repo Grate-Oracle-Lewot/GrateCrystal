@@ -3219,7 +3219,7 @@ BattleTowerMons:
 
 	db SANDSLASH
 	db SCOPE_LENS
-	db EARTHQUAKE, SLASH, ICE_PUNCH, NIGHT_TERROR
+	db EARTHQUAKE, SLASH, ICE_PUNCH, SHADOW_CLAW
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3229,7 +3229,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 11, 7, 6, 7 ; DVs
-	db 16, 32, 24, 16 ; PP
+	db 16, 32, 24, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
