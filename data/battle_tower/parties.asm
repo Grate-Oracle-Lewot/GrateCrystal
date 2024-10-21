@@ -2514,7 +2514,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db KINGS_ROCK
-	db SKY_ATTACK, EARTHQUAKE, FIRE_BLAST, IRON_TAIL
+	db SKY_ATTACK, EARTHQUAKE, ROCK_SLIDE, IRON_HEAD
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2524,7 +2524,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 45000
 	dn 15, 13, 13, 13 ; DVs
-	db 8, 16, 8, 24 ; PP
+	db 8, 16, 24, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -2933,7 +2933,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db LEFTOVERS
-	db SKY_ATTACK, SUPERSONIC, EARTHQUAKE, BITE
+	db SKY_ATTACK, ROCK_SLIDE, EARTHQUAKE, BITE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -4239,7 +4239,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db MIRACLEBERRY
-	db SKY_ATTACK, REST, EARTHQUAKE, ROAR
+	db SKY_ATTACK, REST, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
