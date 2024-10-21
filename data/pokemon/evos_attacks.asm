@@ -3097,7 +3097,7 @@ GirafarigEvosAttacks:
 	db 33, PSYBEAM
 	db 44, CRUNCH
 	db 55, SKULL_BASH
-	db 66, NIGHT_TERROR
+	db 66, BEAT_UP
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
