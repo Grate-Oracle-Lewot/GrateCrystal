@@ -22,6 +22,7 @@ YoungsterJoey_ImportantBattleScript:
 	playmusic MUSIC_JOHTO_TRAINER_BATTLE
 	opentext
 	writetext Text_UseTackle
+	promptbutton
 	faceplayer
 	writetext Text_ThisIsABigBattle
 	waitbutton
