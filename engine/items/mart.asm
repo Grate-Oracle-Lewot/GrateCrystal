@@ -121,8 +121,9 @@ GetMart:
 	ld a, e
 	cp NUM_MARTS
 	jr c, .IsAMart
-	ld b, BANK(DefaultMart)
-	ld de, DefaultMart
+; default mart
+	ld b, BANK(MartCherrygrove)
+	ld de, MartCherrygrove
 	ret
 
 .IsAMart:
