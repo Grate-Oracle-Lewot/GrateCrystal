@@ -545,6 +545,7 @@ HoothootEggMoves:
 LedybaEggMoves:
 	db PSYBEAM
 	db BIDE
+	db AIR_SLASH
 	db SILVER_WIND
 	db SKY_ATTACK
 	db -1 ; end
