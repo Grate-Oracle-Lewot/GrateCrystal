@@ -996,7 +996,7 @@ BattleTowerMons:
 	db "MIRUTANKU@@"
 
 	db WIGGLYTUFF
-	db GOLD_BERRY
+	db BERRY_JUICE
 	db MOONBLAST, BLIZZARD, FIRE_BLAST, ATTRACT
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1021,31 +1021,31 @@ BattleTowerMons:
 	bigdw 44 ; SDef
 	db "PUKURIN@@@@"
 
-	db WIGGLYTUFF
-	db PINK_BOW
-	db PSYCHIC_M, SWAGGER, PSYCH_UP, HEADBUTT
+	db WHIMSICOTT
+	db TWISTEDSPOON
+	db SPORE, DREAM_EATER, GIGA_DRAIN, MOONBLAST
 	dw 0 ; OT ID
-	dt 8000 ; Exp
+	dt 0 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
-	dn 12, 7, 7, 7 ; DVs
-	db 16, 24, 16, 24 ; PP
+	dn 1, 7, 15, 15 ; DVs
+	db 16, 24, 8, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 101 ; HP
-	bigdw 101 ; Max HP
-	bigdw 48 ; Atk
-	bigdw 36 ; Def
-	bigdw 38 ; Spd
-	bigdw 54 ; SAtk
-	bigdw 40 ; SDef
-	db "PUKURIN@@@@"
+	bigdw 68 ; HP
+	bigdw 68 ; Max HP
+	bigdw 40 ; Atk
+	bigdw 50 ; Def
+	bigdw 66 ; Spd
+	bigdw 50 ; SAtk
+	bigdw 49 ; SDef
+	db "Percito@@@@"
 
 	db NIDOKING
 	db GOLD_BERRY
@@ -3282,7 +3282,7 @@ BattleTowerMons:
 	bigdw 30000
 	dn 7, 6, 5, 7 ; DVs
 	db 24, 16, 24, 24 ; PP
-	db 0 ; Happiness
+	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
@@ -4799,7 +4799,7 @@ BattleTowerMons:
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
 	db 8, 32, 8, 24 ; PP
-	db 255 ; Happiness
+	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
