@@ -544,8 +544,8 @@ HoothootEggMoves:
 
 LedybaEggMoves:
 	db PSYBEAM
-	db BIDE
 	db AIR_SLASH
+	db RAPID_SPIN
 	db SILVER_WIND
 	db SKY_ATTACK
 	db DOUBLESLAP
@@ -597,6 +597,7 @@ CleffaEggMoves:
 IgglybuffEggMoves:
 	db DAZZLY_GLEAM
 	db METRONOME
+	db BIDE
 	db SONICBOOM
 	db SCREECH
 	db SUPERSONIC
