@@ -22,18 +22,11 @@ YoungsterJoey_ImportantBattleScript:
 	playmusic MUSIC_JOHTO_TRAINER_BATTLE
 	opentext
 	writetext Text_UseTackle
-	pause 30
-	closetext
-	playsound SFX_TACKLE
-	applymovement ROUTE30_MONSTER2, Route30_JoeysRattataAttacksMovement
-	opentext
 	faceplayer
 	writetext Text_ThisIsABigBattle
 	waitbutton
-	turnobject ROUTE30_YOUNGSTER1, UP
 	closetext
-	playsound SFX_TACKLE
-	applymovement ROUTE30_MONSTER1, Route30_MikeysRattataAttacksMovement
+	turnobject ROUTE30_YOUNGSTER1, UP
 	special RestartMapMusic
 	end
 
@@ -236,18 +229,6 @@ Route30FruitTree2:
 
 Route30HiddenPotion:
 	hiddenitem POTION, EVENT_ROUTE_30_HIDDEN_POTION
-
-Route30_JoeysRattataAttacksMovement:
-	fix_facing
-	big_step UP
-	big_step DOWN
-	step_end
-
-Route30_MikeysRattataAttacksMovement:
-	fix_facing
-	big_step DOWN
-	big_step UP
-	step_end
 
 Text_UseTackle:
 	text "Go, RATTATA!"
