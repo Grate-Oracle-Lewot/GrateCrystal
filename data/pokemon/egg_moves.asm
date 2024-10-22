@@ -596,6 +596,7 @@ CleffaEggMoves:
 
 IgglybuffEggMoves:
 	db DAZZLY_GLEAM
+	db METRONOME
 	db SONICBOOM
 	db SCREECH
 	db SUPERSONIC
