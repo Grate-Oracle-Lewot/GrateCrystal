@@ -548,6 +548,7 @@ LedybaEggMoves:
 	db AIR_SLASH
 	db SILVER_WIND
 	db SKY_ATTACK
+	db DOUBLESLAP
 	db -1 ; end
 
 SpinarakEggMoves:
