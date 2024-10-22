@@ -149,7 +149,7 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F:
-	db 9 ; # items
+	db 10 ; # items
 	db TM_FAIRY_WIND
 	db TM_HEADBUTT
 	db TM_SWIFT
@@ -159,6 +159,7 @@ MartGoldenrod5F:
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_SELFDESTRUCT
+	db TM_THIEF
 	db -1 ; end
 
 MartOlivine:
@@ -443,11 +444,13 @@ MartUnderground:
 	db -1 ; end
 
 MartBerry:
-	db 4 ; # items
+	db 6 ; # items
 	db BERRY
 	db GOLD_BERRY
-	db MIRACLEBERRY
 	db MYSTERYBERRY
+	db MINT_BERRY
+	db BITTER_BERRY
+	db MIRACLEBERRY
 	db -1 ; end
 
 MartApricorn:
@@ -459,9 +462,4 @@ MartApricorn:
 	db WHT_APRICORN
 	db BLK_APRICORN
 	db PNK_APRICORN
-	db -1 ; end
-
-DefaultMart:
-	db 1 ; # items
-	db POTION
 	db -1 ; end
