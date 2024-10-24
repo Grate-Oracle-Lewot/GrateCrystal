@@ -5598,7 +5598,7 @@ Function1027eb:
 	ld c, 18
 	ld d, h
 	ld e, l
-	farcall _LinkTextbox
+	farcall LinkTextbox
 	ld de, .Stats_Trade
 	hlcoord 2, 16
 	jp PlaceString
@@ -5867,7 +5867,7 @@ Function1029cf:
 	ld c, 8
 	ld d, h
 	ld e, l
-	farcall _LinkTextbox
+	farcall LinkTextbox
 	ld de, String_102a26
 	hlcoord 12, 8
 	call PlaceString
@@ -6349,7 +6349,7 @@ Function102dc3:
 	ld c, 18
 	ld d, h
 	ld e, l
-	farcall _LinkTextbox
+	farcall LinkTextbox
 	ret
 
 Function102dd3:
@@ -6388,7 +6388,7 @@ Function102e07:
 	ld c, 11
 	ld d, h
 	ld e, l
-	farcall _LinkTextbox
+	farcall LinkTextbox
 
 .okay
 	ld de, .waiting
