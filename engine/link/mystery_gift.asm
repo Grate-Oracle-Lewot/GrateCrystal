@@ -1543,8 +1543,7 @@ InitMysteryGiftLayout:
 	call WaitBGMap
 	ld b, SCGB_MYSTERY_GIFT
 	call GetSGBLayout
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 .Load5GFX:
 	ld b, 5
@@ -1711,8 +1710,7 @@ endr
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 StageDataForNameCard:
 	ld de, wMysteryGiftStaging
@@ -1741,8 +1739,7 @@ StageDataForNameCard:
 	ld hl, s4_a007 ; address of MBC30 bank
 	ld bc, 12
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 InitNameCardLayout:
 	call ClearBGPalettes
