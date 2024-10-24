@@ -239,7 +239,7 @@ endc
 	ld hl, sNumDailyMysteryGiftPartnerIDs
 	ld a, [hl]
 	inc [hl]
-	ld hl, sDailyMysteryGiftPartnerIDs ; could have done "inc hl" instead
+	inc hl
 	ld e, a
 	ld d, 0
 	add hl, de
@@ -898,8 +898,7 @@ ReceiveIRHelloMessage:
 	ld d, 5
 	call SendInfraredLEDOn
 	ld d, 5
-	call SendInfraredLEDOff
-	ret
+	jp SendInfraredLEDOff
 
 SendIRHelloMessageAfterDelay:
 	; Wait a random amount of time
