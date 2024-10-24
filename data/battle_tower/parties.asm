@@ -136,7 +136,7 @@ BattleTowerMons:
 
 	db CORSOLA
 	db SCOPE_LENS
-	db SCALD, PSYCHIC_M, RECOVER, POWER_GEM
+	db SURF, PSYCHIC_M, RECOVER, POWER_GEM
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -146,7 +146,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 14, 15, 13 ; DVs
-	db 24, 16, 16, 24 ; PP
+	db 16, 16, 16, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
