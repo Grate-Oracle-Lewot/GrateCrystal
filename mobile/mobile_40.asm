@@ -6358,7 +6358,7 @@ Function102dd3:
 	ld hl, vTiles0
 	lb bc, BANK(MobileTradeLightsGFX), 4
 	call Get2bpp
-	farcall __LoadTradeScreenBorderGFX
+	farcall _LoadTradeScreenBorderGFX
 	jp EnableLCD
 
 Function102dec:
