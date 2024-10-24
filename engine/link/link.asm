@@ -556,8 +556,7 @@ LinkTimeout:
 	call ClearScreen
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call WaitBGMap2
-	ret
+	jp WaitBGMap2
 
 .LinkTimeoutText:
 	text_far _LinkTimeoutText
@@ -1964,27 +1963,6 @@ LinkTrade:
 	call SetTradeRoomBGPals
 	farcall Link_WaitBGMap
 
-; Check if either of the Pokémon sent was a Mew or Celebi, and send a different
-; byte depending on that. Presumably this would've been some prevention against
-; illicit trade machines, but it doesn't seem like a very effective one.
-; Removing this code breaks link compatibility with the vanilla gen2 games, but
-; has otherwise no consequence.
-	ld b, 1
-	pop af
-	ld c, a
-	cp MEW
-	jr z, .send_checkbyte
-	ld a, [wCurPartySpecies]
-	cp MEW
-	jr z, .send_checkbyte
-	ld b, 2
-	ld a, c
-	cp CELEBI
-	jr z, .send_checkbyte
-	ld a, [wCurPartySpecies]
-	cp CELEBI
-	jr z, .send_checkbyte
-
 ; Send the byte in a loop until the desired byte has been received.
 	ld b, 0
 .send_checkbyte
@@ -2057,8 +2035,7 @@ LoadTradeScreenBorderGFX:
 
 SetTradeRoomBGPals:
 	farcall LoadTradeRoomBGPals ; just a nested farcall; so wasteful
-	call SetPalettes
-	ret
+	jp SetPalettes
 
 INCLUDE "engine/movie/trade_animation.asm"
 
@@ -2154,8 +2131,7 @@ GetIncompatibleMonName:
 	add hl, bc
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	ret
+	jp GetPokemonName
 
 EnterTimeCapsule:
 	vc_patch NetworkDelay2
