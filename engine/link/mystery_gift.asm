@@ -1236,8 +1236,7 @@ ReceiveIRDataMessage:
 	jp z, InfraredLEDReceiveTimedOut
 
 	ld d, 16
-	call SendInfraredLEDOff
-	ret
+	jp SendInfraredLEDOff
 
 SendEmptyIRDataBlock:
 	ld b, 0
