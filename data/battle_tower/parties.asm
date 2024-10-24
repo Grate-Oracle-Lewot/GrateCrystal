@@ -581,7 +581,7 @@ BattleTowerMons:
 
 	db STARMIE
 	db GOLD_BERRY
-	db RECOVER, PSYCHIC_M, SURF, PSYCH_UP
+	db RECOVER, PSYCHIC_M, SCALD, PSYCH_UP
 	dw 0 ; OT ID
 	dt 5460 ; Exp
 	; Stat exp
@@ -591,7 +591,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 11, 13, 11 ; DVs
-	db 16, 16, 16, 16 ; PP
+	db 16, 16, 24, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -2043,7 +2043,7 @@ BattleTowerMons:
 
 	db OMASTAR
 	db BERRY_JUICE
-	db KINESIS, SURF, ANCIENTPOWER, PSYCHIC_M
+	db KINESIS, SCALD, ANCIENTPOWER, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2053,7 +2053,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
-	db 24, 16, 16, 16 ; PP
+	db 24, 24, 16, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -3586,7 +3586,7 @@ BattleTowerMons:
 
 	db QUAGSIRE
 	db MIRACLEBERRY
-	db EARTHQUAKE, SURF, SLUDGE_BOMB, IRON_TAIL
+	db EARTHQUAKE, SCALD, SLUDGE_BOMB, IRON_TAIL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3596,7 +3596,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 14, 13, 13 ; DVs
-	db 16, 16, 16, 24 ; PP
+	db 16, 24, 16, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
