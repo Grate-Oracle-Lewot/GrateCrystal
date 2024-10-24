@@ -16,7 +16,7 @@ INCBIN "gfx/trade/border_cable_top.tilemap"
 CableTradeBorderBottomTilemap:
 INCBIN "gfx/trade/border_cable_bottom.tilemap"
 
-_LinkTextbox:
+LinkTextbox:
 	ld h, d
 	ld l, e
 	push bc
@@ -124,9 +124,6 @@ LoadCableTradeBorderTilemap:
 	decoord 0, 16
 	ld bc, 2 * SCREEN_WIDTH
 	jp CopyBytes
-
-LinkTextbox:
-	jp _LinkTextbox
 
 PrintWaitingTextAndSyncAndExchangeNybble:
 	call LoadStandardMenuHeader
