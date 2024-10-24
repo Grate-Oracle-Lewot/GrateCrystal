@@ -1073,8 +1073,7 @@ SendIRDataMessage:
 	ld d, 5
 	call SendInfraredLEDOn
 	ld d, 17
-	call SendInfraredLEDOff
-	ret
+	jp SendInfraredLEDOff
 
 InfraredLEDReceiveTimedOut:
 	ldh a, [hMGStatusFlags]
