@@ -136,7 +136,7 @@ BattleTowerMons:
 
 	db CORSOLA
 	db SCOPE_LENS
-	db SURF, PSYCHIC_M, RECOVER, POWER_GEM
+	db SCALD, PSYCHIC_M, RECOVER, POWER_GEM
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -146,7 +146,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 14, 15, 13 ; DVs
-	db 16, 16, 16, 24 ; PP
+	db 24, 16, 16, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -1130,7 +1130,7 @@ BattleTowerMons:
 
 	db POLIWRATH
 	db BRIGHTPOWDER
-	db DOUBLE_TEAM, SURF, EARTHQUAKE, SUBMISSION
+	db DOUBLE_TEAM, SCALD, EARTHQUAKE, SUBMISSION
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1140,7 +1140,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 13, 15, 11 ; DVs
-	db 24, 16, 16, 40 ; PP
+	db 24, 24, 16, 40 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -1939,7 +1939,7 @@ BattleTowerMons:
 
 	db SLOWBRO
 	db MIRACLEBERRY
-	db SURF, PSYCHIC_M, EARTHQUAKE, BLIZZARD
+	db SCALD, PSYCHIC_M, EARTHQUAKE, BLIZZARD
 	dw 0 ; OT ID
 	dt 80000 ; Exp
 	; Stat exp
@@ -1949,7 +1949,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 11, 15, 12, 15 ; DVs
-	db 16, 16, 16, 8 ; PP
+	db 24, 16, 16, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
