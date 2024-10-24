@@ -5,33 +5,13 @@ __LoadTradeScreenBorderGFX:
 	ld de, LinkCommsBorderGFX
 	ld hl, vTiles2
 	lb bc, BANK(LinkCommsBorderGFX), 70
-	call Get2bpp
-	ret
+	jp Get2bpp
 
 LoadMobileTradeBorderTilemap:
 	ld hl, MobileTradeBorderTilemap
 	decoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyBytes
-	ret
-
-TestMobileTradeBorderTilemap: ; unreferenced
-; Loads the mobile trade border graphics and tilemap,
-; with a placeholder SCGB_DIPLOMA layout, and exits
-; after pressing A or B. Possibly used for testing.
-	call LoadStandardMenuHeader
-	call ClearBGPalettes
-	call ClearTilemap
-	call ClearSprites
-	farcall __LoadTradeScreenBorderGFX ; useless to farcall
-	farcall LoadMobileTradeBorderTilemap ; useless to farcall
-	ld b, SCGB_DIPLOMA
-	call GetSGBLayout
-	call SetPalettes
-	call WaitBGMap
-	call JoyWaitAorB
-	call Call_ExitMenu
-	ret
+	jp CopyBytes
 
 MobileTradeBorderTilemap:
 INCBIN "gfx/trade/border_mobile.tilemap"
@@ -119,22 +99,19 @@ InitTradeSpeciesList:
 	farcall PlaceTradePartnerNamesAndParty
 	hlcoord 10, 17
 	ld de, .CancelString
-	call PlaceString
-	ret
+	jp PlaceString
 
 .CancelString:
 	db "CANCEL@"
 
 _LoadTradeScreenBorderGFX:
-	call __LoadTradeScreenBorderGFX
-	ret
+	jp __LoadTradeScreenBorderGFX
 
 LinkComms_LoadPleaseWaitTextboxBorderGFX:
 	ld de, LinkCommsBorderGFX + $30 tiles
 	ld hl, vTiles2 tile $76
 	lb bc, BANK(LinkCommsBorderGFX), 8
-	call Get2bpp
-	ret
+	jp Get2bpp
 
 LoadTradeRoomBGPals:
 	farcall _LoadTradeRoomBGPals
@@ -149,20 +126,17 @@ LoadCableTradeBorderTilemap:
 	ld hl, CableTradeBorderBottomTilemap
 	decoord 0, 16
 	ld bc, 2 * SCREEN_WIDTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 LinkTextbox:
-	call _LinkTextbox
-	ret
+	jp _LinkTextbox
 
 PrintWaitingTextAndSyncAndExchangeNybble:
 	call LoadStandardMenuHeader
 	call .PrintWaitingText
 	farcall WaitLinkTransfer
 	call Call_ExitMenu
-	call WaitBGMap2
-	ret
+	jp WaitBGMap2
 
 .PrintWaitingText:
 	hlcoord 4, 10
@@ -182,8 +156,6 @@ PrintWaitingTextAndSyncAndExchangeNybble:
 
 LinkTradeMenu:
 	call .MenuAction
-	call .GetJoypad
-	ret
 
 .GetJoypad:
 	push bc
@@ -215,19 +187,17 @@ LinkTradeMenu:
 	call .UpdateCursor
 	call .UpdateBGMapAndOAM
 	call .loop2
-	jr nc, .done
+	ret nc
 	farcall _2DMenuInterpretJoypad
-	jr c, .done
+	ret c
 	ld a, [w2DMenuFlags1]
 	bit 7, a
-	jr nz, .done
+	ret nz
 	call .GetJoypad
 	ld b, a
 	ld a, [wMenuJoypadFilter]
 	and b
 	jr z, .loop
-
-.done
 	ret
 
 .UpdateBGMapAndOAM:
