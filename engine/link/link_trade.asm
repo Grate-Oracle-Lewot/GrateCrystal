@@ -1,12 +1,6 @@
 LinkCommsBorderGFX:
 INCBIN "gfx/trade/border_tiles.2bpp"
 
-__LoadTradeScreenBorderGFX:
-	ld de, LinkCommsBorderGFX
-	ld hl, vTiles2
-	lb bc, BANK(LinkCommsBorderGFX), 70
-	jp Get2bpp
-
 LoadMobileTradeBorderTilemap:
 	ld hl, MobileTradeBorderTilemap
 	decoord 0, 0
@@ -105,7 +99,10 @@ InitTradeSpeciesList:
 	db "CANCEL@"
 
 _LoadTradeScreenBorderGFX:
-	jp __LoadTradeScreenBorderGFX
+	ld de, LinkCommsBorderGFX
+	ld hl, vTiles2
+	lb bc, BANK(LinkCommsBorderGFX), 70
+	jp Get2bpp
 
 LinkComms_LoadPleaseWaitTextboxBorderGFX:
 	ld de, LinkCommsBorderGFX + $30 tiles
