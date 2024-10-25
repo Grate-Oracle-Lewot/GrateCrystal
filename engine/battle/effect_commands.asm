@@ -19,7 +19,6 @@ DoEnemyTurn:
 	jr z, DoTurn
 	cp BATTLEACTION_SWITCH1
 	ret nc
-
 	; fallthrough
 
 DoTurn:
@@ -2029,7 +2028,6 @@ BattleCommand_StatDownAnim:
 	ld a, BATTLEANIM_ENEMY_STAT_DOWN
 	jr z, BattleCommand_StatUpDownAnim
 	ld a, BATTLEANIM_WOBBLE
-
 	; fallthrough
 
 BattleCommand_StatUpDownAnim:
@@ -2336,7 +2334,6 @@ BattleCommand_SuperEffectiveLoopText:
 	call GetBattleVarAddr
 	bit SUBSTATUS_IN_LOOP, a
 	ret nz
-
 	; fallthrough
 
 BattleCommand_SuperEffectiveText:
@@ -2355,8 +2352,7 @@ BattleCommand_SuperEffectiveText:
 BattleCommand_CheckFaint:
 ; checkfaint
 
-; Faint the opponent if its HP reached zero
-;  and faint the user along with it if it used Destiny Bond.
+; Faint the opponent if its HP reached zero, and faint the user along with it if it used Destiny Bond.
 ; Ends the move effect if the opponent faints.
 
 	ld hl, wEnemyMonHP
@@ -2418,7 +2414,6 @@ BattleCommand_CheckFaint:
 	ld a, DESTINY_BOND
 	call LoadAnim
 	call BattleCommand_SwitchTurn
-
 	jr .finish
 
 .no_dbond
@@ -2444,9 +2439,6 @@ BattleCommand_CheckFaint:
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
 
-	jp .start
-
-.start
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -2575,7 +2567,6 @@ BattleCommand_DamageStats:
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, EnemyAttackDamage
-
 	; fallthrough
 
 PlayerAttackDamage:
@@ -2921,7 +2912,6 @@ BattleCommand_ClearMissDamage:
 	ld a, [wAttackMissed]
 	and a
 	ret z
-
 	jp ResetDamage
 
 HitSelfInConfusion:
@@ -3211,7 +3201,6 @@ DAMAGE_CAP EQU MAX_DAMAGE - MIN_DAMAGE
 	ld a, $ff
 	ldh [hQuotient + 2], a
 	ldh [hQuotient + 3], a
-
 	ret
 
 INCLUDE "data/types/type_boost_items.asm"
@@ -3268,7 +3257,7 @@ BattleCommand_ConstantDamage:
 	ld a, 0
 	jr nz, .got_power
 	ld b, 1
-	jr .got_power
+	; fallthrough
 
 .got_power
 	ld hl, wCurDamage
@@ -3349,6 +3338,7 @@ BattleCommand_ConstantDamage:
 	ld [hl], a
 	push hl
 	call EnemyAttackDamage
+	; fallthrough
 
 .notEnemysTurn
 	call BattleCommand_DamageCalc
@@ -3387,7 +3377,6 @@ FarPlayBattleAnimation:
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret nz
-
 	; fallthrough
 
 PlayFXAnimID:
@@ -3775,6 +3764,7 @@ BattleCommand_Poison:
 
 	ld hl, BadlyPoisonedText
 	call StdBattleTextbox
+	; fallthrough
 
 .finished
 	farcall UseHeldStatusHealingItem
@@ -4188,7 +4178,7 @@ BattleCommand_AccuracyUp2:
 BattleCommand_EvasionUp2:
 ; evasionup2
 	ld b, $10 | EVASION
-	jr BattleCommand_StatUp
+	; fallthrough
 
 BattleCommand_StatUp:
 ; statup
@@ -4389,6 +4379,7 @@ BattleCommand_AccuracyDown2:
 BattleCommand_EvasionDown2:
 ; evasiondown2
 	ld a, $10 | EVASION
+	; fallthrough
 
 BattleCommand_StatDown:
 ; statdown
@@ -4759,7 +4750,6 @@ LowerStat:
 	jr z, .player
 
 	call CalcEnemyStats
-
 	jr .finish
 
 .player
@@ -4918,6 +4908,7 @@ CalcBattleStats:
 	ldh [hQuotient + 3], a
 	ld a, HIGH(MAX_STAT_VALUE)
 	ldh [hQuotient + 2], a
+	; fallthrough
 
 .not_maxed_out
 	pop bc
@@ -4931,7 +4922,6 @@ CalcBattleStats:
 	pop af
 	dec a
 	jr nz, .loop
-
 	ret
 
 INCLUDE "engine/battle/move_effects/bide.asm"
@@ -5059,10 +5049,10 @@ BattleCommand_ForceSwitch:
 
 .trainer
 	call FindAliveEnemyMons
-	jr c, .switch_fail
+	jr c, .missed
 	ld a, [wEnemyGoesFirst]
 	and a
-	jr z, .switch_fail
+	jr z, .missed
 	call UpdateEnemyMonInParty
 	ld a, $1
 	ld [wBattleAnimParam], a
@@ -5106,9 +5096,6 @@ BattleCommand_ForceSwitch:
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
-.switch_fail
-	jp .fail
-
 .force_player_switch
 	ld a, [wAttackMissed]
 	and a
@@ -5136,7 +5123,6 @@ BattleCommand_ForceSwitch:
 	srl b
 	cp b
 	jr nc, .wild_succeed_playeristarget
-
 .player_miss
 	jr .fail
 
@@ -5156,7 +5142,7 @@ BattleCommand_ForceSwitch:
 
 	ld a, [wEnemyGoesFirst]
 	cp $1
-	jr z, .switch_fail
+	jr z, .fail
 
 	call UpdateBattleMonInParty
 	ld a, $1
@@ -5400,7 +5386,6 @@ BattleCommand_FlinchTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-
 	; fallthrough
 
 FlinchTarget:
@@ -5847,6 +5832,8 @@ BattleCommand_Confuse:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
+	; fallthrough
+
 BattleCommand_FinishConfusingTarget:
 	ld bc, wEnemyConfuseCount
 	ldh a, [hBattleTurn]
@@ -5991,7 +5978,6 @@ BattleCommand_DoubleUndergroundDamage:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret z
-
 	; fallthrough
 
 DoubleDamage:
@@ -6219,7 +6205,6 @@ TryPrintButItFailed:
 	ld a, [wAlreadyFailed]
 	and a
 	ret nz
-
 	; fallthrough
 
 PrintButItFailed:
@@ -6548,8 +6533,16 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 INCLUDE "engine/battle/move_effects/hail.asm"
 
 CheckHiddenOpponent:
-	xor a
-	ret
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVar
+	cpl
+	and 1 << SUBSTATUS_LOCK_ON
+	ret z
+
+ 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+ 	call GetBattleVar
+ 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+ 	ret
 
 GetUserItem:
 ; Return the effect of the user's item in bc, and its id at hl.
@@ -6644,7 +6637,6 @@ PlayDamageAnim:
 
 .player
 	ld [wNumHits], a
-
 	jp PlayUserBattleAnim
 
 LoadMoveAnim:
@@ -6656,12 +6648,10 @@ LoadMoveAnim:
 	call GetBattleVar
 	and a
 	ret z
-
 	; fallthrough
 
 LoadAnim:
 	ld [wFXAnimID], a
-
 	; fallthrough
 
 PlayUserBattleAnim:
@@ -6772,7 +6762,7 @@ AppearUserRaiseSub:
 	ret
 
 _CheckBattleScene:
-; Checks the options.  Returns carry if battle animations are disabled.
+; Checks the options. Returns carry if battle animations are disabled.
 	push hl
 	push de
 	push bc
