@@ -144,7 +144,6 @@ FailedBatonPass:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .failed
-
 	jr .run_away
 
 .failed
@@ -156,7 +155,6 @@ FailedBatonPass:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .failed
-
 	; fallthrough
 
 .run_away
