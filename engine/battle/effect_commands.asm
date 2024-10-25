@@ -538,7 +538,7 @@ CheckEnemyTurn:
 	ld hl, InfatuationText
 	call StdBattleTextbox
 	call CantMove
-	jp EndTurn
+	jr EndTurn
 
 .not_infatuated
 
@@ -555,7 +555,7 @@ CheckEnemyTurn:
 	call MoveDisabled
 
 	call CantMove
-	jp EndTurn
+	jr EndTurn
 
 .no_disabled_move
 
@@ -571,7 +571,6 @@ CheckEnemyTurn:
 	ld hl, FullyParalyzedText
 	call StdBattleTextbox
 	call CantMove
-
 	; fallthrough
 
 EndTurn:
