@@ -14,17 +14,14 @@
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; unusable
-	scene_script .DummyScene1 ; unusable
+	scene_script .DummyScene ; unusable
+	scene_script .DummyScene ; unusable
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Wesley
 
-.DummyScene0:
-	end
-
-.DummyScene1:
+.DummyScene:
 	end
 
 .FlyPoint:
