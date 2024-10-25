@@ -77,7 +77,6 @@ BattleCommand_Substitute:
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub
 	ld hl, TooWeakSubText
-.jp_stdbattletextbox
 	jp StdBattleTextbox
 
 .already_has_sub
