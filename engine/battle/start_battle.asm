@@ -1,6 +1,5 @@
 ShowLinkBattleParticipants:
-; If we're not in a communications room,
-; we don't need to be here.
+; If we're not in a communications room, we don't need to be here.
 	ld a, [wLinkMode]
 	and a
 	ret z
