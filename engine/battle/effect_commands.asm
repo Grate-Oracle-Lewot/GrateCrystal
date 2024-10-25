@@ -4908,7 +4908,6 @@ CalcBattleStats:
 	ldh [hQuotient + 3], a
 	ld a, HIGH(MAX_STAT_VALUE)
 	ldh [hQuotient + 2], a
-	; fallthrough
 
 .not_maxed_out
 	pop bc
