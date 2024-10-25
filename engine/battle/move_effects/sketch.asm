@@ -6,18 +6,16 @@ BattleCommand_Sketch:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
+.fail
 	call AnimateFailedMove
 	jp PrintNothingHappened
 
 .not_linked
-; If the opponent has a substitute up, fail.
-	call CheckSubstituteOpp
-	jp nz, .fail
 ; If the user is transformed, fail.
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	bit SUBSTATUS_TRANSFORMED, [hl]
-	jp nz, .fail
+	jr nz, .fail
 ; Get the user's moveset in its party struct.
 ; This move replacement shall be permanent.
 ; Pointer will be in de.
@@ -111,7 +109,3 @@ BattleCommand_Sketch:
 
 	ld hl, SketchedText
 	jp StdBattleTextbox
-
-.fail
-	call AnimateFailedMove
-	jp PrintDidntAffect
