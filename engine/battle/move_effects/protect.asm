@@ -38,7 +38,7 @@ ProtectChance:
 .loop
 	ld a, c
 	and a
-	jr z, .done
+	jr z, .rand
 	dec c
 
 	srl b
@@ -46,7 +46,6 @@ ProtectChance:
 	and a
 	jr nz, .loop
 	jr .failed
-.done
 
 .rand
 	call BattleRandom
