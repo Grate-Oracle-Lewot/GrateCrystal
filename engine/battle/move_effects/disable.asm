@@ -3,7 +3,7 @@ BattleCommand_Disable:
 
 	ld a, [wAttackMissed]
 	and a
-	jp nz, FailMove
+	jr nz, .failed
 
 	ld de, wEnemyDisableCount
 	ld hl, wEnemyMonMoves
@@ -16,14 +16,14 @@ BattleCommand_Disable:
 
 	ld a, [de]
 	and a
-	jp nz, FailMove
+	jr nz, .failed
 
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
-	jp z, FailMove
+	jr z, .failed
 	cp STRUGGLE
-	jp z, FailMove
+	jr z, .failed
 
 	ld b, a
 	ld c, $ff
@@ -43,7 +43,7 @@ BattleCommand_Disable:
 	add hl, bc
 	ld a, [hl]
 	and a
-	jp z, FailMove
+	jr z, .failed
 .loop2
 	call BattleRandom
 	and 7
@@ -67,3 +67,6 @@ BattleCommand_Disable:
 	call GetMoveName
 	ld hl, WasDisabledText
 	jp StdBattleTextbox
+
+.failed
+	jp FailMove
