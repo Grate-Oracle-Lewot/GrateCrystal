@@ -1719,6 +1719,15 @@ PocketPCFunction:
 
 CheckIfInPokemonLeague:
 	ld a, [wMapGroup]
+	cp GROUP_CIANWOOD_DARKROOM
+	jr nz, .no_darkroom
+	ld a, [wMapNumber]
+	cp MAP_CIANWOOD_DARKROOM
+	jr z, .carry
+	ld a, [wMapGroup]
+	; fallthrough
+
+.no_darkroom
  	cp GROUP_WILLS_ROOM
 	jr nz, .no_carry
 	ld a, [wMapNumber]
