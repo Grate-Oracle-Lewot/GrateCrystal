@@ -56,7 +56,7 @@ BattleCommand_Conversion:
 	ld a, [de]
 	dec de
 	cp [hl]
-	jr nz, .done
+	jr nz, .loop3
 .next
 	inc hl
 	jr .loop2
@@ -65,7 +65,6 @@ BattleCommand_Conversion:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
-.done
 .loop3
 	call BattleRandom
 	maskbits NUM_MOVES
