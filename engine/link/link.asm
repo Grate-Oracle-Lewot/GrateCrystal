@@ -197,7 +197,7 @@ endc
 	cp USING_INTERNAL_CLOCK
 	ld c, 66
 	call z, DelayFrames
-	ld de, MUSIC_BUG_CATCHING_CONTEST
+	ld de, MUSIC_SHOW_ME_AROUND
 	call PlayMusic
 	jp InitTradeMenuDisplay
 
@@ -524,7 +524,7 @@ endc
 	jp ExitLinkCommunications
 
 .ready_to_trade
-	ld de, MUSIC_BUG_CATCHING_CONTEST
+	ld de, MUSIC_SHOW_ME_AROUND
 	call PlayMusic
 	jp InitTradeMenuDisplay
 
