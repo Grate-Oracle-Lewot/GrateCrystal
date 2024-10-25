@@ -36,13 +36,33 @@ BattleCommand_PsychUp:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_FOCUS_ENERGY, [hl]
-	jr .done
+	jr .x_accuracy
 
 .res
 	call BattleCommand_SwitchTurn
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	res SUBSTATUS_FOCUS_ENERGY, [hl]
+
+.x_accuracy
+; Copy the special X Accuracy status
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_X_ACCURACY, [hl]
+	jr z, .res_x
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	set SUBSTATUS_X_ACCURACY, [hl]
+	jr .done
+
+.res_x
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_X_ACCURACY, [hl]
+
 .done
 	call AnimateCurrentMove
 	ld hl, CopiedStatsText
