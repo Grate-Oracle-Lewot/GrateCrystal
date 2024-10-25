@@ -3,7 +3,7 @@ BattleCommand_Spite:
 
 	ld a, [wAttackMissed]
 	and a
-	jp nz, PrintDidntAffect2
+	jr nz, .failed
 	ld hl, wEnemyMonMoves
 	ldh a, [hBattleTurn]
 	and a
@@ -13,9 +13,9 @@ BattleCommand_Spite:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
-	jp z, PrintDidntAffect2
+	jr z, .failed
 	cp STRUGGLE
-	jp z, PrintDidntAffect2
+	jr z, .failed
 	ld b, a
 	ld c, -1
 .loop
@@ -32,7 +32,7 @@ BattleCommand_Spite:
 	pop bc
 	ld a, [hl]
 	and PP_MASK
-	jp z, PrintDidntAffect2
+	jr z, .failed
 	push bc
 	call GetMoveName
 	; lose 5 PP
@@ -77,3 +77,6 @@ BattleCommand_Spite:
 	ld [wTextDecimalByte], a
 	ld hl, SpiteEffectText
 	jp StdBattleTextbox
+
+.failed
+	jp PrintDidntAffect2
