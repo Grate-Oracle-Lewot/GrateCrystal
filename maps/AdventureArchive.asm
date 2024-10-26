@@ -59,6 +59,11 @@ AdventureArchiveMachine4:
 	promptbutton
 	writetext AdventureArchive_EmptyText
 	callasm AdventureArchive_Machine4_2
+	promptbutton
+	writetext AdventureArchiveText4_3
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine4_3
 	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine5:
