@@ -154,7 +154,7 @@ AdventureArchive_Machine1:
 	call OpenSRAM
 
 	ld hl, sTrainerRankingBattleTowerWins
-	jr AdventureArchive_Print4Bytes
+	jp AdventureArchive_Print4Bytes
 
 AdventureArchive_Machine2_1:
 	ld a, BANK(sTrainerRankings)
