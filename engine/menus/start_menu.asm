@@ -236,7 +236,8 @@ StartMenu::
 	call GetLevelCap
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
-	ld bc, 1, 3 ; bytes, digits
+	ld b, 1 ; number of bytes to be printed
+	ld c, 3 ; number of digits to be printed
 	hlcoord 5, 4
 	call PrintNum
 .DoneClockText:
