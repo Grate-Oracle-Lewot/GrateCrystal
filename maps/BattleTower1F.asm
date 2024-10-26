@@ -4,6 +4,7 @@
 	const BATTLETOWER1F_COOLTRAINER_F
 	const BATTLETOWER1F_BUG_CATCHER
 	const BATTLETOWER1F_GRANNY
+	const BATTLETOWER1F_RECEPTIONIST2
 
 BattleTower1F_MapScripts:
 	def_scene_scripts
@@ -197,6 +198,9 @@ BattleTower1FBugCatcherScript:
 
 BattleTower1FGrannyScript:
 	jumptextfaceplayer Text_BattleTowerGranny
+
+BattleTower1FReceptionist2Script:
+	jumptextfaceplayer Text_BattleTowerReceptionist2
 
 MovementData_BattleTower1FWalkToElevator:
 	step UP
@@ -590,6 +594,19 @@ Text_BattleTowerBugCatcher:
 	line "any rock #MON…"
 	done
 
+Text_BattleTowerReceptionist2:
+	text "This way leads to"
+	line "the ADVENTURE"
+	cont "ARCHIVE."
+
+	para "There you can view"
+	line "all kinds of"
+
+	para "information about"
+	line "your history as a"
+	cont "trainer."
+	done
+
 BattleTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -609,3 +626,4 @@ BattleTower1F_MapEvents:
 	object_event  4,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTower1FCooltrainerFScript, -1
 	object_event  1,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleTower1FBugCatcherScript, -1
 	object_event 14,  3, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTower1FGrannyScript, -1
+	object_event 18,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BattleTower1FReceptionist2Script, -1
