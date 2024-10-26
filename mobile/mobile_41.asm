@@ -228,7 +228,7 @@ StubbedTrainerRankings_StepCount:
 	ld hl, sTrainerRankingStepCount
 	jp StubbedTrainerRankings_Increment4Byte
 
-StubbedTrainerRankings_BattleTowerWins:
+StubbedTrainerRankings_BattleTowerWins::
 	ld hl, sTrainerRankingBattleTowerWins
 	jp StubbedTrainerRankings_Increment4Byte
 
