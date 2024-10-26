@@ -241,7 +241,7 @@ AdventureArchive_Print3Bytes:
 
 	ld b, 3 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
-	hlcoord 1, 16
+	hlcoord 1, 14
 	jp PrintNum
 
 AdventureArchive_Machine10:
@@ -259,7 +259,7 @@ AdventureArchive_Print4Bytes:
 
 	ld b, 4 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
-	hlcoord 1, 16
+	hlcoord 1, 14
 	jp PrintNum
 
 AdventureArchive_Machine11:
@@ -295,7 +295,7 @@ AdventureArchive_Machine14:
 
 	ld b, 2 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
-	hlcoord 1, 16
+	hlcoord 1, 14
 	jp PrintNum
 
 AdventureArchive_Machine15:
@@ -310,7 +310,7 @@ AdventureArchive_Machine15:
 
 	ld b, PRINTNUM_MONEY | 4 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
-	hlcoord 1, 16
+	hlcoord 1, 14
 	jp PrintNum
 
 AdventureArchiveSuperNerdText:
