@@ -7,16 +7,13 @@
 
 CherrygroveCity_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CHERRYGROVECITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CHERRYGROVECITY_MEET_RIVAL
+	scene_script .DummyScene ; SCENE_CHERRYGROVECITY_NOTHING
+	scene_script .DummyScene ; SCENE_CHERRYGROVECITY_MEET_RIVAL
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
-.DummyScene0:
-	end
-
-.DummyScene1:
+.DummyScene:
 	end
 
 .FlyPoint:
