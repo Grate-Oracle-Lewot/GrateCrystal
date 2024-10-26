@@ -366,6 +366,7 @@ ENDM
 	map_const BATTLE_TOWER_ELEVATOR,                        2,  2 ; 15
 	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 16
 	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 17
+	map_const ADVENTURE_ARCHIVE,                           17,  4 ; 18
 	endgroup
 
 	newgroup MAHOGANY                                       ; group 24
