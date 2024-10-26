@@ -286,7 +286,7 @@ StubbedTrainerRankings_FruitPicked:
 
 StubbedTrainerRankings_Healings:
 	ld hl, sTrainerRankingHealings
-	jp StubbedTrainerRankings_Increment3Byte
+	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_MysteryGift:
 	ld hl, sTrainerRankingMysteryGift
@@ -324,12 +324,8 @@ StubbedTrainerRankings_LinkBattles:
 	ld hl, sTrainerRankingLinkBattles
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Splash:
-	; Only counts if it’s the player’s turn
-	ldh a, [hBattleTurn]
-	and a
-	ret nz
-	ld hl, sTrainerRankingSplash
+StubbedTrainerRankings_RockEncounters:
+	ld hl, sTrainerRankingRockEncounters
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_TreeEncounters:
