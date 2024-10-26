@@ -1420,7 +1420,6 @@ RockSmashScript:
 	disappear -2
 
 	callasm RockMonEncounter
-	readmem wTempWildMonSpecies
 	iffalse .no_battle
 	randomwildmon
 	startbattle
