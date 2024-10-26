@@ -198,6 +198,13 @@ AdventureArchive_Machine4_2:
 	ld hl, sTrainerRankingTreeEncounters
 	jr AdventureArchive_Print3Bytes
 
+AdventureArchive_Machine4_3:
+	ld a, BANK(sTrainerRankings)
+	call OpenSRAM
+
+	ld hl, sTrainerRankingRockEncounters
+	jr AdventureArchive_Print3Bytes
+
 AdventureArchive_Machine5:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
@@ -328,7 +335,7 @@ AdventureArchive_EmptyText:
 
 AdventureArchiveText1:
 	text "The number of"
-	line "times you've won"
+	line "battles you've won"
 
 	para "here at the BATTLE"
 	line "TOWER is…"
@@ -373,6 +380,13 @@ AdventureArchiveText4_2:
 	para "HEADBUTTED out of"
 	line "trees is…"
 	done
+
+AdventureArchiveText4_3:
+	text "The number of"
+	line "#MON you've"
+
+	para "found using ROCK"
+	line "SMASH is…"
 
 AdventureArchiveText5:
 	text "The number of"
