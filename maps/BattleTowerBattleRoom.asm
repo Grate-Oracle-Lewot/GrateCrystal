@@ -112,7 +112,7 @@ Script_BeatenAllTrainers2:
 	sjump Script_GivePlayerHisPrize
 
 BattleTowerBattleRoom_IncrementStubbedTrainerRankings:
-	farcall StubbedTrainerRankings_BattleTowerWins
+;	farcall StubbedTrainerRankings_BattleTowerWins
 	ret
 
 BattleTowerBattleRoom_MapEvents:
