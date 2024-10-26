@@ -229,12 +229,6 @@ StubbedTrainerRankings_StepCount:
 	jp StubbedTrainerRankings_Increment4Byte
 
 StubbedTrainerRankings_BattleTowerWins:
-	ld a, BANK(s5_aa8d)
-	call OpenSRAM
-	ld a, [s5_aa8d]
-	and a
-	call CloseSRAM
-	ret nz
 	ld hl, sTrainerRankingBattleTowerWins
 	jp StubbedTrainerRankings_Increment4Byte
 
