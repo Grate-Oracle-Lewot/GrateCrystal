@@ -266,7 +266,7 @@ sTrainerRankingLuckyNumberShow:: ds 3
 sTrainerRankingPhoneCalls:: ds 3
 sTrainerRankingUnused2:: ds 3
 sTrainerRankingLinkBattles:: ds 3
-sTrainerRankingSplash:: ds 3
+sTrainerRankingRockEncounters:: ds 3
 sTrainerRankingTreeEncounters:: ds 3
 sTrainerRankingUnused3:: ds 3
 sTrainerRankingColosseumWins:: ds 3
