@@ -6,20 +6,15 @@
 
 FastShip1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_DEFAULT
 	scene_script .EnterFastShip ; SCENE_FASTSHIP1F_ENTER_SHIP
-	scene_script .DummyScene2 ; SCENE_FASTSHIP1F_MEET_GRANDPA
+	scene_script .DummyScene ; SCENE_FASTSHIP1F_MEET_GRANDPA
 
 	def_callbacks
 
-.DummyScene0:
-	end
-
 .EnterFastShip:
 	sdefer .EnterFastShipScript
-	end
-
-.DummyScene2:
+.DummyScene:
 	end
 
 .EnterFastShipScript:
