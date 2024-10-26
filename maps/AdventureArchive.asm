@@ -468,4 +468,4 @@ AdventureArchive_MapEvents:
 	bg_event 30,  4, BGEVENT_READ, AdventureArchiveMachine15
 
 	def_object_events
-	object_event 29,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AdventureArchiveSuperNerdScript, -1
+	object_event 29,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AdventureArchiveSuperNerdScript, -1
