@@ -11,15 +11,12 @@
 
 Route42_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE42_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE42_SUICUNE
+	scene_script .DummyScene ; SCENE_ROUTE42_NOTHING
+	scene_script .DummyScene ; SCENE_ROUTE42_SUICUNE
 
 	def_callbacks
 
-.DummyScene0:
-	end
-
-.DummyScene1:
+.DummyScene:
 	end
 
 Route42SuicuneScript:
@@ -274,7 +271,7 @@ PokemaniacShaneAfterBattleText:
 	done
 
 Route42Sign1Text:
-	text "ROUTE 42"
+	text "ROUTE 42 :)"
 
 	para "ECRUTEAK CITY -"
 	line "MAHOGANY TOWN"
@@ -288,7 +285,7 @@ MtMortarSignText:
 	done
 
 Route42Sign2Text:
-	text "ROUTE 42"
+	text "ROUTE 42 :)"
 
 	para "MAHOGANY TOWN -"
 	line "ECRUTEAK CITY"
