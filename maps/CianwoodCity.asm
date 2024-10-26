@@ -14,16 +14,13 @@
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CIANWOODCITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script .DummyScene ; SCENE_CIANWOODCITY_NOTHING
+	scene_script .DummyScene ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
 
-.DummyScene0:
-	end
-
-.DummyScene1:
+.DummyScene:
 	end
 
 .FlyPointAndSuicune:
