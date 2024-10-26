@@ -251,7 +251,7 @@ AdventureArchive_Print3Bytes:
 	call CopyBytes
 	call CloseSRAM
 
-	ld bc, PRINTNUM_LEADINGZEROS | 3, 7
+	lb bc, PRINTNUM_LEADINGZEROS | 3, 7
 	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
@@ -269,7 +269,7 @@ AdventureArchive_Print4Bytes:
 	call CopyBytes
 	call CloseSRAM
 
-	ld bc, PRINTNUM_LEADINGZEROS | 4, 7
+	lb bc, PRINTNUM_LEADINGZEROS | 4, 7
 	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
@@ -305,7 +305,7 @@ AdventureArchive_Machine14:
 	call CopyBytes
 	call CloseSRAM
 
-	ld bc, PRINTNUM_LEADINGZEROS | 2, 7
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 7
 	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
@@ -320,7 +320,7 @@ AdventureArchive_Machine15:
 	call CopyBytes
 	call CloseSRAM
 
-	ld bc, PRINTNUM_LEADINGZEROS | 4, 7
+	lb bc, PRINTNUM_LEADINGZEROS | 4, 7
 	ld de, wStringBuffer1
 	hlcoord 2, 14
 	jp PrintNum
