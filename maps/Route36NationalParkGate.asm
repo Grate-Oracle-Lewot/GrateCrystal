@@ -22,14 +22,9 @@ Route36NationalParkGate_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .CheckIfContestRunning
 	callback MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
 .LeaveContestEarly:
 	sdefer .LeavingContestEarly
+.DummyScene:
 	end
 
 .CheckIfContestRunning:
