@@ -11,16 +11,13 @@
 
 DragonsDenB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DRAGONSDENB1F_NOTHING
-	scene_script .DummyScene1 ; SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
+	scene_script .DummyScene ; SCENE_DRAGONSDENB1F_NOTHING
+	scene_script .DummyScene ; SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .CheckSilver
 
-.DummyScene0:
-	end
-
-.DummyScene1:
+.DummyScene:
 	end
 
 .CheckSilver:
