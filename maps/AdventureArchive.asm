@@ -241,6 +241,7 @@ AdventureArchive_Print3Bytes:
 
 	ld b, 3 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
+	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
 
@@ -259,6 +260,7 @@ AdventureArchive_Print4Bytes:
 
 	ld b, 4 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
+	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
 
@@ -295,6 +297,7 @@ AdventureArchive_Machine14:
 
 	ld b, 2 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
+	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
 
@@ -310,6 +313,7 @@ AdventureArchive_Machine15:
 
 	ld b, PRINTNUM_MONEY | 4 ; number of bytes to be printed
 	ld c, 7 ; number of digits to be printed
+	ld de, wStringBuffer1
 	hlcoord 1, 14
 	jp PrintNum
 
