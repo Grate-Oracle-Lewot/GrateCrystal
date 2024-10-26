@@ -217,16 +217,16 @@ FishGroups:
 
 TimeFishGroups:
 	;  day              nite
-	db CORSOLA,    20,  STARYU,     20 ; 0
-	db CORSOLA,    40,  STARMIE,    40 ; 1
-	db SHELLDER,   20,  CLOYSTER,   20 ; 2
-	db CLOYSTER,   40,  CASTAWEIGH, 40 ; 3
-	db GOLDEEN,    20,  TANGELA,    20 ; 4
-	db SEAKING,    40,  TANGELA,    40 ; 5
-	db POLIWAG,    20,  GEODUDE,    20 ; 6
-	db POLIWHIRL,  40,  POLITOED,   40 ; 7
-	db DRATINI,    20,  DRAGONAIR,  20 ; 8
-	db DRAGONAIR,  40,  DUNSPARCE,  40 ; 9
+	db CORSOLA,    20,  STARYU,     20 ;  0
+	db CORSOLA,    40,  STARMIE,    40 ;  1
+	db SHELLDER,   20,  CLOYSTER,   20 ;  2
+	db CLOYSTER,   40,  CASTAWEIGH, 40 ;  3
+	db GOLDEEN,    20,  TANGELA,    20 ;  4
+	db SEAKING,    40,  TANGELA,    40 ;  5
+	db POLIWAG,    20,  GEODUDE,    20 ;  6
+	db POLIWHIRL,  40,  POLITOED,   40 ;  7
+	db DRATINI,    20,  DRAGONAIR,  20 ;  8
+	db DRAGONAIR,  40,  DUNSPARCE,  40 ;  9
 	db QWILFISH,   21,  QWILFISH,   19 ; 10
 	db QWILFISH,   42,  QWILFISH,   40 ; 11
 	db REMORAID,   20,  OCTILLERY,  20 ; 12
