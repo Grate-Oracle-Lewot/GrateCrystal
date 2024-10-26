@@ -409,6 +409,7 @@ Cianwood_Map_Names: ; CIANWOOD
 	dw Cianwood_Map_Name15 ; BATTLE_TOWER_ELEVATOR
 	dw Cianwood_Map_Name16 ; BATTLE_TOWER_HALLWAY
 	dw Cianwood_Map_Name17 ; BATTLE_TOWER_BATTLE_ROOM
+	dw Cianwood_Map_Name18 ; ADVENTURE_ARCHIVE
 	assert_table_length NUM_CIANWOOD_MAPS
 
 Mahogany_Map_Names: ; MAHOGANY
@@ -1124,6 +1125,8 @@ Cianwood_Map_Name16: ; BATTLE_TOWER_HALLWAY
 	db "BATTLE TOWER HALL@"
 Cianwood_Map_Name17: ; BATTLE_TOWER_BATTLE_ROOM
 	db "BATTLE TOWER@"
+Cianwood_Map_Name18: ; ADVENTURE_ARCHIVE
+	db "ADVENTURE ARCHIVE@"
 
 Mahogany_Map_Name1: ; MAHOGANY_TOWN
 	db "MAHOGANY TOWN@"
