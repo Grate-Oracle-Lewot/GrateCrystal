@@ -42,8 +42,8 @@ Route3Pokecenter1FGameboyKidText:
 
 Route3Pokecenter1FLassText:
 	text "This #MON CEN-"
-	line "TER is the newest"
-	cont "one in KANTO."
+	line "TER got rebuilt"
+	cont "recently."
 
 	para "It's got that new"
 	line "building smell!"
