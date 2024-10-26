@@ -467,6 +467,9 @@ DeleteMobileEventIndex:
 
 InitializeTrainerRankings:
 ; Initializes Trainer Rankings data for a new save file.
+	ld a, BANK(sTrainerRankings)
+	call OpenSRAM
+
 	ld hl, sTrainerRankings
 	ld bc, sTrainerRankingsEnd - sTrainerRankings
 	xor a
@@ -482,7 +485,8 @@ InitializeTrainerRankings:
 	ld hl, sTrainerRankings
 	ld de, sTrainerRankingsBackup
 	ld bc, sTrainerRankingsEnd - sTrainerRankings
-	jp CopyBytes
+	call CopyBytes
+	jp CloseSRAM
 
 _MobilePrintNum::
 ; Supports signed 31-bit integers (up to 10 digits)
