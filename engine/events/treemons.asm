@@ -2,8 +2,6 @@ INCLUDE "data/wild/treemon_maps.asm"
 INCLUDE "data/wild/treemons.asm"
 
 TreeMonEncounter:
-	farcall StubbedTrainerRankings_TreeEncounters
-
 	xor a
 	ld [wTempWildMonSpecies], a
 	ld [wCurPartyLevel], a
@@ -18,6 +16,7 @@ TreeMonEncounter:
 	call GetTreeMon
 	jr nc, .no_battle
 
+	farcall StubbedTrainerRankings_TreeEncounters
 	ld a, BATTLETYPE_TREE
 	ld [wBattleType], a
 	ld a, 1
@@ -259,6 +258,10 @@ RockMonEncounter:
 
 	call SelectTreeMon
 	jr nc, .no_battle
+
+	farcall StubbedTrainerRankings_RockEncounters
+	ld a, 1
+	ld [wScriptVar], a
 	ret
 
 .no_battle
