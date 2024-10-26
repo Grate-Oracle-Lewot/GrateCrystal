@@ -240,7 +240,7 @@ SECTION "SRAM Mobile 2", SRAM
 sTrainerRankings::
 sTrainerRankingGameTimeHOF:: ds 4
 sTrainerRankingStepCountHOF:: ds 4
-sTrainerRankingHealingsHOF:: ds 4
+sTrainerRankingHealingsHOF:: ds 4 ; one byte unused(?)
 sTrainerRankingBattlesHOF:: ds 3
 sTrainerRankingStepCount:: ds 4
 sTrainerRankingBattleTowerWins:: ds 4
