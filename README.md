@@ -167,6 +167,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Moves like Earthquake that can hit while the opponent is underground with Dig can now do so even if the digger is Flying-type (or a pseudo-Levitater).
 
+- Transform and Sketch work through Dig, Substitute, etc.
+
 - If you use Substitute whilst already having a Substitute up, it raises both your Defense and Special Defense by one stage each.
 
 - If you use Focus Energy while already pumped, it raises both your Attack and Special Attack by one stage each.
