@@ -982,3 +982,6 @@ MountMoonB1F_Blocks:
 
 MountMoonB2F_Blocks:
 	INCBIN "maps/MountMoonB2F.blk"
+
+AdventureArchive_Blocks:
+	INCBIN "maps/AdventureArchive.blk"
