@@ -16,11 +16,9 @@ StubbedTrainerRankings_HallOfFame2::
 	ld bc, 4
 	call CopyBytes
 
-	; sTrainerRankingHealings is only a 3-byte value.
-	; One extraneous byte is copied from sTrainerRankingMysteryGift.
 	ld hl, sTrainerRankingHealings
 	ld de, sTrainerRankingHealingsHOF
-	ld bc, 4
+	ld bc, 3
 	call CopyBytes
 
 	ld hl, sTrainerRankingBattles
@@ -230,7 +228,7 @@ StubbedTrainerRankings_StepCount:
 	ld hl, sTrainerRankingStepCount
 	jp StubbedTrainerRankings_Increment4Byte
 
-StubbedTrainerRankings_BattleTowerWins: ; unreferenced
+StubbedTrainerRankings_BattleTowerWins:
 	ld a, BANK(s5_aa8d)
 	call OpenSRAM
 	ld a, [s5_aa8d]
@@ -238,7 +236,7 @@ StubbedTrainerRankings_BattleTowerWins: ; unreferenced
 	call CloseSRAM
 	ret nz
 	ld hl, sTrainerRankingBattleTowerWins
-	jp StubbedTrainerRankings_Increment2Byte
+	jp StubbedTrainerRankings_Increment4Byte
 
 StubbedTrainerRankings_TMsHMsTaught:
 	ld hl, sTrainerRankingTMsHMsTaught
