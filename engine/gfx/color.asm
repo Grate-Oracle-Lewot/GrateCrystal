@@ -117,7 +117,7 @@ LoadTrainerClassPaletteAsNthBGPal:
 
 LoadMonPaletteAsNthBGPal:
 	ld a, [wCurPartySpecies]
-	call _GetMonPalettePointer
+	call GetMonPalettePointer
 	ld a, e
 	bit 7, a
 	jr z, LoadNthMiddleBGPal
@@ -547,13 +547,10 @@ GetTrainerPalettePointer:
 	add hl, bc
 	ret
 
-GetMonPalettePointer:
-	jp _GetMonPalettePointer
-
 BattleObjectPals:
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
-_GetMonPalettePointer:
+GetMonPalettePointer:
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -565,7 +562,7 @@ _GetMonPalettePointer:
 
 GetMonNormalOrShinyPalettePointer:
 	push bc
-	call _GetMonPalettePointer
+	call GetMonPalettePointer
 	pop bc
 	push hl
 	call CheckShininess
