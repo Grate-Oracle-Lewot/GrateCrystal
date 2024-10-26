@@ -34,6 +34,7 @@ Script_BattleRoomLoop:
 	special FadeOutPalettes
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
+	callasm BattleTowerBattleRoom_IncrementStubbedTrainerRankings
 	readmem wNrOfBeatenBattleTowerTrainers
 	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
 	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
@@ -109,6 +110,10 @@ Script_BeatenAllTrainers2:
 	opentext
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
 	sjump Script_GivePlayerHisPrize
+
+BattleTowerBattleRoom_IncrementStubbedTrainerRankings:
+	farcall StubbedTrainerRankings_BattleTowerWins
+	ret
 
 BattleTowerBattleRoom_MapEvents:
 	db 0, 0 ; filler
