@@ -7,154 +7,154 @@ AdventureArchive_MapScripts:
 	def_callbacks
 
 AdventureArchiveSuperNerdScript:
-  jumptextfaceplayer AdventureArchiveSuperNerdText
+	jumptextfaceplayer AdventureArchiveSuperNerdText
 
 AdventureArchive_EndText:
-  waitbutton
-  closetext
-  end
+	waitbutton
+	closetext
+	end
 
 AdventureArchiveMachine1:
-  opentext
-  writetext AdventureArchiveText1
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine1
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText1
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine1
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine2:
-  opentext
-  writetext AdventureArchiveText2_1
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine2_1
-  promptbutton
-  writetext AdventureArchiveText2_2
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine2_2
-  promptbutton
-  writetext AdventureArchiveText2_3
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine2_3
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText2_1
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine2_1
+	promptbutton
+	writetext AdventureArchiveText2_2
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine2_2
+	promptbutton
+	writetext AdventureArchiveText2_3
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine2_3
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine3:
-  opentext
-  writetext AdventureArchiveText3
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine3
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText3
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine3
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine4:
-  opentext
-  writetext AdventureArchiveText4_1
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine4_1
-  promptbutton
-  writetext AdventureArchiveText4_2
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine4_2
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText4_1
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine4_1
+	promptbutton
+	writetext AdventureArchiveText4_2
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine4_2
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine5:
-  opentext
-  writetext AdventureArchiveText5
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine5
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText5
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine5
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine6:
-  opentext
-  writetext AdventureArchiveText6
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine6
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText6
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine6
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine7:
-  opentext
-  writetext AdventureArchiveText7
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine7
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText7
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine7
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine8:
-  opentext
-  writetext AdventureArchiveText8
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine8
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText8
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine8
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine9:
-  opentext
-  writetext AdventureArchiveText9
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine9
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText9
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine9
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine10:
-  opentext
-  writetext AdventureArchiveText10
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine10
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText10
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine10
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine11:
-  opentext
-  writetext AdventureArchiveText11
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine11
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText11
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine11
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine12:
-  opentext
-  writetext AdventureArchiveText12
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine12
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText12
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine12
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine13:
-  opentext
-  writetext AdventureArchiveText13
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine13
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText13
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine13
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine14:
-  opentext
-  writetext AdventureArchiveText14
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine14
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText14
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine14
+	sjump AdventureArchive_EndText
 
 AdventureArchiveMachine15:
-  opentext
-  writetext AdventureArchiveText15
-  promptbutton
-  writetext AdventureArchive_EmptyText
-  callasm AdventureArchive_Machine15
-  sjump AdventureArchive_EndText
+	opentext
+	writetext AdventureArchiveText15
+	promptbutton
+	writetext AdventureArchive_EmptyText
+	callasm AdventureArchive_Machine15
+	sjump AdventureArchive_EndText
 
 AdventureArchive_Machine1:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
 
 	ld hl, sTrainerRankingBattleTowerWins
-  jr AdventureArchive_Print4Bytes
+	jr AdventureArchive_Print4Bytes
 
 AdventureArchive_Machine2_1:
 	ld a, BANK(sTrainerRankings)
@@ -231,7 +231,7 @@ AdventureArchive_Machine9:
 	call OpenSRAM
 
 	ld hl, sTrainerRankingWhiteOuts
-  ; fallthrough
+	; fallthrough
 
 AdventureArchive_Print3Bytes:
 	ld de, wStringBuffer1
@@ -249,7 +249,7 @@ AdventureArchive_Machine10:
 	call OpenSRAM
 
 	ld hl, sTrainerRankingStepCount
-  ; fallthrough
+	; fallthrough
 
 AdventureArchive_Print4Bytes:
 	ld de, wStringBuffer1
@@ -314,132 +314,132 @@ AdventureArchive_Machine15:
 	jp PrintNum
 
 AdventureArchiveSuperNerdText:
-  text "How do they know"
-  line "all this stuff…?"
-  done
+	text "How do they know"
+	line "all this stuff…?"
+	done
 
 AdventureArchive_EmptyText:
-  text " "
-  done
+	text " "
+	done
 
 AdventureArchiveText1:
-  text "The number of"
-  line "times you've won"
+	text "The number of"
+	line "times you've won"
 
-  para "here at the BATTLE"
-  line "TOWER is…"
-  done
+	para "here at the BATTLE"
+	line "TOWER is…"
+	done
 
 AdventureArchiveText2_1:
-  text "The number of wild"
-  line "#MON you've"
-  cont "battled is…"
-  done
+	text "The number of wild"
+	line "#MON you've"
+	cont "battled is…"
+	done
 
 AdventureArchiveText2_2:
-  text "The number of"
-  line "trainers you've"
-  cont "battled is…"
-  done
+	text "The number of"
+	line "trainers you've"
+	cont "battled is…"
+	done
 
 AdventureArchiveText2_3:
-  text "The total number"
-  line "of battles you've"
-  cont "fought is…"
-  done
+	text "The total number"
+	line "of battles you've"
+	cont "fought is…"
+	done
 
 AdventureArchiveText3:
-  text "The number of wild"
-  line "#MON you've"
-  cont "caught is…"
-  done
+	text "The number of wild"
+	line "#MON you've"
+	cont "caught is…"
+	done
 
 AdventureArchiveText4_1:
-  text "The number of"
-  line "#MON you've"
+	text "The number of"
+	line "#MON you've"
 
-  para "hooked with a ROD"
-  line "is…"
-  done
+	para "hooked with a ROD"
+	line "is…"
+	done
 
 AdventureArchiveText4_2:
-  text "The number of"
-  line "#MON you've"
+	text "The number of"
+	line "#MON you've"
 
-  para "HEADBUTTED out of"
-  line "trees is…"
-  done
+	para "HEADBUTTED out of"
+	line "trees is…"
+	done
 
 AdventureArchiveText5:
-  text "The number of"
-  line "#MON you've"
-  cont "evolved is…"
-  done
+	text "The number of"
+	line "#MON you've"
+	cont "evolved is…"
+	done
 
 AdventureArchiveText6:
-  text "The number of EGGS"
-  line "you've hatched is…"
-  done
+	text "The number of EGGS"
+	line "you've hatched is…"
+	done
 
 AdventureArchiveText7:
-  text "The number of"
-  line "moves you've taught"
-  cont "via TM or HM is…"
-  done
+	text "The number of"
+	line "moves you've taught"
+	cont "via TM or HM is…"
+	done
 
 AdventureArchiveText8:
-  text "The number of"
-  line "times you've healed"
-  cont "your party is…"
-  done
+	text "The number of"
+	line "times you've healed"
+	cont "your party is…"
+	done
 
 AdventureArchiveText9:
-  text "The number of"
-  line "times you've"
-  cont "blacked out is…"
-  done
+	text "The number of"
+	line "times you've"
+	cont "blacked out is…"
+	done
 
 AdventureArchiveText10:
-  text "The total number"
-  line "of steps you've"
-  cont "walked is…"
-  done
+	text "The total number"
+	line "of steps you've"
+	cont "walked is…"
+	done
 
 AdventureArchiveText11:
-  text "The number of"
-  line "times you've used"
-  cont "FLY is…"
-  done
+	text "The number of"
+	line "times you've used"
+	cont "FLY is…"
+	done
 
 AdventureArchiveText12:
-  text "The number of"
-  line "times you've picked"
+	text "The number of"
+	line "times you've picked"
 
-  para "fruit from trees"
-  line "is…"
-  done
+	para "fruit from trees"
+	line "is…"
+	done
 
 AdventureArchiveText13:
-  text "The number of"
-  line "times your #MON"
+	text "The number of"
+	line "times your #MON"
 
-  para "have used SELF-"
-  line "DESTRUCT is…"
-  done
+	para "have used SELF-"
+	line "DESTRUCT is…"
+	done
 
 AdventureArchiveText14:
-  text "Your best score in"
-  line "the Bug-Catching"
-  cont "Contest was…"
-  done
+	text "Your best score in"
+	line "the Bug-Catching"
+	cont "Contest was…"
+	done
 
 AdventureArchiveText15:
-  text "The total amount"
-  line "of money you've"
+	text "The total amount"
+	line "of money you've"
 
-  para "won from battles"
-  line "is…"
-  done
+	para "won from battles"
+	line "is…"
+	done
 
 AdventureArchive_MapEvents:
 	db 0, 0 ; filler
