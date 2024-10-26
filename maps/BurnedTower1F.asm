@@ -11,20 +11,15 @@
 BurnedTower1F_MapScripts:
 	def_scene_scripts
 	scene_script .EusineScene ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_BURNEDTOWER1F_RIVAL_BATTLE
-	scene_script .DummyScene2 ; SCENE_BURNEDTOWER1F_NOTHING
+	scene_script .DummyScene ; SCENE_BURNEDTOWER1F_RIVAL_BATTLE
+	scene_script .DummyScene ; SCENE_BURNEDTOWER1F_NOTHING
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .HoleAndLadder
 
 .EusineScene:
 	sdefer .MeetEusine
-	end
-
-.DummyScene1:
-	end
-
-.DummyScene2:
+.DummyScene:
 	end
 
 .HoleAndLadder:
