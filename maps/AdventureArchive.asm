@@ -150,7 +150,7 @@ AdventureArchiveMachine15:
 	opentext
 	writetext AdventureArchiveText15
 	promptbutton
-	writetext AdventureArchive_EmptyText
+	writetext AdventureArchive_MoneyText
 	callasm AdventureArchive_Machine15
 	sjump AdventureArchive_EndText
 
@@ -252,10 +252,11 @@ AdventureArchive_Print3Bytes:
 	call CloseSRAM
 
 	ld b, 3 ; number of bytes to be printed
-	ld c, 7 ; number of digits to be printed
+	ld c, 10 ; number of digits to be printed
 	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	farcall _MobilePrintNum
+	ret
 
 AdventureArchive_Machine10:
 	ld a, BANK(sTrainerRankings)
@@ -271,10 +272,11 @@ AdventureArchive_Print4Bytes:
 	call CloseSRAM
 
 	ld b, 4 ; number of bytes to be printed
-	ld c, 7 ; number of digits to be printed
+	ld c, 10 ; number of digits to be printed
 	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	farcall _MobilePrintNum
+	ret
 
 AdventureArchive_Machine11:
 	ld a, BANK(sTrainerRankings)
@@ -308,10 +310,11 @@ AdventureArchive_Machine14:
 	call CloseSRAM
 
 	ld b, 2 ; number of bytes to be printed
-	ld c, 7 ; number of digits to be printed
+	ld c, 10 ; number of digits to be printed
 	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	farcall _MobilePrintNum
+	ret
 
 AdventureArchive_Machine15:
 	ld a, BANK(sTrainerRankings)
@@ -323,11 +326,12 @@ AdventureArchive_Machine15:
 	call CopyBytes
 	call CloseSRAM
 
-	ld b, PRINTNUM_MONEY | 4 ; number of bytes to be printed
-	ld c, 7 ; number of digits to be printed
+	ld b, 4 ; number of bytes to be printed
+	ld c, 10 ; number of digits to be printed
 	ld de, wStringBuffer1
-	hlcoord 1, 14
-	jp PrintNum
+	hlcoord 2, 14
+	farcall _MobilePrintNum
+	ret
 
 AdventureArchiveSuperNerdText:
 	text "How do they know"
@@ -336,6 +340,10 @@ AdventureArchiveSuperNerdText:
 
 AdventureArchive_EmptyText:
 	text " "
+	done
+
+AdventureArchive_MoneyText:
+	text "¥"
 	done
 
 AdventureArchiveText1:
