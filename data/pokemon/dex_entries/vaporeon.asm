@@ -1,4 +1,4 @@
-	db "BUBBLE JET@" ; species name
+	db "SIREN@" ; species name
 	dw 303, 640 ; height, weight
 
 	db   "Its skin secretes"
