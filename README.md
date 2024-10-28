@@ -263,7 +263,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Gift Pokémon can be sent to the PC, no longer requiring an empty party slot (with a few exceptions such as the above Dratini, due to unique code)
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
-- Tweaks to enemy trainer AI
+- Tweaks to enemy trainer AI, keeping it aware of all these other changes
 - Pokéfans and a few other trainers use nicknames for their Pokémon
 - Chansey NPCs in Pokémon Centers, Delibird NPCs in Poké Marts, and nurses and clerks are color-coded based on the city's name
 - Color-coded starter balls
