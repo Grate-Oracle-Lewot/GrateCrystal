@@ -941,15 +941,24 @@ AI_Smart_ForceSwitch:
 	jp z, AIDiscourageMove
 
 ; Encourage this move if the player has Spikes around them.
+; Else, merge into AI_Smart_BaseSwitchScore.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	jr z, .no_spikes
+	jr z, AI_Smart_BaseSwitchScore
 	dec [hl]
 	ret
 
-; Discourage this move if the player has not shown a super-effective move against the enemy.
+AI_Smart_BatonPass:
+; Dismiss this move if the enemy has only one Pokemon [remaining].
+	push hl
+	farcall FindAliveEnemyMons
+	pop hl
+	jp c, AIDiscourageMove
+	; fallthrough
+
+AI_Smart_BaseSwitchScore:
+; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
-.no_spikes
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
@@ -1932,15 +1941,18 @@ AI_Smart_Foresight:
 	ret
 
 AI_Smart_PerishSong:
+; Heavily discourage this move if the enemy has only one Pokemon [remaining].
 	push hl
 	callfar FindAliveEnemyMons
 	pop hl
 	jr c, .no
 
+; Else, 50% chance to encourage this move if the player can't escape.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .yes
 
+; Else, consider type matchups and possibly discourage this move.
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
@@ -2246,19 +2258,6 @@ AI_Smart_Earthquake:
 	call IsInByteArray
 	pop hl
 	jp c, AIDiscourageMove
-	ret
-
-AI_Smart_BatonPass:
-; Discourage this move if the player hasn't shown super-effective moves against the enemy.
-; Consider player's type(s) if its moves are unknown.
-
-	push hl
-	callfar CheckPlayerMoveTypeMatchups
-	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE
-	pop hl
-	ret c
-	inc [hl]
 	ret
 
 AI_Smart_Pursuit:
