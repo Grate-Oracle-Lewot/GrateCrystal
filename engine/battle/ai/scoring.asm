@@ -423,7 +423,7 @@ AI_Smart_Sleep:
 	ret
 
 AI_Smart_LeechHit:
-; Greatly discourage this move if user will take Liquid Ooze damage.
+; Greatly discourage this move if the enemy mon will take Liquid Ooze damage.
 	ld a, [wEnemyMonType1]
 	cp POISON
 	jr z, .dont_discourage
@@ -2623,8 +2623,8 @@ AI_Smart_Stomp:
 	ret
 
 AI_Smart_Solarbeam:
-; 80% chance to encourage this move when it's sunny.
-; 90% chance to discourage this move when it's raining or hailing.
+; 80% chance to greatly encourage this move when it's sunny.
+; 90% chance to greatly discourage this move when it's raining or hailing.
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
