@@ -436,7 +436,7 @@ AI_Smart_LeechHit:
 	jr z, .discourage
 	ld a, [wBattleMonType2]
 	cp POISON
-	jr z, .discourage
+	jr nz, .dont_discourage
 
 .discourage
 	inc [hl]
