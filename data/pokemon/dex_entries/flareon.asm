@@ -1,4 +1,4 @@
-	db "FLAME@" ; species name
+	db "FOXFIRE@" ; species name
 	dw 211, 550 ; height, weight
 
 	db   "Its fur is fire-"
