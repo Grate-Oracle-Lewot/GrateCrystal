@@ -1,4 +1,4 @@
-	db "LIGHTNING@" ; species name
+	db "STATIC@" ; species name
 	dw 207, 540 ; height, weight
 
 	db   "A hair plucked"
