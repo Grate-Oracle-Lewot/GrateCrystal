@@ -1,6 +1,4 @@
 BattleCommand_BatonPass:
-; batonpass
-
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
@@ -40,17 +38,16 @@ BattleCommand_BatonPass:
 
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
-
-	jp ResetBatonPassStatus
+	jr ResetBatonPassStatus
 
 .Enemy:
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	dec a ; WILDMON
-	jp z, FailedBatonPass
+	jr z, FailedBatonPass
 
 	call CheckAnyOtherAliveEnemyMons
-	jp z, FailedBatonPass
+	jr z, FailedBatonPass
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
@@ -74,53 +71,49 @@ BattleCommand_BatonPass:
 
 	ld hl, SpikesDamage
 	call CallBattleCore
+	; fallthrough
 
-	jp ResetBatonPassStatus
+ResetBatonPassStatus:
+; Reset status changes that aren't passed by Baton Pass.
 
-BatonPass_LinkPlayerSwitch:
-	ld a, [wLinkMode]
-	and a
-	ret z
+	; Nightmare isn't passed.
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and SLP
+	jr nz, .ok
 
-	ld a, BATTLEPLAYERACTION_USEITEM
-	ld [wBattlePlayerAction], a
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	res SUBSTATUS_NIGHTMARE, [hl]
+.ok
 
-	call LoadStandardMenuHeader
-	ld hl, LinkBattleSendReceiveAction
-	call CallBattleCore
-	call CloseWindow
+	; Disable isn't passed.
+	call ResetActorDisable
 
-	xor a ; BATTLEPLAYERACTION_USEMOVE
-	ld [wBattlePlayerAction], a
+	; Attraction isn't passed.
+	ld hl, wPlayerSubStatus1
+	res SUBSTATUS_IN_LOVE, [hl]
+	ld hl, wEnemySubStatus1
+	res SUBSTATUS_IN_LOVE, [hl]
+	ld hl, wPlayerSubStatus5
+
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_TRANSFORMED, [hl]
+	res SUBSTATUS_ENCORED, [hl]
+
+	; New mon hasn't used a move yet.
+	ld a, BATTLE_VARS_LAST_MOVE
+	call GetBattleVarAddr
+	ld [hl], 0
+
+	xor a
+	ld [wPlayerWrapCount], a
+	ld [wEnemyWrapCount], a
 	ret
 
-BatonPass_LinkEnemySwitch:
-	ld a, [wLinkMode]
-	and a
-	ret z
-
-	call LoadStandardMenuHeader
-	ld hl, LinkBattleSendReceiveAction
-	call CallBattleCore
-
-	ld a, [wOTPartyCount]
-	add BATTLEACTION_SWITCH1
-	ld b, a
-	ld a, [wBattleAction]
-	cp BATTLEACTION_SWITCH1
-	jr c, .baton_pass
-	cp b
-	jr c, .switch
-
-.baton_pass
-	ld a, [wCurOTMon]
-	add BATTLEACTION_SWITCH1
-	ld [wBattleAction], a
-.switch
-	jp CloseWindow
-
 FailedBatonPass:
-; teleport
+; Teleport
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
@@ -174,44 +167,47 @@ FailedBatonPass:
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
 
-ResetBatonPassStatus:
-; Reset status changes that aren't passed by Baton Pass.
+BatonPass_LinkPlayerSwitch:
+	ld a, [wLinkMode]
+	and a
+	ret z
 
-	; Nightmare isn't passed.
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and SLP
-	jr nz, .ok
+	ld a, BATTLEPLAYERACTION_USEITEM
+	ld [wBattlePlayerAction], a
 
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	res SUBSTATUS_NIGHTMARE, [hl]
-.ok
+	call LoadStandardMenuHeader
+	ld hl, LinkBattleSendReceiveAction
+	call CallBattleCore
+	call CloseWindow
 
-	; Disable isn't passed.
-	call ResetActorDisable
-
-	; Attraction isn't passed.
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	ld hl, wEnemySubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	ld hl, wPlayerSubStatus5
-
-	ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVarAddr
-	res SUBSTATUS_TRANSFORMED, [hl]
-	res SUBSTATUS_ENCORED, [hl]
-
-	; New mon hasn't used a move yet.
-	ld a, BATTLE_VARS_LAST_MOVE
-	call GetBattleVarAddr
-	ld [hl], 0
-
-	xor a
-	ld [wPlayerWrapCount], a
-	ld [wEnemyWrapCount], a
+	xor a ; BATTLEPLAYERACTION_USEMOVE
+	ld [wBattlePlayerAction], a
 	ret
+
+BatonPass_LinkEnemySwitch:
+	ld a, [wLinkMode]
+	and a
+	ret z
+
+	call LoadStandardMenuHeader
+	ld hl, LinkBattleSendReceiveAction
+	call CallBattleCore
+
+	ld a, [wOTPartyCount]
+	add BATTLEACTION_SWITCH1
+	ld b, a
+	ld a, [wBattleAction]
+	cp BATTLEACTION_SWITCH1
+	jr c, .baton_pass
+	cp b
+	jr c, .switch
+
+.baton_pass
+	ld a, [wCurOTMon]
+	add BATTLEACTION_SWITCH1
+	ld [wBattleAction], a
+.switch
+	jp CloseWindow
 
 CheckAnyOtherAlivePartyMons:
 	ld hl, wPartyMon1HP
