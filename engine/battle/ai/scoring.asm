@@ -1236,7 +1236,6 @@ AI_Smart_SpeedDownHit:
 
 AI_Smart_Substitute:
 ; Dismiss this move if enemy's HP is below 50%.
-
 	call AICheckEnemyHalfHP
 	ret c
 	jp AIDiscourageMove
