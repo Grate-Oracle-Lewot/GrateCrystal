@@ -1,4 +1,4 @@
-	db "MOONLIGHT@" ; species name
+	db "VOID@" ; species name
 	dw 303, 600 ; height, weight
 
 	db   "It can see in pure"
