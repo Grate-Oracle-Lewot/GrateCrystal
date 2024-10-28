@@ -1018,7 +1018,6 @@ AI_Smart_LeechSeed:
 	ld a, [wBattleMonType2]
 	cp GRASS
 	jp z, AIDiscourageMove
-
 	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Fissure:
