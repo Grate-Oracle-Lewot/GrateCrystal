@@ -447,19 +447,28 @@ AI_Smart_LeechHit:
 	call AICheckEnemyMaxHP
 	ret c
 
-; Greatly encourage this move if super-effective.
-; This would counter any previous discouragement.
+; Check type matchups.
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
 	callfar BattleCheckTypeMatchup
 	pop hl
 
+; Do nothing if this move is not very effective.
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	ret c
+
+; Encourage this move if it's at least neutrally effective.
+; This would partially counter any previous discouragement.
+	dec [hl]
+
+; Encourage more if this move is super effective.
+; This would fully counter any previous discouragement.
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	ret c
 
-	dec [hl]
 	dec [hl]
 	ret
 
