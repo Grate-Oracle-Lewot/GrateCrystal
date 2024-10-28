@@ -423,37 +423,44 @@ AI_Smart_Sleep:
 	ret
 
 AI_Smart_LeechHit:
+; Greatly discourage this move if user will take Liquid Ooze damage.
+	ld a, [wEnemyMonType1]
+	cp POISON
+	jr z, .dont_discourage
+	ld a, [wEnemyMonType2]
+	cp POISON
+	jr z, .dont_discourage
+
+	ld a, [wBattleMonType1]
+	cp POISON
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp POISON
+	jr z, .discourage
+
+.discourage
+	inc [hl]
+	inc [hl]
+.dont_discourage
+
+; Do nothing if enemy's HP is full.
+	call AICheckEnemyMaxHP
+	ret c
+
+; Greatly encourage this move if super-effective.
+; This would counter any previous discouragement.
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
 	callfar BattleCheckTypeMatchup
 	pop hl
 
-; 60% chance to discourage this move if not very effective.
 	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	jr c, .discourage
-
-; Do nothing if effectiveness is neutral.
-	ret z
-
-; Do nothing if enemy's HP is full.
-	call AICheckEnemyMaxHP
-	ret c
-
-; 80% chance to encourage this move otherwise.
-	call AI_80_20
+	cp EFFECTIVE + 1
 	ret c
 
 	dec [hl]
-	ret
-
-.discourage
-	call Random
-	cp 39 percent + 1
-	ret c
-
-	inc [hl]
+	dec [hl]
 	ret
 
 AI_Smart_LockOn:
