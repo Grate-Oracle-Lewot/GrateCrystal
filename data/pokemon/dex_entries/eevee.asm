@@ -1,4 +1,4 @@
-	db "EVOLUTION@" ; species name
+	db "POTENTIAL@" ; species name
 	dw 100, 140 ; height, weight
 
 	db   "Kids love it as a"
