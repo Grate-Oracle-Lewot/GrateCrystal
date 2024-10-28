@@ -32,7 +32,7 @@ YoungsterJoey_ImportantBattleScript:
 	end
 
 TrainerYoungsterJoey:
-	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
+	trainer ERIKA, ERIKA1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
