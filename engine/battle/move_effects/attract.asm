@@ -1,5 +1,4 @@
 BattleCommand_Attract:
-; attract
 	ld a, [wAttackMissed]
 	and a
 	jp nz, FailMove
@@ -15,7 +14,6 @@ BattleCommand_Attract:
 	set SUBSTATUS_IN_LOVE, [hl]
 	call AnimateCurrentMove
 
-; 'fell in love!'
 	ld hl, FellInLoveText
 	jp StdBattleTextbox
 
