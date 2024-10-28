@@ -1,5 +1,4 @@
 BattleCommand_ShellSmash:
-
 	ld bc, wPlayerStatLevels
 	ldh a, [hBattleTurn]
 	and a
