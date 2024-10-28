@@ -388,6 +388,31 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DIG,              AI_Smart_Dig
 	db -1 ; end
 
+AI_Smart_Nightmare:
+; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
+
+; Dismiss this move if the player has a Substitute.
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, AIDiscourageMove
+
+; Greatly encourage this move if the player is asleep.
+; Dismiss this move if the player has any status other than sleep.
+	ld a, [wBattleMonStatus]
+	jr z, .no_status
+	and SLP
+	jp z, AIDiscourageMove
+	dec [hl]
+	dec [hl]
+
+; If the player has no status...
+.no_status
+; ...dismiss this move if the player is Safeguarded...
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jp nz, AIDiscourageMove
+; ...otherwise, fall through to AI_Smart_Sleep.
+
 AI_Smart_Sleep:
 ; 50% chance to dismiss sleep inducing moves if the player's held item immunizes against them.
 ; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
@@ -1151,7 +1176,7 @@ AI_Smart_Dig:
 
 AI_Smart_Fly:
 ; Fly, Sky Attack
-; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
+; Highly encourage this move if the player is flying or underground, and slower than the enemy.
 
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -1167,7 +1192,6 @@ AI_Smart_Fly:
 
 AI_Smart_SuperFang:
 ; Discourage this move if player's HP is below 25%.
-
 	call AICheckPlayerQuarterHP
 	ret c
 	inc [hl]
@@ -1419,8 +1443,8 @@ AI_Smart_Encore:
 INCLUDE "data/battle/ai/encore_moves.asm"
 
 AI_Smart_Snore_SleepTalk:
-; Greatly encourage this move if enemy is fast asleep.
-; Greatly discourage this move otherwise.
+; Highly encourage this move if enemy is fast asleep.
+; Highly discourage this move otherwise.
 
 	ld a, [wEnemyMonStatus]
 	and SLP
@@ -1440,7 +1464,6 @@ AI_Smart_Snore_SleepTalk:
 
 AI_Smart_FlameWheel:
 ; 80% chance to greatly encourage this move if enemy is curled.
-
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CURLED, a
 	ret z
@@ -1510,7 +1533,6 @@ AI_Smart_Spite:
 
 AI_Smart_Reversal_DestinyBond:
 ; Discourage this move if enemy's HP is above 25%.
-
 	call AICheckEnemyQuarterHP
 	ret nc
 	inc [hl]
@@ -1568,7 +1590,7 @@ AI_Smart_PriorityHit:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jp nz, AIDiscourageMove
 
-; Greatly encourage this move if it will KO the player.
+; Highly encourage this move if it will KO the player.
 	ld a, 1
 	ldh [hBattleTurn], a
 	push hl
@@ -1679,12 +1701,12 @@ AI_Smart_MeanLook:
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
-; 80% chance to greatly encourage this move if the player is badly poisoned.
+; 80% chance to highly encourage this move if the player is badly poisoned.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 
-; 80% chance to greatly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
+; 80% chance to highly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
 	ld a, [wPlayerSubStatus1]
 	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
 	jr nz, .encourage
@@ -1733,33 +1755,6 @@ AICheckLastPlayerMon:
 	jr nz, .loop
 	ret
 
-AI_Smart_Nightmare:
-; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
-
-; Dismiss this move if the player has a Substitute.
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, AIDiscourageMove
-
-; Greatly encourage this move if the player is asleep.
-; Dismiss this move if the player has any status other than sleep.
-	ld a, [wBattleMonStatus]
-	jr z, .no_status
-	and SLP
-	jp z, AIDiscourageMove
-	dec [hl]
-	dec [hl]
-
-; If the player has no status...
-.no_status
-; ...dismiss this move if the player is Safeguarded...
-	ld a, [wPlayerScreens]
-	bit SCREENS_SAFEGUARD, a
-	jp nz, AIDiscourageMove
-
-; ...otherwise, reuse AI_Smart_Sleep.
-	jp AI_Smart_Sleep
-
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]
 	cp GHOST
@@ -1768,15 +1763,19 @@ AI_Smart_Curse:
 	cp GHOST
 	jr z, .ghost_curse
 
+; Discourage this move if enemy's HP is below 50%.
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
+; Discourage this move if enemy's stat levels have been raised four or more stages.
+; Do nothing if enemy's stat levels have been raised two or more stages.
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
 	jr nc, .discourage
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
+; 80% chance to greatly encourage this move if enemy's stat levels are less than +2.
 	call AI_80_20
 	ret c
 
@@ -1795,6 +1794,7 @@ AI_Smart_Curse:
 	ret
 
 .ghost_curse
+; Dismiss this move if the player is already cursed.
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_CURSE, a
 	jp nz, AIDiscourageMove
@@ -1804,6 +1804,7 @@ AI_Smart_Curse:
 	pop hl
 	jr nc, .notlastmon
 
+; Heavily discourage this move if the enemy has only one Pokemon [remaining].
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
@@ -1811,21 +1812,26 @@ AI_Smart_Curse:
 	jr .ghost_continue
 
 .notlastmon
+; 50% chance to greatly encourage this move if the player has only one Pokemon [remaining].
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
 	jr z, .maybe_greatly_encourage
 
 .ghost_continue
+; Heavily discourage this move if enemy's HP is below 25%.
 	call AICheckEnemyQuarterHP
 	jr nc, .cancel
 
+; Greatly discourage this move if enemy's HP is below 50%.
 	call AICheckEnemyHalfHP
 	jr nc, .greatly_discourage
 
+; Do nothing if the enemy's HP is full.
 	call AICheckEnemyMaxHP
 	ret nc
 
+; 50% chance to greatly encourage this move if it's the player's Pokemon's first turn.
 	ld a, [wPlayerTurnsTaken]
 	and a
 	ret nz
@@ -1939,7 +1945,7 @@ AI_Smart_Foresight:
 	ret
 
 AI_Smart_PerishSong:
-; Heavily discourage this move if the enemy has only one Pokemon [remaining].
+; Hugely discourage this move if the enemy has only one Pokemon [remaining].
 	push hl
 	callfar FindAliveEnemyMons
 	pop hl
@@ -2023,7 +2029,6 @@ AI_Smart_Hail:
 	ld a, [wBattleMonType1]
 	cp ICE
 	jr z, .greatly_discourage
-
 	ld a, [wBattleMonType2]
 	cp ICE
 	jr z, .greatly_discourage
@@ -2099,7 +2104,7 @@ AI_Smart_Endure:
 	call AIHasMoveEffect
 	jr nc, .no_reversal
 
-; ...80% chance to greatly encourage this move.
+; ...80% chance to highly encourage this move.
 	call AI_80_20
 	ret c
 
@@ -2130,7 +2135,6 @@ AI_Smart_Endure:
 
 AI_Smart_FuryCutter:
 ; Encourage this move based on Fury Cutter's count.
-
 	ld a, [wEnemyFuryCutterCount]
 	and a
 	jr z, AI_Smart_Rollout
@@ -2190,7 +2194,7 @@ AI_Smart_Rollout:
 	ret
 
 AI_Smart_Swagger_Attract:
-; 80% chance to encourage this move during the first turn of player's Pokemon.
+; 80% chance to encourage this move during the first turn of the player's Pokemon.
 ; 80% chance to discourage this move otherwise.
 
 	ld a, [wPlayerTurnsTaken]
@@ -2211,7 +2215,6 @@ AI_Smart_Swagger_Attract:
 
 AI_Smart_Safeguard:
 ; 80% chance to discourage this move if player's HP is below 50%.
-
 	call AICheckPlayerHalfHP
 	ret c
 	call AI_80_20
@@ -2277,7 +2280,7 @@ AI_Smart_Pursuit:
 	ret
 
 AI_Smart_RapidSpin:
-; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, scattered with spikes, or curled.
+; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, surrounded by Spikes, or curled.
 
 	ld a, [wEnemyWrapCount]
 	and a
@@ -2332,7 +2335,7 @@ AI_Smart_HiddenPower:
 	ret
 
 AI_Smart_RainDance:
-; Greatly discourage this move if it would favour the player type-wise.
+; Highly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
 	ld a, [wBattleMonType1]
 	cp WATER
@@ -2353,7 +2356,7 @@ AI_Smart_RainDance:
 INCLUDE "data/battle/ai/rain_dance_moves.asm"
 
 AI_Smart_SunnyDay:
-; Greatly discourage this move if it would favour the player type-wise.
+; Highly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Fire-type.
 	ld a, [wBattleMonType1]
 	cp FIRE
@@ -2369,18 +2372,17 @@ AI_Smart_SunnyDay:
 
 	push hl
 	ld hl, SunnyDayMoves
-
 	; fallthrough
 
 AI_Smart_WeatherMove:
 ; Rain Dance, Sunny Day
 
-; Greatly discourage this move if the enemy doesn't have one of the useful Rain Dance or Sunny Day moves.
+; Highly discourage this move if the enemy doesn't have one of the useful Rain Dance or Sunny Day moves.
 	call AIHasMoveInArray
 	pop hl
 	jr nc, AIBadWeatherType
 
-; Greatly discourage this move if player's HP is below 50%.
+; Highly discourage this move if player's HP is below 50%.
 	call AICheckPlayerHalfHP
 	jr nc, AIBadWeatherType
 
@@ -2423,25 +2425,28 @@ AIGoodWeatherType:
 INCLUDE "data/battle/ai/sunny_day_moves.asm"
 
 AI_Smart_BellyDrum:
-; Dismiss this move if enemy's attack is higher than +2 or if enemy's HP is below 50%.
-; Else, discourage this move if enemy's HP is not full.
-
+; Hugely discourage this move if enemy's attack is higher than +2.
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 3
 	jr nc, .discourage
 
+; Else, encourage this move if enemy's HP is full.
 	call AICheckEnemyMaxHP
-	ret c
+	jr c, .encourage
 
-	inc [hl]
-
+; Else, do nothing if enemy's HP is above 50%.
 	call AICheckEnemyHalfHP
 	ret c
 
+; Else, hugely discourage this move.
 .discourage
 	ld a, [hl]
 	add 5
 	ld [hl], a
+	ret
+
+.encourage
+	inc [hl]
 	ret
 
 AI_Smart_PsychUp:
@@ -2594,7 +2599,6 @@ AI_Smart_Gust_Twister:
 
 AI_Smart_FutureSight:
 ; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
-
 	call AICompareSpeed
 	ret nc
 
@@ -2608,7 +2612,6 @@ AI_Smart_FutureSight:
 
 AI_Smart_Stomp:
 ; 80% chance to encourage this move if the player has used Minimize.
-
 	ld a, [wPlayerMinimized]
 	and a
 	ret z
@@ -2651,7 +2654,6 @@ AI_Smart_Solarbeam:
 
 AICompareSpeed:
 ; Return carry if enemy is faster than player.
-
 	push bc
 	ld a, [wEnemyMonSpeed + 1]
 	ld b, a
@@ -2899,7 +2901,7 @@ AI_Opportunist:
 INCLUDE "data/battle/ai/stall_moves.asm"
 
 AI_Aggressive:
-; Use whatever does the most damage.
+; Use whatever does the most damage, factoring in effectiveness, STAB, etc.
 
 ; Discourage all damaging moves but the one that does the most damage.
 ; If no damaging move deals damage to the player (immune), no move will be discouraged.
