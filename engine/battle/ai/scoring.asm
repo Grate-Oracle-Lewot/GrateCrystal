@@ -947,7 +947,6 @@ AI_Smart_ResetStats:
 
 AI_Smart_Bide_Screens:
 ; 90% chance to discourage this move unless enemy's HP is full.
-
 	call AICheckEnemyMaxHP
 	ret c
 	call Random
@@ -2855,33 +2854,23 @@ AIHasMoveInArray:
 INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Opportunist:
-; Discourage stall moves when the enemy's HP is low.
-
 ; Do nothing if enemy's HP is above 50%.
 	call AICheckEnemyHalfHP
 	ret c
 
-; Discourage stall moves if enemy's HP is below 25%.
-	call AICheckEnemyQuarterHP
-	jr nc, .lowhp
-
-; 50% chance to discourage stall moves if enemy's HP is between 25% and 50%.
-	call AI_50_50
-	ret c
-
-.lowhp
+; Discourage stall moves when the enemy's HP is low.
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
 .checkmove
 	inc hl
 	dec c
-	ret z
+	jr z, .checkuseful
 
 	ld a, [de]
 	inc de
 	and a
-	ret z
+	jr z, .checkuseful
 
 	push hl
 	push de
@@ -2897,6 +2886,36 @@ AI_Opportunist:
 
 	inc [hl]
 	jr .checkmove
+
+; Encourage useful moves when the enemy's HP is low.
+.checkuseful
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove2
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+	ld hl, UsefulMoves
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .checkmove2
+
+	dec [hl]
+	jr .checkmove2
 
 INCLUDE "data/battle/ai/stall_moves.asm"
 
