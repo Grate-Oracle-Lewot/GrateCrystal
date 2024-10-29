@@ -1100,68 +1100,6 @@ AI_Smart_EvasionUp:
 	dec [hl]
 	ret
 
-AI_Smart_AlwaysHit:
-; 80% chance to greatly encourage this move if either...
-
-; ...enemy's accuracy level has been lowered three or more stages...
-	ld a, [wEnemyAccLevel]
-	cp BASE_STAT_LEVEL - 2
-	jr c, .encourage
-
-; ...or player's evasion level has been raised three or more stages.
-	ld a, [wPlayerEvaLevel]
-	cp BASE_STAT_LEVEL + 3
-	ret c
-
-.encourage
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-AI_Smart_MirrorMove:
-; If the player did not use any move last turn...
-	ld a, [wLastPlayerCounterMove]
-	and a
-	jr nz, .usedmove
-
-; ...do nothing if enemy is slower than player
-	call AICompareSpeed
-	ret nc
-
-; ...or dismiss this move if enemy is faster than player.
-	jp AIDiscourageMove
-
-; If the player did use a move last turn...
-.usedmove
-	push hl
-	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-	pop hl
-
-; ...do nothing if they didn't use a useful move.
-	ret nc
-
-; If they did, 50% chance to encourage this move...
-	call AI_50_50
-	ret c
-
-	dec [hl]
-
-; ...and 90% chance to encourage this move again if the enemy is faster.
-	call AICompareSpeed
-	ret nc
-
-	call Random
-	cp 10 percent
-	ret c
-
-	dec [hl]
-	ret
-
 AI_Smart_AccuracyDown:
 ; If player's HP is full...
 	call AICheckPlayerMaxHP
@@ -1256,6 +1194,68 @@ AI_Smart_AccuracyDown:
 ; This would partly counter any previous discouragement.
 .encourage
 	call AI_50_50
+	ret c
+
+	dec [hl]
+	ret
+
+AI_Smart_AlwaysHit:
+; 80% chance to greatly encourage this move if either...
+
+; ...enemy's accuracy level has been lowered three or more stages...
+	ld a, [wEnemyAccLevel]
+	cp BASE_STAT_LEVEL - 2
+	jr c, .encourage
+
+; ...or player's evasion level has been raised three or more stages.
+	ld a, [wPlayerEvaLevel]
+	cp BASE_STAT_LEVEL + 3
+	ret c
+
+.encourage
+	call AI_80_20
+	ret c
+
+	dec [hl]
+	dec [hl]
+	ret
+
+AI_Smart_MirrorMove:
+; If the player did not use any move last turn...
+	ld a, [wLastPlayerCounterMove]
+	and a
+	jr nz, .usedmove
+
+; ...do nothing if enemy is slower than player...
+	call AICompareSpeed
+	ret nc
+
+; ...or dismiss this move if enemy is faster than player.
+	jp AIDiscourageMove
+
+; If the player did use a move last turn...
+.usedmove
+	push hl
+	ld hl, UsefulMoves
+	ld de, 1
+	call IsInArray
+	pop hl
+
+; ...do nothing if they didn't use a useful move.
+	ret nc
+
+; If they did, 50% chance to encourage this move...
+	call AI_50_50
+	ret c
+
+	dec [hl]
+
+; ...and 90% chance to encourage this move again if the enemy is faster.
+	call AICompareSpeed
+	ret nc
+
+	call Random
+	cp 10 percent
 	ret c
 
 	dec [hl]
