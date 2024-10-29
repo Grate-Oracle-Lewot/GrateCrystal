@@ -804,6 +804,36 @@ AI_Smart_Sleep:
 	dec [hl]
 	ret
 
+AI_Smart_Snore_SleepTalk:
+; Highly encourage this move if enemy is fast asleep.
+; Highly discourage this move otherwise.
+
+	ld a, [wEnemyMonStatus]
+	and SLP
+	cp 1
+	jr z, .discourage
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+
+.discourage
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AI_Smart_DreamEater:
+; 90% chance to greatly encourage this move.
+; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
+	call Random
+	cp 10 percent
+	ret c
+	dec [hl]
+	dec [hl]
+	ret
+
 AI_Smart_LeechHit:
 ; Greatly discourage this move if the enemy mon will take Liquid Ooze damage.
 	ld a, [wEnemyMonType1]
@@ -989,16 +1019,6 @@ AI_Smart_Selfdestruct:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_DreamEater:
-; 90% chance to greatly encourage this move.
-; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
-	call Random
-	cp 10 percent
-	ret c
-	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_EvasionUp:
@@ -1372,6 +1392,7 @@ AI_Smart_Heal:
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
+; Keep it within jr range.
 	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
@@ -1835,26 +1856,6 @@ AI_Smart_Encore:
 	ret
 
 INCLUDE "data/battle/ai/encore_moves.asm"
-
-AI_Smart_Snore_SleepTalk:
-; Highly encourage this move if enemy is fast asleep.
-; Highly discourage this move otherwise.
-
-	ld a, [wEnemyMonStatus]
-	and SLP
-	cp 1
-	jr z, .discourage
-
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
 
 AI_Smart_FlameWheel:
 ; 80% chance to greatly encourage this move if enemy is curled.
