@@ -1,4 +1,4 @@
-; AI_SMART tries to use Mirror Move and Disable against these moves.
+; AI_SMART tries to use Mirror Move and Disable on these moves.
 
 UsefulMoves:
 	db FIRE_PUNCH
