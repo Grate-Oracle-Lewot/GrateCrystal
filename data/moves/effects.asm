@@ -2009,10 +2009,10 @@ Thunder:
 	critical
 	damagestats
 	damagecalc
-	checkhit
-	effectchance
 	stab
 	damagevariation
+	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
