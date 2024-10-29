@@ -836,7 +836,7 @@ AI_Smart_DreamEater:
 	ret
 
 AI_Smart_LeechHit:
-; Greatly discourage this move if the enemy mon will take Liquid Ooze damage.
+; Greatly discourage this move if the enemy will take Liquid Ooze damage.
 	ld a, [wEnemyMonType1]
 	cp POISON
 	jr z, .dont_discourage
@@ -1074,11 +1074,11 @@ AI_Smart_EvasionUp:
 .not_encouraged
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
-	jr nz, .maybe_greatly_encourage
+	jr nz, AI_EvaAcc_MaybeGreatlyEncourage
 
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .maybe_encourage
+	jr nz, AI_EvaAcc_MaybeEncourage
 
 ; Discourage this move if enemy's evasion level is higher than player's accuracy level.
 	ld a, [wEnemyEvaLevel]
@@ -1100,10 +1100,10 @@ AI_Smart_EvasionUp:
 	inc [hl]
 	ret
 
+AI_EvaAcc_MaybeGreatlyEncourage:
 ; Player is badly poisoned.
 ; 70% chance to greatly encourage this move.
 ; This would counter any previous discouragement.
-.maybe_greatly_encourage
 	call Random
 	cp 31 percent + 1
 	ret c
@@ -1112,10 +1112,10 @@ AI_Smart_EvasionUp:
 	dec [hl]
 	ret
 
+AI_EvaAcc_MaybeEncourage:
 ; Player is seeded.
 ; 50% chance to encourage this move.
 ; This would partly counter any previous discouragement.
-.maybe_encourage
 	call AI_50_50
 	ret c
 
@@ -1173,11 +1173,11 @@ AI_Smart_AccuracyDown:
 .not_encouraged
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
-	jr nz, .maybe_greatly_encourage
+	jr nz, AI_EvaAcc_MaybeGreatlyEncourage
 
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .encourage
+	jr nz, AI_EvaAcc_MaybeEncourage
 
 ; Discourage this move if enemy's evasion level is higher than player's accuracy level.
 	ld a, [wEnemyEvaLevel]
@@ -1197,28 +1197,6 @@ AI_Smart_AccuracyDown:
 
 .discourage
 	inc [hl]
-	ret
-
-; Player is badly poisoned.
-; 70% chance to greatly encourage this move.
-; This would counter any previous discouragement.
-.maybe_greatly_encourage
-	call Random
-	cp 31 percent + 1
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-; Player is seeded.
-; 50% chance to encourage this move.
-; This would partly counter any previous discouragement.
-.encourage
-	call AI_50_50
-	ret c
-
-	dec [hl]
 	ret
 
 AI_Smart_AlwaysHit:
@@ -1769,6 +1747,7 @@ AI_CounterMirrorCoat_Encourage:
 	dec [hl]
 	ret
 
+AI_Smart_FalseSwipe:
 AI_CounterMirrorCoat_Discourage:
 	inc [hl]
 	ret
