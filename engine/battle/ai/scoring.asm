@@ -683,6 +683,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
+	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedUp2
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
@@ -2982,6 +2983,13 @@ AI_Smart_Rampage:
 	cp HELD_PREVENT_CONFUSE
 	ret nz
 	dec [hl]
+	ret
+
+AI_Smart_SpeedUp2:
+; Discourage this move if enemy is faster than player.
+	call AICompareSpeed
+	ret nc
+	inc [hl]
 	ret
 
 
