@@ -964,14 +964,14 @@ AI_Smart_Selfdestruct:
 	pop hl
 	jr nc, .notlastmon
 
-; ...greatly discourage this move unless this is the player's last Pokemon too.
+; ...highly discourage this move unless this is the player's last Pokemon too.
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
 	jr nz, .discourage
 
 .notlastmon
-; Greatly discourage this move if enemy's HP is above 50%.
+; Highly discourage this move if enemy's HP is above 50%.
 	call AICheckEnemyHalfHP
 	jr c, .discourage
 
@@ -979,7 +979,7 @@ AI_Smart_Selfdestruct:
 	call AICheckEnemyQuarterHP
 	ret nc
 
-; If enemy's HP is between 25% and 50%, over 90% chance to greatly discourage this move.
+; If enemy's HP is between 25% and 50%, over 90% chance to highly discourage this move.
 	call Random
 	cp 8 percent
 	ret c
