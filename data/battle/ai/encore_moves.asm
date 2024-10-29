@@ -1,4 +1,4 @@
-; AI_SMART encourages these moves with Encore.
+; AI_SMART tries to use Encore on these moves.
 
 EncoreMoves:
 	db SWORDS_DANCE
