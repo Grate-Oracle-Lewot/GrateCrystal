@@ -2469,7 +2469,7 @@ AI_Smart_Endure:
 	call AICheckEnemyQuarterHP
 	jr c, .discourage
 
-; If the enemy has Reversal...
+; If the enemy has Reversal or Flail...
 	ld b, EFFECT_REVERSAL
 	call AIHasMoveEffect
 	jr nc, .no_reversal
