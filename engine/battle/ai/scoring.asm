@@ -2588,7 +2588,7 @@ AI_Smart_Blizzard:
 
 ; Otherwise, greatly encourage this move in Hail.
 	ld a, [wBattleWeather]
-	cp HAIL
+	cp WEATHER_HAIL
 	ret nz
 
 	dec [hl]
@@ -2606,7 +2606,7 @@ AI_Smart_Thunder:
 
 ; Otherwise, greatly encourage this move in rain.
 	ld a, [wBattleWeather]
-	cp RAIN
+	cp WEATHER_RAIN
 	ret nz
 
 	dec [hl]
