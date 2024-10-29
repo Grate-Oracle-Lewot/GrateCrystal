@@ -1,4 +1,5 @@
 ; AI_SMART tries to use Mirror Move and Disable on these moves.
+; Also Mimic before I removed that.
 
 UsefulMoves:
 	db FIRE_PUNCH
