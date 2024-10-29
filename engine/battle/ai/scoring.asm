@@ -738,6 +738,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_GUST,             AI_Smart_Gust_Twister
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
+	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
@@ -2270,6 +2271,54 @@ AI_Smart_Protect:
 	inc [hl]
 	ret
 
+AI_Smart_Endure:
+; Greatly discourage this move if the enemy already used Protect.
+	ld a, [wEnemyProtectCount]
+	and a
+	jr nz, .greatly_discourage
+
+; Greatly discourage this move if the enemy's HP is full.
+	call AICheckEnemyMaxHP
+	jr c, .greatly_discourage
+
+; Discourage this move if the enemy's HP is at least 25%.
+	call AICheckEnemyQuarterHP
+	jr c, .discourage
+
+; If the enemy has Reversal or Flail...
+	ld b, EFFECT_REVERSAL
+	call AIHasMoveEffect
+	jr nc, .no_reversal
+
+; ...80% chance to highly encourage this move.
+	call AI_80_20
+	ret c
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
+
+.no_reversal
+; If the enemy is not locked on, do nothing.
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	ret z
+
+; 50% chance to greatly encourage this move.
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	dec [hl]
+	ret
+
+.greatly_discourage
+	inc [hl]
+.discourage
+	inc [hl]
+	ret
+
 AI_Smart_Foresight:
 ; 60% chance to encourage this move if the enemy's accuracy is sharply lowered.
 	ld a, [wEnemyAccLevel]
@@ -2352,6 +2401,96 @@ AI_Smart_PerishSong:
 	add 5
 	ld [hl], a
 	ret
+
+AI_Smart_RainDance:
+; Highly discourage this move if it would favour the player type-wise.
+; Particularly, if the player is a Water-type.
+	ld a, [wBattleMonType1]
+	cp WATER
+	jr z, AIBadWeatherType
+	cp FIRE
+	jr z, AIGoodWeatherType
+
+	ld a, [wBattleMonType2]
+	cp WATER
+	jr z, AIBadWeatherType
+	cp FIRE
+	jr z, AIGoodWeatherType
+
+	push hl
+	ld hl, RainDanceMoves
+	jr AI_Smart_WeatherMove
+
+AI_Smart_SunnyDay:
+; Highly discourage this move if it would favour the player type-wise.
+; Particularly, if the player is a Fire-type.
+	ld a, [wBattleMonType1]
+	cp FIRE
+	jr z, AIBadWeatherType
+	cp WATER
+	jr z, AIGoodWeatherType
+
+	ld a, [wBattleMonType2]
+	cp FIRE
+	jr z, AIBadWeatherType
+	cp WATER
+	jr z, AIGoodWeatherType
+
+	push hl
+	ld hl, SunnyDayMoves
+	; fallthrough
+
+AI_Smart_WeatherMove:
+; Rain Dance, Sunny Day
+
+; Highly discourage this move if the enemy doesn't have one of the useful Rain Dance or Sunny Day moves.
+	call AIHasMoveInArray
+	pop hl
+	jr nc, AIBadWeatherType
+
+; Highly discourage this move if player's HP is below 50%.
+	call AICheckPlayerHalfHP
+	jr nc, AIBadWeatherType
+
+; 50% chance to encourage this move otherwise.
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	ret
+
+AIBadWeatherType:
+	inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
+
+AIGoodWeatherType:
+; Rain Dance, Sunny Day
+
+; Greatly encourage this move if it would disfavour the player type-wise and player's HP is above 50%...
+	call AICheckPlayerHalfHP
+	ret nc
+
+; ...as long as one of the following conditions meet:
+; It's the first turn of the player's Pokemon.
+	ld a, [wPlayerTurnsTaken]
+	and a
+	jr z, .good
+
+; Or it's the first turn of the enemy's Pokemon.
+	ld a, [wEnemyTurnsTaken]
+	and a
+	ret nz
+
+.good
+	dec [hl]
+	dec [hl]
+	ret
+
+INCLUDE "data/battle/ai/rain_dance_moves.asm"
+
+INCLUDE "data/battle/ai/sunny_day_moves.asm"
 
 AI_Smart_Sandstorm:
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
@@ -2455,52 +2594,52 @@ AI_Smart_Blizzard:
 	dec [hl]
 	ret
 
-AI_Smart_Endure:
-; Greatly discourage this move if the enemy already used Protect.
-	ld a, [wEnemyProtectCount]
-	and a
-	jr nz, .greatly_discourage
+AI_Smart_Thunder:
+; Do nothing if the player is Ground-type and therefore immune.
+	ld a, [wBattleMonType1]
+	cp GROUND
+	ret z
+	ld a, [wBattleMonType2]
+	cp GROUND
+	ret z
 
-; Greatly discourage this move if the enemy's HP is full.
-	call AICheckEnemyMaxHP
-	jr c, .greatly_discourage
+; Otherwise, greatly encourage this move in rain.
+	ld a, [wBattleWeather]
+	cp RAIN
+	ret nz
 
-; Discourage this move if the enemy's HP is at least 25%.
-	call AICheckEnemyQuarterHP
-	jr c, .discourage
+	dec [hl]
+	dec [hl]
+	ret
 
-; If the enemy has Reversal or Flail...
-	ld b, EFFECT_REVERSAL
-	call AIHasMoveEffect
-	jr nc, .no_reversal
+AI_Smart_Solarbeam:
+; 80% chance to greatly encourage this move when it's sunny.
+; 90% chance to greatly discourage this move when it's raining or hailing.
 
-; ...80% chance to highly encourage this move.
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .encourage
+
+	cp WEATHER_RAIN
+	ret nz
+
+	cp WEATHER_HAIL
+	ret nz
+
+	call Random
+	cp 10 percent
+	ret c
+
+	inc [hl]
+	inc [hl]
+	ret
+
+.encourage
 	call AI_80_20
 	ret c
 
 	dec [hl]
 	dec [hl]
-	dec [hl]
-	ret
-
-.no_reversal
-; If the enemy is not locked on, do nothing.
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	ret z
-
-; 50% chance to greatly encourage this move.
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.greatly_discourage
-	inc [hl]
-.discourage
-	inc [hl]
 	ret
 
 AI_Smart_FuryCutter:
@@ -2704,96 +2843,6 @@ AI_Smart_HiddenPower:
 	dec [hl]
 	ret
 
-AI_Smart_RainDance:
-; Highly discourage this move if it would favour the player type-wise.
-; Particularly, if the player is a Water-type.
-	ld a, [wBattleMonType1]
-	cp WATER
-	jr z, AIBadWeatherType
-	cp FIRE
-	jr z, AIGoodWeatherType
-
-	ld a, [wBattleMonType2]
-	cp WATER
-	jr z, AIBadWeatherType
-	cp FIRE
-	jr z, AIGoodWeatherType
-
-	push hl
-	ld hl, RainDanceMoves
-	jr AI_Smart_WeatherMove
-
-INCLUDE "data/battle/ai/rain_dance_moves.asm"
-
-AI_Smart_SunnyDay:
-; Highly discourage this move if it would favour the player type-wise.
-; Particularly, if the player is a Fire-type.
-	ld a, [wBattleMonType1]
-	cp FIRE
-	jr z, AIBadWeatherType
-	cp WATER
-	jr z, AIGoodWeatherType
-
-	ld a, [wBattleMonType2]
-	cp FIRE
-	jr z, AIBadWeatherType
-	cp WATER
-	jr z, AIGoodWeatherType
-
-	push hl
-	ld hl, SunnyDayMoves
-	; fallthrough
-
-AI_Smart_WeatherMove:
-; Rain Dance, Sunny Day
-
-; Highly discourage this move if the enemy doesn't have one of the useful Rain Dance or Sunny Day moves.
-	call AIHasMoveInArray
-	pop hl
-	jr nc, AIBadWeatherType
-
-; Highly discourage this move if player's HP is below 50%.
-	call AICheckPlayerHalfHP
-	jr nc, AIBadWeatherType
-
-; 50% chance to encourage this move otherwise.
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	ret
-
-AIBadWeatherType:
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
-AIGoodWeatherType:
-; Rain Dance, Sunny Day
-
-; Greatly encourage this move if it would disfavour the player type-wise and player's HP is above 50%...
-	call AICheckPlayerHalfHP
-	ret nc
-
-; ...as long as one of the following conditions meet:
-; It's the first turn of the player's Pokemon.
-	ld a, [wPlayerTurnsTaken]
-	and a
-	jr z, .good
-
-; Or it's the first turn of the enemy's Pokemon.
-	ld a, [wEnemyTurnsTaken]
-	and a
-	ret nz
-
-.good
-	dec [hl]
-	dec [hl]
-	ret
-
-INCLUDE "data/battle/ai/sunny_day_moves.asm"
-
 AI_Smart_BellyDrum:
 ; Hugely discourage this move if enemy's attack is higher than +2.
 	ld a, [wEnemyAtkLevel]
@@ -2929,36 +2978,6 @@ AI_Smart_Stomp:
 	call AI_80_20
 	ret c
 
-	dec [hl]
-	ret
-
-AI_Smart_Solarbeam:
-; 80% chance to greatly encourage this move when it's sunny.
-; 90% chance to greatly discourage this move when it's raining or hailing.
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .encourage
-
-	cp WEATHER_RAIN
-	ret nz
-
-	cp WEATHER_HAIL
-	ret nz
-
-	call Random
-	cp 10 percent
-	ret c
-
-	inc [hl]
-	inc [hl]
-	ret
-
-.encourage
-	call AI_80_20
-	ret c
-
-	dec [hl]
 	dec [hl]
 	ret
 
