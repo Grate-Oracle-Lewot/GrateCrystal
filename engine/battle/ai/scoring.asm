@@ -1803,14 +1803,14 @@ AI_Smart_Encore:
 
 ; Greatly encourage this move if the player's last move is in the list of Encore moves.
 	push hl
-	ld a, [wLastPlayerMove]
+	ld a, [wLastPlayerCounterMove]
 	ld hl, EncoreMoves
 	ld de, 1
 	call IsInArray
 	pop hl
 
 ; If it isn't, consider type matchups.
-	jr nc, .maybe_discourage
+	jr nc, .matchup
 
 	dec [hl]
 .encourage
@@ -1818,7 +1818,7 @@ AI_Smart_Encore:
 	ret
 
 ; If the player only has not very effective moves against the enemy, encourage this move.
-.maybe_discourage
+.matchup
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
