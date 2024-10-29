@@ -674,6 +674,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
 	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
+	dbw EFFECT_RAMPAGE,          AI_Smart_Rampage
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Poison
@@ -2991,6 +2992,18 @@ AI_Smart_Stomp:
 	dec [hl]
 	ret
 
+AI_Smart_Rampage:
+; Encourage this move if enemy's held item immunizes against confusion.
+	push hl
+	ld hl, wEnemyMonItem
+	ld b, [hl]
+	pop hl
+	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_CONFUSE
+	ret nz
+	dec [hl]
+	ret
 
 AIDamageCalc:
 	ld a, 1
