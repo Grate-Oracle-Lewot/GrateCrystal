@@ -442,40 +442,13 @@ AI_Opportunist:
 	ret c
 
 ; Discourage stall moves when the player's HP is low.
+	call AI_Discourage_Stall
+
+; Encourage useful moves when the player's HP is low.
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
 .checkmove
-	inc hl
-	dec c
-	jr z, .checkuseful
-
-	ld a, [de]
-	inc de
-	and a
-	jr z, .checkuseful
-
-	push hl
-	push de
-	push bc
-	ld hl, StallMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .checkmove
-
-	inc [hl]
-	jr .checkmove
-
-; Encourage useful moves when the player's HP is low.
-.checkuseful
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove2
 	inc hl
 	dec c
 	ret z
@@ -495,21 +468,54 @@ AI_Opportunist:
 	pop bc
 	pop de
 	pop hl
-	jr nc, .checkmove2
+	jr nc, .checkmove
 
 	dec [hl]
-	jr .checkmove2
-
-INCLUDE "data/battle/ai/stall_moves.asm"
+	jr .checkmove
 
 INCLUDE "data/battle/ai/useful_moves.asm"
 
+AI_Discourage_Stall:
+; Discourage stall moves.
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+	ld hl, StallMoves
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .checkmove
+
+	inc [hl]
+	jr .checkmove
+
+INCLUDE "data/battle/ai/stall_moves.asm"
+
 
 AI_Aggressive:
-; Use whatever does the most damage, factoring in effectiveness, STAB, etc.
-
 ; Discourage all damaging moves but the one that does the most damage.
 ; If no damaging move deals damage to the player (immune), no move will be discouraged.
+
+; Discourage stall moves if the enemy has only one Pokemon [remaining].
+	farcall FindAliveEnemyMons
+	call c, AI_Discourage_Stall
 
 ; Figure out which attack does the most damage and put it in c.
 	ld hl, wEnemyMonMoves
