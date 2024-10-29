@@ -1410,16 +1410,16 @@ AI_Smart_Poison:
 	jr nz, AI_DiscourageIfPlayerHPBelowHalf
 	call AI_50_50
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
-	jp AIDiscourageMove
+	jr AIDiscourageMove
 
 AI_Smart_LeechSeed:
 ; Dismiss this move if the player is Grass-type and therefore immune.
 	ld a, [wBattleMonType1]
 	cp GRASS
-	jp z, AIDiscourageMove
+	jr z, AIDiscourageMove
 	ld a, [wBattleMonType2]
 	cp GRASS
-	jp z, AIDiscourageMove
+	jr z, AIDiscourageMove
 	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Fissure:
@@ -1429,7 +1429,7 @@ AI_Smart_Fissure:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jp c, AIDiscourageMove
+	jr c, AIDiscourageMove
 	; fallthrough
 
 AI_Smart_Ohko:
@@ -1440,7 +1440,7 @@ AI_Smart_Ohko:
 	ld b, a
 	ld a, [wEnemyMonLevel]
 	cp b
-	jp c, AIDiscourageMove
+	jr c, AIDiscourageMove
 	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Confuse:
@@ -1455,7 +1455,16 @@ AI_Smart_Confuse:
 	jr nz, AI_DiscourageIfPlayerHPBelowHalf
 	call AI_50_50
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
-	jp AIDiscourageMove
+	; fallthrough
+
+AIDiscourageMove:
+; This is jumped to from everywhere.
+; It's wedged in here to change some jps to jrs.
+	ld a, [hl]
+	add 10
+	ld [hl], a
+AI_None:
+	ret
 
 AI_Smart_TrapTarget:
 ; Bind, Wrap, Fire Spin, Clamp, Whirlpool
@@ -2982,13 +2991,6 @@ AI_Smart_Stomp:
 	dec [hl]
 	ret
 
-
-AIDiscourageMove:
-	ld a, [hl]
-	add 10
-	ld [hl], a
-AI_None:
-	ret
 
 AIDamageCalc:
 	ld a, 1
