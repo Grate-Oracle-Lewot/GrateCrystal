@@ -1,7 +1,6 @@
-; AI_SMART encourages Rain Dance if the user also knows any of these moves.
-; These moves aren't encouraged any more than usual during rain,
-; but AI_AGGRESSIVE will pick them if they do the most damage.
-; Thunder has its own AI that does encourage it in the rain.
+; AI_TYPES encourages these moves in the rain.
+; AI_SMART encourages Rain Dance if the user also knows any of these moves,
+; but only gives Thunder any special encouragement once it's raining.
 ; Scald is absent from this list due to rain preventing burns.
 
 RainDanceMoves:
