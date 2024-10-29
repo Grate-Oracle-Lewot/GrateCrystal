@@ -1,4 +1,4 @@
-; AI_SMART knows these moves are usable all-around.
+; AI_SMART tries to use Mirror Move and Disable against these moves.
 
 UsefulMoves:
 	db FIRE_PUNCH
