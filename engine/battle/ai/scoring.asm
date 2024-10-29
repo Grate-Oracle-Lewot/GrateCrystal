@@ -432,9 +432,9 @@ AI_Opportunist:
 	dec [hl]
 	jr .checkmove2
 
-INCLUDE "data/battle/ai/useful_moves.asm"
-
 INCLUDE "data/battle/ai/stall_moves.asm"
+
+INCLUDE "data/battle/ai/useful_moves.asm"
 
 
 AI_Aggressive:
