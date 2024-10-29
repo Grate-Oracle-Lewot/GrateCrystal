@@ -2124,30 +2124,6 @@ AI_Smart_MeanLook:
 	dec [hl]
 	ret
 
-AICheckLastPlayerMon:
-	ld a, [wPartyCount]
-	ld b, a
-	ld c, 0
-	ld hl, wPartyMon1HP
-	ld de, PARTYMON_STRUCT_LENGTH
-
-.loop
-	ld a, [wCurBattleMon]
-	cp c
-	jr z, .skip
-
-	ld a, [hli]
-	or [hl]
-	ret nz
-	dec hl
-
-.skip
-	add hl, de
-	inc c
-	dec b
-	jr nz, .loop
-	ret
-
 AI_Smart_Curse:
 	ld a, [wEnemyMonType1]
 	cp GHOST
@@ -3024,6 +3000,30 @@ AICompareSpeed:
 	ld a, [wBattleMonSpeed]
 	sbc b
 	pop bc
+	ret
+
+AICheckLastPlayerMon:
+	ld a, [wPartyCount]
+	ld b, a
+	ld c, 0
+	ld hl, wPartyMon1HP
+	ld de, PARTYMON_STRUCT_LENGTH
+
+.loop
+	ld a, [wCurBattleMon]
+	cp c
+	jr z, .skip
+
+	ld a, [hli]
+	or [hl]
+	ret nz
+	dec hl
+
+.skip
+	add hl, de
+	inc c
+	dec b
+	jr nz, .loop
 	ret
 
 AICheckPlayerMaxHP:
