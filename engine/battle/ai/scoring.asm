@@ -1792,25 +1792,33 @@ AI_Smart_MirrorCoat:
 	jr AI_CounterMirrorCoat_Encourage
 
 AI_Smart_Encore:
-; Dismiss this move if the player hasn't used a move yet.
+; Dismiss this move if the player did not use any move last turn.
 	ld a, [wLastPlayerMove]
 	and a
 	jp z, AIDiscourageMove
 
-; Highly discourage this move if the player's last used move isn't in the list of Encore moves.
+; Highly discourage this move if the player is faster than the enemy.
+	call AICompareSpeed
+	jr nc, .discourage
+
+; Greatly encourage this move if the player's last move is in the list of Encore moves.
 	push hl
-	ld a, [wLastPlayerCounterMove]
+	ld a, [wLastPlayerMove]
 	ld hl, EncoreMoves
 	ld de, 1
 	call IsInArray
 	pop hl
-	jr nc, .discourage
 
-; Else, highly discourage this move if the player is faster than the enemy.
-	call AICompareSpeed
-	jr nc, .discourage
+; If it isn't, consider type matchups.
+	jr nc, .maybe_discourage
 
-; Greatly encourage this move if the player only has not very effective moves against the enemy.
+	dec [hl]
+.encourage
+	dec [hl]
+	ret
+
+; If the player only has not very effective moves against the enemy, encourage this move.
+.maybe_discourage
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
@@ -1823,11 +1831,6 @@ AI_Smart_Encore:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	ret
-
-.encourage
-	dec [hl]
-	dec [hl]
 	ret
 
 INCLUDE "data/battle/ai/encore_moves.asm"
