@@ -1,5 +1,4 @@
-; AI_BASIC discourages these effects if the player
-; already has a status condition.
+; AI_BASIC discourages these effects if the player already has a status condition.
 
 StatusOnlyEffects:
 	db EFFECT_SLEEP
