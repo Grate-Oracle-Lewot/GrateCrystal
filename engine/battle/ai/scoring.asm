@@ -3025,6 +3025,11 @@ AI_Smart_Gust_Twister:
 	ret
 
 AI_Smart_FutureSight:
+; Greatly encourage this move if the player is protected.
+	ld a, [wPlayerProtectCount]
+	and a
+	jr nz, .encourage
+
 ; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
 	call AICompareSpeed
 	ret nc
@@ -3033,6 +3038,7 @@ AI_Smart_FutureSight:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret z
 
+.encourage
 	dec [hl]
 	dec [hl]
 	ret
