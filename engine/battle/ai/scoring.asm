@@ -2851,14 +2851,12 @@ AIHasMoveInArray:
 	pop hl
 	ret
 
-INCLUDE "data/battle/ai/useful_moves.asm"
-
 AI_Opportunist:
-; Do nothing if enemy's HP is above 50%.
-	call AICheckEnemyHalfHP
+; Do nothing if player's HP is above 50%.
+	call AICheckPlayerHalfHP
 	ret c
 
-; Discourage stall moves when the enemy's HP is low.
+; Discourage stall moves when the player's HP is low.
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
@@ -2887,7 +2885,7 @@ AI_Opportunist:
 	inc [hl]
 	jr .checkmove
 
-; Encourage useful moves when the enemy's HP is low.
+; Encourage useful moves when the player's HP is low.
 .checkuseful
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -2918,6 +2916,8 @@ AI_Opportunist:
 	jr .checkmove2
 
 INCLUDE "data/battle/ai/stall_moves.asm"
+
+INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Aggressive:
 ; Use whatever does the most damage, factoring in effectiveness, STAB, etc.
