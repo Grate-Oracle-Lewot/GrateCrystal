@@ -772,6 +772,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_SPITE,            AI_Smart_Spite
+	dbw EFFECT_FALSE_SWIPE,      AI_Smart_FalseSwipe
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
@@ -1511,7 +1512,7 @@ AIDiscourageMove:
 	ld a, [hl]
 	add 10
 	ld [hl], a
-AI_None:
+AI_None: ; lol
 	ret
 
 AI_Smart_TrapTarget:
@@ -1817,6 +1818,7 @@ AI_CounterMirrorCoat_Encourage:
 	ret
 
 AI_Smart_FalseSwipe:
+; Always discourage False Swipe.
 AI_CounterMirrorCoat_Discourage:
 	inc [hl]
 	ret
@@ -2805,8 +2807,8 @@ AI_Smart_Earthquake:
 	dec [hl]
 	ret
 
+; Try to predict if the player will use Dig this turn.
 .could_dig
-	; Try to predict if the player will use Dig this turn.
 
 	; 50% chance to encourage this move if the enemy is slower than the player.
 	call AICompareSpeed
@@ -2829,11 +2831,19 @@ AI_Smart_Earthquake:
 	ret
 
 AI_Smart_Pursuit:
+; 80% chance to discourage this move if the player has only one Pokemon [remaining].
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jr z, .discourage
+
 ; 50% chance to greatly encourage this move if player's HP is below 25%.
 ; 80% chance to discourage this move otherwise.
 
 	call AICheckPlayerQuarterHP
 	jr nc, .encourage
+
+.discourage
 	call AI_80_20
 	ret c
 	inc [hl]
@@ -3006,7 +3016,7 @@ AI_Smart_Gust_Twister:
 ; Try to predict if the player will use Fly this turn.
 .couldFly
 
-; 50% chance to encourage this move if the enemy is slower than the player.
+	; 50% chance to encourage this move if the enemy is slower than the player.
 	call AICompareSpeed
 	ret c
 	call AI_50_50
