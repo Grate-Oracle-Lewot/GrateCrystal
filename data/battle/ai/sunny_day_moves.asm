@@ -1,4 +1,8 @@
-; AI_SMART prefers these moves during harsh sunlight.
+; AI_SMART encourages Sunny Day if the user also knows any of these moves.
+; These moves aren't encouraged any more than usual during harsh sunlight,
+; but AI_AGGRESSIVE will pick them if they do the most damage.
+; Solarbeam has its own AI that does encourage it based on weather.
+; The healing moves are just encouraged based on the user's remaining HP.
 
 SunnyDayMoves:
 	db FIRE_PUNCH
