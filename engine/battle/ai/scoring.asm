@@ -737,6 +737,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
 	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
+	dbw EFFECT_SPEED_UP,         AI_Smart_SpeedUp
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
@@ -751,13 +752,13 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
-	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedUp2
+	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedUp
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
-	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
+	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
@@ -772,7 +773,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_SPITE,            AI_Smart_Spite
-	dbw EFFECT_FALSE_SWIPE,      AI_Smart_FalseSwipe
+	dbw EFFECT_FALSE_SWIPE,      AI_Smart_Discourage
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
@@ -803,6 +804,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
+	dbw EFFECT_SKULL_BASH,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_TWISTER,          AI_Smart_Gust_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
@@ -1693,12 +1695,6 @@ AI_Smart_SpeedDownHit:
 	dec [hl]
 	ret
 
-AI_Smart_Substitute:
-; Dismiss this move if enemy's HP is below 50%.
-	call AICheckEnemyHalfHP
-	ret c
-	jp AIDiscourageMove
-
 AI_Smart_HyperBeam:
 	call AICheckEnemyHalfHP
 	jr c, .discourage
@@ -1760,6 +1756,25 @@ AI_Smart_Rage:
 	inc [hl]
 	ret
 
+AI_Smart_Substitute_SkullBash:
+; Encourage this move if enemy's HP is full.
+; Discourage this move if enemy's HP is between 25% and 50%.
+; Dismiss this move if enemy's HP is 25% or below.
+
+	call AICheckEnemyMaxHP
+	jr c, .encourage
+
+	call AICheckEnemyHalfHP
+	ret c
+
+	call AICheckEnemyQuarterHP
+	jr c, AI_Smart_Discourage
+	jp AIDiscourageMove
+
+.encourage
+	dec [hl]
+	ret
+
 AI_Smart_Counter:
 	push hl
 	ld hl, wPlayerUsedMoves
@@ -1790,7 +1805,7 @@ AI_Smart_Counter:
 	pop hl
 	ld a, b
 	and a
-	jr z, AI_CounterMirrorCoat_Discourage
+	jr z, AI_Smart_Discourage
 
 	cp 3
 	jr nc, AI_CounterMirrorCoat_Encourage
@@ -1817,9 +1832,8 @@ AI_CounterMirrorCoat_Encourage:
 	dec [hl]
 	ret
 
-AI_Smart_FalseSwipe:
-; Always discourage False Swipe.
-AI_CounterMirrorCoat_Discourage:
+AI_Smart_Discourage:
+; Another thing that multiple Smart AIs jump to.
 	inc [hl]
 	ret
 
@@ -1853,7 +1867,7 @@ AI_Smart_MirrorCoat:
 	pop hl
 	ld a, b
 	and a
-	jr z, AI_CounterMirrorCoat_Discourage
+	jr z, AI_Smart_Discourage
 
 	cp 3
 	jr nc, AI_CounterMirrorCoat_Encourage
@@ -2925,7 +2939,7 @@ AI_Smart_BellyDrum:
 	call AICheckEnemyHalfHP
 	ret c
 
-; Else, hugely discourage this move.
+; Else hugely discourage this move.
 .discourage
 	ld a, [hl]
 	add 5
@@ -2933,7 +2947,7 @@ AI_Smart_BellyDrum:
 	ret
 
 .encourage
-	inc [hl]
+	dec [hl]
 	ret
 
 AI_Smart_PsychUp:
@@ -3068,7 +3082,7 @@ AI_Smart_Rampage:
 	dec [hl]
 	ret
 
-AI_Smart_SpeedUp2:
+AI_Smart_SpeedUp:
 ; Discourage this move if enemy is faster than player.
 	call AICompareSpeed
 	ret nc
