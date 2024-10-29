@@ -1938,8 +1938,7 @@ AI_Smart_Spite:
 
 	call AI_50_50
 	ret c
-	inc [hl]
-	ret
+	jr .discourage
 
 .usedmove
 	push hl
