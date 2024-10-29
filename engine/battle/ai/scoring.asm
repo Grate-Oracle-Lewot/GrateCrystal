@@ -3156,7 +3156,7 @@ AICheckEnemyQuarterHP:
 	jr AICheckEnemyHPMerge
 
 AIHasMoveEffect:
-; Return carry if the enemy has move b.
+; Return carry if the enemy has move effect b.
 
 	push hl
 	ld hl, wEnemyMonMoves
