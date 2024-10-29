@@ -1710,69 +1710,94 @@ AI_Smart_Counter:
 	pop hl
 	ld a, b
 	and a
-	jr z, .discourage
+	jr z, AI_CounterMirrorCoat_Discourage
 
 	cp 3
-	jr nc, .encourage
+	jr nc, AI_CounterMirrorCoat_Encourage
 
 	ld a, [wLastPlayerCounterMove]
 	and a
-	jr z, .done
+	ret z
 
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .done
+	ret z
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
-	jr nc, .done
+	ret nc
+	; fallthrough
 
-.encourage
+AI_CounterMirrorCoat_Encourage:
 	call Random
 	cp 39 percent + 1
-	jr c, .done
-
+	ret c
 	dec [hl]
-
-.done
 	ret
 
-.discourage
+AI_CounterMirrorCoat_Discourage:
 	inc [hl]
 	ret
 
-AI_Smart_Encore:
-	call AICompareSpeed
-	jr nc, .discourage
+AI_Smart_MirrorCoat:
+	push hl
+	ld hl, wPlayerUsedMoves
+	ld c, NUM_MOVES
+	ld b, 0
 
+.playermoveloop
+	ld a, [hli]
+	and a
+	jr z, .skipmove
+
+	call AIGetEnemyMove
+
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .skipmove
+
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	cp SPECIAL
+	jr c, .skipmove
+
+	inc b
+
+.skipmove
+	dec c
+	jr nz, .playermoveloop
+
+	pop hl
+	ld a, b
+	and a
+	jr z, AI_CounterMirrorCoat_Discourage
+
+	cp 3
+	jr nc, AI_CounterMirrorCoat_Encourage
+
+	ld a, [wLastPlayerCounterMove]
+	and a
+	ret z
+
+	call AIGetEnemyMove
+
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	ret z
+
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	cp SPECIAL
+	ret c
+	jr AI_CounterMirrorCoat_Encourage
+
+AI_Smart_Encore:
+; Dismiss this move if the player hasn't used a move yet.
 	ld a, [wLastPlayerMove]
 	and a
 	jp z, AIDiscourageMove
 
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .weakmove
-
-	push hl
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	ld hl, wEnemyMonType1
-	predef CheckTypeMatchup
-
-	pop hl
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	jr nc, .weakmove
-
-	and a
-	ret nz
-	jr .encourage
-
-.weakmove
+; Highly discourage this move if the player's last used move isn't in the list of Encore moves.
 	push hl
 	ld a, [wLastPlayerCounterMove]
 	ld hl, EncoreMoves
@@ -1781,18 +1806,28 @@ AI_Smart_Encore:
 	pop hl
 	jr nc, .discourage
 
-.encourage
-	call Random
-	cp 28 percent - 1
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
+; Else, highly discourage this move if the player is faster than the enemy.
+	call AICompareSpeed
+	jr nc, .discourage
 
+; Greatly encourage this move if the player only has not very effective moves against the enemy.
+	push hl
+	callfar CheckPlayerMoveTypeMatchups
+	ld a, [wEnemyAISwitchScore]
+	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
+	pop hl
+	jr nc, .encourage
+
+; Else highly discourage this move.
 .discourage
 	inc [hl]
 	inc [hl]
 	inc [hl]
+	ret
+
+.encourage
+	dec [hl]
+	dec [hl]
 	ret
 
 INCLUDE "data/battle/ai/encore_moves.asm"
@@ -2858,66 +2893,6 @@ AI_Smart_PsychUp:
 
 .discourage
 	inc [hl]
-	inc [hl]
-	ret
-
-AI_Smart_MirrorCoat:
-	push hl
-	ld hl, wPlayerUsedMoves
-	ld c, NUM_MOVES
-	ld b, 0
-
-.playermoveloop
-	ld a, [hli]
-	and a
-	jr z, .skipmove
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .skipmove
-
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	jr c, .skipmove
-
-	inc b
-
-.skipmove
-	dec c
-	jr nz, .playermoveloop
-
-	pop hl
-	ld a, b
-	and a
-	jr z, .discourage
-
-	cp 3
-	jr nc, .encourage
-
-	ld a, [wLastPlayerCounterMove]
-	and a
-	ret z
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	ret z
-
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	ret c
-
-.encourage
-	call Random
-	cp 39 percent + 1
-	ret c
-	dec [hl]
-	ret
-
-.discourage
 	inc [hl]
 	ret
 
