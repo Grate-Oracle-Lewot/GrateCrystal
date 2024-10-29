@@ -2983,7 +2983,7 @@ AI_Aggressive:
 	cp 2
 	jr c, .checkmove2
 
-; Ignore this move if it is reckless.
+; 50% chance to ignore this move if it is reckless.
 	push hl
 	push de
 	push bc
@@ -2994,10 +2994,16 @@ AI_Aggressive:
 	pop bc
 	pop de
 	pop hl
-	jr c, .checkmove2
+	jr c, .maybe_discourage
 
 ; If we made it this far, discourage this move.
+.discourage
 	inc [hl]
+	jr .checkmove2
+
+.maybe_discourage
+	call AI_50_50
+	jr c, .discourage
 	jr .checkmove2
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
