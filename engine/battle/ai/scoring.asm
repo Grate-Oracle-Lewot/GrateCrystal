@@ -2164,6 +2164,7 @@ AI_Smart_Curse:
 
 .ghost_curse
 ; Dismiss this move if the player is already cursed.
+; AI_Redundant doesn't cover this because then it would dismiss non-Ghost Curse too.
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_CURSE, a
 	jp nz, AIDiscourageMove
