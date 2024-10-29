@@ -3005,6 +3005,7 @@ AI_Smart_Rampage:
 	dec [hl]
 	ret
 
+
 AIDamageCalc:
 	ld a, 1
 	ldh [hBattleTurn], a
