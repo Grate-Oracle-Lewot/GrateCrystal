@@ -3201,13 +3201,11 @@ endr
 
 INCLUDE "data/battle/ai/risky_effects.asm"
 
-AI_None:
-	ret
-
 AIDiscourageMove:
 	ld a, [hl]
 	add 10
 	ld [hl], a
+AI_None:
 	ret
 
 AIGetEnemyMove:
