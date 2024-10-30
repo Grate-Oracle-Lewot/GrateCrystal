@@ -65,13 +65,8 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const_def
 	const HELD_NONE
 	const HELD_BERRY
-	const HELD_2
-	const HELD_LEFTOVERS
-	const_skip
-	const HELD_5
 	const HELD_RESTORE_PP
-	const_skip
-	const HELD_CLEANSE_TAG
+	const HELD_LEFTOVERS
 
 	const_next 10
 	const HELD_HEAL_POISON
@@ -79,8 +74,8 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_HEAL_BURN
 	const HELD_HEAL_SLEEP
 	const HELD_HEAL_PARALYZE
-	const HELD_HEAL_STATUS
 	const HELD_HEAL_CONFUSION
+	const HELD_HEAL_STATUS
 
 	const_next 20
 	const HELD_PREVENT_POISON
@@ -89,9 +84,9 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_PREVENT_SLEEP
 	const HELD_PREVENT_PARALYZE
 	const HELD_PREVENT_CONFUSE
+	const HELD_PREVENT_RECOIL
 
 	const_next 30
-	const HELD_30
 	const HELD_ATTACK_UP
 	const HELD_DEFENSE_UP
 	const HELD_SPEED_UP
@@ -99,12 +94,18 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_SP_DEFENSE_UP
 	const HELD_ACCURACY_UP
 	const HELD_EVASION_UP
-	const HELD_38
 
 	const_next 40
-	const_skip
-	const_skip
+	const HELD_CLEANSE_TAG
+	const HELD_ESCAPE
+	const HELD_CATCH_CHANCE
+	const HELD_CRITICAL_UP
+	const HELD_BRIGHTPOWDER
+	const HELD_FLINCH
+	const HELD_QUICK_CLAW
+	const HELD_FOCUS_BAND
 	const HELD_EVIOLITE
+	const HELD_AMULET_COIN
 
 	const_next 50
 	const HELD_NORMAL_BOOST
@@ -126,15 +127,3 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_STEEL_BOOST
 	const HELD_FAIRY_BOOST
 	const HELD_CURSE_BOOST
-
-	const_next 70
-	const HELD_CATCH_CHANCE
-	const HELD_71
-	const HELD_ESCAPE
-	const HELD_CRITICAL_UP
-	const HELD_QUICK_CLAW
-	const HELD_FLINCH
-	const HELD_AMULET_COIN
-	const HELD_BRIGHTPOWDER
-	const_skip
-	const HELD_FOCUS_BAND
