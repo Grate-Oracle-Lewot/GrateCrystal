@@ -3416,7 +3416,7 @@ SageGroup:
 	db "EDMOND@", TRAINERTYPE_NORMAL
 	db  5, BELLSPROUT
 	db  5, ODDISH
-	db  5, GASTLY
+	db  5, HOPPIP
 	db -1 ; end
 
 	; SAGE (8)
