@@ -158,7 +158,7 @@ AdventureArchive_Machine1:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
 	ld de, sTrainerRankingBattleTowerWins
-	jr AdventureArchive_Print4Bytes
+	jp AdventureArchive_Print4Bytes
 
 AdventureArchive_Machine2_1:
 	ld a, BANK(sTrainerRankings)
@@ -393,7 +393,9 @@ AdventureArchiveText10:
 AdventureArchiveText11:
 	text "The number of"
 	line "times you've used"
-	cont "FLY is…"
+
+	para "FLY outside of"
+	line "battle is…"
 	done
 
 AdventureArchiveText12:
