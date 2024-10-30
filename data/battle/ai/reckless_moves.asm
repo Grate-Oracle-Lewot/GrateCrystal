@@ -3,7 +3,6 @@
 ; and given a 50% chance to not be discouraged when they otherwise would be.
 ; The computer selecting one of these simulates a player gambling on a high number of hits.
 ; That being said, only EFFECT_MULTI_HIT has a variable number of hits.
-; Selfdestruct and Rampage were originally in here too, effectively over-prioritizing them.
 
 RecklessMoves:
 	db EFFECT_MULTI_HIT
