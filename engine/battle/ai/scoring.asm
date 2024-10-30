@@ -743,9 +743,10 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
 	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
-	dbw EFFECT_SPEED_UP,         AI_Smart_SpeedUp
+	dbw EFFECT_SPEED_UP,         AI_Smart_SpeedControl
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
+	dbw EFFECT_SPEED_DOWN,       AI_Smart_SpeedControl
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
 	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
@@ -758,8 +759,9 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
-	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedUp
+	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
+	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
@@ -3088,7 +3090,7 @@ AI_Smart_Rampage:
 	dec [hl]
 	ret
 
-AI_Smart_SpeedUp:
+AI_Smart_SpeedControl:
 ; Discourage this move if enemy is faster than player.
 	call AICompareSpeed
 	ret nc
