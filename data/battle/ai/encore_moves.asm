@@ -1,10 +1,8 @@
 ; AI_SMART tries to use Encore on these moves.
 
 EncoreMoves:
+	db SWORDS_DANCE
 	db WHIRLWIND
-	db TAIL_WHIP
-	db LEER
-	db GROWL
 	db ROAR
 	db DISABLE
 	db MIST
@@ -12,7 +10,6 @@ EncoreMoves:
 	db GROWTH
 	db POISONPOWDER
 	db STUN_SPORE
-	db STRING_SHOT
 	db THUNDER_WAVE
 	db MEDITATE
 	db AGILITY
@@ -22,6 +19,7 @@ EncoreMoves:
 	db HAZE
 	db REFLECT
 	db HAIL
+	db KINESIS
 	db GLARE
 	db DREAM_EATER
 	db TRANSFORM
