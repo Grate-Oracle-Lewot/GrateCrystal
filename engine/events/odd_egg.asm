@@ -48,15 +48,6 @@ _GiveOddEgg:
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH + NAME_LENGTH
 	call CopyBytes
 
-	ld a, EGG_TICKET
-	ld [wCurItem], a
-	ld a, 1
-	ld [wItemQuantityChange], a
-	ld a, -1
-	ld [wCurItemQuantity], a
-	ld hl, wNumItems
-	call TossItem
-
 	; load species in wMobileMonSpecies
 	ld a, EGG
 	ld [wMobileMonSpecies], a
