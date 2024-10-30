@@ -126,7 +126,7 @@ ItemDescriptions:
 	dw LuckyEggDesc
 	dw CardKeyDesc
 	dw MachinePartDesc
-	dw EggTicketDesc
+	dw HardhatDesc
 	dw LostItemDesc
 	dw StardustDesc
 	dw StarPieceDesc
@@ -752,9 +752,9 @@ MachinePartDesc:
 	db   "A machine part for"
 	next "the POWER PLANT.@"
 
-EggTicketDesc:
-	db   "May use at Golden-"
-	next "rod trade corner.@"
+HardhatDesc:
+	db   "Prevents recoil"
+	next "damage. (HOLD)@"
 
 LostItemDesc:
 	db   "The # DOLL lost"
