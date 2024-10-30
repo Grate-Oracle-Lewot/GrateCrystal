@@ -6,7 +6,7 @@
 	db GROUND, GHOST ; type
 	db 75 ; catch rate
 	db 124 ; base exp
-	db THICK_CLUB, THICK_CLUB ; items
+	db THICK_CLUB, HARDHAT ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/marowak/front.dimensions"
