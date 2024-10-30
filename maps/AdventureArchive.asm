@@ -157,173 +157,134 @@ AdventureArchiveMachine15:
 AdventureArchive_Machine1:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingBattleTowerWins
-	jp AdventureArchive_Print4Bytes
+	ld de, sTrainerRankingBattleTowerWins
+	jr AdventureArchive_Print4Bytes
 
 AdventureArchive_Machine2_1:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingWildBattles
+	ld de, sTrainerRankingWildBattles
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine2_2:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingTrainerBattles
+	ld de, sTrainerRankingTrainerBattles
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine2_3:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingBattles
+	ld de, sTrainerRankingBattles
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine3:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingWildMonsCaught
+	ld de, sTrainerRankingWildMonsCaught
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine4_1:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingHookedEncounters
+	ld de, sTrainerRankingHookedEncounters
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine4_2:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingTreeEncounters
+	ld de, sTrainerRankingTreeEncounters
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine4_3:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingRockEncounters
+	ld de, sTrainerRankingRockEncounters
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine5:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingMonsEvolved
+	ld de, sTrainerRankingMonsEvolved
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine6:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingEggsHatched
+	ld de, sTrainerRankingEggsHatched
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine7:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingTMsHMsTaught
+	ld de, sTrainerRankingTMsHMsTaught
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine8:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingHealings
+	ld de, sTrainerRankingHealings
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine9:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingWhiteOuts
+	ld de, sTrainerRankingWhiteOuts
 	; fallthrough
 
 AdventureArchive_Print3Bytes:
-	ld de, wStringBuffer1
-	ld bc, 3
-	call CopyBytes
-	call CloseSRAM
-
 	lb bc, 3, 7
-	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	call PrintNum
+	jp CloseSRAM
 
 AdventureArchive_Machine10:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingStepCount
+	ld de, sTrainerRankingStepCount
 	; fallthrough
 
 AdventureArchive_Print4Bytes:
-	ld de, wStringBuffer1
-	ld bc, 4
-	call CopyBytes
-	call CloseSRAM
-
 	lb bc, 4, 7
-	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	call PrintNum
+	jp CloseSRAM
 
 AdventureArchive_Machine11:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingFly
+	ld de, sTrainerRankingFly
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine12:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingFruitPicked
+	ld de, sTrainerRankingFruitPicked
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine13:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingSelfdestruct
+	ld de, sTrainerRankingSelfdestruct
 	jr AdventureArchive_Print3Bytes
 
 AdventureArchive_Machine14:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingBugContestScore
-	ld de, wStringBuffer1
-	ld bc, 2
-	call CopyBytes
-	call CloseSRAM
-
+	ld de, sTrainerRankingBugContestScore
 	lb bc, 2, 7
-	ld de, wStringBuffer1
 	hlcoord 1, 14
-	jp PrintNum
+	call PrintNum
+	jp CloseSRAM
 
 AdventureArchive_Machine15:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
-
-	ld hl, sTrainerRankingTotalBattlePayouts
-	ld de, wStringBuffer1
-	ld bc, 4
-	call CopyBytes
-	call CloseSRAM
-
+	ld de, sTrainerRankingTotalBattlePayouts
 	lb bc, 4, 7
-	ld de, wStringBuffer1
 	hlcoord 2, 14
-	jp PrintNum
+	call PrintNum
+	jp CloseSRAM
 
 AdventureArchiveSuperNerdText:
 	text "How do they know"
