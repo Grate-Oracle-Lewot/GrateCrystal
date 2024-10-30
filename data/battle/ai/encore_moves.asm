@@ -26,7 +26,6 @@ EncoreMoves:
 	db REST
 	db CONVERSION
 	db SUPER_FANG
-	db SKETCH
 	db SPIDER_WEB
 	db MIND_READER
 	db SNORE
