@@ -1203,11 +1203,8 @@ Function170923:
 BattleTowerAction_EggTicket: ; BattleTowerAction $0e
 	xor a ; FALSE
 	ld [wScriptVar], a
-	ld a, EGG_TICKET
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	ret nc
+	ret
+
 	ld a, [wPartyCount]
 	ld b, 0
 	ld c, a
@@ -1246,14 +1243,7 @@ endr
 	ld [hli], a
 	ld [hli], a
 	pop hl
-	ld a, EGG_TICKET
-	ld [wCurItem], a
-	ld a, 1
-	ld [wItemQuantityChange], a
-	ld a, -1
-	ld [wCurItemQuantity], a
-	ld hl, wNumItems
-	call TossItem
+
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
