@@ -258,7 +258,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_OPPORTUNIST now checks the player's HP instead of the enemy's, and now encourages moves in the "useful" list if the player's HP is low, in addition to discouraging moves in the "stall" list if the same.
 
-- AI_AGGRESSIVE only has a 50% chance to not discourage "reckless" moves, and the reckless list now consists only of multi-hit moves, not Selfdestruct and Thrash/Outrage/Petal Dance. This means that boss trainers will only gamble on multi-hit moves half as often, and will no longer prioritize blowing up or confusing themselves.
+- AI_AGGRESSIVE only has a 50% chance to not discourage "reckless" moves, and the reckless list now consists only of multi-hit moves, not Selfdestruct and Thrash/Outrage/Petal Dance. Additionally, it now discourages "stall" moves if it's down to its last Pokémon.
 
 - Many changes to AI_SMART subroutines. These keep the AI aware of all the other changes I've made to the game, and occasionally revise strategies for specific moves, e.g. encouraging Roar/Whirlwind if Spikes are set up.
 
