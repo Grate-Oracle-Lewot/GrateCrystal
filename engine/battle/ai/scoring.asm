@@ -758,6 +758,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
+	dbw EFFECT_RECOIL,           AI_Smart_Recoil
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
@@ -3086,6 +3087,19 @@ AI_Smart_Rampage:
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_CONFUSE
+	ret nz
+	dec [hl]
+	ret
+
+AI_Smart_Recoil:
+; Encourage this move if enemy's held item immunizes against recoil damage.
+	push hl
+	ld hl, wEnemyMonItem
+	ld b, [hl]
+	pop hl
+	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_RECOIL
 	ret nz
 	dec [hl]
 	ret
