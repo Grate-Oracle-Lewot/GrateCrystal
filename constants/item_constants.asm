@@ -131,7 +131,7 @@
 	const LUCKY_EGG    ; 7b
 	const CARD_KEY     ; 7c
 	const MACHINE_PART ; 7d
-	const EGG_TICKET   ; 7e
+	const HARDHAT      ; 7e
 	const LOST_ITEM    ; 7f
 	const STARDUST     ; 80
 	const STAR_PIECE   ; 81
