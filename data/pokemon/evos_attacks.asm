@@ -1620,6 +1620,7 @@ LickitungEvosAttacks:
 	db 43, SCREECH
 	db 49, BELLY_DRUM
 	db 55, VITAL_THROW
+	db 69, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:
