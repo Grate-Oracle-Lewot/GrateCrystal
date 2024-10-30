@@ -125,7 +125,7 @@ ItemNames::
 	li "LUCKY EGG"
 	li "CARD KEY"
 	li "MACHINE PART"
-	li "EGG TICKET"
+	li "HARDHAT"
 	li "LOST ITEM"
 	li "STARDUST"
 	li "STAR PIECE"
