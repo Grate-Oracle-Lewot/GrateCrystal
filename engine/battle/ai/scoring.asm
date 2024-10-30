@@ -743,7 +743,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
 	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
-	dbw EFFECT_SPEED_UP,         AI_Smart_SpeedControl
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_SPEED_DOWN,       AI_Smart_SpeedControl
@@ -3106,6 +3105,7 @@ AI_Smart_Recoil:
 
 AI_Smart_SpeedControl:
 ; Discourage this move if enemy is faster than player.
+; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
 	call AICompareSpeed
 	ret nc
 	inc [hl]
