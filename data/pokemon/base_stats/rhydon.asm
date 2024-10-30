@@ -6,7 +6,7 @@
 	db STEEL, ROCK ; type
 	db 60 ; catch rate
 	db 210 ; base exp
-	db HARD_STONE, METAL_COAT ; items
+	db METAL_COAT, HARDHAT ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/rhydon/front.dimensions"
