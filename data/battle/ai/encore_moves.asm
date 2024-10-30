@@ -22,7 +22,6 @@ EncoreMoves:
 	db HARDEN
 	db DEFENSE_CURL
 	db HAZE
-	db FOCUS_ENERGY
 	db DREAM_EATER
 	db CONVERSION
 	db SUPER_FANG
