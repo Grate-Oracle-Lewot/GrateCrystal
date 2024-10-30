@@ -6,7 +6,7 @@
 	db STEEL, ROCK ; type
 	db 120 ; catch rate
 	db 135 ; base exp
-	db IRON, METAL_COAT ; items
+	db IRON, HARDHAT ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/rhyhorn/front.dimensions"
