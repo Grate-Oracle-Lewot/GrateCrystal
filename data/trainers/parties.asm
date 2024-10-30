@@ -1715,9 +1715,10 @@ GentlemanGroup:
 	db -1 ; end
 
 	; GENTLEMAN (7)
-	db "NAVY@", TRAINERTYPE_NORMAL
-	db 69, NINETALES
-	db 69, DITTO
+	db "NAVY@", TRAINERTYPE_ITEM
+	db 69, NINETALES,  MIRACLEBERRY
+	db 69, DITTO,      LIMBO_STICK
+	db 69, LICKITUNG,  HARDHAT
 	db -1 ; end
 
 SkierGroup:
