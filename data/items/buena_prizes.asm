@@ -2,7 +2,6 @@ BuenaPrizeItems:
 	table_width 2, BuenaPrizeItems
 	db ULTRA_BALL,   1
 	db BERRY_JUICE,  2
-	db RARE_CANDY,   3
 	db CATCH_CHARM,  4
 	db HARDHAT,      4
 	db BRIGHTPOWDER, 5
