@@ -758,6 +758,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil
+	dbw EFFECT_JUMP_KICK,        AI_Smart_Recoil
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
@@ -3091,7 +3092,7 @@ AI_Smart_Rampage:
 	ret
 
 AI_Smart_Recoil:
-; Encourage this move if enemy's held item immunizes against recoil damage.
+; Encourage this move if enemy's held item prevents recoil/crash damage.
 	push hl
 	ld hl, wEnemyMonItem
 	ld b, [hl]
