@@ -2158,7 +2158,7 @@ GetFailureResultText:
 	ld de, ItFailedText
 	jr z, .got_text
 	ld hl, AttackMissedText
-	ld de, AttackMissed2Text
+	ld de, AttackMissedText
 	ld a, [wCriticalHit]
 	cp -1
 	jr nz, .got_text
