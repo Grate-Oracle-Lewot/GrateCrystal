@@ -594,11 +594,6 @@ AttackMissedText:
 	line "attack missed!"
 	autodone
 
-AttackMissed2Text:
-	text "<USER>'s"
-	line "attack missed!"
-	autodone
-
 AvoidStatusText:
 	text "<TARGET>"
 	line "avoided the"
