@@ -5577,7 +5577,7 @@ INCLUDE "engine/battle/move_effects/mist.asm"
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
 BattleCommand_Recoil:
-	call GetOpponentItem
+	call GetUserItem
 	ld a, b
 	cp HELD_PREVENT_RECOIL
 	ret z
