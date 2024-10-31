@@ -2173,6 +2173,11 @@ GetFailureResultText:
 	cp EFFECT_JUMP_KICK
 	ret nz
 
+	call GetUserItem
+	ld a, b
+	cp HELD_PREVENT_RECOIL
+	ret z
+
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
@@ -5581,6 +5586,7 @@ BattleCommand_Recoil:
 	ld a, b
 	cp HELD_PREVENT_RECOIL
 	ret z
+
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
