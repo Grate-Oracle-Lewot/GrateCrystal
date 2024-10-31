@@ -135,10 +135,16 @@ CeladonDeptStore6FSuperNerdText:
 	done
 
 CeladonDeptStore6FYoungsterText:
-	text "Aww! There's no"
-	line "games here!"
+	text "Here's a secret…"
 
-	para "I wanted to play…"
+	para "The HARDHAT blocks"
+	line "not only recoil,"
+
+	para "but the damage you"
+	line "take when you miss"
+
+	para "JUMP KICK or HI"
+	line "JUMP KICK!"
 	done
 
 CeladonDeptStore6FDirectoryText:
