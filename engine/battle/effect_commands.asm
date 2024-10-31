@@ -137,9 +137,7 @@ BattleCommand_CheckTurn:
 
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
-	call StdBattleTextbox
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .no_recharge
 	ld hl, wBattleMonStatus
@@ -184,8 +182,7 @@ BattleCommand_CheckTurn:
 	cp NIGHT_TERROR
 	jr z, .not_asleep
 
-	call CantMove
-	jp EndTurn
+	jp CantMoveEndTurn
 
 .not_asleep
 	ld hl, wBattleMonStatus
@@ -193,10 +190,7 @@ BattleCommand_CheckTurn:
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
-	call StdBattleTextbox
-
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .not_frozen
 	ld hl, wPlayerSubStatus3
@@ -205,10 +199,7 @@ BattleCommand_CheckTurn:
 
 	res SUBSTATUS_FLINCHED, [hl]
 	ld hl, FlinchedText
-	call StdBattleTextbox
-
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .not_flinched
 	ld hl, wPlayerDisableCount
@@ -260,8 +251,7 @@ BattleCommand_CheckTurn:
 	ld [hl], a
 
 	call HitConfusion
-	call CantMove
-	jp EndTurn
+	jr CantMoveEndTurn
 
 .not_confused
 	ld a, [wPlayerSubStatus1]
@@ -281,9 +271,7 @@ BattleCommand_CheckTurn:
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
-	call StdBattleTextbox
-	call CantMove
-	jp EndTurn
+	jr StdBattleTextboxCantMoveEndTurn
 
 .not_infatuated
 	; We can't disable a move that doesn't exist.
@@ -297,8 +285,7 @@ BattleCommand_CheckTurn:
 	jr nz, .no_disabled_move
 
 	call MoveDisabled
-	call CantMove
-	jp EndTurn
+	jr CantMoveEndTurn
 
 .no_disabled_move
 	ld hl, wBattleMonStatus
@@ -311,7 +298,11 @@ BattleCommand_CheckTurn:
 	ret nc
 
 	ld hl, FullyParalyzedText
+	; fallthrough
+
+StdBattleTextboxCantMoveEndTurn:
 	call StdBattleTextbox
+CantMoveEndTurn:
 	call CantMove
 	jp EndTurn
 
@@ -355,9 +346,7 @@ CheckEnemyTurn:
 
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
-	call StdBattleTextbox
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .no_recharge
 	ld hl, wEnemyMonStatus
@@ -400,8 +389,7 @@ CheckEnemyTurn:
 	jr z, .not_asleep
 	cp NIGHT_TERROR
 	jr z, .not_asleep
-	call CantMove
-	jp EndTurn
+	jp CantMoveEndTurn
 
 .not_asleep
 	ld hl, wEnemyMonStatus
@@ -409,9 +397,7 @@ CheckEnemyTurn:
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
-	call StdBattleTextbox
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .not_frozen
 	ld hl, wEnemySubStatus3
@@ -420,10 +406,7 @@ CheckEnemyTurn:
 
 	res SUBSTATUS_FLINCHED, [hl]
 	ld hl, FlinchedText
-	call StdBattleTextbox
-
-	call CantMove
-	jp EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .not_flinched
 	ld hl, wEnemyDisableCount
@@ -497,8 +480,7 @@ CheckEnemyTurn:
 	ld c, TRUE
 	call DoEnemyDamage
 	call BattleCommand_RaiseSub
-	call CantMove
-	jp EndTurn
+	jp CantMoveEndTurn
 
 .not_confused
 	ld a, [wEnemySubStatus1]
@@ -518,9 +500,7 @@ CheckEnemyTurn:
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
-	call StdBattleTextbox
-	call CantMove
-	jr EndTurn
+	jp StdBattleTextboxCantMoveEndTurn
 
 .not_infatuated
 	; We can't disable a move that doesn't exist.
@@ -534,9 +514,7 @@ CheckEnemyTurn:
 	jr nz, .no_disabled_move
 
 	call MoveDisabled
-
-	call CantMove
-	jr EndTurn
+	jp CantMoveEndTurn
 
 .no_disabled_move
 	ld hl, wEnemyMonStatus
