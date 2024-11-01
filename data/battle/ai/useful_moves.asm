@@ -6,6 +6,7 @@ UsefulMoves:
 	db ICE_PUNCH
 	db SIGNAL_BEAM
 	db CUT
+	db TWINEEDLE
 	db FLAMETHROWER
 	db SURF
 	db ICE_BEAM
@@ -20,6 +21,7 @@ UsefulMoves:
 	db FLASH
 	db AIR_SLASH
 	db DARK_PULSE
+	db ROCK_SLIDE
 	db SILVER_WIND
 	db TRI_ATTACK
 	db AEROBLAST
