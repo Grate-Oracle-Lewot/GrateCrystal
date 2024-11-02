@@ -255,6 +255,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM).
 
+- AI_SETUP now encourages stat-up moves if the player is currently flying or underground and the enemy is faster, in addition to its normal stuff.
+
 - AI_TYPES now encourages moves in the Rain Dance and Sunny Day lists if those weather conditions are up, in addition to its type effectiveness check. It does not encourage Blizzard in Hail.
 
 - AI_OPPORTUNIST now checks the player's HP instead of the enemy's, and now encourages moves in the "useful" list if the player's HP is low, in addition to discouraging moves in the "stall" list if the same.
