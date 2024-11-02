@@ -751,6 +751,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
 	dbw EFFECT_RAMPAGE,          AI_Smart_Rampage
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
+	dbw EFFECT_FLINCH_HIT,       AI_Smart_FlinchHit
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Poison
 	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_Bide_Screens
@@ -3088,6 +3089,15 @@ AI_Smart_SpeedControl:
 	call AICompareSpeed
 	ret nc
 	inc [hl]
+	ret
+
+AI_Smart_FlinchHit:
+; 50% chance to encourage this move if enemy is faster than player.
+	call AICompareSpeed
+	ret c
+	call AI_50_50
+	ret c
+	dec [hl]
 	ret
 
 
