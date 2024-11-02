@@ -2834,38 +2834,70 @@ AI_Smart_Safeguard:
 
 AI_Smart_Earthquake:
 ; Greatly encourage this move if the player is underground and the enemy is faster.
-
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_UNDERGROUND, a
-	jr z, .could_dig
+	jr z, .checklastmove
 
 	call AICompareSpeed
-	jr nc, .discourage_float
+	jr nc, .checklastmove
 	dec [hl]
 	dec [hl]
 	ret
 
-; Try to predict if the player will use Dig this turn.
-.could_dig
+.checklastmove
+; If Dig was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp DIG
+	jr nz, .checkfloat
 
-	; 50% chance to encourage this move if the enemy is slower than the player.
+; ...try to predict if the player will use Dig again this turn.
 	call AICompareSpeed
-	jr c, .discourage_float
+	jr c, .checkfloat
 
 	call AI_50_50
-	jr c, .discourage_float
+	jr c, .checkfloat
 
 	dec [hl]
 	ret
 
-.discourage_float
-; Dismiss this move if the player is a floatmon.
+.checkfloat
+; If the player isn't using Dig, dismiss this move if the player is a floatmon.
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
 	jp c, AIDismissMove
+	ret
+
+AI_Smart_Gust_Twister:
+; Greatly encourage this move if the player is flying and the enemy is faster.
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_FLYING, a
+	jr z, .checklastmove
+
+	call AICompareSpeed
+	jr nc, .checklastmove
+
+	dec [hl]
+	dec [hl]
+	ret
+
+.checklastmove
+; If Fly or Sky Attack was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp FLY
+	jr z, .couldFly
+	cp SKY_ATTACK
+	ret nz
+
+.couldFly
+; ...try to predict if the player will use Fly or Sky Attack again this turn.
+	call AICompareSpeed
+	ret c
+	call AI_50_50
+	ret c
+	dec [hl]
 	ret
 
 AI_Smart_Pursuit:
@@ -3029,31 +3061,6 @@ AI_Smart_PsychUp:
 .discourage
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_Gust_Twister:
-; Greatly encourage this move if the player is flying and the enemy is faster.
-
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_FLYING, a
-	jr z, .couldFly
-
-	call AICompareSpeed
-	ret nc
-
-	dec [hl]
-	dec [hl]
-	ret
-
-; Try to predict if the player will use Fly this turn.
-.couldFly
-
-	; 50% chance to encourage this move if the enemy is slower than the player.
-	call AICompareSpeed
-	ret c
-	call AI_50_50
-	ret c
-	dec [hl]
 	ret
 
 AI_Smart_Stomp:
