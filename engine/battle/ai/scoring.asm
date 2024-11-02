@@ -62,7 +62,7 @@ AI_Basic:
 	jr z, .checkmove
 
 .discourage
-	call AIDiscourageMove
+	call AIDismissMove
 	jr .checkmove
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
@@ -130,7 +130,7 @@ AI_Status:
 	jr nz, .checkmove
 
 .immune
-	call AIDiscourageMove
+	call AIDismissMove
 	jr .checkmove
 
 
@@ -337,7 +337,7 @@ AI_Types:
 	jr .checkmove
 
 .immune
-	call AIDiscourageMove
+	call AIDismissMove
 	jr .checkmove
 
 ; Encourage moves in the Rain Dance list if it's raining.
@@ -833,14 +833,14 @@ AI_Smart_Nightmare:
 ; Dismiss this move if the player has a Substitute.
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, AIDiscourageMove
+	jp nz, AIDismissMove
 
 ; Greatly encourage this move if the player is asleep.
 ; Dismiss this move if the player has any status other than sleep.
 	ld a, [wBattleMonStatus]
 	jr z, .no_status
 	and SLP
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 	dec [hl]
 	dec [hl]
 
@@ -849,7 +849,7 @@ AI_Smart_Nightmare:
 ; ...dismiss this move if the player is Safeguarded...
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
-	jp nz, AIDiscourageMove
+	jp nz, AIDismissMove
 ; ...otherwise, fall through to AI_Smart_Sleep.
 
 AI_Smart_Sleep:
@@ -867,7 +867,7 @@ AI_Smart_Sleep:
 	jr nz, .skip_immune
 	call AI_50_50
 	jr c, .skip_immune
-	jp AIDiscourageMove
+	jp AIDismissMove
 
 .skip_immune
 	ld b, EFFECT_DREAM_EATER
@@ -1068,7 +1068,7 @@ AI_Smart_LockOn:
 
 .dismiss
 	pop hl
-	jp AIDiscourageMove
+	jp AIDismissMove
 
 AI_Smart_Selfdestruct:
 ; Unless this is the enemy's last Pokemon...
@@ -1107,7 +1107,7 @@ AI_Smart_EvasionUp:
 ; Dismiss this move if enemy's evasion can't raise anymore.
 	ld a, [wEnemyEvaLevel]
 	cp MAX_STAT_LEVEL
-	jp nc, AIDiscourageMove
+	jp nc, AIDismissMove
 
 ; If enemy's HP is full...
 	call AICheckEnemyMaxHP
@@ -1312,7 +1312,7 @@ AI_Smart_MirrorMove:
 	ret nc
 
 ; ...or dismiss this move if enemy is faster than player.
-	jp AIDiscourageMove
+	jp AIDismissMove
 
 ; If the player did use a move last turn...
 .usedmove
@@ -1399,7 +1399,7 @@ AI_Smart_ForceSwitch:
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 
 ; If the player doesn't have Spikes around them, merge into AI_Smart_BaseSwitchScore.
 	ld a, [wPlayerScreens]
@@ -1417,7 +1417,7 @@ AI_Smart_BatonPass:
 	push hl
 	farcall FindAliveEnemyMons
 	pop hl
-	jp c, AIDiscourageMove
+	jp c, AIDismissMove
 	; fallthrough
 
 AI_Smart_BaseSwitchScore:
@@ -1473,16 +1473,16 @@ AI_Smart_Poison:
 	jr nz, AI_DiscourageIfPlayerHPBelowHalf
 	call AI_50_50
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
-	jr AIDiscourageMove
+	jr AIDismissMove
 
 AI_Smart_LeechSeed:
 ; Dismiss this move if the player is Grass-type and therefore immune.
 	ld a, [wBattleMonType1]
 	cp GRASS
-	jr z, AIDiscourageMove
+	jr z, AIDismissMove
 	ld a, [wBattleMonType2]
 	cp GRASS
-	jr z, AIDiscourageMove
+	jr z, AIDismissMove
 	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Fissure:
@@ -1492,7 +1492,7 @@ AI_Smart_Fissure:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jr c, AIDiscourageMove
+	jr c, AIDismissMove
 	; fallthrough
 
 AI_Smart_Ohko:
@@ -1503,7 +1503,7 @@ AI_Smart_Ohko:
 	ld b, a
 	ld a, [wEnemyMonLevel]
 	cp b
-	jr c, AIDiscourageMove
+	jr c, AIDismissMove
 	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Confuse:
@@ -1520,7 +1520,7 @@ AI_Smart_Confuse:
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
 	; fallthrough
 
-AIDiscourageMove:
+AIDismissMove:
 ; This is jumped to from everywhere.
 ; It's wedged in here to change some jps to jrs.
 	ld a, [hl]
@@ -1620,7 +1620,7 @@ AI_Smart_Dig:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jp c, AIDiscourageMove
+	jp c, AIDismissMove
 	; fallthrough
 
 AI_Smart_Fly:
@@ -1658,7 +1658,7 @@ AI_Smart_Paralyze:
 	jr nz, .skip_immune
 	call AI_50_50
 	jr c, .skip_immune
-	jp AIDiscourageMove
+	jp AIDismissMove
 
 .skip_immune
 ; 50% chance to discourage this move if player's HP is below 25%.
@@ -1781,7 +1781,7 @@ AI_Smart_Substitute_SkullBash:
 
 	call AICheckEnemyQuarterHP
 	jr c, AI_Smart_Discourage
-	jp AIDiscourageMove
+	jp AIDismissMove
 
 .encourage
 	dec [hl]
@@ -1903,7 +1903,7 @@ AI_Smart_Encore:
 ; Dismiss this move if the player did not use any move last turn.
 	ld a, [wLastPlayerMove]
 	and a
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 
 ; Highly discourage this move if the player is faster than the enemy.
 	call AICompareSpeed
@@ -1962,7 +1962,7 @@ AI_Smart_Spite:
 	jr nz, .usedmove
 
 	call AICompareSpeed
-	jp c, AIDiscourageMove
+	jp c, AIDismissMove
 
 	call AI_50_50
 	ret c
@@ -2056,7 +2056,7 @@ AI_Smart_HealBell:
 
 	ld a, [wEnemyMonStatus]
 	and a
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 .encourage
 	dec [hl]
 	ret
@@ -2068,7 +2068,7 @@ AI_Smart_PriorityHit:
 ; Dismiss this move if the player is flying or underground.
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	jp nz, AIDiscourageMove
+	jp nz, AIDismissMove
 
 ; Highly encourage this move if it will KO the player.
 	ld a, 1
@@ -2167,16 +2167,16 @@ AI_Smart_MeanLook:
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 
 ; Dismiss this move if the player is Ghost-type and therefore immune.
 	ld a, [wBattleMonType1]
 	cp GHOST
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 
 	ld a, [wBattleMonType2]
 	cp GHOST
-	jp z, AIDiscourageMove
+	jp z, AIDismissMove
 
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
@@ -2254,7 +2254,7 @@ AI_Smart_Curse:
 ; AI_Redundant doesn't cover this because then it would dismiss non-Ghost Curse too.
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_CURSE, a
-	jp nz, AIDiscourageMove
+	jp nz, AIDismissMove
 
 	push hl
 	farcall FindAliveEnemyMons
@@ -2853,7 +2853,7 @@ AI_Smart_Earthquake:
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jp c, AIDiscourageMove
+	jp c, AIDismissMove
 	ret
 
 AI_Smart_Pursuit:
