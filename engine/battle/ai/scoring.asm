@@ -1541,90 +1541,6 @@ AIDismissMove:
 AI_None: ; lol
 	ret
 
-AI_Smart_TrapTarget:
-; Bind, Wrap, Fire Spin, Clamp, Whirlpool
-
-; 50% chance to discourage this move if the player is already trapped.
-	ld a, [wPlayerWrapCount]
-	and a
-	jr nz, .discourage
-
-; 50% chance to greatly encourage this move if player is either badly poisoned, in love, identified, stuck in Rollout, or has a Nightmare.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .encourage
-
-	ld a, [wPlayerSubStatus1]
-	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
-	jr nz, .encourage
-
-; Else, 50% chance to greatly encourage this move if it's the player's Pokemon's first turn.
-	ld a, [wPlayerTurnsTaken]
-	and a
-	jr z, .encourage
-
-; 50% chance to discourage this move otherwise.
-.discourage
-	call AI_50_50
-	ret c
-	inc [hl]
-	ret
-
-.encourage
-	call AICheckEnemyQuarterHP
-	ret nc
-	call AI_50_50
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
-
-AI_Smart_SpDefenseUp2:
-; Discourage this move if enemy's HP is lower than 50%.
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
-
-; Discourage this move if enemy's special defense level is higher than +3.
-	ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
-
-; 80% chance to greatly encourage this move if enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-
-	push hl
-; Get the pointer for the player's Pokémon's base Attack
-	ld a, [wBattleMonSpecies]
-	ld hl, BaseData + BASE_ATK
-	ld bc, BASE_DATA_SIZE
-	call AddNTimes
-; Get the Pokémon's base Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	ld d, a
-; Get the pointer for the player's Pokémon's base Special Attack
-	ld bc, BASE_SAT - BASE_ATK
-	add hl, bc
-; Get the Pokémon's base Special Attack
-	ld a, BANK(BaseData)
-	call GetFarByte
-	pop hl
-; If its base Attack is greater than its base Special Attack, don't encourage this move.
-	cp d
-	ret c
-
-.encourage
-	call AI_80_20
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
-	ret
-
 AI_Smart_Float:
 ; Dismiss this move if the player is a floatmon.
 ; Used by AI_Smart_Dig and AI_Smart_Earthquake.
@@ -1714,13 +1630,6 @@ AI_Smart_Gust_Twister:
 	dec [hl]
 	ret
 
-AI_Smart_SuperFang:
-; Discourage this move if player's HP is below 25%.
-	call AICheckPlayerQuarterHP
-	ret c
-	inc [hl]
-	ret
-
 AI_Smart_Paralyze:
 ; 50% chance to dismiss this move if the player's held item immunizes against Paralysis.
 	push hl
@@ -1733,7 +1642,7 @@ AI_Smart_Paralyze:
 	jr nz, .skip_immune
 	call AI_50_50
 	jr c, .skip_immune
-	jp AIDismissMove
+	jr AIDismissMove
 
 .skip_immune
 ; 50% chance to discourage this move if player's HP is below 25%.
@@ -1754,6 +1663,97 @@ AI_Smart_Paralyze:
 .discourage
 	call AI_50_50
 	ret c
+	inc [hl]
+	ret
+
+AI_Smart_SuperFang:
+; Discourage this move if player's HP is below 25%.
+	call AICheckPlayerQuarterHP
+	ret c
+	inc [hl]
+	ret
+
+AI_Smart_TrapTarget:
+; Bind, Wrap, Fire Spin, Clamp, Whirlpool
+
+; 50% chance to discourage this move if the player is already trapped.
+	ld a, [wPlayerWrapCount]
+	and a
+	jr nz, .discourage
+
+; 50% chance to greatly encourage this move if player is either badly poisoned, in love, identified, stuck in Rollout, or has a Nightmare.
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr nz, .encourage
+
+	ld a, [wPlayerSubStatus1]
+	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
+	jr nz, .encourage
+
+; Else, 50% chance to greatly encourage this move if it's the player's Pokemon's first turn.
+	ld a, [wPlayerTurnsTaken]
+	and a
+	jr z, .encourage
+
+; 50% chance to discourage this move otherwise.
+.discourage
+	call AI_50_50
+	ret c
+	inc [hl]
+	ret
+
+.encourage
+	call AICheckEnemyQuarterHP
+	ret nc
+	call AI_50_50
+	ret c
+	dec [hl]
+	dec [hl]
+	ret
+
+AI_Smart_SpDefenseUp2:
+; Discourage this move if enemy's HP is lower than 50%.
+	call AICheckEnemyHalfHP
+	jr nc, .discourage
+
+; Discourage this move if enemy's special defense level is higher than +3.
+	ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 4
+	jr nc, .discourage
+
+; 80% chance to greatly encourage this move if enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
+	cp BASE_STAT_LEVEL + 2
+	ret nc
+
+	push hl
+; Get the pointer for the player's Pokémon's base Attack
+	ld a, [wBattleMonSpecies]
+	ld hl, BaseData + BASE_ATK
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+; Get the Pokémon's base Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	ld d, a
+; Get the pointer for the player's Pokémon's base Special Attack
+	ld bc, BASE_SAT - BASE_ATK
+	add hl, bc
+; Get the Pokémon's base Special Attack
+	ld a, BANK(BaseData)
+	call GetFarByte
+	pop hl
+; If its base Attack is greater than its base Special Attack, don't encourage this move.
+	cp d
+	ret c
+
+.encourage
+	call AI_80_20
+	ret c
+	dec [hl]
+	dec [hl]
+	ret
+
+.discourage
 	inc [hl]
 	ret
 
