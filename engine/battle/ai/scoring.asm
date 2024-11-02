@@ -768,6 +768,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
+	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_FutureSight
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
