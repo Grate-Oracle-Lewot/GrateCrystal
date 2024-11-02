@@ -1625,14 +1625,19 @@ AI_Smart_SpDefenseUp2:
 	inc [hl]
 	ret
 
-AI_Smart_Dig:
+AI_Smart_Float:
 ; Dismiss this move if the player is a floatmon.
+; Used by AI_Smart_Dig and AI_Smart_Earthquake.
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
 	pop hl
-	jp c, AIDismissMove
+	jr c, AIDismissMove
+	ret
+
+AI_Smart_Dig:
+	call AI_Smart_Float
 	; fallthrough
 
 AI_Smart_Fly_FutureSight:
@@ -1648,6 +1653,64 @@ AI_Smart_Fly_FutureSight:
 
 	dec [hl]
 	dec [hl]
+	dec [hl]
+	ret
+
+AI_Smart_Earthquake:
+; Greatly encourage this move if the player is underground and the enemy is faster.
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_UNDERGROUND, a
+	jr z, .checklastmove
+
+	call AICompareSpeed
+	jr nc, .checklastmove
+	dec [hl]
+	dec [hl]
+	ret
+
+.checklastmove
+; If Dig was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp DIG
+	jr nz, AI_Smart_Float
+
+; ...try to predict if the player will use Dig again this turn.
+	call AICompareSpeed
+	jr c, AI_Smart_Float
+
+	call AI_50_50
+	jr c, AI_Smart_Float
+
+	dec [hl]
+	ret
+
+AI_Smart_Gust_Twister:
+; Greatly encourage this move if the player is flying and the enemy is faster.
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_FLYING, a
+	jr z, .checklastmove
+
+	call AICompareSpeed
+	jr nc, .checklastmove
+
+	dec [hl]
+	dec [hl]
+	ret
+
+.checklastmove
+; If Fly or Sky Attack was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp FLY
+	jr z, .couldFly
+	cp SKY_ATTACK
+	ret nz
+
+.couldFly
+; ...try to predict if the player will use Fly or Sky Attack again this turn.
+	call AICompareSpeed
+	ret c
+	call AI_50_50
+	ret c
 	dec [hl]
 	ret
 
@@ -2830,74 +2893,6 @@ AI_Smart_Safeguard:
 	call AI_80_20
 	ret c
 	inc [hl]
-	ret
-
-AI_Smart_Earthquake:
-; Greatly encourage this move if the player is underground and the enemy is faster.
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_UNDERGROUND, a
-	jr z, .checklastmove
-
-	call AICompareSpeed
-	jr nc, .checklastmove
-	dec [hl]
-	dec [hl]
-	ret
-
-.checklastmove
-; If Dig was the player's last used move...
-	ld a, [wLastPlayerCounterMove]
-	cp DIG
-	jr nz, .checkfloat
-
-; ...try to predict if the player will use Dig again this turn.
-	call AICompareSpeed
-	jr c, .checkfloat
-
-	call AI_50_50
-	jr c, .checkfloat
-
-	dec [hl]
-	ret
-
-.checkfloat
-; If the player isn't using Dig, dismiss this move if the player is a floatmon.
-	push hl
-	ld a, [wBattleMonSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	pop hl
-	jp c, AIDismissMove
-	ret
-
-AI_Smart_Gust_Twister:
-; Greatly encourage this move if the player is flying and the enemy is faster.
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_FLYING, a
-	jr z, .checklastmove
-
-	call AICompareSpeed
-	jr nc, .checklastmove
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.checklastmove
-; If Fly or Sky Attack was the player's last used move...
-	ld a, [wLastPlayerCounterMove]
-	cp FLY
-	jr z, .couldFly
-	cp SKY_ATTACK
-	ret nz
-
-.couldFly
-; ...try to predict if the player will use Fly or Sky Attack again this turn.
-	call AICompareSpeed
-	ret c
-	call AI_50_50
-	ret c
-	dec [hl]
 	ret
 
 AI_Smart_Pursuit:
