@@ -833,6 +833,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
+	dbw EFFECT_BEAT_UP,          AI_Smart_BeatUp
 	dbw EFFECT_FLY,              AI_Smart_Fly_FutureSight
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
@@ -1921,6 +1922,7 @@ AI_CounterMirrorCoat_Encourage:
 
 AI_Smart_Discourage:
 ; Another thing that multiple Smart AIs jump to.
+; Used as the outright routine for False Swipe.
 	inc [hl]
 	ret
 
@@ -3113,6 +3115,55 @@ AI_Smart_FlinchHit:
 	dec [hl]
 	ret
 
+AI_Smart_BeatUp:
+; Greatly discourage this move if the enemy has only one Pokemon [remaining].
+	call AICheckLastEnemyMon
+	jr nc, .check_status
+
+	inc [hl]
+	inc [hl]
+
+.check_status
+; Discourage again if any of the enemy's Pokemon are statused.
+	push hl
+	ld a, [wOTPartyCount]
+	ld b, a
+	ld c, 0
+	ld hl, wOTPartyMon1HP
+	ld de, PARTYMON_STRUCT_LENGTH
+
+.loop
+	push hl
+	ld a, [hli]
+	or [hl]
+	jr z, .next
+
+	; status
+	dec hl
+	dec hl
+	dec hl
+	ld a, [hl]
+	or c
+	ld c, a
+
+.next
+	pop hl
+	add hl, de
+	dec b
+	jr nz, .loop
+
+	pop hl
+	ld a, c
+	and a
+	jr nz, .discourage
+
+	ld a, [wEnemyMonStatus]
+	and a
+	ret z
+.discourage
+	inc [hl]
+	ret
+
 
 AIDamageCalc:
 	ld a, 1
@@ -3169,6 +3220,13 @@ AICheckLastPlayerMon:
 	inc c
 	dec b
 	jr nz, .loop
+	ret
+
+AICheckLastEnemyMon:
+; Return c if this is the enemy's last/only mon.
+	push hl
+	farcall FindAliveEnemyMons
+	pop hl
 	ret
 
 AICheckPlayerMaxHP:
