@@ -1401,11 +1401,14 @@ AI_Smart_ForceSwitch:
 	pop hl
 	jp z, AIDiscourageMove
 
-; Encourage this move if the player has Spikes around them.
-; Else, merge into AI_Smart_BaseSwitchScore.
+; If the player doesn't have Spikes around them, merge into AI_Smart_BaseSwitchScore.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
 	jr z, AI_Smart_BaseSwitchScore
+
+; 80% chance to encourage this move if the player has Spikes around them.
+	call AI_80_20
+	ret c
 	dec [hl]
 	ret
 
