@@ -135,8 +135,6 @@ AI_Status:
 
 
 AI_Setup:
-; Use stat-modifying moves on turn 1.
-
 ; 50% chance to greatly encourage stat-up moves during the first turn of enemy's Pokemon.
 ; 50% chance to greatly encourage stat-down moves during the first turn of player's Pokemon.
 ; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
@@ -3116,10 +3114,18 @@ AI_Smart_FlinchHit:
 	ret
 
 AI_Smart_BeatUp:
+; Greatly encourage this move on the first turn of battle.
+	ld a, [wTotalBattleTurns]
+	and a
+	jr nz, .not_first_turn
+	dec [hl]
+	dec [hl]
+
+.not_first_turn
 ; Greatly discourage this move if the enemy has only one Pokemon [remaining].
+; This would counter any previous encouragement.
 	call AICheckLastEnemyMon
 	jr nc, .check_status
-
 	inc [hl]
 	inc [hl]
 
