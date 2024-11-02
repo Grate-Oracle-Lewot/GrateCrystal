@@ -821,7 +821,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
-	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_FLY,              AI_Smart_Fly_FutureSight
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
 	dbw EFFECT_DIG,              AI_Smart_Dig
@@ -1614,7 +1614,7 @@ AI_Smart_SpDefenseUp2:
 	ret
 
 AI_Smart_Dig:
-; Dismiss this move if the player is a floatmon
+; Dismiss this move if the player is a floatmon.
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
@@ -1623,8 +1623,8 @@ AI_Smart_Dig:
 	jp c, AIDismissMove
 	; fallthrough
 
-AI_Smart_Fly:
-; Fly, Sky Attack
+AI_Smart_Fly_FutureSight:
+; Fly, Sky Attack, Future Sight
 ; Highly encourage this move if the player is flying or underground, and slower than the enemy.
 
 	ld a, [wPlayerSubStatus3]
@@ -2689,7 +2689,10 @@ AI_Smart_Thunder:
 	cp GROUND
 	ret z
 
-; Otherwise, greatly encourage this move in rain.
+; Otherwise, maybe encourage this move if the player is flying...
+	call AI_Smart_Gust_Twister
+
+; ...and greatly encourage this move in rain.
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret nz
@@ -2819,9 +2822,6 @@ AI_Smart_Safeguard:
 
 AI_Smart_Earthquake:
 ; Greatly encourage this move if the player is underground and the enemy is faster.
-	ld a, [wLastPlayerCounterMove]
-	cp DIG
-	jr nz, .discourage_float
 
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_UNDERGROUND, a
@@ -3021,13 +3021,7 @@ AI_Smart_PsychUp:
 
 AI_Smart_Gust_Twister:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
-	ld a, [wLastPlayerCounterMove]
-	cp FLY
-	jr z, .yup
-	cp SKY_ATTACK
-	ret nz
 
-.yup
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_FLYING, a
 	jr z, .couldFly
@@ -3047,25 +3041,6 @@ AI_Smart_Gust_Twister:
 	ret c
 	call AI_50_50
 	ret c
-	dec [hl]
-	ret
-
-AI_Smart_FutureSight:
-; Greatly encourage this move if the player is protected.
-	ld a, [wPlayerProtectCount]
-	and a
-	jr nz, .encourage
-
-; Greatly encourage this move if the player is flying or underground, and slower than the enemy.
-	call AICompareSpeed
-	ret nc
-
-	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	ret z
-
-.encourage
-	dec [hl]
 	dec [hl]
 	ret
 
