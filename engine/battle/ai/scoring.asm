@@ -766,8 +766,8 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_OHKO,             AI_Smart_Ohko
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
-	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil
-	dbw EFFECT_JUMP_KICK,        AI_Smart_Recoil
+	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
+	dbw EFFECT_JUMP_KICK,        AI_Smart_Recoil_JumpKick
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
@@ -776,7 +776,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
-	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_FutureSight
+	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_SkyAttack_FutureSight
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
@@ -826,13 +826,13 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SKULL_BASH,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_TWISTER,          AI_Smart_Gust_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
-	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
+	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_Fly_SkyAttack_FutureSight
 	dbw EFFECT_GUST,             AI_Smart_Gust_Twister
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_BEAT_UP,          AI_Smart_BeatUp
-	dbw EFFECT_FLY,              AI_Smart_Fly_FutureSight
+	dbw EFFECT_FLY,              AI_Smart_Fly_SkyAttack_FutureSight
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
 	dbw EFFECT_DIG,              AI_Smart_Dig
@@ -1527,7 +1527,7 @@ AI_Smart_Dig:
 	call AI_Smart_Float
 	; fallthrough
 
-AI_Smart_Fly_FutureSight:
+AI_Smart_Fly_SkyAttack_FutureSight:
 ; Fly, Sky Attack, Future Sight
 ; Highly encourage this move if the player is flying or underground, and slower than the enemy.
 
@@ -3057,7 +3057,7 @@ AI_Smart_Rampage:
 	dec [hl]
 	ret
 
-AI_Smart_Recoil:
+AI_Smart_Recoil_JumpKick:
 ; Encourage this move if enemy's held item prevents recoil/crash damage.
 	push hl
 	ld hl, wEnemyMonItem
