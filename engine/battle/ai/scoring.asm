@@ -522,7 +522,7 @@ AI_Aggressive:
 ; If no damaging move deals damage to the player (immune), no move will be discouraged.
 
 ; Discourage stall moves if the enemy has only one Pokemon [remaining].
-	farcall FindAliveEnemyMons
+	call AICheckLastEnemyMon
 	call c, AI_Discourage_Stall
 
 ; Figure out which attack does the most damage and put it in c.
@@ -1083,15 +1083,11 @@ AI_Smart_LockOn:
 
 AI_Smart_Selfdestruct:
 ; Unless this is the enemy's last Pokemon...
-	push hl
-	farcall FindAliveEnemyMons
-	pop hl
+	call AICheckLastEnemyMon
 	jr nc, .notlastmon
 
 ; ...highly discourage this move unless this is the player's last Pokemon too.
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jr nz, .discourage
 
 .notlastmon
@@ -1407,9 +1403,7 @@ AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 
 ; Dismiss this move if the player has only one Pokemon [remaining].
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jp z, AIDismissMove
 
 ; If the player doesn't have Spikes around them, merge into AI_Smart_BaseSwitchScore.
@@ -1425,9 +1419,7 @@ AI_Smart_ForceSwitch:
 
 AI_Smart_BatonPass:
 ; Dismiss this move if the enemy has only one Pokemon [remaining].
-	push hl
-	farcall FindAliveEnemyMons
-	pop hl
+	call AICheckLastEnemyMon
 	jp c, AIDismissMove
 	; fallthrough
 
@@ -2239,9 +2231,7 @@ AI_Smart_Disable:
 
 AI_Smart_MeanLook:
 ; Dismiss this move if the player has only one Pokemon [remaining].
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jp z, AIDismissMove
 
 ; Dismiss this move if the player is Ghost-type and therefore immune.
@@ -2331,23 +2321,17 @@ AI_Smart_Curse:
 	bit SUBSTATUS_CURSE, a
 	jp nz, AIDismissMove
 
-	push hl
-	farcall FindAliveEnemyMons
-	pop hl
+	call AICheckLastEnemyMon
 	jr nc, .notlastmon
 
 ; Heavily discourage this move if the enemy has only one Pokemon [remaining].
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jr nz, .cancel
 	jr .ghost_continue
 
 .notlastmon
 ; 50% chance to greatly encourage this move if the player has only one Pokemon [remaining].
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jr z, .maybe_greatly_encourage
 
 .ghost_continue
@@ -2526,9 +2510,7 @@ AI_Smart_Foresight:
 
 AI_Smart_PerishSong:
 ; Hugely discourage this move if the enemy has only one Pokemon [remaining].
-	push hl
-	callfar FindAliveEnemyMons
-	pop hl
+	call AICheckLastEnemyMon
 	jr c, .no
 
 ; Else, 50% chance to encourage this move if the player can't escape.
@@ -2897,9 +2879,7 @@ AI_Smart_Safeguard:
 
 AI_Smart_Pursuit:
 ; 80% chance to discourage this move if the player has only one Pokemon [remaining].
-	push hl
 	call AICheckLastPlayerMon
-	pop hl
 	jr z, .discourage
 
 ; 50% chance to greatly encourage this move if player's HP is below 25%.
@@ -3205,6 +3185,7 @@ AICompareSpeed:
 	ret
 
 AICheckLastPlayerMon:
+	push hl
 	ld a, [wPartyCount]
 	ld b, a
 	ld c, 0
@@ -3218,7 +3199,7 @@ AICheckLastPlayerMon:
 
 	ld a, [hli]
 	or [hl]
-	ret nz
+	jr nz, .done
 	dec hl
 
 .skip
@@ -3226,6 +3207,9 @@ AICheckLastPlayerMon:
 	inc c
 	dec b
 	jr nz, .loop
+
+.done
+	pop hl
 	ret
 
 AICheckLastEnemyMon:
