@@ -494,6 +494,7 @@ DratiniEggMoves:
 	db AIR_SLASH
 	db DOUBLE_EDGE
 	db POWER_GEM
+	db MIST
 	db -1 ; end
 
 ChikoritaEggMoves:
