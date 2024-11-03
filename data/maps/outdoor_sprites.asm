@@ -186,6 +186,7 @@ CherrygroveGroupSprites:
 	; max 9 of 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_MONSTER
+	db SPRITE_MONSTER_BACK
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
