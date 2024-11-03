@@ -1045,7 +1045,7 @@ AI_Smart_LockOn:
 .player_locked_on
 ; If the enemy has any other moves with 70% accuracy or less, greatly encourage those moves.
 ; After checking that, dismiss this move.
-; NOTE: AI_Redundant does not dismiss Lock-On if it's already active in order to allow it to check other moves here.
+; AI_Redundant does not dismiss Lock-On if it's already active in order to allow it to check other moves here.
 
 	push hl
 	ld hl, wEnemyAIMoveScores - 1
@@ -3087,10 +3087,17 @@ AI_Smart_Recoil_JumpKick:
 	ret
 
 AI_Smart_SpeedControl:
-; Discourage this move if enemy is faster than player.
 ; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
+
+; Discourage this move if enemy is faster than player.
 	call AICompareSpeed
 	ret nc
+	inc [hl]
+
+; Discourage further if the player has only one Pokemon [remaining].
+	call AICheckLastPlayerMon
+	ret nz
+	inc [hl]
 	inc [hl]
 	ret
 
@@ -3161,9 +3168,9 @@ AI_Smart_BeatUp:
 	ret
 
 AI_Smart_Thief:
-; Encourage this move if the enemy has no held item, and it's the player mon's first turn.
 ; NOTE: Only opponents inside the Battle Tower have Thief.
 
+; Encourage this move if the enemy has no held item, and it's the player mon's first turn.
 	ld a, [wEnemyMonItem]
 	and a
 	ret nz
@@ -3210,6 +3217,7 @@ AICompareSpeed:
 	ret
 
 AICheckLastPlayerMon:
+; Return z if this is the player's last/only mon.
 	push hl
 	ld a, [wPartyCount]
 	ld b, a
@@ -3238,7 +3246,7 @@ AICheckLastPlayerMon:
 	ret
 
 AICheckLastEnemyMon:
-; Return c if this is the enemy's last/only mon.
+; Return carry if this is the enemy's last/only mon.
 	push hl
 	farcall FindAliveEnemyMons
 	pop hl
