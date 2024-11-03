@@ -796,6 +796,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FALSE_SWIPE,      AI_Smart_Discourage
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
+	dbw EFFECT_THIEF,            AI_Smart_Thief
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
@@ -3160,6 +3161,19 @@ AI_Smart_BeatUp:
 	ret z
 .discourage
 	inc [hl]
+	ret
+
+AI_Smart_Thief:
+; Encourage this move if the enemy has no held item, and it's the player mon's first turn.
+	ld a, [wEnemyMonItem]
+	and a
+	ret nz
+
+	ld a, [wPlayerTurnsTaken]
+	and a
+	ret nz
+
+	dec [hl]
 	ret
 
 
