@@ -958,33 +958,42 @@ AI_Smart_LeechHit:
 	ret
 
 AI_Smart_LockOn:
+; Check if the player is already locked onto.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .player_locked_on
 
+; Discourage this move if enemy's HP is below 25%.
 	push hl
 	call AICheckEnemyQuarterHP
 	jr nc, .discourage
 
+; If enemy's HP is above 50%, don't bother checking speed.
 	call AICheckEnemyHalfHP
 	jr c, .skip_speed_check
 
+; Discourage this move if enemy is slower than player.
 	call AICompareSpeed
 	jr nc, .discourage
 
 .skip_speed_check
+; 50% chance to greatly encourage this move if player's Evasion level is high.
 	ld a, [wPlayerEvaLevel]
 	cp BASE_STAT_LEVEL + 3
 	jr nc, .maybe_encourage
+; Do nothing if player's Evasion level is not raised.
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .do_nothing
-
+; 50% chance to greatly encourage this move if enemy's Accuracy level is low.
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 2
 	jr c, .maybe_encourage
+; Do nothing if enemy's Accuracy level is not lowered.
 	cp BASE_STAT_LEVEL
 	jr c, .do_nothing
 
+; Discourage this move if the enemy has no other moves with 70% accuracy or less that are at least neutrally effective.
+; Otherwise, do nothing.
 	ld hl, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
 .checkmove
@@ -1032,6 +1041,8 @@ AI_Smart_LockOn:
 	ret
 
 .player_locked_on
+; If the enemy has any other moves with 70% accuracy or less, greatly encourage those moves.
+; After checking that, dismiss this move.
 	push hl
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -1560,14 +1571,12 @@ AI_Smart_Earthquake:
 	ld a, [wLastPlayerCounterMove]
 	cp DIG
 	jr nz, AI_Smart_Float
-
-; ...try to predict if the player will use Dig again this turn.
+; ...and the player is faster...
 	call AICompareSpeed
 	jr c, AI_Smart_Float
-
+; ...try to predict if the player will use Dig again this turn.
 	call AI_50_50
 	jr c, AI_Smart_Float
-
 	dec [hl]
 	ret
 
@@ -1629,9 +1638,10 @@ AI_Smart_Gust_Twister:
 	ret nz
 
 .couldFly
-; ...try to predict if the player will use Fly or Sky Attack again this turn.
+; ...and the player is faster...
 	call AICompareSpeed
 	ret c
+; ...try to predict if the player will use Fly or Sky Attack again this turn.
 	call AI_50_50
 	ret c
 	dec [hl]
@@ -2425,12 +2435,11 @@ AI_Smart_Endure:
 	ret
 
 .no_reversal
-; If the enemy is not locked on, do nothing.
+; 50% chance to greatly encourage this move if the enemy is locked onto.
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
 	ret z
 
-; 50% chance to greatly encourage this move.
 	call AI_50_50
 	ret c
 
