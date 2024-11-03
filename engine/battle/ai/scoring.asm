@@ -2150,10 +2150,12 @@ AI_Smart_PriorityHit:
 	ret
 
 AI_Smart_Conversion2:
+; 90% chance to discourage this move if the player hasn't used a move yet.
 	ld a, [wLastPlayerMove]
 	and a
 	jr z, .discourage
 
+; Check the type matchup of the player's last used move.
 	push hl
 	dec a
 	ld hl, Moves + MOVE_TYPE
@@ -2169,12 +2171,14 @@ AI_Smart_Conversion2:
 
 	callfar BattleCheckTypeMatchup
 
+; 90% chance to discourage this move if the player's last used move is not very effective.
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	pop hl
 	jr c, .discourage
 	ret z
 
+; 50% chance to encourage this move if the player's last move is at least neutrally effective.
 	call AI_50_50
 	ret c
 
@@ -2189,15 +2193,16 @@ AI_Smart_Conversion2:
 	ret
 
 AI_Smart_Disable:
+; Over 90% chance to discourage this move if player is faster than enemy.
 	call AICompareSpeed
 	jr nc, .discourage
 
+; 60% chance to encourage this move if the player's last used move is in the list of useful moves.
 	push hl
 	ld a, [wLastPlayerCounterMove]
 	ld hl, UsefulMoves
 	ld de, 1
 	call IsInArray
-
 	pop hl
 	jr nc, .notencourage
 
@@ -2207,6 +2212,7 @@ AI_Smart_Disable:
 	dec [hl]
 	ret
 
+; Don't discourage if the player's last used move was a damaging move.
 .notencourage
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
