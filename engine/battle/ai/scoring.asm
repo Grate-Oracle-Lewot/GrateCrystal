@@ -3165,6 +3165,8 @@ AI_Smart_BeatUp:
 
 AI_Smart_Thief:
 ; Encourage this move if the enemy has no held item, and it's the player mon's first turn.
+; NOTE: Only opponents inside the Battle Tower have Thief.
+
 	ld a, [wEnemyMonItem]
 	and a
 	ret nz
