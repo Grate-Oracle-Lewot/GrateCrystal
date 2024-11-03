@@ -2193,11 +2193,16 @@ AI_Smart_Conversion2:
 	ret
 
 AI_Smart_Disable:
-; Over 90% chance to discourage this move if player is faster than enemy.
+; Dismiss this move if the player is already Disabled.
+	ld a, [wPlayerDisableCount]
+	and a
+	jp z, AIDismissMove
+
+; Over 90% chance to discourage this move if player is faster than enemy. (No chance to encourage.)
 	call AICompareSpeed
 	jr nc, .discourage
 
-; 60% chance to encourage this move if the player's last used move is in the list of useful moves.
+; Encourage this move if the player's last used move is in the list of useful moves.
 	push hl
 	ld a, [wLastPlayerCounterMove]
 	ld hl, UsefulMoves
@@ -2205,19 +2210,16 @@ AI_Smart_Disable:
 	call IsInArray
 	pop hl
 	jr nc, .notencourage
-
-	call Random
-	cp 39 percent + 1
-	ret c
 	dec [hl]
 	ret
 
-; Don't discourage if the player's last used move was a damaging move.
+; If the player's last used move was not in the useful list, do nothing if it was a damaging move.
 .notencourage
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	ret nz
 
+; Else, over 90% chance to discourage this move.
 .discourage
 	call Random
 	cp 8 percent
