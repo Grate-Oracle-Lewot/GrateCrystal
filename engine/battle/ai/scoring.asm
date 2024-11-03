@@ -1744,16 +1744,16 @@ AI_Smart_SpDefenseUp2:
 	ret
 
 AI_Smart_SpeedDownHit:
-; Icy Wind
-
-; Almost 90% chance to greatly encourage this move if the following conditions all meet:
-; Enemy's HP is higher than 25%.
-; It's the first turn of player's Pokemon.
-; Player is faster than enemy.
-
+; Do nothing if this move is not Icy Wind.
+; Icy Wind is guaranteed to lower Speed, while other moves only have a small chance.
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp ICY_WIND
 	ret nz
+
+; Almost 90% chance to greatly encourage this move if the following conditions all meet:
+;  -Enemy's HP is higher than 25%.
+;  -It's the first turn of player's Pokemon.
+;  -Player is faster than enemy.
 	call AICheckEnemyQuarterHP
 	ret nc
 	ld a, [wPlayerTurnsTaken]
