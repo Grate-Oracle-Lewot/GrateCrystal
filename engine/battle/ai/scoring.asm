@@ -263,6 +263,7 @@ AI_Types:
 ; Dismiss any move that the player is immune to.
 ; Encourage super-effective moves.
 ; Discourage not very effective moves unless all damaging moves are of the same type.
+; Encourage moves based on the weather. Includes Solarbeam and Thunder, but not Blizzard.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
