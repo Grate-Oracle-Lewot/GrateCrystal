@@ -772,6 +772,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
+	dbw EFFECT_TRANSFORM,        AI_Smart_Transform
 	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
@@ -3180,6 +3181,16 @@ AI_Smart_Thief:
 	ret nz
 
 	dec [hl]
+	ret
+
+AI_Smart_Transform:
+; Discourage this move if player's max HP is greater than enemy's.
+	ld a, [wBattleMonMaxHP]
+	ld b, a
+	ld a, [wEnemyMonMaxHP]
+	cp b
+	ret nc
+	inc [hl]
 	ret
 
 
