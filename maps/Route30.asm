@@ -22,12 +22,18 @@ YoungsterJoey_ImportantBattleScript:
 	playmusic MUSIC_JOHTO_TRAINER_BATTLE
 	opentext
 	writetext Text_UseTackle
-	promptbutton
+	pause 30
+	closetext
+	playsound SFX_TACKLE
+	applymovement ROUTE30_MONSTER2, Route30_JoeysRattataAttacksMovement
+	opentext
 	faceplayer
 	writetext Text_ThisIsABigBattle
 	waitbutton
-	closetext
 	turnobject ROUTE30_YOUNGSTER1, UP
+	closetext
+	playsound SFX_TACKLE
+	applymovement ROUTE30_MONSTER1, Route30_MikeysRattataAttacksMovement
 	special RestartMapMusic
 	end
 
@@ -231,6 +237,17 @@ Route30FruitTree2:
 Route30HiddenPotion:
 	hiddenitem POTION, EVENT_ROUTE_30_HIDDEN_POTION
 
+Route30_JoeysRattataAttacksMovement:
+	fix_facing
+	big_step UP
+	big_step DOWN
+	step_end
+Route30_MikeysRattataAttacksMovement:
+	fix_facing
+	big_step DOWN
+	big_step UP
+	step_end
+
 Text_UseTackle:
 	text "Go, RATTATA!"
 
@@ -404,8 +421,8 @@ Route30_MapEvents:
 	object_event  5, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterMikey, -1
 	object_event  1,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDon, -1
 	object_event  7, 30, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30YoungsterScript, -1
-	object_event  5, 24, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
-	object_event  5, 25, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
+	object_event  5, 24, SPRITE_MONSTER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
+	object_event  5, 25, SPRITE_MONSTER_BACK, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
 	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
