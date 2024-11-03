@@ -897,26 +897,6 @@ AI_Smart_Sleep:
 	dec [hl]
 	ret
 
-AI_Smart_Snore_SleepTalk:
-; Highly encourage this move if enemy is fast asleep.
-; Highly discourage this move otherwise.
-
-	ld a, [wEnemyMonStatus]
-	and SLP
-	cp 1
-	jr z, .discourage
-
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
 AI_Smart_DreamEater:
 ; 90% chance to greatly encourage this move.
 ; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
@@ -2545,6 +2525,10 @@ AI_Smart_PerishSong:
 	ld [hl], a
 	ret
 
+INCLUDE "data/battle/ai/rain_dance_moves.asm"
+
+INCLUDE "data/battle/ai/sunny_day_moves.asm"
+
 AI_Smart_RainDance:
 ; Highly discourage this move if it would favour the player type-wise.
 ; Particularly, if the player is a Water-type.
@@ -2631,9 +2615,19 @@ AIGoodWeatherType:
 	dec [hl]
 	ret
 
-INCLUDE "data/battle/ai/rain_dance_moves.asm"
+AI_Smart_Snore_SleepTalk:
+; Highly encourage this move if enemy is fast asleep.
+; Highly discourage this move otherwise.
 
-INCLUDE "data/battle/ai/sunny_day_moves.asm"
+	ld a, [wEnemyMonStatus]
+	and SLP
+	cp 1
+	jr z, AIBadWeatherType ; hijacking this for space
+
+	dec [hl]
+	dec [hl]
+	dec [hl]
+	ret
 
 AI_Smart_Sandstorm:
 ; Greatly discourage this move if the player is immune to Sandstorm damage.
