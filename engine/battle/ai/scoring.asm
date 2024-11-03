@@ -1571,36 +1571,6 @@ AI_Smart_Earthquake:
 	dec [hl]
 	ret
 
-AI_Smart_Gust_Twister:
-; Greatly encourage this move if the player is flying and the enemy is faster.
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_FLYING, a
-	jr z, .checklastmove
-
-	call AICompareSpeed
-	jr nc, .checklastmove
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.checklastmove
-; If Fly or Sky Attack was the player's last used move...
-	ld a, [wLastPlayerCounterMove]
-	cp FLY
-	jr z, .couldFly
-	cp SKY_ATTACK
-	ret nz
-
-.couldFly
-; ...try to predict if the player will use Fly or Sky Attack again this turn.
-	call AICompareSpeed
-	ret c
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
 AI_Smart_Paralyze:
 ; 50% chance to dismiss this move if the player's held item immunizes against Paralysis.
 	push hl
@@ -1635,6 +1605,36 @@ AI_Smart_Paralyze:
 	call AI_50_50
 	ret c
 	inc [hl]
+	ret
+
+AI_Smart_Gust_Twister:
+; Greatly encourage this move if the player is flying and the enemy is faster.
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_FLYING, a
+	jr z, .checklastmove
+
+	call AICompareSpeed
+	jr nc, .checklastmove
+
+	dec [hl]
+	dec [hl]
+	ret
+
+.checklastmove
+; If Fly or Sky Attack was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp FLY
+	jr z, .couldFly
+	cp SKY_ATTACK
+	ret nz
+
+.couldFly
+; ...try to predict if the player will use Fly or Sky Attack again this turn.
+	call AICompareSpeed
+	ret c
+	call AI_50_50
+	ret c
+	dec [hl]
 	ret
 
 AI_Smart_SuperFang:
