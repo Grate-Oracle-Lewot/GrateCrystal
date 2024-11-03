@@ -113,7 +113,7 @@
 	const SPRITE_GLITCH                ; 6d
 	const SPRITE_COOK                  ; 6e
 	const SPRITE_SITTING_BIRD          ; 6f
-	const SPRITE_PIKACHU_DOLL          ; 70
+	const SPRITE_MONSTER_BACK          ; 70
 	const SPRITE_CLEFAIRY_DOLL         ; 71
 	const SPRITE_JIGGLYPUFF_DOLL       ; 72
 	const SPRITE_SHELLDER_DOLL         ; 73
