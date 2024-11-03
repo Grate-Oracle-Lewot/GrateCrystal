@@ -32,7 +32,7 @@ BattleTowerMons:
 
 	db ESPEON
 	db LEFTOVERS
-	db MUD_SLAP, PSYCHIC_M, PSYCH_UP, TOXIC
+	db MUD_SLAP, PSYCHIC_M, SWIFT, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -42,7 +42,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 40000
 	dn 14, 13, 15, 11 ; DVs
-	db 16, 16, 16, 8 ; PP
+	db 16, 16, 40, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -58,7 +58,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db GOLD_BERRY
-	db SHADOW_BALL, IRON_TAIL, PSYCH_UP, TOXIC
+	db SHADOW_BALL, IRON_TAIL, MEAN_LOOK, TOXIC
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -68,7 +68,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 40000
 	dn 13, 11, 14, 15 ; DVs
-	db 24, 24, 16, 8 ; PP
+	db 24, 24, 8, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -581,7 +581,7 @@ BattleTowerMons:
 
 	db STARMIE
 	db GOLD_BERRY
-	db RECOVER, PSYCHIC_M, SCALD, PSYCH_UP
+	db RECOVER, PSYCHIC_M, SCALD, ICY_WIND
 	dw 0 ; OT ID
 	dt 5460 ; Exp
 	; Stat exp
@@ -591,7 +591,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 13, 11, 13, 11 ; DVs
-	db 16, 16, 24, 16 ; PP
+	db 16, 16, 24, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -659,7 +659,7 @@ BattleTowerMons:
 
 	db ALAKAZAM
 	db GOLD_BERRY
-	db PSYCHIC_M, PSYCH_UP, PROTECT, ZAP_CANNON
+	db PSYCHIC_M, KINESIS, PROTECT, ZAP_CANNON
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -669,7 +669,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 40000
 	dn 15, 13, 14, 15 ; DVs
-	db 16, 16, 16, 8 ; PP
+	db 16, 24, 16, 8 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -1494,7 +1494,7 @@ BattleTowerMons:
 
 	db ESPEON
 	db MIRACLEBERRY
-	db PSYCHIC_M, AURA_SPHERE, TOXIC, PSYCH_UP
+	db PSYCHIC_M, AURA_SPHERE, TOXIC, DREAM_EATER
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1504,7 +1504,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 14, 15, 15, 7 ; DVs
-	db 16, 16, 8, 16 ; PP
+	db 16, 16, 8, 24 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
