@@ -1045,6 +1045,8 @@ AI_Smart_LockOn:
 .player_locked_on
 ; If the enemy has any other moves with 70% accuracy or less, greatly encourage those moves.
 ; After checking that, dismiss this move.
+; NOTE: AI_Redundant does not dismiss Lock-On if it's already active in order to allow it to check other moves here.
+
 	push hl
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -2195,11 +2197,6 @@ AI_Smart_Conversion2:
 	ret
 
 AI_Smart_Disable:
-; Dismiss this move if the player is already Disabled.
-	ld a, [wPlayerDisableCount]
-	and a
-	jp z, AIDismissMove
-
 ; Over 90% chance to discourage this move if player is faster than enemy. (No chance to encourage.)
 	call AICompareSpeed
 	jr nc, .discourage
