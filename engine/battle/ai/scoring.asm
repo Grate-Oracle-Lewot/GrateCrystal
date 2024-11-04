@@ -1001,7 +1001,7 @@ AI_Smart_LockOn:
 	cp BASE_STAT_LEVEL
 	jr c, .do_nothing
 
-; Discourage this move if the enemy has no other moves with 70% accuracy or less that are at least neutrally effective.
+; Discourage this move if the enemy has no other moves with 75% accuracy or less that are at least neutrally effective.
 ; Otherwise, do nothing.
 	ld hl, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
@@ -1016,7 +1016,7 @@ AI_Smart_LockOn:
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 71 percent - 1
+	cp 76 percent - 1
 	jr nc, .checkmove
 
 	ld a, 1
@@ -1050,7 +1050,7 @@ AI_Smart_LockOn:
 	ret
 
 .player_locked_on
-; If the enemy has any other moves with 70% accuracy or less, greatly encourage those moves.
+; If the enemy has any other moves with 75% accuracy or less, greatly encourage those moves.
 ; After checking that, dismiss this move.
 ; AI_Redundant does not dismiss Lock-On if it's already active in order to allow it to check other moves here.
 
@@ -1072,7 +1072,7 @@ AI_Smart_LockOn:
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 71 percent - 1
+	cp 76 percent - 1
 	jr nc, .checkmove2
 
 	dec [hl]
