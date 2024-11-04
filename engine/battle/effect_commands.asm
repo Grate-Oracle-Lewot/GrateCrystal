@@ -3587,7 +3587,7 @@ BattleCommand_SleepTarget:
 	ld hl, FellAsleepText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
+	call _UseHeldStatusHealingItem
 
 	jp z, OpponentCantMove
 	ret
@@ -3632,8 +3632,7 @@ BattleCommand_PoisonTarget:
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
-	ret
+	jp _UseHeldStatusHealingItem
 
 BattleCommand_Poison:
 	ld hl, DoesntAffectText
@@ -3701,8 +3700,7 @@ BattleCommand_Poison:
 	; fallthrough
 
 .finished
-	farcall UseHeldStatusHealingItem
-	ret
+	jp _UseHeldStatusHealingItem
 
 .failed
 	push hl
@@ -3919,8 +3917,7 @@ BattleCommand_BurnTarget:
 	ld hl, WasBurnedText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
-	ret
+	jp _UseHeldStatusHealingItem
 
 Defrost:
 	ld a, [hl]
@@ -3988,7 +3985,7 @@ BattleCommand_FreezeTarget:
 	ld hl, WasFrozenText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
+	call _UseHeldStatusHealingItem
 	ret nz
 
 	call OpponentCantMove
@@ -6610,6 +6607,10 @@ _CheckBattleScene:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+_UseHeldStatusHealingItem:
+	farcall UseHeldStatusHealingItem
 	ret
 
 SandstormSpDefBoost: 
