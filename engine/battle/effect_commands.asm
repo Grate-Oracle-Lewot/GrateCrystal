@@ -2694,10 +2694,7 @@ ThickClubBoost:
 	ld b, CUBONE
 	ld c, MAROWAK
 	ld d, THICK_CLUB
-	call SpeciesItemBoost
-	pop de
-	pop bc
-	ret
+	jr FinishSpeciesItemBoost
 
 LightBallBoost:
 ; Return in hl the stat value at hl.
@@ -2708,6 +2705,9 @@ LightBallBoost:
 	ld b, PIKACHU
 	ld c, PIKACHU
 	ld d, LIGHT_BALL
+	; fallthrough
+
+FinishSpeciesItemBoost:
 	call SpeciesItemBoost
 	pop de
 	pop bc
