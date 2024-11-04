@@ -165,9 +165,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Psych Up no longer fails if the target has no stat changes, and now also copies the Focus Energy and X Accuracy statuses.
 
-- Moves like Earthquake that can hit while the opponent is underground with Dig can now do so even if the digger is Flying-type (or a pseudo-Levitater).
-
 - Rage now builds twice when the Pokémon takes a critical hit.
+
+- Moves like Earthquake that can hit while the opponent is underground with Dig can now do so even if the digger is Flying-type (or a pseudo-Levitater).
 
 - Transform and Sketch work through Dig, Substitute, etc.
 
