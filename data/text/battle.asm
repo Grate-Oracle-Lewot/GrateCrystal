@@ -647,6 +647,11 @@ RageBuildingText:
 	line "RAGE is building!"
 	autodone
 
+RageSpikedText:
+	text "<USER>'s"
+	line "RAGE spiked!"
+	autodone
+
 GotAnEncoreText:
 	text "<TARGET>"
 	line "got an ENCORE!"
