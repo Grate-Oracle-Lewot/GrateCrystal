@@ -2395,14 +2395,20 @@ BattleCommand_BuildOpponentRage:
 ; Build rage again if the move got a critical hit.
 	ld a, [wCriticalHit]
 	and a
-	jr z, .finish
+	jr z, .no_crit
 	ld a, [de]
 	inc a
-	jr z, .finish
+	jr z, .no_overflow
 	ld [de], a
-.finish
+.no_overflow
+	call BattleCommand_SwitchTurn
+	ld hl, RageSpikedText
+	jr .finish
+
+.no_crit
 	call BattleCommand_SwitchTurn
 	ld hl, RageBuildingText
+.finish
 	call StdBattleTextbox
 	jp BattleCommand_SwitchTurn
 
