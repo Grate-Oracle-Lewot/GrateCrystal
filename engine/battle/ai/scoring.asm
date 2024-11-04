@@ -912,10 +912,10 @@ AI_Smart_DreamEater:
 	ret
 
 AI_Smart_LeechHit:
-; Greatly discourage this move if the player has a Substitute. Skip Liquid Ooze check.
+; Dismiss this move if the player has a Substitute.
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .discourage
+	jp nz, AIDismissMove
 
 ; Greatly discourage this move if the enemy will take Liquid Ooze damage.
 	ld a, [wEnemyMonType1]
