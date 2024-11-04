@@ -6439,11 +6439,7 @@ AnimateCurrentMoveEitherSide:
 	pop af
 	ld [wBattleAnimParam], a
 	call PlayDamageAnim
-	call BattleCommand_RaiseSub
-	pop bc
-	pop de
-	pop hl
-	ret
+	jr FinishAnimatingCurrentMove
 
 AnimateCurrentMove:
 	push hl
@@ -6455,6 +6451,9 @@ AnimateCurrentMove:
 	pop af
 	ld [wBattleAnimParam], a
 	call LoadMoveAnim
+	; fallthrough
+
+FinishAnimatingCurrentMove:
 	call BattleCommand_RaiseSub
 	pop bc
 	pop de
