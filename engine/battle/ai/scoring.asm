@@ -823,6 +823,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
+	dbw EFFECT_ALL_UP_HIT,       AI_Smart_AllUpHit
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
@@ -1626,6 +1627,33 @@ AI_Smart_Paralyze:
 	inc [hl]
 	ret
 
+AI_Smart_Recoil_JumpKick:
+; Encourage this move if enemy's held item prevents recoil/crash damage.
+	push hl
+	ld hl, wEnemyMonItem
+	ld b, [hl]
+	pop hl
+	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_PREVENT_RECOIL
+	jr nz, .checkhi
+	dec [hl]
+	ret
+
+.checkhi
+; If this move is Hi Jump Kick, jump to AI_Smart_Gust_Twister.
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp HI_JUMP_KICK
+	jr z, AI_Smart_Gust_Twister
+	ret
+
+AI_Smart_AllUpHit:
+; If this move is Silver Wind, fall through to AI_Smart_Gust_Twister. Else do nothing.
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp SILVER_WIND
+	ret nz
+	; fallthrough
+
 AI_Smart_Gust_Twister:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
 	ld a, [wPlayerSubStatus3]
@@ -1751,9 +1779,13 @@ AI_Smart_SpDefenseUp2:
 AI_Smart_SpeedDownHit:
 ; Do nothing if this move is not Icy Wind.
 ; Icy Wind is guaranteed to lower Speed, while other moves only have a small chance.
+; It also hits flying opponents, where other moves don't.
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp ICY_WIND
 	ret nz
+
+; Maybe encourage this move if the player is flying. Continue regardless.
+	call AI_Smart_Gust_Twister
 
 ; Almost 90% chance to greatly encourage this move if the following conditions all meet:
 ;  -Enemy's HP is higher than 25%.
@@ -3075,19 +3107,6 @@ AI_Smart_Rampage:
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_CONFUSE
-	ret nz
-	dec [hl]
-	ret
-
-AI_Smart_Recoil_JumpKick:
-; Encourage this move if enemy's held item prevents recoil/crash damage.
-	push hl
-	ld hl, wEnemyMonItem
-	ld b, [hl]
-	pop hl
-	farcall GetItemHeldEffect
-	ld a, b
-	cp HELD_PREVENT_RECOIL
 	ret nz
 	dec [hl]
 	ret
