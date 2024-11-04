@@ -159,11 +159,11 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
-- Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
-
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
-- Psych Up no longer fails if the target has no stat changes, and now also copies the Focus Energy and X Accuracy statuses.
+- Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
+
+- Psych Up no longer fails if the target has no stat changes, and now also copies the Defense Curl, Focus Energy, and X Accuracy statuses.
 
 - Rage now builds twice when the Pokémon takes a critical hit.
 
