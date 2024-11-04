@@ -1520,8 +1520,8 @@ BattleCommand_CheckHit:
 
 	call BattleRandom
 	cp b
-	jr nc, .Miss
-	ret
+	ret c
+	; fallthrough
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
