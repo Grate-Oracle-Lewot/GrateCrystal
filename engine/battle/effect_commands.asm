@@ -2389,9 +2389,18 @@ BattleCommand_BuildOpponentRage:
 .player
 	ld a, [de]
 	inc a
-	ret z
+	ret z ; no overflow
 	ld [de], a
 
+; Build rage again if the move got a critical hit.
+	ld a, [wCriticalHit]
+	and a
+	jr z, .finish
+	ld a, [de]
+	inc a
+	jr z, .finish
+	ld [de], a
+.finish
 	call BattleCommand_SwitchTurn
 	ld hl, RageBuildingText
 	call StdBattleTextbox
