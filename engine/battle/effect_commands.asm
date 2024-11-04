@@ -4097,7 +4097,34 @@ BattleCommand_StatUp:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
-	jp MinimizeDropSub
+	; fallthrough
+
+MinimizeDropSub:
+; Lower the substitute if we're minimizing
+
+	ld bc, wPlayerMinimized
+	ld hl, DropPlayerSub
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .do_player
+	ld bc, wEnemyMinimized
+	ld hl, DropEnemySub
+.do_player
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp MINIMIZE
+	ret nz
+
+	ld a, $1
+	ld [bc], a
+	call _CheckBattleScene
+	ret nc
+
+	xor a
+	ldh [hBGMapMode], a
+	call CallBattleCore
+	call WaitBGMap
+	jp BattleCommand_MoveDelay
 
 RaiseStat:
 	ld a, b
@@ -4193,33 +4220,6 @@ RaiseStat:
 	ld a, $1
 	ld [wFailedMessage], a
 	ret
-
-MinimizeDropSub:
-; Lower the substitute if we're minimizing
-
-	ld bc, wPlayerMinimized
-	ld hl, DropPlayerSub
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .do_player
-	ld bc, wEnemyMinimized
-	ld hl, DropEnemySub
-.do_player
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	cp MINIMIZE
-	ret nz
-
-	ld a, $1
-	ld [bc], a
-	call _CheckBattleScene
-	ret nc
-
-	xor a
-	ldh [hBGMapMode], a
-	call CallBattleCore
-	call WaitBGMap
-	jp BattleCommand_MoveDelay
 
 BattleCommand_AttackDown:
 	ld a, ATTACK
