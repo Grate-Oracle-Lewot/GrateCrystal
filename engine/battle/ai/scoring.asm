@@ -218,7 +218,7 @@ AI_Setup:
 
 
 AI_Cautious:
-; 90% chance to discourage moves with residual effects after the first turn.
+; 90% chance to discourage moves with residual effects after the enemy Pokemon's first turn on the field.
 
 	ld a, [wEnemyTurnsTaken]
 	and a
