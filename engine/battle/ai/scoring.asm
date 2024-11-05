@@ -887,11 +887,11 @@ AI_Smart_Sleep:
 .skip_immune
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
-	jr c, .encourage
+	jr c, AI_Sleep_DreamEater_Encourage
 
 	ld b, EFFECT_NIGHTMARE
 	call AIHasMoveEffect
-	jr c, .encourage
+	jr c, AI_Sleep_DreamEater_Encourage
 
 	call AI_50_50
 	ret c
