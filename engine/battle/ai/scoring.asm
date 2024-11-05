@@ -1465,6 +1465,11 @@ AI_OHKO_CheckLockOn:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, AI_Smart_Heal_OHKO_Encourage
+
+; Else, 50% chance to discourage this move. Regardless, execute AI_DiscourageIfPlayerHPBelowHalf.
+	call AI_50_50
+	jr c, AI_DiscourageIfPlayerHPBelowHalf
+	inc [hl]
 	; fallthrough
 
 AI_DiscourageIfPlayerHPBelowHalf:
