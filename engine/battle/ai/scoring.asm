@@ -764,7 +764,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Poison
 	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_Bide_Screens
-	dbw EFFECT_OHKO,             AI_Smart_Ohko
+	dbw EFFECT_OHKO,             AI_Smart_OHKO
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
@@ -1453,9 +1453,19 @@ AI_Smart_Heal:
 	call Random
 	cp 10 percent
 	ret c
+	; fallthrough
+
+AI_Smart_Heal_OHKO_Encourage:
 	dec [hl]
 	dec [hl]
 	ret
+
+AI_OHKO_CheckLockOn:
+; Greatly encourage this move if the player is locked onto.
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	jr nz, AI_Smart_Heal_OHKO_Encourage
+	; fallthrough
 
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
@@ -1500,8 +1510,9 @@ AI_Smart_Fissure:
 	jr c, AIDismissMove
 	; fallthrough
 
-AI_Smart_Ohko:
+AI_Smart_OHKO:
 ; Dismiss this move if player's level is higher than enemy's level.
+; Else, greatly encourage this move if player is locked onto.
 ; Else, discourage this move if player's HP is below 50%.
 
 	ld a, [wBattleMonLevel]
@@ -1509,7 +1520,7 @@ AI_Smart_Ohko:
 	ld a, [wEnemyMonLevel]
 	cp b
 	jr c, AIDismissMove
-	jr AI_DiscourageIfPlayerHPBelowHalf
+	jr AI_OHKO_CheckLockOn
 
 AI_Smart_Confuse:
 ; 50% chance to dismiss this move if the player's held item immunizes against confusion.
