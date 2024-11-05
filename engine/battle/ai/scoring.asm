@@ -895,8 +895,9 @@ AI_Smart_Sleep:
 
 	call AI_50_50
 	ret c
+	; fallthrough
 
-.encourage
+AI_Sleep_DreamEater_Encourage:
 	dec [hl]
 	dec [hl]
 	ret
@@ -907,9 +908,7 @@ AI_Smart_DreamEater:
 	call Random
 	cp 10 percent
 	ret c
-	dec [hl]
-	dec [hl]
-	ret
+	jr AI_Sleep_DreamEater_Encourage
 
 AI_Smart_LeechHit:
 ; Dismiss this move if the player has a Substitute.
