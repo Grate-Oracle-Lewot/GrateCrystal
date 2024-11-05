@@ -1381,7 +1381,7 @@ HealPowderEffect:
 	jp c, StatusHealer_ExitMenu
 
 	call UseStatusHealer
-	cp FALSE
+	and a
 	jr nz, .not_used
 
 	ld c, HAPPINESS_BITTERPOWDER
@@ -1425,7 +1425,7 @@ UseStatusHealer:
 	call Play_SFX_FULL_HEAL
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, FALSE
+	xor a ; FALSE
 	ret
 
 IsItemUsedOnConfusedMon:
@@ -1515,7 +1515,7 @@ RevivalHerbEffect:
 	jp c, StatusHealer_ExitMenu
 
 	call RevivePokemon
-	cp FALSE
+	and a
 	jr nz, .not_used
 
 	ld c, HAPPINESS_REVIVALHERB
@@ -1578,7 +1578,7 @@ RevivePokemon:
 	ld [wPartyMenuActionText], a
 	call ItemActionTextWaitButton
 	call UseDisposableItem
-	ld a, FALSE
+	xor a ; FALSE
 	ret
 
 FullRestoreEffect:
