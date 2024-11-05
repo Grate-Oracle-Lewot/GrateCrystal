@@ -22,7 +22,6 @@ EncoreMoves:
 	db KINESIS
 	db GLARE
 	db DREAM_EATER
-	db TRANSFORM
 	db REST
 	db CONVERSION
 	db SUPER_FANG
@@ -42,7 +41,6 @@ EncoreMoves:
 	db MEAN_LOOK
 	db ATTRACT
 	db HEAL_BELL
-	db SWEET_SCENT
 	db RAIN_DANCE
 	db SUNNY_DAY
 	db FUTURE_SIGHT
