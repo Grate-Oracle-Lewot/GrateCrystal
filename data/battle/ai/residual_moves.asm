@@ -1,4 +1,4 @@
-; AI_CAUTIOUS discourages these moves after the enemy Pokemon's first turn on the field.
+; AI_CAUTIOUS has a 90% chance to discourage these moves after the enemy Pokemon's first turn on the field.
 
 ResidualMoves:
 	db MIST
