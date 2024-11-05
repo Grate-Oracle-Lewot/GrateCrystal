@@ -2,6 +2,4 @@
 
 RiskyEffects:
 	db EFFECT_SELFDESTRUCT
-	db EFFECT_OHKO
-	db EFFECT_FISSURE
 	db -1 ; end
