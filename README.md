@@ -263,6 +263,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_TYPES now encourages moves in the Rain Dance and Sunny Day lists if those weather conditions are up, in addition to its type effectiveness check. It does not encourage Blizzard in Hail.
 
+- AI_RISKY only avoids using Selfdestruct, not one-hit KO moves. No idea why those were in there.
+
 - AI_OPPORTUNIST now checks the player's HP instead of the enemy's, and now encourages moves in the "useful" list if the player's HP is low, in addition to discouraging moves in the "stall" list if the same.
 
 - AI_AGGRESSIVE only has a 50% chance to not discourage "reckless" moves, and the reckless list now consists only of multi-hit moves, not Selfdestruct and Thrash/Outrage/Petal Dance. Additionally, it now discourages "stall" moves if it's down to its last Pokémon.
