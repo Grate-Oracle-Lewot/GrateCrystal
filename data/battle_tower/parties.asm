@@ -4290,7 +4290,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DUGTRIO
-	db BERRY
+	db GOLD_BERRY
 	db HEADBUTT, EARTHQUAKE, THIEF, MUD_SLAP
 	dw 0 ; OT ID
 	dt 512000 ; Exp
