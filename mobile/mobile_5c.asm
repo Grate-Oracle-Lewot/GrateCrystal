@@ -228,7 +228,7 @@ CheckBTMonMovesForErrors:
 
 .done
 	pop hl
-	ld de, NICKNAMED_MON_STRUCT_LENGTH
+	ld de, PARTYMON_STRUCT_LENGTH
 	add hl, de
 	dec c
 	jr nz, .loop
