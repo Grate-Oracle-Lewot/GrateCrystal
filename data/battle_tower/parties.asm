@@ -658,7 +658,7 @@ BattleTowerMons:
 	db "HAGANE-RU@@"
 
 	db ALAKAZAM
-	db GOLD_BERRY
+	db SLOWPOKETAIL
 	db PSYCHIC_M, KINESIS, PROTECT, ZAP_CANNON
 	dw 0 ; OT ID
 	dt 8000 ; Exp
