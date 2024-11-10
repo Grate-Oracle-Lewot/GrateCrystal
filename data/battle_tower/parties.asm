@@ -473,7 +473,7 @@ BattleTowerMons:
 	db "HERAKUROSU@"
 
 	db UNOWN
-	db GOLD_BERRY
+	db TWISTEDSPOON
 	db SUBSTITUTE, BEAT_UP, PSYCHIC_M, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 1000 ; Exp
