@@ -97,7 +97,7 @@ LoadRandomBattleTowerMon:
 	ld a, [wBTChoiceOfLvlGroup]
 	dec a
 	ld hl, BattleTowerMons
-	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
+	ld bc, BATTLETOWER_NUM_UNIQUE_MON * PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 
 	ldh a, [hRandomAdd]
@@ -115,7 +115,7 @@ LoadRandomBattleTowerMon:
 	; Check if mon was already loaded before
 	; Check current and the 2 previous teams
 	; includes check if item is double at the current team
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
+	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hli]
 	ld b, a
@@ -158,13 +158,13 @@ LoadRandomBattleTowerMon:
 	cp b
 	jr z, .FindARandomBattleTowerMon
 
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
+	ld bc, PARTYMON_STRUCT_LENGTH
 	call CopyBytes
 
 	ld a, [wNamedObjectIndex]
 	push af
 	push de
-	ld hl, -NICKNAMED_MON_STRUCT_LENGTH
+	ld hl, -PARTYMON_STRUCT_LENGTH
 	add hl, de
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
