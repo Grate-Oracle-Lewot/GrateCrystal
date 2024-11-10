@@ -4004,7 +4004,7 @@ BattleTowerMons:
 	db "BANGIRASU@@"
 
 	db GENGAR
-	db BERRY_JUICE
+	db NO_ITEM
 	db THUNDERBOLT, SHADOW_BALL, CONFUSE_RAY, THIEF
 	dw 0 ; OT ID
 	dt 512000 ; Exp
