@@ -4290,7 +4290,7 @@ BattleTowerMons:
 	db "MARUMAIN@@@"
 
 	db DUGTRIO
-	db NO_ITEM
+	db BERRY
 	db HEADBUTT, EARTHQUAKE, THIEF, MUD_SLAP
 	dw 0 ; OT ID
 	dt 512000 ; Exp
