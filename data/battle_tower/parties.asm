@@ -1,6 +1,6 @@
 BattleTowerMons:
 ; 10 groups (one per floor level) of 21 mons (BATTLETOWER_NUM_UNIQUE_MON).
-	table_width PARTYMON_STRUCT_LENGTH, BattleTowerMons
+	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerMons
 
 ; BattleTowerMons group 1
 
@@ -28,6 +28,7 @@ BattleTowerMons:
 	bigdw 37 ; Spd
 	bigdw 34 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ESPEON
 	db LEFTOVERS
@@ -53,6 +54,7 @@ BattleTowerMons:
 	bigdw 35 ; Spd
 	bigdw 38 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db UMBREON
 	db GOLD_BERRY
@@ -78,6 +80,7 @@ BattleTowerMons:
 	bigdw 26 ; Spd
 	bigdw 25 ; SAtk
 	bigdw 39 ; SDef
+	db "@@@@@@@@@@@"
 
 	db WOBBUFFET
 	db FOCUS_BAND
@@ -103,6 +106,7 @@ BattleTowerMons:
 	bigdw 19 ; Spd
 	bigdw 18 ; SAtk
 	bigdw 23 ; SDef
+	db "@@@@@@@@@@@"
 
 	db KANGASKHAN
 	db MIRACLEBERRY
@@ -128,6 +132,7 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 20 ; SAtk
 	bigdw 28 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CORSOLA
 	db SCOPE_LENS
@@ -153,6 +158,7 @@ BattleTowerMons:
 	bigdw 19 ; Spd
 	bigdw 25 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MILTANK
 	db GOLD_BERRY
@@ -178,6 +184,7 @@ BattleTowerMons:
 	bigdw 31 ; Spd
 	bigdw 20 ; SAtk
 	bigdw 26 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AERODACTYL
 	db LEFTOVERS
@@ -203,6 +210,7 @@ BattleTowerMons:
 	bigdw 38 ; Spd
 	bigdw 23 ; SAtk
 	bigdw 26 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db MIRACLEBERRY
@@ -228,6 +236,7 @@ BattleTowerMons:
 	bigdw 24 ; Spd
 	bigdw 28 ; SAtk
 	bigdw 30 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNEASEL
 	db GOLD_BERRY
@@ -253,6 +262,7 @@ BattleTowerMons:
 	bigdw 35 ; Spd
 	bigdw 20 ; SAtk
 	bigdw 28 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db BRIGHTPOWDER
@@ -278,6 +288,7 @@ BattleTowerMons:
 	bigdw 23 ; Spd
 	bigdw 33 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MISDREAVUS
 	db FOCUS_BAND
@@ -303,6 +314,7 @@ BattleTowerMons:
 	bigdw 30 ; Spd
 	bigdw 31 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOUR
 	db GOLD_BERRY
@@ -328,6 +340,7 @@ BattleTowerMons:
 	bigdw 25 ; Spd
 	bigdw 28 ; SAtk
 	bigdw 23 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GIRAFARIG
 	db KINGS_ROCK
@@ -353,6 +366,7 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 31 ; SAtk
 	bigdw 25 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db QUICK_CLAW
@@ -378,6 +392,7 @@ BattleTowerMons:
 	bigdw 22 ; Spd
 	bigdw 27 ; SAtk
 	bigdw 39 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db MIRACLEBERRY
@@ -403,6 +418,7 @@ BattleTowerMons:
 	bigdw 18 ; Spd
 	bigdw 23 ; SAtk
 	bigdw 32 ; SDef
+	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
 	db NO_ITEM
@@ -428,6 +444,7 @@ BattleTowerMons:
 	bigdw 23 ; Spd
 	bigdw 37 ; SAtk
 	bigdw 27 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HERACROSS
 	db GOLD_BERRY
@@ -453,6 +470,7 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 18 ; SAtk
 	bigdw 29 ; SDef
+	db "@@@@@@@@@@@"
 
 	db UNOWN
 	db TWISTEDSPOON
@@ -478,6 +496,7 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 26 ; SAtk
 	bigdw 31 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TAUROS
 	db KINGS_ROCK
@@ -503,6 +522,7 @@ BattleTowerMons:
 	bigdw 32 ; Spd
 	bigdw 18 ; SAtk
 	bigdw 24 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MR__MIME
 	db QUICK_CLAW
@@ -528,6 +548,7 @@ BattleTowerMons:
 	bigdw 26 ; Spd
 	bigdw 31 ; SAtk
 	bigdw 34 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 2
@@ -556,6 +577,7 @@ BattleTowerMons:
 	bigdw 46 ; Spd
 	bigdw 44 ; SAtk
 	bigdw 72 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STARMIE
 	db GOLD_BERRY
@@ -581,6 +603,7 @@ BattleTowerMons:
 	bigdw 67 ; Spd
 	bigdw 62 ; SAtk
 	bigdw 54 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GYARADOS
 	db MIRACLEBERRY
@@ -606,6 +629,7 @@ BattleTowerMons:
 	bigdw 54 ; Spd
 	bigdw 45 ; SAtk
 	bigdw 61 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STEELIX
 	db GOLD_BERRY
@@ -631,6 +655,7 @@ BattleTowerMons:
 	bigdw 31 ; Spd
 	bigdw 44 ; SAtk
 	bigdw 48 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ALAKAZAM
 	db SLOWPOKETAIL
@@ -656,6 +681,7 @@ BattleTowerMons:
 	bigdw 69 ; Spd
 	bigdw 75 ; SAtk
 	bigdw 60 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARCANINE
 	db BRIGHTPOWDER
@@ -681,6 +707,7 @@ BattleTowerMons:
 	bigdw 60 ; Spd
 	bigdw 60 ; SAtk
 	bigdw 52 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HERACROSS
 	db FOCUS_BAND
@@ -706,6 +733,7 @@ BattleTowerMons:
 	bigdw 52 ; Spd
 	bigdw 37 ; SAtk
 	bigdw 59 ; SDef
+	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
 	db LEFTOVERS
@@ -731,6 +759,7 @@ BattleTowerMons:
 	bigdw 42 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 50 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AERODACTYL
 	db GOLD_BERRY
@@ -756,6 +785,7 @@ BattleTowerMons:
 	bigdw 72 ; Spd
 	bigdw 44 ; SAtk
 	bigdw 50 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db BRIGHTPOWDER
@@ -781,6 +811,7 @@ BattleTowerMons:
 	bigdw 41 ; Spd
 	bigdw 51 ; SAtk
 	bigdw 75 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db GOLD_BERRY
@@ -806,6 +837,7 @@ BattleTowerMons:
 	bigdw 45 ; Spd
 	bigdw 50 ; SAtk
 	bigdw 54 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PIKACHU
 	db LIGHT_BALL
@@ -831,6 +863,7 @@ BattleTowerMons:
 	bigdw 58 ; Spd
 	bigdw 41 ; SAtk
 	bigdw 41 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SCIZOR
 	db FOCUS_BAND
@@ -856,6 +889,7 @@ BattleTowerMons:
 	bigdw 47 ; Spd
 	bigdw 43 ; SAtk
 	bigdw 57 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HITMONCHAN
 	db GOLD_BERRY
@@ -881,6 +915,7 @@ BattleTowerMons:
 	bigdw 52 ; Spd
 	bigdw 32 ; SAtk
 	bigdw 62 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TAUROS
 	db BRIGHTPOWDER
@@ -906,6 +941,7 @@ BattleTowerMons:
 	bigdw 63 ; Spd
 	bigdw 35 ; SAtk
 	bigdw 47 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AZUMARILL
 	db MYSTIC_WATER
@@ -931,6 +967,7 @@ BattleTowerMons:
 	bigdw 45 ; Spd
 	bigdw 45 ; SAtk
 	bigdw 53 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MILTANK
 	db KINGS_ROCK
@@ -956,6 +993,7 @@ BattleTowerMons:
 	bigdw 61 ; Spd
 	bigdw 36 ; SAtk
 	bigdw 48 ; SDef
+	db "@@@@@@@@@@@"
 
 	db WIGGLYTUFF
 	db BERRY_JUICE
@@ -981,6 +1019,7 @@ BattleTowerMons:
 	bigdw 43 ; Spd
 	bigdw 58 ; SAtk
 	bigdw 44 ; SDef
+	db "@@@@@@@@@@@"
 
 	db WHIMSICOTT
 	db TWISTEDSPOON
@@ -1006,6 +1045,7 @@ BattleTowerMons:
 	bigdw 66 ; Spd
 	bigdw 50 ; SAtk
 	bigdw 49 ; SDef
+	db "@@@@@@@@@@@"
 
 	db NIDOKING
 	db NOISEMAKER
@@ -1031,6 +1071,7 @@ BattleTowerMons:
 	bigdw 49 ; Spd
 	bigdw 50 ; SAtk
 	bigdw 46 ; SDef
+	db "@@@@@@@@@@@"
 
 	db QUAGSIRE
 	db QUICK_CLAW
@@ -1056,6 +1097,7 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 42 ; SAtk
 	bigdw 42 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 3
@@ -1084,6 +1126,7 @@ BattleTowerMons:
 	bigdw 107 ; Spd
 	bigdw 96 ; SAtk
 	bigdw 87 ; SDef
+	db "@@@@@@@@@@@"
 
 	db POLIWRATH
 	db BRIGHTPOWDER
@@ -1109,6 +1152,7 @@ BattleTowerMons:
 	bigdw 73 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 82 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STARMIE
 	db LEFTOVERS
@@ -1134,6 +1178,7 @@ BattleTowerMons:
 	bigdw 99 ; Spd
 	bigdw 93 ; SAtk
 	bigdw 81 ; SDef
+	db "@@@@@@@@@@@"
 
 	db JYNX
 	db BERRY_JUICE
@@ -1159,6 +1204,7 @@ BattleTowerMons:
 	bigdw 83 ; Spd
 	bigdw 110 ; SAtk
 	bigdw 95 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DUGTRIO
 	db KINGS_ROCK
@@ -1184,6 +1230,7 @@ BattleTowerMons:
 	bigdw 102 ; Spd
 	bigdw 61 ; SAtk
 	bigdw 71 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BELLOSSOM
 	db BRIGHTPOWDER
@@ -1209,6 +1256,7 @@ BattleTowerMons:
 	bigdw 60 ; Spd
 	bigdw 82 ; SAtk
 	bigdw 88 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db LEFTOVERS
@@ -1234,6 +1282,7 @@ BattleTowerMons:
 	bigdw 59 ; Spd
 	bigdw 73 ; SAtk
 	bigdw 109 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db CHARCOAL
@@ -1259,6 +1308,7 @@ BattleTowerMons:
 	bigdw 86 ; Spd
 	bigdw 100 ; SAtk
 	bigdw 82 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MACHAMP
 	db MIRACLEBERRY
@@ -1284,6 +1334,7 @@ BattleTowerMons:
 	bigdw 61 ; Spd
 	bigdw 68 ; SAtk
 	bigdw 80 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CROBAT
 	db BERRY_JUICE
@@ -1309,6 +1360,7 @@ BattleTowerMons:
 	bigdw 103 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 76 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db BRIGHTPOWDER
@@ -1334,6 +1386,7 @@ BattleTowerMons:
 	bigdw 66 ; Spd
 	bigdw 87 ; SAtk
 	bigdw 81 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MAROWAK
 	db THICK_CLUB
@@ -1359,6 +1412,7 @@ BattleTowerMons:
 	bigdw 56 ; Spd
 	bigdw 54 ; SAtk
 	bigdw 72 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ELECTRODE
 	db BRIGHTPOWDER
@@ -1384,6 +1438,7 @@ BattleTowerMons:
 	bigdw 120 ; Spd
 	bigdw 80 ; SAtk
 	bigdw 80 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db LEFTOVERS
@@ -1409,6 +1464,7 @@ BattleTowerMons:
 	bigdw 65 ; Spd
 	bigdw 75 ; SAtk
 	bigdw 81 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LANTURN
 	db BERRY_JUICE
@@ -1434,6 +1490,7 @@ BattleTowerMons:
 	bigdw 66 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 70 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ESPEON
 	db MIRACLEBERRY
@@ -1459,6 +1516,7 @@ BattleTowerMons:
 	bigdw 96 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 82 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TENTACRUEL
 	db KINGS_ROCK
@@ -1484,6 +1542,7 @@ BattleTowerMons:
 	bigdw 90 ; Spd
 	bigdw 77 ; SAtk
 	bigdw 101 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GENGAR
 	db BERRY_JUICE
@@ -1509,6 +1568,7 @@ BattleTowerMons:
 	bigdw 99 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 70 ; SDef
+	db "@@@@@@@@@@@"
 
 	db URSARING
 	db BERRY_JUICE
@@ -1534,6 +1594,7 @@ BattleTowerMons:
 	bigdw 52 ; Spd
 	bigdw 56 ; SAtk
 	bigdw 67 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FEAROW
 	db BRIGHTPOWDER
@@ -1559,6 +1620,7 @@ BattleTowerMons:
 	bigdw 85 ; Spd
 	bigdw 58 ; SAtk
 	bigdw 58 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PRIMEAPE
 	db MIRACLEBERRY
@@ -1584,6 +1646,7 @@ BattleTowerMons:
 	bigdw 77 ; Spd
 	bigdw 55 ; SAtk
 	bigdw 70 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 4
@@ -1612,6 +1675,7 @@ BattleTowerMons:
 	bigdw 127 ; Spd
 	bigdw 70 ; SAtk
 	bigdw 94 ; SDef
+	db "@@@@@@@@@@@"
 
 	db KINGDRA
 	db LEFTOVERS
@@ -1637,6 +1701,7 @@ BattleTowerMons:
 	bigdw 106 ; Spd
 	bigdw 115 ; SAtk
 	bigdw 115 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db QUICK_CLAW
@@ -1662,6 +1727,7 @@ BattleTowerMons:
 	bigdw 61 ; Spd
 	bigdw 89 ; SAtk
 	bigdw 125 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db LEFTOVERS
@@ -1687,6 +1753,7 @@ BattleTowerMons:
 	bigdw 86 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 111 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STEELIX
 	db BERRY_JUICE
@@ -1712,6 +1779,7 @@ BattleTowerMons:
 	bigdw 61 ; Spd
 	bigdw 79 ; SAtk
 	bigdw 87 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ALAKAZAM
 	db KINGS_ROCK
@@ -1737,6 +1805,7 @@ BattleTowerMons:
 	bigdw 135 ; Spd
 	bigdw 148 ; SAtk
 	bigdw 117 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STARMIE
 	db LEFTOVERS
@@ -1762,6 +1831,7 @@ BattleTowerMons:
 	bigdw 127 ; Spd
 	bigdw 121 ; SAtk
 	bigdw 105 ; SDef
+	db "@@@@@@@@@@@"
 
 	db WOBBUFFET
 	db BERRY_JUICE
@@ -1787,6 +1857,7 @@ BattleTowerMons:
 	bigdw 64 ; Spd
 	bigdw 59 ; SAtk
 	bigdw 79 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GOLEM
 	db FOCUS_BAND
@@ -1812,6 +1883,7 @@ BattleTowerMons:
 	bigdw 74 ; Spd
 	bigdw 80 ; SAtk
 	bigdw 92 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SCIZOR
 	db SCOPE_LENS
@@ -1837,6 +1909,7 @@ BattleTowerMons:
 	bigdw 89 ; Spd
 	bigdw 82 ; SAtk
 	bigdw 110 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DUGTRIO
 	db KINGS_ROCK
@@ -1862,6 +1935,7 @@ BattleTowerMons:
 	bigdw 131 ; Spd
 	bigdw 76 ; SAtk
 	bigdw 91 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SLOWBRO
 	db MIRACLEBERRY
@@ -1887,6 +1961,7 @@ BattleTowerMons:
 	bigdw 52 ; Spd
 	bigdw 119 ; SAtk
 	bigdw 103 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db NO_ITEM
@@ -1912,6 +1987,7 @@ BattleTowerMons:
 	bigdw 86 ; Spd
 	bigdw 123 ; SAtk
 	bigdw 115 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARCANINE
 	db CHARCOAL
@@ -1937,6 +2013,7 @@ BattleTowerMons:
 	bigdw 111 ; Spd
 	bigdw 115 ; SAtk
 	bigdw 99 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FORRETRESS
 	db LEFTOVERS
@@ -1962,6 +2039,7 @@ BattleTowerMons:
 	bigdw 64 ; Spd
 	bigdw 87 ; SAtk
 	bigdw 107 ; SDef
+	db "@@@@@@@@@@@"
 
 	db OMASTAR
 	db BERRY_JUICE
@@ -1987,6 +2065,7 @@ BattleTowerMons:
 	bigdw 83 ; Spd
 	bigdw 124 ; SAtk
 	bigdw 88 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CHARIZARD
 	db KINGS_ROCK
@@ -2012,6 +2091,7 @@ BattleTowerMons:
 	bigdw 119 ; Spd
 	bigdw 125 ; SAtk
 	bigdw 106 ; SDef
+	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
 	db BRIGHTPOWDER
@@ -2037,6 +2117,7 @@ BattleTowerMons:
 	bigdw 81 ; Spd
 	bigdw 133 ; SAtk
 	bigdw 92 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HYPNO
 	db BRIGHTPOWDER
@@ -2062,6 +2143,7 @@ BattleTowerMons:
 	bigdw 81 ; Spd
 	bigdw 89 ; SAtk
 	bigdw 122 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MUK
 	db QUICK_CLAW
@@ -2087,6 +2169,7 @@ BattleTowerMons:
 	bigdw 67 ; Spd
 	bigdw 83 ; SAtk
 	bigdw 111 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ELECTABUZZ
 	db KINGS_ROCK
@@ -2112,6 +2195,7 @@ BattleTowerMons:
 	bigdw 107 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 95 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 5
@@ -2140,6 +2224,7 @@ BattleTowerMons:
 	bigdw 132 ; Spd
 	bigdw 144 ; SAtk
 	bigdw 144 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db BLACKGLASSES
@@ -2165,6 +2250,7 @@ BattleTowerMons:
 	bigdw 145 ; Spd
 	bigdw 166 ; SAtk
 	bigdw 136 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SHUCKLE
 	db LEFTOVERS
@@ -2190,6 +2276,7 @@ BattleTowerMons:
 	bigdw 52 ; Spd
 	bigdw 59 ; SAtk
 	bigdw 304 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db LEFTOVERS
@@ -2215,6 +2302,7 @@ BattleTowerMons:
 	bigdw 79 ; Spd
 	bigdw 114 ; SAtk
 	bigdw 159 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db BERRY_JUICE
@@ -2240,6 +2328,7 @@ BattleTowerMons:
 	bigdw 107 ; Spd
 	bigdw 133 ; SAtk
 	bigdw 143 ; SDef
+	db "@@@@@@@@@@@"
 
 	db JOLTEON
 	db KINGS_ROCK
@@ -2265,6 +2354,7 @@ BattleTowerMons:
 	bigdw 179 ; Spd
 	bigdw 159 ; SAtk
 	bigdw 144 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SCIZOR
 	db LEFTOVERS
@@ -2290,6 +2380,7 @@ BattleTowerMons:
 	bigdw 111 ; Spd
 	bigdw 99 ; SAtk
 	bigdw 134 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SLOWKING
 	db MINT_BERRY
@@ -2315,6 +2406,7 @@ BattleTowerMons:
 	bigdw 65 ; Spd
 	bigdw 146 ; SAtk
 	bigdw 156 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MACHAMP
 	db BERRY_JUICE
@@ -2340,6 +2432,7 @@ BattleTowerMons:
 	bigdw 99 ; Spd
 	bigdw 108 ; SAtk
 	bigdw 128 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STARMIE
 	db SCOPE_LENS
@@ -2365,6 +2458,7 @@ BattleTowerMons:
 	bigdw 161 ; Spd
 	bigdw 150 ; SAtk
 	bigdw 130 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DUGTRIO
 	db KINGS_ROCK
@@ -2390,6 +2484,7 @@ BattleTowerMons:
 	bigdw 166 ; Spd
 	bigdw 97 ; SAtk
 	bigdw 115 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ELECTRODE
 	db MIRACLEBERRY
@@ -2415,6 +2510,7 @@ BattleTowerMons:
 	bigdw 197 ; Spd
 	bigdw 130 ; SAtk
 	bigdw 130 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AERODACTYL
 	db KINGS_ROCK
@@ -2440,6 +2536,7 @@ BattleTowerMons:
 	bigdw 174 ; Spd
 	bigdw 104 ; SAtk
 	bigdw 119 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CROBAT
 	db LEFTOVERS
@@ -2465,6 +2562,7 @@ BattleTowerMons:
 	bigdw 175 ; Spd
 	bigdw 117 ; SAtk
 	bigdw 127 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ZAPDOS
 	db MIRACLEBERRY
@@ -2490,6 +2588,7 @@ BattleTowerMons:
 	bigdw 143 ; Spd
 	bigdw 171 ; SAtk
 	bigdw 136 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SKARMORY
 	db BERRY_JUICE
@@ -2515,6 +2614,7 @@ BattleTowerMons:
 	bigdw 136 ; Spd
 	bigdw 83 ; SAtk
 	bigdw 113 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FORRETRESS
 	db LEFTOVERS
@@ -2540,6 +2640,7 @@ BattleTowerMons:
 	bigdw 84 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 128 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STEELIX
 	db MIRACLEBERRY
@@ -2565,6 +2666,7 @@ BattleTowerMons:
 	bigdw 73 ; Spd
 	bigdw 99 ; SAtk
 	bigdw 109 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GIRAFARIG
 	db SCOPE_LENS
@@ -2590,6 +2692,7 @@ BattleTowerMons:
 	bigdw 128 ; Spd
 	bigdw 136 ; SAtk
 	bigdw 109 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GYARADOS
 	db DICTIONARY
@@ -2615,6 +2718,7 @@ BattleTowerMons:
 	bigdw 117 ; Spd
 	bigdw 95 ; SAtk
 	bigdw 135 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARTICUNO
 	db BERRY_JUICE
@@ -2640,6 +2744,7 @@ BattleTowerMons:
 	bigdw 120 ; Spd
 	bigdw 131 ; SAtk
 	bigdw 161 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 6
@@ -2668,6 +2773,7 @@ BattleTowerMons:
 	bigdw 161 ; Spd
 	bigdw 172 ; SAtk
 	bigdw 172 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TYRANITAR
 	db BERRY_JUICE
@@ -2693,6 +2799,7 @@ BattleTowerMons:
 	bigdw 131 ; Spd
 	bigdw 169 ; SAtk
 	bigdw 175 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db BLACKGLASSES
@@ -2718,6 +2825,7 @@ BattleTowerMons:
 	bigdw 172 ; Spd
 	bigdw 200 ; SAtk
 	bigdw 164 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db LEFTOVERS
@@ -2743,6 +2851,7 @@ BattleTowerMons:
 	bigdw 125 ; Spd
 	bigdw 182 ; SAtk
 	bigdw 170 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MACHAMP
 	db QUICK_CLAW
@@ -2768,6 +2877,7 @@ BattleTowerMons:
 	bigdw 120 ; Spd
 	bigdw 134 ; SAtk
 	bigdw 158 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ZAPDOS
 	db MINT_BERRY
@@ -2793,6 +2903,7 @@ BattleTowerMons:
 	bigdw 177 ; Spd
 	bigdw 203 ; SAtk
 	bigdw 161 ; SDef
+	db "@@@@@@@@@@@"
 
 	db WOBBUFFET
 	db BERRY_JUICE
@@ -2818,6 +2929,7 @@ BattleTowerMons:
 	bigdw 94 ; Spd
 	bigdw 92 ; SAtk
 	bigdw 122 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AERODACTYL
 	db LEFTOVERS
@@ -2843,6 +2955,7 @@ BattleTowerMons:
 	bigdw 208 ; Spd
 	bigdw 124 ; SAtk
 	bigdw 142 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DRAGONITE
 	db MIRACLEBERRY
@@ -2868,6 +2981,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 172 ; SAtk
 	bigdw 172 ; SDef
+	db "@@@@@@@@@@@"
 
 	db UMBREON
 	db BERRY_JUICE
@@ -2893,6 +3007,7 @@ BattleTowerMons:
 	bigdw 132 ; Spd
 	bigdw 128 ; SAtk
 	bigdw 212 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARCANINE
 	db CHARCOAL
@@ -2918,6 +3033,7 @@ BattleTowerMons:
 	bigdw 170 ; Spd
 	bigdw 173 ; SAtk
 	bigdw 149 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SKARMORY
 	db MIRACLEBERRY
@@ -2943,6 +3059,7 @@ BattleTowerMons:
 	bigdw 162 ; Spd
 	bigdw 99 ; SAtk
 	bigdw 135 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db LEFTOVERS
@@ -2968,6 +3085,7 @@ BattleTowerMons:
 	bigdw 117 ; Spd
 	bigdw 143 ; SAtk
 	bigdw 215 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db PINK_BOW
@@ -2993,6 +3111,7 @@ BattleTowerMons:
 	bigdw 92 ; Spd
 	bigdw 130 ; SAtk
 	bigdw 184 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HERACROSS
 	db FOCUS_BAND
@@ -3018,6 +3137,7 @@ BattleTowerMons:
 	bigdw 156 ; Spd
 	bigdw 101 ; SAtk
 	bigdw 167 ; SDef
+	db "@@@@@@@@@@@"
 
 	db JYNX
 	db MIRACLEBERRY
@@ -3043,6 +3163,7 @@ BattleTowerMons:
 	bigdw 168 ; Spd
 	bigdw 213 ; SAtk
 	bigdw 183 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLASTOISE
 	db BERRY_JUICE
@@ -3068,6 +3189,7 @@ BattleTowerMons:
 	bigdw 149 ; Spd
 	bigdw 156 ; SAtk
 	bigdw 178 ; SDef
+	db "@@@@@@@@@@@"
 
 	db RHYDON
 	db QUICK_CLAW
@@ -3093,6 +3215,7 @@ BattleTowerMons:
 	bigdw 104 ; Spd
 	bigdw 110 ; SAtk
 	bigdw 110 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SANDSLASH
 	db SCOPE_LENS
@@ -3118,6 +3241,7 @@ BattleTowerMons:
 	bigdw 116 ; Spd
 	bigdw 93 ; SAtk
 	bigdw 105 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PARASECT
 	db BERRY_JUICE
@@ -3143,6 +3267,7 @@ BattleTowerMons:
 	bigdw 96 ; Spd
 	bigdw 120 ; SAtk
 	bigdw 144 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GOLEM
 	db BRIGHTPOWDER
@@ -3168,6 +3293,7 @@ BattleTowerMons:
 	bigdw 90 ; Spd
 	bigdw 105 ; SAtk
 	bigdw 123 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 7
@@ -3196,6 +3322,7 @@ BattleTowerMons:
 	bigdw 245 ; Spd
 	bigdw 222 ; SAtk
 	bigdw 201 ; SDef
+	db "@@@@@@@@@@@"
 
 	db VAPOREON
 	db LEFTOVERS
@@ -3221,6 +3348,7 @@ BattleTowerMons:
 	bigdw 158 ; Spd
 	bigdw 218 ; SAtk
 	bigdw 197 ; SDef
+	db "@@@@@@@@@@@"
 
 	db UMBREON
 	db BERRY_JUICE
@@ -3246,6 +3374,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 149 ; SAtk
 	bigdw 247 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db BERRY_JUICE
@@ -3271,6 +3400,7 @@ BattleTowerMons:
 	bigdw 143 ; Spd
 	bigdw 166 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db LEFTOVERS
@@ -3296,6 +3426,7 @@ BattleTowerMons:
 	bigdw 105 ; Spd
 	bigdw 152 ; SAtk
 	bigdw 215 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db KINGS_ROCK
@@ -3321,6 +3452,7 @@ BattleTowerMons:
 	bigdw 197 ; Spd
 	bigdw 230 ; SAtk
 	bigdw 188 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TYRANITAR
 	db LEFTOVERS
@@ -3346,6 +3478,7 @@ BattleTowerMons:
 	bigdw 147 ; Spd
 	bigdw 196 ; SAtk
 	bigdw 203 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ZAPDOS
 	db BERRY_JUICE
@@ -3371,6 +3504,7 @@ BattleTowerMons:
 	bigdw 200 ; Spd
 	bigdw 238 ; SAtk
 	bigdw 189 ; SDef
+	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
 	db MIRACLEBERRY
@@ -3396,6 +3530,7 @@ BattleTowerMons:
 	bigdw 138 ; Spd
 	bigdw 236 ; SAtk
 	bigdw 165 ; SDef
+	db "@@@@@@@@@@@"
 
 	db UMBREON
 	db BERRY_JUICE
@@ -3421,6 +3556,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 142 ; SAtk
 	bigdw 240 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GYARADOS
 	db BRIGHTPOWDER
@@ -3446,6 +3582,7 @@ BattleTowerMons:
 	bigdw 178 ; Spd
 	bigdw 148 ; SAtk
 	bigdw 204 ; SDef
+	db "@@@@@@@@@@@"
 
 	db QUAGSIRE
 	db MIRACLEBERRY
@@ -3471,6 +3608,7 @@ BattleTowerMons:
 	bigdw 110 ; Spd
 	bigdw 152 ; SAtk
 	bigdw 152 ; SDef
+	db "@@@@@@@@@@@"
 
 	db URSARING
 	db SCOPE_LENS
@@ -3496,6 +3634,7 @@ BattleTowerMons:
 	bigdw 135 ; Spd
 	bigdw 145 ; SAtk
 	bigdw 169 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MR__MIME
 	db KINGS_ROCK
@@ -3521,6 +3660,7 @@ BattleTowerMons:
 	bigdw 176 ; Spd
 	bigdw 205 ; SAtk
 	bigdw 226 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PRIMEAPE
 	db QUICK_CLAW
@@ -3546,6 +3686,7 @@ BattleTowerMons:
 	bigdw 193 ; Spd
 	bigdw 141 ; SAtk
 	bigdw 176 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GIRAFARIG
 	db BERRY_JUICE
@@ -3571,6 +3712,7 @@ BattleTowerMons:
 	bigdw 187 ; Spd
 	bigdw 196 ; SAtk
 	bigdw 158 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HITMONLEE
 	db FOCUS_BAND
@@ -3596,6 +3738,7 @@ BattleTowerMons:
 	bigdw 186 ; Spd
 	bigdw 112 ; SAtk
 	bigdw 217 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HERACROSS
 	db BRIGHTPOWDER
@@ -3621,6 +3764,7 @@ BattleTowerMons:
 	bigdw 183 ; Spd
 	bigdw 109 ; SAtk
 	bigdw 186 ; SDef
+	db "@@@@@@@@@@@"
 
 	db VENUSAUR
 	db BRIGHTPOWDER
@@ -3646,6 +3790,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 180 ; SAtk
 	bigdw 180 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CHARIZARD
 	db SCOPE_LENS
@@ -3671,6 +3816,7 @@ BattleTowerMons:
 	bigdw 180 ; Spd
 	bigdw 193 ; SAtk
 	bigdw 159 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLASTOISE
 	db QUICK_CLAW
@@ -3696,6 +3842,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 159 ; SAtk
 	bigdw 184 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 8
@@ -3724,6 +3871,7 @@ BattleTowerMons:
 	bigdw 281 ; Spd
 	bigdw 245 ; SAtk
 	bigdw 221 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db LEFTOVERS
@@ -3749,6 +3897,7 @@ BattleTowerMons:
 	bigdw 121 ; Spd
 	bigdw 178 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db MINT_BERRY
@@ -3774,6 +3923,7 @@ BattleTowerMons:
 	bigdw 224 ; Spd
 	bigdw 259 ; SAtk
 	bigdw 211 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TAUROS
 	db BERRY_JUICE
@@ -3799,6 +3949,7 @@ BattleTowerMons:
 	bigdw 236 ; Spd
 	bigdw 135 ; SAtk
 	bigdw 183 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db MINT_BERRY
@@ -3824,6 +3975,7 @@ BattleTowerMons:
 	bigdw 168 ; Spd
 	bigdw 202 ; SAtk
 	bigdw 218 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TYRANITAR
 	db MIRACLEBERRY
@@ -3849,6 +4001,7 @@ BattleTowerMons:
 	bigdw 169 ; Spd
 	bigdw 218 ; SAtk
 	bigdw 226 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GENGAR
 	db NO_ITEM
@@ -3874,6 +4027,7 @@ BattleTowerMons:
 	bigdw 256 ; Spd
 	bigdw 277 ; SAtk
 	bigdw 189 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FORRETRESS
 	db LEFTOVERS
@@ -3899,6 +4053,7 @@ BattleTowerMons:
 	bigdw 133 ; Spd
 	bigdw 165 ; SAtk
 	bigdw 205 ; SDef
+	db "@@@@@@@@@@@"
 
 	db KINGDRA
 	db MINT_BERRY
@@ -3924,6 +4079,7 @@ BattleTowerMons:
 	bigdw 209 ; Spd
 	bigdw 221 ; SAtk
 	bigdw 221 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DRAGONITE
 	db BERRY_JUICE
@@ -3949,6 +4105,7 @@ BattleTowerMons:
 	bigdw 197 ; Spd
 	bigdw 228 ; SAtk
 	bigdw 228 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db LEFTOVERS
@@ -3974,6 +4131,7 @@ BattleTowerMons:
 	bigdw 169 ; Spd
 	bigdw 237 ; SAtk
 	bigdw 221 ; SDef
+	db "@@@@@@@@@@@"
 
 	db JYNX
 	db QUICK_CLAW
@@ -3999,6 +4157,7 @@ BattleTowerMons:
 	bigdw 221 ; Spd
 	bigdw 289 ; SAtk
 	bigdw 249 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MANTINE
 	db BERRY_JUICE
@@ -4024,6 +4183,7 @@ BattleTowerMons:
 	bigdw 180 ; Spd
 	bigdw 196 ; SAtk
 	bigdw 292 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SKARMORY
 	db QUICK_CLAW
@@ -4049,6 +4209,7 @@ BattleTowerMons:
 	bigdw 215 ; Spd
 	bigdw 137 ; SAtk
 	bigdw 185 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MOLTRES
 	db CHARCOAL
@@ -4074,6 +4235,7 @@ BattleTowerMons:
 	bigdw 213 ; Spd
 	bigdw 271 ; SAtk
 	bigdw 207 ; SDef
+	db "@@@@@@@@@@@"
 
 	db AERODACTYL
 	db MIRACLEBERRY
@@ -4099,6 +4261,7 @@ BattleTowerMons:
 	bigdw 275 ; Spd
 	bigdw 165 ; SAtk
 	bigdw 189 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ELECTRODE
 	db KINGS_ROCK
@@ -4124,6 +4287,7 @@ BattleTowerMons:
 	bigdw 310 ; Spd
 	bigdw 207 ; SAtk
 	bigdw 207 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DUGTRIO
 	db BERRY
@@ -4149,6 +4313,7 @@ BattleTowerMons:
 	bigdw 261 ; Spd
 	bigdw 147 ; SAtk
 	bigdw 176 ; SDef
+	db "@@@@@@@@@@@"
 
 	db VICTREEBEL
 	db QUICK_CLAW
@@ -4174,6 +4339,7 @@ BattleTowerMons:
 	bigdw 161 ; Spd
 	bigdw 207 ; SAtk
 	bigdw 159 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PINSIR
 	db BERRY_JUICE
@@ -4199,6 +4365,7 @@ BattleTowerMons:
 	bigdw 185 ; Spd
 	bigdw 133 ; SAtk
 	bigdw 157 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GRANBULL
 	db BRIGHTPOWDER
@@ -4224,6 +4391,7 @@ BattleTowerMons:
 	bigdw 119 ; Spd
 	bigdw 146 ; SAtk
 	bigdw 146 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 9
@@ -4252,6 +4420,7 @@ BattleTowerMons:
 	bigdw 202 ; Spd
 	bigdw 188 ; SAtk
 	bigdw 314 ; SDef
+	db "@@@@@@@@@@@"
 
 	db DRAGONITE
 	db QUICK_CLAW
@@ -4277,6 +4446,7 @@ BattleTowerMons:
 	bigdw 229 ; Spd
 	bigdw 263 ; SAtk
 	bigdw 263 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STARMIE
 	db LEFTOVERS
@@ -4302,6 +4472,7 @@ BattleTowerMons:
 	bigdw 287 ; Spd
 	bigdw 272 ; SAtk
 	bigdw 236 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CLOYSTER
 	db LEFTOVERS
@@ -4327,6 +4498,7 @@ BattleTowerMons:
 	bigdw 203 ; Spd
 	bigdw 234 ; SAtk
 	bigdw 162 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CROBAT
 	db BERRY_JUICE
@@ -4352,6 +4524,7 @@ BattleTowerMons:
 	bigdw 310 ; Spd
 	bigdw 207 ; SAtk
 	bigdw 225 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PORYGON2
 	db QUICK_CLAW
@@ -4377,6 +4550,7 @@ BattleTowerMons:
 	bigdw 190 ; Spd
 	bigdw 266 ; SAtk
 	bigdw 248 ; SDef
+	db "@@@@@@@@@@@"
 
 	db KINGDRA
 	db LEFTOVERS
@@ -4402,6 +4576,7 @@ BattleTowerMons:
 	bigdw 230 ; Spd
 	bigdw 248 ; SAtk
 	bigdw 248 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TYRANITAR
 	db QUICK_CLAW
@@ -4427,6 +4602,7 @@ BattleTowerMons:
 	bigdw 185 ; Spd
 	bigdw 250 ; SAtk
 	bigdw 259 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LAPRAS
 	db MINT_BERRY
@@ -4452,6 +4628,7 @@ BattleTowerMons:
 	bigdw 187 ; Spd
 	bigdw 237 ; SAtk
 	bigdw 255 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ESPEON
 	db BERRY_JUICE
@@ -4477,6 +4654,7 @@ BattleTowerMons:
 	bigdw 282 ; Spd
 	bigdw 313 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MACHAMP
 	db QUICK_CLAW
@@ -4502,6 +4680,7 @@ BattleTowerMons:
 	bigdw 181 ; Spd
 	bigdw 194 ; SAtk
 	bigdw 230 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNORLAX
 	db MIRACLEBERRY
@@ -4527,6 +4706,7 @@ BattleTowerMons:
 	bigdw 135 ; Spd
 	bigdw 194 ; SAtk
 	bigdw 275 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARCANINE
 	db MINT_BERRY
@@ -4552,6 +4732,7 @@ BattleTowerMons:
 	bigdw 247 ; Spd
 	bigdw 262 ; SAtk
 	bigdw 226 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db LEFTOVERS
@@ -4577,6 +4758,7 @@ BattleTowerMons:
 	bigdw 180 ; Spd
 	bigdw 214 ; SAtk
 	bigdw 322 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
 	db BRIGHTPOWDER
@@ -4602,6 +4784,7 @@ BattleTowerMons:
 	bigdw 252 ; Spd
 	bigdw 293 ; SAtk
 	bigdw 239 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SKARMORY
 	db QUICK_CLAW
@@ -4627,6 +4810,7 @@ BattleTowerMons:
 	bigdw 243 ; Spd
 	bigdw 139 ; SAtk
 	bigdw 193 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SHUCKLE
 	db LEFTOVERS
@@ -4652,6 +4836,7 @@ BattleTowerMons:
 	bigdw 90 ; Spd
 	bigdw 97 ; SAtk
 	bigdw 538 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FLAREON
 	db MINT_BERRY
@@ -4677,6 +4862,7 @@ BattleTowerMons:
 	bigdw 198 ; Spd
 	bigdw 238 ; SAtk
 	bigdw 265 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MILTANK
 	db LEFTOVERS
@@ -4702,6 +4888,7 @@ BattleTowerMons:
 	bigdw 232 ; Spd
 	bigdw 128 ; SAtk
 	bigdw 182 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TAUROS
 	db PINK_BOW
@@ -4727,6 +4914,7 @@ BattleTowerMons:
 	bigdw 254 ; Spd
 	bigdw 126 ; SAtk
 	bigdw 180 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MUK
 	db QUICK_CLAW
@@ -4752,6 +4940,7 @@ BattleTowerMons:
 	bigdw 140 ; Spd
 	bigdw 167 ; SAtk
 	bigdw 230 ; SDef
+	db "@@@@@@@@@@@"
 
 
 ; BattleTowerMons group 10
@@ -4780,6 +4969,7 @@ BattleTowerMons:
 	bigdw 284 ; Spd
 	bigdw 330 ; SAtk
 	bigdw 270 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MACHAMP
 	db QUICK_CLAW
@@ -4805,6 +4995,7 @@ BattleTowerMons:
 	bigdw 204 ; Spd
 	bigdw 226 ; SAtk
 	bigdw 266 ; SDef
+	db "@@@@@@@@@@@"
 
 	db KINGDRA
 	db LEFTOVERS
@@ -4830,6 +5021,7 @@ BattleTowerMons:
 	bigdw 266 ; Spd
 	bigdw 284 ; SAtk
 	bigdw 284 ; SDef
+	db "@@@@@@@@@@@"
 
 	db JOLTEON
 	db BRIGHTPOWDER
@@ -4855,6 +5047,7 @@ BattleTowerMons:
 	bigdw 338 ; Spd
 	bigdw 308 ; SAtk
 	bigdw 278 ; SDef
+	db "@@@@@@@@@@@"
 
 	db TAUROS
 	db KINGS_ROCK
@@ -4880,6 +5073,7 @@ BattleTowerMons:
 	bigdw 308 ; Spd
 	bigdw 170 ; SAtk
 	bigdw 230 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ARCANINE
 	db LEFTOVERS
@@ -4905,6 +5099,7 @@ BattleTowerMons:
 	bigdw 281 ; Spd
 	bigdw 290 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
 
 	db CHARIZARD
 	db SCOPE_LENS
@@ -4930,6 +5125,7 @@ BattleTowerMons:
 	bigdw 289 ; Spd
 	bigdw 311 ; SAtk
 	bigdw 263 ; SDef
+	db "@@@@@@@@@@@"
 
 	db ELECTRODE
 	db BRIGHTPOWDER
@@ -4955,6 +5151,7 @@ BattleTowerMons:
 	bigdw 390 ; Spd
 	bigdw 256 ; SAtk
 	bigdw 256 ; SDef
+	db "@@@@@@@@@@@"
 
 	db RHYDON
 	db MIRACLEBERRY
@@ -4980,6 +5177,7 @@ BattleTowerMons:
 	bigdw 168 ; Spd
 	bigdw 188 ; SAtk
 	bigdw 188 ; SDef
+	db "@@@@@@@@@@@"
 
 	db STEELIX
 	db LEFTOVERS
@@ -5005,6 +5203,7 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 198 ; SAtk
 	bigdw 218 ; SDef
+	db "@@@@@@@@@@@"
 
 	db FEAROW
 	db KINGS_ROCK
@@ -5030,6 +5229,7 @@ BattleTowerMons:
 	bigdw 297 ; Spd
 	bigdw 212 ; SAtk
 	bigdw 212 ; SDef
+	db "@@@@@@@@@@@"
 
 	db MISDREAVUS
 	db FOCUS_BAND
@@ -5055,6 +5255,7 @@ BattleTowerMons:
 	bigdw 278 ; Spd
 	bigdw 283 ; SAtk
 	bigdw 283 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SNEASEL
 	db SCOPE_LENS
@@ -5080,6 +5281,7 @@ BattleTowerMons:
 	bigdw 326 ; Spd
 	bigdw 170 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
 
 	db SCIZOR
 	db QUICK_CLAW
@@ -5105,6 +5307,7 @@ BattleTowerMons:
 	bigdw 220 ; Spd
 	bigdw 196 ; SAtk
 	bigdw 266 ; SDef
+	db "@@@@@@@@@@@"
 
 	db BLISSEY
 	db LEFTOVERS
@@ -5130,6 +5333,7 @@ BattleTowerMons:
 	bigdw 188 ; Spd
 	bigdw 226 ; SAtk
 	bigdw 346 ; SDef
+	db "@@@@@@@@@@@"
 
 	db PILOSWINE
 	db MINT_BERRY
@@ -5155,6 +5359,7 @@ BattleTowerMons:
 	bigdw 220 ; Spd
 	bigdw 204 ; SAtk
 	bigdw 194 ; SDef
+	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
 	db QUICK_CLAW
@@ -5180,6 +5385,7 @@ BattleTowerMons:
 	bigdw 198 ; Spd
 	bigdw 340 ; SAtk
 	bigdw 238 ; SDef
+	db "@@@@@@@@@@@"
 
 	db OMASTAR
 	db LEFTOVERS
@@ -5205,6 +5411,7 @@ BattleTowerMons:
 	bigdw 198 ; Spd
 	bigdw 304 ; SAtk
 	bigdw 214 ; SDef
+	db "@@@@@@@@@@@"
 
 	db GOLEM
 	db BRIGHTPOWDER
@@ -5230,6 +5437,7 @@ BattleTowerMons:
 	bigdw 146 ; Spd
 	bigdw 170 ; SAtk
 	bigdw 200 ; SDef
+	db "@@@@@@@@@@@"
 
 	db HITMONCHAN
 	db FOCUS_BAND
@@ -5255,6 +5463,7 @@ BattleTowerMons:
 	bigdw 214 ; Spd
 	bigdw 130 ; SAtk
 	bigdw 280 ; SDef
+	db "@@@@@@@@@@@"
 
 	db LANTURN
 	db QUICK_CLAW
@@ -5280,5 +5489,6 @@ BattleTowerMons:
 	bigdw 192 ; Spd
 	bigdw 214 ; SAtk
 	bigdw 214 ; SDef
+	db "@@@@@@@@@@@"
 
 	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
