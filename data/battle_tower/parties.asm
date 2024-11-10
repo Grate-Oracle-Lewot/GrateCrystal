@@ -1048,7 +1048,7 @@ BattleTowerMons:
 	db "Percito@@@@"
 
 	db NIDOKING
-	db GOLD_BERRY
+	db NOISEMAKER
 	db BLIZZARD, EARTHQUAKE, SURF, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 8000 ; Exp
