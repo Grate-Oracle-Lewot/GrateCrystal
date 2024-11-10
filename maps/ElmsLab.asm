@@ -196,6 +196,9 @@ TotodilePokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke TOTODILE, 5, GOLD_BERRY
+	givepoke PORYGON2, 10, BERRY_JUICE
+	givepoke DITTO, 10, BERRY_JUICE
+	givepoke ALAKAZAM, 10, BERRY_JUICE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
