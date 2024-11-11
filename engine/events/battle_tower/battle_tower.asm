@@ -524,7 +524,7 @@ Function17042c:
 
 .next_trainer
 	pop hl
-	ld de, BATTLE_TOWER_STRUCT_LENGTH
+	ld de, BATTLE_TOWER_DUMMY_STRUCT_LENGTH
 	add hl, de
 	pop af
 	dec a
@@ -542,7 +542,7 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 
 	ld hl, wBT_OTTrainer
 	ld de, wBT_OTTemp
-	ld bc, BATTLE_TOWER_STRUCT_LENGTH
+	ld bc, BATTLE_TOWER_DUMMY_STRUCT_LENGTH
 	call CopyBytes
 
 	pop af
