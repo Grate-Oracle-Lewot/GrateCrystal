@@ -1,5 +1,5 @@
 	db "EGG@" ; species name
-	dw 0, 0 ; height, weight
+	dw 100, 100 ; height, weight
 
 	db   "A #MON EGG"
 	next "that has yet to"
