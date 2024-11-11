@@ -2,12 +2,14 @@ BattleTowerRoomMenu:
 ; special
 	call InitBattleTowerChallengeRAM
 	farcall _BattleTowerRoomMenu
+UnusedBattleTowerDummySpecial1:
 	ret
 
 Function1700ba:
 ; special
 	call InitBattleTowerChallengeRAM
 	farcall Function11811a
+UnusedBattleTowerDummySpecial2:
 	ret
 
 Function1700c4:
@@ -180,9 +182,6 @@ BattleTowerBattle:
 	xor a ; FALSE
 	ld [wBattleTowerBattleEnded], a
 	jp _BattleTowerBattle
-
-UnusedBattleTowerDummySpecial1:
-	ret
 
 InitBattleTowerChallengeRAM:
 	xor a
@@ -524,7 +523,7 @@ Function17042c:
 
 .next_trainer
 	pop hl
-	ld de, BATTLE_TOWER_DUMMY_STRUCT_LENGTH
+	ld de, BATTLE_TOWER_STRUCT_LENGTH
 	add hl, de
 	pop af
 	dec a
@@ -542,7 +541,7 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 
 	ld hl, wBT_OTTrainer
 	ld de, wBT_OTTemp
-	ld bc, BATTLE_TOWER_DUMMY_STRUCT_LENGTH
+	ld bc, BATTLE_TOWER_STRUCT_LENGTH
 	call CopyBytes
 
 	pop af
@@ -1520,9 +1519,6 @@ LoadOpponentTrainerAndPokemonWithOTSprite:
 	ret
 
 INCLUDE "data/trainers/sprites.asm"
-
-UnusedBattleTowerDummySpecial2:
-	ret
 
 CheckForBattleTowerRules:
 	farcall _CheckForBattleTowerRules
