@@ -26,8 +26,8 @@ LoadOpponentTrainerAndPokemon:
 	ldh a, [hRandomAdd]
 	add b
 	ld b, a ; b contains the nr of the trainer
-	maskbits BATTLETOWER_NUM_UNIQUE_MON
-	cp BATTLETOWER_NUM_UNIQUE_MON
+	maskbits BATTLETOWER_NUM_UNIQUE_TRAINERS
+	cp BATTLETOWER_NUM_UNIQUE_TRAINERS
 	jr nc, .resample
 	ld b, a
 
