@@ -209,7 +209,6 @@ GetBattleAnimPointer::
 	; ClearBattleAnims is the only function that calls this...
 	ld a, BANK(ClearBattleAnims)
 	rst Bankswitch
-
 	ret
 
 GetBattleAnimByte::
