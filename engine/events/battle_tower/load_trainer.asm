@@ -81,7 +81,6 @@ LoadOpponentTrainerAndPokemon:
 
 	pop af
 	ldh [rSVBK], a
-
 	ret
 
 LoadRandomBattleTowerMon:
