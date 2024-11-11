@@ -211,7 +211,11 @@ CheckBTRule_PartyCountEq3:
 
 CheckBTRule_PartySpeciesAreUnique:
 	ld hl, wPartyMon1Species
-	jp CheckPartyValueIsUnique
+	jr CheckPartyValueIsUnique
+
+CheckBTRule_PartyItemsAreUnique:
+	ld hl, wPartyMon1Item
+	; fallthrough
 
 CheckPartyValueIsUnique:
 	ld de, wPartyCount
@@ -273,10 +277,6 @@ CheckPartyValueIsUnique:
 	ld a, b
 	pop bc
 	ret
-
-CheckBTRule_PartyItemsAreUnique:
-	ld hl, wPartyMon1Item
-	jp CheckPartyValueIsUnique
 
 CheckBTRule_HasPartyAnEgg:
 	ld hl, wPartyCount
