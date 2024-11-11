@@ -375,7 +375,12 @@ AdventureArchiveText7:
 AdventureArchiveText8:
 	text "The number of"
 	line "times you've healed"
-	cont "your party is…"
+
+	para "your party at a"
+	line "#MON CENTER or"
+
+	para "similar location"
+	line "is…"
 	done
 
 AdventureArchiveText9:
