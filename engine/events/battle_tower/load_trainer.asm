@@ -163,7 +163,7 @@ LoadRandomBattleTowerMon:
 	ld a, [wNamedObjectIndex]
 	push af
 	push de
-	ld hl, -PARTYMON_STRUCT_LENGTH
+	ld hl, -NICKNAMED_MON_STRUCT_LENGTH
 	add hl, de
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
