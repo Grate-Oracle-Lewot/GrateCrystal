@@ -168,6 +168,8 @@ LoadRandomBattleTowerMon:
 	add hl, de
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
 	push hl
 	call GetPokemonName
 	ld h, d
