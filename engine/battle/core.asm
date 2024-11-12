@@ -287,7 +287,7 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
-	jr .loop
+	jp .loop
 
 .quit
 	pop af
