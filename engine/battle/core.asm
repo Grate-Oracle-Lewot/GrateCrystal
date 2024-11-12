@@ -2517,7 +2517,7 @@ WinTrainerBattle:
 	ld a, [wEnemyTrainerBaseReward]
 	cp 0
 	ret z
-	jp .give_money
+	jr .give_money
 
 .mobile
 	call BattleWinSlideInEnemyTrainerFrontpic
