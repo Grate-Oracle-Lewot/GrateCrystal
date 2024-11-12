@@ -539,7 +539,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp e
 	jr nc, .weather_check
-	jp .player_first
+	jr .player_first
 
 .player_no_quick_claw
 	ld a, b
@@ -548,7 +548,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jr nc, .weather_check
-	jp .enemy_first
+	jr .enemy_first
 
 .both_have_quick_claw
 	ldh a, [hSerialConnectionStatus]
@@ -556,19 +556,19 @@ DetermineMoveOrder:
 	jr z, .player_2b
 	call BattleRandom
 	cp c
-	jp c, .enemy_first
+	jr c, .enemy_first
 	call BattleRandom
 	cp e
-	jp c, .player_first
+	jr c, .player_first
 	jr .weather_check
 
 .player_2b
 	call BattleRandom
 	cp e
-	jp c, .player_first
+	jr c, .player_first
 	call BattleRandom
 	cp c
-	jp c, .enemy_first
+	jr c, .enemy_first
 	; fallthrough
 
 .weather_check
@@ -617,8 +617,8 @@ DetermineMoveOrder:
 	ld c, 2
 	call CompareBytes
 	jr z, .speed_tie
-	jp nc, .player_first
-	jp .enemy_first
+	jr nc, .player_first
+	jr .enemy_first
 
 .speed_tie
 	ldh a, [hSerialConnectionStatus]
@@ -626,13 +626,13 @@ DetermineMoveOrder:
 	jr z, .player_2c
 	call BattleRandom
 	cp 50 percent + 1
-	jp c, .player_first
-	jp .enemy_first
+	jr c, .player_first
+	jr .enemy_first
 
 .player_2c
 	call BattleRandom
 	cp 50 percent + 1
-	jp c, .enemy_first
+	jr c, .enemy_first
 .player_first
 	scf
 	ret
@@ -688,7 +688,7 @@ CheckContestBattleOver:
 CheckPlayerLockedIn:
 	ld a, [wPlayerSubStatus4]
 	and 1 << SUBSTATUS_RECHARGE
-	jp nz, .quit
+	jr nz, .quit
 
 	ld hl, wEnemySubStatus3
 	res SUBSTATUS_FLINCHED, [hl]
@@ -697,11 +697,11 @@ CheckPlayerLockedIn:
 
 	ld a, [hl]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
-	jp nz, .quit
+	jr nz, .quit
 
 	ld hl, wPlayerSubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
-	jp nz, .quit
+	jr nz, .quit
 
 	and a
 	ret
