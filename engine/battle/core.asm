@@ -8314,7 +8314,7 @@ InitEnemyTrainer:
 InitEnemy:
 	ld a, [wOtherTrainerClass]
 	and a
-	jp nz, InitEnemyTrainer
+	jr nz, InitEnemyTrainer
 	; fallthrough
 
 InitEnemyWildmon:
