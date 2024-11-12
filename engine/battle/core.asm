@@ -517,7 +517,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jp c, .enemy_first
-	jr .weather_check
+	; fallthrough
 
 .weather_check
 	ld de, wBattleMonSpeed
