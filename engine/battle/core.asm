@@ -7113,6 +7113,7 @@ Call_PlayBattleAnim_OnlyIfVisible:
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret nz
+	; fallthrough
 
 Call_PlayBattleAnim:
 	ld a, e
