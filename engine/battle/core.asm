@@ -6475,13 +6475,13 @@ LoadEnemyMon:
 	xor a
 	ld [hli], a
 
-; Full HP..
+; Full HP...
 	ld a, [wEnemyMonMaxHP]
 	ld [hli], a
 	ld a, [wEnemyMonMaxHP + 1]
 	ld [hl], a
 
-; ..unless it's a RoamMon
+; ...unless it's a RoamMon
 	ld a, [wBattleType]
 	cp BATTLETYPE_ROAMING
 	jr nz, .Moves
