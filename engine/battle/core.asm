@@ -8459,7 +8459,7 @@ ShowLinkBattleParticipantsAfterEnd:
 
 DisplayLinkBattleResult:
 	farcall CheckMobileBattleError
-	jp c, .Mobile_InvalidBattle
+	jr c, .Mobile_InvalidBattle
 	call IsMobileBattle
 	jr nz, .proceed
 
@@ -8515,13 +8515,6 @@ DisplayLinkBattleResult:
 	call DelayFrames
 	jp ClearTilemap
 
-.YouWin:
-	db "YOU WIN@"
-.YouLose:
-	db "YOU LOSE@"
-.Draw:
-	db "  DRAW@"
-
 .Mobile_InvalidBattle:
 	hlcoord 6, 8
 	ld de, .InvalidBattle
@@ -8530,6 +8523,12 @@ DisplayLinkBattleResult:
 	call DelayFrames
 	jp ClearTilemap
 
+.YouWin:
+	db "YOU WIN@"
+.YouLose:
+	db "YOU LOSE@"
+.Draw:
+	db "  DRAW@"
 .InvalidBattle:
 	db "INVALID BATTLE@"
 
