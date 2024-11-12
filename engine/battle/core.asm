@@ -4307,6 +4307,11 @@ BreakAttraction:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
+EnemyMonEntrance:
+	callfar AI_Switch
+	call SetEnemyTurn
+	; fallthrough
+
 SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4474,7 +4479,48 @@ HandleHealingItems:
 	call SetPlayerTurn
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	jp UseConfusionHealingItem
+	; fallthrough
+
+UseConfusionHealingItem:
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_CONFUSED, a
+	ret z
+	callfar GetOpponentItem
+	ld a, b
+	cp HELD_HEAL_CONFUSION
+	jr z, .heal_status
+	cp HELD_HEAL_STATUS
+	ret nz
+
+.heal_status
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_CONFUSED, [hl]
+	call GetItemName
+	call ItemRecoveryAnim
+	ld hl, BattleText_ItemHealedConfusion
+	call StdBattleTextbox
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .do_partymon
+	call GetOTPartymonItem
+	xor a
+	ld [bc], a
+	ld a, [wBattleMode]
+	dec a
+	ret z
+	ld [hl], $0
+	ret
+
+.do_partymon
+	call GetPartymonItem
+	xor a
+	ld [bc], a
+	ld [hl], a
+	ret
 
 HandleHPHealingItem:
 	callfar GetOpponentItem
@@ -4643,47 +4689,6 @@ UseHeldStatusHealingItem:
 
 INCLUDE "data/battle/held_heal_status.asm"
 
-UseConfusionHealingItem:
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	bit SUBSTATUS_CONFUSED, a
-	ret z
-	callfar GetOpponentItem
-	ld a, b
-	cp HELD_HEAL_CONFUSION
-	jr z, .heal_status
-	cp HELD_HEAL_STATUS
-	ret nz
-
-.heal_status
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	res SUBSTATUS_CONFUSED, [hl]
-	call GetItemName
-	call ItemRecoveryAnim
-	ld hl, BattleText_ItemHealedConfusion
-	call StdBattleTextbox
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .do_partymon
-	call GetOTPartymonItem
-	xor a
-	ld [bc], a
-	ld a, [wBattleMode]
-	dec a
-	ret z
-	ld [hl], $0
-	ret
-
-.do_partymon
-	call GetPartymonItem
-	xor a
-	ld [bc], a
-	ld [hl], a
-	ret
-
 HandleStatBoostingHeldItems:
 ; The effects handled here are not used in the vanilla game. In Grate Crystal they're used for the X items.
 	ldh a, [hSerialConnectionStatus]
@@ -4694,7 +4699,6 @@ HandleStatBoostingHeldItems:
 
 .player_1
 	call .DoEnemy
-	; fallthrough
 
 .DoPlayer:
 	call GetPartymonItem
@@ -4832,10 +4836,6 @@ DrawPlayerHUD:
 	call FillInExpBar
 	pop de
 	ret
-
-UpdatePlayerHPPal:
-	ld hl, wPlayerHPPal
-	jp UpdateHPPal
 
 CheckDanger:
 	ld hl, wBattleMonHP
@@ -5021,7 +5021,7 @@ DrawEnemyHUD:
 	ld c, a
 	ld e, a
 	ld d, HP_BAR_LENGTH
-	jp .draw_bar
+	jr .draw_bar
 
 .not_fainted
 	xor a
@@ -5075,9 +5075,13 @@ DrawEnemyHUD:
 	ld b, 0
 	jp DrawBattleHPBar
 
+UpdatePlayerHPPal:
+	ld hl, wPlayerHPPal
+	jr UpdateHPPal
+
 UpdateEnemyHPPal:
 	ld hl, wEnemyHPPal
-	jp UpdateHPPal
+	; fallthrough
 
 UpdateHPPal:
 	ld b, [hl]
@@ -5125,9 +5129,9 @@ BattleMenu:
 	ldh [hBGMapMode], a
 	ld a, [wBattleMenuCursorPosition]
 	cp $1
-	jp z, BattleMenu_Fight
+	jr z, BattleMenu_Fight
 	cp $3
-	jp z, BattleMenu_Pack
+	jr z, BattleMenu_Pack
 	cp $2
 	jp z, BattleMenu_PKMN
 	cp $4
@@ -5169,11 +5173,11 @@ LoadBattleMenu2:
 BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
-	jp nz, .ItemsCantBeUsed
+	jr nz, .ItemsCantBeUsed
 
 	ld a, [wInBattleTowerBattle]
 	and a
-	jp nz, .ItemsCantBeUsed
+	jr nz, .ItemsCantBeUsed
 
 	call LoadStandardMenuHeader
 
@@ -5298,7 +5302,7 @@ BattleMenuPKMN_Loop:
 	call Battle_StatsScreen
 	call CheckMobileBattleError
 	jr c, .Cancel
-	jp BattleMenuPKMN_ReturnFromStats
+	jr BattleMenuPKMN_ReturnFromStats
 
 .Cancel:
 	call ClearSprites
@@ -5420,11 +5424,11 @@ PlayerSwitch:
 .linked
 	ld a, [wBattleAction]
 	cp BATTLEACTION_STRUGGLE
-	jp z, .switch
+	jr z, .switch
 	cp BATTLEACTION_SKIPTURN
-	jp z, .switch
+	jr z, .switch
 	cp BATTLEACTION_SWITCH1
-	jp c, .switch
+	jr c, .switch
 	cp BATTLEACTION_FORFEIT
 	jr nz, .dont_run
 	jp WildFled_EnemyFled_LinkBattleCanceled
@@ -5443,11 +5447,6 @@ PlayerSwitch:
 	call BattleMonEntrance
 	and a
 	ret
-
-EnemyMonEntrance:
-	callfar AI_Switch
-	call SetEnemyTurn
-	jp SpikesDamage
 
 BattleMonEntrance:
 	call WithdrawMonText
