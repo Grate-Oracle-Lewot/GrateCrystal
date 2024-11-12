@@ -1468,7 +1468,6 @@ HandleMysteryberry:
 	ret
 
 .restore
-	; lousy hack
 	ld a, [hl]
 	cp SKETCH
 	ld b, 1
@@ -1920,15 +1919,6 @@ HandleWeather:
 	dw BattleText_TheSandstormSubsided
 	dw BattleText_TheHailStopped
 
-SubtractHPFromTarget:
-	call SubtractHP
-	jp UpdateHPBar
-
-SubtractHPFromUser:
-; Subtract HP from mon
-	call SubtractHP
-	jp UpdateHPBarBattleHuds
-
 SubtractHP:
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
@@ -2094,9 +2084,17 @@ RestoreHP:
 	call UpdateHPBarBattleHuds
 	jp SwitchTurnCore
 
+SubtractHPFromUser:
+	call SubtractHP
+	; fallthrough
+
 UpdateHPBarBattleHuds:
 	call UpdateHPBar
 	jp UpdateBattleHuds
+
+SubtractHPFromTarget:
+	call SubtractHP
+	; fallthrough
 
 UpdateHPBar:
 	hlcoord 10, 9
