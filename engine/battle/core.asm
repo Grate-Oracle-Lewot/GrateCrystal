@@ -55,9 +55,9 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
+	jr z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jr z, .tutorial_debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
