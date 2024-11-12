@@ -8103,6 +8103,7 @@ GetBattleMonBackpic:
 	bit SUBSTATUS_SUBSTITUTE, a
 	ld hl, BattleAnimCmd_RaiseSub
 	jr nz, GetBattleMonBackpic_DoAnim ; substitute
+	; fallthrough
 
 DropPlayerSub:
 	ld a, [wPlayerMinimized]
