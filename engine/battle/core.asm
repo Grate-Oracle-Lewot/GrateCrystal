@@ -8243,12 +8243,6 @@ LoadTrainerOrWildMonPic:
 	ld [wTempEnemyMonSpecies], a
 	ret
 
-InitEnemy:
-	ld a, [wOtherTrainerClass]
-	and a
-	jp nz, InitEnemyTrainer ; trainer
-	jp InitEnemyWildmon ; wild
-
 BackUpBGMap2:
 	ldh a, [rSVBK]
 	push af
@@ -8316,6 +8310,12 @@ InitEnemyTrainer:
 	ld hl, wCurPartyMon
 	inc [hl]
 	jr .partyloop
+
+InitEnemy:
+	ld a, [wOtherTrainerClass]
+	and a
+	jp nz, InitEnemyTrainer
+	; fallthrough
 
 InitEnemyWildmon:
 	ld a, WILD_BATTLE
