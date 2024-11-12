@@ -342,11 +342,6 @@ HandleBetweenTurnEffects:
 	call LoadTilemapToTempTilemap
 	jp HandleEncore
 
-HasAnyoneFainted:
-	call HasPlayerFainted
-	jp nz, HasEnemyFainted
-	ret
-
 CheckFaint_PlayerThenEnemy:
 .faint_loop
 	call .Function
@@ -1038,6 +1033,11 @@ EndUserDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
+	ret
+
+HasAnyoneFainted:
+	call HasPlayerFainted
+	jr nz, HasEnemyFainted
 	ret
 
 HasUserFainted:
