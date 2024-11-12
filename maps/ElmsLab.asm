@@ -223,7 +223,7 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CHIKORITA, 5, GOLD_BERRY
+	givepoke CATERPIE, 10, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
@@ -1290,7 +1290,7 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, OLIVINE_CITY, 1
+	warp_event  4, 11, NATIONAL_PARK, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
