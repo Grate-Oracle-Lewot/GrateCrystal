@@ -1725,17 +1725,12 @@ HandleScreens:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	call nz, .LightScreenTick
 	bit SCREENS_REFLECT, [hl]
-	call nz, .ReflectTick
+	jr nz, .ReflectTick
 	ret
 
 .Copy:
 	ld hl, wStringBuffer1
 	jp CopyName2
-
-.Your:
-	db "Your@"
-.Enemy:
-	db "Enemy@"
 
 .LightScreenTick:
 	ld a, [de]
@@ -1760,6 +1755,11 @@ HandleScreens:
 	res SCREENS_REFLECT, [hl]
 	ld hl, BattleText_MonsReflectFaded
 	jp StdBattleTextbox
+
+.Your:
+	db "Your@"
+.Enemy:
+	db "Enemy@"
 
 HandleWeather:
 	ld a, [wBattleWeather]
