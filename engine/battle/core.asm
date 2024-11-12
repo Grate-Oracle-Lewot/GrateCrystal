@@ -1370,8 +1370,8 @@ HandleLeftovers:
 	call SetEnemyTurn
 	call .do_it
 	call SetPlayerTurn
-.do_it
 
+.do_it
 	callfar GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
