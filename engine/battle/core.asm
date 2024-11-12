@@ -222,7 +222,7 @@ BattleTurn:
 
 .loop
 	call CheckContestBattleOver
-	jp c, .quit
+	jr c, .quit
 
 	xor a
 	ld [wPlayerIsSwitching], a
@@ -241,7 +241,7 @@ BattleTurn:
 	farcall Function100da5
 	farcall StartMobileInactivityTimer
 	farcall Function100dd8
-	jp c, .quit
+	jr c, .quit
 .not_disconnected
 
 	call CheckPlayerLockedIn
@@ -287,7 +287,7 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
-	jp .loop
+	jr .loop
 
 .quit
 	pop af
