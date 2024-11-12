@@ -55,7 +55,7 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jr z, .tutorial_debug
+	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
 	jr z, .tutorial_debug
 	xor a
@@ -222,7 +222,7 @@ BattleTurn:
 
 .loop
 	call CheckContestBattleOver
-	jr c, .quit
+	jp c, .quit
 
 	xor a
 	ld [wPlayerIsSwitching], a
@@ -539,7 +539,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp e
 	jr nc, .weather_check
-	jr .player_first
+	jp .player_first
 
 .player_no_quick_claw
 	ld a, b
@@ -548,7 +548,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jr nc, .weather_check
-	jr .enemy_first
+	jp .enemy_first
 
 .both_have_quick_claw
 	ldh a, [hSerialConnectionStatus]
