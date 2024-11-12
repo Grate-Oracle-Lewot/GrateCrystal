@@ -8192,7 +8192,7 @@ StartBattle:
 	ret
 
 BattleIntro:
-	farcall StubbedTrainerRankings_Battles ; mobile
+	farcall StubbedTrainerRankings_Battles
 	call GetLevelCap ; only needed once, can't change cap settings mid-battle
 	call LoadTrainerOrWildMonPic
 	xor a
