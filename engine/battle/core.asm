@@ -7962,14 +7962,6 @@ ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-FillInExpBar:
-	push hl
-	call CalcExpBar
-	pop hl
-	ld de, 7
-	add hl, de
-	jp PlaceExpBar
-
 CalcExpBar:
 ; Calculate the percent exp between this level and the next
 ; Level in b
@@ -8068,6 +8060,14 @@ CalcExpBar:
 	sub b
 	ld b, a
 	ret
+
+FillInExpBar:
+	push hl
+	call CalcExpBar
+	pop hl
+	ld de, 7
+	add hl, de
+	; fallthrough
 
 PlaceExpBar:
 	ld c, $8 ; number of tiles
