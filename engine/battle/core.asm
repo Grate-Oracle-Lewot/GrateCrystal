@@ -8140,6 +8140,7 @@ GetEnemyMonFrontpic:
 	bit SUBSTATUS_SUBSTITUTE, a
 	ld hl, BattleAnimCmd_RaiseSub
 	jr nz, GetEnemyMonFrontpic_DoAnim
+	; fallthrough
 
 DropEnemySub:
 	ld a, [wEnemyMinimized]
