@@ -3,7 +3,7 @@ BattleTowerDittos:
 
 	db DITTO
 	db X_SPEED
-	db TRANSFORM, PROTECT, SELFDESTRUCT, SUBSTITUTE
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -13,7 +13,7 @@ BattleTowerDittos:
 	bigdw 65535
 	bigdw 65535
 	dn 15, 15, 15, 15 ; DVs
-	db 8, 16, 8, 16 ; PP
+	db 8, 8, 0, 0 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
