@@ -70,13 +70,13 @@ BattleTowerDittos:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 91 ; HP
+	bigdw 91 ; Max HP
+	bigdw 56 ; Atk
+	bigdw 56 ; Def
+	bigdw 176 ; Spd
+	bigdw 56 ; SAtk
+	bigdw 56 ; SDef
 	db "@@@@@@@@@@@"
 
 	db DITTO
