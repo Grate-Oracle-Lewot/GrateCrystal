@@ -71,7 +71,7 @@ OddEggs:
 
 	db PIKACHU
 	db NO_ITEM
-	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
+	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -97,7 +97,7 @@ OddEggs:
 
 	db BULBASAUR
 	db NO_ITEM
-	db TACKLE, CHARM, PETAL_DANCE, 0
+	db TACKLE, CHARM, PETAL_DANCE, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -149,7 +149,7 @@ OddEggs:
 
 	db CHARMANDER
 	db NO_ITEM
-	db SCRATCH, CHARM, DRAGON_PULSE, 0
+	db SCRATCH, CHARM, DRAGON_PULSE, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -201,7 +201,7 @@ OddEggs:
 
 	db SQUIRTLE
 	db NO_ITEM
-	db RAPID_SPIN, CHARM, CRABHAMMER, 0
+	db RAPID_SPIN, CHARM, CRABHAMMER, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -253,7 +253,7 @@ OddEggs:
 
 	db CHIKORITA
 	db NO_ITEM
-	db POUND, CHARM, ANCIENTPOWER, 0
+	db POUND, CHARM, ANCIENTPOWER, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -279,7 +279,7 @@ OddEggs:
 
 	db MAGMAR
 	db NO_ITEM
-	db EMBER, SCARY_FACE, DIZZY_PUNCH, 0
+	db EMBER, SCARY_FACE, DIZZY_PUNCH, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -305,7 +305,7 @@ OddEggs:
 
 	db CYNDAQUIL
 	db NO_ITEM
-	db TACKLE, CHARM, SACRED_FIRE, 0
+	db TACKLE, CHARM, SACRED_FIRE, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -357,7 +357,7 @@ OddEggs:
 
 	db TOTODILE
 	db NO_ITEM
-	db SCRATCH, CHARM, AEROBLAST, 0
+	db SCRATCH, CHARM, AEROBLAST, NO_MOVE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
