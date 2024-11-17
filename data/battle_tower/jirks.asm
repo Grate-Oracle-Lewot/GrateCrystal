@@ -3,17 +3,17 @@ BattleTowerJirks:
 
 	db JIRK
 	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
 	bigdw 50000
-	bigdw 0
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
+	bigdw 50000
+	dn 10, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -29,17 +29,17 @@ BattleTowerJirks:
 
 	db JIRK
 	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
 	bigdw 50000
-	bigdw 0
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
+	bigdw 50000
+	dn 10, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -55,17 +55,17 @@ BattleTowerJirks:
 
 	db JIRK
 	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
 	bigdw 50000
-	bigdw 0
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
+	bigdw 50000
+	dn 10, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -81,17 +81,17 @@ BattleTowerJirks:
 
 	db JIRK
 	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
 	bigdw 50000
-	bigdw 0
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
+	bigdw 50000
+	dn 10, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -107,17 +107,17 @@ BattleTowerJirks:
 
 	db JIRK
 	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
 	bigdw 50000
-	bigdw 0
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
+	bigdw 50000
+	dn 10, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
