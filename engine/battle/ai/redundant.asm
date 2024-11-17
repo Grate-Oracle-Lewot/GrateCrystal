@@ -68,7 +68,7 @@ AI_Redundant:
 	ret
 
 .Transform:
-	ld a, [wEnemySubStatus5]
+	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	ret
 
