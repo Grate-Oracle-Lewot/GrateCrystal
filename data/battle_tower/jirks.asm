@@ -5,7 +5,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 1000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -31,7 +31,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 8000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -57,7 +57,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 27000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -83,7 +83,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 64000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -109,7 +109,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 125000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -135,7 +135,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 216000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -161,7 +161,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 343000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -187,7 +187,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 512000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -213,7 +213,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 729000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
@@ -239,7 +239,7 @@ BattleTowerJirks:
 	db X_EVADE
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 1000000 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 0
