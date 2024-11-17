@@ -27,4 +27,4 @@ BattleTowerDittos:
 	bigdw 198 ; SDef
 	db "@@@@@@@@@@@"
 
-  assert_table_length 10
+	assert_table_length 10
