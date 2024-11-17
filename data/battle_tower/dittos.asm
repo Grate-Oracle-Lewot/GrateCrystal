@@ -5,7 +5,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 1000 ; Exp
 	; Stat exp
 	bigdw 20535
 	bigdw 20535
@@ -31,7 +31,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 8000 ; Exp
 	; Stat exp
 	bigdw 25535
 	bigdw 25535
@@ -57,7 +57,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 27000 ; Exp
 	; Stat exp
 	bigdw 30535
 	bigdw 30535
@@ -83,7 +83,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 64000 ; Exp
 	; Stat exp
 	bigdw 35535
 	bigdw 35535
@@ -109,7 +109,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 125000 ; Exp
 	; Stat exp
 	bigdw 40535
 	bigdw 40535
@@ -135,7 +135,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 216000 ; Exp
 	; Stat exp
 	bigdw 45535
 	bigdw 45535
@@ -161,7 +161,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 343000 ; Exp
 	; Stat exp
 	bigdw 50535
 	bigdw 50535
@@ -187,7 +187,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 512000 ; Exp
 	; Stat exp
 	bigdw 55535
 	bigdw 55535
@@ -213,7 +213,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 729000 ; Exp
 	; Stat exp
 	bigdw 60535
 	bigdw 60535
@@ -239,7 +239,7 @@ BattleTowerDittos:
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 0 ; Exp
+	dt 1000000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
