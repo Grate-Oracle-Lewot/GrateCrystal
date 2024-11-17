@@ -1,4 +1,4 @@
-ModifyBattleTowerParty:
+ModifyBattleTowerParty::
 	ld a, BANK(sBTMonOfTrainers)
 	call OpenSRAM
 
