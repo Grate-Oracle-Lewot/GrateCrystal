@@ -364,7 +364,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - See: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/design_flaws.md
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
-I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to. The Moon Ball now has a higher catch chance on any member of an evolutionary family that involves a Moon Stone.
+I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to. The Moon Ball now has a higher catch chance on any member of an evolutionary family that involves a Moon Stone, which now includes all the Gen I trade evolutions.
 
 # Why remove some Pokémon and moves?
 
