@@ -12,7 +12,7 @@ BattleTowerJirks:
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 10, 10, 15, 10 ; DVs
+	dn 9, 10, 15, 10 ; DVs
 	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -38,7 +38,7 @@ BattleTowerJirks:
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 10, 10, 15, 10 ; DVs
+	dn 9, 10, 15, 10 ; DVs
 	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -64,7 +64,7 @@ BattleTowerJirks:
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 10, 10, 15, 10 ; DVs
+	dn 9, 10, 15, 10 ; DVs
 	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -90,7 +90,7 @@ BattleTowerJirks:
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 10, 10, 15, 10 ; DVs
+	dn 9, 10, 15, 10 ; DVs
 	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -116,7 +116,7 @@ BattleTowerJirks:
 	bigdw 50000
 	bigdw 50000
 	bigdw 50000
-	dn 10, 10, 15, 10 ; DVs
+	dn 9, 10, 15, 10 ; DVs
 	db 48, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -148,13 +148,13 @@ BattleTowerJirks:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 155 ; Atk
-	bigdw 218 ; Def
-	bigdw 290 ; Spd
-	bigdw 230 ; SAtk
-	bigdw 190 ; SDef
+	bigdw 197 ; HP
+	bigdw 197 ; Max HP
+	bigdw 95 ; Atk
+	bigdw 132 ; Def
+	bigdw 176 ; Spd
+	bigdw 140 ; SAtk
+	bigdw 116 ; SDef
 	db "@@@@@@@@@@@"
 
 	db JIRK
