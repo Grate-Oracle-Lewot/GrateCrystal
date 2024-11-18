@@ -25,7 +25,7 @@ BattleTowerDittos:
 	bigdw 61 ; Spd
 	bigdw 21 ; SAtk
 	bigdw 21 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -51,7 +51,7 @@ BattleTowerDittos:
 	bigdw 118 ; Spd
 	bigdw 38 ; SAtk
 	bigdw 38 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -77,7 +77,7 @@ BattleTowerDittos:
 	bigdw 176 ; Spd
 	bigdw 56 ; SAtk
 	bigdw 56 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -103,7 +103,7 @@ BattleTowerDittos:
 	bigdw 235 ; Spd
 	bigdw 75 ; SAtk
 	bigdw 75 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -129,7 +129,7 @@ BattleTowerDittos:
 	bigdw 295 ; Spd
 	bigdw 95 ; SAtk
 	bigdw 95 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -155,7 +155,7 @@ BattleTowerDittos:
 	bigdw 354 ; Spd
 	bigdw 114 ; SAtk
 	bigdw 114 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -181,7 +181,7 @@ BattleTowerDittos:
 	bigdw 415 ; Spd
 	bigdw 135 ; SAtk
 	bigdw 135 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -207,7 +207,7 @@ BattleTowerDittos:
 	bigdw 475 ; Spd
 	bigdw 155 ; SAtk
 	bigdw 155 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -233,7 +233,7 @@ BattleTowerDittos:
 	bigdw 536 ; Spd
 	bigdw 176 ; SAtk
 	bigdw 176 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	db DITTO
 	db X_SPEED
@@ -259,6 +259,6 @@ BattleTowerDittos:
 	bigdw 598 ; Spd
 	bigdw 198 ; SAtk
 	bigdw 198 ; SDef
-	db "@@@@@@@@@@@"
+	db "DITTO@@@@@@"
 
 	assert_table_length 10
