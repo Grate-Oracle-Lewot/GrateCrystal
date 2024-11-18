@@ -702,11 +702,6 @@ SECTION "Battle Weather Images", ROMX
 INCLUDE "gfx/weather_images.asm"
 
 
-SECTION "Battle Tower Additions", ROMX
-
-INCLUDE "engine/events/battle_tower/mod_party.asm"
-
-
 SECTION "DEX GFX 2", ROMX
 
 PokedexGFX:
