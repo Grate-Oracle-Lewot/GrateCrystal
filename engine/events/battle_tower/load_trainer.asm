@@ -196,7 +196,9 @@ LoadRandomBattleTowerMon:
 	ld [sBTMonPrevTrainer2], a
 	ld a, [wBT_OTMon3]
 	ld [sBTMonPrevTrainer3], a
-	jp CloseSRAM
+	call CloseSRAM
+	farcall ModifyBattleTowerParty
+	ret
 
 INCLUDE "data/battle_tower/classes.asm"
 
