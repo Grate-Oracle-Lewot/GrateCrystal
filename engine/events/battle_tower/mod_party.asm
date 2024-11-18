@@ -11,7 +11,7 @@ ModifyBattleTowerParty::
 
 	call Random
 	cp 10
-	jr nc, .jirk
+;	jr nc, .jirk
 
 	ld a, [wBTChoiceOfLvlGroup]
 	dec a
