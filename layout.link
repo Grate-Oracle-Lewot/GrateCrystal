@@ -298,6 +298,8 @@ ROMX $77
 ROMX $78
 	"Debug Room"
 	"Tileset Data 8"
+ROMX $7a
+	"Battle Tower Additions"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
