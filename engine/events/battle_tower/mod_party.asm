@@ -24,26 +24,6 @@ ModifyBattleTowerParty::
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes
 
-	ld a, [wNamedObjectIndex]
-	push af
-	push de
-	ld hl, -NICKNAMED_MON_STRUCT_LENGTH
-	add hl, de
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	push hl
-	call GetPokemonName
-	ld h, d
-	ld l, e
-	pop de
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	pop de
-	pop af
-
-	ld [wNamedObjectIndex], a
 	ld a, [sBTMonPrevTrainer1]
 	ld [sBTMonPrevPrevTrainer1], a
 	ld a, [wBT_OTMon1]
@@ -72,26 +52,6 @@ ModifyBattleTowerParty::
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes
 
-	ld a, [wNamedObjectIndex]
-	push af
-	push de
-	ld hl, -NICKNAMED_MON_STRUCT_LENGTH
-	add hl, de
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	push hl
-	call GetPokemonName
-	ld h, d
-	ld l, e
-	pop de
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	pop de
-	pop af
-
-	ld [wNamedObjectIndex], a
 	ld a, [sBTMonPrevTrainer3]
 	ld [sBTMonPrevPrevTrainer3], a
 	ld a, [wBT_OTMon3]
