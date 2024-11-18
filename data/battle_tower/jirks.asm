@@ -25,7 +25,7 @@ BattleTowerJirks:
 	bigdw 33 ; Spd
 	bigdw 29 ; SAtk
 	bigdw 25 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -51,7 +51,7 @@ BattleTowerJirks:
 	bigdw 62 ; Spd
 	bigdw 53 ; SAtk
 	bigdw 45 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -77,7 +77,7 @@ BattleTowerJirks:
 	bigdw 90 ; Spd
 	bigdw 77 ; SAtk
 	bigdw 65 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -103,7 +103,7 @@ BattleTowerJirks:
 	bigdw 119 ; Spd
 	bigdw 102 ; SAtk
 	bigdw 86 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -129,7 +129,7 @@ BattleTowerJirks:
 	bigdw 147 ; Spd
 	bigdw 126 ; SAtk
 	bigdw 106 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -155,7 +155,7 @@ BattleTowerJirks:
 	bigdw 176 ; Spd
 	bigdw 140 ; SAtk
 	bigdw 116 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -181,7 +181,7 @@ BattleTowerJirks:
 	bigdw 204 ; Spd
 	bigdw 162 ; SAtk
 	bigdw 134 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -207,7 +207,7 @@ BattleTowerJirks:
 	bigdw 233 ; Spd
 	bigdw 185 ; SAtk
 	bigdw 153 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -233,7 +233,7 @@ BattleTowerJirks:
 	bigdw 261 ; Spd
 	bigdw 207 ; SAtk
 	bigdw 171 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -259,6 +259,6 @@ BattleTowerJirks:
 	bigdw 290 ; Spd
 	bigdw 230 ; SAtk
 	bigdw 190 ; SDef
-	db "@@@@@@@@@@@"
+	db "JIRK@@@@@@@"
 
 	assert_table_length 10
