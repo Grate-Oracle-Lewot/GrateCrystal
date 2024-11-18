@@ -174,13 +174,13 @@ BattleTowerJirks:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 155 ; Atk
-	bigdw 218 ; Def
-	bigdw 290 ; Spd
-	bigdw 230 ; SAtk
-	bigdw 190 ; SDef
+	bigdw 229 ; HP
+	bigdw 229 ; Max HP
+	bigdw 110 ; Atk
+	bigdw 154 ; Def
+	bigdw 204 ; Spd
+	bigdw 162 ; SAtk
+	bigdw 134 ; SDef
 	db "@@@@@@@@@@@"
 
 	db JIRK
