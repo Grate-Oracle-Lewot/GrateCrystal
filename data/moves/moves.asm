@@ -92,7 +92,7 @@ Moves:
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,       STATUS,    75, 25,   0
 	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,        STATUS,    75, 20,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,        STATUS,    75, 15,   0
-	move PETAL_DANCE,  EFFECT_RAMPAGE,            90, GRASS,        PHYSICAL,  90, 15,   0
+	move PETAL_DANCE,  EFFECT_RAMPAGE,            90, GRASS,        PHYSICAL,  90, 10,   0
 	move STRING_SHOT,  EFFECT_SPEED_DOWN,          0, BUG,          STATUS,   100, 40,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      42, DRAGON,       SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        20, FIRE,         SPECIAL,  100, 15,   0
@@ -187,7 +187,7 @@ Moves:
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,         PHYSICAL, 100, 20,   0
 	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100, 20,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100, 10,   0
-	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100, 15,   0
+	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100, 20,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,       STATUS,   100, 30,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100,  5,   0
 	move COTTON_SPORE, EFFECT_SP_ATK_DOWN_2,       0, GRASS,        STATUS,   100, 20,   0
@@ -212,7 +212,7 @@ Moves:
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         90, FIGHTING,     SPECIAL,  100, 10,   0
 	move BONE_RUSH,    EFFECT_MULTI_HIT,          30, GROUND,       PHYSICAL,  90, 10,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       STATUS,   100,  5,   0
-	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,       PHYSICAL,  90, 15,   0
+	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,       PHYSICAL,  90, 10,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         STATUS,   100,  5,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,        SPECIAL,  100,  5,   0
 	move ENDURE,       EFFECT_ENDURE,              0, FIGHTING,     STATUS,   100, 10,   0
