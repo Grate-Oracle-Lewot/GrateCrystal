@@ -169,13 +169,10 @@ SeafoamCaveBookText4:
 	line "okay?"
 
 	para "WHIMSICOTT is"
-	line "PERCY's favorite."
+	line "PERCY's favorite,"
 
-	para "I would've put"
-	line "JUMPLUFF on my"
-
-	para "team if PERCY"
-	line "didn't have it."
+	para "as you've probably"
+	line "guessed."
 
 	para "Keep reading?"
 	done
