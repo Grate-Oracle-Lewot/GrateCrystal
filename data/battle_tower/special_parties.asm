@@ -57,7 +57,7 @@ BattleTowerBrock:
 	db SOFT_SAND
 	db IRON_HEAD, ROCK_SLIDE, EARTHQUAKE, HORN_DRILL
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -88,7 +88,7 @@ BattleTowerMisty:
 	db NOISEMAKER
 	db SURF, PERISH_SONG, BLIZZARD, RAIN_DANCE
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -140,7 +140,7 @@ BattleTowerMisty:
 	db MYSTIC_WATER
 	db SURF, RAIN_DANCE, THUNDER, ICE_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -223,7 +223,7 @@ BattleTowerLtSurge:
 	db SILVERPOWDER
 	db RAIN_DANCE, SIGNAL_BEAM, SURF, THUNDER
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -254,7 +254,7 @@ BattleTowerErika:
 	db MIRACLE_SEED
 	db TOXIC, LEECH_SEED, COTTON_SPORE, GIGA_DRAIN
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -280,7 +280,7 @@ BattleTowerErika:
 	db DICTIONARY
 	db SUNNY_DAY, MOONLIGHT, PETAL_DANCE, SOLARBEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -306,7 +306,7 @@ BattleTowerErika:
 	db SCOPE_LENS
 	db SUNNY_DAY, SYNTHESIS, POISON_JAB, RAZOR_LEAF
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -363,7 +363,7 @@ BattleTowerJanine:
 	db MIRACLE_SEED
 	db SCALD, SLUDGE_BOMB, SURF, GIGA_DRAIN
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -389,7 +389,7 @@ BattleTowerJanine:
 	db QUICK_CLAW
 	db CURSE, STRENGTH, POISON_JAB, REST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -472,7 +472,7 @@ BattleTowerSabrina:
 	db TWISTEDSPOON
 	db RECOVER, AURA_SPHERE, PSYCHIC_M, REFLECT
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -503,7 +503,7 @@ BattleTowerBlaine:
 	db QUICK_CLAW
 	db SUNNY_DAY, SOLARBEAM, FLAMETHROWER, MORNING_SUN
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -529,7 +529,7 @@ BattleTowerBlaine:
 	db CHARCOAL
 	db ROAR, FLAMETHROWER, PLAY_ROUGH, CRUNCH
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -555,7 +555,7 @@ BattleTowerBlaine:
 	db BERRY_JUICE
 	db QUICK_ATTACK, MEGAHORN, FURY_ATTACK, FIRE_BLAST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 849970 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -612,7 +612,7 @@ BattleTowerBlue:
 	db KINGS_ROCK
 	db EARTHQUAKE, POISON_JAB, THUNDERPUNCH, MEGAHORN
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -721,7 +721,7 @@ BattleTowerFalkner:
 	db QUICK_CLAW
 	db FLY, DIG, SWORDS_DANCE, CRABHAMMER
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -778,7 +778,7 @@ BattleTowerBugsy:
 	db FOCUS_BAND
 	db MEGAHORN, COUNTER, REVERSAL, FLY
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -835,7 +835,7 @@ BattleTowerWhitney:
 	db LUCKY_PUNCH
 	db HYPER_BEAM, ATTRACT, ROLLOUT, SOFTBOILED
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -887,7 +887,7 @@ BattleTowerWhitney:
 	db X_ACCURACY
 	db ROLLOUT, ATTRACT, BODY_SLAM, MILK_DRINK
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -944,7 +944,7 @@ BattleTowerMorty:
 	db SPELL_TAG
 	db MEAN_LOOK, PERISH_SONG, CONFUSE_RAY, SHADOW_BALL
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -970,7 +970,7 @@ BattleTowerMorty:
 	db MIRACLEBERRY
 	db HYPNOSIS, SHADOW_BALL, AURA_SPHERE, DREAM_EATER
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1027,7 +1027,7 @@ BattleTowerChuck:
 	db HARDHAT
 	db HYPNOSIS, WATERFALL, SCALD, SUBMISSION
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1053,7 +1053,7 @@ BattleTowerChuck:
 	db X_ACCURACY
 	db DIZZY_PUNCH, DYNAMICPUNCH, LOW_KICK, MILK_DRINK
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 849970 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1084,7 +1084,7 @@ BattleTowerJasmine:
 	db NOISEMAKER
 	db SPIKES, DAZZLY_GLEAM, STEEL_WING, SKY_ATTACK
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1110,7 +1110,7 @@ BattleTowerJasmine:
 	db X_SP_DEFEND
 	db CRABHAMMER, SPIKE_CANNON, ICE_BEAM, PROTECT
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1167,7 +1167,7 @@ BattleTowerPryce:
 	db SCOPE_LENS
 	db BEAT_UP, ICE_PUNCH, FAINT_ATTACK, STRENGTH
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1219,7 +1219,7 @@ BattleTowerPryce:
 	db NEVERMELTICE
 	db FLAIL, EARTHQUAKE, HAIL, BLIZZARD
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1250,7 +1250,7 @@ BattleTowerClair:
 	db MYSTIC_WATER
 	db WATERFALL, OUTRAGE, IRON_TAIL, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1276,7 +1276,7 @@ BattleTowerClair:
 	db EVERSTONE
 	db THUNDER_WAVE, FLAMETHROWER, SURF, SLAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1333,7 +1333,7 @@ BattleTowerKoga:
 	db BERRY_JUICE
 	db BELLY_DRUM, DEFENSE_CURL, ROLLOUT, WATERFALL
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1442,7 +1442,7 @@ BattleTowerKaren:
 	db NOISEMAKER
 	db FAINT_ATTACK, AIR_SLASH, NIGHT_SHADE, DESTINY_BOND
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1468,7 +1468,7 @@ BattleTowerKaren:
 	db BLACKGLASSES
 	db ROAR, SMOG, FLAMETHROWER, CRUNCH
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1499,7 +1499,7 @@ BattleTowerAD:
 	db LEFTOVERS
 	db TOXIC, ATTRACT, DOUBLE_TEAM, REST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1525,7 +1525,7 @@ BattleTowerAD:
 	db FOCUS_BAND
 	db FLAMETHROWER, ICE_BEAM, TRI_ATTACK, ROAR
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 849970 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1582,7 +1582,7 @@ BattleTowerLucas:
 	db DRAGON_FANG
 	db RAIN_DANCE, THUNDER, SIGNAL_BEAM, DRAGON_PULSE
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1608,7 +1608,7 @@ BattleTowerLucas:
 	db TWISTEDSPOON
 	db HYPNOSIS, DREAM_EATER, SHADOW_BALL, BUBBLEBEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1634,7 +1634,7 @@ BattleTowerLucas:
 	db BERRY_JUICE
 	db BODY_SLAM, SOLARBEAM, IRON_TAIL, EARTH_POWER
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1665,7 +1665,7 @@ BattleTowerPercy:
 	db BRIGHTPOWDER
 	db MOONBLAST, BODY_SLAM, ROLLOUT, PSYCHIC_M
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1774,7 +1774,7 @@ BattleTowerLewot:
 	db FOCUS_BAND
 	db HYPNOSIS, DARK_PULSE, DREAM_EATER, SHADOW_BALL
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1800,7 +1800,7 @@ BattleTowerLewot:
 	db BERRY_JUICE
 	db WATERFALL, CRUNCH, EARTHQUAKE, AEROBLAST
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1831,7 +1831,7 @@ BattleTowerLance:
 	db MIRACLE_SEED
 	db DRAGON_PULSE, GIGA_DRAIN, PSYCHIC_M, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1857,7 +1857,7 @@ BattleTowerLance:
 	db BLACKGLASSES
 	db CRUNCH, ROCK_SLIDE, EARTHQUAKE, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1883,7 +1883,7 @@ BattleTowerLance:
 	db DRAGON_FANG
 	db SKY_ATTACK, THUNDER_WAVE, OUTRAGE, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -1914,7 +1914,7 @@ BattleTowerRed:
 	db LEFTOVERS
 	db BELLY_DRUM, NIGHT_TERROR, REST, BODY_SLAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
