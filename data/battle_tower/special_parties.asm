@@ -101,13 +101,13 @@ BattleTowerMisty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 346 ; HP
+	bigdw 346 ; Max HP
+	bigdw 260 ; Atk
+	bigdw 252 ; Def
+	bigdw 212 ; Spd
+	bigdw 260 ; SAtk
+	bigdw 280 ; SDef
 	db "LAPRAS@@@@@"
 
 	db QUAGSIRE
@@ -127,13 +127,13 @@ BattleTowerMisty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 381 ; HP
+	bigdw 381 ; Max HP
+	bigdw 260 ; Atk
+	bigdw 262 ; Def
+	bigdw 162 ; Spd
+	bigdw 220 ; SAtk
+	bigdw 220 ; SDef
 	db "QUAGSIRE@@@"
 
  	db STARMIE
@@ -153,13 +153,13 @@ BattleTowerMisty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 311 ; HP
+	bigdw 311 ; Max HP
+	bigdw 240 ; Atk
+	bigdw 262 ; Def
+	bigdw 322 ; Spd
+	bigdw 300 ; SAtk
+	bigdw 260 ; SDef
 	db "STARMIE@@@@"
 
 	assert_table_length 3
@@ -184,13 +184,13 @@ BattleTowerLtSurge:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 325 ; HP
+	bigdw 325 ; Max HP
+	bigdw 298 ; Atk
+	bigdw 214 ; Def
+	bigdw 290 ; Spd
+	bigdw 282 ; SAtk
+	bigdw 262 ; SDef
 	db "ELECTABUZZ@"
 
  	db MAGNETON
@@ -210,13 +210,13 @@ BattleTowerLtSurge:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 305 ; HP
+	bigdw 305 ; Max HP
+	bigdw 224 ; Atk
+	bigdw 300 ; Def
+	bigdw 222 ; Spd
+	bigdw 344 ; SAtk
+	bigdw 248 ; SDef
 	db "MAGNETON@@@"
 
  	db LANTURN
@@ -236,13 +236,13 @@ BattleTowerLtSurge:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 435 ; HP
+	bigdw 435 ; Max HP
+	bigdw 208 ; Atk
+	bigdw 206 ; Def
+	bigdw 224 ; Spd
+	bigdw 244 ; SAtk
+	bigdw 244 ; SDef
 	db "LANTURN@@@@"
 
 	assert_table_length 3
@@ -250,11 +250,11 @@ BattleTowerLtSurge:
 BattleTowerErika:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerErika
 
-	db JUMPLUFF
+	db TANGELA
 	db MIRACLE_SEED
-	db TOXIC, LEECH_SEED, COTTON_SPORE, GIGA_DRAIN
+	db BUBBLEBEAM, ANCIENTPOWER, GIGA_DRAIN, SLEEP_POWDER
 	dw 0 ; OT ID
-	dt 949930 ; Exp
+	dt 1000000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
@@ -262,19 +262,19 @@ BattleTowerErika:
 	bigdw 65535
 	bigdw 65535
 	dn 11, 12, 12, 11 ; DVs
-	db 8, 16, 32, 8 ; PP
+	db 32, 16, 8, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
-	db "JUMPLUFF@@@"
+	bigdw 359 ; HP
+	bigdw 359 ; Max HP
+	bigdw 210 ; Atk
+	bigdw 242 ; Def
+	bigdw 202 ; Spd
+	bigdw 310 ; SAtk
+	bigdw 170 ; SDef
+	db "TANGELA@@@@"
 
  	db BELLOSSOM
 	db DICTIONARY
@@ -293,13 +293,13 @@ BattleTowerErika:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 341 ; HP
+	bigdw 341 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 282 ; Def
+	bigdw 192 ; Spd
+	bigdw 270 ; SAtk
+	bigdw 290 ; SDef
 	db "BELLOSSOM@@"
 
  	db VICTREEBEL
@@ -319,13 +319,13 @@ BattleTowerErika:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 351 ; HP
+	bigdw 351 ; Max HP
+	bigdw 300 ; Atk
+	bigdw 222 ; Def
+	bigdw 232 ; Spd
+	bigdw 290 ; SAtk
+	bigdw 230 ; SDef
 	db "VICTREEBEL@"
 
 	assert_table_length 3
@@ -350,13 +350,13 @@ BattleTowerJanine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 361 ; HP
+	bigdw 361 ; Max HP
+	bigdw 270 ; Atk
+	bigdw 252 ; Def
+	bigdw 352 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 250 ; SDef
 	db "CROBAT@@@@@"
 
  	db TENTACRUEL
@@ -376,13 +376,13 @@ BattleTowerJanine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 351 ; HP
+	bigdw 351 ; Max HP
+	bigdw 230 ; Atk
+	bigdw 222 ; Def
+	bigdw 292 ; Spd
+	bigdw 250 ; SAtk
+	bigdw 330 ; SDef
 	db "TENTACRUEL@"
 
  	db SLOWKING
@@ -402,13 +402,13 @@ BattleTowerJanine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 391 ; HP
+	bigdw 391 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 252 ; Def
+	bigdw 132 ; Spd
+	bigdw 290 ; SAtk
+	bigdw 310 ; SDef
 	db "SLOWKING@@@"
 
 	assert_table_length 3
@@ -433,13 +433,13 @@ BattleTowerSabrina:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 311 ; HP
+	bigdw 311 ; Max HP
+	bigdw 210 ; Atk
+	bigdw 232 ; Def
+	bigdw 252 ; Spd
+	bigdw 300 ; SAtk
+	bigdw 330 ; SDef
 	db "MR.MIME@@@@"
 
  	db JYNX
@@ -459,13 +459,13 @@ BattleTowerSabrina:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 341 ; HP
+	bigdw 341 ; Max HP
+	bigdw 210 ; Atk
+	bigdw 176 ; Def
+	bigdw 282 ; Spd
+	bigdw 360 ; SAtk
+	bigdw 310 ; SDef
 	db "JYNX@@@@@@@"
 
  	db ALAKAZAM
@@ -485,13 +485,13 @@ BattleTowerSabrina:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 301 ; HP
+	bigdw 301 ; Max HP
+	bigdw 190 ; Atk
+	bigdw 182 ; Def
+	bigdw 332 ; Spd
+	bigdw 364 ; SAtk
+	bigdw 286 ; SDef
 	db "ALAKAZAM@@@"
 
 	assert_table_length 3
@@ -516,13 +516,13 @@ BattleTowerBlaine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 260 ; Atk
+	bigdw 218 ; Def
+	bigdw 128 ; Spd
+	bigdw 402 ; SAtk
+	bigdw 260 ; SDef
 	db "SUNFLORA@@@"
 
  	db ARCANINE
@@ -542,13 +542,13 @@ BattleTowerBlaine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 365 ; HP
+	bigdw 365 ; Max HP
+	bigdw 312 ; Atk
+	bigdw 250 ; Def
+	bigdw 280 ; Spd
+	bigdw 292 ; SAtk
+	bigdw 252 ; SDef
 	db "ARCANINE@@@"
 
  	db RAPIDASH
@@ -568,13 +568,13 @@ BattleTowerBlaine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 315 ; HP
+	bigdw 315 ; Max HP
+	bigdw 292 ; Atk
+	bigdw 230 ; Def
+	bigdw 300 ; Spd
+	bigdw 252 ; SAtk
+	bigdw 252 ; SDef
 	db "RAPIDASH@@@"
 
 	assert_table_length 3
@@ -599,13 +599,13 @@ BattleTowerBlue:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 305 ; HP
+	bigdw 305 ; Max HP
+	bigdw 256 ; Atk
+	bigdw 314 ; Def
+	bigdw 184 ; Spd
+	bigdw 196 ; SAtk
+	bigdw 256 ; SDef
 	db "MAROWAK@@@@"
 
  	db NIDOKING
@@ -625,13 +625,13 @@ BattleTowerBlue:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 347 ; HP
+	bigdw 347 ; Max HP
+	bigdw 300 ; Atk
+	bigdw 248 ; Def
+	bigdw 264 ; Spd
+	bigdw 266 ; SAtk
+	bigdw 246 ; SDef
 	db "NIDOKING@@@"
 
  	db DONPHAN
@@ -651,13 +651,13 @@ BattleTowerBlue:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 385 ; HP
+	bigdw 385 ; Max HP
+	bigdw 336 ; Atk
+	bigdw 334 ; Def
+	bigdw 194 ; Spd
+	bigdw 216 ; SAtk
+	bigdw 246 ; SDef
 	db "DONPHAN@@@@"
 
 	assert_table_length 3
@@ -684,11 +684,11 @@ BattleTowerFalkner:
 	db 0, 0 ; Status
 	bigdw 303 ; HP
 	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 278 ; Atk
+	bigdw 218 ; Def
+	bigdw 298 ; Spd
+	bigdw 210 ; SAtk
+	bigdw 210 ; SDef
 	db "FEAROW@@@@@"
 
  	db XATU
@@ -710,11 +710,11 @@ BattleTowerFalkner:
 	db 0, 0 ; Status
 	bigdw 303 ; HP
 	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 238 ; Atk
+	bigdw 228 ; Def
+	bigdw 278 ; Spd
+	bigdw 278 ; SAtk
+	bigdw 228 ; SDef
 	db "XATU@@@@@@@"
 
  	db GLIGAR
@@ -736,11 +736,11 @@ BattleTowerFalkner:
 	db 0, 0 ; Status
 	bigdw 303 ; HP
 	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 278 ; Atk
+	bigdw 298 ; Def
+	bigdw 278 ; Spd
+	bigdw 188 ; SAtk
+	bigdw 218 ; SDef
 	db "GLIGAR@@@@@"
 
 	assert_table_length 3
@@ -765,13 +765,13 @@ BattleTowerBugsy:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 285 ; HP
+	bigdw 285 ; Max HP
+	bigdw 348 ; Atk
+	bigdw 318 ; Def
+	bigdw 238 ; Spd
+	bigdw 190 ; SAtk
+	bigdw 190 ; SDef
 	db "KINGLER@@@@"
 
  	db HERACROSS
@@ -791,13 +791,13 @@ BattleTowerBugsy:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 335 ; HP
+	bigdw 335 ; Max HP
+	bigdw 338 ; Atk
+	bigdw 238 ; Def
+	bigdw 258 ; Spd
+	bigdw 170 ; SAtk
+	bigdw 280 ; SDef
 	db "HERACROSS@@"
 
  	db SCIZOR
@@ -817,13 +817,13 @@ BattleTowerBugsy:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 315 ; HP
+	bigdw 315 ; Max HP
+	bigdw 388 ; Atk
+	bigdw 328 ; Def
+	bigdw 218 ; Spd
+	bigdw 200 ; SAtk
+	bigdw 270 ; SDef
 	db "SCIZOR@@@@@"
 
 	assert_table_length 3
@@ -848,13 +848,13 @@ BattleTowerWhitney:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 701 ; HP
+	bigdw 701 ; Max HP
+	bigdw 110 ; Atk
+	bigdw 108 ; Def
+	bigdw 198 ; Spd
+	bigdw 240 ; SAtk
+	bigdw 360 ; SDef
 	db "BLISSEY@@@@"
 
  	db GIRAFARIG
@@ -874,13 +874,13 @@ BattleTowerWhitney:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 413 ; HP
+	bigdw 413 ; Max HP
+	bigdw 266 ; Atk
+	bigdw 226 ; Def
+	bigdw 264 ; Spd
+	bigdw 282 ; SAtk
+	bigdw 228 ; SDef
 	db "GIRAFARIG@@"
 
  	db MILTANK
@@ -900,13 +900,13 @@ BattleTowerWhitney:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 381 ; HP
+	bigdw 381 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 298 ; Def
+	bigdw 288 ; Spd
+	bigdw 170 ; SAtk
+	bigdw 230 ; SDef
 	db "MILTANK@@@@"
 
 	assert_table_length 3
@@ -1014,13 +1014,13 @@ BattleTowerChuck:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
+	bigdw 347 ; HP
+	bigdw 347 ; Max HP
+	bigdw 308 ; Atk
+	bigdw 228 ; Def
+	bigdw 274 ; Spd
 	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 248 ; SDef
 	db "PRIMEAPE@@@"
 
  	db POLIWRATH
@@ -1040,13 +1040,13 @@ BattleTowerChuck:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 278 ; Atk
+	bigdw 278 ; Def
+	bigdw 228 ; Spd
+	bigdw 228 ; SAtk
+	bigdw 268 ; SDef
 	db "POLIWRATH@@"
 
  	db KANGASKHAN
@@ -1066,13 +1066,13 @@ BattleTowerChuck:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 383 ; HP
+	bigdw 383 ; Max HP
+	bigdw 278 ; Atk
+	bigdw 248 ; Def
+	bigdw 268 ; Spd
+	bigdw 168 ; SAtk
+	bigdw 248 ; SDef
 	db "KANGASKHAN@"
 
 	assert_table_length 3
@@ -1097,13 +1097,13 @@ BattleTowerJasmine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 321 ; HP
+	bigdw 321 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 368 ; Def
+	bigdw 268 ; Spd
+	bigdw 170 ; SAtk
+	bigdw 230 ; SDef
 	db "SKARMORY@@@"
 
  	db CLOYSTER
@@ -1123,13 +1123,13 @@ BattleTowerJasmine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 291 ; HP
+	bigdw 291 ; Max HP
+	bigdw 280 ; Atk
+	bigdw 448 ; Def
+	bigdw 228 ; Spd
+	bigdw 260 ; SAtk
+	bigdw 180 ; SDef
 	db "CLOYSTER@@@"
 
  	db STEELIX
@@ -1149,13 +1149,13 @@ BattleTowerJasmine:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 341 ; HP
+	bigdw 341 ; Max HP
+	bigdw 260 ; Atk
+	bigdw 488 ; Def
+	bigdw 148 ; Spd
+	bigdw 200 ; SAtk
+	bigdw 220 ; SDef
 	db "STEELIX@@@@"
 
 	assert_table_length 3
@@ -1182,11 +1182,11 @@ BattleTowerPryce:
 	db 0, 0 ; Status
 	bigdw 303 ; HP
 	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 308 ; Atk
+	bigdw 208 ; Def
+	bigdw 328 ; Spd
+	bigdw 168 ; SAtk
+	bigdw 248 ; SDef
 	db "SNEASEL@@@@"
 
  	db DEWGONG
@@ -1206,13 +1206,13 @@ BattleTowerPryce:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 228 ; Atk
+	bigdw 248 ; Def
+	bigdw 228 ; Spd
+	bigdw 228 ; SAtk
+	bigdw 278 ; SDef
 	db "DEWGONG@@@@"
 
  	db PILOSWINE
@@ -1232,13 +1232,13 @@ BattleTowerPryce:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 383 ; HP
+	bigdw 383 ; Max HP
+	bigdw 318 ; Atk
+	bigdw 248 ; Def
+	bigdw 218 ; Spd
+	bigdw 218 ; SAtk
+	bigdw 208 ; SDef
 	db "PILOSWINE@@"
 
 	assert_table_length 3
@@ -1263,13 +1263,13 @@ BattleTowerClair:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 385 ; HP
+	bigdw 385 ; Max HP
+	bigdw 340 ; Atk
+	bigdw 250 ; Def
+	bigdw 252 ; Spd
+	bigdw 210 ; SAtk
+	bigdw 290 ; SDef
 	db "GYARADOS@@@"
 
  	db DRAGONAIR
@@ -1289,13 +1289,13 @@ BattleTowerClair:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 317 ; HP
+	bigdw 317 ; Max HP
+	bigdw 258 ; Atk
+	bigdw 222 ; Def
+	bigdw 230 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 230 ; SDef
 	db "DRAGONAIR@@"
 
  	db KINGDRA
@@ -1315,13 +1315,13 @@ BattleTowerClair:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 345 ; HP
+	bigdw 345 ; Max HP
+	bigdw 280 ; Atk
+	bigdw 282 ; Def
+	bigdw 260 ; Spd
+	bigdw 280 ; SAtk
+	bigdw 280 ; SDef
 	db "KINGDRA@@@@"
 
 	assert_table_length 3
@@ -1346,13 +1346,13 @@ BattleTowerKoga:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 212 ; Atk
+	bigdw 274 ; Def
+	bigdw 214 ; Spd
+	bigdw 232 ; SAtk
+	bigdw 272 ; SDef
 	db "AZUMARILL@@"
 
  	db HITMONTOP
@@ -1372,13 +1372,13 @@ BattleTowerKoga:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 285 ; HP
+	bigdw 285 ; Max HP
+	bigdw 282 ; Atk
+	bigdw 284 ; Def
+	bigdw 234 ; Spd
+	bigdw 162 ; SAtk
+	bigdw 312 ; SDef
 	db "HITMONTOP@@"
 
  	db WEEZING
@@ -1398,13 +1398,13 @@ BattleTowerKoga:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 315 ; HP
+	bigdw 315 ; Max HP
+	bigdw 272 ; Atk
+	bigdw 334 ; Def
+	bigdw 214 ; Spd
+	bigdw 262 ; SAtk
+	bigdw 232 ; SDef
 	db "WEEZING@@@@"
 
 	assert_table_length 3
@@ -1429,13 +1429,13 @@ BattleTowerKaren:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 381 ; HP
+	bigdw 381 ; Max HP
+	bigdw 224 ; Atk
+	bigdw 316 ; Def
+	bigdw 226 ; Spd
+	bigdw 214 ; SAtk
+	bigdw 354 ; SDef
 	db "UMBREON@@@@"
 
  	db MURKROW
@@ -1455,13 +1455,13 @@ BattleTowerKaren:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 351 ; HP
+	bigdw 351 ; Max HP
+	bigdw 304 ; Atk
+	bigdw 180 ; Def
+	bigdw 278 ; Spd
+	bigdw 304 ; SAtk
+	bigdw 178 ; SDef
 	db "MURKROW@@@@"
 
  	db HOUNDOOM
@@ -1481,13 +1481,13 @@ BattleTowerKaren:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
+	bigdw 359 ; HP
+	bigdw 359 ; Max HP
+	bigdw 284 ; Atk
+	bigdw 216 ; Def
+	bigdw 286 ; Spd
+	bigdw 332 ; SAtk
+	bigdw 272 ; SDef
 	db "HOUNDOOM@@@"
 
 	assert_table_length 3
@@ -1770,11 +1770,11 @@ BattleTowerLewot:
 	bigdw 208 ; SDef
 	db "YAMMY@@@@@@"
 
- 	db GENGAR
-	db FOCUS_BAND
-	db HYPNOSIS, DARK_PULSE, DREAM_EATER, SHADOW_BALL
+	db JUMPLUFF
+	db MIRACLE_SEED
+	db TOXIC, LEECH_SEED, AIR_SLASH, GIGA_DRAIN
 	dw 0 ; OT ID
-	dt 1059860 ; Exp
+	dt 949930 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 0
@@ -1782,19 +1782,19 @@ BattleTowerLewot:
 	bigdw 65535
 	bigdw 65535
 	dn 14, 14, 14, 14 ; DVs
-	db 32, 24, 24, 24 ; PP
+	db 8, 16, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 293 ; HP
-	bigdw 293 ; Max HP
-	bigdw 163 ; Atk
-	bigdw 216 ; Def
-	bigdw 326 ; Spd
-	bigdw 356 ; SAtk
-	bigdw 246 ; SDef
-	db "GINGER@@@@@"
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 143 ; Atk
+	bigdw 236 ; Def
+	bigdw 316 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 286 ; SDef
+	db "CHEER@@@@@@"
 
  	db FERALIGATR
 	db BERRY_JUICE
