@@ -485,7 +485,7 @@ AI_Opportunist:
 INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Discourage_Stall:
-; Discourage stall moves.
+; Discourage stall moves. Called by AI_Opportunist and AI_Aggressive.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -3142,6 +3142,9 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
+; NOTE: Moves like Twister and Sky Attack can also cause a flinch. However, their chance to do so is low.
+; I've left them out of this "fish for a flinch" AI because of that. And of course to save room.
+
 ; 50% chance to encourage this move if enemy is faster than player.
 	call AICompareSpeed
 	ret c
