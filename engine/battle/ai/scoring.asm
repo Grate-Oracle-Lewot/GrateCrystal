@@ -1833,7 +1833,7 @@ AI_Smart_HyperBeam:
 	ret
 
 .discourage
-; If enemy's HP is above 50%, discourage this move at random
+; If enemy's HP is above 50%, discourage this move at random.
 	call Random
 	cp 16 percent
 	ret c
