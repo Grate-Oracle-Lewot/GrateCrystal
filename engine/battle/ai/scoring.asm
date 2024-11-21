@@ -630,7 +630,7 @@ INCLUDE "data/battle/ai/reckless_moves.asm"
 
 
 AI_Risky:
-; Use any move that will KO the target.
+; Hugely encourage any move that will KO the player.
 ; Risky moves will often be an exception (see below).
 
 	ld hl, wEnemyAIMoveScores - 1
