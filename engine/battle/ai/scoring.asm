@@ -2965,29 +2965,32 @@ AI_Smart_Pursuit:
 	ret
 
 AI_Smart_RapidSpin:
-; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, surrounded by Spikes, or curled.
+; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, or surrounded by Spikes.
+; 80% chance to encourage this move if enemy is curled.
 
-	ld a, [wEnemyWrapCount]
-	and a
-	jr nz, .encourage
-
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .encourage
-
-	ld a, [wEnemyScreens]
-	bit SCREENS_SPIKES, a
-	jr nz, .encourage
-
-	ld a, [wEnemySubStatus2]
-	bit SUBSTATUS_CURLED, a
-	ret z
-
-.encourage
 	call AI_80_20
 	ret c
 
+	ld a, [wEnemyWrapCount]
+	and a
+	jr nz, .greatly_encourage
+
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_LEECH_SEED, a
+	jr nz, .greatly_encourage
+
+	ld a, [wEnemyScreens]
+	bit SCREENS_SPIKES, a
+	jr nz, .greatly_encourage
+
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	jr nz, .encourage
+	ret
+
+.greatly_encourage
 	dec [hl]
+.encourage
 	dec [hl]
 	ret
 
