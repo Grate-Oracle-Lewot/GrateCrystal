@@ -2966,7 +2966,7 @@ AI_Smart_Pursuit:
 
 AI_Smart_RapidSpin:
 ; 80% chance to greatly encourage this move if the enemy is trapped (Bind effect), seeded, or surrounded by Spikes.
-; 80% chance to encourage this move if enemy is curled.
+; Else, 80% chance to encourage this move if enemy is curled.
 
 	call AI_80_20
 	ret c
