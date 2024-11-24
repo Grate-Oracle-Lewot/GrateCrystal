@@ -3148,7 +3148,7 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Called by Stomp. Does not cover Snore, Twister, or Sky Attack.
+; NOTE: Called by Stomp. Does not cover Snore, Twister, Sky Attack, or King's Rock.
 ; Snore's only competition while asleep is Sleep Talk, so it's not really worth it.
 ; Night Terror uses Snore's move effect, but would already be ranked based on type and power.
 ; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria.
