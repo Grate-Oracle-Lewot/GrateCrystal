@@ -760,8 +760,8 @@ SludgeDescription:
 	next "poison the foe.@"
 
 BoneClubDescription:
-	db   "A bone attack. May"
-	next "cause flinching.@"
+	db   "Hits floating foes"
+	next "and may flinch.@"
 
 FireBlastDescription:
 	db   "A huge flare that"
