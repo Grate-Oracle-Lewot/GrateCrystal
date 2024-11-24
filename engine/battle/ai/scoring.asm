@@ -3145,8 +3145,8 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Moves like Twister and Sky Attack can also cause a flinch. However, their chance to do so is low.
-; I've left them out of this "fish for a flinch" AI because of that. And of course to save room.
+; NOTE: Moves like Twister and Sky Attack can also cause a flinch. I've left them out to save space.
+; Their flinch chance is relatively low, but so is that of some of these moves.
 
 ; 50% chance to encourage this move if enemy is faster than player.
 	call AICompareSpeed
