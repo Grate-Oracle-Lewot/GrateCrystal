@@ -3145,14 +3145,17 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Moves like Twister and Sky Attack can also cause a flinch. I've left them out to save space.
-; Their flinch chance is relatively low, but so is that of some of these moves.
+; NOTE: Moves like Twister and Sky Attack can also cause a flinch.
+; They have their own routines which are tied up in fallthroughs, so I've left them out of this.
 
-; 50% chance to encourage this move if enemy is faster than player.
+; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
 	ret c
-	call AI_50_50
-	ret c
+	ld a, [wEnemyMoveStruct + MOVE_CHANCE]
+	ld b, a
+	call Random
+	cp b
+	ret nc
 	dec [hl]
 	ret
 
