@@ -3153,8 +3153,10 @@ AI_Smart_FlinchHit:
 ; Night Terror uses Snore's move effect, but would already be ranked based on type and power.
 ; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria.
 ; Could be called by AI_Smart_Gust_Twister, but...
-; Silver Wind falls through to that, and has an effect chance for a non-flinch effect.
-; It wouldn't make sense to fish for an omniboost specifically when you're already faster.
+;  -Silver Wind falls through to that, and has an effect chance for a non-flinch effect.
+;  -AI_Smart_SpeedDownHit calls it for Icy Wind, which has a 100% effect chance.
+;  -AI_Smart_Thunder also calls it. Thunder has a 30% Paralysis chance.
+; ...literally all three of which are less preferable if the enemy is faster.
 
 ; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
