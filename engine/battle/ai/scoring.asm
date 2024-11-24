@@ -3105,6 +3105,9 @@ AI_Smart_PsychUp:
 	ret
 
 AI_Smart_Stomp:
+; Maybe fish for a flinch.
+	call AI_Smart_FlinchHit
+
 ; 80% chance to encourage this move if the player has used Minimize.
 	ld a, [wPlayerMinimized]
 	and a
@@ -3145,8 +3148,13 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Moves like Twister and Sky Attack can also cause a flinch.
-; They have their own routines which are tied up in fallthroughs, so I've left them out of this.
+; NOTE: Called by Stomp. Does not cover Snore, Twister, or Sky Attack.
+; Snore's only competition while asleep is Sleep Talk, so it's not really worth it.
+; Night Terror uses Snore's move effect, but would already be ranked based on type and power.
+; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria.
+; Could be called by AI_Smart_Gust_Twister, but...
+; Silver Wind falls through to that, and has an effect chance for a non-flinch effect.
+; It wouldn't make sense to fish for an omniboost specifically when you're already faster.
 
 ; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
