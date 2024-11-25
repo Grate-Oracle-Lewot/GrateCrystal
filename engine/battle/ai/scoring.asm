@@ -828,10 +828,10 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
 	dbw EFFECT_SKULL_BASH,       AI_Smart_Substitute_SkullBash
-	dbw EFFECT_TWISTER,          AI_Smart_Gust_Twister
+	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_Fly_SkyAttack_FutureSight
-	dbw EFFECT_GUST,             AI_Smart_Gust_Twister
+	dbw EFFECT_GUST,             AI_Smart_Gust
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
@@ -1656,20 +1656,20 @@ AI_Smart_Recoil_JumpKick:
 	ret
 
 .checkhi
-; If this move is Hi Jump Kick, jump to AI_Smart_Gust_Twister.
+; If this move is Hi Jump Kick, jump to AI_Smart_Gust.
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp HI_JUMP_KICK
-	jr z, AI_Smart_Gust_Twister
+	jr z, AI_Smart_Gust
 	ret
 
 AI_Smart_AllUpHit:
-; If this move is Silver Wind, fall through to AI_Smart_Gust_Twister. Else do nothing.
+; If this move is Silver Wind, fall through to AI_Smart_Gust. Else do nothing.
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp SILVER_WIND
 	ret nz
 	; fallthrough
 
-AI_Smart_Gust_Twister:
+AI_Smart_Gust:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_FLYING, a
@@ -1699,6 +1699,11 @@ AI_Smart_Gust_Twister:
 	ret c
 	dec [hl]
 	ret
+
+AI_Smart_Twister:
+; If enemy is faster than player, maybe fish for a flinch. Regardless, jump to AI_Smart_Gust.
+	call AI_Smart_FlinchHit
+	jr AI_Smart_Gust
 
 AI_Smart_SuperFang:
 ; Discourage this move if player's HP is below 25%.
@@ -1800,7 +1805,7 @@ AI_Smart_SpeedDownHit:
 	ret nz
 
 ; Maybe encourage this move if the player is flying. Continue regardless.
-	call AI_Smart_Gust_Twister
+	call AI_Smart_Gust
 
 ; Almost 90% chance to greatly encourage this move if the following conditions all meet:
 ;  -Enemy's HP is higher than 25%.
@@ -2810,7 +2815,7 @@ AI_Smart_Thunder:
 	ret z
 
 ; Otherwise, maybe encourage this move if the player is flying...
-	call AI_Smart_Gust_Twister
+	call AI_Smart_Gust
 
 ; ...and greatly encourage this move in rain.
 	ld a, [wBattleWeather]
@@ -3105,7 +3110,7 @@ AI_Smart_PsychUp:
 	ret
 
 AI_Smart_Stomp:
-; Maybe fish for a flinch.
+; If enemy is faster than player, maybe fish for a flinch. Continue regardless.
 	call AI_Smart_FlinchHit
 
 ; 80% chance to encourage this move if the player has used Minimize.
@@ -3148,15 +3153,9 @@ AI_Smart_SpeedControl:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Called by Stomp. Does not cover Snore, Twister, Sky Attack, or King's Rock.
-; Snore's only competition while asleep is Sleep Talk, so it's not really worth it.
-; Night Terror uses Snore's move effect, but would already be ranked based on type and power.
-; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria.
-; Could be called by AI_Smart_Gust_Twister, but...
-;  -Silver Wind falls through to that, and has an effect chance for a non-flinch effect.
-;  -AI_Smart_SpeedDownHit calls it for Icy Wind, which has a 100% effect chance.
-;  -AI_Smart_Thunder also calls it. Thunder has a 30% Paralysis chance.
-; ...literally all three of which are less preferable if the enemy is faster.
+; NOTE: Called by Stomp and Twister. Does not cover Snore/Night Terror, Sky Attack, or King's Rock.
+; Snore/Night Terror's only competition while asleep is Sleep Talk, so it's not really worth it.
+; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria, esp. given low PP and prep turn.
 
 ; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
