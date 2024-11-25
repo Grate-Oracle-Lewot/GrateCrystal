@@ -703,6 +703,8 @@ INCLUDE "gfx/weather_images.asm"
 
 
 SECTION "Battle Tower Additions", ROMX
+
+INCLUDE "engine/events/battle_tower/mod_party.asm"
 INCLUDE "engine/events/battle_tower/top_floor.asm"
 
 
