@@ -1413,7 +1413,7 @@ BattleTowerKaren:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerKaren
 
 	db UMBREON
-	db LEFTOVERS
+	db BERRY_JUICE
 	db SAND_ATTACK, CONFUSE_RAY, FAINT_ATTACK, MEAN_LOOK
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
