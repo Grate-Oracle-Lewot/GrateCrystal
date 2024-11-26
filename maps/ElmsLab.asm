@@ -195,9 +195,9 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke SKARMORY, 20, GOLD_BERRY
-	givepoke HITMONTOP, 20, LEFTOVERS
-	givepoke PORYGON2, 20, BERRY_JUICE
+	givepoke SKARMORY, 100, GOLD_BERRY
+	givepoke HITMONTOP, 100, LEFTOVERS
+	givepoke PORYGON2, 100, BERRY_JUICE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
