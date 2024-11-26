@@ -84,6 +84,9 @@ LoadOpponentTrainerAndPokemon:
 	ret
 
 LoadRandomBattleTowerMon:
+	farcall TestLoadBrock
+	ret
+
 	ld c, BATTLETOWER_PARTY_LENGTH
 .loop
 	push bc
