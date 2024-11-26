@@ -269,7 +269,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_AGGRESSIVE only has a 50% chance to not discourage "reckless" moves, and the reckless list now consists only of multi-hit moves, not Selfdestruct and Thrash/Outrage/Petal Dance. Additionally, it now discourages "stall" moves if it's down to its last Pokémon.
 
-- Many changes to AI_SMART subroutines. These keep the AI aware of all the other changes I've made to the game, and occasionally revise strategies for specific moves, e.g. encouraging Roar/Whirlwind if Spikes are set up.
+- Many changes to AI_SMART subroutines, and new ones added. These keep the AI aware of all the other changes I've made to the game, and occasionally revise strategies for specific moves, e.g. encouraging Roar/Whirlwind if Spikes are set up.
 
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. This is an unfortunate necessity of the interactions between how Daycare experience and leveling work and the ability to turn the level caps on and off at any time.
