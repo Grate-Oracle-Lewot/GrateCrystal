@@ -86,9 +86,12 @@ Script_ChooseChallenge:
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
 	special BattleTowerAction
 	clearevent EVENT_BATTLE_TOWER_TOP_FLOOR
+	checkevent EVENT_BEAT_RED
+	iffalse .SkipTopFloor
 	writetext Text_ChallengeTheTopFloor
 	yesorno
 	iftrue Script_ChallengeTopFloor
+.SkipTopFloor:
 	special BattleTowerRoomMenu
 	ifequal $a, Script_Menu_ChallengeExplanationCancel
 	ifnotequal $0, Script_MobileError
