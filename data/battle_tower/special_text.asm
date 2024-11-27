@@ -364,13 +364,16 @@ BTRedWinText:
 	done
 
 BTDefaultGreetingText:
-	text "Greetings."
+	text "I think I'm in the"
+	line "wrong room…"
 	done
 
 BTDefaultLossText:
-	text "Condolences."
+	text "Wow! I won on the"
+	line "top floor?!"
 	done
 
 BTDefaultWinText:
-	text "Congratulations."
+	text "That's what I get"
+	line "for sneaking in…"
 	done
