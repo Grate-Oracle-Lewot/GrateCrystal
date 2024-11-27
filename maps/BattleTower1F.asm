@@ -336,20 +336,17 @@ Text_BattleTowerIntroduction_2:
 	para "resume your ROOM"
 	line "challenge."
 
+	para "On the top floor,"
+	line "you can battle GYM"
+	cont "LEADERS, ELITE"
+	cont "FOUR members, and"
+	cont "CHAMPIONS."
+
+	para "Only accomplished"
+	line "trainers may take"
+	cont "on the top floor."
+
 	para ""
-	done
-
-Text_ReceivedAListOfLeadersOnTheHonorRoll:
-	text "Received a list of"
-	line "LEADERS on the"
-	cont "HONOR ROLL."
-
-	para ""
-	done
-
-Text_PleaseConfirmOnThisMonitor:
-	text "Please confirm on"
-	line "this monitor."
 	done
 
 Text_ThanksForVisiting:
@@ -400,26 +397,6 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
 	line "hear about the"
 	cont "BATTLE TOWER?"
-	done
-
-Text_CantBeRegistered:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered. OK?"
-	done
-
-Text_CantBeRegistered_PreviousRecordDeleted:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered."
-
-	para "Also, the existing"
-	line "record will be"
-	cont "deleted. OK?"
 	done
 
 Text_ReadBattleTowerRules:
@@ -487,14 +464,6 @@ Text_SaveAndEndTheSession:
 	line "session?"
 	done
 
-Text_SaveBeforeReentry:
-	text "Your record will"
-	line "be SAVED before"
-
-	para "you go back into"
-	line "the previous ROOM."
-	done
-
 Text_CancelYourBattleRoomChallenge:
 	text "Cancel your BATTLE"
 	line "ROOM challenge?"
@@ -506,30 +475,6 @@ Text_WeveBeenWaitingForYou:
 
 	para "to a BATTLE ROOM,"
 	line "please."
-	done
-
-Text_FiveDayBattleLimit_Mobile:
-	text "You may enter only"
-	line "five BATTLE ROOMS"
-	cont "each day."
-
-	para "Please come back"
-	line "tomorrow."
-	done
-
-Text_TooMuchTimeElapsedNoRegister:
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your"
-	line "current record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
 	done
 
 Text_AMonLevelExceeds:
@@ -550,6 +495,11 @@ Text_MayNotEnterABattleRoomUnderL70:
 	line "is for L@"
 	text_decimal wScriptVar, 1, 3
 	text "."
+	done
+
+Text_ChallengeTheTopFloor:
+	text "Will you challenge"
+	line "the top floor?"
 	done
 
 Text_BattleTowerYoungster:
