@@ -193,7 +193,7 @@ BattleTowerLtSurge:
 	bigdw 262 ; SDef
 	db "ELECTABUZZ@"
 
- 	db MAGNETON
+	db MAGNETON
 	db MAGNET
 	db LOCK_ON, DOUBLE_TEAM, FLASH, ZAP_CANNON
 	dw 0 ; OT ID
@@ -219,7 +219,7 @@ BattleTowerLtSurge:
 	bigdw 248 ; SDef
 	db "MAGNETON@@@"
 
- 	db LANTURN
+	db LANTURN
 	db SILVERPOWDER
 	db RAIN_DANCE, SIGNAL_BEAM, SURF, THUNDER
 	dw 0 ; OT ID
@@ -276,7 +276,7 @@ BattleTowerErika:
 	bigdw 170 ; SDef
 	db "TANGELA@@@@"
 
- 	db BELLOSSOM
+	db BELLOSSOM
 	db DICTIONARY
 	db SUNNY_DAY, MOONLIGHT, PETAL_DANCE, SOLARBEAM
 	dw 0 ; OT ID
@@ -302,7 +302,7 @@ BattleTowerErika:
 	bigdw 290 ; SDef
 	db "BELLOSSOM@@"
 
- 	db VICTREEBEL
+	db VICTREEBEL
 	db SCOPE_LENS
 	db SUNNY_DAY, SYNTHESIS, POISON_JAB, RAZOR_LEAF
 	dw 0 ; OT ID
@@ -359,7 +359,7 @@ BattleTowerJanine:
 	bigdw 250 ; SDef
 	db "CROBAT@@@@@"
 
- 	db TENTACRUEL
+	db TENTACRUEL
 	db MIRACLE_SEED
 	db SCALD, SLUDGE_BOMB, SURF, GIGA_DRAIN
 	dw 0 ; OT ID
@@ -385,7 +385,7 @@ BattleTowerJanine:
 	bigdw 330 ; SDef
 	db "TENTACRUEL@"
 
- 	db SLOWKING
+	db SLOWKING
 	db QUICK_CLAW
 	db CURSE, STRENGTH, POISON_JAB, REST
 	dw 0 ; OT ID
@@ -442,7 +442,7 @@ BattleTowerSabrina:
 	bigdw 330 ; SDef
 	db "MR.MIME@@@@"
 
- 	db JYNX
+	db JYNX
 	db X_ATTACK
 	db LOVELY_KISS, ATTRACT, PSYCHIC_M, ICE_PUNCH
 	dw 0 ; OT ID
@@ -468,7 +468,7 @@ BattleTowerSabrina:
 	bigdw 310 ; SDef
 	db "JYNX@@@@@@@"
 
- 	db ALAKAZAM
+	db ALAKAZAM
 	db TWISTEDSPOON
 	db RECOVER, AURA_SPHERE, PSYCHIC_M, REFLECT
 	dw 0 ; OT ID
@@ -525,7 +525,7 @@ BattleTowerBlaine:
 	bigdw 260 ; SDef
 	db "SUNFLORA@@@"
 
- 	db ARCANINE
+	db ARCANINE
 	db CHARCOAL
 	db ROAR, FLAMETHROWER, PLAY_ROUGH, CRUNCH
 	dw 0 ; OT ID
@@ -551,7 +551,7 @@ BattleTowerBlaine:
 	bigdw 252 ; SDef
 	db "ARCANINE@@@"
 
- 	db RAPIDASH
+	db RAPIDASH
 	db BERRY_JUICE
 	db QUICK_ATTACK, MEGAHORN, FURY_ATTACK, FIRE_BLAST
 	dw 0 ; OT ID
@@ -608,7 +608,7 @@ BattleTowerBlue:
 	bigdw 256 ; SDef
 	db "MAROWAK@@@@"
 
- 	db NIDOKING
+	db NIDOKING
 	db KINGS_ROCK
 	db EARTHQUAKE, POISON_JAB, THUNDERPUNCH, MEGAHORN
 	dw 0 ; OT ID
@@ -634,7 +634,7 @@ BattleTowerBlue:
 	bigdw 246 ; SDef
 	db "NIDOKING@@@"
 
- 	db DONPHAN
+	db DONPHAN
 	db LEFTOVERS
 	db RETURN, EARTHQUAKE, STRENGTH, MEGAHORN
 	dw 0 ; OT ID
@@ -691,7 +691,7 @@ BattleTowerFalkner:
 	bigdw 210 ; SDef
 	db "FEAROW@@@@@"
 
- 	db XATU
+	db XATU
 	db SCOPE_LENS
 	db NIGHT_SHADE, PSYCHIC_M, MOONBLAST, TRI_ATTACK
 	dw 0 ; OT ID
@@ -717,7 +717,7 @@ BattleTowerFalkner:
 	bigdw 228 ; SDef
 	db "XATU@@@@@@@"
 
- 	db GLIGAR
+	db GLIGAR
 	db QUICK_CLAW
 	db FLY, DIG, SWORDS_DANCE, CRABHAMMER
 	dw 0 ; OT ID
@@ -774,7 +774,7 @@ BattleTowerBugsy:
 	bigdw 190 ; SDef
 	db "KINGLER@@@@"
 
- 	db HERACROSS
+	db HERACROSS
 	db FOCUS_BAND
 	db MEGAHORN, COUNTER, REVERSAL, FLY
 	dw 0 ; OT ID
@@ -800,7 +800,7 @@ BattleTowerBugsy:
 	bigdw 280 ; SDef
 	db "HERACROSS@@"
 
- 	db SCIZOR
+	db SCIZOR
 	db METAL_COAT
 	db CUT, SWORDS_DANCE, CROSS_CHOP, STEEL_WING
 	dw 0 ; OT ID
@@ -857,7 +857,7 @@ BattleTowerWhitney:
 	bigdw 360 ; SDef
 	db "BLISSEY@@@@"
 
- 	db GIRAFARIG
+	db GIRAFARIG
 	db LEFTOVERS
 	db ROCK_SMASH, HEADBUTT, SHADOW_BALL, ATTRACT
 	dw 0 ; OT ID
@@ -883,7 +883,7 @@ BattleTowerWhitney:
 	bigdw 228 ; SDef
 	db "GIRAFARIG@@"
 
- 	db MILTANK
+	db MILTANK
 	db X_ACCURACY
 	db ROLLOUT, ATTRACT, BODY_SLAM, MILK_DRINK
 	dw 0 ; OT ID
@@ -940,7 +940,7 @@ BattleTowerMorty:
 	bigdw 280 ; SDef
 	db "NOCTOWL@@@@"
 
- 	db MISDREAVUS
+	db MISDREAVUS
 	db SPELL_TAG
 	db MEAN_LOOK, PERISH_SONG, CONFUSE_RAY, SHADOW_BALL
 	dw 0 ; OT ID
@@ -966,7 +966,7 @@ BattleTowerMorty:
 	bigdw 278 ; SDef
 	db "MISDREAVUS@"
 
- 	db GENGAR
+	db GENGAR
 	db MIRACLEBERRY
 	db HYPNOSIS, SHADOW_BALL, AURA_SPHERE, DREAM_EATER
 	dw 0 ; OT ID
@@ -1023,7 +1023,7 @@ BattleTowerChuck:
 	bigdw 248 ; SDef
 	db "PRIMEAPE@@@"
 
- 	db POLIWRATH
+	db POLIWRATH
 	db HARDHAT
 	db HYPNOSIS, WATERFALL, SCALD, SUBMISSION
 	dw 0 ; OT ID
@@ -1049,7 +1049,7 @@ BattleTowerChuck:
 	bigdw 268 ; SDef
 	db "POLIWRATH@@"
 
- 	db KANGASKHAN
+	db KANGASKHAN
 	db X_ACCURACY
 	db DIZZY_PUNCH, DYNAMICPUNCH, LOW_KICK, MILK_DRINK
 	dw 0 ; OT ID
@@ -1106,7 +1106,7 @@ BattleTowerJasmine:
 	bigdw 230 ; SDef
 	db "SKARMORY@@@"
 
- 	db CLOYSTER
+	db CLOYSTER
 	db X_SP_DEFEND
 	db CRABHAMMER, SPIKE_CANNON, ICE_BEAM, PROTECT
 	dw 0 ; OT ID
@@ -1132,7 +1132,7 @@ BattleTowerJasmine:
 	bigdw 180 ; SDef
 	db "CLOYSTER@@@"
 
- 	db STEELIX
+	db STEELIX
 	db METAL_COAT
 	db SCREECH, EARTHQUAKE, ROCK_SLIDE, IRON_TAIL
 	dw 0 ; OT ID
@@ -1189,7 +1189,7 @@ BattleTowerPryce:
 	bigdw 248 ; SDef
 	db "SNEASEL@@@@"
 
- 	db DEWGONG
+	db DEWGONG
 	db LEFTOVERS
 	db REST, SLEEP_TALK, ICE_BEAM, SURF
 	dw 0 ; OT ID
@@ -1215,7 +1215,7 @@ BattleTowerPryce:
 	bigdw 278 ; SDef
 	db "DEWGONG@@@@"
 
- 	db PILOSWINE
+	db PILOSWINE
 	db NEVERMELTICE
 	db FLAIL, EARTHQUAKE, HAIL, BLIZZARD
 	dw 0 ; OT ID
@@ -1272,7 +1272,7 @@ BattleTowerClair:
 	bigdw 290 ; SDef
 	db "GYARADOS@@@"
 
- 	db DRAGONAIR
+	db DRAGONAIR
 	db EVERSTONE
 	db THUNDER_WAVE, FLAMETHROWER, SURF, SLAM
 	dw 0 ; OT ID
@@ -1298,7 +1298,7 @@ BattleTowerClair:
 	bigdw 230 ; SDef
 	db "DRAGONAIR@@"
 
- 	db KINGDRA
+	db KINGDRA
 	db SCOPE_LENS
 	db SMOKESCREEN, SURF, DRAGON_PULSE, HYPER_BEAM
 	dw 0 ; OT ID
@@ -1355,7 +1355,7 @@ BattleTowerKoga:
 	bigdw 272 ; SDef
 	db "AZUMARILL@@"
 
- 	db HITMONTOP
+	db HITMONTOP
 	db BLACKBELT_I
 	db PLAY_ROUGH, DEFENSE_CURL, ROLLING_KICK, COUNTER
 	dw 0 ; OT ID
@@ -1381,7 +1381,7 @@ BattleTowerKoga:
 	bigdw 312 ; SDef
 	db "HITMONTOP@@"
 
- 	db WEEZING
+	db WEEZING
 	db LEFTOVERS
 	db SMOKESCREEN, SMOG, SILVER_WIND, SUBSTITUTE
 	dw 0 ; OT ID
@@ -1438,7 +1438,7 @@ BattleTowerKaren:
 	bigdw 354 ; SDef
 	db "UMBREON@@@@"
 
- 	db MURKROW
+	db MURKROW
 	db NOISEMAKER
 	db FAINT_ATTACK, AIR_SLASH, NIGHT_SHADE, DESTINY_BOND
 	dw 0 ; OT ID
@@ -1464,7 +1464,7 @@ BattleTowerKaren:
 	bigdw 178 ; SDef
 	db "MURKROW@@@@"
 
- 	db HOUNDOOM
+	db HOUNDOOM
 	db BLACKGLASSES
 	db ROAR, SMOG, FLAMETHROWER, CRUNCH
 	dw 0 ; OT ID
@@ -1521,7 +1521,7 @@ BattleTowerAD:
 	bigdw 604 ; SDef
 	db "SHUCKLE@@@@"
 
- 	db NINETALES
+	db NINETALES
 	db FOCUS_BAND
 	db FLAMETHROWER, ICE_BEAM, TRI_ATTACK, CONFUSE_RAY
 	dw 0 ; OT ID
@@ -1547,7 +1547,7 @@ BattleTowerAD:
 	bigdw 314 ; SDef
 	db "NINETALES@@"
 
- 	db FARFETCH_D
+	db FARFETCH_D
 	db STICK
 	db SWORDS_DANCE, SHADOW_CLAW, FLY, CROSS_CHOP
 	dw 0 ; OT ID
@@ -1604,7 +1604,7 @@ BattleTowerLucas:
 	bigdw 272 ; SDef
 	db "AMPHAROS@@@"
 
- 	db POLITOED
+	db POLITOED
 	db TWISTEDSPOON
 	db HYPNOSIS, DREAM_EATER, SHADOW_BALL, BUBBLEBEAM
 	dw 0 ; OT ID
@@ -1630,7 +1630,7 @@ BattleTowerLucas:
 	bigdw 292 ; SDef
 	db "POLITOED@@@"
 
- 	db MEGANIUM
+	db MEGANIUM
 	db BERRY_JUICE
 	db BODY_SLAM, SOLARBEAM, IRON_TAIL, EARTH_POWER
 	dw 0 ; OT ID
@@ -1687,7 +1687,7 @@ BattleTowerPercy:
 	bigdw 216 ; SDef
 	db "WIGGLYTUFF@"
 
- 	db SUDOWOODO
+	db SUDOWOODO
 	db MIRACLEBERRY
 	db ROCK_SLIDE, DIG, FAINT_ATTACK, VITAL_THROW
 	dw 0 ; OT ID
@@ -1713,7 +1713,7 @@ BattleTowerPercy:
 	bigdw 236 ; SDef
 	db "SUDOWOODO@@"
 
- 	db WHIMSICOTT
+	db WHIMSICOTT
 	db KINGS_ROCK
 	db LEECH_SEED, SHADOW_BALL, SOLARBEAM, MOONBLAST
 	dw 0 ; OT ID
@@ -1796,7 +1796,7 @@ BattleTowerLewot:
 	bigdw 286 ; SDef
 	db "CHEER@@@@@@"
 
- 	db FERALIGATR
+	db FERALIGATR
 	db BERRY_JUICE
 	db WATERFALL, CRUNCH, EARTHQUAKE, AEROBLAST
 	dw 0 ; OT ID
@@ -2045,7 +2045,7 @@ BattleTowerDefaultParty:
 	bigdw 190 ; SDef
 	db "JIRK@@@@@@@"
 
- 	db DRAGONITE
+	db DRAGONITE
 	db DRAGON_FANG
 	db SKY_ATTACK, THUNDER_WAVE, OUTRAGE, HYPER_BEAM
 	dw 0 ; OT ID
