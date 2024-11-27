@@ -159,8 +159,8 @@ BTWhitneyLossText:
 	done
 
 BTWhitneyWinText:
-	text ""
-	line ""
+	text "…"
+	line "Waaaaah!"
 	done
 
 BTMortyGreetingText:
@@ -269,18 +269,19 @@ BTKarenWinText:
 	done
 
 BTADGreetingText:
-	text ""
-	line ""
+	text "Huh, you got me as"
+	line "the boss."
+
+	para "This shouldn't be"
+	line "too hard then."
 	done
 
 BTADLossText:
-	text ""
-	line ""
+	text "Oh. Uh. Sorry."
 	done
 
 BTADWinText:
-	text ""
-	line ""
+	text "What'd I tell you?"
 	done
 
 BTLucasGreetingText:
@@ -299,33 +300,42 @@ BTLucasWinText:
 	done
 
 BTPercyGreetingText:
-	text ""
-	line ""
+	text "If there were two"
+	line "guys on the moon"
+
+	para "and one of them"
+	line "killed the other"
+
+	para "with a rock would"
+	line "that be messed up"
+	cont "or what?"
 	done
 
 BTPercyLossText:
-	text ""
-	line ""
-	done
-
 BTPercyWinText:
-	text ""
-	line ""
+	text "Oh nooo! Toileeet!"
 	done
 
 BTLewotGreetingText:
-	text ""
-	line ""
+	text "We meet again. How"
+	line "do you like this"
+
+	para "whole top floor"
+	line "thing?"
 	done
 
 BTLewotLossText:
-	text ""
-	line ""
+	text "This is where the"
+	line "real challenge"
+	cont "lies."
 	done
 
 BTLewotWinText:
-	text ""
-	line ""
+	text "That's it. You've"
+	line "conquered every"
+
+	para "challenge I could"
+	line "throw at you!"
 	done
 
 BTLanceGreetingText:
@@ -344,31 +354,23 @@ BTLanceWinText:
 	done
 
 BTRedGreetingText:
-	text ""
-	line ""
+	text "…"
+	line "…"
 	done
 
 BTRedLossText:
-	text ""
-	line ""
-	done
-
 BTRedWinText:
-	text ""
-	line ""
+	text "…"
 	done
 
 BTDefaultGreetingText:
-	text ""
-	line ""
+	text "Greetings."
 	done
 
 BTDefaultLossText:
-	text ""
-	line ""
+	text "Condolences."
 	done
 
 BTDefaultWinText:
-	text ""
-	line ""
+	text "Congratulations."
 	done
