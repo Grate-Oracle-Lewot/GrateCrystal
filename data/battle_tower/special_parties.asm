@@ -1853,7 +1853,7 @@ BattleTowerLance:
 	bigdw 246 ; SDef
 	db "EXEGGUTOR@@"
 
- 	db TYRANITAR
+	db TYRANITAR
 	db BLACKGLASSES
 	db CRUNCH, ROCK_SLIDE, EARTHQUAKE, HYPER_BEAM
 	dw 0 ; OT ID
@@ -1879,7 +1879,7 @@ BattleTowerLance:
 	bigdw 296 ; SDef
 	db "TYRANITAR@@"
 
- 	db DRAGONITE
+	db DRAGONITE
 	db DRAGON_FANG
 	db SKY_ATTACK, THUNDER_WAVE, OUTRAGE, HYPER_BEAM
 	dw 0 ; OT ID
@@ -1910,7 +1910,7 @@ BattleTowerLance:
 BattleTowerRed:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerRed
 
- 	db SNORLAX
+	db SNORLAX
 	db LEFTOVERS
 	db BELLY_DRUM, NIGHT_TERROR, REST, BODY_SLAM
 	dw 0 ; OT ID
@@ -1936,7 +1936,7 @@ BattleTowerRed:
 	bigdw 316 ; SDef
 	db "SNORLAX@@@@"
 
- 	db ESPEON
+	db ESPEON
 	db NOISEMAKER
 	db AURA_SPHERE, REFLECT, SHADOW_BALL, PSYCHIC_M
 	dw 0 ; OT ID
@@ -1987,5 +1987,88 @@ BattleTowerRed:
 	bigdw 276 ; SAtk
 	bigdw 256 ; SDef
 	db "RAICHU@@@@@"
+
+	assert_table_length 3
+
+BattleTowerDefaultParty:
+	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerDefaultParty
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 303 ; HP
+	bigdw 303 ; Max HP
+	bigdw 198 ; Atk
+	bigdw 198 ; Def
+	bigdw 598 ; Spd
+	bigdw 198 ; SAtk
+	bigdw 198 ; SDef
+	db "DITTO@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 155 ; Atk
+	bigdw 218 ; Def
+	bigdw 290 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 190 ; SDef
+	db "JIRK@@@@@@@"
+
+ 	db DRAGONITE
+	db DRAGON_FANG
+	db SKY_ATTACK, THUNDER_WAVE, OUTRAGE, HYPER_BEAM
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 14, 14, 14, 14 ; DVs
+	db 8, 16, 16, 8 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 355 ; HP
+	bigdw 355 ; Max HP
+	bigdw 364 ; Atk
+	bigdw 286 ; Def
+	bigdw 256 ; Spd
+	bigdw 296 ; SAtk
+	bigdw 296 ; SDef
+	db "DRAGONITE@@"
 
 	assert_table_length 3
