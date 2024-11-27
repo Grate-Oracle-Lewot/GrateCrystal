@@ -94,7 +94,7 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	cp MISTY
 	jr z, BattleTowerLoadMisty
 	cp LT_SURGE
-	jr z, BattleTowerLoadSurge
+	jr z, BattleTowerLoadLtSurge
 	cp ERIKA
 	jr z, BattleTowerLoadErika
 	cp JANINE
@@ -151,8 +151,8 @@ BattleTowerLoadMisty:
 	ld hl, BattleTowerMisty
 	jr BattleTowerLoadSpecialParty
 
-BattleTowerLoadSurge:
-	ld hl, BattleTowerSurge
+BattleTowerLoadLtSurge:
+	ld hl, BattleTowerLtSurge
 	jr BattleTowerLoadSpecialParty
 
 BattleTowerLoadErika:
