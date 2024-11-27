@@ -85,17 +85,31 @@ Script_ChooseChallenge:
 	setscene SCENE_FINISHED
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
 	special BattleTowerAction
+	clearevent EVENT_BATTLE_TOWER_TOP_FLOOR
+	writetext Text_ChallengeTheTopFloor
+	yesorno
+	iftrue Script_ChallengeTopFloor
 	special BattleTowerRoomMenu
 	ifequal $a, Script_Menu_ChallengeExplanationCancel
 	ifnotequal $0, Script_MobileError
 	setval BATTLETOWERACTION_11
 	special BattleTowerAction
+Script_RightThisWay:
 	writetext Text_RightThisWayToYourBattleRoom
 	waitbutton
 	closetext
 	setval BATTLETOWERACTION_CHOOSEREWARD
 	special BattleTowerAction
 	sjump Script_WalkToBattleTowerElevator
+
+Script_ChallengeTopFloor:
+	setevent EVENT_BATTLE_TOWER_TOP_FLOOR
+	callasm .CallAsm
+	sjump Script_RightThisWay
+
+.CallAsm:
+	farcall BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer
+	ret
 
 Script_ResumeBattleTowerChallenge:
 	closetext
@@ -150,10 +164,6 @@ Script_BattleTowerSkipExplanation:
 
 Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
-	waitbutton
-	closetext
-	end
-
 Script_WaitButton:
 	waitbutton
 	closetext
