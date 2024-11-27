@@ -1,4 +1,4 @@
-BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer:
+BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer::
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 
@@ -39,7 +39,7 @@ BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer:
 	ld a, [hl]
 	jp CloseSRAM
 
-BattleTowerTopFloorLoadCurrentOpponent:
+BattleTowerTopFloorLoadCurrentOpponent::
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
