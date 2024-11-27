@@ -9,7 +9,6 @@ Function1700ba:
 ; special
 	call InitBattleTowerChallengeRAM
 	farcall Function11811a
-UnusedBattleTowerDummySpecial2:
 	ret
 
 Function1700c4:
@@ -1474,8 +1473,13 @@ BattleTowerAction_UbersCheck:
 	ld [wScriptVar], a
 	ret
 
+BattleTowerTopFloorLoadOpponentWithOTSprite:
+	farcall BattleTowerTopFloorLoadCurrentOpponent
+	jr BattleTowerLoadOpponentMerge
+
 LoadOpponentTrainerAndPokemonWithOTSprite:
 	farcall LoadOpponentTrainerAndPokemon
+BattleTowerLoadOpponentMerge:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
