@@ -195,7 +195,7 @@ BattleTowerLoadChuck:
 	ld hl, BattleTowerChuck
 	jr BattleTowerLoadSpecialParty
 
-BattleTowerJasmine:
+BattleTowerLoadJasmine:
 	ld hl, BattleTowerJasmine
 	jr BattleTowerLoadSpecialParty
 
