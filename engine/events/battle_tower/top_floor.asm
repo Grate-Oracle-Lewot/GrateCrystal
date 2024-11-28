@@ -2,10 +2,20 @@ BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer::
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 
-; Load six random unique special trainers
+; Fill sNrOfBeatenBattleTowerTrainers and sBTTrainers with zeros
+	xor a
+	ld [sNrOfBeatenBattleTowerTrainers], a
+	ld hl, sBTTrainers
+	ld bc, BATTLETOWER_STREAK_LENGTH
+	call ByteFill
+
+; Load six random special trainers
+	ld c, BATTLETOWER_STREAK_LENGTH - 1
+	ld hl, sBTTrainers
+.loop
 	ldh a, [hRandomAdd]
 	ld b, a
-.resample ; loop to find a random trainer
+.resample
 	call Random
 	ldh a, [hRandomAdd]
 	add b
@@ -14,29 +24,22 @@ BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer::
 	cp BATTLETOWER_NUM_SPECIAL_TRAINERS
 	jr nc, .resample
 	ld b, a
-
-	ld c, BATTLETOWER_STREAK_LENGTH - 1
-	ld hl, sBTTrainers
-.next_trainer
-	ld a, [hli]
-	cp b
-	jr z, .resample
+	ld [hli], a
 	dec c
-	jr nz, .next_trainer
+	jr nz, .loop
 
-; Load one random boss trainer in the 7th trainer slot (via prior hli)
+; Load one random boss trainer into 7th slot
 	ldh a, [hRandomAdd]
 	ld b, a
-.resample2
+.resample
 	call Random
 	ldh a, [hRandomAdd]
 	add b
 	ld b, a ; b contains the nr of the trainer
 	maskbits BATTLETOWER_NUM_BOSS_TRAINERS
 	cp BATTLETOWER_NUM_BOSS_TRAINERS
-	jr nc, .resample2
-	ld b, a
-	ld a, [hl]
+	jr nc, .resample
+	ld [hl], a
 	jp CloseSRAM
 
 BattleTowerTopFloorLoadCurrentOpponent::
@@ -45,31 +48,31 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	ld a, BANK(wBT_OTTrainer)
 	ldh [rSVBK], a
 
-	; Fill wBT_OTTrainer with zeros
+; Fill wBT_OTTrainer with zeros
 	xor a
 	ld hl, wBT_OTTrainer
 	ld bc, BATTLE_TOWER_STRUCT_LENGTH
 	call ByteFill
 
-	; Write $ff into the Item-Slots
+; Write $ff into the Item-Slots
 	ld a, $ff
 	ld [wBT_OTMon1Item], a
 	ld [wBT_OTMon2Item], a
 	ld [wBT_OTMon3Item], a
 
-	; Set wBT_OTTrainer as start address to write the following data to
+; Set wBT_OTTrainer as start address to write the following data to
 	ld de, wBT_OTTrainer
 
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 
+; Find stored nr of current trainer based on win streak, put in c
 	ld hl, sBTTrainers
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	ld c, a
-	ld a, b
 	ld b, 0
 	add hl, bc
-	ld [hl], a
+	ld c, [hl]
 
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	cp 6
@@ -78,16 +81,17 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	jr .merge
 .boss
 	ld hl, BattleTowerBossTrainers
-
-; Copy name (10 bytes) and class (1 byte) of trainer
 .merge
-	call CloseSRAM
+; Add c to table at hl to find trainer name and class
+	add hl, bc
+; Copy name (10 bytes) and class (1 byte) of trainer into de
 	ld bc, NAME_LENGTH
 	call AddNTimes
 	ld bc, NAME_LENGTH
 	call CopyBytes
+	call CloseSRAM
 
-; Load party based on trainer class
+; Load party into de+11 based on trainer class
 	ld a, [wBT_OTTrainerClass]
 	cp BROCK
 	jr z, BattleTowerLoadBrock
@@ -249,3 +253,5 @@ BattleTowerLoadSpecialParty:
 INCLUDE "data/battle_tower/special_classes.asm"
 
 INCLUDE "data/battle_tower/special_parties.asm"
+
+INCLUDE "data/battle_tower/special_text.asm"
