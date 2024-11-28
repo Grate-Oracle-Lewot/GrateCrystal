@@ -63,7 +63,7 @@ Script_BattleRoomLoop:
 	opentext
 	writetext Text_NextUpOpponentNo
 	yesorno
-	iffalse Script_DontBattleNextOpponent
+	iffalse Script_DontSaveAndEndTheSession
 Script_ContinueAndBattleNextOpponent:
 	closetext
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent
