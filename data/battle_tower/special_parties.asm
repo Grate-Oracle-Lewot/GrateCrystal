@@ -2017,7 +2017,7 @@ BattleTowerDefaultParty:
 	bigdw 598 ; Spd
 	bigdw 198 ; SAtk
 	bigdw 198 ; SDef
-	db "DITTO@@@@@@"
+	db "DITZ@@@@@@@"
 
 	db JIRK
 	db X_EVADE
@@ -2043,32 +2043,32 @@ BattleTowerDefaultParty:
 	bigdw 290 ; Spd
 	bigdw 230 ; SAtk
 	bigdw 190 ; SDef
-	db "JIRK@@@@@@@"
+	db "JOY@@@@@@@@"
 
-	db DRAGONITE
-	db DRAGON_FANG
-	db SKY_ATTACK, THUNDER_WAVE, OUTRAGE, HYPER_BEAM
+	db FLOGISTAN
+	db PINK_BOW
+	db HYPER_BEAM, FLAMETHROWER, SCALD, DAZZLY_GLEAM
 	dw 0 ; OT ID
-	dt 1250000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	dn 14, 14, 14, 14 ; DVs
-	db 8, 16, 16, 8 ; PP
-	db 255 ; Happiness
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 15 ; DVs
+	db 8, 16, 24, 24 ; PP
+	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 355 ; HP
-	bigdw 355 ; Max HP
-	bigdw 364 ; Atk
-	bigdw 286 ; Def
-	bigdw 256 ; Spd
-	bigdw 296 ; SAtk
-	bigdw 296 ; SDef
-	db "DRAGONITE@@"
+	bigdw 285 ; HP
+	bigdw 285 ; Max HP
+	bigdw 87 ; Atk
+	bigdw 164 ; Def
+	bigdw 300 ; Spd
+	bigdw 320 ; SAtk
+	bigdw 174 ; SDef
+	db "STAN@@@@@@@"
 
 	assert_table_length 3
