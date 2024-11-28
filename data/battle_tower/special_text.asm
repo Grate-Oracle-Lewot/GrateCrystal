@@ -1,6 +1,6 @@
 BTBrockGreetingText:
-	text ""
-	line ""
+	text "I'm ready to rock"
+	line "and roll!"
 	done
 
 BTBrockLossText:
@@ -9,8 +9,8 @@ BTBrockLossText:
 	done
 
 BTBrockWinText:
-	text ""
-	line ""
+	text "You ground me into"
+	line "dust!"
 	done
 
 BTMistyGreetingText:
@@ -24,8 +24,7 @@ BTMistyLossText:
 	done
 
 BTMistyWinText:
-	text ""
-	line ""
+	text "You're such a pest…"
 	done
 
 BTLtSurgeGreetingText:
@@ -44,53 +43,59 @@ BTLtSurgeWinText:
 	done
 
 BTErikaGreetingText:
-	text ""
-	line ""
+	text "The architecture"
+	line "here is striking,"
+
+	para "but I find it a"
+	line "bit sterile…"
 	done
 
 BTErikaLossText:
-	text ""
-	line ""
+	text "I'll have to offer"
+	line "to grow them some"
+	cont "decorative shrubs…"
 	done
 
 BTErikaWinText:
-	text ""
-	line ""
+	text "Oh my. I was lost"
+	line "in thought…"
 	done
 
 BTJanineGreetingText:
-	text ""
-	line ""
+	text "I'm going to make"
+	line "my dad proud!"
 	done
 
 BTJanineLossText:
-	text ""
-	line ""
+	text "I knew I had it in"
+	line "me!"
 	done
 
 BTJanineWinText:
-	text ""
-	line ""
+	text "I still need more"
+	line "training…"
 	done
 
 BTSabrinaGreetingText:
-	text ""
-	line ""
+	text "Perhaps this will"
+	line "be the battle I"
+	cont "foresaw…"
 	done
 
 BTSabrinaLossText:
-	text ""
-	line ""
+	text "Yes… this is what"
+	line "I predicted."
 	done
 
 BTSabrinaWinText:
-	text ""
-	line ""
+	text "No… I still can't"
+	line "make my vision a"
+	cont "reality."
 	done
 
 BTBlaineGreetingText:
-	text ""
-	line ""
+	text "BURN HEAL won't"
+	line "save you in here!"
 	done
 
 BTBlaineLossText:
@@ -104,18 +109,21 @@ BTBlaineWinText:
 	done
 
 BTBlueGreetingText:
-	text ""
-	line ""
+	text "You again, punk"
+	line "CHAMP?"
+
+	para "You'd better make"
+	line "this a good one!"
 	done
 
 BTBlueLossText:
-	text ""
-	line ""
+	text "Heh. Having an off"
+	line "day?"
 	done
 
 BTBlueWinText:
-	text ""
-	line ""
+	text "Tch… Fine, you win"
+	line "again."
 	done
 
 BTFalknerGreetingText:
@@ -134,28 +142,31 @@ BTFalknerWinText:
 	done
 
 BTBugsyGreetingText:
-	text ""
-	line ""
+	text "This place is"
+	line "great for collect-"
+	cont "ing research data!"
 	done
 
 BTBugsyLossText:
-	text ""
-	line ""
+	text "Yeah! Way to go,"
+	line "team!"
 	done
 
 BTBugsyWinText:
-	text ""
-	line ""
+	text "Crushed underfoot…"
+	line "Yikes."
 	done
 
 BTWhitneyGreetingText:
-	text ""
-	line ""
+	text "Aww, did you come"
+	line "in here looking"
+
+	para "for little old me?"
+	line "Well, here I am!"
 	done
 
 BTWhitneyLossText:
-	text ""
-	line ""
+	text "Yeehaw! We did it!"
 	done
 
 BTWhitneyWinText:
@@ -194,18 +205,20 @@ BTChuckWinText:
 	done
 
 BTJasmineGreetingText:
-	text ""
-	line ""
+	text "Um… It's nice to"
+	line "see you again…"
+
+	para "…Shall we begin?"
 	done
 
 BTJasmineLossText:
-	text ""
-	line ""
+	text "…That's the power"
+	line "of cold steel."
 	done
 
 BTJasmineWinText:
-	text ""
-	line ""
+	text "Um…"
+	line "Congratulations…"
 	done
 
 BTPryceGreetingText:
@@ -244,8 +257,9 @@ BTKogaGreetingText:
 	done
 
 BTKogaLossText:
-	text ""
-	line ""
+	text "Now you know the"
+	line "true power of the"
+	cont "NINJA!"
 	done
 
 BTKogaWinText:
@@ -295,8 +309,7 @@ BTLucasLossText:
 	done
 
 BTLucasWinText:
-	text ""
-	line ""
+	text "OBJECTION!"
 	done
 
 BTPercyGreetingText:
@@ -339,8 +352,14 @@ BTLewotWinText:
 	done
 
 BTLanceGreetingText:
-	text ""
-	line ""
+	text "CHAMPION <PLAYER>!"
+
+	para "I'm excited to get"
+	line "another chance to"
+	cont "challenge you!"
+
+	para "I hope you're"
+	line "ready!"
 	done
 
 BTLanceLossText:
@@ -349,8 +368,8 @@ BTLanceLossText:
 	done
 
 BTLanceWinText:
-	text ""
-	line ""
+	text "You truly are"
+	line "remarkable."
 	done
 
 BTRedGreetingText:
