@@ -4,8 +4,9 @@ BTBrockGreetingText:
 	done
 
 BTBrockLossText:
-	text ""
-	line ""
+	text "Our true-grit"
+	line "determination led"
+	cont "us to victory!"
 	done
 
 BTBrockWinText:
@@ -14,13 +15,14 @@ BTBrockWinText:
 	done
 
 BTMistyGreetingText:
-	text ""
-	line ""
+	text "So you're here…"
+	line "Alright, give me"
+	cont "all you've got!"
 	done
 
 BTMistyLossText:
-	text ""
-	line ""
+	text "Looks like you got"
+	line "washed away!"
 	done
 
 BTMistyWinText:
@@ -28,18 +30,21 @@ BTMistyWinText:
 	done
 
 BTLtSurgeGreetingText:
-	text ""
-	line ""
+	text "Hey! It's the JOHTO"
+	line "tyke!"
+
+	para "Let's light this"
+	line "place up!"
 	done
 
 BTLtSurgeLossText:
-	text ""
-	line ""
+	text "How about that!"
+	line "I've still got it!"
 	done
 
 BTLtSurgeWinText:
-	text ""
-	line ""
+	text "I got steamrolled!"
+	line "Impressive!"
 	done
 
 BTErikaGreetingText:
@@ -99,13 +104,13 @@ BTBlaineGreetingText:
 	done
 
 BTBlaineLossText:
-	text ""
-	line ""
+	text "Hah! I cooked you"
+	line "that time!"
 	done
 
 BTBlaineWinText:
-	text ""
-	line ""
+	text "Hurgh… you're still"
+	line "tough."
 	done
 
 BTBlueGreetingText:
@@ -127,18 +132,23 @@ BTBlueWinText:
 	done
 
 BTFalknerGreetingText:
-	text ""
-	line ""
+	text "It's you…"
+
+	para "I'll show you how"
+	line "high I can soar"
+	cont "this time!"
 	done
 
 BTFalknerLossText:
-	text ""
-	line ""
+	text "My dad's #MON"
+	line "pulled through!"
 	done
 
 BTFalknerWinText:
-	text ""
-	line ""
+	text "Darn it all…"
+
+	para "We'll make a come-"
+	line "back, I promise!"
 	done
 
 BTBugsyGreetingText:
@@ -175,33 +185,40 @@ BTWhitneyWinText:
 	done
 
 BTMortyGreetingText:
-	text ""
-	line ""
+	text "Hey, <PLAYER>."
+	line "Still at it?"
+
+	para "Let's see how much"
+	line "we've improved!"
 	done
 
 BTMortyLossText:
-	text ""
-	line ""
+	text "Just one step"
+	line "closer to the top."
 	done
 
 BTMortyWinText:
-	text ""
-	line ""
+	text "Looks like you're"
+	line "still ahead of me…"
 	done
 
 BTChuckGreetingText:
-	text ""
-	line ""
+	text "HWAAAH!"
+	line "<PLAYER>!"
+
+	para "Let's make them"
+	line "feel our battle in"
+	cont "the next room!"
 	done
 
 BTChuckLossText:
-	text ""
-	line ""
+	text "HYAAH! That's how"
+	line "it's done!"
 	done
 
 BTChuckWinText:
-	text ""
-	line ""
+	text "That was a little"
+	line "too hard…"
 	done
 
 BTJasmineGreetingText:
@@ -222,38 +239,47 @@ BTJasmineWinText:
 	done
 
 BTPryceGreetingText:
-	text ""
-	line ""
+	text "<PLAYER>… I've"
+	line "trained since we"
+	cont "last met."
+
+	para "Let's see if it's"
+	line "enough."
 	done
 
 BTPryceLossText:
-	text ""
-	line ""
+	text "Now it's your turn"
+	line "to train more."
 	done
 
 BTPryceWinText:
-	text ""
-	line ""
+	text "You continue to"
+	line "prove yourself…"
 	done
 
 BTClairGreetingText:
-	text ""
-	line ""
+	text "…You again…"
+
+	para "Let's keep things"
+	line "fair this time."
 	done
 
 BTClairLossText:
-	text ""
-	line ""
+	text "Ha! So you're not"
+	line "unbeatable!"
 	done
 
 BTClairWinText:
-	text ""
-	line ""
+	text "…I'll accept my"
+	line "loss with grace."
 	done
 
 BTKogaGreetingText:
-	text ""
-	line ""
+	text "My daughter speaks"
+	line "highly of you."
+
+	para "Can you live up to"
+	line "your reputation?"
 	done
 
 BTKogaLossText:
@@ -263,23 +289,25 @@ BTKogaLossText:
 	done
 
 BTKogaWinText:
-	text ""
-	line ""
+	text "Ah! Impressive."
 	done
 
 BTKarenGreetingText:
-	text ""
-	line ""
+	text "Can you keep me"
+	line "entertained?"
 	done
 
 BTKarenLossText:
-	text ""
-	line ""
+	text "I am known for my"
+	line "overpowering tac-"
+	cont "tics. Train more"
+	cont "and try again."
 	done
 
 BTKarenWinText:
-	text ""
-	line ""
+	text "You backed me into"
+	line "a corner."
+	cont "Well done."
 	done
 
 BTADGreetingText:
@@ -299,13 +327,13 @@ BTADWinText:
 	done
 
 BTLucasGreetingText:
-	text ""
-	line ""
+	text "It's me again."
+	line "Think you can beat"
+	cont "me in here?"
 	done
 
 BTLucasLossText:
-	text ""
-	line ""
+	text "Too bad."
 	done
 
 BTLucasWinText:
@@ -363,8 +391,9 @@ BTLanceGreetingText:
 	done
 
 BTLanceLossText:
-	text ""
-	line ""
+	text "Does this mean I"
+	line "win my title back?"
+	cont "Haha!"
 	done
 
 BTLanceWinText:
