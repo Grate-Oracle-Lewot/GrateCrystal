@@ -198,6 +198,7 @@ TotodilePokeBallScript:
 	givepoke SKARMORY, 100, GOLD_BERRY
 	givepoke HITMONTOP, 100, LEFTOVERS
 	givepoke PORYGON2, 100, BERRY_JUICE
+	givepoke MEWTWO, 100, CANDIED_YAM
 	giveitem HP_UP, 99
 	giveitem PROTEIN, 99
 	giveitem IRON, 99
