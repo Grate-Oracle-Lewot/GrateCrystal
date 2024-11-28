@@ -31,14 +31,14 @@ BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer::
 ; Load one random boss trainer into 7th slot
 	ldh a, [hRandomAdd]
 	ld b, a
-.resample
+.resample2
 	call Random
 	ldh a, [hRandomAdd]
 	add b
 	ld b, a ; b contains the nr of the trainer
 	maskbits BATTLETOWER_NUM_BOSS_TRAINERS
 	cp BATTLETOWER_NUM_BOSS_TRAINERS
-	jr nc, .resample
+	jr nc, .resample2
 	ld [hl], a
 	jp CloseSRAM
 
