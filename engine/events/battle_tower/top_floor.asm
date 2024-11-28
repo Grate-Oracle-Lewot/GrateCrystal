@@ -82,6 +82,7 @@ BattleTowerTopFloorLoadCurrentOpponent::
 .boss
 	ld hl, BattleTowerBossTrainers
 .merge
+	call CloseSRAM
 ; Add c to table at hl to find trainer name and class
 	add hl, bc
 ; Copy name (10 bytes) and class (1 byte) of trainer into de
@@ -89,7 +90,6 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	call AddNTimes
 	ld bc, NAME_LENGTH
 	call CopyBytes
-	call CloseSRAM
 
 ; Load party into de+11 based on trainer class
 	ld a, [wBT_OTTrainerClass]
@@ -249,6 +249,155 @@ BattleTowerLoadSpecialParty:
 	pop af
 	ldh [rSVBK], a
 	ret
+
+BattleTowerTopFloorText::
+; Print text c for trainer [wBT_OTTrainerClass]
+; 1: Intro text
+; 2: Player lost
+; 3: Player won
+	ldh a, [rSVBK]
+	push af
+
+	ld a, BANK(sBTTrainers)
+	call OpenSRAM
+
+; Find stored nr of current trainer based on win streak, put in c
+	ld hl, sBTTrainers
+	ld a, [sNrOfBeatenBattleTowerTrainers]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld c, [hl]
+
+	ld a, [sNrOfBeatenBattleTowerTrainers]
+	cp 6
+	jr nc, .boss
+	ld hl, BTSpecialTrainerTexts
+	jr .merge
+.boss
+	ld hl, BTBossTrainerTexts
+.merge
+	call CloseSRAM
+; Add c to table at hl to find trainer text
+	add hl, bc
+	ld [wBT_TrainerTextIndex], a
+	push af
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld c, a
+	ld a, [hl]
+	ld h, a
+	ld l, c
+	pop af
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld c, a
+	ld a, [hl]
+	ld l, c
+	ld h, a
+	bccoord 1, 14
+	pop af
+	ldh [rSVBK], a
+	call CloseSRAM
+	jp PlaceHLTextAtBC
+
+BTSpecialTrainerTexts:
+	dw .Greetings
+	dw .PlayerLost
+	dw .PlayerWon
+
+.Greetings:
+	dw BTBrockGreetingText
+	dw BTMistyGreetingText
+	dw BTLtSurgeGreetingText
+	dw BTErikaGreetingText
+	dw BTJanineGreetingText
+	dw BTSabrinaGreetingText
+	dw BTBlaineGreetingText
+	dw BTBlueGreetingText
+	dw BTFalknerGreetingText
+	dw BTBugsyGreetingText
+	dw BTWhitneyGreetingText
+	dw BTMortyGreetingText
+	dw BTChuckGreetingText
+	dw BTJasmineGreetingText
+	dw BTPryceGreetingText
+	dw BTClairGreetingText
+	dw BTKogaGreetingText
+	dw BTKarenGreetingText
+
+.PlayerLost:
+	dw BTBrockLossText
+	dw BTMistyLossText
+	dw BTLtSurgeLossText
+	dw BTErikaLossText
+	dw BTJanineLossText
+	dw BTSabrinaLossText
+	dw BTBlaineLossText
+	dw BTBlueLossText
+	dw BTFalknerLossText
+	dw BTBugsyLossText
+	dw BTWhitneyLossText
+	dw BTMortyLossText
+	dw BTChuckLossText
+	dw BTJasmineLossText
+	dw BTPryceLossText
+	dw BTClairLossText
+	dw BTKogaLossText
+	dw BTKarenLossText
+
+.PlayerWon:
+	dw BTBrockWinText
+	dw BTMistyWinText
+	dw BTLtSurgeWinText
+	dw BTErikaWinText
+	dw BTJanineWinText
+	dw BTSabrinaWinText
+	dw BTBlaineWinText
+	dw BTBlueWinText
+	dw BTFalknerWinText
+	dw BTBugsyWinText
+	dw BTWhitneyWinText
+	dw BTMortyWinText
+	dw BTChuckWinText
+	dw BTJasmineWinText
+	dw BTPryceWinText
+	dw BTClairWinText
+	dw BTKogaWinText
+	dw BTKarenWinText
+
+BTBossTrainerTexts:
+	dw .Greetings
+	dw .PlayerLost
+	dw .PlayerWon
+
+.Greetings:
+	dw BTADGreetingText
+	dw BTLucasGreetingText
+	dw BTPercyGreetingText
+	dw BTLewotGreetingText
+	dw BTLanceGreetingText
+	dw BTRedGreetingText
+
+.PlayerLost:
+	dw BTADLossText
+	dw BTLucasLossText
+	dw BTPercyLossText
+	dw BTLewotLossText
+	dw BTLanceLossText
+	dw BTRedLossText
+
+.PlayerWon:
+	dw BTADWinText
+	dw BTLucasWinText
+	dw BTPercyWinText
+	dw BTLewotWinText
+	dw BTLanceWinText
+	dw BTRedWinText
 
 INCLUDE "data/battle_tower/special_classes.asm"
 
