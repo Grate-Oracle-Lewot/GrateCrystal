@@ -311,8 +311,7 @@ BTKarenWinText:
 	done
 
 BTADGreetingText:
-	text "Huh, you got me as"
-	line "the boss."
+	text "Huh, you got me."
 
 	para "This shouldn't be"
 	line "too hard then."
