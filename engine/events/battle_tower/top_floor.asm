@@ -72,14 +72,16 @@ BattleTowerTopFloorLoadCurrentOpponent::
 .boss
 	ld hl, BattleTowerBossTrainers
 .merge
-	call CloseSRAM
 ; Add c to table at hl to find trainer name and class
+	ld c, a
+	ld b, 0
 	add hl, bc
 ; Copy name (10 bytes) and class (1 byte) of trainer into de
 	ld bc, NAME_LENGTH
 	call AddNTimes
 	ld bc, NAME_LENGTH
 	call CopyBytes
+	call CloseSRAM
 
 ; Load party into de+11 based on trainer class
 	ld a, [wBT_OTTrainerClass]
@@ -267,10 +269,13 @@ BattleTowerTopFloorText::
 .boss
 	ld hl, BTBossTrainerTexts
 .merge
-	call CloseSRAM
 ; Add c to table at hl to find trainer text
+	ld c, a
+	ld b, 0
 	add hl, bc
 	ld [wBT_TrainerTextIndex], a
+	call CloseSRAM
+
 	push af
 	add hl, bc
 	add hl, bc
