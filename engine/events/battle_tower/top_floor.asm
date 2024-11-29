@@ -63,6 +63,7 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	ld b, 0
 	add hl, bc
 	ld c, [hl]
+	ld b, 0
 
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	cp 6
@@ -73,8 +74,6 @@ BattleTowerTopFloorLoadCurrentOpponent::
 	ld hl, BattleTowerBossTrainers
 .merge
 ; Add c to table at hl to find trainer name and class
-	ld c, a
-	ld b, 0
 	add hl, bc
 ; Copy name (10 bytes) and class (1 byte) of trainer into de
 	ld bc, NAME_LENGTH
@@ -260,6 +259,7 @@ BattleTowerTopFloorText::
 	ld b, 0
 	add hl, bc
 	ld c, [hl]
+	ld b, 0
 
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	cp 6
@@ -270,8 +270,6 @@ BattleTowerTopFloorText::
 	ld hl, BTBossTrainerTexts
 .merge
 ; Add c to table at hl to find trainer text
-	ld c, a
-	ld b, 0
 	add hl, bc
 	ld [wBT_TrainerTextIndex], a
 	call CloseSRAM
