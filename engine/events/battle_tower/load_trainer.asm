@@ -1,3 +1,17 @@
+BattleTowerLoadSpecialTrainer::
+	ld a, BANK(sBTTrainers)
+	call OpenSRAM
+	ld a, [sNrOfBeatenBattleTowerTrainers]
+	cp 6
+	jr c, .normal
+	call CloseSRAM
+	farcall _LoadBattleTowerSpecialTrainer
+	ret
+
+.normal
+	call CloseSRAM
+	; fallthrough
+
 LoadOpponentTrainerAndPokemon:
 	ldh a, [rSVBK]
 	push af
