@@ -195,9 +195,6 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke SKARMORY, 100, GOLD_BERRY
-	givepoke HITMONTOP, 100, LEFTOVERS
-	givepoke PORYGON2, 100, BERRY_JUICE
 	givepoke MEWTWO, 100, CANDIED_YAM
 	givepoke HO_OH, 100, DICTIONARY
 	givepoke LUGIA, 100, BERRY_JUICE
