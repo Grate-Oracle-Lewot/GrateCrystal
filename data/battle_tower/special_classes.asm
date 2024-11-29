@@ -19,15 +19,10 @@ BattleTowerSpecialTrainers:
 	db "CLAIR@@@@@", CLAIR
 	db "KOGA@@@@@@", REAL_KOGA
 	db "KAREN@@@@@", REAL_KAREN
-	assert_table_length BATTLETOWER_NUM_SPECIAL_TRAINERS
-
-BattleTowerBossTrainers:
-	table_width (NAME_LENGTH - 1) + 1, BattleTowerBossTrainers
-	; name, class
 	db "A.D.@@@@@@", WILL
 	db "LUCAS@@@@@", KOGA
 	db "PERCY@@@@@", BRUNO
 	db "LEWOT@@@@@", KAREN
 	db "LANCE@@@@@", CHAMPION
 	db "RED@@@@@@@", RED
-	assert_table_length BATTLETOWER_NUM_BOSS_TRAINERS
+	assert_table_length BATTLETOWER_NUM_SPECIAL_TRAINERS
