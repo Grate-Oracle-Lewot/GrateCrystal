@@ -360,8 +360,8 @@ BTLewotGreetingText:
 	text "We meet again. How"
 	line "do you like this"
 
-	para "whole top floor"
-	line "thing?"
+	para "change to the"
+	line "BATTLE TOWER?"
 	done
 
 BTLewotLossText:
@@ -371,11 +371,8 @@ BTLewotLossText:
 	done
 
 BTLewotWinText:
-	text "That's it. You've"
-	line "conquered every"
-
-	para "challenge I could"
-	line "throw at you!"
+	text "You're going"
+	line "places, kid."
 	done
 
 BTLanceGreetingText:
@@ -416,8 +413,7 @@ BTDefaultGreetingText:
 	done
 
 BTDefaultLossText:
-	text "Wow! I won on the"
-	line "top floor?!"
+	text "Wow! I won?!"
 	done
 
 BTDefaultWinText:
