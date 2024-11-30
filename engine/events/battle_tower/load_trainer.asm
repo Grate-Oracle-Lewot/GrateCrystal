@@ -1,4 +1,8 @@
 BattleTowerLoadSpecialTrainer::
+	ld a, [wBTChoiceOfLvlGroup]
+	cp 10
+	jr c, LoadOpponentTrainerAndPokemon
+
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 	ld a, [sNrOfBeatenBattleTowerTrainers]
