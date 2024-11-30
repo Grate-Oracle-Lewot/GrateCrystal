@@ -29,11 +29,8 @@ LoadBattleTowerSpecialTrainer::
 	maskbits BATTLETOWER_NUM_SPECIAL_TRAINERS
 	cp BATTLETOWER_NUM_SPECIAL_TRAINERS
 	jr nc, .resample
-	ld c, a
-	ld b, 0
 
 	ld hl, BattleTowerSpecialTrainers
-	add hl, bc
 ; Copy name (10 bytes) and class (1 byte) of trainer into de
 	ld bc, NAME_LENGTH
 	call AddNTimes
