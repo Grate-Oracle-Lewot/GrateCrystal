@@ -211,16 +211,7 @@ _BattleTowerSpecialTrainerText::
 ; 3: Player won
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rSVBK], a
-	ld hl, wBT_OTTrainerClass
-	ld a, [hl]
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, BTTrainerClassTexts
-	add hl, de
-	ld a, [hl]
+	ld a, [wBT_OTTrainerClass]
 	cp BROCK
 	jr z, .brock
 	cp MISTY
@@ -345,6 +336,7 @@ _BattleTowerSpecialTrainerText::
 	ld a, 24
 
 .proceed
+	ld hl, BTSpecialTrainerTexts
 	ld b, 0
 	dec c
 	jr nz, .restore
