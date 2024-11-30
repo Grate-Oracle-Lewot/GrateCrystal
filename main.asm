@@ -704,7 +704,7 @@ INCLUDE "gfx/weather_images.asm"
 
 SECTION "Battle Tower Additions", ROMX
 
-INCLUDE "engine/events/battle_tower/top_floor.asm"
+INCLUDE "engine/events/battle_tower/additions.asm"
 
 
 SECTION "DEX GFX 2", ROMX
