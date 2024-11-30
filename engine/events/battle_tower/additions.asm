@@ -1,4 +1,4 @@
-_LoadBattleTowerSpecialTrainer::
+LoadBattleTowerSpecialTrainer::
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
