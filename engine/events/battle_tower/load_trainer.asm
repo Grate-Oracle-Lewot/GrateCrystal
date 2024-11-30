@@ -9,7 +9,7 @@ BattleTowerLoadSpecialTrainer::
 	cp 6
 	jr c, .normal
 	call CloseSRAM
-	farcall _LoadBattleTowerSpecialTrainer
+	farcall LoadBattleTowerSpecialTrainer
 	ret
 
 .normal
