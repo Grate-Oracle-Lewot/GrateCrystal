@@ -1,3 +1,17 @@
+BattleTowerSpecialTrainerText::
+	ld a, BANK(sBTTrainers)
+	call OpenSRAM
+	ld a, [sNrOfBeatenBattleTowerTrainers]
+	cp 6
+	jr c, .normal
+	call CloseSRAM
+	farcall _BattleTowerSpecialTrainerText
+	ret
+
+.normal
+	call CloseSRAM
+	; fallthrough
+
 BattleTowerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
