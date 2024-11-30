@@ -161,11 +161,6 @@ Script_AMonLevelExceeds:
 	waitbutton
 	sjump Script_Menu_ChallengeExplanationCancel
 
-Script_MayNotEnterABattleRoomUnderL70:
-	writetext Text_MayNotEnterABattleRoomUnderL70
-	waitbutton
-	sjump Script_Menu_ChallengeExplanationCancel
-
 Script_MobileError:
 	special BattleTowerMobileError
 	closetext
@@ -265,17 +260,17 @@ MovementData_BattleTowerBattleRoomOpponentWalksOut:
 	step_end
 
 MovementData_BattleTowerBattleRoomReceptionistWalksToPlayer:
-	slow_step RIGHT
-	slow_step RIGHT
-	slow_step UP
-	slow_step UP
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
 	step_end
 
 MovementData_BattleTowerBattleRoomReceptionistWalksAway:
-	slow_step DOWN
-	slow_step DOWN
-	slow_step LEFT
-	slow_step LEFT
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
 	turn_head RIGHT
 	step_end
 
@@ -475,23 +470,6 @@ Text_AMonLevelExceeds:
 	cont "levels exceeds @"
 	text_decimal wScriptVar, 1, 3
 	text "."
-	done
-
-Text_MayNotEnterABattleRoomUnderL70:
-	text_ram wcd49
-	text " may not"
-	line "enter a BATTLE"
-	cont "ROOM under L70."
-
-	para "This BATTLE ROOM"
-	line "is for L@"
-	text_decimal wScriptVar, 1, 3
-	text "."
-	done
-
-Text_ChallengeTheTopFloor:
-	text "Will you challenge"
-	line "the top floor?"
 	done
 
 Text_BattleTowerYoungster:
