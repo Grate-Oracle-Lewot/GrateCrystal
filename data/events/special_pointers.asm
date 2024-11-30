@@ -135,7 +135,7 @@ SpecialsPointers::
 	add_special Function170114
 	add_special BattleTowerBattle
 	add_special Function1704e1
-	add_special BattleTowerSpecialTrainerText
+	add_special UnusedBattleTowerDummySpecial1
 	add_special LoadOpponentTrainerAndPokemonWithOTSprite
 	add_special Function11ba38
 	add_special CheckForBattleTowerRules
