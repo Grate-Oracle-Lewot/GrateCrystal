@@ -200,6 +200,10 @@ BattleTowerLoadSpecialParty:
 	ldh [rSVBK], a
 	ret
 
+INCLUDE "data/battle_tower/special_classes.asm"
+
+INCLUDE "data/battle_tower/special_parties.asm"
+
 _BattleTowerSpecialTrainerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
@@ -460,9 +464,5 @@ BTSpecialTrainerTexts:
 	dw BTLewotWinText
 	dw BTLanceWinText
 	dw BTRedWinText
-
-INCLUDE "data/battle_tower/special_classes.asm"
-
-INCLUDE "data/battle_tower/special_parties.asm"
 
 INCLUDE "data/battle_tower/special_text.asm"
