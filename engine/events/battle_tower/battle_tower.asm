@@ -1473,7 +1473,7 @@ BattleTowerAction_UbersCheck:
 	ld [wScriptVar], a
 	ret
 
-BattleTowerTopFloorLoadOpponentWithOTSprite:
+LoadSpecialTrainerAndPokemonWithOTSprite:
 	farcall BattleTowerTopFloorLoadCurrentOpponent
 	jr BattleTowerLoadOpponentMerge
 
