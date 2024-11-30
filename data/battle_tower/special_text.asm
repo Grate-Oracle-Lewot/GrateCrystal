@@ -367,8 +367,8 @@ BTLewotGreetingText:
 	text "We meet again. How"
 	line "do you like this"
 
-	para "change to the"
-	line "BATTLE TOWER?"
+	para "whole boss trainer"
+	line "thing?"
 	done
 
 BTLewotLossText:
@@ -378,8 +378,11 @@ BTLewotLossText:
 	done
 
 BTLewotWinText:
-	text "You're going"
-	line "places, kid."
+	text "That's it. You've"
+	line "conquered every"
+
+	para "challenge I could"
+	line "throw at you!"
 	done
 
 BTLanceGreetingText:
@@ -412,18 +415,4 @@ BTRedGreetingText:
 BTRedLossText:
 BTRedWinText:
 	text "…"
-	done
-
-BTDefaultGreetingText:
-	text "I think I'm in the"
-	line "wrong room…"
-	done
-
-BTDefaultLossText:
-	text "Wow! I won?!"
-	done
-
-BTDefaultWinText:
-	text "That's what I get"
-	line "for sneaking in…"
 	done
