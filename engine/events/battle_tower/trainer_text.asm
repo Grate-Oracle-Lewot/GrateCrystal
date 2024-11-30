@@ -1,4 +1,8 @@
 BattleTowerSpecialTrainerText::
+	ld a, [wBTChoiceOfLvlGroup]
+	cp 10
+	jr c, BattleTowerText
+
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 	ld a, [sNrOfBeatenBattleTowerTrainers]
