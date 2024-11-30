@@ -20,15 +20,15 @@ Script_BattleRoom:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerWalksIn
 ; beat all 7 opponents in a row
 Script_BattleRoomLoop:
-	checkevent EVENT_BATTLE_TOWER_TOP_FLOOR
-	iftrue .TopFloor
+	checkevent EVENT_BEAT_RED
+	iftrue .SpecialTrainer
 	setval BATTLETOWERBATTLEROOM_YOUNGSTER
 	special LoadOpponentTrainerAndPokemonWithOTSprite
 	sjump .Merge
 
-.TopFloor:
+.SpecialTrainer:
 	setval BATTLETOWERBATTLEROOM_YOUNGSTER
-	special BattleTowerTopFloorLoadOpponentWithOTSprite
+	special LoadSpecialTrainerAndPokemonWithOTSprite
 .Merge:
 	appear BATTLETOWERBATTLEROOM_YOUNGSTER
 	warpsound
@@ -63,7 +63,7 @@ Script_BattleRoomLoop:
 	opentext
 	writetext Text_NextUpOpponentNo
 	yesorno
-	iffalse Script_DontSaveAndEndTheSession
+	iffalse Script_DontBattleNextOpponent
 Script_ContinueAndBattleNextOpponent:
 	closetext
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent
