@@ -1,38 +1,4 @@
-BattleTowerTopFloorLoadSixSpecialAndOneBossTrainer::
-	ld a, BANK(sBTTrainers)
-	call OpenSRAM
-
-; Fill sNrOfBeatenBattleTowerTrainers and sBTTrainers with zeros
-	xor a
-	ld [sNrOfBeatenBattleTowerTrainers], a
-	ld hl, sBTTrainers
-	ld bc, BATTLETOWER_STREAK_LENGTH
-	call ByteFill
-
-; Load six random special trainers
-	ld c, BATTLETOWER_STREAK_LENGTH - 1
-	ld hl, sBTTrainers
-.loop
-	call Random
-	ld b, a ; b contains the nr of the trainer
-	maskbits BATTLETOWER_NUM_SPECIAL_TRAINERS
-	cp BATTLETOWER_NUM_SPECIAL_TRAINERS
-	jr nc, .loop
-	ld b, a
-	ld [hli], a
-	dec c
-	jr nz, .loop
-
-; Load one random boss trainer into 7th slot
-.resample
-	call Random
-	maskbits BATTLETOWER_NUM_BOSS_TRAINERS
-	cp BATTLETOWER_NUM_BOSS_TRAINERS
-	jr nc, .resample
-	ld [hl], a
-	jp CloseSRAM
-
-BattleTowerTopFloorLoadCurrentOpponent::
+_LoadBattleTowerSpecialTrainer::
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
@@ -53,27 +19,20 @@ BattleTowerTopFloorLoadCurrentOpponent::
 ; Set wBT_OTTrainer as start address to write the following data to
 	ld de, wBT_OTTrainer
 
-	ld a, BANK(sBTTrainers)
-	call OpenSRAM
-
-; Find stored nr of current trainer based on win streak, put in c
-	ld hl, sBTTrainers
-	ld a, [sNrOfBeatenBattleTowerTrainers]
+	ldh a, [hRandomAdd]
+	ld b, a
+.resample
+	call Random
+	ldh a, [hRandomAdd]
+	add b
+	ld b, a
+	maskbits BATTLETOWER_NUM_SPECIAL_TRAINERS
+	cp BATTLETOWER_NUM_SPECIAL_TRAINERS
+	jr nc, .resample
 	ld c, a
 	ld b, 0
-	add hl, bc
-	ld c, [hl]
-	ld b, 0
 
-	ld a, [sNrOfBeatenBattleTowerTrainers]
-	cp 6
-	jr nc, .boss
 	ld hl, BattleTowerSpecialTrainers
-	jr .merge
-.boss
-	ld hl, BattleTowerBossTrainers
-.merge
-; Add c to table at hl to find trainer name and class
 	add hl, bc
 ; Copy name (10 bytes) and class (1 byte) of trainer into de
 	ld bc, NAME_LENGTH
@@ -241,39 +200,157 @@ BattleTowerLoadSpecialParty:
 	ldh [rSVBK], a
 	ret
 
-BattleTowerTopFloorText::
+_BattleTowerSpecialTrainerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
 ; 2: Player lost
 ; 3: Player won
 	ldh a, [rSVBK]
 	push af
+	ld a, BANK(wBT_OTTrainerClass)
+	ldh [rSVBK], a
+	ld hl, wBT_OTTrainerClass
+	ld a, [hl]
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, BTTrainerClassTexts
+	add hl, de
+	ld a, [hl]
+	cp BROCK
+	jr z, .brock
+	cp MISTY
+	jr z, .misty
+	cp LT_SURGE
+	jr z, .lt_surge
+	cp ERIKA
+	jr z, .erika
+	cp JANINE
+	jr z, .janine
+	cp SABRINA
+	jr z, .sabrina
+	cp BLAINE
+	jr z, .blaine
+	cp BLUE
+	jr z, .blue
+	cp FALKNER
+	jr z, .falkner
+	cp BUGSY
+	jr z, .bugsy
+	cp WHITNEY
+	jr z, .whitney
+	cp MORTY
+	jr z, .morty
+	cp CHUCK
+	jr z, .chuck
+	cp JASMINE
+	jr z, .jasmine
+	cp PRYCE
+	jr z, .pryce
+	cp CLAIR
+	jr z, .clair
+	cp REAL_KOGA
+	jr z, .koga
+	cp REAL_KAREN
+	jr z, .karen
+	cp WILL
+	jr z, .a_d
+	cp KOGA
+	jr z, .lucas
+	cp BRUNO
+	jr z, .percy
+	cp KAREN
+	jr z, .lewot
+	cp CHAMPION
+	jr z, .lance
+	cp RED
+	jr z, .red
+	xor a
+	jr .proceed
 
-	ld a, BANK(sBTTrainers)
-	call OpenSRAM
+.brock
+	ld a, 1
+	jr .proceed
+.misty
+	ld a, 2
+	jr .proceed
+.lt_surge
+	ld a, 3
+	jr .proceed
+.erika
+	ld a, 4
+	jr .proceed
+.janine
+	ld a, 5
+	jr .proceed
+.sabrina
+	ld a, 6
+	jr .proceed
+.blaine
+	ld a, 7
+	jr .proceed
+.blue
+	ld a, 8
+	jr .proceed
+.falkner
+	ld a, 9
+	jr .proceed
+.bugsy
+	ld a, 10
+	jr .proceed
+.whitney
+	ld a, 11
+	jr .proceed
+.morty
+	ld a, 12
+	jr .proceed
+.chuck
+	ld a, 13
+	jr .proceed
+.jasmine
+	ld a, 14
+	jr .proceed
+.pryce
+	ld a, 15
+	jr .proceed
+.clair
+	ld a, 16
+	jr .proceed
+.koga
+	ld a, 17
+	jr .proceed
+.karen
+	ld a, 18
+	jr .proceed
+.a_d
+	ld a, 19
+	jr .proceed
+.lucas
+	ld a, 20
+	jr .proceed
+.percy
+	ld a, 21
+	jr .proceed
+.lewot
+	ld a, 22
+	jr .proceed
+.lance
+	ld a, 23
+	jr .proceed
+.red
+	ld a, 24
 
-; Find stored nr of current trainer based on win streak, put in c
-	ld hl, sBTTrainers
-	ld a, [sNrOfBeatenBattleTowerTrainers]
-	ld c, a
+.proceed
 	ld b, 0
-	add hl, bc
-	ld c, [hl]
-	ld b, 0
-
-	ld a, [sNrOfBeatenBattleTowerTrainers]
-	cp 6
-	jr nc, .boss
-	ld hl, BTSpecialTrainerTexts
-	jr .merge
-.boss
-	ld hl, BTBossTrainerTexts
-.merge
-; Add c to table at hl to find trainer text
-	add hl, bc
+	dec c
+	jr nz, .restore
 	ld [wBT_TrainerTextIndex], a
-	call CloseSRAM
+	jr .okay
 
+.restore
+	ld a, [wBT_TrainerTextIndex]
+
+.okay
 	push af
 	add hl, bc
 	add hl, bc
@@ -304,6 +381,7 @@ BTSpecialTrainerTexts:
 	dw .PlayerWon
 
 .Greetings:
+	dw BTDefaultGreetingText
 	dw BTBrockGreetingText
 	dw BTMistyGreetingText
 	dw BTLtSurgeGreetingText
@@ -322,8 +400,15 @@ BTSpecialTrainerTexts:
 	dw BTClairGreetingText
 	dw BTKogaGreetingText
 	dw BTKarenGreetingText
+	dw BTADGreetingText
+	dw BTLucasGreetingText
+	dw BTPercyGreetingText
+	dw BTLewotGreetingText
+	dw BTLanceGreetingText
+	dw BTRedGreetingText
 
 .PlayerLost:
+	dw BTDefaultLossText
 	dw BTBrockLossText
 	dw BTMistyLossText
 	dw BTLtSurgeLossText
@@ -342,8 +427,15 @@ BTSpecialTrainerTexts:
 	dw BTClairLossText
 	dw BTKogaLossText
 	dw BTKarenLossText
+	dw BTADLossText
+	dw BTLucasLossText
+	dw BTPercyLossText
+	dw BTLewotLossText
+	dw BTLanceLossText
+	dw BTRedLossText
 
 .PlayerWon:
+	dw BTDefaultWinText
 	dw BTBrockWinText
 	dw BTMistyWinText
 	dw BTLtSurgeWinText
@@ -362,29 +454,6 @@ BTSpecialTrainerTexts:
 	dw BTClairWinText
 	dw BTKogaWinText
 	dw BTKarenWinText
-
-BTBossTrainerTexts:
-	dw .Greetings
-	dw .PlayerLost
-	dw .PlayerWon
-
-.Greetings:
-	dw BTADGreetingText
-	dw BTLucasGreetingText
-	dw BTPercyGreetingText
-	dw BTLewotGreetingText
-	dw BTLanceGreetingText
-	dw BTRedGreetingText
-
-.PlayerLost:
-	dw BTADLossText
-	dw BTLucasLossText
-	dw BTPercyLossText
-	dw BTLewotLossText
-	dw BTLanceLossText
-	dw BTRedLossText
-
-.PlayerWon:
 	dw BTADWinText
 	dw BTLucasWinText
 	dw BTPercyWinText
