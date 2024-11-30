@@ -1474,7 +1474,7 @@ BattleTowerAction_UbersCheck:
 	ret
 
 LoadSpecialTrainerAndPokemonWithOTSprite:
-	farcall BattleTowerTopFloorLoadCurrentOpponent
+	farcall BattleTowerLoadSpecialTrainer
 	jr BattleTowerLoadOpponentMerge
 
 LoadOpponentTrainerAndPokemonWithOTSprite:
