@@ -1,6 +1,6 @@
 BTTrainerClassTexts:
 ; entries correspond to trainer classes
-	table_width 1, BTTrainerClassGenders
+	table_width 1, BTTrainerClassTexts
 	db FALKNER      ; FALKNER
 	db WHITNEY      ; WHITNEY
 	db BUGSY        ; BUGSY
