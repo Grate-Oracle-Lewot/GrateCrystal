@@ -1,90 +1,3 @@
-BTTrainerClassTexts:
-; entries correspond to trainer classes
-	table_width 1, BTTrainerClassTexts
-	db FALKNER      ; FALKNER
-	db WHITNEY      ; WHITNEY
-	db BUGSY        ; BUGSY
-	db MORTY        ; MORTY
-	db PRYCE        ; PRYCE
-	db JASMINE      ; JASMINE
-	db CHUCK        ; CHUCK
-	db CLAIR        ; CLAIR
-	db TRAINER_NONE ; RIVAL1
-	db TRAINER_NONE ; POKEMON_PROF
-	db WILL         ; WILL
-	db TRAINER_NONE ; CAL
-	db BRUNO        ; BRUNO
-	db KAREN        ; KAREN
-	db KOGA         ; KOGA
-	db CHAMPION     ; CHAMPION
-	db BROCK        ; BROCK
-	db MISTY        ; MISTY
-	db LT_SURGE     ; LT_SURGE
-	db TRAINER_NONE ; SCIENTIST
-	db ERIKA        ; ERIKA
-	db TRAINER_NONE ; YOUNGSTER
-	db TRAINER_NONE ; SCHOOLBOY
-	db TRAINER_NONE ; BIRD_KEEPER
-	db TRAINER_NONE ; LASS
-	db JANINE       ; JANINE
-	db TRAINER_NONE ; COOLTRAINERM
-	db TRAINER_NONE ; COOLTRAINERF
-	db TRAINER_NONE ; BEAUTY
-	db TRAINER_NONE ; POKEMANIAC
-	db TRAINER_NONE ; GRUNTM
-	db TRAINER_NONE ; GENTLEMAN
-	db TRAINER_NONE ; SKIER
-	db TRAINER_NONE ; TEACHER
-	db SABRINA      ; SABRINA
-	db TRAINER_NONE ; BUG_CATCHER
-	db TRAINER_NONE ; FISHER
-	db TRAINER_NONE ; SWIMMERM
-	db TRAINER_NONE ; SWIMMERF
-	db TRAINER_NONE ; SAILOR
-	db TRAINER_NONE ; SUPER_NERD
-	db TRAINER_NONE ; RIVAL2
-	db TRAINER_NONE ; GUITARIST
-	db TRAINER_NONE ; HIKER
-	db TRAINER_NONE ; BIKER
-	db BLAINE       ; BLAINE
-	db TRAINER_NONE ; BURGLAR
-	db TRAINER_NONE ; FIREBREATHER
-	db TRAINER_NONE ; JUGGLER
-	db TRAINER_NONE ; BLACKBELT_T
-	db TRAINER_NONE ; EXECUTIVEM
-	db TRAINER_NONE ; PSYCHIC_T
-	db TRAINER_NONE ; PICNICKER
-	db TRAINER_NONE ; CAMPER
-	db TRAINER_NONE ; EXECUTIVEF
-	db TRAINER_NONE ; SAGE
-	db TRAINER_NONE ; MEDIUM
-	db TRAINER_NONE ; BOARDER
-	db TRAINER_NONE ; POKEFANM
-	db TRAINER_NONE ; KIMONO_GIRL
-	db TRAINER_NONE ; TWINS
-	db TRAINER_NONE ; POKEFANF
-	db RED          ; RED
-	db BLUE         ; BLUE
-	db TRAINER_NONE ; OFFICER
-	db TRAINER_NONE ; GRUNTF
-	db TRAINER_NONE ; MYSTICALMAN
-	db REAL_KAREN   ; REAL_KAREN
-	db REAL_KOGA    ; REAL_KOGA
-	db TRAINER_NONE ; BOSS
-	db TRAINER_NONE ; JESSIE
-	db TRAINER_NONE ; AEROBONES
-	db TRAINER_NONE ; KABUBONES
-	db TRAINER_NONE ; MISSINGNO_T
-	db TRAINER_NONE ; GAMBLER
-	db TRAINER_NONE ; CAL_F
-	db TRAINER_NONE ; OLD
-	db TRAINER_NONE ; LORELEI
-	db TRAINER_NONE ; AGATHA
-	db TRAINER_NONE ; REAL_BRUNO
-	db TRAINER_NONE ; REAL_WILL
-	db TRAINER_NONE ; ENGINEER
-	assert_table_length NUM_TRAINER_CLASSES
-
 BTBrockGreetingText:
 	text "I'm ready to rock"
 	line "and roll!"
@@ -398,7 +311,8 @@ BTKarenWinText:
 	done
 
 BTADGreetingText:
-	text "Huh, you got me."
+	text "Huh, you got me as"
+	line "the boss."
 
 	para "This shouldn't be"
 	line "too hard then."
@@ -439,6 +353,12 @@ BTPercyGreetingText:
 	done
 
 BTPercyLossText:
+	text "The tragedy of"
+	line "BOPHADES…"
+
+	para "BOPHADEEZ NUTS!"
+	done
+
 BTPercyWinText:
 	text "Oh nooo! Toileeet!"
 	done
