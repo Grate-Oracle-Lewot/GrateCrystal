@@ -903,7 +903,7 @@ BattleTower_GiveReward:
 	inc hl
 	dec b
 	jr nz, .loop
-	ld a, POTION
+	ld a, CLEAR_BELL
 	ld [wScriptVar], a
 	ret
 
