@@ -1376,8 +1376,8 @@ BattleTowerKoga:
 	bigdw 285 ; Max HP
 	bigdw 282 ; Atk
 	bigdw 284 ; Def
-	bigdw 234 ; Spd
-	bigdw 162 ; SAtk
+	bigdw 274 ; Spd
+	bigdw 142 ; SAtk
 	bigdw 312 ; SDef
 	db "HITMONTOP@@"
 
