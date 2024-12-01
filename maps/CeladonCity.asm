@@ -20,6 +20,11 @@ CeladonCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CELADON
 	endcallback
 
+CeladonCityEndText:
+	waitbutton
+	closetext
+	end
+
 CeladonCityTutorSacredFireScript:
 	faceplayer
 	opentext
@@ -37,24 +42,18 @@ CeladonCityTutorSacredFireScript:
 
 .TutorRefused
 	writetext CeladonCityTutorSacredFireRefused
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 .NoLeaf:
 	writetext CeladonCityTutorSacredFireNoLeaf
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 .TeachMove
 	writetext CeladonCityTutorSacredFirePayment
 	takeitem GOLD_LEAF
 	waitbutton
 	writetext CeladonCityTutorSacredFireTaught
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 CeladonCityTutorAeroblastScript:
 	faceplayer
@@ -73,24 +72,18 @@ CeladonCityTutorAeroblastScript:
 
 .TutorRefused
 	writetext CeladonCityTutorAeroblastRefused
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 .NoLeaf:
 	writetext CeladonCityTutorAeroblastNoLeaf
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 .TeachMove
 	writetext CeladonCityTutorAeroblastPayment
 	takeitem SILVER_LEAF
 	waitbutton
 	writetext CeladonCityTutorAeroblastTaught
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 CeladonCityFisherScript:
 	jumptextfaceplayer CeladonCityFisherText
@@ -99,15 +92,22 @@ CeladonCityPoliwrath:
 	opentext
 	writetext CeladonCityPoliwrathText
 	cry POLIWRATH
-	waitbutton
-	closetext
-	end
+	sjump CeladonCityEndText
 
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text
 
 CeladonCityGramps2Script:
-	jumptextfaceplayer CeladonCityGramps2Text
+	faceplayer
+	opentext
+	checkflag ENGINE_RAINBOWBADGE
+	iftrue .PostBadge
+	writetext CeladonCityGramps2Text1
+	sjump CeladonCityEndText
+
+.PostBadge:
+	writetext CeladonCityGramps2Text2
+	sjump CeladonCityEndText
 
 CeladonCityYoungster1Script:
 	jumptextfaceplayer CeladonCityYoungster1Text
@@ -287,7 +287,7 @@ CeladonCityTeacher1Text:
 	cont "look prehistoric!"
 	done
 
-CeladonCityGramps2Text:
+CeladonCityGramps2Text1:
 	text "This GYM only"
 	line "allows girls"
 	cont "inside."
@@ -303,6 +303,15 @@ CeladonCityGramps2Text:
 	para "I'll ask about it"
 	line "while we're trading"
 	cont "#MON."
+	done
+
+CeladonCityGramps2Text2:
+	text "Not many people"
+	line "know this, but"
+
+	para "ERIKA's father is"
+	line "the CEO of SILPH"
+	cont "CO. in SAFFRON!"
 	done
 
 CeladonCityYoungster1Text:
