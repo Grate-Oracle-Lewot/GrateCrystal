@@ -699,7 +699,7 @@ INCLUDE "data/battle/ai/risky_effects.asm"
 
 
 AI_Smart:
-; Multiple subroutines for specific moves.
+; Multiple subroutines for specific move effects.
 
 	ld hl, wEnemyAIMoveScores
 	ld de, wEnemyMonMoves
@@ -3156,6 +3156,7 @@ AI_Smart_FlinchHit:
 ; NOTE: Called by Stomp and Twister. Does not cover Snore/Night Terror, Sky Attack, or King's Rock.
 ; Snore/Night Terror's only competition while asleep is Sleep Talk, so it's not really worth it.
 ; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria, esp. given low PP and prep turn.
+; King's Rock is ~10% and would require checking for which moves it affects, which I don't have room or patience for.
 
 ; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
