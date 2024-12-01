@@ -403,7 +403,7 @@ OddEggs:
 	bigdw 6 ; Atk
 	bigdw 6 ; Def
 	bigdw 6 ; Spd
-	bigdw 6 ; SAtk
+	bigdw 5 ; SAtk
 	bigdw 6 ; SDef
 	db "EGG@@@@@@@@"
 
