@@ -910,10 +910,10 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 67 ; HP
 	bigdw 67 ; Max HP
-	bigdw 63 ; Atk
-	bigdw 50 ; Def
+	bigdw 67 ; Atk
+	bigdw 54 ; Def
 	bigdw 52 ; Spd
-	bigdw 32 ; SAtk
+	bigdw 28 ; SAtk
 	bigdw 62 ; SDef
 	db "@@@@@@@@@@@"
 
@@ -3733,10 +3733,10 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 202 ; HP
 	bigdw 202 ; Max HP
-	bigdw 232 ; Atk
+	bigdw 246 ; Atk
 	bigdw 137 ; Def
-	bigdw 186 ; Spd
-	bigdw 112 ; SAtk
+	bigdw 200 ; Spd
+	bigdw 98 ; SAtk
 	bigdw 217 ; SDef
 	db "@@@@@@@@@@@"
 
@@ -5458,10 +5458,10 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 265 ; HP
 	bigdw 265 ; Max HP
-	bigdw 270 ; Atk
-	bigdw 220 ; Def
+	bigdw 290 ; Atk
+	bigdw 240 ; Def
 	bigdw 214 ; Spd
-	bigdw 130 ; SAtk
+	bigdw 110 ; SAtk
 	bigdw 280 ; SDef
 	db "@@@@@@@@@@@"
 
