@@ -76,6 +76,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All Pokémon that only belonged to one Egg Group now belong to two, Ditto can breed with itself, and legendaries can now breed with Ditto (except for Mewtwo)
 - Mr. Pokémon is now named Pokey Man. After defeating Blue, you can battle Prof. Oak at Pokey Man's house once per day, and if you win, Pokey Man will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - If you have all 16 Badges, you can fight former Elite Four members in a secondary gauntlet at the Cianwood Photo Studio
+- If you've beaten Red, the Lv100 Battle Tower challenge is altered so that the 7th opponent will be one of 24 special trainers, consisting of Gym Leaders, League members, etc.
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
 - Unused mine cart graphics added to some caves
