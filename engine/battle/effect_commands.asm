@@ -4833,9 +4833,11 @@ BattleCommand_CheckRampage:
 	pop af
 	jr nz, .continue_rampage
 
+	push af
 	call GetUserItem
 	ld a, b
 	cp HELD_PREVENT_CONFUSE
+	pop af
 	jr z, .continue_rampage
 
 	set SUBSTATUS_CONFUSED, [hl]
