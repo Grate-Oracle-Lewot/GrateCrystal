@@ -36,7 +36,6 @@ LoadBattleTowerSpecialTrainer::
 	call AddNTimes
 	ld bc, NAME_LENGTH
 	call CopyBytes
-	call CloseSRAM
 
 ; Load party into de+11 based on trainer class
 	ld a, [wBT_OTTrainerClass]
@@ -208,7 +207,10 @@ BattleTowerSpecialTrainerText::
 ; 3: Player won
 	ldh a, [rSVBK]
 	push af
-	ld a, [wBT_OTTrainerClass]
+	ld a, BANK(wBT_OTTrainerClass)
+	ldh [rSVBK], a
+	ld hl, wBT_OTTrainerClass
+	ld a, [hl]
 	cp BROCK
 	jr z, .brock
 	cp MISTY
@@ -365,7 +367,6 @@ BattleTowerSpecialTrainerText::
 	bccoord 1, 14
 	pop af
 	ldh [rSVBK], a
-	call CloseSRAM
 	jp PlaceHLTextAtBC
 
 BTSpecialTrainerTexts:
