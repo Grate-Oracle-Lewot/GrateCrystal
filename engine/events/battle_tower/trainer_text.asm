@@ -1,4 +1,5 @@
 BTFarcallSpecialText:
+	pop af
 	farcall BattleTowerSpecialTrainerText
 	ret
 
