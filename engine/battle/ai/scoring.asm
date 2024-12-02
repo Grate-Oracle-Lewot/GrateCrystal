@@ -3004,21 +3004,27 @@ AI_Smart_RapidSpin:
 	ret
 
 AI_Smart_HiddenPower:
+; Calculate Hidden Power's type based on enemy's DVs.
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-
-; Calculate Hidden Power's type based on enemy's DVs.
 	callfar HiddenPowerDamage
+	pop hl
+	; fallthrough
+
+AI_Smart_Reckless:
+	push hl
+	ld a, 1
+	ldh [hBattleTurn], a
 	callfar BattleCheckTypeMatchup
 	pop hl
 
-; Discourage Hidden Power if not very effective.
+; Discourage this move if not very effective.
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	jr c, .bad
 
-; Encourage Hidden Power if super-effective.
+; Encourage this move if super-effective.
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, .good
@@ -3252,23 +3258,6 @@ AI_Smart_Transform:
 	ld a, [wEnemyMonMaxHP]
 	cp b
 	ret nc
-	inc [hl]
-	ret
-
-AI_Smart_Reckless:
-; Discourage this move if it's not very effective.
-; This is supposed to play off of AI_Aggressive's treatment of reckless moves.
-
-	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-	pop hl
-
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	ret nc
-
 	inc [hl]
 	ret
 
