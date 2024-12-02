@@ -438,7 +438,7 @@ Script_battletowertext:
 	call SetUpTextbox
 	call GetScriptByte
 	ld c, a
-	farcall BattleTowerSpecialTrainerText
+	farcall BattleTowerText
 	ret
 
 Script_verbosegiveitem:
