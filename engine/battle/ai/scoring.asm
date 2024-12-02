@@ -2184,6 +2184,50 @@ AI_Smart_HealBell:
 	dec [hl]
 	ret
 
+AI_Smart_MeanLook:
+; Dismiss this move if the player has only one Pokemon [remaining].
+	call AICheckLastPlayerMon
+	jp z, AIDismissMove
+
+; Dismiss this move if the player is Ghost-type and therefore immune.
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jp z, AIDismissMove
+
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jp z, AIDismissMove
+
+	call AICheckEnemyHalfHP
+	jr nc, .discourage
+
+; 80% chance to highly encourage this move if the player is badly poisoned.
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr nz, .encourage
+
+; 80% chance to highly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
+	ld a, [wPlayerSubStatus1]
+	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
+	jr nz, .encourage
+
+; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
+	push hl
+	callfar CheckPlayerMoveTypeMatchups
+	ld a, [wEnemyAISwitchScore]
+	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
+	pop hl
+	ret nc
+
+.discourage
+	inc [hl]
+	ret
+
+.encourage
+	call AI_80_20
+	ret c
+	jr AI_Smart_Highly_Encourage
+
 AI_Smart_PriorityHit:
 	call AICompareSpeed
 	ret c
@@ -2210,9 +2254,56 @@ AI_Smart_PriorityHit:
 	ld a, [wBattleMonHP]
 	sbc b
 	ret nc
+	; fallthrough
+
+AI_Smart_Highly_Encourage:
+; Another space-saver. Keep in jr range.
 	dec [hl]
 	dec [hl]
 	dec [hl]
+	ret
+
+AI_Smart_Endure:
+; Greatly discourage this move if the enemy already used Protect.
+	ld a, [wEnemyProtectCount]
+	and a
+	jr nz, .greatly_discourage
+
+; Greatly discourage this move if the enemy's HP is full.
+	call AICheckEnemyMaxHP
+	jr c, .greatly_discourage
+
+; Discourage this move if the enemy's HP is at least 25%.
+	call AICheckEnemyQuarterHP
+	jr c, .discourage
+
+; If the enemy has Reversal or Flail...
+	ld b, EFFECT_REVERSAL
+	call AIHasMoveEffect
+	jr nc, .no_reversal
+
+; ...80% chance to highly encourage this move.
+	call AI_80_20
+	ret c
+	jr AI_Smart_Highly_Encourage
+
+.no_reversal
+; 50% chance to greatly encourage this move if the enemy is locked onto.
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	ret z
+
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	dec [hl]
+	ret
+
+.greatly_discourage
+	inc [hl]
+.discourage
+	inc [hl]
 	ret
 
 AI_Smart_Conversion2:
@@ -2286,53 +2377,6 @@ AI_Smart_Disable:
 	cp 8 percent
 	ret c
 	inc [hl]
-	ret
-
-AI_Smart_MeanLook:
-; Dismiss this move if the player has only one Pokemon [remaining].
-	call AICheckLastPlayerMon
-	jp z, AIDismissMove
-
-; Dismiss this move if the player is Ghost-type and therefore immune.
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jp z, AIDismissMove
-
-	ld a, [wBattleMonType2]
-	cp GHOST
-	jp z, AIDismissMove
-
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
-
-; 80% chance to highly encourage this move if the player is badly poisoned.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .encourage
-
-; 80% chance to highly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
-	ld a, [wPlayerSubStatus1]
-	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
-	jr nz, .encourage
-
-; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
-	push hl
-	callfar CheckPlayerMoveTypeMatchups
-	ld a, [wEnemyAISwitchScore]
-	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
-	pop hl
-	ret nc
-
-.discourage
-	inc [hl]
-	ret
-
-.encourage
-	call AI_80_20
-	ret c
-	dec [hl]
-	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_Curse:
@@ -2472,53 +2516,6 @@ AI_Smart_Protect:
 	ret c
 
 	inc [hl]
-	inc [hl]
-	ret
-
-AI_Smart_Endure:
-; Greatly discourage this move if the enemy already used Protect.
-	ld a, [wEnemyProtectCount]
-	and a
-	jr nz, .greatly_discourage
-
-; Greatly discourage this move if the enemy's HP is full.
-	call AICheckEnemyMaxHP
-	jr c, .greatly_discourage
-
-; Discourage this move if the enemy's HP is at least 25%.
-	call AICheckEnemyQuarterHP
-	jr c, .discourage
-
-; If the enemy has Reversal or Flail...
-	ld b, EFFECT_REVERSAL
-	call AIHasMoveEffect
-	jr nc, .no_reversal
-
-; ...80% chance to highly encourage this move.
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
-.no_reversal
-; 50% chance to greatly encourage this move if the enemy is locked onto.
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	ret z
-
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.greatly_discourage
-	inc [hl]
-.discourage
 	inc [hl]
 	ret
 
