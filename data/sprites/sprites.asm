@@ -23,7 +23,7 @@ OverworldSprites:
 	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite WillSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite FalknerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite WhitneySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BugsySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
@@ -33,7 +33,7 @@ OverworldSprites:
 	overworld_sprite PryceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite KarenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite KarenSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BrunoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MistySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite LanceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
@@ -109,7 +109,7 @@ OverworldSprites:
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite RealKarenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite RealKarenSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RealKogaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite JessieSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite JamesSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
