@@ -1,5 +1,5 @@
 BTFarcallSpecialText:
-	farcall _BattleTowerSpecialTrainerText
+	farcall BattleTowerSpecialTrainerText
 	ret
 
 BattleTowerText::
