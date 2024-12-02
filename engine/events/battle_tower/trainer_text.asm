@@ -2,8 +2,18 @@ BTFarcallSpecialText:
 	farcall _BattleTowerSpecialTrainerText
 	ret
 
-BattleTowerSpecialTrainerText::
-	ld a, [wBT_OTTrainerClass]
+BattleTowerText::
+; Print text c for trainer [wBT_OTTrainerClass]
+; 1: Intro text
+; 2: Player lost
+; 3: Player won
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBT_OTTrainerClass)
+	ldh [rSVBK], a
+	ld hl, wBT_OTTrainerClass
+	ld a, [hl]
+
 	cp BROCK
 	jr z, BTFarcallSpecialText
 	cp MISTY
@@ -52,19 +62,7 @@ BattleTowerSpecialTrainerText::
 	jr z, BTFarcallSpecialText
 	cp RED
 	jr z, BTFarcallSpecialText
-	; fallthrough
 
-BattleTowerText::
-; Print text c for trainer [wBT_OTTrainerClass]
-; 1: Intro text
-; 2: Player lost
-; 3: Player won
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rSVBK], a
-	ld hl, wBT_OTTrainerClass
-	ld a, [hl]
 	dec a
 	ld e, a
 	ld d, 0
