@@ -760,6 +760,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
 	dbw EFFECT_RAMPAGE,          AI_Smart_Rampage
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
+	dbw EFFECT_MULTI_HIT,        AI_Smart_Reckless
 	dbw EFFECT_FLINCH_HIT,       AI_Smart_FlinchHit
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Poison
@@ -767,8 +768,9 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_OHKO,             AI_Smart_OHKO
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
-	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
+	dbw EFFECT_DOUBLE_HIT,       AI_Smart_Reckless
 	dbw EFFECT_JUMP_KICK,        AI_Smart_Recoil_JumpKick
+	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
@@ -779,6 +781,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_SkyAttack_FutureSight
+	dbw EFFECT_POISON_MULTI_HIT, AI_Smart_Reckless
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute_SkullBash
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
@@ -797,6 +800,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FALSE_SWIPE,      AI_Smart_Discourage
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
+	dbw EFFECT_TRIPLE_KICK,      AI_Smart_Reckless
 	dbw EFFECT_THIEF,            AI_Smart_Thief
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
@@ -3248,6 +3252,23 @@ AI_Smart_Transform:
 	ld a, [wEnemyMonMaxHP]
 	cp b
 	ret nc
+	inc [hl]
+	ret
+
+AI_Smart_Reckless:
+; Discourage this move if it's not very effective.
+; This is supposed to play off of AI_Aggressive's treatment of reckless moves.
+
+	push hl
+	ld a, 1
+	ldh [hBattleTurn], a
+	callfar BattleCheckTypeMatchup
+	pop hl
+
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	ret nc
+
 	inc [hl]
 	ret
 
