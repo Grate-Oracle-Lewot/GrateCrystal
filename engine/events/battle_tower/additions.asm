@@ -201,7 +201,7 @@ INCLUDE "data/battle_tower/special_classes.asm"
 
 INCLUDE "data/battle_tower/special_parties.asm"
 
-_BattleTowerSpecialTrainerText::
+BattleTowerSpecialTrainerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
 ; 2: Player lost
