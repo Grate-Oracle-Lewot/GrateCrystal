@@ -1,7 +1,7 @@
 BTFarcallSpecialText:
 	pop af
 	farcall BattleTowerSpecialTrainerText
-	ret
+	jr BattleTowerFinishText
 
 BattleTowerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
@@ -124,6 +124,9 @@ BattleTowerText::
 	ld l, c
 	ld h, a
 	bccoord 1, 14
+	; fallthrough
+
+BattleTowerFinishText:
 	pop af
 	ldh [rSVBK], a
 	jp PlaceHLTextAtBC
