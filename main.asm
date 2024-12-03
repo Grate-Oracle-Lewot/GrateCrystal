@@ -694,7 +694,6 @@ INCLUDE "mobile/news/news.asm"
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
-INCLUDE "engine/events/odd_egg.asm"
 
 
 SECTION "Battle Weather Images", ROMX
@@ -705,6 +704,7 @@ INCLUDE "gfx/weather_images.asm"
 SECTION "Battle Tower Additions", ROMX
 
 INCLUDE "engine/events/battle_tower/additions.asm"
+INCLUDE "engine/events/odd_egg.asm"
 
 
 SECTION "DEX GFX 2", ROMX
