@@ -1,8 +1,3 @@
-BTFarcallSpecialText:
-	pop af
-	farcall BattleTowerSpecialTrainerText
-	ret
-
 BattleTowerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
@@ -14,56 +9,6 @@ BattleTowerText::
 	ldh [rSVBK], a
 	ld hl, wBT_OTTrainerClass
 	ld a, [hl]
-
-	cp BROCK
-	jr z, BTFarcallSpecialText
-	cp MISTY
-	jr z, BTFarcallSpecialText
-	cp LT_SURGE
-	jr z, BTFarcallSpecialText
-	cp ERIKA
-	jr z, BTFarcallSpecialText
-	cp JANINE
-	jr z, BTFarcallSpecialText
-	cp SABRINA
-	jr z, BTFarcallSpecialText
-	cp BLAINE
-	jr z, BTFarcallSpecialText
-	cp BLUE
-	jr z, BTFarcallSpecialText
-	cp FALKNER
-	jr z, BTFarcallSpecialText
-	cp BUGSY
-	jr z, BTFarcallSpecialText
-	cp WHITNEY
-	jr z, BTFarcallSpecialText
-	cp MORTY
-	jr z, BTFarcallSpecialText
-	cp CHUCK
-	jr z, BTFarcallSpecialText
-	cp JASMINE
-	jr z, BTFarcallSpecialText
-	cp PRYCE
-	jr z, BTFarcallSpecialText
-	cp CLAIR
-	jr z, BTFarcallSpecialText
-	cp REAL_KOGA
-	jr z, BTFarcallSpecialText
-	cp REAL_KAREN
-	jr z, BTFarcallSpecialText
-	cp WILL
-	jr z, BTFarcallSpecialText
-	cp KOGA
-	jr z, BTFarcallSpecialText
-	cp BRUNO
-	jr z, BTFarcallSpecialText
-	cp KAREN
-	jr z, BTFarcallSpecialText
-	cp CHAMPION
-	jr z, BTFarcallSpecialText
-	cp RED
-	jr z, BTFarcallSpecialText
-
 	dec a
 	ld e, a
 	ld d, 0
