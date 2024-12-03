@@ -812,9 +812,9 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SANDSTORM,        AI_Smart_Sandstorm
 	dbw EFFECT_ENDURE,           AI_Smart_Endure
 	dbw EFFECT_ROLLOUT,          AI_Smart_Rollout
-	dbw EFFECT_SWAGGER,          AI_Smart_Swagger_Attract
+	dbw EFFECT_SWAGGER,          AI_Smart_Swagger
 	dbw EFFECT_FURY_CUTTER,      AI_Smart_FuryCutter
-	dbw EFFECT_ATTRACT,          AI_Smart_Swagger_Attract
+	dbw EFFECT_ATTRACT,          AI_Smart_Attract
 	dbw EFFECT_FISSURE,          AI_Smart_Fissure
 	dbw EFFECT_SAFEGUARD,        AI_Smart_Safeguard
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Earthquake
@@ -1486,6 +1486,7 @@ AI_DiscourageIfPlayerHPBelowHalf:
 
 AI_Smart_Poison:
 ; 50% chance to dismiss this move if the player's held item immunizes against poisoning.
+; Else, discourage this move if player's HP is below 50%.
 	push hl
 	ld hl, wBattleMonItem
 	ld b, [hl]
@@ -1500,6 +1501,7 @@ AI_Smart_Poison:
 
 AI_Smart_LeechSeed:
 ; Dismiss this move if the player is Grass-type and therefore immune.
+; Else, discourage this move if player's HP is below 50%.
 	ld a, [wBattleMonType1]
 	cp GRASS
 	jr z, AIDismissMove
@@ -1532,6 +1534,7 @@ AI_Smart_OHKO:
 
 AI_Smart_Confuse:
 ; 50% chance to dismiss this move if the player's held item immunizes against confusion.
+; Else, discourage this move if player's HP is below 50%.
 	push hl
 	ld hl, wBattleMonItem
 	ld b, [hl]
@@ -2917,7 +2920,14 @@ AI_Smart_Rollout:
 	inc [hl]
 	ret
 
-AI_Smart_Swagger_Attract:
+AI_Smart_Swagger:
+; 50% chance to dismiss this move if the player's held item immunizes against confusion.
+; Else, discourage this move if player's HP is below 50%.
+; Regardless, fall through to AI_Smart_Attract.
+	call AI_Smart_Confuse
+	; fallthrough
+
+AI_Smart_Attract:
 ; 80% chance to encourage this move during the first turn of the player's Pokemon.
 ; 80% chance to discourage this move otherwise.
 
