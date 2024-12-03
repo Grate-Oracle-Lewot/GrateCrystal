@@ -501,18 +501,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_21
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, TANGELA
+	db 26, EXEGGUTOR
 	db 23, RATTATA
-	db 33, TANGELA
+	db 31, EXEGGUTOR
 	db 18, RATICATE
 	db 28, FLOGISTAN
 	db 28, MR__MIME
 	db 26, MR__MIME
 	db 29, PINSIR
 	; day
-	db 28, TANGELA
+	db 28, EXEGGUTOR
 	db 23, RATTATA
-	db 33, TANGELA
+	db 33, EXEGGUTOR
 	db 18, RATICATE
 	db 28, FLOGISTAN
 	db 28, MR__MIME
