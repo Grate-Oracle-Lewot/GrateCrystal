@@ -1,17 +1,3 @@
-_BTDefaultGreetingText:
-	text "I think I'm in the"
-	line "wrong room…"
-	done
-
-_BTDefaultLossText:
-	text "Wow! I won?!"
-	done
-
-_BTDefaultWinText:
-	text "That's what I get"
-	line "for sneaking in…"
-	done
-
 _BTBrockGreetingText:
 	text "I'm ready to rock"
 	line "and roll!"
