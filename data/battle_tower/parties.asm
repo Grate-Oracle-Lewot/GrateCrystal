@@ -5492,3 +5492,135 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
+
+; BattleTowerMons group 11
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 303 ; HP
+	bigdw 303 ; Max HP
+	bigdw 198 ; Atk
+	bigdw 198 ; Def
+	bigdw 598 ; Spd
+	bigdw 198 ; SAtk
+	bigdw 198 ; SDef
+	db "@@@@@@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 155 ; Atk
+	bigdw 218 ; Def
+	bigdw 290 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 190 ; SDef
+	db "@@@@@@@@@@@"
+
+	db FLOGISTAN
+	db PINK_BOW
+	db HYPER_BEAM, FLAMETHROWER, SCALD, DAZZLY_GLEAM
+	dw 0 ; OT ID
+	dt 800000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 15 ; DVs
+	db 8, 16, 24, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 285 ; HP
+	bigdw 285 ; Max HP
+	bigdw 87 ; Atk
+	bigdw 164 ; Def
+	bigdw 300 ; Spd
+	bigdw 320 ; SAtk
+	bigdw 174 ; SDef
+	db "@@@@@@@@@@@"
+
+	db MEW
+	db DICTIONARY
+	db PSYCHIC_M, TRI_ATTACK, RECOVER, METRONOME
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 60000
+	bigdw 60000
+	bigdw 60000
+	bigdw 60000
+	bigdw 60000
+	dn 11, 11, 11, 11 ; DVs
+	db 16, 16, 16, 32 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 401 ; HP
+	bigdw 401 ; Max HP
+	bigdw 288 ; Atk
+	bigdw 288 ; Def
+	bigdw 288 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 288 ; SDef
+	db "@@@@@@@@@@@"
+
+	db PIKACHU
+	db LIGHT_BALL
+	db THUNDERBOLT, THUNDER_WAVE, DAZZLY_GLEAM, SURF
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 45000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 50000
+	dn 15, 12, 15, 14 ; DVs
+	db 16, 16, 24, 16 ; PP
+	db 100 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 253 ; HP
+	bigdw 253 ; Max HP
+	bigdw 200 ; Atk
+	bigdw 162 ; Def
+	bigdw 270 ; Spd
+	bigdw 188 ; SAtk
+	bigdw 188 ; SDef
+	db "@@@@@@@@@@@"
