@@ -58,37 +58,7 @@ BattleTowerText::
 	jr z, .lance
 	cp RED
 	jr z, .red
-
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, BTTrainerClassGenders
-	add hl, de
-	ld a, [hl]
-	and a
-	jr nz, .female
-	; generate a random number between 0 and 24
-	ldh a, [hRandomAdd]
-	and $1f
-	cp 25
-	jr c, .okay0
-	sub 25
-
-.okay0
-	ld hl, BTMaleTrainerTexts
-	jr .proceed
-
-.female
-	; generate a random number between 0 and 14
-	ldh a, [hRandomAdd]
-	and $f
-	cp 15
-	jr c, .okay1
-	sub 15
-
-.okay1
-	ld hl, BTFemaleTrainerTexts
-	jr .proceed
+	jr .normal
 
 .brock
 	ld a, 0
@@ -161,6 +131,39 @@ BattleTowerText::
 	jr .special
 .red
 	ld a, 23
+	jr .special
+
+.normal
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, BTTrainerClassGenders
+	add hl, de
+	ld a, [hl]
+	and a
+	jr nz, .female
+	; generate a random number between 0 and 24
+	ldh a, [hRandomAdd]
+	and $1f
+	cp 25
+	jr c, .okay0
+	sub 25
+
+.okay0
+	ld hl, BTMaleTrainerTexts
+	jr .proceed
+
+.female
+	; generate a random number between 0 and 14
+	ldh a, [hRandomAdd]
+	and $f
+	cp 15
+	jr c, .okay1
+	sub 15
+
+.okay1
+	ld hl, BTFemaleTrainerTexts
+	jr .proceed
 
 .special
 	ld hl, BTSpecialTrainerTexts
