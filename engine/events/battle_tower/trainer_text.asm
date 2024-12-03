@@ -1,7 +1,7 @@
 BTFarcallSpecialText:
 	pop af
 	farcall BattleTowerSpecialTrainerText
-	jr BattleTowerFinishText
+	jp BattleTowerFinishText
 
 BattleTowerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
