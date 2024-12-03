@@ -1,8 +1,3 @@
-BTFarcallSpecialText:
-	pop af
-	farcall BattleTowerSpecialTrainerText
-	jp BattleTowerFinishText
-
 BattleTowerText::
 ; Print text c for trainer [wBT_OTTrainerClass]
 ; 1: Intro text
@@ -16,53 +11,53 @@ BattleTowerText::
 	ld a, [hl]
 
 	cp BROCK
-	jr z, BTFarcallSpecialText
+	jr z, .brock
 	cp MISTY
-	jr z, BTFarcallSpecialText
+	jr z, .misty
 	cp LT_SURGE
-	jr z, BTFarcallSpecialText
+	jr z, .lt_surge
 	cp ERIKA
-	jr z, BTFarcallSpecialText
+	jr z, .erika
 	cp JANINE
-	jr z, BTFarcallSpecialText
+	jr z, .janine
 	cp SABRINA
-	jr z, BTFarcallSpecialText
+	jr z, .sabrina
 	cp BLAINE
-	jr z, BTFarcallSpecialText
+	jr z, .blaine
 	cp BLUE
-	jr z, BTFarcallSpecialText
+	jr z, .blue
 	cp FALKNER
-	jr z, BTFarcallSpecialText
+	jr z, .falkner
 	cp BUGSY
-	jr z, BTFarcallSpecialText
+	jr z, .bugsy
 	cp WHITNEY
-	jr z, BTFarcallSpecialText
+	jr z, .whitney
 	cp MORTY
-	jr z, BTFarcallSpecialText
+	jr z, .morty
 	cp CHUCK
-	jr z, BTFarcallSpecialText
+	jr z, .chuck
 	cp JASMINE
-	jr z, BTFarcallSpecialText
+	jr z, .jasmine
 	cp PRYCE
-	jr z, BTFarcallSpecialText
+	jr z, .pryce
 	cp CLAIR
-	jr z, BTFarcallSpecialText
+	jr z, .clair
 	cp REAL_KOGA
-	jr z, BTFarcallSpecialText
+	jr z, .koga
 	cp REAL_KAREN
-	jr z, BTFarcallSpecialText
+	jr z, .karen
 	cp WILL
-	jr z, BTFarcallSpecialText
+	jr z, .a_d
 	cp KOGA
-	jr z, BTFarcallSpecialText
+	jr z, .lucas
 	cp BRUNO
-	jr z, BTFarcallSpecialText
+	jr z, .percy
 	cp KAREN
-	jr z, BTFarcallSpecialText
+	jr z, .lewot
 	cp CHAMPION
-	jr z, BTFarcallSpecialText
+	jr z, .lance
 	cp RED
-	jr z, BTFarcallSpecialText
+	jr z, .red
 
 	dec a
 	ld e, a
@@ -93,6 +88,82 @@ BattleTowerText::
 
 .okay1
 	ld hl, BTFemaleTrainerTexts
+	jr .proceed
+
+.brock
+	ld a, 0
+	jr .special
+.misty
+	ld a, 1
+	jr .special
+.lt_surge
+	ld a, 2
+	jr .special
+.erika
+	ld a, 3
+	jr .special
+.janine
+	ld a, 4
+	jr .special
+.sabrina
+	ld a, 5
+	jr .special
+.blaine
+	ld a, 6
+	jr .special
+.blue
+	ld a, 7
+	jr .special
+.falkner
+	ld a, 8
+	jr .special
+.bugsy
+	ld a, 9
+	jr .special
+.whitney
+	ld a, 10
+	jr .special
+.morty
+	ld a, 11
+	jr .special
+.chuck
+	ld a, 12
+	jr .special
+.jasmine
+	ld a, 13
+	jr .special
+.pryce
+	ld a, 14
+	jr .special
+.clair
+	ld a, 15
+	jr .special
+.koga
+	ld a, 16
+	jr .special
+.karen
+	ld a, 17
+	jr .special
+.a_d
+	ld a, 18
+	jr .special
+.lucas
+	ld a, 19
+	jr .special
+.percy
+	ld a, 20
+	jr .special
+.lewot
+	ld a, 21
+	jr .special
+.lance
+	ld a, 22
+	jr .special
+.red
+	ld a, 23
+
+.special
+	ld hl, BTSpecialTrainerTexts
 
 .proceed
 	ld b, 0
@@ -124,9 +195,6 @@ BattleTowerText::
 	ld l, c
 	ld h, a
 	bccoord 1, 14
-	; fallthrough
-
-BattleTowerFinishText:
 	pop af
 	ldh [rSVBK], a
 	jp PlaceHLTextAtBC
@@ -276,6 +344,89 @@ BTFemaleTrainerTexts:
 	dw BTWinF13Text
 	dw BTWinF14Text
 	dw BTWinF15Text
+
+BTSpecialTrainerTexts:
+	dw .Greetings
+	dw .PlayerLost
+	dw .PlayerWon
+
+.Greetings:
+	dw BTBrockGreetingText
+	dw BTMistyGreetingText
+	dw BTLtSurgeGreetingText
+	dw BTErikaGreetingText
+	dw BTJanineGreetingText
+	dw BTSabrinaGreetingText
+	dw BTBlaineGreetingText
+	dw BTBlueGreetingText
+	dw BTFalknerGreetingText
+	dw BTBugsyGreetingText
+	dw BTWhitneyGreetingText
+	dw BTMortyGreetingText
+	dw BTChuckGreetingText
+	dw BTJasmineGreetingText
+	dw BTPryceGreetingText
+	dw BTClairGreetingText
+	dw BTKogaGreetingText
+	dw BTKarenGreetingText
+	dw BTADGreetingText
+	dw BTLucasGreetingText
+	dw BTPercyGreetingText
+	dw BTLewotGreetingText
+	dw BTLanceGreetingText
+	dw BTRedGreetingText
+
+.PlayerLost:
+	dw BTBrockLossText
+	dw BTMistyLossText
+	dw BTLtSurgeLossText
+	dw BTErikaLossText
+	dw BTJanineLossText
+	dw BTSabrinaLossText
+	dw BTBlaineLossText
+	dw BTBlueLossText
+	dw BTFalknerLossText
+	dw BTBugsyLossText
+	dw BTWhitneyLossText
+	dw BTMortyLossText
+	dw BTChuckLossText
+	dw BTJasmineLossText
+	dw BTPryceLossText
+	dw BTClairLossText
+	dw BTKogaLossText
+	dw BTKarenLossText
+	dw BTADLossText
+	dw BTLucasLossText
+	dw BTPercyLossText
+	dw BTLewotLossText
+	dw BTLanceLossText
+	dw BTRedWinLossText
+
+.PlayerWon:
+	dw BTBrockWinText
+	dw BTMistyWinText
+	dw BTLtSurgeWinText
+	dw BTErikaWinText
+	dw BTJanineWinText
+	dw BTSabrinaWinText
+	dw BTBlaineWinText
+	dw BTBlueWinText
+	dw BTFalknerWinText
+	dw BTBugsyWinText
+	dw BTWhitneyWinText
+	dw BTMortyWinText
+	dw BTChuckWinText
+	dw BTJasmineWinText
+	dw BTPryceWinText
+	dw BTClairWinText
+	dw BTKogaWinText
+	dw BTKarenWinText
+	dw BTADWinText
+	dw BTLucasWinText
+	dw BTPercyWinText
+	dw BTLewotWinText
+	dw BTLanceWinText
+	dw BTRedWinLossText
 
 BTGreetingM1Text:
 	text_far _BTGreetingM1Text
@@ -755,4 +906,288 @@ BTLossF15Text:
 
 BTWinF15Text:
 	text_far _BTWinF15Text
+	text_end
+
+BTBrockGreetingText:
+	text_far _BTBrockGreetingText
+	text_end
+
+BTBrockLossText:
+	text_far _BTBrockLossText
+	text_end
+
+BTBrockWinText:
+	text_far _BTBrockWinText
+	text_end
+
+BTMistyGreetingText:
+	text_far _BTMistyGreetingText
+	text_end
+
+BTMistyLossText:
+	text_far _BTMistyLossText
+	text_end
+
+BTMistyWinText:
+	text_far _BTMistyWinText
+	text_end
+
+BTLtSurgeGreetingText:
+	text_far _BTLtSurgeGreetingText
+	text_end
+
+BTLtSurgeLossText:
+	text_far _BTLtSurgeLossText
+	text_end
+
+BTLtSurgeWinText:
+	text_far _BTLtSurgeWinText
+	text_end
+
+BTErikaGreetingText:
+	text_far _BTErikaGreetingText
+	text_end
+
+BTErikaLossText:
+	text_far _BTErikaLossText
+	text_end
+
+BTErikaWinText:
+	text_far _BTErikaWinText
+	text_end
+
+BTJanineGreetingText:
+	text_far _BTJanineGreetingText
+	text_end
+
+BTJanineLossText:
+	text_far _BTJanineLossText
+	text_end
+
+BTJanineWinText:
+	text_far _BTJanineWinText
+	text_end
+
+BTSabrinaGreetingText:
+	text_far _BTSabrinaGreetingText
+	text_end
+
+BTSabrinaLossText:
+	text_far _BTSabrinaLossText
+	text_end
+
+BTSabrinaWinText:
+	text_far _BTSabrinaWinText
+	text_end
+
+BTBlaineGreetingText:
+	text_far _BTBlaineGreetingText
+	text_end
+
+BTBlaineLossText:
+	text_far _BTBlaineLossText
+	text_end
+
+BTBlaineWinText:
+	text_far _BTBlaineWinText
+	text_end
+
+BTBlueGreetingText:
+	text_far _BTBlueGreetingText
+	text_end
+
+BTBlueLossText:
+	text_far _BTBlueLossText
+	text_end
+
+BTBlueWinText:
+	text_far _BTBlueWinText
+	text_end
+
+BTFalknerGreetingText:
+	text_far _BTFalknerGreetingText
+	text_end
+
+BTFalknerLossText:
+	text_far _BTFalknerLossText
+	text_end
+
+BTFalknerWinText:
+	text_far _BTFalknerWinText
+	text_end
+
+BTBugsyGreetingText:
+	text_far _BTBugsyGreetingText
+	text_end
+
+BTBugsyLossText:
+	text_far _BTBugsyLossText
+	text_end
+
+BTBugsyWinText:
+	text_far _BTBugsyWinText
+	text_end
+
+BTWhitneyGreetingText:
+	text_far _BTWhitneyGreetingText
+	text_end
+
+BTWhitneyLossText:
+	text_far _BTWhitneyLossText
+	text_end
+
+BTWhitneyWinText:
+	text_far _BTWhitneyWinText
+	text_end
+
+BTMortyGreetingText:
+	text_far _BTMortyGreetingText
+	text_end
+
+BTMortyLossText:
+	text_far _BTMortyLossText
+	text_end
+
+BTMortyWinText:
+	text_far _BTMortyWinText
+	text_end
+
+BTChuckGreetingText:
+	text_far _BTChuckGreetingText
+	text_end
+
+BTChuckLossText:
+	text_far _BTChuckLossText
+	text_end
+
+BTChuckWinText:
+	text_far _BTChuckWinText
+	text_end
+
+BTJasmineGreetingText:
+	text_far _BTJasmineGreetingText
+	text_end
+
+BTJasmineLossText:
+	text_far _BTJasmineLossText
+	text_end
+
+BTJasmineWinText:
+	text_far _BTJasmineWinText
+	text_end
+
+BTPryceGreetingText:
+	text_far _BTPryceGreetingText
+	text_end
+
+BTPryceLossText:
+	text_far _BTPryceLossText
+	text_end
+
+BTPryceWinText:
+	text_far _BTPryceWinText
+	text_end
+
+BTClairGreetingText:
+	text_far _BTClairGreetingText
+	text_end
+
+BTClairLossText:
+	text_far _BTClairLossText
+	text_end
+
+BTClairWinText:
+	text_far _BTClairWinText
+	text_end
+
+BTKogaGreetingText:
+	text_far _BTKogaGreetingText
+	text_end
+
+BTKogaLossText:
+	text_far _BTKogaLossText
+	text_end
+
+BTKogaWinText:
+	text_far _BTKogaWinText
+	text_end
+
+BTKarenGreetingText:
+	text_far _BTKarenGreetingText
+	text_end
+
+BTKarenLossText:
+	text_far _BTKarenLossText
+	text_end
+
+BTKarenWinText:
+	text_far _BTKarenWinText
+	text_end
+
+BTADGreetingText:
+	text_far _BTADGreetingText
+	text_end
+
+BTADLossText:
+	text_far _BTADLossText
+	text_end
+
+BTADWinText:
+	text_far _BTADWinText
+	text_end
+
+BTLucasGreetingText:
+	text_far _BTLucasGreetingText
+	text_end
+
+BTLucasLossText:
+	text_far _BTLucasLossText
+	text_end
+
+BTLucasWinText:
+	text_far _BTLucasWinText
+	text_end
+
+BTPercyGreetingText:
+	text_far _BTPercyGreetingText
+	text_end
+
+BTPercyLossText:
+	text_far _BTPercyLossText
+	text_end
+
+BTPercyWinText:
+	text_far _BTPercyWinText
+	text_end
+
+BTLewotGreetingText:
+	text_far _BTLewotGreetingText
+	text_end
+
+BTLewotLossText:
+	text_far _BTLewotLossText
+	text_end
+
+BTLewotWinText:
+	text_far _BTLewotWinText
+	text_end
+
+BTLanceGreetingText:
+	text_far _BTLanceGreetingText
+	text_end
+
+BTLanceLossText:
+	text_far _BTLanceLossText
+	text_end
+
+BTLanceWinText:
+	text_far _BTLanceWinText
+	text_end
+
+BTRedGreetingText:
+	text_far _BTRedGreetingText
+	text_end
+
+BTRedWinLossText:
+	text_far _BTRedWinLossText
 	text_end
