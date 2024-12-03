@@ -171,7 +171,7 @@ _BTWinM11Text:
 
 _BTGreetingM12Text:
 	text "You want to be a"
-	line "leader?"
+	line "master?"
 
 	para "Let me battle you,"
 	line "then!"
