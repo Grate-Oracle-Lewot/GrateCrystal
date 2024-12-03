@@ -198,6 +198,7 @@ TotodilePokeBallScript:
 	givepoke MEWTWO, 100, CANDIED_YAM
 	givepoke HO_OH, 100, DICTIONARY
 	givepoke LUGIA, 100, BERRY_JUICE
+	givepoke HITMONLEE, 26, HARDHAT
 	giveitem HP_UP, 99
 	giveitem PROTEIN, 99
 	giveitem IRON, 99
