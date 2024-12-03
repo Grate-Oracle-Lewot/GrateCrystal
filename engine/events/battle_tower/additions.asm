@@ -424,7 +424,7 @@ BTSpecialTrainerTexts:
 	dw BTPercyLossText
 	dw BTLewotLossText
 	dw BTLanceLossText
-	dw BTRedLossText
+	dw BTRedWinLossText
 
 .PlayerWon:
 	dw BTDefaultWinText
@@ -451,6 +451,6 @@ BTSpecialTrainerTexts:
 	dw BTPercyWinText
 	dw BTLewotWinText
 	dw BTLanceWinText
-	dw BTRedWinText
+	dw BTRedWinLossText
 
 INCLUDE "data/battle_tower/special_text.asm"
