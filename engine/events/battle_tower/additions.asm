@@ -363,9 +363,7 @@ BattleTowerSpecialTrainerText::
 	ld l, c
 	ld h, a
 	bccoord 1, 14
-	pop af
-	ldh [rSVBK], a
-	jp PlaceHLTextAtBC
+	ret
 
 BTSpecialTrainerTexts:
 	dw .Greetings
