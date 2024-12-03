@@ -338,14 +338,7 @@ BattleTowerSpecialTrainerText::
 	ld hl, BTSpecialTrainerTexts
 	ld b, 0
 	dec c
-	jr nz, .restore
 	ld [wBT_TrainerTextIndex], a
-	jr .okay
-
-.restore
-	ld a, [wBT_TrainerTextIndex]
-
-.okay
 	push af
 	add hl, bc
 	add hl, bc
