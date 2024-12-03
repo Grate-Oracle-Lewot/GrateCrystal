@@ -314,15 +314,27 @@ Text_BattleTowerIntroduction_2:
 	para "specially designed"
 	line "BATTLE ROOMS."
 
-	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
-
 	para "Each ROOM holds"
 	line "seven trainers."
 
 	para "Beat them all, and"
 	line "win a prize."
+
+	para "To begin, you'll"
+	line "choose the level"
+
+	para "of the #MON"
+	line "that you'll face."
+
+	para "You may not bring"
+	line "#MON of a high-"
+	cont "er level."
+
+	para "Additional rules"
+	line "are displayed on"
+
+	para "the monitor to"
+	line "your left."
 
 	para "To interrupt a"
 	line "session, you must"
@@ -388,7 +400,7 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 
 Text_ReadBattleTowerRules:
 	text "BATTLE TOWER rules"
-	line "are written here."
+	line "are shown here."
 
 	para "Read the rules?"
 	done
@@ -398,11 +410,15 @@ Text_BattleTowerRules:
 	line "enter battles."
 
 	para "All three must be"
-	line "different."
+	line "different species."
 
 	para "The items they"
 	line "hold must also be"
 	cont "different."
+
+	para "No items from your"
+	line "PACK may be used"
+	cont "in battle."
 
 	para "#MON are healed"
 	line "between battles."
