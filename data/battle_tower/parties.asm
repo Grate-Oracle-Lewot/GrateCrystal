@@ -5858,3 +5858,185 @@ BattleTowerMons:
 	bigdw 274 ; SAtk
 	bigdw 226 ; SDef
 	db "@@@@@@@@@@@"
+
+	db URSARING
+	db SCOPE_LENS
+	db SLASH, EARTHQUAKE, HYPER_BEAM, THUNDERPUNCH
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	dn 15, 13, 14, 13 ; DVs
+	db 32, 16, 8, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 290 ; HP
+	bigdw 290 ; Max HP
+	bigdw 252 ; Atk
+	bigdw 187 ; Def
+	bigdw 135 ; Spd
+	bigdw 145 ; SAtk
+	bigdw 169 ; SDef
+	db "@@@@@@@@@@@"
+
+	db FORRETRESS
+	db MIRACLE_SEED
+	db SELFDESTRUCT, TOXIC, SOLARBEAM, SWAGGER
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 45000
+	bigdw 50000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	dn 15, 13, 14, 13 ; DVs
+	db 8, 8, 16, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 273 ; HP
+	bigdw 273 ; Max HP
+	bigdw 217 ; Atk
+	bigdw 309 ; Def
+	bigdw 133 ; Spd
+	bigdw 165 ; SAtk
+	bigdw 205 ; SDef
+	db "@@@@@@@@@@@"
+
+	db PINSIR
+	db BLACKBELT_I
+	db CROSS_CHOP, TWINEEDLE, STRENGTH, GUILLOTINE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 7, 4, 6, 4 ; DVs
+	db 8, 24, 24, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 241 ; HP
+	bigdw 241 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 205 ; Def
+	bigdw 185 ; Spd
+	bigdw 133 ; SAtk
+	bigdw 157 ; SDef
+	db "@@@@@@@@@@@"
+
+	db GRANBULL
+	db BRIGHTPOWDER
+	db ROAR, SHADOW_CLAW, LOVELY_KISS, FIRE_PUNCH
+	dw 0 ; OT ID
+	dt 800000 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 7, 6, 5, 7 ; DVs
+	db 32, 24, 24, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 286 ; HP
+	bigdw 286 ; Max HP
+	bigdw 242 ; Atk
+	bigdw 169 ; Def
+	bigdw 119 ; Spd
+	bigdw 146 ; SAtk
+	bigdw 146 ; SDef
+	db "@@@@@@@@@@@"
+
+	db MANTINE
+	db NOISEMAKER
+	db SURF, CONFUSE_RAY, BLIZZARD, AIR_SLASH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 40000
+	bigdw 45000
+	bigdw 40000
+	bigdw 45000
+	bigdw 50000
+	dn 13, 15, 13, 12 ; DVs
+	db 16, 16, 8, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 288 ; HP
+	bigdw 288 ; Max HP
+	bigdw 132 ; Atk
+	bigdw 181 ; Def
+	bigdw 180 ; Spd
+	bigdw 196 ; SAtk
+	bigdw 292 ; SDef
+	db "@@@@@@@@@@@"
+
+	db SLOWBRO
+	db LIMBO_STICK
+	db SCALD, PSYCHIC_M, EARTHQUAKE, BLIZZARD
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 45000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 50000
+	dn 11, 15, 12, 15 ; DVs
+	db 24, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 160 ; HP
+	bigdw 160 ; Max HP
+	bigdw 99 ; Atk
+	bigdw 126 ; Def
+	bigdw 52 ; Spd
+	bigdw 119 ; SAtk
+	bigdw 103 ; SDef
+	db "@@@@@@@@@@@"
+
+	db ARTICUNO
+	db NEVERMELTICE
+	db ICE_BEAM, HYPER_BEAM, TRI_ATTACK, AIR_SLASH
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	dn 4, 5, 5, 6 ; DVs
+	db 16, 8, 16, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 181 ; HP
+	bigdw 181 ; Max HP
+	bigdw 119 ; Atk
+	bigdw 135 ; Def
+	bigdw 120 ; Spd
+	bigdw 131 ; SAtk
+	bigdw 161 ; SDef
+	db "@@@@@@@@@@@"
