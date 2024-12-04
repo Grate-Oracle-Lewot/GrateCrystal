@@ -2069,6 +2069,6 @@ BattleTowerDefaultParty:
 	bigdw 358 ; Spd
 	bigdw 406 ; SAtk
 	bigdw 278 ; SDef
-	db "STAN@@@@@@@"
+	db "MEWT CITY@@"
 
 	assert_table_length 3
