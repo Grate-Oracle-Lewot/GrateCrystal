@@ -5876,13 +5876,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 181 ; HP
-	bigdw 181 ; Max HP
-	bigdw 119 ; Atk
-	bigdw 135 ; Def
-	bigdw 120 ; Spd
-	bigdw 131 ; SAtk
-	bigdw 161 ; SDef
+	bigdw 352 ; HP
+	bigdw 352 ; Max HP
+	bigdw 233 ; Atk
+	bigdw 265 ; Def
+	bigdw 235 ; Spd
+	bigdw 257 ; SAtk
+	bigdw 317 ; SDef
 	db "@@@@@@@@@@@"
 
 	db GRANBULL
@@ -5902,13 +5902,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 286 ; HP
-	bigdw 286 ; Max HP
-	bigdw 242 ; Atk
-	bigdw 169 ; Def
-	bigdw 119 ; Spd
-	bigdw 146 ; SAtk
-	bigdw 146 ; SDef
+	bigdw 355 ; HP
+	bigdw 355 ; Max HP
+	bigdw 302 ; Atk
+	bigdw 210 ; Def
+	bigdw 148 ; Spd
+	bigdw 182 ; SAtk
+	bigdw 182 ; SDef
 	db "@@@@@@@@@@@"
 
 	db MANTINE
@@ -5928,13 +5928,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 288 ; HP
-	bigdw 288 ; Max HP
-	bigdw 132 ; Atk
-	bigdw 181 ; Def
-	bigdw 180 ; Spd
-	bigdw 196 ; SAtk
-	bigdw 292 ; SDef
+	bigdw 358 ; HP
+	bigdw 358 ; Max HP
+	bigdw 164 ; Atk
+	bigdw 225 ; Def
+	bigdw 224 ; Spd
+	bigdw 244 ; SAtk
+	bigdw 364 ; SDef
 	db "@@@@@@@@@@@"
 
 	db PINSIR
@@ -5954,13 +5954,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 241 ; HP
-	bigdw 241 ; Max HP
-	bigdw 250 ; Atk
-	bigdw 205 ; Def
-	bigdw 185 ; Spd
-	bigdw 133 ; SAtk
-	bigdw 157 ; SDef
+	bigdw 299 ; HP
+	bigdw 299 ; Max HP
+	bigdw 312 ; Atk
+	bigdw 256 ; Def
+	bigdw 230 ; Spd
+	bigdw 166 ; SAtk
+	bigdw 196 ; SDef
 	db "@@@@@@@@@@@"
 
 	db FORRETRESS
@@ -5980,13 +5980,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 273 ; HP
-	bigdw 273 ; Max HP
-	bigdw 217 ; Atk
-	bigdw 309 ; Def
-	bigdw 133 ; Spd
-	bigdw 165 ; SAtk
-	bigdw 205 ; SDef
+	bigdw 339 ; HP
+	bigdw 339 ; Max HP
+	bigdw 270 ; Atk
+	bigdw 386 ; Def
+	bigdw 166 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 256 ; SDef
 	db "@@@@@@@@@@@"
 
 	db URSARING
@@ -6006,13 +6006,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 290 ; HP
-	bigdw 290 ; Max HP
-	bigdw 252 ; Atk
-	bigdw 187 ; Def
-	bigdw 135 ; Spd
-	bigdw 145 ; SAtk
-	bigdw 169 ; SDef
+	bigdw 411 ; HP
+	bigdw 411 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 266 ; Def
+	bigdw 192 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 240 ; SDef
 	db "@@@@@@@@@@@"
 
 	db SLOWBRO
@@ -6032,11 +6032,11 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 160 ; HP
-	bigdw 160 ; Max HP
-	bigdw 99 ; Atk
-	bigdw 126 ; Def
-	bigdw 52 ; Spd
-	bigdw 119 ; SAtk
-	bigdw 103 ; SDef
+	bigdw 389 ; HP
+	bigdw 389 ; Max HP
+	bigdw 242 ; Atk
+	bigdw 308 ; Def
+	bigdw 124 ; Spd
+	bigdw 290 ; SAtk
+	bigdw 250 ; SDef
 	db "@@@@@@@@@@@"
