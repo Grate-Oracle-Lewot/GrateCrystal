@@ -2045,30 +2045,30 @@ BattleTowerDefaultParty:
 	bigdw 190 ; SDef
 	db "JOY@@@@@@@@"
 
-	db FLOGISTAN
-	db PINK_BOW
-	db HYPER_BEAM, FLAMETHROWER, SCALD, DAZZLY_GLEAM
+	db MEWTWO
+	db BLACKGLASSES
+	db KINESIS, PSYCHIC_M, AURA_SPHERE, DARK_PULSE
 	dw 0 ; OT ID
-	dt 800000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
-	bigdw 50000
+	bigdw 65000
 	bigdw 0
-	bigdw 50000
-	bigdw 50000
-	bigdw 50000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
 	dn 1, 15, 15, 15 ; DVs
-	db 8, 16, 24, 24 ; PP
+	db 24, 16, 16, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 285 ; HP
-	bigdw 285 ; Max HP
-	bigdw 87 ; Atk
-	bigdw 164 ; Def
-	bigdw 300 ; Spd
-	bigdw 320 ; SAtk
-	bigdw 174 ; SDef
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 227 ; Atk
+	bigdw 278 ; Def
+	bigdw 358 ; Spd
+	bigdw 406 ; SAtk
+	bigdw 278 ; SDef
 	db "STAN@@@@@@@"
 
 	assert_table_length 3
