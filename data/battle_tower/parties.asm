@@ -5702,3 +5702,29 @@ BattleTowerMons:
 	bigdw 150 ; SAtk
 	bigdw 200 ; SDef
 	db "@@@@@@@@@@@"
+
+	db GIRAFARIG
+	db NOISEMAKER
+	db FORESIGHT, RETURN, SHADOW_BALL, BEAT_UP
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 15, 14, 15, 13 ; DVs
+	db 32, 24, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 409 ; HP
+	bigdw 409 ; Max HP
+	bigdw 266 ; Atk
+	bigdw 226 ; Def
+	bigdw 266 ; Spd
+	bigdw 278 ; SAtk
+	bigdw 224 ; SDef
+	db "@@@@@@@@@@@"
