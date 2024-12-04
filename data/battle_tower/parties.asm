@@ -1,5 +1,5 @@
 BattleTowerMons:
-; 10 groups (one per floor level) of 21 mons (BATTLETOWER_NUM_UNIQUE_MON).
+; 10 groups (one per floor level) of 23 mons (BATTLETOWER_NUM_UNIQUE_MON).
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerMons
 
 ; BattleTowerMons group 1
@@ -574,6 +574,32 @@ BattleTowerMons:
 	bigdw 33 ; Spd
 	bigdw 29 ; SAtk
 	bigdw 25 ; SDef
+	db "@@@@@@@@@@@"
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 1000 ; Exp
+	; Stat exp
+	bigdw 20535
+	bigdw 20535
+	bigdw 20535
+	bigdw 20535
+	bigdw 20535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 10 ; Level
+	db 0, 0 ; Status
+	bigdw 36 ; HP
+	bigdw 36 ; Max HP
+	bigdw 21 ; Atk
+	bigdw 21 ; Def
+	bigdw 61 ; Spd
+	bigdw 21 ; SAtk
+	bigdw 21 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -1151,6 +1177,32 @@ BattleTowerMons:
 	bigdw 45 ; SDef
 	db "@@@@@@@@@@@"
 
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 8000 ; Exp
+	; Stat exp
+	bigdw 25535
+	bigdw 25535
+	bigdw 25535
+	bigdw 25535
+	bigdw 25535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 20 ; Level
+	db 0, 0 ; Status
+	bigdw 63 ; HP
+	bigdw 63 ; Max HP
+	bigdw 38 ; Atk
+	bigdw 38 ; Def
+	bigdw 118 ; Spd
+	bigdw 38 ; SAtk
+	bigdw 38 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 3
 
@@ -1724,6 +1776,32 @@ BattleTowerMons:
 	bigdw 90 ; Spd
 	bigdw 77 ; SAtk
 	bigdw 65 ; SDef
+	db "@@@@@@@@@@@"
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 27000 ; Exp
+	; Stat exp
+	bigdw 30535
+	bigdw 30535
+	bigdw 30535
+	bigdw 30535
+	bigdw 30535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 30 ; Level
+	db 0, 0 ; Status
+	bigdw 91 ; HP
+	bigdw 91 ; Max HP
+	bigdw 56 ; Atk
+	bigdw 56 ; Def
+	bigdw 176 ; Spd
+	bigdw 56 ; SAtk
+	bigdw 56 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -2301,6 +2379,32 @@ BattleTowerMons:
 	bigdw 86 ; SDef
 	db "@@@@@@@@@@@"
 
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 64000 ; Exp
+	; Stat exp
+	bigdw 35535
+	bigdw 35535
+	bigdw 35535
+	bigdw 35535
+	bigdw 35535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 40 ; Level
+	db 0, 0 ; Status
+	bigdw 120 ; HP
+	bigdw 120 ; Max HP
+	bigdw 75 ; Atk
+	bigdw 75 ; Def
+	bigdw 235 ; Spd
+	bigdw 75 ; SAtk
+	bigdw 75 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 5
 
@@ -2874,6 +2978,32 @@ BattleTowerMons:
 	bigdw 147 ; Spd
 	bigdw 126 ; SAtk
 	bigdw 106 ; SDef
+	db "@@@@@@@@@@@"
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 125000 ; Exp
+	; Stat exp
+	bigdw 40535
+	bigdw 40535
+	bigdw 40535
+	bigdw 40535
+	bigdw 40535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 50 ; Level
+	db 0, 0 ; Status
+	bigdw 150 ; HP
+	bigdw 150 ; Max HP
+	bigdw 95 ; Atk
+	bigdw 95 ; Def
+	bigdw 295 ; Spd
+	bigdw 95 ; SAtk
+	bigdw 95 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -3451,6 +3581,32 @@ BattleTowerMons:
 	bigdw 116 ; SDef
 	db "@@@@@@@@@@@"
 
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 216000 ; Exp
+	; Stat exp
+	bigdw 45535
+	bigdw 45535
+	bigdw 45535
+	bigdw 45535
+	bigdw 45535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 60 ; Level
+	db 0, 0 ; Status
+	bigdw 179 ; HP
+	bigdw 179 ; Max HP
+	bigdw 114 ; Atk
+	bigdw 114 ; Def
+	bigdw 354 ; Spd
+	bigdw 114 ; SAtk
+	bigdw 114 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 7
 
@@ -4024,6 +4180,32 @@ BattleTowerMons:
 	bigdw 204 ; Spd
 	bigdw 162 ; SAtk
 	bigdw 134 ; SDef
+	db "@@@@@@@@@@@"
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 343000 ; Exp
+	; Stat exp
+	bigdw 50535
+	bigdw 50535
+	bigdw 50535
+	bigdw 50535
+	bigdw 50535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 70 ; Level
+	db 0, 0 ; Status
+	bigdw 210 ; HP
+	bigdw 210 ; Max HP
+	bigdw 135 ; Atk
+	bigdw 135 ; Def
+	bigdw 415 ; Spd
+	bigdw 135 ; SAtk
+	bigdw 135 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -4601,6 +4783,32 @@ BattleTowerMons:
 	bigdw 153 ; SDef
 	db "@@@@@@@@@@@"
 
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 512000 ; Exp
+	; Stat exp
+	bigdw 55535
+	bigdw 55535
+	bigdw 55535
+	bigdw 55535
+	bigdw 55535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 80 ; Level
+	db 0, 0 ; Status
+	bigdw 240 ; HP
+	bigdw 240 ; Max HP
+	bigdw 155 ; Atk
+	bigdw 155 ; Def
+	bigdw 475 ; Spd
+	bigdw 155 ; SAtk
+	bigdw 155 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 9
 
@@ -5174,6 +5382,32 @@ BattleTowerMons:
 	bigdw 261 ; Spd
 	bigdw 207 ; SAtk
 	bigdw 171 ; SDef
+	db "@@@@@@@@@@@"
+
+	db DITTO
+	db X_SPEED
+	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
+	dw 0 ; OT ID
+	dt 729000 ; Exp
+	; Stat exp
+	bigdw 60535
+	bigdw 60535
+	bigdw 60535
+	bigdw 60535
+	bigdw 60535
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 0, 0 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 90 ; Level
+	db 0, 0 ; Status
+	bigdw 271 ; HP
+	bigdw 271 ; Max HP
+	bigdw 176 ; Atk
+	bigdw 176 ; Def
+	bigdw 536 ; Spd
+	bigdw 176 ; SAtk
+	bigdw 176 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -5751,11 +5985,6 @@ BattleTowerMons:
 	bigdw 190 ; SDef
 	db "@@@@@@@@@@@"
 
-	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
-
-
-; BattleTowerMons group 11
-
 	db DITTO
 	db X_SPEED
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
@@ -5781,6 +6010,11 @@ BattleTowerMons:
 	bigdw 198 ; SAtk
 	bigdw 198 ; SDef
 	db "@@@@@@@@@@@"
+
+	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
+
+
+; BattleTowerMons group 11
 
 	db FLOGISTAN
 	db PINK_BOW
@@ -6196,82 +6430,4 @@ BattleTowerMons:
 	bigdw 166 ; Spd
 	bigdw 206 ; SAtk
 	bigdw 256 ; SDef
-	db "@@@@@@@@@@@"
-
-	db URSARING
-	db SCOPE_LENS
-	db SLASH, EARTHQUAKE, HYPER_BEAM, THUNDERPUNCH
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	dn 15, 13, 14, 13 ; DVs
-	db 32, 16, 8, 24 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 411 ; HP
-	bigdw 411 ; Max HP
-	bigdw 358 ; Atk
-	bigdw 266 ; Def
-	bigdw 192 ; Spd
-	bigdw 206 ; SAtk
-	bigdw 240 ; SDef
-	db "@@@@@@@@@@@"
-
-	db SLOWBRO
-	db LIMBO_STICK
-	db SCALD, PSYCHIC_M, EARTHQUAKE, BLIZZARD
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 45000
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	bigdw 50000
-	dn 11, 15, 12, 15 ; DVs
-	db 24, 16, 16, 8 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 389 ; HP
-	bigdw 389 ; Max HP
-	bigdw 242 ; Atk
-	bigdw 308 ; Def
-	bigdw 124 ; Spd
-	bigdw 290 ; SAtk
-	bigdw 250 ; SDef
-	db "@@@@@@@@@@@"
-
-	db PORYGON2
-	db TRIDENT
-	db TOXIC, TRI_ATTACK, RECOVER, PROTECT
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	bigdw 55000
-	bigdw 50000
-	dn 15, 13, 14, 13 ; DVs
-	db 8, 16, 16, 16 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 90 ; Level
-	db 0, 0 ; Status
-	bigdw 361 ; HP
-	bigdw 361 ; Max HP
-	bigdw 248 ; Atk
-	bigdw 266 ; Def
-	bigdw 211 ; Spd
-	bigdw 296 ; SAtk
-	bigdw 276 ; SDef
 	db "@@@@@@@@@@@"
