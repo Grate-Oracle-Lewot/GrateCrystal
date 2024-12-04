@@ -5676,3 +5676,29 @@ BattleTowerMons:
 	bigdw 206 ; SAtk
 	bigdw 236 ; SDef
 	db "@@@@@@@@@@@"
+
+	db WOBBUFFET
+	db BERRY_JUICE
+	db COUNTER, MIRROR_COAT, DESTINY_BOND, SAFEGUARD
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 45000
+	dn 15, 13, 14, 13 ; DVs
+	db 32, 32, 8, 32 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 571 ; HP
+	bigdw 571 ; Max HP
+	bigdw 156 ; Atk
+	bigdw 200 ; Def
+	bigdw 154 ; Spd
+	bigdw 150 ; SAtk
+	bigdw 200 ; SDef
+	db "@@@@@@@@@@@"
