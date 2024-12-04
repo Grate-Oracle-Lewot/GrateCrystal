@@ -5079,7 +5079,7 @@ BattleTowerMons:
 	db LEFTOVERS
 	db FLAMETHROWER, EXTREMESPEED, IRON_TAIL, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 55000
 	bigdw 50000
@@ -5105,7 +5105,7 @@ BattleTowerMons:
 	db SCOPE_LENS
 	db FLAMETHROWER, SHADOW_CLAW, SLASH, AIR_SLASH
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 1059860 ; Exp
 	; Stat exp
 	bigdw 50000
 	bigdw 50000
@@ -5779,4 +5779,82 @@ BattleTowerMons:
 	bigdw 246 ; Spd
 	bigdw 222 ; SAtk
 	bigdw 270 ; SDef
+	db "@@@@@@@@@@@"
+
+	db VENUSAUR
+	db BRIGHTPOWDER
+	db SUNNY_DAY, SOLARBEAM, SYNTHESIS, SLUDGE_BOMB
+	dw 0 ; OT ID
+	dt 1059860 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 7, 6, 4, 4 ; DVs
+	db 8, 16, 8, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 337 ; HP
+	bigdw 337 ; Max HP
+	bigdw 232 ; Atk
+	bigdw 230 ; Def
+	bigdw 216 ; Spd
+	bigdw 256 ; SAtk
+	bigdw 256 ; SDef
+	db "@@@@@@@@@@@"
+
+	db BLASTOISE
+	db QUICK_CLAW
+	db HYDRO_PUMP, ICE_PUNCH, HYPER_BEAM, IRON_TAIL
+	dw 0 ; OT ID
+	dt 1059860 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 7, 6, 6, 4 ; DVs
+	db 8, 24, 8, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 329 ; HP
+	bigdw 329 ; Max HP
+	bigdw 228 ; Atk
+	bigdw 270 ; Def
+	bigdw 216 ; Spd
+	bigdw 226 ; SAtk
+	bigdw 262 ; SDef
+	db "@@@@@@@@@@@"
+
+	db TYPHLOSION
+	db CHARCOAL
+	db HYDRO_PUMP, ICE_PUNCH, HYPER_BEAM, IRON_TAIL
+	dw 0 ; OT ID
+	dt 1059860 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 7, 6, 6, 4 ; DVs
+	db 8, 24, 8, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 325 ; HP
+	bigdw 325 ; Max HP
+	bigdw 230 ; Atk
+	bigdw 216 ; Def
+	bigdw 260 ; Spd
+	bigdw 274 ; SAtk
+	bigdw 226 ; SDef
 	db "@@@@@@@@@@@"
