@@ -550,6 +550,32 @@ BattleTowerMons:
 	bigdw 34 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
+	dw 0 ; OT ID
+	dt 1000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 9, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 10 ; Level
+	db 0, 0 ; Status
+	bigdw 40 ; HP
+	bigdw 40 ; Max HP
+	bigdw 27 ; Atk
+	bigdw 25 ; Def
+	bigdw 33 ; Spd
+	bigdw 29 ; SAtk
+	bigdw 25 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 2
 
@@ -1097,6 +1123,32 @@ BattleTowerMons:
 	bigdw 29 ; Spd
 	bigdw 42 ; SAtk
 	bigdw 42 ; SDef
+	db "@@@@@@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
+	dw 0 ; OT ID
+	dt 8000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 9, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 20 ; Level
+	db 0, 0 ; Status
+	bigdw 70 ; HP
+	bigdw 70 ; Max HP
+	bigdw 49 ; Atk
+	bigdw 45 ; Def
+	bigdw 62 ; Spd
+	bigdw 53 ; SAtk
+	bigdw 45 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -1648,6 +1700,32 @@ BattleTowerMons:
 	bigdw 70 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
+	dw 0 ; OT ID
+	dt 27000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 9, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 30 ; Level
+	db 0, 0 ; Status
+	bigdw 100 ; HP
+	bigdw 100 ; Max HP
+	bigdw 71 ; Atk
+	bigdw 65 ; Def
+	bigdw 90 ; Spd
+	bigdw 77 ; SAtk
+	bigdw 65 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 4
 
@@ -2195,6 +2273,32 @@ BattleTowerMons:
 	bigdw 107 ; Spd
 	bigdw 103 ; SAtk
 	bigdw 95 ; SDef
+	db "@@@@@@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
+	dw 0 ; OT ID
+	dt 64000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 9, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 40 ; Level
+	db 0, 0 ; Status
+	bigdw 131 ; HP
+	bigdw 131 ; Max HP
+	bigdw 93 ; Atk
+	bigdw 86 ; Def
+	bigdw 119 ; Spd
+	bigdw 102 ; SAtk
+	bigdw 86 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -2746,6 +2850,32 @@ BattleTowerMons:
 	bigdw 161 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db THIEF, NIGHTMARE, SUBSTITUTE, REST
+	dw 0 ; OT ID
+	dt 125000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 9, 10, 15, 10 ; DVs
+	db 48, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 50 ; Level
+	db 0, 0 ; Status
+	bigdw 161 ; HP
+	bigdw 161 ; Max HP
+	bigdw 115 ; Atk
+	bigdw 106 ; Def
+	bigdw 147 ; Spd
+	bigdw 126 ; SAtk
+	bigdw 106 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 6
 
@@ -3293,6 +3423,32 @@ BattleTowerMons:
 	bigdw 90 ; Spd
 	bigdw 105 ; SAtk
 	bigdw 123 ; SDef
+	db "@@@@@@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 216000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 60 ; Level
+	db 0, 0 ; Status
+	bigdw 197 ; HP
+	bigdw 197 ; Max HP
+	bigdw 95 ; Atk
+	bigdw 132 ; Def
+	bigdw 176 ; Spd
+	bigdw 140 ; SAtk
+	bigdw 116 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -3844,6 +4000,32 @@ BattleTowerMons:
 	bigdw 184 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 343000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 70 ; Level
+	db 0, 0 ; Status
+	bigdw 229 ; HP
+	bigdw 229 ; Max HP
+	bigdw 110 ; Atk
+	bigdw 154 ; Def
+	bigdw 204 ; Spd
+	bigdw 162 ; SAtk
+	bigdw 134 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 8
 
@@ -4391,6 +4573,32 @@ BattleTowerMons:
 	bigdw 119 ; Spd
 	bigdw 146 ; SAtk
 	bigdw 146 ; SDef
+	db "@@@@@@@@@@@"
+
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 512000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 80 ; Level
+	db 0, 0 ; Status
+	bigdw 260 ; HP
+	bigdw 260 ; Max HP
+	bigdw 125 ; Atk
+	bigdw 175 ; Def
+	bigdw 233 ; Spd
+	bigdw 185 ; SAtk
+	bigdw 153 ; SDef
 	db "@@@@@@@@@@@"
 
 
@@ -4942,6 +5150,32 @@ BattleTowerMons:
 	bigdw 230 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 729000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 90 ; Level
+	db 0, 0 ; Status
+	bigdw 291 ; HP
+	bigdw 291 ; Max HP
+	bigdw 140 ; Atk
+	bigdw 196 ; Def
+	bigdw 261 ; Spd
+	bigdw 207 ; SAtk
+	bigdw 171 ; SDef
+	db "@@@@@@@@@@@"
+
 
 ; BattleTowerMons group 10
 
@@ -5491,7 +5725,34 @@ BattleTowerMons:
 	bigdw 214 ; SDef
 	db "@@@@@@@@@@@"
 
+	db JIRK
+	db X_EVADE
+	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 0
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 1, 15, 15, 1 ; DVs
+	db 16, 16, 8, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 323 ; HP
+	bigdw 323 ; Max HP
+	bigdw 155 ; Atk
+	bigdw 218 ; Def
+	bigdw 290 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 190 ; SDef
+	db "@@@@@@@@@@@"
+
 	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
+
 
 ; BattleTowerMons group 11
 
@@ -5519,32 +5780,6 @@ BattleTowerMons:
 	bigdw 598 ; Spd
 	bigdw 198 ; SAtk
 	bigdw 198 ; SDef
-	db "@@@@@@@@@@@"
-
-	db JIRK
-	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 50000
-	bigdw 0
-	bigdw 50000
-	bigdw 50000
-	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 155 ; Atk
-	bigdw 218 ; Def
-	bigdw 290 ; Spd
-	bigdw 230 ; SAtk
-	bigdw 190 ; SDef
 	db "@@@@@@@@@@@"
 
 	db FLOGISTAN
@@ -5727,32 +5962,6 @@ BattleTowerMons:
 	bigdw 266 ; Spd
 	bigdw 278 ; SAtk
 	bigdw 224 ; SDef
-	db "@@@@@@@@@@@"
-
-	db PORYGON2
-	db TRIDENT
-	db TOXIC, TRI_ATTACK, RECOVER, PROTECT
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	bigdw 55000
-	bigdw 50000
-	dn 15, 13, 14, 13 ; DVs
-	db 8, 16, 16, 16 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 90 ; Level
-	db 0, 0 ; Status
-	bigdw 361 ; HP
-	bigdw 361 ; Max HP
-	bigdw 248 ; Atk
-	bigdw 266 ; Def
-	bigdw 211 ; Spd
-	bigdw 296 ; SAtk
-	bigdw 276 ; SDef
 	db "@@@@@@@@@@@"
 
 	db UNOWN
@@ -6039,4 +6248,30 @@ BattleTowerMons:
 	bigdw 124 ; Spd
 	bigdw 290 ; SAtk
 	bigdw 250 ; SDef
+	db "@@@@@@@@@@@"
+
+	db PORYGON2
+	db TRIDENT
+	db TOXIC, TRI_ATTACK, RECOVER, PROTECT
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 55000
+	bigdw 50000
+	dn 15, 13, 14, 13 ; DVs
+	db 8, 16, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 90 ; Level
+	db 0, 0 ; Status
+	bigdw 361 ; HP
+	bigdw 361 ; Max HP
+	bigdw 248 ; Atk
+	bigdw 266 ; Def
+	bigdw 211 ; Spd
+	bigdw 296 ; SAtk
+	bigdw 276 ; SDef
 	db "@@@@@@@@@@@"
