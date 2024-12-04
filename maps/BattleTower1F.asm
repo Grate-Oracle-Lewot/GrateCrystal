@@ -123,7 +123,7 @@ Script_GivePlayerHisPrize:
 	special BattleTowerAction
 	setval BATTLETOWERACTION_GIVEREWARD
 	special BattleTowerAction
-	ifequal CLEAR_BELL, Script_YourPackIsStuffedFull
+	ifequal POTION, Script_YourPackIsStuffedFull
 	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
 	giveitem ITEM_FROM_MEM, 5
 	writetext Text_PlayerGotFive
@@ -443,8 +443,7 @@ Text_BattleTower_LeftWithoutSaving:
 
 Text_YourMonWillBeHealedToFullHealth:
 	text "Your #MON will"
-	line "be healed to full"
-	cont "health."
+	line "be fully healed."
 	done
 
 Text_NextUpOpponentNo:
