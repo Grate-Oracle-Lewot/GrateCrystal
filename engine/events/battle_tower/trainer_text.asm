@@ -131,7 +131,10 @@ BattleTowerText::
 	jr .special
 .red
 	ld a, 23
-	jr .special
+
+.special
+	ld hl, BTSpecialTrainerTexts
+	jr .proceed
 
 .normal
 	dec a
@@ -163,10 +166,6 @@ BattleTowerText::
 
 .okay1
 	ld hl, BTFemaleTrainerTexts
-	jr .proceed
-
-.special
-	ld hl, BTSpecialTrainerTexts
 
 .proceed
 	ld b, 0
