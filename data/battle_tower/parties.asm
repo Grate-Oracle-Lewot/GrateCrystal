@@ -5728,3 +5728,55 @@ BattleTowerMons:
 	bigdw 278 ; SAtk
 	bigdw 224 ; SDef
 	db "@@@@@@@@@@@"
+
+	db PORYGON2
+	db TRIDENT
+	db TOXIC, TRI_ATTACK, RECOVER, PROTECT
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 55000
+	bigdw 50000
+	dn 15, 13, 14, 13 ; DVs
+	db 8, 16, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 90 ; Level
+	db 0, 0 ; Status
+	bigdw 361 ; HP
+	bigdw 361 ; Max HP
+	bigdw 248 ; Atk
+	bigdw 266 ; Def
+	bigdw 211 ; Spd
+	bigdw 296 ; SAtk
+	bigdw 276 ; SDef
+	db "@@@@@@@@@@@"
+
+	db UNOWN
+	db TWISTEDSPOON
+	db SUBSTITUTE, BEAT_UP, PSYCHIC_M, TRI_ATTACK
+	dw 0 ; OT ID
+	dt 1000 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 267 ; HP
+	bigdw 267 ; Max HP
+	bigdw 222 ; Atk
+	bigdw 246 ; Def
+	bigdw 246 ; Spd
+	bigdw 222 ; SAtk
+	bigdw 270 ; SDef
+	db "@@@@@@@@@@@"
