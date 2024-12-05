@@ -4833,13 +4833,6 @@ BattleCommand_CheckRampage:
 	pop af
 	jr nz, .continue_rampage
 
-	call BattleCommand_SwitchTurn
-	call GetUserItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	call BattleCommand_SwitchTurn
-	jr z, .continue_rampage
-
 	set SUBSTATUS_CONFUSED, [hl]
 	call BattleRandom
 	and %00000001
