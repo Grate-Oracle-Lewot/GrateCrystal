@@ -6406,30 +6406,30 @@ BattleTowerExtraMons:
 	bigdw 196 ; SDef
 	db "@@@@@@@@@@@"
 
-	db FORRETRESS
-	db MIRACLE_SEED
-	db SELFDESTRUCT, TOXIC, SOLARBEAM, SWAGGER
+	db SNOCONEY
+	db NO_ITEM
+	db THIEF, GIGA_DRAIN, DIG, SELFDESTRUCT
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
-	bigdw 45000
-	bigdw 50000
-	bigdw 50000
-	bigdw 45000
-	bigdw 50000
-	dn 15, 13, 14, 13 ; DVs
-	db 8, 8, 16, 24 ; PP
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 65000
+	bigdw 30000
+	dn 7, 8, 15, 8 ; DVs
+	db 48, 8, 24, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 339 ; HP
-	bigdw 339 ; Max HP
-	bigdw 270 ; Atk
-	bigdw 386 ; Def
-	bigdw 166 ; Spd
-	bigdw 206 ; SAtk
-	bigdw 256 ; SDef
+	bigdw 257 ; HP
+	bigdw 257 ; Max HP
+	bigdw 250 ; Atk
+	bigdw 148 ; Def
+	bigdw 382 ; Spd
+	bigdw 232 ; SAtk
+	bigdw 224 ; SDef
 	db "@@@@@@@@@@@"
 
 	assert_table_length BATTLETOWER_NUM_EXTRA_MON
