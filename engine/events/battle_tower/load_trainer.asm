@@ -127,6 +127,25 @@ LoadRandomBattleTowerMon:
 	maskbits BATTLETOWER_NUM_UNIQUE_MON
 	cp BATTLETOWER_NUM_UNIQUE_MON
 	jr nc, .resample
+
+	ld c, a
+	ld a, [wBTChoiceOfLvlGroup]
+	cp 10
+	jr c, .normal
+
+	ldh a, [hRandomAdd]
+	ld b, a
+.resample2
+	call Random
+	ldh a, [hRandomAdd]
+	add b
+	ld b, a
+	maskbits BATTLETOWER_NUM_EXTRA_MON
+	cp BATTLETOWER_NUM_EXTRA_MON
+	jr nc, .resample2
+	add c
+
+.normal
 	; in register 'a' is the chosen mon of the LevelGroup
 
 	; Check if mon was already loaded before
