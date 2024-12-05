@@ -77,10 +77,10 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Mr. Pokémon is now named Pokey Man. After defeating Blue, you can battle Prof. Oak at Pokey Man's house once per day, and if you win, Pokey Man will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - If you have all 16 Badges, you can fight former Elite Four members in a secondary gauntlet at the Cianwood Photo Studio
 - Battle Tower edits:
-  - Enemy Pokémon stats and movepools updated. Species and held items are mostly the same.
+  - Enemy Pokémon stats and movesets updated. Species and held items are mostly the same.
   - Enemy Pokémon now have max PP for all of their moves
   - 2 more Pokémon added to each randomized pool (Lv10, Lv20, etc...., Lv100), plus an additional 16 Pokémon for the Lv100 challenge to pull from
-  - After you've beaten Red, your 7th opponent in the Lv100 challenge will be replaced by one of 24 special trainers, consisting of Gym Leaders, League members, etc.
+  - After you've beaten Red, your 7th opponent in the Lv100 challenge will be replaced by one of 24 special trainers (random each time), consisting of Gym Leaders, League members, etc.
 - New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
 - Unused mine cart graphics added to some caves
