@@ -6013,8 +6013,8 @@ BattleTowerMons:
 
 	assert_table_length 10 * BATTLETOWER_NUM_UNIQUE_MON
 
-
-; BattleTowerMons group 11
+BattleTowerExtraMons:
+	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerExtraMons
 
 	db FLOGISTAN
 	db PINK_BOW
@@ -6431,3 +6431,5 @@ BattleTowerMons:
 	bigdw 206 ; SAtk
 	bigdw 256 ; SDef
 	db "@@@@@@@@@@@"
+
+	assert_table_length BATTLETOWER_NUM_EXTRA_MON
