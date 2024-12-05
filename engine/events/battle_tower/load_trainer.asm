@@ -189,10 +189,10 @@ LoadRandomBattleTowerMon:
 	jr z, .FindARandomBattleTowerMon
 	ld a, [sBTMonPrevPrevTrainer2]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 	ld a, [sBTMonPrevPrevTrainer3]
 	cp b
-	jr z, .FindARandomBattleTowerMon
+	jp z, .FindARandomBattleTowerMon
 
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH
 	call CopyBytes
