@@ -884,6 +884,21 @@ BattleTower_GiveReward:
 
 	ld a, [sBattleTowerReward]
 	call CloseSRAM
+
+	ld a, [wNamedObjectIndex]
+	cp TM01
+	jr nc, .TM
+
+	ld [wCurSpecies], a
+	ld a, ITEM_NAME
+	ld [wNamedObjectType], a
+	call GetName
+	jr .Copied
+.TM:
+	call GetTMHMName
+.Copied:
+	ld de, wStringBuffer4
+
 	ld [wScriptVar], a
 	ld hl, wNumItems
 	ld a, [hli]
