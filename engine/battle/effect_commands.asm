@@ -1055,12 +1055,11 @@ BattleCommand_Critical:
 
 ; +2 critical level
 	ld c, 2
-	jr .Tally
+	jr .FocusEnergy
 
 .Blissey:
 	cp BLISSEY
 	jr z, .Chansey
-	; fallthrough
 
 .Farfetchd:
 	cp FARFETCH_D
@@ -1071,7 +1070,6 @@ BattleCommand_Critical:
 
 ; +2 critical level
 	ld c, 2
-	jr .Tally
 
 .FocusEnergy:
 	ld a, BATTLE_VARS_SUBSTATUS4
