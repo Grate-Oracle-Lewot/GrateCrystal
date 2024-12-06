@@ -1214,9 +1214,6 @@ Function1709bb: ; BattleTowerAction $10
 	ld [s5_a800], a
 	jp CloseSRAM
 
-.NoAction:
-	ret
-
 .Action4:
 	ld a, BANK(s5_b023) ; aka BANK(s5_a825) and BANK(s5_a826)
 	call OpenSRAM
@@ -1233,6 +1230,7 @@ Function1709bb: ; BattleTowerAction $10
 	farcall Function17d0f3
 	ld a, TRUE
 	ld [wScriptVar], a
+.NoAction:
 	ret
 
 .Action5:
@@ -1289,11 +1287,9 @@ Function1709bb: ; BattleTowerAction $10
 	call GetMapSceneID
 	ld a, d
 	or e
-	jr z, .no_scene_2
+	ret z
 	xor a
 	ld [de], a
-
-.no_scene_2
 	ret
 
 Function170a9c:
