@@ -2,6 +2,7 @@ BattleTowerRoomMenu:
 ; special
 	call InitBattleTowerChallengeRAM
 	farcall _BattleTowerRoomMenu
+SkipBattleTowerTrainer:
 UnusedBattleTowerDummySpecial1:
 	ret
 
@@ -444,9 +445,6 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 	ld hl, sNrOfBeatenBattleTowerTrainers
 	inc [hl]
 	jp CloseSRAM
-
-SkipBattleTowerTrainer:
-	ret
 
 Function1704ca: ; unreferenced
 	ld a, [s5_be46]
