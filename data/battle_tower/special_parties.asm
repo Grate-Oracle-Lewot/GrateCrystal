@@ -1246,58 +1246,6 @@ BattleTowerPryce:
 BattleTowerClair:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerClair
 
-	db GYARADOS
-	db MYSTIC_WATER
-	db WATERFALL, OUTRAGE, IRON_TAIL, HYPER_BEAM
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	dn 11, 12, 11, 11 ; DVs
-	db 24, 16, 24, 8 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 385 ; HP
-	bigdw 385 ; Max HP
-	bigdw 340 ; Atk
-	bigdw 250 ; Def
-	bigdw 252 ; Spd
-	bigdw 210 ; SAtk
-	bigdw 290 ; SDef
-	db "GYARADOS@@@"
-
-	db DRAGONAIR
-	db EVERSTONE
-	db THUNDER_WAVE, FLAMETHROWER, SURF, SLAM
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	dn 11, 12, 11, 11 ; DVs
-	db 16, 16, 16, 32 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 317 ; HP
-	bigdw 317 ; Max HP
-	bigdw 258 ; Atk
-	bigdw 222 ; Def
-	bigdw 230 ; Spd
-	bigdw 230 ; SAtk
-	bigdw 230 ; SDef
-	db "DRAGONAIR@@"
-
 	db KINGDRA
 	db SCOPE_LENS
 	db SMOKESCREEN, SURF, DRAGON_PULSE, HYPER_BEAM
@@ -1323,6 +1271,58 @@ BattleTowerClair:
 	bigdw 280 ; SAtk
 	bigdw 280 ; SDef
 	db "KINGDRA@@@@"
+
+	db HO_OH
+	db DICTIONARY
+	db SACRED_FIRE, SUNNY_DAY, SOLARBEAM, OUTRAGE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 11, 12, 11, 11 ; DVs
+	db 8, 8, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 278 ; Def
+	bigdw 278 ; Spd
+	bigdw 318 ; SAtk
+	bigdw 406 ; SDef
+	db "HO-OH@@@@@@"
+
+	db LUGIA
+	db LEFTOVERS
+	db AEROBLAST, HAIL, AIR_SLASH, DRAGON_PULSE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 0
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 11, 12, 11, 11 ; DVs
+	db 8, 8, 24, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 278 ; Atk
+	bigdw 358 ; Def
+	bigdw 318 ; Spd
+	bigdw 278 ; SAtk
+	bigdw 406 ; SDef
+	db "LUGIA@@@@@@"
 
 	assert_table_length 3
 
@@ -1827,31 +1827,31 @@ BattleTowerLewot:
 BattleTowerLance:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLance
 
-	db EXEGGUTOR
-	db MIRACLE_SEED
-	db DRAGON_PULSE, GIGA_DRAIN, PSYCHIC_M, HYPER_BEAM
+	db GYARADOS
+	db MYSTIC_WATER
+	db WATERFALL, OUTRAGE, IRON_TAIL, HYPER_BEAM
 	dw 0 ; OT ID
-	dt 1059860 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
 	bigdw 65535
-	bigdw 0
+	bigdw 65535
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
 	dn 14, 14, 14, 14 ; DVs
-	db 16, 8, 16, 8 ; PP
+	db 24, 16, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 365 ; HP
-	bigdw 365 ; Max HP
-	bigdw 225 ; Atk
-	bigdw 264 ; Def
-	bigdw 204 ; Spd
-	bigdw 348 ; SAtk
-	bigdw 246 ; SDef
-	db "EXEGGUTOR@@"
+	bigdw 385 ; HP
+	bigdw 385 ; Max HP
+	bigdw 340 ; Atk
+	bigdw 250 ; Def
+	bigdw 252 ; Spd
+	bigdw 210 ; SAtk
+	bigdw 290 ; SDef
+	db "GYARADOS@@@"
 
 	db TYRANITAR
 	db BLACKGLASSES
