@@ -1993,58 +1993,6 @@ BattleTowerRed:
 BattleTowerDefaultParty:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerDefaultParty
 
-	db DITTO
-	db X_SPEED
-	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	bigdw 65535
-	dn 15, 15, 15, 15 ; DVs
-	db 8, 8, 0, 0 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 303 ; HP
-	bigdw 303 ; Max HP
-	bigdw 198 ; Atk
-	bigdw 198 ; Def
-	bigdw 598 ; Spd
-	bigdw 198 ; SAtk
-	bigdw 198 ; SDef
-	db "DITZ@@@@@@@"
-
-	db JIRK
-	db X_EVADE
-	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
-	dw 0 ; OT ID
-	dt 1000000 ; Exp
-	; Stat exp
-	bigdw 50000
-	bigdw 0
-	bigdw 50000
-	bigdw 50000
-	bigdw 50000
-	dn 1, 15, 15, 1 ; DVs
-	db 16, 16, 8, 8 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 155 ; Atk
-	bigdw 218 ; Def
-	bigdw 290 ; Spd
-	bigdw 230 ; SAtk
-	bigdw 190 ; SDef
-	db "JOY@@@@@@@@"
-
 	db MEWTWO
 	db BLACKGLASSES
 	db KINESIS, PSYCHIC_M, AURA_SPHERE, DARK_PULSE
@@ -2069,6 +2017,58 @@ BattleTowerDefaultParty:
 	bigdw 358 ; Spd
 	bigdw 406 ; SAtk
 	bigdw 278 ; SDef
-	db "MEWT CITY@@"
+	db "MEWTWO@@@@@"
+
+	db HO_OH
+	db DICTIONARY
+	db SACRED_FIRE, SUNNY_DAY, SOLARBEAM, OUTRAGE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 15, 15, 15, 15 ; DVs
+	db 8, 8, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 278 ; Def
+	bigdw 278 ; Spd
+	bigdw 318 ; SAtk
+	bigdw 406 ; SDef
+	db "HO-OH@@@@@@"
+
+	db LUGIA
+	db SCOPE_LENS
+	db AEROBLAST, HAIL, AIR_SLASH, DRAGON_PULSE
+	dw 0 ; OT ID
+	dt 1250000 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 1, 15, 15, 15 ; DVs
+	db 8, 8, 24, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 415 ; HP
+	bigdw 415 ; Max HP
+	bigdw 278 ; Atk
+	bigdw 358 ; Def
+	bigdw 318 ; Spd
+	bigdw 278 ; SAtk
+	bigdw 406 ; SDef
+	db "LUGIA@@@@@@"
 
 	assert_table_length 3
