@@ -6068,30 +6068,30 @@ BattleTowerExtraMons:
 	bigdw 288 ; SDef
 	db "@@@@@@@@@@@"
 
-	db PIKACHU
-	db LIGHT_BALL
-	db THUNDERBOLT, THUNDER_WAVE, DAZZLY_GLEAM, SURF
+	db QWILFISH
+	db CHARCOAL
+	db DEFENSE_CURL, FLAME_WHEEL, SUNNY_DAY, WATERFALL
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
+	bigdw 50000
+	bigdw 50000
 	bigdw 45000
 	bigdw 50000
 	bigdw 45000
-	bigdw 50000
-	bigdw 50000
 	dn 15, 12, 15, 14 ; DVs
-	db 16, 16, 24, 16 ; PP
+	db 48, 24, 8, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 253 ; HP
-	bigdw 253 ; Max HP
-	bigdw 200 ; Atk
-	bigdw 162 ; Def
-	bigdw 270 ; Spd
-	bigdw 188 ; SAtk
-	bigdw 188 ; SDef
+	bigdw 335 ; HP
+	bigdw 335 ; Max HP
+	bigdw 300 ; Atk
+	bigdw 262 ; Def
+	bigdw 260 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 206 ; SDef
 	db "@@@@@@@@@@@"
 
 	db HITMONLEE
@@ -6276,30 +6276,30 @@ BattleTowerExtraMons:
 	bigdw 262 ; SDef
 	db "@@@@@@@@@@@"
 
-	db TYPHLOSION
-	db CHARCOAL
-	db FLAMETHROWER, THUNDERPUNCH, SCALD, SACRED_FIRE
+	db RAIKOU
+	db KINGS_ROCK
+	db THUNDERBOLT, SCALD, TRI_ATTACK, AURA_SPHERE
 	dw 0 ; OT ID
-	dt 1059860 ; Exp
+	dt 1250000 ; Exp
 	; Stat exp
-	bigdw 30000
-	bigdw 30000
-	bigdw 30000
-	bigdw 30000
-	bigdw 30000
-	dn 7, 6, 6, 4 ; DVs
-	db 16, 24, 24, 8 ; PP
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	dn 4, 5, 5, 6 ; DVs
+	db 16, 24, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 325 ; HP
-	bigdw 325 ; Max HP
-	bigdw 230 ; Atk
-	bigdw 216 ; Def
-	bigdw 260 ; Spd
-	bigdw 274 ; SAtk
-	bigdw 226 ; SDef
+	bigdw 352 ; HP
+	bigdw 352 ; Max HP
+	bigdw 233 ; Atk
+	bigdw 215 ; Def
+	bigdw 295 ; Spd
+	bigdw 297 ; SAtk
+	bigdw 267 ; SDef
 	db "@@@@@@@@@@@"
 
 	db ARTICUNO
