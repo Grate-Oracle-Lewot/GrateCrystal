@@ -773,11 +773,10 @@ BattleTower_GiveReward:
 
 	ld a, [sBattleTowerReward]
 	call CloseSRAM
+	ld [wScriptVar], a
 
-	ld a, [wNamedObjectIndex]
 	cp TM01
 	jr nc, .TM
-
 	ld [wCurSpecies], a
 	ld a, ITEM_NAME
 	ld [wNamedObjectType], a
@@ -788,7 +787,6 @@ BattleTower_GiveReward:
 .Copied:
 	ld de, wStringBuffer4
 
-	ld [wScriptVar], a
 	ld hl, wNumItems
 	ld a, [hli]
 	cp MAX_ITEMS
