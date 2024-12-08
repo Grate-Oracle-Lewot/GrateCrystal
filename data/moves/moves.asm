@@ -24,7 +24,7 @@ Moves:
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC,     PHYSICAL, 100, 15,  10
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,       PHYSICAL, 100, 40,   0
 	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,       PHYSICAL, 100, 30,   0
-	move GUILLOTINE,   EFFECT_OHKO,                0, STEEL,        PHYSICAL,  30,  5,   0
+	move GUILLOTINE,   EFFECT_OHKO,                0, STEEL,        PHYSICAL,  20,  5,   0
 	move SIGNAL_BEAM,  EFFECT_CONFUSE_HIT,        75, BUG,          SPECIAL,  100, 15,  10
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, FIGHTING,     STATUS,   100, 15,   0
 	move CUT,          EFFECT_NORMAL_HIT,         80, BUG,          PHYSICAL, 100, 15,   0
@@ -44,7 +44,7 @@ Moves:
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,       PHYSICAL, 100, 20,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,       PHYSICAL, 100, 25,   0
 	move FURY_ATTACK,  EFFECT_MULTI_HIT,          20, FLYING,       PHYSICAL,  90, 20,   0
-	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,       PHYSICAL,  30,  5,   0
+	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,       PHYSICAL,  20,  5,   0
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,       PHYSICAL, 100, 40,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,       PHYSICAL, 100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        20, DRAGON,       PHYSICAL,  85, 20,   0
@@ -102,7 +102,7 @@ Moves:
 	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,     SPECIAL,   75,  5,  30
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,         PHYSICAL,  90, 25,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,       PHYSICAL, 100, 10,   0
-	move FISSURE,      EFFECT_FISSURE,             1, GROUND,       PHYSICAL,  30,  5,   0
+	move FISSURE,      EFFECT_FISSURE,             1, GROUND,       PHYSICAL,  20,  5,   0
 	move DIG,          EFFECT_DIG,                70, GROUND,       PHYSICAL, 100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,       STATUS,   100,  5,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, SPECIAL,  100, 25,  10
