@@ -1289,13 +1289,13 @@ BattleTowerClair:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 415 ; HP
-	bigdw 415 ; Max HP
-	bigdw 358 ; Atk
-	bigdw 278 ; Def
-	bigdw 278 ; Spd
-	bigdw 318 ; SAtk
-	bigdw 406 ; SDef
+	bigdw 407 ; HP
+	bigdw 407 ; Max HP
+	bigdw 350 ; Atk
+	bigdw 272 ; Def
+	bigdw 270 ; Spd
+	bigdw 310 ; SAtk
+	bigdw 396 ; SDef
 	db "HO-OH@@@@@@"
 
 	db LUGIA
@@ -1315,13 +1315,13 @@ BattleTowerClair:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 415 ; HP
-	bigdw 415 ; Max HP
-	bigdw 278 ; Atk
-	bigdw 358 ; Def
-	bigdw 318 ; Spd
-	bigdw 278 ; SAtk
-	bigdw 406 ; SDef
+	bigdw 407 ; HP
+	bigdw 407 ; Max HP
+	bigdw 207 ; Atk
+	bigdw 352 ; Def
+	bigdw 310 ; Spd
+	bigdw 270 ; SAtk
+	bigdw 396 ; SDef
 	db "LUGIA@@@@@@"
 
 	assert_table_length 3
@@ -1844,13 +1844,13 @@ BattleTowerLance:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 385 ; HP
-	bigdw 385 ; Max HP
-	bigdw 340 ; Atk
-	bigdw 250 ; Def
-	bigdw 252 ; Spd
-	bigdw 210 ; SAtk
-	bigdw 290 ; SDef
+	bigdw 363 ; HP
+	bigdw 363 ; Max HP
+	bigdw 346 ; Atk
+	bigdw 254 ; Def
+	bigdw 258 ; Spd
+	bigdw 216 ; SAtk
+	bigdw 296 ; SDef
 	db "GYARADOS@@@"
 
 	db TYRANITAR
