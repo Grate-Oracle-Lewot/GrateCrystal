@@ -18,7 +18,7 @@ OverworldSprites:
 	overworld_sprite ElderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite JanineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KurtSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite BlaineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -60,7 +60,7 @@ OverworldSprites:
 	overworld_sprite BigSnorlaxSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SurfingPikachuSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite RocketSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RocketGirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite RocketGirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite NurseSpriteGFX, 12, STANDING_SPRITE, PAL_OW_PINK
 	overworld_sprite LinkReceptionistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ClerkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
