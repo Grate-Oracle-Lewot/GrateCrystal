@@ -374,6 +374,9 @@ Text_PlayerGotFive:
 	text_promptbutton
 	text_end
 
+FallthroughText:
+	done
+
 Text_YourPackIsStuffedFull:
 	text "Oops, your PACK is"
 	line "stuffed full."
