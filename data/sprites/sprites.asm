@@ -41,7 +41,7 @@ OverworldSprites:
 	overworld_sprite ErikaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite KogaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SabrinaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite CooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CooltrainerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BugCatcherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite TwinSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
