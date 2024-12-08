@@ -50,7 +50,7 @@ OverworldSprites:
 	overworld_sprite TeacherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BeautySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SuperNerdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite RockerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite RockerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PokefanMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PokefanFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite GrampsSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
