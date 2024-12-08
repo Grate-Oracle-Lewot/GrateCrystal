@@ -2064,7 +2064,7 @@ BattleTowerDefaultParty:
 	db 0, 0 ; Status
 	bigdw 415 ; HP
 	bigdw 415 ; Max HP
-	bigdw 278 ; Atk
+	bigdw 250 ; Atk
 	bigdw 358 ; Def
 	bigdw 318 ; Spd
 	bigdw 278 ; SAtk
