@@ -194,14 +194,11 @@ SeafoamCaveBookText5:
 	line "#MON is up"
 	cont "there as well."
 
-	para "It's my favorite"
-	line "generation, but"
+	para "Oh, and YOSHI'S"
+	line "STORY has the best"
 
-	para "I'm not averse to"
-	line "the newer games."
-
-	para "HGSS is peak for"
-	line "me, though."
+	para "soundtrack of all"
+	line "time. Objectively."
 
 	para "Keep reading?"
 	done
