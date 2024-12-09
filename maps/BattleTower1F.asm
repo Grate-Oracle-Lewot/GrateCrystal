@@ -128,14 +128,11 @@ Script_GivePlayerHisPrize:
 	writetext Text_PlayerGotFive
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
-	closetext
-	end
+	sjump Script_WaitButton
 
 Script_YourPackIsStuffedFull:
 	writetext Text_YourPackIsStuffedFull
-	waitbutton
-	closetext
-	end
+	sjump Script_WaitButton
 
 Script_BattleTowerIntroductionYesNo:
 	writetext Text_WouldYouLikeToHearAboutTheBattleTower
@@ -190,9 +187,7 @@ BattleTower1FGrannyScript:
 	faceplayer
 	opentext
 	special MoveReminder
-	waitbutton
-	closetext
-	end
+	sjump Script_WaitButton
 
 BattleTower1FReceptionist2Script:
 	jumptextfaceplayer Text_BattleTowerReceptionist2
