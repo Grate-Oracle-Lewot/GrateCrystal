@@ -551,7 +551,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -577,7 +577,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -1152,7 +1152,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1178,7 +1178,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1753,7 +1753,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1779,7 +1779,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -2354,7 +2354,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2380,7 +2380,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2955,7 +2955,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2981,7 +2981,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -3556,7 +3556,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3582,7 +3582,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -4157,7 +4157,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -4183,7 +4183,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -4758,7 +4758,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4784,7 +4784,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -5359,7 +5359,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5385,7 +5385,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5960,7 +5960,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db X_EVADE
+	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -5986,7 +5986,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DITTO
-	db X_SPEED
+	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -6329,7 +6329,7 @@ BattleTowerExtraMons:
 	db "@@@@@@@@@@@"
 
 	db GRANBULL
-	db BRIGHTPOWDER
+	db POLKADOT_BOW
 	db ROAR, SHADOW_CLAW, LOVELY_KISS, FIRE_PUNCH
 	dw 0 ; OT ID
 	dt 800000 ; Exp
