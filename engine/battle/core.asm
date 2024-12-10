@@ -296,7 +296,7 @@ BattleTurn:
 
 HandleBetweenTurnEffects:
 	ld hl, wTotalBattleTurns
-	la a, [hl]
+	ld a, [hl]
 	cp -1
 	jr z, .max
 	inc [hl]
