@@ -295,6 +295,13 @@ BattleTurn:
 	ret
 
 HandleBetweenTurnEffects:
+	ld hl, wTotalBattleTurns
+	la a, [hl]
+	cp -1
+	jr z, .max
+	inc [hl]
+.max
+
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .CheckEnemyFirst
