@@ -33,6 +33,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - TMs are infinite-use
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
+- New Pokédex entries for every Pokémon
 - On the title screen, simply press Select to reset the clock, and B to delete your save data
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
@@ -81,7 +82,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Enemy Pokémon now have max PP for all of their moves
   - 2 more Pokémon added to each randomized pool (Lv10, Lv20, etc...., Lv100), plus an additional 16 Pokémon for the Lv100 challenge to pull from
   - After you've beaten Red, your 7th opponent in the Lv100 challenge will be replaced by one of 24 special trainers (random each time), consisting of Gym Leaders, League members, etc.
-- New Pokédex entries for every Pokémon
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
 - Unused mine cart graphics added to some caves
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
