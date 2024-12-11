@@ -6199,7 +6199,7 @@ BattleTowerExtraMons:
 	db "@@@@@@@@@@@"
 
 	db UNOWN
-	db TWISTEDSPOON
+	db TRIDENT
 	db SUBSTITUTE, BEAT_UP, PSYCHIC_M, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -6225,7 +6225,7 @@ BattleTowerExtraMons:
 	db "@@@@@@@@@@@"
 
 	db VENUSAUR
-	db BRIGHTPOWDER
+	db MIRACLE_SEED
 	db SUNNY_DAY, SOLARBEAM, SYNTHESIS, SLUDGE_BOMB
 	dw 0 ; OT ID
 	dt 1059860 ; Exp
