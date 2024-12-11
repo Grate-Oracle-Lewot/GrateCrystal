@@ -117,18 +117,6 @@ LoadRandomBattleTowerMon:
 	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
 	call AddNTimes
 
-	ldh a, [hRandomAdd]
-	ld b, a
-.resample
-	call Random
-	ldh a, [hRandomAdd]
-	add b
-	ld b, a
-	maskbits BATTLETOWER_NUM_UNIQUE_MON
-	cp BATTLETOWER_NUM_UNIQUE_MON
-	jr nc, .resample
-
-	ld c, a
 	ld a, [wBTChoiceOfLvlGroup]
 	cp 10
 	jr c, .normal
@@ -140,12 +128,23 @@ LoadRandomBattleTowerMon:
 	ldh a, [hRandomAdd]
 	add b
 	ld b, a
-	maskbits BATTLETOWER_NUM_EXTRA_MON
-	cp BATTLETOWER_NUM_EXTRA_MON
+	maskbits BATTLETOWER_NUM_UNIQUE_MON + BATTLETOWER_NUM_EXTRA_MON
+	cp BATTLETOWER_NUM_UNIQUE_MON + BATTLETOWER_NUM_EXTRA_MON
 	jr nc, .resample2
-	add c
+	jr .done
 
 .normal
+	ldh a, [hRandomAdd]
+	ld b, a
+.resample
+	call Random
+	ldh a, [hRandomAdd]
+	add b
+	ld b, a
+	maskbits BATTLETOWER_NUM_UNIQUE_MON
+	cp BATTLETOWER_NUM_UNIQUE_MON
+	jr nc, .resample
+.done
 	; in register 'a' is the chosen mon of the LevelGroup
 
 	; Check if mon was already loaded before
