@@ -129,7 +129,8 @@ Script_GivePlayerHisPrize:
 	writetext Text_PlayerGotFive
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
-	sjump Script_WaitButton
+	closetext
+	end
 
 Script_YourPackIsStuffedFull:
 	writetext Text_YourPackIsStuffedFull
@@ -364,13 +365,10 @@ Text_PlayerGotFive:
 	text "<PLAYER> got"
 	line "@"
 	text_ram wStringBuffer4
-	text " ×5!"
+	text " ×5!@"
 	sound_item
 	text_promptbutton
 	text_end
-
-FallthroughText:
-	done
 
 Text_YourPackIsStuffedFull:
 	text "Oops, your PACK is"
