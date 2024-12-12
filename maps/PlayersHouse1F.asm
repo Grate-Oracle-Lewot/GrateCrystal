@@ -360,6 +360,10 @@ PlayersHouse1FSinkText:
 	text "The government"
 	line "puts chemicals in"
 	cont "the tap water."
+
+	para "That's why I only"
+	line "drink out of the"
+	cont "toilet!"
 	done
 
 PlayersHouse1FFridgeText:
