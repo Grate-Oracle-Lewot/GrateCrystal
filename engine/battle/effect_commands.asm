@@ -1314,6 +1314,8 @@ BattleCheckTypeMatchup:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar ; preserves hl, de, and bc
 	and TYPE_MASK
+	; fallthrough
+
 CheckTypeMatchup:
 	push hl
 	push de
@@ -1519,7 +1521,6 @@ BattleCommand_CheckHit:
 	call BattleRandom
 	cp b
 	ret c
-	; fallthrough
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
