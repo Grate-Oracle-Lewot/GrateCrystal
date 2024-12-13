@@ -1,10 +1,10 @@
 	db "FOX@" ; species name
 	dw 307, 440 ; height, weight
 
-	db   "Most commonly,"
-	next "four of its nine"
-	next "tails are white."
+	db   "It won't go to bed"
+	next "until it hears at"
+	next "least nine stories"
 
-	page "A rare one with"
-	next "five white tails"
-	next "brings good luck.@"
+	page "from its trainer."
+	next "It doesn't allow"
+	next "repeats.@"
