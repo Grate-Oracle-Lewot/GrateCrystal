@@ -5855,9 +5855,9 @@ BattleTowerMons:
 	bigdw 238 ; SDef
 	db "@@@@@@@@@@@"
 
-	db OMASTAR
+	db DUNSPARCE
 	db LEFTOVERS
-	db SURF, ANCIENTPOWER, BLIZZARD, TOXIC
+	db PURSUIT, LOVELY_KISS, DIG, DRILL_PECK
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5867,17 +5867,17 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 11, 14, 7 ; DVs
-	db 16, 16, 8, 8 ; PP
+	db 48, 24, 24, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 331 ; HP
-	bigdw 331 ; Max HP
-	bigdw 210 ; Atk
-	bigdw 332 ; Def
-	bigdw 198 ; Spd
-	bigdw 304 ; SAtk
+	bigdw 417 ; HP
+	bigdw 417 ; Max HP
+	bigdw 260 ; Atk
+	bigdw 232 ; Def
+	bigdw 192 ; Spd
+	bigdw 224 ; SAtk
 	bigdw 214 ; SDef
 	db "@@@@@@@@@@@"
 
