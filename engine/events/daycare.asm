@@ -402,7 +402,7 @@ DayCareManOutside:
 	ld [wScriptVar], a
 	ld hl, wDayCareMan
 	res DAYCAREMAN_HAS_EGG_F, [hl]
-	jp DayCare_InitBreeding
+	jr DayCare_InitBreeding
 
 .PartyFull:
 	ld hl, .NoRoomForEggText
@@ -430,86 +430,6 @@ DayCareManOutside:
 .NoRoomForEggText:
 	text_far _NoRoomForEggText
 	text_end
-
-DayCare_GiveEgg:
-	ld a, [wEggMonLevel]
-	ld [wCurPartyLevel], a
-	ld hl, wPartyCount
-	ld a, [hl]
-	cp PARTY_LENGTH
-	jr nc, .PartyFull
-	inc a
-	ld [hl], a
-
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, EGG
-	ld [hli], a
-	ld a, [wEggMonSpecies]
-	ld [wCurSpecies], a
-	ld [wCurPartySpecies], a
-	ld a, -1
-	ld [hl], a
-
-	ld hl, wPartyMonNicknames
-	ld bc, MON_NAME_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMonNickname
-	call CopyBytes
-
-	ld hl, wPartyMonOTs
-	ld bc, NAME_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMonOT
-	call CopyBytes
-
-	ld hl, wPartyMon1
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMon
-	ld bc, BOXMON_STRUCT_LENGTH
-	call CopyBytes
-
-	call GetBaseData
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	ld b, h
-	ld c, l
-	ld hl, MON_ID + 1
-	add hl, bc
-	push hl
-	ld hl, MON_MAXHP
-	add hl, bc
-	ld d, h
-	ld e, l
-	pop hl
-	push bc
-	ld b, FALSE
-	predef CalcMonStats
-	pop bc
-	ld hl, MON_HP
-	add hl, bc
-	xor a
-	ld [hli], a
-	ld [hl], a
-	and a
-	ret
-
-.PartyFull:
-	scf
-	ret
-
-DayCare_GetCurrentPartyMember:
-	ld a, [wPartyCount]
-	dec a
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ret
 
 DayCare_InitBreeding:
 	ld a, [wDayCareLady]
@@ -724,3 +644,83 @@ DayCare_InitBreeding:
 
 .String_EGG:
 	db "EGG@"
+
+DayCare_GiveEgg:
+	ld a, [wEggMonLevel]
+	ld [wCurPartyLevel], a
+	ld hl, wPartyCount
+	ld a, [hl]
+	cp PARTY_LENGTH
+	jr nc, .PartyFull
+	inc a
+	ld [hl], a
+
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, EGG
+	ld [hli], a
+	ld a, [wEggMonSpecies]
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	ld a, -1
+	ld [hl], a
+
+	ld hl, wPartyMonNicknames
+	ld bc, MON_NAME_LENGTH
+	call DayCare_GetCurrentPartyMember
+	ld hl, wEggMonNickname
+	call CopyBytes
+
+	ld hl, wPartyMonOTs
+	ld bc, NAME_LENGTH
+	call DayCare_GetCurrentPartyMember
+	ld hl, wEggMonOT
+	call CopyBytes
+
+	ld hl, wPartyMon1
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call DayCare_GetCurrentPartyMember
+	ld hl, wEggMon
+	ld bc, BOXMON_STRUCT_LENGTH
+	call CopyBytes
+
+	call GetBaseData
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld b, h
+	ld c, l
+	ld hl, MON_ID + 1
+	add hl, bc
+	push hl
+	ld hl, MON_MAXHP
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+	push bc
+	ld b, FALSE
+	predef CalcMonStats
+	pop bc
+	ld hl, MON_HP
+	add hl, bc
+	xor a
+	ld [hli], a
+	ld [hl], a
+	and a
+	ret
+
+.PartyFull:
+	scf
+	ret
+
+DayCare_GetCurrentPartyMember:
+	ld a, [wPartyCount]
+	dec a
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ret
