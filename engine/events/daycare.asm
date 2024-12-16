@@ -400,16 +400,16 @@ DayCareManOutside:
 	call PrintText
 	xor a ; FALSE
 	ld [wScriptVar], a
-	ret
+	ld hl, wDayCareMan
+	res DAYCAREMAN_HAS_EGG_F, [hl]
+	jp DayCare_InitBreeding
 
 .PartyFull:
 	ld hl, .NoRoomForEggText
 	call PrintText
 	ld a, TRUE
 	ld [wScriptVar], a
-	ld hl, wDayCareMan
-	res DAYCAREMAN_HAS_EGG_F, [hl]
-	jp DayCare_InitBreeding
+	ret
 
 .FoundAnEggText:
 	text_far _FoundAnEggText
