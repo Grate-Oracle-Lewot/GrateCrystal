@@ -407,7 +407,9 @@ DayCareManOutside:
 	call PrintText
 	ld a, TRUE
 	ld [wScriptVar], a
-	ret
+	ld hl, wDayCareMan
+	res DAYCAREMAN_HAS_EGG_F, [hl]
+	jp DayCare_InitBreeding
 
 .FoundAnEggText:
 	text_far _FoundAnEggText
