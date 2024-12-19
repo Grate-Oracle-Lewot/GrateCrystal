@@ -370,6 +370,14 @@ Text_PlayerGotFive:
 	text_promptbutton
 	text_end
 
+Text_PutBTRewardInItemPocket:
+	text "<PLAYER> put the"
+	line "@"
+	text_ram wStringBuffer4
+	text " in"
+	cont "the ITEM POCKET."
+	done
+
 Text_YourPackIsStuffedFull:
 	text "Oops, your PACK is"
 	line "stuffed full."
