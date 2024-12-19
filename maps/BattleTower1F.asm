@@ -129,8 +129,8 @@ Script_GivePlayerHisPrize:
 	writetext Text_PlayerGotFive
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
-	closetext
-	end
+	writetext Text_PutBTRewardInItemPocket
+	sjump Script_WaitButton
 
 Script_YourPackIsStuffedFull:
 	writetext Text_YourPackIsStuffedFull
@@ -362,7 +362,7 @@ Text_CongratulationsYouveBeatenAllTheTrainers:
 	done
 
 Text_PlayerGotFive:
-	text "<PLAYER> got"
+	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer4
 	text " ×5!@"
