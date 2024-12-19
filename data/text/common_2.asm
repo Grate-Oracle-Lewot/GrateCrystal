@@ -1428,7 +1428,7 @@ _MayRegisterItemText::
 	line "PACK may be"
 
 	para "registered for use"
-	line "on SELECT Button."
+	line "with SELECT."
 	done
 
 _OakText1::
