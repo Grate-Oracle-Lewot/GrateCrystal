@@ -186,10 +186,7 @@ BattleTower1FBugCatcherScript:
 	jumptextfaceplayer Text_BattleTowerBugCatcher
 
 BattleTower1FGrannyScript:
-	faceplayer
-	opentext
-	special MoveReminder
-	sjump Script_WaitButton
+	jumptextfaceplayer Text_BattleTowerGranny
 
 BattleTower1FReceptionist2Script:
 	jumptextfaceplayer Text_BattleTowerReceptionist2
