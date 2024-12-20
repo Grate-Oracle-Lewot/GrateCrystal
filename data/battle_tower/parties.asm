@@ -483,7 +483,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
-	dn 15, 15, 15, 15 ; DVs
+	dn 15, 15, 13, 15 ; DVs
 	db 16, 16, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -493,7 +493,7 @@ BattleTowerMons:
 	bigdw 35 ; Max HP
 	bigdw 26 ; Atk
 	bigdw 29 ; Def
-	bigdw 29 ; Spd
+	bigdw 28 ; Spd
 	bigdw 26 ; SAtk
 	bigdw 31 ; SDef
 	db "@@@@@@@@@@@"
@@ -6202,14 +6202,14 @@ BattleTowerExtraMons:
 	db TRIDENT
 	db SUBSTITUTE, BEAT_UP, PSYCHIC_M, TRI_ATTACK
 	dw 0 ; OT ID
-	dt 1000 ; Exp
+	dt 1000000 ; Exp
 	; Stat exp
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
 	bigdw 30000
-	dn 15, 15, 15, 15 ; DVs
+	dn 15, 15, 13, 15 ; DVs
 	db 16, 16, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -6219,7 +6219,7 @@ BattleTowerExtraMons:
 	bigdw 267 ; Max HP
 	bigdw 222 ; Atk
 	bigdw 246 ; Def
-	bigdw 246 ; Spd
+	bigdw 242 ; Spd
 	bigdw 222 ; SAtk
 	bigdw 270 ; SDef
 	db "@@@@@@@@@@@"
