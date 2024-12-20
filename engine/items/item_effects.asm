@@ -2114,9 +2114,9 @@ GuardSpecEffect:
 
 DireHitEffect:
 	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_FOCUS_ENERGY, [hl]
+	bit SUBSTATUS_DIRE_HIT, [hl]
 	jp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_FOCUS_ENERGY, [hl]
+	set SUBSTATUS_DIRE_HIT, [hl]
 	jp UseItemText
 
 XItemEffect:
