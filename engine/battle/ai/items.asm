@@ -701,12 +701,8 @@ AI_HealStatus:
 	xor a
 	ld [hl], a
 	ld [wEnemyMonStatus], a
-	; Bug: this should reset SUBSTATUS_NIGHTMARE
-	; Uncomment the 2 lines below to fix (Done)
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_NIGHTMARE, [hl]
-	; Bug: this should reset SUBSTATUS_CONFUSED
-	; Uncomment the 2 lines below to fix (Done)
 	ld hl, wEnemySubStatus3
 	res SUBSTATUS_CONFUSED, [hl]
 	ld hl, wEnemySubStatus5
@@ -730,7 +726,7 @@ EnemyUsedGuardSpec:
 EnemyUsedDireHit:
 	call AIUsedItemSound
 	ld hl, wEnemySubStatus4
-	set SUBSTATUS_FOCUS_ENERGY, [hl]
+	set SUBSTATUS_DIRE_HIT, [hl]
 	ld a, DIRE_HIT
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
