@@ -1075,6 +1075,15 @@ BattleCommand_Critical:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_FOCUS_ENERGY, a
+	jr z, .DireHit
+
+; +1 critical level
+	inc c
+
+.DireHit
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVar
+	bit SUBSTATUS_DIRE_HIT, a
 	jr z, .CheckCritical
 
 ; +1 critical level
