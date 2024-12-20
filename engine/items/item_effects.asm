@@ -1116,17 +1116,6 @@ ReturnToBattle_UseBall:
 	farcall _ReturnToBattle_UseBall
 	ret
 
-TownMapEffect:
-	call FadeToMenu
-	farcall _TownMap
-	call Call_ExitMenu
-	xor a
-	ldh [hBGMapMode], a
-	farcall Pack_InitGFX
-	farcall WaitBGMap_DrawPackGFX
-	farcall Pack_InitColors
-	ret
-
 BicycleEffect:
 	farcall BikeFunction
 	ret
