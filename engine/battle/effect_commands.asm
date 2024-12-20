@@ -1115,12 +1115,18 @@ BattleCommand_Critical:
 	inc c
 
 .Tally:
+	ld a, c
+	cp 7
+	jr nc, .Max
+
 	ld hl, CriticalHitChances
 	ld b, 0
 	add hl, bc
 	call BattleRandom
 	cp [hl]
 	ret nc
+
+.Max
 	ld a, 1
 	ld [wCriticalHit], a
 	ret
