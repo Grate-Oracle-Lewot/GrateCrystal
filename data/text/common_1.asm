@@ -207,41 +207,6 @@ _OakTimeIsItText::
 	text ", is it?"
 	done
 
-; Mobile Adapter
-
-_ThereIsNothingConnectedText:: ; unreferenced
-	text "There is nothing"
-	line "connected."
-	done
-
-_CheckCellPhoneAdapterText:: ; unreferenced
-	text "Check cell phone"
-	line "adapter."
-	done
-
-_CheckCDMAAdapterText:: ; unreferenced
-	text "Check CDMA"
-	line "adapter."
-	done
-
-_CheckDOCOMOPHSAdapterText:: ; unreferenced
-	text "Check DOCOMO PHS"
-	line "adapter."
-	done
-
-_CheckDDIPHSAdapterText:: ; unreferenced
-	text "Check DDI PHS"
-	line "adapter."
-	done
-
-_CheckMobileAdapterText:: ; unreferenced
-	text "Check unlimited"
-	line "battle mobile"
-	cont "adapter."
-	done
-
-; Mobile Adapter End
-
 _NothingToChooseText::
 	text "There's nothing to"
 	line "choose."
@@ -1165,21 +1130,6 @@ _LinkTerminatedText::
 
 _ClosingLinkText::
 	text "Closing link."
-	done
-
-_ClearTimeLimitText:: ; unreferenced
-	text "Clear the time"
-	line "limit?"
-	done
-
-_TimeLimitWasClearedText:: ; unreferenced
-	text "The time limit was"
-	line "cleared."
-	done
-
-_PickErrorPacketText:: ; unreferenced
-	text "Pick which packet"
-	line "as an error?"
 	done
 
 _TradingMonForOTMonText::
