@@ -210,4 +210,20 @@ KantoWaterWildMons:
 	db 95, UNOWN
 	end_water_wildmons
 
+	def_water_wildmons CERULEAN_CAVE_1F
+	db 8 percent ; encounter rate
+	db 35, GOLDUCK
+	db 35, SLOWPOKE
+	db 35, GOLBAT
+	db 35, JIRK
+	end_water_wildmons
+
+	def_water_wildmons CERULEAN_CAVE_B1F
+	db 6 percent ; encounter rate
+	db 35, GOLDUCK
+	db 35, GYARADOS
+	db 35, CROBAT
+	db 35, POLIWRATH
+	end_water_wildmons
+
 	db -1 ; end
