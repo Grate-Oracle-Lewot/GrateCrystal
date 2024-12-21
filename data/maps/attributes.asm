@@ -576,7 +576,6 @@ ENDM
 	map_attributes BattleTowerElevator, BATTLE_TOWER_ELEVATOR, $00, 0
 	map_attributes BattleTowerHallway, BATTLE_TOWER_HALLWAY, $00, 0
 	map_attributes BattleTowerBattleRoom, BATTLE_TOWER_BATTLE_ROOM, $00, 0
-	map_attributes AdventureArchive, ADVENTURE_ARCHIVE, $00, 0
 	map_attributes MahoganyPokecenter1F, MAHOGANY_POKECENTER_1F, $00, 0
 	map_attributes MahoganyGym, MAHOGANY_GYM, $00, 0
 	map_attributes MahoganyRedGyaradosSpeechHouse, MAHOGANY_RED_GYARADOS_SPEECH_HOUSE, $00, 0
