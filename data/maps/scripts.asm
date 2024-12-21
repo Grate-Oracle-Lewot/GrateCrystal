@@ -228,7 +228,7 @@ INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
-INCLUDE "maps/AdventureArchive.asm"
+INCLUDE "maps/CeruleanCaveB1F.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -512,3 +512,5 @@ INCLUDE "maps/CianwoodDarkroom.asm"
 INCLUDE "maps/PowerPlant2F.asm"
 INCLUDE "maps/MountMoon1F.asm"
 INCLUDE "maps/MountMoonB1F.asm"
+INCLUDE "maps/CeruleanCave1F.asm"
+INCLUDE "maps/CeruleanCave2F.asm"
