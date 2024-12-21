@@ -44,5 +44,7 @@ RockMonMaps:
 	treemon_map ICE_PATH_B3F,              TREEMON_SET_ROCK
 	treemon_map TOHJO_FALLS,               TREEMON_SET_ROCK
 	treemon_map ROCK_TUNNEL_B1F,           TREEMON_SET_ROCK_KANTO
+	treemon_map CERULEAN_CAVE_2F,          TREEMON_SET_ROCK_KANTO
+	treemon_map CERULEAN_CAVE_B1F,         TREEMON_SET_ROCK_KANTO
 	treemon_map SAFARI_ZONE_GATE,          TREEMON_SET_ROCK_KANTO
 	db -1
