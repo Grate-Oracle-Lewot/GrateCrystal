@@ -188,9 +188,6 @@ BattleTower1FBugCatcherScript:
 BattleTower1FGrannyScript:
 	jumptextfaceplayer Text_BattleTowerGranny
 
-BattleTower1FReceptionist2Script:
-	jumptextfaceplayer Text_BattleTowerReceptionist2
-
 MovementData_BattleTower1FWalkToElevator:
 	step UP
 	step UP
