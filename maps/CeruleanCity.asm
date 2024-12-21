@@ -181,18 +181,17 @@ CeruleanCityFisherRocketTipText:
 	done
 
 CeruleanCityYoungsterText1:
-	text "There used to be a"
-	line "cave here that had"
+	text "That cave over"
+	line "there…"
 
-	para "horribly powerful"
-	line "#MON in it."
+	para "It's dangerous"
+	line "inside."
 
-	para "About a year ago,"
-	line "there was a loud"
+	para "That means there"
+	line "must be something"
 
-	para "rumbling and the"
-	line "cave entrance was"
-	cont "just gone."
+	para "good hidden at the"
+	line "end… Right?"
 	done
 
 CeruleanCitySignText:
