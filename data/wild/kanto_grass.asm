@@ -963,6 +963,99 @@ KantoGrassWildMons:
 	db 1, UNOWN
 	end_grass_wildmons
 
+	def_grass_wildmons CERULEAN_CAVE_1F
+	db 8 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, GOLBAT
+	db 40, GRAVELER
+	db 40, RHYHORN
+	db 40, MAGNETON
+	db 40, MACHOKE
+	db 40, PILOSWINE
+	db 40, DITTO
+	db 40, RAICHU
+	; day
+	db 40, GOLBAT
+	db 40, GRAVELER
+	db 40, KADABRA
+	db 40, MAGNETON
+	db 40, MACHOKE
+	db 40, SANDSLASH
+	db 40, DITTO
+	db 40, RHYHORN
+	; nite
+	db 40, GOLBAT
+	db 40, GRAVELER
+	db 40, RHYHORN
+	db 40, MAGNETON
+	db 40, PRIMEAPE
+	db 40, MAROWAK
+	db 40, WOBBUFFET
+	db 40, VENOMOTH
+	end_grass_wildmons
+
+	def_grass_wildmons CERULEAN_CAVE_2F
+	db 8 percent, 8 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 41, GOLBAT
+	db 41, GRAVELER
+	db 41, RHYHORN
+	db 41, MAGNETON
+	db 41, MACHOKE
+	db 41, PILOSWINE
+	db 41, DITTO
+	db 41, CHANSEY
+	; day
+	db 41, GOLBAT
+	db 41, GRAVELER
+	db 41, WIGGLYTUFF
+	db 41, MAGNETON
+	db 41, MACHOKE
+	db 41, SANDSLASH
+	db 41, DITTO
+	db 41, RHYHORN
+	; nite
+	db 41, GOLBAT
+	db 41, GRAVELER
+	db 41, HYPNO
+	db 41, MAGNETON
+	db 41, PRIMEAPE
+	db 41, MAROWAK
+	db 41, WOBBUFFET
+	db 41, RHYHORN
+	end_grass_wildmons
+
+	def_grass_wildmons CERULEAN_CAVE_B1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 42, GOLBAT
+	db 42, GOLEM
+	db 42, RHYDON
+	db 42, MAGNETON
+	db 42, MACHAMP
+	db 42, PILOSWINE
+	db 42, UNOWN
+	db 42, LICKITUNG
+	; day
+	db 42, GOLBAT
+	db 42, GOLEM
+	db 42, RHYDON
+	db 42, MAGNETON
+	db 42, MACHAMP
+	db 42, SANDSLASH
+	db 42, UNOWN
+	db 42, SNORLAX
+	; nite
+	db 42, CROBAT
+	db 42, GOLEM
+	db 42, PARASECT
+	db 42, MAGNETON
+	db 42, PRIMEAPE
+	db 42, MAROWAK
+	db 42, UNOWN
+	db 42, RHYDON
+	end_grass_wildmons
+
 	def_grass_wildmons SAFARI_ZONE
 	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
 	; morn
