@@ -1,14 +1,14 @@
 	object_const_def
-	const CERULEANCAVE_ROCK1
-	const CERULEANCAVE_ROCK2
-	const CERULEANCAVE_ROCK3
+	const CERULEANCAVE2F_ROCK1
+	const CERULEANCAVE2F_ROCK2
+	const CERULEANCAVE2F_ROCK3
 
 CeruleanCave2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeruleanCaveRock:
+CeruleanCave2FRock:
 	jumpstd SmashRockScript
 
 CeruleanCave2F_MapEvents:
@@ -28,6 +28,6 @@ CeruleanCave2F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 28, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCaveRock, -1
-	object_event 25, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCaveRock, -1
-	object_event 11, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCaveRock, -1
+	object_event 28, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCave2FRock, -1
+	object_event 25, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCave2FRock, -1
+	object_event 11, 14, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCave2FRock, -1
