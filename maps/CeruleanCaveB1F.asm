@@ -1,9 +1,13 @@
 	object_const_def
+	const CERULEANCAVEB1F_ROCK1
 
 CeruleanCaveB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+CeruleanCaveB1FRock:
+	jumpstd SmashRockScript
 
 CeruleanCaveB1F_MapEvents:
 	db 0, 0 ; filler
@@ -17,3 +21,4 @@ CeruleanCaveB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 19,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCaveB1FRock, -1
