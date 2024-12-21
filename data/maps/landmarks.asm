@@ -67,6 +67,7 @@ Landmarks:
 	landmark 100,  52, CeruleanCityName
 	landmark 100,  44, Route24Name
 	landmark 108,  36, Route25Name
+	landmark  96,  48, CeruleanCaveName
 	landmark 100,  60, Route5Name
 	landmark 108,  76, UndergroundName
 	landmark 100,  76, Route6Name
@@ -152,6 +153,7 @@ LavRadioTowerName:   db "LAV¯RADIO TOWER@"
 SilphCoName:         db "SILPH CO.@"
 SafariZoneName:      db "SAFARI ZONE@"
 SeafoamIslandsName:  db "SEAFOAM¯ISLANDS@"
+CeruleanCaveName:    db "CERULEAN¯CAVE@"
 Route1Name:          db "ROUTE 1@"
 Route2Name:          db "ROUTE 2@"
 Route3Name:          db "ROUTE 3@"
