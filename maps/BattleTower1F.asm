@@ -529,19 +529,6 @@ Text_BattleTowerBugCatcher:
 	line "any rock #MON…"
 	done
 
-Text_BattleTowerReceptionist2:
-	text "This way leads to"
-	line "the ADVENTURE"
-	cont "ARCHIVE."
-
-	para "There you can view"
-	line "all kinds of"
-
-	para "information about"
-	line "your history as a"
-	cont "trainer."
-	done
-
 BattleTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -549,7 +536,6 @@ BattleTower1F_MapEvents:
 	warp_event  7,  9, BATTLE_TOWER_OUTSIDE, 3
 	warp_event  8,  9, BATTLE_TOWER_OUTSIDE, 4
 	warp_event  7,  0, BATTLE_TOWER_ELEVATOR, 1
-	warp_event 17,  0, ADVENTURE_ARCHIVE, 1
 
 	def_coord_events
 
