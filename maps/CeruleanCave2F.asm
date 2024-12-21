@@ -31,8 +31,8 @@ CeruleanCave2FPPUp:
 CeruleanCave2FCalcium:
 	itemball CALCIUM
 
-CeruleanCave2FHiddenFiber:
-	hiddenitem FIBER, EVENT_CERULEAN_CAVE_2F_HIDDEN_FIBER
+CeruleanCave2FHiddenHPUp:
+	hiddenitem HP_UP, EVENT_CERULEAN_CAVE_2F_HIDDEN_HP_UP
 
 CeruleanCave2FHiddenCarbos:
 	hiddenitem CARBOS, EVENT_CERULEAN_CAVE_2F_HIDDEN_CARBOS
@@ -67,7 +67,7 @@ CeruleanCave2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 24,  2, BGEVENT_ITEM, CeruleanCave2FHiddenFiber
+	bg_event 24,  2, BGEVENT_ITEM, CeruleanCave2FHiddenHPUp
 	bg_event  4,  4, BGEVENT_ITEM, CeruleanCave2FHiddenCarbos
 	bg_event 10, 21, BGEVENT_ITEM, CeruleanCave2FHiddenMaxRevive
 	bg_event 18, 23, BGEVENT_ITEM, CeruleanCave2FHiddenFullRestore
