@@ -626,6 +626,9 @@ ENDM
 	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
 	map_attributes SeafoamCaveB1F, SEAFOAM_CAVE_B1F, $2e, 0
 	map_attributes SeafoamCaveB2F, SEAFOAM_CAVE_B2F, $19, 0
+	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $09, 0
+	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $09, 0
+	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $09, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
 	map_attributes DarkCave2F, DARK_CAVE_2F, $00, 0
