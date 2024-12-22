@@ -355,7 +355,7 @@ PokeAnim_DoAnimScript:
 	ldh [hBGMapMode], a
 .loop
 	ld a, [wPokeAnimJumptableIndex]
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld hl, .Jumptable
 	rst JumpTable
 	ret
