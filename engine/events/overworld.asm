@@ -136,7 +136,7 @@ CutFunction:
 	ret
 
 .nohivebadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .nothingtocut
@@ -146,13 +146,13 @@ CutFunction:
 .DoCut:
 	ld hl, Script_CutFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailCut:
 	ld hl, CutNothingText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseCutText:
@@ -286,13 +286,13 @@ FlashFunction:
 	jr nz, .notadarkcave
 .useflash
 	call UseFlash
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .notadarkcave
 	call FieldMoveFailed
 .nozephyrbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseFlash:
@@ -359,7 +359,7 @@ SurfFunction:
 	ld a, $1
 	ret
 .nofogbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 .alreadyfail
 	ld a, $3
@@ -373,14 +373,14 @@ SurfFunction:
 	ld [wSurfingPlayerState], a
 	ld hl, SurfFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailSurf:
 	ld hl, CantSurfText
 	call MenuTextboxBackup
 .done
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .AlreadySurfing:
@@ -588,7 +588,7 @@ FlyFunction:
 	ret
 
 .nostormbadge
-	ld a, $82
+	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .indoors
@@ -608,7 +608,7 @@ FlyFunction:
 	farcall Pack_InitColors
 .done_tiles
 	call WaitBGMap
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .map
@@ -623,12 +623,12 @@ FlyFunction:
 .done_select
 	ld hl, .FlyScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailFly:
 	call FieldMoveFailed
-	ld a, $82
+	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .FlyScript:
@@ -667,18 +667,18 @@ WaterfallFunction:
 ; Waterfall
 	ld de, ENGINE_RISINGBADGE
 	call CheckBadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret c
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld hl, Script_WaterfallFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .failed
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 CheckMapCanWaterfall:
@@ -841,14 +841,14 @@ EscapeRopeOrDig:
 	jr nz, .escaperope
 	ld hl, .UsedDigScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .escaperope
 	farcall SpecialKabutoChamber
 	ld hl, .UsedEscapeRopeScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailDig:
@@ -861,7 +861,7 @@ EscapeRopeOrDig:
 	call CloseWindow
 
 .failescaperope
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .UseDigText:
@@ -951,13 +951,13 @@ TeleportFunction:
 	call GetPartyNickname
 	ld hl, .TeleportScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailTeleport:
 	ld hl, .CantUseTeleportText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .TeleportReturnText:
@@ -1007,13 +1007,13 @@ StrengthFunction:
 	jr .UseStrength
 
 .Failed:
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .UseStrength:
 	ld hl, Script_StrengthFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 SetStrengthFlag:
@@ -1140,13 +1140,13 @@ WhirlpoolFunction:
 .DoWhirlpool:
 	ld hl, Script_WhirlpoolFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailWhirlpool:
 	call FieldMoveFailed
 .noglacierbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseWhirlpoolText:
@@ -1276,12 +1276,12 @@ TryHeadbuttFromMenu:
 
 	ld hl, HeadbuttFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .no_tree
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseHeadbuttText:
@@ -1361,12 +1361,12 @@ TryRockSmashFromMenu:
 
 	ld hl, RockSmashFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .no_rock
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 GetFacingObject:
@@ -1539,7 +1539,7 @@ FishFunction:
 	ret
 
 .FailFish:
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .FishGotSomething:
@@ -1547,7 +1547,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_GotABite
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FishNoBite:
@@ -1555,7 +1555,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_NotEvenANibble
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FishNoFish:
@@ -1563,7 +1563,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_NotEvenANibble
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 Script_NotEvenANibble:
@@ -1689,7 +1689,7 @@ PocketPCFunction:
 .PocketPCNoSignal:
 	ld hl, .NoSignalText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	jr .finish
 
 .NoSignalText:
