@@ -1153,7 +1153,7 @@ Script_reloadmapafterbattle:
 	jp ScriptJump
 
 .notblackedout
-	bit 0, d
+	bit BATTLESCRIPT_WILD_F, d
 	jr z, .was_wild
 	farcall MomTriesToBuySomething
 	jr .done
