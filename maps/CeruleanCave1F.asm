@@ -1,11 +1,22 @@
 	object_const_def
 	const CERULEANCAVE1F_POKE_BALL1
 	const CERULEANCAVE1F_POKE_BALL2
+	const CERULEANCAVE1F_POKE_BALL3
 
 CeruleanCave1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+CeruleanCave1FElectrodeScript:
+	waitsfx
+	cry ELECTRODE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+	loadwildmon ELECTRODE, 42
+	startbattle
+	disappear CERULEANCAVE1F_POKE_BALL3
+	reloadmapafterbattle
+	end
 
 CeruleanCave1FSwagBeacon:
 	itemball SWAG_BEACON
@@ -38,3 +49,4 @@ CeruleanCave1F_MapEvents:
 	def_object_events
 	object_event 21,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCave1FSwagBeacon, EVENT_CERULEAN_CAVE_1F_SWAG_BEACON
 	object_event  8, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCave1FXSpecial, EVENT_CERULEAN_CAVE_1F_X_SPECIAL
+	object_event  7,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCave1FElectrodeScript, EVENT_CERULEAN_CAVE_1F_ELECTRODE
