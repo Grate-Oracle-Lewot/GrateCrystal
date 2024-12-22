@@ -1357,7 +1357,7 @@ Script_sdefer:
 	call GetScriptByte
 	ld [wDeferredScriptAddr + 1], a
 	ld hl, wScriptFlags
-	set 3, [hl]
+	set RUN_DEFERRED_SCRIPT, [hl]
 	ret
 
 Script_checkscene:
