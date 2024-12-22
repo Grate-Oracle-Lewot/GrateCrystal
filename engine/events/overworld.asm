@@ -14,7 +14,7 @@ FieldMoveJumptable:
 	ret
 
 .okay
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	scf
 	ret
 
@@ -117,7 +117,7 @@ CutFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -268,7 +268,7 @@ INCLUDE "data/collision/field_move_blocks.asm"
 
 FlashFunction:
 	call .CheckUseFlash
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -329,7 +329,7 @@ SurfFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -553,7 +553,7 @@ FlyFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -660,7 +660,7 @@ FlyFunction:
 
 WaterfallFunction:
 	call .TryWaterfall
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -804,7 +804,7 @@ EscapeRopeOrDig:
 	ld hl, .DigTable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -923,7 +923,7 @@ TeleportFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1002,7 +1002,7 @@ TeleportFunction:
 
 StrengthFunction:
 	call .TryStrength
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1123,7 +1123,7 @@ WhirlpoolFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1280,7 +1280,7 @@ AskWhirlpoolText:
 
 HeadbuttFunction:
 	call TryHeadbuttFromMenu
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1363,7 +1363,7 @@ AskHeadbuttText:
 
 RockSmashFunction:
 	call TryRockSmashFromMenu
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1499,7 +1499,7 @@ FishFunction:
 	ld hl, .FishTable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1695,7 +1695,7 @@ PocketPCFunction:
 	call QueueScript
 	ld a, TRUE
 .finish
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1753,7 +1753,7 @@ CheckIfInPokemonLeague:
 
 BikeFunction:
 	call .TryBike
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
