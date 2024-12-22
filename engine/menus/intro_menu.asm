@@ -389,7 +389,7 @@ ConfirmContinue:
 
 Continue_CheckRTC_RestartClock:
 	call CheckRTCStatus
-	and %10000000 ; Day count exceeded 16383
+	and RTC_RESET
 	jr z, .pass
 	farcall RestartClock
 	ld a, c
@@ -424,7 +424,7 @@ FinishContinueFunction:
 
 DisplaySaveInfoOnContinue:
 	call CheckRTCStatus
-	and %10000000
+	and RTC_RESET
 	jr z, .clock_ok
 	lb de, 4, 8
 	jr DisplayContinueDataWithRTCError
