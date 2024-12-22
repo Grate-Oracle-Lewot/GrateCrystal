@@ -38,6 +38,11 @@ AUTO_INPUT EQU $ff
 	const TEMPMON    ; 3
 	const WILDMON    ; 4
 
+; wJumptableIndex::
+JUMPTABLE_INDEX_MASK EQU %01111111
+	const_def 7
+	shift_const JUMPTABLE_EXIT
+
 ; wGameTimerPaused::
 GAME_TIMER_PAUSED_F EQU 0
 GAME_TIMER_MOBILE_F EQU 7
@@ -111,6 +116,17 @@ RIGHT_MASK EQU 1 << RIGHT
 	shift_const FACE_RIGHT ; 1
 FACE_CURRENT EQU 0
 
+; wStateFlags
+SPRITE_UPDATES_DISABLED_F             EQU 0
+LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F EQU 1
+TEXT_STATE_F                          EQU 6
+SCRIPTED_MOVEMENT_STATE_F             EQU 7
+
+; wSpriteFlags::
+SPRITES_VRAM_BANK_0_F       EQU 5
+SPRITES_SKIP_WALKING_GFX_F  EQU 6
+SPRITES_SKIP_STANDING_GFX_F EQU 7
+
 ; wPokemonWithdrawDepositParameter::
 PC_WITHDRAW       EQU 0
 PC_DEPOSIT        EQU 1
@@ -133,6 +149,10 @@ INIT_OTHER_ITEM_LIST EQU 3
 INIT_PLAYEROT_LIST   EQU 4
 INIT_MON_LIST        EQU 5
 
+; wMapNameSignFlags::
+	const_def 1
+	const SHOWN_MAP_NAME_SIGN ; 1
+
 ; wTimeOfDay::
 	const_def
 	const MORN_F     ; 0
@@ -148,6 +168,9 @@ DARKNESS EQU 1 << DARKNESS_F
 
 ANYTIME EQU MORN | DAY | NITE
 
+; wTimeOfDayPalFlags::
+FORCED_PALSET_F EQU 7
+
 ; wTimeOfDayPalset::
 DARKNESS_PALSET EQU (DARKNESS_F << 6) | (DARKNESS_F << 4) | (DARKNESS_F << 2) | DARKNESS_F
 
@@ -157,6 +180,10 @@ DARKNESS_PALSET EQU (DARKNESS_F << 6) | (DARKNESS_F << 4) | (DARKNESS_F << 2) | 
 	const BATTLEANIM_IN_SUBROUTINE_F ; 1
 	const BATTLEANIM_IN_LOOP_F       ; 2
 	const BATTLEANIM_KEEPSPRITES_F   ; 3
+
+; wBattleScriptFlags::
+BATTLESCRIPT_WILD_F     EQU 0
+BATTLESCRIPT_SCRIPTED_F EQU 7
 
 ; wPlayerSpriteSetupFlags::
 PLAYERSPRITESETUP_FACING_MASK       EQU %11
@@ -181,7 +208,20 @@ PLAYERGENDER_FEMALE_F EQU 0
 	const MAPEVENTS_OFF ; 1
 
 ; wScriptFlags::
-SCRIPT_RUNNING EQU 2
+	const_def
+	const UNUSED_SCRIPT_FLAG_0 ; 0
+	const UNUSED_SCRIPT_FLAG_1 ; 1
+	const SCRIPT_RUNNING       ; 2
+	const RUN_DEFERRED_SCRIPT  ; 3
+
+; wEnabledPlayerEvents::
+	const_def
+	const PLAYEREVENTS_COUNT_STEPS           ; 0
+	const PLAYEREVENTS_COORD_EVENTS          ; 1
+	const PLAYEREVENTS_WARPS_AND_CONNECTIONS ; 2
+	const_skip
+	const PLAYEREVENTS_WILD_ENCOUNTERS       ; 4
+	const PLAYEREVENTS_UNUSED                ; 5
 
 ; wScriptMode::
 	const_def
@@ -193,6 +233,9 @@ SCRIPT_RUNNING EQU 2
 ; wSpawnAfterChampion::
 SPAWN_LANCE EQU 1
 SPAWN_RED   EQU 2
+
+; wGameTimeCap::
+GAME_TIME_CAPPED EQU 0
 
 ; wCurDay::
 	const_def
@@ -331,3 +374,30 @@ DAYCAREMAN_ACTIVE_F          EQU 7
 ; wDayCareLady::
 DAYCARELADY_HAS_MON_F        EQU 0
 DAYCARELADY_ACTIVE_F         EQU 7
+
+; wUnlockedUnowns::
+	const_def
+	const UNLOCKED_UNOWNS_A_TO_K_F
+	const UNLOCKED_UNOWNS_L_TO_R_F
+	const UNLOCKED_UNOWNS_S_TO_W_F
+	const UNLOCKED_UNOWNS_X_TO_Z_F
+NUM_UNLOCKED_UNOWN_SETS EQU const_value
+
+; sRTCStatusFlags::
+	const_def 5
+	shift_const RTC_DAYS_EXCEED_139 ; 5
+	shift_const RTC_DAYS_EXCEED_255 ; 6
+	shift_const RTC_RESET           ; 7
+
+; hVBlank::
+; VBlankHandlers indexes (see home/vblank.asm)
+	const_def
+	const VBLANK_NORMAL       ; 0
+	const VBLANK_CUTSCENE     ; 1
+	const VBLANK_SOUND_ONLY   ; 2
+	const VBLANK_CUTSCENE_CGB ; 3
+	const VBLANK_SERIAL       ; 4
+	const VBLANK_CREDITS      ; 5
+	const VBLANK_DMA_TRANSFER ; 6
+	const VBLANK_UNUSED       ; 7
+NUM_VBLANK_HANDLERS EQU const_value
