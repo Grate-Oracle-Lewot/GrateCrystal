@@ -108,17 +108,17 @@ _FixDays:
 
 .set_bit_7
 	; Day count exceeds 16383
-	ld a, %10000000
+	ld a, RTC_RESET
 	jp RecordRTCStatus ; set bit 7 on sRTCStatusFlags
 
 ClockContinue:
 	call CheckRTCStatus
 	ld c, a
-	and %11000000 ; Day count exceeded 255 or 16383
+	and RTC_RESET | RTC_DAYS_EXCEED_255 ; Day count exceeded 255 or 16383
 	jr nz, .time_overflow
 
 	ld a, c
-	and %00100000 ; Day count exceeded 139
+	and RTC_DAYS_EXCEED_139 ; Day count exceeded 139
 	jr z, .dont_update
 
 	call UpdateTime
