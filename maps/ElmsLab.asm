@@ -198,6 +198,7 @@ TotodilePokeBallScript:
 	givepoke TOTODILE, 100, GOLD_BERRY
 	giveitem FLOATIE
 	giveitem PICKAXE
+	giveitem DISCO_BALL
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
