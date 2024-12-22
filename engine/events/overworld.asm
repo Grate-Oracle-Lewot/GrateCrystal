@@ -291,9 +291,6 @@ FlashFunction:
 
 .notadarkcave
 	call FieldMoveFailed
-	ld a, $80
-	ret
-
 .nozephyrbadge
 	ld a, $80
 	ret
@@ -507,6 +504,9 @@ TrySurfOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
+
+	ld a, PLAYER_SURF
+	ld [wSurfingPlayerState], a
 
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
@@ -741,20 +741,14 @@ TryWaterfallOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-
-	call CheckMapCanWaterfall
-	jr c, .failed
-	ld a, BANK(Script_AskWaterfall)
-	ld hl, Script_AskWaterfall
-	call CallScript
-	scf
-	ret
+	jr .go
 
 .check_mon_move
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
 
+.go
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
@@ -1111,7 +1105,6 @@ TryStrengthOW:
 
 .already_using
 	xor a
-	jr .done
 
 .done
 	ld [wScriptVar], a
@@ -1145,10 +1138,6 @@ WhirlpoolFunction:
 	ld a, $2
 	ret
 
-.noglacierbadge
-	ld a, $80
-	ret
-
 .DoWhirlpool:
 	ld hl, Script_WhirlpoolFromMenu
 	call QueueScript
@@ -1157,6 +1146,7 @@ WhirlpoolFunction:
 
 .FailWhirlpool:
 	call FieldMoveFailed
+.noglacierbadge
 	ld a, $80
 	ret
 
@@ -1234,18 +1224,14 @@ TryWhirlpoolOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-
-	ld a, BANK(Script_AskWhirlpoolOW)
-	ld hl, Script_AskWhirlpoolOW
-	call CallScript
-	scf
-	ret
+	jr .go
 
 .check_mon_move
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
 
+.go
 	ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
 	call CallScript
@@ -1576,17 +1562,12 @@ FishFunction:
 .FishNoFish:
 	ld a, $0
 	ld [wFishingResult], a
-	ld hl, Script_NotEvenANibble2
+	ld hl, Script_NotEvenANibble
 	call QueueScript
 	ld a, $81
 	ret
 
 Script_NotEvenANibble:
-	scall Script_FishCastRod
-	writetext RodNothingText
-	sjump Script_NotEvenANibble_FallThrough
-
-Script_NotEvenANibble2:
 	scall Script_FishCastRod
 	writetext RodNothingText
 
@@ -1695,7 +1676,6 @@ PocketPCFunction:
 	call QueueScript
 	ld a, TRUE
 .finish
-	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
