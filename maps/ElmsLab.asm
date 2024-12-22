@@ -197,6 +197,7 @@ TotodilePokeBallScript:
 	promptbutton
 	givepoke TOTODILE, 100, GOLD_BERRY
 	giveitem FLOATIE
+	giveitem PICKAXE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
