@@ -1,9 +1,20 @@
 	object_const_def
+	const CERULEANCAVE1F_POKE_BALL1
+	const CERULEANCAVE1F_POKE_BALL2
 
 CeruleanCave1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+CeruleanCave1FSwagBeacon:
+	itemball SWAG_BEACON
+
+CeruleanCave1FXSpecial:
+	itemball X_SPECIAL
+
+CeruleanCave1FHiddenLuckyPunch:
+	hiddenitem LUCKY_PUNCH, EVENT_CERULEAN_CAVE_1F_HIDDEN_LUCKY_PUNCH
 
 CeruleanCave1F_MapEvents:
 	db 0, 0 ; filler
@@ -22,5 +33,8 @@ CeruleanCave1F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  4, 11, BGEVENT_ITEM, CeruleanCave1FHiddenLuckyPunch
 
 	def_object_events
+	object_event 21,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCave1FSwagBeacon, EVENT_CERULEAN_CAVE_1F_SWAG_BEACON
+	object_event  8, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CeruleanCave1FXSpecial, EVENT_CERULEAN_CAVE_1F_X_SPECIAL
