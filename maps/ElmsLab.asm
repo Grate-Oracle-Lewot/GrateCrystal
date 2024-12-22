@@ -199,6 +199,8 @@ TotodilePokeBallScript:
 	giveitem FLOATIE
 	giveitem PICKAXE
 	giveitem DISCO_BALL
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_FOGBADGE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
