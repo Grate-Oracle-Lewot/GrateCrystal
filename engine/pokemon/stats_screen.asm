@@ -82,7 +82,7 @@ StatsScreenMobile:
 .loop
 	farcall Mobile_SetOverworldDelay
 	ld a, [wJumptableIndex]
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld hl, StatsScreenPointerTable
 	rst JumpTable
 	call StatsScreen_WaitAnim
