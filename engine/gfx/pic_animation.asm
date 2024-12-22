@@ -115,7 +115,7 @@ SetUpPokeAnim:
 	pop af
 	ldh [rSVBK], a
 	ld a, c
-	and $80
+	and JUMPTABLE_EXIT
 	ret z
 	scf
 	ret
