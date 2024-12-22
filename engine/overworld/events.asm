@@ -368,13 +368,13 @@ endr
 	call CallScript
 
 	ld hl, wScriptFlags
-	res 3, [hl]
+	res RUN_DEFERRED_SCRIPT, [hl]
 
 	farcall EnableScriptMode
 	farcall ScriptEvents
 
 	ld hl, wScriptFlags
-	bit 3, [hl]
+	bit RUN_DEFERRED_SCRIPT, [hl]
 	jr z, .nope
 
 	ld hl, wDeferredScriptAddr
