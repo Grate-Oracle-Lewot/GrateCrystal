@@ -228,7 +228,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Kanto: Porygon2 Lv40 (4000C), Togetic Lv50 (5000C), Dragonite Lv60 (9999C)
 
 ## Locations
-- Viridian Forest
+- Viridian Forest (similar layout to Gen I with the National Park tileset)
 - Pewter Museum (fossils can be resurrected at Lv.1, with a random chance to start in their evolved form, e.g. Kabutops instead of Kabuto)
 - Mt. Moon expanded (similar layout to Gen I, no Rockets)
 - Silph Co. upper floors (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
