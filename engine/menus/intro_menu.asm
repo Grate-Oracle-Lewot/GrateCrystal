@@ -375,30 +375,6 @@ PostCreditsSpawn:
 	ldh [hMapEntryMethod], a
 	ret
 
-Continue_MobileAdapterMenu: ; unreferenced
-	ld hl, wd479
-	bit 1, [hl]
-	ret nz
-	ld a, 5
-	ld [wMusicFade], a
-	ld a, LOW(MUSIC_MOBILE_ADAPTER_MENU)
-	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_MOBILE_ADAPTER_MENU)
-	ld [wMusicFadeID + 1], a
-	ld c, 20
-	call DelayFrames
-	ld c, $1
-	farcall InitMobileProfile ; mobile
-	farcall _SaveData
-	ld a, 8
-	ld [wMusicFade], a
-	ld a, LOW(MUSIC_NONE)
-	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_NONE)
-	ld [wMusicFadeID + 1], a
-	ld c, 35
-	jp DelayFrames
-
 ConfirmContinue:
 .loop
 	call DelayFrame
