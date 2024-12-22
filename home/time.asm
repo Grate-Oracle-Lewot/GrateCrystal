@@ -81,7 +81,7 @@ FixDays::
 	ldh [hRTCDayLo], a
 
 ; flag for sRTCStatusFlags
-	ld a, %01000000
+	ld a, RTC_DAYS_EXCEED_255
 	jr .set
 
 .daylo
@@ -100,7 +100,7 @@ FixDays::
 	ldh [hRTCDayLo], a
 
 ; flag for sRTCStatusFlags
-	ld a, %00100000
+	ld a, RTC_DAYS_EXCEED_139
 
 .set
 ; update clock with modded day value
