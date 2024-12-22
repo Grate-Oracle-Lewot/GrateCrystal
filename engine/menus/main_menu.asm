@@ -251,7 +251,7 @@ MainMenu_PrintCurrentTimeAndDay:
 
 .PlaceBox:
 	call CheckRTCStatus
-	and %10000000 ; Day count exceeded 16383
+	and RTC_RESET
 	jp nz, SpeechTextbox
 	hlcoord 0, 14
 	ld b, 2
@@ -263,7 +263,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	and a
 	ret z
 	call CheckRTCStatus
-	and $80
+	and RTC_RESET
 	jp nz, .PrintTimeNotSet
 	call UpdateTime
 	call GetWeekday
