@@ -204,7 +204,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
 - Lucky Punch works for Blissey as well as Chansey, and it and the Stick/Leek can now stack with other crit rate boosts instead of locking in a flat 2-stage boost; Dire Hit is now separate from Focus Energy, allowing both to stack (for the chance to crit at each boost stage, see https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/critical_hit_chances.asm)
 - Sacred Ash can be used even if no party Pokémon are currently fainted
-- Most Berries and some other items renamed for flavor
+- Most Berries and some other items renamed for flavor (but not to the Gen III+ Berry names)
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball (Timer Ball can tick up to x10 catch chance)
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons
