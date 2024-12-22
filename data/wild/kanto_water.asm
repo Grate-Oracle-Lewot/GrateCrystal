@@ -220,10 +220,10 @@ KantoWaterWildMons:
 
 	def_water_wildmons CERULEAN_CAVE_B1F
 	db 6 percent ; encounter rate
-	db 35, GOLDUCK
-	db 35, GYARADOS
-	db 35, CROBAT
-	db 35, POLIWRATH
+	db 40, GOLDUCK
+	db 40, GYARADOS
+	db 40, CROBAT
+	db 40, POLIWRATH
 	end_water_wildmons
 
 	db -1 ; end
