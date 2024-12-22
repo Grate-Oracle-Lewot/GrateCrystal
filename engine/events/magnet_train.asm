@@ -367,7 +367,7 @@ MagnetTrain_Jumptable:
 	ret
 
 .TrainArrived:
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ld [wJumptableIndex], a
 	ld de, SFX_TRAIN_ARRIVED
 	jp PlaySFX
