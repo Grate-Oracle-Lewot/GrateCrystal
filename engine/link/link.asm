@@ -35,8 +35,6 @@ LinkCommunications:
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
 	jp nz, Gen2ToGen2LinkComms
-
-; Gen1 communications dummied out for space
 	jp Gen2ToGen1LinkComms
 
 Gen2ToGen2LinkComms:
@@ -1287,6 +1285,7 @@ LinkTradePartymonMenuCheckCancel:
 	; fallthrough
 
 Gen2ToGen1LinkComms:
+; Gen1 communications dummied out for space
 ExitLinkCommunications:
 	call RotateThreePalettesRight
 	call ClearScreen
