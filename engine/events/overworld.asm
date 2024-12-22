@@ -522,7 +522,6 @@ TrySurfOW::
 
 	call GetSurfType
 	ld [wSurfingPlayerState], a
-	call GetPartyNickname
 
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
