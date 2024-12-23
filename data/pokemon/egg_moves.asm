@@ -11,6 +11,7 @@ BulbasaurEggMoves:
 	db SAFEGUARD
 	db PETAL_DANCE
 	db ANCIENTPOWER
+NoEggMoves:
 	db -1 ; end
 
 CharmanderEggMoves:
@@ -969,6 +970,3 @@ CottoneeEggMoves:
 ;	db PAY_DAY
 ;	db BIND
 ;	db -1 ; end
-
-NoEggMoves:
-	db -1 ; end
