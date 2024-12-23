@@ -223,7 +223,7 @@ KantoWaterWildMons:
 	db 40, GOLDUCK
 	db 40, GYARADOS
 	db 40, CROBAT
-	db 40, POLIWRATH
+	db 40, AZUMARILL
 	end_water_wildmons
 
 	db -1 ; end
