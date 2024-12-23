@@ -362,6 +362,7 @@ RhyhornEggMoves:
 	db THRASH
 	db COUNTER
 	db MAGNITUDE
+	db DRILL_PECK
 	db -1 ; end
 
 ChanseyEggMoves:
