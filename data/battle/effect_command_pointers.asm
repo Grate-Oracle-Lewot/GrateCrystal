@@ -91,7 +91,7 @@ BattleCommandPointers:
 	dw BattleCommand_PerishSong
 	dw BattleCommand_StartSandstorm
 	dw BattleCommand_Endure
-	dw BattleCommand_CheckCurl
+	dw BattleCommand_CheckRollout
 	dw BattleCommand_RolloutPower
 	dw BattleCommand_FuryCutter
 	dw BattleCommand_Attract
