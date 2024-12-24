@@ -91,7 +91,7 @@ ENDM
 	command perishsong              ; 54
 	command startsandstorm          ; 55
 	command endure                  ; 56
-	command checkcurl               ; 57
+	command checkrollout            ; 57
 	command rolloutpower            ; 58
 	command furycutter              ; 59
 	command attract                 ; 5a
