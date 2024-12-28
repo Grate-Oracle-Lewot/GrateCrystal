@@ -228,7 +228,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Kanto: Porygon2 Lv40 (4000C), Togetic Lv50 (5000C), Dragonite Lv60 (9999C)
 
 ## Locations
-- Viridian Forest (similar layout to Gen I with the National Park tileset)
+- Viridian Forest (similar layout to Gen I, with the National Park tileset)
 - Pewter Museum (fossils can be resurrected at Lv.1, with a random chance to start in their evolved form, e.g. Kabutops instead of Kabuto)
 - Mt. Moon expanded (similar layout to Gen I, no Rockets)
 - Silph Co. upper floors (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
@@ -279,7 +279,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. This is an unfortunate necessity of the interactions between how Daycare experience and leveling work and the ability to turn the level caps on and off at any time.
-- The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor. (This is purely to prevent Weezing from having Cute Charm.)
+- The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor. (This is purely to prevent Weezing from having Cute Charm, because... look at it.)
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
