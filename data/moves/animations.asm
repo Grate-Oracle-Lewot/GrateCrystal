@@ -2451,7 +2451,7 @@ BattleAnim_Crabhammer:
 	anim_ret
 
 BattleAnim_SkullBash:
-	anim_if_param_equal $1, BattleAnim_FocusEnergy
+	anim_if_param_equal $1, BattleAnim_Withdraw
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 32
@@ -2464,6 +2464,20 @@ BattleAnim_SkullBash:
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 8
 	anim_loop 3, .loop
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnim_Withdraw:
+	anim_1gfx BATTLE_ANIM_GFX_REFLECT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_WITHDRAW, $0, BG_EFFECT_USER, $50
+	anim_wait 48
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_WITHDRAW, 48, 88, $0
+	anim_wait 64
+	anim_incobj 2
+	anim_wait 1
+	anim_incbgeffect BATTLE_BG_EFFECT_WITHDRAW
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
