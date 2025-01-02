@@ -112,7 +112,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  GRAY   ; MAROWAK
 	icon_pals BROWN,  RED    ; HITMONLEE
 	icon_pals BROWN,  GRAY   ; HITMONCHAN
-	icon_pals PINK,   YELLOW ; LICKITUNG
+	icon_pals PINK,   GREEN  ; LICKITUNG
 	icon_pals PURPLE, BLUE   ; KOFFING
 	icon_pals PURPLE, BLUE   ; WEEZING
 	icon_pals GRAY,   BROWN  ; RHYHORN
