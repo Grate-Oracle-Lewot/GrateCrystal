@@ -32,7 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Physical/Special split
 - TMs are infinite-use
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
-- Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
+- Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more (currently does not show fishing encounters, but I'll make it work eventually)
 - New Pokédex entries for every Pokémon
 - On the title screen, simply press Select to reset the clock, and B to delete your save data
 - Time Capsule replaced with player gender swap machine
@@ -48,7 +48,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
 - Pseudo-Abilities:
-  - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap; an up arrow is shown to indicate levitation in battle and on the stats screen
+  - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap; an up arrow is shown to indicate levitation in battle, on the stats screen, and in the Pokédex
   - All Poison types have a similar effect to Liquid Ooze: draining moves used against them will hurt instead of heal, including Leech Seed but excluding Dream Eater as a special exception; however, if the user of the draining move is also Poison-type, then they still get healed
   - All Electric types have a 30% chance to Paralyze attackers on contact (but Ground types are immune to this)
   - All Fairy types have a 30% chance to infatuate opposite-gender attackers on contact (but Dark types are immune to this)
