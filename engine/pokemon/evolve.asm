@@ -196,6 +196,9 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [hli]
 	cp b
 	jp nz, .dont_evolve_2
+
+	xor a
+	ld [wTempMonItem], a
 	jr .proceed
 
 .level
