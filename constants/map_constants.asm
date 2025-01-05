@@ -400,6 +400,9 @@ ENDM
 	map_const ROUTE_46,                                    10, 18 ; 10
 	endgroup
 
+; NOTE: Mt. Moon Square and the Tin Tower Roof are purposely in this group.
+; EnterMapWarp in engine/overworld/warp_connection.asm checks for them specifically.
+; This way it only has to check for one group prior to checking the individual map.
 	newgroup FAST_SHIP                                      ; group 27
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ;  1
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ;  2
