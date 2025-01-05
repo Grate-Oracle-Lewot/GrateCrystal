@@ -87,8 +87,8 @@ DisplayDexMonEvos:
 	and a
 	jr z, .normal_line
 	; we're in a multi-page evo line
-	pop hl ; dont need this value, just fix stack
-	pop af ; dont need this value, just fix stack
+	pop hl ; don't need this value, just fix stack
+	pop af ; don't need this value, just fix stack
 	ld a, [wCurDamage] ; page num
 	ld c, 4 ; we want the 4th Evo
 	call SimpleMultiply
@@ -186,6 +186,8 @@ DisplayDexMonEvos:
 	call z, EVO_happiness
 	cp EVOLVE_STAT
 	call z, EVO_stats
+	cp EVOLVE_HELD
+	call z, EVO_held
 ; after the Evo manner specific prints, HL should be pointing to next EVO manner or 0
 	pop af ; manner of evo
 	pop hl ; manner of evo byte +1
@@ -258,7 +260,7 @@ DisplayDexMonEvos:
 
 	pop bc
 	and a
-	jr z, .done ; stage 2 mon doesnt evolve
+	jr z, .done ; stage 2 mon doesn't evolve
 	; stage 2 mon does evolve
 	push hl ; manner of evo byte
 	push af ; manner of evo
@@ -396,6 +398,25 @@ EVO_item:
 .item_text:
 	db "ITEM@"
 
+EVO_held:
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	call EVO_inchlcoord
+	push af ; hold index
+	ld de, .hold_text
+	call PlaceString ; hold:
+
+	pop af ; item index
+	ld [wNamedObjectIndex], a
+	call GetItemName
+
+	call EVO_inchlcoord
+	call PlaceString
+	jp EVO_inchlcoord
+
+.hold_text:
+	db "HOLD@"
+
 EVO_trade:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -430,29 +451,21 @@ EVO_trade:
 	db " ", "<+>","@"
 
 EVO_happiness:
-	push hl ; time of day byte
-	; call EVO_inchlcoord
-	; ld de, .happiness_text
-	; call PlaceString ; mon species
-	
-	pop hl ; time of day byte
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	
-	ld de, .anytime_text
-	cp TR_ANYTIME
-	jr z, .done
+
 	ld de, .sunup_text
 	cp TR_MORNDAY
 	jr z, .done
 	ld de, .nite_text
+	cp TR_NITE
+	jr z, .done
+	ld de, .anytime_text
 .done
 	call EVO_inchlcoord
 	call PlaceString
 	jp EVO_inchlcoord
 
-.happiness_text:
-	db $6e, "@"
 .anytime_text:
 	db $6e, "@"
 .sunup_text:
@@ -515,7 +528,7 @@ EVO_place_Mon_Types:
 
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_1
-	ld c, 18 ; index of ???
+	ld c, 18 ; index of ???-type
 	jr .skip_to_unk_1
 .seen_done_1
 
@@ -536,7 +549,7 @@ EVO_place_Mon_Types:
 	jr nz, .seen_done_2
 	pop bc
 	pop de
-	ld c, 18 ; index of ???
+	ld c, 18 ; index of ???-type
 	jr .skip_to_unk_2
 .seen_done_2
 	pop bc
@@ -557,7 +570,7 @@ EVO_place_Mon_Types:
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_3
 	pop af ; unload stack
-	ld a, 18 ; index of ???
+	ld a, 18 ; index of ???-type
 	jr .done_3
 .seen_done_3
 	pop af
@@ -603,7 +616,7 @@ EVO_place_Mon_Types:
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_4
 	pop af
-	ld a, 18 ; index of ???
+	ld a, 18 ; index of ???-type
 	jr .skip_to_unk_4
 .seen_done_4
 	pop af
@@ -853,7 +866,7 @@ EVO_set_multi_page_ptr:
 	ld c, a
 	ld a, [wCurDamage + 1]
 	; if we're continuing the stage 3 mons,
-	; need to dec a to account for stage 2 mon that wont be in evo list
+	; need to dec a to account for stage 2 mon that won't be in evo list
 	and a
 	jr z, .start
 	ld a, [wCurDamage]
@@ -885,7 +898,7 @@ EVO_set_multi_page_ptr:
 	and a
 	ret z ; hl should be pointing at "espeon"'s manner of EVO byte ptr
 	push bc
-	; check for 0? shouldnt encounter 0
+	; check for 0? shouldn't encounter 0
 	ld a, d
 	cp EVOLVE_STAT
 	jr nz, .no_extra1
@@ -899,7 +912,7 @@ EVO_set_multi_page_ptr:
 .get_stage2:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte ; manner of evo ; if zero, no evos
-	; check for 0? shouldnt encounter 0
+	; check for 0? shouldn't encounter 0
 	cp EVOLVE_STAT
 	jr nz, .no_extra2
 	inc hl
@@ -936,16 +949,16 @@ EVO_place_CaughtIcon:
 	cp 2
 	jr z, .slot4
 ; slot 1
-	hlcoord 5, 4 ; 5, 5
+	hlcoord 5, 5
 	jr .start
 .slot3
-	hlcoord 5, 8 ; 5, 9
+	hlcoord 5, 9
 	jr .start
 .slot4
-	hlcoord 5, 12 ; 5, 13
+	hlcoord 5, 13
 	jr .start
 .stage1
-	hlcoord 5, 1 ; 5, 2
+	hlcoord 5, 2
 .start
 	ld [hl], $70 ; pokeball icon, VRAM1
 .done
