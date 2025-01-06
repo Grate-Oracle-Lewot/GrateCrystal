@@ -168,7 +168,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
 
-- Psych Up no longer fails if the target has no stat changes, and now also copies the Defense Curl, Focus Energy, and X Accuracy statuses.
+- Psych Up no longer fails if the target has no stat changes, and now also copies the Defense Curl, Focus Energy, Dire Hit, and X Accuracy statuses.
 
 - Rage now builds twice when the Pokémon takes a critical hit.
 
@@ -191,6 +191,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Spite always reduces PP by 5.
 
 - Bide always lasts 2 turns.
+
+- Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
 ## Items
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves and the Pokémon League). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP and status).
