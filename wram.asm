@@ -506,9 +506,7 @@ wCurEnemyMoveNum:: db
 wEnemyHPAtTimeOfPlayerSwitch:: dw
 wPayDayMoney:: ds 3
 
-wSafariMonAngerCount:: db ; unreferenced
-wSafariMonEating:: db
-	ds 1
+	ds 3
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db
 
