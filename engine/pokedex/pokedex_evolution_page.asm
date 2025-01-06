@@ -396,7 +396,7 @@ EVO_item:
 	jp EVO_inchlcoord
 
 .item_text:
-	db "ITEM@"
+	db "USE@"
 
 EVO_held:
 	ld a, BANK("Evolutions and Attacks")
