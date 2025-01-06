@@ -6046,8 +6046,6 @@ BattleCommand_Screen:
 	cp EFFECT_LIGHT_SCREEN
 	jr nz, .Reflect
 
-	bit SCREENS_LIGHT_SCREEN, [hl]
-	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
 	ld a, 5
 	ld [bc], a
@@ -6055,8 +6053,6 @@ BattleCommand_Screen:
 	jr .good
 
 .Reflect:
-	bit SCREENS_REFLECT, [hl]
-	jr nz, .failed
 	set SCREENS_REFLECT, [hl]
 
 	; LightScreenCount -> ReflectCount
@@ -6069,10 +6065,6 @@ BattleCommand_Screen:
 .good
 	call AnimateCurrentMove
 	jp StdBattleTextbox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 PrintDoesntAffect:
 	ld hl, DoesntAffectText
