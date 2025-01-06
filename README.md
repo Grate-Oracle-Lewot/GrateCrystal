@@ -351,7 +351,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
 - Kurt finishes Apricorn balls quickly
-- Metal Coat and Dragon Scale evolve Pokémon by leveling up while holding them, instead of trading while holding them
+- Metal Coat and Dragon Scale evolve Pokémon by leveling up while holding them
 - Accuracy, effect chance, and physicality shown on move menu
 - 25% AI failure chance removed
 - Redundant move grammar table removed
