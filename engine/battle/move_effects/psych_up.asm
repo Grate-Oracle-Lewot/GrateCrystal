@@ -55,13 +55,32 @@ BattleCommand_PsychUp:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_FOCUS_ENERGY, [hl]
-	jr .x_accuracy
+	jr .dire_hit
 
 .res_focus
 	call BattleCommand_SwitchTurn
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	res SUBSTATUS_FOCUS_ENERGY, [hl]
+
+.dire_hit
+; Copy Dire Hit's crit rate boost
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_DIRE_HIT, [hl]
+	jr z, .res_dire
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	set SUBSTATUS_DIRE_HIT, [hl]
+	jr .x_accuracy
+
+.res_dire
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_DIRE_HIT, [hl]
 
 .x_accuracy
 ; Copy the special X Accuracy status
