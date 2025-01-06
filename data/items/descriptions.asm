@@ -841,7 +841,7 @@ MysteryBerryDesc:
 
 DragonScaleDesc:
 	db   "Evolves certain"
-	next "kinds of #MON.@"
+	next "#MON. (HOLD)@"
 
 TimerBallDesc:
 	db   "Works better the"
