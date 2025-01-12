@@ -2285,7 +2285,7 @@ ChikoritaEvosAttacks:
 	db 0 ; no more level-up moves
 
 BayleefEvosAttacks:
-	db EVOLVE_LEVEL, 32, MEGANIUM
+	db EVOLVE_LEVEL, 33, MEGANIUM
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, GROWL
@@ -2311,7 +2311,7 @@ MeganiumEvosAttacks:
 	db 15, SLEEP_POWDER
 	db 23, SYNTHESIS
 	db 31, BODY_SLAM
-	db 31, PETAL_DANCE
+	db 32, PETAL_DANCE
 	db 41, EARTH_POWER
 	db 47, LEECH_SEED
 	db 51, SAFEGUARD
