@@ -5319,6 +5319,10 @@ BattleCommand_HeldFlinch:
 
 	call CheckSubstituteOpp
 	ret nz
+	ld a, [wSubstituteJustBroke]
+	and a
+	ret nz
+
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
 	ld d, h
