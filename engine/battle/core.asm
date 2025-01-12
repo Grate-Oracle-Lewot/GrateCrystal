@@ -230,8 +230,7 @@ BattleTurn:
 	ld [wBattleHasJustStarted], a
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
-	ld [wPlayerSubstituteBroke], a
-	ld [wEnemySubstituteBroke], a
+	ld [wSubstituteJustBroke], a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
