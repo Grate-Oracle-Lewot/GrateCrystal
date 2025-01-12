@@ -3500,6 +3500,9 @@ DoSubstituteDamage:
 	jr nc, .done
 
 .broke
+	ld a, 1
+	ld [wSubstituteJustBroke], a
+
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_SUBSTITUTE, [hl]
@@ -5319,9 +5322,10 @@ BattleCommand_HeldFlinch:
 
 	call CheckSubstituteOpp
 	ret nz
+
 	ld a, [wSubstituteJustBroke]
 	and a
-	ret nz
+	jr nz, .reset_sub
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
@@ -5335,6 +5339,11 @@ BattleCommand_HeldFlinch:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	set SUBSTATUS_FLINCHED, [hl]
+	ret
+
+.reset_sub
+	xor a
+	ld [wSubstituteJustBroke], a
 	ret
 
 BattleCommand_OHKO:
