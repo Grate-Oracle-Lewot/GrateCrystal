@@ -491,7 +491,8 @@ wPlayerTurnsTaken:: db
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
 
-	ds 2
+wPlayerSubstituteBroke:: db
+wEnemySubstituteBroke::  db
 
 wCurPlayerMove:: db
 wCurEnemyMove::  db
