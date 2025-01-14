@@ -492,9 +492,9 @@ wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
 
 wSubstituteJustBroke:: db
-; Used to prevent King's Rock from causing a flinch on the same turn that the attack breaks a Substitute.
-; Necessary since King's Rock flinch chance is checked at the end of relevant move effects.
-; Other effects are checked before breaking the Substitute, so don't need this.
+; Used for King's Rock flinch, Static, and Cute Charm.
+; Stops them from triggering off of an attack that just broke a Substitute.
+; Other effects check for the Substitute before damaging it, and thus don't need this.
 
 	ds 1
 
