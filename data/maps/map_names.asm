@@ -622,9 +622,9 @@ Viridian_Map_Name8: ; ROUTE_2
 Viridian_Map_Name9: ; ROUTE_2_NUGGET_HOUSE
 	db "ROUTE 2 COTTAGE@"
 Viridian_Map_Name10: ; ROUTE_2_SOUTH_GATE
-	db "ROUTE 2 GATE S@"
+	db "RT 2 SOUTH GATE@"
 Viridian_Map_Name11: ; ROUTE_2_NORTH_GATE
-	db "ROUTE 2 GATE N@"
+	db "RT 2 NORTH GATE@"
 Viridian_Map_Name12: ; VIRIDIAN_FOREST
 	db "VIRIDIAN FOREST@"
 Viridian_Map_Name13: ; ROUTE_22
@@ -971,15 +971,15 @@ Violet_Map_Name10: ; ROUTE_32_RUINS_OF_ALPH_GATE
 Violet_Map_Name11: ; ROUTE_35
 	db "ROUTE 35@"
 Violet_Map_Name12: ; ROUTE_35_GOLDENROD_GATE
-	db "ROUTE 35 GATE S@"
+	db "RT 35 SOUTH GATE@"
 Violet_Map_Name13: ; ROUTE_35_NATIONAL_PARK_GATE
-	db "ROUTE 35 GATE N@"
+	db "RT 35 NORTH GATE@"
 Violet_Map_Name14: ; ROUTE_36
 	db "ROUTE 36@"
 Violet_Map_Name15: ; ROUTE_36_RUINS_OF_ALPH_GATE
-	db "ROUT 36 GATE E@"
+	db "RT 36 EAST GATE@"
 Violet_Map_Name16: ; ROUTE_36_NATIONAL_PARK_GATE
-	db "ROUTE 36 GATE W@"
+	db "RT 36 WEST GATE@"
 Violet_Map_Name17: ; ROUTE_37
 	db "ROUTE 37@"
 
@@ -1023,7 +1023,7 @@ Goldenrod_Map_Name11: ; GOLDENROD_GYM
 Goldenrod_Map_Name12: ; GOLDENROD_GAME_CORNER
 	db "GOLD. GAME CORNER@"
 Goldenrod_Map_Name13: ; GOLDENROD_GAME_CORNER_BACKROOM
-	db "GAME CORNER BACK@"
+	db "SECRET GAME ROOM@"
 Goldenrod_Map_Name14: ; GOLDENROD_MAGNET_TRAIN_STATION
 	db "GOLD. STATION@"
 Goldenrod_Map_Name15: ; GOLDENROD_BIKE_SHOP
@@ -1152,9 +1152,9 @@ Lake_of_Rage_Map_Name3: ; LAKE_OF_RAGE_HIDDEN_POWER_HOUSE
 Lake_of_Rage_Map_Name4: ; ROUTE_43
 	db "ROUTE 43@"
 Lake_of_Rage_Map_Name5: ; ROUTE_43_GATE
-	db "RT 43 GATE N@"
+	db "RT 43 NORTH GATE@"
 Lake_of_Rage_Map_Name6: ; ROUTE_43_MAHOGANY_GATE
-	db "RT 43 GATE S@"
+	db "RT 43 SOUTH GATE@"
 
 Blackthorn_Map_Name1: ; BLACKTHORN_CITY
 	db "BLACKTHORN CITY@"
@@ -1305,9 +1305,9 @@ Dungeons_Map_Name50: ; UNION_CAVE_B2F
 Dungeons_Map_Name51: ; UNION_CAVE_SLOWPOKE_WELL_LINK
 	db "UNION WELLSPRING@"
 Dungeons_Map_Name52: ; SLOWPOKE_WELL_B1F
-	db "SLOWPOKEWELL B1@"
+	db "SLOWPOKE WELL B1@"
 Dungeons_Map_Name53: ; SLOWPOKE_WELL_B2F
-	db "SLOWPOKEWELL B2@"
+	db "SLOWPOKE WELL B2@"
 Dungeons_Map_Name54: ; ILEX_FOREST
 	db "ILEX FOREST@"
 Dungeons_Map_Name55: ; GOLDENROD_DEPT_STORE_B1F
@@ -1395,9 +1395,9 @@ Dungeons_Map_Name95: ; ICE_PATH_1F
 Dungeons_Map_Name96: ; ICE_PATH_B1F
 	db "ICE PATH B1@"
 Dungeons_Map_Name97: ; ICE_PATH_B2F_MAHOGANY_SIDE
-	db "ICE PATH B2 W@"
+	db "ICE PATH B2 WEST@"
 Dungeons_Map_Name98: ; ICE_PATH_B2F_BLACKTHORN_SIDE
-	db "ICE PATH B2 E@"
+	db "ICE PATH B2 EAST@"
 Dungeons_Map_Name99: ; ICE_PATH_B3F
 	db "ICE PATH B3@"
 Dungeons_Map_Name100: ; ICE_PATH_ARTICUNO_CHAMBER
