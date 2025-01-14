@@ -217,7 +217,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 BattleTurn:
 	ldh a, [hInMenu]
 	push af
-	ld a, 1 ; or "xor a" for the value 0
+	ld a, 1
 	ldh [hInMenu], a
 
 .loop
