@@ -125,14 +125,15 @@ RockSmashMons::
 	; broke off from the above table, for nayru's pokedex
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
-	dw TreeMonSet_Rock_Johto
-	dw TreeMonSet_Rock_Kanto
-	dw TreeMonSet_Rock_Hot
-	dw TreeMonSet_Rock_Cold
+	dw RockMonSet_Johto
+	dw RockMonSet_Kanto
+	dw RockMonSet_Hot
+	dw RockMonSet_Cold
+	dw RockMonSet_Diglett
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; can have as many entries as you want as long as the % adds up to 100
-TreeMonSet_Rock_Johto:
+RockMonSet_Johto:
 	db 20, GEODUDE,    15
 	db 20, KRABBY,     15
 	db 20, SHELLDER,   15
@@ -141,7 +142,7 @@ TreeMonSet_Rock_Johto:
 	db 10, SHUCKLE,    20
 	db -1
 
-TreeMonSet_Rock_Kanto:
+RockMonSet_Kanto:
 	db 20, GRAVELER,   40
 	db 20, KINGLER,    40
 	db 20, CLOYSTER,   40
@@ -150,16 +151,24 @@ TreeMonSet_Rock_Kanto:
 	db 10, SHUCKLE,    40
 	db -1
 
-TreeMonSet_Rock_Hot:
+RockMonSet_Hot:
 	db 45, GEODUDE,    15
 	db 45, SLUGMA,     15
 	db  5, CHARMANDER, 10
 	db  5, CYNDAQUIL,  10
 	db -1
 
-TreeMonSet_Rock_Cold:
+RockMonSet_Cold:
 	db 30, GEODUDE,    25
 	db 30, SHELLDER,   25
 	db 30, SANDSHREW,  25
 	db 10, SWINUB,     25
+	db -1
+
+RockMonSet_Diglett:
+	db 20, GEODUDE,    10
+	db 20, KRABBY,     10
+	db 20, SHELLDER,   10
+	db 20, EKANS,      10
+	db 20, DIGLETT,    10
 	db -1
