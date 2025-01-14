@@ -3321,11 +3321,11 @@ UrsaringEvosAttacks:
 SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
-	db 1, CURSE
 	db 1, SMOG
+	db 1, HARDEN
 	db 8, EMBER
 	db 15, ROCK_THROW
-	db 22, HARDEN
+	db 22, RECOVER
 	db 29, AMNESIA
 	db 36, FLAMETHROWER
 	db 43, ROCK_SLIDE
@@ -3334,11 +3334,11 @@ SlugmaEvosAttacks:
 
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CURSE
 	db 1, SMOG
+	db 1, HARDEN
 	db 8, EMBER
 	db 15, ROCK_THROW
-	db 22, HARDEN
+	db 22, RECOVER
 	db 29, AMNESIA
 	db 36, FLAMETHROWER
 	db 37, ROLLOUT
