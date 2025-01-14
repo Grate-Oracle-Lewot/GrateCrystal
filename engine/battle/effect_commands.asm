@@ -532,6 +532,9 @@ CheckEnemyTurn:
 	; fallthrough
 
 EndTurn:
+	xor a
+	ld [wSubstituteJustBroke], a
+
 	ld a, $1
 	ld [wTurnEnded], a
 	jp ResetDamage
@@ -2452,6 +2455,9 @@ BattleCommand_RageDamage:
 	ret
 
 EndMoveEffect:
+	xor a
+	ld [wSubstituteJustBroke], a
+
 	ld a, [wBattleScriptBufferAddress]
 	ld l, a
 	ld a, [wBattleScriptBufferAddress + 1]
@@ -6740,7 +6746,7 @@ BattleCommand_HeldFlinch:
 
 	ld a, [wSubstituteJustBroke]
 	and a
-	jr nz, ResetSubstituteBroke
+	ret nz
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
@@ -6754,16 +6760,6 @@ BattleCommand_HeldFlinch:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	set SUBSTATUS_FLINCHED, [hl]
-	ret
-
-ResetSubstituteBroke:
-; Resets wSubstituteJustBroke to zero. Called if it's nonzero.
-; King's Rock is the last check in most move effects and thus responsible for calling this.
-; It shouldn't be called earlier because then later checks of wSubstituteJustBroke would not work.
-; Hence, CheckContact checks wSubstituteJustBroke but doesn't reset it.
-
-	xor a
-	ld [wSubstituteJustBroke], a
 	ret
 
 BattleCommand_CheckContact:
