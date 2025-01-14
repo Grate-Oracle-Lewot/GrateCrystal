@@ -173,6 +173,7 @@ LoadLiteBlueMailGFX:
 	ld de, PortraitMailUnderlineGFX
 	ld c, 1 * LEN_1BPP_TILE
 	call LoadMailGFX_Color2
+	; fallthrough
 
 FinishLoadingSurfLiteBlueMailGFX:
 	ld de, SurfLiteBlueMailSmallShapesGFX
@@ -687,19 +688,7 @@ LoadMirageMailGFX:
 	hlcoord 2, 11
 	call Mail_Draw16TileRow
 	pop hl
-	jp MailGFX_PlaceMessage
-
-MailGFX_GenerateMonochromeTilesColor2:
-.loop
-	xor a
-	ld [hli], a
-	ld a, $ff
-	ld [hli], a
-	dec bc
-	ld a, b
-	or c
-	jr nz, .loop
-	ret
+	; fallthrough
 
 MailGFX_PlaceMessage:
 	ld bc, MAIL_STRUCT_LENGTH
@@ -733,6 +722,18 @@ MailGFX_PlaceMessage:
 
 .place_author
 	jp PlaceString
+
+MailGFX_GenerateMonochromeTilesColor2:
+.loop
+	xor a
+	ld [hli], a
+	ld a, $ff
+	ld [hli], a
+	dec bc
+	ld a, b
+	or c
+	jr nz, .loop
+	ret
 
 DrawMailBorder:
 	hlcoord 0, 0
