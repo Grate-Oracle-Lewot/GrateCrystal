@@ -329,7 +329,7 @@ OaksPKMNTalk7:
 	call GetPokemonName
 	ld hl, OPT_MaryText1
 	ld a, OAKS_POKEMON_TALK_8
-	jr OaksPKMNTalkNextRadioLine3
+	jr OaksPKMNTalkNextRadioLine2
 
 OPT_MaryText1:
 	text_far _OPT_MaryText1
@@ -350,7 +350,6 @@ OaksPKMNTalk8:
 	ld h, [hl]
 	ld l, a
 	ld a, OAKS_POKEMON_TALK_9
-OaksPKMNTalkNextRadioLine3:
 	jp NextRadioLine
 
 .Adverbs:
