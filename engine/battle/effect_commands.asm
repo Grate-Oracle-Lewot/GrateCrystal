@@ -5304,48 +5304,6 @@ CheckOpponentWentFirst:
 	pop bc
 	ret
 
-BattleCommand_HeldFlinch:
-; kingsrock
-
-	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
-	call CheckIfTargetIsGivenType
-	ret z
-
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call GetUserItem
-	ld a, b
-	cp HELD_FLINCH
-	ret nz
-
-	call CheckSubstituteOpp
-	ret nz
-
-	ld a, [wSubstituteJustBroke]
-	and a
-	jr nz, .reset_sub
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	call GetUserItem
-	call BattleRandom
-	cp c
-	ret nc
-	call EndRechargeOpp
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLINCHED, [hl]
-	ret
-
-.reset_sub
-	xor a
-	ld [wSubstituteJustBroke], a
-	ret
-
 BattleCommand_OHKO:
 	call ResetDamage
 	ld a, [wTypeModifier]
@@ -6761,6 +6719,67 @@ SwapBCTypes:
 	ld [wEnemyMonType2], a
 	ret
 
+BattleCommand_HeldFlinch:
+; kingsrock
+
+	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
+	call CheckIfTargetIsGivenType
+	ret z
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	call GetUserItem
+	ld a, b
+	cp HELD_FLINCH
+	ret nz
+
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, [wSubstituteJustBroke]
+	and a
+	jr nz, ResetSubstituteBroke
+
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	call GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	call EndRechargeOpp
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	set SUBSTATUS_FLINCHED, [hl]
+	ret
+
+ResetSubstituteBroke:
+	xor a
+	ld [wSubstituteJustBroke], a
+	ret
+
+BattleCommand_CheckContact:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, [wSubstituteJustBroke]
+	and a
+	jr nz, ResetSubstituteBroke
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld hl, ContactMoves
+	call IsInByteArray
+	ret nc
+	; fallthrough
+
 ContactStatic:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
@@ -6901,8 +6920,7 @@ ContactStatic:
 	ret nz
 
 .heal
-	ld hl, .empty_text
-	call BattleTextbox
+	call BattleCommand_ClearText
 
 	ld a, RECOVER
 	ld [wFXAnimID], a
@@ -6943,26 +6961,7 @@ ContactStatic:
 	ld [de], a
 
 	ld hl, StaticPrzcureberryText
-	jp StdBattleTextbox
-
-.empty_text:
-	text_end
-
-BattleCommand_CheckContact:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	ret nz
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld hl, ContactMoves
-	call IsInByteArray
-	ret nc
-
-	call ContactStatic
+	call StdBattleTextbox
 	; fallthrough
 
 ContactCuteCharm:
