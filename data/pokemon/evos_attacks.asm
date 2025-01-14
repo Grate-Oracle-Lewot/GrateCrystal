@@ -3323,27 +3323,29 @@ SlugmaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
 	db 1, HARDEN
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, RECOVER
-	db 29, AMNESIA
+	db 6, EMBER
+	db 13, ROCK_THROW
+	db 19, RECOVER
+	db 25, BODY_SLAM
+	db 30, AMNESIA
 	db 36, FLAMETHROWER
 	db 43, ROCK_SLIDE
-	db 50, BODY_SLAM
+	db 50, FISSURE
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
 	db 1, HARDEN
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, RECOVER
-	db 29, AMNESIA
+	db 6, EMBER
+	db 13, ROCK_THROW
+	db 19, RECOVER
+	db 25, BODY_SLAM
+	db 30, AMNESIA
 	db 36, FLAMETHROWER
 	db 37, ROLLOUT
 	db 48, ROCK_SLIDE
-	db 60, BODY_SLAM
+	db 60, FISSURE
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
