@@ -37,7 +37,7 @@ GetTreeMonSet:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .not_in_table
+	jr z, XorARet
 
 	cp d
 	jr nz, .skip2
@@ -54,10 +54,6 @@ GetTreeMonSet:
 	inc hl
 	jr .loop
 
-.not_in_table
-	xor a
-	ret
-
 .in_table
 	ld a, [hl]
 	scf
@@ -68,7 +64,7 @@ GetTreeMons:
 ; Return nc if table a doesn't exist.
 
 	cp NUM_TREEMON_SETS
-	jr nc, .quit
+	jr nc, XorARet
 
 	ld e, a
 	ld d, 0
@@ -83,8 +79,54 @@ GetTreeMons:
 	scf
 	ret
 
-.quit
+XorARet:
 	xor a
+	ret
+
+RockMonEncounter:
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, RockMonMaps
+	call GetTreeMonSet
+	jr nc, XorARet
+
+	call GetRockMons
+	jr nc, XorARet
+
+	; 42% chance of an encounter
+	ld a, 100
+	call RandomRange
+	cp 42
+	jr nc, XorARet
+
+	call SelectTreeMon
+	jr nc, XorARet
+
+	farcall StubbedTrainerRankings_RockEncounters
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+GetRockMons:
+; Return the address of RockMon table a in hl.
+; Return nc if table a doesn't exist.
+
+	cp NUM_ROCKSMASH_SETS
+	jr nc, XorARet
+
+	ld e, a
+	ld d, 0
+	ld hl, RockSmashMons
+	add hl, de
+	add hl, de
+
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	scf
 	ret
 
 GetTreeMon:
@@ -236,58 +278,4 @@ GetTreeScore:
 	ld b, 2
 	call Divide
 	ldh a, [hRemainder]
-	ret
-
-RockMonEncounter:
-	xor a
-	ld [wTempWildMonSpecies], a
-	ld [wCurPartyLevel], a
-
-	ld hl, RockMonMaps
-	call GetTreeMonSet
-	jr nc, .no_battle
-
-	call GetRockMons
-	jr nc, .no_battle
-
-	; 42% chance of an encounter
-	ld a, 100
-	call RandomRange
-	cp 42
-	jr nc, .no_battle
-
-	call SelectTreeMon
-	jr nc, .no_battle
-
-	farcall StubbedTrainerRankings_RockEncounters
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-
-.no_battle
-	xor a
-	ret
-
-GetRockMons:
-; Return the address of RockMon table a in hl.
-; Return nc if table a doesn't exist.
-
-	cp NUM_ROCKSMASH_SETS
-	jr nc, .quit
-
-	ld e, a
-	ld d, 0
-	ld hl, RockSmashMons
-	add hl, de
-	add hl, de
-
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-	scf
-	ret
-
-.quit
-	xor a
 	ret
