@@ -198,6 +198,7 @@ NUM_TREEMON_SETS EQU const_value
 	const TREEMON_SET_ROCK_JOHTO ; 0
 	const TREEMON_SET_ROCK_KANTO ; 1
 	const TREEMON_SET_ROCK_HOT   ; 2
+	const TREEMON_SET_ROCK_COLD  ; 3
 NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
