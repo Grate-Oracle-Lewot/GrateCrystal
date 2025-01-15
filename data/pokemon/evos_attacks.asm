@@ -2134,18 +2134,17 @@ AerodactylEvosAttacks:
 
 SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 2, LICK
-	db 4, SOFTBOILED
+	db 1, REST
+	db 1, SNORE
+	db 3, LICK
 	db 8, DEFENSE_CURL
 	db 11, BITE
 	db 15, AMNESIA
-	db 22, BELLY_DRUM
-	db 29, MEGA_PUNCH
-	db 36, SNORE
-	db 36, REST
+	db 22, MEGA_PUNCH
+	db 29, ROLLOUT
+	db 36, SOFTBOILED
 	db 43, BODY_SLAM
-	db 50, ROLLOUT
+	db 50, BELLY_DRUM
 	db 57, CRUNCH
 	db 61, SKULL_BASH
 	db 0 ; no more level-up moves
