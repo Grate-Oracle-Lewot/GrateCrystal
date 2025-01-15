@@ -6,5 +6,5 @@
 	next "it can ambush prey"
 
 	page "from the shadows"
-	next "at any time."
-	next "@"
+	next "at any time,"
+	next "including now.@"
