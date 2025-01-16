@@ -72,7 +72,7 @@ TreeMonSet_Kanto:
 	db 25, NOCTOWL,    40
 	db 20, METAPOD,    40
 	db 20, KAKUNA,     40
-	db 15, EXEGGCUTE,  40
+	db 15, PRIMEAPE,   40
 	db 10, EXEGGCUTE,  30
 	db 10, EXEGGCUTE,  50
 	db -1
@@ -108,7 +108,7 @@ TreeMonSet_Forest:
 	db 25, HOOTHOOT,   10
 	db 20, PINECO,     10
 	db 20, PINECO,      5
-	db 15, NOCTOWL,    10
+	db 15, MANKEY,     10
 	db 10, BUTTERFREE, 10
 	db 10, BEEDRILL,   10
 	db -1
