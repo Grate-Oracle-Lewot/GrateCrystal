@@ -172,3 +172,12 @@ RockMonSet_Diglett:
 	db 20, EKANS,      10
 	db 20, DIGLETT,    10
 	db -1
+
+RockMonSet_Beach:
+	db 22, STARYU,     15
+	db 22, KRABBY,     15
+	db 22, SHELLDER,   15
+	db 22, SHUCKLE,    20
+	db 11, ARBOK,      20
+	db  1, OCTILLERY,  22
+	db -1
