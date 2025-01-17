@@ -181,5 +181,5 @@ RockMonSet_Beach:
 	db 20, SHUCKLE,    20
 	db 19, STARYU,     15
 	db 10, ARBOK,      20
-	db  1, OCTILLERY,  20
+	db  1, OCTILLERY,  25
 	db -1
