@@ -174,12 +174,10 @@ RockMonSet_Diglett:
 	db -1
 
 RockMonSet_Beach:
-	db 15, KRABBY,     15
-	db 15, KRABBY,     20
-	db 21, SHELLDER,   15
-	db 19, STARYU,     15
-	db 19, SHUCKLE,    20
-	db  9, ARBOK,      20
-	db  1, DUNSPARCE,  21
-	db  1, OCTILLERY,  22
+	db 20, STARYU,     15
+	db 25, KRABBY,     20
+	db 25, SHELLDER,   15
+	db 10, ARBOK,      20
+	db  5, DUNSPARCE,  15
+	db 15, SHUCKLE,    20
 	db -1
