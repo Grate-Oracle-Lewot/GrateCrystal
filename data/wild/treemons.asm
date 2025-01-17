@@ -152,16 +152,18 @@ RockMonSet_Kanto:
 	db -1
 
 RockMonSet_Hot:
-	db 45, GEODUDE,    15
-	db 45, SLUGMA,     15
+	db 40, GEODUDE,    15
+	db 40, SLUGMA,     15
+	db 10, ARBOK,      20
 	db  5, CHARMANDER, 10
 	db  5, CYNDAQUIL,  10
 	db -1
 
 RockMonSet_Cold:
-	db 30, GEODUDE,    25
 	db 30, SHELLDER,   25
-	db 30, SANDSHREW,  25
+	db 25, GEODUDE,    25
+	db 25, SANDSHREW,  25
+	db 10, DUNSPARCE,  25
 	db 10, SWINUB,     25
 	db -1
 
@@ -171,13 +173,4 @@ RockMonSet_Diglett:
 	db 20, SHELLDER,   10
 	db 20, EKANS,      10
 	db 20, DIGLETT,    10
-	db -1
-
-RockMonSet_Beach:
-	db 20, STARYU,     15
-	db 25, KRABBY,     20
-	db 25, SHELLDER,   15
-	db 10, ARBOK,      20
-	db  5, DUNSPARCE,  15
-	db 15, SHUCKLE,    20
 	db -1
