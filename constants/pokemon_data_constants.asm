@@ -195,12 +195,12 @@ NUM_TREEMON_SETS EQU const_value
 ; rock smash groups, for Nayru's pokedex
 ; const TREEMON_SET_ROCK is originally within NUM_TREEMON_SETS
 	const_def
-	const ROCKMON_SET_JOHTO   ; 0
-	const ROCKMON_SET_KANTO   ; 1
-	const ROCKMON_SET_HOT     ; 2
-	const ROCKMON_SET_COLD    ; 3
-	const ROCKMON_SET_DIGLETT ; 4
-	const ROCKMON_SET_BEACH   ; 5
+	const ROCKMON_SET_JOHTO    ; 0
+	const ROCKMON_SET_KANTO    ; 1
+	const ROCKMON_SET_HOT      ; 2
+	const ROCKMON_SET_COLD     ; 3
+	const ROCKMON_SET_MOUNTAIN ; 4
+	const ROCKMON_SET_BEACH    ; 5
 NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
