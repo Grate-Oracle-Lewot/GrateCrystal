@@ -1,34 +1,34 @@
 TreeMons::
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2, TreeMons
-	dw TreeMonSet_City
-	dw TreeMonSet_Town
 	dw TreeMonSet_Route
-	dw TreeMonSet_Kanto
-	dw TreeMonSet_Lake
+	dw TreeMonSet_Town
+	dw TreeMonSet_City
 	dw TreeMonSet_Forest
+	dw TreeMonSet_Lake
+	dw TreeMonSet_Kanto
 	assert_table_length NUM_TREEMON_SETS
 
 ; Two tables each (common, rare).
 ; Structure:
 ;	db  %, species, level
 
-TreeMonSet_City:
+TreeMonSet_Route:
 ; common
-	db 25, SPEAROW,    20
-	db 20, EKANS,      20
-	db 20, FEAROW,     30
-	db 15, AIPOM,      20
-	db 10, AIPOM,      10
-	db 10, AIPOM,      30
+	db 25, HOOTHOOT,   10
+	db 20, METAPOD,    10
+	db 20, KAKUNA,     10
+	db 15, EXEGGCUTE,  10
+	db 10, EXEGGCUTE,   5
+	db 10, EXEGGCUTE,  15
 	db -1
 ; rare
-	db 25, SPEAROW,    20
-	db 20, HERACROSS,  20
-	db 20, HERACROSS,  30
-	db 15, AIPOM,      20
-	db 10, AIPOM,      10
-	db 10, AIPOM,      30
+	db 25, PINECO,     10
+	db 20, LEDYBA,     10
+	db 20, SPINARAK,   10
+	db 15, EXEGGCUTE,  10
+	db 10, EXEGGCUTE,   5
+	db 10, EXEGGCUTE,  15
 	db -1
 
 TreeMonSet_Town:
@@ -49,40 +49,40 @@ TreeMonSet_Town:
 	db 10, AIPOM,      15
 	db -1
 
-TreeMonSet_Route:
+TreeMonSet_City:
 ; common
-	db 25, HOOTHOOT,   10
-	db 20, METAPOD,    10
-	db 20, KAKUNA,     10
-	db 15, EXEGGCUTE,  10
-	db 10, EXEGGCUTE,   5
-	db 10, EXEGGCUTE,  15
+	db 25, SPEAROW,    20
+	db 20, EKANS,      20
+	db 20, FEAROW,     30
+	db 15, AIPOM,      20
+	db 10, AIPOM,      10
+	db 10, AIPOM,      30
 	db -1
 ; rare
-	db 25, PINECO,     10
-	db 20, LEDYBA,     10
-	db 20, SPINARAK,   10
-	db 15, EXEGGCUTE,  10
-	db 10, EXEGGCUTE,   5
-	db 10, EXEGGCUTE,  15
+	db 25, SPEAROW,    20
+	db 20, HERACROSS,  20
+	db 20, HERACROSS,  30
+	db 15, AIPOM,      20
+	db 10, AIPOM,      10
+	db 10, AIPOM,      30
 	db -1
 
-TreeMonSet_Kanto:
+TreeMonSet_Forest:
 ; common
-	db 25, NOCTOWL,    40
-	db 20, METAPOD,    40
-	db 20, KAKUNA,     40
-	db 15, PRIMEAPE,   40
-	db 10, EXEGGCUTE,  30
-	db 10, EXEGGCUTE,  50
+	db 25, HOOTHOOT,   10
+	db 20, PINECO,     10
+	db 20, PINECO,      5
+	db 15, MANKEY,     10
+	db 10, BUTTERFREE, 10
+	db 10, BEEDRILL,   10
 	db -1
 ; rare
-	db 25, FORRETRESS, 40
-	db 20, LEDIAN,     40
-	db 20, ARIADOS,    40
-	db 15, AIPOM,      40
-	db 10, EXEGGCUTE,  30
-	db 10, EXEGGCUTE,  50
+	db 25, HOOTHOOT,   10
+	db 20, CATERPIE,   10
+	db 20, WEEDLE,     10
+	db 15, VENONAT,    10
+	db 10, METAPOD,    10
+	db 10, KAKUNA,     10
 	db -1
 
 TreeMonSet_Lake:
@@ -103,22 +103,22 @@ TreeMonSet_Lake:
 	db 10, SUNKERN,    30
 	db -1
 
-TreeMonSet_Forest:
+TreeMonSet_Kanto:
 ; common
-	db 25, HOOTHOOT,   10
-	db 20, PINECO,     10
-	db 20, PINECO,      5
-	db 15, MANKEY,     10
-	db 10, BUTTERFREE, 10
-	db 10, BEEDRILL,   10
+	db 25, NOCTOWL,    40
+	db 20, METAPOD,    40
+	db 20, KAKUNA,     40
+	db 15, PRIMEAPE,   40
+	db 10, EXEGGCUTE,  30
+	db 10, EXEGGCUTE,  50
 	db -1
 ; rare
-	db 25, HOOTHOOT,   10
-	db 20, CATERPIE,   10
-	db 20, WEEDLE,     10
-	db 15, VENONAT,    10
-	db 10, METAPOD,    10
-	db 10, KAKUNA,     10
+	db 25, FORRETRESS, 40
+	db 20, LEDIAN,     40
+	db 20, ARIADOS,    40
+	db 15, AIPOM,      40
+	db 10, EXEGGCUTE,  30
+	db 10, EXEGGCUTE,  50
 	db -1
 
 RockSmashMons::
