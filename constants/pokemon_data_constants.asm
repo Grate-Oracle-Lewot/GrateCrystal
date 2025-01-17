@@ -178,12 +178,12 @@ NUM_ROAMMONS EQU 2 ; GS has 3. Suicune is changed to a static encounter in Cryst
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_CITY   ; 0
+	const TREEMON_SET_ROUTE  ; 0
 	const TREEMON_SET_TOWN   ; 1
-	const TREEMON_SET_ROUTE  ; 2
-	const TREEMON_SET_KANTO  ; 3
+	const TREEMON_SET_CITY   ; 2
+	const TREEMON_SET_FOREST ; 3
 	const TREEMON_SET_LAKE   ; 4
-	const TREEMON_SET_FOREST ; 5
+	const TREEMON_SET_KANTO  ; 5
 NUM_TREEMON_SETS EQU const_value
 
 ; treemon scores
