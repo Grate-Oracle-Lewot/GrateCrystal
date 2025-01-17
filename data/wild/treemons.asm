@@ -129,7 +129,7 @@ RockSmashMons::
 	dw RockMonSet_Kanto
 	dw RockMonSet_Hot
 	dw RockMonSet_Cold
-	dw RockMonSet_Diglett
+	dw RockMonSet_Mountain
 	dw RockMonSet_Beach
 	assert_table_length NUM_ROCKSMASH_SETS
 
@@ -168,12 +168,11 @@ RockMonSet_Cold:
 	db 10, SWINUB,     25
 	db -1
 
-RockMonSet_Diglett:
-	db 20, GEODUDE,    10
-	db 20, KRABBY,     10
-	db 20, SHELLDER,   10
-	db 20, EKANS,      10
-	db 20, DIGLETT,    10
+RockMonSet_Mountain:
+	db 40, GEODUDE,    10
+	db 30, DIGLETT,    10
+	db 25, EKANS,      10
+	db  5, LARVITAR,   10
 	db -1
 
 RockMonSet_Beach:
