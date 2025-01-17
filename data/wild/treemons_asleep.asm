@@ -12,6 +12,7 @@ AsleepTreeMonsNite:
 	db LEDYBA
 	db AIPOM
 	db SUNKERN
+	db SWINUB
 	db -1 ; end
 
 AsleepTreeMonsDay:
