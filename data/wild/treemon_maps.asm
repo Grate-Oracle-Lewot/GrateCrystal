@@ -38,9 +38,9 @@ TreeMonMaps:
 
 RockMonMaps:
 	treemon_map ROUTE_3,                   ROCKMON_SET_DIGLETT
-	treemon_map ROUTE_40,                  ROCKMON_SET_JOHTO
+	treemon_map ROUTE_40,                  ROCKMON_SET_BEACH
 	treemon_map BURNED_TOWER_1F,           ROCKMON_SET_HOT
-	treemon_map CIANWOOD_CITY,             ROCKMON_SET_JOHTO
+	treemon_map CIANWOOD_CITY,             ROCKMON_SET_BEACH
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, ROCKMON_SET_JOHTO
 	treemon_map ICE_PATH_B3F,              ROCKMON_SET_COLD
 	treemon_map TOHJO_FALLS,               ROCKMON_SET_JOHTO
