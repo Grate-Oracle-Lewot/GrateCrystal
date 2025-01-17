@@ -130,6 +130,7 @@ RockSmashMons::
 	dw RockMonSet_Hot
 	dw RockMonSet_Cold
 	dw RockMonSet_Diglett
+	dw RockMonSet_Beach
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; can have as many entries as you want as long as the % adds up to 100
