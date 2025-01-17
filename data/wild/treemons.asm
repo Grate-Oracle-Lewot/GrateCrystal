@@ -180,6 +180,6 @@ RockMonSet_Beach:
 	db 19, STARYU,     15
 	db 19, SHUCKLE,    20
 	db  9, ARBOK,      20
-	db  1, DUNSPARCE,  20
+	db  1, DUNSPARCE,  21
 	db  1, OCTILLERY,  22
 	db -1
