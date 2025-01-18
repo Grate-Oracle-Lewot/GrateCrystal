@@ -387,6 +387,10 @@ Again, above my skill level. It also has some requirements like variable-width f
 
 Along with personal preference, I prioritized the ones that could most reasonably be given unique type combinations (unique within this hack, that is), thus allowing for wider type variety overall.
 
+# Why no Nuzlocke mode?
+
+The thing is, there are many types of challenge runs, and I don't want to restrict the player in one specific way when they might want a different ruleset. Add to that the possibility of softlocks and lack of room in the options menu, and it's just not something I'm comfortable doing.
+
 # How come turning off battle items doesn't stop the computer from using them?
 
 The whole point of that setting is to make the game harder. Turning off computer items along with yours would be more of a sidegrade. Anyway, both are off in the Battle Tower.
