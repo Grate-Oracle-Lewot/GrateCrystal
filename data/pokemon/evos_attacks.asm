@@ -3359,7 +3359,7 @@ SwinubEvosAttacks:
 	db 28, MIST
 	db 37, EARTHQUAKE
 	db 46, BLIZZARD
-	db 55, AMNESIA
+	db 52, AMNESIA
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
@@ -3373,8 +3373,8 @@ PiloswineEvosAttacks:
 	db 28, MIST
 	db 32, FURY_ATTACK
 	db 42, EARTHQUAKE
-	db 56, BLIZZARD
-	db 70, AMNESIA
+	db 50, BLIZZARD
+	db 57, AMNESIA
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
