@@ -331,30 +331,30 @@ EkansEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 2, LEER
-	db 9, POISON_STING
-	db 15, BITE
+	db 5, POISON_STING
+	db 11, BITE
+	db 17, ACID
 	db 23, GLARE
 	db 29, SCREECH
 	db 33, DIG
-	db 37, ACID
-	db 43, HYPER_FANG
-	db 51, CRUNCH
-	db 64, SLAM
+	db 37, HYPER_FANG
+	db 43, CRUNCH
+	db 51, SLAM
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 2, LEER
-	db 9, POISON_STING
-	db 15, BITE
+	db 5, POISON_STING
+	db 11, BITE
+	db 17, ACID
 	db 25, GLARE
 	db 33, SCREECH
 	db 37, DIG
-	db 43, ACID
-	db 51, HYPER_FANG
-	db 64, CRUNCH
-	db 72, SLAM
+	db 43, HYPER_FANG
+	db 51, CRUNCH
+	db 64, SLAM
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
