@@ -1586,9 +1586,9 @@ HitmonleeEvosAttacks:
 	db 31, MIND_READER
 	db 36, FORESIGHT
 	db 41, ENDURE
-	db 46, MEGA_KICK
+	db 46, SUBMISSION
 	db 51, REVERSAL
-	db 56, SUBMISSION
+	db 56, MEGA_KICK
 	db 0 ; no more level-up moves
 
 HitmonchanEvosAttacks:
