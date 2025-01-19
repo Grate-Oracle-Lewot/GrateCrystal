@@ -653,12 +653,12 @@ VileplumeEvosAttacks:
 ParasEvosAttacks:
 	db EVOLVE_LEVEL, 24, PARASECT
 	db 0 ; no more evolutions
-	db 1, FALSE_SWIPE
+	db 1, FURY_CUTTER
 	db 1, GROWTH
 	db 3, LEECH_LIFE
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
-	db 19, FURY_CUTTER
+	db 19, LEECH_SEED
 	db 25, SPORE
 	db 31, SLASH
 	db 37, FLAIL
@@ -667,12 +667,12 @@ ParasEvosAttacks:
 
 ParasectEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FALSE_SWIPE
+	db 1, FURY_CUTTER
 	db 1, GROWTH
 	db 3, LEECH_LIFE
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
-	db 19, FURY_CUTTER
+	db 19, LEECH_SEED
 	db 28, SPORE
 	db 37, SLASH
 	db 46, FLAIL
