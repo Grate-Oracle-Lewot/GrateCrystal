@@ -299,8 +299,8 @@ SpearowEvosAttacks:
 	db EVOLVE_LEVEL, 20, FEAROW
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 2, GROWL
-	db 7, LEER
+	db 2, LEER
+	db 7, SCREECH
 	db 13, FURY_ATTACK
 	db 17, SWIFT
 	db 20, STEEL_WING
@@ -314,8 +314,8 @@ SpearowEvosAttacks:
 FearowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 2, GROWL
-	db 7, LEER
+	db 2, LEER
+	db 7, SCREECH
 	db 13, FURY_ATTACK
 	db 18, SWIFT
 	db 21, STEEL_WING
