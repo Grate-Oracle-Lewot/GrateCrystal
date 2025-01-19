@@ -820,7 +820,6 @@ CorsolaEggMoves:
 	db MIST
 	db AMNESIA
 	db IRON_HEAD
-	db SPIKES
 	db -1 ; end
 
 RemoraidEggMoves:
