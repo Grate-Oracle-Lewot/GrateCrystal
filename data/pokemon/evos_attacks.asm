@@ -3380,8 +3380,9 @@ PiloswineEvosAttacks:
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, GROWTH
-	db 7, HARDEN
+	db 2, GROWTH
+	db 3, HARDEN
+	db 7, SPIKES
 	db 13, BUBBLE
 	db 19, RECOVER
 	db 25, BUBBLEBEAM
