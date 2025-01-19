@@ -1189,7 +1189,7 @@ MagnemiteEvosAttacks:
 	db 23, METAL_CLAW
 	db 27, LOCK_ON
 	db 33, DAZZLY_GLEAM
-	db 39, SCREECH
+	db 39, SIGNAL_BEAM
 	db 45, ZAP_CANNON
 	db 0 ; no more level-up moves
 
@@ -1204,7 +1204,7 @@ MagnetonEvosAttacks:
 	db 27, LOCK_ON
 	db 29, TRI_ATTACK
 	db 35, DAZZLY_GLEAM
-	db 43, SCREECH
+	db 43, SIGNAL_BEAM
 	db 53, ZAP_CANNON
 	db 0 ; no more level-up moves
 
