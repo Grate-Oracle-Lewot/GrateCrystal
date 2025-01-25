@@ -125,16 +125,17 @@ RockSmashMons::
 	; broke off from the above table, for nayru's pokedex
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
-	dw RockMonSet_Johto
-	dw RockMonSet_Kanto
+	dw RockMonSet_Normal
+	dw RockMonSet_Strong
 	dw RockMonSet_Hot
 	dw RockMonSet_Cold
 	dw RockMonSet_Mountain
 	dw RockMonSet_Beach
+	dw RockMonSet_Gate
 	assert_table_length NUM_ROCKSMASH_SETS
 
 ; can have as many entries as you want as long as the % adds up to 100
-RockMonSet_Johto:
+RockMonSet_Normal:
 	db 20, GEODUDE,    15
 	db 20, KRABBY,     15
 	db 20, SHELLDER,   15
@@ -143,7 +144,7 @@ RockMonSet_Johto:
 	db 10, SHUCKLE,    20
 	db -1
 
-RockMonSet_Kanto:
+RockMonSet_Strong:
 	db 20, GRAVELER,   40
 	db 20, KINGLER,    40
 	db 20, CLOYSTER,   40
@@ -169,9 +170,10 @@ RockMonSet_Cold:
 	db -1
 
 RockMonSet_Mountain:
-	db 40, GEODUDE,    10
+	db 35, GEODUDE,    10
 	db 30, DIGLETT,    10
 	db 25, EKANS,      10
+	db  5, DUNSPARCE,  10
 	db  5, LARVITAR,   10
 	db -1
 
@@ -182,4 +184,12 @@ RockMonSet_Beach:
 	db 19, STARYU,     15
 	db 10, ARBOK,      20
 	db  1, OCTILLERY,  25
+	db -1
+
+RockMonSet_Gate:
+	db 30, SLOWPOKE,   35
+	db 20, GRAVELER,   35
+	db 20, KINGLER,    35
+	db 20, ARBOK,      35
+	db 10, SHUCKLE,    35
 	db -1
