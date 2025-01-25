@@ -9,6 +9,7 @@ AsleepTreeMonsNite:
 	db FEAROW
 	db EKANS
 	db ARBOK
+	db SLOWPOKE
 	db LEDYBA
 	db AIPOM
 	db SUNKERN
@@ -19,6 +20,7 @@ AsleepTreeMonsDay:
 AsleepTreeMonsMorn:
 	db VENONAT
 	db VENOMOTH
+	db SLOWPOKE
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
