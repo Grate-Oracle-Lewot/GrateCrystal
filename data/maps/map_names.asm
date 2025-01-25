@@ -1333,9 +1333,9 @@ Dungeons_Map_Name64: ; NATIONAL_PARK
 Dungeons_Map_Name65: ; NATIONAL_PARK_BUG_CONTEST
 	db "BUG CONTEST@"
 Dungeons_Map_Name66: ; BURNED_TOWER_1F
-	db "BURNED TOWER 1F@"
+	db "BURNED TOWER@"
 Dungeons_Map_Name67: ; BURNED_TOWER_B1F
-	db "BURNED TOWER B1@"
+	db "DEN OF SLUMBER@"
 Dungeons_Map_Name68: ; TIN_TOWER_1F
 	db "TIN TOWER 1F@"
 Dungeons_Map_Name69: ; TIN_TOWER_2F
