@@ -43,7 +43,7 @@ RockMonMaps:
 	treemon_map CIANWOOD_CITY,             ROCKMON_SET_BEACH
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, ROCKMON_SET_NORMAL
 	treemon_map ICE_PATH_B3F,              ROCKMON_SET_COLD
-	treemon_map TOHJO_FALLS,               ROCKMON_SET_NORMAL
+	treemon_map TOHJO_FALLS,               ROCKMON_SET_MID
 	treemon_map MOUNT_MOON_B2F,            ROCKMON_SET_MOUNTAIN
 	treemon_map ROCK_TUNNEL_B1F,           ROCKMON_SET_MOUNTAIN
 	treemon_map CERULEAN_CAVE_2F,          ROCKMON_SET_STRONG
