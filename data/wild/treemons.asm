@@ -126,6 +126,7 @@ RockSmashMons::
 	; delineation was needed because there is no 'rare' table for rocksmash
 	table_width 2, RockSmashMons
 	dw RockMonSet_Normal
+	dw RockMonSet_Mid
 	dw RockMonSet_Strong
 	dw RockMonSet_Hot
 	dw RockMonSet_Cold
@@ -142,6 +143,15 @@ RockMonSet_Normal:
 	db 20, ARBOK,      20
 	db 10, DUNSPARCE,  15
 	db 10, SHUCKLE,    20
+	db -1
+
+RockMonSet_Mid:
+	db 20, GRAVELER,   30
+	db 20, KINGLER,    30
+	db 20, SHELLDER,   30
+	db 20, ARBOK,      30
+	db 10, DUNSPARCE,  30
+	db 10, SHUCKLE,    30
 	db -1
 
 RockMonSet_Strong:
