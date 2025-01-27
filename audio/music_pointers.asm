@@ -121,4 +121,5 @@ Music:
 	dba Music_BikeRiding
 	dba Music_PokemonTower
 	dba Music_OldGameCorner
+	dba Music_OldRocketHideout
 	assert_table_length NUM_MUSIC_SONGS
