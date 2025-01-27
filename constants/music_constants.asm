@@ -119,6 +119,7 @@
 	const MUSIC_CYCLING_ROAD                 ; 71
 	const MUSIC_SAFARI_ZONE                  ; 72
 	const MUSIC_OLD_GAME_CORNER              ; 73
+	const MUSIC_OLD_ROCKET_HIDEOUT           ; 74
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
