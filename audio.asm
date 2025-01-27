@@ -155,6 +155,7 @@ INCLUDE "audio/music/meetjessiejames.asm"
 INCLUDE "audio/music/bikeriding.asm"
 INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oldgamecorner.asm"
+INCLUDE "audio/music/oldrockethideout.asm"
 
 
 SECTION "Sound Effects", ROMX
