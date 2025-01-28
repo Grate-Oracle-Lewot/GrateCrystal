@@ -884,7 +884,7 @@ AI_Smart_Nightmare:
 
 AI_Smart_Sleep:
 ; 50% chance to dismiss sleep inducing moves if the player's held item immunizes against them.
-; Greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
+; 90% chance to greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
 	push hl
@@ -902,11 +902,11 @@ AI_Smart_Sleep:
 .skip_immune
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
-	jr c, AI_Sleep_DreamEater_Encourage
+	jr c, AI_Smart_DreamEater
 
 	ld b, EFFECT_NIGHTMARE
 	call AIHasMoveEffect
-	jr c, AI_Sleep_DreamEater_Encourage
+	jr c, AI_Smart_DreamEater
 
 	call AI_50_50
 	ret c
