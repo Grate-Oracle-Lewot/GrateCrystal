@@ -269,6 +269,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM).
 
+- AI_STATUS now discourages Leech Seed if the player is a Grass type, and no longer discourages Sleep moves based on nonexistent type immunities.
+
 - AI_SETUP now encourages stat-up moves if the player is currently flying or underground and the enemy is faster, and discourages stat-down moves if the player has Mist or a Substitute. It still also does everything from vanilla.
 
 - AI_TYPES now encourages moves in the Rain Dance and Sunny Day lists if those weather conditions are up, in addition to its type effectiveness check. It does not encourage Blizzard in Hail.
