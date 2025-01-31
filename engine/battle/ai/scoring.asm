@@ -1436,7 +1436,7 @@ AI_Smart_ForceSwitch:
 AI_Smart_BatonPass:
 ; Dismiss this move if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
-	jp c, AIDismissMove
+	jr c, AIDismissMove
 	; fallthrough
 
 AI_Smart_BaseSwitchScore:
@@ -1486,6 +1486,8 @@ AI_OHKO_CheckLockOn:
 	inc [hl]
 	; fallthrough
 
+AI_Smart_LeechSeed:
+; AI_Redundant will make sure Leech Seed is not used against Grass types.
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
@@ -1509,17 +1511,6 @@ AI_Smart_Poison:
 	call AI_50_50
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
 	jr AIDismissMove
-
-AI_Smart_LeechSeed:
-; Dismiss this move if the player is Grass-type and therefore immune.
-; Else, discourage this move if player's HP is below 50%.
-	ld a, [wBattleMonType1]
-	cp GRASS
-	jr z, AIDismissMove
-	ld a, [wBattleMonType2]
-	cp GRASS
-	jr z, AIDismissMove
-	jr AI_DiscourageIfPlayerHPBelowHalf
 
 AI_Smart_Fissure:
 ; Dismiss this move if the player is a floatmon.
