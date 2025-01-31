@@ -1495,7 +1495,7 @@ AI_OHKO_CheckLockOn:
 	; fallthrough
 
 AI_Smart_LeechSeed:
-; AI_Redundant will make sure Leech Seed is not used against Grass types.
+; The AI_STATUS layer will make sure Leech Seed is not used against Grass types.
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
