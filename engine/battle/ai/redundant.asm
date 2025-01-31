@@ -78,12 +78,6 @@ AI_Redundant:
 	ret
 
 .LeechSeed:
-	ld a, [wBattleMonType1]
-	cp GRASS
-	jr z, .Redundant
-	ld a, [wBattleMonType2]
-	cp GRASS
-	jr z, .Redundant
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
 	ret
