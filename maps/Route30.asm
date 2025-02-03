@@ -22,7 +22,7 @@ YoungsterJoey_ImportantBattleScript:
 	playmusic MUSIC_JOHTO_TRAINER_BATTLE
 	opentext
 	writetext Text_UseTackle
-	pause 30
+	pause 20
 	closetext
 	playsound SFX_TACKLE
 	applymovement ROUTE30_MONSTER2, Route30_JoeysRattataAttacksMovement
