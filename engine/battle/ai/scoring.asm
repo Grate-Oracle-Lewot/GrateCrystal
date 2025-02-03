@@ -143,10 +143,12 @@ AI_Status:
 
 
 AI_Setup:
-; 50% chance to greatly encourage stat-up moves during the first turn of enemy's Pokemon.
-; 50% chance to greatly encourage stat-down moves during the first turn of player's Pokemon.
+; 50% chance to greatly encourage stat-up moves during the enemy Pokemon's first turn out.
+; 50% chance to greatly encourage stat-down moves during the player's Pokemon's first turn out.
 ; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
 ; 100% chance to greatly discourage stat-down moves if the player has Mist or a Substitute up.
+; 100% chance to greatly encourage stat-up moves if the player is storing energy with Bide.
+; 100% chance to greatly encourage stat-down moves if the player is Biding, unless they also have Mist or a Substitute.
 ; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
