@@ -1540,8 +1540,6 @@ AI_OHKO_CheckLockOn:
 	inc [hl]
 	; fallthrough
 
-AI_Smart_LeechSeed:
-; The AI_STATUS layer will make sure Leech Seed is not used against Grass types.
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
@@ -1549,6 +1547,18 @@ AI_DiscourageIfPlayerHPBelowHalf:
 	call AICheckPlayerHalfHP
 	ret c
 	inc [hl]
+	ret
+
+AI_Smart_LeechSeed:
+; The AI_STATUS layer will make sure Leech Seed is not used against Grass types.
+
+; Greatly encourage this move if the player is storing energy with Bide.
+; Else, discourage this move if player's HP is below 50%.
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_BIDE, a
+	jr z, AI_DiscourageIfPlayerHPBelowHalf
+	dec [hl]
+	dec [hl]
 	ret
 
 AI_Smart_Poison:
