@@ -125,12 +125,11 @@ VioletPokecenterElmsAideGiveEggText:
 	text "We discovered that"
 	line "a #MON will not"
 
-	para "hatch until it"
-	line "grows in the EGG."
+	para "hatch until the"
+	line "EGG spends time"
 
-	para "It also has to be"
-	line "with other active"
-	cont "#MON to hatch."
+	para "with other active"
+	line "#MON."
 
 	para "<PLAY_G>, you're"
 	line "the only person"
