@@ -70,18 +70,19 @@ INCLUDE "data/battle/ai/status_only_effects.asm"
 
 AI_Status:
 ; Dismiss status moves that don't affect the player.
+; Greatly encourage status moves if the player is storing energy with Bide.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld b, NUM_MOVES + 1
 .checkmove
 	dec b
-	ret z
+	jr z, .checkbide
 
 	inc hl
 	ld a, [de]
 	and a
-	ret z
+	jr z, .checkbide
 
 	inc de
 	call AIGetEnemyMove
@@ -140,6 +141,41 @@ AI_Status:
 .immune
 	call AIDismissMove
 	jr .checkmove
+
+.checkbide
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_BIDE, a
+	ret z
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove2
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	push hl
+	push de
+	push bc
+	ld hl, StatusOnlyEffects
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .checkmove2
+
+	dec [hl]
+	dec [hl]
+	jr .checkmove2
 
 
 AI_Setup:
