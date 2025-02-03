@@ -18,7 +18,6 @@ AI_Redundant:
 	dbw EFFECT_HEAL,         .Heal
 	dbw EFFECT_LIGHT_SCREEN, .LightScreen
 	dbw EFFECT_MIST,         .Mist
-	dbw EFFECT_FOCUS_ENERGY, .FocusEnergy
 	dbw EFFECT_CONFUSE,      .Confuse
 	dbw EFFECT_TRANSFORM,    .Transform
 	dbw EFFECT_REFLECT,      .Reflect
@@ -36,10 +35,10 @@ AI_Redundant:
 	dbw EFFECT_SAFEGUARD,    .Safeguard
 	dbw EFFECT_RAIN_DANCE,   .RainDance
 	dbw EFFECT_SUNNY_DAY,    .SunnyDay
-	dbw EFFECT_MORNING_SUN,  .MorningSun
-	dbw EFFECT_SYNTHESIS,    .Synthesis
-	dbw EFFECT_MOONLIGHT,    .Moonlight
-	dbw EFFECT_SWAGGER,      .Swagger
+	dbw EFFECT_MORNING_SUN,  .Heal
+	dbw EFFECT_SYNTHESIS,    .Heal
+	dbw EFFECT_MOONLIGHT,    .Heal
+	dbw EFFECT_SWAGGER,      .Confuse
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
 	dbw EFFECT_HAIL,         .Hail
 	db -1
@@ -54,17 +53,15 @@ AI_Redundant:
 	bit SUBSTATUS_MIST, a
 	ret
 
-.FocusEnergy:
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_FOCUS_ENERGY, a
-	ret
-
 .Confuse:
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_CONFUSED, a
 	ret nz
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Transform:
@@ -80,6 +77,9 @@ AI_Redundant:
 .LeechSeed:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Disable:
@@ -158,11 +158,6 @@ AI_Redundant:
 	jr z, .Redundant
 	jr .NotRedundant
 
-.Swagger:
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_CONFUSED, a
-	ret
-
 .FutureSight:
 	ld a, [wEnemyFutureSightCount]
 	and a
@@ -175,9 +170,6 @@ AI_Redundant:
 	jr .NotRedundant
 
 .Heal:
-.MorningSun:
-.Synthesis:
-.Moonlight:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
 
