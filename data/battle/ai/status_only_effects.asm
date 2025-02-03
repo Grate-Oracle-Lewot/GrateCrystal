@@ -1,5 +1,6 @@
 ; AI_BASIC discourages StatusOnlyEffects if the player already has a status condition.
 ; AI_STATUS encourages StatusBideEffects if the player is storing energy with Bide.
+; StatusBideEffects are supposed to include StatusOnlyEffects.
 
 StatusBideEffects:
 	db EFFECT_CONFUSE
