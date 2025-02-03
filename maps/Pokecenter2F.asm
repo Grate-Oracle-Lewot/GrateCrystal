@@ -149,8 +149,6 @@ LinkReceptionistScript_Trade:
 	iftrue .Mobile_Abort
 	scall BattleTradeMobile_WalkIn
 	warpcheck
-	end
-
 .Mobile_Abort:
 	end
 
@@ -254,8 +252,6 @@ LinkReceptionistScript_Battle:
 	iftrue .Mobile_Abort
 	scall BattleTradeMobile_WalkIn
 	warpcheck
-	end
-
 .Mobile_Abort:
 	end
 
@@ -365,8 +361,10 @@ LinkReceptionistScript_GenderSwap:
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
 	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
-	end
-
+	turnobject PLAYER, UP
+	openext
+	writetext Text_GenderSwapOutro
+	waitbutton
 .Cancel:
 	closetext
 	end
@@ -466,8 +464,6 @@ Script_WalkOutOfLinkBattleRoom:
 	special UpdatePlayerSprite
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesTwoStepsDown
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	end
-
 Script_LeftTimeCapsule:
 	end
 
@@ -832,6 +828,11 @@ Text_AskSwapGender:
 Text_PleaseStepInside:
 	text "Please step"
 	line "inside."
+	done
+
+Text_GenderSwapOutro:
+	text "Feel free to swap"
+	line "again anytime."
 	done
 
 Text_TimeCapsuleClosed:
