@@ -453,6 +453,7 @@ PorygonEggMoves:
 	db BODY_SLAM
 	db MIRROR_COAT
 	db TRANSFORM
+	db CONVERSION2
 	db -1 ; end
 
 OmanyteEggMoves:
