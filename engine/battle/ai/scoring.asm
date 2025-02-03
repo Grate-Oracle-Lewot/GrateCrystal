@@ -164,7 +164,7 @@ AI_Status:
 	push hl
 	push de
 	push bc
-	ld hl, StatusOnlyEffects
+	ld hl, StatusBideEffects
 	ld de, 1
 	call IsInArray
 
