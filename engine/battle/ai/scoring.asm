@@ -33,7 +33,7 @@ AI_Basic:
 	pop bc
 	pop de
 	pop hl
-	jr nz, .discourage
+	jr nz, .dismiss
 
 ; Dismiss status-only moves if the player can't be statused.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -51,17 +51,17 @@ AI_Basic:
 
 	ld a, [wBattleMonStatus]
 	and a
-	jr nz, .discourage
+	jr nz, .dismiss
 
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .discourage
+	jr nz, .dismiss
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jr z, .checkmove
 
-.discourage
+.dismiss
 	call AIDismissMove
 	jr .checkmove
 
