@@ -269,7 +269,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM).
 
-- AI_STATUS now discourages Leech Seed if the player is a Grass type, and no longer discourages Sleep moves based on nonexistent type immunities.
+- AI_STATUS now discourages Leech Seed if the player is a Grass type, and no longer discourages Sleep moves based on nonexistent type immunities. It also encourages status moves, including Leech Seed and Confusion-inducing moves, if the player is storing energy with Bide.
 
 - AI_SETUP now always discourages stat-down moves if the player has either Mist or a Substitute, and always encourages stat-up moves if the player is currently in the middle of Fly or Dig and the AI's Pokémon is faster, thus avoiding a wasted turn. It also encourages both stat-up and stat-down moves if the player is using Bide, barring the aforementioned Mist and Substitute. When none of those conditions are met, it still has all of its vanilla behavior: 50% chance to encourage stat-up moves on the AI Pokémon's first turn, 50% chance to encourage stat-down moves on the player's Pokémon's first turn, and high chance to discourage both otherwise.
 
