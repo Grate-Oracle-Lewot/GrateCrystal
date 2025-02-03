@@ -4,7 +4,6 @@ ResidualMoves:
 	db MIST
 	db POISONPOWDER
 	db STUN_SPORE
-	db THUNDER_WAVE
 	db GLARE
 	db TRANSFORM
 	db SPIDER_WEB
