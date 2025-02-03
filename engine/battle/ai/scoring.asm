@@ -190,6 +190,10 @@ AI_Setup:
 
 .statup
 	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_BIDE, a
+	jr nz, .do_encourage
+
+	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	jr z, .statup_continue
 
@@ -211,6 +215,10 @@ AI_Setup:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	jr nz, .do_discourage
+
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_BIDE, a
+	jr nz, .do_encourage
 
 	ld a, [wPlayerTurnsTaken]
 	and a
