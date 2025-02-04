@@ -172,7 +172,7 @@ MrPokemonsHouse_OakScript:
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
-	special FillPokedex
+;	special FillPokedex
 	writetext MrPokemonsHouse_OakText2
 	waitbutton
 	closetext
@@ -556,7 +556,7 @@ MrPokemonsHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, VIRIDIAN_CITY, 2
+	warp_event  2,  7, ROUTE_30, 2
 	warp_event  3,  7, ROUTE_30, 2
 
 	def_coord_events
