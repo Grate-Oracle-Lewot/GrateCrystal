@@ -14,16 +14,16 @@ NPCTRADE_STRUCT_LENGTH EQU _RS
 
 ; NPCTrades indexes (see data/events/npc_trades.asm)
 	const_def
-	const NPC_TRADE_MIKE    ;  0
-	const NPC_TRADE_KYLE    ;  1
-	const NPC_TRADE_TIM     ;  2
-	const NPC_TRADE_EMY     ;  3
-	const NPC_TRADE_CHRIS   ;  4
-	const NPC_TRADE_KIM     ;  5
-	const NPC_TRADE_FOREST  ;  6
-	const NPC_TRADE_FLORIA  ;  7
-	const NPC_TRADE_KOJI    ;  8
-	const NPC_TRADE_LIAM    ;  9
+	const NPC_TRADE_KYLE    ;  0
+	const NPC_TRADE_MIKE    ;  1
+	const NPC_TRADE_FLORIA  ;  2
+	const NPC_TRADE_TIM     ;  3
+	const NPC_TRADE_KOJI    ;  4
+	const NPC_TRADE_LIAM    ;  5
+	const NPC_TRADE_EMY     ;  6
+	const NPC_TRADE_JUAN    ;  7
+	const NPC_TRADE_KIM     ;  8
+	const NPC_TRADE_FOREST  ;  9
 	const NPC_TRADE_COPYCAT ; 10
 NUM_NPC_TRADES EQU const_value
 
