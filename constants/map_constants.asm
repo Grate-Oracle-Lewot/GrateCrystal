@@ -66,7 +66,7 @@ ENDM
 	map_const ROUTE_2_SOUTH_GATE,                           5,  4 ; 10
 	map_const ROUTE_2_NORTH_GATE,                           5,  4 ; 11
 	map_const VIRIDIAN_FOREST,                             15, 27 ; 12
-	map_const ROUTE_22,                                    20,  9 ; 13
+	map_const ROUTE_22,                                    18, 48 ; 13
 	map_const ROUTE_22_HOUSE,                               5,  4 ; 14
 	map_const VICTORY_ROAD_GATE,                           10,  9 ; 15
 	endgroup
