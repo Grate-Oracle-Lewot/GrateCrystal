@@ -362,7 +362,7 @@ LinkReceptionistScript_GenderSwap:
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
 	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
 	turnobject PLAYER, UP
-	openext
+	opentext
 	writetext Text_GenderSwapOutro
 	waitbutton
 .Cancel:
