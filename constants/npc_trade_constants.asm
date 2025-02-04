@@ -21,10 +21,10 @@ NPCTRADE_STRUCT_LENGTH EQU _RS
 	const NPC_TRADE_KOJI    ;  4
 	const NPC_TRADE_LIAM    ;  5
 	const NPC_TRADE_EMY     ;  6
-	const NPC_TRADE_JUAN    ;  7
-	const NPC_TRADE_KIM     ;  8
-	const NPC_TRADE_FOREST  ;  9
-	const NPC_TRADE_COPYCAT ; 10
+	const NPC_TRADE_FOREST  ;  7
+	const NPC_TRADE_COPYCAT ;  8
+	const NPC_TRADE_KIM     ;  9
+	const NPC_TRADE_JUAN    ; 10
 NUM_NPC_TRADES EQU const_value
 
 ; trade gender limits
