@@ -10,10 +10,10 @@ Route22HiddenTimerBall:
 	hiddenitem TIMER_BALL, EVENT_ROUTE_22_HIDDEN_TIMER_BALL
 
 VictoryRoadEntranceSignText:
-	text "#MON LEAGUE"
+	text "ROUTE 22"
 
-	para "VICTORY ROAD"
-	line "ENTRANCE"
+	para "VIRIDIAN CITY -"
+	line "VICTORY ROAD"
 	done
 
 Route22_MapEvents:
@@ -21,12 +21,12 @@ Route22_MapEvents:
 
 	def_warp_events
 	warp_event 13,  5, VICTORY_ROAD_GATE, 1
-	warp_event 28,  9, ROUTE_22_HOUSE, 1
+	warp_event 28, 75, ROUTE_22_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 15,  7, BGEVENT_READ, VictoryRoadEntranceSign
-	bg_event 30,  2, BGEVENT_ITEM, Route22HiddenTimerBall
+	bg_event 15, 73, BGEVENT_READ, VictoryRoadEntranceSign
+	bg_event 30, 68, BGEVENT_ITEM, Route22HiddenTimerBall
 
 	def_object_events
