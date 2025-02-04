@@ -241,6 +241,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - An extra room in Dark Cave
 - A backroom to the Goldenrod Game Corner where you can battle Gamblers whose Pokémon are high-level but use luck-based moves like one-hit-KOs or Metronome
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
+- Route 22 expanded (similar to Gen I's Route 23, the badge check area)
 - A house on Route 22 where different characters appear, most of whom can be battled once per day
   - Monday: Koga, who now uses Fairy types instead of Poison
   - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies (or 6 PP Ups if you've beaten Red)
