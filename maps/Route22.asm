@@ -12,6 +12,9 @@ VictoryRoadEntranceSign2:
 Route22HiddenTimerBall:
 	hiddenitem TIMER_BALL, EVENT_ROUTE_22_HIDDEN_TIMER_BALL
 
+Route22HiddenRagecandybar:
+	hiddenitem RAGECANDYBAR, EVENT_ROUTE_22_HIDDEN_RAGECANDYBAR
+
 VictoryRoadEntranceSign1Text:
 	text "ROUTE 22"
 
@@ -39,5 +42,6 @@ Route22_MapEvents:
 	bg_event 11, 73, BGEVENT_READ, VictoryRoadEntranceSign1
 	bg_event 11,  7, BGEVENT_READ, VictoryRoadEntranceSign2
 	bg_event 26, 68, BGEVENT_ITEM, Route22HiddenTimerBall
+	bg_event 14, 47, BGEVENT_ITEM, Route22HiddenRagecandybar
 
 	def_object_events
