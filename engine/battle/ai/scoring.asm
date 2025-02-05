@@ -283,7 +283,7 @@ AI_Setup:
 
 
 AI_Cautious:
-; 90% chance to discourage moves with residual effects after the enemy Pokemon's first turn on the field.
+; 90% chance to discourage residual moves after the enemy Pokemon's first turn on the field.
 
 	ld a, [wEnemyTurnsTaken]
 	and a
@@ -697,6 +697,7 @@ INCLUDE "data/battle/ai/reckless_moves.asm"
 AI_Risky:
 ; Hugely encourage any move that will KO the player.
 ; Selfdestruct will often be an exception (see below).
+; This will out-encourage status moves if the player is Biding.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
