@@ -3652,8 +3652,11 @@ BattleCommand_PoisonTarget:
 
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
+	; fallthrough
 
-	jp _UseHeldStatusHealingItem
+_UseHeldStatusHealingItem:
+	farcall UseHeldStatusHealingItem
+	ret
 
 BattleCommand_Poison:
 	ld hl, DoesntAffectText
@@ -3708,7 +3711,7 @@ BattleCommand_Poison:
 	call .apply_poison
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
-	jr .finished
+	jr _UseHeldStatusHealingItem
 
 .toxic
 	set SUBSTATUS_TOXIC, [hl]
@@ -3718,10 +3721,7 @@ BattleCommand_Poison:
 
 	ld hl, BadlyPoisonedText
 	call StdBattleTextbox
-	; fallthrough
-
-.finished
-	jp _UseHeldStatusHealingItem
+	jr _UseHeldStatusHealingItem
 
 .failed
 	push hl
@@ -6590,10 +6590,6 @@ _CheckBattleScene:
 	pop bc
 	pop de
 	pop hl
-	ret
-
-_UseHeldStatusHealingItem:
-	farcall UseHeldStatusHealingItem
 	ret
 
 SandstormSpDefBoost: 
