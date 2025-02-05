@@ -3434,7 +3434,7 @@ DoPlayerDamage:
 	jr nz, .ignore_substitute
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, DoSubstituteDamage
+	jr nz, DoSubstituteDamage
 
 .ignore_substitute
 	; Subtract wCurDamage from wBattleMonHP.
