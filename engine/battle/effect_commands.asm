@@ -346,7 +346,7 @@ CheckEnemyTurn:
 
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
-	jp StdBattleTextboxCantMoveEndTurn
+	jr StdBattleTextboxCantMoveEndTurn
 
 .no_recharge
 	ld hl, wEnemyMonStatus
