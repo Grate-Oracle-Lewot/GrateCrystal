@@ -496,7 +496,9 @@ wSubstituteJustBroke:: db
 ; Stops them from triggering off of an attack that just broke a Substitute.
 ; Other effects check for the Substitute before damaging it, and thus don't need this.
 
-	ds 1
+wCriticalRage:: db
+; Used to preserve crit status through to BattleCommand_BuildOpponentRage.
+; There's undoubtedly a way to do this without eating a new byte but oh well.
 
 wCurPlayerMove:: db
 wCurEnemyMove::  db
