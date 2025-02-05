@@ -1754,6 +1754,9 @@ AI_Smart_Gust:
 	call AICompareSpeed
 	ret c
 ; ...try to predict if the player will use Fly or Sky Attack again this turn.
+; fallthrough
+
+AI_Smart_GustSpeedControl_MaybeEncourage:
 	call AI_50_50
 	ret c
 	dec [hl]
@@ -1763,6 +1766,22 @@ AI_Smart_Twister:
 ; If enemy is faster than player, maybe fish for a flinch. Regardless, jump to AI_Smart_Gust.
 	call AI_Smart_FlinchHit
 	jr AI_Smart_Gust
+
+AI_Smart_SpeedControl:
+; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
+
+; If player is faster than enemy, 50% chance to encourage this move (no chance to discourage).
+; Else discourage this move.
+	call AICompareSpeed
+	jr nc, AI_Smart_GustSpeedControl_MaybeEncourage
+	inc [hl]
+
+; Discourage further if the player has only one Pokemon [remaining].
+	call AICheckLastPlayerMon
+	ret nz
+	inc [hl]
+	inc [hl]
+	ret
 
 AI_Smart_SuperFang:
 ; Discourage this move if player's HP is below 25%.
@@ -3194,7 +3213,7 @@ AI_Smart_Stomp:
 	ret
 
 AI_Smart_Rampage:
-; Encourage this move if enemy's held item immunizes against confusion.
+; Encourage this move if enemy's held item immunizes against Confusion.
 	push hl
 	ld hl, wEnemyMonItem
 	ld b, [hl]
@@ -3204,21 +3223,6 @@ AI_Smart_Rampage:
 	cp HELD_PREVENT_CONFUSE
 	ret nz
 	dec [hl]
-	ret
-
-AI_Smart_SpeedControl:
-; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
-
-; Discourage this move if enemy is faster than player.
-	call AICompareSpeed
-	ret nc
-	inc [hl]
-
-; Discourage further if the player has only one Pokemon [remaining].
-	call AICheckLastPlayerMon
-	ret nz
-	inc [hl]
-	inc [hl]
 	ret
 
 AI_Smart_FlinchHit:
