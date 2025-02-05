@@ -2249,6 +2249,7 @@ BattleCommand_CriticalText:
 
 ; If there is no message to be printed, wait 20 frames.
 	ld a, [wCriticalHit]
+	ld [wCriticalRage], a
 	and a
 	jr z, .wait
 
@@ -2409,7 +2410,7 @@ BattleCommand_BuildOpponentRage:
 	ld [de], a
 
 ; Build rage again if the move got a critical hit.
-	ld a, [wCriticalHit]
+	ld a, [wCriticalRage]
 	and a
 	jr z, .no_crit
 	ld a, [de]
@@ -2424,7 +2425,11 @@ BattleCommand_BuildOpponentRage:
 .no_crit
 	call BattleCommand_SwitchTurn
 	ld hl, RageBuildingText
+
 .finish
+	xor a
+	ld [wCriticalRage], a
+
 	call StdBattleTextbox
 	jp BattleCommand_SwitchTurn
 
