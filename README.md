@@ -170,7 +170,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Psych Up no longer fails if the target has no stat changes, and now also copies the Defense Curl, Focus Energy, Dire Hit, and X Accuracy statuses.
 
-- Rage now builds twice when the Pokémon takes a critical hit.
+- Rage now builds twice when the Pokémon takes a critical hit (written as "<USER>'s RAGE spiked!").
 
 - Moves like Earthquake that can hit while the opponent is underground with Dig can now do so even if the digger is Flying-type (or a pseudo-Levitater).
 
