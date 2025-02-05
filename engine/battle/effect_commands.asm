@@ -304,7 +304,13 @@ StdBattleTextboxCantMoveEndTurn:
 	call StdBattleTextbox
 CantMoveEndTurn:
 	call CantMove
-	jp EndTurn
+EndTurn:
+	xor a
+	ld [wSubstituteJustBroke], a
+
+	ld a, $1
+	ld [wTurnEnded], a
+	jp ResetDamage
 
 CantMove:
 	ld a, BATTLE_VARS_SUBSTATUS1
@@ -527,17 +533,7 @@ CheckEnemyTurn:
 	ret nc
 
 	ld hl, FullyParalyzedText
-	call StdBattleTextbox
-	call CantMove
-	; fallthrough
-
-EndTurn:
-	xor a
-	ld [wSubstituteJustBroke], a
-
-	ld a, $1
-	ld [wTurnEnded], a
-	jp ResetDamage
+	jp StdBattleTextboxCantMoveEndTurn
 
 MoveDisabled:
 	; Make sure any charged moves fail
