@@ -2715,7 +2715,7 @@ ThickClubBoost:
 	ld b, CUBONE
 	ld c, MAROWAK
 	ld d, THICK_CLUB
-	jr FinishSpeciesItemBoost
+	jr SpeciesItemBoost
 
 LightBallBoost:
 ; Return in hl the stat value at hl.
@@ -2727,12 +2727,6 @@ LightBallBoost:
 	ld c, PIKACHU
 	ld d, LIGHT_BALL
 	; fallthrough
-
-FinishSpeciesItemBoost:
-	call SpeciesItemBoost
-	pop de
-	pop bc
-	ret
 
 SpeciesItemBoost:
 ; Return in hl the stat value at hl.
@@ -2757,7 +2751,7 @@ SpeciesItemBoost:
 	cp b
 	jr z, .GetItemHeldEffect
 	cp c
-	ret nz
+	jr nz, .done
 
 .GetItemHeldEffect:
 	push hl
@@ -2765,7 +2759,7 @@ SpeciesItemBoost:
 	ld a, [hl]
 	pop hl
 	cp d
-	ret nz
+	jr nz, .done
 
 ; Double the stat
 	sla l
@@ -2774,13 +2768,16 @@ SpeciesItemBoost:
 	ld a, HIGH(MAX_STAT_VALUE)
 	cp h
 	jr c, .cap
-	ret nz
+	jr nz, .done
 	ld a, LOW(MAX_STAT_VALUE)
 	cp l
-	ret nc
+	jr nc, .done
 
 .cap
 	ld hl, MAX_STAT_VALUE
+.done
+	pop de
+	pop bc
 	ret
 
 EnemyAttackDamage:
