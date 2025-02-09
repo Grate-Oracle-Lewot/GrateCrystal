@@ -845,7 +845,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_SkyAttack_FutureSight
 	dbw EFFECT_POISON_MULTI_HIT, AI_Smart_Reckless
-	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute_SkullBash
+	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
 	dbw EFFECT_RAGE,             AI_Smart_Rage
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
@@ -894,7 +894,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
 	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
-	dbw EFFECT_SKULL_BASH,       AI_Smart_Substitute_SkullBash
+	dbw EFFECT_SKULL_BASH,       AI_Smart_SkullBash
 	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_Fly_SkyAttack_FutureSight
@@ -1966,7 +1966,12 @@ AI_Smart_Rage:
 	inc [hl]
 	ret
 
-AI_Smart_Substitute_SkullBash:
+AI_Smart_SkullBash:
+; If enemy is faster than player, maybe fish for a flinch. Regardless, fall through to AI_Smart_Substitute.
+	call AI_Smart_FlinchHit
+	; fallthrough
+
+AI_Smart_Substitute:
 ; Encourage this move if enemy's HP is full.
 ; Discourage this move if enemy's HP is between 25% and 50%.
 ; Dismiss this move if enemy's HP is 25% or below.
@@ -3228,10 +3233,9 @@ AI_Smart_Rampage:
 	ret
 
 AI_Smart_FlinchHit:
-; NOTE: Called by Stomp and Twister. Does not cover Snore/Night Terror, Sky Attack, or King's Rock.
+; NOTE: Called by Stomp, Twister, and Skull Bash. Does not cover Snore/Night Terror or King's Rock.
 ; Snore/Night Terror's only competition while asleep is Sleep Talk, so it's not really worth it.
-; Sky Attack's flinch chance is only 10%, so it's better to rank it on other criteria, esp. given low PP and prep turn.
-; King's Rock is ~10% and would require checking for which moves it affects, which I don't have room or patience for.
+; King's Rock is only ~10% and would require checking for which moves it affects, which I don't have room or patience for.
 
 ; If enemy is faster than player, % chance to encourage this move equal to the move's effect chance.
 	call AICompareSpeed
