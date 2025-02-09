@@ -42,7 +42,6 @@ BattleCommand_Encore:
 	inc a ; +1
 	inc a ; +1
 	inc a ; +1
-	; 1 turn elapses before the count matters, so effective 2-5 turns
 	ld [de], a
 	call CheckOpponentWentFirst
 	jr nz, .finish_move
