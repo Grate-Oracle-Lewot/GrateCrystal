@@ -142,7 +142,7 @@ Moves:
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,        PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        40, WATER,        PHYSICAL,  85, 15,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       SPECIAL,  100, 25,   0
-	move SKULL_BASH,   EFFECT_SKULL_BASH,        150, NORMAL,       PHYSICAL, 100,  5,   0
+	move SKULL_BASH,   EFFECT_SKULL_BASH,        150, NORMAL,       PHYSICAL, 100,  5,  15
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, STEEL,        PHYSICAL, 100, 15,   0
 	move HAIL,         EFFECT_HAIL,                0, ICE,          STATUS,   100,  5,   0
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE, STATUS,   100, 20,   0
@@ -155,7 +155,7 @@ Moves:
 	move DAZZLY_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY,        SPECIAL,  100, 15,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,          PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
-	move SKY_ATTACK,   EFFECT_FLY,               120, FLYING,       PHYSICAL,  95,  5,  10
+	move SKY_ATTACK,   EFFECT_FLY,               120, FLYING,       PHYSICAL,  95,  5,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       STATUS,   100,  5,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,        SPECIAL,  100, 35,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       PHYSICAL, 100, 15,  30
