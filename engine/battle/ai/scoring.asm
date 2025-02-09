@@ -2161,6 +2161,7 @@ AI_Smart_FlameWheel:
 	ret
 
 AI_Smart_Spite:
+; Dismiss this move if the player hasn't used a move yet and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	and a
 	jr nz, .usedmove
@@ -2168,6 +2169,7 @@ AI_Smart_Spite:
 	call AICompareSpeed
 	jp c, AIDismissMove
 
+; 50% chance to discourage this move if the player hasn't used a move yet and the enemy is slower.
 	call AI_50_50
 	ret c
 	jr .discourage
@@ -2191,6 +2193,8 @@ AI_Smart_Spite:
 	pop hl
 	ret
 
+; Encourage this move if the player's last used move has low PP.
+; Discourage this move if the player's last used move has high PP.
 .foundmove
 	pop hl
 	ld a, [de]
