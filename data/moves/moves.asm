@@ -155,7 +155,7 @@ Moves:
 	move DAZZLY_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY,        SPECIAL,  100, 15,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,          PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_LEECH_HIT,          50, FAIRY,        PHYSICAL, 100, 15,   0
-	move SKY_ATTACK,   EFFECT_FLY,               120, FLYING,       PHYSICAL,  95,  5,   0
+	move SKY_ATTACK,   EFFECT_FLY,               125, FLYING,       PHYSICAL,  95,  5,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       STATUS,   100,  5,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,        SPECIAL,  100, 35,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       PHYSICAL, 100, 15,  30
