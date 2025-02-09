@@ -1102,7 +1102,6 @@ SkyAttack:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1111,7 +1110,7 @@ SkyAttack:
 	checkcontact
 	checkfaint
 	buildopponentrage
-	flinchtarget
+	kingsrock
 	endmove
 
 Substitute:
@@ -1819,6 +1818,7 @@ SkullBash:
 	stab
 	damagevariation
 	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1827,7 +1827,7 @@ SkullBash:
 	checkcontact
 	checkfaint
 	buildopponentrage
-	kingsrock
+	flinchtarget
 	endturn
 	defenseup
 	statupmessage
