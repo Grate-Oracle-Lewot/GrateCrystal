@@ -179,12 +179,11 @@ AI_Status:
 
 
 AI_Setup:
+; Dismiss stat-down moves if the player has Mist or a Substitute up.
 ; 50% chance to greatly encourage stat-up moves during the enemy Pokemon's first turn out.
 ; 50% chance to greatly encourage stat-down moves during the player's Pokemon's first turn out.
 ; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
-; 100% chance to greatly discourage stat-down moves if the player has Mist or a Substitute up.
-; 100% chance to greatly encourage stat-up moves if the player is storing energy with Bide.
-; 100% chance to greatly encourage stat-down moves if the player is Biding, unless they also have Mist or a Substitute.
+; 100% chance to greatly encourage stat-modifying moves if the player is storing energy with Bide (barring Mist or Substitute).
 ; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -242,17 +241,16 @@ AI_Setup:
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .discourage
-
 	jr .encourage
 
 .statdown
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_MIST, a
-	jr nz, .do_discourage
+	jr nz, .dismiss
 
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .do_discourage
+	jr nz, .dismiss
 
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_BIDE, a
@@ -276,9 +274,12 @@ AI_Setup:
 	cp 12 percent
 	jr c, .checkmove
 
-.do_discourage
 	inc [hl]
 	inc [hl]
+	jr .checkmove
+
+.dismiss
+	call AIDismissMove
 	jr .checkmove
 
 
