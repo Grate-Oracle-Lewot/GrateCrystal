@@ -335,7 +335,7 @@ LinkReceptionistScript_GenderSwap:
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
 	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsLeftLooksDown
-	end
+	sjump .Finish
 
 .FacingLeft:
 	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight
@@ -361,6 +361,7 @@ LinkReceptionistScript_GenderSwap:
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerExitTimeCapsule
 	applymovement POKECENTER2F_GENDER_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
+.Finish:
 	turnobject PLAYER, UP
 	opentext
 	writetext Text_GenderSwapOutro
