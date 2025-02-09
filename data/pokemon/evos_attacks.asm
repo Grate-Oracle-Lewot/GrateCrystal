@@ -2269,7 +2269,7 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, SKULL_BASH
 	db 2, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
