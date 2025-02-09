@@ -65,6 +65,8 @@ InitMapNameSign::
 ; These landmarks do not get pop-up signs.
 	cp -1
 	ret z
+	cp LANDMARK_SPECIAL
+	ret z
 	cp LANDMARK_RADIO_TOWER
 	ret z
 	cp LANDMARK_LAV_RADIO_TOWER
