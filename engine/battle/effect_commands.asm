@@ -5546,11 +5546,11 @@ BattleCommand_TrapTarget:
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
 	call BattleRandom
-	; trapped for 2-5 turns
-	and %11
-	inc a
-	inc a
-	inc a
+	and %11 ; 0-3
+	inc a ; +1
+	inc a ; +1
+	inc a ; +1
+	; 1 turn elapses before the count matters, so effective 2-5 turns
 	ld [hl], a
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
