@@ -125,6 +125,7 @@ CherrygroveSilverSceneNorth:
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
+	loadvar VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	dontrestartmapmusic
 	reloadmap
 	iftrue .AfterVictorious
