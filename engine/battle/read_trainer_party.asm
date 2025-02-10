@@ -168,35 +168,6 @@ ReadTrainerPartyPieces:
 	ld a, $FF
 .spd_spc_dv_nonzero
 	ld [de], a
-
-; Recalc Unown letter
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	push hl
-	ld hl, wEnemyMonDVs
-	predef GetUnownLetter
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .done_unown
-	ld a, [wUnownLetter]
-	ld [wFirstUnownSeen], a
-.done_unown
-	pop hl
-.skip_unown
-
-; Recalc Pikachu form
-	ld a, [wCurPartySpecies]
-	cp PIKACHU
-	jr nz, .skip_pikachu
-	push hl
-	ld hl, wEnemyMonDVs
-	predef GetPikachuForm
-	call GetSecondPikachuType
-	ld [wEnemyMonType2], a
-	pop hl
-.skip_pikachu
-
 .no_dvs
 
 ; item?
@@ -310,9 +281,32 @@ ReadTrainerPartyPieces:
 	ld [hl], c
 	dec hl
 	ld [hl], b
+
+; Recalc Unown letter
+	ld a, [wCurPartySpecies]
+	cp UNOWN
+	jr nz, .skip_unown
+	ld hl, wEnemyMonDVs
+	predef GetUnownLetter
+	ld a, [wFirstUnownSeen]
+	and a
+	jr nz, .skip_unown
+	ld a, [wUnownLetter]
+	ld [wFirstUnownSeen], a
+.skip_unown
+
+; Recalc Pikachu form
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld hl, wEnemyMonDVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wEnemyMonType2], a
+.skip_pikachu
+
 	pop hl
 .no_stat_recalc
-
 	jp .loop
 
 ComputeTrainerReward:
