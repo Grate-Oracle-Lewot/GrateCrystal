@@ -126,7 +126,7 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	winlosstext 0, 0
-	loadtrainer WHITNEY, WHITNEY1
+	loadtrainer POKEFANM, JOSHUA
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
