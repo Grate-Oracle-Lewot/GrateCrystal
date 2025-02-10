@@ -1,7 +1,51 @@
 Route22_MapScripts:
 	def_scene_scripts
+	const ROUTE22_SWIMMER_GIRL
+	const ROUTE22_OFFICER
 
 	def_callbacks
+
+TrainerSwimmerfBobbi:
+	trainer SWIMMERF, BOBBI, EVENT_BEAT_SWIMMERF_BOBBI, SwimmerfBobbiSeenText, SwimmerfBobbiBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmerfBobbiAfterBattleText
+	waitbutton
+	closetext
+	end
+
+OfficerWolfScript:
+	faceplayer
+	opentext
+	checktime NITE
+	iffalse .NoFight
+	checkevent EVENT_BEAT_OFFICER_WOLF
+	iftrue .AfterScript
+	playmusic MUSIC_OFFICER_ENCOUNTER
+	writetext OfficerWolfSeenText
+	waitbutton
+	closetext
+	winlosstext OfficerWolfBeatenText, 0
+	loadtrainer OFFICER, WOLF
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_OFFICER_WOLF
+	closetext
+	end
+
+.AfterScript:
+	writetext OfficerWolfAfterText
+	waitbutton
+	closetext
+	end
+
+.NoFight:
+	writetext OfficerWolfDaytimeText
+	waitbutton
+	closetext
+	end
 
 VictoryRoadEntranceSign1:
 	jumptext VictoryRoadEntranceSign1Text
@@ -14,6 +58,40 @@ Route22HiddenTimerBall:
 
 Route22HiddenRagecandybar:
 	hiddenitem RAGECANDYBAR, EVENT_ROUTE_22_HIDDEN_RAGECANDYBAR
+
+SwimmerfBobbiSeenText:
+	text "I'm bored. Let's"
+	line "battle!"
+	done
+
+SwimmerfBobbiBeatenText:
+	text "Did I bore you?"
+	done
+
+SwimmerfBobbiAfterBattleText:
+	text "Not a lot of folks"
+	line "have been through"
+	cont "here lately."
+	done
+
+OfficerWolfDaytimeText:
+	text "This way leads to"
+	line "VICTORY ROAD."
+
+	para "Make sure you're"
+	line "properly prepared."
+	done
+
+OfficerWolfSeenText:
+	text "Let me see your"
+	line "identification!"
+	done
+
+OfficerWolfBeatenText:
+OfficerWolfAfterText:
+	text "You're good to go"
+	line "on through."
+	done
 
 VictoryRoadEntranceSign1Text:
 	text "ROUTE 22"
@@ -45,3 +123,5 @@ Route22_MapEvents:
 	bg_event 14, 47, BGEVENT_ITEM, Route22HiddenRagecandybar
 
 	def_object_events
+	object_event  6, 32, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfBobbi, -1
+	object_event 12,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerWolfScript, -1
