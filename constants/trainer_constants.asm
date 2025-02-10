@@ -440,6 +440,7 @@ KRIS EQU __trainer_class__
 	const NIKKI
 	const DIANA
 	const BRIANA
+	const BOBBI
 
 	trainerclass SAILOR ; 28
 	const EUGENE
@@ -723,6 +724,7 @@ KRIS EQU __trainer_class__
 	const DIRK
 	const DISHER
 	const STABLER
+	const WOLF
 
 	trainerclass GRUNTF ; 42
 	const GRUNTF_1
