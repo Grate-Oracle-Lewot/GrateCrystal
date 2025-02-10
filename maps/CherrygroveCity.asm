@@ -125,7 +125,6 @@ CherrygroveSilverSceneNorth:
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	loadvar VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	dontrestartmapmusic
 	reloadmap
 	iftrue .AfterVictorious
@@ -163,6 +162,7 @@ CherrygroveSilverSceneNorth:
 
 .AfterYourDefeat:
 	setevent EVENT_LOST_FIRST_RIVAL_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost
