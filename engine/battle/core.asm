@@ -8374,7 +8374,7 @@ ExitBattle:
 .not_linked
 	ld a, [wBattleResult]
 	and $f
-	ret nz
+	jr nz, CleanUpBattleRAM
 	call CheckPayDay
 	xor a
 	ld [wForceEvolution], a
