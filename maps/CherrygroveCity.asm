@@ -162,7 +162,6 @@ CherrygroveSilverSceneNorth:
 
 .AfterYourDefeat:
 	setevent EVENT_LOST_FIRST_RIVAL_BATTLE
-	callasm .patch
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost
@@ -178,11 +177,6 @@ CherrygroveSilverSceneNorth:
 	special HealParty
 	playmapmusic
 	end
-
-.patch
-	xor a
-	ld [wBattleMode], a
-	ret
 
 CherrygroveTeacherScript:
 	faceplayer
