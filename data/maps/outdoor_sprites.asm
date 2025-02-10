@@ -62,6 +62,7 @@ CinnabarGroupSprites:
 	; max 9 of 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
+	db SPRITE_OFFICER
 	db SPRITE_BLUE
 	db SPRITE_WILL
 	db SPRITE_POKE_BALL
