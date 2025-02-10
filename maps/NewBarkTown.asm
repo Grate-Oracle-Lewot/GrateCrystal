@@ -125,6 +125,10 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	winlosstext 0, 0
+	loadtrainer WHITNEY, WHITNEY1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
