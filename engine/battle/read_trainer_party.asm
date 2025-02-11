@@ -281,39 +281,6 @@ ReadTrainerPartyPieces:
 	ld [hl], c
 	dec hl
 	ld [hl], b
-
-; recalc Unown letter
-	ld a, [wCurPartySpecies]
-	cp UNOWN
-	jr nz, .done_unown
-	ld hl, wPartyMon1DVs
-	ld a, [wPartyCount]
-	dec a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	predef GetUnownLetter
-	callfar UpdateUnownDex
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .done_unown
-	ld a, [wUnownLetter]
-	ld [wFirstUnownSeen], a
-.done_unown
-
-; recalc Pikachu form
-	ld a, [wCurPartySpecies]
-	cp PIKACHU
-	jr nz, .done_pikachu
-	ld hl, wPartyMon1DVs
-	ld a, [wPartyCount]
-	dec a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	predef GetPikachuForm
-	call GetSecondPikachuType
-	ld [wEnemyMonType2], a
-.done_pikachu
-
 	pop hl
 .no_stat_recalc
 
