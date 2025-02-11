@@ -737,6 +737,11 @@ INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "engine/events/magikarp.asm"
 
 
+SECTION "PokefanM Joshua Pikachus", ROMX
+
+INCLUDE "data/trainers/pikachu_party.asm"
+
+
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 
 ; The end of the ROM is taken up by checksums of the content, apparently used
