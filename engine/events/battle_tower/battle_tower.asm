@@ -69,11 +69,6 @@ Function170114:
 	call CloseSRAM
 	jp Function170c8b
 
-BattleTowerBattle:
-	xor a ; FALSE
-	ld [wBattleTowerBattleEnded], a
-	jp _BattleTowerBattle
-
 InitBattleTowerChallengeRAM:
 	xor a
 	ld [wBattleTowerBattleEnded], a
@@ -82,7 +77,9 @@ InitBattleTowerChallengeRAM:
 	ld [wcf66], a
 	ret
 
-_BattleTowerBattle:
+BattleTowerBattle:
+	xor a ; FALSE
+	ld [wBattleTowerBattleEnded], a
 .loop
 	call .do_dw
 	call DelayFrame
