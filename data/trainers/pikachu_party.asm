@@ -7,7 +7,7 @@ LoadSixPikachuParty::
 	call CopyBytes
 
 	ld hl, SixPikachuParty
-	ld de, wOTPartyMon1Species
+	ld de, wOTPartyMons
 	ld bc, NICKNAMED_MON_STRUCT_LENGTH * 6
 	jp CopyBytes
 
