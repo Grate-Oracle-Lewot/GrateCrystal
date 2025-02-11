@@ -671,10 +671,10 @@ KRIS EQU __trainer_class__
 	const SVLAD
 
 	trainerclass POKEFANM ; 3b
+	const JOSHUA
 	const WILLIAM
 	const DEREK1
 	const ROBERT
-	const JOSHUA
 	const CARTER
 	const TREVOR
 	const BRANDON
