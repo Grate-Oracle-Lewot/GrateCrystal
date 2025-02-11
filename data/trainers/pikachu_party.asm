@@ -1,3 +1,33 @@
+LoadSixPikachuParty::
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(w3_d202)
+	ldh [rSVBK], a
+
+; Set w3_d202 as start address to write the following data to
+	ld de, w3_d202
+
+	ld hl, PokefanMJoshuaTable
+; Copy name (10 bytes) and class (1 byte) of Joshua into de
+	ld bc, NAME_LENGTH
+	call AddNTimes
+	ld bc, NAME_LENGTH
+	call CopyBytes
+
+; Load six Pikachu party into de+11
+	ld hl, SixPikachuParty
+	ld bc, NICKNAMED_MON_STRUCT_LENGTH * 6
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	ret
+
+PokefanMJoshuaTable:
+	table_width (NAME_LENGTH - 1) + 1, PokefanMJoshuaTable
+	; name, class
+	db "JOSHUA@@@@", POKEFANM
+	assert_table_length 1
+
 SixPikachuParty:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, SixPikachuParty
 
