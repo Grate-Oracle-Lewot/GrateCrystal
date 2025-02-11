@@ -32,13 +32,6 @@ ReadTrainerParty:
 	jr z, .cal1
 	ld a, [wOtherTrainerClass]
 .not_cal1
-	cp POKEFANM
-	jr nz, .not_joshua
-	ld a, [wOtherTrainerID]
-	cp JOSHUA
-	jr z, .joshua
-	ld a, [wOtherTrainerClass]
-.not_joshua
 
 	dec a
 	ld c, a
@@ -88,10 +81,6 @@ ReadTrainerParty:
 	ld de, sMysteryGiftTrainer
 	call ReadTrainerPartyPieces
 	call CloseSRAM
-	jp ComputeTrainerReward
-
-.joshua
-	farcall LoadSixPikachuParty
 	jp ComputeTrainerReward
 
 .no_mystery_gift_trainer
