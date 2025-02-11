@@ -263,28 +263,29 @@ Executivef1AfterBattleText:
 	done
 
 RadioTower5FRocketBossBeforeText:
-	text "Oh? You managed to"
-	line "get this far?"
+	text "Oh? You must be"
+	line "the child who's"
 
-	para "You must be quite"
-	line "the trainer."
+	para "tearing through"
+	line "our ranks."
 
-	para "We intend to take"
-	line "over this RADIO"
+	para "I just need to"
+	line "work out the right"
 
-	para "STATION and an-"
-	line "nounce our come-"
-	cont "back."
+	para "frequency, and we"
+	line "will be able to"
 
-	para "That should bring"
-	line "our boss GIOVANNI"
+	para "use this RADIO"
+	line "TOWER to take con-"
+	cont "trol of all #-"
+	cont "MON."
 
-	para "back from his solo"
-	line "training."
+	para "No one will be"
+	line "able to challenge"
 
-	para "We are going to"
-	line "regain our former"
-	cont "glory."
+	para "TEAM ROCKET when"
+	line "#MON only obey"
+	cont "us!"
 
 	para "I won't allow you"
 	line "to interfere with"
@@ -292,8 +293,12 @@ RadioTower5FRocketBossBeforeText:
 	done
 
 RadioTower5FRocketBossWinText:
-	text "No! Forgive me,"
-	line "GIOVANNI!"
+	text "Victory snatched"
+	line "away at the last"
+	cont "moment…"
+
+	para "What is it with"
+	line "these children?"
 	done
 
 RadioTower5FRocketBossAfterText:
