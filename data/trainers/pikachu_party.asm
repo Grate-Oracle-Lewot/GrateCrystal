@@ -5,7 +5,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, THUNDERPUNCH, LIGHT_SCREEN, TRI_ATTACK
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
@@ -31,7 +31,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, QUICK_ATTACK, HYPER_FANG, SWIFT
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
@@ -57,7 +57,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, DOUBLESLAP, ATTRACT, DAZZLY_GLEAM
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
@@ -83,7 +83,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, THUNDERPUNCH, HI_JUMP_KICK, AURA_SPHERE
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
@@ -109,7 +109,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, THUNDER, RAIN_DANCE, SURF
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
@@ -135,7 +135,7 @@ SixPikachuParty:
 	db GOLD_BERRY
 	db THUNDERBOLT, SIGNAL_BEAM, DOUBLE_TEAM, FLY
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 74088 ; Exp
 	; Stat exp
 	bigdw 42000
 	bigdw 42000
