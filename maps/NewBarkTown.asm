@@ -125,10 +125,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	winlosstext NewBarkTownSignText, 0
-	loadtrainer POKEFANM, JOSHUA
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
