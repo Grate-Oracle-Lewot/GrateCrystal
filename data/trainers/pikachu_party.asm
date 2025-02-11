@@ -18,13 +18,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 80 ; Atk
+	bigdw 67 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
 	db PIKACHU
@@ -44,13 +44,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 80 ; Atk
+	bigdw 72 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
 	db PIKACHU
@@ -70,13 +70,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 81 ; Atk
+	bigdw 69 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
  	db PIKACHU
@@ -96,13 +96,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 83 ; Atk
+	bigdw 69 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
  	db PIKACHU
@@ -122,13 +122,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 114 ; HP
+	bigdw 114 ; Max HP
+	bigdw 83 ; Atk
+	bigdw 72 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
  	db PIKACHU
@@ -148,13 +148,13 @@ SixPikachuParty:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
 	db 0, 0 ; Status
-	bigdw  ; HP
-	bigdw  ; Max HP
-	bigdw  ; Atk
-	bigdw  ; Def
-	bigdw  ; Spd
-	bigdw  ; SAtk
-	bigdw  ; SDef
+	bigdw 111 ; HP
+	bigdw 111 ; Max HP
+	bigdw 85 ; Atk
+	bigdw 71 ; Def
+	bigdw 114 ; Spd
+	bigdw 80 ; SAtk
+	bigdw 80 ; SDef
 	db "PIKACHU@@@@"
 
 	assert_table_length 6
