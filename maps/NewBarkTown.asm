@@ -126,39 +126,7 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	winlosstext NewBarkTownSignText, 0
-	loadtrainer SUPER_NERD, TERU
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer SCIENTIST, JED
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer COOLTRAINERM, TYLER
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer COOLTRAINERF, KELLY
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer GENTLEMAN, GREGORY
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer PICNICKER, BROOKE
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer POKEFANF, RUTH
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer ENGINEER, BERNIE
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadtrainer COOLTRAINERM, NICK
+	loadtrainer POKEFANM, JOSHUA
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
