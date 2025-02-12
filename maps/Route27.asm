@@ -298,7 +298,7 @@ Route27FisherStepLeftOnceMovement:
 	step_end
 
 Route27FisherHeyText:
-	text "Hey!"
+	text "Hey! Listen!"
 	done
 
 Route27FisherText:
