@@ -6,3 +6,4 @@ CriticalHitChances:
 	db 1 out_of 2  ; +4
 	db 2 out_of 3  ; +5
 	db 3 out_of 4  ; +6
+	; +7 or above: 100%
