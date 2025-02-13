@@ -1482,6 +1482,7 @@ AI_Smart_BaseSwitchScore:
 	ret
 
 AI_Smart_Heal:
+; The AI_Basic layer dismisses healing moves if the enemy's HP is full.
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
