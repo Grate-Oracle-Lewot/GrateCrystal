@@ -2407,7 +2407,7 @@ AI_Smart_Conversion2:
 	ret
 
 AI_Smart_Disable:
-; Over 90% chance to discourage this move if player is faster than enemy. (No chance to encourage.)
+; 90% chance to discourage this move if player is faster than enemy. (No chance to encourage.)
 	call AICompareSpeed
 	jr nc, .discourage
 
