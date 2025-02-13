@@ -79,8 +79,7 @@ StageDataForMysteryGift:
 	jr .done
 
 .tenpercent
-	call Random
-	cp 20 percent - 1
+	call MysteryGift_80_20
 	jr c, .twopercent
 	call Random
 	and %011
@@ -101,8 +100,7 @@ StageDataForMysteryGift:
 	jr .done
 
 .twopercent
-	call Random
-	cp 20 percent - 1
+	call MysteryGift_80_20
 	jr c, .pointfourpercent
 	ld a, b
 	swap a
@@ -143,6 +141,11 @@ MysteryGiftGetDecoration:
 
 MysteryGiftFallbackItem:
 	ld c, STARDUST
+	ret
+
+MysteryGift_80_20:
+	call Random
+	cp 20 percent - 1
 	ret
 
 INCLUDE "data/items/mystery_gift_items.asm"
