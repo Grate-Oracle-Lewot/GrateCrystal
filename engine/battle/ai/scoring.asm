@@ -907,14 +907,8 @@ AI_Smart_EffectHandlers:
 	db -1 ; end
 
 AI_Smart_Nightmare:
-; The AI_Basic layer dismisses Nightmare if the target already has a Nightmare.
+; The AI_Basic layer dismisses Nightmare if the player has a Substitute or already has a Nightmare.
 
-; Dismiss this move if the player has a Substitute.
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, AIDismissMove
-
-; Greatly encourage this move if the player is asleep.
 ; Dismiss this move if the player has any status other than sleep.
 	ld a, [wBattleMonStatus]
 	jr z, .no_status
