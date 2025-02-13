@@ -1,5 +1,5 @@
 AI_Redundant:
-; Check if move effect c will fail because it's already been used.
+; Check if move effect c will fail (already established, Sleep/Snore/Dream Eater, Substitute immunities, etc.).
 ; Return z if the move is a good choice.
 ; Return nz if the move is a bad choice.
 	ld a, c
@@ -14,6 +14,7 @@ AI_Redundant:
 	jp hl
 
 .Moves:
+	dbw EFFECT_LEECH_HIT,    .LeechHit
 	dbw EFFECT_DREAM_EATER,  .DreamEater
 	dbw EFFECT_HEAL,         .Heal
 	dbw EFFECT_LIGHT_SCREEN, .LightScreen
@@ -42,6 +43,11 @@ AI_Redundant:
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
 	dbw EFFECT_HAIL,         .Hail
 	db -1
+
+.LeechHit:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret
 
 .LightScreen:
 	ld a, [wEnemyScreens]
@@ -92,24 +98,9 @@ AI_Redundant:
 	bit SUBSTATUS_ENCORED, a
 	ret
 
-.Snore:
-.SleepTalk:
-	ld a, [wEnemyMonStatus]
-	and SLP
-	jr z, .Redundant
-	jr .NotRedundant
-
 .MeanLook:
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
-	ret
-
-.Nightmare:
-	ld a, [wBattleMonStatus]
-	and a
-	jr z, .Redundant
-	ld a, [wPlayerSubStatus1]
-	bit SUBSTATUS_NIGHTMARE, a
 	ret
 
 .Foresight:
@@ -120,6 +111,31 @@ AI_Redundant:
 .PerishSong:
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_PERISH, a
+	ret
+
+.Safeguard:
+	ld a, [wEnemyScreens]
+	bit SCREENS_SAFEGUARD, a
+	ret
+
+.FutureSight:
+	ld a, [wEnemyFutureSightCount]
+	and a
+	ret
+
+.Snore:
+.SleepTalk:
+	ld a, [wEnemyMonStatus]
+	and SLP
+	jr z, .Redundant
+	jr .NotRedundant
+
+.Nightmare:
+	ld a, [wBattleMonStatus]
+	and a
+	jr z, .Redundant
+	ld a, [wPlayerSubStatus1]
+	bit SUBSTATUS_NIGHTMARE, a
 	ret
 
 .Sandstorm:
@@ -135,11 +151,6 @@ AI_Redundant:
 	bit SUBSTATUS_IN_LOVE, a
 	ret
 
-.Safeguard:
-	ld a, [wEnemyScreens]
-	bit SCREENS_SAFEGUARD, a
-	ret
-
 .RainDance:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
@@ -153,15 +164,13 @@ AI_Redundant:
 	jr .NotRedundant
 
 .DreamEater:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .Redundant
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
-
-.FutureSight:
-	ld a, [wEnemyFutureSightCount]
-	and a
-	ret
 
 .Hail:
 	ld a, [wBattleWeather]
