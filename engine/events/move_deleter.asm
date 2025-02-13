@@ -35,59 +35,7 @@ MoveDeletion:
 	call YesNoBox
 	pop bc
 	jr c, .declined
-	call .DeleteMove
-	call WaitSFX
-	ld de, SFX_MOVE_DELETED
-	call PlaySFX
-	call WaitSFX
-	ld hl, .DeleterForgotMoveText
-	jp PrintText
 
-.egg
-	ld hl, .MailEggText
-	jp PrintText
-
-.declined
-	ld hl, .DeleterNoComeAgainText
-	jp PrintText
-
-.onlyonemove
-	ld hl, .MoveKnowsOneText
-	jp PrintText
-
-.MoveKnowsOneText:
-	text_far _MoveKnowsOneText
-	text_end
-
-.AskDeleteMoveText:
-	text_far _AskDeleteMoveText
-	text_end
-
-.DeleterForgotMoveText:
-	text_far _DeleterForgotMoveText
-	text_end
-
-.MailEggText:
-	text_far _DeleterEggText
-	text_end
-
-.DeleterNoComeAgainText:
-	text_far _DeleterNoComeAgainText
-	text_end
-
-.DeleterAskWhichMoveText:
-	text_far _DeleterAskWhichMoveText
-	text_end
-
-.DeleterIntroText:
-	text_far _DeleterIntroText
-	text_end
-
-.DeleterAskWhichMonText:
-	text_far _DeleterAskWhichMonText
-	text_end
-
-.DeleteMove:
 	ld a, b
 	push bc
 	dec a
@@ -143,4 +91,54 @@ MoveDeletion:
 .done
 	xor a
 	ld [hl], a
-	ret
+
+	call WaitSFX
+	ld de, SFX_MOVE_DELETED
+	call PlaySFX
+	call WaitSFX
+	ld hl, .DeleterForgotMoveText
+	jp PrintText
+
+.egg
+	ld hl, .MailEggText
+	jp PrintText
+
+.declined
+	ld hl, .DeleterNoComeAgainText
+	jp PrintText
+
+.onlyonemove
+	ld hl, .MoveKnowsOneText
+	jp PrintText
+
+.MoveKnowsOneText:
+	text_far _MoveKnowsOneText
+	text_end
+
+.AskDeleteMoveText:
+	text_far _AskDeleteMoveText
+	text_end
+
+.DeleterForgotMoveText:
+	text_far _DeleterForgotMoveText
+	text_end
+
+.MailEggText:
+	text_far _DeleterEggText
+	text_end
+
+.DeleterNoComeAgainText:
+	text_far _DeleterNoComeAgainText
+	text_end
+
+.DeleterAskWhichMoveText:
+	text_far _DeleterAskWhichMoveText
+	text_end
+
+.DeleterIntroText:
+	text_far _DeleterIntroText
+	text_end
+
+.DeleterAskWhichMonText:
+	text_far _DeleterAskWhichMonText
+	text_end
