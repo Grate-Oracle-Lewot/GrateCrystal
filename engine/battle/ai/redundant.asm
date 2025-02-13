@@ -16,10 +16,19 @@ AI_Redundant:
 .Moves:
 	dbw EFFECT_LEECH_HIT,    .LeechHit
 	dbw EFFECT_DREAM_EATER,  .DreamEater
+	dbw EFFECT_ATTACK_UP,    .AttackUp
+	dbw EFFECT_DEFENSE_UP,   .DefenseUp
+	dbw EFFECT_SP_ATK_UP,    .SpAtkUp
+	dbw EFFECT_EVASION_UP,   .EvasionUp
 	dbw EFFECT_HEAL,         .Heal
 	dbw EFFECT_LIGHT_SCREEN, .LightScreen
 	dbw EFFECT_MIST,         .Mist
 	dbw EFFECT_CONFUSE,      .Confuse
+	dbw EFFECT_ATTACK_UP_2,  .AttackUp
+	dbw EFFECT_DEFENSE_UP_2, .DefenseUp
+	dbw EFFECT_SPEED_UP_2,   .SpeedUp
+	dbw EFFECT_SP_ATK_UP_2,  .SpAtkUp
+	dbw EFFECT_SP_DEF_UP_2,  .SpDefUp
 	dbw EFFECT_TRANSFORM,    .Transform
 	dbw EFFECT_REFLECT,      .Reflect
 	dbw EFFECT_LEECH_SEED,   .LeechSeed
@@ -122,6 +131,35 @@ AI_Redundant:
 	ld a, [wEnemyFutureSightCount]
 	and a
 	ret
+
+.AttackUp:
+	ld a, [wEnemyAtkLevel]
+	jr .Stat_Up
+
+.DefenseUp:
+	ld a, [wEnemyDefLevel]
+	jr .Stat_Up
+
+.SpeedUp:
+	ld a, [wEnemySpdLevel]
+	jr .Stat_Up
+
+.SpAtkUp:
+	ld a, [wEnemySAtkLevel]
+	jr .Stat_Up
+
+.SpDefUp:
+	ld a, [wEnemySDefLevel]
+	jr .Stat_Up
+
+.EvasionUp:
+	ld a, [wEnemyEvaLevel]
+	; fallthrough
+
+.Stat_Up:
+	cp MAX_STAT_LEVEL
+	jr nc, .Redundant
+	jr .NotRedundant
 
 .Snore:
 .SleepTalk:
