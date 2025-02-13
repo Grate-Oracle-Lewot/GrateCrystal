@@ -3598,8 +3598,3 @@ AI_90_10:
 	call Random
 	cp 10 percent
 	ret
-
-AI_95_5:
-	call Random
-	cp 5 percent
-	ret
