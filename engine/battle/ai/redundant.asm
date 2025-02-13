@@ -113,6 +113,9 @@ AI_Redundant:
 	ret
 
 .Nightmare:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
 	ld a, [wBattleMonStatus]
 	bit PSN, a
 	ret nz
