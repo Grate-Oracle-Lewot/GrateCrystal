@@ -969,16 +969,13 @@ AI_Sleep_DreamEater_Encourage:
 
 AI_Smart_DreamEater:
 ; 90% chance to greatly encourage this move.
-; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
+; The AI_Basic layer dismisses Dream Eater if the player is not asleep or has a Substitute.
 	call AI_90_10
 	ret c
 	jr AI_Sleep_DreamEater_Encourage
 
 AI_Smart_LeechHit:
-; Dismiss this move if the player has a Substitute.
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, AIDismissMove
+; The AI_Basic layer dismisses these moves if the player has a Substitute.
 
 ; Greatly discourage this move if the enemy will take Liquid Ooze damage.
 	ld a, [wEnemyMonType1]
