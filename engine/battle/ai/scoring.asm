@@ -729,9 +729,8 @@ AI_Risky:
 	jr c, .nextmove
 
 ; Else, 80% chance to exclude Selfdestruct.
-	call Random
-	cp 79 percent - 1
-	jr c, .nextmove
+	call AI_80_20
+	jr nc, .nextmove
 
 .checkko
 	call AIDamageCalc
