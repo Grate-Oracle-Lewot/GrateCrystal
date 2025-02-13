@@ -116,18 +116,6 @@ AI_Redundant:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
-	ld a, [wBattleMonStatus]
-	bit PSN, a
-	ret nz
-	ld a, [wBattleMonStatus]
-	bit BRN, a
-	ret nz
-	ld a, [wBattleMonStatus]
-	bit FRZ, a
-	ret nz
-	ld a, [wBattleMonStatus]
-	bit PAR, a
-	ret nz
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_NIGHTMARE, a
 	ret
