@@ -914,8 +914,9 @@ AI_Smart_Nightmare:
 	jr z, .no_status
 	and SLP
 	jp z, AIDismissMove
-	dec [hl]
-	dec [hl]
+
+; 90% chance to greatly encourage this move if the player is asleep.
+	jr AI_Smart_DreamEater
 
 ; If the player has no status...
 .no_status
