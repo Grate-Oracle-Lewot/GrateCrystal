@@ -1165,10 +1165,7 @@ AI_Smart_Selfdestruct:
 	ret
 
 AI_Smart_EvasionUp:
-; Dismiss this move if enemy's evasion can't raise anymore.
-	ld a, [wEnemyEvaLevel]
-	cp MAX_STAT_LEVEL
-	jp nc, AIDismissMove
+; The AI_Basic layer dismisses this move if enemy's evasion can't raise anymore.
 
 ; If enemy's HP is full...
 	call AICheckEnemyMaxHP
