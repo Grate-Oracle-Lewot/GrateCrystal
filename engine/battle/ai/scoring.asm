@@ -184,7 +184,7 @@ AI_Setup:
 ; 50% chance to greatly encourage stat-down moves during the player's Pokemon's first turn out.
 ; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
 ; 100% chance to greatly encourage stat-modifying moves if the player is storing energy with Bide (barring Mist or Substitute).
-; Almost 90% chance to greatly discourage stat-modifying moves otherwise.
+; 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -270,8 +270,7 @@ AI_Setup:
 	jr .checkmove
 
 .discourage
-	call Random
-	cp 12 percent
+	call AI_90_10
 	jr c, .checkmove
 
 	inc [hl]
@@ -315,9 +314,8 @@ AI_Cautious:
 	pop hl
 	jr nc, .loop
 
-	call Random
-	cp 90 percent + 1
-	ret nc
+	call AI_90_10
+	ret c
 
 	inc [hl]
 	jr .loop
@@ -972,8 +970,7 @@ AI_Sleep_DreamEater_Encourage:
 AI_Smart_DreamEater:
 ; 90% chance to greatly encourage this move.
 ; The AI_Basic layer will make sure that Dream Eater is only used against sleeping targets.
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 	jr AI_Sleep_DreamEater_Encourage
 
@@ -1167,9 +1164,8 @@ AI_Smart_Selfdestruct:
 	call AICheckEnemyQuarterHP
 	ret nc
 
-; If enemy's HP is between 25% and 50%, over 90% chance to highly discourage this move.
-	call Random
-	cp 8 percent
+; If enemy's HP is between 25% and 50%, 90% chance to highly discourage this move.
+	call AI_90_10
 	ret c
 
 .discourage
@@ -1194,9 +1190,8 @@ AI_Smart_EvasionUp:
 	jr nz, .greatly_encourage
 
 ; ...70% chance to greatly encourage this move if player is not badly poisoned.
-	call Random
-	cp 70 percent
-	jr nc, .not_encouraged
+	call AI_70_30
+	jr c, .not_encouraged
 
 .greatly_encourage
 	dec [hl]
@@ -1260,8 +1255,7 @@ AI_EvaAcc_MaybeGreatlyEncourage:
 ; Player is badly poisoned.
 ; 70% chance to greatly encourage this move.
 ; This would counter any previous discouragement.
-	call Random
-	cp 31 percent + 1
+	call AI_70_30
 	ret c
 
 	dec [hl]
@@ -1293,8 +1287,7 @@ AI_Smart_AccuracyDown:
 	jr nz, .greatly_encourage
 
 ; ...70% chance to greatly encourage this move if player is not badly poisoned.
-	call Random
-	cp 70 percent
+	call AI_70_30
 	jr nc, .not_encouraged
 
 .greatly_encourage
@@ -1410,8 +1403,7 @@ AI_Smart_MirrorMove:
 	call AICompareSpeed
 	ret nc
 
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 
 	dec [hl]
@@ -1443,8 +1435,7 @@ AI_Smart_ResetStats:
 
 .encourage
 	pop hl
-	call Random
-	cp 16 percent
+	call AI_85_15
 	ret c
 	dec [hl]
 	ret
@@ -1461,8 +1452,7 @@ AI_Smart_Bide_Screens:
 ; 90% chance to discourage this move unless enemy's HP is full.
 	call AICheckEnemyMaxHP
 	ret c
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 	inc [hl]
 	ret
@@ -1516,8 +1506,7 @@ AI_Smart_Heal:
 	ret
 
 .encourage
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 	; fallthrough
 
@@ -1887,7 +1876,7 @@ AI_Smart_SpeedDownHit:
 ; Maybe encourage this move if the player is flying. Continue regardless.
 	call AI_Smart_Gust
 
-; Almost 90% chance to greatly encourage this move if the following conditions all meet:
+; 90% chance to greatly encourage this move if the following conditions all meet:
 ;  -Enemy's HP is higher than 25%.
 ;  -It's the first turn of player's Pokemon.
 ;  -Player is faster than enemy.
@@ -1898,8 +1887,7 @@ AI_Smart_SpeedDownHit:
 	ret nz
 	call AICompareSpeed
 	ret c
-	call Random
-	cp 12 percent
+	call AI_90_10
 	ret c
 	dec [hl]
 	dec [hl]
@@ -1919,8 +1907,7 @@ AI_Smart_HyperBeam:
 
 .discourage
 ; If enemy's HP is above 50%, discourage this move at random.
-	call Random
-	cp 16 percent
+	call AI_85_15
 	ret c
 	inc [hl]
 	call AI_50_50
@@ -2041,8 +2028,7 @@ AI_Smart_Counter:
 	; fallthrough
 
 AI_CounterMirrorCoat_Encourage:
-	call Random
-	cp 39 percent + 1
+	call AI_60_40
 	ret c
 	dec [hl]
 	ret
@@ -2203,8 +2189,7 @@ AI_Smart_Spite:
 	cp 15
 	jr nc, .discourage
 
-	call Random
-	cp 39 percent + 1
+	call AI_60_40
 	ret nc
 
 .discourage
@@ -2212,8 +2197,7 @@ AI_Smart_Spite:
 	ret
 
 .encourage
-	call Random
-	cp 39 percent + 1
+	call AI_60_40
 	ret c
 	dec [hl]
 	dec [hl]
@@ -2428,8 +2412,7 @@ AI_Smart_Conversion2:
 	ret
 
 .discourage
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 	inc [hl]
 	ret
@@ -2456,10 +2439,9 @@ AI_Smart_Disable:
 	and a
 	ret nz
 
-; Else, over 90% chance to discourage this move.
+; Else, 90% chance to discourage this move.
 .discourage
-	call Random
-	cp 8 percent
+	call AI_90_10
 	ret c
 	inc [hl]
 	ret
@@ -2546,12 +2528,12 @@ AI_Smart_Curse:
 	jr .greatly_encourage
 
 AI_Smart_Protect:
-; Discourage this move if the enemy already used Protect. 92% chance to discourage further.
+; Discourage this move if the enemy already used Protect. 90% chance to discourage further.
 	ld a, [wEnemyProtectCount]
 	and a
 	jr nz, .greatly_discourage
 
-; 92% chance to discourage this move if the player has been locked onto.
+; 90% chance to discourage this move if the player has been locked onto.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .discourage
@@ -2577,7 +2559,7 @@ AI_Smart_Protect:
 	bit SUBSTATUS_CURSE, a
 	jr nz, .encourage
 
-; 92% chance to discourage this move if the player's Rollout count is not boosted enough.
+; 90% chance to discourage this move if the player's Rollout count is not boosted enough.
 	bit SUBSTATUS_ROLLOUT, a
 	jr z, .discourage
 	ld a, [wPlayerRolloutCount]
@@ -2596,8 +2578,7 @@ AI_Smart_Protect:
 	inc [hl]
 
 .discourage
-	call Random
-	cp 8 percent
+	call AI_90_10
 	ret c
 
 	inc [hl]
@@ -2631,17 +2612,15 @@ AI_Smart_Foresight:
 	cp DARK
 	jr z, .encourage
 
-; 92% chance to discourage this move otherwise.
-	call Random
-	cp 8 percent
+; 90% chance to discourage this move otherwise.
+	call AI_90_10
 	ret c
 
 	inc [hl]
 	ret
 
 .encourage
-	call Random
-	cp 39 percent + 1
+	call AI_60_40
 	ret c
 
 	dec [hl]
@@ -2926,8 +2905,7 @@ AI_Smart_Solarbeam:
 	cp WEATHER_HAIL
 	ret nz
 
-	call Random
-	cp 10 percent
+	call AI_90_10
 	ret c
 
 	inc [hl]
@@ -2989,9 +2967,8 @@ AI_Smart_Rollout:
 	jr nc, .maybe_discourage
 
 ; 80% chance to greatly encourage this move otherwise.
-	call Random
-	cp 79 percent - 1
-	ret nc
+	call AI_80_20
+	ret c
 	dec [hl]
 	dec [hl]
 	ret
@@ -3023,9 +3000,8 @@ AI_Smart_Attract:
 	ret
 
 .first_turn
-	call Random
-	cp 79 percent - 1
-	ret nc
+	call AI_80_20
+	ret c
 	dec [hl]
 	ret
 
@@ -3596,12 +3572,37 @@ AIGetEnemyMove:
 	pop hl
 	ret
 
+AI_50_50:
+	call Random
+	cp 50 percent + 1
+	ret
+
+AI_60_40:
+	call Random
+	cp 39 percent + 1
+	ret
+
+AI_70_30:
+	call Random
+	cp 30 percent + 1
+	ret
+
 AI_80_20:
 	call Random
 	cp 20 percent - 1
 	ret
 
-AI_50_50:
+AI_85_15:
 	call Random
-	cp 50 percent + 1
+	cp 16 percent
+	ret
+
+AI_90_10:
+	call Random
+	cp 10 percent
+	ret
+
+AI_95_5:
+	call Random
+	cp 5 percent
 	ret
