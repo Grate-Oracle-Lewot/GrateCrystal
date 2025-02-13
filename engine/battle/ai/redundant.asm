@@ -112,6 +112,23 @@ AI_Redundant:
 	bit SUBSTATUS_CANT_RUN, a
 	ret
 
+.Nightmare:
+	ld a, [wBattleMonStatus]
+	bit PSN, a
+	ret nz
+	ld a, [wBattleMonStatus]
+	bit BRN, a
+	ret nz
+	ld a, [wBattleMonStatus]
+	bit FRZ, a
+	ret nz
+	ld a, [wBattleMonStatus]
+	bit PAR, a
+	ret nz
+	ld a, [wPlayerSubStatus1]
+	bit SUBSTATUS_NIGHTMARE, a
+	ret
+
 .Foresight:
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_IDENTIFIED, a
@@ -177,14 +194,6 @@ AI_Redundant:
 	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
-
-.Nightmare:
-	ld a, [wBattleMonStatus]
-	and a
-	jr z, .Redundant
-	ld a, [wPlayerSubStatus1]
-	bit SUBSTATUS_NIGHTMARE, a
-	ret
 
 .Sandstorm:
 	ld a, [wBattleWeather]
