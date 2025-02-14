@@ -3297,13 +3297,8 @@ AI_Smart_Thief:
 	ret
 
 AI_Smart_Transform:
+; Placeholder. Intent:
 ; Discourage this move if player's max HP is greater than enemy's.
-	ld a, [wBattleMonMaxHP]
-	ld b, a
-	ld a, [wEnemyMonMaxHP]
-	cp b
-	ret nc
-	inc [hl]
 	ret
 
 AI_Smart_Focus_Energy:
