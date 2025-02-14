@@ -3323,31 +3323,36 @@ AI_Smart_Focus_Energy:
 	jp AIDismissMove
 
 AI_Smart_AttackDown:
+	ld a, [wPlayerAttack]
+	ld b, a
 	ld a, [wPlayerAtkLevel]
-	ld b, [wPlayerAttack]
 	jr AI_Smart_StatDown
 
 AI_Smart_DefenseDown:
+	ld a, [wPlayerDefense]
+	ld b, a
 	ld a, [wPlayerDefLevel]
-	ld b, [wPlayerDefense]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpeedDown:
 ; Called by AI_Smart_SpeedControl.
+	ld a, [wPlayerSpeed]
+	ld b, a
 	ld a, [wPlayerSpdLevel]
-	ld b, [wPlayerSpeed]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpAtkDown:
 ; No move exists with EFFECT_SP_ATK_DOWN, only EFFECT_SP_ATK_DOWN_2.
+	ld a, [wPlayerSpAtk]
+	ld b, a
 	ld a, [wPlayerSAtkLevel]
-	ld b, [wPlayerSpAtk]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpDefDown:
 ; No move exists with EFFECT_SP_DEF_DOWN_2, only EFFECT_SP_DEF_DOWN.
+	ld a, [wPlayerSpDef]
+	ld b, a
 	ld a, [wPlayerSDefLevel]
-	ld b, [wPlayerSpDef]
 	; fallthrough
 
 AI_Smart_StatDown:
