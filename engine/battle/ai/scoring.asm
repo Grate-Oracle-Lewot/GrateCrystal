@@ -1954,15 +1954,26 @@ AI_Smart_SkullBash:
 	; fallthrough
 
 AI_Smart_Substitute:
+; Check if enemy already has a Substitute.
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr z, .no_sub
+
+; If no Substitute, dismiss this move if both Defense and SpDefense stage modifiers are maxed out.
+	ld a, [wEnemyDefLevel]
+	cp MAX_STAT_LEVEL
+	ret c
+	ld a, [wEnemySDefLevel]
+	cp MAX_STAT_LEVEL
+	ret c
+	jp AIDismissMove
+
+.no_sub
 ; Encourage this move if enemy's HP is full.
-; Discourage this move if enemy's HP is between 25% and 50%.
 ; Dismiss this move if enemy's HP is 25% or below.
 
 	call AICheckEnemyMaxHP
 	jr c, .encourage
-
-	call AICheckEnemyHalfHP
-	ret c
 
 	call AICheckEnemyQuarterHP
 	jr c, AI_Smart_Discourage
