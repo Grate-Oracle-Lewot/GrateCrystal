@@ -14,43 +14,46 @@ AI_Redundant:
 	jp hl
 
 .Moves:
-	dbw EFFECT_LEECH_HIT,    .LeechHit
-	dbw EFFECT_DREAM_EATER,  .DreamEater
-	dbw EFFECT_ATTACK_UP,    .AttackUp
-	dbw EFFECT_DEFENSE_UP,   .DefenseUp
-	dbw EFFECT_SP_ATK_UP,    .SpAtkUp
-	dbw EFFECT_EVASION_UP,   .EvasionUp
-	dbw EFFECT_HEAL,         .Heal
-	dbw EFFECT_LIGHT_SCREEN, .LightScreen
-	dbw EFFECT_MIST,         .Mist
-	dbw EFFECT_CONFUSE,      .Confuse
-	dbw EFFECT_ATTACK_UP_2,  .AttackUp
-	dbw EFFECT_DEFENSE_UP_2, .DefenseUp
-	dbw EFFECT_SPEED_UP_2,   .SpeedUp
-	dbw EFFECT_SP_ATK_UP_2,  .SpAtkUp
-	dbw EFFECT_SP_DEF_UP_2,  .SpDefUp
-	dbw EFFECT_TRANSFORM,    .Transform
-	dbw EFFECT_REFLECT,      .Reflect
-	dbw EFFECT_LEECH_SEED,   .LeechSeed
-	dbw EFFECT_DISABLE,      .Disable
-	dbw EFFECT_ENCORE,       .Encore
-	dbw EFFECT_SNORE,        .Snore
-	dbw EFFECT_SLEEP_TALK,   .SleepTalk
-	dbw EFFECT_MEAN_LOOK,    .MeanLook
-	dbw EFFECT_NIGHTMARE,    .Nightmare
-	dbw EFFECT_FORESIGHT,    .Foresight
-	dbw EFFECT_PERISH_SONG,  .PerishSong
-	dbw EFFECT_SANDSTORM,    .Sandstorm
-	dbw EFFECT_ATTRACT,      .Attract
-	dbw EFFECT_SAFEGUARD,    .Safeguard
-	dbw EFFECT_RAIN_DANCE,   .RainDance
-	dbw EFFECT_SUNNY_DAY,    .SunnyDay
-	dbw EFFECT_MORNING_SUN,  .Heal
-	dbw EFFECT_SYNTHESIS,    .Heal
-	dbw EFFECT_MOONLIGHT,    .Heal
-	dbw EFFECT_SWAGGER,      .Confuse
-	dbw EFFECT_FUTURE_SIGHT, .FutureSight
-	dbw EFFECT_HAIL,         .Hail
+	dbw EFFECT_LEECH_HIT,           .LeechHit
+	dbw EFFECT_DREAM_EATER,         .DreamEater
+	dbw EFFECT_ATTACK_UP,           .AttackUp
+	dbw EFFECT_DEFENSE_UP,          .DefenseUp
+	dbw EFFECT_SP_ATK_UP,           .SpAtkUp
+	dbw EFFECT_EVASION_UP,          .EvasionUp
+	dbw EFFECT_HEAL,                .Heal
+	dbw EFFECT_EFFECT_FORCE_SWITCH, .ForceSwitch
+	dbw EFFECT_LIGHT_SCREEN,        .LightScreen
+	dbw EFFECT_MIST,                .Mist
+	dbw EFFECT_CONFUSE,             .Confuse
+	dbw EFFECT_ATTACK_UP_2,         .AttackUp
+	dbw EFFECT_DEFENSE_UP_2,        .DefenseUp
+	dbw EFFECT_SPEED_UP_2,          .SpeedUp
+	dbw EFFECT_SP_ATK_UP_2,         .SpAtkUp
+	dbw EFFECT_SP_DEF_UP_2,         .SpDefUp
+	dbw EFFECT_TRANSFORM,           .Transform
+	dbw EFFECT_REFLECT,             .Reflect
+	dbw EFFECT_LEECH_SEED,          .LeechSeed
+	dbw EFFECT_DISABLE,             .Disable
+	dbw EFFECT_ENCORE,              .Encore
+	dbw EFFECT_SNORE,               .Snore
+	dbw EFFECT_SLEEP_TALK,          .SleepTalk
+	dbw EFFECT_MEAN_LOOK,           .MeanLook
+	dbw EFFECT_NIGHTMARE,           .Nightmare
+	dbw EFFECT_FORESIGHT,           .Foresight
+	dbw EFFECT_PERISH_SONG,         .PerishSong
+	dbw EFFECT_SANDSTORM,           .Sandstorm
+	dbw EFFECT_SWAGGER,             .Confuse
+	dbw EFFECT_ATTRACT,             .Attract
+	dbw EFFECT_SAFEGUARD,           .Safeguard
+	dbw EFFECT_BATON_PASS,          .BatonPass
+	dbw EFFECT_MORNING_SUN,         .Heal
+	dbw EFFECT_SYNTHESIS,           .Heal
+	dbw EFFECT_MOONLIGHT,           .Heal
+	dbw EFFECT_RAIN_DANCE,          .RainDance
+	dbw EFFECT_SUNNY_DAY,           .SunnyDay
+	dbw EFFECT_FUTURE_SIGHT,        .FutureSight
+	dbw EFFECT_DEFENSE_CURL,        .DefenseUp
+	dbw EFFECT_HAIL,                .Hail
 	db -1
 
 .LeechHit:
@@ -179,6 +182,11 @@ AI_Redundant:
 	jr nc, .Redundant
 	jr .NotRedundant
 
+.ForceSwitch:
+	call AICheckLastPlayerMon
+	jr z, .Redundant
+	jr .NotRedundant
+
 .Snore:
 .SleepTalk:
 	ld a, [wEnemyMonStatus]
@@ -199,6 +207,20 @@ AI_Redundant:
 	bit SUBSTATUS_IN_LOVE, a
 	ret
 
+.DreamEater:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .Redundant
+	ld a, [wBattleMonStatus]
+	and SLP
+	jr z, .Redundant
+	jr .NotRedundant
+
+.BatonPass:
+	call AICheckLastEnemyMon
+	jr c, .Redundant
+	jr .NotRedundant
+
 .RainDance:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
@@ -208,15 +230,6 @@ AI_Redundant:
 .SunnyDay:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr z, .Redundant
-	jr .NotRedundant
-
-.DreamEater:
-	ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jr nz, .Redundant
-	ld a, [wBattleMonStatus]
-	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
 
