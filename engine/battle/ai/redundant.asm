@@ -183,7 +183,7 @@ AI_Redundant:
 	jr .NotRedundant
 
 .ForceSwitch:
-	call AICheckLastPlayerMon
+	farcall AICheckLastPlayerMon
 	jr z, .Redundant
 	jr .NotRedundant
 
@@ -217,7 +217,7 @@ AI_Redundant:
 	jr .NotRedundant
 
 .BatonPass:
-	call AICheckLastEnemyMon
+	farcall AICheckLastEnemyMon
 	jr c, .Redundant
 	jr .NotRedundant
 
