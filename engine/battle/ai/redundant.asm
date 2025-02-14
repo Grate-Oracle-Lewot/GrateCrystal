@@ -144,28 +144,33 @@ AI_Redundant:
 	ret
 
 .AttackUp:
+	ld a, [wEnemyAttack]
+	ld b, a
 	ld a, [wEnemyAtkLevel]
-	ld b, [wEnemyAttack]
 	jr .Stat_Up
 
 .DefenseUp:
+	ld a, [wEnemyDefense]
+	ld b, a
 	ld a, [wEnemyDefLevel]
-	ld b, [wEnemyDefense]
 	jr .Stat_Up
 
 .SpeedUp:
+	ld a, [wEnemySpeed]
+	ld b, a
 	ld a, [wEnemySpdLevel]
-	ld b, [wEnemySpeed]
 	jr .Stat_Up
 
 .SpAtkUp:
+	ld a, [wEnemySpAtk]
+	ld b, a
 	ld a, [wEnemySAtkLevel]
-	ld b, [wEnemySpAtk]
 	jr .Stat_Up
 
 .SpDefUp:
+	ld a, [wEnemySpDef]
+	ld b, a
 	ld a, [wEnemySDefLevel]
-	ld b, [wEnemySpDef]
 	; fallthrough
 
 .Stat_Up:
