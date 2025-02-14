@@ -814,8 +814,12 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
+	dbw EFFECT_ATTACK_DOWN,      AI_Smart_AttackDown
+	dbw EFFECT_DEFENSE_DOWN,     AI_Smart_DefenseDown
 	dbw EFFECT_SPEED_DOWN,       AI_Smart_SpeedControl
+	dbw EFFECT_SP_DEF_DOWN,      AI_Smart_SpDefDown
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
+	dbw EFFECT_EVASION_DOWN,     AI_Smart_EvasionDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
 	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
 	dbw EFFECT_RAMPAGE,          AI_Smart_Rampage
@@ -836,7 +840,10 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_TRANSFORM,        AI_Smart_Transform
+	dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_AttackDown
+	dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_DefenseDown
 	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
+	dbw EFFECT_SP_ATK_DOWN_2,    AI_Smart_SpAtkDown
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
@@ -1262,6 +1269,9 @@ AI_EvaAcc_MaybeEncourage:
 	ret
 
 AI_Smart_AccuracyDown:
+; Dismiss this move if the player's accuracy is already minimum and they have only one Pokemon [remaining].
+	call AI_Smart_AccuracyDown_Dismiss
+
 ; If player's HP is full...
 	call AICheckPlayerMaxHP
 	jr nc, .hp_mismatch_1
@@ -1745,16 +1755,18 @@ AI_Smart_Twister:
 AI_Smart_SpeedControl:
 ; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
 
+; Dismiss this move if the player's speed is already minimum and they have only one Pokemon [remaining].
+	call AI_Smart_SpeedDown
+
 ; If player is faster than enemy, 50% chance to encourage this move (no chance to discourage).
 ; Else discourage this move.
 	call AICompareSpeed
 	jr nc, AI_Smart_GustSpeedControl_MaybeEncourage
 	inc [hl]
 
-; Discourage further if the player has only one Pokemon [remaining].
+; Discourage further if the player has only one Pokemon [remaining]. Redundant?
 	call AICheckLastPlayerMon
 	ret nz
-	inc [hl]
 	inc [hl]
 	ret
 
@@ -3309,6 +3321,68 @@ AI_Smart_Focus_Energy:
 	cp MAX_STAT_LEVEL
 	ret c
 	jp AIDismissMove
+
+AI_Smart_AttackDown:
+	ld a, [wPlayerAtkLevel]
+	ld b, [wPlayerAttack]
+	jr AI_Smart_StatDown
+
+AI_Smart_DefenseDown:
+	ld a, [wPlayerDefLevel]
+	ld b, [wPlayerDefense]
+	jr AI_Smart_StatDown
+
+AI_Smart_SpeedDown:
+; Called by AI_Smart_SpeedControl.
+	ld a, [wPlayerSpdLevel]
+	ld b, [wPlayerSpeed]
+	jr AI_Smart_StatDown
+
+AI_Smart_SpAtkDown:
+; No move exists with EFFECT_SP_ATK_DOWN, only EFFECT_SP_ATK_DOWN_2.
+	ld a, [wPlayerSAtkLevel]
+	ld b, [wPlayerSpAtk]
+	jr AI_Smart_StatDown
+
+AI_Smart_SpDefDown:
+; No move exists with EFFECT_SP_DEF_DOWN_2, only EFFECT_SP_DEF_DOWN.
+	ld a, [wPlayerSDefLevel]
+	ld b, [wPlayerSpDef]
+	; fallthrough
+
+AI_Smart_StatDown:
+; Dismiss this move if the player has only one Pokemon [remaining] AND...
+;  -The given stat's stage modifier is -6 (internally 1)
+;   OR
+;  -The given stat's current value is 1 (minimum possible value)
+	cp 2
+	jr c, AI_Smart_StatCheckLastMon
+	ld a, b
+	cp 2
+	ret nc
+	; fallthrough
+
+AI_Smart_StatCheckLastMon:
+	call AICheckLastPlayerMon
+	ret nz
+	jp AIDismissMove
+
+AI_Smart_AccuracyDown_Dismiss:
+; Called by AI_Smart_AccuracyDown, hence the name deviation.
+; No move exists with EFFECT_ACCURACY_DOWN_2, only EFFECT_ACCURACY_DOWN.
+	ld a, [wPlayerAccLevel]
+	jr AI_Smart_AccEvaDown
+
+AI_Smart_EvasionDown:
+; No move exists with EFFECT_EVASION_DOWN_2, only EFFECT_EVASION_DOWN.
+	ld a, [wPlayerEvaLevel]
+	; fallthrough
+
+AI_Smart_AccEvaDown:
+; Accuracy and Evasion don't have stat values, only stage modifiers.
+	cp 2
+	ret nc
+	jr AI_Smart_StatCheckLastMon
 
 
 AIDamageCalc:
