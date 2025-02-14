@@ -1959,7 +1959,7 @@ AI_Smart_Substitute:
 	bit SUBSTATUS_SUBSTITUTE, a
 	jr z, .no_sub
 
-; If no Substitute, dismiss this move if both Defense and SpDefense stage modifiers are maxed out.
+; If so, dismiss this move if both Defense and Special Defense stage modifiers are maxed out.
 	ld a, [wEnemyDefLevel]
 	cp MAX_STAT_LEVEL
 	ret c
