@@ -1447,15 +1447,12 @@ AI_Smart_Bide_Screens:
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
+; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
 
-; Dismiss this move if the player has only one Pokemon [remaining].
-	call AICheckLastPlayerMon
-	jp z, AIDismissMove
-
-; If the player doesn't have Spikes around them, merge into AI_Smart_BaseSwitchScore.
+; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	jr z, AI_Smart_BaseSwitchScore
+	jr z, AI_Smart_BatonPass
 
 ; 80% chance to encourage this move if the player has Spikes around them.
 	call AI_80_20
@@ -1464,12 +1461,9 @@ AI_Smart_ForceSwitch:
 	ret
 
 AI_Smart_BatonPass:
-; Dismiss this move if the enemy has only one Pokemon [remaining].
-	call AICheckLastEnemyMon
-	jr c, AIDismissMove
-	; fallthrough
+; Teleport, Baton Pass.
+; The AI_Basic layer dismisses these moves if the enemy has only one Pokemon [remaining].
 
-AI_Smart_BaseSwitchScore:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 	push hl
@@ -1517,7 +1511,7 @@ AI_OHKO_CheckLockOn:
 	; fallthrough
 
 AI_Smart_LeechSeed:
-; The AI_STATUS layer will make sure Leech Seed is not used against Grass types.
+; The AI_Status layer will make sure Leech Seed is not used against Grass types.
 AI_DiscourageIfPlayerHPBelowHalf:
 ; Discourage this move if player's HP is below 50%.
 ; Several smart AI routines jump to this to save space.
