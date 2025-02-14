@@ -830,6 +830,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
 	dbw EFFECT_DOUBLE_HIT,       AI_Smart_Reckless
 	dbw EFFECT_JUMP_KICK,        AI_Smart_Recoil_JumpKick
+	dbw EFFECT_FOCUS_ENERGY,     AI_Smart_Focus_Energy
 	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
@@ -3292,6 +3293,22 @@ AI_Smart_Transform:
 	ret nc
 	inc [hl]
 	ret
+
+AI_Smart_Focus_Energy:
+; Dismiss this move if all of the following conditions meet:
+;  -Enemy is already pumped
+;  -Enemy's Attack stage is equal to MAX_STAT_LEVEL
+;  -Enemy's SpAtk stage is equal to MAX_STAT_LEVEL
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_FOCUS_ENERGY, a
+	ret z
+	ld a, [wEnemyAtkLevel]
+	cp MAX_STAT_LEVEL
+	ret c
+	ld a, [wEnemySAtkLevel]
+	cp MAX_STAT_LEVEL
+	ret c
+	jp AIDismissMove
 
 
 AIDamageCalc:
