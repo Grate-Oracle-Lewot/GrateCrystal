@@ -270,7 +270,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Move lists in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/ai updated. Most notably, "useful moves" now consists only of moves with decent base power, 100% accuracy, no type that's immune to them, and no drawbacks like (re)charge turns or recoil. Spore is also on there due to being the best status move.
 
-- AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM).
+- AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM). Additional conditions added to AI_Redundant to avoid other bad decisions.
 
 - AI_STATUS now discourages Leech Seed if the player is a Grass type, and no longer discourages Sleep moves based on nonexistent type immunities. It also encourages status moves, including Leech Seed and Confusion-inducing moves, if the player is storing energy with Bide.
 
