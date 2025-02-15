@@ -2,21 +2,21 @@ MoveDeletion:
 	ld hl, .DeleterIntroText
 	call PrintText
 	call YesNoBox
-	jr c, .declined
+	jp c, .declined
 	ld hl, .DeleterAskWhichMonText
 	call PrintText
 	farcall SelectMonFromParty
-	jr c, .declined
+	jp c, .declined
 	ld a, [wCurPartySpecies]
 	cp EGG
-	jr z, .egg
+	jp z, .egg
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Moves + 1
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hl]
 	and a
-	jr z, .onlyonemove
+	jp z, .onlyonemove
 	ld hl, .DeleterAskWhichMoveText
 	call PrintText
 	call LoadStandardMenuHeader
