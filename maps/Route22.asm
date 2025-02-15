@@ -36,7 +36,14 @@ OfficerWolfScript:
 	end
 
 .AfterScript:
-	writetext OfficerWolfAfterText
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	ifttue .FemalePlayer
+	writetext OfficerWolfAfterMaleText
+	sjump .WolfMerge
+
+.FemalePlayer
+	writetext OfficerWolfAfterFemaleText
+.WolfMerge
 	waitbutton
 	closetext
 	end
@@ -88,9 +95,18 @@ OfficerWolfSeenText:
 	done
 
 OfficerWolfBeatenText:
-OfficerWolfAfterText:
 	text "You're good to go"
 	line "on through."
+	done
+
+OfficerWolfAfterMaleText:
+	text "My apologies, MR."
+	line "CHAMPION."
+	done
+
+OfficerWolfAfterFemaleText:
+	text "My apologies, MS."
+	line "CHAMPION."
 	done
 
 VictoryRoadEntranceSign1Text:
