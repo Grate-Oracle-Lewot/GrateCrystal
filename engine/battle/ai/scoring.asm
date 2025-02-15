@@ -839,6 +839,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
+	dbw EFFECT_TRANSFORM,        AI_Smart_Transform
 	dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_AttackDown
 	dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_DefenseDown
 	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
@@ -1766,6 +1767,7 @@ AI_Smart_SpeedControl:
 ; Discourage further if the player has only one Pokemon [remaining]. Redundant?
 	call AICheckLastPlayerMon
 	ret nz
+	inc [hl]
 	inc [hl]
 	ret
 
@@ -3304,6 +3306,20 @@ AI_Smart_Thief:
 	ret nz
 
 	dec [hl]
+	ret
+
+AI_Smart_Transform:
+; Discourage this move if player's max HP is greater than enemy's.
+	ld a, [wEnemyMonMaxHP + 1]
+	ld e, a
+	ld a, [wEnemyMonMaxHP]
+	ld d, a
+	ld a, [wBattleMonMaxHP + 1]
+	cp e
+	ld a, [wBattleMonMaxHP]
+	sbc d
+	ret c
+	inc [hl]
 	ret
 
 AI_Smart_Focus_Energy:
