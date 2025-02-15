@@ -865,7 +865,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal_DestinyBond
 	dbw EFFECT_SPITE,            AI_Smart_Spite
-	dbw EFFECT_FALSE_SWIPE,      AI_Smart_Discourage
+	dbw EFFECT_FALSE_SWIPE,      AI_Smart_FalseSwipe
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_TRIPLE_KICK,      AI_Smart_Reckless
@@ -2043,7 +2043,6 @@ AI_CounterMirrorCoat_Encourage:
 
 AI_Smart_Discourage:
 ; Another thing that multiple Smart AIs jump to.
-; Used as the outright routine for False Swipe.
 	inc [hl]
 	ret
 
@@ -3321,6 +3320,16 @@ AI_Smart_Transform:
 	ret c
 	inc [hl]
 	ret
+
+AI_Smart_FalseSwipe:
+; Dismiss this move if the player has only 1 HP remaining.
+	ld de, 2
+	ld a, [wBattleMonHP + 1]
+	cp e
+	ld a, [wBattleMonHP]
+	sbc d
+	ret c
+	jp AIDismissMove
 
 AI_Smart_Focus_Energy:
 ; Dismiss this move if all of the following conditions meet:
