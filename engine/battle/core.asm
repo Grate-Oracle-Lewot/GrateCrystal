@@ -6272,11 +6272,12 @@ LoadEnemyMon:
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
-	ld b, [hli]
+	ld b, [hl]
+	inc hl
 	ld c, [hl]
 	jr .UpdateDVs
 
-+.WildDVs:
+.WildDVs:
 ; Here's where the fun starts
 
 ; Roaming monsters (Entei, Raikou) work differently
