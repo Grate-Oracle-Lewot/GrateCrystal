@@ -3348,51 +3348,32 @@ AI_Smart_Focus_Energy:
 	jp AIDismissMove
 
 AI_Smart_AttackDown:
-	ld a, [wPlayerAttack]
-	ld b, a
 	ld a, [wPlayerAtkLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_DefenseDown:
-	ld a, [wPlayerDefense]
-	ld b, a
 	ld a, [wPlayerDefLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpeedDown:
 ; Called by AI_Smart_SpeedControl.
-	ld a, [wPlayerSpeed]
-	ld b, a
 	ld a, [wPlayerSpdLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpAtkDown:
 ; No move exists with EFFECT_SP_ATK_DOWN, only EFFECT_SP_ATK_DOWN_2.
-	ld a, [wPlayerSpAtk]
-	ld b, a
 	ld a, [wPlayerSAtkLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpDefDown:
 ; No move exists with EFFECT_SP_DEF_DOWN_2, only EFFECT_SP_DEF_DOWN.
-	ld a, [wPlayerSpDef]
-	ld b, a
 	ld a, [wPlayerSDefLevel]
 	; fallthrough
 
 AI_Smart_StatDown:
-; Dismiss this move if the player has only one Pokemon [remaining] AND...
-;  -The given stat's stage modifier is -6 (internally 1)
-;   OR
-;  -The given stat's current value is 1 (minimum possible value)
-	cp 2
-	jr c, AI_Smart_StatCheckLastMon
-	ld a, b
+; Dismiss this move if the player has only one Pokemon [remaining], and the given stat's stage modifier is -6 (internally 1).
 	cp 2
 	ret nc
-	; fallthrough
-
-AI_Smart_StatCheckLastMon:
 	call AICheckLastPlayerMon
 	ret nz
 	jp AIDismissMove
@@ -3401,18 +3382,12 @@ AI_Smart_AccuracyDown_Dismiss:
 ; Called by AI_Smart_AccuracyDown, hence the name deviation.
 ; No move exists with EFFECT_ACCURACY_DOWN_2, only EFFECT_ACCURACY_DOWN.
 	ld a, [wPlayerAccLevel]
-	jr AI_Smart_AccEvaDown
+	jr AI_Smart_StatDown
 
 AI_Smart_EvasionDown:
 ; No move exists with EFFECT_EVASION_DOWN_2, only EFFECT_EVASION_DOWN.
 	ld a, [wPlayerEvaLevel]
-	; fallthrough
-
-AI_Smart_AccEvaDown:
-; Accuracy and Evasion don't have stat values, only stage modifiers.
-	cp 2
-	ret nc
-	jr AI_Smart_StatCheckLastMon
+	jr AI_Smart_StatDown
 
 
 AIDamageCalc:
