@@ -144,41 +144,40 @@ AI_Redundant:
 	ret
 
 .AttackUp:
-	ld a, [wEnemyAttack]
-	ld b, a
 	ld a, [wEnemyAtkLevel]
+	ld bc, wEnemyAttack
 	jr .Stat_Up
 
 .DefenseUp:
-	ld a, [wEnemyDefense]
-	ld b, a
 	ld a, [wEnemyDefLevel]
+	ld bc, wEnemyDefense
 	jr .Stat_Up
 
 .SpeedUp:
-	ld a, [wEnemySpeed]
-	ld b, a
 	ld a, [wEnemySpdLevel]
+	ld bc, wEnemySpeed
 	jr .Stat_Up
 
 .SpAtkUp:
-	ld a, [wEnemySpAtk]
-	ld b, a
 	ld a, [wEnemySAtkLevel]
+	ld bc, wEnemySpAtk
 	jr .Stat_Up
 
 .SpDefUp:
-	ld a, [wEnemySpDef]
-	ld b, a
 	ld a, [wEnemySDefLevel]
+	ld bc, wEnemySpDef
 	; fallthrough
 
 .Stat_Up:
 	cp MAX_STAT_LEVEL
 	jr nc, .Redundant
-	ld a, b
-	cp MAX_STAT_VALUE
-	jr nc, .Redundant
+	ld a, [bc]
+	cp LOW(MAX_STAT_VALUE)
+	jr nz, .NotRedundant
+	inc bc
+	ld a, [bc]
+	cp HIGH(MAX_STAT_VALUE)
+	jr z, .Redundant
 	jr .NotRedundant
 
 .EvasionUp:
