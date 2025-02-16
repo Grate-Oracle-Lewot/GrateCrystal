@@ -37,7 +37,7 @@ OfficerWolfScript:
 
 .AfterScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
-	ifttue .FemalePlayer
+	iftrue .FemalePlayer
 	writetext OfficerWolfAfterMaleText
 	sjump .WolfMerge
 
