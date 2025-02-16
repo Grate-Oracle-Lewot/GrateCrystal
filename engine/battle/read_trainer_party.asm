@@ -157,14 +157,14 @@ ReadTrainerPartyPieces:
 
 ; When reading DVs, treat $00 as $FF
 	ld a, [hli]
-	and a
+	cp 0
 	jr nz, .atk_def_dv_nonzero
 	ld a, $FF
 .atk_def_dv_nonzero
 	ld [de], a
 	inc de
 	ld a, [hli]
-	and a
+	cp 0
 	jr nz, .spd_spc_dv_nonzero
 	ld a, $FF
 .spd_spc_dv_nonzero
