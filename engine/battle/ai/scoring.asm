@@ -203,6 +203,9 @@ AI_Setup:
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 
+	cp EFFECT_DEFENSE_CURL
+	jr z, .statup
+
 	cp EFFECT_ATTACK_UP
 	jr c, .checkmove
 	cp EFFECT_EVASION_UP + 1
@@ -909,8 +912,9 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_BEAT_UP,          AI_Smart_BeatUp
 	dbw EFFECT_FLY,              AI_Smart_Fly_SkyAttack_FutureSight
-	dbw EFFECT_HAIL,             AI_Smart_Hail
+	dbw EFFECT_DEFENSE_CURL,     AI_Smart_DefenseCurl
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
+	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_DIG,              AI_Smart_Dig
 	db -1 ; end
 
@@ -3330,6 +3334,31 @@ AI_Smart_FalseSwipe:
 	sbc d
 	ret c
 	jp AIDismissMove
+
+AI_Smart_DefenseCurl:
+; Do nothing if enemy is already curled.
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	ret nz
+
+; Else, 80% chance to encourage this move if enemy has an effect that gets boosted by Defense Curl.
+	ld b, EFFECT_FLAME_WHEEL
+	call AIHasMoveEffect
+	jr c, .encourage
+
+	ld b, EFFECT_ROLLOUT
+	call AIHasMoveEffect
+	jr c, .encourage
+
+	ld b, EFFECT_RAPID_SPIN
+	call AIHasMoveEffect
+	ret nc
+
+.encourage
+	call AI_80_20
+	ret c
+	dec [hl]
+	ret
 
 AI_Smart_Focus_Energy:
 ; Dismiss this move if all of the following conditions meet:
