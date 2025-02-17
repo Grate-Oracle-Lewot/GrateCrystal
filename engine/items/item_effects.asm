@@ -2039,7 +2039,7 @@ EscapeRopeEffect:
 
 	ld a, [wItemEffectSucceeded]
 	cp 1
-	call z, UseDisposableItem
+	jp z, UseDisposableItem
 	ret
 
 SuperRepelEffect:
