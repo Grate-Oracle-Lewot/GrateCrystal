@@ -416,7 +416,7 @@ MaxReviveDesc:
 	next "fainted #MON.@"
 
 GuardSpecDesc:
-	db   "Prevents stats"
+	db   "Prevents stat"
 	next "reduction. (1 BTL)@"
 
 SuperRepelDesc:
@@ -480,16 +480,16 @@ OldRodDesc:
 	next "fish for #MON.@"
 
 GoodRodDesc:
-	db   "A good ROD for"
-	next "catching #MON.@"
+	db   "Fishes up average"
+	next "#MON by water.@"
 
 SilverLeafDesc:
 	db   "A strange, silver-"
 	next "colored leaf.@"
 
 SuperRodDesc:
-	db   "The best ROD for"
-	next "catching #MON.@"
+	db   "Fishes up strong"
+	next "#MON by water.@"
 
 PPUpDesc:
 	db   "Raises max PP of"
@@ -512,8 +512,8 @@ RedScaleDesc:
 	next "red GYARADOS.@"
 
 SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
+	db   "Special POTION for"
+	next "AMPHY.@"
 
 SSTicketDesc:
 	db   "A ticket for the"
@@ -536,8 +536,8 @@ MoomooMilkDesc:
 	next "HP by 100.@"
 
 QuickClawDesc:
-	db   "Raises 1st strike"
-	next "ratio. (HOLD)@"
+	db   "May move first in"
+	next "battle. (HOLD)@"
 
 PsnCureBerryDesc:
 	db   "A self-cure for"
@@ -649,8 +649,8 @@ BlackGlassesDesc:
 	next "type moves. (HOLD)@"
 
 SlowpokeTailDesc:
-	db   "Very tasty. Sell"
-	next "high.@"
+	db   "Tasty to suck on."
+	next "Sell high.@"
 
 PinkBowDesc:
 	db   "Powers up normal-"
@@ -681,7 +681,7 @@ PearlDesc:
 	next "Sell low.@"
 
 BigPearlDesc:
-	db   "A big, beautiful"
+	db   "A rare kind of"
 	next "pearl. Sell high.@"
 
 EverStoneDesc:
@@ -713,8 +713,8 @@ ThickClubDesc:
 	next "or MAROWAK. (HOLD)@"
 
 FocusBandDesc:
-	db   "May prevent faint-"
-	next "ing. (HOLD)@"
+	db   "May survive a KO"
+	next "with 1 HP. (HOLD)@"
 
 LimboStickDesc:
 	db   "Blocks paralysis."
@@ -733,7 +733,7 @@ HealPowderDesc:
 	next "problems. Bitter.@"
 
 RevivalHerbDesc:
-	db   "Revives fainted"
+	db   "Revives a fainted"
 	next "#MON. Bitter.@"
 
 HardStoneDesc:
@@ -749,7 +749,7 @@ CardKeyDesc:
 	next "the RADIO TOWER.@"
 
 MachinePartDesc:
-	db   "A machine part for"
+	db   "Stolen part from"
 	next "the POWER PLANT.@"
 
 HardhatDesc:
@@ -769,7 +769,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 BasementKeyDesc:
-	db   "Opens doors.@"
+	db   "Opens the door in"
+	next "the UNDERGROUND.@"
 
 PassDesc:
 	db   "A ticket for the"
@@ -860,8 +861,8 @@ DuskBallDesc:
 	next "well in the dark.@"
 
 SacredAshDesc:
-	db   "Fully revives all"
-	next "fainted #MON.@"
+	db   "Fully heals your"
+	next "entire party.@"
 
 HeavyBallDesc:
 	db   "A BALL for catch-"
