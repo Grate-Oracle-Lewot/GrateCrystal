@@ -2260,7 +2260,6 @@ UseRod:
 ItemfinderEffect:
 	farcall ItemFinder
 	jp UseDisposableItem
-	ret
 
 PocketPCEffect:
 	farcall PocketPCFunction
@@ -2345,6 +2344,7 @@ RestorePPEffect:
 
 	ld hl, PPsIncreasedText
 	call PrintText
+	; fallthrough
 
 FinishPPRestore:
 	call ClearPalettes
@@ -2849,6 +2849,7 @@ GetMaxPPOfMove:
 GetMthMoveOfNthPartymon:
 	ld a, [wCurPartyMon]
 	call AddNTimes
+	; fallthrough
 
 GetMthMoveOfCurrentMon:
 	ld a, [wMenuCursorY]
