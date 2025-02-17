@@ -85,7 +85,7 @@ BattleTowerMisty:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerMisty
 
  	db LAPRAS
-	db NOISEMAKER
+	db BIG_PEARL
 	db SURF, PERISH_SONG, BLIZZARD, RAIN_DANCE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
