@@ -4205,7 +4205,7 @@ RaiseStat:
 	jr nz, .not_already_max
 	ld a, [hl]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .stats_already_max
+	jr z, .stats_already_max
 .not_already_max
 	ldh a, [hBattleTurn]
 	and a
