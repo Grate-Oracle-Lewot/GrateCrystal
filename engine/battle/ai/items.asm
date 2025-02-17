@@ -390,23 +390,12 @@ AI_Items:
 	jr nz, .CheckHalfOrQuarterHP
 	callfar AICheckEnemyHalfHP
 	jp c, .DontUse
-	ld a, [bc]
-	bit UNKNOWN_USE_F, a
-	jp nz, .CheckQuarterHP
 	callfar AICheckEnemyQuarterHP
 	jp nc, .Use
 	call Random
 	cp 50 percent + 1
 	jp c, .Use
 	jp .DontUse
-
-.CheckQuarterHP:
-	callfar AICheckEnemyQuarterHP
-	jp c, .DontUse
-	call Random
-	cp 20 percent - 1
-	jp c, .DontUse
-	jp .Use
 
 .CheckHalfOrQuarterHP:
 	callfar AICheckEnemyHalfHP
