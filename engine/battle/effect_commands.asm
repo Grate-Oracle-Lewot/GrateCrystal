@@ -6754,25 +6754,6 @@ BattleCommand_HeldFlinch:
 	set SUBSTATUS_FLINCHED, [hl]
 	ret
 
-BattleCommand_CheckContact:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	ret nz
-
-	ld a, [wSubstituteJustBroke]
-	and a
-	ret nz
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld hl, ContactMoves
-	call IsInByteArray
-	ret nc
-	; fallthrough
-
 ContactStatic:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
@@ -6954,7 +6935,26 @@ ContactStatic:
 	ld [de], a
 
 	ld hl, StaticPrzcureberryText
-	call StdBattleTextbox
+	jp StdBattleTextbox
+
+BattleCommand_CheckContact:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, [wSubstituteJustBroke]
+	and a
+	ret nz
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld hl, ContactMoves
+	call IsInByteArray
+	ret nc
+	call ContactStatic
 	; fallthrough
 
 ContactCuteCharm:
