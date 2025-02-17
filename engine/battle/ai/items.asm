@@ -40,6 +40,37 @@ AI_SwitchOrTryItem:
 	jr nz, SwitchRarely
 	jp AI_TryItem
 
+SwitchSometimes:
+	callfar CheckAbleToSwitch
+	ld a, [wEnemySwitchMonParam]
+	and $f0
+	jr z, AI_TryItem
+
+	cp $10
+	jr nz, .not_10
+	call AI_Item_20_Percent
+	jr c, .switch
+	jr AI_TryItem
+.not_10
+
+	cp $20
+	jr nz, .not_20
+	call AI_Item_50_Percent
+	jr c, .switch
+	jr AI_TryItem
+.not_20
+
+	; $30
+	call AI_Item_20_Percent
+	jr c, AI_TryItem
+
+.switch
+	ld a, [wEnemySwitchMonParam]
+	and $f
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	jp AI_TrySwitch
+
 SwitchOften:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
@@ -48,8 +79,7 @@ SwitchOften:
 
 	cp $10
 	jr nz, .not_10
-	call Random
-	cp 50 percent + 1
+	call AI_Item_50_Percent
 	jr c, .switch
 	jp AI_TryItem
 .not_10
@@ -100,40 +130,6 @@ SwitchRarely:
 	; $30
 	call Random
 	cp 79 percent - 1
-	jr c, AI_TryItem
-
-.switch
-	ld a, [wEnemySwitchMonParam]
-	and $f
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	jp AI_TrySwitch
-
-SwitchSometimes:
-	callfar CheckAbleToSwitch
-	ld a, [wEnemySwitchMonParam]
-	and $f0
-	jr z, AI_TryItem
-
-	cp $10
-	jr nz, .not_10
-	call Random
-	cp 20 percent - 1
-	jr c, .switch
-	jr AI_TryItem
-.not_10
-
-	cp $20
-	jr nz, .not_20
-	call Random
-	cp 50 percent + 1
-	jr c, .switch
-	jr AI_TryItem
-.not_20
-
-	; $30
-	call Random
-	cp 20 percent - 1
 	jr c, AI_TryItem
 
 .switch
@@ -344,8 +340,7 @@ AI_Items:
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .StatusCheckContext
-	call Random
-	cp 20 percent - 1
+	call AI_Item_20_Percent
 	jp c, .Use
 	jp .DontUse
 
@@ -356,8 +351,7 @@ AI_Items:
 	ld a, [wEnemyToxicCount]
 	cp 4
 	jr c, .FailToxicCheck
-	call Random
-	cp 50 percent + 1
+	call AI_Item_50_Percent
 	jp c, .Use
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
@@ -392,8 +386,7 @@ AI_Items:
 	jp c, .DontUse
 	callfar AICheckEnemyQuarterHP
 	jp nc, .Use
-	call Random
-	cp 50 percent + 1
+	call AI_Item_50_Percent
 	jp c, .Use
 	jp .DontUse
 
@@ -402,8 +395,7 @@ AI_Items:
 	jp c, .DontUse
 	callfar AICheckEnemyQuarterHP
 	jp nc, .Use
-	call Random
-	cp 20 percent - 1
+	call AI_Item_20_Percent
 	jp nc, .DontUse
 	jp .Use
 
@@ -469,22 +461,19 @@ AI_Items:
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jr nz, .Use
-	call Random
-	cp 50 percent + 1
+	call AI_Item_50_Percent
 	jr c, .DontUse
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .Use
-	call Random
-	cp 50 percent + 1
+	call AI_Item_50_Percent
 	jr c, .DontUse
 	jr .Use
 .notfirstturnout
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jr z, .DontUse
-	call Random
-	cp 20 percent - 1
+	call AI_Item_20_Percent
 	jr nc, .DontUse
 	jr .Use
 
@@ -777,3 +766,12 @@ PrintText_UsedItemOn:
 EnemyUsedOnText:
 	text_far _EnemyUsedOnText
 	text_end
+
+AI_Item_20_Percent:
+	call Random
+	cp 20 percent - 1
+	ret
+
+AI_Item_50_Percent:
+	call Random
+	cp 50 percent + 1
