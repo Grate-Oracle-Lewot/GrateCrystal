@@ -107,7 +107,7 @@ ItemNames::
 	li "MAGNET"
 	li "FRANKENBERRY"
 	li "PEARL"
-	li "BIG PEARL"
+	li "BLACK PEARL"
 	li "EVERSTONE"
 	li "SPELL TAG"
 	li "CAKE OF RAGE"
