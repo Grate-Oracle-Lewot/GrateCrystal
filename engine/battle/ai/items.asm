@@ -537,7 +537,7 @@ EnemyUsedFullHeal:
 	ld a, FULL_HEAL
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
-EnemyUsedFullHeal:
+EnemyUsedMiracleberry:
 	call StatusHealDoubleCall
 	ld a, MIRACLEBERRY
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
