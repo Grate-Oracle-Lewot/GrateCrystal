@@ -125,13 +125,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke MEWTWO, 25
-	closetext
-	winlosstext NewBarkTownSignText, 0
-	loadtrainer COOLTRAINERM, NICK
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
