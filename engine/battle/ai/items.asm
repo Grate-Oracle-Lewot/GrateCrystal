@@ -316,6 +316,7 @@ AI_Items:
 	dbw FRESH_WATER,  .FreshWater
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
+	dbw HEAL_POWDER,  .HealPowder
 	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
 	dbw X_ATTACK,     .XAttack
@@ -329,6 +330,12 @@ AI_Items:
 	call .Status
 	jp c, .DontUse
 	call EnemyUsedFullHeal
+	jp .Use
+
+.HealPowder:
+	call .Status
+	jp c, .DontUse
+	call EnemyUsedHealPowder
 	jp .Use
 
 .Status:
@@ -522,6 +529,12 @@ EnemyUsedFullHeal:
 	call AIUsedItemSound
 	call AI_HealStatus
 	ld a, FULL_HEAL
+	jp PrintText_UsedItemOn_AND_AIUpdateHUD
+
+EnemyUsedHealPowder:
+	call AIUsedItemSound
+	call AI_HealStatus
+	ld a, HEAL_POWDER
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedMaxPotion:
