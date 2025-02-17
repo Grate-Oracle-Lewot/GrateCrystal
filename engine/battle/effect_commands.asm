@@ -2717,7 +2717,7 @@ ThickClubBoost:
 	push de
 	ld b, CUBONE
 	ld c, MAROWAK
-	ld d, THICK_CLUB
+	ld d, HELD_THICK_CLUB
 	jr SpeciesItemBoost
 
 LightBallBoost:
@@ -2728,7 +2728,7 @@ LightBallBoost:
 	push de
 	ld b, PIKACHU
 	ld c, PIKACHU
-	ld d, LIGHT_BALL
+	ld d, HELD_LIGHT_BALL
 	; fallthrough
 
 SpeciesItemBoost:
@@ -2759,7 +2759,7 @@ SpeciesItemBoost:
 .GetItemHeldEffect:
 	push hl
 	call GetUserItem
-	ld a, [hl]
+	ld a, b
 	pop hl
 	cp d
 	jr nz, .done
@@ -7009,8 +7009,8 @@ GetWeatherTurns:
 ; 8 if holding Black Pearl (BIG_PEARL), 5 otherwise.
 ; Works for all weather moves: Rain Dance, Sunny Day, Sandstorm, Hail.
 	call GetUserItem
-	ld a, [hl]
-	cp BIG_PEARL
+	ld a, b
+	cp HELD_WEATHER_BOOST
 	jr nz, .five
 	ld a, 8
 	ret
