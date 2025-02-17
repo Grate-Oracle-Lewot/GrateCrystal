@@ -440,8 +440,8 @@ MartUnderground:
 	db 4 ; # items
 	db ENERGYPOWDER
 	db ENERGY_ROOT
-	db HEAL_POWDER
 	db REVIVAL_HERB
+	db HEAL_POWDER
 	db -1 ; end
 
 MartBerry:
