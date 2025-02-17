@@ -2143,12 +2143,6 @@ XItemEffect:
 INCLUDE "data/items/x_stats.asm"
 
 PokeFluteEffect:
-	ld a, [wBattleMode]
-	and a
-	jr nz, .in_battle
-	; overworld flute code was dummied out here
-
-.in_battle
 	xor a
 	ld [wPokeFluteCuredSleep], a
 
