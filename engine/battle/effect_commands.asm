@@ -6347,13 +6347,6 @@ INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
-BattleCommand_SkipSunCharge:
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	ret nz
-	ld b, charge_command
-	jp SkipToBattleCommand
-
 INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/hail.asm"
@@ -6528,6 +6521,13 @@ BattleCommand_ClearText:
 
 .text:
 	text_end
+
+BattleCommand_SkipSunCharge:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+	ld b, charge_command
+	; fallthrough
 
 SkipToBattleCommand:
 ; Skip over commands until reaching command b.
