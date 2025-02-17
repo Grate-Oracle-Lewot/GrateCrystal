@@ -311,7 +311,9 @@ AI_TryItem:
 AI_Items:
 	dbw FULL_RESTORE, .FullRestore
 	dbw MAX_POTION,   .MaxPotion
+	dbw HYPER_POTION, .HyperPotion
 	dbw SUPER_POTION, .SuperPotion
+	dbw FRESH_WATER,  .FreshWater
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw GUARD_SPEC,   .GuardSpec
@@ -399,11 +401,25 @@ AI_Items:
 	jp nc, .DontUse
 	jp .Use
 
+.HyperPotion:
+	call .HealItem
+	jp c, .DontUse
+	ld b, 2000
+	call EnemyUsedHyperPotion
+	jp .Use
+
 .SuperPotion:
 	call .HealItem
 	jp c, .DontUse
 	ld b, 50
 	call EnemyUsedSuperPotion
+	jp .Use
+
+.FreshWater:
+	call .HealItem
+	jp c, .DontUse
+	ld b, 50
+	call EnemyUsedFreshWater
 	jp .Use
 
 .XAccuracy:
@@ -543,9 +559,19 @@ FullRestoreContinue:
 	ld [wEnemyMonHP], a
 	jr EnemyPotionFinish
 
+EnemyUsedFreshWater:
+	ld a, FRESH_WATER
+	jr FreshWaterContinue
+
 EnemyUsedSuperPotion:
 	ld a, SUPER_POTION
+FreshWaterContinue:
 	ld b, 50
+	jr EnemyPotionContinue
+
+EnemyUsedHyperPotion:
+	ld a, HYPER_POTION
+	ld b, 200
 	; fallthrough
 
 EnemyPotionContinue:
