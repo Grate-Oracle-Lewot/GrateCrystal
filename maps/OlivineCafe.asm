@@ -69,17 +69,19 @@ OlivineCafeFishingGuruText:
 	done
 
 OlivineCafeSailorText:
-	text "Whenever I roll"
-	line "into this town, I"
+	text "You know weather"
+	line "moves, like RAIN"
+	cont "DANCE and SUNNY"
+	cont "DAY?"
 
-	para "always visit the"
-	line "OLIVINE CAFé."
+	para "If your #MON"
+	line "holds a rare"
 
-	para "Everything on the"
-	line "menu makes me feel"
+	para "BLACK PEARL, its"
+	line "weather moves will"
 
-	para "stronger. I can't"
-	line "stop eating!"
+	para "last for 8 turns"
+	line "instead of 5!"
 	done
 
 OlivineCafe_MapEvents:
