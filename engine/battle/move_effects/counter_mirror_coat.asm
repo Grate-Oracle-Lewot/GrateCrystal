@@ -1,9 +1,5 @@
 BattleCommand_Counter:
-	ld a, 1
-	ld [wAttackMissed], a
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	and a
+	call CounterMirrorCoatFirstCheck
 	ret z
 
 	ld b, a
@@ -12,62 +8,19 @@ BattleCommand_Counter:
 	cp EFFECT_COUNTER
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
-	ld a, [wTypeMatchup]
-	and a
+	call CounterMirrorCoatSecondCheck
 	ret z
 
-	call CheckOpponentWentFirst
-	ret z
-
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	dec a
-	ld de, wStringBuffer1
-	call GetMoveData
-
-	ld a, [wStringBuffer1 + MOVE_POWER]
-	and a
+	call CounterMirrorCoatThirdCheck
 	ret z
 
 	ld a, [wStringBuffer1 + MOVE_TYPE]
 	cp SPECIAL
 	ret nc
-
-	ld hl, wCurDamage
-	ld a, [hli]
-	or [hl]
-	jr z, .failed
-
-	ld a, [hl]
-	add a
-	ld [hld], a
-	ld a, [hl]
-	adc a
-	ld [hl], a
-	jr nc, .capped
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-.capped
-
-	xor a
-	ld [wAttackMissed], a
-	ret
-
-.failed
-	ld a, 1
-	ld [wEffectFailed], a
-	and a
-	ret
+	jr CounterMirrorCoatFinish
 
 BattleCommand_MirrorCoat:
-	ld a, 1
-	ld [wAttackMissed], a
-
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	and a
+	call CounterMirrorCoatFirstCheck
 	ret z
 
 	ld b, a
@@ -76,28 +29,18 @@ BattleCommand_MirrorCoat:
 	cp EFFECT_MIRROR_COAT
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
-	ld a, [wTypeMatchup]
-	and a
+	call CounterMirrorCoatSecondCheck
 	ret z
 
-	call CheckOpponentWentFirst
-	ret z
-
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	dec a
-	ld de, wStringBuffer1
-	call GetMoveData
-
-	ld a, [wStringBuffer1 + MOVE_POWER]
-	and a
+	call CounterMirrorCoatThirdCheck
 	ret z
 
 	ld a, [wStringBuffer1 + MOVE_TYPE]
 	cp SPECIAL
 	ret c
+	; fallthrough
 
+CounterMirrorCoatFinish:
 	ld hl, wCurDamage
 	ld a, [hli]
 	or [hl]
@@ -122,5 +65,30 @@ BattleCommand_MirrorCoat:
 .failed
 	ld a, 1
 	ld [wEffectFailed], a
+	and a
+	ret
+
+CounterMirrorCoatFirstCheck:
+	ld a, 1
+	ld [wAttackMissed], a
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
+	ret
+
+CounterMirrorCoatSecondCheck:
+	call BattleCommand_ResetTypeMatchup
+	ld a, [wTypeMatchup]
+	and a
+	ret z
+	jp CheckOpponentWentFirst
+
+CounterMirrorCoatThirdCheck:
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	dec a
+	ld de, wStringBuffer1
+	call GetMoveData
+	ld a, [wStringBuffer1 + MOVE_POWER]
 	and a
 	ret
