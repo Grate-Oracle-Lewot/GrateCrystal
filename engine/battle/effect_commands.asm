@@ -3305,7 +3305,7 @@ BattleCommand_ConstantDamage:
 
 INCLUDE "data/moves/flail_reversal_power.asm"
 
-INCLUDE "engine/battle/move_effects/counter.asm"
+INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
 
@@ -6344,8 +6344,6 @@ INCLUDE "engine/battle/move_effects/sunny_day.asm"
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
-
-INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
 INCLUDE "engine/battle/move_effects/future_sight.asm"
 
