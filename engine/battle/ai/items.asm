@@ -44,25 +44,25 @@ SwitchSometimes:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jr z, AI_TryItem
+	jp z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call AI_Item_20_Percent
 	jr c, .switch
-	jr AI_TryItem
+	jp AI_TryItem
 .not_10
 
 	cp $20
 	jr nz, .not_20
 	call AI_Item_50_Percent
 	jr c, .switch
-	jr AI_TryItem
+	jp AI_TryItem
 .not_20
 
 	; $30
 	call AI_Item_20_Percent
-	jr c, AI_TryItem
+	jp c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
@@ -75,13 +75,13 @@ SwitchOften:
 	callfar CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jp z, AI_TryItem
+	jr z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
 	call AI_Item_50_Percent
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_10
 
 	cp $20
@@ -89,13 +89,13 @@ SwitchOften:
 	call Random
 	cp 79 percent - 1
 	jr c, .switch
-	jp AI_TryItem
+	jr AI_TryItem
 .not_20
 
 	; $30
 	call Random
 	cp 4 percent
-	jp c, AI_TryItem
+	jr c, AI_TryItem
 
 .switch
 	ld a, [wEnemySwitchMonParam]
