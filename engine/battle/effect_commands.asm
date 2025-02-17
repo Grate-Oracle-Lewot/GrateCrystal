@@ -1994,6 +1994,11 @@ BattleCommand_StatUpDownAnim:
 	ld d, 0
 	jp PlayFXAnimID
 
+AnimateFailedMove:
+	call BattleCommand_LowerSub
+	call BattleCommand_MoveDelay
+	; fallthrough
+
 BattleCommand_RaiseSub:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
@@ -5850,6 +5855,18 @@ DoubleDamage:
 	ld [hl], a
 	ret
 
+BattleCommand_DoubleMinimizeDamage:
+	ld hl, wEnemyMinimized
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wPlayerMinimized
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	jr DoubleDamage
+
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
 INCLUDE "engine/battle/move_effects/disable.asm"
@@ -6330,18 +6347,6 @@ INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
-BattleCommand_DoubleMinimizeDamage:
-	ld hl, wEnemyMinimized
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wPlayerMinimized
-.ok
-	ld a, [hl]
-	and a
-	ret z
-	jp DoubleDamage
-
 BattleCommand_SkipSunCharge:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
@@ -6509,11 +6514,6 @@ CallBattleCore:
 	ld a, BANK("Battle Core")
 	rst FarCall
 	ret
-
-AnimateFailedMove:
-	call BattleCommand_LowerSub
-	call BattleCommand_MoveDelay
-	jp BattleCommand_RaiseSub
 
 BattleCommand_MoveDelay:
 ; Wait 40 frames.
