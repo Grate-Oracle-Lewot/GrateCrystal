@@ -47,7 +47,7 @@ MonCheck:
 
 CheckOwnMonAnywhere:
 ; Check if the player owns any monsters of the species in wScriptVar.
-; It must exist in either party or PC, and have the player's OT and ID.
+; It must exist in either party, PC, or Daycare, and have the player's OT and ID.
 
 	; If there are no monsters in the party,
 	; the player must not own any yet.
