@@ -203,6 +203,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - New held items that each completely prevent a specific status condition (these will not block Sleep with Rest, but will block Confusion with Thrash/Outrage/Petal Dance)
 - "Hardhat," a new held item which prevents recoil damage, as well as crash damage from [Hi] Jump Kick
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
+- The Big Pearl is now called the Black Pearl, and it extends any weather move used by the holder to 8 turns
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
