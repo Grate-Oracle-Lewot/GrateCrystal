@@ -316,6 +316,7 @@ AI_Items:
 	dbw FRESH_WATER,  .FreshWater
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
+	dbw MIRACLEBERRY, .Miracleberry
 	dbw HEAL_POWDER,  .HealPowder
 	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
@@ -330,6 +331,12 @@ AI_Items:
 	call .Status
 	jp c, .DontUse
 	call EnemyUsedFullHeal
+	jp .Use
+
+.Miracleberry:
+	call .Status
+	jp c, .DontUse
+	call EnemyUsedMiracleberry
 	jp .Use
 
 .HealPowder:
@@ -411,7 +418,7 @@ AI_Items:
 .HyperPotion:
 	call .HealItem
 	jp c, .DontUse
-	ld b, 2000
+	ld b, 200
 	call EnemyUsedHyperPotion
 	jp .Use
 
@@ -492,13 +499,13 @@ AI_Items:
 	call AI_Item_50_Percent
 	jr c, .DontUse
 	jr .Use
+
 .notfirstturnout
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jr z, .DontUse
 	call AI_Item_20_Percent
-	jr nc, .DontUse
-	jr .Use
+	jr c, .Use
 
 .DontUse:
 	scf
@@ -526,16 +533,23 @@ AIUsedItemSound:
 	ret
 
 EnemyUsedFullHeal:
-	call AIUsedItemSound
-	call AI_HealStatus
+	call StatusHealDoubleCall
 	ld a, FULL_HEAL
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
+EnemyUsedFullHeal:
+	call StatusHealDoubleCall
+	ld a, MIRACLEBERRY
+	jp PrintText_UsedItemOn_AND_AIUpdateHUD
+
 EnemyUsedHealPowder:
-	call AIUsedItemSound
-	call AI_HealStatus
+	call StatusHealDoubleCall
 	ld a, HEAL_POWDER
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
+
+StatusHealDoubleCall:
+	call AIUsedItemSound
+	jp AI_HealStatus
 
 EnemyUsedMaxPotion:
 	ld a, MAX_POTION
@@ -550,6 +564,7 @@ EnemyUsedFullRestore:
 	res SUBSTATUS_CONFUSED, [hl]
 	xor a
 	ld [wEnemyConfuseCount], a
+	; fallthrough
 
 FullRestoreContinue:
 	ld de, wCurHPAnimOldHP
@@ -625,6 +640,7 @@ EnemyPotionContinue:
 	ld a, [de]
 	ld [hl], a
 	ld [wCurHPAnimNewHP + 1], a
+	; fallthrough
 
 EnemyPotionFinish:
 	call PrintText_UsedItemOn
