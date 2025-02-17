@@ -775,3 +775,4 @@ AI_Item_20_Percent:
 AI_Item_50_Percent:
 	call Random
 	cp 50 percent + 1
+	ret
