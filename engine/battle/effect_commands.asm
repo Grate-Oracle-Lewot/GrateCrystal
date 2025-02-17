@@ -5183,17 +5183,17 @@ BattleCommand_EndLoop:
 	jr nz, .check_ot_beat_up
 	ld a, [wPartyCount]
 	cp 1
-	jp z, .only_one_beatup
+	jr z, .only_one_beatup
 	dec a
 	jr .double_hit
 
 .check_ot_beat_up
 	ld a, [wBattleMode]
 	cp WILD_BATTLE
-	jp z, .only_one_beatup
+	jr z, .only_one_beatup
 	ld a, [wOTPartyCount]
 	cp 1
-	jp z, .only_one_beatup
+	jr z, .only_one_beatup
 	dec a
 	jr .double_hit
 
