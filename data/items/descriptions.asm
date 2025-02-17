@@ -688,8 +688,8 @@ PearlDesc:
 	next "Sell low.@"
 
 BigPearlDesc:
-	db   "A rare kind of"
-	next "pearl. Sell high.@"
+	db   "Extends weather to"
+	next "8 turns. (HOLD)@"
 
 EverStoneDesc:
 	db   "Blocks evolution."
