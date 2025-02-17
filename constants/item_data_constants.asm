@@ -127,3 +127,10 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_STEEL_BOOST
 	const HELD_FAIRY_BOOST
 	const HELD_CURSE_BOOST
+
+	const_next 70
+	const HELD_WEATHER_BOOST
+	const HELD_THICK_CLUB
+	const HELD_LIGHT_BALL
+	const HELD_STICK
+	const HELD_LUCKY_PUNCH
