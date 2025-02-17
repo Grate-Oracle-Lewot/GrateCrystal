@@ -7005,3 +7005,17 @@ ContactCuteCharm:
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
+
+GetWeatherTurns:
+; Returns number of turns that user's weather moves should last in a.
+; 8 if holding Black Pearl (BIG_PEARL), 5 otherwise.
+; Works for all weather moves: Rain Dance, Sunny Day, Sandstorm, Hail.
+	call GetUserItem
+	ld a, [hl]
+	cp BIG_PEARL
+	jr nz, .five
+	ld a, 8
+	ret
+.five
+	ld a, 5
+	ret
