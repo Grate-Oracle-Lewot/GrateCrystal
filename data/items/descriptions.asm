@@ -584,7 +584,8 @@ MintBerryDesc:
 	next "for sleep. (HOLD)@"
 
 RedApricornDesc:
-	db   "A red APRICORN.@"
+	db   "Can be made into a"
+	next "LEVEL BALL.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"
@@ -599,7 +600,8 @@ SilverPowderDesc:
 	next "moves. (HOLD)@"
 
 BluApricornDesc:
-	db   "A blue APRICORN.@"
+	db   "Can be made into a"
+	next "LURE BALL.@"
 
 HandwarmerDesc:
 	db   "Prevents freezing."
@@ -610,10 +612,12 @@ AmuletCoinDesc:
 	next "earnings. (HOLD)@"
 
 YlwApricornDesc:
-	db   "A yellow APRICORN.@"
+	db   "Can be made into a"
+	next "FAST BALL.@"
 
 GrnApricornDesc:
-	db   "A green APRICORN.@"
+	db   "Can be made into a"
+	next "FRIEND BALL.@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"
@@ -628,21 +632,24 @@ TwistedSpoonDesc:
 	next "type moves. (HOLD)@"
 
 WhtApricornDesc:
-	db   "A white APRICORN.@"
+	db   "Can be made into a"
+	next "MOON BALL.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (HOLD)@"
 
 BlkApricornDesc:
-	db   "A black APRICORN.@"
+	db   "Can be made into a"
+	next "HEAVY BALL.@"
 
 NoisemakerDesc:
 	db   "Prevents sleep."
 	next "(HOLD)@"
 
 PnkApricornDesc:
-	db   "A pink APRICORN.@"
+	db   "Can be made into a"
+	next "LOVE BALL.@"
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
