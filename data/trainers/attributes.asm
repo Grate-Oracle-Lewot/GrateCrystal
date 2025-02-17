@@ -351,7 +351,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; PokefanM
-	db NO_ITEM, NO_ITEM ; items
+	db MIRACLEBERRY, NO_ITEM ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
@@ -369,7 +369,7 @@ TrainerClassAttributes:
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; PokefanF
-	db NO_ITEM, NO_ITEM ; items
+	db MIRACLEBERRY, NO_ITEM ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
