@@ -564,9 +564,7 @@ ReadObjectEvents::
 	jr z, .skip
 	jr c, .skip
 
-	; could have done "inc hl" instead
-	ld bc, 1
-	add hl, bc
+	inc hl
 	ld bc, MAPOBJECT_LENGTH
 .loop
 	ld [hl],  0
