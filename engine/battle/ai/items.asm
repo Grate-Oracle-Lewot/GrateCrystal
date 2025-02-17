@@ -32,12 +32,12 @@ AI_SwitchOrTryItem:
 	call AddNTimes
 
 .ok
+	bit SWITCH_SOMETIMES_F, [hl]
+	jr nz, SwitchSometimes
 	bit SWITCH_OFTEN_F, [hl]
 	jr nz, SwitchOften
 	bit SWITCH_RARELY_F, [hl]
 	jr nz, SwitchRarely
-	bit SWITCH_SOMETIMES_F, [hl]
-	jr nz, SwitchSometimes
 	jp AI_TryItem
 
 SwitchOften:
