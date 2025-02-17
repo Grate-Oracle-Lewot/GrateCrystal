@@ -6374,7 +6374,7 @@ GetUserItem:
 	ld hl, wEnemyMonItem
 .go
 	ld b, [hl]
-	jp GetItemHeldEffect
+	jr GetItemHeldEffect
 
 GetOpponentItem:
 ; Return the effect of the opponent's item in bc, and its id at hl.
