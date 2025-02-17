@@ -339,11 +339,11 @@ AI_Items:
 	jp z, .DontUse
 
 	ld a, [bc]
-	bit CONTEXT_USE_F, a
-	jr nz, .StatusCheckContext
-	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jp nz, .Use
+	ld a, [bc]
+	bit CONTEXT_USE_F, a
+	jr nz, .StatusCheckContext
 	call Random
 	cp 20 percent - 1
 	jp c, .Use
