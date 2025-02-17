@@ -2174,11 +2174,6 @@ PokeFluteEffect:
 	ld hl, .PlayedTheFlute
 	call PrintText
 
-	ld a, [wLowHealthAlarm]
-	and 1 << DANGER_ON_F
-	jr nz, .dummy
-	; more code was dummied out here
-.dummy
 	ld hl, .FluteWakeUpText
 	jp PrintText
 
