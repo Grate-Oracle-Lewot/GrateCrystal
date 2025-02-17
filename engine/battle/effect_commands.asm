@@ -1051,10 +1051,7 @@ BattleCommand_Critical:
 	ld a, [hl]
 	cp LUCKY_PUNCH
 	jr nz, .FocusEnergy
-
-; +2 critical level
-	ld c, 2
-	jr .FocusEnergy
+	jr .PlusTwo
 
 .Blissey:
 	cp BLISSEY
@@ -1067,6 +1064,7 @@ BattleCommand_Critical:
 	cp STICK
 	jr nz, .FocusEnergy
 
+.PlusTwo:
 ; +2 critical level
 	ld c, 2
 
