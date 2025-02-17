@@ -1994,15 +1994,6 @@ BattleCommand_StatUpDownAnim:
 	ld d, 0
 	jp PlayFXAnimID
 
-BattleCommand_SwitchTurn:
-; Changes whether it currently counts as the player's or enemy's turn.
-; Can be used mid-turn to check the other side of the field for effects (must be called again afterward).
-
-	ldh a, [hBattleTurn]
-	xor 1
-	ldh [hBattleTurn], a
-	ret
-
 BattleCommand_RaiseSub:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
@@ -2425,7 +2416,16 @@ BattleCommand_BuildOpponentRage:
 	ld [wCriticalRage], a
 
 	call StdBattleTextbox
-	jp BattleCommand_SwitchTurn
+	; fallthrough
+
+BattleCommand_SwitchTurn:
+; Changes whether it currently counts as the player's or enemy's turn.
+; Can be used mid-turn to check the other side of the field for effects (must be called again afterward).
+
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
+	ret
 
 BattleCommand_RageDamage:
 	ld a, [wCurDamage]
