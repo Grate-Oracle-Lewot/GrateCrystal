@@ -132,10 +132,3 @@ InverseTypeMatchups:
 	db DARK,         PSYCHIC_TYPE, NO_EFFECT
 
 	db -1 ; end
-
-InverseWeatherTypeModifiers:
-	db WEATHER_RAIN, WATER, NOT_VERY_EFFECTIVE
-	db WEATHER_RAIN, FIRE,  MORE_EFFECTIVE
-	db WEATHER_SUN,  FIRE,  NOT_VERY_EFFECTIVE
-	db WEATHER_SUN,  WATER, MORE_EFFECTIVE
-	db -1 ; end
