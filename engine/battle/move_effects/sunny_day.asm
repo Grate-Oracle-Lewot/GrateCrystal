@@ -5,8 +5,8 @@ BattleCommand_StartSun:
 	cp 6
 	jr nc, .done
 	call GetUserItem
-	ld a, [hl]
-	cp SUN_STONE
+	ld a, b
+	cp HELD_SUN_STONE
 	jr nz, .five
 	ld a, 8
 	jr .done
