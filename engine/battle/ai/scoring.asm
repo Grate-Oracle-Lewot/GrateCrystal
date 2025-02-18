@@ -2265,19 +2265,13 @@ AI_Smart_HealBell:
 	ret
 
 AI_Smart_MeanLook:
+; The AI_Basic layer dismisses Mean Look if it's already in effect or if the player is Ghost-type and therefore immune.
+
 ; Dismiss this move if the player has only one Pokemon [remaining].
 	call AICheckLastPlayerMon
 	jp z, AIDismissMove
 
-; Dismiss this move if the player is Ghost-type and therefore immune.
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jp z, AIDismissMove
-
-	ld a, [wBattleMonType2]
-	cp GHOST
-	jp z, AIDismissMove
-
+; Discourage this move if the enemy's HP is below half. No chance to encourage.
 	call AICheckEnemyHalfHP
 	jr nc, .discourage
 
