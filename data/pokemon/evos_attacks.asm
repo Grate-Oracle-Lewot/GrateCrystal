@@ -17,6 +17,7 @@ SECTION "Evolutions and Attacks", ROMX
 ; - db 0 ; no more level-up moves
 
 INCLUDE "data/pokemon/evolution_moves.asm"
+
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
 BulbasaurEvosAttacks:
@@ -2271,7 +2272,7 @@ ChikoritaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, GROWL
-	db 3, HAIL
+	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
@@ -2322,7 +2323,7 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, DEFENSE_CURL
-	db 3, SUNNY_DAY
+	db 6, SMOKESCREEN
 	db 12, EMBER
 	db 15, FURY_SWIPES
 	db 19, QUICK_ATTACK
@@ -2369,7 +2370,7 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 2, TAIL_WHIP
-	db 3, RAIN_DANCE
+	db 7, RAGE
 	db 12, CLAMP
 	db 17, VICEGRIP
 	db 20, BITE
