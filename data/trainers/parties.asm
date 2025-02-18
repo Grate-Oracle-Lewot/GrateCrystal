@@ -2730,8 +2730,8 @@ BikerGroup:
 	db -1 ; end
 
 	; BIKER (7)
-	db "RILEY@", TRAINERTYPE_NORMAL
-	db 64, PARASECT
+	db "RILEY@", TRAINERTYPE_ITEM
+	db 64, PARASECT,   BIG_MUSHROOM
 	db -1 ; end
 
 	; BIKER (8)
