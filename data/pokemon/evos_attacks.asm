@@ -2271,7 +2271,7 @@ ChikoritaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, GROWL
-	db 3, SANDSTORM
+	db 3, HAIL
 	db 12, REFLECT
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
