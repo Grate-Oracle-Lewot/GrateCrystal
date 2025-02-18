@@ -7006,7 +7006,7 @@ ContactCuteCharm:
 
 GetWeatherTurns:
 ; Returns number of turns that user's weather moves should last in a.
-; 8 if holding Black Pearl (BIG_PEARL), 5 otherwise.
+; 8 if user's item has HELD_WEATHER_BOOST, 5 otherwise.
 ; Works for all weather moves: Rain Dance, Sunny Day, Sandstorm, Hail.
 	call GetUserItem
 	ld a, b
