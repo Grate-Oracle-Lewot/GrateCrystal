@@ -737,6 +737,12 @@ INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "engine/events/magikarp.asm"
 
 
+SECTION "Type Matchups", ROMX
+
+INCLUDE "data/types/type_matchups.asm"
+INCLUDE "data/types/inverse_type_matchups.asm"
+
+
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 
 ; The end of the ROM is taken up by checksums of the content, apparently used
