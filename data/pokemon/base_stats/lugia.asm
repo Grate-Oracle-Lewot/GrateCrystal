@@ -6,7 +6,7 @@
 	db ICE, DRAGON ; type
 	db 10 ; catch rate
 	db 220 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db BIG_PEARL, BIG_PEARL ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lugia/front.dimensions"
