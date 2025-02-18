@@ -1684,9 +1684,9 @@ GruntMGroup:
 
 GentlemanGroup:
 	; GENTLEMAN (1)
-	db "PRESTON@", TRAINERTYPE_NORMAL
-	db 25, GROWLITHE
-	db 25, VULPIX
+	db "PRESTON@", TRAINERTYPE_ITEM
+	db 25, GROWLITHE,  STARDUST
+	db 25, VULPIX,     STARDUST
 	db -1 ; end
 
 	; GENTLEMAN (2)
@@ -1696,8 +1696,8 @@ GentlemanGroup:
 
 	; GENTLEMAN (3)
 	db "GREGORY@", TRAINERTYPE_NORMAL
-	db 45, PIKACHU
-	db 45, AMPHAROS
+	db 45, PIKACHU,    STAR_PIECE
+	db 45, AMPHAROS,   STAR_PIECE
 	db -1 ; end
 
 	; GENTLEMAN (4)
