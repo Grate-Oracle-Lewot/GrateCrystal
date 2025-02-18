@@ -1034,22 +1034,22 @@ BattleCommand_Critical:
 	and a
 	ret z
 
+	call GetUserItem
+	ld hl, wBattleMonSpecies
 	ldh a, [hBattleTurn]
 	and a
-	ld hl, wEnemyMonItem
-	ld a, [wEnemyMonSpecies]
-	jr nz, .Item
-	ld hl, wBattleMonItem
-	ld a, [wBattleMonSpecies]
+	jr z, .Item
+	ld hl, wEnemyMonSpecies
 
 .Item:
+	ld a, [hl]
 	ld c, 0
 
 	cp CHANSEY
 	jr nz, .Blissey
 .Chansey:
-	ld a, [hl]
-	cp LUCKY_PUNCH
+	ld a, b
+	cp HELD_LUCKY_PUNCH
 	jr nz, .FocusEnergy
 	jr .PlusTwo
 
@@ -1060,8 +1060,8 @@ BattleCommand_Critical:
 .Farfetchd:
 	cp FARFETCH_D
 	jr nz, .FocusEnergy
-	ld a, [hl]
-	cp STICK
+	ld a, b
+	cp HELD_STICK
 	jr nz, .FocusEnergy
 
 .PlusTwo:
@@ -1104,7 +1104,7 @@ BattleCommand_Critical:
 	push bc
 	call GetUserItem
 	ld a, b
-	cp HELD_CRITICAL_UP ; Increased critical chance. Only Scope Lens has this.
+	cp HELD_CRITICAL_UP
 	pop bc
 	jr nz, .Tally
 
