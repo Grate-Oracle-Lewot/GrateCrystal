@@ -110,6 +110,11 @@ AI_Redundant:
 	bit SUBSTATUS_ENCORED, a
 	ret
 
+.MeanLook:
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	ret
+
 .Nightmare:
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_NIGHTMARE, a
@@ -192,17 +197,6 @@ AI_Redundant:
 	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
-
-.MeanLook:
-	ld a, [wBattleMonType1]
-	cp GHOST
-	jr z, .Redundant
-	ld a, [wBattleMonType2]
-	cp GHOST
-	jr z, .Redundant
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_CANT_RUN, a
-	ret
 
 .Sandstorm:
 	ld a, [wBattleWeather]
