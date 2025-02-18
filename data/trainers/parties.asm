@@ -1690,8 +1690,8 @@ GentlemanGroup:
 	db -1 ; end
 
 	; GENTLEMAN (2)
-	db "EDWARD@", TRAINERTYPE_NORMAL
-	db 42, PERSIAN
+	db "EDWARD@", TRAINERTYPE_ITEM
+	db 42, PERSIAN,    NUGGET
 	db -1 ; end
 
 	; GENTLEMAN (3)
@@ -1706,8 +1706,8 @@ GentlemanGroup:
 	db -1 ; end
 
 	; GENTLEMAN (5)
-	db "ALFRED@", TRAINERTYPE_NORMAL
-	db 26, NOCTOWL
+	db "ALFRED@", TRAINERTYPE_ITEM
+	db 26, NOCTOWL,    PEARL
 	db -1 ; end
 
 	; GENTLEMAN (6)
