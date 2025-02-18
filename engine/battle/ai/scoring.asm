@@ -94,6 +94,8 @@ AI_Status:
 	jr z, .poisonimmunity
 	cp EFFECT_LEECH_SEED
 	jr z, .leechseedimmunity
+	cp EFFECT_MEAN_LOOK
+	jr z, .arenatrapimmunity
 	cp EFFECT_PARALYZE
 	jr z, .typeimmunity
 
@@ -121,6 +123,15 @@ AI_Status:
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp GRASS
+	jr z, .immune
+	jr .typeimmunity
+
+.arenatrapimmunity
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp GHOST
 	jr z, .immune
 
 .typeimmunity
@@ -2265,7 +2276,10 @@ AI_Smart_HealBell:
 	ret
 
 AI_Smart_MeanLook:
-; The AI_Basic layer dismisses Mean Look if it's already in effect or if the player is Ghost-type and therefore immune.
+; Mean Look, Spider Web
+
+; The AI_Basic layer dismisses Mean Look if it's already in effect.
+; The AI_Status layer dismisses Mean Look if the player is Ghost-type and therefore immune.
 
 ; Dismiss this move if the player has only one Pokemon [remaining].
 	call AICheckLastPlayerMon
