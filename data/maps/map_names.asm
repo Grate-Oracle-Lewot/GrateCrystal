@@ -298,6 +298,8 @@ Cherrygrove_Map_Names: ; CHERRYGROVE
 	dw Cherrygrove_Map_Name9  ; ROUTE_30_BERRY_HOUSE
 	dw Cherrygrove_Map_Name10 ; ROUTE_31
 	dw Cherrygrove_Map_Name11 ; ROUTE_31_VIOLET_GATE
+	dw Cherrygrove_Map_Name12 ; ROUTE_47
+	dw Cherrygrove_Map_Name13 ; ROUTE_48
 	assert_table_length NUM_CHERRYGROVE_MAPS
 
 Violet_Map_Names: ; VIOLET
@@ -558,24 +560,28 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name92  ; TEAM_ROCKET_BASE_B1F
 	dw Dungeons_Map_Name93  ; TEAM_ROCKET_BASE_B2F
 	dw Dungeons_Map_Name94  ; TEAM_ROCKET_BASE_B3F
-	dw Dungeons_Map_Name95  ; ICE_PATH_1F
-	dw Dungeons_Map_Name96  ; ICE_PATH_B1F
-	dw Dungeons_Map_Name97  ; ICE_PATH_B2F_MAHOGANY_SIDE
-	dw Dungeons_Map_Name98  ; ICE_PATH_B2F_BLACKTHORN_SIDE
-	dw Dungeons_Map_Name99  ; ICE_PATH_B3F
-	dw Dungeons_Map_Name100 ; ICE_PATH_ARTICUNO_CHAMBER
-	dw Dungeons_Map_Name101 ; DRAGONS_DEN_1F
-	dw Dungeons_Map_Name102 ; DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name103 ; DRAGON_SHRINE
-	dw Dungeons_Map_Name104 ; TOHJO_FALLS
-	dw Dungeons_Map_Name105 ; MEW_ANTECHAMBER
-	dw Dungeons_Map_Name106 ; MEW_CHAMBER
-	dw Dungeons_Map_Name107 ; VICTORY_ROAD
-	dw Dungeons_Map_Name108 ; SILVER_CAVE_ROOM_1
-	dw Dungeons_Map_Name109 ; SILVER_CAVE_ROOM_2
-	dw Dungeons_Map_Name110 ; SILVER_CAVE_ROOM_3
-	dw Dungeons_Map_Name111 ; SILVER_CAVE_ITEM_ROOMS
-	dw Dungeons_Map_Name112 ; SILVER_CAVE_MOLTRES_CHAMBER
+	dw Dungeons_Map_Name95  ; ABANDONED_LAB_B1F
+	dw Dungeons_Map_Name96  ; ABANDONED_LAB_1F
+	dw Dungeons_Map_Name97  ; ABANDONED_LAB_2F
+	dw Dungeons_Map_Name98  ; ABANDONED_LAB_ROOF
+	dw Dungeons_Map_Name99  ; ICE_PATH_1F
+	dw Dungeons_Map_Name100 ; ICE_PATH_B1F
+	dw Dungeons_Map_Name101 ; ICE_PATH_B2F_MAHOGANY_SIDE
+	dw Dungeons_Map_Name102 ; ICE_PATH_B2F_BLACKTHORN_SIDE
+	dw Dungeons_Map_Name103 ; ICE_PATH_B3F
+	dw Dungeons_Map_Name104 ; ICE_PATH_ARTICUNO_CHAMBER
+	dw Dungeons_Map_Name105 ; DRAGONS_DEN_1F
+	dw Dungeons_Map_Name106 ; DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name107 ; DRAGON_SHRINE
+	dw Dungeons_Map_Name108 ; TOHJO_FALLS
+	dw Dungeons_Map_Name109 ; MEW_ANTECHAMBER
+	dw Dungeons_Map_Name110 ; MEW_CHAMBER
+	dw Dungeons_Map_Name111 ; VICTORY_ROAD
+	dw Dungeons_Map_Name112 ; SILVER_CAVE_ROOM_1
+	dw Dungeons_Map_Name113 ; SILVER_CAVE_ROOM_2
+	dw Dungeons_Map_Name114 ; SILVER_CAVE_ROOM_3
+	dw Dungeons_Map_Name115 ; SILVER_CAVE_ITEM_ROOMS
+	dw Dungeons_Map_Name116 ; SILVER_CAVE_MOLTRES_CHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 
 ; MAX LENGTH: 17 (preferred: 16)
@@ -947,6 +953,10 @@ Cherrygrove_Map_Name10: ; ROUTE_31
 	db "ROUTE 31@"
 Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
 	db "ROUTE 31 GATE@"
+Cherrygrove_Map_Name12: ; ROUTE_47
+	db "ROUTE 47@"
+Cherrygrove_Map_Name12: ; ROUTE_48
+	db "ROUTE 48@"
 
 Violet_Map_Name1: ; VIOLET_CITY
 	db "VIOLET CITY@"
@@ -1390,39 +1400,47 @@ Dungeons_Map_Name93: ; TEAM_ROCKET_BASE_B2F
 	db "ROCKET BASE B2@"
 Dungeons_Map_Name94: ; TEAM_ROCKET_BASE_B3F
 	db "ROCKET BASE B3@"
-Dungeons_Map_Name95: ; ICE_PATH_1F
+Dungeons_Map_Name95: ; ABANDONED_LAB_B1F
+	db "ABANDONED LAB B1@"
+Dungeons_Map_Name96: ; ABANDONED_LAB_1F
+	db "ABANDONED LAB 1F@"
+Dungeons_Map_Name97: ; ABANDONED_LAB_2F
+	db "ABANDONED LAB 2F@"
+Dungeons_Map_Name98: ; ABANDONED_LAB_ROOF
+	db "DESTROYED ROOF@"
+Dungeons_Map_Name99: ; ICE_PATH_1F
 	db "ICE PATH 1F@"
-Dungeons_Map_Name96: ; ICE_PATH_B1F
+Dungeons_Map_Name100: ; ICE_PATH_B1F
 	db "ICE PATH B1@"
-Dungeons_Map_Name97: ; ICE_PATH_B2F_MAHOGANY_SIDE
+Dungeons_Map_Name101: ; ICE_PATH_B2F_MAHOGANY_SIDE
 	db "ICE PATH B2 WEST@"
-Dungeons_Map_Name98: ; ICE_PATH_B2F_BLACKTHORN_SIDE
+Dungeons_Map_Name102: ; ICE_PATH_B2F_BLACKTHORN_SIDE
 	db "ICE PATH B2 EAST@"
-Dungeons_Map_Name99: ; ICE_PATH_B3F
+Dungeons_Map_Name103: ; ICE_PATH_B3F
 	db "ICE PATH B3@"
-Dungeons_Map_Name100: ; ICE_PATH_ARTICUNO_CHAMBER
+Dungeons_Map_Name104: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
-Dungeons_Map_Name101: ; DRAGONS_DEN_1F
+Dungeons_Map_Name105: ; DRAGONS_DEN_1F
 	db "DRAGON'S DEN 1F@"
-Dungeons_Map_Name102: ; DRAGONS_DEN_B1F
+Dungeons_Map_Name106: ; DRAGONS_DEN_B1F
 	db "DRAGON'S DEN B1@"
-Dungeons_Map_Name103: ; DRAGON_SHRINE
+Dungeons_Map_Name107: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
-Dungeons_Map_Name104: ; TOHJO_FALLS
+Dungeons_Map_Name108: ; TOHJO_FALLS
 	db "TOHJO FALLS@"
-Dungeons_Map_Name105: ; MEW_ANTECHAMBER
+Dungeons_Map_Name109: ; MEW_ANTECHAMBER
 	db "TOHJO GROTTO@"
-Dungeons_Map_Name106: ; MEW_CHAMBER
+Dungeons_Map_Name110: ; MEW_CHAMBER
 	db "????????????????@"
-Dungeons_Map_Name107: ; VICTORY_ROAD
+Dungeons_Map_Name111: ; VICTORY_ROAD
 	db "VICTORY ROAD@"
-Dungeons_Map_Name108: ; SILVER_CAVE_ROOM_1
+Dungeons_Map_Name112: ; SILVER_CAVE_ROOM_1
 	db "MT.SILVER FOYER@"
-Dungeons_Map_Name109: ; SILVER_CAVE_ROOM_2
+Dungeons_Map_Name113: ; SILVER_CAVE_ROOM_2
 	db "MT.SILVER FALLS@"
-Dungeons_Map_Name110: ; SILVER_CAVE_ROOM_3
+Dungeons_Map_Name114: ; SILVER_CAVE_ROOM_3
 	db "MT.SILVER SHAFT@"
-Dungeons_Map_Name111: ; SILVER_CAVE_ITEM_ROOMS
+Dungeons_Map_Name115: ; SILVER_CAVE_ITEM_ROOMS
 	db "MT.SILVER DEPTHS@"
-Dungeons_Map_Name112: ; SILVER_CAVE_MOLTRES_CHAMBER
+Dungeons_Map_Name116: ; SILVER_CAVE_MOLTRES_CHAMBER
 	db "MT.SILVER RUINS@"
