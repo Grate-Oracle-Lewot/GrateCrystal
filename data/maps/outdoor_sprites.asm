@@ -103,7 +103,7 @@ FuchsiaGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_BIKER
 	db SPRITE_BUG_CATCHER
-	db SPRITE_EUSINE
+	db SPRITE_BUGSY
 	; 9 of max 9 walking sprites
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_FRUIT_TREE
