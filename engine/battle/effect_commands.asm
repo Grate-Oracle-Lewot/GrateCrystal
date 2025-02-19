@@ -1216,13 +1216,19 @@ BattleCommand_Stab:
 	call GetBattleVar
 	and TYPE_MASK
 	ld b, a
+
 	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	jr z, .typeless
 	cp BATTLETYPE_INVERSE
 	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
+	jr .TypesLoop
+.typeless
+	ld hl, NoTypeMatchups
 
 .TypesLoop:
 	call GetNextTypeMatchupsByte
@@ -1349,13 +1355,19 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
+
 	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	jr z, .typeless
 	cp BATTLETYPE_INVERSE
 	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
+	jr .TypesLoop
+.typeless
+	ld hl, NoTypeMatchups
 
 .TypesLoop:
 	call GetNextTypeMatchupsByte
@@ -6789,7 +6801,7 @@ ContactStatic:
 .Static:
 	ld a, [wBattleType]
 	cp BATTLETYPE_INVERSE
-	jr z, .Inverse
+	jr nc, .NoImmunity
 
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -6804,7 +6816,7 @@ ContactStatic:
 	cp GROUND
 	ret z
 
-.Inverse:
+.NoImmunity:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	and a
