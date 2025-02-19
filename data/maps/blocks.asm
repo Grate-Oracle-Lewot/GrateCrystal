@@ -991,3 +991,21 @@ CeruleanCave2F_Blocks:
 
 CeruleanCaveB1F_Blocks:
 	INCBIN "maps/CeruleanCaveB1F.blk"
+
+Route47_Blocks:
+	INCBIN "maps/Route47.blk"
+
+Route48_Blocks:
+	INCBIN "maps/Route47.blk"
+
+AbandonedLabB1F_Blocks:
+	INCBIN "maps/AbandonedLabB1F.blk"
+
+AbandonedLab1F_Blocks:
+	INCBIN "maps/AbandonedLab1F.blk"
+
+AbandonedLab2F_Blocks:
+	INCBIN "maps/AbandonedLab2F.blk"
+
+AbandonedLabRoof_Blocks:
+	INCBIN "maps/AbandonedLabRoof.blk"
