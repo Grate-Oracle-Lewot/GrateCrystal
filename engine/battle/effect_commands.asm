@@ -6787,6 +6787,10 @@ ContactStatic:
 	ret nz
 
 .Static:
+	ld a, [wBattleType]
+	cp BATTLETYPE_INVERSE
+	jr z, .Inverse
+
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -6800,6 +6804,7 @@ ContactStatic:
 	cp GROUND
 	ret z
 
+.Inverse:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	and a
