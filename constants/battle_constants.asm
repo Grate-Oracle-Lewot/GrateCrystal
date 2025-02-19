@@ -97,6 +97,7 @@ SPDSPCDV_SHINY EQU $FF
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_SUICUNE
 	const BATTLETYPE_INVERSE
+	const BATTLETYPE_TYPELESS
 
 ; BattleVarPairs indexes (see home/battle_vars.asm)
 	const_def
