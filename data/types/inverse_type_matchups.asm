@@ -131,4 +131,5 @@ InverseTypeMatchups:
 	db GHOST,        FIGHTING,     NO_EFFECT
 	db DARK,         PSYCHIC_TYPE, NO_EFFECT
 
+NoTypeMatchups:
 	db -1 ; end
