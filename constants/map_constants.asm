@@ -330,8 +330,7 @@ ENDM
 	map_const DANCE_THEATRE,                                6,  7 ;  5
 	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  6
 	map_const WISE_TRIOS_ROOM,                              4,  4 ;  7
-	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ;  8
-	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
+	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
 	endgroup
 
 	newgroup OLIVINE                                        ; group 22
