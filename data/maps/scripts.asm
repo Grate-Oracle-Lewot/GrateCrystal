@@ -192,7 +192,6 @@ INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
 INCLUDE "maps/DanceTheatre.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
-INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
@@ -202,6 +201,7 @@ INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/Route2NorthGate.asm"
 INCLUDE "maps/Route2SouthGate.asm"
+INCLUDE "maps/BillsFamilysHouse.asm"
 
 
 SECTION "Map Scripts 12", ROMX
@@ -501,7 +501,6 @@ INCLUDE "maps/Lounge1F.asm"
 
 SECTION "Map Scripts 27", ROMX
 
-INCLUDE "maps/BillsFamilysHouse.asm"
 INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
