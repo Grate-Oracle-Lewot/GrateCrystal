@@ -342,7 +342,6 @@ TradeCenter_Blocks:
 	INCBIN "maps/TradeCenter.blk"
 
 EcruteakLugiaSpeechHouse_Blocks:
-EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
 	INCBIN "maps/House2.blk"
