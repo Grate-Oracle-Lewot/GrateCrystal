@@ -582,9 +582,9 @@ BattleTowerBlaine:
 BattleTowerBlue:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBlue
 
-	db MAROWAK
-	db THICK_CLUB
-	db SHADOW_CLAW, BONEMERANG, POISON_JAB, NIGHTMARE
+	db SANDSLASH
+	db BLACK_PEARL
+	db SANDSTORM, EARTHQUAKE, ICE_PUNCH, SPIKES
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -594,19 +594,19 @@ BattleTowerBlue:
 	bigdw 65535
 	bigdw 65535
 	dn 14, 13, 13, 14 ; DVs
-	db 24, 24, 24, 16 ; PP
+	db 24, 16, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 305 ; HP
-	bigdw 305 ; Max HP
-	bigdw 256 ; Atk
+	bigdw 335 ; HP
+	bigdw 335 ; Max HP
+	bigdw 296 ; Atk
 	bigdw 314 ; Def
-	bigdw 184 ; Spd
-	bigdw 196 ; SAtk
-	bigdw 256 ; SDef
-	db "MAROWAK@@@@"
+	bigdw 224 ; Spd
+	bigdw 186 ; SAtk
+	bigdw 206 ; SDef
+	db "SANDSLASH@@"
 
 	db NIDOKING
 	db KINGS_ROCK
@@ -634,9 +634,9 @@ BattleTowerBlue:
 	bigdw 246 ; SDef
 	db "NIDOKING@@@"
 
-	db DONPHAN
-	db LEFTOVERS
-	db RETURN, EARTHQUAKE, STRENGTH, MEGAHORN
+	db MAROWAK
+	db THICK_CLUB
+	db SHADOW_CLAW, BONEMERANG, POISON_JAB, NIGHTMARE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -646,19 +646,19 @@ BattleTowerBlue:
 	bigdw 65535
 	bigdw 65535
 	dn 14, 13, 13, 14 ; DVs
-	db 24, 16, 24, 8 ; PP
+	db 24, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 385 ; HP
-	bigdw 385 ; Max HP
-	bigdw 336 ; Atk
-	bigdw 334 ; Def
-	bigdw 194 ; Spd
-	bigdw 216 ; SAtk
-	bigdw 246 ; SDef
-	db "DONPHAN@@@@"
+	bigdw 305 ; HP
+	bigdw 305 ; Max HP
+	bigdw 256 ; Atk
+	bigdw 314 ; Def
+	bigdw 184 ; Spd
+	bigdw 196 ; SAtk
+	bigdw 256 ; SDef
+	db "MAROWAK@@@@"
 
 	assert_table_length 3
 
