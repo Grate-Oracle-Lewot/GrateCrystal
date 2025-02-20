@@ -513,13 +513,3 @@ INCLUDE "maps/MountMoon1F.asm"
 INCLUDE "maps/MountMoonB1F.asm"
 INCLUDE "maps/CeruleanCave1F.asm"
 INCLUDE "maps/CeruleanCave2F.asm"
-INCLUDE "maps/Route47.asm"
-INCLUDE "maps/Route48.asm"
-
-
-SECTION "Map Scripts 28", ROMX
-
-INCLUDE "maps/AbandonedLabB1F.asm"
-INCLUDE "maps/AbandonedLab1F.asm"
-INCLUDE "maps/AbandonedLab2F.asm"
-INCLUDE "maps/AbandonedLabRoof.asm"
