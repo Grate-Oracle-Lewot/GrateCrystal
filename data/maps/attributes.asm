@@ -254,8 +254,7 @@ ENDM
 	map_attributes Route26, ROUTE_26, $05, WEST
 	connection west, Route27, ROUTE_27, 45
 
-	map_attributes Route27, ROUTE_27, $35, SOUTH | WEST | EAST
-	connection south, Route48, ROUTE_48, -10
+	map_attributes Route27, ROUTE_27, $35, WEST | EAST
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
@@ -264,9 +263,8 @@ ENDM
 	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | SOUTH | EAST
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5
-	connection south, Route47, ROUTE_47, 3
 	connection east, Route29, ROUTE_29, 0
 
 	map_attributes Route30, ROUTE_30, $05, NORTH | SOUTH
@@ -276,14 +274,6 @@ ENDM
 	map_attributes Route31, ROUTE_31, $05, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 10
 	connection west, VioletCity, VIOLET_CITY, -9
-
-	map_attributes Route47, ROUTE_47, $53, NORTH | EAST
-	connection north, CherrygroveCity, CHERRYGROVE_CITY, -3
-	connection east, Route48, ROUTE_48, 0
-
-	map_attributes Route48, ROUTE_48, $53, NORTH | WEST
-	connection north, Route27, ROUTE_27, 10
-	connection west, Route47, ROUTE_47, 0
 
 	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
 	connection south, Route32, ROUTE_32, 0
@@ -706,10 +696,6 @@ ENDM
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $00, 0
 	map_attributes TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $00, 0
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $00, 0
-	map_attributes AbandonedLabB1F, ABANDONED_LAB_B1F, $00, 0
-	map_attributes AbandonedLab1F, ABANDONED_LAB_1F, $00, 0
-	map_attributes AbandonedLab2F, ABANDONED_LAB_2F, $00, 0
-	map_attributes AbandonedLabRoof, ABANDONED_LAB_ROOF, $00, 0
 	map_attributes IcePath1F, ICE_PATH_1F, $09, 0
 	map_attributes IcePathB1F, ICE_PATH_B1F, $19, 0
 	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $19, 0
