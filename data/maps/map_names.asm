@@ -369,8 +369,7 @@ Ecruteak_Map_Names: ; ECRUTEAK
 	dw Ecruteak_Map_Name5 ; DANCE_THEATRE
 	dw Ecruteak_Map_Name6 ; ECRUTEAK_TIN_TOWER_ENTRANCE
 	dw Ecruteak_Map_Name7 ; WISE_TRIOS_ROOM
-	dw Ecruteak_Map_Name8 ; ECRUTEAK_ITEMFINDER_HOUSE
-	dw Ecruteak_Map_Name9 ; ECRUTEAK_LUGIA_SPEECH_HOUSE
+	dw Ecruteak_Map_Name8 ; ECRUTEAK_LUGIA_SPEECH_HOUSE
 	assert_table_length NUM_ECRUTEAK_MAPS
 
 Olivine_Map_Names: ; OLIVINE
@@ -1061,9 +1060,7 @@ Ecruteak_Map_Name6: ; ECRUTEAK_TIN_TOWER_ENTRANCE
 	db "BELLCHIME SHRINE@"
 Ecruteak_Map_Name7: ; WISE_TRIOS_ROOM
 	db "BELLCHIME SHRINE@"
-Ecruteak_Map_Name8: ; ECRUTEAK_ITEMFINDER_HOUSE
-	db "ECRUTEAK HOUSE@"
-Ecruteak_Map_Name9: ; ECRUTEAK_LUGIA_SPEECH_HOUSE
+Ecruteak_Map_Name8: ; ECRUTEAK_LUGIA_SPEECH_HOUSE
 	db "ECRUTEAK HOUSE@"
 
 Olivine_Map_Name1: ; OLIVINE_CITY
