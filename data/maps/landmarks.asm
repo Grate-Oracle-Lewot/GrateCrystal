@@ -53,9 +53,6 @@ Landmarks:
 	landmark 132,  64, Route45Name
 	landmark 112,  72, DarkCaveName
 	landmark 124,  88, Route46Name
-	landmark 100, 124, Route47Name
-	landmark 128, 124, AbandonedLabName
-	landmark 148, 124, Route48Name
 	landmark 148,  68, SilverCaveName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
@@ -203,8 +200,6 @@ Route43Name:         db "ROUTE 43@"
 Route44Name:         db "ROUTE 44@"
 Route45Name:         db "ROUTE 45@"
 Route46Name:         db "ROUTE 46@"
-Route47Name:         db "ROUTE 47@"
-Route48Name:         db "ROUTE 48@"
 DarkCaveName:        db "DARK CAVE@"
 IlexForestName:      db "ILEX¯FOREST@"
 BurnedTowerName:     db "BURNED¯TOWER@"
@@ -212,7 +207,6 @@ FastShipName:        db "FAST SHIP@"
 ViridianForestName:  db "VIRIDIAN¯FOREST@"
 DiglettsCaveName:    db "DIGLETT'S¯CAVE@"
 TohjoFallsName:      db "TOHJO FALLS@"
-AbandonedLabName:    db "ABANDONED¯LAB@"
 UndergroundName:     db "UNDERGROUND@"
 BattleTowerName:     db "BATTLE¯TOWER@"
 SpecialMapName:      db "???@"
