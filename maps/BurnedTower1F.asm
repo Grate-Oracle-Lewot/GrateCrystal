@@ -338,8 +338,8 @@ BurnedTower1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 15, ECRUTEAK_CITY, 13
-	warp_event 10, 15, ECRUTEAK_CITY, 13
+	warp_event  9, 15, ECRUTEAK_CITY, 12
+	warp_event 10, 15, ECRUTEAK_CITY, 12
 	warp_event 10,  9, BURNED_TOWER_B1F, 1
 	warp_event  7, 15, BURNED_TOWER_B1F, 2
 
