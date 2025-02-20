@@ -261,8 +261,6 @@ ENDM
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const ROUTE_31,                                    20,  9 ; 10
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
-	map_const ROUTE_47,                                    30,  9 ; 12
-	map_const ROUTE_48,                                    20,  9 ; 13
 	endgroup
 
 	newgroup VIOLET                                         ; group 18
@@ -330,7 +328,8 @@ ENDM
 	map_const DANCE_THEATRE,                                6,  7 ;  5
 	map_const ECRUTEAK_TIN_TOWER_ENTRANCE,                 10,  9 ;  6
 	map_const WISE_TRIOS_ROOM,                              4,  4 ;  7
-	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
+	map_const ECRUTEAK_ITEMFINDER_HOUSE,                    4,  4 ;  8
+	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
 	endgroup
 
 	newgroup OLIVINE                                        ; group 22
@@ -514,28 +513,24 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ;  92
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ;  93
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ;  94
-	map_const ABANDONED_LAB_B1F,                           15, 14 ;  95
-	map_const ABANDONED_LAB_1F,                            15, 14 ;  96
-	map_const ABANDONED_LAB_2F,                            15, 14 ;  97
-	map_const ABANDONED_LAB_ROOF,                          20, 18 ;  98
-	map_const ICE_PATH_1F,                                 20, 18 ;  99
-	map_const ICE_PATH_B1F,                                10, 18 ; 100
-	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 101
-	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ; 102
-	map_const ICE_PATH_B3F,                                10,  9 ; 103
-	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ; 104
-	map_const DRAGONS_DEN_1F,                               5,  9 ; 105
-	map_const DRAGONS_DEN_B1F,                             20, 18 ; 106
-	map_const DRAGON_SHRINE,                                5,  5 ; 107
-	map_const TOHJO_FALLS,                                 15,  9 ; 108
-	map_const MEW_ANTECHAMBER,                              6, 12 ; 109
-	map_const MEW_CHAMBER,                                 10,  9 ; 110
-	map_const VICTORY_ROAD,                                10, 36 ; 111
-	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 112
-	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 113
-	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 114
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 115
-	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 10, 18 ; 116
+	map_const ICE_PATH_1F,                                 20, 18 ;  95
+	map_const ICE_PATH_B1F,                                10, 18 ;  96
+	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ;  97
+	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ;  98
+	map_const ICE_PATH_B3F,                                10,  9 ;  99
+	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ; 100
+	map_const DRAGONS_DEN_1F,                               5,  9 ; 101
+	map_const DRAGONS_DEN_B1F,                             20, 18 ; 102
+	map_const DRAGON_SHRINE,                                5,  5 ; 103
+	map_const TOHJO_FALLS,                                 15,  9 ; 104
+	map_const MEW_ANTECHAMBER,                              6, 12 ; 105
+	map_const MEW_CHAMBER,                                 10,  9 ; 106
+	map_const VICTORY_ROAD,                                10, 36 ; 107
+	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 108
+	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 109
+	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 110
+	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 111
+	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 10, 18 ; 112
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 28
