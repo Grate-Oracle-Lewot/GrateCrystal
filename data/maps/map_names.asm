@@ -955,7 +955,7 @@ Cherrygrove_Map_Name11: ; ROUTE_31_VIOLET_GATE
 	db "ROUTE 31 GATE@"
 Cherrygrove_Map_Name12: ; ROUTE_47
 	db "ROUTE 47@"
-Cherrygrove_Map_Name12: ; ROUTE_48
+Cherrygrove_Map_Name13: ; ROUTE_48
 	db "ROUTE 48@"
 
 Violet_Map_Name1: ; VIOLET_CITY
