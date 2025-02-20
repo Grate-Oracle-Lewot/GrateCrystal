@@ -15,7 +15,18 @@ EcruteakLugiaSpeechHouseYoungsterScript:
 	jumptextfaceplayer EcruteakLugiaSpeechHouseYoungsterText
 
 EcruteakHistoryBook:
-	jumptext EcruteakHistoryBookText
+	opentext
+	writetext EcruteakHistoryBookText1
+	yesorno
+	iftrue .ReadBook
+	closetext
+	end
+
+.ReadBook:
+	writetext EcruteakHistoryBookText2
+	waitbutton
+	closetext
+	end
 
 LugiaSpeechHouseRadio:
 	jumpstd Radio2Script
@@ -60,7 +71,14 @@ EcruteakLugiaSpeechHouseYoungsterText:
 	line "capitalism."
 	done
 
-EcruteakHistoryBookText:
+EcruteakHistoryBookText1:
+	text "HISTORY OF"
+	line "ECRUTEAK CITY"
+
+	para "Read it?"
+	done
+
+EcruteakHistoryBookText2:
 	text "In ECRUTEAK, there"
 	line "were two towers."
 
