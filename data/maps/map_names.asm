@@ -557,24 +557,24 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name92  ; TEAM_ROCKET_BASE_B1F
 	dw Dungeons_Map_Name93  ; TEAM_ROCKET_BASE_B2F
 	dw Dungeons_Map_Name94  ; TEAM_ROCKET_BASE_B3F
-	dw Dungeons_Map_Name99  ; ICE_PATH_1F
-	dw Dungeons_Map_Name100 ; ICE_PATH_B1F
-	dw Dungeons_Map_Name101 ; ICE_PATH_B2F_MAHOGANY_SIDE
-	dw Dungeons_Map_Name102 ; ICE_PATH_B2F_BLACKTHORN_SIDE
-	dw Dungeons_Map_Name103 ; ICE_PATH_B3F
-	dw Dungeons_Map_Name104 ; ICE_PATH_ARTICUNO_CHAMBER
-	dw Dungeons_Map_Name105 ; DRAGONS_DEN_1F
-	dw Dungeons_Map_Name106 ; DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name107 ; DRAGON_SHRINE
-	dw Dungeons_Map_Name108 ; TOHJO_FALLS
-	dw Dungeons_Map_Name109 ; MEW_ANTECHAMBER
-	dw Dungeons_Map_Name110 ; MEW_CHAMBER
-	dw Dungeons_Map_Name111 ; VICTORY_ROAD
-	dw Dungeons_Map_Name112 ; SILVER_CAVE_ROOM_1
-	dw Dungeons_Map_Name113 ; SILVER_CAVE_ROOM_2
-	dw Dungeons_Map_Name114 ; SILVER_CAVE_ROOM_3
-	dw Dungeons_Map_Name115 ; SILVER_CAVE_ITEM_ROOMS
-	dw Dungeons_Map_Name116 ; SILVER_CAVE_MOLTRES_CHAMBER
+	dw Dungeons_Map_Name95  ; ICE_PATH_1F
+	dw Dungeons_Map_Name96  ; ICE_PATH_B1F
+	dw Dungeons_Map_Name97  ; ICE_PATH_B2F_MAHOGANY_SIDE
+	dw Dungeons_Map_Name98  ; ICE_PATH_B2F_BLACKTHORN_SIDE
+	dw Dungeons_Map_Name99  ; ICE_PATH_B3F
+	dw Dungeons_Map_Name100 ; ICE_PATH_ARTICUNO_CHAMBER
+	dw Dungeons_Map_Name101 ; DRAGONS_DEN_1F
+	dw Dungeons_Map_Name102 ; DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name103 ; DRAGON_SHRINE
+	dw Dungeons_Map_Name104 ; TOHJO_FALLS
+	dw Dungeons_Map_Name105 ; MEW_ANTECHAMBER
+	dw Dungeons_Map_Name106 ; MEW_CHAMBER
+	dw Dungeons_Map_Name107 ; VICTORY_ROAD
+	dw Dungeons_Map_Name108 ; SILVER_CAVE_ROOM_1
+	dw Dungeons_Map_Name109 ; SILVER_CAVE_ROOM_2
+	dw Dungeons_Map_Name110 ; SILVER_CAVE_ROOM_3
+	dw Dungeons_Map_Name111 ; SILVER_CAVE_ITEM_ROOMS
+	dw Dungeons_Map_Name112 ; SILVER_CAVE_MOLTRES_CHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 
 ; MAX LENGTH: 17 (preferred: 16)
