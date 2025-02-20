@@ -90,22 +90,6 @@ JohtoWaterWildMons:
 	db 20, GYARADOS
 	end_water_wildmons
 
-	def_water_wildmons ROUTE_47
-	db 2 percent ; encounter rate
-	db 20, TENTACOOL
-	db 20, SEEL
-	db 20, MANTINE
-	db 20, CASTAWEIGH
-	end_water_wildmons
-
-	def_water_wildmons ROUTE_48
-	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 20, SEEL
-	db 20, MANTINE
-	db 20, CASTAWEIGH
-	end_water_wildmons
-
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
 	db 2 percent ; encounter rate
 	db 15, MAGIKARP
