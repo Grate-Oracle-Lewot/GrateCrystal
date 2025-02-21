@@ -256,6 +256,7 @@ OaksLab_MapEvents:
 	def_warp_events
 	warp_event  4, 11, PALLET_TOWN, 3
 	warp_event  5, 11, PALLET_TOWN, 3
+	warp_event  9, 10, OAKS_LAB_2F, 1
 
 	def_coord_events
 
