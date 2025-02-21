@@ -305,8 +305,8 @@ StdBattleTextboxCantMoveEndTurn:
 CantMoveEndTurn:
 	call CantMove
 EndTurn:
-	xor a
-	ld [wSubstituteJustBroke], a
+	ld hl, wEffectCarryover
+	res SUBSTITUTE_JUST_BROKE, [hl]
 
 	ld a, $1
 	ld [wTurnEnded], a
@@ -2270,7 +2270,6 @@ BattleCommand_CriticalText:
 
 ; If there is no message to be printed, wait 20 frames.
 	ld a, [wCriticalHit]
-	ld [wCriticalRage], a
 	and a
 	jr z, .wait
 
@@ -2285,10 +2284,17 @@ BattleCommand_CriticalText:
 	ld l, a
 	call StdBattleTextbox
 
+	ld hl, wEffectCarryover
+	set CRITICAL_RAGE, [hl]
+
 	xor a
 	ld [wCriticalHit], a
+	jr .done
 
 .wait
+	ld hl, wEffectCarryover
+	res CRITICAL_RAGE, [hl]
+.done
 	ld c, 20
 	jp DelayFrames
 
@@ -2431,8 +2437,8 @@ BattleCommand_BuildOpponentRage:
 	ld [de], a
 
 ; Build rage again if the move got a critical hit.
-	ld a, [wCriticalRage]
-	and a
+	ld hl, wEffectCarryover
+	bit CRITICAL_RAGE, [hl]
 	jr z, .no_crit
 	ld a, [de]
 	inc a
@@ -2448,8 +2454,10 @@ BattleCommand_BuildOpponentRage:
 	ld hl, RageBuildingText
 
 .finish
-	xor a
-	ld [wCriticalRage], a
+	push hl
+	ld hl, wEffectCarryover
+	res CRITICAL_RAGE, [hl]
+	pop hl
 
 	call StdBattleTextbox
 	; fallthrough
@@ -2490,8 +2498,8 @@ BattleCommand_RageDamage:
 	ret
 
 EndMoveEffect:
-	xor a
-	ld [wSubstituteJustBroke], a
+	ld hl, wEffectCarryover
+	res SUBSTITUTE_JUST_BROKE, [hl]
 
 	ld a, [wBattleScriptBufferAddress]
 	ld l, a
@@ -3538,8 +3546,8 @@ DoSubstituteDamage:
 	jr nc, .done
 
 .broke
-	ld a, 1
-	ld [wSubstituteJustBroke], a
+	ld hl, wEffectCarryover
+	set SUBSTITUTE_JUST_BROKE, [hl]
 
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVarAddr
@@ -6765,8 +6773,8 @@ BattleCommand_HeldFlinch:
 	call CheckSubstituteOpp
 	ret nz
 
-	ld a, [wSubstituteJustBroke]
-	and a
+	ld hl, wEffectCarryover
+	bit SUBSTITUTE_JUST_BROKE, [hl]
 	ret nz
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -6979,8 +6987,8 @@ BattleCommand_CheckContact:
 	call CheckSubstituteOpp
 	ret nz
 
-	ld a, [wSubstituteJustBroke]
-	and a
+	ld hl, wEffectCarryover
+	bit SUBSTITUTE_JUST_BROKE, [hl]
 	ret nz
 
 	ld a, BATTLE_VARS_MOVE_ANIM
