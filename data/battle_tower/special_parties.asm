@@ -583,7 +583,7 @@ BattleTowerBlue:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBlue
 
 	db SANDSLASH
-	db BLACK_PEARL
+	db BIG_PEARL
 	db SANDSTORM, EARTHQUAKE, ICE_PUNCH, SPIKES
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
