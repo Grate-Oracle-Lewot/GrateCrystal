@@ -47,10 +47,11 @@ ENDM
 	newgroup PALLET                                         ; group  2
 	map_const PALLET_TOWN,                                 10,  9 ;  1
 	map_const OAKS_LAB,                                     5,  6 ;  2
-	map_const REDS_HOUSE_1F,                                4,  4 ;  3
-	map_const REDS_HOUSE_2F,                                4,  4 ;  4
-	map_const BLUES_HOUSE,                                  4,  4 ;  5
-	map_const ROUTE_1,                                     10, 18 ;  6
+	map_const OAKS_LAB_2F,                                 15, 14 ;  3
+	map_const REDS_HOUSE_1F,                                4,  4 ;  4
+	map_const REDS_HOUSE_2F,                                4,  4 ;  5
+	map_const BLUES_HOUSE,                                  4,  4 ;  6
+	map_const ROUTE_1,                                     10, 18 ;  7
 	endgroup
 
 	newgroup VIRIDIAN                                       ; group  3
