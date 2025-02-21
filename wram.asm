@@ -491,14 +491,14 @@ wPlayerTurnsTaken:: db
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
 
-wSubstituteJustBroke:: db
-; Used for King's Rock flinch, Static, and Cute Charm.
-; Stops them from triggering off of an attack that just broke a Substitute.
-; Other effects check for the Substitute before damaging it, and thus don't need this.
+wEffectCarryover:: db
+; bit
+; 0 SUBSTITUTE_JUST_BROKE: prevents flinch, Static, Cute Charm
+; 1 PERISH_TRAP: enemy was Mean Looked, played switched, enemy can't switch same turn
+; 2 CRITICAL_RAGE: carries crit status through to BuildOpponentRage
+; 3-7 unused
 
-wCriticalRage:: db
-; Used to preserve crit status through to BattleCommand_BuildOpponentRage.
-; There's undoubtedly a way to do this without eating a new byte but oh well.
+	ds 1
 
 wCurPlayerMove:: db
 wCurEnemyMove::  db
