@@ -221,6 +221,12 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const SCREENS_LIGHT_SCREEN
 	const SCREENS_REFLECT
 
+; wEffectCarryover bit flags
+	const_def
+	const SUBSTITUTE_JUST_BROKE
+	const PERISH_TRAP
+	const CRITICAL_RAGE
+
 ; values in wBattleWeather
 	const_def
 	const WEATHER_NONE
