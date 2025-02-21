@@ -889,7 +889,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
-	dbw EFFECT_SPIKES,           AI_Smart_EvasionDown
+	dbw EFFECT_SPIKES,           AI_Smart_Spikes
 	dbw EFFECT_FORESIGHT,        AI_Smart_Foresight
 	dbw EFFECT_PERISH_SONG,      AI_Smart_PerishSong
 	dbw EFFECT_SANDSTORM,        AI_Smart_Sandstorm
@@ -3421,6 +3421,14 @@ AI_Smart_AccuracyDown_Dismiss:
 ; No move exists with EFFECT_ACCURACY_DOWN_2, only EFFECT_ACCURACY_DOWN.
 	ld a, [wPlayerAccLevel]
 	jr AI_Smart_StatDown
+
+AI_Smart_Spikes:
+; Do nothing if the player does not already have Spikes around them.
+; Else, dismiss this move if the player has only one Pokemon [remaining] and its Evasion is already minimized.
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	ret z
+	; fallthrough
 
 AI_Smart_EvasionDown:
 ; No move exists with EFFECT_EVASION_DOWN_2, only EFFECT_EVASION_DOWN.
