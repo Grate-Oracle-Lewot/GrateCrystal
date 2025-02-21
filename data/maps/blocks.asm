@@ -990,3 +990,6 @@ CeruleanCave2F_Blocks:
 
 CeruleanCaveB1F_Blocks:
 	INCBIN "maps/CeruleanCaveB1F.blk"
+
+OaksLab2F_Blocks:
+	INCBIN "maps/OaksLab2F.blk"
