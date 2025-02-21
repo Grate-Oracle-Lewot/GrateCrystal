@@ -9,7 +9,7 @@ OaksLab2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-  warp_event 27, 24, OAKS_LAB, 3
+	warp_event 27, 24, OAKS_LAB, 3
 
 	def_coord_events
 
