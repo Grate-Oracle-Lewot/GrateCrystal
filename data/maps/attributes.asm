@@ -379,6 +379,7 @@ ENDM
 	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
 	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
 	map_attributes OaksLab, OAKS_LAB, $00, 0
+	map_attributes OaksLab2F, OAKS_LAB_2F, $00, 0
 	map_attributes RedsHouse1F, REDS_HOUSE_1F, $00, 0
 	map_attributes RedsHouse2F, REDS_HOUSE_2F, $00, 0
 	map_attributes BluesHouse, BLUES_HOUSE, $00, 0
