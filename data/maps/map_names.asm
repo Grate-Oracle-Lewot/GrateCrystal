@@ -69,10 +69,11 @@ Pallet_Map_Names: ; PALLET
 	table_width 2, Pallet_Map_Names
 	dw Pallet_Map_Name1 ; PALLET_TOWN
 	dw Pallet_Map_Name2 ; OAKS_LAB
-	dw Pallet_Map_Name3 ; REDS_HOUSE_1F
-	dw Pallet_Map_Name4 ; REDS_HOUSE_2F
-	dw Pallet_Map_Name5 ; BLUES_HOUSE
-	dw Pallet_Map_Name6 ; ROUTE_1
+	dw Pallet_Map_Name3 ; OAKS_LAB_2F
+	dw Pallet_Map_Name4 ; REDS_HOUSE_1F
+	dw Pallet_Map_Name5 ; REDS_HOUSE_2F
+	dw Pallet_Map_Name6 ; BLUES_HOUSE
+	dw Pallet_Map_Name7 ; ROUTE_1
 	assert_table_length NUM_PALLET_MAPS
 
 Viridian_Map_Names: ; VIRIDIAN
@@ -592,14 +593,16 @@ Cable_Club_Map_Name5: ; MOBILE_BATTLE_ROOM
 Pallet_Map_Name1: ; PALLET_TOWN
 	db "PALLET TOWN@"
 Pallet_Map_Name2: ; OAKS_LAB
-	db "PROF. OAK'S LAB@"
-Pallet_Map_Name3: ; REDS_HOUSE_1F
+	db "PROF.OAK'S LAB 1F@"
+Pallet_Map_Name3: ; OAKS_LAB
+	db "PROF.OAK'S LAB 2F@"
+Pallet_Map_Name4: ; REDS_HOUSE_1F
 	db "RED'S HOUSE 1F@"
-Pallet_Map_Name4: ; REDS_HOUSE_2F
+Pallet_Map_Name5: ; REDS_HOUSE_2F
 	db "RED'S HOUSE 2F@"
-Pallet_Map_Name5: ; BLUES_HOUSE
+Pallet_Map_Name6: ; BLUES_HOUSE
 	db "BLUE'S HOUSE@"
-Pallet_Map_Name6: ; ROUTE_1
+Pallet_Map_Name7: ; ROUTE_1
 	db "ROUTE 1@"
 
 Viridian_Map_Name1: ; VIRIDIAN_CITY
