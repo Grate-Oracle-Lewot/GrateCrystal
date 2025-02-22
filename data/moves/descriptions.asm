@@ -572,7 +572,7 @@ PoisonpowderDescription:
 	next "powder.@"
 
 StunSporeDescription:
-	db   "Scatters paralyzing"
+	db   "Scatters paralytic"
 	next "powder.@"
 
 SleepPowderDescription:
