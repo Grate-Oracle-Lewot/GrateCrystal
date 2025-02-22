@@ -16,6 +16,10 @@ AI_SwitchOrTryItem:
 	bit SUBSTATUS_CANT_RUN, a
 	jp nz, AI_TryItem
 
+	ld a, [wEffectCarryover]
+	bit PERISH_TRAP, a
+	jp nz, AI_TryItem
+
 	ld a, [wEnemyWrapCount]
 	and a
 	jp nz, AI_TryItem
