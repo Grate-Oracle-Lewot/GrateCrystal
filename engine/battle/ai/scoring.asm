@@ -2891,18 +2891,10 @@ AI_Smart_Blizzard:
 	ret
 
 AI_Smart_Thunder:
-; Do nothing if the player is Ground-type and therefore immune.
-	ld a, [wBattleMonType1]
-	cp GROUND
-	ret z
-	ld a, [wBattleMonType2]
-	cp GROUND
-	ret z
-
-; Otherwise, maybe encourage this move if the player is flying...
+; Maybe encourage this move if the player is flying...
 	call AI_Smart_Gust
 
-; ...and greatly encourage this move in rain.
+; ...and greatly encourage this move in the rain.
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret nz
