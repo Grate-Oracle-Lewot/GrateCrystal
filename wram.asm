@@ -494,7 +494,7 @@ wEnemySubstituteHP::  db
 wEffectCarryover:: db
 ; bit
 ; 0 SUBSTITUTE_JUST_BROKE: prevents flinch, Static, Cute Charm
-; 1 PERISH_TRAP: enemy was Mean Looked, played switched, enemy can't switch same turn
+; 1 PERISH_TRAP: enemy was Mean Looked, player switched, enemy can't switch same turn
 ; 2 CRITICAL_RAGE: carries crit status through to BuildOpponentRage
 ; 3-7 unused
 
