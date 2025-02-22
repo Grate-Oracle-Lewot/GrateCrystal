@@ -4305,7 +4305,11 @@ endr
 	ld [wPlayerWrapCount], a
 	ld [wPlayerTurnsTaken], a
 	ld hl, wEnemySubStatus5
+	bit SUBSTATUS_CANT_RUN, [hl]
+	ret z
 	res SUBSTATUS_CANT_RUN, [hl]
+	ld hl, wEffectCarryover
+	set PERISH_TRAP, [hl]
 	ret
 
 BreakAttraction:
