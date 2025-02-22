@@ -2437,8 +2437,8 @@ BattleCommand_BuildOpponentRage:
 	ld [de], a
 
 ; Build rage again if the move got a critical hit.
-	ld hl, wEffectCarryover
-	bit CRITICAL_RAGE, [hl]
+	ld a, [wEffectCarryover]
+	bit CRITICAL_RAGE, a
 	jr z, .no_crit
 	ld a, [de]
 	inc a
@@ -6773,8 +6773,8 @@ BattleCommand_HeldFlinch:
 	call CheckSubstituteOpp
 	ret nz
 
-	ld hl, wEffectCarryover
-	bit SUBSTITUTE_JUST_BROKE, [hl]
+	ld a, [wEffectCarryover]
+	bit SUBSTITUTE_JUST_BROKE, a
 	ret nz
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -6987,8 +6987,8 @@ BattleCommand_CheckContact:
 	call CheckSubstituteOpp
 	ret nz
 
-	ld hl, wEffectCarryover
-	bit SUBSTITUTE_JUST_BROKE, [hl]
+	ld a, [wEffectCarryover]
+	bit SUBSTITUTE_JUST_BROKE, a
 	ret nz
 
 	ld a, BATTLE_VARS_MOVE_ANIM
