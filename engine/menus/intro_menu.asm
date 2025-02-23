@@ -1118,15 +1118,6 @@ TitleScreenMain:
 	inc [hl]
 	ret
 
-.reset_clock
-	ld a, TITLESCREENOPTION_RESET_CLOCK
-	ld [wTitleScreenSelectedOption], a
-
-; Return to the intro sequence.
-	ld hl, wJumptableIndex
-	set 7, [hl]
-	ret
-
 TitleScreenEnd:
 ; Wait until the music is done fading.
 
@@ -1153,7 +1144,7 @@ ResetClock:
 	farcall _ResetClock
 	jp Init
 
-UpdateTitleTrailSprite: ; unreferenced
+UpdateTitleTrailSprite: ; leftover from GS intro
 	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.
 	ld a, [wTitleScreenTimer]
 	and %00000011
