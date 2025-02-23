@@ -1072,14 +1072,6 @@ TitleScreenMain:
 	dec hl
 	ld [hl], e
 
-; Save data can be deleted by pressing B.
-	call GetJoypad
-	ld hl, hJoyDown
-	ld a, [hl]
-	and B_BUTTON
-	cp  B_BUTTON
-	jr z, .delete_save_data
-
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
@@ -1089,12 +1081,6 @@ TitleScreenMain:
 
 .incave
 	ld a, TITLESCREENOPTION_MAIN_MENU
-	jr .done
-
-.delete_save_data
-	ld a, TITLESCREENOPTION_DELETE_SAVE_DATA
-
-.done
 	ld [wTitleScreenSelectedOption], a
 
 ; Return to the intro sequence.
