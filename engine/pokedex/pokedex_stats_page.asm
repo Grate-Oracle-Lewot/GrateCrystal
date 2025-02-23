@@ -455,7 +455,7 @@ Pokedex_Get_GenderRatio::
 .GR_MostMale
 	db "7♂:1♀@"
 .GR_Unknown_text
-	db "Unknown"
+	db "Unknown@"
 
 Pokedex_PrintHatchSteps:
 ; wBaseEggSteps
