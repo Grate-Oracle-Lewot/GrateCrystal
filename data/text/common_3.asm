@@ -756,10 +756,6 @@ _MobileStadiumSuccessText::
 	para ""
 	done
 
-_MainMenuTimeUnknownText::
-	text "Clock time unknown"
-	done
-
 _DeleteSavedLoginPasswordText::
 	text "Delete the saved"
 	line "LOG-IN PASSWORD?"
