@@ -21,26 +21,13 @@ _OakText7::
 	line "INDIGO PLATEAU."
 	done
 
-_ClockTimeMayBeWrongText::
-	text "Please reset the"
-	line "clock's time."
-	prompt
-
 _ClockSetWithControlPadText::
-	text "Set with the"
-	line "Control Pad."
-
-	para "Confirm: A Button"
-	line "Cancel:  B Button"
+	text "Please set the"
+	line "clock's time."
 	done
 
 _ClockIsThisOKText::
 	text "Is this OK?"
-	done
-
-_ClockHasResetText::
-	text "The clock has been"
-	line "reset."
 	done
 
 _LinkTimeoutText::
@@ -917,14 +904,6 @@ _PhoneJustTalkToThemText::
 _PhoneThankYouText::
 	text "Thank you!"
 	done
-
-_PasswordAskResetText::
-	text "You will be asked"
-	line "to set the clock"
-
-	para "when you select"
-	line "CONTINUE."
-	prompt
 
 _PasswordAskResetClockText::
 	text "Reset the clock?"
