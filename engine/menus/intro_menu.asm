@@ -1080,20 +1080,6 @@ TitleScreenMain:
 	cp  B_BUTTON
 	jr z, .delete_save_data
 
-	; To bring up the clock reset dialog, press Select.
-	ldh a, [hClockResetTrigger]
-	cp $34
-	jr z, .reset_clock
-
-	ld a, [hl]
-	and SELECT
-	cp  SELECT
-	jr nz, .check_start
-
-	ld a, $34
-	ldh [hClockResetTrigger], a
-	jr .check_start
-
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
