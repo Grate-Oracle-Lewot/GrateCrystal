@@ -37,8 +37,6 @@ ENDM
 
 RestartClock:
 ; If we're here, we had an RTC overflow.
-	ld hl, .ClockTimeMayBeWrongText
-	call PrintText
 	ld hl, wOptions
 	ld a, [hl]
 	push af
@@ -54,10 +52,6 @@ RestartClock:
 	ld [hl], b
 	ld c, a
 	ret
-
-.ClockTimeMayBeWrongText:
-	text_far _ClockTimeMayBeWrongText
-	text_end
 
 .ClockSetWithControlPadText:
 	text_far _ClockSetWithControlPadText
@@ -97,9 +91,6 @@ RestartClock:
 	ld [wStringBuffer2 + 3], a
 	call InitTime
 	call .PrintTime
-	ld hl, .ClockHasResetText
-	call PrintText
-	call WaitPressAorB_BlinkCursor
 	xor a ; FALSE
 	ret
 
@@ -109,10 +100,6 @@ RestartClock:
 
 .ClockIsThisOKText:
 	text_far _ClockIsThisOKText
-	text_end
-
-.ClockHasResetText:
-	text_far _ClockHasResetText
 	text_end
 
 .joy_loop
