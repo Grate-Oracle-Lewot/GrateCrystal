@@ -904,9 +904,9 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,          AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
-	dbw EFFECT_MORNING_SUN,      AI_Smart_Heal
-	dbw EFFECT_SYNTHESIS,        AI_Smart_Heal
-	dbw EFFECT_MOONLIGHT,        AI_Smart_Heal
+	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
+	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
+	dbw EFFECT_MOONLIGHT,        AI_Smart_Moonlight
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
@@ -1501,6 +1501,37 @@ AI_Smart_BatonPass:
 	ret c
 	inc [hl]
 	ret
+
+AI_Smart_MorningSun:
+	ld b, MORN_F
+	jr AI_Smart_TimeWeatherHeal
+
+AI_Smart_Synthesis:
+	ld b, DAY_F
+	jr AI_Smart_TimeWeatherHeal
+
+AI_Smart_Moonlight:
+	ld b, NITE_F
+	; fallthrough
+
+AI_Smart_TimeWeatherHeal:
+; Encourage this move in Harsh Sunlight.
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .encourage
+
+; If no sun, encourage this move at the appropriate time of day.
+	ld a, [wTimeOfDay]
+	cp b
+	jr z, .encourage
+
+; Discourage this move if no sun and no favorable time of day.
+	inc [hl]
+	jr AI_Smart_Heal
+
+.encourage
+	dec [hl]
+	; fallthrough
 
 AI_Smart_Heal:
 ; Recover, Softboiled, Milk Drink, Morning Sun, Synthesis, Moonlight, and Rest
