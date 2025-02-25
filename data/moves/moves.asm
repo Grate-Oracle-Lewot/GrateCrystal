@@ -122,7 +122,7 @@ Moves:
 	move MINIMIZE,     EFFECT_EVASION_UP,          0, FAIRY,        STATUS,   100, 20,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, FIRE,         STATUS,   100, 15,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,        STATUS,   100, 10,   0
-	move SCALD,        EFFECT_BURN_HIT,           80, WATER,        SPECIAL,  100, 15,  33
+	move SCALD,        EFFECT_BURN_HIT,           80, WATER,        SPECIAL,  100, 15,  30
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       STATUS,   100, 30,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC_TYPE, STATUS,   100, 20,   0
 	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE, STATUS,   100, 10,   0
