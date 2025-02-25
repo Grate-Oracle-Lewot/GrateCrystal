@@ -270,7 +270,7 @@ BattleMonMenu:
 
 .MenuHeader:
 	db 0 ; flags
-	menu_coords 11, 11, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 11, 9, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
@@ -279,4 +279,5 @@ BattleMonMenu:
 	db 3 ; items
 	db "SWITCH@"
 	db "STATS@"
+	db "MOVES@"
 	db "CANCEL@"
