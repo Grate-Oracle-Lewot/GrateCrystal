@@ -159,7 +159,7 @@ CreditsStringsPointers:
 .KeitaNakamura:       db "   aljohnston112@"          ; "なかむら　けいた@"
 .HirotakaUemura:      db "   Daniel Shumway@"         ; "うえむら　ひろたか@"
 .HiroakiTamura:       db "     Caverns4@"             ; "たむら　ひろあき@"
-.NoriakiSakaguchi:    db "     Lhivorde@"             ; "さかぐち　のりあき@"
+.NoriakiSakaguchi:    db " Lhivorde     MOLLY@"       ; "さかぐち　のりあき@"
 .MiyukiSato:          db " RaJa239    DeeDeeG@"       ; "さとう　みゆき@"
 .GakuziNomoto:        db "    AJ Fontaine@"           ; "のもと　がくじ@"
 .AiMashima:           db "   melthelesbian@"          ; "ましま　あい@"
