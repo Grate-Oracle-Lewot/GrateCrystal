@@ -5301,7 +5301,9 @@ BattleMenuPKMN_Loop:
 	jp z, TryPlayerSwitch
 	cp $2 ; STATS
 	jr z, .Stats
-	cp $3 ; CANCEL
+	cp $3 ; MOVES
+	jr z, .Moves
+	cp $4 ; CANCEL
 	jr z, .Cancel
 	jr .loop
 
@@ -5316,12 +5318,21 @@ BattleMenuPKMN_Loop:
 	jr c, .Cancel
 	jr BattleMenuPKMN_ReturnFromStats
 
+.Moves:
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .Cancel
+	farcall ManagePokemonMoves
+	jp BattleMenuPKMN_ReturnFromStats
+
 .Cancel:
 	call ClearSprites
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
 	call CloseWindow
+	call GetBattleMonBackpic
+	call WaitBGMap
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
 	call SetPalettes
