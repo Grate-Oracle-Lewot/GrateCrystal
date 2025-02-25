@@ -417,6 +417,8 @@ Lucas Wright - Yanmega and Whimsicott frontsprites
 
 SCMidna - Unown ! and ? sprites and animations
 
+MOLLY - Lorelei trainer sprite
+
 Tom Wang - male player running frames
 
 Seasick/Mauve Sea - female player running frames, Mary sprites
