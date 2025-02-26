@@ -1520,12 +1520,16 @@ AI_Smart_TimeWeatherHeal:
 	cp WEATHER_SUN
 	jr z, .encourage
 
-; If no sun, encourage this move at the appropriate time of day.
+; Discourage this move in Rain, Sandstorm, or Hail.
+	and a
+	jr nz, .discourage
+
+; If no weather, encourage this move at the appropriate time of day.
 	ld a, [wTimeOfDay]
 	cp b
 	jr z, .encourage
 
-; Discourage this move if no sun and no favorable time of day.
+.discourage
 	inc [hl]
 	jr AI_Smart_Heal
 
