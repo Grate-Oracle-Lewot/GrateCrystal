@@ -1073,13 +1073,12 @@ TitleScreenMain:
 	ld [hl], e
 
 ; Press Start or A to start the game.
-.check_start
+	call GetJoypad
+	ld hl, hJoyDown
 	ld a, [hl]
 	and START | A_BUTTON
-	jr nz, .incave
-	ret
+	ret z
 
-.incave
 	ld a, TITLESCREENOPTION_MAIN_MENU
 	ld [wTitleScreenSelectedOption], a
 
