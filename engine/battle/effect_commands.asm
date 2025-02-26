@@ -6329,11 +6329,11 @@ BattleCommand_TimeBasedHealContinue:
 
 .Weather:
 	ld a, [wBattleWeather]
-	and a
+	cp WEATHER_NONE
 	jr z, .Heal
 
 ; x2 in sun
-; /2 in rain/sandstorm
+; /2 in rain/sandstorm/hail
 	inc c
 	cp WEATHER_SUN
 	jr z, .Heal
