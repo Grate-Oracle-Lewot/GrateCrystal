@@ -337,6 +337,9 @@ endr
 	ret
 
 .DrawMenuClockTextBox:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ret nz
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call Textbox
