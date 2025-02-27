@@ -5216,6 +5216,7 @@ BattleMenu_Pack:
 	ld a, PARK_BALL
 	ld [wCurItem], a
 	call DoItemEffect
+	jr .UseItem
 
 .didnt_use_item
 	call ClearPalettes
