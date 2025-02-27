@@ -18,8 +18,8 @@ StartMenu::
 
 	farcall ReanchorBGMap_NoOAMUpdate
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ld hl, .MenuHeader
 	jr z, .GotMenuData
 	ld hl, .ContestMenuHeader
@@ -227,8 +227,8 @@ StartMenu::
 	ld c, a
 	decoord 1, 1
 	farcall PrintHoursMins
-	ld hl, wOptions2
-	bit LEVEL_CAPS_ON_OFF, [hl]
+	ld a, [wOptions2]
+	bit LEVEL_CAPS_ON_OFF, a
 	jr z, .DoneClockText
 	hlcoord 1, 4
 	ld de, .CapString
@@ -265,8 +265,8 @@ endr
 	ld [wWhichIndexSet], a
 	call .FillMenuList
 
-	ld hl, wStatusFlags
-	bit STATUSFLAGS_POKEDEX_F, [hl]
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_POKEDEX_F, a
 	jr z, .no_pokedex
 	ld a, STARTMENUITEM_POKEDEX
 	call .AppendMenuList
@@ -282,15 +282,15 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_pack
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	jr nz, .no_pack
 	ld a, STARTMENUITEM_PACK
 	call .AppendMenuList
 .no_pack
 
-	ld hl, wPokegearFlags
-	bit POKEGEAR_OBTAINED_F, [hl]
+	ld a, [wPokegearFlags]
+	bit POKEGEAR_OBTAINED_F, a
 	jr z, .no_pokegear
 	ld a, STARTMENUITEM_POKEGEAR
 	call .AppendMenuList
@@ -302,8 +302,8 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_save
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ld a, STARTMENUITEM_QUIT
 	jr nz, .write
 	ld a, STARTMENUITEM_SAVE
@@ -337,39 +337,37 @@ endr
 	ret
 
 .DrawMenuClockTextBox:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call Textbox
-	ld hl, wOptions2
-	bit LEVEL_CAPS_ON_OFF, [hl]
+	ld a, [wOptions2]
+	bit LEVEL_CAPS_ON_OFF, a
 	ret z
 	hlcoord 0, 3
 	lb bc, 1, 8
 	jp Textbox
 
 .PrintMenuClock:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	call .DrawMenuClockTextBox
 	jp .MenuClockText
 
 .DrawBugContestStatusBox:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret z
 	farcall StartMenu_DrawBugContestStatusBox
 	ret
 
 .DrawBugContestStatus:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	jr nz, .contest
-	ret
-.contest
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
+	ret z
 	farcall StartMenu_PrintBugContestStatus
 	ret
 
