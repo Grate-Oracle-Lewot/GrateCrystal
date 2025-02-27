@@ -348,6 +348,9 @@ endr
 	jp Textbox
 
 .PrintMenuClock:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ret nz
 	call .DrawMenuClockTextBox
 	jp .MenuClockText
 
