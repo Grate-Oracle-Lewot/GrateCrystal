@@ -36,7 +36,6 @@ ENDM
 	wraparound_time wRestartClockMin,  60, 15
 
 RestartClock:
-; If we're here, we had an RTC overflow.
 	ld hl, wOptions
 	ld a, [hl]
 	push af
@@ -220,4 +219,7 @@ _ResetClock:
 	call OpenSRAM
 	ld a, RTC_RESET
 	ld [sRTCStatusFlags], a
-	jp CloseSRAM
+	call CloseSRAM
+	call RestartClock
+	farcall ClockContinue
+	ret
