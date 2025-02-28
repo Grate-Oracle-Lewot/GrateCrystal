@@ -1,18 +1,18 @@
 	; MainMenuItems indexes
 	const_def
-	const MAINMENU_NEW_GAME       ; 0
-	const MAINMENU_CONTINUE       ; 1
-	const MAINMENU_MOBILE         ; 2
+	const MAINMENU_NEW_GAME ; 0
+	const MAINMENU_CONTINUE ; 1
+	const MAINMENU_MOBILE   ; 2
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
-	const MAINMENUITEM_CONTINUE       ; 0
-	const MAINMENUITEM_NEW_GAME       ; 1
-	const MAINMENUITEM_OPTION         ; 2
-	const MAINMENUITEM_CLOCK_RESET    ; 3
-	const MAINMENUITEM_DELETE_SAVE    ; 4
-	const MAINMENUITEM_MOBILE         ; 5
-	const MAINMENUITEM_DEBUG_ROOM     ; 6
+	const MAINMENUITEM_CONTINUE    ; 0
+	const MAINMENUITEM_NEW_GAME    ; 1
+	const MAINMENUITEM_OPTION      ; 2
+	const MAINMENUITEM_CLOCK_RESET ; 3
+	const MAINMENUITEM_DELETE_SAVE ; 4
+	const MAINMENUITEM_MOBILE      ; 5
+	const MAINMENUITEM_DEBUG_ROOM  ; 6
 
 MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
