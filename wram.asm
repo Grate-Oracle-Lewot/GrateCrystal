@@ -3175,9 +3175,9 @@ wPoisonStepCount:: db
 wHappinessStepCount:: db
 	ds 1
 
-wParkBallsRemaining::
-wSafariBallsRemaining:: db
-wSafariTimeRemaining:: dw
+wParkBallsRemaining:: db
+
+	ds 2
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
