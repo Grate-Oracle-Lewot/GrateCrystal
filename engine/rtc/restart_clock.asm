@@ -220,6 +220,4 @@ _ResetClock:
 	call OpenSRAM
 	ld a, RTC_RESET
 	ld [sRTCStatusFlags], a
-	call CloseSRAM
-	farcall RestartClock
-	ret
+	jp CloseSRAM
