@@ -201,11 +201,6 @@ RestartClock:
 	ld [wRestartClockPrevDivision], a
 	ret
 
-.UnusedPlaceCharsFragment: ; unreferenced
-	ld a, [wRestartClockUpArrowYCoord]
-	ld b, a
-	jp Coord2Tile
-
 .PlaceChars:
 	push de
 	call RestartClock_GetWraparoundTime
@@ -220,8 +215,11 @@ RestartClock:
 	ld [hl], e
 	ret
 
-JPHourString: ; unreferenced
-	db "じ@" ; HR
-
-JPMinuteString: ; unreferenced
-	db "ふん@" ; MIN
+_ResetClock:
+	ld a, BANK(sRTCStatusFlags)
+	call OpenSRAM
+	ld a, RTC_RESET
+	ld [sRTCStatusFlags], a
+	call CloseSRAM
+	farcall RestartClock
+	ret
