@@ -494,7 +494,7 @@ Route36NationalParkGateOfficer1GiveParkBallsText:
 
 Route36NationalParkGatePlayerReceivedParkBallsText:
 	text "<PLAYER> received"
-	line "{d:BUG_CONTEST_BALLS} PARK BALLS."
+	line "PARK BALL ×{d:BUG_CONTEST_BALLS}."
 	done
 
 Route36NationalParkGateOfficer1ExplainsRulesText:
