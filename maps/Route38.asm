@@ -388,7 +388,7 @@ SailorHarryBeatenText:
 	done
 
 SailorHarryAfterBattleText:
-	text "In UNOVA, they have"
+	text "In UNOVA, there's"
 	line "a #MON called"
 	cont "GARBODOR…"
 
