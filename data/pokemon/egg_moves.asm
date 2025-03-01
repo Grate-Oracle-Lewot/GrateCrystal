@@ -93,9 +93,10 @@ NidoranEggMoves:
 VulpixEggMoves:
 	db FAINT_ATTACK
 	db PLAY_ROUGH
-	db HYPNOSIS
+	db SING
 	db DISABLE
 	db POWER_GEM
+	db MIRROR_COAT
 	db -1 ; end
 
 ZubatEggMoves:
@@ -672,7 +673,6 @@ AipomEggMoves:
 	db BEAT_UP
 	db TRIPLE_KICK
 	db COUNTER
-	db ENCORE
 	db SLAM
 	db BIND
 	db -1 ; end
