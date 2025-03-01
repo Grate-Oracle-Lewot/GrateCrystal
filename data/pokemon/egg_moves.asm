@@ -51,6 +51,7 @@ RattataEggMoves:
 
 SpearowEggMoves:
 	db FAINT_ATTACK
+	db COUNTER
 	db SCARY_FACE
 	db QUICK_ATTACK
 	db SONICBOOM
@@ -153,6 +154,7 @@ MeowthEggMoves:
 PsyduckEggMoves:
 	db PSYBEAM
 	db LIGHT_SCREEN
+	db MIRROR_COAT
 	db DAZZLY_GLEAM
 	db IRON_HEAD
 	db EGG_BOMB
@@ -368,6 +370,8 @@ RhyhornEggMoves:
 
 ChanseyEggMoves:
 	db COUNTER
+	db BIDE
+	db ENCORE
 	db PLAY_ROUGH
 	db HEAL_BELL
 	db SPIKES
@@ -492,6 +496,7 @@ SnorlaxEggMoves:
 	db -1 ; end
 
 DratiniEggMoves:
+	db BARRIER
 	db LIGHT_SCREEN
 	db SILVER_WIND
 	db EARTH_POWER
@@ -667,6 +672,7 @@ AipomEggMoves:
 	db BEAT_UP
 	db TRIPLE_KICK
 	db COUNTER
+	db ENCORE
 	db SLAM
 	db BIND
 	db -1 ; end
@@ -894,6 +900,7 @@ SmoochumEggMoves:
 	db DAZZLY_GLEAM
 	db SCARY_FACE
 	db PSYBEAM
+	db HYPNOSIS
 	db -1 ; end
 
 ElekidEggMoves:
