@@ -266,4 +266,4 @@ MainMenu_ClockReset:
 
 MainMenu_DeleteSave:
 	farcall _DeleteSaveData
-	ret
+	jp Init
