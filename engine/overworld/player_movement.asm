@@ -365,6 +365,9 @@ DoPlayerMovement::
 	and a
 	jr nz, .ExitWater
 
+	call .FastSurfCheck
+	jr z, .fast
+
 	ld a, STEP_WALK
 	call .DoStep
 	scf
@@ -381,6 +384,15 @@ DoPlayerMovement::
 
 .surf_bump
 	xor a
+	ret
+
+.FastSurfCheck:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	ret nz
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
 	ret
 
 .TryJump:
