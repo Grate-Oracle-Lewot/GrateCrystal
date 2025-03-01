@@ -39,25 +39,25 @@ BattleMenuHeader:
 
 ContestBattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 2, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 0, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 2 ; rows, columns
-	db 12 ; spacing
+	db 14 ; spacing
 	dba .Text
 	dba .PrintParkBallsRemaining
 
 .Text:
 	db "FIGHT@"
 	db "<PKMN>@"
-	db "PARKBALL×  @"
+	db "PARK BALL×  @"
 	db "RUN@"
 
 .PrintParkBallsRemaining:
-	hlcoord 13, 16
+	hlcoord 12, 16
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	jp PrintNum
