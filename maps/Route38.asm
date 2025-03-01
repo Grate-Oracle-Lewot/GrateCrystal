@@ -388,9 +388,9 @@ SailorHarryBeatenText:
 	done
 
 SailorHarryAfterBattleText:
-	text "In UNOVA, there's"
-	line "a #MON called"
-	cont "GARBODOR…"
+	text "In UNOVA, they"
+	line "have a #MON"
+	cont "called GARBODOR…"
 
 	para "It's so much worse"
 	line "than MUK."
@@ -410,12 +410,7 @@ BeautyOliviaBeatenText:
 BeautyOliviaAfterBattleText:
 	text "MOOMOO MILK is"
 	line "good for beauty"
-
-	para "and health, but"
-	line "inconveniently,"
-
-	para "they only sell a"
-	line "bottle at a time."
+	cont "and health!"
 	done
 
 Route38SignText:
