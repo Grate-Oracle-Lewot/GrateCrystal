@@ -1146,9 +1146,9 @@ RapidashEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlowpokeEvosAttacks:
+	db EVOLVE_STAT, 37, ATK_EQ_DEF, SLOWBRO
 	db EVOLVE_STAT, 37, ATK_LT_DEF, SLOWBRO
 	db EVOLVE_STAT, 37, ATK_GT_DEF, SLOWKING
-	db EVOLVE_STAT, 37, ATK_EQ_DEF, SLOWBRO
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 6, GROWL
