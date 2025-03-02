@@ -219,7 +219,6 @@ ApplyRunningEffectOnEncounterRate::
 	cp PLAYER_RUN
 	ret nz
 	sla b
-	ld b, b
 	ret
 
 ApplyMusicEffectOnEncounterRate::
