@@ -20,6 +20,7 @@ NUM_TRAINER_ATTRIBUTES EQU _RS
 	shift_const AI_CAUTIOUS
 	shift_const AI_STATUS
 	shift_const AI_RISKY
+	shift_const AI_PRAGMATIC
 NO_AI EQU 0
 
 ; TRNATTR_AI_ITEM_SWITCH bit flags
