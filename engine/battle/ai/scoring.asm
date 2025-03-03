@@ -160,7 +160,7 @@ AI_Status:
 	; fallthrough
 
 AI_Troll:
-; Greatly encourage non-volatile status moves, Confusion moves, Leech Seed, and Nightmare.
+; Greatly encourage non-volatile status moves, Confusion moves, Leech Seed, Attract, Nightmare, and Spite.
 ; Run by AI_Status if the player is Biding. Also functions as its own layer.
 
 	ld hl, wEnemyAIMoveScores - 1
