@@ -430,10 +430,8 @@ PokeBallEffect:
 	ld a, [hl]
 	push af
 	push hl
-	ld hl, wEnemySubStatus5
-	ld a, [hl]
-	push af
 
+; Back up DVs, for Transform and for Unown/Pikachu forms
 	ld hl, wEnemyBackupDVs
 	ld a, [wEnemyMonDVs]
 	ld [hli], a
@@ -445,9 +443,6 @@ PokeBallEffect:
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
 	farcall LoadEnemyMon
-
-	pop af
-	ld [wEnemySubStatus5], a
 
 	pop hl
 	pop af
