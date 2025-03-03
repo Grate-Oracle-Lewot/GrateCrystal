@@ -157,6 +157,11 @@ AI_Status:
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_BIDE, a
 	ret z
+	; fallthrough
+
+AI_Troll:
+; Greatly encourage non-volatile status moves, Confusion moves, Leech Seed, and Nightmare.
+; Run by AI_Status if the player is Biding. Also functions as its own layer.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -498,6 +503,7 @@ AI_Types:
 
 AI_Offensive:
 ; Greatly discourage non-damaging moves.
+; Run by both AI_OFFENSIVE and AI_OFFENSIVE_2. Use both to double up.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -546,6 +552,7 @@ AI_Pragmatic:
 
 AI_Encourage_Useful:
 ; Encourage useful moves. Used by AI_Opportunist and AI_Pragmatic.
+; Also functions as its own layer: AI_SIMPLE.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -579,6 +586,7 @@ INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Discourage_Stall:
 ; Discourage stall moves. Called by AI_Opportunist and AI_Aggressive.
+; Also functions as its own layer: AI_STUBBORN.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -614,6 +622,7 @@ INCLUDE "data/battle/ai/stall_moves.asm"
 AI_Aggressive:
 ; Discourage all damaging moves but the one that does the most damage.
 ; If no damaging move deals damage to the player (immune), no move will be discouraged.
+; Run by both AI_AGGRESSIVE and AI_AGGRESSIVE_2. With both, all damaging moves are rolled twice.
 
 ; Discourage stall moves if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
