@@ -209,7 +209,7 @@ AIScoringPointers:
 	dw AI_Cautious
 	dw AI_Status
 	dw AI_Risky
-	dw AI_None
+	dw AI_Pragmatic
 	dw AI_None
 	dw AI_None
 	dw AI_None
