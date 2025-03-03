@@ -722,9 +722,9 @@ KRIS EQU __trainer_class__
 	trainerclass OFFICER ; 41
 	const KEITH
 	const DIRK
+	const TUBBS
 	const DISHER
-	const STABLER
-	const WOLF
+	const LASSITER
 
 	trainerclass GRUNTF ; 42
 	const GRUNTF_1
