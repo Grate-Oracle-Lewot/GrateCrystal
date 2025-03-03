@@ -533,20 +533,16 @@ AI_Opportunist:
 ; Do nothing if player's HP is above 50%.
 	call AICheckPlayerHalfHP
 	ret c
-
-; Discourage stall moves when the player's HP is low.
-	call AI_Discourage_Stall
-
-; Encourage useful moves when the player's HP is low.
-	jr AI_Encourage_Useful
+	jr AI_Opportunist_Pragmatic
 
 AI_Pragmatic:
 ; Do nothing if enemy's HP is above 50%.
 	call AICheckEnemyHalfHP
 	ret c
+	; fallthrough
 
-; Discourage stall moves when the enemy's HP is low.
-; Encourage useful moves when the enemy's HP is low.
+AI_Opportunist_Pragmatic:
+; Discourage stall moves and encourage useful moves.
 	call AI_Discourage_Stall
 	; fallthrough
 
@@ -585,7 +581,7 @@ AI_Encourage_Useful:
 INCLUDE "data/battle/ai/useful_moves.asm"
 
 AI_Discourage_Stall:
-; Discourage stall moves. Called by AI_Opportunist and AI_Aggressive.
+; Discourage stall moves. Used by by AI_Opportunist, AI_Pragmatic, and AI_Aggressive.
 ; Also functions as its own layer: AI_STUBBORN.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -621,8 +617,8 @@ INCLUDE "data/battle/ai/stall_moves.asm"
 
 AI_Aggressive:
 ; Discourage all damaging moves but the one that does the most damage.
-; If no damaging move deals damage to the player (immune), no move will be discouraged.
-; Run by both AI_AGGRESSIVE and AI_AGGRESSIVE_2. With both, all damaging moves are rolled twice.
+; If no damaging move deals damage to the player, no move will be discouraged.
+; Run by both AI_AGGRESSIVE and AI_AGGRESSIVE_2. Using both will do all of this twice, with separate damage rolls.
 
 ; Discourage stall moves if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
