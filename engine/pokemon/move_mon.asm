@@ -250,7 +250,7 @@ endr
 	; Status
 	ld [de], a
 	inc de
-	; Unused
+	; Unused byte
 	ld [de], a
 	inc de
 
