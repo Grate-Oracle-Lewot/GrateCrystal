@@ -431,7 +431,6 @@ PokeBallEffect:
 	push af
 	push hl
 
-; Back up DVs, for Transform and for Unown/Pikachu forms
 	ld hl, wEnemyBackupDVs
 	ld a, [wEnemyMonDVs]
 	ld [hli], a
@@ -497,6 +496,12 @@ PokeBallEffect:
 	ld [wTempSpecies], a
 	ld a, h
 	ld [wCurPartyLevel], a
+
+	ld hl, wEnemyMonDVs
+	ld a, [wEnemyBackupDVs]
+	ld [hli], a
+	ld a, [wEnemyBackupDVs + 1]
+	ld [hl], a
 
 	ld a, [wTempSpecies]
 	dec a
