@@ -167,7 +167,7 @@ Moves:
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        110, WATER,        PHYSICAL,  84,  5,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,         SPECIAL,  100, 15,  20
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          25, NORMAL,       PHYSICAL,  90, 15,   0
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         45, GROUND,       PHYSICAL,  95, 15,   0
+	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,       PHYSICAL, 100, 10,   0
 	move REST,         EFFECT_HEAL,                0, NORMAL,       STATUS,   100,  5,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         84, ROCK,         PHYSICAL, 100, 15,  20
 	move HYPER_FANG,   EFFECT_LEECH_HIT,          80, NORMAL,       PHYSICAL,  90, 10,   0
