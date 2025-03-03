@@ -16,40 +16,40 @@ TrainerSwimmerfBobbi:
 	closetext
 	end
 
-OfficerWolfScript:
+OfficerLassiterScript:
 	faceplayer
 	opentext
 	checktime NITE
 	iffalse .NoFight
-	checkevent EVENT_BEAT_OFFICER_WOLF
+	checkevent EVENT_BEAT_OFFICER_LASSITER
 	iftrue .AfterScript
 	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerWolfSeenText
+	writetext OfficerLassiterSeenText
 	waitbutton
 	closetext
-	winlosstext OfficerWolfBeatenText, 0
-	loadtrainer OFFICER, WOLF
+	winlosstext OfficerLassiterBeatenText, 0
+	loadtrainer OFFICER, LASSITER
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_WOLF
+	setevent EVENT_BEAT_OFFICER_LASSITER
 	closetext
 	end
 
 .AfterScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FemalePlayer
-	writetext OfficerWolfAfterMaleText
+	writetext OfficerLassiterAfterMaleText
 	sjump .WolfMerge
 
 .FemalePlayer
-	writetext OfficerWolfAfterFemaleText
+	writetext OfficerLassiterAfterFemaleText
 .WolfMerge
 	waitbutton
 	closetext
 	end
 
 .NoFight:
-	writetext OfficerWolfDaytimeText
+	writetext OfficerLassiterDaytimeText
 	waitbutton
 	closetext
 	end
@@ -81,7 +81,7 @@ SwimmerfBobbiAfterBattleText:
 	cont "here lately."
 	done
 
-OfficerWolfDaytimeText:
+OfficerLassiterDaytimeText:
 	text "This way leads to"
 	line "VICTORY ROAD."
 
@@ -89,22 +89,22 @@ OfficerWolfDaytimeText:
 	line "properly prepared."
 	done
 
-OfficerWolfSeenText:
+OfficerLassiterSeenText:
 	text "Let me see your"
 	line "identification!"
 	done
 
-OfficerWolfBeatenText:
+OfficerLassiterBeatenText:
 	text "You're good to go"
 	line "on through."
 	done
 
-OfficerWolfAfterMaleText:
+OfficerLassiterAfterMaleText:
 	text "My apologies, MR."
 	line "CHAMPION."
 	done
 
-OfficerWolfAfterFemaleText:
+OfficerLassiterAfterFemaleText:
 	text "My apologies, MS."
 	line "CHAMPION."
 	done
@@ -140,4 +140,4 @@ Route22_MapEvents:
 
 	def_object_events
 	object_event  6, 32, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfBobbi, -1
-	object_event 12,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerWolfScript, -1
+	object_event 12,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerLassiterScript, -1
