@@ -437,6 +437,11 @@ PokeBallEffect:
 	ld a, [wEnemyMonDVs + 1]
 	ld [hl], a
 
+	ld a, [wUnownLetter]
+	ld [wBackupUnownLetter], a
+	ld a, [wPikachuForm]
+	ld [wBackupPikachuForm], a
+
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
