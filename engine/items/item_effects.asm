@@ -518,12 +518,6 @@ PokeBallEffect:
 
 	call ClearSprites
 
-	ld hl, wEnemyMonDVs
-	ld a, [wEnemyBackupDVs]
-	ld [hli], a
-	ld a, [wEnemyBackupDVs + 1]
-	ld [hl], a
-
 	ld a, [wEnemyMonSpecies]
 	ld [wTempSpecies], a
 	predef NewPokedexEntry
