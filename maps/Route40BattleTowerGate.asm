@@ -19,52 +19,32 @@ Route40BattleTowerGateRockerScript:
 Route40BattleTowerGateTwinScript:
 	jumptextfaceplayer Route40BattleTowerGateTwinText
 
-TrainerOfficerDisher:
+TrainerOfficerTubbs:
 	faceplayer
 	checktime NITE
 	iffalse .AfterBattle
-	checkevent EVENT_BEAT_OFFICER_DISHER
+	checkevent EVENT_BEAT_OFFICER_TUBBS
 	iftrue .AfterBattle
 	showemote EMOTE_SLEEP, ROUTE40BATTLETOWERGATE_OFFICER, 15
 	playmusic MUSIC_OFFICER_ENCOUNTER
 	opentext
-	writetext OfficerDisherSeenText
+	writetext OfficerTubbsSeenText
 	waitbutton
 	closetext
-	winlosstext OfficerDisherBeatenText, 0
-	loadtrainer OFFICER, DISHER
+	winlosstext OfficerTubbsBeatenText, 0
+	loadtrainer OFFICER, TUBBS
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_DISHER
+	setevent EVENT_BEAT_OFFICER_TUBBS
 	closetext
 	end
 
 .AfterBattle:
 	opentext
-	writetext OfficerDisherAfterBattleText
+	writetext OfficerTubbsAfterBattleText
 	waitbutton
 	closetext
 	end
-
-Route40BattleTowerGateUnusedText1: ; unreferenced
-	text "Did you come to"
-	line "see the BATTLE"
-	cont "TOWER too?"
-
-	para "But I guess you"
-	line "can't go in yet."
-	done
-
-Route40BattleTowerGateUnusedText2: ; unreferenced
-	text "BATTLE TOWER has"
-	line "opened."
-
-	para "I want to go, but"
-	line "I haven't thought"
-
-	para "up a cool line for"
-	line "when I win."
-	done
 
 Route40BattleTowerGateRockerText:
 	text "Are you going to"
@@ -75,14 +55,6 @@ Route40BattleTowerGateRockerText:
 
 	para "whole lot, you can"
 	line "win special gifts."
-	done
-
-Route40BattleTowerGateUnusedText3: ; unreferenced
-	text "I'm going to train"
-	line "my #MON so I'll"
-
-	para "be all ready for"
-	line "the BATTLE TOWER."
 	done
 
 Route40BattleTowerGateTwinText:
@@ -96,18 +68,18 @@ Route40BattleTowerGateTwinText:
 	line "them now!"
 	done
 
-OfficerDisherSeenText:
+OfficerTubbsSeenText:
 	text "WAUGH! I wasn't"
 	line "sleeping on the"
 	cont "job!"
 	done
 
-OfficerDisherBeatenText:
+OfficerTubbsBeatenText:
 	text "I need backup over"
 	line "here!"
 	done
 
-OfficerDisherAfterBattleText:
+OfficerTubbsAfterBattleText:
 	text "I could go for a"
 	line "donut…"
 
@@ -134,4 +106,4 @@ Route40BattleTowerGate_MapEvents:
 	def_object_events
 	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateTwinScript, -1
-	object_event  6,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerDisher, -1
+	object_event  6,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerTubbs, -1
