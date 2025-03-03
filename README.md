@@ -281,11 +281,13 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - AI_RISKY only avoids using Selfdestruct, not one-hit KO moves. No idea why those were in there.
 
-- AI_OPPORTUNIST now checks the player's HP instead of the enemy's, and now encourages moves in the "useful" list if the player's HP is low, in addition to discouraging moves in the "stall" list if the same.
+- AI_OPPORTUNIST now checks the player's HP instead of the enemy's, and now encourages moves in the "useful" list if the player's HP is low, in addition to discouraging moves in the "stall" list if the same. A new layer, AI_PRAGMATIC, checks the enemy's HP like Opportunist used to, and similarly encourages "useful" and discourages "stall" moves when it's low.
 
 - AI_AGGRESSIVE only has a 50% chance to not discourage "reckless" moves, and the reckless list now consists only of multi-hit moves, not Selfdestruct and Thrash/Outrage/Petal Dance. Additionally, it now discourages "stall" moves if it's down to its last Pokémon.
 
 - Many changes to AI_SMART subroutines, and new ones added. These keep the AI aware of all the other changes I've made to the game, and occasionally revise strategies for specific moves, e.g. encouraging Roar/Whirlwind if Spikes are set up.
+
+- A few more new layers: AI_TROLL encourages status moves at all times, including more obscure ones like Attract and Spite. AI_SIMPLE always encourages "useful" moves, and AI_STUBBORN always discourages "stall" moves. I've also added the ability to double the effects of AI_OFFENSIVE and/or to run AI_AGGRESSIVE twice with separate damage rolls. All of these are used sparingly.
 
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. Conversely, if you turn level caps off, walk around to give Daycare Pokémon experience, and turn hard caps back on, they may exceed the current cap. This is the best I could do given the cap toggle and how Daycare experience and leveling work, so please forgive me.
