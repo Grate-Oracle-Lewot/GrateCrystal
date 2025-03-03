@@ -532,6 +532,21 @@ AI_Opportunist:
 	call AI_Discourage_Stall
 
 ; Encourage useful moves when the player's HP is low.
+	jr AI_Encourage_Useful
+
+AI_Pragmatic:
+; Do nothing if enemy's HP is above 50%.
+	call AICheckEnemyHalfHP
+	ret c
+
+; Discourage stall moves when the enemy's HP is low.
+; Encourage useful moves when the enemy's HP is low.
+	call AI_Discourage_Stall
+	; fallthrough
+
+AI_Encourage_Useful:
+; Encourage useful moves. Used by AI_Opportunist and AI_Pragmatic.
+
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
