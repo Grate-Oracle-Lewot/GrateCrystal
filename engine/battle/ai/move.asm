@@ -210,8 +210,8 @@ AIScoringPointers:
 	dw AI_Status
 	dw AI_Risky
 	dw AI_Pragmatic
-	dw AI_None
-	dw AI_None
-	dw AI_None
-	dw AI_None
-	dw AI_None
+	dw AI_Troll
+	dw AI_Encourage_Useful
+	dw AI_Discourage_Stall
+	dw AI_Offensive
+	dw AI_Aggressive
