@@ -1,5 +1,7 @@
 ; AI_OPPORTUNIST discourages these moves when the player's HP is low.
+; AI_PRAGMATIC discourages these moves when the enemy's HP is low.
 ; AI_AGGRESSIVE discourages these moves when the enemy is on its last Pokemon.
+; AI_STUBBORN always discourages these moves.
 
 StallMoves:
 	db SWORDS_DANCE
