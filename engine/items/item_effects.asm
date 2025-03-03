@@ -497,12 +497,6 @@ PokeBallEffect:
 	ld a, h
 	ld [wCurPartyLevel], a
 
-	ld hl, wEnemyMonDVs
-	ld a, [wEnemyBackupDVs]
-	ld [hli], a
-	ld a, [wEnemyBackupDVs + 1]
-	ld [hl], a
-
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
@@ -523,6 +517,12 @@ PokeBallEffect:
 	call PrintText
 
 	call ClearSprites
+
+	ld hl, wEnemyMonDVs
+	ld a, [wEnemyBackupDVs]
+	ld [hli], a
+	ld a, [wEnemyBackupDVs + 1]
+	ld [hl], a
 
 	ld a, [wEnemyMonSpecies]
 	ld [wTempSpecies], a
