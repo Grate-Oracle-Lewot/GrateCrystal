@@ -433,10 +433,6 @@ PokeBallEffect:
 	ld hl, wEnemySubStatus5
 	ld a, [hl]
 	push af
-	set SUBSTATUS_TRANSFORMED, [hl]
-
-	bit SUBSTATUS_TRANSFORMED, a
-	jr nz, .load_data
 
 	ld hl, wEnemyBackupDVs
 	ld a, [wEnemyMonDVs]
@@ -444,7 +440,6 @@ PokeBallEffect:
 	ld a, [wEnemyMonDVs + 1]
 	ld [hl], a
 
-.load_data
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
