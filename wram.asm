@@ -2640,10 +2640,7 @@ wForcedSwitch:: db
 wTrainerClass:: db
 
 wUnownLetter:: db
-wBackupUnownLetter:: db
-
 wPikachuForm:: db
-wBackupPikachuForm: db
 
 wMoveSelectionMenuType:: db
 
@@ -2675,6 +2672,9 @@ wCurBaseDataEnd::
 	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
 
 	ds 3
+
+wBackupUnownLetter:: db
+wBackupPikachuForm:: db
 
 wCurDamage:: dw
 
