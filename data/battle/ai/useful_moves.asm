@@ -1,5 +1,7 @@
 ; AI_OPPORTUNIST encourages these moves when the player's HP is low.
+; AI_PRAGMATIC encourages these moves when the enemy's HP is low.
 ; AI_SMART tries to use Mirror Move and Disable on these moves. (Also Mimic before I removed that.)
+; AI_SIMPLE always encourages these moves.
 
 UsefulMoves:
 	db FIRE_PUNCH
