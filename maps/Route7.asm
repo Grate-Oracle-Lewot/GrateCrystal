@@ -6,27 +6,27 @@ Route7_MapScripts:
 
 	def_callbacks
 
-TrainerOfficerStabler:
+TrainerOfficerDisher:
 	faceplayer
 	opentext
 	checktime NITE
 	iffalse .AfterBattle
-	checkevent EVENT_BEAT_OFFICER_STABLER
+	checkevent EVENT_BEAT_OFFICER_DISHER
 	iftrue .AfterBattle
 	playmusic MUSIC_OFFICER_ENCOUNTER
-	writetext OfficerStablerSeenText
+	writetext OfficerDisherSeenText
 	waitbutton
 	closetext
-	winlosstext OfficerStablerBeatenText, 0
-	loadtrainer OFFICER, STABLER
+	winlosstext OfficerDisherBeatenText, 0
+	loadtrainer OFFICER, DISHER
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_OFFICER_STABLER
+	setevent EVENT_BEAT_OFFICER_DISHER
 	closetext
 	end
 
 .AfterBattle:
-	writetext OfficerStablerAfterBattleText
+	writetext OfficerDisherAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -37,17 +37,17 @@ Route7UndergroundPathSign:
 Route7LockedDoor:
 	jumptext Route7LockedDoorText
 
-OfficerStablerSeenText:
+OfficerDisherSeenText:
 	text "Stop in the name"
 	line "of the law!"
 	done
 
-OfficerStablerBeatenText:
+OfficerDisherBeatenText:
 	text "You fought the law"
 	line "and the law lost."
 	done
 
-OfficerStablerAfterBattleText:
+OfficerDisherAfterBattleText:
 	text "The UNDERGROUND"
 	line "PATH is closed"
 
@@ -92,4 +92,4 @@ Route7_MapEvents:
 	bg_event  6,  9, BGEVENT_READ, Route7LockedDoor
 
 	def_object_events
-	object_event  7, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerStabler, -1
+	object_event  7, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerDisher, -1
