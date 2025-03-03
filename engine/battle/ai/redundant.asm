@@ -1,7 +1,7 @@
 AI_Redundant:
 ; Check if move effect c will fail (already established, Sleep/Snore/Dream Eater, Substitute immunities, etc.).
-; Return z if the move is a good choice.
-; Return nz if the move is a bad choice.
+; Return nz if the move will fail. Return z if the move won't fail.
+
 	ld a, c
 	ld de, 3
 	ld hl, .Moves
