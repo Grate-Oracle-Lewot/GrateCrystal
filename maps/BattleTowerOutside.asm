@@ -9,14 +9,10 @@ BattleTowerOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .Callback1
-	callback MAPCALLBACK_OBJECTS, .Callback2
+	callback MAPCALLBACK_NEWMAP, .Flypoint
 
-.Callback1:
-	endcallback
-
-.Callback2:
-	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+.Flypoint:
+	setflag ENGINE_FLYPOINT_BATTLE_TOWER
 	endcallback
 
 BattleTowerOutsideYoungsterScript:
@@ -88,6 +84,6 @@ BattleTowerOutside_MapEvents:
 	def_object_events
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
 	object_event 13, 11, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event 12, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event 12, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, -1
 	object_event 12, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 17,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, BattleTowerOutsideTMSubstitute, EVENT_BATTLE_TOWER_OUTSIDE_TM_SUBSTITUTE
