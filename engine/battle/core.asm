@@ -7,6 +7,7 @@ DoBattle:
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
 	ld [wTotalBattleTurns], a
+	ld [wSkipFormCheck], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -6360,6 +6361,11 @@ LoadEnemyMon:
 	jp nz, .Happiness
 
 ; Species-specfic:
+
+; Don't recalc Unown letter or Pikachu form if we're showing a new dex entry
+	ld a, [wSkipFormCheck]
+	and a
+	jr nz, .Magikarp
 
 	ld a, [wTempEnemyMonSpecies]
 	cp UNOWN
