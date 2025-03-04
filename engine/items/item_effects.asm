@@ -434,35 +434,12 @@ PokeBallEffect:
 	ld hl, wEnemySubStatus5
 	ld a, [hl]
 	push af
-	bit SUBSTATUS_TRANSFORMED, a
-	jr nz, .load_data
-
-; If Transformed, restore pre-transformation DVs
-	ld hl, wEnemyMonDVs
-	ld a, [wEnemyBackupDVs]
-	ld [hli], a
-	ld a, [wEnemyBackupDVs + 1]
-	ld [hl], a
-
-.load_data
-; Back up DVs to show the right Unown letter or Pikachu form during NewPokedexEntry
-	ld hl, wBackupBackupDVs
-	ld a, [wEnemyMonDVs]
-	ld [hli], a
-	ld a, [wEnemyMonDVs + 1]
-	ld [hl], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
 	farcall LoadEnemyMon
-
-; Restore Unown letter or Pikachu form based on backed up DVs
-	ld hl, wBackupBackupDVs
-	predef GetPikachuForm
-	ld hl, wBackupBackupDVs
-	predef GetUnownLetter
 
 	pop af
 	ld [wEnemySubStatus5], a
