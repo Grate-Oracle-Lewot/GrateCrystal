@@ -115,7 +115,30 @@ DoBattle:
 	jp BattleTurn
 
 StartAutomaticBattleWeather:
-	call GetAutomaticBattleWeather
+	ld hl, AutomaticWeatherMaps
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+.loop
+	ld a, [hli] ; group
+	and a
+	ret z
+	cp b
+	jr nz, .wrong_group
+	ld a, [hli] ; map
+	cp c
+	jr nz, .wrong_map
+	ld a, [hl] ; weather
+	jr .got_weather
+
+.wrong_group
+	inc hl ; skip map
+.wrong_map
+	inc hl ; skip weather
+	jr .loop
+
+.got_weather
 	and a
 	ret z
 ; get current AutomaticWeatherEffects entry
@@ -143,30 +166,6 @@ StartAutomaticBattleWeather:
 	pop hl
 	call StdBattleTextbox ; uses hl
 	jp EmptyBattleTextbox
-
-GetAutomaticBattleWeather:
-	ld hl, AutomaticWeatherMaps
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-.loop
-	ld a, [hli] ; group
-	and a
-	ret z ; end
-	cp b
-	jr nz, .wrong_group
-	ld a, [hli] ; map
-	cp c
-	jr nz, .wrong_map
-	ld a, [hl] ; weather
-	ret
-
-.wrong_group:
-	inc hl ; skip map
-.wrong_map
-	inc hl ; skip weather
-	jr .loop
 
 INCLUDE "data/battle/automatic_weather.asm"
 
