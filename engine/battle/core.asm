@@ -2820,33 +2820,6 @@ UpdateFaintedPlayerMon:
 	and a
 	ret
 
-AskUseNextPokemon:
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
-; We don't need to be here if we're in a Trainer battle, as that decision is made for us.
-	ld a, [wBattleMode]
-	and a
-	dec a
-	ret nz
-
-	ld hl, BattleText_UseNextMon
-	call StdBattleTextbox
-.loop
-	lb bc, 1, 7
-	call PlaceYesNoBox
-	ld a, [wMenuCursorY]
-	jr c, .pressed_b
-	and a
-	ret
-
-.pressed_b
-	ld a, [wMenuCursorY]
-	cp $1 ; YES
-	jr z, .loop
-	ld hl, wPartyMon1Speed
-	ld de, wEnemyMonSpeed
-	jp TryToRunAwayFromBattle
-
 ForcePlayerMonChoice:
 	call EmptyBattleTextbox
 	call LoadStandardMenuHeader
@@ -3803,6 +3776,33 @@ CheckIfCurPartyMonIsFitToFight:
 	xor a
 	ret
 
+AskUseNextPokemon:
+	call EmptyBattleTextbox
+	call LoadTilemapToTempTilemap
+; We don't need to be here if we're in a Trainer battle, as that decision is made for us.
+	ld a, [wBattleMode]
+	and a
+	dec a
+	ret nz
+
+	ld hl, BattleText_UseNextMon
+	call StdBattleTextbox
+.loop
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	jr c, .pressed_b
+	and a
+	ret
+
+.pressed_b
+	ld a, [wMenuCursorY]
+	cp $1 ; YES
+	jr z, .loop
+	ld hl, wPartyMon1Speed
+	ld de, wEnemyMonSpeed
+	; fallthrough
+
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
@@ -3958,7 +3958,6 @@ TryToRunAwayFromBattle:
 	jr nc, .can_escape
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
-	; fallthrough
 
 .cant_escape
 	ld hl, BattleText_CantEscape
