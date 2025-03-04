@@ -50,6 +50,33 @@ Oak:
 	promptbutton
 	sjump .CheckPokedex
 
+OaksLabHealingMachine:
+	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .CanHeal
+	writetext OaksLabHealingMachineText1
+	waitbutton
+	closetext
+	end
+
+.CanHeal:
+	writetext OaksLabHealingMachineText2
+	yesorno
+	iftrue OaksLabHealingMachine_HealParty
+	closetext
+	end
+
+OaksLabHealingMachine_HealParty:
+	special StubbedTrainerRankings_Healings
+	special HealParty
+	playmusic MUSIC_NONE
+	setval HEALMACHINE_ELMS_LAB
+	special HealMachineAnim
+	pause 30
+	special RestartMapMusic
+	closetext
+	end
+
 OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text
 
@@ -70,9 +97,6 @@ OaksLabPoster2:
 
 OaksLabTrashcan:
 	jumptext OaksLabTrashcanText
-
-OaksLabPC:
-	jumptext OaksLabPCText
 
 OakWelcomeKantoText:
 	text "OAK: Ah, <PLAY_G>!"
@@ -224,30 +248,13 @@ OaksLabTrashcanText:
 	line "here…"
 	done
 
-OaksLabPCText:
-	text "There's an e-mail"
-	line "message on the PC."
+OaksLabHealingMachineText1:
+	text "I wonder what this"
+	line "does?"
+	done
 
-	para "…"
-
-	para "PROF.OAK, how is"
-	line "your research"
-	cont "coming along?"
-
-	para "I'm still plugging"
-	line "away."
-
-	para "I heard rumors"
-	line "that <PLAY_G> is"
-
-	para "getting quite a"
-	line "reputation."
-
-	para "I'm delighted to"
-	line "hear that."
-
-	para "ELM in NEW BARK"
-	line "TOWN 8-)"
+OaksLabHealingMachineText2:
+	text "Heal?"
 	done
 
 OaksLab_MapEvents:
@@ -276,7 +283,7 @@ OaksLab_MapEvents:
 	bg_event  4,  0, BGEVENT_READ, OaksLabPoster1
 	bg_event  5,  0, BGEVENT_READ, OaksLabPoster2
 	bg_event  9,  3, BGEVENT_READ, OaksLabTrashcan
-	bg_event  0,  1, BGEVENT_READ, OaksLabPC
+	bg_event  2,  1, BGEVENT_READ, OaksLabHealingMachine
 
 	def_object_events
 	object_event  4,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Oak, -1
