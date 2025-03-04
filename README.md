@@ -345,7 +345,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Unown ! and ? added (eyes not droopy)
 - Rocket battle music applied to Executives, "R" transition for all Rockets, and a special transition for me
 - Trainers automatically offer their phone numbers when defeated, and their rematch parties are based solely on event progress instead of fight count
-- Flypoints for the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint
+- Flypoints for the Battle Tower and the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint
 - Default Fast text speed and Instant speed option
 - Default player and rival names changed
 - Tilesets expanded from 192 to 255 (used only for Nayru's dex)
@@ -362,7 +362,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Pokémon gender formula modified for stat equity
 - Kurt finishes Apricorn balls quickly
 - Metal Coat and Dragon Scale evolve Pokémon by leveling up while holding them
-- Accuracy, effect chance, and physicality shown on move menu
+- Accuracy, effect chance, and physicality shown on move menu, and move menu accessible in battle
 - 25% AI failure chance removed
 - Redundant move grammar table removed
 - Command queue system reduced to just stone tables
