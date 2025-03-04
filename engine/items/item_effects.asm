@@ -497,12 +497,6 @@ PokeBallEffect:
 	ld a, h
 	ld [wCurPartyLevel], a
 
-	ld hl, wEnemyMonDVs
-	ld a, [wBackupBackupDVs]
-	ld [hli], a
-	ld a, [wBackupBackupDVs + 1]
-	ld [hl], a
-
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
