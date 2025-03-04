@@ -5351,6 +5351,8 @@ TryPlayerSwitch:
 	call SetPalettes
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
+	; fallthrough
+
 PlayerSwitch:
 	ld a, 1
 	ld [wPlayerIsSwitching], a
