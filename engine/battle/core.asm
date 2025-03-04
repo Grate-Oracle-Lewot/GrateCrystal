@@ -1760,7 +1760,7 @@ HandleScreens:
 
 HandleWeather:
 	ld a, [wBattleWeather]
-	cp WEATHER_NONE
+	and a
 	ret z
 
 	ld hl, wWeatherCount
