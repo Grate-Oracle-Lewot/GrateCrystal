@@ -435,23 +435,11 @@ PokeBallEffect:
 	ld a, [hl]
 	push af
 
-	ld hl, wBackupBackupDVs
-	ld a, [wEnemyMonDVs]
-	ld [hli], a
-	ld a, [wEnemyMonDVs + 1]
-	ld [hl], a
-
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurPartySpecies], a
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
 	farcall LoadEnemyMon
-
-	ld hl, wEnemyMonDVs
-	ld a, [wBackupBackupDVs]
-	ld [hli], a
-	ld a, [wBackupBackupDVs + 1]
-	ld [hl], a
 
 	pop af
 	ld [wEnemySubStatus5], a
