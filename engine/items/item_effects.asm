@@ -417,6 +417,10 @@ PokeBallEffect:
 	jp z, .shake_and_break_free
 
 .caught
+	; Preserve Unown letter or Pikachu form for new dex entry
+	ld a, 1
+	ld [wSkipFormCheck], a
+
 	ld hl, wEnemyMonStatus
 	ld a, [hli]
 	push af
