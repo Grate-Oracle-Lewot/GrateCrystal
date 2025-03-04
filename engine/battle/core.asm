@@ -4787,17 +4787,16 @@ CheckDanger:
 	ld a, [wBattleLowHealthAlarm]
 	and a
 	ret nz
+	ld hl, wLowHealthAlarm
 	ld a, [wPlayerHPPal]
 	cp HP_RED
 	jr z, .danger
 
 .no_danger
-	ld hl, wLowHealthAlarm
 	ld [hl], 0
 	ret
 
 .danger
-	ld hl, wLowHealthAlarm
 	set DANGER_ON_F, [hl]
 	ret
 
