@@ -130,10 +130,11 @@ NewBarkTownSign:
 	closetext
 	setflag ENGINE_POKEDEX
 	giveitem MASTER_BALL, 99
-	loadwildmon UNOWN, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon DITTO, 5
 	startbattle
 	reloadmapafterbattle
-	loadwildmon DITTO, 5
+	loadwildmon UNOWN, 5
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
