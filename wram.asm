@@ -2639,6 +2639,7 @@ wTrainerClass:: db
 
 wUnownLetter:: db
 wPikachuForm:: db
+wSkipFormCheck:: db
 
 wMoveSelectionMenuType:: db
 
@@ -2669,10 +2670,7 @@ wBaseTMHM:: flag_array NUM_TM_HM_TUTOR
 wCurBaseDataEnd::
 	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
 
-	ds 3
-
-wBackupUnownLetter:: db
-wBackupPikachuForm:: db
+	ds 4
 
 wCurDamage:: dw
 
