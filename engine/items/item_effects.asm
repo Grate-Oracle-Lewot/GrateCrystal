@@ -443,12 +443,6 @@ PokeBallEffect:
 	ld [wCurPartyLevel], a
 	farcall LoadEnemyMon
 
-	ld hl, wEnemyMonDVs
-	ld a, [wBackupBackupDVs]
-	ld [hli], a
-	ld a, [wBackupBackupDVs + 1]
-	ld [hl], a
-
 	pop hl
 	pop af
 	ld [hl], a
@@ -502,6 +496,12 @@ PokeBallEffect:
 	ld [wTempSpecies], a
 	ld a, h
 	ld [wCurPartyLevel], a
+
+	ld hl, wEnemyMonDVs
+	ld a, [wBackupBackupDVs]
+	ld [hli], a
+	ld a, [wBackupBackupDVs + 1]
+	ld [hl], a
 
 	ld a, [wTempSpecies]
 	dec a
