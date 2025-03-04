@@ -8506,15 +8506,11 @@ DisplayLinkBattleResult:
 	call WaitPressAorB_BlinkCursor
 	jp ClearTilemap
 
-.mobile
-	ld c, 200
-	call DelayFrames
-	jp ClearTilemap
-
 .Mobile_InvalidBattle:
 	hlcoord 6, 8
 	ld de, .InvalidBattle
 	call PlaceString
+.mobile
 	ld c, 200
 	call DelayFrames
 	jp ClearTilemap
