@@ -7,7 +7,6 @@ DoBattle:
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
 	ld [wTotalBattleTurns], a
-	ld [wSkipFormCheck], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -229,6 +228,7 @@ BattleTurn:
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wEffectCarryover], a
+	ld [wSkipFormCheck], a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
