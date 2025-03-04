@@ -32,11 +32,10 @@ EngineFlags:
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F
 	engine_flag wStatusFlags, STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_BUG_CONTEST_TIMER_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_MEWTWO_RADIO_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_MEWTWO_RADIO_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_BUG_CONTEST_TIMER_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_BIKE_SHOP_CALL_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_5_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_REACHED_GOLDENROD_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F
 
