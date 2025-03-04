@@ -4026,52 +4026,6 @@ TryToRunAwayFromBattle:
 	call StdBattleTextbox
 	jr .skip_link_error
 
-InitBattleMon:
-	ld a, MON_SPECIES
-	call GetPartyParamLocation
-	ld de, wBattleMonSpecies
-	ld bc, MON_ID
-	call CopyBytes
-	ld bc, MON_DVS - MON_ID
-	add hl, bc
-	ld de, wBattleMonDVs
-	ld bc, MON_POKERUS - MON_DVS
-	call CopyBytes
-	inc hl
-	inc hl
-	inc hl
-	ld de, wBattleMonLevel
-	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
-	call CopyBytes
-	ld a, [wBattleMonSpecies]
-	ld [wTempBattleMonSpecies], a
-	ld [wCurPartySpecies], a
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseType1]
-	ld [wBattleMonType1], a
-	ld a, [wBaseType2]
-	ld [wBattleMonType2], a
-	ld a, [wCurPartySpecies]
-	cp PIKACHU
-	jr nz, .skip_pikachu
-	ld hl, wBattleMonDVs
-	predef GetPikachuForm
-	call GetSecondPikachuType
-	ld [wBattleMonType2], a
-.skip_pikachu
-	ld hl, wPartyMonNicknames
-	ld a, [wCurBattleMon]
-	call SkipNames
-	ld de, wBattleMonNickname
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	ld hl, wBattleMonAttack
-	ld de, wPlayerStats
-	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
-	call CopyBytes
-	jp ApplyStatusEffectOnPlayerStats
-
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
 	jr BattleCheckShininess
@@ -6638,7 +6592,6 @@ LoadEnemyMon:
 	ld de, wEnemyStats
 	ld bc, NUM_EXP_STATS * 2
 	call CopyBytes
-
 	jp ApplyStatusEffectOnEnemyStats
 
 CheckSleepingTreeMon:
@@ -6723,7 +6676,7 @@ CheckUnownLetter:
 
 .not_alph
 	ld a, [wUnownLetter]
-	; fallthrough
+
 .match
 ; Valid letter
 	and a
@@ -6791,12 +6744,59 @@ BattleWinSlideInEnemyTrainerFrontpic:
 	pop hl
 	ret
 
+InitBattleMon:
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld de, wBattleMonSpecies
+	ld bc, MON_ID
+	call CopyBytes
+	ld bc, MON_DVS - MON_ID
+	add hl, bc
+	ld de, wBattleMonDVs
+	ld bc, MON_POKERUS - MON_DVS
+	call CopyBytes
+	inc hl
+	inc hl
+	inc hl
+	ld de, wBattleMonLevel
+	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
+	call CopyBytes
+	ld a, [wBattleMonSpecies]
+	ld [wTempBattleMonSpecies], a
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseType1]
+	ld [wBattleMonType1], a
+	ld a, [wBaseType2]
+	ld [wBattleMonType2], a
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .skip_pikachu
+	ld hl, wBattleMonDVs
+	predef GetPikachuForm
+	call GetSecondPikachuType
+	ld [wBattleMonType2], a
+.skip_pikachu
+	ld hl, wPartyMonNicknames
+	ld a, [wCurBattleMon]
+	call SkipNames
+	ld de, wBattleMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+	ld hl, wBattleMonAttack
+	ld de, wPlayerStats
+	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
+	call CopyBytes
+	; fallthrough
+
 ApplyStatusEffectOnPlayerStats:
 	ld a, 1
 	jr ApplyStatusEffectOnStats
 
 ApplyStatusEffectOnEnemyStats:
 	xor a
+	; fallthrough
 
 ApplyStatusEffectOnStats:
 	ldh [hBattleTurn], a
@@ -7430,8 +7430,8 @@ GiveExperiencePoints:
 	xor a ; FALSE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
-	callfar ApplyStatusEffectOnPlayerStats
-	callfar UpdatePlayerHUD
+	call ApplyStatusEffectOnPlayerStats
+	call UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	ld a, $1
