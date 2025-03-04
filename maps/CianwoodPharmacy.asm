@@ -15,13 +15,21 @@ CianwoodPharmacist:
 	iffalse .Mart
 	writetext PharmacistGiveSecretpotionText
 	promptbutton
+	waitsfx
 	giveitem SECRETPOTION
+	iffalse .NoRoom
 	writetext ReceivedSecretpotionText
 	playsound SFX_KEY_ITEM
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
 	writetext PharmacistDescribeSecretpotionText
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext PharmacistPackFullText
 	waitbutton
 	closetext
 	end
@@ -64,6 +72,11 @@ PharmacistDescribeSecretpotionText:
 
 	para "I only offer it in"
 	line "an emergency."
+	done
+
+PharmacistPackFullText:
+	text "Uh-oh, there's no"
+	line "room in your PACK…"
 	done
 
 CianwoodPharmacy_MapEvents:
