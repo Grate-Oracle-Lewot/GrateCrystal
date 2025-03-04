@@ -1,5 +1,63 @@
 ; Core components of the battle engine.
 
+StartBattle:
+; This check prevents you from entering a battle without any Pokemon.
+; Those using walk-through-walls to bypass getting a Pokemon experience the effects of this check.
+	ld a, [wPartyCount]
+	and a
+	ret z
+
+	ld a, [wTimeOfDayPal]
+	push af
+	call BattleIntro
+	call DoBattle
+	call ExitBattle
+	pop af
+	ld [wTimeOfDayPal], a
+	scf
+	ret
+
+BattleIntro:
+	farcall StubbedTrainerRankings_Battles
+	call GetLevelCap ; only needed once, can't change cap settings mid-battle
+	call LoadTrainerOrWildMonPic
+	xor a
+	ld [wTempBattleMonSpecies], a
+	ld [wBattleMenuCursorPosition], a
+	xor a
+	ldh [hMapAnims], a
+	farcall PlayBattleMusic
+	farcall ShowLinkBattleParticipants
+	farcall FindFirstAliveMonAndStartBattle
+	call DisableSpriteUpdates
+	farcall ClearBattleRAM
+	call InitEnemy
+	call BackUpBGMap2
+	ld b, SCGB_BATTLE_GRAYSCALE
+	call GetSGBLayout
+	ld hl, rLCDC
+	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
+	call InitBattleDisplay
+	call BattleStartMessage
+	ld hl, rLCDC
+	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
+	xor a
+	ldh [hBGMapMode], a
+	call EmptyBattleTextbox
+	hlcoord 9, 7
+	lb bc, 5, 11
+	call ClearBox
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	call ClearSprites
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	call z, UpdateEnemyHUD
+	ld a, $1
+	ldh [hBGMapMode], a
+	ret
+
 StartAutomaticBattleWeather:
 	ld hl, AutomaticWeatherMaps
 	ld a, [wMapGroup]
@@ -8169,64 +8227,6 @@ GetEnemyMonFrontpic_DoAnim:
 	rst FarCall
 	pop af
 	ldh [hBattleTurn], a
-	ret
-
-StartBattle:
-; This check prevents you from entering a battle without any Pokemon.
-; Those using walk-through-walls to bypass getting a Pokemon experience the effects of this check.
-	ld a, [wPartyCount]
-	and a
-	ret z
-
-	ld a, [wTimeOfDayPal]
-	push af
-	call BattleIntro
-	call DoBattle
-	call ExitBattle
-	pop af
-	ld [wTimeOfDayPal], a
-	scf
-	ret
-
-BattleIntro:
-	farcall StubbedTrainerRankings_Battles
-	call GetLevelCap ; only needed once, can't change cap settings mid-battle
-	call LoadTrainerOrWildMonPic
-	xor a
-	ld [wTempBattleMonSpecies], a
-	ld [wBattleMenuCursorPosition], a
-	xor a
-	ldh [hMapAnims], a
-	farcall PlayBattleMusic
-	farcall ShowLinkBattleParticipants
-	farcall FindFirstAliveMonAndStartBattle
-	call DisableSpriteUpdates
-	farcall ClearBattleRAM
-	call InitEnemy
-	call BackUpBGMap2
-	ld b, SCGB_BATTLE_GRAYSCALE
-	call GetSGBLayout
-	ld hl, rLCDC
-	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
-	call InitBattleDisplay
-	call BattleStartMessage
-	ld hl, rLCDC
-	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
-	xor a
-	ldh [hBGMapMode], a
-	call EmptyBattleTextbox
-	hlcoord 9, 7
-	lb bc, 5, 11
-	call ClearBox
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	call ClearSprites
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	call z, UpdateEnemyHUD
-	ld a, $1
-	ldh [hBGMapMode], a
 	ret
 
 LoadTrainerOrWildMonPic:
