@@ -195,7 +195,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, MASTER_BALL
+	givepoke TOTODILE, 5, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
