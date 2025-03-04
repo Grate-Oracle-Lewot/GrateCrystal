@@ -20,8 +20,6 @@ ElmsLab_MapScripts:
 
 .MeetElm:
 	sdefer .WalkUpToElm
-	end
-
 .DummyScene:
 	end
 
