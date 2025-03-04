@@ -416,21 +416,21 @@ CheckFaint_PlayerThenEnemy:
 	call HandlePlayerMonFaint
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .BattleIsOver
+	jr nz, CheckFaint_BattleIsOver
 
 .PlayerNotFainted:
 	call HasEnemyFainted
-	jr nz, .BattleContinues
+	jr nz, CheckFaint_BattleContinues
 	call HandleEnemyMonFaint
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .BattleIsOver
+	jr nz, CheckFaint_BattleIsOver
 
-.BattleContinues:
+CheckFaint_BattleContinues:
 	and a
 	ret
 
-.BattleIsOver:
+CheckFaint_BattleIsOver:
 	scf
 	ret
 
@@ -448,21 +448,16 @@ CheckFaint_EnemyThenPlayer:
 	call HandleEnemyMonFaint
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .BattleIsOver
+	jr nz, CheckFaint_BattleIsOver
 
 .EnemyNotFainted:
 	call HasPlayerFainted
-	jr nz, .BattleContinues
+	jr nz, CheckFaint_BattleContinues
 	call HandlePlayerMonFaint
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .BattleIsOver
+	jr nz, CheckFaint_BattleIsOver
 
-.BattleContinues:
-	and a
-	ret
-
-.BattleIsOver:
 	scf
 	ret
 
@@ -572,7 +567,6 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jr c, .enemy_first
-	; fallthrough
 
 .weather_check
 	ld de, wBattleMonSpeed
@@ -1053,6 +1047,7 @@ HasEnemyFainted:
 
 HasPlayerFainted:
 	ld hl, wBattleMonHP
+	; fallthrough
 
 CheckIfHPIsZero:
 	ld a, [hli]
