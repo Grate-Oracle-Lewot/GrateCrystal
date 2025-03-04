@@ -1,5 +1,101 @@
 ; Core components of the battle engine.
 
+StartAutomaticBattleWeather:
+	ld hl, AutomaticWeatherMaps
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+.loop
+	ld a, [hli] ; group
+	and a
+	ret z
+	cp b
+	jr nz, .wrong_group
+	ld a, [hli] ; map
+	cp c
+	jr nz, .wrong_map
+	ld a, [hl] ; weather
+	jr .got_weather
+
+.wrong_group
+	inc hl ; skip map
+.wrong_map
+	inc hl ; skip weather
+	jr .loop
+
+.got_weather
+	and a
+	ret z
+; get current AutomaticWeatherEffects entry
+	dec a
+	ld hl, AutomaticWeatherEffects
+	ld bc, 5 ; size of one entry
+	call AddNTimes
+; [wBattleWeather] = weather
+	ld a, [hli]
+	ld [wBattleWeather], a
+; de = animation
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+; hl = text pointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+; start weather for 255 turns
+	ld a, 255
+	ld [wWeatherCount], a
+	push hl
+	call Call_PlayBattleAnim ; uses de
+	pop hl
+	call StdBattleTextbox ; uses hl
+	jp EmptyBattleTextbox
+
+INCLUDE "data/battle/automatic_weather.asm"
+
+WildFled_EnemyFled_LinkBattleCanceled:
+	call SafeLoadTempTilemapToTilemap
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	add DRAW
+	ld [wBattleResult], a
+	ld a, [wLinkMode]
+	and a
+	ld hl, BattleText_WildFled
+	jr z, .print_text
+
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	ld [wBattleResult], a ; WIN
+	ld hl, BattleText_EnemyFled
+	call CheckMobileBattleError
+	jr nc, .print_text
+
+	ld hl, wcd2a
+	bit 4, [hl]
+	jr nz, .skip_text
+
+	ld hl, BattleText_LinkErrorBattleCanceled
+
+.print_text
+	call StdBattleTextbox
+
+.skip_text
+	call StopDangerSound
+	call CheckMobileBattleError
+	jr c, .skip_sfx
+
+	ld de, SFX_RUN
+	call WaitPlaySFX
+
+.skip_sfx
+	call SetPlayerTurn
+	ld a, 1
+	ld [wBattleEnded], a
+	ret
+
 DoBattle:
 	xor a
 	ld [wBattleParticipantsNotFainted], a
@@ -110,103 +206,7 @@ DoBattle:
 
 .not_linked_2
 	call StartAutomaticBattleWeather
-	jp BattleTurn
-
-StartAutomaticBattleWeather:
-	ld hl, AutomaticWeatherMaps
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-.loop
-	ld a, [hli] ; group
-	and a
-	ret z
-	cp b
-	jr nz, .wrong_group
-	ld a, [hli] ; map
-	cp c
-	jr nz, .wrong_map
-	ld a, [hl] ; weather
-	jr .got_weather
-
-.wrong_group
-	inc hl ; skip map
-.wrong_map
-	inc hl ; skip weather
-	jr .loop
-
-.got_weather
-	and a
-	ret z
-; get current AutomaticWeatherEffects entry
-	dec a
-	ld hl, AutomaticWeatherEffects
-	ld bc, 5 ; size of one entry
-	call AddNTimes
-; [wBattleWeather] = weather
-	ld a, [hli]
-	ld [wBattleWeather], a
-; de = animation
-	ld a, [hli]
-	ld e, a
-	ld a, [hli]
-	ld d, a
-; hl = text pointer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-; start weather for 255 turns
-	ld a, 255
-	ld [wWeatherCount], a
-	push hl
-	call Call_PlayBattleAnim ; uses de
-	pop hl
-	call StdBattleTextbox ; uses hl
-	jp EmptyBattleTextbox
-
-INCLUDE "data/battle/automatic_weather.asm"
-
-WildFled_EnemyFled_LinkBattleCanceled:
-	call SafeLoadTempTilemapToTilemap
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	add DRAW
-	ld [wBattleResult], a
-	ld a, [wLinkMode]
-	and a
-	ld hl, BattleText_WildFled
-	jr z, .print_text
-
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	ld [wBattleResult], a ; WIN
-	ld hl, BattleText_EnemyFled
-	call CheckMobileBattleError
-	jr nc, .print_text
-
-	ld hl, wcd2a
-	bit 4, [hl]
-	jr nz, .skip_text
-
-	ld hl, BattleText_LinkErrorBattleCanceled
-
-.print_text
-	call StdBattleTextbox
-
-.skip_text
-	call StopDangerSound
-	call CheckMobileBattleError
-	jr c, .skip_sfx
-
-	ld de, SFX_RUN
-	call WaitPlaySFX
-
-.skip_sfx
-	call SetPlayerTurn
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	; fallthrough
 
 BattleTurn:
 	ldh a, [hInMenu]
