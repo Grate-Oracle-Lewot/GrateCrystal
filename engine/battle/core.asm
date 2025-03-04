@@ -4411,7 +4411,7 @@ HandleHealingItems:
 	call SetEnemyTurn
 	call HandleHPHealingItem
 	call UseHeldStatusHealingItem
-	jp UseConfusionHealingItem
+	jr UseConfusionHealingItem
 
 .player_1
 	call SetEnemyTurn
