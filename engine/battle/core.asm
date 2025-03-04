@@ -55,9 +55,9 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
+	jp z, BattleMenu
 	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial_debug
+	jp z, BattleMenu
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -113,9 +113,6 @@ DoBattle:
 .not_linked_2
 	call StartAutomaticBattleWeather
 	jp BattleTurn
-
-.tutorial_debug
-	jp BattleMenu
 
 StartAutomaticBattleWeather:
 	call GetAutomaticBattleWeather
