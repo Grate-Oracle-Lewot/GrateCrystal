@@ -1349,12 +1349,6 @@ HandleWrap:
 .print_text
 	jp StdBattleTextbox
 
-SwitchTurnCore:
-	ldh a, [hBattleTurn]
-	xor 1
-	ldh [hBattleTurn], a
-	ret
-
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -2080,7 +2074,13 @@ RestoreHP:
 
 	call SwitchTurnCore
 	call UpdateHPBarBattleHuds
-	jp SwitchTurnCore
+	; fallthrough
+
+SwitchTurnCore:
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
+	ret
 
 SubtractHPFromUser:
 	call SubtractHP
