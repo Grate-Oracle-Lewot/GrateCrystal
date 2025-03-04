@@ -98,12 +98,6 @@ PartyMonItemName:
 	call GetItemName
 	jp CopyName1
 
-CancelPokemonAction:
-	farcall InitPartyMenuWithCancel
-	farcall UnfreezeMonIcons
-	ld a, 1
-	ret
-
 PokemonActionSubmenu:
 	hlcoord 1, 15
 	lb bc, 2, 18
@@ -203,6 +197,17 @@ GiveTakePartyMonItem:
 	cp EGG
 	jr z, .cancel
 
+	call GetPartyItemLocation
+	ld a, [hl]
+	and a
+	ld de, .noItemString
+	jr z, .not_holding_anything
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld de, wStringBuffer1
+.not_holding_anything
+	hlcoord 1, 16
+	call PlaceString
 	ld hl, GiveTakeItemMenuData
 	call LoadMenuHeader
 	call VerticalMenu
@@ -215,8 +220,11 @@ GiveTakePartyMonItem:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 	ld a, [wMenuCursorY]
-	cp 1
-	jr nz, .take
+	cp 2 ; 2 = take
+	jr z, .take
+	cp 3 ; 3 = swap
+	jr z, .swap
+	; 1 = give
 
 	call LoadStandardMenuHeader
 	call ClearPalettes
@@ -232,9 +240,15 @@ GiveTakePartyMonItem:
 	ld a, 3
 	ret
 
+.swap
+	call SwapPartyItem
+
 .cancel
 	ld a, 3
 	ret
+
+.noItemString
+	db "---@"
 
 .GiveItem:
 	farcall DepositSellInitPackBuffers
@@ -255,7 +269,7 @@ GiveTakePartyMonItem:
 	and a
 	jr nz, .next
 
-	jp TryGiveItemToPartymon
+	jr TryGiveItemToPartymon
 
 .next
 	ld hl, ItemCantHeldText
@@ -325,7 +339,35 @@ GivePartyItem:
 	ld d, a
 	farcall ItemIsMail
 	ret nc
-	jp ComposeMailMessage
+	; fallthrough
+
+ComposeMailMessage:
+	ld de, wTempMailMessage
+	farcall _ComposeMailMessage
+	ld hl, wPlayerName
+	ld de, wTempMailAuthor
+	ld bc, NAME_LENGTH - 1
+	call CopyBytes
+	ld hl, wPlayerID
+	ld bc, 2
+	call CopyBytes
+	ld a, [wCurPartySpecies]
+	ld [de], a
+	inc de
+	ld a, [wCurItem]
+	ld [de], a
+	ld a, [wCurPartyMon]
+	ld hl, sPartyMail
+	ld bc, MAIL_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wTempMail
+	ld bc, MAIL_STRUCT_LENGTH
+	ld a, BANK(sPartyMail)
+	call OpenSRAM
+	call CopyBytes
+	jp CloseSRAM
 
 TakePartyItem:
 	call SpeechTextbox
@@ -345,29 +387,88 @@ TakePartyItem:
 	ld [hl], NO_ITEM
 	call GetItemName
 	ld hl, PokemonTookItemText
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .not_holding_item
 	ld hl, PokemonNotHoldingText
-	call MenuTextboxBackup
-	ret
+	jp MenuTextboxBackup
 
 .item_storage_full
 	ld hl, ItemStorageFullText
 	jp MenuTextboxBackup
 
+SwapPartyItem:
+	ld a, [wPartyCount]
+	cp 2
+	jr c, .DontSwap
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wSwitchMon], a
+	farcall HoldSwitchmonIcon
+	farcall InitPartyMenuNoCancel
+	ld a, 4
+	ld [wPartyMenuActionText], a
+	farcall WritePartyMenuTilemap
+	farcall PlacePartyMenuText
+	hlcoord 0, 1
+	ld bc, 20 * 2
+	ld a, [wSwitchMon]
+	dec a
+	call AddNTimes
+	ld [hl], "▷"
+	call WaitBGMap
+	call SetDefaultBGPAndOBP
+	call DelayFrame
+	farcall PartyMenuSelect
+	bit 1, b
+	jr c, .DontSwap
+	; wSwitchMon contains first selected pkmn
+	; wCurPartyMon contains second selected pkmn
+	; getting pkmn2 item and putting into stack item addr + item id
+	call GetPartyItemLocation
+	ld a, [hl] ; a pkmn2 contains item
+	push hl
+	push af
+	; getting pkmn 1 item and putting item id into b
+	ld a, [wSwitchMon]
+	dec a
+	ld [wCurPartyMon], a
+	call GetPartyItemLocation
+	ld a, [hl] ; a pkmn1 contains item
+	ld b, a
+	; actual swap
+	pop af
+	ld [hl], a ; pkmn1 get pkm2 item
+	pop hl
+	ld a, b
+	ld [hl], a ; pkmn1 get pkm2 item
+	xor a
+	ld [wPartyMenuActionText], a
+	jr CancelPokemonAction
+
+.DontSwap
+	xor a
+	ld [wPartyMenuActionText], a
+	; fallthrough
+
+CancelPokemonAction:
+	farcall InitPartyMenuWithCancel
+	farcall UnfreezeMonIcons
+	ld a, 1
+	ret
+
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
-	menu_coords 12, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 13, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .Items
 	db 1 ; default option
 
 .Items:
 	db STATICMENU_CURSOR ; flags
-	db 2 ; # items
+	db 3 ; # items
 	db "GIVE@"
 	db "TAKE@"
+	db "SWAP@"
 
 PokemonSwapItemText:
 	text_far _PokemonSwapItemText
@@ -424,34 +525,6 @@ StartMenuYesNo:
 	call MenuTextbox
 	call YesNoBox
 	jp ExitMenu
-
-ComposeMailMessage:
-	ld de, wTempMailMessage
-	farcall _ComposeMailMessage
-	ld hl, wPlayerName
-	ld de, wTempMailAuthor
-	ld bc, NAME_LENGTH - 1
-	call CopyBytes
-	ld hl, wPlayerID
-	ld bc, 2
-	call CopyBytes
-	ld a, [wCurPartySpecies]
-	ld [de], a
-	inc de
-	ld a, [wCurItem]
-	ld [de], a
-	ld a, [wCurPartyMon]
-	ld hl, sPartyMail
-	ld bc, MAIL_STRUCT_LENGTH
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, wTempMail
-	ld bc, MAIL_STRUCT_LENGTH
-	ld a, BANK(sPartyMail)
-	call OpenSRAM
-	call CopyBytes
-	jp CloseSRAM
 
 MonMailAction:
 ; If in the time capsule or trade center,
@@ -519,7 +592,6 @@ MonMailAction:
 .BagIsFull:
 	ld hl, .MailNoSpaceText
 	call MenuTextboxBackup
-	jr .done
 
 .done
 	ld a, $3
@@ -1288,10 +1360,6 @@ String_MoveSpe:
 String_MoveSta:
 	db "STATUS  @"
 
-PlaceMoveScreenArrows:
-	call PlaceMoveScreenLeftArrow
-	jp PlaceMoveScreenRightArrow
-
 PlaceMoveScreenLeftArrow:
 	ld a, [wCurPartyMon]
 	and a
@@ -1320,6 +1388,10 @@ PlaceMoveScreenLeftArrow:
 	hlcoord 16, 0
 	ld [hl], "◀"
 	ret
+
+PlaceMoveScreenArrows:
+	call PlaceMoveScreenLeftArrow
+	; fallthrough
 
 PlaceMoveScreenRightArrow:
 	ld a, [wCurPartyMon]
