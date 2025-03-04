@@ -83,8 +83,8 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_ROCK_TUNNEL
 	engine_flag wVisitedSpawns, SPAWN_VERMILION
 	engine_flag wVisitedSpawns, SPAWN_LAVENDER
-	engine_flag wVisitedSpawns, SPAWN_SAFFRON
 	engine_flag wVisitedSpawns, SPAWN_CELADON
+	engine_flag wVisitedSpawns, SPAWN_SAFFRON
 	engine_flag wVisitedSpawns, SPAWN_FUCHSIA
 	engine_flag wVisitedSpawns, SPAWN_CINNABAR
 	engine_flag wVisitedSpawns, SPAWN_VICTORY_ROAD
@@ -94,18 +94,17 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_VIOLET
 	engine_flag wVisitedSpawns, SPAWN_UNION_CAVE
 	engine_flag wVisitedSpawns, SPAWN_AZALEA
-	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
 	engine_flag wVisitedSpawns, SPAWN_GOLDENROD
-	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK
+	engine_flag wVisitedSpawns, SPAWN_OLIVINE
+	engine_flag wVisitedSpawns, SPAWN_BATTLE_TOWER
+	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
 	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
 	engine_flag wVisitedSpawns, SPAWN_LAKE_OF_RAGE
 	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
 	engine_flag wVisitedSpawns, SPAWN_MT_SILVER
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
-
-	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
 
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
