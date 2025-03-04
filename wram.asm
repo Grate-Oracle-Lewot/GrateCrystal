@@ -498,8 +498,6 @@ wEffectCarryover:: db
 ; 2 CRITICAL_RAGE: carries crit status through to BuildOpponentRage
 ; 3-7 unused
 
-	ds 1
-
 wCurPlayerMove:: db
 wCurEnemyMove::  db
 
@@ -556,7 +554,7 @@ wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
 	ds 1
 
-	ds 1
+wBackupBackupDVs:: dw
 
 wBattleWeather::
 ; 00 normal
@@ -2640,6 +2638,7 @@ wForcedSwitch:: db
 wTrainerClass:: db
 
 wUnownLetter:: db
+
 wPikachuForm:: db
 
 wMoveSelectionMenuType:: db
@@ -2671,10 +2670,7 @@ wBaseTMHM:: flag_array NUM_TM_HM_TUTOR
 wCurBaseDataEnd::
 	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
 
-	ds 3
-
-wBackupUnownLetter:: db
-wBackupPikachuForm:: db
+	ds 5
 
 wCurDamage:: dw
 
