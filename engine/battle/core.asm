@@ -4011,6 +4011,7 @@ TryToRunAwayFromBattle:
 	call WaitSFX
 	ld hl, BattleText_GotAwaySafely
 	call StdBattleTextbox
+.skip_link_error
 	call WaitSFX
 	call LoadTilemapToTempTilemap
 	scf
@@ -4023,12 +4024,7 @@ TryToRunAwayFromBattle:
 	jr nz, .skip_link_error
 	ld hl, BattleText_LinkErrorBattleCanceled
 	call StdBattleTextbox
-
-.skip_link_error
-	call WaitSFX
-	call LoadTilemapToTempTilemap
-	scf
-	ret
+	jr .skip_link_error
 
 InitBattleMon:
 	ld a, MON_SPECIES
@@ -4082,6 +4078,7 @@ BattleCheckPlayerShininess:
 
 BattleCheckEnemyShininess:
 	call GetEnemyMonDVs
+	; fallthrough
 
 BattleCheckShininess:
 	ld b, h
