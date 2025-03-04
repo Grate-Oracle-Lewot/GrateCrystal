@@ -3377,12 +3377,6 @@ _NewPokedexEntry:
 	call EnableLCD
 	call WaitBGMap
 	call GetBaseData
-
-	ld a, [wBackupUnownLetter]
-	ld [wUnownLetter], a
-	ld a, [wBackupPikachuForm]
-	ld [wPikachuForm], a
-
 	ld de, vTiles2
 	predef GetMonFrontpic
 	ld a, SCGB_POKEDEX
