@@ -7,11 +7,6 @@ Route40BattleTowerGate_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .ShowSailor
-
-.ShowSailor:
-	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
-	endcallback
 
 Route40BattleTowerGateRockerScript:
 	jumptextfaceplayer Route40BattleTowerGateRockerText
@@ -50,11 +45,11 @@ Route40BattleTowerGateRockerText:
 	text "Are you going to"
 	line "the BATTLE TOWER?"
 
-	para "This is a secret,"
-	line "but if you win a"
+	para "If you win a lot,"
+	line "you get vitamins"
 
-	para "whole lot, you can"
-	line "win special gifts."
+	para "like PROTEIN or"
+	line "IRON as prizes."
 	done
 
 Route40BattleTowerGateTwinText:
@@ -104,6 +99,6 @@ Route40BattleTowerGate_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, -1
 	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateTwinScript, -1
 	object_event  6,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerOfficerTubbs, -1
