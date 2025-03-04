@@ -8485,7 +8485,6 @@ DisplayLinkBattleResult:
 .lose
 	farcall StubbedTrainerRankings_ColosseumLosses
 	ld de, .YouLose
-	jr .store_result
 
 .store_result
 	hlcoord 6, 8
