@@ -129,11 +129,7 @@ NewBarkTownSign:
 	givepoke TOTODILE, 5
 	closetext
 	setflag ENGINE_POKEDEX
-	giveitem MASTER_BALL, 99
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	loadwildmon DITTO, 5
-	startbattle
-	reloadmapafterbattle
+	giveitem MASTER_BALL
 	loadwildmon UNOWN, 5
 	startbattle
 	reloadmapafterbattle
