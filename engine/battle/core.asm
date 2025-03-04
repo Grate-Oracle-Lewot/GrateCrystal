@@ -2166,7 +2166,7 @@ HandleEnemyMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	jr DoubleSwitch
+	jp DoubleSwitch
 
 .player_mon_not_fainted
 	ld a, BATTLEPLAYERACTION_USEITEM
@@ -2176,6 +2176,55 @@ HandleEnemyMonFaint:
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
+
+HandlePlayerMonFaint:
+	call FaintYourPokemon
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	call z, FaintEnemyPokemon
+	ld a, $1
+	ld [wWhichMonFaintedFirst], a
+	call UpdateFaintedPlayerMon
+	call CheckPlayerPartyForFitMon
+	ld a, d
+	and a
+	jp z, LostBattle
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	jr nz, .notfainted
+	call UpdateBattleStateAndExperienceAfterEnemyFaint
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .trainer
+	ld a, $1
+	ld [wBattleEnded], a
+	ret
+
+.trainer
+	call CheckEnemyTrainerDefeated
+	jp z, WinTrainerBattle
+
+.notfainted
+	call AskUseNextPokemon
+	jr nc, .switch
+	ld a, $1
+	ld [wBattleEnded], a
+	ret
+
+.switch
+	call ForcePlayerMonChoice
+	call CheckMobileBattleError
+	jp c, WildFled_EnemyFled_LinkBattleCanceled
+	ld a, c
+	and a
+	ret nz
+	ld a, BATTLEPLAYERACTION_USEITEM
+	ld [wBattlePlayerAction], a
+	call HandleEnemySwitch
+	jp z, WildFled_EnemyFled_LinkBattleCanceled
+	; fallthrough
 
 DoubleSwitch:
 	ldh a, [hSerialConnectionStatus]
@@ -2733,55 +2782,6 @@ IsPluralTrainer:
 	ret z
 	cp JESSIE
 	ret
-
-HandlePlayerMonFaint:
-	call FaintYourPokemon
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	or [hl]
-	call z, FaintEnemyPokemon
-	ld a, $1
-	ld [wWhichMonFaintedFirst], a
-	call UpdateFaintedPlayerMon
-	call CheckPlayerPartyForFitMon
-	ld a, d
-	and a
-	jp z, LostBattle
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	or [hl]
-	jr nz, .notfainted
-	call UpdateBattleStateAndExperienceAfterEnemyFaint
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .trainer
-	ld a, $1
-	ld [wBattleEnded], a
-	ret
-
-.trainer
-	call CheckEnemyTrainerDefeated
-	jp z, WinTrainerBattle
-
-.notfainted
-	call AskUseNextPokemon
-	jr nc, .switch
-	ld a, $1
-	ld [wBattleEnded], a
-	ret
-
-.switch
-	call ForcePlayerMonChoice
-	call CheckMobileBattleError
-	jp c, WildFled_EnemyFled_LinkBattleCanceled
-	ld a, c
-	and a
-	ret nz
-	ld a, BATTLEPLAYERACTION_USEITEM
-	ld [wBattlePlayerAction], a
-	call HandleEnemySwitch
-	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	jp DoubleSwitch
 
 UpdateFaintedPlayerMon:
 	ld a, [wCurBattleMon]
