@@ -431,7 +431,7 @@ PokeBallEffect:
 	push af
 	push hl
 
-	ld hl, wEnemyBackupDVs
+	ld hl, wBackupBackupDVs
 	ld a, [wEnemyMonDVs]
 	ld [hli], a
 	ld a, [wEnemyMonDVs + 1]
@@ -444,9 +444,9 @@ PokeBallEffect:
 	farcall LoadEnemyMon
 
 	ld hl, wEnemyMonDVs
-	ld a, [wEnemyBackupDVs]
+	ld a, [wBackupBackupDVs]
 	ld [hli], a
-	ld a, [wEnemyBackupDVs + 1]
+	ld a, [wBackupBackupDVs + 1]
 	ld [hl], a
 
 	pop hl
