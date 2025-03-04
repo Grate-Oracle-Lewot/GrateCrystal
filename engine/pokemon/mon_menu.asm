@@ -409,7 +409,7 @@ SwapPartyItem:
 	ld a, 4
 	ld [wPartyMenuActionText], a
 	farcall WritePartyMenuTilemap
-	farcall PlacePartyMenuText
+	farcall PrintPartyMenuText
 	hlcoord 0, 1
 	ld bc, 20 * 2
 	ld a, [wSwitchMon]
@@ -417,7 +417,7 @@ SwapPartyItem:
 	call AddNTimes
 	ld [hl], "▷"
 	call WaitBGMap
-	call SetDefaultBGPAndOBP
+	call SetPalettes
 	call DelayFrame
 	farcall PartyMenuSelect
 	bit 1, b
