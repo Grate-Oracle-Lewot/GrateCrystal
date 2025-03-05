@@ -348,6 +348,7 @@ ChooseWildEncounter:
 	jr c, .nowildbattle
 
 ; Check Unown letters
+	ld a, b
 	cp UNOWN
 	jr nz, .loadwildmon
 
@@ -840,9 +841,9 @@ ValidateTempWildMonSpecies:
 ; Takes the wildmon's species in a as input.
 	and a
 	jr z, .nowildmon ; = 0
-	cp NUM_POKEMON + 1 ; 252
-	jr nc, .nowildmon ; >= 252
-	and a ; 1 <= Species <= 251
+	cp NUM_POKEMON + 1 ; 254
+	jr nc, .nowildmon ; >= 254
+	and a ; 1 <= Species <= 253
 	ret
 
 .nowildmon
