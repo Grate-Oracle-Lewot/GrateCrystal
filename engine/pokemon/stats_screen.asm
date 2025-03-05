@@ -400,9 +400,7 @@ StatsScreen_InitUpperHalf:
 	hlcoord 8, 0
 	ld [hl], "№"
 	inc hl
-	ld [hl], "."
-	inc hl
-	hlcoord 10, 0
+	hlcoord 9, 0
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	ld de, wTextDecimalByte
 	call PrintNum
