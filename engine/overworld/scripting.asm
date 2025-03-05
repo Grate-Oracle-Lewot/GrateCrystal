@@ -451,9 +451,6 @@ Script_verbosegiveitem:
 	ld de, GiveItemScript
 	jp ScriptCall
 
-GiveItemScript_DummyFunction:
-	ret
-
 GiveItemScript:
 	callasm GiveItemScript_DummyFunction
 	writetext .ReceivedItemText
@@ -524,6 +521,7 @@ Script_specialsound:
 	ld de, SFX_ITEM
 .play
 	call PlaySFX
+Script_waitsfx:
 	jp WaitSFX
 
 GetPocketName:
@@ -602,6 +600,9 @@ Script_phonecall:
 
 Script_hangup:
 	farcall HangUp
+Script_swarm:
+; no swarms in Grate Crystal
+GiveItemScript_DummyFunction:
 	ret
 
 Script_askforphonenumber:
@@ -637,10 +638,6 @@ Script_fruittree:
 	ld b, BANK(FruitTreeScript)
 	ld hl, FruitTreeScript
 	jp ScriptJump
-
-Script_swarm:
-; no swarms in Grate Crystal
-	ret
 
 Script_trainertext:
 	call GetScriptByte
@@ -748,9 +745,6 @@ Script_playsound:
 	call GetScriptByte
 	ld d, a
 	jp PlaySFX
-
-Script_waitsfx:
-	jp WaitSFX
 
 Script_warpsound:
 	farcall GetWarpSFX
@@ -1206,6 +1200,7 @@ Script_memcall:
 	; fallthrough
 
 ScriptCall:
+CallCallback::
 	ld hl, wScriptStackSize
 	ld a, [hl]
 	cp 5
@@ -1232,9 +1227,6 @@ ScriptCall:
 	ld a, d
 	ld [wScriptPos + 1], a
 	ret
-
-CallCallback::
-	jp ScriptCall
 
 Script_sjump:
 	call GetScriptByte
@@ -1573,6 +1565,7 @@ Script_getcurlandmarkname:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
+	; fallthrough
 
 ConvertLandmarkToText:
 	ld e, a
@@ -1595,6 +1588,7 @@ Script_gettrainername:
 Script_getname:
 	call GetScriptByte
 	ld [wNamedObjectType], a
+	; fallthrough
 
 ContinueToGetName:
 	call GetScriptByte
@@ -2013,7 +2007,7 @@ Script_warpfacing:
 	set PLAYERSPRITESETUP_CUSTOM_FACING_F, a
 	or c
 	ld [wPlayerSpriteSetupFlags], a
-; fallthrough
+	; fallthrough
 
 Script_warp:
 ; This seems to be some sort of error handling case.
