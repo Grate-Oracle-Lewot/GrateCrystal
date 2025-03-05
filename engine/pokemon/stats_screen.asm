@@ -23,7 +23,7 @@ StatsScreenInit:
 
 _MobileStatsScreenInit:
 	ld hl, StatsScreenMobile
-	jr StatsScreenInit_gotaddress
+	; fallthrough
 
 StatsScreenInit_gotaddress:
 	ldh a, [hMapAnims]
@@ -506,11 +506,8 @@ StatsScreen_LoadGFX:
 	call .LoadPals
 	ld hl, wStatsScreenFlags
 	bit 4, [hl]
-	jr nz, .place_frontpic
+	jp nz, StatsScreen_PlaceFrontpic
 	jp SetPalettes
-
-.place_frontpic
-	jp StatsScreen_PlaceFrontpic
 
 .ClearBox:
 	ld a, [wStatsScreenFlags]
@@ -901,7 +898,6 @@ StatsScreen_PlaceFrontpic:
 .unownegg
 	xor a
 	ld [wBoxAlignment], a
-	; fallthrough
 
 .get_animation
 	ld a, [wCurPartySpecies]
