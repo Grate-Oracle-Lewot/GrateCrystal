@@ -283,7 +283,6 @@ BattleTurn:
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wEffectCarryover], a
-	ld [wSkipFormCheck], a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
@@ -6350,11 +6349,6 @@ LoadEnemyMon:
 	jp nz, .Happiness
 
 ; Species-specfic:
-
-; Don't recalc Unown letter or Pikachu form if we're showing a new dex entry
-	ld a, [wSkipFormCheck]
-	and a
-	jr nz, .Magikarp
 
 	ld a, [wTempEnemyMonSpecies]
 	cp UNOWN
