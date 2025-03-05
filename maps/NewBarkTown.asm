@@ -78,24 +78,19 @@ NewBarkTownTeacherScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .MonIsAdorable
 	writetext Text_GearIsImpressive
-	waitbutton
-	closetext
-	end
+	sjump .End
 
 .MonIsAdorable:
 	writetext Text_YourMonIsAdorable
-	waitbutton
-	closetext
-	end
+	sjump .End
 
 .TellMomYoureLeaving:
 	writetext Text_TellMomIfLeaving
-	waitbutton
-	closetext
-	end
+	sjump .End
 
 .CallMom:
 	writetext Text_CallMomOnGear
+.End:
 	waitbutton
 	closetext
 	end
@@ -130,7 +125,8 @@ NewBarkTownSign:
 	closetext
 	setflag ENGINE_POKEDEX
 	giveitem MASTER_BALL
-	loadwildmon UNOWN, 5
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon DITTO, 5
 	startbattle
 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
