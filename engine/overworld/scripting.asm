@@ -23,9 +23,6 @@ ScriptEvents::
 	dw WaitScriptMovement
 	dw WaitScript
 
-EndScript:
-	jp StopScript
-
 WaitScript:
 	call StopScript
 
@@ -244,6 +241,7 @@ CheckScript:
 	bit SCRIPT_RUNNING, [hl]
 	ret
 
+EndScript:
 StopScript:
 	ld hl, wScriptFlags
 	res SCRIPT_RUNNING, [hl]
