@@ -1695,7 +1695,7 @@ GentlemanGroup:
 	db -1 ; end
 
 	; GENTLEMAN (3)
-	db "GREGORY@", TRAINERTYPE_NORMAL
+	db "GREGORY@", TRAINERTYPE_ITEM
 	db 45, PIKACHU,    STAR_PIECE
 	db 45, AMPHAROS,   STAR_PIECE
 	db -1 ; end
@@ -2865,7 +2865,7 @@ FirebreatherGroup:
 	db -1 ; end
 
 	; FIREBREATHER (10)
-	db "GROVER@", TRAINERTYPE_ITEM
+	db "SVEN@", TRAINERTYPE_ITEM
 	db 45, VULPIX,     EVERSTONE
 	db -1 ; end
 
