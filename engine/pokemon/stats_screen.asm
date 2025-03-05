@@ -406,14 +406,14 @@ StatsScreen_InitUpperHalf:
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	ld de, wTextDecimalByte
 	call PrintNum
-	hlcoord 14, 0
+	hlcoord 13, 0
 	call PrintLevel
 	ld hl, .NicknamePointers
 	call GetNicknamenamePointer
 	call CopyNickname
 	hlcoord 8, 2
 	call PlaceString
-	hlcoord 18, 0
+	hlcoord 17, 0
 	call .PlaceGenderChar
 	hlcoord 9, 4
 	ld a, "/"
@@ -491,7 +491,7 @@ StatsScreen_PlaceFloatIcon:
 	ld hl, FloatMons
 	call IsInByteArray
 	ret nc
-	hlcoord 8, 6
+	hlcoord 18, 0
 	ld [hl], "<DO>"
 	ret
 
