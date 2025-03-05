@@ -114,8 +114,6 @@ FindNest:
 
 .found
 	pop af
-	; fallthrough
-
 .AppendNest:
 	push de
 	call GetWorldMapLocation
