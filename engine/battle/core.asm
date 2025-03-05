@@ -6255,7 +6255,7 @@ LoadEnemyMon:
 	bit SUBSTATUS_TRANSFORMED, a
 	jr z, .InitDVs
 
-; Unknown
+; If Transformed, restore pre-transformation DVs
 	ld hl, wEnemyBackupDVs
 	ld de, wEnemyMonDVs
 	ld a, [hli]
