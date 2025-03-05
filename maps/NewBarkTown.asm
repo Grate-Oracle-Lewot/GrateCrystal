@@ -120,14 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke TOTODILE, 5
-	closetext
-	setflag ENGINE_POKEDEX
-	giveitem MASTER_BALL
-	loadwildmon UNOWN, 5
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
