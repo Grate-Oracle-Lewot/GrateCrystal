@@ -6693,7 +6693,6 @@ CheckUnownLetter:
 	ld de, 0
 
 .loop
-
 ; Don't check this set unless it's been unlocked
 	srl c
 	jr nc, .next
@@ -6729,7 +6728,6 @@ CheckUnownLetter:
 
 .not_alph
 	ld a, [wUnownLetter]
-
 .match
 ; Valid letter
 	and a
