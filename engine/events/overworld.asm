@@ -1678,18 +1678,10 @@ PocketPCFunction:
 	ld de, Script_FailPocketPC_Register
 .finish
 	ld a, [wPlayerState]
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	call QueueScript
 	ld a, TRUE
 	ld [wFieldMoveSucceeded], a
-	ret
-
-.CheckIfRegistered:
-	ld a, [wUsingItemWithSelect]
-	and a
-	ret z
-	ld h, d
-	ld l, e
 	ret
 
 CheckIfInPokemonLeague:
@@ -1719,6 +1711,14 @@ CheckIfInPokemonLeague:
 	ret
 .carry
 	scf
+	ret
+
+CheckIfRegistered:
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
 	ret
 
 BikeFunction:
@@ -1761,7 +1761,7 @@ BikeFunction:
 	jr nz, .CantGetOffBike
 	ld hl, Script_GetOffBike
 	ld de, Script_GetOffBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	ld a, BANK(Script_GetOffBike)
 	jr .done
 
@@ -1776,14 +1776,6 @@ BikeFunction:
 .done
 	call QueueScript
 	ld a, $1
-	ret
-
-.CheckIfRegistered:
-	ld a, [wUsingItemWithSelect]
-	and a
-	ret z
-	ld h, d
-	ld l, e
 	ret
 
 .CheckEnvironment:
@@ -1818,7 +1810,7 @@ Script_LoadPocketPC_Register:
 Script_FailPocketPC:
 	reloadmappart
 	special UpdateTimePals
-ScriptFailPocketPC_Register:
+Script_FailPocketPC_Register:
 	opentext
 	writetext NoSignalText
 	promptbutton
