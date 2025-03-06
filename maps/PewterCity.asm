@@ -5,6 +5,7 @@
 	const PEWTERCITY_FRUIT_TREE1
 	const PEWTERCITY_FRUIT_TREE2
 	const PEWTERCITY_YOUNGSTER
+	const PEWTERCITY_OFFICER
 
 PewterCity_MapScripts:
 	def_scene_scripts
@@ -27,6 +28,15 @@ PewterCityGrampsScript:
 
 PewterCityYoungsterScript:
 	jumptextfaceplayer PewterCityYoungsterText
+
+PewterCityOfficerScript:
+	faceplayer
+	opentext
+	writetext PewterCityOfficerText
+	waitbutton
+	closetext
+	turnobject PEWTERCITY_OFFICER, UP
+	end
 
 PewterCitySign:
 	jumptext PewterCitySignText
@@ -114,6 +124,12 @@ PewterCityYoungsterText:
 	para "Kind of?"
 	done
 
+PewterCityOfficerText:
+	text "There seems to be"
+	line "some commotion"
+	cont "inside…"
+	done
+
 PewterCitySignText:
 	text "PEWTER CITY"
 	line "A Stone Gray City"
@@ -176,3 +192,4 @@ PewterCity_MapEvents:
 	object_event 32,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree1, -1
 	object_event 30,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterCityFruitTree2, -1
 	object_event 16, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterCityYoungsterScript, EVENT_BROCK_IN_PEWTER_MUSEUM
+	object_event 19,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PewterCityOfficerScript, EVENT_BROCK_IN_PEWTER_MUSEUM
