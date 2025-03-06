@@ -2535,7 +2535,7 @@ SacredAshEffect:
 	ld a, [wItemEffectSucceeded]
 	cp $1
 	ret nz
-	jp UseDisposableItem
+	jr UseDisposableItem
 
 NoEffect:
 	jp IsntTheTimeMessage
@@ -2606,7 +2606,7 @@ IsntTheTimeMessage:
 
 WontHaveAnyEffectMessage:
 	ld hl, ItemWontHaveEffectText
-	jr CantUseItemMessage
+	; fallthrough
 
 CantUseItemMessage:
 ; Item couldn't be used.
