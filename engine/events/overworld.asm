@@ -1740,7 +1740,7 @@ BikeFunction:
 .GetOnBike:
 	ld hl, Script_GetOnBike
 	ld de, Script_GetOnBike_Register
-	call .CheckIfRegistered
+	call CheckIfRegistered
 	call QueueScript
 	xor a
 	ld [wMusicFade], a
