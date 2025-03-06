@@ -571,6 +571,13 @@ TrainerWalkToPlayer:
 	jp ComputePathToWalkToPlayer
 
 SurfStartStep:
+	call InitMovementBuffer
+	call .GetMovementData
+	call AppendToMovementBuffer
+	ld a, movement_step_end
+	jp AppendToMovementBuffer
+
+.GetMovementData:
 	ld a, [wPlayerDirection]
 	srl a
 	srl a
@@ -579,16 +586,14 @@ SurfStartStep:
 	ld d, 0
 	ld hl, .movement_data
 	add hl, de
-	add hl, de
-	add hl, de
-	ld a, BANK(.movement_data)
-	jp StartAutoInput
+	ld a, [hl]
+	ret
 
 .movement_data
-	db D_DOWN,  0, -1
-	db D_UP,    0, -1
-	db D_LEFT,  0, -1
-	db D_RIGHT, 0, -1
+	slow_step DOWN
+	slow_step UP
+	slow_step LEFT
+	slow_step RIGHT
 
 FollowNotExact::
 	push bc
