@@ -1669,13 +1669,18 @@ PocketPCFunction:
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .PocketPCNoSignal
-	ld a, [wPlayerState]
 	ld hl, Script_LoadPocketPC
 	ld de, Script_LoadPocketPC_Register
+	jr .finish
+
+.PocketPCNoSignal:
+	ld hl, Script_FailPocketPC
+	ld de, Script_FailPocketPC_Register
+.finish
+	ld a, [wPlayerState]
 	call .CheckIfRegistered
 	call QueueScript
 	ld a, TRUE
-.finish
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1687,16 +1692,6 @@ PocketPCFunction:
 	ld l, e
 	ret
 
-.PocketPCNoSignal:
-	ld hl, .NoSignalText
-	call MenuTextboxBackup
-	ld a, JUMPTABLE_EXIT
-	jr .finish
-
-.NoSignalText:
-	text_far _PocketPCNoSignalText
-	text_end
-
 CheckIfInPokemonLeague:
 	ld a, [wMapGroup]
 	cp GROUP_CIANWOOD_DARKROOM
@@ -1705,8 +1700,6 @@ CheckIfInPokemonLeague:
 	cp MAP_CIANWOOD_DARKROOM
 	jr z, .carry
 	ld a, [wMapGroup]
-	; fallthrough
-
 .no_darkroom
  	cp GROUP_WILLS_ROOM
 	jr nz, .no_carry
@@ -1721,12 +1714,9 @@ CheckIfInPokemonLeague:
 	jr z, .carry
 	cp MAP_LANCES_ROOM
 	jr z, .carry
-	; fallthrough
-
 .no_carry
 	xor a ; clear carry flag
 	ret
-
 .carry
 	scf
 	ret
@@ -1820,12 +1810,19 @@ BikeFunction:
 Script_LoadPocketPC:
 	reloadmappart
 	special UpdateTimePals
+Script_LoadPocketPC_Register:
 	special PokemonCenterPC
 	reloadmappart
 	end
 
-Script_LoadPocketPC_Register:
-	special PokemonCenterPC
+Script_FailPocketPC:
+	reloadmappart
+	special UpdateTimePals
+ScriptFailPocketPC_Register:
+	opentext
+	writetext NoSignalText
+	promptbutton
+	closetext
 	reloadmappart
 	end
 
