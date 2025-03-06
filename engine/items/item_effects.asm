@@ -1637,6 +1637,7 @@ EnergypowderEffect:
 
 EnergyRootEffect:
 	ld c, HAPPINESS_ENERGYROOT
+	; fallthrough
 
 EnergypowderEnergyRootCommon:
 	push bc
