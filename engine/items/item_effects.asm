@@ -1387,6 +1387,7 @@ StatusHealingEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
+	; fallthrough
 
 FullyHealStatus:
 	call UseStatusHealer
