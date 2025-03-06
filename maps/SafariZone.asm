@@ -79,7 +79,7 @@ SafariZoneMagikarpScript:
 SafariZoneSudowoodoScript:
 	waitsfx
 	playsound SFX_SANDSTORM
-	applymovement SAFARIZONE_SUDOWOODO, SudowoodoShakeMovement
+	applymovement SAFARIZONE_SUDOWOODO, SafariZoneShakeMovement
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon SUDOWOODO, 54
 	startbattle
