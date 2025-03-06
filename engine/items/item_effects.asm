@@ -2045,12 +2045,12 @@ EscapeRopeEffect:
 	jp z, UseDisposableItem
 	ret
 
-SuperRepelEffect:
-	ld b, 200
-	jr UseRepel
-
 MaxRepelEffect:
 	ld b, 250
+	jr UseRepel
+
+SuperRepelEffect:
+	ld b, 200
 	jr UseRepel
 
 RepelEffect:
