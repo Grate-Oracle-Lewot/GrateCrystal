@@ -404,6 +404,7 @@ UsedSurfScript:
 	special UpdatePlayerSprite
 	special PlayMapMusic
 	special SurfStartStep
+	applymovement PLAYER, wMovementBuffer
 	end
 
 .stubbed_fn
