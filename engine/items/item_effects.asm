@@ -2794,7 +2794,6 @@ GetMaxPPOfMove:
 	dec a
 	jr z, .got_nonpartymon ; BOXMON
 
-	ld hl, wTempMonMoves ; Wasted cycles
 	dec a
 	jr z, .got_nonpartymon ; TEMPMON
 
@@ -2839,7 +2838,6 @@ GetMaxPPOfMove:
 	ld [hl], a
 	xor a
 	ld [wTempPP], a
-	ld a, b ; this gets lost anyway
 	call ComputeMaxPP
 	ld a, [hl]
 	and PP_MASK
