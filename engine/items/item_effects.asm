@@ -2441,9 +2441,11 @@ Elixer_RestorePPofAllMoves:
 	ld a, [wMenuCursorX]
 	and a
 	jp nz, BattleRestorePP
+	; fallthrough
 
 PPRestoreItem_NoEffect:
 	call WontHaveAnyEffectMessage
+	; fallthrough
 
 PPRestoreItem_Cancel:
 	call ClearPalettes
