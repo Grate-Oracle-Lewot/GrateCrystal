@@ -9,6 +9,20 @@ Route4_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .CheckPercy
+
+.CheckPercy:
+	disappear ROUTE4_BRUNO
+	checkevent EVENT_ELITE_HIDE_AND_SEEK
+	iffalse .end
+	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
+	iffalse .AppearPercy
+	endcallback
+
+.AppearLucas:
+	appear ROUTE4_BRUNO
+.end
+	endcallback
 
 TrainerBirdKeeperHank:
 	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
