@@ -197,6 +197,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
 ## Items
+- Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves and the Pokémon League). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP and status).
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move, all usable with Select (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
