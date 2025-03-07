@@ -19,7 +19,7 @@ Route4_MapScripts:
 	iffalse .AppearPercy
 	endcallback
 
-.AppearLucas:
+.AppearPercy:
 	appear ROUTE4_BRUNO
 .end
 	endcallback
