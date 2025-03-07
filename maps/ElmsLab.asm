@@ -193,7 +193,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, MASTER_BALL
+	givepoke TOTODILE, 100, MASTER_BALL
 	giveitem POCKET_PC
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
@@ -1289,8 +1289,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, OLIVINE_CITY, 1
-	warp_event  5, 11, NEW_BARK_TOWN, 1
+	warp_event  4, 11, PEWTER_CITY, 1
+	warp_event  5, 11, MOUNT_MOON_1F, 1
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
