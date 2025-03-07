@@ -657,7 +657,7 @@ BlackGlassesDesc:
 
 SlowpokeTailDesc:
 	db   "Tasty to suck on."
-	next "Sell high.@"
+	next "Sell low.@"
 
 PinkBowDesc:
 	db   "Powers up normal-"
@@ -769,11 +769,11 @@ LostItemDesc:
 
 StardustDesc:
 	db   "Pretty, red sand."
-	next "Sell high.@"
+	next "Sell low.@"
 
 StarPieceDesc:
 	db   "A hunk of red gem."
-	next "Sell very high.@"
+	next "Sell high.@"
 
 BasementKeyDesc:
 	db   "Opens the door in"
