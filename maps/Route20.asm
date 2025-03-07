@@ -64,7 +64,13 @@ TrainerSwimmermCameron:
 	end
 
 Route20WillScript:
-	jumptextfaceplayer Route20WillText
+	faceplayer
+	opentext
+	writetext Route20WillText
+	waitbutton
+	closetext
+	setevent EVENT_ELITE_HIDE_AND_SEEK
+	end
 
 CinnabarGymSign:
 	jumptext CinnabarGymSignText
