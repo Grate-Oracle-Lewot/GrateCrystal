@@ -1813,7 +1813,6 @@ Script_FailPocketPC:
 Script_FailPocketPC_Register:
 	opentext
 	writetext NoSignalText
-	promptbutton
 	closetext
 	reloadmappart
 	end
