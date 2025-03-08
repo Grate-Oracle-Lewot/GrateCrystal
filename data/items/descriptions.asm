@@ -396,8 +396,8 @@ XEvadeDesc:
 	next "(1 BTL)@"
 
 NuggetDesc:
-	db   "Made of pure gold."
-	next "Sell high.@"
+	db   "Golden chicken"
+	next "nugget. Sell high.@"
 
 PokeDollDesc:
 	db   "Use to escape from"
@@ -412,8 +412,8 @@ ReviveDesc:
 	next "#MON to 1/2 HP.@"
 
 MaxReviveDesc:
-	db   "Fully restores a"
-	next "fainted #MON.@"
+	db   "Restores a fainted"
+	next "#MON to max HP.@"
 
 GuardSpecDesc:
 	db   "Prevents stat"
@@ -808,8 +808,8 @@ ScopeLensDesc:
 	next "hit ratio. (HOLD)@"
 
 PocketPCDesc:
-	db   "Access the PC"
-	next "right here!@"
+	db   "A handheld PC for"
+	next "use anywhere!@"
 
 XSpDefendDesc:
 	db   "Raises SPECIAL"
@@ -1000,8 +1000,8 @@ MirageMailDesc:
 	next "(HOLD)@"
 
 CandiedYamDesc:
-	db   "Restores HP during"
-	next "battle. (HOLD)@"
+	db   "YAMMY's signature"
+	next "held item.@"
 
 NoDesc:
-	db   " @"
+	db   "@"
