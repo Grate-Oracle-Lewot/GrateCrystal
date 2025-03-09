@@ -839,7 +839,12 @@ MoveMonWithoutMail_DPad_2:
 	ld a, [hl]
 	and D_RIGHT
 	jr nz, BillsPC_PressRight
-	jr BillsPC_JoypadDidNothing
+	; fallthrough
+
+BillsPC_JoypadDidNothing:
+	xor a
+	and a
+	ret
 
 BillsPC_PressUp:
 	ld hl, wBillsPC_CursorPosition
@@ -876,7 +881,12 @@ BillsPC_PressDown:
 .not_bottom
 	ld hl, wBillsPC_ScrollPosition
 	inc [hl]
-	jr BillsPC_UpDownDidSomething
+	; fallthrough
+
+BillsPC_UpDownDidSomething:
+	ld a, TRUE
+	and a
+	ret
 
 BillsPC_PressLeft:
 	ld hl, wBillsPC_LoadedBox
@@ -900,17 +910,7 @@ BillsPC_PressRight:
 
 .wrap_around
 	ld [hl], 0
-	jr BillsPC_LeftRightDidSomething
-
-BillsPC_JoypadDidNothing:
-	xor a
-	and a
-	ret
-
-BillsPC_UpDownDidSomething:
-	ld a, TRUE
-	and a
-	ret
+	; fallthrough
 
 BillsPC_LeftRightDidSomething:
 	scf
