@@ -340,6 +340,7 @@ CuboneEggMoves:
 	db PERISH_SONG
 	db SWORDS_DANCE
 	db SLAM
+	db FLAME_WHEEL
 	db IRON_HEAD
 	db -1 ; end
 
