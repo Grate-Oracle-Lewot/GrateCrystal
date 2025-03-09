@@ -459,7 +459,7 @@ CancelPokemonAction:
 
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
-	menu_coords 13, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 2
+	menu_coords 13, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .Items
 	db 1 ; default option
 
