@@ -96,10 +96,6 @@ _BillsPC:
 	db 4 ; SEE YA!
 	db -1
 
-BillsPC_SeeYa:
-	scf
-	ret
-
 BillsPC_MovePKMNMenu:
 	call LoadStandardMenuHeader
 	farcall IsAnyMonHoldingMail
@@ -150,16 +146,16 @@ CheckCurPartyMonFainted:
 	inc b
 	ld a, [wPartyCount]
 	cp b
-	jr z, .done
+	jr z, BillsPC_SeeYa
 	add hl, de
 	jr .loop
 
-.done
-	scf
-	ret
-
 .notfainted
 	and a
+	ret
+
+BillsPC_SeeYa:
+	scf
 	ret
 
 BillsPC_WithdrawMenu:
