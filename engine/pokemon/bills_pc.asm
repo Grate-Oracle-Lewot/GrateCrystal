@@ -2163,12 +2163,10 @@ _ChangeBox:
 	call ScrollingMenu
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
-	jr z, .done
+	jp z, CloseWindow
 	call BillsPC_PlaceWhatsUpString
 	call BillsPC_ChangeBoxSubmenu
 	jr .loop
-.done
-	jp CloseWindow
 
 BillsPC_ClearTilemap:
 	xor a
