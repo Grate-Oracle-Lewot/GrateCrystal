@@ -51,8 +51,7 @@ MonMenuLoop:
 	bit A_BUTTON_F, a
 	jr nz, .select
 	bit B_BUTTON_F, a
-	jr nz, .cancel
-	jr .loop
+	jr z, .loop
 
 .cancel
 	ld a, MONMENUITEM_CANCEL
