@@ -1038,8 +1038,8 @@ _PokegearAskWhoCallText::
 	done
 
 _PokegearPressButtonText::
-	text "Press any button"
-	line "to exit."
+	text "Press A to change"
+	line "the clock's time."
 	done
 
 _PokegearAskDeleteText::
