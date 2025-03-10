@@ -9,10 +9,9 @@
 	const MAINMENUITEM_CONTINUE    ; 0
 	const MAINMENUITEM_NEW_GAME    ; 1
 	const MAINMENUITEM_OPTION      ; 2
-	const MAINMENUITEM_CLOCK_RESET ; 3
-	const MAINMENUITEM_DELETE_SAVE ; 4
-	const MAINMENUITEM_MOBILE      ; 5
-	const MAINMENUITEM_DEBUG_ROOM  ; 6
+	const MAINMENUITEM_DELETE_SAVE ; 3
+	const MAINMENUITEM_MOBILE      ; 4
+	const MAINMENUITEM_DEBUG_ROOM  ; 5
 
 MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
@@ -59,7 +58,6 @@ MainMenu:
 	db "CONTINUE@"
 	db "NEW GAME@"
 	db "OPTION@"
-	db "RESET CLOCK@"
 	db "DELETE SAVE@"
 	db "MOBILE@"
 if DEF(_DEBUG)
@@ -71,7 +69,6 @@ endc
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_ClockReset
 	dw MainMenu_DeleteSave
 	dw MainMenu_Mobile
 if DEF(_DEBUG)
@@ -88,11 +85,10 @@ MainMenuItems:
 	db -1
 
 	; MAINMENU_CONTINUE
-	db 5 + DEF(_DEBUG)
+	db 4 + DEF(_DEBUG)
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_CLOCK_RESET
 	db MAINMENUITEM_DELETE_SAVE
 if DEF(_DEBUG)
 	db MAINMENUITEM_DEBUG_ROOM
@@ -100,11 +96,10 @@ endc
 	db -1
 
 	; MAINMENU_MOBILE
-	db 6 + DEF(_DEBUG)
+	db 5 + DEF(_DEBUG)
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_CLOCK_RESET
 	db MAINMENUITEM_DELETE_SAVE
 	db MAINMENUITEM_MOBILE
 if DEF(_DEBUG)
@@ -258,10 +253,6 @@ MainMenu_Option:
 
 MainMenu_Continue:
 	farcall Continue
-	ret
-
-MainMenu_ClockReset:
-	farcall _ResetClock
 	ret
 
 MainMenu_DeleteSave:
