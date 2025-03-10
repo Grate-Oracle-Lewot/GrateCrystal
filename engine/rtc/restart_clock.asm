@@ -36,6 +36,7 @@ ENDM
 	wraparound_time wRestartClockMin,  60, 15
 
 RestartClock:
+	farcall BlankScreen
 	ld hl, wOptions
 	ld a, [hl]
 	push af
