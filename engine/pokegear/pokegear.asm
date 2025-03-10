@@ -1052,7 +1052,12 @@ PokegearPhone_GetDPad:
 	cp PHONE_DISPLAY_HEIGHT - 1
 	jr nc, .scroll_page_down
 	inc [hl]
-	jr .done_joypad_same_page
+
+.done_joypad_same_page
+	xor a
+	ldh [hBGMapMode], a
+	call PokegearPhone_UpdateCursor
+	jp WaitBGMap
 
 .scroll_page_down
 	ld hl, wPokegearPhoneScrollPosition
@@ -1065,12 +1070,6 @@ PokegearPhone_GetDPad:
 	xor a
 	ldh [hBGMapMode], a
 	call PokegearPhone_UpdateDisplayList
-	jp WaitBGMap
-
-.done_joypad_same_page
-	xor a
-	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateCursor
 	jp WaitBGMap
 
 PokegearPhone_UpdateCursor:
@@ -2329,12 +2328,10 @@ HasVisitedSpawn:
 	ld d, 0
 	predef SmallFarFlagAction
 	ld a, c
+Pokegear_DummyFunction:
 	ret
 
 INCLUDE "data/maps/flypoints.asm"
-
-Pokegear_DummyFunction:
-	ret
 
 FlyMap:
 	ld a, [wMapGroup]
@@ -2718,6 +2715,8 @@ FillJohtoMap:
 
 FillKantoMap:
 	ld de, KantoMap
+	; fallthrough
+
 FillTownMap:
 	hlcoord 0, 0
 .loop
