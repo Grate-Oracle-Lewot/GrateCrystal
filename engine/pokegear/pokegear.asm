@@ -616,7 +616,6 @@ PokegearMap_CheckRegion:
 .johto
 	ld a, POKEGEARSTATE_JOHTOMAPINIT
 	jr .done
-	ret
 
 .kanto
 	ld a, POKEGEARSTATE_KANTOMAPINIT
@@ -922,7 +921,6 @@ PokegearPhone_Joypad:
 .radio
 	ld c, POKEGEARSTATE_RADIOINIT
 	ld b, POKEGEARCARD_RADIO
-	jr .switch_page
 .no_radio ; go to clock
 
 .switch_page
@@ -1062,18 +1060,17 @@ PokegearPhone_GetDPad:
 	cp CONTACT_LIST_SIZE - PHONE_DISPLAY_HEIGHT
 	ret nc
 	inc [hl]
-	jr .done_joypad_update_page
-
-.done_joypad_same_page
-	xor a
-	ldh [hBGMapMode], a
-	call PokegearPhone_UpdateCursor
-	jp WaitBGMap
 
 .done_joypad_update_page
 	xor a
 	ldh [hBGMapMode], a
 	call PokegearPhone_UpdateDisplayList
+	jp WaitBGMap
+
+.done_joypad_same_page
+	xor a
+	ldh [hBGMapMode], a
+	call PokegearPhone_UpdateCursor
 	jp WaitBGMap
 
 PokegearPhone_UpdateCursor:
@@ -1349,7 +1346,16 @@ Pokegear_SwitchPage:
 	ld [wJumptableIndex], a
 	ld a, b
 	ld [wPokegearCard], a
-	jp DeleteSpriteAnimStruct2ToEnd
+	; fallthrough
+
+DeleteSpriteAnimStruct2ToEnd:
+	ld hl, wSpriteAnim2
+	ld bc, wSpriteAnimationStructsEnd - wSpriteAnim2
+	xor a
+	call ByteFill
+	ld a, 2
+	ld [wSpriteAnimCount], a
+	ret
 
 ExitPokegearRadio_HandleMusic:
 	ld a, [wPokegearRadioMusicPlaying]
@@ -1365,15 +1371,6 @@ ExitPokegearRadio_HandleMusic:
 	call RestartMapMusic
 	xor a
 	ld [wPokegearRadioMusicPlaying], a
-	ret
-
-DeleteSpriteAnimStruct2ToEnd:
-	ld hl, wSpriteAnim2
-	ld bc, wSpriteAnimationStructsEnd - wSpriteAnim2
-	xor a
-	call ByteFill
-	ld a, 2
-	ld [wSpriteAnimCount], a
 	ret
 
 Pokegear_LoadTilemapRLE:
@@ -1418,11 +1415,6 @@ INCBIN "gfx/pokegear/phone.tilemap.rle"
 ClockTilemapRLE:
 INCBIN "gfx/pokegear/clock.tilemap.rle"
 
-_UpdateRadioStation:
-	jr UpdateRadioStation
-
-; called from engine/gfx/sprite_anims.asm
-
 AnimateTuningKnob:
 	push bc
 	call .TuningKnob
@@ -1460,6 +1452,11 @@ AnimateTuningKnob:
 	inc [hl]
 	inc [hl]
 .update
+; fallthrough
+
+_UpdateRadioStation:
+; called from engine/gfx/sprite_anims.asm
+
 UpdateRadioStation:
 	ld hl, wRadioTuningKnob
 	ld d, [hl]
