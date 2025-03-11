@@ -195,6 +195,8 @@ TotodilePokeBallScript:
 	promptbutton
 	givepoke TOTODILE, 5, MASTER_BALL
 	giveitem POCKET_PC
+	giveitem FLOATIE
+	setflag ENGINE_FOGBADGE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
