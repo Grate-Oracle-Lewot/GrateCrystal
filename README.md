@@ -34,7 +34,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more (currently does not show fishing encounters, but I'll make it work eventually)
 - New Pokédex entries for every Pokémon
-- Simple options on the opening menu for resetting the clock or deleting your save file
+- Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
