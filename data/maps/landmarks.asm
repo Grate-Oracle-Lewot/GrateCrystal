@@ -59,7 +59,7 @@ Landmarks:
 	landmark  52,  92, Route1Name
 	landmark  52,  76, ViridianCityName
 	landmark  52,  68, Route2Name
-	landmark  52,  64, ViridianForestName
+	landmark  52,  60, ViridianForestName
 	landmark  52,  52, PewterCityName
 	landmark  64,  52, Route3Name
 	landmark  76,  52, MtMoonName
@@ -67,46 +67,46 @@ Landmarks:
 	landmark 100,  52, CeruleanCityName
 	landmark 100,  44, Route24Name
 	landmark 108,  36, Route25Name
-	landmark  96,  48, CeruleanCaveName
+	landmark  92,  44, CeruleanCaveName
 	landmark 100,  60, Route5Name
 	landmark 108,  76, UndergroundName
 	landmark 100,  76, Route6Name
 	landmark 100,  84, VermilionCityName
-	landmark  88,  60, DiglettsCaveName
+	landmark 108,  76, DiglettsCaveName
 	landmark  88,  68, Route7Name
 	landmark 116,  68, Route8Name
 	landmark 116,  52, Route9Name
 	landmark 132,  52, RockTunnelName
-	landmark 132,  56, Route10Name
-	landmark 132,  60, PowerPlantName
+	landmark 132,  60, Route10Name
+	landmark 140,  60, PowerPlantName
 	landmark 132,  68, LavenderTownName
-	landmark 140,  68, LavRadioTowerName
+	landmark 130,  66, LavRadioTowerName
 	landmark  76,  68, CeladonCityName
 	landmark 100,  68, SaffronCityName
 	landmark 100,  69, SilphCoName
 	landmark 116,  84, Route11Name
-	landmark 132,  80, Route12Name
+	landmark 132,  84, Route12Name
 	landmark 124, 100, Route13Name
-	landmark 116, 112, Route14Name
-	landmark 104, 116, Route15Name
+	landmark 116, 108, Route14Name
+	landmark 108, 116, Route15Name
 	landmark  68,  68, Route16Name
 	landmark  68,  92, Route17Name
-	landmark  80, 116, Route18Name
+	landmark  76, 116, Route18Name
 	landmark  92, 116, FuchsiaCityName
-	landmark  92, 112, SafariZoneName
+	landmark  92, 108, SafariZoneName
 	landmark  92, 128, Route19Name
 	landmark  76, 132, Route20Name
 	landmark  68, 132, SeafoamIslandsName
 	landmark  52, 132, CinnabarIslandName
 	landmark  52, 120, Route21Name
-	landmark  36,  68, Route22Name
+	landmark  40,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
 	landmark  28,  44, Route23Name
 	landmark  28,  36, IndigoPlateauName
-	landmark  28,  92, Route26Name
-	landmark  20, 100, Route27Name
+	landmark  28,  84, Route26Name
+	landmark  24, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
-	landmark  20,  68, Route28Name
+	landmark  16,  68, Route28Name
 	landmark 140, 116, FastShipName
 	assert_table_length NUM_LANDMARKS
 
