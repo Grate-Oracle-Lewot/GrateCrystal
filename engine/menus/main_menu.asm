@@ -42,7 +42,7 @@ MainMenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 16, 7
+	menu_coords 0, 0, 13, 7
 	dw .MenuData
 	db 1 ; default option
 
