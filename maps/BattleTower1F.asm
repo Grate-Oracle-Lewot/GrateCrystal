@@ -512,7 +512,7 @@ Text_BattleTowerGranny:
 	line "#MON hold items"
 
 	para "is the key to"
-	line "winning battles."
+	line "success."
 	done
 
 Text_BattleTowerBugCatcher:
