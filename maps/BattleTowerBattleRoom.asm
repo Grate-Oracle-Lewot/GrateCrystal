@@ -38,6 +38,17 @@ Script_BattleRoomLoop:
 	battletowertext BATTLETOWERTEXT_INTRO
 	promptbutton
 	closetext
+	checkevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+	iftrue .Typeless
+	checkevent EVENT_BATTLE_TOWER_INVERSE_MODE
+	iftrue .Inverse
+	sjump .Merge2
+.Inverse:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	sjump .Merge2
+.Typeless:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TYPELESS
+.Merge2:
 	special BattleTowerBattle ; predef StartBattle
 	special FadeOutPalettes
 	reloadmap
