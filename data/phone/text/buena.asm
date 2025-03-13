@@ -494,11 +494,11 @@ BuenaPhonePokegearAnswerText:
 	para "I heard that you"
 	line "can even display"
 
-	para "town maps with"
+	para "town maps with a"
 	line "#GEAR."
 
 	para "I have a bad sense"
-	line "of direction, so"
+	line "of direction, so a"
 
 	para "#GEAR would be"
 	line "handy…"
