@@ -63,7 +63,7 @@ BattleTower1FRulesSign:
 .AskTypeless
 	writetext Text_BattleTower_AskSetToTypelessMode
 	yesorno
-	iffalse .NormalMode
+	iffalse .Normal
 	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
 	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
 	writetext Text_BattleTower_SetToTypelessMode
