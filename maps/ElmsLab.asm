@@ -1288,7 +1288,7 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, NEW_BARK_TOWN, 1
+	warp_event  4, 11, BATTLE_TOWER_OUTSIDE, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
