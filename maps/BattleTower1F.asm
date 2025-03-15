@@ -48,34 +48,6 @@ BattleTower1FRulesSign:
 	writetext Text_BattleTowerRules
 	waitbutton
 .SkipRules:
-	writetext Text_BattleTower_AskChangeTypeSettings
-	yesorno
-	iffalse .End
-	writetext Text_BattleTower_AskSetToInverseMode
-	yesorno
-	iffalse .AskTypeless
-	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
-	setevent EVENT_BATTLE_TOWER_INVERSE_MODE
-	writetext Text_BattleTower_SetToInverseMode
-	waitbutton
-	sjump .End
-
-.AskTypeless
-	writetext Text_BattleTower_AskSetToTypelessMode
-	yesorno
-	iffalse .Normal
-	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
-	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
-	writetext Text_BattleTower_SetToTypelessMode
-	waitbutton
-	sjump .End
-
-.Normal:
-	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
-	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
-	writetext Text_BattleTower_SetToNormalMode
-	waitbutton
-.End
 	closetext
 	end
 
@@ -451,36 +423,6 @@ Text_BattleTowerRules:
 
 	para "Defeat seven"
 	line "opponents to win."
-	done
-
-Text_BattleTower_AskChangeTypeSettings:
-	text "Adjust challenge"
-	line "type settings?"
-	done
-
-Text_BattleTower_AskSetToInverseMode:
-	text "Set battles to"
-	line "INVERSE mode?"
-	done
-
-Text_BattleTower_AskSetToTypelessMode:
-	text "Set battles to"
-	line "NEUTRAL mode?"
-	done
-
-Text_BattleTower_SetToNormalMode:
-	text "Battles set to"
-	line "normal mode."
-	done
-
-Text_BattleTower_SetToInverseMode:
-	text "Battles set to"
-	line "inverse mode."
-	done
-
-Text_BattleTower_SetToTypelessMode:
-	text "Battles set to"
-	line "neutral mode."
 	done
 
 Text_BattleTower_LeftWithoutSaving:
