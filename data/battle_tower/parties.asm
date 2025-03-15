@@ -551,7 +551,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db BRIGHTPOWDER
+	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -1152,7 +1152,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db BRIGHTPOWDER
+	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1753,7 +1753,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db BRIGHTPOWDER
+	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -2354,7 +2354,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db BRIGHTPOWDER
+	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2955,7 +2955,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JIRK
-	db BRIGHTPOWDER
+	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 125000 ; Exp
