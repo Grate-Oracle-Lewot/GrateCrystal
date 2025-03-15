@@ -67,9 +67,15 @@ Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
 	setval TRUE
 	checkevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
-	iffalse .Merge
+	iffalse .NoSettings
 	setval FALSE
-.Merge:
+	special Menu_ChallengeExplanationCancel
+	ifequal 1, Script_ChooseChallenge
+	ifequal 2, Script_BattleTowerExplanation
+	ifequal 3, Script_BattleTowerSettings
+	sjump Script_BattleTowerHopeToServeYouAgain
+
+.NoSettings:
 	special Menu_ChallengeExplanationCancel
 	ifequal 1, Script_ChooseChallenge
 	ifequal 2, Script_BattleTowerExplanation
@@ -157,6 +163,31 @@ Script_WaitButton:
 	waitbutton
 	closetext
 	end
+
+Script_BattleTowerSettings:
+	special Menu_BattleTowerSettings
+	ifequal 1, .SetNormalMode
+	ifequal 2, .SetInverseMode
+	ifequal 3, .SetTypelessMode
+	sjump Script_BattleTowerHopeToServeYouAgain
+
+.SetNormalMode:
+	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	writetext Text_BattleTower_SetToNormalMode
+	sjump Script_WaitButton
+
+.SetInverseMode:
+	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	setevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	writetext Text_BattleTower_SetToInverseMode
+	sjump Script_WaitButton
+
+.SetTypelessMode:
+	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
+ 	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
+ 	writetext Text_BattleTower_SetToTypelessMode
+	sjump Script_WaitButton
 
 Script_AMonLevelExceeds:
 	writetext Text_AMonLevelExceeds
@@ -399,6 +430,21 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	line "hear about the"
 	cont "BATTLE TOWER?"
 	done
+
+Text_BattleTower_SetToNormalMode:
+ 	text "Type matchups set"
+ 	line "to normal mode."
+ 	done
+ 
+ Text_BattleTower_SetToInverseMode:
+ 	text "Type matchups set"
+ 	line "to inverse mode."
+ 	done
+ 
+ Text_BattleTower_SetToTypelessMode:
+ 	text "Type matchups set"
+ 	line "to neutral mode."
+ 	done
 
 Text_ReadBattleTowerRules:
 	text "BATTLE TOWER rules"
