@@ -179,6 +179,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 ; wPlayerSubStatus2 or wEnemySubStatus2 bit flags
 	const_def
 	const SUBSTATUS_CURLED
+	const SUBSTATUS_UNDERWATER
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def
