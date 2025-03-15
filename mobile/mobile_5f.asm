@@ -476,7 +476,13 @@ MenuData_ChallengeExplanationSettingsCancel:
 	db "Settings@"
 	db "Cancel@"
 
-
+Menu_BattleTowerSettings:
+	ld a, $4
+	ld [wScriptVar], a
+	ld hl, MenuHeader_NormalInverseNeutral
+	call LoadMenuHeader
+	call Function17d246
+	jp CloseWindow
 
 MenuHeader_NormalInverseNeutral:
 	db MENU_BACKUP_TILES ; flags
