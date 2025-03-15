@@ -28,7 +28,7 @@ SpecialsPointers::
 	add_special CableClubCheckWhichChris
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift ; unused in Grate Crystal
+	add_special Menu_BattleTowerSettings ; previously UnlockMysteryGift
 	add_special CheckOtherPlayerGender
 
 ; Map events
