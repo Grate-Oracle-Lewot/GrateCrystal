@@ -66,6 +66,10 @@ BattleTower1FReceptionistScript:
 Script_Menu_ChallengeExplanationCancel:
 	writetext Text_WantToGoIntoABattleRoom
 	setval TRUE
+	checkevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
+	iffalse .Merge
+	setval FALSE
+.Merge:
 	special Menu_ChallengeExplanationCancel
 	ifequal 1, Script_ChooseChallenge
 	ifequal 2, Script_BattleTowerExplanation
