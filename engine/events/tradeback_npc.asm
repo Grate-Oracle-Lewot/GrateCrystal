@@ -42,8 +42,6 @@ TradeWithTradebackGuy:
 	ld de, wOTTrademonSenderName
 	ld bc, NAME_LENGTH
 	call CopyBytes
-.tradeback_guy_name:
-	db "BACKER@@@@"
 
 ; Establish the Pokémon's species.
 	ld a, [wCurPartyMon]
@@ -110,6 +108,9 @@ TradeWithTradebackGuy:
 	ld a, LINK_NULL
 	ld [wLinkMode], a
 	ret
+
+.tradeback_guy_name:
+	db "BACKER@@@@"
 
 TradebackGuyText::
 	text "Hello there! I'm an"
