@@ -2,9 +2,9 @@ BattleTowerTrainers:
 	table_width (NAME_LENGTH - 1) + 1, BattleTowerTrainers
 	; name, class
 	db "HANSON@@@@", FISHER
-	db "SAWYER@@@@", POKEMANIAC
+	db "SAWYER@@@@", GAMBLER
 	db "MASUDA@@@@", GUITARIST
-	db "NICKEL@@@@", SCIENTIST
+	db "NICKEL@@@@", ENGINEER
 	db "OLSON@@@@@", POKEFANM
 	db "ZABOROWSKI", LASS
 	db "WRIGHT@@@@", YOUNGSTER
