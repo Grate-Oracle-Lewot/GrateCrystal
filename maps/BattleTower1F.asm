@@ -165,6 +165,7 @@ Script_WaitButton:
 	end
 
 Script_BattleTowerSettings:
+	writetext Text_BattleTower_AskTypesMode
 	special Menu_BattleTowerSettings
 	ifequal 1, .SetNormalMode
 	ifequal 2, .SetInverseMode
@@ -175,19 +176,22 @@ Script_BattleTowerSettings:
 	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	writetext Text_BattleTower_SetToNormalMode
-	sjump Script_WaitButton
+	waitbutton
+	sjump Script_Menu_ChallengeExplanationCancel
 
 .SetInverseMode:
 	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	setevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	writetext Text_BattleTower_SetToInverseMode
-	sjump Script_WaitButton
+	waitbutton
+	sjump Script_Menu_ChallengeExplanationCancel
 
 .SetTypelessMode:
 	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	writetext Text_BattleTower_SetToTypelessMode
-	sjump Script_WaitButton
+	waitbutton
+	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_AMonLevelExceeds:
 	writetext Text_AMonLevelExceeds
@@ -429,6 +433,11 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
 	line "hear about the"
 	cont "BATTLE TOWER?"
+	done
+
+Text_BattleTower_AskTypesMode:
+	text "Challenge which"
+	line "kind of battles?"
 	done
 
 Text_BattleTower_SetToNormalMode:
