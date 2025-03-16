@@ -993,10 +993,10 @@ INCLUDE "gfx/trainer_card/johto_badges.pal"
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
-	xor a ; CHRIS
+	xor a ; CHRIS & MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS & MISTY
+	ld a, FALKNER ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BROCK
