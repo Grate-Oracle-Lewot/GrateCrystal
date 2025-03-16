@@ -176,21 +176,21 @@ Script_BattleTowerSettings:
 	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	writetext Text_BattleTower_SetToNormalMode
-	waitbutton
+	promptbutton
 	sjump Script_Menu_ChallengeExplanationCancel
 
 .SetInverseMode:
 	clearevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	setevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	writetext Text_BattleTower_SetToInverseMode
-	waitbutton
+	promptbutton
 	sjump Script_Menu_ChallengeExplanationCancel
 
 .SetTypelessMode:
 	clearevent EVENT_BATTLE_TOWER_INVERSE_MODE
  	setevent EVENT_BATTLE_TOWER_TYPELESS_MODE
  	writetext Text_BattleTower_SetToTypelessMode
-	waitbutton
+	promptbutton
 	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_AMonLevelExceeds:
