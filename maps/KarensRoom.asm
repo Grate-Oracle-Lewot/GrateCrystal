@@ -11,8 +11,6 @@ KarensRoom_MapScripts:
 
 .LockDoor:
 	sdefer .KarensDoorLocksBehindYou
-	end
-
 .DummyScene:
 	end
 
