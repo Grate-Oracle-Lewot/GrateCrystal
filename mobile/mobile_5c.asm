@@ -71,15 +71,6 @@ Function17005a:
 
 INCLUDE "engine/events/battle_tower/battle_tower.asm"
 
-Function170be4:
-	ld a, BANK(s5_a894)
-	call OpenSRAM
-	xor a
-	ld hl, s5_a894
-	ld bc, 6 + 2
-	call ByteFill
-	jp CloseSRAM
-
 Clears5_a89a:
 	ld a, BANK(s5_a89a)
 	call OpenSRAM
