@@ -399,14 +399,6 @@ _MobileForPartnersMonText::
 	text "."
 	done
 
-_MobilePlayersMonTradeText::
-	text_ram wPlayerTrademonSenderName
-	text "'s"
-	line "@"
-	text_ram wPlayerTrademonSpeciesName
-	text " trade…"
-	done
-
 _MobileTakeGoodCareOfMonText::
 	text "Take good care of"
 	line "@"
