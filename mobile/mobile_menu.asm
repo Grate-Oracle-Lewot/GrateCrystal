@@ -9,7 +9,7 @@ MainMenu_Mobile:
 Function49f0a:
 	call ClearBGPalettes
 	call Function4a3a7
-	call Function4a492
+	call _CrystalCGB_MobileLayout0
 	call ClearBGPalettes
 	; fallthrough
 
@@ -239,7 +239,7 @@ Function4a118:
 
 Function4a13b:
 	call Function4a3a7
-	call Function4a492
+	call _CrystalCGB_MobileLayout0
 	call Function4a373
 	ld c, 10
 	call DelayFrames
@@ -569,13 +569,10 @@ Function4a485:
 	lb bc, BANK(MobileMenuGFX), 13
 	jp Get2bpp
 
-Function4a492:
-	jp _CrystalCGB_MobileLayout0
-
 Function4a4c4:
 	call ClearBGPalettes
 	call Function4a3a7
-	call Function4a492
+	call _CrystalCGB_MobileLayout0
 	call Function4a680
 	call ClearBGPalettes
 	ld c, 20
