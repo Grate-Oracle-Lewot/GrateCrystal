@@ -13,8 +13,6 @@ LancesRoom_MapScripts:
 
 .LockDoor:
 	sdefer .LancesDoorLocksBehindYou
-	end
-
 .DummyScene:
 	end
 
