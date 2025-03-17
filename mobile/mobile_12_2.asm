@@ -294,11 +294,13 @@ MobileUseTheseThreeMonText:
 
 Function4aa22:
 	call ClearBGPalettes
+	; fallthrough
 
 Function4aa25:
 	farcall LoadPartyMenuGFX
 	farcall InitPartyMenuWithCancel
 	call Function4aad3
+	; fallthrough
 
 Function4aa34:
 	ld a, PARTYMENUACTION_MOBILE
@@ -326,13 +328,6 @@ Function4aa34:
 	set 1, [hl]
 	pop af
 	ret
-
-Function4aa6e: ; unreferenced
-	pop af
-	ld de, SFX_WRONG
-	call PlaySFX
-	call WaitSFX
-	jr Function4aa34
 
 Function4aa7a:
 	ld hl, wd002
