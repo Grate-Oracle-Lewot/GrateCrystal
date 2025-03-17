@@ -1,16 +1,16 @@
 	db FINULL ; 252
 
-	db 100, 100, 100, 100, 100, 100
+	db  90, 120, 130,  10, 130, 120
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, FAIRY ; type
 	db 5 ; catch rate
-	db 64 ; base exp
+	db 120 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
 	INCBIN "gfx/pokemon/finull/front.dimensions"
-	db GROWTH_MEDIUM_SLOW ; growth rate
+	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
