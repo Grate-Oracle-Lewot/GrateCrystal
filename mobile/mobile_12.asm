@@ -1041,11 +1041,11 @@ asm_48922:
 	call JoyTextDelay
 	ldh a, [hJoyDown]
 	and a
-	jp z, Function4896e
+	jr z, Function4896e
 	bit 0, a
-	jp nz, Function4896e
+	jr nz, Function4896e
 	bit 1, a
-	jp nz, Function4896e
+	jr nz, Function4896e
 	ld a, [wd002]
 	and %11001111
 	res 7, a
@@ -1069,28 +1069,11 @@ asm_48922:
 	call DelayFrames
 	jr asm_48972
 
-Function4895a: ; unreferenced
-	ldh a, [hJoyPressed]
-	and a
-	jr z, .asm_48965
-	pop bc
-	ld b, $1
-	push bc
-	jr asm_48972
-
-.asm_48965
-	ldh a, [hJoyLast]
-	and a
-	jr z, asm_48972
-
-	pop bc
-	ld b, $1
-	push bc
-
 Function4896e:
 	pop bc
 	ld b, $0
 	push bc
+	; fallthrough
 
 asm_48972:
 	call Function48ab5
