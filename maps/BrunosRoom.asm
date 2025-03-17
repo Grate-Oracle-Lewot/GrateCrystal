@@ -11,8 +11,6 @@ BrunosRoom_MapScripts:
 
 .LockDoor:
 	sdefer .BrunosDoorLocksBehindYou
-	end
-
 .DummyScene:
 	end
 
