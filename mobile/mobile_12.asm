@@ -1570,62 +1570,10 @@ Function48c63:
 	scf
 	ret
 
-Function48c8e: ; unreferenced
-	ld hl, wd019 + $11
-	ld d, h
-	ld e, l
-	farcall Function48c63
-	hlcoord 10, 7
-	call PlaceString
-	jp WaitBGMap
-
-Function48ca3: ; unreferenced
-	push af
-	push bc
-	push de
-	push hl
-	ld b, 0
-	ld c, 0
-	ld d, 0
-.asm_48cad
-	cp 100
-	jr c, .asm_48cb6
-	sub 100
-	inc b
-	jr .asm_48cad
-
-.asm_48cb6
-	cp 10
-	jr c, .asm_48cbf
-	sub 10
-	inc c
-	jr .asm_48cb6
-
-.asm_48cbf
-	cp 1
-	jr c, .asm_48cc7
-	dec a
-	inc d
-	jr .asm_48cbf
-
-.asm_48cc7
-	ld a, b
-	call Mobile12_Bin2Dec
-	inc hl
-	ld a, c
-	call Mobile12_Bin2Dec
-	inc hl
-	ld a, d
-	call Mobile12_Bin2Dec
-	pop hl
-	pop de
-	pop bc
-	pop af
-	ret
-
 Function48cda:
 	ld h, d
 	ld l, e
+	; fallthrough
 
 Function48cdc:
 	push bc
