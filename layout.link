@@ -301,8 +301,6 @@ ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
 	"Battle Tower Additions"
-ROMX $7d
-	"Mobile News Data"
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
