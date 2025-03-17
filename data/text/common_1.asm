@@ -1120,10 +1120,6 @@ _CardWasListedText::
 	text "."
 	prompt
 
-_StartingLinkText::
-	text "Starting link."
-	done
-
 _LinkTerminatedText::
 	text "Link terminated."
 	done
