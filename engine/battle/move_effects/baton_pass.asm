@@ -3,6 +3,11 @@ BattleCommand_BatonPass:
 	and a
 	jp nz, .Enemy
 
+; Fail if player has a Substitute
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, FailedBatonPass
+
 ; Need something to switch to
 	call CheckAnyOtherAlivePartyMons
 	jp z, FailedBatonPass
@@ -41,6 +46,11 @@ BattleCommand_BatonPass:
 	jr ResetBatonPassStatus
 
 .Enemy:
+; Fail if enemy has a Substitute
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, FailedBatonPass
+
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	dec a ; WILDMON
@@ -136,8 +146,7 @@ FailedBatonPass:
 	; Can't teleport from a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .failed
-	jr .run_away
+	jr z, .run_away
 
 .failed
 	call AnimateFailedMove
@@ -148,7 +157,6 @@ FailedBatonPass:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .failed
-	; fallthrough
 
 .run_away
 	call UpdateBattleMonInParty
