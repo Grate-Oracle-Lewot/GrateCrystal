@@ -30,14 +30,6 @@ Function11c075:
 	ld bc, wcd36
 	jp Function11c08f
 
-Function11c082: ; unreferenced
-	push de
-	ld a, c
-	call Function11c254
-	pop de
-	ld bc, wcd36
-	jp PrintEZChatBattleMessage
-
 Function11c08f:
 	ld l, e
 	ld h, d
