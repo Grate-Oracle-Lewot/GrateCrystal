@@ -4,11 +4,15 @@ MainMenu_Mobile:
 	ld [wMapMusic], a
 	ld de, MUSIC_MOBILE_ADAPTER_MENU
 	call Function4a6c5
+	; fallthrough
+
 Function49f0a:
 	call ClearBGPalettes
 	call Function4a3a7
 	call Function4a492
 	call ClearBGPalettes
+	; fallthrough
+
 Function49f16:
 	call MobileMenu_InitMenuBuffers
 	ld c, 12
@@ -239,6 +243,7 @@ Function4a13b:
 	call Function4a373
 	ld c, 10
 	call DelayFrames
+	; fallthrough
 
 Function4a149:
 	hlcoord 1, 2
@@ -277,6 +282,7 @@ Function4a195:
 	ld hl, wMenuCursorY
 	ld b, [hl]
 	push bc
+	; fallthrough
 
 asm_4a19d:
 	bit 0, a
@@ -439,10 +445,6 @@ Function4a28a:
 	xor a
 	ret
 
-MenuHeader_0x4a346: ; unreferenced
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 12, 0, SCREEN_WIDTH - 1, 6
-
 String_4a34b:
 	db   "いれなおす"
 	next "けす"
@@ -495,14 +497,10 @@ Function4a373:
 	ld [hli], a
 	ret
 
-Function4a39a: ; unreferenced
-	call Function4a485
-	call Function4a492
-	call Function4a3aa
-	jp SetPalettes
-
 Function4a3a7:
 	call Function4a485
+	; fallthrough
+
 Function4a3aa:
 	hlcoord 0, 0
 	lb bc, 3, 1
@@ -565,30 +563,6 @@ Function4a3aa:
 	ld a, " "
 	jp Function4a6d8
 
-Function4a449: ; unreferenced
-	ld bc, 3 * SCREEN_WIDTH
-	ld a, $0
-	hlcoord 0, 0
-	call ByteFill
-	ld bc, 2 * SCREEN_WIDTH
-	ld a, $1
-	call ByteFill
-	ld bc, 2 * SCREEN_WIDTH
-	ld a, $0
-	call ByteFill
-	ld bc, 2 * SCREEN_WIDTH
-	ld a, $1
-	call ByteFill
-	ld bc, SCREEN_WIDTH
-	ld a, $2
-	call ByteFill
-	ld bc, SCREEN_WIDTH
-	ld a, $3
-	call ByteFill
-	ld bc, SCREEN_WIDTH
-	ld a, " "
-	jp ByteFill
-
 Function4a485:
 	ld de, MobileMenuGFX
 	ld hl, vTiles2 tile $00
@@ -597,31 +571,6 @@ Function4a485:
 
 Function4a492:
 	jp _CrystalCGB_MobileLayout0
-
-MainMenu_MobileStudium:
-	ld a, [wStartDay]
-	ld b, a
-	ld a, [wStartHour]
-	ld c, a
-	ld a, [wStartMinute]
-	ld d, a
-	ld a, [wStartSecond]
-	ld e, a
-	push bc
-	push de
-	farcall MobileStudium
-	call ClearBGPalettes
-	pop de
-	pop bc
-	ld a, b
-	ld [wStartDay], a
-	ld a, c
-	ld [wStartHour], a
-	ld a, d
-	ld [wStartMinute], a
-	ld a, e
-	ld [wStartSecond], a
-	ret
 
 Function4a4c4:
 	call ClearBGPalettes
@@ -680,6 +629,7 @@ Function4a545:
 	ld hl, wMenuCursorY
 	ld b, [hl]
 	push bc
+	; fallthrough
 
 asm_4a54d:
 	bit 0, a
