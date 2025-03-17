@@ -139,9 +139,6 @@ FailedBatonPass:
 	call GetBattleVar
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .failed
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .enemy_turn
 
 	; Can't teleport from a trainer battle
 	ld a, [wBattleMode]
@@ -151,12 +148,6 @@ FailedBatonPass:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
-
-.enemy_turn
-	; Can't teleport from a trainer battle
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .failed
 
 .run_away
 	call UpdateBattleMonInParty
