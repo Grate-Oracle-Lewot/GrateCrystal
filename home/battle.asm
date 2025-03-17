@@ -93,6 +93,7 @@ UpdateBattleMonInParty::
 ; Update level, status, current HP
 
 	ld a, [wCurBattleMon]
+	; fallthrough
 
 UpdateBattleMon::
 	ld hl, wPartyMon1Level
