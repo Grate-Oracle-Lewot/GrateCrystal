@@ -11,8 +11,6 @@ KogasRoom_MapScripts:
 
 .LockDoor:
 	sdefer .KogasDoorLocksBehindYou
-	end
-
 .DummyScene:
 	end
 
