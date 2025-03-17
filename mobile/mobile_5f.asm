@@ -651,6 +651,7 @@ Function17d3f6:
 	call ClearSprites
 	call ClearScreen
 	farcall ReloadMapPart
+	; fallthrough
 
 Function17d405:
 	call DisableLCD
@@ -689,14 +690,14 @@ Function17d405:
 	ret
 
 Function17d45a:
-.asm_17d45a
+.loop
 	call JoyTextDelay
 	ld a, [wcd77]
 	bit 7, a
 	jr nz, .asm_17d46f
 	call Function17d474
 	farcall ReloadMapPart
-	jr .asm_17d45a
+	jr .loop
 
 .asm_17d46f
 	xor a
@@ -900,6 +901,7 @@ Function17d48d:
 Function17d5be:
 	call SetPalettes
 	call Function17e438
+	; fallthrough
 
 Function17d5c4:
 	ldh a, [hJoyPressed]
@@ -1095,6 +1097,7 @@ Function17d6fd:
 	ld a, [hl]
 	cp $ff
 	jr z, asm_17d721
+	; fallthrough
 
 Function17d711:
 .crash_loop
@@ -2899,7 +2902,6 @@ Function17e349:
 
 inc_crash_check_pointer_farcall: MACRO
 	call IncCrashCheckPointer
-	call HlToCrashCheckPointer ; redundant
 	ldh a, [rSVBK]
 	push af
 	ld a, $1
@@ -2968,6 +2970,7 @@ IncCrashCheckPointer:
 	ld a, [wMobileCrashCheckPointer + 1]
 	ld h, a
 	inc hl
+	; fallthrough
 
 HlToCrashCheckPointer:
 	ld a, l
@@ -3176,14 +3179,14 @@ Function17e55b:
 	and a
 	ret z
 	ld a, $ed
-	jp Function17e571
+	jr Function17e571
 
 Function17e566:
 	ld a, [wcd42]
 	and a
 	ret z
 	ld a, $7f
-	jp Function17e571
+	; fallthrough
 
 Function17e571:
 	push af
@@ -3266,7 +3269,7 @@ Function17e5af:
 	jp PlaceString
 
 Function17e600:
-.asm_17e600
+.loop
 	push af
 	push hl
 	push bc
@@ -3278,7 +3281,7 @@ Function17e600:
 	add hl, de
 	pop af
 	dec a
-	jr nz, .asm_17e600
+	jr nz, .loop
 	ret
 
 Function17e613:
@@ -4320,12 +4323,12 @@ Function17f4f6:
 	ld a, [wBGMapPalBuffer]
 	ld b, a
 	ld a, [wcd2e]
-.asm_17f509
+.loop
 	and a
 	ret z
 	dec a
 	add hl, bc
-	jr .asm_17f509
+	jr .loop
 
 Function17f50f:
 	and a
@@ -4587,7 +4590,6 @@ Function17f6b7:
 	and $f
 	call .bcd_digit
 	ld a, [wMobileErrorCodeBuffer + 1]
-	; fallthrough
 
 .bcd_two_digits
 	ld c, a
