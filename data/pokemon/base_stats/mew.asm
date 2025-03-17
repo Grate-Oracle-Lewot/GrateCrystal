@@ -5,7 +5,7 @@
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 15 ; catch rate
-	db 64 ; base exp
+	db 110 ; base exp
 	db BERRY, MASTER_BALL ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
