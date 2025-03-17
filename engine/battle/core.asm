@@ -2004,12 +2004,7 @@ GetSixteenthMaxHP:
 ; quarter result
 	srl c
 	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	jr FinishPartialHP
 
 GetEighthMaxHP:
 ; output: bc
@@ -2017,23 +2012,19 @@ GetEighthMaxHP:
 ; assumes nothing can have 1024 or more hp
 ; halve result
 	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	jr FinishPartialHP
 
 GetQuarterMaxHP:
 ; output: bc
 	call GetMaxHP
-
 ; quarter result
 	srl b
 	rr c
 	srl b
 	rr c
+	; fallthrough
 
+FinishPartialHP:
 ; assumes nothing can have 1024 or more hp
 ; at least 1
 	ld a, c
