@@ -82,21 +82,6 @@ LoadOpponentTrainerAndPokemon:
 	call LoadRandomBattleTowerMon
 	pop af
 
-	ld hl, BattleTowerTrainerData
-	ld bc, BATTLETOWER_TRAINERDATALENGTH
-	call AddNTimes
-	ld bc, BATTLETOWER_TRAINERDATALENGTH
-.copy_bt_trainer_data_loop
-	ld a, BANK(BattleTowerTrainerData)
-	call GetFarByte
-	ld [de], a
-	inc hl
-	inc de
-	dec bc
-	ld a, b
-	or c
-	jr nz, .copy_bt_trainer_data_loop
-
 	pop af
 	ldh [rSVBK], a
 	ret
