@@ -335,7 +335,9 @@
 	const EVENT_ABANDONED_LAB_1F_HIDDEN_EVERSTONE
 	const EVENT_ABANDONED_LAB_2F_HIDDEN_X_SP_DEFEND
 	const EVENT_ABANDONED_LAB_ROOF_TWISTEDSPOON
-; Unused: next 280 events
+; Used:
+	const EVENT_BUGSY_ON_ROUTE_14
+; Unused: next 279 events
 
 	const_next 600
 ; Kurt Apricorn events
