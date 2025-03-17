@@ -11,8 +11,6 @@ WillsRoom_MapScripts:
 
 .LockDoor:
 	sdefer .WillsDoorLocksBehindYou
-	end
-
 .DummyScene:
 	end
 
