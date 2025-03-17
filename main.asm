@@ -676,11 +676,6 @@ SECTION "Battle Tower Text", ROMX
 INCLUDE "data/battle_tower/trainer_text.asm"
 
 
-SECTION "Mobile News Data", ROMX
-
-INCLUDE "mobile/news/news.asm"
-
-
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
