@@ -352,12 +352,6 @@ BattleAnimCommands::
 	dw BattleAnimCmd_Ret
 	assert_table_length $100 - FIRST_BATTLE_ANIM_CMD
 
-BattleAnimCmd_EA:
-BattleAnimCmd_EB:
-BattleAnimCmd_EC:
-BattleAnimCmd_ED:
-	ret
-
 BattleAnimCmd_Ret:
 	ld hl, wBattleAnimFlags
 	res BATTLEANIM_IN_SUBROUTINE_F, [hl]
@@ -369,6 +363,14 @@ BattleAnimCmd_Ret:
 	ld [hl], e
 	inc hl
 	ld [hl], d
+BattleAnimCmd_EA:
+BattleAnimCmd_EB:
+BattleAnimCmd_EC:
+BattleAnimCmd_ED:
+BattleAnimCmd_E7:
+BattleAnimCmd_F5:
+BattleAnimCmd_F6:
+BattleAnimCmd_F7:
 	ret
 
 BattleAnimCmd_Call:
@@ -774,7 +776,6 @@ BattleAnimCmd_BattlerGFX_1Row:
 	ld a, 6 tiles ; Player pic height
 	ld [wBattleAnimGFXTempPicHeight], a
 	ld a, 6 ; Copy 6x1 tiles
-	; fallthrough
 
 .LoadFeet:
 	push af
@@ -827,7 +828,6 @@ BattleAnimCmd_BattlerGFX_2Row:
 	ld a, 6 tiles ; Player pic height
 	ld [wBattleAnimGFXTempPicHeight], a
 	ld a, 6 ; Copy 6x2 tiles
-	; fallthrough
 
 .LoadHead:
 	push af
@@ -854,9 +854,6 @@ BattleAnimCmd_CheckPokeball:
 	callfar GetPokeBallWobble
 	ld a, c
 	ld [wBattleAnimVar], a
-	ret
-
-BattleAnimCmd_E7:
 	ret
 
 BattleAnimCmd_Transform:
@@ -925,6 +922,7 @@ BattleAnimCmd_RaiseSub:
 
 	xor a ; BANK(sScratch)
 	call OpenSRAM
+	; fallthrough
 
 GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ld hl, sScratch
@@ -1079,7 +1077,6 @@ BattleAnimCmd_DropSub:
 
 .player
 	callfar DropPlayerSub
-
 .done
 	pop af
 	ld [wCurPartySpecies], a
@@ -1145,15 +1142,6 @@ BattleAnimCmd_KeepSprites:
 	set BATTLEANIM_KEEPSPRITES_F, [hl]
 	ret
 
-BattleAnimCmd_F5:
-	ret
-
-BattleAnimCmd_F6:
-	ret
-
-BattleAnimCmd_F7:
-	ret
-
 BattleAnimCmd_Sound:
 	call GetBattleAnimByte
 	ld e, a
@@ -1175,7 +1163,6 @@ BattleAnimCmd_Sound:
 	ld e, a
 	ld d, 0
 	callfar PlayStereoSFX
-
 	ret
 
 .GetPanning:
