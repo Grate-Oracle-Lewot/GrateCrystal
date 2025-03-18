@@ -65,6 +65,7 @@ Route14BugsyScript:
 .Around:
 	applymovement ROUTE14_BUGSY, Route14BugsyAroundMovement
 .End:
+	setmapscene OAKS_LAB_2F, SCENE_OAKSLAB2F_BUGSY
 	disappear ROUTE14_BUGSY
 	end
 
