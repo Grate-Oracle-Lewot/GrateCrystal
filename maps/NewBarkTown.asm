@@ -120,10 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	winlosstext NewBarkTownSignText, 0
-	loadtrainer YOUNGSTER, MIKEY
-	startbattle
-	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
