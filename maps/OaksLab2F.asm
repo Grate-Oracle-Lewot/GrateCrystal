@@ -16,9 +16,39 @@
 
 OaksLab2F_MapScripts:
 	def_scene_scripts
+	scene_script .DummyScene
+	scene_script .BugsyScene
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .InverseQuest
+
+.BugsyScene:
+	sdefer .BugsySceneScript
+.DummyScene:
+	end
+
+.BugsySceneScript:
+	pause 5
+	turnobject OAKSLAB2F_BUGSY1, DOWN
+	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY1, 15
+	applymovement OAKSLAB2F_BUGSY1, OaksLab2FBugsyStepDownMovement
+	opentext
+	writetext OaksLab2FBugsyIntroText1
+	waitbutton
+	closetext
+	follow OAKSLAB2F_BUGSY1, PLAYER
+	applymovement OAKSLAB2F_BUGSY1, OaksLab2FBugsyWalkToComputerMovement
+	stopfollow
+	turnobject OAKSLAB2F_BUGSY1, LEFT
+	opentext
+	writetext OaksLab2FBugsyIntroText2
+	waitbutton
+	closetext
+	turnobject OAKSLAB2F_BUGSY1, UP
+	setscene SCENE_OAKSLAB2F_NOTHING
+	appear OAKSLAB2F_BUGSY2
+	disappear OAKSLAB2F_BUGSY1
+	end
 
 .InverseQuest:
 	checkevent EVENT_BUGSY_ON_ROUTE_14
@@ -123,6 +153,64 @@ OaksLab2FBlackbeltWaiScript:
 
 OaksLab2FPokedexMachine:
 	jumptext OaksLab2FPokedexMachineText
+
+OaksLab2FBugsyStepDownMovement:
+	step DOWN
+	step_end
+
+OaksLab2FBugsyWalkToComputerMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
 
 OaksLab2FBugsyIntroText1:
 	text "BUGSY: Aha,"
