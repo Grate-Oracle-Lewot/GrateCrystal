@@ -18,6 +18,11 @@ SCENE_ALWAYS   EQU -1
 	const SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM        ; 4
 	const SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM       ; 5
 
+; wOaksLab2FSceneID
+	const_def
+	const SCENE_OAKSLAB2F_NOTHING                           ; 0
+	const SCENE_OAKSLAB2F_BUGSY                             ; 1
+
 ; wCeruleanGymSceneID
 	const_def
 	const SCENE_CERULEANGYM_NOTHING                         ; 0
