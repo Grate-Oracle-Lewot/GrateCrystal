@@ -145,6 +145,7 @@ PokeAnim_SetWait:
 	ld a, [wPokeAnimSceneIndex]
 	inc a
 	ld [wPokeAnimSceneIndex], a
+	; fallthrough
 
 PokeAnim_Wait:
 	ld hl, wPokeAnimWaitCounter
@@ -656,9 +657,6 @@ PokeAnim_ConvertAndApplyBitmask:
 	ld h, a
 	ret
 
-.UnusedSizeData: ; unreferenced
-	db 6, 5, 4
-
 .GetTilemap:
 	push af
 	ld a, [wPokeAnimFrontpicHeight]
@@ -789,7 +787,6 @@ PokeAnim_PlaceGraphic:
 .flipped
 	ld de, -1
 	ld bc, 6
-
 .okay
 	ld hl, wPokeAnimCoord
 	ld a, [hli]
@@ -1078,6 +1075,7 @@ PokeAnim_GetSpeciesOrUnown:
 Unused_HOF_AnimateAlignedFrontpic:
 	ld a, $1
 	ld [wBoxAlignment], a
+	; fallthrough
 
 HOF_AnimateFrontpic:
 	call AnimateMon_CheckIfPokemon
