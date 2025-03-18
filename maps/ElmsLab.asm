@@ -193,7 +193,8 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 100, GOLD_BERRY
+	givepoke FERALIGATR, 100, GOLD_BERRY
+	setevent EVENT_BUGSY_ON_ROUTE_14
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -1288,7 +1289,7 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, FUCHSIA_CITY, 6
+	warp_event  4, 11, PALLET_TOWN, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
