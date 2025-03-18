@@ -10,6 +10,7 @@ MapScenes::
 	scene_var COLOSSEUM,                                   wColosseumSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
+	scene_var OAKS_LAB_2F,                                 wOaksLab2FSceneID
 	scene_var TRAINER_HOUSE_B1F,                           wTrainerHouseB1FSceneID
 	scene_var VICTORY_ROAD_GATE,                           wVictoryRoadGateSceneID
 	scene_var PEWTER_MUSEUM_1F,                            wPewterMuseumSceneID
