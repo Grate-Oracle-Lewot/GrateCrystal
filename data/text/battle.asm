@@ -827,7 +827,7 @@ HasSubstituteText:
 	autodone
 
 TooWeakSubText:
-	text "Too weak to make"
+	text "Not enough HP for"
 	line "a SUBSTITUTE!"
 	autodone
 
