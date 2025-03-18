@@ -16,8 +16,6 @@ CianwoodDarkroom_MapScripts:
 	clearevent EVENT_DARKROOM_BEAT_BRUNO
 	clearevent EVENT_DARKROOM_BEAT_WILL
 	setscene SCENE_CIANWOODDARKROOM_BEGIN_GAUNTLET
-	end
-
 .DummyScene:
 	end
 
