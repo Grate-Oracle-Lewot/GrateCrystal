@@ -7154,11 +7154,6 @@ Call_PlayBattleAnim_OnlyIfVisible:
 	; fallthrough
 
 Call_PlayBattleAnim:
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVar
-	and 1 << SUBSTATUS_SUBSTITUTE
-	ret nz
-
 	ld a, e
 	ld [wFXAnimID], a
 	ld a, d
