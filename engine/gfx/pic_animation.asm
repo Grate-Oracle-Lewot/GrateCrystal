@@ -279,7 +279,7 @@ AnimateMon_CheckIfPokemon:
 	ld a, [hl]
 	and a
 	pop hl
-	ret z
+ 	jr nz, .fail
 
 .notinbattle
 	ld a, [wCurPartySpecies]
