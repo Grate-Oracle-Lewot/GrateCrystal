@@ -269,6 +269,18 @@ AnimateMon_CheckIfPokemon:
  	bit SUBSTATUS_SUBSTITUTE, a
  	jr nz, .fail
 
+	push hl
+	ld hl, wPlayerMinimized
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMinimized
+.ok
+	ld a, [hl]
+	and a
+	pop hl
+	ret z
+
 .notinbattle
 	ld a, [wCurPartySpecies]
 	cp EGG
