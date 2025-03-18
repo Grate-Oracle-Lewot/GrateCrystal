@@ -259,6 +259,16 @@ PokeAnim_DeinitFrames:
 	ret
 
 AnimateMon_CheckIfPokemon:
+	ld a, [wBattleMode]
+	and a
+	jr z, .notinbattle
+
+	ld a, BATTLE_VARS_SUBSTATUS4
+ 	call GetBattleVar
+ 	bit SUBSTATUS_SUBSTITUTE, a
+ 	jr nz, .fail
+
+.notinbattle
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .fail
