@@ -3010,6 +3010,7 @@ wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wOaksLab2FSceneID::                               db
 wTrainerHouseB1FSceneID::                         db
 wVictoryRoadGateSceneID::                         db
 wPewterMuseumSceneID::                            db
@@ -3174,7 +3175,7 @@ wHappinessStepCount:: db
 
 wParkBallsRemaining:: db
 
-	ds 2
+	ds 1
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
