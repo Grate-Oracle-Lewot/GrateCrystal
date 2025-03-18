@@ -45,6 +45,7 @@ OaksLab2F_MapScripts:
 	waitbutton
 	closetext
 	turnobject OAKSLAB2F_BUGSY1, UP
+	setevent EVENT_STARTED_INVERSE_QUEST
 	setscene SCENE_OAKSLAB2F_NOTHING
 	appear OAKSLAB2F_BUGSY2
 	disappear OAKSLAB2F_BUGSY1
