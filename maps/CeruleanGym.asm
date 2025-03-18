@@ -8,16 +8,14 @@
 
 CeruleanGym_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CERULEANGYM_NOTHING
+	scene_script .DummyScene ; SCENE_CERULEANGYM_NOTHING
 	scene_script .GruntRunsOut ; SCENE_CERULEANGYM_GRUNT_RUNS_OUT
 
 	def_callbacks
 
-.DummyScene0:
-	end
-
 .GruntRunsOut:
 	sdefer .GruntRunsOutScript
+.DummyScene:
 	end
 
 .GruntRunsOutScript:
