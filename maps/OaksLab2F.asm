@@ -404,6 +404,195 @@ OaksLab2FBugsyWaitingText:
 	cont "CHAMPION!"
 	done
 
+InverseBugCatcherRobSeenText:
+	text ""
+	line ""
+	done
+
+InverseBugCatcherRobBeatenText:
+	text ""
+	line ""
+	done
+
+InverseBugCatcherRobAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseScientistTaylorSeenText:
+	text ""
+	line ""
+	done
+
+InverseScientistTaylorBeatenText:
+	text ""
+	line ""
+	done
+
+InverseScientistTaylorAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseScientistElvinSeenText:
+	text "Usually, ghost and"
+	line "normal types have"
+
+	para "no effect on each"
+	line "other…"
+
+	para "But in an inverse"
+	line "battle, they're"
+
+	para "super effective on"
+	line "each other!"
+	done
+
+InverseScientistElvinBeatenText:
+	text "Egad!"
+	done
+
+InverseScientistElvinAfterBattleText:
+	text "That GYM LEADER"
+	line "from JOHTO is one"
+	cont "clever child!"
+	done
+
+InverseFisherJonahSeenText:
+	text ""
+	line ""
+	done
+
+InverseFisherJonahBeatenText:
+	text ""
+	line ""
+	done
+
+InverseFisherJonahAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainMBlakeSeenText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainMBlakeBeatenText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainMBlakeAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainerFStellaSeenText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainerFStellaBeatenText:
+	text ""
+	line ""
+	done
+
+InverseCooltrainerFStellaAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseSuperNerdShawnSeenText:
+	text ""
+	line ""
+	done
+
+InverseSuperNerdShawnBeatenText:
+	text ""
+	line ""
+	done
+
+InverseSuperNerdShawnAfterBattleText:
+	text ""
+	line ""
+	done
+
+InversePokemaniacTannerSeenText:
+	text ""
+	line ""
+	done
+
+InversePokemaniacTannerBeatenText:
+	text ""
+	line ""
+	done
+
+InversePokemaniacTannerAfterBattleText:
+	text ""
+	line ""
+	done
+
+InversePokefanMJoshuaSeenText:
+	text ""
+	line ""
+	done
+
+InversePokefanMJoshuaBeatenText:
+	text ""
+	line ""
+	done
+
+InversePokefanMJoshuaAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseHikerKennySeenText:
+	text ""
+	line ""
+	done
+
+InverseHikerKennyBeatenText:
+	text ""
+	line ""
+	done
+
+InverseHikerKennyAfterBattleText:
+	text ""
+	line ""
+	done
+
+InversePokefanFGeorgiaSeenText:
+	text ""
+	line ""
+	done
+
+InversePokefanFGeorgiaBeatenText:
+	text ""
+	line ""
+	done
+
+InversePokefanFGeorgiaAfterBattleText:
+	text ""
+	line ""
+	done
+
+InverseBlackbeltWaiSeenText:
+	text ""
+	line ""
+	done
+
+InverseBlackbeltWaiBeatenText:
+	text ""
+	line ""
+	done
+
+InverseBlackbeltWaiAfterBattleText:
+	text ""
+	line ""
+	done
+
 OaksLab2FBugsyPreBattleText1:
 	text "BUGSY: Looks like"
 	line "you got 'em all!"
