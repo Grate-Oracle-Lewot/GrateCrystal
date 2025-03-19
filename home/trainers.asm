@@ -105,6 +105,7 @@ TalkToTrainer::
 	ld [wSeenTrainerDistance], a
 	ld a, -1
 	ld [wSeenTrainerDirection], a
+	; fallthrough
 
 LoadTrainer_continue::
 	call GetMapScriptsBank
