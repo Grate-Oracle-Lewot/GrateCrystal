@@ -420,18 +420,24 @@ InverseBugCatcherRobAfterBattleText:
 	done
 
 InverseScientistTaylorSeenText:
-	text ""
-	line ""
+	text "I'm on loan from"
+	line "SILPH."
+
+	para "They'll be very"
+	line "interested in this"
+	cont "project."
 	done
 
 InverseScientistTaylorBeatenText:
-	text ""
-	line ""
+	text "I see…"
 	done
 
 InverseScientistTaylorAfterBattleText:
-	text ""
-	line ""
+	text "It'll be SILPH's job"
+	line "to find out how to"
+
+	para "make this research"
+	line "profitable."
 	done
 
 InverseScientistElvinSeenText:
@@ -459,18 +465,21 @@ InverseScientistElvinAfterBattleText:
 	done
 
 InverseFisherJonahSeenText:
-	text ""
-	line ""
+	text "I was roped into"
+	line "this, but I just"
+
+	para "want to get back"
+	line "to fishing."
 	done
 
 InverseFisherJonahBeatenText:
-	text ""
-	line ""
+	text "That was… weird."
 	done
 
 InverseFisherJonahAfterBattleText:
-	text ""
-	line ""
+	text "I wonder how long"
+	line "PROF.OAK will let"
+	cont "us stay here…"
 	done
 
 InverseCooltrainMBlakeSeenText:
@@ -479,8 +488,7 @@ InverseCooltrainMBlakeSeenText:
 	done
 
 InverseCooltrainMBlakeBeatenText:
-	text ""
-	line ""
+	text "Yow!"
 	done
 
 InverseCooltrainMBlakeAfterBattleText:
@@ -579,8 +587,9 @@ InversePokefanFGeorgiaAfterBattleText:
 	done
 
 InverseBlackbeltWaiSeenText:
-	text ""
-	line ""
+	text "This will take my"
+	line "training to the"
+	cont "next level!"
 	done
 
 InverseBlackbeltWaiBeatenText:
