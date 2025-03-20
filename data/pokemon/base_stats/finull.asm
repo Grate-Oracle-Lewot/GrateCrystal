@@ -1,6 +1,6 @@
 	db FINULL ; 252
 
-	db  90, 120, 130,  10, 130, 120
+	db  89, 119, 131,  11, 129, 121
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, FAIRY ; type
