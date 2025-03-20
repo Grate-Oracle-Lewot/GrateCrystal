@@ -40,8 +40,6 @@ FastShipB1FSailorBlocksRight:
 	appear FASTSHIPB1F_SAILOR2
 	pause 5
 	disappear FASTSHIPB1F_SAILOR1
-	end
-
 FastShipB1FAlreadyBlocked:
 	end
 
