@@ -33,7 +33,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - TMs are infinite-use
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
-- Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more (currently does not show fishing encounters, but I'll make it work eventually)
+- Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
@@ -388,6 +388,14 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - And: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/docs/bugs_and_glitches.md
 
 I haven't done absolutely everything in both of those, but most. The main takeaway is that the Apricorn balls should all now work the way they were intended to. The Moon Ball now has a higher catch chance on any member of an evolutionary family that involves a Moon Stone, which now includes all the Gen I trade evolutions.
+
+# Known Bugs & Issues
+
+- If you throw a ball at a Pokémon that has more than 341 max HP, it will have the wrong chance to be caught, and rarely will freeze the game due to dividing by zero. This is a known bug from the base game but doesn't yet have a standardized solution. I'm waiting on help.
+
+- On the evolutions page of Nayru's dex, if you scroll through too many Pokémon entries in a row, the game crashes. I'm not yet sure of the cause or solution here.
+
+- Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
 
 # Why remove some Pokémon and moves?
 
