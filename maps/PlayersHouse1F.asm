@@ -246,11 +246,11 @@ IsItDSTText:
 	done
 
 ComeHomeForDSTText:
-	text "Come home to"
-	line "adjust your clock"
+	text "You can change the"
+	line "clock at any time"
 
-	para "for Daylight"
-	line "Saving Time."
+	para "in the #GEAR's"
+	line "menu."
 
 	para "By the way, do you"
 	line "know how to use"
