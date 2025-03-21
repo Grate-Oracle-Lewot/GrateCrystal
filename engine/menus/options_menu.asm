@@ -317,8 +317,8 @@ Options_BattleItems:
 	and a
 	ret
 
-.Off: db "OFF@"
-.On:  db "ON @"
+.Off: db "FORBID@"
+.On:  db "ALLOW @"
 
 Options_LevelCaps:
 	call GetLevelCapSetting
