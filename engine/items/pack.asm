@@ -341,7 +341,7 @@ MenuHeader_UsableKeyItem:
 	db "USE@"
 	db "GIVE@"
 	db "TOSS@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_UseGiveTossRegisterQuit:
@@ -397,7 +397,7 @@ MenuHeader_UnusableKeyItem:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
 	db 3 ; items
 	db "USE@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_UseRegisterQuit:
@@ -416,7 +416,7 @@ MenuHeader_HoldableKeyItem:
 	db 4 ; items
 	db "GIVE@"
 	db "TOSS@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_GiveTossRegisterQuit:
@@ -495,6 +495,7 @@ UseItem:
 
 	ld a, PACKSTATE_QUITRUNSCRIPT
 	ld [wJumptableIndex], a
+QuitItemSubmenu:
 	ret
 
 TossMenu:
@@ -607,9 +608,6 @@ GiveItem:
 .AnEggCantHoldAnItemText:
 	text_far _AnEggCantHoldAnItemText
 	text_end
-
-QuitItemSubmenu:
-	ret
 
 BattlePack:
 	ld hl, wOptions
@@ -1141,7 +1139,7 @@ TutorialPack:
 	db 1 ; default option
 
 .ItemsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wDudeNumItems
@@ -1161,7 +1159,7 @@ TutorialPack:
 	db 1 ; default option
 
 .KeyItemsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wDudeNumKeyItems
@@ -1190,7 +1188,7 @@ TutorialPack:
 	db 1 ; default option
 
 .BallsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wDudeNumBalls
@@ -1210,7 +1208,7 @@ TutorialPack:
 	db 1 ; default option
 
 .FruitsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db 2 ; horizontal spacing
 	dbw 0, wDudeNumFruits
@@ -1319,6 +1317,9 @@ Pack_InterpretJoypad:
 	ld a, [hl]
 	and SELECT
 	jr nz, .select
+	ld a, [hl]
+ 	and START
+ 	jr nz, .start
 	scf
 	ret
 
@@ -1370,6 +1371,21 @@ Pack_InterpretJoypad:
 	jr nz, .end_switch
 	scf
 	ret
+
+.start
+ 	ld hl, Text_SortItems
+ 	call PrintText
+ 	ld c, 30
+ 	call DelayFrames
+ 	farcall SortItemsInBag
+ 	ld de, SFX_TALLY
+ 	call WaitPlaySFX
+ 	ld hl, Text_SortComplete
+ 	call PrintText
+ 	ld c, 30
+ 	call DelayFrames
+ 	scf
+ 	ret
 
 .place_insert
 	farcall SwitchItemsInBag
@@ -1496,7 +1512,7 @@ ItemsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumItems
@@ -1526,7 +1542,7 @@ KeyItemsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wNumKeyItems
@@ -1556,7 +1572,7 @@ BallsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumBalls
@@ -1586,7 +1602,7 @@ FruitPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumFruits
@@ -1644,6 +1660,14 @@ AskItemMoveText:
 PackEmptyText:
 	text_far _PackEmptyText
 	text_end
+
+Text_SortItems:
+ 	text "Sorting items…"
+ 	done
+ 
+ Text_SortComplete:
+ 	text "Items sorted."
+ 	done
 
 PackMenuGFX:
 INCBIN "gfx/pack/pack_menu.2bpp"
