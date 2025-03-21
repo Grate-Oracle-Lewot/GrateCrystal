@@ -393,8 +393,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - If you throw a ball at a Pokémon that has more than 341 max HP, it will have the wrong chance to be caught, and rarely will freeze the game due to dividing by zero. This is a known bug from the base game but doesn't yet have a standardized solution. I'm waiting on help.
 
-- On the evolutions page of Nayru's dex, if you scroll through too many Pokémon entries in a row, the game crashes. I'm not yet sure of the cause or solution here.
-
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
 
 # Why remove some Pokémon and moves?
