@@ -406,18 +406,19 @@ OaksLab2FBugsyWaitingText:
 	done
 
 InverseBugCatcherRobSeenText:
-	text ""
-	line ""
+	text "I owe BUGSY a"
+	line "favor, so here it"
+	cont "goes!"
 	done
 
 InverseBugCatcherRobBeatenText:
-	text ""
-	line ""
+	text "Well, that could've"
+	line "gone better."
 	done
 
 InverseBugCatcherRobAfterBattleText:
-	text ""
-	line ""
+	text "Inverse battles"
+	line "are fun!"
 	done
 
 InverseScientistTaylorSeenText:
@@ -528,13 +529,13 @@ InverseSuperNerdShawnAfterBattleText:
 	done
 
 InversePokemaniacTannerSeenText:
-	text ""
-	line ""
+	text "My team is varied"
+	line "enough to win even"
+	cont "an inverse battle!"
 	done
 
 InversePokemaniacTannerBeatenText:
-	text ""
-	line ""
+	text "How'd you do that?"
 	done
 
 InversePokemaniacTannerAfterBattleText:
@@ -543,28 +544,31 @@ InversePokemaniacTannerAfterBattleText:
 	done
 
 InversePokefanMJoshuaSeenText:
-	text ""
-	line ""
+	text "Me and my rodent"
+	line "gang are just here"
+	cont "for fun!"
 	done
 
 InversePokefanMJoshuaBeatenText:
-	text ""
-	line ""
+	text "Criminitly!"
 	done
 
 InversePokefanMJoshuaAfterBattleText:
-	text ""
-	line ""
+	text "You didn't have to"
+	line "beat us that hard…"
 	done
 
 InverseHikerKennySeenText:
-	text ""
-	line ""
+	text "A new type of"
+	line "battle is like a"
+
+	para "new mountain to"
+	line "climb!"
 	done
 
 InverseHikerKennyBeatenText:
-	text ""
-	line ""
+	text "I fell off that"
+	line "cliff."
 	done
 
 InverseHikerKennyAfterBattleText:
@@ -573,18 +577,24 @@ InverseHikerKennyAfterBattleText:
 	done
 
 InversePokefanFGeorgiaSeenText:
-	text ""
-	line ""
+	text "Steel has lots of"
+	line "resistances, so in"
+
+	para "an inverse battle"
+	line "that means…"
 	done
 
 InversePokefanFGeorgiaBeatenText:
-	text ""
-	line ""
+	text "Oh dear."
 	done
 
 InversePokefanFGeorgiaAfterBattleText:
-	text ""
-	line ""
+	text "In inverse mode,"
+	line "normal-type moves"
+
+	text "finally get to be"
+	line "super effective"
+	cont "against something!"
 	done
 
 InverseBlackbeltWaiSeenText:
