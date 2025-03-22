@@ -339,7 +339,8 @@ OaksLab2FBugsyIntroText2:
 	line "happened to him,"
 
 	para "but we've salvaged"
-	line "some of his data."
+	line "some of his data"
+	cont "from the web."
 
 	para "Did you feel a"
 	line "tingle when you"
