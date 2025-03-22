@@ -250,16 +250,16 @@ ItemNameOrder::
 	db CLEAR_BELL   ; 9f
 	db FEAROWBOT    ; a0
 	db DISCO_BALL   ; a1
-	db HEDGER       ; a2
-	db PICKAXE      ; a3
-	db FLOATIE      ; a4
-	db EGG_BEATER   ; a5
-	db GRAVITY_BUOY ; a6
-	db SUPER_ROD    ; a7
-	db ODD_ROD      ; a8
-	db GOOD_ROD     ; a9
-	db OLD_ROD      ; aa
-	db BICYCLE      ; ab
+	db SUPER_ROD    ; a2
+	db ODD_ROD      ; a3
+	db GOOD_ROD     ; a4
+	db OLD_ROD      ; a5
+	db BICYCLE      ; a6
+	db HEDGER       ; a7
+	db PICKAXE      ; a8
+	db FLOATIE      ; a9
+	db EGG_BEATER   ; aa
+	db GRAVITY_BUOY ; ab
 	db COIN_CASE    ; ac
 	db BLUE_CARD    ; ad
 	db S_S_TICKET   ; ae
