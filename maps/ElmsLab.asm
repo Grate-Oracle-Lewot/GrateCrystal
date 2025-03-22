@@ -1255,8 +1255,12 @@ ElmsLabTravelTip3Text:
 	para "Travel Tip 3:"
 
 	para "Open your PACK and"
-	line "press SELECT to"
-	cont "move items."
+	line "press START to"
+	cont "sort items."
+
+	para "Press SELECT to"
+	line "move an item"
+	cont "manually."
 	done
 
 ElmsLabTravelTip4Text:
