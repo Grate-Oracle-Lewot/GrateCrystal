@@ -588,7 +588,7 @@ RedApricornDesc:
 	next "LEVEL BALL.@"
 
 TinyMushroomDesc:
-	db   "An ordinary mush-"
+	db   "A cute li'l mush-"
 	next "room. Sell low.@"
 
 BigMushroomDesc:
@@ -768,12 +768,12 @@ LostItemDesc:
 	next "by the COPYCAT.@"
 
 StardustDesc:
-	db   "Pretty, red sand."
-	next "Sell low.@"
+	db   "Sparkly purple"
+	next "powder. Sell low.@"
 
 StarPieceDesc:
-	db   "A hunk of red gem."
-	next "Sell high.@"
+	db   "A pointy yellow"
+	next "gem. Sell high.@"
 
 BasementKeyDesc:
 	db   "Opens the door in"
