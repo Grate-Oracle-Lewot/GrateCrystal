@@ -654,8 +654,8 @@ Area_Page_map:
 	ld e, a
 	predef Pokedex_GetArea
 	call Pokedex_BlackOutBG
-	call Pokedex_LoadGFX
-	call Pokedex_LoadAnyFootprint
+;	call Pokedex_LoadGFX
+;	call Pokedex_LoadAnyFootprint
 	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
