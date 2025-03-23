@@ -67,7 +67,7 @@ GetRemainingSpaceInPhoneList:
 	cp -1
 	jr z, .done
 	cp c
-	jr z, .continue
+	jr z, .loop
 
 	push bc
 	push hl
@@ -79,8 +79,6 @@ GetRemainingSpaceInPhoneList:
 .permanent
 	pop hl
 	pop bc
-
-.continue
 	jr .loop
 
 .done
@@ -98,7 +96,6 @@ CheckPhoneCall::
 	jr z, .no_call
 
 	call .timecheck
-	nop
 	jr nc, .no_call
 
 	; 50% chance for a call
@@ -283,14 +280,10 @@ CheckSpecialPhoneCall::
 SpecialCallOnlyWhenOutside:
 	ld a, [wEnvironment]
 	cp TOWN
-	jr z, .outside
+	jr z, SpecialCallWhereverYouAre
 	cp ROUTE
-	jr z, .outside
+	jr z, SpecialCallWhereverYouAre
 	xor a
-	ret
-
-.outside
-	scf
 	ret
 
 SpecialCallWhereverYouAre:
@@ -371,8 +364,6 @@ LoadOutOfAreaScript:
 	endcallback
 
 LoadCallerScript:
-	nop
-	nop
 	ld a, e
 	ld [wCurCaller], a
 	and a
