@@ -504,8 +504,11 @@ InverseBugCatcherRobBeatenText:
 	done
 
 InverseBugCatcherRobAfterBattleText:
-	text "Inverse battles"
-	line "are fun!"
+	text "I was hoping bug"
+	line "types would fare"
+
+	para "better in this"
+	line "format…"
 	done
 
 InverseScientistTaylorSeenText:
@@ -572,8 +575,8 @@ InverseFisherJonahAfterBattleText:
 	done
 
 InverseCooltrainMBlakeSeenText:
-	text ""
-	line ""
+	text "I'm up for anything"
+	line "you can dish out!"
 	done
 
 InverseCooltrainMBlakeBeatenText:
@@ -581,38 +584,46 @@ InverseCooltrainMBlakeBeatenText:
 	done
 
 InverseCooltrainMBlakeAfterBattleText:
-	text ""
-	line ""
+	text "Immunities are"
+	line "hard to keep track"
+	cont "of in inverse"
+	cont "mode…"
 	done
 
 InverseCooltrainerFStellaSeenText:
-	text ""
-	line ""
-	done
+	text "Steel has lots of"
+	line "resistances, so in"
+
+	para "an inverse battle"
+	line "that means…"
 
 InverseCooltrainerFStellaBeatenText:
-	text ""
-	line ""
+	text "Oh dear."
 	done
 
 InverseCooltrainerFStellaAfterBattleText:
-	text ""
-	line ""
+	text "Even if I lost, I'm"
+	line "glad I could con-"
+	cont "tribute to such an"
+	cont "exciting project!"
 	done
 
 InverseSuperNerdShawnSeenText:
-	text ""
-	line ""
+	text "I wanna be the"
+	line "first on scene to"
+
+	para "study this new"
+	line "battle type!"
 	done
 
 InverseSuperNerdShawnBeatenText:
-	text ""
-	line ""
+	text "OK! OK! Uncle!"
 	done
 
 InverseSuperNerdShawnAfterBattleText:
-	text ""
-	line ""
+	text "I wonder how"
+	line "FORESIGHT affects"
+	cont "immunities…"
 	done
 
 InversePokemaniacTannerSeenText:
@@ -626,8 +637,9 @@ InversePokemaniacTannerBeatenText:
 	done
 
 InversePokemaniacTannerAfterBattleText:
-	text ""
-	line ""
+	text "Type variety is"
+	line "still the key to"
+	cont "victory."
 	done
 
 InversePokefanMJoshuaSeenText:
@@ -659,20 +671,24 @@ InverseHikerKennyBeatenText:
 	done
 
 InverseHikerKennyAfterBattleText:
-	text ""
-	line ""
+	text "That was kind of"
+	line "like climbing a"
+
+	para "hill while walking"
+	line "backwards."
 	done
 
 InversePokefanFGeorgiaSeenText:
-	text "Steel has lots of"
-	line "resistances, so in"
-
-	para "an inverse battle"
-	line "that means…"
+	text "Don't tell BUGSY,"
+	line "but I think some-"
+	cont "one already did"
+	cont "this in KALOS."
 	done
 
 InversePokefanFGeorgiaBeatenText:
-	text "Oh dear."
+	text "I can't even re-"
+	line "member the normal"
+	cont "type matchups."
 	done
 
 InversePokefanFGeorgiaAfterBattleText:
@@ -691,13 +707,16 @@ InverseBlackbeltWaiSeenText:
 	done
 
 InverseBlackbeltWaiBeatenText:
-	text ""
-	line ""
+	text "Is that what it's"
+	line "like?"
 	done
 
 InverseBlackbeltWaiAfterBattleText:
-	text ""
-	line ""
+	text "Inverse battles"
+	line "make fighting"
+
+	para "#MON immune to"
+	line "ghost moves!"
 	done
 
 OaksLab2FBugsyPreBattleText1:
