@@ -1812,6 +1812,8 @@ Script_FailPocketPC:
 	special UpdateTimePals
 Script_FailPocketPC_Register:
 	opentext
+	playsound SFX_NO_SIGNAL
+	waitsfx
 	writetext NoSignalText
 	closetext
 	reloadmappart
