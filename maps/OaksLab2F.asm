@@ -184,11 +184,11 @@ OaksLab2FBugsyScript:
 	disappear OAKSLAB2F_BUGSY2
 	end
 
-.BugsyRight:
+.Right:
 	turnobject OAKSLAB2F_BUGSY2, RIGHT
 	sjump .Merge1
 
-.BugsyLeft:
+.Left:
 	turnobject OAKSLAB2F_BUGSY2, LEFT
 	sjump .Merge1
 
@@ -243,7 +243,7 @@ OaksLab2FFisherJonahScript:
 	writetext InverseFisherJonahAfterBattleText
 	sjump OaksLab2F_EndText
 
-OaksLab2FCooltrainMBlakeScript:
+OaksLab2FCooltrainerMBlakeScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
 	trainer COOLTRAINERM, BLAKE, EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE, InverseCooltrainerMBlakeSeenText, InverseCoolertrainerMBlakeBeatenText, 0, .Script
 
@@ -574,16 +574,16 @@ InverseFisherJonahAfterBattleText:
 	cont "us stay here…"
 	done
 
-InverseCooltrainMBlakeSeenText:
+InverseCooltrainerMBlakeSeenText:
 	text "I'm up for anything"
 	line "you can dish out!"
 	done
 
-InverseCooltrainMBlakeBeatenText:
+InverseCooltrainerMBlakeBeatenText:
 	text "Yow!"
 	done
 
-InverseCooltrainMBlakeAfterBattleText:
+InverseCooltrainerMBlakeAfterBattleText:
 	text "Immunities are"
 	line "hard to keep track"
 	cont "of in inverse"
@@ -847,7 +847,7 @@ OaksLab2F_MapEvents:
 	object_event 16, 19, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, OaksLab2FScientistTaylorScript, EVENT_OAKS_LAB_2F_SCIENTIST_TAYLOR
 	object_event 12, 19, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, OaksLab2FScientistElvinScript, EVENT_OAKS_LAB_2F_SCIENTIST_ELVIN
 	object_event 24,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, OaksLab2FFisherJonahScript, EVENT_OAKS_LAB_2F_FISHER_JONAH
-	object_event 21, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, OaksLab2FCooltrainMBlakeScript, EVENT_OAKS_LAB_2F_COOLTRAINERM_BLAKE
+	object_event 21, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, OaksLab2FCooltrainerMBlakeScript, EVENT_OAKS_LAB_2F_COOLTRAINERM_BLAKE
 	object_event 23, 11, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, OaksLab2FCooltrainerFStellaScript, EVENT_OAKS_LAB_2F_COOLTRAINERF_STELLA
 	object_event  5, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, OaksLab2FSuperNerdShawnScript, EVENT_OAKS_LAB_2F_SUPER_NERD_SHAWN
 	object_event  5, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, OaksLab2FPokemaniacTannerScript, EVENT_OAKS_LAB_2F_POKEMANIAC_TANNER
