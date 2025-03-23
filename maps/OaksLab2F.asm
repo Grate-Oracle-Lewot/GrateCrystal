@@ -245,7 +245,7 @@ OaksLab2FFisherJonahScript:
 
 OaksLab2FCooltrainerMBlakeScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer COOLTRAINERM, BLAKE, EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE, InverseCooltrainerMBlakeSeenText, InverseCoolertrainerMBlakeBeatenText, 0, .Script
+	trainer COOLTRAINERM, BLAKE, EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE, InverseCooltrainerMBlakeSeenText, InverseCooltrainerMBlakeBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
