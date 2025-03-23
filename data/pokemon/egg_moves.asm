@@ -843,6 +843,7 @@ DelibirdEggMoves:
 	db SWORDS_DANCE
 	db POWER_GEM
 	db COTTON_SPORE
+	db HYDRO_PUMP
 	db -1 ; end
 
 MantineEggMoves:
