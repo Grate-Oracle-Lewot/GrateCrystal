@@ -276,5 +276,5 @@ ItemNameOrder::
 	db RAINBOW_WING ; b9
 	db SILVER_WING  ; ba
 
-	assert_table_length NUM_ITEMS
+	assert_table_length NUM_ITEMS + 1
 	db -1 ; end
