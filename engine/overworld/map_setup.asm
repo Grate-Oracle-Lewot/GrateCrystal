@@ -92,7 +92,6 @@ SkipUpdateMapSprites:
 	ret
 
 CheckUpdatePlayerSprite:
-	nop
 	call .CheckBiking
 	jp c, UpdatePlayerSprite
 	call .CheckSurfing
