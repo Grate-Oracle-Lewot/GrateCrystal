@@ -101,7 +101,106 @@ OaksLab2F_MapScripts:
 	endcallback
 
 OaksLab2FBugsyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_INVERSE_BEAT_BUG_CATCHER_ROB
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_SCIENTIST_TAYLOR
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_SCIENTIST_ELVIN
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_FISHER_JONAH
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_COOLTRAINERF_STELLA
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_SUPER_NERD_SHAWN
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_POKEMANIAC_TANNER
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_POKEFANM_JOSHUA
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_HIKER_KENNY
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_POKEFANF_GEORGIA
+	iffalse .NotDone
+	checkevent EVENT_INVERSE_BEAT_BLACKBELT_WAI
+	iffalse .NotDone
+	checkevent EVENT_BUGSY_WANTS_NEUTRAL_BATTLE
+	iftrue .Battle
+	writetext OaksLab2FBugsyPreBattleText1
+	waitbutton
+	closetext
+	turnobject OAKSLAB2F_BUGSY2, UP
+	playsound SFX_BOOT_PC
+	waitsfx
+	faceplayer
+	opentext
+	writetext OaksLab2FBugsyPreBattleText2
+	waitbutton
+	closetext
+	setevent EVENT_BUGSY_WANTS_NEUTRAL_BATTLE
+	end
 
+.Battle:
+	writetext OaksLab2FBugsyPreBattleText3
+	waitbutton
+	closetext
+	winlosstext OaksLab2FBugsyBeatenText, 0
+	loadtrainer BUGSY, BUGSY2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TYPELESS
+	startbattle
+	reloadmap
+	opentext
+	writetext OaksLabBugsyAfterBattleText1
+	waitbutton
+	closetext
+	playsound SFX_CALL
+	waitsfx
+	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY2, 15
+	readvar VAR_FACING
+	ifequal RIGHT, .Right
+	ifequal LEFT, .Left
+	turnobject OAKSLAB2F_BUGSY2, UP
+.Merge1:
+	opentext
+	writetext OaksLabBugsyPhoneCallText
+	waitbutton
+	closetext
+	playsound SFX_HANG_UP
+	waitsfx
+	faceplayer
+	opentext
+	writetext OaksLabBugsyAfterBattleText2
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal RIGHT, .Around
+	applymovement OAKSLAB2F_BUGSY2, OaksLab2FBugsyLeaveDirectMovement
+.Merge2:
+	setevent EVENT_COMPLETED_INVERSE_QUEST
+	setevent EVENT_BATTLE_TOWER_TYPE_MODES_UNLOCKED
+	disappear OAKSLAB2F_BUGSY2
+	end
+
+.BugsyRight:
+	turnobject OAKSLAB2F_BUGSY2, RIGHT
+	sjump .Merge1
+
+.BugsyLeft:
+	turnobject OAKSLAB2F_BUGSY2, LEFT
+	sjump .Merge1
+
+.Around:
+	applymovement OAKSLAB2F_BUGSY2, OaksLab2FBugsyLeaveAroundMovement
+	sjump .Merge2
+
+.NotDone:
+	writetext OaksLab2FBugsyWaitingText
+OaksLab2F_EndText:
+	waitbutton
+	closetext
 	end
 
 OaksLab2FBugCatcherRobScript:
@@ -112,9 +211,7 @@ OaksLab2FBugCatcherRobScript:
 	endifjustbattled
 	opentext
 	writetext InverseBugCatcherRobAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FScientistTaylorScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -124,9 +221,7 @@ OaksLab2FScientistTaylorScript:
 	endifjustbattled
 	opentext
 	writetext InverseScientistTaylorAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FScientistElvinScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -136,9 +231,7 @@ OaksLab2FScientistElvinScript:
 	endifjustbattled
 	opentext
 	writetext InverseScientistElvinAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FFisherJonahScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -148,9 +241,7 @@ OaksLab2FFisherJonahScript:
 	endifjustbattled
 	opentext
 	writetext InverseFisherJonahAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FCooltrainMBlakeScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -160,9 +251,7 @@ OaksLab2FCooltrainMBlakeScript:
 	endifjustbattled
 	opentext
 	writetext InverseCooltrainerMBlakeAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FCooltrainerFStellaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -172,9 +261,7 @@ OaksLab2FCooltrainerFStellaScript:
 	endifjustbattled
 	opentext
 	writetext InverseCooltrainerFStellaAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FSuperNerdShawnScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -184,9 +271,7 @@ OaksLab2FSuperNerdShawnScript:
 	endifjustbattled
 	opentext
 	writetext InverseSuperNerdShawnAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FPokemaniacTannerScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -196,9 +281,7 @@ OaksLab2FPokemaniacTannerScript:
 	endifjustbattled
 	opentext
 	writetext InversePokemaniacTannerAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FPokefanMJoshuaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -208,9 +291,7 @@ OaksLab2FPokefanMJoshuaScript:
 	endifjustbattled
 	opentext
 	writetext InversePokefanMJoshuaAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FHikerKennyScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -220,9 +301,7 @@ OaksLab2FHikerKennyScript:
 	endifjustbattled
 	opentext
 	writetext InverseHikerKennyAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FPokefanFGeorgiaScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -232,9 +311,7 @@ OaksLab2FPokefanFGeorgiaScript:
 	endifjustbattled
 	opentext
 	writetext InversePokefanFGeorgiaAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FBlackbeltWaiScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
@@ -244,9 +321,7 @@ OaksLab2FBlackbeltWaiScript:
 	endifjustbattled
 	opentext
 	writetext InverseBlackbeltWaiAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump OaksLab2F_EndText
 
 OaksLab2FPokedexMachine:
 	jumptext OaksLab2FPokedexMachineText
@@ -307,6 +382,18 @@ OaksLab2FBugsyWalkToComputerMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
+	step_end
+
+OaksLab2FBugsyLeaveAroundMovement:
+	step DOWN
+OaksLab2FBugsyLeaveDirectMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 OaksLab2FBugsyIntroText1:
