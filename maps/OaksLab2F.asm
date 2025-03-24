@@ -28,6 +28,7 @@ OaksLab2F_MapScripts:
 	end
 
 .BugsySceneScript:
+	appear OAKSLAB2F_BUGSY1
 	pause 5
 	turnobject OAKSLAB2F_BUGSY1, DOWN
 	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY1, 15
