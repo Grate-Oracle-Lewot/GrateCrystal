@@ -224,6 +224,11 @@ RuinsOfAlphKabutoChamberDescriptionText:
 	line "scanned the area."
 	done
 
+RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
+	text "Our investigation"
+ 	line "is going well!"
+ 	done
+
 RuinsOfAlphKabutoChamber_MapEvents:
 	db 0, 0 ; filler
 
