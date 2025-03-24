@@ -554,7 +554,7 @@ wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
 	ds 1
 
-	ds 2
+wMoveCheckArrayAddr:: dw
 
 wBattleWeather::
 ; 00 normal
