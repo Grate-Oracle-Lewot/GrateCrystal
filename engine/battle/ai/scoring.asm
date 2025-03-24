@@ -334,7 +334,7 @@ AI_Cautious:
 	jr nc, .loop
 
 	call AI_90_10
-	ret c
+	jr c, .loop
 
 	inc [hl]
 	jr .loop
@@ -438,33 +438,8 @@ AI_Types:
 	cp WEATHER_RAIN
 	jr nz, .checksun
 
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove3
-	inc hl
-	dec c
-	jr z, .checksun
-
-	ld a, [de]
-	inc de
-	and a
-	jr z, .checksun
-
-	push hl
-	push de
-	push bc
 	ld hl, RainDanceMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .checkmove3
-
-	dec [hl]
-	jr .checkmove3
+	call AI_EncourageIfInArray
 
 ; Encourage moves in the Sunny Day list if it's sunny.
 .checksun
@@ -472,33 +447,8 @@ AI_Types:
 	cp WEATHER_SUN
 	ret nz
 
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove4
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push hl
-	push de
-	push bc
 	ld hl, SunnyDayMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .checkmove4
-
-	dec [hl]
-	jr .checkmove4
+	jp AI_EncourageIfInArray
 
 
 AI_Offensive:
@@ -550,33 +500,8 @@ AI_Encourage_Useful:
 ; Encourage useful moves. Used by AI_Opportunist and AI_Pragmatic.
 ; Also functions as its own layer: AI_SIMPLE.
 
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push hl
-	push de
-	push bc
 	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .checkmove
-
-	dec [hl]
-	jr .checkmove
+	jp AI_EncourageIfInArray
 
 INCLUDE "data/battle/ai/useful_moves.asm"
 
@@ -3745,6 +3670,46 @@ AIGetEnemyMove:
 	pop de
 	pop hl
 	ret
+
+AI_EncourageIfInArray:
+; input: address of array in hl
+	ld a, l
+	ld [wMoveCheckArrayAddr], a
+	ld a, h
+	ld [wMoveCheckArrayAddr + 1], a
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.loop
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+	ld de, wMoveCheckArrayAddr
+	ld a, [de]
+	ld l, a
+	inc de
+	ld a, [de]
+	ld h, a
+	ld de, 1
+	call IsInArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .loop
+
+	dec [hl]
+	jr .loop
 
 AI_50_50:
 	call Random
