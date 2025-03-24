@@ -24,7 +24,7 @@ NUM_TRAINER_ATTRIBUTES EQU _RS
 	shift_const AI_TROLL        ; 3
 	shift_const AI_SIMPLE       ; 4
 	shift_const AI_STUBBORN     ; 5
-	shift_const AI_OFFENSIVE_2  ; 6
+	shift_const AI_IMMUNITIES   ; 6
 	shift_const AI_AGGRESSIVE_2 ; 7
 NO_AI EQU 0
 
