@@ -10,7 +10,7 @@ _NameRater:
 
 .loop_party_menu
 	farcall SelectMonFromParty
-	jr c, .cancel
+	jp c, .cancel
 ; He can't rename an egg...
 	ld a, [wCurPartySpecies]
 	cp EGG
