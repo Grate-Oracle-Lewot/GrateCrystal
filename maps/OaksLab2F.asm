@@ -469,6 +469,9 @@ OaksLab2FBlackbeltWaiScript:
 OaksLab2FPokedexMachine:
 	jumptext OaksLab2FPokedexMachineText
 
+OaksLab2FFieldGenerator:
+	jumptext OaksLab2FFieldGeneratorText
+
 OaksLab2FBugsyStepDownMovement:
 	step DOWN
 	step_end
@@ -984,6 +987,14 @@ OaksLab2FPokedexMachineText:
 	cont "of the #DEX."
 	done
 
+OaksLab2FFieldGeneratorText:
+	text "It's giving off a"
+	line "light hum."
+
+	para "The air feels all"
+	line "tingly around it."
+	done
+
 OaksLab2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -994,6 +1005,10 @@ OaksLab2F_MapEvents:
 
 	def_bg_events
 	bg_event 27,  1, BGEVENT_READ, OaksLab2FPokedexMachine
+	bg_event 20,  7, BGEVENT_READ, OaksLab2FFieldGenerator
+	bg_event 21,  7, BGEVENT_READ, OaksLab2FFieldGenerator
+	bg_event 22,  7, BGEVENT_READ, OaksLab2FFieldGenerator
+	bg_event 23,  7, BGEVENT_READ, OaksLab2FFieldGenerator
 
 	def_object_events
 	object_event 27, 22, SPRITE_BUGSY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OaksLab2FBugsyScript, EVENT_OAKS_LAB_2F_BUGSY1
