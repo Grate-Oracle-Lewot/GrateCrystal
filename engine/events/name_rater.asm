@@ -70,7 +70,7 @@ _NameRater:
 .egg
 	ld hl, NameRaterEggText
 	call PrintText
- 	jr .loop_party_menu
+ 	jp .loop_party_menu
 
 .traded
 	ld hl, NameRaterPerfectNameText
