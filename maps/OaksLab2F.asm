@@ -701,10 +701,8 @@ InverseScientistElvinAfterBattleText:
 
 InverseFisherJonahSeenText:
 	text "I was roped into"
-	line "this, but I just"
-
-	para "want to get back"
-	line "to fishing."
+	line "this, but I'd rath-"
+	cont "er be fishing."
 	done
 
 InverseFisherJonahBeatenText:
