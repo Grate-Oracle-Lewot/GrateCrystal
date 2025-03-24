@@ -179,7 +179,7 @@ TrainerClassAttributes:
 ; Pokemaniac
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS | AI_IMMUNITIES
+	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; GruntM
@@ -191,7 +191,7 @@ TrainerClassAttributes:
 ; Gentleman
 	db FULL_RESTORE, NO_ITEM ; items
 	db 23 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_AGGRESSIVE | AI_STATUS | AI_IMMUNITIES | AI_AGGRESSIVE_2
+	dw AI_BASIC | AI_SETUP | AI_AGGRESSIVE | AI_STATUS | AI_AGGRESSIVE_2
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Skier
@@ -365,7 +365,7 @@ TrainerClassAttributes:
 ; Twins
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
-	dw AI_BASIC | AI_IMMUNITIES
+	dw AI_BASIC
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; PokefanF
