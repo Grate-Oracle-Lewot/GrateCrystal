@@ -105,7 +105,7 @@ RuinsOfAlphKabutoChamberScientistScript:
 	end
 
 .AllUnownCaught:
-	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
+	writetext RuinsOfAlphKabutoChamberScientistText_GotAllUnown
 	waitbutton
 	closetext
 	end
@@ -224,7 +224,7 @@ RuinsOfAlphKabutoChamberDescriptionText:
 	line "scanned the area."
 	done
 
-RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
+RuinsOfAlphKabutoChamberScientistText_GotAllUnown:
 	text "Our investigation"
  	line "is going well!"
  	done
