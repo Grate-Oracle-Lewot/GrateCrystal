@@ -197,6 +197,9 @@ TotodilePokeBallScript:
 	givepoke MEGANIUM, 100, GOLD_BERRY
 	givepoke TYPHLOSION, 100, GOLD_BERRY
 	givepoke MEWTWO, 100, GOLD_BERRY
+	giveitem PASS
+	giveitem FEAROWBOT
+	setflag ENGINE_STORMBADGE
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -262,6 +265,8 @@ ElmDirectionsScript:
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
 	setevent EVENT_BUGSY_ON_ROUTE_14
 	setmapscene OAKS_LAB_2F, SCENE_OAKSLAB2F_BUGSY
+	setflag ENGINE_FLYPOINT_BATTLE_TOWER
+	setflag ENGINE_FLYPOINT_SAFFRON
 	end
 
 ElmDescribesMrPokemonScript:
