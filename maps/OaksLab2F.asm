@@ -137,8 +137,10 @@ OaksLab2FBugsyScript:
 	waitbutton
 	closetext
 	turnobject OAKSLAB2F_BUGSY2, UP
+	pause 5
 	playsound SFX_BOOT_PC
 	waitsfx
+	pause 5
 	faceplayer
 	opentext
 	writetext OaksLab2FBugsyPreBattleText2
@@ -160,6 +162,8 @@ OaksLab2FBugsyScript:
 	writetext OaksLabBugsyAfterBattleText1
 	waitbutton
 	closetext
+	playsound SFX_CALL
+	waitsfx
 	playsound SFX_CALL
 	waitsfx
 	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY2, 15
@@ -928,8 +932,11 @@ OaksLabBugsyPhoneCallText:
 
 	para "Really? Great!"
 
+	para "Yeah…"
+
 	para "Yeah, we'll talk"
-	line "more later."
+	line "more when I get"
+	cont "there."
 
 	para "Bye-bye!"
 	done
