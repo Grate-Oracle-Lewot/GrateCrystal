@@ -199,128 +199,263 @@ OaksLab2FBugsyScript:
 
 .NotDone:
 	writetext OaksLab2FBugsyWaitingText
+	waitbutton
+	closetext
+	turnobject OAKSLAB2F_BUGSY2, UP
+	end
+
+OaksLab2FBugCatcherRobScript:
+	faceplayer
+	opentext
+	checkevent EVENT_INVERSE_BEAT_BUG_CATCHER_ROB
+	iftrue .AfterBattle
+	writetext InverseBugCatcherRobSeenText
+	waitbutton
+	closetext
+	winlosstext InverseBugCatcherRobBeatenText, 0
+	loadtrainer BUG_CATCHER, ROB
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_BUG_CATCHER_ROB
+	closetext
+	end
+
+.AfterBattle:
+	writetext InverseBugCatcherRobAfterBattleText
 OaksLab2F_EndText:
 	waitbutton
 	closetext
 	end
 
-OaksLab2FBugCatcherRobScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer BUG_CATCHER, ROB, EVENT_INVERSE_BEAT_BUG_CATCHER_ROB, InverseBugCatcherRobSeenText, InverseBugCatcherRobBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext InverseBugCatcherRobAfterBattleText
-	sjump OaksLab2F_EndText
-
 OaksLab2FScientistTaylorScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer SCIENTIST, TAYLOR, EVENT_INVERSE_BEAT_SCIENTIST_TAYLOR, InverseScientistTaylorSeenText, InverseScientistTaylorBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_SCIENTIST_TAYLOR
+	iftrue .AfterBattle
+	writetext InverseScientistTaylorSeenText
+	waitbutton
+	closetext
+	winlosstext InverseScientistTaylorBeatenText, 0
+	loadtrainer SCIENTIST, TAYLOR
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_SCIENTIST_TAYLOR
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseScientistTaylorAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FScientistElvinScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer SCIENTIST, ELVIN, EVENT_INVERSE_BEAT_SCIENTIST_ELVIN, InverseScientistElvinSeenText, InverseScientistElvinBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_SCIENTIST_ELVIN
+	iftrue .AfterBattle
+	writetext InverseScientistElvinSeenText
+	waitbutton
+	closetext
+	winlosstext InverseScientistElvinBeatenText, 0
+	loadtrainer SCIENTIST, ELVIN
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_SCIENTIST_ELVIN
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseScientistElvinAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FFisherJonahScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer FISHER, JONAH, EVENT_INVERSE_BEAT_FISHER_JONAH, InverseFisherJonahSeenText, InverseFisherJonahBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_FISHER_JONAH
+	iftrue .AfterBattle
+	writetext InverseFisherJonahSeenText
+	waitbutton
+	closetext
+	winlosstext InverseFisherJonahBeatenText, 0
+	loadtrainer FISHER, JONAH
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_FISHER_JONAH
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseFisherJonahAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FCooltrainerMBlakeScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer COOLTRAINERM, BLAKE, EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE, InverseCooltrainerMBlakeSeenText, InverseCooltrainerMBlakeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE
+	iftrue .AfterBattle
+	writetext InverseCooltrainerMBlakeSeenText
+	waitbutton
+	closetext
+	winlosstext InverseCooltrainerMBlakeBeatenText, 0
+	loadtrainer COOLTRAINERM, BLAKE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_COOLTRAINERM_BLAKE
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseCooltrainerMBlakeAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FCooltrainerFStellaScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer COOLTRAINERF, STELLA, EVENT_INVERSE_BEAT_COOLTRAINERF_STELLA, InverseCooltrainerFStellaSeenText, InverseCooltrainerFStellaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_COOLTRAINERF_STELLA
+	iftrue .AfterBattle
+	writetext InverseCooltrainerFStellaSeenText
+	waitbutton
+	closetext
+	winlosstext InverseCooltrainerFStellaBeatenText, 0
+	loadtrainer COOLTRAINERF, STELLA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_COOLTRAINERF_STELLA
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseCooltrainerFStellaAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FSuperNerdShawnScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer SUPER_NERD, SHAWN, EVENT_INVERSE_BEAT_SUPER_NERD_SHAWN, InverseSuperNerdShawnSeenText, InverseSuperNerdShawnBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_SUPER_NERD_SHAWN
+	iftrue .AfterBattle
+	writetext InverseSuperNerdShawnSeenText
+	waitbutton
+	closetext
+	winlosstext InverseSuperNerdShawnBeatenText, 0
+	loadtrainer SUPER_NERD, SHAWN
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_SUPER_NERD_SHAWN
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseSuperNerdShawnAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FPokemaniacTannerScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer POKEMANIAC, TANNER, EVENT_INVERSE_BEAT_POKEMANIAC_TANNER, InversePokemaniacTannerSeenText, InversePokemaniacTannerBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_POKEMANIAC_TANNER
+	iftrue .AfterBattle
+	writetext InversePokemaniacTannerSeenText
+	waitbutton
+	closetext
+	winlosstext InversePokemaniacTannerBeatenText, 0
+	loadtrainer POKEMANIAC, TANNER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_POKEMANIAC_TANNER
+	closetext
+	end
+
+.AfterBattle:
 	writetext InversePokemaniacTannerAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FPokefanMJoshuaScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer POKEFANM, JOSHUA, EVENT_INVERSE_BEAT_POKEFANM_JOSHUA, InversePokefanMJoshuaSeenText, InversePokefanMJoshuaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_POKEFANM_JOSHUA
+	iftrue .AfterBattle
+	writetext InversePokefanMJoshuaSeenText
+	waitbutton
+	closetext
+	winlosstext InversePokefanMJoshuaBeatenText, 0
+	loadtrainer POKEFANM, JOSHUA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_POKEFANM_JOSHUA
+	closetext
+	end
+
+.AfterBattle:
 	writetext InversePokefanMJoshuaAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FHikerKennyScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer HIKER, KENNY, EVENT_INVERSE_BEAT_HIKER_KENNY, InverseHikerKennySeenText, InverseHikerKennyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_HIKER_KENNY
+	iftrue .AfterBattle
+	writetext InverseHikerKennySeenText
+	waitbutton
+	closetext
+	winlosstext InverseHikerKennyBeatenText, 0
+	loadtrainer HIKER, KENNY
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_HIKER_KENNY
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseHikerKennyAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FPokefanFGeorgiaScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer POKEFANF, GEORGIA, EVENT_INVERSE_BEAT_POKEFANF_GEORGIA, InversePokefanFGeorgiaSeenText, InversePokefanFGeorgiaBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_POKEFANF_GEORGIA
+	iftrue .AfterBattle
+	writetext InversePokefanFGeorgiaSeenText
+	waitbutton
+	closetext
+	winlosstext InversePokefanFGeorgiaBeatenText, 0
+	loadtrainer POKEFANF, GEORGIA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_POKEFANF_GEORGIA
+	closetext
+	end
+
+.AfterBattle:
 	writetext InversePokefanFGeorgiaAfterBattleText
 	sjump OaksLab2F_EndText
 
 OaksLab2FBlackbeltWaiScript:
-	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	trainer BLACKBELT_T, WAI, EVENT_INVERSE_BEAT_BLACKBELT_WAI, InverseBlackbeltWaiSeenText, InverseBlackbeltWaiBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_INVERSE_BEAT_BLACKBELT_WAI
+	iftrue .AfterBattle
+	writetext InverseBlackbeltWaiSeenText
+	waitbutton
+	closetext
+	winlosstext InverseBlackbeltWaiBeatenText, 0
+	loadtrainer BLACKBELT_T, WAI
+	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_INVERSE_BEAT_BLACKBELT_WAI
+	closetext
+	end
+
+.AfterBattle:
 	writetext InverseBlackbeltWaiAfterBattleText
 	sjump OaksLab2F_EndText
 
