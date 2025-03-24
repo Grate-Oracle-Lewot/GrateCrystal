@@ -32,6 +32,7 @@ OaksLab2F_MapScripts:
 	turnobject OAKSLAB2F_BUGSY1, DOWN
 	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY1, 15
 	applymovement OAKSLAB2F_BUGSY1, OaksLab2FBugsyStepDownMovement
+	turnobject PLAYER, UP
 	opentext
 	writetext OaksLab2FBugsyIntroText1
 	waitbutton
