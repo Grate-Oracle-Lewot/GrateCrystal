@@ -166,7 +166,7 @@ AI_Troll:
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
-.checkmove2
+.checkmove
 	inc hl
 	dec c
 	ret z
@@ -187,11 +187,11 @@ AI_Troll:
 	pop bc
 	pop de
 	pop hl
-	jr nc, .checkmove2
+	jr nc, .checkmove
 
 	dec [hl]
 	dec [hl]
-	jr .checkmove2
+	jr .checkmove
 
 
 AI_Setup:
