@@ -194,9 +194,9 @@ TotodilePokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke FERALIGATR, 100, GOLD_BERRY
+	givepoke MEGANIUM, 100, GOLD_BERRY
+	givepoke TYPHLOSION, 100, GOLD_BERRY
 	givepoke MEWTWO, 100, GOLD_BERRY
-	setevent EVENT_BUGSY_ON_ROUTE_14
-	setmapscene OAKS_LAB_2F, SCENE_OAKSLAB2F_BUGSY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
