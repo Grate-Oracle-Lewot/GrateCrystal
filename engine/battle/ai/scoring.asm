@@ -447,17 +447,18 @@ AI_Types:
 AI_Immunities:
 ; Dismiss any move that the player is immune to.
 ; Broken off from AI_Types to use alongside AI_Aggressive, which generally replaces AI_Types.
+
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld b, NUM_MOVES + 1
 .checkmove
 	dec b
-	jr z, .aggressive
+	ret z
 
 	inc hl
 	ld a, [de]
 	and a
-	jr z, .aggressive
+	ret z
 
 	inc de
 	call AIGetEnemyMove
