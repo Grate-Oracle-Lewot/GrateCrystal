@@ -168,3 +168,16 @@ stonetable: MACRO
 	db \1, \2
 	dw \3
 ENDM
+
+inverse_trainer: MACRO
+;\1: trainer group
+;\2: trainer id
+;\3: flag: an EVENT_BEAT_* constant
+;\4: seen text
+;\5: win text
+;\6: loss text
+;\7: after-battle text
+	dw \3
+	db \1, \2
+	dw \4, \5, \6, \7
+ENDM
