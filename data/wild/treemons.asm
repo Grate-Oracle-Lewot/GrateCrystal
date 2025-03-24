@@ -45,8 +45,8 @@ TreeMonSet_Town:
 	db 20, HERACROSS,  10
 	db 20, HERACROSS,  15
 	db 15, AIPOM,      10
-	db 10, AIPOM,       5
-	db 10, AIPOM,      15
+	db 10, ABRA,        5
+	db 10, ABRA,       15
 	db -1
 
 TreeMonSet_City:
@@ -63,8 +63,8 @@ TreeMonSet_City:
 	db 20, HERACROSS,  20
 	db 20, HERACROSS,  30
 	db 15, AIPOM,      20
-	db 10, AIPOM,      10
-	db 10, AIPOM,      30
+	db 10, MANKEY,     20
+	db 10, VENOMOTH,   30
 	db -1
 
 TreeMonSet_Forest:
