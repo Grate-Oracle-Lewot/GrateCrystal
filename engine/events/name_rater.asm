@@ -7,6 +7,8 @@ _NameRater:
 ; Select a Pokemon from your party
 	ld hl, NameRaterWhichMonText
 	call PrintText
+
+.loop_party_menu
 	farcall SelectMonFromParty
 	jr c, .cancel
 ; He can't rename an egg...
@@ -54,6 +56,8 @@ _NameRater:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 	ld hl, NameRaterFinishedText
+	call PrintText
+ 	jr .loop_party_menu
 
 .samename
 	push hl
@@ -61,7 +65,12 @@ _NameRater:
 	ld hl, NameRaterNamedText
 	call PrintText
 	pop hl
-	jr .done
+	jr .loop_party_menu
+
+.egg
+	ld hl, NameRaterEggText
+	call PrintText
+ 	jr .loop_party_menu
 
 .traded
 	ld hl, NameRaterPerfectNameText
@@ -69,11 +78,6 @@ _NameRater:
 
 .cancel
 	ld hl, NameRaterComeAgainText
-	jr .done
-
-.egg
-	ld hl, NameRaterEggText
-
 .done
 	jp PrintText
 
