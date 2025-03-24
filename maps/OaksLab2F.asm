@@ -834,7 +834,7 @@ InversePokefanFGeorgiaAfterBattleText:
 	text "In inverse mode,"
 	line "normal-type moves"
 
-	text "finally get to be"
+	para "finally get to be"
 	line "super effective"
 	cont "against something!"
 	done
