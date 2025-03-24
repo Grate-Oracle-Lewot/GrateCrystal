@@ -28,7 +28,6 @@ OaksLab2F_MapScripts:
 	end
 
 .BugsySceneScript:
-	appear OAKSLAB2F_BUGSY1
 	pause 5
 	turnobject OAKSLAB2F_BUGSY1, DOWN
 	showemote EMOTE_SHOCK, OAKSLAB2F_BUGSY1, 15
@@ -53,6 +52,7 @@ OaksLab2F_MapScripts:
 	end
 
 .InverseQuest:
+	appear OAKSLAB2F_BUGSY1
 	checkevent EVENT_BUGSY_ON_ROUTE_14
 	iffalse .NobodyHere
 	appear OAKSLAB2F_BUG_CATCHER
