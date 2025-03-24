@@ -735,6 +735,7 @@ InverseCooltrainerFStellaSeenText:
 
 	para "an inverse battle"
 	line "that means…"
+	done
 
 InverseCooltrainerFStellaBeatenText:
 	text "Oh dear."
