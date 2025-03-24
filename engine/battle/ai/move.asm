@@ -213,5 +213,5 @@ AIScoringPointers:
 	dw AI_Troll
 	dw AI_Encourage_Useful
 	dw AI_Discourage_Stall
-	dw AI_Offensive
+	dw AI_Immunities
 	dw AI_Aggressive
