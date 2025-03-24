@@ -37,7 +37,30 @@ MoveDeletion:
 	call YesNoBox
 	pop bc
 	jr c, .declined
+	call .DeleteMove
+	call WaitSFX
+	ld de, SFX_MOVE_DELETED
+	call PlaySFX
+	call WaitSFX
+	ld hl, .DeleterForgotMoveText
+	call PrintText
+	jr .loop_party_menu
 
+.egg
+	ld hl, .MailEggText
+	call PrintText
+	jr .loop_party_menu
+
+.declined
+	ld hl, .DeleterNoComeAgainText
+	jp PrintText
+
+.onlyonemove
+	ld hl, .MoveKnowsOneText
+	call PrintText
+	jr .loop_party_menu
+
+.DeleteMove:
 	ld a, b
 	push bc
 	dec a
@@ -93,28 +116,7 @@ MoveDeletion:
 .done
 	xor a
 	ld [hl], a
-
-	call WaitSFX
-	ld de, SFX_MOVE_DELETED
-	call PlaySFX
-	call WaitSFX
-	ld hl, .DeleterForgotMoveText
-	call PrintText
-	jr .loop_party_menu
-
-.egg
-	ld hl, .MailEggText
-	call PrintText
-	jr .loop_party_menu
-
-.declined
-	ld hl, .DeleterNoComeAgainText
-	jp PrintText
-
-.onlyonemove
-	ld hl, .MoveKnowsOneText
-	call PrintText
-	jr .loop_party_menu
+	ret
 
 .MoveKnowsOneText:
 	text_far _MoveKnowsOneText
