@@ -343,7 +343,6 @@ INCLUDE "data/battle/ai/residual_moves.asm"
 
 
 AI_Types:
-; Dismiss any move that the player is immune to.
 ; Encourage super-effective moves.
 ; Discourage not very effective moves unless all damaging moves are of the same type.
 ; Encourage moves based on the weather. Includes Solarbeam and Thunder, but not Blizzard.
@@ -374,8 +373,6 @@ AI_Types:
 	pop hl
 
 	ld a, [wTypeMatchup]
-	and a
-	jr z, .immune
 	cp EFFECTIVE
 	jr z, .checkmove
 	jr c, .noteffective
@@ -428,10 +425,6 @@ AI_Types:
 	inc [hl]
 	jr .checkmove
 
-.immune
-	call AIDismissMove
-	jr .checkmove
-
 ; Encourage moves in the Rain Dance list if it's raining.
 .checkrain
 	ld a, [wBattleWeather]
@@ -451,9 +444,46 @@ AI_Types:
 	jp AI_EncourageIfInArray
 
 
+AI_Immunities:
+; Dismiss any move that the player is immune to.
+; Broken off from AI_Types to use alongside AI_Aggressive, which generally replaces AI_Types.
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld b, NUM_MOVES + 1
+.checkmove
+	dec b
+	jr z, .aggressive
+
+	inc hl
+	ld a, [de]
+	and a
+	jr z, .aggressive
+
+	inc de
+	call AIGetEnemyMove
+
+	push hl
+	push bc
+	push de
+	ld a, 1
+	ldh [hBattleTurn], a
+	callfar BattleCheckTypeMatchup
+	pop de
+	pop bc
+	pop hl
+
+	ld a, [wTypeMatchup]
+	and a
+	jr z, .immune
+	jr .checkmove
+
+.immune
+	call AIDismissMove
+	jr .checkmove
+
+
 AI_Offensive:
 ; Greatly discourage non-damaging moves.
-; Run by both AI_OFFENSIVE and AI_OFFENSIVE_2. Use both to double up.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -549,48 +579,11 @@ AI_Aggressive:
 	call AICheckLastEnemyMon
 	call c, AI_Discourage_Stall
 
-; Dismiss any move that the player is immune to.
-; Added here since AI_Aggressive typically replaces AI_Types.
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-.checkmove
-	dec b
-	jr z, .aggressive
-
-	inc hl
-	ld a, [de]
-	and a
-	jr z, .aggressive
-
-	inc de
-	call AIGetEnemyMove
-
-	push hl
-	push bc
-	push de
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-	pop de
-	pop bc
-	pop hl
-
-	ld a, [wTypeMatchup]
-	and a
-	jr z, .immune
-	jr .checkmove
-
-.immune
-	call AIDismissMove
-	jr .checkmove
-
-.aggressive
 ; Figure out which attack does the most damage and put it in c.
 	ld hl, wEnemyMonMoves
 	ld bc, 0
 	ld de, 0
-.checkmove2
+.checkmove
 	inc b
 	ld a, b
 	cp NUM_MOVES + 1
@@ -617,20 +610,20 @@ AI_Aggressive:
 	cp e
 	ld a, [wCurDamage]
 	sbc d
-	jr c, .checkmove2
+	jr c, .checkmove
 
 	ld a, [wCurDamage + 1]
 	ld e, a
 	ld a, [wCurDamage]
 	ld d, a
 	ld c, b
-	jr .checkmove2
+	jr .checkmove
 
 .nodamage
 	pop bc
 	pop de
 	pop hl
-	jr .checkmove2
+	jr .checkmove
 
 .gotstrongestmove
 ; Nothing we can do if no attacks did damage.
@@ -642,7 +635,7 @@ AI_Aggressive:
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld b, 0
-.checkmove3
+.checkmove2
 	inc b
 	ld a, b
 	cp NUM_MOVES + 1
@@ -653,7 +646,7 @@ AI_Aggressive:
 	ld a, [de]
 	inc de
 	inc hl
-	jr z, .checkmove3
+	jr z, .checkmove2
 
 	call AIGetEnemyMove
 
@@ -661,7 +654,7 @@ AI_Aggressive:
 ; Moves such as Seismic Toss, Counter and Fissure have a base power of 1.
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	cp 2
-	jr c, .checkmove3
+	jr c, .checkmove2
 
 ; 50% chance to ignore this move if it is reckless.
 	push hl
@@ -679,12 +672,12 @@ AI_Aggressive:
 ; If we made it this far, discourage this move.
 .discourage
 	inc [hl]
-	jr .checkmove3
+	jr .checkmove2
 
 .maybe_discourage
 	call AI_50_50
 	jr c, .discourage
-	jr .checkmove3
+	jr .checkmove2
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
 
