@@ -694,9 +694,19 @@ InverseScientistElvinBeatenText:
 	done
 
 InverseScientistElvinAfterBattleText:
-	text "That GYM LEADER"
-	line "from JOHTO is one"
-	cont "clever child!"
+	text "Even though ground"
+	line "becomes super eff-"
+	cont "ective on flying,"
+
+	para "#MON with that"
+	line "special hovering"
+
+	para "characteristic"
+	line "still dodge some"
+	cont "ground moves."
+
+	para "This gives them a"
+	line "unique advantage!"
 	done
 
 InverseFisherJonahSeenText:
