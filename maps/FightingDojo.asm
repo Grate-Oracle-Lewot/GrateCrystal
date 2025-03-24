@@ -40,8 +40,6 @@ FightingDojo_MapScripts:
 	special RestartMapMusic
 	setevent EVENT_SABRINA_IN_FIGHTING_DOJO
 	setscene SCENE_FINISHED
-	end
-
 .DummyScene:
 	end
 
