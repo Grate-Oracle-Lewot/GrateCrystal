@@ -260,6 +260,8 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
+	setevent EVENT_BUGSY_ON_ROUTE_14
+	setmapscene OAKS_LAB_2F, SCENE_OAKSLAB2F_BUGSY
 	end
 
 ElmDescribesMrPokemonScript:
