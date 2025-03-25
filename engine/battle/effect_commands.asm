@@ -4762,25 +4762,15 @@ CalcPlayerStats:
 	ld hl, wPlayerAtkLevel
 	ld de, wPlayerStats
 	ld bc, wBattleMonAttack
-
-	ld a, NUM_BATTLE_STATS
-	call CalcBattleStats
-
-	call BattleCommand_SwitchTurn
-
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
-
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
-
-	jp BattleCommand_SwitchTurn
+	jr CalcStatsMerge
 
 CalcEnemyStats:
 	ld hl, wEnemyAtkLevel
 	ld de, wEnemyStats
 	ld bc, wEnemyMonAttack
+	; fallthrough
 
+CalcStatsMerge:
 	ld a, NUM_BATTLE_STATS
 	call CalcBattleStats
 
