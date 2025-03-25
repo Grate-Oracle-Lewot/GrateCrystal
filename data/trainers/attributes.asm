@@ -138,7 +138,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS | AI_STUBBORN | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_OFTEN
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Bird Keeper
 	db X_SPEED, NO_ITEM ; items
@@ -150,7 +150,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 11 ; base reward
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS | AI_TROLL
-	dw CONTEXT_USE | SWITCH_OFTEN
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Janine
 	db DIRE_HIT, FULL_RESTORE ; items
@@ -186,7 +186,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Gentleman
 	db FULL_RESTORE, NO_ITEM ; items
@@ -432,19 +432,19 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Kabubones
 	db NO_ITEM, NO_ITEM ; items
 	db 42 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Missingno T
 	db NO_ITEM, NO_ITEM ; items
 	db 1 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Gambler
 	db DIRE_HIT, NO_ITEM ; items
@@ -480,7 +480,7 @@ TrainerClassAttributes:
 	db FULL_RESTORE, FULL_RESTORE ; items
 	db 0 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_RARELY
+	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Real Will
 	db FULL_RESTORE, FULL_RESTORE ; items
