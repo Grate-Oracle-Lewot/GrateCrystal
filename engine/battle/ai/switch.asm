@@ -112,8 +112,6 @@ CheckPlayerMoveTypeMatchups:
 	ld [wEnemyAISwitchScore], a
 	ret
 
-
-
 CheckAbleToSwitch:
 	xor a
 	ld [wEnemySwitchMonParam], a
