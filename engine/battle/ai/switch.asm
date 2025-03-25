@@ -29,12 +29,9 @@ CheckPlayerMoveTypeMatchups:
 	ld hl, wEnemyMonType
 	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1 ; 1.0 + 0.1
-	jr nc, .super_effective
-	and a
-	jr z, .next
-	cp EFFECTIVE ; 1.0
-	jr nc, .neutral
+	cp EFFECTIVE
+ 	jr z, .neutral
+ 	jr c, .super_effective
 
 ; not very effective
 	ld a, e
@@ -48,7 +45,8 @@ CheckPlayerMoveTypeMatchups:
 	jr .next
 
 .super_effective
-	call .DecreaseScore
+	call .doubledown
+ 	call .doubledown
 	pop hl
 	jr .done
 
@@ -66,7 +64,12 @@ CheckPlayerMoveTypeMatchups:
 	and a
 	jr nz, .done
 	call .IncreaseScore
-	jr .done
+
+.done
+ 	pop bc
+ 	pop de
+ 	pop hl
+ 	ret
 
 .unknown_moves
 	ld a, [wBattleMonType1]
@@ -74,8 +77,12 @@ CheckPlayerMoveTypeMatchups:
 	ld hl, wEnemyMonType1
 	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1 ; 1.0 + 0.1
-	jr c, .ok
+	cp EFFECTIVE
+ 	jr z, .ok
+ 	jr c, .se
+ 	call .IncreaseScore
+ 	jr .ok
+ .se
 	call .DecreaseScore
 .ok
 	ld a, [wBattleMonType2]
@@ -83,79 +90,14 @@ CheckPlayerMoveTypeMatchups:
 	jr z, .done
 	call CheckTypeMatchup
 	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1 ; 1.0 + 0.1
-	jr c, .done
-	call .DecreaseScore
-
-.done
-	call .CheckEnemyMoveMatchups
-	pop bc
-	pop de
-	pop hl
-	ret
-
-.CheckEnemyMoveMatchups:
-	ld de, wEnemyMonMoves
-	ld b, NUM_MOVES + 1
-	ld c, 0
-
-	ld a, [wTypeMatchup]
-	push af
-.loop2
-	dec b
-	jr z, .exit2
-
-	ld a, [de]
-	and a
-	jr z, .exit2
-
-	inc de
-	dec a
-	ld hl, Moves + MOVE_POWER
-	call GetMoveAttr
-	and a
-	jr z, .loop2
-
-	inc hl
-	call GetMoveByte
-	ld hl, wBattleMonType1
-	call CheckTypeMatchup
-
-	ld a, [wTypeMatchup]
-	; immune
-	and a
-	jr z, .loop2
-
-	; not very effective
-	inc c
 	cp EFFECTIVE
-	jr c, .loop2
-
-	; neutral
-	inc c
-	inc c
-	inc c
-	inc c
-	inc c
-	cp EFFECTIVE
-	jr z, .loop2
-
-	; super effective
-	ld c, 100
-	jr .loop2
-
-.exit2
-	pop af
-	ld [wTypeMatchup], a
-
-	ld a, c
-	and a
-	jr z, .doubledown ; double down
-	cp 5
-	jr c, .DecreaseScore ; down
-	cp 100
-	ret c
-	jr .IncreaseScore ; up
+	jr z, .done
+ 	jr c, .se2
+ 	call .IncreaseScore
+ 	jr .done
+ .se2
+ 	call .DecreaseScore
+ 	jr .done
 
 .doubledown
 	call .DecreaseScore
@@ -220,7 +162,7 @@ CheckAbleToSwitch:
 .no_perish
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
-	cp 11
+	cp 10
 	ret nc
 
 	ld a, [wLastPlayerCounterMove]
@@ -249,7 +191,7 @@ CheckAbleToSwitch:
 	ret nc
 
 	ld a, b
-	add $10
+	add $20
 	ld [wEnemySwitchMonParam], a
 	ret
 
