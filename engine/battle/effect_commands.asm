@@ -2246,16 +2246,6 @@ endr
 	jp nz, DoEnemyDamage
 	jp DoPlayerDamage
 
-FailText_CheckOpponentProtect:
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_PROTECT, a
-	jr z, .not_protected
-	ld h, d
-	ld l, e
-.not_protected
-	jp StdBattleTextbox
-
 BattleCommand_BideFailText:
 	ld a, [wAttackMissed]
 	and a
@@ -6101,7 +6091,7 @@ FailMove:
 	call AnimateFailedMove
 	ld hl, ButItFailedText
 	ld de, ItFailedText
-	jp FailText_CheckOpponentProtect
+	jr FailText_CheckOpponentProtect
 
 PrintDidntAffect:
 	ld hl, DidntAffectText
@@ -6111,7 +6101,17 @@ PrintDidntAffect2:
 	call AnimateFailedMove
 	ld hl, EvadedText
 	ld de, ProtectingItselfText
-	jp FailText_CheckOpponentProtect
+	; fallthrough
+
+FailText_CheckOpponentProtect:
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_PROTECT, a
+	jr z, .not_protected
+	ld h, d
+	ld l, e
+.not_protected
+	jp StdBattleTextbox
 
 PrintParalyze:
 	ld hl, ParalyzedText
