@@ -4619,30 +4619,21 @@ INCLUDE "data/battle/stat_names.asm"
 INCLUDE "data/battle/stat_multipliers.asm"
 
 BattleCommand_AllStatsUp:
-; Attack
 	call ResetMiss
 	call BattleCommand_AttackUp
-	call BattleCommand_StatUpMessage
-
-; Defense
-	call ResetMiss
+	call StatUpMessageResetMiss
 	call BattleCommand_DefenseUp
-	call BattleCommand_StatUpMessage
-
-; Speed
-	call ResetMiss
+	call StatUpMessageResetMiss
 	call BattleCommand_SpeedUp
-	call BattleCommand_StatUpMessage
-
-; Special Attack
-	call ResetMiss
+	call StatUpMessageResetMiss
 	call BattleCommand_SpecialAttackUp
-	call BattleCommand_StatUpMessage
-
-; Special Defense
-	call ResetMiss
+	call StatUpMessageResetMiss
 	call BattleCommand_SpecialDefenseUp
 	jp   BattleCommand_StatUpMessage
+
+StatUpMessageResetMiss:
+	call BattleCommand_StatUpMessage
+	; fallthrough
 
 ResetMiss:
 	xor a
