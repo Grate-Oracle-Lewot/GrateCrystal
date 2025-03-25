@@ -469,9 +469,7 @@ CheckEnemyTurn:
 	ld hl, HurtItselfText
 	call StdBattleTextbox
 
-	call HitSelfInConfusion
-	call ConfusionDamageCalc
-	call BattleCommand_LowerSub
+	call HitSelfInConfusionOptimally
 
 	xor a
 	ld [wNumHits], a
@@ -556,9 +554,7 @@ HitConfusion:
 	xor a
 	ld [wCriticalHit], a
 
-	call HitSelfInConfusion
-	call ConfusionDamageCalc
-	call BattleCommand_LowerSub
+	call HitSelfInConfusionOptimally
 
 	xor a
 	ld [wNumHits], a
@@ -1857,6 +1853,11 @@ BattleCommand_EffectChance:
 	ld [wEffectFailed], a
 	and a
 	ret
+
+HitSelfInConfusionOptimally:
+	call HitSelfInConfusion
+	call ConfusionDamageCalc
+	; fallthrough
 
 BattleCommand_LowerSub:
 	ld a, BATTLE_VARS_SUBSTATUS4
