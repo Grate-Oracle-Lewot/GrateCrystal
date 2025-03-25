@@ -5119,9 +5119,7 @@ BattleCommand_ForceSwitch:
 	jp CallBattleCore
 
 .fail
-	call BattleCommand_LowerSub
-	call BattleCommand_MoveDelay
-	call BattleCommand_RaiseSub
+	call AnimateFailedMove
 	jp PrintButItFailed
 
 .succeed
