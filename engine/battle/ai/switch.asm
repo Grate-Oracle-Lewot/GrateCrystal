@@ -594,3 +594,12 @@ FindEnemyMonsWithAtLeastQuarterMaxHP:
 	and c
 	ld c, a
 	ret
+
+GetTrainerClassItemSwitchAttribute:
+	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
+	ld a, [wTrainerClass]
+	dec a
+	ld bc, NUM_TRAINER_ATTRIBUTES
+	call AddNTimes
+	ld a, BANK(TrainerClassAttributes)
+	jp GetFarByte
