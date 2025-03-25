@@ -193,13 +193,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke FERALIGATR, 100, GOLD_BERRY
-	givepoke MEGANIUM, 100, GOLD_BERRY
-	givepoke TYPHLOSION, 100, GOLD_BERRY
-	givepoke MEWTWO, 100, GOLD_BERRY
-	giveitem PASS
-	giveitem FEAROWBOT
-	setflag ENGINE_STORMBADGE
+	givepoke TOTODILE, 5, GOLD_BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -263,10 +257,6 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
-	setevent EVENT_BUGSY_ON_ROUTE_14
-	setmapscene OAKS_LAB_2F, SCENE_OAKSLAB2F_BUGSY
-	setflag ENGINE_FLYPOINT_BATTLE_TOWER
-	setflag ENGINE_FLYPOINT_SAFFRON
 	end
 
 ElmDescribesMrPokemonScript:
@@ -1302,7 +1292,7 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, PALLET_TOWN, 1
+	warp_event  4, 11, NEW_BARK_TOWN, 1
 	warp_event  5, 11, NEW_BARK_TOWN, 1
 
 	def_coord_events
