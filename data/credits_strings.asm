@@ -139,7 +139,7 @@ CreditsStringsPointers:
 .TakehiroIzushi:      db "   CuriouserThing@"         ; "いずし　たけひろ@"
 .TakashiKawaguchi:    db " xCrystal    Sanqui@"       ; "かわぐち　たかし@"
 .TsunekazuIshihara:   db " Tom Wang     Gabe@"        ; "いしはら　つねかず@"
-.HiroshiYamauchi:     db "     Percivale@"            ; "やまうち　ひろし@"
+.HiroshiYamauchi:     db "    GetKosiorekt@"          ; "やまうち　ひろし@"
 .KenjiSaiki:          db "     entrpntr@"             ; "さいき　けんじ@"
 .AtsushiTada:         db "    Lior Halphon@"          ; "ただ　あつし@"
 .NaokoKawakami:       db "   Marcus Huderle@"         ; "かわかみ　なおこ@"
