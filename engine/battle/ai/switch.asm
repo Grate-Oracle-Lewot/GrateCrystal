@@ -112,27 +112,115 @@ CheckPlayerMoveTypeMatchups:
 	ld [wEnemyAISwitchScore], a
 	ret
 
+
+
 CheckAbleToSwitch:
 	xor a
 	ld [wEnemySwitchMonParam], a
 	call FindAliveEnemyMons
 	ret c
 
+	call GetTrainerClassItemSwitchAttribute
+	bit SWITCH_RARELY_F, a
+	jp nz, .checkperish
+
+	; Checks if Evasion is greater than 0
+	ld a, [wEnemyEvaLevel]
+	cp BASE_STAT_LEVEL + 1
+	ret nc
+
+	; Checks if Accuracy is below -1
+	ld a, [wEnemyAccLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .rollswitch
+
+	; Check player's stat buffs
+	ld hl, wPlayerStatLevels
+	ld c, NUM_LEVEL_STATS - 1
+	ld b, 0
+	ld e, 0
+.checkplayerbuff
+	dec c
+	jr z, .checkpt2
+	ld a, [hli]
+	cp BASE_STAT_LEVEL
+	jr c, .checkplayerbuff
+
+	sub a, BASE_STAT_LEVEL
+	add b ; b holds the stat buffs
+	ld b, a
+	jr .checkplayerbuff
+
+.checkpt2
+	; Check AI's stat buffs
+	ld hl, wEnemyStatLevels
+	ld c, 7
+.checkenemybuff
+	dec c
+	jr z, .cont_check
+	ld a, [hli]
+	cp BASE_STAT_LEVEL
+	jr c, .checkenemybuff
+
+	sub a, BASE_STAT_LEVEL
+	add e ; e holds the stat buffs
+	ld e, a
+	jr .checkenemybuff
+
+.cont_check
+	; Check if AI has no buffs
+	ld a, e
+	cp 1
+	jr c, .cont_check_2
+
+	; Check if player has at least 2 stat buffs
+	ld a, b
+	cp 2
+	ret nc
+
+	; Otherwise, roll to check other clauses or not
+	call Random
+	cp 35 percent
+	ret c
+	jr .checkperish
+
+.cont_check_2 
+	; Check if AI has quarter HP or less
+	callfar AICheckEnemyQuarterHP
+	jr c, .check_other_stats
+	jp .smartcheck
+
+.check_other_stats
+	; Checks if non-spd stat (because of Curse) is below -1
+	ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .rollswitch
+	ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .rollswitch
+	ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .rollswitch
+	ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr nc, .checkperish
+
+.rollswitch
+	call Random
+	cp 80 percent
+	jr c, .switch
+
+.checkperish
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish
 
 	ld a, [wEnemyPerishCount]
-	cp 1
-	jr nz, .no_perish
+	cp 2 ; Perish count less than 2
+	jr c, .no_perish
 
-	; Perish count is 1
-
-	call FindAliveEnemyMons
-	call FindEnemyMonsWithAtLeastQuarterMaxHP
-	call FindEnemyMonsThatResistPlayer
-	call FindAliveEnemyMonsWithASuperEffectiveMove
-
+.switch ; Try to switch
+	call FindAliveEnemyMonsToSwitchTo
 	ld a, e
 	cp 2
 	jr nz, .not_2
@@ -214,19 +302,19 @@ CheckAbleToSwitch:
 	cp 10
 	ret nc
 
-	call FindAliveEnemyMons
-	call FindEnemyMonsWithAtLeastQuarterMaxHP
-	call FindEnemyMonsThatResistPlayer
-	call FindAliveEnemyMonsWithASuperEffectiveMove
+	call GetTrainerClassItemSwitchAttribute
+	bit SWITCH_OFTEN_F, a
+	ret z
 
-	ld a, e
-	cp $2
-	ret nz
-
+.smartcheck
+	call Random
+	cp 65 percent
+	ret c
+	call FindAliveEnemyMonsToSwitchTo
 	ld a, [wEnemyAISwitchScore]
-	add $10
-	ld [wEnemySwitchMonParam], a
-	ret
+	cp 10
+	ret c
+	jp .not_2
 
 FindAliveEnemyMons:
 	ld a, [wOTPartyCount]
@@ -343,6 +431,12 @@ FindEnemyMonsImmuneToLastCounterMove:
 	inc d
 	srl c
 	jr .loop
+
+FindAliveEnemyMonsToSwitchTo:
+	call FindAliveEnemyMons
+	call FindEnemyMonsWithAtLeastQuarterMaxHP
+	call FindEnemyMonsThatResistPlayer
+	; fallthrough
 
 FindAliveEnemyMonsWithASuperEffectiveMove:
 	push bc
