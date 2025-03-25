@@ -432,19 +432,19 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_RARELY
+	dw ALWAYS_USE | SWITCH_RARELY
 
 ; Kabubones
 	db NO_ITEM, NO_ITEM ; items
 	db 42 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_RARELY
+	dw ALWAYS_USE | SWITCH_RARELY
 
 ; Missingno T
 	db NO_ITEM, NO_ITEM ; items
 	db 1 ; base reward
 	dw NO_AI
-	dw CONTEXT_USE | SWITCH_RARELY
+	dw ALWAYS_USE | SWITCH_RARELY
 
 ; Gambler
 	db DIRE_HIT, NO_ITEM ; items
