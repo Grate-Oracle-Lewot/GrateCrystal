@@ -45,8 +45,9 @@ CheckPlayerMoveTypeMatchups:
 	jr .next
 
 .super_effective
-	call .doubledown
- 	call .doubledown
+	ld a, [wEnemyAISwitchScore]
+	sub 6
+	ld [wEnemyAISwitchScore], a
 	pop hl
 	jr .done
 
@@ -99,8 +100,6 @@ CheckPlayerMoveTypeMatchups:
  	call .DecreaseScore
  	jr .done
 
-.doubledown
-	call .DecreaseScore
 .DecreaseScore:
 	ld a, [wEnemyAISwitchScore]
 	dec a
