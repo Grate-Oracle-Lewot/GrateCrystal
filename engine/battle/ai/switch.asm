@@ -304,7 +304,7 @@ CheckAbleToSwitch:
 
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_OFTEN_F, a
-	ret z
+	ret z ; end here if not SWITCH_OFTEN
 
 .switch_often
 	; ~35% chance to switch
