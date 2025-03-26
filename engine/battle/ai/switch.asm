@@ -238,7 +238,7 @@ CheckAbleToSwitch:
 	jr nc, .switch_rarely
 
 .rollswitch
-	80% chance to switch, 20% to check other clauses
+	; 80% chance to switch, 20% to check other clauses
 	call Random
 	cp 80 percent
 	jp c, .switch
