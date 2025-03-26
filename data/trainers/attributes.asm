@@ -264,7 +264,7 @@ TrainerClassAttributes:
 	db X_DEFEND, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Biker
 	db NO_ITEM, NO_ITEM ; items
