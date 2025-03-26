@@ -118,6 +118,7 @@ CheckAbleToSwitch:
 	call FindAliveEnemyMons
 	ret c
 
+; maximum chance to switch if Perish count is 1
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish
@@ -245,6 +246,7 @@ CheckAbleToSwitch:
 	jp c, .switch
 
 .switch_rarely
+; this section is basically the vanilla switch AI
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp 10
