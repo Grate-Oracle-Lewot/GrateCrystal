@@ -113,6 +113,7 @@ CheckPlayerMoveTypeMatchups:
 	ret
 
 CheckAbleToSwitch:
+; Don't bother running odds if there's nothing to switch to
 	xor a
 	ld [wEnemySwitchMonParam], a
 	call FindAliveEnemyMons
