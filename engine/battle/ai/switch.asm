@@ -209,6 +209,7 @@ CheckAbleToSwitch:
 	jr c, .cont_check_2
 
 	; If player has at least 2 stat buffs, don't switch
+	; Due to previous check, AI must have at least 1 buff as well
 	ld a, b
 	cp 2
 	ret nc
