@@ -1373,19 +1373,15 @@ Pack_InterpretJoypad:
 	ret
 
 .start
- 	ld hl, Text_SortItems
- 	call PrintText
- 	ld c, 30
- 	call DelayFrames
- 	farcall SortItemsInBag
- 	ld de, SFX_TALLY
- 	call WaitPlaySFX
- 	ld hl, Text_SortComplete
- 	call PrintText
- 	ld c, 30
- 	call DelayFrames
- 	scf
- 	ret
+	ld hl, Text_SortItems
+	call PrintText
+	ld c, 30
+	call DelayFrames
+	farcall SortItemsInBag
+	ld de, SFX_TALLY
+	call WaitPlaySFX
+	scf
+	ret
 
 .place_insert
 	farcall SwitchItemsInBag
