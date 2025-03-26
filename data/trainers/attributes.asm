@@ -300,7 +300,7 @@ TrainerClassAttributes:
 	db X_ATTACK, NO_ITEM ; items
 	db 11 ; base reward
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; ExecutiveM
 	db FULL_HEAL, HYPER_POTION ; items
@@ -396,7 +396,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_PRAGMATIC | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_RARELY
 
 ; Mystic
 	db X_ACCURACY, FULL_RESTORE ; items
