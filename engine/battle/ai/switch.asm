@@ -118,16 +118,53 @@ CheckAbleToSwitch:
 	call FindAliveEnemyMons
 	ret c
 
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	jr z, .no_perish
+
+	ld a, [wEnemyPerishCount]
+	cp 1
+	jr nz, .no_perish
+
+.switch ; Try to switch
+	call FindAliveEnemyMonsToSwitchTo
+	ld a, e
+	cp 2
+	jr nz, .not_2
+
+	ld a, [wEnemyAISwitchScore]
+	add $30 ; maximum chance
+	ld [wEnemySwitchMonParam], a
+	ret
+
+.not_2
+	call FindAliveEnemyMons
+	sla c
+	sla c
+	ld b, $ff
+
+.loop1
+	inc b
+	sla c
+	jr nc, .loop1
+
+	ld a, b
+	add $30 ; maximum chance
+	ld [wEnemySwitchMonParam], a
+	ret
+
+.no_perish
+	; SWITCH_RARELY doesn't consider stat buffs
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_RARELY_F, a
-	jp nz, .checkperish
+	jp nz, .switch_rarely
 
-	; Checks if Evasion is greater than 0
+	; Don't switch if Evasion is greater than 0
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 1
 	ret nc
 
-	; Checks if Accuracy is below -1
+	; 80+% chance to switch if Accuracy is below -1
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
 	jr c, .rollswitch
@@ -166,30 +203,27 @@ CheckAbleToSwitch:
 	jr .checkenemybuff
 
 .cont_check
-	; Check if AI has no buffs
+	; If AI has no buffs, check other clauses
 	ld a, e
 	cp 1
 	jr c, .cont_check_2
 
-	; Check if player has at least 2 stat buffs
+	; If player has at least 2 stat buffs, don't switch
 	ld a, b
 	cp 2
 	ret nc
 
-	; Otherwise, roll to check other clauses or not
+	; Otherwise, 65% chance to check other clauses
 	call Random
 	cp 35 percent
 	ret c
-	jr .checkperish
 
-.cont_check_2 
-	; Check if AI has quarter HP or less
+.cont_check_2
+	; ~35% chance to switch if AI has quarter HP or less
 	callfar AICheckEnemyQuarterHP
-	jr c, .check_other_stats
-	jp .smartcheck
+	jp nc, .switch_often
 
-.check_other_stats
-	; Checks if non-spd stat (because of Curse) is below -1
+	; 80+% chance to switch if non-Speed stat (because of Curse) is below -1
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL - 1
 	jr c, .rollswitch
@@ -201,50 +235,15 @@ CheckAbleToSwitch:
 	jr c, .rollswitch
 	ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL - 1
-	jr nc, .checkperish
+	jr nc, .switch_rarely
 
 .rollswitch
+	80% chance to switch, 20% to check other clauses
 	call Random
 	cp 80 percent
-	jr c, .switch
+	jp c, .switch
 
-.checkperish
-	ld a, [wEnemySubStatus1]
-	bit SUBSTATUS_PERISH, a
-	jr z, .no_perish
-
-	ld a, [wEnemyPerishCount]
-	cp 2 ; Perish count less than 2
-	jr c, .no_perish
-
-.switch ; Try to switch
-	call FindAliveEnemyMonsToSwitchTo
-	ld a, e
-	cp 2
-	jr nz, .not_2
-
-	ld a, [wEnemyAISwitchScore]
-	add $30 ; maximum chance
-	ld [wEnemySwitchMonParam], a
-	ret
-
-.not_2
-	call FindAliveEnemyMons
-	sla c
-	sla c
-	ld b, $ff
-
-.loop1
-	inc b
-	sla c
-	jr nc, .loop1
-
-	ld a, b
-	add $30 ; maximum chance
-	ld [wEnemySwitchMonParam], a
-	ret
-
-.no_perish
+.switch_rarely
 	call CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp 10
@@ -304,7 +303,8 @@ CheckAbleToSwitch:
 	bit SWITCH_OFTEN_F, a
 	ret z
 
-.smartcheck
+.switch_often
+	; ~35% chance to switch
 	call Random
 	cp 65 percent
 	ret c
