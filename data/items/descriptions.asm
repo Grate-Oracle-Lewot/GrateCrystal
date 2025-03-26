@@ -520,8 +520,8 @@ SSTicketDesc:
 	next "S.S.AQUA.@"
 
 MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from POKEY MAN.@"
+	db   "Pairs well with"
+	next "SWINUBACON.@"
 
 ClearBellDesc:
 	db   "Wakes up sleeping"
