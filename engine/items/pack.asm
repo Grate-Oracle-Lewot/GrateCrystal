@@ -1658,12 +1658,8 @@ PackEmptyText:
 	text_end
 
 Text_SortItems:
- 	text "Sorting items…"
- 	done
- 
- Text_SortComplete:
- 	text "Items sorted."
- 	done
+	text "Sorting items…"
+	done
 
 PackMenuGFX:
 INCBIN "gfx/pack/pack_menu.2bpp"
