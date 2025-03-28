@@ -3325,7 +3325,6 @@ BattleCommand_ConstantDamage:
 	ld [hl], a
 	push hl
 	call EnemyAttackDamage
-	; fallthrough
 
 .notEnemysTurn
 	call BattleCommand_DamageCalc
