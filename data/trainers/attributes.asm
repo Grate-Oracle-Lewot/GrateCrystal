@@ -312,7 +312,7 @@ TrainerClassAttributes:
 	db X_SPECIAL, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_PRAGMATIC | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw SWITCH_SOMETIMES
 
 ; Picnicker
 	db NO_ITEM, NO_ITEM ; items
@@ -342,7 +342,7 @@ TrainerClassAttributes:
 	db X_SP_DEFEND, NO_ITEM ; items
 	db 15 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_TROLL | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw SWITCH_SOMETIMES
 
 ; Boarder
 	db NO_ITEM, NO_ITEM ; items
@@ -372,7 +372,7 @@ TrainerClassAttributes:
 	db MIRACLEBERRY, MIRACLEBERRY ; items
 	db 25 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_SMART | AI_STATUS | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw ALWAYS_USE | SWITCH_SOMETIMES
 
 ; Red
 	db FULL_RESTORE, FULL_RESTORE ; items
@@ -432,19 +432,19 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 0 ; base reward
 	dw NO_AI
-	dw ALWAYS_USE | SWITCH_RARELY
+	dw SWITCH_RARELY
 
 ; Kabubones
 	db NO_ITEM, NO_ITEM ; items
 	db 42 ; base reward
 	dw NO_AI
-	dw ALWAYS_USE | SWITCH_RARELY
+	dw SWITCH_RARELY
 
 ; Missingno T
 	db NO_ITEM, NO_ITEM ; items
 	db 1 ; base reward
 	dw NO_AI
-	dw ALWAYS_USE | SWITCH_RARELY
+	dw SWITCH_RARELY
 
 ; Gambler
 	db DIRE_HIT, NO_ITEM ; items
@@ -492,6 +492,6 @@ TrainerClassAttributes:
 	db FULL_RESTORE, NO_ITEM ; items
 	db 19 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_PRAGMATIC | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw ALWAYS_USE | SWITCH_SOMETIMES
 
 	assert_table_length NUM_TRAINER_CLASSES
