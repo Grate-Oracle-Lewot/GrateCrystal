@@ -265,9 +265,9 @@ AnimateMon_CheckIfPokemon:
 	jr z, .notinbattle
 
 	ld a, BATTLE_VARS_SUBSTATUS4
- 	call GetBattleVar
- 	bit SUBSTATUS_SUBSTITUTE, a
- 	jr nz, .fail
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .fail
 
 	push hl
 	ld hl, wPlayerMinimized
@@ -279,7 +279,7 @@ AnimateMon_CheckIfPokemon:
 	ld a, [hl]
 	and a
 	pop hl
- 	jr nz, .fail
+	jr nz, .fail
 
 .notinbattle
 	ld a, [wCurPartySpecies]
