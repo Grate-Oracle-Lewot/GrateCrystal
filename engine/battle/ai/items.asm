@@ -399,22 +399,18 @@ AI_Items:
 	jp .Use
 
 .HealItem:
-	ld a, [bc]
-	bit CONTEXT_USE_F, a
-	jr nz, .CheckHalfOrQuarterHP
 	callfar AICheckEnemyHalfHP
 	jp c, .DontUse
 	callfar AICheckEnemyQuarterHP
 	jp nc, .Use
+	ld a, [bc]
+	bit CONTEXT_USE_F, a
+	jr nz, .20Not50
 	call AI_Item_50_Percent
 	jp c, .Use
 	jp .DontUse
 
-.CheckHalfOrQuarterHP:
-	callfar AICheckEnemyHalfHP
-	jp c, .DontUse
-	callfar AICheckEnemyQuarterHP
-	jp nc, .Use
+.20Not50:
 	call AI_Item_20_Percent
 	jp nc, .DontUse
 	jp .Use
@@ -489,12 +485,12 @@ AI_Items:
 	jr .Use
 
 .XItem:
-	ld a, [wEnemyTurnsTaken]
-	and a
-	jr nz, .notfirstturnout
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jr nz, .Use
+	ld a, [wEnemyTurnsTaken]
+	and a
+	jr nz, .notfirstturnout
 	call AI_Item_50_Percent
 	jr c, .DontUse
 	ld a, [bc]
@@ -505,9 +501,6 @@ AI_Items:
 	jr .Use
 
 .notfirstturnout
-	ld a, [bc]
-	bit ALWAYS_USE_F, a
-	jr z, .DontUse
 	call AI_Item_20_Percent
 	jr c, .Use
 
