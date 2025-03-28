@@ -144,7 +144,7 @@ TrainerClassAttributes:
 	db X_SPEED, NO_ITEM ; items
 	db 11 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OFFENSIVE | AI_OPPORTUNIST | AI_STATUS | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; Lass
 	db NO_ITEM, NO_ITEM ; items
@@ -216,7 +216,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 9 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_STATUS
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; Fisher
 	db NO_ITEM, NO_ITEM ; items
@@ -264,7 +264,7 @@ TrainerClassAttributes:
 	db X_DEFEND, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_OFFENSIVE | AI_STATUS
-	dw CONTEXT_USE | SWITCH_RARELY
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; Biker
 	db NO_ITEM, NO_ITEM ; items
@@ -318,13 +318,13 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
 	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; Camper
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_STUBBORN | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; ExecutiveF
 	db HEAL_POWDER, HYPER_POTION ; items
@@ -366,7 +366,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 10 ; base reward
 	dw AI_BASIC
-	dw CONTEXT_USE | SWITCH_OFTEN
+	dw CONTEXT_USE | SWITCH_OFTEN | SWITCH_RARELY
 
 ; PokefanF
 	db MIRACLEBERRY, MIRACLEBERRY ; items
@@ -426,7 +426,7 @@ TrainerClassAttributes:
 	db NO_ITEM, NO_ITEM ; items
 	db 21 ; base reward
 	dw AI_BASIC | AI_TYPES | AI_OPPORTUNIST | AI_CAUTIOUS | AI_STATUS | AI_RISKY | AI_IMMUNITIES
-	dw CONTEXT_USE | SWITCH_SOMETIMES
+	dw CONTEXT_USE | SWITCH_SOMETIMES | SWITCH_RARELY
 
 ; Aerobones
 	db NO_ITEM, NO_ITEM ; items
