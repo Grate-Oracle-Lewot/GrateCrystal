@@ -200,6 +200,7 @@ AI_Setup:
 ; 50% chance to greatly encourage stat-down moves during the player's Pokemon's first turn out.
 ; 100% chance to greatly encourage stat-up moves if the player is flying or underground, and the enemy is faster.
 ; 100% chance to greatly encourage stat-modifying moves if the player is storing energy with Bide (barring Mist or Substitute).
+; 100% chance to greatly discourage stat-up moves if the enemy is Perish Songed (barring Bide, Fly or Dig).
 ; 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -257,6 +258,10 @@ AI_Setup:
 	jr c, .do_encourage
 
 .statup_continue
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	jr nz, .do_discourage
+
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .discourage
@@ -292,6 +297,7 @@ AI_Setup:
 	call AI_90_10
 	jr c, .checkmove
 
+.do_discourage
 	inc [hl]
 	inc [hl]
 	jr .checkmove
