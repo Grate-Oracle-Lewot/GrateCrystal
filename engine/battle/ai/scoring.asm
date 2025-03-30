@@ -267,6 +267,10 @@ AI_Setup:
 	jr nz, .discourage
 	jr .encourage
 
+.dismiss
+	call AIDismissMove
+	jr .checkmove
+
 .statdown
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_MIST, a
@@ -300,10 +304,6 @@ AI_Setup:
 .do_discourage
 	inc [hl]
 	inc [hl]
-	jr .checkmove
-
-.dismiss
-	call AIDismissMove
 	jr .checkmove
 
 
