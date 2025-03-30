@@ -675,16 +675,13 @@ AI_Aggressive:
 	pop bc
 	pop de
 	pop hl
-	jr c, .maybe_discourage
+	jr nc, .discourage
+	call AI_50_50
+	jr c, .checkmove2
 
 ; If we made it this far, discourage this move.
 .discourage
 	inc [hl]
-	jr .checkmove2
-
-.maybe_discourage
-	call AI_50_50
-	jr c, .discourage
 	jr .checkmove2
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
