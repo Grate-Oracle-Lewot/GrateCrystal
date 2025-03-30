@@ -2847,9 +2847,9 @@ UpdateFaintedPlayerMon:
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty
 	ld c, HAPPINESS_FAINTED
-	; If TheirLevel > (YourLevel + 19), use a different parameter
+	; If TheirLevel > (YourLevel + 9), use a different parameter
 	ld a, [wBattleMonLevel]
-	add 19
+	add 9
 	ld b, a
 	ld a, [wEnemyMonLevel]
 	cp b
