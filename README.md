@@ -95,6 +95,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Bug now resists Psychic, is no longer bad against Fire or Ghost, and is now bad against Rock
 - Steel no longer resists Ghost or Psychic (but does still resist Dark)
 - Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
+- In Inverse Battles, immunities are moved around instead of eliminated, and Normal and Ghost are both super effective on each other
 
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
