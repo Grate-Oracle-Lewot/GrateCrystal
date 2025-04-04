@@ -119,7 +119,7 @@ CheckAbleToSwitch:
 	call FindAliveEnemyMons
 	ret c
 
-; maximum chance to switch if Perish count is 1
+; maximum chance to switch if perish count is 1
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish
@@ -128,7 +128,7 @@ CheckAbleToSwitch:
 	cp 1
 	jr nz, .no_perish
 
-.switch ; Try to switch
+.switch
 	call FindAliveEnemyMonsToSwitchTo
 	ld a, e
 	cp 2
@@ -308,7 +308,7 @@ CheckAbleToSwitch:
 	ret z ; end here if not SWITCH_OFTEN
 
 .switch_often
-	; ~35% chance to switch
+	; 35% chance to switch if wEnemyAISwitchScore > 9
 	call Random
 	cp 65 percent
 	ret c
