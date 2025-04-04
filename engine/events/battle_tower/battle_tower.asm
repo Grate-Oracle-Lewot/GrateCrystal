@@ -218,100 +218,6 @@ ReadBTTrainerParty:
 	ld [bc], a
 	ret
 
-ValidateBTParty: ; unreferenced
-; Check for and fix errors in party data
-	ld hl, wBT_OTTempMon1Species
-	ld d, BATTLETOWER_PARTY_LENGTH
-.pkmn_loop
-	push de
-	push hl
-	ld b, h
-	ld c, l
-	ld a, [hl]
-	and a
-for x, $ff, NUM_POKEMON, -1
-	jr z, .invalid
-	cp x
-endr
-	jr nz, .valid
-
-.invalid
-	ld a, SMEARGLE
-	ld [hl], a
-
-.valid
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, BANK(s5_b2fb)
-	call OpenSRAM
-	ld a, [s5_b2fb] ; s5_b2fb ; max level?
-	call CloseSRAM
-	ld e, a
-	ld hl, MON_LEVEL
-	add hl, bc
-	ld a, [hl]
-	cp MIN_LEVEL
-	ld a, MIN_LEVEL
-	jr c, .load
-	ld a, [hl]
-	cp e
-	jr c, .dont_load
-	ld a, e
-
-.load
-	ld [hl], a
-
-.dont_load
-	ld [wCurPartyLevel], a
-	ld hl, MON_MOVES
-	add hl, bc
-	ld d, NUM_MOVES - 1
-	ld a, [hli]
-	and a
-	jr nz, .valid_move
-
-	dec hl
-	ld a, POUND
-	ld [hli], a
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	jr .done_moves
-
-.valid_move
-	ld a, [hli]
-	dec d
-	jr nz, .valid_move
-
-.done_moves
-	ld hl, MON_MAXHP
-	add hl, bc
-	ld d, h
-	ld e, l
-	push hl
-	push de
-	ld hl, MON_STAT_EXP - 1
-	add hl, bc
-	ld b, TRUE
-	predef CalcMonStats
-	pop de
-	pop hl
-	dec de
-	dec de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
-	pop hl
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
-	add hl, bc
-	pop de
-	dec d
-	jp nz, .pkmn_loop
-	ret
-
 BT_ChrisName:
 	db "CHRIS@"
 
@@ -337,22 +243,6 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 	ld hl, sNrOfBeatenBattleTowerTrainers
 	inc [hl]
 	jp CloseSRAM
-
-Function1704ca: ; unreferenced
-	ld a, [s5_be46]
-	cp BATTLETOWER_STREAK_LENGTH
-	jr c, .not_max
-	ld a, BATTLETOWER_STREAK_LENGTH - 1
-
-.not_max
-	ld hl, s5_aa8e + BATTLE_TOWER_STRUCT_LENGTH * (BATTLETOWER_STREAK_LENGTH - 1)
-	ld de, -BATTLE_TOWER_STRUCT_LENGTH
-.loop
-	and a
-	ret z
-	add hl, de
-	dec a
-	jr .loop
 
 Function1704e1:
 	call SpeechTextbox
