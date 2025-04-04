@@ -508,7 +508,7 @@ ScientistGroup:
 
 	; SCIENTIST (12)
 	db "TAYLOR@", TRAINERTYPE_NICKNAME
-	db 45, OMASTAR     "RATSAMO@"
+	db 45, OMASTAR,    "RATSAMO@"
 	db 45, KABUTOPS,   "SPOTUBAK@"
 	db 45, AERODACTYL, "LYTCADOREA@"
 	db -1 ; end
