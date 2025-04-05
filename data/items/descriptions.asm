@@ -484,8 +484,8 @@ GoodRodDesc:
 	next "#MON by water.@"
 
 SilverLeafDesc:
-	db   "A strange, silver-"
-	next "colored leaf.@"
+	db   "A silver leaf that"
+	next "someone may want.@"
 
 SuperRodDesc:
 	db   "Fishes up strong"
@@ -544,8 +544,8 @@ PsnCureBerryDesc:
 	next "poison. (HOLD)@"
 
 GoldLeafDesc:
-	db   "A strange, gold-"
-	next "colored leaf.@"
+	db   "A golden leaf that"
+	next "someone may want.@"
 
 SoftSandDesc:
 	db   "Powers up ground-"
