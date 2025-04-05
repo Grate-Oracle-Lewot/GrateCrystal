@@ -484,8 +484,8 @@ GoodRodDesc:
 	next "#MON by water.@"
 
 SilverLeafDesc:
-	db   "A silver leaf that"
-	next "someone may want.@"
+	db   "A silver leaf."
+	next "Collector's item?@"
 
 SuperRodDesc:
 	db   "Fishes up strong"
@@ -544,8 +544,8 @@ PsnCureBerryDesc:
 	next "poison. (HOLD)@"
 
 GoldLeafDesc:
-	db   "A golden leaf that"
-	next "someone may want.@"
+	db   "A golden leaf."
+	next "Collector's item?@"
 
 SoftSandDesc:
 	db   "Powers up ground-"
@@ -960,8 +960,8 @@ RainbowWingDesc:
 	next "of rainbow colors.@"
 
 BrickPieceDesc:
-	db   "A chunk of tile."
-	next "Sell low.@"
+	db   "Brick. Brick."
+	next "Brick. It's fun!@"
 
 SurfMailDesc:
 	db   "LAPRAS-print MAIL."
