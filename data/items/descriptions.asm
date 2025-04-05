@@ -269,7 +269,7 @@ UltraBallDesc:
 
 BrightpowderDesc:
 	db   "Lowers the foe's"
-	next "accuracy. (HOLD)@"
+	next "hit chance. (HOLD)@"
 
 GreatBallDesc:
 	db   "A BALL with a de-"
