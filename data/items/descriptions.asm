@@ -396,7 +396,7 @@ XEvadeDesc:
 	next "(1 BTL)@"
 
 NuggetDesc:
-	db   "Golden chicken"
+	db   "A golden chicken"
 	next "nugget. Sell high.@"
 
 PokeDollDesc:
