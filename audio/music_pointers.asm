@@ -85,8 +85,6 @@ Music:
 	dba Music_VictoryRoad
 	dba Music_PokemonLullaby
 	dba Music_PokemonMarch
-	dba Music_GoldSilverOpening
-	dba Music_GoldSilverOpening2
 	dba Music_MainMenu
 	dba Music_RuinsOfAlphInterior
 	dba Music_RocketTheme
@@ -122,4 +120,5 @@ Music:
 	dba Music_PokemonTower
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
+	dba Music_Dive
 	assert_table_length NUM_MUSIC_SONGS
