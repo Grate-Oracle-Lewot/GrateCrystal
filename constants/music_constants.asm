@@ -83,43 +83,42 @@
 	const MUSIC_VICTORY_ROAD                 ; 4f
 	const MUSIC_POKEMON_LULLABY              ; 50
 	const MUSIC_POKEMON_MARCH                ; 51
-	const MUSIC_GS_OPENING                   ; 52
-	const MUSIC_GS_OPENING_2                 ; 53
-	const MUSIC_MAIN_MENU                    ; 54
-	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 55
-	const MUSIC_ROCKET_OVERTURE              ; 56
-	const MUSIC_DANCING_HALL                 ; 57
-	const MUSIC_BUG_CATCHING_CONTEST_RANKING ; 58
-	const MUSIC_BUG_CATCHING_CONTEST         ; 59
-	const MUSIC_LAKE_OF_RAGE_ROCKET_RADIO    ; 5a
-	const MUSIC_PRINTER                      ; 5b
-	const MUSIC_POST_CREDITS                 ; 5c
+	const MUSIC_MAIN_MENU                    ; 52
+	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 53
+	const MUSIC_ROCKET_OVERTURE              ; 54
+	const MUSIC_DANCING_HALL                 ; 55
+	const MUSIC_BUG_CATCHING_CONTEST_RANKING ; 56
+	const MUSIC_BUG_CATCHING_CONTEST         ; 57
+	const MUSIC_LAKE_OF_RAGE_ROCKET_RADIO    ; 58
+	const MUSIC_PRINTER                      ; 59
+	const MUSIC_POST_CREDITS                 ; 5a
 ; new to Crystal
-	const MUSIC_CLAIR                        ; 5d
-	const MUSIC_MOBILE_ADAPTER_MENU          ; 5e
-	const MUSIC_MOBILE_ADAPTER               ; 5f
-	const MUSIC_BUENAS_PASSWORD              ; 60
-	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
-	const MUSIC_CRYSTAL_OPENING              ; 62
-	const MUSIC_BATTLE_TOWER_THEME           ; 63
-	const MUSIC_SUICUNE_BATTLE               ; 64
-	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
-	const MUSIC_MOBILE_CENTER                ; 66
+	const MUSIC_CLAIR                        ; 5b
+	const MUSIC_MOBILE_ADAPTER_MENU          ; 5c
+	const MUSIC_MOBILE_ADAPTER               ; 5d
+	const MUSIC_BUENAS_PASSWORD              ; 5e
+	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 5f
+	const MUSIC_CRYSTAL_OPENING              ; 60
+	const MUSIC_BATTLE_TOWER_THEME           ; 61
+	const MUSIC_SUICUNE_BATTLE               ; 62
+	const MUSIC_BATTLE_TOWER_LOBBY           ; 63
+	const MUSIC_MOBILE_CENTER                ; 64
 ; new to Grate Crystal
-	const MUSIC_SS_ANNE                      ; 67
-	const MUSIC_CINNABAR_MANSION             ; 68
-	const MUSIC_SILPH_CO                     ; 69
-	const MUSIC_ROUTE_47                     ; 6a
-	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 6b
-	const MUSIC_JOHTO_FISHING_RADIO          ; 6c
-	const MUSIC_KANTO_FISHING_RADIO          ; 6d
-	const MUSIC_DARKROOM_BATTLE              ; 6e
-	const MUSIC_MEWTWO_BATTLE                ; 6f
-	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 70
-	const MUSIC_CYCLING_ROAD                 ; 71
-	const MUSIC_SAFARI_ZONE                  ; 72
-	const MUSIC_OLD_GAME_CORNER              ; 73
-	const MUSIC_OLD_ROCKET_HIDEOUT           ; 74
+	const MUSIC_SS_ANNE                      ; 65
+	const MUSIC_CINNABAR_MANSION             ; 66
+	const MUSIC_SILPH_CO                     ; 67
+	const MUSIC_ROUTE_47                     ; 68
+	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 69
+	const MUSIC_JOHTO_FISHING_RADIO          ; 6a
+	const MUSIC_KANTO_FISHING_RADIO          ; 6b
+	const MUSIC_DARKROOM_BATTLE              ; 6c
+	const MUSIC_MEWTWO_BATTLE                ; 6d
+	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 6e
+	const MUSIC_CYCLING_ROAD                 ; 6f
+	const MUSIC_SAFARI_ZONE                  ; 70
+	const MUSIC_OLD_GAME_CORNER              ; 71
+	const MUSIC_OLD_ROCKET_HIDEOUT           ; 72
+	const MUSIC_WHIRL_ISLANDS                ; 73
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
