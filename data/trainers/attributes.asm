@@ -179,7 +179,7 @@ TrainerClassAttributes:
 ; Pokemaniac
 	db NO_ITEM, NO_ITEM ; items
 	db 20 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS | AI_IMMUNITIES
+	dw AI_BASIC | AI_SETUP | AI_OFFENSIVE | AI_AGGRESSIVE | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; GruntM
