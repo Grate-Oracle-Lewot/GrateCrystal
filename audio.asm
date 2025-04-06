@@ -111,7 +111,7 @@ INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
 INCLUDE "audio/music/pokeflutechannel.asm"
 INCLUDE "audio/music/bugcatchingcontest.asm"
-INCLUDE "audio/music/dive.asm"
+INCLUDE "audio/music/magnettrain.asm"
 
 
 SECTION "Songs 5", ROMX
@@ -139,9 +139,8 @@ INCLUDE "audio/music/postcredits.asm"
 
 SECTION "Extra Songs 3", ROMX
 
-INCLUDE "audio/music/route36.asm" ; 1
-INCLUDE "audio/music/credits.asm" ; 1
-INCLUDE "audio/music/magnettrain.asm" ; 2
+INCLUDE "audio/music/route36.asm"
+INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/ssanne.asm"
 INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/silphco.asm"
@@ -155,6 +154,7 @@ INCLUDE "audio/music/bikeriding.asm"
 INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oldgamecorner.asm"
 INCLUDE "audio/music/oldrockethideout.asm"
+INCLUDE "audio/music/dive.asm"
 
 
 SECTION "Sound Effects", ROMX
