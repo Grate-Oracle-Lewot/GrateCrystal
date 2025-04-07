@@ -24,6 +24,8 @@ RotateThreePalettesRight::
 .dmg
 	ld hl, IncGradGBPalTable_13
 	ld b, 3
+	; fallthrough
+
 RotatePalettesRight::
 ; Rotate palettes to the right and fill with loaded colors from the left
 ; If we're already at the leftmost color, fill with the leftmost color
@@ -66,6 +68,8 @@ RotateThreePalettesLeft::
 .dmg
 	ld hl, IncGradGBPalTable_15 - 1
 	ld b, 3
+	; fallthrough
+
 RotatePalettesLeft::
 ; Rotate palettes to the left and fill with loaded colors from the right
 ; If we're already at the rightmost color, fill with the rightmost color
