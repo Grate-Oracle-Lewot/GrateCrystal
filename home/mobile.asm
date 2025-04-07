@@ -62,7 +62,6 @@ MobileReceive::
 	ld a, b
 	ld [wc981], a
 	rst Bankswitch
-
 	ret
 
 MobileTimer::
@@ -151,29 +150,6 @@ Function3eea::
 	pop hl
 	jp MobileHome_PlaceBox
 
-Function3efd:: ; unreferenced
-	push hl
-	hlcoord 0, 12
-	ld b, 4
-	ld c, 18
-	call .fill_attr
-	pop hl
-	jp PrintTextboxText
-
-.fill_attr
-	push hl
-	push bc
-	ld de, wAttrmap - wTilemap
-	add hl, de
-	inc b
-	inc b
-	inc c
-	inc c
-	call Function3f35
-	pop bc
-	pop hl
-	jp TextboxBorder
-
 Function3f20::
 	hlcoord 0, 0, wAttrmap
 	ld b,  6
@@ -234,6 +210,7 @@ MobileHome_PlaceBox:
 	push hl
 	ld [hl], d
 	inc hl
+
 .FillLoop:
 	ld [hli], a
 	dec c
