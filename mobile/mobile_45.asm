@@ -148,8 +148,6 @@ Function11425c:
 	ldh [hSRAMBank], a
 	ldh [hSRAMBank], a
 	ld [MBC3SRamBank], a
-	ret
-
 Stubbed_Function114268:
 	ret
 
@@ -695,7 +693,6 @@ Function1144d1:
 
 .asm_114559
 	ld b, $83
-
 .asm_11455b
 	pop hl
 	ld a, $1
@@ -811,7 +808,6 @@ Function1145c5:
 
 .asm_1145f3
 	ld b, $81
-
 .asm_1145f5
 	ld a, $1
 	ret
@@ -989,7 +985,6 @@ Function1146a4:
 
 .asm_1146f5
 	ld b, $81
-
 .asm_1146f7
 	ld a, $1
 	ret
@@ -1082,7 +1077,6 @@ Function1146fa:
 
 .asm_114794
 	ld b, $81
-
 .asm_114796
 	ld a, $1
 	ret
@@ -1362,7 +1356,6 @@ Function1148c2:
 
 .asm_114932
 	ld d, $a
-
 .asm_114934
 	dec bc
 	ld a, b
@@ -1452,7 +1445,6 @@ Function11494d:
 
 .asm_1149b1
 	ld d, $8
-
 .asm_1149b3
 	dec bc
 	ld a, b
@@ -2113,11 +2105,6 @@ endr
 
 .asm_114d2d
 	ld b, $83
-	jr .asm_114d33
-
-	ld b, $82
-
-.asm_114d33
 	pop hl
 	ld a, $1
 	jp Function11425c
@@ -2989,7 +2976,6 @@ Function115179:
 
 .asm_1151d8
 	add $37
-
 .asm_1151da
 	ld [de], a
 	dec bc
@@ -3011,7 +2997,6 @@ Function115179:
 
 .asm_1151f2
 	add $37
-
 .asm_1151f4
 	ld [de], a
 	dec bc
@@ -3483,7 +3468,6 @@ Function1153d2:
 
 .asm_115477
 	dec bc
-
 .asm_115478
 	ld hl, $dc18
 	ld a, [hli]
@@ -3896,10 +3880,8 @@ Function1156cc:
 	ld [wDecoPoster], a
 	ld a, l
 	ld [wDecoPlant], a
-
 .asm_1156fa
 	call Function1157d0
-
 .asm_1156fd
 	call Function11581e
 	and a
@@ -4016,7 +3998,6 @@ Function11575c:
 	and a
 	jr z, .asm_11578f
 	inc bc
-
 .asm_11578f
 	sla c
 	rl b
@@ -4053,7 +4034,6 @@ Function11575c:
 	dec e
 	jr nz, .asm_1157a2
 	inc bc
-
 .asm_1157c3
 	and a
 	sla c
@@ -4084,7 +4064,6 @@ Function1157d0:
 .asm_1157e9
 	ld b, h
 	ld c, l
-
 .asm_1157eb
 	push bc
 	ld a, b
@@ -4214,14 +4193,12 @@ Function11581e:
 .asm_1158b4
 	ld a, $2
 	ld [wTimerEventStartDay], a
-
 .asm_1158b9
 	xor a
 	ret
 
 .asm_1158bb
 	pop hl
-
 .asm_1158bc
 	ld a, $ff
 	ld [wTimerEventStartDay], a
@@ -4251,7 +4228,6 @@ Function1158c2:
 	ld h, b
 	xor a
 	ld [wDailyFlags2], a
-
 .asm_1158e5
 	ld b, $3
 	push hl
@@ -4285,7 +4261,6 @@ Function1158c2:
 	jr nz, .asm_115908
 	pop hl
 	ld bc, $0003
-
 .asm_115914
 	dec bc
 	dec bc
@@ -4485,10 +4460,8 @@ Function1159fb:
 	ld [wDecoPlant], a
 	ld a, l
 	ld [wDecoPoster], a
-
 .asm_115a29
 	call Function115ab0
-
 .asm_115a2c
 	call Function115b00
 	and a
@@ -4603,7 +4576,6 @@ Function115ab0:
 .asm_115ac9
 	ld b, h
 	ld c, l
-
 .asm_115acb
 	push bc
 	ld a, b
@@ -4680,7 +4652,6 @@ Function115b00:
 
 .asm_115b3b
 	ld b, $81
-
 .asm_115b3d
 	ld a, $ff
 	ld [wTimerEventStartDay], a
@@ -4769,7 +4740,6 @@ Function115b00:
 .asm_115bc1
 	ld a, $2
 	ld [wTimerEventStartDay], a
-
 .asm_115bc6
 	xor a
 	ret
