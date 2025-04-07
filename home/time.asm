@@ -177,7 +177,7 @@ InitDayOfWeek::
 	ld [wStringBuffer2 + 2], a
 	ldh a, [hSeconds]
 	ld [wStringBuffer2 + 3], a
-	jr InitTime ; useless
+	; fallthrough
 
 InitTime::
 	farcall _InitTime
@@ -185,7 +185,7 @@ InitTime::
 
 ClearClock::
 	call .ClearhRTC
-	jp SetClock
+	jr SetClock
 
 .ClearhRTC:
 	xor a
