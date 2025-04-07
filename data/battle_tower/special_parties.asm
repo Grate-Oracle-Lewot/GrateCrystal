@@ -812,7 +812,7 @@ BattleTowerBugsy:
 	bigdw 65535
 	bigdw 65535
 	dn 10, 10, 10, 11 ; DVs
-	db 8, 8, 0, 0 ; PP
+	db 24, 24, 8, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1341,7 +1341,7 @@ BattleTowerKoga:
 	bigdw 65535
 	bigdw 65535
 	dn 12, 13, 13, 12 ; DVs
-	db 8, 48, 32, 24 ; PP
+	db 8, 30, 32, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1367,7 +1367,7 @@ BattleTowerKoga:
 	bigdw 65535
 	bigdw 65535
 	dn 12, 13, 13, 12 ; DVs
-	db 24, 48, 24, 32 ; PP
+	db 24, 30, 24, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1948,7 +1948,7 @@ BattleTowerRed:
 	bigdw 65535
 	bigdw 65535
 	dn 14, 15, 15, 14 ; DVs
-	db 16, 16, 24, 16 ; PP
+	db 16, 10, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
