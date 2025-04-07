@@ -7,6 +7,7 @@ SometimesFleeMons:
 	db TANGELA
 	db MR__MIME
 	db EEVEE
+	db CHIKORITA
 	db TOGETIC
 	db DUNSPARCE
 	db SNOCONEY
