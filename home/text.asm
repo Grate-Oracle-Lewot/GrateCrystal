@@ -19,6 +19,13 @@ FillBoxWithByte::
 	jr nz, .row
 	ret
 
+ClearScreen::
+	ld a, PAL_BG_TEXT
+	hlcoord 0, 0, wAttrmap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	call ByteFill
+	; fallthrough
+
 ClearTilemap::
 ; Fill wTilemap with blank tiles.
 
@@ -32,24 +39,6 @@ ClearTilemap::
 	bit rLCDC_ENABLE, a
 	ret z
 	jp WaitBGMap
-
-ClearScreen::
-	ld a, PAL_BG_TEXT
-	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call ByteFill
-	jr ClearTilemap
-
-Textbox::
-; Draw a text box at hl with room for b lines of c characters each.
-; Places a border around the textbox, then switches the palette to the
-; text black-and-white scheme.
-	push bc
-	push hl
-	call TextboxBorder
-	pop hl
-	pop bc
-	jr TextboxPalette
 
 TextboxBorder::
 	; Top
@@ -85,7 +74,6 @@ TextboxBorder::
 	ld a, "─"
 	call .PlaceChars
 	ld [hl], "┘"
-
 	ret
 
 .PlaceChars:
@@ -96,6 +84,16 @@ TextboxBorder::
 	dec d
 	jr nz, .loop
 	ret
+
+Textbox::
+; Draw a text box at hl with room for b lines of c characters each.
+; Places a border around the textbox, then switches the palette to the text black-and-white scheme.
+	push bc
+	push hl
+	call TextboxBorder
+	pop hl
+	pop bc
+	; fallthrough
 
 TextboxPalette::
 ; Fill text box width c height b at hl with pal 7
@@ -129,6 +127,7 @@ SpeechTextbox::
 	jp Textbox
 
 RadioTerminator::
+PokeFluteTerminator::
 	ld hl, .stop
 	ret
 
@@ -149,7 +148,19 @@ BuenaPrintText::
 
 PrintTextboxText::
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	jp PlaceHLTextAtBC
+	; fallthrough
+
+PlaceHLTextAtBC::
+	ld a, [wTextboxFlags]
+	push af
+	set NO_TEXT_DELAY_F, a
+	ld [wTextboxFlags], a
+
+	call DoTextUntilTerminator
+
+	pop af
+	ld [wTextboxFlags], a
+	ret
 
 SetUpTextbox::
 	push hl
@@ -341,7 +352,7 @@ PlaceGenderedPlayerName::
 	ld de, KunSuffixText
 	jr z, PlaceCommandCharacter
 	ld de, ChanSuffixText
-	jr PlaceCommandCharacter
+	; fallthrough
 
 PlaceCommandCharacter::
 	call PlaceString
@@ -538,6 +549,7 @@ PromptText::
 	cp LINK_MOBILE
 	jr z, DoneText
 	call UnloadBlinkingCursor
+	; fallthrough
 
 DoneText::
 	pop hl
@@ -564,11 +576,9 @@ TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	decoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
 	ld a, TEXTBOX_INNERH - 1
-
 .col
 	push af
 	ld c, TEXTBOX_INNERW
-
 .row
 	ld a, [hli]
 	ld [de], a
@@ -626,25 +636,6 @@ PlaceFarString::
 
 	pop af
 	rst Bankswitch
-	ret
-
-PokeFluteTerminator::
-	ld hl, .stop
-	ret
-
-.stop:
-	text_end
-
-PlaceHLTextAtBC::
-	ld a, [wTextboxFlags]
-	push af
-	set NO_TEXT_DELAY_F, a
-	ld [wTextboxFlags], a
-
-	call DoTextUntilTerminator
-
-	pop af
-	ld [wTextboxFlags], a
 	ret
 
 DoTextUntilTerminator::
