@@ -3454,9 +3454,9 @@ MantineEvosAttacks:
 
 SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_ATTACK
+	db 1, PECK
 	db 2, LEER
-	db 7, SWIFT
+	db 7, FURY_ATTACK
 	db 13, SAND_ATTACK
 	db 16, WHIRLWIND
 	db 20, AGILITY
