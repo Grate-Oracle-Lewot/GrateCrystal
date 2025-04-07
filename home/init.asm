@@ -31,6 +31,7 @@ _Start::
 	ldh [hCGB], a
 	ld a, TRUE
 	ldh [hSystemBooted], a
+	; fallthrough
 
 Init::
 	di
