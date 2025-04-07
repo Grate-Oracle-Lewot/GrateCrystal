@@ -120,7 +120,6 @@ HandleStoneQueue::
 
 .next_inc3
 	inc hl
-
 .next_inc2
 	inc hl
 	inc hl
