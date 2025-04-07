@@ -24,11 +24,11 @@ Load2DMenuData::
 
 StaticMenuJoypad::
 	callfar _StaticMenuJoypad
-	jp GetMenuJoypad
+	jr GetMenuJoypad
 
 ScrollingMenuJoypad::
 	callfar _ScrollingMenuJoypad
-	jp GetMenuJoypad
+	; fallthrough
 
 GetMenuJoypad::
 	push bc
@@ -61,10 +61,24 @@ HideCursor::
 	ld [hl], " "
 	ret
 
+LoadMenuHeader::
+	call CopyMenuHeader
+	jr PushWindow
+
+OffsetMenuHeader::
+	call _OffsetMenuHeader
+	; fallthrough
+
 PushWindow::
 	callfar _PushWindow
 	ret
 
+MenuTextboxWaitButton::
+	call MenuTextbox
+	call WaitButton
+	; fallthrough
+
+Call_ExitMenu::
 ExitMenu::
 	push af
 	callfar _ExitMenu
@@ -87,7 +101,6 @@ RestoreTileBackup::
 	call MenuBoxCoord2Tile
 	call .copy
 	call MenuBoxCoord2Attr
-	; fallthrough
 
 .copy
 	call GetMenuBoxDims
@@ -111,7 +124,6 @@ RestoreTileBackup::
 	pop bc
 	dec b
 	jr nz, .row
-
 	ret
 
 PopWindow::
@@ -225,10 +237,8 @@ GetMenuTextStartCoord::
 ; bit 7: if set, leave extra room on the left
 	ld a, [wMenuDataFlags]
 	bit 7, a
-	jr z, .bit_7_clear
+	ret z
 	inc c
-
-.bit_7_clear
 	ret
 
 ClearMenuBoxInterior::
@@ -303,10 +313,6 @@ Coord2Attr::
 	add hl, bc
 	ret
 
-LoadMenuHeader::
-	call CopyMenuHeader
-	jp PushWindow
-
 CopyMenuHeader::
 	ld de, wMenuHeader
 	ld bc, wMenuHeaderEnd - wMenuHeader
@@ -348,9 +354,6 @@ LoadStandardMenuHeader::
 	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw 0
 	db 1 ; default option
-
-Call_ExitMenu::
-	jp ExitMenu
 
 VerticalMenu::
 	xor a
@@ -404,10 +407,9 @@ CopyNameFromMenu::
 
 YesNoBox::
 	lb bc, SCREEN_WIDTH - 6, 7
+	; fallthrough
 
 PlaceYesNoBox::
-	jr _YesNoBox
-
 _YesNoBox::
 ; Return nc (yes) or c (no).
 	push bc
@@ -432,6 +434,7 @@ _YesNoBox::
 	add 4
 	ld [wMenuBorderBottomCoord], a
 	call PushWindow
+	; fallthrough
 
 InterpretTwoOptionMenu::
 	call VerticalMenu
@@ -465,10 +468,6 @@ YesNoMenuHeader::
 	db "YES@"
 	db "NO@"
 
-OffsetMenuHeader::
-	call _OffsetMenuHeader
-	jp PushWindow
-
 _OffsetMenuHeader::
 	push de
 	call CopyMenuHeader
@@ -499,7 +498,19 @@ DoNthMenu::
 	call InitMenuCursorAndButtonPermissions
 	call GetStaticMenuJoypad
 	call GetMenuJoypad
-	jp MenuClickSound
+	; fallthrough
+
+MenuClickSound::
+	push af
+	and A_BUTTON | B_BUTTON
+	jr z, .nosound
+	ld hl, wMenuFlags
+	bit 3, [hl]
+	jr nz, .nosound
+	call PlayClickSFX
+.nosound
+	pop af
+	ret
 
 SetUpMenu::
 	call DrawVariableLengthMenuBox
@@ -623,6 +634,7 @@ GetStaticMenuJoypad::
 	xor a
 	ld [wMenuJoypad], a
 	call StaticMenuJoypad
+	; fallthrough
 
 ContinueGettingMenuJoypad:
 	bit A_BUTTON_F, a
@@ -756,29 +768,12 @@ ClearWindowData::
 	xor a
 	jp ByteFill
 
-MenuClickSound::
-	push af
-	and A_BUTTON | B_BUTTON
-	jr z, .nosound
-	ld hl, wMenuFlags
-	bit 3, [hl]
-	jr nz, .nosound
-	call PlayClickSFX
-.nosound
-	pop af
-	ret
-
 PlayClickSFX::
 	push de
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	pop de
 	ret
-
-MenuTextboxWaitButton::
-	call MenuTextbox
-	call WaitButton
-	jp ExitMenu
 
 Place2DMenuItemName::
 	ldh [hTempBank], a
@@ -790,7 +785,6 @@ Place2DMenuItemName::
 	call PlaceString
 	pop af
 	rst Bankswitch
-
 	ret
 
 _2DMenu::
