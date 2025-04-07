@@ -5128,7 +5128,6 @@ Function11a9ce:
 	call ReloadTilesetAndPalettes
 	call Call_ExitMenu
 	farcall Function106464
-	call GSReloadPalettes
 	farcall FinishExitMenu
 	jp UpdateSprites
 
