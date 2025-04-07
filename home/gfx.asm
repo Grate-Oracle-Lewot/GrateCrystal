@@ -7,7 +7,6 @@ Get2bppViaHDMA::
 	jp z, Copy2bpp
 
 	homecall HDMATransfer2bpp
-
 	ret
 
 Get1bppViaHDMA::
@@ -16,7 +15,6 @@ Get1bppViaHDMA::
 	jp z, Copy1bpp
 
 	homecall HDMATransfer1bpp
-
 	ret
 
 FarCopyBytesDouble_DoubleBankSwitch::
@@ -64,58 +62,6 @@ DecompressRequest2bpp::
 	ld de, sScratch
 	call Request2bpp
 	jp CloseSRAM
-
-FarCopyBytes::
-; copy bc bytes from a:hl to de
-
-	ldh [hTempBank], a
-	ldh a, [hROMBank]
-	push af
-	ldh a, [hTempBank]
-	rst Bankswitch
-
-	call CopyBytes
-
-	pop af
-	rst Bankswitch
-	ret
-
-FarCopyBytesDouble:
-; Copy bc bytes from a:hl to bc*2 bytes at de,
-; doubling each byte in the process.
-
-	ldh [hTempBank], a
-	ldh a, [hROMBank]
-	push af
-	ldh a, [hTempBank]
-	rst Bankswitch
-
-; switcheroo, de <> hl
-	ld a, h
-	ld h, d
-	ld d, a
-	ld a, l
-	ld l, e
-	ld e, a
-
-	inc b
-	inc c
-	jr .dec
-
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld [hli], a
-.dec
-	dec c
-	jr nz, .loop
-	dec b
-	jr nz, .loop
-
-	pop af
-	rst Bankswitch
-	ret
 
 Request2bpp::
 ; Load 2bpp at b:de to occupy c tiles of hl.
@@ -291,8 +237,22 @@ Copy2bpp:
 	and c
 	ld c, a
 	pop af
+	; fallthrough
 
-	jp FarCopyBytes
+FarCopyBytes::
+; copy bc bytes from a:hl to de
+
+	ldh [hTempBank], a
+	ldh a, [hROMBank]
+	push af
+	ldh a, [hTempBank]
+	rst Bankswitch
+
+	call CopyBytes
+
+	pop af
+	rst Bankswitch
+	ret
 
 Get1bpp::
 ; copy c 1bpp tiles from b:de to hl
@@ -321,4 +281,41 @@ Copy1bpp::
 	pop af
 
 	pop hl
-	jp FarCopyBytesDouble
+	; fallthrough
+
+FarCopyBytesDouble:
+; Copy bc bytes from a:hl to bc*2 bytes at de,
+; doubling each byte in the process.
+
+	ldh [hTempBank], a
+	ldh a, [hROMBank]
+	push af
+	ldh a, [hTempBank]
+	rst Bankswitch
+
+; switcheroo, de <> hl
+	ld a, h
+	ld h, d
+	ld d, a
+	ld a, l
+	ld l, e
+	ld e, a
+
+	inc b
+	inc c
+	jr .dec
+
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld [hli], a
+.dec
+	dec c
+	jr nz, .loop
+	dec b
+	jr nz, .loop
+
+	pop af
+	rst Bankswitch
+	ret
