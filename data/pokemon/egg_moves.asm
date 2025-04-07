@@ -447,6 +447,8 @@ LaprasEggMoves:
 	db -1 ; end
 
 EeveeEggMoves:
+	db REFLECT
+	db LIGHT_SCREEN
 	db SKULL_BASH
 	db FLAIL
 	db CHARM
