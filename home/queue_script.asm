@@ -1,6 +1,7 @@
 QueueScript::
 ; Push pointer hl in the current bank to wQueuedScriptBank.
 	ldh a, [hROMBank]
+	; fallthrough
 
 FarQueueScript::
 ; Push pointer a:hl to wQueuedScriptBank.
