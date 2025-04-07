@@ -2899,10 +2899,11 @@ JumpluffEvosAttacks:
 
 AipomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DOUBLESLAP
-	db 1, TAIL_WHIP
-	db 6, ENCORE
-	db 12, BATON_PASS
+	db 1, POUND
+	db 2, TAIL_WHIP
+	db 5, ENCORE
+	db 8, BATON_PASS
+	db 12, DOUBLESLAP
 	db 19, MACH_PUNCH
 	db 27, DIZZY_PUNCH
 	db 33, SCREECH
