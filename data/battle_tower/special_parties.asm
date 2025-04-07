@@ -1082,7 +1082,7 @@ BattleTowerJasmine:
 
 	db SKARMORY
 	db NOISEMAKER
-	db SPIKES, DAZZLY_GLEAM, STEEL_WING, SKY_ATTACK
+	db SPIKES, DAZZLY_GLEAM, IRON_HEAD, SKY_ATTACK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -1092,7 +1092,7 @@ BattleTowerJasmine:
 	bigdw 65535
 	bigdw 65535
 	dn 11, 10, 10, 11 ; DVs
-	db 10, 24, 32, 8 ; PP
+	db 10, 24, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
