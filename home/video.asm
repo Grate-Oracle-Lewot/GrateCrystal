@@ -129,8 +129,6 @@ UpdateBGMap::
 	jr z, .Attr
 
 ; BG Map 1
-	dec a ; useless
-
 	ldh a, [hBGMapAddress]
 	ld l, a
 	ldh a, [hBGMapAddress + 1]
@@ -361,6 +359,7 @@ Serve2bppRequest_VBlank::
 	ld a, [wRequested2bppSize]
 	and a
 	ret z
+	; fallthrough
 
 _Serve2bppRequest::
 ; Copy [wRequested2bppSize] 2bpp tiles from [wRequested2bppSource] to [wRequested2bppDest]
