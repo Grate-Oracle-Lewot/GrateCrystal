@@ -855,6 +855,7 @@ MantineEggMoves:
 
 SkarmoryEggMoves:
 	db IRON_HEAD
+	db SPIKE_CANNON
 	db TWISTER
 	db SILVER_WIND
 	db SONICBOOM
