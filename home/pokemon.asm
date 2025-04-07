@@ -78,6 +78,7 @@ DrawBattleHPBar::
 PrepMonFrontpic::
 	ld a, $1
 	ld [wBoxAlignment], a
+	; fallthrough
 
 _PrepMonFrontpic::
 	ld a, [wCurPartySpecies]
@@ -131,7 +132,7 @@ PlayMonCry2::
 	ld [wStereoPanningMask], a
 	ld [wCryTracks], a
 	pop af
-	jp _PlayMonCry
+	; fallthrough
 
 _PlayMonCry::
 	push hl
@@ -224,6 +225,7 @@ PrintLevel_Force3Digits::
 	ld [hl], "<LV>"
 	inc hl
 	ld c, 3
+	; fallthrough
 
 Print8BitNumLeftAlign::
 	ld [wTextDecimalByte], a
@@ -256,8 +258,6 @@ GetBaseData::
 	jr .end
 
 .egg
-	ld de, UnusedEggPic ; therefore it IS used
-
 ; Sprite dimensions
 	ld b, $55 ; 5x5
 	ld hl, wBasePicSize
@@ -278,6 +278,7 @@ GetBaseData::
 GetCurNickname::
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
+	; fallthrough
 
 GetNickname::
 ; Get nickname a from list hl.
