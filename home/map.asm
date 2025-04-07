@@ -20,6 +20,8 @@ CheckScenes::
 
 .scene_exists
 	pop hl
+DummyEndPredef::
+; Unused function at the end of PredefPointers.
 	ret
 
 GetCurrentMapSceneID::
@@ -221,11 +223,6 @@ CheckWarpTile::
 	scf
 	ret
 
-WarpCheck::
-	call GetDestinationWarpNumber
-	ret nc
-	jp CopyWarpData
-
 GetDestinationWarpNumber::
 	farcall CheckWarpCollision
 	ret nc
@@ -299,6 +296,11 @@ GetDestinationWarpNumber::
 	scf
 	ret
 
+WarpCheck::
+	call GetDestinationWarpNumber
+	ret nc
+	; fallthrough
+
 CopyWarpData::
 	ldh a, [hROMBank]
 	push af
@@ -367,21 +369,14 @@ LoadMapAttributes::
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
 	xor a ; do not skip object events
-	jp ReadMapEvents
+	jr ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
 	ld a, TRUE ; skip object events
-	jp ReadMapEvents
-
-CopyMapPartialAndAttributes::
-	call CopyMapPartial
-	call SwitchToMapAttributesBank
-	call GetMapAttributesPointer
-	call CopyMapAttributes
-	jp GetMapConnections
+	; fallthrough
 
 ReadMapEvents::
 	push af
@@ -398,16 +393,47 @@ ReadMapEvents::
 	pop af
 	and a ; skip object events?
 	ret nz
+	; fallthrough
 
-	jp ReadObjectEvents
+ReadObjectEvents::
+	push hl
+	call ClearObjectStructs
+	pop de
+	ld hl, wMap1Object
+	ld a, [de]
+	inc de
+	ld [wCurMapObjectEventCount], a
+	ld a, e
+	ld [wCurMapObjectEventsPointer], a
+	ld a, d
+	ld [wCurMapObjectEventsPointer + 1], a
 
-ReadMapScripts::
-	ld hl, wMapScriptsPointer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call ReadMapSceneScripts
-	jp ReadMapCallbacks
+	ld a, [wCurMapObjectEventCount]
+	call CopyMapObjectEvents
+
+; get NUM_OBJECTS - [wCurMapObjectEventCount] - 1
+	ld a, [wCurMapObjectEventCount]
+	ld c, a
+	ld a, NUM_OBJECTS - 1
+	sub c
+	jr z, .skip
+	jr c, .skip
+
+	inc hl
+	ld bc, MAPOBJECT_LENGTH
+.loop
+	ld [hl],  0
+	inc hl
+	ld [hl], -1
+	dec hl
+	add hl, bc
+	dec a
+	jr nz, .loop
+
+.skip
+	ld h, d
+	ld l, e
+	ret
 
 CopyMapAttributes::
 	ld de, wMapAttributes
@@ -419,6 +445,13 @@ CopyMapAttributes::
 	dec c
 	jr nz, .loop
 	ret
+
+CopyMapPartialAndAttributes::
+	call CopyMapPartial
+	call SwitchToMapAttributesBank
+	call GetMapAttributesPointer
+	call CopyMapAttributes
+	; fallthrough
 
 GetMapConnections::
 	ld a, $ff
@@ -451,7 +484,7 @@ GetMapConnections::
 	bit EAST_F, b
 	ret z
 	ld de, wEastMapConnection
-	jp GetMapConnection
+	; fallthrough
 
 GetMapConnection::
 ; Load map connection struct at hl into de.
@@ -478,6 +511,14 @@ ReadMapSceneScripts::
 
 	ld bc, SCENE_SCRIPT_SIZE
 	jp AddNTimes
+
+ReadMapScripts::
+	ld hl, wMapScriptsPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call ReadMapSceneScripts
+	; fallthrough
 
 ReadMapCallbacks::
 	ld a, [hli]
@@ -539,46 +580,6 @@ ReadBGEvents::
 
 	ld bc, BG_EVENT_SIZE
 	jp AddNTimes
-
-ReadObjectEvents::
-	push hl
-	call ClearObjectStructs
-	pop de
-	ld hl, wMap1Object
-	ld a, [de]
-	inc de
-	ld [wCurMapObjectEventCount], a
-	ld a, e
-	ld [wCurMapObjectEventsPointer], a
-	ld a, d
-	ld [wCurMapObjectEventsPointer + 1], a
-
-	ld a, [wCurMapObjectEventCount]
-	call CopyMapObjectEvents
-
-; get NUM_OBJECTS - [wCurMapObjectEventCount] - 1
-	ld a, [wCurMapObjectEventCount]
-	ld c, a
-	ld a, NUM_OBJECTS - 1
-	sub c
-	jr z, .skip
-	jr c, .skip
-
-	inc hl
-	ld bc, MAPOBJECT_LENGTH
-.loop
-	ld [hl],  0
-	inc hl
-	ld [hl], -1
-	dec hl
-	add hl, bc
-	dec a
-	jr nz, .loop
-
-.skip
-	ld h, d
-	ld l, e
-	ret
 
 CopyMapObjectEvents::
 	and a
@@ -663,16 +664,6 @@ endr
 	ld a, [wPrevMapNumber]
 	ld [wBackupMapNumber], a
 	ret
-
-LoadBlockData::
-	ld hl, wOverworldMapBlocks
-	ld bc, wOverworldMapBlocksEnd - wOverworldMapBlocks
-	ld a, 0
-	call ByteFill
-	call ChangeMap
-	call FillMapConnections
-	ld a, MAPCALLBACK_TILES
-	jp RunMapCallback
 
 ChangeMap::
 	ldh a, [hROMBank]
@@ -814,41 +805,7 @@ FillMapConnections::
 	ld b, a
 	ld a, [wEastConnectedMapWidth]
 	ldh [hConnectionStripLength], a
-	jp FillEastConnectionStrip
-
-FillNorthConnectionStrip::
-FillSouthConnectionStrip::
-	ld c, 3
-.y
-	push de
-
-	push hl
-	ldh a, [hConnectionStripLength]
-	ld b, a
-.x
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .x
-	pop hl
-
-	ldh a, [hConnectedMapWidth]
-	ld e, a
-	ld d, 0
-	add hl, de
-	pop de
-
-	ld a, [wMapWidth]
-	add 6
-	add e
-	ld e, a
-	jr nc, .okay
-	inc d
-.okay
-	dec c
-	jr nz, .y
-	ret
+	; fallthrough
 
 FillWestConnectionStrip::
 FillEastConnectionStrip::
@@ -887,9 +844,51 @@ FillEastConnectionStrip::
 	jr nz, .loop
 	ret
 
+FillNorthConnectionStrip::
+FillSouthConnectionStrip::
+	ld c, 3
+.y
+	push de
+
+	push hl
+	ldh a, [hConnectionStripLength]
+	ld b, a
+.x
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .x
+	pop hl
+
+	ldh a, [hConnectedMapWidth]
+	ld e, a
+	ld d, 0
+	add hl, de
+	pop de
+
+	ld a, [wMapWidth]
+	add 6
+	add e
+	ld e, a
+	jr nc, .okay
+	inc d
+.okay
+	dec c
+	jr nz, .y
+	ret
+
 LoadMapStatus::
 	ld [wMapStatus], a
 	ret
+
+CallMapScript::
+; Call a script at hl in the current bank if there isn't already a script running
+	ld a, [wScriptRunning]
+	and a
+	ret nz
+	call GetMapScriptsBank
+	; fallthrough
 
 CallScript::
 ; Call a script at a:hl.
@@ -906,13 +905,15 @@ CallScript::
 	scf
 	ret
 
-CallMapScript::
-; Call a script at hl in the current bank if there isn't already a script running
-	ld a, [wScriptRunning]
-	and a
-	ret nz
-	call GetMapScriptsBank
-	jr CallScript
+LoadBlockData::
+	ld hl, wOverworldMapBlocks
+	ld bc, wOverworldMapBlocksEnd - wOverworldMapBlocks
+	ld a, 0
+	call ByteFill
+	call ChangeMap
+	call FillMapConnections
+	ld a, MAPCALLBACK_TILES
+	; fallthrough
 
 RunMapCallback::
 ; Will run the first callback found with execution index equal to a.
@@ -1427,6 +1428,7 @@ LoadConnectionBlockData::
 	ld de, wScreenSave
 	ld b, SCREEN_META_WIDTH
 	ld c, SCREEN_META_HEIGHT
+	; fallthrough
 
 SaveScreen_LoadConnection::
 .row
@@ -1871,10 +1873,14 @@ CloseSubmenu::
 ExitAllMenus::
 	call ClearBGPalettes
 	call Call_ExitMenu
+	; fallthrough
+
 ExitFlyMap:: ; for when Fearowbot is registered to Select
 	call ReloadTilesetAndPalettes
 	call UpdateSprites
 	call GSReloadPalettes
+	; fallthrough
+
 FinishExitMenu::
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
@@ -1935,6 +1941,8 @@ GetMapPointer::
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
+	; fallthrough
+
 GetAnyMapPointer::
 ; Prior to calling this function, you must have switched banks so that
 ; MapGroupPointers is visible.
@@ -1979,6 +1987,8 @@ GetMapField::
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
+	; fallthrough
+
 GetAnyMapField::
 	; bankswitch
 	ldh a, [hROMBank]
@@ -2002,6 +2012,8 @@ SwitchToMapAttributesBank::
 	ld b, a
 	ld a, [wMapNumber]
 	ld c, a
+	; fallthrough
+
 SwitchToAnyMapAttributesBank::
 	call GetAnyMapAttributesBank
 	rst Bankswitch
@@ -2090,11 +2102,7 @@ GetMapEnvironment::
 	push bc
 	ld de, MAP_ENVIRONMENT
 	call GetMapField
-	ld a, c
-	pop bc
-	pop de
-	pop hl
-	ret
+	jr FinishGettingMapEnvironment
 
 GetAnyMapEnvironment::
 	push hl
@@ -2102,6 +2110,9 @@ GetAnyMapEnvironment::
 	push bc
 	ld de, MAP_ENVIRONMENT
 	call GetAnyMapField
+	; fallthrough
+
+FinishGettingMapEnvironment:
 	ld a, c
 	pop bc
 	pop de
@@ -2223,11 +2234,4 @@ LoadMapTileset::
 
 	pop bc
 	pop hl
-	ret
-
-DummyEndPredef::
-; Unused function at the end of PredefPointers.
-rept 16
-	nop
-endr
 	ret
