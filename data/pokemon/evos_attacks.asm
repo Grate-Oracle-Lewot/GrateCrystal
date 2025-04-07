@@ -2001,7 +2001,7 @@ VaporeonEvosAttacks:
 	db 8, SAND_ATTACK
 	db 16, WATER_GUN
 	db 23, QUICK_ATTACK
-	db 30, BITE
+	db 30, LOVELY_KISS
 	db 36, AURORA_BEAM
 	db 42, MIST
 	db 47, ACID_ARMOR
@@ -2990,8 +2990,8 @@ EspeonEvosAttacks:
 	db 8, SAND_ATTACK
 	db 16, CONFUSION
 	db 23, QUICK_ATTACK
-	db 30, SWIFT
-	db 36, PSYBEAM
+	db 30, PSYBEAM
+	db 36, POWER_GEM
 	db 42, BARRIER
 	db 47, PSYCHIC_M
 	db 52, MORNING_SUN
