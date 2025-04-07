@@ -1,5 +1,3 @@
-; Functions dealing with palettes.
-
 UpdatePalsIfCGB::
 ; update bgp data from wBGPals2
 ; update obp data from wOBPals2
@@ -9,6 +7,7 @@ UpdatePalsIfCGB::
 	ldh a, [hCGB]
 	and a
 	ret z
+	; fallthrough
 
 UpdateCGBPals::
 ; return carry if successful
@@ -300,9 +299,6 @@ ClearVBank1::
 
 	ld a, 0
 	ldh [rVBK], a
-	ret
-
-GSReloadPalettes:: ; dummied out
 	ret
 
 ReloadSpritesNoPalettes::
