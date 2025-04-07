@@ -1,6 +1,7 @@
 IsInByteArray::
 	ld de, 1
-; fallthrough
+	; fallthrough
+
 IsInArray::
 ; Find value a for every de bytes in array hl.
 ; Return index in b and carry if found.
