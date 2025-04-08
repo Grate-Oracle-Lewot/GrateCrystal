@@ -6912,14 +6912,6 @@ ApplyPrzEffectOnSpeed:
 	and 1 << PAR
 	ret z
 
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	cp FLYING
-	ret z
-	ld a, [hl]
-	cp FLYING
-	ret z
-
 	ld hl, wBattleMonSpeed + 1
 	ld a, [hld]
 	ld b, a
@@ -6940,14 +6932,6 @@ ApplyPrzEffectOnSpeed:
 .enemy
 	ld a, [wEnemyMonStatus]
 	and 1 << PAR
-	ret z
-
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	cp FLYING
-	ret z
-	ld a, [hl]
-	cp FLYING
 	ret z
 
 	ld hl, wEnemyMonSpeed + 1
