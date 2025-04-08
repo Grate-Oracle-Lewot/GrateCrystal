@@ -3649,9 +3649,9 @@ GetSleepTurns:
 
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .player
+	jr z, .enemy
 
-	ld hl, wEnemyMonType1
+	ld hl, wBattleMonType1
 	ld a, [hli]
 	cp FLYING
 	jr z, .early_bird
@@ -3660,8 +3660,8 @@ GetSleepTurns:
 	jr z, .early_bird
 	jr .normal
 
-.player
-	ld hl, wBattleMonType1
+.enemy
+	ld hl, wEnemyMonType1
 	ld a, [hli]
 	cp FLYING
 	jr z, .early_bird
