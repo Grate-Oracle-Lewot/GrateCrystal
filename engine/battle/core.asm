@@ -553,14 +553,12 @@ DetermineMoveOrder:
 	cp USING_INTERNAL_CLOCK
 	jr z, .player_2
 
-	call BattleRandom
-	cp 50 percent + 1
+	call Core_50_Percent
 	jp c, .player_first
 	jp .enemy_first
 
 .player_2
-	call BattleRandom
-	cp 50 percent + 1
+	call Core_50_Percent
 	jp c, .enemy_first
 	jp .player_first
 
@@ -678,14 +676,12 @@ DetermineMoveOrder:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	jr z, .player_2c
-	call BattleRandom
-	cp 50 percent + 1
+	call Core_50_Percent
 	jr c, .player_first
 	jr .enemy_first
 
 .player_2c
-	call BattleRandom
-	cp 50 percent + 1
+	call Core_50_Percent
 	jr c, .enemy_first
 .player_first
 	scf
@@ -9256,4 +9252,9 @@ CheckForPoisonType:
 	ret z
 	ld a, [de]
 	cp POISON
+	ret
+
+Core_50_Percent:
+	call BattleRandom
+	cp 50 percent + 1
 	ret
