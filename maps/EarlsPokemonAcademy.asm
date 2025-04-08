@@ -267,8 +267,8 @@ TeacherFrizzleAfterText:
 
 EarlsPokemonAcademyYoungster1Text:
 	text "In the MOVES menu,"
-	line "EFF is the effect"
-	cont "chance, or the"
+	line "EFF is the “effect"
+	cont "chance,” or the"
 	cont "percent of time"
 	cont "that an effect"
 	cont "like poison or"
@@ -337,6 +337,13 @@ AcademyPoisonText:
 
 	para "which hurts more"
 	line "as time goes on."
+
+	para "But bad poison"
+	line "reverts to regular"
+
+	para "poison after batt-"
+	line "le or if the #-"
+	cont "MON switches out."
 	done
 
 AcademyParalysisText:
@@ -365,10 +372,6 @@ AcademyParalysisText:
 	para "However, ground-"
 	line "types needn't fear"
 	cont "static."
-
-	para "Also, flying types"
-	line "don't lose speed"
-	cont "while paralyzed."
 	done
 
 AcademySleepText:
@@ -380,6 +383,10 @@ AcademySleepText:
 	line "may wake up in"
 	cont "battle, but not"
 	cont "outside of battle."
+
+	para "Flying-types wake"
+	line "up earlier than"
+	cont "other #MON."
 
 	para "Cure sleep with an"
 	line "AWAKENING."
