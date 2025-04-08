@@ -467,11 +467,9 @@ AcademyFreezeText:
 	line "frozen during"
 	cont "harsh sunlight,"
 
-	para "but if they were"
-	line "already frozen,"
-
-	para "they won't thaw"
-	line "out any faster."
+	para "and they have a"
+	line "higher chance of"
+	cont "thawing out."
 	done
 
 AcademyNotebookText:
