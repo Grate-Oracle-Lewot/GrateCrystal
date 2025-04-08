@@ -12,6 +12,7 @@ UpdateTimeAndPals::
 	ld a, [wVramState]
 	bit 0, a ; obj update
 	ret z
+	; fallthrough
 
 TimeOfDayPals::
 	callfar _TimeOfDayPals
