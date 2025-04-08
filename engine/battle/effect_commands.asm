@@ -696,8 +696,14 @@ BattleCommand_CheckObedience:
 	jp .EndDisobedience
 
 .Nap:
-	call GetSleepTurns
-	inc a
+	ld b, %101 ; 5 turns
+ .nap_loop
+ 	call BattleRandom
+ 	add a
+ 	swap a
+ 	and b
+ 	jr z, .nap_loop
+
 	ld [wBattleMonStatus], a
 
 	ld hl, BeganToNapText
