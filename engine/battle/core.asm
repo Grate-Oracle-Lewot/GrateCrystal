@@ -1662,8 +1662,7 @@ HandleDefrost:
 	and a
 	ret nz
 
-	call BattleRandom
-	cp 10 percent
+	call .percent_to_thaw
 	ret nc
 	xor a
 	ld [wBattleMonStatus], a
@@ -1683,8 +1682,8 @@ HandleDefrost:
 	ld a, [wEnemyJustGotFrozen]
 	and a
 	ret nz
-	call BattleRandom
-	cp 10 percent
+
+	call .percent_to_thaw
 	ret nc
 	xor a
 	ld [wEnemyMonStatus], a
@@ -1702,6 +1701,19 @@ HandleDefrost:
 	call SetPlayerTurn
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
+
+.percent_to_thaw
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .no_sun
+	call BattleRandom
+	cp 20 percent
+	ret
+
+.no_sun
+	call BattleRandom
+	cp 10 percent
+	ret
 
 HandleSafeguard:
 	ldh a, [hSerialConnectionStatus]
