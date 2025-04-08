@@ -120,12 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
- 	givepoke HOOTHOOT, 6
- 	closetext
- 	loadwildmon HOOTHOOT, 6
- 	startbattle
- 	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
