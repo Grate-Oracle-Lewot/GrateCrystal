@@ -76,7 +76,6 @@ ROMX $13
 	"bank13_2"
 ROMX $14
 	"bank14"
-	"Unused Egg Pic"
 ROMX $15
 	"Map Scripts 1"
 ROMX $16
@@ -316,7 +315,6 @@ WRAM0
 	"Sprites"
 	"Tilemap"
 	"Miscellaneous"
-	"Unused Map Buffer"
 	align 8
 	"Overworld Map"
 	align 4
