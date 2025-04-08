@@ -121,21 +121,6 @@ MobileTimer::
 	pop af
 	reti
 
-Function3ed7:: ; unreferenced
-	ld [$dc02], a
-	ldh a, [hROMBank]
-	push af
-	ld a, BANK(Function114243)
-	rst Bankswitch
-
-	call Function114243
-	pop bc
-	ld a, b
-	rst Bankswitch
-
-	ld a, [$dc02]
-	ret
-
 Function3eea::
 	push hl
 	push bc
