@@ -696,14 +696,8 @@ BattleCommand_CheckObedience:
 	jp .EndDisobedience
 
 .Nap:
-	ld b, %101 ; 5 turns
-.nap_loop
-	call BattleRandom
-	add a
-	swap a
-	and b
-	jr z, .nap_loop
-
+	call GetSleepTurns
+	inc a
 	ld [wBattleMonStatus], a
 
 	ld hl, BeganToNapText
@@ -3624,15 +3618,7 @@ BattleCommand_SleepTarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, %101 ; 5 turns
-
-.random_loop
-	call BattleRandom
-	and b
-	jr z, .random_loop
-	cp SLP
-	jr z, .random_loop
-	inc a
+	call GetSleepTurns
 	ld [de], a
 	call UpdateOpponentInParty
 	call RefreshBattleHuds
@@ -3650,6 +3636,50 @@ BattleCommand_SleepTarget:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextbox
+
+GetSleepTurns:
+; return number of sleep turns in a
+; Flying types don't sleep as long
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	cp FLYING
+	jr z, .early_bird
+	ld a, [hl]
+	cp FLYING
+	jr z, .early_bird
+	jr .normal
+
+.player
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	cp FLYING
+	jr z, .early_bird
+	ld a, [hl]
+	cp FLYING
+	jr z, .early_bird
+
+.normal
+	ld b, 5
+.loop
+	call BattleRandom
+	and b
+	jr z, .loop
+	cp SLP
+	jr z, .loop
+	inc a
+	ret
+
+.early_bird
+	ld b, 3
+	call BattleRandom
+	and b
+	inc a
+	ret
 
 BattleCommand_PoisonTarget:
 	call CheckSubstituteOpp
