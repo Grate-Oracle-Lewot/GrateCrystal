@@ -300,8 +300,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. Conversely, if you turn level caps off, walk around to give Daycare Pokémon experience, and turn hard caps back on, they may exceed the current cap. This is the best I could do given the cap toggle and how Daycare experience and leveling work, so please forgive me.
 - The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor. (This is purely to prevent Weezing from having Cute Charm, because... look at it.)
-- Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower
+- Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower (0-3 for Flying types)
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
+- Frozen Pokémon now have twice the chance to thaw out during Harsh Sunlight
 - All bedroom decorations obtained throughout the game (but Mystery Gift is disabled)
 - Due to no Mystery Gift, the Trainer House now has you fight a copy of your own party from the last time you saved (this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Fight-a-copy-of-your-own-party-in-the-Trainer-House))
 - Several new NPC trades, and some alterations to existing ones
