@@ -440,8 +440,12 @@ PsychicGilbertAfterBattleText:
 	done
 
 BirdKeeperJose2SeenText:
-	text "Tweet! Tweet!"
-	line "Tetweet!"
+	text "Flying #MON"
+	line "don't sleep as long"
+	cont "as other types."
+
+	para "They're early"
+	line "birds!"
 	done
 
 BirdKeeperJose2BeatenText:
