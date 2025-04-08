@@ -4713,9 +4713,9 @@ BattleCommand_TriStatusChance:
 	ret
 
 .StatusCommands:
-	dw BattleCommand_ParalyzeTarget ; paralyze
-	dw BattleCommand_FreezeTarget ; freeze
-	dw BattleCommand_BurnTarget ; burn
+	dw BattleCommand_ParalyzeTarget
+	dw BattleCommand_FreezeTarget
+	dw BattleCommand_BurnTarget
 
 BattleCommand_Curl:
 	ld a, BATTLE_VARS_SUBSTATUS2
@@ -6848,14 +6848,6 @@ ContactStatic:
 	and a
 	jr nz, .enemy
 
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	cp FLYING
-	jr z, .StaticAnim
-	ld a, [hl]
-	cp FLYING
-	jr z, .StaticAnim
-
 	ld hl, wBattleMonSpeed + 1
 	ld a, [hld]
 	ld b, a
@@ -6874,14 +6866,6 @@ ContactStatic:
 	jr .StaticAnim
 
 .enemy
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	cp FLYING
-	jr z, .StaticAnim
-	ld a, [hl]
-	cp FLYING
-	jr z, .StaticAnim
-
 	ld hl, wEnemyMonSpeed + 1
 	ld a, [hld]
 	ld b, a
