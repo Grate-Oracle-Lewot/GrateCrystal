@@ -49,16 +49,9 @@ BattleCommand_Nightmare:
 
 ; Animate Nightmare for Sleep-infliction. Animation will play again later for Nightmare-infliction.
 	call AnimateCurrentMove
-	ld b, %101 ; 5 turns
 
 ; Determine Sleep turn count etc.
-.random_loop
-	call BattleRandom
-	and b
-	jr z, .random_loop
-	cp SLP
-	jr z, .random_loop
-	inc a
+	call GetSleepTurns
 	ld [de], a
 	call UpdateOpponentInParty
 	call RefreshBattleHuds
