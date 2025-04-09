@@ -226,19 +226,16 @@ CheckAbleToSwitch:
 	callfar AICheckEnemyQuarterHP
 	jp nc, .switch_often
 
-	; 80+% chance to switch if non-Speed stat (because of Curse) is below -1
-	ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL - 1
+	; 80+% chance to switch if any non-Speed stat (because of Curse) is below -2
+	ld b, BASE_STAT_LEVEL -2
+	call CompareEnemyStatLevels
 	jr c, .rollswitch
-	ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL - 1
-	jr c, .rollswitch
-	ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL - 1
-	jr c, .rollswitch
-	ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL - 1
-	jr nc, .switch_rarely
+
+	; ~35% chance to switch if any non-Speed stat is at -2
+	ld b, BASE_STAT_LEVEL -1
+	call CompareEnemyStatLevels
+	jr c, .switch_often
+	jr .switch_rarely
 
 .rollswitch
 	; 80% chance to switch, 20% to check other clauses
@@ -317,6 +314,20 @@ CheckAbleToSwitch:
 	cp 10
 	ret c
 	jp .not_2
+
+CompareEnemyStatLevels:
+	ld a, [wEnemyAtkLevel]
+	cp b
+	ret c
+	ld a, [wEnemyDefLevel]
+	cp b
+	ret c
+	ld a, [wEnemySAtkLevel]
+	cp b
+	ret c
+	ld a, [wEnemySDefLevel]
+	cp b
+	ret
 
 FindAliveEnemyMons:
 	ld a, [wOTPartyCount]
