@@ -31,7 +31,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Fairy type added
 - Physical/Special split
 - TMs are infinite-use
-- Press Start in the Pack to sort items by type
+- Press Start in the Pack to sort items by type (even during battle)
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
