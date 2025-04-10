@@ -1,7 +1,7 @@
 SelectQuantityToToss:
 	ld hl, TossItem_MenuHeader
 	call LoadMenuHeader
-	jp Toss_Sell_Loop
+	jr Toss_Sell_Loop
 
 SelectQuantityToBuy:
 	farcall GetItemPrice
@@ -22,7 +22,7 @@ SelectQuantityToSell:
 	ld [wBuySellItemPrice + 1], a
 	ld hl, SellItem_MenuHeader
 	call LoadMenuHeader
-	jp Toss_Sell_Loop
+	; fallthrough
 
 Toss_Sell_Loop:
 	ld a, 1
@@ -99,7 +99,6 @@ BuySellToss_InterpretJoypad:
 
 .load_1
 	ld a, 1
-
 .finish_left
 	ld [wItemQuantityChange], a
 	and a
@@ -137,19 +136,6 @@ BuySellToss_UpdateQuantityDisplay:
 	ld a, [wMenuDataBank]
 	jp FarCall_de
 
-NoPriceToDisplay:
-; Does nothing.
-	ret
-
-DisplayPurchasePrice:
-	call BuySell_MultiplyPrice
-	jp BuySell_DisplaySubtotal
-
-DisplaySellingPrice:
-	call BuySell_MultiplyPrice
-	call Sell_HalvePrice
-	jp BuySell_DisplaySubtotal
-
 BuySell_MultiplyPrice:
 	xor a
 	ldh [hMultiplicand + 0], a
@@ -162,6 +148,7 @@ BuySell_MultiplyPrice:
 	push hl
 	call Multiply
 	pop hl
+NoPriceToDisplay:
 	ret
 
 Sell_HalvePrice:
@@ -178,6 +165,15 @@ Sell_HalvePrice:
 	ld [hl], a
 	pop hl
 	ret
+
+DisplayPurchasePrice:
+	call BuySell_MultiplyPrice
+	jr BuySell_DisplaySubtotal
+
+DisplaySellingPrice:
+	call BuySell_MultiplyPrice
+	call Sell_HalvePrice
+	; fallthrough
 
 BuySell_DisplaySubtotal:
 	push hl
