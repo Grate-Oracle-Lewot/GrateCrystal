@@ -130,11 +130,7 @@ BankOfMom:
 	ld [hl], a
 	ld a, 5
 	ld [wMomBankDigitCursorPosition], a
-	call LoadStandardMenuHeader
-	call Mom_SetUpDepositMenu
-	call Mom_Wait10Frames
-	call Mom_WithdrawDepositMenuJoypad
-	call CloseWindow
+	call MomOptimizedFunction
 	jr c, .CancelDeposit
 	ld hl, wStringBuffer2
 	ld a, [hli]
@@ -194,11 +190,7 @@ BankOfMom:
 	ld [hl], a
 	ld a, 5
 	ld [wMomBankDigitCursorPosition], a
-	call LoadStandardMenuHeader
-	call Mom_SetUpWithdrawMenu
-	call Mom_Wait10Frames
-	call Mom_WithdrawDepositMenuJoypad
-	call CloseWindow
+	call MomOptimizedFunction
 	jr c, .CancelWithdraw
 	ld hl, wStringBuffer2
 	ld a, [hli]
@@ -652,3 +644,10 @@ BankOfMom_MenuHeader:
 	db "SAVE@"
 	db "CHANGE@"
 	db "CANCEL@"
+
+MomOptimizedFunction:
+	call LoadStandardMenuHeader
+	call Mom_SetUpDepositMenu
+	call Mom_Wait10Frames
+	call Mom_WithdrawDepositMenuJoypad
+	jp CloseWindow
