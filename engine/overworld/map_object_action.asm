@@ -29,7 +29,6 @@ SetFacingStanding:
 
 SetFacingCurrent:
 	call GetSpriteDirection
-	or FACING_STEP_DOWN_0 ; useless
 	ld hl, OBJECT_FACING_STEP
 	add hl, bc
 	ld [hl], a
@@ -125,7 +124,6 @@ SetFacingCounterclockwiseSpin:
 	ld hl, OBJECT_FACING
 	add hl, bc
 	ld a, [hl]
-	or FACING_STEP_DOWN_0 ; useless
 	ld hl, OBJECT_FACING_STEP
 	add hl, bc
 	ld [hl], a
