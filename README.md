@@ -48,21 +48,21 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
-- Pseudo-Abilities:
-  - Pokémon that would/should have Levitate are given a similar Ground immunity, but certain Ground moves still work on them, like Bone Club and Mud-Slap; an up arrow is shown to indicate levitation in battle, on the stats screen, and in the Pokédex
-  - All Poison types have a similar effect to Liquid Ooze: draining moves used against them will hurt instead of heal, including Leech Seed but excluding Dream Eater as a special exception; however, if the user of the draining move is also Poison-type, then they still get healed
-  - All Electric types have a 30% chance to Paralyze attackers on contact (but Ground types are immune to this)
-  - All Fairy types have a 30% chance to infatuate opposite-gender attackers on contact (but Dark types are immune to this)
-  - All Grass types get a 50% Speed boost in Harsh Sunlight
-  - All Rock types get a 50% Special Defense boost in Sandstorms
-  - All Ice types get a 50% Defense boost in Hail
+- Pseudo-Abilities: there's no proper Ability system and the following effects are not named in-game, but they are described by various NPCs and such. Dual-typed Pokémon can have two type-dependent effects.
+  - Levitate: Includes Pokémon that have Levitate in the real games as well as some others that I think should, plus some would-be Flying types who have had their types changed. This effect grants an immunity to some Ground type moves, but not others. The ones that still hit are those not bound to the floor: the bone moves and Mud-Slap. A special up-arrow icon indicates a Levitating Pokémon, shown in battle, on the stats screen, and in the Pokédex.
+  - Liquid Ooze: Applies to all Poison types. Draining moves used against them will hurt instead of heal, including Leech Seed but excluding Dream Eater as a special exception. However, if the user of the draining move is also Poison type, then they still get healed.
+  - Early Bird: All Flying types wake up earlier from Sleep (unless caused by Rest, disobedience, or falling out of a tree).
+  - Static: All Electric types have a 30% chance to Paralyze attackers on contact. Ground types are immune to this.
+  - Cute Charm: All Fairy types have a 30% chance to infatuate opposite-gender attackers on contact. Dark types are immune to this.
+  - Chlorophyll: All Grass types get a 50% Speed boost in Harsh Sunlight.
+  - Water Veil: All Water types are immune to being Burned.
+  - Inner Focus: All Psychic types are immune to flinching.
+  - Battle Armor: All Dragon types are immune to critical hits.
   - Fire types are immune to being Frozen
-  - Water types are immune to being Burned
   - Steel types are immune to being Poisoned (mostly redundant, but previously Twineedle could do it; this feature is now available [as a tutorial](https://github.com/pret/pokecrystal/wiki/Prevent-Steel%E2%80%90types-from-being-poisoned-by-Twineedle))
-  - Psychic types are immune to flinching
-  - Dragon types are immune to critical hits
+  - Rock types get a 50% Special Defense boost in Sandstorms
+  - Ice types get a 50% Defense boost in Hail
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
-  - Flying types wake up earlier from Sleep (unless caused by Rest, disobedience, or falling out of a tree)
   - Fighting types don't lose Attack while Burned
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
