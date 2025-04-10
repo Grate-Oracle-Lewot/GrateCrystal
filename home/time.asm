@@ -165,7 +165,6 @@ FixTime::
 InitTimeOfDay::
 	xor a
 	ld [wStringBuffer2], a
-	ld a, 0 ; useless
 	ld [wStringBuffer2 + 3], a
 	jr InitTime
 
