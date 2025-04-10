@@ -101,8 +101,7 @@ endc
 	ld [wOptions], a
 	pop af
 	ldh [hInMenu], a
-	call ReturnToMapFromSubmenu
-	ret
+	jp ReturnToMapFromSubmenu
 
 .LeftRight:
 	ldh a, [hJoyLast]
