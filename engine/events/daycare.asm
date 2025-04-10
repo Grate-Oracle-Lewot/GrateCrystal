@@ -214,17 +214,6 @@ DayCare_AskWithdrawBreedMon:
 	scf
 	ret
 
-DayCare_GetBackMonForMoney:
-	ld bc, wStringBuffer2 + 2
-	ld de, wMoney
-	farcall TakeMoney
-	ld a, DAYCARETEXT_WITHDRAW
-	call PrintDayCareText
-	ld a, [wCurPartySpecies]
-	call PlayMonCry
-	ld a, DAYCARETEXT_GOT_BACK
-	jp PrintDayCareText
-
 GetPriceToRetrieveBreedmon:
 	ld a, b
 	ld [wStringBuffer2], a
@@ -246,6 +235,17 @@ GetPriceToRetrieveBreedmon:
 	ld a, l
 	ld [wStringBuffer2 + 4], a
 	ret
+
+DayCare_GetBackMonForMoney:
+	ld bc, wStringBuffer2 + 2
+	ld de, wMoney
+	farcall TakeMoney
+	ld a, DAYCARETEXT_WITHDRAW
+	call PrintDayCareText
+	ld a, [wCurPartySpecies]
+	call PlayMonCry
+	ld a, DAYCARETEXT_GOT_BACK
+	; fallthrough
 
 PrintDayCareText:
 	ld e, a
