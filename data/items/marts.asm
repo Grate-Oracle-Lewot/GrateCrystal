@@ -445,11 +445,15 @@ MartUnderground:
 	db -1 ; end
 
 MartBerry:
-	db 6 ; # items
+	db 10 ; # items
 	db BERRY
 	db GOLD_BERRY
 	db MYSTERYBERRY
+	db PSNCUREBERRY
 	db MINT_BERRY
+	db PRZCUREBERRY
+	db ICE_BERRY
+	db BURNT_BERRY
 	db BITTER_BERRY
 	db MIRACLEBERRY
 	db -1 ; end
