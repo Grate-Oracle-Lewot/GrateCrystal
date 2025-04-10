@@ -43,6 +43,11 @@ TakeMoney::
 	and a
 	ret
 
+CheckCoins::
+	ld a, 2
+	ld de, wCoins
+	jr CompareFunds
+
 CompareMoney::
 	ld a, 3
 CompareFunds:
@@ -202,8 +207,3 @@ TakeCoins::
 .okay
 	and a
 	ret
-
-CheckCoins::
-	ld a, 2
-	ld de, wCoins
-	jp CompareFunds
