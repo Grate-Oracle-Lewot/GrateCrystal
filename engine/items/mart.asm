@@ -455,10 +455,6 @@ BuyMenuLoop:
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
 	jr z, .set_carry
-	cp A_BUTTON
-	jr z, .useless_pointer
-
-.useless_pointer
 	call MartAskPurchaseQuantity
 	jr c, .cancel
 	call MartConfirmPurchase
@@ -495,13 +491,11 @@ BuyMenuLoop:
 
 .insufficient_bag_space
 	ld a, MARTTEXT_BAG_FULL
-	call LoadBuyMenuText
-	call JoyWaitAorB
-	and a
-	ret
+	jr .finish
 
 .insufficient_funds
 	ld a, MARTTEXT_NOT_ENOUGH_MONEY
+.finish
 	call LoadBuyMenuText
 	call JoyWaitAorB
 	and a
