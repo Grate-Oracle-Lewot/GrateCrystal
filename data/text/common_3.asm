@@ -624,11 +624,6 @@ BerryShop_HereYouGoText::
 	text "Thanks."
 	done
 
-_NothingToSellText::
-	text "You don't have"
-	line "anything to sell."
-	prompt
-
 _MartSellHowManyText::
 	text "How many?"
 	done
