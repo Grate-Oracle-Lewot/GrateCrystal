@@ -6270,10 +6270,6 @@ Function102e07:
 	jr .okay
 
 .link_battle
-; the next three operations are pointless
-	hlcoord 3, 10
-	ld b,  1
-	ld c, 11
 	ld d, h
 	ld e, l
 	farcall LinkTextbox
