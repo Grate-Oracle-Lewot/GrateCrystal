@@ -948,9 +948,6 @@ LinkTradeOTPartymonMenuLoop:
 	jp z, LinkTradePartiesMenuMasterLoop
 	bit A_BUTTON_F, a
 	jr z, .not_a_button
-	ld a, INIT_ENEMYOT_LIST
-	ld [wInitListType], a
-	callfar InitList
 	ld hl, wOTPartyMon1Species
 	farcall LinkMonStatsScreen
 	jp LinkTradePartiesMenuMasterLoop
@@ -1138,9 +1135,6 @@ LinkTrade_TradeStatsMenu:
 .show_stats
 	pop af
 	ld [wMenuCursorY], a
-	ld a, INIT_PLAYEROT_LIST
-	ld [wInitListType], a
-	callfar InitList
 	farcall LinkMonStatsScreen
 	call SafeLoadTempTilemapToTilemap
 	hlcoord 6, 1
