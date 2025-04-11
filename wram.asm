@@ -2673,7 +2673,7 @@ wNiteEncounterRate::  db
 wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
-wInitListType:: db
+	ds 1
 wBattleHasJustStarted:: db
 
 wNamedObjectIndex::
