@@ -1,7 +1,5 @@
 Joypad::
-; Replaced by UpdateJoypad, called from VBlank instead of the useless
-; joypad interrupt.
-
+; Replaced by UpdateJoypad, called from VBlank instead of the useless joypad interrupt.
 ; This is a placeholder in case the interrupt is somehow enabled.
 	reti
 
@@ -15,9 +13,8 @@ ClearJoypad::
 
 UpdateJoypad::
 ; This is called automatically every frame in VBlank.
-; Read the joypad register and translate it to something more
-; workable for use in-game. There are 8 buttons, so we can use
-; one byte to contain all player input.
+; Read the joypad register and translate it to something more workable for use in-game.
+; There are 8 buttons, so we can use one byte to contain all player input.
 
 ; Updates:
 
@@ -312,12 +309,8 @@ JoyTextDelay::
 	ret
 
 WaitPressAorB_BlinkCursor::
-; Show a blinking cursor in the lower right-hand
-; corner of a textbox and wait until A or B is
-; pressed.
-;
-; NOTE: The cursor has to be shown before calling
-; this function or no cursor will be shown at all.
+; Show a blinking cursor in the lower right-hand corner of a textbox and wait until A or B is pressed.
+; NOTE: The cursor has to be shown before calling this function or no cursor will be shown at all.
 	ldh a, [hMapObjectIndex]
 	push af
 	ldh a, [hObjectStructIndex]
@@ -353,9 +346,8 @@ SimpleWaitPressAorB::
 	ret
 
 PromptButton::
-; Show a blinking cursor in the lower right-hand
-; corner of a textbox and wait until A or B is
-; pressed, afterwards, play a sound.
+; Show a blinking cursor in the lower right-hand corner of a textbox and wait until A or B is pressed,
+; afterwards, play a sound.
 	ld a, [wLinkMode]
 	and a
 	jr nz, .link
