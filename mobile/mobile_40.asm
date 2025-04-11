@@ -2038,7 +2038,7 @@ MobileComms_CheckInactivityTimer:
 	ld c, a
 	ld b, 3
 	push bc
-	farcall AdvanceMobileInactivityTimerAndCheckExpired ; useless to farcall
+	call AdvanceMobileInactivityTimerAndCheckExpired
 	pop bc
 	jr c, .quit
 	ld b, 1
@@ -2046,7 +2046,7 @@ MobileComms_CheckInactivityTimer:
 	jr c, .quit
 	call Function1009f3
 	jr c, .quit
-	farcall Function10032e ; useless to farcall
+	call Function10032e
 	ld a, [wcd2b]
 	and a
 	jr nz, .quit
@@ -4587,9 +4587,6 @@ Function102112:
 	jr nz, .outer_loop
 	ld a, $01
 	and a
-	jr .done ; useless jr
-
-.done
 	push af
 	call CloseSRAM
 	pop af
