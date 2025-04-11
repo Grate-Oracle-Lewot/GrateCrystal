@@ -152,8 +152,6 @@ INCLUDE "engine/battle/ai/items.asm"
 INCLUDE "engine/battle/ai/scoring.asm"
 INCLUDE "engine/battle/read_trainer_attributes.asm"
 INCLUDE "engine/battle/read_trainer_party.asm"
-
-
 INCLUDE "data/trainers/parties.asm"
 
 
@@ -632,8 +630,7 @@ INCLUDE "data/phone/text/unused.asm"
 
 SECTION "Overflow Files", ROMX
 
-INCLUDE "engine/pokedex/pokedex.asm" ; 10
-INCLUDE "engine/link/init_list.asm" ; 14
+INCLUDE "engine/pokedex/pokedex.asm"
 
 
 SECTION "Miscellaneous Text", ROMX
