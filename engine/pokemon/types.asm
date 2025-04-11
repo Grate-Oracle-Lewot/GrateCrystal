@@ -1,6 +1,5 @@
 PrintMonTypes:
-; Print one or both types of [wCurSpecies]
-; on the stats screen at hl.
+; Print one or both types of [wCurSpecies] on the stats screen at hl.
 
 	push hl
 	call GetBaseData
@@ -28,8 +27,7 @@ PrintMonTypes:
 	ld a, [wBaseType1]
 	call .Print
 
-	; Single-typed monsters really
-	; have two of the same type.
+	; Single-typed monsters really have two of the same type.
 	ld a, [wBaseType1]
 	ld b, a
 	ld a, [wBaseType2]
@@ -71,14 +69,13 @@ PrintMoveType:
 	ld a, [wStringBuffer1 + MOVE_TYPE]
 	and TYPE_MASK
 	pop hl
-
 	ld b, a
+	; fallthrough
 
 PrintType:
 ; Print type b at hl.
 
 	ld a, b
-
 	push hl
 	add a
 	ld hl, TypeNames
@@ -89,7 +86,6 @@ PrintType:
 	ld e, a
 	ld d, [hl]
 	pop hl
-
 	jp PlaceString
 
 GetTypeName:
