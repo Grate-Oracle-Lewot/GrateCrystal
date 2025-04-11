@@ -120,10 +120,6 @@ RefreshPlayerCoords:
 	ld hl, wPlayerLastMapY
 	ld [hl], e
 	ld e, a
-; the next three lines are useless
-	ld a, [wObjectFollow_Leader]
-	cp PLAYER
-	ret nz
 	ret
 
 CopyObjectStruct::
@@ -158,67 +154,6 @@ CopyObjectStruct::
 	ld hl, OBJECT_FLAGS2
 	add hl, de
 	set 5, [hl]
-	ret
-
-CopyMapObjectToObjectStruct:
-	call .CopyMapObjectToTempObject
-	jp CopyTempObjectToObjectStruct
-
-.CopyMapObjectToTempObject:
-	ldh a, [hObjectStructIndex]
-	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
-	add hl, bc
-	ld [hl], a
-
-	ldh a, [hMapObjectIndex]
-	ld [wTempObjectCopyMapObjectIndex], a
-
-	ld hl, MAPOBJECT_SPRITE
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopySprite], a
-
-	call GetSpriteVTile
-	ld [wTempObjectCopySpriteVTile], a
-
-	ld a, [hl]
-	call GetSpritePalette
-	ld [wTempObjectCopyPalette], a
-
-	ld hl, MAPOBJECT_COLOR
-	add hl, bc
-	ld a, [hl]
-	and $f0
-	jr z, .skip_color_override
-	swap a
-	and PALETTE_MASK
-	ld [wTempObjectCopyPalette], a
-
-.skip_color_override
-	ld hl, MAPOBJECT_MOVEMENT
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopyMovement], a
-
-	ld hl, MAPOBJECT_RANGE
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopyRange], a
-
-	ld hl, MAPOBJECT_X_COORD
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopyX], a
-
-	ld hl, MAPOBJECT_Y_COORD
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopyY], a
-
-	ld hl, MAPOBJECT_RADIUS
-	add hl, bc
-	ld a, [hl]
-	ld [wTempObjectCopyRadius], a
 	ret
 
 InitializeVisibleSprites:
@@ -404,6 +339,63 @@ CheckObjectEnteringVisibleRange::
 	cp NUM_OBJECTS
 	jr nz, .loop_h
 	ret
+
+CopyMapObjectToObjectStruct:
+	ldh a, [hObjectStructIndex]
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+	add hl, bc
+	ld [hl], a
+
+	ldh a, [hMapObjectIndex]
+	ld [wTempObjectCopyMapObjectIndex], a
+
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopySprite], a
+
+	call GetSpriteVTile
+	ld [wTempObjectCopySpriteVTile], a
+
+	ld a, [hl]
+	call GetSpritePalette
+	ld [wTempObjectCopyPalette], a
+
+	ld hl, MAPOBJECT_COLOR
+	add hl, bc
+	ld a, [hl]
+	and $f0
+	jr z, .skip_color_override
+	swap a
+	and PALETTE_MASK
+	ld [wTempObjectCopyPalette], a
+
+.skip_color_override
+	ld hl, MAPOBJECT_MOVEMENT
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyMovement], a
+
+	ld hl, MAPOBJECT_RANGE
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyRange], a
+
+	ld hl, MAPOBJECT_X_COORD
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyX], a
+
+	ld hl, MAPOBJECT_Y_COORD
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyY], a
+
+	ld hl, MAPOBJECT_RADIUS
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyRadius], a
+	; fallthrough
 
 CopyTempObjectToObjectStruct:
 	ld a, [wTempObjectCopyMapObjectIndex]
@@ -682,7 +674,8 @@ FollowNotExact::
 	ret
 
 GetRelativeFacing::
-; Determines which way map object e would have to turn to face map object d.  Returns carry if it's impossible for whatever reason.
+; Determines which way map object e would have to turn to face map object d.
+; Returns carry if it's impossible for whatever reason.
 	ld a, d
 	call GetMapObject
 	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
@@ -706,7 +699,7 @@ GetRelativeFacing::
 	ret
 
 .GetFacing_e_relativeto_d:
-; Determines which way object e would have to turn to face object d.  Returns carry if it's impossible.
+; Determines which way object e would have to turn to face object d. Returns carry if it's impossible.
 ; load the coordinates of object d into bc
 	ld a, d
 	call GetObjectStruct
