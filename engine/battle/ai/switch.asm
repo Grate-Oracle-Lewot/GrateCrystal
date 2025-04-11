@@ -156,7 +156,7 @@ CheckAbleToSwitch:
 	ret
 
 .no_perish
-	; SWITCH_RARELY doesn't consider stat buffs
+	; SWITCH_RARELY doesn't consider stat buffs or low HP
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_RARELY_F, a
 	jp nz, .switch_rarely
