@@ -1606,7 +1606,7 @@ BattleTowerLucas:
 
 	db POLITOED
 	db TWISTEDSPOON
-	db HYPNOSIS, DREAM_EATER, SHADOW_BALL, BUBBLEBEAM
+	db HYPNOSIS, DREAM_EATER, SHADOW_BALL, SURF
 	dw 0 ; OT ID
 	dt 1059860 ; Exp
 	; Stat exp
@@ -1616,7 +1616,7 @@ BattleTowerLucas:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 13, 13, 12 ; DVs
-	db 32, 24, 24, 32 ; PP
+	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
