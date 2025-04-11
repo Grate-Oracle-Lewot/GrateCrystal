@@ -4587,6 +4587,7 @@ Function102112:
 	jr nz, .outer_loop
 	ld a, $01
 	and a
+.done
 	push af
 	call CloseSRAM
 	pop af
