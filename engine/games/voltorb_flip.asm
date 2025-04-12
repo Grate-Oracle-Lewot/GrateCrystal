@@ -420,8 +420,7 @@ VFInput:
 	ld [Coins], a
 	ld a, e
 	ld [Coins + 1], a
-	call VFInitLevel
-	ret	
+	jp VFInitLevel
 .caplevel
 	dec a
 	ret
@@ -539,8 +538,7 @@ VFLoadGFX:
 	ld bc, $7f80 ;load the gfx
 	ld de, VoltorbFlipGFX
 	ld hl, $9000
-	call Copy2bpp
-	ret
+	jp Copy2bpp
 	
 VFLoadPalette:	
 	ld a, [rSVBK] ; $ff00+$70
@@ -553,8 +551,7 @@ VFLoadPalette:
 	call CopyPals
 	pop af
 	ld [rSVBK], a
-	call ForceUpdateCGBPals
-	ret
+	jp ForceUpdateCGBPals
 
 VFInitRAM:
 	ld hl,$c400
@@ -947,8 +944,7 @@ VFRefreshMap:
 	inc hl
 	ld de, Coins
 	ld bc, $0204
-	call PrintNum
-	ret
+	jp PrintNum
 .coinstring
 	db "COINS@"
 .blank
@@ -1385,8 +1381,8 @@ VFFlipAnimation:
 	call VFRefreshScreen
 	pop hl
 	ei
-	call DelayFrame
-	ret
+	jp DelayFrame
+
 VFBoom:
 	call VFRefreshMap
 	ld hl, $c41b
@@ -1408,8 +1404,7 @@ VFBoom:
 	jr z, .level0
 .reset
 	ld [$c41a], a
-	call VFInitLevel
-	ret
+	jp VFInitLevel
 .level0
 	ld a, 1
 	jr .reset
@@ -1522,8 +1517,7 @@ VFKeepCoins:
 	ld [Coins], a
 	ld a, e
 	ld [Coins + 1], a
-	call VFInitLevel
-	ret	
+	jp VFInitLevel
 .maybecap
 	cp $27
 	jr nz, .capcoins
