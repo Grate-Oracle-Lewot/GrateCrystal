@@ -923,15 +923,6 @@ IntroScene20:
 	xor a
 	jp Intro_Scene20_AppearUnown
 
-.AppearUnownPal2: ; unreferenced
-	ld a, c
-	and $1c
-	srl a
-	srl a
-	ld [wIntroSceneTimer], a
-	ld a, 1
-	jp Intro_Scene20_AppearUnown
-
 IntroScene21:
 ; Suicune gets more distant and turns black.
 	call Intro_ColoredSuicuneFrameSwap
