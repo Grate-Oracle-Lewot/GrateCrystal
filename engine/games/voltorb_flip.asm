@@ -31,6 +31,9 @@
 ;34 coin
 ;91 boom!
 
+VoltorbFlipGFX:
+INCBIN "gfx/misc/voltorb_flip.2bpp"
+
 VoltorbFlipPalette:
 	dw $073f, $7fff, $26c4, $0000
 	dw $073f, $11ff, $26c4, $0000
