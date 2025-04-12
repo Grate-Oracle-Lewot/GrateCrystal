@@ -32,7 +32,7 @@
 ;91 boom!
 
 VoltorbFlipGFX:
-INCBIN "gfx/misc/voltorb_flip.2bpp"
+INCBIN "gfx/voltorb_flip.2bpp"
 
 VoltorbFlipPalette:
 	dw $073f, $7fff, $26c4, $0000
