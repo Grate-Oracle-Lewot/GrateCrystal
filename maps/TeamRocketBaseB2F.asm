@@ -737,11 +737,6 @@ RocketBaseLanceElectrodeDoneText:
 	cont "any need for it."
 	done
 
-RocketBaseReceivedHM06Text: ; unreferenced
-	text "<PLAYER> received"
-	line "HM06."
-	done
-
 RocketBaseLanceWhirlpoolText:
 	text "That's WHIRLPOOL."
 	line "Teach it to a"
