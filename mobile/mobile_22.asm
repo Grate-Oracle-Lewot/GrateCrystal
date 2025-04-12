@@ -497,12 +497,6 @@ Function893ef:
 	ld a, BANK(EZChatCursorGFX)
 	jp FarCopyBytes
 
-Function893fe: ; unreferenced
-	call DisableLCD
-	call Function893ef
-	call EnableLCD
-	jp DelayFrame
-
 EZChatCursorGFX:
 INCBIN "gfx/mobile/ez_chat_cursor.2bpp"
 
@@ -778,12 +772,6 @@ Palette_895de:
 	RGB 07, 07, 06
 	RGB 00, 00, 00
 
-Function895e6: ; unreferenced
-	ld a, 7
-	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	jp ByteFill
-
 Function895f2:
 	push bc
 	xor a
@@ -972,7 +960,6 @@ Function896f5:
 	inc hl
 	ld b, 2
 
-Function896ff: ; unreferenced
 ; INPUT:
 ; hl = address of upper left corner of the area
 ; b = height
@@ -1657,17 +1644,6 @@ Function89a57:
 Function89b00:
 	farcall MG_Mobile_Layout_LoadPals
 	ret
-
-Function89b07:
-	call Mobile22_SetBGMapMode0
-	call DelayFrame
-	farcall Function4a3a7
-	ret
-
-Function89b14: ; unreferenced
-	call ClearBGPalettes
-	call Function89b07
-	jp Function89b00
 
 Function89b1e:
 	farcall Function4a485
@@ -4167,12 +4143,6 @@ Function8adb3:
 	call Function891de
 	pop af
 	ret
-
-Function8adbf: ; unreferenced
-	call OpenSRAMBank4
-	ld hl, $a603
-	call Function89b45
-	jp CloseSRAM
 
 Function8adcc:
 	call OpenSRAMBank4
