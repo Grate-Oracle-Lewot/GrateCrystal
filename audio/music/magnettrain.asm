@@ -240,28 +240,13 @@ Music_MagnetTrain_Ch4:
 	drum_note 11, 4
 	drum_note 3, 2
 	drum_note 3, 2
-	sound_call .sub2
-	sound_call .sub2
+	sound_call .sub
+	sound_call .sub
 	drum_speed 12
 	drum_note 12, 16
 	sound_ret
 
-.sub1: ; unreferenced
-	drum_note 9, 1
-	drum_note 8, 1
-	drum_note 8, 1
-	drum_note 9, 1
-	drum_note 8, 1
-	drum_note 8, 1
-	drum_note 9, 1
-	drum_note 8, 1
-	drum_note 8, 1
-	drum_note 9, 1
-	drum_note 8, 1
-	drum_note 8, 1
-	sound_ret
-
-.sub2:
+.sub:
 	drum_note 9, 2
 	drum_note 8, 2
 	drum_note 8, 2
