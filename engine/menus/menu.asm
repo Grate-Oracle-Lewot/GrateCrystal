@@ -264,39 +264,6 @@ MobileMenuJoypad:
 	ld c, a
 	ret
 
-Function241d5: ; unreferenced
-	call Place2DMenuCursor
-.loop
-	call Move2DMenuCursor
-	call HDMATransferTilemapToWRAMBank3 ; BUG: This function is in another bank.
-	call .loop2
-	ret nc
-	call _2DMenuInterpretJoypad
-	ret c
-	ld a, [w2DMenuFlags1]
-	bit 7, a
-	ret nz
-	call GetMenuJoypad
-	ld c, a
-	ld a, [wMenuJoypadFilter]
-	and c
-	jr z, .loop
-
-.loop2
-	call Menu_WasButtonPressed
-	ret c
-	ld c, 1
-	ld b, 3
-	call AdvanceMobileInactivityTimerAndCheckExpired ; BUG: This function is in another bank.
-	ret c
-	farcall Function100337
-	ret c
-	ld a, [w2DMenuFlags1]
-	bit 7, a
-	jr z, .loop2
-	and a
-	ret
-
 MenuJoypadLoop:
 .loop
 	call Move2DMenuCursor
