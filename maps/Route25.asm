@@ -419,10 +419,6 @@ BillsHouseSignText:
 	line "BILL'S HOUSE"
 	done
 
-UnusedBillsHouseSignText: ; unreferenced
-	text "BILL'S HOUSE"
-	done
-
 Route25_MapEvents:
 	db 0, 0 ; filler
 
