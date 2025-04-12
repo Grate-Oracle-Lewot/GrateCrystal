@@ -487,12 +487,12 @@ GoldenrodGameCornerPharmacistText:
 	done
 
 GoldenrodGameCornerPokefanM1Text:
-	text "I just love this"
-	line "new slot machine."
+	text "VOLTORB Flip is"
+	line "the newest game."
 
-	para "It's more of a"
-	line "challenge than the"
-	cont "ones in CELADON."
+	para "It's a bit more"
+	line "strategic than the"
+	cont "others."
 	done
 
 GoldenrodGameCornerCooltrainerMText:
