@@ -407,9 +407,9 @@ VFInput:
 	ld a, [hld]
 	ld e, a
 	push hl
-	ld a, [Coins]
+	ld a, [wCoins]
 	ld h, a
-	ld a, [Coins + 1]
+	ld a, [wCoins + 1]
 	ld l, a
 	add hl, de
 	push hl
@@ -420,9 +420,9 @@ VFInput:
 	jr nc, .maybecap
 .totalcoins
 	ld a, d
-	ld [Coins], a
+	ld [wCoins], a
 	ld a, e
-	ld [Coins + 1], a
+	ld [wCoins + 1], a
 	jp VFInitLevel
 .caplevel
 	dec a
@@ -945,7 +945,7 @@ VFRefreshMap:
 	ld de, .blank
 	call PlaceString
 	inc hl
-	ld de, Coins
+	ld de, wCoins
 	ld bc, $0204
 	jp PrintNum
 .coinstring
@@ -1504,9 +1504,9 @@ VFKeepCoins:
 	ld a, [hld]
 	ld e, a
 	push hl
-	ld a, [Coins]
+	ld a, [wCoins]
 	ld h, a
-	ld a, [Coins + 1]
+	ld a, [wCoins + 1]
 	ld l, a
 	add hl, de
 	push hl
@@ -1517,9 +1517,9 @@ VFKeepCoins:
 	jr nc, .maybecap
 .totalcoins
 	ld a, d
-	ld [Coins], a
+	ld [wCoins], a
 	ld a, e
-	ld [Coins + 1], a
+	ld [wCoins + 1], a
 	jp VFInitLevel
 .maybecap
 	cp $27
