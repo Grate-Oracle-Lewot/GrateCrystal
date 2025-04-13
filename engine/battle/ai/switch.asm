@@ -205,13 +205,12 @@ CheckAbleToSwitch:
 	jr .checkenemybuff
 
 .cont_check
-	; If AI has no buffs, check other clauses
+	; If AI has no buffs, don't check player buffs
 	ld a, e
 	cp 1
 	jr c, .cont_check_2
 
 	; If player has at least 2 stat buffs, don't switch
-	; Due to previous check, AI must have at least 1 buff as well
 	ld a, b
 	cp 2
 	ret nc
@@ -222,7 +221,7 @@ CheckAbleToSwitch:
 	ret c
 
 .cont_check_2
-	; ~35% chance to switch if AI has quarter HP or less
+	; ~35% chance to switch if AI has quarter HP or less (skips possibility of higher chance)
 	callfar AICheckEnemyQuarterHP
 	jp nc, .switch_often
 
