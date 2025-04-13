@@ -418,11 +418,8 @@ GoldenrodGameCornerCardFlipMachineScript:
 	end
 
 GoldenrodGameCornerVoltorbFlipMachineScript:
-	refreshscreen
 	special VoltorbFlip
-	closetext
 	end
-
 
 GoldenrodGameCornerPosterScript:
 	opentext
