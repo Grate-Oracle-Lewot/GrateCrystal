@@ -45,7 +45,6 @@ PlayersHouseRadioScript:
 	givecoins 42
 	refreshscreen
 	special VoltorbFlip
-	closetext
 	end
 
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
