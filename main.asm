@@ -677,6 +677,11 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 
 
+SECTION "Voltorb Flip", ROMX
+
+INCLUDE "engine/games/voltorb_flip.asm"
+
+
 SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
