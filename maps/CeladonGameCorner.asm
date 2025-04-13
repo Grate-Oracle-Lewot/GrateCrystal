@@ -250,20 +250,6 @@ CeladonGameCornerPosterText:
 	line "tabletop RPG?"
 	done
 
-CeladonGameCornerLighterText:
-	text "There's a lighter"
-	line "here."
-	done
-
-CeladonGameCornerSodaCanText:
-	text "A can of soda…"
-
-	para "Someone must be"
-	line "coming back…"
-
-	para "Huh? It's empty!"
-	done
-
 CeladonGameCorner_MapEvents:
 	db 0, 0 ; filler
 
@@ -283,33 +269,33 @@ CeladonGameCorner_MapEvents:
 	bg_event  6,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6,  8, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  6,  9, BGEVENT_READ, CeladonGameCornerSodaCanScript
+	bg_event  6,  9, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6, 10, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6, 11, BGEVENT_RIGHT, CeladonGameCornerCardFlipScript
-	bg_event  7,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7,  8, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event  7, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event  7, 11, BGEVENT_LEFT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12,  8, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 12, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13,  8, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 13, 11, BGEVENT_LEFT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 18,  6, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 18,  7, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 18,  8, BGEVENT_READ, CeladonGameCornerLighterScript
-	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
-	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
+	bg_event  7,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event  7,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event  7,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event  7,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event  7, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
+	bg_event  7, 11, BGEVENT_LEFT, CeladonGameCornerSlotMachineScript
+	bg_event 12,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 12,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 12,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 12,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 12, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 12, 11, BGEVENT_RIGHT, CeladonGameCornerSlotMachineScript
+	bg_event 13,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 13,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 13,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 13,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 13, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 13, 11, BGEVENT_LEFT, CeladonGameCornerSlotMachineScript
+	bg_event 18,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 18,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 18,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
+	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerSlotMachineScript
 	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 
