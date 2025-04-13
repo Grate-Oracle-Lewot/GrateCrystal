@@ -487,12 +487,14 @@ GoldenrodGameCornerPharmacistText:
 	done
 
 GoldenrodGameCornerPokefanM1Text:
-	text "VOLTORB Flip is"
-	line "the newest game."
+	text "I taught BLIZZARD"
+	line "to my #MON."
 
-	para "It's a bit more"
-	line "strategic than the"
-	cont "others."
+	para "It was hard to get"
+	line "enough coins for"
+
+	para "it, but it was"
+	line "worth it."
 	done
 
 GoldenrodGameCornerCooltrainerMText:
@@ -527,14 +529,12 @@ GoldenrodGameCornerCooltrainerFText:
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "I taught BLIZZARD"
-	line "to my #MON."
+	text "VOLTORB Flip is"
+	line "the newest game."
 
-	para "It was hard to get"
-	line "enough coins for"
-
-	para "it, but it was"
-	line "worth it."
+	para "It's a bit more"
+	line "strategic than the"
+	cont "other ones."
 	done
 
 GoldenrodGameCornerPokefanM2Text:
