@@ -127,17 +127,6 @@ CeladonGameCornerCardFlipScript:
 	closetext
 	end
 
-CeladonGameCornerLighterScript:
-	jumptext CeladonGameCornerLighterText
-
-CeladonGameCornerSodaCanScript:
-	opentext
-	writetext CeladonGameCornerSodaCanText
-	waitbutton
-	special CardFlip
-	closetext
-	end
-
 CeladonGameCornerReceptionistText:
 	text "Welcome!"
 
