@@ -127,6 +127,12 @@ CeladonGameCornerCardFlipScript:
 	closetext
 	end
 
+CeladonGameCornerVoltorbFlipScript:
+	refreshscreen
+	special CardFlip
+	closetext
+	end
+
 CeladonGameCornerReceptionistText:
 	text "Welcome!"
 
@@ -138,9 +144,11 @@ CeladonGameCornerReceptionistText:
 	done
 
 CeladonGameCornerPokefanMText:
-	text "The slot machines"
-	line "are all state of"
-	cont "the art."
+	text "Seeing VOLTORB go"
+	line "boom…"
+
+	para "It's terrible, but"
+	line "thrilling!"
 	done
 
 CeladonGameCornerTeacherText:
@@ -273,18 +281,18 @@ CeladonGameCorner_MapEvents:
 	bg_event 12,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
 	bg_event 12, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
 	bg_event 12, 11, BGEVENT_RIGHT, CeladonGameCornerSlotMachineScript
-	bg_event 13,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 13,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 13,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 13,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 13, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 13, 11, BGEVENT_LEFT, CeladonGameCornerSlotMachineScript
-	bg_event 18,  6, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 18,  7, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 18,  8, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerSlotMachineScript
-	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerSlotMachineScript
+	bg_event 13,  6, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 13,  7, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 13,  8, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 13,  9, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 13, 10, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 13, 11, BGEVENT_LEFT, CeladonGameCornerVoltorbFlipScript
+	bg_event 18,  6, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 18,  7, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 18,  8, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerVoltorbFlipScript
+	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerVoltorbFlipScript
 	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPosterScript
 
