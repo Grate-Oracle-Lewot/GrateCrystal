@@ -302,6 +302,8 @@ ROMX $7c
 	"Battle Tower Additions"
 ROMX $7e
 	"Crystal Events"
+ROMX $7f
+	"Voltorb Flip"
 WRAM0
 	"Stack"
 	"Audio RAM"
