@@ -229,7 +229,11 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - One in the Ruins of Alph research center will teach Aura Sphere for free once you collect all forms of Unown
 
-## Game Corner prize Pokémon
+## Game Corners
+
+Voltorb Flip (renamed Voltsweeper) is now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit.
+
+Prize Pokémon:
 
 - Johto:
   - Monday-Friday: Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
