@@ -417,12 +417,6 @@ GoldenrodGameCornerCardFlipMachineScript:
 	closetext
 	end
 
-GoldenrodGameCornerVoltorbFlipMachineScript:
-	refreshscreen
-	special VoltorbFlip
-	closetext
-	end
-
 GoldenrodGameCornerPosterScript:
 	opentext
 	writetext GoldenrodGameCornerBehindPosterText
@@ -528,12 +522,8 @@ GoldenrodGameCornerCooltrainerFText:
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "Voltsweeper is the"
-	line "newest game."
-
-	para "It's a bit more"
-	line "strategic than the"
-	cont "others."
+	text "They let kids in"
+	line "here, huh…"
 	done
 
 GoldenrodGameCornerPokefanM2Text:
@@ -571,12 +561,12 @@ GoldenrodGameCorner_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  6, BGEVENT_READ, GoldenrodGameCornerVoltorbFlipMachineScript
-	bg_event  6,  7, BGEVENT_READ, GoldenrodGameCornerVoltorbFlipMachineScript
-	bg_event  6,  8, BGEVENT_READ, GoldenrodGameCornerVoltorbFlipMachineScript
-	bg_event  6,  9, BGEVENT_READ, GoldenrodGameCornerVoltorbFlipMachineScript
-	bg_event  6, 10, BGEVENT_READ, GoldenrodGameCornerVoltorbFlipMachineScript
-	bg_event  6, 11, BGEVENT_RIGHT, GoldenrodGameCornerVoltorbFlipMachineScript
+	bg_event  6,  6, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
+	bg_event  6,  7, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
+	bg_event  6,  8, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
+	bg_event  6,  9, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
+	bg_event  6, 10, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
+	bg_event  6, 11, BGEVENT_RIGHT, GoldenrodGameCornerSlotsMachineScript
 	bg_event  7,  6, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
 	bg_event  7,  7, BGEVENT_READ, GoldenrodGameCornerLuckySlotsMachineScript
 	bg_event  7,  8, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
