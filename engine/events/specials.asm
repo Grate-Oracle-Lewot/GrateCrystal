@@ -192,6 +192,13 @@ StartGameCornerGame:
 	rst FarCall
 	jp ExitAllMenus
 
+_VoltorbFlip:
+	call CheckCoinsAndCoinCase
+	ret c
+	ld a, BANK(VoltorbFlip)
+	ld hl, VoltorbFlip
+	jr StartGameCornerGame
+
 CheckCoinsAndCoinCase:
 	ld hl, wCoins
 	ld a, [hli]
