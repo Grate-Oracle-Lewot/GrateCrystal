@@ -164,6 +164,7 @@ CyndaquilPokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+	giveitem COIN_CASE
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
