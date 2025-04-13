@@ -722,8 +722,3 @@ SECTION "Type Matchups", ROMX
 
 INCLUDE "data/types/type_matchups.asm"
 INCLUDE "data/types/inverse_type_matchups.asm"
-
-
-SECTION "Voltorb Flip", ROMX
-
-INCLUDE "engine/games/voltorb_flip.asm"
