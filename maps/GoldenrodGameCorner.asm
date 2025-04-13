@@ -529,12 +529,12 @@ GoldenrodGameCornerCooltrainerFText:
 	done
 
 GoldenrodGameCornerGentlemanText:
-	text "VOLTORB Flip is"
-	line "the newest game."
+	text "Voltsweeper is the"
+	line "newest game."
 
 	para "It's a bit more"
 	line "strategic than the"
-	cont "other ones."
+	cont "others."
 	done
 
 GoldenrodGameCornerPokefanM2Text:
