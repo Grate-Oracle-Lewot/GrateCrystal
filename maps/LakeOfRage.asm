@@ -135,6 +135,10 @@ LakeOfRageCooltrainerFScript:
 	jumptextfaceplayer LakeOfRageCooltrainerFText
 
 LakeOfRageSign:
+	giveitem MASTER_BALL
+	loadwildmon MAGIKARP, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext LakeOfRageSignText
 
 MagikarpHouseSignScript:
