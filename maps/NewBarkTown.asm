@@ -120,6 +120,10 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	giveitem MASTER_BALL
+	loadwildmon MAGIKARP, 1
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
