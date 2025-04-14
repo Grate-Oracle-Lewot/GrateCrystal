@@ -6360,7 +6360,7 @@ LoadEnemyMon:
 ; Only applies to Ruins of Alph to prevent infinite loops
 	call CheckUnownLetter
 	jr c, .GenerateDVs ; reroll DVs
-	jr .Happiness
+	jp .Happiness
 
 .Pikachu:
 	ld a, [wTempEnemyMonSpecies]
@@ -6372,18 +6372,45 @@ LoadEnemyMon:
 ; Change second type based on form
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
-	jr .Happiness
+	jp .Happiness
 
 .Magikarp:
-; These filters are untranslated.
-; They expect at wMagikarpLength a 2-byte value in mm, but the value is in feet and inches (one byte each).
-
-; The first filter is supposed to make very large Magikarp even rarer, by targeting those 1600 mm (= 5'3") or larger.
-; After the conversion to feet, it is unable to target any, since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
 	ld a, [wTempEnemyMonSpecies]
 	cp MAGIKARP
-	jr nz, .Happiness
+	jp nz, .Happiness
 
+; Are we at the Lake of Rage?
+	ld a, [wMapGroup]
+	cp GROUP_LAKE_OF_RAGE
+	jr nz, .Skip_Gyarados
+	ld a, [wMapNumber]
+	cp MAP_LAKE_OF_RAGE
+	jr nz, .Skip_Gyarados
+
+; Has the Rocket hideout been cleared?
+	ld hl, wEventFlags
+	ld b, CHECK_FLAG
+	ld de, EVENT_CLEARED_ROCKET_HIDEOUT
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .Skip_Gyarados
+
+; If at the lake with Rockets, change any Magikarp into a Gyarados with all 0 DVs
+; Naturally-occurring Gyarados will still have random DVs
+	ld a, GYARADOS
+	ld [wTempEnemyMonSpecies], a
+	xor a
+	ld b, a
+	ld c, a
+
+	ld hl, wEnemyMonDVs
+	ld a, b
+	ld [hli], a
+	ld [hl], c
+	jr .Happiness
+
+.Skip_Gyarados:
 ; Get Magikarp's length
 	ld de, wEnemyMonDVs
 	ld bc, wPlayerID
