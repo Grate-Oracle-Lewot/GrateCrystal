@@ -6428,7 +6428,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6437,7 +6437,7 @@ LoadEnemyMon:
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 3
-	jr nc, .GenerateDVs
+	jp nc, .GenerateDVs
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
