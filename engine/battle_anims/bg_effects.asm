@@ -27,6 +27,8 @@ ExecuteBGEffects:
 	add hl, bc
 	dec e
 	jr nz, .loop
+BattleBGEffect_BetaSendOutMon1: ; unused
+BattleBGEffect_BetaSendOutMon2: ; unused
 	ret
 
 QueueBGEffect:
@@ -953,8 +955,7 @@ BattleBGEffect_Whirlpool:
 	ld a, $5e
 	ldh [hLYOverrideEnd], a
 	lb de, 2, 2
-	call DeformScreen
-	ret
+	jp DeformScreen
 
 .one
 	jp BattleBGEffect_WavyScreenFX
@@ -1000,9 +1001,6 @@ BattleBGEffect_Water:
 .done
 	call BattleBGEffects_ClearLYOverrides
 	jp EndBattleBGEffect
-
-BattleBGEffect_EndWater:
-	jp BattleAnim_ResetLCDStatCustom
 
 BattleBGEffect_Psychic:
 ; Hardcoded to always affect opponent
@@ -1144,7 +1142,6 @@ BattleBGEffect_DoubleTeam:
 	ld a, [hl]
 	add $4
 	ld [hl], a
-
 .four
 	ret
 
@@ -1553,7 +1550,7 @@ BattleBGEffect_VitalThrow:
 	dw .four
 
 .four
-	call BattleAnim_ResetLCDStatCustom
+	jp BattleAnim_ResetLCDStatCustom
 .two
 	ret
 
@@ -1733,144 +1730,6 @@ BattleBGEffect_BounceDown:
 	ret
 
 .two
-	jp BattleAnim_ResetLCDStatCustom
-
-BattleBGEffect_BetaSendOutMon1: ; unused
-	call BattleBGEffects_AnonJumptable
-.anon_dw
-	dw .zero
-	dw .one
-	dw .two
-	dw .three
-	dw .four
-	dw .five
-
-.zero
-	call BattleBGEffects_IncAnonJumptableIndex
-	ld a, $e4
-	call BattleBGEffects_SetLYOverrides
-	ld a, $47
-	call BattleBGEffect_SetLCDStatCustoms1
-	ldh a, [hLYOverrideEnd]
-	inc a
-	ldh [hLYOverrideEnd], a
-	ldh a, [hLYOverrideStart]
-	ld l, a
-	ld h, HIGH(wLYOverridesBackup)
-.loop
-	ldh a, [hLYOverrideEnd]
-	cp l
-	jr z, .done
-	xor a
-	ld [hli], a
-	jr .loop
-
-.done
-	ld hl, BG_EFFECT_STRUCT_PARAM
-	add hl, bc
-	ld [hl], $0
-.one
-.four
-	ret
-
-.two
-	call .GetLYOverride
-	jr nc, .next
-	jp .SetLYOverridesBackup
-
-.next
-	ld hl, BG_EFFECT_STRUCT_PARAM
-	add hl, bc
-	ld [hl], $0
-	ldh a, [hLYOverrideStart]
-	inc a
-	ldh [hLYOverrideStart], a
-	jp BattleBGEffects_IncAnonJumptableIndex
-
-.three
-	call .GetLYOverride
-	jr nc, .finish
-	call .SetLYOverridesBackup
-	ldh a, [hLYOverrideEnd]
-	dec a
-	ld l, a
-	ld [hl], e
-	ret
-
-.finish
-	jp BattleBGEffects_IncAnonJumptableIndex
-
-.SetLYOverridesBackup:
-	ld e, a
-	ldh a, [hLYOverrideStart]
-	ld l, a
-	ldh a, [hLYOverrideEnd]
-	sub l
-	srl a
-	ld h, HIGH(wLYOverridesBackup)
-.loop2
-	ld [hl], e
-	inc hl
-	inc hl
-	dec a
-	jr nz, .loop2
-	ret
-
-.five
-	jp BattleBGEffects_ResetVideoHRAM
-
-.GetLYOverride:
-	ld hl, BG_EFFECT_STRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	inc [hl]
-	srl a
-	srl a
-	srl a
-	ld e, a
-	ld d, 0
-	ld hl, .data
-	add hl, de
-	ld a, [hl]
-	cp $ff
-	ret
-
-.data
-	db $00, $40, $90, $e4
-	db -1
-
-BattleBGEffect_BetaSendOutMon2: ; unused
-	call BattleBGEffects_AnonJumptable
-.anon_dw
-	dw .zero
-	dw .one
-
-.zero
-	call BattleBGEffects_IncAnonJumptableIndex
-	call BattleBGEffects_ClearLYOverrides
-	ld a, LOW(rSCX)
-	call BattleBGEffect_SetLCDStatCustoms1
-	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
-	add hl, bc
-	ld [hl], $40
-	ret
-
-.one
-	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr z, .done
-	dec [hl]
-	srl a
-	srl a
-	srl a
-	and $f
-	ld d, a
-	ld e, a
-	jp DeformScreen
-
-.done
 	jp BattleAnim_ResetLCDStatCustom
 
 BattleBGEffect_FadeMonsToBlackRepeating:
@@ -2485,6 +2344,8 @@ BattleBGEffect_GetFirstDMGPal:
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
+	; fallthrough
+
 BattleBGEffect_GetNextDMGPal:
 	ld l, a
 	ld h, 0
@@ -2508,6 +2369,8 @@ BattleBGEffect_GetNextDMGPal:
 
 BattleBGEffects_ClearLYOverrides:
 	xor a
+	; fallthrough
+
 BattleBGEffects_SetLYOverrides:
 	ld hl, wLYOverrides
 	ld e, $99
@@ -2555,6 +2418,7 @@ BattleBGEffect_SetLCDStatCustoms2:
 	ldh [hLYOverrideEnd], a
 	ret
 
+BattleBGEffect_EndWater:
 BattleAnim_ResetLCDStatCustom:
 	xor a
 	ldh [hLYOverrideStart], a
