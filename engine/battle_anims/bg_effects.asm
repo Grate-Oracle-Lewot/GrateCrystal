@@ -60,12 +60,6 @@ QueueBGEffect:
 	ld [hl], a
 	ret
 
-EndBattleBGEffect:
-	ld hl, BG_EFFECT_STRUCT_FUNCTION
-	add hl, bc
-	ld [hl], 0
-	ret
-
 DoBattleBGEffectFunction:
 	ld hl, BG_EFFECT_STRUCT_FUNCTION
 	add hl, bc
@@ -131,9 +125,6 @@ BattleBGEffects:
 	dw BattleBGEffect_VibrateMon
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
-
-BattleBGEffect_End:
-	jp EndBattleBGEffect
 
 BatttleBGEffects_GetNamedJumptablePointer:
 	ld hl, BG_EFFECT_STRUCT_JT_INDEX
@@ -355,12 +346,19 @@ BattleBGEffect_HideMon:
 .four
 	xor a
 	ldh [hBGMapMode], a
-	jp EndBattleBGEffect
+	; fallthrough
+
+BattleBGEffect_End:
+EndBattleBGEffect:
+	ld hl, BG_EFFECT_STRUCT_FUNCTION
+	add hl, bc
+	ld [hl], 0
+	ret
 
 BattleBGEffect_ShowMon:
 	call BGEffect_CheckFlyDigStatus
 	jr z, .not_flying
-	jp EndBattleBGEffect
+	jr EndBattleBGEffect
 
 .not_flying
 	call BGEffect_CheckBattleTurn
