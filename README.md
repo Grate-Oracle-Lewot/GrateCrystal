@@ -430,7 +430,7 @@ Yes, but to call this repository "disorganized" would be flattery. Don't say I d
 
 # Credits
 
-Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially Nayru62, ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, DamienDoury, and RaJa239. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
+Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially Nayru62, ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, DamienDoury, and RaJa239. AI switch code adapted from GetKosiorekt, and Voltorb Flip code written by froggestspirit. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
 
 ArtUnderTheArch - Percy trainer sprite, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
 
