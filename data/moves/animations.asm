@@ -411,33 +411,13 @@ BattleAnim_ThrowPokeBall:
 	anim_ret
 
 BattleAnim_SendOutMon:
-	anim_if_param_equal $0, .Normal
 	anim_if_param_equal $1, .Shiny
-	anim_if_param_equal $2, .Unknown
 	anim_1gfx ANIM_GFX_SMOKE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_BETA_SEND_OUT_MON2, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
+	anim_obj ANIM_OBJ_BALL_POOF, 44, 96, $0
+	anim_wait 4
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 128
-	anim_wait 4
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
-.Unknown:
-	anim_1gfx ANIM_GFX_SMOKE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_BETA_SEND_OUT_MON1, $0, BG_EFFECT_USER, $0
-	anim_wait 1
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 4
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
-	anim_incbgeffect ANIM_BG_BETA_SEND_OUT_MON1
-	anim_wait 96
-	anim_incbgeffect ANIM_BG_BETA_SEND_OUT_MON1
-	anim_call BattleAnim_ShowMon_0
+	anim_wait 32
 	anim_ret
 
 .Shiny:
@@ -467,15 +447,6 @@ BattleAnim_SendOutMon:
 	anim_wait 4
 	anim_sound 0, 0, SFX_SHINE
 	anim_obj ANIM_OBJ_SHINY, 48, 96, $38
-	anim_wait 32
-	anim_ret
-
-.Normal:
-	anim_1gfx ANIM_GFX_SMOKE
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BALL_POOF, 44, 96, $0
-	anim_wait 4
-	anim_bgeffect ANIM_BG_ENTER_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 32
 	anim_ret
 
