@@ -303,6 +303,7 @@ Prize Pokémon:
 
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. Conversely, if you turn level caps off, walk around to give Daycare Pokémon experience, and turn hard caps back on, they may exceed the current cap. This is the best I could do given the cap toggle and how Daycare experience and leveling work, so please forgive me.
+- Until you've cleared out Team Rocket's hideout in Mahogany Town, any would-be Magikarp encounter at the Lake of Rage becomes a Gyarados with all 0 DVs (representing the negative effects of the forced evolution). Encounters that are generated as Gyarados in the first place have normal, randomized DVs (or perfect DVs for the Red Gyarados).
 - The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor. (This is purely to prevent Weezing from having Cute Charm, because... look at it.)
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower (0-3 for Flying types)
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
