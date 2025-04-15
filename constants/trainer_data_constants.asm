@@ -33,7 +33,7 @@ NO_AI EQU 0
 	const SWITCH_SOMETIMES_F ; 0
 	const SWITCH_OFTEN_F     ; 1
 	const SWITCH_RARELY_F    ; 2
-	const_SWITCH_STATUS_F    ; 3
+	const SWITCH_STATUS_F    ; 3
 	const CONTEXT_USE_F      ; 4
 	const ALWAYS_USE_F       ; 5
 
