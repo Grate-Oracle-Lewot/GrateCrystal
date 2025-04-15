@@ -240,8 +240,7 @@ BattleCommand_CheckTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of hitting itself
-	call BattleRandom
-	cp 50 percent + 1
+	call EffectCommands_50_50
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -266,8 +265,7 @@ BattleCommand_CheckTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of infatuation
-	call BattleRandom
-	cp 50 percent + 1
+	call EffectCommands_50_50
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
@@ -456,8 +454,7 @@ CheckEnemyTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of hitting itself
-	call BattleRandom
-	cp 50 percent + 1
+	call EffectCommands_50_50
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -499,8 +496,7 @@ CheckEnemyTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of infatuation
-	call BattleRandom
-	cp 50 percent + 1
+	call EffectCommands_50_50
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
@@ -7022,4 +7018,9 @@ GetWeatherTurns:
 	ret
 .five
 	ld a, 5
+	ret
+
+EffectCommands_50_50:
+	call BattleRandom
+	cp 50 percent + 1
 	ret
