@@ -145,10 +145,10 @@ CheckAbleToSwitch:
 	sla c
 	ld b, $ff
 
-.loop1
+.loop
 	inc b
 	sla c
-	jr nc, .loop1
+	jr nc, .loop
 
 	ld a, b
 	add $30 ; maximum chance
@@ -156,12 +156,34 @@ CheckAbleToSwitch:
 	ret
 
 .no_perish
-	; SWITCH_RARELY doesn't consider stat buffs or low HP
+	; SWITCH_STATUS checks volatile statuses here regardless of other switch flags
+	; Doesn't check Foresight, Toxic, Encore, Lock On, or Destiny Bond
+	call GetTrainerClassItemSwitchAttribute
+	bit SWITCH_STATUS_F, a
+	jr z, .no_status
+
+	; 80+% chance to switch if Nightmared, Cursed, or infatuated
+	ld a, [wEnemySubStatus1]
+	and 1 << SUBSTATUS_NIGHTMARE | 1 << SUBSTATUS_CURSE | 1 << SUBSTATUS_IN_LOVE
+	jp nz, .likely_switch
+
+	; 80+% chance to switch if Confused
+	ld a, [wEnemySubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	jp nz, .likely_switch
+
+	; 80+% chance to switch if Seeded
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_LEECH_SEED, a
+	jp nz, .likely_switch
+
+.no_status
+	; SWITCH_RARELY doesn't consider stat buffs
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_RARELY_F, a
-	jp nz, .switch_rarely
+	jr nz, .switch_rarely
 
-	; Don't switch if Evasion is greater than 0
+	; Never switch if Evasion is greater than 0
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 1
 	ret nc
@@ -169,66 +191,57 @@ CheckAbleToSwitch:
 	; 80+% chance to switch if Accuracy is below -1
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
-	jr c, .rollswitch
+	jr c, .likely_switch
 
 	; Check player's stat buffs
 	ld hl, wPlayerStatLevels
 	ld c, NUM_LEVEL_STATS - 1
 	ld b, 0
 	ld e, 0
-.checkplayerbuff
+.check_player_buffs
 	dec c
-	jr z, .checkpt2
+	jr z, .done_player_buffs
 	ld a, [hli]
 	cp BASE_STAT_LEVEL
-	jr c, .checkplayerbuff
+	jr c, .check_player_buffs
 
 	sub a, BASE_STAT_LEVEL
 	add b ; b holds the stat buffs
 	ld b, a
-	jr .checkplayerbuff
+	jr .check_player_buffs
 
-.checkpt2
+.done_player_buffs
 	; Check AI's stat buffs
 	ld hl, wEnemyStatLevels
 	ld c, 7
-.checkenemybuff
+.check_enemy_buffs
 	dec c
-	jr z, .cont_check
+	jr z, .done_enemy_buffs
 	ld a, [hli]
 	cp BASE_STAT_LEVEL
-	jr c, .checkenemybuff
+	jr c, .check_enemy_buffs
 
 	sub a, BASE_STAT_LEVEL
 	add e ; e holds the stat buffs
 	ld e, a
-	jr .checkenemybuff
+	jr .check_enemy_buffs
 
-.cont_check
+.done_enemy_buffs
 	; If AI has no buffs, don't check player buffs
 	ld a, e
 	cp 1
-	jr c, .cont_check_2
+	jr c, .skip_player_buffs
 
 	; If player has at least 2 stat buffs, don't switch
 	ld a, b
 	cp 2
 	ret nc
 
-	; Otherwise, 65% chance to check other clauses
-	call Random
-	cp 35 percent
-	ret c
-
-.cont_check_2
-	; ~35% chance to switch if AI has quarter HP or less (skips possibility of higher chance)
-	callfar AICheckEnemyQuarterHP
-	jp nc, .switch_often
-
+.skip_player_buffs
 	; 80+% chance to switch if any non-Speed stat (because of Curse) is below -2
 	ld b, BASE_STAT_LEVEL -2
 	call CompareEnemyStatLevels
-	jr c, .rollswitch
+	jr c, .likely_switch
 
 	; ~35% chance to switch if any non-Speed stat is at -2
 	ld b, BASE_STAT_LEVEL -1
@@ -236,7 +249,7 @@ CheckAbleToSwitch:
 	jr c, .switch_often
 	jr .switch_rarely
 
-.rollswitch
+.likely_switch
 	; 80% chance to switch, 20% to check other clauses
 	call Random
 	cp 80 percent
