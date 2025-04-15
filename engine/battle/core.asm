@@ -6400,10 +6400,14 @@ LoadEnemyMon:
 ; Naturally-occurring Gyarados will still have random DVs
 	ld a, GYARADOS
 	ld [wTempEnemyMonSpecies], a
+	ld [wEnemyMonSpecies], a
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
 	xor a
 	ld b, a
 	ld c, a
-
 	ld hl, wEnemyMonDVs
 	ld a, b
 	ld [hli], a
