@@ -157,7 +157,6 @@ CheckAbleToSwitch:
 
 .no_perish
 	; SWITCH_STATUS checks volatile statuses here regardless of other switch flags
-	; Doesn't check Foresight, Toxic, Encore, Lock On, or Destiny Bond
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_STATUS_F, a
 	jr z, .no_status
@@ -175,6 +174,15 @@ CheckAbleToSwitch:
 	; 80+% chance to switch if Seeded
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
+	jp nz, .likely_switch
+
+	; 50% chance of skipping SubStatus5 checks
+	call EffectCommands_50_50
+	jr c, .no_status
+
+	; ~40% chance (due to above 50/50) to switch if badly poisoned, Encored, or Destiny Bonded
+	ld a, [wEnemySubStatus5]
+	and 1 << SUBSTATUS_TOXIC | 1 << SUBSTATUS_ENCORED | 1 << SUBSTATUS_DESTINY_BOND
 	jp nz, .likely_switch
 
 .no_status
