@@ -224,7 +224,7 @@ BeedrillEvosAttacks:
 PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, SCRATCH
 	db 5, SAND_ATTACK
 	db 9, GUST
 	db 13, QUICK_ATTACK
@@ -240,7 +240,7 @@ PidgeyEvosAttacks:
 PidgeottoEvosAttacks:
 	db EVOLVE_LEVEL, 36, PIDGEOT
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, SCRATCH
 	db 5, SAND_ATTACK
 	db 9, GUST
 	db 13, QUICK_ATTACK
@@ -255,7 +255,7 @@ PidgeottoEvosAttacks:
 
 PidgeotEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, SCRATCH
 	db 5, SAND_ATTACK
 	db 9, GUST
 	db 13, QUICK_ATTACK
@@ -2418,7 +2418,7 @@ FeraligatrEvosAttacks:
 SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, POUND
 	db 2, GROWL
 	db 5, TAIL_WHIP
 	db 11, QUICK_ATTACK
@@ -2434,7 +2434,7 @@ SentretEvosAttacks:
 
 FurretEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, POUND
 	db 2, GROWL
 	db 5, TAIL_WHIP
 	db 11, QUICK_ATTACK
@@ -3381,7 +3381,7 @@ PiloswineEvosAttacks:
 
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, SCRATCH
 	db 2, GROWTH
 	db 3, HARDEN
 	db 7, SPIKES
