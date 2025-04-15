@@ -919,6 +919,8 @@ Pics_Page:
 	jr .spritepage_loop
 
 .up_or_down_pressed
+	call Pokedex_NextOrPreviousDexEntry
+	jr nc, .spritepage_loop
 	ld a, -1
 	ld [wLastDexMode], a
 	call Pokedex_NextOrPreviousDexEntry
