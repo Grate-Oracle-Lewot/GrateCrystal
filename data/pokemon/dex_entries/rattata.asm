@@ -1,10 +1,10 @@
 	db "RAT@" ; species name
 	dw 100, 80 ; height, weight
 
-	db   "Legend tells of a"
+	db   "A KALOSIAN fairy"
+	next "tale speaks of a"
 	next "RATTATA with an"
-	next "unmatched passion"
 
-	page "and talent for the"
-	next "culinary arts."
-	next "@"
+	page "unmatched passion"
+	next "and talent for the"
+	next "culinary arts.@"
