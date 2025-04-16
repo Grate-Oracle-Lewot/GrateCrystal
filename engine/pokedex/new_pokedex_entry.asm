@@ -31,12 +31,7 @@ NewPokedexEntry:
 	ldh a, [hSCX]
 	add -POKEDEX_SCX
 	ldh [hSCX], a
-	call .ReturnFromDexRegistration
-	pop af
-	ldh [hMapAnims], a
-	ret
 
-.ReturnFromDexRegistration:
 	call ClearTilemap
 	call LoadFontsExtra
 	call LoadStandardFont
@@ -49,4 +44,8 @@ NewPokedexEntry:
 	ld [wTempMonDVs + 1], a
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
-	jp SetPalettes
+	call SetPalettes
+
+	pop af
+	ldh [hMapAnims], a
+	ret
