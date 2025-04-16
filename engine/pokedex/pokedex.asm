@@ -3381,6 +3381,10 @@ _NewPokedexEntry:
 	call WaitBGMap
 	call GetBaseData
 	ld de, vTiles2
+
+	ld a, [wFirstUnownCaught]
+	ld [wUnownLetter], a
+
 	predef GetMonFrontpic
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
