@@ -3382,6 +3382,7 @@ _NewPokedexEntry:
 	call GetBaseData
 	ld de, vTiles2
 
+	; hacky fix
 	ld a, [wFirstUnownCaught]
 	ld [wUnownLetter], a
 
