@@ -680,10 +680,10 @@ SpiteEffectText:
 	text "<TARGET>'s"
 	line "@"
 	text_ram wStringBuffer1
-	text " was"
-	scroll "reduced by @"
+	text " lost"
+	scroll "@"
 	text_decimal wTextDecimalByte, 1, 1
-	text "!"
+	text " PP!"
 	autodone
 
 BellChimedText:
