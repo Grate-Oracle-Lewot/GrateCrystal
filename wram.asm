@@ -3234,7 +3234,9 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 18
+	ds 17
+
+wFirstUnownCaught:: db
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
