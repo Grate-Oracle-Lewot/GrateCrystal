@@ -6759,6 +6759,7 @@ CheckUnownLetter:
 .not_alph
 	ld a, [wUnownLetter]
 .match
+	ld [wFirstUnownCaught], a
 ; Valid letter
 	and a
 	ret
