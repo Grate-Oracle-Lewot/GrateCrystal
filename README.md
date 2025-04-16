@@ -279,7 +279,7 @@ Prize Pokémon:
 
 - In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They will also avoid using items on a Pokémon that is currently afflicted with Perish Song.
 
-- Trainers will now switch out their Pokémon... like, ever, but also intelligently, based on factors such as volatile status conditions and player and AI stat increases and decreases. This code was adapted from Lunatic Crystal by GetKosiorekt.
+- Trainers will now switch out their Pokémon... like, ever, but also intelligently, based on factors such as volatile status conditions and player and AI stat increases and decreases, with variations in this behavior depending on trainer class. This code was adapted from Lunatic Crystal by GetKosiorekt.
 
 - Move lists in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/ai updated. Most notably, "useful moves" now consists only of moves with decent base power, 100% accuracy, no type that's immune to them, and no drawbacks like (re)charge turns or recoil. Spore is also on there due to being the best status move.
 
