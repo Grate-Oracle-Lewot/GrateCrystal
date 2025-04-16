@@ -350,8 +350,8 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
 - Tiles animate even when textboxes are open
 - Enemy trainers have maximum happiness for a powerful Return
-- Colored party menu icons, plus a few new ones
-- Some songs imported from Gen I
+- Colored party menu icons, plus a few new ones (and some old ones from Gen I)
+- Most Gen I songs used somewhere, plus a couple of demixed songs from later games
 - A fourth Pokémon stats page showing DVs and Hidden Power type
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
@@ -413,6 +413,10 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 Again, above my skill level. It also has some requirements like variable-width font and certain pixel restrictions on Pokémon icons, and I don't really want to deal with all that.
 
+# Why not unique icons for every Pokémon?
+
+While I have added some icons, I find a limited selection of them to be rather charming. I'm particularly proud of using Chansey's icon for Kangaskhan, because of the belly pouch. That kind of choice feels artistic to me.
+
 # Why did you use THIS beta mon instead of THAT one?
 
 Along with personal preference, I prioritized the ones that could most reasonably be given unique type combinations (unique within this hack, that is), thus allowing for wider type variety overall.
@@ -424,6 +428,10 @@ The thing is, there are many types of challenge runs, and I don't want to restri
 # How come turning off battle items doesn't stop the computer from using them?
 
 The whole point of that setting is to make the game harder. Turning off computer items along with yours would be more of a sidegrade. Anyway, both are off in the Battle Tower.
+
+# I've seen hacks that let you choose whether to use the normal Pokémon types and type chart instead of the changed ones. Why not at least have the option?
+
+Because I designed everything around the changes - learnsets, enemy parties, even some of the changes to the type chart itself. If I were to offer that kind of alternate mode, I would feel obligated to redo all that stuff for it, and that's not happening.
 
 # Can I copy your code?
 
