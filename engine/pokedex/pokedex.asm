@@ -923,7 +923,6 @@ Pics_Page:
 	jr nc, .spritepage_loop
 	ld a, -1
 	ld [wLastDexMode], a
-	call Pokedex_NextOrPreviousDexEntry
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	pop de
