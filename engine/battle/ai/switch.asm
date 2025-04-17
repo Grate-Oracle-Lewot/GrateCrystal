@@ -191,11 +191,17 @@ CheckAbleToSwitch:
 	bit SWITCH_RARELY_F, a
 	jr nz, .switch_rarely
 
+	; Skip Evasion check if identified by Foresight
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .identified
+
 	; Never switch if Evasion is greater than 0
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 1
 	ret nc
 
+.identified
 	; 80+% chance to switch if Accuracy is below -1
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
