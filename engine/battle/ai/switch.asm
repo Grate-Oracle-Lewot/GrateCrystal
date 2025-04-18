@@ -156,6 +156,11 @@ CheckAbleToSwitch:
 	ret
 
 .no_perish
+	; Never switch if you've used an X Accuracy on this mon
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	ret nz
+
 	; SWITCH_STATUS checks volatile statuses here regardless of other switch flags
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_STATUS_F, a
