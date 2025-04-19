@@ -159,7 +159,7 @@ Route20WillText1:
 	cont "doesn't count."
 	done
 
-Route20WillText1:
+Route20WillText2:
 	text "A hint? Uhhhh…"
 
 	para "They're hiding, so"
