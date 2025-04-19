@@ -150,17 +150,14 @@ GoldenrodDeptStoreRoofTeacherText:
 	done
 
 GoldenrodDeptStoreRoofBugCatcherText:
-	text "My #MON always"
-	line "get paralyzed or"
+	text "I came to buy PP-"
+	line "restoring items,"
 
-	para "poisoned when the"
-	line "chips are down…"
-
-	para "So I came to buy"
-	line "some FULL HEAL."
+	para "since they're so"
+	line "hard to find."
 
 	para "I wonder if"
-	line "there's any left?"
+	line "there're any left?"
 	done
 
 Binoculars1Text:
@@ -199,14 +196,11 @@ Binoculars3Text:
 	done
 
 PokeDollVendingMachineText:
-	text "A vending machine"
-	line "for #MON dolls?"
+	text "A claw machine for"
+	line "#MON plushies."
 
-	para "Insert money, then"
-	line "turn the crank…"
-
-	para "But it's almost"
-	line "empty…"
+	para "These things are"
+	line "always rigged."
 	done
 
 GoldenrodDeptStoreRoof_MapEvents:
