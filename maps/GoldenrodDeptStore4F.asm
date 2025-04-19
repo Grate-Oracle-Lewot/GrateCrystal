@@ -47,8 +47,12 @@ GoldenrodDeptStore4FCooltrainerMText:
 	done
 
 GoldenrodDeptStore4FBugCatcherText:
-	text "IRON adds to your"
-	line "#MON's DEFENSE."
+	text "CALCIUM adds to"
+	line "both SPCL.ATTACK"
+	cont "and SPCL.DEFENSE."
+
+	para "It's a holdover"
+	line "from Gen I's code…"
 	done
 
 GoldenrodDeptStore4FGameboyKidText:
