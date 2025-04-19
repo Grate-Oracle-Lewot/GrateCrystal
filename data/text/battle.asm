@@ -156,7 +156,8 @@ BattleText_HailContinuesToFall:
 	autodone
 
 BattleText_TheRainStopped:
-	text "The rain stopped."
+	text "It stopped"
+	line "raining."
 	autodone
 
 BattleText_TheSunlightFaded:
@@ -170,7 +171,8 @@ BattleText_TheSandstormSubsided:
 	autodone
 
 BattleText_TheHailStopped:
-	text "The hail stopped."
+	text "It stopped"
+	line "hailing."
 	autodone
 
 BattleText_EnemyMonFainted:
@@ -1081,8 +1083,8 @@ DownpourText:
 	autodone
 
 SunGotBrightText:
-	text "The sunlight got"
-	line "bright!"
+	text "The sunlight"
+	line "turned harsh!"
 	autodone
 
 BellyDrumText:
@@ -1129,8 +1131,8 @@ BattleText_LinkErrorBattleCanceled:
 	prompt
 
 ItStartedToHailText:
-	text "It started to"
-	line "hail!"
+	text "Hailstones started"
+	line "to fall!"
 	autodone
 
 PeltedByHailText:
