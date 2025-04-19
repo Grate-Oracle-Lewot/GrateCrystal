@@ -66,10 +66,18 @@ TrainerSwimmermCameron:
 Route20WillScript:
 	faceplayer
 	opentext
-	writetext Route20WillText
+	checkevent EVENT_ELITE_HIDE_AND_SEEK
+	iftrue .After
+	writetext Route20WillText1
 	waitbutton
 	closetext
 	setevent EVENT_ELITE_HIDE_AND_SEEK
+	end
+
+.After:
+	writetext Route20WillText2
+	waitbutton
+	closetext
 	end
 
 CinnabarGymSign:
@@ -128,7 +136,7 @@ SwimmermCameronAfterBattleText:
 	cont "ponds and rivers."
 	done
 
-Route20WillText:
+Route20WillText1:
 	text "Ah, it's you."
 
 	para "I'm A.D. from the"
@@ -149,6 +157,20 @@ Route20WillText:
 	para "And no, rematching"
 	line "them at the LEAGUE"
 	cont "doesn't count."
+	done
+
+Route20WillText1:
+	text "A hint? Uhhhh…"
+
+	para "They're hiding, so"
+	line "they'll probably go"
+
+	para "to places where"
+	line "you wouldn't other-"
+	cont "wise have to go,"
+
+	para "if you catch my"
+	line "drift."
 	done
 
 CinnabarGymSignText:
