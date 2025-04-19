@@ -86,7 +86,7 @@ EcruteakHistoryBookText2:
 	line "roost of powerful"
 	cont "dragon #MON."
 
-	text "ECRUTEAK was also"
+	para "ECRUTEAK was also"
 	line "home to three"
 
 	para "#MON that raced"
@@ -110,7 +110,7 @@ EcruteakHistoryBookText2:
 	para "It's said that the"
 	line "tower's dragon re-"
 	cont "vived the fallen"
-	para "#MON."
+	cont "#MON."
 
 	para "But the two drag-"
 	line "ons were never"
