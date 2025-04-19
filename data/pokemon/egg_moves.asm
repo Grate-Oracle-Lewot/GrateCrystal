@@ -750,10 +750,11 @@ DunsparceEggMoves:
 	db -1 ; end
 
 GligarEggMoves:
+	db BITE
+	db LICK
+	db LEECH_LIFE
 	db EARTH_POWER
 	db METAL_CLAW
-	db FURY_ATTACK
-	db COUNTER
 	db CROSS_CHOP
 	db -1 ; end
 
