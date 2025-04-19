@@ -719,7 +719,7 @@ BattleTowerFalkner:
 
 	db GLIGAR
 	db QUICK_CLAW
-	db FLY, DIG, SWORDS_DANCE, CRABHAMMER
+	db SKY_ATTACK, DIG, SWORDS_DANCE, CRABHAMMER
 	dw 0 ; OT ID
 	dt 1059860 ; Exp
 	; Stat exp
@@ -729,7 +729,7 @@ BattleTowerFalkner:
 	bigdw 65535
 	bigdw 65535
 	dn 10, 10, 10, 10 ; DVs
-	db 24, 24, 24, 8 ; PP
+	db 8, 24, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
