@@ -1320,7 +1320,7 @@ MukEvosAttacks:
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, BUBBLE
 	db 2, HARDEN
 	db 9, SUPERSONIC
 	db 13, CLAMP
@@ -1334,7 +1334,7 @@ ShellderEvosAttacks:
 
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, BUBBLE
 	db 2, HARDEN
 	db 9, SUPERSONIC
 	db 13, CLAMP
