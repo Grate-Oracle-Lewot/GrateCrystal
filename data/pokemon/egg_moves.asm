@@ -286,7 +286,7 @@ GrimerEggMoves:
 ShellderEggMoves:
 	db RAPID_SPIN
 	db SCREECH
-	db DAZZLY_GLEAM
+	db LICK
 	db CRABHAMMER
 	db PRESENT
 	db POWER_GEM
