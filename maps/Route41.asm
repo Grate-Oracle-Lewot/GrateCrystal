@@ -227,7 +227,7 @@ SwimmermMathewBeatenText:
 
 SwimmermMathewAfterBattleText:
 	text "A secret about"
-	line "WHIRL ISLANDS…"
+	line "the WHIRL ISLANDS…"
 
 	para "It's pitch-black"
 	line "inside!"
@@ -235,7 +235,7 @@ SwimmermMathewAfterBattleText:
 
 SwimmerfKayleeSeenText:
 	text "I'm on my way to"
-	line "WHIRL ISLANDS."
+	line "the WHIRL ISLANDS."
 
 	para "I'm going explor-"
 	line "ing with friends."
@@ -250,7 +250,7 @@ SwimmerfKayleeAfterBattleText:
 	text "There's supposed"
 	line "to be a big #-"
 	cont "MON deep beneath"
-	cont "WHIRL ISLANDS."
+	cont "the WHIRL ISLANDS."
 
 	para "I wonder what it"
 	line "could be?"
@@ -313,7 +313,7 @@ SwimmerfKaraBeatenText:
 SwimmerfKaraAfterBattleText:
 	text "I heard roars from"
 	line "deep inside the"
-	cont "ISLANDS."
+	cont "islands."
 	done
 
 SwimmerfWendySeenText:
