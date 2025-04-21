@@ -111,5 +111,5 @@ LakeOfRageHiddenPowerHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, HiddenPowerHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1
+	object_event  5,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1
 	object_event  0,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSupernerdDave, -1
