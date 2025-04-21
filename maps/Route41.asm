@@ -216,7 +216,7 @@ SwimmermKirkAfterBattleText:
 
 SwimmermMathewSeenText:
 	text "Are you seeking"
-	line "the secrets of"
+	line "the secrets of the"
 	cont "WHIRL ISLANDS?"
 	done
 
