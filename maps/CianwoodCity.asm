@@ -2,13 +2,14 @@
 	const CIANWOODCITY_YOUNGSTER
 	const CIANWOODCITY_POKEFAN_M
 	const CIANWOODCITY_LASS
+	const CIANWOODCITY_POKEFAN_F
+	const CIANWOODCITY_SAILOR
 	const CIANWOODCITY_ROCK1
 	const CIANWOODCITY_ROCK2
 	const CIANWOODCITY_ROCK3
 	const CIANWOODCITY_ROCK4
 	const CIANWOODCITY_ROCK5
 	const CIANWOODCITY_ROCK6
-	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
 
@@ -114,6 +115,40 @@ CianwoodCityPokefanM:
 
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
+
+CianwoodCitySailor:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_OLD_ROD
+	iftrue .Alola
+	checkevent EVENT_GOT_GOOD_ROD
+	iftrue .Alola
+	checkevent EVENT_GOT_SUPER_ROD
+	iftrue .Alola
+	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
+	iftrue .Alola
+	setval TENTACOOL
+	special MonCheck
+	iftrue .Alola
+	writetext CianwoodCitySailorTentacoolText
+	yesorno
+	iftrue .GiveTentacool
+	sjump .Done
+
+.GiveTentacool:
+	writetext PlayerReceivedTentacoolText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke TENTACOOL, 10
+	sjump .Done
+
+.Alola
+	writetext CianwoodCitySailorAlolaText
+.Done
+	waitbutton
+	closetext
+	end
 
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
@@ -263,6 +298,23 @@ CianwoodCityLassText:
 	line "MON."
 	done
 
+CianwoodCitySailorAlolaText:
+	text "Alola! Welcome to"
+	line "CIANWOOD CITY!"
+	done
+
+CianwoodCitySailorTentacoolText:
+	text "I caught so many"
+	line "TENTACOOL."
+
+	para "Do you want one?"
+	done
+
+PlayerReceivedTentacoolText:
+	text "<PLAYER> received"
+	line "TENTACOOL!"
+	done
+
 EusineSuicuneText:
 	text "EUSINE: Yo,"
 	line "<PLAYER>."
@@ -348,9 +400,6 @@ CianwoodPharmacySignText:
 
 	para "CIANWOOD CITY"
 	line "PHARMACY"
-
-	para "We Await Your"
-	line "Medicinal Queries"
 	done
 
 CianwoodPhotoStudioSignText:
@@ -396,12 +445,13 @@ CianwoodCity_MapEvents:
 	object_event 21, 37, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
 	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 42, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
+	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
+	object_event 27, 45, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCitySailor, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
