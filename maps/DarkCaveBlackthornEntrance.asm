@@ -69,6 +69,9 @@ DarkCaveBlackthornEntrancePharmacistText2:
 	text "BLACKGLASSES up"
 	line "the power of dark-"
 	cont "type moves."
+
+	para "Plus, they look"
+	line "cool."
 	done
 
 SupernerdNortonSeenText:
