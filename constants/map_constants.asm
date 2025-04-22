@@ -336,7 +336,7 @@ ENDM
 	map_const OLIVINE_CITY,                                20, 18 ;  1
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  2
 	map_const OLIVINE_MART,                                 6,  4 ;  3
-	map_const OLIVINE_GYM,                                  5,  8 ;  4
+	map_const OLIVINE_GYM,                                 14, 22 ;  4
 	map_const OLIVINE_CAFE,                                 4,  4 ;  5
 	map_const OLIVINE_GOOD_ROD_HOUSE,                       4,  4 ;  6
 	map_const OLIVINE_TIMS_HOUSE,                           4,  4 ;  7
