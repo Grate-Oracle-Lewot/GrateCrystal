@@ -112,3 +112,6 @@ INCLUDE "gfx/tilesets/spinners_palette_map.asm"
 
 TilesetViridianGymPalMap:
 INCLUDE "gfx/tilesets/viridian_gym_palette_map.asm"
+
+TilesetOlivineGymPalMap:
+INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
