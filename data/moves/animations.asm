@@ -2867,16 +2867,16 @@ BattleAnim_IcyWind:
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_battlergfx_1row
 .loop
-	anim_sound 6, 2, SFX_SHINE
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
-	anim_sound 6, 2, SFX_SHINE
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
-	anim_sound 6, 2, SFX_SHINE
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
-	anim_sound 6, 2, SFX_SHINE
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_sound 6, 2, SFX_SHINE
