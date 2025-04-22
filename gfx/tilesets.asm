@@ -353,3 +353,12 @@ INCBIN "data/tilesets/viridian_gym_metatiles.bin"
 
 TilesetViridianGymColl::
 INCLUDE "data/tilesets/viridian_gym_collision.asm"
+
+TilesetOlivineGymGFX::
+INCBIN "gfx/tilesets/olivine_gym.2bpp.lz"
+
+TilesetOlivineGymMeta::
+INCBIN "data/tilesets/olivine_gym_metatiles.bin"
+
+TilesetOlivineGymColl::
+INCLUDE "data/tilesets/olivine_gym_collision.asm"
