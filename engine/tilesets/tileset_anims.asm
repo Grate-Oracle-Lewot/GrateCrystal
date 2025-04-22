@@ -32,7 +32,6 @@ _AnimateTileset::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
 	jp hl
 
 Tileset0Anim:
@@ -118,6 +117,7 @@ TilesetEliteFourRoomAnim:
 
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
+TilesetOlivineGymAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -214,7 +214,6 @@ DoneTileAnimation:
 ; Reset the animation command loop.
 	xor a
 	ldh [hTileAnimFrame], a
-
 WaitTileAnimation:
 ; Do nothing this frame.
 	ret
@@ -235,31 +234,7 @@ ScrollTileRightLeft:
 	ld [wTileAnimationTimer], a
 	and %100
 	jr nz, ScrollTileLeft
-	jr ScrollTileRight
-
-ScrollTileUpDown: ; unreferenced
-; Scroll up for 4 ticks, then down for 4 ticks.
-	ld a, [wTileAnimationTimer]
-	inc a
-	and %111
-	ld [wTileAnimationTimer], a
-	and %100
-	jr nz, ScrollTileDown
-	jr ScrollTileUp
-
-ScrollTileLeft:
-	ld h, d
-	ld l, e
-	ld c, LEN_2BPP_TILE / 4
-.loop
-rept 4
-	ld a, [hl]
-	rlca
-	ld [hli], a
-endr
-	dec c
-	jr nz, .loop
-	ret
+	; fallthrough
 
 ScrollTileRight:
 	ld h, d
@@ -269,6 +244,20 @@ ScrollTileRight:
 rept 4
 	ld a, [hl]
 	rrca
+	ld [hli], a
+endr
+	dec c
+	jr nz, .loop
+	ret
+
+ScrollTileLeft:
+	ld h, d
+	ld l, e
+	ld c, LEN_2BPP_TILE / 4
+.loop
+rept 4
+	ld a, [hl]
+	rlca
 	ld [hli], a
 endr
 	dec c
