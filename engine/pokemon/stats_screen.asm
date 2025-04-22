@@ -792,7 +792,6 @@ LoadOrangePage:
 
 	ld hl, wTempMonDVs
 	farcall GetHiddenPowerType
-	ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
 	hlcoord 1, 16
