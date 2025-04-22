@@ -52,4 +52,5 @@ Tilesets::
 	tileset TilesetMuseum
 	tileset TilesetSpinners
 	tileset TilesetViridianGym
+	tileset TilesetOlivineGym
 	assert_table_length NUM_TILESETS + 1
