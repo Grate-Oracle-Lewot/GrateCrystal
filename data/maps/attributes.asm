@@ -554,7 +554,7 @@ ENDM
 	map_attributes EcruteakLugiaSpeechHouse, ECRUTEAK_LUGIA_SPEECH_HOUSE, $00, 0
 	map_attributes OlivinePokecenter1F, OLIVINE_POKECENTER_1F, $00, 0
 	map_attributes OlivineMart, OLIVINE_MART, $00, 0
-	map_attributes OlivineGym, OLIVINE_GYM, $00, 0
+	map_attributes OlivineGym, OLIVINE_GYM, $09, 0
 	map_attributes OlivineCafe, OLIVINE_CAFE, $00, 0
 	map_attributes OlivineGoodRodHouse, OLIVINE_GOOD_ROD_HOUSE, $00, 0
 	map_attributes OlivineTimsHouse, OLIVINE_TIMS_HOUSE, $00, 0
