@@ -54,4 +54,7 @@ GetHiddenPowerType::
 	cp UNUSED_TYPES
 	ret c
 	add UNUSED_TYPES_END - UNUSED_TYPES
+
+; Load type index to display type name on stats screen
+	ld [wNamedObjectIndex], a
 	ret
