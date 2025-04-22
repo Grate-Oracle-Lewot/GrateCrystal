@@ -8,6 +8,20 @@ HiddenPowerDamage:
 	ld hl, wEnemyMonDVs
 .got_dvs
 
+	call GetHiddenPowerType
+; Overwrite the current move type.
+	push af
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	pop af
+	or SPECIAL
+	ld [hl], a
+
+; Get the rest of the damage formula variables based on the new type.
+	farcall BattleCommand_DamageStats ; damagestats
+	ret
+
+GetHiddenPowerType::
 	; Def & 3
 	ld a, [hl]
 	and %0011
@@ -33,24 +47,11 @@ HiddenPowerDamage:
 
 ; Skip Bird
 	cp BIRD
-	jr c, .done
+	ret c
 	inc a
 
 ; Skip unused types
 	cp UNUSED_TYPES
-	jr c, .done
+	ret c
 	add UNUSED_TYPES_END - UNUSED_TYPES
-
-.done
-
-; Overwrite the current move type.
-	push af
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	pop af
-	or SPECIAL
-	ld [hl], a
-
-; Get the rest of the damage formula variables based on the new type.
-	farcall BattleCommand_DamageStats ; damagestats
 	ret
