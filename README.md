@@ -337,7 +337,7 @@ Prize Pokémon:
 - No more swarm encounters
 - No more badge boosts (stat-based or type-based)
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
-- Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, a quick exit warp added to Sabrina's Gym, and Viridian Gym's old layout recreated with its Gen II Lego tiles
+- Olivine Gym redesigned, Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, a quick exit warp added to Sabrina's Gym, and Viridian Gym's old layout recreated with its Gen II Lego tiles
 - The Marshbadge and Soulbadge have their names and designs swapped
 - Female players retain their female sprites in the Link Trade and Battle rooms
 - Text edits, often humorous (or so I'd like to think)
