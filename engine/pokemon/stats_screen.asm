@@ -782,6 +782,7 @@ LoadBluePage:
 	dw wBufferMonOT
 
 LoadOrangePage:
+; Print DVs
 	ld de, DVGenesString
 	hlcoord 7, 9
 	call PlaceString
@@ -790,8 +791,31 @@ LoadOrangePage:
 	call PlaceString
 	predef PrintTempMonDVs
 
+; Print Hidden Power type
 	ld hl, wTempMonDVs
-	farcall GetHiddenPowerType
+	ld a, [hl]
+	and %0011
+	ld b, a
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+	inc a
+	cp BIRD
+	jr c, .done
+	inc a
+	cp UNUSED_TYPES
+	jr c, .done
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.done
+	ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
 	hlcoord 1, 16
