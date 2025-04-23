@@ -113,6 +113,7 @@ TreeRockRodItemEncounter:
 	ret
 	
 HeadbuttItemTable:
+	db 1, BIG_MUSHROOM
 	db 2, MIRACLE_SEED
 	db 2, GOLD_BERRY
 	db 2, MIRACLEBERRY
@@ -133,6 +134,7 @@ HeadbuttItemTable:
 	db 4, WHT_APRICORN
 	db 4, BLK_APRICORN
 	db 4, PNK_APRICORN
+	db 4, TINYMUSHROOM
 	db -1
 
 RockSmashItemTable:
