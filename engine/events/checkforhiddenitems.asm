@@ -83,7 +83,14 @@ CheckForHiddenItems:
 	ret
 
 HeadbuttItemEncounter:
-	ld hl, .HeadbuttItems
+	ld hl, HeadbuttItemTable
+	jr TreeRockRodItemEncounter
+
+RockItemEncounter:
+	ld hl, RockSmashItemTable
+	; fallthrough
+
+TreeRockRodItemEncounter:
 	call Random
 .loop
 	sub [hl]
@@ -101,7 +108,7 @@ HeadbuttItemEncounter:
 	ld [wScriptVar], a
 	ret
 	
-.HeadbuttItems:
+HeadbuttItemTable:
 	db 2, MIRACLE_SEED
 	db 2, GOLD_BERRY
 	db 2, MIRACLEBERRY
@@ -124,26 +131,7 @@ HeadbuttItemEncounter:
 	db 4, PNK_APRICORN
 	db -1
 
-RockItemEncounter:
-	ld hl, .RockItems
-	call Random
-.loop
-	sub [hl]
-	jr c, .ok
-	inc hl
-	inc hl
-	jr .loop
-
-.ok
-	ld a, [hli]
-	inc a
-	jr z, .done
-	ld a, [hli]
-.done
-	ld [wScriptVar], a
-	ret
-	
-.RockItems:
+RockSmashItemTable:
 	db 1, OLD_AMBER
 	db 1, DOME_FOSSIL
 	db 1, HELIX_FOSSIL
