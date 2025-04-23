@@ -6,6 +6,7 @@
 	const BLACKTHORNGYM1F_GYM_GUIDE
 	const BLACKTHORNGYM1F_DRAGONITE
 	const BLACKTHORNGYM1F_DRAGONITE_STATUE
+	const BLACKTHORNGYM1F_DRAGONITE_FLY
 
 BlackthornGym1F_MapScripts:
 	def_scene_scripts
@@ -30,6 +31,7 @@ BlackthornGym1F_MapScripts:
 	endcallback
 
 .Dragonite:
+	disappear BLACKTHORNGYM1F_DRAGONITE_FLY
 	disappear BLACKTHORNGYM1F_DRAGONITE
 	checkevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
 	iftrue .DisappearBoth
@@ -171,14 +173,14 @@ BlackthornGymDragoniteScript:
 	faceplayer
 	cry DRAGONITE
 	waitsfx
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
 	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
-	disappear BLACKTHORNGYM1F_DRAGONITE
 	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
+	disappear BLACKTHORNGYM1F_DRAGONITE
+	appear BLACKTHORNGYM1F_DRAGONITE_FLY
 	playsound SFX_WARP_TO
+	applymovement BLACKTHORNGYM1F_DRAGONITE_FLY, BlackthornGymDragoniteFlyAway
+	disappear BLACKTHORNGYM1F_DRAGONITE_FLY
 	waitsfx
-	special FadeInQuickly
 	opentext
 	writetext BlackthornGymDragoniteText
 	waitbutton
@@ -203,6 +205,10 @@ BlackthornGymDragoniteStatueScript:
 	closetext
 .AlreadyTalked:
 	end
+
+BlackthornGymDragoniteFlyAway:
+	teleport_from
+	step_end
 
 ClairIntroText:
 	text "I am CLAIR."
@@ -500,5 +506,6 @@ BlackthornGym1F_MapEvents:
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
-	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE
+	object_event  2,  4, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE
 	object_event  7,  3, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteStatueScript, EVENT_BLACKTHORN_GYM_STATUE
+	object_event  2,  4, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymDragoniteScript, EVENT_BLACKTHORN_GYM_DRAGONITE_FLY
