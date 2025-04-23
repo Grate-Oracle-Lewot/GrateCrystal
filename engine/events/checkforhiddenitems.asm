@@ -88,6 +88,10 @@ HeadbuttItemEncounter:
 
 RockItemEncounter:
 	ld hl, RockSmashItemTable
+	jr TreeRockRodItemEncounter
+
+FishingItemEncounter:
+	ld hl, FishingItemTable
 	; fallthrough
 
 TreeRockRodItemEncounter:
@@ -143,7 +147,21 @@ RockSmashItemTable:
 	db 6, REVIVE
 	db 8, KINGS_ROCK
 	db 8, NUGGET
+	db 10, STARDUST
 	db 16, HARD_STONE
 	db 16, SOFT_SAND
 	db 64, BRICK_PIECE
+	db -1
+
+FishingItemTable:
+	db 1, BIG_PEARL
+	db 1, DRAGON_FANG
+	db 2, DRAGON_SCALE
+	db 3, STAR_PIECE
+	db 4, WATER_STONE
+	db 4, TRIDENT
+	db 8, MYSTIC_WATER
+	db 10, PEARL
+	db 16, SLOWPOKETAIL
+	db 16, BRICK_PIECE
 	db -1
