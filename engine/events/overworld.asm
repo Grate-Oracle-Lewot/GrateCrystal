@@ -1542,29 +1542,33 @@ FishFunction:
 	ld a, $1
 	ld [wFishingResult], a
 	ld hl, Script_GotABite
-	call QueueScript
-	ld a, JUMPTABLE_EXIT | $1
-	ret
+	jr .queue
 
 .FishNoBite:
 	ld a, $2
-	ld [wFishingResult], a
-	ld hl, Script_NotEvenANibble
-	call QueueScript
-	ld a, JUMPTABLE_EXIT | $1
-	ret
+	jr .FinishFish
 
 .FishNoFish:
 	ld a, $0
+.FinishFish:
 	ld [wFishingResult], a
 	ld hl, Script_NotEvenANibble
+.queue
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 Script_NotEvenANibble:
 	scall Script_FishCastRod
+	callasm FishingtItemEncounter
+ 	iffalse .no_item
+ 	opentext
+ 	verbosegiveitem ITEM_FROM_MEM
+ 	sjump Script_NotEvenANibble_FallThrough
+
+ .no_item
 	writetext RodNothingText
+	; fallthrough
 
 Script_NotEvenANibble_FallThrough:
 	loademote EMOTE_SHADOW
