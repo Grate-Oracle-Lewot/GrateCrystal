@@ -179,20 +179,7 @@ CherrygroveSilverSceneNorth:
 	end
 
 CherrygroveTeacherScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_MAP_CARD
-	iftrue .HaveMapCard
-	writetext CherrygroveTeacherText_NoMapCard
-	waitbutton
-	closetext
-	end
-
-.HaveMapCard:
-	writetext CherrygroveTeacherText_HaveMapCard
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CherrygroveTeacherText
 
 CherrygroveYoungsterScript:
 	faceplayer
@@ -486,17 +473,7 @@ CherrygroveRivalText_YouWon:
 	cont "ALL OVER THE WORLD."
 	done
 
-CherrygroveTeacherText_NoMapCard:
-	text "Did you talk to"
-	line "the old man by the"
-	cont "#MON CENTER?"
-
-	para "He'll put a MAP of"
-	line "JOHTO on your"
-	cont "#GEAR."
-	done
-
-CherrygroveTeacherText_HaveMapCard:
+CherrygroveTeacherText:
 	text "When you're with"
 	line "#MON, going"
 	cont "anywhere is fun."
@@ -527,14 +504,13 @@ CherrygroveYoungsterText_HavePokedex:
 	done
 
 MysticWaterGuyTextBefore:
-	text "A #MON I caught"
-	line "had an item."
+	text "I fished an item"
+	line "out of the water,"
 
-	para "I think it's"
-	line "MYSTIC WATER."
+	para "but I don't need"
+	line "it."
 
-	para "I don't need it,"
-	line "so do you want it?"
+	para "Do you want it?"
 	done
 
 MysticWaterGuyTextAfter:
