@@ -1560,7 +1560,7 @@ FishFunction:
 
 Script_NotEvenANibble:
 	scall Script_FishCastRod
-	callasm FishingtItemEncounter
+	callasm FishingItemEncounter
  	iffalse .no_item
  	opentext
  	verbosegiveitem ITEM_FROM_MEM
