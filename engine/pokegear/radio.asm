@@ -1854,7 +1854,7 @@ MewtwoRadioText10:
 	text_far _MewtwoRadioText10
 	text_end
 
-JohtoFishingRadio1:
+MergeFishingRadio1A:
 	call StartRadioStation
 	; Fishing group
 	; d = map num
@@ -1869,8 +1869,19 @@ JohtoFishingRadio1:
 	farcall GetMapsFishGroup
 	ld a, BANK(FishGroups_Names)
 	hlcoord 1, 14
-	call PlaceFarString
+	jp PlaceFarString
+
+JohtoFishingRadio1:
+	call MergeFishingRadio1A
 	ld a, JOHTO_FISHING_RADIO2
+	jr MergeFishingRadio1B
+
+KantoFishingRadio1:
+	call MergeFishingRadio1A
+	ld a, KANTO_FISHING_RADIO2
+	; fallthrough
+
+MergeFishingRadio1B:
 	ld [wNextRadioLine], a
 	ld a, 1
 	ld [wNumRadioLinesPrinted], a	
@@ -1878,40 +1889,13 @@ JohtoFishingRadio1:
 
 JohtoFishingRadio2:
 	ld a, JOHTO_FISHING_RADIO2
-	ld [wNextRadioLine], a
-	ld a, 1
-	ld [wNumRadioLinesPrinted], a
-
-	ld a, RADIO_SCROLL
-	ld [wCurRadioLine], a
-	ld a, 100
-	ld [wRadioTextDelay], a
-	ret
-
-KantoFishingRadio1:
-	call StartRadioStation
-	; Fishing group
-	; d = map num
-	; e = map group
-	ld a, [wMapGroup]
-	ld e, a
-	ld a, [wMapNumber]
-	ld d, a
-	; given map info in 'de'
-	; return: string ptr in 'de'
-	; if 'de' is zero, no fishing group on map
-	farcall GetMapsFishGroup
-	ld a, BANK(FishGroups_Names)
-	hlcoord 1, 14
-	call PlaceFarString
-	ld a, KANTO_FISHING_RADIO2
-	ld [wNextRadioLine], a
-	ld a, 1
-	ld [wNumRadioLinesPrinted], a	
-	ret
+	jr MergeFishingRadio2
 
 KantoFishingRadio2:
 	ld a, KANTO_FISHING_RADIO2
+	; fallthrough
+
+MergeFishingRadio2:
 	ld [wNextRadioLine], a
 	ld a, 1
 	ld [wNumRadioLinesPrinted], a
