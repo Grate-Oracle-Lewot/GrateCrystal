@@ -199,6 +199,7 @@ CheckMapForSomethingToCut:
 Script_CutFromMenu:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 Script_Cut:
 	writetext UseCutText
@@ -508,13 +509,7 @@ TrySurfOW::
 
 	ld a, PLAYER_SURF
 	ld [wSurfingPlayerState], a
-
-	ld a, BANK(AskSurfScript)
-	ld hl, AskSurfScript
-	call CallScript
-
-	scf
-	ret
+	jr .finish
 
 .check_mon_move
 	ld d, SURF
@@ -524,6 +519,7 @@ TrySurfOW::
 	call GetSurfType
 	ld [wSurfingPlayerState], a
 
+.finish
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
@@ -700,6 +696,7 @@ CheckMapCanWaterfall:
 Script_WaterfallFromMenu:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 Script_UsedWaterfall:
 	writetext .UseWaterfallText
@@ -1032,6 +1029,7 @@ SetStrengthFlag:
 Script_StrengthFromMenu:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 Script_UsedStrength:
 	callasm SetStrengthFlag
@@ -1187,6 +1185,7 @@ TryWhirlpoolMenu:
 Script_WhirlpoolFromMenu:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 Script_UsedWhirlpool:
 	writetext UseWhirlpoolText
