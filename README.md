@@ -202,7 +202,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
 - Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
-- Smashing rocks, Headbutting trees, and fishing all have a chance to give items if they don't generate a wild Pokémon, with different sets of items given from each
+- Smashing rocks, Headbutting trees, and fishing all have a chance to give items if they don't generate a wild Pokémon, with different sets of items given by each
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves and the Pokémon League). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP and status).
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move, all usable with Select (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
