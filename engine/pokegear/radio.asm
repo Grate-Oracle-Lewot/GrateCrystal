@@ -582,8 +582,7 @@ OaksPKMNTalk12:
 	hlcoord 1, 16
 	ld de, .pokemon_channel_string
 	ld a, OAKS_POKEMON_TALK_13
-OaksPKMNTalkPlaceRadioString:
-	jp PlaceRadioString
+	jr OaksPKMNTalkPlaceRadioString
 
 .pokemon_channel_string
 	db "#MON Channel@"
@@ -595,7 +594,8 @@ OaksPKMNTalk13:
 	hlcoord 12, 16
 	ld de, LoadTerminatorCharacter
 	ld a, OAKS_POKEMON_TALK_14
-	jr OaksPKMNTalkPlaceRadioString
+OaksPKMNTalkPlaceRadioString:
+	jp PlaceRadioString
 
 LoadTerminatorCharacter:
 	db "@"
