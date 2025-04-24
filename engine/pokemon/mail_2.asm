@@ -124,12 +124,10 @@ endc
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld de, .done
+	ld de, LoadDERet
 	pop bc
 	push de
 	jp hl
-.done
-	ret
 
 MailGFXPointers:
 ; entries correspond to *MAIL_INDEX constants
@@ -340,6 +338,7 @@ LovelyEonMail_PlaceIcons:
 	ld [hl], a
 	hlcoord 16, 12
 	ld [hl], a
+LoadDERet:
 	ret
 
 LoadMorphMailGFX:
