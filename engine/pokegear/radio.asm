@@ -592,11 +592,11 @@ OaksPKMNTalk13:
 	dec [hl]
 	ret nz
 	hlcoord 12, 16
-	ld de, .terminator
+	ld de, LoadTerminatorCharacter
 	ld a, OAKS_POKEMON_TALK_14
 	jp PlaceRadioString
 
-.terminator
+LoadTerminatorCharacter:
 	db "@"
 
 OaksPKMNTalk14:
@@ -605,7 +605,7 @@ OaksPKMNTalk14:
 	ret nz
 	ld de, MUSIC_POKEMON_TALK
 	callfar RadioMusicRestartDE
-	ld hl, .terminator
+	ld hl, LoadTerminatorCharacter
 	call PrintText
 	ld a, OAKS_POKEMON_TALK_4
 	ld [wNextRadioLine], a
@@ -616,9 +616,6 @@ OaksPKMNTalk14:
 	ld a, 10
 	ld [wRadioTextDelay], a
 	ret
-
-.terminator
-	db "@"
 
 PlaceRadioString:
 	ld [wCurRadioLine], a
