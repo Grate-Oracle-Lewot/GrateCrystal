@@ -524,7 +524,6 @@ TrySurfOW::
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
-
 	scf
 	ret
 
@@ -751,13 +750,12 @@ TryWaterfallOW::
 	jr c, .failed
 	ld a, BANK(Script_AskWaterfall)
 	ld hl, Script_AskWaterfall
-	call CallScript
-	scf
-	ret
+	jr .callscf
 
 .failed
 	ld a, BANK(Script_CantDoWaterfall)
 	ld hl, Script_CantDoWaterfall
+.callscf
 	call CallScript
 	scf
 	ret
@@ -1881,27 +1879,22 @@ TryCutOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-
-	ld a, BANK(AskCutScript)
-	ld hl, AskCutScript
-	call CallScript
-	scf
-	ret
+	jr .finish
 
 .check_mon_move
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .cant_cut
 
+.finish
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
-	call CallScript
-	scf
-	ret
+	jr .callscf
 
 .cant_cut
 	ld a, BANK(CantCutScript)
 	ld hl, CantCutScript
+.callscf
 	call CallScript
 	scf
 	ret
