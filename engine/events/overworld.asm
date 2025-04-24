@@ -1232,13 +1232,12 @@ TryWhirlpoolOW::
 .go
 	ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
-	call CallScript
-	scf
-	ret
+	jr .callscf
 
 .failed
 	ld a, BANK(Script_MightyWhirlpool)
 	ld hl, Script_MightyWhirlpool
+.callscf
 	call CallScript
 	scf
 	ret
