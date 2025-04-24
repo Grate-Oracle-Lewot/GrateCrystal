@@ -31,7 +31,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Fairy type added
 - Physical/Special split
 - TMs are infinite-use
-- Press Start in the Pack to sort items by type (even during battle)
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
@@ -201,7 +200,9 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
 ## Items
+- Press Start in the Pack to sort items by type (even during battle)
 - Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
+- Smashing rocks, Headbutting trees, and fishing all have a chance to give items if they don't generate a wild Pokémon, with different sets of items given from each
 - "Game Boy PC" obtained from Bill in Ecruteak, letting you access the PC anywhere (but you get a "no signal" message inside caves and the Pokémon League). To balance this, depositing a Pokémon in the PC no longer restores its PP (but does still restore its HP and status).
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move, all usable with Select (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
@@ -387,7 +388,6 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Certain moves learned upon evolution regardless of level
 - Icons shown for active weather when selecting moves in battle
 - Unique colors for each thrown Poké Ball
-- Smashing rocks has a chance to give items (Headbutting trees too!)
 - Customizable Pokédex color (14 choices)
 - Night arrangement for the Kanto wild battle theme, to go along with the existing Johto one
 - Menu account replaced with clock and level cap display
