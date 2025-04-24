@@ -1457,9 +1457,7 @@ HasRockSmash:
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-
-	xor a
-	jr .done
+	jr .yes
 
 .check_mon_move
 	ld d, ROCK_SMASH
@@ -1470,7 +1468,6 @@ HasRockSmash:
 	jr .done
 .yes
 	xor a
-	jr .done
 .done
 	ld [wScriptVar], a
 	ret
