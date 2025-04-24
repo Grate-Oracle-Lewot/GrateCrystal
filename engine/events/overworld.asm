@@ -788,6 +788,7 @@ EscapeRopeFunction:
 DigFunction:
 	call FieldMoveJumptableReset
 	ld a, $2
+	; fallthrough
 
 EscapeRopeOrDig:
 	ld [wEscapeRopeOrDigType], a
@@ -838,13 +839,12 @@ EscapeRopeOrDig:
 	cp $2
 	jr nz, .escaperope
 	ld hl, .UsedDigScript
-	call QueueScript
-	ld a, JUMPTABLE_EXIT | $1
-	ret
+	jr .queue
 
 .escaperope
 	farcall SpecialKabutoChamber
 	ld hl, .UsedEscapeRopeScript
+.queue
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -998,7 +998,6 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-; Strength
 	ld de, ENGINE_PLAINBADGE
 	call CheckBadge
 	jr c, .Failed
