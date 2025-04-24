@@ -391,6 +391,7 @@ SurfFunction:
 
 SurfFromMenuScript:
 	special UpdateTimePals
+	; fallthrough
 
 UsedSurfScript:
 	writetext UsedSurfText
@@ -1293,6 +1294,7 @@ HeadbuttNothingText:
 HeadbuttFromMenuScript:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 HeadbuttScript:
 	callasm GetPartyNickname
@@ -1392,6 +1394,7 @@ GetFacingObject:
 RockSmashFromMenuScript:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
 
 RockSmashScript:
 	writetext UseRockSmashText
