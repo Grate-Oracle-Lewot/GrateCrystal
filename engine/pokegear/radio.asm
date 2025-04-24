@@ -570,7 +570,7 @@ OaksPKMNTalk11:
 	hlcoord 9, 14
 	ld de, .pokemon_string
 	ld a, OAKS_POKEMON_TALK_12
-	jp PlaceRadioString
+	jr OaksPKMNTalkPlaceRadioString
 
 .pokemon_string
 	db "#MON@"
@@ -582,6 +582,7 @@ OaksPKMNTalk12:
 	hlcoord 1, 16
 	ld de, .pokemon_channel_string
 	ld a, OAKS_POKEMON_TALK_13
+OaksPKMNTalkPlaceRadioString:
 	jp PlaceRadioString
 
 .pokemon_channel_string
@@ -594,7 +595,7 @@ OaksPKMNTalk13:
 	hlcoord 12, 16
 	ld de, LoadTerminatorCharacter
 	ld a, OAKS_POKEMON_TALK_14
-	jp PlaceRadioString
+	jr OaksPKMNTalkPlaceRadioString
 
 LoadTerminatorCharacter:
 	db "@"
@@ -696,37 +697,38 @@ endr
 	ld a, h
 	ld [wPokedexShowPointerAddr + 1], a
 	ld a, POKEDEX_SHOW_3
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 PokedexShow3:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW_4
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 PokedexShow4:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW_5
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 PokedexShow5:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW_6
+PokedexShowPrintRadioLine:
 	jp PrintRadioLine
 
 PokedexShow6:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW_7
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 PokedexShow7:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW_8
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 PokedexShow8:
 	call CopyDexEntry
 	ld a, POKEDEX_SHOW
-	jp PrintRadioLine
+	jr PokedexShowPrintRadioLine
 
 CopyDexEntry:
 	ld a, [wPokedexShowPointerAddr]
