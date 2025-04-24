@@ -91,6 +91,9 @@ RockItemEncounter:
 	jr TreeRockRodItemEncounter
 
 FishingItemEncounter:
+	call GetFishingGroup
+	and a
+	jr z, FishingItemEncounterFail
 	ld hl, FishingItemTable
 	; fallthrough
 
@@ -109,6 +112,11 @@ TreeRockRodItemEncounter:
 	jr z, .done
 	ld a, [hli]
 .done
+	ld [wScriptVar], a
+	ret
+
+FishingItemEncounterFail:
+	xor a
 	ld [wScriptVar], a
 	ret
 	
