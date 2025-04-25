@@ -86,6 +86,17 @@ TrainerPokefanfVi:
 	closetext
 	end
 
+TrainerEngineerSmith:
+	trainer ENGINEER, SMITH, EVENT_BEAT_ENGINEER_SMITH, EngineerSmithSeenText, EngineerSmithBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext EngineerSmithAfterBattleText
+	waitbutton
+	closetext
+	end
+
 OlivineGymGuideScript:
 	faceplayer
 	checkevent EVENT_BEAT_JASMINE
@@ -239,6 +250,21 @@ PokefanfViAfterBattleText:
 	line "deal with."
 	done
 
+EngineerSmithSeenText:
+	text "Nothing can break"
+	line "tempered steel!"
+	done
+
+EngineerSmithBeatenText:
+	text "I was too ill-"
+	line "tempered."
+	done
+
+EngineerSmithAfterBattleText:
+	text "Iron is in my"
+	line "blood!"
+	done
+
 OlivineGymGuideText:
 	text "JASMINE uses the"
 	line "steel-type."
@@ -293,5 +319,6 @@ OlivineGym_MapEvents:
 	def_object_events
 	object_event 14,  7, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
 	object_event 10, 23, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristJules, EVENT_OLIVINE_GYM_JASMINE
-	object_event 15, 12, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanfVi, EVENT_OLIVINE_GYM_JASMINE
+	object_event 16, 20, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanfVi, EVENT_OLIVINE_GYM_JASMINE
+	object_event 15, 12, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerEngineerSmith, EVENT_OLIVINE_GYM_JASMINE
 	object_event 14, 39, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1
