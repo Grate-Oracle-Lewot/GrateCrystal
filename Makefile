@@ -1,7 +1,6 @@
 roms := \
 	GrateCrystal.gbc \
 	GrateCrystal11.gbc \
-	GrateCrystal_au.gbc \
 	GrateCrystal_debug.gbc \
 	GrateCrystal11_debug.gbc
 patches := GrateCrystal11.patch
@@ -26,7 +25,6 @@ rom_obj := \
 
 GrateCrystal_obj         := $(rom_obj:.o=.o)
 GrateCrystal11_obj       := $(rom_obj:.o=11.o)
-GrateCrystal_au_obj      := $(rom_obj:.o=_au.o)
 GrateCrystal_debug_obj   := $(rom_obj:.o=_debug.o)
 GrateCrystal11_debug_obj := $(rom_obj:.o=11_debug.o)
 GrateCrystal11_vc_obj    := $(rom_obj:.o=11_vc.o)
@@ -50,7 +48,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystal11 crystal_au crystal_debug crystal11_debug clean tidy compare tools
+.PHONY: all crystal crystal11 crystal_debug crystal11_debug clean tidy compare tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -58,7 +56,6 @@ RGBLINK ?= $(RGBDS)rgblink
 all: crystal
 crystal:         GrateCrystal.gbc
 crystal11:       GrateCrystal11.gbc
-crystal_au:      GrateCrystal_au.gbc
 crystal_debug:   GrateCrystal_debug.gbc
 crystal11_debug: GrateCrystal11_debug.gbc
 crystal11_vc:    GrateCrystal11.patch
@@ -90,7 +87,6 @@ tidy:
 	      $(GrateCrystal_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
-	      $(GrateCrystal_au_obj) \
 	      $(GrateCrystal_debug_obj) \
 	      $(GrateCrystal11_debug_obj) \
 	      rgbdscheck.o
@@ -113,7 +109,6 @@ endif
 
 $(GrateCrystal_obj):         RGBASMFLAGS +=
 $(GrateCrystal11_obj):       RGBASMFLAGS += -D _CRYSTAL11
-$(GrateCrystal_au_obj):      RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL_AU
 $(GrateCrystal_debug_obj):   RGBASMFLAGS += -D _DEBUG
 $(GrateCrystal11_debug_obj): RGBASMFLAGS += -D _CRYSTAL11 -D _DEBUG
 $(GrateCrystal11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
@@ -141,7 +136,6 @@ $(info $(shell $(MAKE) -C tools))
 # Dependencies for shared objects objects
 $(foreach obj, $(GrateCrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
-$(foreach obj, $(GrateCrystal_au_obj), $(eval $(call DEP,$(obj),$(obj:_au.o=.asm))))
 $(foreach obj, $(GrateCrystal_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
 $(foreach obj, $(GrateCrystal11_debug_obj), $(eval $(call DEP,$(obj),$(obj:11_debug.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
@@ -155,14 +149,12 @@ endif
 
 GrateCrystal_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_au_opt      = -Cjv -t PM_CRYSTAL -i BYTU -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_debug_opt = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
 GrateCrystal_base         = us
 GrateCrystal11_base       = us
-GrateCrystal_au_base      = us
 GrateCrystal11_vc_base    = us
 GrateCrystal_debug_base   = dbg
 GrateCrystal11_debug_base = dbg
