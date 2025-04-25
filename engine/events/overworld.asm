@@ -1563,7 +1563,7 @@ Script_NotEvenANibble:
 	callasm FishingItemEncounter
  	iffalse .no_item
  	opentext
- 	verbosegiveitem ITEM_FROM_MEM
+ 	verbosegiveitemfish ITEM_FROM_MEM
  	sjump Script_NotEvenANibble_FallThrough
 
  .no_item
