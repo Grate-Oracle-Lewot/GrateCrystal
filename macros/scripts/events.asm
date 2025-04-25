@@ -1070,4 +1070,15 @@ trainerpic: MACRO
 	db \1 ; trainer
 ENDM
 
+	const verbosegiveitemfish_command ; $ab
+verbosegiveitemfish: MACRO
+if _NARG == 1
+	verbosegiveitemfish \1, 1
+else
+	db verbosegiveitemfish_command
+	db \1 ; item
+	db \2 ; quantity
+endc
+ENDM
+
 NUM_EVENT_COMMANDS EQU const_value
