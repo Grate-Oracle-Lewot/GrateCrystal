@@ -221,6 +221,13 @@ _ReceivedItemText::
 	text "."
 	done
 
+_FishedItemText::
+	text "<PLAYER> fished up"
+	line "@"
+	text_ram wStringBuffer4
+	text "!"
+	done
+
 _PutItemInPocketText::
 	text "<PLAYER> put the"
 	line "@"
