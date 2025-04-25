@@ -41,6 +41,15 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+	opentext
+ 	givepoke TYPHLOSION, 100
+ 	closetext
+	setevent EVENT_OLIVINE_GYM_JASMINE
+ 	setflag ENGINE_ZEPHYRBADGE
+ 	giveitem DISCO_BALL
+ 	warp OLIVINE_CITY, 10, 12
+ 	end
+
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
