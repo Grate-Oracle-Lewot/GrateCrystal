@@ -229,6 +229,7 @@ ScriptCommandTable:
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
+	dw Script_verbosegiveitemfish        ; ab
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -452,7 +453,6 @@ Script_verbosegiveitem:
 	jp ScriptCall
 
 GiveItemScript:
-	callasm GiveItemScript_DummyFunction
 	writetext .ReceivedItemText
 	iffalse .Full
 	waitsfx
@@ -602,7 +602,6 @@ Script_hangup:
 	farcall HangUp
 Script_swarm:
 ; no swarms in Grate Crystal
-GiveItemScript_DummyFunction:
 	ret
 
 Script_askforphonenumber:
@@ -2191,8 +2190,6 @@ Script_end:
 
 Script_endcallback:
 	call ExitScriptSubroutine
-	jr c, .dummy
-.dummy
 	ld hl, wScriptFlags
 	res 0, [hl]
 	jp StopScript
@@ -2282,6 +2279,36 @@ Script_trainerpic:
 	ld [wTrainerClass], a
 	farcall Trainerpic
 	ret
+
+Script_verbosegiveitemfish:
+	call Script_giveitem
+	call CurItemName
+	ld de, wStringBuffer1
+	ld a, STRING_BUFFER_4
+	call CopyConvertedText
+	ld de, wStringBuffer4 + STRLEN("TM##")
+	call AppendTMHMMoveName
+	ld b, BANK(GiveItemFishScript)
+	ld de, GiveItemFishScript
+	jp ScriptCall
+
+GiveItemFishScript:
+	writetext .FishedItemText
+	iffalse .Full
+	waitsfx
+	specialsound
+	waitbutton
+	itemnotify
+	end
+
+.Full:
+	promptbutton
+	pocketisfull
+	end
+
+.FishedItemText:
+	text_far _FishedItemText
+	text_end
 
 AppendTMHMMoveName::
 ; a = item ID
