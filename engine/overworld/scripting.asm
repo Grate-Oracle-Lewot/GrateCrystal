@@ -2297,7 +2297,6 @@ GiveItemFishScript:
 	iffalse .Full
 	waitsfx
 	specialsound
-	waitbutton
 	itemnotify
 	end
 
