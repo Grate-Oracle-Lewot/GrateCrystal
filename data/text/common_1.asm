@@ -15,6 +15,41 @@ _ObtainedFruitText::
 	text " ×5!"
 	done
 
+_Obtained2FruitText::
+	text "Obtained"
+	line "@"
+	text_ram wStringBuffer3
+	text " ×2!"
+	done
+
+_Obtained3FruitText::
+	text "Obtained"
+	line "@"
+	text_ram wStringBuffer3
+	text " ×3!"
+	done
+
+_Obtained4FruitText::
+	text "Obtained"
+	line "@"
+	text_ram wStringBuffer3
+	text " ×4!"
+	done
+
+_Obtained5FruitText::
+	text "Obtained"
+	line "@"
+	text_ram wStringBuffer3
+	text " ×5!"
+	done
+
+_Obtained6FruitText::
+	text "Obtained"
+	line "@"
+	text_ram wStringBuffer3
+	text " ×6!"
+	done
+
 _FruitPackIsFullText::
 	text "But the PACK is"
 	line "full…"
