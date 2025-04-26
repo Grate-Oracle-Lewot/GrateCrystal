@@ -173,18 +173,17 @@ BlackthornGymDragoniteScript:
 	faceplayer
 	cry DRAGONITE
 	waitsfx
-	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
-	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
 	disappear BLACKTHORNGYM1F_DRAGONITE
 	appear BLACKTHORNGYM1F_DRAGONITE_FLY
-	playsound SFX_WARP_TO
+	playsound SFX_FLY
 	applymovement BLACKTHORNGYM1F_DRAGONITE_FLY, BlackthornGymDragoniteFlyAway
 	disappear BLACKTHORNGYM1F_DRAGONITE_FLY
 	waitsfx
-	opentext
-	writetext BlackthornGymDragoniteText
-	waitbutton
-	closetext
+	playsound SFX_FLY
+	applymovement BLACKTHORNGYM1F_DRAGONITE_STATUE, BlackthornGymDragoniteFlyAway
+	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
+	waitsfx
+	setevent EVENT_BLACKTHORN_GYM_TALKED_TO_DRAGONITE
 	end
 
 BlackthornGymDragoniteStatueScript:
@@ -465,11 +464,6 @@ BlackthornGymGuideWinText:
 	para "You're on the way"
 	line "to becoming the"
 	cont "#MON CHAMPION!"
-	done
-
-BlackthornGymDragoniteText:
-	text "DRAGONITE flew"
-	line "away!"
 	done
 
 BlackthornGymDragoniteStatueText:
