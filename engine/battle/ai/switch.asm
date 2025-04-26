@@ -119,7 +119,7 @@ CheckAbleToSwitch:
 	call FindAliveEnemyMons
 	ret c
 
-; maximum chance to switch if perish count is 1
+; Maximum chance to switch if perish count is 1
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .no_perish
@@ -161,6 +161,16 @@ CheckAbleToSwitch:
 	bit SUBSTATUS_X_ACCURACY, a
 	ret nz
 
+	; SWITCH_OFTEN will switch even at low HP
+	call GetTrainerClassItemSwitchAttribute
+	bit SWITCH_OFTEN_F, a
+	jr nz, .skip_hp
+
+	; Never switch if HP is below 1/4
+	farcall AICheckEnemyQuarterHP
+	ret nc
+
+.skip_hp
 	; SWITCH_STATUS checks volatile statuses here regardless of other switch flags
 	call GetTrainerClassItemSwitchAttribute
 	bit SWITCH_STATUS_F, a
