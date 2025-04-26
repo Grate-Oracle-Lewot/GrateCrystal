@@ -9,8 +9,7 @@ FruitTreeScript::
 	callasm CheckFruitTree
 	iffalse .fruit
 	writetext NothingHereText
-	waitbutton
-	sjump .end
+	sjump .end1
 
 .fruit
 	writetext HeyItsFruitText
@@ -22,14 +21,14 @@ FruitTreeScript::
 	callasm PickedFruitTree
 	specialsound
 	itemnotify
-	sjump .end
+	sjump .end2
 
 .packisfull
 	promptbutton
 	writetext FruitPackIsFullText
+.end1
 	waitbutton
-
-.end
+.end2
 	closetext
 	end
 
@@ -44,19 +43,7 @@ TryResetFruitTrees:
 	ld hl, wDailyFlags1
 	bit DAILYFLAGS1_ALL_FRUIT_TREES_F, [hl]
 	ret nz
-	jp ResetFruitTrees
-
-CheckFruitTree:
-	ld b, 2
-	call GetFruitTreeFlag
-	ld a, c
-	ld [wScriptVar], a
-	ret
-
-PickedFruitTree:
-	farcall StubbedTrainerRankings_FruitPicked
-	ld b, 1
-	jp GetFruitTreeFlag
+	; fallthrough
 
 ResetFruitTrees:
 	xor a
@@ -68,6 +55,18 @@ endr
 	ld hl, wDailyFlags1
 	set DAILYFLAGS1_ALL_FRUIT_TREES_F, [hl]
 	ret
+
+CheckFruitTree:
+	ld b, 2
+	call GetFruitTreeFlag
+	ld a, c
+	ld [wScriptVar], a
+	ret
+
+PickedFruitTree:
+	farcall StubbedTrainerRankings_FruitPicked
+	ld b, 1
+	; fallthrough
 
 GetFruitTreeFlag:
 	push hl
@@ -92,6 +91,15 @@ GetFruitTreeItem:
 	ld a, [hl]
 	pop de
 	pop hl
+	ret
+
+GetFruitTreeCount:
+; return 2-6 in a
+	ld a, 5
+	call RandomRange
+	inc a
+	inc a
+	ld [wScriptVar], a
 	ret
 
 INCLUDE "data/items/fruit_trees.asm"
