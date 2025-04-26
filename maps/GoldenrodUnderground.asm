@@ -469,10 +469,10 @@ SupernerdTeruBeatenText:
 
 SupernerdTeruAfterBattleText:
 	text "I know my #MON"
-	line "type alignments."
+	line "type alignments,"
 
-	para "But I only use one"
-	line "type of #MON."
+	para "even for #MON"
+	line "with two types."
 	done
 
 PokemaniacIssacSeenText:
@@ -629,7 +629,7 @@ GoldenrodUndergroundYoungerHaircutBrotherAllDoneText:
 	done
 
 GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText:
-	text "No? "
+	text "No?"
 	line "How disappointing!"
 	done
 
