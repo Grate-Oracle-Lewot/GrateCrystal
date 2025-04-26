@@ -1169,7 +1169,7 @@ _OakRating05::
 
 _OakRating06::
 	text "To evolve, some"
-	line "#MON grow,"
+	line "#MON grow, and"
 
 	para "others use the"
 	line "effects of STONES."
