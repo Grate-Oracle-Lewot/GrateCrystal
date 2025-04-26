@@ -2129,7 +2129,7 @@ AerodactylEvosAttacks:
 	db 33, CRUNCH
 	db 36, SCARY_FACE
 	db 43, ROCK_SLIDE
-	db 50, HYPER_BEAM
+	db 50, HYPER_FANG
 	db 54, SKY_ATTACK
 	db 0 ; no more level-up moves
 
