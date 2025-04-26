@@ -39,13 +39,6 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	opentext
- 	givepoke TYPHLOSION, 100
- 	closetext
- 	giveitem OLD_ROD
- 	warp CERULEAN_GYM, 4, 13
- 	end
-
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
