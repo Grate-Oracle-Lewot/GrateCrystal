@@ -3275,9 +3275,10 @@ HeracrossEvosAttacks:
 
 SneaselEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
+	db 1, SCRATCH
 	db 2, LEER
-	db 9, FURY_SWIPES
+	db 6, QUICK_ATTACK
+	db 11, FURY_SWIPES
 	db 17, SCREECH
 	db 25, FAINT_ATTACK
 	db 33, SLASH
