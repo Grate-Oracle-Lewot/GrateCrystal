@@ -42,9 +42,8 @@ PlayersHouseRadioScript:
 	opentext
  	givepoke TYPHLOSION, 100
  	closetext
- 	setflag ENGINE_PLAINBADGE
- 	giveitem HM_STRENGTH
- 	warp BLACKTHORN_GYM_1F, 4, 17
+ 	giveitem OLD_ROD
+ 	warp CERULEAN_GYM, 4, 13
  	end
 
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
