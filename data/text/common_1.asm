@@ -169,6 +169,7 @@ _OakTimeWhatHoursText::
 	text_end
 
 _OakTimeHoursQuestionMarkText::
+_OakTimeMinutesQuestionMarkText::
 	text "?"
 	done
 
@@ -180,20 +181,8 @@ _OakTimeWhoaMinutesText::
 	text "Uh…@"
 	text_end
 
-_OakTimeMinutesQuestionMarkText::
-	text "?"
-	done
-
 _OakTimeOversleptText::
-	text "."
-	line "OK, OK, I'm up."
-	done
-
 _OakTimeYikesText::
-	text "."
-	line "OK, OK, I'm up."
-	done
-
 _OakTimeSoDarkText::
 	text "."
 	line "OK, OK, I'm up."
