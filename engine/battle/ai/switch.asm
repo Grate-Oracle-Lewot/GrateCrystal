@@ -135,6 +135,7 @@ CheckAbleToSwitch:
 	jr nz, .not_2
 
 	ld a, [wEnemyAISwitchScore]
+.max
 	add $30 ; maximum chance
 	ld [wEnemySwitchMonParam], a
 	ret
@@ -151,9 +152,7 @@ CheckAbleToSwitch:
 	jr nc, .loop
 
 	ld a, b
-	add $30 ; maximum chance
-	ld [wEnemySwitchMonParam], a
-	ret
+	jr .max
 
 .no_perish
 	; Never switch if you've used an X Accuracy on this mon
