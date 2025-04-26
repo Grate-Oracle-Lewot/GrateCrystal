@@ -175,7 +175,7 @@ BlackthornGymDragoniteScript:
 	waitsfx
 	appear BLACKTHORNGYM1F_DRAGONITE_FLY
 	disappear BLACKTHORNGYM1F_DRAGONITE
-	playsound SFX_WHIRLWIND
+	playsound SFX_GS_INTRO_CHARIZARD_FIREBALL
 	applymovement BLACKTHORNGYM1F_DRAGONITE_FLY, BlackthornGymDragoniteFlyAway
 	disappear BLACKTHORNGYM1F_DRAGONITE_FLY
 	waitsfx
