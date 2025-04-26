@@ -173,13 +173,13 @@ BlackthornGymDragoniteScript:
 	faceplayer
 	cry DRAGONITE
 	waitsfx
-	disappear BLACKTHORNGYM1F_DRAGONITE
 	appear BLACKTHORNGYM1F_DRAGONITE_FLY
-	playsound SFX_FLY
+	disappear BLACKTHORNGYM1F_DRAGONITE
+	playsound SFX_WHIRLWIND
 	applymovement BLACKTHORNGYM1F_DRAGONITE_FLY, BlackthornGymDragoniteFlyAway
 	disappear BLACKTHORNGYM1F_DRAGONITE_FLY
 	waitsfx
-	playsound SFX_FLY
+	playsound SFX_WARP_FROM
 	applymovement BLACKTHORNGYM1F_DRAGONITE_STATUE, BlackthornGymDragoniteFlyAway
 	disappear BLACKTHORNGYM1F_DRAGONITE_STATUE
 	waitsfx
