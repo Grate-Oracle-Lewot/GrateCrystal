@@ -453,6 +453,10 @@ _EvolvingText::
 	done
 
 _MartHowManyText::
+_HerbalLadyHowManyText::
+_PharmacyHowManyText::
+BerryShop_HowManyText::
+_MartSellHowManyText::
 	text "How many?"
 	done
 
@@ -479,10 +483,6 @@ _HerbShopLadyIntroText::
 	line "not like them."
 
 	para "Hehehehe…"
-	done
-
-_HerbalLadyHowManyText::
-	text "How many?"
 	done
 
 _HerbalLadyFinalPriceText::
@@ -519,11 +519,9 @@ _BargainShopIntroText::
 	text "Hiya! Care to see"
 	line "some bargains?"
 
-	para "I sell rare items"
-	line "that nobody else"
-
-	para "carries--but only"
-	line "one of each item."
+	para "I sell rare items,"
+	line "but I only have"
+	cont "one of each."
 	done
 
 _BargainShopFinalPriceText::
@@ -535,6 +533,7 @@ _BargainShopFinalPriceText::
 	done
 
 _BargainShopThanksText::
+BerryShop_HereYouGoText::
 	text "Thanks."
 	done
 
@@ -562,10 +561,6 @@ _BargainShopComeAgainText::
 _PharmacyIntroText::
 	text "What's up? Need"
 	line "some medicine?"
-	done
-
-_PharmacyHowManyText::
-	text "How many?"
 	done
 
 _PharmacyFinalPriceText::
@@ -606,10 +601,6 @@ BerryShop_ComeAgainText::
 	text "Have a nice day."
 	done
 
-BerryShop_HowManyText::
-	text "How many?"
-	done
-
 BerryShop_CostsThisMuchText::
 	text "That'll be"
 	line "¥@"
@@ -625,14 +616,6 @@ BerryShop_InsufficientFundsText::
 BerryShop_BagFullText::
 	text "Uh… you ain't got"
 	line "room."
-	done
-
-BerryShop_HereYouGoText::
-	text "Thanks."
-	done
-
-_MartSellHowManyText::
-	text "How many?"
 	done
 
 _MartSellPriceText::
@@ -1292,18 +1275,6 @@ _PPsIncreasedText::
 
 _PPRestoredText::
 	text "PP was restored."
-	prompt
-
-_SentTrophyHomeText::
-	text "There was a trophy"
-	line "inside!@"
-	sound_dex_fanfare_50_79
-	text_start
-
-	para "@"
-	text_ram wPlayerName
-	text " sent the"
-	line "trophy home."
 	prompt
 
 _ItemLooksBitterText::
