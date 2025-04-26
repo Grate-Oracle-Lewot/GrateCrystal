@@ -44,7 +44,7 @@ PlayersHouseRadioScript:
 	opentext
  	givepoke TYPHLOSION, 100
  	closetext
-	setevent EVENT_OLIVINE_GYM_JASMINE
+	clearevent EVENT_OLIVINE_GYM_JASMINE
  	setflag ENGINE_ZEPHYRBADGE
  	giveitem DISCO_BALL
  	warp OLIVINE_CITY, 10, 12
