@@ -6,17 +6,15 @@
 
 RuinsOfAlphResearchCenter_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_RUINSOFALPHRESEARCHCENTER_NOTHING
+	scene_script .DummyScene  ; SCENE_RUINSOFALPHRESEARCHCENTER_NOTHING
 	scene_script .GetUnownDex ; SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .ScientistCallback
 
-.DummyScene0:
-	end
-
 .GetUnownDex:
 	sdefer .GetUnownDexScript
+.DummyScene:
 	end
 
 .ScientistCallback:
@@ -315,11 +313,22 @@ RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	para "giving us insight"
 	line "into the RUINS."
 
-	para "The RUINS appear"
-	line "to have been built"
+	para "But there are"
+	line "still unanswered"
+	cont "questions."
 
-	para "as a habitat for"
-	line "#MON."
+	para "The murals depict-"
+	line "ed ancient #-"
+	cont "MON that have only"
+
+	para "recently been re-"
+	line "vived by science."
+
+	para "Were the makers of"
+	line "the RUINS given"
+
+	para "visions of the"
+	line "past or future…?"
 	done
 
 RuinsOfAlphResearchCenterScientist2Text:
