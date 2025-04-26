@@ -42,10 +42,9 @@ PlayersHouseRadioScript:
 	opentext
  	givepoke TYPHLOSION, 100
  	closetext
-	clearevent EVENT_OLIVINE_GYM_JASMINE
- 	setflag ENGINE_ZEPHYRBADGE
- 	giveitem DISCO_BALL
- 	warp OLIVINE_CITY, 10, 12
+ 	setflag ENGINE_PLAINBADGE
+ 	giveitem HM_STRENGTH
+ 	warp BLACKTHORN_GYM_1F, 4, 17
  	end
 
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
