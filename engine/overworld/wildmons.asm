@@ -191,9 +191,7 @@ TryWildEncounter::
 
 .EncounterRate:
 	call GetMapEncounterRate
-	call ApplyRunningEffectOnEncounterRate
-	call ApplyMusicEffectOnEncounterRate
-	call ApplyCleanseTagEffectOnEncounterRate
+	call ApplyModifiersToEncounterRate
 	call Random
 	cp b
 	ret
@@ -211,7 +209,7 @@ GetMapEncounterRate:
 	ld b, [hl]
 	ret
 
-ApplyRunningEffectOnEncounterRate::
+ApplyRunningEffectOnEncounterRate:
 ; Running doubles encounter rate.
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
@@ -219,7 +217,7 @@ ApplyRunningEffectOnEncounterRate::
 	sla b
 	ret
 
-ApplyMusicEffectOnEncounterRate::
+ApplyMusicEffectOnEncounterRate:
 ; Pokemon March and Ruins of Alph signal double encounter rate.
 ; Pokemon Lullaby halves encounter rate.
 	ld a, [wMapMusic]
@@ -236,7 +234,12 @@ ApplyMusicEffectOnEncounterRate::
 	sla b
 	ret
 
-ApplyCleanseTagEffectOnEncounterRate::
+ApplyModifiersToEncounterRate::
+	call ApplyRunningEffectOnEncounterRate
+	call ApplyMusicEffectOnEncounterRate
+	; fallthrough
+
+ApplyCleanseTagEffectOnEncounterRate:
 ; Cleanse Tag halves encounter rate.
 	ld hl, wPartyMon1Item
 	ld de, PARTYMON_STRUCT_LENGTH
