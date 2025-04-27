@@ -1028,16 +1028,15 @@ TryTileCollisionEvent::
 .surf
 	farcall TrySurfOW
 	jr nc, .noevent
-	jr .done
-
-.noevent
-	xor a
-	ret
 
 .done
 	call PlayClickSFX
 	ld a, $ff
 	scf
+	ret
+
+.noevent
+	xor a
 	ret
 
 RandomEncounter::
