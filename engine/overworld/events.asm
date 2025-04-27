@@ -764,7 +764,7 @@ StartMenuScript:
 
 SelectMenuScript:
 	callasm SelectMenu
-	sjump SelectMenuCallback
+	; fallthrough
 
 StartMenuCallback:
 SelectMenuCallback:
