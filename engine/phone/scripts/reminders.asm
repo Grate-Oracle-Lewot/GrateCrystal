@@ -93,3 +93,11 @@ ParryHaventYouGottenToScript:
 ErinComeBattleScript:
 	farwritetext ErinComeBattleText
 	end
+
+RalphHurryScript:
+	farwritetext RalphHurryText
+	end
+
+ToddHurryScript:
+	farwritetext ToddHaveYouGoneToDepartmentStoreText
+	end
