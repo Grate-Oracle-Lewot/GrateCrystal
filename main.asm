@@ -322,8 +322,6 @@ INCLUDE "engine/phone/scripts/brent_gossip.asm"
 INCLUDE "engine/phone/scripts/irwin_gossip.asm"
 INCLUDE "engine/phone/scripts/hangups.asm"
 INCLUDE "engine/phone/scripts/reminders.asm"
-INCLUDE "engine/phone/scripts/hangups_2.asm"
-INCLUDE "engine/phone/scripts/reminders_2.asm"
 INCLUDE "engine/phone/scripts/bike_shop.asm"
 INCLUDE "engine/phone/scripts/buena.asm"
 
