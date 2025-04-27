@@ -8,13 +8,6 @@ _HeyItsFruitText::
 	line "something!"
 	done
 
-_ObtainedFruitText::
-	text "Obtained"
-	line "@"
-	text_ram wStringBuffer3
-	text " ×5!"
-	done
-
 _Obtained2FruitText::
 	text "Obtained"
 	line "@"
