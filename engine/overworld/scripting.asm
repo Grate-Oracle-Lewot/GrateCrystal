@@ -218,7 +218,7 @@ ScriptCommandTable:
 	dw Script_checkphonecall             ; 9d
 	dw Script_verbosegiveitem            ; 9e
 	dw Script_verbosegiveitemvar         ; 9f
-	dw Script_swarm                      ; a0
+	dw Script_verbosegiveitemfive        ; a0
 	dw Script_halloffame                 ; a1
 	dw Script_credits                    ; a2
 	dw Script_warpfacing                 ; a3
@@ -498,6 +498,36 @@ Script_verbosegiveitemvar:
 	ld de, GiveItemScript
 	jp ScriptCall
 
+Script_verbosegiveitem:
+	call Script_giveitem
+	call CurItemName
+	ld de, wStringBuffer1
+	ld a, STRING_BUFFER_4
+	call CopyConvertedText
+	ld de, wStringBuffer4 + STRLEN("TM##")
+	call AppendTMHMMoveName
+	ld b, BANK(Give5ItemScript)
+	ld de, Give5ItemScript
+	jp ScriptCall
+
+Give5ItemScript:
+	writetext .Received5ItemText
+	iffalse .Full
+	waitsfx
+	specialsound
+	waitbutton
+	itemnotify
+	end
+
+.Full:
+	promptbutton
+	pocketisfull
+	end
+
+.Received5ItemText:
+	text_far _Received5ItemText
+	text_end
+
 Script_itemnotify:
 	call GetPocketName
 	call CurItemName
@@ -600,8 +630,6 @@ Script_phonecall:
 
 Script_hangup:
 	farcall HangUp
-Script_swarm:
-; no swarms in Grate Crystal
 	ret
 
 Script_askforphonenumber:
