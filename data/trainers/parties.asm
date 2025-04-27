@@ -869,7 +869,7 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	; BIRD_KEEPER (12)
-	db "JOSE@", TRAINERTYPE_NORMAL
+	db "JOSé@", TRAINERTYPE_NORMAL
 	db 50, FARFETCH_D
 	db -1 ; end
 
@@ -881,7 +881,7 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	; BIRD_KEEPER (14)
-	db "JOSE@", TRAINERTYPE_NORMAL
+	db "JOSé@", TRAINERTYPE_NORMAL
 	db 43, FARFETCH_D
 	db -1 ; end
 
@@ -898,7 +898,7 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	; BIRD_KEEPER (17)
-	db "JOSE@", TRAINERTYPE_MOVES
+	db "JOSé@", TRAINERTYPE_MOVES
 	db 60, FARFETCH_D, STEEL_WING, PROTECT, FLY, CROSS_CHOP
 	db -1 ; end
 
