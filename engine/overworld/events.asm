@@ -182,19 +182,19 @@ HandleMapTimeAndJoypad:
 HandleMapObjects:
 	farcall HandleNPCStep
 	farcall _HandlePlayerStep
-	jp _CheckObjectEnteringVisibleRange
-
-HandleMapBackground:
-	farcall _UpdateSprites
-	farcall ScrollScreen
-	farcall PlaceMapNameSign
-	ret
+	; fallthrough
 
 _CheckObjectEnteringVisibleRange:
 	ld hl, wPlayerStepFlags
 	bit PLAYERSTEP_STOP_F, [hl]
 	ret z
 	farcall CheckObjectEnteringVisibleRange
+	ret
+
+HandleMapBackground:
+	farcall _UpdateSprites
+	farcall ScrollScreen
+	farcall PlaceMapNameSign
 	ret
 
 PlayerEvents:
