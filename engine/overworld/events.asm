@@ -73,6 +73,8 @@ StartMap:
 	call ByteFill
 	farcall InitCallReceiveDelay
 	call ClearJoypad
+	; fallthrough
+
 EnterMap:
 	xor a
 	ld [wXYComparePointer], a
