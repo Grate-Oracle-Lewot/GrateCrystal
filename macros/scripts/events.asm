@@ -999,11 +999,15 @@ verbosegiveitemvar: MACRO
 	db \2 ; var
 ENDM
 
-	const swarm_command ; $a0
-swarm: MACRO
-	db swarm_command
-	db \1 ; flag
-	map_id \2 ; map
+	const verbosegiveitemfive_command ; $a0
+verbosegiveitemfive: MACRO
+if _NARG == 1
+	verbosegiveitemfive \1, 1
+else
+	db verbosegiveitemfive_command
+	db \1 ; item
+	db \2 ; quantity
+endc
 ENDM
 
 	const halloffame_command ; $a1
