@@ -56,24 +56,6 @@ ArnieHangUpText:
 	line "huh?"
 	done
 
-ArnieSwarmText:
-	text "Boy, am I glad I"
-	line "caught you!"
-
-	para "A whole bunch of"
-	line "@"
-	text_ram wStringBuffer4
-	text " have"
-
-	para "appeared around"
-	line "@"
-	text_ram wStringBuffer5
-	text "!"
-
-	para "You have to see"
-	line "this!"
-	done
-
 ArnieHaventSeenRareMonText:
 	text "I haven't had any"
 	line "luck seeing rare"
@@ -92,15 +74,4 @@ ArnieReminderText:
 	cont "on @"
 	text_ram wStringBuffer5
 	text "!"
-	done
-
-ArnieHurryText:
-	text "Hello? Are you"
-	line "coming or what?"
-
-	para "You're missing out"
-	line "on seeing YANMA!"
-
-	para "Get down to ROUTE"
-	line "35 right now!"
 	done
