@@ -1225,6 +1225,16 @@ _ReceiveItemText::
 	text_promptbutton
 	text_end
 
+_Received5ItemText::
+	text_ram wPlayerName
+	text " received"
+	line "@"
+	text_ram wStringBuffer1
+	text " ×5!@"
+	sound_item
+	text_promptbutton
+	text_end
+
 _NoCoinsText::
 	text "You have no coins."
 	prompt
