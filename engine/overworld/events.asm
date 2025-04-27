@@ -360,10 +360,7 @@ rept SCENE_SCRIPT_SIZE
 	add hl, de
 endr
 
-	call GetMapScriptsBank
-	call GetFarWord
-	call GetMapScriptsBank
-	call CallScript
+	call GetFarWordCallScript
 
 	ld hl, wScriptFlags
 	res RUN_DEFERRED_SCRIPT, [hl]
@@ -650,10 +647,7 @@ BGEventJumptable:
 	pop hl
 	inc hl
 	inc hl
-	call GetMapScriptsBank
-	call GetFarWord
-	call GetMapScriptsBank
-	call CallScript
+	call GetFarWordCallScript
 	scf
 	ret
 
@@ -1260,5 +1254,11 @@ DoBikeStep::
 .NoCall:
 	xor a
 	ret
+
+GetFarWordCallScript:
+	call GetMapScriptsBank
+	call GetFarWord
+	call GetMapScriptsBank
+	jp CallScript
 
 INCLUDE "engine/overworld/cmd_queue.asm"
