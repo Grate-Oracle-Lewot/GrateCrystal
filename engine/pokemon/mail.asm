@@ -38,39 +38,6 @@ SendMailToPC:
 	scf
 	ret
 
-DeleteMailFromPC:
-; Shift all mail messages in the mailbox
-	ld a, BANK(sMailboxCount)
-	call OpenSRAM
-	ld a, b
-	push bc
-	ld hl, sMailboxes
-	ld bc, MAIL_STRUCT_LENGTH
-	call AddNTimes
-	push hl
-	add hl, bc
-	pop de
-	pop bc
-.loop
-	ld a, b
-	cp MAILBOX_CAPACITY - 1
-	jr z, .done
-	push bc
-	ld bc, MAIL_STRUCT_LENGTH
-	call CopyBytes
-	pop bc
-	inc b
-	jr .loop
-.done
-	ld h, d
-	ld l, e
-	xor a
-	ld bc, MAIL_STRUCT_LENGTH
-	call ByteFill
-	ld hl, sMailboxCount
-	dec [hl]
-	jp CloseSRAM
-
 ReadMailMessage:
 	ld a, b
 	ld hl, sMailboxes
@@ -111,7 +78,40 @@ MoveMailFromPCToParty:
 	ld [hl], d
 	call CloseSRAM
 	pop bc
-	jp DeleteMailFromPC
+	; fallthrough
+
+DeleteMailFromPC:
+; Shift all mail messages in the mailbox
+	ld a, BANK(sMailboxCount)
+	call OpenSRAM
+	ld a, b
+	push bc
+	ld hl, sMailboxes
+	ld bc, MAIL_STRUCT_LENGTH
+	call AddNTimes
+	push hl
+	add hl, bc
+	pop de
+	pop bc
+.loop
+	ld a, b
+	cp MAILBOX_CAPACITY - 1
+	jr z, .done
+	push bc
+	ld bc, MAIL_STRUCT_LENGTH
+	call CopyBytes
+	pop bc
+	inc b
+	jr .loop
+.done
+	ld h, d
+	ld l, e
+	xor a
+	ld bc, MAIL_STRUCT_LENGTH
+	call ByteFill
+	ld hl, sMailboxCount
+	dec [hl]
+	jp CloseSRAM
 
 GetMailboxCount:
 	ld a, BANK(sMailboxCount)
