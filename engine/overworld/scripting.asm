@@ -498,7 +498,7 @@ Script_verbosegiveitemvar:
 	ld de, GiveItemScript
 	jp ScriptCall
 
-Script_verbosegiveitem:
+Script_verbosegiveitemfive:
 	call Script_giveitem
 	call CurItemName
 	ld de, wStringBuffer1
