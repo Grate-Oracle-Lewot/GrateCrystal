@@ -1051,27 +1051,23 @@ RandomEncounter::
 	jr nz, .bug_contest
 	farcall TryWildEncounter
 	jr nz, .nope
-	jr .ok
+
+	ld a, BANK(WildBattleScript)
+	ld hl, WildBattleScript
+	jr .done
 
 .bug_contest
 	call _TryWildEncounter_BugContest
 	jr nc, .nope
-	jr .ok_bug_contest
+
+	ld a, BANK(BugCatchingContestBattleScript)
+	ld hl, BugCatchingContestBattleScript
+	jr .done
 
 .nope
 	ld a, 1
 	and a
 	ret
-
-.ok
-	ld a, BANK(WildBattleScript)
-	ld hl, WildBattleScript
-	jr .done
-
-.ok_bug_contest
-	ld a, BANK(BugCatchingContestBattleScript)
-	ld hl, BugCatchingContestBattleScript
-	jr .done
 
 .done
 	call CallScript
