@@ -157,23 +157,23 @@ ObtainedFruitText:
 	text_far _ObtainedFruitText
 	text_end
 
-ObtainedFruit2Text:
+Obtained2FruitText:
 	text_far _Obtained2FruitText
 	text_end
 
-ObtainedFruit3Text:
+Obtained3FruitText:
 	text_far _Obtained3FruitText
 	text_end
 
-ObtainedFruit4Text:
+Obtained4FruitText:
 	text_far _Obtained4FruitText
 	text_end
 
-ObtainedFruit5Text:
+Obtained5FruitText:
 	text_far _Obtained5FruitText
 	text_end
 
-ObtainedFruit6Text:
+Obtained6FruitText:
 	text_far _Obtained6FruitText
 	text_end
 
