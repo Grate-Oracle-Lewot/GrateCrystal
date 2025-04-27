@@ -242,17 +242,17 @@ TrainerFisherWilton1:
 	checkevent EVENT_WILTON_HAS_POKE_BALL
 	iftrue .PokeBall
 .UltraBall:
-	verbosegiveitem ULTRA_BALL
+	verbosegiveitemfive ULTRA_BALL, 5
 	iffalse .Route44PackFullM
 	sjump .ItemReceived
 
 .GreatBall:
-	verbosegiveitem GREAT_BALL
+	verbosegiveitemfive GREAT_BALL, 5
 	iffalse .Route44PackFullM
 	sjump .ItemReceived
 
 .PokeBall:
-	verbosegiveitem POKE_BALL
+	verbosegiveitemfive POKE_BALL, 5
 	iffalse .Route44PackFullM
 .ItemReceived:
 	clearflag ENGINE_WILTON_HAS_ITEM
