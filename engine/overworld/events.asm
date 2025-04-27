@@ -116,7 +116,26 @@ HandleMap:
 	call HandleMapObjects
 	call NextOverworldFrame
 	call HandleMapBackground
-	jp CheckPlayerState
+	; fallthrough
+
+CheckPlayerState:
+	ld a, [wPlayerStepFlags]
+	bit PLAYERSTEP_CONTINUE_F, a
+	jr z, .events
+	bit PLAYERSTEP_STOP_F, a
+	jr z, .noevents
+	bit PLAYERSTEP_MIDAIR_F, a
+	jr nz, .noevents
+	call EnableEvents
+.events
+	ld a, MAPEVENTS_ON
+	ld [wMapEventStatus], a
+	ret
+
+.noevents
+	ld a, MAPEVENTS_OFF
+	ld [wMapEventStatus], a
+	ret
 
 MapEvents:
 	ld a, [wMapEventStatus]
@@ -169,25 +188,6 @@ HandleMapBackground:
 	farcall _UpdateSprites
 	farcall ScrollScreen
 	farcall PlaceMapNameSign
-	ret
-
-CheckPlayerState:
-	ld a, [wPlayerStepFlags]
-	bit PLAYERSTEP_CONTINUE_F, a
-	jr z, .events
-	bit PLAYERSTEP_STOP_F, a
-	jr z, .noevents
-	bit PLAYERSTEP_MIDAIR_F, a
-	jr nz, .noevents
-	call EnableEvents
-.events
-	ld a, MAPEVENTS_ON
-	ld [wMapEventStatus], a
-	ret
-
-.noevents
-	ld a, MAPEVENTS_OFF
-	ld [wMapEventStatus], a
 	ret
 
 _CheckObjectEnteringVisibleRange:
