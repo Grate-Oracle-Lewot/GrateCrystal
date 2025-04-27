@@ -13,11 +13,52 @@ FruitTreeScript::
 
 .fruit
 	writetext HeyItsFruitText
+	callasm GetFruitTreeCount
+	ifequal 2, .try_two
+	ifequal 3, .try_three
+	ifequal 4, .try_four
+	ifequal 5, .try_five
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, 6
+	iffalse .try_five
+	promptbutton
+	writetext Obtained6FruitText
+	sjump .continue
+.try_five
 	readmem wCurFruit
 	giveitem ITEM_FROM_MEM, 5
+	iffalse .try_four
+	promptbutton
+	writetext Obtained5FruitText
+	sjump .continue
+.try_four
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, 4
+	iffalse .try_three
+	promptbutton
+	writetext Obtained4FruitText
+	sjump .continue
+.try_three
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, 3
+	iffalse .try_two
+	promptbutton
+	writetext Obtained3FruitText
+	sjump .continue
+.try_two
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, 2
+	iffalse .try_one
+	promptbutton
+	writetext Obtained2FruitText
+	sjump .continue
+.try_one
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM
 	iffalse .packisfull
 	promptbutton
 	writetext ObtainedFruitText
+.continue
 	callasm PickedFruitTree
 	specialsound
 	itemnotify
@@ -114,6 +155,26 @@ HeyItsFruitText:
 
 ObtainedFruitText:
 	text_far _ObtainedFruitText
+	text_end
+
+ObtainedFruit2Text:
+	text_far _Obtained2FruitText
+	text_end
+
+ObtainedFruit3Text:
+	text_far _Obtained3FruitText
+	text_end
+
+ObtainedFruit4Text:
+	text_far _Obtained4FruitText
+	text_end
+
+ObtainedFruit5Text:
+	text_far _Obtained5FruitText
+	text_end
+
+ObtainedFruit6Text:
+	text_far _Obtained6FruitText
 	text_end
 
 FruitPackIsFullText:
