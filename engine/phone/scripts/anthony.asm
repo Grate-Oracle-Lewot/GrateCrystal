@@ -21,15 +21,15 @@ AnthonyPhoneCallerScript:
 	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
 	farscall PhoneScript_GreetPhone_Male
 	checkflag ENGINE_FLYPOINT_GOLDENROD
-	iffalse .TriesSwarm
+	iffalse .Generic
 	checkflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	iftrue .TriesSwarm
+	iftrue .Generic
 	checkflag ENGINE_ANTHONY_FRIDAY_NIGHT
-	iftrue .TriesSwarm
+	iftrue .Generic
 	farscall PhoneScript_Random2
 	ifequal 0, AnthonyWantsBattle
 
-.TriesSwarm:
+.Generic:
 	farsjump Phone_GenericCall_Male
 
 AnthonyFridayNight:
@@ -39,6 +39,3 @@ AnthonyWantsBattle:
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_33
 	setflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	farsjump PhoneScript_WantsToBattle_Male
-
-.Generic:
-	farsjump Phone_GenericCall_Male
