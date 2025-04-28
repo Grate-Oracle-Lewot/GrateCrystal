@@ -153,7 +153,6 @@ endc
 
 .FriendNotReady:
 	ld hl, .YourFriendIsNotReadyText ; friend not ready
-	; fallthrough
 
 .PrintTextAndExit:
 	call PrintText
@@ -361,43 +360,99 @@ endc
 	jr z, .continue
 	ld a, MG_CANCELED
 	ldh [hMGStatusFlags], a
-	jp EndOrContinueMysteryGiftIRCommunication
+	jr EndOrContinueMysteryGiftIRCommunication
 
 ReceiverExchangeMysteryGiftDataPayloads:
 	; Receive the data payload
 	call ReceiveMysteryGiftDataPayload
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; fallthrough
+
 ReceiverExchangeMysteryGiftDataPayloads_GotPayload:
 	; Switch roles
 	call BeginSendingIRCommunication
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Send the data payload
 	call SendMysteryGiftDataPayload
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Switch roles
 	call BeginReceivingIRCommunication
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Receive an empty block
 	call ReceiveEmptyIRDataBlock
-	jp EndOrContinueMysteryGiftIRCommunication
+	jr EndOrContinueMysteryGiftIRCommunication
 
 SenderExchangeMysteryGiftDataPayloads:
 	; Send the data payload
 	call SendMysteryGiftDataPayload
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Switch roles
 	call BeginReceivingIRCommunication
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Receive the data payload
 	call ReceiveMysteryGiftDataPayload
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Switch roles
 	call BeginSendingIRCommunication
-	jp nz, EndOrContinueMysteryGiftIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
 	; Send an empty block
 	call SendEmptyIRDataBlock
-	jp EndOrContinueMysteryGiftIRCommunication
+	; fallthrough
+
+EndOrContinueMysteryGiftIRCommunication:
+	nop
+	ldh a, [hMGStatusFlags]
+	; Quit if player canceled
+	cp MG_CANCELED
+	jr z, .quit
+	; Quit if there was a communication error
+	cp MG_OKAY
+	jr nz, .quit
+	; Quit if all messages are sent/received
+	ld hl, wMysteryGiftMessageCount
+	dec [hl]
+	jr z, .quit
+	; Quit if communicating with Pokémon Pikachu 2 device
+	ld hl, wMysteryGiftTrainer
+	ld de, wMysteryGiftPartnerData
+	ld bc, wMysteryGiftPartnerDataEnd - wMysteryGiftPartnerData
+	call CopyBytes
+	ld a, [wMysteryGiftTrainer] ; first byte is the version
+	cp POKEMON_PIKACHU_2_VERSION
+	jr nc, .quit
+
+	; Prepare the second message for wMysteryGiftTrainer
+	farcall StagePartyDataForMysteryGift
+	call ClearMysteryGiftTrainer
+	ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
+	ld [wMysteryGiftStagedDataLength], a
+
+	ldh a, [hMGRole]
+	cp IR_SENDER
+	jr z, .sender
+; receiver
+	call BeginReceivingIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
+	jp ReceiverExchangeMysteryGiftDataPayloads
+
+.sender
+	call BeginSendingIRCommunication
+	jr nz, EndOrContinueMysteryGiftIRCommunication
+	jp SenderExchangeMysteryGiftDataPayloads
+
+.quit
+	ldh a, [hMGStatusFlags]
+	push af
+	call EndIRCommunication
+	xor a
+	ldh [rIF], a
+	ldh a, [rIE]
+	or 1 << VBLANK
+	ldh [rIE], a
+	ei
+	call DelayFrame
+	pop af
+	ret
 
 ReceiveMysteryGiftDataPayload:
 	; Receive the region prefix
@@ -406,6 +461,7 @@ ReceiveMysteryGiftDataPayload:
 	call TryReceivingIRDataBlock
 	ret nz
 	; fallthrough
+
 ReceiveMysteryGiftDataPayload_GotRegionPrefix:
 	; Receive an empty block
 	call ReceiveEmptyIRDataBlock
@@ -489,61 +545,6 @@ SendMysteryGiftDataPayload:
 	call SendEmptyIRDataBlock
 	ldh a, [hMGStatusFlags]
 	cp MG_OKAY
-	ret
-
-EndOrContinueMysteryGiftIRCommunication:
-	nop
-	ldh a, [hMGStatusFlags]
-	; Quit if player canceled
-	cp MG_CANCELED
-	jr z, .quit
-	; Quit if there was a communication error
-	cp MG_OKAY
-	jr nz, .quit
-	; Quit if all messages are sent/received
-	ld hl, wMysteryGiftMessageCount
-	dec [hl]
-	jr z, .quit
-	; Quit if communicating with Pokémon Pikachu 2 device
-	ld hl, wMysteryGiftTrainer
-	ld de, wMysteryGiftPartnerData
-	ld bc, wMysteryGiftPartnerDataEnd - wMysteryGiftPartnerData
-	call CopyBytes
-	ld a, [wMysteryGiftTrainer] ; first byte is the version
-	cp POKEMON_PIKACHU_2_VERSION
-	jr nc, .quit
-
-	; Prepare the second message for wMysteryGiftTrainer
-	farcall StagePartyDataForMysteryGift
-	call ClearMysteryGiftTrainer
-	ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
-	ld [wMysteryGiftStagedDataLength], a
-
-	ldh a, [hMGRole]
-	cp IR_SENDER
-	jr z, .sender
-; receiver
-	call BeginReceivingIRCommunication
-	jr nz, EndOrContinueMysteryGiftIRCommunication
-	jp ReceiverExchangeMysteryGiftDataPayloads
-
-.sender
-	call BeginSendingIRCommunication
-	jr nz, EndOrContinueMysteryGiftIRCommunication
-	jp SenderExchangeMysteryGiftDataPayloads
-
-.quit
-	ldh a, [hMGStatusFlags]
-	push af
-	call EndIRCommunication
-	xor a
-	ldh [rIF], a
-	ldh a, [rIE]
-	or 1 << VBLANK
-	ldh [rIE], a
-	ei
-	call DelayFrame
-	pop af
 	ret
 
 ExchangeNameCardData:
