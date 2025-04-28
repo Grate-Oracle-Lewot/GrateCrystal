@@ -832,18 +832,6 @@ SendInfraredLEDOn:
 	halt
 	jr .wait
 
-SendInfraredLEDOff:
-; Holds the IR LED off for d-1 interrupts.
-	ld a, rRP_ENABLE_READ_MASK
-	ldh [c], a
-.wait
-	dec d
-	ret z
-	xor a
-	ldh [rIF], a
-	halt
-	jr .wait
-
 InitializeIRCommunicationRoles:
 	ld d, 0
 	ld e, d
@@ -899,7 +887,19 @@ ReceiveIRHelloMessage:
 	ld d, 5
 	call SendInfraredLEDOn
 	ld d, 5
-	jp SendInfraredLEDOff
+	; fallthrough
+
+SendInfraredLEDOff:
+; Holds the IR LED off for d-1 interrupts.
+	ld a, rRP_ENABLE_READ_MASK
+	ldh [c], a
+.wait
+	dec d
+	ret z
+	xor a
+	ldh [rIF], a
+	halt
+	jr .wait
 
 SendIRHelloMessageAfterDelay:
 	; Wait a random amount of time
