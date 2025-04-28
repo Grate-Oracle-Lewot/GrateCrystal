@@ -479,7 +479,7 @@ _UnusedNothingHereText::
 
 _PocketPCNoSignalText::
 	text "No signal!"
-	prompt
+	done
 
 _CantGetOffBikeText::
 	text "You can't get off"
