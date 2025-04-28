@@ -963,6 +963,10 @@ ToggleIRCommunication:
 	ldh [hMGStatusFlags], a
 	ret
 
+SendEmptyIRDataBlock:
+	ld b, 0
+	; fallthrough
+
 SendIRDataBlock:
 ; Send b bytes of data in three messages:
 ; 1. two bytes: MESSAGE_PREFIX and the length b
@@ -1093,6 +1097,10 @@ ReceivedWrongIRMessagePrefix:
 	or MG_WRONG_PREFIX
 	ldh [hMGStatusFlags], a
 	ret
+
+ReceiveEmptyIRDataBlock:
+	ld b, 0
+	; fallthrough
 
 ReceiveIRDataBlock:
 ; Receive b bytes of data in three messages:
@@ -1238,14 +1246,6 @@ ReceiveIRDataMessage:
 
 	ld d, 16
 	jp SendInfraredLEDOff
-
-SendEmptyIRDataBlock:
-	ld b, 0
-	jp SendIRDataBlock
-
-ReceiveEmptyIRDataBlock:
-	ld b, 0
-	jp ReceiveIRDataBlock
 
 MysteryGift_UpdateJoypad:
 ; We can only get four inputs at a time.
