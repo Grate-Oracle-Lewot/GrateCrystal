@@ -93,3 +93,22 @@ AnthonyReminderText:
 	text "!"
 	line "I'm waiting!"
 	done
+
+AnthonySwarmText:
+	text "<PLAYER>! Have you"
+	line "checked out UNION"
+	cont "CAVE?"
+
+	para "It's a lot deeper"
+	line "than it seems!"
+
+	para "Some paths connect"
+	line "to the RUINS OF"
+	cont "ALPH, and once I"
+
+	para "even ended up in"
+	line "SLOWPOKE WELL!"
+
+	para "Isn't spelunking"
+	line "fun?"
+	done
