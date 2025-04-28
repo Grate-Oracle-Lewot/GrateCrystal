@@ -21,13 +21,15 @@ ArniePhoneCallerScript:
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
 	farscall PhoneScript_GreetPhone_Male
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
-	iftrue .Swarm
+	iftrue .Special
 	checkflag ENGINE_ARNIE_TUESDAY_MORNING
-	iftrue .Swarm
+	iftrue .Special
 	farscall PhoneScript_Random2
 	ifequal 0, ArnieWantsBattle
 
-.Swarm:
+.Special:
+	farscall PhoneScript_Random5
+	ifequal 0, ArnieBugContestSpeech
 	farscall PhoneScript_Random3
 	ifequal 0, ArnieFoundRare
 	farsjump Phone_GenericCall_Male
@@ -42,3 +44,6 @@ ArnieWantsBattle:
 
 ArnieFoundRare:
 	farsjump Phone_CheckIfUnseenRare_Male
+
+ArnieBugContestSpeech:
+	farsjump ArnieBugContestScript
