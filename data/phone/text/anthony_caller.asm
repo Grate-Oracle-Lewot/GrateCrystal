@@ -94,7 +94,7 @@ AnthonyReminderText:
 	line "I'm waiting!"
 	done
 
-AnthonySwarmText:
+AnthonyUnionCaveText:
 	text "<PLAYER>! Have you"
 	line "checked out UNION"
 	cont "CAVE?"
