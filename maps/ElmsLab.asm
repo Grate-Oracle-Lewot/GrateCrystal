@@ -438,6 +438,7 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
+	giveitem BERRY, 98
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
