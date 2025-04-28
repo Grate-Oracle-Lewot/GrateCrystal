@@ -557,7 +557,7 @@ ExchangeNameCardData:
 	call InitializeIRCommunicationRoles
 	ldh a, [hMGStatusFlags]
 	cp MG_CANCELED
-	jp z, EndNameCardIRCommunication
+	jr z, EndNameCardIRCommunication
 	cp MG_OKAY
 	jr nz, .restart
 
@@ -567,36 +567,51 @@ ExchangeNameCardData:
 ; receiver
 	; Receive the data payload
 	call ReceiveNameCardDataPayload
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Switch roles
 	call BeginSendingIRCommunication
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Send the data payload
 	call SendNameCardDataPayload
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Switch roles
 	call BeginReceivingIRCommunication
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Receive an empty block
 	call ReceiveEmptyIRDataBlock
-	jp EndNameCardIRCommunication
+	jr EndNameCardIRCommunication
 
 .sender
 	; Send the data payload
 	call SendNameCardDataPayload
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Switch roles
 	call BeginReceivingIRCommunication
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Receive the data payload
 	call ReceiveNameCardDataPayload
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Switch roles
 	call BeginSendingIRCommunication
-	jp nz, EndNameCardIRCommunication
+	jr nz, EndNameCardIRCommunication
 	; Send an empty block
 	call SendEmptyIRDataBlock
-	jp EndNameCardIRCommunication
+	; fallthrough
+
+EndNameCardIRCommunication:
+	nop
+	ldh a, [hMGStatusFlags]
+	push af
+	call EndIRCommunication
+	xor a
+	ldh [rIF], a
+	ldh a, [rIE]
+	or 1 << VBLANK
+	ldh [rIE], a
+	ei
+	call DelayFrame
+	pop af
+	ret
 
 ReceiveNameCardDataPayload:
 	; Receive the Name Card prefix
@@ -687,21 +702,6 @@ SendNameCardDataPayload:
 	call SendEmptyIRDataBlock
 	ldh a, [hMGStatusFlags]
 	cp MG_OKAY
-	ret
-
-EndNameCardIRCommunication:
-	nop
-	ldh a, [hMGStatusFlags]
-	push af
-	call EndIRCommunication
-	xor a
-	ldh [rIF], a
-	ldh a, [rIE]
-	or 1 << VBLANK
-	ldh [rIE], a
-	ei
-	call DelayFrame
-	pop af
 	ret
 
 WrongMysteryGiftRegion:
