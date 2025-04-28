@@ -1811,12 +1811,18 @@ Script_FailPocketPC:
 	special UpdateTimePals
 Script_FailPocketPC_Register:
 	opentext
+	writetext PocketPCLoadingText
 	playsound SFX_NO_SIGNAL
 	waitsfx
 	writetext NoSignalText
+	waitbutton
 	closetext
 	reloadmappart
 	end
+
+PocketPCLoadingText:
+	text_far _PocketPCLoadingText
+	text_end
 
 NoSignalText:
 	text_far _PocketPCNoSignalText
