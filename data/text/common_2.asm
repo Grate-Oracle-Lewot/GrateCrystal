@@ -472,10 +472,9 @@ _RodNothingText::
 	text "Not even a nibble!"
 	autodone
 
-_UnusedNothingHereText::
-	text "Looks like there's"
-	line "nothing here."
-	prompt
+_PocketPCLoadingText::
+	text "Loading…"
+	done
 
 _PocketPCNoSignalText::
 	text "No signal!"
