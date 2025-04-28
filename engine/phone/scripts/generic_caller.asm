@@ -879,8 +879,8 @@ GinaRocketRumorScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Female
 
-ArnieSwarmScript:
-	farwritetext ArnieSwarmText
+ArnieBugContestScript:
+	farwritetext ArnieBugContestText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
@@ -889,8 +889,8 @@ RalphItemScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
-AnthonySwarmScript:
-	farwritetext AnthonySwarmText
+AnthonyUnionCaveScript:
+	farwritetext AnthonyUnionCaveText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
