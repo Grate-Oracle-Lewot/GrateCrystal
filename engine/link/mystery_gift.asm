@@ -935,19 +935,25 @@ SendIRHelloMessage:
 
 	ld d, e
 	call ReceiveInfraredLEDOff
-	jp z, InfraredLEDReceiveTimedOut
+	jr z, InfraredLEDReceiveTimedOut
 	ld d, e
 	call ReceiveInfraredLEDOn
-	jp z, InfraredLEDReceiveTimedOut
+	jr z, InfraredLEDReceiveTimedOut
 	call ReceiveInfraredLEDOff
-	jp z, InfraredLEDReceiveTimedOut
+	jr z, InfraredLEDReceiveTimedOut
 	call ReceiveInfraredLEDOn
-	jp z, InfraredLEDReceiveTimedOut
+	jr z, InfraredLEDReceiveTimedOut
 
 	ld d, 61
 	call SendInfraredLEDOff
 
 	ld a, MG_OKAY
+	ldh [hMGStatusFlags], a
+	ret
+
+InfraredLEDReceiveTimedOut:
+	ldh a, [hMGStatusFlags]
+	or MG_TIMED_OUT
 	ldh [hMGStatusFlags], a
 	ret
 
@@ -1075,12 +1081,6 @@ SendIRDataMessage:
 	call SendInfraredLEDOn
 	ld d, 17
 	jp SendInfraredLEDOff
-
-InfraredLEDReceiveTimedOut:
-	ldh a, [hMGStatusFlags]
-	or MG_TIMED_OUT
-	ldh [hMGStatusFlags], a
-	ret
 
 ReceivedWrongIRChecksum:
 	ldh a, [hMGStatusFlags]
