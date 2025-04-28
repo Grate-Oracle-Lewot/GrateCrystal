@@ -75,3 +75,24 @@ ArnieReminderText:
 	text_ram wStringBuffer5
 	text "!"
 	done
+
+ArnieBugContestText:
+	text "About the Bug-"
+	line "Catching Contest…"
+
+	para "It helps to catch"
+	line "a stronger #-"
+	cont "MON, of course,"
+
+	para "but they also give"
+	line "you more points if"
+
+	para "the #MON has a"
+	line "lot of HP left."
+
+	para "It's harder to"
+	line "catch then, but I"
+
+	para "guess that's the"
+	line "point."
+	done
