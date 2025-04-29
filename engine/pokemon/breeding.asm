@@ -247,8 +247,6 @@ HatchEggs:
 	ld [wNamedObjectIndex], a
 	ld [wCurSpecies], a
 	call GetPokemonName
-	xor a
-	ld [wUnusedEggHatchFlag], a
 	call GetBaseData
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1
@@ -319,8 +317,6 @@ HatchEggs:
 	pop de
 	jr c, .nonickname
 
-	ld a, TRUE
-	ld [wUnusedEggHatchFlag], a
 	xor a
 	ld [wMonType], a
 	push de
