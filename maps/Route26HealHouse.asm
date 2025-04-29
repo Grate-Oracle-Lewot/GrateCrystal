@@ -15,6 +15,7 @@ Route26HealHouseTeacherScript:
 	faceplayer
 	opentext
 	writetext Route26HealHouseRestAWhileText
+	promptbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -26,6 +27,7 @@ Route26HealHouseTeacherScript:
 	special RestartMapMusic
 	opentext
 	writetext Route26HealHouseKeepAtItText
+	waitbutton
 	closetext
 	end
 
@@ -36,18 +38,18 @@ Route26HealHouseRestAWhileText:
 	text "Your #MON look"
 	line "a little tired."
 
-	autopara "You should rest"
+	para "You should rest"
 	line "them a while."
-	autodone
+	done
 
 Route26HealHouseKeepAtItText:
 	text "There!"
 
-	autopara "Your #MON are"
+	para "Your #MON are"
 	line "looking good!"
 
-	autopara "Keep at it!"
-	autodone
+	para "Keep at it!"
+	done
 
 Route26HealHouse_MapEvents:
 	db 0, 0 ; filler
