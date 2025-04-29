@@ -2057,7 +2057,7 @@ GetBoxPointer:
 	dec b
 	ld c, b
 	ld b, 0
-	ld hl, .BoxBankAddresses
+	ld hl, BoxBankAddresses
 	add hl, bc
 	add hl, bc
 	add hl, bc
@@ -2068,8 +2068,8 @@ GetBoxPointer:
 	ld l, a
 	ret
 
-.BoxBankAddresses:
-	table_width 3, GetBoxPointer.BoxBankAddresses
+BoxBankAddresses:
+	table_width 3, BoxBankAddresses
 	dba sBox1
 	dba sBox2
 	dba sBox3
@@ -2245,7 +2245,7 @@ GetBoxCount:
 	jr z, .activebox
 	ld c, a
 	ld b, 0
-	ld hl, .BoxBankAddresses
+	ld hl, BoxBankAddresses
 	add hl, bc
 	add hl, bc
 	add hl, bc
@@ -2275,24 +2275,6 @@ GetBoxCount:
 	ld hl, sBoxCount
 	ld a, [hl]
 	jp CloseSRAM
-
-.BoxBankAddresses:
-	table_width 3, GetBoxCount.BoxBankAddresses
-	dba sBox1
-	dba sBox2
-	dba sBox3
-	dba sBox4
-	dba sBox5
-	dba sBox6
-	dba sBox7
-	dba sBox8
-	dba sBox9
-	dba sBox10
-	dba sBox11
-	dba sBox12
-	dba sBox13
-	dba sBox14
-	assert_table_length NUM_BOXES
 
 BillsPC_PrintBoxName:
 	hlcoord 0, 0
