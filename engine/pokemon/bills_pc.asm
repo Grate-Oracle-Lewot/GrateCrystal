@@ -739,9 +739,6 @@ BillsPC_InitRAM:
 	call ByteFill
 	xor a
 	ld [wJumptableIndex], a
-	ld [wUnusedBillsPCData], a
-	ld [wUnusedBillsPCData+1], a
-	ld [wUnusedBillsPCData+2], a
 	ld [wBillsPC_CursorPosition], a
 	ld [wBillsPC_ScrollPosition], a
 	ret
