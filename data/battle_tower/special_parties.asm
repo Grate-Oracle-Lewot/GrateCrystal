@@ -1051,7 +1051,7 @@ BattleTowerChuck:
 
 	db KANGASKHAN
 	db X_ACCURACY
-	db DIZZY_PUNCH, DYNAMICPUNCH, LOW_KICK, MILK_DRINK
+	db DIZZY_PUNCH, DYNAMICPUNCH, STRENGTH, MILK_DRINK
 	dw 0 ; OT ID
 	dt 849970 ; Exp
 	; Stat exp
@@ -1061,7 +1061,7 @@ BattleTowerChuck:
 	bigdw 65535
 	bigdw 65535
 	dn 10, 10, 10, 10 ; DVs
-	db 24, 8, 40, 16 ; PP
+	db 24, 8, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
