@@ -1,25 +1,21 @@
 AddPhoneNumber::
 	call _CheckCellNum
-	jr c, .cant_add
+	jr c, SpecialCallWhereverYouAre
 	call Phone_FindOpenSlot
-	jr nc, .cant_add
+	jr nc, SpecialCallWhereverYouAre
 	ld [hl], c
 	xor a
 	ret
 
-.cant_add
+SpecialCallWhereverYouAre:
 	scf
 	ret
 
 DelCellNum::
 	call _CheckCellNum
-	jr nc, .not_in_list
+	jr nc, SpecialCallWhereverYouAre
 	xor a
 	ld [hl], a
-	ret
-
-.not_in_list
-	scf
 	ret
 
 CheckCellNum::
@@ -260,6 +256,7 @@ CheckSpecialPhoneCall::
 	call CallScript
 	scf
 	ret
+
 .NoPhoneCall:
 	xor a
 	ret
@@ -284,10 +281,6 @@ SpecialCallOnlyWhenOutside:
 	cp ROUTE
 	jr z, SpecialCallWhereverYouAre
 	xor a
-	ret
-
-SpecialCallWhereverYouAre:
-	scf
 	ret
 
 MakePhoneCallFromPokegear:
@@ -389,6 +382,7 @@ WrongNumber:
 .script
 	writetext .PhoneWrongNumberText
 	end
+
 .PhoneWrongNumberText:
 	text_far _PhoneWrongNumberText
 	text_end
@@ -418,12 +412,9 @@ RingTwice_StartCall:
 	ret
 
 .Ring:
-	call Phone_StartRinging
-	call Phone_Wait20Frames
+	call Phone_StartRingingWait20Frames
 	call .CallerTextboxWithName
-	call Phone_Wait20Frames
-	call Phone_CallerTextbox
-	call Phone_Wait20Frames
+	call Phone_Wait20FramesCallerTextboxWait20Frames
 	; fallthrough
 
 .CallerTextboxWithName:
@@ -444,12 +435,9 @@ PhoneCall::
 	ret
 
 .Ring:
-	call Phone_StartRinging
-	call Phone_Wait20Frames
+	call Phone_StartRingingWait20Frames
 	call .CallerTextboxWithName
-	call Phone_Wait20Frames
-	call Phone_CallerTextbox
-	call Phone_Wait20Frames
+	call Phone_Wait20FramesCallerTextboxWait20Frames
 	; fallthrough
 
 .CallerTextboxWithName:
@@ -473,15 +461,14 @@ Phone_NoSignal:
 HangUp::
 	call HangUp_Beep
 	call HangUp_Wait20Frames
+	; fallthrough
+
 Phone_CallEnd:
-	call HangUp_BoopOn
-	call HangUp_Wait20Frames
-	call HangUp_BoopOff
-	call HangUp_Wait20Frames
-	call HangUp_BoopOn
-	call HangUp_Wait20Frames
-	call HangUp_BoopOff
-	call HangUp_Wait20Frames
+	call Phone_HangUpBoopOnOff
+	call Phone_HangUpBoopOnOff
+	; fallthrough
+
+Phone_HangUpBoopOnOff:
 	call HangUp_BoopOn
 	call HangUp_Wait20Frames
 	call HangUp_BoopOff
@@ -514,13 +501,6 @@ Phone_StartRinging:
 	call PlaySFX
 	call Phone_CallerTextbox
 	call UpdateSprites
-	farcall PhoneRing_CopyTilemapAtOnce
-	ret
-
-HangUp_Wait20Frames:
-Phone_Wait20Frames:
-	ld c, 20
-	call DelayFrames
 	farcall PhoneRing_CopyTilemapAtOnce
 	ret
 
@@ -663,3 +643,19 @@ PhoneScript_JustTalkToThem:
 PhoneJustTalkToThemText:
 	text_far _PhoneJustTalkToThemText
 	text_end
+
+Phone_StartRingingWait20Frames:
+	call Phone_StartRinging
+	jr Phone_Wait20Frames
+
+Phone_Wait20FramesCallerTextboxWait20Frames:
+	call Phone_Wait20Frames
+	call Phone_CallerTextbox
+	; fallthrough
+
+HangUp_Wait20Frames:
+Phone_Wait20Frames:
+	ld c, 20
+	call DelayFrames
+	farcall PhoneRing_CopyTilemapAtOnce
+	ret
