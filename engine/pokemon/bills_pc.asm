@@ -621,7 +621,7 @@ _MovePKMNWithoutMail:
 
 .Move:
 	call BillsPC_CheckMail_PreventBlackout
-	jp c, .Cancel
+	jr c, .Cancel
 	ld a, [wBillsPC_ScrollPosition]
 	ld [wBillsPC_BackupScrollPosition], a
 	ld a, [wBillsPC_CursorPosition]
