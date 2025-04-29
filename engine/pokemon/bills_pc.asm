@@ -1615,7 +1615,7 @@ StatsScreenDPad:
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	call GetBaseData
-	jp BillsPC_CopyMon
+	jr BillsPC_CopyMon
 
 .did_nothing
 	xor a
