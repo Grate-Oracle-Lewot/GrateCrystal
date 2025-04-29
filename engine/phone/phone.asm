@@ -277,10 +277,14 @@ CheckSpecialPhoneCall::
 SpecialCallOnlyWhenOutside:
 	ld a, [wEnvironment]
 	cp TOWN
-	jr z, SpecialCallWhereverYouAre
+	jr z, .outside
 	cp ROUTE
-	jr z, SpecialCallWhereverYouAre
+	jr z, .outside
 	xor a
+	ret
+
+.outside
+	scf
 	ret
 
 MakePhoneCallFromPokegear:
