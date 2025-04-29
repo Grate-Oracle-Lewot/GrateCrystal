@@ -55,11 +55,6 @@ GetName::
 	call CopyBytes
 
 .done
-	ld a, e
-	ld [wUnusedNamesPointer], a
-	ld a, d
-	ld [wUnusedNamesPointer + 1], a
-
 	pop de
 	pop bc
 	pop hl
