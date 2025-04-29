@@ -30,7 +30,7 @@ endr
 wCurTrackDuty:: db
 wCurTrackVolumeEnvelope:: db
 wCurTrackFrequency:: dw
-wUnusedBCDNumber:: db ; BCD value, dummied out
+	ds 1
 wCurNoteDuration:: db ; used in MusicE0 and LoadNote
 
 wCurMusicByte:: db
@@ -1520,7 +1520,8 @@ NEXTU
 ; pokegear
 wPokegearCard:: db
 wPokegearMapRegion:: db
-wUnusedPokegearByte:: db
+
+	ds 1
 
 NEXTU
 ; pack
@@ -1537,8 +1538,7 @@ wTrainerCardBadgeAttributes:: db
 NEXTU
 ; slot machine
 wSlotsDelay:: db
-	ds 1
-wUnusedSlotReelIconDelay:: db
+	ds 2
 
 NEXTU
 ; card flip
@@ -1567,10 +1567,6 @@ NEXTU
 wBattleTransitionCounter:: db
 wBattleTransitionSineWaveOffset::
 wBattleTransitionSpinQuadrant:: db
-
-NEXTU
-; bill's pc
-wUnusedBillsPCData:: ds 3
 
 NEXTU
 ; debug mon color picker
@@ -1604,9 +1600,9 @@ wTradeDialog::
 	db
 wFrameCounter2::
 wPrinterQueueLength::
-wUnusedSGB1eColorOffset::
 	db
-wUnusedTradeAnimPlayEvolutionMusic:: db
+
+	ds 1
 
 NEXTU
 ; mobile
@@ -1717,7 +1713,7 @@ wPredefHL:: dw
 wPredefAddress:: dw
 wFarCallBC:: dw
 
-wUnusedLinkCommunicationByte:: db
+	ds 1
 
 wGameTimerPaused::
 ; bit 0: game timer paused
@@ -1914,8 +1910,7 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; movement buffer data
 wMovementBufferCount:: db
 wMovementBufferObject:: db
-wUnusedMovementBufferBank:: db
-wUnusedMovementBufferPointer:: dw
+	ds 2
 wMovementBuffer:: ds 55
 
 
@@ -2308,7 +2303,7 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 ENDU
 
 wListPointer:: dw
-wUnusedNamesPointer:: dw
+	ds 2
 
 wItemAttributesPointer:: dw
 
@@ -2423,7 +2418,7 @@ wTilesetBlocksAddress:: dw
 wTilesetCollisionBank:: db
 wTilesetCollisionAddress:: dw
 wTilesetAnim:: dw ; bank 3f
-	ds 2 ; unused
+	ds 2
 wTilesetPalettes:: dw ; bank 3f
 wTilesetEnd::
 	assert wTilesetEnd - wTileset == TILESET_LENGTH
@@ -2711,9 +2706,6 @@ wPokedexShowPointerAddr:: dw
 wPokedexShowPointerBank:: db
 	ds 3
 wd271:: dw ; mobile
-
-NEXTU
-wUnusedEggHatchFlag:: db
 
 NEXTU
 ; enemy party
