@@ -3167,8 +3167,6 @@ wHappinessStepCount:: db
 
 wParkBallsRemaining:: db
 
-	ds 1
-
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
 wLuckyNumberShowFlag:: db
