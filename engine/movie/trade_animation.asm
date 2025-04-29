@@ -20,7 +20,6 @@ ENDM
 
 TradeAnimation:
 	xor a
-	ld [wUnusedTradeAnimPlayEvolutionMusic], a
 	ld hl, wPlayerTrademonSenderName
 	ld de, wOTTrademonSenderName
 	call LinkTradeAnim_LoadTradePlayerNames
@@ -71,7 +70,6 @@ TradeAnimation:
 
 TradeAnimationPlayer2:
 	xor a
-	ld [wUnusedTradeAnimPlayEvolutionMusic], a
 	ld hl, wOTTrademonSenderName
 	ld de, wPlayerTrademonSenderName
 	call LinkTradeAnim_LoadTradePlayerNames
@@ -137,9 +135,6 @@ RunTradeAnimScript:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call .TradeAnimLayout
-	ld a, [wUnusedTradeAnimPlayEvolutionMusic]
-	and a
-	jr nz, .anim_loop
 	ld de, MUSIC_EVOLUTION
 	call PlayMusic2
 .anim_loop
