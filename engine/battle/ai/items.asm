@@ -146,6 +146,7 @@ AI_TryItem:
 	ret z
 
 ; don't use items on Ditto before it Transforms
+; Transform copies stat levels and thus erases prior X item boosts
 	ld a, [wEnemyMonSpecies]
 	cp DITTO
 	ret z
