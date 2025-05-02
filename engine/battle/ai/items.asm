@@ -53,27 +53,21 @@ SwitchSometimes:
 	cp $10
 	jr nz, .not_10
 	call AI_Item_20_Percent
-	jr c, .switch
+	jr c, SwitchMerge
 	jp AI_TryItem
 .not_10
 
 	cp $20
 	jr nz, .not_20
 	call AI_Item_50_Percent
-	jr c, .switch
+	jr c, SwitchMerge
 	jp AI_TryItem
 .not_20
 
 	; $30
 	call AI_Item_20_Percent
 	jp c, AI_TryItem
-
-.switch
-	ld a, [wEnemySwitchMonParam]
-	and $f
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	jp AI_TrySwitch
+	jr SwitchMerge
 
 SwitchOften:
 	callfar CheckAbleToSwitch
@@ -84,7 +78,7 @@ SwitchOften:
 	cp $10
 	jr nz, .not_10
 	call AI_Item_50_Percent
-	jr c, .switch
+	jr c, SwitchMerge
 	jr AI_TryItem
 .not_10
 
@@ -92,7 +86,7 @@ SwitchOften:
 	jr nz, .not_20
 	call Random
 	cp 79 percent - 1
-	jr c, .switch
+	jr c, SwitchMerge
 	jr AI_TryItem
 .not_20
 
@@ -100,8 +94,9 @@ SwitchOften:
 	call Random
 	cp 4 percent
 	jr c, AI_TryItem
+	; fallthrough
 
-.switch
+SwitchMerge:
 	ld a, [wEnemySwitchMonParam]
 	and $f
 	inc a
@@ -119,7 +114,7 @@ SwitchRarely:
 	jr nz, .not_10
 	call Random
 	cp 8 percent
-	jr c, .switch
+	jr c, SwitchMerge
 	jr AI_TryItem
 .not_10
 
@@ -127,7 +122,7 @@ SwitchRarely:
 	jr nz, .not_20
 	call Random
 	cp 12 percent
-	jr c, .switch
+	jr c, SwitchMerge
 	jr AI_TryItem
 .not_20
 
@@ -135,13 +130,7 @@ SwitchRarely:
 	call Random
 	cp 79 percent - 1
 	jr c, AI_TryItem
-
-.switch
-	ld a, [wEnemySwitchMonParam]
-	and $f
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	jp AI_TrySwitch
+	jr SwitchMerge
 
 AI_TryItem:
 ; items are not allowed in the Battle Tower
@@ -154,6 +143,11 @@ AI_TryItem:
 	ld b, a
 	ld a, [wEnemyTrainerItem2]
 	or b
+	ret z
+
+; don't use items on Ditto before it Transforms
+	ld a, [wEnemyMonSpecies]
+	cp DITTO
 	ret z
 
 ; if only one mon in party, use items on it
