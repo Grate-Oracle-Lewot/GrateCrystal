@@ -62,6 +62,8 @@ Get2DMenuSelection:
 	call Init2DMenuCursorPosition
 	call StaticMenuJoypad
 	call MenuClickSound
+	; fallthrough
+
 Mobile_GetMenuSelection:
 	ld a, [wMenuDataFlags]
 	bit 1, a
@@ -238,6 +240,8 @@ Init2DMenuCursorPosition:
 
 _StaticMenuJoypad::
 	call Place2DMenuCursor
+	; fallthrough
+
 _ScrollingMenuJoypad::
 	ld hl, w2DMenuFlags2
 	res 7, [hl]
@@ -359,13 +363,13 @@ _2DMenuInterpretJoypad:
 .check_wrap_around_down
 	ld a, [w2DMenuFlags1]
 	bit 5, a
-	jr nz, .wrap_around_down
+	jr nz, .wrap_around_down_or_right
 	bit 3, a
 	jp nz, .set_bit_7
 	xor a
 	ret
 
-.wrap_around_down
+.wrap_around_down_or_right
 	ld [hl], $1
 	xor a
 	ret
@@ -430,17 +434,9 @@ _2DMenuInterpretJoypad:
 .check_wrap_around_right
 	ld a, [w2DMenuFlags1]
 	bit 4, a
-	jr nz, .wrap_around_right
+	jr nz, .wrap_around_down_or_right
 	bit 0, a
 	jp nz, .set_bit_7
-	xor a
-	ret
-
-.wrap_around_right
-	ld [hl], $1
-	xor a
-	ret
-
 .a_b_start_select
 	xor a
 	ret
@@ -455,6 +451,8 @@ Move2DMenuCursor:
 	jr nz, Place2DMenuCursor
 	ld a, [wCursorOffCharacter]
 	ld [hl], a
+	; fallthrough
+
 Place2DMenuCursor:
 	ld a, [w2DMenuCursorInitY]
 	ld b, a
@@ -598,7 +596,6 @@ _PushWindow::
 	pop bc
 	dec b
 	jr nz, .row
-
 	ret
 
 _ExitMenu::
@@ -639,37 +636,6 @@ _ExitMenu::
 	ld hl, wWindowStackSize
 	dec [hl]
 	ret
-
-RestoreOverworldMapTiles: ; unreferenced
-	ld a, [wVramState]
-	bit 0, a
-	ret z
-	xor a ; sScratch
-	call OpenSRAM
-	hlcoord 0, 0
-	ld de, sScratch
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyBytes
-	call CloseSRAM
-	call OverworldTextModeSwitch
-	xor a ; sScratch
-	call OpenSRAM
-	ld hl, sScratch
-	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-.loop
-	ld a, [hl]
-	cp $61
-	jr c, .next
-	ld [de], a
-.next
-	inc hl
-	inc de
-	dec bc
-	ld a, c
-	or b
-	jr nz, .loop
-	jp CloseSRAM
 
 Error_Cant_ExitMenu:
 	ld hl, .WindowPoppingErrorText
