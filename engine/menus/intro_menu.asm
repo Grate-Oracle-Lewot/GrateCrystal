@@ -54,8 +54,6 @@ Option:
 	ret
 
 NewGame:
-	xor a
-	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
 	call AreYouABoyOrAreYouAGirl
