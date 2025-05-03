@@ -921,12 +921,6 @@ wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
 
 SECTION UNION "Overworld Map", WRAM0
 
-; debug color picker
-wDebugOriginalColors:: ds 256 * 4
-
-
-SECTION UNION "Overworld Map", WRAM0
-
 ; raw link data
 wLinkData:: ds 1300
 wLinkDataEnd::
