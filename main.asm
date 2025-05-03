@@ -269,7 +269,6 @@ INCLUDE "engine/overworld/player_movement.asm"
 INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
 INCLUDE "data/text/battle.asm"
-INCLUDE "engine/debug/color_picker.asm"
 
 
 SECTION "bank21", ROMX
@@ -656,13 +655,6 @@ INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 SECTION "European Mail", ROMX
 
 INCLUDE "engine/pokemon/european_mail.asm"
-
-
-SECTION "Debug Room", ROMX
-
-if DEF(_DEBUG)
-INCLUDE "engine/debug/debug_room.asm"
-endc
 
 
 SECTION "Battle Tower Text", ROMX
