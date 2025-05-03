@@ -1996,14 +1996,6 @@ wSuicuneFrame::
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
-; debug color picker
-wDebugColorIsTrainer:: db
-wDebugColorIsShiny:: db
-wDebugColorCurTMHM:: db
-
-
-SECTION UNION "Miscellaneous WRAM 1", WRAMX
-
 ; mobile?
 wd002:: ds 1
 wd003:: ds 1
