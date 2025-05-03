@@ -1130,6 +1130,11 @@ GetNextTypeMatchupsByte:
 	ld a, BANK(TypeMatchups)
 	jp GetFarByte
 
+EnemyAttackDamage_DamageCalc_Stab::
+	call EnemyAttackDamage
+	call BattleCommand_DamageCalc
+	; fallthrough
+
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 
