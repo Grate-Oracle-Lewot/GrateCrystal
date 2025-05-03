@@ -12,6 +12,7 @@ ClearDailyTimers:
 InitCallReceiveDelay::
 	xor a
 	ld [wTimeCyclesSinceLastCall], a
+	; fallthrough
 
 NextCallReceiveDelay:
 	ld a, [wTimeCyclesSinceLastCall]
@@ -25,20 +26,6 @@ NextCallReceiveDelay:
 	ld hl, .ReceiveCallDelays
 	add hl, de
 	ld a, [hl]
-if DEF(_DEBUG)
-	ld h, a
-	ld a, BANK(sDebugTimeCyclesSinceLastCall)
-	call OpenSRAM
-	ld a, [sDebugTimeCyclesSinceLastCall]
-	call CloseSRAM
-	dec a
-	cp 2
-	jr nc, .debug_ok
-	xor 1
-	ld h, a
-.debug_ok
-	ld a, h
-endc
 	jp RestartReceiveCallDelay
 
 .ReceiveCallDelays:
@@ -60,6 +47,7 @@ CheckReceiveCallTimer:
 
 InitOneDayCountdown:
 	ld a, 1
+	; fallthrough
 
 InitNDaysCountdown:
 	ld [hl], a
@@ -311,6 +299,7 @@ CalcSecsMinsHoursDaysSince:
 	ld [hl], c ; current seconds
 	dec hl
 	ld [wSecondsSince], a ; seconds since
+	; fallthrough
 
 _CalcMinsHoursDaysSince:
 	ldh a, [hMinutes]
@@ -322,6 +311,7 @@ _CalcMinsHoursDaysSince:
 	ld [hl], c ; current minutes
 	dec hl
 	ld [wMinutesSince], a ; minutes since
+	; fallthrough
 
 _CalcHoursDaysSince:
 	ldh a, [hHours]
@@ -333,6 +323,7 @@ _CalcHoursDaysSince:
 	ld [hl], c ; current hours
 	dec hl
 	ld [wHoursSince], a ; hours since
+	; fallthrough
 
 _CalcDaysSince:
 	ld a, [wCurDay]
