@@ -131,7 +131,7 @@ wAutoInputAddress:: dw
 wAutoInputBank::    db
 wAutoInputLength::  db
 
-wDebugFlags:: db
+	ds 1
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 
