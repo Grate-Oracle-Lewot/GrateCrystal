@@ -2347,9 +2347,7 @@ AI_Smart_PriorityHit:
 	ld a, 1
 	ldh [hBattleTurn], a
 	push hl
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	callfar EnemyAttackDamage_DamageCalc_Stab
 	pop hl
 	ld a, [wCurDamage + 1]
 	ld c, a
@@ -3432,11 +3430,32 @@ AI_Smart_AccuracyDown_Dismiss:
 	jr AI_Smart_StatDown
 
 AI_Smart_Spikes:
-; Do nothing if the player does not already have Spikes around them.
-; Else, dismiss this move if the player has only one Pokemon [remaining] and its Evasion is already minimized.
+	call AICheckLastPlayerMon
+	jr z, .only_one
+
+; If the player has more than one Pokemon, greatly encourage this move on the first turn of battle.
+; We can assume Spikes are not already set up on the first turn, so we don't need to check for them.
+	ld a, [wTotalBattleTurns]
+	and a
+	jr nz, .not_first_turn
+	dec [hl]
+	dec [hl]
+	ret
+
+.not_first_turn
+; If the player has more than one Pokemon, do nothing if Spikes aren't already set up.
+; If Spikes are set up, dismiss this move if the player's Evasion is already minimized.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
 	ret z
+	jr AI_Smart_EvasionDown
+
+.only_one
+; if the player has only one Pokemon [remaining], dismiss this move if Spikes aren't already set up.
+; If Spikes are set up, dismiss this move if the player's Evasion is already minimized.
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jp z, AIDismissMove
 	; fallthrough
 
 AI_Smart_EvasionDown:
@@ -3457,9 +3476,7 @@ AIDamageCalc:
 	ret
 
 .notconstant
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	callfar EnemyAttackDamage_DamageCalc_Stab
 	ret
 
 INCLUDE "data/battle/ai/constant_damage_effects.asm"
