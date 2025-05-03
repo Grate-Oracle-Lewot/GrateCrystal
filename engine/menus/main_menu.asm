@@ -11,7 +11,6 @@
 	const MAINMENUITEM_OPTION      ; 2
 	const MAINMENUITEM_DELETE_SAVE ; 3
 	const MAINMENUITEM_MOBILE      ; 4
-	const MAINMENUITEM_DEBUG_ROOM  ; 5
 
 MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
@@ -60,9 +59,6 @@ MainMenu:
 	db "OPTION@"
 	db "DELETE SAVE@"
 	db "MOBILE@"
-if DEF(_DEBUG)
-	db "DEBUG ROOM@"
-endc
 
 .Jumptable:
 ; entries correspond to MAINMENUITEM_* constants
@@ -71,9 +67,6 @@ endc
 	dw MainMenu_Option
 	dw MainMenu_DeleteSave
 	dw MainMenu_Mobile
-if DEF(_DEBUG)
-	dw MainMenu_DebugRoom
-endc
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants
@@ -85,26 +78,20 @@ MainMenuItems:
 	db -1
 
 	; MAINMENU_CONTINUE
-	db 4 + DEF(_DEBUG)
+	db 4
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
 	db MAINMENUITEM_DELETE_SAVE
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
 	db -1
 
 	; MAINMENU_MOBILE
-	db 5 + DEF(_DEBUG)
+	db 5
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
 	db MAINMENUITEM_DELETE_SAVE
 	db MAINMENUITEM_MOBILE
-if DEF(_DEBUG)
-	db MAINMENUITEM_DEBUG_ROOM
-endc
 	db -1
 
 MainMenu_GetWhichMenu:
