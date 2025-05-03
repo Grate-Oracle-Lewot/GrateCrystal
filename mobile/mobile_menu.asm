@@ -206,6 +206,7 @@ Function4a100:
 	call Function4a13b
 	call ClearBGPalettes
 	call ClearTilemap
+	; fallthrough
 
 asm_4a111:
 	pop bc
@@ -290,6 +291,7 @@ asm_4a19d:
 	bit 1, a
 	jr nz, .asm_4a1ba
 	jr .asm_4a1bc
+
 .asm_4a1a7
 	ld hl, wMenuCursorY
 	ld a, [hl]
@@ -302,6 +304,7 @@ asm_4a19d:
 .asm_4a1ba
 	pop bc
 	ret
+
 .asm_4a1bc
 	ld hl, wMenuCursorY
 	ld a, [hl]
@@ -316,7 +319,7 @@ asm_4a19d:
 	call ClearBox
 	hlcoord 1, 14
 	call PlaceString
-	jr .asm_4a1db
+
 .asm_4a1db
 	call Function4a373
 	pop bc
@@ -348,7 +351,7 @@ Function4a221:
 	call Function4a373
 	ld a, $2
 	ld [wMenuCursorY], a
-	jr .asm_4a235
+
 .asm_4a235
 	pop bc
 	jp Function4a149
@@ -634,6 +637,7 @@ asm_4a54d:
 	bit 1, a
 	jr nz, .asm_4a574
 	jr .asm_4a57e
+
 .asm_4a557
 	ld hl, wMenuCursorY
 	ld a, [hl]
@@ -652,6 +656,7 @@ asm_4a54d:
 	call ClearBGPalettes
 	call ClearTilemap
 	jp Function49f0a
+
 .asm_4a57e
 	ld hl, wMenuCursorY
 	ld a, [hl]
@@ -778,9 +783,3 @@ Function4a6d8:
 	dec b
 	jr nz, Function4a6d8
 	ret
-
-if DEF(_DEBUG)
-MainMenu_DebugRoom:
-	farcall _DebugRoom
-	ret
-endc
