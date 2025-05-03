@@ -170,49 +170,12 @@ EggStatsJoypad:
 .check
 	bit A_BUTTON_F, a
 	jr nz, .quit
-if DEF(_DEBUG)
-	cp START
-	jr z, .hatch
-endc
 	and D_DOWN | D_UP | A_BUTTON | B_BUTTON
 	jp StatsScreen_JoypadAction
 
 .quit
 	ld h, 7
 	jp StatsScreen_SetJumptableIndex
-
-if DEF(_DEBUG)
-.hatch
-	ld a, [wMonType]
-	or a
-	jr nz, .skip
-	push bc
-	push de
-	push hl
-	ld a, [wCurPartyMon]
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld hl, wPartyMon1Happiness
-	call AddNTimes
-	ld [hl], 1
-	ld a, 1
-	ld [wTempMonHappiness], a
-	ld a, 127
-	ld [wStepCount], a
-	ld de, .HatchSoonString
-	hlcoord 8, 17
-	call PlaceString
-	ld hl, wStatsScreenFlags
-	set 5, [hl]
-	pop hl
-	pop de
-	pop bc
-.skip
-	xor a
-	jp StatsScreen_JoypadAction
-
-.HatchSoonString:
-	db "▶HATCH SOON!@"
-endc
 
 StatsScreen_LoadPage:
 	call StatsScreen_LoadGFX
