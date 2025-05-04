@@ -145,8 +145,13 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
+if DEF(_KANTO_STARTERS)
+	pokepic CHARMANDER
+	cry CHARMANDER
+else
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -158,12 +163,20 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+if DEF(_KANTO_STARTERS)
+	getmonname STRING_BUFFER_3, CHARMANDER
+else
 	getmonname STRING_BUFFER_3, CYNDAQUIL
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+if DEF(_KANTO_STARTERS)
+	givepoke CHARMANDER, 5, GOLD_BERRY
+else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -175,8 +188,13 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
+if DEF(_KANTO_STARTERS)
+	pokepic SQUIRTLE
+	cry SQUIRTLE
+else
 	pokepic TOTODILE
 	cry TOTODILE
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -188,12 +206,20 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+if DEF(_KANTO_STARTERS)
+	getmonname STRING_BUFFER_3, SQUIRTLE
+else
 	getmonname STRING_BUFFER_3, TOTODILE
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+if DEF(_KANTO_STARTERS)
+	givepoke SQUIRTLE, 5, GOLD_BERRY
+else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -203,8 +229,13 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
+if DEF(_KANTO_STARTERS)
+	pokepic BULBASAUR
+	cry BULBASAUR
+else
 	pokepic CHIKORITA
 	cry CHIKORITA
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -216,12 +247,20 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+if DEF(_KANTO_STARTERS)
+	getmonname STRING_BUFFER_3, BULBASAUR
+else
 	getmonname STRING_BUFFER_3, CHIKORITA
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+if DEF(_KANTO_STARTERS)
+	givepoke BULBASAUR, 5, GOLD_BERRY
+else
 	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
@@ -781,21 +820,39 @@ LabWhereGoingText:
 	done
 
 TakeCyndaquilText:
+if DEF(_KANTO_STARTERS)
+	text "ELM: You'll take"
+	line "CHARMANDER, the"
+	cont "fire #MON?"
+else
 	text "ELM: You'll take"
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
+endc
 	done
 
 TakeTotodileText:
+if DEF(_KANTO_STARTERS)
+	text "ELM: Do you want"
+	line "SQUIRTLE, the"
+	cont "water #MON?"
+else
 	text "ELM: Do you want"
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 	done
 
 TakeChikoritaText:
+if DEF(_KANTO_STARTERS)
+	text "ELM: So, you like"
+	line "BULBASAUR, the"
+	cont "grass #MON?"
+else
 	text "ELM: So, you like"
 	line "CHIKORITA, the"
 	cont "grass #MON?"
+endc
 	done
 
 DidntChooseStarterText:
