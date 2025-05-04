@@ -12,6 +12,10 @@ Pokepic::
 	ld [wCurSpecies], a
 	call GetBaseData
 	ld de, vTiles1
+	ld a, PIKACHU_CRYSTAL
+	ld [wPikachuForm], a
+	ld a, UNOWN_QUESTION
+	ld [wUnownLetter], a
 	predef GetMonFrontpic
 	ld a, [wMenuBorderTopCoord]
 	inc a
