@@ -1,5 +1,6 @@
 roms := \
 	GrateCrystal.gbc \
+	GrateCrystalKanto.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -22,6 +23,7 @@ rom_obj := \
 	lib/mobile/main.o
 
 GrateCrystal_obj         := $(rom_obj:.o=.o)
+GrateCrystalKanto_obj    := $(rom_obj:.o=kanto.o)
 GrateCrystal11_obj       := $(rom_obj:.o=11.o)
 GrateCrystal11_vc_obj    := $(rom_obj:.o=11_vc.o)
 
@@ -44,13 +46,14 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystal11 clean tidy tools
+.PHONY: all crystal crystalkanto crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: crystal
 crystal:         GrateCrystal.gbc
+crystalkanto:    GrateCrystalKanto.gbc
 crystal11:       GrateCrystal11.gbc
 crystal11_vc:    GrateCrystal11.patch
 
@@ -79,6 +82,7 @@ tidy:
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(GrateCrystal_obj) \
+	      $(GrateCrystalKanto_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -97,6 +101,7 @@ RGBASMFLAGS += -E
 endif
 
 $(GrateCrystal_obj):         RGBASMFLAGS +=
+$(GrateCrystalKanto_obj):    RGBASMFLAGS += -D _KANTO_STARTERS
 $(GrateCrystal11_obj):       RGBASMFLAGS += -D _CRYSTAL11
 $(GrateCrystal11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
@@ -122,6 +127,7 @@ $(info $(shell $(MAKE) -C tools))
 
 # Dependencies for shared objects objects
 $(foreach obj, $(GrateCrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(GrateCrystalKanto_obj), $(eval $(call DEP,$(obj),$(obj:kanto.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -133,10 +139,12 @@ endif
 
 
 GrateCrystal_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystalKanto_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
 GrateCrystal_base         = us
+GrateCrystalKanto_base    = us
 GrateCrystal11_base       = us
 GrateCrystal11_vc_base    = us
 
