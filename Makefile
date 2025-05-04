@@ -1,6 +1,6 @@
 roms := \
 	GrateCrystal.gbc \
-	GrateCrystal11.gbc \
+	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
 rom_obj := \
