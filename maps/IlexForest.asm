@@ -1034,9 +1034,14 @@ CooltrainermAndySeenText:
 	done
 
 CooltrainermAndyBeatenText:
+if DEF(_KANTO_STARTERS)
+	text "My #MON weren't"
+	line "rare enough!"
+else
 	text "What do you mean"
 	line "PROF.ELM gives"
 	cont "them out for free?"
+endc
 	done
 
 CooltrainermAndyAfterBattleText:
