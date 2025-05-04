@@ -44,7 +44,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystal11 clean tidy compare tools
+.PHONY: all crystal crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -83,9 +83,6 @@ tidy:
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
-
-compare: $(roms) $(patches)
-	@$(SHA1) -c roms.sha1
 
 tools:
 	$(MAKE) -C tools/
