@@ -140,6 +140,47 @@ LabTryToLeaveScript:
 	applymovement PLAYER, ElmsLab_CantLeaveMovement
 	end
 
+ChikoritaPokeBallScript:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue LookAtElmPokeBallScript
+	turnobject ELMSLAB_ELM, DOWN
+	refreshscreen
+if DEF(_KANTO_STARTERS)
+	pokepic BULBASAUR
+	cry BULBASAUR
+else
+	pokepic CHIKORITA
+	cry CHIKORITA
+endc
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeChikoritaText
+	yesorno
+	iffalse DidntChooseStarterScript
+	disappear ELMSLAB_POKE_BALL1
+	setevent EVENT_GOT_CHIKORITA_FROM_ELM
+	writetext ChoseStarterText
+	promptbutton
+	waitsfx
+if DEF(_KANTO_STARTERS)
+	getmonname STRING_BUFFER_3, BULBASAUR
+else
+	getmonname STRING_BUFFER_3, CHIKORITA
+endc
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+if DEF(_KANTO_STARTERS)
+	givepoke BULBASAUR, 5, GOLD_BERRY
+else
+	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
+	closetext
+	applymovement PLAYER, AfterChikoritaMovement
+	sjump ElmDirectionsScript
+
 CyndaquilPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
@@ -158,7 +199,7 @@ endc
 	writetext TakeCyndaquilText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL1
+	disappear ELMSLAB_POKE_BALL2
 	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -201,7 +242,7 @@ endc
 	writetext TakeTotodileText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL2
+	disappear ELMSLAB_POKE_BALL3
 	setevent EVENT_GOT_TOTODILE_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -222,47 +263,6 @@ else
 endc
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
-	sjump ElmDirectionsScript
-
-ChikoritaPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue LookAtElmPokeBallScript
-	turnobject ELMSLAB_ELM, DOWN
-	refreshscreen
-if DEF(_KANTO_STARTERS)
-	pokepic BULBASAUR
-	cry BULBASAUR
-else
-	pokepic CHIKORITA
-	cry CHIKORITA
-endc
-	waitbutton
-	closepokepic
-	opentext
-	writetext TakeChikoritaText
-	yesorno
-	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL3
-	setevent EVENT_GOT_CHIKORITA_FROM_ELM
-	writetext ChoseStarterText
-	promptbutton
-	waitsfx
-if DEF(_KANTO_STARTERS)
-	getmonname STRING_BUFFER_3, BULBASAUR
-else
-	getmonname STRING_BUFFER_3, CHIKORITA
-endc
-	writetext ReceivedStarterText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-if DEF(_KANTO_STARTERS)
-	givepoke BULBASAUR, 5, GOLD_BERRY
-else
-	givepoke CHIKORITA, 5, GOLD_BERRY
-endc
-	closetext
-	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
 
 DidntChooseStarterScript:
@@ -686,20 +686,21 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	turn_head DOWN
 	step_end
 
+AfterChikoritaMovement:
+	step LEFT
+	step UP
+	turn_head UP
+	step_end
+
+
 AfterCyndaquilMovement:
+	step LEFT
 	step LEFT
 	step UP
 	turn_head UP
 	step_end
 
 AfterTotodileMovement:
-	step LEFT
-	step LEFT
-	step UP
-	turn_head UP
-	step_end
-
-AfterChikoritaMovement:
 	step LEFT
 	step LEFT
 	step LEFT
@@ -819,6 +820,18 @@ LabWhereGoingText:
 	line "are you going?"
 	done
 
+TakeChikoritaText:
+if DEF(_KANTO_STARTERS)
+	text "ELM: So, you like"
+	line "BULBASAUR, the"
+	cont "grass #MON?"
+else
+	text "ELM: So, you like"
+	line "CHIKORITA, the"
+	cont "grass #MON?"
+endc
+	done
+
 TakeCyndaquilText:
 if DEF(_KANTO_STARTERS)
 	text "ELM: You'll take"
@@ -840,18 +853,6 @@ else
 	text "ELM: Do you want"
 	line "TOTODILE, the"
 	cont "water #MON?"
-endc
-	done
-
-TakeChikoritaText:
-if DEF(_KANTO_STARTERS)
-	text "ELM: So, you like"
-	line "BULBASAUR, the"
-	cont "grass #MON?"
-else
-	text "ELM: So, you like"
-	line "CHIKORITA, the"
-	cont "grass #MON?"
 endc
 	done
 
@@ -1383,7 +1384,7 @@ ElmsLab_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
-	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
