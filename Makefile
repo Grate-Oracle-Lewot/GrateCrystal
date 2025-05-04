@@ -1,6 +1,6 @@
 roms := \
 	GrateCrystal.gbc \
-	GrateCrystalKanto.gbc \
+	GrateCrystal_KantoStarters.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -22,10 +22,10 @@ rom_obj := \
 	gfx/tilesets.o \
 	lib/mobile/main.o
 
-GrateCrystal_obj         := $(rom_obj:.o=.o)
-GrateCrystalKanto_obj    := $(rom_obj:.o=kanto.o)
-GrateCrystal11_obj       := $(rom_obj:.o=11.o)
-GrateCrystal11_vc_obj    := $(rom_obj:.o=11_vc.o)
+GrateCrystal_obj               := $(rom_obj:.o=.o)
+GrateCrystal_KantoStarters_obj := $(rom_obj:.o=kanto.o)
+GrateCrystal11_obj             := $(rom_obj:.o=11.o)
+GrateCrystal11_vc_obj          := $(rom_obj:.o=11_vc.o)
 
 
 ### Build tools
@@ -46,14 +46,14 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystalkanto crystal11 clean tidy tools
+.PHONY: all crystal kantostarters crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: crystal
 crystal:         GrateCrystal.gbc
-crystalkanto:    GrateCrystalKanto.gbc
+kantostarters:   GrateCrystal_KantoStarters.gbc
 crystal11:       GrateCrystal11.gbc
 crystal11_vc:    GrateCrystal11.patch
 
@@ -82,7 +82,7 @@ tidy:
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(GrateCrystal_obj) \
-	      $(GrateCrystalKanto_obj) \
+	      $(GrateCrystal_KantoStarters_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -100,10 +100,10 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(GrateCrystal_obj):         RGBASMFLAGS +=
-$(GrateCrystalKanto_obj):    RGBASMFLAGS += -D _KANTO_STARTERS
-$(GrateCrystal11_obj):       RGBASMFLAGS += -D _CRYSTAL11
-$(GrateCrystal11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
+$(GrateCrystal_obj):               RGBASMFLAGS +=
+$(GrateCrystal_KantoStarters_obj): RGBASMFLAGS += -D _KANTO_STARTERS
+$(GrateCrystal11_obj):             RGBASMFLAGS += -D _CRYSTAL11
+$(GrateCrystal11_vc_obj):          RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
 %.patch: vc/%.constants.sym %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -127,7 +127,7 @@ $(info $(shell $(MAKE) -C tools))
 
 # Dependencies for shared objects objects
 $(foreach obj, $(GrateCrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(GrateCrystalKanto_obj), $(eval $(call DEP,$(obj),$(obj:kanto.o=.asm))))
+$(foreach obj, $(GrateCrystal_KantoStarters_obj), $(eval $(call DEP,$(obj),$(obj:kanto.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -138,15 +138,15 @@ $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=
 endif
 
 
-GrateCrystal_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystalKanto_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_KantoStarters_opt  = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal11_opt              = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal11_vc_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
-GrateCrystal_base         = us
-GrateCrystalKanto_base    = us
-GrateCrystal11_base       = us
-GrateCrystal11_vc_base    = us
+GrateCrystal_base               = us
+GrateCrystal_KantoStarters_base = us
+GrateCrystal11_base             = us
+GrateCrystal11_vc_base          = us
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
