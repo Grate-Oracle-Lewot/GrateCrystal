@@ -100,3 +100,12 @@ CheckReceivedDex::
 	ld a, c
 	and a
 	ret
+
+xor_a::
+ 	xor a
+ 	ret
+ 
+ xor_a_dec_a::
+ 	xor a
+ 	dec a
+ 	ret
