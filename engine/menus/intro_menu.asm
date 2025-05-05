@@ -1,14 +1,3 @@
-Intro_MainMenu:
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	ld de, MUSIC_MAIN_MENU
-	ld a, e
-	ld [wMapMusic], a
-	call PlayMusic
-	farcall MainMenu
-	jp StartTitleScreen
-
 PrintDayOfWeek:
 	push de
 	ld hl, .Days
@@ -195,13 +184,9 @@ endc
 	ld [hl], LOW(MOM_MONEY)
 
 	call InitializeNPCNames
-
 	farcall InitDecorations
-
 	farcall DeletePartyMonMail
-
 	farcall DeleteMobileEventIndex
-
 	jp ResetGameTime
 
 .InitList:
@@ -514,11 +499,6 @@ Continue_DisplayBadgesDexPlayerName:
 .Player:
 	db "<PLAYER>@"
 
-Continue_PrintGameTime:
-	decoord 9, 8, 0
-	add hl, de
-	jp Continue_DisplayGameTime
-
 Continue_UnknownGameTime:
 	decoord 9, 8, 0
 	add hl, de
@@ -554,6 +534,11 @@ endc
 	ld de, wNumSetBits
 	lb bc, 1, 3
 	jp PrintNum
+
+Continue_PrintGameTime:
+	decoord 9, 8, 0
+	add hl, de
+	; fallthrough
 
 Continue_DisplayGameTime:
 	ld de, wGameTimeHours
@@ -678,12 +663,12 @@ OakText7:
 	text_end
 
 StartPCItem:
-    ld a, PORTRAITMAIL
-    ld [wCurItem], a
-    ld a, 1
-    ld [wItemQuantityChange], a
-    ld hl, wNumPCItems
-    jp ReceiveItem
+	ld a, PORTRAITMAIL
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld hl, wNumPCItems
+	jp ReceiveItem
 
 NamePlayer:
 	farcall MovePlayerPicRight
@@ -828,17 +813,15 @@ Intro_WipeInFrontpic:
 Intro_PrepTrainerPic:
 	ld de, vTiles2
 	farcall GetTrainerPic
-	xor a
-	ldh [hGraphicStartTile], a
-	hlcoord 6, 4
-	lb bc, 7, 7
-	predef PlaceGraphic
-	ret
+	jr ShrinkFunctionMerge
 
 ShrinkFrame:
 	ld de, vTiles2
 	ld c, 7 * 7
 	predef DecompressGet2bpp
+	; fallthrough
+
+ShrinkFunctionMerge:
 	xor a
 	ldh [hGraphicStartTile], a
 	hlcoord 6, 4
@@ -898,6 +881,17 @@ Intro_PlacePlayerSprite:
 	const TITLESCREENOPTION_UNUSED
 	const TITLESCREENOPTION_RESET_CLOCK
 NUM_TITLESCREENOPTIONS EQU const_value
+
+Intro_MainMenu:
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call DelayFrame
+	ld de, MUSIC_MAIN_MENU
+	ld a, e
+	ld [wMapMusic], a
+	call PlayMusic
+	farcall MainMenu
+	jr StartTitleScreen
 
 IntroSequence:
 	callfar SplashScreen
@@ -1126,56 +1120,6 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jp Init
-
-UpdateTitleTrailSprite: ; leftover from GS intro
-	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.
-	ld a, [wTitleScreenTimer]
-	and %00000011
-	ret nz
-	ld bc, wSpriteAnim10
-	ld hl, SPRITEANIMSTRUCT_FRAME
-	add hl, bc
-	ld l, [hl]
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	ld de, .TitleTrailCoords
-	add hl, de
-	; If bit 2 of [wTitleScreenTimer] is set, get the second coords; else, get the first coords
-	ld a, [wTitleScreenTimer]
-	and %00000100
-	srl a
-	srl a
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	and a
-	ret z
-	ld e, a
-	ld d, [hl]
-	ld a, SPRITE_ANIM_INDEX_GS_TITLE_TRAIL
-	jp InitSpriteAnimStruct
-
-.TitleTrailCoords:
-trail_coords: MACRO
-rept _NARG / 2
-_dx = 4
-if \1 == 0 && \2 == 0
-_dx = 0
-endc
-	dbpixel \1, \2, _dx, 0
-	shift 2
-endr
-ENDM
-	; frame 0 y, x; frame 1 y, x
-	trail_coords 11, 10,  0,  0
-	trail_coords 11, 13, 11, 11
-	trail_coords 11, 13, 11, 15
-	trail_coords 11, 17, 11, 15
-	trail_coords  0,  0, 11, 15
-	trail_coords  0,  0, 11, 11
 
 Copyright:
 	call ClearTilemap
