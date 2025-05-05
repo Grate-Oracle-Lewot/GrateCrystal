@@ -149,14 +149,73 @@ if DEF(_KANTO_STARTERS)
 	pokepic BULBASAUR
 	cry BULBASAUR
 else
+if DEF(_LETS_GO_STARTERS)
+	pokepic PIKACHU
+	cry PIKACHU
+else
 if DEF(_MOUSEKETEERS)
 	pokepic PIKACHU
 	cry PIKACHU
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	pokepic JYNX
+	cry JYNX
+else
+if DEF(_HITMON_STARTERS)
+	pokepic HITMONLEE
+	cry HITMONLEE
+else
+if DEF(_NIDORAN_STARTERS)
+	pokepic NIDORAN_F
+	cry NIDORAN_F
+else
+if DEF(_CATTLE_STARTERS)
+	pokepic TAUROS
+	cry TAUROS
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	pokepic SHUCKLE
+	cry SHUCKLE
+else
+if DEF(_NEWCOMERS1)
+	pokepic SNOCONEY
+	cry SNOCONEY
+else
+if DEF(_NEWCOMERS2)
+	pokepic COTTONEE
+	cry COTTONEE
+else
+if DEF(_FOSSIL_STARTERS)
+	pokepic KABUTO
+	cry KABUTO
+else
+if DEF(_PSEUDO_LEGENDS)
+	pokepic DRATINI
+	cry DRATINI
+else
+if DEF(_LEGENDARY_BIRDS)
+	pokepic ARTICUNO
+	cry ARTICUNO
+else
+if DEF(_LEGENDARY_BEASTS)
+	pokepic RAIKOU
+	cry RAIKOU
+else
+if DEF(_MEW_STARTERS)
+	pokepic MEW
+	cry MEW
+else
+if DEF(_HO_OH_LUGIA)
+	pokepic HO_OH
+	cry HO_OH
+else
+if DEF(_CELEBI_STARTERS)
+	pokepic CELEBI
+	cry CELEBI
+else
 	pokepic CHIKORITA
 	cry CHIKORITA
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	waitbutton
 	closepokepic
 	opentext
@@ -171,12 +230,56 @@ endc
 if DEF(_KANTO_STARTERS)
 	getmonname STRING_BUFFER_3, BULBASAUR
 else
+if DEF(_LETS_GO_STARTERS)
+	getmonname STRING_BUFFER_3, PIKACHU
+else
 if DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, PIKACHU
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	getmonname STRING_BUFFER_3, JYNX
+else
+if DEF(_HITMON_STARTERS)
+	getmonname STRING_BUFFER_3, HITMONLEE
+else
+if DEF(_NIDORAN_STARTERS)
+	getmonname STRING_BUFFER_3, NIDORAN_F
+else
+if DEF(_CATTLE_STARTERS)
+	getmonname STRING_BUFFER_3, TAUROS
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	getmonname STRING_BUFFER_3, SHUCKLE
+else
+if DEF(_NEWCOMERS1)
+	getmonname STRING_BUFFER_3, SNOCONEY
+else
+if DEF(_NEWCOMERS2)
+	getmonname STRING_BUFFER_3, COTTONEE
+else
+if DEF(_FOSSIL_STARTERS)
+	getmonname STRING_BUFFER_3, KABUTO
+else
+if DEF(_PSEUDO_LEGENDS)
+	getmonname STRING_BUFFER_3, DRATINI
+else
+if DEF(_LEGENDARY_BIRDS)
+	getmonname STRING_BUFFER_3, ARTICUNO
+else
+if DEF(_LEGENDARY_BEASTS)
+	getmonname STRING_BUFFER_3, RAIKOU
+else
+if DEF(_MEW_STARTERS)
+	getmonname STRING_BUFFER_3, MEW
+else
+if DEF(_HO_OH_LUGIA)
+	getmonname STRING_BUFFER_3, HO_OH
+else
+if DEF(_CELEBI_STARTERS)
+	getmonname STRING_BUFFER_3, CELEBI
+else
 	getmonname STRING_BUFFER_3, CHIKORITA
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -184,12 +287,56 @@ endc
 if DEF(_KANTO_STARTERS)
 	givepoke BULBASAUR, 5, GOLD_BERRY
 else
+if DEF(_LETS_GO_STARTERS)
+	givepoke PIKACHU, 5, GOLD_BERRY
+else
 if DEF(_MOUSEKETEERS)
 	givepoke PIKACHU, 5, GOLD_BERRY
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	givepoke JYNX, 5, GOLD_BERRY
+else
+if DEF(_HITMON_STARTERS)
+	givepoke HITMONLEE, 5, GOLD_BERRY
+else
+if DEF(_NIDORAN_STARTERS)
+	givepoke NIDORAN_F, 5, GOLD_BERRY
+else
+if DEF(_CATTLE_STARTERS)
+	givepoke TAUROS, 5, GOLD_BERRY
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	givepoke SHUCKLE, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS1)
+	givepoke SNOCONEY, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS2)
+	givepoke COTTONEE, 5, GOLD_BERRY
+else
+if DEF(_FOSSIL_STARTERS)
+	givepoke KABUTO, 5, GOLD_BERRY
+else
+if DEF(_PSEUDO_LEGENDS)
+	givepoke DRATINI, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BIRDS)
+	givepoke ARTICUNO, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BEASTS)
+	givepoke RAIKOU, 5, GOLD_BERRY
+else
+if DEF(_MEW_STARTERS)
+	givepoke MEW, 5, GOLD_BERRY
+else
+if DEF(_HO_OH_LUGIA)
+	givepoke HO_OH, 5, GOLD_BERRY
+else
+if DEF(_CELEBI_STARTERS)
+	givepoke CELEBI, 5, GOLD_BERRY
+else
 	givepoke CHIKORITA, 5, GOLD_BERRY
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
@@ -207,10 +354,65 @@ if DEF(_MOUSEKETEERS)
 	pokepic SANDSHREW
 	cry SANDSHREW
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	pokepic MAGMAR
+	cry MAGMAR
+else
+if DEF(_HITMON_STARTERS)
+	pokepic HITMONTOP
+	cry HITMONTOP
+else
+if DEF(_NIDORAN_STARTERS)
+	pokepic SUNKERN
+	cry SUNKERN
+else
+if DEF(_CATTLE_STARTERS)
+	pokepic GIRAFARIG
+	cry GIRAFARIG
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	pokepic SMEARGLE
+	cry SMEARGLE
+else
+if DEF(_NEWCOMERS1)
+	pokepic FLOGISTAN
+	cry FLOGISTAN
+else
+if DEF(_NEWCOMERS2)
+	pokepic JIRK
+	cry JIRK
+else
+if DEF(_FOSSIL_STARTERS)
+	pokepic AERODACTYL
+	cry AERODACTYL
+else
+if DEF(_PSEUDO_LEGENDS)
+	pokepic LARVITAR
+	cry LARVITAR
+else
+if DEF(_LEGENDARY_BIRDS)
+	pokepic MOLTRES
+	cry MOLTRES
+else
+if DEF(_LEGENDARY_BEASTS)
+	pokepic ENTEI
+	cry ENTEI
+else
+if DEF(_MEW_STARTERS)
+	pokepic DITTO
+	cry DITTO
+else
+if DEF(_HO_OH_LUGIA)
+	pokepic MAGIKARP
+	cry MAGIKARP
+else
+if DEF(_CELEBI_STARTERS)
+	pokepic WOBBUFFET
+	cry WOBBUFFET
+else
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	waitbutton
 	closepokepic
 	opentext
@@ -228,9 +430,50 @@ else
 if DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, SANDSHREW
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	getmonname STRING_BUFFER_3, MAGMAR
+else
+if DEF(_HITMON_STARTERS)
+	getmonname STRING_BUFFER_3, HITMONTOP
+else
+if DEF(_NIDORAN_STARTERS)
+	getmonname STRING_BUFFER_3, SUNKERN
+else
+if DEF(_CATTLE_STARTERS)
+	getmonname STRING_BUFFER_3, GIRAFARIG
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	getmonname STRING_BUFFER_3, SMEARGLE
+else
+if DEF(_NEWCOMERS1)
+	getmonname STRING_BUFFER_3, FLOGISTAN
+else
+if DEF(_NEWCOMERS2)
+	getmonname STRING_BUFFER_3, JIRK
+else
+if DEF(_FOSSIL_STARTERS)
+	getmonname STRING_BUFFER_3, AERODACTYL
+else
+if DEF(_PSEUDO_LEGENDS)
+	getmonname STRING_BUFFER_3, LARVITAR
+else
+if DEF(_LEGENDARY_BIRDS)
+	getmonname STRING_BUFFER_3, MOLTRES
+else
+if DEF(_LEGENDARY_BEASTS)
+	getmonname STRING_BUFFER_3, ENTEI
+else
+if DEF(_MEW_STARTERS)
+	getmonname STRING_BUFFER_3, DITTO
+else
+if DEF(_HO_OH_LUGIA)
+	getmonname STRING_BUFFER_3, MAGIKARP
+else
+if DEF(_CELEBI_STARTERS)
+	getmonname STRING_BUFFER_3, WOBBUFFET
+else
 	getmonname STRING_BUFFER_3, CYNDAQUIL
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -241,9 +484,50 @@ else
 if DEF(_MOUSEKETEERS)
 	givepoke SANDSHREW, 5, GOLD_BERRY
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	givepoke MAGMAR, 5, GOLD_BERRY
+else
+if DEF(_HITMON_STARTERS)
+	givepoke HITMONTOP, 5, GOLD_BERRY
+else
+if DEF(_NIDORAN_STARTERS)
+	givepoke SUNKERN, 5, GOLD_BERRY
+else
+if DEF(_CATTLE_STARTERS)
+	givepoke GIRAFARIG, 5, GOLD_BERRY
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	givepoke SMEARGLE, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS1)
+	givepoke FLOGISTAN, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS2)
+	givepoke JIRK, 5, GOLD_BERRY
+else
+if DEF(_FOSSIL_STARTERS)
+	givepoke AERODACTYL, 5, GOLD_BERRY
+else
+if DEF(_PSEUDO_LEGENDS)
+	givepoke LARVITAR, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BIRDS)
+	givepoke MOLTRES, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BEASTS)
+	givepoke ENTEI, 5, GOLD_BERRY
+else
+if DEF(_MEW_STARTERS)
+	givepoke DITTO, 5, GOLD_BERRY
+else
+if DEF(_HO_OH_LUGIA)
+	givepoke MAGIKARP, 5, GOLD_BERRY
+else
+if DEF(_CELEBI_STARTERS)
+	givepoke WOBBUFFET, 5, GOLD_BERRY
+else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -259,14 +543,73 @@ if DEF(_KANTO_STARTERS)
 	pokepic SQUIRTLE
 	cry SQUIRTLE
 else
+if DEF(_LETS_GO_STARTERS)
+	pokepic EEVEE
+	cry EEVEE
+else
 if DEF(_MOUSEKETEERS)
 	pokepic MARILL
 	cry MARILL
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	pokepic ELECTABUZZ
+	cry ELECTABUZZ
+else
+if DEF(_HITMON_STARTERS)
+	pokepic HITMONCHAN
+	cry HITMONCHAN
+else
+if DEF(_NIDORAN_STARTERS)
+	pokepic NIDORAN_M
+	cry NIDORAN_M
+else
+if DEF(_CATTLE_STARTERS)
+	pokepic MILTANK
+	cry MILTANK
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	pokepic DELIBIRD
+	cry DELIBIRD
+else
+if DEF(_NEWCOMERS1)
+	pokepic CASTAWEIGH
+	cry CASTAWEIGH
+else
+if DEF(_NEWCOMERS2)
+	pokepic YANMA
+	cry YANMA
+else
+if DEF(_FOSSIL_STARTERS)
+	pokepic OMANYTE
+	cry OMANYTE
+else
+if DEF(_PSEUDO_LEGENDS)
+	pokepic DRATINI
+	cry DRATINI
+else
+if DEF(_LEGENDARY_BIRDS)
+	pokepic ZAPDOS
+	cry ZAPDOS
+else
+if DEF(_LEGENDARY_BEASTS)
+	pokepic SUICUNE
+	cry SUICUNE
+else
+if DEF(_MEW_STARTERS)
+	pokepic MEWTWO
+	cry MEWTWO
+else
+if DEF(_HO_OH_LUGIA)
+	pokepic LUGIA
+	cry LUGIA
+else
+if DEF(_CELEBI_STARTERS)
+	pokepic FINULL
+	cry FINULL
+else
 	pokepic TOTODILE
 	cry TOTODILE
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	waitbutton
 	closepokepic
 	opentext
@@ -281,12 +624,56 @@ endc
 if DEF(_KANTO_STARTERS)
 	getmonname STRING_BUFFER_3, SQUIRTLE
 else
+if DEF(_LETS_GO_STARTERS)
+	getmonname STRING_BUFFER_3, EEVEE
+else
 if DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, MARILL
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	getmonname STRING_BUFFER_3, ELECTABUZZ
+else
+if DEF(_HITMON_STARTERS)
+	getmonname STRING_BUFFER_3, HITMONCHAN
+else
+if DEF(_NIDORAN_STARTERS)
+	getmonname STRING_BUFFER_3, NIDORAN_M
+else
+if DEF(_CATTLE_STARTERS)
+	getmonname STRING_BUFFER_3, MILTANK
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	getmonname STRING_BUFFER_3, DELIBIRD
+else
+if DEF(_NEWCOMERS1)
+	getmonname STRING_BUFFER_3, CASTAWEIGH
+else
+if DEF(_NEWCOMERS2)
+	getmonname STRING_BUFFER_3, YANMA
+else
+if DEF(_FOSSIL_STARTERS)
+	getmonname STRING_BUFFER_3, OMANYTE
+else
+if DEF(_PSEUDO_LEGENDS)
+	getmonname STRING_BUFFER_3, DRATINI
+else
+if DEF(_LEGENDARY_BIRDS)
+	getmonname STRING_BUFFER_3, ZAPDOS
+else
+if DEF(_LEGENDARY_BEASTS)
+	getmonname STRING_BUFFER_3, SUICUNE
+else
+if DEF(_MEW_STARTERS)
+	getmonname STRING_BUFFER_3, MEWTWO
+else
+if DEF(_HO_OH_LUGIA)
+	getmonname STRING_BUFFER_3, LUGIA
+else
+if DEF(_CELEBI_STARTERS)
+	getmonname STRING_BUFFER_3, FINULL
+else
 	getmonname STRING_BUFFER_3, TOTODILE
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -294,12 +681,56 @@ endc
 if DEF(_KANTO_STARTERS)
 	givepoke SQUIRTLE, 5, GOLD_BERRY
 else
+if DEF(_LETS_GO_STARTERS)
+	givepoke EEVEE, 5, GOLD_BERRY
+else
 if DEF(_MOUSEKETEERS)
 	givepoke MARILL, 5, GOLD_BERRY
 else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	givepoke ELECTABUZZ, 5, GOLD_BERRY
+else
+if DEF(_HITMON_STARTERS)
+	givepoke HITMONCHAN, 5, GOLD_BERRY
+else
+if DEF(_NIDORAN_STARTERS)
+	givepoke NIDORAN_M, 5, GOLD_BERRY
+else
+if DEF(_CATTLE_STARTERS)
+	givepoke MILTANK, 5, GOLD_BERRY
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	givepoke DELIBIRD, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS1)
+	givepoke CASTAWEIGH, 5, GOLD_BERRY
+else
+if DEF(_NEWCOMERS2)
+	givepoke YANMA, 5, GOLD_BERRY
+else
+if DEF(_FOSSIL_STARTERS)
+	givepoke OMANYTE, 5, GOLD_BERRY
+else
+if DEF(_PSEUDO_LEGENDS)
+	givepoke DRATINI, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BIRDS)
+	givepoke ZAPDOS, 5, GOLD_BERRY
+else
+if DEF(_LEGENDARY_BEASTS)
+	givepoke SUICUNE, 5, GOLD_BERRY
+else
+if DEF(_MEW_STARTERS)
+	givepoke MEWTWO, 5, GOLD_BERRY
+else
+if DEF(_HO_OH_LUGIA)
+	givepoke LUGIA, 5, GOLD_BERRY
+else
+if DEF(_CELEBI_STARTERS)
+	givepoke FINULL, 5, GOLD_BERRY
+else
 	givepoke TOTODILE, 5, GOLD_BERRY
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -859,57 +1290,224 @@ LabWhereGoingText:
 	done
 
 TakeChikoritaText:
-if DEF(_KANTO_STARTERS)
 	text "ELM: So, you like"
+if DEF(_KANTO_STARTERS)
 	line "BULBASAUR, the"
 	cont "grass #MON?"
 else
-if DEF(_MOUSEKETEERS)
-	text "ELM: You'll take"
+if DEF(_LETS_GO_STARTERS)
 	line "PIKACHU, the"
 	cont "electric #MON?"
 else
-	text "ELM: So, you like"
+if DEF(_MOUSEKETEERS)
+	line "PIKACHU, the"
+	cont "electric #MON?"
+else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	line "JYNX, the ice"
+	cont "#MON?"
+else
+if DEF(_HITMON_STARTERS)
+	line "HITMONLEE, the"
+	cont "kicking #MON?"
+else
+if DEF(_NIDORAN_STARTERS)
+	line "the female"
+	cont "NIDORAN?"
+else
+if DEF(_CATTLE_STARTERS)
+	line "TAUROS, the bull"
+	cont "#MON?"
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	line "SHUCKLE, the"
+	cont "defensive #MON?"
+else
+if DEF(_NEWCOMERS1)
+	line "SNOCONEY, the"
+	cont "grass #MON?"
+else
+if DEF(_NEWCOMERS2)
+	line "COTTONEE, the"
+	cont "grass #MON?"
+else
+if DEF(_FOSSIL_STARTERS)
+	line "KABUTO, the bug"
+	cont "#MON?"
+else
+if DEF(_PSEUDO_LEGENDS)
+	line "DRATINI, the"
+	cont "dragon #MON?"
+else
+if DEF(_LEGENDARY_BIRDS)
+	line "ARTICUNO, the ice"
+	cont "#MON?"
+else
+if DEF(_LEGENDARY_BEASTS)
+	line "RAIKOU, the"
+	cont "electric #MON?"
+else
+if DEF(_MEW_STARTERS)
+	line "MEW, the psychic"
+	cont "#MON?"
+else
+if DEF(_HO_OH_LUGIA)
+	line "HO-OH, the fire"
+	cont "#MON?"
+else
+if DEF(_CELEBI_STARTERS)
+	line "CELEBI, the grass"
+	cont "#MON?"
+else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	done
 
 TakeCyndaquilText:
-if DEF(_KANTO_STARTERS)
 	text "ELM: You'll take"
+if DEF(_KANTO_STARTERS)
 	line "CHARMANDER, the"
 	cont "fire #MON?"
 else
 if DEF(_MOUSEKETEERS)
-	text "ELM: You'll take"
 	line "SANDSHREW, the"
 	cont "ground #MON?"
 else
-	text "ELM: You'll take"
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	line "MAGMAR, the fire"
+	cont "#MON?"
+else
+if DEF(_HITMON_STARTERS)
+	line "HITMONTOP, the"
+	cont "balanced #MON?"
+else
+if DEF(_NIDORAN_STARTERS)
+	line "SUNKERN, the grass"
+	cont "#MON?"
+else
+if DEF(_CATTLE_STARTERS)
+	line "GIRAFARIG, the pa-"
+	cont "lindrome #MON?"
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	line "SMEARGLE, the move"
+	cont "-copying #MON?"
+else
+if DEF(_NEWCOMERS1)
+	line "FLOGISTAN, the"
+	cont "fire #MON?"
+else
+if DEF(_NEWCOMERS2)
+	line "JIRK, the…"
+	cont "jerk?"
+else
+if DEF(_FOSSIL_STARTERS)
+	line "AERODACTYL, the"
+	cont "flying #MON?"
+else
+if DEF(_PSEUDO_LEGENDS)
+	line "LARVITAR, the rock"
+	cont "and dark #MON?"
+else
+if DEF(_LEGENDARY_BIRDS)
+	line "MOLTRES, the fire"
+	cont "#MON?"
+else
+if DEF(_LEGENDARY_BEASTS)
+	line "ENTEI, the fire"
+	cont "#MON?"
+else
+if DEF(_MEW_STARTERS)
+	line "DITTO, the form-"
+	cont "copying #MON?"
+else
+if DEF(_HO_OH_LUGIA)
+	line "MAGIKARP?"
+	cont "…Are you sure?"
+else
+if DEF(_CELEBI_STARTERS)
+	line "WOBBUFFET, the"
+	cont "knockback #MON?"
+else
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	done
 
 TakeTotodileText:
-if DEF(_KANTO_STARTERS)
 	text "ELM: Do you want"
+if DEF(_KANTO_STARTERS)
 	line "SQUIRTLE, the"
 	cont "water #MON?"
 else
+if DEF(_LETS_GO_STARTERS)
+	line "EEVEE, the normal-"
+	cont "type #MON?"
+else
 if DEF(_MOUSEKETEERS)
-	text "ELM: Do you want"
 	line "MARILL, the water"
 	cont "#MON?"
 else
-	text "ELM: Do you want"
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	line "ELECTABUZZ, the"
+	cont "electric #MON?"
+else
+if DEF(_HITMON_STARTERS)
+	line "HITMONCHAN, the"
+	cont "punching #MON?"
+else
+if DEF(_NIDORAN_STARTERS)
+	line "the male"
+	cont "NIDORAN?"
+else
+if DEF(_CATTLE_STARTERS)
+	line "MILTANK, the cow"
+	cont "#MON?"
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	line "DELIBIRD, the"
+	cont "CHRISTMAS #MON?"
+else
+if DEF(_NEWCOMERS1)
+	line "CASTAWEIGH, the"
+	cont "water #MON?"
+else
+if DEF(_NEWCOMERS2)
+	line "YANMA, the bug"
+	cont "#MON?"
+else
+if DEF(_FOSSIL_STARTERS)
+	line "OMANYTE, the water"
+	cont "#MON?"
+else
+if DEF(_PSEUDO_LEGENDS)
+	line "DRATINI, the"
+	cont "dragon #MON?"
+else
+if DEF(_LEGENDARY_BIRDS)
+	line "ZAPDOS, the"
+	cont "electric #MON?"
+else
+if DEF(_LEGENDARY_BEASTS)
+	line "SUICUNE, the water"
+	cont "#MON?"
+else
+if DEF(_MEW_STARTERS)
+	line "MEWTWO, the"
+	cont "ultimate #MON?"
+else
+if DEF(_HO_OH_LUGIA)
+	line "LUGIA, the ice"
+	cont "#MON?"
+else
+if DEF(_CELEBI_STARTERS)
+	line "FINULL, the ghost"
+	cont "#MON?"
+else
 	line "TOTODILE, the"
 	cont "water #MON?"
-endc
-endc
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	done
 
 DidntChooseStarterText:
@@ -1440,13 +2038,83 @@ ElmsLab_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
-if DEF(_MOUSEKETEERS)
-	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+if DEF(_LETS_GO_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
-	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-endc
+if DEF(_MOUSEKETEERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_JYNX_MAGMAR_ELECTABUZZ)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_HITMON_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_NIDORAN_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_CATTLE_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_NEWCOMERS2)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_FOSSIL_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_PSEUDO_LEGENDS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_LEGENDARY_BIRDS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_LEGENDARY_BEASTS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_MEW_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_HO_OH_LUGIA)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+if DEF(_CELEBI_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
