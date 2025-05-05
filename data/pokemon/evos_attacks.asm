@@ -419,10 +419,11 @@ NidoranFEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, GROWL
+	db 4, TAIL_WHIP
 	db 8, POISON_STING
 	db 12, DOUBLE_KICK
 	db 17, FURY_SWIPES
-	db 23, TAIL_WHIP
+	db 23, DIG
 	db 30, BITE
 	db 38, MEGA_KICK
 	db 40, TOXIC
@@ -434,10 +435,11 @@ NidorinaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, GROWL
+	db 4, TAIL_WHIP
 	db 8, POISON_STING
 	db 12, DOUBLE_KICK
 	db 19, FURY_SWIPES
-	db 27, TAIL_WHIP
+	db 27, DIG
 	db 36, BITE
 	db 46, MEGA_KICK
 	db 50, TOXIC
@@ -460,8 +462,9 @@ NidoqueenEvosAttacks:
 NidoranMEvosAttacks:
 	db EVOLVE_LEVEL, 16, NIDORINO
 	db 0 ; no more evolutions
-	db 1, HORN_ATTACK
+	db 1, PECK
 	db 2, LEER
+	db 4, HORN_ATTACK
 	db 8, POISON_STING
 	db 12, DOUBLE_KICK
 	db 17, FURY_ATTACK
@@ -475,8 +478,9 @@ NidorinoEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, NIDOKING
 	db EVOLVE_ITEM, SUN_STONE, NIDOQUEEN
 	db 0 ; no more evolutions
-	db 1, HORN_ATTACK
+	db 1, PECK
 	db 2, LEER
+	db 4, HORN_ATTACK
 	db 8, POISON_STING
 	db 12, DOUBLE_KICK
 	db 19, FURY_ATTACK
