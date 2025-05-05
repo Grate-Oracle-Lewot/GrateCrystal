@@ -501,7 +501,7 @@ NidokingEvosAttacks:
 	db 35, MEGAHORN
 	db 46, EARTHQUAKE
 	db 50, BELLY_DRUM
-	db 60, FISSURE
+	db 60, HORN_DRILL
 	db 0 ; no more level-up moves
 
 ClefairyEvosAttacks:
