@@ -1,6 +1,22 @@
 roms := \
 	GrateCrystal.gbc \
 	GrateCrystal_KantoStarters.gbc \
+	GrateCrystal_PikachuEevee.gbc \
+	GrateCrystal_PikachuSandshrewMarill.gbc \
+	GrateCrystal_JynxMagmarElectabuzz.gbc \
+	GrateCrystal_HitmonStarters.gbc \
+	GrateCrystal_NidoranStarters.gbc \
+	GrateCrystal_TaurosMiltankGirafarig.gbc \
+	GrateCrystal_ShuckleSmeargleDelibird.gbc \
+	GrateCrystal_NewStarters1.gbc \
+	GrateCrystal_NewStarters2.gbc \
+	GrateCrystal_FossilStarters.gbc \
+	GrateCrystal_DratiniLarvitar.gbc \
+	GrateCrystal_LegendaryBirds.gbc \
+	GrateCrystal_LegendaryBeasts.gbc \
+	GrateCrystal_MewDittoMewtwo.gbc \
+	GrateCrystal_HoOhLugia.gbc \
+	GrateCrystal_CelebiWobbuffet.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -22,10 +38,26 @@ rom_obj := \
 	gfx/tilesets.o \
 	lib/mobile/main.o
 
-GrateCrystal_obj               := $(rom_obj:.o=.o)
-GrateCrystal_KantoStarters_obj := $(rom_obj:.o=kanto.o)
-GrateCrystal11_obj             := $(rom_obj:.o=11.o)
-GrateCrystal11_vc_obj          := $(rom_obj:.o=11_vc.o)
+GrateCrystal_obj                         := $(rom_obj:.o=.o)
+GrateCrystal_KantoStarters_obj           := $(rom_obj:.o=kanto.o)
+GrateCrystal_PikachuEevee_obj            := $(rom_obj:.o=letsgo.o)
+GrateCrystal_PikachuSandshrewMarill_obj  := $(rom_obj:.o=mice.o)
+GrateCrystal_JynxMagmarElectabuzz_obj    := $(rom_obj:.o=jinx.o)
+GrateCrystal_HitmonStarters_obj          := $(rom_obj:.o=hitmon.o)
+GrateCrystal_NidoranStarters_obj         := $(rom_obj:.o=nido.o)
+GrateCrystal_TaurosMiltankGirafarig_obj  := $(rom_obj:.o=cattle.o)
+GrateCrystal_ShuckleSmeargleDelibird_obj := $(rom_obj:.o=shucks.o)
+GrateCrystal_NewStarters1_obj            := $(rom_obj:.o=1.o)
+GrateCrystal_NewStarters2_obj            := $(rom_obj:.o=2.o)
+GrateCrystal_FossilStarters_obj          := $(rom_obj:.o=fossil.o)
+GrateCrystal_DratiniLarvitar_obj         := $(rom_obj:.o=pseudo.o)
+GrateCrystal_LegendaryBirds_obj          := $(rom_obj:.o=bird.o)
+GrateCrystal_LegendaryBeasts_obj         := $(rom_obj:.o=beast.o)
+GrateCrystal_MewDittoMewtwo_obj          := $(rom_obj:.o=mew.o)
+GrateCrystal_HoOhLugia_obj               := $(rom_obj:.o=dragon.o)
+GrateCrystal_CelebiWobbuffet_obj         := $(rom_obj:.o=onion.o)
+GrateCrystal11_obj                       := $(rom_obj:.o=11.o)
+GrateCrystal11_vc_obj                    := $(rom_obj:.o=11_vc.o)
 
 
 ### Build tools
@@ -46,16 +78,32 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kantostarters crystal11 clean tidy tools
+.PHONY: all crystal kanto letsgo mice jinx hitmon nido cattle shucks new1 new2 fossil pseudo bird beast mew dragon onion crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: crystal
-crystal:         GrateCrystal.gbc
-kantostarters:   GrateCrystal_KantoStarters.gbc
-crystal11:       GrateCrystal11.gbc
-crystal11_vc:    GrateCrystal11.patch
+crystal:      GrateCrystal.gbc
+kanto:        GrateCrystal_KantoStarters.gbc
+letsgo:       GrateCrystal_PikachuEevee.gbc
+mice:         GrateCrystal_PikachuSandshrewMarill.gbc
+jinx:         GrateCrystal_JynxMagmarElectabuzz.gbc
+hitmon:       GrateCrystal_HitmonStarters.gbc
+nido:         GrateCrystal_NidoranStarters.gbc
+cattle:       GrateCrystal_TaurosMiltankGirafarig.gbc
+shucks:       GrateCrystal_ShuckleSmeargleDelibird.gbc
+new1:         GrateCrystal_NewStarters1.gbc
+new2:         GrateCrystal_NewStarters1.gbc
+fossil:       GrateCrystal_FossilStarters.gbc
+pseudo:       GrateCrystal_DratiniLarvitar.gbc
+bird:         GrateCrystal_LegendaryBirds.gbc
+beast:        GrateCrystal_LegendaryBeasts.gbc
+mew:          GrateCrystal_MewDittoMewtwo.gbc
+dragon:       GrateCrystal_HoOhLugia.gbc
+onion:        GrateCrystal_CelebiWobbuffet.gbc
+crystal11:    GrateCrystal11.gbc
+crystal11_vc: GrateCrystal11.patch
 
 clean: tidy
 	find gfx \
@@ -83,6 +131,22 @@ tidy:
 	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(GrateCrystal_obj) \
 	      $(GrateCrystal_KantoStarters_obj) \
+	      $(GrateCrystal_PikachuEevee_obj) \
+	      $(GrateCrystal_PikachuSandshrewMarill_obj) \
+	      $(GrateCrystal_JynxMagmarElectabuzz_obj) \
+	      $(GrateCrystal_HitmonStarters_obj) \
+	      $(GrateCrystal_NidoranStarters_obj) \
+	      $(GrateCrystal_TaurosMiltankGirafarig_obj) \
+	      $(GrateCrystal_ShuckleSmeargleDelibird_obj) \
+	      $(GrateCrystal_NewStarters1_obj) \
+	      $(GrateCrystal_NewStarters2_obj) \
+	      $(GrateCrystal_FossilStarters_obj) \
+	      $(GrateCrystal_DratiniLarvitar_obj) \
+	      $(GrateCrystal_LegendaryBirds_obj) \
+	      $(GrateCrystal_LegendaryBeasts_obj) \
+	      $(GrateCrystal_MewDittoMewtwo_obj) \
+	      $(GrateCrystal_HoOhLugia_obj) \
+	      $(GrateCrystal_CelebiWobbuffet_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -100,10 +164,26 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(GrateCrystal_obj):               RGBASMFLAGS +=
-$(GrateCrystal_KantoStarters_obj): RGBASMFLAGS += -D _KANTO_STARTERS
-$(GrateCrystal11_obj):             RGBASMFLAGS += -D _CRYSTAL11
-$(GrateCrystal11_vc_obj):          RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
+$(GrateCrystal_obj):                         RGBASMFLAGS +=
+$(GrateCrystal_KantoStarters_obj):           RGBASMFLAGS += -D _KANTO_STARTERS
+$(GrateCrystal_PikachuEevee_obj):            RGBASMFLAGS += -D _LETS_GO_STARTERS
+$(GrateCrystal_PikachuSandshrewMarill_obj):  RGBASMFLAGS += -D _MOUSEKETEERS
+$(GrateCrystal_JynxMagmarElectabuzz_obj):    RGBASMFLAGS += -D _JYNX_MAGMAR_ELECTABUZZ
+$(GrateCrystal_HitmonStarters_obj):          RGBASMFLAGS += -D _HITMON_STARTERS
+$(GrateCrystal_NidoranStarters_obj):         RGBASMFLAGS += -D _NIDORAN_STARTERS
+$(GrateCrystal_TaurosMiltankGirafarig_obj):  RGBASMFLAGS += -D _CATTLE_STARTERS
+$(GrateCrystal_ShuckleSmeargleDelibird_obj): RGBASMFLAGS += -D _SHUCKLE_SMEARGLE_DELIBIRD
+$(GrateCrystal_NewStarters1_obj):            RGBASMFLAGS += -D _NEWCOMERS1
+$(GrateCrystal_NewStarters2_obj):            RGBASMFLAGS += -D _NEWCOMERS2
+$(GrateCrystal_FossilStarters_obj):          RGBASMFLAGS += -D _FOSSIL_STARTERS
+$(GrateCrystal_DratiniLarvitar_obj):         RGBASMFLAGS += -D _PSEUDO_LEGENDS
+$(GrateCrystal_LegendaryBirds_obj):          RGBASMFLAGS += -D _LEGENDARY_BIRDS
+$(GrateCrystal_LegendaryBeasts_obj):         RGBASMFLAGS += -D _LEGENDARY_BEASTS
+$(GrateCrystal_MewDittoMewtwo_obj):          RGBASMFLAGS += -D _MEW_STARTERS
+$(GrateCrystal_HoOhLugia_obj):               RGBASMFLAGS += -D _HO_OH_LUGIA
+$(GrateCrystal_CelebiWobbuffet_obj):         RGBASMFLAGS += -D _CELEBI_STARTERS
+$(GrateCrystal11_obj):                       RGBASMFLAGS += -D _CRYSTAL11
+$(GrateCrystal11_vc_obj):                    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
 %.patch: vc/%.constants.sym %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -128,6 +208,22 @@ $(info $(shell $(MAKE) -C tools))
 # Dependencies for shared objects objects
 $(foreach obj, $(GrateCrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(GrateCrystal_KantoStarters_obj), $(eval $(call DEP,$(obj),$(obj:kanto.o=.asm))))
+$(foreach obj, $(GrateCrystal_PikachuEevee_obj), $(eval $(call DEP,$(obj),$(obj:letsgo.o=.asm))))
+$(foreach obj, $(GrateCrystal_PikachuSandshrewMarill_obj), $(eval $(call DEP,$(obj),$(obj:mice.o=.asm))))
+$(foreach obj, $(GrateCrystal_JynxMagmarElectabuzz_obj), $(eval $(call DEP,$(obj),$(obj:jinx.o=.asm))))
+$(foreach obj, $(GrateCrystal_HitmonStarters_obj), $(eval $(call DEP,$(obj),$(obj:hitmon.o=.asm))))
+$(foreach obj, $(GrateCrystal_NidoranStarters_obj), $(eval $(call DEP,$(obj),$(obj:nido.o=.asm))))
+$(foreach obj, $(GrateCrystal_TaurosMiltankGirafarig_obj), $(eval $(call DEP,$(obj),$(obj:cattle.o=.asm))))
+$(foreach obj, $(GrateCrystal_ShuckleSmeargleDelibird_obj), $(eval $(call DEP,$(obj),$(obj:shucks.o=.asm))))
+$(foreach obj, $(GrateCrystal_NewStarters1_obj), $(eval $(call DEP,$(obj),$(obj:1.o=.asm))))
+$(foreach obj, $(GrateCrystal_NewStarters2_obj), $(eval $(call DEP,$(obj),$(obj:2.o=.asm))))
+$(foreach obj, $(GrateCrystal_FossilStarters_obj), $(eval $(call DEP,$(obj),$(obj:fossil.o=.asm))))
+$(foreach obj, $(GrateCrystal_DratiniLarvitar_obj), $(eval $(call DEP,$(obj),$(obj:pseudo.o=.asm))))
+$(foreach obj, $(GrateCrystal_LegendaryBirds_obj), $(eval $(call DEP,$(obj),$(obj:bird.o=.asm))))
+$(foreach obj, $(GrateCrystal_LegendaryBeasts_obj), $(eval $(call DEP,$(obj),$(obj:beast.o=.asm))))
+$(foreach obj, $(GrateCrystal_MewDittoMewtwo_obj), $(eval $(call DEP,$(obj),$(obj:mew.o=.asm))))
+$(foreach obj, $(GrateCrystal_HoOhLugia_obj), $(eval $(call DEP,$(obj),$(obj:dragon.o=.asm))))
+$(foreach obj, $(GrateCrystal_CelebiWobbuffet_obj), $(eval $(call DEP,$(obj),$(obj:onion.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -138,15 +234,47 @@ $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=
 endif
 
 
-GrateCrystal_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_KantoStarters_opt  = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_opt              = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_vc_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_opt                          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_KantoStarters_opt            = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_PikachuEevee_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_PikachuSandshrewMarill_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_JynxMagmarElectabuzz_opt     = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_HitmonStarters_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_NidoranStarters_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_TaurosMiltankGirafarig_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_ShuckleSmeargleDelibird_opt  = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_NewStarters1_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_NewStarters2_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_FossilStarters_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_DratiniLarvitar_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_LegendaryBirds_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_LegendaryBeasts_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_MewDittoMewtwo_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_HoOhLugia_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_CelebiWobbuffet_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal11_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal11_vc_opt                     = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
-GrateCrystal_base               = us
-GrateCrystal_KantoStarters_base = us
-GrateCrystal11_base             = us
-GrateCrystal11_vc_base          = us
+GrateCrystal_base                         = us
+GrateCrystal_KantoStarters_base           = us
+GrateCrystal_PikachuEevee_base            = us
+GrateCrystal_PikachuSandshrewMarill_base  = us
+GrateCrystal_JynxMagmarElectabuzz_base    = us
+GrateCrystal_HitmonStarters_base          = us
+GrateCrystal_NidoranStarters_base         = us
+GrateCrystal_TaurosMiltankGirafarig_base  = us
+GrateCrystal_ShuckleSmeargleDelibird_base = us
+GrateCrystal_NewStarters1_base            = us
+GrateCrystal_NewStarters2_base            = us
+GrateCrystal_FossilStarters_base          = us
+GrateCrystal_DratiniLarvitar_base         = us
+GrateCrystal_LegendaryBirds_base          = us
+GrateCrystal_LegendaryBeasts_base         = us
+GrateCrystal_MewDittoMewtwo_base          = us
+GrateCrystal_HoOhLugia_base               = us
+GrateCrystal_CelebiWobbuffet_base         = us
+GrateCrystal11_base                       = us
+GrateCrystal11_vc_base                    = us
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
