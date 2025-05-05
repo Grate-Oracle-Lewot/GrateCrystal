@@ -405,6 +405,48 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
 
+# Alternate starter builds (still in progress!)
+
+I've created a bunch of alternate builds of this hack that let you choose from different sets of starters, along with changing the corresponding starters on the rival's team. In all respects other than starters, all of these builds are identical, including the base stats, learnsets, and wild locations of any of the Pokémon involved. That means if you pick Magikarp as your starter, don't expect it to start with usable moves.
+
+Some of these starter groups don't form proper type triangles, and as a result, sometimes the Pokémon that the rival picks in response to yours may not be what you expect. He might even get the same Pokémon as you, or one that wasn't even on the table. Whatever he gets will have customized movesets in later fights, which is the main thing that makes these builds different than just editing the disassembly yourself.
+
+When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. To build a version of the ROM with alternate starters, add the extra word after "make" listed here.
+
+make kanto - Bulbasaur, Charmander, and Squirtle.
+
+make letsgo - Pikachu and Eevee. Your Pikachu may be any of its six forms, but the rival's is set. If you lose to the rival in the first battle, his Eevee will evolve into Flareon; if you win, Jolteon.
+
+make mice - Pikachu, Sandshrew, and Marill. Your Pikachu may be any of its six forms, but the rival's is set.
+
+make jinx - Jynx, Magmar, and Electabuzz.
+
+make hitmon - Hitmonlee and Hitmonchan, who will face each other, and Hitmontop, who will face itself.
+
+make nido - Male and female Nidoran, who will face each other, and Sunkern, who will face... Tangela.
+
+make cattle - Tauros and Miltank, who will face each other, and Girafarig, who will face itself.
+
+make shucks - Shuckle, Smeargle, and Delibird.
+
+make new1 - Three of the new/beta Pokémon, who happen to form a type triangle.
+
+make new2 - Cottonee, Yanma, and the other non-legendary new/beta Pokémon.
+
+make fossil - Kabuto, Aerodactyl, and Omanyte.
+
+make pseudo - Dratini and Larvitar. If you pick the left-side Dratini, the rival gets Larvitar; if you pick the right-side one, he also gets Dratini, since Dragon is good against itself. If you pick Larvitar, he always gets Dratini.
+
+make bird - Articuno, Zapdos, and Moltres.
+
+make beast - Raikou, Entei, and Suicune.
+
+make mew - Mew and Mewtwo, who will face each other, and Ditto, who will face itself.
+
+make dragon - Ho-Oh and Lugia, who will face each other, and Magikarp, who will face itself.
+
+make onion - Celebi and the new/beta legendary, who will face each other, and Wobbuffet, who will face itself.
+
 # Why remove some Pokémon and moves?
 
 In both cases, the maximum number is limited by the size of a byte. (That's 256, but actually a few less because some values are used for other purposes, such as indicating a lack of an entry or the end of the list.) There are possible ways around this, but they're a bit above my skill level, and even if I bypass the numerical limit, I may not have room for more entries in the memory banks, which are much harder to work around. As for deciding to remove the baby Pokémon, I really didn't want to remove any Pokémon even if they were useless in battle (I think Pichu is cuter than Pikachu!), but I was also really excited about adding new Pokémon, and the way I see it, the main purpose of the baby Pokémon is to encourage the breeding mechanic by requiring it for Pokédex completion, but this particular hack is supposed to be pretty silly and breezy, so I doubt anyone will spend time breeding in it, or even completing the Pokédex for that matter. I kept Togepi because of the free egg and Tyrogue to properly connect the Hitmons, and the rest is recent history.
