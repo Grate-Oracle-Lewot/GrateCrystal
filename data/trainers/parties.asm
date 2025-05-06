@@ -206,7 +206,23 @@ if DEF(_CELEBI_STARTERS)
 	db  5, CELEBI,     GOLD_BERRY
 else
 	db  5, CHIKORITA,  GOLD_BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (2)
@@ -263,7 +279,23 @@ if DEF(_CELEBI_STARTERS)
 	db  5, WOBBUFFET,  GOLD_BERRY
 else
 	db  5, CYNDAQUIL,  GOLD_BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (3)
@@ -320,7 +352,23 @@ if DEF(_CELEBI_STARTERS)
 	db  5, FINULL,     GOLD_BERRY
 else
 	db  5, TOTODILE,   GOLD_BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (4)
@@ -379,7 +427,23 @@ if DEF(_CELEBI_STARTERS)
 	db 18, CELEBI,     BERRY
 else
 	db 18, BAYLEEF,    BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (5)
@@ -444,7 +508,23 @@ if DEF(_CELEBI_STARTERS)
 	db 18, WOBBUFFET,  BERRY
 else
 	db 18, QUILAVA,    BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (6)
@@ -503,7 +583,23 @@ if DEF(_CELEBI_STARTERS)
 	db 18, FINULL,     BERRY
 else
 	db 18, CROCONAW,   BERRY
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (7)
@@ -563,7 +659,23 @@ if DEF(_CELEBI_STARTERS)
 	db 24, CELEBI,     BERRY,        CONFUSION, LEECH_SEED, ANCIENTPOWER, HEAL_BELL
 else
 	db 24, BAYLEEF,    BERRY,        GROWL, REFLECT, RAZOR_LEAF, SLEEP_POWDER
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (8)
@@ -623,7 +735,23 @@ if DEF(_CELEBI_STARTERS)
 	db 24, WOBBUFFET,  BERRY,        COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 else
 	db 24, QUILAVA,    BERRY,        FURY_SWIPES, SMOKESCREEN, EMBER, QUICK_ATTACK
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (9)
@@ -683,7 +811,23 @@ if DEF(_CELEBI_STARTERS)
 	db 24, FINULL,     BERRY,        NIGHT_SHADE, FORESIGHT, DESTINY_BOND, MEAN_LOOK
 else
 	db 24, CROCONAW,   BERRY,        TAIL_WHIP, RAGE, CLAMP, BITE
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (10)
@@ -744,7 +888,23 @@ if DEF(_CELEBI_STARTERS)
 	db 42, CELEBI,     GOLD_BERRY,   CONFUSION, LEECH_SEED, ANCIENTPOWER, FUTURE_SIGHT
 else
 	db 42, MEGANIUM,   GOLD_BERRY,   REFLECT, PETAL_DANCE, SLEEP_POWDER, BODY_SLAM
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (11)
@@ -805,7 +965,23 @@ if DEF(_CELEBI_STARTERS)
 	db 42, WOBBUFFET,  GOLD_BERRY,   COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 else
 	db 42, TYPHLOSION, GOLD_BERRY,   SMOKESCREEN, ROLLOUT, QUICK_ATTACK, FLAMETHROWER
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (12)
@@ -866,7 +1042,23 @@ if DEF(_CELEBI_STARTERS)
 	db 42, FINULL,     GOLD_BERRY,   SHADOW_BALL, FORESIGHT, PERISH_SONG, MOONBLAST
 else
 	db 42, FERALIGATR, GOLD_BERRY,   DIG, CLAMP, BITE, SCARY_FACE
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (13)
@@ -928,7 +1120,23 @@ if DEF(_CELEBI_STARTERS)
 	db 47, CELEBI,     GOLD_BERRY,   CONFUSION, LEECH_SEED, ANCIENTPOWER, SOLARBEAM
 else
 	db 47, MEGANIUM,   GOLD_BERRY,   REFLECT, PETAL_DANCE, SLEEP_POWDER, BODY_SLAM
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (14)
@@ -990,7 +1198,23 @@ if DEF(_CELEBI_STARTERS)
 	db 47, WOBBUFFET,  GOLD_BERRY,   COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 else
 	db 47, TYPHLOSION, GOLD_BERRY,   SMOKESCREEN, ROLLOUT, QUICK_ATTACK, FLAMETHROWER
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (15)
@@ -1052,7 +1276,23 @@ if DEF(_CELEBI_STARTERS)
 	db 47, FINULL,     GOLD_BERRY,   SHADOW_BALL, FORESIGHT, SHADOW_CLAW, MOONBLAST
 else
 	db 47, FERALIGATR, GOLD_BERRY,   DIG, CLAMP, SCARY_FACE, HYPER_FANG
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 PokemonProfGroup:
@@ -3290,7 +3530,23 @@ if DEF(_CELEBI_STARTERS)
 	db 65, CELEBI,     BERRY_JUICE,  DAZZLY_GLEAM, LEECH_SEED, FLASH, SOLARBEAM
 else
 	db 65, MEGANIUM,   BERRY_JUICE,  GIGA_DRAIN, BODY_SLAM, LIGHT_SCREEN, SAFEGUARD
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL2 (2)
@@ -3352,7 +3608,23 @@ if DEF(_CELEBI_STARTERS)
 	db 65, WOBBUFFET,  BERRY_JUICE,  COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 else
 	db 65, TYPHLOSION, BERRY_JUICE,  SMOKESCREEN, QUICK_ATTACK, FIRE_BLAST, SPARK
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL2 (3)
@@ -3414,7 +3686,23 @@ if DEF(_CELEBI_STARTERS)
 	db 65, FINULL,     BERRY_JUICE,  SHADOW_BALL, FORESIGHT, SHADOW_CLAW, MOONBLAST
 else
 	db 65, FERALIGATR, BERRY_JUICE,  WATERFALL, RAIN_DANCE, HYPER_FANG, SCREECH
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL2 (4)
@@ -3476,7 +3764,23 @@ if DEF(_CELEBI_STARTERS)
 	db 75, CELEBI,     BERRY_JUICE,  PSYCHIC_M, LEECH_SEED, FLASH, SOLARBEAM
 else
 	db 75, MEGANIUM,   BERRY_JUICE,  GIGA_DRAIN, BODY_SLAM, LIGHT_SCREEN, SAFEGUARD
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL2 (5)
@@ -3538,7 +3842,23 @@ if DEF(_CELEBI_STARTERS)
 	db 75, WOBBUFFET,  BERRY_JUICE,  COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 else
 	db 75, TYPHLOSION, BERRY_JUICE,  SMOKESCREEN, QUICK_ATTACK, FIRE_BLAST, SPARK
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL2 (6)
@@ -3600,7 +3920,23 @@ if DEF(_CELEBI_STARTERS)
 	db 75, FINULL,     BERRY_JUICE,  SHADOW_BALL, FORESIGHT, SHADOW_CLAW, MOONBLAST
 else
 	db 75, FERALIGATR, BERRY_JUICE,  WATERFALL, RAIN_DANCE, HYPER_FANG, SCREECH
-endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
+endc
 	db -1 ; end
 
 GuitaristGroup:
