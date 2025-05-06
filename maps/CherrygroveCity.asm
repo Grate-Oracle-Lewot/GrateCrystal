@@ -119,6 +119,21 @@ CherrygroveSilverSceneNorth:
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+if DEF(_LETS_GO_STARTERS)
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .PlayerChosePikachu
+	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
+	sjump .FinishBattle
+
+.PlayerChosePikachu:
+	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
+	iftrue .Flareon
+	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	sjump .FinishBattle
+
+.Flareon:
+	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+else
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChoseChikorita
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
@@ -127,11 +142,19 @@ CherrygroveSilverSceneNorth:
 	sjump .FinishBattle
 
 .PlayerChoseChikorita:
+if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || DEF(_MEW_STARTERS) || DEF(_HO_OH_LUGIA) || DEF(_CELEBI_STARTERS)
+	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+else
 	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+endc
 	sjump .FinishBattle
 
 .PlayerChoseCyndaquil:
+if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || DEF(_MEW_STARTERS) || DEF(_HO_OH_LUGIA) || DEF(_CELEBI_STARTERS)
+	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+else
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+endc endc
 .FinishBattle:
 	startbattle
 	dontrestartmapmusic
