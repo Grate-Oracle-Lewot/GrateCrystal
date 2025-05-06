@@ -1432,6 +1432,9 @@ HandleLeftovers:
 	ld hl, wEnemyMonHP
 
 .got_hp
+; Back up Leftovers type attribute (0 = Leftovers, 42 = Candied Yam, other = Slowpoketail)
+	ld d, c
+
 ; Don't restore if we're already at max HP
 	ld a, [hli]
 	ld b, a
@@ -1445,7 +1448,21 @@ HandleLeftovers:
 	ret z
 
 .restore
-	call GetSixteenthMaxHP
+	call GetEighthMaxHP
+
+; Candied Yam restores 1/8
+	ld a, d
+	cp 42
+	jr z, .done
+
+; Leftovers restore 1/16
+	srl c
+	and a
+	jr z, .done
+
+; Slowpoketail restores 1/32
+	srl c
+.done
 	call SwitchTurnCore
 	call RestoreHP
 	ld hl, BattleText_TargetRecoveredWithItem
