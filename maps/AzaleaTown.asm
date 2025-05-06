@@ -54,31 +54,27 @@ AzaleaTownRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_AZALEA_TOWN
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	winlosstext AzaleaTownRivalWinText, 0
+	setlasttalked AZALEATOWN_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
-	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
-	setlasttalked AZALEATOWN_SILVER
-	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
-
-.Totodile:
-	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
-	setlasttalked AZALEATOWN_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.Chikorita:
-	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
-	setlasttalked AZALEATOWN_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .AfterBattle
+
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -239,8 +235,7 @@ AzaleaTownRivalBeforeText:
 
 	para "THEN SHOW OFF YOUR"
 
-	para " "
-	line "STRENGTH TO SEE."
+	cont "STRENGTH TO SEE."
 	done
 
 AzaleaTownRivalWinText:
@@ -275,10 +270,6 @@ AzaleaTownRivalAfterText:
 	cont "THE TRASHY"
 	cont "STROLLING"
 	cont "IS AN EYESORE."
-	done
-
-AzaleaTownRivalLossText:
-	text "I KNAW YOU FIB"
 	done
 
 AzaleaTownRocketText:
