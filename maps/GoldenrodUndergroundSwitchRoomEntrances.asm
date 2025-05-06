@@ -164,37 +164,25 @@ UndergroundSilverBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	winlosstext UndergroundSilverWinText, 0
+	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
-	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
-	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
-	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .FinishRivalBattle
-
-.Totodile:
-	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
-	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .FinishRivalBattle
+	sjump .FinishBattle
 
-.Chikorita:
-	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
-	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+	sjump .FinishBattle
+
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .FinishRivalBattle
-
-.FinishRivalBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext UndergroundSilverAfterText
@@ -671,8 +659,7 @@ UndergroundSilverBeforeText:
 
 	para "IT ISN'T BORE TO"
 
-	para " "
-	line "AFFECT US ALWAYS."
+	cont "AFFECT US ALWAYS."
 	cont "REMEMBER IT,"
 	cont "I WAS DEFEATED"
 	cont "BY YOU"
@@ -705,13 +692,8 @@ UndergroundSilverAfterText:
 
 	para "IT WON'T ABANDON"
 
-	para " "
-	line "THE DREAM"
+	cont "THE DREAM"
 	cont "FOR LOSING ONLY."
-	done
-
-UndergroundSilverLossText:
-	text "SOLVED BY FIST"
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText:
