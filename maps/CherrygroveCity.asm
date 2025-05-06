@@ -436,8 +436,7 @@ CherrygroveRivalText_Seen:
 
 	para "I HAVE GOOD"
 
-	para " "
-	line "MONSTER,WHAT'S"
+	cont "MONSTER,WHAT'S"
 	cont "THE MATTER"
 	cont "I TELL YOU."
 	done
