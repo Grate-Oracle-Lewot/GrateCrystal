@@ -351,14 +351,12 @@ RocketBaseRivalText:
 
 	para "IT ISN'T ENOUGH"
 
-	para " "
-	line "FOR YOUR LOVE AND"
+	cont "FOR YOUR LOVE AND"
 	cont "TRUST TO MONSTERS"
 
 	para "YOU ARE LOST"
 
-	para " "
-	line "TO THE BLOCK"
+	cont "TO THE BLOCK"
 	cont "SAYING PLEASANT"
 	cont "WORDS ONLY"
 	cont "GET ANGRY AS SOON"
