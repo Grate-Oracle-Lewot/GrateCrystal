@@ -159,10 +159,7 @@ all:
 	tools/free_space.awk BANK=all GrateCrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
-# Create a sym/map for debug purposes if `make` run with `DEBUG=1`
-ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
-endif
 
 $(GrateCrystal_obj):                         RGBASMFLAGS +=
 $(GrateCrystal_KantoStarters_obj):           RGBASMFLAGS += -D _KANTO_STARTERS
