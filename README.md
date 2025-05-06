@@ -405,7 +405,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
 
-# Alternate starter builds (still in progress!)
+# Alternate ROM builds
 
 I've created a bunch of alternate builds of this hack that let you choose from different sets of starters, along with changing the corresponding starters on the rival's team. In all respects other than starters, all of these builds are identical, including the base stats, learnsets, and wild locations of any of the Pokémon involved. That means if you pick Magikarp as your starter, don't expect it to start with usable moves.
 
