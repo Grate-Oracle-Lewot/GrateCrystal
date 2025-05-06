@@ -58,37 +58,25 @@ VictoryRoadRivalNext:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_VICTORY_ROAD
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .GotTotodile
+	winlosstext VictoryRoadRivalDefeatText, 0
+	setlasttalked VICTORYROAD_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .GotChikorita
-	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
-	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
-
-.GotTotodile:
-	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump .FinishBattle
 
-.GotChikorita:
-	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+	sjump .FinishBattle
+
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterBattle
-
-.AfterBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext VictoryRoadRivalAfterText
@@ -248,12 +236,6 @@ VictoryRoadRivalAfterText:
 	cont "FIGHT WITH YOU."
 	cont "EN TO TRY"
 	cont "HARD IS GOOD"
-	done
-
-VictoryRoadRivalVictoryText:
-	text "WINT,THOUTH EFFORT"
-	line "NOW I SEE"
-	cont "WHY TO USE DRAGON"
 	done
 
 GuitaristCaseySeenText:
