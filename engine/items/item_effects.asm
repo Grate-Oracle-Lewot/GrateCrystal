@@ -1139,12 +1139,10 @@ EvoStoneEffect:
 	ld a, [wMonTriedToEvolve]
 	and a
 	jr z, .NoEffect
-
 	jp UseDisposableItem
 
 .NoEffect:
 	call WontHaveAnyEffectMessage
-
 .DecidedNotToUse:
 	xor a
 	ld [wItemEffectSucceeded], a
@@ -1184,13 +1182,11 @@ VitaminEffect:
 	call CopyBytes
 
 	call Play_SFX_FULL_HEAL
-
 	ld hl, ItemStatRoseText
 	call PrintText
 
 	ld c, HAPPINESS_USEDITEM
 	farcall ChangeHappiness
-
 	jp UseDisposableItem
 
 NoEffectMessage:
@@ -1359,7 +1355,6 @@ RareCandyEffect:
 	xor a
 	ld [wForceEvolution], a
 	farcall EvolvePokemon
-
 	jp UseDisposableItem
 
 HealPowderEffect:
@@ -1377,7 +1372,6 @@ HealPowderEffect:
 	call LooksBitterMessage
 
 	ld a, $0
-
 .not_used
 	jp StatusHealer_Jumptable
 
@@ -1560,7 +1554,6 @@ RevivePokemon:
 
 .revive_half_hp
 	call ReviveHalfHP
-
 .finish_revive
 	call HealHP_SFX_GFX
 	ld a, PARTYMENUTEXT_REVIVE
@@ -1580,7 +1573,6 @@ FullRestoreEffect:
 
 	call IsMonAtFullHealth
 	jr c, .NotAtFullHealth
-
 	jp FullyHealStatus
 
 .NotAtFullHealth:
@@ -1621,7 +1613,6 @@ BitterBerryEffect:
 	call StdBattleTextbox
 
 	ld a, 0
-
 .done
 	jp StatusHealer_Jumptable
 
@@ -1647,7 +1638,6 @@ EnergypowderEnergyRootCommon:
 	farcall ChangeHappiness
 	call LooksBitterMessage
 	ld a, 0
-
 .skip_happiness
 	jp StatusHealer_Jumptable
 
@@ -1777,6 +1767,8 @@ StatusHealer_NoEffect:
 StatusHealer_ExitMenu:
 	xor a
 	ld [wItemEffectSucceeded], a
+	; fallthrough
+
 StatusHealer_ClearPalettes:
 	jp ClearPalettes
 
@@ -1796,22 +1788,6 @@ IsItemUsedOnBattleMon:
 .nope
 	xor a
 	ret
-
-ReviveHalfHP:
-	call LoadHPFromBuffer1
-	srl d
-	rr e
-	jr ContinueRevive
-
-ReviveFullHP:
-	call LoadHPFromBuffer1
-ContinueRevive:
-	ld a, MON_HP
-	call GetPartyParamLocation
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	jp LoadCurHPIntoBuffer3
 
 RestoreHealth:
 	ld a, MON_HP + 1
@@ -1838,7 +1814,34 @@ RestoreHealth:
 	sbc [hl]
 	ret c
 .full_hp
-	jp ReviveFullHP
+	jr ReviveFullHP
+
+ReviveHalfHP:
+	call LoadHPFromBuffer1
+	srl d
+	rr e
+	jr ContinueRevive
+
+ReviveFullHP:
+	call LoadHPFromBuffer1
+	; fallthrough
+
+ContinueRevive:
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld [hl], d
+	inc hl
+	ld [hl], e
+	; fallthrough
+
+LoadCurHPIntoBuffer3:
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld [wHPBuffer3 + 1], a
+	ld a, [hl]
+	ld [wHPBuffer3], a
+	ret
 
 RemoveHP:
 	ld a, MON_HP + 1
@@ -1854,7 +1857,7 @@ RemoveHP:
 	ld [hld], a
 	ld [hl], a
 .okay
-	jp LoadCurHPIntoBuffer3
+	jr LoadCurHPIntoBuffer3
 
 IsMonFainted:
 	push de
@@ -1875,15 +1878,6 @@ IsMonAtFullHealth:
 	sub e
 	ld a, h
 	sbc d
-	ret
-
-LoadCurHPIntoBuffer3:
-	ld a, MON_HP
-	call GetPartyParamLocation
-	ld a, [hli]
-	ld [wHPBuffer3 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer3], a
 	ret
 
 LoadCurHPIntoBuffer2:
@@ -1940,30 +1934,32 @@ GetOneFifthMaxHP:
 	ret
 
 GetHealingItemAmount:
-	push hl
 	ld a, [wCurItem]
-	ld hl, HealingHPAmounts
-	ld d, a
-.next
-	ld a, [hli]
-	cp -1
-	jr z, .NotFound
-	cp d
-	jr z, .done
-	inc hl
-	inc hl
-	jr .next
-
-.NotFound:
+	cp HYPER_POTION ; assumes Max Potion and Full Restore come before, and all others come after
+	jr c, .FullHP
+	push bc
+	ld b, a
+	farcall GetItemHeldEffect
+	ld e, c
+	ld d, 0
+	ld a, c
+	and a
+	jr nz, .no_carry
 	scf
-.done
-	ld e, [hl]
-	inc hl
+.no_carry
+	pop bc
+	ret
+
+.FullHP:
+	push hl
+	ld hl, .MaxStatValue
+	ld e, [hli]
 	ld d, [hl]
 	pop hl
 	ret
 
-INCLUDE "data/items/heal_hp.asm"
+.MaxStatValue:
+	dw MAX_STAT_VALUE
 
 Softboiled_MilkDrinkFunction:
 ; Softboiled/Milk Drink in the field
@@ -2206,7 +2202,6 @@ PokeFluteEffect:
 	text_end
 
 .PlayedTheFlute:
-	; played the # FLUTE.@ @
 	text_far Text_PlayedPokeFlute
 	text_asm
 	ld a, [wBattleMode]
@@ -2218,7 +2213,6 @@ PokeFluteEffect:
 	call WaitPlaySFX
 	call WaitSFX
 	pop de
-
 .battle
 	jp PokeFluteTerminator
 
@@ -2550,6 +2544,8 @@ UseItemText:
 	call PrintText
 	call Play_SFX_FULL_HEAL
 	call WaitPressAorB_BlinkCursor
+	; fallthrough
+
 UseDisposableItem:
 	ld hl, wNumItems
 	ld a, 1
