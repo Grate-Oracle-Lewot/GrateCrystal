@@ -92,38 +92,25 @@ PlateauRivalBattleCommon:
 	waitbutton
 	closetext
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	winlosstext PlateauRivalWinText, PlateauRivalLoseText
+	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
-	; Cyndaquil
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
-	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
-
-.Totodile:
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL2, RIVAL2_2_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
+	sjump .FinishBattle
 
-.Chikorita:
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
-	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
+	sjump .FinishBattle
+
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump PlateauRivalPostBattle
-
-PlateauRivalPostBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext PlateauRivalText2
@@ -257,8 +244,7 @@ PlateauRivalText1:
 
 	para "IT'S IMPOSSIBLE,"
 
-	para " "
-	line "THAT THE"
+	cont "THAT THE"
 	cont "ELF I BRED"
 	cont "WILL BE DEFEATED"
 	cont "BY YOURS"
@@ -280,10 +266,6 @@ PlateauRivalText2:
 	cont "I SEE"
 
 	para "TO TRY HARD IS A GOOD."
-	done
-
-PlateauRivalLoseText:
-	text "WIN!!"
 	done
 
 TeleportGuyText1:
