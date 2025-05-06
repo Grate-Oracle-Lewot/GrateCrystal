@@ -116,13 +116,13 @@ CherrygroveSilverSceneNorth:
 	writetext CherrygroveRivalText_Seen
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
-	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .PlayerChoseTotodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
+	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -130,9 +130,7 @@ CherrygroveSilverSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.Totodile:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_SILVER
+.PlayerChoseTotodile:
 	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
@@ -141,10 +139,8 @@ CherrygroveSilverSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.Chikorita:
-	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
-	setlasttalked CHERRYGROVECITY_SILVER
-	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -156,8 +152,6 @@ CherrygroveSilverSceneNorth:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouWon
-	waitbutton
-	closetext
 	sjump .FinishRival
 
 .AfterYourDefeat:
@@ -165,9 +159,9 @@ CherrygroveSilverSceneNorth:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost
+.FinishRival:
 	waitbutton
 	closetext
-.FinishRival:
 	playsound SFX_TACKLE
 	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
 	turnobject PLAYER, LEFT
