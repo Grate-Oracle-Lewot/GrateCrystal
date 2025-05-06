@@ -118,11 +118,11 @@ CherrygroveSilverSceneNorth:
 	closetext
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .PlayerChoseTotodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .PlayerChoseChikorita
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	iftrue .PlayerChoseCyndaquil
-	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -130,8 +130,8 @@ CherrygroveSilverSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.PlayerChoseTotodile:
-	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
+.PlayerChoseChikorita:
+	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
