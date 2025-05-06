@@ -173,8 +173,7 @@ OlivineCityRivalText:
 
 	para "I AM CAREFUL"
 
-	para " "
-	line "OF MONSTERS."
+	cont "OF MONSTERS."
 	cont "LAUGHABLE,A WEAK"
 	cont "MONSTER,"
 	cont "DON'T CONCERN"
