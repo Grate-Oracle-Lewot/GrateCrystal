@@ -6421,7 +6421,7 @@ GetOpponentItem:
 	ld b, [hl]
 	; fallthrough
 
-GetItemHeldEffect:
+GetItemHeldEffect::
 ; Return the effect of item b in bc.
 	ld a, b
 	and a
