@@ -427,7 +427,7 @@ make nido - Male and female Nidoran, who will face each other, and Sunkern, who 
 
 make cattle - Tauros and Miltank, who will face each other, and Girafarig, who will face itself.
 
-make shucks - Shuckle, Smeargle, and Delibird.
+make shucks - Shuckle, Delibird, and Smeargle.
 
 make new1 - Three of the new/beta Pokémon, who happen to form a type triangle.
 
@@ -480,6 +480,10 @@ The whole point of that setting is to make the game harder. Turning off computer
 # I've seen hacks that let you choose whether to use the normal Pokémon types and type chart instead of the changed ones. Why not at least have the option?
 
 Because I designed everything around the changes—learnsets, enemy parties, even some of the changes to the type chart itself. If I were to offer that kind of alternate mode, I would feel obligated to redo all that stuff for it, and that's not happening.
+
+# Why no starter build for my favorite Pokémon?
+
+Sorry, I'm not doing them all.
 
 # Can I copy your code?
 
