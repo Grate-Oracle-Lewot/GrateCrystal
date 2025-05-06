@@ -1953,7 +1953,8 @@ GetHealingItemAmount:
 .FullHP:
 	push hl
 	ld hl, .MaxStatValue
-	ld e, [hli]
+	ld e, [hl]
+	inc hl
 	ld d, [hl]
 	pop hl
 	ret
