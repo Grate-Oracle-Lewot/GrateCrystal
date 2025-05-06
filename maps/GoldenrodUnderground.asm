@@ -119,6 +119,7 @@ TrainerSupernerdEric:
 	endifjustbattled
 	opentext
 	writetext SupernerdEricAfterBattleText
+GoldenrodUndergroundEndText:
 	waitbutton
 	closetext
 	end
@@ -130,9 +131,7 @@ TrainerSupernerdTeru:
 	endifjustbattled
 	opentext
 	writetext SupernerdTeruAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 TrainerPokemaniacIssac:
 	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
@@ -141,9 +140,7 @@ TrainerPokemaniacIssac:
 	endifjustbattled
 	opentext
 	writetext PokemaniacIssacAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 TrainerPokemaniacDonald:
 	trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
@@ -152,9 +149,7 @@ TrainerPokemaniacDonald:
 	endifjustbattled
 	opentext
 	writetext PokemaniacDonaldAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 TrainerGruntM23:
 	trainer GRUNTM, GRUNTM_23, EVENT_BEAT_ROCKET_GRUNTM_23, GruntM23SeenText, GruntM23BeatenText, 0, .Script
@@ -163,9 +158,7 @@ TrainerGruntM23:
 	endifjustbattled
 	opentext
 	writetext GruntM23AfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 BitterMerchantScript:
 	opentext
@@ -261,21 +254,15 @@ OlderHaircutBrotherScript:
 
 .Refused:
 	writetext GoldenrodUndergroundOlderHaircutBrotherThatsAShameText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 .NotEnoughMoney:
 	writetext GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 .AlreadyGotHaircut:
 	writetext GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 YoungerHaircutBrotherScript:
 	opentext
@@ -344,42 +331,30 @@ YoungerHaircutBrotherScript:
 
 .Refused:
 	writetext GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 .NotEnoughMoney:
 	writetext GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 .AlreadyGotHaircut:
 	writetext GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 EitherHaircutBrotherScript_SlightlyHappier:
 	writetext HaircutBrosText_SlightlyHappier
 	special PlayCurMonCry
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 EitherHaircutBrotherScript_Happier:
 	writetext HaircutBrosText_Happier
 	special PlayCurMonCry
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 EitherHaircutBrotherScript_MuchHappier:
 	writetext HaircutBrosText_MuchHappier
 	special PlayCurMonCry
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 BasementDoorScript::
 	opentext
@@ -388,9 +363,7 @@ BasementDoorScript::
 	checkitem BASEMENT_KEY
 	iftrue .Unlock
 	writetext GoldenrodUndergroundTheDoorsLockedText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 .Unlock:
 	playsound SFX_TRANSACTION
@@ -406,15 +379,11 @@ BasementDoorScript::
 
 .Open:
 	writetext GoldenrodUndergroundTheDoorIsOpenText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 GoldenrodUndergroundScript_ShopClosed:
 	writetext GoldenrodUndergroundWeAreNotOpenTodayText
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUndergroundEndText
 
 GoldenrodUndergroundCoinCase:
 	itemball COIN_CASE
@@ -433,8 +402,8 @@ GoldenrodUndergroundHiddenAntidote:
 
 SupernerdEricSeenText:
 	text "I got booted out"
-	line "of the GAME COR-"
-	cont "NER."
+	line "of the GAME"
+	cont "CORNER."
 
 	para "I was trying to"
 	line "cheat using my"
