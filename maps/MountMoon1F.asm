@@ -31,37 +31,25 @@ MountMoon1F_MapScripts:
 	writetext MountMoonSilverTextBefore
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	winlosstext MountMoonSilverTextWin, 0
+	setlasttalked MOUNTMOON_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
-	winlosstext MountMoonSilverTextWin, 0
-	setlasttalked MOUNTMOON_SILVER
-	loadtrainer RIVAL2, RIVAL2_1_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .FinishBattle
-
-.Totodile:
-	winlosstext MountMoonSilverTextWin, 0
-	setlasttalked MOUNTMOON_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL2, RIVAL2_1_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
 	sjump .FinishBattle
 
-.Chikorita:
-	winlosstext MountMoonSilverTextWin, 0
-	setlasttalked MOUNTMOON_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL2, RIVAL2_1_CYNDAQUIL
+	sjump .FinishBattle
+
+.PlayerChoseCyndaquil:
+	loadtrainer RIVAL2, RIVAL2_1_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .FinishBattle
-
-.FinishBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext MountMoonSilverTextAfter
@@ -168,8 +156,7 @@ MountMoonSilverTextBefore:
 
 	para "I LET YOU"
 
-	para " "
-	line "SEE NOW"
+	cont "SEE NOW"
 	done
 
 MountMoonSilverTextWin:
@@ -190,8 +177,7 @@ MountMoonSilverTextAfter:
 
 	para "ONE DAY I WILL"
 
-	para " "
-	line "LET YOU KNOW"
+	cont "LET YOU KNOW"
 	cont "I'M THE STRONGEST"
 	cont "COACH,THE FELLOWS"
 	cont "WILL CONSORT WITH"
