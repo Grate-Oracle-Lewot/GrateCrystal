@@ -126,13 +126,7 @@ if DEF(_LETS_GO_STARTERS)
 	sjump .FinishBattle
 
 .PlayerChosePikachu:
-	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
-	iftrue .Flareon
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
-	sjump .FinishBattle
-
-.Flareon:
-	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
 else
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChoseChikorita
