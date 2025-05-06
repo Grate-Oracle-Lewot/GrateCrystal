@@ -283,7 +283,7 @@ SilverText_Training1:
 	cont "OPPOSITE."
 
 	para "NONE OF THEM CAN"
-	line " "
+
 	cont "WIN YOU"
 	cont "I DON'T DO"
 	cont "OUTRAGEOUS THING,"
