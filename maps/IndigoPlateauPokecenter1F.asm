@@ -92,7 +92,7 @@ PlateauRivalBattleCommon:
 	waitbutton
 	closetext
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	winlosstext PlateauRivalWinText, PlateauRivalLoseText
+	winlosstext PlateauRivalWinText, 0
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
 if DEF(_LETS_GO_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
