@@ -167,20 +167,20 @@ UndergroundSilverBattleScript:
 	winlosstext UndergroundSilverWinText, 0
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
 if DEF(_LETS_GO_STARTERS)
- 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
- 	iftrue .PlayerChosePikachu
- 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
- 	sjump .FinishBattle
- 
- .PlayerChosePikachu:
- 	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
- 	iftrue .Flareon
- 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
- 	sjump .FinishBattle
- 
- .Flareon:
- 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
- else
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .PlayerChosePikachu
+	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+	sjump .FinishBattle
+
+.PlayerChosePikachu:
+	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
+	iftrue .Flareon
+	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	sjump .FinishBattle
+
+.Flareon:
+	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+else
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChoseChikorita
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
@@ -190,16 +190,16 @@ if DEF(_LETS_GO_STARTERS)
 
 .PlayerChoseChikorita:
 if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || DEF(_MEW_STARTERS) || DEF(_HO_OH_LUGIA) || DEF(_CELEBI_STARTERS)
- 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
- else
+	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+else
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
 endc
 	sjump .FinishBattle
 
 .PlayerChoseCyndaquil:
 if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || DEF(_MEW_STARTERS) || DEF(_HO_OH_LUGIA) || DEF(_CELEBI_STARTERS)
- 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
- else
+	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+else
 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
 endc endc
 .FinishBattle:
