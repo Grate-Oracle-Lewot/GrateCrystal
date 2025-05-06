@@ -129,7 +129,8 @@ if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || D
 	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
 else
 	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
-endc endc
+endc
+endc
 .FinishBattle:
 	startbattle
 	dontrestartmapmusic
