@@ -118,30 +118,21 @@ CherrygroveSilverSceneNorth:
 	closetext
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChoseChikorita
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump .FinishBattle
 
 .PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-	startbattle
-	dontrestartmapmusic
-	reloadmap
-	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump .FinishBattle
 
 .PlayerChoseCyndaquil:
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmap
