@@ -65,28 +65,18 @@ BurnedTowerRivalBattleScript:
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump .FinishBattle
 
-.PlayerChoseChikorita
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
+.PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump .FinishBattle
 
-.PlayerChoseCyndaquil
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
+.PlayerChoseCyndaquil:
 	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-.AfterBattle
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext BurnedTowerSilver_AfterText1
