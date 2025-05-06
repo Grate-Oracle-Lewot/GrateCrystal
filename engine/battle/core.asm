@@ -2008,9 +2008,8 @@ SubtractHP:
 	ret
 
 GetSixteenthMaxHP:
-	call GetQuarterMaxHP
-; quarter result
-	srl c
+	call GetEighthMaxHP
+; halve result
 	srl c
 	jr FinishPartialHP
 
