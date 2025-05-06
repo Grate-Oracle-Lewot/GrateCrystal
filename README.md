@@ -230,6 +230,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - One in the Ruins of Alph research center will teach Aura Sphere for free once you collect all forms of Unown
 
+- In addition to the move deleter in Blackthorn City and the move reminder in Cianwood City, a move deleter now appears in the Goldenrod Underground on Monday nights, and move reminders and deleters appear in the Indigo Plateau and Lavender Town
+
 ## Game Corners
 
 Voltorb Flip (renamed Voltsweeper) is now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit.
@@ -274,7 +276,6 @@ Prize Pokémon:
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 - A second floor to Oak's Lab, which hosts the Inverse/Neutral Battles sidequest
 - Olivine Gym redesigned, Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, a quick exit warp added to Sabrina's Gym, and Viridian Gym's old layout recreated with its Gen II Lego tiles
-- In addition to the move deleter in Blackthorn and the move reminder in Cianwood, a move deleter now appears in the Goldenrod Underground on Monday nights, and move reminders and deleters appear in the Indigo Plateau and Lavender Town
 
 ## Enemy trainer AI
 
