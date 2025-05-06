@@ -58,37 +58,35 @@ BurnedTowerRivalBattleScript:
 	writetext BurnedTowerSilver_BeforeText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .totodile
+	winlosstext BurnedTowerSilver_WinText, 0
+	setlasttalked BURNEDTOWER1F_SILVER
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .chikorita
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
-	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .returnfrombattle
-
-.totodile
-	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
-	setlasttalked BURNEDTOWER1F_SILVER
+	iftrue .PlayerChoseChikorita
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .returnfrombattle
+	sjump .AfterBattle
 
-.chikorita
+.PlayerChoseChikorita
 	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
 	setlasttalked BURNEDTOWER1F_SILVER
 	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .returnfrombattle
+	sjump .AfterBattle
 
-.returnfrombattle
+.PlayerChoseCyndaquil
+	winlosstext BurnedTowerSilver_WinText, BurnedTowerSilver_LossText
+	setlasttalked BURNEDTOWER1F_SILVER
+	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+.AfterBattle
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext BurnedTowerSilver_AfterText1
@@ -184,27 +182,23 @@ BurnedTowerSilver_BeforeText:
 
 	para "THE LEGENDARY"
 
-	para " "
-	line "MONSTER LOOKED"
+	cont "MONSTER LOOKED"
 	cont "FOR YOU SPECIALLY"
 	cont "HOW THAT MONSTER"
 	cont "MIGHT EXIST!"
 
 	para "I CAME THERE"
 
-	para " "
-	line "FOR YOU SPECIALLY,"
+	cont "FOR YOU SPECIALLY,"
 	cont "DON'T SAY SO!"
 
 	para "DON'T USE"
 
-	para " "
-	line "THE METHOD!"
+	cont "THE METHOD!"
 
 	para "IT'S GOOD NOT"
 
-	para " "
-	line "TO BLAME YOU!"
+	cont "TO BLAME YOU!"
 	done
 
 BurnedTowerSilver_WinText:
@@ -220,19 +214,13 @@ BurnedTowerSilver_AfterText1:
 	cont "MONSTER."
 	done
 
-BurnedTowerSilver_LossText:
-	text "HATE TO FIGHT"
-	line "WITH THE WEAKERS"
-	done
-
 BurnedTowerSilver_AfterText2:
 	text "ER WHICH HOLE?"
 	line "WHAT DROPED?"
 
 	para "FAILING THING,"
 
-	para " "
-	line "SERVE ONE RIGHT!"
+	cont "SERVE ONE RIGHT!"
 	done
 
 BurnedTower1FEusineIntroText:
