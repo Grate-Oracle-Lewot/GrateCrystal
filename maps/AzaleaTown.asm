@@ -61,24 +61,18 @@ AzaleaTownRivalBattleScript:
 	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	iftrue .PlayerChoseCyndaquil
 	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump .FinishBattle
 
 .PlayerChoseChikorita:
 	loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	sjump .AfterBattle
+	sjump .FinishBattle
 
 .PlayerChoseCyndaquil:
 	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
+.FinishBattle:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-.AfterBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext AzaleaTownRivalAfterText
