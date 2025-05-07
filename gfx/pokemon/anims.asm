@@ -249,6 +249,10 @@ TyranitarAnimation:  INCLUDE "gfx/pokemon/tyranitar/anim.asm"
 LugiaAnimation:      INCLUDE "gfx/pokemon/lugia/anim.asm"
 HoOhAnimation:       INCLUDE "gfx/pokemon/ho_oh/anim.asm"
 CelebiAnimation:     INCLUDE "gfx/pokemon/celebi/anim.asm"
+if DEF(_ADD_MISSINGNO)
+MissingnoAnimation:  INCLUDE "gfx/pokemon/missingno/anim.asm"
+else
 FinullAnimation:     INCLUDE "gfx/pokemon/finull/anim.asm"
+endc
 YanmegaAnimation:    INCLUDE "gfx/pokemon/yanmega/anim.asm"
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"
