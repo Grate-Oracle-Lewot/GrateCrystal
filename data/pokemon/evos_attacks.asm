@@ -3886,6 +3886,14 @@ CelebiEvosAttacks:
 	db 90, MINIMIZE
 	db 0 ; no more level-up moves
 
+if DEF(_ADD_MISSINGNO)
+MissingnoEvosAttacks:
+	db EVOLVE_TRADE, -1, RHYDON
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, SKY_ATTACK
+	db 0 ; no more level-up moves
+else
 FinullEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, NIGHT_SHADE
@@ -3902,13 +3910,7 @@ FinullEvosAttacks:
 	db 80, AMNESIA
 	db 90, FISSURE
 	db 0 ; no more level-up moves
-
-; MissingnoEvosAttacks:
-;	db EVOLVE_TRADE, -1, RHYDON
-;	db 0 ; no more evolutions
-;	db 1, WATER_GUN
-;	db 1, SKY_ATTACK
-;	db 0 ; no more level-up moves
+endc
 
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
