@@ -6,7 +6,7 @@
 	db GRASS, GRASS ; type
 	db 45 ; catch rate
 	db 142 ; base exp
-	db GOLD_BERRY, MIRACLE_SEED ; items
+	db SILVER_LEAF, GOLD_LEAF ; items
 	db GENDER_F12_5 ; gender ratio
 	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/bayleef/front.dimensions"
