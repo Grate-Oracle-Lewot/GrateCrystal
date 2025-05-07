@@ -80,6 +80,7 @@ SandshrewEggMoves:
 
 NidoranEggMoves:
 	db SUPERSONIC
+	db DISABLE
 	db TAKE_DOWN
 	db PLAY_ROUGH
 	db FOCUS_ENERGY
