@@ -6,7 +6,7 @@
 	db GRASS, POISON ; type
 	db 255 ; catch rate
 	db 78 ; base exp
-	db REVIVAL_HERB, GOLD_LEAF ; items
+	db ENERGYPOWDER, GOLD_LEAF ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/oddish/front.dimensions"
