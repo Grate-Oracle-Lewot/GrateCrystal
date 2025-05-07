@@ -256,7 +256,11 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; LUGIA
 	icon_pals RED,    YELLOW ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
+if DEF(_ADD_MISSINGNO)
+	icon_pals GRAY,   RED    ; MISSINGNO
+else
 	icon_pals BROWN,  GRAY   ; FINULL
+endc
 	icon_pals GREEN,  BLUE   ; YANMEGA
 	assert_table_length NUM_POKEMON
 
