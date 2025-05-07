@@ -251,6 +251,10 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoAnimationIdle
+else
 	dw FinullAnimationIdle
+endc
 	dw YanmegaAnimationIdle
 	assert_table_length NUM_POKEMON
