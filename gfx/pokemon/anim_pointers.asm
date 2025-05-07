@@ -251,6 +251,10 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoAnimation
+else
 	dw FinullAnimation
+endc
 	dw YanmegaAnimation
 	assert_table_length NUM_POKEMON
