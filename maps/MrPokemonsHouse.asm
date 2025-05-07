@@ -90,17 +90,30 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_RefusedOddEgg
 	sjump MrPokemonsHouse_EndText
 
+if DEF(_ADD_MISSINGNO)
 .AcceptedOddEgg:
 	closetext
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .OddEggPartyFull
 	checkpoke MEWTWO
 	iftrue .MewtwoEgg
-if DEF(_ADD_MISSINGNO)
-	checkpoke MISSINGNO
+	special GiveOddEgg
+	opentext
+	writetext MrPokemonsHouse_ReceivedOddEggText
+	playsound SFX_KEY_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	setflag ENGINE_YANMA_SWARM
+	end
 else
+.AcceptedOddEgg:
+	closetext
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .OddEggPartyFull
+	checkpoke MEWTWO
+	iftrue .MewtwoEgg
 	checkpoke FINULL
-endc
 	iftrue .FinullEgg
 	special GiveOddEgg
 	opentext
@@ -112,8 +125,8 @@ endc
 	setflag ENGINE_YANMA_SWARM
 	end
 
-.MewtwoEgg:
-	giveegg MEWTWO, EGG_LEVEL
+.FinullEgg:
+	giveegg FINULL, EGG_LEVEL
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
 	playsound SFX_KEY_ITEM
@@ -122,13 +135,10 @@ endc
 	closetext
 	setflag ENGINE_YANMA_SWARM
 	end
-
-.FinullEgg:
-if DEF(_ADD_MISSINGNO)
-	giveegg MISSINGNO, EGG_LEVEL
-else
-	giveegg FINULL, EGG_LEVEL
 endc
+
+.MewtwoEgg:
+	giveegg MEWTWO, EGG_LEVEL
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
 	playsound SFX_KEY_ITEM
