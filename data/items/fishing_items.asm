@@ -1,0 +1,12 @@
+FishingItemTable:
+	db 1, BIG_PEARL
+	db 1, DRAGON_FANG
+	db 2, DRAGON_SCALE
+	db 3, STAR_PIECE
+	db 4, WATER_STONE
+	db 4, TRIDENT
+	db 8, MYSTIC_WATER
+	db 10, PEARL
+	db 12, BRICK_PIECE
+	db 14, SLOWPOKETAIL
+	db -1
