@@ -1,0 +1,17 @@
+RockSmashItemTable:
+	db 1, OLD_AMBER
+	db 1, DOME_FOSSIL
+	db 1, HELIX_FOSSIL
+	db 2, MAX_REVIVE
+	db 2, MAX_ELIXER
+	db 4, ELIXER
+	db 4, MAX_ETHER
+	db 6, ETHER
+	db 6, REVIVE
+	db 8, KINGS_ROCK
+	db 8, NUGGET
+	db 10, STARDUST
+	db 16, HARD_STONE
+	db 16, SOFT_SAND
+	db 64, BRICK_PIECE
+	db -1
