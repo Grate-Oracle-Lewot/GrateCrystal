@@ -6,7 +6,7 @@
 	db BUG, POISON ; type
 	db 75 ; catch rate
 	db 138 ; base exp
-	db ENERGYPOWDER, SILVERPOWDER ; items
+	db REVIVAL_HERB, SILVERPOWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/venomoth/front.dimensions"
