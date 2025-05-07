@@ -530,7 +530,11 @@ IlexForestShrineScript:
 	closetext
 	setevent EVENT_FOUGHT_FINULL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+if DEF(_ADD_MISSINGNO)
+	loadwildmon MISSINGNO, 100
+else
 	loadwildmon FINULL, 1
+endc
 	startbattle
 	reloadmapafterbattle
 	end
