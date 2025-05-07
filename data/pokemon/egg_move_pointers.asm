@@ -251,6 +251,10 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoEggMoves
+else
 	dw NoEggMoves
+endc
 	dw YanmaEggMoves
 	assert_table_length NUM_POKEMON
