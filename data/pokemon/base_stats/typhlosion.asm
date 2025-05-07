@@ -6,7 +6,7 @@
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
 	db 210 ; base exp
-	db GOLD_BERRY, CHARCOAL ; items
+	db ENERGY_ROOT, CHARCOAL ; items
 	db GENDER_F12_5 ; gender ratio
 	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/typhlosion/front.dimensions"
