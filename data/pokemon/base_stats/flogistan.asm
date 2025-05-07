@@ -6,7 +6,7 @@
 	db NORMAL, FIRE ; type
 	db 168 ; catch rate
 	db 121 ; base exp
-	db SWAG_BEACON, CHARCOAL ; items
+	db NO_ITEM, HEAL_POWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 7 ; step cycles to hatch
 	INCBIN "gfx/pokemon/flogistan/front.dimensions"
