@@ -980,7 +980,9 @@ CottoneeEggMoves:
 	db SPORE
 	db -1 ; end
 
-; MissingnoEggMoves:
-;	db PAY_DAY
-;	db BIND
-;	db -1 ; end
+if DEF(_ADD_MISSINGNO)
+MissingnoEggMoves:
+	db PAY_DAY
+	db BIND
+	db -1 ; end
+endif
