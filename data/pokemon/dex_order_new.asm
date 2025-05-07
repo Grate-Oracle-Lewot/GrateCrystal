@@ -254,5 +254,9 @@ NewPokedexOrder:
 	db MEW
 	db MEWTWO
 	db CELEBI
+if DEF(_ADD_MISSINGNO)
+	db MISSINGNO
+else
 	db FINULL
+endc
 	assert_table_length NUM_POKEMON
