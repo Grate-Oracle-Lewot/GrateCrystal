@@ -251,6 +251,10 @@ FramesPointers:
 	dw LugiaFrames
 	dw HoOhFrames
 	dw CelebiFrames
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoFrames
+else
 	dw FinullFrames
+endc
 	dw YanmegaFrames
 	assert_table_length NUM_POKEMON
