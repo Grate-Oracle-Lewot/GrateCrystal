@@ -249,6 +249,10 @@ TyranitarBitmasks:  INCLUDE "gfx/pokemon/tyranitar/bitmask.asm"
 LugiaBitmasks:      INCLUDE "gfx/pokemon/lugia/bitmask.asm"
 HoOhBitmasks:       INCLUDE "gfx/pokemon/ho_oh/bitmask.asm"
 CelebiBitmasks:     INCLUDE "gfx/pokemon/celebi/bitmask.asm"
+if DEF(_ADD_MISSINGNO)
+MissingnoBitmasks:  INCLUDE "gfx/pokemon/missingno/bitmask.asm"
+else
 FinullBitmasks:     INCLUDE "gfx/pokemon/finull/bitmask.asm"
+endc
 YanmegaBitmasks:    INCLUDE "gfx/pokemon/yanmega/bitmask.asm"
 EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"
