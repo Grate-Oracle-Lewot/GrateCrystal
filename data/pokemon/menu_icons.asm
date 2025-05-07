@@ -253,6 +253,10 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
 	db ICON_CELEBI      ; CELEBI
+if DEF(_ADD_MISSINGNO)
+	db ICON_GLITCH      ; MISSINGNO
+else
 	db ICON_CELEBI      ; FINULL
+endc
 	db ICON_MOTH        ; YANEGMA
 	assert_table_length NUM_POKEMON
