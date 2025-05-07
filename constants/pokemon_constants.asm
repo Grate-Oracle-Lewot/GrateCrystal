@@ -271,7 +271,11 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+if DEF(_ADD_MISSINGNO)
+	const MISSINGNO  ; fc
+else
 	const FINULL     ; fc
+ednc
 	const YANMEGA    ; fd
 NUM_POKEMON EQU const_value - 1
 	const EGG        ; fe
