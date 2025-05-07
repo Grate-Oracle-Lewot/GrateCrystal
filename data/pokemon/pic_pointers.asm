@@ -511,8 +511,13 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+if DEF(_ADD_MISSINGNO)
+	dba MissingnoFrontpic
+	dba MissingnoBackpic
+else
 	dba FinullFrontpic
 	dba FinullBackpic
+endc
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
 	assert_table_length NUM_POKEMON
