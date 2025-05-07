@@ -245,7 +245,11 @@ Route22HouseJamesScript:
 
 Route22HouseMissingnoScript:
 	faceplayer
+if DEF(_ADD_MISSINGNO)
+	cry MISSINGNO
+else
 	cry NIDORAN_M
+endc
 	waitsfx
 	checktime DAY
 	iftrue .AerobonesBattle
