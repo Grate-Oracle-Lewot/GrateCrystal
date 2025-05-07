@@ -253,6 +253,10 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoEvosAttacks
+else
 	dw FinullEvosAttacks
+endc
 	dw YanmegaEvosAttacks
 	assert_table_length NUM_POKEMON
