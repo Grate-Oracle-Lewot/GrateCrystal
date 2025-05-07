@@ -251,6 +251,10 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HO_OH
 	db NO_MOVE      ; CELEBI
+if DEF(_ADD_MISSINGNO)
+	db WATER_GUN    ; MISSINGNO
+else
 	db NO_MOVE      ; FINULL
+endc
 	db NO_MOVE      ; YANMEGA
 	assert_table_length NUM_POKEMON
