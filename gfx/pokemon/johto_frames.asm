@@ -100,6 +100,10 @@ TyranitarFrames:  INCLUDE "gfx/pokemon/tyranitar/frames.asm"
 LugiaFrames:      INCLUDE "gfx/pokemon/lugia/frames.asm"
 HoOhFrames:       INCLUDE "gfx/pokemon/ho_oh/frames.asm"
 CelebiFrames:     INCLUDE "gfx/pokemon/celebi/frames.asm"
+if DEF(_ADD_MISSINGNO)
+MissingnoFrames:  INCLUDE "gfx/pokemon/missingno/frames.asm"
+else
 FinullFrames:     INCLUDE "gfx/pokemon/finull/frames.asm"
+endc
 YanmegaFrames:    INCLUDE "gfx/pokemon/yanmega/frames.asm"
 EggFrames:        INCLUDE "gfx/pokemon/egg/frames.asm"
