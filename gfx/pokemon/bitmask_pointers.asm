@@ -251,6 +251,10 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
+if DEF(_ADD_MISSINGNO)
+	dw MissingnoBitmasks
+else
 	dw FinullBitmasks
+endc
 	dw YanmegaBitmasks
 	assert_table_length NUM_POKEMON
