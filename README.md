@@ -413,7 +413,7 @@ I've created a bunch of alternate builds of this hack that let you choose from d
 
 Some of these starter groups don't form proper type triangles, and as a result, sometimes the Pokémon that the rival picks in response to yours may not be what you expect. He might even get the same Pokémon as you, or one that wasn't even on the table. Whatever he gets will have customized movesets in later fights, which is the main thing that makes these builds different than just editing the disassembly yourself.
 
-When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. To build a version of the ROM with alternate starters, add the extra word after "make" listed here.
+When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. To build a version of the ROM with alternate starters, add the extra word after "make" listed here. (You can build all of these in the same folder without any problems.)
 
 make kanto - Bulbasaur, Charmander, and Squirtle.
 
