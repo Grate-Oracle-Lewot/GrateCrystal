@@ -252,6 +252,10 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+if DEF(_ADD_MISSINGNO)
+	dba MissingnoPokedexEntry
+else
 	dba FinullPokedexEntry
+endc
 	dba YanmegaPokedexEntry
 	assert_table_length NUM_POKEMON
