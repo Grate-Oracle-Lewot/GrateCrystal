@@ -6,7 +6,7 @@
 	db WATER, ELECTRIC ; type
 	db 75 ; catch rate
 	db 156 ; base exp
-	db ENERGYPOWDER, BRIGHTPOWDER ; items
+	db SWAG_BEACON, BRIGHTPOWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lanturn/front.dimensions"
