@@ -6,7 +6,7 @@
 	db BUG, BUG ; type
 	db 190 ; catch rate
 	db 60 ; base exp
-	db HEAL_POWDER, LIMBO_STICK ; items
+	db ENERGYPOWDER, LIMBO_STICK ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pineco/front.dimensions"
