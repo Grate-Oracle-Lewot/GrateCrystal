@@ -54,6 +54,7 @@
 	const ICON_VILEPLUME   ; 51
 	const ICON_ABRA        ; 52
 	const ICON_JYNX        ; 53
+	const ICON_GLITCH      ; 54
 NUM_ICONS EQU const_value - 1
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
