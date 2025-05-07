@@ -251,7 +251,11 @@ PokemonNames::
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
+if DEF(_ADD_MISSINGNO)
+	db "MISSINGNO."
+else
 	db "FINULL@@@@"
+endc
 	db "YANMEGA@@@"
 	assert_table_length NUM_POKEMON
 	db "EGG@@@@@@@"
