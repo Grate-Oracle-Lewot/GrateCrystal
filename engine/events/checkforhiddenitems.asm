@@ -120,58 +120,8 @@ FishingItemEncounterFail:
 	ld [wScriptVar], a
 	ret
 	
-HeadbuttItemTable:
-	db 1, BIG_MUSHROOM
-	db 2, MIRACLE_SEED
-	db 2, GOLD_BERRY
-	db 2, MIRACLEBERRY
-	db 2, MYSTERYBERRY
-	db 3, GOLD_LEAF
-	db 3, SILVER_LEAF
-	db 3, BERRY
-	db 4, BITTER_BERRY
-	db 4, MINT_BERRY
-	db 4, ICE_BERRY
-	db 4, BURNT_BERRY
-	db 4, PRZCUREBERRY
-	db 4, PSNCUREBERRY
-	db 4, RED_APRICORN
-	db 4, BLU_APRICORN
-	db 4, YLW_APRICORN
-	db 4, GRN_APRICORN
-	db 4, WHT_APRICORN
-	db 4, BLK_APRICORN
-	db 4, PNK_APRICORN
-	db 4, TINYMUSHROOM
-	db -1
+INCLUDE "data/items/headbutt_items.asm"
 
-RockSmashItemTable:
-	db 1, OLD_AMBER
-	db 1, DOME_FOSSIL
-	db 1, HELIX_FOSSIL
-	db 2, MAX_REVIVE
-	db 2, MAX_ELIXER
-	db 4, ELIXER
-	db 4, MAX_ETHER
-	db 6, ETHER
-	db 6, REVIVE
-	db 8, KINGS_ROCK
-	db 8, NUGGET
-	db 10, STARDUST
-	db 16, HARD_STONE
-	db 16, SOFT_SAND
-	db 64, BRICK_PIECE
-	db -1
+INCLUDE "data/items/rock_smash_items.asm"
 
-FishingItemTable:
-	db 1, BIG_PEARL
-	db 1, DRAGON_FANG
-	db 2, DRAGON_SCALE
-	db 3, STAR_PIECE
-	db 4, WATER_STONE
-	db 4, TRIDENT
-	db 8, MYSTIC_WATER
-	db 10, PEARL
-	db 16, SLOWPOKETAIL
-	db 16, BRICK_PIECE
-	db -1
+INCLUDE "data/items/fishing_items.asm"
