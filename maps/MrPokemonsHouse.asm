@@ -96,7 +96,11 @@ MrPokemonsHouse_MrPokemonScript:
 	ifequal PARTY_LENGTH, .OddEggPartyFull
 	checkpoke MEWTWO
 	iftrue .MewtwoEgg
+if DEF(_ADD_MISSINGNO)
+	checkpoke MISSINGNO
+else
 	checkpoke FINULL
+endc
 	iftrue .FinullEgg
 	special GiveOddEgg
 	opentext
@@ -120,7 +124,11 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 .FinullEgg:
+if DEF(_ADD_MISSINGNO)
+	giveegg MISSINGNO, EGG_LEVEL
+else
 	giveegg FINULL, EGG_LEVEL
+endc
 	opentext
 	writetext MrPokemonsHouse_ReceivedOddEggText
 	playsound SFX_KEY_ITEM
