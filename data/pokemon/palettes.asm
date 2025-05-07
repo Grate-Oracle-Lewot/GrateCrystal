@@ -517,8 +517,13 @@ INCBIN "gfx/pokemon/ho_oh/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ho_oh/shiny.pal"
 INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/celebi/shiny.pal"
+if DEF(_ADD_MISSINGNO)
+INCBIN "gfx/pokemon/missingno/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/missingno/shiny.pal"
+else
 INCBIN "gfx/pokemon/finull/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/finull/shiny.pal"
+endc
 INCBIN "gfx/pokemon/yanmega/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/yanmega/shiny.pal"
 
