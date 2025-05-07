@@ -266,5 +266,9 @@ TyranitarPokedexEntry::  INCLUDE "data/pokemon/dex_entries/tyranitar.asm"
 LugiaPokedexEntry::      INCLUDE "data/pokemon/dex_entries/lugia.asm"
 HoOhPokedexEntry::       INCLUDE "data/pokemon/dex_entries/ho_oh.asm"
 CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"
+if DEF(_ADD_MISSINGNO)
+MissingnoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/missingno.asm"
+else
 FinullPokedexEntry::     INCLUDE "data/pokemon/dex_entries/finull.asm"
+endc
 YanmegaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/yanmega.asm"
