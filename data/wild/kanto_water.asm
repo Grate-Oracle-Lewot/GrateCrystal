@@ -196,9 +196,9 @@ KantoWaterWildMons:
 
 	def_water_wildmons FUCHSIA_CITY
 	db 2 percent ; encounter rate
-	db 20, MAGIKARP
-	db 15, MAGIKARP
 	db 10, MAGIKARP
+	db 20, MAGIKARP
+	db 15, JIRK
 	db 20, GYARADOS
 	end_water_wildmons
 
@@ -207,7 +207,11 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 35, CASTAWEIGH
 	db 35, TENTACRUEL
+if DEF(_ADD_MISSINGNO)
+	db 95, MISSINGNO
+else
 	db 95, UNOWN
+endc
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CAVE_1F
