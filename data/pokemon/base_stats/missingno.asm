@@ -6,7 +6,7 @@
 	db CURSE_TYPE, NORMAL ; type
 	db 29 ; catch rate
 	db 1 ; base exp
-	db RARE_CANDY, MASTER_BALL ; items
+	db RARE_CANDY, THICK_CLUB ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 255 ; step cycles to hatch
 	INCBIN "gfx/pokemon/missingno/front.dimensions"
