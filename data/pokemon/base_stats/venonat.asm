@@ -6,7 +6,7 @@
 	db BUG, POISON ; type
 	db 190 ; catch rate
 	db 75 ; base exp
-	db ENERGY_ROOT, REVIVAL_HERB ; items
+	db ENERGYPOWDER, SWAG_BEACON ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/venonat/front.dimensions"
