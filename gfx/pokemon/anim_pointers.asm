@@ -251,7 +251,7 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoAnimation
 else
 	dw FinullAnimation
