@@ -256,7 +256,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   PINK   ; LUGIA
 	icon_pals RED,    YELLOW ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	icon_pals GRAY,   RED    ; MISSINGNO
 else
 	icon_pals BROWN,  GRAY   ; FINULL
