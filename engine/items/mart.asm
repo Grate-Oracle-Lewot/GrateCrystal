@@ -24,13 +24,6 @@ OpenMartDialog::
 	dw RooftopSale
 	dw BerryShop
 
-MartDialog:
-	ld a, MARTTYPE_STANDARD
-	ld [wMartType], a
-	xor a ; STANDARDMART_HOWMAYIHELPYOU
-	ld [wMartJumptableIndex], a
-	jp StandardMart
-
 HerbShop:
 	call FarReadMart
 	call LoadStandardMenuHeader
@@ -151,6 +144,13 @@ GetMart:
 	const STANDARDMART_ANYTHINGELSE   ; 5
 
 STANDARDMART_EXIT EQU -1
+
+MartDialog:
+	ld a, MARTTYPE_STANDARD
+	ld [wMartType], a
+	xor a ; STANDARDMART_HOWMAYIHELPYOU
+	ld [wMartJumptableIndex], a
+	; fallthrough
 
 StandardMart:
 .loop
@@ -374,17 +374,6 @@ LoadBuyMenuText:
 	ld l, a
 	jp PrintText
 
-MartAskPurchaseQuantity:
-	call GetMartDialogGroup ; gets a pointer from GetMartDialogGroup.MartTextFunctionPointers
-	inc hl
-	inc hl
-	ld a, [hl]
-	and a
-	jp z, StandardMartAskPurchaseQuantity
-	cp 1
-	jp z, BargainShopAskPurchaseQuantity
-	jp RooftopSaleAskPurchaseQuantity
-
 GetMartDialogGroup:
 	ld a, [wMartType]
 	ld e, a
@@ -507,12 +496,6 @@ BuyMenuLoop:
 	and a
 	ret
 
-StandardMartAskPurchaseQuantity:
-	ld a, MARTTEXT_HOW_MANY
-	call LoadBuyMenuText
-	farcall SelectQuantityToBuy
-	jp ExitMenu
-
 MartConfirmPurchase:
 	predef PartyMonItemName
 	ld a, MARTTEXT_COSTS_THIS_MUCH
@@ -559,6 +542,17 @@ BargainShopAskPurchaseQuantity:
 	scf
 	ret
 
+MartAskPurchaseQuantity:
+	call GetMartDialogGroup ; gets a pointer from GetMartDialogGroup.MartTextFunctionPointers
+	inc hl
+	inc hl
+	ld a, [hl]
+	and a
+	jr z, StandardMartAskPurchaseQuantity
+	cp 1
+	jr z, BargainShopAskPurchaseQuantity
+	; fallthrough
+
 RooftopSaleAskPurchaseQuantity:
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
@@ -584,6 +578,12 @@ RooftopSaleAskPurchaseQuantity:
 	ld d, [hl]
 	ret
 
+StandardMartAskPurchaseQuantity:
+	ld a, MARTTEXT_HOW_MANY
+	call LoadBuyMenuText
+	farcall SelectQuantityToBuy
+	jp ExitMenu
+
 MartHowManyText:
 	text_far _MartHowManyText
 	text_end
@@ -605,7 +605,7 @@ MenuHeader_Buy:
 	dbw 0, wCurMartCount
 	dba PlaceMartMenuItemName
 	dba .PrintBCDPrices
-	dba UpdateItemDescription
+	dba MartPlaceInBagQuantity
 
 .PrintBCDPrices:
 	ld a, [wScrollingMenuCursorPosition]
@@ -871,3 +871,60 @@ PlayTransactionSound:
 	call WaitSFX
 	ld de, SFX_TRANSACTION
 	jp PlaySFX
+
+MartPlaceInBagQuantity:
+	farcall UpdateItemDescription
+
+	farcall CheckItemPocket
+	ld a, [wItemAttributeValue]
+	cp ITEM
+	jr z, .get_item_pocket
+	cp BALL
+	jr z, .get_ball_pocket
+	cp FRUIT
+	jr z, .get_fruit_pocket
+
+	farcall ClearItemInBagQuantityBox
+	ret
+
+.get_item_pocket
+	ld hl, wNumItems
+	jr .check_bag
+
+.get_ball_pocket
+	ld hl, wNumBalls
+	jr .check_bag
+
+.get_fruit_pocket
+	ld hl, wNumFruits
+
+.check_bag
+	ld a, [wCurItem]
+	ld c, a
+	ld b, $0
+.loop
+	inc hl
+	ld a, [hli]
+	cp -1
+	jr z, .done
+	cp c
+	jr nz, .loop
+	ld a, [hl]
+	add b
+	ld b, a
+	jr nc, .loop
+	ld b, -1
+
+.done
+	ld a, b
+	sub 99
+	jr c, .done2
+	ld b, 99
+
+.done2
+	ld a, b
+	ld [wMenuSelectionQuantity], a
+	and a
+
+	farcall PlaceItemInBagQuantity
+	ret
