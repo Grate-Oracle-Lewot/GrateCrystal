@@ -153,33 +153,30 @@ ScrollingMenuJoyAction:
 .d_up
 	ld hl, w2DMenuFlags2
 	bit 7, [hl]
-	jp z, xor_a
+	jr z, .xor_a
 	ld hl, wMenuScrollPosition
 	ld a, [hl]
 	and a
-	jr z, .xor_dec_up
+	jp z, xor_a_dec_a
 	dec [hl]
-	jp xor_a
-
-.xor_dec_up
-	jp xor_a_dec_a
+.xor_a
+	xor a
+	ret
 
 .d_down
 	ld hl, w2DMenuFlags2
 	bit 7, [hl]
-	jp z, xor_a
+	jr z, .xor_a
 	ld hl, wMenuScrollPosition
 	ld a, [wMenuData_ScrollingMenuHeight]
 	add [hl]
 	ld b, a
 	ld a, [wScrollingMenuListSize]
 	cp b
-	jr c, .xor_dec_down
+	jp c, xor_a_dec_a
 	inc [hl]
-	jp xor_a
-
-.xor_dec_down
-	jp xor_a_dec_a
+	xor a
+	ret
 
 ScrollingMenu_GetCursorPosition:
 	ld a, [wMenuScrollPosition]
