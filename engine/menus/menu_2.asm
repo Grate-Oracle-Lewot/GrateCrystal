@@ -228,3 +228,30 @@ FindApricornsInBag:
 	ret
 
 INCLUDE "data/items/apricorn_balls.asm"
+
+PlaceItemInBagQuantity:
+	hlcoord 0, 0
+	ld b, 1
+	ld c, 7
+	call Textbox
+	hlcoord 1, 1
+	ld de, .InBagString
+	call PlaceString
+
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .ClearItemInBagQuantityBox
+
+	hlcoord 6, 1
+	ld de, wMenuSelectionQuantity
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	jp PrintNum
+
+.InBagString:
+	db "PACK×@"
+
+ClearItemInBagQuantityBox:
+	hlcoord 0, 0
+	ld b, 3
+	ld c, 9
+	jp ClearBox
