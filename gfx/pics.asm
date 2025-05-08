@@ -747,7 +747,7 @@ AgathaPic:           INCBIN "gfx/trainers/agatha.2bpp.lz"
 RealBrunoPic:        INCBIN "gfx/trainers/real_bruno.2bpp.lz"
 RealWillPic:         INCBIN "gfx/trainers/real_will.2bpp.lz"
 EngineerPic:         INCBIN "gfx/trainers/engineer.2bpp.lz"
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoFrontpic:   INCBIN "gfx/pokemon/missingno/front.animated.2bpp.lz"
 MissingnoBackpic:    INCBIN "gfx/pokemon/missingno/back.2bpp.lz"
 else
