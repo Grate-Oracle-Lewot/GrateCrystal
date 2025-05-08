@@ -4,9 +4,7 @@ _2DMenu_::
 	rst FarCall
 
 	call Draw2DMenu
-	call UpdateSprites
-	call ApplyTilemap
-	jp Get2DMenuSelection
+	jr 2DMenuBattleMenuMerge
 
 _InterpretBattleMenu::
 	ld hl, CopyMenuData
@@ -15,6 +13,9 @@ _InterpretBattleMenu::
 
 	call Draw2DMenu
 	farcall MobileTextBorder
+	; fallthrough
+
+2DMenuBattleMenuMerge:
 	call UpdateSprites
 	call ApplyTilemap
 	jp Get2DMenuSelection
