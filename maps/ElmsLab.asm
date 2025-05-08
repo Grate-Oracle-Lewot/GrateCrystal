@@ -213,8 +213,13 @@ if DEF(_CELEBI_STARTERS)
 	pokepic CELEBI
 	cry CELEBI
 else
+if DEF(_MISSINGNO_STARTERS)
+	pokepic MISSINGNO
+	cry MISSINGNO
+else
 	pokepic CHIKORITA
 	cry CHIKORITA
+endc
 endc
 endc
 endc
@@ -294,7 +299,11 @@ else
 if DEF(_CELEBI_STARTERS)
 	getmonname STRING_BUFFER_3, CELEBI
 else
+if DEF(_MISSINGNO_STARTERS)
+	getmonname STRING_BUFFER_3, MISSINGNO
+else
 	getmonname STRING_BUFFER_3, CHIKORITA
+endc
 endc
 endc
 endc
@@ -366,6 +375,9 @@ if DEF(_HO_OH_LUGIA)
 else
 if DEF(_CELEBI_STARTERS)
 	givepoke CELEBI, 5, GOLD_BERRY
+else
+if DEF(_MISSINGNO_STARTERS)
+	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke CHIKORITA, 5, GOLD_BERRY
 endc
@@ -458,8 +470,13 @@ if DEF(_CELEBI_STARTERS)
 	pokepic WOBBUFFET
 	cry WOBBUFFET
 else
+if DEF(_MISSINGNO_STARTERS)
+	pokepic UNOWN
+	cry UNOWN
+else
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
+endc
 endc
 endc
 endc
@@ -535,7 +552,11 @@ else
 if DEF(_CELEBI_STARTERS)
 	getmonname STRING_BUFFER_3, WOBBUFFET
 else
+if DEF(_MISSINGNO_STARTERS)
+	getmonname STRING_BUFFER_3, UNOWN
+else
 	getmonname STRING_BUFFER_3, CYNDAQUIL
+endc
 endc
 endc
 endc
@@ -604,7 +625,11 @@ else
 if DEF(_CELEBI_STARTERS)
 	givepoke WOBBUFFET, 5, GOLD_BERRY
 else
+if DEF(_MISSINGNO_STARTERS)
+	givepoke UNOWN, 5, GOLD_BERRY
+else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -700,8 +725,13 @@ if DEF(_CELEBI_STARTERS)
 	pokepic FINULL
 	cry FINULL
 else
+if DEF(_MISSINGNO_STARTERS)
+	pokepic MISSINGNO
+	cry MISSINGNO
+else
 	pokepic TOTODILE
 	cry TOTODILE
+endc
 endc
 endc
 endc
@@ -781,7 +811,11 @@ else
 if DEF(_CELEBI_STARTERS)
 	getmonname STRING_BUFFER_3, FINULL
 else
+if DEF(_MISSINGNO_STARTERS)
+	getmonname STRING_BUFFER_3, MISSINGNO
+else
 	getmonname STRING_BUFFER_3, TOTODILE
+endc
 endc
 endc
 endc
@@ -854,7 +888,11 @@ else
 if DEF(_CELEBI_STARTERS)
 	givepoke FINULL, 5, GOLD_BERRY
 else
+if DEF(_MISSINGNO_STARTERS)
+	givepoke MISSINGNO, 5, GOLD_BERRY
+else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1500,8 +1538,13 @@ if DEF(_CELEBI_STARTERS)
 	line "CELEBI, the grass"
 	cont "#MON?"
 else
+if DEF(_MISSINGNO_STARTERS)
+	line "MISSINGNO., the"
+	cont "glitch #MON?"
+else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
+endc
 endc
 endc
 endc
@@ -1587,8 +1630,13 @@ if DEF(_CELEBI_STARTERS)
 	line "WOBBUFFET, the"
 	cont "knockback #MON?"
 else
+if DEF(_MISSINGNO_STARTERS)
+	line "UNOWN, the"
+	cont "alphabet #MON?"
+else
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
+endc
 endc
 endc
 endc
@@ -1677,8 +1725,13 @@ if DEF(_CELEBI_STARTERS)
 	line "FINULL, the ghost"
 	cont "#MON?"
 else
+if DEF(_MISSINGNO_STARTERS)
+	line "MISSINGNO., the"
+	cont "glitch #MON?"
+else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
@@ -2301,9 +2354,15 @@ if DEF(_CELEBI_STARTERS)
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
+if DEF(_MISSINGNO_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc
 endc
 endc
 endc
