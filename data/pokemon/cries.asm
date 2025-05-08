@@ -257,7 +257,7 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	mon_cry CRY_NIDORAN_M,     0,    0 ; MISSINGNO
 else
 	mon_cry CRY_ENTEI,       168,  273 ; FINULL
