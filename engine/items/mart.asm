@@ -38,7 +38,7 @@ HerbShop:
 	call MartTextbox
 	call BuyMenu
 	ld hl, HerbalLadyComeAgainText
-	jp MartTextbox
+	jr MartTextbox
 
 BargainShop:
 	ld b, BANK(BargainShopData)
@@ -58,7 +58,21 @@ BargainShop:
 
 .skip_set
 	ld hl, BargainShopComeAgainText
-	jp MartTextbox
+	; fallthrough
+
+MartTextbox:
+	call MenuTextbox
+	call JoyWaitAorB
+	jp ExitMenu
+
+BerryShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_BerryShop_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_BerryShop_ComeAgain
+	jr MartTextbox
 
 Pharmacist:
 	call FarReadMart
@@ -67,7 +81,7 @@ Pharmacist:
 	call MartTextbox
 	call BuyMenu
 	ld hl, PharmacyComeAgainText
-	jp MartTextbox
+	jr MartTextbox
 
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
@@ -86,18 +100,9 @@ RooftopSale:
 	call MartTextbox
 	call BuyMenu
 	ld hl, MartComeAgainText
-	jp MartTextbox
+	jr MartTextbox
 
 INCLUDE "data/items/rooftop_sale.asm"
-
-BerryShop:
-	call FarReadMart
-	call LoadStandardMenuHeader
-	ld hl, Text_BerryShop_Intro
-	call MartTextbox
-	call BuyMenu
-	ld hl, Text_BerryShop_ComeAgain
-	jp MartTextbox
 
 LoadMartPointer:
 	ld a, b
@@ -253,6 +258,7 @@ GetMartItemPrice:
 	ld [wCurItem], a
 	farcall GetItemPrice
 	pop hl
+	; fallthrough
 
 GetMartPrice:
 ; Return price de in BCD at hl and in tiles at wStringBuffer1.
@@ -502,8 +508,6 @@ BuyMenuLoop:
 	ret
 
 StandardMartAskPurchaseQuantity:
-	ld a, MAX_ITEM_STACK
-	ld [wItemQuantity], a
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
 	farcall SelectQuantityToBuy
@@ -559,8 +563,6 @@ RooftopSaleAskPurchaseQuantity:
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
 	call .GetSalePrice
-	ld a, MAX_ITEM_STACK
-	ld [wItemQuantity], a
 	farcall RooftopSale_SelectQuantityToBuy
 	jp ExitMenu
 
@@ -766,9 +768,6 @@ SellMenu:
 	dw .try_sell
 	dw .try_sell
 
-.cant_buy
-	ret
-
 .try_sell
 	farcall _CheckTossableItem
 	ld a, [wItemAttributeValue]
@@ -777,6 +776,7 @@ SellMenu:
 	ld hl, MartCantBuyText
 	call PrintText
 	and a
+.cant_buy
 	ret
 
 .okay_to_sell
@@ -871,8 +871,3 @@ PlayTransactionSound:
 	call WaitSFX
 	ld de, SFX_TRANSACTION
 	jp PlaySFX
-
-MartTextbox:
-	call MenuTextbox
-	call JoyWaitAorB
-	jp ExitMenu
