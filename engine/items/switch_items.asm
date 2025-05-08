@@ -182,14 +182,16 @@ SwitchItemsInBag:
 ItemSwitch_CopyItemToBuffer:
 	call ItemSwitch_GetNthItem
 	ld de, wSwitchItemBuffer
-	call ItemSwitch_GetItemFormatSize
-	jp CopyBytes
+	jr ItemSwitch_BufferMerge
 
 ItemSwitch_CopyBufferToItem:
 	call ItemSwitch_GetNthItem
 	ld d, h
 	ld e, l
 	ld hl, wSwitchItemBuffer
+	; fallthrough
+
+ItemSwitch_BufferMerge:
 	call ItemSwitch_GetItemFormatSize
 	jp CopyBytes
 
