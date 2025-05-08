@@ -3886,7 +3886,7 @@ CelebiEvosAttacks:
 	db 90, MINIMIZE
 	db 0 ; no more level-up moves
 
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoEvosAttacks:
 	db EVOLVE_TRADE, -1, RHYDON
 	db 0 ; no more evolutions
