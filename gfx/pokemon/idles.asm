@@ -249,7 +249,7 @@ TyranitarAnimationIdle:  INCLUDE "gfx/pokemon/tyranitar/anim_idle.asm"
 LugiaAnimationIdle:      INCLUDE "gfx/pokemon/lugia/anim_idle.asm"
 HoOhAnimationIdle:       INCLUDE "gfx/pokemon/ho_oh/anim_idle.asm"
 CelebiAnimationIdle:     INCLUDE "gfx/pokemon/celebi/anim_idle.asm"
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoAnimationIdle:  INCLUDE "gfx/pokemon/missingno/anim_idle.asm"
 else
 FinullAnimationIdle:     INCLUDE "gfx/pokemon/finull/anim_idle.asm"
