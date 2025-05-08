@@ -55,6 +55,7 @@ PlaceMoneyAtTopLeftOfTextbox:
 	ld hl, MoneyTopRightMenuHeader
 	lb de, 0, 11
 	call OffsetMenuHeader
+	; fallthrough
 
 PlaceMoneyTextbox:
 	call MenuBox
