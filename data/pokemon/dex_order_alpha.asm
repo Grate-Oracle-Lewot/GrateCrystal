@@ -2,7 +2,7 @@
 
 AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	db ABRA
 	db AERODACTYL
 	db AIPOM
