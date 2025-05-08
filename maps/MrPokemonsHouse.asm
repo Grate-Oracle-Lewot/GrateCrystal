@@ -90,7 +90,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_RefusedOddEgg
 	sjump MrPokemonsHouse_EndText
 
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 .AcceptedOddEgg:
 	closetext
 	readvar VAR_PARTYCOUNT
