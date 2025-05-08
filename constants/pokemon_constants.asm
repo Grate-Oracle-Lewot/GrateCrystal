@@ -275,7 +275,7 @@ if DEF(_ADD_MISSINGNO)
 	const MISSINGNO  ; fc
 else
 	const FINULL     ; fc
-ednc
+endc
 	const YANMEGA    ; fd
 NUM_POKEMON EQU const_value - 1
 	const EGG        ; fe
