@@ -449,11 +449,11 @@ make dragon - Ho-Oh and Lugia, who will face each other, and Magikarp, who will 
 
 make onion - Celebi and the new/beta legendary, who will face each other, and Wobbuffet, who will face itself.
 
-Other builds (with normal Johto starters):
+make miss - Normal Johto starters, but the new/beta legendary is replaced with Missingno., including in its special encounter and its few appearances on enemy teams. Missingno. has its own base stats, movepool, etc., and can also be found by Surfing around Cinnabar Island.
 
-make miss - Replaces the new/beta legendary with Missingno., including in its special encounter and its few appearances on enemy teams. Missingno. has its own base stats, movepool, etc., and can also be found by Surfing around Cinnabar Island.
+make no - Same as previous, but also changes the starters to Missingno., Unown, and another Missingno., with the same versus setup as Dratini and Larvitar. Your Unown may be any letter, but the rival's is set.
 
-make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one.
+make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters.
 
 make crystal11_vc - The Virtual Console version of Pokémon Crystal, which implemented the GS Ball event. GrateCrystal implements that event differently, so this build now only alters timing delays during link communications.
 
