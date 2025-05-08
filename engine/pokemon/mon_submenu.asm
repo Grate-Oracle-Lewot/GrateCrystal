@@ -173,7 +173,7 @@ GetMonSubmenuItems:
 	call AddMonMenuItem
 
 .ok2
-	jp TerminateMonSubmenu
+	jr TerminateMonSubmenu
 
 .egg
 	ld a, MONMENUITEM_STATS
@@ -182,7 +182,16 @@ GetMonSubmenuItems:
 	call AddMonMenuItem
 	ld a, MONMENUITEM_CANCEL
 	call AddMonMenuItem
-	jp TerminateMonSubmenu
+	; fallthrough
+
+TerminateMonSubmenu:
+	ld a, [wMonSubmenuCount]
+	ld e, a
+	ld d, 0
+	ld hl, wMonSubmenuItems
+	add hl, de
+	ld [hl], -1
+	ret
 
 IsFieldMove:
 	ld b, a
@@ -208,15 +217,6 @@ ResetMonSubmenu:
 	ld hl, wMonSubmenuItems
 	ld bc, NUM_MONMENU_ITEMS + 1
 	jp ByteFill
-
-TerminateMonSubmenu:
-	ld a, [wMonSubmenuCount]
-	ld e, a
-	ld d, 0
-	ld hl, wMonSubmenuItems
-	add hl, de
-	ld [hl], -1
-	ret
 
 AddMonMenuItem:
 	push hl
