@@ -283,7 +283,7 @@ INCBIN "gfx/footprints/tyranitar.1bpp"
 INCBIN "gfx/footprints/lugia.1bpp"
 INCBIN "gfx/footprints/ho_oh.1bpp"
 INCBIN "gfx/footprints/celebi.1bpp"
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 INCBIN "gfx/footprints/missingno.1bpp"
 else
 INCBIN "gfx/footprints/finull.1bpp"
