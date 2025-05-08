@@ -245,7 +245,7 @@ Route22HouseJamesScript:
 
 Route22HouseMissingnoScript:
 	faceplayer
-if DEF(_ADD_MISSINGNO)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	cry MISSINGNO
 else
 	cry NIDORAN_M
