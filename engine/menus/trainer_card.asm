@@ -91,11 +91,6 @@ TrainerCard:
 	dw TrainerCard_Page3_Joypad
 	dw TrainerCard_Quit
 
-TrainerCard_IncrementJumptable:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 TrainerCard_Quit:
 	ld hl, wJumptableIndex
 	set 7, [hl]
@@ -116,20 +111,7 @@ TrainerCard_Page1_LoadGFX:
 	lb bc, BANK(CardStatusGFX), 86
 	call Request2bpp
 	call TrainerCard_Page1_PrintDexCaught_GameTime
-	jp TrainerCard_IncrementJumptable
-
-TrainerCard_Page1_Joypad:
-	call TrainerCard_Page1_PrintGameTime
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_RIGHT | A_BUTTON
-	jr nz, .pressed_right_a
-	ret
-
-.pressed_right_a
-	ld a, TRAINERCARDSTATE_PAGE2_LOADGFX
-	ld [wJumptableIndex], a
-	ret
+	jr TrainerCard_IncrementJumptable
 
 TrainerCard_Page2_LoadGFX:
 	call ClearSprites
@@ -151,41 +133,11 @@ TrainerCard_Page2_LoadGFX:
 	call Request2bpp
 	ld hl, TrainerCard_JohtoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
-	jp TrainerCard_IncrementJumptable
+	; fallthrough
 
-TrainerCard_Page2_Joypad:
-	ld hl, TrainerCard_JohtoBadgesOAM
-	call TrainerCard_Page2_3_AnimateBadges
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_LEFT
-	jr nz, .pressed_left
-	ld a, [wKantoBadges]
-	and a
-	jr nz, .has_kanto_badges
-	ld a, [hl]
-	and A_BUTTON
-	jr nz, .quit
-	ret
-.has_kanto_badges
-	ld a, [hl]
-	and D_RIGHT | A_BUTTON
-	jr nz, .pressed_right_a
-	ret
-
-.quit
-	ld a, TRAINERCARDSTATE_QUIT
-	ld [wJumptableIndex], a
-	ret
-
-.pressed_left
-	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
-	ld [wJumptableIndex], a
-	ret
-
-.pressed_right_a
-	ld a, TRAINERCARDSTATE_PAGE3_LOADGFX
-	ld [wJumptableIndex], a
+TrainerCard_IncrementJumptable:
+	ld hl, wJumptableIndex
+	inc [hl]
 	ret
 
 TrainerCard_Page3_LoadGFX:
@@ -208,7 +160,56 @@ TrainerCard_Page3_LoadGFX:
 	call Request2bpp
 	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
-	jp TrainerCard_IncrementJumptable
+	jr TrainerCard_IncrementJumptable
+
+TrainerCard_Page1_Joypad:
+	call TrainerCard_Page1_PrintGameTime
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_RIGHT | A_BUTTON
+	jr nz, .pressed_right_a
+	ret
+
+.pressed_right_a
+	ld a, TRAINERCARDSTATE_PAGE2_LOADGFX
+	ld [wJumptableIndex], a
+	ret
+
+TrainerCard_Page2_Joypad:
+	ld hl, TrainerCard_JohtoBadgesOAM
+	call TrainerCard_Page2_3_AnimateBadges
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_LEFT
+	jr nz, .pressed_left
+	ld a, [wKantoBadges]
+	and a
+	jr nz, .has_kanto_badges
+	ld a, [hl]
+	and A_BUTTON
+	jr nz, .quit
+	ret
+
+.has_kanto_badges
+	ld a, [hl]
+	and D_RIGHT | A_BUTTON
+	jr nz, .pressed_right_a
+	ret
+
+.quit
+	ld a, TRAINERCARDSTATE_QUIT
+	ld [wJumptableIndex], a
+	ret
+
+.pressed_left
+	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
+	ld [wJumptableIndex], a
+	ret
+
+.pressed_right_a
+	ld a, TRAINERCARDSTATE_PAGE3_LOADGFX
+	ld [wJumptableIndex], a
+	ret
 
 TrainerCard_Page3_Joypad:
 	ld hl, TrainerCard_KantoBadgesOAM
@@ -471,7 +472,7 @@ TrainerCard_Page2_3_AnimateBadges:
 	inc a
 	and %111
 	ld [wTrainerCardBadgeFrameCounter], a
-	jr TrainerCard_Page2_3_OAMUpdate
+	; fallthrough
 
 TrainerCard_Page2_3_OAMUpdate:
 ; copy flag array pointer
