@@ -5,14 +5,51 @@ SelectQuantityToToss:
 
 SelectQuantityToBuy:
 	farcall GetItemPrice
+	; fallthrough
+
 RooftopSale_SelectQuantityToBuy:
 	ld a, d
 	ld [wBuySellItemPrice + 0], a
 	ld a, e
 	ld [wBuySellItemPrice + 1], a
+
+; limit [wItemQuantity] so that de * [wItemQuantity] <= Money
+; 1 <= [wItemQuantity] <= 99
+	xor a
+	ld [hMoneyTemp + 0], a
+	ld [hMoneyTemp + 1], a
+	ld [hMoneyTemp + 2], a
+	ld b, -1
+	jr .start
+.loop
+	cp 99
+	jr nc, .done
+.start
+	ld a, [hMoneyTemp + 2]
+	add e
+	ld [hMoneyTemp + 2], a
+	ld a, [hMoneyTemp + 1]
+	adc d
+	ld [hMoneyTemp + 1], a
+	ld a, [hMoneyTemp + 0]
+	adc 0
+	ld [hMoneyTemp + 0], a
+	inc b
+	push de
+	push bc
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	pop bc
+	pop de
+	ld a, b
+	jr nc, .loop
+.done
+	ld [wItemQuantity], a
+
 	ld hl, BuyItem_MenuHeader
 	call LoadMenuHeader
-	jp Toss_Sell_Loop
+	jr Toss_Sell_Loop
 
 SelectQuantityToSell:
 	farcall GetItemPrice
