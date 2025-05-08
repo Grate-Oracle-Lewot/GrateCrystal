@@ -986,4 +986,4 @@ MissingnoEggMoves:
 	db PAY_DAY
 	db BIND
 	db -1 ; end
-endif
+endc
