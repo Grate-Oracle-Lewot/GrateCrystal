@@ -182,6 +182,8 @@ FindOwnedDecosInCategory:
 	call AppendDecoIndex
 	ld a, 0
 	call AppendDecoIndex
+DecoExitMenu:
+DecoAction_nothing:
 	scf
 	ret
 
@@ -327,10 +329,6 @@ FindOwnedBigDolls:
 	db DECO_BIG_ONIX_DOLL ; 1b
 	db DECO_BIG_LAPRAS_DOLL ; 1c
 	db -1
-
-DecoExitMenu:
-	scf
-	ret
 
 PopulateDecoCategoryMenu:
 	ld a, [wNumOwnedDecoCategories]
@@ -506,9 +504,6 @@ GetDecoName:
 	dw .bigdoll
 	assert_table_length NUM_DECO_TYPES + 1
 
-.invalid:
-	ret
-
 .plant:
 	ld a, e
 	jr .getdeconame
@@ -560,6 +555,7 @@ GetDecoName:
 	ld d, h
 	ld e, l
 	pop bc
+.invalid:
 	ret
 
 .copy:
@@ -571,57 +567,29 @@ GetDecoName:
 	ld c, l
 	ret
 
-DecoAction_nothing:
-	scf
-	ret
-
 DecoAction_setupbed:
 	ld hl, wDecoBed
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawaybed:
-	ld hl, wDecoBed
-	jp DecoAction_TryPutItAway
+	jr DecoAction_TrySetItUp
 
 DecoAction_setupcarpet:
 	ld hl, wDecoCarpet
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawaycarpet:
-	ld hl, wDecoCarpet
-	jp DecoAction_TryPutItAway
+	jr DecoAction_TrySetItUp
 
 DecoAction_setupplant:
 	ld hl, wDecoPlant
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawayplant:
-	ld hl, wDecoPlant
-	jp DecoAction_TryPutItAway
+	jr DecoAction_TrySetItUp
 
 DecoAction_setupposter:
 	ld hl, wDecoPoster
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawayposter:
-	ld hl, wDecoPoster
-	jp DecoAction_TryPutItAway
+	jr DecoAction_TrySetItUp
 
 DecoAction_setupconsole:
 	ld hl, wDecoConsole
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawayconsole:
-	ld hl, wDecoConsole
-	jp DecoAction_TryPutItAway
+	jr DecoAction_TrySetItUp
 
 DecoAction_setupbigdoll:
 	ld hl, wDecoBigDoll
-	jp DecoAction_TrySetItUp
-
-DecoAction_putawaybigdoll:
-	ld hl, wDecoBigDoll
-	jp DecoAction_TryPutItAway
+	; fallthrough
 
 DecoAction_TrySetItUp:
 	ld a, [hl]
@@ -678,6 +646,30 @@ DecoAction_SetItUp:
 	call MenuTextboxBackup
 	scf
 	ret
+
+DecoAction_putawaybed:
+	ld hl, wDecoBed
+	jr DecoAction_TryPutItAway
+
+DecoAction_putawaycarpet:
+	ld hl, wDecoCarpet
+	jr DecoAction_TryPutItAway
+
+DecoAction_putawayplant:
+	ld hl, wDecoPlant
+	jr DecoAction_TryPutItAway
+
+DecoAction_putawayposter:
+	ld hl, wDecoPoster
+	jr DecoAction_TryPutItAway
+
+DecoAction_putawayconsole:
+	ld hl, wDecoConsole
+	jr DecoAction_TryPutItAway
+
+DecoAction_putawaybigdoll:
+	ld hl, wDecoBigDoll
+	; fallthrough
 
 DecoAction_TryPutItAway:
 ; If there is no item of that type already set, there is nothing to put away.
@@ -1014,7 +1006,7 @@ DecorationDesc_RightOrnament:
 
 DecorationDesc_Console:
 	ld a, [wDecoConsole]
-	jr DecorationDesc_OrnamentOrConsole
+	; fallthrough
 
 DecorationDesc_OrnamentOrConsole:
 	ld c, a
@@ -1111,7 +1103,7 @@ ToggleDecorationsVisibility:
 	ld de, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
 	ld hl, wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS
 	ld a, [wDecoBigDoll]
-	jp ToggleDecorationVisibility
+	; fallthrough
 
 ToggleDecorationVisibility:
 	and a
