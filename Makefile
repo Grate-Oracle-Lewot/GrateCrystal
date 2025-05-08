@@ -18,6 +18,7 @@ roms := \
 	GrateCrystal_HoOhLugia.gbc \
 	GrateCrystal_CelebiWobbuffet.gbc \
 	GrateCrystal_MissingNo.gbc \
+	GrateCrystal_MissingNoStarters.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -48,8 +49,8 @@ GrateCrystal_HitmonStarters_obj          := $(rom_obj:.o=hitmon.o)
 GrateCrystal_NidoranStarters_obj         := $(rom_obj:.o=nido.o)
 GrateCrystal_TaurosMiltankGirafarig_obj  := $(rom_obj:.o=cattle.o)
 GrateCrystal_ShuckleSmeargleDelibird_obj := $(rom_obj:.o=shucks.o)
-GrateCrystal_NewStarters1_obj            := $(rom_obj:.o=1.o)
-GrateCrystal_NewStarters2_obj            := $(rom_obj:.o=2.o)
+GrateCrystal_NewStarters1_obj            := $(rom_obj:.o=new1.o)
+GrateCrystal_NewStarters2_obj            := $(rom_obj:.o=new2.o)
 GrateCrystal_FossilStarters_obj          := $(rom_obj:.o=fossil.o)
 GrateCrystal_DratiniLarvitar_obj         := $(rom_obj:.o=pseudo.o)
 GrateCrystal_LegendaryBirds_obj          := $(rom_obj:.o=bird.o)
@@ -58,6 +59,7 @@ GrateCrystal_MewDittoMewtwo_obj          := $(rom_obj:.o=mew.o)
 GrateCrystal_HoOhLugia_obj               := $(rom_obj:.o=dragon.o)
 GrateCrystal_CelebiWobbuffet_obj         := $(rom_obj:.o=onion.o)
 GrateCrystal_MissingNo_obj               := $(rom_obj:.o=miss.o)
+GrateCrystal_MissingNoStarters_obj       := $(rom_obj:.o=no.o)
 GrateCrystal11_obj                       := $(rom_obj:.o=11.o)
 GrateCrystal11_vc_obj                    := $(rom_obj:.o=11_vc.o)
 
@@ -80,7 +82,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kanto letsgo mice jinx hitmon nido cattle shucks new1 new2 fossil pseudo bird beast mew dragon onion miss crystal11 clean tidy tools
+.PHONY: all crystal kanto letsgo mice jinx hitmon nido cattle shucks new1 new2 fossil pseudo bird beast mew dragon onion miss no crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -105,6 +107,7 @@ mew:          GrateCrystal_MewDittoMewtwo.gbc
 dragon:       GrateCrystal_HoOhLugia.gbc
 onion:        GrateCrystal_CelebiWobbuffet.gbc
 miss:         GrateCrystal_MissingNo.gbc
+no:           GrateCrystal_MissingNoStarters.gbc
 crystal11:    GrateCrystal11.gbc
 crystal11_vc: GrateCrystal11.patch
 
@@ -151,6 +154,7 @@ tidy:
 	      $(GrateCrystal_HoOhLugia_obj) \
 	      $(GrateCrystal_CelebiWobbuffet_obj) \
 	      $(GrateCrystal_MissingNo_obj) \
+	      $(GrateCrystal_MissingNoStarters_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -184,6 +188,7 @@ $(GrateCrystal_MewDittoMewtwo_obj):          RGBASMFLAGS += -D _MEW_STARTERS
 $(GrateCrystal_HoOhLugia_obj):               RGBASMFLAGS += -D _HO_OH_LUGIA
 $(GrateCrystal_CelebiWobbuffet_obj):         RGBASMFLAGS += -D _CELEBI_STARTERS
 $(GrateCrystal_MissingNo_obj):               RGBASMFLAGS += -D _ADD_MISSINGNO
+$(GrateCrystal_MissingNoStarters_obj):       RGBASMFLAGS += -D _MISSINGNO_STARTERS
 $(GrateCrystal11_obj):                       RGBASMFLAGS += -D _CRYSTAL11
 $(GrateCrystal11_vc_obj):                    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
@@ -217,8 +222,8 @@ $(foreach obj, $(GrateCrystal_HitmonStarters_obj), $(eval $(call DEP,$(obj),$(ob
 $(foreach obj, $(GrateCrystal_NidoranStarters_obj), $(eval $(call DEP,$(obj),$(obj:nido.o=.asm))))
 $(foreach obj, $(GrateCrystal_TaurosMiltankGirafarig_obj), $(eval $(call DEP,$(obj),$(obj:cattle.o=.asm))))
 $(foreach obj, $(GrateCrystal_ShuckleSmeargleDelibird_obj), $(eval $(call DEP,$(obj),$(obj:shucks.o=.asm))))
-$(foreach obj, $(GrateCrystal_NewStarters1_obj), $(eval $(call DEP,$(obj),$(obj:1.o=.asm))))
-$(foreach obj, $(GrateCrystal_NewStarters2_obj), $(eval $(call DEP,$(obj),$(obj:2.o=.asm))))
+$(foreach obj, $(GrateCrystal_NewStarters1_obj), $(eval $(call DEP,$(obj),$(obj:new1.o=.asm))))
+$(foreach obj, $(GrateCrystal_NewStarters2_obj), $(eval $(call DEP,$(obj),$(obj:new2.o=.asm))))
 $(foreach obj, $(GrateCrystal_FossilStarters_obj), $(eval $(call DEP,$(obj),$(obj:fossil.o=.asm))))
 $(foreach obj, $(GrateCrystal_DratiniLarvitar_obj), $(eval $(call DEP,$(obj),$(obj:pseudo.o=.asm))))
 $(foreach obj, $(GrateCrystal_LegendaryBirds_obj), $(eval $(call DEP,$(obj),$(obj:bird.o=.asm))))
@@ -227,6 +232,7 @@ $(foreach obj, $(GrateCrystal_MewDittoMewtwo_obj), $(eval $(call DEP,$(obj),$(ob
 $(foreach obj, $(GrateCrystal_HoOhLugia_obj), $(eval $(call DEP,$(obj),$(obj:dragon.o=.asm))))
 $(foreach obj, $(GrateCrystal_CelebiWobbuffet_obj), $(eval $(call DEP,$(obj),$(obj:onion.o=.asm))))
 $(foreach obj, $(GrateCrystal_MissingNo_obj), $(eval $(call DEP,$(obj),$(obj:miss.o=.asm))))
+$(foreach obj, $(GrateCrystal_MissingNoStarters_obj), $(eval $(call DEP,$(obj),$(obj:no.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -256,6 +262,7 @@ GrateCrystal_MewDittoMewtwo_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 0
 GrateCrystal_HoOhLugia_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_CelebiWobbuffet_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_MissingNo_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_MissingNoStarters_opt        = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt                     = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
@@ -278,6 +285,7 @@ GrateCrystal_MewDittoMewtwo_base          = us
 GrateCrystal_HoOhLugia_base               = us
 GrateCrystal_CelebiWobbuffet_base         = us
 GrateCrystal_MissingNo_base               = us
+GrateCrystal_MissingNoStarters_base       = us
 GrateCrystal11_base                       = us
 GrateCrystal11_vc_base                    = us
 
