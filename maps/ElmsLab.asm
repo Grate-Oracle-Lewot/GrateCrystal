@@ -321,7 +321,6 @@ endc
 endc
 endc
 endc
-endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
