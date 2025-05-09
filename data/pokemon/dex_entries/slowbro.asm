@@ -1,10 +1,10 @@
 	db "HERMITCRAB@" ; species name
 	dw 503, 1730 ; height, weight
 
-	db   "SHELLDER evolved"
-	next "into TURBIN after"
-	next "biting SLOWPOKE's"
+	db   "Its tail tastes so"
+	next "good, TURBIN won't"
+	next "stop biting down"
 
-	page "tail. SLOWBRO is"
-	next "saddled with it"
-	next "for life.@"
+	page "even as it gets"
+	next "swung around as a"
+	next "weapon.@"
