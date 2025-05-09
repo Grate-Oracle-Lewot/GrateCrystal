@@ -286,6 +286,7 @@ GrimerEggMoves:
 ShellderEggMoves:
 	db RAPID_SPIN
 	db SCREECH
+	db SUPERSONIC
 	db LICK
 	db CRABHAMMER
 	db PRESENT
