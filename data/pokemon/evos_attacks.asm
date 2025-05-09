@@ -1326,7 +1326,7 @@ ShellderEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 2, HARDEN
-	db 9, SUPERSONIC
+	db 9, BIDE
 	db 13, CLAMP
 	db 17, AURORA_BEAM
 	db 25, PAY_DAY
@@ -1340,7 +1340,7 @@ CloysterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 2, HARDEN
-	db 9, SUPERSONIC
+	db 9, BIDE
 	db 13, CLAMP
 	db 17, AURORA_BEAM
 	db 25, SPIKE_CANNON
@@ -1349,6 +1349,20 @@ CloysterEvosAttacks:
 	db 41, MEGAHORN
 	db 49, HYDRO_PUMP
 	db 0 ; no more level-up moves
+
+; TurbinEvosAttacks:
+;	db 0 ; no more evolutions
+;	db 1, BUBBLE
+;	db 2, HARDEN
+;	db 9, BIDE
+;	db 13, CLAMP
+;	db 17, SLUDGE
+;	db 25, BITE
+;	db 33, HYPER_FANG
+;	db 37, BUBBLEBEAM
+;	db 41, CRUNCH
+;	db 49, HYDRO_PUMP
+;	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
