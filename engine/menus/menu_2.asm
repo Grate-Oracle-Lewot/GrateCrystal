@@ -240,7 +240,7 @@ PlaceItemInBagQuantity:
 
 	ld a, [wMenuSelection]
 	cp -1
-	jr z, .ClearItemInBagQuantityBox
+	jr z, ClearItemInBagQuantityBox
 
 	hlcoord 6, 1
 	ld de, wMenuSelectionQuantity
