@@ -1323,6 +1323,7 @@ MukEvosAttacks:
 
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
+;	db EVOLVE_HELD, SLOWPOKETAIL, TURBIN
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 2, HARDEN
