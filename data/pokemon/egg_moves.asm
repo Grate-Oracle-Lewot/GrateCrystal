@@ -687,6 +687,7 @@ YanmaEggMoves:
 	db BITE
 	db HYPER_FANG
 	db SUPER_FANG
+	db AGILITY
 	db -1 ; end
 
 WooperEggMoves:
