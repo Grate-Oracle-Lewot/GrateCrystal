@@ -1017,7 +1017,7 @@ BattleCommand_Critical:
 	xor a
 	ld [wCriticalHit], a
 
-	ld a, DRAGON ; Dragon types are immune to critical hits
+	ld b, DRAGON ; Dragon types are immune to critical hits
 	call CheckIfTargetIsGivenType
 	ret z
 
@@ -3681,10 +3681,10 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	ld a, POISON ; Don't poison a Poison-type
+	ld b, POISON ; Don't poison a Poison-type
 	call CheckIfTargetIsGivenType
 	ret z
-	ld a, STEEL ; Don't poison a Steel-type
+	ld b, STEEL ; Don't poison a Steel-type
 	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
@@ -3716,11 +3716,11 @@ BattleCommand_Poison:
 	and $7f
 	jp z, .failed
 
-	ld a, POISON
+	ld b, POISON
 	call CheckIfTargetIsGivenType
 	jp z, .failed
 
-	ld a, STEEL
+	ld b, STEEL
 	call CheckIfTargetIsGivenType
 	jp z, .failed
 
@@ -3801,8 +3801,8 @@ BattleCommand_Poison:
 	ret
 
 CheckIfTargetIsGivenType:
-; input: type to be checked in a
-	ld b, a
+; input: type to be checked in b
+
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -3824,7 +3824,7 @@ PoisonOpponent:
 	jp UpdateOpponentInParty
 
 BattleCommand_DrainTarget:
-	ld a, POISON
+	ld b, POISON
 	call CheckIfTargetIsGivenType
 	jr z, LiquidOoze
 	; fallthrough
@@ -3837,7 +3837,7 @@ PoisonOnPoisonDrain:
 LiquidOoze:
 	; check if user is also Poison-type
 	call BattleCommand_SwitchTurn
-	ld a, POISON
+	ld b, POISON
 	call CheckIfTargetIsGivenType
 	jr z, .no_ooze
 	call BattleCommand_SwitchTurn
@@ -3962,10 +3962,10 @@ BattleCommand_BurnTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret z
-	ld a, FIRE ; Don't burn a Fire-type
+	ld b, FIRE ; Don't burn a Fire-type
 	call CheckIfTargetIsGivenType
 	ret z
-	ld a, WATER ; Don't burn a Water-type
+	ld b, WATER ; Don't burn a Water-type
 	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
@@ -4032,10 +4032,10 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	ld a, ICE ; Don't freeze an Ice-type
+	ld b, ICE ; Don't freeze an Ice-type
 	call CheckIfTargetIsGivenType
 	ret z
-	ld a, FIRE ; Don't freeze a Fire-type
+	ld b, FIRE ; Don't freeze a Fire-type
 	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
@@ -5302,7 +5302,7 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FlinchTarget:
-	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
+	ld b, PSYCHIC_TYPE ; Psychic types can't flinch
 	call CheckIfTargetIsGivenType
 	ret z
 
@@ -6191,7 +6191,7 @@ INCLUDE "engine/battle/move_effects/thief.asm"
 BattleCommand_ArenaTrap:
 ; Mean Look, Spider Web
 
-	ld a, GHOST ; Ghost types are immune to trapping
+	ld b, GHOST ; Ghost types are immune to trapping
 	call CheckIfTargetIsGivenType
 	jr z, .failed
 
@@ -6756,7 +6756,7 @@ SwapBCTypes:
 BattleCommand_HeldFlinch:
 ; kingsrock
 
-	ld a, PSYCHIC_TYPE ; Psychic types can't flinch
+	ld b, PSYCHIC_TYPE ; Psychic types can't flinch
 	call CheckIfTargetIsGivenType
 	ret z
 
