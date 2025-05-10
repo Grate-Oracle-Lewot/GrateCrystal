@@ -39,17 +39,6 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	opentext
-	givepoke CHANSEY, 100
-	giveitem SLOWPOKETAIL
-	giveitem LEFTOVERS
-	giveitem CANDIED_YAM
-	giveitem MAX_POTION
-	giveitem FULL_RESTORE
-	closetext
-	warp SILVER_CAVE_OUTSIDE, 23, 20
-	end
-
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
