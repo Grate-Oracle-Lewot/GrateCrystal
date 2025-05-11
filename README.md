@@ -320,6 +320,7 @@ Prize Pokémon:
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - Gift Pokémon can be sent to the PC, no longer requiring an empty party slot (with a few exceptions such as the above Dratini, due to unique code)
+- When shopping, you're shown the number of copies of a given item that you already have, and you can only scroll to the highest number of copies that you can currently afford
 - NPCs in Kanto who sell Berries and Apricorns
 - Tweaks to specific move effects like the possible powers of Present and Magnitude
 - Pokéfans and a few other trainers use nicknames for their Pokémon
