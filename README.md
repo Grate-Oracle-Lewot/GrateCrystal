@@ -261,7 +261,7 @@ Prize Pokémon:
   - Monday: Koga, who now uses Fairy types instead of Poison
   - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies (or 6 PP Ups if you've beaten Red)
   - Wednesday: Jessie and James, with their Pokémon from the anime
-  - Thursday: A trainer version of MissingNo., with three different variants for morning, day, and night
+  - Thursday: A trainer version of Missingno., with three different variants for morning, day, and night
   - Friday: Giovanni, using Ground types plus Persian
   - Saturday: Karen, using Dark types; only appears at night
   - Sunday: In the morning, Mr. Fuji appears, no battle; in the day, if you have access to Mt. Silver, Lance will appear for a rematch with levels similar to the Lance/Clair double battle in HGSS; if you talk to Mr. Fuji the same morning before you battle Lance, Lance will give you another Master Ball upon defeat
