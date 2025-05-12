@@ -254,7 +254,11 @@ EvolutionMoves::
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	db WATER_GUN    ; MISSINGNO
 else
+if DEF(_ADD_TURBIN)
+	db BITE         ; TURBIN
+else
 	db NO_MOVE      ; FINULL
+endc
 endc
 	db NO_MOVE      ; YANMEGA
 	assert_table_length NUM_POKEMON
