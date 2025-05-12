@@ -157,6 +157,12 @@ Rival1Group:
 if DEF(_KANTO_STARTERS)
 	db  5, BULBASAUR,  GOLD_BERRY
 else
+if DEF(_EVOLVED_JOHTO)
+	db  5, MEGANIUM,   GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db  5, VENUSAUR,   GOLD_BERRY
+else
 if DEF(_LETS_GO_STARTERS)
 	db  5, PIKACHU,    GOLD_BERRY
 else
@@ -231,12 +237,20 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (2)
 	db "?@", TRAINERTYPE_ITEM
 if DEF(_KANTO_STARTERS)
 	db  5, CHARMANDER, GOLD_BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	db  5, TYPHLOSION, GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db  5, CHARIZARD,  GOLD_BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	db  5, EEVEE,      GOLD_BERRY
@@ -312,12 +326,20 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (3)
 	db "?@", TRAINERTYPE_ITEM
 if DEF(_KANTO_STARTERS)
 	db  5, SQUIRTLE,   GOLD_BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	db  5, FERALIGATR, GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db  5, BLASTOISE,  GOLD_BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	db  5, EEVEE,      GOLD_BERRY
@@ -393,6 +415,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (4)
@@ -401,6 +425,12 @@ endc
 	db 15, ZUBAT,      NO_ITEM
 if DEF(_KANTO_STARTERS)
 	db 18, IVYSAUR,    BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	db 18, BAYLEEF,    BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db 18, VENUSAUR,   BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	db 18, PIKACHU,    BERRY
@@ -476,6 +506,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (5)
@@ -490,6 +522,12 @@ else
 endc
 if DEF(_KANTO_STARTERS)
 	db 18, CHARMELEON, BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	db 18, TYPHLOSION, BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db 18, CHARIZARD,  BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	db 18, EEVEE,      BERRY
@@ -565,6 +603,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (6)
@@ -573,6 +613,12 @@ endc
 	db 15, ZUBAT,      NO_ITEM
 if DEF(_KANTO_STARTERS)
 	db 18, WARTORTLE,  BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	db 18, FERALIGATR, BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	db 18, BLASTOISE,  BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	db 18, EEVEE,      BERRY
@@ -648,6 +694,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (7)
@@ -657,6 +705,12 @@ endc
 	db 22, ZUBAT,      BITTER_BERRY, LEECH_LIFE, SUPERSONIC, BITE, CONFUSE_RAY
 if DEF(_KANTO_STARTERS)
 	db 24, IVYSAUR,    BERRY,        LEECH_SEED, POISONPOWDER, RAZOR_LEAF, SLEEP_POWDER
+else
+if DEF(_EVOLVED_JOHTO)
+	db 24, MEGANIUM,   BERRY,        GROWL, REFLECT, RAZOR_LEAF, SLEEP_POWDER
+else
+if DEF(_EVOLVED_KANTO)
+	db 24, VENUSAUR,   BERRY,        LEECH_SEED, POISONPOWDER, RAZOR_LEAF, SLEEP_POWDER
 else
 if DEF(_LETS_GO_STARTERS)
 	db 24, PIKACHU,    BERRY,        QUICK_ATTACK, DOUBLE_TEAM, THUNDER_WAVE, THUNDERBOLT
@@ -732,6 +786,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (8)
@@ -741,6 +797,12 @@ endc
 	db 22, ZUBAT,      BITTER_BERRY, LEECH_LIFE, SUPERSONIC, BITE, CONFUSE_RAY
 if DEF(_KANTO_STARTERS)
 	db 24, CHARMELEON, BERRY,        FIRE_SPIN, SMOKESCREEN, EMBER, DRAGON_RAGE
+else
+if DEF(_EVOLVED_JOHTO)
+	db 24, TYPHLOSION, BERRY,        FURY_SWIPES, SMOKESCREEN, EMBER, QUICK_ATTACK
+else
+if DEF(_EVOLVED_KANTO)
+	db 24, CHARIZARD,  BERRY,        FIRE_SPIN, SMOKESCREEN, EMBER, DRAGON_RAGE
 else
 if DEF(_LETS_GO_STARTERS)
 	db 24, EEVEE,      BERRY,        QUICK_ATTACK, TAIL_WHIP, SAND_ATTACK, HEADBUTT
@@ -816,6 +878,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	db -1 ; end
 
 	; RIVAL1 (9)
@@ -825,6 +889,12 @@ endc
 	db 22, ZUBAT,      BITTER_BERRY, LEECH_LIFE, SUPERSONIC, BITE, CONFUSE_RAY
 if DEF(_KANTO_STARTERS)
 	db 24, WARTORTLE,  BERRY,        DEFENSE_CURL, RAPID_SPIN, WATER_GUN, BITE
+else
+if DEF(_EVOLVED_JOHTO)
+	db 24, FERALIGATR, BERRY,        TAIL_WHIP, RAGE, CLAMP, BITE
+else
+if DEF(_EVOLVED_KANTO)
+	db 24, BLASTOISE,  BERRY,        DEFENSE_CURL, RAPID_SPIN, WATER_GUN, BITE
 else
 if DEF(_LETS_GO_STARTERS)
 	db 24, EEVEE,      BERRY,        QUICK_ATTACK, TAIL_WHIP, SAND_ATTACK, HEADBUTT
@@ -881,6 +951,8 @@ if DEF(_MISSINGNO_STARTERS)
 	db 24, MISSINGNO,  BERRY,        WATER_GUN, SKY_ATTACK, PAY_DAY, BIND
 else
 	db 24, CROCONAW,   BERRY,        TAIL_WHIP, RAGE, CLAMP, BITE
+endc
+endc
 endc
 endc
 endc
