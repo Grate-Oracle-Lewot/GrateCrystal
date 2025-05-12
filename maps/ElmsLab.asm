@@ -205,6 +205,10 @@ if DEF(_PSEUDO_LEGENDS)
 	pokepic DRATINI
 	cry DRATINI
 else
+if DEF(_EVOLVED_PSEUDO)
+	pokepic DRAGONITE
+	cry DRAGONITE
+else
 if DEF(_LEGENDARY_BIRDS)
 	pokepic ARTICUNO
 	cry ARTICUNO
@@ -231,6 +235,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	pokepic CHIKORITA
 	cry CHIKORITA
+endc
 endc
 endc
 endc
@@ -308,6 +313,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	getmonname STRING_BUFFER_3, DRATINI
 else
+if DEF(_EVOLVED_PSEUDO)
+	getmonname STRING_BUFFER_3, DRAGONITE
+else
 if DEF(_LEGENDARY_BIRDS)
 	getmonname STRING_BUFFER_3, ARTICUNO
 else
@@ -327,6 +335,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
 	getmonname STRING_BUFFER_3, CHIKORITA
+endc
 endc
 endc
 endc
@@ -397,6 +406,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	givepoke DRATINI, 5, GOLD_BERRY
 else
+if DEF(_EVOLVED_PSEUDO)
+	givepoke DRAGONITE, 5, GOLD_BERRY
+else
 if DEF(_LEGENDARY_BIRDS)
 	givepoke ARTICUNO, 5, GOLD_BERRY
 else
@@ -416,6 +428,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -497,6 +510,10 @@ if DEF(_PSEUDO_LEGENDS)
 	pokepic LARVITAR
 	cry LARVITAR
 else
+if DEF(_EVOLVED_PSEUDO)
+	pokepic TYRANITAR
+	cry TYRANITAR
+else
 if DEF(_LEGENDARY_BIRDS)
 	pokepic MOLTRES
 	cry MOLTRES
@@ -523,6 +540,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
+endc
 endc
 endc
 endc
@@ -592,6 +610,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	getmonname STRING_BUFFER_3, LARVITAR
 else
+if DEF(_EVOLVED_PSEUDO)
+	getmonname STRING_BUFFER_3, TYRANITAR
+else
 if DEF(_LEGENDARY_BIRDS)
 	getmonname STRING_BUFFER_3, MOLTRES
 else
@@ -611,6 +632,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, UNOWN
 else
 	getmonname STRING_BUFFER_3, CYNDAQUIL
+endc
 endc
 endc
 endc
@@ -673,6 +695,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	givepoke LARVITAR, 5, GOLD_BERRY
 else
+if DEF(_EVOLVED_PSEUDO)
+	givepoke TYRANITAR, 5, GOLD_BERRY
+else
 if DEF(_LEGENDARY_BIRDS)
 	givepoke MOLTRES, 5, GOLD_BERRY
 else
@@ -692,6 +717,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke UNOWN, 5, GOLD_BERRY
 else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -782,6 +808,10 @@ if DEF(_PSEUDO_LEGENDS)
 	pokepic DRATINI
 	cry DRATINI
 else
+if DEF(_EVOLVED_PSEUDO)
+	pokepic DRAGONITE
+	cry DRAGONITE
+else
 if DEF(_LEGENDARY_BIRDS)
 	pokepic ZAPDOS
 	cry ZAPDOS
@@ -808,6 +838,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	pokepic TOTODILE
 	cry TOTODILE
+endc
 endc
 endc
 endc
@@ -885,6 +916,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	getmonname STRING_BUFFER_3, DRATINI
 else
+if DEF(_EVOLVED_PSEUDO)
+	getmonname STRING_BUFFER_3, DRAGONITE
+else
 if DEF(_LEGENDARY_BIRDS)
 	getmonname STRING_BUFFER_3, ZAPDOS
 else
@@ -904,6 +938,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
 	getmonname STRING_BUFFER_3, TOTODILE
+endc
 endc
 endc
 endc
@@ -974,6 +1009,9 @@ else
 if DEF(_PSEUDO_LEGENDS)
 	givepoke DRATINI, 5, GOLD_BERRY
 else
+if DEF(_EVOLVED_PSEUDO)
+	givepoke DRAGONITE, 5, GOLD_BERRY
+else
 if DEF(_LEGENDARY_BIRDS)
 	givepoke ZAPDOS, 5, GOLD_BERRY
 else
@@ -993,6 +1031,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1634,6 +1673,10 @@ if DEF(_PSEUDO_LEGENDS)
 	line "DRATINI, the"
 	cont "dragon #MON?"
 else
+if DEF(_EVOLVED_PSEUDO)
+	line "DRAGONITE, the"
+	cont "dragon #MON?"
+else
 if DEF(_LEGENDARY_BIRDS)
 	line "ARTICUNO, the ice"
 	cont "#MON?"
@@ -1660,6 +1703,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
+endc
 endc
 endc
 endc
@@ -1737,6 +1781,10 @@ if DEF(_PSEUDO_LEGENDS)
 	line "LARVITAR, the rock"
 	cont "and dark #MON?"
 else
+if DEF(_EVOLVED_PSEUDO)
+	line "TYRANITAR, the"
+	cont "rock/dark #MON?"
+else
 if DEF(_LEGENDARY_BIRDS)
 	line "MOLTRES, the fire"
 	cont "#MON?"
@@ -1763,6 +1811,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
+endc
 endc
 endc
 endc
@@ -1846,6 +1895,10 @@ if DEF(_PSEUDO_LEGENDS)
 	line "DRATINI, the"
 	cont "dragon #MON?"
 else
+if DEF(_EVOLVED_PSEUDO)
+	line "DRAGONITE, the"
+	cont "dragon #MON?"
+else
 if DEF(_LEGENDARY_BIRDS)
 	line "ZAPDOS, the"
 	cont "electric #MON?"
@@ -1872,6 +1925,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
@@ -2478,6 +2532,11 @@ if DEF(_PSEUDO_LEGENDS)
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
+if DEF(_PSEUDO_LEGENDS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
 if DEF(_LEGENDARY_BIRDS)
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
@@ -2511,6 +2570,7 @@ else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc
 endc
 endc
 endc
