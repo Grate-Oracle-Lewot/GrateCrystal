@@ -418,6 +418,10 @@ When you follow the (admittedly confusing) instructions in INSTALL.md to build t
 
 make kanto - Bulbasaur, Charmander, and Squirtle.
 
+make evolve - The Johto starts, but they start out fully evolved, despite still starting at Lv5.
+
+make kantevo - Fully evolved Kanto starters.
+
 make letsgo - Pikachu and Eevee. Your Pikachu may be any of its six forms, but the rival's is set. If you lose to the rival in the first battle, his Eevee will evolve into Flareon; if you win, Jolteon.
 
 make mice - Pikachu, Sandshrew, and Marill. Your Pikachu may be any of its six forms, but the rival's is set.
