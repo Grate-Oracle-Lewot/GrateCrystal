@@ -1,6 +1,8 @@
 roms := \
 	GrateCrystal.gbc \
 	GrateCrystal_KantoStarters.gbc \
+	GrateCrystal_EvolvedStarters.gbc \
+	GrateCrystal_EvolvedKantoStarters.gbc \
 	GrateCrystal_PikachuEevee.gbc \
 	GrateCrystal_PikachuSandshrewMarill.gbc \
 	GrateCrystal_JynxMagmarElectabuzz.gbc \
@@ -43,6 +45,8 @@ rom_obj := \
 
 GrateCrystal_obj                         := $(rom_obj:.o=.o)
 GrateCrystal_KantoStarters_obj           := $(rom_obj:.o=kanto.o)
+GrateCrystal_EvolvedStarters_obj         := $(rom_obj:.o=evolve.o)
+GrateCrystal_EvolvedKantoStarters_obj    := $(rom_obj:.o=kantevo.o)
 GrateCrystal_PikachuEevee_obj            := $(rom_obj:.o=letsgo.o)
 GrateCrystal_PikachuSandshrewMarill_obj  := $(rom_obj:.o=mice.o)
 GrateCrystal_JynxMagmarElectabuzz_obj    := $(rom_obj:.o=jinx.o)
@@ -84,7 +88,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kanto letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil pseudo bird beast mew dragon onion miss no crystal11 clean tidy tools
+.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil pseudo bird beast mew dragon onion miss no crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -92,6 +96,8 @@ RGBLINK ?= $(RGBDS)rgblink
 all: crystal
 crystal:      GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
+evolve:       GrateCrystal_EvolvedStarters.gbc
+kantevo:      GrateCrystal_EvolvedKantoStarters.gbc
 letsgo:       GrateCrystal_PikachuEevee.gbc
 mice:         GrateCrystal_PikachuSandshrewMarill.gbc
 jinx:         GrateCrystal_JynxMagmarElectabuzz.gbc
@@ -140,6 +146,8 @@ tidy:
 	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(GrateCrystal_obj) \
 	      $(GrateCrystal_KantoStarters_obj) \
+	      $(GrateCrystal_EvolvedStarters_obj) \
+	      $(GrateCrystal_EvolvedKantoStarters_obj) \
 	      $(GrateCrystal_PikachuEevee_obj) \
 	      $(GrateCrystal_PikachuSandshrewMarill_obj) \
 	      $(GrateCrystal_JynxMagmarElectabuzz_obj) \
@@ -175,6 +183,8 @@ RGBASMFLAGS += -E
 
 $(GrateCrystal_obj):                         RGBASMFLAGS +=
 $(GrateCrystal_KantoStarters_obj):           RGBASMFLAGS += -D _KANTO_STARTERS
+$(GrateCrystal_EvolvedStarters_obj):         RGBASMFLAGS += -D _EVOLVED_JOHTO
+$(GrateCrystal_EvolvedKantoStarters_obj):    RGBASMFLAGS += -D _EVOLVED_KANTO
 $(GrateCrystal_PikachuEevee_obj):            RGBASMFLAGS += -D _LETS_GO_STARTERS
 $(GrateCrystal_PikachuSandshrewMarill_obj):  RGBASMFLAGS += -D _MOUSEKETEERS
 $(GrateCrystal_JynxMagmarElectabuzz_obj):    RGBASMFLAGS += -D _JYNX_MAGMAR_ELECTABUZZ
@@ -220,6 +230,8 @@ $(info $(shell $(MAKE) -C tools))
 # Dependencies for shared objects objects
 $(foreach obj, $(GrateCrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(GrateCrystal_KantoStarters_obj), $(eval $(call DEP,$(obj),$(obj:kanto.o=.asm))))
+$(foreach obj, $(GrateCrystal_EvolvedStarters_obj), $(eval $(call DEP,$(obj),$(obj:evolve.o=.asm))))
+$(foreach obj, $(GrateCrystal_EvolvedKantoStarters_obj), $(eval $(call DEP,$(obj),$(obj:kantevo.o=.asm))))
 $(foreach obj, $(GrateCrystal_PikachuEevee_obj), $(eval $(call DEP,$(obj),$(obj:letsgo.o=.asm))))
 $(foreach obj, $(GrateCrystal_PikachuSandshrewMarill_obj), $(eval $(call DEP,$(obj),$(obj:mice.o=.asm))))
 $(foreach obj, $(GrateCrystal_JynxMagmarElectabuzz_obj), $(eval $(call DEP,$(obj),$(obj:jinx.o=.asm))))
@@ -251,6 +263,8 @@ endif
 
 GrateCrystal_opt                          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_KantoStarters_opt            = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_EvolvedStarters_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_EvolvedKantoStarters_opt     = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_PikachuEevee_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_PikachuSandshrewMarill_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_JynxMagmarElectabuzz_opt     = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -275,6 +289,8 @@ GrateCrystal11_vc_opt                     = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 0
 
 GrateCrystal_base                         = us
 GrateCrystal_KantoStarters_base           = us
+GrateCrystal_EvolvedStarters_base         = us
+GrateCrystal_EvolvedKantoStarters_base    = us
 GrateCrystal_PikachuEevee_base            = us
 GrateCrystal_PikachuSandshrewMarill_base  = us
 GrateCrystal_JynxMagmarElectabuzz_base    = us
