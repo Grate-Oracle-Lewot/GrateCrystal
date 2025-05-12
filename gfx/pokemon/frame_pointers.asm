@@ -254,7 +254,11 @@ FramesPointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoFrames
 else
+if DEF(_ADD_TURBIN)
+	dw TurbinFrames
+else
 	dw FinullFrames
+endc
 endc
 	dw YanmegaFrames
 	assert_table_length NUM_POKEMON
