@@ -15,6 +15,7 @@ roms := \
 	GrateCrystal_NewStarters2.gbc \
 	GrateCrystal_FossilStarters.gbc \
 	GrateCrystal_DratiniLarvitar.gbc \
+	GrateCrystal_DragoniteTyranitar.gbc \
 	GrateCrystal_LegendaryBirds.gbc \
 	GrateCrystal_LegendaryBeasts.gbc \
 	GrateCrystal_MewDittoMewtwo.gbc \
@@ -59,6 +60,7 @@ GrateCrystal_NewStarters1_obj            := $(rom_obj:.o=new1.o)
 GrateCrystal_NewStarters2_obj            := $(rom_obj:.o=new2.o)
 GrateCrystal_FossilStarters_obj          := $(rom_obj:.o=fossil.o)
 GrateCrystal_DratiniLarvitar_obj         := $(rom_obj:.o=pseudo.o)
+GrateCrystal_DragoniteTyranitar_obj      := $(rom_obj:.o=pseudevo.o)
 GrateCrystal_LegendaryBirds_obj          := $(rom_obj:.o=bird.o)
 GrateCrystal_LegendaryBeasts_obj         := $(rom_obj:.o=beast.o)
 GrateCrystal_MewDittoMewtwo_obj          := $(rom_obj:.o=mew.o)
@@ -88,7 +90,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil pseudo bird beast mew dragon onion miss no crystal11 clean tidy tools
+.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil pseudo pseudevo bird beast mew dragon onion miss no crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -110,6 +112,7 @@ new1:         GrateCrystal_NewStarters1.gbc
 new2:         GrateCrystal_NewStarters1.gbc
 fossil:       GrateCrystal_FossilStarters.gbc
 pseudo:       GrateCrystal_DratiniLarvitar.gbc
+pseudevo:     GrateCrystal_DragoniteTyranitar.gbc
 bird:         GrateCrystal_LegendaryBirds.gbc
 beast:        GrateCrystal_LegendaryBeasts.gbc
 mew:          GrateCrystal_MewDittoMewtwo.gbc
@@ -160,6 +163,7 @@ tidy:
 	      $(GrateCrystal_NewStarters2_obj) \
 	      $(GrateCrystal_FossilStarters_obj) \
 	      $(GrateCrystal_DratiniLarvitar_obj) \
+	      $(GrateCrystal_DragoniteTyranitar_obj) \
 	      $(GrateCrystal_LegendaryBirds_obj) \
 	      $(GrateCrystal_LegendaryBeasts_obj) \
 	      $(GrateCrystal_MewDittoMewtwo_obj) \
@@ -197,6 +201,7 @@ $(GrateCrystal_NewStarters1_obj):            RGBASMFLAGS += -D _NEWCOMERS1
 $(GrateCrystal_NewStarters2_obj):            RGBASMFLAGS += -D _NEWCOMERS2
 $(GrateCrystal_FossilStarters_obj):          RGBASMFLAGS += -D _FOSSIL_STARTERS
 $(GrateCrystal_DratiniLarvitar_obj):         RGBASMFLAGS += -D _PSEUDO_LEGENDS
+$(GrateCrystal_DragoniteTyranitar_obj):      RGBASMFLAGS += -D _EVOLVED_PSEUDO
 $(GrateCrystal_LegendaryBirds_obj):          RGBASMFLAGS += -D _LEGENDARY_BIRDS
 $(GrateCrystal_LegendaryBeasts_obj):         RGBASMFLAGS += -D _LEGENDARY_BEASTS
 $(GrateCrystal_MewDittoMewtwo_obj):          RGBASMFLAGS += -D _MEW_STARTERS
@@ -244,6 +249,7 @@ $(foreach obj, $(GrateCrystal_NewStarters1_obj), $(eval $(call DEP,$(obj),$(obj:
 $(foreach obj, $(GrateCrystal_NewStarters2_obj), $(eval $(call DEP,$(obj),$(obj:new2.o=.asm))))
 $(foreach obj, $(GrateCrystal_FossilStarters_obj), $(eval $(call DEP,$(obj),$(obj:fossil.o=.asm))))
 $(foreach obj, $(GrateCrystal_DratiniLarvitar_obj), $(eval $(call DEP,$(obj),$(obj:pseudo.o=.asm))))
+$(foreach obj, $(GrateCrystal_DragoniteTyranitar_obj), $(eval $(call DEP,$(obj),$(obj:pseudevo.o=.asm))))
 $(foreach obj, $(GrateCrystal_LegendaryBirds_obj), $(eval $(call DEP,$(obj),$(obj:bird.o=.asm))))
 $(foreach obj, $(GrateCrystal_LegendaryBeasts_obj), $(eval $(call DEP,$(obj),$(obj:beast.o=.asm))))
 $(foreach obj, $(GrateCrystal_MewDittoMewtwo_obj), $(eval $(call DEP,$(obj),$(obj:mew.o=.asm))))
@@ -277,6 +283,7 @@ GrateCrystal_NewStarters1_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 0
 GrateCrystal_NewStarters2_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_FossilStarters_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_DratiniLarvitar_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_DragoniteTyranitar_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_LegendaryBirds_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_LegendaryBeasts_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_MewDittoMewtwo_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -303,6 +310,7 @@ GrateCrystal_NewStarters1_base            = us
 GrateCrystal_NewStarters2_base            = us
 GrateCrystal_FossilStarters_base          = us
 GrateCrystal_DratiniLarvitar_base         = us
+GrateCrystal_DragoniteTyranitar_base      = us
 GrateCrystal_LegendaryBirds_base          = us
 GrateCrystal_LegendaryBeasts_base         = us
 GrateCrystal_MewDittoMewtwo_base          = us
