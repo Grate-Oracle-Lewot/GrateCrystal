@@ -9,10 +9,10 @@ EvolutionMoves::
 	db NO_MOVE      ; SQUIRTLE
 	db NO_MOVE      ; WARTORTLE
 	db NO_MOVE      ; BLASTOISE
-	db NO_MOVE      ; CATERPIE
+	db STRING_SHOT  ; CATERPIE
 	db BIDE         ; METAPOD
 	db GUST         ; BUTTERFREE
-	db NO_MOVE      ; WEEDLE
+	db POISON_STING ; WEEDLE
 	db BIDE         ; KAKUNA
 	db TWINEEDLE    ; BEEDRILL
 	db NO_MOVE      ; PIDGEY
@@ -47,11 +47,11 @@ EvolutionMoves::
 	db PETAL_DANCE  ; VILEPLUME
 	db NO_MOVE      ; PARAS
 	db NO_MOVE      ; PARASECT
-	db NO_MOVE      ; VENONAT
+	db FORESIGHT    ; VENONAT
 	db GUST         ; VENOMOTH
-	db NO_MOVE      ; DIGLETT
+	db DIG          ; DIGLETT
 	db TRI_ATTACK   ; DUGTRIO
-	db NO_MOVE      ; MEOWTH
+	db PAY_DAY      ; MEOWTH
 	db POWER_GEM    ; PERSIAN
 	db NO_MOVE      ; PSYDUCK
 	db POWER_GEM    ; GOLDUCK
@@ -96,7 +96,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GENGAR
 	db NO_MOVE      ; ONIX
 	db NO_MOVE      ; DROWZEE
-	db NO_MOVE      ; HYPNO
+	db HYPNOSIS     ; HYPNO
 	db NO_MOVE      ; KRABBY
 	db NO_MOVE      ; KINGLER
 	db NO_MOVE      ; VOLTORB
@@ -247,7 +247,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SUICUNE
 	db NO_MOVE      ; LARVITAR
 	db HARDEN       ; PUPITAR
-	db NO_MOVE      ; TYRANITAR
+	db SANDSTORM    ; TYRANITAR
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HO_OH
 	db NO_MOVE      ; CELEBI
