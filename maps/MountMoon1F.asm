@@ -33,7 +33,7 @@ MountMoon1F_MapScripts:
 	closetext
 	winlosstext MountMoonSilverTextWin, 0
 	setlasttalked MOUNTMOON_SILVER
-if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL2, RIVAL2_1_CHIKORITA
