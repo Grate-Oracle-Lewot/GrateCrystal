@@ -533,7 +533,11 @@ IlexForestShrineScript:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	loadwildmon MISSINGNO, 100
 else
+if DEF(_ADD_TURBIN)
+	loadwildmon CELEBI, 100
+else
 	loadwildmon FINULL, 1
+endc
 endc
 	startbattle
 	reloadmapafterbattle
