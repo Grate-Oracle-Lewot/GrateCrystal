@@ -110,7 +110,7 @@ CharizardEvosAttacks:
 	db 20, DRAGON_RAGE
 	db 27, SCARY_FACE
 	db 34, SLASH
-	db 35, WING_ATTACK
+	db 35, GUST
 	db 44, FLAMETHROWER
 	db 54, AIR_SLASH
 	db 64, FIRE_BLAST
