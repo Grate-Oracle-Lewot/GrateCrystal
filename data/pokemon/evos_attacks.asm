@@ -2866,7 +2866,7 @@ PolitoedEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 35, PERISH_SONG
 	db 42, NIGHT_SHADE
-	db 51, SWAGGER
+	db 51, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:
