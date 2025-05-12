@@ -254,7 +254,11 @@ AnimationIdlePointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoAnimationIdle
 else
+if DEF(_ADD_TURBIN)
+	dw TurbinAnimationIdle
+else
 	dw FinullAnimationIdle
+endc
 endc
 	dw YanmegaAnimationIdle
 	assert_table_length NUM_POKEMON
