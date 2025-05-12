@@ -62,7 +62,7 @@ EvolutionMoves::
 	db NO_MOVE      ; POLIWAG
 	db ENCORE       ; POLIWHIRL
 	db ROLLING_KICK ; POLIWRATH
-	db NO_MOVE      ; ABRA
+	db TELEPORT     ; ABRA
 	db KINESIS      ; KADABRA
 	db KINESIS      ; ALAKAZAM
 	db NO_MOVE      ; MACHOP
@@ -103,11 +103,11 @@ EvolutionMoves::
 	db NO_MOVE      ; ELECTRODE
 	db NO_MOVE      ; EXEGGCUTE
 	db STOMP        ; EXEGGUTOR
-	db NO_MOVE      ; CUBONE
+	db BONE_CLUB    ; CUBONE
 	db NIGHT_SHADE  ; MAROWAK
 	db JUMP_KICK    ; HITMONLEE
 	db COMET_PUNCH  ; HITMONCHAN
-	db NO_MOVE      ; LICKITUNG
+	db LICK         ; LICKITUNG
 	db NO_MOVE      ; KOFFING
 	db NO_MOVE      ; WEEZING
 	db NO_MOVE      ; RHYHORN
@@ -121,7 +121,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SEAKING
 	db NO_MOVE      ; STARYU
 	db CONFUSION    ; STARMIE
-	db NO_MOVE      ; MR__MIME
+	db MIRROR_MOVE  ; MR__MIME
 	db NO_MOVE      ; SCYTHER
 	db NO_MOVE      ; JYNX
 	db NO_MOVE      ; ELECTABUZZ
@@ -136,7 +136,7 @@ EvolutionMoves::
 	db WATER_GUN    ; VAPOREON
 	db THUNDERSHOCK ; JOLTEON
 	db EMBER        ; FLAREON
-	db NO_MOVE      ; PORYGON
+	db CONVERSION   ; PORYGON
 	db NO_MOVE      ; OMANYTE
 	db SPIKE_CANNON ; OMASTAR
 	db NO_MOVE      ; KABUTO
@@ -207,10 +207,10 @@ EvolutionMoves::
 	db HARDEN       ; FORRETRESS
 	db NO_MOVE      ; DUNSPARCE
 	db NO_MOVE      ; GLIGAR
-	db NO_MOVE      ; STEELIX
+	db IRON_TAIL    ; STEELIX
 	db NO_MOVE      ; SNUBBULL
 	db NO_MOVE      ; GRANBULL
-	db NO_MOVE      ; QWILFISH
+	db SCALD        ; QWILFISH
 	db METAL_CLAW   ; SCIZOR
 	db NO_MOVE      ; SHUCKLE
 	db NO_MOVE      ; HERACROSS
@@ -234,7 +234,7 @@ EvolutionMoves::
 	db FURY_ATTACK  ; DONPHAN
 	db CONVERSION2  ; PORYGON2
 	db NO_MOVE      ; STANTLER
-	db NO_MOVE      ; SMEARGLE
+	db SKETCH       ; SMEARGLE
 	db NO_MOVE      ; TYROGUE
 	db ROLLING_KICK ; HITMONTOP
 	db NO_MOVE      ; SNOCONEY
