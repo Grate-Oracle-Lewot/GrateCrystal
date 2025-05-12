@@ -256,7 +256,11 @@ EvosAttacksPointers::
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoEvosAttacks
 else
+if DEF(_ADD_TURBIN)
+	dw TurbinEvosAttacks
+else
 	dw FinullEvosAttacks
+endc
 endc
 	dw YanmegaEvosAttacks
 	assert_table_length NUM_POKEMON
