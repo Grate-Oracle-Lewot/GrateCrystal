@@ -220,7 +220,11 @@ TimeFishGroups:
 	db CORSOLA,    20,  STARYU,     20 ;  0
 	db CORSOLA,    40,  STARMIE,    40 ;  1
 	db SHELLDER,   20,  CLOYSTER,   20 ;  2
+if DEF(_ADD_TURBIN)
+	db CLOYSTER,   40,  TURBIN,     40 ;  3
+else
 	db CLOYSTER,   40,  CASTAWEIGH, 40 ;  3
+endc
 	db GOLDEEN,    20,  TANGELA,    20 ;  4
 	db SEAKING,    40,  TANGELA,    40 ;  5
 	db POLIWAG,    20,  GEODUDE,    20 ;  6
