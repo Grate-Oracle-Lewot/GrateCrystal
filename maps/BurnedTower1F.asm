@@ -60,7 +60,7 @@ BurnedTowerRivalBattleScript:
 	closetext
 	winlosstext BurnedTowerSilver_WinText, 0
 	setlasttalked BURNEDTOWER1F_SILVER
-if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
