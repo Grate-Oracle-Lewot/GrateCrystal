@@ -1323,7 +1323,9 @@ MukEvosAttacks:
 
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
-;	db EVOLVE_HELD, SLOWPOKETAIL, TURBIN
+if DEF(_ADD_TURBIN)
+	db EVOLVE_HELD, SLOWPOKETAIL, TURBIN
+endc
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 2, HARDEN
@@ -1350,20 +1352,6 @@ CloysterEvosAttacks:
 	db 41, MEGAHORN
 	db 49, HYDRO_PUMP
 	db 0 ; no more level-up moves
-
-; TurbinEvosAttacks:
-;	db 0 ; no more evolutions
-;	db 1, BUBBLE
-;	db 2, HARDEN
-;	db 9, BIDE
-;	db 13, CLAMP
-;	db 17, SLUDGE
-;	db 25, BITE
-;	db 33, HYPER_FANG
-;	db 37, BUBBLEBEAM
-;	db 41, CRUNCH
-;	db 49, HYDRO_PUMP
-;	db 0 ; no more level-up moves
 
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
@@ -3909,6 +3897,21 @@ MissingnoEvosAttacks:
 	db 1, SKY_ATTACK
 	db 0 ; no more level-up moves
 else
+if DEF(_ADD_TURBIN)
+TurbinEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, BUBBLE
+	db 2, HARDEN
+	db 9, BIDE
+	db 13, CLAMP
+	db 17, SLUDGE
+	db 25, BITE
+	db 33, HYPER_FANG
+	db 37, BUBBLEBEAM
+	db 41, CRUNCH
+	db 49, HYDRO_PUMP
+	db 0 ; no more level-up moves
+else
 FinullEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, NIGHT_SHADE
@@ -3925,6 +3928,7 @@ FinullEvosAttacks:
 	db 80, AMNESIA
 	db 90, FISSURE
 	db 0 ; no more level-up moves
+endc
 endc
 
 YanmegaEvosAttacks:
