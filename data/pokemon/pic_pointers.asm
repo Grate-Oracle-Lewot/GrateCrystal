@@ -515,8 +515,13 @@ if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dba MissingnoFrontpic
 	dba MissingnoBackpic
 else
+if DEF(_ADD_TURBIN)
+	dba TurbinFrontpic
+	dba TurbinBackpic
+else
 	dba FinullFrontpic
 	dba FinullBackpic
+endc
 endc
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
