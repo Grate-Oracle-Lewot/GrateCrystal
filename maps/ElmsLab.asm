@@ -149,6 +149,14 @@ if DEF(_KANTO_STARTERS)
 	pokepic BULBASAUR
 	cry BULBASAUR
 else
+if DEF(_EVOLVED_JOHTO)
+	pokepic MEGANIUM
+	cry MEGANIUM
+else
+if DEF(_EVOLVED_KANTO)
+	pokepic VENUSAUR
+	cry VENUSAUR
+else
 if DEF(_LETS_GO_STARTERS)
 	pokepic PIKACHU
 	cry PIKACHU
@@ -242,6 +250,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -255,6 +265,12 @@ endc
 	waitsfx
 if DEF(_KANTO_STARTERS)
 	getmonname STRING_BUFFER_3, BULBASAUR
+else
+if DEF(_EVOLVED_JOHTO)
+	getmonname STRING_BUFFER_3, MEGANIUM
+else
+if DEF(_EVOLVED_KANTO)
+	getmonname STRING_BUFFER_3, VENUSAUR
 else
 if DEF(_LETS_GO_STARTERS)
 	getmonname STRING_BUFFER_3, PIKACHU
@@ -330,12 +346,20 @@ endc
 endc
 endc
 endc
+endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
 if DEF(_KANTO_STARTERS)
 	givepoke BULBASAUR, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	givepoke MEGANIUM, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	givepoke VENUSAUR, 5, GOLD_BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	givepoke PIKACHU, 5, GOLD_BERRY
@@ -410,6 +434,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
@@ -422,6 +448,14 @@ CyndaquilPokeBallScript:
 if DEF(_KANTO_STARTERS)
 	pokepic CHARMANDER
 	cry CHARMANDER
+else
+if DEF(_EVOLVED_JOHTO)
+	pokepic TYPHLOSION
+	cry TYPHLOSION
+else
+if DEF(_EVOLVED_KANTO)
+	pokepic CHARIZARD
+	cry CHARIZARD
 else
 if DEF(_MOUSEKETEERS)
 	pokepic SANDSHREW
@@ -506,6 +540,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -519,6 +555,12 @@ endc
 	waitsfx
 if DEF(_KANTO_STARTERS)
 	getmonname STRING_BUFFER_3, CHARMANDER
+else
+if DEF(_EVOLVED_JOHTO)
+	getmonname STRING_BUFFER_3, TYPHLOSION
+else
+if DEF(_EVOLVED_KANTO)
+	getmonname STRING_BUFFER_3, CHARIZARD
 else
 if DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, SANDSHREW
@@ -586,12 +628,20 @@ endc
 endc
 endc
 endc
+endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
 if DEF(_KANTO_STARTERS)
 	givepoke CHARMANDER, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	givepoke TYPHLOSION, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	givepoke CHARIZARD, 5, GOLD_BERRY
 else
 if DEF(_MOUSEKETEERS)
 	givepoke SANDSHREW, 5, GOLD_BERRY
@@ -659,6 +709,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -673,6 +725,14 @@ TotodilePokeBallScript:
 if DEF(_KANTO_STARTERS)
 	pokepic SQUIRTLE
 	cry SQUIRTLE
+else
+if DEF(_EVOLVED_JOHTO)
+	pokepic FERALIGATR
+	cry FERALIGATR
+else
+if DEF(_EVOLVED_KANTO)
+	pokepic BLASTOISE
+	cry BLASTOISE
 else
 if DEF(_LETS_GO_STARTERS)
 	pokepic EEVEE
@@ -767,6 +827,8 @@ endc
 endc
 endc
 endc
+endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -780,6 +842,12 @@ endc
 	waitsfx
 if DEF(_KANTO_STARTERS)
 	getmonname STRING_BUFFER_3, SQUIRTLE
+else
+if DEF(_EVOLVED_JOHTO)
+	getmonname STRING_BUFFER_3, FERALIGATR
+else
+if DEF(_EVOLVED_KANTO)
+	getmonname STRING_BUFFER_3, BLASTOISE
 else
 if DEF(_LETS_GO_STARTERS)
 	getmonname STRING_BUFFER_3, EEVEE
@@ -855,12 +923,20 @@ endc
 endc
 endc
 endc
+endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
 if DEF(_KANTO_STARTERS)
 	givepoke SQUIRTLE, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_JOHTO)
+	givepoke FERALIGATR, 5, GOLD_BERRY
+else
+if DEF(_EVOLVED_KANTO)
+	givepoke BLASTOISE, 5, GOLD_BERRY
 else
 if DEF(_LETS_GO_STARTERS)
 	givepoke EEVEE, 5, GOLD_BERRY
@@ -917,6 +993,8 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
+endc
 endc
 endc
 endc
@@ -1500,6 +1578,14 @@ if DEF(_KANTO_STARTERS)
 	line "BULBASAUR, the"
 	cont "grass #MON?"
 else
+if DEF(_EVOLVED_JOHTO)
+	line "MEGANIUM, the"
+	cont "grass #MON?"
+else
+if DEF(_EVOLVED_KANTO)
+	line "VENUSAUR, the"
+	cont "grass #MON?"
+else
 if DEF(_LETS_GO_STARTERS)
 	line "PIKACHU, the"
 	cont "electric #MON?"
@@ -1593,12 +1679,22 @@ endc
 endc
 endc
 endc
+endc
+endc
 	done
 
 TakeCyndaquilText:
 	text "ELM: You'll take"
 if DEF(_KANTO_STARTERS)
 	line "CHARMANDER, the"
+	cont "fire #MON?"
+else
+if DEF(_EVOLVED_JOHTO)
+	line "TYPHLOSION, the"
+	cont "fire #MON?"
+else
+if DEF(_EVOLVED_KANTO)
+	line "CHARIZARD, the"
 	cont "fire #MON?"
 else
 if DEF(_MOUSEKETEERS)
@@ -1684,12 +1780,22 @@ endc
 endc
 endc
 endc
+endc
+endc
 	done
 
 TakeTotodileText:
 	text "ELM: Do you want"
 if DEF(_KANTO_STARTERS)
 	line "SQUIRTLE, the"
+	cont "water #MON?"
+else
+if DEF(_EVOLVED_JOHTO)
+	line "FERALIGATR, the"
+	cont "water #MON?"
+else
+if DEF(_EVOLVED_KANTO)
+	line "BLASTOISE, the"
 	cont "water #MON?"
 else
 if DEF(_LETS_GO_STARTERS)
@@ -1766,6 +1872,8 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
+endc
 endc
 endc
 endc
