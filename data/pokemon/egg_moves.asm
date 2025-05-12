@@ -871,12 +871,12 @@ SkarmoryEggMoves:
 	db -1 ; end
 
 HoundourEggMoves:
-	db FIRE_SPIN
+	db BONEMERANG
 	db RAGE
 	db PURSUIT
-	db COUNTER
 	db SPITE
 	db REVERSAL
+	db FIRE_SPIN
 	db -1 ; end
 
 PhanpyEggMoves:
