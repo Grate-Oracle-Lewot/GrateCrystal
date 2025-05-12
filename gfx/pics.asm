@@ -751,6 +751,11 @@ if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoFrontpic:   INCBIN "gfx/pokemon/missingno/front.animated.2bpp.lz"
 MissingnoBackpic:    INCBIN "gfx/pokemon/missingno/back.2bpp.lz"
 else
+if DEF(_ADD_TURBIN)
+TurbinFrontpic:      INCBIN "gfx/pokemon/turbin/front.animated.2bpp.lz"
+TurbinBackpic:       INCBIN "gfx/pokemon/turbin/back.2bpp.lz"
+else
 FinullFrontpic:      INCBIN "gfx/pokemon/finull/front.animated.2bpp.lz"
 FinullBackpic:       INCBIN "gfx/pokemon/finull/back.2bpp.lz"
+endc
 endc
