@@ -143,7 +143,11 @@ JohtoWaterWildMons:
 	db 20, SLOWBRO
 	db 20, SLOWKING
 	db 15, SLOWPOKE
+if DEF(_ADD_TURBIN)
+	db 20, TURBIN
+else
 	db 20, QUAGSIRE
+endc
 	end_water_wildmons
 
 	def_water_wildmons SLOWPOKE_WELL_B1F
@@ -157,7 +161,11 @@ JohtoWaterWildMons:
 	def_water_wildmons SLOWPOKE_WELL_B2F
 	db 2 percent ; encounter rate
 	db 15, SLOWPOKE
+if DEF(_ADD_TURBIN)
+	db 20, TURBIN
+else
 	db 20, SLOWPOKE
+endc
 	db 20, SLOWBRO
 	db 20, SLOWKING
 	end_water_wildmons
