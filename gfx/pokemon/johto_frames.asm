@@ -103,7 +103,11 @@ CelebiFrames:     INCLUDE "gfx/pokemon/celebi/frames.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoFrames:  INCLUDE "gfx/pokemon/missingno/frames.asm"
 else
+if DEF(_ADD_TURBIN)
+TurbinFrames:     INCLUDE "gfx/pokemon/turbin/frames.asm"
+else
 FinullFrames:     INCLUDE "gfx/pokemon/finull/frames.asm"
+endc
 endc
 YanmegaFrames:    INCLUDE "gfx/pokemon/yanmega/frames.asm"
 EggFrames:        INCLUDE "gfx/pokemon/egg/frames.asm"
