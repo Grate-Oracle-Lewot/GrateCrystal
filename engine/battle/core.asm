@@ -286,6 +286,7 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
+	call HandleStatBoostingHeldItems
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
 
@@ -396,7 +397,6 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
-	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTilemapToTempTilemap
