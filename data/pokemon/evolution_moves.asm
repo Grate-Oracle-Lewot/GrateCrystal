@@ -5,7 +5,7 @@ EvolutionMoves::
 	db NO_MOVE      ; VENUSAUR
 	db NO_MOVE      ; CHARMANDER
 	db NO_MOVE      ; CHARMELEON
-	db AIR_SLASH    ; CHARIZARD
+	db GUST         ; CHARIZARD
 	db NO_MOVE      ; SQUIRTLE
 	db NO_MOVE      ; WARTORTLE
 	db NO_MOVE      ; BLASTOISE
