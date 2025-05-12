@@ -56,7 +56,7 @@ AzaleaTownRivalBattleScript:
 	setevent EVENT_RIVAL_AZALEA_TOWN
 	winlosstext AzaleaTownRivalWinText, 0
 	setlasttalked AZALEATOWN_SILVER
-if DEF(_LETS_GO_STARTERS)
+if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
