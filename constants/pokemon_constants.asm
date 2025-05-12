@@ -274,7 +274,11 @@ JOHTO_POKEMON EQU const_value
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	const MISSINGNO  ; fc
 else
+if DEF (_ADD_TURBIN)
+	const TURBIN     ; fc
+else
 	const FINULL     ; fc
+endc
 endc
 	const YANMEGA    ; fd
 NUM_POKEMON EQU const_value - 1
