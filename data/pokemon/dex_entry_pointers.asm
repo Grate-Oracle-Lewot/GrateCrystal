@@ -255,7 +255,11 @@ PokedexDataPointerTable:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dba MissingnoPokedexEntry
 else
+if DEF(_ADD_TURBIN)
+	dba TurbinPokedexEntry
+else
 	dba FinullPokedexEntry
+endc
 endc
 	dba YanmegaPokedexEntry
 	assert_table_length NUM_POKEMON
