@@ -1412,6 +1412,7 @@ endc
 endc
 endc
 endc
+endc
 	db -1 ; end
 
 PokemonProfGroup:
