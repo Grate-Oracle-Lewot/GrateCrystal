@@ -166,7 +166,7 @@ UndergroundSilverBattleScript:
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
 	winlosstext UndergroundSilverWinText, 0
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
-if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
