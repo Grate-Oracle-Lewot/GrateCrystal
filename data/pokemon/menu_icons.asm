@@ -256,7 +256,11 @@ MonMenuIcons:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	db ICON_GLITCH      ; MISSINGNO
 else
+if DEF(_ADD_TURBIN)
+	db ICON_SPIRAL      ; TURBIN
+else
 	db ICON_CELEBI      ; FINULL
+endc
 endc
 	db ICON_MOTH        ; YANEGMA
 	assert_table_length NUM_POKEMON
