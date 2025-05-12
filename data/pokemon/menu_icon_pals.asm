@@ -259,7 +259,11 @@ MonMenuIconPals:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	icon_pals GRAY,   RED    ; MISSINGNO
 else
+if DEF(_ADD_TURBIN)
+	icon_pals GRAY,   YELLOW ; TURBIN
+else
 	icon_pals BROWN,  GRAY   ; FINULL
+endc
 endc
 	icon_pals GREEN,  BLUE   ; YANMEGA
 	assert_table_length NUM_POKEMON
