@@ -137,11 +137,12 @@ VenonatEggMoves:
 DiglettEggMoves:
 	db ROCK_SLIDE
 	db POWER_GEM
+	db SPIKES
 	db PURSUIT
 	db BEAT_UP
 	db FAINT_ATTACK
 	db IRON_HEAD
-	db SPIKES
+	db BONE_RUSH
 	db -1 ; end
 
 MeowthEggMoves:
