@@ -286,7 +286,11 @@ INCBIN "gfx/footprints/celebi.1bpp"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 INCBIN "gfx/footprints/missingno.1bpp"
 else
+if DEF(_ADD_TURBIN)
+INCBIN "gfx/footprints/turbin.1bpp"
+else
 INCBIN "gfx/footprints/finull.1bpp"
+endc
 endc
 INCBIN "gfx/footprints/yanmega.1bpp"
 INCBIN "gfx/footprints/254.1bpp"
