@@ -444,7 +444,11 @@ make new2 - Cottonee, Yanma, and the other non-legendary new/beta Pokémon.
 
 make fossil - Kabuto, Aerodactyl, and Omanyte.
 
+make evossil - Same as previous, but Kabutops and Omastar start out fully evolved, despite still starting at Lv5.
+
 make pseudo - Dratini and Larvitar. If you pick the left-side Dratini, the rival gets Larvitar; if you pick the right-side one, he also gets Dratini, since Dragon is good against itself. If you pick Larvitar, he always gets Dratini.
+
+make pseudevo - Same as previous, but Dragonite and Tyranitar start out fully evolved, despite still starting at Lv5.
 
 make bird - Articuno, Zapdos, and Moltres.
 
