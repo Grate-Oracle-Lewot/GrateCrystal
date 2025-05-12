@@ -254,7 +254,11 @@ AnimationPointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoAnimation
 else
+if DEF(_ADD_TURBIN)
+	dw TurbinAnimation
+else
 	dw FinullAnimation
+endc
 endc
 	dw YanmegaAnimation
 	assert_table_length NUM_POKEMON
