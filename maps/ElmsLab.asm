@@ -201,6 +201,10 @@ if DEF(_FOSSIL_STARTERS)
 	pokepic KABUTO
 	cry KABUTO
 else
+if DEF(_EVOLVED_FOSSIL)
+	pokepic KABUTOPS
+	cry KABUTOPS
+else
 if DEF(_PSEUDO_LEGENDS)
 	pokepic DRATINI
 	cry DRATINI
@@ -235,6 +239,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	pokepic CHIKORITA
 	cry CHIKORITA
+endc
 endc
 endc
 endc
@@ -310,6 +315,9 @@ else
 if DEF(_FOSSIL_STARTERS)
 	getmonname STRING_BUFFER_3, KABUTO
 else
+if DEF(_EVOLVED_FOSSIL)
+	getmonname STRING_BUFFER_3, KABUTOPS
+else
 if DEF(_PSEUDO_LEGENDS)
 	getmonname STRING_BUFFER_3, DRATINI
 else
@@ -335,6 +343,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
 	getmonname STRING_BUFFER_3, CHIKORITA
+endc
 endc
 endc
 endc
@@ -403,6 +412,9 @@ else
 if DEF(_FOSSIL_STARTERS)
 	givepoke KABUTO, 5, GOLD_BERRY
 else
+if DEF(_EVOLVED_FOSSIL)
+	givepoke KABUTOPS, 5, GOLD_BERRY
+else
 if DEF(_PSEUDO_LEGENDS)
 	givepoke DRATINI, 5, GOLD_BERRY
 else
@@ -428,6 +440,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -502,7 +515,7 @@ if DEF(_NEWCOMERS2)
 	pokepic JIRK
 	cry JIRK
 else
-if DEF(_FOSSIL_STARTERS)
+if DEF(_FOSSIL_STARTERS) || DEF(_EVOLVED_FOSSIL)
 	pokepic AERODACTYL
 	cry AERODACTYL
 else
@@ -604,7 +617,7 @@ else
 if DEF(_NEWCOMERS2)
 	getmonname STRING_BUFFER_3, JIRK
 else
-if DEF(_FOSSIL_STARTERS)
+if DEF(_FOSSIL_STARTERS) || DEF(_EVOLVED_FOSSIL)
 	getmonname STRING_BUFFER_3, AERODACTYL
 else
 if DEF(_PSEUDO_LEGENDS)
@@ -689,7 +702,7 @@ else
 if DEF(_NEWCOMERS2)
 	givepoke JIRK, 5, GOLD_BERRY
 else
-if DEF(_FOSSIL_STARTERS)
+if DEF(_FOSSIL_STARTERS) || DEF(_EVOLVED_FOSSIL)
 	givepoke AERODACTYL, 5, GOLD_BERRY
 else
 if DEF(_PSEUDO_LEGENDS)
@@ -804,6 +817,10 @@ if DEF(_FOSSIL_STARTERS)
 	pokepic OMANYTE
 	cry OMANYTE
 else
+if DEF(_EVOLVED_FOSSIL)
+	pokepic OMASTAR
+	cry OMASTAR
+else
 if DEF(_PSEUDO_LEGENDS)
 	pokepic DRATINI
 	cry DRATINI
@@ -838,6 +855,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	pokepic TOTODILE
 	cry TOTODILE
+endc
 endc
 endc
 endc
@@ -913,6 +931,9 @@ else
 if DEF(_FOSSIL_STARTERS)
 	getmonname STRING_BUFFER_3, OMANYTE
 else
+if DEF(_EVOLVED_FOSSIL)
+	getmonname STRING_BUFFER_3, OMASTAR
+else
 if DEF(_PSEUDO_LEGENDS)
 	getmonname STRING_BUFFER_3, DRATINI
 else
@@ -938,6 +959,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
 	getmonname STRING_BUFFER_3, TOTODILE
+endc
 endc
 endc
 endc
@@ -1006,6 +1028,9 @@ else
 if DEF(_FOSSIL_STARTERS)
 	givepoke OMANYTE, 5, GOLD_BERRY
 else
+if DEF(_EVOLVED_FOSSIL)
+	givepoke OMASTAR, 5, GOLD_BERRY
+else
 if DEF(_PSEUDO_LEGENDS)
 	givepoke DRATINI, 5, GOLD_BERRY
 else
@@ -1031,6 +1056,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1669,6 +1695,10 @@ if DEF(_FOSSIL_STARTERS)
 	line "KABUTO, the bug"
 	cont "#MON?"
 else
+if DEF(_EVOLVED_FOSSIL)
+	line "KABUTOPS, the bug"
+	cont "#MON?"
+else
 if DEF(_PSEUDO_LEGENDS)
 	line "DRATINI, the"
 	cont "dragon #MON?"
@@ -1703,6 +1733,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
+endc
 endc
 endc
 endc
@@ -1773,7 +1804,7 @@ if DEF(_NEWCOMERS2)
 	line "JIRK, the…"
 	cont "jerk?"
 else
-if DEF(_FOSSIL_STARTERS)
+if DEF(_FOSSIL_STARTERS) || DEF(_EVOLVED_FOSSIL)
 	line "AERODACTYL, the"
 	cont "flying #MON?"
 else
@@ -1891,6 +1922,10 @@ if DEF(_FOSSIL_STARTERS)
 	line "OMANYTE, the water"
 	cont "#MON?"
 else
+if DEF(_EVOLVED_FOSSIL)
+	line "OMASTAR, the water"
+	cont "#MON?"
+else
 if DEF(_PSEUDO_LEGENDS)
 	line "DRATINI, the"
 	cont "dragon #MON?"
@@ -1925,6 +1960,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
