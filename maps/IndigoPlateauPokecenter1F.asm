@@ -94,7 +94,7 @@ PlateauRivalBattleCommon:
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	winlosstext PlateauRivalWinText, 0
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
-if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL2, RIVAL2_2_CHIKORITA
