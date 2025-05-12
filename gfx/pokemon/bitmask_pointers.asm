@@ -254,7 +254,11 @@ BitmasksPointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoBitmasks
 else
+if DEF(_ADD_TURBIN)
+	dw TurbinBitmasks
+else
 	dw FinullBitmasks
+endc
 endc
 	dw YanmegaBitmasks
 	assert_table_length NUM_POKEMON
