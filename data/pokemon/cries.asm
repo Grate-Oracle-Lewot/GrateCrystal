@@ -260,7 +260,11 @@ PokemonCries::
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	mon_cry CRY_NIDORAN_M,     0,    0 ; MISSINGNO
 else
+if DEF(_ADD_TURBIN)
+	mon_cry CRY_FEAROW,     -111,  352 ; TURBIN
+else
 	mon_cry CRY_ENTEI,       168,  273 ; FINULL
+endc
 endc
 	mon_cry CRY_TOTODILE,   -420,  575 ; YANMEGA
 	assert_table_length NUM_POKEMON
