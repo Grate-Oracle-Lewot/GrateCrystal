@@ -269,6 +269,10 @@ CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/missingno.asm"
 else
+if DEF(_ADD_TURBIN)
+TurbinPokedexEntry::     INCLUDE "data/pokemon/dex_entries/turbin.asm"
+else
 FinullPokedexEntry::     INCLUDE "data/pokemon/dex_entries/finull.asm"
+endc
 endc
 YanmegaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/yanmega.asm"
