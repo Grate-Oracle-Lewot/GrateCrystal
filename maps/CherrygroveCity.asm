@@ -119,7 +119,7 @@ CherrygroveSilverSceneNorth:
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
-if DEF(_LETS_GO_STARTERS) || (_SLOW_STARTERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
 	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
