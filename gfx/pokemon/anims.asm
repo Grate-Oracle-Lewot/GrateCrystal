@@ -252,7 +252,11 @@ CelebiAnimation:     INCLUDE "gfx/pokemon/celebi/anim.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoAnimation:  INCLUDE "gfx/pokemon/missingno/anim.asm"
 else
+if DEF(_ADD_TURBIN)
+TurbinAnimation:     INLCUDE "gfx/pokemon/turbin/anim.asm"
+else
 FinullAnimation:     INCLUDE "gfx/pokemon/finull/anim.asm"
+endc
 endc
 YanmegaAnimation:    INCLUDE "gfx/pokemon/yanmega/anim.asm"
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"
