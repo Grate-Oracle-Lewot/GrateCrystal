@@ -430,6 +430,8 @@ make nido - Male and female Nidoran, who will face each other, and Sunkern, who 
 
 make cattle - Tauros and Miltank, who will face each other, and Girafarig, who will face itself.
 
+make slow - Slowpoke and Slugma. If you lose to the rival in the first battle, his Slowpoke will evolve into Slowking; if you win, Slowbro.
+
 make shucks - Shuckle, Delibird, and Smeargle.
 
 make new1 - Three of the new/beta Pokémon, who happen to form a type triangle.
