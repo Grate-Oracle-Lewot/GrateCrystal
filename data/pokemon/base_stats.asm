@@ -277,7 +277,7 @@ INCLUDE "data/pokemon/base_stats/celebi.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 INCLUDE "data/pokemon/base_stats/missingno.asm"
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 INCLUDE "data/pokemon/base_stats/turbin.asm"
 else
 INCLUDE "data/pokemon/base_stats/finull.asm"
