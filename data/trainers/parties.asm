@@ -1631,8 +1631,6 @@ endc
 endc
 endc
 endc
-endc
-endc
 	db -1 ; end
 
 	; RIVAL1 (15)
