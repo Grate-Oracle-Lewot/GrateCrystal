@@ -466,6 +466,8 @@ make no - Same as previous, but also changes the starters to Missingno. and Unow
 
 make turbid - Normal Johto starters, but the new/beta legendary is replaced with a different beta Pokémon—the one that looks like the "Shellder" on Slowbro's tail. This is treated as a split evolution for Shellder rather than a legendary, so some wild encounters and enemy parties are adjusted accordingly.
 
+make startur - Same as previous, but the starters are Abra and Shellder. If you lose to the rival in the first battle, his Shellder will evolve into the beta Pokémon, which is Water/Poison; if you win, it will evolve into Cloyster. The Kadabra/Alakazam that's normally on the rival's team is replaced with a Machoke/Machamp, regardless of which starter you pick.
+
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters.
 
 make crystal11_vc - The Virtual Console version of Pokémon Crystal, which implemented the GS Ball event. GrateCrystal implements that event differently, so this build now only alters timing delays during link communications.
