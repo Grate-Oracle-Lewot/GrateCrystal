@@ -421,7 +421,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
-	db NO_ITEM
+	db X_SPEED
 	db TOXIC, GIGA_DRAIN, THIEF, CONFUSION
 	dw 0 ; OT ID
 	dt 560 ; Exp
@@ -2120,7 +2120,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db PORYGON2
-	db NO_ITEM
+	db X_SPEED
 	db CONVERSION2, HYPER_BEAM, PSYBEAM, THIEF
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -4368,7 +4368,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db GENGAR
-	db NO_ITEM
+	db X_SPECIAL
 	db THUNDERBOLT, SHADOW_BALL, CONFUSE_RAY, THIEF
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -6407,7 +6407,7 @@ BattleTowerExtraMons:
 	db "@@@@@@@@@@@"
 
 	db SNOCONEY
-	db NO_ITEM
+	db X_ATTACK
 	db THIEF, GIGA_DRAIN, DIG, SELFDESTRUCT
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
