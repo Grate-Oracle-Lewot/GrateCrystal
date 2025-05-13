@@ -157,11 +157,7 @@ if DEF(_EVOLVED_KANTO)
 	pokepic VENUSAUR
 	cry VENUSAUR
 else
-if DEF(_LETS_GO_STARTERS)
-	pokepic PIKACHU
-	cry PIKACHU
-else
-if DEF(_MOUSEKETEERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_MOUSEKETEERS)
 	pokepic PIKACHU
 	cry PIKACHU
 else
@@ -271,7 +267,6 @@ endc
 endc
 endc
 endc
-endc
 	waitbutton
 	closepokepic
 	opentext
@@ -292,10 +287,7 @@ else
 if DEF(_EVOLVED_KANTO)
 	getmonname STRING_BUFFER_3, VENUSAUR
 else
-if DEF(_LETS_GO_STARTERS)
-	getmonname STRING_BUFFER_3, PIKACHU
-else
-if DEF(_MOUSEKETEERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, PIKACHU
 else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
@@ -383,7 +375,6 @@ endc
 endc
 endc
 endc
-endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -397,10 +388,7 @@ else
 if DEF(_EVOLVED_KANTO)
 	givepoke VENUSAUR, 5, GOLD_BERRY
 else
-if DEF(_LETS_GO_STARTERS)
-	givepoke PIKACHU, 5, GOLD_BERRY
-else
-if DEF(_MOUSEKETEERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_MOUSEKETEERS)
 	givepoke PIKACHU, 5, GOLD_BERRY
 else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
@@ -1716,11 +1704,7 @@ if DEF(_EVOLVED_KANTO)
 	line "VENUSAUR, the"
 	cont "grass #MON?"
 else
-if DEF(_LETS_GO_STARTERS)
-	line "PIKACHU, the"
-	cont "electric #MON?"
-else
-if DEF(_MOUSEKETEERS)
+if DEF(_LETS_GO_STARTERS) || DEF(_MOUSEKETEERS)
 	line "PIKACHU, the"
 	cont "electric #MON?"
 else
@@ -1806,7 +1790,6 @@ if DEF(_TURBIN_STARTERS)
 else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
-endc
 endc
 endc
 endc
@@ -2706,7 +2689,6 @@ else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-endc
 endc
 endc
 endc
