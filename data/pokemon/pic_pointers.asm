@@ -515,7 +515,7 @@ if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dba MissingnoFrontpic
 	dba MissingnoBackpic
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	dba TurbinFrontpic
 	dba TurbinBackpic
 else
