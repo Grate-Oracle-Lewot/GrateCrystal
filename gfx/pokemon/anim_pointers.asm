@@ -254,7 +254,7 @@ AnimationPointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoAnimation
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	dw TurbinAnimation
 else
 	dw FinullAnimation
