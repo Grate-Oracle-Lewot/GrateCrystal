@@ -521,7 +521,7 @@ if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 INCBIN "gfx/pokemon/missingno/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/missingno/shiny.pal"
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 INCBIN "gfx/pokemon/turbin/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/turbin/shiny.pal"
 else
