@@ -1323,7 +1323,7 @@ MukEvosAttacks:
 
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	db EVOLVE_HELD, SLOWPOKETAIL, TURBIN
 endc
 	db 0 ; no more evolutions
