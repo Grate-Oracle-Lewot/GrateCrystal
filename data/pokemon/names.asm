@@ -254,7 +254,7 @@ PokemonNames::
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	db "MISSINGNO."
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	db "TURBIN@@@@"
 else
 	db "FINULL@@@@"
