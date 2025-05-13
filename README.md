@@ -432,6 +432,8 @@ make hitmon - Hitmonlee and Hitmonchan, who will face each other, and Hitmontop,
 
 make nido - Male and female Nidoran, who will face each other, and Sunkern, who will face... Tangela.
 
+make trio - Doduo, Magnemite, and Diglett. The Magnemite/Magneton that's normally on the rival's team is replaced with a Chinchou/Lanturn, regardless of which starter you pick.
+
 make cattle - Tauros and Miltank, who will face each other, and Girafarig, who will face itself.
 
 make slow - Slowpoke and Slugma. If you lose to the rival in the first battle, his Slowpoke will evolve into Slowking; if you win, Slowbro.
