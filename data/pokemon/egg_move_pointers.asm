@@ -254,7 +254,7 @@ EggMovePointers::
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoEggMoves
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	dw ShellderEggMoves
 else
 	dw NoEggMoves
