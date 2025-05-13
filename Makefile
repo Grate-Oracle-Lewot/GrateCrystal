@@ -25,6 +25,7 @@ roms := \
 	GrateCrystal_MissingNo.gbc \
 	GrateCrystal_MissingnoStarters.gbc \
 	GrateCrystal_Turbin.gbc \
+	GrateCrystal_AbraShellder.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -72,6 +73,7 @@ GrateCrystal_CelebiWobbuffet_obj         := $(rom_obj:.o=onion.o)
 GrateCrystal_MissingNo_obj               := $(rom_obj:.o=miss.o)
 GrateCrystal_MissingnoStarters_obj       := $(rom_obj:.o=no.o)
 GrateCrystal_Turbin_obj                  := $(rom_obj:.o=turbid.o)
+GrateCrystal_AbraShellder_obj            := $(rom_obj:.o=startur.o)
 GrateCrystal11_obj                       := $(rom_obj:.o=11.o)
 GrateCrystal11_vc_obj                    := $(rom_obj:.o=11_vc.o)
 
@@ -94,7 +96,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid crystal11 clean tidy tools
+.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -126,6 +128,7 @@ onion:        GrateCrystal_CelebiWobbuffet.gbc
 miss:         GrateCrystal_MissingNo.gbc
 no:           GrateCrystal_MissingnoStarters.gbc
 turbid:       GrateCrystal_Turbin.gbc
+startur:      GrateCrystal_AbraShellder.gbc
 crystal11:    GrateCrystal11.gbc
 crystal11_vc: GrateCrystal11.patch
 
@@ -179,6 +182,7 @@ tidy:
 	      $(GrateCrystal_MissingNo_obj) \
 	      $(GrateCrystal_MissingnoStarters_obj) \
 	      $(GrateCrystal_Turbin_obj) \
+	      $(GrateCrystal_AbraShellder_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -219,6 +223,7 @@ $(GrateCrystal_CelebiWobbuffet_obj):         RGBASMFLAGS += -D _CELEBI_STARTERS
 $(GrateCrystal_MissingNo_obj):               RGBASMFLAGS += -D _ADD_MISSINGNO
 $(GrateCrystal_MissingnoStarters_obj):       RGBASMFLAGS += -D _MISSINGNO_STARTERS
 $(GrateCrystal_Turbin_obj):                  RGBASMFLAGS += -D _ADD_TURBIN
+$(GrateCrystal_AbraShellder_obj):            RGBASMFLAGS += -D _TURBIN_STARTERS
 $(GrateCrystal11_obj):                       RGBASMFLAGS += -D _CRYSTAL11
 $(GrateCrystal11_vc_obj):                    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
@@ -269,6 +274,7 @@ $(foreach obj, $(GrateCrystal_CelebiWobbuffet_obj), $(eval $(call DEP,$(obj),$(o
 $(foreach obj, $(GrateCrystal_MissingNo_obj), $(eval $(call DEP,$(obj),$(obj:miss.o=.asm))))
 $(foreach obj, $(GrateCrystal_MissingnoStarters_obj), $(eval $(call DEP,$(obj),$(obj:no.o=.asm))))
 $(foreach obj, $(GrateCrystal_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:turbid.o=.asm))))
+$(foreach obj, $(GrateCrystal_AbraShellder_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -305,6 +311,7 @@ GrateCrystal_CelebiWobbuffet_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 0
 GrateCrystal_MissingNo_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_MissingnoStarters_opt        = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Turbin_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_AbraShellder_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt                     = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
@@ -334,6 +341,7 @@ GrateCrystal_CelebiWobbuffet_base         = us
 GrateCrystal_MissingNo_base               = us
 GrateCrystal_MissingnoStarters_base       = us
 GrateCrystal_Turbin_base                  = us
+GrateCrystal_AbraShellder_base            = us
 GrateCrystal11_base                       = us
 GrateCrystal11_vc_base                    = us
 
