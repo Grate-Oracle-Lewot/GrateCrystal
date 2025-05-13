@@ -3897,7 +3897,7 @@ MissingnoEvosAttacks:
 	db 1, SKY_ATTACK
 	db 0 ; no more level-up moves
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 TurbinEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
