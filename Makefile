@@ -103,7 +103,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
+all: crystal kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur
 crystal:      GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedStarters.gbc
