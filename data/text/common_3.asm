@@ -1023,8 +1023,8 @@ _PokegearAskWhoCallText::
 	done
 
 _PokegearPressButtonText::
-	text "Press A to change"
-	line "the clock's time."
+	text "Adjust time and"
+	line "day settings."
 	done
 
 _PokegearAskDeleteText::
