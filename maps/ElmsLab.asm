@@ -177,6 +177,10 @@ if DEF(_NIDORAN_STARTERS)
 	pokepic NIDORAN_F
 	cry NIDORAN_F
 else
+if DEF(_TRIO_STARTERS)
+	pokepic DODUO
+	cry DODUO
+else
 if DEF(_CATTLE_STARTERS)
 	pokepic TAUROS
 	cry TAUROS
@@ -267,6 +271,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -301,6 +306,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	getmonname STRING_BUFFER_3, NIDORAN_F
+else
+if DEF(_TRIO_STARTERS)
+	getmonname STRING_BUFFER_3, DODUO
 else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, TAUROS
@@ -375,6 +383,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -402,6 +411,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	givepoke NIDORAN_F, 5, GOLD_BERRY
+else
+if DEF(_TRIO_STARTERS)
+	givepoke DODUO, 5, GOLD_BERRY
 else
 if DEF(_CATTLE_STARTERS)
 	givepoke TAUROS, 5, GOLD_BERRY
@@ -475,6 +487,7 @@ endc
 endc
 endc
 endc
+endc
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
@@ -511,6 +524,10 @@ else
 if DEF(_NIDORAN_STARTERS)
 	pokepic SUNKERN
 	cry SUNKERN
+else
+if DEF(_TRIO_STARTERS)
+	pokepic MAGNEMITE
+	cry MAGNEMITE
 else
 if DEF(_CATTLE_STARTERS)
 	pokepic GIRAFARIG
@@ -586,6 +603,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -617,6 +635,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	getmonname STRING_BUFFER_3, SUNKERN
+else
+if DEF(_TRIO_STARTERS)
+	getmonname STRING_BUFFER_3, MAGNEMITE
 else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, GIRAFARIG
@@ -678,6 +699,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -702,6 +724,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	givepoke SUNKERN, 5, GOLD_BERRY
+else
+if DEF(_TRIO_STARTERS)
+	givepoke MAGNEMITE, 5, GOLD_BERRY
 else
 if DEF(_CATTLE_STARTERS)
 	givepoke GIRAFARIG, 5, GOLD_BERRY
@@ -743,6 +768,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke UNOWN, 5, GOLD_BERRY
 else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -805,6 +831,10 @@ else
 if DEF(_NIDORAN_STARTERS)
 	pokepic NIDORAN_M
 	cry NIDORAN_M
+else
+if DEF(_TRIO_STARTERS)
+	pokepic DIGLETT
+	cry DIGLETT
 else
 if DEF(_CATTLE_STARTERS)
 	pokepic MILTANK
@@ -896,6 +926,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -930,6 +961,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	getmonname STRING_BUFFER_3, NIDORAN_M
+else
+if DEF(_TRIO_STARTERS)
+	getmonname STRING_BUFFER_3, DIGLETT
 else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, MILTANK
@@ -1004,6 +1038,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -1031,6 +1066,9 @@ if DEF(_HITMON_STARTERS)
 else
 if DEF(_NIDORAN_STARTERS)
 	givepoke NIDORAN_M, 5, GOLD_BERRY
+else
+if DEF(_TRIO_STARTERS)
+	givepoke DIGLETT, 5, GOLD_BERRY
 else
 if DEF(_CATTLE_STARTERS)
 	givepoke MILTANK, 5, GOLD_BERRY
@@ -1081,6 +1119,7 @@ if DEF(_TURBIN_STARTERS)
 	givepoke SHELLDER, 5, GOLD_BERRY
 else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1697,6 +1736,10 @@ if DEF(_NIDORAN_STARTERS)
 	line "the female"
 	cont "NIDORAN?"
 else
+if DEF(_TRIO_STARTERS)
+	line "DODUO, the bird"
+	cont "#MON?"
+else
 if DEF(_CATTLE_STARTERS)
 	line "TAUROS, the bull"
 	cont "#MON?"
@@ -1787,6 +1830,7 @@ endc
 endc
 endc
 endc
+endc
 	done
 
 TakeCyndaquilText:
@@ -1818,6 +1862,10 @@ else
 if DEF(_NIDORAN_STARTERS)
 	line "SUNKERN, the grass"
 	cont "#MON?"
+else
+if DEF(_TRIO_STARTERS)
+	line "MAGNEMITE, the"
+	cont "electric #MON?"
 else
 if DEF(_CATTLE_STARTERS)
 	line "GIRAFARIG, the pa-"
@@ -1893,6 +1941,7 @@ endc
 endc
 endc
 endc
+endc
 	done
 
 TakeTotodileText:
@@ -1928,6 +1977,10 @@ else
 if DEF(_NIDORAN_STARTERS)
 	line "the male"
 	cont "NIDORAN?"
+else
+if DEF(_TRIO_STARTERS)
+	line "DIGLETT, the"
+	cont "ground #MON?"
 else
 if DEF(_CATTLE_STARTERS)
 	line "MILTANK, the cow"
@@ -1995,6 +2048,7 @@ if DEF(_TURBIN_STARTERS)
 else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
@@ -2574,6 +2628,11 @@ if DEF(_NIDORAN_STARTERS)
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
+if DEF(_TRIO_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
 if DEF(_CATTLE_STARTERS)
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
@@ -2647,6 +2706,7 @@ else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc
 endc
 endc
 endc
