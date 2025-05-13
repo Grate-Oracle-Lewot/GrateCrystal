@@ -3508,7 +3508,11 @@ SwimmerMGroup:
 	; SWIMMERM (10)
 	db "TUCKER@", TRAINERTYPE_NORMAL
 	db 67, CORSOLA
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
+	db 66, TURBIN
+else
 	db 66, CLOYSTER
+endc
 	db -1 ; end
 
 	; SWIMMERM (11)
