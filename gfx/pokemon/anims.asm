@@ -253,7 +253,7 @@ if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoAnimation:  INCLUDE "gfx/pokemon/missingno/anim.asm"
 else
 if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
-TurbinAnimation:     INLCUDE "gfx/pokemon/turbin/anim.asm"
+TurbinAnimation:     INCLUDE "gfx/pokemon/turbin/anim.asm"
 else
 FinullAnimation:     INCLUDE "gfx/pokemon/finull/anim.asm"
 endc
