@@ -533,7 +533,7 @@ IlexForestShrineScript:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	loadwildmon MISSINGNO, 100
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	loadwildmon CELEBI, 100
 else
 	loadwildmon FINULL, 1
