@@ -175,7 +175,7 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
-	db 30, MANTINE
+	db 35, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT
@@ -183,7 +183,11 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
+if DEF(_ADD_TURBIN)
+	db 35, TURBIN
+else
 	db 30, MANTINE
+endc
 	end_water_wildmons
 
 	def_water_wildmons CELADON_CITY
