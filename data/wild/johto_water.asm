@@ -143,7 +143,7 @@ JohtoWaterWildMons:
 	db 20, SLOWBRO
 	db 20, SLOWKING
 	db 15, SLOWPOKE
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	db 20, TURBIN
 else
 	db 20, QUAGSIRE
@@ -161,7 +161,7 @@ endc
 	def_water_wildmons SLOWPOKE_WELL_B2F
 	db 2 percent ; encounter rate
 	db 15, SLOWPOKE
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	db 20, TURBIN
 else
 	db 20, SLOWPOKE
