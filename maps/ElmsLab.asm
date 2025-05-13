@@ -237,8 +237,13 @@ if DEF(_MISSINGNO_STARTERS)
 	pokepic MISSINGNO
 	cry MISSINGNO
 else
+if DEF(_TURBIN_STARTERS)
+	pokepic ABRA
+	cry ABRA
+else
 	pokepic CHIKORITA
 	cry CHIKORITA
+endc
 endc
 endc
 endc
@@ -342,7 +347,11 @@ else
 if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
+if DEF(_TURBIN_STARTERS)
+	getmonname STRING_BUFFER_3, ABRA
+else
 	getmonname STRING_BUFFER_3, CHIKORITA
+endc
 endc
 endc
 endc
@@ -439,7 +448,11 @@ else
 if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
+if DEF(_TURBIN_STARTERS)
+	givepoke ABRA, 5, GOLD_BERRY
+else
 	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -853,8 +866,13 @@ if DEF(_MISSINGNO_STARTERS)
 	pokepic MISSINGNO
 	cry MISSINGNO
 else
+if DEF(_TURBIN_STARTERS)
+	pokepic SHELLDER
+	cry SHELLDER
+else
 	pokepic TOTODILE
 	cry TOTODILE
+endc
 endc
 endc
 endc
@@ -958,7 +976,11 @@ else
 if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, MISSINGNO
 else
+if DEF(_TURBIN_STARTERS)
+	getmonname STRING_BUFFER_3, SHELLDER
+else
 	getmonname STRING_BUFFER_3, TOTODILE
+endc
 endc
 endc
 endc
@@ -1055,7 +1077,11 @@ else
 if DEF(_MISSINGNO_STARTERS)
 	givepoke MISSINGNO, 5, GOLD_BERRY
 else
+if DEF(_TURBIN_STARTERS)
+	givepoke SHELLDER, 5, GOLD_BERRY
+else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1731,8 +1757,13 @@ if DEF(_MISSINGNO_STARTERS)
 	line "MISSINGNO., the"
 	cont "glitch #MON?"
 else
+if DEF(_TURBIN_STARTERS)
+	line "ABRA, the psychic"
+	cont "#MON?"
+else
 	line "CHIKORITA, the"
 	cont "grass #MON?"
+endc
 endc
 endc
 endc
@@ -1958,8 +1989,13 @@ if DEF(_MISSINGNO_STARTERS)
 	line "MISSINGNO., the"
 	cont "glitch #MON?"
 else
+if DEF(_TURBIN_STARTERS)
+	line "SHELLDER, the"
+	cont "water #MON?"
+else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
@@ -2603,9 +2639,15 @@ if DEF(_MISSINGNO_STARTERS)
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
+if DEF(_TURBIN_STARTERS)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc
 endc
 endc
 endc
