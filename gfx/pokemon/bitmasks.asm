@@ -252,7 +252,7 @@ CelebiBitmasks:     INCLUDE "gfx/pokemon/celebi/bitmask.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoBitmasks:  INCLUDE "gfx/pokemon/missingno/bitmask.asm"
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 TurbinBitmasks:     INCLUDE "gfx/pokemon/turbin/bitmask.asm"
 else
 FinullBitmasks:     INCLUDE "gfx/pokemon/finull/bitmask.asm"
