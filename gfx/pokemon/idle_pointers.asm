@@ -254,7 +254,7 @@ AnimationIdlePointers:
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	dw MissingnoAnimationIdle
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	dw TurbinAnimationIdle
 else
 	dw FinullAnimationIdle
