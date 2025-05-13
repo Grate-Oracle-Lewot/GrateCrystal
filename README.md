@@ -464,6 +464,8 @@ make miss - Normal Johto starters, but the new/beta legendary is replaced with M
 
 make no - Same as previous, but also changes the starters to Missingno. and Unown, with the same versus setup as Dratini and Larvitar. Your Unown may be any letter, but the rival's is set.
 
+make turbid - Normal Johto starters, but the new/beta legendary is replaced with a different beta Pokémon—the one that looks like the "Shellder" on Slowbro's tail. This is treated as a split evolution for Shellder rather than a legendary, so some wild encounters and enemy parties are adjusted accordingly.
+
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters.
 
 make crystal11_vc - The Virtual Console version of Pokémon Crystal, which implemented the GS Ball event. GrateCrystal implements that event differently, so this build now only alters timing delays during link communications.
