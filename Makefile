@@ -118,7 +118,7 @@ cattle:       GrateCrystal_TaurosMiltankGirafarig.gbc
 slow:         GrateCrystal_SlowpokeSlugma.gbc
 shucks:       GrateCrystal_ShuckleSmeargleDelibird.gbc
 new1:         GrateCrystal_NewStarters1.gbc
-new2:         GrateCrystal_NewStarters1.gbc
+new2:         GrateCrystal_NewStarters2.gbc
 fossil:       GrateCrystal_FossilStarters.gbc
 evossil:      GrateCrystal_EvolvedFossilStarters.gbc
 pseudo:       GrateCrystal_DratiniLarvitar.gbc
