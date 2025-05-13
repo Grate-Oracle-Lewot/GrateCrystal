@@ -252,7 +252,7 @@ CelebiAnimationIdle:     INCLUDE "gfx/pokemon/celebi/anim_idle.asm"
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoAnimationIdle:  INCLUDE "gfx/pokemon/missingno/anim_idle.asm"
 else
-if DEF(_ADD_TURBIN)
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 TurbinAnimationIdle:     INCLUDE "gfx/pokemon/turbin/anim_idle.asm"
 else
 FinullAnimationIdle:     INCLUDE "gfx/pokemon/finull/anim_idle.asm"
