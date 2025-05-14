@@ -10,7 +10,7 @@ roms := \
 	GrateCrystal_NidoranStarters.gbc \
 	GrateCrystal_DoduoMagnemiteDiglett.gbc \
 	GrateCrystal_TaurosMiltankGirafarig.gbc \
-	GrateCrystal_SlowpokeSlugma \
+	GrateCrystal_SlowpokeSlugma.gbc \
 	GrateCrystal_ShuckleSmeargleDelibird.gbc \
 	GrateCrystal_NewStarters1.gbc \
 	GrateCrystal_NewStarters2.gbc \
@@ -103,7 +103,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: $(roms)
+all: crystal
 crystal:      GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedStarters.gbc
