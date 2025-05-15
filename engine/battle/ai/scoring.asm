@@ -3416,11 +3416,16 @@ AI_Smart_SpDefDown:
 	; fallthrough
 
 AI_Smart_StatDown:
-; Dismiss this move if the player has only one Pokemon [remaining], and the given stat's stage modifier is -6 (internally 1).
+; Dismiss this move if the given stat's stage modifier is -6 (internally 1),
+; and the player is Mean Looked or has only one Pokemon [remaining].
 	cp 2
 	ret nc
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	jr nz, .dismiss
 	call AICheckLastPlayerMon
 	ret nz
+.dismiss
 	jp AIDismissMove
 
 AI_Smart_AccuracyDown_Dismiss:
