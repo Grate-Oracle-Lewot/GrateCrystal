@@ -98,13 +98,13 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
-crystal:      GrateCrystal.gbc
+all: grate kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur
+grate:        GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedStarters.gbc
 kantevo:      GrateCrystal_EvolvedKantoStarters.gbc
