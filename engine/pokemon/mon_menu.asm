@@ -1268,7 +1268,7 @@ PlaceMoveData:
 	jr nc, .imperfect
 
 	ld de, String_MoveBlank
-	lb bc, 3
+	ld bc, 3
 	hlcoord 5, 12
 	call PlaceString
 	jr .done_accuracy
