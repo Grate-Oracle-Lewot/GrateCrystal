@@ -987,8 +987,7 @@ BattleCommand_DoTurn:
 	call GetBattleVar
 ; continuous?
 	ld hl, .continuousmoves
-	ld de, 1
-	call IsInArray
+	call IsInByteArray
 
 ; 'has no pp left for [move]'
 	ld hl, HasNoPPLeftText
@@ -1081,10 +1080,9 @@ BattleCommand_Critical:
 .CheckCritical:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	ld de, 1
 	ld hl, CriticalHitMoves
 	push bc
-	call IsInArray
+	call IsInByteArray
 	pop bc
 	jr nc, .ScopeLens
 
