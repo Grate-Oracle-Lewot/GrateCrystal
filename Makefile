@@ -195,7 +195,61 @@ tidy:
 tools:
 	$(MAKE) -C tools/
 
-all:
+grate:
+	tools/free_space.awk BANK=all GrateCrystal.map
+kanto:
+	tools/free_space.awk BANK=all GrateCrystal.map
+evolve:
+	tools/free_space.awk BANK=all GrateCrystal.map
+kantevo:
+	tools/free_space.awk BANK=all GrateCrystal.map
+letsgo:
+	tools/free_space.awk BANK=all GrateCrystal.map
+mice:
+	tools/free_space.awk BANK=all GrateCrystal.map
+jinx:
+	tools/free_space.awk BANK=all GrateCrystal.map
+hitmon:
+	tools/free_space.awk BANK=all GrateCrystal.map
+nido:
+	tools/free_space.awk BANK=all GrateCrystal.map
+trio:
+	tools/free_space.awk BANK=all GrateCrystal.map
+cattle:
+	tools/free_space.awk BANK=all GrateCrystal.map
+slow:
+	tools/free_space.awk BANK=all GrateCrystal.map
+shucks:
+	tools/free_space.awk BANK=all GrateCrystal.map
+new1:
+	tools/free_space.awk BANK=all GrateCrystal.map
+new2:
+	tools/free_space.awk BANK=all GrateCrystal.map
+fossil:
+	tools/free_space.awk BANK=all GrateCrystal.map
+evossil:
+	tools/free_space.awk BANK=all GrateCrystal.map
+pseudo:
+	tools/free_space.awk BANK=all GrateCrystal.map
+pseudevo:
+	tools/free_space.awk BANK=all GrateCrystal.map
+bird:
+	tools/free_space.awk BANK=all GrateCrystal.map
+beast:
+	tools/free_space.awk BANK=all GrateCrystal.map
+mew:
+	tools/free_space.awk BANK=all GrateCrystal.map
+dragon:
+	tools/free_space.awk BANK=all GrateCrystal.map
+onion:
+	tools/free_space.awk BANK=all GrateCrystal.map
+miss:
+	tools/free_space.awk BANK=all GrateCrystal.map
+no:
+	tools/free_space.awk BANK=all GrateCrystal.map
+turbid:
+	tools/free_space.awk BANK=all GrateCrystal.map
+startur:
 	tools/free_space.awk BANK=all GrateCrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
