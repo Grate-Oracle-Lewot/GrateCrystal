@@ -1260,7 +1260,7 @@ AI_EvaAcc_MaybeEncourage:
 	ret
 
 AI_Smart_AccuracyDown:
-; Dismiss this move if the player's accuracy is already minimum and they have only one Pokemon [remaining].
+; Dismiss this move if the player's accuracy is already minimized, and they can't switch out.
 	call AI_Smart_AccuracyDown_Dismiss
 
 ; If player's HP is full...
@@ -1782,7 +1782,7 @@ AI_Smart_Twister:
 AI_Smart_SpeedControl:
 ; NOTE: No move exists with EFFECT_SPEED_UP (only EFFECT_SPEED_UP_2), so it's excluded for space.
 
-; Dismiss this move if the player's speed is already minimum and they have only one Pokemon [remaining].
+; Dismiss this move if the player's speed is already minimized, and they can't switch out.
 	call AI_Smart_SpeedDown
 
 ; If player is faster than enemy, 50% chance to encourage this move (no chance to discourage).
@@ -3408,15 +3408,18 @@ AI_Smart_SpDefDown:
 	; fallthrough
 
 AI_Smart_StatDown:
-; Dismiss this move if the given stat's stage modifier is -6 (internally 1),
-; and the player is Mean Looked or has only one Pokemon [remaining].
+; If the given stat's stage modifier is -6 (internally 1)...
+;  -Dismiss this move if the player is Mean Looked or has only one Pokemon [remaining].
+;  -Else, 50% chance to dismiss this move.
 	cp 2
 	ret nc
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .dismiss
 	call AICheckLastPlayerMon
-	ret nz
+	jr z, .dismiss
+	call AI_50_50
+	ret c
 .dismiss
 	jp AIDismissMove
 
