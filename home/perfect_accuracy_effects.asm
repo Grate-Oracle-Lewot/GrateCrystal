@@ -1,3 +1,4 @@
+PerfectAccuracyEffects::
   db EFFECT_MIRROR_MOVE
   db EFFECT_ATTACK_UP
   db EFFECT_DEFENSE_UP
