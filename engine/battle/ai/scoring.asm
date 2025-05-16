@@ -3342,6 +3342,8 @@ AI_Smart_FalseSwipe:
 	jp AIDismissMove
 
 AI_Smart_DefenseCurl:
+; The AI_Setup layer counts Defense Curl as a stat-up move.
+
 ; Do nothing if enemy is already curled.
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CURLED, a
