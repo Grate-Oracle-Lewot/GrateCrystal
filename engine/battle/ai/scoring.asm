@@ -3408,16 +3408,20 @@ AI_Smart_SpDefDown:
 	; fallthrough
 
 AI_Smart_StatDown:
-; If the given stat's stage modifier is -6 (internally 1)...
-;  -Dismiss this move if the player is Mean Looked or has only one Pokemon [remaining].
-;  -Else, 50% chance to dismiss this move.
+; Do nothing unless the given stat's stage modifier is -6 (internally 1).
 	cp 2
 	ret nc
+
+; Dismiss this move if the player is Mean Looked.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .dismiss
+
+; Dismiss this move if the player has only one Pokemon [remaining].
 	call AICheckLastPlayerMon
 	jr z, .dismiss
+
+; Else 50% chance to dismiss this move.
 	call AI_50_50
 	ret c
 .dismiss
@@ -3451,7 +3455,7 @@ AI_Smart_Spikes:
 	jr AI_Smart_EvasionDown
 
 .only_one
-; if the player has only one Pokemon [remaining], dismiss this move if Spikes aren't already set up.
+; If the player has only one Pokemon [remaining], dismiss this move if Spikes aren't already set up.
 ; If Spikes are set up, dismiss this move if the player's Evasion is already minimized.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
