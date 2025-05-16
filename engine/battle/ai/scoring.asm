@@ -3417,6 +3417,11 @@ AI_Smart_StatDown:
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .dismiss
 
+; Dismiss this move if the player is Bound, Wrapped, etc.
+	ld a, [wPlayerWrapCount]
+	and a
+	jr nz, .dismiss
+
 ; Dismiss this move if the player has only one Pokemon [remaining].
 	call AICheckLastPlayerMon
 	jr z, .dismiss
