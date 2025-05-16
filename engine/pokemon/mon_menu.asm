@@ -651,13 +651,9 @@ MonMenu_Cut:
 	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Fly:
@@ -666,16 +662,12 @@ MonMenu_Fly:
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2
-	jr z, .Fail
+	jr z, MonMenu_MoveFail
 	cp $0
 	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 .Error:
@@ -686,38 +678,30 @@ MonMenu_Flash:
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Strength:
 	farcall StrengthFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Whirlpool:
 	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
 	ret
 
-.Fail:
+MonMenu_MoveFail:
 	ld a, $3
 	ret
 
@@ -725,52 +709,36 @@ MonMenu_Waterfall:
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Teleport:
 	farcall TeleportFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
-	jr z, .Fail
+	jr z, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Surf:
 	farcall SurfFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
-	jr z, .Fail
+	jr z, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Dig:
 	farcall DigFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_Softboiled_MilkDrink:
@@ -818,12 +786,12 @@ MonMenu_Headbutt:
 	farcall HeadbuttFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail2
 	ld b, $4
 	ld a, $2
 	ret
 
-.Fail:
+MonMenu_MoveFail2:
 	ld a, $3
 	ret
 
@@ -831,13 +799,9 @@ MonMenu_RockSmash:
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
-	jr nz, .Fail
+	jr nz, MonMenu_MoveFail2
 	ld b, $4
 	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_SweetScent:
@@ -1291,13 +1255,25 @@ PlaceMoveData:
 	jr .skip_null_chance
 
 .if_null_chance
-	ld de, String_MoveNoPower
+	ld de, String_MoveBlank
 	ld bc, 3
 	hlcoord 5, 13
 	call PlaceString
 .skip_null_chance
 
 ; Print move accuracy
+	ld a, [wCurSpecies]
+	ld hl, PerfectAccuracyEffects
+	call IsInByteArray
+	jr nc, .imperfect
+
+	ld de, String_MoveBlank
+	lb bc, 3
+	hlcoord 5, 12
+	call PlaceString
+	jr .done_accuracy
+
+.imperfect
 	ld a, [wCurSpecies]
 	ld bc, MOVE_LENGTH
 	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
@@ -1310,6 +1286,7 @@ PlaceMoveData:
 	lb bc, 1, 3
 	hlcoord 5, 12
 	call PrintNum
+.done_accuracy
 
 ; Print move power
 	ld a, [wCurSpecies]
@@ -1329,7 +1306,7 @@ PlaceMoveData:
 	jr .description
 
 .no_power
-	ld de, String_MoveNoPower
+	ld de, String_MoveBlank
 	call PlaceString
 
 ; Print move description
@@ -1351,14 +1328,14 @@ String_MoveAcc:
 	db "ACC/@"
 String_MoveEff:
 	db "EFF/@"
-String_MoveNoPower:
-	db "---@"
 String_MovePhy:
 	db "PHYSICAL@"
 String_MoveSpe:
 	db "SPECIAL @"
 String_MoveSta:
 	db "STATUS  @"
+String_MoveBlank:
+	db "---@"
 
 PlaceMoveScreenLeftArrow:
 	ld a, [wCurPartyMon]
