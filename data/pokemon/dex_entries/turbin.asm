@@ -1,4 +1,4 @@
-	db "COIL SHELL@" ; species name
+	db "BOTTOMFED@" ; species name
 	dw 411, 2920 ; height, weight
 
 	db   "It eats anything,"
