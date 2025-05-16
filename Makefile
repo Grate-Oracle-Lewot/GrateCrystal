@@ -23,10 +23,10 @@ roms := \
 	GrateCrystal_MewDittoMewtwo.gbc \
 	GrateCrystal_HoOhLugia.gbc \
 	GrateCrystal_CelebiWobbuffet.gbc \
-	GrateCrystal_MissingNo.gbc \
-	GrateCrystal_MissingnoStarters.gbc \
-	GrateCrystal_Turbin.gbc \
-	GrateCrystal_AbraShellder.gbc \
+	GrateCrystal_Alt_MissingNo.gbc \
+	GrateCrystal_Alt_MissingnoStarters.gbc \
+	GrateCrystal_Alt_Turbin.gbc \
+	GrateCrystal_Alt_AbraShellder.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -72,10 +72,10 @@ GrateCrystal_LegendaryBeasts_obj         := $(rom_obj:.o=beast.o)
 GrateCrystal_MewDittoMewtwo_obj          := $(rom_obj:.o=mew.o)
 GrateCrystal_HoOhLugia_obj               := $(rom_obj:.o=dragon.o)
 GrateCrystal_CelebiWobbuffet_obj         := $(rom_obj:.o=onion.o)
-GrateCrystal_MissingNo_obj               := $(rom_obj:.o=miss.o)
-GrateCrystal_MissingnoStarters_obj       := $(rom_obj:.o=no.o)
-GrateCrystal_Turbin_obj                  := $(rom_obj:.o=turbid.o)
-GrateCrystal_AbraShellder_obj            := $(rom_obj:.o=startur.o)
+GrateCrystal_Alt_MissingNo_obj           := $(rom_obj:.o=miss.o)
+GrateCrystal_Alt_MissingnoStarters_obj   := $(rom_obj:.o=no.o)
+GrateCrystal_Alt_Turbin_obj              := $(rom_obj:.o=turbid.o)
+GrateCrystal_Alt_AbraShellder_obj        := $(rom_obj:.o=startur.o)
 GrateCrystal11_obj                       := $(rom_obj:.o=11.o)
 GrateCrystal11_vc_obj                    := $(rom_obj:.o=11_vc.o)
 
@@ -128,10 +128,10 @@ beast:        GrateCrystal_LegendaryBeasts.gbc
 mew:          GrateCrystal_MewDittoMewtwo.gbc
 dragon:       GrateCrystal_HoOhLugia.gbc
 onion:        GrateCrystal_CelebiWobbuffet.gbc
-miss:         GrateCrystal_MissingNo.gbc
-no:           GrateCrystal_MissingnoStarters.gbc
-turbid:       GrateCrystal_Turbin.gbc
-startur:      GrateCrystal_AbraShellder.gbc
+miss:         GrateCrystal_Alt_MissingNo.gbc
+no:           GrateCrystal_Alt_MissingnoStarters.gbc
+turbid:       GrateCrystal_Alt_Turbin.gbc
+startur:      GrateCrystal_Alt_AbraShellder.gbc
 crystal11:    GrateCrystal11.gbc
 crystal11_vc: GrateCrystal11.patch
 
@@ -183,10 +183,10 @@ tidy:
 	      $(GrateCrystal_MewDittoMewtwo_obj) \
 	      $(GrateCrystal_HoOhLugia_obj) \
 	      $(GrateCrystal_CelebiWobbuffet_obj) \
-	      $(GrateCrystal_MissingNo_obj) \
-	      $(GrateCrystal_MissingnoStarters_obj) \
-	      $(GrateCrystal_Turbin_obj) \
-	      $(GrateCrystal_AbraShellder_obj) \
+	      $(GrateCrystal_Alt_MissingNo_obj) \
+	      $(GrateCrystal_Alt_MissingnoStarters_obj) \
+	      $(GrateCrystal_Alt_Turbin_obj) \
+	      $(GrateCrystal_Alt_AbraShellder_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -225,10 +225,10 @@ $(GrateCrystal_LegendaryBeasts_obj):         RGBASMFLAGS += -D _LEGENDARY_BEASTS
 $(GrateCrystal_MewDittoMewtwo_obj):          RGBASMFLAGS += -D _MEW_STARTERS
 $(GrateCrystal_HoOhLugia_obj):               RGBASMFLAGS += -D _HO_OH_LUGIA
 $(GrateCrystal_CelebiWobbuffet_obj):         RGBASMFLAGS += -D _CELEBI_STARTERS
-$(GrateCrystal_MissingNo_obj):               RGBASMFLAGS += -D _ADD_MISSINGNO
-$(GrateCrystal_MissingnoStarters_obj):       RGBASMFLAGS += -D _MISSINGNO_STARTERS
-$(GrateCrystal_Turbin_obj):                  RGBASMFLAGS += -D _ADD_TURBIN
-$(GrateCrystal_AbraShellder_obj):            RGBASMFLAGS += -D _TURBIN_STARTERS
+$(GrateCrystal_Alt_MissingNo_obj):           RGBASMFLAGS += -D _ADD_MISSINGNO
+$(GrateCrystal_Alt_MissingnoStarters_obj):   RGBASMFLAGS += -D _MISSINGNO_STARTERS
+$(GrateCrystal_Alt_Turbin_obj):              RGBASMFLAGS += -D _ADD_TURBIN
+$(GrateCrystal_Alt_AbraShellder_obj):        RGBASMFLAGS += -D _TURBIN_STARTERS
 $(GrateCrystal11_obj):                       RGBASMFLAGS += -D _CRYSTAL11
 $(GrateCrystal11_vc_obj):                    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
@@ -277,10 +277,10 @@ $(foreach obj, $(GrateCrystal_LegendaryBeasts_obj), $(eval $(call DEP,$(obj),$(o
 $(foreach obj, $(GrateCrystal_MewDittoMewtwo_obj), $(eval $(call DEP,$(obj),$(obj:mew.o=.asm))))
 $(foreach obj, $(GrateCrystal_HoOhLugia_obj), $(eval $(call DEP,$(obj),$(obj:dragon.o=.asm))))
 $(foreach obj, $(GrateCrystal_CelebiWobbuffet_obj), $(eval $(call DEP,$(obj),$(obj:onion.o=.asm))))
-$(foreach obj, $(GrateCrystal_MissingNo_obj), $(eval $(call DEP,$(obj),$(obj:miss.o=.asm))))
-$(foreach obj, $(GrateCrystal_MissingnoStarters_obj), $(eval $(call DEP,$(obj),$(obj:no.o=.asm))))
-$(foreach obj, $(GrateCrystal_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:turbid.o=.asm))))
-$(foreach obj, $(GrateCrystal_AbraShellder_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
+$(foreach obj, $(GrateCrystal_Alt_MissingNo_obj), $(eval $(call DEP,$(obj),$(obj:miss.o=.asm))))
+$(foreach obj, $(GrateCrystal_Alt_MissingnoStarters_obj), $(eval $(call DEP,$(obj),$(obj:no.o=.asm))))
+$(foreach obj, $(GrateCrystal_Alt_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:turbid.o=.asm))))
+$(foreach obj, $(GrateCrystal_Alt_AbraShellder_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -315,10 +315,10 @@ GrateCrystal_LegendaryBeasts_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 0
 GrateCrystal_MewDittoMewtwo_opt           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_HoOhLugia_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_CelebiWobbuffet_opt          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_MissingNo_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_MissingnoStarters_opt        = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_Turbin_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_AbraShellder_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_Alt_MissingNo_opt            = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_Alt_MissingnoStarters_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_Alt_Turbin_opt               = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_Alt_AbraShellder_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt                     = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
@@ -346,10 +346,10 @@ GrateCrystal_LegendaryBeasts_base         = us
 GrateCrystal_MewDittoMewtwo_base          = us
 GrateCrystal_HoOhLugia_base               = us
 GrateCrystal_CelebiWobbuffet_base         = us
-GrateCrystal_MissingNo_base               = us
-GrateCrystal_MissingnoStarters_base       = us
-GrateCrystal_Turbin_base                  = us
-GrateCrystal_AbraShellder_base            = us
+GrateCrystal_Alt_MissingNo_base           = us
+GrateCrystal_Alt_MissingnoStarters_base   = us
+GrateCrystal_Alt_Turbin_base              = us
+GrateCrystal_Alt_AbraShellder_base        = us
 GrateCrystal11_base                       = us
 GrateCrystal11_vc_base                    = us
 
