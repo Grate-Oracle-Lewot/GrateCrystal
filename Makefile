@@ -55,7 +55,7 @@ GrateCrystal_EvolvedKantoStarters_obj    := $(rom_obj:.o=kantevo.o)
 GrateCrystal_PikachuEevee_obj            := $(rom_obj:.o=letsgo.o)
 GrateCrystal_PikachuSandshrewMarill_obj  := $(rom_obj:.o=mice.o)
 GrateCrystal_JynxMagmarElectabuzz_obj    := $(rom_obj:.o=jinx.o)
-GrateCrystal_HitmonStarters_obj          := $(rom_obj:.o=hitmon.o)
+GrateCrystal_HitmonStarters_obj          := $(rom_obj:.o=hit.o)
 GrateCrystal_NidoranStarters_obj         := $(rom_obj:.o=nido.o)
 GrateCrystal_DoduoMagnemiteDiglett_obj   := $(rom_obj:.o=trio.o)
 GrateCrystal_TaurosMiltankGirafarig_obj  := $(rom_obj:.o=cattle.o)
@@ -98,12 +98,12 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: grate kanto evolve kantevo letsgo mice jinx hitmon nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur
+all: grate kanto evolve kantevo letsgo mice jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur
 grate:        GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedStarters.gbc
@@ -111,7 +111,7 @@ kantevo:      GrateCrystal_EvolvedKantoStarters.gbc
 letsgo:       GrateCrystal_PikachuEevee.gbc
 mice:         GrateCrystal_PikachuSandshrewMarill.gbc
 jinx:         GrateCrystal_JynxMagmarElectabuzz.gbc
-hitmon:       GrateCrystal_HitmonStarters.gbc
+hit:          GrateCrystal_HitmonStarters.gbc
 nido:         GrateCrystal_NidoranStarters.gbc
 trio:         GrateCrystal_DoduoMagnemiteDiglett.gbc
 cattle:       GrateCrystal_TaurosMiltankGirafarig.gbc
@@ -209,7 +209,7 @@ mice:
 	tools/free_space.awk BANK=all GrateCrystal.map
 jinx:
 	tools/free_space.awk BANK=all GrateCrystal.map
-hitmon:
+hit:
 	tools/free_space.awk BANK=all GrateCrystal.map
 nido:
 	tools/free_space.awk BANK=all GrateCrystal.map
@@ -314,7 +314,7 @@ $(foreach obj, $(GrateCrystal_EvolvedKantoStarters_obj), $(eval $(call DEP,$(obj
 $(foreach obj, $(GrateCrystal_PikachuEevee_obj), $(eval $(call DEP,$(obj),$(obj:letsgo.o=.asm))))
 $(foreach obj, $(GrateCrystal_PikachuSandshrewMarill_obj), $(eval $(call DEP,$(obj),$(obj:mice.o=.asm))))
 $(foreach obj, $(GrateCrystal_JynxMagmarElectabuzz_obj), $(eval $(call DEP,$(obj),$(obj:jinx.o=.asm))))
-$(foreach obj, $(GrateCrystal_HitmonStarters_obj), $(eval $(call DEP,$(obj),$(obj:hitmon.o=.asm))))
+$(foreach obj, $(GrateCrystal_HitmonStarters_obj), $(eval $(call DEP,$(obj),$(obj:hit.o=.asm))))
 $(foreach obj, $(GrateCrystal_NidoranStarters_obj), $(eval $(call DEP,$(obj),$(obj:nido.o=.asm))))
 $(foreach obj, $(GrateCrystal_DoduoMagnemiteDiglett_obj), $(eval $(call DEP,$(obj),$(obj:trio.o=.asm))))
 $(foreach obj, $(GrateCrystal_TaurosMiltankGirafarig_obj), $(eval $(call DEP,$(obj),$(obj:cattle.o=.asm))))
