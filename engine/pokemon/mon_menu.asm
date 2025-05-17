@@ -1264,7 +1264,7 @@ PlaceMoveData:
 ; Print move accuracy
 	ld a, [wCurSpecies]
 	ld bc, MOVE_LENGTH
-	ld hl, (Moves + MOVE_EFFECT) - MOVE_LENGTH
+	ld hl, Moves + MOVE_EFFECT
 	call AddNTimes
 	ld a, [hl]
 	ld hl, PerfectAccuracyEffects
