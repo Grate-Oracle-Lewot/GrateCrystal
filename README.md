@@ -432,7 +432,7 @@ make mice - Pikachu, Sandshrew, and Marill. Your Pikachu may be any of its six f
 
 make jinx - Jynx, Magmar, and Electabuzz.
 
-make hitmon - Hitmonlee and Hitmonchan, who will face each other, and Hitmontop, who will face itself.
+make hit - Hitmonlee and Hitmonchan, who will face each other, and Hitmontop, who will face itself.
 
 make nido - Male and female Nidoran, who will face each other, and Sunkern, who will face... Tangela.
 
