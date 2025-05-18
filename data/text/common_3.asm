@@ -1456,8 +1456,13 @@ _MoveReminderNoPay::
 	done
 
 _MoveReminderMoveLearned::
-	text "Enjoy that move!"
+	text "Wasn't that easy?"
 	done
+
+_MoveReminderPaymentReceived::
+	text "Pleasure doing"
+	line "business with you!"
+	prompt
 
 _EggMoveTutorIntro::
 	text "I can teach your"
@@ -1501,6 +1506,14 @@ _EggMoveTutorNoPay::
 	para "Come back with"
 	line "more!"
 	done
+
+_EggMoveTutorMoveLearned::
+	text "Enjoy that move!"
+	done
+
+_EggMoveTutorPaymentReceived::
+	text "Sweet funding…"
+	prompt
 
 _DSTIsThatOKText::
 	text " DST,"
