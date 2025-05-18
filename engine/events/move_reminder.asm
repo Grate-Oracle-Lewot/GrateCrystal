@@ -621,7 +621,7 @@ ChooseMoveToLearn:
 	call GetFarByte
 	ld hl, PerfectAccuracyEffects
 	call IsInByteArray
-	jr nc, .imperfect
+	jr c, .imperfect
 
 	ld a, [wMenuSelection]
 	ld bc, MOVE_LENGTH
