@@ -396,8 +396,9 @@ CheckPokemonAlreadyKnowsMove:
 ChooseMoveToLearn:
 ; Number of items stored in wd002
 ; List of items stored in wd002 + 1
-	farcall FadeOutToWhite
+	call FadeToMenu
 	farcall BlankScreen
+	call UpdateSprites
 	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
