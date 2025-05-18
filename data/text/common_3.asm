@@ -1441,7 +1441,13 @@ _MoveReminderEgg::
 	text "Hey! What am I"
 	line "supposed to teach"
 	cont "an EGG?"
-	done
+	prompt
+
+_MoveReminderNoMoves::
+	text "There are no moves"
+	line "for this #MON"
+	cont "to learn."
+	prompt
 
 _MoveReminderNoPay::
 	text "Sorry, kid, but"
@@ -1449,19 +1455,7 @@ _MoveReminderNoPay::
 	cont "world go round."
 	done
 
-_MoveReminderNoMon::
-	text "You don't have a"
-	line "#MON that can"
-	cont "remember a move."
-	done
-
-_MoveReminderNoMoves::
-	text "There are no moves"
-	line "for this #MON"
-	cont "to learn."
-	done
-
-_MoveReminderLearnedMove::
+_MoveReminderMoveLearned::
 	text "Enjoy that move!"
 	done
 
@@ -1492,7 +1486,13 @@ _EggMoveTutorCancel::
 _EggMoveTutorEgg::
 	text "You think that's"
 	line "funny, do you?"
-	done
+	prompt
+
+_EggMoveTutorNoMoves::
+	text "I'm sorry, this"
+	line "#MON can't learn"
+	cont "any egg moves."
+	prompt
 
 _EggMoveTutorNoPay::
 	text "Hey! You don't have"
@@ -1500,18 +1500,6 @@ _EggMoveTutorNoPay::
 
 	para "Come back with"
 	line "more!"
-	done
-
-_EggMoveTutorNoMon::
-	text "You don't have a"
-	line "#MON that can"
-	cont "learn egg moves."
-	done
-
-_EggMoveTutorNoMoves::
-	text "I'm sorry, this"
-	line "#MON can't learn"
-	cont "any egg moves."
 	done
 
 _DSTIsThatOKText::
