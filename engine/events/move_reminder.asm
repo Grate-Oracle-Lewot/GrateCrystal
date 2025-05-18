@@ -1,185 +1,116 @@
-; stolen from Idain who stole it from Rangi who stole it from TPP (ax)
-; (egg part stolen from Nayru who stole it from the same chain of thieves)
+MoveCost:
+	dt 500
+
+EggMoveCost:
+	dt 5000
+
+CheckCostAgainstPlayerMoney:
+; input: MoveCost or EggMoveCost in hl
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	ret
 
 MoveReminder:
 	ld hl, Text_MoveReminderIntro
 	call PrintText
 	farcall PlaceMoneyTopRight
 	call YesNoBox
-	jp c, .cancel
+	jr c, .cancel
 
-	ld hl, .cost_to_relearn
-	ld de, hMoneyTemp
-	ld bc, 3
-	call CopyBytes
-	ld bc, hMoneyTemp
-	ld de, wMoney
-	farcall CompareMoney
-	jp c, .not_enough_money
+	ld hl, MoveCost
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
 
 	ld hl, Text_MoveReminderWhichMon
 	call PrintText
-	call JoyWaitAorB
 
-	ld b, $6
+.loop_party_menu
 	farcall SelectMonFromParty
 	jr c, .cancel
 
 	ld a, [wCurPartySpecies]
 	cp EGG
-	jr z, .egg
+	jr z, .is_an_egg
 
 	call IsAPokemon
-	jr c, .no_mon
+	jr c, .no_moves_to_learn
 
 	call GetRemindableMoves
-	jr z, .no_moves
+	jr z, .no_moves_to_learn
 
 	ld hl, Text_MoveReminderWhichMove
 	call PrintText
-	call JoyWaitAorB
 
+.loop_move_menu
 	call ChooseMoveToLearn
-	jr c, .skip_learn
+	jr c, .loop_party_menu
 
 	ld a, [wMenuSelection]
-	ld [wd265], a
+	ld [wNamedObjectIndex], a
 	call GetMoveName
-	ld hl, wStringBuffer1
-	ld de, wStringBuffer2
-	ld bc, wStringBuffer2 - wStringBuffer1
-	call CopyBytes
-	ld b, 0
+	call CopyName1
+
 	predef LearnMove
+
 	ld a, b
-	and a
-	jr z, .skip_learn
+	dec a
+	jr z, .move_learned
 
-	ld hl, .cost_to_relearn
-	ld de, hMoneyTemp
-	ld bc, 3
-	call CopyBytes
-	ld bc, hMoneyTemp
-	ld de, wMoney
-	farcall TakeMoney
-	ld de, SFX_TRANSACTION
-	call PlaySFX
-	call WaitSFX
+.recheck_for_moves
+	call GetRemindableMoves
+	jr z, .no_moves_to_learn
+	jr .loop_move_menu
 
-.skip_learn
-	call ReturnToMapWithSpeechTextbox
 .cancel
 	ld hl, Text_MoveReminderCancel
 	jp PrintText
 
-.egg
+.is_an_egg
 	ld hl, Text_MoveReminderEgg
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
+
+.no_moves_to_learn
+	ld hl, Text_MoveReminderNoMoves
+	call PrintText
+	jr .loop_party_menu
 
 .not_enough_money
 	ld hl, Text_MoveReminderNoPay
 	jp PrintText
 
-.no_mon
-	ld hl, Text_MoveReminderNoMon
-	jp PrintText
-
-.no_moves
-	ld hl, Text_MoveReminderNoMoves
-	jp PrintText
-
-.cost_to_relearn
-	dt 500
-
-EggMoveTutor:
-	ld hl, Text_EggMoveTutorIntro
+.move_learned
+	call ReturnToMapWithSpeechTextbox
+	ld hl, Text_MoveReminderMoveLearned
 	call PrintText
+
+.pay_for_move
 	farcall PlaceMoneyTopRight
-	call YesNoBox
-	jp c, .cancel
-
-	ld hl, .cost_to_relearn
+	ld hl, MoveCost
 	ld de, hMoneyTemp
 	ld bc, 3
 	call CopyBytes
-	ld bc, hMoneyTemp
-	ld de, wMoney
-	farcall CompareMoney
-	jp c, .not_enough_money
-
-	ld hl, Text_MoveReminderWhichMon
-	call PrintText
-	call JoyWaitAorB
-
-	ld b, $6
-	farcall SelectMonFromParty
-	jr c, .cancel
-
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
-
-	call IsAPokemon
-	jr c, .no_mon
-
-	call GetEggRemindableMoves
-	jr z, .no_moves
-
-	ld hl, Text_EggMoveTutorWhichMove
-	call PrintText
-	call JoyWaitAorB
-
-	call ChooseMoveToLearn
-	jr c, .skip_learn
-
-	ld a, [wMenuSelection]
-	ld [wd265], a
-	call GetMoveName
-	ld hl, wStringBuffer1
-	ld de, wStringBuffer2
-	ld bc, wStringBuffer2 - wStringBuffer1
-	call CopyBytes
-	ld b, 0
-	predef LearnMove
-	ld a, b
-	and a
-	jr z, .skip_learn
-
-	ld hl, .cost_to_relearn
-	ld de, hMoneyTemp
-	ld bc, 3
-	call CopyBytes
+	call ApplyTilemap
+	call PromptButton
+	call WaitSFX
 	ld bc, hMoneyTemp
 	ld de, wMoney
 	farcall TakeMoney
+	farcall PlaceMoneyTopRight
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
+	ld hl, Text_MoveReminderPaymentReceived
+	call PrintText
 
-.skip_learn
-	call ReturnToMapWithSpeechTextbox
-.cancel
-	ld hl, Text_EggMoveTutorCancel
-	jp PrintText
-
-.egg
-	ld hl, Text_EggMoveTutorEgg
-	jp PrintText
-
-.not_enough_money
-	ld hl, Text_EggMoveTutorNoPay
-	jp PrintText
-
-.no_mon
-	ld hl, Text_EggMoveTutorNoMon
-	jp PrintText
-
-.no_moves
-	ld hl, Text_EggMoveTutorNoMoves
-	jp PrintText
-
-.cost_to_relearn
-	dt 5000
+	ld hl, MoveCost
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
+	jr .recheck_for_moves
 
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
@@ -258,6 +189,104 @@ GetRemindableMoves:
 	ld [wd002], a
 	and a
 	ret
+
+EggMoveTutor:
+	ld hl, Text_EggMoveTutorIntro
+	call PrintText
+	farcall PlaceMoneyTopRight
+	call YesNoBox
+	jr c, .cancel
+
+	ld hl, EggMoveCost
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
+
+	ld hl, Text_EggMoveTutorWhichMon
+	call PrintText
+
+.loop_party_menu
+	farcall SelectMonFromParty
+	jr c, .cancel
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .is_an_egg
+
+	call IsAPokemon
+	jr c, .no_moves_to_learn
+
+	call GetEggRemindableMoves
+	jr z, .no_moves_to_learn
+
+	ld hl, Text_EggMoveTutorWhichMove
+	call PrintText
+
+.loop_move_menu
+	call ChooseMoveToLearn
+	jr c, .loop_party_menu
+
+	ld a, [wMenuSelection]
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	call CopyName1
+
+	predef LearnMove
+
+	ld a, b
+	dec a
+	jr z, .move_learned
+
+.recheck_for_moves
+	call GetEggRemindableMoves
+	jr z, .no_moves_to_learn
+	jr .loop_move_menu
+
+.cancel
+	ld hl, Text_EggMoveTutorCancel
+	jp PrintText
+
+.is_an_egg
+	ld hl, Text_EggMoveTutorEgg
+	call PrintText
+	jr .loop_party_menu
+
+.no_moves_to_learn
+	ld hl, Text_EggMoveTutorNoMoves
+	call PrintText
+	jr .loop_party_menu
+
+.not_enough_money
+	ld hl, Text_EggMoveTutorNoPay
+	jp PrintText
+
+.move_learned
+	call ReturnToMapWithSpeechTextbox
+	ld hl, Text_EggMoveTutorMoveLearned
+	call PrintText
+
+.pay_for_move
+	farcall PlaceMoneyTopRight
+	ld hl, EggMoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	call ApplyTilemap
+	call PromptButton
+	call WaitSFX
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall TakeMoney
+	farcall PlaceMoneyTopRight
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	ld hl, Text_EggMoveTutorPaymentReceived
+	call PrintText
+
+	ld hl, EggMoveCost
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
+	jr .recheck_for_moves
 
 GetEggRemindableMoves:
 ; Get moves remindable by CurPartyMon
@@ -365,18 +394,49 @@ CheckPokemonAlreadyKnowsMove:
 	ret
 
 ChooseMoveToLearn:
-	; Number of items stored in wd002
-	; List of items stored in wd002 + 1
-	call FadeToMenu
+; Number of items stored in wd002
+; List of items stored in wd002 + 1
+	farcall FadeOutToWhite
 	farcall BlankScreen
-	call UpdateSprites
-	ld hl, .MenuDataHeader
+	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
 	ld [wMenuCursorPosition], a
 	ld [wMenuScrollPosition], a
+
+	hlcoord 0,  0
+	lb bc, 9, 18
+	call TextboxBorder
+
+; Adds a gap in the move list's text box border that prevents clipping with some names.
+	hlcoord 2, 0
+	lb bc, 1, 16
+	call ClearBox
+
+; This replaces the tile using the identifier of "$6e" with the fourteenth tile of the "FontBattleExtra gfx" font.
+; Also, only 1 tile will be loaded as loading the entire "FontBattleExtra gfx" font will overwrite the "UP" arrow in the menu.
+	ld de, FontBattleExtra + 14 tiles
+	ld hl, vTiles2 tile $6e
+	lb bc, BANK(FontBattleExtra), 1
+	call Get2bppViaHDMA
+
+	farcall LoadStatsScreenPageTilesGFX
+
+; This displays the Pokémon's species name (not nickname) at the coordinates defined at "hlcoord".
+	xor a
+	ld [wMonType], a
+	ld a, [wCurPartySpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	hlcoord  3, 0
+	call PlaceString
+
+	farcall CopyMonToTempMon
+	hlcoord 14, 0
+	call PrintLevel
+
+; Creates the menu, sets the "B_BUTTON" to cancel and sets up each entry to behave like a TM/HM.
 	call ScrollingMenu
-	call SpeechTextbox
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
 	jr z, .carry
@@ -389,31 +449,36 @@ ChooseMoveToLearn:
 	scf
 	ret
 
-.MenuDataHeader:
-	db $40 ; flags
-	db 1, 1 ; start coords
-	db 11, 19 ; end coords
+; The menu header defines the menu's position and what will be included.
+; The last two values of "menu_coords" will determine where the vertical scroll arrows will be located.
+.MenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 1, 1, SCREEN_WIDTH - 2,  9
 	dw .MenuData
-	db 1 ; default option
+	db 1
 
+; This sets up the menu's contents, including the amount of entries displayed before scrolling is required.
+; Vertical scroll arrows and the move's details will be displayed.
 .MenuData:
-	db $30 ; pointers
-	db 5, SCREEN_WIDTH + 2 ; rows, columns
-	db 1 ; horizontal spacing
-	dbw 0, wd002
-	dba .PrintMoveName
-	dba .PrintDetails
-	dba .PrintMoveDesc
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3
+	db 4, SCREEN_WIDTH + 2
+	db SCROLLINGMENU_ITEMS_NORMAL
+	dba  wd002
+	dba .print_move_name
+	dba .print_pp
+	dba .print_move_details
 
-.PrintMoveName
+; This prints the move's name in the menu.
+; This is purely visual as the actual entry is stored in "wd002".
+.print_move_name
 	push de
 	ld a, [wMenuSelection]
-	ld [wd265], a
+	ld [wNamedObjectIndex], a
 	call GetMoveName
 	pop hl
 	jp PlaceString
 
-.PrintDetails
+.print_pp
 	ld hl, wStringBuffer1
 	ld bc, wStringBuffer2 - wStringBuffer1
 	ld a, " "
@@ -423,116 +488,58 @@ ChooseMoveToLearn:
 	ret z
 	dec a
 	push de
-	dec a
-
-	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_TYPE
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	and TYPE_MASK
-	ld [wd265], a
-	; bc = a * 4
-	ld c, a
-	add a
-	add a
-	ld b, 0
-	ld c, a
-	ld hl, .Types
-	add hl, bc
-	ld d, h
-	ld e, l
-	ld hl, wStringBuffer1 + 3
-	ld bc, 3
-	call PlaceString
-	ld hl, wStringBuffer1 + 6
-	ld [hl], "/"
 
 	ld a, [wMenuSelection]
-	dec a
-	
 	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_POWER
+	ld hl, (Moves + MOVE_PP) - MOVE_LENGTH
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld hl, wStringBuffer1 + 7
-	and a
-	jr z, .no_power
 	ld [wBuffer1], a
+	ld hl, wStringBuffer1 + 9
 	ld de, wBuffer1
-	lb bc, 1, 3
+	lb bc, 1, 2
 	call PrintNum
-	jr .got_power
-.no_power
-	ld de, .ThreeDashes
-	ld bc, 3
-	call PlaceString
-.got_power
-	ld hl, wStringBuffer1 + 7 + 3
-	ld [hl], "/"
-
-	ld a, [wMenuSelection]
-	dec a
-
-; print accuracy
-	ld a, [wMenuSelection]
-	dec a
-	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_ACC
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	call ConvertPercentages
-	ld [wBuffer1], a
 	ld hl, wStringBuffer1 + 11
-	ld de, wBuffer1
-	lb bc, 1, 3
+	ld [hl], "/"
+	ld hl, wStringBuffer1 + 12
 	call PrintNum
+	
 	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
 
 	pop hl
 	ld de, wStringBuffer1
-	jp PlaceString
+	call PlaceString
 
-.ThreeDashes
-	db "---@"
+; This prints the PP gfx before the move's PP.
+	ld bc, 6
+	add hl, bc
+	ld a, $3e
+	ld [hli], a
+	ld [hl], a
+	ret
 
-.Types
-	db "NML@"
-	db "FIT@"
-	db "FLY@"
-	db "PSN@"
-	db "GRD@"
-	db "RCK@"
-	db "ERR@"
-	db "BUG@"
-	db "GST@"
-	db "STL@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "ERR@"
-	db "???@"
-	db "FIR@"
-	db "WTR@"
-	db "GRS@"
-	db "ELC@"
-	db "PSY@"
-	db "ICE@"
-	db "DGN@"
-	db "DRK@"
-	db "FAE@"
+; This adds a text box border line to the description box that replaces a leftover piece of the notch that remains when the cancel option is highlighted.
+.cancel_border_fix
+	hlcoord 0, 9
+	ld [hl], "│"
+	inc hl
+	ret
 
-.PrintMoveDesc
+; This begins the printing of all of the move's details, including the border around the description.
+.print_move_details
+	hlcoord 0, 10
+	lb bc, 6, 18
+	call TextboxBorder
+
+; This code will relative jump to the ".cancel_border_fix" local jump if the cancel entry is highlighted.
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .cancel_border_fix
+
+.print_move_desc
 	push de
-	call SpeechTextbox
 	ld a, [wMenuSelection]
 	inc a
 	pop de
@@ -541,7 +548,142 @@ ChooseMoveToLearn:
 	ld [wCurSpecies], a
 	hlcoord 1, 14
 	predef PrintMoveDescription
-	ret
+
+.print_move_type
+	ld a, [wCurSpecies]
+	ld b, a
+	hlcoord 2, 11
+	predef PrintMoveType
+
+.print_move_stat_strings
+	hlcoord 0, 9
+	ld de, MoveTypeTopString
+	call PlaceString
+	hlcoord 0, 10
+	ld de, MoveTypeString
+	call PlaceString
+	hlcoord 12, 11
+	ld de, MoveAttackString
+	call PlaceString
+	hlcoord  4, 12
+	ld de, MoveChanceString
+	call PlaceString
+	hlcoord 12, 12
+	ld de, MoveAccuracyString
+	call PlaceString
+
+.print_move_category
+	ld a, [wCurSpecies]
+	ld b, a
+	farcall GetMoveCategoryName
+	hlcoord 1, 10
+	ld de, wStringBuffer1
+	call PlaceString
+	hlcoord 1, 11
+	ld [hl], "/"
+	inc hl
+
+.print_move_chance
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_CHANCE) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp 1
+	jr c, .print_move_null_chance
+	Call ConvertPercentages
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord  8, 12
+	call PrintNum
+	jr .print_move_accuracy
+
+; This prints "---" if the move has a status effect chance of "0".
+; This means one of three things:
+; It does not inflict a status effect.
+; It is always successful in inflicting a status effect unless something blocks it.
+; It causes a weather effect.
+.print_move_null_chance
+	ld de, MoveNullValueString
+	ld bc, 3
+	hlcoord  8, 12
+	call PlaceString
+
+.print_move_accuracy
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_EFFECT) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld hl, PerfectAccuracyEffects
+	call IsInByteArray
+	jr nc, .imperfect
+
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	Call ConvertPercentages
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 16, 12
+	call PrintNum
+	jr .print_move_attack
+
+; This prints "---" if the move's effect is in the list of perfect accuracy effects.
+; This list is stored in the home bank, so it can be accessed from anywhere.
+.imperfect
+	ld de, MoveNullValueString
+	ld bc, 3
+	hlcoord 16, 12
+	call PlaceString
+
+.print_move_attack
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_POWER) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp 2
+	jr c, .print_move_null_attack
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 16, 11
+	jp PrintNum
+
+; This prints "---" if the move has an attack of "0".
+; This means that the move does not initially cause damage or is a one hit knockout move.
+.print_move_null_attack
+	hlcoord 16, 11
+	ld de, MoveNullValueString
+	ld bc, 3
+	jp PlaceString
+
+MoveTypeTopString:
+	db "┌────────┐@"
+
+MoveTypeString:
+	db "│        └@"
+
+MoveAttackString:
+	db "ATK/@"
+
+MoveAccuracyString:
+	db "ACC/@"
+
+MoveChanceString:
+	db "EFF/@"
+
+MoveNullValueString:
+	db "---@"
 
 Text_MoveReminderIntro:
 	text_far _MoveReminderIntro
@@ -563,16 +705,20 @@ Text_MoveReminderEgg:
 	text_far _MoveReminderEgg
 	text_end
 
+Text_MoveReminderNoMoves:
+	text_far _MoveReminderNoMoves
+	text_end
+
 Text_MoveReminderNoPay:
 	text_far _MoveReminderNoPay
 	text_end
 
-Text_MoveReminderNoMon:
-	text_far _MoveReminderNoMon
+Text_MoveReminderMoveLearned:
+	text_far _MoveReminderMoveLearned
 	text_end
-	
-Text_MoveReminderNoMoves:
-	text_far _MoveReminderNoMoves
+
+Text_MoveReminderPaymentReceived:
+	text_far _MoveReminderPaymentReceived
 	text_end
 
 Text_EggMoveTutorIntro:
@@ -591,14 +737,18 @@ Text_EggMoveTutorEgg:
 	text_far _EggMoveTutorEgg
 	text_end
 
+Text_EggMoveTutorNoMoves:
+	text_far _EggMoveTutorNoMoves
+	text_end
+
 Text_EggMoveTutorNoPay:
 	text_far _EggMoveTutorNoPay
 	text_end
 
-Text_EggMoveTutorNoMon:
-	text_far _EggMoveTutorNoMon
+Text_EggMoveTutorMoveLearned:
+	text_far _EggMoveTutorMoveLearned
 	text_end
-	
-Text_EggMoveTutorNoMoves:
-	text_far _EggMoveTutorNoMoves
+
+Text_EggMoveTutorPaymentReceived:
+	text_far _EggMoveTutorPaymentReceived
 	text_end
