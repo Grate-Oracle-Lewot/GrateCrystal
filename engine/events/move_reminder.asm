@@ -271,9 +271,6 @@ EggMoveTutor:
 	jr .recheck_for_moves
 
 GetEggRemindableMoves:
-; Get moves remindable by CurPartyMon
-; Returns z if no moves can be reminded.
-
 	ld hl, wd002
 	xor a
 	ld [hli], a
@@ -396,15 +393,6 @@ ChooseMoveToLearn:
 	lb bc, 1, 16
 	call ClearBox
 
-; This replaces the tile using the identifier of "$6e" with the fourteenth tile of the "FontBattleExtra gfx" font.
-; Also, only 1 tile will be loaded as loading the entire "FontBattleExtra gfx" font will overwrite the "UP" arrow in the menu.
-	ld de, FontBattleExtra + 14 tiles
-	ld hl, vTiles2 tile $6e
-	lb bc, BANK(FontBattleExtra), 1
-	call Get2bppViaHDMA
-
-	farcall LoadStatsScreenPageTilesGFX
-
 ; This displays the Pokémon's species name (not nickname) at the coordinates defined at "hlcoord".
 	xor a
 	ld [wMonType], a
@@ -414,9 +402,14 @@ ChooseMoveToLearn:
 	hlcoord  3, 0
 	call PlaceString
 
+; Displays the level icon (even if at Lv100) and the mon's level at hlcoord.
 	farcall CopyMonToTempMon
 	hlcoord 14, 0
-	call PrintLevel
+	ld a, [wTempMonLevel]
+	ld [hl], "<EVO_LV>"
+	inc hl
+	ld c, 3
+	call Print8BitNumLeftAlign
 
 ; Creates the menu, sets the "B_BUTTON" to cancel and sets up each entry to behave like a TM/HM.
 	call ScrollingMenu
