@@ -726,6 +726,10 @@ Text_EggMoveTutorIntro:
 	text_far _EggMoveTutorIntro
 	text_end
 
+Text_EggMoveTutorWhichMon:
+	text_far _EggMoveTutorWhichMon
+	text_end
+
 Text_EggMoveTutorWhichMove:
 	text_far _EggMoveTutorWhichMove
 	text_end
