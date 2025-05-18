@@ -1423,6 +1423,7 @@ _MoveReminderIntro::
 	done
 
 _MoveReminderWhichMon::
+_EggMoveTutorWhichMon::
 	text "Which #MON are"
 	line "we working with?"
 	done
