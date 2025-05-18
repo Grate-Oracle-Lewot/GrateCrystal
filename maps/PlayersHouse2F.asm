@@ -39,6 +39,14 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+	opentext
+	givepoke MEGANIUM, 100
+	givepoke TYPHLOSION, 100
+	givepoke FERALIGATR, 100
+	closetext
+	warp CIANWOOD_CITY, 5, 18
+	end
+
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
