@@ -240,9 +240,9 @@ beast:
 mew:
 	tools/free_space.awk BANK=all GrateCrystal_MewDittoMewtwoStarters.map
 dragon:
-	tools/free_space.awk BANK=all GrateCrystalHoOhLugiaStarters.map
+	tools/free_space.awk BANK=all GrateCrystal_HoOhLugiaStarters.map
 onion:
-	tools/free_space.awk BANK=all GrateCrystalCelebiWobbuffetStarters.map
+	tools/free_space.awk BANK=all GrateCrystal_CelebiWobbuffetStarters.map
 miss:
 	tools/free_space.awk BANK=all GrateCrystal_Alt_MissingNo.map
 no:
