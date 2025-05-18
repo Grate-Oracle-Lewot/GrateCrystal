@@ -1461,6 +1461,10 @@ _MoveReminderNoMoves::
 	cont "to learn."
 	done
 
+_MoveReminderLearnedMove::
+	text "Enjoy that move!"
+	done
+
 _EggMoveTutorIntro::
 	text "I can teach your"
 	line "#MON moves that"
