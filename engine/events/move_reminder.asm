@@ -42,9 +42,6 @@ MoveReminder:
 	call GetRemindableMoves
 	jr z, .no_moves_to_learn
 
-	ld hl, Text_MoveReminderWhichMove
-	call PrintText
-
 .loop_move_menu
 	call ChooseMoveToLearn
 	jr c, .loop_party_menu
@@ -91,8 +88,6 @@ MoveReminder:
 	ld bc, 3
 	call CopyBytes
 	call ApplyTilemap
-	call PromptButton
-	call WaitSFX
 	ld bc, hMoneyTemp
 	ld de, wMoney
 	farcall TakeMoney
@@ -105,7 +100,7 @@ MoveReminder:
 
 	ld hl, MoveCost
 	call CheckCostAgainstPlayerMoney
-	jr c, .not_enough_money
+	jr c, .cancel
 	jr .recheck_for_moves
 
 GetRemindableMoves:
@@ -214,9 +209,6 @@ EggMoveTutor:
 	call GetEggRemindableMoves
 	jr z, .no_moves_to_learn
 
-	ld hl, Text_EggMoveTutorWhichMove
-	call PrintText
-
 .loop_move_menu
 	call ChooseMoveToLearn
 	jr c, .loop_party_menu
@@ -263,8 +255,6 @@ EggMoveTutor:
 	ld bc, 3
 	call CopyBytes
 	call ApplyTilemap
-	call PromptButton
-	call WaitSFX
 	ld bc, hMoneyTemp
 	ld de, wMoney
 	farcall TakeMoney
@@ -277,7 +267,7 @@ EggMoveTutor:
 
 	ld hl, EggMoveCost
 	call CheckCostAgainstPlayerMoney
-	jr c, .not_enough_money
+	jr c, .cancel
 	jr .recheck_for_moves
 
 GetEggRemindableMoves:
