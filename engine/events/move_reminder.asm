@@ -85,10 +85,6 @@ MoveReminder:
 
 .move_learned
 	call ReturnToMapWithSpeechTextbox
-	ld hl, Text_MoveReminderMoveLearned
-	call PrintText
-
-.pay_for_move
 	farcall PlaceMoneyTopRight
 	ld hl, MoveCost
 	ld de, hMoneyTemp
@@ -261,10 +257,6 @@ EggMoveTutor:
 
 .move_learned
 	call ReturnToMapWithSpeechTextbox
-	ld hl, Text_EggMoveTutorMoveLearned
-	call PrintText
-
-.pay_for_move
 	farcall PlaceMoneyTopRight
 	ld hl, EggMoveCost
 	ld de, hMoneyTemp
