@@ -1426,12 +1426,12 @@ _MoveReminderWhichMon::
 _EggMoveTutorWhichMon::
 	text "Which #MON are"
 	line "we working with?"
-	done
+	prompt
 
 _MoveReminderWhichMove::
 	text "Which move should"
 	line "it remember?"
-	done
+	prompt
 
 _MoveReminderCancel::
 	text "Remember to come"
@@ -1445,9 +1445,9 @@ _MoveReminderEgg::
 	prompt
 
 _MoveReminderNoMoves::
-	text "There are no moves"
-	line "for this #MON"
-	cont "to learn."
+	text "Oh, that #MON"
+	line "has no moves to"
+	cont "remember."
 	prompt
 
 _MoveReminderNoPay::
@@ -1455,15 +1455,6 @@ _MoveReminderNoPay::
 	line "money makes the"
 	cont "world go round."
 	done
-
-_MoveReminderMoveLearned::
-	text "Wasn't that easy?"
-	done
-
-_MoveReminderPaymentReceived::
-	text "Pleasure doing"
-	line "business with you!"
-	prompt
 
 _EggMoveTutorIntro::
 	text "I can teach your"
@@ -1482,7 +1473,7 @@ _EggMoveTutorIntro::
 _EggMoveTutorWhichMove::
 	text "Which egg move"
 	line "should it learn?"
-	done
+	prompt
 
 _EggMoveTutorCancel::
 	text "Please come back!"
@@ -1508,12 +1499,9 @@ _EggMoveTutorNoPay::
 	line "more!"
 	done
 
-_EggMoveTutorMoveLearned::
-	text "Enjoy that move!"
-	done
-
+_MoveReminderPaymentReceived::
 _EggMoveTutorPaymentReceived::
-	text "Sweet funding…"
+	text "Enjoy that move!"
 	prompt
 
 _DSTIsThatOKText::
