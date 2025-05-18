@@ -41,8 +41,8 @@ PlayersHousePosterScript:
 PlayersHouseRadioScript:
 	opentext
 	givepoke MEGANIUM, 100
-	givepoke TYPHLOSION, 100
-	givepoke FERALIGATR, 100
+	givepoke SMEARGLE, 5
+	giveegg TOGEPI, EGG_LEVEL
 	closetext
 	warp CIANWOOD_CITY, 5, 18
 	end
