@@ -706,10 +706,6 @@ Text_MoveReminderNoPay:
 	text_far _MoveReminderNoPay
 	text_end
 
-Text_MoveReminderMoveLearned:
-	text_far _MoveReminderMoveLearned
-	text_end
-
 Text_MoveReminderPaymentReceived:
 	text_far _MoveReminderPaymentReceived
 	text_end
@@ -740,10 +736,6 @@ Text_EggMoveTutorNoMoves:
 
 Text_EggMoveTutorNoPay:
 	text_far _EggMoveTutorNoPay
-	text_end
-
-Text_EggMoveTutorMoveLearned:
-	text_far _EggMoveTutorMoveLearned
 	text_end
 
 Text_EggMoveTutorPaymentReceived:
