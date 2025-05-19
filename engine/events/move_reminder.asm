@@ -472,16 +472,11 @@ ChooseMoveToLearn:
 	ld a, BANK(Moves)
 	call GetFarByte
 	ld [wBuffer1], a
-	ld hl, wStringBuffer1 + 9
+	ld hl, wStringBuffer1 + 12
 	ld de, wBuffer1
 	lb bc, 1, 2
 	call PrintNum
-	ld hl, wStringBuffer1 + 11
-	ld [hl], "/"
-	ld hl, wStringBuffer1 + 12
-	call PrintNum
-	
-	ld hl, wStringBuffer1 + 14
+	ld hl, wStringBuffer1 + 13
 	ld [hl], "@"
 
 	pop hl
@@ -669,10 +664,6 @@ Text_MoveReminderWhichMon:
 	text_far _MoveReminderWhichMon
 	text_end
 
-Text_MoveReminderWhichMove:
-	text_far _MoveReminderWhichMove
-	text_end
-
 Text_MoveReminderCancel:
 	text_far _MoveReminderCancel
 	text_end
@@ -699,10 +690,6 @@ Text_EggMoveTutorIntro:
 
 Text_EggMoveTutorWhichMon:
 	text_far _EggMoveTutorWhichMon
-	text_end
-
-Text_EggMoveTutorWhichMove:
-	text_far _EggMoveTutorWhichMove
 	text_end
 
 Text_EggMoveTutorCancel:
