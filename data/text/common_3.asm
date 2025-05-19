@@ -1428,11 +1428,6 @@ _EggMoveTutorWhichMon::
 	line "we working with?"
 	prompt
 
-_MoveReminderWhichMove::
-	text "Which move should"
-	line "it remember?"
-	prompt
-
 _MoveReminderCancel::
 	text "Remember to come"
 	line "back!"
@@ -1469,11 +1464,6 @@ _EggMoveTutorIntro::
 
 	para "What do you say?"
 	done
-
-_EggMoveTutorWhichMove::
-	text "Which egg move"
-	line "should it learn?"
-	prompt
 
 _EggMoveTutorCancel::
 	text "Please come back!"
