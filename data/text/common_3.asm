@@ -1492,7 +1492,7 @@ _EggMoveTutorNoPay::
 _MoveReminderPaymentReceived::
 _EggMoveTutorPaymentReceived::
 	text "Enjoy that move!"
-	prompt
+	done
 
 _DSTIsThatOKText::
 	text " DST,"
