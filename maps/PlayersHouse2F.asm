@@ -39,14 +39,6 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	opentext
-	givepoke MEGANIUM, 100
-	givepoke SMEARGLE, 5
-	giveegg TOGEPI, EGG_LEVEL
-	closetext
-	warp CIANWOOD_CITY, 5, 18
-	end
-
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
