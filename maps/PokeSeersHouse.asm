@@ -9,7 +9,7 @@ PokeSeersHouse_MapScripts:
 SeerScript:
 	faceplayer
 	opentext
-	special EggMoveTutor
+	special MoveReminder
 	waitbutton
 	closetext
 	end
