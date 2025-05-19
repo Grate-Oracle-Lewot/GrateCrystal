@@ -375,9 +375,8 @@ CheckPokemonAlreadyKnowsMove:
 ChooseMoveToLearn:
 ; Number of items stored in wd002
 ; List of items stored in wd002 + 1
-	call FadeToMenu
+	farcall FadeOutPalettes
 	farcall BlankScreen
-	call UpdateSprites
 	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
@@ -404,7 +403,7 @@ ChooseMoveToLearn:
 
 ; Displays the level icon (even if at Lv100) and the mon's level at hlcoord.
 	farcall CopyMonToTempMon
-	hlcoord 14, 0
+	hlcoord 13, 0
 	ld a, [wTempMonLevel]
 	ld [hl], "<EVO_LV>"
 	inc hl
@@ -472,11 +471,16 @@ ChooseMoveToLearn:
 	ld a, BANK(Moves)
 	call GetFarByte
 	ld [wBuffer1], a
-	ld hl, wStringBuffer1 + 12
+	ld hl, wStringBuffer1 + 9
 	ld de, wBuffer1
 	lb bc, 1, 2
 	call PrintNum
-	ld hl, wStringBuffer1 + 13
+	ld hl, wStringBuffer1 + 11
+	ld [hl], "/"
+	ld hl, wStringBuffer1 + 12
+	call PrintNum
+	
+	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
 
 	pop hl
