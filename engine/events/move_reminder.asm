@@ -39,8 +39,7 @@ MoveReminder:
 	call IsAPokemon
 	jr c, .no_moves_to_learn
 
-	call GetRemindableMoves
-	jr z, .no_moves_to_learn
+	jr .recheck_for_moves
 
 .loop_move_menu
 	call ChooseMoveToLearn
@@ -209,8 +208,7 @@ EggMoveTutor:
 	call IsAPokemon
 	jr c, .no_moves_to_learn
 
-	call GetEggRemindableMoves
-	jr z, .no_moves_to_learn
+	jr .recheck_for_moves
 
 .loop_move_menu
 	call ChooseMoveToLearn
@@ -381,7 +379,7 @@ CheckPokemonAlreadyKnowsMove:
 ChooseMoveToLearn:
 ; Number of items stored in wd002
 ; List of items stored in wd002 + 1
-	farcall FadeOutPalettes
+;	farcall FadeOutPalettes
 	farcall BlankScreen
 	ld hl, .MenuHeader
 	call CopyMenuHeader
