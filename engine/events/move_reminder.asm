@@ -83,6 +83,9 @@ MoveReminder:
 .move_learned
 	call ReturnToMapWithSpeechTextbox
 	farcall PlaceMoneyTopRight
+	ld c, 10
+	call DelayFrames
+
 	ld hl, MoveCost
 	ld de, hMoneyTemp
 	ld bc, 3
@@ -250,6 +253,9 @@ EggMoveTutor:
 .move_learned
 	call ReturnToMapWithSpeechTextbox
 	farcall PlaceMoneyTopRight
+	ld c, 10
+	call DelayFrames
+
 	ld hl, EggMoveCost
 	ld de, hMoneyTemp
 	ld bc, 3
