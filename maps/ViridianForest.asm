@@ -154,7 +154,7 @@ ViridianForestLassText:
 	text "Fire burns grass,"
 	line "grass absorbs"
 	cont "water, and water"
-	line "puts out fire."
+	cont "puts out fire."
 
 	para "Oh, you already"
 	line "knew that?"
