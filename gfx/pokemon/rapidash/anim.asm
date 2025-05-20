@@ -7,7 +7,7 @@
 	frame 1, 05
 	frame 0, 07
 	setrepeat 4
-	frame 2, 12
-	frame 3, 12
+	frame 2, 10
+	frame 3, 10
 	dorepeat 9
 	endanim
