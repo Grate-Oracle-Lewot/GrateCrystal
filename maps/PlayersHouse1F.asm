@@ -44,7 +44,6 @@ MeetMomScript:
 	setflag ENGINE_PHONE_CARD
 	addcellnum PHONE_MOM
 	setscene SCENE_FINISHED
-	giveitem POCKET_PC
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	writetext MomGivesPokegearText
