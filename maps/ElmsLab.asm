@@ -1348,7 +1348,6 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	giveitem POCKET_PC
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
