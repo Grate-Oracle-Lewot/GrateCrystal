@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
 	db 108 ; base exp
-	db PP_UP, TM_SKETCH ; items
+	db MYSTERYBERRY, PP_UP ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/smeargle/front.dimensions"
