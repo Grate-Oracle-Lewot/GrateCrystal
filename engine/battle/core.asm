@@ -4919,12 +4919,6 @@ PrintPlayerHUD:
 	pop hl
 	pop bc
 	jr nz, .place_floaticon
-	ld a, b
-	cp " "
-	jr nz, .copy_level ; male or female
-	dec hl ; genderless
-
-.copy_level
 	ld a, [wBattleMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
@@ -5003,11 +4997,6 @@ DrawEnemyHUD:
 	pop hl
 	pop bc
 	jr nz, .skip_level
-	ld a, b
-	cp " "
-	jr nz, .print_level
-	dec hl
-.print_level
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
