@@ -14,5 +14,5 @@
 	dn EGG_GROUND, EGG_HUMANSHAPE ; egg groups
 
 	; tm/hm learnset
-	tmhm SKETCH
+	tmhm
 	; end
