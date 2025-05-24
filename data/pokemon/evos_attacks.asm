@@ -1186,11 +1186,11 @@ SlowbroEvosAttacks:
 MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
-	db 1, SWIFT
-	db 6, THUNDERSHOCK
-	db 11, SUPERSONIC
+	db 1, THUNDERSHOCK
+	db 6, SUPERSONIC
+	db 11, THUNDER_WAVE
 	db 16, SONICBOOM
-	db 21, THUNDER_WAVE
+	db 21, METAL_SOUND
 	db 23, METAL_CLAW
 	db 27, LOCK_ON
 	db 33, DAZZLY_GLEAM
@@ -1200,11 +1200,11 @@ MagnemiteEvosAttacks:
 
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SWIFT
-	db 6, THUNDERSHOCK
-	db 11, SUPERSONIC
+	db 1, THUNDERSHOCK
+	db 6, SUPERSONIC
+	db 11, THUNDER_WAVE
 	db 16, SONICBOOM
-	db 21, THUNDER_WAVE
+	db 21, METAL_SOUND
 	db 23, METAL_CLAW
 	db 27, LOCK_ON
 	db 29, TRI_ATTACK
@@ -1493,7 +1493,7 @@ VoltorbEvosAttacks:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
-	db 9, SCREECH
+	db 9, METAL_SOUND
 	db 13, SPARK
 	db 17, SONICBOOM
 	db 23, SELFDESTRUCT
@@ -1508,7 +1508,7 @@ VoltorbEvosAttacks:
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
-	db 9, SCREECH
+	db 9, METAL_SOUND
 	db 13, SPARK
 	db 17, SONICBOOM
 	db 23, SELFDESTRUCT
@@ -3179,6 +3179,7 @@ SteelixEvosAttacks:
 	db 2, HARDEN
 	db 5, RAGE
 	db 10, SCREECH
+	db 10, METAL_SOUND
 	db 14, ROCK_THROW
 	db 23, MAGNITUDE
 	db 27, IRON_HEAD
