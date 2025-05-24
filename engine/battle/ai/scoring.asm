@@ -221,6 +221,8 @@ AI_Setup:
 
 	cp EFFECT_DEFENSE_CURL
 	jr z, .statup
+	cp EFFECT_FOCUS_ENERGY
+	jr z, .statup
 
 	cp EFFECT_ATTACK_UP
 	jr c, .checkmove
@@ -833,6 +835,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_DefenseDown
 	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
 	dbw EFFECT_SP_ATK_DOWN_2,    AI_Smart_SpAtkDown
+	dbw EFFECT_SP_DEF_DOWN_2,    AI_Smart_SpDefDown
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
@@ -1463,6 +1466,13 @@ AI_Smart_BatonPass:
 ; Teleport, Baton Pass.
 ; The AI_Basic layer dismisses these moves if the enemy has only one Pokemon [remaining].
 
+; Discourage this move if the enemy has Spikes around them. Continue regardless.
+	ld a, [wEnemyScreens]
+	bit SCREENS_SPIKES, a
+	jr z, .no_spikes
+	inc [hl]
+
+.no_spikes
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 	push hl
@@ -3352,6 +3362,8 @@ AI_Smart_DefenseCurl:
 	ret
 
 AI_Smart_Focus_Energy:
+; The AI_Setup layer counts Focus Energy as a stat-up move.
+
 ; Dismiss this move if all of the following conditions meet:
 ;  -Enemy is already pumped
 ;  -Enemy's Attack stage is equal to MAX_STAT_LEVEL
@@ -3386,7 +3398,6 @@ AI_Smart_SpAtkDown:
 	jr AI_Smart_StatDown
 
 AI_Smart_SpDefDown:
-; No move exists with EFFECT_SP_DEF_DOWN_2, only EFFECT_SP_DEF_DOWN.
 	ld a, [wPlayerSDefLevel]
 	; fallthrough
 
