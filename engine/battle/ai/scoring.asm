@@ -1467,6 +1467,62 @@ AI_Smart_UTurn:
 ; Do nothing if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
 	ret c
+
+; Greatly discourage this move if the enemy is X Accuracied, but continue further checks.
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	jr nz, .greatly_discourage
+
+; Greatly discourage this move if the enemy's Def, SpAtk, SpDef, or Speed is above +1, but continue further checks.
+; Attack excluded because U-Turn is physical. Evasion excluded so I don't have to check for Foresight.
+	ld a, [wEnemyDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .greatly_discourage
+
+	ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .greatly_discourage
+
+	ld a, [wEnemySDefLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .greatly_discourage
+
+; Only one stage of discouragement if Speed is above +1.
+	ld a, [wEnemySpdLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr c, .discourage
+	jr .continue
+
+.greatly_discourage
+	inc [hl]
+.discourage
+	inc [hl]
+
+.continue
+; Greatly encourage this move if the enemy has a volatile status condition.
+; Regardless, execute AI_Smart_BatonPass.
+	ld a, [wEnemySubStatus1]
+	and 1 << SUBSTATUS_NIGHTMARE | 1 << SUBSTATUS_CURSE | 1 << SUBSTATUS_PERISH | 1 << SUBSTATUS_IN_LOVE
+	jr nz, .greatly_encourage
+
+	ld a, [wEnemySubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	jr nz, .greatly_encourage
+
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_LEECH_SEED, a
+	jr nz, .greatly_encourage
+
+; Only one stage of encouragement if badly poisoned.
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr nz, .encourage
+	jr AI_Smart_BatonPass
+
+.greatly_encourage
+	dec [hl]
+.encourage
+	dec [hl]
 	; fallthrough
 
 AI_Smart_BatonPass:
