@@ -882,6 +882,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,          AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
+	dbw EFFECT_U_TURN,           AI_Smart_UTurn
 	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
@@ -1451,16 +1452,22 @@ AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 ; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
 
-; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass.
+; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass, skipping enemy Spikes check.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	jr z, AI_Smart_BatonPass
+	jr z, AI_Smart_BatonPass.no_spikes
 
 ; 80% chance to encourage this move if the player has Spikes around them.
 	call AI_80_20
 	ret c
 	dec [hl]
 	ret
+
+AI_Smart_UTurn:
+; Do nothing if the enemy has only one Pokemon [remaining].
+	call AICheckLastEnemyMon
+	ret c
+	; fallthrough
 
 AI_Smart_BatonPass:
 ; Teleport, Baton Pass.
@@ -1483,10 +1490,6 @@ AI_Smart_BatonPass:
 	ret c
 	inc [hl]
 	ret
-
-AI_Smart_MorningSun:
-	ld b, MORN_F
-	jr AI_Smart_TimeWeatherHeal
 
 AI_Smart_Synthesis:
 ; Encourage this move in Harsh Sunlight.
