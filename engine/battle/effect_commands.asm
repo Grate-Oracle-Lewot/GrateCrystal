@@ -4549,20 +4549,19 @@ TryLowerStat:
 	ret z
 
 .not_min
+	call BattleCommand_SwitchTurn
+
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .Player
+	jr nz, .Player
 
-	call BattleCommand_SwitchTurn
 	call CalcPlayerStats
-	call BattleCommand_SwitchTurn
 	jr .end
 
 .Player:
-	call BattleCommand_SwitchTurn
 	call CalcEnemyStats
-	call BattleCommand_SwitchTurn
 .end
+	call BattleCommand_SwitchTurn
 	ld a, 1
 	and a
 	ret
@@ -6280,20 +6279,8 @@ INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
-BattleCommand_HealMorn:
-	ld b, MORN_F
-	jr BattleCommand_TimeBasedHealContinue
-
-BattleCommand_HealDay:
-	ld b, DAY_F
-	jr BattleCommand_TimeBasedHealContinue
-
-BattleCommand_HealNite:
-	ld b, NITE_F
-	; fallthrough
-
-BattleCommand_TimeBasedHealContinue:
-; Time- and weather-sensitive heal.
+BattleCommand_Synthesis:
+; Weather-sensitive heal.
 
 	ld hl, wBattleMonMaxHP
 	ld de, wBattleMonHP
@@ -6306,7 +6293,7 @@ BattleCommand_TimeBasedHealContinue:
 .start
 ; Index for .Multipliers
 ; Default restores half max HP.
-	ld c, 2
+	ld c, 1
 
 ; Don't bother healing if HP is already full.
 	push bc
@@ -6314,17 +6301,6 @@ BattleCommand_TimeBasedHealContinue:
 	pop bc
 	jr z, .Full
 
-; Don't factor in time of day in link battles.
-	ld a, [wLinkMode]
-	and a
-	jr nz, .Weather
-
-	ld a, [wTimeOfDay]
-	cp b
-	jr z, .Weather
-	dec c ; double
-
-.Weather:
 	ld a, [wBattleWeather]
 	cp WEATHER_NONE
 	jr z, .Heal
@@ -6366,7 +6342,6 @@ BattleCommand_TimeBasedHealContinue:
 	jp StdBattleTextbox
 
 .Multipliers:
-	dw GetEighthMaxHP
 	dw GetQuarterMaxHP
 	dw GetHalfMaxHP
 	dw GetMaxHP
