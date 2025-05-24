@@ -246,9 +246,9 @@ Moves:
 	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,        PHYSICAL,  80, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,        PHYSICAL, 100, 30,  10
 	move VITAL_THROW,  EFFECT_ALWAYS_HIT,         75, FIGHTING,     PHYSICAL, 100, 15,   0
-	move MORNING_SUN,  EFFECT_MORNING_SUN,         0, FIRE,         STATUS,   100,  5,   0
+	move U_TURN,       EFFECT_U_TURN,             70, BUG,          PHYSICAL, 100, 15,   0
 	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,        STATUS,   100,  5,   0
-	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, FAIRY,        STATUS,   100,  5,   0
+	move METAL_SOUND,  EFFECT_SP_DEF_DOWN_2,       0, STEEL,        STATUS,   100, 20,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       70, CURSE_TYPE,   SPECIAL,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        110, FIGHTING,     PHYSICAL,  84,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,       SPECIAL,  100, 25,  20
