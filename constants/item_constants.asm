@@ -272,7 +272,7 @@ TM01 EQU const_value
 	add_tm SHADOW_CLAW  ; f3
 	add_tm TELEPORT     ; f4
 	add_tm SCALD        ; f5
-	add_tm SKETCH       ; f6
+	add_tm U_TURN       ; f6
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
