@@ -234,9 +234,9 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw UTurnDescription
 	dw SynthesisDescription
-	dw MoonlightDescription
+	dw MetalSoundDescription
 	dw HiddenPowerDescription
 	dw CrossChopDescription
 	dw TwisterDescription
@@ -1195,17 +1195,17 @@ VitalThrowDescription:
 	db   "A slow throw that"
 	next "never misses.@"
 
-MorningSunDescription:
-	db   "Restores more HP"
-	next "in the morning.@"
+UTurnDescription:
+	db   "Attacks and"
+	next "switches #MON.@"
 
 SynthesisDescription:
 	db   "Restores more HP"
-	next "in the daytime.@"
+	next "in the sun.@"
 
-MoonlightDescription:
-	db   "Restores more HP"
-	next "at night.@"
+MetalSoundDescription:
+	db   "Sharply reduces"
+	next "the foe's SPCL.DEF.@"
 
 HiddenPowerDescription:
 	db   "The type varies"
