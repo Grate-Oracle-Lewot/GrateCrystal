@@ -6,7 +6,7 @@
 	db BUG, FLYING ; type
 	db 75 ; catch rate
 	db 147 ; base exp
-	db SILVERPOWDER, BRIGHTPOWDER ; items
+	db SILVERPOWDER, TM_U_TURN ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/yanma/front.dimensions"
