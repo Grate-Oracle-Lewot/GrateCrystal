@@ -363,6 +363,7 @@ KoffingEggMoves:
 	db -1 ; end
 
 RhyhornEggMoves:
+	db METAL_SOUND
 	db DRAGON_PULSE
 	db CRUNCH
 	db REVERSAL
@@ -463,6 +464,7 @@ PorygonEggMoves:
 	db BODY_SLAM
 	db MIRROR_COAT
 	db TRANSFORM
+	db METAL_SOUND
 	db CONVERSION2
 	db -1 ; end
 
@@ -861,6 +863,7 @@ MantineEggMoves:
 SkarmoryEggMoves:
 	db IRON_HEAD
 	db SPIKE_CANNON
+	db METAL_SOUND
 	db TWISTER
 	db SILVER_WIND
 	db SONICBOOM
@@ -944,6 +947,7 @@ JirkEggMoves:
 	db DESTINY_BOND
 	db SPIKES
 	db WHIRLWIND
+	db SCREECH
 	db -1 ; end
 
 CastaweighEggMoves:
@@ -965,6 +969,7 @@ CattleEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
+	db METAL_SOUND
 	db POWER_GEM
 	db BIDE
 	db MEAN_LOOK
