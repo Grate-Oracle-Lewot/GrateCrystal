@@ -551,7 +551,6 @@ HoothootEggMoves:
 	db MIRROR_MOVE
 	db LIGHT_SCREEN
 	db SPITE
-	db CONFUSE_RAY
 	db WHIRLWIND
 	db SKY_ATTACK
 	db EGG_BOMB
