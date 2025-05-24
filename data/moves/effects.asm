@@ -1724,11 +1724,26 @@ RapidSpin:
 	kingsrock
 	endmove
 
-MorningSun:
+UTurn:
 	checkobedience
 	usedmovetext
 	doturn
-	healmorn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkcontact
+	checkfaint
+	buildopponentrage
+	kingsrock
+	uturn
 	endmove
 
 Synthesis:
@@ -1736,13 +1751,6 @@ Synthesis:
 	usedmovetext
 	doturn
 	healday
-	endmove
-
-Moonlight:
-	checkobedience
-	usedmovetext
-	doturn
-	healnite
 	endmove
 
 HiddenPower:
