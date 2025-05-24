@@ -192,7 +192,7 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 8 ; # items
+	db 9 ; # items
 	db RAGECANDYBAR
 	db GREAT_BALL
 	db MOOMOO_MILK
@@ -200,6 +200,7 @@ MartMahogany2:
 	db SUPER_REPEL
 	db REVIVE
 	db BLUESKY_MAIL
+	db TM_U_TURN
 	db TM_HAIL
 	db -1 ; end
 
