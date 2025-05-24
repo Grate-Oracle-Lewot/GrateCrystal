@@ -516,7 +516,7 @@ ClefairyEvosAttacks:
 	db 19, MINIMIZE
 	db 22, LIGHT_SCREEN
 	db 26, METRONOME
-	db 38, MOONLIGHT
+	db 38, RECOVER
 	db 44, DAZZLY_GLEAM
 	db 53, MOONBLAST
 	db 0 ; no more level-up moves
@@ -526,7 +526,7 @@ ClefableEvosAttacks:
 	db 1, SING
 	db 1, DOUBLESLAP
 	db 1, METRONOME
-	db 1, MOONLIGHT
+	db 1, RECOVER
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -625,7 +625,7 @@ OddishEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 23, SMOG
 	db 27, MEGA_DRAIN
-	db 32, MOONLIGHT
+	db 32, SYNTHESIS
 	db 37, SILVER_WIND
 	db 39, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -642,7 +642,7 @@ GloomEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 24, SMOG
 	db 29, MEGA_DRAIN
-	db 35, MOONLIGHT
+	db 35, SYNTHESIS
 	db 42, SILVER_WIND
 	db 44, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -2467,7 +2467,7 @@ HoothootEvosAttacks:
 	db 22, REFLECT
 	db 28, TAKE_DOWN
 	db 34, AIR_SLASH
-	db 40, MOONLIGHT
+	db 40, CONFUSE_RAY
 	db 48, MOONBLAST
 	db 54, NIGHT_TERROR
 	db 0 ; no more level-up moves
@@ -2484,7 +2484,7 @@ NoctowlEvosAttacks:
 	db 25, REFLECT
 	db 33, NIGHT_SHADE
 	db 41, AIR_SLASH
-	db 50, MOONLIGHT
+	db 50, CONFUSE_RAY
 	db 57, MOONBLAST
 	db 64, NIGHT_TERROR
 	db 0 ; no more level-up moves
@@ -2496,7 +2496,7 @@ LedybaEvosAttacks:
 	db 1, SUPERSONIC
 	db 8, MACH_PUNCH
 	db 8, AGILITY
-	db 15, MORNING_SUN
+	db 15, U_TURN
 	db 22, LIGHT_SCREEN
 	db 22, REFLECT
 	db 22, SAFEGUARD
@@ -2515,7 +2515,7 @@ LedianEvosAttacks:
 	db 1, SUPERSONIC
 	db 8, MACH_PUNCH
 	db 8, AGILITY
-	db 15, MORNING_SUN
+	db 15, U_TURN
 	db 24, LIGHT_SCREEN
 	db 24, REFLECT
 	db 24, SAFEGUARD
@@ -2630,7 +2630,7 @@ LanturnEvosAttacks:
 ;	db 17, MINIMIZE
 ;	db 21, LIGHT_SCREEN
 ;	db 24, METRONOME
-;	db 30, MOONLIGHT
+;	db 30, RECOVER
 ;	db 37, DAZZLY_GLEAM
 ;	db 42, MOONBLAST
 ;	db 0 ; no more level-up moves
@@ -2709,7 +2709,7 @@ TogepiEvosAttacks:
 	db 25, BATON_PASS
 	db 31, SAFEGUARD
 	db 38, EGG_BOMB
-	db 42, MORNING_SUN
+	db 42, SOFTBOILED
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -2724,7 +2724,7 @@ TogeticEvosAttacks:
 	db 25, BATON_PASS
 	db 31, SAFEGUARD
 	db 38, AIR_SLASH
-	db 42, MORNING_SUN
+	db 42, SOFTBOILED
 	db 50, SKY_ATTACK
 	db 60, SILVER_WIND
 	db 0 ; no more level-up moves
@@ -2802,8 +2802,7 @@ BellossomEvosAttacks:
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
 	db 35, EARTH_POWER
-	db 50, MORNING_SUN
-	db 50, MOONLIGHT
+	db 50, SYNTHESIS
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
@@ -2926,7 +2925,7 @@ SunkernEvosAttacks:
 	db 4, GROWTH
 	db 10, MEGA_DRAIN
 	db 19, SUNNY_DAY
-	db 31, MORNING_SUN
+	db 31, SYNTHESIS
 	db 46, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
@@ -3002,7 +3001,7 @@ EspeonEvosAttacks:
 	db 36, POWER_GEM
 	db 42, BARRIER
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -3016,7 +3015,7 @@ UmbreonEvosAttacks:
 	db 36, FAINT_ATTACK
 	db 42, MEAN_LOOK
 	db 47, DARK_PULSE
-	db 52, MOONLIGHT
+	db 52, RECOVER
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -3852,7 +3851,7 @@ LugiaEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
-	db 66, MOONLIGHT
+	db 66, RECOVER
 	db 77, HAIL
 	db 88, MOONBLAST
 	db 99, OUTRAGE
@@ -3866,7 +3865,7 @@ HoOhEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
-	db 66, MORNING_SUN
+	db 66, RECOVER
 	db 77, SUNNY_DAY
 	db 88, SOLARBEAM
 	db 99, OUTRAGE
