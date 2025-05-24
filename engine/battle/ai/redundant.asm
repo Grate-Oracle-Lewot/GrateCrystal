@@ -46,9 +46,7 @@ AI_Redundant:
 	dbw EFFECT_ATTRACT,      .Attract
 	dbw EFFECT_SAFEGUARD,    .Safeguard
 	dbw EFFECT_BATON_PASS,   .BatonPass
-	dbw EFFECT_MORNING_SUN,  .Heal
 	dbw EFFECT_SYNTHESIS,    .Heal
-	dbw EFFECT_MOONLIGHT,    .Heal
 	dbw EFFECT_RAIN_DANCE,   .RainDance
 	dbw EFFECT_SUNNY_DAY,    .SunnyDay
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
