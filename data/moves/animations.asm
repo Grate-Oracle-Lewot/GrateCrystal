@@ -235,9 +235,9 @@ BattleAnimations::
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
 	dw BattleAnim_VitalThrow
-	dw BattleAnim_MorningSun
+	dw BattleAnim_UTurn
 	dw BattleAnim_Synthesis
-	dw BattleAnim_Moonlight
+	dw BattleAnim_MetalSound
 	dw BattleAnim_HiddenPower
 	dw BattleAnim_CrossChop
 	dw BattleAnim_Twister
@@ -1834,6 +1834,7 @@ BattleAnim_Supersonic:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_MetalSound:
 BattleAnim_Screech:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $1, $20
@@ -2832,6 +2833,7 @@ BattleAnim_SwordsDance:
 	anim_wait 56
 	anim_ret
 
+BattleAnim_UTurn:
 BattleAnim_QuickAttack:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_MENU
@@ -4347,23 +4349,6 @@ BattleAnim_VitalThrow:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_MorningSun:
-	anim_1gfx ANIM_GFX_SHINE
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_sound 0, 0, SFX_MORNING_SUN
-.loop
-	anim_obj ANIM_OBJ_MORNING_SUN, 16, 48, $88
-	anim_wait 6
-	anim_loop 5, .loop
-	anim_wait 32
-	anim_if_param_equal 0, .zero
-	anim_call BattleAnimSub_Glimmer
-	anim_ret
-
-.zero
-	anim_call BattleAnimSub_Glimmer2
-	anim_ret
-
 BattleAnim_Synthesis:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_call BattleAnim_TargetObj_1Row
@@ -4395,26 +4380,6 @@ BattleAnim_Crunch:
 	anim_sound 0, 1, SFX_BITE
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 64, $18
 	anim_wait 8
-	anim_ret
-
-BattleAnim_Moonlight:
-	anim_1gfx ANIM_GFX_SHINE
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 48, 88, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 64, 104, $0
-	anim_wait 1
-	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_wait 63
-	anim_if_param_equal $3, .three
-	anim_call BattleAnimSub_Glimmer
-	anim_ret
-
-.three
-	anim_call BattleAnimSub_Glimmer2
 	anim_ret
 
 BattleAnim_HiddenPower:
