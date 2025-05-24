@@ -3245,7 +3245,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db BERRY_JUICE
-	db MUD_SLAP, MOONLIGHT, PSYCHIC_M, FAINT_ATTACK
+	db MUD_SLAP, RECOVER, PSYCHIC_M, FAINT_ATTACK
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3255,7 +3255,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 14, 15 ; DVs
-	db 16, 8, 16, 32 ; PP
+	db 16, 16, 16, 32 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3664,7 +3664,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db BERRY_JUICE
-	db FAINT_ATTACK, MOONLIGHT, PSYCH_UP, TOXIC
+	db FAINT_ATTACK, RECOVER, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3674,7 +3674,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 58000
 	dn 13, 13, 13, 13 ; DVs
-	db 32, 8, 16, 8 ; PP
+	db 32, 16, 16, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
@@ -3846,7 +3846,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db BERRY_JUICE
-	db MOONLIGHT, FAINT_ATTACK, PSYCHIC_M, SHADOW_BALL
+	db RECOVER, FAINT_ATTACK, PSYCHIC_M, SHADOW_BALL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -3856,7 +3856,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 15, 13, 14, 11 ; DVs
-	db 8, 32, 16, 24 ; PP
+	db 16, 32, 16, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
@@ -4814,7 +4814,7 @@ BattleTowerMons:
 
 	db UMBREON
 	db KINGS_ROCK
-	db FAINT_ATTACK, MUD_SLAP, MOONLIGHT, CONFUSE_RAY
+	db FAINT_ATTACK, MUD_SLAP, RECOVER, CONFUSE_RAY
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4824,7 +4824,7 @@ BattleTowerMons:
 	bigdw 60000
 	bigdw 55000
 	dn 15, 13, 14, 13 ; DVs
-	db 32, 16, 8, 16 ; PP
+	db 32, 16, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
@@ -5048,7 +5048,7 @@ BattleTowerMons:
 
 	db ESPEON
 	db BERRY_JUICE
-	db PSYCHIC_M, SHADOW_BALL, SUNNY_DAY, MORNING_SUN
+	db PSYCHIC_M, SHADOW_BALL, SUNNY_DAY, DESTINY_BOND
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
