@@ -239,9 +239,9 @@
 	const IRON_TAIL    ; e7
 	const METAL_CLAW   ; e8
 	const VITAL_THROW  ; e9
-	const MORNING_SUN  ; ea
+	const U_TURN       ; ea
 	const SYNTHESIS    ; eb
-	const MOONLIGHT    ; ec
+	const METAL_SOUND  ; ec
 	const HIDDEN_POWER ; ed
 	const CROSS_CHOP   ; ee
 	const TWISTER      ; ef
