@@ -1448,23 +1448,8 @@ AI_Smart_Bide_Screens:
 	inc [hl]
 	ret
 
-AI_Smart_ForceSwitch:
-; Whirlwind, Roar.
-; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
-
-; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass, skipping enemy Spikes check.
-	ld a, [wPlayerScreens]
-	bit SCREENS_SPIKES, a
-	jr z, AI_Smart_BatonPass.no_spikes
-
-; 80% chance to encourage this move if the player has Spikes around them.
-	call AI_80_20
-	ret c
-	dec [hl]
-	ret
-
 AI_Smart_UTurn:
-; Do nothing if the enemy has only one Pokemon [remaining].
+; If the enemy has only one Pokemon [remaining], treat U-Turn as a simple damaging move.
 	call AICheckLastEnemyMon
 	ret c
 
@@ -1473,7 +1458,7 @@ AI_Smart_UTurn:
 	bit SUBSTATUS_X_ACCURACY, a
 	jr nz, .greatly_discourage
 
-; Greatly discourage this move if the enemy's Def, SpAtk, SpDef, or Speed is above +1, but continue further checks.
+; Greatly discourage this move if the enemy's Def, SpAtk, or SpDef is above +1, but continue further checks.
 ; Attack excluded because U-Turn is physical. Evasion excluded so I don't have to check for Foresight.
 	ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -1499,8 +1484,12 @@ AI_Smart_UTurn:
 	inc [hl]
 
 .continue
+; Greatly encourage this move if the enemy is trapped (Bind effect).
+	ld a, [wEnemyWrapCount]
+	and a
+	jr nz, .greatly_encourage
+
 ; Greatly encourage this move if the enemy has a volatile status condition.
-; Regardless, execute AI_Smart_BatonPass.
 	ld a, [wEnemySubStatus1]
 	and 1 << SUBSTATUS_NIGHTMARE | 1 << SUBSTATUS_CURSE | 1 << SUBSTATUS_PERISH | 1 << SUBSTATUS_IN_LOVE
 	jr nz, .greatly_encourage
@@ -1513,9 +1502,9 @@ AI_Smart_UTurn:
 	bit SUBSTATUS_LEECH_SEED, a
 	jr nz, .greatly_encourage
 
-; Only one stage of encouragement if badly poisoned.
+; Only one stage of encouragement if badly poisoned or Mean Looked.
 	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
+	and 1 << SUBSTATUS_TOXIC | 1 << SUBSTATUS_CANT_RUN
 	jr nz, .encourage
 	jr AI_Smart_BatonPass
 
@@ -1545,6 +1534,21 @@ AI_Smart_BatonPass:
 	pop hl
 	ret c
 	inc [hl]
+	ret
+
+AI_Smart_ForceSwitch:
+; Whirlwind, Roar.
+; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
+
+; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass, skipping enemy Spikes check.
+	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, a
+	jr z, AI_Smart_BatonPass.no_spikes
+
+; 80% chance to encourage this move if the player has Spikes around them.
+	call AI_80_20
+	ret c
+	dec [hl]
 	ret
 
 AI_Smart_Synthesis:
