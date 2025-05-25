@@ -120,6 +120,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	loadwildmon VOLTORB, 9
+	startbattle
+	reloadmapafterbattle
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
