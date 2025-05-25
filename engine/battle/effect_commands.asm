@@ -6228,8 +6228,6 @@ INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
-INCLUDE "engine/battle/move_effects/sandstorm.asm"
-
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
 INCLUDE "engine/battle/move_effects/fury_cutter.asm"
@@ -6346,19 +6344,59 @@ BattleCommand_Synthesis:
 	dw GetHalfMaxHP
 	dw GetMaxHP
 
+BattleCommand_StartRain:
+	ld a, WEATHER_RAIN
+	ld hl, DownpourText
+	jr FinishWeatherEffect
+
+BattleCommand_StartSandstorm:
+	ld a, WEATHER_SANDSTORM
+	ld hl, SandstormBrewedText
+	jr FinishWeatherEffect
+
+BattleCommand_StartHail:
+	ld a, WEATHER_HAIL
+	ld hl, ItStartedToHailText
+	; fallthrough
+
+FinishWeatherEffect:
+	push hl
+	ld [wBattleWeather], a
+	call GetWeatherTurns
+	; fallthrough
+
+FinishWeatherEffect2:
+	ld [wWeatherCount], a
+	call AnimateCurrentMove
+	pop hl
+	jp StdBattleTextbox
+
+BattleCommand_StartSun:
+	ld a, WEATHER_SUN
+	ld [wBattleWeather], a
+	call GetWeatherTurns
+	cp 6
+	jr nc, .done
+	call GetUserItem
+	ld a, b
+	cp HELD_SUN_STONE
+	jr nz, .five
+	ld a, 8
+	jr .done
+.five
+	ld a, 5
+.done
+	ld hl, SunGotBrightText
+	push hl
+	jr FinishWeatherEffect2
+
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
-
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
-
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/future_sight.asm"
-
-INCLUDE "engine/battle/move_effects/hail.asm"
 
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
