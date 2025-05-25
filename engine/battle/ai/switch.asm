@@ -271,7 +271,7 @@ CheckAbleToSwitch:
 	call CompareEnemyStatLevels
 	jr c, .likely_switch
 
-	; ~35% chance to switch if any non-Speed stat is at -2
+	; ~33% chance to switch if any non-Speed stat is at -2
 	ld b, BASE_STAT_LEVEL -1
 	call CompareEnemyStatLevels
 	jr c, .switch_often
@@ -345,9 +345,9 @@ CheckAbleToSwitch:
 	ret z ; end here if not SWITCH_OFTEN
 
 .switch_often
-	; 35% chance to switch if wEnemyAISwitchScore > 9
+	; 33% chance to switch if wEnemyAISwitchScore > 9
 	call Random
-	cp 65 percent
+	cp 67 percent
 	ret c
 	call FindAliveEnemyMonsToSwitchTo
 	ld a, [wEnemyAISwitchScore]
