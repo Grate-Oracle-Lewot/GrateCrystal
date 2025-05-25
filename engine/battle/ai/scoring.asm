@@ -1458,24 +1458,35 @@ AI_Smart_UTurn:
 	bit SUBSTATUS_X_ACCURACY, a
 	jr nz, .greatly_discourage
 
+; Skip Evasion check if identified by Foresight.
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .identified
+
+; Greatly discourage this move if the enemy's Evasion is boosted, but continue further checks.
+	ld a, [wEnemyEvaLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nz, .greatly_discourage
+
+.identified
 ; Greatly discourage this move if the enemy's Def, SpAtk, or SpDef is above +1, but continue further checks.
-; Attack excluded because U-Turn is physical. Evasion excluded so I don't have to check for Foresight.
+; Attack is excluded because U-Turn is physical.
 	ld a, [wEnemyDefLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr c, .greatly_discourage
+	jr nc, .greatly_discourage
 
 	ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr c, .greatly_discourage
+	jr nc, .greatly_discourage
 
 	ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr c, .greatly_discourage
+	jr nc, .greatly_discourage
 
 ; Only one stage of discouragement if Speed is above +1.
 	ld a, [wEnemySpdLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr c, .discourage
+	jr nc, .discourage
 	jr .continue
 
 .greatly_discourage
