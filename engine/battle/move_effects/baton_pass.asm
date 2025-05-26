@@ -18,9 +18,6 @@ BattleCommand_BatonPass:
 
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
-
-	ld hl, PassedBattleMonEntrance
-	call CallBattleCore
 	jr ResetBatonPassStatus
 
 .Enemy:
@@ -85,10 +82,6 @@ ResetBatonPassStatus:
 	ld a, BATTLE_VARS_LAST_MOVE
 	call GetBattleVarAddr
 	ld [hl], 0
-
-	xor a
-	ld [wPlayerWrapCount], a
-	ld [wEnemyWrapCount], a
 	ret
 
 FailedBatonPass:
@@ -153,10 +146,7 @@ BattleCommand_UTurn:
 	call SwitchMoveTransitionToMenu
 
 ; Return to battle scene
-	call SwitchMoveReturnToBattleScene
-
-	ld hl, PassedBattleMonEntrance
-	jp CallBattleCore
+	jp SwitchMoveReturnToBattleScene
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -218,8 +208,13 @@ SwitchMoveReturnToBattleScene:
 	call CallBattleCore
 	call CloseWindow
 
+	ld hl, PassedBattleMonEntrance
+	call CallBattleCore
+
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
+	ld [wPlayerWrapCount], a
+	ld [wEnemyWrapCount], a
 	; fallthrough
 
 SwitchMoveMobileEntrance:
