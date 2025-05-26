@@ -3436,8 +3436,8 @@ FisherGroup:
 	db -1 ; end
 
 	; FISHER (8)
-	db "ANDRE@", TRAINERTYPE_NORMAL
-	db 35, GYARADOS
+	db "ANDRE@", TRAINERTYPE_NICKNAME
+	db 35, GYARADOS,   "WATER ONIX@"
 	db -1 ; end
 
 	; FISHER (9)
