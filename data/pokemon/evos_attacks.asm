@@ -2277,10 +2277,10 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 2, GROWL
-	db 8, RAZOR_LEAF
-	db 12, REFLECT
+	db 1, AURORA_BEAM
+	db 2, DRAGON_PULSE
+	db 3, MOONBLAST
+	db 4, AEROBLAST
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
 	db 22, SYNTHESIS
