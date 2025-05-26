@@ -149,6 +149,7 @@ MeowthEggMoves:
 	db SPITE
 	db CHARM
 	db BEAT_UP
+	db METAL_SOUND
 	db PRESENT
 	db SPIKES
 	db -1 ; end
@@ -286,8 +287,7 @@ GrimerEggMoves:
 
 ShellderEggMoves:
 	db RAPID_SPIN
-	db SCREECH
-	db SUPERSONIC
+	db METAL_SOUND
 	db LICK
 	db CRABHAMMER
 	db PRESENT
@@ -555,6 +555,7 @@ HoothootEggMoves:
 	db SPITE
 	db WHIRLWIND
 	db SKY_ATTACK
+	db SCREECH
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
@@ -578,6 +579,7 @@ SpinarakEggMoves:
 	db -1 ; end
 
 ChinchouEggMoves:
+	db METAL_SOUND
 	db AMNESIA
 	db BUBBLEBEAM
 	db THUNDERSHOCK
@@ -702,6 +704,7 @@ WooperEggMoves:
 	db -1 ; end
 
 MurkrowEggMoves:
+	db METAL_SOUND
 	db WHIRLWIND
 	db DRILL_PECK
 	db QUICK_ATTACK
@@ -745,6 +748,7 @@ PinecoEggMoves:
 	db -1 ; end
 
 DunsparceEggMoves:
+	db METAL_SOUND
 	db DRAGON_PULSE
 	db MEGAHORN
 	db BIDE
@@ -882,6 +886,7 @@ HoundourEggMoves:
 	db -1 ; end
 
 PhanpyEggMoves:
+	db SCREECH
 	db FOCUS_ENERGY
 	db EARTH_POWER
 	db ANCIENTPOWER
