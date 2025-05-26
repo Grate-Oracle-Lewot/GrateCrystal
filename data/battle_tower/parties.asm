@@ -633,7 +633,7 @@ BattleTowerMons:
 
 	db STARMIE
 	db GOLD_BERRY
-	db RECOVER, PSYCHIC_M, SCALD, ICY_WIND
+	db RECOVER, PSYCHIC_M, SCALD, ICE_BEAM
 	dw 0 ; OT ID
 	dt 5460 ; Exp
 	; Stat exp
@@ -1546,7 +1546,7 @@ BattleTowerMons:
 
 	db LAPRAS
 	db LEFTOVERS
-	db RAIN_DANCE, SURF, ICY_WIND, STRENGTH
+	db RAIN_DANCE, SURF, ICE_BEAM, STRENGTH
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -3401,7 +3401,7 @@ BattleTowerMons:
 
 	db JYNX
 	db MIRACLEBERRY
-	db BLIZZARD, PSYCHIC_M, SHADOW_BALL, ICY_WIND
+	db BLIZZARD, PSYCHIC_M, SHADOW_BALL, NIGHTMARE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
