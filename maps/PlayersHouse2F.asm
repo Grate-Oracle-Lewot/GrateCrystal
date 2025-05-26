@@ -42,7 +42,8 @@ PlayersHouseRadioScript:
 	opentext
 	givepoke LEDIAN, 49
 	givepoke MAGIKARP, 1
-	givepoke MEWTWO, 100
+	givepoke CELEBI, 100
+	giveitem TM_U_TURN
 	closetext
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
