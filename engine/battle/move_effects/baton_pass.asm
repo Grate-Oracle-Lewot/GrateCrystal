@@ -218,9 +218,6 @@ SwitchMoveReturnToBattleScene:
 	call CallBattleCore
 	call CloseWindow
 
-	ld hl, PassedBattleMonEntrance
-	call CallBattleCore
-
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	; fallthrough
@@ -229,7 +226,9 @@ SwitchMoveMobileEntrance:
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
-	ret
+
+	ld hl, PassedBattleMonEntrance
+	jp CallBattleCore
 
 SwitchMoveEnemyLinkEntrance:
 	ld a, [wLinkMode]
