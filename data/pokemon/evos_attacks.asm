@@ -2516,8 +2516,8 @@ LedianEvosAttacks:
 	db 8, MACH_PUNCH
 	db 8, AGILITY
 	db 15, SWIFT
-	db 24, LIGHT_SCREEN
 	db 24, REFLECT
+	db 24, LIGHT_SCREEN
 	db 24, SAFEGUARD
 	db 33, BATON_PASS
 	db 42, U_TURN
