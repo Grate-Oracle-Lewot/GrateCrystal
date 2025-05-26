@@ -45,6 +45,10 @@ PlayersHouseRadioScript:
 	givepoke CELEBI, 100
 	giveitem TM_U_TURN
 	closetext
+	loadwildmon VOLTORB, 9
+	startbattle
+	reloadmapafterbattle
+	special HealParty
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
