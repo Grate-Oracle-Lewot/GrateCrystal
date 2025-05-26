@@ -2873,20 +2873,20 @@ BattleAnim_QuickAttack:
 
 BattleAnim_UTurn:
 ; Taken from Polished Crystal
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_EXPLOSION
-	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
 	anim_sound 6, 2, SFX_THROW_BALL
 	anim_obj ANIM_OBJ_U_TURN_LAUNCH, 64, 92, $4
 	anim_wait 16
 	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 56, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 56, $0
 	anim_wait 8
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_U_TURN_RISE, 132, 40, $6
 	anim_wait 32
 	anim_obj ANIM_OBJ_U_TURN_FALL, 48, 92, $30
 	anim_wait 16
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_ret
 
 BattleAnim_Meditate:
