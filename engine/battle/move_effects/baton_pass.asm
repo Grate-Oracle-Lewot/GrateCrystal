@@ -14,10 +14,7 @@ BattleCommand_BatonPass:
 	call DelayFrames
 
 ; Transition into switchmon menu
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu
-
-	farcall ForcePickSwitchMonInBattle
+	call SwitchMoveTransitionToMenu
 
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
@@ -153,10 +150,7 @@ BattleCommand_UTurn:
 	call DelayFrames
 
 ; Transition into switchmon menu
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu
-
-	farcall ForcePickSwitchMonInBattle
+	call SwitchMoveTransitionToMenu
 
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
@@ -194,9 +188,17 @@ BattleCommand_UTurn:
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
+SwitchMoveTransitionToMenu:
+	call LoadStandardMenuHeader
+	ld hl, SetUpBattlePartyMenu
+	call CallBattleCore
+
+	ld hl, ForcePickSwitchMonInBattle
+	jp CallBattleCore
+
 SwitchMoveReturnToBattleScene:
 	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
+	farcall LoadBattleFontsHPBar
 	call CloseWindow
 	call ClearSprites
 	hlcoord 1, 0
@@ -208,7 +210,7 @@ SwitchMoveReturnToBattleScene:
 
 	ld a, [wLinkMode]
 	and a
-	jr z, .mobile
+	jr z, SwitchMoveMobileEntrance
 
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
@@ -220,8 +222,9 @@ SwitchMoveReturnToBattleScene:
 
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
+	; fallthrough
 
-.mobile
+SwitchMoveMobileEntrance:
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
@@ -230,7 +233,7 @@ SwitchMoveReturnToBattleScene:
 SwitchMoveEnemyLinkEntrance:
 	ld a, [wLinkMode]
 	and a
-	jr z, .mobile
+	jr z, SwitchMoveMobileEntrance
 
 	call LoadStandardMenuHeader
 	ld hl, LinkBattleSendReceiveAction
@@ -251,12 +254,7 @@ SwitchMoveEnemyLinkEntrance:
 	ld [wBattleAction], a
 .switch
 	call CloseWindow
-
-.mobile
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-	ret
+	jr SwitchMoveMobileEntrance
 
 CheckAnyOtherAlivePartyMons:
 	ld hl, wPartyMon1HP
