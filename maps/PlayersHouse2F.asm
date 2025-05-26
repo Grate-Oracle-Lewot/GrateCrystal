@@ -39,6 +39,21 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+	opentext
+	givepoke LEDIAN, 41
+	givepoke MAGIKARP, 1
+	givepoke MEWTWO, 100
+	closetext
+	loadwildmon VULPIX, 32
+	startbattle
+	reloadmapafterbattle
+	special HealParty
+	winlosstext PlayersRadioText1, 0
+	loadtrainer ERIKA, ERIKA1
+	startbattle
+	reloadmapafterbattle
+	end
+
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
