@@ -2231,7 +2231,7 @@ DragonairEvosAttacks:
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WRAP
+	db 1, POUND
 	db 2, FOCUS_ENERGY
 	db 6, THUNDER_WAVE
 	db 12, TWISTER
