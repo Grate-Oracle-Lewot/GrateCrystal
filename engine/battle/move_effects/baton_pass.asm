@@ -18,7 +18,8 @@ BattleCommand_BatonPass:
 
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
-	jr ResetBatonPassStatus
+
+	jr .Finish
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -45,6 +46,7 @@ BattleCommand_BatonPass:
 	ld hl, ApplyStatLevelMultiplierOnAllStats
 	call CallBattleCore
 
+.Finish:
 	ld hl, SpikesDamage
 	call CallBattleCore
 	; fallthrough
@@ -147,7 +149,12 @@ BattleCommand_UTurn:
 
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
-	jr FinishUTurn
+
+	ld hl, NewBattleMonStatus
+	call CallBattleCore
+	ld hl, ResetPlayerStatLevels
+	call CallBattleCore
+	jr .Finish
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -170,9 +177,8 @@ BattleCommand_UTurn:
 	call CallBattleCore
 	ld hl, ResetEnemyStatLevels
 	call CallBattleCore
-	; fallthrough
 
-FinishUTurn:
+.Finish:
 	ld hl, BreakAttraction
 	call CallBattleCore
 	ld hl, ResetBattleParticipants
