@@ -2863,13 +2863,13 @@ BattleAnim_QuickAttack:
 BattleAnim_UTurn:
 	anim_3gfx ANIM_GFX_EGG, ANIM_GFX_HIT, ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
 	anim_sound 6, 2, SFX_THROW_BALL
 	anim_obj ANIM_OBJ_SMOKESCREEN, 64, 92, $6c
 	anim_wait 24
+	anim_clearobjs
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 8
+	anim_wait 16
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_WARP, 44, 60, $0
 	anim_obj ANIM_OBJ_WARP, 44, 68, $0
@@ -2878,6 +2878,7 @@ BattleAnim_UTurn:
 	anim_obj ANIM_OBJ_WARP, 44, 92, $0
 	anim_obj ANIM_OBJ_WARP, 44, 100, $0
 	anim_obj ANIM_OBJ_WARP, 44, 108, $0
+	anim_wait 8
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 16
 	anim_ret
