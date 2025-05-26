@@ -17,8 +17,6 @@ CeladonGym_MapScripts:
 
 .ForcedToLeave:
 	sdefer CeladonGymSexism
-	end
-
 .DummyScene:
 	end
 
