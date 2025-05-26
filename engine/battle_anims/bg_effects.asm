@@ -27,8 +27,6 @@ ExecuteBGEffects:
 	add hl, bc
 	dec e
 	jr nz, .loop
-BattleBGEffect_BetaSendOutMon1: ; unused
-BattleBGEffect_BetaSendOutMon2: ; unused
 	ret
 
 QueueBGEffect:
