@@ -2278,7 +2278,7 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, AURORA_BEAM
-	db 2, DRAGON_PULSE
+	db 2, DRAGON_RAGE
 	db 3, MOONBLAST
 	db 4, AEROBLAST
 	db 12, LIGHT_SCREEN
