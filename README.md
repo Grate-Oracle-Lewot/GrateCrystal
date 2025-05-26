@@ -478,7 +478,7 @@ make startur - Same as previous, but the starters are Abra and Shellder. If you 
 
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters.
 
-make crystal11_vc - The Virtual Console version of Pokémon Crystal, which implemented the GS Ball event. GrateCrystal implements that event differently, so this build now only alters timing delays during link communications.
+make crystal11_vc - The Virtual Console version of Pokémon Crystal, which makes some additional changes on top of the 1.1 version, mostly related to linking with another player or disabling the Game Boy Printer. I recommend you just ignore this build.
 
 # Why remove some Pokémon and moves?
 
