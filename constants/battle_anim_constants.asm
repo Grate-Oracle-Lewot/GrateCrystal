@@ -764,6 +764,7 @@ NUM_BATTLEANIMOAMSETS EQU const_value
 	const ANIM_BG_VIBRATE_MON
 	const ANIM_BG_WOBBLE_PLAYER
 	const ANIM_BG_WOBBLE_SCREEN
+	const ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT
 NUM_ANIM_BGS EQU const_value - 1
 
 ; wBattleAnimTileDict keys (see wram.asm)
