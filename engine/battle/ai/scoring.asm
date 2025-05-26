@@ -301,7 +301,7 @@ AI_Setup:
 .do_discourage
 	inc [hl]
 	inc [hl]
-	jr .checkmove
+	jp .checkmove
 
 .dismiss
 	call AIDismissMove
