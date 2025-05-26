@@ -1750,7 +1750,7 @@ Synthesis:
 	checkobedience
 	usedmovetext
 	doturn
-	healday
+	healsun
 	endmove
 
 HiddenPower:
