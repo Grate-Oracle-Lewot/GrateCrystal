@@ -2200,14 +2200,14 @@ BattleAnim_DragonPulse:
 	anim_1gfx ANIM_GFX_BEAM
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 6, 2, SFX_PSYBEAM
-	anim_obj ANIM_OBJ_BEAM, 64, 92, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 64, 92, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
@@ -2861,26 +2861,21 @@ BattleAnim_QuickAttack:
 	anim_ret
 
 BattleAnim_UTurn:
-	anim_3gfx ANIM_GFX_EGG, ANIM_GFX_HIT, ANIM_GFX_SPEED
-	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
+; Taken from Polished Crystal
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_EXPLOSION
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_SMOKESCREEN, 64, 92, $6c
-	anim_wait 24
-	anim_clearobjs
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj ANIM_OBJ_U_TURN_LAUNCH, 64, 92, $4
 	anim_wait 16
-	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_WARP, 44, 60, $0
-	anim_obj ANIM_OBJ_WARP, 44, 68, $0
-	anim_obj ANIM_OBJ_WARP, 44, 76, $0
-	anim_obj ANIM_OBJ_WARP, 44, 84, $0
-	anim_obj ANIM_OBJ_WARP, 44, 92, $0
-	anim_obj ANIM_OBJ_WARP, 44, 100, $0
-	anim_obj ANIM_OBJ_WARP, 44, 108, $0
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 56, $0
 	anim_wait 8
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_U_TURN_RISE, 132, 40, $6
+	anim_wait 32
+	anim_obj ANIM_OBJ_U_TURN_FALL, 48, 92, $30
 	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
 	anim_ret
 
 BattleAnim_Meditate:
@@ -3448,14 +3443,14 @@ BattleAnim_Aeroblast:
 	anim_obj ANIM_OBJ_AEROBLAST, 72, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
@@ -4716,14 +4711,14 @@ BattleAnim_Moonblast:
 	anim_wait 42
 	anim_clearobjs
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
 	anim_wait 42
 	anim_ret
 
