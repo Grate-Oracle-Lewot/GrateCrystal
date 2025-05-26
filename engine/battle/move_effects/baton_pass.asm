@@ -205,27 +205,10 @@ SwitchMoveReturnToBattleScene:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
-	call BatonPass_LinkPlayerSwitch
 
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-	ret
-
-SwitchMoveEnemyLinkEntrance:
-	call BatonPass_LinkEnemySwitch
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-	ret
-
-SwitchMoveEnemyPartyMonEntrance:
-
-
-BatonPass_LinkPlayerSwitch:
 	ld a, [wLinkMode]
 	and a
-	ret z
+	jr z, .mobile
 
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
@@ -237,12 +220,17 @@ BatonPass_LinkPlayerSwitch:
 
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
+
+.mobile
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
 	ret
 
-BatonPass_LinkEnemySwitch:
+SwitchMoveEnemyLinkEntrance:
 	ld a, [wLinkMode]
 	and a
-	ret z
+	jr z, .mobile
 
 	call LoadStandardMenuHeader
 	ld hl, LinkBattleSendReceiveAction
@@ -262,7 +250,13 @@ BatonPass_LinkEnemySwitch:
 	add BATTLEACTION_SWITCH1
 	ld [wBattleAction], a
 .switch
-	jp CloseWindow
+	call CloseWindow
+
+.mobile
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+	ret
 
 CheckAnyOtherAlivePartyMons:
 	ld hl, wPartyMon1HP
