@@ -40,10 +40,14 @@ PlayersHousePosterScript:
 
 PlayersHouseRadioScript:
 	opentext
-	givepoke LEDIAN, 41
+	givepoke LEDIAN, 49
 	givepoke MAGIKARP, 1
 	givepoke MEWTWO, 100
 	closetext
+	loadwildmon VOLTORB, 9
+	startbattle
+	reloadmapafterbattle
+	special HealParty
 	loadwildmon VULPIX, 32
 	startbattle
 	reloadmapafterbattle
