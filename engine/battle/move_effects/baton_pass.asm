@@ -155,9 +155,7 @@ BattleCommand_UTurn:
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
 
-	ld hl, SwitchPlayerMon
-	call CallBattleCore
-	ld hl, SpikesDamage
+	ld hl, PassedBattleMonEntrance
 	jp CallBattleCore
 
 .Enemy:
