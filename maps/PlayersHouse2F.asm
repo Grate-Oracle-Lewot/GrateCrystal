@@ -44,14 +44,6 @@ PlayersHouseRadioScript:
 	givepoke MAGIKARP, 1
 	givepoke MEWTWO, 100
 	closetext
-	loadwildmon VOLTORB, 9
-	startbattle
-	reloadmapafterbattle
-	special HealParty
-	loadwildmon VULPIX, 32
-	startbattle
-	reloadmapafterbattle
-	special HealParty
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
