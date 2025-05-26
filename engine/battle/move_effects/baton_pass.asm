@@ -20,21 +20,7 @@ BattleCommand_BatonPass:
 	farcall ForcePickSwitchMonInBattle
 
 ; Return to battle scene
-	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
-	call CloseWindow
-	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
-	call BatonPass_LinkPlayerSwitch
-
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
+	call SwitchMoveReturnToBattleScene
 
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
@@ -51,11 +37,7 @@ BattleCommand_BatonPass:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
-	call BatonPass_LinkEnemySwitch
-
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
+	call SwitchMoveEnemyLinkEntrance
 
 ; Passed enemy PartyMon entrance
 	xor a
@@ -155,6 +137,90 @@ FailedBatonPass:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
+
+BattleCommand_UTurn:
+	ldh a, [hBattleTurn]
+	and a
+	jp nz, .Enemy
+
+; Need something to switch to
+	call CheckAnyOtherAlivePartyMons
+	ret z ; nothing to do if there are no other Pokémon
+
+	call UpdateBattleMonInParty
+
+	ld c, 21
+	call DelayFrames
+
+; Transition into switchmon menu
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu
+
+	farcall ForcePickSwitchMonInBattle
+
+; Return to battle scene
+	call SwitchMoveReturnToBattleScene
+
+	ld hl, SwitchPlayerMon
+	call CallBattleCore
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+.Enemy:
+; Wildmons don't have anything to switch to
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	ret z
+
+	call CheckAnyOtherAliveEnemyMons
+	ret z ; nothing to do if there are no other Pokémon
+
+	call UpdateEnemyMonInParty
+	call SwitchMoveEnemyLinkEntrance
+
+; Passed enemy PartyMon entrance
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, NewEnemyMonStatus
+	call CallBattleCore
+	ld hl, ResetEnemyStatLevels
+	call CallBattleCore
+	ld hl, BreakAttraction
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+SwitchMoveReturnToBattleScene:
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetPalettes
+	call BatonPass_LinkPlayerSwitch
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+	ret
+
+SwitchMoveEnemyLinkEntrance:
+	call BatonPass_LinkEnemySwitch
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+	ret
+
+SwitchMoveEnemyPartyMonEntrance:
+
 
 BatonPass_LinkPlayerSwitch:
 	ld a, [wLinkMode]
