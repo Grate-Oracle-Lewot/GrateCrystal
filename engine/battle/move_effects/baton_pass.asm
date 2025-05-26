@@ -53,15 +53,9 @@ ResetBatonPassStatus:
 ; Reset status changes that aren't passed by Baton Pass.
 
 	; Nightmare isn't passed.
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and SLP
-	jr nz, .ok
-
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
-.ok
 
 	; Disable isn't passed.
 	call ResetActorDisable
@@ -73,6 +67,7 @@ ResetBatonPassStatus:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ld hl, wPlayerSubStatus5
 
+	; Transform and Encore aren't passed.
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	res SUBSTATUS_TRANSFORMED, [hl]
@@ -82,6 +77,11 @@ ResetBatonPassStatus:
 	ld a, BATTLE_VARS_LAST_MOVE
 	call GetBattleVarAddr
 	ld [hl], 0
+
+	; Player and/or enemy trapping effects aren't passed.
+	xor a
+	ld [wPlayerWrapCount], a
+	ld [wEnemyWrapCount], a
 	ret
 
 FailedBatonPass:
@@ -146,7 +146,8 @@ BattleCommand_UTurn:
 	call SwitchMoveTransitionToMenu
 
 ; Return to battle scene
-	jp SwitchMoveReturnToBattleScene
+	call SwitchMoveReturnToBattleScene
+	jr FinishUTurn
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -169,6 +170,9 @@ BattleCommand_UTurn:
 	call CallBattleCore
 	ld hl, ResetEnemyStatLevels
 	call CallBattleCore
+	; fallthrough
+
+FinishUTurn:
 	ld hl, BreakAttraction
 	call CallBattleCore
 	ld hl, ResetBattleParticipants
@@ -213,8 +217,6 @@ SwitchMoveReturnToBattleScene:
 
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
-	ld [wPlayerWrapCount], a
-	ld [wEnemyWrapCount], a
 	; fallthrough
 
 SwitchMoveMobileEntrance:
