@@ -112,8 +112,6 @@ BattleBGEffects:
 	dw BattleBGEffect_RemoveMon
 	dw BattleBGEffect_WaveDeformMon
 	dw BattleBGEffect_Psychic
-	dw BattleBGEffect_BetaSendOutMon1
-	dw BattleBGEffect_BetaSendOutMon2
 	dw BattleBGEffect_Flail
 	dw BattleBGEffect_Rollout
 	dw BattleBGEffect_VitalThrow
