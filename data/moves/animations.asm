@@ -1443,7 +1443,7 @@ BattleAnim_HyperBeam:
 	anim_ret
 
 BattleAnim_AuroraBeam:
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_GREEN
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
 	anim_1gfx ANIM_GFX_BEAM
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -2209,7 +2209,7 @@ BattleAnim_Smog:
 	anim_ret
 
 BattleAnim_DragonPulse:
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_BLUE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BLUE
 	anim_1gfx ANIM_GFX_BEAM
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 6, 2, SFX_PSYBEAM
@@ -4724,7 +4724,7 @@ BattleAnim_Moonblast:
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 42
 	anim_clearobjs
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_BLUE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BLUE
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_call BattleAnimSub_Beam
