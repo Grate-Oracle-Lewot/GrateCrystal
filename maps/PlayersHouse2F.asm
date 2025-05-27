@@ -43,7 +43,7 @@ PlayersHouseRadioScript:
 	iftrue .Battle
 	opentext
 	givepoke SKARMORY, 50
-	givepoke MAGIKARP, 1
+	givepoke LEDIAN, 49
 	givepoke CELEBI, 100
 	giveitem TM_U_TURN
 	closetext
