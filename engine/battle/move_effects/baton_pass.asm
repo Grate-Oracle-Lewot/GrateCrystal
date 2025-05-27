@@ -311,7 +311,7 @@ SwitchMoveTransitionIntoMenu:
 
 SwitchMoveReturnToBattleScene:
 	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
+	farcall LoadBattleFontsHPBar
 	call CloseWindow
 	call ClearSprites
 	hlcoord 1, 0
