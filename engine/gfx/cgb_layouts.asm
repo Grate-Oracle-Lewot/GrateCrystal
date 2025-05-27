@@ -39,7 +39,6 @@ CGBLayoutJumptable:
 	dw _CGB_Pokedex_EvoPage
 	dw _CGB_Pokedex_PicsPage
 	dw _CGB_SlotMachine
-	dw _CGB_BetaTitleScreen
 	dw _CGB_GSIntro
 	dw _CGB_Diploma
 	dw _CGB_MapPals
@@ -47,9 +46,7 @@ CGBLayoutJumptable:
 	dw _CGB_Evolution
 	dw _CGB_GSTitleScreen
 	dw _CGB_MoveList
-	dw _CGB_BetaPikachuMinigame
 	dw _CGB_PokedexSearchOption
-	dw _CGB_BetaPoker
 	dw _CGB_Pokepic
 	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
@@ -114,6 +111,8 @@ _CGB_BattleColors:
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
+	; fallthrough
+
 _CGB_FinishBattleScreenLayout:
 	call InitPartyMenuBGPal7
 	hlcoord 0, 0, wAttrmap
@@ -153,6 +152,8 @@ _CGB_FinishBattleScreenLayout:
 
 InitPartyMenuBGPal7:
 	farcall Function100dc0
+	; fallthrough
+
 Mobile_InitPartyMenuBGPal7:
 	ld hl, PartyMenuBGPalette
 	jr nc, .not_mobile
@@ -699,24 +700,6 @@ _CGB_SlotMachine:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_BetaTitleScreen:
-	ld hl, PalPacket_BetaTitleScreen + 1
-	call CopyFourPalettes
-	call WipeAttrmap
-	ld de, wOBPals1
-	ld a, PREDEFPAL_PACK
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	hlcoord 0, 6, wAttrmap
-	lb bc, 12, SCREEN_WIDTH
-	ld a, $1
-	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
 _CGB_GSIntro:
 	ld b, 0
 	ld hl, .Jumptable
@@ -769,16 +752,6 @@ INCLUDE "gfx/intro/gs_shellder_lapras_ob.pal"
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	jp WipeAttrmap
-
-_CGB_BetaPoker:
-	ld hl, BetaPokerPals
-	ld de, wBGPals1
-	ld bc, 5 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	jp ApplyAttrmap
 
 _CGB_Diploma:
 	ld hl, DiplomaPalettes
@@ -1110,16 +1083,6 @@ _CGB_MoveList:
 	lb bc, 2, 9
 	ld a, $1
 	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_BetaPikachuMinigame:
-	ld hl, PalPacket_BetaPikachuMinigame + 1
-	call CopyFourPalettes
-	call WipeAttrmap
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
