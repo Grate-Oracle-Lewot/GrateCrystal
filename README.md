@@ -476,7 +476,7 @@ make turbid - Normal Johto starters, but the new/beta legendary is replaced with
 
 make startur - Same as previous, but the starters are Abra and Shellder. If you lose to the rival in the first battle, his Shellder will evolve into the beta Pokémon, which is Water/Poison; if you win, it will evolve into Cloyster. The Kadabra/Alakazam that's normally on the rival's team is replaced with a Machoke/Machamp, regardless of which starter you pick.
 
-make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters.
+make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters. This and the next build are holdovers because I don't know how to properly remove their "hooks" from the code.
 
 make crystal11_vc - The Virtual Console version of Pokémon Crystal, which makes some additional changes on top of the 1.1 version, mostly related to linking with another player or disabling the Game Boy Printer. I recommend you just ignore this build.
 
