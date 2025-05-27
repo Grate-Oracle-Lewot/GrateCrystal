@@ -16,9 +16,6 @@ sgb_pal23: MACRO
 	db (SGB_PAL23 << 3) + 1
 ENDM
 
-PalPacket_GSTitleScreen:
-	sgb_pal_set GS_TITLE_SCREEN_0, GS_TITLE_SCREEN_1, GS_TITLE_SCREEN_2, GS_TITLE_SCREEN_3
-
 PalPacket_MagnetTrain:
 	sgb_pal_set BETA_SHINY_GREENMON, CGB_BADGE, RB_BROWNMON, ROUTES
 
