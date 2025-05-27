@@ -59,13 +59,6 @@ BlkPacket_SlotMachine:
 	attr_blk_data %011, 0,0,0, 04,04, 15,09 ; slot reels: pal 0
 	attr_blk_data %011, 0,0,0, 00,12, 19,17 ; text box: pal 0
 
-BlkPacket_GSTitleScreen:
-	attr_blk 3
-	attr_blk_data %111, 0,0,2, 00,00, 19,04
-	attr_blk_data %011, 3,3,0, 00,06, 19,17
-	attr_blk_data %011, 1,1,0, 15,01, 18,04
-	ds 12, 0
-
 BlkPacket_MagnetTrain:
 	attr_blk 2
 	attr_blk_data %111, 2,2,0, 00,04, 19,13 ; fence
