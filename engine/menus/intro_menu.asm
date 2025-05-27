@@ -32,12 +32,6 @@ NewGame_ClearTilemapEtc:
 	call LoadStandardFont
 	jp ClearWindowData
 
-MysteryGift:
-	call UpdateTime
-	farcall DoMysteryGiftIfDayHasPassed
-	farcall DoMysteryGift
-	ret
-
 Option:
 	farcall _Option
 	ret
