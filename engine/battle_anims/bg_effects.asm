@@ -121,8 +121,6 @@ BattleBGEffects:
 	dw BattleBGEffect_VibrateMon
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
-	dw BattleBGEffect_CycleOBPalsGrayAndBlue
-	dw BattleBGEffect_CycleOBPalsGrayAndGreen
 
 BatttleBGEffects_GetNamedJumptablePointer:
 	ld hl, BG_EFFECT_STRUCT_JT_INDEX
@@ -253,8 +251,6 @@ BattleBGEffect_AlternateHues:
 	dc 2, 1, 0, 0
 	db -2
 
-BattleBGEffect_CycleOBPalsGrayAndBlue:
-BattleBGEffect_CycleOBPalsGrayAndGreen:
 BattleBGEffect_CycleOBPalsGrayAndYellow:
 	call BattleBGEffects_CheckSGB
 	jr nz, .sgb
