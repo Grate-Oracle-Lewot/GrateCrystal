@@ -1443,22 +1443,23 @@ BattleAnim_HyperBeam:
 	anim_ret
 
 BattleAnim_AuroraBeam:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_GREEN
 	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_GREEN, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_wait 64
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_GREEN_BEAM, 64, 92, $0
+	anim_obj ANIM_OBJ_BEAM, 64, 92, $0
 	anim_wait 4
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_GREEN_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_GREEN_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_GREEN_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_GREEN_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_incobj 5
 	anim_wait 64
@@ -2208,17 +2209,18 @@ BattleAnim_Smog:
 	anim_ret
 
 BattleAnim_DragonPulse:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_BLUE
 	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_BLUE, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 6, 2, SFX_PSYBEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 64, 92, $0
+	anim_obj ANIM_OBJ_BEAM, 64, 92, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
@@ -3446,22 +3448,23 @@ BattleAnim_Conversion:
 	anim_ret
 
 BattleAnim_Aeroblast:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
 	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $4, $10
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_BLUE, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 0, 0, SFX_AEROBLAST
 	anim_obj ANIM_OBJ_AEROBLAST, 72, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
@@ -4721,18 +4724,11 @@ BattleAnim_Moonblast:
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 42
 	anim_clearobjs
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BATTLE_OB_BLUE
 	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_BLUE, $0, $2, $0
-	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
-	anim_wait 48
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_call BattleAnimSub_Beam
+	anim_wait 42
 	anim_ret
 
 BattleAnim_Struggle:
