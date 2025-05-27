@@ -242,7 +242,12 @@ CheckAnyOtherAliveMons:
 	and a
 	ret
 
- BattleCommand_UTurn:
+BattleCommand_UTurn:
+; U-Turn doesn't switch in link battles
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
@@ -280,10 +285,10 @@ CheckAnyOtherAliveMons:
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	cp WILD_BATTLE
-	ret z  ; return if it's a wild battle
+	ret z
 
 	call CheckAnyOtherAliveEnemyMons
-	ret z  ; nothing to do if there are no other Pokémon
+	ret z
 
 	call UpdateEnemyMonInParty
 
@@ -319,6 +324,5 @@ CheckAnyOtherAliveMons:
 SwitchMoveTransitionIntoMenu:
 	call LoadStandardMenuHeader
 	farcall SetUpBattlePartyMenu
-
 	farcall ForcePickSwitchMonInBattle
 	ret
