@@ -121,7 +121,6 @@ BattleBGEffects:
 	dw BattleBGEffect_VibrateMon
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
-	dw BattleBGEffect_CycleOBPalsGrayAndYellowFullShift
 
 BatttleBGEffects_GetNamedJumptablePointer:
 	ld hl, BG_EFFECT_STRUCT_JT_INDEX
@@ -2665,16 +2664,3 @@ BattleBGEffects_Cosine:
 	callfar BattleAnim_Cosine_e
 	ld a, e
 	ret
-
-BattleBGEffect_CycleOBPalsGrayAndYellowFullShift:
-	ld de, .PalsCGB
-	call BattleBGEffect_GetNthDMGPal
-	ld [wOBP0], a
-	ret
-
-.PalsCGB:
-	dc 3, 2, 1, 0
-	dc 2, 1, 0, 3
-	dc 1, 0, 3, 2
-	dc 0, 3, 2, 1
-	db -2
