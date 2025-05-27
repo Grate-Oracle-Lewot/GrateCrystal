@@ -39,13 +39,18 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+	checkpoke LEDIAN
+	iftrue .Battle
 	opentext
-	givepoke LEDIAN, 49
+	givepoke LEDIAN, 50
 	givepoke MAGIKARP, 1
 	givepoke CELEBI, 100
 	giveitem TM_U_TURN
 	closetext
-	loadwildmon VOLTORB, 9
+	end
+
+.Battle
+	loadwildmon SANDSLASH, 35
 	startbattle
 	reloadmapafterbattle
 	special HealParty
