@@ -3280,7 +3280,13 @@ ForceEnemySwitch:
 	ld a, [wEnemySwitchMonIndex]
 	dec a
 	ld b, a
-	jr EnemyForceUTurnSwitchMerge
+	call LoadEnemyMonToSwitchTo
+	call ClearEnemyMonBox
+	call NewEnemyMonStatus
+	call ResetEnemyStatLevels
+	call ShowSetEnemyMonAndSendOutAnimation
+	call BreakAttraction
+	jp ResetBattleParticipants
 
 EnemyUTurnSwitch:
 	call ResetEnemyBattleVars
@@ -3289,14 +3295,11 @@ EnemyUTurnSwitch:
 	call FindMonInOTPartyToSwitchIntoBattle
 .skip
 	; 'b' contains the PartyNr of the mon the AI will switch to
-	; fallthrough
-
-EnemyForceUTurnSwitchMerge:
 	call LoadEnemyMonToSwitchTo
 	call ClearEnemyMonBox
+	call EnemySwitch_ShowSendOutTextAndAnimation
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
-	call ShowSetEnemyMonAndSendOutAnimation
 	call BreakAttraction
 	jp ResetBattleParticipants
 
@@ -3314,8 +3317,7 @@ EnemySwitch:
 	call OfferSwitch
 	push af
 	call ClearEnemyMonBox
-	call ShowBattleTextEnemySentOut
-	call ShowSetEnemyMonAndSendOutAnimation
+	call EnemySwitch_ShowSendOutTextAndAnimation
 	pop af
 	ret c
 	; If we're here, then we're switching too
@@ -3339,6 +3341,9 @@ EnemySwitch_SetMode:
 	ld a, 1
 	ld [wEnemyIsSwitching], a
 	call ClearEnemyMonBox
+	; fallthrough
+
+EnemySwitch_ShowSendOutTextAndAnimation:
 	call ShowBattleTextEnemySentOut
 	jp ShowSetEnemyMonAndSendOutAnimation
 
@@ -3397,6 +3402,8 @@ ResetBattleParticipants:
 	xor a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a
+	; fallthrough
+
 AddBattleParticipant:
 	ld a, [wCurBattleMon]
 	ld c, a
