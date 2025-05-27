@@ -31,7 +31,6 @@ SGBLayoutJumptable:
 	dw .SGB_Pokedex_EvoPage
 	dw .SGB_Pokedex_PicsPage
 	dw .SGB_SlotMachine
-	dw .SGB_GSIntro
 	dw .SGB_Diploma
 	dw .SGB_MapPals
 	dw .SGB_PartyMenu
@@ -51,7 +50,6 @@ SGBLayoutJumptable:
 	dw .SGB_PlayerOrMonFrontpicPals
 	dw .SGB_TradeTube
 	dw .SGB_TrainerOrMonFrontpicPals
-	dw .SGB_MysteryGift
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
@@ -221,8 +219,6 @@ SGBLayoutJumptable:
 	ld [wSGBPals + 12], a
 	ld hl, wSGBPals
 	ld de, BlkPacket_Pokedex_PC
-	ret
-
 .SGB_Pokedex_EvoPage:
 .SGB_Pokedex_PicsPage:
 	ret
@@ -288,36 +284,8 @@ SGBLayoutJumptable:
 	ret
 
 .SGB_Diploma:
-.SGB_MysteryGift:
 	ld hl, PalPacket_Diploma
 	ld de, BlkPacket_AllPal0
-	ret
-
-.SGB_GSIntro:
-	ld b, 0
-	ld hl, .BlkPacketTable_GSIntro
-rept 4
-	add hl, bc
-endr
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ret
-
-.BlkPacketTable_GSIntro:
-	dw BlkPacket_AllPal0, PalPacket_GSIntroShellderLapras
-	dw BlkPacket_GSIntroJigglypuffPikachu, PalPacket_GSIntroJigglypuffPikachu
-	dw BlkPacket_AllPal0, PalPacket_GSIntroStartersTransition
-
-.SGB_GSTitleScreen:
-	ld hl, PalPacket_GSTitleScreen
-	ld de, BlkPacket_GSTitleScreen
-	ld a, SCGB_DIPLOMA
-	ld [wDefaultSGBLayout], a
 	ret
 
 .SGB_MagnetTrain:
