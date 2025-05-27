@@ -17,16 +17,7 @@ BattleCommand_BatonPass:
 	call SwitchMoveTransitionIntoMenu
 
 ; Return to battle scene
-	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
-	call CloseWindow
-	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
+	call SwitchMoveReturnToBattleScene
 	call BatonPass_LinkPlayerSwitch
 
 ; Mobile link battles handle entrances differently
@@ -265,16 +256,7 @@ BattleCommand_UTurn:
 	call SwitchMoveTransitionIntoMenu
 
 ; Return to battle scene
-	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
-	call CloseWindow
-	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
+	call SwitchMoveReturnToBattleScene
 
 	ld hl, SwitchPlayerMon
 	call CallBattleCore
@@ -326,3 +308,15 @@ SwitchMoveTransitionIntoMenu:
 	farcall SetUpBattlePartyMenu
 	farcall ForcePickSwitchMonInBattle
 	ret
+
+SwitchMoveReturnToBattleScene:
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	jp SetPalettes
