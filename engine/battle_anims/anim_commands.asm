@@ -301,48 +301,48 @@ RunBattleAnimCommand:
 BattleAnimCommands::
 ; entries correspond to anim_* constants (see macros/scripts/battle_anims.asm)
 	table_width 2, BattleAnimCommands
-	dw BattleAnimCmd_Obj
-	dw BattleAnimCmd_1GFX
-	dw BattleAnimCmd_2GFX
-	dw BattleAnimCmd_3GFX
-	dw BattleAnimCmd_4GFX
-	dw BattleAnimCmd_5GFX
-	dw BattleAnimCmd_IncObj
-	dw BattleAnimCmd_SetObj
-	dw BattleAnimCmd_IncBGEffect
-	dw BattleAnimCmd_BattlerGFX_1Row
-	dw BattleAnimCmd_BattlerGFX_2Row
-	dw BattleAnimCmd_CheckPokeball
-	dw BattleAnimCmd_Transform
-	dw BattleAnimCmd_RaiseSub
-	dw BattleAnimCmd_DropSub
-	dw BattleAnimCmd_ResetObp0
-	dw BattleAnimCmd_Sound
-	dw BattleAnimCmd_Cry
-	dw BattleAnimCmd_MinimizeOpp
-	dw BattleAnimCmd_OAMOn
-	dw BattleAnimCmd_OAMOff
-	dw BattleAnimCmd_ClearObjs
-	dw BattleAnimCmd_BeatUp
-	dw BattleAnimCmd_UpdateActorPic
-	dw BattleAnimCmd_Minimize
-	dw BattleAnimCmd_SetBgPal
-	dw BattleAnimCmd_SetObjPal
-	dw BattleAnimCmd_IfParamAnd
-	dw BattleAnimCmd_JumpUntil
-	dw BattleAnimCmd_BGEffect
-	dw BattleAnimCmd_BGP
-	dw BattleAnimCmd_OBP0
-	dw BattleAnimCmd_OBP1
-	dw BattleAnimCmd_KeepSprites
-	dw BattleAnimCmd_IfParamEqual
-	dw BattleAnimCmd_SetVar
-	dw BattleAnimCmd_IncVar
-	dw BattleAnimCmd_IfVarEqual
-	dw BattleAnimCmd_Jump
-	dw BattleAnimCmd_Loop
-	dw BattleAnimCmd_Call
-	dw BattleAnimCmd_Ret
+	dw BattleAnimCmd_Obj             ; d0
+	dw BattleAnimCmd_1GFX            ; d1
+	dw BattleAnimCmd_2GFX            ; d2
+	dw BattleAnimCmd_3GFX            ; d3
+	dw BattleAnimCmd_4GFX            ; d4
+	dw BattleAnimCmd_5GFX            ; d5
+	dw BattleAnimCmd_IncObj          ; d6
+	dw BattleAnimCmd_SetObj          ; d7
+	dw BattleAnimCmd_IncBGEffect     ; d8
+	dw BattleAnimCmd_BattlerGFX_1Row ; d9
+	dw BattleAnimCmd_BattlerGFX_2Row ; da
+	dw BattleAnimCmd_CheckPokeball   ; db
+	dw BattleAnimCmd_Transform       ; dc
+	dw BattleAnimCmd_RaiseSub        ; dd
+	dw BattleAnimCmd_DropSub         ; de
+	dw BattleAnimCmd_ResetObp0       ; df
+	dw BattleAnimCmd_Sound           ; e0
+	dw BattleAnimCmd_Cry             ; e1
+	dw BattleAnimCmd_MinimizeOpp     ; e2
+	dw BattleAnimCmd_OAMOn           ; e3
+	dw BattleAnimCmd_OAMOff          ; e4
+	dw BattleAnimCmd_ClearObjs       ; e5
+	dw BattleAnimCmd_BeatUp          ; e6
+	dw BattleAnimCmd_UpdateActorPic  ; e7
+	dw BattleAnimCmd_Minimize        ; e8
+	dw BattleAnimCmd_SetBgPal        ; e9
+	dw BattleAnimCmd_SetObjPal       ; ea
+	dw BattleAnimCmd_IfParamAnd      ; eb
+	dw BattleAnimCmd_JumpUntil       ; ec
+	dw BattleAnimCmd_BGEffect        ; ed
+	dw BattleAnimCmd_BGP             ; ee
+	dw BattleAnimCmd_OBP0            ; ef
+	dw BattleAnimCmd_OBP1            ; f0
+	dw BattleAnimCmd_KeepSprites     ; f1
+	dw BattleAnimCmd_IfParamEqual    ; f2
+	dw BattleAnimCmd_SetVar          ; f3
+	dw BattleAnimCmd_IncVar          ; f4
+	dw BattleAnimCmd_IfVarEqual      ; f5
+	dw BattleAnimCmd_Jump            ; f6
+	dw BattleAnimCmd_Loop            ; f7
+	dw BattleAnimCmd_Call            ; f8
+	dw BattleAnimCmd_Ret             ; f9
 	assert_table_length $100 - FIRST_BATTLE_ANIM_CMD
 
 BattleAnimCmd_Ret:
