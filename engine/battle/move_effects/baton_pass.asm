@@ -275,28 +275,8 @@ BattleCommand_UTurn:
 	call UpdateEnemyMonInParty
 
 ; Passed enemy PartyMon entrance
-	ld a, [wOTPartyCount]
-	ld b, a
-	ld a, [wCurOTMon]
-	ld c, a
-; select a random enemy mon to switch to
-.random_loop_trainer
-	call BattleRandom
-	and $7
-	cp b
-	jr nc, .random_loop_trainer
-	cp c
-	jr z, .random_loop_trainer
-	push af
-	push bc
-	ld hl, wOTPartyMon1HP
-	call GetPartyLocation
-	ld a, [hli]
-	or [hl]
-	pop bc
-	pop de
-	jr z, .random_loop_trainer
-	ld a, d
+	farcall OptimizedSwitchmonCheck
+	ld a, b
 	inc a
 	ld [wEnemySwitchMonIndex], a
 	callfar ForceEnemySwitch
