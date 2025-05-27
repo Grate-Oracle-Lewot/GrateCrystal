@@ -153,7 +153,10 @@ BattleCommand_UTurn:
 	call CallBattleCore
 	ld hl, ResetPlayerStatLevels
 	call CallBattleCore
-	jr SwitchMoveResetParticipants
+	ld hl, BreakAttraction
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	jp CallBattleCore
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -170,20 +173,9 @@ BattleCommand_UTurn:
 ; Passed enemy PartyMon entrance
 	xor a
 	ld [wEnemySwitchMonIndex], a
-	ld hl, EnemySwitch_SetMode
+	ld hl, EnemyUTurnSwitch
 	call CallBattleCore
-	ld hl, NewEnemyMonStatus
-	call CallBattleCore
-	ld hl, ResetEnemyStatLevels
-	call CallBattleCore
-	call SwitchMoveResetParticipants
 	ld hl, SpikesDamage
-	jp CallBattleCore
-
-SwitchMoveResetParticipants:
-	ld hl, BreakAttraction
-	call CallBattleCore
-	ld hl, ResetBattleParticipants
 	jp CallBattleCore
 
 SwitchMoveTransitionToMenu:
