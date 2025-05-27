@@ -327,10 +327,10 @@ BattleAnimCommands::
 	dw BattleAnimCmd_Dummy           ; e7
 	dw BattleAnimCmd_UpdateActorPic  ; e8
 	dw BattleAnimCmd_Minimize        ; e9
-	dw BattleAnimCmd_Dummy           ; ea
-	dw BattleAnimCmd_Dummy           ; eb
-	dw BattleAnimCmd_SetBgPal        ; ec
-	dw BattleAnimCmd_SetObjPal       ; ed
+	dw BattleAnimCmd_SetBgPal        ; ea
+	dw BattleAnimCmd_SetObjPal       ; eb
+	dw BattleAnimCmd_Dummy           ; ec
+	dw BattleAnimCmd_Dummy           ; ed
 	dw BattleAnimCmd_IfParamAnd      ; ee
 	dw BattleAnimCmd_JumpUntil       ; ef
 	dw BattleAnimCmd_BGEffect        ; f0
