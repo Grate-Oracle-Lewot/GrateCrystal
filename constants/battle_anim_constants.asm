@@ -213,12 +213,6 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_U_TURN_LAUNCH
 	const ANIM_OBJ_U_TURN_RISE
 	const ANIM_OBJ_U_TURN_FALL
-	const ANIM_OBJ_BLUE_BEAM
-	const ANIM_OBJ_BLUE_BEAM_TIP
-	const ANIM_OBJ_GREEN_BEAM
-	const ANIM_OBJ_GREEN_BEAM_TIP
-	const ANIM_OBJ_BIG_ICE_ROCK
-	const ANIM_OBJ_SMALL_ICE_ROCK
 NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -764,8 +758,6 @@ NUM_BATTLEANIMOAMSETS EQU const_value
 	const ANIM_BG_VIBRATE_MON
 	const ANIM_BG_WOBBLE_PLAYER
 	const ANIM_BG_WOBBLE_SCREEN
-	const ANIM_BG_CYCLE_OBPALS_GRAY_AND_BLUE
-	const ANIM_BG_CYCLE_OBPALS_GRAY_AND_GREEN
 NUM_ANIM_BGS EQU const_value - 1
 
 ; wBattleAnimTileDict keys (see wram.asm)
