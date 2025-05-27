@@ -6271,7 +6271,7 @@ BattleCommand_CheckSafeguard:
 
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
-INCLUDE "engine/battle/move_effects/baton_pass.asm"
+INCLUDE "engine/battle/move_effects/baton_pass.asm" ; Baton Pass, Teleport, and U-Turn
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
