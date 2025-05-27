@@ -4711,7 +4711,7 @@ BattleAnim_PowerGem:
 BattleAnim_Moonblast:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_BEAM
 	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $0, $0
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
@@ -4722,7 +4722,7 @@ BattleAnim_Moonblast:
 	anim_wait 42
 	anim_clearobjs
 	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $2, $0
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
 	anim_wait 2
