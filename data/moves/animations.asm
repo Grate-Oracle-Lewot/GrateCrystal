@@ -1444,7 +1444,7 @@ BattleAnim_HyperBeam:
 
 BattleAnim_AuroraBeam:
 	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_wait 64
 	anim_sound 0, 0, SFX_HYPER_BEAM
@@ -2209,7 +2209,7 @@ BattleAnim_Smog:
 
 BattleAnim_DragonPulse:
 	anim_1gfx ANIM_GFX_BEAM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $2, $0
 	anim_sound 6, 2, SFX_PSYBEAM
 	anim_obj ANIM_OBJ_BLUE_BEAM, 64, 92, $0
 	anim_wait 4
@@ -3449,7 +3449,7 @@ BattleAnim_Aeroblast:
 	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $4, $10
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $2, $0
 	anim_sound 0, 0, SFX_AEROBLAST
 	anim_obj ANIM_OBJ_AEROBLAST, 72, 88, $0
 	anim_wait 32
@@ -4711,7 +4711,7 @@ BattleAnim_PowerGem:
 BattleAnim_Moonblast:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_BEAM
 	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW_FULL_SHIFT, $0, $0, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
 	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
