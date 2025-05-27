@@ -14,10 +14,7 @@ BattleCommand_BatonPass:
 	call DelayFrames
 
 ; Transition into switchmon menu
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu
-
-	farcall ForcePickSwitchMonInBattle
+	call SwitchMoveTransitionIntoMenu
 
 ; Return to battle scene
 	call ClearPalettes
@@ -252,7 +249,7 @@ CheckAnyOtherAliveMons:
 
 ; Need something to switch to
 	call CheckAnyOtherAlivePartyMons
-	ret z  ; nothing to do if there are no other Pokémon
+	ret z
 
 	call UpdateBattleMonInParty
 
@@ -260,10 +257,7 @@ CheckAnyOtherAliveMons:
 	call DelayFrames
 
 ; Transition into switchmon menu
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu
-
-	farcall ForcePickSwitchMonInBattle
+	call SwitchMoveTransitionIntoMenu
 
 ; Return to battle scene
 	call ClearPalettes
@@ -321,3 +315,10 @@ CheckAnyOtherAliveMons:
 	callfar ForceEnemySwitch
 	ld hl, SpikesDamage
 	jp CallBattleCore
+
+SwitchMoveTransitionIntoMenu:
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu
+
+	farcall ForcePickSwitchMonInBattle
+	ret
