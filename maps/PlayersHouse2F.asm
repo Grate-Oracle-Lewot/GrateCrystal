@@ -39,17 +39,11 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	checkpoke SKARMORY
-	iftrue .Battle
 	opentext
 	givepoke SKARMORY, 50
 	givepoke LEDIAN, 49
-	givepoke CELEBI, 100
-	giveitem TM_U_TURN
+	givepoke MEWTWO, 100
 	closetext
-	end
-
-.Battle
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
