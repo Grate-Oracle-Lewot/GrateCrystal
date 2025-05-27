@@ -39,10 +39,10 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	checkpoke LEDIAN
+	checkpoke SKARMORY
 	iftrue .Battle
 	opentext
-	givepoke LEDIAN, 50
+	givepoke SKARMORY, 50
 	givepoke MAGIKARP, 1
 	givepoke CELEBI, 100
 	giveitem TM_U_TURN
@@ -50,10 +50,6 @@ PlayersHouseRadioScript:
 	end
 
 .Battle
-	loadwildmon SANDSLASH, 35
-	startbattle
-	reloadmapafterbattle
-	special HealParty
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
