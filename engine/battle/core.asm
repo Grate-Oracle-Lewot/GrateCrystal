@@ -3288,21 +3288,6 @@ ForceEnemySwitch:
 	call BreakAttraction
 	jp ResetBattleParticipants
 
-EnemyUTurnSwitch:
-	call ResetEnemyBattleVars
-	call CheckWhetherSwitchmonIsPredetermined
-	jr c, .skip
-	call FindMonInOTPartyToSwitchIntoBattle
-.skip
-	; 'b' contains the PartyNr of the mon the AI will switch to
-	call LoadEnemyMonToSwitchTo
-	call ClearEnemyMonBox
-	call EnemySwitch_ShowSendOutTextAndAnimation
-	call NewEnemyMonStatus
-	call ResetEnemyStatLevels
-	call BreakAttraction
-	jp ResetBattleParticipants
-
 EnemySwitch:
 	call CheckWhetherToAskSwitch
 	jr nc, EnemySwitch_SetMode
