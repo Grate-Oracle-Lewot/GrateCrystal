@@ -35,7 +35,6 @@ SGBLayoutJumptable:
 	dw .SGB_MapPals
 	dw .SGB_PartyMenu
 	dw .SGB_Evolution
-	dw .SGB_GSTitleScreen
 	dw .SGB_MoveList
 	dw .SGB_PokedexSearchOption
 	dw .SGB_Pokepic
