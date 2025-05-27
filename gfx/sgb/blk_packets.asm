@@ -66,11 +66,6 @@ BlkPacket_GSTitleScreen:
 	attr_blk_data %011, 1,1,0, 15,01, 18,04
 	ds 12, 0
 
-BlkPacket_BetaTitleScreen:
-	attr_blk 1
-	attr_blk_data %111, 0,0,1, 00,00, 19,05 ; logo
-	ds 8, 0
-
 BlkPacket_MagnetTrain:
 	attr_blk 2
 	attr_blk_data %111, 2,2,0, 00,04, 19,13 ; fence
