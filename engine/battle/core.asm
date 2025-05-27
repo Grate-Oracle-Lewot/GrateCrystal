@@ -3280,6 +3280,18 @@ ForceEnemySwitch:
 	ld a, [wEnemySwitchMonIndex]
 	dec a
 	ld b, a
+	jr EnemyForceUTurnSwitchMerge
+
+EnemyUTurnSwitch:
+	call ResetEnemyBattleVars
+	call CheckWhetherSwitchmonIsPredetermined
+	jr c, .skip
+	call FindMonInOTPartyToSwitchIntoBattle
+.skip
+	; 'b' contains the PartyNr of the mon the AI will switch to
+	; fallthrough
+
+EnemyForceUTurnSwitchMerge:
 	call LoadEnemyMonToSwitchTo
 	call ClearEnemyMonBox
 	call NewEnemyMonStatus
