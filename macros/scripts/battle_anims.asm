@@ -7,12 +7,12 @@ anim_wait: MACRO
 	db \1
 ENDM
 
-	const anim_dummy_command ; d0 - d5
+	const anim_dummy_command ; e7, ec, ed, d5, d6, d7
 anim_dummy: MACRO
 	db anim_dummy_command
 ENDM
 
-	const anim_obj_command ; $d6
+	const anim_obj_command ; $d0
 anim_obj: MACRO
 	db anim_obj_command
 if _NARG <= 4
@@ -29,20 +29,20 @@ else
 endc
 ENDM
 
-	const anim_1gfx_command ; $d7
+	const anim_1gfx_command ; $d1
 anim_1gfx: MACRO
 	db anim_1gfx_command
 	db \1 ; gfx1
 ENDM
 
-	const anim_2gfx_command ; $d8
+	const anim_2gfx_command ; $d2
 anim_2gfx: MACRO
 	db anim_2gfx_command
 	db \1 ; gfx1
 	db \2 ; gfx2
 ENDM
 
-	const anim_3gfx_command ; $d9
+	const anim_3gfx_command ; $d3
 anim_3gfx: MACRO
 	db anim_3gfx_command
 	db \1 ; gfx1
@@ -50,7 +50,7 @@ anim_3gfx: MACRO
 	db \3 ; gfx3
 ENDM
 
-	const anim_4gfx_command ; $da
+	const anim_4gfx_command ; $d4
 anim_4gfx: MACRO
 	db anim_4gfx_command
 	db \1 ; gfx1
@@ -59,7 +59,7 @@ anim_4gfx: MACRO
 	db \4 ; gfx4
 ENDM
 
-	const anim_5gfx_command ; $db
+	const anim_5gfx_command ; $d5
 anim_5gfx: MACRO
 	db anim_5gfx_command
 	db \1 ; gfx1
@@ -69,136 +69,136 @@ anim_5gfx: MACRO
 	db \5 ; gfx5
 ENDM
 
-	const anim_incobj_command ; $dc
+	const anim_incobj_command ; $d6
 anim_incobj: MACRO
 	db anim_incobj_command
 	db \1 ; object_id
 ENDM
 
-	const anim_setobj_command ; $dd
+	const anim_setobj_command ; $d7
 anim_setobj: MACRO
 	db anim_setobj_command
 	db \1 ; object_id
 	db \2 ; value
 ENDM
 
-	const anim_incbgeffect_command ; $de
+	const anim_incbgeffect_command ; $d8
 anim_incbgeffect: MACRO
 	db anim_incbgeffect_command
 	db \1 ; effect
 ENDM
 
-	const anim_battlergfx_2row_command ; $df
-anim_battlergfx_2row: MACRO
-	db anim_battlergfx_2row_command
-ENDM
-
-	const anim_battlergfx_1row_command ; $e0
+	const anim_battlergfx_1row_command ; $d9
 anim_battlergfx_1row: MACRO
 	db anim_battlergfx_1row_command
 ENDM
 
-	const anim_checkpokeball_command ; $e1
+	const anim_battlergfx_2row_command ; $da
+anim_battlergfx_2row: MACRO
+	db anim_battlergfx_2row_command
+ENDM
+
+	const anim_checkpokeball_command ; $db
 anim_checkpokeball: MACRO
 	db anim_checkpokeball_command
 ENDM
 
-	const anim_transform_command ; $e2
+	const anim_transform_command ; $dc
 anim_transform: MACRO
 	db anim_transform_command
 ENDM
 
-	const anim_raisesub_command ; $e3
+	const anim_raisesub_command ; $dd
 anim_raisesub: MACRO
 	db anim_raisesub_command
 ENDM
 
-	const anim_dropsub_command ; $e4
+	const anim_dropsub_command ; $de
 anim_dropsub: MACRO
 	db anim_dropsub_command
 ENDM
 
-	const anim_resetobp0_command ; $e5
+	const anim_resetobp0_command ; $df
 anim_resetobp0: MACRO
 	db anim_resetobp0_command
 ENDM
 
-	const anim_sound_command ; $e6
+	const anim_sound_command ; $e0
 anim_sound: MACRO
 	db anim_sound_command
 	db (\1 << 2) | \2 ; duration, tracks
 	db \3 ; sound_id
 ENDM
 
-	const anim_cry_command ; $e7
+	const anim_cry_command ; $e1
 anim_cry: MACRO
 	db anim_cry_command
 	db \1 ; pitch
 ENDM
 
-	const anim_minimizeopp_command ; $e8
+	const anim_minimizeopp_command ; $e2
 anim_minimizeopp: MACRO
 	db anim_minimizeopp_command
 ENDM
 
-	const anim_oamon_command ; $e9
+	const anim_oamon_command ; $e3
 anim_oamon: MACRO
 	db anim_oamon_command
 ENDM
 
-	const anim_oamoff_command ; $ea
+	const anim_oamoff_command ; $e4
 anim_oamoff: MACRO
 	db anim_oamoff_command
 ENDM
 
-	const anim_clearobjs_command ; $eb
+	const anim_clearobjs_command ; $e5
 anim_clearobjs: MACRO
 	db anim_clearobjs_command
 ENDM
 
-	const anim_beatup_command ; $ec
+	const anim_beatup_command ; $e6
 anim_beatup: MACRO
 	db anim_beatup_command
 ENDM
 
-	const anim_updateactorpic_command ; $ed
+	const anim_updateactorpic_command ; $e8
 anim_updateactorpic: MACRO
 	db anim_updateactorpic_command
 ENDM
 
-	const anim_minimize_command ; $ee
+	const anim_minimize_command ; $e9
 anim_minimize: MACRO
 	db anim_minimize_command
 ENDM
 
-	const anim_setbgpal_command ; ef
+	const anim_setbgpal_command ; ea
 anim_setbgpal: MACRO
 	db anim_setbgpal_command
 	db \1 ; pal index to set (0-7)
 	db \2 ; battle pal
 ENDM
 
-	const anim_setobjpal_command ; f0
+	const anim_setobjpal_command ; eb
 anim_setobjpal: MACRO
 	db anim_setobjpal_command
 	db \1 ; pal index to set (0-7)
 	db \2 ; battle pal
 ENDM
 
-	const anim_if_param_and_command ; $f1
+	const anim_if_param_and_command ; $ee
 anim_if_param_and: MACRO
 	db anim_if_param_and_command
 	db \1 ; value
 	dw \2 ; address
 ENDM
 
-	const anim_jumpuntil_command ; $f2
+	const anim_jumpuntil_command ; $ef
 anim_jumpuntil: MACRO
 	db anim_jumpuntil_command
 	dw \1 ; address
 ENDM
 
-	const anim_bgeffect_command ; $f3
+	const anim_bgeffect_command ; $f0
 anim_bgeffect: MACRO
 	db anim_bgeffect_command
 	db \1 ; effect
@@ -207,25 +207,25 @@ anim_bgeffect: MACRO
 	db \4 ; unknown
 ENDM
 
-	const anim_bgp_command ; $f4
+	const anim_bgp_command ; $f1
 anim_bgp: MACRO
 	db anim_bgp_command
 	db \1 ; colors
 ENDM
 
-	const anim_obp0_command ; $f5
+	const anim_obp0_command ; $f2
 anim_obp0: MACRO
 	db anim_obp0_command
 	db \1 ; colors
 ENDM
 
-	const anim_obp1_command ; $f6
+	const anim_obp1_command ; $f3
 anim_obp1: MACRO
 	db anim_obp1_command
 	db \1 ; colors
 ENDM
 
-	const anim_keepsprites_command ; $f7
+	const anim_keepsprites_command ; $f4
 anim_keepsprites: MACRO
 	db anim_keepsprites_command
 ENDM
