@@ -4722,7 +4722,9 @@ BattleAnim_Moonblast:
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_call BattleAnimSub_Beam
-	anim_wait 42
+	anim_wait 48
+	anim_incobj 5
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Struggle:
