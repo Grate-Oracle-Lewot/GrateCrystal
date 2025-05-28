@@ -285,6 +285,7 @@ BattleAnimations::
 
 BattleAnim_0:
 BattleAnim_MirrorMove:
+BattleAnim_Extremespeed:
 	anim_ret
 
 BattleAnim_SweetScent2:
@@ -4565,9 +4566,6 @@ BattleAnim_PsychUp:
 	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 16
-	anim_ret
-
-BattleAnim_Extremespeed:
 	anim_ret
 
 BattleAnim_Ancientpower:
