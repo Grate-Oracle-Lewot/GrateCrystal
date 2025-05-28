@@ -19,7 +19,7 @@ AI_Basic:
 	ret z
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	ld c, a
@@ -84,7 +84,7 @@ AI_Status:
 	jr z, .checkbide
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_TOXIC
@@ -215,7 +215,7 @@ AI_Setup:
 	ret z
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 
@@ -366,7 +366,7 @@ AI_Types:
 	jr z, .checkrain
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	push hl
 	push bc
@@ -409,7 +409,7 @@ AI_Types:
 	and a
 	jr z, .movesdone
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	and TYPE_MASK
 	cp d
@@ -467,7 +467,7 @@ AI_Immunities:
 	ret z
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	push hl
 	push bc
@@ -505,7 +505,7 @@ AI_Offensive:
 	ret z
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -602,7 +602,7 @@ AI_Aggressive:
 	push hl
 	push de
 	push bc
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	jr z, .nodamage
@@ -654,7 +654,7 @@ AI_Aggressive:
 	inc hl
 	jr z, .checkmove2
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 ; Ignore this move if its power is 0 or 1.
 ; Moves such as Seismic Toss, Counter and Fissure have a base power of 1.
@@ -705,7 +705,7 @@ AI_Risky:
 	push de
 	push bc
 	push hl
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -767,7 +767,7 @@ AI_Smart:
 	push de
 	push bc
 	push hl
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	ld hl, AI_Smart_EffectHandlers
@@ -839,7 +839,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
-	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_SkyAttack_FutureSight
 	dbw EFFECT_POISON_MULTI_HIT, AI_Smart_Reckless
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
@@ -905,6 +904,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BLIZZARD,         AI_Smart_Blizzard
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_DIG,              AI_Smart_Dig
+	dbw EFFECT_AVALANCHE,        AI_Smart_Avalanche
 	db -1 ; end
 
 AI_Smart_Nightmare:
@@ -1068,7 +1068,7 @@ AI_Smart_LockOn:
 	and a
 	jr z, .discourage
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	cp 76 percent - 1
@@ -1124,7 +1124,7 @@ AI_Smart_LockOn:
 	jr z, .dismiss
 
 	inc de
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
 	cp 76 percent - 1
@@ -1956,32 +1956,37 @@ AI_Smart_SpDefenseUp2:
 	inc [hl]
 	ret
 
-AI_Smart_SpeedDownHit:
-; Do nothing if this move is not Icy Wind.
-; Icy Wind is guaranteed to lower Speed, while other moves only have a small chance.
-; It also hits flying opponents, where other moves don't.
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-	cp ICY_WIND
-	ret nz
-
-; Maybe encourage this move if the player is flying. Continue regardless.
-	call AI_Smart_Gust
-
-; 90% chance to greatly encourage this move if the following conditions all meet:
-;  -Enemy's HP is higher than 25%.
-;  -It's the first turn of player's Pokemon.
-;  -Player is faster than enemy.
-	call AICheckEnemyQuarterHP
-	ret nc
-	ld a, [wPlayerTurnsTaken]
+AI_Smart_Avalanche:
+; Encourage this move if the player's last used move was a damaging move. Continue regardless.
+	ld a, [wLastPlayerCounterMove]
 	and a
-	ret nz
-	call AICompareSpeed
-	ret c
-	call AI_90_10
-	ret c
+	jr z, .continue
+
+	call AIGetMoveAttributes
+
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_OHKO
+	jr z, .continue
+	cp EFFECT_FISSURE
+	jr z, .continue
+	cp EFFECT_COUNTER
+	jr z, .continue
+	cp EFFECT_MIRROR_COAT
+	jr z, .continue
+
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .continue
 	dec [hl]
-	dec [hl]
+
+.continue
+; Discourage this move if the enemy's HP is below half, and discourage again if below quarter.
+	call AICheckEnemyHalfHP
+	ret c
+	inc [hl]
+	call AICheckEnemyQuarterHP
+	ret c
+	inc [hl]
 	ret
 
 AI_Smart_HyperBeam:
@@ -2090,7 +2095,7 @@ AI_Smart_Counter:
 	and a
 	jr z, .skipmove
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -2118,7 +2123,7 @@ AI_Smart_Counter:
 	and a
 	ret z
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -2151,7 +2156,7 @@ AI_Smart_MirrorCoat:
 	and a
 	jr z, .skipmove
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -2179,7 +2184,7 @@ AI_Smart_MirrorCoat:
 	and a
 	ret z
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -3727,7 +3732,7 @@ AIHasMoveEffect:
 	and a
 	jr z, .no
 
-	call AIGetEnemyMove
+	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp b
@@ -3779,8 +3784,8 @@ AIHasMoveInArray:
 	pop hl
 	ret
 
-AIGetEnemyMove:
-; Load attributes of move a into ram
+AIGetMoveAttributes:
+; Load attributes of move a into enemy move struct.
 
 	push hl
 	push de
