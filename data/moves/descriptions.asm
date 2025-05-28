@@ -196,7 +196,7 @@ MoveDescriptions::
 	dw ForesightDescription
 	dw DestinyBondDescription
 	dw PerishSongDescription
-	dw IcyWindDescription
+	dw AvalancheDescription
 	dw AuraSphereDescription
 	dw BoneRushDescription
 	dw LockOnDescription
@@ -1043,9 +1043,9 @@ PerishSongDescription:
 	db   "Both user and foe"
 	next "faint in 3 turns.@"
 
-IcyWindDescription:
-	db   "Lowers SPEED. Can"
-	next "hit flying foes.@"
+AvalancheDescription:
+	db   "Doubles power if"
+	next "damaged first.@"
 
 AuraSphereDescription:
 	db   "A ki ball that"
