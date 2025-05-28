@@ -208,7 +208,7 @@ Moves:
 	move FORESIGHT,    EFFECT_FORESIGHT,           0, FIGHTING,     STATUS,   100, 20,   0
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,        STATUS,   100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, GHOST,        STATUS,   100,  5,   0
-	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,          SPECIAL,  100, 15, 100
+	move AVALANCHE,    EFFECT_AVALANCHE,          60, ICE,          PHYSICAL, 100, 10,   0
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         90, FIGHTING,     SPECIAL,  100, 10,   0
 	move BONE_RUSH,    EFFECT_MULTI_HIT,          30, GROUND,       PHYSICAL,  90, 10,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       STATUS,   100,  5,   0
