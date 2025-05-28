@@ -173,4 +173,5 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_UndergroundFlyer
 	dw BattleCommand_CheckContact
+	dw BattleCommand_Avalanche
 	assert_table_length NUM_EFFECT_COMMANDS
