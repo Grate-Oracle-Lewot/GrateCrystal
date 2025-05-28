@@ -3295,7 +3295,11 @@ EnemySwitch:
 	jr nc, EnemySwitch_SetMode
 	; Shift Mode
 	call ResetEnemyBattleVars
-	call OptimizedSwitchmonCheck
+	call CheckWhetherSwitchmonIsPredetermined
+	jr c, .skip
+	call FindMonInOTPartyToSwitchIntoBattle
+.skip
+	; 'b' contains the PartyNr of the mon the AI will switch to
 	call LoadEnemyMonToSwitchTo
 	call OfferSwitch
 	push af
@@ -3315,7 +3319,11 @@ EnemySwitch:
 
 EnemySwitch_SetMode:
 	call ResetEnemyBattleVars
-	call OptimizedSwitchmonCheck
+	call CheckWhetherSwitchmonIsPredetermined
+	jr c, .skip
+	call FindMonInOTPartyToSwitchIntoBattle
+.skip
+	; 'b' contains the PartyNr of the mon the AI will switch to
 	call LoadEnemyMonToSwitchTo
 	ld a, 1
 	ld [wEnemyIsSwitching], a
@@ -3393,11 +3401,6 @@ AddBattleParticipant:
 	pop bc
 	ld hl, wBattleParticipantsIncludingFainted
 	predef_jump SmallFarFlagAction
-
-OptimizedSwitchmonCheck:
-	call CheckWhetherSwitchmonIsPredetermined
-	ret c
-	; fallthrough
 
 FindMonInOTPartyToSwitchIntoBattle:
 	ld b, -1
