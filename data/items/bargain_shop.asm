@@ -1,8 +1,10 @@
 BargainShopData:
-	db 5
-	dbw ULTRA_BALL,    500
-	dbw REVIVE,        500
-	dbw FULL_RESTORE, 1000
-	dbw ETHER,        1000
-	dbw ELIXER,       2500
+	db 7
+	dbw TM_FURY_CUTTER,  5000
+	dbw TM_IRON_TAIL,    6400
+	dbw TM_DYNAMICPUNCH, 6400
+	dbw TM_DRAGONBREATH, 6400
+	dbw TM_SHADOW_BALL,  7500
+	dbw TM_SHADOW_CLAW,  7500
+	dbw TM_AVALANCHE,    7500
 	db -1
