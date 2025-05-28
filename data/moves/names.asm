@@ -195,7 +195,7 @@ MoveNames::
 	li "FORESIGHT"
 	li "DESTINY BOND"
 	li "PERISH SONG"
-	li "ICY WIND"
+	li "AVALANCHE"
 	li "AURA SPHERE"
 	li "BONE RUSH"
 	li "LOCK-ON"
