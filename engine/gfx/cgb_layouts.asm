@@ -3,6 +3,7 @@
 CheckCGB:
 	ldh a, [hCGB]
 	and a
+SetDefaultBattlePalette: ; placeholder in lieu of dynamic palette system
 	ret
 
 LoadSGBLayoutCGB:
