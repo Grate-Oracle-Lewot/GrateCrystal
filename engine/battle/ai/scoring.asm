@@ -1579,7 +1579,7 @@ AI_Smart_Synthesis:
 	; fallthrough
 
 AI_Smart_Heal:
-; Recover, Softboiled, Milk Drink, Synthesis, and Rest
+; Recover, Softboiled, Milk Drink, Synthesis, and Rest.
 
 ; The AI_Basic layer dismisses healing moves if the enemy's HP is full.
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
