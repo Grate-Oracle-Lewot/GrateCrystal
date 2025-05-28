@@ -157,7 +157,7 @@ anim_beatup: MACRO
 ENDM
 
 	const anim_dummy_e7_command ; e7
-anim_dummy: MACRO
+anim_dummy_e7: MACRO
 	db anim_dummy_e7_command
 ENDM
 
@@ -186,12 +186,12 @@ anim_setobjpal: MACRO
 ENDM
 
 	const anim_dummy_ec_command ; ec
-anim_dummy: MACRO
+anim_dummy_ec: MACRO
 	db anim_dummy_ec_command
 ENDM
 
 	const anim_dummy_ed_command ; ed
-anim_dummy: MACRO
+anim_dummy_ed: MACRO
 	db anim_dummy_ed_command
 ENDM
 
@@ -241,17 +241,17 @@ anim_keepsprites: MACRO
 ENDM
 
 	const anim_dummy_d5_command ; d5
-anim_dummy: MACRO
+anim_dummy_d5: MACRO
 	db anim_dummy_d5_command
 ENDM
 
 	const anim_dummy_d6_command ; d6
-anim_dummy: MACRO
+anim_dummy_d6: MACRO
 	db anim_dummy_d6_command
 ENDM
 
 	const anim_dummy_d7_command ; d7
-anim_dummy: MACRO
+anim_dummy_d7: MACRO
 	db anim_dummy_d7_command
 ENDM
 
