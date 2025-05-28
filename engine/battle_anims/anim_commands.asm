@@ -310,8 +310,8 @@ BattleAnimCommands::
 	dw BattleAnimCmd_IncObj          ; d6
 	dw BattleAnimCmd_SetObj          ; d7
 	dw BattleAnimCmd_IncBGEffect     ; d8
-	dw BattleAnimCmd_BattlerGFX_1Row ; d9
-	dw BattleAnimCmd_BattlerGFX_2Row ; da
+	dw BattleAnimCmd_BattlerGFX_1Row ; d9 anim_battlergfx_2row
+	dw BattleAnimCmd_BattlerGFX_2Row ; da anim_battlergfx_1row
 	dw BattleAnimCmd_CheckPokeball   ; db
 	dw BattleAnimCmd_Transform       ; dc
 	dw BattleAnimCmd_RaiseSub        ; dd
