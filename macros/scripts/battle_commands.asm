@@ -173,6 +173,7 @@ ENDM
 	command curl                    ; a6
 	command undergroundflyer        ; a7
 	command checkcontact            ; a8
+	command doubledamageifhit       ; a9
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
