@@ -201,7 +201,7 @@
 	const FORESIGHT    ; c1
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
-	const ICY_WIND     ; c4
+	const AVALANCHE    ; c4
 	const AURA_SPHERE  ; c5
 	const BONE_RUSH    ; c6
 	const LOCK_ON      ; c7
