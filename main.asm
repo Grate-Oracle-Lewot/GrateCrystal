@@ -20,6 +20,7 @@ INCLUDE "engine/events/haircut.asm"
 
 SECTION "bank2", ROMX
 
+INCLUDE "engine/overworld/player_object.asm"
 INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
@@ -269,7 +270,6 @@ INCLUDE "engine/overworld/player_movement.asm"
 INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
 INCLUDE "data/text/battle.asm"
-INCLUDE "engine/overworld/player_object.asm"
 
 
 SECTION "bank21", ROMX
