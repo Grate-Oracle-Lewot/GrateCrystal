@@ -228,7 +228,7 @@ TM01 EQU const_value
 	add_tm SNORE        ; c7
 	add_tm BLIZZARD     ; c8
 	add_tm HYPER_BEAM   ; c9
-	add_tm ICY_WIND     ; ca
+	add_tm AVALANCHE    ; ca
 	add_tm PROTECT      ; cb
 	add_tm RAIN_DANCE   ; cc
 	add_tm GIGA_DRAIN   ; cd
