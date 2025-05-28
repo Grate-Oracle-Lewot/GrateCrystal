@@ -83,14 +83,14 @@ anim_incbgeffect: MACRO
 	db \1 ; effect
 ENDM
 
-	const anim_battlergfx_1row_command ; $d9
-anim_battlergfx_1row: MACRO
-	db anim_battlergfx_1row_command
-ENDM
-
-	const anim_battlergfx_2row_command ; $da
+	const anim_battlergfx_2row_command ; $d9 BattleAnimCmd_BattlerGFX_1Row
 anim_battlergfx_2row: MACRO
 	db anim_battlergfx_2row_command
+ENDM
+
+	const anim_battlergfx_1row_command ; $da BattleAnimCmd_BattlerGFX_2Row
+anim_battlergfx_1row: MACRO
+	db anim_battlergfx_1row_command
 ENDM
 
 	const anim_checkpokeball_command ; $db
