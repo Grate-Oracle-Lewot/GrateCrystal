@@ -7,11 +7,6 @@ anim_wait: MACRO
 	db \1
 ENDM
 
-	const anim_dummy_command ; e7, ec, ed, d5, d6, d7
-anim_dummy: MACRO
-	db anim_dummy_command
-ENDM
-
 	const anim_obj_command ; $d0
 anim_obj: MACRO
 	db anim_obj_command
@@ -161,6 +156,11 @@ anim_beatup: MACRO
 	db anim_beatup_command
 ENDM
 
+	const anim_dummy_e7_command ; e7
+anim_dummy: MACRO
+	db anim_dummy_e7_command
+ENDM
+
 	const anim_updateactorpic_command ; $e8
 anim_updateactorpic: MACRO
 	db anim_updateactorpic_command
@@ -183,6 +183,16 @@ anim_setobjpal: MACRO
 	db anim_setobjpal_command
 	db \1 ; pal index to set (0-7)
 	db \2 ; battle pal
+ENDM
+
+	const anim_dummy_ec_command ; ec
+anim_dummy: MACRO
+	db anim_dummy_ec_command
+ENDM
+
+	const anim_dummy_ed_command ; ed
+anim_dummy: MACRO
+	db anim_dummy_ed_command
 ENDM
 
 	const anim_if_param_and_command ; $ee
@@ -228,6 +238,21 @@ ENDM
 	const anim_keepsprites_command ; $f4
 anim_keepsprites: MACRO
 	db anim_keepsprites_command
+ENDM
+
+	const anim_dummy_d5_command ; d5
+anim_dummy: MACRO
+	db anim_dummy_d5_command
+ENDM
+
+	const anim_dummy_d6_command ; d6
+anim_dummy: MACRO
+	db anim_dummy_d6_command
+ENDM
+
+	const anim_dummy_d7_command ; d7
+anim_dummy: MACRO
+	db anim_dummy_d7_command
 ENDM
 
 	const anim_if_param_equal_command ; $f8
