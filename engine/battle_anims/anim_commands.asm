@@ -44,9 +44,7 @@ _PlayBattleAnim:
 	ld a, 1
 	ldh [hBGMapMode], a
 
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
+	call BattleAnimDelayFrameThrice
 	jp WaitSFX
 
 BattleAnimRunScript:
@@ -139,9 +137,7 @@ BattleAnimClearHud:
 	call ClearActorHud
 	ld a, $1
 	ldh [hBGMapMode], a
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
+	call BattleAnimDelayFrameThrice
 	jp WaitTop
 
 BattleAnimRestoreHuds:
@@ -160,9 +156,7 @@ BattleAnimRestoreHuds:
 
 	ld a, $1
 	ldh [hBGMapMode], a
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
-	call BattleAnimDelayFrame
+	call BattleAnimDelayFrameThrice
 	jp WaitTop
 
 BattleAnimRequestPals:
@@ -182,6 +176,11 @@ BattleAnimRequestPals:
 	cp b
 	call nz, BattleAnim_SetOBPals
 	ret
+
+BattleAnimDelayFrameThrice:
+	call BattleAnimDelayFrame
+	call BattleAnimDelayFrame
+	; fallthrough
 
 BattleAnimDelayFrame:
 ; Like DelayFrame but wastes battery life.
