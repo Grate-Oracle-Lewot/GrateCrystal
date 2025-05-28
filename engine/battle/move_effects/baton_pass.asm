@@ -275,11 +275,7 @@ BattleCommand_UTurn:
 	call UpdateEnemyMonInParty
 
 ; Passed enemy PartyMon entrance
-	farcall OptimizedSwitchmonCheck
-	ld a, b
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	callfar ForceEnemySwitch
+	farcall EnemyUTurnSwitch
 	ld hl, SpikesDamage
 	jp CallBattleCore
 
