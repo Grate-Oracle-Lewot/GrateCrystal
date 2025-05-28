@@ -73,99 +73,39 @@ _CGB_BattleGrayscale:
 	ld de, wOBPals1
 	ld c, 2
 	call CopyPalettes
-	jp _CGB_FinishBattleScreenLayout
+	jr _CGB_FinishBattleScreenLayout
 
-SetDefaultBattlePalette:
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wTempBattleMonSpecies)
-	ldh [rSVBK], a
-	call .do_it
-	pop af
-	ldh [rSVBK], a
-	ret
-
-.do_it
-	ld a, b
-	and a ; PAL_BATTLE_BG_PLAYER
-	jr z, SetBattlePal_Player
-	dec a ; PAL_BATTLE_BG_ENEMY
-	jr z, SetBattlePal_Enemy
-	dec a ; PAL_BATTLE_BG_ENEMY_HP
-	jr z, SetBattlePal_EnemyHP
-	dec a ; PAL_BATTLE_BG_PLAYER_HP
-	jr z, SetBattlePal_PlayerHP
-	dec a ; PAL_BATTLE_BG_EXP
-	jr z, SetBattlePal_Exp
-	dec a ; PAL_BATTLE_BG_5 (unused)
-	jr z, SetBattlePal_Player
-	dec a ; PAL_BATTLE_BG_6 (unused)
-	jr z, SetBattlePal_Player
-	dec a ; PAL_BATTLE_BG_TEXT
-	jr z, SetBattlePal_Text
-	dec a ; PAL_BATTLE_OB_ENEMY
-	jr z, SetBattlePal_Enemy
-	dec a ; PAL_BATTLE_OB_PLAYER
-	jr z, SetBattlePal_Player
-
-	; At this point, a is 1-6. Load a battle object pal.
-	ld hl, BattleObjectPals - 1 palettes
-	ld bc, 1 palettes
-	call AddNTimes
-	call FarCopyWRAM
-	pop af
-	ldh [rSVBK], a
-	ret
-
-SetBattlePal_Player:
+_CGB_BattleColors:
+	ld de, wBGPals1
 	call GetBattlemonBackpicPalettePointer
-	jp LoadPalette_White_Col1_Col2_Black
-
-SetBattlePal_Enemy:
+	push hl
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER
 	call GetEnemyFrontpicPalettePointer
-	jp LoadPalette_White_Col1_Col2_Black
-
-SetBattlePal_EnemyHP:
-	jr SetBattlePal_HP
-
-SetBattlePal_PlayerHP:
-	ld a, [wPlayerHPPal]
-	; fallthrough
-
-SetBattlePal_HP:
+	push hl
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_ENEMY
+	ld a, [wEnemyHPPal]
 	ld l, a
 	ld h, 0
 	add hl, hl
 	add hl, hl
 	ld bc, HPBarPals
 	add hl, bc
-	jp LoadPalette_White_Col1_Col2_Black
-
-SetBattlePal_Exp:
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_ENEMY_HP
+	ld a, [wPlayerHPPal]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld bc, HPBarPals
+	add hl, bc
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER_HP
 	ld hl, ExpBarPalette
-	jp LoadPalette_White_Col1_Col2_Black
-
-SetBattlePal_Text:
-	; Mobile Adapter connectivity changes bg pal 7.
-	farcall Function100dc0 ; is a mobile adapter session active?
-	ld hl, PartyMenuBGPalette
-	jr nc, .got_pal
-	ld hl, PartyMenuBGMobilePalette
-.got_pal
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	jp FarCopyWRAM
-
-_CGB_BattleColors:
-	ld de, wBGPals1
-	call SetBattlePal_Player
-	call SetBattlePal_Enemy
-	call SetBattlePal_EnemyHP
-	call SetBattlePal_PlayerHP
-	call SetBattlePal_Exp
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
 	ld de, wOBPals1
-	call SetBattlePal_Enemy
-	call SetBattlePal_Player
+	pop hl
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
+	pop hl
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_PLAYER
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
