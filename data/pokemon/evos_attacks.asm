@@ -3291,7 +3291,7 @@ SneaselEvosAttacks:
 	db 33, SLASH
 	db 37, SHADOW_CLAW
 	db 41, AGILITY
-	db 49, ICE_PUNCH
+	db 49, AVALANCHE
 	db 57, BEAT_UP
 	db 0 ; no more level-up moves
 
@@ -3369,7 +3369,7 @@ SwinubEvosAttacks:
 	db 28, MIST
 	db 37, EARTHQUAKE
 	db 46, SKULL_BASH
-	db 52, BLIZZARD
+	db 52, AVALANCHE
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
@@ -3384,7 +3384,7 @@ PiloswineEvosAttacks:
 	db 32, FURY_ATTACK
 	db 42, EARTHQUAKE
 	db 50, SKULL_BASH
-	db 57, BLIZZARD
+	db 57, AVALANCHE
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
