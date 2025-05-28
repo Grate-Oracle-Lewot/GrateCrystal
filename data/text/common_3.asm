@@ -519,7 +519,7 @@ _BargainShopIntroText::
 	text "Hiya! Care to see"
 	line "some bargains?"
 
-	para "I sell rare items,"
+	para "I sell rare TMs,"
 	line "but I only have"
 	cont "one of each."
 	done
