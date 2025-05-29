@@ -1396,19 +1396,19 @@ BattleAnim_Avalanche:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c0, $1, $0
 .loop
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SMALL_ROCK, 128, 64, $40
+	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 128, 64, $40
 	anim_wait 4
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj ANIM_OBJ_BIG_ROCK, 120, 68, $30
+	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 120, 68, $30
 	anim_wait 4
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SMALL_ROCK, 152, 68, $30
+	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 152, 68, $30
 	anim_wait 4
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj ANIM_OBJ_BIG_ROCK, 144, 64, $40
+	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 144, 64, $40
 	anim_wait 4
 	anim_sound 0, 1, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SMALL_ROCK, 136, 68, $30
+	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 136, 68, $30
 	anim_wait 16
 	anim_loop 4, .loop
 	anim_wait 96
@@ -3437,14 +3437,14 @@ BattleAnim_Aeroblast:
 	anim_obj ANIM_OBJ_AEROBLAST, 72, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 96, 76, $0
 	anim_wait 2
 	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
-	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BLUE_BEAM_TIP, 126, 62, $0
 	anim_wait 48
 	anim_ret
 
