@@ -149,9 +149,9 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 ## Moves
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
-- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, and Explosion (Selfdestruct is now as strong as Explosion)
+- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, Icy Wind, and Explosion (Selfdestruct is now as strong as Explosion)
 
-- Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
+- Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Avalanche, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). Some other changes to move powers, and almost every move has received an accuracy boost.
 
@@ -518,7 +518,7 @@ Yes, but to call this repository "disorganized" would be flattery. Don't say I d
 
 # Credits
 
-Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially Nayru62, ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, DamienDoury, and RaJa239. AI switch code adapted from GetKosiorekt, Voltorb Flip code written by froggestspirit, and dynamic battle palette system created by FIQ. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
+Coding help - The entire github/pret/pokecrystal community, Discord, and tutorials, but especially Nayru62, ax6/aaaaaa123456789, Rangi42/Sylvie, Idain, DamienDoury, and RaJa239. AI switch code adapted from GetKosiorekt, and Voltorb Flip code written by froggestspirit. More names in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/credits_strings.asm
 
 ArtUnderTheArch - Percy trainer sprite, Percy overworld sprites, surfing Pikachu backsprite, flying Pikachu backsprite
 
