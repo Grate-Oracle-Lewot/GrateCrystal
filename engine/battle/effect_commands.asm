@@ -3331,7 +3331,7 @@ BattleCommand_ConstantDamage:
 
 INCLUDE "data/moves/flail_reversal_power.asm"
 
-INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
+INCLUDE "engine/battle/move_effects/counter_mirror_coat_avalanche.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
 
@@ -6269,7 +6269,7 @@ BattleCommand_CheckSafeguard:
 
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
-INCLUDE "engine/battle/move_effects/baton_pass.asm" ; Baton Pass, Teleport, and U-Turn
+INCLUDE "engine/battle/move_effects/baton_pass_teleport_u_turn.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
