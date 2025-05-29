@@ -94,6 +94,8 @@ CounterMirrorCoatThirdCheck:
 	ret
 
 BattleCommand_Avalanche:
+	xor a
+	ld [wBattleAnimParam], a
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
