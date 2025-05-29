@@ -2277,9 +2277,9 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, AURORA_BEAM
-	db 2, DRAGON_PULSE
-	db 3, MOONBLAST
+	db 1, DRAGON_RAGE
+	db 2, DRAGONBREATH
+	db 3, AVALANCHE
 	db 4, AEROBLAST
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
@@ -2516,8 +2516,8 @@ LedianEvosAttacks:
 	db 8, MACH_PUNCH
 	db 8, AGILITY
 	db 15, SWIFT
-	db 24, LIGHT_SCREEN
 	db 24, REFLECT
+	db 24, LIGHT_SCREEN
 	db 24, SAFEGUARD
 	db 33, BATON_PASS
 	db 42, U_TURN
