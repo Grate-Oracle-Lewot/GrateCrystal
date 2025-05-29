@@ -40,10 +40,14 @@ PlayersHousePosterScript:
 
 PlayersHouseRadioScript:
 	opentext
-	givepoke SKARMORY, 50
 	givepoke LEDIAN, 49
+	givepoke SKARMORY, 50
 	givepoke MEWTWO, 100
 	closetext
+	loadwildmon SANDSLASH, 35
+	startbattle
+	reloadmapafterbattle
+	special HealParty
 	winlosstext PlayersRadioText1, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
