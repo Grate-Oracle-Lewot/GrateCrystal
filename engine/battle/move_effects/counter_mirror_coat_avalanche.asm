@@ -112,4 +112,7 @@ BattleCommand_Avalanche:
 
 	call CounterMirrorCoatThirdCheck
 	ret z
+
+	ld a, 1
+	ld [wBattleAnimParam], a
 	jp DoubleDamage
