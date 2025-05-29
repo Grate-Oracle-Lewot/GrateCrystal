@@ -92,3 +92,22 @@ CounterMirrorCoatThirdCheck:
 	ld a, [wStringBuffer1 + MOVE_POWER]
 	and a
 	ret
+
+BattleCommand_Avalanche:
+	call CounterMirrorCoatFirstCheck
+	ret z
+
+	ld b, a
+	callfar GetMoveEffect
+	ld a, b
+	cp EFFECT_COUNTER
+	ret z
+	cp EFFECT_MIRROR_COAT
+	ret z
+
+	call CheckOpponentWentFirst
+	ret z
+
+	call CounterMirrorCoatThirdCheck
+	ret z
+	jp DoubleDamage
