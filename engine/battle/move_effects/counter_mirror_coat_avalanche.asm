@@ -94,7 +94,9 @@ CounterMirrorCoatThirdCheck:
 	ret
 
 BattleCommand_Avalanche:
-	call CounterMirrorCoatFirstCheck
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
 	ret z
 
 	ld b, a
