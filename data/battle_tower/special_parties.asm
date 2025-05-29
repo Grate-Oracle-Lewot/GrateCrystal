@@ -1689,7 +1689,7 @@ BattleTowerPercy:
 
 	db SUDOWOODO
 	db MIRACLEBERRY
-	db ROCK_SLIDE, DIG, FAINT_ATTACK, VITAL_THROW
+	db ROCK_SLIDE, DIG, FAINT_ATTACK, AVALANCHE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -1699,7 +1699,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 13, 13, 14 ; DVs
-	db 24, 24, 32, 24 ; PP
+	db 24, 24, 32, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
