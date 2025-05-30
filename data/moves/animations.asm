@@ -283,11 +283,6 @@ BattleAnimations::
 	dw BattleAnim_InHail
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
-BattleAnim_0:
-BattleAnim_MirrorMove:
-BattleAnim_Extremespeed:
-	anim_ret
-
 BattleAnim_SweetScent2:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
@@ -299,6 +294,10 @@ BattleAnim_SweetScent2:
 	anim_obj ANIM_OBJ_COTTON, 136, 40, $3f
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_wait 128
+BattleAnim_0:
+BattleAnim_Miss:
+BattleAnim_MirrorMove:
+BattleAnim_Extremespeed:
 	anim_ret
 
 BattleAnim_ThrowPokeBall:
@@ -564,9 +563,6 @@ BattleAnim_HitConfusion:
 	anim_sound 0, 0, SFX_POUND
 	anim_obj ANIM_OBJ_HIT, 44, 96, $0
 	anim_wait 16
-	anim_ret
-
-BattleAnim_Miss:
 	anim_ret
 
 BattleAnim_EnemyDamage:
@@ -1396,19 +1392,19 @@ BattleAnim_Avalanche:
 	anim_if_param_equal 0, .loop
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c0, $1, $0
 .loop
-	anim_sound 0, 1, SFX_STRENGTH
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 128, 64, $40
 	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 120, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 152, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 144, 64, $40
 	anim_wait 4
-	anim_sound 0, 1, SFX_STRENGTH
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 136, 68, $30
 	anim_wait 16
 	anim_loop 4, .loop
