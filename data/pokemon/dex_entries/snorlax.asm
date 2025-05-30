@@ -1,10 +1,10 @@
 	db "SLEEPING@" ; species name
 	dw 611, 10140 ; height, weight
 
-	db   "Many cranes have"
-	next "broken trying to"
-	next "lift these #MON"
+	db   "Occasionally, a"
+	next "road will be built"
+	next "to curve around a"
 
-	page "out of the way of"
-	next "construction sites"
-	next "and the like.@"
+	page "SNORLAX rather"
+	next "than trying to get"
+	next "it to move.@"
