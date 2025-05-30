@@ -109,6 +109,9 @@ BattleCommand_Avalanche:
 	cp EFFECT_MIRROR_COAT
 	ret z
 
+	ld a, [wTypeMatchup]
+	and a
+	ret z
 	call CheckOpponentWentFirst
 	ret z
 
