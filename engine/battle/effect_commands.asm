@@ -3331,7 +3331,9 @@ BattleCommand_ConstantDamage:
 
 INCLUDE "data/moves/flail_reversal_power.asm"
 
-INCLUDE "engine/battle/move_effects/counter_mirror_coat_avalanche.asm"
+INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
+
+INCLUDE "engine/battle/move_effects/avalanche.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
 
