@@ -6,7 +6,7 @@
 	db FIGHTING, DARK ; type
 	db 75 ; catch rate
 	db 159 ; base exp
-	db TM_THIEF, TM_IRON_TAIL ; items
+	db X_ATTACK, TM_THIEF ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/primeape/front.dimensions"
