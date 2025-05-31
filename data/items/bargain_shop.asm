@@ -1,6 +1,7 @@
 BargainShopData:
-	db 7
+	db 8
 	dbw TM_FURY_CUTTER,  4999
+	dbw TM_ATTRACT,      5001
 	dbw TM_IRON_TAIL,    6750
 	dbw TM_DYNAMICPUNCH, 6750
 	dbw TM_DRAGONBREATH, 6750
