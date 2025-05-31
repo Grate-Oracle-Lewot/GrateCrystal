@@ -6,7 +6,7 @@
 	db GRASS, FLYING ; type
 	db 45 ; catch rate
 	db 176 ; base exp
-	db MIRACLEBERRY, MIRACLE_SEED ; items
+	db MIRACLEBERRY, TM_GIGA_DRAIN ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jumpluff/front.dimensions"
