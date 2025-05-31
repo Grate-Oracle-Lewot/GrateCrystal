@@ -311,9 +311,9 @@ MartCeladon3F:
 	db 10 ; # items
 	db TM_HIDDEN_POWER
 	db TM_PROTECT
+	db TM_ENDURE
 	db TM_REST
 	db TM_PSYCH_UP
-	db TM_ATTRACT
 	db TM_DEFENSE_CURL
 	db TM_SUNNY_DAY
 	db TM_RAIN_DANCE
