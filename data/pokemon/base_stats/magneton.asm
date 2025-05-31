@@ -6,7 +6,7 @@
 	db ELECTRIC, STEEL ; type
 	db 60 ; catch rate
 	db 186 ; base exp
-	db MAGNET, TRIDENT ; items
+	db MAGNET, TM_ZAP_CANNON ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magneton/front.dimensions"
