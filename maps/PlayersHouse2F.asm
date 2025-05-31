@@ -39,16 +39,6 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
-	opentext
-	givepoke POLIWRATH, 100
-	givepoke LEDIAN, 49
-	closetext
-	winlosstext PlayersRadioText1, 0
-	loadtrainer ERIKA, ERIKA1
-	startbattle
-	reloadmapafterbattle
-	end
-
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
