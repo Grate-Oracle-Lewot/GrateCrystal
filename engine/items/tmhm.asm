@@ -476,7 +476,7 @@ ConsumeTM:
 	call ConvertCurItemIntoCurTMHM
 	ld a, [wTempTMHM]
 	dec a
-	ld hl, wTMsHMsAdd commentMore actions
+	ld hl, wTMsHMs
 	ld b, 0
 	ld c, a
 	add hl, bc
