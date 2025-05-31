@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 60 ; catch rate
 	db 200 ; base exp
-	db BERRY, LEFTOVERS ; items
+	db BERRY, TM_ROAR ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ursaring/front.dimensions"
