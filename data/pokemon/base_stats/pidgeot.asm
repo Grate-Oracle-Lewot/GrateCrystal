@@ -6,7 +6,7 @@
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
 	db 172 ; base exp
-	db TM_RETURN, TM_SWIFT ; items
+	db GOLD_BERRY, TM_RETURN ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pidgeot/front.dimensions"
