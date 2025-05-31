@@ -16,16 +16,14 @@ TMHMPocket:
 	add hl, bc
 	ld a, [hl]
 	ld [wItemQuantity], a
-	call .ConvertItemToTMHMNumber
-	scf
-	ret
 
-.ConvertItemToTMHMNumber:
 	ld a, [wCurItem]
 	ld c, a
 	callfar GetNumberedTMHM
 	ld a, c
 	ld [wCurItem], a
+
+	scf
 	ret
 
 ConvertCurItemIntoCurTMHM:
@@ -76,6 +74,8 @@ ChooseMonToLearnTMHM:
 	ld bc, MOVE_NAME_LENGTH - 1
 	call CopyBytes
 	call ClearBGPalettes
+	; fallthrough
+
 ChooseMonToLearnTMHM_NoRefresh:
 	farcall LoadPartyMenuGFX
 	farcall InitPartyMenuWithCancel
@@ -233,6 +233,8 @@ TMHM_JoypadLoop:
 	jp nz, TMHM_ExitPocket
 	bit D_LEFT_F, a
 	jp nz, TMHM_ExitPocket
+	; fallthrough
+
 TMHM_ShowTMMoveDescription:
 	call TMHM_CheckHoveringOverCancel
 	jp nc, TMHM_ExitPocket
@@ -263,6 +265,8 @@ TMHM_ChooseTMorHM:
 	ld a, [wTempTMHM]
 	cp b
 	jr z, _TMHM_ExitPack ; our cursor was hovering over CANCEL
+	; fallthrough
+
 TMHM_CheckHoveringOverCancel:
 	call TMHM_GetCurrentPocketPosition
 	ld a, [wMenuCursorY]
@@ -285,6 +289,8 @@ TMHM_CheckHoveringOverCancel:
 
 TMHM_ExitPack:
 	call TMHM_PlaySFX_ReadText2
+	; fallthrough
+
 _TMHM_ExitPack:
 	ld a, B_BUTTON
 	ld [wMenuJoypad], a
@@ -405,7 +411,7 @@ TMHM_DisplayPocketItems:
 	pop hl
 	dec d
 	jr nz, .loop2
-	jr .done
+	ret
 
 .NotTMHM:
 	call TMHMPocket_GetCurrentLineCoord
@@ -416,7 +422,6 @@ TMHM_DisplayPocketItems:
 	ld de, TMHM_CancelString
 	call PlaceString
 	pop de
-.done
 	ret
 
 TMHMPocket_GetCurrentLineCoord:
@@ -465,6 +470,27 @@ TMHM_PlaySFX_ReadText2:
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	pop de
+	ret
+
+ConsumeTM:
+	call ConvertCurItemIntoCurTMHM
+	ld a, [wTempTMHM]
+	dec a
+	ld hl, wTMsHMsAdd commentMore actions
+	ld b, 0
+	ld c, a
+	add hl, bc
+	ld a, [hl]
+	and a
+	ret z
+	dec a
+	ld [hl], a
+	ret nz
+	ld a, [wTMHMPocketScrollPosition]
+	and a
+	ret z
+	dec a
+	ld [wTMHMPocketScrollPosition], a
 	ret
 
 CountTMsHMs:
