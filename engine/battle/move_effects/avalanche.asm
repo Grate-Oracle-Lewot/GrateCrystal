@@ -14,6 +14,6 @@ BattleCommand_Avalanche:
 	or [hl]
 	ret z
 
-	ld a, 1
+	ld a, $1
 	ld [wBattleAnimParam], a
 	jp DoubleDamage
