@@ -48,15 +48,12 @@ CeladonDeptStore3FDirectory:
 	jumptext CeladonDeptStore3FDirectoryText
 
 CeladonDeptStore3FYoungsterText:
-	text "Pssst… In this"
-	line "hack, TMs can be"
+	text "TMs are expensive,"
+	line "but that means you"
 
-	para "used multiple"
-	line "times."
-	
-	para "If you find an"
-	line "extra copy of one,"
-	cont "sell it for cash!"
+	para "can also sell them"
+	line "for a decent chunk"
+	cont "of change."
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
