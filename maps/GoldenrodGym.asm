@@ -58,7 +58,7 @@ GoldenrodGymWhitneyScript:
 .GotPlainBadge:
 	writetext WhitneyPlainBadgeText
 	promptbutton
-	verbosegiveitem TM_ATTRACT
+	verbosegiveitem TM_ATTRACT, 5
 	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetext WhitneyAttractText
@@ -240,7 +240,7 @@ WhitneyPlainBadgeText:
 	cont "up to <EVO_LV>30."
 
 	para "Oh, you can have"
-	line "this too!"
+	line "these too!"
 	done
 
 WhitneyAttractText:
