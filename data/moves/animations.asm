@@ -1406,11 +1406,11 @@ BattleAnim_Avalanche:
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 136, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_STOMP
+	anim_sound 0, 1, SFX_SPARK
+	anim_wait 4
+	anim_sound 0, 0, SFX_SPARK
 	anim_wait 4
 	anim_sound 0, 1, SFX_HEADBUTT
-	anim_wait 4
-	anim_sound 0, 1, SFX_SPARK
 	anim_wait 4
 	anim_loop 4, .loop
 	anim_wait 96
