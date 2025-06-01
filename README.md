@@ -30,7 +30,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 
 - Fairy type added
 - Physical/Special split
-- TMs are infinite-use (multiple copies can still be bought and sold, so just sell any extras)
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
@@ -38,6 +37,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
+- While TMs are still single-use, you usually get 5 copies at a time
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (including while Surfing); brake on Cycling Road by holding B
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns, and space for all phone contacts in the Pokégear
