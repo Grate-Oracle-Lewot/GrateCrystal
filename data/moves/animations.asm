@@ -1391,22 +1391,22 @@ BattleAnim_Avalanche:
 	anim_1gfx ANIM_GFX_ROCKS
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c0, $1, $0
 .loop
-	anim_sound 0, 1, SFX_HEADBUTT
+	anim_sound 0, 1, SFX_STOMP
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 128, 64, $40
 	anim_wait 4
 	anim_sound 0, 1, SFX_HEADBUTT
 	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 120, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_HEADBUTT
+	anim_sound 0, 0, SFX_SPARK
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 152, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_HEADBUTT
+	anim_sound 0, 1, SFX_SPARK
 	anim_obj ANIM_OBJ_BIG_ICE_ROCK, 144, 64, $40
 	anim_wait 4
-	anim_sound 0, 1, SFX_HEADBUTT
+	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_SMALL_ICE_ROCK, 136, 68, $30
 	anim_wait 4
-	anim_sound 0, 1, SFX_HEADBUTT
+	anim_sound 0, 1, SFX_STOMP
 	anim_wait 4
 	anim_sound 0, 1, SFX_HEADBUTT
 	anim_wait 4
