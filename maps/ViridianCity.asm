@@ -67,7 +67,7 @@ ViridianCityDreamEaterFisher:
 	opentext
 	writetext ViridianCityDreamEaterFisherText
 	promptbutton
-	verbosegiveitem TM_DREAM_EATER
+	verbosegiveitem TM_DREAM_EATER, 5
 	iffalse .NoRoomForDreamEater
 	setevent EVENT_GOT_TM42_DREAM_EATER
 	writetext ViridianCityDreamEaterFisherGotDreamEaterText
@@ -190,12 +190,13 @@ ViridianCityDreamEaterFisherText:
 	para "Huh?"
 	line "What's this?"
 
-	para "Where did this TM"
+	para "Where'd these TMs"
 	line "come from?"
 
 	para "This is spooky!"
-	line "Here, you can have"
-	cont "this TM."
+
+	para "Here, you can have"
+	line "them."
 	done
 
 ViridianCityDreamEaterFisherGotDreamEaterText:
