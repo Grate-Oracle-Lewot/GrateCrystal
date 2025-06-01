@@ -39,7 +39,7 @@ SilphCo6FReceptionist2Script:
 	jumptextfaceplayer SilphCo6FReceptionist2Text
 
 SilphCo6FTMMoonblast:
-	itemball TM_MOONBLAST
+	itemball TM_MOONBLAST, 5
 
 SilphCo6FSign:
 	jumptext SilphCo6FSignText
