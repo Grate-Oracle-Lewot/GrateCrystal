@@ -28,7 +28,7 @@ BattleTowerOutsideSign:
 	jumptext BattleTowerOutsideSignText
 
 BattleTowerOutsideTMSubstitute:
-	itemball TM_SUBSTITUTE
+	itemball TM_SUBSTITUTE, 5
 
 BattleTowerOutsideYoungsterText:
 	text "Wow, the BATTLE"
