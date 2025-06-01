@@ -49,7 +49,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	opentext
 	writetext GoldenrodDeptStore5FReceptionistThisMoveShouldBePerfectText
 	promptbutton
-	verbosegiveitem TM_RETURN
+	verbosegiveitem TM_RETURN, 5
 	iffalse .Done
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
@@ -67,7 +67,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	opentext
 	writetext GoldenrodDeptStore5FReceptionistItLooksEvilHowAboutThisTMText
 	promptbutton
-	verbosegiveitem TM_POISON_JAB
+	verbosegiveitem TM_POISON_JAB, 5
 	iffalse .Done
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
