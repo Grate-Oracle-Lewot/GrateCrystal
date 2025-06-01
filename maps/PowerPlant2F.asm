@@ -52,7 +52,7 @@ PowerPlant2FManager:
 	iftrue .GotZapCannon
 	writetext PowerPlant2FManagerTakeThisTMText
 	promptbutton
-	verbosegiveitem TM_ZAP_CANNON
+	verbosegiveitem TM_ZAP_CANNON, 5
 	iffalse .NoRoom
 	setevent EVENT_GOT_TM07_ZAP_CANNON
 	writetext PowerPlant2FManagerTM07IsZapCannonText
@@ -188,8 +188,8 @@ PowerPlant2FManagerThatsThePartText:
 PowerPlant2FManagerTakeThisTMText:
 	text "Wahah! Thanks!"
 
-	para "Here! Take this TM"
-	line "as a reward!"
+	para "Here! Take these"
+	line "TMs as a reward!"
 	done
 
 PowerPlant2FManagerTM07IsZapCannonText:
