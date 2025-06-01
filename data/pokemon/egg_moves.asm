@@ -146,6 +146,7 @@ DiglettEggMoves:
 	db -1 ; end
 
 MeowthEggMoves:
+	db SING
 	db SPITE
 	db CHARM
 	db BEAT_UP
