@@ -79,7 +79,7 @@ CeruleanGymMistyScript:
 	iftrue .GotBlizzardTM
 	writetext MistyGiveBlizzardTMText
 	promptbutton
-	verbosegiveitem TM_BLIZZARD
+	verbosegiveitem TM_BLIZZARD, 5
 	iffalse .NoRoomForBlizzardTM
 	setevent EVENT_GOT_TM_BLIZZARD_FROM_MISTY
 	writetext MistyExplainBlizzardTMText
