@@ -54,7 +54,7 @@ CianwoodGymChuckScript:
 	iftrue .AlreadyGotTM
 	writetext ChuckExplainBadgeText
 	promptbutton
-	verbosegiveitem TM_DYNAMICPUNCH
+	verbosegiveitem TM_DYNAMICPUNCH, 5
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText
@@ -207,7 +207,7 @@ ChuckExplainBadgeText:
 	para "when you're not in"
 	line "a battle."
 
-	para "Here, take this"
+	para "Here, take these"
 	line "too!"
 	done
 
