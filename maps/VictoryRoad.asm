@@ -156,7 +156,7 @@ VictoryRoadBoulder:
 	jumpstd StrengthBoulderScript
 
 VictoryRoadTMEarthquake:
-	itemball TM_EARTHQUAKE
+	itemball TM_EARTHQUAKE, 5
 
 VictoryRoadMaxRevive:
 	itemball MAX_REVIVE
