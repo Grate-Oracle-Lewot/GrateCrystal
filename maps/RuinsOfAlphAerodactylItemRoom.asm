@@ -16,7 +16,7 @@ RuinsOfAlphAerodactylItemRoomMoonStone:
 	itemball MOON_STONE
 
 RuinsOfAlphAerodactylItemRoomHealPowder:
-	itemball TM_SELFDESTRUCT
+	itemball TM_SELFDESTRUCT, 5
 
 RuinsOfAlphAerodactylItemRoomEnergyRoot:
 	itemball ENERGY_ROOT
