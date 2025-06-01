@@ -23,7 +23,7 @@ CeladonMansionRoofHousePharmacistScript:
 .Night:
 	writetext CeladonMansionRoofHousePharmacistStoryText
 	promptbutton
-	verbosegiveitem TM_CURSE
+	verbosegiveitem TM_CURSE, 5
 	iffalse .NoRoom
 	setevent EVENT_GOT_TM03_CURSE
 .GotCurse:
@@ -101,7 +101,7 @@ CeladonMansionRoofHousePharmacistStoryText:
 
 	para "For listening so"
 	line "patiently, you may"
-	cont "take this--TM03!"
+	cont "take these TMs!"
 	done
 
 CeladonMansionRoofHousePharmacistCurseText:
