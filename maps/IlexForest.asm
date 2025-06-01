@@ -379,7 +379,7 @@ IlexForestHeadbuttGuyScript:
 	iftrue .AlreadyGotHeadbutt
 	writetext Text_HeadbuttIntro
 	promptbutton
-	verbosegiveitem TM_HEADBUTT
+	verbosegiveitem TM_HEADBUTT, 5
 	iffalse .BagFull
 	setevent EVENT_GOT_TM02_HEADBUTT
 .AlreadyGotHeadbutt:
