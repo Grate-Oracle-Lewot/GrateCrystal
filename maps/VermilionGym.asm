@@ -58,7 +58,7 @@ VermilionGymSurgeScript:
 	iftrue .GotThunderTM
 	writetext LtSurgeGiveThunderTMText
 	promptbutton
-	verbosegiveitem TM_THUNDER
+	verbosegiveitem TM_THUNDER, 5
 	iffalse .NoRoomForThunderTM
 	setevent EVENT_GOT_TM_THUNDER_FROM_SURGE
 	writetext LtSurgeExplainThunderTMText
