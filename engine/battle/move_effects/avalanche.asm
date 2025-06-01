@@ -1,6 +1,4 @@
 BattleCommand_Avalanche:
-	xor a
-	ld [wBattleAnimParam], a
 	call CheckOpponentWentFirst
 	ret z
 
@@ -14,6 +12,4 @@ BattleCommand_Avalanche:
 	or [hl]
 	ret z
 
-	ld a, $1
-	ld [wBattleAnimParam], a
 	jp DoubleDamage
