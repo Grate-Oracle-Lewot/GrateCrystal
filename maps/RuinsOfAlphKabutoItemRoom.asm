@@ -13,7 +13,7 @@ RuinsOfAlphKabutoItemRoomBerry:
 	itemball GOLD_BERRY
 
 RuinsOfAlphKabutoItemRoomPsncureberry:
-	itemball TM_FALSE_SWIPE
+	itemball TM_FALSE_SWIPE, 5
 
 RuinsOfAlphKabutoItemRoomHealPowder:
 	itemball HEAL_POWDER
