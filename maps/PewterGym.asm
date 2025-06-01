@@ -41,7 +41,7 @@ PewterGymBrockScript:
 	iftrue .GotEarthquakeTM
 	writetext BrockGiveEarthquakeTMText
 	promptbutton
-	verbosegiveitem TM_EARTHQUAKE
+	verbosegiveitem TM_EARTHQUAKE, 5
 	iffalse .NoRoomForEarthquakeTM
 	setevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
 	writetext BrockExplainEarthquakeTMText
