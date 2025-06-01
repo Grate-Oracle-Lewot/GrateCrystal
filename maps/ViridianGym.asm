@@ -221,7 +221,7 @@ LeaderBlueAfterText:
 
 LeaderBlueGiveHyperBeamTMText:
 	text "Here, take your"
-	line "TM."
+	line "TMs."
 	done
 
 LeaderBlueExplainHyperBeamTMText:
