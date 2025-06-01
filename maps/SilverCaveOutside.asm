@@ -36,7 +36,7 @@ TrainerSwimmerfMary:
 	end
 
 MtSilverOutsideTMNightTerror:
-	itemball TM_NIGHT_TERROR
+	itemball TM_NIGHT_TERROR, 5
 
 MtSilverPokecenterSign:
 	jumpstd PokecenterSignScript
