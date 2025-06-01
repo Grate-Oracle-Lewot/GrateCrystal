@@ -28,7 +28,7 @@ SlowpokeWellB2FGymGuideScript:
 	end
 
 SlowpokeWellB2FTMRainDance:
-	itemball TM_RAIN_DANCE
+	itemball TM_RAIN_DANCE, 5
 
 SlowpokeWellB2FGymGuideText:
 	text "In this hack,"
