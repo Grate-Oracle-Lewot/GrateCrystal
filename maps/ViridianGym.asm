@@ -42,7 +42,7 @@ ViridianGymBlueScript:
 	iftrue .GotHyperBeamTM
 	writetext LeaderBlueGiveHyperBeamTMText
 	promptbutton
-	verbosegiveitem TM_HYPER_BEAM
+	verbosegiveitem TM_HYPER_BEAM, 5
 	iffalse .NoRoomForHyperBeamTM
 	setevent EVENT_GOT_TM_HYPER_BEAM_FROM_BLUE
 	writetext LeaderBlueExplainHyperBeamTMText
@@ -228,11 +228,9 @@ LeaderBlueExplainHyperBeamTMText:
 	text "BLUE: It's HYPER"
 	line "BEAM."
 
-	para "Yeah, I know you"
-	line "probably already"
-
-	para "have a copy, but"
-	line "it's what you get."
+	para "You probably don't"
+	line "need me to tell"
+	cont "you what it does."
 
 	para "If you want a good"
 	line "place to train,"
