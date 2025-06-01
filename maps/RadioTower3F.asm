@@ -65,7 +65,7 @@ RadioTower3FCooltrainerFScript:
 .NoRockets:
 	writetext RadioTower3FCooltrainerFYoureMyHeroText
 	promptbutton
-	verbosegiveitem TM_SUNNY_DAY
+	verbosegiveitem TM_SUNNY_DAY, 5
 	iffalse .NoRoom
 	writetext RadioTower3FCooltrainerFItsSunnyDayText
 	waitbutton
@@ -220,8 +220,13 @@ RadioTower3FCooltrainerFYoureMyHeroText:
 RadioTower3FCooltrainerFItsSunnyDayText:
 	text "It's SUNNY DAY."
 	line "It powers up fire-"
-	cont "type moves for a"
-	cont "while."
+	cont "type moves, and"
+	cont "makes grass-type"
+	cont "#MON faster."
+
+	para "It also makes"
+	line "SOLARBEAM hit in"
+	cont "one turn!"
 	done
 
 RadioTower3FCooltrainerFYouWereMarvelousText:
