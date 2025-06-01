@@ -36,7 +36,7 @@ SaffronGymSabrinaScript:
 	iftrue .GotTeleportTM
 	writetext SabrinaGiveTeleportTMText
 	promptbutton
-	verbosegiveitem TM_TELEPORT
+	verbosegiveitem TM_TELEPORT, 5
 	iffalse .NoRoomForTeleportTM
 	setevent EVENT_GOT_TM_TELEPORT_FROM_SABRINA
 	writetext SabrinaExplainTeleportTMText
