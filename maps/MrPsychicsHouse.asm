@@ -13,7 +13,7 @@ MrPsychic:
 	iftrue .AlreadyGotItem
 	writetext MrPsychicText1
 	promptbutton
-	verbosegiveitem TM_PSYCHIC_M
+	verbosegiveitem TM_PSYCHIC_M, 5
 	iffalse .Done
 	setevent EVENT_GOT_TM29_PSYCHIC
 .AlreadyGotItem:
@@ -35,7 +35,7 @@ MrPsychicText1:
 
 	para "…I got it!"
 
-	para "You wanted this!"
+	para "You wanted these!"
 	done
 
 MrPsychicText2:
