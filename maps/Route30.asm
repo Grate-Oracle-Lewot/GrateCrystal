@@ -226,7 +226,7 @@ Route30Antidote:
 	itemball ANTIDOTE
 
 Route30TMFairyWind:
-	itemball TM_FAIRY_WIND
+	itemball TM_FAIRY_WIND, 5
 
 Route30FruitTree1:
 	fruittree FRUITTREE_ROUTE_30_1
