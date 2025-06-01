@@ -38,7 +38,7 @@ MahoganyGymPryceScript:
 	iftrue PryceScript_Defeat
 	writetext PryceText_GlacierBadgeSpeech
 	promptbutton
-	verbosegiveitem TM_AVALANCHE
+	verbosegiveitem TM_AVALANCHE, 5
 	iffalse MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
