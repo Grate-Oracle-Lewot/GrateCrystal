@@ -34,7 +34,7 @@ OlivineGymJasmineScript:
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech
 	promptbutton
-	verbosegiveitem TM_IRON_TAIL
+	verbosegiveitem TM_IRON_TAIL, 5
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext Jasmine_IronTailSpeech
@@ -181,7 +181,7 @@ Jasmine_BadgeSpeech:
 	cont "obey you…"
 
 	para "Um… Please take"
-	line "this too…"
+	line "these too…"
 	done
 
 Jasmine_IronTailSpeech:
