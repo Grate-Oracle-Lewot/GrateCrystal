@@ -41,7 +41,7 @@ DarkCaveBlackthornEntranceRevive:
 	itemball REVIVE
 
 DarkCaveBlackthornEntranceTMSnore:
-	itemball TM_PSYCH_UP
+	itemball TM_PSYCH_UP, 5
 
 DarkCaveBlackthornEntrancePharmacistText1:
 	text "Whoa! You startled"
