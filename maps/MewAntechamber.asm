@@ -22,7 +22,7 @@ MewAntechamberVoltorbScript:
 	end
 
 MewAntechamberTMDarkPulse:
-	itemball TM_DARK_PULSE
+	itemball TM_DARK_PULSE, 5
 
 MewAntechamber_MapEvents:
 	db 0, 0 ; filler
