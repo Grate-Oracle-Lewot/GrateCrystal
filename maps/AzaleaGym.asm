@@ -37,7 +37,7 @@ AzaleaGymBugsyScript:
 	iftrue .GotFuryCutter
 	writetext BugsyText_HiveBadgeSpeech
 	promptbutton
-	verbosegiveitem TM_FURY_CUTTER
+	verbosegiveitem TM_FURY_CUTTER, 5
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
@@ -199,7 +199,7 @@ BugsyText_HiveBadgeSpeech:
 	line "obstructive trees?"
 
 	para "Here, I also want"
-	line "you to have this."
+	line "you to have these."
 	done
 
 BugsyText_FuryCutterSpeech:
