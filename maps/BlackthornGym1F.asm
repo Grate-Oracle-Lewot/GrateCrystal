@@ -84,7 +84,7 @@ BlackthornGymClairScript:
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
 	promptbutton
-	giveitem TM_DRAGONBREATH
+	giveitem TM_DRAGONBREATH, 5
 	iffalse .BagFull
 	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	writetext BlackthornGymText_ReceivedTM24
@@ -288,7 +288,7 @@ BlackthornGymClairText_YouKeptMeWaiting:
 	text "You've kept me"
 	line "waiting!"
 
-	para "Here! Take this!"
+	para "Here! Take these!"
 	done
 
 BlackthornGymText_ReceivedTM24:
@@ -297,7 +297,7 @@ BlackthornGymText_ReceivedTM24:
 	done
 
 BlackthornGymClairText_DescribeTM24:
-	text "That contains"
+	text "Those contain"
 	line "DRAGONBREATH."
 
 	para "No, it doesn't"
