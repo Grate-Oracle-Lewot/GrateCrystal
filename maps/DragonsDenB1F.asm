@@ -50,7 +50,7 @@ DragonsDenB1F_ClairScene:
 	opentext
 	writetext ClairText_GiveDragonbreathDragonDen
 	promptbutton
-	giveitem TM_DRAGONBREATH
+	giveitem TM_DRAGONBREATH, 5
 	iffalse .BagFull
 	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	writetext Text_ReceivedTM24
