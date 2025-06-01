@@ -16,8 +16,6 @@ EcruteakGym_MapScripts:
 
 .ForcedToLeave:
 	sdefer EcruteakGymClosed
-	end
-
 .DummyScene:
 	end
 
@@ -49,7 +47,7 @@ EcruteakGymMortyScript:
 	iftrue .GotShadowBall
 	writetext MortyText_FogBadgeSpeech
 	promptbutton
-	verbosegiveitem TM_SHADOW_BALL
+	verbosegiveitem TM_SHADOW_BALL, 5
 	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetext MortyText_ShadowBallSpeech
@@ -242,7 +240,7 @@ MortyText_FogBadgeSpeech:
 	line "the water."
 
 	para "I want you to have"
-	line "this too."
+	line "these too."
 	done
 
 MortyText_ShadowBallSpeech:
