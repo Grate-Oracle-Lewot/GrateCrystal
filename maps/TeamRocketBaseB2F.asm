@@ -348,7 +348,7 @@ TeamRocketBaseB2FTransmitterScript:
 	end
 
 TeamRocketBaseB2FTMThief:
-	itemball TM_THIEF
+	itemball TM_THIEF, 5
 
 TeamRocketBaseB2FComputerScript:
 	jumptext RocketBaseB2FComputerText
