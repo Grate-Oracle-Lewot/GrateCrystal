@@ -11,24 +11,11 @@ Route43Gate_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckIfRockets
 
 .RocketShakedown:
 	sdefer .RocketTakeover
-	end
-
 .DummyScene:
 	end
-
-.CheckIfRockets:
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .NoRockets
-	setmapscene ROUTE_43, 0 ; Route 43 does not have a scene variable
-	endcallback
-
-.NoRockets:
-	setmapscene ROUTE_43, 1 ; Route 43 does not have a scene variable
-	endcallback
 
 .RocketTakeover:
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -60,7 +47,7 @@ RocketScript_TollSouth:
 RocketScript_YoureBrokeSouth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
-	sjump RocketScript_ShakeDownSouth
+	; fallthrough
 
 RocketScript_ShakeDownSouth:
 	promptbutton
@@ -92,7 +79,7 @@ RocketScript_TollNorth:
 RocketScript_YoureBrokeNorth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
-	sjump RocketScript_ShakeDownNorth
+	; fallthrough
 
 RocketScript_ShakeDownNorth:
 	promptbutton
@@ -113,7 +100,7 @@ OfficerScript_GuardWithSludgeBomb:
 	iftrue .GotSludgeBomb
 	writetext OfficerText_FoundTM
 	promptbutton
-	verbosegiveitem TM_SLUDGE_BOMB
+	verbosegiveitem TM_SLUDGE_BOMB, 5
 	iffalse .NoRoomForSludgeBomb
 	setevent EVENT_GOT_TM36_SLUDGE_BOMB
 	closetext
@@ -217,8 +204,8 @@ RocketText_MakingABundle:
 	para "Everyone wants to"
 	line "see what's going"
 
-	para "on up at LAKE OF"
-	line "RAGE."
+	para "on up at the LAKE"
+	line "OF RAGE."
 	done
 
 OfficerText_FoundTM:
@@ -226,12 +213,14 @@ OfficerText_FoundTM:
 	line "my post by these"
 	cont "thugs in black."
 
-	para "They left this"
-	line "behind."
+	para "They left these"
+	line "TMs behind."
 
-	para "It makes me uncom-"
-	line "fortable. Could"
-	cont "you take it away?"
+	para "They make me un-"
+	line "comfortable."
+
+	para "Could you take"
+	cont "them away?"
 	done
 
 OfficerText_AvoidGrass:
