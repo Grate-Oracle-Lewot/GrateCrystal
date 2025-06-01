@@ -15,7 +15,7 @@ MountMortar1FOutsideRevive:
 	itemball REVIVE
 
 MountMortar1FOutsideTMScald:
-	itemball TM_SCALD
+	itemball TM_SCALD, 5
 
 MountMortar1FOutsideHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
