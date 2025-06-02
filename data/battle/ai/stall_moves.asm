@@ -48,6 +48,7 @@ StallMoves:
 	db MEAN_LOOK
 	db BATON_PASS
 	db SWEET_SCENT
+	db METAL_SOUND
 	db RAIN_DANCE
 	db SUNNY_DAY
 	db PSYCH_UP
