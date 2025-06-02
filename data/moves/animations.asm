@@ -3420,7 +3420,14 @@ BattleAnim_RockPolish:
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnimSub_Metallic
+	anim_sound 0, 0, SFX_SKETCH
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, BG_EFFECT_USER, $40
+	anim_wait 8
+	anim_obj ANIM_OBJ_HARDEN, 48, 84, $0
+	anim_wait 32
+	anim_obj ANIM_OBJ_HARDEN, 48, 84, $0
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT
 	anim_call BattleAnim_ShowMon_0
 	anim_resetobp0
 	anim_1gfx ANIM_GFX_SHINE
