@@ -23,7 +23,7 @@ EncoreMoves:
 	db GLARE
 	db DREAM_EATER
 	db REST
-	db CONVERSION
+	db ROCK_POLISH
 	db SUPER_FANG
 	db SPIDER_WEB
 	db MIND_READER
