@@ -1952,8 +1952,6 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
 	jr z, .triplekick
-	cp EFFECT_AVALANCHE
-	jr z, .alternate_anim
 	xor a
 	ld [wBattleAnimParam], a
 
