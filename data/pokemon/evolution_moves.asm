@@ -136,7 +136,7 @@ EvolutionMoves::
 	db WATER_GUN    ; VAPOREON
 	db THUNDERSHOCK ; JOLTEON
 	db EMBER        ; FLAREON
-	db CONVERSION   ; PORYGON
+	db CONVERSION2  ; PORYGON
 	db NO_MOVE      ; OMANYTE
 	db SPIKE_CANNON ; OMASTAR
 	db NO_MOVE      ; KABUTO
@@ -232,7 +232,7 @@ EvolutionMoves::
 	db NO_MOVE      ; KINGDRA
 	db NO_MOVE      ; PHANPY
 	db FURY_ATTACK  ; DONPHAN
-	db CONVERSION2  ; PORYGON2
+	db NO_MOVE      ; PORYGON2
 	db NO_MOVE      ; STANTLER
 	db SKETCH       ; SMEARGLE
 	db NO_MOVE      ; TYROGUE
