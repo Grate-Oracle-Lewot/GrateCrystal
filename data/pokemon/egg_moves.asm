@@ -148,10 +148,11 @@ DiglettEggMoves:
 
 MeowthEggMoves:
 	db SING
+	db METAL_SOUND
 	db SPITE
 	db CHARM
 	db BEAT_UP
-	db METAL_SOUND
+	db ROCK_POLISH
 	db PRESENT
 	db SPIKES
 	db -1 ; end
