@@ -1078,7 +1078,7 @@ GeodudeEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 26, ROLLOUT
+	db 26, ROCK_POLISH
 	db 31, POWER_GEM
 	db 36, EARTHQUAKE
 	db 41, ROCK_SLIDE
@@ -1094,7 +1094,7 @@ GravelerEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 27, ROLLOUT
+	db 27, ROCK_POLISH
 	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
@@ -1109,7 +1109,7 @@ GolemEvosAttacks:
 	db 11, SPARK
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
-	db 27, ROLLOUT
+	db 27, ROCK_POLISH
 	db 34, POWER_GEM
 	db 41, EARTHQUAKE
 	db 48, ROCK_SLIDE
@@ -1414,9 +1414,9 @@ OnixEvosAttacks:
 	db 5, RAGE
 	db 10, SCREECH
 	db 14, ROCK_THROW
+	db 19, ROCK_POLISH
 	db 23, MAGNITUDE
 	db 27, IRON_HEAD
-	db 31, DRAGONBREATH
 	db 36, ROCK_SLIDE
 	db 40, IRON_TAIL
 	db 45, SKULL_BASH
@@ -1550,12 +1550,12 @@ ExeggutorEvosAttacks:
 CuboneEvosAttacks:
 	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
-	db 1, FALSE_SWIPE
+	db 1, RAGE
 	db 2, GROWL
 	db 3, TAIL_WHIP
 	db 5, BONE_CLUB
 	db 9, HEADBUTT
-	db 13, RAGE
+	db 13, ROCK_POLISH
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
 	db 30, SLASH
@@ -1567,12 +1567,12 @@ CuboneEvosAttacks:
 
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FALSE_SWIPE
+	db 1, RAGE
 	db 2, GROWL
 	db 3, TAIL_WHIP
 	db 5, BONE_CLUB
 	db 9, HEADBUTT
-	db 13, RAGE
+	db 13, ROCK_POLISH
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
 	db 27, NIGHT_SHADE
@@ -2833,8 +2833,9 @@ AzumarillEvosAttacks:
 
 SudowoodoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROCK_THROW
 	db 1, MEDITATE
+	db 1, ROCK_THROW
+	db 5, ROCK_POLISH
 	db 10, LOW_KICK
 	db 19, MIRROR_MOVE
 	db 28, FAINT_ATTACK
@@ -3183,6 +3184,7 @@ SteelixEvosAttacks:
 	db 10, SCREECH
 	db 10, METAL_SOUND
 	db 14, ROCK_THROW
+	db 19, ROCK_POLISH
 	db 23, MAGNITUDE
 	db 27, IRON_HEAD
 	db 31, DAZZLY_GLEAM
