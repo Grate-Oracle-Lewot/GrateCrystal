@@ -3640,13 +3640,11 @@ BattleAnim_Octazooka:
 	anim_wait 16
 	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
 	anim_wait 8
-	anim_if_param_equal $0, .done
 .loop
 	anim_obj ANIM_OBJ_SMOKE, 132, 60, $20
 	anim_wait 8
 	anim_loop 5, .loop
 	anim_wait 128
-.done
 	anim_ret
 
 BattleAnim_Spikes:
