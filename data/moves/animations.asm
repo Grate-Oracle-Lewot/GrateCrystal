@@ -1389,7 +1389,7 @@ BattleAnim_RockSlide:
 
 BattleAnim_Avalanche:
 	anim_1gfx ANIM_GFX_ROCKS
-;	anim_if_param_equal $0, .loop
+	anim_if_param_equal $0, .loop
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c0, $1, $0
 .loop
 	anim_sound 0, 1, SFX_STOMP
