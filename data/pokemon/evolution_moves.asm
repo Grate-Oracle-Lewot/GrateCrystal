@@ -218,7 +218,7 @@ EvolutionMoves::
 	db NO_MOVE      ; TEDDIURSA
 	db ROAR         ; URSARING
 	db NO_MOVE      ; SLUGMA
-	db ROLLOUT      ; MAGCARGO
+	db ROCK_POLISH  ; MAGCARGO
 	db NO_MOVE      ; SWINUB
 	db FURY_ATTACK  ; PILOSWINE
 	db NO_MOVE      ; CORSOLA
