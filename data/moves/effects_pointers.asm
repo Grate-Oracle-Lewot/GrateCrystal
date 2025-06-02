@@ -31,7 +31,6 @@ MoveEffectsPointers:
 	dw Rampage
 	dw ForceSwitch
 	dw MultiHit
-	dw Conversion
 	dw FlinchHit
 	dw Heal
 	dw Toxic
