@@ -313,6 +313,7 @@ MovesDexOrder:
 
 ; Speed up
 	db AGILITY
+	db ROCK_POLISH
 
 ; Evasion up
 	db DOUBLE_TEAM
@@ -423,7 +424,6 @@ MovesDexOrder:
 	db SUBSTITUTE
 
 ; User alteration
-	db CONVERSION
 	db CONVERSION2
 
 	db TRANSFORM
