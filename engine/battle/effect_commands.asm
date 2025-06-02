@@ -1946,14 +1946,14 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .alternate_anim
-	cp EFFECT_CONVERSION
-	jr z, .alternate_anim
 	cp EFFECT_DOUBLE_HIT
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
 	jr z, .triplekick
+	cp EFFECT_AVALANCHE
+	jr z, .alternate_anim
 	xor a
 	ld [wBattleAnimParam], a
 
@@ -2958,11 +2958,8 @@ BattleCommand_DamageCalc:
 	inc c
 .dont_selfdestruct
 
-; Variable-hit moves and Conversion can have a power of 0.
+; Variable-hit moves can have a power of 0.
 	cp EFFECT_MULTI_HIT
-	jr z, .skip_zero_damage_check
-
-	cp EFFECT_CONVERSION
 	jr z, .skip_zero_damage_check
 
 ; No damage if move power is 0.
@@ -5897,8 +5894,6 @@ INCLUDE "engine/battle/move_effects/leech_seed.asm"
 INCLUDE "engine/battle/move_effects/disable.asm"
 
 INCLUDE "engine/battle/move_effects/pay_day.asm"
-
-INCLUDE "engine/battle/move_effects/conversion.asm"
 
 BattleCommand_ResetStats:
 ; Haze
