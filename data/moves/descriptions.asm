@@ -160,7 +160,7 @@ MoveDescriptions::
 	dw RockSlideDescription
 	dw HyperFangDescription
 	dw SilverWindDescription
-	dw ConversionDescription
+	dw RockPolishDescription
 	dw TriAttackDescription
 	dw SuperFangDescription
 	dw SlashDescription
@@ -899,9 +899,9 @@ SilverWindDescription:
 	db   "May up all stats."
 	next "Hits flying foes.@"
 
-ConversionDescription:
-	db   "Change user's type"
-	next "to a move's type.@"
+RockPolishDescription:
+	db   "Sharply increases"
+	next "the user's SPEED.@"
 
 TriAttackDescription:
 	db   "Fires three kinds"
