@@ -801,13 +801,6 @@ PayDay:
 	kingsrock
 	endmove
 
-Conversion:
-	checkobedience
-	usedmovetext
-	doturn
-	conversion
-	endmove
-
 ResetStats:
 	checkobedience
 	usedmovetext
