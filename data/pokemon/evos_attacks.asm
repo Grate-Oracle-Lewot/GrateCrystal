@@ -2427,7 +2427,8 @@ SentretEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, GROWL
-	db 5, TAIL_WHIP
+	db 3, TAIL_WHIP
+	db 5, FORESIGHT
 	db 11, QUICK_ATTACK
 	db 17, FURY_SWIPES
 	db 25, RETURN
@@ -2443,7 +2444,8 @@ FurretEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 2, GROWL
-	db 5, TAIL_WHIP
+	db 3, TAIL_WHIP
+	db 5, FORESIGHT
 	db 11, QUICK_ATTACK
 	db 18, FURY_SWIPES
 	db 28, RETURN
