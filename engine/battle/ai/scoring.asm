@@ -799,6 +799,7 @@ AI_Smart:
 
 AI_Smart_EffectHandlers:
 	dbw EFFECT_SLEEP,            AI_Smart_Sleep
+	dbw EFFECT_POISON_HIT,       AI_Smart_Smog
 	dbw EFFECT_LEECH_HIT,        AI_Smart_LeechHit
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
@@ -912,6 +913,7 @@ AI_Smart_Nightmare:
 
 ; Dismiss this move if the player has any status other than sleep.
 	ld a, [wBattleMonStatus]
+	and a
 	jr z, .no_status
 	and SLP
 	jp z, AIDismissMove
@@ -3412,6 +3414,30 @@ AI_Smart_FalseSwipe:
 	sbc d
 	ret c
 	jp AIDismissMove
+
+AI_Smart_Smog:
+; Do nothing if this move is not Smog.
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp SMOG
+	ret nz
+
+; Discourage this move if the player is Poison-type and therefore immune to poisoning.
+; The AI_Immunities layer will dismiss this move if the player is Steel-type.
+	ld a, [wBattleMonType1]
+	cp POISON
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp POISON
+	jr z, .discourage
+
+; Discourage this move if the player already has a non-volatile status.
+	ld a, [wBattleMonStatus]
+	and a
+	ret nz
+
+.discourage
+	inc [hl]
+	ret
 
 AI_Smart_DefenseCurl:
 ; The AI_Setup layer counts Defense Curl as a stat-up move.
