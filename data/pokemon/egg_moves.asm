@@ -28,7 +28,7 @@ SquirtleEggMoves:
 	db HAZE
 	db MIST
 	db CRABHAMMER
-	db FORESIGHT
+	db ROCK_POLISH
 	db FLAIL
 	db -1 ; end
 
@@ -74,6 +74,7 @@ SandshrewEggMoves:
 	db COUNTER
 	db SAFEGUARD
 	db SUBMISSION
+	db ROCK_POLISH
 	db EARTH_POWER
 	db RAPID_SPIN
 	db -1 ; end
@@ -290,6 +291,7 @@ ShellderEggMoves:
 	db RAPID_SPIN
 	db METAL_SOUND
 	db LICK
+	db ROCK_POLISH
 	db CRABHAMMER
 	db PRESENT
 	db POWER_GEM
@@ -470,6 +472,7 @@ PorygonEggMoves:
 
 OmanyteEggMoves:
 	db KINESIS
+	db ROCK_POLISH
 	db AURORA_BEAM
 	db BUBBLEBEAM
 	db SLAM
@@ -477,6 +480,7 @@ OmanyteEggMoves:
 	db -1 ; end
 
 KabutoEggMoves:
+	db ROCK_POLISH
 	db ROCK_SLIDE
 	db RAPID_SPIN
 	db FLAIL
@@ -739,7 +743,7 @@ GirafarigEggMoves:
 	db -1 ; end
 
 PinecoEggMoves:
-	db REFLECT
+	db ROCK_POLISH
 	db SPIKE_CANNON
 	db PIN_MISSILE
 	db SPARK
@@ -839,6 +843,7 @@ CorsolaEggMoves:
 	db MIST
 	db AMNESIA
 	db IRON_HEAD
+	db ROCK_POLISH
 	db -1 ; end
 
 RemoraidEggMoves:
@@ -974,6 +979,7 @@ CattleEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
+	db ROCK_POLISH
 	db METAL_SOUND
 	db POWER_GEM
 	db BIDE
