@@ -466,7 +466,6 @@ PorygonEggMoves:
 	db MIRROR_COAT
 	db TRANSFORM
 	db METAL_SOUND
-	db CONVERSION2
 	db -1 ; end
 
 OmanyteEggMoves:
