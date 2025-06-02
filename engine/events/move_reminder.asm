@@ -511,7 +511,7 @@ ChooseMoveToLearn:
 	lb bc, 6, 18
 	call TextboxBorder
 
-; This code will relative jump to the ".cancel_border_fix" local jump if the cancel entry is highlighted.
+; This code will relative jump to the ".cancel_border_fix" local label if the cancel entry is highlighted.
 	ld a, [wMenuSelection]
 	cp -1
 	jr z, .cancel_border_fix
@@ -578,7 +578,7 @@ ChooseMoveToLearn:
 	call PrintNum
 	jr .print_move_accuracy
 
-; This prints "---" if the move has a status effect chance of "0".
+; This prints "---" if the move has a status effect chance of 0.
 ; This means one of three things:
 ; It does not inflict a status effect.
 ; It is always successful in inflicting a status effect unless something blocks it.
@@ -637,8 +637,8 @@ ChooseMoveToLearn:
 	hlcoord 16, 11
 	jp PrintNum
 
-; This prints "---" if the move has an attack of "0".
-; This means that the move does not initially cause damage or is a one hit knockout move.
+; This prints "---" if the move has an attack of 0 or 1.
+; This covers status moves, OHKO moves, level damage, etc.
 .print_move_null_attack
 	hlcoord 16, 11
 	ld de, MoveNullValueString
