@@ -6282,15 +6282,14 @@ BattleCommand_Synthesis:
 	ld de, wEnemyMonHP
 
 .start
+; Don't bother healing if HP is already full.
+	ld c, 2
+	call CompareBytes
+	jr z, .Full
+
 ; Index for .Multipliers
 ; Default restores half max HP.
 	ld c, 1
-
-; Don't bother healing if HP is already full.
-	push bc
-	call CompareBytes
-	pop bc
-	jr z, .Full
 
 	ld a, [wBattleWeather]
 	cp WEATHER_NONE
