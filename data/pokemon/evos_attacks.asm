@@ -3356,7 +3356,7 @@ MagcargoEvosAttacks:
 	db 25, BODY_SLAM
 	db 30, AMNESIA
 	db 36, FLAMETHROWER
-	db 37, ROLLOUT
+	db 37, ROCK_POLISH
 	db 48, ROCK_SLIDE
 	db 60, FISSURE
 	db 0 ; no more level-up moves
