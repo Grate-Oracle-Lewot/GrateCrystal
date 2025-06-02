@@ -964,8 +964,8 @@ FlailDescription:
 	next "user's HP is low.@"
 
 Conversion2Description:
-	db   "The user's type is"
-	next "made resistant.@"
+	db   "Changes type to"
+	next "resist last move.@"
 
 AeroblastDescription:
 	db   "A cold beam. High"
