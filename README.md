@@ -37,11 +37,11 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
-- While TMs are still single-use, you usually get 5 copies at a time
 - Text scrolls automatically in battle (and at a few other key points)
 - Run at bike speed by holding B (including while Surfing); brake on Cycling Road by holding B
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns, and space for all phone contacts in the Pokégear
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
+- While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, some of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
