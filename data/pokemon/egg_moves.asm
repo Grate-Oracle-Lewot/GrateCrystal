@@ -368,6 +368,7 @@ KoffingEggMoves:
 
 RhyhornEggMoves:
 	db METAL_SOUND
+	db ROCK_POLISH
 	db DRAGON_PULSE
 	db CRUNCH
 	db REVERSAL
