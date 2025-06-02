@@ -35,7 +35,6 @@ BattleCommandPointers:
 	dw BattleCommand_StatUp
 	dw BattleCommand_StatDown
 	dw BattleCommand_PayDay
-	dw BattleCommand_Conversion
 	dw BattleCommand_ResetStats
 	dw BattleCommand_StoreEnergy
 	dw BattleCommand_UnleashEnergy
