@@ -120,13 +120,13 @@ CianwoodCitySailor:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_OLD_ROD
-	iftrue .Alola
+	iftrue .CheckBalls
 	checkevent EVENT_GOT_GOOD_ROD
-	iftrue .Alola
+	iftrue .CheckBalls
 	checkevent EVENT_GOT_SUPER_ROD
-	iftrue .Alola
+	iftrue .CheckBalls
 	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
-	iftrue .Alola
+	iftrue .CheckBalls
 	setval TENTACOOL
 	special MonCheck
 	iftrue .Alola
@@ -143,10 +143,19 @@ CianwoodCitySailor:
 	givepoke TENTACOOL, 10
 	sjump .Done
 
-.Alola
+.GiveBalls:
+	writetext CianwoodCitySailorPreparedText
+	promptbutton
+	verbosegiveitemfive POKE_BALL, 5
+	sjump .Done2
+
+.CheckBalls:
+	checkitem POKE_BALL
+	iffalse .GiveBalls
 	writetext CianwoodCitySailorAlolaText
 .Done
 	waitbutton
+.Done2
 	closetext
 	end
 
@@ -313,6 +322,14 @@ CianwoodCitySailorTentacoolText:
 PlayerReceivedTentacoolText:
 	text "<PLAYER> received"
 	line "TENTACOOL!"
+	done
+
+CianwoodCitySailorPreparedText:
+	text "At sea, you must"
+	line "be prepared."
+
+	para "So, please take"
+	line "these."
 	done
 
 EusineSuicuneText:
