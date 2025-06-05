@@ -150,8 +150,35 @@ CianwoodCitySailor:
 	sjump .Done2
 
 .CheckBalls:
+	checkitem MASTER_BALL
+	iftrue .Alola
+	checkitem ULTRA_BALL
+	iftrue .Alola
+	checkitem GREAT_BALL
+	iftrue .Alola
+	checkitem TIMER_BALL
+	iftrue .Alola
+	checkitem DUSK_BALL
+	iftrue .Alola
+	checkitem HEAVY_BALL
+	iftrue .Alola
+	checkitem LEVEL_BALL
+	iftrue .Alola
+	checkitem LURE_BALL
+	iftrue .Alola
+	checkitem FAST_BALL
+	iftrue .Alola
+	checkitem FRIEND_BALL
+	iftrue .Alola
+	checkitem MOON_BALL
+	iftrue .Alola
+	checkitem LOVE_BALL
+	iftrue .Alola
 	checkitem POKE_BALL
 	iffalse .GiveBalls
+	; fallthrough
+
+.Alola
 	writetext CianwoodCitySailorAlolaText
 .Done
 	waitbutton
