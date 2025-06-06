@@ -249,8 +249,8 @@ BattleCommand_UTurn:
 
 	call UpdateBattleMonInParty
 
-	ld c, 20
-	call DelayFrames
+	ld de, ANIM_RETURN_MON
+	call FarPlayBattleAnimation
 
 ; Transition into switchmon menu
 	call SwitchMoveTransitionIntoMenu
