@@ -6989,10 +6989,8 @@ ContactCuteCharm:
 	ret nc
 
 	set SUBSTATUS_IN_LOVE, [hl]
-	call BattleCommand_SwitchTurn
 	ld de, ANIM_IN_LOVE
-	call PlayOpponentBattleAnim
-	call BattleCommand_SwitchTurn
+	call PlayUserBattleAnim
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
