@@ -409,7 +409,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - U-Turn doesn't switch in link battles. (It still does damage.) I would like it to work, but I can't figure it out, so for now it just doesn't even try, thus preventing desynchronization.
 
-- If you throw a ball at a Pokémon that has more than 341 max HP, it will have the wrong chance to be caught, and rarely will freeze the game due to dividing by zero. This is a known bug from the base game but doesn't yet have a standardized solution. I'm waiting on help.
+- If you throw a ball at a wild Pokémon that has more than 341 max HP, it will have the wrong chance to be caught, and rarely will freeze the game due to dividing by zero. This is a known bug from the base game but doesn't yet have a standardized solution. I'm waiting on help.
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
 
