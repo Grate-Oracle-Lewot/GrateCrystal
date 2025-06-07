@@ -124,6 +124,9 @@ NewBarkTownSign:
 	givepoke LEDIAN, 42
 	givepoke MEW, 5
 	closetext
+	loadwildmon STEELIX, 30
+	startbattle
+	reloadmapafterbattle
 	end
 	jumptext NewBarkTownSignText
 
