@@ -11,6 +11,8 @@
 *.sgb.tilemap
 gfx/pokemon/*/bitmask.asm
 gfx/pokemon/*/frames.asm
+!gfx/pokemon/pikachu/bitmask.asm
+!gfx/pokemon/pikachu/frames.asm
 !gfx/pokemon/unown/bitmask.asm
 !gfx/pokemon/unown/frames.asm
 
