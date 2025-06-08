@@ -1890,18 +1890,19 @@ Mobile_PartyMenuSelect:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPartySpecies], a
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call Mobile_OptimizedReadTextSfx
 	and a
 	ret
 
 .done
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call Mobile_OptimizedReadTextSfx
 	scf
 	ret
+
+Mobile_OptimizedReadTextSfx:
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	jp WaitSFX
 
 MobileBattleMonMenu:
 	call Function100dd8
@@ -1930,7 +1931,7 @@ MobileBattleMonMenu:
 
 .asm_100d56
 	push af
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	pop af
 	bit 1, a
