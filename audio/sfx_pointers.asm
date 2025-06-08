@@ -9,7 +9,6 @@ SFX:
 	dba Sfx_FullHeal
 	dba Sfx_Menu
 	dba Sfx_ReadText
-	dba Sfx_ReadText2
 	dba Sfx_DexFanfare2049
 	dba Sfx_DexFanfare80109
 	dba Sfx_Poison
