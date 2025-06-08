@@ -6870,9 +6870,9 @@ ContactStatic:
 	call BattleCommand_SwitchTurn
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
-	ld de, ANIM_PAR
-	call PlayOpponentBattleAnim
 	call BattleCommand_SwitchTurn
+	ld de, ANIM_PAR
+	call PlayUserBattleAnim
 	call RefreshBattleHuds
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
