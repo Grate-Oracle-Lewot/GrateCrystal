@@ -2372,14 +2372,12 @@ BattleAnim_Transform:
 
 BattleAnim_PetalDance:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_SKETCH
+	anim_sound 8, 2, SFX_PETAL_DANCE
 .loop
 	anim_obj ANIM_OBJ_PETAL_DANCE, 48, 56, $0
 	anim_wait 11
 	anim_loop 8, .loop
-	anim_sound 0, 0, SFX_SKETCH
 	anim_wait 88
-	anim_sound 0, 0, SFX_SKETCH
 	anim_wait 104
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
