@@ -614,7 +614,7 @@ Sfx_DexFanfare2049:
 	channel 7, Sfx_DexFanfare2049_Ch7
 	channel 8, Sfx_DexFanfare2049_Ch8
 
-Sfx_PetalDamce:
+Sfx_PetalDance:
 	channel_count 2
 	channel 5, Sfx_PetalDance_Ch5
 	channel 6, Sfx_PetalDance_Ch6
@@ -5111,12 +5111,11 @@ Sfx_PetalDance_Ch5:
 	note D#, 4
 	octave 4
 	note G_, 8
-	octave 5
+	octave 6
 	note F_, 4
 	note D#, 4
-	octave 4
-	note G_, 8
 	octave 5
+	note G_, 8
 	note F_, 4
 	note D#, 4
 	octave 4
@@ -5136,12 +5135,11 @@ Sfx_PetalDance_Ch6:
 	note D#, 4
 	octave 4
 	note G_, 8
-	octave 5
+	octave 6
 	note F_, 4
 	note D#, 4
-	octave 4
-	note G_, 8
 	octave 5
+	note G_, 8
 	note F_, 4
 	note D#, 4
 	octave 4
