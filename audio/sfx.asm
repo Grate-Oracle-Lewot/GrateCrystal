@@ -625,6 +625,11 @@ Sfx_DexFanfare2049:
 	channel 7, Sfx_DexFanfare2049_Ch7
 	channel 8, Sfx_DexFanfare2049_Ch8
 
+Sfx_PetalDamce:
+	channel_count 2
+	channel 5, Sfx_PetalDance_Ch5
+	channel 6, Sfx_PetalDance_Ch6
+
 Sfx_DexFanfare2049_Ch5:
 	toggle_sfx
 	tempo 104
@@ -5104,4 +5109,53 @@ Sfx_GlassTing2_Ch5:
 Sfx_GlassTing2_Ch6:
 	duty_cycle 2
 	square_note 16, 13, 1, 2013
+	sound_ret
+
+Sfx_PetalDance_Ch5:
+	toggle_sfx
+	vibrato 10, 2, 4
+	duty_cycle 2
+	note_type 10, 8, 7
+	octave 5
+	note G_, 8
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
+	sound_ret
+
+Sfx_PetalDance_Ch6:
+	toggle_sfx
+	vibrato 10, 2, 3
+	duty_cycle 2
+	note_type 11, 6, 7
+	octave 5
+	note G_, 8
+	note_type 10, 6, 7
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
+	octave 6
+	note F_, 4
+	note D#, 4
+	octave 5
+	note G_, 8
 	sound_ret
