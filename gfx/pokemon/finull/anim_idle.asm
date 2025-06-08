@@ -8,5 +8,5 @@
 	frame 3, 07
 	frame 2, 07
 	frame 1, 07
-	frame 0, 42
+	frame 0, 02
 	endanim
