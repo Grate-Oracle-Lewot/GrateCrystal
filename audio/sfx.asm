@@ -19,10 +19,8 @@ Sfx_Menu:
 	channel 8, Sfx_Menu_Ch8
 
 Sfx_ReadText:
-Sfx_ReadText2:
 	channel_count 1
 	channel 5, Sfx_ReadText_Ch5
-	assert Sfx_ReadText_Ch5 == Sfx_ReadText2_Ch5
 
 Sfx_Poison:
 	channel_count 1
@@ -486,19 +484,13 @@ Sfx_Elevator:
 	channel 8, Sfx_Elevator_Ch8
 
 Sfx_LevelUp:
-Sfx_DexFanfare5079:
 	channel_count 4
 	channel 5, Sfx_LevelUp_Ch5
 	channel 6, Sfx_LevelUp_Ch6
 	channel 7, Sfx_LevelUp_Ch7
 	channel 8, Sfx_LevelUp_Ch8
-	assert Sfx_LevelUp_Ch5 == Sfx_DexFanfare5079_Ch5
-	assert Sfx_LevelUp_Ch6 == Sfx_DexFanfare5079_Ch6
-	assert Sfx_LevelUp_Ch7 == Sfx_DexFanfare5079_Ch7
-	assert Sfx_LevelUp_Ch8 == Sfx_DexFanfare5079_Ch8
 
 Sfx_LevelUp_Ch5:
-Sfx_DexFanfare5079_Ch5:
 	toggle_sfx
 	tempo 120
 	volume 7, 7
@@ -514,7 +506,6 @@ Sfx_DexFanfare5079_Ch5:
 	sound_ret
 
 Sfx_LevelUp_Ch6:
-Sfx_DexFanfare5079_Ch6:
 	toggle_sfx
 	duty_cycle 2
 	note_type 8, 12, 1
@@ -527,7 +518,6 @@ Sfx_DexFanfare5079_Ch6:
 	sound_ret
 
 Sfx_LevelUp_Ch7:
-Sfx_DexFanfare5079_Ch7:
 	toggle_sfx
 	note_type 8, 2, 5
 	octave 4
@@ -545,7 +535,6 @@ Sfx_DexFanfare5079_Ch7:
 	sound_ret
 
 Sfx_LevelUp_Ch8:
-Sfx_DexFanfare5079_Ch8:
 	toggle_sfx
 	sfx_toggle_noise 4
 	drum_speed 12
@@ -3838,7 +3827,6 @@ Sfx_ExitBuilding_Ch8:
 	sound_ret
 
 Sfx_ReadText_Ch5:
-Sfx_ReadText2_Ch5:
 	duty_cycle 2
 	square_note 0, 9, 1, 1984
 	square_note 0, 8, 1, 2000
