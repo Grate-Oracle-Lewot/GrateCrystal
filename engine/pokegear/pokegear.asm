@@ -51,7 +51,7 @@ PokeGear:
 	jr .loop
 
 .done
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	call WaitSFX
 	pop af
@@ -1338,7 +1338,7 @@ PokegearPhoneContactSubmenu:
 	dw .Cancel
 
 Pokegear_SwitchPage:
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	ld a, c
 	ld [wJumptableIndex], a
