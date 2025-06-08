@@ -5104,22 +5104,22 @@ Sfx_PetalDance_Ch5:
 	vibrato 10, 2, 4
 	duty_cycle 2
 	note_type 10, 8, 7
-	octave 5
+	octave 4
 	note G_, 8
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
 	sound_ret
 
@@ -5128,22 +5128,22 @@ Sfx_PetalDance_Ch6:
 	vibrato 10, 2, 3
 	duty_cycle 2
 	note_type 11, 6, 7
-	octave 5
+	octave 4
 	note G_, 8
 	note_type 10, 6, 7
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
-	octave 6
+	octave 5
 	note F_, 4
 	note D#, 4
-	octave 5
+	octave 4
 	note G_, 8
 	sound_ret
