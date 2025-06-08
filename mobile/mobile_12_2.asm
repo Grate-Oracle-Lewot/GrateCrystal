@@ -484,9 +484,7 @@ Function4ab1a:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurPartySpecies], a
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call .read_text_sfx
 	ld a, $1
 	and a
 	ret
@@ -495,9 +493,7 @@ Function4ab1a:
 	ld a, [wMenuCursorY]
 	ld [wPartyMenuCursor], a
 .asm_4ab73
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call .read_text_sfx
 	scf
 	ret
 
@@ -507,13 +503,16 @@ Function4ab1a:
 	ld a, [wMenuCursorX]
 	cp $2
 	jr z, .asm_4ab73
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call .read_text_sfx
 	xor a
 	ld [wd018], a
 	and a
 	ret
+
+.read_text_sfx
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	jp WaitSFX
 
 Function4ab99:
 	bit 1, a
@@ -708,7 +707,7 @@ Function4acaa:
 	ld hl, w2DMenuFlags1
 	set 6, [hl]
 	call StaticMenuJoypad
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	ldh a, [hJoyPressed]
 	bit 0, a
