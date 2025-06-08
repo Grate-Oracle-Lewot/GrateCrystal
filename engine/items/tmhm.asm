@@ -255,7 +255,7 @@ TMHM_ShowTMMoveDescription:
 	jp TMHM_JoypadLoop
 
 TMHM_ChooseTMorHM:
-	call TMHM_PlaySFX_ReadText2
+	call TMHM_PlaySFX_ReadText
 	call CountTMsHMs ; This stores the count to wTempTMHM.
 	ld a, [wMenuCursorY]
 	dec a
@@ -289,7 +289,7 @@ TMHM_CheckHoveringOverCancel:
 	ret
 
 TMHM_ExitPack:
-	call TMHM_PlaySFX_ReadText2
+	call TMHM_PlaySFX_ReadText
 	; fallthrough
 
 _TMHM_ExitPack:
@@ -466,9 +466,9 @@ Tutorial_TMHMPocket:
 	pop de
 	ret
 
-TMHM_PlaySFX_ReadText2:
+TMHM_PlaySFX_ReadText:
 	push de
-	ld de, SFX_READ_TEXT_2
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	pop de
 	ret
