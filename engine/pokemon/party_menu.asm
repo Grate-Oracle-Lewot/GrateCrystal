@@ -687,18 +687,19 @@ PartyMenuSelect:
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call .read_text_sfx
 	and a
 	ret
 
 .exitmenu
-	ld de, SFX_READ_TEXT_2
-	call PlaySFX
-	call WaitSFX
+	call .read_text_sfx
 	scf
 	ret
+
+.read_text_sfx
+	ld de, SFX_READ_TEXT
+	call PlaySFX
+	jp WaitSFX
 
 PrintPartyMenuText:
 	hlcoord 0, 14
