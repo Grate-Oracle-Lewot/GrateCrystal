@@ -905,7 +905,7 @@ _LearnedMoveText::
 	line "@"
 	text_ram wStringBuffer2
 	text "!@"
-	sound_dex_fanfare_50_79
+	sound_level_up
 	text_end
 
 _MoveAskForgetText::
