@@ -1,7 +1,6 @@
 SFX:
 ; entries correspond to SFX_* constants
 	table_width 3, SFX
-	dba Sfx_DexFanfare5079
 	dba Sfx_Item
 	dba Sfx_CaughtMon
 	dba Sfx_PokeballsPlacedOnTable
