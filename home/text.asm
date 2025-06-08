@@ -677,7 +677,7 @@ TextCommands::
 	dw TextCommand_START_ASM     ; TX_START_ASM
 	dw TextCommand_DECIMAL       ; TX_DECIMAL
 	dw TextCommand_PAUSE         ; TX_PAUSE
-	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_50_79
+	dw TextCommand_SOUND         ; TX_SOUND_LEVEL_UP
 	dw TextCommand_DOTS          ; TX_DOTS
 	dw TextCommand_WAIT_BUTTON   ; TX_WAIT_BUTTON
 	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_20_49
@@ -901,7 +901,7 @@ TextCommand_SOUND::
 	ret
 
 TextSFX::
-	dbw TX_SOUND_DEX_FANFARE_50_79,  SFX_DEX_FANFARE_50_79
+	dbw TX_SOUND_LEVEL_UP,           SFX_LEVEL_UP
 	dbw TX_SOUND_FANFARE,            SFX_FANFARE
 	dbw TX_SOUND_DEX_FANFARE_20_49,  SFX_DEX_FANFARE_20_49
 	dbw TX_SOUND_ITEM,               SFX_ITEM
