@@ -92,7 +92,7 @@ RunBattleAnimScript:
 
 .playframe
 	call RunBattleAnimCommand
-	call _ExecuteBGEffects
+	callfar ExecuteBGEffects
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
@@ -580,7 +580,8 @@ BattleAnimCmd_BGEffect:
 	ld [wBattleBGEffectTempTurn], a
 	call GetBattleAnimByte
 	ld [wBattleBGEffectTempParam], a
-	jp _QueueBGEffect
+	callfar QueueBGEffect
+	ret
 
 BattleAnimCmd_BGP:
 	call GetBattleAnimByte
