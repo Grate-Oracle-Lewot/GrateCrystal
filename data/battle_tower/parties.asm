@@ -240,7 +240,7 @@ BattleTowerMons:
 
 	db SNEASEL
 	db GOLD_BERRY
-	db SLASH, FAINT_ATTACK, WATERFALL, BLIZZARD
+	db SLASH, FAINT_ATTACK, WATERFALL, AVALANCHE
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -250,7 +250,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 11, 11, 15 ; DVs
-	db 32, 32, 24, 8 ; PP
+	db 32, 32, 24, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -2017,7 +2017,7 @@ BattleTowerMons:
 
 	db GOLEM
 	db FOCUS_BAND
-	db SELFDESTRUCT, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
+	db AVALANCHE, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 79930 ; Exp
 	; Stat exp
@@ -2027,7 +2027,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 45000
 	dn 13, 13, 14, 13 ; DVs
-	db 8, 16, 24, 24 ; PP
+	db 16, 16, 24, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
@@ -2748,7 +2748,7 @@ BattleTowerMons:
 
 	db CROBAT
 	db LEFTOVERS
-	db CONFUSE_RAY, ATTRACT, HYPER_BEAM, TOXIC
+	db CONFUSE_RAY, ATTRACT, U_TURN, TOXIC
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2758,7 +2758,7 @@ BattleTowerMons:
 	bigdw 40000
 	bigdw 50000
 	dn 14, 15, 15, 15 ; DVs
-	db 16, 16, 8, 8 ; PP
+	db 16, 16, 24, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -4918,7 +4918,7 @@ BattleTowerMons:
 
 	db CROBAT
 	db BERRY_JUICE
-	db WING_ATTACK, HAZE, HYPER_BEAM, GIGA_DRAIN
+	db WING_ATTACK, HAZE, U_TURN, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4928,7 +4928,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 12, 15 ; DVs
-	db 40, 40, 8, 8 ; PP
+	db 40, 40, 24, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
