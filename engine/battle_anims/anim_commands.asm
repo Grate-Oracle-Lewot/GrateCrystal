@@ -7,13 +7,6 @@ PlayBattleAnim:
 	ld a, BANK(wActiveAnimObjects)
 	ldh [rSVBK], a
 
-	call _PlayBattleAnim
-
-	pop af
-	ldh [rSVBK], a
-	ret
-
-_PlayBattleAnim:
 	ld c, 6
 .wait
 	call BattleAnimDelayFrame
@@ -45,7 +38,11 @@ _PlayBattleAnim:
 	ldh [hBGMapMode], a
 
 	call BattleAnimDelayFrameThrice
-	jp WaitSFX
+	call WaitSFX
+
+	pop af
+	ldh [rSVBK], a
+	ret
 
 BattleAnimRunScript:
 	ld a, [wFXAnimID + 1]
@@ -87,7 +84,6 @@ BattleAnimRunScript:
 	call WaitSFX
 	call PlayHitSound
 	call RunBattleAnimScript
-
 .done
 	jp BattleAnim_RevertPals
 
@@ -280,7 +276,6 @@ RunBattleAnimCommand:
 
 .do_anim
 	call .DoCommand
-
 	jr .loop
 
 .DoCommand:
@@ -1275,7 +1270,6 @@ PlayHitSound:
 	jr nc, .play
 
 	ld de, SFX_NOT_VERY_EFFECTIVE
-
 .play
 	jp PlaySFX
 
