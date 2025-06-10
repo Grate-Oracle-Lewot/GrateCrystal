@@ -280,7 +280,6 @@ BattleAnimations::
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
-	dw BattleAnim_InHail
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_SweetScent2:
@@ -4719,7 +4718,6 @@ BattleAnim_Struggle:
 	anim_ret
 
 BattleAnim_Hail:
-BattleAnim_InHail:
 	anim_1gfx ANIM_GFX_ICE
 	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
 	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
