@@ -4996,7 +4996,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (8)
 	db "KENJI@", TRAINERTYPE_NORMAL
-	db 35, MACHOKE
+	db 35, MACHAMP
 	db -1 ; end
 
 	; BLACKBELT_T (9)
