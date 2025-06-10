@@ -464,6 +464,7 @@ EeveeEggMoves:
 	db -1 ; end
 
 PorygonEggMoves:
+	db FAINT_ATTACK
 	db AMNESIA
 	db DRILL_PECK
 	db BODY_SLAM
