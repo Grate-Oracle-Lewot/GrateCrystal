@@ -2826,7 +2826,7 @@ BattleTowerMons:
 
 	db FORRETRESS
 	db LEFTOVERS
-	db SANDSTORM, TOXIC, SELFDESTRUCT, SWAGGER
+	db SANDSTORM, TOXIC, U_TURN, SWAGGER
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2836,7 +2836,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 40000
 	dn 12, 15, 13, 13 ; DVs
-	db 8, 8, 8, 24 ; PP
+	db 8, 8, 24, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -4395,7 +4395,7 @@ BattleTowerMons:
 
 	db FORRETRESS
 	db LEFTOVERS
-	db SELFDESTRUCT, TOXIC, SOLARBEAM, SWAGGER
+	db U_TURN, TOXIC, SOLARBEAM, SWAGGER
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4405,7 +4405,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 15, 13, 14, 13 ; DVs
-	db 8, 8, 16, 24 ; PP
+	db 24, 8, 16, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -5753,7 +5753,7 @@ BattleTowerMons:
 
 	db FORRETRESS
 	db MIRACLE_SEED
-	db SELFDESTRUCT, TOXIC, SOLARBEAM, SWAGGER
+	db U_TURN, TOXIC, SOLARBEAM, SWAGGER
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5763,7 +5763,7 @@ BattleTowerMons:
 	bigdw 45000
 	bigdw 50000
 	dn 15, 13, 14, 13 ; DVs
-	db 8, 8, 16, 24 ; PP
+	db 24, 8, 16, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
