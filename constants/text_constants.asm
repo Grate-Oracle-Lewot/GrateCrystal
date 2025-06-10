@@ -10,14 +10,13 @@ NAME_LENGTH_JAPANESE EQU 6
 
 ; GetName types (see home/names.asm)
 	const_def 1
-	const MON_NAME              ; 1
-	const MOVE_NAME             ; 2
-	const DUMMY_NAME            ; 3
-	const ITEM_NAME             ; 4
-	const PARTY_OT_NAME         ; 5
-	const ENEMY_OT_NAME         ; 6
-	const TRAINER_NAME          ; 7
-	const MOVE_DESC_NAME_BROKEN ; 8
+	const MON_NAME       ; 1
+	const MOVE_NAME      ; 2
+	const MOVE_DESC_NAME ; 8
+	const ITEM_NAME      ; 4
+	const PARTY_OT_NAME  ; 5
+	const ENEMY_OT_NAME  ; 6
+	const TRAINER_NAME   ; 7
 
 ; see home/text.asm
 BORDER_WIDTH   EQU 2
