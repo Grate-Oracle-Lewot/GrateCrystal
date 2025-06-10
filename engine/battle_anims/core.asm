@@ -305,12 +305,4 @@ GetBattleAnimTileOffset:
 	pop hl
 	ret
 
-_ExecuteBGEffects:
-	callfar ExecuteBGEffects
-	ret
-
-_QueueBGEffect:
-	callfar QueueBGEffect
-	ret
-
 INCLUDE "data/battle_anims/objects.asm"
