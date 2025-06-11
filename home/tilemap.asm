@@ -58,7 +58,6 @@ CGBOnly_CopyTilemapAtOnce::
 	; fallthrough
 
 CopyTilemapAtOnce::
-_CopyTilemapAtOnce:
 	ldh a, [hBGMapMode]
 	push af
 	xor a
