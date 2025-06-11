@@ -19,15 +19,6 @@ CloseText::
 	ld a, $1
 	ldh [hOAMUpdate], a
 
-	call .CloseText
-
-	pop af
-	ldh [hOAMUpdate], a
-	ld hl, wVramState
-	res 6, [hl]
-	ret
-
-.CloseText:
 	call ClearWindowData
 	xor a
 	ldh [hBGMapMode], a
@@ -41,6 +32,11 @@ CloseText::
 	call UpdatePlayerSprite
 	farcall InitMapNameSign
 	farcall LoadOverworldFont
+
+	pop af
+	ldh [hOAMUpdate], a
+	ld hl, wVramState
+	res 6, [hl]
 	ret
 
 OpenText::
