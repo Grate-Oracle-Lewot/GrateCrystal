@@ -212,9 +212,6 @@ ENDM
 	dict "<MOM>",     PrintMomsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
-	dict "<ROUTE>",   PlaceJPRoute
-	dict "<WATASHI>", PlaceWatashi
-	dict "<KOKO_WA>", PlaceKokoWa
 	dict "<RED>",     PrintRedsName
 	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
@@ -222,7 +219,6 @@ ENDM
 	dict "<ROCKET>",  RocketChar
 	dict "<TM>",      TMChar
 	dict "<TRAINER>", TrainerChar
-	dict "<KOUGEKI>", PlaceKougeki
 	dict "<LF>",      LineFeedChar
 	dict "<CONT>",    ContText
 	dict "<……>",      SixDotsChar
@@ -267,13 +263,9 @@ TMChar:       print_name TMCharText
 PCChar:       print_name PCCharText
 RocketChar:   print_name RocketCharText
 PlacePOKe:    print_name PlacePOKeText
-PlaceKougeki: print_name KougekiText
 SixDotsChar:  print_name SixDotsCharText
 PlacePKMN:    print_name PlacePKMNText
 PlacePOKE:    print_name PlacePOKEText
-PlaceJPRoute: print_name PlaceJPRouteText
-PlaceWatashi: print_name PlaceWatashiText
-PlaceKokoWa:  print_name PlaceKokoWaText
 
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
@@ -358,18 +350,11 @@ TrainerCharText:: db "TRAINER@"
 PCCharText::      db "PC@"
 RocketCharText::  db "ROCKET@"
 PlacePOKeText::   db "POKé@"
-KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
 PlacePKMNText::   db "<PK><MN>@"
 PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
-; These strings have been dummied out.
-PlaceJPRouteText::
-PlaceWatashiText::
-PlaceKokoWaText:: db "@"
-KunSuffixText::   db "@"
-ChanSuffixText::  db "@"
 
 NextLineChar::
 	pop hl
