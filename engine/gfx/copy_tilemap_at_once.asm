@@ -69,6 +69,7 @@ _SafeCopyTilemapAtOnce::
 	pop af
 	ldh [hBGMapMode], a
 	ret
+
 _CopyTilemapAtOnce::
 	ldh a, [hBGMapMode]
 	push af
@@ -123,6 +124,7 @@ _UpdateBGMap::
 	xor a
 	ldh [rVBK], a
 	ret
+
 .DoCustomSourceTiles
 	ld [hSPBuffer], sp
 	xor a
@@ -152,6 +154,7 @@ _UpdateBGMap::
 	ld h, a
 	ldh a, [hTilesPerCycle]
 	jr .startCustomCopy
+
 .DoAttributes
 	ldh a, [hBGMapAddress + 1]
 	ld h, a
@@ -164,6 +167,7 @@ _UpdateBGMap::
 	xor a
 	ldh [rVBK], a
 	ret
+
 .CopyAttributes
 	ld [hSPBuffer], sp
 ; Which half?
@@ -177,10 +181,12 @@ _UpdateBGMap::
 ; Next time: top half
 	xor a
 	jr .startCopy
+
 .AttributeMapTop
 	coord sp, 0, 0, wAttrmap
 ; Next time: bottom half
 	jr .AttributeMapTopContinue
+
 .DoTiles
 	ldh a, [hBGMapAddress + 1]
 	ld h, a
@@ -199,6 +205,7 @@ _UpdateBGMap::
 ; Next time: top half
 	xor a
 	jr .startCopy
+
 .TileMapTop
 	coord sp, 0, 0
 ; Next time: bottom half
@@ -232,6 +239,7 @@ endr
 	pop hl
 	ld sp, hl
 	ret
+
 VBlankSafeCopyTilemapAtOnce::
 	ldh a, [hSCX]
 	ldh [rSCX], a
@@ -261,6 +269,7 @@ VBlankSafeCopyTilemapAtOnce::
 	ld de, BG_MAP_WIDTH * 9
 	ld b, 9
 	jr CopyTilemapInHBlank
+
 .attrAndBGCopy
 ; now copy both tile and attr map, of alternating groups of 5/5/4
 	hlcoord 0, 3, wAttrmap
@@ -280,23 +289,28 @@ VBlankSafeCopyTilemapAtOnce::
 	call Copy5RowsOfTilemapInHBlank_VBK1
 	hlcoord 0, 13
 	ld de, BG_MAP_WIDTH * 13
-; fallthrough
+	; fallthrough
+
 Copy5RowsOfTilemapInHBlank_VBK0:
 	xor a
 	ldh [rVBK], a
 	jr Copy5RowsOfTilemapInHBlank
+
 CopyFullTilemapInHBlank:
 	ldh [rVBK], a
 	ld de, 0
 	ld b, SCREEN_HEIGHT
 	jr CopyTilemapInHBlank
+
 Copy5RowsOfTilemapInHBlank_VBK1:
 	ld a, 1
 	ldh [rVBK], a
-; fallthrough
+	; fallthrough
+
 Copy5RowsOfTilemapInHBlank:
 	ld b, 5
-; fallthrough
+	; fallthrough
+
 CopyTilemapInHBlank:
 ; Copy all tiles to vBGMap
 	ld [hSPBuffer], sp
