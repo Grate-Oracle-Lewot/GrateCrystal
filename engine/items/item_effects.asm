@@ -2200,6 +2200,7 @@ PokeFluteEffect:
 
 .FluteWakeUpText:
 	text_far _FluteWakeUpText
+.stop
 	text_end
 
 .PlayedTheFlute:
@@ -2215,7 +2216,8 @@ PokeFluteEffect:
 	call WaitSFX
 	pop de
 .battle
-	jp PokeFluteTerminator
+	ld hl, .stop
+	ret
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText
