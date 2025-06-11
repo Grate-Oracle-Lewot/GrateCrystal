@@ -845,7 +845,7 @@ BenFernMusic6:
 	jr MonMusicNextRadioLine
 
 StartPokemonMusicChannel:
-	call RadioTerminator
+	ld hl, OPT_RestartText
 	call PrintText
 	ld de, MUSIC_POKEMON_MARCH
 	call GetWeekday
@@ -1919,7 +1919,7 @@ StartRadioStation:
 	ld a, [wNumRadioLinesPrinted]
 	and a
 	ret nz
-	call RadioTerminator
+	ld hl, OPT_RestartText
 	call PrintText
 	ld hl, RadioChannelSongs
 	ld a, [wCurRadioLine]
