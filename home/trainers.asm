@@ -108,7 +108,7 @@ TalkToTrainer::
 	; fallthrough
 
 LoadTrainer_continue::
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	ld [wSeenTrainerBank], a
 
 	ldh a, [hLastTalked]
@@ -215,7 +215,7 @@ PrintWinLossText::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	call FarPrintText
 	call WaitBGMap
 	jp WaitPressAorB_BlinkCursor
