@@ -274,7 +274,7 @@ ItemNameOrder::
 	db MACHINE_PART
 	db RAINBOW_WING
 	db SILVER_WING
+	assert_table_length NUM_ITEMS
 
 	db NO_ITEM
-	assert_table_length NUM_ITEMS + 1
 	db -1 ; end
