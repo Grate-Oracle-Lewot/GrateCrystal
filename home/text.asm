@@ -126,14 +126,6 @@ SpeechTextbox::
 	ld c, TEXTBOX_INNERW
 	jp Textbox
 
-RadioTerminator::
-PokeFluteTerminator::
-	ld hl, .stop
-	ret
-
-.stop:
-	text_end
-
 PrintText::
 	call SetUpTextbox
 	; fallthrough
