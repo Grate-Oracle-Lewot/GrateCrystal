@@ -14,8 +14,6 @@ CheckScenes::
 
 .scene_exists
 	pop hl
-DummyEndPredef::
-; Unused function at the end of PredefPointers.
 	ret
 
 GetCurrentMapSceneID::
@@ -274,19 +272,14 @@ GetDestinationWarpNumber::
 
 .found_warp
 	pop hl
-	call .IncreaseHLTwice
-	ret nc ; never encountered
+	inc hl
+	inc hl
+	scf
 
 	ld a, [wCurMapWarpCount]
 	inc a
 	sub c
 	ld c, a
-	scf
-	ret
-
-.IncreaseHLTwice:
-	inc hl
-	inc hl
 	scf
 	ret
 
@@ -359,16 +352,12 @@ CheckIndoorMap::
 	ret
 
 LoadMapAttributes::
-	call CopyMapPartialAndAttributes
-	call SwitchToMapScriptsBank
-	call ReadMapScripts
+	call LoadMapAttributes_Optimization
 	xor a ; do not skip object events
 	jr ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
-	call CopyMapPartialAndAttributes
-	call SwitchToMapScriptsBank
-	call ReadMapScripts
+	call LoadMapAttributes_Optimization
 	ld a, TRUE ; skip object events
 	; fallthrough
 
@@ -506,6 +495,11 @@ ReadMapSceneScripts::
 	ld bc, SCENE_SCRIPT_SIZE
 	jp AddNTimes
 
+LoadMapAttributes_Optimization:
+	call CopyMapPartialAndAttributes
+	call SwitchToMapScriptsBank
+	; fallthrough
+
 ReadMapScripts::
 	ld hl, wMapScriptsPointer
 	ld a, [hli]
@@ -620,7 +614,7 @@ ClearObjectStructs::
 	ret
 
 GetWarpDestCoords::
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	rst Bankswitch
 
 	ld hl, wMapEventsPointer
@@ -872,16 +866,12 @@ FillSouthConnectionStrip::
 	jr nz, .y
 	ret
 
-LoadMapStatus::
-	ld [wMapStatus], a
-	ret
-
 CallMapScript::
 ; Call a script at hl in the current bank if there isn't already a script running
 	ld a, [wScriptRunning]
 	and a
 	ret nz
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	; fallthrough
 
 CallScript::
@@ -918,7 +908,7 @@ RunMapCallback::
 	call .FindCallback
 	jr nc, .done
 
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	ld b, a
 	ld d, h
 	ld e, l
@@ -1308,7 +1298,6 @@ LoadTilesetGFX::
 
 .load_roof
 	farcall LoadMapGroupRoof
-
 .skip_roof
 	xor a
 	ldh [hTileAnimFrame], a
@@ -1903,7 +1892,6 @@ ReloadTilesetAndPalettes::
 	call SkipMusic
 	pop af
 	rst Bankswitch
-
 	jp EnableLCD
 
 GetMapPointer::
@@ -2019,10 +2007,6 @@ CopyMapPartial::
 SwitchToMapScriptsBank::
 	ld a, [wMapScriptsBank]
 	rst Bankswitch
-	ret
-
-GetMapScriptsBank::
-	ld a, [wMapScriptsBank]
 	ret
 
 GetAnyMapBlocksBank::
