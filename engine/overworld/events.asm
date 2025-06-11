@@ -327,7 +327,7 @@ CheckTileEvent:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	jp CallScript
 
 CheckWildEncounterCooldown::
@@ -523,7 +523,7 @@ ObjectEventTypeArray:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	jp CallScript
 
 .itemball
@@ -532,7 +532,7 @@ ObjectEventTypeArray:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	ld de, wItemBallData
 	ld bc, wItemBallDataEnd - wItemBallData
 	call FarCopyBytes
@@ -605,7 +605,7 @@ BGEventJumptable:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	call CallScript
 	scf
 	ret
@@ -614,7 +614,7 @@ BGEventJumptable:
 	call CheckBGEventFlag
 	jp nz, .dontread
 	call PlayTalkObject
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	ld de, wHiddenItemData
 	ld bc, wHiddenItemDataEnd - wHiddenItemData
 	call FarCopyBytes
@@ -627,7 +627,7 @@ BGEventJumptable:
 .copy:
 	call CheckBGEventFlag
 	jr nz, .dontread
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	ld de, wHiddenItemData
 	ld bc, wHiddenItemDataEnd - wHiddenItemData
 	call FarCopyBytes
@@ -661,7 +661,7 @@ CheckBGEventFlag:
 	ld h, [hl]
 	ld l, a
 	push hl
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	call GetFarWord
 	ld e, l
 	ld d, h
@@ -1247,9 +1247,9 @@ DoBikeStep::
 	ret
 
 GetFarWordCallScript:
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	call GetFarWord
-	call GetMapScriptsBank
+	ld a, [wMapScriptsBank]
 	jp CallScript
 
 INCLUDE "engine/overworld/cmd_queue.asm"
