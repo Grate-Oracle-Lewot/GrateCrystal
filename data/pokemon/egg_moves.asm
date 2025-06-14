@@ -202,7 +202,7 @@ AbraEggMoves:
 	db -1 ; end
 
 MachopEggMoves:
-	db ROCK_THROW
+	db FORESIGHT
 	db MEDITATE
 	db ROLLING_KICK
 	db ENCORE
