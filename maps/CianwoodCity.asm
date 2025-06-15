@@ -119,6 +119,8 @@ CianwoodCityLass:
 CianwoodCitySailor:
 	faceplayer
 	opentext
+	checkevent EVENT_UNION_CAVE_SLOWPOKE_WELL_LINK_PICKAXE
+	iftrue .CheckBalls
 	checkevent EVENT_GOT_OLD_ROD
 	iftrue .CheckBalls
 	checkevent EVENT_GOT_GOOD_ROD
