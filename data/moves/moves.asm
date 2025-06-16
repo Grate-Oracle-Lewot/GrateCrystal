@@ -170,7 +170,7 @@ Moves:
 	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,       PHYSICAL, 100, 10,   0
 	move REST,         EFFECT_HEAL,                0, NORMAL,       STATUS,   100,  5,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         84, ROCK,         PHYSICAL, 100, 15,  20
-	move HYPER_FANG,   EFFECT_LEECH_HIT,          80, NORMAL,       PHYSICAL,  90, 10,   0
+	move HYPER_FANG,   EFFECT_LEECH_HIT,          84, NORMAL,       PHYSICAL,  90, 10,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,          SPECIAL,  100, 10,  10
 	move ROCK_POLISH,  EFFECT_SPEED_UP_2,          0, ROCK,         STATUS,   100, 20,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         90, CURSE_TYPE,   SPECIAL,  100, 10,  33
