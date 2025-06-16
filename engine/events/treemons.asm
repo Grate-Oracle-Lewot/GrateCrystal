@@ -133,15 +133,12 @@ GetTreeMon:
 	push hl
 	call GetTreeScore
 	pop hl
-	and a ; TREEMON_SCORE_BAD
-	jr z, .bad
 	cp TREEMON_SCORE_GOOD
 	jr z, .good
 	cp TREEMON_SCORE_RARE
 	jr z, .rare
-	ret
 
-.bad
+; bad
 	; 10% chance of an encounter
 	ld a, 10
 	call RandomRange
