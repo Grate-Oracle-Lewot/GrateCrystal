@@ -1,10 +1,10 @@
-	db "BALL@" ; species name
+	db "BOMB@" ; species name
 	dw 311, 1470 ; height, weight
 
-	db   "The HAUNTER trap-"
-	next "ped inside evolved"
-	next "into a GENGAR,"
+	db   "It always grins"
+	next "because it loves"
+	next "exploding."
 
-	page "causing VOLTORB to"
-	next "take on a new form"
-	next "as well.@"
+	page "It tries to do the"
+	next "most damage with"
+	next "each blast.@"
