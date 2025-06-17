@@ -530,7 +530,7 @@ ENDM
 	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 109
 	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 110
 	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 111
-	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 10, 18 ; 112
+	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 20 ; 112
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 28
