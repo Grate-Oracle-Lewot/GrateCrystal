@@ -1,10 +1,10 @@
-	db "BALL@" ; species name
+	db "BOMB@" ; species name
 	dw 108, 230 ; height, weight
 
-	db   "A HAUNTER tried to"
-	next "possess a #"
-	next "BALL and got stuck"
+	db   "Developed during"
+	next "wartime as a dis-"
+	next "guised bomb."
 
-	page "halfway inside,"
-	next "becoming a"
-	next "VOLTORB.@"
+	page "Without a war, it"
+	next "doesn't know what"
+	next "its purpose is.@"
