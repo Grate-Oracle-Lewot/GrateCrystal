@@ -77,6 +77,7 @@ ContactMoves::
 	db IRON_TAIL
 	db METAL_CLAW
 	db VITAL_THROW
+	db U_TURN
 	db CROSS_CHOP
 	db CRUNCH
 	db EXTREMESPEED
