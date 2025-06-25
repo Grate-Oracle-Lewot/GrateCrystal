@@ -1,4 +1,4 @@
-	db "MAGNET@" ; species name
+	db "MAGNETS@" ; species name
 	dw 303, 1320 ; height, weight
 
 	db   "When a MAGNEMITE's"
