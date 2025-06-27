@@ -1697,7 +1697,7 @@ RhydonEvosAttacks:
 ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, PRESENT
 	db 1, DEFENSE_CURL
 	db 4, TAIL_WHIP
 	db 7, CHARM
@@ -3745,7 +3745,7 @@ MiltankEvosAttacks:
 
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, PRESENT
 	db 1, DEFENSE_CURL
 	db 5, TAIL_WHIP
 	db 9, CHARM
