@@ -385,7 +385,6 @@ ChanseyEggMoves:
 	db PLAY_ROUGH
 	db HEAL_BELL
 	db SPIKES
-	db PRESENT
 	db -1 ; end
 
 TangelaEggMoves:
