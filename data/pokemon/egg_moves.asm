@@ -468,8 +468,8 @@ PorygonEggMoves:
 	db DRILL_PECK
 	db BODY_SLAM
 	db MIRROR_COAT
-	db TRANSFORM
 	db METAL_SOUND
+	db TRANSFORM
 	db -1 ; end
 
 OmanyteEggMoves:
