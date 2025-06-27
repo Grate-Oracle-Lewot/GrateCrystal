@@ -1468,7 +1468,7 @@ KrabbyEvosAttacks:
 	db 23, CLAMP
 	db 27, SLAM
 	db 30, SWORDS_DANCE
-	db 34, PROTECT
+	db 34, SLASH
 	db 38, CRABHAMMER
 	db 41, GUILLOTINE
 	db 0 ; no more level-up moves
@@ -1484,7 +1484,7 @@ KinglerEvosAttacks:
 	db 23, CLAMP
 	db 27, SLAM
 	db 32, SWORDS_DANCE
-	db 38, PROTECT
+	db 38, SLASH
 	db 42, CRABHAMMER
 	db 49, GUILLOTINE
 	db 0 ; no more level-up moves
