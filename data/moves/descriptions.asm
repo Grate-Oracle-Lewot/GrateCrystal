@@ -176,7 +176,7 @@ MoveDescriptions::
 	dw SnoreDescription
 	dw CurseDescription
 	dw FlailDescription
-	dw Conversion2Description
+	dw RockWreckerDescription
 	dw AeroblastDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
@@ -963,9 +963,9 @@ FlailDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
 
-Conversion2Description:
-	db   "Changes type to"
-	next "resist last move.@"
+RockWreckerDescription:
+	db   "Wrecks rocks. Also"
+	next "hurts the user.@"
 
 AeroblastDescription:
 	db   "A cold beam. High"
