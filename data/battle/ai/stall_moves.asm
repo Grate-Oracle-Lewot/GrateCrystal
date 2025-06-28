@@ -37,7 +37,6 @@ StallMoves:
 	db SPIDER_WEB
 	db MIND_READER
 	db CURSE
-	db CONVERSION2
 	db COTTON_SPORE
 	db SPITE
 	db SCARY_FACE
