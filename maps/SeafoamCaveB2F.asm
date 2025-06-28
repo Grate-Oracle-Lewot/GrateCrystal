@@ -145,6 +145,18 @@ SeafoamCaveB2FKarenScript:
 SeafoamCaveB2FFeraligatrScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_RED
+	iftrue .AfterRedScript
+	writetext SeafoamCaveB2FFeraligatrText
+	cry FERALIGATR
+	waitsfx
+	promptbutton
+	writetext SeafoamCaveB2FFeraligatrText2
+	waitbutton
+	closetext
+	end
+
+.AfterRedScript
 	writetext SeafoamCaveB2FFeraligatrText
 	cry FERALIGATR
 	pause 15
@@ -399,6 +411,14 @@ SeafoamCaveDecorationText:
 
 SeafoamCaveB2FFeraligatrText:
 	text "FERALIGATR: Zigg!"
+	done
+
+SeafoamCaveB2FFeraligatrText2:
+	text "It looks like it's"
+	line "saying…"
+
+	para "“You have to beat"
+	line "RED first.”"
 	done
 
 SeafoamCaveB2F_MapEvents:
