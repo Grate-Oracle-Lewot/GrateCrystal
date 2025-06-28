@@ -2121,7 +2121,7 @@ BattleTowerMons:
 
 	db PORYGON2
 	db X_SPEED
-	db CONVERSION2, HYPER_BEAM, PSYBEAM, THIEF
+	db RECOVER, HYPER_BEAM, PSYBEAM, THIEF
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2131,7 +2131,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 11, 12, 14, 15 ; DVs
-	db 48, 8, 32, 48 ; PP
+	db 16, 8, 32, 48 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
