@@ -851,7 +851,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_COUNTER,          AI_Smart_Counter
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
 	dbw EFFECT_SNORE,            AI_Smart_Snore_SleepTalk
-	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_Snore_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_Reversal_DestinyBond
@@ -2474,48 +2473,6 @@ AI_Smart_Endure:
 .greatly_discourage
 	inc [hl]
 .discourage
-	inc [hl]
-	ret
-
-AI_Smart_Conversion2:
-; 90% chance to discourage this move if the player hasn't used a move yet.
-	ld a, [wLastPlayerMove]
-	and a
-	jr z, .discourage
-
-; Check the type matchup of the player's last used move.
-	push hl
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-
-	ld a, BANK(Moves)
-	call GetFarByte
-	ld [wPlayerMoveStruct + MOVE_TYPE], a
-
-	xor a
-	ldh [hBattleTurn], a
-
-	callfar BattleCheckTypeMatchup
-
-; 90% chance to discourage this move if the player's last used move is not very effective.
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop hl
-	jr c, .discourage
-	ret z
-
-; 50% chance to encourage this move if the player's last move is at least neutrally effective.
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	ret
-
-.discourage
-	call AI_90_10
-	ret c
 	inc [hl]
 	ret
 
