@@ -2825,7 +2825,7 @@ BattleAnim_RockWrecker:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj ANIM_OBJ_STRENGTH, 64, 104, $1
-	anim_wait 128
+	anim_wait 64
 	anim_incobj 1
 	anim_wait 20
 	anim_sound 0, 1, SFX_MEGA_PUNCH
