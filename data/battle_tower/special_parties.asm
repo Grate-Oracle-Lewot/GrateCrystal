@@ -54,8 +54,8 @@ BattleTowerBrock:
 	db "OMASTAR@@@@"
 
  	db RHYDON
-	db SOFT_SAND
-	db IRON_HEAD, ROCK_SLIDE, EARTHQUAKE, DRILL_PECK
+	db HARDHAT
+	db IRON_HEAD, ROCK_WRECKER, EARTHQUAKE, DRILL_PECK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -65,7 +65,7 @@ BattleTowerBrock:
 	bigdw 65535
 	bigdw 65535
 	dn 12, 11, 11, 12 ; DVs
-	db 24, 24, 16, 24 ; PP
+	db 24, 8, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1466,7 +1466,7 @@ BattleTowerKaren:
 
 	db HOUNDOOM
 	db BLACKGLASSES
-	db ROAR, SMOG, FLAMETHROWER, CRUNCH
+	db DARK_PULSE, SMOG, FLAMETHROWER, CRUNCH
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -1476,7 +1476,7 @@ BattleTowerKaren:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 14, 14, 13 ; DVs
-	db 32, 32, 16, 24 ; PP
+	db 24, 32, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1688,8 +1688,8 @@ BattleTowerPercy:
 	db "WIGGLYTUFF@"
 
 	db SUDOWOODO
-	db MIRACLEBERRY
-	db ROCK_SLIDE, DIG, FAINT_ATTACK, AVALANCHE
+	db HARDHAT
+	db ROCK_WRECKER, DIG, FAINT_ATTACK, AVALANCHE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -1699,7 +1699,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 13, 13, 14 ; DVs
-	db 24, 24, 32, 16 ; PP
+	db 8, 24, 32, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
