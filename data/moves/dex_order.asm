@@ -139,6 +139,7 @@ MovesDexOrder::
 ; Rock, physical
 	db ROCK_THROW
 	db ROCK_SLIDE
+	db ROCK_WRECKER
 
 	db ROLLOUT
 
@@ -423,9 +424,7 @@ MovesDexOrder::
 ; Substitute
 	db SUBSTITUTE
 
-; User alteration
-	db CONVERSION2
-
+; Transform
 	db TRANSFORM
 
 ; Call another move
