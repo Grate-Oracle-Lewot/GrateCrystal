@@ -70,6 +70,7 @@ EkansEggMoves:
 	db -1 ; end
 
 SandshrewEggMoves:
+	db ROCK_WRECKER
 	db FLAIL
 	db COUNTER
 	db SAFEGUARD
@@ -80,9 +81,9 @@ SandshrewEggMoves:
 	db -1 ; end
 
 NidoranEggMoves:
+	db ROCK_WRECKER
 	db SUPERSONIC
 	db DISABLE
-	db TAKE_DOWN
 	db PLAY_ROUGH
 	db FOCUS_ENERGY
 	db AMNESIA
@@ -136,6 +137,7 @@ VenonatEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
+	db ROCK_WRECKER
 	db ROCK_SLIDE
 	db POWER_GEM
 	db SPIKES
@@ -143,7 +145,6 @@ DiglettEggMoves:
 	db BEAT_UP
 	db FAINT_ATTACK
 	db IRON_HEAD
-	db BONE_RUSH
 	db -1 ; end
 
 MeowthEggMoves:
@@ -168,6 +169,7 @@ PsyduckEggMoves:
 	db -1 ; end
 
 MankeyEggMoves:
+	db ROCK_WRECKER
 	db JUMP_KICK
 	db ROLLING_KICK
 	db COUNTER
@@ -207,6 +209,7 @@ MachopEggMoves:
 	db ROLLING_KICK
 	db ENCORE
 	db PLAY_ROUGH
+	db ROCK_WRECKER
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -229,7 +232,7 @@ GeodudeEggMoves:
 	db SPIKES
 	db IRON_HEAD
 	db MEGA_PUNCH
-	db ANCIENTPOWER
+	db SKULL_BASH
 	db EARTH_POWER
 	db -1 ; end
 
@@ -314,6 +317,7 @@ OnixEggMoves:
 	db SLAM
 	db POWER_GEM
 	db EARTH_POWER
+	db ROCK_WRECKER
 	db -1 ; end
 
 DrowzeeEggMoves:
@@ -369,13 +373,13 @@ KoffingEggMoves:
 RhyhornEggMoves:
 	db METAL_SOUND
 	db ROCK_POLISH
-	db DRAGON_PULSE
 	db CRUNCH
 	db REVERSAL
 	db THRASH
 	db COUNTER
 	db MAGNITUDE
 	db DRILL_PECK
+	db MEGAHORN
 	db -1 ; end
 
 ChanseyEggMoves:
@@ -668,8 +672,8 @@ MarillEggMoves:
 	db -1 ; end
 
 SudowoodoEggMoves:
+	db IRON_HEAD
 	db ANCIENTPOWER
-	db EARTH_POWER
 	db KARATE_CHOP
 	db SWORDS_DANCE
 	db METRONOME
@@ -755,7 +759,6 @@ PinecoEggMoves:
 
 DunsparceEggMoves:
 	db METAL_SOUND
-	db DRAGON_PULSE
 	db MEGAHORN
 	db BIDE
 	db BITE
@@ -893,10 +896,10 @@ HoundourEggMoves:
 	db -1 ; end
 
 PhanpyEggMoves:
+	db ROCK_WRECKER
 	db SCREECH
 	db FOCUS_ENERGY
 	db EARTH_POWER
-	db ANCIENTPOWER
 	db IRON_HEAD
 	db HYDRO_PUMP
 	db FLAME_WHEEL
