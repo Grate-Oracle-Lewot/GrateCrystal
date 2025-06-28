@@ -2047,7 +2047,7 @@ PorygonEvosAttacks:
 	db EVOLVE_ITEM, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, CONVERSION2
+	db 4, BARRIER
 	db 9, MINIMIZE
 	db 12, PAY_DAY
 	db 20, RECOVER
@@ -2058,7 +2058,6 @@ PorygonEvosAttacks:
 	db 44, ZAP_CANNON
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
-	db 60, BARRIER
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:
@@ -3558,7 +3557,7 @@ DonphanEvosAttacks:
 Porygon2EvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, CONVERSION2
+	db 4, BARRIER
 	db 9, MINIMIZE
 	db 12, PAY_DAY
 	db 20, RECOVER
@@ -3569,7 +3568,6 @@ Porygon2EvosAttacks:
 	db 44, ZAP_CANNON
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
-	db 60, BARRIER
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
