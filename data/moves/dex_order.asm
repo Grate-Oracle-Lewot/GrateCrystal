@@ -424,16 +424,15 @@ MovesDexOrder::
 ; Substitute
 	db SUBSTITUTE
 
-; Transform
-	db TRANSFORM
-
 ; Call another move
-	db MIRROR_MOVE
-	db SLEEP_TALK
 	db METRONOME
+	db SLEEP_TALK
+	db MIRROR_MOVE
 
-; Sketch
+; Copy opponent
 	db SKETCH
+
+	db TRANSFORM
 
 ; Struggle, end list
 	db STRUGGLE ; -1
