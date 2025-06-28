@@ -175,7 +175,7 @@ MoveNames::
 	li "SNORE"
 	li "CURSE"
 	li "FLAIL"
-	li "CONVERSION"
+	li "ROCK WRECKER"
 	li "ZEROBLAST"
 	li "COTTON SPORE"
 	li "REVERSAL"
