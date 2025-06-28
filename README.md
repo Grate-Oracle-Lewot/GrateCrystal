@@ -149,9 +149,9 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 ## Moves
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
-- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, Icy Wind, Explosion (Selfdestruct is now as strong as Explosion), and Conversion (Conversion2 is now called Conversion)
+- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, Icy Wind, Conversion, Conversion2, and Explosion (Selfdestruct is now as strong as Explosion)
 
-- Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Avalanche, Rock Polish, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
+- Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Rock Wrecker (works more like Head Smash), Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Avalanche, Rock Polish, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). Some other changes to move powers, and almost every move has received an accuracy boost.
 
