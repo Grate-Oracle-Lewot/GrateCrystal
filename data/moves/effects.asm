@@ -1308,14 +1308,6 @@ Snore:
 	flinchtarget
 	endmove
 
-Conversion2:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	conversion2
-	endmove
-
 LockOn:
 	checkobedience
 	usedmovetext
