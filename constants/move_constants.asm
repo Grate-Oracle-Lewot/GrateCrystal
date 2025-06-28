@@ -181,7 +181,7 @@
 	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
-	const CONVERSION2  ; b0
+	const ROCK_WRECKER ; b0
 	const AEROBLAST    ; b1
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
