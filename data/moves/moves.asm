@@ -188,7 +188,7 @@ Moves:
 	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100, 20,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100, 20,   0
-	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,       STATUS,   100, 30,   0
+	move ROCK_WRECKER, EFFECT_RECOIL_HIT,        125, ROCK,         PHYSICAL, 100,  5,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100,  5,   0
 	move COTTON_SPORE, EFFECT_SP_ATK_DOWN_2,       0, GRASS,        STATUS,   100, 20,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,     PHYSICAL, 100, 15,   0
