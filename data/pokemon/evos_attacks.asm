@@ -1080,9 +1080,9 @@ GeodudeEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 26, ROCK_POLISH
 	db 31, POWER_GEM
-	db 36, EARTHQUAKE
-	db 41, ROCK_SLIDE
-	db 44, SKULL_BASH
+	db 36, ROCK_SLIDE
+	db 41, EARTHQUAKE
+	db 44, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -1096,9 +1096,9 @@ GravelerEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, ROCK_POLISH
 	db 34, POWER_GEM
-	db 41, EARTHQUAKE
-	db 48, ROCK_SLIDE
-	db 52, SKULL_BASH
+	db 41, ROCK_SLIDE
+	db 48, EARTHQUAKE
+	db 52, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
@@ -1111,9 +1111,9 @@ GolemEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, ROCK_POLISH
 	db 34, POWER_GEM
-	db 41, EARTHQUAKE
-	db 48, ROCK_SLIDE
-	db 52, SKULL_BASH
+	db 41, ROCK_SLIDE
+	db 48, EARTHQUAKE
+	db 52, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
@@ -1562,7 +1562,7 @@ CuboneEvosAttacks:
 	db 33, THRASH
 	db 37, SKULL_BASH
 	db 41, BONE_RUSH
-	db 47, NIGHT_TERROR
+	db 47, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
@@ -1580,7 +1580,7 @@ MarowakEvosAttacks:
 	db 39, THRASH
 	db 46, SKULL_BASH
 	db 53, BONE_RUSH
-	db 60, NIGHT_TERROR
+	db 60, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 HitmonleeEvosAttacks:
@@ -1675,8 +1675,8 @@ RhyhornEvosAttacks:
 	db 37, ROCK_SLIDE
 	db 41, TAKE_DOWN
 	db 49, IRON_TAIL
-	db 55, HORN_DRILL
-	db 60, MEGAHORN
+	db 55, ROCK_WRECKER
+	db 60, HORN_DRILL
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
@@ -1690,8 +1690,8 @@ RhydonEvosAttacks:
 	db 37, ROCK_SLIDE
 	db 43, TAKE_DOWN
 	db 54, IRON_TAIL
-	db 65, HORN_DRILL
-	db 72, MEGAHORN
+	db 65, ROCK_WRECKER
+	db 72, HORN_DRILL
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -2070,9 +2070,9 @@ OmanyteEvosAttacks:
 	db 19, WATER_GUN
 	db 26, ROLLOUT
 	db 31, SMOKESCREEN
-	db 37, PROTECT
-	db 49, ANCIENTPOWER
-	db 55, HYDRO_PUMP
+	db 37, ANCIENTPOWER
+	db 49, HYDRO_PUMP
+	db 55, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 OmastarEvosAttacks:
@@ -2085,42 +2085,42 @@ OmastarEvosAttacks:
 	db 19, WATER_GUN
 	db 26, ROLLOUT
 	db 31, SMOKESCREEN
-	db 37, PROTECT
+	db 37, ANCIENTPOWER
 	db 39, SPIKE_CANNON
 	db 45, MEGAHORN
-	db 54, ANCIENTPOWER
-	db 65, HYDRO_PUMP
+	db 54, HYDRO_PUMP
+	db 65, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 KabutoEvosAttacks:
 	db EVOLVE_LEVEL, 40, KABUTOPS
 	db 0 ; no more evolutions
-	db 1, LEECH_LIFE
+	db 1, SCRATCH
 	db 2, HARDEN
-	db 5, MUD_SLAP
+	db 5, LEECH_LIFE
 	db 10, METAL_CLAW
 	db 19, SWORDS_DANCE
 	db 27, FURY_CUTTER
-	db 35, ENDURE
+	db 35, ANCIENTPOWER
 	db 39, SLASH
 	db 46, CRABHAMMER
-	db 55, ANCIENTPOWER
+	db 55, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 KabutopsEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEECH_LIFE
+	db 1, SCRATCH
 	db 1, CROSS_CHOP
 	db 2, HARDEN
-	db 5, MUD_SLAP
+	db 5, LEECH_LIFE
 	db 10, METAL_CLAW
 	db 19, SWORDS_DANCE
 	db 27, FURY_CUTTER
-	db 35, ENDURE
+	db 35, ANCIENTPOWER
 	db 39, SLASH
 	db 39, CROSS_CHOP
 	db 51, CRABHAMMER
-	db 65, ANCIENTPOWER
+	db 65, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 AerodactylEvosAttacks:
@@ -2137,6 +2137,7 @@ AerodactylEvosAttacks:
 	db 43, ROCK_SLIDE
 	db 50, HYPER_FANG
 	db 54, SKY_ATTACK
+	db 63, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -2842,7 +2843,7 @@ SudowoodoEvosAttacks:
 	db 46, ROCK_SLIDE
 	db 55, MEGA_PUNCH
 	db 64, VITAL_THROW
-	db 73, IRON_HEAD
+	db 73, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -3811,7 +3812,7 @@ LarvitarEvosAttacks:
 	db 31, SCARY_FACE
 	db 38, DRAGON_PULSE
 	db 43, CRUNCH
-	db 50, EARTHQUAKE
+	db 50, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 PupitarEvosAttacks:
@@ -3827,7 +3828,7 @@ PupitarEvosAttacks:
 	db 34, SCARY_FACE
 	db 40, DRAGON_PULSE
 	db 47, CRUNCH
-	db 56, EARTHQUAKE
+	db 56, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 TyranitarEvosAttacks:
@@ -3841,7 +3842,7 @@ TyranitarEvosAttacks:
 	db 34, SCARY_FACE
 	db 40, DRAGON_PULSE
 	db 47, CRUNCH
-	db 61, EARTHQUAKE
+	db 61, ROCK_WRECKER
 	db 75, HYPER_BEAM
 	db 0 ; no more level-up moves
 
