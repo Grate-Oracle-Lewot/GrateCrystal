@@ -5956,6 +5956,12 @@ MoveInfoBox:
 	jp PrintNum
 
 CheckPlayerHasUsableMoves:
+if DEF(_METRONOME_ONLY)
+	ld a, STRUGGLE
+	ld [wCurPlayerMove], a
+	xor a
+	ret
+else
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
 	ld a, [wPlayerDisableCount]
@@ -6000,6 +6006,7 @@ CheckPlayerHasUsableMoves:
 	call DelayFrames
 	xor a
 	ret
+endc
 
 ParseEnemyAction:
 	ld a, [wEnemyIsSwitching]
@@ -6057,6 +6064,9 @@ ParseEnemyAction:
 	jr .finish
 
 .continue
+if DEF(_METRONOME_ONLY)
+	jr .struggle
+else
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonPP
 	ld b, NUM_MOVES
@@ -6108,6 +6118,7 @@ ParseEnemyAction:
 	ld a, c
 	ld [wCurEnemyMoveNum], a
 	ld a, b
+endc
 
 .finish
 	ld [wCurEnemyMove], a
