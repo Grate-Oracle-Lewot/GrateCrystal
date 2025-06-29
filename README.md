@@ -201,6 +201,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
+- Metronome can now turn into moves that the user already knows. As a result, those moves may subsequently be affected by things like Spite and Disable, targeting that move instead of Metronome.
+
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
 - Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
@@ -478,6 +480,8 @@ make no - Same as previous, but also changes the starters to Missingno. and Unow
 make turbid - Normal Johto starters, but the new/beta legendary is replaced with a different beta Pokémon—the one that looks like the "Shellder" on Slowbro's tail. This is treated as a split evolution for Shellder rather than a legendary, so some wild encounters and enemy parties are adjusted accordingly.
 
 make startur - Same as previous, but the starters are Abra and Shellder. If you lose to the rival in the first battle, his Shellder will evolve into the beta Pokémon, which is Water/Poison; if you win, it will evolve into Cloyster. The Kadabra/Alakazam that's normally on the rival's team is replaced with a Machoke/Machamp, regardless of which starter you pick.
+
+make metro - Normal Johto starters, but all player and enemy Pokémon can only use Metronome, and never run out of PP for it. This is accomplished via making Struggle work like Metronome and causing it to trigger even if you still have PP left. As a result, Pokémon still learn moves as they level up, despite being unable to use them; this is done to allow them to learn HM moves for field use. Since this build is already silly and chaotic, I've allowd Metronome to call Thief in it, which it won't do in any other build; however, it can no longer call Spite, Disable, or Encore, since those would no longer do anything.
 
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters. This and the next build are holdovers because I don't know how to properly remove their "hooks" from the code.
 
