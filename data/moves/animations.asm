@@ -2835,7 +2835,7 @@ BattleAnim_RockWrecker:
 	anim_wait 3
 	anim_sound 0, 1, SFX_STRENGTH
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 56, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_sound 0, 1, SFX_STRENGTH
