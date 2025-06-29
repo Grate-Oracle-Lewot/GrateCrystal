@@ -1279,6 +1279,12 @@ MoonblastDescription:
 	db   "A moonbeam. It may"
 	next "lower SPCL.ATK.@"
 
+if DEF(_METRONOME_ONLY)
+StruggleDescription:
+	db   "Randomly uses any"
+	next "#MON move.@"
+else
 StruggleDescription:
 	db   "Used only if all"
 	next "PP are exhausted.@"
+endc
