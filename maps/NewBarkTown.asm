@@ -120,6 +120,10 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	opentext
+	givepoke GEODUDE, 45
+	closetext
+	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
