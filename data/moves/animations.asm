@@ -2825,7 +2825,7 @@ BattleAnim_RockWrecker:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj ANIM_OBJ_STRENGTH, 64, 104, $1
-	anim_wait 64
+	anim_wait 75
 	anim_incobj 1
 	anim_wait 20
 	anim_sound 0, 1, SFX_MEGA_PUNCH
@@ -2842,22 +2842,22 @@ BattleAnim_RockWrecker:
 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_TACKLE
 	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $28
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $5c
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $10
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $e8
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $9c
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $d0
 	anim_wait 6
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $1c
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $50
-	anim_sound 0, 1, SFX_SPARK
+	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $dc
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $90
 	anim_wait 32
