@@ -201,7 +201,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
-- Metronome can now turn into moves that the user already knows. As a result, those moves may subsequently be affected by things like Spite and Disable, targeting that move instead of Metronome.
+- Metronome can now turn into moves that the user already knows.
 
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
@@ -419,11 +419,11 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Alternate ROM builds
 
-I've created a bunch of alternate builds of this hack that let you choose from different sets of starters, along with changing the corresponding starters on the rival's team. In all respects other than starters, all of these builds are identical, including the base stats, learnsets, and wild locations of any of the Pokémon involved. That means if you pick Magikarp as your starter, don't expect it to start with usable moves.
+I've created a bunch of alternate builds of this hack, most of which are for letting you choose from different sets of starters, along with changing the corresponding starters on the rival's team. In all respects other than starters (or whatever else the point of interest is), all of these builds are identical, including the base stats, learnsets, and wild locations of any of the Pokémon involved. That means if you pick Magikarp as your starter, don't expect it to start with usable moves.
 
 Some of these starter groups don't form proper type triangles, and as a result, sometimes the Pokémon that the rival picks in response to yours may not be what you expect. He might even get the same Pokémon as you, or one that wasn't even on the table. Whatever he gets will have customized movesets in later fights, which is the main thing that makes these builds different than just editing the disassembly yourself.
 
-When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. With the unedited version of Pokémon Crystal, "make" alone will only build a single ROM, but for GrateCrystal, it will make all of the different starter builds at once, all in the same folder. Each of these ROMs can have separate save files, so there are no technical issues with storing all of them together, but if you only want to build one or a few, use the extra words after "make" listed below to build one version at a time.
+When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. With the unedited version of Pokémon Crystal, "make" alone will only build a single ROM, but for GrateCrystal, it will make all of the different builds at once, all in the same folder. Each of these ROMs can have separate save files, so there are no technical issues with storing all of them together, but if you only want to build one or a few, use the extra words after "make" listed below to build one version at a time.
 
 make grate - The normal ROM, with the normal Johto starters: Chikorita, Cyndaquil, and Totodile.
 
