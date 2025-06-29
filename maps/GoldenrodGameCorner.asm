@@ -1,6 +1,6 @@
-GOLDENRODGAMECORNER_TM25_COINS EQU 5000
-GOLDENRODGAMECORNER_TM14_COINS EQU 5000
-GOLDENRODGAMECORNER_TM38_COINS EQU 5000
+GOLDENRODGAMECORNER_BLIZZARD_COINS  EQU 5000
+GOLDENRODGAMECORNER_THUNDER_COINS   EQU 5000
+GOLDENRODGAMECORNER_FIREBLAST_COINS EQU 5000
 GOLDENRODGAMECORNER_ABRA_COINS      EQU 500
 GOLDENRODGAMECORNER_PORYGON_COINS   EQU 1000
 GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
@@ -64,53 +64,50 @@ GoldenrodGameCornerTMVendorScript:
 	checkitem COIN_CASE
 	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
 	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
+	; fallthrough
+
 GoldenrodGameCornerTMVendor_LoopScript:
 	special DisplayCoinCaseBalance
 	loadmenu GoldenrodGameCornerTMVendorMenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Thunder
-	ifequal 2, .Blizzard
+	ifequal 1, .Blizzard
+	ifequal 2, .Thunder
 	ifequal 3, .FireBlast
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
-.Thunder:
-	checkcoins GOLDENRODGAMECORNER_TM25_COINS
-	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
-	getitemname STRING_BUFFER_3, TM_THUNDER
-	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
-	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	giveitem TM_THUNDER
-	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	takecoins GOLDENRODGAMECORNER_TM25_COINS
-	sjump GoldenrodGameCornerTMVendor_FinishScript
-
 .Blizzard:
-	checkcoins GOLDENRODGAMECORNER_TM14_COINS
+	checkcoins GOLDENRODGAMECORNER_BLIZZARD_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	getitemname STRING_BUFFER_3, TM_BLIZZARD
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	giveitem TM_BLIZZARD
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	takecoins GOLDENRODGAMECORNER_TM14_COINS
+	takecoins GOLDENRODGAMECORNER_BLIZZARD_COINS
+	sjump GoldenrodGameCornerTMVendor_FinishScript
+
+.Thunder:
+	checkcoins GOLDENRODGAMECORNER_THUNDER_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	getitemname STRING_BUFFER_3, TM_THUNDER
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	giveitem TM_THUNDER
+	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	takecoins GOLDENRODGAMECORNER_THUNDER_COINS
 	sjump GoldenrodGameCornerTMVendor_FinishScript
 
 .FireBlast:
-	checkcoins GOLDENRODGAMECORNER_TM38_COINS
+	checkcoins GOLDENRODGAMECORNER_FIREBLAST_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	getitemname STRING_BUFFER_3, TM_FIRE_BLAST
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	giveitem TM_FIRE_BLAST
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	takecoins GOLDENRODGAMECORNER_TM38_COINS
-	sjump GoldenrodGameCornerTMVendor_FinishScript
-
-GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript:
-	writetext GoldenrodGameCornerPrizeVendorConfirmPrizeText
-	yesorno
-	end
+	takecoins GOLDENRODGAMECORNER_FIREBLAST_COINS
+	; fallthrough
 
 GoldenrodGameCornerTMVendor_FinishScript:
 	waitsfx
@@ -118,6 +115,11 @@ GoldenrodGameCornerTMVendor_FinishScript:
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
 	sjump GoldenrodGameCornerTMVendor_LoopScript
+
+GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript:
+	writetext GoldenrodGameCornerPrizeVendorConfirmPrizeText
+	yesorno
+	end
 
 GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript:
 	writetext GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
@@ -152,9 +154,9 @@ GoldenrodGameCornerTMVendorMenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "TM25    {d:GOLDENRODGAMECORNER_TM25_COINS}@"
-	db "TM14    {d:GOLDENRODGAMECORNER_TM14_COINS}@"
-	db "TM38    {d:GOLDENRODGAMECORNER_TM38_COINS}@"
+	db "TM14    {d:GOLDENRODGAMECORNER_BLIZZARD_COINS}@"
+	db "TM25    {d:GOLDENRODGAMECORNER_THUNDER_COINS}@"
+	db "TM38    {d:GOLDENRODGAMECORNER_FIREBLAST_COINS}@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPrizeMonVendorScript:
