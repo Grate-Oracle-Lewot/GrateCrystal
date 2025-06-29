@@ -2829,18 +2829,18 @@ BattleAnim_RockWrecker:
 	anim_incobj 1
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_wait 20
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 48, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 48, $0
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_STRENGTH
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 52, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 56, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_sound 0, 1, SFX_STRENGTH
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 56, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 64, $0
 	anim_sound 0, 1, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $28
 	anim_obj ANIM_OBJ_ROCK_SMASH, 128, 64, $5c
