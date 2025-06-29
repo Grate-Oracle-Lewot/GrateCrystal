@@ -3129,17 +3129,6 @@ BattleAnim_Toxic:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_Metronome:
-	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_SPEED
-	anim_sound 0, 0, SFX_METRONOME
-	anim_obj ANIM_OBJ_METRONOME_HAND, 72, 88, $0
-.loop
-	anim_obj ANIM_OBJ_METRONOME_SPARKLE, 72, 80, $0
-	anim_wait 8
-	anim_loop 5, .loop
-	anim_wait 48
-	anim_ret
-
 BattleAnim_Counter:
 	anim_1gfx ANIM_GFX_HIT
 .loop
@@ -4734,12 +4723,37 @@ BattleAnim_Moonblast:
 	anim_wait 64
 	anim_ret
 
+if DEF(_METRONOME_ONLY)
+BattleAnim_Struggle:
+BattleAnim_Metronome:
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_SPEED
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_METRONOME_HAND, 72, 88, $0
+.loop
+	anim_obj ANIM_OBJ_METRONOME_SPARKLE, 72, 80, $0
+	anim_wait 8
+	anim_loop 5, .loop
+	anim_wait 48
+	anim_ret
+else
 BattleAnim_Struggle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_POUND
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
 	anim_ret
+
+BattleAnim_Metronome:
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_SPEED
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_METRONOME_HAND, 72, 88, $0
+.loop
+	anim_obj ANIM_OBJ_METRONOME_SPARKLE, 72, 80, $0
+	anim_wait 8
+	anim_loop 5, .loop
+	anim_wait 48
+	anim_ret
+endc
 
 BattleAnim_Hail:
 	anim_1gfx ANIM_GFX_ICE
