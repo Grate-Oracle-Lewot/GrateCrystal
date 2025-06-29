@@ -254,5 +254,9 @@ MoveNames::
 	li "FAIRY WIND"
 	li "POWER GEM"
 	li "MOONBLAST"
+if DEF(_METRONOME_ONLY)
 	li "METRONOME"
+else
+	li "STRUGGLE"
+endc
 	assert_list_length NUM_ATTACKS
