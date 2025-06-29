@@ -1,9 +1,9 @@
-CELADONGAMECORNERPRIZEROOM_TM32_COINS EQU 4200
-CELADONGAMECORNERPRIZEROOM_TM29_COINS EQU 4200
-CELADONGAMECORNERPRIZEROOM_TM57_COINS EQU 4200
-CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS  EQU 4000
-CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS   EQU 5000
-CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS EQU 9999
+CELADONGAMECORNERPRIZEROOM_DOUBLETEAM_COINS EQU 4200
+CELADONGAMECORNERPRIZEROOM_PSYCHIC_COINS    EQU 4200
+CELADONGAMECORNERPRIZEROOM_POISONJAB_COINS  EQU 4200
+CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS   EQU 4000
+CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS    EQU 5000
+CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS  EQU 9999
 
 	object_const_def
 	const CELADONGAMECORNERPRIZEROOM_EKANS
@@ -39,48 +39,43 @@ CeladonPrizeRoom_tmcounterloop:
 	loadmenu CeladonPrizeRoom_TMMenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .DoubleTeam
+	ifequal 1, .PoisonJab
 	ifequal 2, .Psychic
-	ifequal 3, .ShadowClaw
+	ifequal 3, .DoubleTeam
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
-.DoubleTeam:
-	checkcoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
+.PoisonJab:
+	checkcoins CELADONGAMECORNERPRIZEROOM_POISONJAB_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
-	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
+	getitemname STRING_BUFFER_3, TM_POISON_JAB
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_DOUBLE_TEAM
+	giveitem TM_POISON_JAB
 	iffalse CeladonPrizeRoom_notenoughroom
-	takecoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
+	takecoins CELADONGAMECORNERPRIZEROOM_POISONJAB_COINS
 	sjump CeladonPrizeRoom_purchased
 
 .Psychic:
-	checkcoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
+	checkcoins CELADONGAMECORNERPRIZEROOM_PSYCHIC_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_PSYCHIC_M
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
 	giveitem TM_PSYCHIC_M
 	iffalse CeladonPrizeRoom_notenoughroom
-	takecoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
+	takecoins CELADONGAMECORNERPRIZEROOM_PSYCHIC_COINS
 	sjump CeladonPrizeRoom_purchased
 
-.ShadowClaw:
-	checkcoins CELADONGAMECORNERPRIZEROOM_TM57_COINS
+.DoubleTeam:
+	checkcoins CELADONGAMECORNERPRIZEROOM_DOUBLETEAM_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
-	getitemname STRING_BUFFER_3, TM_SHADOW_CLAW
+	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_SHADOW_CLAW
+	giveitem TM_DOUBLE_TEAM
 	iffalse CeladonPrizeRoom_notenoughroom
-	takecoins CELADONGAMECORNERPRIZEROOM_TM57_COINS
-	sjump CeladonPrizeRoom_purchased
-
-CeladonPrizeRoom_askbuy:
-	writetext CeladonPrizeRoom_ConfirmPurchaseText
-	yesorno
-	end
+	takecoins CELADONGAMECORNERPRIZEROOM_DOUBLETEAM_COINS
+	; fallthrough
 
 CeladonPrizeRoom_purchased:
 	waitsfx
@@ -88,6 +83,11 @@ CeladonPrizeRoom_purchased:
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
 	sjump CeladonPrizeRoom_tmcounterloop
+
+CeladonPrizeRoom_askbuy:
+	writetext CeladonPrizeRoom_ConfirmPurchaseText
+	yesorno
+	end
 
 CeladonPrizeRoom_notenoughcoins:
 	writetext CeladonPrizeRoom_NotEnoughCoinsText
@@ -122,9 +122,9 @@ CeladonPrizeRoom_TMMenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "TM32    {d:CELADONGAMECORNERPRIZEROOM_TM32_COINS}@"
-	db "TM29    {d:CELADONGAMECORNERPRIZEROOM_TM29_COINS}@"
-	db "TM57    {d:CELADONGAMECORNERPRIZEROOM_TM57_COINS}@"
+	db "TM21    {d:CELADONGAMECORNERPRIZEROOM_POISONJAB_COINS}@"
+	db "TM29    {d:CELADONGAMECORNERPRIZEROOM_PSYCHIC_COINS}@"
+	db "TM32    {d:CELADONGAMECORNERPRIZEROOM_DOUBLETEAM_COINS}@"
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomPokemonVendor:
@@ -253,7 +253,7 @@ CeladonPrizeRoom_AskWhichPrizeText:
 
 CeladonPrizeRoom_ConfirmPurchaseText:
 	text "OK, so you wanted"
-	line "a @"
+	line "@"
 	text_ram wStringBuffer3
 	text "?"
 	done
