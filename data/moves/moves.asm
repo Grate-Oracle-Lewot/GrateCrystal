@@ -267,5 +267,9 @@ Moves:
 	move FAIRY_WIND,   EFFECT_GUST,               40, FAIRY,        SPECIAL,  100, 30,   0
 	move POWER_GEM,    EFFECT_PAY_DAY,            75, ROCK,         SPECIAL,  100, 15,   0
 	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,   120, FAIRY,        SPECIAL,   84,  5,  30
+if DEF(_METRONOME_ONLY)
+	move STRUGGLE,     EFFECT_METRONOME,           0, NORMAL,        STATUS,  100,  1,   0
+else
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       PHYSICAL, 100,  1,   0
+endc
 	assert_table_length NUM_ATTACKS
