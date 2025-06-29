@@ -123,6 +123,9 @@ NewBarkTownSign:
 	opentext
 	givepoke GEODUDE, 45
 	closetext
+	loadwildmon GEODUDE, 45
+	startbattle
+	reloadmapafterbattle
 	end
 	jumptext NewBarkTownSignText
 
