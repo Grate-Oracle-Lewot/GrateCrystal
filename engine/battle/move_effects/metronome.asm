@@ -26,11 +26,6 @@ BattleCommand_Metronome:
 	pop bc
 	jr c, .GetMove
 
-; No moves the user already has.
-	ld a, b
-	call CheckUserMove
-	jr z, .GetMove
-
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
 	ld [hl], b
