@@ -27,4 +27,7 @@ else
 	db SLEEP_TALK
 	db MIRROR_COAT
 	db STRUGGLE ; -1
+; buffers for equal data size with Metronome mode
+	db NO_MOVE
+	db NO_MOVE
 endc
