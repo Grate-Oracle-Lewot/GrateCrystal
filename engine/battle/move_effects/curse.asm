@@ -41,11 +41,13 @@ BattleCommand_Curse:
 	call LowerStat
 	call BattleCommand_SwitchTurn
 	call BattleCommand_StatDownMessage
-	call ResetMiss
+	xor a
+	ld [wAttackMissed], a
 	call BattleCommand_SwitchTurn
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
-	call ResetMiss
+	xor a
+	ld [wAttackMissed], a
 	call BattleCommand_DefenseUp
 	jp BattleCommand_StatUpMessage
 
