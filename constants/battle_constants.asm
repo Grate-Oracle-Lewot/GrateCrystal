@@ -227,6 +227,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const PERISH_TRAP
 	const CRITICAL_RAGE
 	const FLOAT_MISS
+	const PROTECT_MISS
 
 ; values in wBattleWeather
 	const_def
