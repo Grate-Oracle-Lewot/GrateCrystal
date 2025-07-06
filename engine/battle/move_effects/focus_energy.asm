@@ -12,7 +12,8 @@ BattleCommand_FocusEnergy:
 	push bc
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
-	call ResetMiss
+	xor a
+	ld [wAttackMissed], a
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage
 	pop bc
