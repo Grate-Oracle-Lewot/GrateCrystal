@@ -201,6 +201,7 @@ AbraEggMoves:
 	db FOCUS_ENERGY
 	db FORESIGHT
 	db HYPNOSIS
+	db MIND_READER
 	db -1 ; end
 
 MachopEggMoves:
