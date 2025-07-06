@@ -4618,7 +4618,8 @@ INCLUDE "data/battle/stat_names.asm"
 INCLUDE "data/battle/stat_multipliers.asm"
 
 BattleCommand_AllStatsUp:
-	call ResetMiss
+	xor a
+	ld [wAttackMissed], a
 	call BattleCommand_AttackUp
 	call StatUpMessageResetMiss
 	call BattleCommand_DefenseUp
@@ -4632,9 +4633,6 @@ BattleCommand_AllStatsUp:
 
 StatUpMessageResetMiss:
 	call BattleCommand_StatUpMessage
-	; fallthrough
-
-ResetMiss:
 	xor a
 	ld [wAttackMissed], a
 	ret
