@@ -45,9 +45,7 @@ BattleCommand_Curse:
 	ld [wAttackMissed], a
 	call BattleCommand_SwitchTurn
 	call BattleCommand_AttackUp
-	call BattleCommand_StatUpMessage
-	xor a
-	ld [wAttackMissed], a
+	call StatUpMessageResetMiss
 	call BattleCommand_DefenseUp
 	jp BattleCommand_StatUpMessage
 
