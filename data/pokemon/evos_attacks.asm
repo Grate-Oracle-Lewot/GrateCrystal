@@ -933,7 +933,7 @@ KadabraEvosAttacks:
 	db 31, FUTURE_SIGHT
 	db 38, PSYCHIC_M
 	db 45, REFLECT
-	db 51, MIND_READER
+	db 51, SIGNAL_BEAM
 	db 58, POWER_GEM
 	db 0 ; no more level-up moves
 
@@ -948,7 +948,7 @@ AlakazamEvosAttacks:
 	db 31, FUTURE_SIGHT
 	db 38, PSYCHIC_M
 	db 45, REFLECT
-	db 51, MIND_READER
+	db 51, SIGNAL_BEAM
 	db 58, POWER_GEM
 	db 0 ; no more level-up moves
 
