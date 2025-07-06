@@ -11,9 +11,7 @@ BattleCommand_FocusEnergy:
 .already_pumped
 	push bc
 	call BattleCommand_AttackUp
-	call BattleCommand_StatUpMessage
-	xor a
-	ld [wAttackMissed], a
+	call StatUpMessageResetMiss
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage
 	pop bc
