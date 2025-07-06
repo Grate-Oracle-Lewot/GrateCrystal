@@ -83,8 +83,7 @@ BattleCommand_Substitute:
 	call nz, BattleCommand_RaiseSub
 	push bc
 	call BattleCommand_DefenseUp
-	call BattleCommand_StatUpMessage
-	call ResetMiss
+	call StatUpMessageResetMiss
 	call BattleCommand_SpecialDefenseUp
 	call BattleCommand_StatUpMessage
 	pop bc
