@@ -1356,9 +1356,9 @@ CloysterEvosAttacks:
 GastlyEvosAttacks:
 	db EVOLVE_LEVEL, 25, HAUNTER
 	db 0 ; no more evolutions
-	db 1, HYPNOSIS
+	db 1, SAND_ATTACK
 	db 1, LICK
-	db 4, SPITE
+	db 4, PROTECT
 	db 9, SMOG
 	db 13, MEAN_LOOK
 	db 16, CURSE
