@@ -1415,15 +1415,17 @@ _MoveReminderIntro::
 	para "I can help your"
 	line "#MON remember"
 
-	para "moves they've for-"
-	line "gotten… for ¥500."
+	para "moves that they've"
+	line "forgotten."
+
+	para "Each move will"
+	line "cost ¥1000."
 
 	para "Are you"
 	line "interested?"
 	done
 
 _MoveReminderWhichMon::
-_EggMoveTutorWhichMon::
 	text "Which #MON are"
 	line "we working with?"
 	prompt
@@ -1490,7 +1492,6 @@ _EggMoveTutorNoPay::
 	done
 
 _MoveReminderPaymentReceived::
-_EggMoveTutorPaymentReceived::
 	text "Enjoy that move!"
 	prompt
 
