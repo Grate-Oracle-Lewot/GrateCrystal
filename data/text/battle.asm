@@ -833,6 +833,12 @@ TooWeakSubText:
 	line "a SUBSTITUTE!"
 	autodone
 
+SubstituteBlockedStatusText:
+	text "<TARGET>'s"
+	line "SUBSTITUTE blocked"
+	scroll "the attack!"
+	autodone
+
 SubTookDamageText:
 	text "The SUBSTITUTE"
 	line "took damage for"
@@ -921,10 +927,6 @@ ButNobodyJoinedInText:
 	text "Nobody joined in…"
 	autodone
 
-ItFailedText:
-	text "It failed!"
-	autodone
-
 DidntAffectText:
 	text "It didn't affect"
 	line "<TARGET>!"
@@ -1001,14 +1003,14 @@ PutACurseText:
 	line "<TARGET>!"
 	autodone
 
-ProtectedItselfText:
+UserProtectedItselfText:
 	text "<USER>"
 	line "PROTECTED itself!"
 	autodone
 
-ProtectingItselfText:
-	text "<TARGET>'s"
-	line "PROTECTING itself!"
+TargetProtectedItselfText:
+	text "<TARGET>"
+	line "PROTECTED itself!"
 	autodone
 
 SpikesText:
