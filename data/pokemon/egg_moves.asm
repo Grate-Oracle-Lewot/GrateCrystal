@@ -121,10 +121,10 @@ OddishEggMoves:
 	db -1 ; end
 
 ParasEggMoves:
-	db SCREECH
-	db COUNTER
-	db PSYBEAM
 	db LIGHT_SCREEN
+	db COTTON_SPORE
+	db COUNTER
+	db SCREECH
 	db PURSUIT
 	db -1 ; end
 
