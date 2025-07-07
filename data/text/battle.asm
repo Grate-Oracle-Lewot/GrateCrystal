@@ -1148,6 +1148,11 @@ PeltedByHailText:
 	line "is pelted by hail!"
 	autodone
 
+FloatMissText:
+	text "<TARGET>'s"
+	line "not on the ground!"
+	autodone
+
 StaticParalysisText:
 	text "<USER>"
 	line "was paralyzed by"
