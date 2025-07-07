@@ -697,7 +697,7 @@ VenonatEvosAttacks:
 	db 28, STUN_SPORE
 	db 33, SIGNAL_BEAM
 	db 36, SLEEP_POWDER
-	db 41, PSYCHIC_M
+	db 41, SLUDGE_BOMB
 	db 47, MEGA_KICK
 	db 0 ; no more level-up moves
 
@@ -714,7 +714,7 @@ VenomothEvosAttacks:
 	db 30, GUST
 	db 36, SILVER_WIND
 	db 42, SLEEP_POWDER
-	db 52, PSYCHIC_M
+	db 52, SLUDGE_BOMB
 	db 60, MEGA_KICK
 	db 0 ; no more level-up moves
 
