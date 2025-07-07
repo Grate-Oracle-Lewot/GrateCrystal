@@ -1,5 +1,5 @@
 MoveCost:
-	dt 500
+	dt 1000
 
 EggMoveCost:
 	dt 5000
