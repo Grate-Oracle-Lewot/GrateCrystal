@@ -2173,15 +2173,23 @@ BattleCommand_ApplyDamage:
 
 GetFailureResultText:
 	ld de, TargetProtectedItselfText
+
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .got_text
+
+	ld hl, FloatMissText
+	ld a, [wEffectCarryover]
+	bit FLOAT_MISS, a
+	jr nz, .got_text
+
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_FUTURE_SIGHT
-	ld hl, ButItFailedText
+	ld hl, DidntAffectText
 	jr z, .got_text
+
 	ld hl, AttackMissedText
 	ld a, [wCriticalHit]
 	cp -1
