@@ -658,7 +658,7 @@ VileplumeEvosAttacks:
 ParasEvosAttacks:
 	db EVOLVE_LEVEL, 24, PARASECT
 	db 0 ; no more evolutions
-	db 1, FURY_CUTTER
+	db 1, SCRATCH
 	db 1, GROWTH
 	db 3, LEECH_LIFE
 	db 7, STUN_SPORE
@@ -672,7 +672,7 @@ ParasEvosAttacks:
 
 ParasectEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_CUTTER
+	db 1, SCRATCH
 	db 1, GROWTH
 	db 3, LEECH_LIFE
 	db 7, STUN_SPORE
