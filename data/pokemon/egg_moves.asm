@@ -131,7 +131,7 @@ ParasEggMoves:
 VenonatEggMoves:
 	db BATON_PASS
 	db SCREECH
-	db CONFUSION
+	db SONICBOOM
 	db NIGHT_SHADE
 	db HI_JUMP_KICK
 	db -1 ; end
