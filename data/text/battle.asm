@@ -80,6 +80,12 @@ HasANightmareText:
 	scroll "NIGHTMARE!"
 	autodone
 
+AlreadyHasNightmareText:
+	text "<TARGET>"
+	line "is already having"
+	scroll "a NIGHTMARE!"
+	autodone
+
 HurtByCurseText:
 	text "<USER>'s"
 	line "hurt by the CURSE!"
