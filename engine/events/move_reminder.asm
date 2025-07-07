@@ -194,7 +194,7 @@ EggMoveTutor:
 	call CheckCostAgainstPlayerMoney
 	jr c, .not_enough_money
 
-	ld hl, Text_EggMoveTutorWhichMon
+	ld hl, Text_MoveReminderWhichMon
 	call PrintText
 
 .loop_party_menu
@@ -266,7 +266,7 @@ EggMoveTutor:
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
-	ld hl, Text_EggMoveTutorPaymentReceived
+	ld hl, Text_MoveReminderPaymentReceived
 	call PrintText
 
 	ld hl, EggMoveCost
@@ -695,10 +695,6 @@ Text_EggMoveTutorIntro:
 	text_far _EggMoveTutorIntro
 	text_end
 
-Text_EggMoveTutorWhichMon:
-	text_far _EggMoveTutorWhichMon
-	text_end
-
 Text_EggMoveTutorCancel:
 	text_far _EggMoveTutorCancel
 	text_end
@@ -713,8 +709,4 @@ Text_EggMoveTutorNoMoves:
 
 Text_EggMoveTutorNoPay:
 	text_far _EggMoveTutorNoPay
-	text_end
-
-Text_EggMoveTutorPaymentReceived:
-	text_far _EggMoveTutorPaymentReceived
 	text_end
