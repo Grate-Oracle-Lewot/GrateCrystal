@@ -11,9 +11,9 @@ BattleCommand_Nightmare:
 	bit SUBSTATUS_PROTECT, a
 	jr nz, .failed
 
-; If target has a Substitute, fail completely.
+; If target has a Substitute, fail completely with special text.
 	call CheckSubstituteOpp
-	jr nz, .failed
+	jr nz, .substitute_fail
 
 ; If target is already Sleeping, move on to inflicting Nightmare.
 ; This includes targets who are Safeguarded or holding a Sleep-blocking item but who have used Rest, napped due to disobedience, or fell out of a tree.
@@ -77,11 +77,11 @@ BattleCommand_Nightmare:
 	and SLP
 	jr z, .failed
 
-; Fail if the opponent is already having a Nightmare.
+; If the opponent is already having a Nightmare, fail with special text.
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_NIGHTMARE, [hl]
-	jr nz, .failed
+	jr nz, .already_nightmare
 
 ; Give the opponent a Nightmare. Animation will play regardless of whether it already played once for Sleep.
 	set SUBSTATUS_NIGHTMARE, [hl]
@@ -89,10 +89,14 @@ BattleCommand_Nightmare:
 	ld hl, StartedNightmareText
 	jp StdBattleTextbox
 
-; Fail Sleep and/or Nightmare with "but it failed" text. Above checks are designed to avoid showing multiple failure messages.
+; Fail Sleep and/or Nightmare with "but it failed" text, or "target protected itself" text if Protect is active. Above checks are designed to avoid showing multiple failure messages.
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	jp FailMove
+
+; Fail Sleep and Nightmare with "Substitute blocked the attack" text. Substitute blocks Nightmare even if the target behind the Substitute is Sleeping.
+.substitute_fail
+	ld hl, SubstituteBlockedStatusText
+	jr .special_fail
 
 ; Fail Sleep and Nightmare with "protected by item" text.
 ; In the event that an item holder used Rest, napped due to disobedience, or fell from a tree, we never make it here because Sleep was checked for before the item.
@@ -112,3 +116,8 @@ BattleCommand_Nightmare:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextbox
+
+; Fail Nightmare with "already having a Nightmare" text.
+.already_nightmare
+	ld hl, AlreadyHasNightmareText
+	jr .special_fail
