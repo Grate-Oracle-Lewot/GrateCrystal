@@ -1592,15 +1592,8 @@ BattleCommand_CheckHit:
 	bit SUBSTATUS_PROTECT, a
 	ret z
 
-	ld c, 30
-	call DelayFrames
-
-; 'protecting itself!'
-	ld hl, ProtectingItselfText
-	call StdBattleTextbox
-
-	ld c, 30
-	call DelayFrames
+	ld hl, wEffectCarryover
+	set PROTECT_MISS, [hl]
 
 	ld a, 1
 	and a
@@ -2179,8 +2172,8 @@ BattleCommand_ApplyDamage:
 	ret
 
 GetFailureResultText:
+	ld de, TargetProtectedItselfText
 	ld hl, DoesntAffectText
-	ld de, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .got_text
@@ -2188,10 +2181,9 @@ GetFailureResultText:
 	call GetBattleVar
 	cp EFFECT_FUTURE_SIGHT
 	ld hl, ButItFailedText
-	ld de, ItFailedText
+	ld de, TargetProtectedItselfText
 	jr z, .got_text
 	ld hl, AttackMissedText
-	ld de, AttackMissedText
 	ld a, [wCriticalHit]
 	cp -1
 	jr nz, .got_text
@@ -3739,7 +3731,7 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
-	ld hl, ProtectingItselfText
+	ld hl, SubstituteBlockedStatusText
 	call CheckSubstituteOpp
 	jr nz, .failed
 
@@ -5540,6 +5532,9 @@ BattleCommand_CheckFloatMon:
 	ret nc
 
 ; if it's a floatmon, the attack misses
+	ld hl, wEffectCarryover
+	set FLOAT_MISS, [hl]
+
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
@@ -6095,7 +6090,7 @@ PrintButNobodyJoinedIn:
 FailMove:
 	call AnimateFailedMove
 	ld hl, ButItFailedText
-	ld de, ItFailedText
+	ld de, TargetProtectedItselfText
 	jr FailText_CheckOpponentProtect
 
 PrintDidntAffect:
@@ -6105,7 +6100,7 @@ PrintDidntAffect:
 PrintDidntAffect2:
 	call AnimateFailedMove
 	ld hl, EvadedText
-	ld de, ProtectingItselfText
+	ld de, TargetProtectedItselfText
 	; fallthrough
 
 FailText_CheckOpponentProtect:
