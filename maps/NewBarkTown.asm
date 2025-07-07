@@ -120,13 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke GASTLY, 5
-	closetext
-	loadwildmon DIGLETT, 42
-	startbattle
-	reloadmapafterbattle
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
