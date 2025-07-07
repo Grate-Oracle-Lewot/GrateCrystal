@@ -120,10 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke GASTLY, 5
-	closetext
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
