@@ -1127,7 +1127,7 @@ BattleTowerMons:
 
 	db QUAGSIRE
 	db QUICK_CLAW
-	db AMNESIA, EARTHQUAKE, SURF, RAIN_DANCE
+	db AMNESIA, EARTHQUAKE, WATERFALL, RAIN_DANCE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -1137,7 +1137,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 30000
 	dn 5, 5, 4, 7 ; DVs
-	db 32, 16, 16, 8 ; PP
+	db 32, 16, 24, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
