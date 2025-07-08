@@ -53,12 +53,6 @@ _InterpretMobileMenu::
 	and a
 	ret
 
-Draw2DMenu:
-	xor a
-	ldh [hBGMapMode], a
-	call MenuBox
-	jp Place2DMenuItemStrings
-
 Get2DMenuSelection:
 	call Init2DMenuCursorPosition
 	call StaticMenuJoypad
@@ -108,6 +102,12 @@ Get2DMenuNumberOfRows:
 	swap a
 	and $f
 	ret
+
+Draw2DMenu:
+	xor a
+	ldh [hBGMapMode], a
+	call MenuBox
+	; fallthrough
 
 Place2DMenuItemStrings:
 	ld hl, wMenuData_2DMenuItemStringsAddr
@@ -328,13 +328,13 @@ Menu_WasButtonPressed:
 _2DMenuInterpretJoypad:
 	call GetMenuJoypad
 	bit A_BUTTON_F, a
-	jp nz, .a_b_start_select
+	jr nz, .a_start_select
 	bit B_BUTTON_F, a
-	jp nz, .a_b_start_select
+	jr nz, .b_button
 	bit SELECT_F, a
-	jp nz, .a_b_start_select
+	jr nz, .a_start_select
 	bit START_F, a
-	jp nz, .a_b_start_select
+	jr nz, .a_start_select
 	bit D_RIGHT_F, a
 	jr nz, .d_right
 	bit D_LEFT_F, a
@@ -346,10 +346,12 @@ _2DMenuInterpretJoypad:
 	and a
 	ret
 
-.set_bit_7
-	ld hl, w2DMenuFlags2
-	set 7, [hl]
-	scf
+.b_button
+	ld a, $2
+	ld [wMenuCursorX], a
+	ld [wMenuCursorY], a
+.a_start_select
+	xor a
 	ret
 
 .d_down
@@ -366,7 +368,7 @@ _2DMenuInterpretJoypad:
 	bit 5, a
 	jr nz, .wrap_around_down_or_right
 	bit 3, a
-	jp nz, .set_bit_7
+	jr nz, .set_bit_7
 	xor a
 	ret
 
@@ -389,7 +391,7 @@ _2DMenuInterpretJoypad:
 	bit 5, a
 	jr nz, .wrap_around_up
 	bit 2, a
-	jp nz, .set_bit_7
+	jr nz, .set_bit_7
 	xor a
 	ret
 
@@ -397,6 +399,12 @@ _2DMenuInterpretJoypad:
 	ld a, [w2DMenuNumRows]
 	ld [hl], a
 	xor a
+	ret
+
+.set_bit_7
+	ld hl, w2DMenuFlags2
+	set 7, [hl]
+	scf
 	ret
 
 .d_left
@@ -413,7 +421,7 @@ _2DMenuInterpretJoypad:
 	bit 4, a
 	jr nz, .wrap_around_left
 	bit 1, a
-	jp nz, .set_bit_7
+	jr nz, .set_bit_7
 	xor a
 	ret
 
@@ -437,8 +445,7 @@ _2DMenuInterpretJoypad:
 	bit 4, a
 	jr nz, .wrap_around_down_or_right
 	bit 0, a
-	jp nz, .set_bit_7
-.a_b_start_select
+	jr nz, .set_bit_7
 	xor a
 	ret
 
