@@ -12,16 +12,9 @@ TypeNames:
 	dw Ghost
 	dw Steel
 	assert_table_length UNUSED_TYPES
+rept UNUSED_TYPES_END - UNUSED_TYPES
 	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
-	dw CurseType
+endr
 	assert_table_length UNUSED_TYPES_END
 	dw Fire
 	dw Water
