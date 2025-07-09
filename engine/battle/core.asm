@@ -3907,7 +3907,7 @@ TryToRunAwayFromBattle:
 
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .cant_run_from_trainer
+	jp nz, .ask_forfeit
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -4043,18 +4043,35 @@ TryToRunAwayFromBattle:
 
 .cant_escape
 	ld hl, BattleText_CantEscape
-	jr .print_inescapable_text
-
-.cant_run_from_trainer
-	ld hl, BattleText_TheresNoEscapeFromTrainerBattle
-
-.print_inescapable_text
 	call StdBattleTextbox
 	ld a, TRUE
 	ld [wFailedToFlee], a
 	call LoadTilemapToTempTilemap
 	and a
 	ret
+
+.ask_forfeit
+	ld hl, BattleText_AskForfeit
+	call PrintText
+	call YesNoBox
+	ret c
+	xor a
+	ld [wBattleMonHP], a
+	ld [wBattleMonHP + 1], a
+	ld [wPartyMon1HP], a
+	ld [wPartyMon1HP + 1], a
+	ld [wPartyMon2HP], a
+	ld [wPartyMon2HP + 1], a
+	ld [wPartyMon3HP], a
+	ld [wPartyMon3HP + 1], a
+	ld [wPartyMon4HP], a
+	ld [wPartyMon4HP + 1], a
+	ld [wPartyMon5HP], a
+	ld [wPartyMon5HP + 1], a
+	ld [wPartyMon6HP], a
+	ld [wPartyMon6HP + 1], a
+	call HandlePlayerMonFaint
+	jp SetEnemyTurn
 
 .can_escape
 	ld a, [wLinkMode]
