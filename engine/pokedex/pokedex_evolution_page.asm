@@ -535,12 +535,12 @@ EVO_place_Mon_Types:
 ; set up the palette based on the current mon slot
 	ld a, [wBaseType1]
 	ld c, a
-	call EVO_adjust_type_index
+	predef GetMonTypeIndex
 .skip_to_unk_1
 	ld d, c
 	ld a, [wBaseType2]
 	ld c, a ; type 2
-	call EVO_adjust_type_index
+	predef GetMonTypeIndex
 	ld b, d
 
 	push de
@@ -563,7 +563,7 @@ EVO_place_Mon_Types:
 
 	ld a, [wBaseType1]
 	ld c, a
-	call EVO_adjust_type_index
+	predef GetMonTypeIndex
 	ld a, c
 
 	push af
@@ -609,7 +609,7 @@ EVO_place_Mon_Types:
 	jp z, .done
 
 	ld c, a ; type 2
-	call EVO_adjust_type_index
+	predef GetMonTypeIndex
 	ld a, c ; type 2
 
 	push af
@@ -733,21 +733,6 @@ EVO_type2_gethlcoord:
 	pop af
 	pop bc
 	ret
-
-EVO_adjust_type_index:
-	ld a, c
-	cp CURSE_TYPE
-	jr z, .handle_curse
-	cp UNUSED_TYPES
-	jr c, .done
-	sub UNUSED_TYPES_END
-.done
-	ld c, a
-	ret
-
-.handle_curse
-	ld a, 18
-	jr .done
 
 EVO_place_Mon_Icon:
 	push af
