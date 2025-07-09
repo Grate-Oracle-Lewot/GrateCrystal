@@ -281,10 +281,8 @@ BattleText_AnEGGCantBattle:
 	line "battle!"
 	autodone
 
-BattleText_TheresNoEscapeFromTrainerBattle:
-	text "No! There's no"
-	line "running from a"
-	scroll "trainer battle!"
+BattleText_AskForfeit:
+	text "Forfeit the match?"
 	autodone
 
 BattleText_GotAwaySafely:
@@ -1179,8 +1177,4 @@ LiquidOozeText:
 	text "<USER>"
 	line "absorbed toxins"
 	scroll "instead of health!"
-	autodone
-
-BattleText_AskForfeit:
-	text "Forfeit the match?"
 	autodone
