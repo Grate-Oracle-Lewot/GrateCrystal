@@ -1180,3 +1180,7 @@ LiquidOozeText:
 	line "absorbed toxins"
 	scroll "instead of health!"
 	autodone
+
+BattleText_AskForfeit:
+	text "Forfeit the match?"
+	autodone
