@@ -567,11 +567,7 @@ GetMonTypeIndex:
 	ld a, c
 	cp CURSE_TYPE
 	jr z, .handle_curse
-	; Skip Bird
-	cp BIRD
-	jr c, .done
 	cp UNUSED_TYPES
-	dec a
 	jr c, .done
 	sub UNUSED_TYPES
 .done
@@ -579,6 +575,5 @@ GetMonTypeIndex:
 	ret
 
 .handle_curse
-	ld a, 18
-	ld c, a
+	ld c, 18
 	ret
