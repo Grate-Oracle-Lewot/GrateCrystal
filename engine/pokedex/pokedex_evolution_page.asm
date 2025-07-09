@@ -738,11 +738,7 @@ EVO_adjust_type_index:
 	ld a, c
 	cp CURSE_TYPE
 	jr z, .handle_curse
-; Skip Bird
-	cp BIRD
-	jr c, .done
 	cp UNUSED_TYPES
-	dec a
 	jr c, .done
 	sub UNUSED_TYPES
 .done
