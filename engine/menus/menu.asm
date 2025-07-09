@@ -347,7 +347,7 @@ _2DMenuInterpretJoypad:
 	ret
 
 .b_button
-	ld a, $2
+	ld a, $3
 	ld [wMenuCursorX], a
 	ld [wMenuCursorY], a
 .a_start_select
