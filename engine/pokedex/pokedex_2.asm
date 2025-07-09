@@ -312,7 +312,7 @@ DisplayDexMonType_CustomGFX:
 	ld a, [wBaseType1]
 
 	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
 ; load the tiles
 	ld hl, TypeLightIconGFX
@@ -346,7 +346,7 @@ DisplayDexMonType_CustomGFX:
 	jr z, .check_floatmon
 
 	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
