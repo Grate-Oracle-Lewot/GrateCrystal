@@ -304,7 +304,7 @@ _CGB_Pokedex:
 	call GetBaseData
 	ld a, [wBaseType1]
 	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
+	predef GetMonTypeIndex
 ; load the 1st type pal 
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7
@@ -315,7 +315,7 @@ _CGB_Pokedex:
 	ld a, [wBaseType1]
 	cp c
 	jr z, .same_type	
-	farcall GetMonTypeIndex
+	predef GetMonTypeIndex
 ; load the 2nd type pal 
 	; type index is already in c
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7
