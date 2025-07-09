@@ -2121,9 +2121,11 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
-	text "POKEY MAN goes"
-	line "everywhere and"
-	cont "finds rarities."
+	text "POKEY MAN pokes"
+	line "around everywhere"
+
+	para "and finds rare"
+	line "artifacts."
 
 	para "Too bad they're"
 	line "just rare and"
