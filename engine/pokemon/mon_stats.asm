@@ -569,7 +569,7 @@ GetMonTypeIndex:
 	jr z, .handle_curse
 	cp UNUSED_TYPES
 	jr c, .done
-	sub UNUSED_TYPES_END
+	sub UNUSED_TYPES_END - UNUSED_TYPES
 .done
 	ld c, a
 	ret
