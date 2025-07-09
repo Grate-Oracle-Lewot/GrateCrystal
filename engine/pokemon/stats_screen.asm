@@ -771,9 +771,6 @@ LoadOrangePage:
 	and %0001
 	add b
 	inc a
-	cp BIRD
-	jr c, .done
-	inc a
 	cp UNUSED_TYPES
 	jr c, .done
 	add UNUSED_TYPES_END - UNUSED_TYPES
