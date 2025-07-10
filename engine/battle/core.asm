@@ -2379,6 +2379,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
 	; fallthrough
+
 ApplyExperienceAfterEnemyCaught:
 	call IsAnyMonHoldingExpShare
 	jr z, .skip_exp
@@ -3674,7 +3675,7 @@ OfferSwitch:
 	call IsPluralTrainer
 	jr z, .got_switch_phrase
 	ld hl, BattleText_EnemyIsAboutToUseWillPlayerChangeMon
-.got_switch_phrase:
+.got_switch_phrase
 	call StdBattleTextbox
 	lb bc, 1, 7
 	call PlaceYesNoBox
@@ -3878,7 +3879,6 @@ AskUseNextPokemon:
 	ret
 
 .pressed_b
-	ld a, [wMenuCursorY]
 	cp $1 ; YES
 	jr z, .loop
 	ld hl, wPartyMon1Speed
@@ -3898,7 +3898,7 @@ TryToRunAwayFromBattle:
 
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .ask_forfeit
+	jp nz, ForfeitTrainerBattle
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -3985,7 +3985,7 @@ TryToRunAwayFromBattle:
 	ld hl, hEnemyMonSpeed
 	ld c, 2
 	call CompareBytes
-	jp nc, .can_escape
+	jr nc, .can_escape
 
 	xor a
 	ldh [hMultiplicand + 0], a
@@ -4041,29 +4041,6 @@ TryToRunAwayFromBattle:
 	and a
 	ret
 
-.ask_forfeit
-	ld hl, BattleText_AskForfeit
-	call PrintText
-	call YesNoBox
-	ret c
-	xor a
-	ld [wBattleMonHP], a
-	ld [wBattleMonHP + 1], a
-	ld [wPartyMon1HP], a
-	ld [wPartyMon1HP + 1], a
-	ld [wPartyMon2HP], a
-	ld [wPartyMon2HP + 1], a
-	ld [wPartyMon3HP], a
-	ld [wPartyMon3HP + 1], a
-	ld [wPartyMon4HP], a
-	ld [wPartyMon4HP + 1], a
-	ld [wPartyMon5HP], a
-	ld [wPartyMon5HP + 1], a
-	ld [wPartyMon6HP], a
-	ld [wPartyMon6HP + 1], a
-	call HandlePlayerMonFaint
-	jp SetEnemyTurn
-
 .can_escape
 	ld a, [wLinkMode]
 	and a
@@ -4115,6 +4092,24 @@ TryToRunAwayFromBattle:
 	ld hl, BattleText_LinkErrorBattleCanceled
 	call StdBattleTextbox
 	jr .skip_link_error
+
+ForfeitTrainerBattle:
+	ld hl, BattleText_AskForfeit
+	call StdBattleTextbox
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	dec a
+	jr nz, .said_no
+	call LoadTilemapToTempTilemap
+	farcall EmptyAllPlayerMonsHP
+	call HandlePlayerMonFaint
+	jp SetEnemyTurn
+
+.said_no
+	ld a, TRUE
+	ld [wFailedToFlee], a
+	jp LoadTilemapToTempTilemap
 
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
