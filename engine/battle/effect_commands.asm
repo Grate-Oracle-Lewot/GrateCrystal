@@ -4927,13 +4927,7 @@ SetBattleDraw:
 BattleCommand_ForceSwitch:
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jr z, .missed
-	cp BATTLETYPE_TRAP
-	jr z, .missed
-	cp BATTLETYPE_CELEBI
-	jr z, .missed
-	cp BATTLETYPE_SUICUNE
-	jr z, .missed
+	jr nc, .missed
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .force_player_switch
