@@ -7001,6 +7001,24 @@ GetWeatherTurns:
 	ld a, 5
 	ret
 
+EmptyAllPlayerMonsHP::
+	xor a
+	ld [wBattleMonHP], a
+	ld [wBattleMonHP + 1], a
+	ld [wPartyMon1HP], a
+	ld [wPartyMon1HP + 1], a
+	ld [wPartyMon2HP], a
+	ld [wPartyMon2HP + 1], a
+	ld [wPartyMon3HP], a
+	ld [wPartyMon3HP + 1], a
+	ld [wPartyMon4HP], a
+	ld [wPartyMon4HP + 1], a
+	ld [wPartyMon5HP], a
+	ld [wPartyMon5HP + 1], a
+	ld [wPartyMon6HP], a
+	ld [wPartyMon6HP + 1], a
+	ret
+
 EffectCommands_50_50:
 	call BattleRandom
 	cp 50 percent + 1
