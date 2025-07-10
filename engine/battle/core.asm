@@ -3890,16 +3890,7 @@ TryToRunAwayFromBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CONTEST
 	jp z, .can_escape
-	cp BATTLETYPE_TRAP
-	jp z, .cant_escape
-	cp BATTLETYPE_FORCEITEM
-	jp z, .cant_escape
-	cp BATTLETYPE_SHINY
-	jp z, .cant_escape
-	cp BATTLETYPE_CELEBI
-	jp z, .cant_escape
-	cp BATTLETYPE_SUICUNE
-	jp z, .cant_escape
+	jp nc, .cant_escape
 
 	ld a, [wLinkMode]
 	and a
