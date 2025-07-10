@@ -291,7 +291,6 @@ GetLevelCap::
 	jp z, .no_cap
 
 ; Else, return current level cap in a
-	ld hl, wEventFlags
 	ld b, CHECK_FLAG
 	ld de, EVENT_BEAT_RED
 	call EventFlagAction
@@ -333,7 +332,6 @@ GetLevelCap::
 	ld a, LEVEL_CAP_MISTY
 	jr nz, .finish
 
-	ld hl, wEventFlags
 	ld b, CHECK_FLAG
 	ld de, EVENT_BEAT_ELITE_FOUR
 	call EventFlagAction
