@@ -32,7 +32,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Physical/Special split
 - Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
-- The Run option now allows you to forfeit trainer battles
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
 - Time Capsule replaced with player gender swap machine
