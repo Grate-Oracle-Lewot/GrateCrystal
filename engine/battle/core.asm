@@ -3985,7 +3985,7 @@ TryToRunAwayFromBattle:
 	ld hl, hEnemyMonSpeed
 	ld c, 2
 	call CompareBytes
-	jr nc, .can_escape
+	jp nc, .can_escape
 
 	xor a
 	ldh [hMultiplicand + 0], a
