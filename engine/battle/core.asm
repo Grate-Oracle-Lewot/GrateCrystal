@@ -3898,7 +3898,7 @@ TryToRunAwayFromBattle:
 
 	ld a, [wBattleMode]
 	dec a
-	jp nz, ForfeitTrainerBattle
+	jp nz, .cant_run_from_trainer
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -4034,6 +4034,12 @@ TryToRunAwayFromBattle:
 
 .cant_escape
 	ld hl, BattleText_CantEscape
+	jr .print_inescapable_text
+
+.cant_run_from_trainer
+	ld hl, BattleText_TheresNoEscapeFromTrainerBattle
+
+.print_inescapable_text
 	call StdBattleTextbox
 	ld a, TRUE
 	ld [wFailedToFlee], a
@@ -4063,6 +4069,7 @@ TryToRunAwayFromBattle:
 	cp BATTLEACTION_FORFEIT
 	ld a, DRAW
 	jr z, .fled
+	assert DRAW - 1 == LOSE
 	dec a ; LOSE
 .fled
 	ld b, a
@@ -4092,24 +4099,6 @@ TryToRunAwayFromBattle:
 	ld hl, BattleText_LinkErrorBattleCanceled
 	call StdBattleTextbox
 	jr .skip_link_error
-
-ForfeitTrainerBattle:
-	ld hl, BattleText_AskForfeit
-	call StdBattleTextbox
-	lb bc, 1, 7
-	call PlaceYesNoBox
-	ld a, [wMenuCursorY]
-	dec a
-	jr nz, .said_no
-	call LoadTilemapToTempTilemap
-	farcall EmptyAllPlayerMonsHP
-	call HandlePlayerMonFaint
-	jp SetEnemyTurn
-
-.said_no
-	ld a, TRUE
-	ld [wFailedToFlee], a
-	jp LoadTilemapToTempTilemap
 
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
