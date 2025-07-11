@@ -349,7 +349,7 @@ Prize Pokémon:
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
 - The Marshbadge and Soulbadge have their names and designs swapped
 - Female players retain their female sprites in the Link Trade and Battle rooms
-- Press B in the battle menu to instantly move the cursor over the Run option
+- Press B in wild battles to instantly move the cursor over the Run option
 - Text edits, often humorous (or so I'd like to think)
 
 # Minor Edits
