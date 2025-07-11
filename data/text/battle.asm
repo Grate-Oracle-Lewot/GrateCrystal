@@ -281,8 +281,10 @@ BattleText_AnEGGCantBattle:
 	line "battle!"
 	autodone
 
-BattleText_AskForfeit:
-	text "Forfeit the match?"
+BattleText_TheresNoEscapeFromTrainerBattle:
+	text "No! There's no"
+	line "running from a"
+	scroll "trainer battle!"
 	autodone
 
 BattleText_GotAwaySafely:
