@@ -119,6 +119,9 @@ CherrygroveSilverSceneNorth:
 	winlosstext SilverCherrygroveWinText, SilverCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_SILVER
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+if DEF(_SIX_PIKACHUS)
+	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+else
 if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS) || DEF(_TURBIN_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
@@ -148,6 +151,7 @@ if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || D
 	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
 else
 	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+endc
 endc
 endc
 .FinishBattle:
