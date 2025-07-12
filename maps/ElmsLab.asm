@@ -113,12 +113,9 @@ ElmEggHatchedScript:
 	sjump ElmCheckGotEggAgain
 
 ElmCheckTogepiEgg:
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iffalse ElmCheckGotEggAgain
 	checkevent EVENT_TOGEPI_HATCHED
 	iftrue ElmEggHatchedScript
-ElmCheckGotEggAgain:
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE ; why are we checking it again?
+	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue ElmWaitingEggHatchScript
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue ElmAideHasEggScript
@@ -501,6 +498,10 @@ if DEF(_MOUSEKETEERS)
 	pokepic SANDSHREW
 	cry SANDSHREW
 else
+if DEF(_SIX_PIKACHUS)
+	pokepic PIKACHU
+	cry PIKACHU
+else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
 	pokepic MAGMAR
 	cry MAGMAR
@@ -592,6 +593,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -614,6 +616,9 @@ if DEF(_EVOLVED_KANTO)
 else
 if DEF(_MOUSEKETEERS)
 	getmonname STRING_BUFFER_3, SANDSHREW
+else
+if DEF(_SIX_PIKACHUS)
+	getmonname STRING_BUFFER_3, PIKACHU
 else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
 	getmonname STRING_BUFFER_3, MAGMAR
@@ -688,6 +693,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -703,6 +709,26 @@ if DEF(_EVOLVED_KANTO)
 else
 if DEF(_MOUSEKETEERS)
 	givepoke SANDSHREW, 5, GOLD_BERRY
+else
+if DEF(_SIX_PIKACHUS)
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon1DVs,   $9D
+	loadmem wPartyMon1DVs+1, $DD
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon2DVs,   $BB
+	loadmem wPartyMon2DVs+1, $BB
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon3DVs,   $D9
+	loadmem wPartyMon3DVs+1, $99
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon4DVs,   $DD
+	loadmem wPartyMon4DVs+1, $DF
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon5DVs,   $FB
+	loadmem wPartyMon5DVs+1, $BD
+	givepoke PIKACHU, 5, GOLD_BERRY
+	loadmem wPartyMon6DVs,   $FF
+	loadmem wPartyMon6DVs+1, $FF
 else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
 	givepoke MAGMAR, 5, GOLD_BERRY
@@ -756,6 +782,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke UNOWN, 5, GOLD_BERRY
 else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1834,6 +1861,10 @@ if DEF(_MOUSEKETEERS)
 	line "SANDSHREW, the"
 	cont "ground #MON?"
 else
+if DEF(_SIX_PIKACHUS)
+	line "all six different"
+	cont "forms of PIKACHU?"
+else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
 	line "MAGMAR, the fire"
 	cont "#MON?"
@@ -1904,6 +1935,7 @@ if DEF(_MISSINGNO_STARTERS)
 else
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
+endc
 endc
 endc
 endc
