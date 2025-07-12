@@ -712,22 +712,22 @@ if DEF(_MOUSEKETEERS)
 	givepoke SANDSHREW, 5, GOLD_BERRY
 else
 if DEF(_SIX_PIKACHUS)
-	givepoke PIKACHU, 5, MAGNET
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon1DVs,   $9D
 	loadmem wPartyMon1DVs+1, $DD
-	givepoke PIKACHU, 5, PINK_BOW
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon2DVs,   $BB
 	loadmem wPartyMon2DVs+1, $BA
-	givepoke PIKACHU, 5, POLKADOT_BOW
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon3DVs,   $D9
 	loadmem wPartyMon3DVs+1, $99
-	givepoke PIKACHU, 5, BLACKBELT_I
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon4DVs,   $DD
 	loadmem wPartyMon4DVs+1, $DE
-	givepoke PIKACHU, 5, MYSTIC_WATER
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon5DVs,   $FB
 	loadmem wPartyMon5DVs+1, $BD
-	givepoke PIKACHU, 5, SHARP_BEAK
+	givepoke PIKACHU, 5, BERRY
 	loadmem wPartyMon6DVs,   $FF
 	loadmem wPartyMon6DVs+1, $FE
 else
