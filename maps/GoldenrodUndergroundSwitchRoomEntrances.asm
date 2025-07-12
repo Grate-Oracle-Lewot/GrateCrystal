@@ -166,6 +166,15 @@ UndergroundSilverBattleScript:
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
 	winlosstext UndergroundSilverWinText, 0
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SILVER
+if DEF(_SIX_PIKACHUS)
+	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
+	iftrue .Flareon
+	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	sjump .FinishBattle
+
+.Flareon:
+	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+else
 if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS) || DEF(_TURBIN_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
@@ -201,6 +210,7 @@ if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || D
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
 else
 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+endc
 endc
 endc
 .FinishBattle:
