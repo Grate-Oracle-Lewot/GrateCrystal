@@ -110,11 +110,12 @@ ElmEggHatchedScript:
 	setval TOGETIC
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
-	sjump ElmCheckGotEggAgain
+	sjump ElmCheckGotEgg
 
 ElmCheckTogepiEgg:
 	checkevent EVENT_TOGEPI_HATCHED
 	iftrue ElmEggHatchedScript
+ElmCheckGotEgg:
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iftrue ElmWaitingEggHatchScript
 	checkflag ENGINE_ZEPHYRBADGE
