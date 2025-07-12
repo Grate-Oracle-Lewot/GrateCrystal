@@ -438,6 +438,8 @@ make letsgo - Pikachu and Eevee. Your Pikachu may be any of its six forms, but t
 
 make mice - Pikachu, Sandshrew, and Marill. Your Pikachu may be any of its six forms, but the rival's is set.
 
+make six - There is only one starter ball, which gives you six Pikachus at once, one of each form. Your rival has his Eevee team from the letsgo build.
+
 make jinx - Jynx, Magmar, and Electabuzz.
 
 make hit - Hitmonlee and Hitmonchan, who will face each other, and Hitmontop, who will face itself.
