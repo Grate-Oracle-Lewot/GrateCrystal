@@ -94,6 +94,15 @@ PlateauRivalBattleCommon:
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	winlosstext PlateauRivalWinText, 0
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_SILVER
+if DEF(_SIX_PIKACHUS)
+	checkevent EVENT_LOST_FIRST_RIVAL_BATTLE
+	iftrue .Flareon
+	loadtrainer RIVAL1, RIVAL2_2_TOTODILE
+	sjump .FinishBattle
+
+.Flareon:
+	loadtrainer RIVAL1, RIVAL2_2_CYNDAQUIL
+else
 if DEF(_LETS_GO_STARTERS) || DEF(_SLOW_STARTERS) || DEF(_TURBIN_STARTERS)
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .PlayerChosePikachu
@@ -129,6 +138,7 @@ if DEF(_HITMON_STARTERS) || DEF(_NIDORAN_STARTERS) || DEF(_CATTLE_STARTERS) || D
 	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
 else
 	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
+endc
 endc
 endc
 .FinishBattle:
