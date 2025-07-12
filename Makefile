@@ -5,6 +5,7 @@ roms := \
 	GrateCrystal_EvolvedKantoStarters.gbc \
 	GrateCrystal_PikachuEeveeStarters.gbc \
 	GrateCrystal_PikachuSandshrewMarillStarters.gbc \
+	GrateCrystal_SixPikachuStarters.gbc \
 	GrateCrystal_JynxMagmarElectabuzzStarters.gbc \
 	GrateCrystal_HitmonStarters.gbc \
 	GrateCrystal_NidoranStarters.gbc \
@@ -55,6 +56,7 @@ GrateCrystal_EvolvedJohtoStarters_obj            := $(rom_obj:.o=evolve.o)
 GrateCrystal_EvolvedKantoStarters_obj            := $(rom_obj:.o=kantevo.o)
 GrateCrystal_PikachuEeveeStarters_obj            := $(rom_obj:.o=letsgo.o)
 GrateCrystal_PikachuSandshrewMarillStarters_obj  := $(rom_obj:.o=mice.o)
+GrateCrystal_SixPikachuStarters_obj              := $(rom_obj:.0=six.o)
 GrateCrystal_JynxMagmarElectabuzzStarters_obj    := $(rom_obj:.o=jinx.o)
 GrateCrystal_HitmonStarters_obj                  := $(rom_obj:.o=hit.o)
 GrateCrystal_NidoranStarters_obj                 := $(rom_obj:.o=nido.o)
@@ -100,18 +102,19 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: grate kanto evolve kantevo letsgo mice jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro
+all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro
 grate:        GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedJohtoStarters.gbc
 kantevo:      GrateCrystal_EvolvedKantoStarters.gbc
 letsgo:       GrateCrystal_PikachuEeveeStarters.gbc
 mice:         GrateCrystal_PikachuSandshrewMarillStarters.gbc
+six:          GrateCrystal_SixPikachuStarters.gbc
 jinx:         GrateCrystal_JynxMagmarElectabuzzStarters.gbc
 hit:          GrateCrystal_HitmonStarters.gbc
 nido:         GrateCrystal_NidoranStarters.gbc
@@ -168,6 +171,7 @@ tidy:
 	      $(GrateCrystal_EvolvedKantoStarters_obj) \
 	      $(GrateCrystal_PikachuEeveeStarters_obj) \
 	      $(GrateCrystal_PikachuSandshrewMarillStarters_obj) \
+	      $(GrateCrystal_SixPikachuStarters_obj) \
 	      $(GrateCrystal_JynxMagmarElectabuzzStarters_obj) \
 	      $(GrateCrystal_HitmonStarters_obj) \
 	      $(GrateCrystal_NidoranStarters_obj) \
@@ -211,6 +215,8 @@ letsgo:
 	tools/free_space.awk BANK=all GrateCrystal_PikachuEeveeStarters.map
 mice:
 	tools/free_space.awk BANK=all GrateCrystal_PikachuSandshrewMarillStarters.map
+six:
+	tools/free_space.awk BANK=all GrateCrystal_SixPikachuStarters.map
 jinx:
 	tools/free_space.awk BANK=all GrateCrystal_JynxMagmarElectabuzzStarters.map
 hit:
@@ -267,6 +273,7 @@ $(GrateCrystal_EvolvedJohtoStarters_obj):            RGBASMFLAGS += -D _EVOLVED_
 $(GrateCrystal_EvolvedKantoStarters_obj):            RGBASMFLAGS += -D _EVOLVED_KANTO
 $(GrateCrystal_PikachuEeveeStarters_obj):            RGBASMFLAGS += -D _LETS_GO_STARTERS
 $(GrateCrystal_PikachuSandshrewMarillStarters_obj):  RGBASMFLAGS += -D _MOUSEKETEERS
+$(GrateCrystal_SixPikachuStarters_obj):              RGBASMFLAGS += -D _SIX_PIKACHUS
 $(GrateCrystal_JynxMagmarElectabuzzStarters_obj):    RGBASMFLAGS += -D _JYNX_MAGMAR_ELECTABUZZ
 $(GrateCrystal_HitmonStarters_obj):                  RGBASMFLAGS += -D _HITMON_STARTERS
 $(GrateCrystal_NidoranStarters_obj):                 RGBASMFLAGS += -D _NIDORAN_STARTERS
@@ -320,6 +327,7 @@ $(foreach obj, $(GrateCrystal_EvolvedJohtoStarters_obj), $(eval $(call DEP,$(obj
 $(foreach obj, $(GrateCrystal_EvolvedKantoStarters_obj), $(eval $(call DEP,$(obj),$(obj:kantevo.o=.asm))))
 $(foreach obj, $(GrateCrystal_PikachuEeveeStarters_obj), $(eval $(call DEP,$(obj),$(obj:letsgo.o=.asm))))
 $(foreach obj, $(GrateCrystal_PikachuSandshrewMarillStarters_obj), $(eval $(call DEP,$(obj),$(obj:mice.o=.asm))))
+$(foreach obj, $(GrateCrystal_SixPikachuStarters_obj), $(eval $(call DEP,$(obj),$(obj:six.o=.asm))))
 $(foreach obj, $(GrateCrystal_JynxMagmarElectabuzzStarters_obj), $(eval $(call DEP,$(obj),$(obj:jinx.o=.asm))))
 $(foreach obj, $(GrateCrystal_HitmonStarters_obj), $(eval $(call DEP,$(obj),$(obj:hit.o=.asm))))
 $(foreach obj, $(GrateCrystal_NidoranStarters_obj), $(eval $(call DEP,$(obj),$(obj:nido.o=.asm))))
@@ -359,6 +367,7 @@ GrateCrystal_EvolvedJohtoStarters_opt             = -Cjv -t PM_CRYSTAL -i BYTE -
 GrateCrystal_EvolvedKantoStarters_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_PikachuEeveeStarters_opt             = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_PikachuSandshrewMarillStarters_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_SixPikachuStarters_opt               = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_JynxMagmarElectabuzzStarters_opt     = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_HitmonStarters_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_NidoranStarters_opt                  = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -391,6 +400,7 @@ GrateCrystal_EvolvedJohtoStarters_base            = us
 GrateCrystal_EvolvedKantoStarters_base            = us
 GrateCrystal_PikachuEeveeStarters_base            = us
 GrateCrystal_PikachuSandshrewMarillStarters_base  = us
+GrateCrystal_SixPikachuStarters_base              = us
 GrateCrystal_JynxMagmarElectabuzzStarters_base    = us
 GrateCrystal_HitmonStarters_base                  = us
 GrateCrystal_NidoranStarters_base                 = us
