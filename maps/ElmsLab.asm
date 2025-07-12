@@ -717,19 +717,19 @@ if DEF(_SIX_PIKACHUS)
 	loadmem wPartyMon1DVs+1, $DD
 	givepoke PIKACHU, 5, GOLD_BERRY
 	loadmem wPartyMon2DVs,   $BB
-	loadmem wPartyMon2DVs+1, $BB
+	loadmem wPartyMon2DVs+1, $BA
 	givepoke PIKACHU, 5, GOLD_BERRY
 	loadmem wPartyMon3DVs,   $D9
 	loadmem wPartyMon3DVs+1, $99
 	givepoke PIKACHU, 5, GOLD_BERRY
 	loadmem wPartyMon4DVs,   $DD
-	loadmem wPartyMon4DVs+1, $DF
+	loadmem wPartyMon4DVs+1, $DE
 	givepoke PIKACHU, 5, GOLD_BERRY
 	loadmem wPartyMon5DVs,   $FB
 	loadmem wPartyMon5DVs+1, $BD
 	givepoke PIKACHU, 5, GOLD_BERRY
 	loadmem wPartyMon6DVs,   $FF
-	loadmem wPartyMon6DVs+1, $FF
+	loadmem wPartyMon6DVs+1, $FE
 else
 if DEF(_JYNX_MAGMAR_ELECTABUZZ)
 	givepoke MAGMAR, 5, GOLD_BERRY
