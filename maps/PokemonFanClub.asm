@@ -47,8 +47,10 @@ PokemonFanClubChairmanScript:
 
 .NotListening:
 	writetext PokemonFanClubChairmanHowDisappointingText
-	waitbutton
+	sjump PokemonFanClub_EndText
+
 .BagFull:
+	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT_BUT_BAG_WAS_FULL
 	closetext
 	end
 
