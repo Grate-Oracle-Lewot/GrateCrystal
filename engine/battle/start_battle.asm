@@ -39,6 +39,11 @@ PlayBattleMusic:
 	call DelayFrame
 	call MaxVolume
 
+	; Are we fighting a trainer?
+	ld a, [wOtherTrainerClass]
+	and a
+	jr nz, .trainermusic
+
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
 	jp z, .done
@@ -48,11 +53,6 @@ PlayBattleMusic:
 	ld de, MUSIC_SPECIAL_BATTLE
 	cp BATTLETYPE_SHINY
 	jp nc, .done
-
-	; Are we fighting a trainer?
-	ld a, [wOtherTrainerClass]
-	and a
-	jr nz, .trainermusic
 
 	farcall RegionCheck
 	ld a, e
