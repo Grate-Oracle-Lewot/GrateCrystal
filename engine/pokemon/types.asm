@@ -59,6 +59,9 @@ PrintMoveType:
 
 	push hl
 	ld a, b
+	; fallthrough
+
+FinishPrintingMoveType:
 	dec a
 	ld bc, MOVE_LENGTH
 	ld hl, Moves
@@ -94,18 +97,7 @@ PrintBattleMoveType:
 	ld a, b
 	cp HIDDEN_POWER
 	jr z, .print_hidden_power
-	dec a
-	ld bc, MOVE_LENGTH
-	ld hl, Moves
-	call AddNTimes
-	ld de, wStringBuffer1
-	ld a, BANK(Moves)
-	call FarCopyBytes
-	ld a, [wStringBuffer1 + MOVE_TYPE]
-	pop hl
-
-	ld b, a
-	jr PrintType
+	jr FinishPrintingMoveType
 
 .print_hidden_power
 	call GetHiddenPowerBattleType
