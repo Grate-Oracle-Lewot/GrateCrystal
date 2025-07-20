@@ -1438,7 +1438,7 @@ Adjust_percent_fish:
 	ldh a, [hQuotient + 3]
 	cp 100
 	ret z
-	cp 0
+	and a
 	ret z
 	inc a
 	ret
