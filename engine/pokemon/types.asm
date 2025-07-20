@@ -123,13 +123,6 @@ GetTypeName:
 
 INCLUDE "data/types/names.asm"
 
-GetHiddenPowerType:
-	ld hl, wPartyMon1DVs
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld a, [wCurPartyMon]
-	call AddNTimes
-	jr HiddenPowerType
-
 GetHiddenPowerBattleType:
 	ld hl, wBattleMonDVs
 	ldh a, [hBattleTurn]
