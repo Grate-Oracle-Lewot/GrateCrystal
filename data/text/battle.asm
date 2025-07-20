@@ -28,13 +28,6 @@ PokemonFellFromTreeText:
 	line "out of the tree!"
 	autodone
 
-WildCelebiAppearedText:
-	text "Wild @"
-	text_ram wEnemyMonNickname
-	text_start
-	line "appeared!"
-	autodone
-
 WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
