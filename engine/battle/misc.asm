@@ -6,6 +6,7 @@ _DisappearUser:
 	jr z, .player
 	call GetEnemyFrontpicCoords
 	jr .okay
+
 .player
 	call GetPlayerBackpicCoords
 .okay
@@ -18,6 +19,7 @@ _AppearUserRaiseSub:
 
 _AppearUserLowerSub:
 	farcall BattleCommand_LowerSubNoAnim
+	; fallthrough
 
 AppearUser:
 	xor a
@@ -28,12 +30,15 @@ AppearUser:
 	call GetEnemyFrontpicCoords
 	xor a
 	jr .okay
+
 .player
 	call GetPlayerBackpicCoords
 	ld a, $31
 .okay
 	ldh [hGraphicStartTile], a
 	predef PlaceGraphic
+	; fallthrough
+
 FinishAppearDisappearUser:
 	ld a, $1
 	ldh [hBGMapMode], a
@@ -138,7 +143,6 @@ DoWeatherModifiers:
 	ld [wCurDamage], a
 	ld a, c
 	ld [wCurDamage + 1], a
-
 	ret
 
 INCLUDE "data/battle/weather_modifiers.asm"
