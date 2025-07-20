@@ -100,7 +100,7 @@ FailedBatonPass:
 ; Teleport
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_SHINY
+	cp BATTLETYPE_TRAP
 	jr nc, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
