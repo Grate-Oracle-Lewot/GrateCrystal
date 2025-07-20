@@ -2109,7 +2109,11 @@ ReceivedStarterText:
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer3
+if DEF(_SIX_PIKACHUS)
+	text " ×6!"
+else
 	text "!"
+endc
 	done
 
 ElmDirectionsText1:
@@ -2529,6 +2533,9 @@ ElmsLabTravelTip1Text:
 
 	para "Press START to"
 	line "open the MENU."
+
+	para "Close it with"
+	line "START or B."
 	done
 
 ElmsLabTravelTip2Text:
@@ -2562,11 +2569,18 @@ ElmsLabTravelTip4Text:
 
 	para "Travel Tip 4:"
 
-	para "Check your #MON"
-	line "moves. Press the"
+	para "Check the MOVES"
+	line "menu to see what"
 
-	para "A Button to switch"
-	line "moves."
+	para "your #MON's"
+	line "moves do."
+
+	para "Press A to switch"
+	line "their order."
+
+	para "Press SELECT to"
+	line "switch their order"
+	cont "in battle."
 	done
 
 ElmsLabTrashcanText:
