@@ -165,7 +165,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Nightmare now inflicts both Sleep and the Nightmare status all in one turn. Since this is powerful, it now has low accuracy, but if the target is already asleep, the Nightmare status will be inflicted without fail, just like how the move worked before.
 
-- Hidden Power always has a base power of 70; the type still changes based on DVs, but it can now be Fairy type.
+- Hidden Power always has a base power of 70; the type still changes based on DVs, but it can now be Fairy type. It also shows what type it is in battle, for convenience.
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
