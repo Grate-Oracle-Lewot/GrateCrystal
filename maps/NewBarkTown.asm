@@ -121,7 +121,7 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	opentext
-	givepoke STARMIE, 100, CANDIED_YAM
+	givepoke WIGGLYTUFF, 100, CANDIED_YAM
 	closetext
 	winlosstext NewBarkTownSignText, 0
 	loadtrainer ERIKA, ERIKA1
