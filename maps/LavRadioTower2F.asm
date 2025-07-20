@@ -28,7 +28,7 @@ LavRadioTower2FMewtwoScript:
 	closetext
 	setevent EVENT_FOUGHT_MEWTWO
 	clearflag ENGINE_MEWTWO_RADIO
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon MEWTWO, 75
 	startbattle
 	disappear LAVRADIOTOWER2F_MEWTWO
