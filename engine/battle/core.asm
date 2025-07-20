@@ -4625,6 +4625,8 @@ HandleHPHealingItem:
 .got_hp_bar_coords
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
+	; fallthrough
+
 UseOpponentItem:
 	call RefreshBattleHuds
 	callfar GetOpponentItem
@@ -5930,8 +5932,7 @@ MoveInfoBox:
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
-	predef PrintMoveType
-	ret
+	predef_jump PrintBattleMoveType
 
 .Disabled:
 	db "Disabled!@"
@@ -8380,8 +8381,7 @@ InitEnemyWildmon:
 	ldh [hGraphicStartTile], a
 	hlcoord 12, 0
 	lb bc, 7, 7
-	predef PlaceGraphic
-	ret
+	predef_jump PlaceGraphic
 
 ExitBattle:
 	ld a, [wLinkMode]
@@ -9070,8 +9070,7 @@ CopyBackpic:
 	ldh [hGraphicStartTile], a
 	hlcoord 2, 6
 	lb bc, 6, 6
-	predef PlaceGraphic
-	ret
+	predef_jump PlaceGraphic
 
 .LoadTrainerBackpicAsOAM:
 	ld hl, wVirtualOAMSprite00
@@ -9138,8 +9137,7 @@ GetTrainerBackpic:
 .Decompress:
 	ld de, vTiles2 tile $31
 	ld c, 7 * 7
-	predef DecompressGet2bpp
-	ret
+	predef_jump DecompressGet2bpp
 
 BattleStartMessage:
 	ld a, [wBattleMode]
