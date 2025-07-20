@@ -39,14 +39,15 @@ PlayBattleMusic:
 	call DelayFrame
 	call MaxVolume
 
-	ld de, MUSIC_SUICUNE_BATTLE
-	ld a, [wBattleType]
-	cp BATTLETYPE_SUICUNE
-	jp z, .mewtwo_music
-	cp BATTLETYPE_CELEBI
-	jp z, .done
+	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
 	jp z, .done
+	cp BATTLETYPE_LEGENDARY
+	jp nc, .done
+
+	ld de, MUSIC_SPECIAL_BATTLE
+	cp BATTLETYPE_SHINY
+	jp nc, .done
 
 	; Are we fighting a trainer?
 	ld a, [wOtherTrainerClass]
@@ -145,13 +146,6 @@ PlayBattleMusic:
 	pop de
 	pop hl
 	ret
-
-.mewtwo_music
-	ld a, [wTempWildMonSpecies]
-	cp MEWTWO
-	jr nz, .done
-	ld de, MUSIC_MEWTWO_BATTLE
-	jr .done
 
 ClearBattleRAM:
 	xor a
