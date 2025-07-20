@@ -34,7 +34,7 @@ RockTunnelZapdosChamberZapdosScript:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_ZAPDOS
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon ZAPDOS, 50
 	startbattle
 	disappear ROCKTUNNELZAPDOSCHAMBER_SLOWKING
