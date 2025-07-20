@@ -120,8 +120,11 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	giveitem MASTER_BALL
-	loadwildmon UNOWN, 5
+	opentext
+	givepoke STARMIE, 100, CANDIED_YAM
+	closetext
+	winlosstext NewBarkTownSignText, 0
+	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
 	end
