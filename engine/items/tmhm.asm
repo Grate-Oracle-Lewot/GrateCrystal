@@ -36,8 +36,7 @@ ConvertCurItemIntoCurTMHM:
 
 GetTMHMItemMove:
 	call ConvertCurItemIntoCurTMHM
-	predef GetTMHMMove
-	ret
+	predef_jump GetTMHMMove
 
 AskTeachTMHM:
 	ld hl, wOptions
