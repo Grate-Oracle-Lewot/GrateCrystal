@@ -31,7 +31,7 @@ TinTowerHoOh:
 	closetext
 	setevent EVENT_FOUGHT_HO_OH
 	takeitem RAINBOW_WING
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon HO_OH, 64
 	startbattle
 	disappear TINTOWERROOF_HO_OH
