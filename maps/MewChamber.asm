@@ -24,7 +24,7 @@ MewChamberMewScript:
 	pause 20
 	closetext
 	setevent EVENT_FOUGHT_MEW
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon MEW, 42
 	startbattle
 	disappear MEWCHAMBER_MEW
