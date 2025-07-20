@@ -12,18 +12,6 @@ AI_SwitchOrTryItem:
 	farcall CheckEnemyLockedIn
 	ret nz
 
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_CANT_RUN, a
-	jp nz, AI_TryItem
-
-	ld a, [wEffectCarryover]
-	bit PERISH_TRAP, a
-	jp nz, AI_TryItem
-
-	ld a, [wEnemyWrapCount]
-	and a
-	jp nz, AI_TryItem
-
 	; always load the first trainer class in wTrainerClass for Battle Tower trainers
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
 	ld a, [wInBattleTowerBattle]
@@ -45,39 +33,39 @@ AI_SwitchOrTryItem:
 	jp AI_TryItem
 
 SwitchSometimes:
-	callfar CheckAbleToSwitch
+	call CallfarCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jp z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
-	call AI_Item_20_Percent
+	call AI_80_20
 	jr c, SwitchMerge
 	jp AI_TryItem
 .not_10
 
 	cp $20
 	jr nz, .not_20
-	call AI_Item_50_Percent
+	call AI_50_50
 	jr c, SwitchMerge
 	jp AI_TryItem
 .not_20
 
 	; $30
-	call AI_Item_20_Percent
-	jp c, AI_TryItem
+	call AI_80_20
+	jr c, AI_TryItem
 	jr SwitchMerge
 
 SwitchOften:
-	callfar CheckAbleToSwitch
+	call CallfarCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
 
 	cp $10
 	jr nz, .not_10
-	call AI_Item_50_Percent
+	call AI_50_50
 	jr c, SwitchMerge
 	jr AI_TryItem
 .not_10
@@ -105,7 +93,7 @@ SwitchMerge:
 	jp AI_TrySwitch
 
 SwitchRarely:
-	callfar CheckAbleToSwitch
+	call CallfarCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
@@ -129,8 +117,8 @@ SwitchRarely:
 	; $30
 	call Random
 	cp 79 percent - 1
-	jr c, AI_TryItem
-	jr SwitchMerge
+	jr nc, SwitchMerge
+	; fallthrough
 
 AI_TryItem:
 ; items are not allowed in the Battle Tower
@@ -149,8 +137,13 @@ AI_TryItem:
 ; Transform copies stat levels and thus erases prior X item boosts
 	ld a, [wEnemyMonSpecies]
 	cp DITTO
-	ret z
+	jr nz, .not_ditto
 
+; clear carry flag
+	and a
+	ret
+
+.not_ditto
 ; if only one mon in party, use items on it
 	ld a, [wOTPartyCount]
 	cp 2
@@ -239,6 +232,7 @@ AI_TryItem:
 	ld h, [hl]
 	ld l, a
 	jp hl
+
 .callback
 	pop de
 	pop hl
@@ -355,7 +349,7 @@ AI_Items:
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .StatusCheckContext
-	call AI_Item_20_Percent
+	call AI_80_20
 	jp c, .Use
 	jp .DontUse
 
@@ -366,8 +360,9 @@ AI_Items:
 	ld a, [wEnemyToxicCount]
 	cp 4
 	jr c, .FailToxicCheck
-	call AI_Item_50_Percent
+	call AI_50_50
 	jp c, .Use
+
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
@@ -401,12 +396,12 @@ AI_Items:
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .20Not50
-	call AI_Item_50_Percent
+	call AI_50_50
 	jp c, .Use
 	jp .DontUse
 
 .20Not50:
-	call AI_Item_20_Percent
+	call AI_80_20
 	jp nc, .DontUse
 	jp .Use
 
@@ -486,17 +481,17 @@ AI_Items:
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .notfirstturnout
-	call AI_Item_50_Percent
+	call AI_50_50
 	jr c, .DontUse
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .Use
-	call AI_Item_50_Percent
+	call AI_50_50
 	jr c, .DontUse
 	jr .Use
 
 .notfirstturnout
-	call AI_Item_20_Percent
+	call AI_80_20
 	jr c, .Use
 
 .DontUse:
@@ -506,6 +501,41 @@ AI_Items:
 .Use:
 	and a
 	ret
+
+AIUsedItemSound:
+	push de
+	ld de, SFX_FULL_HEAL
+	call PlaySFX
+	pop de
+	ret
+
+EnemyUsedXAccuracy:
+	call AIUsedItemSound
+	ld hl, wEnemySubStatus4
+	set SUBSTATUS_X_ACCURACY, [hl]
+	ld a, X_ACCURACY
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
+
+EnemyUsedGuardSpec:
+	call AIUsedItemSound
+	ld hl, wEnemySubStatus4
+	set SUBSTATUS_MIST, [hl]
+	ld a, GUARD_SPEC
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
+
+EnemyUsedDireHit:
+	call AIUsedItemSound
+	ld hl, wEnemySubStatus4
+	set SUBSTATUS_DIRE_HIT, [hl]
+	ld a, DIRE_HIT
+	; fallthrough
+
+; Parameter
+; a = ITEM_CONSTANT
+PrintText_UsedItemOn_AND_AIUpdateHUD:
+	ld [wCurEnemyItem], a
+	call PrintText_UsedItemOn
+	; fallthrough
 
 AIUpdateHUD:
 	call UpdateEnemyMonInParty
@@ -517,31 +547,20 @@ AIUpdateHUD:
 	scf
 	ret
 
-AIUsedItemSound:
-	push de
-	ld de, SFX_FULL_HEAL
-	call PlaySFX
-	pop de
-	ret
-
 EnemyUsedFullHeal:
 	call StatusHealDoubleCall
 	ld a, FULL_HEAL
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedMiracleberry:
 	call StatusHealDoubleCall
 	ld a, MIRACLEBERRY
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedHealPowder:
 	call StatusHealDoubleCall
 	ld a, HEAL_POWDER
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-StatusHealDoubleCall:
-	call AIUsedItemSound
-	jp AI_HealStatus
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedMaxPotion:
 	ld a, MAX_POTION
@@ -581,6 +600,8 @@ EnemyUsedFreshWater:
 
 EnemyUsedSuperPotion:
 	ld a, SUPER_POTION
+	; fallthrough
+
 FreshWaterContinue:
 	ld b, 50
 	jr EnemyPotionContinue
@@ -639,80 +660,9 @@ EnemyPotionFinish:
 	predef AnimateHPBar
 	jp AIUpdateHUD
 
-AI_TrySwitch:
-; Determine whether the AI can switch based on how many Pokemon are still alive.
-; If it can switch, it will.
-	ld a, [wOTPartyCount]
-	ld c, a
-	ld hl, wOTPartyMon1HP
-	ld d, 0
-.SwitchLoop:
-	ld a, [hli]
-	ld b, a
-	ld a, [hld]
-	or b
-	jr z, .fainted
-	inc d
-.fainted
-	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	pop bc
-	dec c
-	jr nz, .SwitchLoop
-
-	ld a, d
-	cp 2
-	jr nc, AI_Switch
-	and a
-	ret
-
-AI_Switch:
-	ld a, $1
-	ld [wEnemyIsSwitching], a
-	ld [wEnemyGoesFirst], a
-	ld hl, wEnemySubStatus4
-	res SUBSTATUS_RAGE, [hl]
-	xor a
-	ldh [hBattleTurn], a
-	callfar PursuitSwitch
-
-	push af
-	ld a, [wCurOTMon]
-	ld hl, wOTPartyMon1Status
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld hl, wEnemyMonStatus
-	ld bc, MON_MAXHP - MON_STATUS
-	call CopyBytes
-	pop af
-
-	jr c, .skiptext
-	ld hl, EnemyWithdrewText
-	call PrintText
-
-.skiptext
-	ld a, 1
-	ld [wBattleHasJustStarted], a
-	callfar NewEnemyMonStatus
-	callfar ResetEnemyStatLevels
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	farcall EnemySwitch
-	farcall ResetBattleParticipants
-	xor a
-	ld [wBattleHasJustStarted], a
-	ld a, [wLinkMode]
-	and a
-	ret nz
-	scf
-	ret
-
-EnemyWithdrewText:
-	text_far _EnemyWithdrewText
-	text_end
+StatusHealDoubleCall:
+	call AIUsedItemSound
+	; fallthrough
 
 AI_HealStatus:
 	ld a, [wCurOTMon]
@@ -730,27 +680,6 @@ AI_HealStatus:
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_TOXIC, [hl]
 	ret
-
-EnemyUsedXAccuracy:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_X_ACCURACY, [hl]
-	ld a, X_ACCURACY
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-EnemyUsedGuardSpec:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_MIST, [hl]
-	ld a, GUARD_SPEC
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-EnemyUsedDireHit:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_DIRE_HIT, [hl]
-	ld a, DIRE_HIT
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedXAttack:
 	ld b, ATTACK
@@ -788,13 +717,6 @@ EnemyUsedXItem:
 	farcall RaiseStat
 	jp AIUpdateHUD
 
-; Parameter
-; a = ITEM_CONSTANT
-PrintText_UsedItemOn_AND_AIUpdateHUD:
-	ld [wCurEnemyItem], a
-	call PrintText_UsedItemOn
-	jp AIUpdateHUD
-
 PrintText_UsedItemOn:
 	ld a, [wCurEnemyItem]
 	ld [wNamedObjectIndex], a
@@ -810,12 +732,143 @@ EnemyUsedOnText:
 	text_far _EnemyUsedOnText
 	text_end
 
-AI_Item_20_Percent:
-	call Random
-	cp 20 percent - 1
+AI_TrySwitch:
+; Determine whether the AI can switch based on how many Pokemon are still alive.
+; If it can switch, it will.
+	ld a, [wOTPartyCount]
+	ld c, a
+	ld hl, wOTPartyMon1HP
+	ld d, 0
+.SwitchLoop:
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr z, .fainted
+	inc d
+.fainted
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .SwitchLoop
+
+	ld a, d
+	cp 2
+	jp c, AI_TryItem
+	; fallthrough
+
+AI_Switch:
+; If the enemy mon has U-Turn, use it instead of switching.
+; Does not account for type immunities, e.g. Volt Switch.
+
+	ld b, EFFECT_U_TURN
+	call AIHasMoveEffect
+	jr nc, .no_u_turn
+
+; If enemy's accuracy is lowered, switch instead of using U-Turn, unless also trapped.
+	ld a, [wEnemyAccLevel]
+	cp BASE_STAT_LEVEL
+	jr c, .check_trapped
+
+.u_turn
+	call DiscourageEverythingButUTurn
+	and a
 	ret
 
-AI_Item_50_Percent:
-	call Random
-	cp 50 percent + 1
+.check_trapped
+	call CheckEnemyTrapped
+	jr nz, .u_turn
+	jr .switch
+
+.no_u_turn
+; Can't switch if trapped. Had to be moved down here for U-Turn shenanigans.
+	call CheckEnemyTrapped
+	jp nz, AI_TryItem
+
+.switch
+	ld a, $1
+	ld [wEnemyIsSwitching], a
+	ld [wEnemyGoesFirst], a
+	ld hl, wEnemySubStatus4
+	res SUBSTATUS_RAGE, [hl]
+	xor a
+	ldh [hBattleTurn], a
+	callfar PursuitSwitch
+
+	push af
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Status
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonStatus
+	ld bc, MON_MAXHP - MON_STATUS
+	call CopyBytes
+	pop af
+
+	jr c, .skiptext
+	ld hl, EnemyWithdrewText
+	call PrintText
+
+.skiptext
+	ld a, 1
+	ld [wBattleHasJustStarted], a
+	callfar NewEnemyMonStatusResetEnemyStatLevels
+	ld hl, wPlayerSubStatus1
+	res SUBSTATUS_IN_LOVE, [hl]
+	farcall EnemySwitchResetBattleParticipants
+	xor a
+	ld [wBattleHasJustStarted], a
+	ld a, [wLinkMode]
+	and a
+	ret nz
+	scf
 	ret
+
+EnemyWithdrewText:
+	text_far _EnemyWithdrewText
+	text_end
+
+CallfarCheckAbleToSwitch:
+; Check if in the middle of a multi-turn move or suchlike.
+; Can't U-Turn out of these.
+	callfar CheckAbleToSwitch
+	ret
+
+CheckEnemyTrapped:
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	ret nz
+
+	ld a, [wEffectCarryover]
+	bit PERISH_TRAP, a
+	ret nz
+
+	ld a, [wEnemyWrapCount]
+	and a
+	ret
+
+DiscourageEverythingButUTurn:
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	call AIGetMoveAttributes
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_U_TURN
+	jr z, .checkmove
+
+	call AIDismissMove
+	jr .checkmove
