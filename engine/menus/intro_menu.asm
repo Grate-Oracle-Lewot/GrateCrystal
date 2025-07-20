@@ -820,8 +820,7 @@ ShrinkFunctionMerge:
 	ldh [hGraphicStartTile], a
 	hlcoord 6, 4
 	lb bc, 7, 7
-	predef PlaceGraphic
-	ret
+	predef_jump PlaceGraphic
 
 Intro_PlacePlayerSprite:
 	farcall GetPlayerIcon
