@@ -112,7 +112,7 @@
 	const MUSIC_JOHTO_FISHING_RADIO          ; 6a
 	const MUSIC_KANTO_FISHING_RADIO          ; 6b
 	const MUSIC_DARKROOM_BATTLE              ; 6c
-	const MUSIC_MEWTWO_BATTLE                ; 6d
+	const MUSIC_SPECIAL_BATTLE               ; 6d
 	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 6e
 	const MUSIC_CYCLING_ROAD                 ; 6f
 	const MUSIC_SAFARI_ZONE                  ; 70
