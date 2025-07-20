@@ -1632,7 +1632,7 @@ EnergypowderEnergyRootCommon:
 	push bc
 	call ItemRestoreHP
 	pop bc
-	cp 0
+	and a
 	jr nz, .skip_happiness
 
 	farcall ChangeHappiness
