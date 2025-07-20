@@ -2127,7 +2127,6 @@ _FlyMap:
 	lb bc, BANK(FlyMapLabelBorderGFX), 6
 	call Request1bpp
 	call FlyMap
-	call Pokegear_DummyFunction
 	ld b, SCGB_POKEGEAR_PALS
 	call GetSGBLayout
 	call SetPalettes
@@ -2327,7 +2326,6 @@ HasVisitedSpawn:
 	ld d, 0
 	predef SmallFarFlagAction
 	ld a, c
-Pokegear_DummyFunction:
 	ret
 
 INCLUDE "data/maps/flypoints.asm"
