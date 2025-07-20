@@ -88,6 +88,31 @@ PrintType:
 	pop hl
 	jp PlaceString
 
+PrintBattleMoveType:
+; Print the type of move b at hl.
+	push hl
+	ld a, b
+	cp HIDDEN_POWER
+	jr z, .print_hidden_power
+	dec a
+	ld bc, MOVE_LENGTH
+	ld hl, Moves
+	call AddNTimes
+	ld de, wStringBuffer1
+	ld a, BANK(Moves)
+	call FarCopyBytes
+	ld a, [wStringBuffer1 + MOVE_TYPE]
+	pop hl
+
+	ld b, a
+	jr PrintType
+
+.print_hidden_power
+	call GetHiddenPowerBattleType
+	pop hl
+	ld b, a
+	jr PrintType
+
 GetTypeName:
 ; Copy the name of type [wNamedObjectIndex] to wStringBuffer1.
 
@@ -105,3 +130,48 @@ GetTypeName:
 	jp CopyBytes
 
 INCLUDE "data/types/names.asm"
+
+GetHiddenPowerType:
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	call AddNTimes
+	jr HiddenPowerType
+
+GetHiddenPowerBattleType:
+	ld hl, wBattleMonDVs
+	ldh a, [hBattleTurn]
+	and a
+	jr z, HiddenPowerType
+	ld hl, wEnemyMonDVs
+	; fallthrough
+
+HiddenPowerType:
+	; Def & 3
+	ld a, [hl]
+	and %0011
+	ld b, a
+
+	; + (Atk & 3) << 2
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+
+	; add the least significant bit of the Speed DV to increment 50% of the time (to reach Fairy type)
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+
+; Skip Normal
+	inc a
+
+; Skip unused types
+	cp UNUSED_TYPES
+	ret c
+	add UNUSED_TYPES_END - UNUSED_TYPES
+	ret
