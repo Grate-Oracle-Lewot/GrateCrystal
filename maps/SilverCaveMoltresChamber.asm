@@ -33,7 +33,7 @@ SilverCaveMoltresChamberMoltresScript:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_MOLTRES
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon MOLTRES, 60
 	startbattle
 	disappear SILVERCAVEMOLTRESCHAMBER_SLOWKING
