@@ -305,18 +305,12 @@ ChooseWildEncounter:
 	ld b, a
 ; If the Pokemon is encountered in a special way, skip randomizing level.
 	ld a, [wBattleType]
-	cp BATTLETYPE_SUICUNE
-	jr z, .ok
-	cp BATTLETYPE_CELEBI
+	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	cp BATTLETYPE_ROAMING
 	jr z, .ok
-	cp BATTLETYPE_FORCEITEM
-	jr z, .ok
 	cp BATTLETYPE_TRAP
-	jr z, .ok
-	cp BATTLETYPE_TUTORIAL
-	jr z, .ok
+	jr nc, .ok
 ; Check if we're on Route 29
 	ld a, [wMapGroup]
 	cp GROUP_ROUTE_29
