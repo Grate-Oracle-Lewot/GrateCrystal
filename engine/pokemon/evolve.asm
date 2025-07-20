@@ -6,6 +6,8 @@ EvolvePokemon:
 	ld c, a
 	ld b, SET_FLAG
 	call EvoFlagAction
+	; fallthrough
+
 EvolveAfterBattle:
 	xor a
 	ld [wMonTriedToEvolve], a
@@ -17,6 +19,7 @@ EvolveAfterBattle:
 	ld hl, wPartyCount
 
 	push hl
+	; fallthrough
 
 EvolveAfterBattle_MasterLoop:
 	ld hl, wCurPartyMon
@@ -368,7 +371,7 @@ EvolveAfterBattle_MasterLoop:
 	ret nz
 	ld a, [wMonTriedToEvolve]
 	and a
-	call nz, RestartMapMusic
+	jp nz, RestartMapMusic
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:
