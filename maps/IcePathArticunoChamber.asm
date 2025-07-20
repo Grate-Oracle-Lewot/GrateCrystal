@@ -33,7 +33,7 @@ IcePathArticunoChamberArticunoScript:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_ARTICUNO
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon ARTICUNO, 40
 	startbattle
 	disappear ICEPATHARTICUNOCHAMBER_SLOWKING
