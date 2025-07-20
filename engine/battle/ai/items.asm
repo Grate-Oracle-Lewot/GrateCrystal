@@ -767,10 +767,16 @@ AI_Switch:
 	call AIHasMoveEffect
 	jr nc, .no_u_turn
 
-; If enemy's accuracy is lowered, switch instead of using U-Turn, unless also trapped.
+; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn, unless also trapped.
+; Don't need to check for X Accuracy status as it minimizes switching chance.
+
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL
 	jr c, .check_trapped
+
+	ld a, [wPlayerEvaLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .check_trapped
 
 .u_turn
 	call DiscourageEverythingButUTurn
