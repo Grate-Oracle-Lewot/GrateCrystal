@@ -5932,7 +5932,7 @@ MoveInfoBox:
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
-	predef_jump PrintMoveType
+	predef_jump PrintBattleMoveType
 
 .Disabled:
 	db "Disabled!@"
