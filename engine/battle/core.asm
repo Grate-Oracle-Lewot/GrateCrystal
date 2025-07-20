@@ -2625,7 +2625,7 @@ WinTrainerBattle:
 
 ; Don't show money award text if base reward = 0
 	ld a, [wEnemyTrainerBaseReward]
-	cp 0
+	and a
 	ret z
 	jr .give_money
 
