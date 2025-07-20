@@ -191,8 +191,7 @@ DoBattle:
 	jr z, .wild
 	xor a
 	ld [wEnemySwitchMonIndex], a
-	call NewEnemyMonStatus
-	call ResetEnemyStatLevels
+	call NewEnemyMonStatusResetEnemyStatLevels
 	call BreakAttraction
 	call EnemySwitch
 
@@ -255,8 +254,7 @@ DoBattle:
 	jr nz, .not_linked_2
 	xor a
 	ld [wEnemySwitchMonIndex], a
-	call NewEnemyMonStatus
-	call ResetEnemyStatLevels
+	call NewEnemyMonStatusResetEnemyStatLevels
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
@@ -2565,8 +2563,7 @@ EnemyPartyMonEntrance:
 	push af
 	xor a
 	ld [wEnemySwitchMonIndex], a
-	call NewEnemyMonStatus
-	call ResetEnemyStatLevels
+	call NewEnemyMonStatusResetEnemyStatLevels
 	call BreakAttraction
 	pop af
 	and a
@@ -3293,8 +3290,7 @@ ForceEnemySwitch:
 	ld b, a
 	call LoadEnemyMonToSwitchTo
 	call ClearEnemyMonBox
-	call NewEnemyMonStatus
-	call ResetEnemyStatLevels
+	call NewEnemyMonStatusResetEnemyStatLevels
 	call ShowSetEnemyMonAndSendOutAnimation
 	call BreakAttraction
 	jp ResetBattleParticipants
@@ -3393,6 +3389,10 @@ ResetEnemyBattleVars:
 	call SlideBattlePicOut
 	call EmptyBattleTextbox
 	jp LoadStandardMenuHeader
+
+EnemySwitchResetBattleParticipants:
+	call EnemySwitch
+	; fallthrough
 
 ResetBattleParticipants:
 	xor a
@@ -3801,6 +3801,10 @@ endr
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
+
+NewEnemyMonStatusResetEnemyStatLevels:
+	call NewEnemyMonStatus
+	; fallthrough
 
 ResetEnemyStatLevels:
 	ld a, BASE_STAT_LEVEL
