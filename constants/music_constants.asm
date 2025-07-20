@@ -100,7 +100,7 @@
 	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 5f
 	const MUSIC_CRYSTAL_OPENING              ; 60
 	const MUSIC_BATTLE_TOWER_THEME           ; 61
-	const MUSIC_SUICUNE_BATTLE               ; 62
+	const MUSIC_LEGENDARY_BATTLE             ; 62
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 63
 	const MUSIC_MOBILE_CENTER                ; 64
 ; new to Grate Crystal
