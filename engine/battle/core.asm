@@ -6234,15 +6234,11 @@ LoadEnemyMon:
 .WildItem:
 ; In a wild battle, we pull from the item slots in BaseData
 
-; Force Item1
-; Used for Sudowoodo and Snorlax encounters
+; Force Item1 for BATTLETYPE_FORCEITEM, BATTLETYPE_LEGENDARY, and BATTLETYPE_CELEBI
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItem1]
-	jr z, .UpdateItem
-	cp BATTLETYPE_SUICUNE
-	ld a, [wBaseItem1]
-	jr z, .UpdateItem
+	jr nc, .UpdateItem
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
@@ -9204,9 +9200,6 @@ BattleStartMessage:
 .NotFishing:
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
-	jr z, .PlaceBattleStartText
-	ld hl, WildCelebiAppearedText
-	cp BATTLETYPE_CELEBI
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 
