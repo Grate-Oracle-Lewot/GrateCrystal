@@ -32,7 +32,7 @@ Lugia:
 	closetext
 	setevent EVENT_FOUGHT_LUGIA
 	takeitem SILVER_WING
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon LUGIA, 64
 	startbattle
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
