@@ -779,7 +779,8 @@ AI_Switch:
 	jr nc, .check_trapped
 
 .u_turn
-	call DiscourageEverythingButUTurn
+	ld a, 1
+	ld [wEnemyWantsToUTurn], a
 	and a
 	ret
 
@@ -856,25 +857,3 @@ CheckEnemyTrapped:
 	ld a, [wEnemyWrapCount]
 	and a
 	ret
-
-DiscourageEverythingButUTurn:
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	call AIGetMoveAttributes
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_U_TURN
-	jr z, .checkmove
-
-	call AIDismissMove
-	jr .checkmove
