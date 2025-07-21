@@ -513,8 +513,7 @@ wCurEnemyMoveNum:: db
 wEnemyHPAtTimeOfPlayerSwitch:: dw
 wPayDayMoney:: ds 3
 
-wEnemyWantsToUTurn:: db
-	ds 2
+	ds 3
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db
 
