@@ -85,7 +85,7 @@ Function170c8b:
 	ld b, $5
 .loop
 	ld a, [hl]
-	xor $ff
+	cpl
 	ld [hli], a
 	dec b
 	jr nz, .loop
