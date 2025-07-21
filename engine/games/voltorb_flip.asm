@@ -96,6 +96,7 @@ VFInitLevel:
 	add a, 7 ;calculate the "base"
 	ld c, a
 	jr .retry23
+
 .highlevel ;base is calculated differently starting at level 6
 	add a, 12
 	ld c, a
@@ -121,6 +122,7 @@ VFInitLevel:
 	jr c, .done
 	jr z, .done
 	jr .continue23
+
 .generate2
 	ld a, [hl]
 	cp 1
@@ -132,12 +134,13 @@ VFInitLevel:
 	ld c, a
 	jr c, .done
 	jr z, .done
-	jr .continue23
+
 .continue23
 	inc hl
 	dec b
 	jr nz, .loop23
 	jr .retry23
+
 .done
 	ld a, [$c41a]
 	add a, 5 ;number of voltorb
@@ -163,12 +166,13 @@ VFInitLevel:
 	ld [hl], a
 	dec c
 	jr z, .donev
-	jr .continuev
+
 .continuev
 	inc hl
 	dec b
 	jr nz, .loopv
 	jr .retryv
+
 .donev
 	ld de, $c400
 	ld b, $5
@@ -323,7 +327,6 @@ VFInput:
 	jp nz, .upbutton
 	bit 7, a
 	jp nz, .downbutton
-	
 	ret
 
 .abutton
@@ -424,9 +427,11 @@ VFInput:
 	ld a, e
 	ld [wCoins + 1], a
 	jp VFInitLevel
+
 .caplevel
 	dec a
 	ret
+
 .maybecap
 	cp $27
 	jr nz, .capcoins
@@ -434,6 +439,7 @@ VFInput:
 	cp $f
 	jr nc, .capcoins
 	jr .totalcoins
+
 .capcoins
 	ld de, $270f
 	jr .totalcoins
@@ -459,24 +465,28 @@ VFInput:
 	bit 6, c
 	jr nz, .toggle1
 	ret
+
 .bleft
 	bit 7, c
 	jr nz, .toggle2
 	bit 6, c
 	jr nz, .toggle0
 	ret
+
 .bup
 	bit 5, c
 	jr nz, .toggle0
 	bit 4, c
 	jr nz, .toggle1
 	ret
+
 .bdown
 	bit 5, c
 	jr nz, .toggle2
 	bit 4, c
 	jr nz, .toggle3
 	ret
+
 .toggle0
 	xor $80
 	ld [de], a
@@ -503,6 +513,7 @@ VFInput:
 .norowwrap
 	ld [$c41b], a
 	ret
+
 .leftbutton
 	ld a, b
 	dec a
@@ -520,6 +531,7 @@ VFInput:
 .nocolwrap
 	ld [$c41c], a
 	ret
+
 .downbutton
 	ld a, c
 	inc a
@@ -651,8 +663,8 @@ VFInitMap:
 	ld a, b
 	cp a, 7
 	jr nz, .loopa
-	ei
-	ret
+	reti
+
 .coinstring
 	db "COINS@"
 .blank
@@ -805,6 +817,7 @@ VFRefreshMap:
 	jr z, .highlighted
 	res 3, a
 	jr .checkflip
+
 .highlighted
 	set 3, a
 .checkflip
@@ -901,6 +914,7 @@ VFRefreshMap:
 	add hl, de
 	pop de
 	jp .g1x1
+
 .highlight
 	push bc
 	push de
@@ -924,6 +938,7 @@ VFRefreshMap:
 	pop de
 	pop bc
 	jr .finishcard
+
 .rowdone
 	dec b
 	jr z, .done
@@ -933,6 +948,7 @@ VFRefreshMap:
 	add hl, de
 	pop de
 	jp .g1x1
+
 .done
 	hlcoord 15, 16
 	ld de, .blank
@@ -948,6 +964,7 @@ VFRefreshMap:
 	ld de, wCoins
 	ld bc, $0204
 	jp PrintNum
+
 .coinstring
 	db "COINS@"
 .blank
@@ -1008,6 +1025,7 @@ VFRefreshMap:
 	inc a
 	ld [hl], a
 	jp .carddone
+
 .marked0
 	ld a, 6 ;upper left corner marked
 	ldi [hl], a
@@ -1024,6 +1042,7 @@ VFRefreshMap:
 	ld a, 24 ;lower right corner marked
 	ld [hl], a
 	jp .carddone
+
 .voltorb
 	ld a, 3
 	ldi [hl], a
@@ -1370,9 +1389,11 @@ VFFlipAnimation:
 	jp nz, .flipframe
 	pop de
 	ret
+
 .switchdir
 	ld de, $06fd
 	jp .flipframe
+
 .finish
 	ld hl, $c41b
 	ld a, [hli]
@@ -1408,6 +1429,7 @@ VFBoom:
 .reset
 	ld [$c41a], a
 	jp VFInitLevel
+
 .level0
 	ld a, 1
 	jr .reset
@@ -1462,17 +1484,20 @@ VFMultiplyCoins:
 	pop de
 	pop bc
 	ret
+
 .initcoins
 	pop af
 	ld h, 0
 	ld l, a
 	jr .updatecoins
+
 .coinsound
 	push de
 	ld de, 34
 	call WaitPlaySFX
 	pop de
 	jr .resume
+
 .maybecap
 	cp $27
 	jr nz, .capcoins
@@ -1481,6 +1506,7 @@ VFMultiplyCoins:
 	jr nc, .capcoins
 	pop af
 	jr .updatecoins
+
 .capcoins
 	pop af
 	ld hl, $270f
@@ -1521,6 +1547,7 @@ VFKeepCoins:
 	ld a, e
 	ld [wCoins + 1], a
 	jp VFInitLevel
+
 .maybecap
 	cp $27
 	jr nz, .capcoins
@@ -1528,12 +1555,15 @@ VFKeepCoins:
 	cp $f
 	jr nc, .capcoins
 	jr .totalcoins
+
 .capcoins
 	ld de, $270f
 	jr .totalcoins
+
 .fixlevel
 	inc a
 	jr .setlevel
+
 VFExit:
 	call VFKeepCoins
 	ld a, 1
