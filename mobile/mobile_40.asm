@@ -85,7 +85,6 @@ EnableMobile:
 	ldh [hMobileReceive], a
 	ldh [hMobile], a
 	ei
-
 	ret
 
 DisableMobile:
@@ -645,12 +644,7 @@ Function10047c:
 	ret
 
 Function100493:
-	jr asm_100497
-
 Function100495:
-	jr asm_100497
-
-asm_100497:
 	call Function100337
 	ret c
 	ret z
@@ -858,6 +852,7 @@ Function1005cf:
 	ld a, [wcd26]
 	inc a
 	ld [wcd26], a
+	; fallthrough
 
 Function1005e1:
 	call Function100522
@@ -924,6 +919,8 @@ StartMobileInactivityTimer:
 
 IncrementMobileInactivityTimerBy1Frame:
 	ld c, 1
+	; fallthrough
+
 IncrementMobileInactivityTimerByCFrames:
 	ld hl, wMobileInactivityTimerFrames ; timer?
 	ld a, [hl]
@@ -978,6 +975,7 @@ Function100681:
 	pop hl
 .asm_100694
 	ld de, wcd32
+	; fallthrough
 
 Function100697:
 	ld a, [de]
@@ -1015,6 +1013,7 @@ Function1006d3:
 	call UpdateTime
 	ld de, wcd34
 	ld hl, wcd38
+	; fallthrough
 
 Function1006dc:
 	ld a, [hld]
@@ -2011,6 +2010,11 @@ Mobile_SetOverworldDelay:
 	ld [wOverworldDelay], a
 	ret
 
+StartMobileInactivityTimerWithEntourage:
+	call Function100da5
+	call StartMobileInactivityTimer
+	; fallthrough
+
 Function100dd8:
 	ld c, $01
 	ld b, $03
@@ -2134,6 +2138,7 @@ Function100ea2:
 	ld hl, wcd29
 	set 0, [hl]
 	call Function100ec5
+	; fallthrough
 
 Function100eae:
 	scf
@@ -2143,6 +2148,7 @@ Function100eae:
 Function100eb4:
 	and a
 	call Function100eca
+	; fallthrough
 
 asm_100eb8:
 	ld hl, wcd68
@@ -2151,14 +2157,12 @@ asm_100eb8:
 	cp $02
 	ret c
 	ld [hl], 0
-	jr Function100ec5
-
-Function100ec4:
-	ret
+	; fallthrough
 
 Function100ec5:
 	ld hl, wcd67
 	inc [hl]
+Function100ec4:
 	ret
 
 Function100eca:
@@ -2681,12 +2685,6 @@ Function10126c:
 	ld hl, ClosingLinkText
 	jp Function1021e0
 
-Function10127c:
-	ret
-
-Function10127d:
-	ret
-
 Function10127e:
 	ld a, [wdc5f]
 	and a
@@ -2702,6 +2700,8 @@ Function10127e:
 .load
 	ld a, c
 	ld [wMobileCommsJumptableIndex], a
+Function10127c:
+Function10127d:
 	ret
 
 Jumptable_101297:
@@ -2951,6 +2951,7 @@ Function10145b:
 	ld a, [wcd26]
 	inc a
 	ld [wcd26], a
+	; fallthrough
 
 Function101467:
 	ld hl, wcd42
@@ -2988,6 +2989,7 @@ Function10149a:
 	ld a, [wcd26]
 	inc a
 	ld [wcd26], a
+	; fallthrough
 
 Function1014a6:
 	ld hl, wcd42
@@ -2998,6 +3000,7 @@ Function1014a6:
 	ld a, [wcd26]
 	inc a
 	ld [wcd26], a
+	; fallthrough
 
 Function1014b7:
 	call GetJoypad
@@ -3016,7 +3019,7 @@ Function1014b7:
 
 Function1014ce:
 	farcall Function100720
-	farcall StartMobileInactivityTimer
+	call StartMobileInactivityTimer
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
@@ -3069,7 +3072,7 @@ Function101537:
 	ret
 
 Function101544:
-	farcall StartMobileInactivityTimer
+	call StartMobileInactivityTimer
 	ld a, MOBILEAPI_09
 	call MobileAPI
 	ld a, [wMobileCommsJumptableIndex]
@@ -3078,7 +3081,7 @@ Function101544:
 	ret
 
 Function101557:
-	farcall StartMobileInactivityTimer
+	call StartMobileInactivityTimer
 	ld hl, wcd53
 	ld a, MOBILEAPI_04
 	call MobileAPI
@@ -3090,6 +3093,7 @@ Function101557:
 Function10156d:
 	call Function101418
 	ret c
+	; fallthrough
 
 Function101571:
 	farcall Function10032e
@@ -3227,6 +3231,7 @@ Function10167d:
 Function10168a:
 	call Function101418
 	ret c
+	; fallthrough
 
 Function10168e:
 	ld b, 0
@@ -3443,6 +3448,7 @@ Function1017e4:
 Function1017f1:
 	call Function101418
 	ret c
+	; fallthrough
 
 Function1017f5:
 	ld b, 0
@@ -4095,6 +4101,7 @@ Function101d1e:
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
+	; fallthrough
 
 Function101d2a:
 	call Function101418
@@ -4124,6 +4131,7 @@ Function101d51:
 	ld a, [wcd26]
 	inc a
 	ld [wcd26], a
+	; fallthrough
 
 Function101d5d:
 	ld hl, wcd42
@@ -4342,6 +4350,7 @@ Function101ed3:
 
 Function101ee2:
 	ld e, 0
+	; fallthrough
 
 Function101ee4:
 	ld d, 0
@@ -4914,6 +4923,7 @@ Function102387:
 	call Function102dd3
 	ld a, $01
 	ld [wMenuCursorY], a
+	; fallthrough
 
 Function1023a1:
 	call Function102283
@@ -5047,6 +5057,7 @@ Function1024c0:
 	ld a, [wcd4a]
 	inc a
 	ld [wcd4a], a
+	; fallthrough
 
 Function1024cb:
 	ld hl, wcd4e
@@ -5058,6 +5069,7 @@ Function1024cb:
 	ld a, [wcd4a]
 	inc a
 	ld [wcd4a], a
+	; fallthrough
 
 Function1024de:
 	ld hl, wcd4e
@@ -5139,7 +5151,6 @@ Function10250c:
 
 .asm_102572
 	call Function102fce
-	jr .asm_102577
 
 .asm_102577
 	ld hl, wcd4b
@@ -5321,6 +5332,7 @@ Function1026b7:
 	ld [wcd49], a
 	ld a, 0
 	ld [wcd4a], a
+	; fallthrough
 
 Function1026c8:
 	call GetJoypad
@@ -5397,6 +5409,7 @@ Function102738:
 	ld [wcd49], a
 	ld a, 0
 	ld [wcd4a], a
+	; fallthrough
 
 Function102754:
 	call GetJoypad
@@ -5417,6 +5430,7 @@ Jumptable_102766:
 Function102770:
 	ld a, $01
 	ld [wcd4a], a
+	; fallthrough
 
 Function102775:
 	hlcoord 1, 16
@@ -5443,6 +5457,8 @@ Function10278c:
 .asm_10279b
 	ld a, $03
 	ld [wcd4a], a
+	; fallthrough
+
 Function1027a0:
 	hlcoord 1, 16
 	ld [hl], " "
@@ -5518,6 +5534,7 @@ Function102814:
 	ld [wcd4a], a
 	ld hl, wcd4b
 	set 1, [hl]
+	; fallthrough
 
 Function10283c:
 	ld hl, wcd4b
@@ -5594,6 +5611,7 @@ Function1028bf:
 	ld a, [wcd49]
 	inc a
 	ld [wcd49], a
+	; fallthrough
 
 Function1028c6:
 	xor a
@@ -5607,6 +5625,7 @@ Function1028d3:
 	ld a, [wcd49]
 	inc a
 	ld [wcd49], a
+	; fallthrough
 
 Function1028da:
 	ld a, OTPARTYMON
@@ -5620,7 +5639,7 @@ Function1028e8:
 	ld hl, wcd4b
 	res 6, [hl]
 	ld [wcd50], a
-	farcall StartMobileInactivityTimer
+	call StartMobileInactivityTimer
 	ld a, 0
 	ld [wcd4a], a
 	ret
@@ -6309,7 +6328,6 @@ Function102e4f:
 	call .PlaceSpeciesNames
 	hlcoord 7, 9
 	ld de, wOTPartySpecies
-	; fallthrough
 
 .PlaceSpeciesNames:
 	ld c, 0
@@ -6946,6 +6964,7 @@ Function1034e0:
 Function1034f1:
 	ld a, [wd1f0]
 	ld [wd1f2], a
+	; fallthrough
 
 Function1034f7:
 	hlcoord 0, 0
