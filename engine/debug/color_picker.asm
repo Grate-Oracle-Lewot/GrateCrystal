@@ -170,7 +170,7 @@ DebugColor_LoadGFX:
 	ld bc, $80 tiles
 .loop
 	ld a, [hl]
-	xor $ff
+	cpl
 	ld [hli], a
 	dec bc
 	ld a, c
