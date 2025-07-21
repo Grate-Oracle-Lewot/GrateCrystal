@@ -1122,7 +1122,7 @@ PeoplePlaces5:
 	assert_power_of_2 NUM_PNP_PEOPLE_ADJECTIVES
 	ld e, a
 	ld d, 0
-	ld hl, .Adjectives
+	ld hl, PeoplePlacesAdjectives
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -1140,8 +1140,60 @@ PeoplePlaces5:
 .ok
 	jp NextRadioLine
 
-.Adjectives:
-	table_width 2, PeoplePlaces5.Adjectives
+PeoplePlaces6: ; Places
+	call Random
+	cp (PnP_Places.End - PnP_Places) / 2
+	jr nc, PeoplePlaces6
+	ld hl, PnP_Places
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	call GetWorldMapLocation
+	ld e, a
+	farcall GetLandmarkName
+	ld hl, PnP_Text5
+	ld a, PLACES_AND_PEOPLE_7
+	jp NextRadioLine
+
+INCLUDE "data/radio/pnp_places.asm"
+
+PnP_Text5:
+	text_far _PnP_Text5
+	text_end
+
+PeoplePlaces7:
+	; 0-15 are all valid indexes into .Adjectives,
+	; so no need for a retry loop
+	call Random
+	maskbits NUM_PNP_PLACES_ADJECTIVES
+	assert_power_of_2 NUM_PNP_PLACES_ADJECTIVES
+	ld e, a
+	ld d, 0
+	ld hl, PeoplePlacesAdjectives
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call CopyRadioTextToRAM
+	call Random
+	cp 4 percent
+	ld a, PLACES_AND_PEOPLE
+	jr c, .ok
+	call Random
+	cp 49 percent - 1
+	ld a, PLACES_AND_PEOPLE_4 ; People
+	jr c, .ok
+	ld a, PLACES_AND_PEOPLE_6 ; Places
+.ok
+	jp PrintRadioLine
+
+PeoplePlacesAdjectives:
+	table_width 2, PeoplePlacesAdjectives
 	dw PnP_CuteText
 	dw PnP_LazyText
 	dw PnP_HappyText
@@ -1223,78 +1275,6 @@ PnP_RightForMeText:
 PnP_OddText:
 	text_far _PnP_OddText
 	text_end
-
-PeoplePlaces6: ; Places
-	call Random
-	cp (PnP_Places.End - PnP_Places) / 2
-	jr nc, PeoplePlaces6
-	ld hl, PnP_Places
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	call GetWorldMapLocation
-	ld e, a
-	farcall GetLandmarkName
-	ld hl, PnP_Text5
-	ld a, PLACES_AND_PEOPLE_7
-	jp NextRadioLine
-
-INCLUDE "data/radio/pnp_places.asm"
-
-PnP_Text5:
-	text_far _PnP_Text5
-	text_end
-
-PeoplePlaces7:
-	; 0-15 are all valid indexes into .Adjectives,
-	; so no need for a retry loop
-	call Random
-	maskbits NUM_PNP_PLACES_ADJECTIVES
-	assert_power_of_2 NUM_PNP_PLACES_ADJECTIVES
-	ld e, a
-	ld d, 0
-	ld hl, .Adjectives
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call CopyRadioTextToRAM
-	call Random
-	cp 4 percent
-	ld a, PLACES_AND_PEOPLE
-	jr c, .ok
-	call Random
-	cp 49 percent - 1
-	ld a, PLACES_AND_PEOPLE_4 ; People
-	jr c, .ok
-	ld a, PLACES_AND_PEOPLE_6 ; Places
-.ok
-	jp PrintRadioLine
-
-.Adjectives:
-	table_width 2, PeoplePlaces7.Adjectives
-	dw PnP_CuteText
-	dw PnP_LazyText
-	dw PnP_HappyText
-	dw PnP_NoisyText
-	dw PnP_PrecociousText
-	dw PnP_BoldText
-	dw PnP_PickyText
-	dw PnP_SortOfOKText
-	dw PnP_SoSoText
-	dw PnP_GreatText
-	dw PnP_MyTypeText
-	dw PnP_CoolText
-	dw PnP_InspiringText
-	dw PnP_WeirdText
-	dw PnP_RightForMeText
-	dw PnP_OddText
-	assert_table_length NUM_PNP_PLACES_ADJECTIVES
 
 RocketRadio1:
 	call StartRadioStation
