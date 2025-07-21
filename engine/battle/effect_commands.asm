@@ -2318,7 +2318,7 @@ BattleCommand_SuperEffectiveText:
 
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero, and faint the user along with it if it used Destiny Bond.
-; Ends the move effect if the opponent faints.
+; Ends the move effect if the opponent faints, but executes BattleCommand_UTurn first for EFFECT_U_TURN.
 
 	ld hl, wEnemyMonHP
 	ldh a, [hBattleTurn]
@@ -2398,6 +2398,12 @@ BattleCommand_CheckFaint:
 .multiple_hit_raise_sub
 	call BattleCommand_RaiseSub
 .finish
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_U_TURN
+	jr nz, .done
+	call BattleCommand_UTurn
+.done
 	jp EndMoveEffect
 
 BattleCommand_BuildOpponentRage:
