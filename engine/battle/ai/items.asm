@@ -12,6 +12,9 @@ AI_SwitchOrTryItem:
 	farcall CheckEnemyLockedIn
 	ret nz
 
+	call CheckEnemyTrapped
+	jp nz, AI_TryItem
+
 	; always load the first trainer class in wTrainerClass for Battle Tower trainers
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
 	ld a, [wInBattleTowerBattle]
@@ -760,41 +763,6 @@ AI_TrySwitch:
 	; fallthrough
 
 AI_Switch:
-; If the enemy mon has U-Turn, use it instead of switching.
-; Does not account for type immunities, e.g. Volt Switch.
-
-	ld b, EFFECT_U_TURN
-	call AIHasMoveEffect
-	jr nc, .no_u_turn
-
-; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn, unless also trapped.
-; Don't need to check for X Accuracy status as it minimizes switching chance.
-
-	ld a, [wEnemyAccLevel]
-	cp BASE_STAT_LEVEL
-	jr c, .check_trapped
-
-	ld a, [wPlayerEvaLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .check_trapped
-
-.u_turn
-	ld a, 1
-	ld [wEnemyWantsToUTurn], a
-	and a
-	ret
-
-.check_trapped
-	call CheckEnemyTrapped
-	jr nz, .u_turn
-	jr .switch
-
-.no_u_turn
-; Can't switch if trapped. Had to be moved down here for U-Turn shenanigans.
-	call CheckEnemyTrapped
-	jp nz, AI_TryItem
-
-.switch
 	ld a, $1
 	ld [wEnemyIsSwitching], a
 	ld [wEnemyGoesFirst], a
