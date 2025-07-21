@@ -34,7 +34,7 @@ Function115dd3:
 	call ByteFill
 	call Function115e22
 	ld a, [wc309]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_115e86
@@ -88,7 +88,7 @@ Function115e22:
 
 Function115e2b:
 	ld a, [wc30a]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_115e59
@@ -100,7 +100,7 @@ Function115e2b:
 	push de
 	pop hl
 	ld a, [wc30b]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	add hl, bc
@@ -522,7 +522,7 @@ Function1162f2:
 	ld a, [wc310]
 	cp EGG
 	ret z
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_1168c5
@@ -563,7 +563,7 @@ Function1162f2:
 	jr nz, .asm_116321
 	call Function116468
 	ld a, [wc3f5]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_1168c5
