@@ -99,7 +99,7 @@ CelebiEvent_SpawnLeaf: ; unreferenced
 	ret nz
 	ld a, [hl]
 	and $18
-	sla a
+	add a
 	add $40
 	ld d, a
 	ld e, $0
