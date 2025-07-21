@@ -1147,6 +1147,8 @@ LoadSpecialTrainerAndPokemonWithOTSprite:
 
 LoadOpponentTrainerAndPokemonWithOTSprite:
 	farcall LoadOpponentTrainerAndPokemon
+	; fallthrough
+
 BattleTowerLoadOpponentMerge:
 	ldh a, [rSVBK]
 	push af
@@ -1168,11 +1170,11 @@ BattleTowerLoadOpponentMerge:
 ; because s/he is chosen randomly and appears out of nowhere
 	ld a, [wScriptVar]
 	dec a
-	sla a
+	add a
 	ld e, a
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	ld c, a
 	ld b, 0
 	ld d, 0
