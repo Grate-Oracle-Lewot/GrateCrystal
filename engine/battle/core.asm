@@ -281,7 +281,6 @@ BattleTurn:
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wEffectCarryover], a
-	ld [wEnemyWantsToUTurn], a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
