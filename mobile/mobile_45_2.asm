@@ -6,7 +6,7 @@ Function116567:
 	inc [hl]
 .asm_116570
 	ld a, $7
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_1167eb
@@ -18,7 +18,7 @@ Function116567:
 	push de
 	pop hl
 	ld a, [wc3f6]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	add hl, bc
@@ -179,9 +179,9 @@ Function11665c:
 	call Random
 	ldh a, [hRandomAdd]
 	and $7
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	add $30
 	ld [wc30e], a
 	call Function116797
@@ -259,9 +259,9 @@ Function1166f4:
 	dec a
 
 .asm_11670c
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	add $48
 	cp [hl]
 	jr z, .asm_116702
@@ -280,9 +280,9 @@ Function11671f:
 	call Random
 	ldh a, [hRandomAdd]
 	and $7
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	add $30
 	cp [hl]
 	jr z, .asm_11672d
@@ -376,7 +376,7 @@ asm_1167af:
 	ld a, [wc311]
 	cp $ff
 	ret z
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	ld hl, Unknown_1167eb
@@ -388,7 +388,7 @@ asm_1167af:
 	push de
 	pop hl
 	ld a, [wc312]
-	sla a
+	add a
 	ld c, a
 	ld b, 0
 	add hl, bc
