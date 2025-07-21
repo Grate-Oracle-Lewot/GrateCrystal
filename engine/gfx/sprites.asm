@@ -318,7 +318,7 @@ AddOrSubtractY:
 	jr z, .ok
 	; -8 - a
 	add 8
-	xor $ff
+	cpl
 	inc a
 
 .ok
@@ -333,7 +333,7 @@ AddOrSubtractX:
 	jr z, .ok
 	; -8 - a
 	add 8
-	xor $ff
+	cpl
 	inc a
 
 .ok
