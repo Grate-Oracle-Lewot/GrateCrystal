@@ -811,9 +811,9 @@ Function17d48d:
 	ld a, [hli]
 	ld [wcd52], a
 	ld a, [hli]
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	add $98
 	ld [wcd53], a
 	ld de, wcd4f
@@ -1230,9 +1230,9 @@ Function17d7e5:
 	ld a, [hli]
 	ld [wcd52], a
 	ld a, [hli]
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
 	add $98
 	ld [wcd53], a
 	ld de, wcd4f
