@@ -281,6 +281,7 @@ BattleTurn:
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wEffectCarryover], a
+	ld [wEnemyWantsToUTurn], a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
@@ -290,9 +291,7 @@ BattleTurn:
 
 	call IsMobileBattle
 	jr nz, .not_disconnected
-	farcall Function100da5
-	farcall StartMobileInactivityTimer
-	farcall Function100dd8
+	farcall StartMobileInactivityTimerWithEntourage
 	jr c, .quit
 .not_disconnected
 
