@@ -2,17 +2,9 @@ AIScoring: ; used only for BANK(AIScoring)
 
 
 AI_Basic:
-; AI_Switch wants to use U-Turn instead of switching under certain conditions.
-; The actual move discouragement has to wait until here to avoid being overwritten.
-	ld a, [wEnemyWantsToUTurn]
-	and a
-	jr z, .basic
-	call AI_DismissEverythingButUTurn
-
 ; Don't do anything redundant:
 ;  -Using status-only moves if the player can't be statused
 ;  -Using moves that fail if they've already been used
-.basic
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld b, NUM_MOVES + 1
@@ -72,28 +64,6 @@ AI_Basic:
 	jr .checkmove
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
-
-AI_DismissEverythingButUTurn:
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	call AIGetMoveAttributes
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_U_TURN
-	jr z, .checkmove
-
-	call AIDismissMove
-	jr .checkmove
 
 
 AI_Status:
