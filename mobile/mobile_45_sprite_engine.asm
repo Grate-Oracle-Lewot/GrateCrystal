@@ -769,7 +769,7 @@ Function116468:
 	ld a, [wc3f1]
 	sub [hl]
 	jr nc, .asm_1164c1
-	xor $ff
+	cpl
 	inc a
 
 .asm_1164c1
@@ -790,12 +790,12 @@ Function116468:
 	jr c, .asm_1164f2
 	ld c, $0
 	ld a, [wc3fa]
-	xor $ff
+	cpl
 	add $1
 	rl c
 	ld [wc3fa], a
 	ld a, [wc3f9]
-	xor $ff
+	cpl
 	add c
 	ld [wc3f9], a
 
@@ -822,7 +822,7 @@ Function116468:
 	ld a, [wc3f3]
 	sub [hl]
 	jr nc, .asm_11651c
-	xor $ff
+	cpl
 	inc a
 
 .asm_11651c
@@ -843,12 +843,12 @@ Function116468:
 	jr c, .asm_11654d
 	ld c, $0
 	ld a, [wc3fc]
-	xor $ff
+	cpl
 	add $1
 	rl c
 	ld [wc3fc], a
 	ld a, [wc3fb]
-	xor $ff
+	cpl
 	add c
 	ld [wc3fb], a
 
