@@ -197,11 +197,11 @@ Function16cac4:
 	and $3
 	ld b, a
 	ld a, [hl]
-	sla a
+	add a
 	rl b
-	sla a
+	add a
 	rl b
-	sla a
+	add a
 	rl b
 	ld a, b
 	ret
@@ -212,8 +212,8 @@ Function16cad8:
 	ret
 
 Function16cadc:
-	sla a
-	sla a
+	add a
+	add a
 	ld b, a
 	inc hl
 	ld a, [hl]
@@ -234,11 +234,11 @@ Function16cae8:
 	or b
 	ld [hld], a
 	ld a, c
-	sla a
-	sla a
-	sla a
-	sla a
-	sla a
+	add a
+	add a
+	add a
+	add a
+	add a
 	ld b, a
 	ld a, [hl]
 	and $1f
