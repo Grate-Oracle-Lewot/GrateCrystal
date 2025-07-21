@@ -1136,8 +1136,8 @@ MobileTradeAnim_FadeToBlack:
 	ldh a, [rBGP]
 	and a
 	jr z, .blank
-	sla a
-	sla a
+	add a
+	add a
 	call DmgToCgbBGPals
 	call DmgToCgbObjPal0
 	ld c, 4
