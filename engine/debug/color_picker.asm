@@ -812,19 +812,19 @@ DebugColor_CalculatePalette:
 	ld e, a
 	ld a, [wDebugGreenChannel]
 	and %00000111
-	sla a
+	add a
 	swap a
 	or e
 	ld e, a
 	ld a, [wDebugGreenChannel]
 	and %00011000
-	sla a
+	add a
 	swap a
 	ld d, a
 	ld a, [wDebugBlueChannel]
 	and %00011111
-	sla a
-	sla a
+	add a
+	add a
 	or d
 	ld d, a
 	ld a, [wDebugColorCurColor]
@@ -1373,19 +1373,19 @@ DebugTileset_CalculatePalette:
 	ld e, a
 	ld a, [wDebugGreenChannel]
 	and %0000111
-	sla a
+	add a
 	swap a
 	or e
 	ld e, a
 	ld a, [wDebugGreenChannel]
 	and %00011000
-	sla a
+	add a
 	swap a
 	ld d, a
 	ld a, [wDebugBlueChannel]
 	and %00011111
-	sla a
-	sla a
+	add a
+	add a
 	or d
 	ld d, a
 	ld a, [wDebugTilesetCurColor]
