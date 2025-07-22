@@ -781,17 +781,20 @@ AI_Switch:
 	call AIHasMoveEffect
 	jr nc, .no_u_turn
 
-; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn.
-; Don't need to check for X Accuracy status as it minimizes switching chance.
+; If enemy has X Accuracy status, skip checking accuracy and evasion.
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	jr nz, .x_accuracy
 
+; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn.
 	ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL
 	jr c, .no_u_turn
-
 	ld a, [wPlayerEvaLevel]
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .no_u_turn
 
+.x_accuracy
 ; Switch instead of using U-Turn if enemy is infatuated, confused, Encored, Destiny Bonded, Frozen, Paralyzed, or asleep.
 
 	ld a, [wEnemySubStatus1]
