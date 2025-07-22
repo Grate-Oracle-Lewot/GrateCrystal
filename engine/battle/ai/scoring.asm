@@ -2,6 +2,18 @@ AIScoring: ; used only for BANK(AIScoring)
 
 
 AI_Basic:
+; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN, but run all other AI code afterward.
+; AI will typically switch if Perish Count is 1, but if the enemy's trapped, this offers another way out.
+; If they don't know U-Turn, all moves will be equally affected. That's why we still run the rest of the code, to get normal relative move weights.
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	jr z, .basic
+	ld a, [wEnemyPerishCount]
+	cp 1
+	jr nz, .basic
+	call AI_DismissEverythingButUTurn
+
+.basic
 ; Don't do anything redundant:
 ;  -Using status-only moves if the player can't be statused
 ;  -Using moves that fail if they've already been used
@@ -64,6 +76,28 @@ AI_Basic:
 	jr .checkmove
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
+
+AI_DismissEverythingButUTurn:
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	call AIGetMoveAttributes
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_U_TURN
+	jr z, .checkmove
+
+	call AIDismissMove
+	jr .checkmove
 
 
 AI_Status:
