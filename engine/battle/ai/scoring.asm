@@ -2,17 +2,17 @@ AIScoring: ; used only for BANK(AIScoring)
 
 
 AI_Basic:
-; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN, but run all other AI code afterward to get normal relative move weights.
-; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn offers another escape route.
-; AI_Switch will defer to U-Turn instead of switching barring conditions that could cause U-Turn to fail, favoring a damaging switch over a normal one.
-; Speed isn't compared, but if enemy is KO'd before U-Turn, it saves the incoming mon from being hit, effectively changing into a sacrifice play.
+; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN or EFFECT_BATON_PASS, but run all other AI code afterward to get normal relative move weights.
+; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn and Baton Pass offer alternate escape routes.
+; AI_Switch will specifically defer to U-Turn instead of switching, barring conditions that could cause U-Turn to fail. This favors a damaging switch over a normal one.
+; Deferment doesn't compare speed, but if the U-Turning mon is KO'd, it saves the next mon from being hit, effectively turning into a sacrifice play.
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .basic
 	ld a, [wEnemyPerishCount]
 	cp 1
 	jr nz, .basic
-	call AI_DismissEverythingButUTurn
+	call GetTheHellOutOfDodge
 
 .basic
 ; Don't do anything redundant:
@@ -78,7 +78,8 @@ AI_Basic:
 
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
-AI_DismissEverythingButUTurn:
+GetTheHellOutOfDodge:
+; Dismiss everything except EFFECT_BATON_PASS and EFFECT_U_TURN.
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
@@ -94,6 +95,8 @@ AI_DismissEverythingButUTurn:
 
 	call AIGetMoveAttributes
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_BATON_PASS
+	jr z, .checkmove
 	cp EFFECT_U_TURN
 	jr z, .checkmove
 
