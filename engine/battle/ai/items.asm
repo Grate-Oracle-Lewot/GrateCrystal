@@ -763,6 +763,48 @@ AI_TrySwitch:
 	; fallthrough
 
 AI_Switch:
+; If the enemy mon has U-Turn, use it instead of switching.
+; Does not account for type immunities, e.g. Volt Switch.
+; If trapped by Bind, Mean Look, etc., we never reach here, but U-Turn still gets favored.
+
+	ld b, EFFECT_U_TURN
+	call AIHasMoveEffect
+	jr nc, .no_u_turn
+
+; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn.
+; Don't need to check for X Accuracy status as it minimizes switching chance.
+
+	ld a, [wEnemyAccLevel]
+	cp BASE_STAT_LEVEL
+	jr c, .no_u_turn
+
+	ld a, [wPlayerEvaLevel]
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .no_u_turn
+
+; Switch instead of using U-Turn if enemy is infatuated, confused, Encored, Destiny Bonded, Frozen, Paralyzed, or asleep.
+
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_IN_LOVE, a
+	jr nz, .no_u_turn
+
+	ld a, [wEnemySubStatus3]
+	bit SUBSTATUS_CONFUSED, a
+	jr nz, .no_u_turn
+
+	ld a, [wEnemySubStatus5]
+	and 1 << SUBSTATUS_ENCORED | 1 << SUBSTATUS_DESTINY_BOND
+	jr nz, .no_u_turn
+
+	ld a, [wEnemyMonStatus]
+	and 1 << FRZ | 1 << PAR | SLP
+	jr nz, .no_u_turn
+
+; Clear carry flag.
+	and a
+	ret
+
+.no_u_turn
 	ld a, $1
 	ld [wEnemyIsSwitching], a
 	ld [wEnemyGoesFirst], a
