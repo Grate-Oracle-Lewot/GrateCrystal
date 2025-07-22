@@ -2278,9 +2278,9 @@ ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, GROWL
-	db 8, RAZOR_LEAF
-	db 12, REFLECT
+	db 2, SMOG
+	db 3, SLAM
+	db 4, GUILLOTINE
 	db 12, LIGHT_SCREEN
 	db 15, SLEEP_POWDER
 	db 22, SYNTHESIS
@@ -2328,10 +2328,10 @@ MeganiumEvosAttacks:
 CyndaquilEvosAttacks:
 	db EVOLVE_LEVEL, 14, QUILAVA
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 2, DEFENSE_CURL
-	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 1, DOUBLESLAP
+	db 2, BIND
+	db 3, MEGA_KICK
+	db 4, JUMP_KICK
 	db 15, FURY_SWIPES
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
@@ -2375,10 +2375,10 @@ TyphlosionEvosAttacks:
 TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 2, TAIL_WHIP
-	db 7, RAGE
-	db 12, CLAMP
+	db 1, SING
+	db 2, HYPNOSIS
+	db 3, FIRE_BLAST
+	db 4, NIGHTMARE
 	db 17, VICEGRIP
 	db 20, BITE
 	db 26, SCARY_FACE
