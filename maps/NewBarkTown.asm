@@ -120,15 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke WIGGLYTUFF, 100, CANDIED_YAM
-	givepoke SHUCKLE, 100, CANDIED_YAM
-	closetext
-	winlosstext NewBarkTownSignText, 0
-	loadtrainer ERIKA, ERIKA1
-	startbattle
-	reloadmapafterbattle
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
