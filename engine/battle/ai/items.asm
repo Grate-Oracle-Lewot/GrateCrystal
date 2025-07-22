@@ -784,7 +784,12 @@ AI_Switch:
 ; If enemy has X Accuracy status, skip checking accuracy and evasion.
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_X_ACCURACY, a
-	jr nz, .x_accuracy
+	jr nz, .no_miss
+
+; If player is identified by Foresight, skip checking accuracy and evasion.
+	ld a, [wPlayerSubStatus1]
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .no_miss
 
 ; If enemy's accuracy is lowered or player's evasion is raised, switch instead of using U-Turn.
 	ld a, [wEnemyAccLevel]
@@ -794,7 +799,7 @@ AI_Switch:
 	cp BASE_STAT_LEVEL + 1
 	jr nc, .no_u_turn
 
-.x_accuracy
+.no_miss
 ; Switch instead of using U-Turn if enemy is infatuated, confused, Encored, Destiny Bonded, Frozen, Paralyzed, or asleep.
 
 	ld a, [wEnemySubStatus1]
