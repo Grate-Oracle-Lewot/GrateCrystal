@@ -2,9 +2,10 @@ AIScoring: ; used only for BANK(AIScoring)
 
 
 AI_Basic:
-; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN, but run all other AI code afterward.
-; AI will typically switch if Perish Count is 1, but if the enemy's trapped, this offers another way out.
-; If they don't know U-Turn, all moves will be equally affected. That's why we still run the rest of the code, to get normal relative move weights.
+; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN, but run all other AI code afterward to get normal relative move weights.
+; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn offers another escape route.
+; AI_Switch will defer to U-Turn instead of switching barring conditions that could cause U-Turn to fail, favoring a damaging switch over a normal one.
+; Speed isn't compared, but if enemy is KO'd before U-Turn, it saves the incoming mon from being hit, effectively changing into a sacrifice play.
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .basic
