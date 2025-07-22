@@ -763,9 +763,19 @@ AI_TrySwitch:
 	; fallthrough
 
 AI_Switch:
-; If the enemy mon has U-Turn, use it instead of switching.
-; Does not account for type immunities, e.g. Volt Switch.
-; If trapped by Bind, Mean Look, etc., we never reach here, but U-Turn still gets favored.
+; If enemy's Perish Count is 1, conditionally favor using U-Turn over switching.
+; If trapped by Bind, Mean Look, etc., we never reach here, but AI_Basic still favors U-Turn over other moves.
+
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	jr z, .no_u_turn
+
+	ld a, [wEnemyPerishCount]
+	cp 1
+	jr nz, .no_u_turn
+
+; If enemy doesn't know U-Turn, go back to normal switching behavior.
+; NOTE: Nothing here accounts for type immunities, e.g. Volt Switch.
 
 	ld b, EFFECT_U_TURN
 	call AIHasMoveEffect
