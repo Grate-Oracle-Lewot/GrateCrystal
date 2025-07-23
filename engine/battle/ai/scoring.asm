@@ -2,6 +2,10 @@ AIScoring: ; used only for BANK(AIScoring)
 
 
 AI_Basic:
+; Skip Perish Song check if the enemy has only one Pokemon [remaining].
+	call AICheckLastEnemyMon
+	jr c, .basic
+
 ; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN or EFFECT_BATON_PASS, but run all other AI code afterward to get normal relative move weights.
 ; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn and Baton Pass offer alternate escape routes.
 ; AI_Switch will specifically defer to U-Turn instead of switching, barring conditions that could cause U-Turn to fail. This favors a damaging switch over a normal one.
