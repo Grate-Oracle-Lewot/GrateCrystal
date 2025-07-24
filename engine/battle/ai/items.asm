@@ -764,7 +764,7 @@ AI_TrySwitch:
 
 AI_Switch:
 ; If enemy's Perish Count is 1, conditionally favor using U-Turn over switching.
-; If trapped by Bind, Mean Look, etc., we never reach here, but AI_Basic still favors U-Turn, as well as Baton Pass.
+; If trapped by Bind, Mean Look, etc., we never reach here, but AI_Basic still favors U-Turn.
 
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
@@ -818,7 +818,7 @@ AI_Switch:
 	and 1 << FRZ | 1 << PAR | SLP
 	jr nz, .no_u_turn
 
-; Clear carry flag.
+; Clear carry flag. Actual favoring of U-Turn handled in AI_Basic.
 	and a
 	ret
 
