@@ -291,7 +291,7 @@ Prize Pokémon:
 
 - Move lists in https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/ai updated. Most notably, "useful moves" now consists only of moves with decent base power, 100% accuracy, no type that's immune to them, and no drawbacks like (re)charge turns or recoil. Spore is also on there due to being the best status move.
 
-- AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM). A few similar tweaks to AI_Redundant, and lastly, if the AI is down to a Perish Count of 1, it massively favors Baton Pass and U-Turn.
+- AI_BASIC now discourages status moves if the player has a Substitute (important since Substitute is once again a universal TM). A few similar tweaks to AI_Redundant, and lastly, if the AI is down to a Perish Count of 1, it massively favors U-Turn.
 
 - AI_STATUS now discourages Leech Seed if the player is a Grass type, and no longer discourages Sleep moves based on nonexistent type immunities. It also encourages status moves, including Leech Seed and Confusion-inducing moves, if the player is storing energy with Bide.
 
