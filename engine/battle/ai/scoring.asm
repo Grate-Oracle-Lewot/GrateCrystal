@@ -6,8 +6,8 @@ AI_Basic:
 	call AICheckLastEnemyMon
 	jr c, .basic
 
-; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN or EFFECT_BATON_PASS, but run all other AI code afterward to get normal relative move weights.
-; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn and Baton Pass offer alternate escape routes.
+; If enemy's Perish Count is 1, dismiss all moves but those with EFFECT_U_TURN, but run all other AI code afterward to get normal relative move weights.
+; CheckAbleToSwitch will often switch if Perish Count is 1, but if it can't due to Bind/Mean Look/etc., U-Turn offers an alternate escape route.
 ; AI_Switch will specifically defer to U-Turn instead of switching, barring conditions that could cause U-Turn to fail. This favors a damaging switch over a normal one.
 ; Deferment doesn't compare speed, but if the U-Turning mon is KO'd, it saves the next mon from being hit, effectively turning into a sacrifice play.
 	ld a, [wEnemySubStatus1]
@@ -83,7 +83,7 @@ AI_Basic:
 INCLUDE "data/battle/ai/status_only_effects.asm"
 
 GetTheHellOutOfDodge:
-; Dismiss everything except EFFECT_BATON_PASS and EFFECT_U_TURN.
+; Dismiss all moves but those with EFFECT_U_TURN.
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
 	ld c, NUM_MOVES + 1
@@ -99,8 +99,6 @@ GetTheHellOutOfDodge:
 
 	call AIGetMoveAttributes
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_BATON_PASS
-	jr z, .checkmove
 	cp EFFECT_U_TURN
 	jr z, .checkmove
 
@@ -1559,7 +1557,7 @@ AI_Smart_UTurn:
 	ld a, [wEnemySubStatus5]
 	and 1 << SUBSTATUS_TOXIC | 1 << SUBSTATUS_CANT_RUN
 	jr nz, .encourage
-	jr AI_Smart_BatonPass
+	jr AI_Smart_SwitchMoves
 
 .greatly_encourage
 	dec [hl]
@@ -1567,10 +1565,7 @@ AI_Smart_UTurn:
 	dec [hl]
 	; fallthrough
 
-AI_Smart_BatonPass:
-; Teleport, Baton Pass.
-; The AI_Basic layer dismisses these moves if the enemy has only one Pokemon [remaining].
-
+AI_Smart_SwitchMoves:
 ; Discourage this move if the enemy has Spikes around them. Continue regardless.
 	ld a, [wEnemyScreens]
 	bit SCREENS_SPIKES, a
@@ -1589,14 +1584,24 @@ AI_Smart_BatonPass:
 	inc [hl]
 	ret
 
+AI_Smart_BatonPass:
+; Teleport, Baton Pass.
+; The AI_Basic layer dismisses these moves if the enemy has only one Pokemon [remaining].
+
+; Dismiss this move if enemy is Perish Songed. Regardless, execute AI_Smart_SwitchMoves.
+	ld a, [wEnemySubStatus1]
+	bit SUBSTATUS_PERISH, a
+	call nz, AIDismissMove
+	jr AI_Smart_SwitchMoves
+
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 ; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
 
-; If the player doesn't have Spikes around them, merge into AI_Smart_BatonPass, skipping enemy Spikes check.
+; If the player doesn't have Spikes around them, merge into AI_Smart_SwitchMoves, skipping enemy Spikes check.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	jr z, AI_Smart_BatonPass.no_spikes
+	jr z, AI_Smart_SwitchMoves.no_spikes
 
 ; 80% chance to encourage this move if the player has Spikes around them.
 	call AI_80_20
