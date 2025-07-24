@@ -1498,7 +1498,7 @@ AI_Smart_UTurn:
 	bit SUBSTATUS_X_ACCURACY, a
 	jr nz, .greatly_discourage
 
-; Skip Evasion check if identified by Foresight.
+; Skip Evasion check if the enemy is identified by Foresight.
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_IDENTIFIED, a
 	jr nz, .identified
@@ -1588,7 +1588,7 @@ AI_Smart_BatonPass:
 ; Teleport, Baton Pass.
 ; The AI_Basic layer dismisses these moves if the enemy has only one Pokemon [remaining].
 
-; Dismiss this move if enemy is Perish Songed. Regardless, execute AI_Smart_SwitchMoves.
+; Dismiss this move (again) if enemy is Perish Songed. Regardless, execute AI_Smart_SwitchMoves.
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	call nz, AIDismissMove
