@@ -2319,6 +2319,7 @@ BattleCommand_SuperEffectiveText:
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero, and faint the user along with it if it used Destiny Bond.
 ; Ends the move effect if the opponent faints, but executes BattleCommand_UTurn first for EFFECT_U_TURN.
+; Doesn't execute BattleCommand_UTurn in a wild battle or if the user is fainted by Destiny Bond.
 
 	ld hl, wEnemyMonHP
 	ldh a, [hBattleTurn]
@@ -2379,7 +2380,7 @@ BattleCommand_CheckFaint:
 	ld a, DESTINY_BOND
 	call LoadAnim
 	call BattleCommand_SwitchTurn
-	jr .finish
+	jr .done
 
 .no_dbond
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -2398,6 +2399,9 @@ BattleCommand_CheckFaint:
 .multiple_hit_raise_sub
 	call BattleCommand_RaiseSub
 .finish
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .done
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_U_TURN
