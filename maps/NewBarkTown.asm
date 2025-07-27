@@ -120,6 +120,11 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	opentext
+	givepoke CUBONE, 5
+	givepoke CUBONE, 42
+	closetext
+	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
