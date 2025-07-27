@@ -45,5 +45,5 @@ PhoneContacts:
 	phone HIKER,        PARRY1,                ROUTE_45,                     ANYTIME, ParryPhoneCalleeScript,   ANYTIME, ParryPhoneCallerScript
 	phone PICNICKER,    ERIN1,                 ROUTE_46,                     ANYTIME, ErinPhoneCalleeScript,    ANYTIME, ErinPhoneCallerScript
 	phone TRAINER_NONE, PHONECONTACT_BUENA,    GOLDENROD_DEPT_STORE_ROOF,    ANYTIME, BuenaPhoneCalleeScript,   ANYTIME, BuenaPhoneCallerScript
-	phone KAREN,        KAREN1,                INDIGO_PLATEAU_POKECENTER_1F, ANYTIME, LewotPhoneCalleeScript,   0,       LewotPhoneCallerScript
+	phone KAREN,        KAREN1,                INDIGO_PLATEAU_POKECENTER_1F, ANYTIME, LewotPhoneCalleeScript,   0,       UnusedPhoneScript
 	assert_table_length NUM_PHONE_CONTACTS + 1
