@@ -3057,9 +3057,18 @@ BattleAnim_Agility:
 
 BattleAnim_BoneClub:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
+	anim_sound 0, 1, SFX_BONE_CLUB
 	anim_obj ANIM_OBJ_BONE_CLUB, 64, 88, $2
 	anim_wait 32
-	anim_sound 0, 1, SFX_BONE_CLUB
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_BoneRush:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_BONE_CLUB, 64, 88, $2
+	anim_wait 32
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
 	anim_ret
@@ -3797,19 +3806,6 @@ BattleAnim_AuraSphere:
 	anim_wait 32
 	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
 	anim_wait 24
-	anim_ret
-
-BattleAnim_BoneRush:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_BONE_CLUB
-	anim_obj ANIM_OBJ_BONE_RUSH, 132, 56, $2
-	anim_wait 16
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_HIT_YFIX, 120, 48, $0
-	anim_wait 16
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_LockOn:
