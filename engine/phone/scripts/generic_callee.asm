@@ -1243,9 +1243,6 @@ PhoneScript_MonFlavorText:
 	farsjump PhoneScript_HangUpText_Male
 
 .TooEnergetic:
-	farsjump .unnecessary
-
-.unnecessary
 	farwritetext UnknownTougherThanEverText
 	promptbutton
 	farsjump PhoneScript_HangUpText_Male
