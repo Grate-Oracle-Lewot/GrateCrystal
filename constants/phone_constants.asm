@@ -34,6 +34,7 @@
 	const PHONE_HIKER_PARRY
 	const PHONE_PICNICKER_ERIN
 	const PHONE_BUENA
+	const PHONE_GRATE_ORACLE_LEWOT
 NUM_PHONE_CONTACTS EQU const_value - 1
 
 ; SpecialPhoneCallList indexes (see data/phone/special_calls.asm)
