@@ -137,7 +137,7 @@ VenonatEggMoves:
 	db -1 ; end
 
 DiglettEggMoves:
-	db ROCK_WRECKER
+	db BONE_RUSH
 	db ROCK_SLIDE
 	db POWER_GEM
 	db SPIKES
