@@ -3056,17 +3056,9 @@ BattleAnim_Agility:
 	anim_ret
 
 BattleAnim_BoneClub:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_BONE_CLUB
-	anim_obj ANIM_OBJ_BONE_CLUB, 64, 88, $2
-	anim_wait 32
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
-	anim_ret
-
 BattleAnim_BoneRush:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC
-	anim_sound 6, 2, SFX_THROW_BALL
+	anim_sound 0, 1, SFX_BONE_CLUB
 	anim_obj ANIM_OBJ_BONE_CLUB, 64, 88, $2
 	anim_wait 32
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
