@@ -120,6 +120,8 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	checkevent EVENT_BEAT_RED
+	iftrue .skip
 	setevent EVENT_BEAT_RED
 	addcellnum PHONE_ELM
 	addcellnum PHONE_SCHOOLBOY_JACK
@@ -150,6 +152,7 @@ NewBarkTownSign:
 	addcellnum PHONE_BLACKBELT_KENJI
 	addcellnum PHONE_HIKER_PARRY
 	addcellnum PHONE_PICNICKER_ERIN
+.skip
 	warp SEAFOAM_CAVE_B2F, 9, 25
 	end
 	jumptext NewBarkTownSignText
