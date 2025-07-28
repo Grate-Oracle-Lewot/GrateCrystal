@@ -124,7 +124,7 @@ SeafoamCaveB2FKarenScript:
 	iftrue .AlreadyBeat
 	turnobject PLAYER, UP
 	opentext
-	writetext SeafoamB2FCaveGoldTrophyText
+	writetext SeafoamCaveB2FGoldTrophyText
 	setevent EVENT_DECO_GOLD_TROPHY
 	playsound SFX_GET_EGG_UNUSED
 	waitsfx
