@@ -169,7 +169,7 @@ LewotPhonePikminText:
 	line "like to do a no-"
 	cont "Pikmin-deaths run…"
 
-	para "To 100% the game,"
+	para "To 100<%> the game,"
 	line "the minimum amount"
 
 	para "of days with no"
