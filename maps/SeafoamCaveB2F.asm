@@ -130,6 +130,8 @@ SeafoamCaveB2FKarenScript:
 	waitsfx
 	writetext SeafoamCaveB2FDecorationText
 	waitbutton
+	checkcellnum PHONE_GRATE_ORACLE_LEWOT
+	iftrue .SkipPhone
 	callasm .PhoneAsm
 	ifequal PHONE_CONTACTS_FULL, .SkipPhone
 	writetext SeafoamCaveB2FLewotsNumberText
@@ -148,6 +150,8 @@ SeafoamCaveB2FKarenScript:
 	opentext
 	writetext SeafoamCaveB2FKarenCreditsText
 	waitbutton
+	checkcellnum PHONE_GRATE_ORACLE_LEWOT
+	iftrue .SkipPhone2
 	callasm .PhoneAsm
 	ifequal PHONE_CONTACTS_FULL, .SkipPhone2
 	writetext SeafoamCaveB2FLewotsNumberText
