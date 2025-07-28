@@ -33,7 +33,7 @@ SeafoamCaveB2FKarenScript:
 	writetext SeafoamCaveB2FKarenBattleText
 	waitbutton
 	closetext
-	winlosstext SeafoamCaveB2FKarenWinText, SeafoamCaveB2FKarenLossText
+	winlosstext SeafoamCaveB2FKarenWinText, 0
 	loadtrainer KAREN, KAREN2
 	startbattle
 	disappear SEAFOAMCAVEB2F_MONSTER
@@ -95,7 +95,7 @@ SeafoamCaveB2FKarenScript:
 	writetext SeafoamCaveB2FPoisonOakBattleText
 	waitbutton
 	closetext
-	winlosstext SeafoamCaveB2FPoisonOakWinText, SeafoamCaveB2FPoisonOakLossText
+	winlosstext SeafoamCaveB2FPoisonOakWinText, 0
 	loadtrainer POKEMON_PROF, POKEMON_PROF2
 	startbattle
 	dontrestartmapmusic
@@ -130,11 +130,14 @@ SeafoamCaveB2FKarenScript:
 	waitsfx
 	writetext SeafoamCaveB2FDecorationText
 	waitbutton
+	callasm .PhoneAsm
+	ifequal PHONE_CONTACTS_FULL, .SkipPhone
 	writetext SeafoamCaveB2FLewotsNumberText
 	addcellnum PHONE_GRATE_ORACLE_LEWOT
 	playsound SFX_REGISTER_PHONE_NUMBER
 	waitsfx
 	waitbutton
+.SkipPhone:
 	writetext SeafoamCaveB2FFirstCreditsText
 	waitbutton
 	closetext
@@ -145,12 +148,32 @@ SeafoamCaveB2FKarenScript:
 	opentext
 	writetext SeafoamCaveB2FKarenCreditsText
 	waitbutton
+	callasm .PhoneAsm
+	ifequal PHONE_CONTACTS_FULL, .SkipPhone2
+	writetext SeafoamCaveB2FLewotsNumberText
+	addcellnum PHONE_GRATE_ORACLE_LEWOT
+	playsound SFX_REGISTER_PHONE_NUMBER
+	waitsfx
+	waitbutton
+.SkipPhone2:
 	closetext
 .End:
 	special HealParty
 	refreshscreen
 	credits
 	end
+
+.PhoneAsm:
+	ld c, PHONE_GRATE_ORACLE_LEWOT
+	farcall AddPhoneNumber
+	jr c, .phonefull
+	xor a ; PHONE_CONTACT_GOT
+	jr .done
+.phonefull
+	ld a, PHONE_CONTACTS_FULL
+.done
+	ld [wScriptVar], a
+	ret
 
 SeafoamCaveB2FFeraligatrScript:
 	faceplayer
@@ -221,11 +244,6 @@ SeafoamCaveB2FKarenBattleText:
 
 SeafoamCaveB2FKarenWinText:
 	text "Wow. You did it!"
-	done
-
-SeafoamCaveB2FKarenLossText:
-	text "Eh, you'll get me"
-	line "next time."
 	done
 
 SeafoamCaveB2FKarenThanksForPlayingText:
@@ -379,11 +397,6 @@ SeafoamCaveB2FPoisonOakWinText:
 	text "IMPOSSIBLE!"
 	done
 
-SeafoamCaveB2FPoisonOakLossText:
-	text "The world of"
-	line "#MON is mine!"
-	done
-
 SeafoamCaveB2FPoisonOakNoText:
 	text "POISON OAK:"
 	line "NOOOOOOOOooooooo…!"
@@ -436,6 +449,14 @@ SeafoamCaveB2FKarenCreditsText:
 
 	para "Let's just cut to"
 	line "the credits."
+	done
+
+SeafoamCaveB2FPhone2Text:
+	text "…Oh, but take my"
+	line "number first."
+
+	para "<PLAYER> registered"
+	line "LEWOT's number."
 	done
 
 SeafoamCaveB2FFeraligatrText:
