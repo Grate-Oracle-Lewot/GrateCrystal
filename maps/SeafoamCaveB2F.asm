@@ -120,23 +120,33 @@ SeafoamCaveB2FKarenScript:
 	writetext SeafoamCaveB2FOakApologizeText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_FINALE
+	iftrue .AlreadyBeat
+	turnobject PLAYER, UP
+	opentext
+	writetext SeafoamB2FCaveGoldTrophyText
+	setevent EVENT_DECO_GOLD_TROPHY
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext SeafoamCaveB2FDecorationText
+	waitbutton
+	writetext SeafoamCaveB2FLewotsNumberText
+	addcellnum PHONE_GRATE_ORACLE_LEWOT
+	playsound SFX_REGISTER_PHONE_NUMBER
+	waitsfx
+	waitbutton
+	writetext SeafoamCaveB2FFirstCreditsText
+	waitbutton
+	closetext
+	setevent EVENT_BEAT_FINALE
+	sjump .End
+
+.AlreadyBeat:
 	opentext
 	writetext SeafoamCaveB2FKarenCreditsText
 	waitbutton
 	closetext
-	checkevent EVENT_BEAT_FINALE
-	iftrue .EndFinale
-	turnobject PLAYER, UP
-	opentext
-	writetext SeafoamCaveGoldTrophyText
-	setevent EVENT_DECO_GOLD_TROPHY
-	playsound SFX_GET_EGG_UNUSED
-	waitsfx
-	writetext SeafoamCaveDecorationText
-	waitbutton
-	closetext
-	setevent EVENT_BEAT_FINALE
-.EndFinale:
+.End:
 	special HealParty
 	refreshscreen
 	credits
@@ -389,24 +399,41 @@ SeafoamCaveB2FOakApologizeText:
 	line "apologize."
 	done
 
-SeafoamCaveB2FKarenCreditsText:
+SeafoamCaveB2FGoldTrophyText:
 	text "LEWOT: …"
 
-	para "Let's just cut to"
-	line "the credits."
-	done
-
-SeafoamCaveGoldTrophyText:
-	text "…Oh, but first,"
-	line "take this."
+	para "Well, I guess I"
+	line "should reward you."
 
 	para "<PLAYER> received"
 	line "GOLD TROPHY!"
 	done
 
-SeafoamCaveDecorationText:
+SeafoamCaveB2FDecorationText:
 	text "<PLAYER> sent the"
 	line "decoration home."
+	done
+
+SeafoamCaveB2FLewotsNumberText:
+	text "LEWOT: And why"
+	line "don't you take my"
+	cont "phone number, too."
+
+	para "<PLAYER> registered"
+	line "LEWOT's number."
+	done
+
+SeafoamCaveB2FFirstCreditsText:
+	text "LEWOT: …"
+
+	para "Credits time."
+	done
+
+SeafoamCaveB2FKarenCreditsText:
+	text "LEWOT: …"
+
+	para "Let's just cut to"
+	line "the credits."
 	done
 
 SeafoamCaveB2FFeraligatrText:
