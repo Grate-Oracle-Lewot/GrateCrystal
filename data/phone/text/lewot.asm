@@ -205,5 +205,5 @@ LewotPhoneHangUpText:
 	text "I'm sure you feel"
 	line "enlightened."
 
-	text "Enjoy the hack."
+	para "Enjoy the hack."
 	done
