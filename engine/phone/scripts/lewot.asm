@@ -6,7 +6,7 @@ LewotPhoneCalleeScript:
 	ifequal 1, .Water
 	ifequal 2, .Gen
 	ifequal 3, .IceSculpture
-	ifequal 4, .Pikmin4
+	ifequal 4, .Pikmin
 
 ; else
 	farwritetext LewotPhonePopcornText
@@ -28,8 +28,8 @@ LewotPhoneCalleeScript:
 	farwritetext LewotPhoneIceSculptureText
 	sjump .hangup
 
-.Pikmin4
-	farwritetext LewotPikmin4Text
+.Pikmin
+	farwritetext LewotPikminText
 
 .hangup
 	promptbutton
