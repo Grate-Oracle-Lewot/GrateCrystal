@@ -55,6 +55,7 @@ LoadBattleFontsHPBar:
 	lb bc, BANK(FontBattleExtra), 3 ; "<DO>" to "『"
 	call Get2bppViaHDMA
 	call LoadFrame
+	; fallthrough
 
 LoadHPBar:
 	ld de, EnemyHPBarBorderGFX
@@ -92,6 +93,8 @@ StatsScreen_LoadFont:
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 8
 	call Get2bppViaHDMA
+	; fallthrough
+
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
