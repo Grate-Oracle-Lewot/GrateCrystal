@@ -29,7 +29,7 @@ LewotPhoneCalleeScript:
 	sjump .hangup
 
 .Pikmin
-	farwritetext LewotPikminText
+	farwritetext LewotPhonePikminText
 
 .hangup
 	promptbutton
