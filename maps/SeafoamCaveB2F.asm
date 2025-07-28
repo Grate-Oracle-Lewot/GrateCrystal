@@ -58,7 +58,7 @@ SeafoamCaveB2FKarenScript:
 	special ReloadSpritesNoPalettes
 	pause 10
 	appear SEAFOAMCAVEB2F_OAK2
-	playsound SFX_WARP_TO
+	playsound SFX_PSYBEAM
 	waitsfx
 	special FadeInQuickly
 	turnobject SEAFOAMCAVEB2F_OAK1, DOWN
