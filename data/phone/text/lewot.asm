@@ -76,8 +76,8 @@ LewotPhoneGenText:
 	para "moves that claimed"
 	line "to be fully accur-"
 	cont "ate still had a 1"
-	cont "in 256 chance to"
-	cont "miss."
+	cont "in 256 chance of"
+	cont "missing."
 
 	para "I assumed this was"
 	line "true all the way"
