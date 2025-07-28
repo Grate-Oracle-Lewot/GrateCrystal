@@ -130,7 +130,7 @@ LewotPhoneIceSculptureText:
 	para "They had an ice"
 	line "sculpture of two"
 
-	cont "swans making a"
+	para "swans making a"
 	line "heart with their"
 	cont "necks, you know…"
 
