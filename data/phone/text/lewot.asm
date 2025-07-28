@@ -85,8 +85,8 @@ LewotPhoneGenText:
 	para "through Gen 3, and"
 	line "and thus didn't"
 
-	para "value accuracy very"
-	line "much."
+	para "value accuracy all"
+	line "that much."
 
 	para "So I liked to have"
 	line "an ultimate move"
