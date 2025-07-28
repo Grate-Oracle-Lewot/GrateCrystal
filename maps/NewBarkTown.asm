@@ -120,7 +120,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	addcellnum PHONE_GRATE_ORACLE_LEWOT
+	setevent EVENT_BEAT_RED
+	warp SEAFOAM_CAVE_B2F, 9, 25
+	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
