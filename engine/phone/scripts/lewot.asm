@@ -20,7 +20,7 @@ LewotPhoneCalleeScript:
 	farwritetext LewotPhoneWaterText
 	sjump .hangup
 
-.Water
+.Gen
 	farwritetext LewotPhoneGenText
 	sjump .hangup
 
