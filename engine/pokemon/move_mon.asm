@@ -1842,5 +1842,4 @@ LoadEnemyMonOutsideBattle:
 	ld c, a
 	ld b, SET_FLAG
 	ld hl, wPokedexSeen
-	predef SmallFarFlagAction
-	ret
+	predef_jump SmallFarFlagAction
