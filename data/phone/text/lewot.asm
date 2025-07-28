@@ -199,6 +199,16 @@ LewotPhonePikminText:
 
 	para "super dandori cave"
 	line "thing."
+
+	para "My record for a"
+	line "similar run in"
+
+	para "PIKMIN 3 is 18"
+	line "days, but I've"
+
+	para "never beaten the"
+	line "first two games"
+	cont "deathless."
 	done
 
 LewotPhoneHangUpText:
