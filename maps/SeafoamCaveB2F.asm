@@ -147,7 +147,6 @@ SeafoamCaveB2FKarenScript:
 	waitbutton
 	closetext
 .End:
-	special FadeBlackQuickly
 	special HealParty
 	refreshscreen
 	credits
