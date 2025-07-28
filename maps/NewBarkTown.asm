@@ -121,6 +121,35 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	setevent EVENT_BEAT_RED
+	addcellnum PHONE_ELM
+	addcellnum PHONE_SCHOOLBOY_JACK
+	addcellnum PHONE_POKEFAN_BEVERLY
+	addcellnum PHONE_SAILOR_HUEY
+	addcellnum PHONE_COOLTRAINERM_GAVEN
+	addcellnum PHONE_COOLTRAINERF_BETH
+	addcellnum PHONE_BIRDKEEPER_JOSE
+	addcellnum PHONE_COOLTRAINERF_REENA
+	addcellnum PHONE_YOUNGSTER_JOEY
+	addcellnum PHONE_BUG_CATCHER_WADE
+	addcellnum PHONE_FISHER_RALPH
+	addcellnum PHONE_PICNICKER_LIZ
+	addcellnum PHONE_HIKER_ANTHONY
+	addcellnum PHONE_CAMPER_TODD
+	addcellnum PHONE_PICNICKER_GINA
+	addcellnum PHONE_JUGGLER_IRWIN
+	addcellnum PHONE_BUG_CATCHER_ARNIE
+	addcellnum PHONE_SCHOOLBOY_ALAN
+	addcellnum PHONE_LASS_DANA
+	addcellnum PHONE_SCHOOLBOY_CHAD
+	addcellnum PHONE_POKEFANM_DEREK
+	addcellnum PHONE_FISHER_TULLY
+	addcellnum PHONE_POKEMANIAC_BRENT
+	addcellnum PHONE_PICNICKER_TIFFANY
+	addcellnum PHONE_BIRDKEEPER_VANCE
+	addcellnum PHONE_FISHER_WILTON
+	addcellnum PHONE_BLACKBELT_KENJI
+	addcellnum PHONE_HIKER_PARRY
+	addcellnum PHONE_PICNICKER_ERIN
 	warp SEAFOAM_CAVE_B2F, 9, 25
 	end
 	jumptext NewBarkTownSignText
