@@ -120,9 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	setevent EVENT_BEAT_RED
-	warp SEAFOAM_CAVE_B2F, 9, 25
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
