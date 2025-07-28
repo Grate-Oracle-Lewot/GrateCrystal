@@ -12,8 +12,7 @@ GetTrademonFrontpic:
 	ld [wCurSpecies], a
 	call GetBaseData
 	pop de
-	predef GetAnimatedFrontpic
-	ret
+	predef_jump GetAnimatedFrontpic
 
 AnimateTrademonFrontpic:
 	ld a, [wOTTrademonSpecies]
@@ -36,5 +35,4 @@ AnimateTrademonFrontpic:
 	hlcoord 7, 2
 	ld d, $0
 	ld e, ANIM_MON_TRADE
-	predef AnimateFrontpic
-	ret
+	predef_jump AnimateFrontpic
