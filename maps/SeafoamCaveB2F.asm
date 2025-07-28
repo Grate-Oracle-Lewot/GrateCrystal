@@ -147,6 +147,7 @@ SeafoamCaveB2FKarenScript:
 	waitbutton
 	closetext
 .End:
+	special FadeBlackQuickly
 	special HealParty
 	refreshscreen
 	credits
@@ -424,9 +425,11 @@ SeafoamCaveB2FLewotsNumberText:
 	done
 
 SeafoamCaveB2FFirstCreditsText:
-	text "LEWOT: …"
-
-	para "Credits time."
+	text "LEWOT: …You've seen"
+	line "the credits twice"
+	cont "already, but I'm"
+	cont "not sure how else"
+	cont "to end this."
 	done
 
 SeafoamCaveB2FKarenCreditsText:
