@@ -120,6 +120,7 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	addcellnum PHONE_GRATE_ORACLE_LEWOT
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
