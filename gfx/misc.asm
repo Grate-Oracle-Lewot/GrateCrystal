@@ -23,7 +23,11 @@ INCBIN "gfx/credits/theend.2bpp"
 SECTION "Font Inversed", ROMX
 
 FontInversed::
+if DEF(_HEART_FONT)
+INCBIN "gfx/font/font_inversed_heart.1bpp"
+else
 INCBIN "gfx/font/font_inversed.1bpp"
+endc
 
 
 SECTION "Copyright", ROMX
