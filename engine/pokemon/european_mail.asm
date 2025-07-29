@@ -28,15 +28,27 @@ IsMailEuropean:
 
 ; The regular font.
 StandardEnglishFont:
-INCBIN "gfx/font/english.1bpp"
+if DEF(_HEART_FONT)
+INCBIN "gfx/font/font_heart.1bpp"
+else
+INCBIN "gfx/font/font.1bpp"
+endc
 
 ; An extended font.
 FrenchGermanFont:
+if DEF(_HEART_FONT)
+INCBIN "gfx/font/french_german_heart.1bpp"
+else
 INCBIN "gfx/font/french_german.1bpp"
+endc
 
 ; An even more extended font.
 SpanishItalianFont:
+if DEF(_HEART_FONT)
+INCBIN "gfx/font/spanish_italian_heart.1bpp"
+else
 INCBIN "gfx/font/spanish_italian.1bpp"
+endc
 
 ConvertFrenchGermanMailToEnglish:
 ; Called if mail is French or German
