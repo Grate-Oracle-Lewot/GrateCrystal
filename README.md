@@ -451,6 +451,8 @@ make trio - Doduo, Magnemite, and Diglett. The Magnemite/Magneton that's normall
 
 make cattle - Tauros and Miltank, who will face each other, and Girafarig, who will face itself.
 
+make far - Snorlax and Misdreavus, who will face each other, and Farfetch'd, who will face itself.
+
 make slow - Slowpoke and Slugma. If you lose to the rival in the first battle, his Slowpoke will evolve into Slowking; if you win, Slowbro.
 
 make shucks - Shuckle, Delibird, and Smeargle.
