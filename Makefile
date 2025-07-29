@@ -29,6 +29,7 @@ roms := \
 	GrateCrystal_Alt_Turbin.gbc \
 	GrateCrystal_Alt_AbraShellderStarters.gbc \
 	GrateCrystal_Alt_MetronomeOnly.gbc \
+	GrateCrystal_HeartFont.gbc \
 	GrateCrystal11.gbc
 patches := GrateCrystal11.patch
 
@@ -80,6 +81,7 @@ GrateCrystal_Alt_MissingnoStarters_obj           := $(rom_obj:.o=no.o)
 GrateCrystal_Alt_Turbin_obj                      := $(rom_obj:.o=turbid.o)
 GrateCrystal_Alt_AbraShellderStarters_obj        := $(rom_obj:.o=startur.o)
 GrateCrystal_Alt_MetronomeOnly_obj               := $(rom_obj:.o=metro.o)
+GrateCrystal_HeartFont_obj                       := $(rom_obj:.o=heart.o)
 GrateCrystal11_obj                               := $(rom_obj:.o=11.o)
 GrateCrystal11_vc_obj                            := $(rom_obj:.o=11_vc.o)
 
@@ -102,12 +104,12 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro heart crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro
+all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur metro heart
 grate:        GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedJohtoStarters.gbc
@@ -138,6 +140,7 @@ no:           GrateCrystal_Alt_MissingnoStarters.gbc
 turbid:       GrateCrystal_Alt_Turbin.gbc
 startur:      GrateCrystal_Alt_AbraShellderStarters.gbc
 metro:        GrateCrystal_Alt_MetronomeOnly.gbc
+heart:        GrateCrystal_HeartFont.gbc
 crystal11:    GrateCrystal11.gbc
 crystal11_vc: GrateCrystal11.patch
 
@@ -195,6 +198,7 @@ tidy:
 	      $(GrateCrystal_Alt_Turbin_obj) \
 	      $(GrateCrystal_Alt_AbraShellderStarters_obj) \
 	      $(GrateCrystal_Alt_MetronomeOnly_obj) \
+	      $(GrateCrystal_HeartFont_obj) \
 	      $(GrateCrystal11_obj) \
 	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
@@ -263,6 +267,8 @@ startur:
 	tools/free_space.awk BANK=all GrateCrystal_Alt_AbraShellderStarters.map
 metro:
 	tools/free_space.awk BANK=all GrateCrystal_Alt_MetronomeOnly.map
+heart:
+	tools/free_space.awk BANK=all GrateCrystal_HeartFont.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
 RGBASMFLAGS += -E
@@ -297,6 +303,7 @@ $(GrateCrystal_Alt_MissingnoStarters_obj):           RGBASMFLAGS += -D _MISSINGN
 $(GrateCrystal_Alt_Turbin_obj):                      RGBASMFLAGS += -D _ADD_TURBIN
 $(GrateCrystal_Alt_AbraShellderStarters_obj):        RGBASMFLAGS += -D _TURBIN_STARTERS
 $(GrateCrystal_Alt_MetronomeOnly_obj):               RGBASMFLAGS += -D _METRONOME_ONLY
+$(GrateCrystal_HeartFont_obj):                       RGBASMFLAGS += -D _HEART_FONT
 $(GrateCrystal11_obj):                               RGBASMFLAGS += -D _CRYSTAL11
 $(GrateCrystal11_vc_obj):                            RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
@@ -351,6 +358,7 @@ $(foreach obj, $(GrateCrystal_Alt_MissingnoStarters_obj), $(eval $(call DEP,$(ob
 $(foreach obj, $(GrateCrystal_Alt_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:turbid.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_AbraShellderStarters_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_MetronomeOnly_obj), $(eval $(call DEP,$(obj),$(obj:metro.o=.asm))))
+$(foreach obj, $(GrateCrystal_HeartFont_obj), $(eval $(call DEP,$(obj),$(obj:heart.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
@@ -391,6 +399,7 @@ GrateCrystal_Alt_MissingnoStarters_opt            = -Cjv -t PM_CRYSTAL -i BYTE -
 GrateCrystal_Alt_Turbin_opt                       = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_AbraShellderStarters_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_MetronomeOnly_opt                = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_HeartFont_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt                                = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_vc_opt                             = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
@@ -424,6 +433,7 @@ GrateCrystal_Alt_MissingnoStarters_base           = us
 GrateCrystal_Alt_Turbin_base                      = us
 GrateCrystal_Alt_AbraShellderStarters_base        = us
 GrateCrystal_Alt_MetronomeOnly_base               = us
+GrateCrystal_HeartFont_base                       = us
 GrateCrystal11_base                               = us
 GrateCrystal11_vc_base                            = us
 
