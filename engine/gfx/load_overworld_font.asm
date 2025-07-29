@@ -9,7 +9,11 @@ LoadOverworldFont::
 	jp Get2bpp
 
 .OverworldFontGFX:
+if DEF(_HEART_FONT)
+INCBIN "gfx/font/overworld_heart.2bpp"
+else
 INCBIN "gfx/font/overworld.2bpp"
+endc
 
 .OverworldFontSpaceGFX:
 INCBIN "gfx/font/overworld_space.2bpp"
