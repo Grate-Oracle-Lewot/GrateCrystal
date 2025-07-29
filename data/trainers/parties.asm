@@ -4291,7 +4291,6 @@ endc
 endc
 endc
 endc
-endc
 	db -1 ; end
 
 	; RIVAL2 (4)
