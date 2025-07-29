@@ -179,6 +179,10 @@ if DEF(_CATTLE_STARTERS)
 	pokepic TAUROS
 	cry TAUROS
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	pokepic SNORALX
+	cry SNORLAX
+else
 if DEF(_SLOW_STARTERS)
 	pokepic SLUGMA
 	cry SLUGMA
@@ -265,6 +269,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -302,6 +307,9 @@ if DEF(_TRIO_STARTERS)
 else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, TAUROS
+else
+if DEF(_SNORLAX_MISDREAVS_FARFETCHD)
+	getmonname STRING_BUFFER_3, SNORLAX
 else
 if DEF(_SLOW_STARTERS)
 	getmonname STRING_BUFFER_3, SLUGMA
@@ -373,6 +381,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -403,6 +412,9 @@ if DEF(_TRIO_STARTERS)
 else
 if DEF(_CATTLE_STARTERS)
 	givepoke TAUROS, 5, GOLD_BERRY
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	givepoke SNORLAX, 5, GOLD_BERRY
 else
 if DEF(_SLOW_STARTERS)
 	givepoke SLUGMA, 5, GOLD_BERRY
@@ -450,6 +462,7 @@ if DEF(_TURBIN_STARTERS)
 	givepoke ABRA, 5, GOLD_BERRY
 else
 	givepoke CHIKORITA, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -523,6 +536,10 @@ if DEF(_CATTLE_STARTERS)
 	pokepic GIRAFARIG
 	cry GIRAFARIG
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	pokepic FARFETCH_D
+	cry FARFETCH_D
+else
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
 	pokepic SMEARGLE
 	cry SMEARGLE
@@ -595,6 +612,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -636,6 +654,9 @@ else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, GIRAFARIG
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	getmonname STRING_BUFFER_3, FARFETCH_D
+else
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
 	getmonname STRING_BUFFER_3, SMEARGLE
 else
@@ -673,6 +694,7 @@ if DEF(_MISSINGNO_STARTERS)
 	getmonname STRING_BUFFER_3, UNOWN
 else
 	getmonname STRING_BUFFER_3, CYNDAQUIL
+endc
 endc
 endc
 endc
@@ -746,6 +768,9 @@ else
 if DEF(_CATTLE_STARTERS)
 	givepoke GIRAFARIG, 5, GOLD_BERRY
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	givepoke FARFETCH_D, 5, STICK
+else
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
 	givepoke SMEARGLE, 5, GOLD_BERRY
 else
@@ -783,6 +808,7 @@ if DEF(_MISSINGNO_STARTERS)
 	givepoke UNOWN, 5, GOLD_BERRY
 else
 	givepoke CYNDAQUIL, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -855,6 +881,10 @@ else
 if DEF(_CATTLE_STARTERS)
 	pokepic MILTANK
 	cry MILTANK
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	pokepic MISDREAVUS
+	cry MISDREAVUS
 else
 if DEF(_SLOW_STARTERS)
 	pokepic SLOWPOKE
@@ -943,6 +973,7 @@ endc
 endc
 endc
 endc
+endc
 	waitbutton
 	closepokepic
 	opentext
@@ -983,6 +1014,9 @@ if DEF(_TRIO_STARTERS)
 else
 if DEF(_CATTLE_STARTERS)
 	getmonname STRING_BUFFER_3, MILTANK
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	getmonname STRING_BUFFER_3, MISDREAVUS
 else
 if DEF(_SLOW_STARTERS)
 	getmonname STRING_BUFFER_3, SLOWPOKE
@@ -1055,6 +1089,7 @@ endc
 endc
 endc
 endc
+endc
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -1088,6 +1123,9 @@ if DEF(_TRIO_STARTERS)
 else
 if DEF(_CATTLE_STARTERS)
 	givepoke MILTANK, 5, GOLD_BERRY
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	givepoke MISDREAVUS, 5, GOLD_BERRY
 else
 if DEF(_SLOW_STARTERS)
 	givepoke SLOWPOKE, 5, GOLD_BERRY
@@ -1135,6 +1173,7 @@ if DEF(_TURBIN_STARTERS)
 	givepoke SHELLDER, 5, GOLD_BERRY
 else
 	givepoke TOTODILE, 5, GOLD_BERRY
+endc
 endc
 endc
 endc
@@ -1756,6 +1795,10 @@ if DEF(_CATTLE_STARTERS)
 	line "TAUROS, the bull"
 	cont "#MON?"
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	line "SNORLAX, the"
+	cont "normal #MON?"
+else
 if DEF(_SLOW_STARTERS)
 	line "SLUGMA, the fire"
 	cont "#MON?"
@@ -1842,6 +1885,7 @@ endc
 endc
 endc
 endc
+endc
 	done
 
 TakeCyndaquilText:
@@ -1885,6 +1929,10 @@ else
 if DEF(_CATTLE_STARTERS)
 	line "GIRAFARIG, the pa-"
 	cont "lindrome #MON?"
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	line "FARFETCH'D, the"
+	cont "duck #MON?"
 else
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
 	line "SMEARGLE, the move"
@@ -1958,6 +2006,7 @@ endc
 endc
 endc
 endc
+endc
 	done
 
 TakeTotodileText:
@@ -2001,6 +2050,10 @@ else
 if DEF(_CATTLE_STARTERS)
 	line "MILTANK, the cow"
 	cont "#MON?"
+else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	line "MISDREAVUS, the"
+	cont "ghost #MON?"
 else
 if DEF(_SLOW_STARTERS)
 	line "SLOWPOKE, the"
@@ -2064,6 +2117,7 @@ if DEF(_TURBIN_STARTERS)
 else
 	line "TOTODILE, the"
 	cont "water #MON?"
+endc
 endc
 endc
 endc
@@ -2670,6 +2724,11 @@ if DEF(_CATTLE_STARTERS)
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 else
+if DEF(_SNORLAX_MISDREAVUS_FARFETCHD)
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+else
 if DEF(_SLOW_STARTERS)
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
@@ -2738,6 +2797,7 @@ else
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+endc
 endc
 endc
 endc
