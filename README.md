@@ -549,8 +549,6 @@ Seasick/Mauve Sea - female player running frames, Mary sprites
 
 FrenchOrange - Karen walking frames
 
-Bronzeswagger - Hail weather icon (before I edited it)
-
 Mmmmmmmmmmmmmmmmm - Route 47 theme demix
 
 TriteHexagon - Dive theme demix
