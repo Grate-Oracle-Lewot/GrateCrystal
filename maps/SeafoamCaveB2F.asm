@@ -154,7 +154,7 @@ SeafoamCaveB2FKarenScript:
 	iftrue .SkipPhone2
 	callasm .PhoneAsm
 	ifequal PHONE_CONTACTS_FULL, .SkipPhone2
-	writetext SeafoamCaveB2FLewotsNumberText
+	writetext SeafoamCaveB2FPhone2Text
 	addcellnum PHONE_GRATE_ORACLE_LEWOT
 	playsound SFX_REGISTER_PHONE_NUMBER
 	waitsfx
