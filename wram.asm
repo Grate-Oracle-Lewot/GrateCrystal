@@ -1690,7 +1690,7 @@ wInBattleTowerBattle::
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wHiddenItemDistance:: db
 
 wFXAnimID:: dw
 
