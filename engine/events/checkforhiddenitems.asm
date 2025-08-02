@@ -102,12 +102,12 @@ CheckForHiddenItems:
 .y_is_positive
 	add d ; We add both X and Y distances...
 	ld d, a ; ...then save the result into D.
-	ld a, [wItemFinderDistance] ; Default value is -1 which means 255.
+	ld a, [wHiddenItemDistance] ; Default value is -1 which means 255.
 	cp d ; D is always positive, and has a max value of 9.
 	jr c, .min_distance_saved
 
 	ld a, d
-	ld [wItemFinderDistance], a
+	ld [wHiddenItemDistance], a
 .min_distance_saved
 	; If the distance is > 1, then we look for a closer item.
 	cp 2
