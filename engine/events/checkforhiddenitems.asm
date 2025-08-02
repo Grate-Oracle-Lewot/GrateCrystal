@@ -1,4 +1,6 @@
 CheckForHiddenItems:
+	ld a, -1
+	ld [wHiddenItemDistance], a
 ; Checks to see if there are hidden items on the screen that have not yet been found.  If it finds one, returns carry.
 	ld a, [wMapScriptsBank]
 	ld [wCurMapScriptBank], a
@@ -47,6 +49,7 @@ CheckForHiddenItems:
 ; Has this item already been found?  If not, set off the Itemfinder.
 	ld a, [wCurMapScriptBank]
 	call GetFarWord
+	push de
 	ld a, [wCurMapScriptBank]
 	call GetFarWord
 	ld d, h
@@ -54,6 +57,7 @@ CheckForHiddenItems:
 	ld b, CHECK_FLAG
 	call EventFlagAction
 	ld a, c
+	pop de
 	and a
 	jr z, .itemnearby
 
@@ -67,12 +71,49 @@ CheckForHiddenItems:
 	dec a
 	jr nz, .loop
 
+; If the distance isn't -1, it means we have found an item.
+	ld a, [wHiddenItemDistance]
+	cp -1
+	jr nz, .itemnearby_no_pop
+
 .nobgeventitems
 	xor a
 	ret
 
 .itemnearby
+	; Measure the distance to the item.
+	ld a, [wXCoord]
+	sub d
+	bit 7, a
+	jr z, .x_is_positive
+
+	cpl
+	inc a
+.x_is_positive
+	ld d, a
+
+	ld a, [wYCoord]
+	sub e
+	bit 7, a
+	jr z, .y_is_positive
+
+	cpl
+	inc a
+.y_is_positive
+	add d ; We add both X and Y distances...
+	ld d, a ; ...then save the result into D.
+	ld a, [wItemFinderDistance] ; Default value is -1 which means 255.
+	cp d ; D is always positive, and has a max value of 9.
+	jr c, .min_distance_saved
+
+	ld a, d
+	ld [wItemFinderDistance], a
+.min_distance_saved
+	; If the distance is > 1, then we look for a closer item.
+	cp 2
+	jr nc, .next
 	pop hl
+.itemnearby_no_pop
 	scf
 	ret
 
