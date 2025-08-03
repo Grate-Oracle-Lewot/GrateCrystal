@@ -223,7 +223,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Most Berries and some other items renamed for flavor (but not to the Gen III+ Berry names)
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball (Timer Ball can tick up to x10 catch chance)
 - 60 TMs and 8 HMs
-- Itemfinder replaced with consumable versions called Swag Beacons
+- Itemfinder replaced with consumable versions called Swag Beacons, and these beep faster the closer you are to a hidden item
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
 - Removed: Berserk Gene, Metal Powder
 
