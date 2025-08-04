@@ -56,11 +56,11 @@ CeladonGameCornerFisherScript:
 	promptbutton
 	checkitem COIN_CASE
 	iffalse .NoCoinCase
-	checkcoins MAX_COINS - 1
+	checkcoins MAX_COINS - 19
 	ifequal HAVE_MORE, .FullCoinCase
 	getstring STRING_BUFFER_4, .coinname
 	scall .GiveCoins
-	givecoins 18
+	givecoins 19
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_AT_CELADON
 .GotCoins:
 	writetext CeladonGameCornerFisherText2
@@ -74,7 +74,7 @@ CeladonGameCornerFisherScript:
 	end
 
 .coinname
-	db "COIN@"
+	db "19 COINS@"
 
 .NoCoinCase:
 	writetext CeladonGameCornerFisherNoCoinCaseText
