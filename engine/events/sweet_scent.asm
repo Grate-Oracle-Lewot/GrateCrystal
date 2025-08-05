@@ -45,7 +45,9 @@ SweetScentEncounter:
 ; Force the wildmon to be a similar level to the first mon in the player's party.
 	ld a, [wPartyMon1Level]
 	cp 3
-	jr c, .low_lv
+	jr c, .done
+	cp 99
+	jr nc, .done
 	ld b, a
 	dec b
 	dec b
@@ -64,7 +66,7 @@ SweetScentEncounter:
 	inc b
 .ok
 	ld a, b
-.low_lv
+.done
 	ld [wCurPartyLevel], a
 	jr .start_battle
 
