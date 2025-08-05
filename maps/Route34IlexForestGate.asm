@@ -98,13 +98,26 @@ Route34IlexForestGateTeacherText:
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:
-	text "It's SWEET SCENT."
+	text "It's called SWEET"
+	line "SCENT."
 
-	para "Use it wherever"
-	line "#MON appear."
+	para "Use it outside of"
+	line "battle to cause a"
 
-	para "#MON will be"
-	line "enticed by it."
+	para "wild #MON to"
+	line "appear."
+
+	para "The #MON will"
+	line "be around the same"
+
+	para "level as the first"
+	line "#MON in your"
+
+	para "party, no matter"
+	line "what level it"
+
+	para "would normally be"
+	line "found at!"
 	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:
