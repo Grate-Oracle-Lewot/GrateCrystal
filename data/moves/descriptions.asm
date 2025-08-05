@@ -192,7 +192,7 @@ MoveDescriptions::
 	dw MudSlapDescription
 	dw OctazookaDescription
 	dw SpikesDescription
-	dw ZapCannonDescription
+	dw BlitzkriegDescription
 	dw ForesightDescription
 	dw DestinyBondDescription
 	dw PerishSongDescription
@@ -1027,7 +1027,7 @@ SpikesDescription:
 	db   "Hurts foes when"
 	next "they switch out.@"
 
-ZapCannonDescription:
+BlitzkriegDescription:
 	db   "Inaccurate but"
 	next "sure to paralyze.@"
 
