@@ -42,8 +42,29 @@ SweetScentEncounter:
 	farcall ChooseWildEncounter
 	jr nz, .no_battle
 
-	; If not in the bug contest, give the wildmon the same level as the first mon in the player's party.
+; Force the wildmon to be a similar level to the first mon in the player's party.
 	ld a, [wPartyMon1Level]
+	cp 3
+	jr c, .low_lv
+	ld b, a
+	dec b
+	dec b
+	call Random
+	cp 25 percent
+	jr c, .ok
+	inc b
+	cp 50 percent
+	jr c, .ok
+	inc b
+	cp 70 percent
+	jr c, .ok
+	inc b
+	cp 90 percent
+	jr c, .ok
+	inc b
+.ok
+	ld a, b
+.low_lv
 	ld [wCurPartyLevel], a
 	jr .start_battle
 
