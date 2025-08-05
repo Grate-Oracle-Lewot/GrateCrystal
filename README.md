@@ -204,7 +204,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Metronome can now turn into moves that the user already knows.
 
-- When Sweet Scent is used outside of battle, the wild Pokémon encountered will have its level set to the level of the first Pokémon in your party plus or minus 2 (accounting for underflow or overflow).
+- When Sweet Scent is used outside of battle, the wild Pokémon encountered will have its level set to the level of the first Pokémon in your party plus or minus 2 (accounting for underflow or overflow). This is inspired by Polished Crystal's Sweet Honey.
 
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
