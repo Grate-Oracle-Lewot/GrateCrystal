@@ -52,7 +52,7 @@ PowerPlant2FManager:
 	iftrue .GotZapCannon
 	writetext PowerPlant2FManagerTakeThisTMText
 	promptbutton
-	verbosegiveitem TM_ZAP_CANNON, 5
+	verbosegiveitem TM_BLITZKRIEG, 5
 	iffalse .NoRoom
 	setevent EVENT_GOT_TM07_ZAP_CANNON
 	writetext PowerPlant2FManagerTM07IsZapCannonText
@@ -149,7 +149,7 @@ PowerPlant2FBookshelf:
 
 PowerPlant2FManagerWhoWouldRuinMyGeneratorText:
 	text "MANAGER: I, I, I'm"
-	line "ready to blast"
+	line "ready to sock"
 	cont "someone!"
 
 	para "Who would dare"
@@ -161,8 +161,8 @@ PowerPlant2FManagerWhoWouldRuinMyGeneratorText:
 	para "If I catch him,"
 	line "he's going to get"
 
-	para "a taste of my ZAP"
-	line "CANNON!"
+	para "a taste of my"
+	line "BLITZKRIEG!"
 	done
 
 PowerPlant2FManagerIWontForgiveCulpritText:
@@ -194,7 +194,7 @@ PowerPlant2FManagerTakeThisTMText:
 
 PowerPlant2FManagerTM07IsZapCannonText:
 	text "MANAGER: TM07 is"
-	line "my ZAP CANNON."
+	line "my BLITZKRIEG."
 
 	para "It's a powerful"
 	line "technique!"
