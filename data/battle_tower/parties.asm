@@ -711,7 +711,7 @@ BattleTowerMons:
 
 	db ALAKAZAM
 	db SLOWPOKETAIL
-	db PSYCHIC_M, KINESIS, PROTECT, ZAP_CANNON
+	db PSYCHIC_M, KINESIS, PROTECT, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -721,7 +721,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 40000
 	dn 15, 13, 14, 15 ; DVs
-	db 16, 24, 16, 8 ; PP
+	db 16, 24, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
