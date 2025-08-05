@@ -195,7 +195,7 @@ BattleTowerLtSurge:
 
 	db MAGNETON
 	db MAGNET
-	db LOCK_ON, DOUBLE_TEAM, FLASH, ZAP_CANNON
+	db LOCK_ON, DOUBLE_TEAM, FLASH, BLITZKRIEG
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
