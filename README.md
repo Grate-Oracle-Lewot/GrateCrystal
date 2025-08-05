@@ -154,6 +154,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Rock Wrecker (works more like Head Smash), Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Avalanche, Rock Polish, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
+- Zap Cannon is now physical and as such has been renamed Blitzkrieg.
+
 - Most moves with a power below 40 have been bumped up to 40 (or 20 for multiple-hit moves). Some other changes to move powers, and almost every move has received an accuracy boost.
 
 - PP rebalanced for most moves.
