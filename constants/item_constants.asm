@@ -219,7 +219,7 @@ TM01 EQU const_value
 	add_tm ROLLOUT      ; be
 	add_tm ROAR         ; bf
 	add_tm TOXIC        ; c0
-	add_tm ZAP_CANNON   ; c1
+	add_tm BLITZKRIEG   ; c1
 	add_tm SELFDESTRUCT ; c2
 	add_tm PSYCH_UP     ; c3
 	add_tm HIDDEN_POWER ; c4
