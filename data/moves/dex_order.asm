@@ -129,11 +129,11 @@ MovesDexOrder::
 ; Electric, physical
 	db SPARK
 	db THUNDERPUNCH
+	db ZAP_CANNON
 
 ; Electric, special
 	db THUNDERSHOCK
 	db THUNDERBOLT
-	db ZAP_CANNON
 	db THUNDER
 
 ; Rock, physical
