@@ -41,13 +41,17 @@ SweetScentEncounter:
 	jr z, .no_battle
 	farcall ChooseWildEncounter
 	jr nz, .no_battle
+
+	; If not in the bug contest, give the wildmon the same level as the first mon in the player's party.
+	ld a, [wPartyMon1Level]
+	ld [wCurPartyLevel], a
 	jr .start_battle
 
 .in_bug_contest
 	farcall ChooseWildEncounter_BugContest
 
 .start_battle
-	ld a, $1
+	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 
