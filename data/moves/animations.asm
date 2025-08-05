@@ -3679,9 +3679,11 @@ BattleAnim_Spikes:
 	anim_ret
 
 BattleAnim_Blitzkrieg:
-	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_call BattleAnim_TargetObj_2Row
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_bgeffect ANIM_BG_DOUBLE_TEAM, $0, BG_EFFECT_USER, $0
+	anim_wait 16
+	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
 	anim_bgp $1b
 	anim_obp0 $30
