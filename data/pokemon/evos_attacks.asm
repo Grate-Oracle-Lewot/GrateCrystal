@@ -1195,7 +1195,7 @@ MagnemiteEvosAttacks:
 	db 27, LOCK_ON
 	db 33, DAZZLY_GLEAM
 	db 39, SIGNAL_BEAM
-	db 45, ZAP_CANNON
+	db 45, BLITZKRIEG
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1210,7 +1210,7 @@ MagnetonEvosAttacks:
 	db 29, TRI_ATTACK
 	db 35, DAZZLY_GLEAM
 	db 43, SIGNAL_BEAM
-	db 53, ZAP_CANNON
+	db 53, BLITZKRIEG
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1502,7 +1502,7 @@ VoltorbEvosAttacks:
 	db 37, THUNDER_WAVE
 	db 39, FLAME_WHEEL
 	db 41, MIRROR_COAT
-	db 50, ZAP_CANNON
+	db 50, BLITZKRIEG
 	db 0 ; no more level-up moves
 
 ElectrodeEvosAttacks:
@@ -1517,7 +1517,7 @@ ElectrodeEvosAttacks:
 	db 40, THUNDER_WAVE
 	db 44, FLAME_WHEEL
 	db 48, MIRROR_COAT
-	db 60, ZAP_CANNON
+	db 60, BLITZKRIEG
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -2055,7 +2055,7 @@ PorygonEvosAttacks:
 	db 29, SIGNAL_BEAM
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 44, BLITZKRIEG
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
 	db 0 ; no more level-up moves
@@ -3566,7 +3566,7 @@ Porygon2EvosAttacks:
 	db 29, SIGNAL_BEAM
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 44, BLITZKRIEG
 	db 50, LIGHT_SCREEN
 	db 55, REFLECT
 	db 0 ; no more level-up moves
