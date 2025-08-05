@@ -41,6 +41,9 @@ SweetScentEncounter:
 	jr z, .no_battle
 	farcall ChooseWildEncounter
 	jr nz, .no_battle
+	ld a, [wBattleType]
+	cp BATTLETYPE_ROAMING
+	jr z, .start_battle
 
 ; Force the wildmon to be a similar level to the first mon in the player's party.
 	ld a, [wPartyMon1Level]
