@@ -204,6 +204,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Metronome can now turn into moves that the user already knows.
 
+- When Sweet Scent is used outside of battle, the wild Pokémon encountered will have its level set to the level of the first Pokémon in your party plus or minus 2 (accounting for underflow or overflow).
+
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
 - Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
@@ -350,7 +352,7 @@ Prize Pokémon:
 - Changes to some overworld sprites and palettes, either for accuracy or to make important NPCs stand out more
 - The Marshbadge and Soulbadge have their names and designs swapped
 - Female players retain their female sprites in the Link Trade and Battle rooms
-- Press B in wild battles to instantly move the cursor over the Run option
+- Press B in wild battles to instantly move the cursor over the Run option (taken from Polished Crystal)
 - Text edits, often humorous (or so I'd like to think)
 
 # Minor Edits
