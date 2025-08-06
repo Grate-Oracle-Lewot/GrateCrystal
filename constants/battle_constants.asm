@@ -24,6 +24,11 @@ EFFECTIVE          EQU 10
 NOT_VERY_EFFECTIVE EQU 05
 NO_EFFECT          EQU 00
 
+; wTypeModifier
+EFFECTIVENESS_MASK EQU %01111111
+	const_def 7
+	shift_const STAB_DAMAGE
+
 ; enemy AI behavior
 BASE_AI_SWITCH_SCORE EQU 10
 
