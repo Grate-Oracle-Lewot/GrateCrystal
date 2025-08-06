@@ -3699,6 +3699,7 @@ BattleAnim_Blitzkrieg:
 	anim_wait 16
 	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
 	anim_wait 128
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, BG_EFFECT_USER, $0
 	anim_ret
 
