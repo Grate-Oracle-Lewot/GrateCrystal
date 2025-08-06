@@ -265,7 +265,7 @@ Move00Description:
 
 PoundDescription:
 	db   "Smacks with limb,"
-	next "tail, etc.@"
+	next "tail, leaf, etc.@"
 
 KarateChopDescription:
 	db   "A hand chop. High"
