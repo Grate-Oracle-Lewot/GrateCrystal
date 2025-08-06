@@ -616,19 +616,24 @@ OneHitKOText:
 	text "It's a one-hit KO!"
 	autodone
 
+SomewhatEffectiveText:
+	text "It's somewhat"
+	line "effective!"
+	autodone
+
 SuperEffectiveText:
 	text "It's super-"
+	line "effective!"
+	autodone
+
+ExtremelyEffectiveText:
+	text "It's extremely"
 	line "effective!"
 	autodone
 
 NotVeryEffectiveText:
 	text "It's not very"
 	line "effective…"
-	autodone
-
-ExtremelyEffectiveText:
-	text "It's extremely"
-	line "effective!"
 	autodone
 
 MostlyIneffectiveText:
