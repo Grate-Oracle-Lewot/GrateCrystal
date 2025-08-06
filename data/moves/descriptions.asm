@@ -988,8 +988,8 @@ PowderSnowDescription:
 	next "cause freezing.@"
 
 ProtectDescription:
-	db   "Foils attack that"
-	next "turn. It may fail.@"
+	db   "Foils any attack."
+	next "Repeats may fail.@"
 
 MachPunchDescription:
 	db   "A fast punch that"
@@ -1024,11 +1024,11 @@ OctazookaDescription:
 	next "by shooting ink.@"
 
 SpikesDescription:
-	db   "Hurts foes when"
-	next "they switch out.@"
+	db   "Hurts upon switch."
+	next "Flying is immune.@"
 
 BlitzkriegDescription:
-	db   "An all-out strike."
+	db   "All-out assault."
 	next "Sure to paralyze.@"
 
 ForesightDescription:
