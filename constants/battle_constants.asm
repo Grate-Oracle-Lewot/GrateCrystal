@@ -26,8 +26,9 @@ NO_EFFECT          EQU 00
 
 ; wTypeModifier
 EFFECTIVENESS_MASK EQU %01111111
-	const_def 7
-	shift_const STAB_DAMAGE
+STAB_DAMAGE        EQU %10000000
+
+STAB_DAMAGE_F EQU 7
 
 ; enemy AI behavior
 BASE_AI_SWITCH_SCORE EQU 10
