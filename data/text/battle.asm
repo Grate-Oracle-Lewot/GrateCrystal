@@ -89,6 +89,11 @@ SandstormHitsText:
 	line "<USER>!"
 	autodone
 
+PeltedByHailText:
+	text "<USER>"
+	line "is pelted by hail!"
+	autodone
+
 PerishCountText:
 	text "<USER>'s"
 	line "PERISH count is @"
@@ -364,20 +369,6 @@ BattleText_StringBuffer1GrewToLevel:
 	sound_level_up
 	text_end
 
-BattleText_WildMonIsEating:
-	text "Wild @"
-	text_ram wEnemyMonNickname
-	text_start
-	line "is eating!"
-	autodone
-
-BattleText_WildMonIsAngry:
-	text "Wild @"
-	text_ram wEnemyMonNickname
-	text_start
-	line "is angry!"
-	autodone
-
 FastAsleepText:
 	text "<USER>"
 	line "is fast asleep!"
@@ -635,6 +626,16 @@ NotVeryEffectiveText:
 	line "effective…"
 	autodone
 
+ExtremelyEffectiveText:
+	text "It's extremely"
+	line "effective!"
+	autodone
+
+MostlyIneffectiveText:
+	text "It's mostly"
+	line "ineffective…"
+	autodone
+
 TookDownWithItText:
 	text "<TARGET>'s"
 	line "DESTINY BOND took"
@@ -688,8 +689,9 @@ SpiteEffectText:
 	autodone
 
 BellChimedText:
-	text "A bell chimed!"
-	line ""
+	text "<USER>"
+	line "cured its team's"
+	scroll "status problems!"
 	autodone
 
 FellAsleepText:
@@ -880,14 +882,6 @@ CoinsScatteredText:
 	line "everywhere!"
 	autodone
 
-TransformedTypeText:
-	text "<USER>"
-	line "transformed into"
-	scroll "the @"
-	text_ram wStringBuffer1
-	text "-type!"
-	autodone
-
 EliminatedStatsText:
 	text "All stat changes"
 	line "were eliminated!"
@@ -1029,11 +1023,6 @@ StartPerishText:
 	line "faint in 3 turns!"
 	autodone
 
-SandstormBrewedText:
-	text "A sandstorm"
-	line "brewed!"
-	autodone
-
 BracedItselfText:
 	text "<USER>"
 	line "braced itself!"
@@ -1088,6 +1077,16 @@ SunGotBrightText:
 	line "turned harsh!"
 	autodone
 
+SandstormBrewedText:
+	text "A sandstorm"
+	line "brewed!"
+	autodone
+
+ItStartedToHailText:
+	text "Hailstones started"
+	line "to fall!"
+	autodone
+
 BellyDrumText:
 	text "<USER>"
 	line "cut its HP and"
@@ -1130,16 +1129,6 @@ BattleText_LinkErrorBattleCanceled:
 	autopara "The battle has"
 	line "been canceled…"
 	prompt
-
-ItStartedToHailText:
-	text "Hailstones started"
-	line "to fall!"
-	autodone
-
-PeltedByHailText:
-	text "<USER>"
-	line "is pelted by hail!"
-	autodone
 
 FloatMissText:
 	text "<TARGET>'s"
