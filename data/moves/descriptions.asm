@@ -264,8 +264,8 @@ Move00Description:
 	db "?@"
 
 PoundDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Smacks with limb,"
+	next "tail, etc.@"
 
 KarateChopDescription:
 	db   "A hand chop. High"
@@ -728,7 +728,7 @@ FocusEnergyDescription:
 	next "critical ratio.@"
 
 BideDescription:
-	db   "Waits 2-3 turns &"
+	db   "Waits 2 turns and"
 	next "hits back double.@"
 
 MetronomeDescription:
@@ -1028,8 +1028,8 @@ SpikesDescription:
 	next "they switch out.@"
 
 BlitzkriegDescription:
-	db   "Inaccurate but"
-	next "sure to paralyze.@"
+	db   "An all-out strike."
+	next "Sure to paralyze.@"
 
 ForesightDescription:
 	db   "Negates accuracy"
@@ -1152,7 +1152,7 @@ MagnitudeDescription:
 	next "with random power.@"
 
 DynamicpunchDescription:
-	db   "Inaccurate but"
+	db   "A huge punch that's"
 	next "sure to confuse.@"
 
 MegahornDescription:
