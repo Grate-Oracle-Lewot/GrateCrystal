@@ -92,7 +92,7 @@ RunBattleAnimScript:
 
 .playframe
 	call RunBattleAnimCommand
-	callfar ExecuteBGEffects
+	farcall ExecuteBGEffects
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
@@ -580,7 +580,7 @@ BattleAnimCmd_BGEffect:
 	ld [wBattleBGEffectTempTurn], a
 	call GetBattleAnimByte
 	ld [wBattleBGEffectTempParam], a
-	callfar QueueBGEffect
+	farcall QueueBGEffect
 	ret
 
 BattleAnimCmd_BGP:
@@ -839,7 +839,7 @@ BattleAnimCmd_BattlerGFX_2Row:
 	ret
 
 BattleAnimCmd_CheckPokeball:
-	callfar GetPokeBallWobble
+	farcall GetPokeBallWobble
 	ld a, c
 	ld [wBattleAnimVar], a
 	ret
@@ -1060,11 +1060,11 @@ BattleAnimCmd_DropSub:
 	and a
 	jr z, .player
 
-	callfar DropEnemySub
+	farcall DropEnemySub
 	jr .done
 
 .player
-	callfar DropPlayerSub
+	farcall DropPlayerSub
 .done
 	pop af
 	ld [wCurPartySpecies], a
@@ -1150,7 +1150,7 @@ BattleAnimCmd_Sound:
 	call GetBattleAnimByte
 	ld e, a
 	ld d, 0
-	callfar PlayStereoSFX
+	farcall PlayStereoSFX
 	ret
 
 .GetPanning:
@@ -1237,7 +1237,7 @@ endr
 	ld a, 1
 	ld [wStereoPanningMask], a
 
-	callfar _PlayCry
+	farcall _PlayCry
 
 .done
 	pop af
