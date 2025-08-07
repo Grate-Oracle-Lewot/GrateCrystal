@@ -3699,6 +3699,7 @@ BattleAnim_Blitzkrieg:
 	anim_wait 16
 	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
 	anim_wait 128
+	anim_obp0 $0
 	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
 	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
 	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
