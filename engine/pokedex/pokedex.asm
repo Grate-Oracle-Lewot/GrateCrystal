@@ -745,7 +745,7 @@ Evos_Page:
 	ld a, DEXENTRY_EVO
 	ld [wPokedexEntryType], a
 .evopage_loop
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
@@ -859,7 +859,7 @@ Pics_Page:
 	farcall HDMATransferTilemapToWRAMBank3	
 	call ClearSprites
 	call DisableSpriteUpdates
-	callfar ClearSpriteAnims2
+	farcall ClearSpriteAnims2
 	xor a
 	ldh [hBGMapMode], a
 	ldh [hSCX], a
@@ -891,10 +891,10 @@ Pics_Page:
 	farcall Dex_Pics_DrawBorder	
 	call WaitBGMap
 	farcall Pokedex_place_Mon_Icon
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	farcall Pokedex_PlayMonCry_AnimateFrontpic
 .spritepage_loop
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
