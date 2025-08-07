@@ -808,17 +808,7 @@ wBetaPokerSGBRow:: db
 
 NEXTU
 ; unused memory game
-wMemoryGameCards:: ds 9 * 5
-wMemoryGameCardsEnd::
-wMemoryGameLastCardPicked:: db
-wMemoryGameCard1:: db
-wMemoryGameCard2:: db
-wMemoryGameCard1Location:: db
-wMemoryGameCard2Location:: db
-wMemoryGameNumberTriesRemaining:: db
-wMemoryGameLastMatches:: ds 5
-wMemoryGameCounter:: db
-wMemoryGameNumCardsMatched:: db
+	ds 58
 
 NEXTU
 ; unown puzzle
@@ -1502,7 +1492,7 @@ wCardFlipWhichCard:: db
 
 NEXTU
 ; unused memory game
-wMemoryGameCardChoice:: db
+	ds 1
 
 NEXTU
 ; magnet train
