@@ -474,8 +474,8 @@ Pokedex_Calc_EggMovesPtr:
 	push bc
 ; Step 4: Get First byte of learnset
 	; push af ; preserve current species or else move sets will be messed up for stage2+ mons
-	callfar GetPreEvolution ; changes wCurPartyMon
-	callfar GetPreEvolution ; changes wCurPartyMon
+	farcall GetPreEvolution ; changes wCurPartyMon
+	farcall GetPreEvolution ; changes wCurPartyMon
 	ld a, [wCurPartySpecies]
 	dec a ; Bulbasaur is No 1 but entry ZERO
 	ld b, 0
