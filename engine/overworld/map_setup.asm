@@ -164,10 +164,6 @@ FadeOutMapMusic:
 	ld a, 6
 	jp SkipMusic
 
-ApplyMapPalettes:
-	farcall _UpdateTimePals
-	ret
-
 FadeMapMusicAndPalettes:
 	ld e, LOW(MUSIC_NONE)
 	ld a, [wMusicFadeID]
