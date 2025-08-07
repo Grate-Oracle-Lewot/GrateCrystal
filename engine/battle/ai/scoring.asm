@@ -178,7 +178,7 @@ AI_Status:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -412,7 +412,7 @@ AI_Types:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -513,7 +513,7 @@ AI_Immunities:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -1040,7 +1040,7 @@ AI_Smart_LeechHit:
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop hl
 
 ; Do nothing if this move is not very effective.
@@ -1576,7 +1576,7 @@ AI_Smart_SwitchMoves:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
+	farcall CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE
 	pop hl
@@ -2270,7 +2270,7 @@ AI_Smart_Encore:
 ; If the player only has not very effective moves against the enemy, encourage this move.
 .matchup
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
+	farcall CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
 	pop hl
@@ -2431,7 +2431,7 @@ AI_Smart_MeanLook:
 
 ; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
+	farcall CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
 	pop hl
@@ -2459,7 +2459,7 @@ AI_Smart_PriorityHit:
 	ld a, 1
 	ldh [hBattleTurn], a
 	push hl
-	callfar EnemyAttackDamage_DamageCalc_Stab
+	farcall EnemyAttackDamage_DamageCalc_Stab
 	pop hl
 	ld a, [wCurDamage + 1]
 	ld c, a
@@ -2743,7 +2743,7 @@ AI_Smart_PerishSong:
 
 ; Else, consider type matchups and possibly discourage this move.
 	push hl
-	callfar CheckPlayerMoveTypeMatchups
+	farcall CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE
 	pop hl
@@ -3167,7 +3167,7 @@ AI_Smart_HiddenPower:
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar HiddenPowerDamage
+	farcall HiddenPowerDamage
 	pop hl
 	; fallthrough
 
@@ -3175,7 +3175,7 @@ AI_Smart_Reckless:
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop hl
 
 ; Discourage this move if not very effective.
@@ -3582,11 +3582,11 @@ AIDamageCalc:
 	ld hl, ConstantDamageEffects
 	call IsInByteArray
 	jr nc, .notconstant
-	callfar BattleCommand_ConstantDamage
+	farcall BattleCommand_ConstantDamage
 	ret
 
 .notconstant
-	callfar EnemyAttackDamage_DamageCalc_Stab
+	farcall EnemyAttackDamage_DamageCalc_Stab
 	ret
 
 INCLUDE "data/battle/ai/constant_damage_effects.asm"
