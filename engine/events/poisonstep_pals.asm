@@ -15,8 +15,7 @@ LoadPoisonBGPals:
 	call DmgToCgbBGPals
 	ld c, 4
 	call DelayFrames
-	farcall _UpdateTimePals
-	ret
+	jp UpdateTimePals
 
 .cgb
 	ldh a, [rSVBK]
@@ -38,5 +37,4 @@ LoadPoisonBGPals:
 	ldh [hCGBPalUpdate], a
 	ld c, 4
 	call DelayFrames
-	farcall _UpdateTimePals
-	ret
+	jp UpdateTimePals
