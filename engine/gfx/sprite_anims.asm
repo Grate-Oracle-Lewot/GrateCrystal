@@ -53,6 +53,7 @@ DoAnimFrame:
 
 AnimSeq_Null:
 AnimSeq_MemoryGameCursor:
+AnimSeq_UnusedCursor:
 	ret
 
 AnimSeq_PartyMon:
@@ -395,10 +396,6 @@ AnimSeq_SlotsChanseyEgg:
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	ret
-
-AnimSeq_UnusedCursor:
-	farcall UnusedCursor_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeq_PokegearArrow:
