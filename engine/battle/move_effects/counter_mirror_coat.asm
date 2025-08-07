@@ -3,7 +3,7 @@ BattleCommand_Counter:
 	ret z
 
 	ld b, a
-	callfar GetMoveEffect
+	farcall GetMoveEffect
 	ld a, b
 	cp EFFECT_COUNTER
 	ret z
@@ -24,7 +24,7 @@ BattleCommand_MirrorCoat:
 	ret z
 
 	ld b, a
-	callfar GetMoveEffect
+	farcall GetMoveEffect
 	ld a, b
 	cp EFFECT_MIRROR_COAT
 	ret z
