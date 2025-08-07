@@ -887,7 +887,7 @@ Intro_MainMenu:
 	jr StartTitleScreen
 
 IntroSequence:
-	callfar SplashScreen
+	farcall SplashScreen
 	jr c, StartTitleScreen
 	farcall CrystalIntro
 	; fallthrough
