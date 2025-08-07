@@ -15,9 +15,9 @@ UpdateTimeAndPals::
 	; fallthrough
 
 TimeOfDayPals::
-	callfar _TimeOfDayPals
+	farcall _TimeOfDayPals
 	ret
 
 UpdateTimePals::
-	callfar _UpdateTimePals
+	farcall _UpdateTimePals
 	ret
