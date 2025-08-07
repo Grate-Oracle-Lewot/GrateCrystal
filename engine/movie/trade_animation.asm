@@ -156,7 +156,7 @@ RunTradeAnimScript:
 	call ClearTilemap
 	call DisableLCD
 	call LoadFontsBattleExtra
-	callfar ClearSpriteAnims
+	farcall ClearSpriteAnims
 	ldh a, [hCGB]
 	and a
 	jr z, .NotCGB
@@ -218,7 +218,7 @@ DoTradeAnimation:
 	bit 7, a
 	jr nz, .finished
 	call .DoTradeAnimCommand
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	ld hl, wFrameCounter2
 	inc [hl]
 	call DelayFrame
@@ -324,6 +324,8 @@ TradeAnim_TubeToPlayer1:
 	ld a, TRADEANIMSTATE_2
 	depixel 9, 18, 4, 4
 	ld b, $4
+	; fallthrough
+
 TradeAnim_InitTubeAnim:
 	push bc
 	push de
@@ -332,7 +334,7 @@ TradeAnim_InitTubeAnim:
 
 	push af
 	call DisableLCD
-	callfar ClearSpriteAnims
+	farcall ClearSpriteAnims
 	hlbgcoord 20, 3
 	ld bc, 12
 	ld a, $60
@@ -455,7 +457,7 @@ TradeAnim_TubeToPlayer8:
 	call ClearTilemap
 	call ClearSprites
 	call DisableLCD
-	callfar ClearSpriteAnims
+	farcall ClearSpriteAnims
 	hlbgcoord 0, 0
 	ld bc, VRAM_End - vBGMap0
 	ld a, " "
@@ -808,6 +810,8 @@ TradeAnim_ShowGivemonFrontpic:
 
 TradeAnim_ShowGetmonFrontpic:
 	ld de, vTiles0 tile $31
+	; fallthrough
+
 TradeAnim_ShowFrontpic:
 	call DelayFrame
 	ld hl, vTiles2
@@ -1315,7 +1319,7 @@ LoadTradeBallAndCableGFX:
 LoadTradeBubbleGFX:
 	call DelayFrame
 	ld e, MONICON_TRADE
-	callfar LoadMenuMonIcon
+	farcall LoadMenuMonIcon
 	ld de, TradeBubbleGFX
 	ld hl, vTiles0 tile $72
 	lb bc, BANK(TradeBubbleGFX), 4
