@@ -213,15 +213,15 @@ AnimSeq_GSIntroHoOhLugia:
 	ret
 
 AnimSeq_NamingScreenCursor:
-	callfar NamingScreen_AnimateCursor
+	farcall NamingScreen_AnimateCursor
 	ret
 
 AnimSeq_MailCursor:
-	callfar ComposeMail_AnimateCursor
+	farcall ComposeMail_AnimateCursor
 	ret
 
 AnimSeq_GameFreakLogo:
-	callfar GameFreakLogoSpriteAnim
+	farcall GameFreakLogoSpriteAnim
 	ret
 
 AnimSeq_GSGameFreakLogoStar:
@@ -351,11 +351,11 @@ AnimSeq_GSGameFreakLogoSparkle:
 	jp DeinitializeSprite
 
 AnimSeq_SlotsGolem:
-	callfar Slots_AnimateGolem
+	farcall Slots_AnimateGolem
 	ret
 
 AnimSeq_SlotsChansey:
-	callfar Slots_AnimateChansey
+	farcall Slots_AnimateChansey
 	ld hl, wSlotsDelay
 	ld a, [hl]
 	cp $2
@@ -397,15 +397,15 @@ AnimSeq_SlotsChanseyEgg:
 	ret
 
 AnimSeq_UnusedCursor:
-	callfar UnusedCursor_InterpretJoypad_AnimateCursor
+	farcall UnusedCursor_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeq_PokegearArrow:
-	callfar AnimatePokegearModeIndicatorArrow
+	farcall AnimatePokegearModeIndicatorArrow
 	ret
 
 AnimSeq_MemoryGameCursor:
-	callfar MemoryGame_InterpretJoypad_AnimateCursor
+	farcall MemoryGame_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeq_TradePokeBall:
@@ -546,7 +546,7 @@ AnimSeq_TradeTubeBulge:
 	jp DeinitializeSprite
 
 AnimSeq_TrademonInTube:
-	callfar TradeAnim_AnimateTrademonInTube
+	farcall TradeAnim_AnimateTrademonInTube
 	ret
 
 AnimSeq_RevealNewMon:
@@ -586,7 +586,7 @@ AnimSeq_RevealNewMon:
 	jp DeinitializeSprite
 
 AnimSeq_RadioTuningKnob:
-	callfar AnimateTuningKnob
+	farcall AnimateTuningKnob
 	ret
 
 AnimSeq_CutLeaves:
