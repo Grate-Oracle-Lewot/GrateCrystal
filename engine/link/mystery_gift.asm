@@ -116,7 +116,7 @@ endc
 	pop bc
 	jr nz, .SentItem
 ; keep the decoration if it wasn't already received
-	callfar GetDecorationName_c
+	farcall GetDecorationName_c
 	ld h, d
 	ld l, e
 	ld de, wStringBuffer1
@@ -1329,7 +1329,7 @@ CopyMysteryGiftReceivedDecorationsToPC:
 	pop bc
 	jr z, .skip
 	push bc
-	callfar SetSpecificDecorationFlag
+	farcall SetSpecificDecorationFlag
 	pop bc
 .skip
 	inc c
