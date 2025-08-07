@@ -36,7 +36,7 @@ AI_SwitchOrTryItem:
 	jp AI_TryItem
 
 SwitchSometimes:
-	call CallfarCheckAbleToSwitch
+	call farcallCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jp z, AI_TryItem
@@ -61,7 +61,7 @@ SwitchSometimes:
 	jr SwitchMerge
 
 SwitchOften:
-	call CallfarCheckAbleToSwitch
+	call farcallCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
@@ -96,7 +96,7 @@ SwitchMerge:
 	jp AI_TrySwitch
 
 SwitchRarely:
-	call CallfarCheckAbleToSwitch
+	call farcallCheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
@@ -392,9 +392,9 @@ AI_Items:
 	jp .Use
 
 .HealItem:
-	callfar AICheckEnemyHalfHP
+	farcall AICheckEnemyHalfHP
 	jp c, .DontUse
-	callfar AICheckEnemyQuarterHP
+	farcall AICheckEnemyQuarterHP
 	jp nc, .Use
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
@@ -830,7 +830,7 @@ AI_Switch:
 	res SUBSTATUS_RAGE, [hl]
 	xor a
 	ldh [hBattleTurn], a
-	callfar PursuitSwitch
+	farcall PursuitSwitch
 
 	push af
 	ld a, [wCurOTMon]
@@ -851,7 +851,7 @@ AI_Switch:
 .skiptext
 	ld a, 1
 	ld [wBattleHasJustStarted], a
-	callfar NewEnemyMonStatusResetEnemyStatLevels
+	farcall NewEnemyMonStatusResetEnemyStatLevels
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
 	farcall EnemySwitchResetBattleParticipants
@@ -867,10 +867,10 @@ EnemyWithdrewText:
 	text_far _EnemyWithdrewText
 	text_end
 
-CallfarCheckAbleToSwitch:
+farcallCheckAbleToSwitch:
 ; Check if in the middle of a multi-turn move or suchlike.
 ; Can't U-Turn out of these.
-	callfar CheckAbleToSwitch
+	farcall CheckAbleToSwitch
 	ret
 
 CheckEnemyTrapped:
