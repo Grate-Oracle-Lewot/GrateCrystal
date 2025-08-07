@@ -58,7 +58,11 @@ CheckCanLearnMoveTutorMove:
 	ld a, BANK(TMHMNotCompatibleText)
 	ld hl, TMHMNotCompatibleText
 	call FarPrintText
-	jr .didnt_learn
+
+.didnt_learn
+	call ExitMenu
+	and a
+	ret
 
 .can_learn
 	callfar KnowsMove
@@ -71,14 +75,6 @@ CheckCanLearnMoveTutorMove:
 
 	ld c, HAPPINESS_LEARNMOVE
 	callfar ChangeHappiness
-	jr .learned
-
-.didnt_learn
-	call ExitMenu
-	and a
-	ret
-
-.learned
 	call ExitMenu
 	scf
 	ret
