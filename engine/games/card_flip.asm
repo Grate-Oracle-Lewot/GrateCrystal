@@ -4,13 +4,6 @@ CARDFLIP_LIGHT_ON  EQU "♀" ; $f5
 CARDFLIP_DECK_SIZE EQUS "(wDeckEnd - wDeck)"
 	assert wDiscardPileEnd - wDiscardPile == wDeckEnd - wDeck
 
-MemoryGameGFX:
-; Graphics for an unused Game Corner
-; game were meant to be here.
-
-UnusedCursor_InterpretJoypad_AnimateCursor:
-	ret
-
 _CardFlip:
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
