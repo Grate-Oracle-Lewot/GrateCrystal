@@ -2,7 +2,7 @@ DisplayDexMonEvos:
 	ld a, DEXENTRY_EVO
 	ld [wPokedexEntryType], a
 	call DisableSpriteUpdates
-	callfar ClearSpriteAnims2
+	farcall ClearSpriteAnims2
 	farcall Pokedex_GetSelectedMon
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
@@ -14,8 +14,8 @@ DisplayDexMonEvos:
 	call EVO_Draw_border
 
 	ld a, [wTempSpecies]
-	callfar GetPreEvolution
-	callfar GetPreEvolution
+	farcall GetPreEvolution
+	farcall GetPreEvolution
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
 	ld [wCurSpecies], a
