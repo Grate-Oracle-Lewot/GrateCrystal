@@ -47,6 +47,6 @@ MapSetupCommands:
 	add_mapsetup FadeOutMapMusic ; 28
 	add_mapsetup ActivateMapAnims ; 29
 	add_mapsetup SuspendMapAnims ; 2a
-	add_mapsetup ApplyMapPalettes ; 2b
+	add_mapsetup UpdateTimePals ; 2b
 	add_mapsetup EnableTextAcceleration ; 2c
 	add_mapsetup InitMapNameSign ; 2d
