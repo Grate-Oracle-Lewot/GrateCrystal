@@ -99,7 +99,7 @@ TradeWithTradebackGuy:
 	ld a, [wTradeDialog]
 	push af
 	predef TradeAnimation
-	callfar EvolvePokemon
+	farcall EvolvePokemon
 	pop af
 	ld [wTradeDialog], a
 	call ReturnToMapWithSpeechTextbox
