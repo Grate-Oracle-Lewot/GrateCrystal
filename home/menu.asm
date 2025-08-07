@@ -23,11 +23,11 @@ Load2DMenuData::
 	ret
 
 StaticMenuJoypad::
-	callfar _StaticMenuJoypad
+	farcall _StaticMenuJoypad
 	jr GetMenuJoypad
 
 ScrollingMenuJoypad::
-	callfar _ScrollingMenuJoypad
+	farcall _ScrollingMenuJoypad
 	; fallthrough
 
 GetMenuJoypad::
@@ -70,7 +70,7 @@ OffsetMenuHeader::
 	; fallthrough
 
 PushWindow::
-	callfar _PushWindow
+	farcall _PushWindow
 	ret
 
 MenuTextboxWaitButton::
@@ -81,12 +81,12 @@ MenuTextboxWaitButton::
 Call_ExitMenu::
 ExitMenu::
 	push af
-	callfar _ExitMenu
+	farcall _ExitMenu
 	pop af
 	ret
 
 InitVerticalMenuCursor::
-	callfar _InitVerticalMenuCursor
+	farcall _InitVerticalMenuCursor
 	ret
 
 CloseWindow::
