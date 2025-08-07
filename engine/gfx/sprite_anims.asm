@@ -52,6 +52,7 @@ DoAnimFrame:
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_Null:
+AnimSeq_MemoryGameCursor:
 	ret
 
 AnimSeq_PartyMon:
@@ -402,10 +403,6 @@ AnimSeq_UnusedCursor:
 
 AnimSeq_PokegearArrow:
 	farcall AnimatePokegearModeIndicatorArrow
-	ret
-
-AnimSeq_MemoryGameCursor:
-	farcall MemoryGame_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeq_TradePokeBall:
