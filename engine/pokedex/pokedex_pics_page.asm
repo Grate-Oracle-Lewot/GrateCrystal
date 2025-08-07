@@ -68,7 +68,7 @@ Pokedex_PlayMonCry_AnimateFrontpic:
 	ld a, [wPokedexEntryType]
 	inc a
 	ld [wPokedexEntryType], a
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	ret
 
 .Pokedex_WaitAnim:
