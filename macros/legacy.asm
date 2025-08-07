@@ -4,7 +4,7 @@
 
 ; macros/rst.asm
 callba EQUS "farcall"
-callab EQUS "callfar"
+callab EQUS "farcall"
 
 ; macros/gfx.asm
 dsprite: MACRO
