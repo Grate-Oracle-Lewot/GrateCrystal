@@ -706,7 +706,7 @@ Link_ConvertPartyStruct1to2:
 	push bc
 	push de
 	ld [wTempSpecies], a
-	callfar ConvertMon_1to2
+	farcall ConvertMon_1to2
 	pop de
 	pop bc
 	ld a, [wTempSpecies]
@@ -1562,7 +1562,7 @@ LinkTrade:
 
 	xor a ; REMOVE_PARTY
 	ld [wPokemonWithdrawDepositParameter], a
-	callfar RemoveMonFromPartyOrBox
+	farcall RemoveMonFromPartyOrBox
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
@@ -1612,7 +1612,7 @@ LinkTrade:
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
-	callfar EvolvePokemon
+	farcall EvolvePokemon
 	call ClearScreen
 	call LoadTradeScreenBorderGFX
 	call SetTradeRoomBGPals
@@ -2171,7 +2171,7 @@ TimeCapsule:
 	ld a, LINK_TIMECAPSULE
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a
@@ -2182,7 +2182,7 @@ TradeCenter:
 	ld a, LINK_TRADECENTER
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a
@@ -2193,7 +2193,7 @@ Colosseum:
 	ld a, LINK_COLOSSEUM
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a
