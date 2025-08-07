@@ -18,7 +18,7 @@ PlaceMartMenuItemName:
 	ld bc, STRING_BUFFER_LENGTH
 	call CopyBytes
 	ld de, wStringBuffer4 + STRLEN("TM##")
-	callfar AppendTMHMMoveName
+	farcall AppendTMHMMoveName
 	ld de, wStringBuffer4
 .place_string:
 	pop hl
