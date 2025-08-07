@@ -3698,7 +3698,7 @@ BattleAnim_Blitzkrieg:
 	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
 	anim_wait 16
 	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
-	anim_wait 116
+	anim_wait 117
 	anim_obp0 $0
 	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
 	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
@@ -3706,7 +3706,7 @@ BattleAnim_Blitzkrieg:
 	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
 	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
 	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
-	anim_wait 12
+	anim_wait 11
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_ret
 
