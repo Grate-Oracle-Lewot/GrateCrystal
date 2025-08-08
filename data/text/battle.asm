@@ -622,7 +622,12 @@ SomewhatEffectiveText:
 	autodone
 
 SuperEffectiveText:
-	text "It's super-"
+	text "It's super"
+	line "effective!"
+	autodone
+
+SuperDuperEffectiveText:
+	text "It's super duper"
 	line "effective!"
 	autodone
 
