@@ -2318,7 +2318,7 @@ BattleCommand_SuperEffectiveText:
 	cp SUPER_EFFECTIVE
 	jr nc, .print
 	ld hl, SomewhatEffectiveText
-	cp MORE_EFFECTIVE
+	cp EFFECTIVE
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
 	cp NOT_VERY_EFFECTIVE
