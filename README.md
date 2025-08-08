@@ -96,7 +96,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Steel no longer resists Ghost or Psychic (but does still resist Dark)
 - Graph: https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/gfx/typechart.png
 - In Inverse Battles, immunities are shifted around instead of eliminated, and Normal and Ghost are both super effective on each other
-- Added "extremely effective" and "mostly ineffective" messages from Pokémon Champions, plus "somewhat effective" and "super duper effective" for special cases
+- Added "extremely effective" and "mostly ineffective" messages from Pokémon Champions, plus "somewhat effective" and "super duper effective" for special cases with Tri Attack
 
 ## Pokémon type changes
 - Rattata/Raticate: Normal -> Normal/Dark
