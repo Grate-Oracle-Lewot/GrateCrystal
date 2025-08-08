@@ -2308,9 +2308,22 @@ BattleCommand_SuperEffectiveText:
 	and EFFECTIVENESS_MASK
 	cp EFFECTIVE
 	ret z
+	ld hl, ExtremelyEffectiveText
+	cp EXTREMELY_EFFECTIVE
+	jr nc, .print
+	ld hl, SuperDuperEffectiveText
+	cp SUPER_DUPER_EFFECTIVE
+	jr nc, .print
 	ld hl, SuperEffectiveText
+	cp SUPER_EFFECTIVE
+	jr nc, .print
+	ld hl, SomewhatEffectiveText
+	cp MORE_EFFECTIVE
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
+	cp NOT_VERY_EFFECTIVE
+	jr nc, .print
+	ld hl, MostlyIneffectiveText
 .print
 	jp StdBattleTextbox
 
