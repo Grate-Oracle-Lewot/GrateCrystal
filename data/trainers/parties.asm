@@ -3282,6 +3282,7 @@ TeacherGroup:
 	; TEACHER (1)
 	db "COLETTE@", TRAINERTYPE_NORMAL
 	db 45, CLEFABLE
+	db 45, MISDREAVUS
 	db -1 ; end
 
 	; TEACHER (2)
