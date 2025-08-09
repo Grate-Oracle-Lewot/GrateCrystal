@@ -129,7 +129,7 @@ MovesDexOrder:
 ; Electric, physical
 	db SPARK
 	db THUNDERPUNCH
-	db ZAP_CANNON
+	db BLITZKRIEG
 
 ; Electric, special
 	db THUNDERSHOCK
