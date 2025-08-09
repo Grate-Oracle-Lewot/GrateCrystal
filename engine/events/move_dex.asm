@@ -6,9 +6,9 @@ MoveDex:
 
 	ld hl, MovesDexOrder
 	call ViewMoveList
+	call ReturnToMapWithSpeechTextbox
 
 .cancel
-	call ReturnToMapWithSpeechTextbox
 	ld hl, Text_MoveDexOutro
 	jp PrintText
 
