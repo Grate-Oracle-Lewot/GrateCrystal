@@ -223,7 +223,7 @@ INCLUDE "engine/battle/sliding_intro.asm"
 INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
-INCLUDE "engine/events/poke_seer.asm"
+INCLUDE "engine/events/move_dex.asm"
 
 
 SECTION "bank14", ROMX
@@ -718,8 +718,3 @@ SECTION "Lewot Phone Data", ROMX
 
 INCLUDE "engine/phone/scripts/lewot.asm"
 INCLUDE "data/phone/text/lewot.asm"
-
-
-SECTION "Move Dex", ROMX
-
-INCLUDE "engine/events/move_dex.asm"
