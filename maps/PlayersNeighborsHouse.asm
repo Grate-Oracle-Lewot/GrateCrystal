@@ -8,12 +8,7 @@ PlayersNeighborsHouse_MapScripts:
 	def_callbacks
 
 PlayersNeighborsDaughterScript:
-	faceplayer
-	opentext
-	special MoveDex
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PlayersNeighborsDaughterText
 
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
@@ -48,6 +43,30 @@ PlayersNeighborsHouseRadioScript:
 	pause 45
 	closetext
 	end
+
+PlayersNeighborsDaughterText:
+	text "PIKACHU comes in"
+	line "six different"
+	cont "varieties."
+
+	para "It might ride a"
+	line "surfboard or get"
+
+	para "carried around by"
+	line "balloons."
+
+	para "They're always"
+	line "electric type, but"
+
+	para "some are also nor-"
+	line "mal, fairy, fight-"
+	cont "ing, water, or"
+	cont "flying."
+
+	para "They all evolve"
+	line "into the same"
+	cont "RAICHU, though."
+	done
 
 PlayersNeighborText:
 	text "Some moves that"
