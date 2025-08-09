@@ -1,4 +1,4 @@
-MovesDexOrder::
+MovesDexOrder:
 	table_width 1, MovesDexOrder
 
 ; Normal, physical
