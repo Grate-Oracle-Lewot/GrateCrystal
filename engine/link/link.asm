@@ -1500,7 +1500,7 @@ LinkTrade:
 	call GetPartyLocation
 	ld b, h
 	ld c, l
-	farcall GetCaughtGender
+	call GetCaughtGender
 	ld a, c
 	ld [wPlayerTrademonCaughtData], a
 
@@ -1547,7 +1547,7 @@ LinkTrade:
 	call GetPartyLocation
 	ld b, h
 	ld c, l
-	farcall GetCaughtGender
+	call GetCaughtGender
 	ld a, c
 	ld [wOTTrademonCaughtData], a
 
@@ -1689,7 +1689,7 @@ LoadTradeScreenBorderGFX:
 	ret
 
 SetTradeRoomBGPals:
-	farcall LoadTradeRoomBGPals ; just a nested farcall; so wasteful
+	farcall LoadTradeRoomBGPals
 	jp SetPalettes
 
 INCLUDE "engine/movie/trade_animation.asm"
@@ -2262,4 +2262,28 @@ CableClubCheckWhichChris:
 
 .yes
 	ld [wScriptVar], a
+	ret
+
+GetCaughtGender:
+	ld hl, MON_CAUGHTGENDER
+	add hl, bc
+
+	ld a, [hl]
+	and CAUGHT_LOCATION_MASK
+	jr z, .genderless
+	cp LANDMARK_EVENT
+	jr z, .genderless
+
+	ld a, [hl]
+	and CAUGHT_GENDER_MASK
+	jr nz, .male
+	ld c, CAUGHT_BY_GIRL
+	ret
+
+.male
+	ld c, CAUGHT_BY_BOY
+	ret
+
+.genderless
+	ld c, CAUGHT_BY_UNKNOWN
 	ret
