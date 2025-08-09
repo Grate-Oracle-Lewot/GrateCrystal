@@ -570,7 +570,7 @@ ChooseMoveToLearn:
 	call GetFarByte
 	cp 1
 	jr c, .print_move_null_chance
-	Call ConvertPercentages
+	call ConvertPercentages
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
@@ -606,7 +606,7 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	Call ConvertPercentages
+	call ConvertPercentages
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
