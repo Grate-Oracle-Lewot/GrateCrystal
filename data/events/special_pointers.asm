@@ -159,7 +159,7 @@ SpecialsPointers::
 	add_special Function102142
 	add_special CelebiShrineEvent
 	add_special CheckCaughtCelebi
-	add_special PokeSeer ; unused in Grate Crystal
+	add_special MoveDex ; previously PokeSeer
 	add_special BuenasPassword
 	add_special BuenaPrize
 	add_special GiveDratini
