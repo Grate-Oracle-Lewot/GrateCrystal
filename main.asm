@@ -718,3 +718,8 @@ SECTION "Lewot Phone Data", ROMX
 
 INCLUDE "engine/phone/scripts/lewot.asm"
 INCLUDE "data/phone/text/lewot.asm"
+
+
+SECTION "Move Dex", ROMX
+
+INCLUDE "engine/events/move_dex.asm"
