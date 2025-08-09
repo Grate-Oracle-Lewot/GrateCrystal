@@ -28,7 +28,7 @@ IsMailEuropean:
 
 ; The regular font.
 StandardEnglishFont:
-if DEF(_HEART_FONT)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS) || DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/font_heart.1bpp"
 else
 INCBIN "gfx/font/font.1bpp"
@@ -36,7 +36,7 @@ endc
 
 ; An extended font.
 FrenchGermanFont:
-if DEF(_HEART_FONT)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS) || DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/french_german_heart.1bpp"
 else
 INCBIN "gfx/font/french_german.1bpp"
@@ -44,7 +44,7 @@ endc
 
 ; An even more extended font.
 SpanishItalianFont:
-if DEF(_HEART_FONT)
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS) || DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/spanish_italian_heart.1bpp"
 else
 INCBIN "gfx/font/spanish_italian.1bpp"
