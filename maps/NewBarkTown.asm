@@ -120,20 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke DUGTRIO, 25
-	givepoke CHIKORITA, 8
-	closetext
-	loadwildmon CATERPIE, 5
-	startbattle
-	reloadmapafterbattle
-	loadwildmon BUTTERFREE, 10
-	startbattle
-	reloadmapafterbattle
-	loadwildmon HOPPIP, 5
-	startbattle
-	reloadmapafterbattle
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
