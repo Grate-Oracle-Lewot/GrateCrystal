@@ -110,10 +110,6 @@ LinkComms_LoadPleaseWaitTextboxBorderGFX:
 	lb bc, BANK(LinkCommsBorderGFX), 8
 	jp Get2bpp
 
-LoadTradeRoomBGPals:
-	farcall _LoadTradeRoomBGPals
-	ret
-
 LoadCableTradeBorderTilemap:
 	call LoadMobileTradeBorderTilemap
 	ld hl, CableTradeBorderTopTilemap
