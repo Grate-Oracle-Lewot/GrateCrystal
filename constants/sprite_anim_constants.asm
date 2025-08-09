@@ -96,27 +96,26 @@ NUM_SPRITE_ANIM_INDEXES EQU const_value
 	const SPRITE_ANIM_SEQ_SLOTS_CHANSEY             ; 0a
 	const SPRITE_ANIM_SEQ_SLOTS_EGG                 ; 0b
 	const SPRITE_ANIM_SEQ_MAIL_CURSOR               ; 0c
-	const SPRITE_ANIM_SEQ_UNUSED_CURSOR             ; 0d
-	const SPRITE_ANIM_SEQ_POKEGEAR_ARROW            ; 0e
-	const SPRITE_ANIM_SEQ_TRADE_POKE_BALL           ; 0f
-	const SPRITE_ANIM_SEQ_TRADE_TUBE_BULGE          ; 10
-	const SPRITE_ANIM_SEQ_TRADEMON_IN_TUBE          ; 11
-	const SPRITE_ANIM_SEQ_REVEAL_NEW_MON            ; 12
-	const SPRITE_ANIM_SEQ_RADIO_TUNING_KNOB         ; 13
-	const SPRITE_ANIM_SEQ_CUT_LEAVES                ; 14
-	const SPRITE_ANIM_SEQ_FLY_FROM                  ; 15
-	const SPRITE_ANIM_SEQ_FLY_LEAF                  ; 16
-	const SPRITE_ANIM_SEQ_FLY_TO                    ; 17
-	const SPRITE_ANIM_SEQ_GS_INTRO_HO_OH_LUGIA      ; 18
-	const SPRITE_ANIM_SEQ_EZCHAT_CURSOR             ; 19
-	const SPRITE_ANIM_SEQ_MOBILE_TRADE_SENT_PULSE   ; 1a
-	const SPRITE_ANIM_SEQ_MOBILE_TRADE_OT_PULSE     ; 1b
-	const SPRITE_ANIM_SEQ_INTRO_SUICUNE             ; 1c
-	const SPRITE_ANIM_SEQ_INTRO_PICHU_WOOPER        ; 1d
-	const SPRITE_ANIM_SEQ_CELEBI                    ; 1e
-	const SPRITE_ANIM_SEQ_INTRO_UNOWN               ; 1f
-	const SPRITE_ANIM_SEQ_INTRO_UNOWN_F             ; 20
-	const SPRITE_ANIM_SEQ_INTRO_SUICUNE_AWAY        ; 21
+	const SPRITE_ANIM_SEQ_POKEGEAR_ARROW            ; 0d
+	const SPRITE_ANIM_SEQ_TRADE_POKE_BALL           ; 0e
+	const SPRITE_ANIM_SEQ_TRADE_TUBE_BULGE          ; 0f
+	const SPRITE_ANIM_SEQ_TRADEMON_IN_TUBE          ; 10
+	const SPRITE_ANIM_SEQ_REVEAL_NEW_MON            ; 11
+	const SPRITE_ANIM_SEQ_RADIO_TUNING_KNOB         ; 12
+	const SPRITE_ANIM_SEQ_CUT_LEAVES                ; 13
+	const SPRITE_ANIM_SEQ_FLY_FROM                  ; 14
+	const SPRITE_ANIM_SEQ_FLY_LEAF                  ; 15
+	const SPRITE_ANIM_SEQ_FLY_TO                    ; 16
+	const SPRITE_ANIM_SEQ_GS_INTRO_HO_OH_LUGIA      ; 17
+	const SPRITE_ANIM_SEQ_EZCHAT_CURSOR             ; 18
+	const SPRITE_ANIM_SEQ_MOBILE_TRADE_SENT_PULSE   ; 19
+	const SPRITE_ANIM_SEQ_MOBILE_TRADE_OT_PULSE     ; 1a
+	const SPRITE_ANIM_SEQ_INTRO_SUICUNE             ; 1b
+	const SPRITE_ANIM_SEQ_INTRO_PICHU_WOOPER        ; 1c
+	const SPRITE_ANIM_SEQ_CELEBI                    ; 1d
+	const SPRITE_ANIM_SEQ_INTRO_UNOWN               ; 1e
+	const SPRITE_ANIM_SEQ_INTRO_UNOWN_F             ; 1f
+	const SPRITE_ANIM_SEQ_INTRO_SUICUNE_AWAY        ; 20
 NUM_SPRITE_ANIM_SEQS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
