@@ -27,8 +27,6 @@ DoAnimFrame:
 	dw AnimSeq_SlotsChansey
 	dw AnimSeq_SlotsChanseyEgg
 	dw AnimSeq_MailCursor
-	dw AnimSeq_UnusedCursor
-	dw AnimSeq_MemoryGameCursor
 	dw AnimSeq_PokegearArrow
 	dw AnimSeq_TradePokeBall
 	dw AnimSeq_TradeTubeBulge
@@ -51,11 +49,6 @@ DoAnimFrame:
 	dw AnimSeq_IntroSuicuneAway
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
-AnimSeq_Null:
-AnimSeq_MemoryGameCursor:
-AnimSeq_UnusedCursor:
-	ret
-
 AnimSeq_PartyMon:
 	ld a, [wMenuCursorY]
 
@@ -71,6 +64,7 @@ AnimSeq_PartyMon:
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], 0
+AnimSeq_Null:
 	ret
 
 AnimSeq_PartyMonSwitch:
