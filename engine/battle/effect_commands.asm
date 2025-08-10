@@ -2080,18 +2080,6 @@ BattleCommand_FailureText:
 	jp EndMoveEffect
 
 BattleCommand_ApplyDamage:
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_ENDURE, a
-	jr z, .focus_band
-
-	call BattleCommand_FalseSwipe
-	ld b, 0
-	jr nc, .damage
-	ld b, 1
-	jr .damage
-
-.focus_band
 	call GetOpponentItem
 	ld a, b
 	cp HELD_FOCUS_BAND
@@ -2104,7 +2092,7 @@ BattleCommand_ApplyDamage:
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
-	ld b, 2
+	ld b, 1
 
 .damage
 	push bc
@@ -2125,12 +2113,6 @@ BattleCommand_ApplyDamage:
 	and a
 	ret z
 
-	dec a
-	jr nz, .focus_band_text
-	ld hl, EnduredText
-	jp StdBattleTextbox
-
-.focus_band_text
 	call GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
@@ -6221,11 +6203,11 @@ INCLUDE "engine/battle/move_effects/nightmare.asm"
 
 INCLUDE "engine/battle/move_effects/flame_wheel.asm"
 
+INCLUDE "engine/battle/move_effects/acrobatics.asm"
+
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
-
-INCLUDE "engine/battle/move_effects/endure.asm"
 
 INCLUDE "engine/battle/move_effects/spikes.asm"
 
