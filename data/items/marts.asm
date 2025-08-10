@@ -276,7 +276,7 @@ MartVermilion:
 	db HYPER_POTION
 	db SWAG_BEACON
 	db MORPH_MAIL
-	db TM_THUNDERPUNCH
+	db TM_ACROBATICS
 	db -1 ; end
 
 MartCeladon2F1:
@@ -311,8 +311,8 @@ MartCeladon3F:
 	db 10 ; # items
 	db TM_HIDDEN_POWER
 	db TM_PROTECT
-	db TM_ENDURE
 	db TM_REST
+	db TM_SLEEP_TALK
 	db TM_PSYCH_UP
 	db TM_DEFENSE_CURL
 	db TM_SUNNY_DAY
