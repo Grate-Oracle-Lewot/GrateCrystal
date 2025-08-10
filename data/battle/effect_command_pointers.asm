@@ -88,7 +88,7 @@ BattleCommandPointers:
 	dw BattleCommand_Foresight
 	dw BattleCommand_PerishSong
 	dw BattleCommand_StartSandstorm
-	dw BattleCommand_Endure
+	dw BattleCommand_NoItemDamage
 	dw BattleCommand_CheckRollout
 	dw BattleCommand_RolloutPower
 	dw BattleCommand_FuryCutter
