@@ -106,7 +106,7 @@ MoveEffectsPointers:
 	dw Foresight
 	dw PerishSong
 	dw Sandstorm
-	dw Endure
+	dw Acrobatics
 	dw Rollout
 	dw Swagger
 	dw FuryCutter
