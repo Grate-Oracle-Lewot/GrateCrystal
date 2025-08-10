@@ -204,7 +204,7 @@ BattleAnimations::
 	dw BattleAnim_Outrage
 	dw BattleAnim_Sandstorm
 	dw BattleAnim_GigaDrain
-	dw BattleAnim_Endure
+	dw BattleAnim_Acrobatics
 	dw BattleAnim_Charm
 	dw BattleAnim_Rollout
 	dw BattleAnim_FalseSwipe
@@ -3894,31 +3894,22 @@ BattleAnim_GigaDrain:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Endure:
-	anim_1gfx ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-.loop
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj ANIM_OBJ_FOCUS, 44, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 36, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 52, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 28, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 60, 108, $6
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 20, 108, $8
-	anim_wait 2
-	anim_obj ANIM_OBJ_FOCUS, 68, 108, $8
-	anim_wait 2
-	anim_loop 5, .loop
-	anim_wait 8
-	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
-	anim_call BattleAnim_ShowMon_0
+BattleAnim_Acrobatics:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, BG_EFFECT_USER, $0
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Charm:
