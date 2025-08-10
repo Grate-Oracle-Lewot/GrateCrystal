@@ -448,7 +448,7 @@ BattleTowerMons:
 
 	db HERACROSS
 	db GOLD_BERRY
-	db REVERSAL, ENDURE, COUNTER, ROCK_SMASH
+	db REVERSAL, ACROBATICS, COUNTER, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -763,7 +763,7 @@ BattleTowerMons:
 
 	db HERACROSS
 	db FOCUS_BAND
-	db ENDURE, REVERSAL, MEGAHORN, EARTHQUAKE
+	db FLY, REVERSAL, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -773,7 +773,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 45000
 	dn 13, 15, 13, 14 ; DVs
-	db 16, 24, 8, 16 ; PP
+	db 24, 24, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
@@ -4054,7 +4054,7 @@ BattleTowerMons:
 
 	db HERACROSS
 	db BRIGHTPOWDER
-	db REVERSAL, ENDURE, MEGAHORN, EARTHQUAKE
+	db REVERSAL, FLY, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	; Stat exp
@@ -4064,7 +4064,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 7, 15, 7 ; DVs
-	db 24, 16, 8, 16 ; PP
+	db 24, 24, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
