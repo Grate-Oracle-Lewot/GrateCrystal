@@ -88,7 +88,7 @@ ENDM
 	command foresight               ; 51
 	command perishsong              ; 52
 	command startsandstorm          ; 53
-	command endure                  ; 54
+	command noitemdamage            ; 54
 	command checkrollout            ; 55
 	command rolloutpower            ; 56
 	command furycutter              ; 57
