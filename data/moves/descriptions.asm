@@ -203,7 +203,7 @@ MoveDescriptions::
 	dw OutrageDescription
 	dw SandstormDescription
 	dw GigaDrainDescription
-	dw EndureDescription
+	dw AcrobaticsDescription
 	dw CharmDescription
 	dw RolloutDescription
 	dw FalseSwipeDescription
@@ -1071,9 +1071,9 @@ GigaDrainDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
-EndureDescription:
-	db   "Survives attacks"
-	next "w/ at least 1HP.@"
+AcrobaticsDescription:
+	db   "Doubles power if"
+	next "holding no item.@"
 
 CharmDescription:
 	db   "Sharply lowers the"
