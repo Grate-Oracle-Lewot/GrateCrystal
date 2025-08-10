@@ -202,7 +202,7 @@ MoveNames::
 	li "OUTRAGE"
 	li "SANDSTORM"
 	li "GIGA DRAIN"
-	li "ENDURE"
+	li "ACROBATICS"
 	li "CHARM"
 	li "ROLLOUT"
 	li "FALSE SWIPE"
