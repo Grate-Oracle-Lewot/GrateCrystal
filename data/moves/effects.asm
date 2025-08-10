@@ -1506,11 +1506,26 @@ Sandstorm:
 	startsandstorm
 	endmove
 
-Endure:
+Acrobatics:
 	checkobedience
 	usedmovetext
 	doturn
-	endure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	noitemdamage
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkcontact
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove
 
 Rollout:
