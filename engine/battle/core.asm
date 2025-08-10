@@ -818,8 +818,6 @@ ParsePlayerAction:
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_PROTECT
 	jr z, .continue_protect
-	cp EFFECT_ENDURE
-	jr z, .continue_protect
 	xor a
 	ld [wPlayerProtectCount], a
 	jr .continue_protect
@@ -1066,7 +1064,6 @@ EndOpponentProtectEndureDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_PROTECT, [hl]
-	res SUBSTATUS_ENDURE, [hl]
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
@@ -6142,8 +6139,6 @@ endc
 .no_rage
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_PROTECT
-	ret z
-	cp EFFECT_ENDURE
 	ret z
 	xor a
 	ld [wEnemyProtectCount], a
