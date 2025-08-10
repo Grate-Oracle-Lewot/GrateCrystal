@@ -78,6 +78,7 @@ MovesDexOrder:
 
 ; Flying, physical
 	db PECK
+	db ACROBATICS
 	db WING_ATTACK
 	db FLY
 	db DRILL_PECK
@@ -344,9 +345,7 @@ MovesDexOrder:
 
 	db REST
 
-; Survive
-	db ENDURE
-
+; Protect
 	db PROTECT
 
 ; Sleep
