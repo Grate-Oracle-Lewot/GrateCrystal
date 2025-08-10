@@ -208,7 +208,7 @@
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
 	const GIGA_DRAIN   ; ca
-	const ENDURE       ; cb
+	const ACROBATICS   ; cb
 	const CHARM        ; cc
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce
