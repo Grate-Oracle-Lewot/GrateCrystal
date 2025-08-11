@@ -6026,8 +6026,8 @@ JessieGroup:
 	; JESSIE & (1)
 	db "JAMES@", TRAINERTYPE_NORMAL
 	db 15, MEOWTH
-	db 16, EKANS
-	db 16, KOFFING
+	db 15, EKANS
+	db 15, KOFFING
 	db -1 ; end
 
 	; JESSIE & (2)
