@@ -1593,7 +1593,7 @@ HitmonleeEvosAttacks:
 	db 26, HI_JUMP_KICK
 	db 31, MIND_READER
 	db 36, FORESIGHT
-	db 41, ENDURE
+	db 41, ROLLING_KICK
 	db 46, SUBMISSION
 	db 51, REVERSAL
 	db 56, MEGA_KICK
@@ -1739,8 +1739,7 @@ KangaskhanEvosAttacks:
 	db 19, COMET_PUNCH
 	db 25, DIZZY_PUNCH
 	db 31, MEGA_PUNCH
-	db 34, VITAL_THROW
-	db 37, ENDURE
+	db 35, VITAL_THROW
 	db 40, OUTRAGE
 	db 43, REVERSAL
 	db 49, DYNAMICPUNCH
@@ -3270,10 +3269,10 @@ ShuckleEvosAttacks:
 
 HeracrossEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, KARATE_CHOP
+	db 1, PECK
 	db 1, LEER
-	db 5, FURY_ATTACK
-	db 10, ENDURE
+	db 5, KARATE_CHOP
+	db 10, FURY_ATTACK
 	db 15, HORN_ATTACK
 	db 20, COUNTER
 	db 25, TAKE_DOWN
