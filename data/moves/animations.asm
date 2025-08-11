@@ -3908,6 +3908,7 @@ BattleAnim_Acrobatics:
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
 	anim_sound 0, 1, SFX_CUT
+	anim_wait 32
 	anim_obj ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 112, 40, $0
 	anim_wait 32
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, BG_EFFECT_USER, $0
