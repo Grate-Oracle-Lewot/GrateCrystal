@@ -333,7 +333,6 @@ KRIS EQU __trainer_class__
 	const GRUNTM_28
 	const GRUNTM_29
 	const GRUNTM_30
-	const GRUNTM_31
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
