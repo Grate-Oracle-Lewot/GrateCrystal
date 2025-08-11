@@ -1466,7 +1466,7 @@ BattleTowerKaren:
 
 	db HOUNDOOM
 	db BLACKGLASSES
-	db DARK_PULSE, SMOG, FLAMETHROWER, CRUNCH
+	db SUPER_FANG, SMOG, FLAMETHROWER, DARK_PULSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -1476,7 +1476,7 @@ BattleTowerKaren:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 14, 14, 13 ; DVs
-	db 24, 32, 16, 24 ; PP
+	db 16, 32, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
