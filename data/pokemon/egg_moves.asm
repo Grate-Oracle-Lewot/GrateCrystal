@@ -110,6 +110,7 @@ ZubatEggMoves:
 	db AIR_SLASH
 	db ABSORB
 	db MEGA_DRAIN
+	db SUPER_FANG
 	db -1 ; end
 
 OddishEggMoves:
