@@ -749,7 +749,8 @@ KRIS EQU __trainer_class__
 	const GIOVANNI
 
 	trainerclass JESSIE ; 47
-	const JAMES
+	const JAMES1
+	const JAMES2
 
 	trainerclass AEROBONES ; 48
 	const AEROBONES1
