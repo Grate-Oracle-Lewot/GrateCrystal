@@ -154,6 +154,7 @@ MeowthEggMoves:
 	db CHARM
 	db BEAT_UP
 	db ROCK_POLISH
+	db HEAL_BELL
 	db PRESENT
 	db SPIKES
 	db -1 ; end
@@ -655,9 +656,10 @@ NatuEggMoves:
 MareepEggMoves:
 	db BODY_SLAM
 	db SAFEGUARD
-	db SCREECH
 	db REFLECT
+	db SCREECH
 	db POWER_GEM
+	db HEAL_BELL
 	db IRON_HEAD
 	db SPORE
 	db -1 ; end
@@ -908,6 +910,7 @@ PhanpyEggMoves:
 	db -1 ; end
 
 StantlerEggMoves:
+	db HEAL_BELL
 	db REFLECT
 	db LIGHT_SCREEN
 	db FORESIGHT
