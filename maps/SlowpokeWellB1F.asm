@@ -1,8 +1,9 @@
 	object_const_def
+	const SLOWPOKEWELLB1F_JESSIE
+	const SLOWPOKEWELLB1F_JAMES
 	const SLOWPOKEWELLB1F_ROCKET1
 	const SLOWPOKEWELLB1F_ROCKET2
 	const SLOWPOKEWELLB1F_ROCKET3
-	const SLOWPOKEWELLB1F_ROCKET4
 	const SLOWPOKEWELLB1F_ROCKET_GIRL
 	const SLOWPOKEWELLB1F_SLOWPOKE1
 	const SLOWPOKEWELLB1F_SLOWPOKE2
@@ -18,19 +19,8 @@ SlowpokeWellB1F_MapScripts:
 SlowpokeWellB1FKurtScript:
 	jumptext SlowpokeWellB1FKurtText
 
-TrainerGruntM29:
-	trainer GRUNTM, GRUNTM_29, EVENT_BEAT_ROCKET_GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM29AfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerGruntM1:
-	trainer GRUNTM, GRUNTM_1, EVENT_BEAT_ROCKET_GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
+	trainer JESSIE, JAMES1, EVENT_BEAT_ROCKET_GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
 
 .Script:
 	opentext
@@ -39,10 +29,11 @@ TrainerGruntM1:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
+	disappear SLOWPOKEWELLB1F_JESSIE
+	disappear SLOWPOKEWELLB1F_JAMES
 	disappear SLOWPOKEWELLB1F_ROCKET1
 	disappear SLOWPOKEWELLB1F_ROCKET2
 	disappear SLOWPOKEWELLB1F_ROCKET3
-	disappear SLOWPOKEWELLB1F_ROCKET4
 	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
 	pause 15
 	special FadeInQuickly
@@ -79,6 +70,7 @@ TrainerGruntM2:
 	endifjustbattled
 	opentext
 	writetext GruntM2AfterBattleText
+SlowpokeWellB1F_EndText:
 	waitbutton
 	closetext
 	end
@@ -90,9 +82,16 @@ TrainerGruntM12:
 	endifjustbattled
 	opentext
 	writetext GruntM12AfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump SlowpokeWellB1F_EndText
+
+TrainerGruntM29:
+	trainer GRUNTM, GRUNTM_29, EVENT_BEAT_ROCKET_GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GruntM29AfterBattleText
+	sjump SlowpokeWellB1F_EndText
 
 TrainerGruntF1:
 	trainer GRUNTF, GRUNTF_1, EVENT_BEAT_ROCKET_GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, .Script
@@ -101,9 +100,7 @@ TrainerGruntF1:
 	endifjustbattled
 	opentext
 	writetext GruntF1AfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FSlowpokeWithMailScript:
 	faceplayer
@@ -117,18 +114,14 @@ SlowpokeWellB1FSlowpokeWithMailScript:
 
 .ReadMail:
 	writetext SlowpokeWellB1FSlowpokeMailText
-	waitbutton
-	closetext
-	end
+	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FTaillessSlowpokeScript:
 	faceplayer
 	opentext
 	writetext SlowpokeWellB1FTaillessSlowpokeText
 	cry SLOWPOKE
-	waitbutton
-	closetext
-	end
+	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FBoulder:
 	jumpstd StrengthBoulderScript
@@ -226,40 +219,64 @@ GruntM29AfterBattleText:
 
 	para "Everything we do"
 	line "is for profit."
-
-	para "That's right!"
-	line "We're TEAM ROCKET,"
-
-	para "and we'll do any-"
-	line "thing for money!"
 	done
 
 GruntM1SeenText:
-	text "What do you want?"
+	text "JESSIE: Prepare"
+	line "for trouble!"
 
-	para "If you interrupt"
-	line "our work, don't"
-	cont "expect any mercy!"
+	para "JAMES: Make it"
+	line "double!"
+
+	para "To protect the"
+	line "world from"
+	cont "devastation!"
+
+	para "To unite all"
+	line "peoples within our"
+	cont "nation!"
+
+	para "To denounce the"
+	line "evils of truth and"
+	cont "love!"
+
+	para "To extend our"
+	line "reach to the stars"
+	cont "above!"
+
+	para "TEAM ROCKET! Blast"
+	line "off at the speed"
+	cont "of light!"
+
+	para "Surrender now or"
+	line "prepare to fight!"
 	done
 
 GruntM1BeatenText:
-	text "You did OK today,"
-	line "but wait till next"
-	cont "time!"
+	text "Looks like TEAM"
+	line "ROCKET's blasting"
+	cont "off again!"
 	done
 
 TrainerGruntM1WhenTalkText:
-	text "Yeah, TEAM ROCKET"
-	line "was broken up"
-	cont "three years ago."
+	text "JESSIE: Yeah, the"
+	line "boss disbanded"
 
-	para "But we continued"
-	line "our activities"
-	cont "underground."
+	para "TEAM ROCKET three"
+	line "years ago after a"
 
-	para "Now you can have"
-	line "fun watching us"
-	cont "stir up trouble!"
+	para "twerp like you"
+	line "interfered with"
+	cont "our plans."
+
+	para "JAMES: But don't"
+	line "you worry, this"
+
+	para "isn't the last"
+	line "you'll hear of us!"
+
+	para "MEOWTH: That's"
+	line "right!"
 	done
 
 GruntM2SeenText:
@@ -365,8 +382,9 @@ SlowpokeWellB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event  5,  2, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  4,  2, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  5,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  4,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM12, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event 10,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
