@@ -3026,8 +3026,8 @@ PokemaniacGroup:
 
 GruntMGroup:
 	; GRUNTM (1)
-	db "LEAD@", TRAINERTYPE_NORMAL
-	db 16, KOFFING
+	db "STRAY@", TRAINERTYPE_NORMAL
+	db 60, TYRANITAR
 	db -1 ; end
 
 	; GRUNTM (2)
@@ -3208,11 +3208,6 @@ GruntMGroup:
 	db 30, GOLBAT
 	db 30, PINSIR
 	db 33, ARBOK
-	db -1 ; end
-
-	; GRUNTM (31)
-	db "STRAY@", TRAINERTYPE_NORMAL
-	db 60, TYRANITAR
 	db -1 ; end
 
 GentlemanGroup:
