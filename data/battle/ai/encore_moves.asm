@@ -36,7 +36,6 @@ EncoreMoves:
 	db PERISH_SONG
 	db LOCK_ON
 	db SANDSTORM
-	db ENDURE
 	db FALSE_SWIPE
 	db MEAN_LOOK
 	db ATTRACT
