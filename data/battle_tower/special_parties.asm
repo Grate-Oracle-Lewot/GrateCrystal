@@ -553,7 +553,7 @@ BattleTowerBlaine:
 
 	db RAPIDASH
 	db BERRY_JUICE
-	db QUICK_ATTACK, MEGAHORN, FURY_ATTACK, FIRE_BLAST
+	db QUICK_ATTACK, MEGAHORN, ACROBATICS, FIRE_BLAST
 	dw 0 ; OT ID
 	dt 849970 ; Exp
 	; Stat exp
@@ -563,7 +563,7 @@ BattleTowerBlaine:
 	bigdw 65535
 	bigdw 65535
 	dn 12, 11, 11, 12 ; DVs
-	db 48, 8, 32, 8 ; PP
+	db 48, 8, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
