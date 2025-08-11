@@ -303,7 +303,7 @@ KRIS EQU __trainer_class__
 	const TANNER
 
 	trainerclass GRUNTM ; 1f
-	const GRUNTM_1
+	const GRUNTM_1 ; unused
 	const GRUNTM_2
 	const GRUNTM_3
 	const GRUNTM_4
