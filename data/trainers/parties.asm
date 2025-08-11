@@ -6024,6 +6024,13 @@ BossGroup:
 
 JessieGroup:
 	; JESSIE & (1)
+	db "JAMES@", TRAINERTYPE_NORMAL
+	db 15, MEOWTH
+	db 16, EKANS
+	db 16, KOFFING
+	db -1 ; end
+
+	; JESSIE & (2)
 	db "JAMES@", TRAINERTYPE_MOVES
 	db 40, MEOWTH,     FURY_SWIPES, BITE, METAL_CLAW, PLAY_ROUGH
 	db 45, ARBOK,      WRAP, TOXIC, BITE, DIG
