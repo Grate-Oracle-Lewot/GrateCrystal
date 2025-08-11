@@ -1442,7 +1442,7 @@ BattleTowerMons:
 
 	db CROBAT
 	db BERRY_JUICE
-	db ATTRACT, CONFUSE_RAY, TOXIC, WING_ATTACK
+	db ATTRACT, CONFUSE_RAY, TOXIC, ACROBATICS
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1452,7 +1452,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 50000
 	dn 14, 15, 13, 12 ; DVs
-	db 16, 16, 8, 40 ; PP
+	db 16, 16, 8, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
@@ -2800,7 +2800,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db BERRY_JUICE
-	db SANDSTORM, FLY, STEEL_WING, TOXIC
+	db SANDSTORM, ACROBATICS, STEEL_WING, TOXIC
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2810,7 +2810,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 40000
 	dn 13, 7, 14, 13 ; DVs
-	db 8, 24, 32, 8 ; PP
+	db 8, 16, 32, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
@@ -4918,7 +4918,7 @@ BattleTowerMons:
 
 	db CROBAT
 	db BERRY_JUICE
-	db WING_ATTACK, HAZE, U_TURN, GIGA_DRAIN
+	db ACROBATICS, HAZE, U_TURN, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4928,7 +4928,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 50000
 	dn 15, 13, 12, 15 ; DVs
-	db 40, 40, 24, 8 ; PP
+	db 16, 40, 24, 8 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
