@@ -164,11 +164,12 @@ FirebreatherBillBeatenText:
 	done
 
 FirebreatherBillAfterBattleText:
-	text "On weekends, you"
-	line "can hear strange"
+	text "I hear there's a"
+	line "mosquito #MON"
 
-	para "roars from deep in"
-	line "the cave."
+	para "that's even more"
+	line "annoying than"
+	cont "ZUBAT."
 	done
 
 FirebreatherRaySeenText:
