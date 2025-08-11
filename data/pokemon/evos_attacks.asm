@@ -751,13 +751,13 @@ DugtrioEvosAttacks:
 MeowthEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions
-	db 1, METAL_CLAW
+	db 1, SCRATCH
 	db 2, GROWL
-	db 6, FORESIGHT
+	db 6, PAY_DAY
 	db 11, BITE
 	db 15, FURY_SWIPES
-	db 20, PAY_DAY
-	db 28, FAINT_ATTACK
+	db 20, METAL_CLAW
+	db 27, FAINT_ATTACK
 	db 35, SCREECH
 	db 41, PLAY_ROUGH
 	db 46, SLASH
@@ -766,12 +766,12 @@ MeowthEvosAttacks:
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, METAL_CLAW
+	db 1, SCRATCH
 	db 2, GROWL
-	db 6, FORESIGHT
+	db 6, PAY_DAY
 	db 11, BITE
 	db 15, FURY_SWIPES
-	db 20, PAY_DAY
+	db 20, METAL_CLAW
 	db 27, FAINT_ATTACK
 	db 27, POWER_GEM
 	db 38, SCREECH
