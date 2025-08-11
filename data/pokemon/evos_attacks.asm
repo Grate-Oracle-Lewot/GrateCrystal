@@ -3492,7 +3492,7 @@ HoundourEvosAttacks:
 	db 28, FAINT_ATTACK
 	db 35, FLAMETHROWER
 	db 43, CRUNCH
-	db 50, FIRE_BLAST
+	db 50, SUPER_FANG
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
@@ -3507,7 +3507,7 @@ HoundoomEvosAttacks:
 	db 30, FAINT_ATTACK
 	db 41, FLAMETHROWER
 	db 52, CRUNCH
-	db 60, FIRE_BLAST
+	db 60, SUPER_FANG
 	db 0 ; no more level-up moves
 
 KingdraEvosAttacks:
