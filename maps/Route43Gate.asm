@@ -1,9 +1,9 @@
-ROUTE43GATE_TOLL EQU 1000
+ROUTE43GATE_TOLL EQU 2000
 
 	object_const_def
 	const ROUTE43GATE_OFFICER
-	const ROUTE43GATE_ROCKET1
-	const ROUTE43GATE_ROCKET2
+	const ROUTE43GATE_JESSIE
+	const ROUTE43GATE_JAMES
 
 Route43Gate_MapScripts:
 	def_scene_scripts
@@ -27,11 +27,11 @@ Route43Gate_MapScripts:
 
 RocketScript_Southbound:
 	applymovement PLAYER, PlayerStepsIn
-	showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15
-	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouSouth
-	turnobject ROUTE43GATE_ROCKET1, UP
-	showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15
-	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouSouth
+	showemote EMOTE_SHOCK, ROUTE43GATE_JAMES, 15
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_BlocksYouSouth
+	turnobject ROUTE43GATE_JESSIE, UP
+	showemote EMOTE_SHOCK, ROUTE43GATE_JESSIE, 15
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_BlocksYouSouth
 	opentext
 	writetext RocketText_TollFee
 	promptbutton
@@ -52,18 +52,18 @@ RocketScript_YoureBrokeSouth:
 RocketScript_ShakeDownSouth:
 	promptbutton
 	closetext
-	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassSouth
-	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassSouth
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassSouth
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassSouth
 	setscene SCENE_FINISHED
 	special RestartMapMusic
 	end
 
 RocketScript_Northbound:
-	showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15
-	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouNorth
-	turnobject ROUTE43GATE_ROCKET2, DOWN
-	showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15
-	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouNorth
+	showemote EMOTE_SHOCK, ROUTE43GATE_JESSIE, 15
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_BlocksYouNorth
+	turnobject ROUTE43GATE_JAMES, DOWN
+	showemote EMOTE_SHOCK, ROUTE43GATE_JAMES, 15
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_BlocksYouNorth
 	opentext
 	writetext RocketText_TollFee
 	promptbutton
@@ -84,14 +84,17 @@ RocketScript_YoureBrokeNorth:
 RocketScript_ShakeDownNorth:
 	promptbutton
 	closetext
-	applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassNorth
-	applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassNorth
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassNorth
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassNorth
 	setscene SCENE_FINISHED
 	special RestartMapMusic
 	end
 
-RocketScript_MakingABundle:
-	jumptextfaceplayer RocketText_MakingABundle
+RocketScript_Jessie:
+	jumptextfaceplayer RocketText_Jessie
+
+RocketScript_James:
+	jumptextfaceplayer RocketText_James
 
 OfficerScript_GuardWithSludgeBomb:
 	faceplayer
@@ -181,7 +184,7 @@ Rocket2Script_LetsYouPassNorth:
 
 RocketText_TollFee:
 	text "Hold it there,"
-	line "kiddo!"
+	line "twerp!"
 
 	para "The toll is ¥{d:ROUTE43GATE_TOLL}"
 	line "to go through."
@@ -193,25 +196,37 @@ RocketText_ThankYou:
 	done
 
 RocketText_AllYouGot:
-	text "Then pay what you"
-	line "have, please."
+	text "Huh? You don't even"
+	line "have that much?"
+
+	para "Then we'll take it"
+	line "all, brat!"
 	done
 
-RocketText_MakingABundle:
-	text "He-he-he. We're"
-	line "making a bundle."
+RocketText_Jessie:
+	text "We got stuck on"
+	line "toll duty after"
 
-	para "Everyone wants to"
-	line "see what's going"
+	para "what you did to"
+	line "us at the WELL."
 
-	para "on up at the LAKE"
-	line "OF RAGE."
+	para "We'll get you back"
+	line "some day!"
+	done
+
+RocketText_James:
+	text "This gate assign-"
+	line "ment is giving me"
+
+	para "time sort through"
+	line "my bottle cap"
+	cont "collection."
 	done
 
 OfficerText_FoundTM:
 	text "I got chased from"
-	line "my post by these"
-	cont "thugs in black."
+	line "my post by those"
+	cont "TEAM ROCKET thugs."
 
 	para "They left these"
 	line "TMs behind."
@@ -244,5 +259,5 @@ Route43Gate_MapEvents:
 
 	def_object_events
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerScript_GuardWithSludgeBomb, EVENT_LAKE_OF_RAGE_CIVILIANS
-	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS
-	object_event  7,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS
+	object_event  2,  4, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_Jessie, EVENT_ROUTE_43_GATE_ROCKETS
+	object_event  7,  4, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_James, EVENT_ROUTE_43_GATE_ROCKETS
