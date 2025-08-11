@@ -209,7 +209,7 @@ Route22HouseJessieScript:
 	writetext Route22HouseJessieBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES
+	loadtrainer JESSIE, JAMES2
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -231,7 +231,7 @@ Route22HouseJamesScript:
 	writetext Route22HouseJamesBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES
+	loadtrainer JESSIE, JAMES2
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -546,9 +546,14 @@ Route22HouseGiovanniAfterText:
 	done
 
 Route22HouseJessieBeforeText:
-	text "What kind of twerp"
-	line "are you supposed"
-	cont "to be?"
+	text "Hey! It's the twerp"
+	line "from AZALEA TOWN!"
+
+	para "We're going to get"
+	line "you back for what"
+
+	para "you did to us in"
+	line "SLOWPOKE WELL!"
 	done
 
 Route22HouseJessieAfterText:
@@ -563,8 +568,12 @@ Route22HouseJamesBeforeText:
 	text "Ooh, what do we"
 	line "have here?"
 
-	para "Another kneebiter"
-	line "to knock around!"
+	para "You're that knee-"
+	line "biter from JOHTO,"
+	cont "aren't you?"
+
+	para "It's payback time"
+	line "now!"
 	done
 
 Route22HouseJamesAfterText:
