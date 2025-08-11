@@ -1960,12 +1960,12 @@ AI_Smart_TrapTarget:
 AI_Smart_SpDefenseUp2:
 ; Discourage this move if enemy's HP is lower than 50%.
 	call AICheckEnemyHalfHP
-	jr nc, .discourage
+	jr nc, AI_SpDefenseUp2_Acrobatics_Discourage
 
 ; Discourage this move if enemy's special defense level is higher than +3.
 	ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .discourage
+	jr nc, AI_SpDefenseUp2_Acrobatics_Discourage
 
 ; 80% chance to greatly encourage this move if enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
@@ -1999,8 +1999,21 @@ AI_Smart_SpDefenseUp2:
 	dec [hl]
 	ret
 
-.discourage
+AI_SpDefenseUp2_Acrobatics_Discourage:
 	inc [hl]
+	ret
+
+AI_Smart_Acrobatics:
+; Discourage this move if the enemy has any held item.
+; Encourage this move if the enemy has no held item. If encouraged, 80% chance to encourage again.
+	ld a, [wEnemyMonItem]
+	and a
+	jr nz, AI_SpDefenseUp2_Acrobatics_Discourage
+	dec [hl]
+
+	call AI_80_20
+	ret c
+	dec [hl]
 	ret
 
 AI_Smart_Avalanche:
@@ -2290,18 +2303,6 @@ AI_Smart_FlameWheel:
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CURLED, a
 	ret z
-	dec [hl]
-
-	call AI_80_20
-	ret c
-	dec [hl]
-	ret
-
-AI_Smart_Acrobatics:
-; Encourage this move if the enemy has no held item. If encouraged, 80% chance to encourage again.
-	ld a, [wEnemyMonItem]
-	and a
-	ret nz
 	dec [hl]
 
 	call AI_80_20
