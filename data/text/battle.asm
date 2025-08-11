@@ -497,11 +497,6 @@ HungOnText:
 	text "!"
 	autodone
 
-EnduredText:
-	text "<TARGET>"
-	line "ENDURED the hit!"
-	autodone
-
 InLoveWithText:
 	text "<USER>"
 	line "is in love with"
