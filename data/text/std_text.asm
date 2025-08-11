@@ -137,35 +137,17 @@ MagazineBookshelfText:
 	done
 
 TeamRocketOathText:
-	text "TEAM ROCKET MOTTO"
+	text "TEAM ROCKET OATH"
 
-	para "Prepare for"
-	line "trouble!"
+	para "Steal #MON for"
+	line "profit!"
 
-	para "Make it double!"
+	para "Exploit #MON"
+	line "for profit!"
 
-	para "To protect the"
-	line "world from"
-	cont "devastation!"
-
-	para "To unite all"
-	line "peoples within our"
-	cont "nation!"
-
-	para "To denounce the"
-	line "evils of truth and"
-	cont "love!"
-
-	para "To extend our"
-	line "reach to the stars"
-	cont "above!"
-
-	para "TEAM ROCKET! Blast"
-	line "off at the speed"
-	cont "of light!"
-
-	para "Surrender now or"
-	line "prepare to fight!"
+	para "All #MON exist"
+	line "for the glory of"
+	cont "TEAM ROCKET!"
 	done
 
 IncenseBurnerText:
