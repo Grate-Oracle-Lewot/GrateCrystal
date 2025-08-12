@@ -11,11 +11,6 @@ PokemonFanClub_MapScripts:
 
 	def_callbacks
 
-PokemonFanClub_EndText:
-	waitbutton
-	closetext
-	end
-
 PokemonFanClubChairmanScript:
 	faceplayer
 	checkevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
@@ -95,7 +90,10 @@ PokemonFanClubClefairyGuyScript:
 
 .NoRoom:
 	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
-	sjump PokemonFanClub_EndText
+PokemonFanClub_EndText:
+	waitbutton
+	closetext
+	end
 
 PokemonFanClubTeacherScript:
 	jumptextfaceplayer PokemonFanClubTeacherText
