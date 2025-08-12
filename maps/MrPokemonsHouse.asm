@@ -60,11 +60,6 @@ MrPokemonsHouse_MapScripts:
 	closetext
 	sjump MrPokemonsHouse_OakScript
 
-MrPokemonsHouse_EndText:
-	waitbutton
-	closetext
-	end
-
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
@@ -255,7 +250,10 @@ MrPokemonsHouse_OakBattleScript:
 	setflag ENGINE_DUNSPARCE_SWARM
 	opentext
 	writetext MrPokemonsHouse_OakBattleDoneText
-	sjump MrPokemonsHouse_EndText
+MrPokemonsHouse_EndText:
+	waitbutton
+	closetext
+	end
 
 MrPokemonsHouse_ForeignMagazines:
 	jumptext MrPokemonsHouse_ForeignMagazinesText
