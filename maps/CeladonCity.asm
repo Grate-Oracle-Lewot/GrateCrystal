@@ -20,11 +20,6 @@ CeladonCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CELADON
 	endcallback
 
-CeladonCityEndText:
-	waitbutton
-	closetext
-	end
-
 CeladonCityTutorSacredFireScript:
 	faceplayer
 	opentext
@@ -42,18 +37,18 @@ CeladonCityTutorSacredFireScript:
 
 .TutorRefused
 	writetext CeladonCityTutorSacredFireRefused
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 .NoLeaf:
 	writetext CeladonCityTutorSacredFireNoLeaf
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 .TeachMove
 	writetext CeladonCityTutorSacredFirePayment
 	takeitem GOLD_LEAF
 	waitbutton
 	writetext CeladonCityTutorSacredFireTaught
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 CeladonCityTutorAeroblastScript:
 	faceplayer
@@ -72,18 +67,18 @@ CeladonCityTutorAeroblastScript:
 
 .TutorRefused
 	writetext CeladonCityTutorAeroblastRefused
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 .NoLeaf:
 	writetext CeladonCityTutorAeroblastNoLeaf
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 .TeachMove
 	writetext CeladonCityTutorAeroblastPayment
 	takeitem SILVER_LEAF
 	waitbutton
 	writetext CeladonCityTutorAeroblastTaught
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 CeladonCityFisherScript:
 	jumptextfaceplayer CeladonCityFisherText
@@ -92,7 +87,10 @@ CeladonCityPoliwrath:
 	opentext
 	writetext CeladonCityPoliwrathText
 	cry POLIWRATH
-	sjump CeladonCityEndText
+CeladonCity_EndText:
+	waitbutton
+	closetext
+	end
 
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text
@@ -103,11 +101,11 @@ CeladonCityGramps2Script:
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .PostBadge
 	writetext CeladonCityGramps2Text1
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 .PostBadge:
 	writetext CeladonCityGramps2Text2
-	sjump CeladonCityEndText
+	sjump CeladonCity_EndText
 
 CeladonCityYoungster1Script:
 	jumptextfaceplayer CeladonCityYoungster1Text
