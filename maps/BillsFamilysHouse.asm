@@ -11,11 +11,6 @@ BillsFamilysHouse_MapScripts:
 
 	def_callbacks
 
-BillsFamilys_EndText:
-	waitbutton
-	closetext
-	end
-
 BillScript:
 	faceplayer
 	opentext
@@ -50,7 +45,10 @@ BillScript:
 
 .GotEevee:
 	writetext BillPopWontWorkText
-	sjump BillsFamilys_EndText
+BillsFamilys_EndText:
+	waitbutton
+	closetext
+	end
 
 BillsMomScript:
 	faceplayer
