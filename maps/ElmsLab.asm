@@ -70,11 +70,6 @@ ElmsLab_MapScripts:
 	closetext
 	end
 
-ElmsLab_EndText:
-	waitbutton
-	closetext
-	end
-
 ProfElmScript:
 	faceplayer
 	opentext
@@ -101,7 +96,10 @@ ElmCheckEverstone:
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
 	writetext ElmThoughtEggHatchedText
-	sjump ElmsLab_EndText
+ElmsLab_EndText:
+	waitbutton
+	closetext
+	end
 
 ElmEggHatchedScript:
 	setval TOGEPI
