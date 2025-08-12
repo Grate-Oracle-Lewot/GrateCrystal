@@ -85,11 +85,6 @@ Route22House_MapScripts:
 .End:
 	endcallback
 
-Route22House_EndText:
-	waitbutton
-	closetext
-	end
-
 Route22HouseRealKarenScript:
 	faceplayer
 	opentext
@@ -113,7 +108,10 @@ Route22HouseRealKarenScript:
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
 	writetext Route22HouseRealKarenAfterText
-	sjump Route22House_EndText
+Route22House_EndText:
+	waitbutton
+	closetext
+	end
 
 Route22HouseRealKogaScript:
 	faceplayer
