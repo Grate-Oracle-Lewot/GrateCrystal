@@ -9,18 +9,16 @@ AdventureArchive_MapScripts:
 AdventureArchiveSuperNerdScript:
 	jumptextfaceplayer AdventureArchiveSuperNerdText
 
-AdventureArchive_EndText:
-	waitbutton
-	closetext
-	end
-
 AdventureArchiveMachine1:
 	opentext
 	writetext AdventureArchiveText1
 	promptbutton
 	writetext AdventureArchive_EmptyText
 	callasm AdventureArchive_Machine1
-	sjump AdventureArchive_EndText
+AdventureArchive_EndText:
+	waitbutton
+	closetext
+	end
 
 AdventureArchiveMachine2:
 	opentext
