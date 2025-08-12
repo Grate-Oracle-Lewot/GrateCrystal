@@ -9,16 +9,14 @@ LavenderNameRater_MapScripts:
 
 	def_callbacks
 
-LavNameRater_EndText:
-	waitbutton
-	closetext
-	end
-
 LavenderNameRater:
 	faceplayer
 	opentext
 	special NameRater
-	sjump LavNameRater_EndText
+LavNameRater_EndText:
+	waitbutton
+	closetext
+	end
 
 LavenderMoveDeleter:
 	faceplayer
