@@ -6021,8 +6021,8 @@ JessieGroup:
 	; JESSIE & (1)
 	db "JAMES@", TRAINERTYPE_ITEM
 	db 13, MEOWTH,     AMULET_COIN
-	db 13, EKANS,      NO_ITEM
-	db 13, KOFFING,    NO_ITEM
+	db 13, EKANS,      TM_THIEF
+	db 13, KOFFING,    SMOKE_BALL
 	db -1 ; end
 
 	; JESSIE & (2)
