@@ -229,12 +229,20 @@ FakeDirectorTextAfter:
 	done
 
 Executivef1SeenText:
-	text "Remember me from"
+	text "Hey, you…!"
+
+	para "Remember me from"
 	line "the HIDEOUT in"
 	cont "MAHOGANY TOWN?"
 
-	para "I lost then, but I"
-	line "won't this time."
+	para "Back there, you"
+	line "were riding on the"
+
+	para "coattails of that"
+	line "dragon master…"
+
+	para "But now… Heehee…"
+	line "You're all alone!"
 	done
 
 Executivef1BeatenText:
