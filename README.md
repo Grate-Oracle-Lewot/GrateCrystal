@@ -320,6 +320,7 @@ Prize Pokémon:
 - Until you've cleared out Team Rocket's hideout in Mahogany Town, any would-be Magikarp encounter at the Lake of Rage becomes a Gyarados with all 0 DVs (representing the negative effects of the forced evolution). Encounters that are generated as Gyarados in the first place have normal, randomized DVs (or perfect DVs for the Red Gyarados).
 - The Grimer and Koffing lines are now genderless, but can still learn egg moves from the egg move tutor. (This is purely to prevent Weezing from having Cute Charm, because... look at it.) Porygon also gets egg moves, the idea being that they were programmed in.
 - A sailor in Cianwood City attempts to prevent Surf softlocks. If you haven't acquired any Rods, he will give you a free Tentacool as long as you don't currently own any Tentacool. If you have any Rod, he will give you 5 Poké Balls if you have no Poké Balls.
+- Jessie and James now lead the Slowpoke Well invasion, and also serve as the toll-taking guards in the Route 43 gatehouse. This is in addition to their above-mentioned appearance in the Route 22 building in the postgame. Inspiration for how to colorize their Pokémon Yellow sprite goes to Polished Crystal.
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower (0-3 for Flying types)
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
 - Frozen Pokémon now have twice the chance to thaw out during Harsh Sunlight
