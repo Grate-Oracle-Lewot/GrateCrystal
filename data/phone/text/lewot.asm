@@ -211,6 +211,77 @@ LewotPhonePikminText:
 	cont "deathless."
 	done
 
+LewotPhoneCoinFlipText:
+	text "Here's a true story"
+	line "from my school"
+	cont "days…"
+
+	para "I don't remember"
+	line "all the details,"
+
+	para "but it was a math"
+	line "class, and yet it"
+
+	para "was a multiple"
+	line "choice test, not"
+
+	para "sure what happened"
+	line "there…"
+
+	para "Most of the quest-"
+	line "ions had four ans-"
+	cont "wers, but a few"
+
+	para "were just true or"
+	line "false…"
+
+	para "I had no idea on"
+	line "one of the true-"
+	cont "or-false ones,"
+
+	para "and I remembered"
+	line "that I had some"
+
+	para "change in my pock-"
+	line "et, so I thought,"
+	cont "what the heck, and"
+	cont "flipped a coin."
+
+	para "What I didn't ex-"
+	line "actly intend was"
+
+	para "how loudly it hit"
+	line "the desk."
+
+	para "Thing is, it was a"
+	line "substitute teacher"
+
+	para "that day, so I"
+	line "didn't get in"
+	cont "trouble."
+
+	para "He did ask how I"
+	line "could flip a coin"
+
+	para "when there were"
+	line "four answers, and"
+
+	para "I explained that"
+	line "that one only had"
+	cont "two."
+
+	para "Someone did laugh,"
+	line "but it's not like"
+
+	para "the whole class-"
+	line "room erupted or"
+	cont "anything."
+
+	para "Still, it's probab-"
+	line "ly my proudest mo-"
+	cont "ment to this day."
+	done
+
 LewotPhoneHangUpText:
 	text "I'm sure you feel"
 	line "enlightened."
