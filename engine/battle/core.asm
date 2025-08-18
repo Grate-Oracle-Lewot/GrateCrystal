@@ -288,7 +288,8 @@ BattleTurn:
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
 
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr nz, .not_disconnected
 	farcall StartMobileInactivityTimerWithEntourage
 	jr c, .quit
@@ -2596,7 +2597,8 @@ WinTrainerBattle:
 .got_defeat_phrase:
 	call StdBattleTextbox
 
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 	ld a, [wLinkMode]
 	and a
@@ -2978,11 +2980,6 @@ CheckMobileBattleError:
 	xor a
 	ret
 
-IsMobileBattle:
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	ret
-
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
 	; fallthrough
@@ -3002,7 +2999,8 @@ JumpToPartyMenuAndPrintText:
 	jp DelayFrame
 
 SelectBattleMon:
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 	farcall PartyMenuSelect
 	ret
@@ -3137,7 +3135,8 @@ LostBattle:
 
 .not_tied
 	ld hl, LostAgainstText
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 
 .text
@@ -5146,7 +5145,8 @@ BattleMenu_Fight:
 	ret
 
 LoadBattleMenu2:
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 
 	farcall LoadBattleMenu
@@ -5328,7 +5328,8 @@ BattleMenuPKMN_Loop:
 	jp BattleMenu
 
 .GetMenu:
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 	farcall BattleMonMenu
 	ret
@@ -5546,7 +5547,8 @@ CheckAmuletCoin:
 	ret
 
 MoveSelectionScreen:
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr nz, .not_mobile
 	farcall Mobile_MoveSelectionScreen
 	ret
@@ -8470,7 +8472,8 @@ ShowLinkBattleParticipantsAfterEnd:
 DisplayLinkBattleResult:
 	farcall CheckMobileBattleError
 	jr c, .Mobile_InvalidBattle
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr nz, .proceed
 
 	ld hl, wcd2a
@@ -8514,7 +8517,8 @@ DisplayLinkBattleResult:
 
 	call CloseSRAM
 
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	jr z, .mobile
 	call WaitPressAorB_BlinkCursor
 	jp ClearTilemap
@@ -9199,7 +9203,8 @@ BattleStartMessage:
 	pop hl
 	call StdBattleTextbox
 
-	call IsMobileBattle
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
 	ret nz
 
 	ld c, $2 ; start
