@@ -1,4 +1,4 @@
-MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
+MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 500
 
 	object_const_def
 	const MAHOGANYTOWN_POKEFAN_M
@@ -147,11 +147,22 @@ RageCandyBarMerchantTryOneText:
 
 	para "Right now, it can"
 	line "be yours for just"
-	cont "¥300! Want one?"
+	cont "¥{d:MAHOGANYTOWN_RAGECANDYBAR_PRICE}! Want one?"
 	done
 
 RageCandyBarMerchantSavorItText:
-	text "Good! Savor it!"
+	text "Good! If your"
+	line "#MON holds that"
+
+	para "CAKE, it can hang"
+	line "on with 1 HP if"
+
+	para "it's KO'd from full"
+	line "HP! But it eats"
+
+	para "the CAKE to do so,"
+	line "so come get an-"
+	cont "other one!"
 	done
 
 RageCandyBarMerchantNotEnoughMoneyText:
