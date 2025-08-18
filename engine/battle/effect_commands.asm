@@ -2091,7 +2091,7 @@ BattleCommand_ApplyDamage:
 
 .focus_band
 	call BattleRandom
-	cp c
+	cp c ; Focus Band's attribute parameter
 	jr nc, .damage
 .hang_on
 	call BattleCommand_FalseSwipe
