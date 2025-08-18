@@ -2083,12 +2083,17 @@ BattleCommand_ApplyDamage:
 	call GetOpponentItem
 	ld a, b
 	cp HELD_FOCUS_BAND
+	jr z, .focus_band
+	cp HELD_FOCUS_SASH
+	jr z, .focus_sash
 	ld b, 0
-	jr nz, .damage
+	jr .damage
 
+.focus_band
 	call BattleRandom
 	cp c
 	jr nc, .damage
+.hang_on
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
@@ -2117,8 +2122,32 @@ BattleCommand_ApplyDamage:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
+	ld a, [hl]
+	cp HELD_FOCUS_SASH
+	jr nz, .dont_consume
+	farcall ConsumeHeldItem
+.dont_consume
 	ld hl, HungOnText
 	jp StdBattleTextbox
+
+.focus_sash
+	ld hl, wEnemyMonHP
+	ld a, [hBattleTurn]
+	and a
+	jr z, .check_hp
+	ld hl, wBattleMonHP
+.check_hp
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .damage
+	ld a, [hl]
+	cp c
+	jr nz, .damage
+	jr .hang_on
 
 .update_damage_taken
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
