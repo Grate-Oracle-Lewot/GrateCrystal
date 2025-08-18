@@ -334,7 +334,7 @@ BattleTowerJanine:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerJanine
 
 	db CROBAT
-	db FOCUS_BAND
+	db RAGECANDYBAR
 	db WING_ATTACK, DOUBLE_TEAM, CONFUSE_RAY, POISON_JAB
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
