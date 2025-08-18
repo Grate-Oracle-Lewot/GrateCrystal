@@ -1,17 +1,15 @@
 BattleCommand_StartSun:
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
-	call GetWeatherTurns
-	cp 6
-	jr nc, .done
 	call GetUserItem
 	ld a, b
-	cp HELD_SUN_STONE
-	jr nz, .five
-	ld a, 8
-	jr .done
-.five
+	cp HELD_WEATHER_BOOST
+	jr nc, .eight ; HELD_SUN_STONE is the only held effect after HELD_WEATHER_BOOST
 	ld a, 5
+	jr .done
+
+.eight
+	ld a, 8
 .done
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
