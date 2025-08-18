@@ -13,6 +13,5 @@ HealingHPAmounts:
 	dbw BERRY_JUICE,   84
 	dbw ENERGYPOWDER,  75
 	dbw ENERGY_ROOT,  210
-	dbw RAGECANDYBAR,  42
 	dbw STICK,        150
 	dbw -1, 0 ; end
