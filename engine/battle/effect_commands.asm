@@ -6907,18 +6907,9 @@ ContactStatic:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 
-	ld hl, wPartyMon1Item
-	ld de, wBattleMonItem
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .found_user
-	ld hl, wOTPartyMon1Item
-	ld de, wEnemyMonItem
-.found_user
-	ld a, NO_ITEM
-	ld [hl], a
-	ld [de], a
-
+	call BattleCommand_SwitchTurn
+	farcall ConsumeHeldItem
+	call BattleCommand_SwitchTurn
 	ld hl, StaticPrzcureberryText
 	jp StdBattleTextbox
 
