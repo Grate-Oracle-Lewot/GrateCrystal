@@ -2016,7 +2016,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db GOLEM
-	db FOCUS_BAND
+	db RAGECANDYBAR
 	db AVALANCHE, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 79930 ; Exp
