@@ -3335,8 +3335,9 @@ SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
 	db 1, SMOG
-	db 1, HARDEN
+	db 2, HARDEN
 	db 6, EMBER
+	db 9, GROWTH
 	db 13, ROCK_THROW
 	db 19, RECOVER
 	db 25, BODY_SLAM
@@ -3349,8 +3350,9 @@ SlugmaEvosAttacks:
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
-	db 1, HARDEN
+	db 2, HARDEN
 	db 6, EMBER
+	db 9, GROWTH
 	db 13, ROCK_THROW
 	db 19, RECOVER
 	db 25, BODY_SLAM
