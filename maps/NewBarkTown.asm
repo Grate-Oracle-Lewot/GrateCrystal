@@ -120,6 +120,13 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
+	opentext
+	givepoke CHIKORITA, 5, GOLD_BERRY
+	closetext
+	loadwildmon MAREEP, 5
+	startbattle
+	reloadmapafterbattle
+	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
