@@ -7,7 +7,7 @@
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
 	db 160 ; base exp
-	db SODA_POP, LEFTOVERS ; items
+	db RAGECANDYBAR, SODA_POP ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lickitung/front.dimensions"
