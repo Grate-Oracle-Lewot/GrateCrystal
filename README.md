@@ -173,6 +173,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
+- Thief, if the user is already holding an item, now still removes the target's item, effectively acting like Knock Off in that case, except the item is permanently lost.
+
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types.
 
 - Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
@@ -220,6 +222,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - "Hardhat," a new held item which prevents recoil damage, as well as crash damage from [Hi] Jump Kick
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - The Big Pearl is now called the Black Pearl, and it extends any weather move used by the holder to 8 turns
+- The Ragecandybar is now called the Cake of Rage, and it has the effect of the Focus Sash; it's consumed on use, but multiple can be bought
 - Type boost held items now boost their type's power by 19% instead of 10%
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
