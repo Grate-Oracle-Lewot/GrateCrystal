@@ -3342,7 +3342,7 @@ SlugmaEvosAttacks:
 	db 19, RECOVER
 	db 25, BODY_SLAM
 	db 30, AMNESIA
-	db 36, FLAMETHROWER
+	db 36, FLAME_WHEEL
 	db 43, ROCK_SLIDE
 	db 50, FISSURE
 	db 0 ; no more level-up moves
@@ -3357,7 +3357,7 @@ MagcargoEvosAttacks:
 	db 19, RECOVER
 	db 25, BODY_SLAM
 	db 30, AMNESIA
-	db 36, FLAMETHROWER
+	db 36, FLAME_WHEEL
 	db 37, ROCK_POLISH
 	db 48, ROCK_SLIDE
 	db 60, FISSURE
