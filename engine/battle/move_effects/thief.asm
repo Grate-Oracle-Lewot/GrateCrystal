@@ -34,7 +34,7 @@ BattleCommand_Thief:
 	call .playeritem
 	ld a, [hl]
 	and a
-	jr nz, .stole
+	jr nz, .knock_off
 
 	ld a, [wNamedObjectIndex]
 	ld [hl], a
@@ -63,7 +63,7 @@ BattleCommand_Thief:
 	call .enemyitem
 	ld a, [hl]
 	and a
-	jr nz, .stole
+	jr nz, .knock_off
 
 	ld a, [wNamedObjectIndex]
 	ld [hl], a
@@ -72,6 +72,11 @@ BattleCommand_Thief:
 .stole
 	call GetItemName
 	ld hl, StoleText
+	jp StdBattleTextbox
+
+.knock_off
+	call GetItemName
+	ld hl, KnockOffText
 	jp StdBattleTextbox
 
 .playeritem
