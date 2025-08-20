@@ -1155,7 +1155,7 @@ SlowpokeEvosAttacks:
 	db EVOLVE_STAT, 37, ATK_GT_DEF, SLOWKING
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 6, GROWL
+	db 6, MEDITATE
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
@@ -1170,7 +1170,7 @@ SlowpokeEvosAttacks:
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 6, GROWL
+	db 6, MEDITATE
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
@@ -3040,7 +3040,7 @@ MurkrowEvosAttacks:
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 6, GROWL
+	db 6, MEDITATE
 	db 10, WATER_GUN
 	db 15, CONFUSION
 	db 20, ACID
