@@ -977,6 +977,14 @@ StoleText:
 	scroll "from its foe!"
 	autodone
 
+KnockOffText:
+	text "<USER>"
+	line "knocked off its"
+	scroll "foe's @"
+	text_ram wStringBuffer1
+	text "!"
+	autodone
+
 CantEscapeNowText:
 	text "<TARGET>"
 	line "can't escape now!"
