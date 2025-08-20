@@ -6893,9 +6893,9 @@ ContactStatic:
 	call BattleCommand_SwitchTurn
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
-	call BattleCommand_SwitchTurn
 	ld de, ANIM_PAR
-	call PlayUserBattleAnim
+	call PlayOpponentBattleAnim
+	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
@@ -7003,8 +7003,10 @@ ContactCuteCharm:
 	ret nc
 
 	set SUBSTATUS_IN_LOVE, [hl]
+	call BattleCommand_SwitchTurn
 	ld de, ANIM_IN_LOVE
-	call PlayUserBattleAnim
+	call PlayOpponentBattleAnim
+	call BattleCommand_SwitchTurn
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
@@ -7012,7 +7014,6 @@ ContactCuteCharm:
 GetWeatherTurns:
 ; Returns number of turns that user's weather moves should last in a.
 ; 8 if user's item has HELD_WEATHER_BOOST, 5 otherwise.
-; Works for all weather moves: Rain Dance, Sunny Day, Sandstorm, Hail.
 	call GetUserItem
 	ld a, b
 	cp HELD_WEATHER_BOOST
