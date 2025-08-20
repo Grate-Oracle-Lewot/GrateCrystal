@@ -831,8 +831,8 @@ TeddiursaEggMoves:
 
 SlugmaEggMoves:
 	db POWER_GEM
+	db MINIMIZE
 	db ACID_ARMOR
-	db FLAME_WHEEL
 	db SLUDGE
 	db EARTH_POWER
 	db -1 ; end
