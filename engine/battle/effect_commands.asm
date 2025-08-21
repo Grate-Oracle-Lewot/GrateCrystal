@@ -2125,7 +2125,7 @@ BattleCommand_ApplyDamage:
 	ld a, [hl]
 	cp HELD_FOCUS_SASH
 	jr nz, .dont_consume
-	farcall ConsumeHeldItem
+	call SwitchTurnConsumeHeldItem
 .dont_consume
 	ld hl, HungOnText
 	jp StdBattleTextbox
@@ -6936,9 +6936,7 @@ ContactStatic:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 
-	call BattleCommand_SwitchTurn
-	farcall ConsumeHeldItem
-	call BattleCommand_SwitchTurn
+	call SwitchTurnConsumeHeldItem
 	ld hl, StaticPrzcureberryText
 	jp StdBattleTextbox
 
@@ -7023,6 +7021,11 @@ GetWeatherTurns:
 .five
 	ld a, 5
 	ret
+
+SwitchTurnConsumeHeldItem:
+	call BattleCommand_SwitchTurn
+	farcall ConsumeHeldItem
+	jp BattleCommand_SwitchTurn
 
 EffectCommands_50_50:
 	call BattleRandom
