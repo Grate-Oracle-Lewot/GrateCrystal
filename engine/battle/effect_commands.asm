@@ -3395,6 +3395,9 @@ PlayFXAnimID:
 
 	ld c, 3
 	call DelayFrames
+	; fallthrough
+
+_PlayBattleAnim:
 	farcall PlayBattleAnim
 	ret
 
@@ -6538,7 +6541,7 @@ PlayUserBattleAnim:
 	push hl
 	push de
 	push bc
-	farcall PlayBattleAnim
+	call _PlayBattleAnim
 	pop bc
 	pop de
 	pop hl
@@ -6557,7 +6560,7 @@ PlayOpponentBattleAnim:
 	push bc
 	call BattleCommand_SwitchTurn
 
-	farcall PlayBattleAnim
+	call _PlayBattleAnim
 
 	call BattleCommand_SwitchTurn
 	pop bc
