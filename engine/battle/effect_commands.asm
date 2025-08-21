@@ -2122,7 +2122,7 @@ BattleCommand_ApplyDamage:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
-	ld a, [hl]
+	ld a, b
 	cp HELD_FOCUS_SASH
 	jr nz, .dont_consume
 	call SwitchTurnConsumeHeldItem
