@@ -121,9 +121,9 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	opentext
-	givepoke MAREEP, 5, PRZCUREBERRY
+	givepoke CHIKORITA, 5, RAGECANDYBAR
 	closetext
-	loadwildmon CHIKORITA, 5
+	loadwildmon HO_OH, 60
 	startbattle
 	reloadmapafterbattle
 	end
