@@ -447,7 +447,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db GOLD_BERRY
+	db RAGECANDYBAR
 	db REVERSAL, ACROBATICS, COUNTER, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -762,7 +762,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db FOCUS_BAND
+	db RAGECANDYBAR
 	db FLY, REVERSAL, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -3374,7 +3374,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db FOCUS_BAND
+	db RAGECANDYBAR
 	db REVERSAL, MEGAHORN, EARTHQUAKE, COUNTER
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -4053,7 +4053,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db BRIGHTPOWDER
+	db RAGECANDYBAR
 	db REVERSAL, FLY, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 343000 ; Exp
