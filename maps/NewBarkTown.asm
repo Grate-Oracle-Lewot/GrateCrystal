@@ -120,13 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke MACHAMP, 50
-	closetext
-	loadwildmon LICKITUNG, 5
-	startbattle
-	reloadmapafterbattle
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
