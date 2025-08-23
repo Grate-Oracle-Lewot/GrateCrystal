@@ -250,15 +250,15 @@ Cinnabar_Map_Names: ; CINNABAR
 Indigo_Map_Names: ; INDIGO
 	table_width 2, Indigo_Map_Names
 	dw Indigo_Map_Name1  ; ROUTE_23
-	dw Indigo_Map_Name2  ; INDIGO_PLATEAU_POKECENTER_1F
-	dw Indigo_Map_Name3  ; WILLS_ROOM
-	dw Indigo_Map_Name4  ; KOGAS_ROOM
-	dw Indigo_Map_Name5  ; BRUNOS_ROOM
-	dw Indigo_Map_Name6  ; KARENS_ROOM
-	dw Indigo_Map_Name7  ; LANCES_ROOM
-	dw Indigo_Map_Name8  ; HALL_OF_FAME
-	dw Indigo_Map_Name9  ; LOUNGE_1F
-	dw Indigo_Map_Name10 ; LOUNGE_2F
+	dw Indigo_Map_Name2  ; LOUNGE_1F
+	dw Indigo_Map_Name3 ; LOUNGE_2F
+	dw Indigo_Map_Name4  ; INDIGO_PLATEAU_POKECENTER_1F
+	dw Indigo_Map_Name5  ; WILLS_ROOM
+	dw Indigo_Map_Name6  ; KOGAS_ROOM
+	dw Indigo_Map_Name7  ; BRUNOS_ROOM
+	dw Indigo_Map_Name8  ; KARENS_ROOM
+	dw Indigo_Map_Name9  ; LANCES_ROOM
+	dw Indigo_Map_Name10 ; HALL_OF_FAME
 	assert_table_length NUM_INDIGO_MAPS
 
 Silver_Map_Names: ; SILVER
@@ -872,24 +872,24 @@ Cinnabar_Map_Name7: ; ROUTE_21
 
 Indigo_Map_Name1: ; ROUTE_23
 	db "ROUTE 23@"
-Indigo_Map_Name2: ; INDIGO_PLATEAU_POKECENTER_1F
-	db "INDIGO PLATEAU@"
-Indigo_Map_Name3: ; WILLS_ROOM
-	db "A.D.'S ROOM@"
-Indigo_Map_Name4: ; KOGAS_ROOM
-	db "LUCAS'S ROOM@"
-Indigo_Map_Name5: ; BRUNOS_ROOM
-	db "PERCY'S ROOM@"
-Indigo_Map_Name6: ; KARENS_ROOM
-	db "LEWOT'S ROOM@"
-Indigo_Map_Name7: ; LANCES_ROOM
-	db "LANCE'S ROOM@"
-Indigo_Map_Name8: ; HALL_OF_FAME
-	db "HALL OF FAME@"
-Indigo_Map_Name9: ; LOUNGE_1F
+Indigo_Map_Name2: ; LOUNGE_1F
 	db "LEADERS LOUNGE 1F@"
-Indigo_Map_Name10: ; LOUNGE_2F
+Indigo_Map_Name3: ; LOUNGE_2F
 	db "LEADERS LOUNGE 2F@"
+Indigo_Map_Name4: ; INDIGO_PLATEAU_POKECENTER_1F
+	db "INDIGO PLATEAU@"
+Indigo_Map_Name5: ; WILLS_ROOM
+	db "A.D.'S ROOM@"
+Indigo_Map_Name6: ; KOGAS_ROOM
+	db "LUCAS'S ROOM@"
+Indigo_Map_Name7: ; BRUNOS_ROOM
+	db "PERCY'S ROOM@"
+Indigo_Map_Name8: ; KARENS_ROOM
+	db "LEWOT'S ROOM@"
+Indigo_Map_Name9: ; LANCES_ROOM
+	db "LANCE'S ROOM@"
+Indigo_Map_Name10: ; HALL_OF_FAME
+	db "HALL OF FAME@"
 
 Silver_Map_Name1: ; ROUTE_28
 	db "ROUTE 28@"
