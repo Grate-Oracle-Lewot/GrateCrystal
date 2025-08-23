@@ -216,15 +216,15 @@ ENDM
 
 	newgroup INDIGO                                         ; group 14
 	map_const ROUTE_23,                                    10, 18 ;  1
-	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  2
-	map_const WILLS_ROOM,                                   5,  9 ;  3
-	map_const KOGAS_ROOM,                                   5,  9 ;  4
-	map_const BRUNOS_ROOM,                                  5,  9 ;  5
-	map_const KARENS_ROOM,                                  5,  9 ;  6
-	map_const LANCES_ROOM,                                  5, 12 ;  7
-	map_const HALL_OF_FAME,                                 5,  7 ;  8
-	map_const LOUNGE_1F,                                   10,  9 ;  9
-	map_const LOUNGE_2F,                                   10,  9 ; 10
+	map_const LOUNGE_1F,                                   10,  9 ;  2
+	map_const LOUNGE_2F,                                   10,  9 ;  3
+	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  4
+	map_const WILLS_ROOM,                                   5,  9 ;  5
+	map_const KOGAS_ROOM,                                   5,  9 ;  6
+	map_const BRUNOS_ROOM,                                  5,  9 ;  7
+	map_const KARENS_ROOM,                                  5,  9 ;  8
+	map_const LANCES_ROOM,                                  5, 12 ;  9
+	map_const HALL_OF_FAME,                                 5,  7 ; 10
 	endgroup
 
 	newgroup SILVER                                         ; group 15
