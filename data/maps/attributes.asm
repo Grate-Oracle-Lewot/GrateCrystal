@@ -476,6 +476,8 @@ ENDM
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
 	map_attributes Route23, ROUTE_23, $0f, 0
+	map_attributes Lounge1F, LOUNGE_1F, $00, 0
+	map_attributes Lounge2F, LOUNGE_2F, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
 	map_attributes KogasRoom, KOGAS_ROOM, $00, 0
@@ -483,8 +485,6 @@ ENDM
 	map_attributes KarensRoom, KARENS_ROOM, $00, 0
 	map_attributes LancesRoom, LANCES_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
-	map_attributes Lounge1F, LOUNGE_1F, $00, 0
-	map_attributes Lounge2F, LOUNGE_2F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
 	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
