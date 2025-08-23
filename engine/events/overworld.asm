@@ -1664,7 +1664,7 @@ RodNothingText:
 
 PocketPCFunction:
 	call CheckIfInPokemonLeague
-	jr c, .PocketPCNoSignal
+	jr nc, .PocketPCNoSignal
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .PocketPCNoSignal
@@ -1689,27 +1689,19 @@ CheckIfInPokemonLeague:
 	jr nz, .no_darkroom
 	ld a, [wMapNumber]
 	cp MAP_CIANWOOD_DARKROOM
-	jr z, .carry
+	jr z, .no_carry
 	ld a, [wMapGroup]
 .no_darkroom
  	cp GROUP_WILLS_ROOM
-	jr nz, .no_carry
+	jr nz, .carry
 	ld a, [wMapNumber]
 	cp MAP_WILLS_ROOM
-	jr z, .carry
-	cp MAP_KOGAS_ROOM
-	jr z, .carry
-	cp MAP_BRUNOS_ROOM
-	jr z, .carry
-	cp MAP_KARENS_ROOM
-	jr z, .carry
-	cp MAP_LANCES_ROOM
-	jr z, .carry
-.no_carry
-	xor a ; clear carry flag
-	ret
+	ret nc ; any map Will's Room or higher
 .carry
 	scf
+	ret
+.no_carry
+	xor a ; clear carry flag
 	ret
 
 CheckIfRegistered:
