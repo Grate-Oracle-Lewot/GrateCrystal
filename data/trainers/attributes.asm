@@ -2,6 +2,12 @@ TrainerClassAttributes:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width NUM_TRAINER_ATTRIBUTES, TrainerClassAttributes
 
+; SWITCH_* flags can be used alone or combined, and no flag means they never switch. Similarly, no *_USE flag means they never use items.
+; SWITCH_STATUS will switch out in response to volatile statuses regardless of other switch flags. Without it, volatile statuses will not trigger a switch.
+; SWITCH_RARELY can be combined with _SOMETIMES or _OFTEN to get the latter switch frequency but avoid taking stat levels into account.
+; SWITCH_OFTEN skips a check to prevent switching at low HP, in addition to its general increase of frequency.
+; _OFTEN + _SOMETIMES + _RARELY is functionally identical to _OFTEN + _RARELY, so no point doing that.
+
 ; Falkner
 	db MAX_POTION, NO_ITEM ; items
 	db 30 ; base reward
