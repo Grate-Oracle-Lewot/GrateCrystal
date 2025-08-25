@@ -424,7 +424,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - If you throw a ball at a wild Pokémon that has more than 341 max HP, it will have the wrong chance to be caught, and rarely will freeze the game due to dividing by zero. This is a known bug from the base game but doesn't yet have a standardized solution. I'm waiting on help.
 
-- Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. This will get fixed eventually.
+- Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. For now it's framed as fishing appealing to people who want some mystery in their encounters, but if I can get some help I'll make it work.
 
 - The item collection jingle (and probably other suchlike sounds) makes the tops of any objects that are at the top of the screen flicker while it's playing. I don't know what causes this, but I'm not the only hacker to experience it. I don't really care enough to fix it unless somebody shares a solution.
 
