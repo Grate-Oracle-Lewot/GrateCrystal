@@ -4698,7 +4698,23 @@ BattleAnim_PowerGem:
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 12
-	anim_call BattleAnimSub_Ice
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 128, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 144, 70, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 120, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 152, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 144, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_POWER_GEM, 128, 70, $0
 	anim_wait 32
 	anim_ret
 
