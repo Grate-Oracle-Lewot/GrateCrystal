@@ -30,8 +30,8 @@ DanaNumberAcceptedText:
 	para "after a battle,"
 	line "I'll share some!"
 
-	para "Does that make me"
-	line "bad?"
+	para "…Does that make me"
+	line "ungrateful?"
 	done
 
 DanaNumberDeclinedText:
