@@ -9,7 +9,7 @@ String_MOVES_text:
 String_TECH_text:
 	db "TECHNICAL  @"
 String_HIDDEN_text:
-	db "HIDDEN     @"
+	db "HECKNICAL  @"
 String_MACHINES_text:
 	db " MACHINES  @"
 String_MOVE_text:
