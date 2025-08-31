@@ -17,11 +17,6 @@ EventWildMons::
 	db -1
 
 ; LoadWildMon Dex Hints, max 18 chars per line
-ClefairyDanceStr:
-	db   "Two dance around"
-	next "a MOON STONE each"
-	next "Monday night."
-
 OmanyteFossil_Str:
 	db   "Revive from HELIX"
 	next "FOSSILS found by"
