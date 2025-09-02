@@ -223,7 +223,7 @@ EvolutionMoves::
 	db FURY_ATTACK  ; PILOSWINE
 	db NO_MOVE      ; CORSOLA
 	db NO_MOVE      ; REMORAID
-	db OCTAZOOKA    ; OCTILLERY
+	db NO_MOVE      ; OCTILLERY
 	db PRESENT      ; DELIBIRD
 	db NO_MOVE      ; MANTINE
 	db NO_MOVE      ; SKARMORY
