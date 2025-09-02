@@ -2098,3 +2098,10 @@ Avalanche:
 	buildopponentrage
 	kingsrock
 	endmove
+
+Conversion:
+	checkobedience
+	usedmovetext
+	doturn
+	conversion
+	endmove
