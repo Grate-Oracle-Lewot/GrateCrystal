@@ -1,4 +1,6 @@
 BattleCommand_Conversion:
+
+; Conversion1, changes both types
 	ld hl, wBattleMonMoves
 	ld de, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -44,7 +46,7 @@ BattleCommand_Conversion:
 .loop2
 	ld a, [hl]
 	cp -1
-	jr z, .fail
+	jp z, .Fail1
 	cp CURSE_TYPE
 	jr z, .next
 	ld a, [de]
@@ -58,10 +60,6 @@ BattleCommand_Conversion:
 .next
 	inc hl
 	jr .loop2
-
-.fail
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 .loop3
 	call BattleRandom
@@ -87,8 +85,128 @@ BattleCommand_Conversion:
 	ld [de], a
 	inc de
 	ld [de], a
+	call ConversionAnimateMoveAndPrintText
+
+; Conversion2 after a successful Conversion1, only changes second type
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	ld hl, wBattleMonType2
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_type_2
+	ld hl, wEnemyMonType2
+.got_type_2
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
+	ret z
+	call ConversionOptimization1
+
+.loop4
+	call ConversionGetRandomType
+	ld [hl], a
+	call ConversionOptimization2
+	call ConversionCheckTypeMatchup
+	call ConversionOptimization3
+	jr nc, .loop4
+	call BattleCommand_SwitchTurn
+
+	ld a, [hl]
 	ld [wNamedObjectIndex], a
-	farcall GetTypeName
+	jr ConversionPrintTookOnType
+
+.Fail2:
+	jp FailMove
+
+.Fail1:
+; Conversion2 after a failed Conversion1, changes both types
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .Fail2
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_type
+	ld hl, wEnemyMonType1
+.got_type
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
+	jr z, .Fail2
+	call ConversionOptimization1
+
+.loop5
+	call ConversionGetRandomType
+	ld [hli], a
+	ld [hld], a
+	call ConversionOptimization2
+	call BattleCheckTypeMatchup
+	call ConversionOptimization3
+	jr nc, .loop5
+	call BattleCommand_SwitchTurn
+
+	ld a, [hl]
+	; fallthrough
+
+ConversionAnimateMoveAndPrintText:
+	ld [wNamedObjectIndex], a
 	call AnimateCurrentMove
-	ld hl, TransformedTypeText
+	; fallthrough
+
+ConversionPrintTookOnType:
+	predef GetTypeName
+	ld hl, TookOnTypeText
 	jp StdBattleTextbox
+
+ConversionGetRandomType:
+	call BattleRandom
+	maskbits TYPES_END
+	cp UNUSED_TYPES
+	ret c
+	cp UNUSED_TYPES_END
+	jr c, ConversionGetRandomType
+	cp TYPES_END
+	jr nc, ConversionGetRandomType
+	ret
+
+ConversionOptimization1:
+	push hl
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	call GetMoveAttr
+	and TYPE_MASK
+	ld d, a
+	pop hl
+	jp BattleCommand_SwitchTurn
+
+ConversionOptimization2:
+	push hl
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	push af
+	push hl
+	ld a, d
+	ld [hl], a
+	ret
+
+ConversionOptimization3:
+	pop hl
+	pop af
+	ld [hl], a
+	pop hl
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	ret
+
+ConversionCheckTypeMatchup:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
+	and TYPE_MASK
+	push hl
+	push de
+	push bc
+	ld d, a
+	ld b, [hl]
+	jp CheckType2Matchup
