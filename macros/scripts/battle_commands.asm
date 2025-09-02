@@ -172,6 +172,7 @@ ENDM
 	command undergroundflyer        ; a5
 	command checkcontact            ; a6
 	command doubledamageifhit       ; a7
+	command conversion              ; a8
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
