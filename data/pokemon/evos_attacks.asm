@@ -1823,6 +1823,7 @@ StaryuEvosAttacks:
 	db 43, POWER_GEM
 	db 50, HYDRO_PUMP
 	db 56, LIGHT_SCREEN
+	db 64, CONVERSION
 	db 0 ; no more level-up moves
 
 StarmieEvosAttacks:
@@ -3431,6 +3432,7 @@ OctilleryEvosAttacks:
 	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
 	db 22, SIGNAL_BEAM
+	db 24, CONVERSION
 	db 38, LOCK_ON
 	db 54, ICE_BEAM
 	db 54, SOLARBEAM
