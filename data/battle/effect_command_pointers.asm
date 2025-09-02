@@ -172,4 +172,5 @@ BattleCommandPointers:
 	dw BattleCommand_UndergroundFlyer
 	dw BattleCommand_CheckContact
 	dw BattleCommand_Avalanche
+	dw BattleCommand_Conversion
 	assert_table_length NUM_EFFECT_COMMANDS
