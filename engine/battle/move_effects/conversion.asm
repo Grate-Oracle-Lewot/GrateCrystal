@@ -88,9 +88,6 @@ BattleCommand_Conversion:
 	call ConversionAnimateMoveAndPrintText
 
 ; Conversion2 after a successful Conversion1, only changes second type
-	ld a, [wAttackMissed]
-	and a
-	ret nz
 	ld hl, wBattleMonType2
 	ldh a, [hBattleTurn]
 	and a
@@ -116,14 +113,8 @@ BattleCommand_Conversion:
 	ld [wNamedObjectIndex], a
 	jr ConversionPrintTookOnType
 
-.Fail2:
-	jp FailMove
-
 .Fail1:
 ; Conversion2 after a failed Conversion1, changes both types
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .Fail2
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -133,7 +124,7 @@ BattleCommand_Conversion:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
-	jr z, .Fail2
+	jp z, FailMove
 	call ConversionOptimization1
 
 .loop5
