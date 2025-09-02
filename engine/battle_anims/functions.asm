@@ -99,7 +99,7 @@ BattleAnimFunction_Null:
 	dw .zero
 	dw .one
 .one
-	call DeinitBattleAnimation
+	jp DeinitBattleAnimation
 .zero
 	ret
 
@@ -236,8 +236,7 @@ BattleAnimFunction_MoveFromUserToTarget:
 	dw .zero
 	dw .one
 .one
-	call DeinitBattleAnimation
-	ret
+	jp DeinitBattleAnimation
 
 .zero
 	ld hl, BATTLEANIMSTRUCT_XCOORD
@@ -248,7 +247,7 @@ BattleAnimFunction_MoveFromUserToTarget:
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
-	jp BattleAnim_StepToTarget
+	jr BattleAnim_StepToTarget
 
 BattleAnimFunction_MoveFromUserToTargetAndDisappear:
 ; Same as BattleAnimFunction_01 but objs are cleared when they reach x coord $84
@@ -260,7 +259,30 @@ BattleAnimFunction_MoveFromUserToTargetAndDisappear:
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
-	jp BattleAnim_StepToTarget
+	; fallthrough
+
+BattleAnim_StepToTarget:
+; Inches object towards the opponent's side, moving half as much in the Y axis as it did in the X axis. Uses lower nybble of A
+	and $f
+	ld e, a
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	srl e
+	ld hl, BATTLEANIMSTRUCT_YCOORD
+	add hl, bc
+.loop
+	dec [hl]
+	dec e
+	jr nz, .loop
+	ret
+
+BattleAnim_IncAnonJumptableIndex:
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
+	add hl, bc
+	inc [hl]
+	ret
 
 BattleAnimFunction_PokeBall:
 	call BattleAnim_AnonJumptable
@@ -279,7 +301,7 @@ BattleAnimFunction_PokeBall:
 	dw .eleven
 .zero ; init
 	call GetBallAnimPal
-	jp BattleAnim_IncAnonJumptableIndex
+	jr BattleAnim_IncAnonJumptableIndex
 
 .one
 	call BattleAnimFunction_ThrowFromUserToTarget
@@ -293,7 +315,7 @@ BattleAnimFunction_PokeBall:
 	ld [hl], a
 	ld a, BATTLEANIMFRAMESET_0B
 	call ReinitBattleAnimFrameset
-	jp BattleAnim_IncAnonJumptableIndex
+	jr BattleAnim_IncAnonJumptableIndex
 
 .three
 	call BattleAnim_IncAnonJumptableIndex
@@ -431,6 +453,7 @@ BattleAnimFunction_Ember:
 	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
 	ld [hl], a
+.four
 	ret
 
 .one
@@ -450,9 +473,7 @@ BattleAnimFunction_Ember:
 .three
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_0F
-	call ReinitBattleAnimFrameset
-.four
-	ret
+	jp ReinitBattleAnimFrameset
 
 BattleAnimFunction_Drop:
 ; Drops obj. The Obj Param dictates how fast it is (lower value is faster) and how long it stays bouncing (lower value is longer). Example: Rock Slide
@@ -1256,14 +1277,13 @@ BattleAnimFunction_WaterGun:
 	cp $18
 	jr nc, .splash
 	inc [hl]
+.three
 	ret
 
 .splash
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_29
-	call ReinitBattleAnimFrameset
-.three
-	ret
+	jp ReinitBattleAnimFrameset
 
 BattleAnimFunction_Powder:
 ; Obj moves down and disappears at x coord $38
@@ -1374,13 +1394,14 @@ BattleAnimFunction_ThunderWave:
 	dw .two
 	dw .three
 
-.one
-	call BattleAnim_IncAnonJumptableIndex
-	ld a, BATTLEANIMFRAMESET_35
-	call ReinitBattleAnimFrameset
 .zero
 .two
 	ret
+
+.one
+	call BattleAnim_IncAnonJumptableIndex
+	ld a, BATTLEANIMFRAMESET_35
+	jp ReinitBattleAnimFrameset
 
 .three
 	jp DeinitBattleAnimation
@@ -1463,8 +1484,7 @@ BattleAnimFunction_Clamp_Encore:
 .three
 .four
 .five
-	call BattleAnim_IncAnonJumptableIndex
-	ret
+	jp BattleAnim_IncAnonJumptableIndex
 
 .six
 	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
@@ -1816,14 +1836,13 @@ BattleAnimFunction_LeechSeed:
 	and a
 	jr z, .flutter
 	dec [hl]
+.three
 	ret
 
 .flutter
 	call BattleAnim_IncAnonJumptableIndex
 	ld a, BATTLEANIMFRAMESET_58
-	call ReinitBattleAnimFrameset
-.three
-	ret
+	jp ReinitBattleAnimFrameset
 
 BattleAnim_StepThrownToTarget:
 ; Inches object towards the opponent's side in a parabola arc defined by the lower and upper nybble of Obj Param
@@ -1887,6 +1906,7 @@ BattleAnimFunction_Spikes:
 	ld hl, BATTLEANIMSTRUCT_VAR2
 	add hl, bc
 	ld [hl], $40
+.two
 	ret
 
 .one
@@ -1898,9 +1918,7 @@ BattleAnimFunction_Spikes:
 	jp BattleAnim_StepThrownToTarget
 
 .wait
-	call BattleAnim_IncAnonJumptableIndex
-.two
-	ret
+	jp BattleAnim_IncAnonJumptableIndex
 
 BattleAnimFunction_RazorWind:
 	call BattleAnimFunction_MoveInCircle
@@ -2169,14 +2187,13 @@ BattleAnimFunction_Egg:
 	cp $30
 	jr c, .done_top_shell
 	dec [hl]
-	ret
-
-.done_top_shell
-	call BattleAnim_IncAnonJumptableIndex
 .four
 .ten
 .thirteen
 	ret
+
+.done_top_shell
+	jp BattleAnim_IncAnonJumptableIndex
 
 .EggVerticalWaveMotion:
 	ld hl, BATTLEANIMSTRUCT_VAR1
@@ -2554,7 +2571,7 @@ BattleAnimFunction_String:
 	set OAM_Y_FLIP, [hl]
 .not_param_zero
 	add BATTLEANIMFRAMESET_6A ; BATTLEANIMFRAMESET_6B BATTLEANIMFRAMESET_6C
-	call ReinitBattleAnimFrameset
+	jp ReinitBattleAnimFrameset
 .one
 	ret
 
@@ -4046,23 +4063,6 @@ BattleAnim_StepCircle:
 	ld [hl], a
 	ret
 
-BattleAnim_StepToTarget:
-; Inches object towards the opponent's side, moving half as much in the Y axis as it did in the X axis. Uses lower nybble of A
-	and $f
-	ld e, a
-	ld hl, BATTLEANIMSTRUCT_XCOORD
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	srl e
-	ld hl, BATTLEANIMSTRUCT_YCOORD
-	add hl, bc
-.loop
-	dec [hl]
-	dec e
-	jr nz, .loop
-	ret
-
 BattleAnim_AnonJumptable:
 	pop de
 	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
@@ -4075,12 +4075,6 @@ BattleAnim_AnonJumptable:
 	ld h, [hl]
 	ld l, a
 	jp hl
-
-BattleAnim_IncAnonJumptableIndex:
-	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	inc [hl]
-	ret
 
 BattleAnim_Cosine:
 ; a = d * cos(a * pi/32)
