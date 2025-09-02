@@ -40,6 +40,7 @@ StallMoves:
 	db COTTON_SPORE
 	db SPITE
 	db SCARY_FACE
+	db CONVERSION
 	db SPIKES
 	db LOCK_ON
 	db CHARM
