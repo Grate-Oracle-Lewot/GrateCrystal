@@ -1345,6 +1345,9 @@ CheckTypeMatchup:
 	ld d, a
 	ld b, [hl]
 	inc hl
+	; fallthrough
+
+CheckType2Matchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
