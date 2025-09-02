@@ -19,7 +19,7 @@ TrainerClassNames::
 	li "CHAMPION"
 	li "LEADER"
 	li "LEADER"
-	li "LEADER"
+	li "LIEUTENANT"
 	li "SCIENTIST"
 	li "LEADER"
 	li "YOUNGSTER"
