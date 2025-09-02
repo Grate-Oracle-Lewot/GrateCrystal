@@ -872,6 +872,7 @@ MantineEggMoves:
 	db TWISTER
 	db HAZE
 	db SILVER_WIND
+	db SMOKESCREEN
 	db -1 ; end
 
 SkarmoryEggMoves:
