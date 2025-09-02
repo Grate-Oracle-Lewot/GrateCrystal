@@ -190,7 +190,7 @@ MoveDescriptions::
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
-	dw OctazookaDescription
+	dw ConversionDescription
 	dw SpikesDescription
 	dw BlitzkriegDescription
 	dw ForesightDescription
@@ -1019,9 +1019,9 @@ MudSlapDescription:
 	db   "Reduces accuracy"
 	next "by throwing mud.@"
 
-OctazookaDescription:
-	db   "Reduces accuracy"
-	next "by shooting ink.@"
+ConversionDescription:
+	db   "Changes type(s) to"
+	next "gain advantages.@"
 
 SpikesDescription:
 	db   "Hurts upon switch."
