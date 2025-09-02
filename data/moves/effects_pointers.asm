@@ -145,4 +145,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw Dig
 	dw Avalanche
+	dw Conversion
 	assert_table_length NUM_MOVE_EFECTS
