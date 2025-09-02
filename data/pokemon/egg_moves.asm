@@ -635,6 +635,7 @@ IgglybuffEggMoves:
 	db -1 ; end
 
 TogepiEggMoves:
+	db CONVERSION
 	db MIRROR_MOVE
 	db FORESIGHT
 	db FUTURE_SIGHT
