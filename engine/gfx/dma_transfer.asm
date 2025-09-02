@@ -172,7 +172,7 @@ CallInSafeGFXMode:
 	ldh a, [rVBK]
 	push af
 
-	call ._hl_
+	call _hl_
 
 	pop af
 	ldh [rVBK], a
@@ -183,9 +183,6 @@ CallInSafeGFXMode:
 	pop af
 	ldh [hBGMapMode], a
 	ret
-
-._hl_
-	jp hl
 
 HDMATransferToWRAMBank3:
 	call _LoadHDMAParameters
