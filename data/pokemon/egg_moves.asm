@@ -617,6 +617,7 @@ FlogistanEggMoves:
 	db -1 ; end
 
 CleffaEggMoves:
+	db CONVERSION
 	db NIGHT_SHADE
 	db AMNESIA
 	db BELLY_DRUM
