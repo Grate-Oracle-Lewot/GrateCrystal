@@ -1477,7 +1477,7 @@ NEXTU
 ; trainer card badges
 wTrainerCardBadgeFrameCounter:: db
 wTrainerCardBadgeTileID:: db
-wTrainerCardBadgeAttributes:: db
+wTrainerCardBadgePaletteAddr:: dw
 
 NEXTU
 ; slot machine
@@ -1489,10 +1489,6 @@ NEXTU
 wCardFlipCursorY:: db
 wCardFlipCursorX:: db
 wCardFlipWhichCard:: db
-
-NEXTU
-; unused memory game
-	ds 1
 
 NEXTU
 ; magnet train
