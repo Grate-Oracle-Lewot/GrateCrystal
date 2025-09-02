@@ -2046,7 +2046,7 @@ PorygonEvosAttacks:
 	db EVOLVE_ITEM, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, BARRIER
+	db 4, CONVERSION
 	db 9, GROWTH
 	db 9, MINIMIZE
 	db 12, PAY_DAY
@@ -3559,7 +3559,7 @@ DonphanEvosAttacks:
 Porygon2EvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, BARRIER
+	db 4, CONVERSION
 	db 9, GROWTH
 	db 9, MINIMIZE
 	db 12, PAY_DAY
