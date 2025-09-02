@@ -122,7 +122,6 @@ MovesDexOrder:
 	db WATER_GUN
 	db WHIRLPOOL
 	db BUBBLEBEAM
-	db OCTAZOOKA
 	db SCALD
 	db SURF
 	db HYDRO_PUMP
@@ -428,8 +427,10 @@ MovesDexOrder:
 	db SLEEP_TALK
 	db MIRROR_MOVE
 
-; Copy opponent
 	db SKETCH
+
+; Transformative
+	db CONVERSION
 
 	db TRANSFORM
 
