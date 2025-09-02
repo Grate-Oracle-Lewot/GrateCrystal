@@ -88,6 +88,10 @@ BattleCommand_Conversion:
 	call ConversionAnimateMoveAndPrintText
 
 ; Conversion2 after a successful Conversion1, only changes second type
+	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	ret z
+
 	ld hl, wBattleMonType2
 	ldh a, [hBattleTurn]
 	and a
@@ -115,6 +119,10 @@ BattleCommand_Conversion:
 
 .Fail1:
 ; Conversion2 after a failed Conversion1, changes both types
+	ld a, [wBattleType]
+	cp BATTLETYPE_TYPELESS
+	jp z, FailMove
+
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
