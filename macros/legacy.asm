@@ -118,7 +118,7 @@ checkday  EQUS "checktime DAY"
 checknite EQUS "checktime NITE"
 
 jump           EQUS "sjump"
-; farjump        EQUS "farsjump"
+farjump        EQUS "farsjump"
 priorityjump   EQUS "sdefer"
 prioritysjump  EQUS "sdefer"
 ptcall         EQUS "memcall"
