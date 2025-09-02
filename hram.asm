@@ -170,6 +170,9 @@ hDMATransfer:: db
 hMobile:: db
 hSystemBooted:: db
 
-hClockResetTrigger:: db
+hFarCallSavedA:: db
+hFarCallSavedHL::
+hFarCallSavedL:: db
+hFarCallSavedH:: db
 
-	ds 19
+	ds 17
