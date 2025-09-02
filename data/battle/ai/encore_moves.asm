@@ -31,6 +31,7 @@ EncoreMoves:
 	db CURSE
 	db PROTECT
 	db BELLY_DRUM
+	db CONVERSION
 	db SPIKES
 	db FORESIGHT
 	db PERISH_SONG
