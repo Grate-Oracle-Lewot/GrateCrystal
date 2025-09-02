@@ -3652,17 +3652,17 @@ BattleAnim_MudSlap:
 	anim_ret
 
 BattleAnim_Conversion:
-	anim_1gfx BATTLE_ANIM_GFX_EXPLOSION
-	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_1gfx ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_sound 63, 3, SFX_SHARPEN
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $0
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $8
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $10
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $18
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $20
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $28
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $30
-	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $38
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $0
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $8
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $10
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $18
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $20
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $28
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $30
+	anim_obj ANIM_OBJ_CONVERSION, 48, 88, $38
 	anim_wait 128
 	anim_ret
 
