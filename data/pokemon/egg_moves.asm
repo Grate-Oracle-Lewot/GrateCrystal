@@ -470,6 +470,7 @@ EeveeEggMoves:
 
 PorygonEggMoves:
 	db FAINT_ATTACK
+	db BARRIER
 	db AMNESIA
 	db DRILL_PECK
 	db BODY_SLAM
