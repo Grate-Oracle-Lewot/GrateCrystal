@@ -191,7 +191,7 @@ BattleAnimations::
 	dw BattleAnim_BellyDrum
 	dw BattleAnim_SludgeBomb
 	dw BattleAnim_MudSlap
-	dw BattleAnim_Octazooka
+	dw BattleAnim_Conversion
 	dw BattleAnim_Spikes
 	dw BattleAnim_Blitzkrieg
 	dw BattleAnim_Foresight
@@ -3651,17 +3651,18 @@ BattleAnim_MudSlap:
 	anim_call BattleAnimSub_SandOrMud
 	anim_ret
 
-BattleAnim_Octazooka:
-	anim_3gfx ANIM_GFX_HAZE, ANIM_GFX_EGG, ANIM_GFX_SMOKE
-	anim_sound 6, 2, SFX_SLUDGE_BOMB
-	anim_obj ANIM_OBJ_OCTAZOOKA, 64, 92, $4
-	anim_wait 16
-	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
-	anim_wait 8
-.loop
-	anim_obj ANIM_OBJ_SMOKE, 132, 60, $20
-	anim_wait 8
-	anim_loop 5, .loop
+BattleAnim_Conversion:
+	anim_1gfx BATTLE_ANIM_GFX_EXPLOSION
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_sound 63, 3, SFX_SHARPEN
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $0
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $8
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $10
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $18
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $20
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $28
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $30
+	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $38
 	anim_wait 128
 	anim_ret
 
