@@ -1175,3 +1175,11 @@ LiquidOozeText:
 	line "absorbed toxins"
 	scroll "instead of health!"
 	autodone
+
+TookOnTypeText:
+	text "<USER>"
+	line "took on the"
+	scroll "@"
+	text_ram wStringBuffer1
+	text "-type!"
+	autodone
