@@ -3431,7 +3431,6 @@ OctilleryEvosAttacks:
 	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
 	db 22, SIGNAL_BEAM
-	db 24, OCTAZOOKA
 	db 38, LOCK_ON
 	db 54, ICE_BEAM
 	db 54, SOLARBEAM
