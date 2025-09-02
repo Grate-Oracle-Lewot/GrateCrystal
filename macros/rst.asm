@@ -1,7 +1,11 @@
 farcall: MACRO ; bank, address
-	ld a, BANK(\1)
-	ld hl, \1
-	rst FarCall
+	rst BetterFarCall
+	dbw BANK(\1), \1
+ENDM
+
+farjump: MACRO
+	rst BetterFarCall
+	dbw BANK(\1) | $80, \1
 ENDM
 
 homecall: MACRO
