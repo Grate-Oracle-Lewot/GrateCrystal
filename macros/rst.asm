@@ -1,10 +1,10 @@
 farcall: MACRO ; bank, address
-	rst BetterFarCall
+	rst FarCall
 	dbw BANK(\1), \1
 ENDM
 
 farjump: MACRO
-	rst BetterFarCall
+	rst FarCall
 	dbw BANK(\1) | $80, \1
 ENDM
 
