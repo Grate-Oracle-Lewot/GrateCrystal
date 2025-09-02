@@ -189,7 +189,7 @@ MoveNames::
 	li "BELLY DRUM"
 	li "SLUDGE BOMB"
 	li "MUD-SLAP"
-	li "OCTAZOOKA"
+	li "CONVERSION"
 	li "SPIKES"
 	li "BLITZKRIEG"
 	li "FORESIGHT"
