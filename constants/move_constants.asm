@@ -195,7 +195,7 @@
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const MUD_SLAP     ; bd
-	const OCTAZOOKA    ; be
+	const CONVERSION   ; be
 	const SPIKES       ; bf
 	const BLITZKRIEG   ; c0
 	const FORESIGHT    ; c1
