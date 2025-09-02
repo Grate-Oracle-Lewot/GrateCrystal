@@ -363,7 +363,7 @@ LickitungEggMoves:
 	db SKULL_BASH
 	db PLAY_ROUGH
 	db WATER_GUN
-	db OCTAZOOKA
+	db HYDRO_PUMP
 	db -1 ; end
 
 KoffingEggMoves:
@@ -371,7 +371,6 @@ KoffingEggMoves:
 	db RAPID_SPIN
 	db FLAME_WHEEL
 	db MIST
-	db OCTAZOOKA
 	db -1 ; end
 
 RhyhornEggMoves:
@@ -419,7 +418,6 @@ HorseaEggMoves:
 	db OUTRAGE
 	db SIGNAL_BEAM
 	db AURORA_BEAM
-	db OCTAZOOKA
 	db -1 ; end
 
 GoldeenEggMoves:
@@ -485,7 +483,6 @@ OmanyteEggMoves:
 	db ROCK_POLISH
 	db SLAM
 	db HAZE
-	db OCTAZOOKA
 	db -1 ; end
 
 KabutoEggMoves:
@@ -792,7 +789,6 @@ QwilfishEggMoves:
 	db FLAIL
 	db HAZE
 	db MEAN_LOOK
-	db OCTAZOOKA
 	db SPIKE_CANNON
 	db -1 ; end
 
@@ -876,7 +872,6 @@ MantineEggMoves:
 	db TWISTER
 	db HAZE
 	db SILVER_WIND
-	db OCTAZOOKA
 	db -1 ; end
 
 SkarmoryEggMoves:
