@@ -120,12 +120,9 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	givepoke PORYGON, 10
-	closetext
-	giveitem TM_BLIZZARD
-	giveitem TM_THUNDER
-	giveitem TM_U_TURN
+	loadwildmon PORYGON, 5
+	startbattle
+	reloadmapafterbattle
 	end
 	jumptext NewBarkTownSignText
 
