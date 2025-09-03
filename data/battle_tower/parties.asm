@@ -3089,7 +3089,7 @@ BattleTowerMons:
 
 	db PORYGON2
 	db LEFTOVERS
-	db BLIZZARD, RECOVER, TOXIC, PSYCHIC_M
+	db BLIZZARD, RECOVER, CONVERSION, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3099,7 +3099,7 @@ BattleTowerMons:
 	bigdw 50000
 	bigdw 55000
 	dn 13, 13, 13, 14 ; DVs
-	db 8, 16, 8, 16 ; PP
+	db 8, 16, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
