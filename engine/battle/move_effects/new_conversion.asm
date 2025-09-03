@@ -120,9 +120,9 @@ BattleCommand_Conversion:
 	cp UNUSED_TYPES
 	jr c, .okay2
 	cp UNUSED_TYPES_END
-	jr c, .loop5
+	jr c, .loop4
 	cp TYPES_END
-	jr nc, .loop5
+	jr nc, .loop4
 .okay2
 	ld [hl], a
 	push hl
