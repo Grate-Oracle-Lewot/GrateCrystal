@@ -40,6 +40,21 @@ ReturnFarCall::
 	ld c, a
 	ret
 
+update_pushed_af_flags: MACRO
+; Must have been preceded by 'push af'.
+; Updates the flags on the stack to their current value
+; without clobbering any other registers.
+	push af ; pushes current flags
+	push hl
+	ld hl, sp+$2
+	ld a, [hli] ; reads current flags
+	assert HIGH(wStackBottom) == HIGH(wStackTop)
+	inc l ; more efficient than 'inc hl'
+	ld [hl], a ; overwrites pushed flags
+	pop hl
+	pop af
+ENDM
+
 RstFarCall::
 ; Call the following dba pointer on the stack.
 ; Preserves a, bc, de, hl.
@@ -67,28 +82,20 @@ RstFarCall::
 	ldh a, [hTempBank]
 	and $7f
 	rst Bankswitch
+	call RetrieveAHLAndCallFunction
+	ldh [hFarCallSavedA], a
+	update_pushed_af_flags
+	pop af
+	rst Bankswitch
+	ldh a, [hFarCallSavedA]
+	ret
 
+RetrieveAHLAndCallFunction::
 ; Call the function at hl with restored values of a and hl.
 	push hl
 	ld hl, hFarCallSavedHL
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ldh a, [hFarCallSavedA]
-	ldh [hFarCallSavedA], a
-
-; Updates the flags on the stack to their current value without clobbering any other registers.
-	push af ; pushes current flags
-	push hl
-	ld hl, sp+$2
-	ld a, [hli] ; reads current flags
-	assert HIGH(wStackBottom) == HIGH(wStackTop)
-	inc l ; more efficient than 'inc hl'
-	ld [hl], a ; overwrites pushed flags
-	pop hl
-	pop af
-
-	pop af
-	rst Bankswitch
 	ldh a, [hFarCallSavedA]
 	ret
