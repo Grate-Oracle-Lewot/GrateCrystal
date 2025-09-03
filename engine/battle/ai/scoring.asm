@@ -944,6 +944,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	dbw EFFECT_DIG,              AI_Smart_Dig
 	dbw EFFECT_AVALANCHE,        AI_Smart_Avalanche
+	dbw EFFECT_CONVERSION,       AI_Smart_Conversion
 	db -1 ; end
 
 AI_Smart_Nightmare:
@@ -3393,18 +3394,53 @@ AI_Smart_Smog:
 ; The AI_Immunities layer will dismiss this move if the player is Steel-type.
 	ld a, [wBattleMonType1]
 	cp POISON
-	jr z, .discourage
+	jr z, AI_SmogConversion_Discourage
 	ld a, [wBattleMonType2]
 	cp POISON
-	jr z, .discourage
+	jr z, AI_SmogConversion_Discourage
 
 ; Discourage this move if the player already has a non-volatile status.
 	ld a, [wBattleMonStatus]
 	and a
 	ret nz
+	; fallthrough
 
-.discourage
+AI_SmogConversion_Discourage:
 	inc [hl]
+	ret
+
+AI_Smart_Conversion:
+; Discourage this move if the player hasn't used a move yet.
+	ld a, [wLastPlayerMove]
+	and a
+	jr z, AI_SmogConversion_Discourage
+
+; Check the type matchup of the player's last used move.
+	push hl
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [wPlayerMoveStruct + MOVE_TYPE], a
+
+	xor a
+	ldh [hBattleTurn], a
+	farcall BattleCheckTypeMatchup
+
+; Discourage this move if the enemy's types already resist the player's last used move.
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	pop hl
+	jr c, AI_SmogConversion_Discourage
+	ret z
+
+; Else 50% chance to encourage this move.
+	call AI_50_50
+	ret c
+	dec [hl]
 	ret
 
 AI_Smart_DefenseCurl:
