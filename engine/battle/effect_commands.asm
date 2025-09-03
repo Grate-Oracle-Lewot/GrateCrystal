@@ -5922,7 +5922,7 @@ INCLUDE "engine/battle/move_effects/disable.asm"
 
 INCLUDE "engine/battle/move_effects/pay_day.asm"
 
-INCLUDE "engine/battle/move_effects/conversion.asm"
+INCLUDE "engine/battle/move_effects/new_conversion.asm"
 
 BattleCommand_ResetStats:
 ; Haze
