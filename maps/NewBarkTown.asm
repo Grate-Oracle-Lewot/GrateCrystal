@@ -120,10 +120,6 @@ NewBarkTownSilverScript:
 	end
 
 NewBarkTownSign:
-	loadwildmon PORYGON, 5
-	startbattle
-	reloadmapafterbattle
-	end
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
