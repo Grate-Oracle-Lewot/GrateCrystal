@@ -3901,6 +3901,8 @@ MissingnoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, SKY_ATTACK
+	db 1, PAY_DAY
+	db 1, BIND
 	db 0 ; no more level-up moves
 else
 if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
