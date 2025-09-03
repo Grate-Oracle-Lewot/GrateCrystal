@@ -46,7 +46,7 @@ BattleCommand_Conversion:
 .loop2
 	ld a, [hl]
 	cp -1
-	jp z, .Fail1
+	jp z, FailMove
 	cp CURSE_TYPE
 	jr z, .next
 	ld a, [de]
@@ -85,7 +85,7 @@ BattleCommand_Conversion:
 	ld [de], a
 	inc de
 	ld [de], a
-	call ConversionAnimateMoveAndPrintText
+	jp ConversionAnimateMoveAndPrintText
 
 ; Conversion2 after a successful Conversion1, only changes second type
 	ld a, [wBattleType]
