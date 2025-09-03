@@ -464,6 +464,16 @@ GetDecorationFlag:
 	ld e, a
 	ret
 
+SetSpecificDecorationFlag:
+	ld a, c
+	call GetDecorationID
+	ld b, SET_FLAG
+	jr DecorationFlagAction
+
+DecorationFlagAction_c:
+	ld a, c
+	; fallthrough
+
 DecorationFlagAction:
 	push bc
 	call GetDecorationFlag
@@ -886,10 +896,6 @@ GetDecorationName_c_de:
 	ld l, e
 	jp GetDecorationName
 
-DecorationFlagAction_c:
-	ld a, c
-	jp DecorationFlagAction
-
 GetDecorationName_c:
 	ld a, c
 	call GetDecorationID
@@ -898,12 +904,6 @@ GetDecorationName_c:
 	call GetDecorationName
 	pop de
 	ret
-
-SetSpecificDecorationFlag:
-	ld a, c
-	call GetDecorationID
-	ld b, SET_FLAG
-	jp DecorationFlagAction
 
 GetDecorationID:
 	push hl
