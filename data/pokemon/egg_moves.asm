@@ -1015,5 +1015,7 @@ MissingnoEggMoves:
 	db SWORDS_DANCE
 	db DOUBLE_EDGE
 	db RAGE
+	db MEGA_KICK
+	DB MEGA_PUNCH
 	db -1 ; end
 endc
