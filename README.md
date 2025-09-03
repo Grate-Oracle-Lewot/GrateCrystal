@@ -151,7 +151,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 ## Moves
 Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/moves/moves.asm
 
-- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Endure, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, Icy Wind, Conversion2, Octazooka, and Explosion (Selfdestruct is now as strong as Explosion)
+- Removed: Splash, Razor Wind, Barrage, Pain Split, Psywave, Frustration, Constrict, Detect, Endure, Poison Gas, Sharpen, Withdraw, Sweet Kiss, Mimic, Morning Sun, Moonlight, Icy Wind, Octazooka, Conversion2, and Explosion (Selfdestruct is now as strong as Explosion)
 
 - Added: Fairy Wind, Play Rough, Moonblast, Dazzling Gleam (renamed Dazzly Gleam), Dark Pulse, Dragon Pulse, Power Gem, Rock Wrecker (works more like Head Smash), Silver Wind, Signal Beam, U-Turn, Earth Power, Air Slash, Acrobatics, Iron Head, Poison Jab, Shadow Claw, Scald, Aura Sphere, Hail, Avalanche, Rock Polish, Metal Sound, and a new move called Night Terror (a high-power physical Ghost-type move that, like Snore, can only be used while asleep)
 
@@ -194,6 +194,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage. This bypasses accuracy checks, and even works on Flying types and pseudo-Levitaters, who dodge the actual Spikes damage.
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
+
+- Conversion now also has the effect of Conversion2: the user will become a dual-type, with the first type matching a random one of the user's moves, and the second being a random type with a resistance or immunity to the foe's last attack. If the Conversion(1) half of the effect fails, the Conversion2 half may still work, changing the second type while leaving the first intact. If the Conversion(1) half succeeds but the Conversion2 half fails, the user becomes a monotype.
 
 - Struggle is no longer boosted by the Pink Bow. Beat Up and Future Sight are still boosted by the Blackglasses and Twistedspoon despite still being functionally typeless, because frankly they need the help.
 
