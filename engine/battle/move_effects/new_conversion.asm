@@ -46,7 +46,7 @@ BattleCommand_Conversion:
 .loop2
 	ld a, [hl]
 	cp -1
-	jr z, .Fail1
+	jp z, .Fail1
 	cp CURSE_TYPE
 	jr z, .next
 	ld a, [de]
