@@ -39,3 +39,56 @@ ReturnFarCall::
 	ld a, [wFarCallBC + 1]
 	ld c, a
 	ret
+
+RstFarCall::
+; Call the following dba pointer on the stack.
+; Preserves a, bc, de, hl.
+	ldh [hFarCallSavedA], a
+	ld a, h
+	ldh [hFarCallSavedH], a
+	ld a, l
+	ldh [hFarCallSavedL], a
+	pop hl
+	ld a, [hli]
+	ldh [hTempBank], a
+	add a
+	jr c, .farjp
+	inc hl
+	inc hl
+	push hl
+	dec hl
+	dec hl
+.farjp
+	ldh a, [hROMBank]
+	push af
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ldh a, [hTempBank]
+	and $7f
+	rst Bankswitch
+
+; Call the function at hl with restored values of a and hl.
+	push hl
+	ld hl, hFarCallSavedHL
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ldh a, [hFarCallSavedA]
+	ldh [hFarCallSavedA], a
+
+; Updates the flags on the stack to their current value without clobbering any other registers.
+	push af ; pushes current flags
+	push hl
+	ld hl, sp+$2
+	ld a, [hli] ; reads current flags
+	assert HIGH(wStackBottom) == HIGH(wStackTop)
+	inc l ; more efficient than 'inc hl'
+	ld [hl], a ; overwrites pushed flags
+	pop hl
+	pop af
+
+	pop af
+	rst Bankswitch
+	ldh a, [hFarCallSavedA]
+	ret
