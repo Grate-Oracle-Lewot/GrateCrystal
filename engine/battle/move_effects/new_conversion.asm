@@ -1,6 +1,10 @@
 BattleCommand_Conversion:
+; Combines Conversion and Conversion2. The idea is to result in type 1 STAB and type 2 resistance. How they combine is not really considered.
+; CURSE_TYPE is excluded from Conversion1. CURSE_TYPE and BIRD are searched by Conversion2 but have no resistances, so should never be selected.
+; Should work fine for inverse battles. Conversion2 specifically fails in typeless battles, but 1 can still work, as STAB still exists.
 
-; Conversion1, changes both types
+; Conversion1, changes both types. Second type may then be changed again by Conversion2.
+; Only plays move animation if conversion is successeful.
 	ld hl, wBattleMonMoves
 	ld de, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -90,7 +94,8 @@ BattleCommand_Conversion:
 	call AnimateCurrentMove
 	call .Done
 
-; Conversion2 after a successful Conversion1, only changes second type
+; Conversion2 after a successful Conversion1. Only changes second type.
+; No animation since Conversion1 already played it.
 	ld a, [wBattleType]
 	cp BATTLETYPE_TYPELESS
 	ret z
@@ -144,16 +149,17 @@ BattleCommand_Conversion:
 	jr .Finish
 
 .Fail1:
-; Conversion2 after a failed Conversion1, changes both types
+; Conversion2 after a failed Conversion1. Only changes second type to retain potential preexisting Conversion1 (or natural STAB).
+; Plays move animation since Conversion1 didn't, but doesn't play if Conversion2 also fails.
 	ld a, [wBattleType]
 	cp BATTLETYPE_TYPELESS
 	jp z, FailMove
 
-	ld hl, wBattleMonType1
+	ld hl, wBattleMonType2
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .got_type
-	ld hl, wEnemyMonType1
+	ld hl, wEnemyMonType2
 .got_type
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
@@ -179,8 +185,7 @@ BattleCommand_Conversion:
 	cp TYPES_END
 	jr nc, .loop5
 .okay3
-	ld [hli], a
-	ld [hld], a
+	ld [hl], a
 	push hl
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
@@ -189,7 +194,7 @@ BattleCommand_Conversion:
 	push hl
 	ld a, d
 	ld [hl], a
-	call BattleCheckTypeMatchup
+	call ConversionCheckTypeMatchup
 	pop hl
 	pop af
 	ld [hl], a
@@ -209,6 +214,8 @@ BattleCommand_Conversion:
 	jp StdBattleTextbox
 
 ConversionCheckTypeMatchup:
+; Like BattleCheckTypeMatchup, but only checks matchups for the second type slot.
+
 	ld hl, wEnemyMonType2
 	ldh a, [hBattleTurn]
 	and a
