@@ -105,17 +105,42 @@ BattleCommand_Conversion:
 	call GetBattleVar
 	and a
 	ret z
-	call ConversionOptimization1
+	push hl
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	call GetMoveAttr
+	and TYPE_MASK
+	ld d, a
+	pop hl
 	call BattleCommand_SwitchTurn
 
 .loop4
-	call ConversionGetRandomType
+	call BattleRandom
+	maskbits TYPES_END
+	cp UNUSED_TYPES
+	jr c, .okay2
+	cp UNUSED_TYPES_END
+	jr c, .loop5
+	cp TYPES_END
+	jr nc, .loop5
+.okay2
 	ld [hl], a
-	call ConversionOptimization2
+	push hl
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	push af
+	push hl
+	ld a, d
+	ld [hl], a
 	call ConversionCheckTypeMatchup
-	call ConversionOptimization3
+	pop hl
+	pop af
+	ld [hl], a
+	pop hl
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
 	jr nc, .loop4
-
 	jr .Finish
 
 .Fail1:
@@ -134,17 +159,43 @@ BattleCommand_Conversion:
 	call GetBattleVar
 	and a
 	jp z, FailMove
-	call ConversionOptimization1
+	push hl
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	call GetMoveAttr
+	and TYPE_MASK
+	ld d, a
+	pop hl
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
 .loop5
-	call ConversionGetRandomType
+	call BattleRandom
+	maskbits TYPES_END
+	cp UNUSED_TYPES
+	jr c, .okay3
+	cp UNUSED_TYPES_END
+	jr c, .loop5
+	cp TYPES_END
+	jr nc, .loop5
+.okay3
 	ld [hli], a
 	ld [hld], a
-	call ConversionOptimization2
+	push hl
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	push af
+	push hl
+	ld a, d
+	ld [hl], a
 	call BattleCheckTypeMatchup
-	call ConversionOptimization3
+	pop hl
+	pop af
+	ld [hl], a
+	pop hl
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
 	jr nc, .loop5
 
 .Finish:
@@ -156,47 +207,6 @@ BattleCommand_Conversion:
 .Done:
 	ld hl, TookOnTypeText
 	jp StdBattleTextbox
-
-ConversionGetRandomType:
-	call BattleRandom
-	maskbits TYPES_END
-	cp UNUSED_TYPES
-	ret c
-	cp UNUSED_TYPES_END
-	jr c, ConversionGetRandomType
-	cp TYPES_END
-	jr nc, ConversionGetRandomType
-	ret
-
-ConversionOptimization1:
-	push hl
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	call GetMoveAttr
-	and TYPE_MASK
-	ld d, a
-	pop hl
-	ret
-
-ConversionOptimization2:
-	push hl
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	and TYPE_MASK
-	push af
-	push hl
-	ld a, d
-	ld [hl], a
-	ret
-
-ConversionOptimization3:
-	pop hl
-	pop af
-	ld [hl], a
-	pop hl
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	ret
 
 ConversionCheckTypeMatchup:
 	ld hl, wEnemyMonType2
