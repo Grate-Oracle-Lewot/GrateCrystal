@@ -200,6 +200,12 @@ ConversionOptimization3:
 	ret
 
 ConversionCheckTypeMatchup:
+	ld hl, wEnemyMonType2
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .get_type
+	ld hl, wBattleMonType2
+.get_type
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar ; preserves hl, de, and bc
 	and TYPE_MASK
