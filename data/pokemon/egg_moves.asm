@@ -1011,7 +1011,9 @@ CottoneeEggMoves:
 
 if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 MissingnoEggMoves:
-	db PAY_DAY
-	db BIND
+	db CONVERSION
+	db SWORDS_DANCE
+	db DOUBLE_EDGE
+	db RAGE
 	db -1 ; end
 endc
