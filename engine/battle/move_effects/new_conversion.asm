@@ -46,7 +46,7 @@ BattleCommand_Conversion:
 .loop2
 	ld a, [hl]
 	cp -1
-	jp z, FailMove
+	jr z, .Fail1
 	cp CURSE_TYPE
 	jr z, .next
 	ld a, [de]
@@ -85,7 +85,10 @@ BattleCommand_Conversion:
 	ld [de], a
 	inc de
 	ld [de], a
-	jp ConversionAnimateMoveAndPrintText
+	ld [wNamedObjectIndex], a
+	farcall GetTypeName
+	call AnimateCurrentMove
+	call .Done
 
 ; Conversion2 after a successful Conversion1, only changes second type
 	ld a, [wBattleType]
@@ -103,6 +106,7 @@ BattleCommand_Conversion:
 	and a
 	ret z
 	call ConversionOptimization1
+	call BattleCommand_SwitchTurn
 
 .loop4
 	call ConversionGetRandomType
@@ -111,11 +115,8 @@ BattleCommand_Conversion:
 	call ConversionCheckTypeMatchup
 	call ConversionOptimization3
 	jr nc, .loop4
-	call BattleCommand_SwitchTurn
 
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	jr ConversionPrintTookOnType
+	jr .Finish
 
 .Fail1:
 ; Conversion2 after a failed Conversion1, changes both types
@@ -134,6 +135,8 @@ BattleCommand_Conversion:
 	and a
 	jp z, FailMove
 	call ConversionOptimization1
+	call AnimateCurrentMove
+	call BattleCommand_SwitchTurn
 
 .loop5
 	call ConversionGetRandomType
@@ -143,18 +146,14 @@ BattleCommand_Conversion:
 	call BattleCheckTypeMatchup
 	call ConversionOptimization3
 	jr nc, .loop5
+
+.Finish:
 	call BattleCommand_SwitchTurn
-
 	ld a, [hl]
-	; fallthrough
-
-ConversionAnimateMoveAndPrintText:
 	ld [wNamedObjectIndex], a
-	call AnimateCurrentMove
-	; fallthrough
-
-ConversionPrintTookOnType:
 	predef GetTypeName
+
+.Done:
 	ld hl, TookOnTypeText
 	jp StdBattleTextbox
 
@@ -177,7 +176,7 @@ ConversionOptimization1:
 	and TYPE_MASK
 	ld d, a
 	pop hl
-	jp BattleCommand_SwitchTurn
+	ret
 
 ConversionOptimization2:
 	push hl
