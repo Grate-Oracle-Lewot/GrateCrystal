@@ -197,6 +197,7 @@ PoliwagEggMoves:
 	db -1 ; end
 
 AbraEggMoves:
+	db CONVERSION
 	db LIGHT_SCREEN
 	db ENCORE
 	db BARRIER
