@@ -600,6 +600,7 @@ ChinchouEggMoves:
 	db -1 ; end
 
 PichuEggMoves:
+	db PRESENT
 	db DOUBLESLAP
 	db TRIPLE_KICK
 	db HI_JUMP_KICK
