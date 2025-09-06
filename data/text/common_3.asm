@@ -1495,44 +1495,9 @@ _MoveReminderPaymentReceived::
 	text "Enjoy that move!"
 	prompt
 
-_DSTIsThatOKText::
-	text " DST,"
-	line "is that OK?"
-	done
-
 _TimeAskOkayText::
 	text ","
 	line "is that OK?"
-	done
-
-_TimesetAskDSTText::
-	text "Do you want to"
-	line "switch to Daylight"
-	cont "Saving Time?"
-	done
-
-_TimesetDSTText::
-	text "I set the clock"
-	line "forward by one"
-	cont "hour."
-	prompt
-
-_TimesetAskNotDSTText::
-	text "Is Daylight Saving"
-	line "Time over?"
-	done
-
-_TimesetNotDSTText::
-	text "I put the clock"
-	line "back one hour."
-	prompt
-
-_TimesetAskAdjustDSTText::
-	text "Do you want to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time?"
 	done
 
 _MomLostGearBookletText::
