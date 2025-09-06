@@ -2089,7 +2089,7 @@ wMartType:: db
 wMartPointerBank:: db
 wMartPointer:: dw
 wMartJumptableIndex:: db
-wBargainShopFlags:: db
+wBargainShopFlags:: dw
 
 NEXTU
 ; player movement data
@@ -2138,7 +2138,7 @@ wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
 ENDU
 
-	ds 8
+	ds 7
 
 
 SECTION "More WRAM 1", WRAMX
