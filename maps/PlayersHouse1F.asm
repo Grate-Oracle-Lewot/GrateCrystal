@@ -52,25 +52,9 @@ MeetMomScript:
 	writetext MomGivesPokegearText
 	promptbutton
 	special SetDayOfWeek
-.SetDayOfWeek:
-	writetext IsItDSTText
-	yesorno
-	iffalse .WrongDay
-	special InitialSetDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-	sjump .DayOfWeekDone
-
-.WrongDay:
-	special InitialClearDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-.DayOfWeekDone:
 	writetext ComeHomeForDSTText
 	yesorno
 	iffalse .ExplainPhone
-	sjump .KnowPhone
-
 .KnowPhone:
 	writetext KnowTheInstructionsText
 	promptbutton
@@ -79,8 +63,6 @@ MeetMomScript:
 .ExplainPhone:
 	writetext DontKnowTheInstructionsText
 	promptbutton
-	sjump .FinishPhone
-
 .FinishPhone:
 	writetext InstructionsNextText
 	waitbutton
@@ -97,8 +79,6 @@ MeetMomScript:
 
 .FromLeft:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement
-	sjump .Finish
-
 .Finish:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
@@ -241,11 +221,6 @@ MomGivesPokegearText:
 
 	para "Oh, the day of the"
 	line "week isn't set."
-	done
-
-IsItDSTText:
-	text "Is it Daylight"
-	line "Saving Time now?"
 	done
 
 ComeHomeForDSTText:
