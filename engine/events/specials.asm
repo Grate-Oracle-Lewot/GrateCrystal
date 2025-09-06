@@ -364,10 +364,3 @@ PrintDiploma:
 	call FadeToMenu
 	farcall _PrintDiploma
 	jp ExitAllMenus
-
-TrainerHouse: ; unused
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call OpenSRAM
-	ld a, [sMysteryGiftTrainerHouseFlag]
-	ld [wScriptVar], a
-	jp CloseSRAM
