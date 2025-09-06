@@ -29,7 +29,6 @@ BankOfMom:
 	dw .TakeMoney
 	dw .StopOrStartSavingMoney
 	dw .JustDoWhatYouCan
-	dw .AskDST
 
 .CheckIfBankInitialized:
 	ld a, [wMomSavingMoney]
@@ -77,7 +76,6 @@ BankOfMom:
 	jr .done_2
 
 .nope
-	call DSTChecks
 	ld a, $7
 
 .done_2
@@ -263,70 +261,14 @@ BankOfMom:
 .JustDoWhatYouCan:
 	ld hl, MomJustDoWhatYouCanText
 	call PrintText
-
-.AskDST:
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ret
 
-DSTChecks:
-; check the time; avoid changing DST if doing so would change the current day
-	ld a, [wDST]
-	bit 7, a
-	ldh a, [hHours]
-	jr z, .NotDST
-	and a ; within one hour of 00:00?
-	jr z, .LostBooklet
-	jr .loop
-
-.NotDST:
-	cp 23 ; within one hour of 23:00?
-	jr nz, .loop
-	; fallthrough
-
 .LostBooklet:
 	call .ClearBox
 	bccoord 1, 14
-	ld hl, .TimesetAskAdjustDSTText
-	call PlaceHLTextAtBC
-	call YesNoBox
-	ret c
-	call .ClearBox
-	bccoord 1, 14
 	ld hl, .MomLostGearBookletText
-	jp PlaceHLTextAtBC
-
-.loop
-	call .ClearBox
-	bccoord 1, 14
-	ld a, [wDST]
-	bit 7, a
-	jr z, .SetDST
-	ld hl, .TimesetAskNotDSTText
-	call PlaceHLTextAtBC
-	call YesNoBox
-	ret c
-	ld a, [wDST]
-	res 7, a
-	ld [wDST], a
-	call .SetClockBack
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .TimesetNotDSTText
-	jp PlaceHLTextAtBC
-
-.SetDST:
-	ld hl, .TimesetAskDSTText
-	call PlaceHLTextAtBC
-	call YesNoBox
-	ret c
-	ld a, [wDST]
-	set 7, a
-	ld [wDST], a
-	call .SetClockForward
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .TimesetDSTText
 	jp PlaceHLTextAtBC
 
 .SetClockForward:
@@ -363,28 +305,8 @@ DSTChecks:
 	lb bc, 3, 18
 	jp ClearBox
 
-.TimesetAskAdjustDSTText:
-	text_far _TimesetAskAdjustDSTText
-	text_end
-
 .MomLostGearBookletText:
 	text_far _MomLostGearBookletText
-	text_end
-
-.TimesetAskDSTText:
-	text_far _TimesetAskDSTText
-	text_end
-
-.TimesetDSTText:
-	text_far _TimesetDSTText
-	text_end
-
-.TimesetAskNotDSTText:
-	text_far _TimesetAskNotDSTText
-	text_end
-
-.TimesetNotDSTText:
-	text_far _TimesetNotDSTText
 	text_end
 
 Mom_SetUpWithdrawMenu:
@@ -393,6 +315,8 @@ Mom_SetUpWithdrawMenu:
 
 Mom_SetUpDepositMenu:
 	ld de, Mom_DepositString
+	; fallthrough
+
 Mom_ContinueMenuSetup:
 	push de
 	xor a
