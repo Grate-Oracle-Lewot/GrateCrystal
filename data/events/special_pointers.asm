@@ -180,6 +180,3 @@ SpecialsPointers::
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
 	add_special UnusedFindItemInPCOrBag
-
-	add_special InitialSetDSTFlag
-	add_special InitialClearDSTFlag
