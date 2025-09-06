@@ -536,58 +536,6 @@ SetDayOfWeek:
 	text_far _OakTimeIsItText
 	text_end
 
-InitialSetDSTFlag:
-	ld a, [wDST]
-	set 7, a
-	ld [wDST], a
-	hlcoord 1, 14
-	lb bc, 3, 18
-	call ClearBox
-	ld hl, .Text
-	jp PlaceHLTextAtBC
-
-.Text:
-	text_asm
-	call UpdateTime
-	ldh a, [hHours]
-	ld b, a
-	ldh a, [hMinutes]
-	ld c, a
-	decoord 1, 14
-	farcall PrintHoursMins
-	ld hl, .DSTIsThatOKText
-	ret
-
-.DSTIsThatOKText:
-	text_far _DSTIsThatOKText
-	text_end
-
-InitialClearDSTFlag:
-	ld a, [wDST]
-	res 7, a
-	ld [wDST], a
-	hlcoord 1, 14
-	lb bc, 3, 18
-	call ClearBox
-	ld hl, .Text
-	jp PlaceHLTextAtBC
-
-.Text:
-	text_asm
-	call UpdateTime
-	ldh a, [hHours]
-	ld b, a
-	ldh a, [hMinutes]
-	ld c, a
-	decoord 1, 14
-	farcall PrintHoursMins
-	ld hl, .TimeAskOkayText
-	ret
-
-.TimeAskOkayText:
-	text_far _TimeAskOkayText
-	text_end
-
 PrintHour:
 	ld l, e
 	ld h, d
