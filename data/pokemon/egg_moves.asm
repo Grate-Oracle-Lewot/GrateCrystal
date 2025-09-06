@@ -1016,8 +1016,10 @@ MissingnoEggMoves:
 	db CONVERSION
 	db SWORDS_DANCE
 	db DOUBLE_EDGE
+	db OUTRAGE
 	db RAGE
 	db MEGA_KICK
 	DB MEGA_PUNCH
+	db METAL_SOUND
 	db -1 ; end
 endc
