@@ -1,8 +1,4 @@
 BattleCommand_Foresight:
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .failed
-
 	call CheckHiddenOpponent
 	jr nz, .failed
 
