@@ -1488,7 +1488,6 @@ Foresight:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	foresight
 	endmove
 
