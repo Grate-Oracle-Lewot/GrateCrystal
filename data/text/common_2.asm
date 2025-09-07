@@ -1463,7 +1463,7 @@ _OakText4::
 	cont "like this easier."
 
 	para "…Emphasis on the"
-	line "er."
+	line "“er.”"
 	prompt
 
 _OakText5::
