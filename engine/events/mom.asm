@@ -61,7 +61,9 @@ BankOfMom:
 	ld [wMomSavingMoney], a
 	ld hl, MomLeavingText3
 	call PrintText
-	jr .nope
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
 
 .IsThisAboutYourMoney:
 	ld hl, MomIsThisAboutYourMoneyText
@@ -154,7 +156,9 @@ BankOfMom:
 	call WaitSFX
 	ld hl, MomStoredMoneyText
 	call PrintText
-	jr .CancelDeposit
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
 
 .InsufficientFundsInWallet:
 	ld hl, MomInsufficientFundsInWalletText
@@ -212,7 +216,9 @@ BankOfMom:
 	call WaitSFX
 	ld hl, MomTakenMoneyText
 	call PrintText
-	jr .CancelWithdraw
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
 
 .InsufficientFundsInBank:
 	ld hl, MomHaventSavedThatMuchText
@@ -237,12 +243,13 @@ BankOfMom:
 	ld [wMomSavingMoney], a
 	ld hl, MomStartSavingMoneyText
 	call PrintText
-	jr .done_6
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
 
 .StopSavingMoney:
 	ld a, 1 << MOM_ACTIVE_F
 	ld [wMomSavingMoney], a
-.done_6
 	ld a, $7
 	ld [wJumptableIndex], a
 	ret
