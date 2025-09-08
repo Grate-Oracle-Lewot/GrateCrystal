@@ -117,4 +117,4 @@ TilesetOlivineGymPalMap:
 INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
 
 TilesetJohtoDesertPalMap:
-INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
+INCLUDE "gfx/tilesets/johto_desert_palette_map.asm"
