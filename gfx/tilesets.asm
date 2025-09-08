@@ -354,6 +354,9 @@ INCBIN "data/tilesets/viridian_gym_metatiles.bin"
 TilesetViridianGymColl::
 INCLUDE "data/tilesets/viridian_gym_collision.asm"
 
+
+SECTION "Tileset Data 9", ROMX
+
 TilesetOlivineGymGFX::
 INCBIN "gfx/tilesets/olivine_gym.2bpp.lz"
 
