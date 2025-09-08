@@ -362,3 +362,12 @@ INCBIN "data/tilesets/olivine_gym_metatiles.bin"
 
 TilesetOlivineGymColl::
 INCLUDE "data/tilesets/olivine_gym_collision.asm"
+
+TilesetJohtoDesertGFX::
+INCBIN "gfx/tilesets/olivine_gym.2bpp.lz"
+
+TilesetJohtoDesertMeta::
+INCBIN "data/tilesets/olivine_gym_metatiles.bin"
+
+TilesetJohtoDesertColl::
+INCLUDE "data/tilesets/olivine_gym_collision.asm"
