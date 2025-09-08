@@ -115,3 +115,6 @@ INCLUDE "gfx/tilesets/viridian_gym_palette_map.asm"
 
 TilesetOlivineGymPalMap:
 INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
+
+TilesetJohtoDesertPalMap:
+INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
