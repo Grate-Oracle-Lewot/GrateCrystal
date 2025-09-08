@@ -459,7 +459,7 @@ ENDM
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes SafariZoneGate, SAFARI_ZONE_GATE, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
-	map_attributes SafariZone, SAFARI_ZONE, $00, 0
+	map_attributes SafariZone, SAFARI_ZONE, $4B, 0
 	map_attributes SaffronPokecenter1F, SAFFRON_POKECENTER_1F, $00, 0
 	map_attributes SaffronMart, SAFFRON_MART, $00, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $00, 0
