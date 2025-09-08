@@ -39,6 +39,7 @@
 	const TILESET_SPINNERS             ; 25
 	const TILESET_VIRIDIAN_GYM         ; 26
 	const TILESET_OLIVINE_GYM          ; 27
+	const TILESET_JOHTO_DESERT         ; 28
 NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size
