@@ -53,4 +53,5 @@ Tilesets::
 	tileset TilesetSpinners
 	tileset TilesetViridianGym
 	tileset TilesetOlivineGym
+	tileset TilesetJohtoDesert
 	assert_table_length NUM_TILESETS + 1
