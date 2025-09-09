@@ -180,7 +180,7 @@ PowerPlant2FManagerThatsThePartText:
 	text "MANAGER: Ah! Yeah!"
 
 	para "That's the missing"
-	line "PART from my be-"
+	line "part from my be-"
 	cont "loved generator!"
 	cont "You found it?"
 	done
