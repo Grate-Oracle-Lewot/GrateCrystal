@@ -124,7 +124,7 @@ ItemNames::
 	li "HARD STONE"
 	li "LUCKY EGG"
 	li "CARD KEY"
-	li "MACHINE PART"
+	li "ARC REACTOR"
 	li "HARDHAT"
 	li "LOST ITEM"
 	li "STARDUST"
