@@ -77,7 +77,7 @@ Route24RocketAfterBattleText:
 	text "OK. Tell you mine"
 	line "secret will I."
 
-	para "MACHINE PART steal"
+	para "Machine part steal"
 	line "by me, hide it I"
 
 	para "did in GYM of the"
