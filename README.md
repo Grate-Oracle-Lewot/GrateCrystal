@@ -86,7 +86,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - After you've beaten Red, your 7th opponent in the Lv100 challenge will be replaced by one of 24 special trainers (random each time), consisting of Gym Leaders, League members, etc.
   - Completing the Inverse/Neutral Battle sidequest unlocks the ability to challenge the Battle Tower in those modes
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
-- Unused mine cart graphics added to some caves, beta palm trees to the Safari Zone, and beta cacti and dead trees to Blackthorn and Routes 45/46
+- Unused mine cart graphics added to some caves, beta palm trees to the Safari Zone, and beta cacti and dead trees to Blackthorn and Route 45
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
 ## Type chart changes
