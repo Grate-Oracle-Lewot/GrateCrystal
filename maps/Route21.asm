@@ -72,9 +72,10 @@ SwimmerfNikkiBeatenText:
 	done
 
 SwimmerfNikkiAfterBattleText:
-	text "I have to watch"
-	line "out for blemishes"
-	cont "caused by the sun."
+	text "We have to use"
+	line "mineral-based sun-"
+	cont "screen now to pro-"
+	cont "tect the CORSOLA."
 	done
 
 FisherArnoldSeenText:
