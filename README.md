@@ -524,7 +524,7 @@ Along with personal preference, I prioritized the ones that could most reasonabl
 
 # Why no Nuzlocke mode?
 
-The thing is, there are many types of challenge runs, and I don't want to restrict the player in one specific way when they might want a different ruleset. Add to that the possibility of softlocks and lack of room in the options menu, and it's just not something I'm comfortable doing.
+The thing is, there are many types of challenge runs, and I don't want to restrict the player in one specific way when they might prefer a different ruleset. Add to that the possibility of softlocks and lack of room in the options menu, and it's just not something I'm comfortable doing.
 
 # How come turning off battle items doesn't stop the computer from using them?
 
@@ -536,7 +536,7 @@ Because I designed everything around the changes—learnsets, enemy parties, eve
 
 # Why no starter build for my favorite Pokémon?
 
-Sorry, I'm not doing them all.
+Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself.
 
 # Can I copy your code?
 
