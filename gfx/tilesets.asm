@@ -374,3 +374,21 @@ INCBIN "data/tilesets/johto_desert_metatiles.bin"
 
 TilesetJohtoDesertColl::
 INCLUDE "data/tilesets/johto_desert_collision.asm"
+
+TilesetJohtoBeachGFX::
+INCBIN "gfx/tilesets/johto.2bpp.lz"
+
+TilesetJohtoBeachMeta::
+INCBIN "data/tilesets/johto_beach_metatiles.bin"
+
+TilesetJohtoBeachColl::
+INCLUDE "data/tilesets/johto_beach_collision.asm"
+
+TilesetKantoExtraGFX::
+INCBIN "gfx/tilesets/kanto.2bpp.lz"
+
+TilesetKantoExtraMeta::
+INCBIN "data/tilesets/kanto_extra_metatiles.bin"
+
+TilesetKantoExtraColl::
+INCLUDE "data/tilesets/kanto_extra_collision.asm"
