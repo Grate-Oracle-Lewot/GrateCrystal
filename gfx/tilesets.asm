@@ -9,6 +9,7 @@ ENDM
 SECTION "Tileset Data 1", ROMX
 
 TilesetKantoGFX::
+TilesetKantoExtraGFX::
 INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
 TilesetKantoMeta::
@@ -19,6 +20,8 @@ INCLUDE "data/tilesets/kanto_collision.asm"
 
 Tileset0GFX::
 TilesetJohtoGFX::
+TilesetJohtoDesertGFX::
+TilesetJohtoBeachGFX::
 INCBIN "gfx/tilesets/johto.2bpp.lz"
 
 Tileset0Meta::
@@ -366,26 +369,17 @@ INCBIN "data/tilesets/olivine_gym_metatiles.bin"
 TilesetOlivineGymColl::
 INCLUDE "data/tilesets/olivine_gym_collision.asm"
 
-TilesetJohtoDesertGFX::
-INCBIN "gfx/tilesets/johto.2bpp.lz"
-
 TilesetJohtoDesertMeta::
 INCBIN "data/tilesets/johto_desert_metatiles.bin"
 
 TilesetJohtoDesertColl::
 INCLUDE "data/tilesets/johto_desert_collision.asm"
 
-TilesetJohtoBeachGFX::
-INCBIN "gfx/tilesets/johto.2bpp.lz"
-
 TilesetJohtoBeachMeta::
 INCBIN "data/tilesets/johto_beach_metatiles.bin"
 
 TilesetJohtoBeachColl::
 INCLUDE "data/tilesets/johto_beach_collision.asm"
-
-TilesetKantoExtraGFX::
-INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
 TilesetKantoExtraMeta::
 INCBIN "data/tilesets/kanto_extra_metatiles.bin"
