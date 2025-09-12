@@ -54,4 +54,6 @@ Tilesets::
 	tileset TilesetViridianGym
 	tileset TilesetOlivineGym
 	tileset TilesetJohtoDesert
+	tileset TilesetJohtoBeach
+	tileset TilesetKantoExtra
 	assert_table_length NUM_TILESETS + 1
