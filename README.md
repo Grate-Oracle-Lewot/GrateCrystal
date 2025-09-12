@@ -384,7 +384,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Flypoints for the Battle Tower and the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint
 - Default Fast text speed and Instant speed option
 - Default player and rival names changed
-- Tilesets expanded from 192 to 255 (used only for Nayru's dex)
+- Tilesets expanded from 192 to 255
 - Outdoor sprite system improvement
 - Event initialization system improvement
 - Increased max number of tiles for Pokémon animations
