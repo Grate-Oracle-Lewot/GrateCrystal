@@ -155,7 +155,7 @@ ENDM
 	map_const CELADON_MANSION_ROOF,                         4,  5 ; 16
 	map_const CELADON_MANSION_ROOF_HOUSE,                   4,  4 ; 17
 	map_const CELADON_CAFE,                                 6,  4 ; 18
-	map_const ROUTE_7,                                     10,  9 ; 19
+	map_const ROUTE_7,                                     10,  6 ; 19
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
 	map_const ROUTE_16,                                    10,  9 ; 21
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 22
