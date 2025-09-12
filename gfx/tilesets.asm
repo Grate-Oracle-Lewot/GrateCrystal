@@ -9,7 +9,6 @@ ENDM
 SECTION "Tileset Data 1", ROMX
 
 TilesetKantoGFX::
-TilesetKantoExtraGFX::
 INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
 TilesetKantoMeta::
@@ -380,6 +379,9 @@ INCBIN "data/tilesets/johto_beach_metatiles.bin"
 
 TilesetJohtoBeachColl::
 INCLUDE "data/tilesets/johto_beach_collision.asm"
+
+TilesetKantoExtraGFX::
+INCBIN "gfx/tilesets/kanto_extra.2bpp.lz"
 
 TilesetKantoExtraMeta::
 INCBIN "data/tilesets/kanto_extra_metatiles.bin"
