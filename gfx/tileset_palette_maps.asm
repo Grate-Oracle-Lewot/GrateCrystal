@@ -119,4 +119,4 @@ TilesetOlivineGymPalMap:
 INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
 
 TilesetKantoExtraPalMap:
-INCLUDE "gfx/tilesets/kanto_palette_map.asm"
+INCLUDE "gfx/tilesets/kanto_extra_palette_map.asm"
