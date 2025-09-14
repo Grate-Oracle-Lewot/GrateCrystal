@@ -1,4 +1,4 @@
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 00
+	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll WALL, WALL, WALL, WALL ; 01
 	tilecoll BUOY, WATER, BUOY, WATER ; 02
 	tilecoll WATER, BUOY, WATER, BUOY ; 03
