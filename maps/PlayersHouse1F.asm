@@ -225,10 +225,10 @@ MomGivesPokegearText:
 
 ComeHomeForDSTText:
 	text "You can change the"
-	line "clock at any time"
+	line "time and day in"
 
-	para "in the #GEAR's"
-	line "menu."
+	para "the #GEAR's menu"
+	line "whenever you want."
 
 	para "By the way, do you"
 	line "know how to use"
