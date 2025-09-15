@@ -174,5 +174,3 @@ hFarCallSavedA:: db
 hFarCallSavedHL::
 hFarCallSavedL:: db
 hFarCallSavedH:: db
-
-	ds 17
