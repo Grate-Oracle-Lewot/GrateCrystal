@@ -11,12 +11,14 @@ SilverCaveMoltresChamber_MapScripts:
 
 .Moltres:
 	checkevent EVENT_FOUGHT_MOLTRES
-	iftrue .NoAppear
-	endcallback
-
-.NoAppear:
+	iffalse .Appear
 	disappear SILVERCAVEMOLTRESCHAMBER_SLOWKING
 	disappear SILVERCAVEMOLTRESCHAMBER_MOLTRES
+	endcallback
+
+.Appear:
+	appear SILVERCAVEMOLTRESCHAMBER_SLOWKING
+	appear SILVERCAVEMOLTRESCHAMBER_MOLTRES
 	endcallback
 
 SilverCaveMoltresChamberSacredAsh:
