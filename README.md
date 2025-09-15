@@ -195,7 +195,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
-- Conversion now also has the effect of Conversion2: the user will become a dual-type, with the first type matching a random one of the user's moves, and the second being a random type with a resistance or immunity to the foe's last attack. If the Conversion(1) half of the effect fails, the Conversion2 half may still work, changing the second type while leaving the first intact. If the Conversion(1) half succeeds but the Conversion2 half fails, the user becomes a monotype.
+- Conversion now also has the effect of Conversion2: the user will become a dual-type, with the first type matching a random one of the user's moves, and the second being a random type with a resistance or immunity to the foe's last attack. If the Conversion(1) half of the effect fails, the Conversion2 half may still work, changing the second type while leaving the first intact (regardless of whether the first has been converted or is just the natural type). If the Conversion(1) half succeeds but the Conversion2 half fails, the user becomes a monotype.
 
 - Struggle is no longer boosted by the Pink Bow. Beat Up and Future Sight are still boosted by the Blackglasses and Twistedspoon despite still being functionally typeless, because frankly they need the help.
 
