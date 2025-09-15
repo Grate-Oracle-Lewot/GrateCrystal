@@ -296,6 +296,9 @@ Route45MaxPotion:
 Route45HiddenPpUp:
 	hiddenitem PP_UP, EVENT_ROUTE_45_HIDDEN_PP_UP
 
+Route45HiddenAloeVera:
+	hiddenitem ALOE_VERA, EVENT_ROUTE_45_HIDDEN_ALOE_VERA
+
 HikerErikSeenText:
 	text "Be prepared for"
 	line "anything!"
@@ -497,7 +500,10 @@ CamperQuentinAfterBattleText:
 
 Route45SignText:
 	text "ROUTE 45"
-	line "MOUNTAIN RD. AHEAD"
+
+	para "BLACKTHORN CITY -"
+	line "CHERRYGROVE CITY"
+	cont "and N. BarK TOwn"
 	done
 
 Route45_MapEvents:
@@ -511,6 +517,7 @@ Route45_MapEvents:
 	def_bg_events
 	bg_event 10,  4, BGEVENT_READ, Route45Sign
 	bg_event 13, 80, BGEVENT_ITEM, Route45HiddenPpUp
+	bg_event 12, 43, BGEVENT_ITEM, Route45HiddenAloeVera
 
 	def_object_events
 	object_event 10, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerErik, -1
