@@ -11,12 +11,14 @@ RockTunnelZapdosChamber_MapScripts:
 
 .Zapdos:
 	checkevent EVENT_FOUGHT_ZAPDOS
-	iftrue .NoAppear
-	endcallback
-
-.NoAppear:
+	iffalse .Appear
 	disappear ROCKTUNNELZAPDOSCHAMBER_SLOWKING
 	disappear ROCKTUNNELZAPDOSCHAMBER_ZAPDOS
+	endcallback
+
+.Appear:
+	appear ROCKTUNNELZAPDOSCHAMBER_SLOWKING
+	appear ROCKTUNNELZAPDOSCHAMBER_ZAPDOS
 	endcallback
 
 RockTunnelZapdosChamberScopeLens:
