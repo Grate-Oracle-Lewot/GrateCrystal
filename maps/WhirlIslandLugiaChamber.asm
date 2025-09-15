@@ -13,14 +13,12 @@ WhirlIslandLugiaChamber_MapScripts:
 	iftrue .NoAppear
 	checkitem SILVER_WING
 	iftrue .Appear
-	sjump .NoAppear
+.NoAppear:
+	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
+	endcallback
 
 .Appear:
 	appear WHIRLISLANDLUGIACHAMBER_LUGIA
-	endcallback
-
-.NoAppear:
-	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
 	endcallback
 
 Lugia:
