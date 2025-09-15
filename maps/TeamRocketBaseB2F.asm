@@ -268,11 +268,7 @@ RocketElectrode3:
 	reloadmapafterbattle
 	special PlayMapMusic
 	applymovement PLAYER, RocketBasePlayerLeavesElectrodesMovement3
-	sjump RocketBaseElectrodeScript
-
-TeamRocketBaseB2FReloadMap:
-	reloadmapafterbattle
-	end
+	; fallthrough
 
 RocketBaseElectrodeScript:
 	moveobject TEAMROCKETBASEB2F_LANCE, 18, 6
@@ -307,6 +303,10 @@ RocketBaseElectrodeScript:
 	setevent EVENT_SECURITY_CAMERA_3
 	setevent EVENT_SECURITY_CAMERA_4
 	setevent EVENT_SECURITY_CAMERA_5
+	end
+
+TeamRocketBaseB2FReloadMap:
+	reloadmapafterbattle
 	end
 
 TeamRocketBaseB2FLockedDoor:
