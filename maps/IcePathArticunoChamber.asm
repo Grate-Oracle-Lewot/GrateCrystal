@@ -11,12 +11,14 @@ IcePathArticunoChamber_MapScripts:
 
 .Articuno:
 	checkevent EVENT_FOUGHT_ARTICUNO
-	iftrue .NoAppear
-	endcallback
-
-.NoAppear:
+	iffalse .Appear
 	disappear ICEPATHARTICUNOCHAMBER_SLOWKING
 	disappear ICEPATHARTICUNOCHAMBER_ARTICUNO
+	endcallback
+
+.Appear:
+	appear ICEPATHARTICUNOCHAMBER_SLOWKING
+	appear ICEPATHARTICUNOCHAMBER_ARTICUNO
 	endcallback
 
 IcePathArticunoChamberBrightpowder:
