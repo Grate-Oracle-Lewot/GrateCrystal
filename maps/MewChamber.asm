@@ -9,11 +9,12 @@ MewChamber_MapScripts:
 
 .Mew:
 	checkevent EVENT_FOUGHT_MEW
-	iftrue .NoAppear
+	iffalse .Appear
+	disappear MEWCHAMBER_MEW
 	endcallback
 
-.NoAppear:
-	disappear MEWCHAMBER_MEW
+.Appear:
+	appear MEWCHAMBER_MEW
 	endcallback
 
 MewChamberMewScript:
