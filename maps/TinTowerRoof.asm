@@ -12,14 +12,12 @@ TinTowerRoof_MapScripts:
 	iftrue .NoAppear
 	checkitem RAINBOW_WING
 	iftrue .Appear
-	sjump .NoAppear
+.NoAppear:
+	disappear TINTOWERROOF_HO_OH
+	endcallback
 
 .Appear:
 	appear TINTOWERROOF_HO_OH
-	endcallback
-
-.NoAppear:
-	disappear TINTOWERROOF_HO_OH
 	endcallback
 
 TinTowerHoOh:
