@@ -72,8 +72,9 @@ CinnabarPokecenterSailorScript:
 	waitsfx
 	pause 20
 	playsound SFX_BOAT
+	waitsfx
 	pause 30
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	waitsfx
 	pause 10
 	warp VERMILION_PORT, 7, 10
