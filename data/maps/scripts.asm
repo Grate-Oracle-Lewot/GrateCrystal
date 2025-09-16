@@ -428,7 +428,6 @@ INCLUDE "maps/CeladonCity.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/VermilionCity.asm"
 INCLUDE "maps/Route9.asm"
-INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/Route19FuchsiaGate.asm"
 INCLUDE "maps/SeafoamGym.asm"
 
@@ -518,3 +517,4 @@ INCLUDE "maps/CeruleanCave2F.asm"
 SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
+INCLUDE "maps/CinnabarPokecenter1F.asm"
