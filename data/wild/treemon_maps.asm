@@ -49,4 +49,5 @@ RockMonMaps:
 	treemon_map CERULEAN_CAVE_2F,          ROCKMON_SET_STRONG
 	treemon_map CERULEAN_CAVE_B1F,         ROCKMON_SET_STRONG
 	treemon_map SAFARI_ZONE_GATE,          ROCKMON_SET_GATE
+	treemon_map SILVER_CAVE_ROOM_3,        ROCKMON_SET_STRONG
 	db -1
