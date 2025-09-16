@@ -528,7 +528,7 @@ ENDM
 	map_const VICTORY_ROAD,                                10, 36 ; 107
 	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 108
 	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 109
-	map_const SILVER_CAVE_ROOM_3,                          10, 18 ; 110
+	map_const SILVER_CAVE_ROOM_3,                          20, 35 ; 110
 	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 111
 	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 20 ; 112
 	endgroup
