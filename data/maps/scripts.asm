@@ -305,6 +305,7 @@ INCLUDE "maps/TohjoFalls.asm"
 INCLUDE "maps/AzaleaPokecenter1F.asm"
 INCLUDE "maps/CharcoalKiln.asm"
 INCLUDE "maps/AzaleaMart.asm"
+INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/AzaleaGym.asm"
 
 
@@ -517,4 +518,3 @@ INCLUDE "maps/CeruleanCave2F.asm"
 SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
-INCLUDE "maps/KurtsHouse.asm"
