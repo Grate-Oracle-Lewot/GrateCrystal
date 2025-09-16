@@ -436,8 +436,6 @@ I've created a bunch of alternate builds of this hack, most of which are for let
 
 Some of these starter groups don't form proper type triangles, and as a result, sometimes the Pokémon that the rival picks in response to yours may not be what you expect. He might even get the same Pokémon as you, or one that wasn't even on the table. Whatever he gets will have customized movesets in later fights, which is the main thing that makes these builds different than just editing the disassembly yourself.
 
-Builds that are different enough to break link compatibility with the more standard builds can be identified in-game by the lowercase letters "i" and "j" being dotted with little hearts in all of the text. These builds use different serial constants to prevent trading and/or battling where incompatible, but they can still do so with other copies of themselves.
-
 When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. With the unedited version of Pokémon Crystal, "make" alone will only build a single ROM, but for GrateCrystal, it will make all of the different builds at once, all in the same folder. Each of these ROMs can have separate save files, so there are no technical issues with storing all of them together, but if you only want to build one or a few, use the extra words after "make" listed below to build one version at a time.
 
 make grate - The normal ROM, with the normal Johto starters: Chikorita, Cyndaquil, and Totodile.
