@@ -1,5 +1,7 @@
 	object_const_def
 	const SILVERCAVEROOM3_RED
+	const SILVERCAVEROOM3_ROCK1
+	const SILVERCAVEROOM3_ROCK2
 	const SILVERCAVEROOM3_POKE_BALL1
 	const SILVERCAVEROOM3_POKE_BALL2
 
@@ -48,6 +50,9 @@ Red:
 	credits
 	end
 
+SilverCaveRoom3Rock:
+	jumpstd SmashRockScript
+
 SilverCaveRoom3MaxRepel:
 	itemball MAX_REPEL
 
@@ -85,5 +90,7 @@ SilverCaveRoom3_MapEvents:
 
 	def_object_events
 	object_event 20, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, EVENT_RED_IN_MT_SILVER
+	object_event  8, 54, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3Rock, -1
+	object_event 31, 36, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3Rock, -1
 	object_event 20, 40, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom3MaxRepel, EVENT_SILVER_CAVE_ROOM_3_MAX_REPEL
 	object_event 25, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom3FullRestore, EVENT_SILVER_CAVE_ROOM_3_FULL_RESTORE
