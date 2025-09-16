@@ -550,10 +550,6 @@ SilverCaveRoom2_Blocks:
 SilverCaveRoom3_Blocks:
 	INCBIN "maps/SilverCaveRoom3.blk"
 
-MahoganyMart1F_Blocks:
-MountMoonGiftShop_Blocks:
-	INCBIN "maps/GiftShop.blk"
-
 TeamRocketBaseB1F_Blocks:
 	INCBIN "maps/TeamRocketBaseB1F.blk"
 
@@ -993,3 +989,7 @@ CeruleanCaveB1F_Blocks:
 
 OaksLab2F_Blocks:
 	INCBIN "maps/OaksLab2F.blk"
+
+MahoganyMart1F_Blocks:
+MountMoonGiftShop_Blocks:
+	INCBIN "maps/GiftShop.blk"
