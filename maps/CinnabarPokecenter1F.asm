@@ -64,6 +64,7 @@ CinnabarPokecenterSailorScript:
 	waitbutton
 	closetext
 	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	pause 10
 	playsound SFX_CALL
 	waitsfx
@@ -72,7 +73,7 @@ CinnabarPokecenterSailorScript:
 	pause 20
 	playsound SFX_BOAT
 	pause 30
-	playsound SFX_EXIT_BUILDING
+	playsound SFX_ENTER_DOOR
 	waitsfx
 	pause 10
 	warp VERMILION_PORT, 7, 10
