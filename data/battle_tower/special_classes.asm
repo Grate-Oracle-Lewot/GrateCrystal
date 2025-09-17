@@ -3,7 +3,7 @@ BattleTowerSpecialTrainers:
 	; name, class
 	db "BROCK@@@@@", BROCK
 	db "MISTY@@@@@", MISTY
-	db "LT.SURGE@@", LT_SURGE
+	db "SURGE@@@@@", LT_SURGE
 	db "ERIKA@@@@@", ERIKA
 	db "JANINE@@@@", JANINE
 	db "SABRINA@@@", SABRINA
