@@ -503,7 +503,7 @@ Route45SignText:
 
 	para "BLACKTHORN CITY -"
 	line "CHERRYGROVE CITY"
-	cont "and N. BarK TOwn"
+	cont "    & N. BarK TOwn"
 	done
 
 Route45_MapEvents:
