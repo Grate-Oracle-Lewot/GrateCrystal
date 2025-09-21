@@ -96,8 +96,8 @@ ItemEffects:
 	dw BitterBerryEffect   ; BITTER_BERRY
 	dw StatusHealingEffect ; MINT_BERRY
 	dw NoEffect            ; RED_APRICORN
-	dw NoEffect            ; TINYMUSHROOM
-	dw NoEffect            ; BIG_MUSHROOM
+	dw RestoreHPEffect     ; TINYMUSHROOM
+	dw ReviveEffect        ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
 	dw NoEffect            ; HANDWARMER
@@ -1547,6 +1547,8 @@ RevivePokemon:
 	ld [wLowHealthAlarm], a
 	ld a, [wCurItem]
 	cp REVIVE
+	jr z, .revive_half_hp
+	cp BIG_MUSHROOM
 	jr z, .revive_half_hp
 
 	call ReviveFullHP
