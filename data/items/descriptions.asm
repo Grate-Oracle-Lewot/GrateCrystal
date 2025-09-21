@@ -768,12 +768,12 @@ LostItemDesc:
 	next "by the COPYCAT.@"
 
 StardustDesc:
-	db   "Sparkly purple"
-	next "powder. Sell low.@"
+	db   "Heals status prob-"
+	next "lems. Sell low.@"
 
 StarPieceDesc:
-	db   "A pointy yellow"
-	next "gem. Sell high.@"
+	db   "Revives to full"
+	next "HP. Sell high.@"
 
 BasementKeyDesc:
 	db   "Opens the door in"
