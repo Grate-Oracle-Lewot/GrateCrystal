@@ -588,11 +588,11 @@ RedApricornDesc:
 	next "LEVEL BALL.@"
 
 TinyMushroomDesc:
-	db   "A cute li'l mush-"
-	next "room. Sell low.@"
+	db   "Restores #MON"
+	next "HP by 10.@"
 
 BigMushroomDesc:
-	db   "A rare mushroom."
+	db   "Revives to 1/2 HP."
 	next "Sell high.@"
 
 SilverPowderDesc:
