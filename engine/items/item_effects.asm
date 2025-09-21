@@ -141,8 +141,8 @@ ItemEffects:
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; HARDHAT
 	dw NoEffect            ; LOST_ITEM
-	dw NoEffect            ; STARDUST
-	dw NoEffect            ; STAR_PIECE
+	dw StatusHealingEffect ; STARDUST
+	dw ReviveEffect        ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
 	dw NoEffect            ; DICTIONARY
