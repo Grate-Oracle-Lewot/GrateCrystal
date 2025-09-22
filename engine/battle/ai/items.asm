@@ -411,21 +411,18 @@ AI_Items:
 .HyperPotion:
 	call .HealItem
 	jp c, .DontUse
-	ld b, 200
 	call EnemyUsedHyperPotion
 	jp .Use
 
 .SuperPotion:
 	call .HealItem
 	jp c, .DontUse
-	ld b, 50
 	call EnemyUsedSuperPotion
 	jp .Use
 
 .FreshWater:
 	call .HealItem
 	jp c, .DontUse
-	ld b, 50
 	call EnemyUsedFreshWater
 	jp .Use
 
