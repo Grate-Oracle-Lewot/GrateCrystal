@@ -53,10 +53,22 @@ CeladonDeptStore4FSuperNerdText:
 	done
 
 CeladonDeptStore4FYoungsterText:
-	text "The DICTIONARY"
-	line "blocks confusion."
+	text "These held items"
+	line "that boost certain"
+	cont "types of moves…"
 
-	para "Take that, GOLBAT!"
+	para "You can actually"
+	line "get a lesser boost"
+
+	para "from a lot of"
+	line "other items, like"
+
+	para "holding a FIRE"
+	line "STONE or a NUGGET."
+
+	para "Even APRICORNS"
+	line "have a slight"
+	cont "effect, I hear."
 	done
 
 CeladonDeptStore4FDirectoryText:
