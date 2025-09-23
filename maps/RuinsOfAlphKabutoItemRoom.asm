@@ -16,10 +16,10 @@ RuinsOfAlphKabutoItemRoomPsncureberry:
 	itemball TM_FALSE_SWIPE, 5
 
 RuinsOfAlphKabutoItemRoomHealPowder:
-	itemball HEAL_POWDER
+	itemball OLD_GATEAU
 
 RuinsOfAlphKabutoItemRoomEnergypowder:
-	itemball ENERGYPOWDER
+	itemball BUGWORT
 
 RuinsOfAlphKabutoItemRoomAncientReplica:
 	jumptext RuinsOfAlphKabutoItemRoomAncientReplicaText
