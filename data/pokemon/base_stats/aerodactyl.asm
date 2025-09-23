@@ -6,7 +6,7 @@
 	db ROCK, FLYING ; type
 	db 45 ; catch rate
 	db 202 ; base exp
-	db HARD_STONE, REVIVAL_HERB ; items
+	db HARD_STONE, VIVICHOKE ; items
 	db GENDER_F12_5 ; gender ratio
 	db 19 ; step cycles to hatch
 	INCBIN "gfx/pokemon/aerodactyl/front.dimensions"
