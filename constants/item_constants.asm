@@ -123,10 +123,10 @@
 	const THICK_CLUB   ; 73
 	const FOCUS_BAND   ; 74
 	const LIMBO_STICK  ; 75
-	const ENERGYPOWDER ; 76
-	const ENERGY_ROOT  ; 77
-	const HEAL_POWDER  ; 78
-	const REVIVAL_HERB ; 79
+	const BUGWORT      ; 76
+	const SOOTFOOTROOT ; 77
+	const OLD_GATEAU   ; 78
+	const VIVICHOKE    ; 79
 	const HARD_STONE   ; 7a
 	const LUCKY_EGG    ; 7b
 	const CARD_KEY     ; 7c
