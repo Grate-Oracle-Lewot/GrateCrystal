@@ -19,7 +19,7 @@ RuinsOfAlphAerodactylItemRoomHealPowder:
 	itemball TM_SELFDESTRUCT, 5
 
 RuinsOfAlphAerodactylItemRoomEnergyRoot:
-	itemball ENERGY_ROOT
+	itemball SOOTFOOTROOT
 
 RuinsOfAlphAerodactylItemRoomAncientReplica:
 	jumptext RuinsOfAlphAerodactylItemRoomAncientReplicaText
