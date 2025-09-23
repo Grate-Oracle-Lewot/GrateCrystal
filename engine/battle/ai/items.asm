@@ -313,7 +313,7 @@ AI_Items:
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw MIRACLEBERRY, .Miracleberry
-	dbw HEAL_POWDER,  .HealPowder
+	dbw OLD_GATEAU,   .HealPowder
 	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
 	dbw X_ATTACK,     .XAttack
@@ -559,7 +559,7 @@ EnemyUsedMiracleberry:
 
 EnemyUsedHealPowder:
 	call StatusHealDoubleCall
-	ld a, HEAL_POWDER
+	ld a, OLD_GATEAU
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedMaxPotion:
