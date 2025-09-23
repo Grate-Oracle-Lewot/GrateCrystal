@@ -439,10 +439,10 @@ MartIndigoPlateau:
 
 MartUnderground:
 	db 4 ; # items
-	db ENERGYPOWDER
-	db ENERGY_ROOT
-	db REVIVAL_HERB
-	db HEAL_POWDER
+	db BUGWORT
+	db SOOTFOOTROOT
+	db VIVICHOKE
+	db OLD_GATEAU
 	db -1 ; end
 
 MartBerry:
