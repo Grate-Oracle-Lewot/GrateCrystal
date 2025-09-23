@@ -6,7 +6,7 @@
 	db GRASS, POISON ; type
 	db 120 ; catch rate
 	db 151 ; base exp
-	db ENERGY_ROOT, LEAF_STONE ; items
+	db SOOTFOOTROOT, LEAF_STONE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/weepinbell/front.dimensions"
