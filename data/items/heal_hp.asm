@@ -11,7 +11,7 @@ HealingHPAmounts:
 	dbw BERRY,         10
 	dbw GOLD_BERRY,    42
 	dbw BERRY_JUICE,   84
-	dbw ENERGYPOWDER,  75
-	dbw ENERGY_ROOT,  210
+	dbw BUGWORT,      75
+	dbw SOOTFOOTROOT, 210
 	dbw STICK,        150
 	dbw -1, 0 ; end
