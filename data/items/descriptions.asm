@@ -118,10 +118,10 @@ ItemDescriptions:
 	dw ThickClubDesc
 	dw FocusBandDesc
 	dw LimboStickDesc
-	dw EnergyPowderDesc
-	dw EnergyRootDesc
-	dw HealPowderDesc
-	dw RevivalHerbDesc
+	dw BugwortDesc
+	dw SootfootrootDesc
+	dw OldGateauDesc
+	dw VivichokeDesc
 	dw HardStoneDesc
 	dw LuckyEggDesc
 	dw CardKeyDesc
@@ -727,19 +727,19 @@ LimboStickDesc:
 	db   "Blocks paralysis."
 	next "(HOLD)@"
 
-EnergyPowderDesc:
+BugwortDesc:
 	db   "Restores #MON"
 	next "HP by 75. Bitter.@"
 
-EnergyRootDesc:
+SootfootrootDesc:
 	db   "Restores #MON"
 	next "HP by 210. Bitter.@"
 
-HealPowderDesc:
+OldGateauDesc:
 	db   "Cures all status"
 	next "problems. Bitter.@"
 
-RevivalHerbDesc:
+VivichokeDesc:
 	db   "Revives a fainted"
 	next "#MON. Bitter.@"
 
