@@ -6,7 +6,7 @@
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
 	db 142 ; base exp
-	db ENERGY_ROOT, CHARCOAL ; items
+	db SOOTFOOTROOT, CHARCOAL ; items
 	db GENDER_F12_5 ; gender ratio
 	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/quilava/front.dimensions"
