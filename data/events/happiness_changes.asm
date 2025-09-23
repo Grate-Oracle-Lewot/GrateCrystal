@@ -16,9 +16,9 @@ HappinessChanges:
 	db  +3,  +3,  +3 ; Haircut (younger brother) 1
 	db  +4,  +4,  +4 ; Haircut (younger brother) 2
 	db +10, +10, +10 ; Haircut (younger brother) 3
-	db  -5,  -5,  -5 ; Used Heal Powder or Energypowder (bitter)
-	db -10, -10, -10 ; Used Energy Root (bitter)
-	db -15, -15, -15 ; Used Revival Herb (bitter)
+	db  -5,  -5,  -5 ; Used Old Gateau or Bugwort (bitter)
+	db -10, -10, -10 ; Used Sootfootroot (bitter)
+	db -15, -15, -15 ; Used Vivichoke (bitter)
 	db  +4,  +4,  +4 ; Grooming
 	db +10,  +8,  +6 ; Gained a level in the place where it was caught
 	assert_table_length NUM_HAPPINESS_CHANGES
