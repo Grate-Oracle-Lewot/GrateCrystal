@@ -131,10 +131,10 @@ ItemEffects:
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
 	dw NoEffect            ; LIMBO_STICK
-	dw EnergypowderEffect  ; ENERGYPOWDER
-	dw EnergyRootEffect    ; ENERGY_ROOT
-	dw HealPowderEffect    ; HEAL_POWDER
-	dw RevivalHerbEffect   ; REVIVAL_HERB
+	dw EnergypowderEffect  ; BUGWORT
+	dw EnergyRootEffect    ; SOOTFOOTROOT
+	dw HealPowderEffect    ; OLD_GATEAU
+	dw RevivalHerbEffect   ; VIVICHOKE
 	dw NoEffect            ; HARD_STONE
 	dw NoEffect            ; LUCKY_EGG
 	dw CardKeyEffect       ; CARD_KEY
