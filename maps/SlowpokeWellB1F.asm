@@ -103,9 +103,10 @@ TrainerGruntF1:
 	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FSlowpokeWithMailScript:
-	faceplayer
 	opentext
+	writetext SlowpokeWellB1FTaillessSlowpokeText
 	cry SLOWPOKE
+	promptbutton
 	writetext SlowpokeWellB1FSlowpokeWithMailText
 	yesorno
 	iftrue .ReadMail
@@ -117,11 +118,7 @@ SlowpokeWellB1FSlowpokeWithMailScript:
 	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FTaillessSlowpokeScript:
-	faceplayer
-	opentext
-	writetext SlowpokeWellB1FTaillessSlowpokeText
-	cry SLOWPOKE
-	sjump SlowpokeWellB1F_EndText
+	jumptext SlowpokeWellB1FTaillessSlowpokeText
 
 SlowpokeWellB1FBoulder:
 	jumpstd StrengthBoulderScript
@@ -244,6 +241,9 @@ GruntM1SeenText:
 	line "reach to the stars"
 	cont "above!"
 
+	para "JESSIE: JESSIE!"
+	line "JAMES: JAMES!"
+
 	para "TEAM ROCKET! Blast"
 	line "off at the speed"
 	cont "of light!"
@@ -345,10 +345,7 @@ GruntF1AfterBattleText:
 	done
 
 SlowpokeWellB1FSlowpokeWithMailText:
-	text "A SLOWPOKE with"
-	line "its TAIL cut off…"
-
-	para "Huh? It has MAIL."
+	text "Huh? It has MAIL."
 	line "Read it?"
 	done
 
