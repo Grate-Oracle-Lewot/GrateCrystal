@@ -296,9 +296,9 @@ GrimerEggMoves:
 	db -1 ; end
 
 ShellderEggMoves:
-	db RAPID_SPIN
 	db METAL_SOUND
 	db LICK
+	db SPIKES
 	db ROCK_POLISH
 	db CRABHAMMER
 	db PRESENT
