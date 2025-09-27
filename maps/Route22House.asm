@@ -544,14 +544,13 @@ Route22HouseGiovanniAfterText:
 	done
 
 Route22HouseJessieBeforeText:
-	text "Hey! It's the twerp"
-	line "from AZALEA TOWN!"
+	text "Hey! It's this"
+	line "twerp again!"
 
-	para "We're going to get"
-	line "you back for what"
-
-	para "you did to us in"
-	line "SLOWPOKE WELL!"
+	para "You won't get away"
+	line "unscathed this"
+	cont "time! Come on,"
+	cont "JAMES!"
 	done
 
 Route22HouseJessieAfterText:
