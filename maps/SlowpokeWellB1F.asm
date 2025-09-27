@@ -19,12 +19,12 @@ SlowpokeWellB1F_MapScripts:
 SlowpokeWellB1FKurtScript:
 	jumptext SlowpokeWellB1FKurtText
 
-TrainerGruntM1:
-	trainer JESSIE, JAMES1, EVENT_BEAT_ROCKET_GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
+TrainerJessieJames1:
+	trainer JESSIE, JAMES1, EVENT_BEAT_ROCKET_GRUNTM_1, JessieJames1SeenText, JessieJames1BeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext TrainerGruntM1WhenTalkText
+	writetext JessieJames1AfterBattleText
 	waitbutton
 	closetext
 	special FadeBlackQuickly
@@ -218,7 +218,7 @@ GruntM29AfterBattleText:
 	line "is for profit."
 	done
 
-GruntM1SeenText:
+JessieJames1SeenText:
 	text "JESSIE: Prepare"
 	line "for trouble!"
 
@@ -252,13 +252,13 @@ GruntM1SeenText:
 	line "prepare to fight!"
 	done
 
-GruntM1BeatenText:
+JessieJames1BeatenText:
 	text "Looks like TEAM"
 	line "ROCKET's blasting"
 	cont "off again!"
 	done
 
-TrainerGruntM1WhenTalkText:
+JessieJames1AfterBattleText:
 	text "JESSIE: Yeah, the"
 	line "boss disbanded"
 
