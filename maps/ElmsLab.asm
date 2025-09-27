@@ -1628,7 +1628,22 @@ AfterChikoritaMovement:
 	turn_head UP
 	step_end
 
+if DEF(_SHUCKLE_SMEARGLE_DELIBIRD) || DEF(_LEGENDARY_BIRDS)
+AfterCyndaquilMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	turn_head UP
+	step_end
 
+AfterTotodileMovement:
+	step LEFT
+	step LEFT
+	step UP
+	turn_head UP
+	step_end
+else
 AfterCyndaquilMovement:
 	step LEFT
 	step LEFT
@@ -1643,6 +1658,7 @@ AfterTotodileMovement:
 	step UP
 	turn_head UP
 	step_end
+endc
 
 ElmText_Intro:
 	text "ELM: <PLAY_G>!"
