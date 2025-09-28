@@ -65,13 +65,13 @@ RadioTowerMeowth:
 	closetext
 	end
 
-TrainerGruntM10:
-	trainer GRUNTM, GRUNTM_10, EVENT_BEAT_ROCKET_GRUNTM_10, GruntM10SeenText, GruntM10BeatenText, 0, .Script
+TrainerGruntMRadio4:
+	trainer GRUNTM, GRUNTM_RADIO4, EVENT_BEAT_ROCKET_GRUNTM_RADIO4, GruntMRadio4SeenText, GruntMRadio4BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM10AfterBattleText
+	writetext GruntMRadio4AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -166,7 +166,7 @@ RadioTowerMeowthText:
 	text "MEOWTH: Meowth…"
 	done
 
-GruntM10SeenText:
+GruntMRadio4SeenText:
 	text "You plan to rescue"
 	line "the DIRECTOR?"
 
@@ -175,11 +175,11 @@ GruntM10SeenText:
 	cont "going to beat you!"
 	done
 
-GruntM10BeatenText:
+GruntMRadio4BeatenText:
 	text "No! Unbelievable!"
 	done
 
-GruntM10AfterBattleText:
+GruntMRadio4AfterBattleText:
 	text "I don't believe"
 	line "it! I was beaten!"
 	done
@@ -280,7 +280,7 @@ RadioTower4F_MapEvents:
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 14,  6, SPRITE_MARY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
-	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMRadio4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  4,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
