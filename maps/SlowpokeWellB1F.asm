@@ -20,7 +20,7 @@ SlowpokeWellB1FKurtScript:
 	jumptext SlowpokeWellB1FKurtText
 
 TrainerJessieJames1:
-	trainer JESSIE, JAMES1, EVENT_BEAT_ROCKET_GRUNTM_1, JessieJames1SeenText, JessieJames1BeatenText, 0, .Script
+	trainer JESSIE, JAMES1, EVENT_BEAT_JESSIE_JAMES_1, JessieJames1SeenText, JessieJames1BeatenText, 0, .Script
 
 .Script:
 	opentext
@@ -63,34 +63,34 @@ TrainerJessieJames1:
 	warp KURTS_HOUSE, 3, 3
 	end
 
-TrainerGruntM2:
-	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_ROCKET_GRUNTM_2, GruntM2SeenText, GruntM2BeatenText, 0, .Script
+TrainerGruntMWell1:
+	trainer GRUNTM, GRUNTM_WELL1, EVENT_BEAT_ROCKET_GRUNTM_WELL1, GruntMWell1SeenText, GruntMWell1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM2AfterBattleText
+	writetext GruntMWell1AfterBattleText
+	sjump SlowpokeWellB1F_EndText
+
+TrainerGruntMWell2:
+	trainer GRUNTM, GRUNTM_WELL2, EVENT_BEAT_ROCKET_GRUNTM_WELL2, GruntMWell2SeenText, GruntMWell2BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GruntMWell2AfterBattleText
 SlowpokeWellB1F_EndText:
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM12:
-	trainer GRUNTM, GRUNTM_12, EVENT_BEAT_ROCKET_GRUNTM_12, GruntM12SeenText, GruntM12BeatenText, 0, .Script
+TrainerGruntMWell3:
+	trainer GRUNTM, GRUNTM_WELL3, EVENT_BEAT_ROCKET_GRUNTM_WELL3, GruntMWell3SeenText, GruntMWell3BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM12AfterBattleText
-	sjump SlowpokeWellB1F_EndText
-
-TrainerGruntM29:
-	trainer GRUNTM, GRUNTM_29, EVENT_BEAT_ROCKET_GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM29AfterBattleText
+	writetext GruntMWell3AfterBattleText
 	sjump SlowpokeWellB1F_EndText
 
 TrainerGruntF1:
@@ -186,38 +186,6 @@ KurtLeaveSlowpokeWellText:
 	cont "of here."
 	done
 
-GruntM29SeenText:
-	text "Darn! I was stand-"
-	line "ing guard up top"
-
-	para "when some old coot"
-	line "yelled at me."
-
-	para "He startled me so"
-	line "much that I fell"
-	cont "down here."
-
-	para "I think I'll vent"
-	line "my anger by taking"
-	cont "it out on you!"
-	done
-
-GruntM29BeatenText:
-	text "Arrgh! This is NOT"
-	line "my day!"
-	done
-
-GruntM29AfterBattleText:
-	text "Sure, we've been"
-	line "hacking the tails"
-
-	para "off SLOWPOKE and"
-	line "selling them."
-
-	para "Everything we do"
-	line "is for profit."
-	done
-
 JessieJames1SeenText:
 	text "JESSIE: Prepare"
 	line "for trouble!"
@@ -279,7 +247,39 @@ JessieJames1AfterBattleText:
 	line "right!"
 	done
 
-GruntM2SeenText:
+GruntMWell1SeenText:
+	text "Darn! I was stand-"
+	line "ing guard up top"
+
+	para "when some old coot"
+	line "yelled at me."
+
+	para "He startled me so"
+	line "much that I fell"
+	cont "down here."
+
+	para "I think I'll vent"
+	line "my anger by taking"
+	cont "it out on you!"
+	done
+
+GruntMWell1BeatenText:
+	text "Arrgh! This is NOT"
+	line "my day!"
+	done
+
+GruntMWell1AfterBattleText:
+	text "Sure, we've been"
+	line "hacking the tails"
+
+	para "off SLOWPOKE and"
+	line "selling them."
+
+	para "Everything we do"
+	line "is for profit."
+	done
+
+GruntMWell2SeenText:
 	text "Quit taking SLOW-"
 	line "POKETAILS?"
 
@@ -288,12 +288,12 @@ GruntM2SeenText:
 	cont "would be ruined!"
 	done
 
-GruntM2BeatenText:
+GruntMWell2BeatenText:
 	text "Just…"
 	line "Too strong…"
 	done
 
-GruntM2AfterBattleText:
+GruntMWell2AfterBattleText:
 	text "We need the money,"
 	line "but selling SLOW-"
 	cont "POKETAILS?"
@@ -302,7 +302,7 @@ GruntM2AfterBattleText:
 	line "ROCKET GRUNT!"
 	done
 
-GruntM12SeenText:
+GruntMWell3SeenText:
 	text "You want us to"
 	line "stop?"
 
@@ -312,11 +312,11 @@ GruntM12SeenText:
 	cont "Delicious!"
 	done
 
-GruntM12BeatenText:
+GruntMWell3BeatenText:
 	text "This sucks."
 	done
 
-GruntM12AfterBattleText:
+GruntMWell3AfterBattleText:
 	text "I don't really"
 	line "care about the"
 	cont "money."
@@ -379,11 +379,11 @@ SlowpokeWellB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  4,  2, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
-	object_event  4,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM12, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  5,  2, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerJessieJames1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  4,  2, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerJessieJames1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event 15,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMWell1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMWell2, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event  4,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMWell3, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event 10,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  7,  4, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
 	object_event  6,  2, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
