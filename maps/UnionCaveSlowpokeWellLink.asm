@@ -23,13 +23,13 @@ TrainerBurglarFizbo:
 	closetext
 	end
 
-TrainerGruntM27:
-	trainer GRUNTM, GRUNTM_27, EVENT_BEAT_ROCKET_GRUNTM_27, GruntM27SeenText, GruntM27BeatenText, 0, .AfterScript
+TrainerGruntMStray:
+	trainer GRUNTM, GRUNTM_STRAY, EVENT_BEAT_ROCKET_GRUNTM_STRAY, GruntMStraySeenText, GruntMStrayBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext GruntM27AfterBattleText
+	writetext GruntMStrayAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -62,7 +62,7 @@ BurglarFizboAfterBattleText:
 	line "of clown school…"
 	done
 
-GruntM27SeenText:
+GruntMStraySeenText:
 	text "Where'd everybody"
 	line "go? Are we still"
 
@@ -70,11 +70,11 @@ GruntM27SeenText:
 	line "TAILS?"
 	done
 
-GruntM27BeatenText:
+GruntMStrayBeatenText:
 	text "Aw, nuts."
 	done
 
-GruntM27AfterBattleText:
+GruntMStrayAfterBattleText:
 	text "I got left behind!"
 	done
 
@@ -93,5 +93,5 @@ UnionCaveSlowpokeWellLink_MapEvents:
 	def_object_events
 	object_event  8,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveSlowpokeWellLinkBoulder, -1
 	object_event 28,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBurglarFizbo, -1
-	object_event 13,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM27, -1
+	object_event 13,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMStray, -1
 	object_event 34, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_ITEMBALL, 0, UnionCaveSlowpokeWellLinkPickaxe, EVENT_UNION_CAVE_SLOWPOKE_WELL_LINK_PICKAXE
