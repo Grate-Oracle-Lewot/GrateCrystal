@@ -26,8 +26,6 @@ TeamRocketBaseB3F_MapScripts:
 
 .LanceGetsPassword:
 	sdefer LanceGetPasswordScript
-	end
-
 .DummyScene:
 	end
 
