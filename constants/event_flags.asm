@@ -934,10 +934,10 @@
 	const EVENT_BEAT_ROCKET_GRUNTM_GUARD
 	const EVENT_BEAT_ROCKET_GRUNTM_RADIO4
 	const EVENT_BEAT_JESSIE_JAMES_1
-	const EVENT_BEAT_JESSIE_JAMES_2
-	const_skip ; unused in Grate Crystal
-	const_skip ; unused in Grate Crystal
-	const_skip ; unused in Grate Crystal
+	const EVENT_CERULEAN_GYM_JESSIE
+	const EVENT_CERULEAN_GYM_JAMES
+	const EVENT_ROUTE_24_JESSIE
+	const EVENT_ROUTE_24_JAMES
 ; GruntF
 	const EVENT_BEAT_ROCKET_GRUNTF_1
 	const EVENT_BEAT_ROCKET_GRUNTF_2
