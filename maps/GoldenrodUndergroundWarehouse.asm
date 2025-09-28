@@ -34,46 +34,46 @@ GoldenrodUndergroundWarehouse_MapScripts:
 	writemem wUndergroundSwitchPositions
 	endcallback
 
-TrainerGruntM24:
-	trainer GRUNTM, GRUNTM_24, EVENT_BEAT_ROCKET_GRUNTM_24, GruntM24SeenText, GruntM24BeatenText, 0, .Script
+TrainerGruntMWare1:
+	trainer GRUNTM, GRUNTM_WARE1, EVENT_BEAT_ROCKET_GRUNTM_WARE1, GruntMWare1SeenText, GruntMWare1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM24AfterBattleText
+	writetext GruntMWare1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM14:
-	trainer GRUNTM, GRUNTM_14, EVENT_BEAT_ROCKET_GRUNTM_14, GruntM14SeenText, GruntM14BeatenText, 0, .Script
+TrainerGruntMTrickster:
+	trainer GRUNTM, GRUNTM_TRICKSTER, EVENT_BEAT_ROCKET_GRUNTM_TRICKSTER, GruntMTricksterSeenText, GruntMTricksterBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM14AfterBattleText
+	writetext GruntMTricksterAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM15:
-	trainer GRUNTM, GRUNTM_15, EVENT_BEAT_ROCKET_GRUNTM_15, GruntM15SeenText, GruntM15BeatenText, 0, .Script
+TrainerGruntMHyuck2:
+	trainer GRUNTM, GRUNTM_HYUCK2, EVENT_BEAT_ROCKET_GRUNTM_HYUCK2, GruntMHyuck2SeenText, GruntMHyuck2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM15AfterBattleText
+	writetext GruntMHyuck2AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM22:
-	trainer GRUNTM, GRUNTM_22, EVENT_BEAT_ROCKET_GRUNTM_22, GruntM22SeenText, GruntM22BeatenText, 0, .Script
+TrainerGruntMGuard:
+	trainer GRUNTM, GRUNTM_GUARD, EVENT_BEAT_ROCKET_GRUNTM_GUARD, GruntMGuardSeenText, GruntMGuardBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM22AfterBattleText
+	writetext GruntMGuardAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -107,30 +107,7 @@ GoldenrodUndergroundWarehouseTMSleepTalk:
 GoldenrodUndergroundWarehouseUltraBall:
 	itemball ULTRA_BALL
 
-GruntM24SeenText:
-	text "How did you get"
-	line "this far?"
-
-	para "I guess it can't"
-	line "be helped. I'll"
-	cont "dispose of you."
-	done
-
-GruntM24BeatenText:
-	text "I got disposed of…"
-	done
-
-GruntM24AfterBattleText:
-	text "TEAM ROCKET will"
-	line "keep going, wait-"
-	cont "ing for the return"
-	cont "of GIOVANNI."
-
-	para "We'll do whatever"
-	line "it takes."
-	done
-
-GruntM14SeenText:
+GruntMWare1SeenText:
 	text "You're not going"
 	line "any farther!"
 
@@ -139,37 +116,18 @@ GruntM14SeenText:
 	cont "even brats!"
 	done
 
-GruntM14BeatenText:
+GruntMWare1BeatenText:
 	text "Blast it!"
 	done
 
-GruntM14AfterBattleText:
+GruntMWare1AfterBattleText:
 	text "I lost…"
 
 	para "Please forgive me,"
 	line "GIOVANNI!"
 	done
 
-GruntM15SeenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "I remember you!"
-
-	para "You got me good"
-	line "at our hideout!"
-	done
-
-GruntM15BeatenText:
-	text "Hyuck-hyuck-hyuck!"
-	line "So, that's how?"
-	done
-
-GruntM15AfterBattleText:
-	text "Hyuck-hyuck-hyuck!"
-	line "That was a blast!"
-	cont "I'll remember you!"
-	done
-
-GruntM22SeenText:
+GruntMTricksterSeenText:
 	text "You want that"
 	line "item, don't you?"
 
@@ -177,14 +135,56 @@ GruntM22SeenText:
 	line "take the bait!"
 	done
 
-GruntM22BeatenText:
+GruntMTricksterBeatenText:
 	text "How'd that happen?"
 	done
 
-GruntM22AfterBattleText:
+GruntMTricksterAfterBattleText:
 	text "You have to admit,"
 	line "it was a good"
 	cont "trap, right?"
+	done
+
+GruntMHyuck2SeenText:
+	text "Hyuck-hyuck-hyuck!"
+	line "I remember you!"
+
+	para "You got me good"
+	line "at our hideout!"
+	done
+
+GruntMHyuck2BeatenText:
+	text "Hyuck-hyuck-hyuck!"
+	line "So, that's how?"
+	done
+
+GruntMHyuck2AfterBattleText:
+	text "Hyuck-hyuck-hyuck!"
+	line "That was a blast!"
+	cont "I'll remember you!"
+	done
+
+GruntMGuardSeenText:
+	text "How did you get"
+	line "this far?"
+
+	para "I guess it can't"
+	line "be helped. I'll"
+	cont "dispose of you."
+	done
+
+GruntMGuardBeatenText:
+	text "I got disposed of…"
+	done
+
+GruntMGuardAfterBattleText:
+	text "TEAM ROCKET will"
+	line "keep going, wait-"
+	cont "ing for the return"
+	cont "of GIOVANNI."
+
+	para "We'll do whatever"
+	line "it takes."
 	done
 
 DirectorIntroText:
@@ -251,10 +251,10 @@ GoldenrodUndergroundWarehouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM24, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM14, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 14,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM15, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 18, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM22, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  9,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMGuard, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMWare1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 14,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntMHyuck2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 18, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMTrickster, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundWarehouseDirectorScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundWarehouseMaxEther, EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_MAX_ETHER
 	object_event 13,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundWarehouseTMSleepTalk, EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_TM_SLEEP_TALK
