@@ -303,36 +303,34 @@ KRIS EQU __trainer_class__
 	const TANNER
 
 	trainerclass GRUNTM ; 1f
-	const GRUNTM_1 ; unused
-	const GRUNTM_2
-	const GRUNTM_3
-	const GRUNTM_4
-	const GRUNTM_5
-	const GRUNTM_6
-	const GRUNTM_7
-	const GRUNTM_8
-	const GRUNTM_9
-	const GRUNTM_10
-	const GRUNTM_11
-	const GRUNTM_12
-	const GRUNTM_13
-	const GRUNTM_14
-	const GRUNTM_15
-	const GRUNTM_16
-	const GRUNTM_17
-	const GRUNTM_18
-	const GRUNTM_19
-	const GRUNTM_20
-	const GRUNTM_21
-	const GRUNTM_22
-	const GRUNTM_23
-	const GRUNTM_24
-	const GRUNTM_25
-	const GRUNTM_26
-	const GRUNTM_27
-	const GRUNTM_28
-	const GRUNTM_29
-	const GRUNTM_30
+	const GRUNTM_WELL1
+	const GRUNTM_WELL2
+	const GRUNTM_WELL3
+	const GRUNTM_STRAY
+	const GRUNTM_SENTRY1
+	const GRUNTM_SENTRY2
+	const GRUNTM_BASE1_1
+	const GRUNTM_BASE1_2
+	const GRUNTM_BASE2_1
+	const GRUNTM_BASE2_2
+	const GRUNTM_BASE2_3
+	const GRUNTM_HYUCK1
+	const GRUNTM_RADIO1
+	const GRUNTM_RADIO2_1
+	const GRUNTM_RADIO2_2
+	const GRUNTM_SPECIALIST
+	const GRUNTM_RADIO3_1
+	const GRUNTM_RADIO3_2
+	const GRUNTM_RADIO3_3
+	const GRUNTM_BOUNCER
+	const GRUNTM_UNDER1
+	const GRUNTM_UNDER2
+	const GRUNTM_UNDER3
+	const GRUNTM_WARE1
+	const GRUNTM_TRICKSTER
+	const GRUNTM_HYUCK2
+	const GRUNTM_GUARD
+	const GRUNTM_RADIO4
 
 	trainerclass GENTLEMAN ; 20
 	const PRESTON
