@@ -287,6 +287,7 @@ TrainerGruntF3:
 	opentext
 	writetext GruntF3AfterBattleText
 	waitbutton
+GoldenrodUndergroundSwitchRoomEntrances_DontToggle:
 	closetext
 	end
 
@@ -392,11 +393,7 @@ EmergencySwitchScript:
 	clearevent EVENT_SWITCH_1
 	clearevent EVENT_SWITCH_2
 	clearevent EVENT_SWITCH_3
-	sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors
-
-GoldenrodUndergroundSwitchRoomEntrances_DontToggle:
-	closetext
-	end
+	; fallthrough
 
 GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors:
 	readmem wUndergroundSwitchPositions
@@ -855,7 +852,7 @@ GruntM13BeatenText:
 GruntM13AfterBattleText:
 	text "You must have ice"
 	line "in your veins to"
-	cont "dis TEAM ROCKET."
+	cont "diss TEAM ROCKET."
 	done
 
 SwitchRoomText_Switch1:
