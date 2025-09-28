@@ -225,8 +225,6 @@ SecurityCamera5:
 	scall TrainerCameraGrunt2
 	ifequal TRUE, NoSecurityCamera
 	setevent EVENT_SECURITY_CAMERA_5
-	end
-
 NoSecurityCamera:
 	end
 
@@ -474,8 +472,6 @@ KoffingExplodingTrap:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon KOFFING, 25
 	startbattle
-	end
-
 NoExplodingTrap:
 	end
 
