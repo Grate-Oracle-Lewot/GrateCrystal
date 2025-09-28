@@ -140,13 +140,13 @@ TrainerPokemaniacDonald:
 	writetext PokemaniacDonaldAfterBattleText
 	sjump GoldenrodUnderground_EndText
 
-TrainerGruntM23:
-	trainer GRUNTM, GRUNTM_23, EVENT_BEAT_ROCKET_GRUNTM_23, GruntM23SeenText, GruntM23BeatenText, 0, .Script
+TrainerGruntMBouncer:
+	trainer GRUNTM, GRUNTM_BOUNCER, EVENT_BEAT_ROCKET_GRUNTM_BOUNCER, GruntMBouncerSeenText, GruntMBouncerBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM23AfterBattleText
+	writetext GruntMBouncerAfterBattleText
 	sjump GoldenrodUnderground_EndText
 
 BitterMerchantScript:
@@ -491,16 +491,16 @@ PokemaniacDonaldAfterBattleText:
 	line "UNOVA, though."
 	done
 
-GruntM23SeenText:
+GruntMBouncerSeenText:
 	text "Where do you think"
 	line "you're going?"
 	done
 
-GruntM23BeatenText:
+GruntMBouncerBeatenText:
 	text "Grr…"
 	done
 
-GruntM23AfterBattleText:
+GruntMBouncerAfterBattleText:
 	text "Don't talk to me."
 	done
 
@@ -672,5 +672,5 @@ GoldenrodUnderground_MapEvents:
 	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
 	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
-	object_event 17,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM23, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntMBouncer, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  7, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundMoveDeleterScript, EVENT_GOLDENROD_UNDERGROUND_MOVE_DELETER
