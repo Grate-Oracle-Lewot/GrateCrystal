@@ -224,24 +224,35 @@ endc
 	closetext
 	end
 
-TrainerGruntM11:
-	trainer GRUNTM, GRUNTM_11, EVENT_BEAT_ROCKET_GRUNTM_11, GruntM11SeenText, GruntM11BeatenText, 0, .Script
+TrainerGruntMUnder1:
+	trainer GRUNTM, GRUNTM_UNDER1, EVENT_BEAT_ROCKET_GRUNTM_UNDER1, GruntMUnder1SeenText, GruntMUnder1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM11AfterBattleText
+	writetext GruntMUnder1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM25:
-	trainer GRUNTM, GRUNTM_25, EVENT_BEAT_ROCKET_GRUNTM_25, GruntM25SeenText, GruntM25BeatenText, 0, .Script
+TrainerGruntMUnder2:
+	trainer GRUNTM, GRUNTM_UNDER2, EVENT_BEAT_ROCKET_GRUNTM_UNDER2, GruntMUnder2SeenText, GruntMUnder2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM25AfterBattleText
+	writetext GruntMUnder2AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGruntMUnder3:
+	trainer GRUNTM, GRUNTM_UNDER3, EVENT_BEAT_ROCKET_GRUNTM_UNDER3, GruntMUnder3SeenText, GruntMUnder3BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GruntMUnder3AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -264,17 +275,6 @@ TrainerBurglarEddie:
 	endifjustbattled
 	opentext
 	writetext BurglarEddieAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerGruntM13:
-	trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GruntM13AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -748,7 +748,7 @@ GoldenrodUndergroundSwitchRoomEntrances_TeacherText:
 	line "down there."
 	done
 
-GruntM11SeenText:
+GruntMUnder1SeenText:
 	text "Open one shutter,"
 	line "another closes."
 
@@ -756,12 +756,12 @@ GruntM11SeenText:
 	line "where you want!"
 	done
 
-GruntM11BeatenText:
+GruntMUnder1BeatenText:
 	text "Drat! I was sunk"
 	line "by indecision!"
 	done
 
-GruntM11AfterBattleText:
+GruntMUnder1AfterBattleText:
 	text "I'm confused too…"
 	line "The switch on the"
 
@@ -769,7 +769,7 @@ GruntM11AfterBattleText:
 	line "press first, but…"
 	done
 
-GruntM25SeenText:
+GruntMUnder2SeenText:
 	text "Kwahaha!"
 
 	para "Confounded by the"
@@ -780,12 +780,12 @@ GruntM25SeenText:
 	cont "can beat me!"
 	done
 
-GruntM25BeatenText:
+GruntMUnder2BeatenText:
 	text "Uwww…"
 	line "I blew it."
 	done
 
-GruntM25AfterBattleText:
+GruntMUnder2AfterBattleText:
 	text "All right. A hint!"
 
 	para "Change the order"
@@ -794,6 +794,26 @@ GruntM25AfterBattleText:
 	para "That'll change the"
 	line "ways the shutters"
 	cont "open and close."
+	done
+
+GruntMUnder3SeenText:
+	text "I don't care if"
+	line "you're lost."
+
+	para "You show up here,"
+	line "you're nothing but"
+	cont "a victim!"
+	done
+
+GruntMUnder3BeatenText:
+	text "Urk! Yeah, think"
+	line "you're cool, huh?"
+	done
+
+GruntMUnder3AfterBattleText:
+	text "You must have ice"
+	line "in your veins to"
+	cont "diss TEAM ROCKET."
 	done
 
 BurglarDuncanSeenText:
@@ -833,26 +853,6 @@ BurglarEddieAfterBattleText:
 
 	para "There's nothing"
 	line "down there."
-	done
-
-GruntM13SeenText:
-	text "I don't care if"
-	line "you're lost."
-
-	para "You show up here,"
-	line "you're nothing but"
-	cont "a victim!"
-	done
-
-GruntM13BeatenText:
-	text "Urk! Yeah, think"
-	line "you're cool, huh?"
-	done
-
-GruntM13AfterBattleText:
-	text "You must have ice"
-	line "in your veins to"
-	cont "diss TEAM ROCKET."
 	done
 
 SwitchRoomText_Switch1:
@@ -936,9 +936,9 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	def_object_events
 	object_event  9, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuncan, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  4,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBurglarEddie, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM13, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1
 	object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
