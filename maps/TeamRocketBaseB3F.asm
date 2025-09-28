@@ -129,11 +129,11 @@ GruntF5Script:
 	end
 
 RaticateTailGrunt:
-	trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script
+	trainer GRUNTM, GRUNTM_HYUCK1, EVENT_BEAT_ROCKET_GRUNTM_HYUCK1, GruntMHyuck1SeenText, GruntMHyuck1BeatenText, 0, GruntMHyuck1Script
 
-GruntM28Script:
+GruntMHyuck1Script:
 	opentext
-	writetext GruntM28AfterBattleText
+	writetext GruntMHyuck1AfterBattleText
 	waitbutton
 	closetext
 	setevent EVENT_LEARNED_RATICATE_TAIL
@@ -440,7 +440,7 @@ GruntF5AfterBattleText:
 	cont "two passwords."
 	done
 
-GruntM28SeenText:
+GruntMHyuck1SeenText:
 	text "Hyuck-hyuck-hyuck!"
 
 	para "You're challenging"
@@ -458,12 +458,12 @@ GruntM28SeenText:
 	line "boss's room!"
 	done
 
-GruntM28BeatenText:
+GruntMHyuck1BeatenText:
 	text "Hyuck-hyuck-hyuck!"
 	line "You're good!"
 	done
 
-GruntM28AfterBattleText:
+GruntMHyuck1AfterBattleText:
 	text "Hyuck-hyuck-hyuck!"
 
 	para "The password to"
