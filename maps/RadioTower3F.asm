@@ -80,35 +80,35 @@ RadioTower3FCooltrainerFScript:
 	closetext
 	end
 
-TrainerGruntM7:
-	trainer GRUNTM, GRUNTM_7, EVENT_BEAT_ROCKET_GRUNTM_7, GruntM7SeenText, GruntM7BeatenText, 0, .Script
+TrainerGruntMRadio3_1:
+	trainer GRUNTM, GRUNTM_RADIO3_1, EVENT_BEAT_ROCKET_GRUNTM_RADIO3_1, GruntMRadio3_1SeenText, GruntMRadio3_1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM7AfterBattleText
+	writetext GruntMRadio3_1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM8:
-	trainer GRUNTM, GRUNTM_8, EVENT_BEAT_ROCKET_GRUNTM_8, GruntM8SeenText, GruntM8BeatenText, 0, .Script
+TrainerGruntMRadio3_2:
+	trainer GRUNTM, GRUNTM_RADIO3_2, EVENT_BEAT_ROCKET_GRUNTM_RADIO3_2, GruntMRadio3_2SeenText, GruntMRadio3_2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM8AfterBattleText
+	writetext GruntMRadio3_2AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM9:
-	trainer GRUNTM, GRUNTM_9, EVENT_BEAT_ROCKET_GRUNTM_9, GruntM9SeenText, GruntM9BeatenText, 0, .Script
+TrainerGruntMRadio3_2:
+	trainer GRUNTM, GRUNTM_RADIO3_2, EVENT_BEAT_ROCKET_GRUNTM_RADIO3_2, GruntMRadio3_2SeenText, GruntMRadio3_2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM9AfterBattleText
+	writetext GruntMRadio3_2AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -234,7 +234,7 @@ RadioTower3FCooltrainerFYouWereMarvelousText:
 	line "marvelous!"
 	done
 
-GruntM7SeenText:
+GruntMRadio3_1SeenText:
 	text "I've been given"
 	line "strict orders."
 
@@ -243,11 +243,11 @@ GruntM7SeenText:
 	cont "TEAM ROCKET!"
 	done
 
-GruntM7BeatenText:
+GruntMRadio3_1BeatenText:
 	text "What?!"
 	done
 
-GruntM7AfterBattleText:
+GruntMRadio3_1AfterBattleText:
 	text "I failed in my"
 	line "duties…"
 
@@ -255,7 +255,7 @@ GruntM7AfterBattleText:
 	line "for this…"
 	done
 
-GruntM8SeenText:
+GruntMRadio3_2SeenText:
 	text "It feels great"
 	line "ordering #MON"
 	cont "to commit crimes."
@@ -265,11 +265,11 @@ GruntM8SeenText:
 	cont "guilty about it!"
 	done
 
-GruntM8BeatenText:
+GruntMRadio3_2BeatenText:
 	text "You're kidding!"
 	done
 
-GruntM8AfterBattleText:
+GruntMRadio3_2AfterBattleText:
 	text "I feel lousy over"
 	line "losing!"
 
@@ -277,7 +277,7 @@ GruntM8AfterBattleText:
 	line "useless #MON!"
 	done
 
-GruntM9SeenText:
+GruntMRadio3_3SeenText:
 	text "Why did the shut-"
 	line "ter open? Did you"
 
@@ -285,11 +285,11 @@ GruntM9SeenText:
 	line "do with this?"
 	done
 
-GruntM9BeatenText:
+GruntMRadio3_3BeatenText:
 	text "I'm done for!"
 	done
 
-GruntM9AfterBattleText:
+GruntMRadio3_3AfterBattleText:
 	text "What?! You made it"
 	line "past our men in"
 	cont "the UNDERGROUND?"
@@ -355,7 +355,7 @@ RadioTower3F_MapEvents:
 	object_event  7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower3FSuperNerdScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  3,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower3FGymGuideScript, -1
 	object_event 11,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower3FCooltrainerFScript, -1
-	object_event  5,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM7, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM9, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  5,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMRadio3_1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMRadio3_2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMRadio3_3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  9,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistMarc, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
