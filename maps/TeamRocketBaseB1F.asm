@@ -235,7 +235,7 @@ TrainerCameraGrunt1:
 	closetext
 	winlosstext CameraGrunt1BeatenText, 0
 	setlasttalked TEAMROCKETBASEB1F_ROCKET1
-	loadtrainer GRUNTM, GRUNTM_20
+	loadtrainer GRUNTM, GRUNTM_SENTRY1
 	startbattle
 	disappear TEAMROCKETBASEB1F_ROCKET1
 	reloadmapafterbattle
@@ -248,7 +248,7 @@ TrainerCameraGrunt2:
 	closetext
 	winlosstext CameraGrunt2BeatenText, 0
 	setlasttalked TEAMROCKETBASEB1F_ROCKET1
-	loadtrainer GRUNTM, GRUNTM_21
+	loadtrainer GRUNTM, GRUNTM_SENTRY2
 	startbattle
 	disappear TEAMROCKETBASEB1F_ROCKET1
 	reloadmapafterbattle
@@ -467,24 +467,24 @@ TrainerScientistJed:
 	closetext
 	end
 
-TrainerGruntM16:
-	trainer GRUNTM, GRUNTM_16, EVENT_BEAT_ROCKET_GRUNTM_16, GruntM16SeenText, GruntM16BeatenText, 0, .Script
+TrainerGruntMBase1_1:
+	trainer GRUNTM, GRUNTM_BASE1_1, EVENT_BEAT_ROCKET_GRUNTM_BASE1_1, GruntMBase1_1SeenText, GruntMBase1_1BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM16AfterBattleText
+	writetext GruntMBase1_1AfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerGruntM26:
-	trainer GRUNTM, GRUNTM_26, EVENT_BEAT_ROCKET_GRUNTM_26, GruntM26SeenText, GruntM26BeatenText, 0, .Script
+TrainerGruntMBase1_2:
+	trainer GRUNTM, GRUNTM_BASE1_2, EVENT_BEAT_ROCKET_GRUNTM_BASE1_2, GruntMBase1_2SeenText, GruntMBase1_2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntM26AfterBattleText
+	writetext GruntMBase1_2AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -670,7 +670,7 @@ ScientistJedAfterBattleText:
 	line "trance."
 	done
 
-GruntM16SeenText:
+GruntMBase1_1SeenText:
 	text "Heheh. Feeling"
 	line "lucky, punk?"
 
@@ -681,11 +681,11 @@ GruntM16SeenText:
 	line "set in the floor!"
 	done
 
-GruntM16BeatenText:
+GruntMBase1_1BeatenText:
 	text "Kaboom!"
 	done
 
-GruntM16AfterBattleText:
+GruntMBase1_1AfterBattleText:
 	text "I don't even know"
 	line "where the traps"
 	cont "are planted."
@@ -695,17 +695,17 @@ GruntM16AfterBattleText:
 	cont "courage and walk."
 	done
 
-GruntM26SeenText:
+GruntMBase1_2SeenText:
 	text "Huh? How'd you get"
 	line "past secuity?"
 	done
 
-GruntM26BeatenText:
+GruntMBase1_2BeatenText:
 	text "Darn dirty rotten"
 	line "sassafrassin' li'l…"
 	done
 
-GruntM26AfterBattleText:
+GruntMBase1_2AfterBattleText:
 	text "We need better"
 	line "security."
 	done
@@ -786,8 +786,8 @@ TeamRocketBaseB1F_MapEvents:
 
 	def_object_events
 	object_event  0,  0, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_SECURITY_GRUNTS
-	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM16, EVENT_TEAM_ROCKET_BASE_POPULATION
-	object_event 27, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM26, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMBase1_1, EVENT_TEAM_ROCKET_BASE_POPULATION
+	object_event 27, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMBase1_2, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 18, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistJed, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event 27,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FHyperPotion, EVENT_TEAM_ROCKET_BASE_B1F_HYPER_POTION
 	object_event 14, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FNugget, EVENT_TEAM_ROCKET_BASE_B1F_NUGGET
