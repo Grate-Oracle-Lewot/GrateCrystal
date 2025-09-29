@@ -1,10 +1,11 @@
 	object_const_def
-	const CERULEANGYM_ROCKET
 	const CERULEANGYM_MISTY
 	const CERULEANGYM_SWIMMER_GIRL1
 	const CERULEANGYM_SWIMMER_GIRL2
 	const CERULEANGYM_SWIMMER_GUY
 	const CERULEANGYM_GYM_GUIDE
+	const CERULEANGYM_JESSIE
+	const CERULEANGYM_JAMES
 
 CeruleanGym_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,19 @@ CeruleanGym_MapScripts:
 	scene_script .GruntRunsOut ; SCENE_CERULEANGYM_GRUNT_RUNS_OUT
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .JessieJames
+
+.JessieJames:
+	checkevent EVENT_CERULEAN_GYM_ROCKET
+	iffalse .Appear
+	disappear CERULEANGYM_JESSIE
+	disappear CERULEANGYM_JAMES
+	endcallback
+
+.Appear:
+	appear CERULEANGYM_JESSIE
+	appear CERULEANGYM_JAMES
+	endcallback
 
 .GruntRunsOut:
 	sdefer .GruntRunsOutScript
@@ -19,28 +33,38 @@ CeruleanGym_MapScripts:
 	end
 
 .GruntRunsOutScript:
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsDownMovement
+	applymovement CERULEANGYM_JAMES, CeruleanGymJamesRunsDownMovement
 	playsound SFX_TACKLE
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsIntoYouMovement
+	applymovement CERULEANGYM_JAMES, CeruleanGymJamesRunsIntoYouMovement
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
-	writetext CeruleanGymGruntIntroText
+	writetext CeruleanGymJamesText1
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, CERULEANGYM_ROCKET, 15
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntBacksAwayMovement
+	showemote EMOTE_SHOCK, CERULEANGYM_JAMES, 15
 	opentext
-	writetext CeruleanGymGruntBigMistakeText
+	writetext CeruleanGymJamesText2
 	waitbutton
 	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntMovesCloseMovement
+	turnobject CERULEANGYM_JAMES, UP
 	opentext
-	writetext CeruleanGymGruntByeText
+	writetext CeruleanGymJamesText3
 	waitbutton
 	closetext
-	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsOutMovement
+	applymovement CERULEANGYM_JESSIE, CeruleanGymJessieRunsDownMovement
+	turnobject CERULEANGYM_JAMES, DOWN
+	opentext
+	writetext CeruleanGymJessieText
+	waitbutton
+	closetext
+	applymovement CERULEANGYM_JESSIE, CeruleanGymJessieRunsOutMovement
 	playsound SFX_EXIT_BUILDING
-	disappear CERULEANGYM_ROCKET
+	disappear CERULEANGYM_JESSIE
+	waitsfx
+	applymovement CERULEANGYM_JAMES, CeruleanGymJamesRunsOutMovement
+	playsound SFX_EXIT_BUILDING
+	disappear CERULEANGYM_JAMES
+	setevent EVENT_CERULEAN_GYM_ROCKET
 	setevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	clearevent EVENT_ROUTE_24_ROCKET
 	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
@@ -87,9 +111,7 @@ CeruleanGymMistyScript:
 	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext MistyStaryuDollText
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 .GotBlizzardTM:
 	writetext MistyFightDoneText
@@ -105,6 +127,7 @@ TrainerSwimmerfDiana:
 	endifjustbattled
 	opentext
 	writetext SwimmerfDianaAfterBattleText
+CeruleanGymEndText:
 	waitbutton
 	closetext
 	end
@@ -116,9 +139,7 @@ TrainerSwimmerfBriana:
 	endifjustbattled
 	opentext
 	writetext SwimmerfBrianaAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 TrainerSwimmermParker:
 	trainer SWIMMERM, PARKER, EVENT_BEAT_SWIMMERM_PARKER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
@@ -127,9 +148,7 @@ TrainerSwimmermParker:
 	endifjustbattled
 	opentext
 	writetext SwimmermParkerAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 CeruleanGymGuideScript:
 	faceplayer
@@ -137,15 +156,11 @@ CeruleanGymGuideScript:
 	checkevent EVENT_BEAT_MISTY
 	iftrue .CeruleanGymGuideWinScript
 	writetext CeruleanGymGuideText
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 .CeruleanGymGuideWinScript:
 	writetext CeruleanGymGuideWinText
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 CeruleanGymHiddenMachinePart:
 	hiddenitem MACHINE_PART, EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
@@ -155,18 +170,14 @@ CeruleanGymStatue1:
 	iffalse CeruleanGymStatue
 	opentext
 	writetext CeruleanGymNote1Text
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 CeruleanGymStatue2:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	iffalse CeruleanGymStatue
 	opentext
 	writetext CeruleanGymNote2Text
-	waitbutton
-	closetext
-	end
+	sjump CeruleanGymEndText
 
 CeruleanGymStatue:
 	checkflag ENGINE_CASCADEBADGE
@@ -176,19 +187,23 @@ CeruleanGymStatue:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
 
-CeruleanGymGruntRunsDownMovement:
+CeruleanGymJessieRunsDownMovement:
+	big_step DOWN
+	big_step DOWN
+CeruleanGymJamesRunsDownMovement:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
 	step_end
 
-CeruleanGymGruntRunsOutMovement:
+CeruleanGymJamesRunsOutMovement:
 	big_step RIGHT
+CeruleanGymJessieRunsOutMovement:
 	big_step DOWN
 	step_end
 
-CeruleanGymGruntRunsIntoYouMovement:
+CeruleanGymJamesRunsIntoYouMovement:
 	fix_facing
 	set_sliding
 	jump_step UP
@@ -199,47 +214,6 @@ CeruleanGymGruntRunsIntoYouMovement:
 	step DOWN
 	step DOWN
 	step_end
-
-CeruleanGymGruntMovesCloseMovement:
-	big_step DOWN
-	step_end
-
-CeruleanGymGruntBacksAwayMovement:
-	fix_facing
-	slow_step UP
-	remove_fixed_facing
-	step_end
-
-CeruleanGymGruntIntroText:
-	text "Oops! I so sorry!"
-	line "You not hurt,"
-	cont "okay?"
-
-	para "I very busy."
-	line "No time for talk-"
-	cont "ing with you. Not"
-	cont "good for me if"
-	cont "seen by somebody."
-	done
-
-CeruleanGymGruntBigMistakeText:
-	text "Oh no! You seen"
-	line "me already! I make"
-	cont "big mistake!"
-	done
-
-CeruleanGymGruntByeText:
-	text "Hey, you! Forget"
-	line "you see me, okay?"
-
-	para "You see, hear,"
-	line "know nothing,"
-
-	para "okay?"
-	line "Bye, kid! Nothing!"
-
-	para "Bye-bye a go-go!"
-	done
 
 CeruleanGymNote1Text:
 	text "Sorry, I'll be out"
@@ -417,6 +391,29 @@ CeruleanGymGuideWinText:
 	cont "great battle!"
 	done
 
+CeruleanGymJamesText1:
+	text "JAMES: Hey! Watch"
+	line "where you're going!"
+	done
+
+CeruleanGymJamesText2:
+	text "No…"
+	done
+
+CeruleanGymJamesText3:
+	text "JESSIE, it's that"
+	line "twerp from JOHTO!"
+	done
+
+CeruleanGymJessieText:
+	text "JESSIE: Seriously?"
+	line "You followed us"
+	cont "all the way here?"
+
+	para "Never mind! JAMES,"
+	line "cut and run!"
+	done
+
 CeruleanGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -432,9 +429,10 @@ CeruleanGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
 
 	def_object_events
-	object_event  4, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_ROCKET
 	object_event  5,  3, SPRITE_MISTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymMistyScript, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  4,  6, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDiana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  8,  9, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM
+	object_event  5,  8, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_JESSIE
+	object_event  4, 10, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_JAMES
