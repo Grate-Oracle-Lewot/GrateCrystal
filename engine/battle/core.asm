@@ -1085,6 +1085,8 @@ HasUserFainted:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, HasPlayerFainted
+	; fallthrough
+
 HasEnemyFainted:
 	ld hl, wEnemyMonHP
 	jr CheckIfHPIsZero
@@ -2240,6 +2242,13 @@ HandleEnemyMonFaint:
 	ld [wBattlePlayerAction], a
 	ret
 
+PlayerUTurnSwitch:
+	call SwitchPlayerMon
+	call SpikesDamage
+	call HasPlayerFainted
+	ret nz
+	; fallthrough
+
 HandlePlayerMonFaint:
 	call FaintYourPokemon
 	ld hl, wEnemyMonHP
@@ -3268,14 +3277,6 @@ SlideBattlePicOut:
 	dec c
 	jr nz, .back
 	ret
-
-EnemyUTurnSwitch:
-	call FindMonInOTPartyToSwitchIntoBattle
-	; 'b' contains the PartyNr of the mon the AI will switch to
-	ld a, b
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	; fallthrough
 
 ForceEnemySwitch:
 	call ResetEnemyBattleVars
@@ -4320,6 +4321,15 @@ BreakAttraction:
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
+
+EnemyUTurnSwitch:
+	call FindMonInOTPartyToSwitchIntoBattle
+	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, b
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	call ForceEnemySwitch
+	jr SpikesDamage
 
 EnemyMonEntrance:
 	farcall AI_Switch
