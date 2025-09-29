@@ -102,13 +102,13 @@ TrainerGruntMRadio3_2:
 	closetext
 	end
 
-TrainerGruntMRadio3_2:
-	trainer GRUNTM, GRUNTM_RADIO3_2, EVENT_BEAT_ROCKET_GRUNTM_RADIO3_2, GruntMRadio3_2SeenText, GruntMRadio3_2BeatenText, 0, .Script
+TrainerGruntMRadio3_3:
+	trainer GRUNTM, GRUNTM_RADIO3_3, EVENT_BEAT_ROCKET_GRUNTM_RADIO3_3, GruntMRadio3_3SeenText, GruntMRadio3_3BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntMRadio3_2AfterBattleText
+	writetext GruntMRadio3_3AfterBattleText
 	waitbutton
 	closetext
 	end
