@@ -576,9 +576,9 @@ DetermineMoveOrder:
 
 .equal_priority
 	call SetPlayerTurn
-	farcall GetUserItem
+	call _GetUserItem
 	push bc
-	farcall GetOpponentItem
+	call _GetOpponentItem
 	pop de
 	ld a, d
 	cp HELD_QUICK_CLAW
@@ -1410,7 +1410,7 @@ HandleLeftovers:
 	call SetPlayerTurn
 
 .do_it
-	farcall GetUserItem
+	call _GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
@@ -1476,7 +1476,7 @@ HandleMysteryberry:
 	call SetPlayerTurn
 
 .do_it
-	farcall GetUserItem
+	call _GetUserItem
 	ld a, b
 	cp HELD_RESTORE_PP
 	ret nz
@@ -1570,7 +1570,7 @@ HandleMysteryberry:
 	add b
 	ld [de], a
 .skip_checks
-	farcall GetUserItem
+	call _GetUserItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	xor a
@@ -2598,7 +2598,7 @@ WinTrainerBattle:
 	and a
 	ld a, b
 	call z, PlayVictoryMusic
-	farcall Battle_GetTrainerName
+	call _Battle_GetTrainerName
 	ld hl, BattleText_PluralEnemyWereDefeated
 	call IsPluralTrainer
 	jr z, .got_defeat_phrase
@@ -3665,7 +3665,7 @@ CheckWhetherToAskSwitch:
 OfferSwitch:
 	ld a, [wCurPartyMon]
 	push af
-	farcall Battle_GetTrainerName
+	call _Battle_GetTrainerName
 	ld hl, BattleText_PluralEnemyAreAboutToUseWillPlayerChangeMon
 	call IsPluralTrainer
 	jr z, .got_switch_phrase
@@ -3718,7 +3718,7 @@ ClearEnemyMonBox:
 	jp FinishBattleAnim
 
 ShowBattleTextEnemySentOut:
-	farcall Battle_GetTrainerName
+	call _Battle_GetTrainerName
 	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
 	jp WaitBGMap
@@ -4507,7 +4507,7 @@ UseConfusionHealingItem:
 	call GetBattleVar
 	bit SUBSTATUS_CONFUSED, a
 	ret z
-	farcall GetOpponentItem
+	call _GetOpponentItem
 	ld a, b
 	cp HELD_HEAL_CONFUSION
 	jr z, .heal_status
@@ -4544,7 +4544,7 @@ UseConfusionHealingItem:
 	ret
 
 HandleHPHealingItem:
-	farcall GetOpponentItem
+	call _GetOpponentItem
 	ld a, b
 	cp HELD_BERRY
 	ret nz
@@ -4630,7 +4630,7 @@ HandleHPHealingItem:
 
 UseOpponentItem:
 	call RefreshBattleHuds
-	farcall GetOpponentItem
+	call _GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
@@ -4657,7 +4657,7 @@ ItemRecoveryAnim:
 	ret
 
 UseHeldStatusHealingItem:
-	farcall GetOpponentItem
+	call _GetOpponentItem
 	ld hl, HeldStatusHealingEffects
 .loop
 	ld a, [hli]
@@ -8480,7 +8480,7 @@ ShowLinkBattleParticipantsAfterEnd:
 	ret
 
 DisplayLinkBattleResult:
-	farcall CheckMobileBattleError
+	call CheckMobileBattleError
 	jr c, .Mobile_InvalidBattle
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
@@ -9151,7 +9151,7 @@ BattleStartMessage:
 	ld c, 20
 	call DelayFrames
 
-	farcall Battle_GetTrainerName
+	call _Battle_GetTrainerName
 
 	ld hl, WantToBattlePluralText
 	call IsPluralTrainer
@@ -9317,4 +9317,16 @@ CheckForPoisonType:
 Core_50_Percent:
 	call BattleRandom
 	cp 50 percent + 1
+	ret
+
+_GetUserItem:
+	farcall GetUserItem
+	ret
+
+_GetOpponentItem:
+	farcall GetOpponentItem
+	ret
+
+_Battle_GetTrainerName:
+	farcall Battle_GetTrainerName
 	ret
