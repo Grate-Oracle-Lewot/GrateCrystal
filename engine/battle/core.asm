@@ -1093,8 +1093,7 @@ EnemySwitchSpikes:
 
 .no
 ; return nz
-	ld a, $1
-	and a
+	or 1
 	ret
 
 HasAnyoneFainted:
