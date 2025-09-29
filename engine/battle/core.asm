@@ -979,6 +979,8 @@ Battle_EnemyFirst:
 
 .switch_item
 	call SetEnemyTurn
+	call EnemySwitchSpikes
+	jp z, HandleEnemyMonFaint
 	call ResidualDamage
 	jp z, HandleEnemyMonFaint
 	call RefreshBattleHuds
@@ -1006,6 +1008,8 @@ Battle_PlayerFirst:
 	call SetEnemyTurn
 	farcall AI_SwitchOrTryItem
 	push af
+	call EnemySwitchSpikes
+	jr z, .spikes_faint
 	call PlayerTurn_EndOpponentProtectEndureDestinyBond
 	pop bc
 	ld a, [wForcedSwitch]
@@ -1049,6 +1053,10 @@ Battle_PlayerFirst:
 	ld [wBattlePlayerAction], a
 	ret
 
+.spikes_faint
+	pop af ; realign stack, don't care about values
+	jp HandleEnemyMonFaint
+
 PlayerTurn_EndOpponentProtectEndureDestinyBond:
 	call SetPlayerTurn
 	call EndUserDestinyBond
@@ -1074,6 +1082,19 @@ EndUserDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
+	ret
+
+EnemySwitchSpikes:
+	ld a, [wEnemyIsSwitching]
+	and a
+	jr z, .no
+	call SpikesDamage
+	jr HasEnemyFainted
+
+.no
+; return nz
+	ld a, $1
+	and a
 	ret
 
 HasAnyoneFainted:
