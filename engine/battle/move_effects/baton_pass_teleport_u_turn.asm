@@ -252,9 +252,7 @@ BattleCommand_UTurn:
 ; Return to battle scene
 	call SwitchMoveReturnToBattleScene
 
-	ld hl, SwitchPlayerMon
-	call CallBattleCore
-	ld hl, SpikesDamage
+	ld hl, PlayerUTurnSwitch
 	jp CallBattleCore
 
 .Enemy:
@@ -269,8 +267,7 @@ BattleCommand_UTurn:
 	call UpdateEnemyMonInParty
 
 ; Passed enemy PartyMon entrance
-	farcall EnemyUTurnSwitch
-	ld hl, SpikesDamage
+	ld hl, EnemyUTurnSwitch
 	jp CallBattleCore
 
 SwitchMoveTransitionIntoMenu:
