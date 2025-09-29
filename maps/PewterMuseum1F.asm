@@ -37,8 +37,6 @@ PewterMuseum1F_MapScripts:
 	special RestartMapMusic
 	setevent EVENT_BROCK_IN_PEWTER_MUSEUM
 	setscene SCENE_FINISHED
-	end
-
 .DummyScene:
 	end
 
