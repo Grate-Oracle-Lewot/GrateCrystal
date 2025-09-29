@@ -1,119 +1,151 @@
 	object_const_def
-	const ROUTE24_ROCKET
+	const ROUTE24_JESSIE
+	const ROUTE24_JAMES
 
 Route24_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .JessieJames
 
-Route24RocketScript:
+.JessieJames:
+	checkevent EVENT_ROUTE_24_ROCKET
+	iffalse .Appear
+	disappear ROUTE24_JESSIE
+	disappear ROUTE24_JAMES
+	endcallback
+
+.Appear:
+	appear ROUTE24_JESSIE
+	appear ROUTE24_JAMES
+	endcallback
+
+Route24JessieScript:
 	faceplayer
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
-	writetext Route24RocketSeenText
+	writetext Route24JessieSeenText
 	waitbutton
 	closetext
-	winlosstext Route24RocketBeatenText, -1
-	loadtrainer GRUNTM, GRUNTM_1
+	winlosstext JessieJames2BeatenText, -1
+	loadtrainer JESSIE, JAMES2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
-	writetext Route24RocketAfterBattleText
-	promptbutton
-	special FadeOutMusic
-	writetext Route24RocketDisappearsText
+	writetext Route24JessieAfterBattleText
 	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	disappear ROUTE24_ROCKET
+	disappear ROUTE24_JAMES
+	disappear ROUTE24_JESSIE
+	setevent EVENT_ROUTE_24_ROCKET
 	pause 25
 	special FadeInQuickly
 	playmapmusic
 	end
 
-Route24RocketSeenText:
-	text "Hey, kid! Me am a"
-	line "TEAM ROCKET member"
-	cont "kind of guy!"
+Route24JamesScript:
+	faceplayer
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
+	opentext
+	writetext Route24JamesSeenText
+	waitbutton
+	closetext
+	winlosstext JessieJames2BeatenText, -1
+	loadtrainer JESSIE, JAMES2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
+	opentext
+	writetext Route24JamesAfterBattleText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear ROUTE24_JESSIE
+	disappear ROUTE24_JAMES
+	setevent EVENT_ROUTE_24_ROCKET
+	pause 25
+	special FadeInQuickly
+	playmapmusic
+	end
 
-	para "Come from another"
-	line "country, a trainer"
-	cont "number one, me!"
+Route24JessieSeenText:
+	text "JESSIE: Ugh! You're"
+	line "such a brat!"
 
-	para "Think I did, if"
-	line "stop the energy,"
-
-	para "be big panic for"
-	line "here people!"
-
-	para "Secret it is my"
-	line "mission, so tell"
-	cont "you I not!"
-
-	para "But! If win you do"
-	line "versus me, a man I"
-
-	para "be and mine secret"
-	line "to you I tell."
-
-	para "Hey, kid! Battle"
-	line "begin we do!"
+	para "Fine! You want a"
+	line "battle? Let's go,"
+	cont "JAMES!"
 	done
 
-Route24RocketBeatenText:
-	text "Ayieeeh! No, no,"
-	line "no, believe it I"
-	cont "can't!"
+Route24JamesSeenText:
+	text "JAMES: Oh no!"
+	line "JESSIE, the kid"
+	cont "found us!"
 
-	para "Strong very much"
-	line "be you! Match I am"
-	cont "not to you!"
+	para "I guess it's time"
+	line "to show what we're"
+	cont "made of!"
 	done
 
-Route24RocketAfterBattleText:
-	text "OK. Tell you mine"
-	line "secret will I."
-
-	para "Machine part steal"
-	line "by me, hide it I"
-
-	para "did in GYM of the"
-	line "CERULEAN."
-
-	para "Inside water put"
-	line "it I did. Look for"
-
-	para "in water center of"
-	line "GYM at."
-
-	para "But you forget me"
-	line "not!"
-
-	para "Beat you for sure"
-	line "will TEAM ROCKET."
-
-	para "Come from JOHTO"
-	line "will they, mine"
-
-	para "friends, yes. Will"
-	line "revenge they are."
+JessieJames2BeatenText:
+	text "Looks like we're"
+	line "blasting off"
+	cont "agaaaaaiiiin!"
 	done
 
-Route24RocketDisappearsText:
-	text "…"
+Route24JessieAfterBattleText:
+	text "JESSIE: Ugh…"
 
-	para "You say what? TEAM"
-	line "ROCKET bye-bye a"
+	para "Fine. We hid the"
+	line "generator part in"
+	cont "CERULEAN GYM."
 
-	para "go-go? Broken it"
-	line "is says you?"
+	para "We thought if we"
+	line "caused enough"
 
-	para "Oh, no! Should I"
-	line "do what now on"
-	cont "from, me?"
+	para "chaos, it might"
+	line "draw the boss out."
+
+	para "But he's still no-"
+	line "where to be found…"
+
+	para "You still haven't"
+	line "seen the last of"
+	cont "TEAM ROCKET!"
+
+	para "Come on, JAMES!"
+	line "We're leaving!"
+	done
+
+Route24JamesAfterBattleText:
+	text "JAMES: Why do you"
+	line "always have to be"
+	cont "so harsh?"
+
+	para "We hid that part"
+	line "in CERULEAN GYM."
+
+	para "Go find it if you"
+	line "want it."
+
+	para "What do we do now,"
+	line "JESSIE?"
+
+	para "JESSIE: We keep"
+	line "searching for the"
+	cont "boss!"
+
+	para "TEAM ROCKET will"
+	line "never give up!"
+
+	para "JAMES: If you say"
+	line "so…"
 	done
 
 Route24_MapEvents:
@@ -126,4 +158,5 @@ Route24_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_ROUTE_24_ROCKET
+	object_event  8,  8, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route24JessieScript, EVENT_ROUTE_24_JESSIE
+	object_event  8,  7, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route24JamesScript, EVENT_ROUTE_24_JAMES
