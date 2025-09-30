@@ -80,11 +80,12 @@ SaffronOuterGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
-	db SPRITE_ROCKET
 	db SPRITE_MISTY
+	db SPRITE_BRUNO
 	; max 9 of 9 walking sprites
 	db SPRITE_SLOWPOKE
-	db SPRITE_BRUNO
+	db SPRITE_JESSIE
+	db SPRITE_JAMES
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
