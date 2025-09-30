@@ -33,7 +33,7 @@ CeruleanGym_MapScripts:
 	end
 
 .GruntRunsOutScript:
-	applymovement CERULEANGYM_JAMES, CeruleanGymJamesRunsDownMovement
+	applymovement CERULEANGYM_JAMES, CeruleanGymJessieJamesRunDownMovement
 	playsound SFX_TACKLE
 	applymovement CERULEANGYM_JAMES, CeruleanGymJamesRunsIntoYouMovement
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -51,7 +51,7 @@ CeruleanGym_MapScripts:
 	writetext CeruleanGymJamesText3
 	waitbutton
 	closetext
-	applymovement CERULEANGYM_JESSIE, CeruleanGymJessieRunsDownMovement
+	applymovement CERULEANGYM_JESSIE, CeruleanGymJessieJamesRunDownMovement
 	turnobject CERULEANGYM_JAMES, DOWN
 	opentext
 	writetext CeruleanGymJessieText
@@ -187,10 +187,7 @@ CeruleanGymStatue:
 	gettrainername STRING_BUFFER_4, MISTY, MISTY1
 	jumpstd GymStatue2Script
 
-CeruleanGymJessieRunsDownMovement:
-	big_step DOWN
-	big_step DOWN
-CeruleanGymJamesRunsDownMovement:
+CeruleanGymJessieJamesRunDownMovement:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
@@ -434,5 +431,5 @@ CeruleanGym_MapEvents:
 	object_event  1,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSwimmerfBriana, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  8,  9, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermParker, EVENT_TRAINERS_IN_CERULEAN_GYM
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanGymGuideScript, EVENT_TRAINERS_IN_CERULEAN_GYM
-	object_event  5,  8, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_JESSIE
+	object_event  5, 10, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_JESSIE
 	object_event  4, 10, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CERULEAN_GYM_JAMES
