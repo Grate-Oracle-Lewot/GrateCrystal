@@ -73,9 +73,7 @@ CeruleanGym_MapScripts:
 	setmapscene POWER_PLANT, SCENE_POWERPLANT_NOTHING
 	waitsfx
 	special RestartMapMusic
-	pause 15
-	turnobject PLAYER, DOWN
-	pause 15
+	pause 10
 	end
 
 CeruleanGymMistyScript:
