@@ -8,12 +8,12 @@ OlivineLighthouse4F_MapScripts:
 	def_callbacks
 
 TrainerLassConnie:
-	trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script
+	trainer LASS, CONNIE, EVENT_BEAT_LASS_CONNIE, LassConnieSeenText, LassConnieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LassConnie1AfterBattleText
+	writetext LassConnieAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -51,7 +51,7 @@ SailorKentAfterBattleText:
 	line "CIANWOOD."
 	done
 
-LassConnie1SeenText:
+LassConnieSeenText:
 	text "JASMINE is this"
 	line "city's GYM LEADER."
 
@@ -62,15 +62,16 @@ LassConnie1SeenText:
 	line "get in my way!"
 	done
 
-LassConnie1BeatenText:
+LassConnieBeatenText:
 	text "Aaack! My #MON!"
 	done
 
-LassConnie1AfterBattleText:
+LassConnieAfterBattleText:
 	text "Right. Anybody"
 	line "would be worried"
-	cont "if his or her own"
-	cont "#MON were hurt."
+
+	para "if their own #-"
+	line "MON were hurt."
 
 	para "I'll pray for the"
 	line "#MON here, so"
