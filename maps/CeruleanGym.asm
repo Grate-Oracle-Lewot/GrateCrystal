@@ -405,8 +405,12 @@ CeruleanGymJessieText:
 	line "You followed us"
 	cont "all the way here?"
 
-	para "Never mind! JAMES,"
-	line "cut and run!"
+	para "Uh… To protect the"
+	line "world from…"
+
+	para "Oh, there's no time"
+	line "for that! JAMES,"
+	cont "cut and run!"
 	done
 
 CeruleanGym_MapEvents:
