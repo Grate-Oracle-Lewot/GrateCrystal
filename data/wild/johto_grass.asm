@@ -101,7 +101,7 @@ JohtoGrassWildMons:
 	db 3, EKANS
 	db 3, MAREEP
 	db 5, BELLSPROUT
-	db 4, RATTATA
+	db 4, SENTRET
 	db 5, SPEAROW
 	db 5, SENTRET
 	db 5, PIDGEY
@@ -121,7 +121,7 @@ JohtoGrassWildMons:
 	db 5, BELLSPROUT
 	db 4, RATTATA
 	db 5, HOOTHOOT
-	db 5, GASTLY
+	db 5, RATTATA
 	db 5, ZUBAT
 	db 4, COTTONEE
 	end_grass_wildmons
@@ -521,9 +521,9 @@ JohtoGrassWildMons:
 	; nite
 	db 2, GEODUDE
 	db 2, ZUBAT
-	db 3, GEODUDE
+	db 3, RATTATA
 	db 4, GEODUDE
-	db 3, ZUBAT
+	db 3, GASTLY
 	db 4, ZUBAT
 	db 2, LARVITAR
 	db 3, LARVITAR
