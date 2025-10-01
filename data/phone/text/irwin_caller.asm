@@ -147,12 +147,6 @@ IrwinTrainPassGossipText:
 
 	para "zip back anytime!"
 	line "That's reassuring!"
-
-	para "What? You can FLY"
-	line "back anytime?"
-
-	para "What do you mean"
-	line "by FLY?"
 	done
 
 IrwinSnorlaxGossipText:
@@ -243,9 +237,7 @@ IrwinMarshBadgeGossipText:
 IrwinYourEscapadesRockText:
 	text "Hearing about your"
 	line "escapades rocks my"
-
-	para "soul!"
-	line "It sure does!"
+	cont "soul!"
 	done
 
 IrwinGoodMatchText:
