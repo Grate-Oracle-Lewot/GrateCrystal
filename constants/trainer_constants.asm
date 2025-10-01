@@ -203,7 +203,7 @@ KRIS EQU __trainer_class__
 	const BRIDGET
 	const ALICE
 	const KRISE
-	const CONNIE1
+	const CONNIE
 	const LINDA
 	const LAURA
 	const SHANNON
