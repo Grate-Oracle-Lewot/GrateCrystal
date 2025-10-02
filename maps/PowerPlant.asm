@@ -165,11 +165,12 @@ PowerPlantOfficer1CeruleanShadyCharacterText:
 	text "I just got word"
 	line "from CERULEAN."
 
-	para "A pair of shady"
-	line "characters were"
+	para "A pair of suspici-"
+	line "ously flamboyant"
 
-	para "seen loitering"
-	line "around the GYM."
+	para "characters were"
+	line "seen loitering"
+	cont "around the GYM."
 	done
 
 PowerPlantOfficer1CouldIAskForYourCooperationText:
