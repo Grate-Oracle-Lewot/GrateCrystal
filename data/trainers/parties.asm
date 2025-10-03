@@ -5013,22 +5013,6 @@ JugglerGroup:
 	db 66, DODRIO
 	db -1 ; end
 
-	; JUGGLER (7)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 23, VOLTORB
-	db 24, EXEGGCUTE
-	db 25, JIGGLYPUFF
-	db 26, KOFFING
-	db -1 ; end
-
-	; JUGGLER (8)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 33, VOLTORB
-	db 34, EXEGGCUTE
-	db 35, JIGGLYPUFF
-	db 36, KOFFING
-	db -1 ; end
-
 BlackbeltGroup:
 	; BLACKBELT_T (1)
 	db "JACKIE@", TRAINERTYPE_MOVES
@@ -5727,12 +5711,6 @@ PokefanMGroup:
 	; POKEFANM (12)
 	db "ALLAN@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
 	db 50, TEDDIURSA,  "ROOSEVELT@",  GOLD_BERRY
-	db -1 ; end
-
-	; POKEFANM (13)
-	db "DEREK@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 42, YANMA,      "YANCY@",      GOLD_BERRY
-	db 42, WHIMSICOTT, "SCOTT@",      GOLD_BERRY
 	db -1 ; end
 
 KimonoGirlGroup:
