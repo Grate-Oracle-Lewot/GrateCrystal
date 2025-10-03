@@ -105,7 +105,6 @@ TrainerGruntF1:
 SlowpokeWellB1FSlowpokeWithMailScript:
 	opentext
 	writetext SlowpokeWellB1FTaillessSlowpokeText
-	cry SLOWPOKE
 	promptbutton
 	writetext SlowpokeWellB1FSlowpokeWithMailText
 	yesorno
