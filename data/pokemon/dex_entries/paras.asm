@@ -1,4 +1,4 @@
-	db "MUSHROOM@" ; species name
+	db "ENTOMOPATH@" ; species name
 	dw 100, 120 ; height, weight
 
 	db   "The two mushrooms"
