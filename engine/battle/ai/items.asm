@@ -36,7 +36,7 @@ AI_SwitchOrTryItem:
 	jp AI_TryItem
 
 SwitchSometimes:
-	call farcallCheckAbleToSwitch
+	call _CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jp z, AI_TryItem
@@ -61,7 +61,7 @@ SwitchSometimes:
 	jr SwitchMerge
 
 SwitchOften:
-	call farcallCheckAbleToSwitch
+	call _CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
@@ -96,7 +96,7 @@ SwitchMerge:
 	jp AI_TrySwitch
 
 SwitchRarely:
-	call farcallCheckAbleToSwitch
+	call _CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
 	jr z, AI_TryItem
@@ -864,7 +864,7 @@ EnemyWithdrewText:
 	text_far _EnemyWithdrewText
 	text_end
 
-farcallCheckAbleToSwitch:
+_CheckAbleToSwitch:
 ; Check if in the middle of a multi-turn move or suchlike.
 ; Can't U-Turn out of these.
 	farcall CheckAbleToSwitch
