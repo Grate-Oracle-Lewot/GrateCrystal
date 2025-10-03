@@ -553,8 +553,6 @@ KRIS EQU __trainer_class__
 	const IRVING
 	const DALTON
 	const CYAN
-	const IRWIN2
-	const IRWIN3
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
@@ -682,7 +680,6 @@ KRIS EQU __trainer_class__
 	const ALEX
 	const REX
 	const ALLAN
-	const DEREK2
 
 	trainerclass KIMONO_GIRL ; 3c
 	const NAOKO
