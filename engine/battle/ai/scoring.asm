@@ -178,7 +178,7 @@ AI_Status:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -412,7 +412,7 @@ AI_Types:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -513,7 +513,7 @@ AI_Immunities:
 	push de
 	ld a, 1
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	pop de
 	pop bc
 	pop hl
@@ -977,7 +977,7 @@ AI_Smart_Sleep:
 	ld hl, wBattleMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_SLEEP
 	jr nz, .skip_immune
@@ -1041,7 +1041,7 @@ AI_Smart_LeechHit:
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	pop hl
 
 ; Do nothing if this move is not very effective.
@@ -1120,7 +1120,7 @@ AI_Smart_LockOn:
 
 	push hl
 	push bc
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	pop bc
@@ -1577,7 +1577,7 @@ AI_Smart_SwitchMoves:
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 	push hl
-	farcall CheckPlayerMoveTypeMatchups
+	call _CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE
 	pop hl
@@ -1681,7 +1681,7 @@ AI_Smart_Poison:
 	ld hl, wBattleMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_POISON
 	jr nz, AI_DiscourageIfPlayerHPBelowHalf
@@ -1718,7 +1718,7 @@ AI_Smart_Confuse:
 	ld hl, wBattleMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_CONFUSE
 	jr nz, AI_DiscourageIfPlayerHPBelowHalf
@@ -1798,7 +1798,7 @@ AI_Smart_Paralyze:
 	ld hl, wBattleMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
 	jr nz, .skip_immune
@@ -1834,7 +1834,7 @@ AI_Smart_Recoil_JumpKick:
 	ld hl, wEnemyMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_RECOIL
 	jr nz, .checkhi
@@ -2284,7 +2284,7 @@ AI_Smart_Encore:
 ; If the player only has not very effective moves against the enemy, encourage this move.
 .matchup
 	push hl
-	farcall CheckPlayerMoveTypeMatchups
+	call _CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
 	pop hl
@@ -2444,7 +2444,7 @@ AI_Smart_MeanLook:
 
 ; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
 	push hl
-	farcall CheckPlayerMoveTypeMatchups
+	call _CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE + 1 ; not very effective
 	pop hl
@@ -2713,7 +2713,7 @@ AI_Smart_PerishSong:
 
 ; Else, consider type matchups and possibly discourage this move.
 	push hl
-	farcall CheckPlayerMoveTypeMatchups
+	call _CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]
 	cp BASE_AI_SWITCH_SCORE
 	pop hl
@@ -3145,7 +3145,7 @@ AI_Smart_Reckless:
 	push hl
 	ld a, 1
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 	pop hl
 
 ; Discourage this move if not very effective.
@@ -3269,7 +3269,7 @@ AI_Smart_Rampage:
 	ld hl, wEnemyMonItem
 	ld b, [hl]
 	pop hl
-	farcall GetItemHeldEffect
+	call _GetItemHeldEffect
 	ld a, b
 	cp HELD_PREVENT_CONFUSE
 	ret nz
@@ -3428,7 +3428,7 @@ AI_Smart_Conversion:
 
 	xor a
 	ldh [hBattleTurn], a
-	farcall BattleCheckTypeMatchup
+	call _BattleCheckTypeMatchup
 
 ; Discourage this move if the enemy's types already resist the player's last used move.
 	ld a, [wTypeMatchup]
@@ -3901,4 +3901,16 @@ AI_85_15:
 AI_90_10:
 	call Random
 	cp 10 percent
+	ret
+
+_BattleCheckTypeMatchup:
+	farcall BattleCheckTypeMatchup
+	ret
+
+_CheckPlayerMoveTypeMatchups:
+	farcall CheckPlayerMoveTypeMatchups
+	ret
+
+_GetItemHeldEffect:
+	farcall GetItemHeldEffect
 	ret
