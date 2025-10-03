@@ -1477,6 +1477,12 @@ HandleLeftovers:
 	srl c
 .done
 	call SwitchTurnCore
+
+; Don't print message if recovered HP = 0
+	ld a, c
+	and a
+	ret z
+
 	call RestoreHP
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
