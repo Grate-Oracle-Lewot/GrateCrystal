@@ -964,7 +964,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons SEAFOAM_CAVE_1F
-	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
+	db 1 percent, 1 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, GOLBAT
 	db 37, GRAVELER
