@@ -2296,7 +2296,7 @@ BattleCommand_CriticalText:
 	ld hl, wEffectCarryover
 	res CRITICAL_RAGE, [hl]
 .done
-	ld c, 20
+	ld c, 10
 	jp DelayFrames
 
 .texts
@@ -5022,7 +5022,7 @@ BattleCommand_ForceSwitch:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	ld a, [wOTPartyCount]
 	ld b, a
@@ -5108,12 +5108,12 @@ BattleCommand_ForceSwitch:
 	ld a, $1
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	hlcoord 9, 7
 	lb bc, 5, 11
 	call ClearBox
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	ld a, [wPartyCount]
 	ld b, a
@@ -5159,7 +5159,7 @@ BattleCommand_ForceSwitch:
 	ld a, $1
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	pop af
 
@@ -5836,7 +5836,7 @@ BattleCommand_Paralyze:
 	jr nz, .failed
 	call CheckSubstituteOpp
 	jr nz, .failed
-	ld c, 30
+	ld c, 15
 	call DelayFrames
 	call AnimateCurrentMove
 	ld a, $1
