@@ -562,13 +562,12 @@ FindEnemyMonsWithASuperEffectiveMove:
 
 	; if immune or not very effective: continue
 	ld a, [wTypeMatchup]
-	cp 10
+	cp EFFECTIVE
 	jr c, .nope
 
 	; if neutral: load 1 and continue
 	ld e, 1
-	cp EFFECTIVE + 1
-	jr c, .nope
+	jr z, .nope
 
 	; if super-effective: load 2 and break
 	ld e, 2
