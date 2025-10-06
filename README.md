@@ -37,7 +37,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
-- Text scrolls automatically in battle (and at a few other key points)
+- Text scrolls automatically in battle (and at a few other key points), and battles run a bit faster
 - Run at bike speed by holding B (including while Surfing); brake on Cycling Road by holding B
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
