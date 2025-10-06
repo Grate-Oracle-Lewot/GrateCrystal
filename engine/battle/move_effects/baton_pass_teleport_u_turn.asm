@@ -127,7 +127,7 @@ FailedBatonPass:
 	call SetBattleDraw
 	call BattleCommand_LowerSub
 	call LoadMoveAnim
-	ld c, 42
+	ld c, 21
 	call DelayFrames
 	call SetBattleDraw
 
