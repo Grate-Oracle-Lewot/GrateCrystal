@@ -337,11 +337,11 @@ AI_Setup:
 .do_encourage
 	dec [hl]
 	dec [hl]
-	jr .checkmove
+	jp .checkmove
 
 .discourage
 	call AI_90_10
-	jr c, .checkmove
+	jp c, .checkmove
 
 .do_discourage
 	inc [hl]
@@ -364,7 +364,7 @@ CheckPlayerTypeAdvantage:
 	cp CURSE_TYPE
 	jr z, .type_two
 
-	ld b, [wBattleMonType1]
+	ld b, a
 	call _AI_CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
@@ -376,7 +376,7 @@ CheckPlayerTypeAdvantage:
 	cp CURSE_TYPE
 	jr z, AdvantageSetCarry
 
-	ld b, [wBattleMonType2]
+	ld b, a
 	call _AI_CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
@@ -404,7 +404,7 @@ CheckEnemyTypeAdvantage:
 	cp CURSE_TYPE
 	jr z, .type_two
 
-	ld b, [wEnemyMonType1]
+	ld b, a
 	call _AI_CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
@@ -416,7 +416,7 @@ CheckEnemyTypeAdvantage:
 	cp CURSE_TYPE
 	jr z, AdvantageSetCarry
 
-	ld b, [wEnemyMonType2]
+	ld b, a
 	call _AI_CheckTypeMatchup
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
