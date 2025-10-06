@@ -305,6 +305,9 @@ AI_Setup:
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .discourage
+
+	call CheckPlayerTypeAdvantage
+	jr nc, .discourage
 	jr .encourage
 
 .statdown
@@ -323,6 +326,9 @@ AI_Setup:
 	ld a, [wPlayerTurnsTaken]
 	and a
 	jr nz, .discourage
+
+	call CheckEnemyTypeAdvantage
+	jr nc, .do_discourage
 
 .encourage
 	call AI_50_50
@@ -345,6 +351,76 @@ AI_Setup:
 .dismiss
 	call AIDismissMove
 	jp .checkmove
+
+CheckPlayerTypeAdvantage:
+; Return nc if either of player's types is good against enemy's type combo. Discount player's ???-type.
+
+	push hl
+	push de
+	push bc
+	ld hl, wEnemyMonType1
+
+	ld a, [wBattleMonType1]
+	cp CURSE_TYPE
+	jr z, .type_two
+
+	ld b, [wBattleMonType1]
+	call _AI_CheckTypeMatchup
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr nc, AdvantageCheckDone
+	ld hl, wEnemyMonType1
+
+.type_two
+	ld a, [wBattleMonType2]
+	cp CURSE_TYPE
+	jr z, AdvantageSetCarry
+
+	ld b, [wBattleMonType2]
+	call _AI_CheckTypeMatchup
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr AdvantageCheckDone
+
+AdvantageSetCarry:
+	scf
+	; fallthrough
+
+AdvantageCheckDone:
+	pop bc
+	pop de
+	pop hl
+	ret
+
+CheckEnemyTypeAdvantage:
+; Return nc if either of enemy's types is good against player's type combo. Discount enemy's ???-type.
+
+	push hl
+	push de
+	push bc
+	ld hl, wBattleMonType1
+
+	ld a, [wEnemyMonType1]
+	cp CURSE_TYPE
+	jr z, .type_two
+
+	ld b, [wEnemyMonType1]
+	call _AI_CheckTypeMatchup
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr nc, AdvantageCheckDone
+	ld hl, wBattleMonType1
+
+.type_two
+	ld a, [wEnemyMonType2]
+	cp CURSE_TYPE
+	jr z, AdvantageSetCarry
+
+	ld b, [wEnemyMonType2]
+	call _AI_CheckTypeMatchup
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr AdvantageCheckDone
 
 
 AI_Cautious:
@@ -3905,6 +3981,10 @@ AI_90_10:
 
 _BattleCheckTypeMatchup:
 	farcall BattleCheckTypeMatchup
+	ret
+
+_AI_CheckTypeMatchup:
+	farcall AI_CheckTypeMatchup
 	ret
 
 _CheckPlayerMoveTypeMatchups:
