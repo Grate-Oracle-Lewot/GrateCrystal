@@ -1758,7 +1758,7 @@ ItemActionTextWaitButton:
 	call ItemActionText
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 	jp WaitPressAorB_BlinkCursor
 
