@@ -196,7 +196,7 @@ DoBattle:
 	call EnemySwitch
 
 .wild
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 
 .player_2
@@ -1254,7 +1254,7 @@ ResidualDamage:
 
 .fainted
 	call RefreshBattleHuds
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	xor a
 	ret
@@ -2221,7 +2221,7 @@ HandleEnemyMonFaint:
 
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 
 	ld a, [wBattleMode]
@@ -2644,7 +2644,7 @@ WinTrainerBattle:
 	jr nz, .battle_tower
 
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 
 	ld a, [wBattleType]
@@ -2663,7 +2663,7 @@ WinTrainerBattle:
 
 .mobile
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 	ld c, $4 ; win
 	farcall Mobile_PrintOpponentBattleMessage
@@ -2671,7 +2671,7 @@ WinTrainerBattle:
 
 .battle_tower
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 	call EmptyBattleTextbox
 	ld c, BATTLETOWERTEXT_LOSS_TEXT
@@ -3125,7 +3125,7 @@ LostBattle:
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 	jp PrintWinLossText
 
@@ -3136,7 +3136,7 @@ LostBattle:
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 
 	call EmptyBattleTextbox
@@ -3188,7 +3188,7 @@ LostBattle:
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 
 	ld c, $3 ; lost
@@ -5200,7 +5200,7 @@ LoadBattleMenu2:
 	jr nz, .error
 	ld hl, BattleText_LinkErrorBattleCanceled
 	call StdBattleTextbox
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 .error
 	scf
@@ -5502,7 +5502,7 @@ PlayerSwitch:
 BattleMonEntrance:
 	call WithdrawMonText
 
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 
 	ld hl, wPlayerSubStatus4
@@ -5536,7 +5536,7 @@ BattleMonEntrance:
 	ret
 
 PassedBattleMonEntrance:
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 
 	hlcoord 9, 7
@@ -6029,7 +6029,7 @@ else
 .force_struggle
 	ld hl, BattleText_MonHasNoMovesLeft
 	call StdBattleTextbox
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 	xor a
 	ret
@@ -7573,7 +7573,7 @@ GiveExperiencePoints:
 	hlcoord 11, 1
 	ld bc, 4
 	predef PrintTempMonStats
-	ld c, 30
+	ld c, 15
 	call DelayFrames
 	call WaitPressAorB_BlinkCursor
 	call SafeLoadTempTilemapToTilemap
@@ -8412,7 +8412,7 @@ ExitBattle:
 	and a
 	jr z, .not_linked
 	call ShowLinkBattleParticipantsAfterEnd
-	ld c, 150
+	ld c, 90
 	call DelayFrames
 	call DisplayLinkBattleResult
 	jr CleanUpBattleRAM
@@ -8542,7 +8542,7 @@ DisplayLinkBattleResult:
 	hlcoord 6, 8
 	call PlaceString
 	farcall BackupMobileEventIndex
-	ld c, 200
+	ld c, 90
 	call DelayFrames
 
 	ld a, BANK(sLinkBattleStats)
@@ -8564,7 +8564,7 @@ DisplayLinkBattleResult:
 	ld de, .InvalidBattle
 	call PlaceString
 .mobile
-	ld c, 200
+	ld c, 90
 	call DelayFrames
 	jp ClearTilemap
 
@@ -9320,7 +9320,7 @@ _LiquidOoze::
 .got_damage
 
 	call SubtractHPFromUser
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	ld hl, LiquidOozeText
 	jp StdBattleTextbox
