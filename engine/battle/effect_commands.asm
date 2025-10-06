@@ -1326,6 +1326,10 @@ BattleCommand_Stab:
 	ld [wTypeModifier], a
 	ret
 
+AI_CheckTypeMatchup:
+	ld a, b
+	jr CheckTypeMatchup
+
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
