@@ -50,7 +50,7 @@ CeladonPrizeRoom_tmcounterloop:
 	getitemname STRING_BUFFER_3, TM_POISON_JAB
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_POISON_JAB
+	giveitem TM_POISON_JAB, 5
 	iffalse CeladonPrizeRoom_notenoughroom
 	takecoins CELADONGAMECORNERPRIZEROOM_POISONJAB_COINS
 	sjump CeladonPrizeRoom_purchased
@@ -61,7 +61,7 @@ CeladonPrizeRoom_tmcounterloop:
 	getitemname STRING_BUFFER_3, TM_PSYCHIC_M
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_PSYCHIC_M
+	giveitem TM_PSYCHIC_M, 5
 	iffalse CeladonPrizeRoom_notenoughroom
 	takecoins CELADONGAMECORNERPRIZEROOM_PSYCHIC_COINS
 	sjump CeladonPrizeRoom_purchased
@@ -72,7 +72,7 @@ CeladonPrizeRoom_tmcounterloop:
 	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_CancelPurchaseScript
-	giveitem TM_DOUBLE_TEAM
+	giveitem TM_DOUBLE_TEAM, 5
 	iffalse CeladonPrizeRoom_notenoughroom
 	takecoins CELADONGAMECORNERPRIZEROOM_DOUBLETEAM_COINS
 	; fallthrough
