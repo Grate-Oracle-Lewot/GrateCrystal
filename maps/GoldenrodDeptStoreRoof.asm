@@ -150,14 +150,9 @@ GoldenrodDeptStoreRoofTeacherText:
 	done
 
 GoldenrodDeptStoreRoofBugCatcherText:
-	text "I came to buy PP-"
-	line "restoring items,"
-
-	para "since they're so"
-	line "hard to find."
-
-	para "I wonder if"
-	line "there're any left?"
+	text "Do they sell diff-"
+	line "erent stuff if you"
+	cont "have more BADGES?"
 	done
 
 Binoculars1Text:
