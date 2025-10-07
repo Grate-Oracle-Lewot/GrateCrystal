@@ -258,7 +258,7 @@ Prize Pokémon:
   - Monday-Friday: Abra Lv10 (500C), Porygon Lv10 (1000C), Wobbuffet Lv20 (1500C)
   - Saturday-Sunday: Swinub Lv15 (1000C), Gligar Lv15 (3000C), Skarmory Lv15 (3000C)
 
-- Kanto: Porygon2 Lv40 (4000C), Togetic Lv50 (5000C), Dragonite Lv60 (9999C)
+- Kanto: Porygon2 Lv40 (5000C), Togetic Lv50 (7500C), Dragonite Lv60 (9999C)
 
 Prize TMs:
 
