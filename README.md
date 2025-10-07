@@ -42,7 +42,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
 - Room for 30 phone contacts in the Pokégear, and you can get my phone number to hear stupid anecdotes
-- While TMs are still single-use, you get 5 copies at a time when received via gifts, field items, or Game Corners
+- While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, some of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
@@ -259,6 +259,12 @@ Prize Pokémon:
   - Saturday-Sunday: Swinub Lv15 (1000C), Gligar Lv15 (3000C), Skarmory Lv15 (3000C)
 
 - Kanto: Porygon2 Lv40 (4000C), Togetic Lv50 (5000C), Dragonite Lv60 (9999C)
+
+Prize TMs:
+
+- Johto: Blizzard x5 (5000C), Thunder x5 (5000C), Fire Blast x5 (5000C)
+
+- Kanto: Poison Jab x5 (4200C), Psychic x5 (4200C), Double Team x5 (4200C)
 
 ## Locations
 - Viridian Forest (similar layout to Gen I, with the National Park tileset)
