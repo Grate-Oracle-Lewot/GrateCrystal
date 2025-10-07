@@ -185,6 +185,9 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	special GameCornerPrizeMonCheckDex
 	givepoke TOGETIC, 50
 	takecoins CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS
+	setevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
+	setevent EVENT_SHOWED_TOGEPI_TO_ELM
+	setevent EVENT_GOT_EVERSTONE_FROM_ELM
 	sjump .loop
 
 .Dragonite:
