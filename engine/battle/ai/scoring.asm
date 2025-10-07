@@ -330,7 +330,7 @@ AI_Setup:
 	jr nz, .discourage
 
 	call CheckEnemyTypeAdvantage
-	jr nc, .do_discourage
+	jr nc, .discourage
 
 .encourage
 	call AI_50_50
