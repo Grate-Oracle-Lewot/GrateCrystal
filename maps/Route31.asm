@@ -111,24 +111,24 @@ TrainerBugCatcherWade1:
 	iftrue .BitterBerry
 .Berry:
 	verbosegiveitemfive BERRY, 5
-	iffalse .PackFull
+	iffalse .PackFullSTD
 	sjump .Done
 .Psncureberry:
 	verbosegiveitemfive PSNCUREBERRY, 5
-	iffalse .PackFull
+	iffalse .PackFullSTD
 	sjump .Done
 .Przcureberry:
 	verbosegiveitemfive PRZCUREBERRY, 5
-	iffalse .PackFull
+	iffalse .PackFullSTD
 	sjump .Done
 .BitterBerry:
 	verbosegiveitemfive BITTER_BERRY, 5
-	iffalse .PackFull
+	iffalse .PackFullSTD
 .Done:
 	clearflag ENGINE_WADE_HAS_ITEM
-	sjump .AcceptedNumberSTD
-.PackFull:
-	sjump .PackFullSTD
+.AcceptedNumberSTD:
+	jumpstd NumberAcceptedMScript
+	end
 
 .AskPhoneNumberSTD:
 	jumpstd AskNumber1MScript
@@ -140,10 +140,6 @@ TrainerBugCatcherWade1:
 
 .RegisterNumberSTD:
 	jumpstd RegisteredNumberMScript
-	end
-
-.AcceptedNumberSTD:
-	jumpstd NumberAcceptedMScript
 	end
 
 .DeclinedNumberSTD:
