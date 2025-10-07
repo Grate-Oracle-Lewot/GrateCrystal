@@ -237,8 +237,10 @@ AI_Setup:
 ; Greatly encourage stat-modifying moves if the player is storing energy with Bide (barring Mist or Substitute).
 ; Greatly discourage stat-up moves if the enemy is Perish Songed (barring Bide, Fly or Dig).
 ; If none of the above conditions meet...
-; 50% chance to greatly encourage stat-up moves during the enemy Pokemon's first turn out.
-; 50% chance to greatly encourage stat-down moves during the player's Pokemon's first turn out.
+; 50% chance to greatly encourage stat-up moves during the enemy's first turn out,
+; UNLESS one or both of the player's types are super effective against the enemy.
+; 50% chance to greatly encourage stat-down moves during the player's first turn out,
+; UNLESS one or both of the enemy's types are super effective against the player.
 ; 90% chance to greatly discourage stat-modifying moves otherwise.
 
 	ld hl, wEnemyAIMoveScores - 1
