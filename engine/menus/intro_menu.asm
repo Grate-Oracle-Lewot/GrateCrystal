@@ -657,7 +657,7 @@ OakText7:
 	text_end
 
 StartPCItem:
-	ld a, PORTRAITMAIL
+	ld a, REPEL
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChange], a
