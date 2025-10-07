@@ -82,7 +82,7 @@ GoldenrodGameCornerTMVendor_LoopScript:
 	getitemname STRING_BUFFER_3, TM_BLIZZARD
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	giveitem TM_BLIZZARD
+	giveitem TM_BLIZZARD, 5
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins GOLDENRODGAMECORNER_BLIZZARD_COINS
 	sjump GoldenrodGameCornerTMVendor_FinishScript
@@ -93,7 +93,7 @@ GoldenrodGameCornerTMVendor_LoopScript:
 	getitemname STRING_BUFFER_3, TM_THUNDER
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	giveitem TM_THUNDER
+	giveitem TM_THUNDER, 5
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins GOLDENRODGAMECORNER_THUNDER_COINS
 	sjump GoldenrodGameCornerTMVendor_FinishScript
@@ -104,7 +104,7 @@ GoldenrodGameCornerTMVendor_LoopScript:
 	getitemname STRING_BUFFER_3, TM_FIRE_BLAST
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	giveitem TM_FIRE_BLAST
+	giveitem TM_FIRE_BLAST, 5
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins GOLDENRODGAMECORNER_FIREBLAST_COINS
 	; fallthrough
