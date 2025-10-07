@@ -42,7 +42,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
 - Room for 30 phone contacts in the Pokégear, and you can get my phone number to hear stupid anecdotes
-- While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
+- While TMs are still single-use, you get 5 copies at a time when received via gifts, field items, or Game Corners
 - Special encounters for all legendary Pokémon, some of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
