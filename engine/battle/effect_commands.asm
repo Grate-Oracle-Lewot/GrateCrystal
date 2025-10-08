@@ -6583,8 +6583,8 @@ CallBattleCore:
 	ret
 
 BattleCommand_MoveDelay:
-; Wait 20 frames.
-	ld c, 20
+; Pause between actions.
+	ld c, 19
 	jp DelayFrames
 
 BattleCommand_ClearText:
