@@ -1,4 +1,4 @@
-	db "HYPNOSIS@" ; species name
+	db "HYPNOTIST@" ; species name
 	dw 303, 710 ; height, weight
 
 	db   "Its habit of eat-"
