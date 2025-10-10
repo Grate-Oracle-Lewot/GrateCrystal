@@ -250,7 +250,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Game Corners
 
-Voltorb Flip (renamed Voltsweeper) is now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit.
+Voltorb Flip is now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit.
 
 Prize Pokémon:
 
