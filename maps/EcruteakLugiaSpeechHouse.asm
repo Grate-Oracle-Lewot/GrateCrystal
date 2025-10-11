@@ -66,9 +66,6 @@ EcruteakLugiaSpeechHouseYoungsterText:
 	para "make more money by"
 	line "selling disposable"
 	cont "versions."
-
-	para "Gotta love"
-	line "capitalism."
 	done
 
 EcruteakHistoryBookText1:
@@ -104,12 +101,12 @@ EcruteakHistoryBookText2:
 	cont "the ground."
 
 	para "The fire was only"
-	line "put out by a rain-"
-	cont "storm."
+	line "put out by a sudd-"
+	cont "en rainstorm."
 
 	para "It's said that the"
-	line "tower's dragon re-"
-	cont "vived the fallen"
+	line "TIN TOWER's dragon"
+	cont "revived the fallen"
 	cont "#MON."
 
 	para "But the two drag-"
