@@ -59,25 +59,7 @@ InsertPokemonIntoParty:
 	ld hl, wPartyMons
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld de, wBufferMon
-	jp InsertDataIntoBoxOrParty
-
-InsertSpeciesIntoBoxOrParty:
-	inc [hl]
-	inc hl
-	ld a, [wCurPartyMon]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [wCurPartySpecies]
-	ld c, a
-.loop
-	ld a, [hl]
-	ld [hl], c
-	inc hl
-	inc c
-	ld c, a
-	jr nz, .loop
-	ret
+	; fallthrough
 
 InsertDataIntoBoxOrParty:
 	push de
@@ -128,3 +110,21 @@ InsertDataIntoBoxOrParty:
 	ld e, l
 	pop hl
 	jp CopyBytes
+
+InsertSpeciesIntoBoxOrParty:
+	inc [hl]
+	inc hl
+	ld a, [wCurPartyMon]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wCurPartySpecies]
+	ld c, a
+.loop
+	ld a, [hl]
+	ld [hl], c
+	inc hl
+	inc c
+	ld c, a
+	jr nz, .loop
+	ret
