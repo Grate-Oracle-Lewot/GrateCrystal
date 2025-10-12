@@ -2962,9 +2962,7 @@ ForcePlayerMonChoice:
 	call AddBattleParticipant
 	call InitBattleMon
 	call ResetPlayerStatLevels
-	call ClearPalettes
-	call DelayFrame
-	call _LoadHPBar
+	call SwitchReloadBackpic
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetPalettes
@@ -3710,9 +3708,7 @@ OfferSwitch:
 	ld [wLastPlayerMon], a
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
-	call ClearPalettes
-	call DelayFrame
-	call _LoadHPBar
+	call SwitchReloadBackpic
 	pop af
 	ld [wCurPartyMon], a
 	xor a
@@ -3722,15 +3718,20 @@ OfferSwitch:
 	ret
 
 .canceled_switch
-	call ClearPalettes
-	call DelayFrame
-	call _LoadHPBar
+	call SwitchReloadBackpic
 
 .said_no
 	pop af
 	ld [wCurPartyMon], a
 	scf
 	ret
+
+SwitchReloadBackpic:
+	call ClearPalettes
+	call DelayFrame
+	call _LoadHPBar
+	call GetBattleMonBackpic
+	jp WaitBGMap
 
 ClearEnemyMonBox:
 	xor a
@@ -5352,12 +5353,8 @@ BattleMenuPKMN_Loop:
 
 .Cancel:
 	call ClearSprites
-	call ClearPalettes
-	call DelayFrame
-	call _LoadHPBar
+	call SwitchReloadBackpic
 	call CloseWindow
-	call GetBattleMonBackpic
-	call WaitBGMap
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
 	call SetPalettes
@@ -5440,10 +5437,8 @@ TryPlayerSwitch:
 	ld [wLastPlayerMon], a
 	ld a, BATTLEPLAYERACTION_SWITCH
 	ld [wBattlePlayerAction], a
-	call ClearPalettes
-	call DelayFrame
 	call ClearSprites
-	call _LoadHPBar
+	call SwitchReloadBackpic
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetPalettes
