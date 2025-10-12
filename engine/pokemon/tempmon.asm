@@ -35,6 +35,8 @@ CalcBufferMonStats:
 
 CalcTempmonStats:
 	ld bc, wTempMon
+	; fallthrough
+
 _TempMonStatsCalculation:
 	ld hl, MON_LEVEL
 	add hl, bc
@@ -98,10 +100,6 @@ GetMonSpecies:
 	ld hl, wPartySpecies
 	jr .done
 
-.otpartymon
-	ld hl, wOTPartySpecies
-	jr .done
-
 .boxmon
 	ld a, BANK(sBoxSpecies)
 	call OpenSRAM
@@ -112,6 +110,9 @@ GetMonSpecies:
 .breedmon
 	ld a, [wBreedMon1Species]
 	jr .done2
+
+.otpartymon
+	ld hl, wOTPartySpecies
 
 .done
 	ld d, 0
