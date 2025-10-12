@@ -76,9 +76,6 @@ NamingScreen:
 	dw .Rival
 	dw .Mom
 	dw .Box
-	dw .Tomodachi
-	dw .Pokemon
-	dw .Pokemon
 
 .Pokemon:
 	ld a, [wCurPartySpecies]
@@ -196,15 +193,6 @@ NamingScreen:
 .BoxNameString:
 	db "BOX NAME?@"
 
-.Tomodachi:
-	hlcoord 3, 2
-	ld de, .oTomodachi_no_namae_sutoringu
-	call PlaceString
-	jp .StoreSpriteIconParams
-
-.oTomodachi_no_namae_sutoringu
-	db "おともだち　の　なまえは？@"
-
 .LoadSprite:
 	push de
 	ld hl, vTiles0 tile $00
@@ -286,6 +274,8 @@ NamingScreen_InitText:
 .not_box
 	call ClearBox
 	ld de, NameInputUpper
+	; fallthrough
+
 NamingScreen_ApplyTextInputMode:
 	call NamingScreen_IsTargetBox
 	jr nz, .not_box
@@ -432,7 +422,7 @@ NamingScreenJoypadLoop:
 	cp $3
 	jr z, .end
 	call NamingScreen_GetLastCharacter
-	call NamingScreen_TryAddCharacter
+	call MailComposition_TryAddCharacter
 	ret nc
 
 .start
@@ -478,6 +468,7 @@ NamingScreenJoypadLoop:
 	ld c, [hl]
 	inc hl
 	ld b, [hl]
+	; fallthrough
 
 NamingScreen_GetCursorPosition:
 	ld hl, SPRITEANIMSTRUCT_VAR2
@@ -672,8 +663,6 @@ NamingScreen_AnimateCursor:
 	inc [hl]
 	ret
 
-NamingScreen_TryAddCharacter:
-	ld a, [wNamingScreenLastCharacter] ; lost
 MailComposition_TryAddCharacter:
 	ld a, [wNamingScreenMaxNameLength]
 	ld c, a
@@ -682,10 +671,12 @@ MailComposition_TryAddCharacter:
 	ret nc
 
 	ld a, [wNamingScreenLastCharacter]
+	; fallthrough
 
 NamingScreen_LoadNextCharacter:
 	call NamingScreen_GetTextCursorPosition
 	ld [hl], a
+	; fallthrough
 
 NamingScreen_AdvanceCursor_CheckEndOfString:
 	ld hl, wNamingScreenCurNameLength
@@ -1280,6 +1271,7 @@ NamingScreen_PressedA_GetCursorCommand:
 	ld c, [hl]
 	inc hl
 	ld b, [hl]
+	; fallthrough
 
 ComposeMail_GetCursorPosition:
 	ld hl, SPRITEANIMSTRUCT_VAR2
