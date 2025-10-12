@@ -4,6 +4,7 @@ DrawPlayerHP:
 
 DrawEnemyHP:
 	ld a, $2
+	; fallthrough
 
 DrawHP:
 	ld [wWhichHPBar], a
@@ -274,7 +275,7 @@ GetGender:
 ; Get our place in the party/box.
 
 .PartyMon:
-.sBoxMon
+.sBoxMon:
 	ld a, [wCurPartyMon]
 	call AddNTimes
 
