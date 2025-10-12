@@ -41,15 +41,15 @@
 ; used by PokemonActionSubmenu (see engine/pokemon/mon_menu.asm)
 	const_def 1
 	; moves
-	const MONMENUITEM_CUT        ; 1
-	const MONMENUITEM_FLY        ; 2
-	const MONMENUITEM_SURF       ; 3
-	const MONMENUITEM_STRENGTH   ; 4
-	const MONMENUITEM_WATERFALL  ; 5
-	const MONMENUITEM_FLASH      ; 6
-	const MONMENUITEM_WHIRLPOOL  ; 7
-	const MONMENUITEM_DIG        ; 8
-	const MONMENUITEM_TELEPORT   ; 9
+	const MONMENUITEM_CUT        ;  1
+	const MONMENUITEM_FLY        ;  2
+	const MONMENUITEM_SURF       ;  3
+	const MONMENUITEM_STRENGTH   ;  4
+	const MONMENUITEM_WATERFALL  ;  5
+	const MONMENUITEM_FLASH      ;  6
+	const MONMENUITEM_WHIRLPOOL  ;  7
+	const MONMENUITEM_DIG        ;  8
+	const MONMENUITEM_TELEPORT   ;  9
 	const MONMENUITEM_SOFTBOILED ; 10
 	const MONMENUITEM_HEADBUTT   ; 11
 	const MONMENUITEM_ROCKSMASH  ; 12
@@ -89,16 +89,16 @@ HMENURETURN_ASM    EQU %11111111
 NUM_PARTYMENUACTIONS EQU const_value
 ; PrintPartyMenuActionText arguments (see engine/pokemon/party_menu.asm)
 	const_next $f0
-	const PARTYMENUTEXT_HEAL_PSN        ; f0
-	const PARTYMENUTEXT_HEAL_BRN        ; f1 
-	const PARTYMENUTEXT_HEAL_FRZ        ; f2
-	const PARTYMENUTEXT_HEAL_SLP        ; f3
-	const PARTYMENUTEXT_HEAL_PAR        ; f4
-	const PARTYMENUTEXT_HEAL_HP         ; f5
-	const PARTYMENUTEXT_HEAL_ALL        ; f6
-	const PARTYMENUTEXT_REVIVE          ; f7
-	const PARTYMENUTEXT_LEVEL_UP        ; f8
-	const PARTYMENUTEXT_HEAL_CONFUSION  ; f9
+	const PARTYMENUTEXT_HEAL_PSN         ; f0
+	const PARTYMENUTEXT_HEAL_BRN         ; f1 
+	const PARTYMENUTEXT_HEAL_FRZ         ; f2
+	const PARTYMENUTEXT_HEAL_SLP         ; f3
+	const PARTYMENUTEXT_HEAL_PAR         ; f4
+	const PARTYMENUTEXT_HEAL_HP          ; f5
+	const PARTYMENUTEXT_HEAL_ALL         ; f6
+	const PARTYMENUTEXT_REVIVE           ; f7
+	const PARTYMENUTEXT_LEVEL_UP         ; f8
+	const PARTYMENUTEXT_HEAL_CONFUSION   ; f9
 
 ; Naming types (see engine/menus/naming_screen.asm)
 	const_def
