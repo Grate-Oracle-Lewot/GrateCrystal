@@ -199,9 +199,23 @@ CianwoodDarkroomWillPhoto:
 
 EndGauntlet:
 	pause 10
-	special FadeOutPalettes
+	checkevent EVENT_DARKROOM_GAUNTLET_GOLD_TROPHY
+	iftrue .skip
+	opentext
+	writetext CianwoodDarkroomGoldTrophyText1
+	setevent EVENT_DECO_GOLD_TROPHY
+	playsound SFX_GET_EGG_UNUSED
+	waitsfx
+	writetext CianwoodDarkroomGoldTrophyText2
+	waitbutton
+	closetext
+	pause 10
+.skip
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
 	playsound SFX_THIEF_2
 	waitsfx
+	setevent EVENT_DARKROOM_GAUNTLET_GOLD_TROPHY
 	clearevent EVENT_DARKROOM_GAUNTLET
 	setscene SCENE_CIANWOODDARKROOM_RESET_GAUNTLET
 	warp CIANWOOD_PHOTO_STUDIO, 1, 2
@@ -319,6 +333,16 @@ CianwoodDarkroomWillPhotoBattleText:
 CianwoodDarkroomWillPhotoWinLossText:
 	text "The WILL illusion"
 	line "faded away!"
+	done
+
+CianwoodDarkroomGoldTrophyText1:
+	text "<PLAYER> received"
+	line "GOLD TROPHY!"
+	done
+
+CianwoodDarkroomGoldTrophyText2:
+	text "<PLAYER> sent the"
+	line "decoration home."
 	done
 
 CianwoodDarkroom_MapEvents:
