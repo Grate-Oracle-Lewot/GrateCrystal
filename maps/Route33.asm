@@ -38,7 +38,9 @@ TrainerHikerAnthony:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .Rematch:
 	scall .RematchStd
@@ -96,10 +98,6 @@ TrainerHikerAnthony:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
