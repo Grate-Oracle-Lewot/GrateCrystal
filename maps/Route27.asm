@@ -88,7 +88,9 @@ TrainerBirdKeeperJose2:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -135,10 +137,6 @@ TrainerBirdKeeperJose2:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
@@ -209,7 +207,9 @@ TrainerCooltrainerfReena:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedFScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -249,10 +249,6 @@ TrainerCooltrainerfReena:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberFScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedFScript
 	end
 
 .NumberDeclined:
