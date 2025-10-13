@@ -16,37 +16,6 @@ NurseNiteText:
 	scroll "#MON CENTER."
 	autodone
 
-PokeComNurseMornText:
-	text "Good morning!"
-
-	para "This is the #-"
-	line "MON COMMUNICATION"
-
-	para "CENTER--or the"
-	line "#COM CENTER."
-	done
-
-PokeComNurseDayText:
-	text "Hello!"
-
-	para "This is the #-"
-	line "MON COMMUNICATION"
-
-	para "CENTER--or the"
-	line "#COM CENTER."
-	done
-
-PokeComNurseNiteText:
-	text "Good to see you"
-	line "working so late."
-
-	para "This is the #-"
-	line "MON COMMUNICATION"
-
-	para "CENTER--or the"
-	line "#COM CENTER."
-	done
-
 NurseAskHealText:
 	text "Shall we heal your"
 	line "#MON?"
@@ -68,25 +37,6 @@ NurseGoodbyeText:
 	autodone
 
 NursePokerusText:
-	text "Oh, your #MON"
-	line "appear to have"
-	cont "#RUS."
-
-	para "It's a virus, but"
-	line "it's nothing to"
-	cont "worry about."
-
-	para "In fact, #MON"
-	line "stats are said to"
-
-	para "increase more when"
-	line "they're infected."
-
-	para "It's contagious"
-	line "for a few days."
-	done
-
-PokeComNursePokerusText:
 	text "Oh, your #MON"
 	line "appear to have"
 	cont "#RUS."
