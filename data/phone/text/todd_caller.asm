@@ -101,3 +101,17 @@ ToddLookingForwardToBattleText:
 	text_ram wStringBuffer5
 	text "."
 	done
+
+ToddHaveYouGoneToDepartmentStoreText:
+	text "Haven't you gone"
+	line "to GOLDENROD DEPT."
+
+	para "STORE? I've scoped"
+	line "it out already!"
+
+	para "They had some real"
+	line "bargains."
+
+	para "You should get"
+	line "there quickly."
+	done
