@@ -29,6 +29,8 @@ FirstStepIntoKantoRightScene:
 	turnobject ROUTE27_FISHER, LEFT
 	showemote EMOTE_SHOCK, ROUTE27_FISHER, 15
 	applymovement ROUTE27_FISHER, Route27FisherStepLeftOnceMovement
+	; fallthrough
+
 FirstStepIntoKantoScene_Continue:
 	turnobject PLAYER, RIGHT
 	opentext
@@ -119,12 +121,9 @@ TrainerBirdKeeperJose2:
 .HasStarPiece:
 	scall .Gift
 	verbosegiveitem NUGGET
-	iffalse .NoRoom
+	iffalse .PackFull
 	clearflag ENGINE_JOSE_HAS_STAR_PIECE
 	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
