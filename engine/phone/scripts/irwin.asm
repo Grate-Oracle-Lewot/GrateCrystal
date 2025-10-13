@@ -7,6 +7,7 @@ IrwinPhoneCalleeScript:
 	iftrue IrwinRockets
 	farscall PhoneScript_Random3
 	ifequal 0, .NoBattle
+	ifequal 1, .NoBattle
 	iftrue IrwinSundayNight
 
 .NoBattle:
