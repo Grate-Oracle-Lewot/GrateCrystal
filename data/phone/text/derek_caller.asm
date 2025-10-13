@@ -103,3 +103,16 @@ DerekComePickUpText:
 	para "Come pick this up"
 	line "anytime."
 	done
+
+DerekReminderText:
+	text "Hey, you're not"
+	line "avoiding me,"
+	cont "are you?"
+
+	para "I'm waiting on"
+	line "@"
+	text_ram wStringBuffer5
+	text "."
+
+	para "Let's battle!"
+	done
