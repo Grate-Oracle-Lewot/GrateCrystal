@@ -32,27 +32,29 @@ TrainerPicnickerErin1:
 	checkflag ENGINE_ERIN_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkcellnum PHONE_PICNICKER_ERIN
-	iftrue Route46NumberAcceptedF
+	iftrue .NumberAccepted
 	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext PicnickerErinAfterBattleText
 	promptbutton
 	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	scall Route46AskNumber1F
+	scall .AskNumber1
 	sjump .AskForNumber
 
 .AskedAlready:
-	scall Route46AskNumber2F
+	scall .AskNumber2
 .AskForNumber:
 	askforphonenumber PHONE_PICNICKER_ERIN
-	ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF
-	ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF
+	ifequal PHONE_CONTACTS_FULL, .PhoneFull
+	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
-	scall Route46RegisteredNumberF
-	sjump Route46NumberAcceptedF
+	scall .RegisteredNumber
+.NumberAccepted:
+	jumpstd NumberAcceptedFScript
+	end
 
 .WantsBattle:
-	scall Route46RematchF
+	scall .Rematch
 	winlosstext PicnickerErin1BeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight2
@@ -70,6 +72,7 @@ TrainerPicnickerErin1:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ERIN_READY_FOR_REMATCH
+.GotCalciumAlready:
 	end
 
 .LoadFight2:
@@ -81,59 +84,52 @@ TrainerPicnickerErin1:
 	iftrue .HasCalcium
 	checkevent EVENT_GOT_CALCIUM_FROM_ERIN
 	iftrue .GotCalciumAlready
-	scall Route46RematchGiftF
+	scall .RematchGift
 	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
+	iffalse .PackFull
 	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
-
-.GotCalciumAlready:
-	end
+	sjump .NumberAccepted
 
 .HasCalcium:
 	opentext
 	writetext PicnickerErin2BeatenText
 	waitbutton
 	verbosegiveitem CALCIUM
-	iffalse ErinNoRoomForCalcium
+	iffalse .PackFull
 	clearevent EVENT_ERIN_CALCIUM
 	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	sjump Route46NumberAcceptedF
+	sjump .NumberAccepted
 
-Route46AskNumber1F:
+.AskNumber1:
 	jumpstd AskNumber1FScript
 	end
 
-Route46AskNumber2F:
+.AskNumber2:
 	jumpstd AskNumber2FScript
 	end
 
-Route46RegisteredNumberF:
+.RegisteredNumber:
 	jumpstd RegisteredNumberFScript
 	end
 
-Route46NumberAcceptedF:
-	jumpstd NumberAcceptedFScript
-	end
-
-Route46NumberDeclinedF:
+.NumberDeclined:
 	jumpstd NumberDeclinedFScript
 	end
 
-Route46PhoneFullF:
+.PhoneFull:
 	jumpstd PhoneFullFScript
 	end
 
-Route46RematchF:
+.Rematch:
 	jumpstd RematchFScript
 	end
 
-ErinNoRoomForCalcium:
+.PackFull:
 	setevent EVENT_ERIN_CALCIUM
 	jumpstd PackFullFScript
 	end
 
-Route46RematchGiftF:
+.RematchGift:
 	jumpstd RematchGiftFScript
 	end
 
