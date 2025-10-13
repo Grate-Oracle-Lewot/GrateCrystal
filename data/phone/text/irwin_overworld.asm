@@ -51,3 +51,11 @@ IrwinPhoneFullText:
 	para "You must be really"
 	line "popular…"
 	done
+
+IrwinRematchText:
+	text "<PLAY_G>, you're"
+	line "here!"
+
+	para "I'm ready to"
+	line "battle again!"
+	done
