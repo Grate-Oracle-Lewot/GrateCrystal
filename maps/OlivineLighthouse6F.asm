@@ -202,8 +202,10 @@ JasmineCianwoodPharmacyText:
 	line "at night."
 
 	para "…But it suddenly"
-	line "got sick… It's"
-	cont "gasping for air…"
+	line "got sick…"
+
+	para "The #MON CENTER"
+	cont "didn't help…"
 
 	para "…I understand"
 	line "that there is a"
