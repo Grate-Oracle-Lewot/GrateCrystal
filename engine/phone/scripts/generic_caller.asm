@@ -534,9 +534,11 @@ PhoneScript_RematchText_Male:
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
 	ifequal PHONE_CAMPER_TODD, .Todd
+	ifequal PHONE_JUGGLER_IRWIN, .Irwin
 	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
+	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_POKEMANIAC_BRENT, .Brent
 	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
@@ -588,6 +590,11 @@ PhoneScript_RematchText_Male:
 	promptbutton
 	end
 
+.Irwin:
+	farwritetext IrwinBattleRematchText
+	promptbutton
+	end
+
 .Arnie:
 	farwritetext ArnieBattleRematchText
 	promptbutton
@@ -600,6 +607,11 @@ PhoneScript_RematchText_Male:
 
 .Chad:
 	farwritetext ChadBattleRematchText
+	promptbutton
+	end
+
+.Derek:
+	farwritetext DerekBattleRematchText
 	promptbutton
 	end
 
