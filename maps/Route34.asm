@@ -113,7 +113,9 @@ TrainerCamperTodd1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, CAMPER, TODD1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .Rematch:
 	scall .RematchStd
@@ -179,10 +181,6 @@ TrainerCamperTodd1:
 	jumpstd RegisteredNumberMScript
 	end
 
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 	end
@@ -223,7 +221,9 @@ TrainerPicnickerGina1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedFScript
+	end
 
 .Rematch:
 	scall .RematchStd
@@ -289,10 +289,6 @@ TrainerPicnickerGina1:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberFScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedFScript
 	end
 
 .NumberDeclined:
