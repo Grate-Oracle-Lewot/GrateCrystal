@@ -270,6 +270,18 @@ IrwinSoMuchToChatAboutText:
 	cont "chat about!"
 	done
 
+IrwinBattleRematchText:
+	text "<PLAY_G>, I want"
+	line "to battle you!"
+
+	para "Remember where I"
+	line "am? @"
+	text_ram wStringBuffer5
+	text "!"
+
+	para "I-I can't wait!"
+	done
+
 IrwinReminderText:
 	text "I'm waiting, I'm"
 	line "waiting!"
