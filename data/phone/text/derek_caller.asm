@@ -104,6 +104,19 @@ DerekComePickUpText:
 	line "anytime."
 	done
 
+DerekBattleRematchText:
+	text "It's time."
+
+	para "We're going to"
+	line "battle again!"
+
+	para "Catch me and my"
+	line "WHIMSICOTT on"
+	cont "@"
+	text_ram wStringBuffer5
+	text "!"
+	done
+
 DerekReminderText:
 	text "Hey, you're not"
 	line "avoiding me,"
