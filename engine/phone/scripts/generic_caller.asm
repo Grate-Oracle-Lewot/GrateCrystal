@@ -630,14 +630,19 @@ PhoneScript_RematchText_Male:
 
 PhoneScript_RematchText_Female:
 	readvar VAR_CALLERID
+	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
-; .Beth:
+; .Gina:
+	farwritetext GinaBattleRematchText
+	promptbutton
+	end
+
+.Beth:
 	farwritetext BethBattleRematchText
 	promptbutton
 	end
@@ -649,11 +654,6 @@ PhoneScript_RematchText_Female:
 
 .Liz:
 	farwritetext LizBattleRematchText
-	promptbutton
-	end
-
-.Gina:
-	farwritetext GinaBattleRematchText
 	promptbutton
 	end
 
