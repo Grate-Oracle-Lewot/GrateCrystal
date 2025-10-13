@@ -113,13 +113,10 @@ TrainerLassDana1:
 .TryGiveThunderstone:
 	scall .Gift
 	verbosegiveitem THUNDERSTONE
-	iffalse .NoRoomForThunderstone
+	iffalse .PackFull
 	clearflag ENGINE_DANA_HAS_THUNDERSTONE
 	setevent EVENT_DANA_GAVE_THUNDERSTONE
 	sjump .NumberAccepted
-
-.NoRoomForThunderstone:
-	sjump .PackFull
 
 .AskNumber1F:
 	jumpstd AskNumber1FScript
