@@ -24,6 +24,7 @@ TrainerCooltrainermJake:
 	endifjustbattled
 	opentext
 	writetext CooltrainermJakeAfterBattleText
+Route26_EndText:
 	waitbutton
 	closetext
 	end
@@ -54,7 +55,9 @@ TrainerCooltrainermGaven3:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN3
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -96,10 +99,6 @@ TrainerCooltrainermGaven3:
 	jumpstd RegisteredNumberMScript
 	end
 
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 	end
@@ -119,9 +118,7 @@ TrainerCooltrainerfJoyce:
 	endifjustbattled
 	opentext
 	writetext CooltrainerfJoyceAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerCooltrainerfBeth1:
 	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
@@ -149,7 +146,9 @@ TrainerCooltrainerfBeth1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedFScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -191,10 +190,6 @@ TrainerCooltrainerfBeth1:
 	jumpstd RegisteredNumberFScript
 	end
 
-.NumberAccepted:
-	jumpstd NumberAcceptedFScript
-	end
-
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
 	end
@@ -214,9 +209,7 @@ TrainerPsychicRichard:
 	endifjustbattled
 	opentext
 	writetext PsychicRichardAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerFisherScott:
 	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
@@ -225,9 +218,7 @@ TrainerFisherScott:
 	endifjustbattled
 	opentext
 	writetext FisherScottAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerBeautyJulie:
 	trainer BEAUTY, JULIE, EVENT_BEAT_BEAUTY_JULIE, BeautyJulieSeenText, BeautyJulieBeatenText, 0, .AfterScript
@@ -236,9 +227,7 @@ TrainerBeautyJulie:
 	endifjustbattled
 	opentext
 	writetext BeautyJulieAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerBeautyTheresa:
 	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .AfterScript
@@ -247,9 +236,7 @@ TrainerBeautyTheresa:
 	endifjustbattled
 	opentext
 	writetext BeautyTheresaAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerBeautyJaclyn:
 	trainer BEAUTY, JACLYN, EVENT_BEAT_BEAUTY_JACLYN, BeautyJaclynSeenText, BeautyJaclynBeatenText, 0, .AfterScript
@@ -258,9 +245,7 @@ TrainerBeautyJaclyn:
 	endifjustbattled
 	opentext
 	writetext BeautyJaclynAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 TrainerBeautyCaroline:
 	trainer BEAUTY, CAROLINE, EVENT_BEAT_BEAUTY_CAROLINE, BeautyCarolineSeenText, BeautyCarolineBeatenText, 0, .AfterScript
@@ -269,9 +254,7 @@ TrainerBeautyCaroline:
 	endifjustbattled
 	opentext
 	writetext BeautyCarolineAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route26_EndText
 
 Route26Sign:
 	jumptext Route26SignText
