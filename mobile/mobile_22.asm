@@ -3403,7 +3403,7 @@ Function8a765:
 Function8a78c:
 	call Function891fe
 	ld de, wd002
-	ld b, NAME_FRIEND
+	ld b, NAME_MOM
 	farcall NamingScreen
 	call OpenSRAMBank4
 	call Function8931b
