@@ -24,7 +24,6 @@ StdScripts::
 	add_stdscript SmashRockScript
 	add_stdscript PokecenterSignScript
 	add_stdscript MartSignScript
-	add_stdscript GoldenrodRocketsScript
 	add_stdscript RadioTowerRocketsScript
 	add_stdscript ElevatorButtonScript
 	add_stdscript DayToTextScript
