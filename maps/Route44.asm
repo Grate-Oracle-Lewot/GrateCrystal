@@ -117,8 +117,8 @@ TrainerBirdKeeperVance1:
 	setevent EVENT_GOT_CARBOS_FROM_VANCE
 	; fallthrough
 
-Route44RegisteredNumberM:
-	jumpstd RegisteredNumberMScript
+Route44NumberAcceptedM:
+	jumpstd NumberAcceptedMScript
 	end
 
 Route44AskNumber1M:
@@ -129,8 +129,8 @@ Route44AskNumber2M:
 	jumpstd AskNumber2MScript
 	end
 
-Route44NumberAcceptedM:
-	jumpstd NumberAcceptedMScript
+Route44RegisteredNumberM:
+	jumpstd RegisteredNumberMScript
 	end
 
 Route44NumberDeclinedM:
