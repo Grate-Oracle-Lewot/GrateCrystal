@@ -101,13 +101,10 @@ TrainerFisherTully:
 .HasWaterStone:
 	scall .Gift
 	verbosegiveitem WATER_STONE
-	iffalse .NoRoom
+	iffalse .PackFull
 	clearflag ENGINE_TULLY_HAS_WATER_STONE
 	setevent EVENT_TULLY_GAVE_WATER_STONE
 	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
