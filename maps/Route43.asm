@@ -231,13 +231,10 @@ TrainerPicnickerTiffany:
 .HasPinkBow:
 	scall .Gift
 	verbosegiveitem PINK_BOW
-	iffalse .NoRoom
+	iffalse .PackFull
 	clearflag ENGINE_TIFFANY_HAS_PINK_BOW
 	setevent EVENT_TIFFANY_GAVE_PINK_BOW
 	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
