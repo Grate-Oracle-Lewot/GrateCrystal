@@ -662,22 +662,7 @@ PartyMenu2DMenuData:
 	db 0 ; accepted buttons
 
 PartyMenuSelect:
-	; can't switch pokemon order in battle
-	ld a, [wBattleMode]
-	and a
-	jr nz, .skip_select_input
-
-	; The Select button must only be allowed in the Start Party menu or the Move party menu.
-	ld a, [wPartyMenuActionText]
-	and $ff - $4
-	jr nz, .skip_select_input
-
-	; Only values (0) PARTYMENUACTION_CHOOSE_POKEMON and 4 (PARTYMENUACTION_MOVE) are allowed through the filter.
-	ld a, [wMenuJoypadFilter]
-	or SELECT
-	ld [wMenuJoypadFilter], a
-
-.skip_select_input
+; sets carry if exited menu.
 	call StaticMenuJoypad
 	call PlaceHollowCursor
 	ld a, [wPartyCount]
@@ -685,19 +670,7 @@ PartyMenuSelect:
 	ld b, a
 	ld a, [wMenuCursorY] ; menu selection?
 	cp b
-	jr c, .check_b_button
-
-	; Can't exit by pressing Select on the Cancel button.
-	ldh a, [hJoyLast]
-	cp a
-	bit SELECT_F, a
-	ld a, [wMenuCursorY]
-	jr z, .check_b_button ; Ignore select on cancel.
-
-	call HideCursor
-	jr .skip_select_input ; Ignore select on cancel.
-
-.check_b_button
+	jr z, .exitmenu ; CANCEL
 	ld [wPartyMenuCursor], a
 	ldh a, [hJoyLast]
 	ld b, a
@@ -713,24 +686,6 @@ PartyMenuSelect:
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 
-	ldh a, [hJoyLast]
-	cp SELECT
-	jp nz, .play_sfx
-
-	; If the player presses select, either we start the switch process, or we validate it.
-	ld a, [wPartyMenuActionText]
-	cp PARTYMENUACTION_MOVE
-	jr z, .play_sfx
-
-	push hl
-	farcall SwitchPartyMons
-	call WritePartyMenuTilemap
-	call PrintPartyMenuText
-	pop hl
-	jr PartyMenuSelect
-
-.play_sfx
-	ld a, [hl]
 	call .read_text_sfx
 	and a
 	ret
