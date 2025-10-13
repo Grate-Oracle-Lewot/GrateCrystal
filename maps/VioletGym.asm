@@ -61,7 +61,8 @@ VioletGymActivateRockets:
 	end
 
 .GoldenrodRockets:
-	jumpstd GoldenrodRocketsScript
+	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
+	end
 
 .RadioTowerRockets:
 	jumpstd RadioTowerRocketsScript
