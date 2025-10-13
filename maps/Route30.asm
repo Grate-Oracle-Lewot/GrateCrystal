@@ -102,6 +102,7 @@ TrainerYoungsterJoey:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
+.done
 	end
 
 .LoadFight4:
@@ -117,9 +118,8 @@ TrainerYoungsterJoey:
 	verbosegiveitem HP_UP
 	iffalse .PackFull
 	setevent EVENT_GOT_HP_UP_FROM_JOEY
-	sjump .NumberAccepted
-
-.done
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
 	end
 
 .GiveHPUp:
@@ -142,10 +142,6 @@ TrainerYoungsterJoey:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
