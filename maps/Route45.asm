@@ -56,7 +56,7 @@ TrainerBlackbeltKenji:
 	iffalse Route45NumberAcceptedM
 	scall Route45GiftM
 	verbosegiveitem PP_UP
-	iffalse .NoRoom
+	iffalse Route45PackFullM
 	clearevent EVENT_KENJI_ON_BREAK
 	special SampleKenjiBreakCountdown
 	sjump Route45NumberAcceptedM
@@ -72,9 +72,6 @@ TrainerBlackbeltKenji:
 	waitbutton
 	closetext
 	end
-
-.NoRoom:
-	sjump Route45PackFullM
 
 Route45AskNumber1M:
 	jumpstd AskNumber1MScript
@@ -108,12 +105,9 @@ Route45GiftM:
 	jumpstd GiftMScript
 	end
 
-Route45PackFullM:
-	jumpstd PackFullMScript
-	end
-
 HikerParryHasIron:
 	setevent EVENT_PARRY_IRON
+Route45PackFullM:
 	jumpstd PackFullMScript
 	end
 
@@ -190,6 +184,7 @@ TrainerHikerParry:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH
+.GotIron:
 	end
 
 .LoadFight2:
@@ -206,9 +201,6 @@ TrainerHikerParry:
 	iffalse HikerParryHasIron
 	setevent EVENT_GOT_IRON_FROM_PARRY
 	sjump Route45NumberAcceptedM
-
-.GotIron:
-	end
 
 .HasIron:
 	opentext
