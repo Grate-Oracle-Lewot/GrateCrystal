@@ -9,6 +9,7 @@ RalphPhoneCalleeScript:
 	ifnotequal WEDNESDAY, .NotWednesdayMorning
 	checktime MORN
 	iftrue Ralph_WednesdayMorning
+
 .NotWednesdayMorning:
 	farsjump RalphNoItemScript
 
@@ -19,12 +20,18 @@ RalphPhoneCalleeScript:
 RalphPhoneCallerScript:
 	gettrainername STRING_BUFFER_3, FISHER, RALPH1
 	farscall PhoneScript_GreetPhone_Male
+	checkflag ENGINE_RALPH_READY_FOR_REMATCH
+	iftrue .Generic
+	checkflag ENGINE_RALPH_WEDNESDAY_MORNING
+	iftrue .Generic
 	farscall PhoneScript_Random2
 	ifequal 0, Ralph_FightMe
+.Generic:
 	farsjump Phone_GenericCall_Male
 
 Ralph_WednesdayMorning:
 	setflag ENGINE_RALPH_WEDNESDAY_MORNING
+
 Ralph_FightMe:
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_32
 	setflag ENGINE_RALPH_READY_FOR_REMATCH
