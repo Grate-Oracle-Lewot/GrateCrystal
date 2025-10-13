@@ -59,7 +59,6 @@ Phone_WhosBragging_Male:
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -74,6 +73,11 @@ Phone_WhosBragging_Male:
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_HIKER_PARRY, .Parry
 
+; .Joey:
+	farwritetext JoeyMonLookingSharperText
+	promptbutton
+	end
+
 .Jack:
 	farwritetext JackIntelligenceKeepsRisingText
 	promptbutton
@@ -86,11 +90,6 @@ Phone_WhosBragging_Male:
 
 .Jose:
 	farwritetext JoseMonsStickHasADeliciousAromaText
-	promptbutton
-	end
-
-.Joey:
-	farwritetext JoeyMonLookingSharperText
 	promptbutton
 	end
 
@@ -165,10 +164,14 @@ Phone_WhosBragging_Female:
 	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
+
+; .Gina:
+	farwritetext GinaGettingInSyncWithMonText
+	promptbutton
+	end
 
 .Beverly:
 	farwritetext BeverlyMadeMonEvenCuterText
@@ -187,11 +190,6 @@ Phone_WhosBragging_Female:
 
 .Liz:
 	farwritetext LizMonAlwaysWantsToNuzzleText
-	promptbutton
-	end
-
-.Gina:
-	farwritetext GinaGettingInSyncWithMonText
 	promptbutton
 	end
 
@@ -215,7 +213,6 @@ Phone_WhoDefeatedMon_Male:
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -230,6 +227,11 @@ Phone_WhoDefeatedMon_Male:
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_HIKER_PARRY, .Parry
 
+; .Joey:
+	farwritetext JoeyDefeatedMonText
+	promptbutton
+	end
+
 .Jack:
 	farwritetext JackDefeatedMonText
 	promptbutton
@@ -242,11 +244,6 @@ Phone_WhoDefeatedMon_Male:
 
 .Jose:
 	farwritetext JoseDefeatedMonText
-	promptbutton
-	end
-
-.Joey:
-	farwritetext JoeyDefeatedMonText
 	promptbutton
 	end
 
@@ -321,10 +318,14 @@ Phone_WhoDefeatedMon_Female:
 	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
+
+; .Gina:
+	farwritetext GinaDefeatedMonText
+	promptbutton
+	end
 
 .Beverly:
 	farwritetext BeverlyDefeatedMonText
@@ -343,11 +344,6 @@ Phone_WhoDefeatedMon_Female:
 
 .Liz:
 	farwritetext LizDefeatedMonText
-	promptbutton
-	end
-
-.Gina:
-	farwritetext GinaDefeatedMonText
 	promptbutton
 	end
 
@@ -371,7 +367,6 @@ Phone_WhoLostAMon_Male:
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -386,6 +381,11 @@ Phone_WhoLostAMon_Male:
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_HIKER_PARRY, .Parry
 
+; .Joey:
+	farwritetext JoeyLostAMonText
+	promptbutton
+	end
+
 .Jack:
 	farwritetext JackLostAMonText
 	promptbutton
@@ -398,11 +398,6 @@ Phone_WhoLostAMon_Male:
 
 .Jose:
 	farwritetext JoseLostAMonText
-	promptbutton
-	end
-
-.Joey:
-	farwritetext JoeyLostAMonText
 	promptbutton
 	end
 
@@ -477,10 +472,14 @@ Phone_WhoLostAMon_Female:
 	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
+
+; .Gina:
+	farwritetext GinaLostAMonText
+	promptbutton
+	end
 
 .Beverly:
 	farwritetext BeverlyLostAMonText
@@ -499,11 +498,6 @@ Phone_WhoLostAMon_Female:
 
 .Liz:
 	farwritetext LizLostAMonText
-	promptbutton
-	end
-
-.Gina:
-	farwritetext GinaLostAMonText
 	promptbutton
 	end
 
@@ -536,7 +530,6 @@ PhoneScript_RematchText_Male:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -549,6 +542,11 @@ PhoneScript_RematchText_Male:
 	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_HIKER_PARRY, .Parry
+
+; .Joey:
+	farwritetext JoeyBattleRematchText
+	promptbutton
+	end
 
 .Jack:
 	farwritetext JackBattleRematchText
@@ -567,11 +565,6 @@ PhoneScript_RematchText_Male:
 
 .Jose:
 	farwritetext JoseBattleRematchText
-	promptbutton
-	end
-
-.Joey:
-	farwritetext JoeyBattleRematchText
 	promptbutton
 	end
 
@@ -637,7 +630,6 @@ PhoneScript_RematchText_Male:
 
 PhoneScript_RematchText_Female:
 	readvar VAR_CALLERID
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
 	ifequal PHONE_PICNICKER_GINA, .Gina
@@ -645,7 +637,7 @@ PhoneScript_RematchText_Female:
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
 
-.Beth:
+; .Beth:
 	farwritetext BethBattleRematchText
 	promptbutton
 	end
@@ -694,7 +686,6 @@ PhoneScript_HangUpText_Male:
 	ifequal PHONE_SAILOR_HUEY, .Huey
 	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_FISHER_RALPH, .Ralph
 	ifequal PHONE_HIKER_ANTHONY, .Anthony
@@ -711,6 +702,10 @@ PhoneScript_HangUpText_Male:
 	ifequal PHONE_BLACKBELT_KENJI, .Kenji
 	ifequal PHONE_HIKER_PARRY, .Parry
 
+; .Joey:
+	farwritetext JoeyHangUpText
+	end
+
 .Jack:
 	farwritetext JackHangUpText
 	end
@@ -725,10 +720,6 @@ PhoneScript_HangUpText_Male:
 
 .Jose:
 	farwritetext JoseHangUpText
-	end
-
-.Joey:
-	farwritetext JoeyHangUpText
 	end
 
 .Wade:
@@ -797,10 +788,13 @@ PhoneScript_HangUpText_Female:
 	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
 	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 	ifequal PHONE_PICNICKER_ERIN, .Erin
+
+; .Gina:
+	farwritetext GinaHangUpText
+	end
 
 .Beverly:
 	farwritetext BeverlyHangUpText
@@ -816,10 +810,6 @@ PhoneScript_HangUpText_Female:
 
 .Liz:
 	farwritetext LizHangUpText
-	end
-
-.Gina:
-	farwritetext GinaHangUpText
 	end
 
 .Dana:
@@ -856,10 +846,9 @@ PhoneScriptRareWildMon:
 
 PhoneScript_BugCatchingContest:
 	readvar VAR_CALLERID
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 
-.Wade:
+; .Wade:
 	farwritetext WadeBugCatchingContestText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
@@ -898,10 +887,13 @@ PhoneScript_FoundItem_Male:
 	readvar VAR_CALLERID
 	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
 	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_FISHER_WILTON, .Wilton
+
+; .Alan:
+	farwritetext AlanFoundItemText
+	end
 
 .Jose:
 	farwritetext JoseFoundItemText
@@ -909,10 +901,6 @@ PhoneScript_FoundItem_Male:
 
 .Wade:
 	farwritetext WadeFoundItemText
-	end
-
-.Alan:
-	farwritetext AlanFoundItemText
 	end
 
 .Derek:
@@ -930,16 +918,15 @@ PhoneScript_FoundItem_Male:
 PhoneScript_FoundItem_Female:
 	readvar VAR_CALLERID
 	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_PICNICKER_GINA, .Gina
 	ifequal PHONE_LASS_DANA, .Dana
 	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
 
-.Beverly:
-	farwritetext BeverlyFoundItemText
+; .Gina:
+	farwritetext GinaFoundItemText
 	end
 
-.Gina:
-	farwritetext GinaFoundItemText
+.Beverly:
+	farwritetext BeverlyFoundItemText
 	end
 
 .Dana:
