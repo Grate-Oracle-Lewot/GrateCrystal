@@ -274,13 +274,10 @@ TrainerPicnickerGina1:
 .LeafStone:
 	scall .Gift
 	verbosegiveitem LEAF_STONE
-	iffalse .BagFull
+	iffalse .PackFull
 	clearflag ENGINE_GINA_HAS_LEAF_STONE
 	setevent EVENT_GINA_GAVE_LEAF_STONE
 	sjump .NumberAccepted
-
-.BagFull:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
