@@ -42,7 +42,9 @@ TrainerSailorHuey:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SAILOR, HUEY1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -72,6 +74,7 @@ TrainerSailorHuey:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
+.SkipGift:
 	end
 
 .LoadFight3:
@@ -88,9 +91,6 @@ TrainerSailorHuey:
 	iffalse .PackFull
 	setevent EVENT_GOT_PROTEIN_FROM_HUEY
 	sjump .NumberAccepted
-
-.SkipGift:
-	end
 
 .HasProtein:
 	opentext
@@ -112,10 +112,6 @@ TrainerSailorHuey:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
