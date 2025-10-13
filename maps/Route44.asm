@@ -238,12 +238,12 @@ TrainerFisherWilton1:
 	iftrue .PokeBall
 .UltraBall:
 	verbosegiveitemfive ULTRA_BALL, 5
-	iffalse .Route44PackFullM
+	iffalse Route44PackFullM
 	sjump .ItemReceived
 
 .GreatBall:
 	verbosegiveitemfive GREAT_BALL, 5
-	iffalse .Route44PackFullM
+	iffalse Route44PackFullM
 	sjump .ItemReceived
 
 .PokeBall:
