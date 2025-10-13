@@ -94,10 +94,14 @@ ErinComeBattleScript:
 	farwritetext ErinComeBattleText
 	end
 
-RalphHurryScript:
-	farwritetext RalphHurryText
-	end
-
 ToddHurryScript:
 	farwritetext ToddHaveYouGoneToDepartmentStoreText
+	end
+
+DerekReminderScript:
+	farwritetext DerekReminderText
+	end
+
+IrwinReminderScript:
+	farwritetext IrwinReminderText
 	end
