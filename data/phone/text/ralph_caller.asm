@@ -119,15 +119,3 @@ RalphReminderText:
 	para "You shouldn't make"
 	line "your elders wait!"
 	done
-
-RalphHurryText:
-	text "Hey, what's the"
-	line "matter with you?"
-
-	para "Aren't you coming"
-	line "over to fish for"
-	cont "QWILFISH?"
-
-	para "I'm on ROUTE 32,"
-	line "so hurry up!"
-	done
