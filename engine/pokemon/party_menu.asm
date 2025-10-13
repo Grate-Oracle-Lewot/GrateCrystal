@@ -723,7 +723,7 @@ PartyMenuSelect:
 	jr z, .play_sfx
 
 	push hl
-	farcall _SwitchPartyMons
+	farcall SwitchPartyMons
 	call WritePartyMenuTilemap
 	call PrintPartyMenuText
 	pop hl
