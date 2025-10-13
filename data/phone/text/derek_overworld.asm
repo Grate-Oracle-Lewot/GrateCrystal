@@ -51,3 +51,8 @@ DerekPackFullText:
 	para "room. Be sure to"
 	line "get it later."
 	done
+
+DerekRematchText:
+	text "It's time for our"
+	line "rematch!"
+	done
