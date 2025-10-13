@@ -5,14 +5,11 @@ IrwinPhoneCalleeScript:
 	farscall PhoneScript_AnswerPhone_Male
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue IrwinRockets
-	checkflag ENGINE_IRWIN_SUNDAY_NIGHT
-	iftrue .NotSunday
-	readvar VAR_WEEKDAY
-	ifnotequal SUNDAY, .NotSunday
-	checktime NITE
+	farscall PhoneScript_Random3
+	ifequal 0, .NoBattle
 	iftrue IrwinSundayNight
 
-.NotSunday:
+.NoBattle:
 	farsjump IrwinRandomTextScript
 
 .WantsBattle:
