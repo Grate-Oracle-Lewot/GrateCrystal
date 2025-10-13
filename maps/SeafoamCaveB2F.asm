@@ -120,46 +120,19 @@ SeafoamCaveB2FKarenScript:
 	writetext SeafoamCaveB2FOakApologizeText
 	waitbutton
 	closetext
-	checkevent EVENT_BEAT_FINALE
-	iftrue .AlreadyBeat
-	turnobject PLAYER, UP
 	opentext
-	writetext SeafoamCaveB2FGoldTrophyText
-	setevent EVENT_DECO_GOLD_TROPHY
-	playsound SFX_GET_EGG_UNUSED
-	waitsfx
-	writetext SeafoamCaveB2FDecorationText
+	writetext SeafoamCaveB2FKarenCreditsText
 	waitbutton
 	checkcellnum PHONE_GRATE_ORACLE_LEWOT
 	iftrue .SkipPhone
 	callasm .PhoneAsm
 	ifequal PHONE_CONTACTS_FULL, .SkipPhone
-	writetext SeafoamCaveB2FLewotsNumberText
+	writetext SeafoamCaveB2FPhoneText
 	addcellnum PHONE_GRATE_ORACLE_LEWOT
 	playsound SFX_REGISTER_PHONE_NUMBER
 	waitsfx
 	waitbutton
 .SkipPhone:
-	writetext SeafoamCaveB2FFirstCreditsText
-	waitbutton
-	closetext
-	setevent EVENT_BEAT_FINALE
-	sjump .End
-
-.AlreadyBeat:
-	opentext
-	writetext SeafoamCaveB2FKarenCreditsText
-	waitbutton
-	checkcellnum PHONE_GRATE_ORACLE_LEWOT
-	iftrue .SkipPhone2
-	callasm .PhoneAsm
-	ifequal PHONE_CONTACTS_FULL, .SkipPhone2
-	writetext SeafoamCaveB2FPhone2Text
-	addcellnum PHONE_GRATE_ORACLE_LEWOT
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	waitbutton
-.SkipPhone2:
 	closetext
 .End:
 	special HealParty
@@ -416,38 +389,6 @@ SeafoamCaveB2FOakApologizeText:
 	line "apologize."
 	done
 
-SeafoamCaveB2FGoldTrophyText:
-	text "LEWOT: …"
-
-	para "Well, I guess I"
-	line "should reward you."
-
-	para "<PLAYER> received"
-	line "GOLD TROPHY!"
-	done
-
-SeafoamCaveB2FDecorationText:
-	text "<PLAYER> sent the"
-	line "decoration home."
-	done
-
-SeafoamCaveB2FLewotsNumberText:
-	text "LEWOT: And why"
-	line "don't you take my"
-	cont "phone number, too."
-
-	para "<PLAYER> registered"
-	line "LEWOT's number."
-	done
-
-SeafoamCaveB2FFirstCreditsText:
-	text "LEWOT: …You've seen"
-	line "the credits twice"
-	cont "already, but I'm"
-	cont "not sure how else"
-	cont "to end this."
-	done
-
 SeafoamCaveB2FKarenCreditsText:
 	text "LEWOT: …"
 
@@ -455,7 +396,7 @@ SeafoamCaveB2FKarenCreditsText:
 	line "the credits."
 	done
 
-SeafoamCaveB2FPhone2Text:
+SeafoamCaveB2FPhoneText:
 	text "…Oh, but take my"
 	line "number first."
 
