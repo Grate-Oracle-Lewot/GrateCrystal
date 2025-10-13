@@ -33,6 +33,8 @@ TrainerJugglerIrwin:
 .Script:
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
 	opentext
+	checkflag ENGINE_IRWIN_READY_FOR_REMATCH
+	iftrue .WantsBattle
 	checkcellnum PHONE_JUGGLER_IRWIN
 	iftrue Route35NumberAcceptedM
 	checkevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
@@ -43,6 +45,34 @@ TrainerJugglerIrwin:
 	scall Route35AskNumber1M
 	sjump .AskForNumber
 
+.WantsBattle:
+	scall Route35RematchM
+	winlosstext JugglerIrwin1BeatenText, 0
+	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	iftrue .LoadFight2
+	checkevent EVENT_RELEASED_THE_BEASTS
+	iftrue .LoadFight1
+.LoadFight0:
+	loadtrainer JUGGLER, IRWIN1
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	end
+
+.LoadFight1:
+	loadtrainer JUGGLER, IRWIN2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	end
+
+.LoadFight2:
+	loadtrainer JUGGLER, IRWIN3
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	end
+
 .AskedAlready:
 	scall Route35AskNumber2M
 .AskForNumber:
@@ -51,7 +81,11 @@ TrainerJugglerIrwin:
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
 	scall Route35RegisteredNumberM
-	sjump Route35NumberAcceptedM
+	; fallthrough
+
+Route35NumberAcceptedM:
+	jumpstd NumberAcceptedMScript
+	end
 
 Route35AskNumber1M:
 	jumpstd AskNumber1MScript
@@ -63,10 +97,6 @@ Route35AskNumber2M:
 
 Route35RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
-	end
-
-Route35NumberAcceptedM:
-	jumpstd NumberAcceptedMScript
 	end
 
 Route35NumberDeclinedM:
