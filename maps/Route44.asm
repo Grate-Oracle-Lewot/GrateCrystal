@@ -89,6 +89,7 @@ TrainerBirdKeeperVance1:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_VANCE_READY_FOR_REMATCH
+.ReceivedCarbosBefore:
 	end
 
 .LoadFight2:
@@ -106,9 +107,6 @@ TrainerBirdKeeperVance1:
 	setevent EVENT_GOT_CARBOS_FROM_VANCE
 	sjump Route44NumberAcceptedM
 
-.ReceivedCarbosBefore:
-	end
-
 .Carbos:
 	opentext
 	writetext BirdKeeperVance2BeatenText
@@ -117,7 +115,11 @@ TrainerBirdKeeperVance1:
 	iffalse VancePackFull
 	clearevent EVENT_VANCE_CARBOS
 	setevent EVENT_GOT_CARBOS_FROM_VANCE
-	sjump Route44NumberAcceptedM
+	; fallthrough
+
+Route44RegisteredNumberM:
+	jumpstd RegisteredNumberMScript
+	end
 
 Route44AskNumber1M:
 	jumpstd AskNumber1MScript
@@ -125,10 +127,6 @@ Route44AskNumber1M:
 
 Route44AskNumber2M:
 	jumpstd AskNumber2MScript
-	end
-
-Route44RegisteredNumberM:
-	jumpstd RegisteredNumberMScript
 	end
 
 Route44NumberAcceptedM:
@@ -151,12 +149,9 @@ Route44GiftM:
 	jumpstd GiftMScript
 	end
 
-Route44PackFullM:
-	jumpstd PackFullMScript
-	end
-
 VancePackFull:
 	setevent EVENT_VANCE_CARBOS
+Route44PackFullM:
 	jumpstd PackFullMScript
 	end
 
@@ -253,13 +248,10 @@ TrainerFisherWilton1:
 
 .PokeBall:
 	verbosegiveitemfive POKE_BALL, 5
-	iffalse .Route44PackFullM
+	iffalse Route44PackFullM
 .ItemReceived:
 	clearflag ENGINE_WILTON_HAS_ITEM
 	sjump Route44NumberAcceptedM
-
-.Route44PackFullM:
-	sjump Route44PackFullM
 
 TrainerFisherEdgar:
 	trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
