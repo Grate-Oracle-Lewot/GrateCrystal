@@ -212,12 +212,9 @@ TrainerPokefanfBeverly1:
 .GiveNugget:
 	scall .Gift
 	verbosegiveitem BIG_MUSHROOM
-	iffalse .NoRoom
+	iffalse .PackFull
 	clearflag ENGINE_BEVERLY_HAS_NUGGET
 	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
 
 .NoMarill:
 	writetext PokefanFBeverlyMarillFriendText
