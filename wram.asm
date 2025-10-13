@@ -3077,8 +3077,7 @@ wDailyRematchFlags:: ds 4
 wDailyPhoneItemFlags:: ds 4
 wDailyPhoneTimeOfDayFlags:: ds 4
 wKenjiBreakTimer:: ds 2 ; Kenji
-wYanmaMapGroup:: db
-wYanmaMapNumber:: db
+	ds 2
 wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
@@ -3204,9 +3203,7 @@ wEggMon:: box_struct wEggMon
 wBugContestSecondPartySpecies:: db
 wContestMon:: party_struct wContestMon
 
-wDunsparceMapGroup:: db
-wDunsparceMapNumber:: db
-wFishingSwarmFlag:: db
+	ds 3
 
 wRoamMon1:: roam_struct wRoamMon1
 wRoamMon2:: roam_struct wRoamMon2
