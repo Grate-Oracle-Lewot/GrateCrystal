@@ -59,7 +59,9 @@ TrainerFisherTully:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, FISHER, TULLY1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .WantsBattle:
 	scall .Rematch
@@ -116,10 +118,6 @@ TrainerFisherTully:
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
 	end
 
 .NumberDeclined:
