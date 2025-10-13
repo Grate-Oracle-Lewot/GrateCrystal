@@ -47,7 +47,6 @@ Route36SuicuneScript:
 SudowoodoScript:
 	checkitem SQUIRTBOTTLE
 	iftrue .Fight
-
 	waitsfx
 	playsound SFX_SANDSTORM
 	applymovement ROUTE36_SUDOWOODO, SudowoodoShakeMovement
@@ -80,10 +79,6 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	reloadmapafterbattle
 	end
 
-DidntUseSquirtbottleScript:
-	closetext
-	end
-
 DidntCatchSudowoodo:
 	reloadmapafterbattle
 	applymovement ROUTE36_SUDOWOODO, SudowoodoMovement_Flee
@@ -114,7 +109,9 @@ Route36FloriaScript:
 
 .SecondTimeTalking:
 	writetext FloriaText2
+Route36_EndText:
 	waitbutton
+DidntUseSquirtbottleScript:
 	closetext
 	end
 
@@ -126,22 +123,17 @@ Route36RockSmashGuyScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
 	writetext RockSmashGuyText1
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 .ClearedSudowoodo:
 	writetext RockSmashGuyText2
 	promptbutton
 	verbosegiveitem HM_ROCK_SMASH
-	iffalse .NoRoomForTM
+	iffalse DidntUseSquirtbottleScript
 	setevent EVENT_GOT_TM08_ROCK_SMASH
 .AlreadyGotRockSmash:
 	writetext RockSmashGuyText3
-	waitbutton
-.NoRoomForTM:
-	closetext
-	end
+	sjump Route36_EndText
 
 Route36LassScript:
 	faceplayer
@@ -149,15 +141,11 @@ Route36LassScript:
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
 	writetext Route36LassText
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 .ClearedSudowoodo:
 	writetext Route36LassText_ClearedSudowoodo
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 TrainerSchoolboyAlan1:
 	trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script
@@ -187,7 +175,9 @@ TrainerSchoolboyAlan1:
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, ALAN1
 	scall .RegisteredNumber
-	sjump .NumberAccepted
+.NumberAccepted:
+	jumpstd NumberAcceptedMScript
+	end
 
 .ChooseRematch:
 	scall .Rematch
@@ -255,10 +245,6 @@ TrainerSchoolboyAlan1:
 	jumpstd RegisteredNumberMScript
 	end
 
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 	end
@@ -286,9 +272,7 @@ TrainerPsychicMark:
 	endifjustbattled
 	opentext
 	writetext PsychicMarkAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 ArthurScript:
 	faceplayer
@@ -306,25 +290,18 @@ ArthurScript:
 	writetext ArthurGivesGiftText
 	promptbutton
 	verbosegiveitem TWISTEDSPOON
-	iffalse .BagFull
+	iffalse DidntUseSquirtbottleScript
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
 	writetext ArthurGaveGiftText
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 .AlreadyGotStone:
 	writetext ArthurThursdayText
-	waitbutton
-.BagFull:
-	closetext
-	end
+	sjump Route36_EndText
 
 ArthurNotThursdayScript:
 	writetext ArthurNotThursdayText
-	waitbutton
-	closetext
-	end
+	sjump Route36_EndText
 
 Route36Sign:
 	jumptext Route36SignText
