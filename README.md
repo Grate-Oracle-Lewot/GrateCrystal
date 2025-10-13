@@ -400,6 +400,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Short beeping noise for low HP
 - Artificial save delays removed
 - Press Select to view shiny colors in the Pokédex
+- Use Select in the party menu to quickly move Pokémon, similar to items
 - Lucky Number daily instead of weekly
 - Pokémon gender formula modified for stat equity
 - Kurt finishes Apricorn balls quickly
