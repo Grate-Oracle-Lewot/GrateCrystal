@@ -37,6 +37,8 @@ TrainerPokefanmDerek:
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFANM_DEREK
 	opentext
+	checkflag ENGINE_DEREK_READY_FOR_REMATCH
+	iftrue .WantsBattle
 	checkflag ENGINE_DEREK_HAS_NUGGET
 	iftrue .HasNugget
 	checkcellnum PHONE_POKEFANM_DEREK
@@ -59,15 +61,31 @@ TrainerPokefanmDerek:
 	scall .RegisteredNumber
 	sjump .NumberAccepted
 
+.WantsBattle:
+	scall .Rematch
+	winlosstext PokefanmDerekBeatenText, 0
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .LoadFight1
+.LoadFight0:
+	loadtrainer POKEFANM, DEREK1
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_DEREK_READY_FOR_REMATCH
+	end
+
+.LoadFight1:
+	loadtrainer POKEFANM, DEREK2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_DEREK_READY_FOR_REMATCH
+	end
+
 .HasNugget:
 	scall .Gift
 	verbosegiveitem STAR_PIECE
-	iffalse .NoRoom
+	iffalse .PackFull
 	clearflag ENGINE_DEREK_HAS_NUGGET
 	sjump .NumberAccepted
-
-.NoRoom:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
@@ -91,6 +109,10 @@ TrainerPokefanmDerek:
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
+	end
+
+.Rematch:
+	jumpstd RematchMScript
 	end
 
 .Gift:
