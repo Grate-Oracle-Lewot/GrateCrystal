@@ -29,6 +29,29 @@ IrwinPlainBadgeGossipText:
 	line "to be your friend!"
 	done
 
+IrwinFogBadgeGossipText:
+	text "I saw, I heard!"
+
+	para "You beat MORTY of"
+	line "ECRUTEAK GYM!"
+
+	para "Th-that's just"
+	line "incredible!"
+
+	para "I actually went to"
+	line "the GYM's entrance"
+	cont "to cheer you on."
+
+	para "But everyone was"
+	line "floating, and"
+
+	para "there were ghosts"
+	line "all over! So I"
+
+	para "chickened out and"
+	line "took off for home…"
+	done
+
 IrwinJasmineReturnedGossipText:
 	text "Hey, I heard about"
 	line "you!"
@@ -163,60 +186,6 @@ IrwinSnorlaxGossipText:
 
 	para "Did you play a"
 	line "flute to wake it?"
-
-	para "Wow! That's like"
-	line "magic!"
-	done
-
-IrwinMtSilverGossipText:
-	text "I hear rumors"
-	line "about you all over"
-	cont "the place."
-
-	para "It just makes me"
-	line "sigh, <PLAY_G>."
-
-	para "How did you get so"
-	line "strong?"
-
-	para "Go for the world"
-	line "championship now!"
-
-	para "I'll always be"
-	line "cheering you on!"
-	done
-
-IrwinCalledRightAwayText:
-	text "Hehe, I called"
-	line "right away!"
-
-	para "I think we can be"
-	line "good friends!"
-	done
-
-IrwinFogBadgeGossipText:
-	text "I saw, I heard!"
-
-	para "You beat MORTY of"
-	line "ECRUTEAK GYM!"
-
-	para "Th-that's just"
-	line "incredible!"
-
-	para "I actually went to"
-	line "the GYM's entrance"
-
-	para "to cheer you on."
-	line "Did you know that?"
-
-	para "But everyone was"
-	line "floating, and"
-
-	para "there were ghosts"
-	line "all over! So I"
-
-	para "chickened out and"
-	line "took off for home…"
 	done
 
 IrwinMarshBadgeGossipText:
@@ -232,6 +201,29 @@ IrwinMarshBadgeGossipText:
 	line "be!"
 
 	para "You so rock!"
+	done
+
+IrwinMtSilverGossipText:
+	text "I hear rumors"
+	line "about you all over"
+	cont "the place."
+
+	para "It just makes me"
+	line "sigh, <PLAY_G>."
+
+	para "How did you get so"
+	line "strong?"
+
+	para "I'll always be"
+	line "cheering you on!"
+	done
+
+IrwinCalledRightAwayText:
+	text "Hehe, I called"
+	line "right away!"
+
+	para "I think we can be"
+	line "good friends!"
 	done
 
 IrwinYourEscapadesRockText:
@@ -275,7 +267,15 @@ IrwinSoMuchToChatAboutText:
 
 	para "Arrgh, there's so"
 	line "much I want to"
+	cont "chat about!"
+	done
 
-	para "chat about! This"
-	line "is going nowhere!"
+IrwinReminderText:
+	text "I'm waiting, I'm"
+	line "waiting!"
+
+	para "Come battle me on"
+	line "@"
+	text_ram wStringBuffer5
+	text "!"
 	done
