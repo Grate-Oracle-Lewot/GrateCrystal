@@ -238,13 +238,10 @@ TrainerSchoolboyAlan1:
 .GiveFireStone:
 	scall .Gift
 	verbosegiveitem FIRE_STONE
-	iffalse .BagFull
+	iffalse .PackFull
 	clearflag ENGINE_ALAN_HAS_FIRE_STONE
 	setevent EVENT_ALAN_GAVE_FIRE_STONE
 	sjump .NumberAccepted
-
-.BagFull:
-	sjump .PackFull
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
