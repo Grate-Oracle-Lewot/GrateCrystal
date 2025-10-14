@@ -855,7 +855,7 @@ TryEnemyFlee:
 	dec a
 	jr nz, .Stay
 
-	ld a, [wPlayerSubStatus5]
+	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .Stay
 
@@ -872,9 +872,13 @@ TryEnemyFlee:
 	call IsInByteArray
 	jr c, .Flee
 
+	ld a, [wTotalBattleTurns]
+	and a
+	jr z, .Stay
+
 	call BattleRandom
 	ld b, a
-	cp 25 percent + 1
+	cp 10 percent + 1
 	jr nc, .Stay
 
 	push bc
@@ -885,7 +889,7 @@ TryEnemyFlee:
 	jr c, .Flee
 
 	ld a, b
-	cp 10 percent + 1
+	cp 5 percent + 1
 	jr nc, .Stay
 
 	ld a, [wTempEnemyMonSpecies]
