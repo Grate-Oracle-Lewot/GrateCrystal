@@ -1632,9 +1632,9 @@ AI_Smart_UTurn:
 	bit SUBSTATUS_LEECH_SEED, a
 	jr nz, .greatly_encourage
 
-; Only one stage of encouragement if badly poisoned or Mean Looked.
+; Only one stage of encouragement if badly poisoned.
 	ld a, [wEnemySubStatus5]
-	and 1 << SUBSTATUS_TOXIC | 1 << SUBSTATUS_CANT_RUN
+	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 	jr AI_Smart_SwitchMoves
 
@@ -2785,7 +2785,7 @@ AI_Smart_PerishSong:
 	jr c, .no
 
 ; Else, 50% chance to encourage this move if the player can't escape.
-	ld a, [wPlayerSubStatus5]
+	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .yes
 
@@ -3594,7 +3594,7 @@ AI_Smart_StatDown:
 	ret nc
 
 ; Dismiss this move if the player is Mean Looked.
-	ld a, [wPlayerSubStatus5]
+	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .dismiss
 
