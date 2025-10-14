@@ -265,11 +265,6 @@ PokeBallEffect:
 	jp hl
 
 .skip_or_return_from_ball_fn
-	ld a, [wCurItem]
-	cp LEVEL_BALL
-	ld a, b
-	jp z, .skip_hp_calc
-
 	ld a, b
 	ldh [hMultiplicand + 2], a
 
@@ -303,6 +298,14 @@ PokeBallEffect:
 	srl b
 	rr c
 
+	ld a, d
+	and a
+	jr z, .check_cur_low
+	srl d
+	rr e
+	srl b
+	rr c
+.check_cur_low
 	ld a, c
 	and a
 	jr nz, .okay_1
@@ -363,7 +366,6 @@ PokeBallEffect:
 	ld a, $ff
 .max_2
 
-.skip_hp_calc
 	ld b, a
 	ld [wFinalCatchRate], a
 	call Random
