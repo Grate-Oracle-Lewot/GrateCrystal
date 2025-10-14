@@ -1636,6 +1636,11 @@ AI_Smart_UTurn:
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
+
+; Only one stage of encouragement if Mean Looked. (wPlayerSubStatus5 traps enemy, wEnemySubStatus5 traps player.)
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	jr nz, .encourage
 	jr AI_Smart_SwitchMoves
 
 .greatly_encourage
@@ -2784,7 +2789,7 @@ AI_Smart_PerishSong:
 	call AICheckLastEnemyMon
 	jr c, .no
 
-; Else, 50% chance to encourage this move if the player can't escape.
+; Else, 50% chance to encourage this move if the player can't escape. (wEnemySubStatus5 traps player, wPlayerSubStatus5 traps enemy.)
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .yes
@@ -3593,7 +3598,7 @@ AI_Smart_StatDown:
 	cp 2
 	ret nc
 
-; Dismiss this move if the player is Mean Looked.
+; Dismiss this move if the player is Mean Looked. (wEnemySubStatus5 traps player, wPlayerSubStatus5 traps enemy.)
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .dismiss
