@@ -855,7 +855,7 @@ TryEnemyFlee:
 	dec a
 	jr nz, .Stay
 
-	ld a, [wEnemySubStatus5]
+	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .Stay
 
