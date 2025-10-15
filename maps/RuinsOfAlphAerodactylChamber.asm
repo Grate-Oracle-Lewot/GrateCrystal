@@ -13,8 +13,6 @@ RuinsOfAlphAerodactylChamber_MapScripts:
 
 .OpenWall:
 	sdefer .WallOpenScript
-	end
-
 .DummyScene:
 	end
 
