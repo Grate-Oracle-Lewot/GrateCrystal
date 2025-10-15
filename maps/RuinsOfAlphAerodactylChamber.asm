@@ -113,8 +113,8 @@ RuinsOfAlphAerodactylChamberWallPatternText:
 	done
 
 RuinsOfAlphAerodactylChamberWallHoleText:
-	text "There's a big hole"
-	line "in the wall!"
+	text "A secret passage"
+	line "opened!"
 	done
 
 RuinsOfAlphAerodactylChamberAncientReplicaText:
