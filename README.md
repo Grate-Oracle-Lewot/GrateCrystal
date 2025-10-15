@@ -340,6 +340,7 @@ Prize TMs:
 - Several new NPC trades, and some alterations to existing ones
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - When the player crosses map borders, roaming beasts now only change maps 50% of the time, making them potentially easier to ambush
+- Except for roamers, Pokémon with a chance to flee now do so less often, and never do so on the first turn (which ones flee have also been adjusted)
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - Gift Pokémon can be sent to the PC, no longer requiring an empty party slot (with a few exceptions such as the above Dratini, due to unique code)
