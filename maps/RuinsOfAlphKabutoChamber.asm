@@ -17,8 +17,6 @@ RuinsOfAlphKabutoChamber_MapScripts:
 
 .OpenWall:
 	sdefer .WallOpenScript
-	end
-
 .DummyScene:
 	end
 
@@ -206,8 +204,8 @@ RuinsOfAlphKabutoChamberWallPatternText:
 	done
 
 RuinsOfAlphKabutoChamberWallHoleText:
-	text "There's a big hole"
-	line "in the wall!"
+	text "A secret passage"
+	line "opened!"
 	done
 
 RuinsOfAlphKabutoChamberAncientReplicaText:
