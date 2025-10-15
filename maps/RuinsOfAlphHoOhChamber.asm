@@ -14,8 +14,6 @@ RuinsOfAlphHoOhChamber_MapScripts:
 
 .OpenWall:
 	sdefer .WallOpenScript
-	end
-
 .DummyScene:
 	end
 
@@ -114,8 +112,8 @@ RuinsOfAlphHoOhChamberWallPatternText:
 	done
 
 RuinsOfAlphHoOhChamberWallHoleText:
-	text "There's a big hole"
-	line "in the wall!"
+	text "A secret passage"
+	line "opened!"
 	done
 
 RuinsOfAlphHoOhChamberAncientReplicaText:
