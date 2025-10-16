@@ -506,7 +506,7 @@ ENDM
 	map_const WHIRL_ISLAND_B2F,                            10, 18 ;  85
 	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ;  86
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ;  87
-	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ;  88
+	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ;  88
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ;  89
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ;  90
 	map_const MAHOGANY_MART_1F,                             4,  4 ;  91
