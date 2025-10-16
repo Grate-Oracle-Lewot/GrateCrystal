@@ -424,8 +424,8 @@ ENDM
 	map_const MOUNT_MOON_B2F,                              25, 19 ;   3
 	map_const UNDERGROUND_PATH,                             3, 14 ;   4
 	map_const DIGLETTS_CAVE,                               10, 18 ;   5
-	map_const ROCK_TUNNEL_1F,                              15, 18 ;   6
-	map_const ROCK_TUNNEL_B1F,                             15, 18 ;   7
+	map_const ROCK_TUNNEL_1F,                              15, 14 ;   6
+	map_const ROCK_TUNNEL_B1F,                             15, 14 ;   7
 	map_const ROCK_TUNNEL_ZAPDOS_CHAMBER,                  10, 18 ;   8
 	map_const SILPH_CO_2F,                                 15,  9 ;   9
 	map_const SILPH_CO_3F,                                 15,  9 ;  10
