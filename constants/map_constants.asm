@@ -445,7 +445,7 @@ ENDM
 	map_const CERULEAN_CAVE_2F,                            20, 14 ;  24
 	map_const CERULEAN_CAVE_B1F,                           18, 11 ;  25
 	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ;  26
-	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ;  27
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 15 ;  27
 	map_const DARK_CAVE_2F,                                10,  9 ;  28
 	map_const SPROUT_TOWER_1F,                             10,  8 ;  29
 	map_const SPROUT_TOWER_2F,                             10,  8 ;  30
