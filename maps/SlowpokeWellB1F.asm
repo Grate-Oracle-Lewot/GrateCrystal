@@ -35,7 +35,9 @@ TrainerJessieJames1:
 	disappear SLOWPOKEWELLB1F_ROCKET2
 	disappear SLOWPOKEWELLB1F_ROCKET3
 	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
-	pause 15
+	pause 10
+	playsound SFX_RUN
+	waitsfx
 	special FadeInQuickly
 	disappear SLOWPOKEWELLB1F_KURT
 	moveobject SLOWPOKEWELLB1F_KURT, 11, 6
