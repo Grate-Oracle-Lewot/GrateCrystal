@@ -3,7 +3,11 @@
 	db 111,  88,  69,  88,  96,  69
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, PSYCHIC_TYPE ; type
+else
 	db NORMAL, GHOST ; type
+endc
 	db 69 ; catch rate
 	db 169 ; base exp
 	db ELIXER, MAX_ELIXER ; items
