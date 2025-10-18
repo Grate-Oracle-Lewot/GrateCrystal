@@ -3,7 +3,11 @@
 	db 105,  95,  80,  90,  40,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, NORMAL ; type
+else
 	db NORMAL, FIGHTING ; type
+endc
 	db 45 ; catch rate
 	db 175 ; base exp
 	db SCOPE_LENS, LEFTOVERS ; items
