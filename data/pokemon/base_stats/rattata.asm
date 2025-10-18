@@ -3,7 +3,11 @@
 	db  30,  56,  35,  72,  25,  35
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, NORMAL ; type
+else
 	db NORMAL, DARK ; type
+endc
 	db 255 ; catch rate
 	db 57 ; base exp
 	db NO_ITEM, BERRY ; items
