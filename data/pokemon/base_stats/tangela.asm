@@ -3,7 +3,11 @@
 	db  84,  60, 125,  55, 110,  40
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db GRASS, GRASS ; type
+else
 	db GRASS, WATER ; type
+endc
 	db 45 ; catch rate
 	db 188 ; base exp
 	db LEMONADE, ALOE_VERA ; items
