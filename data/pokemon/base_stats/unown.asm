@@ -3,7 +3,11 @@
 	db  42,  72,  84,  84,  72,  96
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+else
 	db CURSE_TYPE, CURSE_TYPE ; type
+endc
 	db 42 ; catch rate
 	db 103 ; base exp
 	db MYSTERYBERRY, TM_HIDDEN_POWER ; items
