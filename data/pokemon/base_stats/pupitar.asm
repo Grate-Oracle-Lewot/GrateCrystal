@@ -3,7 +3,11 @@
 	db  70,  70,  84,  51,  65,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ROCK, GROUND ; type
+else
 	db ROCK, DARK ; type
+endc
 	db 45 ; catch rate
 	db 144 ; base exp
 	db X_DEFEND, IRON ; items
