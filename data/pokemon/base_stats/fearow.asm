@@ -3,7 +3,11 @@
 	db  65,  95,  65, 105,  61,  61
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, FLYING ; type
+else
 	db FLYING, FLYING ; type
+endc
 	db 90 ; catch rate
 	db 162 ; base exp
 	db SHARP_BEAK, SHARP_BEAK ; items
