@@ -3,7 +3,11 @@
 	db  50,  64,  50,  41,  45,  50
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ROCK, GROUND ; type
+else
 	db ROCK, DARK ; type
+endc
 	db 45 ; catch rate
 	db 67 ; base exp
 	db HARD_STONE, BLACKGLASSES ; items
