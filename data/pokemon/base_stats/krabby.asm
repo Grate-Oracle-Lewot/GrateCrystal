@@ -3,7 +3,11 @@
 	db  30, 105,  90,  50,  25,  25
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, WATER ; type
+else
 	db WATER, BUG ; type
+endc
 	db 225 ; catch rate
 	db 115 ; base exp
 	db X_ATTACK, PROTEIN ; items
