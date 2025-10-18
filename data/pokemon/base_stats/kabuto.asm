@@ -3,7 +3,11 @@
 	db  30,  80,  90,  55,  55,  45
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ROCK, WATER ; type
+else
 	db ROCK, BUG ; type
+endc
 	db 45 ; catch rate
 	db 119 ; base exp
 	db KINGS_ROCK, QUICK_CLAW ; items
