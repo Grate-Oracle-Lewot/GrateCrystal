@@ -3,7 +3,11 @@
 	db  85,  73,  70,  67,  74, 115
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+else
 	db PSYCHIC_TYPE, DARK ; type
+endc
 	db 75 ; catch rate
 	db 165 ; base exp
 	db MINT_BERRY, TM_DREAM_EATER ; items
