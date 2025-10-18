@@ -3,7 +3,11 @@
 	db  95, 125,  79,  81,  60, 100
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, FLYING ; type
+else
 	db WATER, DRAGON ; type
+endc
 	db 45 ; catch rate
 	db 214 ; base exp
 	db NO_ITEM, NO_ITEM ; items
