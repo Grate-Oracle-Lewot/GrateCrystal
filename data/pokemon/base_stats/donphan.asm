@@ -3,7 +3,11 @@
 	db 100, 120, 120,  50,  60,  75
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db GROUND, GROUND ; type
+else
 	db NORMAL, GROUND ; type
+endc
 	db 60 ; catch rate
 	db 189 ; base exp
 	db TM_ROLLOUT, LEFTOVERS ; items
