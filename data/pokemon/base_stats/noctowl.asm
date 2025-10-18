@@ -3,7 +3,11 @@
 	db 100,  50,  50,  70,  86,  96
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, FLYING ; type
+else
 	db GHOST, FLYING ; type
+endc
 	db 90 ; catch rate
 	db 162 ; base exp
 	db NOISEMAKER, TM_DREAM_EATER ; items
