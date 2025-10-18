@@ -505,6 +505,8 @@ make startur - Same as previous, but the starters are Abra and Shellder. If you 
 
 make metro - Normal Johto starters, but all player and enemy Pokémon can only use Metronome, and never run out of PP for it. This is accomplished via making Struggle work like Metronome and causing it to trigger even if you still have PP left. As a result, Pokémon still learn moves as they level up, despite being unable to use them; this is done to allow them to learn HM moves for field use. Since this build is already silly and chaotic, I've allowed Metronome to call Thief in it, which it won't do in any other build; however, it can no longer call Spite, Disable, or Encore, since those would no longer do anything.
 
+make bland - Normal Johto starters, but all changes to the type chart and to Pokémon types have been reverted to modern standards. I didn't really want to make this, but some people prefer to play this way. Keep in mind that no changes have been made to learnsets, trainer parties, move types, or dialogue referring to types and matchups; at that point you're asking me to make a whole second hack that's mostly just undoing much of what I've done, which isn't happening. You can always make the rest of those edits yourself.
+
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters. This and the next build are holdovers because I don't know how to properly remove their "hooks" from the code.
 
 make crystal11_vc - The Virtual Console version of Pokémon Crystal, which makes some additional changes on top of the 1.1 version, mostly related to linking with another player or disabling the Game Boy Printer. I recommend you just ignore this build.
@@ -532,10 +534,6 @@ The thing is, there are many types of challenge runs, and I don't want to restri
 # How come turning off battle items doesn't stop the computer from using them?
 
 The whole point of that setting is to make the game harder. Turning off computer items along with yours would be more of a sidegrade. Anyway, both are off in the Battle Tower.
-
-# I've seen hacks that let you choose whether to use the normal Pokémon types and type chart instead of the changed ones. Why not at least have the option?
-
-Because I designed everything around the changes—learnsets, enemy parties, even some of the changes to the type chart itself. If I were to offer that kind of alternate mode, I would feel obligated to redo all that stuff for it, and that's not happening.
 
 # Why no starter build for my favorite Pokémon?
 
