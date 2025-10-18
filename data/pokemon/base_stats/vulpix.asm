@@ -3,7 +3,11 @@
 	db  48,  42,  40,  75,  70,  75
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db FIRE, FIRE ; type
+else
 	db FIRE, ICE ; type
+endc
 	db 190 ; catch rate
 	db 63 ; base exp
 	db BURNT_BERRY, ICE_BERRY ; items
