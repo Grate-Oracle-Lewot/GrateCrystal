@@ -3,7 +3,11 @@
 	db 100,  80,  80,  20, 100, 110
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, PSYCHIC_TYPE ; type
+else
 	db PSYCHIC_TYPE, POISON ; type
+endc
 	db 70 ; catch rate
 	db 165 ; base exp
 	db SLOWPOKETAIL, KINGS_ROCK ; items
