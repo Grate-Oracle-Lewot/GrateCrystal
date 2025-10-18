@@ -64,11 +64,9 @@ HandlePlayerStep:
 	dw .mobile
 	dw .fail
 
-.fail
-	ret
-
 .mobile
 	farcall StubbedTrainerRankings_StepCount
+.fail
 	ret
 
 UpdatePlayerCoords:
