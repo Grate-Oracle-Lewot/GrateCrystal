@@ -3,7 +3,11 @@
 	db  87, 110,  70,  93,  55,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db FIGHTING, FIGHTING ; type
+else
 	db FIGHTING, DARK ; type
+endc
 	db 75 ; catch rate
 	db 159 ; base exp
 	db X_ATTACK, TM_SWAGGER ; items
