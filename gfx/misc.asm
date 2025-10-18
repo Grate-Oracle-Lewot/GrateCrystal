@@ -23,7 +23,7 @@ INCBIN "gfx/credits/theend.2bpp"
 SECTION "Font Inversed", ROMX
 
 FontInversed::
-if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS) || DEF(_METRONOME_ONLY)
+if DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/font_inversed_heart.1bpp"
 else
 INCBIN "gfx/font/font_inversed.1bpp"
