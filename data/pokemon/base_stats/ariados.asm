@@ -3,7 +3,11 @@
 	db  80,  90,  80,  49,  70,  70
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db BUG, POISON ; type
+else
 	db BUG, DARK ; type
+endc
 	db 90 ; catch rate
 	db 142 ; base exp
 	db DUSK_BALL, ANTIVENOM ; items
