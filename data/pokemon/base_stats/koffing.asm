@@ -3,7 +3,11 @@
 	db  40,  65,  95,  35,  60,  45
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db POISON, POISON ; type
+else
 	db POISON, FAIRY ; type
+endc
 	db 190 ; catch rate
 	db 114 ; base exp
 	db SMOKE_BALL, ANTIVENOM ; items
