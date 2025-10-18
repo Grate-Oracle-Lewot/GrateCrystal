@@ -3,7 +3,11 @@
 	db 106, 110,  90, 130, 154,  90
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+else
 	db PSYCHIC_TYPE, FIGHTING ; type
+endc
 	db 5 ; catch rate
 	db 220 ; base exp
 	db X_SPECIAL, TWISTEDSPOON ; items
