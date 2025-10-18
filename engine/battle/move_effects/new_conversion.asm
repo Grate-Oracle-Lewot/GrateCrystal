@@ -146,7 +146,18 @@ BattleCommand_Conversion:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	jr nc, .loop4
-	jr .Finish
+
+	call BattleCommand_SwitchTurn
+	ld a, [hld]
+	ld [wNamedObjectIndex], a
+	predef GetTypeName
+
+; Don't print text if we are currently a monotype. Prevents redundant messages if Conversion 1 and 2 both picked the same type.
+	ld a, [hli]
+	ld b, [hl]
+	cp b
+	ret z
+	jr .Done
 
 .Fail1:
 ; Conversion2 after a failed Conversion1. Only changes second type to retain potential preexisting Conversion1 (or natural STAB).
@@ -203,7 +214,6 @@ BattleCommand_Conversion:
 	cp EFFECTIVE
 	jr nc, .loop5
 
-.Finish:
 	call BattleCommand_SwitchTurn
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
