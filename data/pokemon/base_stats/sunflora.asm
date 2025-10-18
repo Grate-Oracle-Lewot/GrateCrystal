@@ -3,7 +3,11 @@
 	db  84,  84,  64,  19, 155,  84
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db GRASS, GRASS ; type
+else
 	db GRASS, FIRE ; type
+endc
 	db 100 ; catch rate
 	db 156 ; base exp
 	db SUN_STONE, TM_SUNNY_DAY ; items
