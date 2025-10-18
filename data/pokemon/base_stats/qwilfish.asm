@@ -3,7 +3,11 @@
 	db  75, 105,  90,  85,  60,  60
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, POISON ; type
+else
 	db WATER, FIRE ; type
+endc
 	db 45 ; catch rate
 	db 121 ; base exp
 	db TM_SCALD, SODA_POP ; items
