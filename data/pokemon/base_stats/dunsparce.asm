@@ -3,7 +3,11 @@
 	db 113,  85,  75,  52,  75,  70
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, NORMAL ; type
+else
 	db DARK, FAIRY ; type
+endc
 	db 190 ; catch rate
 	db 100 ; base exp
 	db SWAG_BEACON, TM_CURSE ; items
