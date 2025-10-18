@@ -3,7 +3,11 @@
 	db  50,  95, 180,  70,  85,  45
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, ICE ; type
+else
 	db WATER, STEEL ; type
+endc
 	db 60 ; catch rate
 	db 203 ; base exp
 	db PEARL, BIG_PEARL ; items
