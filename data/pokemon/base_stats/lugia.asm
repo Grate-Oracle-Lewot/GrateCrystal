@@ -3,7 +3,11 @@
 	db 106,  90, 130, 110,  90, 154
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db PSYCHIC_TYPE, FLYING ; type
+else
 	db ICE, DRAGON ; type
+endc
 	db 10 ; catch rate
 	db 220 ; base exp
 	db BIG_PEARL, BIG_PEARL ; items
