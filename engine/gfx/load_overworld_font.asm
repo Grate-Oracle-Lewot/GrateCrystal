@@ -9,7 +9,7 @@ LoadOverworldFont::
 	jp Get2bpp
 
 .OverworldFontGFX:
-if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS) || DEF(_METRONOME_ONLY)
+if DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/overworld_heart.2bpp"
 else
 INCBIN "gfx/font/overworld.2bpp"
