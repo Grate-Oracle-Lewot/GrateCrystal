@@ -3,7 +3,11 @@
 	db  50,  60,  50,  37,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db BUG, POISON ; type
+else
 	db BUG, DARK ; type
+endc
 	db 255 ; catch rate
 	db 54 ; base exp
 	db ESCAPE_ROPE, ANTIDOTE ; items
