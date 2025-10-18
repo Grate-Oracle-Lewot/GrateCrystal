@@ -3,7 +3,11 @@
 	db  90,  60,  60,  40,  40,  40
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db GROUND, GROUND ; type
+else
 	db NORMAL, GROUND ; type
+endc
 	db 120 ; catch rate
 	db 124 ; base exp
 	db BERRY, TM_ROLLOUT ; items
