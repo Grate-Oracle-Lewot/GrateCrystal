@@ -3,7 +3,11 @@
 	db  40,  50,  40,  95,  40,  40
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, NORMAL ; type
+else
 	db NORMAL, STEEL ; type
+endc
 	db 255 ; catch rate
 	db 69 ; base exp
 	db NUGGET, AMULET_COIN ; items
