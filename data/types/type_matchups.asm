@@ -1,6 +1,6 @@
 TypeMatchups:
-if DEF(_VANILLA_TYPES)
 	;  attacker,     defender,     *=
+if DEF(_VANILLA_TYPES)
 	db NORMAL,       ROCK,         NOT_VERY_EFFECTIVE
 	db NORMAL,       STEEL,        NOT_VERY_EFFECTIVE
 	db FIRE,         FIRE,         NOT_VERY_EFFECTIVE
@@ -126,7 +126,6 @@ if DEF(_VANILLA_TYPES)
 
 	db -1 ; end
 else
-	;  attacker,     defender,     *=
 	db NORMAL,       ROCK,         NOT_VERY_EFFECTIVE
 	db NORMAL,       STEEL,        NOT_VERY_EFFECTIVE
 	db FIRE,         FIRE,         NOT_VERY_EFFECTIVE
