@@ -3,7 +3,11 @@
 	db  60,  95,  70,  80,  65,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db POISON, POISON ; type
+else
 	db POISON, DARK ; type
+endc
 	db 90 ; catch rate
 	db 147 ; base exp
 	db ANTIDOTE, LUCKY_EGG ; items
