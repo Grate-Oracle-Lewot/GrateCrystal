@@ -3,7 +3,11 @@
 	db  50,  85,  55,  90,  65,  65
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db FIRE, FIRE ; type
+else
 	db FIRE, FAIRY ; type
+endc
 	db 190 ; catch rate
 	db 152 ; base exp
 	db X_SPEED, CHARCOAL ; items
