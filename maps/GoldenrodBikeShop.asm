@@ -68,10 +68,8 @@ BorrowedABicycleText:
 
 GoldenrodBikeShopClerkFirstRateBikesText:
 	text "My BICYCLES are"
-	line "first-rate! You"
-
-	para "can ride them"
-	line "anywhere."
+	line "first-rate! You'll"
+	cont "see for yourself!"
 	done
 
 GoldenrodBikeShopClerkRefusedText:
