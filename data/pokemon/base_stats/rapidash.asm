@@ -3,7 +3,11 @@
 	db  65, 100,  70, 105,  80,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db FIRE, FIRE ; type
+else
 	db FIRE, FAIRY ; type
+endc
 	db 60 ; catch rate
 	db 192 ; base exp
 	db POLKADOT_BOW, CHARCOAL ; items
