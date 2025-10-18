@@ -3,7 +3,11 @@
 	db  86,  76,  86,  95, 116,  56
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db BUG, FLYING ; type
+else
 	db BUG, DRAGON ; type
+endc
 	db 30 ; catch rate
 	db 198 ; base exp
 	db SILVERPOWDER, BRIGHTPOWDER ; items
