@@ -3,7 +3,11 @@
 	db 100,  75,  75,  70,  90, 100
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db WATER, WATER ; type
+else
 	db WATER, GHOST ; type
+endc
 	db 45 ; catch rate
 	db 185 ; base exp
 	db SPELL_TAG, KINGS_ROCK ; items
