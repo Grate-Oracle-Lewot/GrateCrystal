@@ -3,7 +3,11 @@
 	db  88, 100,  67,  75,  95,  70
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, NORMAL ; type
+else
 	db NORMAL, PSYCHIC_TYPE ; type
+endc
 	db 45 ; catch rate
 	db 168 ; base exp
 	db TM_HEADBUTT, NOISEMAKER ; items
