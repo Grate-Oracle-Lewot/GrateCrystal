@@ -3,7 +3,11 @@
 	db  57, 112,  75,  62,  64,  72
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db NORMAL, FLYING ; type
+else
 	db FIGHTING, FLYING ; type
+endc
 	db 45 ; catch rate
 	db 135 ; base exp
 	db STICK, THICK_CLUB ; items
