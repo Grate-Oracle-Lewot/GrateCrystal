@@ -3,7 +3,11 @@
 	db  50,  95,  95,  90,  25, 110
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db FIGHTING, FIGHTING ; type
+else
 	db FIGHTING, FAIRY ; type
+endc
 	db 45 ; catch rate
 	db 142 ; base exp
 	db FOCUS_BAND, BLACKBELT_I ; items
