@@ -3,7 +3,11 @@
 	db  70, 103,  62, 100,  95,  85
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ELECTRIC, ELECTRIC ; type
+else
 	db ELECTRIC, FIGHTING ; type
+endc
 	db 45 ; catch rate
 	db 177 ; base exp
 	db TM_THUNDERPUNCH, TM_THUNDER ; items
