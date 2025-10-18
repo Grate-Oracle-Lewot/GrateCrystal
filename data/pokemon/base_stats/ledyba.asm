@@ -3,7 +3,11 @@
 	db  40,  42,  30,  55,  40,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db BUG, FLYING ; type
+else
 	db BUG, FAIRY ; type
+endc
 	db 255 ; catch rate
 	db 54 ; base exp
 	db STARDUST, STAR_PIECE ; items
