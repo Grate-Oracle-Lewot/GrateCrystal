@@ -3,7 +3,11 @@
 	db  60,  80, 110,  45,  50,  80
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db GROUND, GROUND ; type
+else
 	db GROUND, GHOST ; type
+endc
 	db 75 ; catch rate
 	db 124 ; base exp
 	db THICK_CLUB, HARDHAT ; items
