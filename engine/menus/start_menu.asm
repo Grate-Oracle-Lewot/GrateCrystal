@@ -343,7 +343,6 @@ endr
 	ret nz
 	hlcoord 0, 0
 	lb bc, 1, 8
-	call Textbox
 	jp Textbox
 
 .PrintMenuClock:
