@@ -24,15 +24,15 @@ GoldenrodDeptStoreB1F_MapScripts:
 	iftrue .Layout2
 	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
 	iftrue .Layout3
-	changeblock 10, 8, $0d ; floor
+	changeblock 10, 8, $3f ; chair
 	endcallback
 
 .Layout2:
-	changeblock 4, 10, $0d ; floor
+	changeblock 4, 10, $3f ; chair
 	endcallback
 
 .Layout3:
-	changeblock 10, 12, $0d ; floor
+	changeblock 10, 12, $3e ; chair
 	endcallback
 
 .Unblock:
