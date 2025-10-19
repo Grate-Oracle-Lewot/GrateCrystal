@@ -2,7 +2,8 @@
 	const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET1
 	const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET2
 	const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET3
-	const GOLDENRODUNDERGROUNDWAREHOUSE_ROCKET4
+	const GOLDENRODUNDERGROUNDWAREHOUSE_JESSIE
+	const GOLDENRODUNDERGROUNDWAREHOUSE_JAMES
 	const GOLDENRODUNDERGROUNDWAREHOUSE_GENTLEMAN
 	const GOLDENRODUNDERGROUNDWAREHOUSE_POKE_BALL1
 	const GOLDENRODUNDERGROUNDWAREHOUSE_POKE_BALL2
@@ -67,16 +68,19 @@ TrainerGruntMHyuck2:
 	closetext
 	end
 
-TrainerGruntMGuard:
-	trainer GRUNTM, GRUNTM_GUARD, EVENT_BEAT_ROCKET_GRUNTM_GUARD, GruntMGuardSeenText, GruntMGuardBeatenText, 0, .Script
+TrainerJessieJames2:
+	trainer JESSIE, JAMES2, EVENT_BEAT_JESSIE_JAMES_2, JessieJames2SeenText, JessieJames2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntMGuardAfterBattleText
+	writetext JessieJames2AfterBattleText
 	waitbutton
 	closetext
 	end
+
+GoldenrodUndergroundWarehouseJamesScript:
+	jumptextfaceplayer GoldenrodUndergroundWarehouseJamesText
 
 GoldenrodUndergroundWarehouseDirectorScript:
 	faceplayer
@@ -164,27 +168,55 @@ GruntMHyuck2AfterBattleText:
 	cont "I'll remember you!"
 	done
 
-GruntMGuardSeenText:
-	text "How did you get"
-	line "this far?"
+JessieJames2SeenText:
+	text "JESSIE: You again?"
 
-	para "I guess it can't"
-	line "be helped. I'll"
-	cont "dispose of you."
+	para "Prepare for"
+	line "trouble!"
+
+	para "JAMES: Make it"
+	line "double!"
+
+	para "MEOWTH: You know"
+	line "the rest."
+
+	para "JESSIE: They're"
+	line "using the radio to"
+
+	para "call the boss out"
+	line "of hiding."
+
+	para "JAMES: Which means"
+	line "this is our chance"
+	cont "to impress him!"
+
+	para "JESSIE: It's the"
+	line "end of the line"
+	cont "for you, twerp!"
+
+	para "JAMES: We'll be"
+	line "basement grunts…"
+	cont "nevermore!"
 	done
 
-GruntMGuardBeatenText:
-	text "I got disposed of…"
+JessieJames2BeatenText:
+	text "Looks like TEAM"
+	line "ROCKET's blasting"
+	cont "off again!"
 	done
 
-GruntMGuardAfterBattleText:
-	text "TEAM ROCKET will"
-	line "keep going, wait-"
-	cont "ing for the return"
-	cont "of GIOVANNI."
+JessieJames2AfterBattleText:
+	text "JESSIE: Fine then,"
+	line "go talk to the"
+	cont "DIRECTOR."
 
-	para "We'll do whatever"
-	line "it takes."
+	para "That won't stop"
+	line "our plans!"
+	done
+
+GoldenrodUndergroundWarehouseJamesText:
+	text "JAMES: Shouldn't"
+	line "you be in school?"
 	done
 
 DirectorIntroText:
@@ -251,10 +283,11 @@ GoldenrodUndergroundWarehouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMGuard, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMWare1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntMHyuck2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 18, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMTrickster, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  9,  6, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerJessieJames2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 10,  6, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundWarehouseJamesScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundWarehouseDirectorScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundWarehouseMaxEther, EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_MAX_ETHER
 	object_event 13,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundWarehouseTMSleepTalk, EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_TM_SLEEP_TALK
