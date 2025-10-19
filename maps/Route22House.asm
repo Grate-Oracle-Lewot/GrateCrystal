@@ -207,7 +207,7 @@ Route22HouseJessieScript:
 	writetext Route22HouseJessieBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES2
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -229,7 +229,7 @@ Route22HouseJamesScript:
 	writetext Route22HouseJamesBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES2
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -575,7 +575,8 @@ Route22HouseJamesBeforeText:
 
 Route22HouseJamesAfterText:
 	text "You remind me of"
-	line "that other kid…"
+	line "that kid with the"
+	cont "PIKACHU…"
 
 	para "That's not a good"
 	line "thing."
