@@ -140,6 +140,40 @@ StepHappiness::
 	ret
 
 DayCareStep::
+if DEF(_NO_EXPERIENCE)
+	ld hl, wDayCareMan
+	bit DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
+	ret z
+	ld hl, wStepsToEgg
+	dec [hl]
+	ret nz
+
+	call Random
+	ld [hl], a
+	farcall CheckBreedmonCompatibility
+	ld a, [wBreedingCompatibility]
+	cp 230
+	ld b, 31 percent + 1
+	jr nc, .okay
+	ld a, [wBreedingCompatibility]
+	cp 170
+	ld b, 16 percent
+	jr nc, .okay
+	ld a, [wBreedingCompatibility]
+	cp 110
+	ld b, 12 percent
+	jr nc, .okay
+	ld b, 4 percent
+
+.okay
+	call Random
+	cp b
+	ret nc
+	ld hl, wDayCareMan
+	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
+	set DAYCAREMAN_HAS_EGG_F, [hl]
+	ret
+else
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
 ; No experience gained on Hard Cap setting.
@@ -223,3 +257,4 @@ DayCareStep::
 	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 	set DAYCAREMAN_HAS_EGG_F, [hl]
 	ret
+endc
