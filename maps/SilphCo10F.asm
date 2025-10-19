@@ -1,6 +1,7 @@
 	object_const_def
 	const SILPHCO10F_SCIENTIST
 	const SILPHCO10F_RECEPTIONIST
+	const SILPHCO10F_POKE_BALL
 
 SilphCo10F_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,9 @@ TrainerScientistSuguru:
 
 SilphCo10FReceptionistScript:
 	jumptextfaceplayer SilphCo10FReceptionistText
+
+SilphCo10FXEvade:
+	itemball X_EVADE
 
 SilphCo10FSign:
 	jumptext SilphCo10FSignText
@@ -75,3 +79,4 @@ SilphCo10F_MapEvents:
 	def_object_events
 	object_event 11, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistSuguru, -1
 	object_event  9, 15, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo10FReceptionistScript, -1
+	object_event  4, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo10FSign, EVENT_SILPH_CO_10F_X_EVADE
