@@ -17,13 +17,8 @@ GoldenrodDeptStoreB1F_MapScripts:
 
 .ClearBoxes:
 	checkevent EVENT_RECEIVED_CARD_KEY
-	iftrue .GotCardKey
-	sjump .Continue
-
-.GotCardKey:
+	iffalse .Continue
 	changeblock 16, 4, $0d ; floor
-	sjump .Continue
-
 .Continue:
 	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	iftrue .Layout2
