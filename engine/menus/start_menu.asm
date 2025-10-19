@@ -225,7 +225,7 @@ StartMenu::
 	push hl
 	ld a, [wOptions2]
 	bit LEVEL_CAPS_ON_OFF, a
-	jr z, .LevelCapText
+	jr nz, .LevelCapText
 	ldh a, [hHours]
 	ld b, a
 	ldh a, [hMinutes]
