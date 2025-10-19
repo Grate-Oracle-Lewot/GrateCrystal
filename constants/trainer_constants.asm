@@ -329,7 +329,6 @@ KRIS EQU __trainer_class__
 	const GRUNTM_WARE1
 	const GRUNTM_TRICKSTER
 	const GRUNTM_HYUCK2
-	const GRUNTM_GUARD
 	const GRUNTM_RADIO4
 
 	trainerclass GENTLEMAN ; 20
@@ -751,6 +750,7 @@ KRIS EQU __trainer_class__
 	trainerclass JESSIE ; 47
 	const JAMES1
 	const JAMES2
+	const JAMES3
 
 	trainerclass AEROBONES ; 48
 	const AEROBONES1
