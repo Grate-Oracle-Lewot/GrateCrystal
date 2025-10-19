@@ -7245,6 +7245,9 @@ FinishBattleAnim:
 	ret
 
 GiveExperiencePoints:
+if DEF(_NO_EXPERIENCE)
+	ret
+else
 ; Give experience.
 ; Don't give experience if linked or in the Battle Tower.
 	ld a, [wLinkMode]
@@ -7671,6 +7674,7 @@ GiveExperiencePoints:
 	dec c
 	jr nz, .base_stat_division_loop
 	ret
+endc
 
 BoostExp:
 ; Multiply experience by 1.5x
