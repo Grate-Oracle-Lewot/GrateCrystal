@@ -14,6 +14,9 @@ if DEF(_VANILLA_TYPES)
 	db UNOWN
 	db JIRK
 	db CELEBI
+	db -1 ; end
+; buffers for equal data size
+	db 0, 0, 0, 0, 0
 else
 	db BEEDRILL
 	db VENOMOTH
@@ -34,5 +37,5 @@ else
 	db HO_OH
 	db CELEBI
 	db YANMEGA
-endc
 	db -1 ; end
+endc
