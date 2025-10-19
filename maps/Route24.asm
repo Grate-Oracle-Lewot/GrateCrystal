@@ -27,7 +27,7 @@ Route24JessieScript:
 	writetext Route24JessieSeenText
 	waitbutton
 	closetext
-	winlosstext JessieJames2BeatenText, -1
+	winlosstext JessieJames3BeatenText, -1
 	loadtrainer JESSIE, JAMES3
 	startbattle
 	dontrestartmapmusic
@@ -54,7 +54,7 @@ Route24JamesScript:
 	writetext Route24JamesSeenText
 	waitbutton
 	closetext
-	winlosstext JessieJames2BeatenText, -1
+	winlosstext JessieJames3BeatenText, -1
 	loadtrainer JESSIE, JAMES3
 	startbattle
 	dontrestartmapmusic
@@ -93,7 +93,7 @@ Route24JamesSeenText:
 	cont "made of!"
 	done
 
-JessieJames2BeatenText:
+JessieJames3BeatenText:
 	text "Looks like we're"
 	line "blasting off"
 	cont "agaaaaaiiiin!"
