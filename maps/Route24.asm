@@ -28,7 +28,7 @@ Route24JessieScript:
 	waitbutton
 	closetext
 	winlosstext JessieJames2BeatenText, -1
-	loadtrainer JESSIE, JAMES2
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -55,7 +55,7 @@ Route24JamesScript:
 	waitbutton
 	closetext
 	winlosstext JessieJames2BeatenText, -1
-	loadtrainer JESSIE, JAMES2
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
