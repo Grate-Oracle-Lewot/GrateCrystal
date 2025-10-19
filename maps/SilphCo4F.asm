@@ -1,6 +1,7 @@
 	object_const_def
 	const SILPHCO4F_SCIENTIST
 	const SILPHCO4F_CLERK
+	const SILPHCO4F_POKE_BALL
 
 SilphCo4F_MapScripts:
 	def_scene_scripts
@@ -20,6 +21,9 @@ TrainerScientistHegel:
 
 SilphCo4FClerkScript:
 	jumptextfaceplayer SilphCo4FClerkText
+
+SilphCo4FXSpDefend:
+	itemball X_SP_DEFEND
 
 SilphCo4FSign:
 	jumptext SilphCo4FSignText
@@ -42,13 +46,9 @@ ScientistHegelAfterBattleText:
 	done
 
 SilphCo4FClerkText:
-	text "Sorry, we can't"
-	line "open any of these"
-	cont "shutters for you."
-
-	para "It's all just"
-	line "storage space,"
-	cont "anyway."
+	text "What's inside all"
+	line "of these boxes,"
+	cont "anyway…?"
 	done
 
 SilphCo4FSignText:
@@ -73,4 +73,5 @@ SilphCo4F_MapEvents:
 
 	def_object_events
 	object_event 14,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistHegel, -1
-	object_event  6, 13, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo4FClerkScript, -1
+	object_event  4, 10, SPRITE_CLERK, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo4FClerkScript, -1
+	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo4FXSpDefend, EVENT_SILPH_CO_4F_X_SP_DEFEND
