@@ -503,9 +503,11 @@ make turbid - Normal Johto starters, but the new/beta legendary is replaced with
 
 make startur - Same as previous, but the starters are Abra and Shellder. If you lose to the rival in the first battle, his Shellder will evolve into the beta Pokémon, which is Water/Poison; if you win, it will evolve into Cloyster. The Kadabra/Alakazam that's normally on the rival's team is replaced with a Machoke/Machamp, regardless of which starter you pick.
 
+make noexp - Normal Johto starters, but Pokémon gain no experience from either battling or the Daycare. (Rare Candies and vitamins still work.) This is a particular type of challenge run, and since it was relatively straightforward to implement compared to something like a Nuzlocke, I figured I'd provide the option.
+
 make metro - Normal Johto starters, but all player and enemy Pokémon can only use Metronome, and never run out of PP for it. This is accomplished via making Struggle work like Metronome and causing it to trigger even if you still have PP left. As a result, Pokémon still learn moves as they level up, despite being unable to use them; this is done to allow them to learn HM moves for field use. Since this build is already silly and chaotic, I've allowed Metronome to call Thief in it, which it won't do in any other build; however, it can no longer call Spite, Disable, or Encore, since those would no longer do anything.
 
-make bland - Normal Johto starters, but all changes to the type chart and to Pokémon types have been reverted to modern standards. I didn't really want to make this, but some people prefer to play this way. Keep in mind that no changes have been made to learnsets, trainer parties, move types, or dialogue referring to types and matchups; at that point you're asking me to make a whole second hack that's mostly just undoing much of what I've done, which isn't happening. You can always make the rest of those edits yourself.
+make bland - Normal Johto starters, but all changes to the type chart and to Pokémon types have been reverted to modern standards. I didn't really want to make this, but some people prefer to play this way. Keep in mind that no changes have been made (or unmade, as it were) to stats, learnsets, trainer parties, move types, or dialogue referring to types and matchups; at that point you're asking me to make a whole second hack that's mostly just undoing much of what I've done, which isn't happening. You can always make the rest of those edits yourself.
 
 make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters. This and the next build are holdovers because I don't know how to properly remove their "hooks" from the code.
 
@@ -537,7 +539,7 @@ The whole point of that setting is to make the game harder. Turning off computer
 
 # Why no starter build for my favorite Pokémon?
 
-Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself.
+Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself. (Or it was until all the starter builds cluttered up the Elm's Lab script. Whoops.)
 
 # Can I copy your code?
 
