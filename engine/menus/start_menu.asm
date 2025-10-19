@@ -196,6 +196,9 @@ StartMenu::
 .EmptyDesc:
 	db   "@"
 
+.CapString:
+	db "CAP <EVO_LV>@"
+
 .OpenMenu:
 	ld a, [wMenuSelection]
 	call .GetMenuEmptyTextPointer
@@ -220,32 +223,31 @@ StartMenu::
 	push bc
 	push de
 	push hl
+	ld a, [wOptions2]
+	bit LEVEL_CAPS_ON_OFF, a
+	jr z, .LevelCapText
 	ldh a, [hHours]
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
 	decoord 1, 1
 	farcall PrintHoursMins
-	ld a, [wOptions2]
-	bit LEVEL_CAPS_ON_OFF, a
-	jr z, .DoneClockText
-	hlcoord 1, 4
+	jr .DoneClockText
+.LevelCapText:
+	hlcoord 1, 1
 	ld de, .CapString
 	call PlaceString
 	call GetLevelCap
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; bytes, digits
-	hlcoord 5, 4
+	hlcoord 5, 1
 	call PrintNum
 .DoneClockText:
 	pop hl
 	pop de
 	pop bc
 	ret
-
-.CapString:
-	db "CAP <EVO_LV>@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
@@ -342,11 +344,6 @@ endr
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call Textbox
-	ld a, [wOptions2]
-	bit LEVEL_CAPS_ON_OFF, a
-	ret z
-	hlcoord 0, 3
-	lb bc, 1, 8
 	jp Textbox
 
 .PrintMenuClock:
@@ -401,12 +398,8 @@ StartMenu_Save:
 
 	call BufferScreen
 	farcall SaveMenu
-	jr nc, .saved
+	jr nc, StartMenu_Exit
 	ld a, 0
-	ret
-
-.saved
-	ld a, 1
 	ret
 
 StartMenu_Option:
