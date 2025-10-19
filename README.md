@@ -439,8 +439,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 I've created a bunch of alternate builds of this hack, most of which are for letting you choose from different sets of starters, along with changing the corresponding starters on the rival's team. In all respects other than starters (or whatever else the point of interest is), all of these builds are identical, including the base stats, learnsets, and wild locations of any of the Pokémon involved. That means if you pick Magikarp as your starter, don't expect it to start with usable moves.
 
-Some of these starter groups don't form proper type triangles, and as a result, sometimes the Pokémon that the rival picks in response to yours may not be what you expect. He might even get the same Pokémon as you, or one that wasn't even on the table. Whatever he gets will have customized movesets in later fights, which is the main thing that makes these builds different than just editing the disassembly yourself.
-
 When you follow the (admittedly confusing) instructions in INSTALL.md to build the ROM, you'll eventually come to a point where you're supposed to type "make" in order to start the process. With the unedited version of Pokémon Crystal, "make" alone will only build a single ROM, but for GrateCrystal, it will make all of the different builds at once, all in the same folder. Each of these ROMs can have separate save files, so there are no technical issues with storing all of them together, but if you only want to build one or a few, use the extra words after "make" listed below to build one version at a time.
 
 make grate - The normal ROM, with the normal Johto starters: Chikorita, Cyndaquil, and Totodile.
@@ -531,7 +529,7 @@ Along with personal preference, I prioritized the ones that could most reasonabl
 
 # Why no Nuzlocke mode?
 
-The thing is, there are many types of challenge runs, and I don't want to restrict the player in one specific way when they might prefer a different ruleset. Add to that the possibility of softlocks and lack of room in the options menu, and it's just not something I'm comfortable doing.
+The thing is, there are many variations, and it would be confusing and tedious to account for them all. Can you catch two of the same species? Does catching different members of the same evolutionary line count as catching the same species? What if you caught an earlier stage and then evolved it before encountering that evolved stage in the wild? What if you're doing a monotype run, so only encounters of that type are catchable? What if you're doing a run based on something more obscure like color? Do you want to make exceptions for shinies? What if no viable encounters can learn a necessary HM move? It just seems better to let the player handle all of that stuff.
 
 # How come turning off battle items doesn't stop the computer from using them?
 
