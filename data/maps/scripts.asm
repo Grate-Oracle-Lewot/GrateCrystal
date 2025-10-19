@@ -180,7 +180,6 @@ INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
-INCLUDE "maps/Route12SuperRodHouse.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -518,3 +517,4 @@ SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
+INCLUDE "maps/Route12SuperRodHouse.asm"
