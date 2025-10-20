@@ -13,7 +13,7 @@ if DEF(_METRONOME_ONLY)
 	db SLEEP_TALK
 	db ENCORE
 	db MIRROR_COAT
-	db STRUGGLE ; -1
+	db -1 ; end
 else
 	db NO_MOVE
 	db COUNTER
@@ -24,7 +24,7 @@ else
 	db DESTINY_BOND
 	db SLEEP_TALK
 	db MIRROR_COAT
-	db STRUGGLE ; -1
+	db -1 ; end
 ; buffers for equal data size with Metronome mode
 	db NO_MOVE
 	db NO_MOVE
