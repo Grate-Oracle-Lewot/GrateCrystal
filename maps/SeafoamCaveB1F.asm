@@ -76,6 +76,9 @@ SeafoamCaveB1FHiddenTimerBall:
 SeafoamCaveB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_MAX_POTION
 
+SeafoamCaveB1FHiddenSilverLeaf:
+	hiddenitem SILVER_LEAF, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_SILVER_LEAF
+
 SeafoamCaveStatueText:
 	text "It's a statue of a"
 	line "FERALIGATR."
@@ -281,6 +284,7 @@ SeafoamCaveB1F_MapEvents:
 	bg_event 16, 23, BGEVENT_READ, SeafoamCaveBed
 	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveB1FHiddenTimerBall
 	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenMaxPotion
+	bg_event 28, 30, BGEVENT_ITEM, SeafoamCaveB1FHiddenSilverLeaf
 
 	def_object_events
 	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBook, -1
