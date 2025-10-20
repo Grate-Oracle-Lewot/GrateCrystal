@@ -83,4 +83,4 @@ ContactMoves::
 	db CRUNCH
 	db EXTREMESPEED
 	db ROCK_SMASH
-	db STRUGGLE ; -1
+	db -1 ; end
