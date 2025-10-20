@@ -359,6 +359,7 @@ CuboneEggMoves:
 	db -1 ; end
 
 LickitungEggMoves:
+	db SUPERSONIC
 	db MAGNITUDE
 	db BODY_SLAM
 	db SKULL_BASH
