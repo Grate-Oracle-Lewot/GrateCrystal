@@ -87,7 +87,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Completing the Inverse/Neutral Battle sidequest unlocks the ability to challenge the Battle Tower in those modes
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
 - A relatively tame amount of tileset additions, e.g. the unused mine cart graphics are now used in some caves
-- Jessie and James now make a few appearances throughout the game (inspiration for how to colorize their Pokémon Yellow battle sprite taken from Polished Crystal)
+- Jessie and James now make several appearances throughout the game (inspiration for how to colorize their Pokémon Yellow battle sprite taken from Polished Crystal)
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
 ## Type chart changes
@@ -282,7 +282,7 @@ Prize TMs:
 - A house on Route 22 where different characters appear, most of whom can be battled once per day
   - Monday: Koga, who now uses Fairy types instead of Poison
   - Tuesday: Officer Jenny; no battle, but she gives out 6 Rare Candies (or 6 PP Ups if you've beaten Red)
-  - Wednesday: Jessie and James
+  - Wednesday: Jessie and James, using the same party as their final story encounter
   - Thursday: A trainer version of Missingno., with three different variants for morning, day, and night
   - Friday: Giovanni, using Ground types plus Persian
   - Saturday: Karen, using Dark types; only appears at night
