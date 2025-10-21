@@ -486,13 +486,12 @@ AcademyNotebookText:
 	done
 
 AcademyNotebookText1:
-	text "Before throwing a"
-	line "# BALL, weaken"
-	cont "the target first."
+	text "Wild #MON are"
+	line "easier to catch if"
 
-	para "A poisoned or"
-	line "burned #MON is"
-	cont "easier to catch."
+	para "their HP is low or"
+	line "if they have a"
+	cont "status condition."
 
 	para "Keep reading?"
 	done
