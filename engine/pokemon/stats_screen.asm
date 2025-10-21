@@ -851,13 +851,13 @@ MetAtString:
 UnknownLevelString:
 	db "HI@"
 
-CaughtTimeStrings
+CaughtTimeStrings:
 	db "MORN@"
 	db "DAY @"
 	db "NITE@"
 
 MetEventString:
-	db "SPECIAL EVENT@"
+	db "FATEFUL EVENT@"
 
 MetGiftString:
 	db "RECEIVED AS GIFT@"
