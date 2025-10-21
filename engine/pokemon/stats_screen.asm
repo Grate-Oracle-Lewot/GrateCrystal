@@ -744,15 +744,13 @@ LoadBluePage:
 
 LoadOrangePage:
 ; Print DVs
-	ld de, DVGenesString
-	hlcoord 7, 9
-	call PlaceString
-	ld de, HiddenPowerTypeString
-	hlcoord 1, 15
-	call PlaceString
 	predef PrintTempMonDVs
 
 ; Print Hidden Power type
+	ld de, HiddenPowerTypeString
+	hlcoord 1, 10
+	call PlaceString
+
 	ld hl, wTempMonDVs
 	ld a, [hl]
 	and %0011
@@ -770,20 +768,99 @@ LoadOrangePage:
 	add b
 	inc a
 	cp UNUSED_TYPES
-	jr c, .done
+	jr c, .done1
 	add UNUSED_TYPES_END - UNUSED_TYPES
-.done
+.done1
 	ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
-	hlcoord 1, 16
+	hlcoord 1, 13
+	call PlaceString
+
+; Print caught level
+	ld de, MetAtString
+	hlcoord 1, 15
+	call PlaceString
+	; Limited to between 1 and 63 since it's a 6-bit quantity.
+	ld a, [wTempMonCaughtLevel]
+	and CAUGHT_LEVEL_MASK
+	jr z, .unknown_level
+	cp CAUGHT_EGG_LEVEL ; egg marker value
+	jr nz, .print
+	ld a, EGG_LEVEL ; egg hatch level
+.print
+	ld [wTextDecimalByte], a
+	hlcoord 7, 15
+	ld de, wTextDecimalByte
+	lb bc, PRINTNUM_LEFTALIGN | 1, 3
+	call PrintNum
+	jr .done2
+
+.unknown_level
+	ld de, UnknownLevelString
+	hlcoord 7, 15
+	call PlaceString
+.done2
+
+; Print caught time (MORN, DAY, NITE)
+	ld a, [wTempMonCaughtTime]
+	and CAUGHT_TIME_MASK
+	jr z, .done3
+	rlca
+	rlca
+	dec a
+	ld hl, CaughtTimeStrings
+	call GetNthString
+	ld d, h
+	ld e, l
+	call CopyName1
+	ld de, wStringBuffer2
+	hlcoord 12, 15
+	call PlaceString
+.done3
+
+; Print caught location
+	ld a, [wTempMonCaughtLocation]
+	and CAUGHT_LOCATION_MASK
+	ret z
+	cp LANDMARK_EVENT
+	jr z, .event
+	cp LANDMARK_GIFT
+	jr z, .gift
+	ld e, a
+	farcall GetLandmarkName
+	ld de, wStringBuffer1
+.string
+	hlcoord 1, 17
 	jp PlaceString
 
-DVGenesString:
-	db "GENES@"
+.event
+	ld de, MetEventString
+	jr .string
+
+.gift
+	ld de, MetGiftString
+	jr .string
 
 HiddenPowerTypeString:
 	db "HIDDEN POWER:@"
+
+MetAtString:
+	db "MET: <EVO_LV>@"
+
+UnknownLevelString:
+	db "HI@"
+
+CaughtTimeStrings
+	db "MORN@"
+	db "DAY @"
+	db "NITE@"
+
+MetEventString:
+	db "SPECIAL EVENT@"
+
+MetGiftString:
+	db "RECEIVED AS GIFT@"
 
 IDNoString:
 	db "<ID>№.@"
