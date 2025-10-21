@@ -829,7 +829,7 @@ MetAtString:
 	db "MET:@"
 
 MetLevelString:
-	db "<EVO_LV@>"
+	db "<EVO_LV>@"
 
 MetUnknownString:
 	db "?????@"
