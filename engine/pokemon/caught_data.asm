@@ -165,6 +165,8 @@ SetCaughtData:
 	dec a
 	ld hl, wPartyMon1CaughtLevel
 	call GetPartyLocation
+	; fallthrough
+
 SetBoxmonOrEggmonCaughtData:
 	ld a, [wTimeOfDay]
 	inc a
@@ -225,6 +227,8 @@ SetGiftPartyMonCaughtData:
 	push bc
 	call GetPartyLocation
 	pop bc
+	; fallthrough
+
 SetGiftMonCaughtData:
 	xor a
 	ld [hli], a
