@@ -743,12 +743,16 @@ LoadBluePage:
 	dw wBufferMonOT
 
 LoadOrangePage:
+	ld de, MetAtString
+	hlcoord 1, 15
+	call PlaceString
+
 ; Print DVs
 	predef PrintTempMonDVs
 
 ; Print Hidden Power type
 	ld de, HiddenPowerTypeString
-	hlcoord 1, 10
+	hlcoord 1, 12
 	call PlaceString
 
 	ld hl, wTempMonDVs
@@ -778,28 +782,18 @@ LoadOrangePage:
 	call PlaceString
 
 ; Print caught level
-	ld de, MetAtString
-	hlcoord 1, 15
-	call PlaceString
 	; Limited to between 1 and 63 since it's a 6-bit quantity.
 	ld a, [wTempMonCaughtLevel]
 	and CAUGHT_LEVEL_MASK
-	jr z, .unknown_level
-	cp CAUGHT_EGG_LEVEL ; egg marker value
-	jr nz, .print
-	ld a, EGG_LEVEL ; egg hatch level
-.print
+	jr z, .done2
+	ld de, MetLevelString
+	hlcoord 10, 15
+	call PlaceString
 	ld [wTextDecimalByte], a
-	hlcoord 7, 15
+	hlcoord 11, 15
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	jr .done2
-
-.unknown_level
-	ld de, UnknownLevelString
-	hlcoord 7, 15
-	call PlaceString
 .done2
 
 ; Print caught time (MORN, DAY, NITE)
@@ -815,7 +809,7 @@ LoadOrangePage:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 12, 15
+	hlcoord 5, 15
 	call PlaceString
 .done3
 
@@ -831,7 +825,7 @@ LoadOrangePage:
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
 .string
-	hlcoord 1, 17
+	hlcoord 1, 16
 	jp PlaceString
 
 .event
@@ -846,10 +840,10 @@ HiddenPowerTypeString:
 	db "HIDDEN POWER:@"
 
 MetAtString:
-	db "MET: <EVO_LV>@"
+	db "MET:@"
 
-UnknownLevelString:
-	db "HI@"
+MetLevelString:
+	db "<EVO_LV@>"
 
 CaughtTimeStrings:
 	db "MORN@"
@@ -860,7 +854,7 @@ MetEventString:
 	db "FATEFUL EVENT@"
 
 MetGiftString:
-	db "RECEIVED AS GIFT@"
+	db "TRADE/GIFT@"
 
 IDNoString:
 	db "<ID>№.@"
