@@ -783,34 +783,17 @@ LoadOrangePage:
 
 ; Print caught level
 	ld a, [wTempMonCaughtLevel]
-	and CAUGHT_LEVEL_MASK
+	and a
 	jr z, .done2
 	ld [wTextDecimalByte], a
 	ld de, MetLevelString
-	hlcoord 12, 15
+	hlcoord 6, 15
 	call PlaceString
-	hlcoord 13, 15
+	hlcoord 7, 15
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
 .done2
-
-; Print caught time (MORN, DAY, NITE)
-	ld a, [wTempMonCaughtTime]
-	and CAUGHT_TIME_MASK
-	jr z, .done3
-	rlca
-	rlca
-	dec a
-	ld hl, CaughtTimeStrings
-	call GetNthString
-	ld d, h
-	ld e, l
-	call CopyName1
-	ld de, wStringBuffer2
-	hlcoord 6, 15
-	call PlaceString
-.done3
 
 ; Print caught location
 	ld a, [wTempMonCaughtLocation]
@@ -848,13 +831,8 @@ MetAtString:
 MetLevelString:
 	db "<EVO_LV@>"
 
-CaughtTimeStrings:
-	db "MORN@"
-	db "DAY @"
-	db "NITE@"
-
 MetUnknownString:
-	db "UNKNOWN@"
+	db "?????@"
 
 MetEventString:
 	db "FATEFUL EVENT@"
