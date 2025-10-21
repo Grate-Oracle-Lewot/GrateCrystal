@@ -785,10 +785,10 @@ LoadOrangePage:
 	ld a, [wTempMonCaughtLevel]
 	and CAUGHT_LEVEL_MASK
 	jr z, .done2
+	ld [wTextDecimalByte], a
 	ld de, MetLevelString
 	hlcoord 12, 15
 	call PlaceString
-	ld [wTextDecimalByte], a
 	hlcoord 13, 15
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
