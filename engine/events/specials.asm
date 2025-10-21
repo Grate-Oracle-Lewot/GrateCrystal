@@ -33,7 +33,42 @@ GameCornerPrizeMonCheckDex:
 	ld a, [wScriptVar]
 	ld [wNamedObjectIndex], a
 	farcall NewPokedexEntry
+	jr_ ExitAllMenus
+
+OverworldTownMap:
+	call FadeToMenu
+	farcall _TownMap
+	jr _ExitAllMenus
+
+UnownPrinter:
+	call FadeToMenu
+	farcall _UnownPrinter
+	jr _ExitAllMenus
+
+DisplayLinkRecord:
+	call FadeToMenu
+	farcall _DisplayLinkRecord
+	; fallthrough
+
+_ExitAllMenus:
 	jp ExitAllMenus
+
+Diploma:
+	call FadeToMenu
+	farcall _Diploma
+	jr _ExitAllMenus
+
+PrintDiploma:
+	call FadeToMenu
+	farcall _PrintDiploma
+	jr _ExitAllMenus
+
+UnownPuzzle:
+	call FadeToMenu
+	farcall _UnownPuzzle
+	ld a, [wSolvedUnownPuzzle]
+	ld [wScriptVar], a
+	jr _ExitAllMenus
 
 UnusedSetSeenMon: ; used now for beasts in Burned Tower
 	ld a, [wScriptVar]
@@ -78,21 +113,6 @@ NameRival:
 NameRater:
 	farcall _NameRater
 	ret
-
-OverworldTownMap:
-	call FadeToMenu
-	farcall _TownMap
-	jp ExitAllMenus
-
-UnownPrinter:
-	call FadeToMenu
-	farcall _UnownPrinter
-	jp ExitAllMenus
-
-DisplayLinkRecord:
-	call FadeToMenu
-	farcall _DisplayLinkRecord
-	jp ExitAllMenus
 
 PlayersHousePC:
 	xor a
@@ -157,13 +177,6 @@ MapRadio:
 	ld e, a
 	farcall PlayRadio
 	ret
-
-UnownPuzzle:
-	call FadeToMenu
-	farcall _UnownPuzzle
-	ld a, [wSolvedUnownPuzzle]
-	ld [wScriptVar], a
-	jp ExitAllMenus
 
 SlotMachine:
 	call CheckCoinsAndCoinCase
@@ -355,12 +368,9 @@ FadeOutMusic:
 	ld [wMusicFade], a
 	ret
 
-Diploma:
-	call FadeToMenu
-	farcall _Diploma
-	jp ExitAllMenus
-
-PrintDiploma:
-	call FadeToMenu
-	farcall _PrintDiploma
-	jp ExitAllMenus
+AideCountCaughtMons:
+	ld hl, wPokedexCaught
+	ld b, wEndPokedexCaught - wPokedexCaught
+	call CountSetBits
+	ld [wScriptVar], a
+	ret
