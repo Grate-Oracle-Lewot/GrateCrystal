@@ -1867,20 +1867,6 @@ SetBitsForBattleRequest:
 	ld [wChosenCableClubRoom], a
 	ret
 
-SetBitsForTimeCapsuleRequest:
-	ld a, USING_INTERNAL_CLOCK
-	ldh [rSB], a
-	xor a
-	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
-	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
-	ldh [rSC], a
-	xor a ; LINK_TIMECAPSULE - 1
-	ld [wPlayerLinkAction], a
-	ld [wChosenCableClubRoom], a
-	ret
-
 WaitForLinkedFriend:
 	ld a, [wPlayerLinkAction]
 	and a
