@@ -168,17 +168,7 @@ SetCaughtData:
 	; fallthrough
 
 SetBoxmonOrEggmonCaughtData:
-	ld a, [wTimeOfDay]
-	inc a
-	rrca
-	rrca
-	ld b, a
 	ld a, [wCurPartyLevel]
-	cp 63
-	jr nc, .valid_range
-	xor a
-.valid_range
-	or b
 	ld [hli], a
 	ld a, [wMapGroup]
 	ld b, a
