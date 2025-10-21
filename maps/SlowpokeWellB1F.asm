@@ -38,6 +38,7 @@ TrainerJessieJames1:
 	pause 10
 	playsound SFX_RUN
 	waitsfx
+	pause 10
 	special FadeInQuickly
 	disappear SLOWPOKEWELLB1F_KURT
 	moveobject SLOWPOKEWELLB1F_KURT, 11, 6
