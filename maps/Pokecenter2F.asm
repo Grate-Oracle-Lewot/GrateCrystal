@@ -14,6 +14,17 @@ Pokecenter2F_MapScripts:
 	scene_script .Scene5 ; SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .OaksAide
+
+.OaksAide:
+	disappear POKECENTER2F_SCIENTIST
+	checkflag ENGINE_POKEDEX
+	iftrue .Appear
+	endcallback
+
+.Appear:
+	appear POKECENTER2F_SCIENTIST
+	endcallback
 
 .Scene0:
 .Scene3:
@@ -1002,4 +1013,4 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_GenderSwap, -1
-	object_event  1,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOaksAideScript, -1
+	object_event  1,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOaksAideScript, EVENT_POKECENTER_2F_OAKS_AIDE
