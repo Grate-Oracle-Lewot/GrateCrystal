@@ -2,6 +2,7 @@
 	const POKECENTER2F_TRADE_RECEPTIONIST
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_GENDER_RECEPTIONIST
+	const POKECENTER2F_SCIENTIST
 
 Pokecenter2F_MapScripts:
 	def_scene_scripts
@@ -15,6 +16,7 @@ Pokecenter2F_MapScripts:
 	def_callbacks
 
 .Scene0:
+.Scene3:
 	end
 
 .Scene1:
@@ -23,10 +25,6 @@ Pokecenter2F_MapScripts:
 
 .Scene2:
 	sdefer Script_LeftCableColosseum
-	end
-
-.Scene3:
-	sdefer Script_LeftTimeCapsule
 	end
 
 .Scene4:
@@ -49,14 +47,6 @@ Script_BattleRoomClosed:
 	faceplayer
 	opentext
 	writetext Text_BattleRoomClosed
-	waitbutton
-	closetext
-	end
-
-Script_TimeCapsuleClosed:
-	faceplayer
-	opentext
-	writetext Text_TimeCapsuleClosed
 	waitbutton
 	closetext
 	end
@@ -451,7 +441,6 @@ Script_WalkOutOfLinkBattleRoom:
 	special UpdatePlayerSprite
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesTwoStepsDown
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-Script_LeftTimeCapsule:
 	end
 
 Pokecenter2FLinkRecordSign:
@@ -459,6 +448,132 @@ Pokecenter2FLinkRecordSign:
 	special DisplayLinkRecord
 	closetext
 	end
+
+Pokecenter2FOaksAideScript:
+	faceplayer
+	opentext
+	writetext Pokecenter2FOaksAide_IntroText
+	promptbutton
+	checkevent EVENT_OAKS_AIDE_CAUGHT_30
+	iftrue .Check60
+	writetext Pokecenter2FOaksAide_Ask30Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 30, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	giveitem HYPER_POTION, 10
+	iffalse .PackFull
+	writetext Pokecenter2FOaksAide_GiveHyperPotionsText
+	playsound SFX_ITEM
+	waitsfx
+	writetext Pokecenter2FOaksAide_PutAwayHyperPotionsText
+	sjump .EndText
+
+.Check60:
+	checkevent EVENT_OAKS_AIDE_CAUGHT_60
+	iftrue .Check100
+	writetext Pokecenter2FOaksAide_Ask60Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 60, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	giveitem FULL_RESTORE, 10
+	iffalse .PackFull
+	writetext Pokecenter2FOaksAide_GiveFullRestoresText
+	playsound SFX_ITEM
+	waitsfx
+	writetext Pokecenter2FOaksAide_PutAwayFullRestoresText
+	sjump .EndText
+
+.Check100:
+	checkevent EVENT_OAKS_AIDE_CAUGHT_100
+	iftrue .Check150
+	writetext Pokecenter2FOaksAide_Ask100Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 100, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	giveitem MAX_REVIVE, 10
+	iffalse .PackFull
+	writetext Pokecenter2FOaksAide_GiveMaxRevivesText
+	playsound SFX_ITEM
+	waitsfx
+	writetext Pokecenter2FOaksAide_PutAwayMaxRevivesText
+	sjump .EndText
+
+.Check150:
+	checkevent EVENT_OAKS_AIDE_CAUGHT_150
+	iftrue .Check200
+	writetext Pokecenter2FOaksAide_Ask150Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 150, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	verbosegiveitem MASTER_BALL
+	iffalse .PackFull
+	sjump .CloseText
+
+.Check200:
+	checkevent EVENT_OAKS_AIDE_CAUGHT_200
+	iftrue .Check250
+	writetext Pokecenter2FOaksAide_Ask200Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 200, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	verbosegiveitem SACRED_ASH
+	iffalse .PackFull
+	sjump .CloseText
+
+.Check250:
+	checkevent EVENT_OAKS_AIDE_CAUGHT_250
+	iftrue .AlreadyDone
+	writetext Pokecenter2FOaksAide_Ask250Text
+	promptbutton
+	writetext Pokecenter2FOaksAide_OutroText
+	promptbutton
+	special AideCountCaughtMons
+	ifless 250, .NotEnough
+	writetext Pokecenter2FOaksAide_HaveEnoughText
+	promptbutton
+	giveitem NUGGET, 99
+	iffalse .PackFull
+	writetext Pokecenter2FOaksAide_GiveNuggetsText
+	playsound SFX_ITEM
+	waitsfx
+	writetext Pokecenter2FOaksAide_PutAwayNuggetsText
+	sjump .EndText
+
+.NotEnough:
+	writetext Pokecenter2FOaksAide_NotEnoughText
+	sjump .EndText
+	
+.AlreadyDone:
+	writetext Pokecenter2FOaksAide_NoMoreRewardsText
+.EndText:
+	waitbutton
+.CloseText:
+	closetext
+	end
+
+.PackFull
+	writetext Pokecenter2FOaksAide_PackFullText
+	sjump .EndText
 
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
 	slow_step UP
@@ -756,10 +871,116 @@ Text_GenderSwapOutro:
 	line "again anytime."
 	done
 
-Text_TimeCapsuleClosed:
-	text "I'm sorry--the"
-	line "TIME CAPSULE is"
-	cont "being adjusted."
+Pokecenter2FOaksAide_IntroText:
+	text "I'm PROF.OAK's aide."
+	done
+
+Pokecenter2FOaksAide_OutroText:
+	text "I'll have a reward"
+	line "for you."
+	done
+
+Pokecenter2FOaksAide_Ask30Text:
+	text "If you catch 30"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_Ask60Text:
+	text "If you catch 60"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_Ask100Text:
+	text "If you catch 100"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_Ask150Text:
+	text "If you catch 150"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_Ask200Text:
+	text "If you catch 200"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_Ask250Text:
+	text "If you catch 250"
+	line "kinds of #MON,"
+	done
+
+Pokecenter2FOaksAide_NotEnoughText:
+	text "Hmm… you don't have"
+	line "enough yet."
+	done
+
+Pokecenter2FOaksAide_HaveEnoughText:
+	text "Ah! You've caught"
+	line "enough!"
+
+	para "Please, take this!"
+	done
+
+Pokecenter2FOaksAide_GiveHyperPotionsText:
+	text "<PLAYER> received"
+	line "HYPER POTION ×10!"
+	done
+
+Pokecenter2FOaksAide_PutAwayHyperPotionsText:
+	text "<PLAYER> put the"
+	line "HYPER POTIONS in"
+	cont "the ITEM POCKET."
+	done
+
+Pokecenter2FOaksAide_GiveFullRestoresText:
+	text "<PLAYER> received"
+	line "FULL RESTORE ×10!"
+	done
+
+Pokecenter2FOaksAide_PutAwayFullRestoresText:
+	text "<PLAYER> put the"
+	line "FULL RESTORES in"
+	cont "the ITEM POCKET."
+	done
+
+Pokecenter2FOaksAide_GiveMaxRevivesText:
+	text "<PLAYER> received"
+	line "MAX REVIVE ×10!"
+	done
+
+Pokecenter2FOaksAide_PutAwayMaxRevivesText:
+	text "<PLAYER> put the"
+	line "MAX REVIVES in the"
+	cont "ITEM POCKET."
+	done
+
+Pokecenter2FOaksAide_GiveNuggetsText:
+	text "<PLAYER> received"
+	line "NUGGET ×99!"
+	done
+
+Pokecenter2FOaksAide_PutAwayNuggetsText:
+	text "<PLAYER> put the"
+	line "NUGGETS in the"
+	cont "ITEM POCKET."
+	done
+
+Pokecenter2FOaksAide_PackFullText:
+	text "Oh, your PACK's"
+	line "full…"
+
+	para "Come back for this"
+	line "reward later."
+	done
+
+Pokecenter2FOaksAide_NoMoreRewardsText:
+	text "You've already got-"
+	line "ten all of the re-"
+	cont "wards I'd prepared."
+
+	para "Good job filling"
+	line "that #DEX!"
 	done
 
 Pokecenter2F_MapEvents:
@@ -781,3 +1002,4 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_GenderSwap, -1
+	object_event  1,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOaksAideScript, -1
