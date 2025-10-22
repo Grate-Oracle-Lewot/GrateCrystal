@@ -481,6 +481,7 @@ Pokecenter2FOaksAideScript:
 	playsound SFX_ITEM
 	waitsfx
 	writetext Pokecenter2FOaksAide_PutAwayHyperPotionsText
+	setevent EVENT_OAKS_AIDE_CAUGHT_30
 	sjump .EndText
 
 .Check60:
@@ -500,6 +501,7 @@ Pokecenter2FOaksAideScript:
 	playsound SFX_ITEM
 	waitsfx
 	writetext Pokecenter2FOaksAide_PutAwayFullRestoresText
+	setevent EVENT_OAKS_AIDE_CAUGHT_60
 	sjump .EndText
 
 .Check100:
@@ -519,6 +521,7 @@ Pokecenter2FOaksAideScript:
 	playsound SFX_ITEM
 	waitsfx
 	writetext Pokecenter2FOaksAide_PutAwayMaxRevivesText
+	setevent EVENT_OAKS_AIDE_CAUGHT_100
 	sjump .EndText
 
 .Check150:
@@ -534,6 +537,7 @@ Pokecenter2FOaksAideScript:
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .PackFull
+	setevent EVENT_OAKS_AIDE_CAUGHT_150
 	sjump .CloseText
 
 .Check200:
@@ -547,8 +551,9 @@ Pokecenter2FOaksAideScript:
 	ifless 200, .NotEnough
 	writetext Pokecenter2FOaksAide_HaveEnoughText
 	promptbutton
-	verbosegiveitem SACRED_ASH
+	verbosegiveitemfive SACRED_ASH, 5
 	iffalse .PackFull
+	setevent EVENT_OAKS_AIDE_CAUGHT_200
 	sjump .CloseText
 
 .Check250:
@@ -568,6 +573,7 @@ Pokecenter2FOaksAideScript:
 	playsound SFX_ITEM
 	waitsfx
 	writetext Pokecenter2FOaksAide_PutAwayNuggetsText
+	setevent EVENT_OAKS_AIDE_CAUGHT_250
 	sjump .EndText
 
 .NotEnough:
