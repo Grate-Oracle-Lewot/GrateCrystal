@@ -33,7 +33,7 @@ GameCornerPrizeMonCheckDex:
 	ld a, [wScriptVar]
 	ld [wNamedObjectIndex], a
 	farcall NewPokedexEntry
-	jr_ ExitAllMenus
+	jr _ExitAllMenus
 
 OverworldTownMap:
 	call FadeToMenu
