@@ -621,7 +621,14 @@
 	const EVENT_BROCK_IN_PEWTER_MUSEUM ; new to Grate Crystal
 	const EVENT_PEWTERMUSEUM1F_PHARMACIST ; new to Grate Crystal
 	const EVENT_PEWTERMUSEUM1F_BROCK ; new to Grate Crystal
-; Unused: next 161 events
+; new to Grate Crystal
+	const EVENT_OAKS_AIDE_CAUGHT_30  ; Hyper Potions
+	const EVENT_OAKS_AIDE_CAUGHT_60  ; Full Restores
+	const EVENT_OAKS_AIDE_CAUGHT_100 ; Max Revives
+	const EVENT_OAKS_AIDE_CAUGHT_150 ; Master Ball
+	const EVENT_OAKS_AIDE_CAUGHT_200 ; Sacred Ash
+	const EVENT_OAKS_AIDE_CAUGHT_250 ; Nuggets
+; Unused: next 155 events
 
 	const_next 1000
 ; Trainer flags
@@ -1465,7 +1472,7 @@
 	const EVENT_BOULDER_IN_ICE_PATH_2A
 	const EVENT_BOULDER_IN_ICE_PATH_3A
 	const EVENT_BOULDER_IN_ICE_PATH_4A
-	const EVENT_MYSTERY_GIFT_DELIVERY_GUY
+	const EVENT_MYSTERY_GIFT_DELIVERY_GUY ; unused in GrateCrystal
 	const EVENT_MET_BILL
 	const EVENT_ECRUTEAK_POKE_CENTER_BILL
 	const EVENT_ROUTE_30_BATTLE
