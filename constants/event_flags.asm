@@ -626,7 +626,7 @@
 	const EVENT_OAKS_AIDE_CAUGHT_60  ; Full Restores
 	const EVENT_OAKS_AIDE_CAUGHT_100 ; Max Revives
 	const EVENT_OAKS_AIDE_CAUGHT_150 ; Master Ball
-	const EVENT_OAKS_AIDE_CAUGHT_200 ; Sacred Ash
+	const EVENT_OAKS_AIDE_CAUGHT_200 ; Sacred Ashes
 	const EVENT_OAKS_AIDE_CAUGHT_250 ; Nuggets
 ; Unused: next 155 events
 
