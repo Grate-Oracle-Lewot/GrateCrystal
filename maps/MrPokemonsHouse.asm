@@ -14,14 +14,11 @@ MrPokemonsHouse_MapScripts:
 .OakBattle:
 	checkevent EVENT_BEAT_BLUE
 	iftrue .AppearOakBattle
-	sjump .NoAppearOakBattle
+	disappear MRPOKEMONSHOUSE_OAK2
+	endcallback
 
 .AppearOakBattle:
 	appear MRPOKEMONSHOUSE_OAK2
-	endcallback
-
-.NoAppearOakBattle:
-	disappear MRPOKEMONSHOUSE_OAK2
 	endcallback
 
 .MeetMrPokemon:
