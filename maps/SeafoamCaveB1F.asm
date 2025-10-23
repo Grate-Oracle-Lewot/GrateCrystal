@@ -193,6 +193,9 @@ SeafoamCaveBookText5:
 	cont "WILD, and DONKEY"
 	cont "KONG 64."
 
+	para "(I haven't played"
+	line "BANANZA yet.)"
+
 	para "Obviously, Gen II"
 	line "#MON is up"
 	cont "there as well."
