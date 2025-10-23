@@ -200,6 +200,12 @@ LewotPhonePikminText:
 	para "super dandori cave"
 	line "thing."
 
+	para "(This was before"
+	line "they added the"
+
+	para "difficulty opti-"
+	line "ons, mind.)"
+
 	para "My record for a"
 	line "similar run in"
 
