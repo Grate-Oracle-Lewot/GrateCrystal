@@ -475,12 +475,12 @@ Pokecenter2FOaksAideScript:
 	ifless 30, .NotEnough
 	writetext Pokecenter2FOaksAide_HaveEnoughText
 	promptbutton
-	giveitem HYPER_POTION, 10
+	giveitem MAX_POTION, 10
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveHyperPotionsText
+	writetext Pokecenter2FOaksAide_GiveMaxPotionsText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwayHyperPotionsText
+	writetext Pokecenter2FOaksAide_PutAwayMaxPotionsText
 	setevent EVENT_OAKS_AIDE_CAUGHT_30
 	sjump .EndText
 
@@ -939,15 +939,15 @@ Pokecenter2FOaksAide_HaveEnoughText:
 	para "Please, take this!"
 	done
 
-Pokecenter2FOaksAide_GiveHyperPotionsText:
+Pokecenter2FOaksAide_GiveMaxPotionsText:
 	text "<PLAYER> received"
-	line "HYPER POTION ×10!"
+	line "MAX POTION ×10!"
 	done
 
-Pokecenter2FOaksAide_PutAwayHyperPotionsText:
+Pokecenter2FOaksAide_PutAwayMaxPotionsText:
 	text "<PLAYER> put the"
-	line "HYPER POTIONS in"
-	cont "the ITEM POCKET."
+	line "MAX POTIONS in the"
+	cont "ITEM POCKET."
 	done
 
 Pokecenter2FOaksAide_GiveFullRestoresText:
