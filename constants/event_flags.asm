@@ -622,7 +622,7 @@
 	const EVENT_PEWTERMUSEUM1F_PHARMACIST ; new to Grate Crystal
 	const EVENT_PEWTERMUSEUM1F_BROCK ; new to Grate Crystal
 ; new to Grate Crystal
-	const EVENT_OAKS_AIDE_CAUGHT_30  ; Hyper Potions
+	const EVENT_OAKS_AIDE_CAUGHT_30  ; Max Potions
 	const EVENT_OAKS_AIDE_CAUGHT_60  ; Full Restores
 	const EVENT_OAKS_AIDE_CAUGHT_100 ; Max Revives
 	const EVENT_OAKS_AIDE_CAUGHT_150 ; Master Ball
