@@ -205,7 +205,7 @@ JasmineCianwoodPharmacyText:
 	line "got sick…"
 
 	para "The #MON CENTER"
-	cont "didn't help…"
+	line "didn't help…"
 
 	para "…I understand"
 	line "that there is a"
