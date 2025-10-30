@@ -115,7 +115,17 @@ OWCutAnimation:
 	ld a, e
 	and 1
 	ld [wJumptableIndex], a
-	call .LoadCutGFX
+
+	call ClearSpriteAnims
+	ld de, CutGrassGFX
+	ld hl, vTiles0 tile FIELDMOVE_GRASS
+	lb bc, BANK(CutGrassGFX), 4
+	call Request2bpp
+	ld de, CutTreeGFX
+	ld hl, vTiles0 tile FIELDMOVE_TREE
+	lb bc, BANK(CutTreeGFX), 4
+	call Request2bpp
+
 	call WaitSFX
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
 	call PlaySFX
@@ -129,17 +139,6 @@ OWCutAnimation:
 	call OWCutJumptable
 	call DelayFrame
 	jr .loop
-
-.LoadCutGFX:
-	call ClearSpriteAnims
-	ld de, CutGrassGFX
-	ld hl, vTiles0 tile FIELDMOVE_GRASS
-	lb bc, BANK(CutGrassGFX), 4
-	call Request2bpp
-	ld de, CutTreeGFX
-	ld hl, vTiles0 tile FIELDMOVE_TREE
-	lb bc, BANK(CutTreeGFX), 4
-	jp Request2bpp
 
 CutTreeGFX:
 INCBIN "gfx/overworld/cut_tree.2bpp"
@@ -194,6 +193,7 @@ Cut_StartWaiting:
 ; Cut_WaitAnimSFX
 	ld hl, wJumptableIndex
 	inc [hl]
+	; fallthrough
 
 Cut_WaitAnimSFX:
 	ld hl, wFrameCounter
@@ -359,10 +359,6 @@ FlyToAnim:
 .exit
 	pop af
 	ld [wVramState], a
-	call .RestorePlayerSprite_DespawnLeaves
-	ret
-
-.RestorePlayerSprite_DespawnLeaves:
 	ld hl, wVirtualOAMSprite00TileID
 	xor a
 	ld c, 4
