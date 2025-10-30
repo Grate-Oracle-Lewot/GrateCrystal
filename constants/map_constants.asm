@@ -155,7 +155,7 @@ ENDM
 	map_const CELADON_MANSION_ROOF,                         4,  5 ; 16
 	map_const CELADON_MANSION_ROOF_HOUSE,                   4,  4 ; 17
 	map_const CELADON_CAFE,                                 6,  4 ; 18
-	map_const ROUTE_7,                                     10,  6 ; 19
+	map_const ROUTE_7,                                     15,  6 ; 19
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
 	map_const ROUTE_16,                                    10,  9 ; 21
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 22
@@ -185,7 +185,7 @@ ENDM
 	endgroup
 
 	newgroup SAFFRON_INNER                                  ; group 11
-	map_const SAFFRON_CITY,                                20, 18 ;  1
+	map_const SAFFRON_CITY,                                25, 18 ;  1
 	map_const SAFFRON_POKECENTER_1F,                        5,  4 ;  2
 	map_const SAFFRON_MART,                                 6,  4 ;  3
 	map_const SAFFRON_GYM,                                 10,  9 ;  4
