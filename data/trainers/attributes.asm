@@ -453,7 +453,7 @@ TrainerClassAttributes:
 
 ; Gambler
 	db DIRE_HIT, NO_ITEM ; items
-	db 30 ; base reward
+	db 0 ; base reward (Gambler gives Coins via map script)
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_SMART | AI_AGGRESSIVE | AI_STATUS | AI_IMMUNITIES
 	dw SWITCH_RARELY | ALWAYS_USE
 
