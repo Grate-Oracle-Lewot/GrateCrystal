@@ -90,7 +90,6 @@ TrainerBirdKeeperJose2:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -129,35 +128,27 @@ TrainerBirdKeeperJose2:
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
-	end
 
 .Rematch:
 	jumpstd RematchMScript
-	end
 
 .Gift:
 	jumpstd GiftMScript
-	end
 
 .PackFull:
 	jumpstd PackFullMScript
-	end
 
 TrainerCooltrainermBlake:
 	trainer COOLTRAINERM, BLAKE, EVENT_BEAT_COOLTRAINERM_BLAKE, CooltrainermBlakeSeenText, CooltrainermBlakeBeatenText, 0, .Script
@@ -209,7 +200,6 @@ TrainerCooltrainerfReena:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -241,27 +231,21 @@ TrainerCooltrainerfReena:
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberFScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullFScript
-	end
 
 .Rematch:
 	jumpstd RematchFScript
-	end
 
 TrainerCooltrainerfMegan:
 	trainer COOLTRAINERF, MEGAN, EVENT_BEAT_COOLTRAINERF_MEGAN, CooltrainerfMeganSeenText, CooltrainerfMeganBeatenText, 0, .Script
