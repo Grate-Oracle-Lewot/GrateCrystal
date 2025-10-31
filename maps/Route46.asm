@@ -51,7 +51,6 @@ TrainerPicnickerErin1:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -102,36 +101,28 @@ TrainerPicnickerErin1:
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberFScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullFScript
-	end
 
 .Rematch:
 	jumpstd RematchFScript
-	end
 
 .PackFull:
 	setevent EVENT_ERIN_CALCIUM
 	jumpstd PackFullFScript
-	end
 
 .RematchGift:
 	jumpstd RematchGiftFScript
-	end
 
 TrainerHikerBailey:
 	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
