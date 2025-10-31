@@ -162,7 +162,6 @@ RadioTower1FRadioCardWomanScript:
 
 .ReceiveItem:
 	jumpstd ReceiveItemScript
-	end
 
 .WrongAnswer:
 	playsound SFX_WRONG
