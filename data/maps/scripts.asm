@@ -480,7 +480,6 @@ SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/Route22House.asm"
 INCLUDE "maps/GoldenrodGameCornerBackroom.asm"
-INCLUDE "maps/DarkCave2F.asm"
 INCLUDE "maps/Route3Pokecenter1F.asm"
 INCLUDE "maps/ViridianForest.asm"
 INCLUDE "maps/SilphCo2F.asm"
@@ -518,3 +517,4 @@ SECTION "Map Scripts 28", ROMX
 INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/DarkCave2F.asm"
