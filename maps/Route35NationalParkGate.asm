@@ -90,6 +90,8 @@ Route35OfficerScriptContest:
 	ifgreater 1, Route35NationalParkGate_LeaveTheRestBehind
 	special ContestDropOffMons
 	clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
+	; fallthrough
+
 Route35NationalParkGate_OkayToProceed:
 	setflag ENGINE_BUG_CONTEST_TIMER
 	special PlayMapMusic
@@ -125,6 +127,7 @@ Route35NationalParkGate_LeaveTheRestBehind:
 	ifless PARTY_LENGTH, Route35NationalParkGate_LessThanFullParty
 	readvar VAR_BOXSPACE
 	ifequal 0, Route35NationalParkGate_NoRoomInBox
+	; fallthrough
 
 Route35NationalParkGate_LessThanFullParty:
 	special CheckFirstMonIsEgg
@@ -145,39 +148,30 @@ Route35NationalParkGate_LessThanFullParty:
 
 Route35NationalParkGate_DeclinedToParticipate:
 	writetext Route35NationalParkGateOfficer1TakePartInFutureText
+Route35NationalParkGate_EndText:
 	waitbutton
 	closetext
 	end
 
 Route35NationalParkGate_DeclinedToLeaveMonsBehind:
 	writetext Route35NationalParkGateOfficer1ChooseMonAndComeBackText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGate_FirstMonIsFainted:
 	writetext Route35NationalParkGateOfficer1FirstMonCantBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGate_NoRoomInBox:
 	writetext Route35NationalParkGateOfficer1MakeRoomText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGate_FirstMonIsEgg:
 	writetext Route35NationalParkGateOfficer1EggAsFirstMonText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGate_ContestIsOver:
 	writetext Route35NationalParkGateOfficer1ContestIsOverText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGate_NoContestToday:
 	jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText
@@ -188,9 +182,7 @@ Route35NationalParkGateOfficerScript:
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route35NationalParkGate_ContestIsOver
 	writetext Route35NationalParkGateOfficer1WeHoldContestsText
-	waitbutton
-	closetext
-	end
+	sjump Route35NationalParkGate_EndText
 
 Route35NationalParkGateYoungsterScript:
 	jumptextfaceplayer Route35NationalParkGateYoungsterText
@@ -200,7 +192,6 @@ BugCatchingContestExplanationSign:
 
 Route35NationalParkGate_GetDayOfWeek:
 	jumpstd DayToTextScript
-	end
 
 Route35NationalParkGatePlayerApproachOfficer1Movement:
 	step DOWN
