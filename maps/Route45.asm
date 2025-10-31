@@ -75,45 +75,35 @@ TrainerBlackbeltKenji:
 
 Route45AskNumber1M:
 	jumpstd AskNumber1MScript
-	end
 
 Route45AskNumber2M:
 	jumpstd AskNumber2MScript
-	end
 
 Route45RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
-	end
 
 Route45NumberAcceptedM:
 	jumpstd NumberAcceptedMScript
-	end
 
 Route45NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
-	end
 
 Route45PhoneFullM:
 	jumpstd PhoneFullMScript
-	end
 
 Route45RematchM:
 	jumpstd RematchMScript
-	end
 
 Route45GiftM:
 	jumpstd GiftMScript
-	end
 
 HikerParryHasIron:
 	setevent EVENT_PARRY_IRON
 Route45PackFullM:
 	jumpstd PackFullMScript
-	end
 
 Route45RematchGiftM:
 	jumpstd RematchGiftMScript
-	end
 
 TrainerHikerErik:
 	trainer HIKER, ERIK, EVENT_BEAT_HIKER_ERIK, HikerErikSeenText, HikerErikBeatenText, 0, .Script
