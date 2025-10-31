@@ -51,82 +51,229 @@ GoldenrodGameCornerBackroomGymGuideScript:
 .AfterScript:
 	jumptextfaceplayer GoldenrodGameCornerBackroomGymGuideAfterText
 
-TrainerGamblerLucky:
-	trainer GAMBLER, LUCKY, EVENT_BEAT_GAMBLER_LUCKY, GamblerLuckySeenText, GamblerLuckyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext GamblerLuckyAfterBattleText
+GamblersNoCoinCaseScript:
+	writetext GamblersNoCoinCaseText
+Gamblers_EndText:
 	waitbutton
 	closetext
 	end
+
+GamblersCoinCaseFullScript:
+	writetext GamblersCoinCaseFullText
+	sjump Gamblers_EndText
+
+GamblersGive500CoinsScript:
+	givecoins 500
+	getstring STRING_BUFFER_4, Gamblers500CoinsString
+	jumpstd ReceiveItemScript
+
+GamblersGive2000CoinsScript:
+	givecoins 2000
+	getstring STRING_BUFFER_4, Gamblers2000CoinsString
+	jumpstd ReceiveItemScript
+
+TrainerGamblerLucky:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_GAMBLER_LUCKY
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerLuckySeenText
+	waitbutton
+	closetext
+	winlosstext GamblerLuckyBeatenText, 0
+	loadtrainer GAMBLER, LUCKY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_LUCKY
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
+	end
+
+.AfterCoins
+	writetext GamblerLuckyAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerHarvey:
-	trainer GAMBLER, HARVEY, EVENT_BEAT_GAMBLER_HARVEY, GamblerHarveySeenText, GamblerHarveyBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerHarveyAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_HARVEY
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerHarveySeenText
 	waitbutton
 	closetext
+	winlosstext GamblerHarveyBeatenText, 0
+	loadtrainer GAMBLER, HARVEY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_HARVEY
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
 	end
+
+.AfterCoins
+	writetext GamblerHarveyAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerAce:
-	trainer GAMBLER, ACE, EVENT_BEAT_GAMBLER_ACE, GamblerAceSeenText, GamblerAceBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerAceAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_ACE
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerAceSeenText
 	waitbutton
 	closetext
+	winlosstext GamblerAceBeatenText, 0
+	loadtrainer GAMBLER, ACE
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_ACE
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
 	end
+
+.AfterCoins
+	writetext GamblerAceAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerHuck:
-	trainer GAMBLER, HUCK, EVENT_BEAT_GAMBLER_HUCK, GamblerHuckSeenText, GamblerHuckBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerHuckAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_HUCK
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerHuckSeenText
 	waitbutton
 	closetext
+	winlosstext GamblerHuckBeatenText, 0
+	loadtrainer GAMBLER, HUCK
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_HUCK
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
 	end
+
+.AfterCoins
+	writetext GamblerHuckAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerThoreau:
-	trainer GAMBLER, THOREAU, EVENT_BEAT_GAMBLER_THOREAU, GamblerThoreauSeenText, GamblerThoreauBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerThoreauAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_THOREAU
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerThoreauSeenText
 	waitbutton
 	closetext
+	winlosstext GamblerThoreauBeatenText, 0
+	loadtrainer GAMBLER, THOREAU
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_THOREAU
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
 	end
+
+.AfterCoins
+	writetext GamblerThoreauAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerPT:
-	trainer GAMBLER, P_T, EVENT_BEAT_GAMBLER_P_T, GamblerPTSeenText, GamblerPTBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerPTAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_P_T
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerPTSeenText
 	waitbutton
 	closetext
+	winlosstext GamblerPTBeatenText, 0
+	loadtrainer GAMBLER, P_T
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_P_T
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
 	end
+
+.AfterCoins
+	writetext GamblerPTAfterBattleText
+	sjump Gamblers_EndText
 
 TrainerGamblerLiuHai:
-	trainer GAMBLER, LIU_HAI, EVENT_BEAT_GAMBLER_LIU_HAI, GamblerLiuHaiSeenText, GamblerLiuHaiBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
-	writetext GamblerLiuHaiAfterBattleText
+	checkevent EVENT_BEAT_GAMBLER_LIU_HAI
+	iftrue .AfterBattle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext GamblerLiuHaiSeenText
 	waitbutton
 	closetext
+	winlosstext GamblerLiuHaiBeatenText, 0
+	loadtrainer GAMBLER, LIU_HAI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GAMBLER_LIU_HAI
+.AfterBattle
+	checkevent EVENT_GOT_COINS_FROM_GAMBLER_LIU_HAI
+	iftrue .AfterCoins
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	checkcoins MAX_COINS - 2000
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive2000CoinsScript
+	setevent EVENT_GOT_COINS_FROM_GAMBLER_LIU_HAI
 	end
+
+.AfterCoins
+	writetext GamblerLiuHaiAfterBattleText
+	sjump Gamblers_EndText
 
 GoldenrodGameCornerBackroomTrashcan:
 	jumpstd TrashCanScript
@@ -278,6 +425,30 @@ GamblerLiuHaiAfterBattleText:
 	cont "it seems…"
 	done
 
+GamblersNoCoinCaseText:
+	text "Huh? I can't pay"
+	line "you if you don't"
+	cont "have a COIN CASE."
+
+	para "Come back with one"
+	line "to collect your"
+	cont "winnings."
+	done
+
+Gamblers500CoinsString:
+	db "500 COINS@"
+
+Gamblers2000CoinsString:
+	db "2000 COINS@"
+
+GamblersCoinCaseFullText:
+	text "Huh? You don't have"
+	line "enough room in"
+
+	para "your COIN CASE for"
+	line "these winnings."
+	done
+
 GoldenrodGameCornerBackroom_MapEvents:
 	db 0, 0 ; filler
 
@@ -293,10 +464,10 @@ GoldenrodGameCornerBackroom_MapEvents:
 
 	def_object_events
 	object_event  1,  6, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerBackroomGymGuideScript, -1
-	object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerLucky, -1
-	object_event  2,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHarvey, -1
-	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerAce, -1
-	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerHuck, -1
-	object_event  7,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerThoreau, -1
-	object_event  8,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 0, TrainerGamblerPT, -1
-	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerGamblerLiuHai, -1
+	object_event  1,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerLucky, -1
+	object_event  2,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerHarvey, -1
+	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerAce, -1
+	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerHuck, -1
+	object_event  7,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerThoreau, -1
+	object_event  8,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrainerGamblerPT, -1
+	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGamblerLiuHai, -1
