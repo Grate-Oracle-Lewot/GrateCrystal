@@ -44,7 +44,6 @@ TrainerSailorHuey:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -104,36 +103,28 @@ TrainerSailorHuey:
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
-	end
 
 .Rematch:
 	jumpstd RematchMScript
-	end
 
 .PackFull:
 	setevent EVENT_HUEY_PROTEIN
 	jumpstd PackFullMScript
-	end
 
 .RematchGift:
 	jumpstd RematchGiftMScript
-	end
 
 SailorHueySeenText:
 	text "Men of the sea are"
