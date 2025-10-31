@@ -119,45 +119,35 @@ TrainerBirdKeeperVance1:
 
 Route44NumberAcceptedM:
 	jumpstd NumberAcceptedMScript
-	end
 
 Route44AskNumber1M:
 	jumpstd AskNumber1MScript
-	end
 
 Route44AskNumber2M:
 	jumpstd AskNumber2MScript
-	end
 
 Route44RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
-	end
 
 Route44NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
-	end
 
 Route44PhoneFullM:
 	jumpstd PhoneFullMScript
-	end
 
 Route44RematchM:
 	jumpstd RematchMScript
-	end
 
 Route44GiftM:
 	jumpstd GiftMScript
-	end
 
 VancePackFull:
 	setevent EVENT_VANCE_CARBOS
 Route44PackFullM:
 	jumpstd PackFullMScript
-	end
 
 Route44RematchGiftM:
 	jumpstd RematchGiftMScript
-	end
 
 TrainerPsychicPhil:
 	trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
