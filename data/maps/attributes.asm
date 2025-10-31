@@ -153,7 +153,7 @@ ENDM
 	connection east, Route11, ROUTE_11, 0
 
 	map_attributes Route6, ROUTE_6, $0f, NORTH | SOUTH
-	connection north, SaffronCity, SAFFRON_CITY, -5
+	connection north, SaffronCity, SAFFRON_CITY, -10
 	connection south, VermilionCity, VERMILION_CITY, -5
 
 	map_attributes Route11, ROUTE_11, $0f, WEST | EAST
@@ -215,13 +215,13 @@ ENDM
 	connection east, FuchsiaCity, FUCHSIA_CITY, -7
 
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | EAST
-	connection north, Route5, ROUTE_5, 5
-	connection south, Route6, ROUTE_6, 5
+	connection north, Route5, ROUTE_5, 10
+	connection south, Route6, ROUTE_6, 10
 	connection east, Route8, ROUTE_8, 9
 
 	map_attributes Route5, ROUTE_5, $0f, NORTH | SOUTH
 	connection north, CeruleanCity, CERULEAN_CITY, -5
-	connection south, SaffronCity, SAFFRON_CITY, -5
+	connection south, SaffronCity, SAFFRON_CITY, -10
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0
