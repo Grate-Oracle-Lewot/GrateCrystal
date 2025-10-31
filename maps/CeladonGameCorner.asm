@@ -71,7 +71,6 @@ CeladonGameCornerFisherScript:
 
 .GiveCoins:
 	jumpstd ReceiveItemScript
-	end
 
 .coinname
 	db "19 COINS@"
