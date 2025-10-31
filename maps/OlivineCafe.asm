@@ -1,35 +1,35 @@
 	object_const_def
-	const OLIVINECAFE_SAILOR1
-	const OLIVINECAFE_FISHING_GURU
-	const OLIVINECAFE_SAILOR2
+	const OLIVINECAFE_SAGE
+	const OLIVINECAFE_COOK
+	const OLIVINECAFE_SAILOR
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-OlivineCafeStrengthSailorScript:
+OlivineCafeSageScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HM04_STRENGTH
 	iftrue .GotStrength
-	writetext OlivineCafeStrengthSailorText
+	writetext OlivineCafeSageText
 	promptbutton
 	verbosegiveitem HM_STRENGTH
 	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
-	writetext OlivineCafeStrengthSailorText_GotStrength
+	writetext OlivineCafeSageText_GotStrength
 	waitbutton
 	closetext
 	end
 
-OlivineCafeFishingGuruScript:
-	jumptextfaceplayer OlivineCafeFishingGuruText
+OlivineCafeChefScript:
+	jumptextfaceplayer OlivineCafeChefText
 
 OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
 
-OlivineCafeStrengthSailorText:
+OlivineCafeSageText:
 	text "A long time ago in"
 	line "a galaxy far, far"
 	cont "away…"
@@ -51,7 +51,7 @@ OlivineCafeStrengthSailorText:
 	cont "same thing!"
 	done
 
-OlivineCafeStrengthSailorText_GotStrength:
+OlivineCafeSageText_GotStrength:
 	text "Using THE FORCE,"
 	line "#MON can move"
 
@@ -60,7 +60,7 @@ OlivineCafeStrengthSailorText_GotStrength:
 	cont "their minds."
 	done
 
-OlivineCafeFishingGuruText:
+OlivineCafeChefText:
 	text "OLIVINE CAFé's"
 	line "menu is chock full"
 
@@ -96,6 +96,6 @@ OlivineCafe_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
-	object_event  7,  3, SPRITE_COOK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
+	object_event  4,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeSageScript, -1
+	object_event  7,  3, SPRITE_COOK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCafeChefScript, -1
 	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
