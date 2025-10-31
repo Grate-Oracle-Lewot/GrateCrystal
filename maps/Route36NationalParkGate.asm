@@ -296,7 +296,6 @@ Route36NationalParkGateOfficerScript:
 
 Route36ParkGate_DayToText:
 	jumpstd DayToTextScript
-	end
 
 BugCatchingContestant1BScript:
 	faceplayer
