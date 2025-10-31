@@ -40,7 +40,6 @@ TrainerHikerAnthony:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .Rematch:
 	scall .RematchStd
@@ -90,27 +89,21 @@ TrainerHikerAnthony:
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
-	end
 
 .RematchStd:
 	jumpstd RematchMScript
-	end
 
 TrainerBeautyBrenda:
 	trainer BEAUTY, BRENDA, EVENT_BEAT_BEAUTY_BRENDA, BeautyBrendaSeenText, BeautyBrendaBeatenText, 0, .AfterScript
