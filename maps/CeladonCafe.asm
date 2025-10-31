@@ -11,12 +11,7 @@ CeladonCafe_MapScripts:
 	def_callbacks
 
 CeladonCafeChef:
-	faceplayer
-	opentext
-	writetext ChefText_Eatathon
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer ChefText_Eatathon
 
 CeladonCafeFisher1:
 	opentext
