@@ -134,7 +134,6 @@ LavRadioTower1FGentlemanScript:
 
 .receiveitem:
 	jumpstd ReceiveItemScript
-	end
 
 .expncardname
 	db "EXPN CARD@"
