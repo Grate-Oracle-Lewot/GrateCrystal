@@ -96,7 +96,7 @@ TrainerGamblerLucky:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerLuckyAfterBattleText
@@ -126,7 +126,7 @@ TrainerGamblerHarvey:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerHarveyAfterBattleText
@@ -156,7 +156,7 @@ TrainerGamblerAce:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerAceAfterBattleText
@@ -186,7 +186,7 @@ TrainerGamblerHuck:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerHuckAfterBattleText
@@ -216,7 +216,7 @@ TrainerGamblerThoreau:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerThoreauAfterBattleText
@@ -246,7 +246,7 @@ TrainerGamblerPT:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive500CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerPTAfterBattleText
@@ -276,7 +276,7 @@ TrainerGamblerLiuHai:
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive2000CoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_LIU_HAI
-	end
+	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerLiuHaiAfterBattleText
