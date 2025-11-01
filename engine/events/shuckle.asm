@@ -5,8 +5,13 @@ GiveShuckle:
 	xor a ; PARTYMON
 	ld [wMonType], a
 
+if DEF(_LITTLE_CUP)
+; Level 25 Larvitar.
+	ld a, LARVITAR
+else
 ; Level 25 Sneasel.
 	ld a, SNEASEL
+endc
 	ld [wCurPartySpecies], a
 	ld a, 25
 	ld [wCurPartyLevel], a
@@ -69,14 +74,22 @@ SpecialShuckleOT:
 	db "MANIA@"
 
 SpecialShuckleNickname:
+if DEF(_LITTLE_CUP)
+	db "LARVEY@"
+else
 	db "SNEEZY@"
+endc
 
 ReturnShuckie:
 	farcall SelectMonFromParty
 	jr c, .refused
 
 	ld a, [wCurPartySpecies]
+if DEF(_LITTLE_CUP)
+	cp LARVITAR
+else
 	cp SNEASEL
+endc
 	jr nz, .DontReturn
 
 	ld a, [wCurPartyMon]
