@@ -159,7 +159,11 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
+if DEF(_LITTLE_CUP)
+	givepoke SPEAROW, 1
+else
 	givepoke AERODACTYL, 1
+endc
 	closetext
 	end
 
@@ -190,7 +194,11 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
+if DEF(_LITTLE_CUP)
+	givepoke KABUTO, 1
+else
 	givepoke KABUTOPS, 1
+endc
 	closetext
 	end
 
@@ -221,7 +229,11 @@ PewterMuseum1FScientistScript:
 	writetext PewterMuseum1FScientistReceiveText
 	playsound SFX_CAUGHT_MON
 	waitsfx
+if DEF(_LITTLE_CUP)
+	givepoke OMANYTE, 1
+else
 	givepoke OMASTAR, 1
+endc
 	closetext
 	end
 
