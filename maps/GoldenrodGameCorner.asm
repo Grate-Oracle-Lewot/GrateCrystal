@@ -239,7 +239,11 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	setval WOBBUFFET
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke ABRA, 20
+else
 	givepoke WOBBUFFET, 20
+endc
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 
@@ -286,7 +290,7 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	waitbutton
 	setval SWINUB
 	special GameCornerPrizeMonCheckDex
-	givepoke ABRA, 15
+	givepoke SWINUB, 15
 	takecoins GOLDENRODGAMECORNER_SWINUB_COINS
 	sjump .loop
 
@@ -307,7 +311,11 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	waitbutton
 	setval GLIGAR
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke SWINUB, 20
+else
 	givepoke GLIGAR, 15
+endc
 	takecoins GOLDENRODGAMECORNER_GLIGAR_COINS
 	sjump .loop
 
@@ -328,7 +336,11 @@ GoldenrodGameCornerPrizeMonVendorWeekendScript:
 	waitbutton
 	setval SKARMORY
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke SWINUB, 20
+else
 	givepoke SKARMORY, 15
+endc
 	takecoins GOLDENRODGAMECORNER_SKARMORY_COINS
 	sjump .loop
 
