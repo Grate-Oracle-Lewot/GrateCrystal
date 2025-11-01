@@ -45,6 +45,8 @@ RocketBaseBossFRight:
 	moveobject TEAMROCKETBASEB2F_ROCKET1, 21, 16
 	moveobject TEAMROCKETBASEB2F_DRAGON, 10, 13
 	moveobject TEAMROCKETBASEB2F_LANCE, 10, 13
+	; fallthrough
+
 RocketBaseBossFScript:
 	appear TEAMROCKETBASEB2F_ROCKET_GIRL
 	appear TEAMROCKETBASEB2F_ROCKET1
@@ -130,6 +132,7 @@ RocketBaseBossFScript:
 	closetext
 	applymovement TEAMROCKETBASEB2F_LANCE, RocketBaseLanceApproachesElectrodesMovement
 	disappear TEAMROCKETBASEB2F_LANCE
+	; fallthrough
 
 RocketBaseCantLeaveScript:
 	applymovement PLAYER, RocketBasePlayerCantLeaveElectrodesMovement
@@ -150,6 +153,8 @@ LanceHealsScript1:
 LanceHealsScript2:
 	turnobject PLAYER, RIGHT
 	turnobject TEAMROCKETBASEB2F_LANCE, LEFT
+	; fallthrough
+
 LanceHealsCommon:
 	opentext
 	writetext LanceHealsText1
@@ -213,7 +218,11 @@ TrainerGruntMBase2_3:
 RocketElectrode1:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE1, 20
+if DEF(_LITTLE_CUP)
+	loadwildmon VOLTORB, 25
+else
 	loadwildmon ELECTRODE, 25
+endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
@@ -233,7 +242,11 @@ RocketElectrode1:
 RocketElectrode2:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE2, 20
+if DEF(_LITTLE_CUP)
+	loadwildmon VOLTORB, 25
+else
 	loadwildmon ELECTRODE, 25
+endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
@@ -253,7 +266,11 @@ RocketElectrode2:
 RocketElectrode3:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE3, 20
+if DEF(_LITTLE_CUP)
+	loadwildmon VOLTORB, 25
+else
 	loadwildmon ELECTRODE, 25
+endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
