@@ -47,6 +47,9 @@ HallOfFame_MapScripts:
 	clearevent EVENT_FOUGHT_ARTICUNO
 	clearevent EVENT_ICE_PATH_ARTICUNO_CHAMBER_ARTICUNO
 .SkipArticuno:
+if DEF(_LITTLE_CUP)
+	end
+else
 	setval ZAPDOS
 	special MonCheck
 	iftrue .SkipZapdos
@@ -86,6 +89,7 @@ HallOfFame_MapScripts:
 .FinishRespawns:
 	halloffame
 	end
+endc
 
 HallOfFame_WalkUpWithLance:
 	step UP
