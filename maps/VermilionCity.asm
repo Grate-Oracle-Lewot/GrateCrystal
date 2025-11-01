@@ -111,7 +111,11 @@ VermilionSnorlax:
 	cry SNORLAX
 	closetext
 	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+if DEF(_LITTLE_CUP)
+	loadwildmon TEDDIURSA, 50
+else
 	loadwildmon SNORLAX, 50
+endc
 	startbattle
 	disappear VERMILIONCITY_BIG_SNORLAX
 	setevent EVENT_FOUGHT_SNORLAX
