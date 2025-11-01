@@ -11,7 +11,7 @@ if DEF(_LITTLE_CUP)
 	db  8, SPINARAK,    5, 20
 	db  6, YANMA,       5, 20
 	db  5, PINECO,      5, 20
-	db  5, PINECO,      1, 20
+	db  5, YANMA,       1, 20
 	db  5, CATERPIE,   10, 20
 	db  5, WEEDLE,     10, 20
 	db  5, SCYTHER,    10, 20
