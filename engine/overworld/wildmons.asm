@@ -523,7 +523,11 @@ InitRoamingRaikou:
 	ret nz
 
 ; species
+if DEF(_LITTLE_CUP)
+	ld a, RATTATA
+else
 	ld a, RAIKOU
+endc
 	ld [wRoamMon1Species], a
 
 ; level
@@ -549,7 +553,11 @@ InitRoamingEntei:
 	ret nz
 
 ; species
+if DEF(_LITTLE_CUP)
+	ld a, RATTATA
+else
 	ld a, ENTEI
+endc
 	ld [wRoamMon2Species], a
 
 ; level
@@ -579,7 +587,11 @@ InitRoamingSuicune:
 
 .slot_one
 ; species
+if DEF(_LITTLE_CUP)
+	ld a, RATTATA
+else
 	ld a, SUICUNE
+endc
 	ld [wRoamMon1Species], a
 
 ; level
@@ -599,7 +611,11 @@ InitRoamingSuicune:
 
 .slot_two
 ; species
+if DEF(_LITTLE_CUP)
+	ld a, RATTATA
+else
 	ld a, SUICUNE
+endc
 	ld [wRoamMon2Species], a
 
 ; level
