@@ -30,7 +30,11 @@ TinTowerHoOh:
 	setevent EVENT_FOUGHT_HO_OH
 	takeitem RAINBOW_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon DRATINI, 64
+else
 	loadwildmon HO_OH, 64
+endc
 	startbattle
 	disappear TINTOWERROOF_HO_OH
 	reloadmapafterbattle
