@@ -31,7 +31,11 @@ Lugia:
 	setevent EVENT_FOUGHT_LUGIA
 	takeitem SILVER_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon DRATINI, 64
+else
 	loadwildmon LUGIA, 64
+endc
 	startbattle
 	disappear WHIRLISLANDLUGIACHAMBER_LUGIA
 	reloadmapafterbattle
