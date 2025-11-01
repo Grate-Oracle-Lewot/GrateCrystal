@@ -21,11 +21,11 @@
 	tilecoll WALL, WALL, WALL, WALL ; 14
 	tilecoll WALL, WALL, WALL, WALL ; 15
 	tilecoll WALL, WALL, WALL, WALL ; 16
-	tilecoll WALL, CUT_TREE, FLOOR, FLOOR ; 17
+	tilecoll WALL, WALL, WALL, WALL ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 18
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 19
-	tilecoll WALL, WALL, WALL, WALL ; 1a
-	tilecoll WALL, WALL, WALL, WALL ; 1b
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 1a
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 1b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 1e
