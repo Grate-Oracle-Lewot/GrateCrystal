@@ -30,7 +30,11 @@ LavRadioTower2FMewtwoScript:
 	setevent EVENT_FOUGHT_MEWTWO
 	clearflag ENGINE_MEWTWO_RADIO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon ABRA, 75
+else
 	loadwildmon MEWTWO, 75
+endc
 	startbattle
 	disappear LAVRADIOTOWER2F_MEWTWO
 	reloadmapafterbattle
