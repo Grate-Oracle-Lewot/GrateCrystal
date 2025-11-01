@@ -503,7 +503,11 @@ IlexForestShrineScript:
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	setevent EVENT_FOUGHT_CELEBI
 	special CelebiShrineEvent
+if DEF(_LITTLE_CUP)
+	loadwildmon HOPPIP, 30
+else
 	loadwildmon CELEBI, 30
+endc
 	startbattle
 	reloadmapafterbattle
 	pause 20
@@ -537,8 +541,13 @@ if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon CELEBI, 100
 else
+if DEF(_LITTLE_CUP)
+	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	loadwildmon GASTLY, 1
+else
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	loadwildmon FINULL, 1
+endc
 endc
 endc
 	startbattle
