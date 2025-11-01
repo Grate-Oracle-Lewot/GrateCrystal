@@ -19,7 +19,11 @@ SafariZoneAerodactylScript:
 	waitsfx
 	cry AERODACTYL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon SPEAROW, 56
+else
 	loadwildmon AERODACTYL, 56
+endc
 	startbattle
 	disappear SAFARIZONE_BIRD1
 	reloadmapafterbattle
@@ -29,7 +33,11 @@ SafariZoneXatuScript:
 	waitsfx
 	cry XATU
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon NATU, 55
+else
 	loadwildmon XATU, 55
+endc
 	startbattle
 	disappear SAFARIZONE_BIRD2
 	reloadmapafterbattle
@@ -40,7 +48,11 @@ SafariZoneLaprasScript:
 	waitsfx
 	cry LAPRAS
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon SEEL, 57
+else
 	loadwildmon LAPRAS, 57
+endc
 	startbattle
 	disappear SAFARIZONE_LAPRAS
 	reloadmapafterbattle
@@ -50,7 +62,11 @@ SafariZoneBlisseyScript:
 	waitsfx
 	cry BLISSEY
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon CHANSEY, 58
+else
 	loadwildmon BLISSEY, 58
+endc
 	startbattle
 	disappear SAFARIZONE_CHANSEY
 	reloadmapafterbattle
@@ -60,7 +76,11 @@ SafariZoneSunfloraScript:
 	waitsfx
 	cry SUNFLORA
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon SUNKERN, 53
+else
 	loadwildmon SUNFLORA, 53
+endc
 	startbattle
 	disappear SAFARIZONE_FLOWER
 	reloadmapafterbattle
@@ -81,7 +101,11 @@ SafariZoneSudowoodoScript:
 	playsound SFX_SANDSTORM
 	applymovement SAFARIZONE_SUDOWOODO, SafariZoneShakeMovement
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon GEODUDE, 54
+else
 	loadwildmon SUDOWOODO, 54
+endc
 	startbattle
 	disappear SAFARIZONE_SUDOWOODO
 	reloadmapafterbattle
