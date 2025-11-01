@@ -16,8 +16,13 @@ TreeMons::
 TreeMonSet_Route:
 ; common
 	db 25, HOOTHOOT,   10
+if DEF(_LITTLE_CUP)
+	db 20, CATERPIE,   10
+	db 20, WEEDLE,     10
+else
 	db 20, METAPOD,    10
 	db 20, KAKUNA,     10
+endc
 	db 15, EXEGGCUTE,  10
 	db 10, EXEGGCUTE,   5
 	db 10, EXEGGCUTE,  15
@@ -36,15 +41,27 @@ TreeMonSet_Town:
 	db 25, SPEAROW,    10
 	db 20, EKANS,      10
 	db 20, SPEAROW,    15
+if DEF(_LITTLE_CUP)
+	db 15, SENTRET,    10
+	db 10, SENTRET,     5
+	db 10, SENTRET,    15
+else
 	db 15, AIPOM,      10
 	db 10, AIPOM,       5
 	db 10, AIPOM,      15
+endc
 	db -1
 ; rare
 	db 25, SPEAROW,    10
+if DEF(_LITTLE_CUP)
+	db 20, PINECO,     10
+	db 20, PINECO,     15
+	db 15, SENTRET,    10
+else
 	db 20, HERACROSS,  10
 	db 20, HERACROSS,  15
 	db 15, AIPOM,      10
+endc
 	db 10, ABRA,        5
 	db 10, ABRA,       15
 	db -1
@@ -53,18 +70,34 @@ TreeMonSet_City:
 ; common
 	db 25, SPEAROW,    20
 	db 20, EKANS,      20
+if DEF(_LITTLE_CUP)
+	db 20, SPEAROW,    30
+	db 15, SENTRET,    20
+	db 10, SENTRET,    10
+	db 10, SENTRET,    30
+else
 	db 20, FEAROW,     30
 	db 15, AIPOM,      20
 	db 10, AIPOM,      10
 	db 10, AIPOM,      30
+endc
 	db -1
 ; rare
+if DEF(_LITTLE_CUP)
+	db 25, SPEAROW,    20
+	db 20, PINECO,     20
+	db 20, PINECO,     30
+	db 15, SENTRET,    20
+	db 10, MANKEY,     20
+	db 10, VENONAT,    30
+else
 	db 25, SPEAROW,    20
 	db 20, HERACROSS,  20
 	db 20, HERACROSS,  30
 	db 15, AIPOM,      20
 	db 10, MANKEY,     20
 	db 10, VENOMOTH,   30
+endc
 	db -1
 
 TreeMonSet_Forest:
@@ -73,31 +106,56 @@ TreeMonSet_Forest:
 	db 20, PINECO,     10
 	db 20, PINECO,      5
 	db 15, MANKEY,     10
+if DEF(_LITTLE_CUP)
+	db 10, CATERPIE,   10
+	db 10, WEEDLE,     10
+else
 	db 10, BUTTERFREE, 10
 	db 10, BEEDRILL,   10
+endc
 	db -1
 ; rare
 	db 25, HOOTHOOT,   10
 	db 20, CATERPIE,   10
 	db 20, WEEDLE,     10
 	db 15, VENONAT,    10
+if DEF(_LITTLE_CUP)
+	db 10, CATERPIE,   10
+	db 10, WEEDLE,     10
+else
 	db 10, METAPOD,    10
 	db 10, KAKUNA,     10
+endc
 	db -1
 
 TreeMonSet_Lake:
 ; common
+if DEF(_LITTLE_CUP)
+	db 25, HOOTHOOT,   20
+	db 20, CATERPIE,   30
+	db 20, WEEDLE,     30
+	db 15, PINECO,     20
+	db 10, VENONAT,    20
+	db 10, HOOTHOOT,   30
+else
 	db 25, HOOTHOOT,   20
 	db 20, BUTTERFREE, 30
 	db 20, BEEDRILL,   30
 	db 15, PINECO,     20
 	db 10, VENONAT,    20
 	db 10, NOCTOWL,    30
+endc
 	db -1
 ; rare
+if DEF(_LITTLE_CUP)
+	db 25, PINECO,     30
+	db 20, LEDYBA,     30
+	db 20, SPINARAK,   30
+else
 	db 25, FORRETRESS, 30
 	db 20, LEDIAN,     30
 	db 20, ARIADOS,    30
+endc
 	db 15, SUNKERN,    20
 	db 10, SUNKERN,    10
 	db 10, SUNKERN,    30
@@ -105,18 +163,32 @@ TreeMonSet_Lake:
 
 TreeMonSet_Kanto:
 ; common
+if DEF(_LITTLE_CUP)
+	db 25, HOOTHOOT,   40
+	db 20, CATERPIE,   40
+	db 20, WEEDLE,     40
+	db 15, MANKEY,     40
+else
 	db 25, NOCTOWL,    40
 	db 20, METAPOD,    40
 	db 20, KAKUNA,     40
 	db 15, PRIMEAPE,   40
+endc
 	db 10, EXEGGCUTE,  30
 	db 10, EXEGGCUTE,  50
 	db -1
 ; rare
+if DEF(_LITTLE_CUP)
+	db 25, PINECO,     40
+	db 20, LEDYBA,     40
+	db 20, SPINARAK,   40
+	db 15, SENTRET,    40
+else
 	db 25, FORRETRESS, 40
 	db 20, LEDIAN,     40
 	db 20, ARIADOS,    40
 	db 15, AIPOM,      40
+endc
 	db 10, EXEGGCUTE,  30
 	db 10, EXEGGCUTE,  50
 	db -1
@@ -137,36 +209,67 @@ RockSmashMons::
 
 ; can have as many entries as you want as long as the % adds up to 100
 RockMonSet_Normal:
+if DEF(_LITTLE_CUP)
+	db 20, GEODUDE,    15
+	db 20, KRABBY,     15
+	db 20, SHELLDER,   15
+	db 20, EKANS,      20
+	db 10, EKANS,      15
+	db 10, GEODUDE,    20
+else
 	db 20, GEODUDE,    15
 	db 20, KRABBY,     15
 	db 20, SHELLDER,   15
 	db 20, ARBOK,      20
 	db 10, DUNSPARCE,  15
 	db 10, SHUCKLE,    20
+endc
 	db -1
 
 RockMonSet_Mid:
+if DEF(_LITTLE_CUP)
+	db 20, GEODUDE,    30
+	db 20, KRABBY,     30
+	db 20, SHELLDER,   30
+	db 20, EKANS,      30
+	db 10, EKANS,      30
+	db 10, GEODUDE,    30
+else
 	db 20, GRAVELER,   30
 	db 20, KINGLER,    30
 	db 20, SHELLDER,   30
 	db 20, ARBOK,      30
 	db 10, DUNSPARCE,  30
 	db 10, SHUCKLE,    30
+endc
 	db -1
 
 RockMonSet_Strong:
+if DEF(_LITTLE_CUP)
+	db 20, GEODUDE,    40
+	db 20, KRABBY,     40
+	db 20, SHELLDER,   40
+	db 20, EKANS,      40
+	db 10, EKANS,      40
+	db 10, GEODUDE,    40
+else
 	db 20, GRAVELER,   40
 	db 20, KINGLER,    40
 	db 20, CLOYSTER,   40
 	db 20, ARBOK,      40
 	db 10, DUNSPARCE,  40
 	db 10, SHUCKLE,    40
+endc
 	db -1
 
 RockMonSet_Hot:
 	db 40, GEODUDE,    15
 	db 40, SLUGMA,     15
+if DEF(_LITTLE_CUP)
+	db 10, EKANS,      20
+else
 	db 10, ARBOK,      20
+endc
 	db  5, CHARMANDER, 10
 	db  5, CYNDAQUIL,  10
 	db -1
@@ -175,7 +278,11 @@ RockMonSet_Cold:
 	db 30, SHELLDER,   25
 	db 25, GEODUDE,    25
 	db 25, SANDSHREW,  25
+if DEF(_LITTLE_CUP)
+	db 10, EKANS,      25
+else
 	db 10, DUNSPARCE,  25
+endc
 	db 10, SWINUB,     25
 	db -1
 
@@ -183,23 +290,44 @@ RockMonSet_Mountain:
 	db 35, GEODUDE,    10
 	db 30, DIGLETT,    10
 	db 25, EKANS,      10
+if DEF(_LITTLE_CUP)
+	db  5, EKANS,      10
+else
 	db  5, DUNSPARCE,  10
+endc
 	db  5, LARVITAR,   10
 	db -1
 
 RockMonSet_Beach:
+if DEF(_LITTLE_CUP)
+	db 25, KRABBY,     20
+	db 25, SHELLDER,   15
+	db 20, GEODUDE,    20
+	db 19, STARYU,     15
+	db 10, EKANS,      20
+	db  1, REMORAID,   25
+else
 	db 25, KRABBY,     20
 	db 25, SHELLDER,   15
 	db 20, SHUCKLE,    20
 	db 19, STARYU,     15
 	db 10, ARBOK,      20
 	db  1, OCTILLERY,  25
+endc
 	db -1
 
 RockMonSet_Gate:
+if DEF(_LITTLE_CUP)
+	db 30, SLOWPOKE,   35
+	db 20, GEODUDE,    35
+	db 20, KRABBY,     35
+	db 20, EKANS,      35
+	db 10, GEODUDE,    35
+else
 	db 30, SLOWPOKE,   35
 	db 20, GRAVELER,   35
 	db 20, KINGLER,    35
 	db 20, ARBOK,      35
 	db 10, SHUCKLE,    35
+endc
 	db -1
