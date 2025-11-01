@@ -108,7 +108,11 @@ TinTower1F_MapScripts:
 	applymovement TINTOWER1F_SUICUNE, TinTower1FSuicuneApproachesMovement
 	cry SUICUNE
 	pause 20
+if DEF(_LITTLE_CUP)
+	loadwildmon RATTATA, 40
+else
 	loadwildmon SUICUNE, 40
+endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	dontrestartmapmusic
