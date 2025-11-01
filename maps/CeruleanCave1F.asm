@@ -12,7 +12,11 @@ CeruleanCave1FElectrodeScript:
 	waitsfx
 	cry ELECTRODE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon VOLTORB, 42
+else
 	loadwildmon ELECTRODE, 42
+endc
 	startbattle
 	disappear CERULEANCAVE1F_POKE_BALL3
 	reloadmapafterbattle
