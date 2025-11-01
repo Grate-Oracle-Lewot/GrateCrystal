@@ -87,6 +87,7 @@ TrainerGamblerLucky:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_LUCKY
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -116,6 +117,7 @@ TrainerGamblerHarvey:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_HARVEY
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -145,6 +147,7 @@ TrainerGamblerAce:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_ACE
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -174,6 +177,7 @@ TrainerGamblerHuck:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_HUCK
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -203,6 +207,7 @@ TrainerGamblerThoreau:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_THOREAU
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -232,6 +237,7 @@ TrainerGamblerPT:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_P_T
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
 	iftrue .AfterCoins
 	checkitem COIN_CASE
@@ -261,6 +267,7 @@ TrainerGamblerLiuHai:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_GAMBLER_LIU_HAI
 .AfterBattle
+	opentext
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_LIU_HAI
 	iftrue .AfterCoins
 	checkitem COIN_CASE
