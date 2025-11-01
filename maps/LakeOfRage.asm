@@ -81,7 +81,11 @@ RedGyarados:
 	pause 15
 	cry GYARADOS
 	closetext
+if DEF(_LITTLE_CUP)
+	loadwildmon MAGIKARP, 35
+else
 	loadwildmon GYARADOS, 35
+endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	ifequal LOSE, .NotBeaten
