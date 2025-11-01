@@ -34,6 +34,8 @@ CeladonGameCornerPrizeRoomTMVendor:
 	checkitem COIN_CASE
 	iffalse CeladonPrizeRoom_NoCoinCase
 	writetext CeladonPrizeRoom_AskWhichPrizeText
+	; fallthrough
+
 CeladonPrizeRoom_tmcounterloop:
 	special DisplayCoinCaseBalance
 	loadmenu CeladonPrizeRoom_TMMenuHeader
@@ -162,7 +164,11 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval PORYGON2
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke PORYGON, 40
+else
 	givepoke PORYGON2, 40
+endc
 	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS
 	sjump .loop
 
@@ -183,7 +189,11 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval TOGETIC
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke TOGEPI, 50
+else
 	givepoke TOGETIC, 50
+endc
 	takecoins CELADONGAMECORNERPRIZEROOM_TOGETIC_COINS
 	setevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
 	setevent EVENT_SHOWED_TOGEPI_TO_ELM
@@ -207,7 +217,11 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval DRAGONITE
 	special GameCornerPrizeMonCheckDex
+if DEF(_LITTLE_CUP)
+	givepoke DRATINI, 40
+else
 	givepoke DRAGONITE, 60
+endc
 	takecoins CELADONGAMECORNERPRIZEROOM_DRAGONITE_COINS
 	sjump .loop
 
