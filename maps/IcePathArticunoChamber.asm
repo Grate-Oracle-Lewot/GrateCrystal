@@ -36,7 +36,11 @@ IcePathArticunoChamberArticunoScript:
 	closetext
 	setevent EVENT_FOUGHT_ARTICUNO
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon PIDGEY, 40
+else
 	loadwildmon ARTICUNO, 40
+endc
 	startbattle
 	disappear ICEPATHARTICUNOCHAMBER_SLOWKING
 	disappear ICEPATHARTICUNOCHAMBER_ARTICUNO
