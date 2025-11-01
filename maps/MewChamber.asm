@@ -26,7 +26,11 @@ MewChamberMewScript:
 	closetext
 	setevent EVENT_FOUGHT_MEW
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon ABRA, 42
+else
 	loadwildmon MEW, 42
+endc
 	startbattle
 	disappear MEWCHAMBER_MEW
 	reloadmapafterbattle
