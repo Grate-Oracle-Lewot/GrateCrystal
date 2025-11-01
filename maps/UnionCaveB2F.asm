@@ -29,7 +29,11 @@ UnionCaveLapras:
 	faceplayer
 	cry AERODACTYL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon SPEAROW, 25
+else
 	loadwildmon AERODACTYL, 25
+endc
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS
 	setflag ENGINE_UNION_CAVE_LAPRAS
