@@ -36,7 +36,11 @@ SilverCaveMoltresChamberMoltresScript:
 	closetext
 	setevent EVENT_FOUGHT_MOLTRES
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon PIDGEY, 60
+else
 	loadwildmon MOLTRES, 60
+endc
 	startbattle
 	disappear SILVERCAVEMOLTRESCHAMBER_SLOWKING
 	disappear SILVERCAVEMOLTRESCHAMBER_MOLTRES
