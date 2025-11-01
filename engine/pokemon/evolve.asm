@@ -24,10 +24,24 @@ EvolveAfterBattle:
 EvolveAfterBattle_MasterLoop:
 	ld hl, wCurPartyMon
 	inc [hl]
-
 	pop hl
-
 	inc hl
+
+if DEF(_LITTLE_CUP)
+	pop de
+	pop bc
+	pop hl
+	ld a, [wLinkMode]
+	and a
+	ret nz
+	ld a, [wBattleMode]
+	and a
+	ret nz
+	ld a, [wMonTriedToEvolve]
+	and a
+	jp nz, RestartMapMusic
+	ret
+else
 	ld a, [hl]
 	cp $ff
 	jp z, .ReturnToMap
@@ -42,7 +56,7 @@ EvolveAfterBattle_MasterLoop:
 	call EvoFlagAction
 	ld a, c
 	and a
-	jp z, EvolveAfterBattle_MasterLoop
+	jr z, EvolveAfterBattle_MasterLoop
 
 	ld a, [wEvolutionOldSpecies]
 	dec a
@@ -373,6 +387,7 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, RestartMapMusic
 	ret
+endc
 
 UpdateSpeciesNameIfNotNicknamed:
 	ld a, [wCurSpecies]
