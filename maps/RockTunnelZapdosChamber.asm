@@ -37,7 +37,11 @@ RockTunnelZapdosChamberZapdosScript:
 	closetext
 	setevent EVENT_FOUGHT_ZAPDOS
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+if DEF(_LITTLE_CUP)
+	loadwildmon PIDGEY, 50
+else
 	loadwildmon ZAPDOS, 50
+endc
 	startbattle
 	disappear ROCKTUNNELZAPDOSCHAMBER_SLOWKING
 	disappear ROCKTUNNELZAPDOSCHAMBER_ZAPDOS
