@@ -18,17 +18,17 @@ VermilionGym_MapScripts:
 .HiddenDoors:
 	checkevent EVENT_VERMILION_GYM_SWITCH_1
 	iftrue .NextCheck
-	changeblock 4, 4, $0e ; blocking machines
+	changeblock 4, 4, $04 ; shelf
 	endcallback
 
 .NextCheck:
 	checkevent EVENT_VERMILION_GYM_SWITCH_2
 	iftrue .OpenPath
-	changeblock 4, 4, $0e ; blocking machines
+	changeblock 4, 4, $04 ; shelf
 	endcallback
 
 .OpenPath
-	changeblock 4, 4, $01 ; walkable floor
+	changeblock 4, 4, $01 ; floor
 	endcallback
 
 VermilionGymSurgeScript:
