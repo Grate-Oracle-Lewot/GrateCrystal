@@ -33,8 +33,13 @@ FishGroups:
 .Shore_Super:
 	db  25 percent,     KRABBY,     40
 	db  50 percent,     time_group 1
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, PHANPY,     40
+	db 100 percent,     KRABBY,     40
+else
 	db  75 percent + 1, DONPHAN,    40
 	db 100 percent,     KINGLER,    40
+endv
 .Shore_Odd:
 	db  25 percent,     time_group 0
 	db  50 percent,     CHINCHOU,   21
@@ -46,18 +51,34 @@ FishGroups:
 	db  75 percent + 1, GEODUDE,     8
 	db 100 percent,     TENTACOOL,   8
 .Ocean_Good:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     MAGIKARP,   19
+else
 	db  25 percent,     CASTAWEIGH, 19
+endc
 	db  50 percent,     TENTACOOL,  19
 	db  75 percent + 1, CHINCHOU,   19
 	db 100 percent,     time_group 2
 .Ocean_Super:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     MAGIKARP,   40
+	db  50 percent,     time_group 3
+	db  75 percent + 1, TENTACOOL,  40
+	db 100 percent,     CHINCHOU,   40
+else
 	db  25 percent,     CASTAWEIGH, 40
 	db  50 percent,     time_group 3
 	db  75 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
+endc
 .Ocean_Odd:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     SLOWPOKE,   28
+	db  50 percent,     SLOWPOKE,   28
+else
 	db  25 percent,     SLOWBRO,    28
 	db  50 percent,     SLOWKING,   28
+endc
 	db  75 percent + 1, OMANYTE,    28
 	db 100 percent,     KABUTO,     28
 
@@ -74,12 +95,21 @@ FishGroups:
 	db  25 percent,     GOLDEEN,    40
 	db  50 percent,     time_group 5
 	db  75 percent + 1, MAGIKARP,   40
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GOLDEEN,    40
+else
 	db 100 percent,     SEAKING,    40
+endc
 .Lake_Odd:
 	db  40 percent,     SLOWPOKE,   23
 	db  80 percent,     PSYDUCK,    23
+if DEF(_LITTLE_CUP)
+	db  90 percent + 1, PSYDUCK,    23
+	db 100 percent,     TOTODILE,   23
+else
 	db  90 percent + 1, FARFETCH_D, 23
 	db 100 percent,     CROCONAW,   23
+endc
 
 .Pond_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -98,8 +128,13 @@ FishGroups:
 .Pond_Odd:
 	db  40 percent,     WOOPER,     21
 	db  80 percent,     PSYDUCK,    21
+if DEF(_LITTLE_CUP)
+	db  90 percent + 1, PSYDUCK,    21
+	db 100 percent,     SQUIRTLE,   21
+else
 	db  90 percent + 1, FARFETCH_D, 21
 	db 100 percent,     WARTORTLE,  21
+endc
 
 .Dratini_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -108,17 +143,32 @@ FishGroups:
 .Dratini_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     MAGIKARP,   21
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, MAGIKARP,   19
+else
 	db  75 percent + 1, GYARADOS,   19
+endc
 	db 100 percent,     time_group 8
 .Dratini_Super:
 	db  25 percent,     MAGIKARP,   40
 	db  50 percent,     time_group 9
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, MAGIKARP,   40
+	db 100 percent,     DRATINI,    40
+else
 	db  75 percent + 1, GYARADOS,   40
 	db 100 percent,     DRAGONAIR,  40
+endc
 .Dratini_Odd:
+if DEF(_LITTLE_CUP)
+	db  50 percent + 1, POLIWAG,    21
+	db  75 percent + 1, DRATINI,    21
+	db 100 percent,     DRATINI,    21
+else
 	db  50 percent + 1, POLITOED,   21
 	db  75 percent + 1, DRATINI,    21
 	db 100 percent,     DRAGONAIR,  21
+endc
 
 .Gyarados_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -135,9 +185,15 @@ FishGroups:
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     MAGIKARP,   37
 .Gyarados_Odd:
+if DEF(_LITTLE_CUP)
+	db  50 percent + 1, MAGIKARP,   19
+	db  75 percent + 1, MAGIKARP,   20
+	db 100 percent,     MAGIKARP,   21
+else
 	db  50 percent + 1, GYARADOS,   19
 	db  75 percent + 1, GYARADOS,   20
 	db 100 percent,     GYARADOS,   21
+endc
 
 .Dratini_2_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -152,31 +208,63 @@ FishGroups:
 	db  25 percent,     MAGIKARP,   40
 	db  50 percent,     time_group 17
 	db  75 percent + 1, MAGIKARP,   42
+if DEF(_LITTLE_CUP)
+	db 100 percent,     DRATINI,    40
+else
 	db 100 percent,     DRAGONAIR,  40
+endc
 .Dratini_2_Odd:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     REMORAID,   23
+	db  50 percent,     MAGIKARP,   23
+	db  75 percent + 1, DRATINI,    23
+	db 100 percent,     DRATINI,    23
+else
 	db  25 percent,     OCTILLERY,  23
 	db  50 percent,     CASTAWEIGH, 23
 	db  75 percent + 1, DRATINI,    23
 	db 100 percent,     DRAGONAIR,  23
+endc
 
 .WhirlIslands_Old:
 	db  50 percent + 1, MAGIKARP,    8
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, MAGIKARP,    8
+else
 	db  75 percent + 1, CASTAWEIGH,  8
+endc
 	db 100 percent,     KRABBY,      8
 .WhirlIslands_Good:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     KRABBY,     19
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, MAGIKARP,   19
+else
 	db  75 percent + 1, CASTAWEIGH, 19
+endc
 	db 100 percent,     time_group 18
 .WhirlIslands_Super:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     KRABBY,     40
+	db  50 percent,     time_group 19
+	db  75 percent + 1, MAGIKARP,   40
+	db 100 percent,     HORSEA,     40
+else
 	db  25 percent,     KINGLER,    40
 	db  50 percent,     time_group 19
 	db  75 percent + 1, CASTAWEIGH, 40
 	db 100 percent,     SEADRA,     40
+endc
 .WhirlIslands_Odd:
+if DEF(_LITTLE_CUP)
+	db  50 percent + 1, SLOWPOKE,   24
+	db  75 percent + 1, MARILL,     21
+	db 100 percent,     SEEL,       21
+else
 	db  50 percent + 1, UNOWN,      24
 	db  75 percent + 1, MARILL,     21
 	db 100 percent,     LAPRAS,     21
+endc
 
 .Qwilfish_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -191,10 +279,18 @@ FishGroups:
 	db  25 percent,     TENTACOOL,  40
 	db  50 percent,     time_group 21
 	db  75 percent + 1, MAGIKARP,   40
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GEODUDE,    40
+else
 	db 100 percent,     QWILFISH,   40
+endc
 .Qwilfish_Odd:
 	db  20 percent,     time_group 20
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GEODUDE,    21
+else
 	db 100 percent,     QWILFISH,   21
+endc
 
 .Remoraid_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -212,11 +308,40 @@ FishGroups:
 	db 100 percent,     REMORAID,   40
 .Remoraid_Odd:
 	db  50 percent + 1, REMORAID,   21
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, REMORAID,   21
+	db 100 percent,     WOOPER,     21
+else
 	db  75 percent + 1, OCTILLERY,  21
 	db 100 percent,     QUAGSIRE,   21
+endc
 
 TimeFishGroups:
 	;  day              nite
+if DEF(_LITTLE_CUP)
+	db GEODUDE,    20,  STARYU,     20 ;  0
+	db GEODUDE,    40,  STARYU,     40 ;  1
+	db SHELLDER,   20,  SHELLDER,   20 ;  2
+	db SHELLDER,   40,  MAGIKARP,   40 ;  3
+	db GOLDEEN,    20,  EXEGGCUTE,  20 ;  4
+	db GOLDEEN,    40,  EXEGGCUTE,  40 ;  5
+	db POLIWAG,    20,  GEODUDE,    20 ;  6
+	db POLIWAG,    40,  POLIWAG,    40 ;  7
+	db DRATINI,    20,  DRATINI,    20 ;  8
+	db DRATINI,    40,  DRATINI,    40 ;  9
+	db GEODUDE,    21,  GEODUDE,    19 ; 10
+	db GEODUDE,    42,  GEODUDE,    40 ; 11
+	db REMORAID,   20,  REMORAID,   20 ; 12
+	db REMORAID,   40,  REMORAID,   40 ; 13
+	db MAGIKARP,   19,  MAGIKARP,   21 ; 14
+	db MAGIKARP,   40,  MAGIKARP,   42 ; 15
+	db DRATINI,    20,  DRATINI,    20 ; 16
+	db DRATINI,    40,  DRATINI,    40 ; 17
+	db HORSEA,     20,  SLOWPOKE,   24 ; 18
+	db HORSEA,     40,  HORSEA,     40 ; 19
+	db TENTACOOL,  20,  GRIMER,     20 ; 20
+	db TENTACOOL,  40,  GRIMER,     40 ; 21
+else
 	db CORSOLA,    20,  STARYU,     20 ;  0
 	db CORSOLA,    40,  STARMIE,    40 ;  1
 	db SHELLDER,   20,  CLOYSTER,   20 ;  2
@@ -243,6 +368,7 @@ endc
 	db SEADRA,     40,  KINGDRA,    40 ; 19
 	db TENTACOOL,  20,  GRIMER,     20 ; 20
 	db TENTACRUEL, 40,  MUK,        40 ; 21
+endc
 
 FishGroups_Names::
 	table_width 2, FishGroups_Names
@@ -282,19 +408,6 @@ Group9_Name:
 Group10_Name:
 	db "STREAM@"
 
-GetFishGroupName:
-; given fishing group num in 'a'
-; return str ptr in 'de'
-	add a ; doubles the index since ptrs are 2 bytes
-	ld hl, FishGroups_Names
-	ld d, 0
-	ld e, a
-	add hl, de
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	ret
-
 GetMapsFishGroup::
 	dec d ; map num
 	dec e ; map group
@@ -316,5 +429,17 @@ GetMapsFishGroup::
 	add hl, bc
 	ld a, BANK(MapGroupPointers)
 	call GetFarByte
-	jp GetFishGroupName
 	; ptr to fishgroup name is in de
+
+GetFishGroupName:
+; given fishing group num in 'a'
+; return str ptr in 'de'
+	add a ; doubles the index since ptrs are 2 bytes
+	ld hl, FishGroups_Names
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ret
