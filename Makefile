@@ -30,6 +30,7 @@ roms := \
 	GrateCrystal_Alt_Turbin.gbc \
 	GrateCrystal_Alt_AbraShellderStarters.gbc \
 	GrateCrystal_NoExperienceGains.gbc \
+	GrateCrystal_LittleCup.gbc \
 	GrateCrystal_Alt_MetronomeOnly.gbc \
 	GrateCrystal_Alt_VanillaTypes.gbc \
 	GrateCrystal11.gbc
@@ -84,6 +85,7 @@ GrateCrystal_Alt_MissingnoStarters_obj               := $(rom_obj:.o=no.o)
 GrateCrystal_Alt_Turbin_obj                          := $(rom_obj:.o=turbid.o)
 GrateCrystal_Alt_AbraShellderStarters_obj            := $(rom_obj:.o=startur.o)
 GrateCrystal_NoExperienceGains_obj                   := $(rom_obj:.o=noexp.o)
+GrateCrystal_LittleCup_obj                           := $(rom_obj:.o=little.o)
 GrateCrystal_Alt_MetronomeOnly_obj                   := $(rom_obj:.o=metro.o)
 GrateCrystal_Alt_VanillaTypes_obj                    := $(rom_obj:.o=bland.o)
 GrateCrystal11_obj                                   := $(rom_obj:.o=11.o)
@@ -108,12 +110,12 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur noexp metro bland crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur noexp little metro bland crystal11 clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur noexp metro bland
+all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur noexp little metro bland
 grate:        GrateCrystal.gbc
 kanto:        GrateCrystal_KantoStarters.gbc
 evolve:       GrateCrystal_EvolvedJohtoStarters.gbc
@@ -145,6 +147,7 @@ no:           GrateCrystal_Alt_MissingnoStarters.gbc
 turbid:       GrateCrystal_Alt_Turbin.gbc
 startur:      GrateCrystal_Alt_AbraShellderStarters.gbc
 noexp:        GrateCrystal_NoExperienceGains.gbc
+little:       GrateCrystal_LittleCup.gbc
 metro:        GrateCrystal_Alt_MetronomeOnly.gbc
 bland:        GrateCrystal_Alt_VanillaTypes.gbc
 crystal11:    GrateCrystal11.gbc
@@ -205,6 +208,7 @@ tidy:
 	      $(GrateCrystal_Alt_Turbin_obj) \
 	      $(GrateCrystal_Alt_AbraShellderStarters_obj) \
 	      $(GrateCrystal_NoExperienceGains_obj) \
+	      $(GrateCrystal_LittleCup_obj) \
 	      $(GrateCrystal_Alt_MetronomeOnly_obj) \
 	      $(GrateCrystal_Alt_VanillaTypes_obj) \
 	      $(GrateCrystal11_obj) \
@@ -277,6 +281,8 @@ startur:
 	tools/free_space.awk BANK=all GrateCrystal_Alt_AbraShellderStarters.map
 noexp:
 	tools/free_space.awk BANK=all GrateCrystal_NoExperienceGains.map
+little:
+	tools/free_space.awk BANK=all GrateCrystal_LittleCup.map
 metro:
 	tools/free_space.awk BANK=all GrateCrystal_Alt_MetronomeOnly.map
 bland:
@@ -316,6 +322,7 @@ $(GrateCrystal_Alt_MissingnoStarters_obj):              RGBASMFLAGS += -D _MISSI
 $(GrateCrystal_Alt_Turbin_obj):                         RGBASMFLAGS += -D _ADD_TURBIN
 $(GrateCrystal_Alt_AbraShellderStarters_obj):           RGBASMFLAGS += -D _TURBIN_STARTERS
 $(GrateCrystal_NoExperienceGains_obj):                  RGBASMFLAGS += -D _NO_EXPERIENCE
+$(GrateCrystal_LittleCup_obj):                          RGBASMFLAGS += -D _LITTLE_CUP
 $(GrateCrystal_Alt_MetronomeOnly_obj):                  RGBASMFLAGS += -D _METRONOME_ONLY
 $(GrateCrystal_Alt_VanillaTypes_obj):                   RGBASMFLAGS += -D _VANILLA_TYPES
 $(GrateCrystal11_obj):                                  RGBASMFLAGS += -D _CRYSTAL11
@@ -373,6 +380,7 @@ $(foreach obj, $(GrateCrystal_Alt_MissingnoStarters_obj), $(eval $(call DEP,$(ob
 $(foreach obj, $(GrateCrystal_Alt_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:turbid.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_AbraShellderStarters_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
 $(foreach obj, $(GrateCrystal_NoExperienceGains_obj), $(eval $(call DEP,$(obj),$(obj:noexp.o=.asm))))
+$(foreach obj, $(GrateCrystal_LittleCup_obj), $(eval $(call DEP,$(obj),$(obj:little.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_MetronomeOnly_obj), $(eval $(call DEP,$(obj),$(obj:metro.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_VanillaTypes_obj), $(eval $(call DEP,$(obj),$(obj:bland.o=.asm))))
 $(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
@@ -416,6 +424,7 @@ GrateCrystal_Alt_MissingnoStarters_opt               = -Cjv -t PM_CRYSTAL -i BYT
 GrateCrystal_Alt_Turbin_opt                          = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_AbraShellderStarters_opt            = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_NoExperienceGains_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_LittleCup_opt                           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_MetronomeOnly_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_VanillaTypes_opt                    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal11_opt                                   = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -452,6 +461,7 @@ GrateCrystal_Alt_MissingnoStarters_base              = us
 GrateCrystal_Alt_Turbin_base                         = us
 GrateCrystal_Alt_AbraShellderStarters_base           = us
 GrateCrystal_NoExperienceGains_base                  = us
+GrateCrystal_LittleCup_base                          = us
 GrateCrystal_Alt_MetronomeOnly_base                  = us
 GrateCrystal_Alt_VanillaTypes_base                   = us
 GrateCrystal11_base                                  = us
