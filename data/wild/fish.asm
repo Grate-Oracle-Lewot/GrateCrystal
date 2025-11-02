@@ -39,7 +39,7 @@ if DEF(_LITTLE_CUP)
 else
 	db  75 percent + 1, DONPHAN,    40
 	db 100 percent,     KINGLER,    40
-endv
+endc
 .Shore_Odd:
 	db  25 percent,     time_group 0
 	db  50 percent,     CHINCHOU,   21
