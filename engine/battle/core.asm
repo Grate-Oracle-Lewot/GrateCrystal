@@ -6444,7 +6444,11 @@ LoadEnemyMon:
 
 ; If at the lake with Rockets, change any Magikarp into a Gyarados with all 0 DVs
 ; Naturally-occurring Gyarados will still have random DVs
+if DEF(_LITTLE_CUP)
+	ld a, MAGIKARP
+else
 	ld a, GYARADOS
+endc
 	ld [wTempEnemyMonSpecies], a
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
