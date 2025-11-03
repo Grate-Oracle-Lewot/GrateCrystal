@@ -66,6 +66,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Fighting types don't lose Attack while Burned
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
+  - Spinarak and Ariados don't make contact when using Wrap (yes, I bothered to code this)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
   - Unown and Delibird learn multiple moves
