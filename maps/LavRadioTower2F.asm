@@ -63,13 +63,12 @@ LavRadioTower2FUnown2Text:
 
 LavRadioTower2FUnown3Text:
 	text "OUR MASTER WISHES"
-	line "TO BATTLE YOU"
+	line "TO BATTLE YOU!"
 	done
 
 LavRadioTower2FUnown4Text:
-	text "YOU HAVE BEEN"
-	line "CHOSEN BY OUR"
-	cont "MASTER"
+	text "ARE YOU WORTHY OF"
+	line "OUR MASTER?"
 	done
 
 LavRadioTower2FMewtwoText:
