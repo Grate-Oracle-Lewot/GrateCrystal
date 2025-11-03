@@ -323,8 +323,8 @@ if DEF(_LITTLE_CUP)
 	db GEODUDE,    40,  STARYU,     40 ;  1
 	db SHELLDER,   20,  SHELLDER,   20 ;  2
 	db SHELLDER,   40,  MAGIKARP,   40 ;  3
-	db GOLDEEN,    20,  EXEGGCUTE,  20 ;  4
-	db GOLDEEN,    40,  EXEGGCUTE,  40 ;  5
+	db GOLDEEN,    20,  SUNKERN,    20 ;  4
+	db GOLDEEN,    40,  SUNKERN,    40 ;  5
 	db POLIWAG,    20,  GEODUDE,    20 ;  6
 	db POLIWAG,    40,  POLIWAG,    40 ;  7
 	db DRATINI,    20,  DRATINI,    20 ;  8
