@@ -1897,7 +1897,7 @@ endc
 	; day
 if DEF(_LITTLE_CUP)
 	db 41, ZUBAT
-	db 41, GEODUE
+	db 41, GEODUDE
 	db 41, JIGGLYPUFF
 	db 41, MAGNEMITE
 	db 41, MACHOP
