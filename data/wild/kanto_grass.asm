@@ -304,11 +304,13 @@ endc
 	db 17, GROWLITHE
 	; nite
 	db 15, MEOWTH
-	db 15, MURKROW
-	db 16, HOUNDOUR
 if DEF(_LITTLE_CUP)
+	db 15, HOOTHOOT
+	db 16, HOUNDOUR
 	db 16, MEOWTH
 else
+	db 15, MURKROW
+	db 16, HOUNDOUR
 	db 16, PERSIAN
 endc
 	db 16, JIGGLYPUFF
@@ -786,8 +788,8 @@ else
 	db 29, SNORLAX
 endc
 	; nite
-if DEF(_LITTLE_CUP)
 	db 24, GRIMER
+if DEF(_LITTLE_CUP)
 	db 25, HOOTHOOT
 	db 26, GRIMER
 	db 29, HOOTHOOT
@@ -796,7 +798,6 @@ if DEF(_LITTLE_CUP)
 	db 29, GRIMER
 	db 29, SENTRET
 else
-	db 24, GRIMER
 	db 25, MURKROW
 	db 26, GRIMER
 	db 29, MURKROW
@@ -914,8 +915,8 @@ else
 	db 29, STANTLER
 endc
 	; nite
-if DEF(_LITTLE_CUP)
 	db 24, GRIMER
+if DEF(_LITTLE_CUP)
 	db 25, HOOTHOOT
 	db 26, RATTATA
 	db 26, SENTRET
@@ -924,7 +925,6 @@ if DEF(_LITTLE_CUP)
 	db 29, GRIMER
 	db 29, RATTATA
 else
-	db 24, GRIMER
 	db 25, MURKROW
 	db 26, TAUROS
 	db 26, MILTANK
