@@ -8,12 +8,17 @@ ENDM
 
 EventWildMons::
 ;	specialencounter SPECIES,      EVENT_FLAG,     map_id,           blurb string ptr
+if DEF(_LITTLE_CUP)
+	specialencounter OMANYTE,      -1,             PEWTER_MUSEUM_1F, OmanyteFossil_Str
+	specialencounter KABUTO,       -1,             PEWTER_MUSEUM_1F, KabutoFossil_Str
+else
 	specialencounter OMANYTE,      -1,             PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter OMASTAR,      -1,             PEWTER_MUSEUM_1F, OmanyteFossil_Str
 	specialencounter KABUTO,       -1,             PEWTER_MUSEUM_1F, KabutoFossil_Str
 	specialencounter KABUTOPS,     -1,             PEWTER_MUSEUM_1F, KabutoFossil_Str
 	specialencounter AERODACTYL,   -1,             UNION_CAVE_B2F,   AerodactylFriday_Str
 	specialencounter AERODACTYL,   -1,             PEWTER_MUSEUM_1F, AerodactylFossil_Str
+endc
 	db -1
 
 ; LoadWildMon Dex Hints, max 18 chars per line
