@@ -979,9 +979,9 @@ else
 endc
 	; nite
 if DEF(_LITTLE_CUP)
-	db 28, ODDISH
+	db 28, SUNKERN
 	db 23, RATTATA
-	db 33, ODDISH
+	db 33, SUNKERN
 	db 18, RATTATA
 	db 28, RATTATA
 	db 28, KRABBY
@@ -1327,7 +1327,7 @@ else
 endc
 	; nite
 if DEF(_LITTLE_CUP)
-	db 40, ODDISH
+	db 40, SUNKERN
 	db 41, SCYTHER
 	db 44, PONYTA
 	db 42, EKANS
