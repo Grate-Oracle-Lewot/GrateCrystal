@@ -6966,6 +6966,9 @@ BattleCommand_CheckContact:
 	bit SUBSTITUTE_JUST_BROKE, a
 	ret nz
 
+	call CheckSpiderWrap
+	ret z
+
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld hl, ContactMoves
@@ -7022,6 +7025,32 @@ ContactCuteCharm:
 	call RefreshBattleHuds
 	ld hl, CuteCharmText
 	jp StdBattleTextbox
+
+CheckSpiderWrap:
+; Return z if the attacking mon is Spinarak or Ariados and it's using Bind or Wrap.
+; Normally Bind and Wrap make contact, but these spiders would use them via webs.
+
+	ld a, [wBattleMonSpecies]
+	ld b, a
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld a, [wEnemyMonSpecies]
+	ld b, a
+.got_turn
+	ld a, SPINARAK
+	cp b
+	jr z, .spider
+	ld a, ARIADOS
+	cp b
+	ret nz
+.spider
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp BIND
+	ret z
+	cp WRAP
+	ret
 
 GetWeatherTurns:
 ; Returns number of turns that user's weather moves should last in a.
