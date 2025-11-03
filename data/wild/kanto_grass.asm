@@ -1684,14 +1684,14 @@ endc
 	db 4 percent, 4 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 if DEF(_LITTLE_CUP)
-	db 24, ABRA
-	db 25, ABRA
+	db 24, ZUBAT
+	db 25, ZUBAT
 	db 9, VOLTORB
 	db 9, MAGNEMITE
 	db 14, EEVEE
 	db 15, PIKACHU
-	db 26, ABRA
-	db 1, ABRA
+	db 26, ZUBAT
+	db 1, ZUBAT
 else
 	db 24, UNOWN
 	db 25, UNOWN
@@ -1704,14 +1704,14 @@ else
 endc
 	; day
 if DEF(_LITTLE_CUP)
-	db 24, ABRA
-	db 25, ABRA
+	db 24, ZUBAT
+	db 25, ZUBAT
 	db 9, VOLTORB
 	db 9, MAGNEMITE
 	db 14, EEVEE
 	db 15, PIKACHU
-	db 26, ABRA
-	db 1, ABRA
+	db 26, ZUBAT
+	db 1, ZUBAT
 else
 	db 24, UNOWN
 	db 25, UNOWN
@@ -1724,14 +1724,14 @@ else
 endc
 	; nite
 if DEF(_LITTLE_CUP)
-	db 24, ABRA
-	db 25, ABRA
+	db 24, ZUBAT
+	db 25, ZUBAT
 	db 9, ZUBAT
 	db 10, ZUBAT
 	db 11, ZUBAT
 	db 17, ZUBAT
-	db 26, ABRA
-	db 1, ABRA
+	db 26, ZUBAT
+	db 1, ZUBAT
 else
 	db 24, UNOWN
 	db 25, UNOWN
