@@ -1163,7 +1163,7 @@ if DEF(_LITTLE_CUP)
 	db 20, GEODUDE
 	db 21, WOOPER
 	db 19, ZUBAT
-	db 21, ZBAT
+	db 21, ZUBAT
 	db 20, ONIX
 	db 21, ONIX
 	db 22, RHYHORN
