@@ -399,9 +399,6 @@ else
 endc
 	; day
 	db 23, RATTATA
-if DEF(_LITTLE_CUP)
-
-else
 	db 23, PIDGEY
 	db 23, MAGNEMITE
 	db 23, SNUBBULL
@@ -409,7 +406,6 @@ else
 	db 23, PONYTA
 	db 20, SENTRET
 	db 20, RATTATA
-endc
 	; nite
 	db 23, RATTATA
 if DEF(_LITTLE_CUP)
