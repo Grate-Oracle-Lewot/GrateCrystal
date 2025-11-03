@@ -150,7 +150,7 @@ endc
 	db 10, MAGIKARP
 	db 5,  MAGIKARP
 if DEF(_LITTLE_CUP)
-	db 10, EXEGGCUTE
+	db 10, SUNKERN
 else
 	db 10, TANGELA
 endc
@@ -162,7 +162,7 @@ if DEF(_LITTLE_CUP)
 	db 30, PSYDUCK
 	db 30, ZUBAT
 	db 30, MAGIKARP
-	db 30, EXEGGCUTE
+	db 30, SUNKERN
 else
 	db 30, GOLDUCK
 	db 30, GOLBAT
@@ -420,7 +420,7 @@ endc
 	db 15, TENTACOOL
 if DEF(_LITTLE_CUP)
 	db 20, TENTACOOL
-	db 15, EXEGGCUTE
+	db 15, SUNKERN
 else
 	db 20, TENTACRUEL
 	db 15, TANGELA
