@@ -504,27 +504,27 @@ JohtoGrassWildMons:
 	db 2, GEODUDE
 	db 2, ZUBAT
 	db 3, GEODUDE
-	db 4, GEODUDE
 	db 3, ZUBAT
-	db 4, ZUBAT
+	db 2, CUBONE
+	db 2, GASTLY
 	db 2, TEDDIURSA
 	db 3, TEDDIURSA
 	; day
 	db 2, GEODUDE
 	db 2, ZUBAT
 	db 3, GEODUDE
-	db 4, GEODUDE
 	db 3, ZUBAT
-	db 4, ZUBAT
+	db 2, CUBONE
+	db 2, GASTLY
 	db 2, TEDDIURSA
 	db 3, TEDDIURSA
 	; nite
 	db 2, GEODUDE
-	db 2, ZUBAT
+	db 3, ZUBAT
+	db 2, RATTATA
 	db 3, RATTATA
-	db 4, GEODUDE
-	db 3, GASTLY
-	db 4, ZUBAT
+	db 2, CUBONE
+	db 2, GASTLY
 	db 2, LARVITAR
 	db 3, LARVITAR
 	end_grass_wildmons
