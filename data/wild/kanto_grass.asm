@@ -1355,7 +1355,7 @@ endc
 	db 3, PIDGEY
 if DEF(_LITTLE_CUP)
 	db 5, CATERPIE
-	db 5, LEDIAN
+	db 5, LEDYBA
 else
 	db 5, BUTTERFREE
 	db 5, LEDIAN
@@ -1378,25 +1378,21 @@ endc
 	db 4, PIKACHU
 	db 4, BULBASAUR
 	; nite
-if DEF(_LITTLE_CUP)
 	db 2, HOOTHOOT
 	db 2, SPINARAK
 	db 3, HOOTHOOT
+if DEF(_LITTLE_CUP)
 	db 5, HOOTHOOT
 	db 5, SPINARAK
 	db 2, HOOTHOOT
 	db 4, HOOTHOOT
-	db 2, BULBASAUR
 else
-	db 2, HOOTHOOT
-	db 2, SPINARAK
-	db 3, HOOTHOOT
 	db 5, NOCTOWL
 	db 5, ARIADOS
 	db 2, NOCTOWL
 	db 4, NOCTOWL
-	db 2, BULBASAUR
 endc
+	db 2, BULBASAUR
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON_1F
