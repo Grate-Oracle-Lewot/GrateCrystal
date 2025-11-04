@@ -551,10 +551,14 @@ Pokecenter2FOaksAideScript:
 	ifless 200, .NotEnough
 	writetext Pokecenter2FOaksAide_HaveEnoughText
 	promptbutton
-	verbosegiveitemfive SACRED_ASH, 5
+	giveitem SACRED_ASH, 5
 	iffalse .PackFull
-	setevent EVENT_OAKS_AIDE_CAUGHT_200
-	sjump .CloseText
+	writetext Pokecenter2FOaksAide_GiveSacredAshesText
+	playsound SFX_ITEM
+	waitsfx
+	writetext Pokecenter2FOaksAide_PutAwaySacredAshesText
+	setevent EVENT_OAKS_AIDE_CAUGHT_250
+	sjump .EndText
 
 .Check250:
 	checkevent EVENT_OAKS_AIDE_CAUGHT_250
@@ -970,6 +974,17 @@ Pokecenter2FOaksAide_PutAwayMaxRevivesText:
 	text "<PLAYER> put the"
 	line "MAX REVIVES in the"
 	cont "ITEM POCKET."
+	done
+
+Pokecenter2FOaksAide_GiveSacredAshesText:
+	text "<PLAYER> received"
+	line "SACRED ASH ×5!"
+	done
+
+Pokecenter2FOaksAide_PutAwayMaxSacredAshesText:
+	text "<PLAYER> put the"
+	line "SACRED ASHES in"
+	cont "the ITEM POCKET."
 	done
 
 Pokecenter2FOaksAide_GiveNuggetsText:
