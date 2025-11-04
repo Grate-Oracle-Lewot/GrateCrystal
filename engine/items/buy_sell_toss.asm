@@ -1,4 +1,5 @@
 MaxSellMoney:
+; 999,999 manually reverse-endianed
 	dt %111111000100001011110000
 
 SelectQuantityToBuy:
