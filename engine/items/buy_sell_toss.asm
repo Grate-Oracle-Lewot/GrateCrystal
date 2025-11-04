@@ -1,11 +1,6 @@
 MaxSellMoney:
 	dt MAX_MONEY
 
-SelectQuantityToToss:
-	ld hl, TossItem_MenuHeader
-	call LoadMenuHeader
-	jr Toss_Sell_Loop
-
 SelectQuantityToBuy:
 	farcall GetItemPrice
 	; fallthrough
@@ -52,7 +47,7 @@ RooftopSale_SelectQuantityToBuy:
 
 	ld hl, BuyItem_MenuHeader
 	call LoadMenuHeader
-	jp Toss_Sell_Loop
+	jr Toss_Sell_Loop
 
 SelectQuantityToSell:
 	farcall GetItemPrice
@@ -114,6 +109,11 @@ Toss_Sell_Loop:
 .nope
 	and a
 	ret
+
+SelectQuantityToToss:
+	ld hl, TossItem_MenuHeader
+	call LoadMenuHeader
+	jr Toss_Sell_Loop
 
 BuySellToss_InterpretJoypad:
 	call JoyTextDelay_ForcehJoyDown ; get joypad
