@@ -2225,7 +2225,7 @@ HandleEnemyMonFaint:
 
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 30
+	ld c, 40
 	call DelayFrames
 
 	ld a, [wBattleMode]
@@ -8549,7 +8549,7 @@ DisplayLinkBattleResult:
 	hlcoord 6, 8
 	call PlaceString
 	farcall BackupMobileEventIndex
-	ld c, 90
+	ld c, 100
 	call DelayFrames
 
 	ld a, BANK(sLinkBattleStats)
@@ -8571,7 +8571,7 @@ DisplayLinkBattleResult:
 	ld de, .InvalidBattle
 	call PlaceString
 .mobile
-	ld c, 90
+	ld c, 100
 	call DelayFrames
 	jp ClearTilemap
 
