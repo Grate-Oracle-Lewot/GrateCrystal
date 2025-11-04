@@ -278,7 +278,7 @@ Prize TMs:
 - Viridian Forest (similar layout to Gen I, with the National Park tileset)
 - Pewter Museum (fossils can be resurrected at Lv.1, with a random chance to start in their evolved form, e.g. Kabutops instead of Kabuto)
 - Mt. Moon expanded (similar layout to Gen I, no Rockets)
-- Silph Co. upper floors (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
+- Silph Co. expanded (similar layout to Gen I, no Rockets; defeat the Chief for endless free Up-Grades)
 - A second floor to the Power Plant (similar layout to Gen I, no wild encounters; navigate to find the Manager, with optional battles against Engineers)
 - Cerulean Cave (layout most resembles English Red/Blue; navigate to find a special item)
 - An abandoned version of the Safari Zone
