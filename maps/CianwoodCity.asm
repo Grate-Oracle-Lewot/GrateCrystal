@@ -148,7 +148,7 @@ CianwoodCitySailor:
 .GiveBalls:
 	writetext CianwoodCitySailorPreparedText
 	promptbutton
-	verbosegiveitemfive POKE_BALL, 5
+	verbosegiveitem POKE_BALL, 5
 	sjump .Done2
 
 .CheckBalls:
