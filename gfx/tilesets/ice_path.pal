@@ -3,10 +3,10 @@
 	RGB 11, 11, 19
 	RGB 07, 07, 12
 	RGB 00, 00, 00
-; red
-	RGB 15, 14, 24
-	RGB 14, 07, 17
-	RGB 13, 00, 08
+; red (truck)
+	RGB 25, 31, 31
+	RGB 09, 28, 31
+	RGB 31, 07, 01
 	RGB 00, 00, 00
 ; green (ice)
 	RGB 22, 29, 31
