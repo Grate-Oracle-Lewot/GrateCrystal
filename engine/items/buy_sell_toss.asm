@@ -1,5 +1,5 @@
 MaxSellMoney:
-	dt MAX_MONEY
+	dt 800000
 
 SelectQuantityToBuy:
 	farcall GetItemPrice
