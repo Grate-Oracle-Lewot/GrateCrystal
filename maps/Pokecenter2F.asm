@@ -981,7 +981,7 @@ Pokecenter2FOaksAide_GiveSacredAshesText:
 	line "SACRED ASH ×5!"
 	done
 
-Pokecenter2FOaksAide_PutAwayMaxSacredAshesText:
+Pokecenter2FOaksAide_PutAwaySacredAshesText:
 	text "<PLAYER> put the"
 	line "SACRED ASHES in"
 	cont "the ITEM POCKET."
