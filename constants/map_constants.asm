@@ -513,7 +513,7 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ;  92
 	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ;  93
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ;  94
-	map_const ICE_PATH_1F,                                 20, 18 ;  95
+	map_const ICE_PATH_1F,                                 20, 15 ;  95
 	map_const ICE_PATH_B1F,                                10, 18 ;  96
 	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ;  97
 	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ;  98
