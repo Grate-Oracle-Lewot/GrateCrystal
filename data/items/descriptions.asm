@@ -588,8 +588,8 @@ RedApricornDesc:
 	next "LEVEL BALL.@"
 
 TinyMushroomDesc:
-	db   "Restores #MON"
-	next "HP by 10.@"
+	db   "Restores 10 HP."
+	next "Sell low.@"
 
 BigMushroomDesc:
 	db   "Revives to 1/2 HP."
