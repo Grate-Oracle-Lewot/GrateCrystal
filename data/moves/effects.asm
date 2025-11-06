@@ -1312,7 +1312,6 @@ LockOn:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	lockon
 	endmove
 
