@@ -6969,8 +6969,8 @@ BattleCommand_CheckContact:
 	call CheckSpiderWrap
 	ret z
 
-;	ld a, BATTLE_VARS_MOVE_ANIM
-;	call GetBattleVar
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
 	ld hl, ContactMoves
 	call IsInByteArray
 	ret nc
