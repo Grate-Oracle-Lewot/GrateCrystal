@@ -1,10 +1,10 @@
 	db "DOPEY@" ; species name
 	dw 311, 790 ; height, weight
 
-	db   "Iiiiiiiiiiiiiiiiii"
-	next "tttttttttttttttttt"
-	next "'sssssssssssssssss"
+	db   "It sees all of the"
+	next "secrets of the"
+	next "universe, but has"
 
-	page "ssssssssssssllllll"
-	next "lllllloooooooooooo"
-	next "wwwwwwwwwwww.@"
+	page "only an animal's"
+	next "mind, so doesn't"
+	next "care about them.@"
