@@ -797,5 +797,6 @@ KRIS EQU __trainer_class__
 	const CAMDEN
 	const FLINT
 	const SMITH
+	const ENRIQUE
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
