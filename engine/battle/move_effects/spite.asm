@@ -1,7 +1,12 @@
 BattleCommand_Spite:
-	ld a, [wAttackMissed]
-	and a
+	call CheckHiddenOpponent
 	jr nz, .failed
+
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_PROTECT, [hl]
+	jr nz, .failed
+
 	ld hl, wEnemyMonMoves
 	ldh a, [hBattleTurn]
 	and a
