@@ -6224,6 +6224,12 @@ BattleCommand_ArenaTrap:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
+; Doesn't work through Protect.
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_PROTECT, [hl]
+	jr nz, .failed
+
 ; Don't trap if the opponent is already trapped.
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
