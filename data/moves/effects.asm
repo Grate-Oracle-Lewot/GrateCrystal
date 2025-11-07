@@ -1340,7 +1340,6 @@ Spite:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	spite
 	endmove
 
