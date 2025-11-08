@@ -1261,7 +1261,8 @@
 	const EVENT_MOUNT_MOON_B1F_HIDDEN_MAX_REPEL
 	const EVENT_BEAT_SWIMMERF_BOBBI
 	const EVENT_BEAT_OFFICER_LASSITER
-; Unused: next 116 (now 17) events
+	const EVENT_BEAT_ENGINEER_ENRIQUE
+; Unused: next 116 (now 16) events
 
 	const_next 1600
 ; Sprite visibility flags
