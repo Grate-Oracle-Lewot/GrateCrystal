@@ -1,11 +1,23 @@
 	object_const_def
 	const SILPHCO1F_RECEPTIONIST
 	const SILPHCO1F_CLERK
+	const SILPHCO1F_FISHING_GURU
 
 SilphCo1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerEngineerEnrique:
+	trainer ENGINEER, ENRIQUE, EVENT_BEAT_ENGINEER_ENRIQUE, EngineerEnriqueSeenText, EngineerEnriqueBeatenText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext EngineerEnriqueAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SilphCoReceptionistScript:
 	jumptextfaceplayer SilphCoReceptionistText
@@ -30,6 +42,24 @@ SilphCo1FClerkText:
 	cont "maintenance."
 	done
 
+EngineerEnriqueSeenText:
+	text "I can't fix this"
+	line "dern pump!"
+
+	para "Help me blow off"
+	line "some steam,"
+	cont "will ya?"
+	done
+
+EngineerEnriqueBeatenText:
+	text "Hey, that was fun!"
+	done
+
+EngineerEnriqueAfterBattleText:
+	text "Maybe I'll just"
+	line "order a new pump…"
+	done
+
 SilphCo1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -45,3 +75,4 @@ SilphCo1F_MapEvents:
 	def_object_events
 	object_event  6,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCoReceptionistScript, -1
 	object_event 17, 12, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo1FClerkScript, -1
+	object_event 15,  9, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, TrainerEngineerEnrique, -1
