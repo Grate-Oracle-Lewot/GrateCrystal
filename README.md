@@ -208,11 +208,11 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Struggle is no longer boosted by the Pink Bow. Beat Up and Future Sight are still boosted by the Blackglasses and Twistedspoon despite still being functionally typeless, because frankly they need the help.
 
+- Spite now always reduces PP by 5, and also can't miss except for Fly/Dig etc.
+
 - Disable is 100% accurate and lasts 2-5 turns.
 
 - Triple Kick always hits 3 times. (It may hit fewer after accuracy drops, since each hit checks accuracy separately.)
-
-- Spite always reduces PP by 5.
 
 - Bide always lasts 2 turns.
 
