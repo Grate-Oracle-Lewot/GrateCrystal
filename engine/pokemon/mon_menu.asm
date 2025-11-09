@@ -170,15 +170,6 @@ SwitchPartyMons:
 	call SetPalettes
 	call DelayFrame
 
-	ld a, [wMenuCursorY]
-	cp 1
-	ld a, 1
-	jr nz, .move_default_cursor_pos
-
-	ld a, 2
-.move_default_cursor_pos
-	ld [wMenuCursorY], a
-
 	farcall PartyMenuSelect
 	bit B_BUTTON_F, b
 	jr c, .DontSwitch
