@@ -633,6 +633,71 @@ AI_Offensive:
 	jr .checkmove
 
 
+AI_Risky:
+; Hugely encourage any move that will KO the player.
+; Selfdestruct will often be an exception (see below).
+; This will out-encourage status moves if the player is Biding.
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.checkmove
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push de
+	push bc
+	push hl
+	call AIGetMoveAttributes
+
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .nextmove
+
+; Don't use Selfdestruct at max HP.
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_SELFDESTRUCT
+	jr nz, .checkko
+
+	call AICheckEnemyMaxHP
+	jr c, .nextmove
+
+; Else, 80% chance to exclude Selfdestruct.
+	call AI_80_20
+	jr nc, .nextmove
+
+.checkko
+	call AIDamageCalc
+
+	ld a, [wCurDamage + 1]
+	ld e, a
+	ld a, [wCurDamage]
+	ld d, a
+	ld a, [wBattleMonHP + 1]
+	cp e
+	ld a, [wBattleMonHP]
+	sbc d
+	jr nc, .nextmove
+
+	pop hl
+rept 5
+	dec [hl]
+endr
+	push hl
+
+.nextmove
+	pop hl
+	pop bc
+	pop de
+	jr .checkmove
+
+
 AI_Opportunist:
 ; Do nothing if player's HP is above 50%.
 	call AICheckPlayerHalfHP
@@ -799,71 +864,6 @@ AI_Aggressive:
 	jr .checkmove2
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
-
-
-AI_Risky:
-; Hugely encourage any move that will KO the player.
-; Selfdestruct will often be an exception (see below).
-; This will out-encourage status moves if the player is Biding.
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push de
-	push bc
-	push hl
-	call AIGetMoveAttributes
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .nextmove
-
-; Don't use Selfdestruct at max HP.
-	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_SELFDESTRUCT
-	jr nz, .checkko
-
-	call AICheckEnemyMaxHP
-	jr c, .nextmove
-
-; Else, 80% chance to exclude Selfdestruct.
-	call AI_80_20
-	jr nc, .nextmove
-
-.checkko
-	call AIDamageCalc
-
-	ld a, [wCurDamage + 1]
-	ld e, a
-	ld a, [wCurDamage]
-	ld d, a
-	ld a, [wBattleMonHP + 1]
-	cp e
-	ld a, [wBattleMonHP]
-	sbc d
-	jr nc, .nextmove
-
-	pop hl
-rept 5
-	dec [hl]
-endr
-	push hl
-
-.nextmove
-	pop hl
-	pop bc
-	pop de
-	jr .checkmove
 
 
 AI_Smart:
