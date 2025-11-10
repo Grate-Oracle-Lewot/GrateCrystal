@@ -200,18 +200,18 @@ AIChooseMove:
 AIScoringPointers:
 ; entries correspond to AI_* constants
 	dw AI_Basic
-	dw AI_Setup
-	dw AI_Types
-	dw AI_Offensive
-	dw AI_Smart
-	dw AI_Opportunist
-	dw AI_Aggressive
-	dw AI_Cautious
 	dw AI_Status
+	dw AI_Setup
+	dw AI_Cautious
+	dw AI_Types
+	dw AI_Immunities
+	dw AI_Offensive
 	dw AI_Risky
+	dw AI_Opportunist
 	dw AI_Pragmatic
-	dw AI_Troll
+	dw AI_Aggressive
+	dw AI_Aggressive
+	dw AI_Smart
 	dw AI_Encourage_Useful
 	dw AI_Discourage_Stall
-	dw AI_Immunities
-	dw AI_Aggressive
+	dw AI_Troll
