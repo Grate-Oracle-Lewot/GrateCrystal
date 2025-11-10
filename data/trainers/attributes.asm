@@ -8,7 +8,7 @@ TrainerClassAttributes:
 ; _OFTEN + _SOMETIMES + _RARELY is functionally identical to _OFTEN + _RARELY, so no point doing that.
 ; Items will still be used even without a _USE flag (just more randomly), so give no items if you want them to never be used.
 
-; Falkner
+; Falkner (also everyone in the Battle Tower)
 	db MAX_POTION, NO_ITEM ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_SETUP | AI_CAUTIOUS | AI_IMMUNITIES | AI_RISKY | AI_AGGRESSIVE | AI_SMART
