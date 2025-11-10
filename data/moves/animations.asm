@@ -2217,7 +2217,7 @@ BattleAnim_Mist:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 0, SFX_SURF
 .loop
-	anim_obj ANIM_OBJ_MIST, 48, 72, $0
+	anim_obj ANIM_OBJ_MIST, 48, 56, $0
 	anim_wait 8
 	anim_loop 10, .loop
 	anim_wait 96
@@ -2227,7 +2227,7 @@ BattleAnim_Smog:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 1, SFX_BUBBLEBEAM
 .loop
-	anim_obj ANIM_OBJ_SMOG, 132, 32, $0
+	anim_obj ANIM_OBJ_SMOG, 132, 16, $0
 	anim_wait 8
 	anim_loop 10, .loop
 	anim_wait 96
