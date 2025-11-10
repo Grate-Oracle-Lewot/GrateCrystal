@@ -14,7 +14,6 @@ MonSubmenu:
 	ldh [hBGMapMode], a
 	call MonMenuLoop
 	ld [wMenuSelection], a
-
 	jp ExitMenu
 
 .MenuHeader:
@@ -161,7 +160,6 @@ GetMonSubmenuItems:
 	ld a, MONMENUITEM_MAIL
 	jr c, .ok
 	ld a, MONMENUITEM_ITEM
-
 .ok
 	call AddMonMenuItem
 
@@ -171,7 +169,6 @@ GetMonSubmenuItems:
 	jr z, .ok2
 	ld a, MONMENUITEM_CANCEL
 	call AddMonMenuItem
-
 .ok2
 	jr TerminateMonSubmenu
 
@@ -257,7 +254,6 @@ BattleMonMenu:
 	ldh a, [hJoyPressed]
 	bit B_BUTTON_F, a
 	jr z, .clear_carry
-	ret z
 
 .set_carry
 	scf
