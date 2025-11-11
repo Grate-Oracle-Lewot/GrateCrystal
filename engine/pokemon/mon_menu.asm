@@ -1333,12 +1333,6 @@ String_MoveAcc:
 	db "ACC@"
 String_MoveEff:
 	db " FX@"
-String_MovePhy:
-	db "PHYSICAL@"
-String_MoveSpe:
-	db "SPECIAL @"
-String_MoveSta:
-	db "STATUS  @"
 String_MoveBlank:
 	db "---@"
 
