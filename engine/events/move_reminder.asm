@@ -386,7 +386,7 @@ ChooseMoveToLearn:
 	ld [wMenuCursorPosition], a
 	ld [wMenuScrollPosition], a
 
-	hlcoord 0,  0
+	hlcoord 0, 0
 	lb bc, 9, 18
 	call TextboxBorder
 
@@ -401,7 +401,7 @@ ChooseMoveToLearn:
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
-	hlcoord  3, 0
+	hlcoord 3, 0
 	call PlaceString
 
 ; Displays the level icon (even if at Lv100) and the mon's level at hlcoord.
@@ -530,23 +530,23 @@ ChooseMoveToLearn:
 .print_move_type
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 2, 11
+	hlcoord 10, 12
 	predef PrintMoveType
 
 .print_move_stat_strings
-	hlcoord 0, 9
+	hlcoord 0, 10
 	ld de, MoveTypeTopString
 	call PlaceString
-	hlcoord 0, 10
+	hlcoord 0, 11
 	ld de, MoveTypeString
 	call PlaceString
-	hlcoord 12, 11
+	hlcoord 1, 11
 	ld de, MoveAttackString
 	call PlaceString
-	hlcoord  4, 12
+	hlcoord 1, 12
 	ld de, MoveChanceString
 	call PlaceString
-	hlcoord 12, 12
+	hlcoord 1, 13
 	ld de, MoveAccuracyString
 	call PlaceString
 
@@ -554,10 +554,10 @@ ChooseMoveToLearn:
 	ld a, [wCurSpecies]
 	ld b, a
 	farcall GetMoveCategoryName
-	hlcoord 1, 10
+	hlcoord 11, 13
 	ld de, wStringBuffer1
 	call PlaceString
-	hlcoord 1, 11
+	hlcoord 10, 13
 	ld [hl], "/"
 	inc hl
 
@@ -574,7 +574,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord  8, 12
+	hlcoord 5, 13
 	call PrintNum
 	jr .print_move_accuracy
 
@@ -586,7 +586,7 @@ ChooseMoveToLearn:
 .print_move_null_chance
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord  8, 12
+	hlcoord 5, 13
 	call PlaceString
 
 .print_move_accuracy
@@ -610,7 +610,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 12
+	hlcoord 5, 12
 	call PrintNum
 	jr .print_move_attack
 
@@ -619,7 +619,7 @@ ChooseMoveToLearn:
 .imperfect
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord 16, 12
+	hlcoord 5, 12
 	call PlaceString
 
 .print_move_attack
@@ -634,32 +634,27 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 11
+	hlcoord 5, 11
 	jp PrintNum
 
 ; This prints "---" if the move has an attack of 0 or 1.
 ; This covers status moves, OHKO moves, level damage, etc.
 .print_move_null_attack
-	hlcoord 16, 11
+	hlcoord 5, 11
 	ld de, MoveNullValueString
 	ld bc, 3
 	jp PlaceString
 
 MoveTypeTopString:
-	db "┌────────┐@"
-
+	db "┌───────┐@"
 MoveTypeString:
-	db "│        └@"
-
+	db "│       └@"
 MoveAttackString:
 	db "POW@"
-
 MoveAccuracyString:
 	db "ACC@"
-
 MoveChanceString:
 	db " FX@"
-
 MoveNullValueString:
 	db "---@"
 
