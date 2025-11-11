@@ -43,4 +43,5 @@ PerfectAccuracyEffects::
 	db EFFECT_PSYCH_UP
 	db EFFECT_DEFENSE_CURL
 	db EFFECT_HAIL
+	db EFFECT_CONVERSION
 	db -1 ; end
