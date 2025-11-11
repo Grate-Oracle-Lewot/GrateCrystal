@@ -19,7 +19,7 @@ SpecialsPointers::
 	add_special CloseLink
 	add_special WaitForOtherPlayerToExit
 	add_special SetBitsForBattleRequest
-	add_special AideCountCaughtMons ; previously SetBitsForTimeCapsuleRequest
+	add_special NayruCountCaughtMons ; previously SetBitsForTimeCapsuleRequest
 	add_special CheckTimeCapsuleCompatibility
 	add_special EnterTimeCapsule
 	add_special TradeCenter
