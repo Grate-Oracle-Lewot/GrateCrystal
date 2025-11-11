@@ -2,7 +2,7 @@
 	const POKECENTER2F_TRADE_RECEPTIONIST
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_GENDER_RECEPTIONIST
-	const POKECENTER2F_SCIENTIST
+	const POKECENTER2F_NAYRU
 
 Pokecenter2F_MapScripts:
 	def_scene_scripts
@@ -14,16 +14,16 @@ Pokecenter2F_MapScripts:
 	scene_script .Scene5 ; SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .OaksAide
+	callback MAPCALLBACK_OBJECTS, .Nayru
 
-.OaksAide:
-	disappear POKECENTER2F_SCIENTIST
+.Nayru:
+	disappear POKECENTER2F_NAYRU
 	checkflag ENGINE_POKEDEX
 	iftrue .Appear
 	endcallback
 
 .Appear:
-	appear POKECENTER2F_SCIENTIST
+	appear POKECENTER2F_NAYRU
 	endcallback
 
 .Scene0:
@@ -460,132 +460,132 @@ Pokecenter2FLinkRecordSign:
 	closetext
 	end
 
-Pokecenter2FOaksAideScript:
+Pokecenter2FNayruScript:
 	faceplayer
 	opentext
-	writetext Pokecenter2FOaksAide_IntroText
+	writetext Pokecenter2FNayru_IntroText
 	promptbutton
-	checkevent EVENT_OAKS_AIDE_CAUGHT_30
+	checkevent EVENT_NAYRU_CAUGHT_30
 	iftrue .Check60
-	writetext Pokecenter2FOaksAide_Ask30Text
+	writetext Pokecenter2FNayru_Ask30Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 30, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	giveitem MAX_POTION, 10
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveMaxPotionsText
+	writetext Pokecenter2FNayru_GiveMaxPotionsText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwayMaxPotionsText
-	setevent EVENT_OAKS_AIDE_CAUGHT_30
+	writetext Pokecenter2FNayru_PutAwayMaxPotionsText
+	setevent EVENT_NAYRU_CAUGHT_30
 	sjump .EndText
 
 .Check60:
-	checkevent EVENT_OAKS_AIDE_CAUGHT_60
+	checkevent EVENT_NAYRU_CAUGHT_60
 	iftrue .Check100
-	writetext Pokecenter2FOaksAide_Ask60Text
+	writetext Pokecenter2FNayru_Ask60Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 60, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	giveitem FULL_RESTORE, 10
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveFullRestoresText
+	writetext Pokecenter2FNayru_GiveFullRestoresText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwayFullRestoresText
-	setevent EVENT_OAKS_AIDE_CAUGHT_60
+	writetext Pokecenter2FNayru_PutAwayFullRestoresText
+	setevent EVENT_NAYRU_CAUGHT_60
 	sjump .EndText
 
 .Check100:
-	checkevent EVENT_OAKS_AIDE_CAUGHT_100
+	checkevent EVENT_NAYRU_CAUGHT_100
 	iftrue .Check150
-	writetext Pokecenter2FOaksAide_Ask100Text
+	writetext Pokecenter2FNayru_Ask100Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 100, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	giveitem MAX_REVIVE, 10
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveMaxRevivesText
+	writetext Pokecenter2FNayru_GiveMaxRevivesText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwayMaxRevivesText
-	setevent EVENT_OAKS_AIDE_CAUGHT_100
+	writetext Pokecenter2FNayru_PutAwayMaxRevivesText
+	setevent EVENT_NAYRU_CAUGHT_100
 	sjump .EndText
 
 .Check150:
-	checkevent EVENT_OAKS_AIDE_CAUGHT_150
+	checkevent EVENT_NAYRU_CAUGHT_150
 	iftrue .Check200
-	writetext Pokecenter2FOaksAide_Ask150Text
+	writetext Pokecenter2FNayru_Ask150Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 150, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .PackFull
-	setevent EVENT_OAKS_AIDE_CAUGHT_150
+	setevent EVENT_NAYRU_CAUGHT_150
 	sjump .CloseText
 
 .Check200:
-	checkevent EVENT_OAKS_AIDE_CAUGHT_200
+	checkevent EVENT_NAYRU_CAUGHT_200
 	iftrue .Check250
-	writetext Pokecenter2FOaksAide_Ask200Text
+	writetext Pokecenter2FNayru_Ask200Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 200, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	giveitem SACRED_ASH, 5
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveSacredAshesText
+	writetext Pokecenter2FNayru_GiveSacredAshesText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwaySacredAshesText
-	setevent EVENT_OAKS_AIDE_CAUGHT_250
+	writetext Pokecenter2FNayru_PutAwaySacredAshesText
+	setevent EVENT_NAYRU_CAUGHT_250
 	sjump .EndText
 
 .Check250:
-	checkevent EVENT_OAKS_AIDE_CAUGHT_250
+	checkevent EVENT_NAYRU_CAUGHT_250
 	iftrue .AlreadyDone
-	writetext Pokecenter2FOaksAide_Ask250Text
+	writetext Pokecenter2FNayru_Ask250Text
 	promptbutton
-	writetext Pokecenter2FOaksAide_OutroText
+	writetext Pokecenter2FNayru_OutroText
 	promptbutton
-	special AideCountCaughtMons
+	special NayruCountCaughtMons
 	ifless 250, .NotEnough
-	writetext Pokecenter2FOaksAide_HaveEnoughText
+	writetext Pokecenter2FNayru_HaveEnoughText
 	promptbutton
 	giveitem NUGGET, 99
 	iffalse .PackFull
-	writetext Pokecenter2FOaksAide_GiveNuggetsText
+	writetext Pokecenter2FNayru_GiveNuggetsText
 	playsound SFX_ITEM
 	waitsfx
-	writetext Pokecenter2FOaksAide_PutAwayNuggetsText
-	setevent EVENT_OAKS_AIDE_CAUGHT_250
+	writetext Pokecenter2FNayru_PutAwayNuggetsText
+	setevent EVENT_NAYRU_CAUGHT_250
 	sjump .EndText
 
 .NotEnough:
-	writetext Pokecenter2FOaksAide_NotEnoughText
+	writetext Pokecenter2FNayru_NotEnoughText
 	sjump .EndText
 	
 .AlreadyDone:
-	writetext Pokecenter2FOaksAide_NoMoreRewardsText
+	writetext Pokecenter2FNayru_NoMoreRewardsText
 .EndText:
 	waitbutton
 .CloseText:
@@ -593,7 +593,7 @@ Pokecenter2FOaksAideScript:
 	end
 
 .PackFull
-	writetext Pokecenter2FOaksAide_PackFullText
+	writetext Pokecenter2FNayru_PackFullText
 	sjump .EndText
 
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
@@ -892,113 +892,115 @@ Text_GenderSwapOutro:
 	line "again anytime."
 	done
 
-Pokecenter2FOaksAide_IntroText:
-	text "I'm PROF.OAK's aide."
+Pokecenter2FNayru_IntroText:
+	text "Hi! I'm NAYRU. I"
+	line "helped redesign"
+	cont "the #DEX!"
 	done
 
-Pokecenter2FOaksAide_OutroText:
+Pokecenter2FNayru_OutroText:
 	text "I'll have a reward"
-	line "for you."
+	line "for you!"
 	done
 
-Pokecenter2FOaksAide_Ask30Text:
+Pokecenter2FNayru_Ask30Text:
 	text "If you catch 30"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_Ask60Text:
+Pokecenter2FNayru_Ask60Text:
 	text "If you catch 60"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_Ask100Text:
+Pokecenter2FNayru_Ask100Text:
 	text "If you catch 100"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_Ask150Text:
+Pokecenter2FNayru_Ask150Text:
 	text "If you catch 150"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_Ask200Text:
+Pokecenter2FNayru_Ask200Text:
 	text "If you catch 200"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_Ask250Text:
+Pokecenter2FNayru_Ask250Text:
 	text "If you catch 250"
 	line "kinds of #MON,"
 	done
 
-Pokecenter2FOaksAide_NotEnoughText:
+Pokecenter2FNayru_NotEnoughText:
 	text "Hmm… you don't have"
 	line "enough yet."
 	done
 
-Pokecenter2FOaksAide_HaveEnoughText:
+Pokecenter2FNayru_HaveEnoughText:
 	text "Ah! You've caught"
 	line "enough!"
 
-	para "Please, take this!"
+	para "Here you go!"
 	done
 
-Pokecenter2FOaksAide_GiveMaxPotionsText:
+Pokecenter2FNayru_GiveMaxPotionsText:
 	text "<PLAYER> received"
 	line "MAX POTION ×10!"
 	done
 
-Pokecenter2FOaksAide_PutAwayMaxPotionsText:
+Pokecenter2FNayru_PutAwayMaxPotionsText:
 	text "<PLAYER> put the"
 	line "MAX POTIONS in the"
 	cont "ITEM POCKET."
 	done
 
-Pokecenter2FOaksAide_GiveFullRestoresText:
+Pokecenter2FNayru_GiveFullRestoresText:
 	text "<PLAYER> received"
 	line "FULL RESTORE ×10!"
 	done
 
-Pokecenter2FOaksAide_PutAwayFullRestoresText:
+Pokecenter2FNayru_PutAwayFullRestoresText:
 	text "<PLAYER> put the"
 	line "FULL RESTORES in"
 	cont "the ITEM POCKET."
 	done
 
-Pokecenter2FOaksAide_GiveMaxRevivesText:
+Pokecenter2FNayru_GiveMaxRevivesText:
 	text "<PLAYER> received"
 	line "MAX REVIVE ×10!"
 	done
 
-Pokecenter2FOaksAide_PutAwayMaxRevivesText:
+Pokecenter2FNayru_PutAwayMaxRevivesText:
 	text "<PLAYER> put the"
 	line "MAX REVIVES in the"
 	cont "ITEM POCKET."
 	done
 
-Pokecenter2FOaksAide_GiveSacredAshesText:
+Pokecenter2FNayru_GiveSacredAshesText:
 	text "<PLAYER> received"
 	line "SACRED ASH ×5!"
 	done
 
-Pokecenter2FOaksAide_PutAwaySacredAshesText:
+Pokecenter2FNayru_PutAwaySacredAshesText:
 	text "<PLAYER> put the"
 	line "SACRED ASHES in"
 	cont "the ITEM POCKET."
 	done
 
-Pokecenter2FOaksAide_GiveNuggetsText:
+Pokecenter2FNayru_GiveNuggetsText:
 	text "<PLAYER> received"
 	line "NUGGET ×99!"
 	done
 
-Pokecenter2FOaksAide_PutAwayNuggetsText:
+Pokecenter2FNayru_PutAwayNuggetsText:
 	text "<PLAYER> put the"
 	line "NUGGETS in the"
 	cont "ITEM POCKET."
 	done
 
-Pokecenter2FOaksAide_PackFullText:
+Pokecenter2FNayru_PackFullText:
 	text "Oh, your PACK's"
 	line "full…"
 
@@ -1006,7 +1008,7 @@ Pokecenter2FOaksAide_PackFullText:
 	line "reward later."
 	done
 
-Pokecenter2FOaksAide_NoMoreRewardsText:
+Pokecenter2FNayru_NoMoreRewardsText:
 	text "You've already got-"
 	line "ten all of the re-"
 	cont "wards I'd prepared."
@@ -1034,4 +1036,4 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_GenderSwap, -1
-	object_event  1,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOaksAideScript, EVENT_POKECENTER_2F_OAKS_AIDE
+	object_event  1,  1, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FNayruScript, EVENT_POKECENTER_2F_NAYRU
