@@ -23,7 +23,17 @@ ViewMoveList:
 	hlcoord 0,  0
 	lb bc, 9, 18
 	call TextboxBorder
-	jp ScrollingMenu
+
+	call ScrollingMenu
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .carry
+	and a
+	ret
+
+.carry
+	scf
+	ret
 
 ; The menu header defines the menu's position and what will be included.
 ; The last two values of "menu_coords" will determine where the vertical scroll arrows will be located.
@@ -126,7 +136,7 @@ ViewMoveList:
 .print_move_type
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 2, 11
+	hlcoord 10, 11
 	predef PrintMoveType
 
 .print_move_stat_strings
@@ -136,13 +146,13 @@ ViewMoveList:
 	hlcoord 0, 10
 	ld de, MoveDexTypeString
 	call PlaceString
-	hlcoord 12, 11
+	hlcoord 1, 10
 	ld de, MoveDexAttackString
 	call PlaceString
-	hlcoord  4, 12
+	hlcoord 1, 12
 	ld de, MoveDexChanceString
 	call PlaceString
-	hlcoord 12, 12
+	hlcoord 1, 11
 	ld de, MoveDexAccuracyString
 	call PlaceString
 
@@ -150,10 +160,10 @@ ViewMoveList:
 	ld a, [wCurSpecies]
 	ld b, a
 	farcall GetMoveCategoryName
-	hlcoord 1, 10
+	hlcoord 11, 12
 	ld de, wStringBuffer1
 	call PlaceString
-	hlcoord 1, 11
+	hlcoord 10, 12
 	ld [hl], "/"
 	inc hl
 
@@ -170,7 +180,7 @@ ViewMoveList:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord  8, 12
+	hlcoord 5, 12
 	call PrintNum
 	jr .print_move_accuracy
 
@@ -182,7 +192,7 @@ ViewMoveList:
 .print_move_null_chance
 	ld de, MoveDexNullValueString
 	ld bc, 3
-	hlcoord  8, 12
+	hlcoord 5, 12
 	call PlaceString
 
 .print_move_accuracy
@@ -206,7 +216,7 @@ ViewMoveList:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 12
+	hlcoord 5, 11
 	call PrintNum
 	jr .print_move_attack
 
@@ -215,7 +225,7 @@ ViewMoveList:
 .imperfect
 	ld de, MoveDexNullValueString
 	ld bc, 3
-	hlcoord 16, 12
+	hlcoord 5, 11
 	call PlaceString
 
 .print_move_attack
@@ -230,32 +240,27 @@ ViewMoveList:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 16, 11
+	hlcoord 5, 10
 	jp PrintNum
 
 ; This prints "---" if the move has an attack of 0 or 1.
 ; This covers status moves, OHKO moves, level damage, etc.
 .print_move_null_attack
-	hlcoord 16, 11
+	hlcoord 5, 10
 	ld de, MoveDexNullValueString
 	ld bc, 3
 	jp PlaceString
 
 MoveDexTypeTopString:
-	db "┌────────┐@"
-
+	db "┌───────┐@"
 MoveDexTypeString:
-	db "│        └@"
-
+	db "│       └@"
 MoveDexAttackString:
 	db "POW@"
-
 MoveDexAccuracyString:
 	db "ACC@"
-
 MoveDexChanceString:
 	db " FX@"
-
 MoveDexNullValueString:
 	db "---@"
 
