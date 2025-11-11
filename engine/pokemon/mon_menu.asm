@@ -1328,11 +1328,11 @@ String_MoveType_Top:
 String_MoveType_Bottom:
 	db "│       └@"
 String_MoveAtk:
-	db "POW/@"
+	db "POW@"
 String_MoveAcc:
-	db "ACC/@"
+	db "ACC@"
 String_MoveEff:
-	db "EFF/@"
+	db " FX@"
 String_MovePhy:
 	db "PHYSICAL@"
 String_MoveSpe:
