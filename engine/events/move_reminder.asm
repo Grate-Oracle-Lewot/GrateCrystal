@@ -652,13 +652,13 @@ MoveTypeString:
 	db "│        └@"
 
 MoveAttackString:
-	db "ATK/@"
+	db "POW@"
 
 MoveAccuracyString:
-	db "ACC/@"
+	db "ACC@"
 
 MoveChanceString:
-	db "EFF/@"
+	db " FX@"
 
 MoveNullValueString:
 	db "---@"
