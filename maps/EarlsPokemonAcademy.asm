@@ -267,7 +267,7 @@ TeacherFrizzleAfterText:
 
 EarlsPokemonAcademyYoungster1Text:
 	text "In the MOVES menu,"
-	line "EFF is the “effect"
+	line "FX is the “effect"
 	cont "chance,” or the"
 	cont "percent of time"
 	cont "that an effect"
