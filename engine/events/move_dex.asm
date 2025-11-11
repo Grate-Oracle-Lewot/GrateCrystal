@@ -248,13 +248,13 @@ MoveDexTypeString:
 	db "│        └@"
 
 MoveDexAttackString:
-	db "ATK/@"
+	db "POW@"
 
 MoveDexAccuracyString:
-	db "ACC/@"
+	db "ACC@"
 
 MoveDexChanceString:
-	db "EFF/@"
+	db " FX@"
 
 MoveDexNullValueString:
 	db "---@"
