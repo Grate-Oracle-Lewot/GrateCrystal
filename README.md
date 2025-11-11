@@ -86,7 +86,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - 2 more Pokémon added to each randomized pool (Lv10, Lv20, etc...., Lv100), plus an additional 16 Pokémon for the Lv100 challenge to pull from
   - After you've beaten Red, your 7th opponent in the Lv100 challenge will be replaced by one of 24 special trainers (random each time), consisting of Gym Leaders, League members, etc.
   - Completing the Inverse/Neutral Battle sidequest unlocks the ability to challenge the Battle Tower in those modes
-- Prof. Oak's aide now appears on the second floor of every Pokémon Center, and will hand out rewards for registering certain amounts of Pokémon in the Pokédex
+- An NPC on the second floor of every Pokémon Center now hands out rewards for registering certain amounts of Pokémon in the Pokédex
   - 30 entries: 10 Max Potions
   - 60 entries: 10 Full Restores
   - 100 entries: 10 Max Revives
