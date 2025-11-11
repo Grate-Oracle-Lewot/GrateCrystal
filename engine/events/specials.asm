@@ -368,7 +368,7 @@ FadeOutMusic:
 	ld [wMusicFade], a
 	ret
 
-AideCountCaughtMons:
+NayruCountCaughtMons:
 	ld hl, wPokedexCaught
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
