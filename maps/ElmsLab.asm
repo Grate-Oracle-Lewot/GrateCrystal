@@ -486,6 +486,8 @@ endc
 endc
 endc
 	closetext
+	readvar VAR_FACING
+	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
 
@@ -830,8 +832,6 @@ endc
 endc
 endc
 	closetext
-	readvar VAR_FACING
-	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
 
