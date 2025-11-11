@@ -204,7 +204,8 @@ LewotPhonePikminText:
 	line "they added the"
 
 	para "difficulty opti-"
-	line "ons, mind.)"
+	line "ons and new game"
+	cont "plus, mind.)"
 
 	para "My record for a"
 	line "similar run in"
