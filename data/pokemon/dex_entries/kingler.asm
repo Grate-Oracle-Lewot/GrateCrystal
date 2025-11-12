@@ -1,4 +1,4 @@
-	db "PINCER@" ; species name
+	db "ASYMMETRY@" ; species name
 	dw 403, 1320 ; height, weight
 
 	db   "The one with the"
