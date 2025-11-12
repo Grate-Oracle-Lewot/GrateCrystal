@@ -1,4 +1,4 @@
-	db "RIVER CRAB@" ; species name
+	db "TASTY LEGS@" ; species name
 	dw 104, 140 ; height, weight
 
 	db   "It can only walk"
