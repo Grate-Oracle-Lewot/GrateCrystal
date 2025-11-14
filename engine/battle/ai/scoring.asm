@@ -585,6 +585,9 @@ AI_Immunities:
 
 	inc de
 	call AIGetMoveAttributes
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr z, .checkmove
 
 	push hl
 	push bc
