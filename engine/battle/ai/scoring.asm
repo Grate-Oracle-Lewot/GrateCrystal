@@ -2396,13 +2396,18 @@ AI_Smart_Encore:
 INCLUDE "data/battle/ai/encore_moves.asm"
 
 AI_Smart_FlameWheel:
-; Encourage this move if the enemy is curled. If encouraged, 80% chance to encourage again.
+; 80% chance to encourage this move if the enemy is curled.
+; If encouraged, 50% chance to encourage again.
+
 	ld a, [wEnemySubStatus2]
 	bit SUBSTATUS_CURLED, a
 	ret z
-	dec [hl]
 
 	call AI_80_20
+	ret c
+	dec [hl]
+
+	call AI_50_50
 	ret c
 	dec [hl]
 	ret
