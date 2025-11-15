@@ -10,8 +10,6 @@ HallOfFame_MapScripts:
 
 .EnterHallOfFame:
 	sdefer .EnterHallOfFameScript
-	end
-
 .DummyScene:
 	end
 
@@ -36,7 +34,11 @@ HallOfFame_MapScripts:
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	setmapscene SPROUT_TOWER_3F, SCENE_FINISHED
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	special HealParty
+endc
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
