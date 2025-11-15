@@ -19,6 +19,9 @@ TrainerScientistHideki:
 	end
 
 SilphCo9FNurseScript:
+if DEF(_NO_POKEMON_CENTERS)
+	jumptextfaceplayer SilphCo9FNurseText
+else
 	faceplayer
 	opentext
 	writetext SilphCo9FNurseBeforeText
@@ -37,6 +40,7 @@ SilphCo9FNurseScript:
 	waitbutton
 	closetext
 	end
+endc
 
 SilphCo9FSign:
 	jumptext SilphCo9FSignText
@@ -57,6 +61,15 @@ ScientistHidekiAfterBattleText:
 	cont "power nap."
 	done
 
+if DEF(_NO_POKEMON_CENTERS)
+SilphCo9FNurseText:
+	text "If only we had a"
+	line "better place to"
+
+	para "store all these"
+	line "statues…"
+	done
+else
 SilphCo9FNurseBeforeText:
 	text "I'm the on-site"
 	line "physician."
@@ -74,6 +87,7 @@ SilphCo9FNurseAfterText:
 	para "store all these"
 	line "statues…"
 	done
+endc
 
 SilphCo9FSignText:
 	text "SILPH CO. 9F"
