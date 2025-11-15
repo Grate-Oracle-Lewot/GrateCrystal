@@ -1245,6 +1245,10 @@ LookAtElmPokeBallScript:
 
 ElmsLabHealingMachine:
 	opentext
+if DEF(_NO_POKEMON_CENTERS)
+	writetext ElmsLabHealingMachineText1
+	sjump ElmsLab_EndText
+else
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
@@ -1256,6 +1260,7 @@ ElmsLabHealingMachine:
 	iftrue ElmsLabHealingMachine_HealParty
 	closetext
 	end
+endc
 
 ElmsLabHealingMachine_HealParty:
 	special StubbedTrainerRankings_Healings
