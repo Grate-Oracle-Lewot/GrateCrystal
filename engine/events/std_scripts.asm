@@ -78,6 +78,10 @@ PokecenterNurseScript:
 .nite
 	farwritetext NurseNiteText
 .ok
+if DEF(_NO_POKEMON_CENTERS)
+	closetext
+	end
+else
 	farwritetext NurseAskHealText
 	yesorno
 	iffalse .done
@@ -125,6 +129,7 @@ PokecenterNurseScript:
 	setflag ENGINE_CAUGHT_POKERUS
 	specialphonecall SPECIALCALL_POKERUS
 	end
+endc
 
 PokecenterChanseyScript:
 	opentext
