@@ -142,8 +142,12 @@ TrashCanText:
 	done
 
 PokecenterSignText:
+if DEF(_NO_POKEMON_CENTERS)
+	text "#MON CENTER"
+else
 	text "Heal Your #MON!"
 	line "#MON CENTER"
+endc
 	done
 
 MartSignText:
