@@ -569,7 +569,7 @@ AI_Types:
 	cp WEATHER_HAIL
 	ret nz
 
-	ld hl, HoodHailMoves
+	ld hl, GoodHailMoves
 	jp AI_EncourageIfInArray
 
 GoodHailMoves:
