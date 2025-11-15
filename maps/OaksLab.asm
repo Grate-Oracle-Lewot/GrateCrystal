@@ -52,6 +52,12 @@ Oak:
 
 OaksLabHealingMachine:
 	opentext
+if DEF(_NO_POKEMON_CENTERS)
+	writetext OaksLabHealingMachineText1
+	waitbutton
+	closetext
+	end
+else
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .CanHeal
 	writetext OaksLabHealingMachineText1
@@ -65,6 +71,7 @@ OaksLabHealingMachine:
 	iftrue OaksLabHealingMachine_HealParty
 	closetext
 	end
+endc
 
 OaksLabHealingMachine_HealParty:
 	special StubbedTrainerRankings_Healings
