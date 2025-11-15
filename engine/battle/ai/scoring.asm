@@ -466,8 +466,8 @@ INCLUDE "data/battle/ai/residual_moves.asm"
 
 
 AI_Types:
-; Encourage super-effective moves.
-; Discourage not very effective moves unless all damaging moves are of the same type.
+; Encourage super effective moves and discourage not very effective moves.
+; Ignore moves with a power of 0 or 1. Skip discouragement if all damaging moves are the same type.
 ; Encourage moves based on the weather. Includes Solarbeam and Thunder, but not Blizzard.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -484,6 +484,9 @@ AI_Types:
 
 	inc de
 	call AIGetMoveAttributes
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	cp 2
+	jr c, .checkmove
 
 	push hl
 	push bc
@@ -500,10 +503,7 @@ AI_Types:
 	jr z, .checkmove
 	jr c, .noteffective
 
-; effective
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	jr z, .checkmove
+; greater than effective
 	dec [hl]
 	jr .checkmove
 
@@ -533,8 +533,7 @@ AI_Types:
 	jr z, .checkmove2
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr nz, .damaging
-	jr .checkmove2
+	jr z, .checkmove2
 
 .damaging
 	ld c, a
@@ -555,11 +554,10 @@ AI_Types:
 	jr nz, .checksun
 
 	ld hl, RainDanceMoves
-	call AI_EncourageIfInArray
+	jp AI_EncourageIfInArray
 
 ; Encourage moves in the Sunny Day list if it's sunny.
 .checksun
-	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret nz
 
@@ -568,7 +566,7 @@ AI_Types:
 
 
 AI_Immunities:
-; Dismiss any move that the player is immune to.
+; Dismiss any damaging move that the player is immune to.
 ; Broken off from AI_Types to use alongside AI_Aggressive, which generally replaces AI_Types.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -601,8 +599,7 @@ AI_Immunities:
 
 	ld a, [wTypeMatchup]
 	and a
-	jr z, .immune
-	jr .checkmove
+	jr nz, .checkmove
 
 .immune
 	call AIDismissMove
