@@ -554,7 +554,7 @@ AI_Types:
 	jr nz, .checksun
 
 	ld hl, RainDanceMoves
-	jp AI_EncourageIfInArray
+	jr AI_EncourageIfInArray
 
 ; Encourage moves in the Sunny Day list if it's sunny.
 .checksun
@@ -562,7 +562,7 @@ AI_Types:
 	jr nz, .checkhail
 
 	ld hl, SunnyDayMoves
-	jp AI_EncourageIfInArray
+	jr AI_EncourageIfInArray
 
 ; Encourage Blizzard in Hail.
 .checkhail
@@ -570,7 +570,46 @@ AI_Types:
 	ret nz
 
 	ld hl, GoodHailMoves
-	jp AI_EncourageIfInArray
+	; fallthrough
+
+AI_EncourageIfInArray:
+; input: address of array in hl
+	ld a, l
+	ld [wMoveCheckArrayAddr], a
+	ld a, h
+	ld [wMoveCheckArrayAddr + 1], a
+
+	ld hl, wEnemyAIMoveScores - 1
+	ld de, wEnemyMonMoves
+	ld c, NUM_MOVES + 1
+.loop
+	inc hl
+	dec c
+	ret z
+
+	ld a, [de]
+	inc de
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+	ld de, wMoveCheckArrayAddr
+	ld a, [de]
+	ld l, a
+	inc de
+	ld a, [de]
+	ld h, a
+	call IsInByteArray
+
+	pop bc
+	pop de
+	pop hl
+	jr nc, .loop
+
+	dec [hl]
+	jr .loop
 
 GoodHailMoves:
 ; Used by AI_Types and AI_Smart_Hail.
@@ -3930,45 +3969,6 @@ AIGetMoveAttributes:
 	pop de
 	pop hl
 	ret
-
-AI_EncourageIfInArray:
-; input: address of array in hl
-	ld a, l
-	ld [wMoveCheckArrayAddr], a
-	ld a, h
-	ld [wMoveCheckArrayAddr + 1], a
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.loop
-	inc hl
-	dec c
-	ret z
-
-	ld a, [de]
-	inc de
-	and a
-	ret z
-
-	push hl
-	push de
-	push bc
-	ld de, wMoveCheckArrayAddr
-	ld a, [de]
-	ld l, a
-	inc de
-	ld a, [de]
-	ld h, a
-	call IsInByteArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .loop
-
-	dec [hl]
-	jr .loop
 
 AI_50_50:
 	call Random
