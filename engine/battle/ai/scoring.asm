@@ -468,7 +468,7 @@ INCLUDE "data/battle/ai/residual_moves.asm"
 AI_Types:
 ; Encourage super effective moves and discourage not very effective moves.
 ; Ignore moves with a power of 0 or 1. Skip discouragement if all damaging moves are the same type.
-; Encourage moves based on the weather. Includes Solarbeam and Thunder, but not Blizzard.
+; Encourage moves based on the weather. Includes Solarbeam, Thunder, and Blizzard.
 
 	ld hl, wEnemyAIMoveScores - 1
 	ld de, wEnemyMonMoves
@@ -559,10 +559,23 @@ AI_Types:
 ; Encourage moves in the Sunny Day list if it's sunny.
 .checksun
 	cp WEATHER_SUN
-	ret nz
+	jr nz, .checkhail
 
 	ld hl, SunnyDayMoves
 	jp AI_EncourageIfInArray
+
+; Encourage Blizzard in Hail.
+.checkhail
+	cp WEATHER_HAIL
+	ret nz
+
+	ld hl, HoodHailMoves
+	jp AI_EncourageIfInArray
+
+GoodHailMoves:
+; Used by AI_Types and AI_Smart_Hail.
+	db BLIZZARD
+	db -1 ; end
 
 
 AI_Immunities:
@@ -2979,7 +2992,7 @@ AI_Smart_Hail:
 
 ; Encourage this move if AI has good Hail moves.
 	push hl
-	ld hl, .GoodHailMoves
+	ld hl, GoodHailMoves
 	call AIHasMoveInArray
 	pop hl
 	jr c, .encourage
@@ -2997,10 +3010,6 @@ AI_Smart_Hail:
 .discourage
 	inc [hl]
 	ret
-
-.GoodHailMoves
-	db BLIZZARD
-	db -1 ; end
 
 AI_Smart_Blizzard:
 ; Do nothing if the player is Fire- or Ice-type, and therefore immune to being frozen.
