@@ -22,6 +22,9 @@ RadioTower4FDJMaryScript:
 	iftrue .GotPinkBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRockets
+if DEF(_NO_POKEMON_CENTERS)
+	writetext RadioTower4FDJMaryText
+else
 	writetext RadioTower4FDJMaryHealText
 	waitbutton
 	closetext
@@ -35,6 +38,7 @@ RadioTower4FDJMaryScript:
 	special RestartMapMusic
 	opentext
 	writetext RadioTower4FDJMarySaveUsText
+endc
 	waitbutton
 	closetext
 	end
@@ -124,6 +128,15 @@ RadioTower4FFisherText:
 	line "broadcast there."
 	done
 
+if DEF(_NO_POKEMON_CENTERS)
+RadioTower4FDJMaryText:
+	text "MARY: Why? Why do"
+	line "I have to suffer"
+	cont "through this?"
+
+	para "MEOWTH, help me!"
+	done
+else
 RadioTower4FDJMaryHealText:
 	text "MARY: Are you"
 	line "trying to stop"
@@ -137,6 +150,7 @@ RadioTower4FDJMarySaveUsText:
 	text "MARY: Now go save"
 	line "us!!"
 	done
+endc
 
 RadioTower4FDJMaryText_ClearedRockets:
 	text "MARY: Oh! You're"
