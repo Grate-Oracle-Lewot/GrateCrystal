@@ -68,11 +68,15 @@ FastShipBed:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	special StubbedTrainerRankings_Healings
 	special HealParty
 	playmusic MUSIC_HEAL
 	pause 60
 	special RestartMapMusic
+endc
 	special FadeInQuickly
 	opentext
 	writetext FastShipBedText2
