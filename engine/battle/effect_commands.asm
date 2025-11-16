@@ -2536,6 +2536,9 @@ EndMoveEffect:
 	ret
 
 UnevolvedEviolite:
+if DEF(_LITTLE_CUP)
+	ret
+else
 ; get the defender's species
 	ld a, MON_SPECIES
 	call BattlePartyAttr
@@ -2592,6 +2595,7 @@ UnevolvedEviolite:
 	scf
 	rr c
 	ret
+endc
 
 BattleCommand_DamageStats:
 	ldh a, [hBattleTurn]
