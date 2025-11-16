@@ -181,7 +181,6 @@ endc
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
 	disappear CHERRYGROVECITY_SILVER
 	setscene SCENE_CHERRYGROVECITY_NOTHING
-	special HealParty
 	playmapmusic
 	end
 
