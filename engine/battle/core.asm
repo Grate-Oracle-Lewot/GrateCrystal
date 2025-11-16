@@ -2651,12 +2651,6 @@ WinTrainerBattle:
 	ld c, 20
 	call DelayFrames
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_CANLOSE
-	jr nz, .skip_heal
-	predef HealParty
-.skip_heal
-
 	call PrintWinLossText
 
 ; Don't show money award text if base reward = 0
@@ -3120,6 +3114,8 @@ LostBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
 	jr nz, .not_canlose
+
+	predef HealParty
 
 ; Remove the enemy from the screen.
 	hlcoord 0, 0
