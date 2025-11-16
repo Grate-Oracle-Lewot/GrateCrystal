@@ -193,6 +193,9 @@ MrPokemonsHouse_OakScript:
 	pause 15
 	turnobject PLAYER, UP
 	opentext
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	writetext MrPokemonsHouse_MrPokemonHealText
 	waitbutton
 	closetext
@@ -205,6 +208,7 @@ MrPokemonsHouse_OakScript:
 	special FadeInQuickly
 	special RestartMapMusic
 	opentext
+endc
 	writetext MrPokemonText_ImDependingOnYou
 	waitbutton
 	closetext
