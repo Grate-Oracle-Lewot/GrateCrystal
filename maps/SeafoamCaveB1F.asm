@@ -51,6 +51,9 @@ SeafoamCaveBook:
 	end
 
 SeafoamCaveBed:
+if DEF(_NO_POKEMON_CENTERS)
+	jumptext SeafoamCaveBedText
+else
 	opentext
 	writetext SeafoamCaveBedText1
 	closetext
@@ -66,6 +69,7 @@ SeafoamCaveBed:
 	writetext SeafoamCaveBedText2
 	closetext
 	end
+endc
 
 SeafoamCaveB1FXAccuracy:
 	itemball X_ACCURACY
@@ -259,6 +263,11 @@ SeafoamCaveBookText7:
 	line "a real company."
 	done
 
+if DEF(_NO_POKEMON_CENTERS)
+SeafoamCaveBedText:
+	text "Looks comfy…"
+	done
+else
 SeafoamCaveBedText1:
 	text "A comfy bed!"
 	line "Time to sleep…"
@@ -268,6 +277,7 @@ SeafoamCaveBedText2:
 	text "Ah, refreshed and"
 	line "restored!"
 	autodone
+endc
 
 SeafoamCaveB1F_MapEvents:
 	db 0, 0 ; filler
