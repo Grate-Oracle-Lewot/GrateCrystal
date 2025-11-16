@@ -33,7 +33,11 @@ Red:
 	pause 15
 	special FadeInQuickly
 	pause 30
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	special HealParty
+endc
 	checkevent EVENT_BEAT_RED
 	iftrue .EndRed
 	opentext
