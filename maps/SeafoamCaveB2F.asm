@@ -135,7 +135,11 @@ SeafoamCaveB2FKarenScript:
 .SkipPhone:
 	closetext
 .End:
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	special HealParty
+endc
 	refreshscreen
 	credits
 	end
