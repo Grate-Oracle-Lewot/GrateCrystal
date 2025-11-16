@@ -61,7 +61,11 @@ TrainerJessieJames1:
 	clearevent EVENT_KURTS_HOUSE_SLOWPOKE
 	clearevent EVENT_KURTS_HOUSE_KURT_1
 	special FadeOutPalettes
+if DEF(_NO_POKEMON_CENTERS)
+	; no free healthcare
+else
 	special HealParty
+endc
 	pause 15
 	warp KURTS_HOUSE, 3, 3
 	end
