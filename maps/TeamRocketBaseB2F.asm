@@ -158,6 +158,9 @@ LanceHealsScript2:
 LanceHealsCommon:
 	opentext
 	writetext LanceHealsText1
+if DEF(_NO_POKEMON_CENTERS)
+	promptbutton
+else
 	waitbutton
 	closetext
 	special FadeOutPalettes
@@ -166,6 +169,7 @@ LanceHealsCommon:
 	special HealParty
 	special FadeInPalettes
 	opentext
+endc
 	writetext LanceHealsText2
 	waitbutton
 	closetext
@@ -802,6 +806,10 @@ RocketBaseLanceMonMasterText:
 	done
 
 LanceHealsText1:
+if DEF(_NO_POKEMON_CENTERS)
+	text "LANCE: This base"
+	line "is like a maze…"
+else
 	text "LANCE: Are you all"
 	line "right?"
 
@@ -812,6 +820,7 @@ LanceHealsText1:
 	line "some of my medi-"
 	cont "cine."
 	done
+endc
 
 LanceHealsText2:
 	text "LANCE: <PLAY_G>,"
