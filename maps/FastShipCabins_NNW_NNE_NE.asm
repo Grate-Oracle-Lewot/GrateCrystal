@@ -89,11 +89,6 @@ FastShipLazySailorScript:
 	loadtrainer SAILOR, STANLY
 	startbattle
 	reloadmap
-if DEF(_NO_POKEMON_CENTERS)
-	; no free healthcare
-else
-	special HealParty
-endc
 	setevent EVENT_BEAT_SAILOR_STANLY
 	opentext
 	writetext SailorStanlyAfterBattleText
