@@ -28,7 +28,7 @@ VermilionGym_MapScripts:
 	endcallback
 
 .OpenPath
-	changeblock 4, 4, $01 ; floor
+	changeblock 4, 4, $01 ; walkable floor
 	endcallback
 
 VermilionGymSurgeScript:
