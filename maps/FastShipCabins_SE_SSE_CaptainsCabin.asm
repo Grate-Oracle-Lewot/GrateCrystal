@@ -357,6 +357,7 @@ TwinsMegandpeg1SeenText:
 	done
 
 TwinsMegandpeg1BeatenText:
+TwinsMegandpeg2BeatenText:
 	text "Oh! We lost!"
 	done
 
@@ -371,10 +372,6 @@ TwinsMegandpeg2SeenText:
 
 	para "That's not nice to"
 	line "say to a lady!"
-	done
-
-TwinsMegandpeg2BeatenText:
-	text "Oh! We lost!"
 	done
 
 TwinsMegandpeg2AfterBattleText:
