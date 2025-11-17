@@ -1460,7 +1460,7 @@ endc
 	; morn
 	db 12, RATTATA
 	db 12, KOFFING
-	db 14, RATTATA
+	db 15, CUBONE
 	db 15, KOFFING
 if DEF(_LITTLE_CUP)
 	db 15, KOFFING
@@ -1475,7 +1475,7 @@ endc
 	; day
 	db 12, RATTATA
 	db 12, KOFFING
-	db 14, RATTATA
+	db 14, CUBONE
 	db 15, KOFFING
 if DEF(_LITTLE_CUP)
 	db 15, KOFFING
@@ -1489,19 +1489,17 @@ else
 	db 16, FLAREON
 endc
 	; nite
-if DEF(_LITTLE_CUP)
-	db 12, GASTLY
+	db 12, RATTATA
 	db 12, KOFFING
+if DEF(_LITTLE_CUP)
 	db 15, CUBONE
-	db 15, KOFFING
+	db 12, GASTLY
 	db 17, GASTLY
 	db 13, ZUBAT
 	db 14, ZUBAT
 else
-	db 12, MISDREAVUS
-	db 12, KOFFING
 	db 15, MAROWAK
-	db 15, KOFFING
+	db 12, MISDREAVUS
 	db 17, MISDREAVUS
 	db 13, MURKROW
 	db 14, MURKROW
