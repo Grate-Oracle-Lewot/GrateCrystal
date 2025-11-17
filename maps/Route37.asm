@@ -121,6 +121,7 @@ TwinsAnnandanne1SeenText:
 	done
 
 TwinsAnnandanne1BeatenText:
+TwinsAnnandanne2BeatenText:
 	text "ANN & ANNE: Nnn… A"
 	line "little too strong."
 	done
@@ -137,11 +138,6 @@ TwinsAnnandanne2SeenText:
 	text "ANNE: ANN and I"
 	line "are in this to-"
 	cont "gether!"
-	done
-
-TwinsAnnandanne2BeatenText:
-	text "ANN & ANNE: Nnn… A"
-	line "little too strong."
 	done
 
 TwinsAnnandanne2AfterBattleText:
@@ -196,7 +192,7 @@ SunnyGaveGiftText:
 
 	para "Um…"
 
-	para "… What was it now…"
+	para "…What was it now…"
 
 	para "…"
 
