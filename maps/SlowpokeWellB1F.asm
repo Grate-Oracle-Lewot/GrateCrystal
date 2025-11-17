@@ -204,16 +204,16 @@ JessieJames1SeenText:
 	cont "devastation!"
 
 	para "To unite all"
-	line "peoples within our"
-	cont "nation!"
+	line "peoples within"
+	cont "our nation!"
 
 	para "To denounce the"
-	line "evils of truth and"
-	cont "love!"
+	line "evils of truth"
+	cont "and love!"
 
 	para "To extend our"
-	line "reach to the stars"
-	cont "above!"
+	line "reach to the"
+	cont "stars above!"
 
 	para "JESSIE: JESSIE!"
 	line "JAMES: JAMES!"
