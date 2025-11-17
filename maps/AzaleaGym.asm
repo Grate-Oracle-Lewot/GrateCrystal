@@ -314,6 +314,7 @@ TwinsAmyandmay1SeenText:
 	done
 
 TwinsAmyandmay1BeatenText:
+TwinsAmyandmay2BeatenText:
 	text "AMY & MAY: Oh,"
 	line "double goodness!"
 	done
@@ -327,11 +328,6 @@ TwinsAmyandmay2SeenText:
 	text "MAY: You want to"
 	line "see the LEADER?"
 	cont "We come first!"
-	done
-
-TwinsAmyandmay2BeatenText:
-	text "AMY & MAY: Oh,"
-	line "double goodness!"
 	done
 
 TwinsAmyandmay2AfterBattleText:
