@@ -264,6 +264,9 @@ NationalParkTMDig:
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
+NationalParkTrashcan:
+	jumpstd TrashCanScript
+
 NationalParkLassText:
 	text "It's always sunny"
 	line "in the PARK, even"
@@ -495,6 +498,8 @@ NationalPark_MapEvents:
 	bg_event 27, 31, BGEVENT_READ, NationalParkBattleNoticeSign
 	bg_event  6, 47, BGEVENT_ITEM, NationalParkHiddenFullHeal
 	bg_event 12,  4, BGEVENT_READ, NationalParkTrainerTipsSign
+	bg_event 12, 40, BGEVENT_READ, NationalParkTrashcan
+	bg_event 30, 40, BGEVENT_READ, NationalParkTrashcan
 
 	def_object_events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
