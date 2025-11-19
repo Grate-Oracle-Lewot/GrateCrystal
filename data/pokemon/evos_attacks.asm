@@ -2148,7 +2148,7 @@ SnorlaxEvosAttacks:
 	db 3, LICK
 	db 8, DEFENSE_CURL
 	db 11, BITE
-	db 15, AMNESIA
+	db 17, AMNESIA
 	db 22, MEGA_PUNCH
 	db 29, ROLLOUT
 	db 36, SOFTBOILED
