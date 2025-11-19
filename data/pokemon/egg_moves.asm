@@ -507,6 +507,7 @@ AerodactylEggMoves:
 	db -1 ; end
 
 SnorlaxEggMoves:
+	db LOVELY_KISS
 	db HYPER_FANG
 	db LOW_KICK
 	db STOMP
