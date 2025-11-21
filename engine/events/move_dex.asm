@@ -1,4 +1,7 @@
 MoveDex:
+	ld a, NUM_ATTACKS
+	ld [wd002], a
+
 	ld hl, Text_MoveDexIntro
 	call PrintText
 	call YesNoBox
@@ -49,7 +52,7 @@ ViewMoveList:
 	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3
 	db 4, SCREEN_WIDTH + 2
 	db SCROLLINGMENU_ITEMS_NORMAL
-	db NUM_ATTACKS
+	dba  wd002
 	dba .print_move_name
 	dba .print_pp
 	dba .print_move_details
