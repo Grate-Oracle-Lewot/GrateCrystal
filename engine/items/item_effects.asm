@@ -776,13 +776,21 @@ DuskBallMultiplier:
 ; is it night?
 	ld a, [wTimeOfDay]
 	cp NITE
-	jr z, .night_or_cave
+	jr z, MultiplyCatchRateByThree
 ; or are we in a cave?
 	ld a, [wEnvironment]
 	cp CAVE
 	ret nz ; neither night nor cave
+	jr MultiplyCatchRateByThree
 
-.night_or_cave
+LureBallMultiplier:
+; multiply catch rate by 3 if this is a fishing rod battle
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	ret nz
+	; fallthrough
+
+MultiplyCatchRateByThree:
 ; b is the catch rate
 ; a := b + b + b == b × 3
 	ld a, b
@@ -905,24 +913,6 @@ endr
 	db HIGH(3072),  20
 	db HIGH(4096),  30
 	db HIGH(65280), 40
-
-LureBallMultiplier:
-; multiply catch rate by 3 if this is a fishing rod battle
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	ret nz
-
-	ld a, b
-	add a
-	jr c, .max
-
-	add b
-	jr nc, .done
-.max
-	ld a, $ff
-.done
-	ld b, a
-	ret
 
 MoonBallMultiplier:
 	ld a, [wTempEnemyMonSpecies]
