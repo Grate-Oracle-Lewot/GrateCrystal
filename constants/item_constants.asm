@@ -41,7 +41,7 @@
 	const LEAF_STONE   ; 21
 	const X_EVADE      ; 22
 	const NUGGET       ; 23
-	const POKE_DOLL    ; 24
+	const JEDI_ROBE    ; 24
 	const FULL_HEAL    ; 25
 	const REVIVE       ; 26
 	const MAX_REVIVE   ; 27
