@@ -26,7 +26,7 @@ TrainerCooltrainermTyler:
 	end
 
 DarkCaveVioletEntrancePotion:
-	itemball POTION
+	itemball SUPER_POTION
 
 DarkCaveVioletEntranceFullHeal:
 	itemball FULL_HEAL
