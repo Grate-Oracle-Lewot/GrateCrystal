@@ -652,7 +652,7 @@ MoveTypeString:
 MoveAttackString:
 	db "POW@"
 MoveAccuracyString:
-	db "ACC@"
+	db "HIT@"
 MoveChanceString:
 	db " FX@"
 MoveNullValueString:
