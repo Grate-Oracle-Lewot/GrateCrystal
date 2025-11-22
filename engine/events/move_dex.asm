@@ -261,7 +261,7 @@ MoveDexTypeString:
 MoveDexAttackString:
 	db "POW@"
 MoveDexAccuracyString:
-	db "ACC@"
+	db "HIT@"
 MoveDexChanceString:
 	db " FX@"
 MoveDexNullValueString:
