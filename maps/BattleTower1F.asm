@@ -129,6 +129,20 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize:
+	checkevent EVENT_GOT_JEDI_ROBE_FROM_BATTLE_TOWER
+	iftrue .vitamins
+	setval BATTLETOWERACTION_1C
+	special BattleTowerAction
+	setval BATTLETOWERACTION_GIVEREWARD
+	special BattleTowerAction
+	verbosegiveitem JEDI_ROBE
+	iffalse Script_YourPackIsStuffedFull
+	setval BATTLETOWERACTION_1D
+	special BattleTowerAction
+	setevent EVENT_GOT_JEDI_ROBE_FROM_BATTLE_TOWER
+	sjump Script_WaitButton
+
+.vitamins
 	setval BATTLETOWERACTION_1C
 	special BattleTowerAction
 	setval BATTLETOWERACTION_GIVEREWARD
