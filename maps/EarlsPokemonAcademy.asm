@@ -276,15 +276,20 @@ EarlsPokemonAcademyYoungster1Text:
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
-	text "I traded my best"
-	line "#MON to the"
-	cont "guy beside me."
+	text "#MON can hold"
+	line "items when you"
+	cont "trade them."
 	done
 
 EarlsPokemonAcademyGameboyKid2Text:
-	text "Huh? The #MON I"
-	line "just got is hold-"
-	cont "ing something!"
+	text "POLISHED CRYSTAL"
+	line "is the definitive"
+	cont "Gen 2 hack."
+
+	para "It has everything!"
+
+	para "I can't beat the"
+	line "LEAGUE, though…"
 	done
 
 EarlsPokemonAcademyYoungster2Text:
