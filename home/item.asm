@@ -75,7 +75,6 @@ ItemNameOrder::
 	db REPEL
 	db SUPER_REPEL
 	db MAX_REPEL
-	db POKE_DOLL
 	db SMOKE_BALL
 	db ESCAPE_ROPE
 	db SWAG_BEACON
@@ -256,6 +255,7 @@ ItemNameOrder::
 	db BICYCLE
 	db HEDGER
 	db PICKAXE
+	db JEDI_ROBE
 	db FLOATIE
 	db EGG_BEATER
 	db GRAVITY_BUOY
