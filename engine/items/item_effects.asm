@@ -2028,6 +2028,22 @@ Softboiled_MilkDrinkFunction:
 EscapeRopeEffect:
 	xor a
 	ld [wItemEffectSucceeded], a
+
+	ld a, [wBattleMode]
+	dec a
+	jr c, .field
+	ret nz
+
+; wild battle
+	ld a, TRUE
+	ld [wForcedSwitch], a
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	or DRAW
+	ld [wBattleResult], a
+	jp UseItemText
+
+.field
 	farcall EscapeRopeFunction
 
 	ld a, [wItemEffectSucceeded]
@@ -2069,23 +2085,6 @@ XAccuracyEffect:
 	jp nz, WontHaveAnyEffect_NotUsedMessage
 	set SUBSTATUS_X_ACCURACY, [hl]
 	jp UseItemText
-
-PokeDollEffect:
-	ld a, [wBattleMode]
-	dec a ; WILD_BATTLE?
-	jr nz, .not_wild
-	inc a ; TRUE
-	ld [wForcedSwitch], a
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	or DRAW
-	ld [wBattleResult], a
-	jp UseItemText
-
-.not_wild
-	xor a
-	ld [wItemEffectSucceeded], a
-	ret
 
 GuardSpecEffect:
 	ld hl, wPlayerSubStatus4
