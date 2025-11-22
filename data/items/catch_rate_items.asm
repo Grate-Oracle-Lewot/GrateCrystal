@@ -3,6 +3,7 @@
 
 TimeCapsule_CatchRateItems:
 	db BICYCLE,       GOLD_BERRY
+	db JEDI_ROBE,     GOLD_BERRY
 	db COIN_CASE,     GOLD_BERRY
 	db OLD_ROD,       GOLD_BERRY
 	db GOOD_ROD,      GOLD_BERRY
