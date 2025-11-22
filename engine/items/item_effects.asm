@@ -49,7 +49,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; LEAF_STONE
 	dw XItemEffect         ; X_EVADE
 	dw NoEffect            ; NUGGET
-	dw PokeDollEffect      ; POKE_DOLL
+	dw JediRobeEffect      ; JEDI_ROBE
 	dw StatusHealingEffect ; FULL_HEAL
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
@@ -2854,7 +2854,7 @@ GetMthMoveOfCurrentMon:
 HedgerEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall CutFunction
+	farcall HedgerFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
 	jr nz, FailHMItem
@@ -2865,7 +2865,7 @@ HedgerEffect:
 PickaxeEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall RockSmashFunction
+	farcall PickaxeFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
 	jr nz, FailHMItem
@@ -2924,7 +2924,7 @@ FloatieEffect:
 EggBeaterEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall WhirlpoolFunction
+	farcall EggBeaterFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
 	jr nz, FailHMItem
@@ -2939,6 +2939,14 @@ GravityBuoyEffect:
 	ld a, [wFieldMoveSucceeded]
 	cp $1
 	jr nz, FailHMItem
+	ld b, $4
+	ld a, $2
+	ret
+
+JediRobeEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall JediRobeFunction
 	ld b, $4
 	ld a, $2
 	ret
