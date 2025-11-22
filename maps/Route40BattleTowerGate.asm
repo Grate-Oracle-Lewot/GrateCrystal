@@ -46,10 +46,7 @@ Route40BattleTowerGateRockerText:
 	line "the BATTLE TOWER?"
 
 	para "If you win a lot,"
-	line "you get vitamins"
-
-	para "like PROTEIN or"
-	line "IRON as prizes."
+	line "you get a prize."
 	done
 
 Route40BattleTowerGateTwinText:
