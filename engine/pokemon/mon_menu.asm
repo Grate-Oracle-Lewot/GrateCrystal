@@ -1330,7 +1330,7 @@ String_MoveType_Bottom:
 String_MoveAtk:
 	db "POW@"
 String_MoveAcc:
-	db "ACC@"
+	db "HIT@"
 String_MoveEff:
 	db " FX@"
 String_MoveBlank:
