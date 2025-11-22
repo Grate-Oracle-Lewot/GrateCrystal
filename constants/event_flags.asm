@@ -615,20 +615,21 @@
 	const EVENT_GOT_ODD_EGG
 	const EVENT_BROKE_MAGIKARP_RECORD ; new to Grate Crystal
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-	const EVENT_SABRINA_IN_FIGHTING_DOJO ; new to Grate Crystal
-	const EVENT_FIGHTINGDOJO_KIYO ; new to Grate Crystal
-	const EVENT_FIGHTINGDOJO_SABRINA ; new to Grate Crystal
-	const EVENT_BROCK_IN_PEWTER_MUSEUM ; new to Grate Crystal
-	const EVENT_PEWTERMUSEUM1F_PHARMACIST ; new to Grate Crystal
-	const EVENT_PEWTERMUSEUM1F_BROCK ; new to Grate Crystal
 ; new to Grate Crystal
+	const EVENT_SABRINA_IN_FIGHTING_DOJO
+	const EVENT_FIGHTINGDOJO_KIYO
+	const EVENT_FIGHTINGDOJO_SABRINA
+	const EVENT_BROCK_IN_PEWTER_MUSEUM
+	const EVENT_PEWTERMUSEUM1F_PHARMACIST
+	const EVENT_PEWTERMUSEUM1F_BROCK
+	const EVENT_GOT_JEDI_ROBE_FROM_BATTLE_TOWER
 	const EVENT_NAYRU_CAUGHT_30  ; Max Potions
 	const EVENT_NAYRU_CAUGHT_60  ; Full Restores
 	const EVENT_NAYRU_CAUGHT_100 ; Max Revives
 	const EVENT_NAYRU_CAUGHT_150 ; Master Ball
 	const EVENT_NAYRU_CAUGHT_200 ; Sacred Ashes
 	const EVENT_NAYRU_CAUGHT_250 ; Nuggets
-; Unused: next 155 events
+; Unused: next 154 events
 
 	const_next 1000
 ; Trainer flags
