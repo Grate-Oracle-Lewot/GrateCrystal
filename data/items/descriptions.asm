@@ -36,7 +36,7 @@ ItemDescriptions:
 	dw LeafStoneDesc
 	dw XEvadeDesc
 	dw NuggetDesc
-	dw PokeDollDesc
+	dw JediRobeDesc
 	dw FullHealDesc
 	dw ReviveDesc
 	dw MaxReviveDesc
@@ -328,8 +328,8 @@ PotionDesc:
 	next "HP by 20.@"
 
 EscapeRopeDesc:
-	db   "Use for escaping"
-	next "from caves, etc.@"
+	db   "Escape from a wild"
+	next "battle or dungeon.@"
 
 RepelDesc:
 	db   "Repels weak #-"
@@ -399,9 +399,9 @@ NuggetDesc:
 	db   "A golden chicken"
 	next "nugget. Sell high.@"
 
-PokeDollDesc:
-	db   "Use to escape from"
-	next "a wild #MON.@"
+JediRobeDesc:
+	db   "Move boulders with"
+	next "your mind!@"
 
 FullHealDesc:
 	db   "Eliminates all"
