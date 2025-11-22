@@ -1000,16 +1000,14 @@ StrengthFunction:
 	ld de, ENGINE_PLAINBADGE
 	call CheckBadge
 	jr c, .Failed
-	jr .UseStrength
 
-.Failed:
-	ld a, JUMPTABLE_EXIT
-	ret
-
-.UseStrength:
 	ld hl, Script_StrengthFromMenu
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
+	ret
+
+.Failed:
+	ld a, JUMPTABLE_EXIT
 	ret
 
 SetStrengthFlag:
@@ -1101,7 +1099,6 @@ TryStrengthOW:
 
 .already_using
 	xor a
-
 .done
 	ld [wScriptVar], a
 	ret
