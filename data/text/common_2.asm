@@ -300,7 +300,14 @@ _CantUseItemText::
 	prompt
 
 _UseCutText::
-	text "A swath was cut!"
+	text_ram wStringBuffer2
+	text " used"
+	line "CUT!"
+	autodone
+
+_UseHedgerText::
+	text "The HEDGER cut a"
+	line "swath!"
 	autodone
 
 _CutNothingText::
@@ -392,6 +399,16 @@ _MoveBoulderText::
 	line "move boulders."
 	prompt
 
+_UseJediRobeText::
+	text "<PLAYER> used"
+	line "THE FORCE!"
+	done
+
+_PlayerMoveBoulderText::
+	text "<PLAYER> can move"
+	line "boulders."
+	prompt
+
 _AskStrengthText::
 	text "This boulder may"
 	line "be movable."
@@ -401,8 +418,8 @@ _AskStrengthText::
 	done
 
 _BouldersMoveText::
-	text "Boulders may now"
-	line "be moved!"
+	text "THE FORCE is with"
+	line "you already."
 	autodone
 
 _BouldersMayMoveText::
@@ -411,7 +428,15 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text "Whiiiiirl!"
+	text_ram wStringBuffer2
+	text " used"
+	line "WHIRLPOOL!"
+	autodone
+
+_UseEggBeaterText::
+	text "<PLAYER> spun the"
+	line "EGG BEATER inside"
+	scroll "the WHIRLPOOL!"
 	autodone
 
 _MayPassWhirlpoolText::
@@ -448,7 +473,14 @@ _AskHeadbuttText::
 	done
 
 _UseRockSmashText::
-	text "Heave ho!"
+	text_ram wStringBuffer2
+	text " used"
+	line "ROCK SMASH!"
+	autodone
+
+_UsePickaxeText::
+	text "<PLAYER> swung the"
+	line "PICKAXE!"
 	autodone
 
 _MaySmashText::
@@ -482,7 +514,7 @@ _PocketPCNoSignalText::
 
 _CantGetOffBikeText::
 	text "You can't get off"
-	line "here!"
+	line "the bike here!"
 	done
 
 _GotOnBikeText::
