@@ -6,7 +6,7 @@
 	db FAIRY, FAIRY ; type
 	db 75 ; catch rate
 	db 178 ; base exp
-	db POKE_DOLL, POLKADOT_BOW ; items
+	db GREAT_BALL, POLKADOT_BOW ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/granbull/front.dimensions"
