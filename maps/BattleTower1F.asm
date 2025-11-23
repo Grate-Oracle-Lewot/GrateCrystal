@@ -129,6 +129,20 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize:
+if DEF(_HM_ITEMS_START)
+	setval BATTLETOWERACTION_1C
+	special BattleTowerAction
+	setval BATTLETOWERACTION_GIVEREWARD
+	special BattleTowerAction
+	ifequal POTION, Script_YourPackIsStuffedFull
+	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
+	giveitem ITEM_FROM_MEM, 5
+	writetext Text_PlayerGotFive
+	setval BATTLETOWERACTION_1D
+	special BattleTowerAction
+	writetext Text_PutBTRewardInItemPocket
+	sjump Script_WaitButton
+else
 	checkevent EVENT_GOT_JEDI_ROBE_FROM_BATTLE_TOWER
 	iftrue .vitamins
 	setval BATTLETOWERACTION_1C
@@ -155,6 +169,7 @@ Script_GivePlayerHisPrize:
 	special BattleTowerAction
 	writetext Text_PutBTRewardInItemPocket
 	sjump Script_WaitButton
+endc
 
 Script_YourPackIsStuffedFull:
 	writetext Text_YourPackIsStuffedFull
