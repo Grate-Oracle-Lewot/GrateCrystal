@@ -1418,6 +1418,16 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
+if DEF(_HM_ITEMS_START)
+	giveitem FEAROWBOT
+	giveitem DISCO_BALL
+	giveitem HEDGER
+	giveitem PICKAXE
+	giveitem JEDI_ROBE
+	giveitem FLOATIE
+	giveitem EGG_BEATER
+	giveitem GRAVITY_BUOY
+endc
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
