@@ -2854,9 +2854,9 @@ GetMthMoveOfCurrentMon:
 HedgerEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall HedgerFunction
+	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
-	cp $1
+	dec a
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
@@ -2865,9 +2865,9 @@ HedgerEffect:
 PickaxeEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall PickaxeFunction
+	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
-	cp $1
+	dec a
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
@@ -2878,7 +2878,7 @@ DiscoBallEffect:
 	ld [wUsingHMItem], a
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
-	cp $1
+	dec a
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
@@ -2892,7 +2892,7 @@ FearowbotEffect:
 	ld a, [wFieldMoveSucceeded]
 	cp $2
 	jr z, FailHMItem
-	cp $0
+	and a
 	jr z, .Error
 	farcall StubbedTrainerRankings_Fly
 	ld b, $4
@@ -2900,7 +2900,6 @@ FearowbotEffect:
 	ret
 
 .Error:
-	xor a
 	ld [wItemEffectSucceeded], a
 	ret
 
@@ -2924,9 +2923,9 @@ FloatieEffect:
 EggBeaterEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall EggBeaterFunction
+	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
-	cp $1
+	dec a
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
@@ -2937,7 +2936,7 @@ GravityBuoyEffect:
 	ld [wUsingHMItem], a
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
-	cp $1
+	dec a
 	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
@@ -2946,7 +2945,10 @@ GravityBuoyEffect:
 JediRobeEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
-	farcall JediRobeFunction
+	farcall StrengthFunction
+	ld a, [wFieldMoveSucceeded]
+	dec a
+	jr nz, FailHMItem
 	ld b, $4
 	ld a, $2
 	ret
