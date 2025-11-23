@@ -77,8 +77,6 @@ CheckRegisteredItem:
 	jr .StandardCheck
 
 .CheckTMHM:
-	jr .NoRegisteredItem
-
 .NoRegisteredItem:
 	xor a
 	ld [wWhichRegisteredItem], a
@@ -171,7 +169,6 @@ UseRegisteredItem:
 
 .CantUse:
 	call RefreshScreen
-
 ._cantuse
 	ld a, [wUsingHMItem]
 	and a
