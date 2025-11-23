@@ -35,7 +35,11 @@ TrainerGruntMStray:
 	end
 
 UnionCaveSlowpokeWellLinkPickaxe:
+if DEF(_HM_ITEMS_START)
+	itemball BRICK_PIECE
+else
 	itemball PICKAXE
+endc
 
 UnionCaveSlowpokeWellLinkHiddenDuskBall:
 	hiddenitem DUSK_BALL, EVENT_UNION_CAVE_SLOWPOKE_WELL_LINK_HIDDEN_DUSK_BALL
