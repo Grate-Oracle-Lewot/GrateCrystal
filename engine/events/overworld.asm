@@ -1092,8 +1092,9 @@ UseJediRobeText:
 
 AskStrengthScript:
 	callasm TryStrengthOW
-	iffalse .AskStrength
-	ifequal $1, .DontMeetRequirements
+	iffalse .AskJediRobe
+	ifequal $1, .AskStrength
+	ifequal $2, .DontMeetRequirements
 	sjump .AlreadyUsedStrength
 
 .DontMeetRequirements:
@@ -1110,6 +1111,14 @@ AskStrengthScript:
 	closetext
 	end
 
+.AskJediRobe:
+	opentext
+	writetext AskStrengthText
+	yesorno
+	iftrue Script_UsedJediRobe
+	closetext
+	end
+
 AskStrengthText:
 	text_far _AskStrengthText
 	text_end
@@ -1123,26 +1132,41 @@ BouldersMayMoveText:
 	text_end
 
 TryStrengthOW:
-	ld d, STRENGTH
-	call CheckPartyMove
-	jr c, .nope
-
 	ld de, ENGINE_PLAINBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
+	ld a, JEDI_ROBE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .the_force
+
+	ld d, STRENGTH
+	call CheckPartyMove
+	jr c, .nope
+
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
-	jr z, .already_using
+	jr nz, .already_using
 
-	ld a, 2
-	jr .done
-
-.nope
 	ld a, 1
 	jr .done
 
+.the_force
+	ld hl, wBikeFlags
+	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
+	jr z, .not_using
+
 .already_using
+	ld a, 3
+	jr .done
+
+.nope
+	ld a, 2
+	jr .done
+
+.not_using
 	xor a
 .done
 	ld [wScriptVar], a
@@ -1518,12 +1542,19 @@ UsePickaxeText:
 
 AskRockSmashScript:
 	callasm HasRockSmash
-	ifequal 1, .no
-
+	iffalse .Pickaxe
+	ifequal $1, .no
 	opentext
 	writetext AskRockSmashText
 	yesorno
 	iftrue RockSmashScript
+	closetext
+	end
+.Pickaxe:
+	opentext
+	writetext AskRockSmashText
+	yesorno
+	iftrue PickaxeScript
 	closetext
 	end
 .no
@@ -1543,20 +1574,23 @@ HasRockSmash:
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-	jr .yes
+	jr .pickaxe
 
 .check_mon_move
 	ld d, ROCK_SMASH
 	call CheckPartyMove
-	jr nc, .yes
+	jr nc, .move
 ; no
 	ld a, 1
 	jr .done
-.yes
+.pickaxe
 	xor a
 .done
 	ld [wScriptVar], a
 	ret
+.move
+	ld a, 2
+	jr .done
 
 FishFunction:
 	ld a, e
@@ -1881,9 +1915,14 @@ BikeFunction:
 Script_LoadPocketPC:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
+
 Script_LoadPocketPC_Register:
 	opentext
 	special PokemonCenterPC
+	; fallthough
+
+Script_PocketPC_CloseReload:
 	closetext
 	reloadmappart
 	end
@@ -1891,6 +1930,8 @@ Script_LoadPocketPC_Register:
 Script_FailPocketPC:
 	reloadmappart
 	special UpdateTimePals
+	; fallthrough
+
 Script_FailPocketPC_Register:
 	opentext
 	writetext PocketPCLoadingText
@@ -1898,9 +1939,7 @@ Script_FailPocketPC_Register:
 	waitsfx
 	writetext NoSignalText
 	waitbutton
-	closetext
-	reloadmappart
-	end
+	sjump Script_PocketPC_CloseReload
 
 PocketPCLoadingText:
 	text_far _PocketPCLoadingText
@@ -1971,14 +2010,13 @@ TryCutOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-	jr .finish
+	jr .hedger
 
 .check_mon_move
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .cant_cut
 
-.finish
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
 	jr .callscf
@@ -1991,18 +2029,34 @@ TryCutOW::
 	scf
 	ret
 
+.hedger
+	ld a, BANK(AskHedgerScript)
+	ld hl, AskHedgerScript
+	jr .callscf
+
 AskCutScript:
 	opentext
 	writetext AskCutText
 	yesorno
 	iffalse .declined
-	callasm .CheckMap
+	callasm CutHedgerCheckMap
 	iftrue Script_Cut
 .declined
 	closetext
 	end
 
-.CheckMap:
+AskHedgerScript:
+	opentext
+	writetext AskCutText
+	yesorno
+	iffalse .declined
+	callasm CutHedgerCheckMap
+	iftrue Script_Hedger
+.declined
+	closetext
+	end
+
+CutHedgerCheckMap:
 	xor a
 	ld [wScriptVar], a
 	call CheckMapForSomethingToCut
