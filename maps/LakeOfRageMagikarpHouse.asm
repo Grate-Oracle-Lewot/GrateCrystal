@@ -53,6 +53,17 @@ MagikarpLengthRaterScript:
 	sjump .GetReward
 
 .GetReward:
+if DEF(_HM_ITEMS_START)
+	writetext MagikarpLengthRaterText_Memento
+	promptbutton
+	verbosegiveitem MAX_ELIXER
+	iffalse .NoRoom
+	writetext MagikarpLengthRaterText_Bonus
+	waitbutton
+	closetext
+	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
+	end
+else
 	writetext MagikarpLengthRaterText_Memento
 	promptbutton
 	checkevent EVENT_BROKE_MAGIKARP_RECORD
@@ -74,6 +85,7 @@ MagikarpLengthRaterScript:
 	setevent EVENT_BROKE_MAGIKARP_RECORD
 	clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
 	end
+endc
 
 .NoRoom:
 	closetext
