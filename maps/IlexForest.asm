@@ -438,7 +438,11 @@ IlexForestEther:
 	itemball ETHER
 
 IlexForestHedger:
+if DEF(_HM_ITEMS_START)
+	itemball TINYMUSHROOM
+else
 	itemball HEDGER
+endc
 
 IlexForestGoldLeaf:
 	itemball GOLD_LEAF
