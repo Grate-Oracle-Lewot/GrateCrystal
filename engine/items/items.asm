@@ -21,7 +21,7 @@ _ReceiveItem::
 .Item:
 	ld h, d
 	ld l, e
-	jp PutItemInPocket
+	jr PutItemInPocket
 
 .KeyItem:
 	ld h, d
@@ -30,11 +30,11 @@ _ReceiveItem::
 
 .Ball:
 	ld hl, wNumBalls
-	jp PutItemInPocket
+	jr PutItemInPocket
 
 .Fruit:
 	ld hl, wNumFruits
-	jp PutItemInPocket
+	jr PutItemInPocket
 
 .TMHM:
 	ld h, d
@@ -43,141 +43,6 @@ _ReceiveItem::
 	ld c, a
 	call GetTMHMNumber
 	jp ReceiveTMHM
-
-_TossItem::
-	call DoesHLEqualNumItems
-	jr nz, .remove
-	push hl
-	call CheckItemPocket
-	pop de
-	ld a, [wItemAttributeValue]
-	dec a
-	ld hl, .Pockets
-	rst JumpTable
-	ret
-
-.Pockets:
-; entries correspond to item types
-	dw .Item
-	dw .KeyItem
-	dw .Ball
-	dw .TMHM
-	dw .Fruit
-
-.Ball:
-	ld hl, wNumBalls
-	jp RemoveItemFromPocket
-
-.Fruit:
-	ld hl, wNumFruits
-	jp RemoveItemFromPocket
-
-.TMHM:
-	ld h, d
-	ld l, e
-	ld a, [wCurItem]
-	ld c, a
-	call GetTMHMNumber
-	jp TossTMHM
-
-.KeyItem:
-	ld h, d
-	ld l, e
-	jp TossKeyItem
-
-.Item:
-	ld h, d
-	ld l, e
-
-.remove
-	jp RemoveItemFromPocket
-
-_CheckItem::
-	call DoesHLEqualNumItems
-	jr nz, .nope
-	push hl
-	call CheckItemPocket
-	pop de
-	ld a, [wItemAttributeValue]
-	dec a
-	ld hl, .Pockets
-	rst JumpTable
-	ret
-
-.Pockets:
-; entries correspond to item types
-	dw .Item
-	dw .KeyItem
-	dw .Ball
-	dw .TMHM
-	dw .Fruit
-
-.Ball:
-	ld hl, wNumBalls
-	jp CheckTheItem
-
-.Fruit:
-	ld hl, wNumFruits
-	jp CheckTheItem
-
-.TMHM:
-	ld h, d
-	ld l, e
-	ld a, [wCurItem]
-	ld c, a
-	call GetTMHMNumber
-	jp CheckTMHM
-
-.KeyItem:
-	ld h, d
-	ld l, e
-	jp CheckKeyItems
-
-.Item:
-	ld h, d
-	ld l, e
-
-.nope
-	jp CheckTheItem
-
-DoesHLEqualNumItems:
-	ld a, l
-	cp LOW(wNumItems)
-	ret nz
-	ld a, h
-	cp HIGH(wNumItems)
-	ret
-
-GetPocketCapacity:
-	ld c, MAX_ITEMS
-	ld a, e
-	cp LOW(wNumItems)
-	jr nz, .not_bag
-	ld a, d
-	cp HIGH(wNumItems)
-	ret z
-
-.not_bag
-	ld c, MAX_PC_ITEMS
-	ld a, e
-	cp LOW(wNumPCItems)
-	jr nz, .not_pc
-	ld a, d
-	cp HIGH(wNumPCItems)
-	ret z
-
-.not_pc
-	ld c, MAX_FRUITS
-	ld a, e
-	cp LOW(wFruits)
-	jr nz, .not_fruits
-	ld a, d
-	cp HIGH(wNumFruits)
-	ret z
-
-.not_fruits
-	ld c, MAX_BALLS
-	ret
 
 PutItemInPocket:
 	ld d, h
@@ -255,6 +120,52 @@ PutItemInPocket:
 	scf
 	ret
 
+_TossItem::
+	call DoesHLEqualNumItems
+	jr nz, RemoveItemFromPocket
+	push hl
+	call CheckItemPocket
+	pop de
+	ld a, [wItemAttributeValue]
+	dec a
+	ld hl, .Pockets
+	rst JumpTable
+	ret
+
+.Pockets:
+; entries correspond to item types
+	dw .Item
+	dw .KeyItem
+	dw .Ball
+	dw .TMHM
+	dw .Fruit
+
+.Ball:
+	ld hl, wNumBalls
+	jr RemoveItemFromPocket
+
+.Fruit:
+	ld hl, wNumFruits
+	jr RemoveItemFromPocket
+
+.TMHM:
+	ld h, d
+	ld l, e
+	ld a, [wCurItem]
+	ld c, a
+	call GetTMHMNumber
+	jp TossTMHM
+
+.KeyItem:
+	ld h, d
+	ld l, e
+	jp TossKeyItem
+
+.Item:
+	ld h, d
+	ld l, e
+	; fallthrough
+
 RemoveItemFromPocket:
 	ld d, h
 	ld e, l
@@ -320,6 +231,52 @@ RemoveItemFromPocket:
 	and a
 	ret
 
+_CheckItem::
+	call DoesHLEqualNumItems
+	jr nz, CheckTheItem
+	push hl
+	call CheckItemPocket
+	pop de
+	ld a, [wItemAttributeValue]
+	dec a
+	ld hl, .Pockets
+	rst JumpTable
+	ret
+
+.Pockets:
+; entries correspond to item types
+	dw .Item
+	dw .KeyItem
+	dw .Ball
+	dw .TMHM
+	dw .Fruit
+
+.Ball:
+	ld hl, wNumBalls
+	jr CheckTheItem
+
+.Fruit:
+	ld hl, wNumFruits
+	jr CheckTheItem
+
+.TMHM:
+	ld h, d
+	ld l, e
+	ld a, [wCurItem]
+	ld c, a
+	call GetTMHMNumber
+	jp CheckTMHM
+
+.KeyItem:
+	ld h, d
+	ld l, e
+	jp CheckKeyItems
+
+.Item:
+	ld h, d
+	ld l, e
+	; fallthrough
+
 CheckTheItem:
 	ld a, [wCurItem]
 	ld c, a
@@ -335,6 +292,45 @@ CheckTheItem:
 
 .done
 	and a
+	ret
+
+DoesHLEqualNumItems:
+	ld a, l
+	cp LOW(wNumItems)
+	ret nz
+	ld a, h
+	cp HIGH(wNumItems)
+	ret
+
+GetPocketCapacity:
+	ld c, MAX_ITEMS
+	ld a, e
+	cp LOW(wNumItems)
+	jr nz, .not_bag
+	ld a, d
+	cp HIGH(wNumItems)
+	ret z
+
+.not_bag
+	ld c, MAX_PC_ITEMS
+	ld a, e
+	cp LOW(wNumPCItems)
+	jr nz, .not_pc
+	ld a, d
+	cp HIGH(wNumPCItems)
+	ret z
+
+.not_pc
+	ld c, MAX_FRUITS
+	ld a, e
+	cp LOW(wFruits)
+	jr nz, .not_fruits
+	ld a, d
+	cp HIGH(wNumFruits)
+	ret z
+
+.not_fruits
+	ld c, MAX_BALLS
 	ret
 
 ReceiveKeyItem:
