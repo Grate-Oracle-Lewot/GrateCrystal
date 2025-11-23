@@ -213,6 +213,7 @@ Script_CutFromMenu:
 	; fallthrough
 
 Script_Cut:
+	callasm GetPartyNickname
 	writetext UseCutText
 	; fallthrough
 
@@ -1263,6 +1264,7 @@ Script_WhirlpoolFromMenu:
 	; fallthrough
 
 Script_UsedWhirlpool:
+	callasm GetPartyNickname
 	writetext UseWhirlpoolText
 	; fallthrough
 
@@ -1491,6 +1493,7 @@ RockSmashFromMenuScript:
 	; fallthrough
 
 RockSmashScript:
+	callasm GetPartyNickname
 	writetext UseRockSmashText
 	; fallthrough
 
