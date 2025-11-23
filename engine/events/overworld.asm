@@ -144,7 +144,14 @@ CutFunction:
 	ret
 
 .DoCut:
+	ld a, [wUsingHMItem]
+	and a
+	jr z, .move
+	ld hl, Script_HedgerFromMenu
+	jr .got_script
+.move
 	ld hl, Script_CutFromMenu
+.got_script
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -157,6 +164,10 @@ CutFunction:
 
 UseCutText:
 	text_far _UseCutText
+	text_end
+
+UseHedgerText:
+	text_far _UseHedgerText
 	text_end
 
 CutNothingText:
@@ -203,6 +214,18 @@ Script_CutFromMenu:
 
 Script_Cut:
 	writetext UseCutText
+	reloadmappart
+	callasm CutDownTreeOrGrass
+	closetext
+	end
+
+Script_HedgerFromMenu:
+	reloadmappart
+	special UpdateTimePals
+	; fallthrough
+
+Script_Hedger:
+	writetext UseHedgerText
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -1001,7 +1024,14 @@ StrengthFunction:
 	call CheckBadge
 	jr c, .Failed
 
+	ld a, [wUsingHMItem]
+	and a
+	jr z, .move
+	ld hl, Script_JediRobeFromMenu
+	jr .got_script
+.move
 	ld hl, Script_StrengthFromMenu
+.got_script
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -1029,20 +1059,35 @@ Script_StrengthFromMenu:
 
 Script_UsedStrength:
 	callasm SetStrengthFlag
-	writetext .UseStrengthText
+	writetext UseStrengthText
 	readmem wStrengthSpecies
 	cry 0 ; plays [wStrengthSpecies] cry
 	pause 3
-	writetext .MoveBoulderText
+	writetext MoveBoulderText
 	closetext
 	end
 
-.UseStrengthText:
+Script_JediRobeFromMenu:
+	reloadmappart
+	special UpdateTimePals
+	; fallthrough
+
+Script_UsedJediRobe:
+	callasm SetStrengthFlag
+	writetext UseJediRobeText
+	closetext
+	end
+
+UseStrengthText:
 	text_far _UseStrengthText
 	text_end
 
-.MoveBoulderText:
+MoveBoulderText:
 	text_far _MoveBoulderText
+	text_end
+
+UseJediRobeText:
+	text_far _UseJediRobeText
 	text_end
 
 AskStrengthScript:
@@ -1132,7 +1177,14 @@ WhirlpoolFunction:
 	ret
 
 .DoWhirlpool:
+	ld a, [wUsingHMItem]
+	and a
+	jr z, .move
+	ld hl, Script_EggBeaterFromMenu
+	jr .got_script
+.move
 	ld hl, Script_WhirlpoolFromMenu
+.got_script
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -1145,6 +1197,10 @@ WhirlpoolFunction:
 
 UseWhirlpoolText:
 	text_far _UseWhirlpoolText
+	text_end
+
+UseEggBeaterText:
+	text_far _UseEggBeaterText
 	text_end
 
 TryWhirlpoolMenu:
@@ -1184,6 +1240,18 @@ Script_WhirlpoolFromMenu:
 
 Script_UsedWhirlpool:
 	writetext UseWhirlpoolText
+	reloadmappart
+	callasm DisappearWhirlpool
+	closetext
+	end
+
+Script_EggBeaterFromMenu:
+	reloadmappart
+	special UpdateTimePals
+	; fallthrough
+
+Script_UsedEggBeater:
+	writetext UseEggBeaterText
 	reloadmappart
 	callasm DisappearWhirlpool
 	closetext
@@ -1354,7 +1422,14 @@ TryRockSmashFromMenu:
 	cp SPRITEMOVEDATA_SMASHABLE_ROCK
 	jr nz, .no_rock
 
+	ld a, [wUsingHMItem]
+	and a
+	jr z, .move
+	ld hl, PickaxeFromMenuScript
+	jr .got_script
+.move
 	ld hl, RockSmashFromMenuScript
+.got_script
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -1393,6 +1468,9 @@ RockSmashFromMenuScript:
 
 RockSmashScript:
 	writetext UseRockSmashText
+	; fallthrough
+
+FinishRockSmashScript:
 	closetext
 	special WaitSFX
 	playsound SFX_STRENGTH
@@ -1417,12 +1495,25 @@ RockSmashScript:
 .no_item
 	end
 
+PickaxeFromMenuScript:
+	reloadmappart
+	special UpdateTimePals
+	; fallthrough
+
+PickaxeScript:
+	writetext UsePickaxeText
+	sjump FinishRockSmashScript
+
 MovementData_RockSmash:
 	rock_smash 10
 	step_end
 
 UseRockSmashText:
 	text_far _UseRockSmashText
+	text_end
+
+UsePickaxeText:
+	text_far _UsePickaxeText
 	text_end
 
 AskRockSmashScript:
