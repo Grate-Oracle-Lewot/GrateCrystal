@@ -80,7 +80,11 @@ MountMortarB1FPPUp:
 	itemball PP_UP
 
 MountMortarB1FGravityBuoy:
+if DEF(_HM_ITEMS_START)
+	itemball WHT_APRICORN
+else
 	itemball GRAVITY_BUOY
+endc
 
 MountMortarB1FHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE
