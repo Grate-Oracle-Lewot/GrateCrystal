@@ -244,7 +244,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - 60 TMs and 8 HMs
 - Itemfinder replaced with consumable versions called Swag Beacons, and these beep faster the closer you are to a hidden item
 - The Clear Bell now has the effect of Gen I's Poké Flute when used, waking up all sleeping Pokémon in battle (but it can't be used to wake up Snorlax in the field)
-- Removed: Berserk Gene, Metal Powder
+- The Escape Rope now has the effect of the Poké Doll when used in battle (it still has its normal field effect)
+- Removed: Poké Doll, Berserk Gene, Metal Powder
 
 ## Move tutors
 
