@@ -402,10 +402,8 @@ _MoveBoulderText::
 _UseJediRobeText::
 	text "<PLAYER> used"
 	line "THE FORCE!"
-	done
 
-_PlayerMoveBoulderText::
-	text "<PLAYER> can move"
+	para "<PLAYER> can move"
 	line "boulders."
 	prompt
 
