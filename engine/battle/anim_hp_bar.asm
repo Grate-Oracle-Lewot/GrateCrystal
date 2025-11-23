@@ -203,7 +203,18 @@ ShortHPBarAnim_UpdateTiles:
 	push de
 	call HPBarAnim_RedrawHPBar
 	pop de
-	jp HPBarAnim_PaletteUpdate
+	; fallthrough
+
+HPBarAnim_PaletteUpdate:
+	ldh a, [hCGB]
+	and a
+	ret z
+	ld hl, wCurHPAnimPal
+	call SetHPPal
+	ld a, [wCurHPAnimPal]
+	ld c, a
+	farcall ApplyHPBarPals
+	ret
 
 LongHPBarAnim_UpdateTiles:
 	call HPBarAnim_UpdateHPRemaining
@@ -224,7 +235,7 @@ LongHPBarAnim_UpdateTiles:
 	push de
 	call HPBarAnim_RedrawHPBar
 	pop de
-	jp HPBarAnim_PaletteUpdate
+	jr HPBarAnim_PaletteUpdate
 
 HPBarAnim_RedrawHPBar:
 	ld a, [wWhichHPBar]
@@ -266,17 +277,6 @@ HPBarAnim_UpdateHPRemaining:
 	lb bc, 2, 3
 	call PrintNum
 	pop hl
-	ret
-
-HPBarAnim_PaletteUpdate:
-	ldh a, [hCGB]
-	and a
-	ret z
-	ld hl, wCurHPAnimPal
-	call SetHPPal
-	ld a, [wCurHPAnimPal]
-	ld c, a
-	farcall ApplyHPBarPals
 	ret
 
 HPBarAnim_BGMapUpdate:
