@@ -214,6 +214,9 @@ Script_CutFromMenu:
 
 Script_Cut:
 	writetext UseCutText
+	; fallthrough
+
+Script_FinishCut:
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
@@ -226,10 +229,7 @@ Script_HedgerFromMenu:
 
 Script_Hedger:
 	writetext UseHedgerText
-	reloadmappart
-	callasm CutDownTreeOrGrass
-	closetext
-	end
+	sjump Script_FinishCut
 
 CutDownTreeOrGrass:
 	ld hl, wCutWhirlpoolOverworldBlockAddr
@@ -1240,6 +1240,9 @@ Script_WhirlpoolFromMenu:
 
 Script_UsedWhirlpool:
 	writetext UseWhirlpoolText
+	; fallthrough
+
+Script_FinishWhirlpool:
 	reloadmappart
 	callasm DisappearWhirlpool
 	closetext
@@ -1252,10 +1255,7 @@ Script_EggBeaterFromMenu:
 
 Script_UsedEggBeater:
 	writetext UseEggBeaterText
-	reloadmappart
-	callasm DisappearWhirlpool
-	closetext
-	end
+	sjump Script_FinishWhirlpool
 
 DisappearWhirlpool:
 	ld hl, wCutWhirlpoolOverworldBlockAddr
