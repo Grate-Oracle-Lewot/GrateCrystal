@@ -12,7 +12,11 @@ CeruleanCaveB1FRock:
 	jumpstd SmashRockScript
 
 CeruleanCaveB1FFearowbot:
+if DEF(_HM_ITEMS_START)
+	itemball OLD_GATEAU
+else
 	itemball FEAROWBOT
+endc
 
 CeruleanCaveB1F_MapEvents:
 	db 0, 0 ; filler
