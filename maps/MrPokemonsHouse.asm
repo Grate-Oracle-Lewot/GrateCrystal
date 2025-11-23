@@ -156,7 +156,11 @@ endc
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
+if DEF(_HM_ITEMS_START)
+	verbosegiveitem BERRY
+else
 	verbosegiveitem DISCO_BALL
+endc
 	iffalse .full
 	takeitem RED_SCALE
 	sjump .AlwaysNewDiscoveries
