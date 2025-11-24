@@ -1,4 +1,4 @@
-	db "EGG@" ; species name
+	db "HALF DOZEN@" ; species name
 	dw 104, 60 ; height, weight
 
 	db   "It sometimes naps"
