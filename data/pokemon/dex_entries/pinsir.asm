@@ -1,4 +1,4 @@
-	db "STAGBEETLE@" ; species name
+	db "STAG BEETLE@" ; species name
 	dw 411, 1210 ; height, weight
 
 	db   "Its devastating"
