@@ -1,4 +1,4 @@
-	db "SLEEPING@" ; species name
+	db "NECESSITIES@" ; species name
 	dw 611, 10140 ; height, weight
 
 	db   "Occasionally, a"
