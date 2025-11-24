@@ -1,4 +1,4 @@
-	db "PIG MONKEY@" ; species name
+	db "JANKY@" ; species name
 	dw 108, 620 ; height, weight
 
 	db   "Its pig nose is"
