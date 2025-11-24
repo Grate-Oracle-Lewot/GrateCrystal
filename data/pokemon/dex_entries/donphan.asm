@@ -1,4 +1,4 @@
-	db "ARMOR@" ; species name
+	db "ELEPHANT@" ; species name
 	dw 307, 2650 ; height, weight
 
 	db   "A willing DONPHAN"
