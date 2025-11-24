@@ -1,4 +1,4 @@
-	db "FLOWER@" ; species name
+	db "TULIP@" ; species name
 	dw 204, 90 ; height, weight
 
 	db   "When a bell flower"
