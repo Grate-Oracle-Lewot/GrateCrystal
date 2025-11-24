@@ -1,4 +1,4 @@
-	db "DRILL@" ; species name
+	db "JACKELOPE@" ; species name
 	dw 407, 1370 ; height, weight
 
 	db   "A NIDOKING and"
