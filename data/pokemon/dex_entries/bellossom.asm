@@ -1,4 +1,4 @@
-	db "FLOWER@" ; species name
+	db "GRASS SKIRT@" ; species name
 	dw 104, 130 ; height, weight
 
 	db   "A strange mutation"
