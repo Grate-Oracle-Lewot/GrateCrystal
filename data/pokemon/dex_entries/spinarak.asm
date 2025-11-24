@@ -1,4 +1,4 @@
-	db "STRINGSPIT@" ; species name
+	db "SPIDERLING@" ; species name
 	dw 108, 190 ; height, weight
 
 	db   "It spins a web to"
