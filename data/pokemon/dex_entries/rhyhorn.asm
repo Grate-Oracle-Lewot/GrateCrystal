@@ -1,4 +1,4 @@
-	db "NOSE@" ; species name
+	db "RHINOCEROS@" ; species name
 	dw 303, 2540 ; height, weight
 
 	db   "Its poor eyesight"
