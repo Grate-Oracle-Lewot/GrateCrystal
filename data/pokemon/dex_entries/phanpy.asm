@@ -1,4 +1,4 @@
-	db "LONG NOSE@" ; species name
+	db "ELEPHANT@" ; species name
 	dw 108, 740 ; height, weight
 
 	db   "According to myth,"
