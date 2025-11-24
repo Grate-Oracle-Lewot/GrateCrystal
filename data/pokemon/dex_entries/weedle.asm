@@ -1,4 +1,4 @@
-	db "HAIRY BUG@" ; species name
+	db "SEGMENTS@" ; species name
 	dw 100, 70 ; height, weight
 
 	db   "It evolved a pois-"
