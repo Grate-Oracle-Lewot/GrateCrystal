@@ -1,4 +1,4 @@
-	db "POISON GAS@" ; species name
+	db "SOLID CLOUD@" ; species name
 	dw 200, 20 ; height, weight
 
 	db   "It's formed when a"
