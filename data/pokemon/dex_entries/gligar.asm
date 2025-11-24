@@ -1,4 +1,4 @@
-	db "SCORPION@" ; species name
+	db "SCORPIONBAT@" ; species name
 	dw 307, 1430 ; height, weight
 
 	db   "One chases prey"
