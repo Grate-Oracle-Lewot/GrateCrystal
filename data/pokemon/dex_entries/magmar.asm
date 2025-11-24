@@ -1,4 +1,4 @@
-	db "SPITFIRE@" ; species name
+	db "ROAST DUCK@" ; species name
 	dw 403, 980 ; height, weight
 
 	db   "It lives inside"
