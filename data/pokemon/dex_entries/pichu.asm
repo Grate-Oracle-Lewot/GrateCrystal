@@ -1,4 +1,4 @@
-	db "TINY MOUSE@" ; species name
+	db "PINKIE@" ; species name
 	dw 100, 40 ; height, weight
 
 	db   "Debates rage over"
