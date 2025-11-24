@@ -1,4 +1,4 @@
-	db "HIBERNANT@" ; species name
+	db "UNBEARABLE@" ; species name
 	dw 511, 2770 ; height, weight
 
 	db   "It will eat meat,"
