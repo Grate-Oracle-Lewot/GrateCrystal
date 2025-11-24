@@ -1,4 +1,4 @@
-	db "BIG JAW@" ; species name
+	db "CROCODILIAN@" ; species name
 	dw 200, 210 ; height, weight
 
 	db   "Despite being a"
