@@ -1,4 +1,4 @@
-	db "WOOL@" ; species name
+	db "SHEER@" ; species name
 	dw 207, 290 ; height, weight
 
 	db   "As it learns to"
