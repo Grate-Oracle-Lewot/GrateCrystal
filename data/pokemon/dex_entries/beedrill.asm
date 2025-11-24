@@ -1,4 +1,4 @@
-	db "POISON BEE@" ; species name
+	db "WASP@" ; species name
 	dw 303, 650 ; height, weight
 
 	db   "The stingers on"
