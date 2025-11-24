@@ -1,4 +1,4 @@
-	db "LEGENDARY@" ; species name
+	db "BEST FRIEND@" ; species name
 	dw 603, 3420 ; height, weight
 
 	db   "A stalwart compan-"
