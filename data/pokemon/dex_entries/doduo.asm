@@ -1,4 +1,4 @@
-	db "TWIN BIRD@" ; species name
+	db "OSTRICH@" ; species name
 	dw 407, 860 ; height, weight
 
 	db   "For reasons not"
