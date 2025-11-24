@@ -1,4 +1,4 @@
-	db "TINYTURTLE@" ; species name
+	db "TORTOISE@" ; species name
 	dw 108, 200 ; height, weight
 
 	db   "It's great as a"
