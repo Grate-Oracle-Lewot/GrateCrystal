@@ -1,4 +1,4 @@
-	db "LITTLE BEAR@" ; species name
+	db "CUB@" ; species name
 	dw 200, 190 ; height, weight
 
 	db   "A popular line of"
