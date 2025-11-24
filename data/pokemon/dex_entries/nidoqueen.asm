@@ -1,4 +1,4 @@
-	db "DRILL@" ; species name
+	db "JACKELOPE@" ; species name
 	dw 403, 1320 ; height, weight
 
 	db   "It knows how to"
