@@ -1,4 +1,4 @@
-	db "FLYCATCHER@" ; species name
+	db "PITCHER@" ; species name
 	dw 303, 140 ; height, weight
 
 	db   "It no longer needs"
