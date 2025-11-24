@@ -1,4 +1,4 @@
-	db "LITTLE BIRD@" ; species name
+	db "QUETZAL@" ; species name
 	dw 8, 40 ; height, weight
 
 	db   "It's so unbothered"
