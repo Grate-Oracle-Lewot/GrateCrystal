@@ -1,4 +1,4 @@
-	db "POISON GAS@" ; species name
+	db "SOLID CLOUD@" ; species name
 	dw 311, 210 ; height, weight
 
 	db   "Its smaller head"
