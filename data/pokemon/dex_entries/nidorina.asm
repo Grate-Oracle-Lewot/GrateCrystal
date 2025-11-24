@@ -1,4 +1,4 @@
-	db "POISON PIN@" ; species name
+	db "TEENAGER@" ; species name
 	dw 207, 440 ; height, weight
 
 	db   "It's become inten-"
