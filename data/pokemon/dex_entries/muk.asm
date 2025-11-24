@@ -1,4 +1,4 @@
-	db "SLUDGE@" ; species name
+	db "RANK@" ; species name
 	dw 311, 660 ; height, weight
 
 	db   "Most scientists"
