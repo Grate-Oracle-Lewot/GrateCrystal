@@ -1,4 +1,4 @@
-	db "ROYAL@" ; species name
+	db "JESTER@" ; species name
 	dw 607, 1750 ; height, weight
 
 	db   "It has delusions"
