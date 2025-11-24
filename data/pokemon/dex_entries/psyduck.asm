@@ -1,4 +1,4 @@
-	db "DUCK@" ; species name
+	db "DUCKLING@" ; species name
 	dw 207, 430 ; height, weight
 
 	db   "Its latent psychic"
