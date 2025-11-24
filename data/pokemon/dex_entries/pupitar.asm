@@ -1,4 +1,4 @@
-	db "HARD SHELL@" ; species name
+	db "HARD ROCK@" ; species name
 	dw 311, 3350 ; height, weight
 
 	db   "It's unknown what"
