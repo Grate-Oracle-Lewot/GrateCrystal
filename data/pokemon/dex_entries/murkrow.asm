@@ -1,4 +1,4 @@
-	db "DARKNESS@" ; species name
+	db "RAVEN@" ; species name
 	dw 108, 50 ; height, weight
 
 	db   "A traditional"
