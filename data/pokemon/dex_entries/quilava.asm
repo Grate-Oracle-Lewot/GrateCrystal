@@ -1,4 +1,4 @@
-	db "VOLCANO@" ; species name
+	db "COMBUSTELID@" ; species name
 	dw 211, 420 ; height, weight
 
 	db   "It naps while"
