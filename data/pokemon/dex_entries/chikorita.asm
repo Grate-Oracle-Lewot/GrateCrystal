@@ -1,4 +1,4 @@
-	db "LEAF@" ; species name
+	db "SAUROPOD@" ; species name
 	dw 211, 140 ; height, weight
 
 	db   "It exudes a scent"
