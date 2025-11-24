@@ -1,4 +1,4 @@
-	db "ELECTRIC@" ; species name
+	db "YETI@" ; species name
 	dw 307, 660 ; height, weight
 
 	db   "It tries to chall-"
