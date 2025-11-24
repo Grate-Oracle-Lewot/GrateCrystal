@@ -1,4 +1,4 @@
-	db "PIG MONKEY@" ; species name
+	db "CRANKY@" ; species name
 	dw 303, 710 ; height, weight
 
 	db   "Its glove-like"
