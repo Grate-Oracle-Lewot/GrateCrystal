@@ -1,4 +1,4 @@
-	db "RAT@" ; species name
+	db "FAT RAT@" ; species name
 	dw 204, 410 ; height, weight
 
 	db   "If it reaches a"
