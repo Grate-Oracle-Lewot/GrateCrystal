@@ -1,4 +1,4 @@
-	db "ROCK SNAKE@" ; species name
+	db "ROCK PYTHON@" ; species name
 	dw 2810, 4630 ; height, weight
 
 	db   "This rock snake"
