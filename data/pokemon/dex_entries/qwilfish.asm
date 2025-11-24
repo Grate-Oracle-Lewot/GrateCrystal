@@ -1,4 +1,4 @@
-	db "BALLOON@" ; species name
+	db "BLOWFISH@" ; species name
 	dw 108, 90 ; height, weight
 
 	db   "It boils water in-"
