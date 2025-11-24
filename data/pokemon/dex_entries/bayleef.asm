@@ -1,4 +1,4 @@
-	db "LEAF@" ; species name
+	db "SAUROPOD@" ; species name
 	dw 311, 350 ; height, weight
 
 	db   "It's playful, but"
