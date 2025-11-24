@@ -1,4 +1,4 @@
-	db "THUNDER@" ; species name
+	db "THUNDERHEAD@" ; species name
 	dw 603, 3920 ; height, weight
 
 	db   "It runs in a zig-"
