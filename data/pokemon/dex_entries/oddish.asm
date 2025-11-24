@@ -1,4 +1,4 @@
-	db "WEED@" ; species name
+	db "MANDRAKE@" ; species name
 	dw 108, 120 ; height, weight
 
 	db   "Not quite odd, but"
