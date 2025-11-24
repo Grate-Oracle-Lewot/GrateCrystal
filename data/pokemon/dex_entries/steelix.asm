@@ -1,4 +1,4 @@
-	db "IRON SNAKE@" ; species name
+	db "STAINLESS@" ; species name
 	dw 3002, 8820 ; height, weight
 
 	db   "No manmade metal"
