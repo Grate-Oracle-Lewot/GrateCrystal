@@ -1,4 +1,4 @@
-	db "SUN@" ; species name
+	db "SUNNY@" ; species name
 	dw 207, 190 ; height, weight
 
 	db   "It absorbed so"
