@@ -1,4 +1,4 @@
-	db "SPIRAL@" ; species name
+	db "NAUTILUS@" ; species name
 	dw 104, 170 ; height, weight
 
 	db   "Modern descendants"
