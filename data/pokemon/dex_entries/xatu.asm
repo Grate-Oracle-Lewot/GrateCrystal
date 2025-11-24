@@ -1,4 +1,4 @@
-	db "MYSTIC@" ; species name
+	db "TOTEM@" ; species name
 	dw 411, 330 ; height, weight
 
 	db   "Psychics who comm-"
