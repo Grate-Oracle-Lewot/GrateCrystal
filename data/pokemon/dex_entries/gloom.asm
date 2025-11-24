@@ -1,4 +1,4 @@
-	db "WEED@" ; species name
+	db "RAFFLESIA@" ; species name
 	dw 207, 190 ; height, weight
 
 	db   "Named for its"
