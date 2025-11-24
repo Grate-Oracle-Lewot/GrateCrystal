@@ -1,4 +1,4 @@
-	db "VOLCANO@" ; species name
+	db "COMBUSTELID@" ; species name
 	dw 507, 1750 ; height, weight
 
 	db   "Its power has"
