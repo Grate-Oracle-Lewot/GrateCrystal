@@ -1,4 +1,4 @@
-	db "SCRATCHCAT@" ; species name
+	db "LUCKY CAT@" ; species name
 	dw 104, 90 ; height, weight
 
 	db   "Domesticated for"
