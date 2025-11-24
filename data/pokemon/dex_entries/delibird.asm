@@ -1,4 +1,4 @@
-	db "DELIVERY@" ; species name
+	db "COURIER@" ; species name
 	dw 211, 350 ; height, weight
 
 	db   "It stores things"
