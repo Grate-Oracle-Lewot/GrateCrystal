@@ -1,4 +1,4 @@
-	db "LONG BODY@" ; species name
+	db "POLECAT@" ; species name
 	dw 511, 720 ; height, weight
 
 	db   "Despite often"
