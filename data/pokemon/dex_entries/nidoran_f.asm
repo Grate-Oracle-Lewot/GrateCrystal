@@ -1,4 +1,4 @@
-	db "POISON PIN@" ; species name
+	db "BUNNY@" ; species name
 	dw 104, 150 ; height, weight
 
 	db   "Females relax and"
