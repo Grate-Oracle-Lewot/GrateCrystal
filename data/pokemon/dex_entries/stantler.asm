@@ -1,4 +1,4 @@
-	db "BIG HORN@" ; species name
+	db "DEAR@" ; species name
 	dw 407, 1570 ; height, weight
 
 	db   "Eight immortal"
