@@ -1,4 +1,4 @@
-	db "LONG LEG@" ; species name
+	db "SPIDER@" ; species name
 	dw 307, 740 ; height, weight
 
 	db   "It uses its silk"
