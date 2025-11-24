@@ -1,4 +1,4 @@
-	db "COCOON@" ; species name
+	db "CHRYSALIS@" ; species name
 	dw 204, 220 ; height, weight
 
 	db   "To prevent being"
