@@ -1,4 +1,4 @@
-	db "PAINTER@" ; species name
+	db "STARVING@" ; species name
 	dw 311, 1280 ; height, weight
 
 	db   "No matter how"
