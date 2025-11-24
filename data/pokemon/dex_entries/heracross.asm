@@ -1,4 +1,4 @@
-	db "SINGLEHORN@" ; species name
+	db "BEATLE@" ; species name
 	dw 411, 1190 ; height, weight
 
 	db   "Though powerful,"
