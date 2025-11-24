@@ -1,4 +1,4 @@
-	db "EGG@" ; species name
+	db "UNHATCHED@" ; species name
 	dw 100, 100 ; height, weight
 
 	db   "A #MON EGG"
