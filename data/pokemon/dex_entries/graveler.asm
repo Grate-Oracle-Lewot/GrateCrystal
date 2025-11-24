@@ -1,4 +1,4 @@
-	db "ROCK@" ; species name
+	db "BOULDER@" ; species name
 	dw 303, 2320 ; height, weight
 
 	db   "Its two extra arms"
