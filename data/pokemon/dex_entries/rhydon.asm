@@ -1,4 +1,4 @@
-	db "DRILL@" ; species name
+	db "RHINOPLASTY@" ; species name
 	dw 603, 2650 ; height, weight
 
 	db   "It was the first"
