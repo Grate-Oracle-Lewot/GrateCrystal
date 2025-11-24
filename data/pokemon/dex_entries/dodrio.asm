@@ -1,4 +1,4 @@
-	db "TRIPLEBIRD@" ; species name
+	db "OSTRICH@" ; species name
 	dw 511, 1880 ; height, weight
 
 	db   "The third head"
