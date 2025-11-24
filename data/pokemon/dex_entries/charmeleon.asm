@@ -1,4 +1,4 @@
-	db "FLAME@" ; species name
+	db "LIZARD@" ; species name
 	dw 307, 420 ; height, weight
 
 	db   "It burns with"
