@@ -1,4 +1,4 @@
-	db "CLEAR WING@" ; species name
+	db "DRAGONFLY@" ; species name
 	dw 311, 840 ; height, weight
 
 	db   "Each of its wings"
