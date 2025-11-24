@@ -1,4 +1,4 @@
-	db "SLUDGE@" ; species name
+	db "STANK@" ; species name
 	dw 211, 660 ; height, weight
 
 	db   "If you place a"
