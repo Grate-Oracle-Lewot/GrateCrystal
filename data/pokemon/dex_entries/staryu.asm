@@ -1,4 +1,4 @@
-	db "STARSHAPE@" ; species name
+	db "SEA STAR@" ; species name
 	dw 207, 760 ; height, weight
 
 	db   "EEGs of its gem"
