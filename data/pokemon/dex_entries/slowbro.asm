@@ -1,4 +1,4 @@
-	db "HERMITCRAB@" ; species name
+	db "STOOGE@" ; species name
 	dw 503, 1730 ; height, weight
 
 	db   "Its tail tastes so"
