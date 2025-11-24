@@ -1,4 +1,4 @@
-	db "ELECTRIC@" ; species name
+	db "PRONG@" ; species name
 	dw 200, 520 ; height, weight
 
 	db   "If it's plugged in"
