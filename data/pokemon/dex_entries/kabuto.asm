@@ -1,4 +1,4 @@
-	db "SHELLFISH@" ; species name
+	db "TRILOBITE@" ; species name
 	dw 108, 250 ; height, weight
 
 	db   "Other #MON may"
