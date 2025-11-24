@@ -1,4 +1,4 @@
-	db "MYSTERIOUS@" ; species name
+	db "SEA STAR@" ; species name
 	dw 307, 1760 ; height, weight
 
 	db   "The WATER STONE"
