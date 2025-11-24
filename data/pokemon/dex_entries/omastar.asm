@@ -1,4 +1,4 @@
-	db "SPIRAL@" ; species name
+	db "NAUTILUS@" ; species name
 	dw 303, 770 ; height, weight
 
 	db   "It was the first"
