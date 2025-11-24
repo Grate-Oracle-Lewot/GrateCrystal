@@ -8,7 +8,9 @@ LewotPhoneGreetingText:
 LewotPhonePopcornText:
 	text "One time I put a"
 	line "hot bag of popcorn"
-	cont "on top of my DS…"
+
+	para "on top of my"
+	line "folded DS…"
 
 	para "The top screen"
 	line "got ruined, like"
@@ -173,9 +175,9 @@ LewotPhonePikminText:
 	line "the minimum amount"
 
 	para "of days with no"
-	line "deaths is 32, al-"
+	line "deaths is 31, al-"
 	cont "though the game"
-	cont "displays it as 33"
+	cont "displays it as 32"
 
 	para "because it waits"
 	line "until morning to"
@@ -184,12 +186,11 @@ LewotPhonePikminText:
 	line "leaflings."
 
 	para "You have to spend"
-	line "3 days in the SUN-"
-	cont "SPECKLED TERRACE"
+	line "3 days in the"
 
-	para "and SERENE SHORES,"
-	line "but the other"
-	cont "areas only need 2."
+	para "first area, but"
+	line "the others only"
+	cont "need 2."
 
 	para "The rest of the"
 	line "days are the night"
@@ -200,12 +201,30 @@ LewotPhonePikminText:
 	para "super dandori cave"
 	line "thing."
 
-	para "(This was before"
-	line "they added the"
+	para "SERENE SHORES is"
+	line "the hardest to get"
 
-	para "difficulty opti-"
-	line "ons and new game"
-	cont "plus, mind.)"
+	para "down to 2 days,"
+	line "but it's doable if"
+
+	para "you skip all the"
+	line "raw materials,"
+
+	para "which don't count"
+	line "toward completion."
+
+	para "The real trick is"
+	line "to build bridges"
+
+	para "and break walls"
+	line "during night"
+	cont "missions."
+
+	para "This is on Normal"
+	line "difficulty, mind."
+
+	para "Fierce eats up too"
+	line "much time."
 
 	para "My record for a"
 	line "similar run in"
