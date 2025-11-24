@@ -1,4 +1,4 @@
-	db "EGG@" ; species name
+	db "NURSE@" ; species name
 	dw 307, 760 ; height, weight
 
 	db   "The CHANSEY empl-"
