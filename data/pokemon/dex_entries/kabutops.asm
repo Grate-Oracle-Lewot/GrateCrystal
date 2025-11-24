@@ -1,4 +1,4 @@
-	db "EURYPTERID@" ; species name
+	db "SWIM REAPER@" ; species name
 	dw 403, 890 ; height, weight
 
 	db   "It knows how to"
