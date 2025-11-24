@@ -1,4 +1,4 @@
-	db "BIG JAW@" ; species name
+	db "CROCODILIAN@" ; species name
 	dw 707, 1960 ; height, weight
 
 	db   "It swims with just"
