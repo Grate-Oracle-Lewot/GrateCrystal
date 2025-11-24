@@ -1,4 +1,4 @@
-	db "COCONUT@" ; species name
+	db "PALM@" ; species name
 	dw 607, 2650 ; height, weight
 
 	db   "It can grow its"
