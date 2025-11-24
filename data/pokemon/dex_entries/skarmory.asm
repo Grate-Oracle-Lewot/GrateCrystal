@@ -1,4 +1,4 @@
-	db "ARMOR BIRD@" ; species name
+	db "AIRCRANE@" ; species name
 	dw 507, 1110 ; height, weight
 
 	db   "It sees jet planes"
