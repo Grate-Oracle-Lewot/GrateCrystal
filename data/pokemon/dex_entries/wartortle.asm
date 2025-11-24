@@ -1,4 +1,4 @@
-	db "TURTLE@" ; species name
+	db "TORTOISE@" ; species name
 	dw 303, 500 ; height, weight
 
 	db   "In olden times,"
