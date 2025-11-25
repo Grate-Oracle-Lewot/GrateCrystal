@@ -2032,11 +2032,12 @@ EscapeRopeEffect:
 	ld a, [wBattleMode]
 	and a
 	jr z, .field
-	cp 1
+	cp WILD_BATTLE
 	ret nz
 
 ; wild battle
 	ld a, TRUE
+	ld [wItemEffectSucceeded], a
 	ld [wForcedSwitch], a
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
