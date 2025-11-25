@@ -2030,8 +2030,9 @@ EscapeRopeEffect:
 	ld [wItemEffectSucceeded], a
 
 	ld a, [wBattleMode]
-	dec a
-	jr c, .field
+	and a
+	jr z, .field
+	cp 1
 	ret nz
 
 ; wild battle
