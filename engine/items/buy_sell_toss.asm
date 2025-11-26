@@ -57,7 +57,9 @@ SelectQuantityToSell:
 	ld [wBuySellItemPrice + 1], a
 
 ; limit [wItemQuantity] so that de * [wItemQuantity] <= MAX_MONEY
-; 1 <= [wItemQuantity] <= 99
+; 1 <= [wItemQuantity] <= c (number in bag)
+	ld a, [wItemQuantity]
+	ld c, a
 	xor a
 	ld [hMoneyTemp + 0], a
 	ld [hMoneyTemp + 1], a
@@ -65,7 +67,7 @@ SelectQuantityToSell:
 	ld b, -1
 	jr .start
 .loop
-	cp 99
+	cp c
 	jr nc, .done
 .start
 	ld a, [hMoneyTemp + 2]
