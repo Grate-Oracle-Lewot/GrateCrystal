@@ -1,4 +1,4 @@
-	db "YETI@" ; species name
+	db "ABOMINABLE@" ; species name
 	dw 307, 660 ; height, weight
 
 	db   "It tries to chall-"
