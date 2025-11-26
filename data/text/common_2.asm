@@ -397,7 +397,7 @@ _MoveBoulderText::
 	text_ram wStringBuffer1
 	text " can"
 	line "move boulders."
-	prompt
+	autodone
 
 _UseJediRobeText::
 	text "<PLAYER> used"
@@ -405,7 +405,7 @@ _UseJediRobeText::
 
 	para "<PLAYER> can move"
 	line "boulders."
-	prompt
+	autodone
 
 _AskStrengthText::
 	text "This boulder may"
