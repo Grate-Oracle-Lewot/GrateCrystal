@@ -16,20 +16,23 @@ endr
 	db -1 ; end
 ENDM
 
+; Can't use Z, I needed a ladder
+
 UnownWalls:
 ; UNOWNWORDS_ESCAPE
-	; db $08, $44, $04, $00, $2e, $08, -1
+	; db $88, $c4, $84, $80, $ae, $88, -1
 	unownwall "ESCAPE"
 ; UNOWNWORDS_LIGHT
-	; db $26, $20, $0c, $0e, $46, -1
+	; db $a6, $a0, $8c, $8e, $c6, -1
 	unownwall "LIGHT"
 ; UNOWNWORDS_WATER
-	; db $4c, $00, $46, $08, $42, -1
+	; db $cc, $80, $c6, $88, $c2, -1
 	unownwall "WATER"
 ; UNOWNWORDS_HO_OH
-	; db $0e, $2c, $64, $2c, $0e, -1
+	; db $8e, $ac, $64, $ac, $8e, -1
 	unownwall "HO-OH"
 ; UNOWNWORDS_GRATE
+	; db $8c, $c2, $80, $c6, $88, -1
 	unownwall "GRATE"
 
 MenuHeaders_UnownWalls:
