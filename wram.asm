@@ -2236,9 +2236,7 @@ ENDU
 
 wListPointer:: dw
 
-	ds 1
-
-wItemQuantityMax:: db
+	ds 2
 
 wItemAttributesPointer:: dw
 
