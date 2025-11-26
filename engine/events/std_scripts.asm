@@ -123,6 +123,9 @@ else
 	end
 
 .pokerus
+	closetext
+	showemote EMOTE_SHOCK, LAST_TALKED, 15
+	opentext
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
