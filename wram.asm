@@ -2235,7 +2235,10 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 ENDU
 
 wListPointer:: dw
-	ds 2
+
+	ds 1
+
+wItemQuantityMax:: db
 
 wItemAttributesPointer:: dw
 
