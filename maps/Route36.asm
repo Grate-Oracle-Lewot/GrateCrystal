@@ -446,9 +446,9 @@ RockSmashGuyText3:
 	para "single well-aimed"
 	line "smack."
 
-	para "If any rocks are"
-	line "in your way, just"
-	cont "smash 'em up!"
+	para "You don't need a"
+	line "BADGE to use it,"
+	cont "either!"
 	done
 
 Route36LassText:
