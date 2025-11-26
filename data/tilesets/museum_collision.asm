@@ -118,11 +118,3 @@
 	tilecoll WALL, WALL, WALL, WALL ; 75
 	tilecoll WALL, WALL, WALL, WALL ; 76
 	tilecoll WALL, WALL, WALL, WALL ; 77
-	tilecoll WALL, WALL, WALL, WALL ; 78
-	tilecoll WALL, WALL, WALL, WALL ; 79
-	tilecoll WALL, WALL, WALL, WALL ; 7a
-	tilecoll WALL, WALL, WALL, WALL ; 7b
-	tilecoll WALL, WALL, WALL, WALL ; 7c
-	tilecoll WALL, WALL, WALL, WALL ; 7d
-	tilecoll WALL, WALL, WALL, WALL ; 7e
-	tilecoll WALL, WALL, WALL, WALL ; 7f
