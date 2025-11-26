@@ -2035,7 +2035,6 @@ EscapeRopeEffect:
 	cp WILD_BATTLE
 	ret nz
 
-; wild battle
 	ld a, TRUE
 	ld [wItemEffectSucceeded], a
 	ld [wForcedSwitch], a
