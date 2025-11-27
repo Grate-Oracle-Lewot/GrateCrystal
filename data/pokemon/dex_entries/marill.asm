@@ -1,4 +1,4 @@
-	db "AQUAMOUSE@" ; species name
+	db "MOUSE@" ; species name
 	dw 104, 190 ; height, weight
 
 	db   "In ancient times,"
