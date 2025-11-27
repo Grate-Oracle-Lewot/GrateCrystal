@@ -1,4 +1,4 @@
-	db "SEA LION@" ; species name
+	db "BLUBBER@" ; species name
 	dw 507, 2650 ; height, weight
 
 	db   "Myths of mermaids"
