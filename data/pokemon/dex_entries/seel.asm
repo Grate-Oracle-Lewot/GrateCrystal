@@ -1,4 +1,4 @@
-	db "SEAL@" ; species name
+	db "BLUBBER@" ; species name
 	dw 307, 1980 ; height, weight
 
 	db   "It's more closely"
