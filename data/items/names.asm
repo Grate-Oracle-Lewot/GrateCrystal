@@ -157,7 +157,7 @@ ItemNames::
 	li "FLOWER MAIL"
 	li "LEVEL BALL"
 	li "LURE BALL"
-	li "FAST BALL"
+	li "HASTE BALL"
 	li "SWAG BEACON"
 	li "VOLTECCER"
 	li "FRIEND BALL"
