@@ -1,4 +1,4 @@
-	db "AQUARABBIT@" ; species name
+	db "RABBIT@" ; species name
 	dw 207, 630 ; height, weight
 
 	db   "Its long ears can"
