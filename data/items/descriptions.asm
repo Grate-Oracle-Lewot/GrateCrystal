@@ -613,7 +613,7 @@ AmuletCoinDesc:
 
 YlwApricornDesc:
 	db   "Can be made into a"
-	next "FAST BALL.@"
+	next "HASTE BALL.@"
 
 GrnApricornDesc:
 	db   "Can be made into a"
