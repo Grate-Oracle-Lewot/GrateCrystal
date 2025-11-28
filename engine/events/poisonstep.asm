@@ -42,6 +42,7 @@ DoPoisonStep::
 	and %01
 	jr z, .no_faint
 	call .PlayPoisonSFX
+.no_faint
 	xor a
 	ret
 
@@ -50,10 +51,6 @@ DoPoisonStep::
 	ld hl, .Script_MonFaintedToPoison
 	call CallScript
 	scf
-	ret
-
-.no_faint
-	xor a
 	ret
 
 .DamageMonIfPoisoned:
