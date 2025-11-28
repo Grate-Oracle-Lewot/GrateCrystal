@@ -29,7 +29,7 @@ DrawHP:
 	ld e, a
 	ld a, 6
 	ld d, a
-	jp .fainted
+	jr .fainted
 
 .at_least_1_hp
 	ld a, [wTempMonMaxHP]
