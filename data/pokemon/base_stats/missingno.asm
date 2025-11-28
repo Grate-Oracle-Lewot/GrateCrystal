@@ -10,7 +10,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 255 ; step cycles to hatch
 	INCBIN "gfx/pokemon/missingno/front.dimensions"
-	db GROWTH_FAST ; growth rate
+	db GROWTH_ERRATIC ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
