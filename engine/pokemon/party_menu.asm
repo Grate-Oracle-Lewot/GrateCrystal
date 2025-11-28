@@ -5,10 +5,7 @@ SelectMonFromParty:
 	call ClearBGPalettes
 	call InitPartyMenuLayout
 	call WaitBGMap
-	call SetPalettes
-	call DelayFrame
-	call PartyMenuSelect
-	jp ReturnToMapWithSpeechTextbox
+	jr SelectMonOptimization
 
 SelectTradeOrDayCareMon:
 	ld a, b
@@ -19,6 +16,9 @@ SelectTradeOrDayCareMon:
 	call WaitBGMap
 	ld b, SCGB_PARTY_MENU
 	call GetSGBLayout
+	; fallthrough
+
+SelectMonOptimization:
 	call SetPalettes
 	call DelayFrame
 	call PartyMenuSelect
@@ -240,8 +240,8 @@ PlacePartyMonLevel:
 	jr nc, .ThreeDigits
 	ld a, "<LV>"
 	ld [hli], a
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-	; jr .okay
+;	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+;	jr .okay
 .ThreeDigits:
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 ; .okay
@@ -249,7 +249,7 @@ PlacePartyMonLevel:
 
 .next
 	pop hl
-	ld de, SCREEN_WIDTH * 2
+	ld de, 2 * SCREEN_WIDTH
 	add hl, de
 	pop bc
 	inc b
@@ -281,7 +281,7 @@ PlacePartyMonStatus:
 
 .next
 	pop hl
-	ld de, SCREEN_WIDTH * 2
+	ld de, 2 * SCREEN_WIDTH
 	add hl, de
 	pop bc
 	inc b
@@ -315,7 +315,7 @@ PlacePartyMonTMHMCompatibility:
 
 .next
 	pop hl
-	ld de, SCREEN_WIDTH * 2
+	ld de, 2 * SCREEN_WIDTH
 	add hl, de
 	pop bc
 	inc b
@@ -771,7 +771,21 @@ PrintPartyMenuActionText:
 	ld a, [wPartyMenuActionText]
 	and $f
 	ld hl, .MenuActionTexts
-	call .PrintText
+
+	ld e, a
+	ld d, 0
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wOptions]
+	push af
+	set NO_TEXT_SCROLL, a
+	ld [wOptions], a
+	call PrintText
+	pop af
+	ld [wOptions], a
 	ret
 
 .MenuActionTexts:
@@ -826,20 +840,3 @@ PrintPartyMenuActionText:
 .CameToItsSensesText:
 	text_far _CameToItsSensesText
 	text_end
-
-.PrintText:
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wOptions]
-	push af
-	set NO_TEXT_SCROLL, a
-	ld [wOptions], a
-	call PrintText
-	pop af
-	ld [wOptions], a
-	ret
