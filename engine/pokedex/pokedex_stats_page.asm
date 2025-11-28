@@ -243,23 +243,25 @@ Pokedex_Get_Growth::
 	ld de, .growth_medfast
 	cp GROWTH_MEDIUM_FAST
 	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
 	ld de, .growth_slightfast
 	cp GROWTH_SLIGHTLY_FAST
 	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
 	ld de, .growth_slightslow
 	cp GROWTH_SLIGHTLY_SLOW
 	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
 	ld de, .growth_medslow
 	cp GROWTH_MEDIUM_SLOW
 	jr z, .Growth_print
-	ld a, [wBaseGrowthRate]
 	ld de, .growth_fast
 	cp GROWTH_FAST
 	jr z, .Growth_print
 	ld de, .growth_slow
+	cp GROWTH_SLOW
+	jr z, .Growth_print
+	ld de, .growth_erratic
+	cp GROWTH_ERRATIC
+	jr z, .Growth_print
+	ld de, .growth_fluctuating
 .Growth_print
 	hlcoord 2, 13
 	jp PlaceString
@@ -276,6 +278,10 @@ Pokedex_Get_Growth::
 	db "Fast Growth@"
 .growth_slow
 	db "Slow Growth@"
+.growth_erratic
+	db "Erratic Growth@"
+.growth_fluctuating
+	db "Flux Growth@"
 
 Pokedex_EggG_SetUp:
 	ld a, [wBaseEggGroups]
@@ -322,55 +328,42 @@ Pokedex_Get_EggGroup:
 	ld de, .EggG_Monster_text
 	cp EGG_MONSTER
 	ret z
-	ld a, b
 	ld de, .EggG_Amphibian_text
 	cp EGG_WATER_1
 	ret z
-	ld a, b
 	ld de, .EggG_Bug_text
 	cp EGG_BUG
 	ret z
-	ld a, b
 	ld de, .EggG_Flying_text
 	cp EGG_FLYING
 	ret z
-	ld a, b
 	ld de, .EggG_Field_text
 	cp EGG_GROUND
 	ret z
-	ld a, b
 	ld de, .EggG_Fairy_text
 	cp EGG_FAIRY
 	ret z
-	ld a, b
 	ld de, .EggG_Grass_text
 	cp EGG_PLANT
 	ret z
-	ld a, b
 	ld de, .EggG_HumanLike_text
 	cp EGG_HUMANSHAPE
 	ret z
-	ld a, b
 	ld de, .EggG_Invertebrate_text
 	cp EGG_WATER_3
 	ret z
-	ld a, b
 	ld de, .EggG_Mineral_text
 	cp EGG_MINERAL
 	ret z
-	ld a, b
 	ld de, .EggG_Amorphous_text
 	cp EGG_INDETERMINATE
 	ret z
-	ld a, b
 	ld de, .EggG_Fish_text
 	cp EGG_WATER_2
 	ret z
-	ld a, b
 	ld de, .EggG_Dragon_text
 	cp EGG_DRAGON
 	ret z
-	ld a, b
 	ld de, .EggG_Ditto_text
 	cp EGG_DITTO
 	ret z
@@ -415,23 +408,18 @@ Pokedex_Get_GenderRatio::
 	ld de, .GR_always_fem
 	cp GENDER_F100
 	jr z, .GR_print
-	ld a, [wBaseGender]
 	ld de, .GR_always_male
 	cp GENDER_F0
 	jr z, .GR_print
-	ld a, [wBaseGender]
 	ld de, .GR_QuarterF
 	cp GENDER_F25
 	jr z, .GR_print
-	ld a, [wBaseGender]
 	ld de, .GR_Equal
 	cp GENDER_F50
 	jr z, .GR_print
-	ld a, [wBaseGender]
 	ld de, .GR_QuartM
 	cp GENDER_F75
 	jr z, .GR_print
-	ld a, [wBaseGender]
 	ld de, .GR_MostMale
 	cp GENDER_F12_5
 	jr z, .GR_print
