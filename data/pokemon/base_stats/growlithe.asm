@@ -6,7 +6,7 @@
 	db FIRE, FIRE ; type
 	db 190 ; catch rate
 	db 91 ; base exp
-	db THICK_CLUB, FIRE_STONE ; items
+	db POKE_BALL, FIRE_STONE ; items
 	db GENDER_F25 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/growlithe/front.dimensions"
