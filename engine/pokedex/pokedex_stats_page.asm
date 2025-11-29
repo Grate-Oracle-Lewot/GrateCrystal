@@ -450,9 +450,9 @@ Pokedex_PrintHatchSteps:
 	hlcoord 2, 9
 	ld de, .HatchSteps_text
 	call PlaceString
-	hlcoord 13, 9
+	hlcoord 15, 9
 	ld de, wBaseEggSteps
-	lb bc, 1, 3 ; 1 byte, 3 digits
+	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	jp PrintNum
 
 .HatchSteps_text:
