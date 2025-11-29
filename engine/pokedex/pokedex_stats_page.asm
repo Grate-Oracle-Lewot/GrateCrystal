@@ -281,7 +281,7 @@ Pokedex_Get_Growth::
 .growth_erratic
 	db "Erratic Growth@"
 .growth_fluctuating
-	db "Flux Growth@"
+	db "Fluctuating Growth@"
 
 Pokedex_EggG_SetUp:
 	ld a, [wBaseEggGroups]
