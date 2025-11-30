@@ -91,8 +91,4 @@ ConvertPercentages::
 	; because we are cross multiplying and now need to divide by 256
 	ldh a, [hProduct + 2] ; high byte of the 2-byte Product of the cross multiplication, low byte is hProduct + 3
 	; hProduct + 0 and hProduct + 1 will never have anything but zero since we'll never exceed a 2-byte Product
-
-	and a ; check if our result is zero
-	ret z ; if zero, done
-	inc a ; else, add one
 	ret
