@@ -5,9 +5,9 @@ move: MACRO
 	db \2 ; effect
 	db \3 ; power
 	db \4 | \5 ; type
-	db \6 percent ; accuracy
+	db \6 percent + 1 ; accuracy
 	db \7 ; PP
-	db \8 percent ; effect chance
+	db \8 percent + 1 ; effect chance
 	assert \7 <= 40, "PP must be 40 or less!"
 ENDM
 
