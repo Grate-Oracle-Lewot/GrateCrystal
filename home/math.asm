@@ -92,7 +92,7 @@ ConvertPercentages::
 	ldh a, [hProduct + 2] ; high byte of the 2-byte Product of the cross multiplication, low byte is hProduct + 3
 	; hProduct + 0 and hProduct + 1 will never have anything but zero since we'll never exceed a 2-byte Product
 
-	cp 99 ; 100 will display as 99
-	ret c ; if lower than 99, we're done
-	inc a ; else, add 1
+	and a ; check if our result is zero
+	ret z ; if zero, done
+	inc a ; else, add one
 	ret
