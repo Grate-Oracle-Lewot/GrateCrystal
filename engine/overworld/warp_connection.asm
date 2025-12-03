@@ -5,6 +5,8 @@ HandleNewMap:
 	call ResetBikeFlags
 	ld a, MAPCALLBACK_NEWMAP
 	call RunMapCallback
+	; fallthrough
+
 HandleContinueMap:
 	xor a
 	ld [wStoneTableAddress], a
@@ -61,7 +63,7 @@ EnterMapConnection:
 	ld [wOverworldMapAnchor], a
 	ld a, h
 	ld [wOverworldMapAnchor + 1], a
-	jp .done
+	jr .done
 
 .east
 	ld a, [wEastConnectedMapGroup]
@@ -96,7 +98,7 @@ EnterMapConnection:
 	ld [wOverworldMapAnchor], a
 	ld a, h
 	ld [wOverworldMapAnchor + 1], a
-	jp .done
+	jr .done
 
 .north
 	ld a, [wNorthConnectedMapGroup]
@@ -121,7 +123,7 @@ EnterMapConnection:
 	ld [wOverworldMapAnchor], a
 	ld a, h
 	ld [wOverworldMapAnchor + 1], a
-	jp .done
+	jr .done
 
 .south
 	ld a, [wSouthConnectedMapGroup]
