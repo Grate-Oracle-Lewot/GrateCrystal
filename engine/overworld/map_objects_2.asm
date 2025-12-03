@@ -45,7 +45,11 @@ CheckObjectFlag:
 	ld a, e
 	cp -1
 	jr z, .unmasked
-	jr .masked
+.masked
+	ld a, -1
+	scf
+	ret
+
 .check
 	ld b, CHECK_FLAG
 	call EventFlagAction
@@ -54,11 +58,6 @@ CheckObjectFlag:
 	jr nz, .masked
 .unmasked
 	xor a
-	ret
-
-.masked
-	ld a, -1
-	scf
 	ret
 
 GetObjectTimeMask:
