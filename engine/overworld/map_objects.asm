@@ -2165,14 +2165,14 @@ UpdateObjectFrozen:
 	call CheckObjectOnScreen
 	jr c, SetFacing_Standing
 	call UpdateObjectNextTile
-	farcall HandleFrozenObjectAction ; no need to farcall
+	call HandleFrozenObjectAction
 	xor a
 	ret
 
 UpdateRespawnedObjectFrozen:
 	call CheckObjectOnScreen
 	jr c, SetFacing_Standing
-	farcall HandleFrozenObjectAction ; no need to farcall
+	call HandleFrozenObjectAction
 	xor a
 	ret
 
@@ -2196,8 +2196,7 @@ UpdateObjectNextTile:
 	ld hl, OBJECT_NEXT_TILE
 	add hl, bc
 	ld [hl], a
-	farcall UpdateTallGrassFlags ; no need to farcall
-	ret
+	jp UpdateTallGrassFlags
 
 CheckObjectOnScreen:
 	ld hl, OBJECT_NEXT_MAP_X
