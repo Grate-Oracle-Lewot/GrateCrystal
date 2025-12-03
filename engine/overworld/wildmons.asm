@@ -420,13 +420,18 @@ endr
 LoadWildMonDataPointer:
 	call CheckOnWater
 	jr z, _WaterWildmonLookup
+	; fallthrough
 
 _GrassWildmonLookup:
 	ld hl, JohtoGrassWildMons
 	ld de, KantoGrassWildMons
 	call _JohtoWildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	; fallthrough
+
+_NormalWildmonOK:
+	call CopyCurrMapDE
+	jr LookUpWildmonsForMapDE
 
 _WaterWildmonLookup:
 	ld hl, JohtoWaterWildMons
@@ -442,10 +447,6 @@ _JohtoWildmonCheck:
 	ld h, d
 	ld l, e
 	ret
-
-_NormalWildmonOK:
-	call CopyCurrMapDE
-	jr LookUpWildmonsForMapDE
 
 CopyCurrMapDE:
 	ld a, [wMapGroup]
