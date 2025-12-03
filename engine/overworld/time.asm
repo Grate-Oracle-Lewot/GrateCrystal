@@ -1,6 +1,8 @@
 _InitializeStartDay:
-	call InitializeStartDay
-	ret
+InitializeStartDay:
+	call UpdateTime
+	ld hl, wTimerEventStartDay
+	jp CopyDayToHL
 
 ClearDailyTimers:
 	xor a
@@ -168,11 +170,6 @@ CheckBugContestTimer::
 	ld [wBugContestSecsRemaining], a
 	scf
 	ret
-
-InitializeStartDay:
-	call UpdateTime
-	ld hl, wTimerEventStartDay
-	jp CopyDayToHL
 
 CheckPokerusTick::
 	ld hl, wTimerEventStartDay
