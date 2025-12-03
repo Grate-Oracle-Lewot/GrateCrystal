@@ -833,7 +833,9 @@ ENDM
 	and a ; LAND_TILE
 	jr z, .Land
 
-	jr .Neither
+.Neither:
+	scf
+	ret
 
 .Water:
 	xor a
@@ -842,10 +844,6 @@ ENDM
 .Land:
 	ld a, 1
 	and a
-	ret
-
-.Neither:
-	scf
 	ret
 
 .BumpSound:
