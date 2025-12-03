@@ -1288,21 +1288,25 @@ Script_memjump:
 Script_iffalse:
 	ld a, [wScriptVar]
 	and a
-	jp nz, SkipTwoScriptBytes
+	jr nz, SkipTwoScriptBytes
 	jp Script_sjump
 
 Script_iftrue:
 	ld a, [wScriptVar]
 	and a
 	jp nz, Script_sjump
-	jp SkipTwoScriptBytes
+	jr SkipTwoScriptBytes
 
 Script_ifequal:
 	call GetScriptByte
 	ld hl, wScriptVar
 	cp [hl]
 	jr z, Script_sjump
-	jr SkipTwoScriptBytes
+	; fallthrough
+
+SkipTwoScriptBytes:
+	call GetScriptByte
+	jp GetScriptByte
 
 Script_ifnotequal:
 	call GetScriptByte
@@ -1352,10 +1356,6 @@ StdScript:
 	inc hl
 	ld a, BANK(StdScripts)
 	jp GetFarWord
-
-SkipTwoScriptBytes:
-	call GetScriptByte
-	jp GetScriptByte
 
 ScriptJump:
 	ld a, b
