@@ -413,10 +413,40 @@ CopyTempObjectToObjectStruct:
 	ld [hl], a
 
 	ld a, [wTempObjectCopyY]
-	call .InitYCoord
+	ld hl, OBJECT_INIT_Y
+	add hl, de
+	ld [hl], a
+
+	ld hl, OBJECT_NEXT_MAP_Y
+	add hl, de
+	ld [hl], a
+
+	ld hl, wYCoord
+	sub [hl]
+	and $f
+	swap a
+	ld hl, wPlayerBGMapOffsetY
+	sub [hl]
+	ld hl, OBJECT_SPRITE_Y
+	add hl, de
+	ld [hl], a
 
 	ld a, [wTempObjectCopyX]
-	call .InitXCoord
+	ld hl, OBJECT_INIT_X
+	add hl, de
+	ld [hl], a
+	ld hl, OBJECT_NEXT_MAP_X
+	add hl, de
+	ld [hl], a
+	ld hl, wXCoord
+	sub [hl]
+	and $f
+	swap a
+	ld hl, wPlayerBGMapOffsetX
+	sub [hl]
+	ld hl, OBJECT_SPRITE_X
+	add hl, de
+	ld [hl], a
 
 	ld a, [wTempObjectCopySprite]
 	ld hl, OBJECT_SPRITE
@@ -437,55 +467,6 @@ CopyTempObjectToObjectStruct:
 	ld [hl], STANDING
 
 	ld a, [wTempObjectCopyRadius]
-	call .InitRadius
-
-	ld a, [wTempObjectCopyRange]
-	ld hl, OBJECT_RANGE
-	add hl, de
-	ld [hl], a
-
-	and a
-	ret
-
-.InitYCoord:
-	ld hl, OBJECT_INIT_Y
-	add hl, de
-	ld [hl], a
-
-	ld hl, OBJECT_NEXT_MAP_Y
-	add hl, de
-	ld [hl], a
-
-	ld hl, wYCoord
-	sub [hl]
-	and $f
-	swap a
-	ld hl, wPlayerBGMapOffsetY
-	sub [hl]
-	ld hl, OBJECT_SPRITE_Y
-	add hl, de
-	ld [hl], a
-	ret
-
-.InitXCoord:
-	ld hl, OBJECT_INIT_X
-	add hl, de
-	ld [hl], a
-	ld hl, OBJECT_NEXT_MAP_X
-	add hl, de
-	ld [hl], a
-	ld hl, wXCoord
-	sub [hl]
-	and $f
-	swap a
-	ld hl, wPlayerBGMapOffsetX
-	sub [hl]
-	ld hl, OBJECT_SPRITE_X
-	add hl, de
-	ld [hl], a
-	ret
-
-.InitRadius:
 	ld h, a
 	inc a
 	and $f
@@ -497,6 +478,13 @@ CopyTempObjectToObjectStruct:
 	ld hl, OBJECT_RADIUS
 	add hl, de
 	ld [hl], a
+
+	ld a, [wTempObjectCopyRange]
+	ld hl, OBJECT_RANGE
+	add hl, de
+	ld [hl], a
+
+	and a
 	ret
 
 TrainerWalkToPlayer:
