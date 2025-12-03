@@ -1,3 +1,5 @@
+INCLUDE "data/maps/setup_scripts.asm"
+
 RunMapSetupScript::
 	ldh a, [hMapEntryMethod]
 	and $f
@@ -10,9 +12,7 @@ RunMapSetupScript::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp ReadMapSetupScript
-
-INCLUDE "data/maps/setup_scripts.asm"
+	; fallthrough
 
 ReadMapSetupScript:
 .loop
