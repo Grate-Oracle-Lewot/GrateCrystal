@@ -1412,10 +1412,6 @@ StepFunction_GotBite:
 	ret
 
 StepFunction_RockSmash:
-	call .Step
-	jp WaitStep_InPlace
-
-.Step:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	ld a, [hl]
@@ -1427,7 +1423,7 @@ StepFunction_RockSmash:
 	ld hl, OBJECT_ACTION
 	add hl, bc
 	ld [hl], a
-	ret
+	jp WaitStep_InPlace
 
 StepFunction_DigTo:
 	ld hl, OBJECT_STEP_DURATION
@@ -2357,10 +2353,6 @@ CheckObjectCoveredByTextbox:
 	scf
 	ret
 
-HandleNPCStep::
-	call ResetStepVector
-	jp DoStepsForAllObjects
-
 ResetStepVector:
 	xor a
 	ld [wPlayerStepVectorX], a
@@ -2369,6 +2361,10 @@ ResetStepVector:
 	ld a, STANDING
 	ld [wPlayerStepDirection], a
 	ret
+
+HandleNPCStep::
+	call ResetStepVector
+	; fallthrough
 
 DoStepsForAllObjects:
 	ld bc, wObjectStructs
@@ -2499,7 +2495,7 @@ ResetFollower:
 	cp -1
 	ret z
 	call GetObjectStruct
-	farcall ResetObject ; no need to farcall
+	call ResetObject
 	ld a, -1
 	ld [wObjectFollow_Follower], a
 	ret
@@ -2587,7 +2583,7 @@ ResetObject:
 	add hl, bc
 	ld a, [hl]
 	cp -1
-	jp z, .set_standing ; a jr would have been appropriate here
+	jr z, .set_standing
 	push bc
 	call GetMapObject
 	ld hl, MAPOBJECT_MOVEMENT
