@@ -186,7 +186,12 @@ WillObjectRemainOnWater:
 	jr z, .up
 	dec a
 	jr z, .left
-	jr .right
+
+.right
+	inc d
+	push de
+	inc e
+	jr .continue
 
 .down
 	inc e
@@ -200,12 +205,6 @@ WillObjectRemainOnWater:
 	jr .continue
 
 .left
-	push de
-	inc e
-	jr .continue
-
-.right
-	inc d
 	push de
 	inc e
 
