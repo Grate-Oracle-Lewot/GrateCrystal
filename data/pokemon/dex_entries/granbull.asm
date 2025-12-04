@@ -1,4 +1,4 @@
-	db "DOG@" ; species name
+	db "GUARD DOG@" ; species name
 	dw 407, 1070 ; height, weight
 
 	db   "It often becomes"
