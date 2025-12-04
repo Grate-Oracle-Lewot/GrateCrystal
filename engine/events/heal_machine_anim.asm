@@ -109,6 +109,7 @@ ENDM
 	call DelayFrames
 	dec b
 	jr nz, .party_loop
+.dummy_5
 	ret
 
 .PlayHealMusic:
@@ -123,9 +124,6 @@ ENDM
 	call WaitSFX
 	ld de, SFX_BOOT_PC
 	jp PlaySFX
-
-.dummy_5
-	ret
 
 .PC_ElmsLab_OAM:
 	dbsprite   4,   4, 2, 0, $7c, PAL_OW_TREE | OBP_NUM
