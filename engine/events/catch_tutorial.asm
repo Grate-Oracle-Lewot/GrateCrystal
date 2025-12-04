@@ -28,7 +28,25 @@ CatchTutorial::
 	ld bc, NAME_LENGTH
 	call CopyBytes
 
-	call .LoadDudeData
+	ld hl, wDudeNumItems
+	ld [hl], 1
+	inc hl
+	ld [hl], POTION
+	inc hl
+	ld [hl], 1
+	inc hl
+	ld [hl], -1
+	ld hl, wDudeNumKeyItems
+	ld [hl], 0
+	inc hl
+	ld [hl], -1
+	ld hl, wDudeNumBalls
+	ld a, 1
+	ld [hli], a
+	ld a, POKE_BALL
+	ld [hli], a
+	ld [hli], a
+	ld [hl], -1
 
 	xor a
 	ldh [hJoyDown], a
@@ -50,28 +68,6 @@ CatchTutorial::
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
 	jp CopyBytes
-
-.LoadDudeData:
-	ld hl, wDudeNumItems
-	ld [hl], 1
-	inc hl
-	ld [hl], POTION
-	inc hl
-	ld [hl], 1
-	inc hl
-	ld [hl], -1
-	ld hl, wDudeNumKeyItems
-	ld [hl], 0
-	inc hl
-	ld [hl], -1
-	ld hl, wDudeNumBalls
-	ld a, 1
-	ld [hli], a
-	ld a, POKE_BALL
-	ld [hli], a
-	ld [hli], a
-	ld [hl], -1
-	ret
 
 .Dude:
 	db "DUDE@"
