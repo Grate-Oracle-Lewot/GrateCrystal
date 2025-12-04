@@ -1,4 +1,4 @@
-	db "DOG@" ; species name
+	db "SHOWDOG@" ; species name
 	dw 200, 170 ; height, weight
 
 	db   "Because of the"
