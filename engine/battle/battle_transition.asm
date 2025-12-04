@@ -93,31 +93,7 @@ DoBattleTransition:
 .NonMobile_LoadPokeballTiles:
 	call LoadTrainerBattlePokeballTiles
 	hlbgcoord 0, 0
-	jp ConvertTrainerBattlePokeballTilesTo2bpp
-
-LoadTrainerBattlePokeballTiles:
-; Load the tiles used in the Pokeball Graphic that fills the screen
-; at the start of every Trainer battle.
-	ld de, TrainerBattlePokeballTiles
-	ld hl, vTiles0 tile BATTLETRANSITION_SQUARE
-	ld b, BANK(TrainerBattlePokeballTiles)
-	ld c, 2
-	call Request2bpp
-
-	ldh a, [rVBK]
-	push af
-	ld a, $1
-	ldh [rVBK], a
-
-	ld de, TrainerBattlePokeballTiles
-	ld hl, vTiles3 tile BATTLETRANSITION_SQUARE
-	ld b, BANK(TrainerBattlePokeballTiles)
-	ld c, 2
-	call Request2bpp
-
-	pop af
-	ldh [rVBK], a
-	ret
+	; fallthrough
 
 ConvertTrainerBattlePokeballTilesTo2bpp:
 	ldh a, [rSVBK]
@@ -143,6 +119,30 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 	call Request2bpp
 	pop af
 	ldh [rSVBK], a
+	ret
+
+LoadTrainerBattlePokeballTiles:
+; Load the tiles used in the Pokeball Graphic that fills the screen
+; at the start of every Trainer battle.
+	ld de, TrainerBattlePokeballTiles
+	ld hl, vTiles0 tile BATTLETRANSITION_SQUARE
+	ld b, BANK(TrainerBattlePokeballTiles)
+	ld c, 2
+	call Request2bpp
+
+	ldh a, [rVBK]
+	push af
+	ld a, $1
+	ldh [rVBK], a
+
+	ld de, TrainerBattlePokeballTiles
+	ld hl, vTiles3 tile BATTLETRANSITION_SQUARE
+	ld b, BANK(TrainerBattlePokeballTiles)
+	ld c, 2
+	call Request2bpp
+
+	pop af
+	ldh [rVBK], a
 	ret
 
 TrainerBattlePokeballTiles:
