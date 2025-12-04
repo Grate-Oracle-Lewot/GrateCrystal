@@ -1242,7 +1242,7 @@ AI_Smart_LockOn:
 	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 76 percent - 1
+	cp 76 percent
 	jr nc, .checkmove
 
 	ld a, 1
@@ -1298,7 +1298,7 @@ AI_Smart_LockOn:
 	call AIGetMoveAttributes
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 76 percent - 1
+	cp 76 percent
 	jr nc, .checkmove2
 
 	dec [hl]
