@@ -6,28 +6,13 @@ BattleStart_TrainerHuds:
 	ld a, [wBattleMode]
 	dec a
 	ret z
-	jp ShowOTTrainerMonsRemaining
+	jr ShowOTTrainerMonsRemaining
 
 EnemySwitch_TrainerHud:
 	ld a, $e4
 	ldh [rOBP0], a
 	call LoadBallIconGFX
-	jp ShowOTTrainerMonsRemaining
-
-ShowPlayerMonsRemaining:
-	call DrawPlayerPartyIconHUDBorder
-	ld hl, wPartyMon1HP
-	ld de, wPartyCount
-	call StageBallTilesData
-	; ldpixel wPlaceBallsX, 12, 12
-	ld a, 12 * 8
-	ld hl, wPlaceBallsX
-	ld [hli], a
-	ld [hl], a
-	ld a, 8
-	ld [wPlaceBallsDirection], a
-	ld hl, wVirtualOAMSprite00
-	jp LoadTrainerHudOAM
+	; fallthrough
 
 ShowOTTrainerMonsRemaining:
 	call DrawEnemyHUDBorder
@@ -42,6 +27,21 @@ ShowOTTrainerMonsRemaining:
 	ld a, -8
 	ld [wPlaceBallsDirection], a
 	ld hl, wVirtualOAMSprite00 + PARTY_LENGTH * SPRITEOAMSTRUCT_LENGTH
+	jp LoadTrainerHudOAM
+
+ShowPlayerMonsRemaining:
+	call DrawPlayerPartyIconHUDBorder
+	ld hl, wPartyMon1HP
+	ld de, wPartyCount
+	call StageBallTilesData
+	; ldpixel wPlaceBallsX, 12, 12
+	ld a, 12 * 8
+	ld hl, wPlaceBallsX
+	ld [hli], a
+	ld [hl], a
+	ld a, 8
+	ld [wPlaceBallsDirection], a
+	ld hl, wVirtualOAMSprite00
 	jp LoadTrainerHudOAM
 
 StageBallTilesData:
