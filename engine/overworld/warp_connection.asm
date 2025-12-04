@@ -63,7 +63,7 @@ EnterMapConnection:
 	ld [wOverworldMapAnchor], a
 	ld a, h
 	ld [wOverworldMapAnchor + 1], a
-	jr .done
+	jp .done
 
 .east
 	ld a, [wEastConnectedMapGroup]
