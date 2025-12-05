@@ -514,7 +514,7 @@ make hm - Normal Johto starters, but when you get your starter you also get all 
 
 make noexp - Normal Johto starters, but Pokémon gain no experience from either battling or the Daycare. (Rare Candies and vitamins still work.) This is a particular type of challenge run, and since it was relatively straightforward to implement compared to something like a Nuzlocke, I figured I'd provide the option.
 
-make centre - Normal Johto starters, but you can no longer heal at Pokémon Centers, and all similar instances of free healing have been removed. This is a challenge run based on the US healthcare system, or lack thereof.
+make centre - Normal Johto starters, but you can no longer heal at Pokémon Centers, and all similar instances of free healing have been removed. This is another challenge run, although it's rendered somewhat moot by the PC healing a deposited Pokémon's HP and status. That's not something I can easily change, so you'll have to make it work.
 
 make little - Normal Johto starters, but the player can only acquire first-stage Pokémon (no single-stagers), and no Pokémon that the player owns will ever evolve. Computer trainers still use evolved and single-stage Pokémon as much as ever, so this is another kind of challenge run. You *can* obtain any Pokémon by trading with a normal copy of Grate Crystal, so do with that what you will. The Everstone also still works as an Eviolite; I chose to do this since some enemy trainers use it, and I didn't want to reconfigure their teams.
 
