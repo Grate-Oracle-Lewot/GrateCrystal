@@ -207,6 +207,7 @@ TilesetAerodactylWordRoomAnim:
 TilesetMuseumAnim:
 TilesetSpinnersAnim:
 TilesetViridianGymAnim:
+TilesetBillsHouseAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
