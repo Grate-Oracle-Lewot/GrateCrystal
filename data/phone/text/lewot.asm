@@ -5,6 +5,11 @@ LewotPhoneGreetingText:
 	line "huh?"
 	done
 
+LewotCallerGreetingText:
+	text "Hey, <PLAYER>, it's"
+	line "LEWOT…"
+	done
+
 LewotPhonePopcornText:
 	text "One time I put a"
 	line "hot bag of popcorn"
@@ -308,9 +313,40 @@ LewotPhoneCoinFlipText:
 	cont "ment to this day."
 	done
 
+LewotCallerGlitchesText:
+	text "Have you noticed"
+	line "any glitches or"
+	cont "anything?"
+
+	para "Feel free to cont-"
+	line "act me if you do."
+
+	para "In real life, I"
+	line "mean, not, uh,"
+	cont "this number."
+
+	para "You can raise an"
+	line "issue on GitHub or"
+
+	para "find me on Discord"
+	line "or something."
+
+	para "Whether I can"
+	line "actually fix it is"
+
+	para "another thing, but"
+	line "we'll see."
+	done
+
 LewotPhoneHangUpText:
 	text "I'm sure you feel"
 	line "enlightened."
 
 	para "Enjoy the hack."
+	done
+
+LewotCallerHangUpText:
+	text "Enjoy the parts of"
+	line "the hack that do"
+	cont "work, anyway."
 	done
