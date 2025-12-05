@@ -459,10 +459,6 @@ GoldenrodCityNameRaterSignText:
 	done
 
 GoldenrodCityUndergroundSignNorthText:
-	text "UNDERGROUND"
-	line "ENTRANCE"
-	done
-
 GoldenrodCityUndergroundSignSouthText:
 	text "UNDERGROUND"
 	line "ENTRANCE"
