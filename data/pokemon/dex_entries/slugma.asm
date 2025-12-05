@@ -1,4 +1,4 @@
-	db "MAGMA SLUG@" ; species name
+	db "PYROCLAST@" ; species name
 	dw 204, 770 ; height, weight
 
 	db   "Only when it oozes"
