@@ -388,3 +388,12 @@ INCBIN "data/tilesets/kanto_extra_metatiles.bin"
 
 TilesetKantoExtraColl::
 INCLUDE "data/tilesets/kanto_extra_collision.asm"
+
+TilesetBillsHouseGFX::
+INCBIN "gfx/tilesets/bills_house.2bpp.lz"
+
+TilesetBillsHouseMeta::
+INCBIN "data/tilesets/bills_house_metatiles.bin"
+
+TilesetBillsHouseColl::
+INCLUDE "data/tilesets/bills_house_collision.asm"
