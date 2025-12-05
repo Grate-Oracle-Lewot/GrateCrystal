@@ -380,9 +380,11 @@ BillsGrandpaPichuText:
 	done
 
 BillsHouseMachineText:
-	text "Whatever this is,"
-	line "the power's been"
-	cont "shut off."
+	text "The power's been"
+	line "disconnected, and"
+
+	para "the door is nailed"
+	line "shut."
 	done
 
 BillsHouse_MapEvents:
