@@ -721,6 +721,5 @@ INCLUDE "data/types/inverse_type_matchups.asm"
 
 SECTION "Lewot Phone Data", ROMX
 
-INCLUDE "engine/phone/scripts/lewot_caller.asm"
-INCLUDE "engine/phone/scripts/lewot_callee.asm"
+INCLUDE "engine/phone/scripts/lewot.asm"
 INCLUDE "data/phone/text/lewot.asm"
