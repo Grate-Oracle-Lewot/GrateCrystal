@@ -113,7 +113,6 @@ MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
-BillsHouse_Blocks:
 CharcoalKiln_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
@@ -993,3 +992,6 @@ OaksLab2F_Blocks:
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.blk"
+
+BillsHouse_Blocks:
+	INCBIN "maps/BillsHouse.blk"
