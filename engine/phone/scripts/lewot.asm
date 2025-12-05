@@ -40,3 +40,11 @@ LewotPhoneCalleeScript:
 	promptbutton
 	farwritetext LewotPhoneHangUpText
 	end
+
+LewotPhoneCallerScript:
+	farwritetext LewotCallerGreetingText
+	promptbutton
+	farwritetext LewotCallerGlitchesText
+	promptbutton
+	farwritetext LewotCallerHangUpText
+	end
