@@ -216,8 +216,8 @@ endc
 	closetext
 	end
 
-BillsHousePhoto:
-	jumptext BillsHousePhotoText
+BillsHouseMachine:
+	jumptext BillsHouseMachineText
 
 BillsGrandpaIntroText:
 	text "Hm? You know BILL?"
@@ -379,12 +379,10 @@ BillsGrandpaPichuText:
 	cont "like!"
 	done
 
-BillsHousePhotoText:
-	text "It's a photo of"
-	line "BILL's family."
-
-	para "There are too many"
-	line "people to count!"
+BillsHouseMachineText:
+	text "Whatever this is,"
+	line "the power's been"
+	cont "shut off."
 	done
 
 BillsHouse_MapEvents:
@@ -397,7 +395,8 @@ BillsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  0, BGEVENT_READ, BillsHousePhoto
+	bg_event  1,  2, BGEVENT_READ, BillsHouseMachine
+	bg_event  6,  2, BGEVENT_READ, BillsHouseMachine
 
 	def_object_events
-	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
+	object_event  5,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
