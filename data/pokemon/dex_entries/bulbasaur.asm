@@ -1,10 +1,10 @@
 	db "BULB@" ; species name
 	dw 204, 150 ; height, weight
 
-	db   "If removed, the"
-	next "bulb on its back"
-	next "will light up when"
+	db   "It was originally"
+	next "a water-type that"
+	next "developed a"
 
-	page "plugged into an"
-	next "electrical socket."
-	next "@"
+	page "symbiosis with the"
+	next "bulb that grows"
+	next "on its back.@"
