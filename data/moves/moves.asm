@@ -9,6 +9,7 @@ move: MACRO
 	assert \7 <= 40, "PP must be 40 or less!"
 ENDM
 
+; values rounded up for ConvertPercentages
 ;   5 percent + 1
 ;  10 percent + 1
 ;  15 percent + 1
