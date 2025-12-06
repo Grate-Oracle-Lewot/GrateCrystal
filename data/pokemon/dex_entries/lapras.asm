@@ -1,4 +1,4 @@
-	db "PLEASIOSAUR@" ; species name
+	db "PLEASYASAUR@" ; species name
 	dw 802, 4850 ; height, weight
 
 	db   "Before the advent"
