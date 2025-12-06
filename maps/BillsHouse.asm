@@ -120,7 +120,9 @@ BillsGrandpa:
 	verbosegiveitem SACRED_ASH
 	iffalse .BagFull
 	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+.Done:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	turn_head DOWN
 	closetext
 	end
 
@@ -135,9 +137,7 @@ BillsGrandpa:
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
 	setevent EVENT_GOT_LEAF_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
+	sjump .Done
 
 .ShowedStaryu:
 	checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
@@ -150,9 +150,7 @@ else
 endc
 	iffalse .BagFull
 	setevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
+	sjump .Done
 
 .ShowedGrowlitheVulpix:
 	checkevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
@@ -165,9 +163,7 @@ endc
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
 	setevent EVENT_GOT_FIRE_STONE_FROM_BILLS_GRANDPA
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	closetext
-	end
+	sjump .Done
 
 .ShowedPichu:
 	scall .ReceiveItem
@@ -178,8 +174,7 @@ endc
 	writetext BillsGrandpaDecorationHomeText
 	waitbutton
 	setevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
-	closetext
-	end
+	sjump .Done
 
 .ExcitedToSee:
 	writetext BillsGrandpaExcitedToSeeText
@@ -214,6 +209,7 @@ endc
 	waitbutton
 .BagFull:
 	closetext
+	turn_head DOWN
 	end
 
 BillsHouseMachine:
@@ -401,4 +397,4 @@ BillsHouse_MapEvents:
 	bg_event  6,  2, BGEVENT_READ, BillsHouseMachine
 
 	def_object_events
-	object_event  5,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
+	object_event  5,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BillsGrandpa, -1
