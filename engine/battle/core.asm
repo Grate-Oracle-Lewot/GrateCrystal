@@ -2225,7 +2225,7 @@ HandleEnemyMonFaint:
 
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 40
+	ld c, 42
 	call DelayFrames
 
 	ld a, [wBattleMode]
