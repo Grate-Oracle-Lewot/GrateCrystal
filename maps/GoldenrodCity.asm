@@ -204,7 +204,7 @@ GoldenrodCityRocketScoutScript:
 	end
 
 GoldenrodCityRocket1Script:
-	jumptextfaceplayer GoldenrodCityRocket1Text
+	jumptext GoldenrodCityRocket1Text
 
 GoldenrodCityRocket2Script:
 	jumptextfaceplayer GoldenrodCityRocket2Text
@@ -213,7 +213,7 @@ GoldenrodCityRocket3Script:
 	jumptextfaceplayer GoldenrodCityRocket3Text
 
 GoldenrodCityRocket4Script:
-	jumptextfaceplayer GoldenrodCityRocket4Text
+	jumptext GoldenrodCityRocket4Text
 
 GoldenrodCityRocket5Script:
 	jumptextfaceplayer GoldenrodCityRocket5Text
