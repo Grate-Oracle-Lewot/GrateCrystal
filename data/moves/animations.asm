@@ -1314,14 +1314,14 @@ BattleAnim_DarkPulse:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_bgp $1b
 	anim_sound 0, 0, SFX_PERISH_SONG
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $0
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $8
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $10
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $18
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $20
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $28
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $30
-	anim_obj ANIM_OBJ_HIDDEN_POWER, 44, 88, $38
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $0
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $8
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $10
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $18
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $20
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $28
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $30
+	anim_obj ANIM_OBJ_DARK_PULSE, 44, 88, $38
 	anim_wait 97
 	anim_incobj 1
 	anim_incobj 2
