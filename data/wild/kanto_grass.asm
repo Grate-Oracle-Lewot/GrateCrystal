@@ -14,7 +14,7 @@ if DEF(_LITTLE_CUP)
 else
 	db 1, FLOGISTAN
 endc
-	db 2, PIKACHU
+	db 2, MAREEP
 	db 1, LEDYBA
 	db 2, LEDYBA
 	; day
@@ -28,8 +28,8 @@ else
 	db 1, FLOGISTAN
 endc
 	db 2, RATTATA
-	db 1, PIKACHU
-	db 2, PIKACHU
+	db 1, MAREEP
+	db 2, MAREEP
 	; nite
 	db 1, HOOTHOOT
 	db 1, RATTATA
@@ -40,7 +40,7 @@ if DEF(_LITTLE_CUP)
 else
 	db 1, FLOGISTAN
 endc
-	db 1, PIKACHU
+	db 1, MAREEP
 	db 1, SPINARAK
 	db 2, SPINARAK
 	end_grass_wildmons
@@ -2250,6 +2250,49 @@ else
 	db 40, STEELIX
 	db 41, RHYDON
 endc
+	end_grass_wildmons
+
+	def_grass_wildmons PALLET_TOWN
+	db 7 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
+	; morn
+	db 1, PIDGEY
+	db 1, SENTRET
+	db 2, PIDGEY
+	db 2, SENTRET
+if DEF(_LITTLE_CUP)
+	db 1, RATTATA
+else
+	db 1, FLOGISTAN
+endc
+	db 2, PIKACHU
+	db 1, LEDYBA
+	db 2, LEDYBA
+	; day
+	db 1, PIDGEY
+	db 1, SENTRET
+	db 2, PIDGEY
+	db 2, SENTRET
+if DEF(_LITTLE_CUP)
+	db 1, RATTATA
+else
+	db 1, FLOGISTAN
+endc
+	db 2, RATTATA
+	db 1, PIKACHU
+	db 2, PIKACHU
+	; nite
+	db 1, HOOTHOOT
+	db 1, RATTATA
+	db 2, HOOTHOOT
+	db 2, RATTATA
+if DEF(_LITTLE_CUP)
+	db 1, RATTATA
+else
+	db 1, FLOGISTAN
+endc
+	db 1, PIKACHU
+	db 1, SPINARAK
+	db 2, SPINARAK
 	end_grass_wildmons
 
 	db -1 ; end
