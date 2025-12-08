@@ -897,6 +897,8 @@ PhoneFullMScript:
 	sjump StdCommon_EndText
 
 RematchMScript:
+	loadtemptrainer
+	encountermusic
 	readvar VAR_CALLERID
 	ifequal PHONE_SCHOOLBOY_JACK, .Jack
 	ifequal PHONE_SAILOR_HUEY, .Huey
@@ -1267,6 +1269,8 @@ PhoneFullFScript:
 	sjump StdCommon_EndText
 
 RematchFScript:
+	loadtemptrainer
+	encountermusic
 	readvar VAR_CALLERID
 	ifequal PHONE_COOLTRAINERF_BETH, .Beth
 	ifequal PHONE_COOLTRAINERF_REENA, .Reena
