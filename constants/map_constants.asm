@@ -78,7 +78,7 @@ ENDM
 	map_const PEWTER_MART,                                  6,  4 ;  3
 	map_const PEWTER_GYM,                                   5,  7 ;  4
 	map_const PEWTER_MUSEUM_1F,                            10,  4 ;  5
-	map_const PEWTER_MUSEUM_2F,                             7,  4 ;  6
+	map_const PEWTER_MUSEUM_2F,                             7,  5 ;  6
 	map_const PEWTER_NIDORAN_SPEECH_HOUSE,                  4,  4 ;  7
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  8
 	map_const ROUTE_3,                                     30,  9 ;  9
