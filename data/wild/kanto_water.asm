@@ -239,14 +239,14 @@ endc
 
 	def_water_wildmons PALLET_TOWN
 	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
+	db 10, TENTACOOL
+	db 5, TENTACOOL
 if DEF(_LITTLE_CUP)
-	db 35, TENTACOOL
-	db 30, SUNKERN
+	db 10, TENTACOOL
+	db 5, SUNKERN
 else
-	db 35, TENTACRUEL
-	db 30, TANGELA
+	db 10, TENTACRUEL
+	db 5, TANGELA
 endc
 	end_water_wildmons
 
