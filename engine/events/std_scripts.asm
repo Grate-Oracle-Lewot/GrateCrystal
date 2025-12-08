@@ -191,6 +191,9 @@ WindowScript:
 TVScript:
 	opentext
 	farwritetext TVText
+	; fallthrough
+
+StdCommon_EndText:
 	waitbutton
 	closetext
 	end
@@ -668,104 +671,64 @@ NumberAcceptedMScript:
 
 ; .Joey:
 	farwritetext JoeyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jack:
 	farwritetext JackNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Huey:
 	farwritetext HueyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Gaven:
 	farwritetext GavenNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jose:
 	farwritetext JoseNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wade:
 	farwritetext WadeNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Ralph:
 	farwritetext RalphNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Anthony:
 	farwritetext AnthonyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Todd:
 	farwritetext ToddNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Irwin:
 	farwritetext IrwinNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Arnie:
 	farwritetext ArnieNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Alan:
 	farwritetext AlanNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Chad:
 	farwritetext ChadNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Derek:
 	farwritetext DerekNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tully:
 	farwritetext TullyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Brent:
 	farwritetext BrentNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Vance:
 	farwritetext VanceNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wilton:
 	farwritetext WiltonNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Kenji:
 	farwritetext KenjiNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Parry:
 	farwritetext ParryNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 NumberDeclinedMScript:
 	readvar VAR_CALLERID
@@ -791,104 +754,64 @@ NumberDeclinedMScript:
 
 ; .Joey:
 	farwritetext JoeyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jack:
 	farwritetext JackNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Huey:
 	farwritetext HueyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Gaven:
 	farwritetext GavenNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jose:
 	farwritetext JoseNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wade:
 	farwritetext WadeNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Ralph:
 	farwritetext RalphNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Anthony:
 	farwritetext AnthonyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Todd:
 	farwritetext ToddNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Irwin:
 	farwritetext IrwinNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Arnie:
 	farwritetext ArnieNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Alan:
 	farwritetext AlanNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Chad:
 	farwritetext ChadNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Derek:
 	farwritetext DerekNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tully:
 	farwritetext TullyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Brent:
 	farwritetext BrentNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Vance:
 	farwritetext VanceNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wilton:
 	farwritetext WiltonNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Kenji:
 	farwritetext KenjiNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Parry:
 	farwritetext ParryNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 PhoneFullMScript:
 	readvar VAR_CALLERID
@@ -914,104 +837,64 @@ PhoneFullMScript:
 
 ; .Joey:
 	farwritetext JoeyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jack:
 	farwritetext JackPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Huey:
 	farwritetext HueyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Gaven:
 	farwritetext GavenPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jose:
 	farwritetext JosePhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wade:
 	farwritetext WadePhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Ralph:
 	farwritetext RalphPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Anthony:
 	farwritetext AnthonyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Todd:
 	farwritetext ToddPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Irwin:
 	farwritetext IrwinPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Arnie:
 	farwritetext ArniePhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Alan:
 	farwritetext AlanPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Chad:
 	farwritetext ChadPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Derek:
 	farwritetext DerekPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tully:
 	farwritetext TullyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Brent:
 	farwritetext BrentPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Vance:
 	farwritetext VancePhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wilton:
 	farwritetext WiltonPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Kenji:
 	farwritetext KenjiPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Parry:
 	farwritetext ParryPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 RematchMScript:
 	readvar VAR_CALLERID
@@ -1036,99 +919,61 @@ RematchMScript:
 
 ; .Joey:
 	farwritetext JoeyRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jack:
 	farwritetext JackRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Huey:
 	farwritetext HueyRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Gaven:
 	farwritetext GavenRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jose:
 	farwritetext JoseRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wade:
 	farwritetext WadeRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Ralph:
 	farwritetext RalphRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Anthony:
 	farwritetext AnthonyRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Todd:
 	farwritetext ToddRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Irwin:
 	farwritetext IrwinRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Arnie:
 	farwritetext ArnieRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Alan:
 	farwritetext AlanRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Chad:
 	farwritetext ChadRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Derek:
 	farwritetext DerekRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tully:
 	farwritetext TullyRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Brent:
 	farwritetext BrentRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Vance:
 	farwritetext VanceRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wilton:
 	farwritetext WiltonRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Parry:
 	farwritetext ParryRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 GiftMScript:
 	readvar VAR_CALLERID
@@ -1183,59 +1028,37 @@ PackFullMScript:
 
 ; .Joey:
 	farwritetext JoeyPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Huey:
 	farwritetext HueyPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Jose:
 	farwritetext JosePackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wade:
 	farwritetext WadePackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Alan:
 	farwritetext AlanPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Derek:
 	farwritetext DerekPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tully:
 	farwritetext TullyPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Vance:
 	farwritetext VancePackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Wilton:
 	farwritetext WiltonPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Kenji:
 	farwritetext KenjiPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Parry:
 	farwritetext ParryPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 RematchGiftMScript:
 	opentext
@@ -1350,44 +1173,28 @@ NumberAcceptedFScript:
 
 ; .Gina:
 	farwritetext GinaNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beverly:
 	farwritetext BeverlyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beth:
 	farwritetext BethNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Reena:
 	farwritetext ReenaNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Liz:
 	farwritetext LizNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Dana:
 	farwritetext DanaNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tiffany:
 	farwritetext TiffanyNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Erin:
 	farwritetext ErinNumberAcceptedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 NumberDeclinedFScript:
 	readvar VAR_CALLERID
@@ -1401,44 +1208,28 @@ NumberDeclinedFScript:
 
 ; .Gina:
 	farwritetext GinaNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beverly:
 	farwritetext BeverlyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beth:
 	farwritetext BethNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Reena:
 	farwritetext ReenaNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Liz:
 	farwritetext LizNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Dana:
 	farwritetext DanaNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tiffany:
 	farwritetext TiffanyNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Erin:
 	farwritetext ErinNumberDeclinedText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 PhoneFullFScript:
 	readvar VAR_CALLERID
@@ -1452,44 +1243,28 @@ PhoneFullFScript:
 
 ; .Gina:
 	farwritetext GinaPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beverly:
 	farwritetext BeverlyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beth:
 	farwritetext BethPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Reena:
 	farwritetext ReenaPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Liz:
 	farwritetext LizPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Dana:
 	farwritetext DanaPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tiffany:
 	farwritetext TiffanyPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Erin:
 	farwritetext ErinPhoneFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 RematchFScript:
 	readvar VAR_CALLERID
@@ -1502,39 +1277,25 @@ RematchFScript:
 
 ; .Gina:
 	farwritetext GinaRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beth:
 	farwritetext BethRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Reena:
 	farwritetext ReenaRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Liz:
 	farwritetext LizRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Dana:
 	farwritetext DanaRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tiffany:
 	farwritetext TiffanyRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Erin:
 	farwritetext ErinRematchText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 GiftFScript:
 	readvar VAR_CALLERID
@@ -1568,29 +1329,19 @@ PackFullFScript:
 
 ; .Gina:
 	farwritetext GinaPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Beverly:
 	farwritetext BeverlyPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Dana:
 	farwritetext DanaPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Tiffany:
 	farwritetext TiffanyPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 .Erin:
 	farwritetext ErinPackFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 RematchGiftFScript:
 	opentext
@@ -1602,9 +1353,7 @@ GymStatue1Script:
 	getcurlandmarkname STRING_BUFFER_3
 	opentext
 	farwritetext GymStatue_CityGymText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 GymStatue2Script:
 	getcurlandmarkname STRING_BUFFER_3
@@ -1612,9 +1361,7 @@ GymStatue2Script:
 	farwritetext GymStatue_CityGymText
 	promptbutton
 	farwritetext GymStatue_WinningTrainersText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 ReceiveItemScript:
 	waitsfx
@@ -1638,9 +1385,7 @@ GameCornerCoinVendorScript:
 	checkitem COIN_CASE
 	iftrue CoinVendor_IntroScript
 	farwritetext CoinVendor_NoCoinCaseText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 CoinVendor_IntroScript:
 	farwritetext CoinVendor_IntroText
@@ -1696,21 +1441,15 @@ CoinVendor_IntroScript:
 
 .NotEnoughMoney:
 	farwritetext CoinVendor_NotEnoughMoneyText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 .CoinCaseFull:
 	farwritetext CoinVendor_CoinCaseFullText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 .Cancel:
 	farwritetext CoinVendor_CancelText
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1732,21 +1471,15 @@ HappinessCheckScript:
 	ifless 50, .Unhappy
 	ifless 150, .KindaHappy
 	farwritetext HappinessText3
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 .KindaHappy:
 	farwritetext HappinessText2
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 .Unhappy:
 	farwritetext HappinessText1
-	waitbutton
-	closetext
-	end
+	sjump StdCommon_EndText
 
 Movement_ContestResults_WalkAfterWarp:
 	step RIGHT
