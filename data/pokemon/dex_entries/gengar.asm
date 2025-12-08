@@ -1,10 +1,10 @@
 	db "SHADOW@" ; species name
 	dw 411, 890 ; height, weight
 
-	db   "It pretends to be"
-	next "a CLEFABLE's shad-"
-	next "ow, then jumps up"
+	db   "It's not truly mal-"
+	next "evolent, but its"
+	next "practical jokes"
 
-	page "and scares anyone"
-	next "nearby, enjoying"
-	next "their screams.@"
+	page "are dangerous due"
+	next "to its poisonous"
+	next "nature.@"
