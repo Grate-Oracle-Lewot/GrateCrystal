@@ -31,6 +31,9 @@ PewterMuseum2FGrampsScript:
 MoonRockSignScript:
 	jumptext MoonRockSignText
 
+MuseumBinocularsScript:
+	jumptext MuseumBinocularsText
+
 MuseumGrampsMoonText:
 	text "July 20th, 1969…"
 	line "The day man first"
@@ -137,16 +140,23 @@ MoonRockSignText:
 	line "to land there."
 	done
 
+MuseumBinocularsText:
+	text "MT.SILVER looms"
+	line "in the distance!"
+	done
+
 PewterMuseum2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  7, PEWTER_MUSEUM_1F, 5
+	warp_event  7,  9, PEWTER_MUSEUM_1F, 5
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2,  5, BGEVENT_READ, MoonRockSignScript
+	bg_event  2,  7, BGEVENT_READ, MoonRockSignScript
+	bg_event  1,  2, BGEVENT_UP, MuseumBinocularsScript
+	bg_event  2,  2, BGEVENT_UP, MuseumBinocularsScript
 
 	def_object_events
-	object_event 11,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
+	object_event 11,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PewterMuseum2FGrampsScript, -1
