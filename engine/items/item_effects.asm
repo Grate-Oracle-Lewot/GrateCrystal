@@ -773,6 +773,10 @@ DuskBallMultiplier:
 	ld a, [wEnvironment]
 	cp INDOOR
 	ret nz
+; no boost in Harsh Sunlight
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret z
 ; is it night?
 	ld a, [wTimeOfDay]
 	cp NITE
