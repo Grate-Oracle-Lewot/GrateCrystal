@@ -23,7 +23,6 @@ TreeMonMaps:
 	treemon_map ROUTE_44,                  TREEMON_SET_CITY
 	treemon_map ROUTE_46,                  TREEMON_SET_ROUTE
 	treemon_map NEW_BARK_TOWN,             TREEMON_SET_TOWN
-	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_TOWN
 	treemon_map VIOLET_CITY,               TREEMON_SET_TOWN
 	treemon_map AZALEA_TOWN,               TREEMON_SET_TOWN
 	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
