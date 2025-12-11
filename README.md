@@ -214,7 +214,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Triple Kick always hits 3 times. (It may hit fewer after accuracy drops, since each hit checks accuracy separately.)
 
-- Bide always lasts 2 turns.
+- Bide always lasts 2 turns, and has +1 priority.
 
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
