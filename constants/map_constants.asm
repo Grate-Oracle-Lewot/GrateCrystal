@@ -251,13 +251,13 @@ ENDM
 	endgroup
 
 	newgroup CHERRYGROVE                                    ; group 17
-	map_const CHERRYGROVE_CITY,                            20,  9 ;  1
+	map_const CHERRYGROVE_CITY,                            20, 10 ;  1
 	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  2
 	map_const CHERRYGROVE_MART,                             6,  4 ;  3
 	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  4
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  5
 	map_const CHERRYGROVE_EVOLUTION_SPEECH_HOUSE,           4,  4 ;  6
-	map_const ROUTE_30,                                    10, 27 ;  7
+	map_const ROUTE_30,                                    10, 26 ;  7
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ;  8
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const ROUTE_31,                                    20,  9 ; 10
