@@ -14,15 +14,10 @@
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; unusable
-	scene_script .DummyScene ; unusable
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Wesley
-
-.DummyScene:
-	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
@@ -100,7 +95,6 @@ endc
 	waitsfx
 	itemnotify
 	closetext
-	setscene 0 ; Lake of Rage does not have a scene variable
 	appear LAKEOFRAGE_LANCE
 	end
 
