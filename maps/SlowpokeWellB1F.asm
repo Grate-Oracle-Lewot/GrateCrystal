@@ -110,6 +110,8 @@ TrainerGruntF1:
 	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FSlowpokeWithMailScript:
+	setval SLOWPOKE
+	special PlaySlowCry
 	opentext
 	writetext SlowpokeWellB1FTaillessSlowpokeText
 	promptbutton
@@ -124,7 +126,13 @@ SlowpokeWellB1FSlowpokeWithMailScript:
 	sjump SlowpokeWellB1F_EndText
 
 SlowpokeWellB1FTaillessSlowpokeScript:
-	jumptext SlowpokeWellB1FTaillessSlowpokeText
+	setval SLOWPOKE
+	special PlaySlowCry
+	opentext
+	writetext SlowpokeWellB1FTaillessSlowpokeText
+	waitbutton
+	closetext
+	end
 
 SlowpokeWellB1FBoulder:
 	jumpstd StrengthBoulderScript
