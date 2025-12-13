@@ -4,7 +4,17 @@ EnableHDMAForGraphics:
 	db FALSE
 
 _LoadStandardFont::
+	ld de, ENGINE_PLAYER_IS_FEMALE
+	ld b, CHECK_FLAG
+	farcall EngineFlagAction
+	ld a, c
+	and a
+	jr z, .boy
+	ld de, FontHeart
+	jr .got_font
+.boy
 	ld de, Font
+.got_font
 	ld hl, vTiles1
 	lb bc, BANK(Font), 32 ; "A" to "]"
 	call Get1bppViaHDMA
