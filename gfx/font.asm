@@ -1,8 +1,9 @@
 Font:
-INCBIN "gfx/font/font.1bpp"
-
-FontHeart:
+if DEF(_METRONOME_ONLY)
 INCBIN "gfx/font/font_heart.1bpp"
+else
+INCBIN "gfx/font/font.1bpp"
+endc
 
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"
