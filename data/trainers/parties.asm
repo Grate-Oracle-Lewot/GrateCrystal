@@ -3278,8 +3278,8 @@ TeacherGroup:
 
 	; TEACHER (4)
 	db "FRIZZLE@", TRAINERTYPE_NORMAL
-	db 8, TAUROS
-	db 8, MILTANK
+	db  8, TAUROS
+	db  8, MILTANK
 	db -1 ; end
 
 SabrinaGroup:
@@ -3437,7 +3437,7 @@ FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
 	db  8, POLIWAG
-	db  8, POLIWAG
+	db  8, TENTACOOL
 	db -1 ; end
 
 	; FISHER (2)
@@ -3459,7 +3459,7 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db 1, MAGIKARP
+	db  1, MAGIKARP
 	db 20, MAGIKARP
 	db -1 ; end
 
@@ -5560,7 +5560,7 @@ SageGroup:
 	db -1 ; end
 
 	; SAGE (9)
-	db "LI@", TRAINERTYPE_ITEM | TRAINERTYPE_NORMAL
+	db "LI@", TRAINERTYPE_ITEM
 	db  9, BELLSPROUT, BERRY
 	db  9, ODDISH,     BERRY
 	db 10, HOOTHOOT,   BERRY
