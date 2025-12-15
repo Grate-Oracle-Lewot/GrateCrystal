@@ -24,11 +24,17 @@ def_callbacks: MACRO
 REDEF _NUM_CALLBACKS EQUS "_NUM_CALLBACKS_\@"
 	db {_NUM_CALLBACKS}
 {_NUM_CALLBACKS} = 0
+	for x, 1, NUM_MAPCALLBACK_TYPES + 1
+		map_callback_{d:x} = 0
+	endr
 ENDM
 
 callback: MACRO
 ;\1: type: a MAPCALLBACK_* constant
 ;\2: script pointer
+	x = \1
+	assert !map_callback_{d:x}, "Already defined a `callback \1` for this map"
+	map_callback_{d:x} = 1
 	dbw \1, \2
 {_NUM_CALLBACKS} += 1
 ENDM
