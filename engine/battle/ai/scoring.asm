@@ -1087,7 +1087,7 @@ AI_Smart_Nightmare:
 	and SLP
 	jp z, AIDismissMove
 
-; 90% chance to greatly encourage this move if the player is asleep.
+; If the player is asleep, 90% chance to encourage this move if the enemy is faster than the player, and 45% if slower.
 	jr AI_Smart_DreamEater
 
 ; If the player has no status...
@@ -1134,8 +1134,17 @@ AI_Sleep_DreamEater_Encourage:
 	ret
 
 AI_Smart_DreamEater:
-; 90% chance to greatly encourage this move.
 ; The AI_Basic layer dismisses Dream Eater if the player is not asleep or has a Substitute.
+
+; If enemy is faster than player, 90% chance to greatly encourage this move.
+	call AICompareSpeed
+	jr c, .faster
+
+; If slower, 50% chance to skip 90% chance, for 55% nay and 45% yea.
+	call AI_50_50
+	ret c
+
+.faster
 	call AI_90_10
 	ret c
 	jr AI_Sleep_DreamEater_Encourage
