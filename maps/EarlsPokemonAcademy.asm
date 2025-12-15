@@ -279,6 +279,9 @@ EarlsPokemonAcademyGameboyKid1Text:
 	text "#MON can hold"
 	line "items when you"
 	cont "trade them."
+
+	para "Thusly, you can"
+	line "trade items."
 	done
 
 EarlsPokemonAcademyGameboyKid2Text:
@@ -541,12 +544,6 @@ AcademyNotebookText3:
 
 	para "I haven't written"
 	line "anymore…"
-	done
-
-AcademyStickerMachineText:
-	text "This super machine"
-	line "prints data out as"
-	cont "stickers!"
 	done
 
 EarlsPokemonAcademy_MapEvents:
