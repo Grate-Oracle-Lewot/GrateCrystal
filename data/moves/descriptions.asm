@@ -1104,8 +1104,8 @@ FuryCutterDescription:
 	next "raise power.@"
 
 SteelWingDescription:
-	db   "May raise user's"
-	next "DEFENSE.@"
+	db   "High crit rate."
+	next "May raise DEFENSE.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
