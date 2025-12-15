@@ -1,4 +1,4 @@
-	db "SAUROPOD@" ; species name
+	db "SYRUPOD@" ; species name
 	dw 511, 2220 ; height, weight
 
 	db   "It dotes on its"
