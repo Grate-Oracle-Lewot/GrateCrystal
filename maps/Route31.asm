@@ -66,34 +66,23 @@ TrainerBugCatcherWade1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer BUG_CATCHER, WADE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WADE_READY_FOR_REMATCH
-	end
+	sjump .FightDone
 
 .LoadFight1:
 	loadtrainer BUG_CATCHER, WADE2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WADE_READY_FOR_REMATCH
-	end
+	sjump .FightDone
 
 .LoadFight2:
 	loadtrainer BUG_CATCHER, WADE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WADE_READY_FOR_REMATCH
-	end
+	sjump .FightDone
 
 .LoadFight3:
 	loadtrainer BUG_CATCHER, WADE4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WADE_READY_FOR_REMATCH
-	end
+	sjump .FightDone
 
 .LoadFight4:
 	loadtrainer BUG_CATCHER, WADE5
+.FightDone:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_WADE_READY_FOR_REMATCH
