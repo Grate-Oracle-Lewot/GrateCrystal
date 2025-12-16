@@ -70,13 +70,11 @@ TrainerPokefanmDerek:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer POKEFANM, DEREK1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DEREK_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer POKEFANM, DEREK2
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DEREK_READY_FOR_REMATCH
