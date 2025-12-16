@@ -199,20 +199,15 @@ TrainerFisherWilton1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer FISHER, WILTON1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WILTON_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer FISHER, WILTON2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WILTON_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer FISHER, WILTON3
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_WILTON_READY_FOR_REMATCH
