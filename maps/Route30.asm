@@ -78,31 +78,23 @@ TrainerYoungsterJoey:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer YOUNGSTER, JOEY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOEY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer YOUNGSTER, JOEY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOEY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer YOUNGSTER, JOEY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOEY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer YOUNGSTER, JOEY4
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
-.done
+.end
 	end
 
 .LoadFight4:
@@ -113,7 +105,7 @@ TrainerYoungsterJoey:
 	checkevent EVENT_JOEY_HP_UP
 	iftrue .GiveHPUp
 	checkevent EVENT_GOT_HP_UP_FROM_JOEY
-	iftrue .done
+	iftrue .end
 	scall .RematchGift
 	verbosegiveitem HP_UP
 	iffalse .PackFull
