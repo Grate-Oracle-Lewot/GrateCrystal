@@ -87,27 +87,19 @@ TrainerPokemaniacBrent:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer POKEMANIAC, BRENT1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BRENT_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer POKEMANIAC, BRENT2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BRENT_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer POKEMANIAC, BRENT3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BRENT_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer POKEMANIAC, BRENT4
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BRENT_READY_FOR_REMATCH
@@ -201,28 +193,20 @@ TrainerPicnickerTiffany:
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer PICNICKER, TIFFANY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	end
+	loadtrainer PICNICKER, TIFFANY1
+	sjump .Done
 
 .LoadFight1:
-	loadtrainer PICNICKER, TIFFANY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	end
+	loadtrainer PICNICKER, TIFFANY2
+	sjump .Done
 
 .LoadFight2:
-	loadtrainer PICNICKER, TIFFANY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	end
+	loadtrainer PICNICKER, TIFFANY3
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer PICNICKER, TIFFANY4
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
