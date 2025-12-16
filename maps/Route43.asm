@@ -152,7 +152,7 @@ TrainerFisherMarvin:
 	end
 
 TrainerPicnickerTiffany:
-	trainer PICNICKER, TIFFANY3, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
+	trainer PICNICKER, TIFFANY1, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
@@ -177,7 +177,7 @@ TrainerPicnickerTiffany:
 	askforphonenumber PHONE_PICNICKER_TIFFANY
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY3
+	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY1
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
