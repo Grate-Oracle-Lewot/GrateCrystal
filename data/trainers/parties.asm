@@ -2396,7 +2396,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (12)
 	db "JOSé@", TRAINERTYPE_NORMAL
-	db 50, FARFETCH_D
+	db 43, FARFETCH_D
 	db -1 ; end
 
 	; BIRD_KEEPER (13)
@@ -2408,7 +2408,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (14)
 	db "JOSé@", TRAINERTYPE_NORMAL
-	db 43, FARFETCH_D
+	db 50, FARFETCH_D
 	db -1 ; end
 
 	; BIRD_KEEPER (15)
