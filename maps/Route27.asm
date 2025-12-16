@@ -99,21 +99,16 @@ TrainerBirdKeeperJose2:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer BIRD_KEEPER, JOSE2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
+	loadtrainer BIRD_KEEPER, JOSE1
+	sjump .Done
 
 .LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
+	loadtrainer BIRD_KEEPER, JOSE2
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer BIRD_KEEPER, JOSE3
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
@@ -210,20 +205,15 @@ TrainerCooltrainerfReena:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer COOLTRAINERF, REENA1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_REENA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer COOLTRAINERF, REENA2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_REENA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer COOLTRAINERF, REENA3
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_REENA_READY_FOR_REMATCH
