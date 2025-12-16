@@ -129,34 +129,23 @@ TrainerCamperTodd1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer CAMPER, TODD1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer CAMPER, TODD2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer CAMPER, TODD3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer CAMPER, TODD4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer CAMPER, TODD5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
@@ -230,34 +219,23 @@ TrainerPicnickerGina1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer PICNICKER, GINA1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer PICNICKER, GINA2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer PICNICKER, GINA3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer PICNICKER, GINA4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer PICNICKER, GINA5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
@@ -432,7 +410,7 @@ DayCareSign:
 	jumptext DayCareSignText
 
 Route34Nugget:
-	itemball NUGGET
+	itemball PEARL
 
 Route34HiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_ROUTE_34_HIDDEN_RARE_CANDY
