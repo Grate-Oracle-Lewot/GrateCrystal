@@ -53,35 +53,24 @@ TrainerHikerAnthony:
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer HIKER, ANTHONY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	end
+	loadtrainer HIKER, ANTHONY1
+	sjump .Done
 
 .LoadFight1:
-	loadtrainer HIKER, ANTHONY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	end
+	loadtrainer HIKER, ANTHONY2
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer HIKER, ANTHONY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer HIKER, ANTHONY4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer HIKER, ANTHONY5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
