@@ -13,7 +13,7 @@ Route33LassScript:
 	jumptextfaceplayer Route33LassText
 
 TrainerHikerAnthony:
-	trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
+	trainer HIKER, ANTHONY1, EVENT_BEAT_HIKER_ANTHONY, HikerAnthonySeenText, HikerAnthonyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
@@ -24,7 +24,7 @@ TrainerHikerAnthony:
 	iftrue .NumberAccepted
 	checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
-	writetext HikerAnthony2AfterText
+	writetext HikerAnthonyAfterText
 	promptbutton
 	setevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
 	scall .AskNumber1
@@ -36,14 +36,14 @@ TrainerHikerAnthony:
 	askforphonenumber PHONE_HIKER_ANTHONY
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, HIKER, ANTHONY2
+	gettrainername STRING_BUFFER_3, HIKER, ANTHONY1
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
 .Rematch:
 	scall .RematchStd
-	winlosstext HikerAnthony2BeatenText, 0
+	winlosstext HikerAnthonyBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -111,7 +111,7 @@ Route33Sign:
 Route33FruitTree:
 	fruittree FRUITTREE_ROUTE_33
 
-HikerAnthony2SeenText:
+HikerAnthonySeenText:
 	text "I came through the"
 	line "tunnel, but I"
 
@@ -119,12 +119,12 @@ HikerAnthony2SeenText:
 	line "of energy left."
 	done
 
-HikerAnthony2BeatenText:
+HikerAnthonyBeatenText:
 	text "Whoa! You've got"
 	line "more zip than me!"
 	done
 
-HikerAnthony2AfterText:
+HikerAnthonyAfterText:
 	text "We HIKERS are at"
 	line "our best in the"
 	cont "mountains."
