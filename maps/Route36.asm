@@ -195,34 +195,23 @@ TrainerSchoolboyAlan1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer SCHOOLBOY, ALAN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer SCHOOLBOY, ALAN2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer SCHOOLBOY, ALAN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer SCHOOLBOY, ALAN4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer SCHOOLBOY, ALAN5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
