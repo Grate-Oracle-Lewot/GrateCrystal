@@ -193,34 +193,23 @@ TrainerFisherRalph1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer FISHER, RALPH1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer FISHER, RALPH2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer FISHER, RALPH3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer FISHER, RALPH4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer FISHER, RALPH5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
