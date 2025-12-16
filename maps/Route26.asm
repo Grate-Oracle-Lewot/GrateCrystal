@@ -29,8 +29,8 @@ Route26_EndText:
 	closetext
 	end
 
-TrainerCooltrainermGaven3:
-	trainer COOLTRAINERM, GAVEN3, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGaven3SeenText, CooltrainermGaven3BeatenText, 0, .Script
+TrainerCooltrainermGaven:
+	trainer COOLTRAINERM, GAVEN1, EVENT_BEAT_COOLTRAINERM_GAVEN, CooltrainermGavenSeenText, CooltrainermGavenBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
@@ -66,21 +66,16 @@ TrainerCooltrainermGaven3:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight1
 .LoadFight0:
-	loadtrainer COOLTRAINERM, GAVEN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
+	loadtrainer COOLTRAINERM, GAVEN1
+	sjump .Done
 
 .LoadFight1:
-	loadtrainer COOLTRAINERM, GAVEN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
+	loadtrainer COOLTRAINERM, GAVEN2
+	sjump .Done
 
 .LoadFight2:
-	loadtrainer COOLTRAINERM, GAVEN2
+	loadtrainer COOLTRAINERM, GAVEN3
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
@@ -113,8 +108,8 @@ TrainerCooltrainerfJoyce:
 	writetext CooltrainerfJoyceAfterBattleText
 	sjump Route26_EndText
 
-TrainerCooltrainerfBeth1:
-	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBeth1SeenText, CooltrainerfBeth1BeatenText, 0, .Script
+TrainerCooltrainerfBeth:
+	trainer COOLTRAINERF, BETH1, EVENT_BEAT_COOLTRAINERF_BETH, CooltrainerfBethSeenText, CooltrainerfBethBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
@@ -151,20 +146,15 @@ TrainerCooltrainerfBeth1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer COOLTRAINERF, BETH1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer COOLTRAINERF, BETH2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer COOLTRAINERF, BETH3
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BETH_READY_FOR_REMATCH
@@ -278,13 +268,13 @@ CooltrainermJakeAfterBattleText:
 	line "than GYM LEADERS."
 	done
 
-CooltrainermGaven3SeenText:
+CooltrainermGavenSeenText:
 	text "By experiencing"
 	line "tough battles, you"
 	cont "gain power."
 	done
 
-CooltrainermGaven3BeatenText:
+CooltrainermGavenBeatenText:
 	text "Gaah! Life is even"
 	line "tougher!"
 	done
@@ -329,7 +319,7 @@ CooltrainerfJoyceAfterBattleText:
 	line "harder next time."
 	done
 
-CooltrainerfBeth1SeenText:
+CooltrainerfBethSeenText:
 	text "I lost to a train-"
 	line "er named <RIVAL>."
 
@@ -344,7 +334,7 @@ CooltrainerfBeth1SeenText:
 	line "his #MON."
 	done
 
-CooltrainerfBeth1BeatenText:
+CooltrainerfBethBeatenText:
 	text "#MON aren't"
 	line "tools of war."
 	done
