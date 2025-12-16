@@ -4629,8 +4629,8 @@ GuitaristGroup:
 HikerGroup:
 	; HIKER (1)
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 16, GEODUDE
-	db 18, MACHOP
+	db 11, GEODUDE
+	db 13, MACHOP
 	db -1 ; end
 
 	; HIKER (2)
@@ -4655,8 +4655,8 @@ HikerGroup:
 
 	; HIKER (5)
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 11, GEODUDE
-	db 13, MACHOP
+	db 16, GEODUDE
+	db 18, MACHOP
 	db -1 ; end
 
 	; HIKER (6)
