@@ -78,34 +78,23 @@ TrainerLassDana1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer LASS, DANA1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DANA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer LASS, DANA2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DANA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer LASS, DANA3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DANA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer LASS, DANA4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DANA_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer LASS, DANA5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
@@ -185,34 +174,23 @@ TrainerSchoolboyChad1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer SCHOOLBOY, CHAD1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_CHAD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer SCHOOLBOY, CHAD2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_CHAD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer SCHOOLBOY, CHAD3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_CHAD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer SCHOOLBOY, CHAD4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_CHAD_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer SCHOOLBOY, CHAD5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
