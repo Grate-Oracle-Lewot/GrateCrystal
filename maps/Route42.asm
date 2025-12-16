@@ -73,27 +73,19 @@ TrainerFisherTully:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer FISHER, TULLY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TULLY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer FISHER, TULLY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TULLY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer FISHER, TULLY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TULLY_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer FISHER, TULLY4
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
