@@ -68,8 +68,8 @@ NationalParkGameboyKidScript:
 	turnobject NATIONALPARK_GAMEBOY_KID, DOWN
 	end
 
-TrainerSchoolboyJack1:
-	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
+TrainerSchoolboyJack:
+	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJackSeenText, SchoolboyJackBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_JACK
@@ -99,7 +99,7 @@ TrainerSchoolboyJack1:
 
 .Rematch:
 	scall .RematchStd
-	winlosstext SchoolboyJack1BeatenText, 0
+	winlosstext SchoolboyJackBeatenText, 0
 	checkevent EVENT_RESTORED_POWER_TO_KANTO
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -110,34 +110,23 @@ TrainerSchoolboyJack1:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer SCHOOLBOY, JACK1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer SCHOOLBOY, JACK2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer SCHOOLBOY, JACK3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer SCHOOLBOY, JACK4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer SCHOOLBOY, JACK5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JACK_READY_FOR_REMATCH
@@ -172,8 +161,8 @@ TrainerPokefanmWilliam:
 	closetext
 	end
 
-TrainerPokefanfBeverly1:
-	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverly1SeenText, PokefanfBeverly1BeatenText, 0, .Script
+TrainerPokefanfBeverly:
+	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverlySeenText, PokefanfBeverlyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
@@ -351,7 +340,7 @@ NationalParkGameboyKidText:
 	line "items for me!"
 	done
 
-SchoolboyJack1SeenText:
+SchoolboyJackSeenText:
 	text "The world of"
 	line "#MON is deep."
 
@@ -363,7 +352,7 @@ SchoolboyJack1SeenText:
 	line "than you do!"
 	done
 
-SchoolboyJack1BeatenText:
+SchoolboyJackBeatenText:
 	text "Wha-wha-what?"
 	done
 
@@ -380,7 +369,7 @@ SchoolboyJackTradeMonText:
 	line "level up faster."
 	done
 
-PokefanfBeverly1SeenText:
+PokefanfBeverlySeenText:
 	text "My #MON is"
 	line "simply darling."
 
@@ -389,7 +378,7 @@ PokefanfBeverly1SeenText:
 	cont "darling makes me."
 	done
 
-PokefanfBeverly1BeatenText:
+PokefanfBeverlyBeatenText:
 	text "I can beat you in"
 	line "pride, but…"
 	done
@@ -509,8 +498,8 @@ NationalPark_MapEvents:
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
 	object_event 26, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
-	object_event 27, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
-	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
+	object_event 27, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack, -1
+	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event  8, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
