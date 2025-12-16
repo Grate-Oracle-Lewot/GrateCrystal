@@ -54,23 +54,18 @@ TrainerJugglerIrwin:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer JUGGLER, IRWIN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer JUGGLER, IRWIN2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer JUGGLER, IRWIN3
+.Done:
 	startbattle
 	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	clearflag ENGINE_IRWIN_READY_FOR_REMATCH
 	end
 
 .AskedAlready:
@@ -196,34 +191,23 @@ TrainerBugCatcherArnie:
 	iftrue .LoadFight1
 .LoadFight0:
 	loadtrainer BUG_CATCHER, ARNIE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight1:
 	loadtrainer BUG_CATCHER, ARNIE2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight2:
 	loadtrainer BUG_CATCHER, ARNIE3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight3:
 	loadtrainer BUG_CATCHER, ARNIE4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
+	sjump .Done
 
 .LoadFight4:
 	loadtrainer BUG_CATCHER, ARNIE5
+.Done:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
