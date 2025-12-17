@@ -235,7 +235,7 @@ OfficerText_FoundTM:
 	line "comfortable."
 
 	para "Could you take"
-	cont "them away?"
+	line "them away?"
 	done
 
 OfficerText_AvoidGrass:
