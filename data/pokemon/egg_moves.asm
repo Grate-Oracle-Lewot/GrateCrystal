@@ -512,9 +512,9 @@ SnorlaxEggMoves:
 	db LOW_KICK
 	db STOMP
 	db SLAM
-	db EGG_BOMB
-	db MAGNITUDE
 	db IRON_HEAD
+	db MAGNITUDE
+	db BIDE
 	db -1 ; end
 
 DratiniEggMoves:
