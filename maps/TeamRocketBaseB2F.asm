@@ -865,18 +865,15 @@ GruntMBase2_2BeatenText:
 	done
 
 GruntMBase2_2AfterBattleText:
-	text "I got wiped out on"
-	line "the last mission"
-	cont "by a kid too."
+	text "Are you with that"
+	line "other kid who's"
 
-	para "When we were ab-"
-	line "ducting #MON,"
+	para "wandering around"
+	line "here?"
 
-	para "this kid with long"
-	line "red hair and mean-"
-
-	para "looking eyes just"
-	line "creamed me…"
+	para "He keeps yammering"
+	line "nonsense at the"
+	cont "top of his lungs…"
 	done
 
 GruntMBase2_3SeenText:
