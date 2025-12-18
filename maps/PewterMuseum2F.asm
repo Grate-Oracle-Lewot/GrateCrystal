@@ -141,7 +141,7 @@ MoonRockSignText:
 	done
 
 MuseumBinocularsText:
-	text "MT.SILVER looms"
+	text "MT.CORONET looms"
 	line "in the distance!"
 	done
 
