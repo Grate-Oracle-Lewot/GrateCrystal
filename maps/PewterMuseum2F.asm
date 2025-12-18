@@ -142,7 +142,7 @@ MoonRockSignText:
 
 MuseumBinocularsText:
 	text "MT.CORONET looms"
-	line "in the distance!"
+	line "in the distance."
 	done
 
 PewterMuseum2F_MapEvents:
