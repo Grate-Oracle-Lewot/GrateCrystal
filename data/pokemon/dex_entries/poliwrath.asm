@@ -1,4 +1,4 @@
-	db "TADPOLE@" ; species name
+	db "FROGLET@" ; species name
 	dw 403, 1190 ; height, weight
 
 	db   "It's sacrificed"
