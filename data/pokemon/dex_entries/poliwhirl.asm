@@ -1,4 +1,4 @@
-	db "TADPOLE@" ; species name
+	db "FROGLET@" ; species name
 	dw 303, 440 ; height, weight
 
 	db   "It's grown arms,"
