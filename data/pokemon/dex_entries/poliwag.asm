@@ -1,10 +1,10 @@
 	db "TADPOLE@" ; species name
 	dw 200, 270 ; height, weight
 
-	db   "It's born without"
-	next "legs and grows"
-	next "them over time."
+	db   "Its tail makes it"
+	next "a better swimmer"
+	next "than any of its"
 
-	page "However, it can't"
-	next "grow arms until it"
-	next "evolves.@"
+	page "evolved forms."
+	next "This frustrates"
+	next "its parents.@"
