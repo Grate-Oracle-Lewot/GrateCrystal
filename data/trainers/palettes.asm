@@ -86,10 +86,10 @@ INCBIN "gfx/trainers/missingno_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/gambler.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/old.gbcpal", middle_colors
+INCBIN "gfx/trainers/engineer.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
 INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
 INCBIN "gfx/trainers/real_bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/real_will.gbcpal", middle_colors
-INCBIN "gfx/trainers/engineer.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1
