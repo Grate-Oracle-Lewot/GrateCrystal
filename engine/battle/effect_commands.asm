@@ -2089,11 +2089,11 @@ BattleCommand_FailureText:
 BattleCommand_ApplyDamage:
 	call GetOpponentItem
 	ld a, b
+	ld b, 0
 	cp HELD_FOCUS_BAND
 	jr z, .focus_band
 	cp HELD_FOCUS_SASH
 	jr z, .focus_sash
-	ld b, 0
 	jr .damage
 
 .focus_band
