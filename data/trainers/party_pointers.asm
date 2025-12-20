@@ -80,9 +80,9 @@ TrainerGroups:
 	dba GamblerGroup
 	dba CalFGroup
 	dba OldGroup
+	dba EngineerGroup
 	dba LoreleiGroup
 	dba AgathaGroup
 	dba RealBrunoGroup
 	dba RealWillGroup
-	dba EngineerGroup
 	assert_table_length NUM_TRAINER_CLASSES
