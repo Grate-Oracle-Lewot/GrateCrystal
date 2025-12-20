@@ -777,19 +777,7 @@ KRIS EQU __trainer_class__
 	trainerclass OLD ; 4d
 	const MAN
 
-	trainerclass LORELEI ; 4e
-	const LORELEI1
-
-	trainerclass AGATHA ; 4f
-	const AGATHA1
-
-	trainerclass REAL_BRUNO ; 50
-	const REAL_BRUNO1
-
-	trainerclass REAL_WILL ; 51
-	const REAL_WILL1
-
-	trainerclass ENGINEER ; 52
+	trainerclass ENGINEER ; 4e
 	const BAILY
 	const BERNIE
 	const BRAXTON
@@ -798,5 +786,17 @@ KRIS EQU __trainer_class__
 	const FLINT
 	const SMITH
 	const ENRIQUE
+
+	trainerclass LORELEI ; 4f
+	const LORELEI1
+
+	trainerclass AGATHA ; 50
+	const AGATHA1
+
+	trainerclass REAL_BRUNO ; 51
+	const REAL_BRUNO1
+
+	trainerclass REAL_WILL ; 52
+	const REAL_WILL1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
