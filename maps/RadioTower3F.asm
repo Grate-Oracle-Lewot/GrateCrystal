@@ -290,11 +290,12 @@ GruntMRadio3_3BeatenText:
 	done
 
 GruntMRadio3_3AfterBattleText:
-	text "What?! You made it"
-	line "past our men in"
-	cont "the UNDERGROUND?"
+	text "What?! You found"
+	line "the real DIRECTOR?"
 
-	para "How could you?"
+	para "Maybe we shouldn't"
+	line "have left that job"
+	cont "to those fools…"
 	done
 
 ScientistMarcSeenText:
