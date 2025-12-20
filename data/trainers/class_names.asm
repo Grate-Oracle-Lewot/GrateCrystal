@@ -78,9 +78,9 @@ TrainerClassNames::
 	li "GAMBLER"
 	li "<PKMN> TRAINER"
 	li "OLD"
-	li "VETERAN♀"
-	li "VETERAN♀"
-	li "VETERAN♂"
-	li "VETERAN♂"
 	li "ENGINEER"
+	li "VETERAN♀"
+	li "VETERAN♀"
+	li "VETERAN♂"
+	li "VETERAN♂"
 	assert_list_length NUM_TRAINER_CLASSES
