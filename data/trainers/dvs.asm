@@ -79,9 +79,9 @@ TrainerClassDVs:
 	dn  6,  7,  7,  6 ; GAMBLER
 	dn 13, 14, 14, 13 ; CAL_F
 	dn  6,  5,  5,  6 ; OLD
+	dn  6,  7,  7, 14 ; ENGINEER
 	dn 13, 14, 14, 13 ; LORELEI
 	dn 13, 14, 14, 13 ; AGATHA
 	dn 14, 13, 13, 14 ; REAL_BRUNO
 	dn 14, 13, 13, 14 ; REAL_WILL
-	dn  6,  7,  7, 14 ; ENGINEER
 	assert_table_length NUM_TRAINER_CLASSES
