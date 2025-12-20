@@ -3137,7 +3137,7 @@ GruntMGroup:
 
 	; GRUNTM_RADIO3_2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 39, WEEPINBELL
+	db 39, SCYTHER
 	db 37, VENOMOTH
 	db -1 ; end
 
