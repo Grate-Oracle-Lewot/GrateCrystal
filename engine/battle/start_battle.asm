@@ -44,6 +44,7 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
+	ld a, [wBattleType]
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
 	jp z, .done
@@ -105,8 +106,8 @@ PlayBattleMusic:
 	farcall IsGymLeader
 	jr c, .done
 
-	ld de, MUSIC_RIVAL_BATTLE
 	ld a, [wOtherTrainerClass]
+	ld de, MUSIC_RIVAL_BATTLE
 	cp RIVAL1
 	jr z, .done
 	cp RIVAL2
@@ -114,13 +115,7 @@ PlayBattleMusic:
 
 	ld de, MUSIC_DARKROOM_BATTLE
 	cp LORELEI
-	jr z, .done
-	cp AGATHA
-	jr z, .done
-	cp REAL_BRUNO
-	jr z, .done
-	cp REAL_WILL
-	jr z, .done
+	jr nc, .done
 
 .othertrainer
 	ld a, [wLinkMode]
@@ -141,7 +136,6 @@ PlayBattleMusic:
 
 .done
 	call PlayMusic
-
 	pop bc
 	pop de
 	pop hl
