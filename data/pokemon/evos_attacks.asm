@@ -3111,6 +3111,7 @@ GirafarigEvosAttacks:
 	db 44, CRUNCH
 	db 55, SKULL_BASH
 	db 66, BEAT_UP
+	db 77, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
