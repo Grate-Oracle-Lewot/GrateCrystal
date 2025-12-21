@@ -733,12 +733,12 @@ MurkrowEggMoves:
 	db -1 ; end
 
 MisdreavusEggMoves:
+	db DESTINY_BOND
 	db PLAY_ROUGH
 	db SCREECH
 	db SING
 	db SUPER_FANG
 	db LEECH_LIFE
-	db ABSORB
 	db MEGA_DRAIN
 	db -1 ; end
 
