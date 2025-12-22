@@ -253,6 +253,84 @@ CutDownTreeOrGrass:
 	call DelayFrame
 	jp LoadStandardFont
 
+TryCutOW::
+	ld de, ENGINE_HIVEBADGE
+	call CheckEngineFlag
+	jr c, .cant_cut
+
+	ld a, HEDGER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .check_mon_move
+	ld a, 1
+	ld [wUsingHMItem], a
+	jr .hedger
+
+.check_mon_move
+	ld d, CUT
+	call CheckPartyMove
+	jr c, .cant_cut
+
+	ld a, BANK(AskCutScript)
+	ld hl, AskCutScript
+	jr .callscf
+
+.cant_cut
+	ld a, BANK(CantCutScript)
+	ld hl, CantCutScript
+.callscf
+	call CallScript
+	scf
+	ret
+
+.hedger
+	ld a, BANK(AskHedgerScript)
+	ld hl, AskHedgerScript
+	jr .callscf
+
+AskCutScript:
+	opentext
+	writetext AskCutText
+	yesorno
+	iffalse .declined
+	callasm CutHedgerCheckMap
+	iftrue Script_Cut
+.declined
+	closetext
+	end
+
+AskHedgerScript:
+	opentext
+	writetext AskCutText
+	yesorno
+	iffalse .declined
+	callasm CutHedgerCheckMap
+	iftrue Script_Hedger
+.declined
+	closetext
+	end
+
+CutHedgerCheckMap:
+	xor a
+	ld [wScriptVar], a
+	call CheckMapForSomethingToCut
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+AskCutText:
+	text_far _AskCutText
+	text_end
+
+CantCutScript:
+	jumptext CanCutText
+
+CanCutText:
+	text_far _CanCutText
+	text_end
+
 CheckOverworldTileArrays:
 	; Input: c contains the tile you're facing
 	; Output: Replacement tile in b and effect on wild encounters in c, plus carry set.
@@ -1315,14 +1393,13 @@ TryWhirlpoolOW::
 	jr nc, .check_mon_move
 	ld a, 1
 	ld [wUsingHMItem], a
-	jr .go
+	jr .egg_beater
 
 .check_mon_move
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
 
-.go
 	ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
 	jr .callscf
@@ -1334,6 +1411,11 @@ TryWhirlpoolOW::
 	call CallScript
 	scf
 	ret
+
+.egg_beater
+	ld a, BANK(Script_AskEggBeaterOW)
+	ld hl, Script_AskEggBeaterOW
+	jr .callscf
 
 Script_MightyWhirlpool:
 	jumptext .MayPassWhirlpoolText
@@ -1347,6 +1429,14 @@ Script_AskWhirlpoolOW:
 	writetext AskWhirlpoolText
 	yesorno
 	iftrue Script_UsedWhirlpool
+	closetext
+	end
+
+Script_AskEggBeaterOW:
+	opentext
+	writetext AskWhirlpoolText
+	yesorno
+	iftrue Script_UsedEggBeater
 	closetext
 	end
 
@@ -2005,82 +2095,4 @@ GotOnBikeText:
 
 GotOffBikeText:
 	text_far _GotOffBikeText
-	text_end
-
-TryCutOW::
-	ld de, ENGINE_HIVEBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
-
-	ld a, HEDGER
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr nc, .check_mon_move
-	ld a, 1
-	ld [wUsingHMItem], a
-	jr .hedger
-
-.check_mon_move
-	ld d, CUT
-	call CheckPartyMove
-	jr c, .cant_cut
-
-	ld a, BANK(AskCutScript)
-	ld hl, AskCutScript
-	jr .callscf
-
-.cant_cut
-	ld a, BANK(CantCutScript)
-	ld hl, CantCutScript
-.callscf
-	call CallScript
-	scf
-	ret
-
-.hedger
-	ld a, BANK(AskHedgerScript)
-	ld hl, AskHedgerScript
-	jr .callscf
-
-AskCutScript:
-	opentext
-	writetext AskCutText
-	yesorno
-	iffalse .declined
-	callasm CutHedgerCheckMap
-	iftrue Script_Cut
-.declined
-	closetext
-	end
-
-AskHedgerScript:
-	opentext
-	writetext AskCutText
-	yesorno
-	iffalse .declined
-	callasm CutHedgerCheckMap
-	iftrue Script_Hedger
-.declined
-	closetext
-	end
-
-CutHedgerCheckMap:
-	xor a
-	ld [wScriptVar], a
-	call CheckMapForSomethingToCut
-	ret c
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-AskCutText:
-	text_far _AskCutText
-	text_end
-
-CantCutScript:
-	jumptext CanCutText
-
-CanCutText:
-	text_far _CanCutText
 	text_end
