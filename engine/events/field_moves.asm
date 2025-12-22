@@ -218,7 +218,16 @@ Cut_SpawnLeaf:
 	ld [hl], FIELDMOVE_GRASS
 	ld hl, SPRITEANIMSTRUCT_VAR3
 	add hl, bc
+
+	ld a, [wMapTileset]
+	cp TILESET_JOHTO_DESERT
+	jr z, .dry
 	ld [hl], $4
+	jr .done
+
+.dry
+	ld [hl], $46
+.done
 	pop af
 	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
