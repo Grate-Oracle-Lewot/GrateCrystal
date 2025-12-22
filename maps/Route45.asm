@@ -63,12 +63,11 @@ TrainerBlackbeltKenji:
 
 .Morning:
 	writetext BlackbeltKenjiMorningText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 .Night:
 	writetext BlackbeltKenjiNightText
+Route45_EndText:
 	waitbutton
 	closetext
 	end
@@ -112,9 +111,7 @@ TrainerHikerErik:
 	endifjustbattled
 	opentext
 	writetext HikerErikAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 TrainerHikerMichael:
 	trainer HIKER, MICHAEL, EVENT_BEAT_HIKER_MICHAEL, HikerMichaelSeenText, HikerMichaelBeatenText, 0, .Script
@@ -123,9 +120,7 @@ TrainerHikerMichael:
 	endifjustbattled
 	opentext
 	writetext HikerMichaelAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 TrainerHikerParry:
 	trainer HIKER, PARRY3, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
@@ -209,9 +204,7 @@ TrainerHikerTimothy:
 	endifjustbattled
 	opentext
 	writetext HikerTimothyAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 TrainerCooltrainermRyan:
 	trainer COOLTRAINERM, RYAN, EVENT_BEAT_COOLTRAINERM_RYAN, CooltrainermRyanSeenText, CooltrainermRyanBeatenText, 0, .Script
@@ -220,9 +213,7 @@ TrainerCooltrainermRyan:
 	endifjustbattled
 	opentext
 	writetext CooltrainermRyanAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 TrainerCooltrainerfKelly:
 	trainer COOLTRAINERF, KELLY, EVENT_BEAT_COOLTRAINERF_KELLY, CooltrainerfKellySeenText, CooltrainerfKellyBeatenText, 0, .Script
@@ -231,31 +222,16 @@ TrainerCooltrainerfKelly:
 	endifjustbattled
 	opentext
 	writetext CooltrainerfKellyAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 TrainerCamperQuentin:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_CAMPER_QUENTIN
-	iftrue .Defeated
-	writetext CamperQuentinSeenText
-	waitbutton
-	closetext
-	winlosstext CamperQuentinBeatenText, 0
-	loadtrainer CAMPER, QUENTIN
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_CAMPER_QUENTIN
-	closetext
-	end
+	trainer CAMPER, QUENTIN, EVENT_BEAT_CAMPER_QUENTIN, CamperQuentinSeenText, CamperQuentinBeatenText, 0, .Script
 
-.Defeated:
+.Script:
+	endifjustbattled
+	opentext
 	writetext CamperQuentinAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route45_EndText
 
 Route45Sign:
 	jumptext Route45SignText
@@ -514,4 +490,4 @@ Route45_MapEvents:
 	object_event  5, 66, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Revive, EVENT_ROUTE_45_REVIVE
 	object_event  6, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Elixer, EVENT_ROUTE_45_ELIXER
 	object_event  7, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45MaxPotion, EVENT_ROUTE_45_MAX_POTION
-	object_event  4, 70, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerCamperQuentin, -1
+	object_event  4, 70, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerCamperQuentin, -1
