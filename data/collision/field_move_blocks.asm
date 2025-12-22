@@ -14,7 +14,7 @@ CutTreeBlockPointers:
 .johto_desert:
 ; facing block, replacement block, animation
 	db $23, $02, $01 ; dry grass
-	db $44, $48, $00 ; tree on dry ground
+	db $44, $02, $01 ; dry grass
 .johto:
 	db $5b, $3c, $00 ; tree
 	db $5f, $3d, $00 ; tree
