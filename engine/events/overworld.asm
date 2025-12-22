@@ -532,6 +532,8 @@ TrySurfOW::
 	call CheckItem
 	jr nc, .check_mon_move
 
+	ld a, 1
+	ld [wUsingHMItem], a
 	ld a, PLAYER_SURF
 	ld [wSurfingPlayerState], a
 	jr .finish
@@ -762,6 +764,8 @@ TryWaterfallOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
+	ld a, 1
+	ld [wUsingHMItem], a
 	jr .go
 
 .check_mon_move
@@ -1137,6 +1141,10 @@ TryStrengthOW:
 	call CheckEngineFlag
 	jr c, .nope
 
+	ld hl, wBikeFlags
+	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
+	jr nz, .already_using
+
 	ld a, JEDI_ROBE
 	ld [wCurItem], a
 	ld hl, wNumItems
@@ -1147,17 +1155,16 @@ TryStrengthOW:
 	call CheckPartyMove
 	jr c, .nope
 
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
-	jr nz, .already_using
-
 	ld a, 1
 	jr .done
 
 .the_force
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
-	jr z, .not_using
+	ld a, 1
+	ld [wUsingHMItem], a
+	xor a
+.done
+	ld [wScriptVar], a
+	ret
 
 .already_using
 	ld a, 3
@@ -1166,12 +1173,6 @@ TryStrengthOW:
 .nope
 	ld a, 2
 	jr .done
-
-.not_using
-	xor a
-.done
-	ld [wScriptVar], a
-	ret
 
 WhirlpoolFunction:
 	call FieldMoveJumptableReset
@@ -1312,6 +1313,8 @@ TryWhirlpoolOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
+	ld a, 1
+	ld [wUsingHMItem], a
 	jr .go
 
 .check_mon_move
@@ -1577,7 +1580,12 @@ HasRockSmash:
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
-	jr .pickaxe
+	ld a, 1
+	ld [wUsingHMItem], a
+	xor a
+.done
+	ld [wScriptVar], a
+	ret
 
 .check_mon_move
 	ld d, ROCK_SMASH
@@ -1586,11 +1594,7 @@ HasRockSmash:
 ; no
 	ld a, 1
 	jr .done
-.pickaxe
-	xor a
-.done
-	ld [wScriptVar], a
-	ret
+
 .move
 	ld a, 2
 	jr .done
@@ -2013,6 +2017,8 @@ TryCutOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .check_mon_move
+	ld a, 1
+	ld [wUsingHMItem], a
 	jr .hedger
 
 .check_mon_move
