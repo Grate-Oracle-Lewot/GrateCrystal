@@ -218,20 +218,7 @@ Cut_SpawnLeaf:
 	ld [hl], FIELDMOVE_GRASS
 	ld hl, SPRITEANIMSTRUCT_VAR3
 	add hl, bc
-
-; Hacky fix for dry grass anim
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_45
-	jr nz, .no
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_45
-	jr nz, .no
-	ld [hl], $46
-	jr .done
-
-.no
 	ld [hl], $4
-.done
 	pop af
 	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
