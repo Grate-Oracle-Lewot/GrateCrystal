@@ -219,14 +219,18 @@ Cut_SpawnLeaf:
 	ld hl, SPRITEANIMSTRUCT_VAR3
 	add hl, bc
 
-	ld a, [wMapTileset]
-	cp TILESET_JOHTO_DESERT
-	jr z, .dry
-	ld [hl], $4
+; Hacky fix for dry grass anim
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_45
+	jr nz, .no
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_45
+	jr nz, .no
+	ld [hl], $46
 	jr .done
 
-.dry
-	ld [hl], $46
+.no
+	ld [hl], $4
 .done
 	pop af
 	ld hl, SPRITEANIMSTRUCT_VAR1
