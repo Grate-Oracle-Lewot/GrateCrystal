@@ -114,7 +114,8 @@ JugglerIrvingSeenText:
 	done
 
 JugglerIrvingBeatenText:
-	text "Oh! My BALLS!"
+	text "I'm better at jugg-"
+	line "ling in SMASH."
 	done
 
 JugglerIrvingAfterBattleText:
