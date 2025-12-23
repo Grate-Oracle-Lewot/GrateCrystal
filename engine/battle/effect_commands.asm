@@ -4966,9 +4966,13 @@ SetBattleDraw:
 	ret
 
 BattleCommand_ForceSwitch:
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr nz, .skip
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
 	jr nc, .missed
+.skip
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .force_player_switch
