@@ -34,9 +34,8 @@ FishingDudeText:
 	para "a COOLTRAINER from"
 	line "JOHTO. Around"
 
-	para "GOLDENROD CITY, if"
-	line "I recall correct-"
-	cont "ly."
+	para "GOLDENROD CITY, as"
+	line "I recall."
 	done
 
 FishingDudesHousePhotoText:
