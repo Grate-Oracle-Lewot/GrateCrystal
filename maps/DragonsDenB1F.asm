@@ -60,7 +60,7 @@ DragonsDenB1F_ClairScene:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext ClairText_DescribeDragonbreathDragonDen
 	setevent EVENT_DECO_MAGIKARP_DOLL
-	playsound SFX_2ND_PLACE
+	playsound SFX_GOT_SAFARI_BALLS
 	waitsfx
 	writetext ClairText_MagikarpDoll
 	promptbutton
