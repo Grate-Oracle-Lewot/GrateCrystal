@@ -4967,7 +4967,7 @@ SetBattleDraw:
 
 BattleCommand_ForceSwitch:
 	ld a, [wBattleMode]
-	cp WILD_BATTLE
+	dec a
 	jr nz, .skip
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
