@@ -136,11 +136,12 @@ PokefanmTrevorBeatenText:
 	done
 
 PokefanmTrevorAfterBattleText:
-	text "If only there were"
-	line "an easy way to"
+	text "You can see where"
+	line "you met your #-"
+	cont "MON on the last"
 
-	para "identify where I"
-	line "got my #MON…"
+	para "page of their"
+	line "stats menu."
 	done
 
 Route14BugsyText:
