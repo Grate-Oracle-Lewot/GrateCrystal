@@ -94,7 +94,7 @@ BlackthornGymClairScript:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymClairText_DescribeTM24
 	setevent EVENT_DECO_MAGIKARP_DOLL
-	playsound SFX_3RD_PLACE
+	playsound SFX_GOT_SAFARI_BALLS
 	waitsfx
 	writetext BlackthornGymClairText_MagikarpDoll
 	promptbutton
@@ -310,7 +310,7 @@ BlackthornGymClairText_DescribeTM24:
 	line "this one."
 
 	para "<PLAYER> received"
-	line "MAGIKARP DOLL!"
+	line "MAGIKARP DOLL."
 	done
 
 BlackthornGymClairText_MagikarpDoll:
