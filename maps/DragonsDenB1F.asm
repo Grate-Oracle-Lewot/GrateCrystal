@@ -212,7 +212,7 @@ ClairText_DescribeDragonbreathDragonDen:
 	line "one."
 
 	para "<PLAYER> received"
-	line "MAGIKARP DOLL!"
+	line "MAGIKARP DOLL."
 	done
 
 ClairText_NoRoom:
