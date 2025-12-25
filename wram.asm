@@ -3107,6 +3107,8 @@ wCurMapData::
 
 wVisitedSpawns:: flag_array NUM_SPAWNS
 
+	ds 1
+
 wDigWarpNumber:: db
 wDigMapGroup::   db
 wDigMapNumber::  db
