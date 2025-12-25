@@ -70,7 +70,6 @@ NUM_FISHGROUPS EQU const_value - 1
 ; SpawnPoints indexes (see data/maps/spawn_points.asm)
 	const_def
 	const SPAWN_HOME
-	const SPAWN_DEBUG
 ; kanto
 	const SPAWN_PALLET
 	const SPAWN_VIRIDIAN
