@@ -20,14 +20,14 @@ SpawnPoints:
 	spawn VERMILION_CITY,              9,  6
 	spawn LAVENDER_TOWN,               5,  6
 	spawn CELADON_CITY,               29, 10
-	spawn SAFFRON_CITY,                9, 30
+	spawn SAFFRON_CITY,               19, 30
 	spawn FUCHSIA_CITY,               19, 28
 	spawn CINNABAR_ISLAND,            11, 12
 	spawn ROUTE_26,                   15, 58
 	spawn ROUTE_23,                    9,  6
 
 	spawn NEW_BARK_TOWN,              13,  6
-	spawn CHERRYGROVE_CITY,           29,  4
+	spawn CHERRYGROVE_CITY,           29,  6
 	spawn VIOLET_CITY,                31, 26
 	spawn ROUTE_32,                   11, 74
 	spawn AZALEA_TOWN,                15, 10
