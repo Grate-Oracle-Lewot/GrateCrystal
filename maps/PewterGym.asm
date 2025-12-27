@@ -37,14 +37,14 @@ PewterGymBrockScript:
 	writetext BrockBoulderBadgeText
 	promptbutton
 .FightDone:
-	checkevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
-	iftrue .GotEarthquakeTM
-	writetext BrockGiveEarthquakeTMText
+	checkevent EVENT_GOT_TM_SANDSTORM_FROM_BROCK
+	iftrue .GotSandstormTM
+	writetext BrockGiveSandstormTMText
 	promptbutton
-	verbosegiveitem TM_EARTHQUAKE, 5
-	iffalse .NoRoomForEarthquakeTM
-	setevent EVENT_GOT_TM_EARTHQUAKE_FROM_BROCK
-	writetext BrockExplainEarthquakeTMText
+	verbosegiveitem TM_SANDSTORM, 5
+	iffalse .NoRoomForSandstormTM
+	setevent EVENT_GOT_TM_SANDSTORM_FROM_BROCK
+	writetext BrockExplainSandstormTMText
 	setevent EVENT_DECO_BIG_ONIX_DOLL
 	playsound SFX_2ND_PLACE
 	waitsfx
@@ -53,10 +53,10 @@ PewterGymBrockScript:
 	closetext
 	end
 
-.GotEarthquakeTM:
+.GotSandstormTM:
 	writetext BrockFightDoneText
 	waitbutton
-.NoRoomForEarthquakeTM:
+.NoRoomForSandstormTM:
 	closetext
 	end
 
@@ -150,21 +150,21 @@ BrockBoulderBadgeText:
 	cont "upset."
 	done
 
-BrockGiveEarthquakeTMText:
+BrockGiveSandstormTMText:
 	text "BROCK: You should"
 	line "take this TM, too."
 	done
 
-BrockExplainEarthquakeTMText:
+BrockExplainSandstormTMText:
 	text "BROCK: It's"
-	line "EARTHQUAKE."
+	line "SANDSTORM."
 
 	para "Did you know it"
-	line "does double damage"
+	line "increases the"
 
-	para "to an enemy who's"
-	line "underground from"
-	cont "using DIG?"
+	para "SPCL.DEF of rock"
+	line "types while it's"
+	cont "active?"
 
 	para "And, don't forget"
 	line "to take this!"
