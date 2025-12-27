@@ -2427,9 +2427,7 @@ _SetPlayerPalette:
 	ld a, d
 	and 1 << 7
 	ret z
-	ld bc, 0 ; debug?
 	ld hl, OBJECT_FACING
-	add hl, bc
 	ld a, [hl]
 	or d
 	ld [hl], a
