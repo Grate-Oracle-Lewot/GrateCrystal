@@ -77,10 +77,8 @@ CounterMirrorCoatFirstCheck:
 	ret
 
 CounterMirrorCoatSecondCheck:
-	call BattleCommand_ResetTypeMatchup
-	ld a, [wTypeMatchup]
-	and a
-	ret z
+	ld a, EFFECTIVE
+	ld [wTypeMatchup], a
 	jp CheckOpponentWentFirst
 
 CounterMirrorCoatThirdCheck:
