@@ -108,7 +108,7 @@ Moves:
 	move DRILL_PECK,   EFFECT_DEFENSE_DOWN_HIT,   80, FLYING,       PHYSICAL, 100 percent,     15,  20 percent + 1
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         90, FIGHTING,     PHYSICAL, 100 percent,     20,   0
 	move LOW_KICK,     EFFECT_EVASION_DOWN_HIT,   50, FIGHTING,     PHYSICAL,  90 percent + 2, 25, 100 percent
-	move COUNTER,      EFFECT_COUNTER,             1, DARK,         PHYSICAL, 100 percent,     20,   0
+	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,     PHYSICAL, 100 percent,     20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,     PHYSICAL, 100 percent,     20,   0
 	move STRENGTH,     EFFECT_NORMAL_HIT,         80, PSYCHIC_TYPE, PHYSICAL, 100 percent,     15,   0
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,        SPECIAL,  100 percent,     20,   0
