@@ -14,7 +14,7 @@ Celebrity:
 	iftrue .AlreadyGotItem
 	writetext CelebrityText1
 	promptbutton
-	verbosegiveitem TM_STEEL_WING, 5
+	verbosegiveitem TM_SHADOW_CLAW, 5
 	iffalse .Done
 	setevent EVENT_GOT_TM47_STEEL_WING
 .Done:
@@ -44,7 +44,7 @@ CelebrityText1:
 	para "Please don't tell"
 	line "anyone about me."
 
-	para "I'll give you this"
+	para "I'll give you these"
 	line "for keeping my"
 	cont "secret. Please?"
 	done
