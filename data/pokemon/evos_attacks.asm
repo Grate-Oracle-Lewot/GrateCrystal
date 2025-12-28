@@ -1003,9 +1003,9 @@ BellsproutEvosAttacks:
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
-	db 15, SLEEP_POWDER
+	db 15, STUN_SPORE
 	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 19, SLEEP_POWDER
 	db 23, ACID
 	db 29, SWORDS_DANCE
 	db 30, RAZOR_LEAF
@@ -1020,9 +1020,9 @@ WeepinbellEvosAttacks:
 	db 1, VINE_WHIP
 	db 6, GROWTH
 	db 11, WRAP
-	db 15, SLEEP_POWDER
+	db 15, STUN_SPORE
 	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 19, SLEEP_POWDER
 	db 24, ACID
 	db 32, SWORDS_DANCE
 	db 34, RAZOR_LEAF
@@ -2802,7 +2802,7 @@ BellossomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
 	db 1, SYNTHESIS
-	db 1, STUN_SPORE
+	db 1, SWORDS_DANCE
 	db 1, PETAL_DANCE
 	db 0 ; no more level-up moves
 
