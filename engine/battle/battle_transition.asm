@@ -692,6 +692,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
 	call BattleStart_CopyTilemapAtOnce
+
+.nextscene
 	jp StartTrainerBattle_NextScene
 
 .copypals
