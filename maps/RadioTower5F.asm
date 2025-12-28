@@ -59,13 +59,13 @@ Director:
 	closetext
 	end
 
-TrainerExecutivef1:
-	trainer EXECUTIVEF, EXECUTIVEF_1, EVENT_BEAT_ROCKET_EXECUTIVEF_1, Executivef1SeenText, Executivef1BeatenText, 0, .Script
+TrainerExecutiveF2:
+	trainer EXECUTIVEF, EXECUTIVEF_2, EVENT_BEAT_ROCKET_EXECUTIVEF_2, ExecutiveF2SeenText, ExecutiveF2BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Executivef1AfterBattleText
+	writetext ExecutiveF2AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -228,7 +228,7 @@ FakeDirectorTextAfter:
 	line "get that far."
 	done
 
-Executivef1SeenText:
+ExecutiveF2SeenText:
 	text "Hey, you…!"
 
 	para "Remember me from"
@@ -245,7 +245,7 @@ Executivef1SeenText:
 	line "You're all alone!"
 	done
 
-Executivef1BeatenText:
+ExecutiveF2BeatenText:
 	text "This can't be"
 	line "happening!"
 
@@ -253,7 +253,7 @@ Executivef1BeatenText:
 	line "I still lost…"
 	done
 
-Executivef1AfterBattleText:
+ExecutiveF2AfterBattleText:
 	text "<PLAYER>, isn't it?"
 
 	para "A brat like you"
@@ -435,6 +435,6 @@ RadioTower5F_MapEvents:
 	def_object_events
 	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
 	object_event 13,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  2, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerExecutiveF2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
