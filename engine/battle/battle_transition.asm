@@ -76,7 +76,6 @@ DoBattleTransition:
 
 .mobile
 	call LoadTrainerBattlePokeballTiles
-
 .resume
 	ld a, SCREEN_HEIGHT_PX
 	ldh [hWY], a
@@ -347,10 +346,7 @@ StartTrainerBattle_SetUpForWavyOutro:
 StartTrainerBattle_SineWave:
 	ld a, [wBattleTransitionCounter]
 	cp $60
-	jr nc, .end
-	jr .DoSineWave
-
-.end
+	jr c, .DoSineWave
 	ld a, BATTLETRANSITION_FINISH
 	ld [wJumptableIndex], a
 	ret
@@ -599,7 +595,7 @@ StartTrainerBattle_SpeckleToBlack:
 StartTrainerBattle_LoadPokeBallGraphics:
 	ld a, [wOtherTrainerClass]
 	and a
-	jp z, .nextscene ; don't need to be here if wild
+	jp z, StartTrainerBattle_NextScene ; don't need to be here if wild
 
 	xor a
 	ldh [hBGMapMode], a
@@ -696,8 +692,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
 	call BattleStart_CopyTilemapAtOnce
-
-.nextscene
 	jp StartTrainerBattle_NextScene
 
 .copypals
@@ -727,24 +721,13 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
 .loadpokeballgfx:
-	ld de, UbeqcTransition
 	ld a, [wOtherTrainerClass]
+	ld de, UbeqcTransition
 	cp KAREN
 	ret z
 	ld de, TeamRocketTransition
-	ld a, [wOtherTrainerClass]
 	cp GRUNTM
-	ret z
-	cp GRUNTF
-	ret z
-	cp EXECUTIVEM
-	ret z
-	cp EXECUTIVEF
-	ret z
-	cp BOSS
-	ret z
-	cp JESSIE
-	ret z
+	ret nc
 	ld de, PokeBallTransition
 	ret
 
@@ -861,7 +844,20 @@ StartTrainerBattle_ZoomToBlack:
 	ld h, a
 	xor a
 	ldh [hBGMapMode], a
-	call .Copy
+	ld a, BATTLETRANSITION_BLACK
+.row
+	push bc
+	push hl
+.col
+	ld [hli], a
+	dec c
+	jr nz, .col
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .row
 	call WaitBGMap
 	jr .loop
 
@@ -886,20 +882,3 @@ ENDM
 	zoombox 18, 16,  1, 1
 	zoombox 20, 18,  0, 0
 	db -1
-
-.Copy:
-	ld a, BATTLETRANSITION_BLACK
-.row
-	push bc
-	push hl
-.col
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .row
-	ret
