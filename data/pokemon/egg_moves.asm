@@ -119,6 +119,7 @@ OddishEggMoves:
 	db FLAIL
 	db SYNTHESIS
 	db ACID
+	db LEECH_SEED
 	db -1 ; end
 
 ParasEggMoves:
@@ -219,7 +220,7 @@ MachopEggMoves:
 BellsproutEggMoves:
 	db SWORDS_DANCE
 	db ENCORE
-	db SYNTHESIS
+	db LEECH_SEED
 	db LEECH_LIFE
 	db LOVELY_KISS
 	db -1 ; end
