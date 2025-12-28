@@ -217,7 +217,7 @@ MachopEggMoves:
 	db -1 ; end
 
 BellsproutEggMoves:
-	db SWORDS_DANCE
+	db SYNTHESIS
 	db ENCORE
 	db LEECH_SEED
 	db LEECH_LIFE
