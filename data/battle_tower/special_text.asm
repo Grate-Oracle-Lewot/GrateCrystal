@@ -1,136 +1,3 @@
-_BTBrockGreetingText:
-	text "I'm ready to rock"
-	line "and roll!"
-	done
-
-_BTBrockLossText:
-	text "Our true-grit"
-	line "determination led"
-	cont "us to victory!"
-	done
-
-_BTBrockWinText:
-	text "You ground me into"
-	line "dust!"
-	done
-
-_BTMistyGreetingText:
-	text "So you're here…"
-	line "Alright, give me"
-	cont "all you've got!"
-	done
-
-_BTMistyLossText:
-	text "Looks like you got"
-	line "washed away!"
-	done
-
-_BTMistyWinText:
-	text "You're such a pest…"
-	done
-
-_BTLtSurgeGreetingText:
-	text "Hey! It's the JOHTO"
-	line "tyke!"
-
-	para "Let's light this"
-	line "place up!"
-	done
-
-_BTLtSurgeLossText:
-	text "How about that!"
-	line "I've still got it!"
-	done
-
-_BTLtSurgeWinText:
-	text "I got steamrolled!"
-	line "Impressive!"
-	done
-
-_BTErikaGreetingText:
-	text "The architecture"
-	line "here is striking,"
-
-	para "but I find it a"
-	line "bit sterile…"
-	done
-
-_BTErikaLossText:
-	text "I'll have to offer"
-	line "to grow them some"
-	cont "decorative shrubs…"
-	done
-
-_BTErikaWinText:
-	text "Oh my. I was lost"
-	line "in thought…"
-	done
-
-_BTJanineGreetingText:
-	text "I'm going to make"
-	line "my dad proud!"
-	done
-
-_BTJanineLossText:
-	text "I knew I had it in"
-	line "me!"
-	done
-
-_BTJanineWinText:
-	text "I still need more"
-	line "training…"
-	done
-
-_BTSabrinaGreetingText:
-	text "Perhaps this will"
-	line "be the battle I"
-	cont "foresaw…"
-	done
-
-_BTSabrinaLossText:
-	text "Yes… this is what"
-	line "I predicted."
-	done
-
-_BTSabrinaWinText:
-	text "No… I still can't"
-	line "make my vision a"
-	cont "reality."
-	done
-
-_BTBlaineGreetingText:
-	text "BURN HEAL won't"
-	line "save you in here!"
-	done
-
-_BTBlaineLossText:
-	text "Hah! I cooked you"
-	line "that time!"
-	done
-
-_BTBlaineWinText:
-	text "Hurgh… you're still"
-	line "tough."
-	done
-
-_BTBlueGreetingText:
-	text "You again, punk"
-	line "CHAMP?"
-
-	para "You'd better make"
-	line "this a good one!"
-	done
-
-_BTBlueLossText:
-	text "Heh. Having an off"
-	line "day?"
-	done
-
-_BTBlueWinText:
-	text "Tch… Fine, you win"
-	line "again."
-	done
-
 _BTFalknerGreetingText:
 	text "It's you…"
 
@@ -274,42 +141,6 @@ _BTClairWinText:
 	line "loss with grace."
 	done
 
-_BTKogaGreetingText:
-	text "My daughter speaks"
-	line "highly of you."
-
-	para "Can you live up to"
-	line "your reputation?"
-	done
-
-_BTKogaLossText:
-	text "Now you know the"
-	line "true power of the"
-	cont "NINJA!"
-	done
-
-_BTKogaWinText:
-	text "Ah! Impressive."
-	done
-
-_BTKarenGreetingText:
-	text "Can you keep me"
-	line "entertained?"
-	done
-
-_BTKarenLossText:
-	text "I am known for my"
-	line "overpowering tac-"
-	cont "tics. Train more"
-	cont "and try again."
-	done
-
-_BTKarenWinText:
-	text "You backed me into"
-	line "a corner."
-	cont "Well done."
-	done
-
 _BTADGreetingText:
 	text "Huh, you got me as"
 	line "the boss."
@@ -383,6 +214,175 @@ _BTLewotWinText:
 
 	para "challenge I could"
 	line "throw at you!"
+	done
+
+_BTKarenGreetingText:
+	text "Can you keep me"
+	line "entertained?"
+	done
+
+_BTKarenLossText:
+	text "I am known for my"
+	line "overpowering tac-"
+	cont "tics. Train more"
+	cont "and try again."
+	done
+
+_BTKarenWinText:
+	text "You backed me into"
+	line "a corner."
+	cont "Well done."
+	done
+
+_BTBrockGreetingText:
+	text "I'm ready to rock"
+	line "and roll!"
+	done
+
+_BTBrockLossText:
+	text "Our true-grit"
+	line "determination led"
+	cont "us to victory!"
+	done
+
+_BTBrockWinText:
+	text "You ground me into"
+	line "dust!"
+	done
+
+_BTMistyGreetingText:
+	text "So you're here…"
+	line "Alright, give me"
+	cont "all you've got!"
+	done
+
+_BTMistyLossText:
+	text "Looks like you got"
+	line "washed away!"
+	done
+
+_BTMistyWinText:
+	text "You're such a pest…"
+	done
+
+_BTLtSurgeGreetingText:
+	text "Hey! It's the JOHTO"
+	line "tyke!"
+
+	para "Let's light this"
+	line "place up!"
+	done
+
+_BTLtSurgeLossText:
+	text "How about that!"
+	line "I've still got it!"
+	done
+
+_BTLtSurgeWinText:
+	text "I got steamrolled!"
+	line "Impressive!"
+	done
+
+_BTErikaGreetingText:
+	text "The architecture"
+	line "here is striking,"
+
+	para "but I find it a"
+	line "bit sterile…"
+	done
+
+_BTErikaLossText:
+	text "I'll have to offer"
+	line "to grow them some"
+	cont "decorative shrubs…"
+	done
+
+_BTErikaWinText:
+	text "Oh my. I was lost"
+	line "in thought…"
+	done
+
+_BTJanineGreetingText:
+	text "I'm going to make"
+	line "my dad proud!"
+	done
+
+_BTJanineLossText:
+	text "I knew I had it in"
+	line "me!"
+	done
+
+_BTJanineWinText:
+	text "I still need more"
+	line "training…"
+	done
+
+_BTSabrinaGreetingText:
+	text "Perhaps this will"
+	line "be the battle I"
+	cont "foresaw…"
+	done
+
+_BTSabrinaLossText:
+	text "Yes… this is what"
+	line "I predicted."
+	done
+
+_BTSabrinaWinText:
+	text "No… I still can't"
+	line "make my vision a"
+	cont "reality."
+	done
+
+_BTBlaineGreetingText:
+	text "BURN HEAL won't"
+	line "save you in here!"
+	done
+
+_BTBlaineLossText:
+	text "Hah! I cooked you"
+	line "that time!"
+	done
+
+_BTBlaineWinText:
+	text "Hurgh… you're still"
+	line "tough."
+	done
+
+_BTBlueGreetingText:
+	text "You again, punk"
+	line "CHAMP?"
+
+	para "You'd better make"
+	line "this a good one!"
+	done
+
+_BTBlueLossText:
+	text "Heh. Having an off"
+	line "day?"
+	done
+
+_BTBlueWinText:
+	text "Tch… Fine, you win"
+	line "again."
+	done
+
+_BTKogaGreetingText:
+	text "My daughter speaks"
+	line "highly of you."
+
+	para "Can you live up to"
+	line "your reputation?"
+	done
+
+_BTKogaLossText:
+	text "Now you know the"
+	line "true power of the"
+	cont "NINJA!"
+	done
+
+_BTKogaWinText:
+	text "Ah! Impressive."
 	done
 
 _BTLanceGreetingText:
