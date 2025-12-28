@@ -116,7 +116,7 @@ ZubatEggMoves:
 OddishEggMoves:
 	db SWORDS_DANCE
 	db RAZOR_LEAF
-	db FLAIL
+	db GROWTH
 	db ACID
 	db LEECH_SEED
 	db -1 ; end
