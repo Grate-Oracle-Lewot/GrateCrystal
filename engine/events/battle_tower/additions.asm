@@ -39,22 +39,6 @@ LoadBattleTowerSpecialTrainer::
 
 ; Load party into de+11 based on trainer class
 	ld a, [wBT_OTTrainerClass]
-	cp BROCK
-	jr z, BattleTowerLoadBrock
-	cp MISTY
-	jr z, BattleTowerLoadMisty
-	cp LT_SURGE
-	jr z, BattleTowerLoadLtSurge
-	cp ERIKA
-	jr z, BattleTowerLoadErika
-	cp JANINE
-	jr z, BattleTowerLoadJanine
-	cp SABRINA
-	jr z, BattleTowerLoadSabrina
-	cp BLAINE
-	jr z, BattleTowerLoadBlaine
-	cp BLUE
-	jr z, BattleTowerLoadBlue
 	cp FALKNER
 	jr z, BattleTowerLoadFalkner
 	cp BUGSY
@@ -71,10 +55,6 @@ LoadBattleTowerSpecialTrainer::
 	jr z, BattleTowerLoadPryce
 	cp CLAIR
 	jr z, BattleTowerLoadClair
-	cp REAL_KOGA
-	jr z, BattleTowerLoadKoga
-	cp REAL_KAREN
-	jr z, BattleTowerLoadKaren
 	cp WILL
 	jr z, BattleTowerLoadAD
 	cp KOGA
@@ -83,6 +63,26 @@ LoadBattleTowerSpecialTrainer::
 	jr z, BattleTowerLoadPercy
 	cp KAREN
 	jr z, BattleTowerLoadLewot
+	cp REAL_KAREN
+	jr z, BattleTowerLoadKaren
+	cp BROCK
+	jr z, BattleTowerLoadBrock
+	cp MISTY
+	jr z, BattleTowerLoadMisty
+	cp LT_SURGE
+	jr z, BattleTowerLoadLtSurge
+	cp ERIKA
+	jr z, BattleTowerLoadErika
+	cp JANINE
+	jr z, BattleTowerLoadJanine
+	cp SABRINA
+	jr z, BattleTowerLoadSabrina
+	cp BLAINE
+	jr z, BattleTowerLoadBlaine
+	cp BLUE
+	jr z, BattleTowerLoadBlue
+	cp REAL_KOGA
+	jr z, BattleTowerLoadKoga
 	cp CHAMPION
 	jr z, BattleTowerLoadLance
 	cp RED
@@ -91,38 +91,6 @@ LoadBattleTowerSpecialTrainer::
 
 BattleTowerLoadDefaultParty:
 	ld hl, BattleTowerDefaultParty
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadBrock:
-	ld hl, BattleTowerBrock
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadMisty:
-	ld hl, BattleTowerMisty
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadLtSurge:
-	ld hl, BattleTowerLtSurge
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadErika:
-	ld hl, BattleTowerErika
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadJanine:
-	ld hl, BattleTowerJanine
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadSabrina:
-	ld hl, BattleTowerSabrina
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadBlaine:
-	ld hl, BattleTowerBlaine
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadBlue:
-	ld hl, BattleTowerBlue
 	jr BattleTowerLoadSpecialParty
 
 BattleTowerLoadFalkner:
@@ -157,14 +125,6 @@ BattleTowerLoadClair:
 	ld hl, BattleTowerClair
 	jr BattleTowerLoadSpecialParty
 
-BattleTowerLoadKoga:
-	ld hl, BattleTowerKoga
-	jr BattleTowerLoadSpecialParty
-
-BattleTowerLoadKaren:
-	ld hl, BattleTowerKaren
-	jr BattleTowerLoadSpecialParty
-
 BattleTowerLoadAD:
 	ld hl, BattleTowerAD
 	jr BattleTowerLoadSpecialParty
@@ -179,6 +139,46 @@ BattleTowerLoadPercy:
 
 BattleTowerLoadLewot:
 	ld hl, BattleTowerLewot
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadKaren:
+	ld hl, BattleTowerKaren
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadBrock:
+	ld hl, BattleTowerBrock
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadMisty:
+	ld hl, BattleTowerMisty
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadLtSurge:
+	ld hl, BattleTowerLtSurge
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadErika:
+	ld hl, BattleTowerErika
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadJanine:
+	ld hl, BattleTowerJanine
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadSabrina:
+	ld hl, BattleTowerSabrina
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadBlaine:
+	ld hl, BattleTowerBlaine
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadBlue:
+	ld hl, BattleTowerBlue
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadKoga:
+	ld hl, BattleTowerKoga
 	jr BattleTowerLoadSpecialParty
 
 BattleTowerLoadLance:
