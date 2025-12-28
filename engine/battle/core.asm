@@ -2845,7 +2845,8 @@ PlayVictoryMusic:
 
 .trainer_victory
 	ld de, MUSIC_GYM_VICTORY
-	call IsGymLeader
+	ld a, [wOtherTrainerClass]
+	cp RED + 1
 	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
 
@@ -2855,21 +2856,6 @@ PlayVictoryMusic:
 .lost
 	pop de
 	ret
-
-IsKantoGymLeader:
-	ld hl, KantoGymLeaders
-	jr IsGymLeaderCommon
-
-IsGymLeader:
-	ld hl, GymLeaders
-IsGymLeaderCommon:
-	push de
-	ld a, [wOtherTrainerClass]
-	call IsInByteArray
-	pop de
-	ret
-
-INCLUDE "data/trainers/leaders.asm"
 
 IsPluralTrainer:
 ; return z for plural trainers
@@ -8340,8 +8326,10 @@ InitEnemyTrainer:
 	ld a, TRAINER_BATTLE
 	ld [wBattleMode], a
 
-	call IsGymLeader
+	ld a, [wOtherTrainerClass]
+	cp RED + 1
 	ret nc
+
 	xor a
 	ld [wCurPartyMon], a
 	ld a, [wPartyCount]
