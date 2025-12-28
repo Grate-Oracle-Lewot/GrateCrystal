@@ -130,7 +130,7 @@ ParasEggMoves:
 	db -1 ; end
 
 VenonatEggMoves:
-	db BATON_PASS
+	db PSYBEAM
 	db SCREECH
 	db SONICBOOM
 	db NIGHT_SHADE
