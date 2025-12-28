@@ -79,7 +79,8 @@ PlayBattleMusic:
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
 	jr nc, .done
-	cp COOLTRAINERM
+
+	cp RIVAL2 + 1
 	jr nc, .normaltrainer
 
 	ld de, MUSIC_RIVAL_BATTLE
