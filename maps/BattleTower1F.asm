@@ -456,7 +456,7 @@ Text_WeHopeToServeYouAgain:
 Text_PleaseStepThisWay:
 	text "Please step this"
 	line "way."
-	done
+	autodone
 
 Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
@@ -530,7 +530,7 @@ Text_BattleTower_LeftWithoutSaving:
 Text_YourMonWillBeHealedToFullHealth:
 	text "Your #MON will"
 	line "be fully healed."
-	done
+	autodone
 
 Text_NextUpOpponentNo:
 	text "Next up, opponent"
