@@ -52,8 +52,8 @@ _BTGreetingM4Text:
 	done
 
 _BTLossM4Text:
-	text "Hey, hey, no way!"
-	line "You won't win!"
+	text "There was no way"
+	line "you'd win!"
 	done
 
 _BTWinM4Text:
@@ -130,7 +130,7 @@ _BTGreetingM9Text:
 	done
 
 _BTLossM9Text:
-	text "Hahah! That was a"
+	text "Hahah! You were a"
 	line "pushover!"
 	done
 
