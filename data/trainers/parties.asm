@@ -3109,8 +3109,6 @@ CalFGroup:
 	db 70, MEW
 	db -1 ; end
 
-SECTION "Enemy Trainer Parties 2", ROMX
-
 MysticalmanGroup:
 	; MYSTICALMAN (1)
 	db "EUSINE@", TRAINERTYPE_ITEM | TRAINERTYPE_MOVES
@@ -3171,6 +3169,8 @@ OldGroup:
 	db 84, WEEDLE
 	db 84, RATTATA
 	db -1 ; end
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 YoungsterGroup:
 	; YOUNGSTER (1)
