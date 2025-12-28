@@ -4,85 +4,85 @@ TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 3, TrainerGroups
 	dba FalknerGroup
-	dba WhitneyGroup
 	dba BugsyGroup
+	dba WhitneyGroup
 	dba MortyGroup
-	dba PryceGroup
-	dba JasmineGroup
 	dba ChuckGroup
+	dba JasmineGroup
+	dba PryceGroup
 	dba ClairGroup
-	dba Rival1Group
-	dba PokemonProfGroup
 	dba WillGroup
-	dba PKMNTrainerGroup
+	dba KogaGroup
 	dba BrunoGroup
 	dba KarenGroup
-	dba KogaGroup
-	dba ChampionGroup
+	dba RealKarenGroup
 	dba BrockGroup
 	dba MistyGroup
 	dba LtSurgeGroup
-	dba ScientistGroup
 	dba ErikaGroup
-	dba YoungsterGroup
-	dba SchoolboyGroup
-	dba BirdKeeperGroup
-	dba LassGroup
 	dba JanineGroup
+	dba SabrinaGroup
+	dba BlaineGroup
+	dba BlueGroup
+	dba RealKogaGroup
+	dba RealWillGroup
+	dba RealBrunoGroup
+	dba LoreleiGroup
+	dba AgathaGroup
+	dba ChampionGroup
+	dba PokemonProfGroup
+	dba RedGroup
+	dba Rival1Group
+	dba Rival2Group
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
-	dba BeautyGroup
-	dba PokemaniacGroup
-	dba GruntMGroup
-	dba GentlemanGroup
-	dba SkierGroup
-	dba TeacherGroup
-	dba SabrinaGroup
-	dba BugCatcherGroup
-	dba FisherGroup
-	dba SwimmerMGroup
-	dba SwimmerFGroup
-	dba SailorGroup
-	dba SuperNerdGroup
-	dba Rival2Group
-	dba GuitaristGroup
-	dba HikerGroup
-	dba BikerGroup
-	dba BlaineGroup
-	dba BurglarGroup
-	dba FirebreatherGroup
-	dba JugglerGroup
-	dba BlackbeltGroup
-	dba ExecutiveMGroup
-	dba PsychicGroup
-	dba PicnickerGroup
-	dba CamperGroup
-	dba ExecutiveFGroup
-	dba SageGroup
-	dba MediumGroup
-	dba BoarderGroup
-	dba PokefanMGroup
-	dba KimonoGirlGroup
-	dba TwinsGroup
-	dba PokefanFGroup
-	dba RedGroup
-	dba BlueGroup
-	dba OfficerGroup
-	dba GruntFGroup
+	dba PKMNTrainerGroup
+	dba CalFGroup
 	dba MysticalmanGroup
-	dba RealKarenGroup
-	dba RealKogaGroup
-	dba BossGroup
-	dba JessieGroup
 	dba AerobonesGroup
 	dba KabubonesGroup
 	dba MissingnoTGroup
-	dba GamblerGroup
-	dba CalFGroup
 	dba OldGroup
+	dba YoungsterGroup
+	dba SchoolboyGroup
+	dba BugCatcherGroup
+	dba BirdKeeperGroup
+	dba FisherGroup
+	dba HikerGroup
+	dba BikerGroup
+	dba FirebreatherGroup
+	dba PsychicGroup
+	dba BlackbeltGroup
+	dba SailorGroup
+	dba JugglerGroup
+	dba ScientistGroup
+	dba SuperNerdGroup
+	dba PokemaniacGroup
+	dba GentlemanGroup
 	dba EngineerGroup
-	dba LoreleiGroup
-	dba AgathaGroup
-	dba RealBrunoGroup
-	dba RealWillGroup
+	dba GuitaristGroup
+	dba OfficerGroup
+	dba BurglarGroup
+	dba GamblerGroup
+	dba LassGroup
+	dba TwinsGroup
+	dba BeautyGroup
+	dba TeacherGroup
+	dba KimonoGirlGroup
+	dba CamperGroup
+	dba PicnickerGroup
+	dba PokefanMGroup
+	dba PokefanFGroup
+	dba SageGroup
+	dba MediumGroup
+	dba SwimmerMGroup
+	dba SwimmerFGroup
+	dba BoarderGroup
+	dba SkierGroup
+	dba GruntMGroup
+	dba GruntFGroup
+	dba JessieGroup
+	dba ExecutiveMGroup
+	dba ExecutiveFGroup
+	dba BossGroup
 	assert_table_length NUM_TRAINER_CLASSES
