@@ -424,6 +424,14 @@ CheckEnemyTypeAdvantage:
 	cp EFFECTIVE + 1
 	jr AdvantageCheckDone
 
+AI_Smart_DiscourageIfPlayerAdvantage:
+; Discourage this move if either of player's types is good against enemy's type combo. Discount player's ???-type.
+; Called by AI_Smart_Bide, AI_Smart_Heal, AI_Smart_Substitute, and AI_Smart_Belly_Drum.
+	call CheckPlayerTypeAdvantage
+	ret c
+	inc [hl]
+	ret
+
 
 AI_Cautious:
 ; 90% chance to discourage residual moves after the enemy Pokemon's first turn on the field.
@@ -982,14 +990,14 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
 	dbw EFFECT_EVASION_DOWN,     AI_Smart_EvasionDown
 	dbw EFFECT_RESET_STATS,      AI_Smart_ResetStats
-	dbw EFFECT_BIDE,             AI_Smart_Bide_Screens
+	dbw EFFECT_BIDE,             AI_Smart_Bide
 	dbw EFFECT_RAMPAGE,          AI_Smart_Rampage
 	dbw EFFECT_FORCE_SWITCH,     AI_Smart_ForceSwitch
 	dbw EFFECT_MULTI_HIT,        AI_Smart_Reckless
 	dbw EFFECT_FLINCH_HIT,       AI_Smart_FlinchHit
 	dbw EFFECT_HEAL,             AI_Smart_Heal
 	dbw EFFECT_TOXIC,            AI_Smart_Poison
-	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_Bide_Screens
+	dbw EFFECT_LIGHT_SCREEN,     AI_Smart_Screens
 	dbw EFFECT_OHKO,             AI_Smart_OHKO
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
@@ -1006,7 +1014,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPEED_DOWN_2,     AI_Smart_SpeedControl
 	dbw EFFECT_SP_ATK_DOWN_2,    AI_Smart_SpAtkDown
 	dbw EFFECT_SP_DEF_DOWN_2,    AI_Smart_SpDefDown
-	dbw EFFECT_REFLECT,          AI_Smart_Bide_Screens
+	dbw EFFECT_REFLECT,          AI_Smart_Screens
 	dbw EFFECT_POISON,           AI_Smart_Poison
 	dbw EFFECT_PARALYZE,         AI_Smart_Paralyze
 	dbw EFFECT_SKY_ATTACK,       AI_Smart_Fly_SkyAttack_FutureSight
@@ -1619,7 +1627,12 @@ AI_Smart_ResetStats:
 	inc [hl]
 	ret
 
-AI_Smart_Bide_Screens:
+AI_Smart_Bide:
+; Discourage this move if player has type advantage against enemy. Regardless, execute AI_Smart_Screens.
+	call AI_Smart_DiscourageIfPlayerAdvantage
+	; fallthrough
+
+AI_Smart_Screens:
 ; 90% chance to discourage this move unless enemy's HP is full.
 	call AICheckEnemyMaxHP
 	ret c
@@ -1772,14 +1785,16 @@ AI_Smart_Synthesis:
 
 AI_Smart_Heal:
 ; Recover, Softboiled, Milk Drink, Synthesis, and Rest.
-
 ; The AI_Basic layer dismisses healing moves if the enemy's HP is full.
-; 90% chance to greatly encourage this move if enemy's HP is below 25%.
-; Discourage this move if enemy's HP is higher than 50%.
-; Do nothing otherwise.
 
+; Discourage this move if player has type advantage against enemy. Continue regardless.
+	call AI_Smart_DiscourageIfPlayerAdvantage
+
+; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 	call AICheckEnemyQuarterHP
 	jr nc, .encourage
+
+; Discourage this move if enemy's HP is higher than 50%.
 	call AICheckEnemyHalfHP
 	ret nc
 	inc [hl]
@@ -2260,6 +2275,9 @@ AI_Smart_SkullBash:
 	; fallthrough
 
 AI_Smart_Substitute:
+; Discourage this move if player has type advantage against enemy. Continue regardless.
+	call AI_Smart_DiscourageIfPlayerAdvantage
+
 ; Check if enemy already has a Substitute.
 	ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
@@ -3312,6 +3330,9 @@ AI_Smart_Reckless:
 	ret
 
 AI_Smart_BellyDrum:
+; Discourage this move if player has type advantage against enemy. Continue regardless.
+	call AI_Smart_DiscourageIfPlayerAdvantage
+
 ; Hugely discourage this move if enemy's attack is higher than +2.
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 3
