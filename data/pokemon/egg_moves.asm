@@ -117,7 +117,6 @@ OddishEggMoves:
 	db SWORDS_DANCE
 	db RAZOR_LEAF
 	db FLAIL
-	db SYNTHESIS
 	db ACID
 	db LEECH_SEED
 	db -1 ; end
