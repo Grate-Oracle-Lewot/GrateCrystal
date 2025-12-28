@@ -1338,7 +1338,7 @@ BattleTowerMons:
 
 	db BELLOSSOM
 	db BRIGHTPOWDER
-	db EARTH_POWER, SUNNY_DAY, SOLARBEAM, DOUBLE_TEAM
+	db SUNNY_DAY, SOLARBEAM, SYNTHESIS, DOUBLE_TEAM
 	dw 0 ; OT ID
 	dt 38180 ; Exp
 	; Stat exp
@@ -1348,7 +1348,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 50000
 	dn 13, 15, 13, 11 ; DVs
-	db 16, 8, 16, 24 ; PP
+	db 8, 16, 8, 24 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
