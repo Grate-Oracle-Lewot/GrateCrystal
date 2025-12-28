@@ -48,7 +48,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PARAS
 	db NO_MOVE      ; PARASECT
 	db FORESIGHT    ; VENONAT
-	db GUST         ; VENOMOTH
+	db SILVER_WIND  ; VENOMOTH
 	db DIG          ; DIGLETT
 	db TRI_ATTACK   ; DUGTRIO
 	db PAY_DAY      ; MEOWTH
