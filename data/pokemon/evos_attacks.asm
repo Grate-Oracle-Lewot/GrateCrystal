@@ -2800,12 +2800,10 @@ AmpharosEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
-	db 1, SWEET_SCENT
+	db 1, RAPID_SPIN
+	db 1, SYNTHESIS
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
-	db 35, EARTH_POWER
-	db 50, SYNTHESIS
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
