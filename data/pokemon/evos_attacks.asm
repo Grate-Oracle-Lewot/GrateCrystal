@@ -1007,7 +1007,7 @@ BellsproutEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, STUN_SPORE
 	db 23, ACID
-	db 29, SWEET_SCENT
+	db 29, SWORDS_DANCE
 	db 30, RAZOR_LEAF
 	db 37, SLUDGE_BOMB
 	db 45, SLAM
@@ -1024,7 +1024,7 @@ WeepinbellEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, STUN_SPORE
 	db 24, ACID
-	db 32, SWEET_SCENT
+	db 32, SWORDS_DANCE
 	db 34, RAZOR_LEAF
 	db 42, SLUDGE_BOMB
 	db 54, SLAM
