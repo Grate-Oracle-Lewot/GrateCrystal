@@ -47,13 +47,13 @@ PlayBattleMusic:
 	ld a, [wBattleType]
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
-	jp z, .done
+	jr z, .done
 	cp BATTLETYPE_LEGENDARY
-	jp nc, .done
+	jr nc, .done
 
 	ld de, MUSIC_SPECIAL_BATTLE
 	cp BATTLETYPE_SHINY
-	jp nc, .done
+	jr nc, .done
 
 	farcall RegionCheck
 	ld a, e
@@ -63,9 +63,9 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp nz, .done
+	jr nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jp .done
+	jr .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
@@ -76,48 +76,32 @@ PlayBattleMusic:
 	jr .done
 
 .trainermusic
-	ld de, MUSIC_CHAMPION_BATTLE
-	cp CHAMPION
-	jr z, .done
-	cp RED
-	jr z, .done
-	cp POKEMON_PROF
-	jr z, .done
-
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
-	jr z, .done
-	cp GRUNTF
-	jr z, .done
-	cp EXECUTIVEM
-	jr z, .done
-	cp EXECUTIVEF
-	jr z, .done
-	cp BOSS
-	jr z, .done
-	cp JESSIE
-	jr z, .done
+	jr nc, .done
+	cp COOLTRAINERM
+	jr nc, .normaltrainer
 
-	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
-	farcall IsKantoGymLeader
-	jr c, .done
-
-	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
-	farcall IsGymLeader
-	jr c, .done
-
-	ld a, [wOtherTrainerClass]
 	ld de, MUSIC_RIVAL_BATTLE
 	cp RIVAL1
-	jr z, .done
-	cp RIVAL2
-	jr z, .done
-
-	ld de, MUSIC_DARKROOM_BATTLE
-	cp LORELEI
 	jr nc, .done
 
-.othertrainer
+	ld de, MUSIC_CHAMPION_BATTLE
+	cp CHAMPION
+	jr nc, .done
+
+	ld de, MUSIC_DARKROOM_BATTLE
+	cp REAL_WILL
+	jr nc, .done
+
+	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	cp BROCK
+	jr nc, .done
+
+	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
+	jr .done
+
+.normaltrainer
 	ld a, [wLinkMode]
 	and a
 	jr nz, .johtotrainer
@@ -133,7 +117,6 @@ PlayBattleMusic:
 
 .kantotrainer
 	ld de, MUSIC_KANTO_TRAINER_BATTLE
-
 .done
 	call PlayMusic
 	pop bc
