@@ -51,26 +51,6 @@ LavRadioTower2FOfficerText:
 	text "…"
 	done
 
-LavRadioTower2FUnown1Text:
-	text "OUR MASTER AWAITS"
-	line "YOU HERE"
-	done
-
-LavRadioTower2FUnown2Text:
-	text "THE HUMANS HERE"
-	line "WILL NOT BE HARMED"
-	done
-
-LavRadioTower2FUnown3Text:
-	text "OUR MASTER WISHES"
-	line "TO BATTLE YOU!"
-	done
-
-LavRadioTower2FUnown4Text:
-	text "ARE YOU WORTHY OF"
-	line "OUR MASTER?"
-	done
-
 LavRadioTower2FMewtwoText:
 	text "MEWTWO: I've been"
 	line "waiting for you."
