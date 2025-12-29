@@ -204,6 +204,12 @@ SeafoamCaveBookText5:
 	line "#MON is up"
 	cont "there as well."
 
+	para "When it comes to"
+	line "writing, you can't"
+
+	para "beat the PORTAL"
+	line "games."
+
 	para "Oh, and YOSHI'S"
 	line "STORY has the best"
 
