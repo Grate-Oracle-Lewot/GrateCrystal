@@ -1018,7 +1018,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_RECOIL_HIT,       AI_Smart_Recoil_JumpKick
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_SpeedControl
-	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
+	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefUp2
 	dbw EFFECT_TRANSFORM,        AI_Smart_Transform
 	dbw EFFECT_ATTACK_DOWN_2,    AI_Smart_AttackDown
 	dbw EFFECT_DEFENSE_DOWN_2,   AI_Smart_DefenseDown
@@ -2128,15 +2128,15 @@ AI_Smart_TrapTarget:
 	dec [hl]
 	ret
 
-AI_Smart_SpDefenseUp2:
+AI_Smart_SpDefUp2:
 ; Discourage this move if enemy's HP is lower than 50%.
 	call AICheckEnemyHalfHP
-	jr nc, AI_SpDefenseUp2_Acrobatics_Discourage
+	jr nc, AI_SpDefUp2_Acrobatics_Discourage
 
 ; Discourage this move if enemy's special defense level is higher than +3.
 	ld a, [wEnemySDefLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, AI_SpDefenseUp2_Acrobatics_Discourage
+	jr nc, AI_SpDefUp2_Acrobatics_Discourage
 
 ; 80% chance to greatly encourage this move if enemy's Special Defense level is lower than +2, and the player's Pokémon is Special-oriented.
 	cp BASE_STAT_LEVEL + 2
@@ -2170,7 +2170,7 @@ AI_Smart_SpDefenseUp2:
 	dec [hl]
 	ret
 
-AI_SpDefenseUp2_Acrobatics_Discourage:
+AI_SpDefUp2_Acrobatics_Discourage:
 	inc [hl]
 	ret
 
@@ -2179,7 +2179,7 @@ AI_Smart_Acrobatics:
 ; Encourage this move if the enemy has no held item. If encouraged, 80% chance to encourage again.
 	ld a, [wEnemyMonItem]
 	and a
-	jr nz, AI_SpDefenseUp2_Acrobatics_Discourage
+	jr nz, AI_SpDefUp2_Acrobatics_Discourage
 	dec [hl]
 
 	call AI_80_20
