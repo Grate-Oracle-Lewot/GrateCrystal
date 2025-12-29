@@ -9,6 +9,13 @@ Route27SandstormHouse_MapScripts:
 SandstormHouseWoman:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_ICE_PUNCH_FROM_SANDSTORM_LADY
+	iffalse .Continue
+	checkevent EVENT_GOT_THUNDERPUNCH_FROM_SANDSTORM_LADY
+	iffalse .Continue
+	checkevent EVENT_GOT_FIRE_PUNCH_FROM_SANDSTORM_LADY
+	iftrue .AlreadyGotAllPunches
+.Continue:
 	writetext SandstormHouseWomanText1
 	promptbutton
 	special GetFirstPokemonHappiness
