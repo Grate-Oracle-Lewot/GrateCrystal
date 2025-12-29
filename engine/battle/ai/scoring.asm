@@ -2347,12 +2347,15 @@ AI_Smart_Counter:
 	jr nz, .playermoveloop
 
 	pop hl
+	; fallthough
+
+AI_CounterMirrorCoat_Finish:
 	ld a, b
 	and a
 	jr z, AI_Smart_Discourage
 
 	cp 3
-	jr nc, AI_CounterMirrorCoat_Encourage
+	jr nc, .encourage
 
 	ld a, [wLastPlayerCounterMove]
 	and a
@@ -2370,7 +2373,7 @@ AI_Smart_Counter:
 	ret nc
 	; fallthrough
 
-AI_CounterMirrorCoat_Encourage:
+.encourage
 	call AI_60_40
 	ret c
 	dec [hl]
@@ -2410,28 +2413,7 @@ AI_Smart_MirrorCoat:
 	jr nz, .playermoveloop
 
 	pop hl
-	ld a, b
-	and a
-	jr z, AI_Smart_Discourage
-
-	cp 3
-	jr nc, AI_CounterMirrorCoat_Encourage
-
-	ld a, [wLastPlayerCounterMove]
-	and a
-	ret z
-
-	call AIGetMoveAttributes
-
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	ret z
-
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	cp SPECIAL
-	ret c
-	jr AI_CounterMirrorCoat_Encourage
+	jr AI_CounterMirrorCoat_Finish
 
 AI_Smart_Encore:
 ; Dismiss this move if the player did not use any move last turn.
