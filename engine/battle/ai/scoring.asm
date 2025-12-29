@@ -2676,6 +2676,8 @@ AI_Smart_Disable:
 
 ; If the player's last used move was not in the useful list, do nothing if it was a damaging move.
 .notencourage
+	ld a, [wLastPlayerCounterMove]
+	call AIGetMoveAttributes
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	ret nz
