@@ -1860,13 +1860,8 @@ AI_Smart_Poison:
 	jr AIDismissMove
 
 AI_Smart_Fissure:
-; Dismiss this move if the player is a floatmon.
-	push hl
-	ld a, [wBattleMonSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	pop hl
-	jr c, AIDismissMove
+; Dismiss this move if the player is a floatmon. Regardless, execute AI_Smart_OHKO.
+	call AI_Smart_Float
 	; fallthrough
 
 AI_Smart_OHKO:
