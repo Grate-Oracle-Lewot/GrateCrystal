@@ -425,8 +425,19 @@ CheckEnemyTypeAdvantage:
 	jr AdvantageCheckDone
 
 AI_Smart_DiscourageIfPlayerAdvantage:
-; Discourage this move if either of player's types is good against enemy's type combo. Discount player's ???-type.
 ; Called by AI_Smart_Bide, AI_Smart_Heal, AI_Smart_Substitute, and AI_Smart_Belly_Drum.
+
+; Discourage this move if the player has shown super effective moves against the enemy.
+	push hl
+	call _CheckPlayerMoveTypeMatchups
+	ld a, [wEnemyAISwitchScore]
+	cp BASE_AI_SWITCH_SCORE
+	pop hl
+	jr nc, .continue
+	inc [hl]
+
+; Discourage further if the player's mon has a type that's super effective on the enemy's type combo.
+.continue
 	call CheckPlayerTypeAdvantage
 	ret c
 	inc [hl]
@@ -1731,7 +1742,7 @@ AI_Smart_SwitchMoves:
 	inc [hl]
 
 .no_spikes
-; Discourage this move if the player hasn't shown super-effective moves against the enemy.
+; Discourage this move if the player hasn't shown super effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
 	push hl
 	call _CheckPlayerMoveTypeMatchups
@@ -3318,7 +3329,7 @@ AI_Smart_Reckless:
 	cp EFFECTIVE
 	jr c, .bad
 
-; Encourage this move if super-effective.
+; Encourage this move if super effective.
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, .good
