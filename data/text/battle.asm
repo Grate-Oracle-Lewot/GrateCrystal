@@ -232,7 +232,7 @@ BattleText_MonFainted:
 
 BattleText_UseNextMon:
 	text "Use next #MON?"
-	autodone
+	done
 
 LostAgainstText:
 	text "Lost against"
@@ -248,7 +248,7 @@ BattleText_EnemyIsAboutToUseWillPlayerChangeMon:
 
 	para "Will <PLAYER>"
 	line "change #MON?"
-	autodone
+	done
 
 BattleText_PluralEnemyAreAboutToUseWillPlayerChangeMon:
 	text "<ENEMY>"
@@ -259,7 +259,7 @@ BattleText_PluralEnemyAreAboutToUseWillPlayerChangeMon:
 
 	para "Will <PLAYER>"
 	line "change #MON?"
-	autodone
+	done
 
 BattleText_EnemySentOut:
 	text "<ENEMY>"
@@ -267,17 +267,17 @@ BattleText_EnemySentOut:
 	scroll "@"
 	text_ram wEnemyMonNickname
 	text "!"
-	autodone
+	done
 
 BattleText_TheresNoWillToBattle:
 	text "There's no will to"
 	line "battle!"
-	autodone
+	prompt
 
 BattleText_AnEGGCantBattle:
 	text "An EGG can't"
 	line "battle!"
-	autodone
+	prompt
 
 BattleText_TheresNoEscapeFromTrainerBattle:
 	text "No! There's no"
@@ -353,7 +353,7 @@ BattleText_MonHasNoMovesLeft:
 	text_ram wBattleMonNickname
 	text_start
 	line "has no moves left!"
-	autodone
+	done
 
 BattleText_TargetsEncoreEnded:
 	text "<TARGET>'s"
@@ -569,7 +569,7 @@ HasNoPPLeftText:
 WentToSleepText:
 	text "<USER>"
 	line "went to sleep!"
-	autodone
+	done
 
 RegainedHealthText:
 	text "<USER>"
@@ -1124,7 +1124,7 @@ BeatUpAttackText:
 	text_ram wStringBuffer1
 	text "'s"
 	line "attack!"
-	autodone
+	done
 
 PresentFailedText:
 	text "<TARGET>"
