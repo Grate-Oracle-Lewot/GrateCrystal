@@ -714,11 +714,6 @@ Text_BattleUser::
 	text "<USER>@"
 	text_end
 
-_BattleMadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	autodone
-
 _BattleTookSunlightText::
 	text_start
 	line "took in sunlight!"
@@ -761,7 +756,7 @@ _UsedInsteadText::
 _MoveNameText::
 	text_ram wStringBuffer2
 	text "!"
-	autodone
+	done
 
 Text_BreedHuh::
 	text "Huh?"
@@ -917,7 +912,7 @@ _ContestCaughtMonText::
 
 _ContestAskSwitchText::
 	text "Switch #MON?"
-	autodone
+	done
 
 _ContestAlreadyCaughtText::
 	text "You already caught"
