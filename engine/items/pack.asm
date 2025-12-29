@@ -173,20 +173,22 @@ Pack:
 
 .MenuHeader2:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 13, 5, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 13, 3, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MenuData_2
 	db 1 ; default option
 
 .MenuData_2:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
-	db 3 ; items
+	db 4 ; items
 	db "USE@"
 	db "GIVE@"
+	db "TOSS@"
 	db "QUIT@"
 
 .Jumptable2:
 	dw .UseItem
 	dw GiveItem
+	dw TossMenu
 	dw QuitItemSubmenu
 
 .UseItem:
