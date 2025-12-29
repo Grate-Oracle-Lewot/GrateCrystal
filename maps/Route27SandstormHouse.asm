@@ -23,7 +23,6 @@ SandstormHouseWoman:
 	writetext SandstormHouseWomanDisloyalText
 .EndText:
 	waitbutton
-.Done:
 	closetext
 	end
 
@@ -46,7 +45,7 @@ SandstormHouseWoman:
 	checkevent EVENT_GOT_FIRE_PUNCH_FROM_SANDSTORM_LADY
 	iftrue .AlreadyGotAllPunches
 	verbosegiveitem TM_FIRE_PUNCH, 5
-	iffalse .Done
+	iffalse .AlreadyGotAllPunches
 	setevent EVENT_GOT_FIRE_PUNCH_FROM_SANDSTORM_LADY
 .AlreadyGotAllPunches:
 	writetext SandstormHouseSandstormDescription
@@ -59,7 +58,7 @@ SandstormHouseWomanText1:
 	text "Where are you off"
 	line "to with #MON?"
 
-	para "#MON LEAGUE?"
+	para "INDIGO PLATEAU?"
 
 	para "Are your #MON"
 	line "loyal enough for"
