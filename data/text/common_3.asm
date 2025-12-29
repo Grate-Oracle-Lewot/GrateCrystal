@@ -1134,19 +1134,6 @@ _YouCantTakeAnEggText::
 	para ""
 	done
 
-_BallDodgedText::
-	text "It dodged the"
-	line "thrown BALL!"
-
-	autopara "This #MON"
-	line "can't be caught!"
-	autodone
-
-_BallMissedText::
-	text "You missed the"
-	line "#MON!"
-	autodone
-
 _BallBrokeFreeText::
 	text "Oh no! The #MON"
 	line "broke free!"
@@ -1198,7 +1185,7 @@ _AskGiveNicknameText::
 	line "@"
 	text_ram wStringBuffer1
 	text "?"
-	autodone
+	done
 
 _ItemStatRoseText::
 	text_ram wStringBuffer1
