@@ -2336,6 +2336,7 @@ AI_Smart_Counter:
 	jr z, .skipmove
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	cp SPECIAL
 	jr nc, .skipmove
 
@@ -2364,6 +2365,7 @@ AI_Smart_Counter:
 	ret z
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	cp SPECIAL
 	ret nc
 	; fallthrough
@@ -2397,6 +2399,7 @@ AI_Smart_MirrorCoat:
 	jr z, .skipmove
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	cp SPECIAL
 	jr c, .skipmove
 
@@ -2425,6 +2428,7 @@ AI_Smart_MirrorCoat:
 	ret z
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
 	cp SPECIAL
 	ret c
 	jr AI_CounterMirrorCoat_Encourage
