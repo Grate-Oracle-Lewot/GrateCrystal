@@ -268,7 +268,7 @@ ENDM
 	map_const VIOLET_CITY,                                 20, 18 ;  1
 	map_const VIOLET_POKECENTER_1F,                         5,  4 ;  2
 	map_const VIOLET_MART,                                  6,  4 ;  3
-	map_const VIOLET_GYM,                                   5,  8 ;  4
+	map_const VIOLET_GYM,                                   5,  9 ;  4
 	map_const EARLS_POKEMON_ACADEMY,                        4,  8 ;  5
 	map_const VIOLET_KYLES_HOUSE,                           4,  4 ;  6
 	map_const VIOLET_NICKNAME_SPEECH_HOUSE,                 4,  4 ;  7
