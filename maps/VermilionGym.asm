@@ -18,13 +18,13 @@ VermilionGym_MapScripts:
 .HiddenDoors:
 	checkevent EVENT_VERMILION_GYM_SWITCH_1
 	iftrue .NextCheck
-	changeblock 4, 4, $33 ; electric gate
+	changeblock 4, 4, $31 ; symbol block
 	endcallback
 
 .NextCheck:
 	checkevent EVENT_VERMILION_GYM_SWITCH_2
 	iftrue .OpenPath
-	changeblock 4, 4, $33 ; electric gate
+	changeblock 4, 4, $31 ; symbol block
 	endcallback
 
 .OpenPath
