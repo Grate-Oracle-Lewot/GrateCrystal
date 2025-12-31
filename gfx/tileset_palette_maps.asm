@@ -11,11 +11,17 @@ ENDM
 TilesetKantoPalMap:
 INCLUDE "gfx/tilesets/kanto_palette_map.asm"
 
+TilesetKantoExtraPalMap:
+INCLUDE "gfx/tilesets/kanto_extra_palette_map.asm"
+
 Tileset0PalMap:
 TilesetJohtoPalMap:
 TilesetJohtoDesertPalMap:
 TilesetJohtoBeachPalMap:
 INCLUDE "gfx/tilesets/johto_palette_map.asm"
+
+TilesetJohtoCherryPalMap:
+INCLUDE "gfx/tilesets/johto_cherry_palette_map.asm"
 
 TilesetJohtoModernPalMap:
 INCLUDE "gfx/tilesets/johto_modern_palette_map.asm"
@@ -117,9 +123,6 @@ INCLUDE "gfx/tilesets/viridian_gym_palette_map.asm"
 
 TilesetOlivineGymPalMap:
 INCLUDE "gfx/tilesets/olivine_gym_palette_map.asm"
-
-TilesetKantoExtraPalMap:
-INCLUDE "gfx/tilesets/kanto_extra_palette_map.asm"
 
 TilesetBillsHousePalMap:
 INCLUDE "gfx/tilesets/bills_house_palette_map.asm"
