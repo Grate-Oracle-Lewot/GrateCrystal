@@ -397,3 +397,12 @@ INCBIN "data/tilesets/bills_house_metatiles.bin"
 
 TilesetBillsHouseColl::
 INCLUDE "data/tilesets/bills_house_collision.asm"
+
+TilesetJohtoCherryGFX::
+INCBIN "gfx/tilesets/johto_cherry.2bpp.lz"
+
+TilesetJohtoCherryMeta::
+INCBIN "data/tilesets/johto_cherry_metatiles.bin"
+
+TilesetJohtoCherryColl::
+INCLUDE "data/tilesets/johto_cherry_collision.asm"
