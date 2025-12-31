@@ -398,6 +398,9 @@ INCBIN "data/tilesets/bills_house_metatiles.bin"
 TilesetBillsHouseColl::
 INCLUDE "data/tilesets/bills_house_collision.asm"
 
+
+SECTION "Tileset Data 10", ROMX
+
 TilesetJohtoCherryGFX::
 INCBIN "gfx/tilesets/johto_cherry.2bpp.lz"
 
