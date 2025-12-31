@@ -257,7 +257,7 @@ ENDM
 	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  4
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  5
 	map_const CHERRYGROVE_EVOLUTION_SPEECH_HOUSE,           4,  4 ;  6
-	map_const ROUTE_30,                                    10, 26 ;  7
+	map_const ROUTE_30,                                    11, 26 ;  7
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ;  8
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const ROUTE_31,                                    20,  9 ; 10
