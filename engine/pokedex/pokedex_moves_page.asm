@@ -503,7 +503,7 @@ Pokedex_Calc_EggMovesPtr:
 	ld a, DEXENTRY_LVLUP
 	call DexEntry_NextCategory
 	; print NONE
-	hlcoord 3, 9
+	hlcoord 4, 9
 	ld de, DexEntry_NONE_text
 	call PlaceString
 	jp PlaceString
