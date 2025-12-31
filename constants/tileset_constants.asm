@@ -41,8 +41,9 @@
 	const TILESET_OLIVINE_GYM          ; 27
 	const TILESET_JOHTO_DESERT         ; 28
 	const TILESET_JOHTO_BEACH          ; 29
-	const TILESET_KANTO_EXTRA          ; 2a
-	const TILESET_BILLS_HOUSE          ; 2b
+	const TILESET_JOHTO_CHERRY         ; 2a
+	const TILESET_KANTO_EXTRA          ; 2b
+	const TILESET_BILLS_HOUSE          ; 2c
 NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size
