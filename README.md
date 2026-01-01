@@ -43,7 +43,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, some of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
-- Double stat exp gained from battles, 1.9x from vitamins, and vitamins now keep working until near max stat exp
+- Stat experience from battles is awarded twice, with the second round using Sp.Def instead of Sp.Atk for the Special experience; vitamins give 1.9x what they used to, and keep working until their stat is near maximized
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - X items (X Attack, X Defend, etc.) now activate automatically if held in battle
 - Pseudo-Abilities: there's no proper Ability system and the following effects are not named in-game, but they are described by various NPCs and such. Dual-typed Pokémon can have two type-dependent effects.
