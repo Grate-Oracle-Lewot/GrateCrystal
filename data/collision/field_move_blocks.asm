@@ -52,6 +52,7 @@ WhirlpoolBlockPointers:
 	dbw TILESET_JOHTO,        .johto
 	dbw TILESET_JOHTO_DESERT, .johto
 	dbw TILESET_JOHTO_BEACH,  .johto
+	dbw TILESET_JOHTO_CHERRY, .johto
 	db -1 ; end
 
 .johto:
