@@ -6,6 +6,11 @@ SilverCavePokecenter1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_SILVER_CAVE
+	endcallback
 
 SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
