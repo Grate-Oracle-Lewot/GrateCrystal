@@ -7336,9 +7336,9 @@ else
 .stat_exp_loop_2
 	inc hl
 	ld a, c
-	cp 1
+	dec a
 	jr nz, .skip
-	inc hl
+	inc hl ; Sp.Def instead of Sp.Atk
 .skip
 	ld a, [de]
 	add [hl]
