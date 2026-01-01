@@ -387,6 +387,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Unused experience growth rates given to some Pokémon, and a few other rates changed
 - A Pokémon being shiny now indicates perfect or near-perfect DVs
 - Tiles animate even when textboxes are open
+- TMs can be tossed from the Pack
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones (and some old ones from Gen I)
 - Most Gen I songs used somewhere, plus a couple of demixed songs from later games
