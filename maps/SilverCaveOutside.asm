@@ -7,11 +7,6 @@ SilverCaveOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-
-.FlyPoint:
-	setflag ENGINE_FLYPOINT_SILVER_CAVE
-	endcallback
 
 TrainerBikerTBone:
 	trainer BIKER, T_BONE, EVENT_BEAT_BIKER_T_BONE, BikerTBoneSeenText, BikerTBoneBeatenText, 0, .AfterScript
