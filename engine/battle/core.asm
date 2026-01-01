@@ -7269,60 +7269,122 @@ else
 	pop bc
 	jp z, .next_mon
 
-; give stat exp, edited to give double thanks to DamienDoury
-	ld hl, MON_STAT_EXP
+; give stat exp round 1, Special exp = Sp.Atk
+	ld hl, MON_STAT_EXP + 1
 	add hl, bc
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonBaseStats - 1
 	push bc
 	ld c, NUM_EXP_STATS
-.stat_exp_loop
+.stat_exp_loop_1
 	inc hl
-	push bc
-
-	push hl
-	ld l, [hl]
-	ld h, 0
-	add hl, hl ; Doubles the gained Stat Exp.
 	ld a, [de]
-	ld b, a
-	inc de
-	ld a, [de]
-	ld c, a
-	add hl, bc ; 16 bits addition, for easier carry management.
-	ld b, h
-	ld a, l
-	pop hl
-
-	jr nc, .award_stat_exp
-
-	ld a, $ff ; Max out the Stat Exp.
-	ld b, a   ; Max out the Stat Exp.
-
-.award_stat_exp
+	add [hl]
 	ld [de], a
+	jr nc, .no_carry_stat_exp_1
 	dec de
-	ld a, b
+	ld a, [de]
+	inc a
+	jr z, .stat_exp_maxed_out_1
 	ld [de], a
 	inc de
-	inc de ; DE is now pointing onto the next Stat Exp.
 
-	pop bc
-	dec c
-	jr nz, .stat_exp_loop    
-
-	pop bc
-	ld hl, MON_LEVEL
-	add hl, bc
+.no_carry_stat_exp_1
+	push hl
 	push bc
-	ld a, [wCurLevelCap]
-	ld b, a
+	ld a, MON_POKERUS
+	call GetPartyParamLocation
 	ld a, [hl]
-	cp b
+	and a
 	pop bc
-	jp nc, .next_mon
+	pop hl
+	jr z, .stat_exp_awarded_1
+	ld a, [de]
+	add [hl]
+	ld [de], a
+	jr nc, .stat_exp_awarded_1
+	dec de
+	ld a, [de]
+	inc a
+	jr z, .stat_exp_maxed_out_1
+	ld [de], a
+	inc de
+	jr .stat_exp_awarded_1
+
+.stat_exp_maxed_out_1
+	ld a, $ff
+	ld [de], a
+	inc de
+	ld [de], a
+
+.stat_exp_awarded_1
+	inc de
+	inc de
+	dec c
+	jr nz, .stat_exp_loop_1
+
+; give stat exp round 2, Special exp = Sp.Def
+	pop bc
+	ld hl, MON_STAT_EXP + 1
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonBaseStats - 1
 	push bc
+	ld c, NUM_EXP_STATS
+.stat_exp_loop_2
+	inc hl
+	ld a, c
+	cp 1
+	jr nz, .skip
+	inc hl
+.skip
+	ld a, [de]
+	add [hl]
+	ld [de], a
+	jr nc, .no_carry_stat_exp_2
+	dec de
+	ld a, [de]
+	inc a
+	jr z, .stat_exp_maxed_out_2
+	ld [de], a
+	inc de
+
+.no_carry_stat_exp_2
+	push hl
+	push bc
+	ld a, MON_POKERUS
+	call GetPartyParamLocation
+	ld a, [hl]
+	and a
+	pop bc
+	pop hl
+	jr z, .stat_exp_awarded_2
+	ld a, [de]
+	add [hl]
+	ld [de], a
+	jr nc, .stat_exp_awarded_2
+	dec de
+	ld a, [de]
+	inc a
+	jr z, .stat_exp_maxed_out_2
+	ld [de], a
+	inc de
+	jr .stat_exp_awarded_2
+
+.stat_exp_maxed_out_2
+	ld a, $ff
+	ld [de], a
+	inc de
+	ld [de], a
+
+.stat_exp_awarded_2
+	inc de
+	inc de
+	dec c
+	jr nz, .stat_exp_loop_2
+
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
