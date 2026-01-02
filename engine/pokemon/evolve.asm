@@ -212,7 +212,7 @@ else
 	pop hl
 	ld a, [hli]
 	cp b
-	jp nz, .dont_evolve_2
+	jp nz, .dont_evolve_3
 
 	xor a
 	ld [wTempMonItem], a
@@ -665,12 +665,10 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	cp EVOLVE_HELD
-	jr z, .held_param
 	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
 	jr nz, .not_tyrogue
-.held_param
 	inc hl
+
 .not_tyrogue
 	inc hl
 	ld a, [wCurPartySpecies]
