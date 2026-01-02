@@ -669,8 +669,6 @@ GetPreEvolution:
 	jr z, .held_param
 	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
 	jr nz, .not_tyrogue
-	inc hl
-
 .held_param
 	inc hl
 .not_tyrogue
