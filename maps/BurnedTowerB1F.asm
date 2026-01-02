@@ -188,10 +188,8 @@ BurnedTowerB1FEusineMovement1:
 	step_end
 
 BurnedTowerB1FEusineText:
-	text "EUSINE: I dug a"
-	line "hole here, too…"
-
-	para "I was shocked!"
+	text "EUSINE: <PLAYER>!"
+	line "Are you alright?"
 
 	para "SUICUNE raced by"
 	line "like a blur, right"
@@ -199,30 +197,33 @@ BurnedTowerB1FEusineText:
 	para "in front of my"
 	line "eyes!"
 
-	para "For ten years I"
-	line "chased SUICUNE,"
+	para "I've been chasing"
+	line "it for years…"
 
-	para "and I finally got"
-	line "to see it."
+	para "The truth is, when"
+	line "I was a child,"
 
-	para "I'm all choked up!"
+	para "SUICUNE saved me"
+	line "from drowning."
 
-	para "<PLAYER>, I owe"
-	line "this all to you!"
+	para "It plucked me out"
+	line "of the water and"
 
-	para "Thank you!"
+	para "carried me to"
+	line "shore…"
 
-	para "I heard that the"
-	line "legendary #MON"
+	para "Then it raced off"
+	line "without so much as"
+	cont "a glance."
 
-	para "of ECRUTEAK test"
-	line "chosen humans by"
+	para "It's said SUICUNE,"
+	line "ENTEI, and RAIKOU"
 
-	para "allowing them to"
-	line "get close."
+	para "only appear before"
+	line "worthy trainers."
 
-	para "I'm going to track"
-	line "SUICUNE."
+	para "But which of us"
+	line "was worthy…?"
 
 	para "<PLAYER>, let's"
 	line "meet again!"
