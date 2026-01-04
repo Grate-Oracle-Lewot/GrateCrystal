@@ -668,10 +668,8 @@ FlyFunction:
 	jr c, .nostormbadge
 	call GetMapEnvironment
 	cp GATE
-	jr c, .outdoors
-	jr .indoors
+	jr nc, .indoors
 
-.outdoors
 	xor a
 	ldh [hMapAnims], a
 	call LoadStandardMenuHeader
@@ -1029,10 +1027,8 @@ TeleportFunction:
 .TryTeleport:
 	call GetMapEnvironment
 	cp GATE
-	jr c, .CheckIfSpawnPoint
-	jr .nope
+	jr nc, .nope
 
-.CheckIfSpawnPoint:
 	ld a, [wLastSpawnMapGroup]
 	ld d, a
 	ld a, [wLastSpawnMapNumber]
