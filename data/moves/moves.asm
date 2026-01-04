@@ -214,7 +214,7 @@ Moves:
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,    50 percent + 1, 10,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,         PHYSICAL, 100 percent,     20,   0
 	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100 percent,     20,  30 percent + 1
-	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100 percent,     10,   0
+	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100 percent,      5,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100 percent,     20,   0
 	move ROCK_WRECKER, EFFECT_RECOIL_HIT,        125, ROCK,         PHYSICAL, 100 percent,      5,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100 percent,      5,   0
