@@ -2645,7 +2645,7 @@ WinTrainerBattle:
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	and a
 	jr nz, .battle_tower
 
 	call BattleWinSlideInEnemyTrainerFrontpic
@@ -3095,7 +3095,7 @@ LostBattle:
 	ld [wBattleEnded], a
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	and a
 	jr nz, .battle_tower
 
 	ld a, [wBattleType]
@@ -6198,9 +6198,7 @@ LinkBattleSendReceiveAction:
 LoadEnemyMon:
 ; Initialize enemy monster parameters
 ; To do this we pull the species from wTempEnemyMonSpecies
-
-; Notes:
-;   BattleRandom is used to ensure sync between Game Boys
+; BattleRandom is used to ensure sync between Game Boys
 
 ; Clear the whole enemy mon struct (wEnemyMon)
 	xor a
@@ -6215,7 +6213,7 @@ LoadEnemyMon:
 
 ; and also not in a BattleTower-Battle
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	and a
 	jp nz, InitEnemyMon
 
 ; Make sure everything knows what species we're working with
@@ -7242,7 +7240,7 @@ else
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	and a
 	ret nz
 
 	call .EvenlyDivideExpAmongParticipants
@@ -8542,7 +8540,7 @@ CheckPayDay:
 	ld hl, BattleText_PlayerPickedUpPayDayMoney
 	call StdBattleTextbox
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	and a
 	ret z
 	call ClearTilemap
 	jp ClearBGPalettes
