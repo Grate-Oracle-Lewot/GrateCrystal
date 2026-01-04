@@ -262,7 +262,7 @@ BattleTowerMorty:
 	bigdw 65535
 	bigdw 65535
 	dn 10, 10, 10, 10 ; DVs
-	db 24, 16, 8, 16 ; PP
+	db 24, 16, 8, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -1476,7 +1476,7 @@ BattleTowerJanine:
 	bigdw 65535
 	bigdw 65535
 	dn 11, 12, 12, 11 ; DVs
-	db 16, 24, 24, 8 ; PP
+	db 8, 24, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
