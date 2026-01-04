@@ -44,6 +44,19 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
+if DEF (_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
+	; Finull theme goes unused
+else
+	ld a, [wTempWildMonSpecies]
+	ld de, MUSIC_FINULL_BATTLE
+if DEF (_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
+	cp MISSINGNO
+else
+	cp FINULL
+endc
+	jr z, .done
+endc
+
 	ld a, [wBattleType]
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
@@ -105,19 +118,26 @@ PlayBattleMusic:
 .normaltrainer
 	ld a, [wLinkMode]
 	and a
-	jr nz, .johtotrainer
+	jr nz, .johto
+
+	ld a, [wBattleType]
+	ld de, MUSIC_INVERSE_BATTLE
+	cp BATTLETYPE_INVERSE
+	jr z, .done
+
+	ld de, MUSIC_NEUTRAL_BATTLE
+	cp BATTLETYPE_TYPELESS
+	jr z, .done
 
 	farcall RegionCheck
 	ld a, e
 	and a
-	jr nz, .kantotrainer
-
-.johtotrainer
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	jr z, .johto
+	ld de, MUSIC_KANTO_TRAINER_BATTLE
 	jr .done
 
-.kantotrainer
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+.johto
+	ld de, MUSIC_JOHTO_TRAINER_BATTLE
 .done
 	call PlayMusic
 	pop bc
