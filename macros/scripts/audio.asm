@@ -336,10 +336,16 @@ load_wave: MACRO
 	ENDC
 ENDM
 
+
 inc_octave: MACRO
 	db $f4
 ENDM
 
 dec_octave: MACRO
 	db $f5
+ENDM
+
+
+channel_volume: MACRO
+	db $f7, \1
 ENDM
