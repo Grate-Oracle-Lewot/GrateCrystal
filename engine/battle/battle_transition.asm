@@ -241,11 +241,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 .not_stronger
 	ld a, [wEnvironment]
 	cp CAVE
-	jr z, .cave
-	cp ENVIRONMENT_5
-	jr z, .cave
-	cp DUNGEON
-	jr z, .cave
+	jr nc, .cave
 	set TRANS_NO_CAVE_F, e
 .cave
 	ld hl, .StartingPoints
