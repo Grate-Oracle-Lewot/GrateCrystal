@@ -90,8 +90,8 @@ INCLUDE "data/sprites/player_sprites.asm"
 
 AddMapSprites:
 	call GetMapEnvironment
-	call CheckOutdoorMap
-	jp z, AddOutdoorSprites
+	cp GATE
+	jp c, AddOutdoorSprites
 	jp AddIndoorSprites
 	ret
 
@@ -142,9 +142,9 @@ LoadMiscTiles:
 	ld c, EMOTE_SHADOW
 	farcall LoadEmote
 	call GetMapEnvironment
-	call CheckOutdoorMap
+	cp GATE
 	ld c, EMOTE_GRASS_RUSTLE
-	jr z, .outdoor
+	jr c, .outdoor
 	ld c, EMOTE_BOULDER_DUST
 .outdoor
 	farcall LoadEmote
