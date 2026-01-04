@@ -452,14 +452,14 @@ SGBLayoutJumptable:
 	ld a, [wEnvironment]
 	cp ROUTE
 	jr z, .route
+	cp GATE
+	jr z, .gate
 	cp CAVE
 	jr z, .cave
 	cp DUNGEON
 	jr z, .cave
-	cp ENVIRONMENT_5
-	jr z, .env5
-	cp GATE
-	jr z, .gate
+	cp FOREST
+	jr z, .forest
 	ld a, [wMapGroup]
 	ld e, a
 	ld d, 0
@@ -472,16 +472,16 @@ SGBLayoutJumptable:
 	ld a, PREDEFPAL_ROUTES
 	ret
 
+.gate
+	ld a, PREDEFPAL_PEWTER
+	ret
+
 .cave
 	ld a, PREDEFPAL_DUNGEONS
 	ret
 
-.env5
+.forest
 	ld a, PREDEFPAL_VERMILION
-	ret
-
-.gate
-	ld a, PREDEFPAL_PEWTER
 	ret
 
 INCLUDE "data/maps/sgb_roof_pal_inds.asm"
