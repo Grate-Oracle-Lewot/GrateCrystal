@@ -91,9 +91,8 @@ INCLUDE "data/sprites/player_sprites.asm"
 AddMapSprites:
 	call GetMapEnvironment
 	cp GATE
-	jp c, AddOutdoorSprites
-	jp AddIndoorSprites
-	ret
+	jr c, AddOutdoorSprites
+	; fallthrough
 
 AddIndoorSprites:
 	ld hl, wMap1ObjectSprite
@@ -132,7 +131,7 @@ LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES
 	call RunMapCallback
 	call GetUsedSprites
-	jp LoadMiscTiles
+	; fallthrough
 
 LoadMiscTiles:
 	ld a, [wSpriteFlags]
@@ -290,10 +289,6 @@ _GetSpritePalette::
 	ld c, a
 	ret
 
-LoadAndSortSprites:
-	call LoadSpriteGFX
-	jp ArrangeUsedSprites
-
 AddSpriteGFX:
 ; Add any new sprite ids to a list of graphics to be loaded.
 ; Return carry if the list is full.
@@ -354,6 +349,10 @@ LoadSpriteGFX:
 	ld a, l
 	ret
 
+LoadAndSortSprites:
+	call LoadSpriteGFX
+	; fallthrough
+
 ArrangeUsedSprites:
 ; Get the length of each sprite and space them out in VRAM.
 ; Crystal introduces a second table in VRAM bank 0.
@@ -413,17 +412,9 @@ ArrangeUsedSprites:
 GetSpriteLength:
 ; Return the length of sprite type a in tiles.
 
-	cp WALKING_SPRITE
-	jr z, .AnyDirection
-	cp STANDING_SPRITE
-	jr z, .AnyDirection
 	cp STILL_SPRITE
 	jr z, .OneDirection
 
-	ld a, 12
-	ret
-
-.AnyDirection:
 	ld a, 12
 	ret
 
@@ -504,23 +495,6 @@ endr
 	ld a, h
 	add HIGH(vTiles1 - vTiles0)
 	ld h, a
-	jp .CopyToVram
-
-.GetTileAddr:
-; Return the address of tile (a) in (hl).
-	and $7f
-	ld l, a
-	ld h, 0
-rept 4
-	add hl, hl
-endr
-	ld a, l
-	add LOW(vTiles0)
-	ld l, a
-	ld a, h
-	adc HIGH(vTiles0)
-	ld h, a
-	ret
 
 .CopyToVram:
 	ldh a, [rVBK]
@@ -536,6 +510,22 @@ endr
 	call Get2bpp
 	pop af
 	ldh [rVBK], a
+	ret
+
+.GetTileAddr:
+; Return the address of tile (a) in (hl).
+	and $7f
+	ld l, a
+	ld h, 0
+rept 4
+	add hl, hl
+endr
+	ld a, l
+	add LOW(vTiles0)
+	ld l, a
+	ld a, h
+	adc HIGH(vTiles0)
+	ld h, a
 	ret
 
 LoadEmote::
