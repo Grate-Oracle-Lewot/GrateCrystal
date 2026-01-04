@@ -54,15 +54,15 @@ if DEF (_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 else
 	cp FINULL
 endc
-	jr z, .done
+	jp z, .done
 endc
 
 	ld a, [wBattleType]
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
-	jr z, .done
+	jp z, .done
 	cp BATTLETYPE_LEGENDARY
-	jr nc, .done
+	jp nc, .done
 
 	ld de, MUSIC_SPECIAL_BATTLE
 	cp BATTLETYPE_SHINY
