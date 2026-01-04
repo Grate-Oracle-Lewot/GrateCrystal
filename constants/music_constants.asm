@@ -119,6 +119,8 @@
 	const MUSIC_OLD_GAME_CORNER              ; 71
 	const MUSIC_OLD_ROCKET_HIDEOUT           ; 72
 	const MUSIC_WHIRL_ISLANDS                ; 73
+	const MUSIC_INVERSE_BATTLE               ; 74
+	const MUSIC_NEUTRAL_BATTLE               ; 75
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
