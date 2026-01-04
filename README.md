@@ -64,7 +64,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Fighting types don't lose Attack while Burned
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
-  - Spinarak and Ariados don't make contact when using Wrap (yes, I bothered to code this)
+  - Spinarak and Ariados don't make contact when using Bind or Wrap (yes, I bothered to code this)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
   - Unown and Delibird learn multiple moves
@@ -390,7 +390,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - TMs can be tossed from the Pack
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones (and some old ones from Gen I)
-- Most Gen I songs used somewhere, plus a couple of demixed songs from later games, and a couple each from Pokémon Pinball and Pokémon TCG/2
+- Most Gen I songs used somewhere, plus a couple of demixed songs from later games, and a couple each from Pokémon Pinball and Pokémon TCG 2
 - A fourth Pokémon stats page showing DVs, Hidden Power type, and caught data
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
