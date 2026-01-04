@@ -275,16 +275,9 @@ CheckSpecialPhoneCall::
 	jp AddNTimes
 
 SpecialCallOnlyWhenOutside:
+; return c for outside, nc for inside
 	ld a, [wEnvironment]
-	cp TOWN
-	jr z, .outside
-	cp ROUTE
-	jr z, .outside
-	xor a
-	ret
-
-.outside
-	scf
+	cp GATE
 	ret
 
 MakePhoneCallFromPokegear:
