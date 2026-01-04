@@ -13,13 +13,9 @@ ResetBikeFlags::
 
 ResetFlashIfOutOfCave::
 	ld a, [wEnvironment]
-	cp ROUTE
-	jr z, .outdoors
-	cp TOWN
-	jr z, .outdoors
-	ret
+	cp GATE
+	ret nc
 
-.outdoors
 	ld hl, wStatusFlags
 	res STATUSFLAGS_FLASH_F, [hl]
 	ret
