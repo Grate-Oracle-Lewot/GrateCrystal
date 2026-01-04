@@ -335,22 +335,6 @@ CopyWarpData::
 	scf
 	ret
 
-CheckOutdoorMap::
-	cp ROUTE
-	ret z
-	cp TOWN
-	ret
-
-CheckIndoorMap::
-	cp INDOOR
-	ret z
-	cp CAVE
-	ret z
-	cp DUNGEON
-	ret z
-	cp GATE
-	ret
-
 LoadMapAttributes::
 	call LoadMapAttributes_Optimization
 	xor a ; do not skip object events
