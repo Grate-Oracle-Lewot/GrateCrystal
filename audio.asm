@@ -149,19 +149,19 @@ INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/surfingpikachu.asm"
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/wildbattle.asm"
-INCLUDE "audio/music/meetjessiejames.asm"
+INCLUDE "audio/music/imakuni.asm"
 INCLUDE "audio/music/bikeriding.asm"
 INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oldgamecorner.asm"
 INCLUDE "audio/music/oldrockethideout.asm"
 INCLUDE "audio/music/dive.asm"
-INCLUDE "audio/music/gastlyinthegraveyard.asm"
 
 
 SECTION "Extra Songs 4", ROMX
 
-INCLUDE "audio/music/grdueltheme2.asm"
+INCLUDE "audio/music/dueltheme1.asm"
 INCLUDE "audio/music/mewtwostage.asm"
+INCLUDE "audio/music/gastlyinthegraveyard.asm"
 
 
 SECTION "Sound Effects", ROMX
