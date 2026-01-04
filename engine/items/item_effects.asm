@@ -772,7 +772,9 @@ DuskBallMultiplier:
 ; no boost indoors, even at night
 	ld a, [wEnvironment]
 	cp INDOOR
-	ret nz
+	ret z
+	cp DUNGEON
+	ret z
 ; no boost in Harsh Sunlight
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
