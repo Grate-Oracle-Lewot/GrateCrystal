@@ -390,7 +390,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - TMs can be tossed from the Pack
 - Enemy trainers have maximum happiness for a powerful Return
 - Colored party menu icons, plus a few new ones (and some old ones from Gen I)
-- Most Gen I songs used somewhere, plus a couple of demixed songs from later games, and a couple each from Pokémon Pinball and Pokémon TCG 2
+- Most Gen I songs used somewhere, plus a few from other sources (thanks to dannye for music files)
 - A fourth Pokémon stats page showing DVs, Hidden Power type, and caught data
 - One more wild Pokémon slot for both grass and water
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
