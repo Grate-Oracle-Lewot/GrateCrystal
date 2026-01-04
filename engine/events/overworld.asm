@@ -913,9 +913,7 @@ EscapeRopeOrDig:
 .CheckCanDig:
 	call GetMapEnvironment
 	cp CAVE
-	jr z, .incave
-	cp DUNGEON
-	jr z, .incave
+	jr nc, .incave
 .fail
 	ld a, $2
 	ret
