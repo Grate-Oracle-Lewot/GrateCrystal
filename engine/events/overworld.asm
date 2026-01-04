@@ -667,8 +667,8 @@ FlyFunction:
 	call CheckBadge
 	jr c, .nostormbadge
 	call GetMapEnvironment
-	call CheckOutdoorMap
-	jr z, .outdoors
+	cp GATE
+	jr c, .outdoors
 	jr .indoors
 
 .outdoors
@@ -1030,8 +1030,8 @@ TeleportFunction:
 
 .TryTeleport:
 	call GetMapEnvironment
-	call CheckOutdoorMap
-	jr z, .CheckIfSpawnPoint
+	cp GATE
+	jr c, .CheckIfSpawnPoint
 	jr .nope
 
 .CheckIfSpawnPoint:
@@ -1990,13 +1990,12 @@ BikeFunction:
 
 .CheckEnvironment:
 	call GetMapEnvironment
-	call CheckOutdoorMap
-	jr z, .ok
+	cp INDOOR
+	jr c, .ok
 	cp CAVE
 	jr z, .ok
-	cp GATE
-	jr z, .ok
-	jr .nope
+	cp FOREST
+	jr nz, .nope
 
 .ok
 	call GetPlayerStandingTile
