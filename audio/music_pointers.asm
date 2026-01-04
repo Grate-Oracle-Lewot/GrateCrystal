@@ -115,10 +115,13 @@ Music:
 	dba Music_SurfingPikachu
 	dba Music_FinalBattle
 	dba Music_WildBattle
-	dba Music_MeetJessieJames
+	dba Music_Imakuni2
 	dba Music_BikeRiding
 	dba Music_PokemonTower
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
 	dba Music_Dive
+	dba Music_GRDuelTheme2
+	dba Music_MewtwoStage
+	dba Music_GastlyInTheGraveyard
 	assert_table_length NUM_MUSIC_SONGS
