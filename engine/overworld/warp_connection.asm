@@ -175,7 +175,6 @@ EnterMapWarp:
 	cp GATE
 	ret c
 
-
 ; MOUNT_MOON_SQUARE and TIN_TOWER_ROOF are outdoor maps within indoor maps.
 ; Dig and Escape Rope should not take you to them.
 	ld a, [wPrevMapGroup]
