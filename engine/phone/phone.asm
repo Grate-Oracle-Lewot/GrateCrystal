@@ -7,10 +7,6 @@ AddPhoneNumber::
 	xor a
 	ret
 
-SpecialCallWhereverYouAre:
-	scf
-	ret
-
 DelCellNum::
 	call _CheckCellNum
 	jr nc, SpecialCallWhereverYouAre
@@ -33,6 +29,9 @@ _CheckCellNum:
 
 .got_it
 	dec hl
+	; fallthrough
+
+SpecialCallWhereverYouAre:
 	scf
 	ret
 
