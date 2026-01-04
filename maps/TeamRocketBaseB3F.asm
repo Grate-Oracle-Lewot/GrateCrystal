@@ -88,18 +88,18 @@ RocketBaseBoss:
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	turnobject TEAMROCKETBASEB3F_ROCKET1, DOWN
 	opentext
-	writetext ExecutiveM4BeforeText
+	writetext ExecutiveM1BeforeText
 	waitbutton
 	closetext
 	applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossApproachesPlayerMovement
-	winlosstext ExecutiveM4BeatenText, 0
+	winlosstext ExecutiveM1BeatenText, 0
 	setlasttalked TEAMROCKETBASEB3F_ROCKET1
-	loadtrainer EXECUTIVEM, EXECUTIVEM_4
+	loadtrainer EXECUTIVEM, EXECUTIVEM_1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_4
+	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
 	opentext
-	writetext ExecutiveM4AfterText
+	writetext ExecutiveM1AfterText
 	waitbutton
 	closetext
 	applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossHitsTableMovement
@@ -364,7 +364,7 @@ RocketBaseRivalText:
 	cont "STRENGTH"
 	done
 
-ExecutiveM4BeforeText:
+ExecutiveM1BeforeText:
 	text "What? Who are you?"
 	line "This is the office"
 
@@ -391,7 +391,7 @@ ExecutiveM4BeforeText:
 	cont "place!"
 	done
 
-ExecutiveM4BeatenText:
+ExecutiveM1BeatenText:
 	text "I… I couldn't do a"
 	line "thing…"
 
@@ -399,7 +399,7 @@ ExecutiveM4BeatenText:
 	line "forgive me…"
 	done
 
-ExecutiveM4AfterText:
+ExecutiveM1AfterText:
 	text "No, I can't let"
 	line "this affect me."
 
