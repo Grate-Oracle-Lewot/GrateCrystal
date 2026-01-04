@@ -157,6 +157,10 @@ INCLUDE "audio/music/oldrockethideout.asm"
 INCLUDE "audio/music/dive.asm"
 INCLUDE "audio/music/grdueltheme2.asm"
 INCLUDE "audio/music/mewtwostage.asm"
+
+
+SECTION "Extra Songs 4", ROMX
+
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
 
 
