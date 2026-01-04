@@ -1671,10 +1671,7 @@ wJoypadDisable::
 
 	ds 1
 
-wInBattleTowerBattle::
-; 0 not in BattleTower-Battle
-; 1 BattleTower-Battle
-	db
+wInBattleTowerBattle:: db ; nonzero for Tower battle
 
 wHiddenItemDistance:: db
 
@@ -1720,7 +1717,9 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 1: battle items off/on
+; bit 0: battle items off/on
+; bit 1: level caps off/on
+; bit 2: level caps obedience/hard cap
 	db
 	ds 2
 wOptionsEnd::
