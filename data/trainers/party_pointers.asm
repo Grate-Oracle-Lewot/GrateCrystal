@@ -34,14 +34,14 @@ TrainerGroups:
 	dba RedGroup
 	dba Rival1Group
 	dba Rival2Group
+	dba AerobonesGroup
+	dba KabubonesGroup
+	dba MissingnoTGroup
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
 	dba PKMNTrainerGroup
 	dba CalFGroup
 	dba MysticalmanGroup
-	dba AerobonesGroup
-	dba KabubonesGroup
-	dba MissingnoTGroup
 	dba OldGroup
 	dba YoungsterGroup
 	dba SchoolboyGroup
