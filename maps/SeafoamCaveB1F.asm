@@ -16,7 +16,18 @@ SeafoamCaveB1F_MapScripts:
 	def_callbacks
 
 SeafoamCaveRadio:
-	jumpstd Radio2Script
+	playsound SFX_WRONG
+	waitsfx
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .AlreadyOn
+	playmusic MUSIC_LEWOTS_RADIO
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+
+.AlreadyOn:
+	special RestartMapMusic
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
 
 SeafoamCaveStatue:
 	jumptext SeafoamCaveStatueText
