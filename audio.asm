@@ -159,7 +159,7 @@ INCLUDE "audio/music/dive.asm"
 
 SECTION "Extra Songs 4", ROMX
 
-INCLUDE "audio/music/dueltheme1.asm"
+INCLUDE "audio/music/catchemred.asm"
 INCLUDE "audio/music/mewtwostage.asm"
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
 
