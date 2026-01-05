@@ -72,7 +72,7 @@ TrainerExecutiveF2:
 
 RadioTower5FRocketBossScene:
 	applymovement PLAYER, RadioTower5FPlayerTwoStepsLeftMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_GIOVANNI_ENCOUNTER
 	turnobject RADIOTOWER5F_ROCKET, RIGHT
 	opentext
 	writetext RadioTower5FRocketBossBeforeText
