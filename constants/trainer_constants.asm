@@ -170,6 +170,17 @@ KRIS EQU __trainer_class__
 	const RIVAL2_2_CYNDAQUIL
 	const RIVAL2_2_TOTODILE
 
+; Start of creepy music
+
+	trainerclass AEROBONES ; 25
+	const AEROBONES1
+
+	trainerclass KABUBONES ; 26
+	const KABUBONES1
+
+	trainerclass MISSINGNO_T ; 27
+	const MISSINGNO_T1
+
 ; Start of normal trainer music (region-dependent)
 
 	trainerclass COOLTRAINERM ; 20
@@ -235,15 +246,6 @@ KRIS EQU __trainer_class__
 	const RICO
 	const OLIE
 	const GROVER
-
-	trainerclass AEROBONES ; 25
-	const AEROBONES1
-
-	trainerclass KABUBONES ; 26
-	const KABUBONES1
-
-	trainerclass MISSINGNO_T ; 27
-	const MISSINGNO_T1
 
 	trainerclass OLD ; 28
 	const MAN
