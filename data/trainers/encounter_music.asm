@@ -35,14 +35,14 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER        ; red
 	db MUSIC_RIVAL_ENCOUNTER        ; rival1
 	db MUSIC_RIVAL_ENCOUNTER        ; rival2
+	db MUSIC_SAGE_ENCOUNTER         ; aerobones
+	db MUSIC_SAGE_ENCOUNTER         ; kabubones
+	db MUSIC_SAGE_ENCOUNTER         ; missingno_t
 	db MUSIC_HIKER_ENCOUNTER        ; cooltrainerm
 	db MUSIC_BEAUTY_ENCOUNTER       ; cooltrainerf
 	db MUSIC_OFFICER_ENCOUNTER      ; cal
 	db MUSIC_CLAIR                  ; cal_f
 	db MUSIC_MYSTICALMAN_ENCOUNTER  ; mysticalman
-	db MUSIC_SAGE_ENCOUNTER         ; aerobones
-	db MUSIC_SAGE_ENCOUNTER         ; kabubones
-	db MUSIC_SAGE_ENCOUNTER         ; missingno_t
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; old
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; youngster
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; schoolboy
