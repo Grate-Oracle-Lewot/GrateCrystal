@@ -13,7 +13,7 @@ DefaultOptions:
 	db 1 << BATTLE_ITEMS
 	; LEVEL_CAPS_ON_OFF:    0 (OFF)
 	; LEVEL_CAPS_OBEDIENCE: 0 (DISOBEY)
-	; HARD_MODE_ON_OFF:     0 (OFF)
+	; HARD_MODE:            0 (OFF)
 
 	db $00
 	db $00
