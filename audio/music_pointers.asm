@@ -129,4 +129,5 @@ Music:
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
 	dba Music_SeelStage
+	dba Music_BlueField
 	assert_table_length NUM_MUSIC_SONGS
