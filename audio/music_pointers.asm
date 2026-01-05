@@ -124,6 +124,8 @@ Music:
 	dba Music_Dive
 	dba Music_CatchEmRed
 	dba Music_MewtwoStage
+	dba Music_Title
+	dba Music_GengarInTheGraveyard
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
 	dba Music_SeelStage
