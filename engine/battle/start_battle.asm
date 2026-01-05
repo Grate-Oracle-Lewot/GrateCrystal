@@ -93,18 +93,8 @@ endc
 	cp BATTLETYPE_INVERSE
 	jr z, .inverse
 	cp BATTLETYPE_TYPELESS
-	jr nz, .normaltype
+	jr z, .typeless
 
-.inverse
-	ld a, [wOtherTrainerClass]
-	ld de, MUSIC_INVERSE_BOSS
-	cp RIVAL2 + 1
-	jr c, .done
-
-	ld de, MUSIC_INVERSE_BATTLE
-	jr .done
-
-.normaltype
 	ld a, [wOtherTrainerClass]
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
@@ -156,6 +146,24 @@ endc
 	pop de
 	pop hl
 	ret
+
+.inverse
+	ld a, [wOtherTrainerClass]
+	ld de, MUSIC_INVERSE_BOSS
+	cp RIVAL2 + 1
+	jr c, .done
+
+	ld de, MUSIC_INVERSE_BATTLE
+	jr .done
+
+.typeless
+	ld a, [wOtherTrainerClass]
+	ld de, MUSIC_NEUTRAL_BOSS
+	cp RIVAL2 + 1
+	jr c, .done
+
+	ld de, MUSIC_NEUTRAL_BATTLE
+	jr .done
 
 ClearBattleRAM:
 	xor a
