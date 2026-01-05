@@ -34,14 +34,14 @@ TrainerPicPointers::
 	dba RedPic
 	dba Rival1Pic
 	dba Rival2Pic
+	dba AerobonesPic
+	dba KabubonesPic
+	dba MissingnoTPic
 	dba CooltrainermPic
 	dba CooltrainerfPic
 	dba CalPic
 	dba CalfPic
 	dba MysticalmanPic
-	dba AerobonesPic
-	dba KabubonesPic
-	dba MissingnoTPic
 	dba OldPic
 	dba YoungsterPic
 	dba SchoolboyPic
