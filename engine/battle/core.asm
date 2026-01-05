@@ -4198,8 +4198,7 @@ InitEnemyMon:
 	inc de
 	ld a, [hl]
 	ld [de], a
-	; The enemy mon's base Sp. Def isn't needed since its base
-	; Sp. Atk is also used to calculate Sp. Def stat experience.
+
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
 	jr nz, .skip_pikachu
@@ -4210,7 +4209,7 @@ InitEnemyMon:
 .skip_pikachu
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
-	ld b, NUM_STATS - 1
+	ld b, NUM_STATS
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -6645,24 +6644,15 @@ endc
 	call CopyBytes
 
 .Finish:
-; Copy the first five base stats (the enemy mon's base Sp. Atk
-; is also used to calculate Sp. Def stat experience)
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
-	ld b, NUM_STATS - 1
+	ld b, wEnemyMonEnd - wEnemyMonBaseStats
 .loop
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec b
 	jr nz, .loop
-
-	ld a, [wBaseCatchRate]
-	ld [de], a
-	inc de
-
-	ld a, [wBaseExp]
-	ld [de], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
