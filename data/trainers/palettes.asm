@@ -38,14 +38,14 @@ INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/red.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival2.gbcpal", middle_colors
+INCBIN "gfx/trainers/aerobones.gbcpal", middle_colors
+INCBIN "gfx/trainers/kabubones.gbcpal", middle_colors
+INCBIN "gfx/trainers/missingno_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
-INCBIN "gfx/trainers/aerobones.gbcpal", middle_colors
-INCBIN "gfx/trainers/kabubones.gbcpal", middle_colors
-INCBIN "gfx/trainers/missingno_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/old.gbcpal", middle_colors
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
