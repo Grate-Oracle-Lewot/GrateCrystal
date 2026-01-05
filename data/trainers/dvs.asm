@@ -33,14 +33,14 @@ TrainerClassDVs:
 	dn 14, 15, 15, 14 ; RED
 	dn 12, 13, 13, 12 ; RIVAL1
 	dn 12, 13, 13, 12 ; RIVAL2
+	dn 15,  0,  0,  0 ; AEROBONES
+	dn 15, 14, 14, 14 ; KABUBONES
+	dn  0,  0,  0,  0 ; MISSINGNO_T
 	dn 12, 13,  9, 10 ; COOLTRAINER_M
 	dn 11, 12, 12,  9 ; COOLTRAINER_F
 	dn 14, 13, 13, 14 ; CAL
 	dn 13, 14, 14, 13 ; CAL_F
 	dn 12, 13, 13, 12 ; MYSTICALMAN
-	dn 15,  0,  0,  0 ; AEROBONES
-	dn 15, 14, 14, 14 ; KABUBONES
-	dn  0,  0,  0,  0 ; MISSINGNO_T
 	dn  6,  5,  5,  6 ; OLD
 	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
