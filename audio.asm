@@ -155,13 +155,14 @@ INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/oldgamecorner.asm"
 INCLUDE "audio/music/oldrockethideout.asm"
 INCLUDE "audio/music/dive.asm"
+INCLUDE "audio/music/gastlyinthegraveyard.asm"
+INCLUDE "audio/music/mewtwostage.asm"
 
 
 SECTION "Extra Songs 4", ROMX
 
 INCLUDE "audio/music/catchemred.asm"
-INCLUDE "audio/music/mewtwostage.asm"
-INCLUDE "audio/music/gastlyinthegraveyard.asm"
+INCLUDE "audio/music/seelstage.asm"
 
 
 SECTION "Sound Effects", ROMX
