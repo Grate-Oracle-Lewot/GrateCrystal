@@ -122,6 +122,7 @@
 	const MUSIC_INVERSE_BATTLE               ; 74
 	const MUSIC_INVERSE_BOSS                 ; 75
 	const MUSIC_CREEPY_BATTLE                ; 76
+	const MUSIC_LEWOTS_RADIO                 ; 77
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
