@@ -171,6 +171,7 @@ KRIS EQU __trainer_class__
 	const RIVAL2_2_TOTODILE
 
 ; Start of creepy music
+; End of boss music for inverse/neutral battles
 
 	trainerclass AEROBONES ; 25
 	const AEROBONES1
