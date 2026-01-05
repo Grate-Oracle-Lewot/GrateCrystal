@@ -181,7 +181,7 @@ Route22HouseGiovanniScript:
 	opentext
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_GIOVANNI_ENCOUNTER
 	writetext Route22HouseGiovanniBeforeText
 	waitbutton
 	winlosstext Route22HouseGiovanniBeatenText, 0
