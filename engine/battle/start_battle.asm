@@ -45,10 +45,10 @@ PlayBattleMusic:
 	jr nz, .trainermusic
 
 if DEF (_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
-	; Finull theme goes unused
+	; creepy theme goes unused
 else
 	ld a, [wTempWildMonSpecies]
-	ld de, MUSIC_FINULL_BATTLE
+	ld de, MUSIC_CREEPY_BATTLE
 if DEF (_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	cp MISSINGNO
 else
@@ -89,6 +89,23 @@ endc
 	jr .done
 
 .trainermusic
+	ld a, [wBattleType]
+	cp BATTLETYPE_INVERSE
+	jr z, .inverse
+	cp BATTLETYPE_TYPELESS
+	jr nz, .normaltype
+
+.inverse
+	ld a, [wOtherTrainerClass]
+	ld de, MUSIC_INVERSE_BOSS
+	cp RIVAL2
+	jr nc, .done
+
+	ld de, MUSIC_INVERSE_BATTLE
+	jr .done
+
+.normaltype
+	ld a, [wOtherTrainerClass]
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
 	jr nc, .done
@@ -119,15 +136,6 @@ endc
 	ld a, [wLinkMode]
 	and a
 	jr nz, .johto
-
-	ld a, [wBattleType]
-	ld de, MUSIC_INVERSE_BATTLE
-	cp BATTLETYPE_INVERSE
-	jr z, .done
-
-	ld de, MUSIC_NEUTRAL_BATTLE
-	cp BATTLETYPE_TYPELESS
-	jr z, .done
 
 	farcall RegionCheck
 	ld a, e
