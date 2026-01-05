@@ -114,15 +114,16 @@
 	const MUSIC_DARKROOM_BATTLE              ; 6c
 	const MUSIC_SPECIAL_BATTLE               ; 6d
 	const MUSIC_JESSIE_JAMES_ENCOUNTER       ; 6e
-	const MUSIC_CYCLING_ROAD                 ; 6f
-	const MUSIC_SAFARI_ZONE                  ; 70
-	const MUSIC_OLD_GAME_CORNER              ; 71
-	const MUSIC_OLD_ROCKET_HIDEOUT           ; 72
-	const MUSIC_WHIRL_ISLANDS                ; 73
-	const MUSIC_INVERSE_BATTLE               ; 74
-	const MUSIC_INVERSE_BOSS                 ; 75
-	const MUSIC_CREEPY_BATTLE                ; 76
-	const MUSIC_LEWOTS_RADIO                 ; 77
+	const MUSIC_GIOVANNI_ENCOUNTER           ; 6f
+	const MUSIC_CYCLING_ROAD                 ; 70
+	const MUSIC_SAFARI_ZONE                  ; 71
+	const MUSIC_OLD_GAME_CORNER              ; 72
+	const MUSIC_OLD_ROCKET_HIDEOUT           ; 73
+	const MUSIC_WHIRL_ISLANDS                ; 74
+	const MUSIC_INVERSE_BATTLE               ; 75
+	const MUSIC_INVERSE_BOSS                 ; 76
+	const MUSIC_CREEPY_BATTLE                ; 77
+	const MUSIC_LEWOTS_RADIO                 ; 78
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
