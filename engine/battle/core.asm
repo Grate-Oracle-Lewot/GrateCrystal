@@ -6271,7 +6271,7 @@ LoadEnemyMon:
 
 ; Initialize DVs
 
-; If we're in a trainer battle, DVs are predetermined
+; Skip Transform check for wildmons
 	ld a, [wBattleMode]
 	and a
 	jr z, .InitDVs
@@ -6376,22 +6376,8 @@ LoadEnemyMon:
 ; Species-specfic:
 
 	ld a, [wTempEnemyMonSpecies]
-	cp UNOWN
-	jr nz, .Pikachu
-
-; Get letter based on DVs
-	ld hl, wEnemyMonDVs
-	predef GetUnownLetter
-; Can't use any letters that haven't been unlocked
-; Only applies to Ruins of Alph to prevent infinite loops
-	call CheckUnownLetter
-	jr c, .GenerateDVs ; reroll DVs
-	jp .Happiness
-
-.Pikachu:
-	ld a, [wTempEnemyMonSpecies]
 	cp PIKACHU
-	jr nz, .Magikarp
+	jr nz, .Unown
 ; Get form based on DVs
 	ld hl, wEnemyMonDVs
 	predef GetPikachuForm
@@ -6400,10 +6386,35 @@ LoadEnemyMon:
 	ld [wEnemyMonType2], a
 	jp .Happiness
 
+.Unown:
+	cp UNOWN
+	jr nz, .Magikarp
+
+; Get letter based on DVs
+	ld hl, wEnemyMonDVs
+	predef GetUnownLetter
+
+; For forced shiny, skip rerolling DVs
+	ld a, [wBattleType]
+	cp BATTLETYPE_SHINY
+	jp z, .Happiness
+
+; In the Ruins of Alph only, reroll until we get an unlocked letter
+	call CheckUnownLetter
+	jr c, .GenerateDVs ; reroll DVs
+	jp .Happiness
+
 .Magikarp:
-	ld a, [wTempEnemyMonSpecies]
 	cp MAGIKARP
+if DEF(_LITTLE_CUP)
+	jr nz, .Happiness
+else
 	jp nz, .Happiness
+
+; For forced shiny, skip rerolling DVs
+	ld a, [wBattleType]
+	cp BATTLETYPE_SHINY
+	jp z, .Happiness
 
 ; Are we at the Lake of Rage?
 	ld a, [wMapGroup]
@@ -6424,11 +6435,7 @@ LoadEnemyMon:
 
 ; If at the lake with Rockets, change any Magikarp into a Gyarados with all 0 DVs
 ; Naturally-occurring Gyarados will still have random DVs
-if DEF(_LITTLE_CUP)
-	ld a, MAGIKARP
-else
 	ld a, GYARADOS
-endc
 	ld [wTempEnemyMonSpecies], a
 	ld [wEnemyMonSpecies], a
 	ld [wCurSpecies], a
@@ -6445,6 +6452,7 @@ endc
 	jr .Happiness
 
 .Skip_Gyarados:
+endc
 ; Get Magikarp's length
 	ld de, wEnemyMonDVs
 	ld bc, wPlayerID
