@@ -194,6 +194,24 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_STATUS | AI_SETUP | AI_CAUTIOUS | AI_IMMUNITIES | AI_RISKY | AI_AGGRESSIVE | AI_SMART
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
 
+; Aerobones
+	db NO_ITEM, NO_ITEM ; items
+	db 0 ; base reward
+	dw NO_AI
+	dw NO_AI
+
+; Kabubones
+	db NO_ITEM, NO_ITEM ; items
+	db 42 ; base reward
+	dw NO_AI
+	dw NO_AI
+
+; Missingno T
+	db NO_ITEM, NO_ITEM ; items
+	db 1 ; base reward
+	dw NO_AI
+	dw NO_AI
+
 ; CooltrainerM
 	db DIRE_HIT, MAX_POTION ; items
 	db 17 ; base reward
@@ -223,24 +241,6 @@ TrainerClassAttributes:
 	db 30 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_SETUP | AI_CAUTIOUS | AI_IMMUNITIES | AI_RISKY | AI_AGGRESSIVE | AI_AGGRESSIVE_2 | AI_SMART | AI_SIMPLE | AI_TROLL
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
-
-; Aerobones
-	db NO_ITEM, NO_ITEM ; items
-	db 0 ; base reward
-	dw NO_AI
-	dw NO_AI
-
-; Kabubones
-	db NO_ITEM, NO_ITEM ; items
-	db 42 ; base reward
-	dw NO_AI
-	dw NO_AI
-
-; Missingno T
-	db NO_ITEM, NO_ITEM ; items
-	db 1 ; base reward
-	dw NO_AI
-	dw NO_AI
 
 ; Old Man
 	db NO_ITEM, NO_ITEM ; items
