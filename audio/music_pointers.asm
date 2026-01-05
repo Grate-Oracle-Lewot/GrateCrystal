@@ -124,4 +124,5 @@ Music:
 	dba Music_CatchEmRed
 	dba Music_MewtwoStage
 	dba Music_GastlyInTheGraveyard
+	dba Music_SeelStage
 	assert_table_length NUM_MUSIC_SONGS
