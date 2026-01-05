@@ -122,8 +122,9 @@
 	const MUSIC_WHIRL_ISLANDS                ; 74
 	const MUSIC_INVERSE_BATTLE               ; 75
 	const MUSIC_INVERSE_BOSS                 ; 76
-	const MUSIC_CREEPY_BATTLE                ; 77
-	const MUSIC_LEWOTS_RADIO                 ; 78
+	const MUSIC_CREEPY_WILD_BATTLE           ; 77
+	const MUSIC_CREEPY_TRAINER_BATTLE        ; 78
+	const MUSIC_LEWOTS_RADIO                 ; 79
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
