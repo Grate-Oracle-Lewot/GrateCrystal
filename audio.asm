@@ -162,6 +162,8 @@ SECTION "Extra Songs 4", ROMX
 
 INCLUDE "audio/music/catchemred.asm"
 INCLUDE "audio/music/mewtwostage.asm"
+INCLUDE "audio/music/title.asm"
+INCLUDE "audio/music/gengarinthegraveyard.asm"
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
 INCLUDE "audio/music/seelstage.asm"
 
