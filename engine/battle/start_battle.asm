@@ -48,7 +48,7 @@ if DEF (_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
 	; creepy theme goes unused
 else
 	ld a, [wTempWildMonSpecies]
-	ld de, MUSIC_CREEPY_BATTLE
+	ld de, MUSIC_CREEPY_WILD_BATTLE
 if DEF (_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS)
 	cp MISSINGNO
 else
@@ -76,9 +76,9 @@ endc
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
@@ -98,8 +98,8 @@ endc
 .inverse
 	ld a, [wOtherTrainerClass]
 	ld de, MUSIC_INVERSE_BOSS
-	cp RIVAL2
-	jr nc, .done
+	cp RIVAL2 + 1
+	jr c, .done
 
 	ld de, MUSIC_INVERSE_BATTLE
 	jr .done
@@ -110,8 +110,12 @@ endc
 	cp GRUNTM
 	jr nc, .done
 
-	cp RIVAL2 + 1
+	cp MISSINGNO_T + 1
 	jr nc, .normaltrainer
+
+	ld de, MUSIC_CREEPY_TRAINER_BATTLE
+	cp AEROBONES
+	jr nc, .done
 
 	ld de, MUSIC_RIVAL_BATTLE
 	cp RIVAL1
