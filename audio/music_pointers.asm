@@ -116,6 +116,7 @@ Music:
 	dba Music_FinalBattle
 	dba Music_WildBattle
 	dba Music_MeetJessieJames
+	dba Music_YellowUnusedSong
 	dba Music_BikeRiding
 	dba Music_PokemonTower
 	dba Music_OldGameCorner
