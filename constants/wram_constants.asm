@@ -88,6 +88,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const BATTLE_ITEMS         ; 0
 	const LEVEL_CAPS_ON_OFF    ; 1
 	const LEVEL_CAPS_OBEDIENCE ; 2
+	const HARD_MODE_ON_OFF     ; 3
 
 ; wWalkingDirection::
 	const_def -1
