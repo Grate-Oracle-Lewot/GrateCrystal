@@ -85,5 +85,5 @@ TrainerEncounterMusic::
 	db MUSIC_JESSIE_JAMES_ENCOUNTER ; jessie & james
 	db MUSIC_ROCKET_ENCOUNTER       ; executivem
 	db MUSIC_ROCKET_ENCOUNTER       ; executivef
-	db MUSIC_ROCKET_ENCOUNTER       ; boss
+	db MUSIC_GIOVANNI_ENCOUNTER     ; boss
 	assert_table_length NUM_TRAINER_CLASSES + 1
