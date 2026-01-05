@@ -121,7 +121,7 @@ Music:
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
 	dba Music_Dive
-	dba Music_DuelTheme1
+	dba Music_CatchEmRed
 	dba Music_MewtwoStage
 	dba Music_GastlyInTheGraveyard
 	assert_table_length NUM_MUSIC_SONGS
