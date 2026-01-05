@@ -66,7 +66,7 @@ endc
 
 	ld de, MUSIC_SPECIAL_BATTLE
 	cp BATTLETYPE_SHINY
-	jr nc, .done
+	jp nc, .done
 
 	farcall RegionCheck
 	ld a, e
