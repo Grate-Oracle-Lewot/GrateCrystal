@@ -2778,6 +2778,30 @@ endc
 endc
 	db -1 ; end
 
+AerobonesGroup:
+	; AEROBONES (1)
+	db "?????@", TRAINERTYPE_NICKNAME
+	db 50, AERODACTYL, "??????????@"
+	db 50, UNOWN,      "<INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU>@"
+	db 50, HAUNTER,    "GHOST@"
+	db -1 ; end
+
+KabubonesGroup:
+	; KABUBONES (1)
+	db "'M@", TRAINERTYPE_NICKNAME
+	db 50, KABUTOPS,   "SMOOCHUM@"
+	db 50, UNOWN,      "ARCEUS@"
+	db 50, HAUNTER,    "PIKABLU@"
+	db -1 ; end
+
+MissingnoTGroup:
+	; MISSINGNO_T (1)
+	db "NO.@", TRAINERTYPE_NICKNAME
+	db 50, BAYLEEF,    "          @"
+	db 50, UNOWN,      " @"
+	db 50, HAUNTER,    "         ?@"
+	db -1 ; end
+
 CooltrainerMGroup:
 	; COOLTRAINERM (1)
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
@@ -3137,30 +3161,6 @@ MysticalmanGroup:
 	db 100, METAPOD,    PINK_BOW,     RETURN, CURSE, REST, SLEEP_TALK
 	db 100, KAKUNA,     LEFTOVERS,    TOXIC, ATTRACT, PROTECT, SWAGGER
 	db 100, ABRA,       BRIGHTPOWDER, DOUBLE_TEAM, SUBSTITUTE, REST, SLEEP_TALK
-	db -1 ; end
-
-AerobonesGroup:
-	; AEROBONES (1)
-	db "?????@", TRAINERTYPE_NICKNAME
-	db 50, AERODACTYL, "??????????@"
-	db 50, UNOWN,      "<INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU><INV_QU>@"
-	db 50, HAUNTER,    "GHOST@"
-	db -1 ; end
-
-KabubonesGroup:
-	; KABUBONES (1)
-	db "'M@", TRAINERTYPE_NICKNAME
-	db 50, KABUTOPS,   "SMOOCHUM@"
-	db 50, UNOWN,      "ARCEUS@"
-	db 50, HAUNTER,    "PIKABLU@"
-	db -1 ; end
-
-MissingnoTGroup:
-	; MISSINGNO_T (1)
-	db "NO.@", TRAINERTYPE_NICKNAME
-	db 50, BAYLEEF,    "          @"
-	db 50, UNOWN,      " @"
-	db 50, HAUNTER,    "         ?@"
 	db -1 ; end
 
 OldGroup:
