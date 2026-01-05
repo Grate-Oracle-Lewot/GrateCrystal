@@ -4,9 +4,6 @@ MaleTrainers:
 	db COOLTRAINERM
 	db CAL
 	db MYSTICALMAN
-	db AEROBONES
-	db KABUBONES
-	db MISSINGNO_T
 	db YOUNGSTER
 	db SCHOOLBOY
 	db BUG_CATCHER
@@ -36,6 +33,9 @@ MaleTrainers:
 .End
 
 FemaleTrainers:
+	db AEROBONES
+	db KABUBONES
+	db MISSINGNO_T
 	db COOLTRAINERF
 	db CAL_F
 	db LASS
