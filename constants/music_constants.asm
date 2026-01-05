@@ -127,6 +127,7 @@
 	const MUSIC_CREEPY_WILD_BATTLE           ; 79
 	const MUSIC_CREEPY_TRAINER_BATTLE        ; 7a
 	const MUSIC_LEWOTS_RADIO                 ; 7b
+	const MUSIC_DEPARTMENT_STORE             ; 7c
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
