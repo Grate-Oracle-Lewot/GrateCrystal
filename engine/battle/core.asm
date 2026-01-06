@@ -4209,7 +4209,7 @@ InitEnemyMon:
 .skip_pikachu
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
-	ld b, NUM_STATS - 1
+	ld b, NUM_STATS
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -6654,13 +6654,14 @@ endc
 .Finish:
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
-	ld b, wEnemyMonEnd - wEnemyMonBaseStats - 1
+	ld b, wEnemyMonEnd - wEnemyMonBaseStats
 .loop
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec b
 	jr nz, .loop
+	dec de
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
