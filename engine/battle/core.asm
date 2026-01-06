@@ -6654,14 +6654,20 @@ endc
 .Finish:
 	ld hl, wBaseStats
 	ld de, wEnemyMonBaseStats
-	ld b, wEnemyMonEnd - wEnemyMonBaseStats
+	ld b, NUM_STATS
 .loop
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec b
 	jr nz, .loop
-	dec de
+
+	ld a, [wBaseCatchRate]
+	ld [de], a
+	inc de
+
+	ld a, [wBaseExp]
+	ld [de], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
