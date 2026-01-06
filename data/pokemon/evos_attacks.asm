@@ -1698,8 +1698,7 @@ ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db 0 ; no more evolutions
 	db 1, PRESENT
-	db 1, DEFENSE_CURL
-	db 4, TAIL_WHIP
+	db 4, SAFEGUARD
 	db 7, CHARM
 	db 10, SOFTBOILED
 	db 13, DOUBLESLAP
@@ -1709,6 +1708,7 @@ ChanseyEvosAttacks:
 	db 33, REFLECT
 	db 40, LIGHT_SCREEN
 	db 47, DOUBLE_EDGE
+	db 55, FLAIL
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
@@ -3748,8 +3748,7 @@ MiltankEvosAttacks:
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PRESENT
-	db 1, DEFENSE_CURL
-	db 5, TAIL_WHIP
+	db 5, SAFEGUARD
 	db 9, CHARM
 	db 13, SOFTBOILED
 	db 17, DOUBLESLAP
@@ -3759,6 +3758,7 @@ BlisseyEvosAttacks:
 	db 41, REFLECT
 	db 49, LIGHT_SCREEN
 	db 57, DOUBLE_EDGE
+	db 66, FLAIL
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:
@@ -3852,7 +3852,7 @@ TyranitarEvosAttacks:
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TWISTER
-	db 11, SAFEGUARD
+	db 11, MIST
 	db 22, AEROBLAST
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
@@ -3871,7 +3871,7 @@ HoOhEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
-	db 66, RECOVER
+	db 66, SYNTHESIS
 	db 77, SUNNY_DAY
 	db 88, SOLARBEAM
 	db 99, OUTRAGE
