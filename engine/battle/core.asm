@@ -4726,7 +4726,6 @@ UseHeldStatusHealingItem:
 INCLUDE "data/battle/held_heal_status.asm"
 
 HandleStatBoostingHeldItems:
-; The effects handled here are not used in the vanilla game. In Grate Crystal they're used for the X items.
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
@@ -4737,11 +4736,17 @@ HandleStatBoostingHeldItems:
 	call .DoEnemy
 
 .DoPlayer:
+	ld a, [wBattleMonSpecies]
+	cp DITTO
+	ret z
 	call GetPartymonItem
 	ld a, $0
 	jr .HandleItem
 
 .DoEnemy:
+	ld a, [wEnemyMonSpecies]
+	cp DITTO
+	ret z
 	call GetOTPartymonItem
 	ld a, $1
 .HandleItem:
