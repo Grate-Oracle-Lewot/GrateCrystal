@@ -361,9 +361,8 @@ BeautyVictoriaAfterBattleText:
 	done
 
 BeautySamanthaSeenText:
-	text "Give it your best"
-	line "shot, or I'll take"
-	cont "you down!"
+	text "Hit me with your"
+	line "best shot!"
 	done
 
 BeautySamanthaBeatenText:
