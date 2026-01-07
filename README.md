@@ -65,6 +65,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - We can count Shuckle's ability to make Berry Juice, which is now a much better item
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
   - Spinarak and Ariados don't make contact when using Bind or Wrap (yes, I bothered to code this)
+  - Ditto won't activate held X items until after Transforming
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
   - Unown and Delibird learn multiple moves
