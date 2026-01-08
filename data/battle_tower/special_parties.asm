@@ -636,7 +636,7 @@ BattleTowerClair:
 
 	db LUGIA
 	db LEFTOVERS
-	db AEROBLAST, HAIL, AIR_SLASH, DRAGON_PULSE
+	db AEROBLAST, RECOVER, AIR_SLASH, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -646,7 +646,7 @@ BattleTowerClair:
 	bigdw 65535
 	bigdw 65535
 	dn 11, 12, 11, 11 ; DVs
-	db 8, 8, 24, 16 ; PP
+	db 8, 16, 24, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -2047,7 +2047,7 @@ BattleTowerDefaultParty:
 
 	db LUGIA
 	db SCOPE_LENS
-	db AEROBLAST, HAIL, AIR_SLASH, DRAGON_PULSE
+	db AEROBLAST, RECOVER, AIR_SLASH, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
@@ -2057,7 +2057,7 @@ BattleTowerDefaultParty:
 	bigdw 65000
 	bigdw 65000
 	dn 1, 15, 15, 15 ; DVs
-	db 8, 8, 24, 16 ; PP
+	db 8, 16, 24, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
