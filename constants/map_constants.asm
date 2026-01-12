@@ -64,7 +64,7 @@ ENDM
 	map_const ROUTE_2,                                     10, 23 ;  8
 	map_const ROUTE_2_NUGGET_HOUSE,                         4,  4 ;  9
 	map_const ROUTE_2_SOUTH_GATE,                           5,  4 ; 10
-	map_const ROUTE_2_NORTH_GATE,                           5,  4 ; 11
+	map_const ROUTE_2_NORTH_GATE,                           4,  5 ; 11
 	map_const VIRIDIAN_FOREST,                             15, 27 ; 12
 	map_const ROUTE_22,                                    18, 48 ; 13
 	map_const ROUTE_22_HOUSE,                               5,  4 ; 14
@@ -114,7 +114,7 @@ ENDM
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  8
 	map_const ROUTE_6,                                     10,  9 ;  9
 	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 10
-	map_const ROUTE_6_SAFFRON_GATE,                         5,  4 ; 11
+	map_const ROUTE_6_SAFFRON_GATE,                         4,  3 ; 11
 	map_const ROUTE_11,                                    20,  9 ; 12
 	endgroup
 
@@ -129,7 +129,7 @@ ENDM
 	map_const MR_FUJIS_HOUSE,                               5,  4 ;  8
 	map_const LAVENDER_SPEECH_HOUSE,                        4,  4 ;  9
 	map_const ROUTE_8,                                     20,  9 ; 10
-	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 11
+	map_const ROUTE_8_SAFFRON_GATE,                         4,  5 ; 11
 	map_const ROUTE_10_SOUTH,                              10,  9 ; 12
 	map_const ROUTE_12,                                    10, 27 ; 13
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
@@ -155,12 +155,12 @@ ENDM
 	map_const CELADON_MANSION_ROOF_HOUSE,                   4,  4 ; 17
 	map_const CELADON_CAFE,                                 6,  4 ; 18
 	map_const ROUTE_7,                                     15,  6 ; 19
-	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 20
+	map_const ROUTE_7_SAFFRON_GATE,                         4,  5 ; 20
 	map_const ROUTE_16,                                    10,  9 ; 21
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 22
-	map_const ROUTE_16_GATE,                                5,  4 ; 23
+	map_const ROUTE_16_GATE,                                4,  5 ; 23
 	map_const ROUTE_17,                                    10, 45 ; 24
-	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 25
+	map_const ROUTE_17_ROUTE_18_GATE,                       4,  5 ; 25
 	endgroup
 
 	newgroup FUCHSIA                                        ; group  9
@@ -175,7 +175,7 @@ ENDM
 	map_const ROUTE_13,                                    30,  9 ;  9
 	map_const ROUTE_14,                                    10, 18 ; 10
 	map_const ROUTE_15,                                    20,  9 ; 11
-	map_const ROUTE_15_FUCHSIA_GATE,                        5,  4 ; 12
+	map_const ROUTE_15_FUCHSIA_GATE,                        4,  5 ; 12
 	map_const ROUTE_18,                                    10,  9 ; 13
 	endgroup
 
@@ -200,14 +200,14 @@ ENDM
 	map_const ROUTE_5,                                     10,  9 ;  1
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ;  2
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ;  3
-	map_const ROUTE_5_SAFFRON_GATE,                         5,  4 ;  4
+	map_const ROUTE_5_SAFFRON_GATE,                         4,  3 ;  4
 	endgroup
 
 	newgroup CINNABAR                                       ; group 13
 	map_const CINNABAR_ISLAND,                             10,  9 ;  1
 	map_const CINNABAR_POKECENTER_1F,                       5,  4 ;  2
 	map_const ROUTE_19,                                    10, 18 ;  3
-	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  4
+	map_const ROUTE_19_FUCHSIA_GATE,                        4,  3 ;  4
 	map_const ROUTE_20,                                    30,  9 ;  5
 	map_const SEAFOAM_GYM,                                 10,  9 ;  6
 	map_const ROUTE_21,                                    10, 18 ;  7
