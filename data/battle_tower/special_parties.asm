@@ -718,7 +718,7 @@ BattleTowerAD:
 	db "YE-RI@@@@@@"
 
 	db FARFETCH_D
-	db STICK
+	db LEEK
 	db SWORDS_DANCE, SHADOW_CLAW, FLY, CROSS_CHOP
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -1714,7 +1714,7 @@ BattleTowerBlue:
 	db "NIDOKING@@@"
 
 	db MAROWAK
-	db THICK_CLUB
+	db BONE
 	db SHADOW_CLAW, BONEMERANG, POISON_JAB, NIGHTMARE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
