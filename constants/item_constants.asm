@@ -107,7 +107,7 @@
 	const BLACKGLASSES ; 63
 	const SLOWPOKETAIL ; 64
 	const PINK_BOW     ; 65
-	const STICK        ; 66
+	const LEEK         ; 66
 	const SMOKE_BALL   ; 67
 	const NEVERMELTICE ; 68
 	const MAGNET       ; 69
@@ -120,7 +120,7 @@
 	const GS_BALL      ; 70
 	const BLUE_CARD    ; 71
 	const MIRACLE_SEED ; 72
-	const THICK_CLUB   ; 73
+	const BONE         ; 73
 	const FOCUS_BAND   ; 74
 	const LIMBO_STICK  ; 75
 	const BUGWORT      ; 76
@@ -165,7 +165,7 @@
 	const LURE_BALL    ; 9d
 	const FAST_BALL    ; 9e
 	const SWAG_BEACON  ; 9f
-	const LIGHT_BALL   ; a0
+	const VOLTECCER    ; a0
 	const FRIEND_BALL  ; a1
 	const MOON_BALL    ; a2
 	const LOVE_BALL    ; a3
