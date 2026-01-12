@@ -10,7 +10,7 @@ else
 endc
 	db 45 ; catch rate
 	db 188 ; base exp
-	db LEMONADE, ALOE_VERA ; items
+	db LEEK, ALOE_VERA ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/tangela/front.dimensions"
