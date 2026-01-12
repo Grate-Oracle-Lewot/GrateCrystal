@@ -61,8 +61,6 @@ Cable_Club_Map_Names: ; CABLE_CLUB
 	dw Cable_Club_Map_Name1 ; POKECENTER_2F
 	dw Cable_Club_Map_Name2 ; TRADE_CENTER
 	dw Cable_Club_Map_Name3 ; COLOSSEUM
-	dw Cable_Club_Map_Name4 ; MOBILE_TRADE_ROOM
-	dw Cable_Club_Map_Name5 ; MOBILE_BATTLE_ROOM
 	assert_table_length NUM_CABLE_CLUB_MAPS
 
 Pallet_Map_Names: ; PALLET
@@ -585,10 +583,6 @@ Cable_Club_Map_Name2: ; TRADE_CENTER
 	db "<PKMN> TRADE CENTER@"
 Cable_Club_Map_Name3: ; COLOSSEUM
 	db "<PKMN> COLOSSEUM@"
-Cable_Club_Map_Name4: ; MOBILE_TRADE_ROOM
-	db "MOBILE TRADE@"
-Cable_Club_Map_Name5: ; MOBILE_BATTLE_ROOM
-	db "MOBILE BATTLE@"
 
 Pallet_Map_Name1: ; PALLET_TOWN
 	db "PALLET TOWN@"
