@@ -1050,7 +1050,7 @@ BattleCommand_Critical:
 	cp FARFETCH_D
 	jr nz, .FocusEnergy
 	ld a, b
-	cp HELD_STICK
+	cp HELD_LEEK
 	jr nz, .FocusEnergy
 
 .PlusTwo:
@@ -2780,7 +2780,7 @@ ThickClubBoost:
 	push de
 	ld b, CUBONE
 	ld c, MAROWAK
-	ld d, HELD_THICK_CLUB
+	ld d, HELD_BONE
 	jr SpeciesItemBoost
 
 LightBallBoost:
@@ -2791,7 +2791,7 @@ LightBallBoost:
 	push de
 	ld b, PIKACHU
 	ld c, PIKACHU
-	ld d, HELD_LIGHT_BALL
+	ld d, HELD_VOLTECCER
 	; fallthrough
 
 SpeciesItemBoost:
