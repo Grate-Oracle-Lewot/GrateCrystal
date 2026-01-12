@@ -6,7 +6,7 @@
 	db ELECTRIC, CURSE_TYPE ; type
 	db 190 ; catch rate
 	db 84 ; base exp
-	db BERRY, LIGHT_BALL ; items
+	db BERRY, VOLTECCER ; items
 	db GENDER_F50 ; gender ratio
 	db 6 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pikachu_crystal/front.dimensions"
