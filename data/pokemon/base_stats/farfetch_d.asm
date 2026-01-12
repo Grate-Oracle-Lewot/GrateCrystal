@@ -10,7 +10,7 @@ else
 endc
 	db 45 ; catch rate
 	db 135 ; base exp
-	db STICK, THICK_CLUB ; items
+	db LEEK, BONE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/farfetch_d/front.dimensions"
