@@ -6,7 +6,7 @@
 	db ELECTRIC, FAIRY ; type
 	db 190 ; catch rate
 	db 42 ; base exp
-	db BERRY, LIGHT_BALL ; items
+	db BERRY, VOLTECCER ; items
 	db GENDER_F50 ; gender ratio
 	db 6 ; step cycles to hatch
 	INCBIN "gfx/pokemon/pichu/front.dimensions"
