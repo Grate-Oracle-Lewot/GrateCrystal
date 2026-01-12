@@ -327,6 +327,7 @@ INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/RuinsOfAlphAntechamber.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 INCLUDE "maps/DarkCave2F.asm"
+INCLUDE "maps/CinnabarPokecenter1F.asm"
 
 
 SECTION "Map Scripts 18", ROMX
@@ -515,4 +516,3 @@ INCLUDE "maps/CeruleanCave2F.asm"
 SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
-INCLUDE "maps/CinnabarPokecenter1F.asm"
