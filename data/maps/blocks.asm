@@ -989,8 +989,6 @@ Route2NorthGate_Blocks:
 Route7SaffronGate_Blocks:
 Route8SaffronGate_Blocks:
 Route15FuchsiaGate_Blocks:
-Route16Gate_Blocks:
-Route17Route18Gate_Blocks:
 	INCBIN "maps/EastWestKantoGate.blk"
 
 Gate2F_Blocks:
@@ -998,3 +996,7 @@ Gate2F_Blocks:
 
 Route2SouthGate_Blocks:
 	INCBIN "maps/Route2Gate.blk"
+
+Route16Gate_Blocks:
+Route17Route18Gate_Blocks:
+	INCBIN "maps/CyclingRoadGate.blk"
