@@ -158,9 +158,9 @@ ENDM
 	map_const ROUTE_7_SAFFRON_GATE,                         4,  5 ; 20
 	map_const ROUTE_16,                                    10,  9 ; 21
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 22
-	map_const ROUTE_16_GATE,                                4,  5 ; 23
+	map_const ROUTE_16_GATE,                                5,  4 ; 23
 	map_const ROUTE_17,                                    10, 45 ; 24
-	map_const ROUTE_17_ROUTE_18_GATE,                       4,  5 ; 25
+	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 25
 	endgroup
 
 	newgroup FUCHSIA                                        ; group  9
