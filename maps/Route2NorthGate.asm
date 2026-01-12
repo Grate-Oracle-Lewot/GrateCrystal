@@ -25,12 +25,13 @@ Route2NorthGate_MapEvents:
 	def_warp_events
 	warp_event  0,  4, VIRIDIAN_FOREST, 1
 	warp_event  0,  5, VIRIDIAN_FOREST, 2
-	warp_event  9,  4, ROUTE_2, 1
-	warp_event  9,  5, ROUTE_2, 2
+	warp_event  7,  4, ROUTE_2, 1
+	warp_event  7,  5, ROUTE_2, 2
+	warp_event  6,  8, GATE_2F
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route2NorthGateBugCatcherScript, -1
+	object_event  4,  1, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route2NorthGateBugCatcherScript, -1
