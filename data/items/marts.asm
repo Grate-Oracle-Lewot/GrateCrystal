@@ -413,10 +413,10 @@ MartMtMoon:
 	db 9 ; # items
 	db MOON_STONE
 	db DUSK_BALL
-	db STICK
+	db LEEK
 	db LUCKY_PUNCH
-	db THICK_CLUB
-	db LIGHT_BALL
+	db BONE
+	db VOLTECCER
 	db CLEANSE_TAG
 	db EON_MAIL
 	db TM_MOONBLAST
