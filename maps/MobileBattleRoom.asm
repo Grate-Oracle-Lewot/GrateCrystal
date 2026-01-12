@@ -7,8 +7,6 @@ MobileBattleRoom_MapScripts:
 
 .InitializeMobileBattleRoom:
 	sdefer .InitializeAndPreparePokecenter2F
-	end
-
 .DummyScene:
 	end
 
