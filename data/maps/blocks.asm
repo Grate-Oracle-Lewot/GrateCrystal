@@ -849,12 +849,6 @@ BattleTower1F_Blocks:
 BattleTowerBattleRoom_Blocks:
 	INCBIN "maps/BattleTowerBattleRoom.blk"
 
-MobileTradeRoom_Blocks:
-	INCBIN "maps/MobileTradeRoom.blk"
-
-MobileBattleRoom_Blocks:
-	INCBIN "maps/MobileBattleRoom.blk"
-
 BattleTowerHallway_Blocks:
 	INCBIN "maps/BattleTowerHallway.blk"
 
@@ -866,6 +860,13 @@ BattleTowerOutside_Blocks:
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+MahoganyMart1F_Blocks:
+MountMoonGiftShop_Blocks:
+	INCBIN "maps/GiftShop.blk"
+
+BillsHouse_Blocks:
+	INCBIN "maps/BillsHouse.blk"
 
 SECTION "Map Blocks 4", ROMX
 
@@ -988,10 +989,3 @@ CeruleanCaveB1F_Blocks:
 
 OaksLab2F_Blocks:
 	INCBIN "maps/OaksLab2F.blk"
-
-MahoganyMart1F_Blocks:
-MountMoonGiftShop_Blocks:
-	INCBIN "maps/GiftShop.blk"
-
-BillsHouse_Blocks:
-	INCBIN "maps/BillsHouse.blk"
