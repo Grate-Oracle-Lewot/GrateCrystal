@@ -115,7 +115,7 @@ ItemEffects:
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
 	dw NoEffect            ; PINK_BOW
-	dw RestoreHPEffect     ; STICK
+	dw RestoreHPEffect     ; LEEK
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; NEVERMELTICE
 	dw NoEffect            ; MAGNET
@@ -128,7 +128,7 @@ ItemEffects:
 	dw NoEffect            ; GS_BALL
 	dw BlueCardEffect      ; BLUE_CARD
 	dw NoEffect            ; MIRACLE_SEED
-	dw NoEffect            ; THICK_CLUB
+	dw NoEffect            ; BONE
 	dw NoEffect            ; FOCUS_BAND
 	dw NoEffect            ; LIMBO_STICK
 	dw EnergypowderEffect  ; BUGWORT
@@ -173,7 +173,7 @@ ItemEffects:
 	dw PokeBallEffect      ; LURE_BALL
 	dw PokeBallEffect      ; FAST_BALL
 	dw ItemfinderEffect    ; SWAG_BEACON
-	dw NoEffect            ; LIGHT_BALL
+	dw NoEffect            ; VOLTECCER
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
 	dw PokeBallEffect      ; LOVE_BALL
