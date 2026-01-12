@@ -324,9 +324,9 @@ INCLUDE "maps/Route6UndergroundPathEntrance.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
-INCLUDE "maps/MobileTradeRoom.asm"
-INCLUDE "maps/MobileBattleRoom.asm"
 INCLUDE "maps/RuinsOfAlphAntechamber.asm"
+INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/DarkCave2F.asm"
 
 
 SECTION "Map Scripts 18", ROMX
@@ -516,5 +516,3 @@ SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
-INCLUDE "maps/Route12SuperRodHouse.asm"
-INCLUDE "maps/DarkCave2F.asm"
