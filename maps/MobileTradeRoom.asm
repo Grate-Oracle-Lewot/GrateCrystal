@@ -7,8 +7,6 @@ MobileTradeRoom_MapScripts:
 
 .InitializeMobileTradeRoom:
 	sdefer .InitializeAndPreparePokecenter2F
-	end
-
 .DummyScene:
 	end
 
