@@ -44,8 +44,8 @@ SilphCo7FLaprasScript:
 	closetext
 	end
 
-SilphCo7FLightBall:
-	itemball LIGHT_BALL
+SilphCo7FVolteccer:
+	itemball VOLTECCER
 
 SilphCo7FSign:
 	jumptext SilphCo7FSignText
@@ -125,4 +125,4 @@ SilphCo7F_MapEvents:
 	object_event 11, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilphCo7FClerk3Script, -1
 	object_event  9,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilphCo7FReceptionistScript, -1
 	object_event  1,  4, SPRITE_SURF, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilphCo7FLaprasScript, -1
-	object_event 24, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo7FLightBall, EVENT_SILPH_CO_7F_LIGHT_BALL
+	object_event 24, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilphCo7FVolteccer, EVENT_SILPH_CO_7F_VOLTECCER
