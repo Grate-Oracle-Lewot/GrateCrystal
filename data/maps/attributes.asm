@@ -372,8 +372,6 @@ ENDM
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
-	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
 	map_attributes OaksLab, OAKS_LAB, $00, 0
 	map_attributes OaksLab2F, OAKS_LAB_2F, $00, 0
 	map_attributes RedsHouse1F, REDS_HOUSE_1F, $00, 0
