@@ -2925,8 +2925,6 @@ wEggTutorBricks:: db
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
-wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
 wOaksLab2FSceneID::                               db
 wTrainerHouseB1FSceneID::                         db
 wVictoryRoadGateSceneID::                         db
@@ -3003,6 +3001,8 @@ wDragonShrineSceneID::                            db
 wVictoryRoadSceneID::                             db
 
 wEventFlags:: flag_array NUM_EVENTS
+
+	ds 2
 
 wCurBox:: db
 
