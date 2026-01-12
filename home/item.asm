@@ -178,9 +178,9 @@ ItemNameOrder::
 	db POLKADOT_BOW
 	db TRIDENT
 
-	db LIGHT_BALL
-	db THICK_CLUB
-	db STICK
+	db VOLTECCER
+	db BONE
+	db LEEK
 	db LUCKY_PUNCH
 	db DRAGON_SCALE
 
