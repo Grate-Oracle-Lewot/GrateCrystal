@@ -35,7 +35,10 @@ Route17Route18GateCannotPassMovement:
 
 Route17Route18GateOfficerText:
 	text "CYCLING ROAD"
-	line "Uphill Starts Here"
+	line "starts here."
+
+	para "It's all uphill, so"
+	line "it's a tough ride."
 	done
 
 Route17Route18GateCannotPassText:
