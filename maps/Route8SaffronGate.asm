@@ -25,7 +25,7 @@ Route8SaffronGate_MapEvents:
 	warp_event  0,  5, SAFFRON_CITY, 15
 	warp_event  7,  4, ROUTE_8, 1
 	warp_event  7,  5, ROUTE_8, 2
-	warp_event  6,  8, GATE_2F
+	warp_event  6,  8, GATE_2F, 1
 
 	def_coord_events
 
