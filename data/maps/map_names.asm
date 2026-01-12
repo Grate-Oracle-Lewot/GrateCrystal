@@ -585,7 +585,7 @@ Cable_Club_Map_Name2: ; TRADE_CENTER
 Cable_Club_Map_Name3: ; COLOSSEUM
 	db "<PKMN> COLOSSEUM@"
 Cable_Club_Map_Name4: ; GATE_2F
-	db "GATE HOUSE 2F@"
+	db "OBSERVATION DECK@"
 
 Pallet_Map_Name1: ; PALLET_TOWN
 	db "PALLET TOWN@"
