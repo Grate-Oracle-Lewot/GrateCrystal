@@ -10,14 +10,6 @@ SafariZoneGate_MapScripts:
 SafariZoneGateRock:
 	jumpstd SmashRockScript
 
-SafariZoneGateSign:
-	jumptext SafariZoneGateText
-
-SafariZoneGateText:
-	text "SAFARI ZONE"
-	line "CLOSED"
-	done
-
 SafariZoneGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -30,7 +22,6 @@ SafariZoneGate_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  0, BGEVENT_READ, SafariZoneGateSign
 
 	def_object_events
 	object_event  4,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariZoneGateRock, -1
