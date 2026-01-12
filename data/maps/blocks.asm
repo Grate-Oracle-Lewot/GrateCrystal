@@ -151,17 +151,13 @@ CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
-Route19FuchsiaGate_Blocks:
-Route43MahoganyGate_Blocks:
-Route43Gate_Blocks:
+Route29Route46Gate_Blocks:
+Route34IlexForestGate_Blocks:
 Route35GoldenrodGate_Blocks:
 Route36RuinsOfAlphGate_Blocks:
-Route34IlexForestGate_Blocks:
-Route6SaffronGate_Blocks:
 Route40BattleTowerGate_Blocks:
-Route2SouthGate_Blocks:
-Route29Route46Gate_Blocks:
-Route5SaffronGate_Blocks:
+Route43MahoganyGate_Blocks:
+Route43Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
 CinnabarIsland_Blocks:
@@ -203,17 +199,11 @@ Route39_Blocks:
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
-Route38EcruteakGate_Blocks:
-Route42EcruteakGate_Blocks:
+Route31VioletGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
 IlexForestAzaleaGate_Blocks:
-Route15FuchsiaGate_Blocks:
-Route8SaffronGate_Blocks:
-Route16Gate_Blocks:
-Route7SaffronGate_Blocks:
-Route17Route18Gate_Blocks:
-Route31VioletGate_Blocks:
-Route2NorthGate_Blocks:
+Route38EcruteakGate_Blocks:
+Route42EcruteakGate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
 
 VermilionCity_Blocks:
@@ -990,14 +980,21 @@ CeruleanCaveB1F_Blocks:
 OaksLab2F_Blocks:
 	INCBIN "maps/OaksLab2F.blk"
 
-NorthSouthKantoGate_Blocks:
+Route5SaffronGate_Blocks:
+Route6SaffronGate_Blocks:
+Route19FuchsiaGate_Blocks:
 	INCBIN "maps/NorthSouthKantoGate.blk"
 
-EastWestKantoGate_Blocks:
+Route2NorthGate_Blocks:
+Route7SaffronGate_Blocks:
+Route8SaffronGate_Blocks:
+Route15FuchsiaGate_Blocks:
+Route16Gate_Blocks:
+Route17Route18Gate_Blocks:
 	INCBIN "maps/EastWestKantoGate.blk"
 
 Gate2F_Blocks:
 	INCBIN "maps/Gate2F.blk"
 
-Route2Gate_Blocks:
+Route2SouthGate_Blocks:
 	INCBIN "maps/Route2Gate.blk"
