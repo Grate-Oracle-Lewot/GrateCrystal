@@ -6,7 +6,7 @@
 	db DARK, FIRE ; type
 	db 45 ; catch rate
 	db 204 ; base exp
-	db THICK_CLUB, BLACKGLASSES ; items
+	db BONE, BLACKGLASSES ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/houndoom/front.dimensions"
