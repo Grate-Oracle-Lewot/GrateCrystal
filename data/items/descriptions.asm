@@ -102,7 +102,7 @@ ItemDescriptions:
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
-	dw StickDesc
+	dw LeekDesc
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
@@ -115,7 +115,7 @@ ItemDescriptions:
 	dw GSBallDesc
 	dw BlueCardDesc
 	dw MiracleSeedDesc
-	dw ThickClubDesc
+	dw BoneDesc
 	dw FocusBandDesc
 	dw LimboStickDesc
 	dw BugwortDesc
@@ -160,7 +160,7 @@ ItemDescriptions:
 	dw LureBallDesc
 	dw FastBallDesc
 	dw SwagBeaconDesc
-	dw LightBallDesc
+	dw VolteccerDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
 	dw LoveBallDesc
@@ -663,7 +663,7 @@ PinkBowDesc:
 	db   "Powers up normal-"
 	next "type moves. (HOLD)@"
 
-StickDesc:
+LeekDesc:
 	db   "Ups critical ratio"
 	next "of FARFETCH'D.@"
 
@@ -715,7 +715,7 @@ MiracleSeedDesc:
 	db   "Powers up grass-"
 	next "type moves. (HOLD)@"
 
-ThickClubDesc:
+BoneDesc:
 	db   "×2 ATK for CUBONE"
 	next "or MAROWAK. (HOLD)@"
 
@@ -895,7 +895,7 @@ SwagBeaconDesc:
 	db   "Points you toward"
 	next "hidden items.@"
 
-LightBallDesc:
+VolteccerDesc:
 	db   "Doubles SPCL.ATK"
 	next "of PIKACHU. (HOLD)@"
 
