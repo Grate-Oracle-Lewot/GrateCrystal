@@ -989,3 +989,15 @@ CeruleanCaveB1F_Blocks:
 
 OaksLab2F_Blocks:
 	INCBIN "maps/OaksLab2F.blk"
+
+NorthSouthKantoGate_Blocks:
+	INCBIN "maps/NorthSouthKantoGate.blk"
+
+EastWestKantoGate_Blocks:
+	INCBIN "maps/EastWestKantoGate.blk"
+
+Gate2F_Blocks:
+	INCBIN "maps/Gate2F.blk"
+
+Route2Gate_Blocks:
+	INCBIN "maps/Route2Gate.blk"
