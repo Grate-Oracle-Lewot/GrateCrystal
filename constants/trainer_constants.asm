@@ -585,9 +585,9 @@ KRIS EQU __trainer_class__
 
 	trainerclass TWINS ; 3f
 	const AMYANDMAY1
+	const AMYANDMAY2
 	const ANNANDANNE1
 	const ANNANDANNE2
-	const AMYANDMAY2
 	const JOANDZOE1
 	const JOANDZOE2
 	const MEGANDPEG1
