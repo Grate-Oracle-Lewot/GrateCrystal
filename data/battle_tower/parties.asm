@@ -892,7 +892,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db PIKACHU
-	db LIGHT_BALL
+	db VOLTECCER
 	db THUNDERBOLT, THUNDER_WAVE, DAZZLY_GLEAM, SURF
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1493,7 +1493,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db MAROWAK
-	db THICK_CLUB
+	db BONE
 	db BONEMERANG, RETURN, SHADOW_CLAW, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 27000 ; Exp
