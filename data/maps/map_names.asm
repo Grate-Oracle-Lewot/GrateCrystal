@@ -61,6 +61,7 @@ Cable_Club_Map_Names: ; CABLE_CLUB
 	dw Cable_Club_Map_Name1 ; POKECENTER_2F
 	dw Cable_Club_Map_Name2 ; TRADE_CENTER
 	dw Cable_Club_Map_Name3 ; COLOSSEUM
+	dw Cable_Club_Map_Name4 ; GATE_2F
 	assert_table_length NUM_CABLE_CLUB_MAPS
 
 Pallet_Map_Names: ; PALLET
@@ -583,6 +584,8 @@ Cable_Club_Map_Name2: ; TRADE_CENTER
 	db "<PKMN> TRADE CENTER@"
 Cable_Club_Map_Name3: ; COLOSSEUM
 	db "<PKMN> COLOSSEUM@"
+Cable_Club_Map_Name4: ; GATE_2F
+	db "GATE HOUSE 2F@"
 
 Pallet_Map_Name1: ; PALLET_TOWN
 	db "PALLET TOWN@"
