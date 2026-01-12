@@ -25,7 +25,7 @@ Route15FuchsiaGate_MapEvents:
 	warp_event  0,  5, FUCHSIA_CITY, 8
 	warp_event  7,  4, ROUTE_15, 1
 	warp_event  7,  5, ROUTE_15, 2
-	warp_event  6,  8, GATE_2F
+	warp_event  6,  8, GATE_2F, 1
 
 	def_coord_events
 
