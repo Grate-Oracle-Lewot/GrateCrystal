@@ -144,7 +144,7 @@ MartGoldenrod4F:
 	db IRON
 	db CARBOS
 	db CALCIUM
-	db HP_UP
+	db FIBER
 	db -1 ; end
 
 MartGoldenrod5F:
@@ -363,7 +363,7 @@ MartCeladon4F3:
 
 MartCeladon5F1:
 	db 6 ; # items
-	db HP_UP
+	db FIBER
 	db PROTEIN
 	db IRON
 	db CARBOS
