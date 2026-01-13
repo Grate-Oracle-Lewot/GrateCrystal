@@ -32,7 +32,7 @@ CeruleanCave2FCalcium:
 	itemball CALCIUM
 
 CeruleanCave2FHiddenHPUp:
-	hiddenitem HP_UP, EVENT_CERULEAN_CAVE_2F_HIDDEN_HP_UP
+	hiddenitem FIBER, EVENT_CERULEAN_CAVE_2F_HIDDEN_HP_UP
 
 CeruleanCave2FHiddenCarbos:
 	hiddenitem CARBOS, EVENT_CERULEAN_CAVE_2F_HIDDEN_CARBOS
