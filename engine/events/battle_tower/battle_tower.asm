@@ -607,7 +607,7 @@ BattleTower_RandomlyChooseReward:
 	jr c, .okay
 	sub 6
 .okay
-	add HP_UP
+	add FIBER
 	cp LUCKY_PUNCH
 	jr z, .loop
 	push af
