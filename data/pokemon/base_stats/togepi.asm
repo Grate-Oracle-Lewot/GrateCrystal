@@ -6,7 +6,7 @@
 	db FAIRY, FAIRY ; type
 	db 190 ; catch rate
 	db 74 ; base exp
-	db REVIVE, HP_UP ; items
+	db REVIVE, FIBER ; items
 	db GENDER_F12_5 ; gender ratio
 	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/togepi/front.dimensions"
