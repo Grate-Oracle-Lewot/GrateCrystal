@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 190 ; catch rate
 	db 78 ; base exp
-	db X_ACCURACY, HP_UP ; items
+	db X_ACCURACY, FIBER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/remoraid/front.dimensions"
