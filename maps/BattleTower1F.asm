@@ -154,7 +154,8 @@ else
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
 	setevent EVENT_GOT_JEDI_ROBE_FROM_BATTLE_TOWER
-	sjump Script_WaitButton
+	closetext
+	end
 
 .vitamins
 	setval BATTLETOWERACTION_1C
