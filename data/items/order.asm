@@ -51,7 +51,7 @@ ItemNameOrder::
 
 	db RARE_CANDY
 	db PP_UP
-	db HP_UP
+	db FIBER
 	db PROTEIN
 	db IRON
 	db CARBOS
