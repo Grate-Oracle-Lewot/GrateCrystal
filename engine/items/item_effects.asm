@@ -38,7 +38,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
 	dw NoEffect            ; CATCH_CHARM
-	dw VitaminEffect       ; HP_UP
+	dw VitaminEffect       ; FIBER
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
 	dw VitaminEffect       ; CARBOS
@@ -1242,7 +1242,7 @@ GetStatExpRelativePointer:
 	ret
 
 StatExpItemPointerOffsets:
-	db HP_UP,    MON_HP_EXP - MON_STAT_EXP
+	db FIBER,    MON_HP_EXP - MON_STAT_EXP
 	db PROTEIN, MON_ATK_EXP - MON_STAT_EXP
 	db IRON,    MON_DEF_EXP - MON_STAT_EXP
 	db CARBOS,  MON_SPD_EXP - MON_STAT_EXP
