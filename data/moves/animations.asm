@@ -4538,13 +4538,13 @@ BattleAnim_MirrorCoat:
 .loop
 	anim_sound 0, 0, SFX_SHINE
 	anim_obj ANIM_OBJ_SCREEN, 72, 80, $0
-	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 72, $4
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 72, $4
 	anim_wait 8
-	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 88, $4
 	anim_wait 8
-	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 80, $4
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
 	anim_wait 8
-	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 96, $4
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 32
