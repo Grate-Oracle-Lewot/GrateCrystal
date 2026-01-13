@@ -63,7 +63,6 @@ Script_BattleRoomLoop:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist
 	opentext
 	writetext Text_YourMonWillBeHealedToFullHealth
-	waitbutton
 	closetext
 	playmusic MUSIC_HEAL
 	special FadeOutPalettes
