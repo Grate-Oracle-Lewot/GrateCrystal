@@ -67,7 +67,6 @@ BattleTowerHallway_MapScripts:
 	faceobject PLAYER, BATTLETOWERHALLWAY_RECEPTIONIST
 	opentext
 	writetext Text_PleaseStepThisWay
-	waitbutton
 	closetext
 	stopfollow
 	applymovement PLAYER, MovementData_BattleTowerHallwayPlayerEntersBattleRoom
