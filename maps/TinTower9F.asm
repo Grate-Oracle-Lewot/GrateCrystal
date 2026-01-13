@@ -7,7 +7,7 @@ TinTower9F_MapScripts:
 	def_callbacks
 
 TinTower9FHPUp:
-	itemball HP_UP
+	itemball FIBER
 
 TinTower9F_MapEvents:
 	db 0, 0 ; filler
