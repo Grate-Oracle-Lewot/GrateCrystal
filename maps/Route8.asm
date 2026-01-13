@@ -77,7 +77,7 @@ Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
 
 Route8HPUp:
-	itemball HP_UP
+	itemball FIBER
 
 BikerDwayneSeenText:
 	text "We're the KANTO"
