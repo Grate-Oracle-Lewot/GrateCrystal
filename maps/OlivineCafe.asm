@@ -1,5 +1,6 @@
-OLIVINECAFE_BIGMUSHROOM_MONEY EQU 20000
-OLIVINECAFE_CANDIEDYAM_MONEY  EQU 50000
+OLIVINECAFE_TINYMUSHROOM_MONEY EQU 1000
+OLIVINECAFE_BIGMUSHROOM_MONEY  EQU 20000
+OLIVINECAFE_CANDIEDYAM_MONEY   EQU 50000
 
 	object_const_def
 	const OLIVINECAFE_SAGE
@@ -37,20 +38,42 @@ OlivineCafeChefScript:
 	checkmoney YOUR_MONEY, MAX_MONEY - OLIVINECAFE_BIGMUSHROOM_MONEY
 	ifequal HAVE_MORE, .Skip2
 	checkitem BIG_MUSHROOM
-	iftrue .Mushroom
+	iftrue .Big
 .Skip2:
+	checkmoney YOUR_MONEY, MAX_MONEY - OLIVINECAFE_TINYMUSHROOM_MONEY
+	ifequal HAVE_MORE, .Skip3
+	checkitem TINYMUSHROOM
+	iftrue .Tiny
+.Skip3:
 	jumptext OlivineCafeChefText
 
-.Mushroom:
+.Tiny:
 	showemote EMOTE_SHOCK, OLIVINECAFE_COOK, 15
 	opentext
 	writetext OlivineCafeChef_AromaText
 	promptbutton
-	writetext OlivineCafeChef_HaveMushroomText
+	writetext OlivineCafeChef_HaveTinyText
 	promptbutton
 	writetext OlivineCafeChef_MourselText
 	promptbutton
-	writetext OlivineCafeChef_AskMushroomText
+	writetext OlivineCafeChef_AskTinyText
+	yesorno
+	iffalse .Refused
+	special PlaceMoneyTopRight
+	takeitem TINYMUSHROOM
+	givemoney YOUR_MONEY, OLIVINECAFE_TINYMUSHROOM_MONEY
+	sjump .Finish
+
+.Big:
+	showemote EMOTE_SHOCK, OLIVINECAFE_COOK, 15
+	opentext
+	writetext OlivineCafeChef_AromaText
+	promptbutton
+	writetext OlivineCafeChef_HaveBigText
+	promptbutton
+	writetext OlivineCafeChef_MourselText
+	promptbutton
+	writetext OlivineCafeChef_AskBigText
 	yesorno
 	iffalse .Refused
 	special PlaceMoneyTopRight
@@ -129,7 +152,12 @@ OlivineCafeChef_AromaText:
 	text "That aroma…!"
 	done
 
-OlivineCafeChef_HaveMushroomText:
+OlivineCafeChef_HaveTinyText:
+	text "You have a"
+	line "TINYMUSHROOM!"
+	done
+
+OlivineCafeChef_HaveBigText:
 	text "You have a"
 	line "BIG MUSHROOM!"
 	done
@@ -144,7 +172,12 @@ OlivineCafeChef_MourselText:
 	line "moursel indeed!"
 	done
 
-OlivineCafeChef_AskMushroomText:
+OlivineCafeChef_AskTinyText:
+	text "Would you sell it"
+	line "for ¥{d:OLIVINECAFE_TINYMUSHROOM_MONEY}?"
+	done
+
+OlivineCafeChef_AskBigText:
 	text "Would you sell it"
 	line "for ¥{d:OLIVINECAFE_BIGMUSHROOM_MONEY}?"
 	done
