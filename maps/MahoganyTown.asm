@@ -55,7 +55,7 @@ RageCandyBarMerchantScript:
 	iffalse .Refused
 	checkmoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem RAGECANDYBAR
+	giveitem CAKE_OF_RAGE
 	iffalse .NoRoom
 	waitsfx
 	playsound SFX_TRANSACTION
