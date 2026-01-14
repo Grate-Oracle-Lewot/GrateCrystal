@@ -10,7 +10,7 @@ else
 endc
 	db 190 ; catch rate
 	db 97 ; base exp
-	db PEARL, BIG_PEARL ; items
+	db PEARL, BLACK_PEARL ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/shellder/front.dimensions"
