@@ -56,8 +56,7 @@ OlivineCafeChefScript:
 	special PlaceMoneyTopRight
 	takeitem BIG_MUSHROOM
 	givemoney YOUR_MONEY, OLIVINECAFE_BIGMUSHROOM_MONEY
-	writetext OlivineCafeChef_ThankYouText
-	sjump OlivineCafe_EndText
+	sjump .Finish
 
 .Yam:
 	showemote EMOTE_SHOCK, OLIVINECAFE_COOK, 15
@@ -74,6 +73,9 @@ OlivineCafeChefScript:
 	special PlaceMoneyTopRight
 	takeitem CANDIED_YAM
 	givemoney YOUR_MONEY, OLIVINECAFE_CANDIEDYAM_MONEY
+.Finish:
+	playsound SFX_TRANSACTION
+	waitsfx
 	writetext OlivineCafeChef_ThankYouText
 	sjump OlivineCafe_EndText
 
