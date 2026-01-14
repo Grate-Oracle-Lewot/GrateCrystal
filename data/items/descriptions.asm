@@ -108,7 +108,7 @@ ItemDescriptions:
 	dw MagnetDesc
 	dw MiracleBerryDesc
 	dw PearlDesc
-	dw BigPearlDesc
+	dw BlackPearlDesc
 	dw EverStoneDesc
 	dw SpellTagDesc
 	dw CakeOfRageDesc
@@ -687,7 +687,7 @@ PearlDesc:
 	db   "A beautiful pearl."
 	next "Sell low.@"
 
-BigPearlDesc:
+BlackPearlDesc:
 	db   "Extends weather to"
 	next "8 turns. (HOLD)@"
 
