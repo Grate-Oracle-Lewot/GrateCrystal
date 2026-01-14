@@ -116,7 +116,7 @@
 	const BIG_PEARL    ; 6c
 	const EVERSTONE    ; 6d
 	const SPELL_TAG    ; 6e
-	const RAGECANDYBAR ; 6f
+	const CAKE_OF_RAGE ; 6f
 	const GS_BALL      ; 70
 	const BLUE_CARD    ; 71
 	const MIRACLE_SEED ; 72
