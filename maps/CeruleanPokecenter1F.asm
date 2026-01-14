@@ -16,12 +16,7 @@ CeruleanPokecenter1FChanseyScript:
 	jumpstd PokecenterChanseyScript
 
 CeruleanPokecenter1FSuperNerdScript:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText
-
-.mobile
-	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText_Mobile
 
 CeruleanPokecenter1FGymGuideScript:
 	jumptextfaceplayer CeruleanPokecenter1FGymGuideText
@@ -36,18 +31,6 @@ CeruleanPokecenter1FSuperNerdText:
 	para "they're weaker"
 	line "than some newly"
 	cont "caught #MON."
-	done
-
-CeruleanPokecenter1FSuperNerdText_Mobile:
-	text "Do you battle by"
-	line "mobile phone?"
-
-	para "If time runs out"
-	line "during a battle,"
-
-	para "waiting to see who"
-	line "won is really"
-	cont "nerve wracking."
 	done
 
 CeruleanPokecenter1FGymGuideText:
