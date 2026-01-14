@@ -64,7 +64,7 @@ Route22HiddenTimerBall:
 	hiddenitem TIMER_BALL, EVENT_ROUTE_22_HIDDEN_TIMER_BALL
 
 Route22HiddenRagecandybar:
-	hiddenitem RAGECANDYBAR, EVENT_ROUTE_22_HIDDEN_RAGECANDYBAR
+	hiddenitem CAKE_OF_RAGE, EVENT_ROUTE_22_HIDDEN_RAGECANDYBAR
 
 SwimmerfBobbiSeenText:
 	text "I'm bored. Let's"
