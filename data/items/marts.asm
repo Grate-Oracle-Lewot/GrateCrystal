@@ -192,7 +192,7 @@ MartMahogany1:
 
 MartMahogany2:
 	db 9 ; # items
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db GREAT_BALL
 	db MOOMOO_MILK
 	db HYPER_POTION
