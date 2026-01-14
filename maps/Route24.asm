@@ -68,6 +68,7 @@ Route24JamesScript:
 	special ReloadSpritesNoPalettes
 	disappear ROUTE24_JESSIE
 	disappear ROUTE24_JAMES
+	setevent EVENT_CERULEAN_CITY_PERSIAN
 	setevent EVENT_ROUTE_24_ROCKET
 	pause 25
 	special FadeInQuickly
