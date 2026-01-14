@@ -113,7 +113,7 @@
 	const MAGNET       ; 69
 	const MIRACLEBERRY ; 6a
 	const PEARL        ; 6b
-	const BIG_PEARL    ; 6c
+	const BLACK_PEARL  ; 6c
 	const EVERSTONE    ; 6d
 	const SPELL_TAG    ; 6e
 	const CAKE_OF_RAGE ; 6f
