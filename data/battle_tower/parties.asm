@@ -447,7 +447,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db REVERSAL, ACROBATICS, COUNTER, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -762,7 +762,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db FLY, REVERSAL, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -2016,7 +2016,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db GOLEM
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db AVALANCHE, EARTHQUAKE, MEGA_PUNCH, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 79930 ; Exp
@@ -3374,7 +3374,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db REVERSAL, MEGAHORN, EARTHQUAKE, COUNTER
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -4053,7 +4053,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HERACROSS
-	db RAGECANDYBAR
+	db CAKE_OF_RAGE
 	db REVERSAL, FLY, MEGAHORN, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 343000 ; Exp
