@@ -11,7 +11,18 @@ CeruleanCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .Persian
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+
+.Persian:
+	checkevent EVENT_ROUTE_24_ROCKET
+	iffalse .Appear
+	disappear CERULEANCITY_PERSIAN
+	endcallback
+
+.Appear:
+	appear CERULEANCITY_PERSIAN
+	endcallback
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_CERULEAN
