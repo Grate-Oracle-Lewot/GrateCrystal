@@ -5,6 +5,7 @@
 	const CERULEANCITY_COOLTRAINER_F
 	const CERULEANCITY_FISHER
 	const CERULEANCITY_YOUNGSTER
+	const CERULEANCITY_PERSIAN
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
@@ -108,8 +109,8 @@ CeruleanPoliceSign:
 CeruleanCapeSign:
 	jumptext CeruleanCapeSignText
 
-CeruleanLockedDoor:
-	jumptext CeruleanLockedDoorText
+CeruleanCityPersian:
+	jumptext CeruleanCityPersianText
 
 CeruleanCityPokecenterSign:
 	jumpstd PokecenterSignScript
@@ -231,6 +232,14 @@ CeruleanCapeSignText:
 	line "AHEAD"
 	done
 
+CeruleanCityPersianText:
+	text "PERSIAN is looking"
+	line "around warily."
+
+	para "It seems like it's"
+	line "on guard duty."
+	done
+
 CeruleanCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -259,7 +268,8 @@ CeruleanCity_MapEvents:
 	def_object_events
 	object_event 15, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
 	object_event 23, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCitySuperNerdScript, -1
-	object_event 20, 24, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
+	object_event 20, 24, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
+	object_event 14, 30, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanCityPersian, EVENT_CERULEAN_CITY_PERSIAN
