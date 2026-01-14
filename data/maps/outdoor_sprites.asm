@@ -86,6 +86,7 @@ SaffronOuterGroupSprites:
 	db SPRITE_SLOWPOKE
 	db SPRITE_JESSIE
 	db SPRITE_JAMES
+	db SPRITE_GROWLITHE
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
