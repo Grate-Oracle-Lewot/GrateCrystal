@@ -517,3 +517,4 @@ SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/Gate2F.asm"
+INCLUDE "maps/CeruleanJeweler.asm"
