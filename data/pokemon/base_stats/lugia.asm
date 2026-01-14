@@ -10,7 +10,7 @@ else
 endc
 	db 10 ; catch rate
 	db 220 ; base exp
-	db BIG_PEARL, BIG_PEARL ; items
+	db BLACK_PEARL, BLACK_PEARL ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lugia/front.dimensions"
