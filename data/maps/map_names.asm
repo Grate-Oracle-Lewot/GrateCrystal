@@ -114,18 +114,19 @@ Cerulean_Map_Names: ; CERULEAN
 	dw Cerulean_Map_Name2  ; CERULEAN_POKECENTER_1F
 	dw Cerulean_Map_Name3  ; CERULEAN_MART
 	dw Cerulean_Map_Name4  ; CERULEAN_GYM
-	dw Cerulean_Map_Name5  ; CERULEAN_GYM_BADGE_SPEECH_HOUSE
-	dw Cerulean_Map_Name6  ; CERULEAN_POLICE_STATION
-	dw Cerulean_Map_Name7  ; CERULEAN_TRADE_SPEECH_HOUSE
-	dw Cerulean_Map_Name8  ; ROUTE_4
-	dw Cerulean_Map_Name9  ; ROUTE_9
-	dw Cerulean_Map_Name10 ; ROUTE_10_NORTH
-	dw Cerulean_Map_Name11 ; ROUTE_10_POKECENTER_1F
-	dw Cerulean_Map_Name12 ; POWER_PLANT
-	dw Cerulean_Map_Name13 ; POWER_PLANT_2F
-	dw Cerulean_Map_Name14 ; ROUTE_24
-	dw Cerulean_Map_Name15 ; ROUTE_25
-	dw Cerulean_Map_Name16 ; BILLS_HOUSE
+	dw Cerulean_Map_Name5  ; CERULEAN_JEWELER
+	dw Cerulean_Map_Name6  ; CERULEAN_GYM_BADGE_SPEECH_HOUSE
+	dw Cerulean_Map_Name7  ; CERULEAN_POLICE_STATION
+	dw Cerulean_Map_Name8  ; CERULEAN_TRADE_SPEECH_HOUSE
+	dw Cerulean_Map_Name9  ; ROUTE_4
+	dw Cerulean_Map_Name10 ; ROUTE_9
+	dw Cerulean_Map_Name11 ; ROUTE_10_NORTH
+	dw Cerulean_Map_Name12 ; ROUTE_10_POKECENTER_1F
+	dw Cerulean_Map_Name13 ; POWER_PLANT
+	dw Cerulean_Map_Name14 ; POWER_PLANT_2F
+	dw Cerulean_Map_Name15 ; ROUTE_24
+	dw Cerulean_Map_Name16 ; ROUTE_25
+	dw Cerulean_Map_Name17 ; BILLS_HOUSE
 	assert_table_length NUM_CERULEAN_MAPS
 
 Vermilion_Map_Names: ; VERMILION
@@ -662,29 +663,31 @@ Cerulean_Map_Name3: ; CERULEAN_MART
 	db "CERULEAN <POKE>MART@"
 Cerulean_Map_Name4: ; CERULEAN_GYM
 	db "CERULEAN GYM@"
-Cerulean_Map_Name5: ; CERULEAN_GYM_BADGE_SPEECH_HOUSE
+Cerulean_Map_Name5: ; CERULEAN_JEWELER
+	db "CERULEAN JEWELER@"
+Cerulean_Map_Name6: ; CERULEAN_GYM_BADGE_SPEECH_HOUSE
 	db "BERRY SHOP@"
-Cerulean_Map_Name6: ; CERULEAN_POLICE_STATION
+Cerulean_Map_Name7: ; CERULEAN_POLICE_STATION
 	db "POLICE STATION@"
-Cerulean_Map_Name7: ; CERULEAN_TRADE_SPEECH_HOUSE
+Cerulean_Map_Name8: ; CERULEAN_TRADE_SPEECH_HOUSE
 	db "CERULEAN HOUSE@"
-Cerulean_Map_Name8: ; ROUTE_4
+Cerulean_Map_Name9: ; ROUTE_4
 	db "ROUTE 4@"
-Cerulean_Map_Name9: ; ROUTE_9
+Cerulean_Map_Name10: ; ROUTE_9
 	db "ROUTE 9@"
-Cerulean_Map_Name10: ; ROUTE_10_NORTH
+Cerulean_Map_Name11: ; ROUTE_10_NORTH
 	db "ROUTE 10@"
-Cerulean_Map_Name11: ; ROUTE_10_POKECENTER_1F
+Cerulean_Map_Name12: ; ROUTE_10_POKECENTER_1F
 	db "ROUTE 10 <PKMN>CENTER@"
-Cerulean_Map_Name12: ; POWER_PLANT
+Cerulean_Map_Name13: ; POWER_PLANT
 	db "POWER PLANT 1F@"
-Cerulean_Map_Name13: ; POWER_PLANT_2F
+Cerulean_Map_Name14: ; POWER_PLANT_2F
 	db "POWER PLANT 2F@"
-Cerulean_Map_Name14: ; ROUTE_24
+Cerulean_Map_Name15: ; ROUTE_24
 	db "ROUTE 24@"
-Cerulean_Map_Name15: ; ROUTE_25
+Cerulean_Map_Name16: ; ROUTE_25
 	db "ROUTE 25@"
-Cerulean_Map_Name16: ; BILLS_HOUSE
+Cerulean_Map_Name17: ; BILLS_HOUSE
 	db "BILL'S HOUSE@"
 
 Vermilion_Map_Name1: ; VERMILION_CITY
