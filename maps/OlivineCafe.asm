@@ -1,3 +1,6 @@
+OLIVINECAFE_BIGMUSHROOM_MONEY EQU 20000
+OLIVINECAFE_CANDIEDYAM_MONEY  EQU 50000
+
 	object_const_def
 	const OLIVINECAFE_SAGE
 	const OLIVINECAFE_COOK
@@ -19,12 +22,64 @@ OlivineCafeSageScript:
 	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
 	writetext OlivineCafeSageText_GotStrength
+OlivineCafe_EndText:
 	waitbutton
 	closetext
 	end
 
 OlivineCafeChefScript:
-	jumptextfaceplayer OlivineCafeChefText
+	faceplayer
+	checkmoney YOUR_MONEY, MAX_MONEY - OLIVINECAFE_CANDIEDYAM_MONEY
+	ifequal HAVE_MORE, .Skip1
+	checkitem CANDIED_YAM
+	iftrue .Yam
+.Skip1:
+	checkmoney YOUR_MONEY, MAX_MONEY - OLIVINECAFE_BIGMUSHROOM_MONEY
+	ifequal HAVE_MORE, .Skip2
+	checkitem BIG_MUSHROOM
+	iftrue .Mushroom
+.Skip2:
+	jumptext OlivineCafeChefText
+
+.Mushroom:
+	showemote EMOTE_SHOCK, OLIVINECAFE_COOK, 15
+	opentext
+	writetext OlivineCafeChef_AromaText
+	promptbutton
+	writetext OlivineCafeChef_HaveMushroomText
+	promptbutton
+	writetext OlivineCafeChef_MourselText
+	promptbutton
+	writetext OlivineCafeChef_AskMushroomText
+	yesorno
+	iffalse .Refused
+	special PlaceMoneyTopRight
+	takeitem BIG_MUSHROOM
+	givemoney YOUR_MONEY, OLIVINECAFE_BIGMUSHROOM_MONEY
+	writetext OlivineCafeChef_ThankYouText
+	sjump OlivineCafe_EndText
+
+.Yam:
+	showemote EMOTE_SHOCK, OLIVINECAFE_COOK, 15
+	opentext
+	writetext OlivineCafeChef_AromaText
+	promptbutton
+	writetext OlivineCafeChef_HaveYamText
+	promptbutton
+	writetext OlivineCafeChef_MourselText
+	promptbutton
+	writetext OlivineCafeChef_AskYamText
+	yesorno
+	iffalse .Refused
+	special PlaceMoneyTopRight
+	takeitem CANDIED_YAM
+	givemoney YOUR_MONEY, OLIVINECAFE_CANDIEDYAM_MONEY
+	writetext OlivineCafeChef_ThankYouText
+	sjump OlivineCafe_EndText
+
+.Refused
+	writetext OlivineCafeChef_RefusedText
+	sjump OlivineCafe_EndText
 
 OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
@@ -66,6 +121,44 @@ OlivineCafeChefText:
 
 	para "of hearty fare for"
 	line "beefy SAILORS!"
+	done
+
+OlivineCafeChef_AromaText:
+	text "That aroma…!"
+	done
+
+OlivineCafeChef_HaveMushroomText:
+	text "You have a"
+	line "BIG MUSHROOM!"
+	done
+
+OlivineCafeChef_HaveYamText:
+	text "You have a"
+	line "CANDIED YAM!"
+	done
+
+OlivineCafeChef_MourselText:
+	text "That is a rare"
+	line "moursel indeed!"
+	done
+
+OlivineCafeChef_AskMushroomText:
+	text "Would you sell it"
+	line "for ¥{d:OLIVINECAFE_BIGMUSHROOM_MONEY}?"
+	done
+
+OlivineCafeChef_AskYamText:
+	text "Would you sell it"
+	line "for ¥{d:OLIVINECAFE_CANDIEDYAM_MONEY}?"
+	done
+
+OlivineCafeChef_ThankYouText:
+	text "Thank you! It will"
+	line "make a fine meal!"
+	done
+
+OlivineCafeChef_RefusedText:
+	text "Ah… what a shame!"
 	done
 
 OlivineCafeSailorText:
