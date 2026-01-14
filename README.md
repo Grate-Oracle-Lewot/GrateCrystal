@@ -307,6 +307,7 @@ Prize TMs:
   - Sunday: Pryce and Blaine, and Blue can be rematched if you've spoken to Mr. Fuji in the Route 22 house on that day (or anytime after you've beaten Red)
   - If you've beaten Red in Mt. Silver, he can be rematched here any day, now without the credits, and additionally the Gym Guide will give out infinite free Rare Candies
 - A second floor to Oak's Lab, which hosts the Inverse/Neutral Battles sidequest
+- A jewelry store in Cerulean City that will buy items like Pearls and Nuggets for higher-than-usual prices (and similarly, the Olivine Café will buy things like Mushrooms)
 - Olivine Gym redesigned, Lt. Surge's trashcan puzzle restored and modified, Blaine's cave Gym expanded, smashable rocks added to Brock's Gym, a quick exit warp added to Sabrina's Gym, and Viridian Gym's old layout recreated with its Gen II Lego tiles
 
 ## Enemy trainer AI
