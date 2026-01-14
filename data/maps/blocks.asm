@@ -1000,3 +1000,6 @@ Route2SouthGate_Blocks:
 Route16Gate_Blocks:
 Route17Route18Gate_Blocks:
 	INCBIN "maps/CyclingRoadGate.blk"
+
+CeruleanJewelerBlocks:
+	INCBIN "maps/CeruleanJeweler.blk"
