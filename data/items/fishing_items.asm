@@ -1,5 +1,5 @@
 FishingItemTable:
-	db 1, BIG_PEARL
+	db 1, BLACK_PEARL
 	db 1, DRAGON_FANG
 	db 2, DRAGON_SCALE
 	db 3, STAR_PIECE
