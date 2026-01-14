@@ -644,7 +644,8 @@
 	const EVENT_GATE_2F_GRANNY
 	const EVENT_GATE_2F_GENTLEMAN
 	const EVENT_GATE_2F_SAGE
-; Unused: next 139 events
+	const EVENT_CERULEAN_CITY_PERSIAN
+; Unused: next 138 events
 
 	const_next 1000
 ; Trainer flags
