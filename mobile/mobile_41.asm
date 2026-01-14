@@ -694,11 +694,6 @@ endr
 
 ; functions related to the cable club and various NPC scripts referencing communications
 
-Mobile_DummyReturnFalse:
-	xor a
-	ld [wScriptVar], a
-	ret
-
 Stubbed_Function106314:
 	ld a, BANK(s4_b000)
 	call OpenSRAM
