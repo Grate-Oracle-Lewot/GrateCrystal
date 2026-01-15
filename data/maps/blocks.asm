@@ -1001,5 +1001,5 @@ Route16Gate_Blocks:
 Route17Route18Gate_Blocks:
 	INCBIN "maps/CyclingRoadGate.blk"
 
-CeruleanJewelerBlocks:
+CeruleanJeweler_Blocks:
 	INCBIN "maps/CeruleanJeweler.blk"
