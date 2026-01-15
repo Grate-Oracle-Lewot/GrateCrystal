@@ -124,7 +124,7 @@ CeruleanJewelerPersianScript:
 CeruleanJewelerTrophyScript:
 	jumptext CeruleanJewelerTrophyText
 
-CeruleanJewelerNuggetTrophyScript:
+CeruleanJewelerNuggetScript:
 	jumptext CeruleanJewelerNuggetText
 
 CeruleanJewelerCaseScript:
