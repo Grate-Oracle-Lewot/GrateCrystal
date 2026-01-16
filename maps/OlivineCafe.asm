@@ -97,6 +97,7 @@ OlivineCafeChefScript:
 	takeitem CANDIED_YAM
 	givemoney YOUR_MONEY, OLIVINECAFE_CANDIEDYAM_MONEY
 .Finish:
+	special PlaceMoneyTopRight
 	playsound SFX_TRANSACTION
 	waitsfx
 	writetext OlivineCafeChef_ThankYouText
