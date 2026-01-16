@@ -51,49 +51,50 @@ CeruleanJewelerBeautyScript:
 	end
 
 .Stardust:
+	special PlaceMoneyTopRight
 	writetext CeruleanJewelerBeauty_StardustText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem STARDUST
 	givemoney YOUR_MONEY, CERULEANJEWELER_STARDUST_MONEY
 	sjump .Finish
 
 .Pearl:
+	special PlaceMoneyTopRight
 	writetext CeruleanJewelerBeauty_PearlText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem PEARL
 	givemoney YOUR_MONEY, CERULEANJEWELER_PEARL_MONEY
 	sjump .Finish
 
 .BlackPearl:
+	special PlaceMoneyTopRight
 	writetext CeruleanJewelerBeauty_BlackPearlText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem BLACK_PEARL
 	givemoney YOUR_MONEY, CERULEANJEWELER_BLACK_PEARL_MONEY
 	sjump .Finish
 
 .StarPiece:
+	special PlaceMoneyTopRight
 	writetext CeruleanJewelerBeauty_StarPieceText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem STAR_PIECE
 	givemoney YOUR_MONEY, CERULEANJEWELER_STAR_PIECE_MONEY
 	sjump .Finish
 
 .Nugget:
+	special PlaceMoneyTopRight
 	writetext CeruleanJewelerBeauty_NuggetText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem NUGGET
 	givemoney YOUR_MONEY, CERULEANJEWELER_NUGGET_MONEY
 .Finish:
+	special PlaceMoneyTopRight
 	playsound SFX_TRANSACTION
 	waitsfx
 	writetext CeruleanJewelerBeauty_ThankYouText
