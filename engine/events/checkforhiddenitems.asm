@@ -128,6 +128,13 @@ HeadbuttItemEncounter:
 	jr TreeRockRodItemEncounter
 
 RockItemEncounter:
+	ld a, [wMapGroup]
+	cp GROUP_MOUNT_MOON_SQUARE
+	jr nz, .continue
+	ld a, [wMapNumber]
+	cp MAP_MOUNT_MOON_SQUARE
+	jr z, MtMoonMoonStoneItem
+.continue
 	ld hl, RockSmashItemTable
 	jr TreeRockRodItemEncounter
 
@@ -153,6 +160,11 @@ TreeRockRodItemEncounter:
 	jr z, .done
 	ld a, [hli]
 .done
+	ld [wScriptVar], a
+	ret
+
+MtMoonMoonStoneItem:
+	ld a, MOON_STONE
 	ld [wScriptVar], a
 	ret
 
