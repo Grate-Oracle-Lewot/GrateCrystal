@@ -56,10 +56,10 @@ OlivineCafeChefScript:
 	promptbutton
 	writetext OlivineCafeChef_MourselText
 	promptbutton
+	special PlaceMoneyTopRight
 	writetext OlivineCafeChef_AskTinyText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem TINYMUSHROOM
 	givemoney YOUR_MONEY, OLIVINECAFE_TINYMUSHROOM_MONEY
 	sjump .Finish
@@ -73,10 +73,10 @@ OlivineCafeChefScript:
 	promptbutton
 	writetext OlivineCafeChef_MourselText
 	promptbutton
+	special PlaceMoneyTopRight
 	writetext OlivineCafeChef_AskBigText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem BIG_MUSHROOM
 	givemoney YOUR_MONEY, OLIVINECAFE_BIGMUSHROOM_MONEY
 	sjump .Finish
@@ -90,10 +90,10 @@ OlivineCafeChefScript:
 	promptbutton
 	writetext OlivineCafeChef_MourselText
 	promptbutton
+	special PlaceMoneyTopRight
 	writetext OlivineCafeChef_AskYamText
 	yesorno
 	iffalse .Refused
-	special PlaceMoneyTopRight
 	takeitem CANDIED_YAM
 	givemoney YOUR_MONEY, OLIVINECAFE_CANDIEDYAM_MONEY
 .Finish:
