@@ -67,13 +67,8 @@ ClefairyDance:
 	stopfollow
 	clearevent EVENT_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
 	setflag ENGINE_MT_MOON_SQUARE_CLEFAIRY
-	end
-
 .NoDancing:
 	end
-
-MountMoonSquareHiddenMoonStone:
-	hiddenitem MOON_STONE, EVENT_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
 
 DontLitterSign:
 	jumptext DontLitterSignText
@@ -142,7 +137,6 @@ MountMoonSquare_MapEvents:
 	coord_event  7, 11, SCENE_DEFAULT, ClefairyDance
 
 	def_bg_events
-	bg_event  7,  7, BGEVENT_ITEM, MountMoonSquareHiddenMoonStone
 	bg_event 17,  7, BGEVENT_READ, DontLitterSign
 
 	def_object_events
