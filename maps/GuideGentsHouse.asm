@@ -9,9 +9,6 @@ GuideGentsHouse_MapScripts:
 GuideGentsHouseGuideGent:
 	jumptextfaceplayer GuideGentsHouseGuideGentText
 
-GuideGentsHouseBookshelf:
-	jumpstd MagazineBookshelfScript
-
 GuideGentsHouseGuideGentText:
 	text "When I was a wee"
 	line "lad, I was a hot-"
@@ -35,8 +32,6 @@ GuideGentsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, GuideGentsHouseBookshelf
-	bg_event  1,  1, BGEVENT_READ, GuideGentsHouseBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
