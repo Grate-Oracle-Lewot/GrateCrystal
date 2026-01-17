@@ -105,12 +105,12 @@ Route27SandstormHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, ROUTE_27, 1
 	warp_event  3,  7, ROUTE_27, 1
+	warp_event  4,  7, ROUTE_27, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  4, SPRITE_LOTUS_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1
+	object_event  2,  3, SPRITE_LOTUS_LADY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1
