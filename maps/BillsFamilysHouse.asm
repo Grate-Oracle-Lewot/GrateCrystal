@@ -109,11 +109,8 @@ BillsFamilys_EndEevee:
 	closetext
 	end
 
-BillsHouseBookshelf1:
+BillsHouseBookshelf:
 	jumpstd PictureBookshelfScript
-
-BillsHouseBookshelf2:
-	jumpstd MagazineBookshelfScript
 
 BillsHouseRadio:
 	jumpstd Radio2Script
@@ -291,8 +288,7 @@ BillsFamilysHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2
-	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1
+	bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf
 	bg_event  7,  1, BGEVENT_READ, BillsHouseRadio
 	bg_event  3,  0, BGEVENT_READ, BillsFamilysHousePhoto
 
