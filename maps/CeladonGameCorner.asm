@@ -104,16 +104,16 @@ CeladonGameCornerGrampsScript:
 CeladonGameCornerPosterScript:
 	jumptext CeladonGameCornerPosterText
 
-CeladonGameCornerLuckySlotMachineScript:
+CeladonGameCornerSlotMachineScript:
 	random 6
-	ifequal 0, CeladonGameCornerSlotMachineScript
+	ifequal 0, CeladonGameCornerLuckySlotMachineScript
 	refreshscreen
 	setval FALSE
 	special SlotMachine
 	closetext
 	end
 
-CeladonGameCornerSlotMachineScript:
+CeladonGameCornerLuckySlotMachineScript:
 	refreshscreen
 	setval TRUE
 	special SlotMachine
@@ -129,6 +129,12 @@ CeladonGameCornerCardFlipScript:
 CeladonGameCornerVoltorbFlipScript:
 	refreshscreen
 	special CardFlip
+	closetext
+	end
+
+CeladonGameCornerMemoryGameScript:
+	refreshscreen
+	special UnusedMemoryGame
 	closetext
 	end
 
@@ -256,12 +262,12 @@ CeladonGameCorner_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  1,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1,  8, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1,  9, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1, 10, BGEVENT_READ, CeladonGameCornerCardFlipScript
-	bg_event  1, 11, BGEVENT_LEFT, CeladonGameCornerCardFlipScript
+	bg_event  1,  6, BGEVENT_READ, CeladonGameCornerMemoryGameScript
+	bg_event  1,  7, BGEVENT_READ, CeladonGameCornerMemoryGameScript
+	bg_event  1,  8, BGEVENT_READ, CeladonGameCornerMemoryGameScript
+	bg_event  1,  9, BGEVENT_READ, CeladonGameCornerMemoryGameScript
+	bg_event  1, 10, BGEVENT_READ, CeladonGameCornerMemoryGameScript
+	bg_event  1, 11, BGEVENT_LEFT, CeladonGameCornerMemoryGameScript
 	bg_event  6,  6, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6,  7, BGEVENT_READ, CeladonGameCornerCardFlipScript
 	bg_event  6,  8, BGEVENT_READ, CeladonGameCornerCardFlipScript
