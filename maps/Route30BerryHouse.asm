@@ -23,9 +23,6 @@ Route30BerryHousePokefanMScript:
 	closetext
 	end
 
-Route30BerryHouseBookshelf:
-	jumpstd MagazineBookshelfScript
-
 Route30BerrySpeechHouseMonEatBerriesText:
 	text "You know, #MON"
 	line "eat BERRIES."
@@ -53,8 +50,6 @@ Route30BerryHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, Route30BerryHouseBookshelf
-	bg_event  1,  1, BGEVENT_READ, Route30BerryHouseBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1
