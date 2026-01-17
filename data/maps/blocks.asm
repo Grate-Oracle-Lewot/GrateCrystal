@@ -102,53 +102,51 @@ FuchsiaCity_Blocks:
 Route38_Blocks:
 	INCBIN "maps/Route38.blk"
 
-OlivineTimsHouse_Blocks:
-OlivinePunishmentSpeechHouse_Blocks:
-OlivineGoodRodHouse_Blocks:
-Route39Farmhouse_Blocks:
-MahoganyRedGyaradosSpeechHouse_Blocks:
-BlackthornDragonSpeechHouse_Blocks:
-BlackthornEmysHouse_Blocks:
-MoveDeletersHouse_Blocks:
-CeruleanGymBadgeSpeechHouse_Blocks:
-CeruleanPoliceStation_Blocks:
-CeruleanTradeSpeechHouse_Blocks:
+PlayersNeighborsHouse_Blocks:
+GuideGentsHouse_Blocks:
+CherrygroveGymSpeechHouse_Blocks:
+CherrygroveEvolutionSpeechHouse_Blocks:
+Route30BerryHouse_Blocks:
 CharcoalKiln_Blocks:
-LakeOfRageHiddenPowerHouse_Blocks:
-LakeOfRageMagikarpHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 BillsFamilysHouse_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
 GoldenrodNameRater_Blocks:
-VermilionFishingSpeechHouse_Blocks:
-VermilionMagnetTrainSpeechHouse_Blocks:
-VermilionDiglettsCaveSpeechHouse_Blocks:
-BluesHouse_Blocks:
-PewterNidoranSpeechHouse_Blocks:
-PewterSnoozeSpeechHouse_Blocks:
-BillsBrothersHouse_Blocks:
-LavenderSpeechHouse_Blocks:
-LavenderNameRater_Blocks:
-Route12SuperRodHouse_Blocks:
-Route28SteelWingHouse_Blocks:
-CeladonMansionRoofHouse_Blocks:
-Route16FuchsiaSpeechHouse_Blocks:
+OlivineTimsHouse_Blocks:
+OlivinePunishmentSpeechHouse_Blocks:
+OlivineGoodRodHouse_Blocks:
+Route39Farmhouse_Blocks:
 ManiasHouse_Blocks:
 CianwoodPharmacy_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
+MahoganyRedGyaradosSpeechHouse_Blocks:
+LakeOfRageHiddenPowerHouse_Blocks:
+LakeOfRageMagikarpHouse_Blocks:
+BlackthornDragonSpeechHouse_Blocks:
+BlackthornEmysHouse_Blocks:
+MoveDeletersHouse_Blocks:
+BluesHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
-PlayersNeighborsHouse_Blocks:
+PewterNidoranSpeechHouse_Blocks:
+PewterSnoozeSpeechHouse_Blocks:
+CeruleanGymBadgeSpeechHouse_Blocks:
+CeruleanPoliceStation_Blocks:
+CeruleanTradeSpeechHouse_Blocks:
+Route5CleanseTagHouse_Blocks:
+VermilionFishingSpeechHouse_Blocks:
+VermilionMagnetTrainSpeechHouse_Blocks:
+VermilionDiglettsCaveSpeechHouse_Blocks:
+LavenderSpeechHouse_Blocks:
+LavenderNameRater_Blocks:
+Route12SuperRodHouse_Blocks:
+CeladonMansionRoofHouse_Blocks:
+Route16FuchsiaSpeechHouse_Blocks:
+BillsBrothersHouse_Blocks:
+MrPsychicsHouse_Blocks:
 Route26HealHouse_Blocks:
 DayOfWeekSiblingsHouse_Blocks:
-Route27SandstormHouse_Blocks:
-MrPsychicsHouse_Blocks:
-Route5CleanseTagHouse_Blocks:
-CherrygroveGymSpeechHouse_Blocks:
-GuideGentsHouse_Blocks:
-CherrygroveEvolutionSpeechHouse_Blocks:
-Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 Route29Route46Gate_Blocks:
@@ -233,46 +231,46 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.blk"
 
-OlivineMart_Blocks:
-EcruteakMart_Blocks:
-BlackthornMart_Blocks:
-CeruleanMart_Blocks:
-AzaleaMart_Blocks:
-VioletMart_Blocks:
-VermilionMart_Blocks:
-PewterMart_Blocks:
-FuchsiaMart_Blocks:
-LavenderMart_Blocks:
 ViridianMart_Blocks:
+PewterMart_Blocks:
+CeruleanMart_Blocks:
+VermilionMart_Blocks:
+LavenderMart_Blocks:
 SaffronMart_Blocks:
+FuchsiaMart_Blocks:
 CherrygroveMart_Blocks:
+VioletMart_Blocks:
+AzaleaMart_Blocks:
+EcruteakMart_Blocks:
+OlivineMart_Blocks:
+BlackthornMart_Blocks:
 	INCBIN "maps/Mart.blk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.blk"
 
-OlivinePokecenter1F_Blocks:
-MahoganyPokecenter1F_Blocks:
-EcruteakPokecenter1F_Blocks:
-BlackthornPokecenter1F_Blocks:
-CinnabarPokecenter1F_Blocks:
-CeruleanPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
-AzaleaPokecenter1F_Blocks:
-VioletPokecenter1F_Blocks:
-Route32Pokecenter1F_Blocks:
-GoldenrodPokecenter1F_Blocks:
-VermilionPokecenter1F_Blocks:
+ViridianPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 Route3Pokecenter1F_Blocks:
-FuchsiaPokecenter1F_Blocks:
+CeruleanPokecenter1F_Blocks:
+VermilionPokecenter1F_Blocks:
+Route10Pokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
-SilverCavePokecenter1F_Blocks:
 CeladonPokecenter1F_Blocks:
-CianwoodPokecenter1F_Blocks:
-ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
+FuchsiaPokecenter1F_Blocks:
+CinnabarPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
+VioletPokecenter1F_Blocks:
+Route32Pokecenter1F_Blocks:
+AzaleaPokecenter1F_Blocks:
+GoldenrodPokecenter1F_Blocks:
+EcruteakPokecenter1F_Blocks:
+OlivinePokecenter1F_Blocks:
+CianwoodPokecenter1F_Blocks:
+MahoganyPokecenter1F_Blocks:
+BlackthornPokecenter1F_Blocks:
+SilverCavePokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.blk"
 
 EarlsPokemonAcademy_Blocks:
@@ -330,9 +328,11 @@ Colosseum_Blocks:
 TradeCenter_Blocks:
 	INCBIN "maps/TradeCenter.blk"
 
-EcruteakLugiaSpeechHouse_Blocks:
+Route27SandstormHouse_Blocks:
+Route28SteelWingHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
+EcruteakLugiaSpeechHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
 UnionCaveB1F_Blocks:
@@ -364,10 +364,10 @@ RuinsOfAlphOutside_Blocks:
 RuinsOfAlphInnerChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphInnerChamber.blk"
 
-RuinsOfAlphHoOhChamber_Blocks:
 RuinsOfAlphKabutoChamber_Blocks:
-RuinsOfAlphOmanyteChamber_Blocks:
 RuinsOfAlphAerodactylChamber_Blocks:
+RuinsOfAlphOmanyteChamber_Blocks:
+RuinsOfAlphHoOhChamber_Blocks:
 SeafoamCavePuzzleChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphPuzzleChamber.blk"
 
@@ -812,10 +812,10 @@ DragonsDenB1F_Blocks:
 TohjoFalls_Blocks:
 	INCBIN "maps/TohjoFalls.blk"
 
-RuinsOfAlphHoOhItemRoom_Blocks:
 RuinsOfAlphKabutoItemRoom_Blocks:
-RuinsOfAlphOmanyteItemRoom_Blocks:
 RuinsOfAlphAerodactylItemRoom_Blocks:
+RuinsOfAlphOmanyteItemRoom_Blocks:
+RuinsOfAlphHoOhItemRoom_Blocks:
 	INCBIN "maps/RuinsOfAlphItemRoom.blk"
 
 RuinsOfAlphHoOhWordRoom_Blocks:
