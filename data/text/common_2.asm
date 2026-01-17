@@ -1300,6 +1300,18 @@ _OakPCText4::
 	line "OAK's PC closed."
 	done
 
+_MemoryGameYeahText::
+	text " , yeah!"
+	done
+
+_MemoryGameDarnText::
+	text "Darn…"
+	done
+
+_MemoryGameGameOverText::
+	text "Game over!"
+	done
+
 _StartMenuContestEndText::
 	text "Would you like to"
 	line "end the Contest?"
