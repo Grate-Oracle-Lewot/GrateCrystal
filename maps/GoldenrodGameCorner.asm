@@ -437,6 +437,12 @@ GoldenrodGameCornerVoltorbFlipMachineScript:
 	closetext
 	end
 
+GoldenrodGameCornerMemoryGameScript:
+	refreshscreen
+	special UnusedMemoryGame
+	closetext
+	end
+
 GoldenrodGameCornerPosterScript:
 	opentext
 	writetext GoldenrodGameCornerBehindPosterText
@@ -516,7 +522,7 @@ GoldenrodGameCornerCooltrainerMText:
 	line "are different on"
 	cont "weekends!"
 
-	para "I'm going to flip"
+	para "I'm going to match"
 	line "cards until I have"
 
 	para "enough coins for a"
@@ -604,12 +610,12 @@ GoldenrodGameCorner_MapEvents:
 	bg_event 12,  9, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
 	bg_event 12, 10, BGEVENT_READ, GoldenrodGameCornerSlotsMachineScript
 	bg_event 12, 11, BGEVENT_RIGHT, GoldenrodGameCornerSlotsMachineScript
-	bg_event 13,  6, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 13,  7, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 13,  8, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 13,  9, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 13, 10, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
-	bg_event 13, 11, BGEVENT_LEFT, GoldenrodGameCornerCardFlipMachineScript
+	bg_event 13,  6, BGEVENT_READ, GoldenrodGameCornerMemoryGameScript
+	bg_event 13,  7, BGEVENT_READ, GoldenrodGameCornerMemoryGameScript
+	bg_event 13,  8, BGEVENT_READ, GoldenrodGameCornerMemoryGameScript
+	bg_event 13,  9, BGEVENT_READ, GoldenrodGameCornerMemoryGameScript
+	bg_event 13, 10, BGEVENT_READ, GoldenrodGameCornerMemoryGameScript
+	bg_event 13, 11, BGEVENT_LEFT, GoldenrodGameCornerMemoryGameScript
 	bg_event 18,  6, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
 	bg_event 18,  7, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
 	bg_event 18,  8, BGEVENT_READ, GoldenrodGameCornerCardFlipMachineScript
