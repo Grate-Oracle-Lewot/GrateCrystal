@@ -71,9 +71,6 @@ CharcoalKilnFarfetchd:
 	closetext
 	end
 
-CharcoalKilnBookshelf:
-	jumpstd MagazineBookshelfScript
-
 CharcoalKilnRadio:
 	jumpstd Radio2Script
 
@@ -161,8 +158,6 @@ CharcoalKiln_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, CharcoalKilnBookshelf
-	bg_event  1,  1, BGEVENT_READ, CharcoalKilnBookshelf
 	bg_event  7,  1, BGEVENT_READ, CharcoalKilnRadio
 
 	def_object_events
