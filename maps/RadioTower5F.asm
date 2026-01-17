@@ -139,9 +139,6 @@ RadioTower5FDirectorsOfficeSign:
 RadioTower5FStudio1Sign:
 	jumptext RadioTower5FStudio1SignText
 
-RadioTower5FBookshelf:
-	jumpstd MagazineBookshelfScript
-
 FakeDirectorMovement:
 	step LEFT
 	step LEFT
@@ -429,8 +426,6 @@ RadioTower5F_MapEvents:
 	bg_event  3,  0, BGEVENT_READ, RadioTower5FDirectorsOfficeSign
 	bg_event 11,  0, BGEVENT_READ, RadioTower5FStudio1Sign
 	bg_event 15,  0, BGEVENT_READ, RadioTower5FStudio1Sign
-	bg_event 16,  1, BGEVENT_READ, RadioTower5FBookshelf
-	bg_event 17,  1, BGEVENT_READ, RadioTower5FBookshelf
 
 	def_object_events
 	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Director, -1
