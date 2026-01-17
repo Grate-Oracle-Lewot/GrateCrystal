@@ -18,11 +18,8 @@ OlivineHouseBetaRhydonScript:
 	closetext
 	end
 
-OlivineHouseBetaBookshelf1:
+OlivineHouseBetaBookshelf:
 	jumpstd PictureBookshelfScript
-
-OlivineHouseBetaBookshelf2:
-	jumpstd MagazineBookshelfScript
 
 OlivineHouseBetaTeacherText:
 	text "When my #MON"
@@ -47,8 +44,7 @@ OlivineHouseBeta_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, OlivineHouseBetaBookshelf1
-	bg_event  1,  1, BGEVENT_READ, OlivineHouseBetaBookshelf2
+	bg_event  0,  1, BGEVENT_READ, OlivineHouseBetaBookshelf
 
 	def_object_events
 	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineHouseBetaTeacherScript, -1
