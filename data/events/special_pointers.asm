@@ -56,6 +56,7 @@ SpecialsPointers::
 	add_special UnownPuzzle
 	add_special SlotMachine
 	add_special CardFlip
+	add_special UnusedMemoryGame
 	add_special MoveReminder
 	add_special FillPokedex ; used for testing
 	add_special FadeOutPalettes
