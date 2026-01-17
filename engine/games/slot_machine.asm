@@ -299,6 +299,8 @@ SlotsAction_WaitReel1:
 	call SlotsAction_Next
 	call Slots_StopReel1
 	ld [wReel1ReelAction], a
+	; fallthrough
+
 SlotsAction_WaitStopReel1:
 	ld a, [wReel1ReelAction]
 	cp REEL_ACTION_DO_NOTHING
@@ -311,6 +313,8 @@ SlotsAction_WaitStopReel1:
 	call SlotsAction_Next
 	xor a
 	ldh [hJoypadSum], a
+	; fallthrough
+
 SlotsAction_WaitReel2:
 	ld hl, hJoypadSum
 	ld a, [hl]
@@ -319,6 +323,8 @@ SlotsAction_WaitReel2:
 	call SlotsAction_Next
 	call Slots_StopReel2
 	ld [wReel2ReelAction], a
+	; fallthrough
+
 SlotsAction_WaitStopReel2:
 	ld a, [wReel2ReelAction]
 	cp REEL_ACTION_DO_NOTHING
@@ -331,6 +337,8 @@ SlotsAction_WaitStopReel2:
 	call SlotsAction_Next
 	xor a
 	ldh [hJoypadSum], a
+	; fallthrough
+
 SlotsAction_WaitReel3:
 	ld hl, hJoypadSum
 	ld a, [hl]
@@ -339,6 +347,8 @@ SlotsAction_WaitReel3:
 	call SlotsAction_Next
 	call Slots_StopReel3
 	ld [wReel3ReelAction], a
+	; fallthrough
+
 SlotsAction_WaitStopReel3:
 	ld a, [wReel3ReelAction]
 	cp REEL_ACTION_DO_NOTHING
@@ -364,6 +374,8 @@ SlotsAction_FlashIfWin:
 	call SlotsAction_Next
 	ld a, 16
 	ld [wSlotsDelay], a
+	; fallthrough
+
 SlotsAction_FlashScreen:
 	ld hl, wSlotsDelay
 	ld a, [hl]
@@ -397,6 +409,8 @@ SlotsAction_GiveEarnedCoins:
 SlotsAction_PayoutTextAndAnim:
 	call Slots_PayoutText
 	call SlotsAction_Next
+	; fallthrough
+
 SlotsAction_PayoutAnim:
 	ld hl, wSlotsDelay
 	ld a, [hl]
@@ -407,7 +421,7 @@ SlotsAction_PayoutAnim:
 	ld a, [hli]
 	ld d, a
 	or [hl]
-	jr z, .done
+	jp z, SlotsAction_Next
 	ld e, [hl]
 	dec de
 	ld [hl], e
@@ -429,9 +443,6 @@ SlotsAction_PayoutAnim:
 	ret nz
 	ld de, SFX_GET_COIN_FROM_SLOTS
 	jp PlaySFX
-
-.done
-	jp SlotsAction_Next
 
 SlotsAction_RestartOrQuit:
 	call Slots_DeilluminateBetLights
@@ -651,7 +662,6 @@ Slots_InitReelTiles:
 	ld hl, REEL_X_COORD
 	add hl, bc
 	ld [hl], 14 * 8
-	; fallthrough
 
 .OAM:
 	ld hl, REEL_ACTION
@@ -671,7 +681,6 @@ Slots_SpinReels:
 	ld bc, wReel2
 	call .SpinReel
 	ld bc, wReel3
-	; fallthrough
 
 .SpinReel:
 	ld hl, REEL_SPIN_DISTANCE
@@ -821,13 +830,11 @@ ReelActionJumptable:
 	dw ReelAction_WaitEgg                     ; 17
 	dw ReelAction_DropReel                    ; 18
 
-ReelAction_DoNothing:
-	ret
-
 ReelAction_QuadrupleRate:
 	ld hl, REEL_SPIN_RATE
 	add hl, bc
 	ld [hl], 16
+ReelAction_DoNothing:
 	ret
 
 ReelAction_DoubleRate:
@@ -1062,6 +1069,8 @@ ReelAction_InitGolem:
 	pop bc
 	xor a
 	ld [wSlotsDelay], a
+	; fallthrough
+
 ReelAction_WaitGolem:
 	ld a, [wSlotsDelay]
 	cp 2
@@ -1129,6 +1138,8 @@ ReelAction_WaitChansey:
 	inc [hl] ; REEL_ACTION_WAIT_EGG
 	ld a, 2
 	ld [wSlotsDelay], a
+	; fallthrough
+
 ReelAction_WaitEgg:
 	ld a, [wSlotsDelay]
 	cp $4
@@ -1142,6 +1153,8 @@ ReelAction_WaitEgg:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
 	ld [hl], 17
+	; fallthrough
+
 ReelAction_DropReel:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
@@ -1185,6 +1198,8 @@ ReelAction_Unused:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
 	ld [hl], a
+	; fallthrough
+
 ReelAction_CheckDropReel:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
@@ -1205,6 +1220,8 @@ ReelAction_CheckDropReel:
 	ld hl, REEL_SPIN_RATE
 	add hl, bc
 	ld [hl], 0
+	; fallthrough
+
 ReelAction_WaitDropReel:
 	ld hl, REEL_FIELD_0B
 	add hl, bc
@@ -1245,6 +1262,8 @@ ReelAction_StartSlowAdvanceReel3:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
 	ld [hl], 16
+	; fallthrough
+
 ReelAction_WaitSlowAdvanceReel3:
 	ld hl, REEL_MANIP_DELAY
 	add hl, bc
@@ -1298,6 +1317,7 @@ Slots_CheckMatchedFirstTwoReels:
 	and a
 	ret z
 	scf
+.zero
 	ret
 
 .Jumptable:
@@ -1315,10 +1335,7 @@ Slots_CheckMatchedFirstTwoReels:
 	call .CheckTopRow
 
 .one
-	call .CheckMiddleRow
-
-.zero
-	ret
+	jr .CheckMiddleRow
 
 .CheckBottomRow:
 	ld hl, wCurReelStopped
@@ -1345,15 +1362,14 @@ Slots_CheckMatchedFirstTwoReels:
 	ld hl, wCurReelStopped + 1
 	ld a, [wReel1Stopped + 2]
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckTopRow:
 	ld hl, wCurReelStopped + 2
 	ld a, [wReel1Stopped + 2]
 	cp [hl]
-	call z, .StoreResult
-	ret
+	ret nz
 
 .StoreResult:
 	ld [wSlotBuildingMatch], a
@@ -1395,6 +1411,7 @@ Slots_CheckMatchedAllThreeReels:
 
 .matched_nontrivial
 	scf
+.zero
 	ret
 
 .Jumptable:
@@ -1412,10 +1429,7 @@ Slots_CheckMatchedAllThreeReels:
 	call .CheckTopRow
 
 .one
-	call .CheckMiddleRow
-
-.zero
-	ret
+	jr .CheckMiddleRow
 
 .CheckBottomRow:
 	ld hl, wCurReelStopped
@@ -1424,7 +1438,7 @@ Slots_CheckMatchedAllThreeReels:
 	ret nz
 	ld hl, wReel2Stopped
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckUpwardsDiag:
@@ -1434,7 +1448,7 @@ Slots_CheckMatchedAllThreeReels:
 	ret nz
 	ld hl, wReel2Stopped + 1
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckMiddleRow:
@@ -1444,7 +1458,7 @@ Slots_CheckMatchedAllThreeReels:
 	ret nz
 	ld hl, wReel2Stopped + 1
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckDownwardsDiag:
@@ -1454,7 +1468,7 @@ Slots_CheckMatchedAllThreeReels:
 	ret nz
 	ld hl, wReel2Stopped + 1
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckTopRow:
@@ -1464,8 +1478,7 @@ Slots_CheckMatchedAllThreeReels:
 	ret nz
 	ld hl, wReel2Stopped + 2
 	cp [hl]
-	call z, .StoreResult
-	ret
+	ret nz
 
 .StoreResult:
 	ld [wSlotMatched], a
@@ -1586,18 +1599,25 @@ Slots_IlluminateBetLights:
 
 Slots_DeilluminateBetLights:
 	ld b, $23 ; turned off
+	; fallthrough
+
 Slots_Lights3OnOff:
 	hlcoord 3, 2
 	call Slots_TurnLightsOnOrOff
 	hlcoord 3, 10
 	call Slots_TurnLightsOnOrOff
+	; fallthrough
+
 Slots_Lights2OnOff:
 	hlcoord 3, 4
 	call Slots_TurnLightsOnOrOff
 	hlcoord 3, 8
 	call Slots_TurnLightsOnOrOff
+	; fallthrough
+
 Slots_Lights1OnOff:
 	hlcoord 3, 6
+	; fallthrough
 
 Slots_TurnLightsOnOrOff:
 	ld a, b
