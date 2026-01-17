@@ -155,28 +155,6 @@ MobileCheckOwnMonAnywhere:
 	pop hl
 	ret
 
-UnusedFindItemInPCOrBag:
-	ld a, [wScriptVar]
-	ld [wCurItem], a
-	ld hl, wNumPCItems
-	call CheckItem
-	jr c, .found
-
-	ld a, [wScriptVar]
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	jr c, .found
-
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.found
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-
 Function4a94e:
 	call FadeToMenu
 	ld a, -1
