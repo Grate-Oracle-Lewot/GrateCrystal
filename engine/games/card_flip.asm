@@ -58,6 +58,7 @@ _CardFlip:
 	jr nz, .leavethegame
 	call .CardFlip
 	jr .MasterLoop
+
 .leavethegame
 	call WaitSFX
 	ld de, SFX_QUIT_SLOTS
@@ -81,27 +82,22 @@ _CardFlip:
 	dw .PlayAgain
 	dw .Quit
 
-.Increment:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 .AskPlayWithThree:
 	ld hl, .CardFlipPlayWithThreeCoinsText
 	call CardFlip_UpdateCoinBalanceDisplay
 	call YesNoBox
 	jr c, .SaidNo
 	call CardFlip_ShuffleDeck
-	jp .Increment
+
+.Increment:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 .SaidNo:
 	ld a, 7
 	ld [wJumptableIndex], a
 	ret
-
-.CardFlipPlayWithThreeCoinsText:
-	text_far _CardFlipPlayWithThreeCoinsText
-	text_end
 
 .DeductCoins:
 	ld a, [wCoins]
@@ -135,11 +131,7 @@ _CardFlip:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call WaitSFX
-	jp .Increment
-
-.CardFlipNotEnoughCoinsText:
-	text_far _CardFlipNotEnoughCoinsText
-	text_end
+	jr .Increment
 
 .ChooseACard:
 	xor a
@@ -210,11 +202,7 @@ _CardFlip:
 	call CardFlip_FillGreenBox
 	pop af
 	ld [wCardFlipWhichCard], a
-	jp .Increment
-
-.CardFlipChooseACardText:
-	text_far _CardFlipChooseACardText
-	text_end
+	jr .betdone
 
 .PlaceYourBet:
 	ld hl, .CardFlipPlaceYourBetText
@@ -231,10 +219,6 @@ _CardFlip:
 
 .betdone
 	jp .Increment
-
-.CardFlipPlaceYourBetText:
-	text_far _CardFlipPlaceYourBetText
-	text_end
 
 .CheckTheCard:
 	xor a
@@ -262,12 +246,12 @@ _CardFlip:
 	call GetCoordsOfChosenCard
 	call CardFlip_DisplayCardFaceUp
 	call WaitBGMap2
-	jp .Increment
+	jr .betdone
 
 .TabulateTheResult:
 	call CardFlip_CheckWinCondition
 	call WaitPressAorB_BlinkCursor
-	jp .Increment
+	jr .betdone
 
 .PlayAgain:
 	call ClearSprites
@@ -275,7 +259,7 @@ _CardFlip:
 	call CardFlip_UpdateCoinBalanceDisplay
 	call YesNoBox
 	jr nc, .Continue
-	jp .Increment
+	jr .betdone
 
 .Continue:
 	ld a, [wCardFlipNumCardsPlayed]
@@ -298,6 +282,22 @@ _CardFlip:
 	ld a, 1
 	ld [wJumptableIndex], a
 	ret
+
+.CardFlipPlayWithThreeCoinsText:
+	text_far _CardFlipPlayWithThreeCoinsText
+	text_end
+
+.CardFlipNotEnoughCoinsText:
+	text_far _CardFlipNotEnoughCoinsText
+	text_end
+
+.CardFlipChooseACardText:
+	text_far _CardFlipChooseACardText
+	text_end
+
+.CardFlipPlaceYourBetText:
+	text_far _CardFlipPlaceYourBetText
+	text_end
 
 .CardFlipPlayAgainText:
 	text_far _CardFlipPlayAgainText
@@ -425,11 +425,6 @@ CardFlip_DisplayCardFaceUp:
 	jr nz, .row
 	pop hl
 
-	; Pointless CGB check
-	ldh a, [hCGB]
-	and a
-	ret z
-
 	; Set the attributes
 	ld de, wAttrmap - wTilemap
 	add hl, de
@@ -464,7 +459,7 @@ CardFlip_UpdateCoinBalanceDisplay:
 	call Textbox
 	pop hl
 	call PrintTextboxText
-	jp CardFlip_PrintCoinBalance
+	; fallthrough
 
 CardFlip_PrintCoinBalance:
 	hlcoord 9, 15
@@ -499,6 +494,7 @@ CardFlip_InitTilemap:
 
 CardFlip_FillGreenBox:
 	ld a, $29
+	; fallthrough
 
 CardFlip_FillBox:
 .row
@@ -764,15 +760,15 @@ CardFlip_CheckWinCondition:
 	jp hl
 
 .Jumptable:
-	dw .Impossible
-	dw .Impossible
+	dw .Lose
+	dw .Lose
 	dw .PikaJiggly
 	dw .PikaJiggly
 	dw .PoliOddish
 	dw .PoliOddish
 
-	dw .Impossible
-	dw .Impossible
+	dw .Lose
+	dw .Lose
 	dw .Pikachu
 	dw .Jigglypuff
 	dw .Poliwag
@@ -819,9 +815,6 @@ CardFlip_CheckWinCondition:
 	dw .JigglySix
 	dw .PoliSix
 	dw .OddSix
-
-.Impossible:
-	jp .Lose
 
 .PikaJiggly:
 	ld a, [wCardFlipFaceUpCard]
@@ -1044,14 +1037,6 @@ CardFlip_CheckWinCondition:
 	jr nz, .Lose
 	ld c, 72
 	ld de, SFX_2ND_PLACE
-	jr .Payout
-
-.Lose:
-	ld de, SFX_WRONG
-	call PlaySFX
-	ld hl, .CardFlipDarnText
-	call CardFlip_UpdateCoinBalanceDisplay
-	jp WaitSFX
 
 .Payout:
 	push bc
@@ -1076,6 +1061,13 @@ CardFlip_CheckWinCondition:
 	dec c
 	jr nz, .loop
 	ret
+
+.Lose:
+	ld de, SFX_WRONG
+	call PlaySFX
+	ld hl, .CardFlipDarnText
+	call CardFlip_UpdateCoinBalanceDisplay
+	jp WaitSFX
 
 .CardFlipYeahText:
 	text_far _CardFlipYeahText
