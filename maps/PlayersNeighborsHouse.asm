@@ -13,9 +13,6 @@ PlayersNeighborsDaughterScript:
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
 
-PlayersNeighborsHouseBookshelfScript:
-	jumpstd MagazineBookshelfScript
-
 PlayersNeighborsHouseRadioScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
@@ -24,14 +21,14 @@ PlayersNeighborsHouseRadioScript:
 	playmusic MUSIC_POKEMON_TALK
 	opentext
 	writetext PlayerNeighborRadioText1
-	pause 45
+	pause 42
 	writetext PlayerNeighborRadioText2
-	pause 45
+	pause 42
 	writetext PlayerNeighborRadioText3
-	pause 45
+	pause 42
 	musicfadeout MUSIC_NEW_BARK_TOWN, 16
 	writetext PlayerNeighborRadioText4
-	pause 45
+	pause 42
 	closetext
 	setevent EVENT_LISTENED_TO_INITIAL_RADIO
 	end
@@ -116,8 +113,6 @@ PlayersNeighborsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
-	bg_event  1,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript
 	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
 
 	def_object_events
