@@ -21,9 +21,6 @@ CherrygroveEvolutionSpeechHouseLassScript:
 	closetext
 	end
 
-CherrygroveEvolutionSpeechHouseBookshelf:
-	jumpstd MagazineBookshelfScript
-
 CherrygroveEvolutionSpeechHouseYoungsterText:
 	text "Some non-flying-"
 	line "type #MON can"
@@ -49,8 +46,6 @@ CherrygroveEvolutionSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf
-	bg_event  1,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf
 
 	def_object_events
 	object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseLassScript, -1
