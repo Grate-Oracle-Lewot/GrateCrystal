@@ -13,11 +13,8 @@ GoldenrodPPSpeechHouseFisherScript:
 GoldenrodPPSpeechHouseLassScript:
 	jumptextfaceplayer GoldenrodPPSpeechHouseLassText
 
-GoldenrodPPSpeechHouseBookshelf2:
+GoldenrodPPSpeechHouseBookshelf:
 	jumpstd DifficultBookshelfScript
-
-GoldenrodPPSpeechHouseBookshelf1:
-	jumpstd MagazineBookshelfScript
 
 GoldenrodPPSpeechHouseRadio:
 	jumpstd Radio2Script
@@ -62,8 +59,7 @@ GoldenrodPPSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf1
-	bg_event  1,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf2
+	bg_event  1,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf
 	bg_event  7,  1, BGEVENT_READ, GoldenrodPPSpeechHouseRadio
 
 	def_object_events
