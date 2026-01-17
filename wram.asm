@@ -808,7 +808,17 @@ wBetaPokerSGBRow:: db
 
 NEXTU
 ; unused memory game
-	ds 58
+wMemoryGameCards:: ds 9 * 5
+wMemoryGameCardsEnd::
+wMemoryGameLastCardPicked:: db
+wMemoryGameCard1:: db
+wMemoryGameCard2:: db
+wMemoryGameCard1Location:: db
+wMemoryGameCard2Location:: db
+wMemoryGameNumberTriesRemaining:: db
+wMemoryGameLastMatches:: ds 5
+wMemoryGameCounter:: db
+wMemoryGameNumCardsMatched:: db
 
 NEXTU
 ; unown puzzle
