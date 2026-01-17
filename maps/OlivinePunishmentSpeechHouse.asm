@@ -13,11 +13,8 @@ OlivinePunishmentSpeechHouseDad:
 OlivinePunishmentSpeechHouseDaughter:
 	jumptextfaceplayer OlivinePunishmentSpeechHouseDaughterText
 
-OlivinePunishmentSpeechHouseBookshelf2:
+OlivinePunishmentSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
-
-OlivinePunishmentSpeechHouseBookshelf1:
-	jumpstd MagazineBookshelfScript
 
 OlivinePunishmentSpeechHouseDadText:
 	text "Along the way to"
@@ -47,8 +44,7 @@ OlivinePunishmentSpeechHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf1
-	bg_event  1,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf2
+	bg_event  1,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf
 
 	def_object_events
 	object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDad, -1
