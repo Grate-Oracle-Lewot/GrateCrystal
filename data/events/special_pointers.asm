@@ -58,7 +58,7 @@ SpecialsPointers::
 	add_special CardFlip
 	add_special UnusedMemoryGame
 	add_special MoveReminder
-	add_special FillPokedex ; used for testing
+
 	add_special FadeOutPalettes
 	add_special BattleTowerFade
 	add_special FadeBlackQuickly
@@ -80,7 +80,7 @@ SpecialsPointers::
 	add_special InitRoamingRaikou
 	add_special InitRoamingEntei
 	add_special FindPartyMonThatSpecies
-	add_special FindPartyMonThatSpeciesYourTrainerID
+	add_special indPartyMonThatSpeciesYourTrainerID
 	add_special EggMoveTutor
 	add_special DayCareMon1
 	add_special DayCareMon2
@@ -180,4 +180,4 @@ SpecialsPointers::
 	add_special Function10387b
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
-	add_special UnusedFindItemInPCOrBag
+	add_special FillPokedex ; used for testing
