@@ -332,9 +332,6 @@ RadioTower2FOaksPKMNTalkSign:
 RadioTower2FPokemonRadioSign:
 	jumptext RadioTower2FPokemonRadioSignText
 
-RadioTower2FBookshelf:
-	jumpstd MagazineBookshelfScript
-
 RadioTower2FPlayerWalksToMicrophoneMovement:
 	slow_step DOWN
 	slow_step RIGHT
@@ -719,9 +716,6 @@ RadioTower2F_MapEvents:
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, RadioTower2FSalesSign
 	bg_event  5,  0, BGEVENT_READ, RadioTower2FOaksPKMNTalkSign
-	bg_event  9,  1, BGEVENT_READ, RadioTower2FBookshelf
-	bg_event 10,  1, BGEVENT_READ, RadioTower2FBookshelf
-	bg_event 11,  1, BGEVENT_READ, RadioTower2FBookshelf
 	bg_event 13,  0, BGEVENT_READ, RadioTower2FPokemonRadioSign
 
 	def_object_events
