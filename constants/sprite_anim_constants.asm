@@ -116,6 +116,7 @@ NUM_SPRITE_ANIM_INDEXES EQU const_value
 	const SPRITE_ANIM_SEQ_INTRO_UNOWN               ; 1e
 	const SPRITE_ANIM_SEQ_INTRO_UNOWN_F             ; 1f
 	const SPRITE_ANIM_SEQ_INTRO_SUICUNE_AWAY        ; 20
+	const SPRITE_ANIM_SEQ_UNUSED_CURSOR             ; 21
 NUM_SPRITE_ANIM_SEQS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
