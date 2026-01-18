@@ -1,3 +1,18 @@
+INCLUDE "constants.asm"
+
+; MemoryMinigame.Jumptable indices
+	const_def
+	const MEMORYGAME_RESTART_GAME
+	const MEMORYGAME_RESTART_BOARD
+	const MEMORYGAME_INIT_BOARD_AND_CURSOR
+	const MEMORYGAME_CHECK_TRIES_REMAINING
+	const MEMORYGAME_PICK_CARD_1
+	const MEMORYGAME_PICK_CARD_2
+	const MEMORYGAME_DELAY_PICK_AGAIN
+	const MEMORYGAME_REVEAL_ALL
+	const MEMORYGAME_ASK_PLAY_AGAIN
+MEMORYGAME_END_LOOP_F EQU 7
+
 _MemoryGame:
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
@@ -47,7 +62,7 @@ _MemoryGame:
 
 .JumptableLoop:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit MEMORYGAME_END_LOOP_F, a
 	jr nz, .quit
 	call .ExecuteJumptable
 	farcall PlaySpriteAnimations
@@ -124,7 +139,7 @@ endr
 	jr nz, .next_try
 	ld hl, MemoryGameGameOverText
 	call PrintText
-	ld a, $7
+	ld a, MEMORYGAME_REVEAL_ALL
 	ld [wJumptableIndex], a
 	ret
 
@@ -202,7 +217,7 @@ endr
 
 .PickAgain:
 	call MemoryGame_CheckMatch
-	ld a, $3
+	ld a, MEMORYGAME_CHECK_TRIES_REMAINING
 	ld [wJumptableIndex], a
 	ret
 
@@ -241,7 +256,7 @@ endr
 	call YesNoBox
 	jr nc, .restart
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set MEMORYGAME_END_LOOP_F, [hl]
 	ret
 
 .restart
@@ -518,11 +533,11 @@ MemoryGame_Card2Coord:
 
 MemoryGame_InterpretJoypad_AnimateCursor:
 	ld a, [wJumptableIndex]
-	cp $3
+	cp MEMORYGAME_CHECK_TRIES_REMAINING
 	jr c, .quit
-	cp $6
+	cp MEMORYGAME_DELAY_PICK_AGAIN
 	ret z
-	cp $7
+	cp MEMORYGAME_REVEAL_ALL
 	jr nc, .quit
 	call JoyTextDelay
 	ld hl, hJoypadPressed
