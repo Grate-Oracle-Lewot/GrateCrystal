@@ -807,7 +807,7 @@ wBetaPokerSGBCol:: db
 wBetaPokerSGBRow:: db
 
 NEXTU
-; unused memory game
+; memory game
 wMemoryGameCards:: ds 9 * 5
 wMemoryGameCardsEnd::
 wMemoryGameLastCardPicked:: db
@@ -1475,8 +1475,6 @@ NEXTU
 wPokegearCard:: db
 wPokegearMapRegion:: db
 
-	ds 1
-
 NEXTU
 ; pack
 wPackJumptableIndex:: db
@@ -1499,6 +1497,10 @@ NEXTU
 wCardFlipCursorY:: db
 wCardFlipCursorX:: db
 wCardFlipWhichCard:: db
+
+NEXTU
+; memory game
+wMemoryGameCardChoice:: db
 
 NEXTU
 ; magnet train
