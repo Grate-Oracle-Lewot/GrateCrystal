@@ -1475,6 +1475,8 @@ NEXTU
 wPokegearCard:: db
 wPokegearMapRegion:: db
 
+	ds 1
+
 NEXTU
 ; pack
 wPackJumptableIndex:: db
