@@ -66,7 +66,6 @@ AnimSeq_PartyMon:
 	add hl, bc
 	ld [hl], 0
 AnimSeq_Null:
-AnimSeq_MemoryGameCursor:
 	ret
 
 AnimSeq_PartyMonSwitch:
@@ -817,6 +816,10 @@ AnimSeq_EZChatCursor:
 
 AnimSeq_Celebi:
 	farcall UpdateCelebiPosition
+	ret
+
+AnimSeq_MemoryGameCursor:
+	farcall MemoryGame_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeqs_AnonJumptable:
