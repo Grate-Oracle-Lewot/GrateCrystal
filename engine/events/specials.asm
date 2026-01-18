@@ -178,6 +178,13 @@ MapRadio:
 	farcall PlayRadio
 	ret
 
+UnusedMemoryGame:
+	call CheckCoinsAndCoinCase
+	ret c
+	ld a, BANK(_MemoryGame)
+	ld hl, _MemoryGame
+	jr StartGameCornerGame
+
 SlotMachine:
 	call CheckCoinsAndCoinCase
 	ret c
