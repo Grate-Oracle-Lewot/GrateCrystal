@@ -78,6 +78,7 @@ NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_INDEX_INTRO_UNOWN_F             ; 28
 	const SPRITE_ANIM_INDEX_INTRO_SUICUNE_AWAY        ; 29
 	const SPRITE_ANIM_INDEX_CELEBI                    ; 2a
+	const SPRITE_ANIM_INDEX_MEMORY_GAME_CURSOR        ; 2b
 NUM_SPRITE_ANIM_INDEXES EQU const_value
 
 ; DoAnimFrame.Jumptable indexes (see engine/gfx/sprite_anims.asm)
