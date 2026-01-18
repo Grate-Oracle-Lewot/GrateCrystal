@@ -621,4 +621,4 @@ MemoryGameLZ:
 INCBIN "gfx/memory_game/memory_game.2bpp.lz"
 
 MemoryGameCursorLZ:
-INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
+INCBIN "gfx/memory_game/cursor.2bpp.lz"
