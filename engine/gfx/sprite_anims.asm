@@ -47,6 +47,7 @@ DoAnimFrame:
 	dw AnimSeq_IntroUnown
 	dw AnimSeq_IntroUnownF
 	dw AnimSeq_IntroSuicuneAway
+	dw AnimSeq_MemoryGameCursor
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_PartyMon:
@@ -65,6 +66,7 @@ AnimSeq_PartyMon:
 	add hl, bc
 	ld [hl], 0
 AnimSeq_Null:
+AnimSeq_MemoryGameCursor:
 	ret
 
 AnimSeq_PartyMonSwitch:
