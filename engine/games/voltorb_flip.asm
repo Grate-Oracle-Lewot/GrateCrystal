@@ -315,7 +315,7 @@ VFInput:
 	ld a, [$c41c]
 	ld [$c41e], a
 	push de
-	ld de, 7
+	ld de, SFX_READ_TEXT
 	call PlaySFX
 	pop de
 	pop af
@@ -346,7 +346,7 @@ VFInput:
 	and 3
 	jr nz, .skipintense
 	push de
-	ld de, 154
+	ld de, SFX_CHOOSE_A_CARD
 	call WaitPlaySFX
 	pop de
 	push bc
@@ -393,7 +393,7 @@ VFInput:
 	di
 	call VFRefreshScreen
 	ei
-	ld de, 148 ;level clear
+	ld de, SFX_3RD_PLACE ;level clear
 	call WaitPlaySFX
 	ld c, 60 ;1 seconds
 	call DelayFrames
@@ -402,7 +402,7 @@ VFInput:
 	cp 9
 	call z, .caplevel
 	ld [$c41a], a
-	ld de, 34
+	ld de, SFX_TRANSACTION
 	call WaitPlaySFX
 	ld hl, $c498
 	ld a, [hli]
@@ -1300,7 +1300,7 @@ VFRefreshScreen1: ;bc is the coordinates to refresh (3x3 tiles)
 
 VFFlipAnimation:
 	push de
-	ld de, 195 ;flip sound
+	ld de, SFX_INTRO_SUICUNE_1 ;flip sound
 	call WaitPlaySFX
 	ld de, 3 ;first frame of the flip
 .flipframe
@@ -1417,9 +1417,9 @@ VFBoom:
 	di
 	call VFRefreshScreen
 	ei
-	ld de, 91
+	ld de, SFX_EGG_BOMB
 	call WaitPlaySFX
-	ld de, 157
+	ld de, SFX_QUIT_SLOTS
 	call WaitPlaySFX
 	ld c, 240 ;4 seconds
 	call DelayFrames
@@ -1493,7 +1493,7 @@ VFMultiplyCoins:
 
 .coinsound
 	push de
-	ld de, 34
+	ld de, SFX_TRANSACTION
 	call WaitPlaySFX
 	pop de
 	jr .resume
@@ -1513,7 +1513,7 @@ VFMultiplyCoins:
 	jr .updatecoins
 
 VFKeepCoins:
-	ld de, 159 ;level clear
+	ld de, SFX_DEX_FANFARE_LESS_THAN_20 ;level clear
 	call WaitPlaySFX
 	ld c, 120 ;2 seconds
 	call DelayFrames
@@ -1522,7 +1522,7 @@ VFKeepCoins:
 	jr z, .fixlevel
 .setlevel
 	ld [$c41a], a
-	ld de, 34
+	ld de, SFX_TRANSACTION
 	call WaitPlaySFX
 	ld hl, $c498
 	ld a, [hli]
