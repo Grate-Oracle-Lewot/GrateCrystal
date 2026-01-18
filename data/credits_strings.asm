@@ -201,7 +201,7 @@ CreditsStringsPointers:
 .ProductTesting:      db "    Nescientist@"           ; "デバッグプレイ@"
 .SpecialThanks:       db "  Konrad Borowski@"         ; "スぺシャルサンクス@"
 .Producers:           db "      Vulcandth@"           ; "プロデューサー@"
-.ExecutiveProducer:   db "    Lucas Wright@"          ; "エグゼクティブ　プロデューサー@"
+.ExecutiveProducer:   db "    ProcyonNova@"           ; "エグゼクティブ　プロデューサー@"
 .PokemonAnimation:    db " Mmmmmmmmmmmmmmmmmm@"       ; "#　アニメーション@"
 .PokedexText:         db "   MajorAgnostic@"          ; "ずかん　テキスト@"
 .MobilePrjLeader:     db "   Bryan Bishop@"           ; "モバイルプロジェクト　りーダー@"
