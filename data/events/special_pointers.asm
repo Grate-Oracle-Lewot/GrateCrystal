@@ -80,7 +80,7 @@ SpecialsPointers::
 	add_special InitRoamingRaikou
 	add_special InitRoamingEntei
 	add_special FindPartyMonThatSpecies
-	add_special indPartyMonThatSpeciesYourTrainerID
+	add_special FindPartyMonThatSpeciesYourTrainerID
 	add_special EggMoveTutor
 	add_special DayCareMon1
 	add_special DayCareMon2
