@@ -235,11 +235,11 @@ CeladonGymGuideText:
 	done
 
 CeladonGameCornerGrampsText:
-	text "Hmmm… The odds are"
-	line "surely better for"
+	text "There are two card"
+	line "games. I wonder"
 
-	para "PIKACHU's line,"
-	line "but… What to do?"
+	para "which one pays out"
+	line "more over time…"
 	done
 
 CeladonGameCornerPosterText:
