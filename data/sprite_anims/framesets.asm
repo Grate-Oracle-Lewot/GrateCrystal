@@ -29,7 +29,6 @@ SpriteAnimFrameData:
 	dw .Frameset_EvolutionBallOfLight
 	dw .Frameset_RadioTuningKnob
 	dw .Frameset_MagnetTrainRed
-	dw .Frameset_Unused1C
 	dw .Frameset_Leaf
 	dw .Frameset_CutTree
 	dw .Frameset_EggCrack
@@ -67,6 +66,9 @@ SpriteAnimFrameData:
 	dw .Frameset_IntroUnownF
 	dw .Frameset_CelebiLeft
 	dw .Frameset_CelebiRight
+	dw .Frameset_MinigameOmanyte
+	dw .Frameset_MinigameJigglypuff
+	dw .Frameset_MinigameNote
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -246,10 +248,6 @@ SpriteAnimFrameData:
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1,  8
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2,  8, OAM_X_FLIP
 	dorestart
-
-.Frameset_Unused1C:
-	dowait 32
-	endanim
 
 .Frameset_Leaf:
 	frame SPRITE_ANIM_OAMSET_LEAF, 32
@@ -453,4 +451,24 @@ SpriteAnimFrameData:
 .Frameset_CelebiRight:
 	frame SPRITE_ANIM_OAMSET_CELEBI_1,  8, OAM_X_FLIP
 	frame SPRITE_ANIM_OAMSET_CELEBI_2,  8, OAM_X_FLIP
+	endanim
+
+.Frameset_MinigameOmanyte:
+	frame SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_1,  8
+	frame SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_2,  8
+	oamrestart
+
+.Frameset_MinigameJigglypuff:
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_1, 23, OAM_X_FLIP
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_2,  3, OAM_X_FLIP
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_3,  7
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_2,  3
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_1, 23
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_2,  3
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_3,  7
+	frame SPRITE_ANIM_OAMSET_MINIGAME_JIGGLYPUFF_2,  3, OAM_X_FLIP
+	oamrestart
+
+.Frameset_MinigameNote:
+	frame SPRITE_ANIM_OAMSET_MINIGAME_NOTE,  8
 	endanim
