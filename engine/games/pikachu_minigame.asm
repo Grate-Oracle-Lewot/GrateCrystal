@@ -113,18 +113,6 @@ PikachuMiniGame::
 	ld a, $e3
 	ldh [rLCDC], a
 
-	ld a, [wSGB]
-	and a
-	jr nz, .not_sgb
-
-	ld a, %10010100
-	ldh [rBGP], a
-	ld a, %11100100
-	ldh [rOBP0], a
-	jr .load_pikachu
-
-.not_sgb
-; Normal palette if on GB / GBC
 	ld a, %11100100
 	ldh [rBGP], a
 	ldh [rOBP0], a
@@ -539,14 +527,6 @@ PikachuMiniGame_FadeOut:
 	ld hl, .Obj_SGBPals
 	add hl, de
 
-	ld a, [wSGB]
-	and a
-	jr z, .not_sgb
-
-	ld a, [hl]
-	ldh [rBGP], a
-
-.not_sgb
 	ld a, [hl]
 	ldh [rOBP0], a
 
