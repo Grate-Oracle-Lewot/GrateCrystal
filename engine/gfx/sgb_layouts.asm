@@ -486,8 +486,8 @@ SGBLayoutJumptable:
 	ret
 
 .SGB_PikachuMinigame:
-	ld hl, PalPacket_PikachuMinigame
-	ld de, BlkPacket_986c
+	ld hl, PalPacket_GSIntroJigglypuffPikachu
+	ld de, BlkPacket_AllPal0
 	ret
 
 INCLUDE "data/maps/sgb_roof_pal_inds.asm"
