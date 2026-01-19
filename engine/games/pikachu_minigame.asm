@@ -394,8 +394,7 @@ PikachuMiniGame_RunTimer:
 	cp $60
 	ret c
 
-; Clear frame counter upon passing one second and increment the
-; seconds counter instead
+; Clear frame counter upon passing one second and increment the seconds counter instead
 	ld [hl], 0
 	ld hl, wPikachuMinigameTimeSeconds
 	ld a, [hl]
@@ -442,8 +441,7 @@ PikachuMiniGame_UpdateBlocks:
 
 
 PikachuMiniGame_PrintBCD:
-; Print the BCD number in HL to DE, least-significant
-; digit first.
+; Print the BCD number in HL to DE, least-significant digit first.
 
 	push hl
 	push de
@@ -639,7 +637,7 @@ PikachuMiniGame_FadeOut:
 
 PikachuMiniGame_NoteSpawner:
 ; Spawn notes from the left side of the screen.
-;
+
 	call PikachuMiniGame_RunTimer
 	ldh a, [hSCX]
 	and $20
@@ -845,6 +843,7 @@ MinigamePikachuDoMovement::
 	add hl, bc
 	ld [hl], a
 	ret
+
 .fall_down_from_jump
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
 	add hl, bc
@@ -880,8 +879,7 @@ MinigamePikachuDoMovement::
 	ld d, a
 	push bc
 
-; Check if the Pikachu object collides with any of the note
-; objects.
+; Check if the Pikachu object collides with any of the note objects.
 
 	ld bc, wSpriteAnim1
 	ld a, NUM_SPRITE_ANIM_STRUCTS
@@ -1133,10 +1131,8 @@ PikachuMiniGame_ScrollScene:
 	and $10
 	ld hl, wPikachuMinigameRedrawTimer
 	cp [hl]
-	jr nz, .new_column
-	ret
+	ret z
 
-.new_column
 	ld a, [hl]
 	xor $10
 	ld [hl], a
@@ -1235,7 +1231,7 @@ PikachuMiniGame_GetNextColumn:
 	cp $f0
 	ret c
 
-	call .GetColumnCommand
+	call .GetColumnCommand ; call to jp hl
 	jr PikachuMiniGame_GetNextColumn
 
 .GetColumnCommand:
