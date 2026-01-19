@@ -11,7 +11,7 @@
 	const MEMORYGAME_ASK_PLAY_AGAIN
 MEMORYGAME_END_LOOP_F EQU 7
 
-; Reward indices
+; Reward indices (see gfx/memory_game/memory_game.png)
 	const_def
 	const MEMORYGAMEREWARD_BACKOFCARD
 	const MEMORYGAMEREWARD_POTION
