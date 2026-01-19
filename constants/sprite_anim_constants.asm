@@ -122,6 +122,9 @@ NUM_SPRITE_ANIM_INDEXES EQU const_value
 	const SPRITE_ANIM_SEQ_MEMORY_GAME_CURSOR        ; 21
 	const SPRITE_ANIM_SEQ_PIKACHU_MINIGAME          ; 22
 	const SPRITE_ANIM_SEQ_PIKACHU_MINIGAME_TAIL     ; 23
+	const SPRITE_ANIM_SEQ_MINIGAME_OMANYTE          ; 24
+	const SPRITE_ANIM_SEQ_MINIGAME_JIGGLYPUFF       ; 25
+	const SPRITE_ANIM_SEQ_MINIGAME_NOTE             ; 26
 NUM_SPRITE_ANIM_SEQS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
@@ -192,6 +195,9 @@ NUM_SPRITE_ANIM_SEQS EQU const_value
 	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 3f
 	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 40
 	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 41
+	const SPRITE_ANIM_FRAMESET_MINIGAME_OMANYTE          ; 42
+	const SPRITE_ANIM_FRAMESET_MINIGAME_JIGGLYPUFF       ; 43
+	const SPRITE_ANIM_FRAMESET_MINIGAME_NOTE             ; 44
 NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
