@@ -48,6 +48,8 @@ DoAnimFrame:
 	dw AnimSeq_IntroUnownF
 	dw AnimSeq_IntroSuicuneAway
 	dw AnimSeq_MemoryGameCursor
+	dw AnimSeq_PikachuMinigame
+	dw AnimSeq_PikachuMinigameTail
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_PartyMon:
@@ -159,7 +161,7 @@ AnimSeq_GSTitleTrail:
 	add hl, bc
 	ld a, [hl]
 	cp $a4
-	jr nc, .delete
+	jp nc, DeinitializeSprite
 
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
@@ -191,9 +193,6 @@ AnimSeq_GSTitleTrail:
 	add hl, bc
 	ld [hl], a
 	ret
-
-.delete
-	jp DeinitializeSprite
 
 AnimSeq_GSIntroHoOhLugia:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -276,7 +275,7 @@ AnimSeq_GSGameFreakLogoSparkle:
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jr z, .delete
+	jp z, DeinitializeSprite
 
 	ld hl, SPRITEANIMSTRUCT_VAR4
 	add hl, bc
@@ -343,9 +342,6 @@ AnimSeq_GSGameFreakLogoSparkle:
 	xor $20
 	ld [hl], a
 	ret
-
-.delete
-	jp DeinitializeSprite
 
 AnimSeq_SlotsGolem:
 	farcall Slots_AnimateGolem
@@ -455,7 +451,8 @@ AnimSeq_TradePokeBall:
 .done
 	ld de, SFX_GOT_SAFARI_BALLS
 	call PlaySFX
-	jr .delete
+.delete
+	jp DeinitializeSprite
 
 .one
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
@@ -515,9 +512,6 @@ AnimSeq_TradePokeBall:
 	ld [hl], a
 	jp AnimSeqs_IncAnonJumptableIndex
 
-.delete
-	jp DeinitializeSprite
-
 AnimSeq_TradeTubeBulge:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -525,14 +519,11 @@ AnimSeq_TradeTubeBulge:
 	inc [hl]
 	inc [hl]
 	cp $b0
-	jr nc, .delete
+	jp nc, DeinitializeSprite
 	and $3
 	ret nz
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
 	jp PlaySFX
-
-.delete
-	jp DeinitializeSprite
 
 AnimSeq_TrademonInTube:
 	farcall TradeAnim_AnimateTrademonInTube
@@ -543,7 +534,7 @@ AnimSeq_RevealNewMon:
 	add hl, bc
 	ld a, [hl]
 	cp $80
-	jr nc, .finish_EggShell
+	jp nc, DeinitializeSprite
 	ld d, a
 	add 8
 	ld [hl], a
@@ -570,9 +561,6 @@ AnimSeq_RevealNewMon:
 	add hl, bc
 	ld [hl], a
 	ret
-
-.finish_EggShell
-	jp DeinitializeSprite
 
 AnimSeq_RadioTuningKnob:
 	farcall AnimateTuningKnob
@@ -661,7 +649,7 @@ AnimSeq_FlyLeaf:
 	add hl, bc
 	ld a, [hl]
 	cp -9 * 8
-	jr nc, .delete_leaf
+	jp nc, DeinitializeSprite
 	inc [hl]
 	inc [hl]
 
@@ -680,9 +668,6 @@ AnimSeq_FlyLeaf:
 	add hl, bc
 	ld [hl], a
 	ret
-
-.delete_leaf
-	jp DeinitializeSprite
 
 AnimSeq_FlyTo:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
@@ -727,10 +712,8 @@ AnimSeq_MobileTradeOTPulse:
 AnimSeq_IntroSuicune:
 	ld a, [wIntroSceneTimer]
 	and a
-	jr nz, .continue
-	ret
+	ret z
 
-.continue
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], $0
@@ -820,6 +803,31 @@ AnimSeq_Celebi:
 
 AnimSeq_MemoryGameCursor:
 	farcall MemoryGame_InterpretJoypad_AnimateCursor
+	ret
+
+AnimSeq_PikachuMinigame:
+	push bc
+	farcall MinigamePikachuDoMovement
+	pop bc
+	ld hl, wPikachuMinigamePikachuNextAnim
+	ld a, [hl]
+	and $3
+	ret z
+
+	ld [hl], 0
+	ld e, a
+	ld d, $00
+	ld hl, Data8d40b
+	add hl, de
+	ld a, [hl]
+	jp _ReinitSpriteAnimFrame
+
+; Data from 8D40B to 8D40E (4 bytes)
+Data8d40b:
+	db $12, $13, $12, $14
+
+AnimSeq_PikachuMinigameTail:
+	farcall CopyPikachuObjDataToTailObj
 	ret
 
 AnimSeqs_AnonJumptable:
