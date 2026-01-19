@@ -11,8 +11,6 @@ hRTCHours::   db
 hRTCMinutes:: db
 hRTCSeconds:: db
 
-	ds 2
-
 hHours:: db
 	ds 1
 hMinutes:: db
@@ -20,11 +18,7 @@ hMinutes:: db
 hSeconds:: db
 	ds 1
 
-	ds 1
-
 hVBlankCounter:: db
-
-	ds 1
 
 hROMBank:: db
 hVBlank:: db
@@ -43,8 +37,6 @@ hJoyDown::        db
 hJoyLast::        db
 
 hInMenu:: db
-
-	ds 1
 
 hPrinter:: db
 hGraphicStartTile:: db
@@ -146,8 +138,6 @@ hSPBuffer::  dw
 hBGMapUpdate::    db
 hBGMapTileCount:: db
 
-	ds 1
-
 hMapAnims::      db
 hTileAnimFrame:: db
 
@@ -174,3 +164,8 @@ hFarCallSavedA:: db
 hFarCallSavedHL::
 hFarCallSavedL:: db
 hFarCallSavedH:: db
+
+hRedrawRowOrColumnMode:: db
+hRedrawRowOrColumnDest:: ds 2
+
+	ds 3
