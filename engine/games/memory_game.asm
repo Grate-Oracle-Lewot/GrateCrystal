@@ -328,49 +328,14 @@ MemoryGame_CheckMatch:
 
 ; Take action based on what was matched
 	ld a, [wMemoryGameLastCardPicked]
-	cp MEMORYGAMEREWARD_POTION
+	cp MEMORYGAMEREWARD_POKEGEAR
 	jr nz, .next1
-	ld c, 2
+	ld c, 25
 	jr .Payout
 
 .next1
-	cp MEMORYGAMEREWARD_POKEDOLL
-	jr nz, .next2
-	ld c, 3
-	jr .Payout
-
-.next2
-	cp MEMORYGAMEREWARD_BOTTLE
-	jr nz, .next3
-	ld c, 5
-	jr .Payout
-
-.next3
-	cp MEMORYGAMEREWARD_COIN
-	jr nz, .next4
-	ld c, 10
-	jr .Payout
-
-.next4
-	cp MEMORYGAMEREWARD_POKEBALL
-	jr nz, .next5
-	ld c, 1
-	jr .Payout
-
-.next5
-	cp MEMORYGAMEREWARD_MAGIKARP
-	jr nz, .next6
-	ld hl, .NoPrizeText
-	call PrintText
-	ld de, SFX_BUMP
-	call PlaySFX
-	call WaitSFX
-	jp WaitPressAorB_BlinkCursor
-
-.next6
 	cp MEMORYGAMEREWARD_RARECANDY
-	jr nz, .next7
-	; Add an extra try
+	jr nz, .next2
 	ld hl, wMemoryGameNumberTriesRemaining
 	inc [hl]
 	ld hl, .ExtraTryText
@@ -380,10 +345,44 @@ MemoryGame_CheckMatch:
 	call WaitSFX
 	jp WaitPressAorB_BlinkCursor
 
-.next7
-	; MEMORYGAMEREWARD_POKEGEAR
-	ld c, 25
+.next2
+	cp MEMORYGAMEREWARD_COIN
+	jr nz, .next3
+	ld c, 10
 	jr .Payout
+
+.next3
+	cp MEMORYGAMEREWARD_BOTTLE
+	jr nz, .next4
+	ld c, 5
+	jr .Payout
+
+.next4
+	cp MEMORYGAMEREWARD_POKEDOLL
+	jr nz, .next5
+	ld c, 3
+	jr .Payout
+
+.next5
+	cp MEMORYGAMEREWARD_POTION
+	jr nz, .next6
+	ld c, 2
+	jr .Payout
+
+.next6
+	cp MEMORYGAMEREWARD_POKEBALL
+	jr nz, .next7
+	ld c, 1
+	jr .Payout
+
+.next7
+	; MEMORYGAMEREWARD_MAGIKARP or any other value
+	ld hl, .NoPrizeText
+	call PrintText
+	ld de, SFX_BUMP
+	call PlaySFX
+	call WaitSFX
+	jp WaitPressAorB_BlinkCursor
 
 .ExtraTryText:
 	text_asm
