@@ -119,12 +119,13 @@ Music:
 	dba Music_YellowUnusedSong
 	dba Music_BikeRiding
 	dba Music_PokemonTower
+	dba Music_Title
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
 	dba Music_Dive
 	dba Music_CatchEmRed
 	dba Music_MewtwoStage
-	dba Music_Title
+	dba Music_EndCredits
 	dba Music_GengarInTheGraveyard
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
