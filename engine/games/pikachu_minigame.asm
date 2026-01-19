@@ -1421,3 +1421,9 @@ INCBIN "gfx/pikachu_minigame/pikachu_blockmap.bin"
 
 PikachuMiniGame_Meta:
 INCBIN "gfx/pikachu_minigame/pikachu_blockset.bin"
+
+IntroForestGFX:
+INCBIN "gfx/pikachu_minigame/forest.2bpp"
+
+IntroJigglypuffPikachuGFX:
+INCBIN "gfx/pikachu_minigame/jigglypuff_pikachu.2bpp"
