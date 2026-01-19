@@ -50,6 +50,7 @@ SGBLayoutJumptable:
 	dw .SGB_TradeTube
 	dw .SGB_TrainerOrMonFrontpicPals
 	dw .SGB_MysteryGift
+	dw .SGB_PikachuMinigame
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:
@@ -482,6 +483,11 @@ SGBLayoutJumptable:
 
 .forest
 	ld a, PREDEFPAL_VERMILION
+	ret
+
+.SGB_PikachuMinigame:
+	ld hl, PalPacket_PikachuMinigame
+	ld de, BlkPacket_986c
 	ret
 
 INCLUDE "data/maps/sgb_roof_pal_inds.asm"
