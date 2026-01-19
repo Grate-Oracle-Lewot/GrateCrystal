@@ -456,7 +456,7 @@ SpriteAnimFrameData:
 .Frameset_MinigameOmanyte:
 	frame SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_1,  8
 	frame SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_2,  8
-	oamrestart
+	dorestart
 
 .Frameset_MinigameJigglypuff:
 	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1, 23, OAM_X_FLIP
@@ -467,7 +467,7 @@ SpriteAnimFrameData:
 	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3
 	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_3,  7
 	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3, OAM_X_FLIP
-	oamrestart
+	dorestart
 
 .Frameset_MinigameNote:
 	frame SPRITE_ANIM_OAMSET_GS_INTRO_NOTE,  8
