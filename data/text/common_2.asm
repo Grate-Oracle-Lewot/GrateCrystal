@@ -1306,6 +1306,10 @@ _MemoryGameYeahText::
 	text " Coin(s)!"
 	done
 
+_MemoryGameNoPrizeText::
+	text "! No prize…"
+	done
+
 _MemoryGameDarnText::
 	text "Darn…"
 	done
