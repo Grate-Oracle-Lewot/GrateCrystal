@@ -31,22 +31,22 @@ PikachuMiniGame::
 
 .Init:
 	call DisableLCD
-	ld b, SGB_PIKACHU_MINIGAME
+	ld b, SCGB_PIKACHU_MINIGAME
 	call GetSGBLayout
 	farcall ClearSpriteAnims
 	call PikachuMiniGame_ClearBothTilemaps
 
 	ld hl, IntroForestGFX
-	ld de, vChars2
+	ld de, vTiles2
 	ld bc, $80 tiles
 	ld a, BANK(IntroForestGFX)
-	call FarCopyData
+	call FarCopyBytes
 
 	ld hl, IntroJigglypuffPikachuGFX
-	ld de, vChars0
+	ld de, vTiles0
 	ld bc, $90 tiles
 	ld a, BANK(IntroJigglypuffPikachuGFX)
-	call FarCopyData
+	call FarCopyBytes
 
 ; Metatiles
 	ld a, LOW(PikachuMiniGame_Meta)
@@ -74,7 +74,6 @@ PikachuMiniGame::
 	ld [hli], a
 	ld a, SPRITE_ANIM_DICT_DEFAULT
 	ld [hli], a
-	call PikachuMiniGame_LoadFont
 
 	xor a
 	ldh [hSCY], a
@@ -119,7 +118,7 @@ PikachuMiniGame::
 
 .load_pikachu
 	depixel 14, 11
-	ld a, SPRITE_ANIM_OBJ_MINIGAME_PIKACHU
+	ld a, SPRITE_ANIM_SEQ_MINIGAME_PIKACHU
 	call InitSpriteAnimStruct
 
 ; Save pointer to the newly initialized Pikachu object
@@ -130,7 +129,7 @@ PikachuMiniGame::
 
 ; load Pikachu's tail object
 	depixel 14, 11
-	ld a, SPRITE_ANIM_OBJ_MINIGAME_PIKACHU_TAIL
+	ld a, SPRITE_ANIM_SEQ_MINIGAME_PIKACHU_TAIL
 	call InitSpriteAnimStruct
 
 	ld a, c
@@ -150,7 +149,7 @@ PikachuMiniGame_ClearBothTilemaps:
 	or c
 	jr nz, .clear_bgmap
 
-	ld hl, wTileMap
+	ld hl, wTilemap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 .clear_tilemap
 	ld [hl], 0
@@ -163,19 +162,6 @@ PikachuMiniGame_ClearBothTilemaps:
 	ld a, 7
 	ldh [hWX], a
 	ret
-
-PikachuMiniGame_LoadFont:
-	ld hl, FontGFX
-	ld de, vFont tile $10
-	ld bc, 112 * LEN_1BPP_TILE
-	ld a, BANK(FontGFX)
-	call FarCopyDataDouble
-
-	ld hl, FontGFX tile $39
-	ld de, vChars2 tile $32
-	ld bc, 16 * LEN_1BPP_TILE
-	ld a, BANK(FontGFX)
-	jp FarCopyDataDouble
 
 PikachuMiniGame_DrawBackground:
 	ld b, BG_MAP_HEIGHT / 2
@@ -251,7 +237,7 @@ PikachuMiniGame_RunFrame:
 ; Run a single frame of the minigame
 
 	call GetJoypad
-	ld hl, hJoyState
+	ld hl, hJoypadPressed
 	ld a, [hl]
 
 ; Skip minigame on pressing Start
@@ -722,7 +708,7 @@ MinigamePikachuDoMovement::
 	ret
 
 .ControlPikachu:
-	ldh a, [hJoyState]
+	ldh a, [hJoypadPressed]
 	ld hl, wPikachuMinigameControlEnable
 	and [hl]
 	ld d, a
