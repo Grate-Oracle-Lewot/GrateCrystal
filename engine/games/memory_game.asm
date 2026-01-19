@@ -11,6 +11,18 @@
 	const MEMORYGAME_ASK_PLAY_AGAIN
 MEMORYGAME_END_LOOP_F EQU 7
 
+; Reward indices
+	const_def
+	const MEMORYGAMEREWARD_BACKOFCARD
+	const MEMORYGAMEREWARD_POTION
+	const MEMORYGAMEREWARD_POKEDOLL
+	const MEMORYGAMEREWARD_BOTTLE
+	const MEMORYGAMEREWARD_COIN
+	const MEMORYGAMEREWARD_POKEBALL
+	const MEMORYGAMEREWARD_MAGIKARP
+	const MEMORYGAMEREWARD_RARECANDY
+	const MEMORYGAMEREWARD_POKEGEAR
+
 _MemoryGame:
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
@@ -270,17 +282,11 @@ MemoryGame_CheckMatch:
 	ld hl, wMemoryGameCard1
 	ld a, [hli]
 	cp [hl]
-	jr nz, .no_match
+	jp nz, .no_match
 
 	ld hl, wMemoryGameNumberTriesRemaining
 	inc [hl]
-	ld hl, .VictoryText
-	call PrintText
-	call MemoryGame_PrintTries
-	ld de, SFX_3RD_PLACE
-	call PlaySFX
-	call WaitSFX
-	call WaitPressAorB_BlinkCursor
+
 	ld a, [wMemoryGameCard1Location]
 	call MemoryGame_Card2Coord
 	call MemoryGame_DeleteCard
@@ -318,7 +324,78 @@ MemoryGame_CheckMatch:
 	ld d, 0
 	hlcoord 0, 0
 	add hl, de
-	jp MemoryGame_PlaceCard
+	call MemoryGame_PlaceCard
+
+; Take action based on what was matched
+	ld a, [wMemoryGameLastCardPicked]
+	cp MEMORYGAMEREWARD_POTION
+	jr nz, .next1
+	ld c, 2
+	jr .Payout
+
+.next1
+	cp MEMORYGAMEREWARD_POKEDOLL
+	jr nz, .next2
+	ld c, 3
+	jr .Payout
+
+.next2
+	cp MEMORYGAMEREWARD_BOTTLE
+	jr nz, .next3
+	ld c, 5
+	jr .Payout
+
+.next3
+	cp MEMORYGAMEREWARD_COIN
+	jr nz, .next4
+	ld c, 10
+	jr .Payout
+
+.next4
+	cp MEMORYGAMEREWARD_POKEBALL
+	jr nz, .next5
+	ld c, 1
+	jr .Payout
+
+.next5
+	cp MEMORYGAMEREWARD_MAGIKARP
+	jr nz, .next6
+	ld hl, .NoPrizeText
+	call PrintText
+	ld de, SFX_BUMP
+	call PlaySFX
+	call WaitSFX
+	jp WaitPressAorB_BlinkCursor
+
+.next6
+	cp MEMORYGAMEREWARD_RARECANDY
+	jr nz, .next7
+	; Add an extra try
+	ld hl, wMemoryGameNumberTriesRemaining
+	inc [hl]
+	ld hl, .ExtraTryText
+	call PrintText
+	ld de, SFX_2ND_PLACE
+	call PlaySFX
+	call WaitSFX
+	jp WaitPressAorB_BlinkCursor
+
+.next7
+	; MEMORYGAMEREWARD_POKEGEAR
+	ld c, 25
+	jr .Payout
+
+.ExtraTryText:
+	text_asm
+	push bc
+	hlcoord 2, 13
+	call MemoryGame_PlaceCard
+	ld hl, MemoryGameExtraTryText
+	pop bc
+	inc bc
+	inc bc
+	inc bc
+	ret
 
 .no_match
 	ld de, SFX_WRONG
@@ -339,6 +416,66 @@ MemoryGame_CheckMatch:
 	call MemoryGame_Card2Coord
 	jp MemoryGame_PlaceCard
 
+.Payout:
+	ld a, c
+	push bc
+	ld [wStringBuffer2], a
+	ld hl, .VictoryText
+	call PrintText
+	call CardFlip_PrintCoinBalance
+	ld de, SFX_3RD_PLACE
+	call PlaySFX
+	call WaitSFX
+	pop bc
+
+.loop
+	push bc
+	call .IsCoinCaseFull
+	jr c, .full
+	call .AddCoinPlaySFX
+
+.full
+	call CardFlip_PrintCoinBalance
+	ld c, 2
+	call DelayFrames
+	pop bc
+	dec c
+	jr nz, .loop
+	jp WaitPressAorB_BlinkCursor
+
+.AddCoinPlaySFX:
+	ld a, [wCoins]
+	ld h, a
+	ld a, [wCoins + 1]
+	ld l, a
+	inc hl
+	ld a, h
+	ld [wCoins], a
+	ld a, l
+	ld [wCoins + 1], a
+	ld de, SFX_PAY_DAY
+	jp PlaySFX
+
+.IsCoinCaseFull:
+	ld a, [wCoins]
+	cp HIGH(MAX_COINS)
+	jr c, .less
+	jr z, .check_low
+	jr .more
+
+.check_low
+	ld a, [wCoins + 1]
+	cp LOW(MAX_COINS)
+	jr c, .less
+
+.more
+	scf
+	ret
+
+.less
+	and a
+	ret
+
 .VictoryText:
 	text_asm
 	push bc
@@ -351,17 +488,17 @@ MemoryGame_CheckMatch:
 	inc bc
 	ret
 
-MemoryGameYeahText:
-	text_far _MemoryGameYeahText
-	text_end
-
-MemoryGameDarnText:
-	text_far _MemoryGameDarnText
-	text_end
-
-MemoryGameGameOverText:
-	text_far _MemoryGameGameOverText
-	text_end
+.NoPrizeText:
+	text_asm
+	push bc
+	hlcoord 2, 13
+	call MemoryGame_PlaceCard
+	ld hl, MemoryGameNoPrizeText
+	pop bc
+	inc bc
+	inc bc
+	inc bc
+	ret
 
 MemoryGame_InitBoard:
 	ld hl, wMemoryGameCards
@@ -483,10 +620,6 @@ MemoryGame_InitStrings:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, $1
 	jp ByteFill
-
-CardFlipChooseACardText:
-	text_far _CardFlipChooseACardText
-	text_end
 
 MemoryGame_PrintTries:
 	hlcoord 9, 15
@@ -629,6 +762,30 @@ MemoryGame_InterpretJoypad_AnimateCursor:
 .play_movement_sound
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
 	jp PlaySFX
+
+CardFlipChooseACardText:
+	text_far _CardFlipChooseACardText
+	text_end
+
+MemoryGameYeahText:
+	text_far _MemoryGameYeahText
+	text_end
+
+MemoryGameNoPrizeText:
+	text_far _MemoryGameNoPrizeText
+	text_end
+
+MemoryGameExtraTryText:
+	text_far _MemoryGameExtraTryText
+	text_end
+
+MemoryGameDarnText:
+	text_far _MemoryGameDarnText
+	text_end
+
+MemoryGameGameOverText:
+	text_far _MemoryGameGameOverText
+	text_end
 
 MemoryGameLZ:
 INCBIN "gfx/memory_game/memory_game.2bpp.lz"
