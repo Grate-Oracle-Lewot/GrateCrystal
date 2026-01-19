@@ -3363,8 +3363,6 @@ wOBPals2:: ds 8 palettes
 wLYOverrides:: ds SCREEN_HEIGHT_PX
 wLYOverridesEnd::
 
-	ds 1
-
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
 wMagnetTrainInitPosition:: db
@@ -3425,14 +3423,24 @@ wPikachuMinigameTilesPointer:: ds 2
 
 wPikachuMinigameColumnBuffer:: ds 16
 
+wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
+wLYOverridesBackupEnd::
+
+UNION
 wRedrawRowOrColumnSrcTiles::
 ; the tiles of the row or column to be redrawn by RedrawRowOrColumn
 	ds SCREEN_WIDTH * 2
-
-	ds 12
-
-wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
-wLYOverridesBackupEnd::
+NEXTU
+wRedrawFlashlightDst0:: dw
+wRedrawFlashlightSrc0:: dw
+wRedrawFlashlightBlackDst0:: dw
+wRedrawFlashlightDst1:: dw
+wRedrawFlashlightSrc1:: dw
+wRedrawFlashlightBlackDst1:: dw
+wRedrawFlashlightWidthHeight:: db
+; width or height of flashlight redraw region
+; in units of two tiles (people event meta tile)
+ENDU
 
 
 SECTION "Battle Animations", WRAMX
