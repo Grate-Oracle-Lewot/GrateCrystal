@@ -79,8 +79,6 @@ NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_INDEX_INTRO_SUICUNE_AWAY        ; 29
 	const SPRITE_ANIM_INDEX_CELEBI                    ; 2a
 	const SPRITE_ANIM_INDEX_MEMORY_GAME_CURSOR        ; 2b
-	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME          ; 2c
-	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME_TAIL     ; 2d
 NUM_SPRITE_ANIM_INDEXES EQU const_value
 
 ; DoAnimFrame.Jumptable indexes (see engine/gfx/sprite_anims.asm)
@@ -119,6 +117,8 @@ NUM_SPRITE_ANIM_INDEXES EQU const_value
 	const SPRITE_ANIM_SEQ_INTRO_UNOWN_F             ; 1f
 	const SPRITE_ANIM_SEQ_INTRO_SUICUNE_AWAY        ; 20
 	const SPRITE_ANIM_SEQ_MEMORY_GAME_CURSOR        ; 21
+	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME        ; 22
+	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME_TAIL   ; 23
 NUM_SPRITE_ANIM_SEQS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
