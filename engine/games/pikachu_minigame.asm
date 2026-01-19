@@ -72,7 +72,7 @@ PikachuMiniGame::
 	ld hl, wSpriteAnimDict
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_OMANYTE
 	ld [hli], a
-	ld a, SPRITE_ANIM_DICT_NULL
+	ld a, SPRITE_ANIM_DICT_DEFAULT
 	ld [hli], a
 	call PikachuMiniGame_LoadFont
 
