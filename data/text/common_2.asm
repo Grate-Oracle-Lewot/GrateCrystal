@@ -1301,7 +1301,9 @@ _OakPCText4::
 	done
 
 _MemoryGameYeahText::
-	text " , yeah!"
+	text "! @"
+	text_decimal wStringBuffer2, 1, 2
+	text " Coin(s)!"
 	done
 
 _MemoryGameDarnText::
