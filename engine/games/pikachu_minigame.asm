@@ -189,62 +189,6 @@ PikachuMiniGame_LoadFont:
 	ld a, BANK(FontGFX)
 	jp FarCopyDataDouble
 
-PikachuMiniGame_BlinkText:
-; Blink the window text according to the current X scroll position.
-; 00 - 7f = hide text
-; 80 - ff = show text
-
-	ldh a, [hSCX]
-	ld d, a
-	and $7f
-	ret nz
-	bit 7, d
-	jr nz, .DisplayText
-
-; clear dakutens
-	xor a
-	hlcoord 5, 0
-	ld [hl], a
-	hlcoord 13, 0
-	ld [hl], a
-
-; clear text
-	hlcoord 1, 1
-	ld c, 15
-.text_clear
-	ld [hli], a
-	dec c
-	jr nz, .text_clear
-	ret
-
-.DisplayText:
-	decoord 1, 1
-	ld hl, .text
-
-.render_text
-	ld a, [hli]
-	and a
-	jr z, .render_dakutens
-
-; Tiles are shifted so add $10 to each character
-	add $10
-	ld [de], a
-	inc de
-	jr .render_text
-
-.render_dakutens
-; Render dakuten marks separately
-	ld a, 'ﾞ' + $10
-	hlcoord 5, 0
-	ld [hl], a
-	hlcoord 13, 0
-	ld [hl], a
-	ret
-
-.text
-	db "スタートホタン▶タイトルかめん"
-	db 0	; terminator
-
 PikachuMiniGame_DrawBackground:
 	ld b, BG_MAP_HEIGHT / 2
 
@@ -353,8 +297,6 @@ PikachuMiniGame_RunFrame:
 	decoord  18, 1
 	ld hl, wPikachuMinigameScore
 	call PikachuMiniGame_PrintBCD
-
-	call PikachuMiniGame_BlinkText
 
 	call DelayFrame
 	and a
