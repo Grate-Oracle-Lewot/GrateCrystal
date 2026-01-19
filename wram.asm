@@ -3372,9 +3372,11 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-	ds 6
-
 ; Pikachu minigame
+wVBCopySize:: ds 1
+wVBCopySrc:: ds 2
+wVBCopyDst:: ds 2
+
 wPikachuMinigamePikachuObjectPointer:: ds 2
 wPikachuMinigamePikachuTailObjectPointer:: ds 2
 wPikachuMinigamePikachuNextAnim:: ds 1
@@ -3423,7 +3425,11 @@ wPikachuMinigameTilesPointer:: ds 2
 
 wPikachuMinigameColumnBuffer:: ds 16
 
-	ds 51
+wRedrawRowOrColumnSrcTiles::
+; the tiles of the row or column to be redrawn by RedrawRowOrColumn
+	ds SCREEN_WIDTH * 2
+
+	ds 12
 
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::
