@@ -117,8 +117,8 @@ NUM_SPRITE_ANIM_INDEXES EQU const_value
 	const SPRITE_ANIM_SEQ_INTRO_UNOWN_F             ; 1f
 	const SPRITE_ANIM_SEQ_INTRO_SUICUNE_AWAY        ; 20
 	const SPRITE_ANIM_SEQ_MEMORY_GAME_CURSOR        ; 21
-	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME        ; 22
-	const SPRITE_ANIM_INDEX_PIKACHU_MINIGAME_TAIL   ; 23
+	const SPRITE_ANIM_SEQ_PIKACHU_MINIGAME          ; 22
+	const SPRITE_ANIM_SEQ_PIKACHU_MINIGAME_TAIL     ; 23
 NUM_SPRITE_ANIM_SEQS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
