@@ -50,6 +50,9 @@ DoAnimFrame:
 	dw AnimSeq_MemoryGameCursor
 	dw AnimSeq_PikachuMinigame
 	dw AnimSeq_PikachuMinigameTail
+	dw AnimSeq_MinigameOmanyte
+	dw AnimSeq_MinigameJigglypuff
+	dw AnimSeq_MinigameNote
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_PartyMon:
@@ -829,6 +832,74 @@ Data8d40b:
 AnimSeq_PikachuMinigameTail:
 	farcall CopyPikachuObjDataToTailObj
 	ret
+
+AnimSeq_MinigameOmanyte:
+	ld a, [wGlobalAnimYOffset]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	add [hl]
+	cp $b0
+	ret c
+	jp DeinitializeSprite
+
+AnimSeq_MinigameJigglypuff:
+	ld a, [wPikachuMinigameScrollSpeed]
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	cp $30
+	ret nz
+
+	xor a
+	ld [wPikachuMinigameScrollSpeed], a
+	ret
+
+AnimSeq_MinigameNote:
+	call AnimSeqs_AnonJumptable
+	jp hl
+.anon_dw
+	dw .zero
+	dw .one
+
+.zero
+	call .BounceNotes
+	ld a, [wPikachuMinigameScrollSpeed]
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	cp $c0
+	ret nc
+
+	cp $a8
+	ret c
+.one
+	call DeinitializeSprite
+	ld hl, wSpriteAnimCount
+	dec [hl]
+	ret
+
+.BounceNotes:
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	inc [hl]
+
+	and $1f
+	srl a
+	ld e, a
+	ld d, $00
+	ld hl, .YOffsets
+	add hl, de
+	ld a, [hl]
+	ld hl, SPRITEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ret
+
+.YOffsets:
+	db 4, 7, 9, 10, 9, 7, 4, 0, -4, -7, -9, -10, -9, -7, -4, 0
 
 AnimSeqs_AnonJumptable:
 	ld hl, sp+0
