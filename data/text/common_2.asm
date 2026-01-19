@@ -1310,6 +1310,10 @@ _MemoryGameNoPrizeText::
 	text "! No prize…"
 	done
 
+_MemoryGameExtraTryText::
+	text "! An extra try!"
+	done
+
 _MemoryGameDarnText::
 	text "Darn…"
 	done
