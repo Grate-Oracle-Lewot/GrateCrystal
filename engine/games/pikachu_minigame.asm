@@ -293,7 +293,7 @@ PikachuMiniGame_RunFrame:
 .Done:
 	farcall ClearSpriteAnims
 
-	ld hl, wShadowOAM
+	ld hl, wVirtualOAM
 	ld c, SPRITEOAMSTRUCT_LENGTH * NUM_SPRITE_OAM_STRUCTS
 	xor a
 .clear_oam
