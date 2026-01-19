@@ -70,7 +70,7 @@ PikachuMiniGame::
 	call PikachuMiniGame_DrawBackground
 
 	ld hl, wSpriteAnimDict
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_OMANYTE
+	ld a, SPRITE_ANIM_INDEX_MINIGAME_OMANYTE
 	ld [hli], a
 	ld a, SPRITE_ANIM_DICT_DEFAULT
 	ld [hli], a
@@ -563,7 +563,7 @@ PikachuMiniGame_WaitAndGotoNextScene:
 
 PikachuMiniGame_ShowJigglypuff:
 	depixel 14, 24
-	ld a, SPRITE_ANIM_OBJ_MINIGAME_JIGGLYPUFF
+	ld a, SPRITE_ANIM_INDEX_MINIGAME_JIGGLYPUFF
 	call InitSpriteAnimStruct
 
 	xor a
@@ -667,7 +667,7 @@ PikachuMiniGame_NoteSpawner:
 	ld a, 3
 	ld [wSpriteAnimCount], a
 
-	ld a, SPRITE_ANIM_OBJ_MINIGAME_NOTE
+	ld a, SPRITE_ANIM_INDEX_MINIGAME_NOTE
 	call InitSpriteAnimStruct
 
 ; add one to the note counter
@@ -1256,12 +1256,12 @@ PikachuMiniGame_GetNextColumn:
 	dw .DummyCommand  ; f6
 	dw .DummyCommand  ; f7
 	dw .DummyCommand  ; f8
-	dw .CommandF9	  ; f9
-	dw .CommandFA	  ; fa
-	dw .CommandFB	  ; fb
-	dw .JumpCommand	  ; fc
-	dw .CommandFD	  ; fd
-	dw .CallCommand	  ; fe
+	dw .CommandF9     ; f9
+	dw .CommandFA     ; fa
+	dw .CommandFB     ; fb
+	dw .JumpCommand   ; fc
+	dw .CommandFD     ; fd
+	dw .CallCommand   ; fe
 	dw .ReturnCommand ; ff
 
 .ReturnCommand:
