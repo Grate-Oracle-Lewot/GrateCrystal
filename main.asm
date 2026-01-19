@@ -726,6 +726,6 @@ INCLUDE "engine/phone/scripts/lewot.asm"
 INCLUDE "data/phone/text/lewot.asm"
 
 
-SECTION "Pikachu Minigame", ROMX
+; SECTION "Pikachu Minigame", ROMX
 
-INCLUDE "engine/games/pikachu_minigame.asm"
+; INCLUDE "engine/games/pikachu_minigame.asm"
