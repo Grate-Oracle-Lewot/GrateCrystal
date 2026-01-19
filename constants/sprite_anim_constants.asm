@@ -23,7 +23,10 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 ; UnusedSpriteAnimGFX indexes (see data/sprite_anims/unused_gfx.asm)
 	const_def
 	const SPRITE_ANIM_DICT_DEFAULT      ; 0
-	const_skip 4                        ; unused
+	const_skip                          ; 1
+	const SPRITE_ANIM_DICT_GS_INTRO     ; 2
+	const SPRITE_ANIM_DICT_GS_INTRO_2   ; 3
+	const_skip                          ; 4
 	const SPRITE_ANIM_DICT_TEXT_CURSOR  ; 5
 	const SPRITE_ANIM_DICT_GS_SPLASH    ; 6
 	const SPRITE_ANIM_DICT_SLOTS        ; 7
