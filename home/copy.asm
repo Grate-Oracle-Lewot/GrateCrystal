@@ -120,36 +120,3 @@ GetFarWRAMByte::
 	ldh [rSVBK], a
 	ldh a, [hFarByte]
 	ret
-
-FarCopyDataDouble:
-; Copy and expand bc 1bpp bytes from a:hl to de.
-	ld [wBuffer], a
-	ldh a, [hROMBank]
-	push af
-	ld a, [wBuffer]
-	call Bankswitch
-	ld a, h
-	ld h, d
-	ld d, a
-	ld a, l
-	ld l, e
-	ld e, a
-	ld a, b
-	and a
-	jr z, .copy_small
-	ld a, c
-	and a
-	jr z, .next
-.copy_small
-	inc b
-.next
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld [hli], a
-	dec c
-	jr nz, .next
-	dec b
-	jr nz, .next
-	pop af
-	jp Bankswitch
