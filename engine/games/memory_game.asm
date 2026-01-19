@@ -1,5 +1,3 @@
-INCLUDE "constants.asm"
-
 ; MemoryMinigame.Jumptable indices
 	const_def
 	const MEMORYGAME_RESTART_GAME
