@@ -820,13 +820,13 @@ AnimSeq_PikachuMinigame:
 	ld [hl], 0
 	ld e, a
 	ld d, $00
-	ld hl, Data8d40b
+	ld hl, PikachuMinigameData
 	add hl, de
 	ld a, [hl]
 	jp _ReinitSpriteAnimFrame
 
 ; Data from 8D40B to 8D40E (4 bytes)
-Data8d40b:
+PikachuMinigameData:
 	db $12, $13, $12, $14
 
 AnimSeq_PikachuMinigameTail:
