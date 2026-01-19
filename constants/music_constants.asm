@@ -117,17 +117,18 @@
 	const MUSIC_GIOVANNI_ENCOUNTER           ; 6f
 	const MUSIC_CYCLING_ROAD                 ; 70
 	const MUSIC_SAFARI_ZONE                  ; 71
-	const MUSIC_OLD_GAME_CORNER              ; 72
-	const MUSIC_OLD_ROCKET_HIDEOUT           ; 73
-	const MUSIC_WHIRL_ISLANDS                ; 74
-	const MUSIC_INVERSE_BATTLE               ; 75
-	const MUSIC_INVERSE_BOSS                 ; 76
-	const MUSIC_NEUTRAL_BATTLE               ; 77
-	const MUSIC_NEUTRAL_BOSS                 ; 78
-	const MUSIC_CREEPY_WILD_BATTLE           ; 79
-	const MUSIC_CREEPY_TRAINER_BATTLE        ; 7a
-	const MUSIC_LEWOTS_RADIO                 ; 7b
-	const MUSIC_DEPARTMENT_STORE             ; 7c
+	const MUSIC_KANTO_GAME_CORNER            ; 72
+	const MUSIC_OLD_GAME_CORNER              ; 73
+	const MUSIC_OLD_ROCKET_HIDEOUT           ; 74
+	const MUSIC_WHIRL_ISLANDS                ; 75
+	const MUSIC_INVERSE_BATTLE               ; 76
+	const MUSIC_INVERSE_BOSS                 ; 77
+	const MUSIC_NEUTRAL_BATTLE               ; 78
+	const MUSIC_NEUTRAL_BOSS                 ; 79
+	const MUSIC_CREEPY_WILD_BATTLE           ; 7a
+	const MUSIC_CREEPY_TRAINER_BATTLE        ; 7b
+	const MUSIC_LEWOTS_RADIO                 ; 7c
+	const MUSIC_DEPARTMENT_STORE             ; 7d
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
