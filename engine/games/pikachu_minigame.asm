@@ -1421,7 +1421,7 @@ PikachuMiniGame_Columns:
 	db $FF
 
 PikachuMiniGame_Blockmap:
-INCBIN "gfx/minigames/pikachu_blockmap.bin"
+INCBIN "gfx/pikachu_minigame/pikachu_blockmap.bin"
 
 PikachuMiniGame_Meta:
-INCBIN "gfx/minigames/pikachu_blockset.bin"
+INCBIN "gfx/pikachu_minigame/pikachu_blockset.bin"
