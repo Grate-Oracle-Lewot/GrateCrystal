@@ -537,7 +537,7 @@ MemoryGame_InitBoard:
 	call ByteFill
 	call MemoryGame_GetDistributionOfTiles
 
-	ld c, 2
+	ld c, 3
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
@@ -545,11 +545,11 @@ MemoryGame_InitBoard:
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
-	ld c, 4
+	ld c, 5
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
-	ld c, 7
+	ld c, 8
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
@@ -561,7 +561,7 @@ MemoryGame_InitBoard:
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
-	ld c, 1
+	ld c, 2
 	ld b, [hl]
 	call MemoryGame_SampleTilePlacement
 
