@@ -102,9 +102,52 @@ _MemoryGame:
 	dw .AskPlayAgain
 
 .RestartGame:
+	ld hl, MemoryGamePlayWithOneCoinText
+	call PrintText
+	call CardFlip_PrintCoinBalance
+	call YesNoBox
+	jr c, .NotPlaying
+	xor a
+	call .DeductCoins
+	jr c, .NotPlaying
 	call MemoryGame_InitStrings
 	ld hl, wJumptableIndex
 	inc [hl]
+	ret
+
+.NotPlaying:
+	ld hl, wJumptableIndex
+	set JUMPTABLE_EXIT_F, [hl]
+	ret
+
+.DeductCoins:
+	ld a, [wCoins]
+	ld h, a
+	ld a, [wCoins + 1]
+	ld l, a
+	ld a, h
+	and a
+	jr nz, .deduct ; You have at least 256 coins.
+	ld a, l
+	cp 1
+	jr nc, .deduct ; You have at least 1 coin.
+	ld hl, CardFlipNotEnoughCoinsText
+	call PrintText
+	scf
+	ret
+
+.deduct
+	ld de, -1
+	add hl, de
+	ld a, h
+	ld [wCoins], a
+	ld a, l
+	ld [wCoins + 1], a
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call CardFlip_PrintCoinBalance
+	call WaitSFX
+	xor a
 	ret
 
 .ResetBoard:
@@ -258,25 +301,10 @@ endr
 
 .finish_round
 	call WaitPressAorB_BlinkCursor
-	ld hl, wJumptableIndex
-	inc [hl]
 .AskPlayAgain:
-	ld hl, .SlotsPlayAgainText
-	call PrintText
-	call YesNoBox
-	jr nc, .restart
-	ld hl, wJumptableIndex
-	set MEMORYGAME_END_LOOP_F, [hl]
-	ret
-
-.restart
 	xor a
 	ld [wJumptableIndex], a
 	ret
-
-.SlotsPlayAgainText
-	text_far _SlotsPlayAgainText
-	text_end
 
 MemoryGame_CheckMatch:
 	ld hl, wMemoryGameCard1
@@ -762,8 +790,16 @@ MemoryGame_InterpretJoypad_AnimateCursor:
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
 	jp PlaySFX
 
+CardFlipNotEnoughCoinsText:
+	text_far _CardFlipNotEnoughCoinsText
+	text_end
+
 CardFlipChooseACardText:
 	text_far _CardFlipChooseACardText
+	text_end
+
+MemoryGamePlayWithOneCoinText:
+	text_far _MemoryGamePlayWithOneCoinText
 	text_end
 
 MemoryGameYeahText:
