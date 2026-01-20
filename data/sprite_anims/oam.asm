@@ -132,8 +132,6 @@ SpriteAnimOAMData:
 	dbw $00, .OAMData_GameFreakLogo4_11        ; SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11
 	dbw $00, .OAMData_PartyMon                 ; SPRITE_ANIM_OAMSET_PARTY_MON_1
 	dbw $04, .OAMData_PartyMon                 ; SPRITE_ANIM_OAMSET_PARTY_MON_2
-	dbw $6c, .OAMData_MinigameOmanyte          ; SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_1
-	dbw $6e, .OAMData_MinigameOmanyte          ; SPRITE_ANIM_OAMSET_MINIGAME_OMANYTE_2
 	assert_table_length NUM_SPRITE_ANIM_OAMSETS
 
 .OAMData_1x1_Palette0:
@@ -141,7 +139,6 @@ SpriteAnimOAMData:
 	dbsprite -1, -1,  4,  4, $00, 0
 
 .OAMData_GSIntroShellder:
-.OAMData_MinigameOmanyte:
 	db 4
 	dbsprite -1, -1,  0,  0, $00, 0
 	dbsprite  0, -1,  0,  0, $01, 0
