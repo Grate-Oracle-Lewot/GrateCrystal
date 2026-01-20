@@ -21,8 +21,8 @@ Oak:
 	setevent EVENT_TALKED_TO_OAK_IN_KANTO
 .CheckBadges:
 	readvar VAR_BADGES
-	ifequal NUM_BADGES, .OpenMtSilver
-	ifequal NUM_JOHTO_BADGES, .Complain
+	ifgreater NUM_BADGES - 1, .OpenMtSilver
+	ifless NUM_JOHTO_BADGES + 1, .Complain
 	sjump .AhGood
 
 .CheckPokedex:
