@@ -48,8 +48,8 @@ DoAnimFrame:
 	dw AnimSeq_IntroUnownF
 	dw AnimSeq_IntroSuicuneAway
 	dw AnimSeq_MemoryGameCursor
-	dw AnimSeq_PikachuMinigame
-	dw AnimSeq_PikachuMinigameTail
+	dw AnimSeq_MinigamePikachu
+	dw AnimSeq_MinigamePikachuTail
 	dw AnimSeq_MinigameOmanyte
 	dw AnimSeq_MinigameJigglypuff
 	dw AnimSeq_MinigameNote
@@ -808,7 +808,7 @@ AnimSeq_MemoryGameCursor:
 	farcall MemoryGame_InterpretJoypad_AnimateCursor
 	ret
 
-AnimSeq_PikachuMinigame:
+AnimSeq_MinigamePikachu:
 	push bc
 	farcall MinigamePikachuDoMovement
 	pop bc
@@ -820,16 +820,16 @@ AnimSeq_PikachuMinigame:
 	ld [hl], 0
 	ld e, a
 	ld d, $00
-	ld hl, PikachuMinigameData
+	ld hl, MinigamePikachuData
 	add hl, de
 	ld a, [hl]
 	jp _ReinitSpriteAnimFrame
 
 ; Data from 8D40B to 8D40E (4 bytes)
-PikachuMinigameData:
+MinigamePikachuData:
 	db $12, $13, $12, $14
 
-AnimSeq_PikachuMinigameTail:
+AnimSeq_MinigamePikachuTail:
 	farcall CopyPikachuObjDataToTailObj
 	ret
 
