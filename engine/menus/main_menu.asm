@@ -11,6 +11,7 @@
 	const MAINMENUITEM_OPTION      ; 2
 	const MAINMENUITEM_DELETE_SAVE ; 3
 	const MAINMENUITEM_MOBILE      ; 4
+	const MAINMENUITEM_MINIGAME    ; 5
 
 MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
@@ -59,6 +60,7 @@ MainMenu:
 	db "OPTION@"
 	db "DELETE SAVE@"
 	db "MOBILE@"
+	db "MINIGAME@"
 
 .Jumptable:
 ; entries correspond to MAINMENUITEM_* constants
@@ -67,31 +69,35 @@ MainMenu:
 	dw MainMenu_Option
 	dw MainMenu_DeleteSave
 	dw MainMenu_Mobile
+	dw MainMenu_Minigame
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants
 
 	; MAINMENU_NEW_GAME
-	db 2
+	db 3
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
+	db MAINMENUITEM_MINIGAME
 	db -1
 
 	; MAINMENU_CONTINUE
-	db 4
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_DELETE_SAVE
-	db -1
-
-	; MAINMENU_MOBILE
 	db 5
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
 	db MAINMENUITEM_DELETE_SAVE
+	db MAINMENUITEM_MINIGAME
+	db -1
+
+	; MAINMENU_MOBILE
+	db 6
+	db MAINMENUITEM_CONTINUE
+	db MAINMENUITEM_NEW_GAME
+	db MAINMENUITEM_OPTION
+	db MAINMENUITEM_DELETE_SAVE
 	db MAINMENUITEM_MOBILE
+	db MAINMENUITEM_MINIGAME
 	db -1
 
 MainMenu_GetWhichMenu:
@@ -241,4 +247,8 @@ MainMenu_Continue:
 
 MainMenu_DeleteSave:
 	farcall _DeleteSaveData
+	jp Init
+
+MainMenu_Minigame:
+	farcall PikachuMiniGame
 	jp Init
