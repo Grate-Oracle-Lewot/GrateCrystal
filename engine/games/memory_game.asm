@@ -26,6 +26,9 @@ MEMORYGAME_END_LOOP_F EQU 7
 _MemoryGame:
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
+	call ClearBGPalettes
+	call ClearTilemap
+	call ClearSprites
 	call .LoadGFXAndPals
 	call DelayFrame
 .loop
