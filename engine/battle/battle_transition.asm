@@ -10,7 +10,31 @@ BATTLETRANSITION_SQUARE EQU "8" ; $fe
 BATTLETRANSITION_BLACK  EQU "9" ; $ff
 
 DoBattleTransition:
-	call .InitGFX
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
+	jr z, .mobile
+	farcall ReanchorBGMap_NoOAMUpdate
+	call UpdateSprites
+	call DelayFrame
+	call .NonMobile_LoadPokeballTiles
+	call BattleStart_CopyTilemapAtOnce
+	jr .resume
+
+.mobile
+	call LoadTrainerBattlePokeballTiles
+.resume
+	ld a, SCREEN_HEIGHT_PX
+	ldh [hWY], a
+	call DelayFrame
+	xor a
+	ldh [hBGMapMode], a
+	ld hl, wJumptableIndex
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	call WipeLYOverrides
+
 	ldh a, [rBGP]
 	ld [wBGP], a
 	ldh a, [rOBP0]
@@ -63,32 +87,6 @@ DoBattleTransition:
 	ldh [hVBlank], a
 	jp DelayFrame
 
-.InitGFX:
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jr z, .mobile
-	farcall ReanchorBGMap_NoOAMUpdate
-	call UpdateSprites
-	call DelayFrame
-	call .NonMobile_LoadPokeballTiles
-	call BattleStart_CopyTilemapAtOnce
-	jr .resume
-
-.mobile
-	call LoadTrainerBattlePokeballTiles
-.resume
-	ld a, SCREEN_HEIGHT_PX
-	ldh [hWY], a
-	call DelayFrame
-	xor a
-	ldh [hBGMapMode], a
-	ld hl, wJumptableIndex
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	jp WipeLYOverrides
-
 .NonMobile_LoadPokeballTiles:
 	call LoadTrainerBattlePokeballTiles
 	hlbgcoord 0, 0
@@ -121,8 +119,6 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 	ret
 
 LoadTrainerBattlePokeballTiles:
-; Load the tiles used in the Pokeball Graphic that fills the screen
-; at the start of every Trainer battle.
 	ld de, TrainerBattlePokeballTiles
 	ld hl, vTiles0 tile BATTLETRANSITION_SQUARE
 	ld b, BANK(TrainerBattlePokeballTiles)
@@ -151,50 +147,50 @@ BattleTransitionJumptable:
 	jumptable .Jumptable, wJumptableIndex
 
 .Jumptable:
-	dw StartTrainerBattle_DetermineWhichAnimation ; 00
+	dw StartTrainerBattle_DetermineWhichAnimation    ; 00
 
 	; BATTLETRANSITION_CAVE
-	dw StartTrainerBattle_LoadPokeBallGraphics ; 01
-	dw StartTrainerBattle_SetUpBGMap ; 02
-	dw StartTrainerBattle_Flash ; 03
-	dw StartTrainerBattle_Flash ; 04
-	dw StartTrainerBattle_Flash ; 05
-	dw StartTrainerBattle_NextScene ; 06
-	dw StartTrainerBattle_SetUpForWavyOutro ; 07
-	dw StartTrainerBattle_SineWave ; 08
+	dw StartTrainerBattle_LoadPokeBallGraphics       ; 01
+	dw StartTrainerBattle_SetUpBGMap                 ; 02
+	dw StartTrainerBattle_Flash                      ; 03
+	dw StartTrainerBattle_Flash                      ; 04
+	dw StartTrainerBattle_Flash                      ; 05
+	dw StartTrainerBattle_NextScene                  ; 06
+	dw StartTrainerBattle_SetUpForWavyOutro          ; 07
+	dw StartTrainerBattle_SineWave                   ; 08
 
 	; BATTLETRANSITION_CAVE_STRONGER
-	dw StartTrainerBattle_LoadPokeBallGraphics ; 09
-	dw StartTrainerBattle_SetUpBGMap ; 0a
-	dw StartTrainerBattle_Flash ; 0b
-	dw StartTrainerBattle_Flash ; 0c
-	dw StartTrainerBattle_Flash ; 0d
-	dw StartTrainerBattle_NextScene ; 0e
+	dw StartTrainerBattle_LoadPokeBallGraphics       ; 09
+	dw StartTrainerBattle_SetUpBGMap                 ; 0a
+	dw StartTrainerBattle_Flash                      ; 0b
+	dw StartTrainerBattle_Flash                      ; 0c
+	dw StartTrainerBattle_Flash                      ; 0d
+	dw StartTrainerBattle_NextScene                  ; 0e
 	; There is no setup for this one
-	dw StartTrainerBattle_ZoomToBlack ; 0f
+	dw StartTrainerBattle_ZoomToBlack                ; 0f
 
 	; BATTLETRANSITION_NO_CAVE
-	dw StartTrainerBattle_LoadPokeBallGraphics ; 10
-	dw StartTrainerBattle_SetUpBGMap ; 11
-	dw StartTrainerBattle_Flash ; 12
-	dw StartTrainerBattle_Flash ; 13
-	dw StartTrainerBattle_Flash ; 14
-	dw StartTrainerBattle_NextScene ; 15
-	dw StartTrainerBattle_SetUpForSpinOutro ; 16
-	dw StartTrainerBattle_SpinToBlack ; 17
+	dw StartTrainerBattle_LoadPokeBallGraphics       ; 10
+	dw StartTrainerBattle_SetUpBGMap                 ; 11
+	dw StartTrainerBattle_Flash                      ; 12
+	dw StartTrainerBattle_Flash                      ; 13
+	dw StartTrainerBattle_Flash                      ; 14
+	dw StartTrainerBattle_NextScene                  ; 15
+	dw StartTrainerBattle_SetUpForSpinOutro          ; 16
+	dw StartTrainerBattle_SpinToBlack                ; 17
 
 	; BATTLETRANSITION_NO_CAVE_STRONGER
-	dw StartTrainerBattle_LoadPokeBallGraphics ; 18
-	dw StartTrainerBattle_SetUpBGMap ; 19
-	dw StartTrainerBattle_Flash ; 1a
-	dw StartTrainerBattle_Flash ; 1b
-	dw StartTrainerBattle_Flash ; 1c
-	dw StartTrainerBattle_NextScene ; 1d
+	dw StartTrainerBattle_LoadPokeBallGraphics       ; 18
+	dw StartTrainerBattle_SetUpBGMap                 ; 19
+	dw StartTrainerBattle_Flash                      ; 1a
+	dw StartTrainerBattle_Flash                      ; 1b
+	dw StartTrainerBattle_Flash                      ; 1c
+	dw StartTrainerBattle_NextScene                  ; 1d
 	dw StartTrainerBattle_SetUpForRandomScatterOutro ; 1e
-	dw StartTrainerBattle_SpeckleToBlack ; 1f
+	dw StartTrainerBattle_SpeckleToBlack             ; 1f
 
 	; BATTLETRANSITION_FINISH
-	dw StartTrainerBattle_Finish ; 20
+	dw StartTrainerBattle_Finish                     ; 20
 
 ; transition animations
 	const_def
@@ -263,11 +259,6 @@ StartTrainerBattle_Finish:
 	ld [wJumptableIndex], a
 	ret
 
-StartTrainerBattle_NextScene:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 StartTrainerBattle_SetUpBGMap:
 	call StartTrainerBattle_NextScene
 	xor a
@@ -276,11 +267,6 @@ StartTrainerBattle_SetUpBGMap:
 	ret
 
 StartTrainerBattle_Flash:
-	call .DoFlashAnimation
-	ret nc
-	jp StartTrainerBattle_NextScene
-
-.DoFlashAnimation:
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr z, .done
@@ -300,12 +286,6 @@ StartTrainerBattle_Flash:
 	and a
 	ret
 
-.done
-	xor a
-	ld [wBattleTransitionCounter], a
-	scf
-	ret
-
 .pals:
 	dc 3, 3, 2, 1
 	dc 3, 3, 3, 2
@@ -320,6 +300,17 @@ StartTrainerBattle_Flash:
 	dc 2, 1, 0, 0
 	dc 3, 2, 1, 0
 	dc 0, 0, 0, 1
+
+.done
+	xor a
+	ld [wBattleTransitionCounter], a
+	scf
+	; fallthrough
+
+StartTrainerBattle_NextScene:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 StartTrainerBattle_SetUpForWavyOutro:
 	vc_hook FPA_link_fight_End0
@@ -580,8 +571,7 @@ StartTrainerBattle_SpeckleToBlack:
 	jr nz, .row_loop
 	add hl, bc
 
-; If the tile has already been blacked out,
-; sample a new tile
+; If the tile has already been blacked out, sample a new tile
 	ld a, [hl]
 	cp BATTLETRANSITION_BLACK
 	jr z, .y_loop
@@ -723,6 +713,13 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 	ld de, UbeqcTransition
 	cp KAREN
 	ret z
+	ld de, MissingnoTransition
+	cp AEROBONES
+	ret z
+	cp KABUBONES
+	ret z
+	cp MISSINGNO_T
+	ret z
 	ld de, TeamRocketTransition
 	cp GRUNTM
 	ret nc
@@ -770,6 +767,27 @@ opt b.X ; . = 0, X = 1
 	bigdw %XXXXX.....XXXXX.
 	bigdw %XXXXX......XXXXX
 	bigdw %XXXXX......XXXXX
+popo
+
+MissingnoTransition:
+pusho
+opt b.X ; . = 0, X = 1
+	bigdw %.........X.X.X..
+	bigdw %........X.X.X.X.
+	bigdw %.........X.X.X..
+	bigdw %........X.X.X.X.
+	bigdw %.........X.X.X..
+	bigdw %........X.X.X.X.
+	bigdw %.........X.X.X..
+	bigdw %..X.X.X.X.X.X.X.
+	bigdw %.X.X.X.X.X.X.X..
+	bigdw %..X.X.X.X.X.X.X.
+	bigdw %.X.X.X.X.X.X.X..
+	bigdw %..X.X.X.X.X.X.X.
+	bigdw %.X.X.X.X.X.X.X..
+	bigdw %..X.X.X.X.X.X.X.
+	bigdw %.X.X.X.X.X.X.X..
+	bigdw %..X.X.X.X.X.X.X.
 popo
 
 UbeqcTransition:
