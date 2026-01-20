@@ -62,6 +62,25 @@ GamblersCoinCaseFullScript:
 	writetext GamblersCoinCaseFullText
 	sjump Gamblers_EndText
 
+GamblersCheckAndGiveCoinsScript:
+	checkitem COIN_CASE
+	iffalse GamblersNoCoinCaseScript
+	readvar VAR_BADGES
+	ifgreater NUM_JOHTO_BADGES - 1, .LowPayout
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	sjump GamblersGive500CoinsScript
+
+.LowPayout:
+	checkcoins MAX_COINS - 200
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	; fallthrough
+
+GamblersGive200CoinsScript:
+	givecoins 200
+	getstring STRING_BUFFER_4, Gamblers200CoinsString
+	jumpstd ReceiveItemScript
+
 GamblersGive500CoinsScript:
 	givecoins 500
 	getstring STRING_BUFFER_4, Gamblers500CoinsString
@@ -90,11 +109,7 @@ TrainerGamblerLucky:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_LUCKY
 	sjump Gamblers_EndText
 
@@ -120,11 +135,7 @@ TrainerGamblerHarvey:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_HARVEY
 	sjump Gamblers_EndText
 
@@ -150,11 +161,7 @@ TrainerGamblerAce:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_ACE
 	sjump Gamblers_EndText
 
@@ -180,11 +187,7 @@ TrainerGamblerHuck:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_HUCK
 	sjump Gamblers_EndText
 
@@ -210,11 +213,7 @@ TrainerGamblerThoreau:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_THOREAU
 	sjump Gamblers_EndText
 
@@ -240,11 +239,7 @@ TrainerGamblerPT:
 .AfterBattle
 	checkevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
 	iftrue .AfterCoins
-	checkitem COIN_CASE
-	iffalse GamblersNoCoinCaseScript
-	checkcoins MAX_COINS - 500
-	ifequal HAVE_MORE, GamblersCoinCaseFullScript
-	scall GamblersGive500CoinsScript
+	scall GamblersCheckAndGiveCoinsScript
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_P_T
 	sjump Gamblers_EndText
 
@@ -272,15 +267,24 @@ TrainerGamblerLiuHai:
 	iftrue .AfterCoins
 	checkitem COIN_CASE
 	iffalse GamblersNoCoinCaseScript
+	readvar VAR_BADGES
+	ifgreater NUM_BADGES - 1, .LowPayout
 	checkcoins MAX_COINS - 2000
 	ifequal HAVE_MORE, GamblersCoinCaseFullScript
 	scall GamblersGive2000CoinsScript
+.FinishPayout:
 	setevent EVENT_GOT_COINS_FROM_GAMBLER_LIU_HAI
 	sjump Gamblers_EndText
 
 .AfterCoins
 	writetext GamblerLiuHaiAfterBattleText
 	sjump Gamblers_EndText
+
+.LowPayout:
+	checkcoins MAX_COINS - 500
+	ifequal HAVE_MORE, GamblersCoinCaseFullScript
+	scall GamblersGive500CoinsScript
+	sjump .FinishPayout
 
 GoldenrodGameCornerBackroomTrashcan:
 	jumpstd TrashCanScript
@@ -305,13 +309,19 @@ GoldenrodGameCornerBackroomGymGuideBeforeText:
 	para "experience point"
 	line "jackpot!"
 
-	para "But on the other"
-	line "hand, you might go"
-	cont "home broke!"
+	para "They'll also pay"
+	line "you in coins in-"
+	cont "stead of money."
 
-	para "Think carefully"
-	line "about what you"
-	cont "want to do."
+	para "But if you have"
+	line "too many BADGES,"
+
+	para "they won't give you"
+	line "as many coins."
+
+	para "Risk it or play it"
+	line "safe? It's all up"
+	cont "to you!"
 	done
 
 GoldenrodGameCornerBackroomGymGuideAfterText:
@@ -441,6 +451,9 @@ GamblersNoCoinCaseText:
 	line "to collect your"
 	cont "winnings."
 	done
+
+Gamblers200CoinsString:
+	db "200 COINS@"
 
 Gamblers500CoinsString:
 	db "500 COINS@"
