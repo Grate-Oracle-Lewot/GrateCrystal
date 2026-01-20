@@ -128,7 +128,7 @@ VermilionGymBadgeGuy:
 	checkevent EVENT_GOT_HP_UP_FROM_VERMILION_GUY
 	iftrue .AlreadyGotItem
 	readvar VAR_BADGES
-	ifequal NUM_BADGES, .AllBadges
+	ifgreater NUM_BADGES - 1, .AllBadges
 	ifgreater 13, .MostBadges
 	ifgreater 9, .SomeBadges
 	writetext VermilionCityBadgeGuyTrainerText
