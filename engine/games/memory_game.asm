@@ -331,7 +331,7 @@ MemoryGame_CheckMatch:
 	cp MEMORYGAMEREWARD_POKEGEAR
 	jr nz, .next1
 	ld c, 25
-	jr .Payout
+	jp .Payout
 
 .next1
 	cp MEMORYGAMEREWARD_RARECANDY
