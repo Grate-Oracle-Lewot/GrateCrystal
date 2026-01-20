@@ -1000,8 +1000,9 @@ _CardFlipYeahText::
 	text "Yeah!"
 	done
 
-_CardFlipDarnText::
-	text "Darn…"
+_MemoryGamePlayWithOneCoinText::
+	text "Play with one"
+	line "coin?"
 	done
 
 _GearTodayText::
