@@ -117,7 +117,7 @@ _MemoryGame:
 
 .NotPlaying:
 	ld hl, wJumptableIndex
-	set JUMPTABLE_EXIT_F, [hl]
+	set MEMORYGAME_END_LOOP_F, [hl]
 	ret
 
 .DeductCoins:
