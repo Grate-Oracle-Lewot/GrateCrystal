@@ -118,7 +118,7 @@ PikachuMiniGame::
 
 .load_pikachu
 	depixel 14, 11
-	ld a, SPRITE_ANIM_SEQ_MINIGAME_PIKACHU
+	ld a, SPRITE_ANIM_INDEX_MINIGAME_PIKACHU
 	call InitSpriteAnimStruct
 
 ; Save pointer to the newly initialized Pikachu object
@@ -129,7 +129,7 @@ PikachuMiniGame::
 
 ; load Pikachu's tail object
 	depixel 14, 11
-	ld a, SPRITE_ANIM_SEQ_MINIGAME_PIKACHU_TAIL
+	ld a, SPRITE_ANIM_INDEX_MINIGAME_PIKACHU_TAIL
 	call InitSpriteAnimStruct
 
 	ld a, c
