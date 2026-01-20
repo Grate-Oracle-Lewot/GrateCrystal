@@ -869,10 +869,7 @@ Intro_PlacePlayerSprite:
 
 	const_def
 	const TITLESCREENOPTION_MAIN_MENU
-	const TITLESCREENOPTION_DELETE_SAVE_DATA
 	const TITLESCREENOPTION_RESTART
-	const TITLESCREENOPTION_UNUSED
-	const TITLESCREENOPTION_RESET_CLOCK
 NUM_TITLESCREENOPTIONS EQU const_value
 
 Intro_MainMenu:
@@ -942,10 +939,7 @@ StartTitleScreen:
 
 .dw
 	dw Intro_MainMenu
-	dw DeleteSaveData
 	dw IntroSequence
-	dw IntroSequence
-	dw ResetClock
 
 .TitleScreen:
 	farcall _TitleScreen
@@ -1105,14 +1099,6 @@ TitleScreenEnd:
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ret
-
-DeleteSaveData:
-	farcall _DeleteSaveData
-	jp Init
-
-ResetClock:
-	farcall _ResetClock
-	jp Init
 
 Copyright:
 	call ClearTilemap
