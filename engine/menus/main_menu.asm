@@ -247,5 +247,10 @@ MainMenu_DeleteSave:
 	jp Init
 
 MainMenu_Minigame:
+	ld de, MUSIC_NONE
+	call PlayMusic
+	call ClearBGPalettes
+	call ClearTilemap
+	call ClearSprites
 	farcall PikachuMiniGame
 	jp Init
