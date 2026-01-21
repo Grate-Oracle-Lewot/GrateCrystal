@@ -1734,7 +1734,8 @@ wOptions2::
 ; bit 0: battle items off/on
 ; bit 1: level caps off/on
 ; bit 2: level caps obedience/hard cap
-; bit 3: hard mode off/on
+; bit 3: easy mode off/on
+; bit 4: hard mode off/on
 	db
 	ds 2
 wOptionsEnd::
