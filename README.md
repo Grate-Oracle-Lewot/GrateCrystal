@@ -28,7 +28,12 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 
 - Fairy type added
 - Physical/Special split
-- Difficulty settings in the options menu for disabling player items in battle and capping levels (via either disobedience or hard caps)
+- New options in the options menu:
+  - Battle Items on/off: disable player use of items in battle (held items still work)
+  - Difficulty: Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Normal (nothing), or Hard (computer's active Pokémon gets the aforementioned boost)
+  - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
+  - Catching: Normal or Limited (Nuzlocke mode, yet to be implemented)
+  - Font: Normal or Unown (all text becomes Unown font, characters permitting)
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
@@ -544,10 +549,6 @@ While I have added some icons, I find a limited selection of them to be rather c
 # Why did you use THIS beta mon instead of THAT one?
 
 Along with personal preference, I prioritized the ones that could most reasonably be given unique type combinations (unique within this hack, that is), thus allowing for wider type variety overall.
-
-# Why no Nuzlocke mode?
-
-The thing is, there are many variations, and it would be confusing and tedious to account for them all. Can you catch two of the same species? Does catching different members of the same evolutionary line count as catching the same species? What if you caught an earlier stage and then evolved it before encountering that evolved stage in the wild? What if you're doing a monotype run, so only encounters of that type are catchable? What if you're doing a run based on something more obscure like color? Do you want to make exceptions for shinies? What if no viable encounters can learn a necessary HM move? It just seems better to let the player handle all of that stuff.
 
 # How come turning off battle items doesn't stop the computer from using them?
 
