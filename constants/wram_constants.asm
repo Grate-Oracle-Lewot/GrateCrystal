@@ -91,7 +91,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const EASY_MODE            ; 3
 	const HARD_MODE            ; 4
 	const NUZLOCKE             ; 5
-	const MENU_CLOCK           ; 6
+	const MENU_SIDEBAR         ; 6
 	const FONT_NORMAL_UNOWN    ; 7
 
 ; wWalkingDirection::
