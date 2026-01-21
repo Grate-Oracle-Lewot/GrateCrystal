@@ -2,10 +2,7 @@ Font:
 INCBIN "gfx/font/font.1bpp"
 endc
 
-FontHeart:
-INCBIN "gfx/font/font_heart.1bpp"
-
-FontUnownSpeaking:
+UnownSpeakingFont:
 INCBIN "gfx/font/unown_speaking_font.1bpp"
 
 FontBattleExtra:
