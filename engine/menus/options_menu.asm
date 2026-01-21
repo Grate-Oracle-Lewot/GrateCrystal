@@ -52,6 +52,13 @@ OptionsMenuOptimization:
 	call GetSGBLayout
 	jp SetPalettes
 
+Options_Back:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr nz, _Option
+	and a
+	ret
+
 _Option:
 	call ClearJoypad
 	ld hl, hInMenu
@@ -107,6 +114,13 @@ ExitOptions:
 	call WaitSFX
 	pop af
 	ldh [hInMenu], a
+	ret
+
+Options_MoreOptions:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr nz, _Option2
+	and a
 	ret
 
 _Option2:
@@ -763,20 +777,6 @@ GetPrinterSetting:
 .IsDarkest:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
-	ret
-
-Options_MoreOptions:
-	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jp nz, _Option2
-	and a
-	ret
-
-Options_Back:
-	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jp nz, _Option
-	and a
 	ret
 
 Options_Cancel:
