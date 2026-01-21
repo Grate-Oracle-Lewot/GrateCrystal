@@ -15,6 +15,8 @@ DefaultOptions:
 	; LEVEL_CAPS_OBEDIENCE: 0 (DISOBEY)
 	; EASY_MODE:            0 (OFF)
 	; HARD_MODE:            0 (OFF)
+	; NUZLOCKE:             0 (OFF)
+	; MENU_CLOCK:           0 (OFF)
 
 	db $00
 	db $00
