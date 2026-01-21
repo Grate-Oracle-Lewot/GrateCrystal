@@ -7,7 +7,15 @@ CrystalIntro:
 	push af
 	ldh a, [hVBlank]
 	push af
-	call .InitRAMAddrs
+
+	xor a
+	ldh [hVBlank], a
+	ld a, $1
+	ldh [hInMenu], a
+	xor a
+	ldh [hMapAnims], a
+	ld [wJumptableIndex], a
+
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
@@ -19,7 +27,7 @@ CrystalIntro:
 	call IntroSceneJumper
 	farcall PlaySpriteAnimations
 	call DelayFrame
-	jp .loop
+	jr .loop
 
 .ShutOffMusic
 	ld de, MUSIC_NONE
@@ -42,16 +50,6 @@ CrystalIntro:
 	ldh [hInMenu], a
 	pop af
 	ldh [rSVBK], a
-	ret
-
-.InitRAMAddrs:
-	xor a
-	ldh [hVBlank], a
-	ld a, $1
-	ldh [hInMenu], a
-	xor a
-	ldh [hMapAnims], a
-	ld [wJumptableIndex], a
 	ret
 
 IntroSceneJumper:
@@ -86,11 +84,6 @@ IntroScenes:
 	dw IntroScene26
 	dw IntroScene27
 	dw IntroScene28
-
-NextIntroScene:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
 
 IntroScene1:
 ; Setup the next scene.
@@ -141,7 +134,12 @@ IntroScene1:
 	xor a
 	ld [wIntroSceneFrameCounter], a
 	ld [wIntroSceneTimer], a
-	jp NextIntroScene
+	; fallthrough
+
+NextIntroScene:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 IntroScene2:
 ; First Unown (A) fades in, pulses, then fades out.
@@ -161,7 +159,106 @@ IntroScene2:
 .nosound
 	ld [wIntroSceneTimer], a
 	xor a
-	jp CrystalIntro_UnownFade
+	; fallthrough
+
+CrystalIntro_UnownFade:
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, wBGPals2
+	add hl, de
+	inc hl
+	inc hl
+	ld a, [wIntroSceneTimer]
+	and %111111
+	cp %011111
+	jr z, .okay
+	jr c, .okay
+	ld c, a
+	ld a, %111111
+	sub c
+.okay
+
+	ld c, a
+	ld b, 0
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals2)
+	ldh [rSVBK], a
+
+	push hl
+	push bc
+	ld hl, wBGPals2
+	ld bc, 8 palettes
+	xor a
+	call ByteFill
+	pop bc
+	pop hl
+
+	push hl
+	ld hl, .BWFade
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	ld a, e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+
+	push hl
+	ld hl, .BlackLBlueFade
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	ld a, e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+
+	push hl
+	ld hl, .BlackBlueFade
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	ld a, e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+
+	pop af
+	ldh [rSVBK], a
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+.BWFade:
+; Fade between black and white.
+for hue, 32
+	RGB hue, hue, hue
+endr
+
+.BlackLBlueFade:
+; Fade between black and light blue.
+for hue, 32
+	RGB 0, hue / 2, hue
+endr
+
+.BlackBlueFade:
+; Fade between black and blue.
+for hue, 32
+	RGB 0, 0, hue
+endr
 
 IntroScene3:
 ; More setup. Transition to the outdoor scene.
@@ -939,9 +1036,7 @@ IntroScene22:
 	ld a, [hl]
 	inc [hl]
 	cp $8
-	jr nc, .done
-	ret
-.done
+	ret c
 	farcall DeinitializeAllSprites
 	jp NextIntroScene
 
@@ -1147,105 +1242,6 @@ CrystalIntro_InitUnownAnim:
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2
 	jp ReinitSpriteAnimFrame
 
-CrystalIntro_UnownFade:
-	add a
-	add a
-	add a
-	ld e, a
-	ld d, 0
-	ld hl, wBGPals2
-	add hl, de
-	inc hl
-	inc hl
-	ld a, [wIntroSceneTimer]
-	and %111111
-	cp %011111
-	jr z, .okay
-	jr c, .okay
-	ld c, a
-	ld a, %111111
-	sub c
-.okay
-
-	ld c, a
-	ld b, 0
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals2)
-	ldh [rSVBK], a
-
-	push hl
-	push bc
-	ld hl, wBGPals2
-	ld bc, 8 palettes
-	xor a
-	call ByteFill
-	pop bc
-	pop hl
-
-	push hl
-	ld hl, .BWFade
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	pop hl
-	ld a, e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
-
-	push hl
-	ld hl, .BlackLBlueFade
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	pop hl
-	ld a, e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
-
-	push hl
-	ld hl, .BlackBlueFade
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	pop hl
-	ld a, e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
-
-	pop af
-	ldh [rSVBK], a
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-.BWFade:
-; Fade between black and white.
-for hue, 32
-	RGB hue, hue, hue
-endr
-
-.BlackLBlueFade:
-; Fade between black and light blue.
-for hue, 32
-	RGB 0, hue / 2, hue
-endr
-
-.BlackBlueFade:
-; Fade between black and blue.
-for hue, 32
-	RGB 0, 0, hue
-endr
-
 Intro_Scene20_AppearUnown:
 ; Spawn the palette for the nth Unown
 	and a
@@ -1408,10 +1404,7 @@ Intro_Scene16_AnimateSuicune:
 	and $3
 	jr z, Intro_ColoredSuicuneFrameSwap
 	cp $3
-	jr z, .PrepareForSuicuneSwap
-	ret
-
-.PrepareForSuicuneSwap:
+	ret nz
 	xor a
 	ldh [hBGMapMode], a
 	ret
