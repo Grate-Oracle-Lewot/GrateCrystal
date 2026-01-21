@@ -191,7 +191,7 @@ StartMenu::
 .QuitString:     db "QUIT@"
 
 .EmptyDesc:
-	db   "@"
+	db "@"
 
 .CapString:
 	db "CAP <EVO_LV>@"
