@@ -139,10 +139,6 @@ StartMenu::
 	jr .ReturnEnd2
 
 .ReturnRedraw:
-	call .Clear
-	jp .Reopen
-
-.Clear:
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
@@ -150,7 +146,8 @@ StartMenu::
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatus
 	call UpdateSprites
-	jp FinishExitMenu
+	call FinishExitMenu
+	jp .Reopen
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -233,6 +230,7 @@ StartMenu::
 	decoord 1, 1
 	farcall PrintHoursMins
 	jr .DoneClockText
+
 .LevelCapText:
 	hlcoord 1, 1
 	ld de, .CapString
@@ -341,6 +339,10 @@ endr
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
+	ld a, [wOptions2]
+	bit MENU_CLOCK, a
+	ret z
+.SkipDoubleChecks:
 	hlcoord 0, 0
 	lb bc, 1, 8
 	jp Textbox
@@ -349,7 +351,10 @@ endr
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
-	call .DrawMenuClockTextBox
+	ld a, [wOptions2]
+	bit MENU_CLOCK, a
+	ret z
+	call .SkipDoubleChecks
 	jp .MenuClockText
 
 .DrawBugContestStatusBox:
@@ -368,7 +373,6 @@ endr
 
 StartMenu_Exit:
 ; Exit the menu.
-
 	ld a, 1
 	ret
 
