@@ -1,9 +1,12 @@
 Font:
-if DEF(_METRONOME_ONLY)
-INCBIN "gfx/font/font_heart.1bpp"
-else
 INCBIN "gfx/font/font.1bpp"
 endc
+
+FontHeart:
+INCBIN "gfx/font/font_heart.1bpp"
+
+FontUnownSpeaking:
+INCBIN "gfx/font/unown_speaking_font.1bpp"
 
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"
