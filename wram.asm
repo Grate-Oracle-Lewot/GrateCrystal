@@ -1741,7 +1741,7 @@ wOptions2::
 ; bit 6: menu clock off/on
 ; bit 7: font normal/unown
 	db
-wFontType:: db
+	ds 1
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since
