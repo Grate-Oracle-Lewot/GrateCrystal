@@ -170,7 +170,8 @@ StringOptions:
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
-	db "MORE OPTIONS@"
+	db "MORE OPTIONS<LF>"
+	db "<LF>"
 	db "CANCEL@"
 
 StringOptions2:
@@ -180,7 +181,8 @@ StringOptions2:
 	db "        :<LF>"
 	db "GB PRINTER<LF>"
 	db "        :<LF>"
-	db "BACK@"
+	db "BACK<LF>"
+	db "<LF>"
 	db "CANCEL@"
 
 GetOptionPointer:
