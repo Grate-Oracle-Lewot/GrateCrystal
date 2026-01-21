@@ -1739,7 +1739,7 @@ wOptions2::
 ; bit 4: hard mode off/on
 ; bit 5: nuzlocke off/on
 ; bit 6: menu clock off/on
-; bit 7: unused
+; bit 7: font normal/unown
 	db
 wFontType:: db
 wOptionsEnd::
