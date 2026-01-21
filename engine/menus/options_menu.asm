@@ -1,4 +1,4 @@
-; GetOptionPointer.Pointers indexes
+; GetOptionPointer.Pointers1 indices
 	const_def
 	const OPT_TEXT_SPEED      ; 0
 	const OPT_BATTLE_SCENE    ; 1
@@ -6,18 +6,19 @@
 	const OPT_BATTLE_ITEMS    ; 3
 	const OPT_SOUND           ; 4
 	const OPT_FRAME           ; 5
-	const OPT_MORE_OPTIONS    ; 6
-	const OPT_CANCEL          ; 7
+	const OPT_NEXT_PAGE       ; 6
+	const OPT_DONE            ; 7
 NUM_OPTIONS EQU const_value   ; 8
 
-; GetOption2Pointer.Pointers indexes
+; GetOptionPointer.Pointers2 indices
 	const_def
-	const OPT2_DIFFICULTY     ; 0
-	const OPT2_LEVEL_CAPS     ; 1
-	const OPT2_PRINT          ; 2
-	const OPT2_BACK           ; 3
-	const OPT2_CANCEL         ; 4
-NUM_OPTIONS_2 EQU const_value ; 5
+	const OPT_DIFFICULTY     ; 0
+	const OPT_LEVEL_CAPS     ; 1
+	const OPT_NUZLOCKE       ; 2
+	const_OPT_MENU_CLOCK     ; 3
+	const OPT_FONT           ; 4
+	const OPT_GB_PRINTER     ; 5
+	const OPT_PREVIOUS_PAGE  ; 6
 
 	const_def
 	const OPT_TEXT_SPEED_FAST ; 0
@@ -42,26 +43,8 @@ NUM_OPTIONS_2 EQU const_value ; 5
 	const OPT_PRINT_DARKER   ; 3
 	const OPT_PRINT_DARKEST  ; 4
 
-OptionsMenuOptimization:
-	xor a
-	ld [wJumptableIndex], a
-	inc a
-	ldh [hBGMapMode], a
-	call WaitBGMap
-	ld b, SCGB_DIPLOMA
-	call GetSGBLayout
-	jp SetPalettes
-
-Options_Back:
-	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jr nz, .page
-	and a
-	ret
-
-.page:
-	pop af
-	; fallthrough
+OnString:  db "ON @"
+OffString: db "OFF@"
 
 _Option:
 	call ClearJoypad
@@ -71,30 +54,23 @@ _Option:
 	ld [hl], TRUE
 	call ClearBGPalettes
 	hlcoord 0, 0
-	ld b, SCREEN_HEIGHT - 2
-	ld c, SCREEN_WIDTH - 2
+	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
 	call Textbox
 	hlcoord 2, 2
-	ld de, StringOptions
+	ld de, StringOptions1
 	call PlaceString
 	xor a
-	ld [wJumptableIndex], a
+	ld [wCurOptionsPage], a
+	call OptionsMenu_LoadOptions
 
-; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS - 2 ; omit frame type
-.print_text_loop
-	push bc
 	xor a
-	ldh [hJoyLast], a
-	call GetOptionPointer
-	pop bc
-	ld hl, wJumptableIndex
-	inc [hl]
-	dec c
-	jr nz, .print_text_loop
-
-	call UpdateFrame ; display the frame type
-	call OptionsMenuOptimization
+	ld [wJumptableIndex], a
+	inc a
+	ldh [hBGMapMode], a
+	call WaitBGMap
+	ld b, SCGB_DIPLOMA
+	call GetSGBLayout
+	call SetPalettes
 
 .joypad_loop
 	call JoyTextDelay
@@ -120,74 +96,30 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
-Options_MoreOptions:
-	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jr nz, .page
-	and a
-	ret
-
-.page:
-	pop af
-	; fallthrough
-
-_Option2:
-	call ClearJoypad
-	ld hl, hInMenu
-	ld a, [hl]
-	push af
-	ld [hl], TRUE
-	call ClearBGPalettes
-	hlcoord 0, 0
-	ld b, SCREEN_HEIGHT - 2
-	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	hlcoord 2, 2
-	ld de, StringOptions2
-	call PlaceString
+OptionsMenu_LoadOptions:
 	xor a
 	ld [wJumptableIndex], a
-
-; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS_2 - 1
+	ldh [hJoyPressed], a
+	ld c, NUM_OPTIONS - 1
 .print_text_loop
 	push bc
 	xor a
 	ldh [hJoyLast], a
-	call GetOption2Pointer
+	call GetOptionPointer
 	pop bc
 	ld hl, wJumptableIndex
 	inc [hl]
 	dec c
 	jr nz, .print_text_loop
+	ld a, [wCurOptionsPage]
+	and a
+	call z, UpdateFrame
+	ld a, 1
+	ldh [hBGMapMode], a
+	ld c, 2
+	jp DelayFrames
 
-	call OptionsMenuOptimization
-
-.joypad_loop
-	call JoyTextDelay
-	ldh a, [hJoyPressed]
-	and START | B_BUTTON
-	jr nz, .ExitOptions
-	call Options2Control
-	jr c, .dpad
-	call GetOption2Pointer
-	jr c, .ExitOptions
-
-.dpad
-	call Options_UpdateCursorPosition
-	ld c, 3
-	call DelayFrames
-	jr .joypad_loop
-
-.ExitOptions:
-	ld de, SFX_TRANSACTION
-	call PlaySFX
-	call WaitSFX
-	pop af
-	ldh [hInMenu], a
-	ret
-
-StringOptions:
+StringOptions1:
 	db "TEXT SPEED<LF>"
 	db "        :<LF>"
 	db "BATTLE SCENE<LF>"
@@ -200,45 +132,57 @@ StringOptions:
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
-	db "MORE OPTIONS<LF>"
+	db "NEXT PAGE<LF>"
 	db "<LF>"
-	db "CANCEL@"
+	db "DONE@"
 
 StringOptions2:
 	db "DIFFICULTY<LF>"
 	db "        :<LF>"
 	db "LEVEL CAPS<LF>"
 	db "        :<LF>"
+	db "CATCHING<LF>"
+	db "        :<LF>"
+	db "MENU CLOCK<LF>"
+	db "        :<LF>"
+	db "FONT<LF>"
+	db "        :<LF>"
 	db "GB PRINTER<LF>"
 	db "        :<LF>"
-	db "BACK<LF>"
+	db "PREVIOUS PAGE<LF>"
 	db "<LF>"
-	db "CANCEL@"
+	db "DONE@"
 
 GetOptionPointer:
-	jumptable .Pointers, wJumptableIndex
+	ld a, [wCurOptionsPage]
+	and a
+	jr nz, .page2
+.page1:
+	jumptable .Pointers1, wJumptableIndex
+.page2:
+	jumptable .Pointers2, wJumptableIndex
 
-.Pointers:
-; entries correspond to OPT_* constants
+.Pointers1:
+; entries correspond to OPT_* constants starting with OPT_TEXT_SPEED
 	dw Options_TextSpeed
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_BattleItems
 	dw Options_Sound
 	dw Options_Frame
-	dw Options_MoreOptions
-	dw Options_Cancel
+	dw Options_NextPage
+	dw Options_Done
 
-GetOption2Pointer:
-	jumptable .Pointers, wJumptableIndex
-
-.Pointers:
-; entries correspond to OPT2_* constants
+.Pointers2:
+; entries correspond to OPT_* constants starting with OPT_DIFFICULTY
 	dw Options_Difficulty
 	dw Options_LevelCaps
-	dw Options_Print
-	dw Options_Back
-	dw Options_Cancel
+	dw Options_Nuzlocke
+	dw Options_MenuClock
+	dw Options_Font
+	dw Options_GBPrinter
+	dw Options_PreviousPage
+	dw Options_Done
 
 Options_TextSpeed:
 	call GetTextSpeed
@@ -343,30 +287,25 @@ Options_BattleScene:
 .LeftPressed:
 	bit BATTLE_SCENE, [hl]
 	jr z, .ToggleOff
-	jr .ToggleOn
+
+.ToggleOn:
+	res BATTLE_SCENE, [hl]
+	ld de, OnString
+	jr .Display
 
 .NonePressed:
 	bit BATTLE_SCENE, [hl]
 	jr z, .ToggleOn
-	jr .ToggleOff
-
-.ToggleOn:
-	res BATTLE_SCENE, [hl]
-	ld de, .On
-	jr .Display
 
 .ToggleOff:
 	set BATTLE_SCENE, [hl]
-	ld de, .Off
+	ld de, OffString
 
 .Display:
 	hlcoord 11, 5
 	call PlaceString
 	and a
 	ret
-
-.On:  db "ON @"
-.Off: db "OFF@"
 
 Options_BattleStyle:
 	ld hl, wOptions
@@ -382,16 +321,15 @@ Options_BattleStyle:
 .LeftPressed:
 	bit BATTLE_SHIFT, [hl]
 	jr z, .ToggleSet
-	jr .ToggleShift
-
-.NonePressed:
-	bit BATTLE_SHIFT, [hl]
-	jr nz, .ToggleSet
 
 .ToggleShift:
 	res BATTLE_SHIFT, [hl]
 	ld de, .Shift
 	jr .Display
+
+.NonePressed:
+	bit BATTLE_SHIFT, [hl]
+	jr z, .ToggleShift
 
 .ToggleSet:
 	set BATTLE_SHIFT, [hl]
@@ -420,16 +358,15 @@ Options_BattleItems:
 .LeftPressed:
 	bit BATTLE_ITEMS, [hl]
 	jr z, .ToggleOn
-	jr .ToggleOff
-
-.NonePressed:
-	bit BATTLE_ITEMS, [hl]
-	jr nz, .ToggleOn
 
 .ToggleOff:
 	res BATTLE_ITEMS, [hl]
 	ld de, .Off
 	jr .Display
+
+.NonePressed:
+	bit BATTLE_ITEMS, [hl]
+	jr z, .ToggleOff
 
 .ToggleOn:
 	set BATTLE_ITEMS, [hl]
@@ -515,7 +452,7 @@ Options_Frame:
 
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 13 ; where on the screen the number is drawn
+	hlcoord 16, 13
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -700,7 +637,115 @@ GetLevelCapSetting:
 	ld c, OPT_LEVELCAPS_DISOBEY
 	ret
 
-Options_Print:
+Options_Nuzlocke:
+	ld hl, wOptions
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit NUZLOCKE, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
+
+.LeftPressed:
+	bit NUZLOCKE, [hl]
+	jr z, .ToggleOn
+
+.ToggleOff:
+	res NUZLOCKE, [hl]
+	ld de, .Off
+	jr .Display
+
+.NonePressed:
+	bit NUZLOCKE, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	set NUZLOCKE, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 11, 7
+	call PlaceString
+	and a
+	ret
+
+.Off: db "NORMAL @"
+.On:  db "LIMITED@"
+
+Options_MenuClock:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit MENU_CLOCK, [hl]
+	jr nz, .ToggleOn
+	jr .ToggleOff
+
+.LeftPressed:
+	bit MENU_CLOCK, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	res MENU_CLOCK, [hl]
+	ld de, OnString
+	jr .Display
+
+.NonePressed:
+	bit MENU_CLOCK, [hl]
+	jr z, .ToggleOn
+
+.ToggleOff:
+	set MENU_CLOCK, [hl]
+	ld de, OffString
+
+.Display:
+	hlcoord 11, 9
+	call PlaceString
+	and a
+	ret
+
+Options_Font:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit FONT_NORMAL_UNOWN, [hl]
+	jr nz, .ToggleNormal
+	jr .ToggleUnown
+
+.LeftPressed:
+	bit FONT_NORMAL_UNOWN, [hl]
+	jr z, .ToggleUnown
+
+.ToggleNormal:
+	res FONT_NORMAL_UNOWN, [hl]
+	ld de, .Normal
+	jr .Display
+
+.NonePressed:
+	bit FONT_NORMAL_UNOWN, [hl]
+	jr z, .ToggleNormal
+
+.ToggleUnown:
+	set FONT_NORMAL_UNOWN, [hl]
+	ld de, .Unown
+
+.Display:
+	hlcoord 11, 9
+	call PlaceString
+	and a
+	ret
+
+.Normal: db "NORMAL@"
+.Unown:  db "UNOWN @"
+
+Options_GBPrinter:
 	call GetPrinterSetting
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
@@ -739,7 +784,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 7
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -795,7 +840,38 @@ GetPrinterSetting:
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
 
-Options_Cancel:
+Options_NextPage:
+	ldh a, [hJoyPressed]
+	and PAD_A | PAD_LEFT | PAD_RIGHT
+	jr z, _SwitchOptionsPage.NonePressed
+	ld hl, wCurOptionsPage
+	inc [hl]
+	ld de, StringOptions2
+	jr _SwitchOptionsPage
+
+Options_PreviousPage:
+	ldh a, [hJoyPressed]
+	and PAD_A | PAD_LEFT | PAD_RIGHT
+	jr z, _SwitchOptionsPage.NonePressed
+	ld hl, wCurOptionsPage
+	dec [hl]
+	ld de, StringOptions1
+_SwitchOptionsPage:
+	push de
+	hlcoord 0, 0
+	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
+	call Textbox
+	pop de
+	hlcoord 2, 2
+	call PlaceString
+	call OptionsMenu_LoadOptions
+	ld a, NUM_OPTIONS - 1
+	ld [wJumptableIndex], a
+.NonePressed:
+	and a
+	ret
+
+Options_Done:
 	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .Exit
@@ -818,7 +894,7 @@ OptionsControl:
 
 .DownPressed:
 	ld a, [hl]
-	cp OPT_CANCEL ; maximum option index
+	cp OPT_DONE ; maximum option index
 	jr z, .Roll_Up
 	inc [hl]
 	jr .Done
@@ -837,41 +913,7 @@ OptionsControl:
 	jr .Done
 
 .Roll_Down:
-	ld [hl], OPT_CANCEL ; maximum option index
-	jr .Done
-
-Options2Control:
-	ld hl, wJumptableIndex
-	ldh a, [hJoyLast]
-	cp D_DOWN
-	jr z, .DownPressed
-	cp D_UP
-	jr z, .UpPressed
-	and a
-	ret
-
-.DownPressed:
-	ld a, [hl]
-	cp OPT2_CANCEL ; maximum option index
-	jr z, .Roll_Up
-	inc [hl]
-	jr .Done
-
-.Roll_Up:
-	ld [hl], OPT2_DIFFICULTY ; minimum option index
-.Done:
-	scf
-	ret
-
-.UpPressed:
-	ld a, [hl]
-	and a ; OPT2_DIFFICULTY, minimum option index
-	jr z, .Roll_Down
-	dec [hl]
-	jr .Done
-
-.Roll_Down:
-	ld [hl], OPT2_CANCEL ; maximum option index
+	ld [hl], OPT_DONE ; maximum option index
 	jr .Done
 
 Options_UpdateCursorPosition:
