@@ -29,7 +29,7 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
-	call .DrawMenuClockTextBox
+	call .DrawMenuSidebarTextBox
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatusBox
 	call SafeUpdateSprites
@@ -49,7 +49,7 @@ StartMenu::
 .Select:
 	call .GetInput
 	jr c, .Exit
-	call .DrawMenuClockTextBox
+	call .DrawMenuSidebarTextBox
 	ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	call PlayClickSFX
@@ -95,12 +95,12 @@ StartMenu::
 ; Return carry on exit, and no-carry on selection.
 	xor a
 	ldh [hBGMapMode], a
-	call .DrawMenuClockTextBox
+	call .DrawMenuSidebarTextBox
 	call SetUpMenu
 	ld a, $ff
 	ld [wMenuSelection], a
 .loop
-	call .PrintMenuClock
+	call .PrintMenuSidebar
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
@@ -142,7 +142,7 @@ StartMenu::
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
-	call .DrawMenuClockTextBox
+	call .DrawMenuSidebarTextBox
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatus
 	call UpdateSprites
@@ -216,7 +216,7 @@ StartMenu::
 	pop hl
 	jp PlaceString
 
-.MenuClockText:
+.MenuSidebarText:
 	push bc
 	push de
 	push hl
@@ -229,7 +229,7 @@ StartMenu::
 	ld c, a
 	decoord 1, 1
 	farcall PrintHoursMins
-	jr .DoneClockText
+	jr .DoneSidebarText
 
 .LevelCapText:
 	hlcoord 1, 1
@@ -241,7 +241,7 @@ StartMenu::
 	lb bc, 1, 3 ; bytes, digits
 	hlcoord 5, 1
 	call PrintNum
-.DoneClockText:
+.DoneSidebarText:
 	pop hl
 	pop de
 	pop bc
@@ -335,27 +335,27 @@ endr
 	inc c
 	ret
 
-.DrawMenuClockTextBox:
+.DrawMenuSidebarTextBox:
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	ld a, [wOptions2]
-	bit MENU_CLOCK, a
+	bit MENU_SIDEBAR, a
 	ret z
 .SkipDoubleChecks:
 	hlcoord 0, 0
 	lb bc, 1, 8
 	jp Textbox
 
-.PrintMenuClock:
+.PrintMenuSidebar:
 	ld a, [wStatusFlags2]
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	ld a, [wOptions2]
-	bit MENU_CLOCK, a
+	bit MENU_SIDEBAR, a
 	ret z
 	call .SkipDoubleChecks
-	jp .MenuClockText
+	jp .MenuSidebarText
 
 .DrawBugContestStatusBox:
 	ld a, [wStatusFlags2]
