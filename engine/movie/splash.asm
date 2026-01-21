@@ -132,9 +132,8 @@ GameFreakPresentsScene:
 GameFreakPresents_NextScene:
 	ld hl, wJumptableIndex
 	inc [hl]
-	ret
-
 GameFreakPresents_WaitSpriteAnim:
+GameFreakLogo_Done:
 	ret
 
 GameFreakPresents_PlaceGameFreak:
@@ -333,9 +332,6 @@ GameFreakLogo_Transform:
 	add hl, bc
 	inc [hl]
 	jp GameFreakPresents_NextScene
-
-GameFreakLogo_Done:
-	ret
 
 GameFreakDittoPaletteFade:
 INCLUDE "gfx/splash/ditto_fade.pal"
