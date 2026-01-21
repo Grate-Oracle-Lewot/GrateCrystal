@@ -42,20 +42,6 @@ NUM_OPTIONS_2 EQU const_value ; 5
 	const OPT_PRINT_DARKER   ; 3
 	const OPT_PRINT_DARKEST  ; 4
 
-OptionsMenuSetup:
-	call ClearJoypad
-	ld hl, hInMenu
-	ld a, [hl]
-	push af
-	ld [hl], TRUE
-	call ClearBGPalettes
-	hlcoord 0, 0
-	ld b, SCREEN_HEIGHT - 2
-	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	hlcoord 2, 2
-	ret
-
 OptionsMenuOptimization:
 	xor a
 	ld [wJumptableIndex], a
@@ -67,7 +53,17 @@ OptionsMenuOptimization:
 	jp SetPalettes
 
 _Option:
-	call OptionsMenuSetup
+	call ClearJoypad
+	ld hl, hInMenu
+	ld a, [hl]
+	push af
+	ld [hl], TRUE
+	call ClearBGPalettes
+	hlcoord 0, 0
+	ld b, SCREEN_HEIGHT - 2
+	ld c, SCREEN_WIDTH - 2
+	call Textbox
+	hlcoord 2, 2
 	ld de, StringOptions
 	call PlaceString
 	xor a
@@ -114,7 +110,17 @@ ExitOptions:
 	ret
 
 _Option2:
-	call OptionsMenuSetup
+	call ClearJoypad
+	ld hl, hInMenu
+	ld a, [hl]
+	push af
+	ld [hl], TRUE
+	call ClearBGPalettes
+	hlcoord 0, 0
+	ld b, SCREEN_HEIGHT - 2
+	ld c, SCREEN_WIDTH - 2
+	call Textbox
+	hlcoord 2, 2
 	ld de, StringOptions2
 	call PlaceString
 	xor a
