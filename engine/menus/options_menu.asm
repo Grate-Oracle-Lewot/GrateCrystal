@@ -55,9 +55,14 @@ OptionsMenuOptimization:
 Options_Back:
 	ldh a, [hJoyPressed]
 	and A_BUTTON
-	jr nz, _Option
+	jr nz, .page
 	and a
 	ret
+
+.page:
+	pop af
+	ldh [hInMenu], a
+	; fallthrough
 
 _Option:
 	call ClearJoypad
@@ -119,9 +124,14 @@ _Option:
 Options_MoreOptions:
 	ldh a, [hJoyPressed]
 	and A_BUTTON
-	jr nz, _Option2
+	jr nz, .page
 	and a
 	ret
+
+.page:
+	pop af
+	ldh [hInMenu], a
+	; fallthrough
 
 _Option2:
 	call ClearJoypad
