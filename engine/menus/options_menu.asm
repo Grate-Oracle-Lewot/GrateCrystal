@@ -15,7 +15,7 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_DIFFICULTY     ; 0
 	const OPT_LEVEL_CAPS     ; 1
 	const OPT_NUZLOCKE       ; 2
-	const OPT_MENU_CLOCK     ; 3
+	const OPT_MENU_SIDEBAR   ; 3
 	const OPT_FONT           ; 4
 	const OPT_GB_PRINTER     ; 5
 	const OPT_PREVIOUS_PAGE  ; 6
@@ -143,7 +143,7 @@ StringOptions2:
 	db "        :<LF>"
 	db "CATCHING<LF>"
 	db "        :<LF>"
-	db "MENU CLOCK<LF>"
+	db "MENU SIDEBAR<LF>"
 	db "        :<LF>"
 	db "FONT<LF>"
 	db "        :<LF>"
@@ -178,7 +178,7 @@ GetOptionPointer:
 	dw Options_Difficulty
 	dw Options_LevelCaps
 	dw Options_Nuzlocke
-	dw Options_MenuClock
+	dw Options_MenuSidebar
 	dw Options_Font
 	dw Options_GBPrinter
 	dw Options_PreviousPage
@@ -674,32 +674,32 @@ Options_Nuzlocke:
 .Off: db "NORMAL @"
 .On:  db "LIMITED@"
 
-Options_MenuClock:
+Options_MenuSidebar:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit MENU_CLOCK, [hl]
+	bit MENU_SIDEBAR, [hl]
 	jr nz, .ToggleOn
 	jr .ToggleOff
 
 .LeftPressed:
-	bit MENU_CLOCK, [hl]
+	bit MENU_SIDEBAR, [hl]
 	jr z, .ToggleOff
 
 .ToggleOn:
-	res MENU_CLOCK, [hl]
+	res MENU_SIDEBAR, [hl]
 	ld de, OnString
 	jr .Display
 
 .NonePressed:
-	bit MENU_CLOCK, [hl]
+	bit MENU_SIDEBAR, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	set MENU_CLOCK, [hl]
+	set MENU_SIDEBAR, [hl]
 	ld de, OffString
 
 .Display:
