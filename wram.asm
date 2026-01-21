@@ -1712,7 +1712,7 @@ wOptions::
 ; bit 4: no text delay
 ; bit 5: stereo off/on
 ; bit 6: battle style shift/set
-; bit 7: battle scene off/on
+; bit 7: battle scene on/off
 	db
 wSaveFileExists:: db
 wTextboxFrame::
@@ -1730,14 +1730,18 @@ wGBPrinterBrightness::
 ;   darker:   $60
 ;   darkest:  $7F
 	db
+	ds 1
 wOptions2::
 ; bit 0: battle items off/on
 ; bit 1: level caps off/on
 ; bit 2: level caps obedience/hard cap
 ; bit 3: easy mode off/on
 ; bit 4: hard mode off/on
+; bit 5: nuzlocke off/on
+; bit 6: menu clock off/on
+; bit 7: unused
 	db
-	ds 2
+wFontType:: db
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since
