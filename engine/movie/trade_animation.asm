@@ -211,7 +211,19 @@ RunTradeAnimScript:
 	ld a, [wOTTrademonSpecies]
 	ld de, wOTTrademonSpeciesName
 	call TradeAnim_GetNicknamename
-	jp TradeAnim_NormalPals
+	; fallthrough
+
+TradeAnim_NormalPals:
+	ldh a, [hSGB]
+	and a
+	ld a, %11100100 ; 3,2,1,0
+	jr z, .not_sgb
+	ld a, $f0
+
+.not_sgb
+	call DmgToCgbObjPal0
+	ld a, %11100100 ; 3,2,1,0
+	jp DmgToCgbBGPals
 
 DoTradeAnimation:
 	ld a, [wJumptableIndex]
@@ -282,24 +294,6 @@ DoTradeAnimation:
 	add_tradeanim TradeAnim_Wait96               ; 2d
 	add_tradeanim TradeAnim_Wait80IfOTEgg        ; 2e
 	add_tradeanim TradeAnim_Wait180IfOTEgg       ; 2f
-
-TradeAnim_IncrementJumptableIndex:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
-TradeAnim_AdvanceScriptPointer:
-	ld hl, wTradeAnimAddress
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	ld a, [de]
-	ld [wJumptableIndex], a
-	inc de
-	ld [hl], d
-	dec hl
-	ld [hl], e
-	ret
 
 TradeAnim_End:
 	ld hl, wJumptableIndex
@@ -392,7 +386,7 @@ TradeAnim_TubeToOT2:
 	ret nz
 	ld a, TRADEANIMSTATE_1
 	call TradeAnim_TubeAnimJumptable
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToOT3:
 	call TradeAnim_FlashBGPals
@@ -403,7 +397,7 @@ TradeAnim_TubeToOT3:
 	ret nz
 	ld a, TRADEANIMSTATE_2
 	call TradeAnim_TubeAnimJumptable
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToOT4:
 	call TradeAnim_FlashBGPals
@@ -412,7 +406,7 @@ TradeAnim_TubeToOT4:
 	ldh [hSCX], a
 	and a
 	ret nz
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToPlayer3:
 	call TradeAnim_FlashBGPals
@@ -423,7 +417,12 @@ TradeAnim_TubeToPlayer3:
 	ret nz
 	ld a, TRADEANIMSTATE_1
 	call TradeAnim_TubeAnimJumptable
-	jp TradeAnim_IncrementJumptableIndex
+	; fallthrough
+
+TradeAnim_IncrementJumptableIndex:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 TradeAnim_TubeToPlayer4:
 	call TradeAnim_FlashBGPals
@@ -434,7 +433,7 @@ TradeAnim_TubeToPlayer4:
 	ret nz
 	xor a ; TRADEANIMSTATE_0
 	call TradeAnim_TubeAnimJumptable
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToPlayer5:
 	call TradeAnim_FlashBGPals
@@ -443,13 +442,13 @@ TradeAnim_TubeToPlayer5:
 	ldh [hSCX], a
 	and a
 	ret nz
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToOT6:
 TradeAnim_TubeToPlayer6:
 	ld a, 128
 	ld [wFrameCounter], a
-	jp TradeAnim_IncrementJumptableIndex
+	jr TradeAnim_IncrementJumptableIndex
 
 TradeAnim_TubeToOT8:
 TradeAnim_TubeToPlayer8:
@@ -470,7 +469,20 @@ TradeAnim_TubeToPlayer8:
 	call LoadTradeBallAndCableGFX
 	call WaitBGMap
 	call TradeAnim_NormalPals
-	jp TradeAnim_AdvanceScriptPointer
+	; fallthrough
+
+TradeAnim_AdvanceScriptPointer:
+	ld hl, wTradeAnimAddress
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ld a, [de]
+	ld [wJumptableIndex], a
+	inc de
+	ld [hl], d
+	dec hl
+	ld [hl], e
+	ret
 
 TradeAnim_TubeToOT5:
 TradeAnim_TubeToOT7:
@@ -557,12 +569,30 @@ TradeAnim_TubeAnimJumptable:
 	ld a, $5b
 	ld [hl], a
 	hlcoord 10, 6
-	jp TradeAnim_CopyTradeGameBoyTilemap
+	; fallthrough
 
 TradeAnim_CopyTradeGameBoyTilemap:
 	ld de, TradeGameBoyTilemap
 	lb bc, 8, 6
-	jp TradeAnim_CopyBoxFromDEtoHL
+	; fallthrough
+
+TradeAnim_CopyBoxFromDEtoHL:
+.row
+	push bc
+	push hl
+.col
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec c
+	jr nz, .col
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .row
+	ret
 
 TradeAnim_PlaceTrademonStatsOnTubeAnim:
 	push af
@@ -1240,36 +1270,6 @@ TradeAnim_BlankTilemap:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
 	jp ByteFill
-
-TradeAnim_CopyBoxFromDEtoHL:
-.row
-	push bc
-	push hl
-.col
-	ld a, [de]
-	inc de
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .row
-	ret
-
-TradeAnim_NormalPals:
-	ldh a, [hSGB]
-	and a
-	ld a, %11100100 ; 3,2,1,0
-	jr z, .not_sgb
-	ld a, $f0
-
-.not_sgb
-	call DmgToCgbObjPal0
-	ld a, %11100100 ; 3,2,1,0
-	jp DmgToCgbBGPals
 
 LinkTradeAnim_LoadTradePlayerNames:
 	push de
