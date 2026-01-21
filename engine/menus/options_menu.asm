@@ -191,7 +191,7 @@ StringOptions:
 StringOptions2:
 	db "DIFFICULTY<LF>"
 	db "        :<LF>"
-	db "LEVEL_CAPS<LF>"
+	db "LEVEL CAPS<LF>"
 	db "        :<LF>"
 	db "GB PRINTER<LF>"
 	db "        :<LF>"
@@ -652,7 +652,7 @@ Options_LevelCaps:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 11
+	hlcoord 11, 5
 	call PlaceString
 	and a
 	ret
