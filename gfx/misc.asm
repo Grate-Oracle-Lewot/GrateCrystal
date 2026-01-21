@@ -23,11 +23,13 @@ INCBIN "gfx/credits/theend.2bpp"
 SECTION "Font Inversed", ROMX
 
 FontInversed::
-if DEF(_METRONOME_ONLY)
-INCBIN "gfx/font/font_inversed_heart.1bpp"
-else
 INCBIN "gfx/font/font_inversed.1bpp"
-endc
+
+FontInversedHeart::
+INCBIN "gfx/font/font_inversed_heart.1bpp"
+
+FontInversedUnown::
+INCBIN "gfx/font/unown_speaking_font_inversed.1bpp"
 
 
 SECTION "Copyright", ROMX
