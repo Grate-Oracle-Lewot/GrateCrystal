@@ -286,8 +286,8 @@ GetLevelCap::
 ; clobbers basically everything
 
 ; If level caps are off, determine obedience cap
-	ld hl, wOptions2
-	bit LEVEL_CAPS_ON_OFF, [hl]
+	ld a, [wOptions2]
+	bit LEVEL_CAPS_ON_OFF, a
 	jp z, .no_cap
 
 ; Else, return current level cap in a
