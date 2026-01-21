@@ -3283,13 +3283,24 @@ Pokedex_LoadPageNums:
 Pokedex_LoadInversedFont:
 	ld a, 1
 	ldh [rVBK], a
-
 	ld hl, vTiles1
+
+	ld a, [wOptions2]
+	bit FONT_NORMAL_UNOWN, a
+	jr z, .normal
+
+	lb bc, BANK(UnownSpeakingFontInversed), 128 ; $80 tiles
+	ld de, UnownSpeakingFontInversed
+	ld a, BANK(UnownSpeakingFontInversed)
+	jr .finish
+
+.normal
 	lb bc, BANK(FontInversed), 128 ; $80 tiles
 	ld de, FontInversed
 	ld a, BANK(FontInversed)
-	call Get1bpp ; ViaHDMA
 
+.finish
+	call Get1bpp ; ViaHDMA
 	ld a, $0
 	ldh [rVBK], a
 	ret
@@ -3298,6 +3309,7 @@ Pokedex_LoadInvertedFont:
 	call LoadStandardFont
 	ld hl, vTiles1
 	ld bc, $80 tiles
+	; fallthrough
 
 Pokedex_InvertTiles:
 .loop
