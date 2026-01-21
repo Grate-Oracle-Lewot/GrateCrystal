@@ -196,7 +196,7 @@ GetOptionPointer:
 	dw Options_BattleItems
 	dw Options_Sound
 	dw Options_Frame
-	dw _Option2
+	dw Options_MoreOptions
 	dw Options_Cancel
 
 GetOption2Pointer:
@@ -207,7 +207,7 @@ GetOption2Pointer:
 	dw Options_Difficulty
 	dw Options_LevelCaps
 	dw Options_Print
-	dw _Option
+	dw Options_Back
 	dw Options_Cancel
 
 Options_TextSpeed:
@@ -763,6 +763,20 @@ GetPrinterSetting:
 .IsDarkest:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
+	ret
+
+Options_MoreOptions:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jp nz, _Option2
+	and a
+	ret
+
+Options_Back:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jp nz, _Option
+	and a
 	ret
 
 Options_Cancel:
