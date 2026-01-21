@@ -166,11 +166,6 @@ Credits_Jumptable:
 	dw Credits_RequestGFX
 	dw Credits_LoopBack
 
-Credits_Next:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 Credits_LoopBack:
 	ld hl, wJumptableIndex
 	ld a, [hl]
@@ -181,7 +176,12 @@ Credits_LoopBack:
 Credits_PrepBGMapUpdate:
 	xor a
 	ldh [hBGMapMode], a
-	jp Credits_Next
+	; fallthrough
+
+Credits_Next:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 Credits_UpdateGFXRequestPath:
 	call Credits_LoadBorderGFX
@@ -200,7 +200,7 @@ Credits_RequestGFX:
 	ldh [hBGMapMode], a
 	ld a, 8
 	ld [wRequested2bppSize], a
-	jp Credits_Next
+	jr Credits_Next
 
 Credits_LYOverride:
 	ldh a, [rLY]
