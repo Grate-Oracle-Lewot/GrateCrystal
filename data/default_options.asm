@@ -17,6 +17,7 @@ DefaultOptions:
 	; HARD_MODE:            0 (OFF)
 	; NUZLOCKE:             0 (OFF)
 	; MENU_CLOCK:           0 (OFF)
+	; FONT_NORMAL_UNOWN:    0 (NORMAL)
 
 	db $00
 	db $00
