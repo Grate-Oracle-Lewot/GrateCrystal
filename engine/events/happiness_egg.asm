@@ -177,8 +177,8 @@ else
 ; Raise the experience of Day-Care Pokémon every step cycle.
 
 ; No experience gained on Hard Cap setting.
-	ld hl, wOptions2
-	bit LEVEL_CAPS_OBEDIENCE, [hl]
+	ld a, [wOptions2]
+	bit LEVEL_CAPS_OBEDIENCE, a
 	jr nz, .check_egg
 
 	ld a, [wDayCareMan]
