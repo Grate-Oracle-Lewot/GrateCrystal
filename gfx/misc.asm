@@ -25,10 +25,7 @@ SECTION "Font Inversed", ROMX
 FontInversed::
 INCBIN "gfx/font/font_inversed.1bpp"
 
-FontInversedHeart::
-INCBIN "gfx/font/font_inversed_heart.1bpp"
-
-FontInversedUnown::
+UnownSpeakingFontInversed::
 INCBIN "gfx/font/unown_speaking_font_inversed.1bpp"
 
 
