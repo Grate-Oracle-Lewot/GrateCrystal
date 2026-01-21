@@ -173,12 +173,6 @@ _Option2:
 	call DelayFrames
 	jr .joypad_loop
 
-	const OPT2_DIFFICULTY     ; 0
-	const OPT2_LEVEL_CAPS     ; 1
-	const OPT2_PRINT          ; 2
-	const OPT2_BACK           ; 3
-	const OPT2_CANCEL         ; 4
-
 StringOptions2:
 	db "DIFFICULTY<LF>"
 	db "        :<LF>"
