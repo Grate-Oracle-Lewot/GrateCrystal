@@ -1,6 +1,5 @@
 Font:
 INCBIN "gfx/font/font.1bpp"
-endc
 
 UnownSpeakingFont:
 INCBIN "gfx/font/unown_speaking_font.1bpp"
