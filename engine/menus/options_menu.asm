@@ -105,35 +105,13 @@ _Option:
 	call DelayFrames
 	jr .joypad_loop
 
-StringOptions:
-	db "TEXT SPEED<LF>"
-	db "        :<LF>"
-	db "BATTLE SCENE<LF>"
-	db "        :<LF>"
-	db "BATTLE STYLE<LF>"
-	db "        :<LF>"
-	db "BATTLE ITEMS<LF>"
-	db "        :<LF>"
-	db "SOUND<LF>"
-	db "        :<LF>"
-	db "FRAME<LF>"
-	db "        :TYPE<LF>"
-	db "MORE OPTIONS@"
-	db "CANCEL@"
-
-GetOptionPointer:
-	jumptable .Pointers, wJumptableIndex
-
-.Pointers:
-; entries correspond to OPT_* constants
-	dw Options_TextSpeed
-	dw Options_BattleScene
-	dw Options_BattleStyle
-	dw Options_BattleItems
-	dw Options_Sound
-	dw Options_Frame
-	dw _Option2
-	dw Options_Cancel
+ExitOptions:
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	pop af
+	ldh [hInMenu], a
+	ret
 
 _Option2:
 	call OptionsMenuSetup
@@ -155,7 +133,7 @@ _Option2:
 	dec c
 	jr nz, .print_text_loop
 
-	call OptionsMenuOptimizaton
+	call OptionsMenuOptimization
 
 .joypad_loop
 	call JoyTextDelay
@@ -173,6 +151,22 @@ _Option2:
 	call DelayFrames
 	jr .joypad_loop
 
+StringOptions:
+	db "TEXT SPEED<LF>"
+	db "        :<LF>"
+	db "BATTLE SCENE<LF>"
+	db "        :<LF>"
+	db "BATTLE STYLE<LF>"
+	db "        :<LF>"
+	db "BATTLE ITEMS<LF>"
+	db "        :<LF>"
+	db "SOUND<LF>"
+	db "        :<LF>"
+	db "FRAME<LF>"
+	db "        :TYPE<LF>"
+	db "MORE OPTIONS@"
+	db "CANCEL@"
+
 StringOptions2:
 	db "DIFFICULTY<LF>"
 	db "        :<LF>"
@@ -182,6 +176,20 @@ StringOptions2:
 	db "        :<LF>"
 	db "BACK@"
 	db "CANCEL@"
+
+GetOptionPointer:
+	jumptable .Pointers, wJumptableIndex
+
+.Pointers:
+; entries correspond to OPT_* constants
+	dw Options_TextSpeed
+	dw Options_BattleScene
+	dw Options_BattleStyle
+	dw Options_BattleItems
+	dw Options_Sound
+	dw Options_Frame
+	dw _Option2
+	dw Options_Cancel
 
 GetOption2Pointer:
 	jumptable .Pointers, wJumptableIndex
@@ -506,7 +514,7 @@ Options_Difficulty:
 	and a
 	jr z, .SetNone
 	ld a, c
-	cp OPT_DIFFICULTY_NORAML
+	cp OPT_DIFFICULTY_NORMAL
 	jr z, .SetNormal
 ; .SetHard:
 	res EASY_MODE, [hl]
@@ -747,14 +755,6 @@ GetPrinterSetting:
 .IsDarkest:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
-	ret
-
-ExitOptions:
-	ld de, SFX_TRANSACTION
-	call PlaySFX
-	call WaitSFX
-	pop af
-	ldh [hInMenu], a
 	ret
 
 Options_Cancel:
