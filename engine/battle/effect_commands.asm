@@ -4799,18 +4799,23 @@ CalcPlayerStats:
 	ld hl, wPlayerAtkLevel
 	ld de, wPlayerStats
 	ld bc, wBattleMonAttack
+
+	ld a, NUM_BATTLE_STATS
+	call CalcBattleStats
+	farcall DifficultyPlayerBoosts
 	jr CalcStatsMerge
 
 CalcEnemyStats:
 	ld hl, wEnemyAtkLevel
 	ld de, wEnemyStats
 	ld bc, wEnemyMonAttack
+
+	ld a, NUM_BATTLE_STATS
+	call CalcBattleStats
+	farcall DifficultyEnemyBoosts
 	; fallthrough
 
 CalcStatsMerge:
-	ld a, NUM_BATTLE_STATS
-	call CalcBattleStats
-
 	call BattleCommand_SwitchTurn
 
 	ld hl, ApplyPrzEffectOnSpeed
