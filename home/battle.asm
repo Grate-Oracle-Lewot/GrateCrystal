@@ -260,6 +260,74 @@ PushLYOverrides::
 	ld [wRequested2bppSize], a
 	ret
 
+DifficultyEnemyBoosts::
+	ld a, [wOptions2]
+	bit HARD_MODE, a
+	ret z
+	ld hl, wEnemyMonAttack
+	jr DifficultyStatBoosts
+
+DifficultyPlayerBoosts::
+	ld a, [wOptions2]
+	bit EASY_MODE, a
+	ret z
+	ld hl, wBattleMonAttack
+	; fallthrough
+
+DifficultyStatBoosts:
+; input: wBattleMonAttack or wEnemyMonAttack in hl
+; Boosts all non-HP stats of the given mon. No boosts in link mode or the Battle Tower.
+
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	ret nz
+
+	ld c, 5
+.loop
+	call BoostStat
+	dec c
+	ld a, c
+	and a
+	ret z
+	inc hl
+	inc hl
+	jr .loop
+
+BoostStat:
+; Raise stat at hl by 1/8.
+
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	srl d
+	rr e
+	srl d
+	rr e
+	srl d
+	rr e
+	ld a, [hl]
+	add e
+	ld [hld], a
+	ld a, [hl]
+	adc d
+	ld [hli], a
+
+; Cap at 999.
+	ld a, [hld]
+	sub LOW(MAX_STAT_VALUE)
+	ld a, [hl]
+	sbc HIGH(MAX_STAT_VALUE)
+	ret c
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [hli], a
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [hld], a
+	ret
+
 LEVEL_CAP_FALKNER EQU 11
 LEVEL_CAP_BUGSY EQU 16
 LEVEL_CAP_WHITNEY EQU 23
