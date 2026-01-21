@@ -4,6 +4,28 @@ EnableHDMAForGraphics:
 	db FALSE
 
 _LoadStandardFont::
+	ld a, [wOptions2]
+	bit FONT_NORMAL_UNOWN, a
+	jr z, .normal
+
+	ld de, UnownSpeakingFont
+	ld hl, vTiles1
+	lb bc, BANK(UnownSpeakingFont), 32 ; "A" to "]"
+	call Get1bppViaHDMA
+	ld de, UnownSpeakingFont + 32 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $20
+	lb bc, BANK(UnownSpeakingFont), 26 ; "a" to "z" (skip "┌" to "┘")
+	call Get1bppViaHDMA
+	ld de, UnownSpeakingFont + 64 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $40
+	lb bc, BANK(UnownSpeakingFont), 32 ; $c0 to "←"
+	call Get1bppViaHDMA
+	ld de, UnownSpeakingFont + 96 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $60
+	lb bc, BANK(UnownSpeakingFont), 32 ; "'" to "9"
+	jp Get1bppViaHDMA
+
+.normal
 	ld de, Font
 	ld hl, vTiles1
 	lb bc, BANK(Font), 32 ; "A" to "]"
