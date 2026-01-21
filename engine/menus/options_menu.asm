@@ -61,7 +61,6 @@ Options_Back:
 
 .page:
 	pop af
-	ldh [hInMenu], a
 	; fallthrough
 
 _Option:
@@ -130,7 +129,6 @@ Options_MoreOptions:
 
 .page:
 	pop af
-	ldh [hInMenu], a
 	; fallthrough
 
 _Option2:
