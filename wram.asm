@@ -1738,7 +1738,7 @@ wOptions2::
 ; bit 3: easy mode off/on
 ; bit 4: hard mode off/on
 ; bit 5: nuzlocke off/on
-; bit 6: menu clock off/on
+; bit 6: menu sidebar off/on
 ; bit 7: font normal/unown
 	db
 	ds 1
