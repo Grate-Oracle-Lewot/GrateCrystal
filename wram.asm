@@ -143,7 +143,7 @@ wMapTimeOfDay:: db
 
 wCurLevelCap:: db
 
-	ds 1
+wCurOptionsPage:: db
 
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
