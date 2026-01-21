@@ -4802,7 +4802,7 @@ CalcPlayerStats:
 
 	ld a, NUM_BATTLE_STATS
 	call CalcBattleStats
-	farcall DifficultyPlayerBoosts
+	call DifficultyPlayerBoosts
 	jr CalcStatsMerge
 
 CalcEnemyStats:
@@ -4812,7 +4812,7 @@ CalcEnemyStats:
 
 	ld a, NUM_BATTLE_STATS
 	call CalcBattleStats
-	farcall DifficultyEnemyBoosts
+	call DifficultyEnemyBoosts
 	; fallthrough
 
 CalcStatsMerge:
