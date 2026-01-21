@@ -96,11 +96,11 @@ _Option:
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
 	and START | B_BUTTON
-	jr nz, ExitOptions
+	jr nz, .ExitOptions
 	call OptionsControl
 	jr c, .dpad
 	call GetOptionPointer
-	jr c, ExitOptions
+	jr c, .ExitOptions
 
 .dpad
 	call Options_UpdateCursorPosition
@@ -108,7 +108,7 @@ _Option:
 	call DelayFrames
 	jr .joypad_loop
 
-ExitOptions:
+.ExitOptions:
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
@@ -159,17 +159,25 @@ _Option2:
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
 	and START | B_BUTTON
-	jr nz, ExitOptions
+	jr nz, .ExitOptions
 	call Options2Control
 	jr c, .dpad
 	call GetOption2Pointer
-	jr c, ExitOptions
+	jr c, .ExitOptions
 
 .dpad
 	call Options_UpdateCursorPosition
 	ld c, 3
 	call DelayFrames
 	jr .joypad_loop
+
+.ExitOptions:
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	pop af
+	ldh [hInMenu], a
+	ret
 
 StringOptions:
 	db "TEXT SPEED<LF>"
