@@ -90,6 +90,9 @@ GBPRINTER_DARKEST  EQU $7f
 	const LEVEL_CAPS_OBEDIENCE ; 2
 	const EASY_MODE            ; 3
 	const HARD_MODE            ; 4
+	const MENU_CLOCK           ; 5
+	const NUZLOCKE             ; 6
+	const 
 
 ; wWalkingDirection::
 	const_def -1
