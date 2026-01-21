@@ -15,7 +15,7 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_DIFFICULTY     ; 0
 	const OPT_LEVEL_CAPS     ; 1
 	const OPT_NUZLOCKE       ; 2
-	const_OPT_MENU_CLOCK     ; 3
+	const OPT_MENU_CLOCK     ; 3
 	const OPT_FONT           ; 4
 	const OPT_GB_PRINTER     ; 5
 	const OPT_PREVIOUS_PAGE  ; 6
