@@ -512,7 +512,7 @@ Options_Difficulty:
 .Save:
 	ld a, c
 	and a
-	jr z, .SetNone
+	jr z, .SetEasy
 	ld a, c
 	cp OPT_DIFFICULTY_NORMAL
 	jr z, .SetNormal
