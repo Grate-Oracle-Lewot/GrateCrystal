@@ -682,25 +682,25 @@ Options_MenuSidebar:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit MENU_SIDEBAR, [hl]
-	jr z, .ToggleOn
+	jr nz, .ToggleOn
 	jr .ToggleOff
 
 .LeftPressed:
 	bit MENU_SIDEBAR, [hl]
-	jr z, .ToggleOn
+	jr z, .ToggleOff
 
-.ToggleOff:
+.ToggleOn:
 	res MENU_SIDEBAR, [hl]
-	ld de, OffString
+	ld de, OnString
 	jr .Display
 
 .NonePressed:
 	bit MENU_SIDEBAR, [hl]
-	jr z, .ToggleOff
+	jr z, .ToggleOn
 
-.ToggleOn:
+.ToggleOff:
 	set MENU_SIDEBAR, [hl]
-	ld de, OnString
+	ld de, OffString
 
 .Display:
 	hlcoord 11, 9
