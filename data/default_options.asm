@@ -17,7 +17,7 @@ DefaultOptions:
 	; EASY_MODE:            0 (OFF)
 	; HARD_MODE:            0 (OFF)
 	; NUZLOCKE:             0 (OFF)
-	; MENU_SIDEBAR:         1 (OFF)
+	; MENU_SIDEBAR:         1 (ON)
 	; FONT_NORMAL_UNOWN:    0 (NORMAL)
 
 	db $00
