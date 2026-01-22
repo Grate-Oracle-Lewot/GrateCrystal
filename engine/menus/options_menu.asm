@@ -345,32 +345,32 @@ Options_BattleStyle:
 .Set:   db "SET  @"
 
 Options_BattleItems:
-	ld hl, wOptions2
+	ld hl, wOptions
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit BATTLE_ITEMS, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	jr nz, .ToggleOn
+	jr .ToggleOff
 
 .LeftPressed:
-	bit BATTLE_ITEMS, [hl]
-	jr z, .ToggleOn
-
-.ToggleOff:
-	res BATTLE_ITEMS, [hl]
-	ld de, .Off
-	jr .Display
-
-.NonePressed:
 	bit BATTLE_ITEMS, [hl]
 	jr z, .ToggleOff
 
 .ToggleOn:
+	res BATTLE_ITEMS, [hl]
+	ld de, OnString
+	jr .Display
+
+.NonePressed:
+	bit BATTLE_ITEMS, [hl]
+	jr z, .ToggleOn
+
+.ToggleOff:
 	set BATTLE_ITEMS, [hl]
-	ld de, .On
+	ld de, OffString
 
 .Display:
 	hlcoord 11, 9
@@ -638,7 +638,7 @@ GetLevelCapSetting:
 	ret
 
 Options_Nuzlocke:
-	ld hl, wOptions
+	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
