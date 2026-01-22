@@ -737,7 +737,7 @@ Options_Font:
 	ld de, .Unown
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -784,7 +784,7 @@ Options_GBPrinter:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
@@ -865,7 +865,7 @@ _SwitchOptionsPage:
 	hlcoord 2, 2
 	call PlaceString
 	call OptionsMenu_LoadOptions
-	ld a, NUM_OPTIONS - 1
+	ld a, OPT_TEXT_SPEED
 	ld [wJumptableIndex], a
 .NonePressed:
 	and a
