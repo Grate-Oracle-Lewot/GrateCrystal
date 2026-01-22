@@ -49,7 +49,7 @@ BattleAnimRunScript:
 	and a
 	jr nz, .hi_byte
 
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jr z, .disabled
 
