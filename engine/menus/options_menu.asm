@@ -645,25 +645,25 @@ Options_Nuzlocke:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit NUZLOCKE, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	jr nz, .ToggleOn
+	jr .ToggleOff
 
 .LeftPressed:
-	bit NUZLOCKE, [hl]
-	jr z, .ToggleOn
-
-.ToggleOff:
-	res NUZLOCKE, [hl]
-	ld de, .Off
-	jr .Display
-
-.NonePressed:
 	bit NUZLOCKE, [hl]
 	jr z, .ToggleOff
 
 .ToggleOn:
+	res NUZLOCKE, [hl]
+	ld de, OnString
+	jr .Display
+
+.NonePressed:
+	bit NUZLOCKE, [hl]
+	jr z, .ToggleOn
+
+.ToggleOff:
 	set NUZLOCKE, [hl]
-	ld de, .On
+	ld de, OffString
 
 .Display:
 	hlcoord 11, 7
