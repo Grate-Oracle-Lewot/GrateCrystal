@@ -238,11 +238,6 @@ SlotsJumptable:
 	dw SlotsAction_RestartOrQuit     ; 11
 	dw SlotsAction_Quit              ; 12
 
-SlotsAction_Next:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 SlotsAction_Init:
 	call SlotsAction_Next
 	xor a
@@ -368,7 +363,7 @@ SlotsAction_FlashIfWin:
 	cp SLOTS_NO_MATCH
 	jr nz, .GotIt
 	call SlotsAction_Next
-	jp SlotsAction_Next
+	jr SlotsAction_Next
 
 .GotIt:
 	call SlotsAction_Next
@@ -393,7 +388,12 @@ SlotsAction_FlashScreen:
 
 .done
 	call Slots_GetPals
-	jp SlotsAction_Next
+	; fallthrough
+
+SlotsAction_Next:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
 
 SlotsAction_GiveEarnedCoins:
 	xor a
@@ -404,7 +404,7 @@ SlotsAction_GiveEarnedCoins:
 	call Slots_GetPayout
 	xor a
 	ld [wSlotsDelay], a
-	jp SlotsAction_Next
+	jr SlotsAction_Next
 
 SlotsAction_PayoutTextAndAnim:
 	call Slots_PayoutText
@@ -517,7 +517,7 @@ Slots_StopReel1:
 	ret
 
 Slots_StopReel2:
-; As long as, the following three meet, there's a 31.25% chance
+; As long as the following three meet, there's a 31.25% chance
 ; to set action REEL_ACTION_SET_UP_REEL2_SKIP_TO_7:
 ; - Bet is >= 2 coins
 ; - There's a 7 symbol visible in reel #1
@@ -673,51 +673,7 @@ Slots_InitReelTiles:
 	ld hl, REEL_SPIN_DISTANCE
 	add hl, bc
 	ld [hl], REEL_ACTION_DO_NOTHING
-	jp Slots_UpdateReelPositionAndOAM
-
-Slots_SpinReels:
-	ld bc, wReel1
-	call .SpinReel
-	ld bc, wReel2
-	call .SpinReel
-	ld bc, wReel3
-
-.SpinReel:
-	ld hl, REEL_SPIN_DISTANCE
-	add hl, bc
-	ld a, [hl]
-	and $f
-	jr nz, .skip
-	call ReelActionJumptable
-.skip
-	ld hl, REEL_SPIN_RATE
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
-	ld d, a
-	ld hl, REEL_SPIN_DISTANCE
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	and $f
-	jr z, Slots_UpdateReelPositionAndOAM
-	ld hl, REEL_OAM_ADDR
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld e, $8
-.loop
-	ld a, [hl]
-	add d
-	ld [hli], a
-	inc hl
-	inc hl
-	inc hl
-	dec e
-	jr nz, .loop
-	ret
+	; fallthrough
 
 Slots_UpdateReelPositionAndOAM:
 	ld hl, REEL_X_COORD
@@ -787,6 +743,50 @@ Slots_UpdateReelPositionAndOAM:
 	sub 2 * TILE_WIDTH
 	ld [wCurReelYCoord], a
 	cp 2 * TILE_WIDTH
+	jr nz, .loop
+	ret
+
+Slots_SpinReels:
+	ld bc, wReel1
+	call .SpinReel
+	ld bc, wReel2
+	call .SpinReel
+	ld bc, wReel3
+
+.SpinReel:
+	ld hl, REEL_SPIN_DISTANCE
+	add hl, bc
+	ld a, [hl]
+	and $f
+	jr nz, .skip
+	call ReelActionJumptable
+.skip
+	ld hl, REEL_SPIN_RATE
+	add hl, bc
+	ld a, [hl]
+	and a
+	ret z
+	ld d, a
+	ld hl, REEL_SPIN_DISTANCE
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	and $f
+	jr z, Slots_UpdateReelPositionAndOAM
+	ld hl, REEL_OAM_ADDR
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld e, $8
+.loop
+	ld a, [hl]
+	add d
+	ld [hli], a
+	inc hl
+	inc hl
+	inc hl
+	dec e
 	jr nz, .loop
 	ret
 
@@ -871,6 +871,8 @@ Slots_StopReel:
 	ld hl, REEL_STOP_DELAY
 	add hl, bc
 	ld [hl], 3
+	; fallthrough
+
 ReelAction_StopReelIgnoreJoypad:
 	ld hl, REEL_STOP_DELAY
 	add hl, bc
@@ -1106,7 +1108,7 @@ ReelAction_EndGolem:
 ReelAction_InitChansey:
 ; Ensures the lining up of SEVEN symbols, but this mode is only possible
 ; when there is bias to SEVEN symbols (and even then, it's still rare).
-; Chansey releases and egg and reel #3 is made to advance 17 slots very
+; Chansey releases an egg and reel #3 is made to advance 17 slots very
 ; quickly as many times as necessary for the match to SEVENs to show up.
 
 	call Slots_CheckMatchedAllThreeReels
@@ -1341,21 +1343,21 @@ Slots_CheckMatchedFirstTwoReels:
 	ld hl, wCurReelStopped
 	ld a, [wReel1Stopped]
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckUpwardsDiag:
 	ld hl, wCurReelStopped + 1
 	ld a, [wReel1Stopped]
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckMiddleRow:
 	ld hl, wCurReelStopped + 1
 	ld a, [wReel1Stopped + 1]
 	cp [hl]
-	call z, .StoreResult
+	jr z, .StoreResult
 	ret
 
 .CheckDownwardsDiag:
@@ -1848,13 +1850,9 @@ endr
 	call Slots_PlaySFX
 	call WaitSFX
 
-; Oddly, the rarest mode (wKeepSevenBiasChance = 1) is the one with
-; the worse odds to favor seven symbol streaks (12.5% vs 25%).
-; it's possible that either the wKeepSevenBiasChance initialization
-; or this code was intended to lead to flipped percentages.
 	ld a, [wKeepSevenBiasChance]
 	and a
-	jr nz, .lower_seven_streak_odds
+	jr z, .lower_seven_streak_odds
 	call Random
 	and %0010100
 	ret z ; 25% chance to stick with seven symbol bias
