@@ -842,7 +842,7 @@ GetPrinterSetting:
 
 Options_NextPage:
 	ldh a, [hJoyPressed]
-	and PAD_A | PAD_LEFT | PAD_RIGHT
+	and A_BUTTON | D_LEFT | D_RIGHT
 	jr z, _SwitchOptionsPage.NonePressed
 	ld hl, wCurOptionsPage
 	inc [hl]
@@ -851,7 +851,7 @@ Options_NextPage:
 
 Options_PreviousPage:
 	ldh a, [hJoyPressed]
-	and PAD_A | PAD_LEFT | PAD_RIGHT
+	and A_BUTTON | D_LEFT | D_RIGHT
 	jr z, _SwitchOptionsPage.NonePressed
 	ld hl, wCurOptionsPage
 	dec [hl]
