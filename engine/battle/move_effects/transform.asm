@@ -105,8 +105,9 @@ BattleCommand_Transform:
 	ld de, wPlayerStatLevels
 	ld bc, 8
 	call BattleSideCopy
-	call _CheckBattleScene
-	jr c, .mimic_anims
+	ld a, [wOption]
+	bit BATTLE_SCENE, a
+	jr z, .mimic_anims
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wPlayerMinimized]
