@@ -64,7 +64,7 @@ BattleCommand_Present:
 
 .already_fully_healed
 	call BattleCommand_SwitchTurn
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jr nz, .do_animation
 	call AnimateFailedMove
