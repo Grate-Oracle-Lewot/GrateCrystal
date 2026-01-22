@@ -345,7 +345,7 @@ Options_BattleStyle:
 .Set:   db "SET  @"
 
 Options_BattleItems:
-	ld hl, wOptions
+	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
