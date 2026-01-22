@@ -329,6 +329,8 @@ UnownPuzzle_A:
 	call SimpleWaitPressAorB
 	ld a, TRUE
 	ld [wSolvedUnownPuzzle], a
+	; fallthrough
+
 UnownPuzzle_Quit:
 	ld hl, wJumptableIndex
 	set 7, [hl]
