@@ -54,8 +54,9 @@ BattleCommand_Substitute:
 	xor a
 	ld [hl], a
 	ld [de], a
-	call _CheckBattleScene
-	jr c, .no_anim
+	ld a, [wOption]
+	bit BATTLE_SCENE, a
+	jr z, .no_anim
 
 	xor a
 	ld [wNumHits], a
