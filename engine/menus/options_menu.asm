@@ -724,7 +724,7 @@ Options_Font:
 
 .ToggleNormal:
 	res FONT_NORMAL_UNOWN, [hl]
-	ld de, .Normal
+	ld de, NormalString
 	jr .Display
 
 .NonePressed:
