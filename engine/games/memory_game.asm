@@ -362,7 +362,7 @@ MemoryGame_CheckMatch:
 	cp MEMORYGAMEREWARD_POKEGEAR
 	jr nz, .next1
 	ld c, 25
-	jp .Payout
+	jp .BigPayout
 
 .next1
 	cp MEMORYGAMEREWARD_RARECANDY
@@ -454,6 +454,19 @@ MemoryGame_CheckMatch:
 	call PrintText
 	call CardFlip_PrintCoinBalance
 	ld de, SFX_3RD_PLACE
+	call PlaySFX
+	call WaitSFX
+	pop bc
+	jr .loop
+
+.BigPayout:
+	ld a, c
+	push bc
+	ld [wStringBuffer2], a
+	ld hl, .VictoryText
+	call PrintText
+	call CardFlip_PrintCoinBalance
+	ld de, SFX_1ST_PLACE
 	call PlaySFX
 	call WaitSFX
 	pop bc
