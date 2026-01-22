@@ -54,7 +54,7 @@ BattleCommand_Substitute:
 	xor a
 	ld [hl], a
 	ld [de], a
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jr z, .no_anim
 
