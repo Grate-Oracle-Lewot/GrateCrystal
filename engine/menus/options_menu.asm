@@ -43,8 +43,9 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_PRINT_DARKER   ; 3
 	const OPT_PRINT_DARKEST  ; 4
 
-OnString:  db "ON @"
-OffString: db "OFF@"
+OnString:     db "ON @"
+OffString:    db "OFF@"
+NormalString: db "NORMAL  @"
 
 _Option:
 	call ClearJoypad
@@ -520,12 +521,11 @@ Options_Difficulty:
 .Strings:
 ; entries correspond to OPT_DIFFICULTY_* constants
 	dw .Easy
-	dw .Normal
+	dw NormalString
 	dw .Hard
 
-.Easy:   db "EASY  @"
-.Normal: db "NORMAL@"
-.Hard:   db "HARD  @"
+.Easy: db "EASY  @"
+.Hard: db "HARD  @"
 
 GetDifficultySetting:
 ; reads current difficulty settings to return OPT_DIFFICULTY_* value in c
@@ -654,7 +654,7 @@ Options_Nuzlocke:
 
 .ToggleOff:
 	res NUZLOCKE, [hl]
-	ld de, .Off
+	ld de, NormalString
 	jr .Display
 
 .NonePressed:
@@ -671,8 +671,7 @@ Options_Nuzlocke:
 	and a
 	ret
 
-.Off: db "NORMAL @"
-.On:  db "LIMITED@"
+.On: db "LIMITED@"
 
 Options_MenuSidebar:
 	ld hl, wOptions2
@@ -720,20 +719,20 @@ Options_Font:
 	jr .ToggleUnown
 
 .LeftPressed:
-	bit MENU_SIDEBAR, [hl]
+	bit FONT_NORMAL_UNOWN, [hl]
 	jr z, .ToggleUnown
 
 .ToggleNormal:
-	res MENU_SIDEBAR, [hl]
+	res FONT_NORMAL_UNOWN, [hl]
 	ld de, .Normal
 	jr .Display
 
 .NonePressed:
-	bit MENU_SIDEBAR, [hl]
+	bit FONT_NORMAL_UNOWN, [hl]
 	jr z, .ToggleNormal
 
 .ToggleUnown:
-	set MENU_SIDEBAR, [hl]
+	set FONT_NORMAL_UNOWN, [hl]
 	ld de, .Unown
 
 .Display:
@@ -742,8 +741,7 @@ Options_Font:
 	and a
 	ret
 
-.Normal: db "NORMAL@"
-.Unown:  db "UNOWN @"
+.Unown: db "UNOWN @"
 
 Options_GBPrinter:
 	call GetPrinterSetting
@@ -793,13 +791,12 @@ Options_GBPrinter:
 ; entries correspond to OPT_PRINT_* constants
 	dw .Lightest
 	dw .Lighter
-	dw .Normal
+	dw NormalString
 	dw .Darker
 	dw .Darkest
 
 .Lightest: db "LIGHTEST@"
 .Lighter:  db "LIGHTER @"
-.Normal:   db "NORMAL  @"
 .Darker:   db "DARKER  @"
 .Darkest:  db "DARKEST @"
 
