@@ -3767,8 +3767,9 @@ ShowSetEnemyMonAndSendOutAnimation:
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
+	ld a, [wOption]
+	bit BATTLE_SCENE, a
+	jr z, .cry_no_anim
 
 	hlcoord 12, 0
 	ld d, $0
@@ -9269,8 +9270,9 @@ BattleStartMessage:
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
+	ld a, [wOption]
+	bit BATTLE_SCENE, a
+	jr z, .cry_no_anim
 
 	hlcoord 12, 0
 	ld d, $0
