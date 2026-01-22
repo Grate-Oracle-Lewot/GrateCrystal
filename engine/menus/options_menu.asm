@@ -524,7 +524,7 @@ Options_Difficulty:
 	dw .Hard
 
 .Easy:   db "EASY  @"
-.Normal: db "NORAML@"
+.Normal: db "NORMAL@"
 .Hard:   db "HARD  @"
 
 GetDifficultySetting:
