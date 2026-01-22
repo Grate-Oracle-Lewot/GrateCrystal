@@ -1,6 +1,6 @@
 DefaultOptions:
-; wOptions: fast text speed
-	db TEXT_DELAY_FAST
+; wOptions: fast text speed, battle scene on
+	db %10000001
 ; wSaveFileExists: no
 	db FALSE
 ; wTextboxFrame: frame 1
