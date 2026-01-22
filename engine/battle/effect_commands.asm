@@ -1886,7 +1886,7 @@ BattleCommand_LowerSub:
 	ret nz
 
 .charge_turn
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jr z, .mimic_anims
 
@@ -2031,7 +2031,7 @@ BattleCommand_RaiseSub:
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret z
 
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jp z, BattleCommand_RaiseSubNoAnim
 
@@ -4220,7 +4220,7 @@ MinimizeDropSub:
 
 	ld a, $1
 	ld [bc], a
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	ret nz
 
