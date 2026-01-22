@@ -361,7 +361,7 @@ Options_BattleItems:
 
 .ToggleOn:
 	res BATTLE_ITEMS, [hl]
-	ld de, OnString
+	ld de, .On
 	jr .Display
 
 .NonePressed:
@@ -370,7 +370,7 @@ Options_BattleItems:
 
 .ToggleOff:
 	set BATTLE_ITEMS, [hl]
-	ld de, OffString
+	ld de, .Off
 
 .Display:
 	hlcoord 11, 9
@@ -654,7 +654,7 @@ Options_Nuzlocke:
 
 .ToggleOn:
 	res NUZLOCKE, [hl]
-	ld de, OnString
+	ld de, .On
 	jr .Display
 
 .NonePressed:
@@ -663,7 +663,7 @@ Options_Nuzlocke:
 
 .ToggleOff:
 	set NUZLOCKE, [hl]
-	ld de, OffString
+	ld de, .Off
 
 .Display:
 	hlcoord 11, 7
