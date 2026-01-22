@@ -716,25 +716,25 @@ Options_Font:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit FONT_NORMAL_UNOWN, [hl]
-	jr nz, .ToggleNormal
-	jr .ToggleUnown
+	jr nz, .ToggleUnown
+	jr .ToggleNormal
 
 .LeftPressed:
-	bit FONT_NORMAL_UNOWN, [hl]
-	jr z, .ToggleUnown
-
-.ToggleNormal:
-	res FONT_NORMAL_UNOWN, [hl]
-	ld de, .Normal
-	jr .Display
-
-.NonePressed:
 	bit FONT_NORMAL_UNOWN, [hl]
 	jr z, .ToggleNormal
 
 .ToggleUnown:
-	set FONT_NORMAL_UNOWN, [hl]
+	res FONT_NORMAL_UNOWN, [hl]
 	ld de, .Unown
+	jr .Display
+
+.NonePressed:
+	bit FONT_NORMAL_UNOWN, [hl]
+	jr z, .ToggleUnown
+
+.ToggleNormal:
+	set FONT_NORMAL_UNOWN, [hl]
+	ld de, .Normal
 
 .Display:
 	hlcoord 11, 11
