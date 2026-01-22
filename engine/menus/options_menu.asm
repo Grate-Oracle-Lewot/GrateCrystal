@@ -281,25 +281,25 @@ Options_BattleScene:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit BATTLE_SCENE, [hl]
-	jr nz, .ToggleOn
-	jr .ToggleOff
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit BATTLE_SCENE, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
-	res BATTLE_SCENE, [hl]
-	ld de, OnString
-	jr .Display
-
-.NonePressed:
 	bit BATTLE_SCENE, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	set BATTLE_SCENE, [hl]
+	res BATTLE_SCENE, [hl]
 	ld de, OffString
+	jr .Display
+
+.NonePressed:
+	bit BATTLE_SCENE, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	set BATTLE_SCENE, [hl]
+	ld de, OnString
 
 .Display:
 	hlcoord 11, 5
@@ -352,25 +352,25 @@ Options_BattleItems:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit BATTLE_ITEMS, [hl]
-	jr nz, .ToggleOn
-	jr .ToggleOff
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit BATTLE_ITEMS, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
-	res BATTLE_ITEMS, [hl]
-	ld de, .On
-	jr .Display
-
-.NonePressed:
 	bit BATTLE_ITEMS, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	set BATTLE_ITEMS, [hl]
+	res BATTLE_ITEMS, [hl]
 	ld de, .Off
+	jr .Display
+
+.NonePressed:
+	bit BATTLE_ITEMS, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	set BATTLE_ITEMS, [hl]
+	ld de, .On
 
 .Display:
 	hlcoord 11, 9
@@ -645,25 +645,25 @@ Options_Nuzlocke:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit NUZLOCKE, [hl]
-	jr nz, .ToggleOn
-	jr .ToggleOff
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit NUZLOCKE, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
-	res NUZLOCKE, [hl]
-	ld de, .On
-	jr .Display
-
-.NonePressed:
 	bit NUZLOCKE, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	set NUZLOCKE, [hl]
+	res NUZLOCKE, [hl]
 	ld de, .Off
+	jr .Display
+
+.NonePressed:
+	bit NUZLOCKE, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	set NUZLOCKE, [hl]
+	ld de, .On
 
 .Display:
 	hlcoord 11, 7
@@ -682,25 +682,25 @@ Options_MenuSidebar:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit MENU_SIDEBAR, [hl]
-	jr nz, .ToggleOn
-	jr .ToggleOff
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit MENU_SIDEBAR, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
-	res MENU_SIDEBAR, [hl]
-	ld de, OnString
-	jr .Display
-
-.NonePressed:
 	bit MENU_SIDEBAR, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	set MENU_SIDEBAR, [hl]
+	res MENU_SIDEBAR, [hl]
 	ld de, OffString
+	jr .Display
+
+.NonePressed:
+	bit MENU_SIDEBAR, [hl]
+	jr z, .ToggleOff
+
+.ToggleOn:
+	set MENU_SIDEBAR, [hl]
+	ld de, OnString
 
 .Display:
 	hlcoord 11, 9
@@ -716,25 +716,25 @@ Options_Font:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	bit FONT_NORMAL_UNOWN, [hl]
-	jr nz, .ToggleUnown
-	jr .ToggleNormal
+	jr nz, .ToggleNormal
+	jr .ToggleUnown
 
 .LeftPressed:
-	bit FONT_NORMAL_UNOWN, [hl]
-	jr z, .ToggleNormal
-
-.ToggleUnown:
-	res FONT_NORMAL_UNOWN, [hl]
-	ld de, .Unown
-	jr .Display
-
-.NonePressed:
-	bit FONT_NORMAL_UNOWN, [hl]
+	bit MENU_SIDEBAR, [hl]
 	jr z, .ToggleUnown
 
 .ToggleNormal:
-	set FONT_NORMAL_UNOWN, [hl]
+	res MENU_SIDEBAR, [hl]
 	ld de, .Normal
+	jr .Display
+
+.NonePressed:
+	bit MENU_SIDEBAR, [hl]
+	jr z, .ToggleNormal
+
+.ToggleUnown:
+	set MENU_SIDEBAR, [hl]
+	ld de, .Unown
 
 .Display:
 	hlcoord 11, 11
