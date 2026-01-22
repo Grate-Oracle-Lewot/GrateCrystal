@@ -49,8 +49,9 @@ BattleAnimRunScript:
 	and a
 	jr nz, .hi_byte
 
-	farcall CheckBattleScene
-	jr c, .disabled
+	ld a, [wOption]
+	bit BATTLE_SCENE, a
+	jr z, .disabled
 
 	vc_hook Reduce_move_anim_flashing
 	call BattleAnimClearHud
