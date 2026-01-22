@@ -105,7 +105,7 @@ BattleCommand_Transform:
 	ld de, wPlayerStatLevels
 	ld bc, 8
 	call BattleSideCopy
-	ld a, [wOption]
+	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	jr z, .mimic_anims
 	ldh a, [hBattleTurn]
