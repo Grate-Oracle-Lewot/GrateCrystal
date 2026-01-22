@@ -9,7 +9,8 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
 	db GBPRINTER_NORMAL
-	ds 1
+; Unused byte
+	db 0
 ; wOptions2: battle items on
 	db %01000001
 	; BATTLE_ITEMS:         1 (ON)
@@ -20,6 +21,7 @@ DefaultOptions:
 	; NUZLOCKE:             0 (OFF)
 	; MENU_SIDEBAR:         1 (ON)
 	; FONT_NORMAL_UNOWN:    0 (NORMAL)
-	ds 1
+; Unused byte
+	db 0
 .End
 	assert DefaultOptions.End - DefaultOptions == wOptionsEnd - wOptions
