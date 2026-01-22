@@ -1712,7 +1712,7 @@ wOptions::
 ; bit 4: no text delay
 ; bit 5: stereo off/on
 ; bit 6: battle style shift/set
-; bit 7: battle scene on/off
+; bit 7: battle scene off/on
 	db
 wSaveFileExists:: db
 wTextboxFrame::
