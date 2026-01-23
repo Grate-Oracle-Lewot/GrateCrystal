@@ -725,6 +725,7 @@ INCLUDE "engine/phone/scripts/lewot.asm"
 INCLUDE "data/phone/text/lewot.asm"
 
 
+; glitchy and inaccessible, but referenced
 SECTION "Pikachu Minigame", ROMX
 
 INCLUDE "engine/games/pikachu_minigame.asm"
