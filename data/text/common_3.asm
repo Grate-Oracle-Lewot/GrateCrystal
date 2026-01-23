@@ -1496,3 +1496,8 @@ _MomLostGearBookletText::
 	para "Come back again in"
 	line "a while."
 	prompt
+
+_NuzlockeCantCatchText::
+	text "This #MON can't"
+	line "be caught!"
+	done
