@@ -772,7 +772,7 @@ Slots_SpinReels:
 	add [hl]
 	ld [hl], a
 	and $f
-	jr z, Slots_UpdateReelPositionAndOAM
+	jp z, Slots_UpdateReelPositionAndOAM
 	ld hl, REEL_OAM_ADDR
 	add hl, bc
 	ld a, [hli]
