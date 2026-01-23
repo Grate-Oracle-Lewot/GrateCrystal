@@ -1500,4 +1500,4 @@ _MomLostGearBookletText::
 _NuzlockeCantCatchText::
 	text "This #MON can't"
 	line "be caught!"
-	done
+	prompt
