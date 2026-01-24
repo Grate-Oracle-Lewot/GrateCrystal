@@ -11,6 +11,8 @@ Route35GoldenrodGate_MapScripts:
 RandyScript:
 	faceplayer
 	opentext
+	checknuzlocke
+	iftrue .nuzlocke
 	checkevent EVENT_GOT_HP_UP_FROM_RANDY
 	iftrue .gothpup
 	checkevent EVENT_GAVE_KENYA
@@ -59,6 +61,12 @@ RandyScript:
 	writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText
 	waitbutton
 .bagfull
+	closetext
+	end
+
+.nuzlocke
+	writetext Route35GoldenrodGateRandyNuzlockeText
+	waitbutton
 	closetext
 	end
 
@@ -157,6 +165,10 @@ Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
 	text "My pal was snooz-"
 	line "ing, right? Heh,"
 	cont "what'd I say?"
+	done
+
+Route35GoldenrodGateRandyNuzlockeText:
+	text "Lovely day."
 	done
 
 Route35GoldenrodGatePokefanFText:
