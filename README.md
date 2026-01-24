@@ -520,7 +520,7 @@ make startur - Same as previous, but the starters are Abra and Shellder. If you 
 
 make nohm - Normal Johto starters, but when you get your starter you also get all of the HM-replacement items, meaning that you'll never have to teach an HM move to any Pokémon. You do still need the respective badges to use the field effects, and HMs themselves still exist to allow access to those moves in battle, but HM moves can be forgotten without the Move Deleter. The reason I didn't just do this in the normal build was because the HM-replacement items were handy as rewards for completing certain challenges or areas, so in this build those things lack proper rewards.
 
-make noexp - Normal Johto starters, but Pokémon gain no experience from either battling or the Daycare. (Rare Candies and vitamins still work.) This is a particular type of challenge run, and since it was relatively straightforward to implement compared to something like a Nuzlocke, I figured I'd provide the option.
+make noexp - Normal Johto starters, but Pokémon gain no experience from either battling or the Daycare. (Rare Candies and vitamins still work.) This is a particular type of challenge run, although I can't guarantee that the game is beatable this way.
 
 make centre - Normal Johto starters, but you can no longer heal at Pokémon Centers, and all similar instances of free healing have been removed. This is another challenge run, although it's rendered somewhat moot by the PC healing a deposited Pokémon's HP and status. That's not something I can easily change, so you'll have to make it work.
 
