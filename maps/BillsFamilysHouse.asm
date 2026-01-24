@@ -14,6 +14,8 @@ BillsFamilysHouse_MapScripts:
 BillScript:
 	faceplayer
 	opentext
+	checknuzlocke
+	iftrue .GotEevee
 	checkevent EVENT_GOT_EEVEE
 	iftrue .GotEevee
 	writetext BillTakeThisEeveeText
