@@ -8,12 +8,17 @@ MahoganyRedGyaradosSpeechHouse_MapScripts:
 	def_callbacks
 
 MahoganyRedGyaradosSpeechHouseBlackBeltScript:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_LIAM
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 MahoganyRedGyaradosSpeechHouseTeacherScript:
 	faceplayer
