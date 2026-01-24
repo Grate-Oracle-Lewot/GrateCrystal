@@ -7,12 +7,17 @@ OlivineTimsHouse_MapScripts:
 	def_callbacks
 
 Tim:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_TIM
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 OlivineTimsHouse_MapEvents:
 	db 0, 0 ; filler
