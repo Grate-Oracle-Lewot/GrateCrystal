@@ -1,4 +1,12 @@
 NuzlockeCheckAreaFlag::
+; return c for an invalid encounter, nc for valid
+	ld a, [wOptions2]
+	bit NUZLOCKE, a
+	jr nz, .nuzlocke
+	and a ; clear carry
+	ret
+
+.nuzlocke
 	ld d, CHECK_FLAG
 	jr NuzlockeAreaFlagMerge
 
@@ -227,7 +235,7 @@ NuzlockeAreaFlagMerge:
 .flag
 	call EventFlagAction
 	ld a, c
-	and a
+	and a ; clear carry
 	jr nz, .no
 	ret
 
