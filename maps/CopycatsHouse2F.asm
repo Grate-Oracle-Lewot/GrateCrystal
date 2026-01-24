@@ -142,8 +142,11 @@ Copycat:
 .GotPass_Merge_1:
 	special LoadUsedSpritesGFX
 	opentext
+	checknuzlocke
+	iftrue .NuzlockeSkip
 	readvar VAR_WEEKDAY
 	ifequal WEDNESDAY, .TradeDitto
+.NuzlockeSkip:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .GotPass_Female_2
 	writetext CopycatText_Male_3
