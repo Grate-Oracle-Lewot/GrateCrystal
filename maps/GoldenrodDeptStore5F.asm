@@ -104,12 +104,17 @@ GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText
 
 Mike:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_MIKE
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 GoldenrodDeptStore5FPokefanMScript:
 	jumptextfaceplayer GoldenrodDeptStore5FPokefanMText
