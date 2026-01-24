@@ -9,6 +9,8 @@ ManiasHouse_MapScripts:
 ManiaScript:
 	faceplayer
 	opentext
+	checknuzlocke
+	iftrue .default_postevent
 	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
 	iftrue .default_postevent
 	checkevent EVENT_GOT_SHUCKIE
