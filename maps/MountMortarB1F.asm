@@ -16,6 +16,8 @@ MountMortarB1F_MapScripts:
 MountMortarB1FKiyoScript:
 	faceplayer
 	opentext
+	checknuzlocke
+	iftrue .Nuzlocke
 	checkevent EVENT_GOT_TYROGUE_FROM_KIYO
 	iftrue .GotTyrogue
 	checkevent EVENT_BEAT_BLACKBELT_KIYO
@@ -57,6 +59,24 @@ MountMortarB1FKiyoScript:
 
 .NoRoom:
 	writetext MountMortarB1FKiyoFullPartyText
+	waitbutton
+	closetext
+	end
+
+.Nuzlocke:
+	checkevent EVENT_BEAT_BLACKBELT_KIYO
+	iftrue .BeatNuzlocke
+	writetext MountMortarB1FKiyoIntroText
+	waitbutton
+	closetext
+	winlosstext MountMortarB1FKiyoWinText, 0
+	loadtrainer BLACKBELT_T, KIYO
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BLACKBELT_KIYO
+	opentext
+.BeatNuzlocke:
+	writetext MountMortarB1FKiyoNuzlockeText
 	waitbutton
 	closetext
 	end
@@ -161,6 +181,14 @@ MountMortarB1FKiyoGotTyrogueText:
 MountMortarB1FKiyoFullPartyText:
 	text "You have no room"
 	line "in your PC box!"
+	done
+
+MountMortarB1FKiyoNuzlockeText:
+	text "Keep up the hard"
+	line "work. I'll keep"
+	cont "training too."
+
+	para "Farewell!"
 	done
 
 MountMortarB1F_MapEvents:
