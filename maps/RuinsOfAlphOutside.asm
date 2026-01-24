@@ -69,9 +69,12 @@ RuinsOfAlphOutsideScientistSceneContinue:
 RuinsOfAlphOutsideFisherScript:
 	faceplayer
 	opentext
+	checknuzlocke
+	iftrue .Coward
 	checkevent EVENT_TALKED_TO_RUINS_COWARD
 	iftrue .Trade
 	setevent EVENT_TALKED_TO_RUINS_COWARD
+.Coward:
 	writetext RuinsOfAlphOutsideFisherText
 	sjump .End
 
