@@ -134,6 +134,8 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	opentext
 	writetext CeladonPrizeRoom_PrizeVendorIntroText
 	waitbutton
+	checknuzlocke
+	iftrue .Done
 	checkitem COIN_CASE
 	iffalse CeladonPrizeRoom_NoCoinCase
 .loop
@@ -146,6 +148,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	ifequal 2, .Togetic
 	ifequal 3, .Dragonite
 	sjump CeladonPrizeRoom_CancelPurchaseScript
+
+.Done:
+	closetext
+	end
 
 .Porygon2:
 	checkcoins CELADONGAMECORNERPRIZEROOM_PORYGON2_COINS
