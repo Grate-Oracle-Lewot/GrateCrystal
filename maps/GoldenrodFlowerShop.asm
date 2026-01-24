@@ -90,6 +90,8 @@ FlowerShopFloriaScript:
 	end
 
 .FoughtSudowoodo:
+	checknuzlocke
+	iftrue .GotSquirtbottle
 	trade NPC_TRADE_FLORIA
 	waitbutton
 	closetext
