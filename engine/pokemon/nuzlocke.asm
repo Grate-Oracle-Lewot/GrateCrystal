@@ -12,6 +12,8 @@ NuzlockeCheckAreaFlag::
 
 NuzlockeSetAreaFlag::
 	ld a, [wBattleMode]
+	and a
+	jr z, .gift
 	dec a
 	ret nz
 
@@ -19,6 +21,8 @@ NuzlockeSetAreaFlag::
 	dec a
 	call CheckCaughtMon
 	ret nz
+
+.gift
 	ld d, SET_FLAG
 	; fallthrough
 
