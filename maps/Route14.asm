@@ -11,12 +11,17 @@ Route14_MapScripts:
 	def_callbacks
 
 Kim:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_KIM
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 TrainerPokefanmCarter:
 	trainer POKEFANM, CARTER, EVENT_BEAT_POKEFANM_CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, .Script
