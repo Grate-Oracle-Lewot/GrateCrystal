@@ -164,6 +164,8 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	opentext
 	writetext GoldenrodGameCornerPrizeVendorIntroText
 	waitbutton
+	checknuzlocke
+	iftrue .Done
 	checkitem COIN_CASE
 	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
 	readvar VAR_WEEKDAY
@@ -179,6 +181,10 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal 2, .Porygon
 	ifequal 3, .Wobbuffet
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+
+.Done:
+	closetext
+	end
 
 .Abra:
 	checkcoins GOLDENRODGAMECORNER_ABRA_COINS
