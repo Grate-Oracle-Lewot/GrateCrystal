@@ -207,6 +207,17 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
+	farcall NuzlockeCheckAreaFlag
+	jr nc, .valid
+	ld hl, NuzlockeCantCatchText
+	call PrintText
+
+	; Item wasn't used.
+	ld a, $2
+	ld [wItemEffectSucceeded], a
+	ret
+
+.valid
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .room_in_party
@@ -2646,6 +2657,10 @@ ItemCantGetOnText:
 
 BallBoxFullText:
 	text_far _BallBoxFullText
+	text_end
+
+NuzlockeCantCatchText:
+	text_far _NuzlockeCantCatchText
 	text_end
 
 ItemUsedText:
