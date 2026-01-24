@@ -226,6 +226,7 @@ SetGiftMonCaughtData:
 	rrc b
 	or b
 	ld [hl], a
+	farcall NuzlockeSetAreaFlag
 	ret
 
 SetEggMonCaughtData:
