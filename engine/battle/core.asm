@@ -8439,6 +8439,7 @@ InitEnemyWildmon:
 	ld [wBattleMode], a
 	farcall StubbedTrainerRankings_WildBattles
 	call LoadEnemyMon
+	farcall NuzlockeSetAreaFlag
 	ld hl, wEnemyMonMoves
 	ld de, wWildMonMoves
 	ld bc, NUM_MOVES
