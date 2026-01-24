@@ -227,7 +227,7 @@ INCLUDE "engine/events/battle_tower/get_trainer_class.asm"
 INCLUDE "engine/battle/sliding_intro.asm"
 INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/movie/gbc_only.asm"
-INCLUDE "engine/events/move_dex.asm"
+INCLUDE "engine/pokemon/nuzlocke.asm"
 
 
 SECTION "bank14", ROMX
