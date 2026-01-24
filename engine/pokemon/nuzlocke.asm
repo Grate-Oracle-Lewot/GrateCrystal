@@ -7,6 +7,16 @@ NuzlockeCheckAreaFlag::
 	ret
 
 .nuzlocke
+	ld a, [wEnemyMonSpecies]
+	dec a
+	call CheckCaughtMon
+	jr z, .new
+
+; dupe
+	scf
+	ret
+
+.new
 	ld d, CHECK_FLAG
 	jr NuzlockeAreaFlagMerge
 
