@@ -7,12 +7,17 @@ BlackthornEmysHouse_MapScripts:
 	def_callbacks
 
 Emy:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_EMY
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 BlackthornEmysHouse_MapEvents:
 	db 0, 0 ; filler
