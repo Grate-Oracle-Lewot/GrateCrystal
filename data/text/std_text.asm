@@ -331,3 +331,7 @@ RegisteredNumber2Text:
 	text_ram wStringBuffer3
 	text "'s number."
 	done
+
+NuzlockeNPCText:
+	text "Lovely day."
+	done
