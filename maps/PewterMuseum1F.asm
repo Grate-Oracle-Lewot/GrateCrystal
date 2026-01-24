@@ -65,12 +65,15 @@ PewterMuseum1FScientistScript:
 	iftrue .GiveOmanyte
 	writetext PewterMuseum1FScientistIntroText
 	waitbutton
+	checknuzlocke
+	iftrue .Done
 	checkitem HELIX_FOSSIL
 	iftrue .HaveFossil
 	checkitem DOME_FOSSIL
 	iftrue .HaveFossil
 	checkitem OLD_AMBER
 	iftrue .HaveFossil
+.Done:
 	closetext
 	end
 
