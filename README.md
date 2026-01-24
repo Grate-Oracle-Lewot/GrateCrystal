@@ -32,8 +32,15 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Battle Items on/off: disable player use of items in battle (held items still work)
   - Difficulty: Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Normal (nothing), or Hard (computer's active Pokémon gets the aforementioned boost)
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
-  - Catching: Normal or Limited (Nuzlocke mode, yet to be implemented)
   - Font: Normal or Unown (all text becomes Unown font, characters permitting)
+  - Catching: Normal or Limited (Nuzlocke catching rules)
+    - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
+    - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you will be able to catch the first new species that you find.
+    - Gift or trade Pokémon given by NPCs count as your encounter for the area in which they appear. NPCs will refuse to make the trade or gift if you've already used that encounter.
+    - Eggs can be freely obtained in any area, but will only hatch in areas where you haven't caught something yet, and upon hatching count as that area's encounter.
+    - No exceptions for shinies. Play at your own risk.
+    - This mode does nothing about Pokémon "dying." It only restricts catching. Release or box them at your own discretion.
+    - Since the mode can be switched off at any time, you can disable it to, say, catch an HM user to avoid softlocks. Act at your own discretion.
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
