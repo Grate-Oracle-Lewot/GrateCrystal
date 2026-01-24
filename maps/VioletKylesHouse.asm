@@ -11,12 +11,17 @@ VioletKylesHousePokefanMScript:
 	jumptextfaceplayer VioletKylesHousePokefanMText
 
 Kyle:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_KYLE
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 VioletKylesHousePokefanMText:
 	text "A #MON you get"
