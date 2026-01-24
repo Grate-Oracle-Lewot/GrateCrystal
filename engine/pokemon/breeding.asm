@@ -176,6 +176,14 @@ DoEggStep::
 	ret z
 	cp EGG
 	jr nz, .next
+
+	push de
+	push bc
+	farcall NuzlockeCheckAreaFlag
+	pop bc
+	pop de
+	jr c, .next
+
 	dec [hl]
 	jr nz, .next
 	ld a, 1
@@ -229,6 +237,7 @@ HatchEggs:
 	ld [wCurPartySpecies], a
 	dec a
 	call SetSeenAndCaughtMon
+	farcall NuzlockeSetAreaFlag
 
 	ld a, [wCurPartySpecies]
 	cp TOGEPI
