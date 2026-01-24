@@ -128,12 +128,17 @@ PowerPlantGymGuide4Script:
 	end
 
 Forest:
+	checknuzlocke
+	iftrue .nuzlocke
 	faceplayer
 	opentext
 	trade NPC_TRADE_FOREST
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	jumpstd NuzlockeNPCScript
 
 PowerPlantBookshelf:
 	jumpstd DifficultBookshelfScript
