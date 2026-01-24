@@ -491,10 +491,9 @@ closetext: MACRO
 	db closetext_command
 ENDM
 
-	const writeunusedbyte_command ; $4a
-writeunusedbyte: MACRO
-	db writeunusedbyte_command
-	db \1 ; byte
+	const checknuzlocke_command ; $4a
+checknuzlocke: MACRO
+	db checknuzlocke_command
 ENDM
 
 	const farwritetext_command ; $4b
