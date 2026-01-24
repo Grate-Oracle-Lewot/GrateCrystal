@@ -65,10 +65,7 @@ RandyScript:
 	end
 
 .nuzlocke
-	writetext Route35GoldenrodGateRandyNuzlockeText
-	waitbutton
-	closetext
-	end
+	jumpstd NuzlockeNPCScript
 
 GiftSpearowMail:
 	db FLOWER_MAIL
@@ -165,10 +162,6 @@ Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
 	text "My pal was snooz-"
 	line "ing, right? Heh,"
 	cont "what'd I say?"
-	done
-
-Route35GoldenrodGateRandyNuzlockeText:
-	text "Lovely day."
 	done
 
 Route35GoldenrodGatePokefanFText:
