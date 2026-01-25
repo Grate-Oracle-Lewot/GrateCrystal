@@ -468,24 +468,14 @@ Pokecenter2FNayruScript:
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
 	slow_step UP
 	slow_step LEFT
-	turn_head RIGHT
-	step_end
-
 Pokecenter2FMovementData_ReceptionistLooksRight:
 	turn_head RIGHT
 	step_end
 
 Pokecenter2FMovementData_PlayerTakesThreeStepsUp:
 	step UP
-	step UP
-	step UP
-	step_end
-
 Pokecenter2FMovementData_PlayerTakesTwoStepsUp:
 	step UP
-	step UP
-	step_end
-
 Pokecenter2FMovementData_PlayerTakesOneStepUp:
 	step UP
 	step_end
@@ -502,15 +492,8 @@ Pokecenter2FMovementData_PlayerWalksRightAndUp:
 
 Pokecenter2FMovementData_PlayerTakesThreeStepsDown:
 	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 Pokecenter2FMovementData_PlayerTakesTwoStepsDown:
 	step DOWN
-	step DOWN
-	step_end
-
 Pokecenter2FMovementData_PlayerTakesOneStepDown:
 	step DOWN
 	step_end
@@ -522,6 +505,7 @@ Pokecenter2FMovementData_ReceptionistStepsRightAndDown:
 
 Pokecenter2FMovementData_ReceptionistStepsRightLooksDown:
 	slow_step UP
+Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight:
 	slow_step LEFT
 	turn_head RIGHT
 	step_end
@@ -539,11 +523,6 @@ Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft:
 	turn_head UP
 	turn_head RIGHT
 	turn_head LEFT
-	step_end
-
-Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight:
-	slow_step LEFT
-	turn_head RIGHT
 	step_end
 
 Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft:
