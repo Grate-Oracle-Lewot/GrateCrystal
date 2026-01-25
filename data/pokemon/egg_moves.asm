@@ -34,8 +34,8 @@ SquirtleEggMoves:
 
 PidgeyEggMoves:
 	db PURSUIT
-	db FORESIGHT
 	db PECK
+	db SILVER_WIND
 	db SONICBOOM
 	db EGG_BOMB
 	db SOFTBOILED
