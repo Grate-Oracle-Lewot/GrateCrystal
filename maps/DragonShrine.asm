@@ -13,8 +13,6 @@ DragonShrine_MapScripts:
 
 .DragonShrineTest:
 	sdefer .DragonShrineTestScript
-	end
-
 .DummyScene:
 	end
 
