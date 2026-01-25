@@ -9,16 +9,14 @@
 
 OlivinePort_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_DEFAULT
 	scene_script .LeaveFastShip ; SCENE_OLIVINEPORT_LEAVE_SHIP
 
 	def_callbacks
 
-.DummyScene0:
-	end
-
 .LeaveFastShip:
 	sdefer .LeaveFastShipScript
+.DummyScene:
 	end
 
 .LeaveFastShipScript:
@@ -122,8 +120,6 @@ OlivinePortWalkUpToShipScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, OlivinePortCannotEnterFastShipMovement
-	end
-
 .skip:
 	end
 
@@ -234,10 +230,6 @@ OlivinePortCooltrainerFScript:
 OlivinePortHiddenProtein:
 	hiddenitem PROTEIN, EVENT_OLIVINE_PORT_HIDDEN_PROTEIN
 
-OlivinePortEnterFastShipMovement:
-	step DOWN
-	step_end
-
 OlivinePortLeaveFastShipMovement:
 	step UP
 	step_end
@@ -247,6 +239,11 @@ OlivinePortCannotEnterFastShipMovement:
 	turn_head LEFT
 	step_end
 
+
+
+OlivinePortApproachFastShipAfterHOFMovement:
+	step RIGHT
+	step DOWN
 OlivinePortApproachFastShipFirstTimeMovement:
 	step DOWN
 	step DOWN
@@ -254,18 +251,7 @@ OlivinePortApproachFastShipFirstTimeMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step_end
-
-OlivinePortApproachFastShipAfterHOFMovement:
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
+OlivinePortEnterFastShipMovement:
 	step DOWN
 	step_end
 
