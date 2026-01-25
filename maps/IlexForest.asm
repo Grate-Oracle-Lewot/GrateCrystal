@@ -577,14 +577,6 @@ MovementData_Farfetchd_Pos2_Pos3:
 	big_step DOWN
 	step_end
 
-MovementData_Farfetchd_Pos2_Pos8:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
 MovementData_Farfetchd_Pos3_Pos4:
 	big_step RIGHT
 	big_step RIGHT
@@ -604,6 +596,7 @@ MovementData_Farfetchd_Pos3_Pos2:
 
 MovementData_Farfetchd_Pos4_Pos5:
 	big_step DOWN
+MovementData_Farfetchd_Pos2_Pos8:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
@@ -624,12 +617,6 @@ MovementData_Farfetchd_Pos5_Pos6:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	step_end
-
 MovementData_Farfetchd_Pos5_Pos7:
 	big_step LEFT
 	big_step LEFT
@@ -712,6 +699,7 @@ MovementData_Farfetched_Pos7_Pos6:
 
 MovementData_Farfetched_Pos7_Pos5:
 	big_step RIGHT
+MovementData_Farfetched_Pos8_Pos7:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -729,21 +717,6 @@ MovementData_Farfetched_Pos8_Pos9:
 	big_step DOWN
 	step_end
 
-MovementData_Farfetched_Pos8_Pos7:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	step_end
-
-MovementData_Farfetched_Pos8_Pos2:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
 MovementData_Farfetched_Pos9_Pos10:
 	big_step LEFT
 	big_step LEFT
@@ -756,6 +729,7 @@ MovementData_Farfetched_Pos9_Pos10:
 	big_step LEFT
 	big_step UP
 	big_step UP
+MovementData_Farfetched_Pos8_Pos2:
 	big_step UP
 	big_step UP
 	big_step UP
