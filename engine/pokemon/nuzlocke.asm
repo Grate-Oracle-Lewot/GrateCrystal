@@ -27,10 +27,19 @@ NuzlockeSetAreaFlag::
 	dec a
 	ret nz
 
+; dupe
 	ld a, [wEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	ret nz
+
+; don't set flags until getting first Poke Balls from Elm's aide
+	ld b, CHECK_FLAG
+	ld de, EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 
 .gift
 	ld d, SET_FLAG
