@@ -75,6 +75,7 @@ PlayerWalksUpToDancingClefairies:
 	step_end
 
 ClefairyDanceStep1:
+ClefairyDanceStep5:
 	slow_step DOWN
 	slow_jump_step DOWN
 	step_end
@@ -90,11 +91,6 @@ ClefairyDanceStep3:
 
 ClefairyDanceStep4:
 	slow_jump_step LEFT
-	step_end
-
-ClefairyDanceStep5:
-	slow_step DOWN
-	slow_jump_step DOWN
 	step_end
 
 ClefairyDanceStep6:
