@@ -327,19 +327,19 @@ NuzlockeAreaFlagMerge:
 	jr .flag
 .route_39
 	ld de, EVENT_NUZLOCKE_ROUTE_39
-	jr .flag
+	jp .flag
 .olivine_city
 	ld de, EVENT_NUZLOCKE_OLIVINE_CITY
-	jr .flag
+	jp .flag
 .lighthouse
 	ld de, EVENT_NUZLOCKE_LIGHTHOUSE
-	jr .flag
+	jp .flag
 .battle_tower
 	ld de, EVENT_NUZLOCKE_BATTLE_TOWER
-	jr .flag
+	jp .flag
 .route_40
 	ld de, EVENT_NUZLOCKE_ROUTE_40
-	jr .flag
+	jp .flag
 .whirl_islands
 	ld de, EVENT_NUZLOCKE_WHIRL_ISLANDS
 	jp .flag
