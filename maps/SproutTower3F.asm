@@ -136,9 +136,6 @@ SproutTower3FPlayerApproachesRivalMovement:
 	step UP
 	step UP
 	step UP
-	step UP
-	step_end
-
 SproutTower3FRivalApproachesElderMovement:
 	step UP
 	step_end
