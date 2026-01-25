@@ -106,14 +106,9 @@ OlivineCityPokecenterSign:
 OlivineCityMartSign:
 	jumpstd MartSignScript
 
-OlivineCityRivalApproachesTopMovement:
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step_end
-
 OlivineCityRivalApproachesBottomMovement:
 	step DOWN
+OlivineCityRivalApproachesTopMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
