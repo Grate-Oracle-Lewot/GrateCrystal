@@ -139,14 +139,6 @@ RadioTower5FDirectorsOfficeSign:
 RadioTower5FStudio1Sign:
 	jumptext RadioTower5FStudio1SignText
 
-FakeDirectorMovement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step UP
-	step UP
-	step_end
-
 RadioTower5FDirectorWalksIn:
 	step DOWN
 	step DOWN
@@ -166,6 +158,7 @@ RadioTower5FDirectorWalksOut:
 	step UP
 	step UP
 	step LEFT
+FakeDirectorMovement:
 	step LEFT
 	step LEFT
 	step LEFT
