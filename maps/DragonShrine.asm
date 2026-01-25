@@ -193,7 +193,7 @@ DragonShrineElder1Script:
 	faceplayer
 	opentext
 	checknuzlocke
-	iftrue ..DontGiveDratiniYet
+	iftrue .DontGiveDratiniYet
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .DontGiveDratiniYet
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
