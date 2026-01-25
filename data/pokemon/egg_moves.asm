@@ -111,6 +111,7 @@ ZubatEggMoves:
 	db ABSORB
 	db MEGA_DRAIN
 	db SUPER_FANG
+	db BEAT_UP
 	db -1 ; end
 
 OddishEggMoves:
@@ -153,7 +154,7 @@ MeowthEggMoves:
 	db METAL_SOUND
 	db SPITE
 	db CHARM
-	db BEAT_UP
+	db EXTREMESPEED
 	db ROCK_POLISH
 	db HEAL_BELL
 	db PRESENT
@@ -230,6 +231,7 @@ TentacoolEggMoves:
 	db RAPID_SPIN
 	db HAZE
 	db SAFEGUARD
+	db BEAT_UP
 	db -1 ; end
 
 GeodudeEggMoves:
