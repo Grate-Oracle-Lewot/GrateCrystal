@@ -143,9 +143,6 @@ RuinsOfAlphOutsideScientistWalkToLabMovement:
 	step RIGHT
 	step RIGHT
 	step UP
-	step UP
-	step_end
-
 RuinsOfAlphOutsidePlayerEnterLabMovement:
 	step UP
 	step_end
