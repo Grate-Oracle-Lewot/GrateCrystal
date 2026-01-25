@@ -207,10 +207,6 @@ TeamRocketBaseB3FIceHeal:
 TeamRocketBaseB3FUltraBall:
 	itemball ULTRA_BALL
 
-RocketBaseLanceApproachesPlayerMovement:
-	step RIGHT
-	step_end
-
 RocketBaseLanceLeavesMovement:
 	step DOWN
 	step LEFT
@@ -287,6 +283,7 @@ RocketBaseRivalEnterMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
+RocketBaseLanceApproachesPlayerMovement:
 	step RIGHT
 	step_end
 
