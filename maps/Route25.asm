@@ -188,24 +188,14 @@ Route25Protein:
 Route25HiddenPotion:
 	hiddenitem MAX_POTION, EVENT_ROUTE_25_HIDDEN_POTION
 
-Route25MistysDateLeavesMovement1:
-	big_step DOWN
-	step_end
-
 Route25MistysDateLeavesMovement2:
 	big_step DOWN
+Route25MistysDateLeavesMovement1:
 	big_step DOWN
 	step_end
 
 Route25MistyApproachesPlayerMovement1:
 	step UP
-	step UP
-	step UP
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
 Route25MistyApproachesPlayerMovement2:
 	step UP
 	step UP
