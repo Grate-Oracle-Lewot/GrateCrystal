@@ -161,7 +161,7 @@ Moves:
 	move METRONOME,    EFFECT_METRONOME,           0, FAIRY,        STATUS,   100 percent,     20,   0
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, PSYCHIC_TYPE, STATUS,   100 percent,     20,   0
 	move SELFDESTRUCT, EFFECT_SELFDESTRUCT,      250, NORMAL,       PHYSICAL, 100 percent,      5,   0
-	move EGG_BOMB,     EFFECT_BURN_HIT,          100, NORMAL,       PHYSICAL,  80 percent + 1, 20,  30 percent + 1
+	move EGG_BOMB,     EFFECT_TRI_ATTACK,        100, NORMAL,       PHYSICAL,  80 percent + 1, 20,  30 percent + 1
 	move LICK,         EFFECT_PARALYZE_HIT,       40, GHOST,        PHYSICAL, 100 percent,     30,  30 percent + 1
 	move SMOG,         EFFECT_POISON_HIT,         40, POISON,       SPECIAL,   70 percent + 2, 20, 100 percent
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,       SPECIAL,  100 percent,     20,  30 percent + 1
