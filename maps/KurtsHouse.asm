@@ -432,16 +432,9 @@ KurtsHouseBookshelf:
 KurtsHouseRadio:
 	jumpstd Radio2Script
 
-KurtsHouseKurtExitHouseMovement:
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	step_end
-
 KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	big_step RIGHT
+KurtsHouseKurtExitHouseMovement:
 	big_step DOWN
 	big_step DOWN
 	big_step DOWN
