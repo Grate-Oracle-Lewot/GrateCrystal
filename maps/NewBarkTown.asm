@@ -147,16 +147,9 @@ NewBarkTown_TeacherRunsToYouMovement2:
 	turn_head DOWN
 	step_end
 
-NewBarkTown_TeacherBringsYouBackMovement1:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head LEFT
-	step_end
-
 NewBarkTown_TeacherBringsYouBackMovement2:
 	step RIGHT
+NewBarkTown_TeacherBringsYouBackMovement1:
 	step RIGHT
 	step RIGHT
 	step RIGHT
