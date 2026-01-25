@@ -234,7 +234,7 @@ PidgeyEvosAttacks:
 	db 37, AGILITY
 	db 42, AIR_SLASH
 	db 50, MIRROR_MOVE
-	db 57, SILVER_WIND
+	db 57, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 PidgeottoEvosAttacks:
@@ -250,7 +250,7 @@ PidgeottoEvosAttacks:
 	db 40, AGILITY
 	db 47, AIR_SLASH
 	db 54, MIRROR_MOVE
-	db 60, SILVER_WIND
+	db 60, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 PidgeotEvosAttacks:
@@ -265,7 +265,7 @@ PidgeotEvosAttacks:
 	db 42, AGILITY
 	db 49, AIR_SLASH
 	db 58, MIRROR_MOVE
-	db 64, SILVER_WIND
+	db 64, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:
