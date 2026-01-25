@@ -112,7 +112,6 @@ TrainerYoungsterJoey:
 	setevent EVENT_GOT_HP_UP_FROM_JOEY
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .GiveHPUp:
 	opentext
@@ -126,36 +125,28 @@ TrainerYoungsterJoey:
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisteredNumber:
 	jumpstd RegisteredNumberMScript
-	end
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
-	end
 
 .RematchStd:
 	jumpstd RematchMScript
-	end
 
 .PackFull:
 	setevent EVENT_JOEY_HP_UP
 	jumpstd PackFullMScript
-	end
 
 .RematchGift:
 	jumpstd RematchGiftMScript
-	end
 
 TrainerYoungsterMikey:
 	trainer YOUNGSTER, MIKEY, EVENT_BEAT_YOUNGSTER_MIKEY, YoungsterMikeySeenText, YoungsterMikeyBeatenText, 0, .Script
