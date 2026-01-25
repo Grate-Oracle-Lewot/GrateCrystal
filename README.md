@@ -35,8 +35,9 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Font: Normal or Unown (all text becomes Unown font, characters permitting)
   - Catching: Normal or Limited (Nuzlocke catching rules)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
-    - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you will be able to catch the first new species that you find. Different members of an evolutionary line count as different species, but if you've obtained a different stage through evolution or breeding, then that stage counts as already caught.
+    - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you will be able to catch the first new species that you find. Different members of an evolutionary line count as different species, but if you've obtained a different stage through evolution or breeding, then that stage counts as already caught (though it doesn't use up any particular area's encounter).
     - Gift or trade Pokémon given by NPCs (including your starter) count as your encounter for the area in which the NPC appears. NPCs will refuse to make the trade or gift if you've already used that encounter.
+    - Apart from your starter, encounters won't be used up until after you get your first Poké Balls from Elm's aide.
     - Eggs can be freely obtained in any area, but will only hatch in areas where you haven't caught something yet, and upon hatching count as that area's encounter.
     - No exceptions for shinies. Play at your own risk.
     - This mode does nothing about Pokémon "dying." It only restricts catching. Release or box them at your own discretion.
