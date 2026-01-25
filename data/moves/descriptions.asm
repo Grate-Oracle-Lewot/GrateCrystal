@@ -744,8 +744,8 @@ SelfdestructDescription:
 	next "the user faint.@"
 
 EggBombDescription:
-	db   "An exploding egg."
-	next "May burn the foe.@"
+	db   "May burn, freeze,"
+	next "or paralyze.@"
 
 LickDescription:
 	db   "Licks the foe. May"
@@ -904,8 +904,8 @@ RockPolishDescription:
 	next "the user's SPEED.@"
 
 TriAttackDescription:
-	db   "Fires three kinds"
-	next "of beams at once.@"
+	db   "May burn, freeze,"
+	next "or paralyze.@"
 
 SuperFangDescription:
 	db   "Cuts the foe's HP"
