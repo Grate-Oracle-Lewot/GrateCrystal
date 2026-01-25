@@ -2159,12 +2159,12 @@ Script_checknuzlocke:
 	farcall NuzlockeCheckAreaFlag
 	jr c, .invalid
 	xor a
-	ld [wScriptByte], a
+	ld [wScriptVar], a
 	ret
 
 .invalid
 	ld a, TRUE
-	ld [wScriptByte], a
+	ld [wScriptVar], a
 	ret
 
 Script_closetext:
