@@ -259,9 +259,6 @@ Route27RareCandy:
 
 Route27FisherStepLeftTwiceMovement:
 	step LEFT
-	step LEFT
-	step_end
-
 Route27FisherStepLeftOnceMovement:
 	step LEFT
 	step_end
