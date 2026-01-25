@@ -7,17 +7,15 @@
 
 MahoganyMart1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_MAHOGANYMART1F_NOTHING
+	scene_script .DummyScene ; SCENE_MAHOGANYMART1F_NOTHING
 	scene_script .LanceUncoversStaircase ; SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .MahoganyMart1FStaircase
 
-.DummyScene0:
-	end
-
 .LanceUncoversStaircase:
 	sdefer MahoganyMart1FLanceUncoversStaircaseScript
+.DummyScene:
 	end
 
 .MahoganyMart1FStaircase:
@@ -147,9 +145,6 @@ MahoganyMart1FLanceApproachPharmacistMovement:
 MahoganyMart1FLanceApproachHiddenStairsMovement:
 	slow_step UP
 	slow_step RIGHT
-	slow_step RIGHT
-	step_end
-
 MahoganyMart1FLanceGoDownStairsMovement:
 	slow_step RIGHT
 	step_end
