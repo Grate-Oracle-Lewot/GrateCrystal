@@ -20,8 +20,6 @@ TinTower1F_MapScripts:
 
 .FaceSuicune:
 	sdefer .SuicuneBattle
-	end
-
 .DummyScene:
 	end
 
@@ -219,6 +217,8 @@ TinTower1FPlayerEntersMovement:
 	step_end
 
 TinTower1FRaikouApproachesMovement:
+TinTower1FEnteiApproachesMovement:
+TinTower1FSuicuneApproachesMovement:
 	set_sliding
 	fast_jump_step DOWN
 	remove_sliding
@@ -232,22 +232,10 @@ TinTower1FRaikouLeavesMovement:
 	remove_sliding
 	step_end
 
-TinTower1FEnteiApproachesMovement:
-	set_sliding
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
 TinTower1FEnteiLeavesMovement:
 	set_sliding
 	fast_jump_step DOWN
 	fast_jump_step LEFT
-	fast_jump_step DOWN
-	remove_sliding
-	step_end
-
-TinTower1FSuicuneApproachesMovement:
-	set_sliding
 	fast_jump_step DOWN
 	remove_sliding
 	step_end
