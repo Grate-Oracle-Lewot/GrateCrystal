@@ -100,7 +100,7 @@ CherrygroveCityGuideGent:
 	end
 
 CherrygroveSilverSceneSouth:
-	moveobject CHERRYGROVECITY_SILVER, 39, 7
+	moveobject CHERRYGROVECITY_SILVER, 39, 9
 CherrygroveSilverSceneNorth:
 	turnobject PLAYER, RIGHT
 	showemote EMOTE_QUESTION, PLAYER, 15
@@ -238,18 +238,9 @@ GuideGentMovement1:
 	turn_head UP
 	step_end
 
-GuideGentMovement2:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	turn_head UP
-	step_end
-
 GuideGentMovement3:
 	step LEFT
+GuideGentMovement2:
 	step LEFT
 	step LEFT
 	step LEFT
