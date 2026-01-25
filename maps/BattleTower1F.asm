@@ -330,15 +330,12 @@ MovementData_BattleTowerBattleRoomReceptionistWalksAway:
 	step DOWN
 	step LEFT
 	step LEFT
+MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent:
 	turn_head RIGHT
 	step_end
 
 MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist:
 	turn_head DOWN
-	step_end
-
-MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent:
-	turn_head RIGHT
 	step_end
 
 Text_BattleTowerWelcomesYou:
