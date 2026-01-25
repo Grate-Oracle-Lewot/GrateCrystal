@@ -5,17 +5,15 @@
 
 VermilionPort_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_DEFAULT
 	scene_script .LeaveFastShip ; SCENE_VERMILIONPORT_LEAVE_SHIP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
-.DummyScene0:
-	end
-
 .LeaveFastShip:
 	sdefer .LeaveFastShipScript
+.DummyScene:
 	end
 
 .FlyPoint:
@@ -123,8 +121,6 @@ VermilionPortWalkUpToShipScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, VermilionPortCannotEnterFastShipMovement
-	end
-
 .skip:
 	end
 
@@ -195,10 +191,6 @@ VermilionPortSuperNerdScript:
 VermilionPortHiddenIron:
 	hiddenitem IRON, EVENT_VERMILION_PORT_HIDDEN_IRON
 
-VermilionPortEnterFastShipMovement:
-	step DOWN
-	step_end
-
 VermilionPortLeaveFastShipMovement:
 	step UP
 	step_end
@@ -208,21 +200,15 @@ VermilionPortCannotEnterFastShipMovement:
 	turn_head LEFT
 	step_end
 
+VermilionPortApproachFastShipRightMovement:
+	step RIGHT
+	step DOWN
 VermilionPortApproachFastShipMovement:
 	step DOWN
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step_end
-
-VermilionPortApproachFastShipRightMovement:
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
+VermilionPortEnterFastShipMovement:
 	step DOWN
 	step_end
 
