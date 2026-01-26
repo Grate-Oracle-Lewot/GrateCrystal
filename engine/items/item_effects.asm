@@ -208,7 +208,9 @@ PokeBallEffect:
 	jp nz, UseBallInTrainerBattle
 
 	farcall NuzlockeCheckAreaFlag
-	jr nc, .valid
+	ld a, [wScriptVar]
+	and a
+	jr z, .valid
 	ld hl, NuzlockeCantCatchText
 	call PrintText
 
