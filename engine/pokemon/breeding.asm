@@ -182,7 +182,9 @@ DoEggStep::
 	farcall NuzlockeCheckAreaFlag
 	pop bc
 	pop de
-	jr c, .next
+	ld a, [wScriptVar]
+	and a
+	jr nz, .next
 
 	dec [hl]
 	jr nz, .next
