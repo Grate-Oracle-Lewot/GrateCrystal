@@ -47,12 +47,6 @@ DoAnimFrame:
 	dw AnimSeq_IntroUnown
 	dw AnimSeq_IntroUnownF
 	dw AnimSeq_IntroSuicuneAway
-	dw AnimSeq_MemoryGameCursor
-	dw AnimSeq_MinigamePikachu
-	dw AnimSeq_MinigamePikachuTail
-	dw AnimSeq_MinigameOmanyte
-	dw AnimSeq_MinigameJigglypuff
-	dw AnimSeq_MinigameNote
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_PartyMon:
@@ -164,7 +158,7 @@ AnimSeq_GSTitleTrail:
 	add hl, bc
 	ld a, [hl]
 	cp $a4
-	jp nc, DeinitializeSprite
+	jr nc, .delete
 
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
@@ -196,6 +190,9 @@ AnimSeq_GSTitleTrail:
 	add hl, bc
 	ld [hl], a
 	ret
+
+.delete
+	jp DeinitializeSprite
 
 AnimSeq_GSIntroHoOhLugia:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -278,7 +275,7 @@ AnimSeq_GSGameFreakLogoSparkle:
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jp z, DeinitializeSprite
+	jr z, .delete
 
 	ld hl, SPRITEANIMSTRUCT_VAR4
 	add hl, bc
@@ -345,6 +342,9 @@ AnimSeq_GSGameFreakLogoSparkle:
 	xor $20
 	ld [hl], a
 	ret
+
+.delete
+	jp DeinitializeSprite
 
 AnimSeq_SlotsGolem:
 	farcall Slots_AnimateGolem
@@ -454,8 +454,7 @@ AnimSeq_TradePokeBall:
 .done
 	ld de, SFX_GOT_SAFARI_BALLS
 	call PlaySFX
-.delete
-	jp DeinitializeSprite
+	jr .delete
 
 .one
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
@@ -515,6 +514,9 @@ AnimSeq_TradePokeBall:
 	ld [hl], a
 	jp AnimSeqs_IncAnonJumptableIndex
 
+.delete
+	jp DeinitializeSprite
+
 AnimSeq_TradeTubeBulge:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -522,11 +524,14 @@ AnimSeq_TradeTubeBulge:
 	inc [hl]
 	inc [hl]
 	cp $b0
-	jp nc, DeinitializeSprite
+	jr nc, .delete
 	and $3
 	ret nz
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
 	jp PlaySFX
+
+.delete
+	jp DeinitializeSprite
 
 AnimSeq_TrademonInTube:
 	farcall TradeAnim_AnimateTrademonInTube
@@ -537,7 +542,7 @@ AnimSeq_RevealNewMon:
 	add hl, bc
 	ld a, [hl]
 	cp $80
-	jp nc, DeinitializeSprite
+	jr nc, .finish_EggShell
 	ld d, a
 	add 8
 	ld [hl], a
@@ -564,6 +569,9 @@ AnimSeq_RevealNewMon:
 	add hl, bc
 	ld [hl], a
 	ret
+
+.finish_EggShell
+	jp DeinitializeSprite
 
 AnimSeq_RadioTuningKnob:
 	farcall AnimateTuningKnob
@@ -652,7 +660,7 @@ AnimSeq_FlyLeaf:
 	add hl, bc
 	ld a, [hl]
 	cp -9 * 8
-	jp nc, DeinitializeSprite
+	jr nc, .delete_leaf
 	inc [hl]
 	inc [hl]
 
@@ -671,6 +679,9 @@ AnimSeq_FlyLeaf:
 	add hl, bc
 	ld [hl], a
 	ret
+
+.delete_leaf
+	jp DeinitializeSprite
 
 AnimSeq_FlyTo:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
@@ -715,8 +726,10 @@ AnimSeq_MobileTradeOTPulse:
 AnimSeq_IntroSuicune:
 	ld a, [wIntroSceneTimer]
 	and a
-	ret z
+	jr nz, .continue
+	ret
 
+.continue
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], $0
@@ -803,103 +816,6 @@ AnimSeq_EZChatCursor:
 AnimSeq_Celebi:
 	farcall UpdateCelebiPosition
 	ret
-
-AnimSeq_MemoryGameCursor:
-	farcall MemoryGame_InterpretJoypad_AnimateCursor
-	ret
-
-AnimSeq_MinigamePikachu:
-	push bc
-	farcall MinigamePikachuDoMovement
-	pop bc
-	ld hl, wPikachuMinigamePikachuNextAnim
-	ld a, [hl]
-	and $3
-	ret z
-
-	ld [hl], 0
-	ld e, a
-	ld d, $00
-	ld hl, MinigamePikachuData
-	add hl, de
-	ld a, [hl]
-	jp _ReinitSpriteAnimFrame
-
-; Data from 8D40B to 8D40E (4 bytes)
-MinigamePikachuData:
-	db $12, $13, $12, $14
-
-AnimSeq_MinigamePikachuTail:
-	farcall CopyPikachuObjDataToTailObj
-	ret
-
-AnimSeq_MinigameOmanyte:
-	ld a, [wGlobalAnimYOffset]
-	ld hl, SPRITEANIMSTRUCT_YCOORD
-	add hl, bc
-	add [hl]
-	cp $b0
-	ret c
-	jp DeinitializeSprite
-
-AnimSeq_MinigameJigglypuff:
-	ld a, [wPikachuMinigameScrollSpeed]
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	cp $30
-	ret nz
-
-	xor a
-	ld [wPikachuMinigameScrollSpeed], a
-	ret
-
-AnimSeq_MinigameNote:
-	call AnimSeqs_AnonJumptable
-	jp hl
-.anon_dw
-	dw .zero
-	dw .one
-
-.zero
-	call .BounceNotes
-	ld a, [wPikachuMinigameScrollSpeed]
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	cp $c0
-	ret nc
-
-	cp $a8
-	ret c
-.one
-	call DeinitializeSprite
-	ld hl, wSpriteAnimCount
-	dec [hl]
-	ret
-
-.BounceNotes:
-	ld hl, SPRITEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	inc [hl]
-
-	and $1f
-	srl a
-	ld e, a
-	ld d, $00
-	ld hl, .YOffsets
-	add hl, de
-	ld a, [hl]
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
-.YOffsets:
-	db 4, 7, 9, 10, 9, 7, 4, 0, -4, -7, -9, -10, -9, -7, -4, 0
 
 AnimSeqs_AnonJumptable:
 	ld hl, sp+0
