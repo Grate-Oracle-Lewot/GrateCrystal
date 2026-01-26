@@ -1,19 +1,20 @@
 NuzlockeCheckAreaFlag::
-; return c for an invalid encounter, nc for valid
+; return in wScriptVar TRUE for an invalid encounter, FALSE for valid
+	xor a
+	ld [wScriptVar], a
+
 	ld a, [wOptions2]
 	bit NUZLOCKE, a
-	jr nz, .nuzlocke
-	and a ; clear carry
-	ret
+	ret z
 
-.nuzlocke
 	ld a, [wEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	jr z, .new
 
 ; dupe
-	scf
+	ld a, TRUE
+	ld [wScriptVar], a
 	ret
 
 .new
@@ -252,13 +253,14 @@ NuzlockeAreaFlagMerge:
 	cp LANDMARK_FAST_SHIP
 	jp z, .fast_ship
 .no
-	scf
+	ld a, TRUE
+	ld [wScriptVar], a
 	ret
 
 .flag
 	call EventFlagAction
 	ld a, c
-	and a ; clear carry
+	and a
 	jr nz, .no
 	ret
 
