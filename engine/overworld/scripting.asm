@@ -2157,14 +2157,6 @@ Script_refreshscreen:
 
 Script_checknuzlocke:
 	farcall NuzlockeCheckAreaFlag
-	jr c, .invalid
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.invalid
-	ld a, TRUE
-	ld [wScriptVar], a
 	ret
 
 Script_closetext:
