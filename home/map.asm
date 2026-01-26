@@ -1931,7 +1931,7 @@ GetMapField::
 	ld c, a
 	; fallthrough
 
-GetAnyMapField::
+GetAnyMapField:
 	; bankswitch
 	ldh a, [hROMBank]
 	push af
