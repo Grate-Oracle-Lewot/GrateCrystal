@@ -59,7 +59,6 @@ CGBLayoutJumptable:
 	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
-	dw _CGB_PikachuMinigame
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1222,13 +1221,3 @@ INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 
 .MysteryGiftPalette:
 INCLUDE "gfx/mystery_gift/gs_mystery_gift.pal"
-
-_CGB_PikachuMinigame:
-	ld hl, PalPacket_GSIntroJigglypuffPikachu + 1
-	call CopyFourPalettes
-	call WipeAttrmap
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
