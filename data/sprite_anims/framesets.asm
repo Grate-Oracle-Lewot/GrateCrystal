@@ -29,7 +29,6 @@ SpriteAnimFrameData:
 	dw .Frameset_EvolutionBallOfLight
 	dw .Frameset_RadioTuningKnob
 	dw .Frameset_MagnetTrainRed
-	dw .Frameset_Unused1C
 	dw .Frameset_Leaf
 	dw .Frameset_CutTree
 	dw .Frameset_EggCrack
@@ -246,10 +245,6 @@ SpriteAnimFrameData:
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1,  8
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2,  8, OAM_X_FLIP
 	dorestart
-
-.Frameset_Unused1C:
-	dowait 32
-	endanim
 
 .Frameset_Leaf:
 	frame SPRITE_ANIM_OAMSET_LEAF, 32
