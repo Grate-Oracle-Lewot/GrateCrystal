@@ -7,24 +7,30 @@ NuzlockeCheckAreaFlag::
 	bit NUZLOCKE, a
 	ret z
 
+	ld a, [wBattleMode]
+	and a
+	jr z, .check
 	ld a, [wEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
-	jr z, .new
+	jr z, .check
 
 ; dupe
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 
-.new
+.check
 	ld d, CHECK_FLAG
 	jr NuzlockeAreaFlagMerge
 
 NuzlockeSetAreaFlag::
+	xor a
+	ld [wScriptVar], a
+
 	ld a, [wBattleMode]
 	and a
-	jr z, .gift
+	jr z, .set
 	dec a
 	ret nz
 
@@ -42,7 +48,7 @@ NuzlockeSetAreaFlag::
 	and a
 	ret z
 
-.gift
+.set
 	ld d, SET_FLAG
 	; fallthrough
 
