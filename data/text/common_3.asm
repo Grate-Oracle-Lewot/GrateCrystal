@@ -1291,12 +1291,8 @@ _ItemWontHaveEffectText::
 	prompt
 
 _BallBlockedText::
-	text "The BALL bounced"
-	line "off the #MON!"
-
-	para "It's already been"
-	line "caught by someone!"
-	prompt
+	text "D'oh!"
+	autodone
 
 _NoCyclingText::
 	text "Cycling isn't"
