@@ -528,9 +528,9 @@ PokeBallEffect:
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
-
 	ld a, c
 	push af
+	farcall NuzlockeSetAreaFlag
 	ld a, [wTempSpecies]
 	dec a
 	call SetSeenAndCaughtMon
