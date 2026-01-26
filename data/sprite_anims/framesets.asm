@@ -29,6 +29,7 @@ SpriteAnimFrameData:
 	dw .Frameset_EvolutionBallOfLight
 	dw .Frameset_RadioTuningKnob
 	dw .Frameset_MagnetTrainRed
+	dw .Frameset_Unused1C
 	dw .Frameset_Leaf
 	dw .Frameset_CutTree
 	dw .Frameset_EggCrack
@@ -66,13 +67,6 @@ SpriteAnimFrameData:
 	dw .Frameset_IntroUnownF
 	dw .Frameset_CelebiLeft
 	dw .Frameset_CelebiRight
-	dw .Frameset_MinigamePikachu1
-	dw .Frameset_MinigamePikachu2
-	dw .Frameset_MinigamePikachuTail1
-	dw .Frameset_MinigamePikachuTail2
-	dw .Frameset_MinigameOmanyte
-	dw .Frameset_MinigameJigglypuff
-	dw .Frameset_MinigameNote
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -252,6 +246,10 @@ SpriteAnimFrameData:
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_1,  8
 	frame SPRITE_ANIM_OAMSET_MAGNET_TRAIN_RED_2,  8, OAM_X_FLIP
 	dorestart
+
+.Frameset_Unused1C:
+	dowait 32
+	endanim
 
 .Frameset_Leaf:
 	frame SPRITE_ANIM_OAMSET_LEAF, 32
@@ -455,46 +453,4 @@ SpriteAnimFrameData:
 .Frameset_CelebiRight:
 	frame SPRITE_ANIM_OAMSET_CELEBI_1,  8, OAM_X_FLIP
 	frame SPRITE_ANIM_OAMSET_CELEBI_2,  8, OAM_X_FLIP
-	endanim
-
-.Frameset_MinigamePikachu1:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_1, 3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_2, 3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_3, 3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_4, 3
-	dorestart
-
-.Frameset_MinigamePikachu2:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_2, 8
-	endanim
-
-.Frameset_MinigamePikachuTail1:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_1,  3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_2,  3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_3,  3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_2,  3
-	dorestart
-
-.Frameset_MinigamePikachuTail2:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_1, 31
-	endanim
-
-.Frameset_MinigameOmanyte:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
-	dorestart
-
-.Frameset_MinigameJigglypuff:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1, 23, OAM_X_FLIP
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3, OAM_X_FLIP
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_3,  7
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1, 23
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_3,  7
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2,  3, OAM_X_FLIP
-	dorestart
-
-.Frameset_MinigameNote:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_NOTE,  8
 	endanim
