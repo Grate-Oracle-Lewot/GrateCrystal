@@ -8486,7 +8486,6 @@ ExitBattle:
 	jr CleanUpBattleRAM
 
 .not_linked
-	farcall NuzlockeSetAreaFlag
 	ld a, [wBattleResult]
 	and $f
 	jr nz, CleanUpBattleRAM
