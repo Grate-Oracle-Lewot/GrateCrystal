@@ -62,202 +62,202 @@ NuzlockeAreaFlagMerge:
 	ld a, d
 	ld b, a
 	ld a, c
-	cp LANDMARK_ROUTE_29
-	jp z, .route_29
-	cp LANDMARK_CHERRYGROVE_CITY
-	jp z, .cherrygrove_city
-	cp LANDMARK_ROUTE_30
-	jp z, .route_30
-	cp LANDMARK_ROUTE_31
-	jp z, .route_31
-	cp LANDMARK_VIOLET_CITY
-	jp z, .violet_city
-	cp LANDMARK_SPROUT_TOWER
-	jp z, .sprout_tower
-	cp LANDMARK_ROUTE_32
-	jp z, .route_32
-	cp LANDMARK_RUINS_OF_ALPH
-	jp z, .ruins_of_alph
-	cp LANDMARK_UNION_CAVE
-	jp z, .union_cave
-	cp LANDMARK_ROUTE_33
-	jp z, .route_33
-	cp LANDMARK_AZALEA_TOWN
-	jp z, .azalea_town
-	cp LANDMARK_SLOWPOKE_WELL
-	jp z, .slowpoke_well
-	cp LANDMARK_ILEX_FOREST
-	jp z, .ilex_forest
-	cp LANDMARK_ROUTE_34
-	jp z, .route_34
-	cp LANDMARK_GOLDENROD_CITY
-	jp z, .goldenrod_city
-	cp LANDMARK_RADIO_TOWER
-	jp z, .radio_tower
-	cp LANDMARK_ROUTE_35
-	jp z, .route_35
-	cp LANDMARK_NATIONAL_PARK
-	jp z, .national_park
-	cp LANDMARK_ROUTE_36
-	jp z, .route_36
-	cp LANDMARK_ROUTE_37
-	jp z, .route_37
-	cp LANDMARK_ECRUTEAK_CITY
-	jp z, .ecruteak_city
-	cp LANDMARK_TIN_TOWER
-	jp z, .tin_tower
-	cp LANDMARK_BURNED_TOWER
-	jp z, .burned_tower
-	cp LANDMARK_ROUTE_38
-	jp z, .route_38
-	cp LANDMARK_ROUTE_39
-	jp z, .route_39
-	cp LANDMARK_OLIVINE_CITY
-	jp z, .olivine_city
-	cp LANDMARK_LIGHTHOUSE
-	jp z, .lighthouse
-	cp LANDMARK_BATTLE_TOWER
-	jp z, .battle_tower
-	cp LANDMARK_ROUTE_40
-	jp z, .route_40
-	cp LANDMARK_WHIRL_ISLANDS
-	jp z, .whirl_islands
-	cp LANDMARK_ROUTE_41
-	jp z, .route_41
-	cp LANDMARK_CIANWOOD_CITY
-	jp z, .ciandwood_city
-	cp LANDMARK_ROUTE_42
-	jp z, .route_42
-	cp LANDMARK_MT_MORTAR
-	jp z, .mt_mortar
-	cp LANDMARK_MAHOGANY_TOWN
-	jp z, .mahogany_town
-	cp LANDMARK_ROUTE_43
-	jp z, .route_43
-	cp LANDMARK_LAKE_OF_RAGE
-	jp z, .lake_of_rage
-	cp LANDMARK_ROUTE_44
-	jp z, .route_44
-	cp LANDMARK_ICE_PATH
-	jp z, .ice_path
-	cp LANDMARK_BLACKTHORN_CITY
-	jp z, .blackthorn_city
-	cp LANDMARK_DRAGONS_DEN
-	jp z, .dragons_den
-	cp LANDMARK_ROUTE_45
-	jp z, .route_45
-	cp LANDMARK_DARK_CAVE
-	jp z, .dark_cave
-	cp LANDMARK_ROUTE_46
-	jp z, .route_46
-	cp LANDMARK_SILVER_CAVE
-	jp z, .silver_cave
-	cp LANDMARK_PALLET_TOWN
-	jp z, .pallet_town
-	cp LANDMARK_ROUTE_1
-	jp z, .route_1
-	cp LANDMARK_VIRIDIAN_CITY
-	jp z, .viridian_city
-	cp LANDMARK_ROUTE_2
-	jp z, .route_2
-	cp LANDMARK_VIRIDIAN_FOREST
-	jp z, .viridian_forest
-	cp LANDMARK_PEWTER_CITY
-	jp z, .pewter_city
-	cp LANDMARK_ROUTE_3
-	jp z, .route_3
-	cp LANDMARK_MT_MOON
-	jp z, .mt_moon
-	cp LANDMARK_ROUTE_4
-	jp z, .route_4
-	cp LANDMARK_CERULEAN_CITY
-	jp z, .cerulean_city
-	cp LANDMARK_ROUTE_24
-	jp z, .route_24
-	cp LANDMARK_ROUTE_25
-	jp z, .route_25
-	cp LANDMARK_CERULEAN_CAVE
-	jp z, .cerulean_cave
-	cp LANDMARK_ROUTE_5
-	jp z, .route_5
-	cp LANDMARK_UNDERGROUND_PATH
-	jp z, .underground_path
-	cp LANDMARK_ROUTE_6
-	jp z, .route_6
-	cp LANDMARK_VERMILION_CITY
-	jp z, .vermilion_city
-	cp LANDMARK_DIGLETTS_CAVE
-	jp z, .digletts_cave
-	cp LANDMARK_ROUTE_7
-	jp z, .route_7
-	cp LANDMARK_ROUTE_8
-	jp z, .route_8
-	cp LANDMARK_ROUTE_9
-	jp z, .route_9
-	cp LANDMARK_ROCK_TUNNEL
-	jp z, .rock_tunnel
-	cp LANDMARK_ROUTE_10
-	jp z, .route_10
-	cp LANDMARK_POWER_PLANT
-	jp z, .power_plant
-	cp LANDMARK_LAVENDER_TOWN
-	jp z, .lavender_town
-	cp LANDMARK_LAV_RADIO_TOWER
-	jp z, .lav_radio_tower
-	cp LANDMARK_CELADON_CITY
-	jp z, .celadon_city
-	cp LANDMARK_SAFFRON_CITY
-	jp z, .saffron_city
-	cp LANDMARK_SILPH_CO
-	jp z, .silph_co
-	cp LANDMARK_ROUTE_11
-	jp z, .route_11
-	cp LANDMARK_ROUTE_12
-	jp z, .route_12
-	cp LANDMARK_ROUTE_13
-	jp z, .route_13
-	cp LANDMARK_ROUTE_14
-	jp z, .route_14
-	cp LANDMARK_ROUTE_15
-	jp z, .route_15
-	cp LANDMARK_ROUTE_16
-	jp z, .route_16
-	cp LANDMARK_ROUTE_17
-	jp z, .route_17
-	cp LANDMARK_ROUTE_18
-	jp z, .route_18
-	cp LANDMARK_FUCHSIA_CITY
-	jp z, .fuchsia_city
-	cp LANDMARK_SAFARI_ZONE
-	jp z, .safari_zone
-	cp LANDMARK_ROUTE_19
-	jp z, .route_19
-	cp LANDMARK_ROUTE_20
-	jp z, .route_20
-	cp LANDMARK_SEAFOAM_ISLANDS
-	jp z, .seafoam_islands
-	cp LANDMARK_CINNABAR_ISLAND
-	jp z, .cinnabar_island
-	cp LANDMARK_ROUTE_21
-	jp z, .route_21
-	cp LANDMARK_ROUTE_22
-	jp z, .route_22
-	cp LANDMARK_VICTORY_ROAD
-	jp z, .victory_road
-	cp LANDMARK_ROUTE_23
-	jp z, .route_23
-	cp LANDMARK_INDIGO_PLATEAU
-	jp z, .indigo_plateau
-	cp LANDMARK_ROUTE_26
-	jp z, .route_26
-	cp LANDMARK_ROUTE_27
-	jp z, .route_27
-	cp LANDMARK_TOHJO_FALLS
-	jp z, .tohjo_falls
-	cp LANDMARK_ROUTE_28
-	jp z, .route_28
 	cp LANDMARK_FAST_SHIP
 	jp z, .fast_ship
+	cp LANDMARK_ROUTE_28
+	jp z, .route_28
+	cp LANDMARK_TOHJO_FALLS
+	jp z, .tohjo_falls
+	cp LANDMARK_ROUTE_27
+	jp z, .route_27
+	cp LANDMARK_ROUTE_26
+	jp z, .route_26
+	cp LANDMARK_INDIGO_PLATEAU
+	jp z, .indigo_plateau
+	cp LANDMARK_ROUTE_23
+	jp z, .route_23
+	cp LANDMARK_VICTORY_ROAD
+	jp z, .victory_road
+	cp LANDMARK_ROUTE_22
+	jp z, .route_22
+	cp LANDMARK_ROUTE_21
+	jp z, .route_21
+	cp LANDMARK_CINNABAR_ISLAND
+	jp z, .cinnabar_island
+	cp LANDMARK_SEAFOAM_ISLANDS
+	jp z, .seafoam_islands
+	cp LANDMARK_ROUTE_20
+	jp z, .route_20
+	cp LANDMARK_ROUTE_19
+	jp z, .route_19
+	cp LANDMARK_SAFARI_ZONE
+	jp z, .safari_zone
+	cp LANDMARK_FUCHSIA_CITY
+	jp z, .fuchsia_city
+	cp LANDMARK_ROUTE_18
+	jp z, .route_18
+	cp LANDMARK_ROUTE_17
+	jp z, .route_17
+	cp LANDMARK_ROUTE_16
+	jp z, .route_16
+	cp LANDMARK_ROUTE_15
+	jp z, .route_15
+	cp LANDMARK_ROUTE_14
+	jp z, .route_14
+	cp LANDMARK_ROUTE_13
+	jp z, .route_13
+	cp LANDMARK_ROUTE_12
+	jp z, .route_12
+	cp LANDMARK_ROUTE_11
+	jp z, .route_11
+	cp LANDMARK_SILPH_CO
+	jp z, .silph_co
+	cp LANDMARK_SAFFRON_CITY
+	jp z, .saffron_city
+	cp LANDMARK_CELADON_CITY
+	jp z, .celadon_city
+	cp LANDMARK_LAV_RADIO_TOWER
+	jp z, .lav_radio_tower
+	cp LANDMARK_LAVENDER_TOWN
+	jp z, .lavender_town
+	cp LANDMARK_POWER_PLANT
+	jp z, .power_plant
+	cp LANDMARK_ROUTE_10
+	jp z, .route_10
+	cp LANDMARK_ROCK_TUNNEL
+	jp z, .rock_tunnel
+	cp LANDMARK_ROUTE_9
+	jp z, .route_9
+	cp LANDMARK_ROUTE_8
+	jp z, .route_8
+	cp LANDMARK_ROUTE_7
+	jp z, .route_7
+	cp LANDMARK_DIGLETTS_CAVE
+	jp z, .digletts_cave
+	cp LANDMARK_VERMILION_CITY
+	jp z, .vermilion_city
+	cp LANDMARK_ROUTE_6
+	jp z, .route_6
+	cp LANDMARK_UNDERGROUND_PATH
+	jp z, .underground_path
+	cp LANDMARK_ROUTE_5
+	jp z, .route_5
+	cp LANDMARK_CERULEAN_CAVE
+	jp z, .cerulean_cave
+	cp LANDMARK_ROUTE_25
+	jp z, .route_25
+	cp LANDMARK_ROUTE_24
+	jp z, .route_24
+	cp LANDMARK_CERULEAN_CITY
+	jp z, .cerulean_city
+	cp LANDMARK_ROUTE_4
+	jp z, .route_4
+	cp LANDMARK_MT_MOON
+	jp z, .mt_moon
+	cp LANDMARK_ROUTE_3
+	jp z, .route_3
+	cp LANDMARK_PEWTER_CITY
+	jp z, .pewter_city
+	cp LANDMARK_VIRIDIAN_FOREST
+	jp z, .viridian_forest
+	cp LANDMARK_ROUTE_2
+	jp z, .route_2
+	cp LANDMARK_VIRIDIAN_CITY
+	jp z, .viridian_city
+	cp LANDMARK_ROUTE_1
+	jp z, .route_1
+	cp LANDMARK_PALLET_TOWN
+	jp z, .pallet_town
+	cp LANDMARK_SILVER_CAVE
+	jp z, .silver_cave
+	cp LANDMARK_ROUTE_46
+	jp z, .route_46
+	cp LANDMARK_DARK_CAVE
+	jp z, .dark_cave
+	cp LANDMARK_ROUTE_45
+	jp z, .route_45
+	cp LANDMARK_DRAGONS_DEN
+	jp z, .dragons_den
+	cp LANDMARK_BLACKTHORN_CITY
+	jp z, .blackthorn_city
+	cp LANDMARK_ICE_PATH
+	jp z, .ice_path
+	cp LANDMARK_ROUTE_44
+	jp z, .route_44
+	cp LANDMARK_LAKE_OF_RAGE
+	jp z, .lake_of_rage
+	cp LANDMARK_ROUTE_43
+	jp z, .route_43
+	cp LANDMARK_MAHOGANY_TOWN
+	jp z, .mahogany_town
+	cp LANDMARK_MT_MORTAR
+	jp z, .mt_mortar
+	cp LANDMARK_ROUTE_42
+	jp z, .route_42
+	cp LANDMARK_CIANWOOD_CITY
+	jp z, .ciandwood_city
+	cp LANDMARK_ROUTE_41
+	jp z, .route_41
+	cp LANDMARK_WHIRL_ISLANDS
+	jp z, .whirl_islands
+	cp LANDMARK_ROUTE_40
+	jp z, .route_40
+	cp LANDMARK_BATTLE_TOWER
+	jp z, .battle_tower
+	cp LANDMARK_LIGHTHOUSE
+	jp z, .lighthouse
+	cp LANDMARK_OLIVINE_CITY
+	jp z, .olivine_city
+	cp LANDMARK_ROUTE_39
+	jp z, .route_39
+	cp LANDMARK_ROUTE_38
+	jp z, .route_38
+	cp LANDMARK_BURNED_TOWER
+	jp z, .burned_tower
+	cp LANDMARK_TIN_TOWER
+	jr z, .tin_tower
+	cp LANDMARK_ECRUTEAK_CITY
+	jr z, .ecruteak_city
+	cp LANDMARK_ROUTE_37
+	jr z, .route_37
+	cp LANDMARK_ROUTE_36
+	jr z, .route_36
+	cp LANDMARK_NATIONAL_PARK
+	jr z, .national_park
+	cp LANDMARK_ROUTE_35
+	jr z, .route_35
+	cp LANDMARK_RADIO_TOWER
+	jr z, .radio_tower
+	cp LANDMARK_GOLDENROD_CITY
+	jr z, .goldenrod_city
+	cp LANDMARK_ROUTE_34
+	jr z, .route_34
+	cp LANDMARK_ILEX_FOREST
+	jr z, .ilex_forest
+	cp LANDMARK_SLOWPOKE_WELL
+	jr z, .slowpoke_well
+	cp LANDMARK_AZALEA_TOWN
+	jr z, .azalea_town
+	cp LANDMARK_ROUTE_33
+	jr z, .route_33
+	cp LANDMARK_UNION_CAVE
+	jr z, .union_cave
+	cp LANDMARK_RUINS_OF_ALPH
+	jr z, .ruins_of_alph
+	cp LANDMARK_ROUTE_32
+	jr z, .route_32
+	cp LANDMARK_SPROUT_TOWER
+	jr z, .sprout_tower
+	cp LANDMARK_VIOLET_CITY
+	jr z, .violet_city
+	cp LANDMARK_ROUTE_31
+	jr z, .route_31
+	cp LANDMARK_ROUTE_30
+	jr z, .route_30
+	cp LANDMARK_CHERRYGROVE_CITY
+	jr z, .cherrygrove_city
+	cp LANDMARK_ROUTE_29
+	jr z, .route_29
 .no
 	ld a, TRUE
 	ld [wScriptVar], a
