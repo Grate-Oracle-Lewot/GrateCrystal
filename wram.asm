@@ -3368,6 +3368,8 @@ wOBPals2:: ds 8 palettes
 wLYOverrides:: ds SCREEN_HEIGHT_PX
 wLYOverridesEnd::
 
+	ds 1
+
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
 wMagnetTrainInitPosition:: db
@@ -3375,77 +3377,10 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-; Pikachu minigame
-wVBCopySize:: ds 1
-wVBCopySrc:: ds 2
-wVBCopyDst:: ds 2
-
-wPikachuMinigamePikachuObjectPointer:: ds 2
-wPikachuMinigamePikachuTailObjectPointer:: ds 2
-wPikachuMinigamePikachuNextAnim:: ds 1
-
-wPikachuMinigameControlEnable:: ds 1
-
-wc606:: ds 1 ; written to, but is this read from?
-
-wPikachuMinigamePikachuYOffset:: ds 1
-wPikachuMinigameNoteTimer:: ds 1
-wPikachuMinigameScore:: ds 2
-wPikachuMinigameNoteCounter:: ds 2 ; not used for anything meaningful?
-
-wPikachuMinigameSpawnTypeIndex:: ds 1
-wPikachuMinigameSpawnDataIndex:: ds 1
-wPikachuMinigameScoreModifier:: ds 1
-
-wPikachuMinigameNoteCaught:: ds 1
-
-; Time keeping
-wPikachuMinigameTimeFrames:: ds 1
-wPikachuMinigameTimeSeconds:: ds 1
-
-; are these two used?
-wc613:: ds 1
-wc614:: ds 1
-
-wPikachuMinigameRedrawTimer:: ds 1
-wc616:: ds 1
-wPikachuMinigameScrollSpeed:: ds 1
-
-wPikachuMinigameColumnFlags:: ds 1
-wPikachuMinigameSavedColumnPointer:: ds 2
-wPikachuMinigameColumnPointer:: ds 2
-
-wPikachuMinigameRepeatColumnCounter:: ds 1
-wPikachuMinigameRepeatColumnCounter2:: ds 1
-
-wPikachuMinigameSceneTimer:: ds 1
-
-wPikachuMinigameJumptableIndex:: ds 1
-
-wPikachuMinigameBGMapPointer:: ds 2
-wPikachuMinigameTilemapPointer:: ds 2
-wPikachuMinigameTilesPointer:: ds 2
-
-wPikachuMinigameColumnBuffer:: ds 16
+	ds 106
 
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::
-
-UNION
-wRedrawRowOrColumnSrcTiles::
-; the tiles of the row or column to be redrawn by RedrawRowOrColumn
-	ds SCREEN_WIDTH * 2
-NEXTU
-wRedrawFlashlightDst0:: dw
-wRedrawFlashlightSrc0:: dw
-wRedrawFlashlightBlackDst0:: dw
-wRedrawFlashlightDst1:: dw
-wRedrawFlashlightSrc1:: dw
-wRedrawFlashlightBlackDst1:: dw
-wRedrawFlashlightWidthHeight:: db
-; width or height of flashlight redraw region
-; in units of two tiles (people event meta tile)
-ENDU
 
 
 SECTION "Battle Animations", WRAMX
