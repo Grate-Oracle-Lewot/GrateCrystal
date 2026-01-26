@@ -3,13 +3,11 @@ HoOhChamber:
 	ld a, [hl]
 	cp HO_OH ; is Ho-oh the first Pokémon in the party?
 	ret nz ; if not, we're done
-	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	ld b, SET_FLAG
 	jp EventFlagAction
 
 OmanyteChamber:
-	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	ld b, CHECK_FLAG
 	call EventFlagAction
@@ -41,7 +39,6 @@ OmanyteChamber:
 	jr nz, .loop
 
 .open
-	call GetMapAttributesPointer ; pointless?
 	ld de, EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
 	ld b, SET_FLAG
 	jp EventFlagAction
