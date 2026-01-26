@@ -1294,9 +1294,9 @@ _BallBlockedText::
 	text "The BALL bounced"
 	line "off the #MON!"
 
-	autopara "It's already been"
+	para "It's already been"
 	line "caught by someone!"
-	autodone
+	prompt
 
 _NoCyclingText::
 	text "Cycling isn't"
