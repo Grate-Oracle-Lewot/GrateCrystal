@@ -1460,6 +1460,9 @@ AideScript_GiveYouBalls:
 	writetext AideText_ExplainBalls
 	waitbutton
 	closetext
+	clearevent EVENT_NUZLOCKE_ROUTE_29
+	clearevent EVENT_NUZLOCKE_CHERRYGROVE_CITY
+	clearevent EVENT_NUZLOCKE_ROUTE_30
 	setscene SCENE_ELMSLAB_NOTHING
 	end
 
