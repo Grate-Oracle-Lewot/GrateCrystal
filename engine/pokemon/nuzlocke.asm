@@ -215,23 +215,23 @@ NuzlockeAreaFlagMerge:
 	cp LANDMARK_BURNED_TOWER
 	jp z, .burned_tower
 	cp LANDMARK_TIN_TOWER
-	jr z, .tin_tower
+	jp z, .tin_tower
 	cp LANDMARK_ECRUTEAK_CITY
-	jr z, .ecruteak_city
+	jp z, .ecruteak_city
 	cp LANDMARK_ROUTE_37
-	jr z, .route_37
+	jp z, .route_37
 	cp LANDMARK_ROUTE_36
-	jr z, .route_36
+	jp z, .route_36
 	cp LANDMARK_NATIONAL_PARK
-	jr z, .national_park
+	jp z, .national_park
 	cp LANDMARK_ROUTE_35
-	jr z, .route_35
+	jp z, .route_35
 	cp LANDMARK_RADIO_TOWER
-	jr z, .radio_tower
+	jp z, .radio_tower
 	cp LANDMARK_GOLDENROD_CITY
-	jr z, .goldenrod_city
+	jp z, .goldenrod_city
 	cp LANDMARK_ROUTE_34
-	jr z, .route_34
+	jp z, .route_34
 	cp LANDMARK_ILEX_FOREST
 	jr z, .ilex_forest
 	cp LANDMARK_SLOWPOKE_WELL
