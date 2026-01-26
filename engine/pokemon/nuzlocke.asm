@@ -3,14 +3,18 @@ NuzlockeCheckAreaFlag::
 	xor a
 	ld [wScriptVar], a
 
+; catch anything if Nuzlocke mode is off
 	ld a, [wOptions2]
 	bit NUZLOCKE, a
 	ret z
 
+; don't check battle data in the field (gift/trade/egg)
 	ld a, [wBattleMode]
 	and a
 	jr z, .check
-	ld a, [wEnemyMonSpecies]
+
+; wTempEnemyMonSpecies accounts for Transform
+	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	jr z, .check
@@ -25,9 +29,11 @@ NuzlockeCheckAreaFlag::
 	jr NuzlockeAreaFlagMerge
 
 NuzlockeSetAreaFlag::
+; don't really need to set this here but whatever
 	xor a
 	ld [wScriptVar], a
 
+; don't check battle data in the field (gift/trade/egg)
 	ld a, [wBattleMode]
 	and a
 	jr z, .set
@@ -35,7 +41,7 @@ NuzlockeSetAreaFlag::
 	ret nz
 
 ; dupe
-	ld a, [wEnemyMonSpecies]
+	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	ret nz
