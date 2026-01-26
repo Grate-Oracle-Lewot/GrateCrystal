@@ -47,6 +47,7 @@ DoAnimFrame:
 	dw AnimSeq_IntroUnown
 	dw AnimSeq_IntroUnownF
 	dw AnimSeq_IntroSuicuneAway
+	dw AnimSeq_MemoryGameCursor
 	assert_table_length NUM_SPRITE_ANIM_SEQS
 
 AnimSeq_PartyMon:
@@ -815,6 +816,10 @@ AnimSeq_EZChatCursor:
 
 AnimSeq_Celebi:
 	farcall UpdateCelebiPosition
+	ret
+
+AnimSeq_MemoryGameCursor:
+	farcall MemoryGame_InterpretJoypad_AnimateCursor
 	ret
 
 AnimSeqs_AnonJumptable:
