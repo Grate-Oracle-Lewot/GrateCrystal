@@ -4937,6 +4937,10 @@ BattleCommand_CheckRampage:
 	inc a
 	inc de ; ConfuseCount
 	ld [de], a
+	push hl
+	ld hl, UseHeldStatusHealingItem
+	call CallBattleCore
+	pop hl
 .continue_rampage
 	ld b, rampage_command
 	jp SkipToBattleCommand
@@ -6038,6 +6042,8 @@ BattleCommand_Heal:
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 	ld hl, RestoreHP
+	call CallBattleCore
+	ld hl, UseHeldStatusHealingItem
 	call CallBattleCore
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
