@@ -1,7 +1,8 @@
 	object_const_def
+	const UNIONCAVE1F_TEACHER
 	const UNIONCAVE1F_POKEFAN_M1
-	const UNIONCAVE1F_SUPER_NERD
 	const UNIONCAVE1F_POKEFAN_M2
+	const UNIONCAVE1F_SUPER_NERD
 	const UNIONCAVE1F_FISHER1
 	const UNIONCAVE1F_FISHER2
 	const UNIONCAVE1F_POKE_BALL1
@@ -14,13 +15,24 @@ UnionCave1F_MapScripts:
 
 	def_callbacks
 
-TrainerPokemaniacLarry:
-	trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
+TrainerTeacherCalypso:
+	trainer TEACHER, CALYPSO, EVENT_BEAT_TEACHER_CALYPSO, TeacherCalypsoSeenText, TeacherCalypsoBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacLarryAfterBattleText
+	writetext TeacherCalypsoAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerHikerDaniel:
+	trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HikerDanielAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -36,13 +48,13 @@ TrainerHikerRussell:
 	closetext
 	end
 
-TrainerHikerDaniel:
-	trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
+TrainerPokemaniacLarry:
+	trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext HikerDanielAfterBattleText
+	writetext PokemaniacLarryAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -80,6 +92,53 @@ UnionCave1FPotion:
 
 UnionCave1FAwakening:
 	itemball AWAKENING
+
+UnionCaveHiddenTimerBall:
+	hiddenitem TIMER_BALL, EVENT_UNION_CAVE_HIDDEN_TIMER_BALL
+
+UnionCaveHiddenBrickPiece:
+	hiddenitem BRICK_PIECE, EVENT_UNION_CAVE_HIDDEN_BRICK_PIECE
+
+TeacherCalypsoSeenText:
+	text "The term for expl-"
+	line "oring a cave is"
+	cont "spelunking."
+	done
+
+TeacherCalypsoBeatenText:
+	text "Cave in!"
+	done
+
+TeacherCalypsoAfterBattleText:
+	text "A stalactite holds"
+	line "tight to the ceil-"
+	cont "ing, while a stal-"
+	cont "agmite stands"
+	cont "mighty on the"
+	cont "ground."
+	done
+
+HikerDanielSeenText:
+	text "Whoa! What a"
+	line "surprise!"
+
+	para "I didn't expect to"
+	line "see anyone here!"
+	done
+
+HikerDanielBeatenText:
+	text "Whoa! I'm beaten"
+	line "big time!"
+	done
+
+HikerDanielAfterBattleText:
+	text "I was conned into"
+	line "buying a SLOWPOKE-"
+	cont "TAIL."
+
+	para "I feel sorry for"
+	line "the poor #MON."
+	done
 
 HikerRussellSeenText:
 	text "You're headed to"
@@ -128,28 +187,6 @@ PokemaniacLarryAfterBattleText:
 	line "inside the cave."
 	done
 
-HikerDanielSeenText:
-	text "Whoa! What a"
-	line "surprise!"
-
-	para "I didn't expect to"
-	line "see anyone here!"
-	done
-
-HikerDanielBeatenText:
-	text "Whoa! I'm beaten"
-	line "big time!"
-	done
-
-HikerDanielAfterBattleText:
-	text "I was conned into"
-	line "buying a SLOWPOKE-"
-	cont "TAIL."
-
-	para "I feel sorry for"
-	line "the poor #MON."
-	done
-
 FirebreatherBillSeenText:
 	text "ZUBAT's SUPERSONIC"
 	line "keeps confusing"
@@ -195,22 +232,25 @@ UnionCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 19, UNION_CAVE_B1F, 3
-	warp_event  3, 33, UNION_CAVE_B1F, 4
-	warp_event 17, 31, ROUTE_33, 1
-	warp_event 17,  3, ROUTE_32, 4
+	warp_event  3,  3, UNION_CAVE_B1F, 3
+	warp_event  3, 51, UNION_CAVE_B1F, 4
+	warp_event 17, 49, ROUTE_33, 1
+	warp_event 17, 21, ROUTE_32, 4
 
 	def_coord_events
 
 	def_bg_events
+	bg_event  7,  2, BGEVENT_ITEM, UnionCaveHiddenTimerBall
+	bg_event  4, 35, BGEVENT_ITEM, UnionCaveHiddenBrickPiece
 
 	def_object_events
-	object_event  3,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
-	object_event  4, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
-	object_event 11,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerRussell, -1
-	object_event 15, 27, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
-	object_event 14, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
-	object_event 17, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
-	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
-	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
-	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
+	object_event  7,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherCalypso, -1
+	object_event  3, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
+	object_event 11, 26, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerRussell, -1
+	object_event  4, 39, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
+	object_event 14, 37, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
+	object_event 15, 45, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
+	object_event 17, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
+	object_event  3, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
+	object_event  5, 37, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
+	object_event 12, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
