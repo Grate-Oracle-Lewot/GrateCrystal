@@ -216,12 +216,17 @@ DragonShrineElder1Script:
 	givepoke DRATINI, 15
 	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	special GiveDratini
+	callasm .nuzlocke
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	writetext DragonShrineSymbolicDragonText
 	waitbutton
 	closetext
 	end
+
+.nuzlocke
+	farcall NuzlockeSetAreaFlag
+	ret
 
 .PartyFull:
 	writetext DragonShrinePartyFullText
