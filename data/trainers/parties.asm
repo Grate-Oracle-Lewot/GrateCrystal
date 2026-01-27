@@ -5134,26 +5134,31 @@ BeautyGroup:
 
 TeacherGroup:
 	; TEACHER (1)
+	db "CALYPSO@", TRAINERTYPE_ITEM
+	db 10, DUNSPARCE,  BERRY
+	db -1 ; end
+
+	; TEACHER (2)
+	db "FRIZZLE@", TRAINERTYPE_NORMAL
+	db  8, TAUROS
+	db  8, MILTANK
+	db -1 ; end
+
+	; TEACHER (3)
 	db "COLETTE@", TRAINERTYPE_NORMAL
 	db 45, CLEFABLE
 	db 45, MISDREAVUS
 	db -1 ; end
 
-	; TEACHER (2)
+	; TEACHER (4)
 	db "HILLARY@", TRAINERTYPE_NORMAL
 	db 47, AIPOM
 	db 47, CUBONE
 	db -1 ; end
 
-	; TEACHER (3)
+	; TEACHER (5)
 	db "SHIRLEY@", TRAINERTYPE_NORMAL
 	db 68, WIGGLYTUFF
-	db -1 ; end
-
-	; TEACHER (4)
-	db "FRIZZLE@", TRAINERTYPE_NORMAL
-	db  8, TAUROS
-	db  8, MILTANK
 	db -1 ; end
 
 KimonoGirlGroup:
