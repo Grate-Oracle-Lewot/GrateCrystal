@@ -177,11 +177,13 @@ DoEggStep::
 	cp EGG
 	jr nz, .next
 
+	push hl
 	push de
 	push bc
 	farcall NuzlockeCheckAreaFlag
 	pop bc
 	pop de
+	pop hl
 	ld a, [wScriptVar]
 	and a
 	jr nz, .next
