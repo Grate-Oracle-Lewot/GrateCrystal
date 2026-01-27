@@ -646,6 +646,7 @@
 	const EVENT_GATE_2F_SAGE
 	const EVENT_CERULEAN_CITY_PERSIAN
 ; Nuzlocke area catches
+	const EVENT_NUZLOCKE_NEW_BARK_TOWN
 	const EVENT_NUZLOCKE_ROUTE_29
 	const EVENT_NUZLOCKE_CHERRYGROVE_CITY
 	const EVENT_NUZLOCKE_ROUTE_30
@@ -744,7 +745,7 @@
 	const EVENT_NUZLOCKE_TOHJO_FALLS
 	const EVENT_NUZLOCKE_ROUTE_28
 	const EVENT_NUZLOCKE_FAST_SHIP
-; Unused: next 40 events
+; Unused: next 39 events
 
 	const_next 1000
 ; Trainer flags
