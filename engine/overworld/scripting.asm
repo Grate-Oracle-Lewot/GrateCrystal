@@ -1923,6 +1923,9 @@ Script_givepoke:
 .ok
 	farcall GivePoke
 	ld a, b
+	push af
+	farcall NuzlockeSetAreaFlag
+	pop af
 	ld [wScriptVar], a
 	ret
 
