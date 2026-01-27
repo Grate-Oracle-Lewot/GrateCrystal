@@ -1,10 +1,10 @@
 	db "BALLOON@" ; species name
 	dw 108, 120 ; height, weight
 
-	db   "It carries a mark-"
-	next "er that it uses to"
-	next "draw on the faces"
+	db   "Due to being most-"
+	next "ly lungs, it can"
+	next "hold a note for"
 
-	page "of those who fall"
-	next "asleep to its"
-	next "songs.@"
+	page "several hours. It's"
+	next "used to help treat"
+	next "insomnia.@"
