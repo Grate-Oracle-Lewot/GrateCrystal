@@ -220,14 +220,6 @@ SetGiftPartyMonCaughtData:
 	; fallthrough
 
 SetGiftMonCaughtData:
-	push hl
-	push de
-	push bc
-	farcall NuzlockeSetAreaFlag
-	pop bc
-	pop de
-	pop hl
-
 	xor a
 	ld [hli], a
 	ld a, LANDMARK_GIFT
