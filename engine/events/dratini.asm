@@ -1,11 +1,6 @@
 GiveDratini:
-; if wScriptVar is 0 or 1, change the moveset of the last Dratini in the party.
-;  0: give it a special moveset with Extremespeed.
-;  1: give it the normal moveset of a level 15 Dratini.
+; Change the moveset of the last Dratini in the party.
 
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
 	ld bc, wPartyCount
 	ld a, [bc]
 	ld hl, MON_SPECIES
@@ -30,7 +25,7 @@ GiveDratini:
 
 .GiveMoveset:
 	push hl
-	ld a, [wScriptVar]
+	xor a
 	ld hl, .Movesets
 	ld bc, .Moveset1 - .Moveset0
 	call AddNTimes
