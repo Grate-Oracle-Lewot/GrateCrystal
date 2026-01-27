@@ -443,7 +443,10 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Unique colors for each thrown Poké Ball
 - Customizable Pokédex color (14 choices)
 - Night arrangement for the Kanto wild battle theme, to go along with the existing Johto one
-- Menu account replaced with clock and level cap display
+- Menu account replaced with variable sidebar:
+  - If Nuzlocke mode is on, shows whether or not you've used up the encounter for the current location
+  - If Nuzlocke mode is off but level caps are on, shows the current cap
+  - Otherwise, shows the time of day
 
 # Bug Fixes
 
