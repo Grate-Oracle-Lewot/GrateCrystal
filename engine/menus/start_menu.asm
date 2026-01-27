@@ -225,7 +225,7 @@ StartMenu::
 	call PlaceString
 	farcall NuzlockeCheckAreaFlag
 	hlcoord 8, 1
-	ld a, [wScriptByte]
+	ld a, [wScriptVar]
 	and a
 	jr z, .clear
 	ld [hl], "<NUZ1>"
