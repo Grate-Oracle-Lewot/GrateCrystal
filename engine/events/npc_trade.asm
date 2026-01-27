@@ -59,6 +59,7 @@ NPCTrade::
 	ld a, [wTradeDialog]
 	push af
 	predef TradeAnimation
+	farcall NuzlockeSetAreaFlag
 	pop af
 	ld [wTradeDialog], a
 	pop af
