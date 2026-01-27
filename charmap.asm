@@ -130,13 +130,13 @@
 	charmap "=",         $c2 ; so the character slots can be used for other stuff elsewhere.
 	charmap "+",         $c3 ; However, none of those characters can be used in landmark names.
 	charmap "<%>",       $c4 ; Codes like <PLAYER> can't be used in landmark names since they may contain those characters.
-	charmap "<NUZ0>",    $c5 ; empty ball, available encounter
-	charmap "<NUZ1>",    $c5 ; full ball, used encounter
 
 	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
 	charmap "<INV_QU>",  $c6 ; inverted question mark
 	charmap "<FLOAT>",   $c7 ; floatmon arrow
 	charmap "<EVO_LV>",  $c8 ; level icon, added for dex evo page because I can't get it to work otherwise
+	charmap "<NUZ0>",    $c9 ; poke ball, available encounter
+	charmap "<NUZ1>",    $ca ; crossed-out ball, used encounter
 
 	charmap "′",         $ce
 	charmap "″",         $cf
