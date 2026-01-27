@@ -196,6 +196,9 @@ StartMenu::
 .CapString:
 	db "CAP <EVO_LV>@"
 
+.NuzlockeString:
+	db "CATCH:@"
+
 .OpenMenu:
 	ld a, [wMenuSelection]
 	call .GetMenuEmptyTextPointer
@@ -216,10 +219,28 @@ StartMenu::
 	pop hl
 	jp PlaceString
 
+.NuzlockeText:
+	hlcoord 1, 1
+	ld de, .NuzlockeString
+	call PlaceString
+	farcall NuzlockeCheckAreaFlag
+	hlcoord 8, 1
+	ld a, [wScriptByte]
+	and a
+	jr z, .clear
+	ld [hl], "<NUZ1>"
+	jr .DoneSidebarText
+.clear
+	ld [hl], "<NUZ0>"
+	jr .DoneSidebarText
+
 .MenuSidebarText:
 	push bc
 	push de
 	push hl
+	ld a, [wOptions2]
+	bit NUZLOCKE, a
+	jr nz, .NuzlockeText
 	ld a, [wOptions2]
 	bit LEVEL_CAPS_ON_OFF, a
 	jr nz, .LevelCapText
