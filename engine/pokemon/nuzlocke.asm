@@ -239,7 +239,7 @@ NuzlockeAreaFlagMerge:
 	cp LANDMARK_ROUTE_34
 	jp z, .route_34
 	cp LANDMARK_ILEX_FOREST
-	jr z, .ilex_forest
+	jp z, .ilex_forest
 	cp LANDMARK_SLOWPOKE_WELL
 	jr z, .slowpoke_well
 	cp LANDMARK_AZALEA_TOWN
@@ -264,6 +264,8 @@ NuzlockeAreaFlagMerge:
 	jr z, .cherrygrove_city
 	cp LANDMARK_ROUTE_29
 	jr z, .route_29
+	cp LANDMARK_NEW_BARK_TOWN
+	jr z, .new_bark_town
 .no
 	ld a, TRUE
 	ld [wScriptVar], a
@@ -276,6 +278,9 @@ NuzlockeAreaFlagMerge:
 	jr nz, .no
 	ret
 
+.new_bark_town
+	ld de, EVENT_NUZLOCKE_NEW_BARK_TOWN
+	jr .flag
 .route_29
 	ld de, EVENT_NUZLOCKE_ROUTE_29
 	jr .flag
@@ -347,7 +352,7 @@ NuzlockeAreaFlagMerge:
 	jr .flag
 .route_38
 	ld de, EVENT_NUZLOCKE_ROUTE_38
-	jr .flag
+	jp .flag
 .route_39
 	ld de, EVENT_NUZLOCKE_ROUTE_39
 	jp .flag
