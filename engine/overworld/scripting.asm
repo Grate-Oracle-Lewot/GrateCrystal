@@ -2156,7 +2156,13 @@ Script_refreshscreen:
 	jp GetScriptByte
 
 Script_checknuzlocke:
+	push hl
+	push de
+	push bc
 	farcall NuzlockeCheckAreaFlag
+	pop bc
+	pop de
+	pop hl
 	ret
 
 Script_closetext:
