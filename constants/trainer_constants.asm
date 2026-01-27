@@ -611,10 +611,11 @@ KRIS EQU __trainer_class__
 	const BERYL
 
 	trainerclass TEACHER ; 41
+	const CALYPSO
+	const FRIZZLE
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
-	const FRIZZLE
 
 	trainerclass KIMONO_GIRL ; 42
 	const NAOKO
