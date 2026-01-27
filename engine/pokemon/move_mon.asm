@@ -77,6 +77,8 @@ TryAddMonToParty:
 	dec a
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
+	; fallthrough
+
 GeneratePartyMonStats:
 ; wBattleMode specifies whether it's a wild mon or not.
 ; wMonType specifies whether it's an opposing mon or not.
@@ -98,7 +100,7 @@ GeneratePartyMonStats:
 	; Copy the item if it's a wild mon
 	ld a, [wBattleMode]
 	and a
-	ld a, $0
+	ld a, NO_ITEM
 	jr z, .skipitem
 	ld a, [wEnemyMonItem]
 .skipitem
@@ -729,7 +731,7 @@ RetrieveMonFromDayCareMan:
 	ld [wCurPartyLevel], a
 	xor a
 	ld [wPokemonWithdrawDepositParameter], a
-	jp RetrieveBreedmon
+	jr RetrieveBreedmon
 
 RetrieveMonFromDayCareLady:
 	ld a, [wBreedMon2Species]
