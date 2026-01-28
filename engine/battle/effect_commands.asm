@@ -6043,13 +6043,15 @@ BattleCommand_Heal:
 	call BattleCommand_SwitchTurn
 	ld hl, RestoreHP
 	call CallBattleCore
-	ld hl, UseHeldStatusHealingItem
-	call CallBattleCore
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
 	call RefreshBattleHuds
 	ld hl, RegainedHealthText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	call BattleCommand_SwitchTurn
+	ld hl, UseHeldStatusHealingItem
+	call CallBattleCore
+	jp BattleCommand_SwitchTurn
 
 .hp_full
 	call AnimateFailedMove
