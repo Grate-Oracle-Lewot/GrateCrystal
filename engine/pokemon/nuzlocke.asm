@@ -37,8 +37,15 @@ NuzlockeSetAreaFlag::
 	ld a, [wBattleMode]
 	and a
 	jr z, .set
+
+; trainer battle
 	dec a
 	ret nz
+
+; catching tutorial
+	ld a, [wBattleType]
+	cp BATTLETYPE_TUTORIAL
+	ret z
 
 ; dupe
 	ld a, [wTempEnemyMonSpecies]
