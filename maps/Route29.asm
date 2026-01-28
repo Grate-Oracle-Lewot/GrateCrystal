@@ -104,8 +104,6 @@ CatchingTutorialDudeScript:
 	opentext
 	readvar VAR_BOXSPACE
 	ifequal 0, .BoxFull
-	callasm CatchingTutorialASM
-	iftrue .BoxFull
 	checkevent EVENT_LEARNED_TO_CATCH_POKEMON
 	iftrue .BoxFull
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
