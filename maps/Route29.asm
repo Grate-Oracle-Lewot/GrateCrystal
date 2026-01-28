@@ -34,8 +34,6 @@ Route29_MapScripts:
 	endcallback
 
 Route29Tutorial1:
-	callasm CatchingTutorialASM
-	iftrue CatchingTutorialSceneNuzlockeScript
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a
@@ -61,8 +59,6 @@ Route29Tutorial1:
 	end
 
 Route29Tutorial2:
-	callasm CatchingTutorialASM
-	iftrue CatchingTutorialSceneNuzlockeScript
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2a
@@ -100,7 +96,6 @@ Script_RefusedTutorial2:
 	waitbutton
 	closetext
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b
-CatchingTutorialSceneNuzlockeScript:
 	setscene SCENE_ROUTE29_NOTHING
 	end
 
@@ -139,12 +134,6 @@ CatchingTutorialDudeScript:
 	waitbutton
 	closetext
 	end
-
-CatchingTutorialASM:
-	ld a, [wOptions2]
-	bit NUZLOCKE, a
-	ld [wScriptVar], a
-	ret
 
 Route29YoungsterScript:
 	jumptextfaceplayer Route29YoungsterText
