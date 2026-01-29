@@ -151,6 +151,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 .skip_sfx
 	call SetPlayerTurn
 	ld a, 1
+	ld [wForcedSwitch], a ; skips Nuzlocke flag for roamers
 	ld [wBattleEnded], a
 	ret
 
