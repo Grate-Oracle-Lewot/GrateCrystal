@@ -121,7 +121,7 @@ FailedBatonPass:
 	call UpdateBattleMonInParty
 	xor a
 	ld [wNumHits], a
-	inc a
+	inc a ; TRUE
 	ld [wForcedSwitch], a
 	ld [wBattleAnimParam], a
 	call SetBattleDraw
