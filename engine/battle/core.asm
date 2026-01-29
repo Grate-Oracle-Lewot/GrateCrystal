@@ -4092,6 +4092,8 @@ TryToRunAwayFromBattle:
 	and BATTLERESULT_BITMASK
 	add b
 	ld [wBattleResult], a
+	ld a, 1
+	ld [wForcedSwitch], a ; skips Nuzlocke flag for roamers
 	call StopDangerSound
 	push de
 	ld de, SFX_RUN
