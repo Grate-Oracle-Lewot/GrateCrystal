@@ -43,7 +43,7 @@ NuzlockeSetAreaFlag::
 	cp BATTLETYPE_TUTORIAL
 	ret z
 
-; don't set flag if a roamer fled or used Roar, but do if it was caught or KO'd
+; don't set flag if a roamer fled or used Roar (or if player ran), but do if it was caught or KO'd
 	cp BATTLETYPE_ROAMING
 	jr nz, .skip
 	ld a, [wForcedSwitch]
