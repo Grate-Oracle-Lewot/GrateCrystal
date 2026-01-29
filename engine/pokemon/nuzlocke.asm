@@ -29,10 +29,6 @@ NuzlockeCheckAreaFlag::
 	jr NuzlockeAreaFlagMerge
 
 NuzlockeSetAreaFlag::
-; don't really need to set this here but whatever
-	xor a
-	ld [wScriptVar], a
-
 ; don't check battle data in the field (gift/trade/egg)
 	ld a, [wBattleMode]
 	and a
@@ -46,6 +42,14 @@ NuzlockeSetAreaFlag::
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	ret z
+
+; don't set flag if a roamer fled or used Roar, but do if it was caught or KO'd
+	cp BATTLETYPE_ROAMING
+	jr nz, .skip
+	ld a, [wForcedSwitch]
+	and a
+	ret nz
+.skip
 
 ; dupe
 	ld a, [wTempEnemyMonSpecies]
