@@ -566,9 +566,9 @@ Along with personal preference, I prioritized the ones that could most reasonabl
 
 The whole point of that setting is to make the game harder. Turning off computer items along with yours would be more of a sidegrade. Anyway, both are off in the Battle Tower.
 
-# How come Nuzlocke mode doesn't have infinite Rare Candies?
+# Why no way to instantly grow to the next level cap?
 
-Because the mode can be turned off, so that would be abusable.
+Because level caps can be turned off, so that would be abusable.
 
 # Why no starter build for my favorite Pokémon?
 
