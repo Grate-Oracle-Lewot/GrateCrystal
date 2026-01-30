@@ -1484,16 +1484,7 @@ _TimeAskOkayText::
 	line "is that OK?"
 	done
 
-_MomLostGearBookletText::
-	text "I lost the in-"
-	line "struction booklet"
-	cont "for the #GEAR."
-
-	para "Come back again in"
-	line "a while."
-	prompt
-
 _NuzlockeCantCatchText::
-	text "This #MON can't"
-	line "be caught!"
+	text "Catching is now"
+	line "forbidden here!"
 	prompt
