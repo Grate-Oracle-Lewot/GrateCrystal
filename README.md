@@ -29,7 +29,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Fairy type added
 - Physical/Special split
 - New options in the options menu:
-  - Battle Items on/off: disable player use of items in battle (held items still work)
+  - Battle Items on/off: disable player use of items in battle (balls and held items still work)
   - Difficulty: Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Normal (nothing), or Hard (computer's active Pokémon gets the aforementioned boost). These boosts aren't present in link battles or the Battle Tower.
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
   - Font: Normal or Unown (all text becomes Unown font, characters permitting)
