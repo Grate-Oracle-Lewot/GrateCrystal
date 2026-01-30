@@ -261,12 +261,6 @@ BankOfMom:
 	set 7, [hl]
 	ret
 
-.LostBooklet:
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .MomLostGearBookletText
-	jp PlaceHLTextAtBC
-
 .SetClockForward:
 	ld a, [wStartHour]
 	add 1
@@ -300,10 +294,6 @@ BankOfMom:
 	hlcoord 1, 14
 	lb bc, 3, 18
 	jp ClearBox
-
-.MomLostGearBookletText:
-	text_far _MomLostGearBookletText
-	text_end
 
 Mom_SetUpWithdrawMenu:
 	ld de, Mon_WithdrawString
