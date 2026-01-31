@@ -312,7 +312,7 @@ AI_Items:
 	dbw FRESH_WATER,  .FreshWater
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
-	dbw MIRACLEBERRY, .Miracleberry
+	dbw FRANKENBERRY, .Frankenberry
 	dbw OLD_GATEAU,   .HealPowder
 	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
@@ -329,10 +329,10 @@ AI_Items:
 	call EnemyUsedFullHeal
 	jp .Use
 
-.Miracleberry:
+.Frankenberry:
 	call .Status
 	jp c, .DontUse
-	call EnemyUsedMiracleberry
+	call EnemyUsedFrankenberry
 	jp .Use
 
 .HealPowder:
@@ -552,9 +552,9 @@ EnemyUsedFullHeal:
 	ld a, FULL_HEAL
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
-EnemyUsedMiracleberry:
+EnemyUsedFrankenberry:
 	call StatusHealDoubleCall
-	ld a, MIRACLEBERRY
+	ld a, FRANKENBERRY
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedHealPowder:
