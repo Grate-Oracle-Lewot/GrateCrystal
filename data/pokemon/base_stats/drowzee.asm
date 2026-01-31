@@ -10,7 +10,7 @@ else
 endc
 	db 190 ; catch rate
 	db 102 ; base exp
-	db MINT_BERRY, TM_NIGHTMARE ; items
+	db SOUR_BERRY, TM_NIGHTMARE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/drowzee/front.dimensions"
