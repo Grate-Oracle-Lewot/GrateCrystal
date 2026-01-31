@@ -98,25 +98,25 @@ TrainerBikerKazu:
 	closetext
 	end
 
-Route17KogaScript:
+Route17LucasScript:
 	faceplayer
 	opentext
-	writetext Route17KogaIntroText
+	writetext Route17LucasIntroText
 	promptbutton
 	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
 	iftrue .FoundPercy
-	writetext Route17KogaNoPercyText
+	writetext Route17LucasNoPercyText
 	sjump .Continue
 
 .FoundPercy:
-	writetext Route17KogaFoundPercyText
+	writetext Route17LucasFoundPercyText
 .Continue:
 	promptbutton
-	writetext Route17KogaOutroText
+	writetext Route17LucasOutroText
 	waitbutton
 	closetext
 	playsound SFX_EMBER
-	applymovement ROUTE17_CHRIS_BIKE, Route17KogaTeleport
+	applymovement ROUTE17_CHRIS_BIKE, Route17LucasTeleport
 	disappear ROUTE17_CHRIS_BIKE
 	setevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
 	waitsfx
@@ -128,7 +128,7 @@ Route17HiddenMaxEther:
 Route17HiddenMaxElixer:
 	hiddenitem MAX_ELIXER, EVENT_ROUTE_17_HIDDEN_MAX_ELIXER
 
-Route17KogaTeleport:
+Route17LucasTeleport:
 	teleport_from
 	step_end
 
@@ -236,11 +236,11 @@ BikerKazuAfterBattleText:
 	line "important!"
 	done
 
-Route17KogaIntroText:
+Route17LucasIntroText:
 	text "LUCAS: What's up?"
 	done
 
-Route17KogaNoPercyText:
+Route17LucasNoPercyText:
 	text "You found me, but"
 	line "you still have to"
 	cont "find PERCY."
@@ -250,13 +250,13 @@ Route17KogaNoPercyText:
 	cont "that…"
 	done
 
-Route17KogaFoundPercyText:
+Route17LucasFoundPercyText:
 	text "You found both of"
 	line "us, so now you can"
 	cont "go into that…"
 	done
 
-Route17KogaOutroText:
+Route17LucasOutroText:
 	text "SECRET TUNNEEEEEL!"
 
 	para "…In the SEAFOAM"
@@ -286,4 +286,4 @@ Route17_MapEvents:
 	object_event  6, 80, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1
 	object_event 14,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBikerBenny, -1
 	object_event 18, 34, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerKazu, -1
-	object_event 18, 10, SPRITE_CHRIS_BIKE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route17KogaScript, EVENT_ROUTE_17_LUCAS
+	object_event 18, 10, SPRITE_CHRIS_BIKE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route17LucasScript, EVENT_ROUTE_17_LUCAS
