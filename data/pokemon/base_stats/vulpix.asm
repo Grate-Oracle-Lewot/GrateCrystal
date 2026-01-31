@@ -10,7 +10,7 @@ else
 endc
 	db 190 ; catch rate
 	db 63 ; base exp
-	db BURNT_BERRY, ICE_BERRY ; items
+	db SPICY_BERRY, MINTY_BERRY ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/vulpix/front.dimensions"
