@@ -116,7 +116,7 @@ endc
 	jr nc, .done
 
 	ld de, MUSIC_DARKROOM_BATTLE
-	cp REAL_WILL
+	cp WILL
 	jr nc, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
