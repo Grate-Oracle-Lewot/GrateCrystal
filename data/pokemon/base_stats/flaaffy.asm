@@ -6,7 +6,7 @@
 	db ELECTRIC, ELECTRIC ; type
 	db 120 ; catch rate
 	db 117 ; base exp
-	db PRZCUREBERRY, PRZCUREBERRY ; items
+	db CHEWY_BERRY, CHEWY_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/flaaffy/front.dimensions"
