@@ -10,7 +10,7 @@ else
 endc
 	db 42 ; catch rate
 	db 103 ; base exp
-	db MYSTERYBERRY, TM_HIDDEN_POWER ; items
+	db SILVER_BERRY, TM_HIDDEN_POWER ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 42 ; step cycles to hatch
 	INCBIN "gfx/pokemon/unown_a/front.dimensions"
