@@ -1162,7 +1162,7 @@ CuteCharmText:
 	line "cuteness!"
 	autodone
 
-StaticPrzcureberryText:
+StaticChewyBerryText:
 	text "<USER>"
 	line "recovered using a"
 	scroll "@"
