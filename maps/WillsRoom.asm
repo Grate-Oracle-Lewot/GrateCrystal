@@ -1,5 +1,5 @@
 	object_const_def
-	const WILLSROOM_WILL
+	const WILLSROOM_A_D
 
 WillsRoom_MapScripts:
 	def_scene_scripts
@@ -38,21 +38,21 @@ WillsRoom_MapScripts:
 	waitsfx
 	end
 
-WillScript_Battle:
+ADScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
-	iftrue WillScript_AfterBattle
-	writetext WillScript_WillBeforeText
+	iftrue ADScript_AfterBattle
+	writetext ADScript_ADBeforeText
 	waitbutton
 	closetext
-	winlosstext WillScript_WillBeatenText, 0
-	loadtrainer WILL, WILL1
+	winlosstext ADScript_ADBeatenText, 0
+	loadtrainer A_D, A_D1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_WILL
 	opentext
-	writetext WillScript_WillDefeatText
+	writetext ADScript_ADDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -63,8 +63,8 @@ WillScript_Battle:
 	waitsfx
 	end
 
-WillScript_AfterBattle:
-	writetext WillScript_WillDefeatText
+ADScript_AfterBattle:
+	writetext ADScript_ADDefeatText
 	waitbutton
 	closetext
 	end
@@ -76,7 +76,7 @@ WillsRoom_EnterMovement:
 	step UP
 	step_end
 
-WillScript_WillBeforeText:
+ADScript_ADBeforeText:
 	text "Oh… hey. A"
 	line "challenger, huh?"
 
@@ -103,12 +103,12 @@ WillScript_WillBeforeText:
 	line "Hiya?"
 	done
 
-WillScript_WillBeatenText:
+ADScript_ADBeatenText:
 	text "Nice job. Now,"
 	line "about my book…"
 	done
 
-WillScript_WillDefeatText:
+ADScript_ADDefeatText:
 	text "I've got some more"
 	line "books in the"
 
@@ -139,4 +139,4 @@ WillsRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
+	object_event  5,  7, SPRITE_A_D, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ADScript_Battle, -1
