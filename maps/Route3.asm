@@ -131,10 +131,10 @@ FirebreatherBurtAfterBattleText:
 	done
 
 Route3MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "ROUTE 3"
 
-	para "Just go up the"
-	line "stairs."
+	para "MT. MOON -"
+	line "PEWTER CITY"
 	done
 
 Route3_MapEvents:
