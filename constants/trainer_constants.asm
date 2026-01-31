@@ -242,7 +242,7 @@ KRIS EQU __trainer_class__
 	const CAL_F1 ; unused
 	const CALLA
 
-	trainerclass MYSTICALMAN ; 24
+	trainerclass MYSTIC ; 24
 	const EUSINE
 	const RICO
 	const OLIE
