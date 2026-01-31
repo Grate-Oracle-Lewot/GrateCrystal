@@ -1,5 +1,5 @@
 	object_const_def
-	const KOGASROOM_KOGA
+	const KOGASROOM_LUCAS
 
 KogasRoom_MapScripts:
 	def_scene_scripts
@@ -38,21 +38,21 @@ KogasRoom_MapScripts:
 	waitsfx
 	end
 
-KogaScript_Battle:
+LucasScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_KOGA
-	iftrue KogaScript_AfterBattle
-	writetext KogaScript_KogaBeforeText
+	iftrue LucasScript_AfterBattle
+	writetext LucasScript_LucasBeforeText
 	waitbutton
 	closetext
-	winlosstext KogaScript_KogaBeatenText, 0
-	loadtrainer KOGA, KOGA1
+	winlosstext LucasScript_LucasBeatenText, 0
+	loadtrainer LUCAS, LUCAS1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KOGA
 	opentext
-	writetext KogaScript_KogaDefeatText
+	writetext LucasScript_LucasDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -63,8 +63,8 @@ KogaScript_Battle:
 	waitsfx
 	end
 
-KogaScript_AfterBattle:
-	writetext KogaScript_KogaDefeatText
+LucasScript_AfterBattle:
+	writetext LucasScript_LucasDefeatText
 	waitbutton
 	closetext
 	end
@@ -76,7 +76,7 @@ KogasRoom_EnterMovement:
 	step UP
 	step_end
 
-KogaScript_KogaBeforeText:
+LucasScript_LucasBeforeText:
 	text "Hellooooo…"
 
 	para "I'm LUCAS of the"
@@ -98,13 +98,13 @@ KogaScript_KogaBeforeText:
 	line "is to beat me!"
 	done
 
-KogaScript_KogaBeatenText:
+LucasScript_LucasBeatenText:
 	text "Ravioli, ravioli,"
 	line "give me the"
 	cont "formuoli!"
 	done
 
-KogaScript_KogaDefeatText:
+LucasScript_LucasDefeatText:
 	text "I guess I should"
 	line "mention I drew"
 
@@ -131,4 +131,4 @@ KogasRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1
+	object_event  5,  7, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LucasScript_Battle, -1
