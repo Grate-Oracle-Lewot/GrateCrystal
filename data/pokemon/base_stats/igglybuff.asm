@@ -6,7 +6,7 @@
 	db NORMAL, FAIRY ; type
 	db 170 ; catch rate
 	db 39 ; base exp
-	db MINT_BERRY, PINK_BOW ; items
+	db SOUR_BERRY, PINK_BOW ; items
 	db GENDER_F75 ; gender ratio
 	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/igglybuff/front.dimensions"
