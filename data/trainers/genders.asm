@@ -11,11 +11,11 @@ BTTrainerClassGenders:
 	db FEMALE ; JASMINE
 	db MALE   ; PRYCE
 	db FEMALE ; CLAIR
-	db MALE   ; WILL (A.D.)
-	db MALE   ; KOGA (Lucas)
-	db MALE   ; BRUNO (Percy)
-	db MALE   ; KAREN (Lewot)
-	db FEMALE ; REAL_KAREN
+	db MALE   ; A_D
+	db MALE   ; LUCAS
+	db MALE   ; PERCY
+	db MALE   ; GRATE_ORACLE
+	db FEMALE ; KAREN
 	db MALE   ; BROCK
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
@@ -24,12 +24,12 @@ BTTrainerClassGenders:
 	db FEMALE ; SABRINA
 	db MALE   ; BLAINE
 	db MALE   ; BLUE
-	db MALE   ; REAL_KOGA
-	db MALE   ; REAL_WILL
-	db MALE   ; REAL_BRUNO
+	db MALE   ; KOGA
+	db MALE   ; WILL
+	db MALE   ; BRUNO
 	db FEMALE ; LORELEI
 	db FEMALE ; AGATHA
-	db MALE   ; CHAMPION (Lance)
+	db MALE   ; CHAMPION
 	db MALE   ; POKEMON_PROF
 	db MALE   ; RED
 	db MALE   ; RIVAL1
@@ -41,7 +41,7 @@ BTTrainerClassGenders:
 	db FEMALE ; COOLTRAINER_F
 	db MALE   ; CAL
 	db FEMALE ; CAL_F
-	db MALE   ; MYSTICALMAN
+	db MALE   ; MYSTIC
 	db MALE   ; OLD
 	db MALE   ; YOUNGSTER
 	db MALE   ; SCHOOLBOY
