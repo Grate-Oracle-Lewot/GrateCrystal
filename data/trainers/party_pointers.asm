@@ -11,11 +11,11 @@ TrainerGroups:
 	dba JasmineGroup
 	dba PryceGroup
 	dba ClairGroup
-	dba WillGroup
-	dba KogaGroup
-	dba BrunoGroup
+	dba ADGroup
+	dba LucasGroup
+	dba PercyGroup
+	dba GrateOracleGroup
 	dba KarenGroup
-	dba RealKarenGroup
 	dba BrockGroup
 	dba MistyGroup
 	dba LtSurgeGroup
@@ -24,9 +24,9 @@ TrainerGroups:
 	dba SabrinaGroup
 	dba BlaineGroup
 	dba BlueGroup
-	dba RealKogaGroup
-	dba RealWillGroup
-	dba RealBrunoGroup
+	dba KogaGroup
+	dba WillGroup
+	dba BrunoGroup
 	dba LoreleiGroup
 	dba AgathaGroup
 	dba ChampionGroup
@@ -41,7 +41,7 @@ TrainerGroups:
 	dba CooltrainerFGroup
 	dba PKMNTrainerGroup
 	dba CalFGroup
-	dba MysticalmanGroup
+	dba MysticGroup
 	dba OldGroup
 	dba YoungsterGroup
 	dba SchoolboyGroup
