@@ -779,7 +779,7 @@ Celadon_Map_Name16: ; CELADON_MANSION_ROOF
 Celadon_Map_Name17: ; CELADON_MANSION_ROOF_HOUSE
 	db "CEL. PENTHOUSE@"
 Celadon_Map_Name18: ; CELADON_CAFE
-	db "CELADON CAFé@"
+	db "KANTO BITE CAFé@"
 Celadon_Map_Name19: ; ROUTE_7
 	db "ROUTE 7@"
 Celadon_Map_Name20: ; ROUTE_7_SAFFRON_GATE
