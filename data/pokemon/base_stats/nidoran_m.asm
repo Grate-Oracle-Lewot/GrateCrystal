@@ -6,7 +6,7 @@
 	db POISON, POISON ; type
 	db 235 ; catch rate
 	db 60 ; base exp
-	db PSNCUREBERRY, POISON_BARB ; items
+	db SWEET_BERRY, POISON_BARB ; items
 	db GENDER_F0 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/nidoran_m/front.dimensions"
