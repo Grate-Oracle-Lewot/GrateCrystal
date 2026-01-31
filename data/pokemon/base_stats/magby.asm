@@ -6,7 +6,7 @@
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
 	db 117 ; base exp
-	db BURNT_BERRY, TM_FIRE_PUNCH ; items
+	db SPICY_BERRY, TM_FIRE_PUNCH ; items
 	db GENDER_F25 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/magby/front.dimensions"
