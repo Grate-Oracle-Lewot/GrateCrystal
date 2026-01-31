@@ -62,21 +62,21 @@ KRIS EQU __trainer_class__
 	trainerclass CLAIR ; 08
 	const CLAIR1
 
-	trainerclass WILL ; 09
-	const WILL1
+	trainerclass A_D ; 09
+	const A_D1
 
-	trainerclass KOGA ; 0a
-	const KOGA1
+	trainerclass LUCAS ; 0a
+	const LUCAS1
 
-	trainerclass BRUNO ; 0b
-	const BRUNO1
+	trainerclass PERCY ; 0b
+	const PERCY1
 
-	trainerclass KAREN ; 0c
+	trainerclass GRATE_ORACLE ; 0c
+	const LEWOT1
+	const LEWOT2
+
+	trainerclass KAREN ; 0d
 	const KAREN1
-	const KAREN2
-
-	trainerclass REAL_KAREN ; 0d
-	const REAL_KAREN1
 
 ; Start of Kanto Gym Leader Music
 
@@ -111,16 +111,16 @@ KRIS EQU __trainer_class__
 	const BLUE1
 	const BLUE2
 
-	trainerclass REAL_KOGA ; 16
-	const REAL_KOGA1
+	trainerclass KOGA ; 16
+	const KOGA1
 
 ; Start of Kanto Champion music
 
-	trainerclass REAL_WILL ; 17
-	const REAL_WILL1
+	trainerclass WILL ; 17
+	const WILL1
 
-	trainerclass REAL_BRUNO ; 18
-	const REAL_BRUNO1
+	trainerclass BRUNO ; 18
+	const BRUNO1
 
 	trainerclass LORELEI ; 19
 	const LORELEI1
