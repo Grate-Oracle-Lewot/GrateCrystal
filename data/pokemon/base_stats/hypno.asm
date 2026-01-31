@@ -10,7 +10,7 @@ else
 endc
 	db 75 ; catch rate
 	db 165 ; base exp
-	db MINT_BERRY, TM_DREAM_EATER ; items
+	db SOUR_BERRY, TM_DREAM_EATER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hypno/front.dimensions"
