@@ -1,5 +1,5 @@
 	object_const_def
-	const KARENSROOM_KAREN
+	const KARENSROOM_LEWOT
 
 KarensRoom_MapScripts:
 	def_scene_scripts
@@ -38,21 +38,21 @@ KarensRoom_MapScripts:
 	waitsfx
 	end
 
-KarenScript_Battle:
+LewotScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_KAREN
-	iftrue KarenScript_AfterBattle
-	writetext KarenScript_KarenBeforeText
+	iftrue LewotScript_AfterBattle
+	writetext LewotScript_LewotBeforeText
 	waitbutton
 	closetext
-	winlosstext KarenScript_KarenBeatenText, 0
-	loadtrainer KAREN, KAREN1
+	winlosstext LewotScript_LewotBeatenText, 0
+	loadtrainer GRATE_ORACLE, LEWOT1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KAREN
 	opentext
-	writetext KarenScript_KarenDefeatText
+	writetext LewotScript_LewotDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -63,8 +63,8 @@ KarenScript_Battle:
 	waitsfx
 	end
 
-KarenScript_AfterBattle:
-	writetext KarenScript_KarenDefeatText
+LewotScript_AfterBattle:
+	writetext LewotScript_LewotDefeatText
 	waitbutton
 	closetext
 	end
@@ -76,7 +76,7 @@ KarensRoom_EnterMovement:
 	step UP
 	step_end
 
-KarenScript_KarenBeforeText:
+LewotScript_LewotBeforeText:
 	text "Hey! You made it!"
 
 	para "It's me, the GRATE"
@@ -99,13 +99,13 @@ KarenScript_KarenBeforeText:
 	line "fun…"
 	done
 
-KarenScript_KarenBeatenText:
+LewotScript_LewotBeatenText:
 	text "The hacker has"
 	line "become the hackee…"
 	cont "or something."
 	done
 
-KarenScript_KarenDefeatText:
+LewotScript_LewotDefeatText:
 	text "Strong #MON."
 
 	para "Weak #MON."
@@ -142,4 +142,4 @@ KarensRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1
+	object_event  5,  7, SPRITE_LEWOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LewotScript_Battle, -1
