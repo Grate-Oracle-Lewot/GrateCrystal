@@ -6,7 +6,7 @@
 	db ELECTRIC, ELECTRIC ; type
 	db 235 ; catch rate
 	db 59 ; base exp
-	db PRZCUREBERRY, PRZCUREBERRY ; items
+	db CHEWY_BERRY, CHEWY_BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mareep/front.dimensions"
