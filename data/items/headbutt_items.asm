@@ -12,7 +12,7 @@ HeadbuttItemTable:
 	db 4, MINTY_BERRY
 	db 4, SPICY_BERRY
 	db 4, CHEWY_BERRY
-	db 4, SEET_BERRY
+	db 4, SWEET_BERRY
 	db 4, RED_APRICORN
 	db 4, BLU_APRICORN
 	db 4, YLW_APRICORN
