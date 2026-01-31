@@ -5,7 +5,7 @@ BattleTowerMons:
 ; BattleTowerMons group 1
 
 	db JOLTEON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db THUNDERBOLT, HYPER_BEAM, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -109,7 +109,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db KANGASKHAN
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db REVERSAL, HYPER_BEAM, EARTHQUAKE, ATTRACT
 	dw 0 ; OT ID
 	dt 1720 ; Exp
@@ -213,7 +213,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db LAPRAS
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db BLIZZARD, SURF, THUNDERBOLT, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -395,7 +395,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db SNORLAX
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db HEADBUTT, PROTECT, SNORE, SURF
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -658,7 +658,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db GYARADOS
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db HYPER_BEAM, DRAGON_RAGE, THUNDERBOLT, FIRE_BLAST
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1207,7 +1207,7 @@ BattleTowerMons:
 ; BattleTowerMons group 3
 
 	db JOLTEON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db THUNDERBOLT, THUNDER_WAVE, ROAR, MUD_SLAP
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1415,7 +1415,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db MACHAMP
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db CROSS_CHOP, ICE_PUNCH, EARTHQUAKE, FIRE_BLAST
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1597,7 +1597,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db ESPEON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db PSYCHIC_M, AURA_SPHERE, TOXIC, DREAM_EATER
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -1727,7 +1727,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db PRIMEAPE
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db LOW_KICK, PURSUIT, ROLLING_KICK, FOCUS_ENERGY
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -2094,7 +2094,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db SLOWBRO
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SCALD, PSYCHIC_M, EARTHQUAKE, BLIZZARD
 	dw 0 ; OT ID
 	dt 80000 ; Exp
@@ -2591,7 +2591,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db SLOWKING
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, SLUDGE_BOMB, PSYCHIC_M, AMNESIA
 	dw 0 ; OT ID
 	dt 156250 ; Exp
@@ -2695,7 +2695,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db ELECTRODE
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db THUNDERBOLT, HYPER_BEAM, MIRROR_COAT, REST
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2773,7 +2773,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db ZAPDOS
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db DRILL_PECK, THUNDERBOLT, THUNDER_WAVE, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -2851,7 +2851,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db STEELIX
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SANDSTORM, IRON_TAIL, REST, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -3140,7 +3140,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db ZAPDOS
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, DRILL_PECK, THUNDERBOLT, THUNDER_WAVE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3218,7 +3218,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db DRAGONITE
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SKY_ATTACK, ICE_PUNCH, THUNDERPUNCH, WATERFALL
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3296,7 +3296,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db SKARMORY
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db STEEL_WING, FLY, TOXIC, PROTECT
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3400,7 +3400,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db JYNX
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db BLIZZARD, PSYCHIC_M, SHADOW_BALL, NIGHTMARE
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3611,7 +3611,7 @@ BattleTowerMons:
 ; BattleTowerMons group 7
 
 	db JOLTEON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db THUNDERBOLT, HYPER_BEAM, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -3819,7 +3819,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db EXEGGUTOR
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db REST, SELFDESTRUCT, PSYCHIC_M, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 344960 ; Exp
@@ -3897,7 +3897,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db QUAGSIRE
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db EARTHQUAKE, SCALD, SLUDGE_BOMB, IRON_TAIL
 	dw 0 ; OT ID
 	dt 343000 ; Exp
@@ -4212,7 +4212,7 @@ BattleTowerMons:
 ; BattleTowerMons group 8
 
 	db JOLTEON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db THUNDER_WAVE, THUNDERBOLT, IRON_TAIL, ROAR
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4264,7 +4264,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db HOUNDOOM
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, CRUNCH, FLAMETHROWER, SUNNY_DAY
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4316,7 +4316,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db LAPRAS
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, SURF, CONFUSE_RAY, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4342,7 +4342,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db TYRANITAR
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db REST, CRUNCH, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4420,7 +4420,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db KINGDRA
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, SURF, BLIZZARD, DRAGONBREATH
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -4602,7 +4602,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db AERODACTYL
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SKY_ATTACK, REST, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -5021,7 +5021,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db LAPRAS
-	db MINT_BERRY
+	db SOUR_BERRY
 	db REST, SURF, THUNDERBOLT, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5099,7 +5099,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db SNORLAX
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db FIRE_BLAST, SURF, EARTHQUAKE, HYPER_BEAM
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5125,7 +5125,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db ARCANINE
-	db MINT_BERRY
+	db SOUR_BERRY
 	db SUNNY_DAY, FLAMETHROWER, EXTREMESPEED, REST
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5255,7 +5255,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db FLAREON
-	db MINT_BERRY
+	db SOUR_BERRY
 	db SACRED_FIRE, FLAMETHROWER, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
 	dt 729000 ; Exp
@@ -5622,7 +5622,7 @@ BattleTowerMons:
 	db "@@@@@@@@@@@"
 
 	db RHYDON
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SURF, EARTHQUAKE, MEGAHORN, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -6121,7 +6121,7 @@ BattleTowerExtraMons:
 	db "@@@@@@@@@@@"
 
 	db AERODACTYL
-	db MIRACLEBERRY
+	db FRANKENBERRY
 	db SKY_ATTACK, REST, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
