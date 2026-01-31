@@ -6,7 +6,7 @@
 	db ELECTRIC, ELECTRIC ; type
 	db 45 ; catch rate
 	db 106 ; base exp
-	db PRZCUREBERRY, TM_THUNDERPUNCH ; items
+	db CHEWY_BERRY, TM_THUNDERPUNCH ; items
 	db GENDER_F25 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/elekid/front.dimensions"
