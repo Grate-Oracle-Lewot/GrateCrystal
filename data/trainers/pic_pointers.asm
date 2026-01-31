@@ -11,11 +11,11 @@ TrainerPicPointers::
 	dba JasminePic
 	dba PrycePic
 	dba ClairPic
-	dba WillPic
-	dba KogaPic
-	dba BrunoPic
+	dba ADPic
+	dba LucasPic
+	dba PercyPic
+	dba LewotPic
 	dba KarenPic
-	dba RealKarenPic
 	dba BrockPic
 	dba MistyPic
 	dba LtSurgePic
@@ -24,9 +24,9 @@ TrainerPicPointers::
 	dba SabrinaPic
 	dba BlainePic
 	dba BluePic
-	dba RealKogaPic
-	dba RealWillPic
-	dba RealBrunoPic
+	dba KogaPic
+	dba WillPic
+	dba BrunoPic
 	dba LoreleiPic
 	dba AgathaPic
 	dba ChampionPic
@@ -41,7 +41,7 @@ TrainerPicPointers::
 	dba CooltrainerfPic
 	dba CalPic
 	dba CalfPic
-	dba MysticalmanPic
+	dba MysticPic
 	dba OldPic
 	dba YoungsterPic
 	dba SchoolboyPic
