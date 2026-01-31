@@ -92,22 +92,22 @@ TrainerBugCatcherWade1:
 	scall .ItemSTD
 	checkevent EVENT_WADE_HAS_BERRY
 	iftrue .Berry
-	checkevent EVENT_WADE_HAS_PSNCUREBERRY
-	iftrue .Psncureberry
-	checkevent EVENT_WADE_HAS_PRZCUREBERRY
-	iftrue .Przcureberry
+	checkevent EVENT_WADE_HAS_SWEET_BERRY
+	iftrue .SweetBerry
+	checkevent EVENT_WADE_HAS_CHEWY_BERRY
+	iftrue .ChewyBerry
 	checkevent EVENT_WADE_HAS_BITTER_BERRY
 	iftrue .BitterBerry
 .Berry:
 	verbosegiveitem BERRY, 5
 	iffalse .PackFullSTD
 	sjump .Done
-.Psncureberry:
-	verbosegiveitem PSNCUREBERRY, 5
+.SweetBerry:
+	verbosegiveitem SWEET_BERRY, 5
 	iffalse .PackFullSTD
 	sjump .Done
-.Przcureberry:
-	verbosegiveitem PRZCUREBERRY, 5
+.ChewyBerry:
+	verbosegiveitem CHEWY_BERRY, 5
 	iffalse .PackFullSTD
 	sjump .Done
 .BitterBerry:
