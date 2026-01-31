@@ -84,17 +84,17 @@ ItemEffects:
 	dw NoEffect            ; SILVER_WING
 	dw RestoreHPEffect     ; MOOMOO_MILK
 	dw NoEffect            ; QUICK_CLAW
-	dw StatusHealingEffect ; PSNCUREBERRY
+	dw StatusHealingEffect ; SWEET_BERRY
 	dw NoEffect            ; GOLD_LEAF
 	dw NoEffect            ; SOFT_SAND
 	dw NoEffect            ; SHARP_BEAK
-	dw StatusHealingEffect ; PRZCUREBERRY
-	dw StatusHealingEffect ; BURNT_BERRY
-	dw StatusHealingEffect ; ICE_BERRY
+	dw StatusHealingEffect ; CHEWY_BERRY
+	dw StatusHealingEffect ; SPICY_BERRY
+	dw StatusHealingEffect ; MINTY_BERRY
 	dw NoEffect            ; POISON_BARB
 	dw NoEffect            ; KINGS_ROCK
 	dw BitterBerryEffect   ; BITTER_BERRY
-	dw StatusHealingEffect ; MINT_BERRY
+	dw StatusHealingEffect ; SOUR_BERRY
 	dw NoEffect            ; RED_APRICORN
 	dw RestoreHPEffect     ; TINYMUSHROOM
 	dw ReviveEffect        ; BIG_MUSHROOM
@@ -119,7 +119,7 @@ ItemEffects:
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; NEVERMELTICE
 	dw NoEffect            ; MAGNET
-	dw StatusHealingEffect ; MIRACLEBERRY
+	dw StatusHealingEffect ; FRANKENBERRY
 	dw NoEffect            ; PEARL
 	dw NoEffect            ; BLACK_PEARL
 	dw NoEffect            ; EVERSTONE
@@ -160,7 +160,7 @@ ItemEffects:
 	dw FloatieEffect       ; FLOATIE
 	dw DiscoBallEffect     ; DISCO_BALL
 	dw EggBeaterEffect     ; EGG_BEATER
-	dw RestorePPEffect     ; MYSTERYBERRY
+	dw RestorePPEffect     ; SILVER_BERRY
 	dw EvoStoneEffect      ; DRAGON_SCALE
 	dw PokeBallEffect      ; TIMER_BALL
 	dw PickaxeEffect       ; PICKAXE
