@@ -63,19 +63,19 @@ TrainerSwimmermCameron:
 	closetext
 	end
 
-Route20WillScript:
+Route20ADScript:
 	faceplayer
 	opentext
 	checkevent EVENT_ELITE_HIDE_AND_SEEK
 	iftrue .After
-	writetext Route20WillText1
+	writetext Route20ADText1
 	waitbutton
 	closetext
 	setevent EVENT_ELITE_HIDE_AND_SEEK
 	end
 
 .After:
-	writetext Route20WillText2
+	writetext Route20ADText2
 	waitbutton
 	closetext
 	end
@@ -136,7 +136,7 @@ SwimmermCameronAfterBattleText:
 	cont "ponds and rivers."
 	done
 
-Route20WillText1:
+Route20ADText1:
 	text "Ah, it's you."
 
 	para "I'm A.D. from the"
@@ -159,7 +159,7 @@ Route20WillText1:
 	cont "doesn't count."
 	done
 
-Route20WillText2:
+Route20ADText2:
 	text "A hint? Uhhhh…"
 
 	para "They're hiding, so"
@@ -197,4 +197,4 @@ Route20_MapEvents:
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
-	object_event 30,  6, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route20WillScript, EVENT_ROUTE_20_A_D
+	object_event 30,  6, SPRITE_A_D, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route20ADScript, EVENT_ROUTE_20_A_D
