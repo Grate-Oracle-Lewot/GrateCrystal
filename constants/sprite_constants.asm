@@ -18,7 +18,7 @@
 	const SPRITE_REDS_MOM              ; 0e
 	const SPRITE_DAISY                 ; 0f
 	const SPRITE_ELM                   ; 10
-	const SPRITE_WILL                  ; 11
+	const SPRITE_A_D                   ; 11
 	const SPRITE_FALKNER               ; 12
 	const SPRITE_WHITNEY               ; 13
 	const SPRITE_BUGSY                 ; 14
@@ -28,13 +28,13 @@
 	const SPRITE_PRYCE                 ; 18
 	const SPRITE_CLAIR                 ; 19
 	const SPRITE_BROCK                 ; 1a
-	const SPRITE_KAREN                 ; 1b
-	const SPRITE_BRUNO                 ; 1c
+	const SPRITE_LEWOT                 ; 1b
+	const SPRITE_PERCY                 ; 1c
 	const SPRITE_MISTY                 ; 1d
 	const SPRITE_LANCE                 ; 1e
 	const SPRITE_SURGE                 ; 1f
 	const SPRITE_ERIKA                 ; 20
-	const SPRITE_KOGA                  ; 21
+	const SPRITE_LUCAS                 ; 21
 	const SPRITE_SABRINA               ; 22
 	const SPRITE_COOLTRAINER_M         ; 23
 	const SPRITE_COOLTRAINER_F         ; 24
@@ -104,8 +104,8 @@
 	const SPRITE_RAIKOU                ; 64
 	const SPRITE_CHRIS_RUN             ; 65
 	const SPRITE_KRIS_RUN              ; 66
-	const SPRITE_REAL_KAREN            ; 67
-	const SPRITE_REAL_KOGA             ; 68
+	const SPRITE_KAREN                 ; 67
+	const SPRITE_KOGA                  ; 68
 	const SPRITE_JESSIE                ; 69
 	const SPRITE_JAMES                 ; 6a
 	const SPRITE_GIOVANNI              ; 6b
