@@ -3,7 +3,7 @@
 MaleTrainers:
 	db COOLTRAINERM
 	db CAL
-	db MYSTICALMAN
+	db MYSTIC
 	db YOUNGSTER
 	db SCHOOLBOY
 	db BUG_CATCHER
