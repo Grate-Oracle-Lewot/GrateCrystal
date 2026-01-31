@@ -15,11 +15,11 @@ INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
 INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
-INCBIN "gfx/trainers/will.gbcpal", middle_colors
-INCBIN "gfx/trainers/koga.gbcpal", middle_colors
-INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
+INCBIN "gfx/trainers/a_d.gbcpal", middle_colors
+INCBIN "gfx/trainers/lucas.gbcpal", middle_colors
+INCBIN "gfx/trainers/percy.gbcpal", middle_colors
+INCBIN "gfx/trainers/lewot.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
-INCBIN "gfx/trainers/real_karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
@@ -28,9 +28,9 @@ INCBIN "gfx/trainers/janine.gbcpal", middle_colors
 INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
 INCBIN "gfx/trainers/blaine.gbcpal", middle_colors
 INCBIN "gfx/trainers/blue.gbcpal", middle_colors
-INCBIN "gfx/trainers/real_koga.gbcpal", middle_colors
-INCBIN "gfx/trainers/real_will.gbcpal", middle_colors
-INCBIN "gfx/trainers/real_bruno.gbcpal", middle_colors
+INCBIN "gfx/trainers/koga.gbcpal", middle_colors
+INCBIN "gfx/trainers/will.gbcpal", middle_colors
+INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
 INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
@@ -45,7 +45,7 @@ INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
-INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+INCBIN "gfx/trainers/mystic.gbcpal", middle_colors
 INCBIN "gfx/trainers/old.gbcpal", middle_colors
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
