@@ -6,7 +6,7 @@
 	db ICE, FAIRY ; type
 	db 45 ; catch rate
 	db 87 ; base exp
-	db ICE_BERRY, TM_ICE_PUNCH ; items
+	db MINTY_BERRY, TM_ICE_PUNCH ; items
 	db GENDER_F100 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/smoochum/front.dimensions"
