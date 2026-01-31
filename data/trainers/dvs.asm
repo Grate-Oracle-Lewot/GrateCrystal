@@ -10,11 +10,11 @@ TrainerClassDVs:
 	dn 11, 10, 10, 11 ; JASMINE
 	dn 10, 10, 10, 10 ; PRYCE
 	dn 11, 12, 11, 11 ; CLAIR
-	dn 11, 15, 15, 13 ; WILL (A.D.)
-	dn 13, 13, 13, 12 ; KOGA (Lucas)
-	dn 13, 13, 13, 14 ; BRUNO (Percy)
-	dn 14, 14, 14, 14 ; KAREN (Lewot)
-	dn 13, 14, 14, 13 ; REAL_KAREN
+	dn 11, 15, 15, 13 ; A_D
+	dn 13, 13, 13, 12 ; LUCAS
+	dn 13, 13, 13, 14 ; PERCY
+	dn 14, 14, 14, 14 ; GRATE_ORACLE
+	dn 13, 14, 14, 13 ; KAREN
 	dn 12, 11, 11, 12 ; BROCK
 	dn 11, 12, 12, 11 ; MISTY
 	dn 12, 11, 11, 12 ; LT_SURGE
@@ -23,12 +23,12 @@ TrainerClassDVs:
 	dn 11, 12, 12, 11 ; SABRINA
 	dn 12, 11, 11, 12 ; BLAINE
 	dn 14, 13, 13, 14 ; BLUE
-	dn 12, 13, 13, 12 ; REAL_KOGA
-	dn 14, 13, 13, 14 ; REAL_WILL
-	dn 14, 13, 13, 14 ; REAL_BRUNO
+	dn 12, 13, 13, 12 ; KOGA
+	dn 14, 13, 13, 14 ; WILL
+	dn 14, 13, 13, 14 ; BRUNO
 	dn 13, 14, 14, 13 ; LORELEI
 	dn 13, 14, 14, 13 ; AGATHA
-	dn 14, 14, 14, 14 ; CHAMPION (Lance)
+	dn 14, 14, 14, 14 ; CHAMPION
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 14, 15, 15, 14 ; RED
 	dn 12, 13, 13, 12 ; RIVAL1
