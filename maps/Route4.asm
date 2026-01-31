@@ -2,7 +2,7 @@
 	const ROUTE4_YOUNGSTER
 	const ROUTE4_LASS1
 	const ROUTE4_LASS2
-	const ROUTE4_BRUNO
+	const ROUTE4_PERCY
 	const ROUTE4_POKE_BALL
 
 Route4_MapScripts:
@@ -12,7 +12,7 @@ Route4_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .CheckPercy
 
 .CheckPercy:
-	disappear ROUTE4_BRUNO
+	disappear ROUTE4_PERCY
 	checkevent EVENT_ELITE_HIDE_AND_SEEK
 	iffalse .end
 	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
@@ -20,7 +20,7 @@ Route4_MapScripts:
 	endcallback
 
 .AppearPercy:
-	appear ROUTE4_BRUNO
+	appear ROUTE4_PERCY
 .end
 	endcallback
 
@@ -57,26 +57,26 @@ TrainerPicnickerSharon:
 	closetext
 	end
 
-Route4BrunoScript:
+Route4PercyScript:
 	faceplayer
 	opentext
-	writetext Route4BrunoIntroText
+	writetext Route4PercyIntroText
 	promptbutton
 	checkevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
 	iftrue .FoundLucas
-	writetext Route4BrunoNoLucasText
+	writetext Route4PercyNoLucasText
 	sjump .Continue
 
 .FoundLucas:
-	writetext Route4BrunoFoundLucasText
+	writetext Route4PercyFoundLucasText
 .Continue:
 	promptbutton
-	writetext Route4BrunoOutroText
+	writetext Route4PercyOutroText
 	waitbutton
 	closetext
 	playsound SFX_WARP_TO
-	applymovement ROUTE4_BRUNO, Route4BrunoTeleport
-	disappear ROUTE4_BRUNO
+	applymovement ROUTE4_PERCY, Route4PercyTeleport
+	disappear ROUTE4_PERCY
 	setevent EVENT_FOUND_PERCY_ON_ROUTE_4
 	end
 
@@ -89,7 +89,7 @@ Route4HPUp:
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
-Route4BrunoTeleport:
+Route4PercyTeleport:
 	teleport_from
 	step_end
 
@@ -154,18 +154,18 @@ PicnickerSharonAfterBattleText:
 	done
 
 MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "ROUTE 4"
 
-	para "Just go up the"
-	line "stairs."
+	para "MT. MOON -"
+	line "CERULEAN CITY"
 	done
 
-Route4BrunoIntroText:
+Route4PercyIntroText:
 	text "PERCY: You found"
 	line "me. That's sexy."
 	done
 
-Route4BrunoNoLucasText:
+Route4PercyNoLucasText:
 	text "But you still have"
 	line "to find LEWOTY's"
 
@@ -173,7 +173,7 @@ Route4BrunoNoLucasText:
 	line "get into his lair."
 	done
 
-Route4BrunoFoundLucasText:
+Route4PercyFoundLucasText:
 	text "Now you can get"
 	line "into LEWOTY's"
 
@@ -181,7 +181,7 @@ Route4BrunoFoundLucasText:
 	line "SEAFOAM ISLANDS."
 	done
 
-Route4BrunoOutroText:
+Route4PercyOutroText:
 	text "I'm gonna go look"
 	line "for coffeehouses."
 	done
@@ -202,5 +202,5 @@ Route4_MapEvents:
 	object_event 17,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
 	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerPicnickerHope, -1
 	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event 33,  2, SPRITE_BRUNO, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route4BrunoScript, EVENT_ROUTE_4_PERCY
+	object_event 33,  2, SPRITE_PERCY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route4PercyScript, EVENT_ROUTE_4_PERCY
 	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
