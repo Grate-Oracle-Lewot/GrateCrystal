@@ -9,11 +9,11 @@ BTTrainerClassSprites:
 	db SPRITE_JASMINE       ; JASMINE
 	db SPRITE_PRYCE         ; PRYCE
 	db SPRITE_CLAIR         ; CLAIR
-	db SPRITE_WILL          ; WILL (A.D.)
-	db SPRITE_KOGA          ; KOGA (Lucas)
-	db SPRITE_BRUNO         ; BRUNO (Percy)
-	db SPRITE_KAREN         ; KAREN (Lewot)
-	db SPRITE_REAL_KAREN    ; REAL_KAREN
+	db SPRITE_WILL          ; A_D
+	db SPRITE_KOGA          ; LUCAS
+	db SPRITE_BRUNO         ; PERCY
+	db SPRITE_KAREN         ; GRATE_ORACLE
+	db SPRITE_REAL_KAREN    ; KAREN
 	db SPRITE_BROCK         ; BROCK
 	db SPRITE_MISTY         ; MISTY
 	db SPRITE_SURGE         ; LT_SURGE
@@ -22,12 +22,12 @@ BTTrainerClassSprites:
 	db SPRITE_SABRINA       ; SABRINA
 	db SPRITE_BLAINE        ; BLAINE
 	db SPRITE_BLUE          ; BLUE
-	db SPRITE_REAL_KOGA     ; REAL_KOGA
-	db SPRITE_PHARMACIST    ; REAL_WILL
-	db SPRITE_BLACK_BELT    ; REAL_BRUNO
+	db SPRITE_REAL_KOGA     ; KOGA
+	db SPRITE_PHARMACIST    ; WILL
+	db SPRITE_BLACK_BELT    ; BRUNO
 	db SPRITE_BEAUTY        ; LORELEI
 	db SPRITE_GRANNY        ; AGATHA
-	db SPRITE_LANCE         ; CHAMPION (Lance)
+	db SPRITE_LANCE         ; CHAMPION
 	db SPRITE_OAK           ; POKEMON_PROF
 	db SPRITE_RED           ; RED
 	db SPRITE_SILVER        ; RIVAL1
@@ -39,7 +39,7 @@ BTTrainerClassSprites:
 	db SPRITE_LASS          ; COOLTRAINER_F
 	db SPRITE_CHRIS         ; CAL
 	db SPRITE_KRIS          ; CAL_F
-	db SPRITE_SUPER_NERD    ; MYSTICALMAN
+	db SPRITE_SUPER_NERD    ; MYSTIC
 	db SPRITE_SAGE          ; OLD
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; SCHOOLBOY
