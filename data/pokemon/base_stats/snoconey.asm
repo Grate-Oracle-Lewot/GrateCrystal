@@ -6,7 +6,7 @@
 	db ICE, GRASS ; type
 	db 84 ; catch rate
 	db 168 ; base exp
-	db ICE_BERRY, CAKE_OF_RAGE ; items
+	db MINTY_BERRY, CAKE_OF_RAGE ; items
 	db GENDER_F50 ; gender ratio
 	db 14 ; step cycles to hatch
 	INCBIN "gfx/pokemon/snoconey/front.dimensions"
