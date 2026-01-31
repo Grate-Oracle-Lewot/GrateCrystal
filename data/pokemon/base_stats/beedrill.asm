@@ -6,7 +6,7 @@
 	db BUG, POISON ; type
 	db 45 ; catch rate
 	db 159 ; base exp
-	db PSNCUREBERRY, POISON_BARB ; items
+	db SWEET_BERRY, POISON_BARB ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/beedrill/front.dimensions"
