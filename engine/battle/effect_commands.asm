@@ -6966,7 +6966,7 @@ ContactStatic:
 	call BattleCommand_SwitchTurn
 	farcall ConsumeHeldItem
 	call BattleCommand_SwitchTurn
-	ld hl, StaticPrzcureberryText
+	ld hl, StaticChewyBerryText
 	jp StdBattleTextbox
 
 BattleCommand_CheckContact:
