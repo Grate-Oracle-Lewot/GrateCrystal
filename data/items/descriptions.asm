@@ -71,17 +71,17 @@ ItemDescriptions:
 	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
-	dw PsnCureBerryDesc
+	dw SweetBerryDesc
 	dw GoldLeafDesc
 	dw SoftSandDesc
 	dw SharpBeakDesc
-	dw PrzCureBerryDesc
-	dw BurntBerryDesc
-	dw IceBerryDesc
+	dw ChewyBerryDesc
+	dw SpicyBerryDesc
+	dw MintyBerryDesc
 	dw PoisonBarbDesc
 	dw KingsRockDesc
 	dw BitterBerryDesc
-	dw MintBerryDesc
+	dw SourBerryDesc
 	dw RedApricornDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
@@ -106,7 +106,7 @@ ItemDescriptions:
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
 	dw MagnetDesc
-	dw MiracleBerryDesc
+	dw FrankenberryDesc
 	dw PearlDesc
 	dw BlackPearlDesc
 	dw EverStoneDesc
@@ -147,7 +147,7 @@ ItemDescriptions:
 	dw FloatieDesc
 	dw DiscoBallDesc
 	dw EggBeaterDesc
-	dw MysteryBerryDesc
+	dw SilverBerryDesc
 	dw DragonScaleDesc
 	dw TimerBallDesc
 	dw PickaxeDesc
@@ -539,7 +539,7 @@ QuickClawDesc:
 	db   "May move first in"
 	next "battle. (HOLD)@"
 
-PsnCureBerryDesc:
+SweetBerryDesc:
 	db   "A self-cure for"
 	next "poison. (HOLD)@"
 
@@ -555,15 +555,15 @@ SharpBeakDesc:
 	db   "Powers up flying-"
 	next "type moves. (HOLD)@"
 
-PrzCureBerryDesc:
+ChewyBerryDesc:
 	db   "A self-cure for"
 	next "paralysis. (HOLD)@"
 
-BurntBerryDesc:
+SpicyBerryDesc:
 	db   "A self-cure for"
 	next "freezing. (HOLD)@"
 
-IceBerryDesc:
+MintyBerryDesc:
 	db   "A self-heal for a"
 	next "burn. (HOLD)@"
 
@@ -579,7 +579,7 @@ BitterBerryDesc:
 	db   "A self-cure for"
 	next "confusion. (HOLD)@"
 
-MintBerryDesc:
+SourBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
@@ -679,9 +679,9 @@ MagnetDesc:
 	db   "Boosts electric-"
 	next "type moves. (HOLD)@"
 
-MiracleBerryDesc:
-	db   "Cures all status"
-	next "problems. (HOLD)@"
+FrankenberryDesc:
+	db   "Cures any status"
+	next "problem. (HOLD)@"
 
 PearlDesc:
 	db   "A beautiful pearl."
@@ -843,9 +843,9 @@ EggBeaterDesc:
 	db   "Dispels whirlpools"
 	next "on its own!@"
 
-MysteryBerryDesc:
-	db   "A self-restore"
-	next "for PP. (HOLD)@"
+SilverBerryDesc:
+	db   "Adds 5 PP upon"
+	next "hitting 0. (HOLD)@"
 
 DragonScaleDesc:
 	db   "Evolves certain"
