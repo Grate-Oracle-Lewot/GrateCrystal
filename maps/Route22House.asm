@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE22HOUSE_REAL_KAREN
-	const ROUTE22HOUSE_REAL_KOGA
+	const ROUTE22HOUSE_KAREN
+	const ROUTE22HOUSE_KOGA
 	const ROUTE22HOUSE_GIOVANNI
 	const ROUTE22HOUSE_JESSIE
 	const ROUTE22HOUSE_JAMES
@@ -16,8 +16,8 @@ Route22House_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .People
 
 .People:
-	disappear ROUTE22HOUSE_REAL_KAREN
-	disappear ROUTE22HOUSE_REAL_KOGA
+	disappear ROUTE22HOUSE_KAREN
+	disappear ROUTE22HOUSE_KOGA
 	disappear ROUTE22HOUSE_GIOVANNI
 	disappear ROUTE22HOUSE_JESSIE
 	disappear ROUTE22HOUSE_JAMES
@@ -36,7 +36,7 @@ Route22House_MapScripts:
 	endcallback
 
 .AppearKoga:
-	appear ROUTE22HOUSE_REAL_KOGA
+	appear ROUTE22HOUSE_KOGA
 	endcallback
 
 .AppearJenny:
@@ -71,7 +71,7 @@ Route22House_MapScripts:
 	endcallback
 
 .AppearKaren:
-	appear ROUTE22HOUSE_REAL_KAREN
+	appear ROUTE22HOUSE_KAREN
 	endcallback
 
 .AppearMrFuji:
@@ -85,57 +85,57 @@ Route22House_MapScripts:
 .End:
 	endcallback
 
-Route22HouseRealKarenScript:
+Route22HouseKarenScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
-	writetext Route22HouseRealKarenBeforeText
+	writetext Route22HouseKarenBeforeText
 	yesorno
 	iftrue .DoBattle
-	writetext Route22HouseRealKarenRefusedText
+	writetext Route22HouseKarenRefusedText
 	sjump Route22House_EndText
 
 .NoRematch:
-	writetext Route22HouseRealKarenAfterText
+	writetext Route22HouseKarenAfterText
 	sjump Route22House_EndText
 
 .DoBattle:
-	winlosstext Route22HouseRealKarenBeatenText, 0
-	loadtrainer REAL_KAREN, REAL_KAREN1
+	winlosstext Route22HouseKarenBeatenText, 0
+	loadtrainer KAREN, KAREN1
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
-	writetext Route22HouseRealKarenAfterText
+	writetext Route22HouseKarenAfterText
 Route22House_EndText:
 	waitbutton
 	closetext
 	end
 
-Route22HouseRealKogaScript:
+Route22HouseKogaScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
-	writetext Route22HouseRealKogaBeforeText
+	writetext Route22HouseKogaBeforeText
 	yesorno
 	iftrue .DoBattle
-	writetext Route22HouseRealKogaRefusedText
+	writetext Route22HouseKogaRefusedText
 	sjump Route22House_EndText
 
 .NoRematch:
-	writetext Route22HouseRealKogaAfterText
+	writetext Route22HouseKogaAfterText
 	sjump Route22House_EndText
 
 .DoBattle:
-	winlosstext Route22HouseRealKogaBeatenText, 0
-	loadtrainer REAL_KOGA, REAL_KOGA1
+	winlosstext Route22HouseKogaBeatenText, 0
+	loadtrainer KOGA, KOGA1
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
 	opentext
-	writetext Route22HouseRealKogaAfterText
+	writetext Route22HouseKogaAfterText
 	sjump Route22House_EndText
 
 Route22HouseLanceScript:
@@ -334,7 +334,7 @@ Route22HouseOfficerJennyScript:
 Route22HouseRadio:
 	jumptext Route22HouseRadioText
 
-Route22HouseRealKarenBeforeText:
+Route22HouseKarenBeforeText:
 	text "Those who lurk in"
 	line "the night will"
 
@@ -360,16 +360,16 @@ Route22HouseRealKarenBeforeText:
 	para "How about it?"
 	done
 
-Route22HouseRealKarenRefusedText:
+Route22HouseKarenRefusedText:
 	text "How disappointing…"
 	done
 
-Route22HouseRealKarenBeatenText:
+Route22HouseKarenBeatenText:
 	text "Well, aren't you"
 	line "good. I like you."
 	done
 
-Route22HouseRealKarenAfterText:
+Route22HouseKarenAfterText:
 	text "You understand"
 	line "what's important"
 	cont "about #MON."
@@ -383,7 +383,7 @@ Route22HouseRealKarenAfterText:
 	cont "battles."
 	done
 
-Route22HouseRealKogaBeforeText:
+Route22HouseKogaBeforeText:
 	text "My name is KOGA."
 
 	para "Once a GYM LEADER,"
@@ -407,16 +407,16 @@ Route22HouseRealKogaBeforeText:
 	cont "new team?"
 	done
 
-Route22HouseRealKogaRefusedText:
+Route22HouseKogaRefusedText:
 	text "Suit yourself."
 	done
 
-Route22HouseRealKogaBeatenText:
+Route22HouseKogaBeatenText:
 	text "Ah! You have prov-"
 	line "en your worth!"
 	done
 
-Route22HouseRealKogaAfterText:
+Route22HouseKogaAfterText:
 	text "You've bested me"
 	line "this time."
 
@@ -707,8 +707,8 @@ Route22House_MapEvents:
 	bg_event  3,  1, BGEVENT_READ, Route22HouseRadio
 
 	def_object_events
-	object_event  2,  2, SPRITE_REAL_KAREN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseRealKarenScript, EVENT_ROUTE_22_HOUSE_REAL_KAREN
-	object_event  3,  6, SPRITE_REAL_KOGA, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseRealKogaScript, EVENT_ROUTE_22_HOUSE_REAL_KOGA
+	object_event  2,  2, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseKarenScript, EVENT_ROUTE_22_HOUSE_KAREN
+	object_event  3,  6, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseKogaScript, EVENT_ROUTE_22_HOUSE_KOGA
 	object_event  7,  4, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_LEFT, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseGiovanniScript, EVENT_ROUTE_22_HOUSE_GIOVANNI
 	object_event  8,  1, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJessieScript, EVENT_ROUTE_22_HOUSE_JESSIE
 	object_event  7,  1, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HouseJamesScript, EVENT_ROUTE_22_HOUSE_JAMES
