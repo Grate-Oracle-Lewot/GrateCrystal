@@ -1,5 +1,5 @@
 	object_const_def
-	const BRUNOSROOM_BRUNO
+	const BRUNOSROOM_PERCY
 
 BrunosRoom_MapScripts:
 	def_scene_scripts
@@ -38,21 +38,21 @@ BrunosRoom_MapScripts:
 	waitsfx
 	end
 
-BrunoScript_Battle:
+PercyScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
-	iftrue BrunoScript_AfterBattle
-	writetext BrunoScript_BrunoBeforeText
+	iftrue PercyScript_AfterBattle
+	writetext PercyScript_PercyBeforeText
 	waitbutton
 	closetext
-	winlosstext BrunoScript_BrunoBeatenText, 0
-	loadtrainer BRUNO, BRUNO1
+	winlosstext PercyScript_PercyBeatenText, 0
+	loadtrainer PERCY, PERCY1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_BRUNO
 	opentext
-	writetext BrunoScript_BrunoDefeatText
+	writetext PercyScript_PercyDefeatText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -63,8 +63,8 @@ BrunoScript_Battle:
 	waitsfx
 	end
 
-BrunoScript_AfterBattle:
-	writetext BrunoScript_BrunoDefeatText
+PercyScript_AfterBattle:
+	writetext PercyScript_PercyDefeatText
 	waitbutton
 	closetext
 	end
@@ -76,7 +76,7 @@ BrunosRoom_EnterMovement:
 	step UP
 	step_end
 
-BrunoScript_BrunoBeforeText:
+PercyScript_PercyBeforeText:
 	text "Hi! I'm PERCIVAL,"
 	line "but people call me"
 	cont "PERCY."
@@ -91,11 +91,11 @@ BrunoScript_BrunoBeforeText:
 	para "Now! En garde!"
 	done
 
-BrunoScript_BrunoBeatenText:
+PercyScript_PercyBeatenText:
 	text "i'm gay"
 	done
 
-BrunoScript_BrunoDefeatText:
+PercyScript_PercyDefeatText:
 	text "I'm gonna go play"
 	line "with stationery."
 	done
@@ -114,4 +114,4 @@ BrunosRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1
+	object_event  5,  7, SPRITE_PERCY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PercyScript_Battle, -1
