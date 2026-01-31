@@ -10,7 +10,7 @@ else
 endc
 	db 45 ; catch rate
 	db 194 ; base exp
-	db PRZCUREBERRY, DRAGON_FANG ; items
+	db CHEWY_BERRY, DRAGON_FANG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ampharos/front.dimensions"
