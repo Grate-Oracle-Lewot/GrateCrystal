@@ -55,15 +55,15 @@ LoadBattleTowerSpecialTrainer::
 	jr z, BattleTowerLoadPryce
 	cp CLAIR
 	jr z, BattleTowerLoadClair
-	cp WILL
+	cp A_D
 	jr z, BattleTowerLoadAD
-	cp KOGA
+	cp LUCAS
 	jr z, BattleTowerLoadLucas
-	cp BRUNO
+	cp PERCY
 	jr z, BattleTowerLoadPercy
-	cp KAREN
+	cp GRATE_ORACLE
 	jr z, BattleTowerLoadLewot
-	cp REAL_KAREN
+	cp KAREN
 	jr z, BattleTowerLoadKaren
 	cp BROCK
 	jr z, BattleTowerLoadBrock
@@ -81,7 +81,7 @@ LoadBattleTowerSpecialTrainer::
 	jr z, BattleTowerLoadBlaine
 	cp BLUE
 	jr z, BattleTowerLoadBlue
-	cp REAL_KOGA
+	cp KOGA
 	jr z, BattleTowerLoadKoga
 	cp CHAMPION
 	jr z, BattleTowerLoadLance
