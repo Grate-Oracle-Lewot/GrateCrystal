@@ -2483,7 +2483,7 @@ RestorePP:
 	jr z, .restore_all
 
 	ld c, 5
-	cp MYSTERYBERRY
+	cp SILVER_BERRY
 	jr z, .restore_some
 
 	ld c, 10
