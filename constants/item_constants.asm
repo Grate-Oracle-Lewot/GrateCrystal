@@ -76,17 +76,17 @@
 	const SILVER_WING  ; 44
 	const MOOMOO_MILK  ; 45
 	const QUICK_CLAW   ; 46
-	const PSNCUREBERRY ; 47
+	const SWEET_BERRY  ; 47
 	const GOLD_LEAF    ; 48
 	const SOFT_SAND    ; 49
 	const SHARP_BEAK   ; 4a
-	const PRZCUREBERRY ; 4b
-	const BURNT_BERRY  ; 4c
-	const ICE_BERRY    ; 4d
+	const CHEWY_BERRY  ; 4b
+	const SPICY_BERRY  ; 4c
+	const MINTY_BERRY  ; 4d
 	const POISON_BARB  ; 4e
 	const KINGS_ROCK   ; 4f
 	const BITTER_BERRY ; 50
-	const MINT_BERRY   ; 51
+	const SOUR_BERRY   ; 51
 	const RED_APRICORN ; 52
 	const TINYMUSHROOM ; 53
 	const BIG_MUSHROOM ; 54
@@ -111,7 +111,7 @@
 	const SMOKE_BALL   ; 67
 	const NEVERMELTICE ; 68
 	const MAGNET       ; 69
-	const MIRACLEBERRY ; 6a
+	const FRANKENBERRY ; 6a
 	const PEARL        ; 6b
 	const BLACK_PEARL  ; 6c
 	const EVERSTONE    ; 6d
@@ -152,7 +152,7 @@
 	const FLOATIE      ; 90
 	const DISCO_BALL   ; 91
 	const EGG_BEATER   ; 92
-	const MYSTERYBERRY ; 93
+	const SILVER_BERRY ; 93
 	const DRAGON_SCALE ; 94
 	const TIMER_BALL   ; 95
 	const PICKAXE      ; 96
