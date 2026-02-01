@@ -142,7 +142,7 @@ CianwoodDarkroomBrunoPhoto:
 	waitbutton
 	closetext
 	winlosstext CianwoodDarkroomBrunoPhotoWinLossText, CianwoodDarkroomBrunoPhotoWinLossText
-	loadtrainer REAL_BRUNO, REAL_BRUNO1
+	loadtrainer BRUNO, BRUNO1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_BRUNO
@@ -179,7 +179,7 @@ CianwoodDarkroomWillPhoto:
 	waitbutton
 	closetext
 	winlosstext CianwoodDarkroomWillPhotoWinLossText, CianwoodDarkroomWillPhotoWinLossText
-	loadtrainer REAL_WILL, REAL_WILL1
+	loadtrainer WILL, WILL1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_DARKROOM_BEAT_WILL
