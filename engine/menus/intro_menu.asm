@@ -558,7 +558,7 @@ OakSpeech:
 	call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, KAREN
+	ld a, GRATE_ORACLE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -596,7 +596,7 @@ OakSpeech:
 
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, KAREN
+	ld a, GRATE_ORACLE
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
