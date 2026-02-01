@@ -711,7 +711,7 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 .loadpokeballgfx:
 	ld a, [wOtherTrainerClass]
 	ld de, UbeqcTransition
-	cp KAREN
+	cp GRATE_ORACLE
 	ret z
 	ld de, MissingnoTransition
 	cp AEROBONES
