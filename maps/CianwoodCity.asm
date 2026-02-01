@@ -60,7 +60,7 @@ CianwoodCitySuicuneAndEusine:
 	closetext
 	winlosstext EusineBeatenText, 0
 	setlasttalked CIANWOODCITY_EUSINE
-	loadtrainer MYSTICALMAN, EUSINE
+	loadtrainer MYSTIC, EUSINE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
