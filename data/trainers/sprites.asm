@@ -9,11 +9,11 @@ BTTrainerClassSprites:
 	db SPRITE_JASMINE       ; JASMINE
 	db SPRITE_PRYCE         ; PRYCE
 	db SPRITE_CLAIR         ; CLAIR
-	db SPRITE_WILL          ; A_D
-	db SPRITE_KOGA          ; LUCAS
-	db SPRITE_BRUNO         ; PERCY
-	db SPRITE_KAREN         ; GRATE_ORACLE
-	db SPRITE_REAL_KAREN    ; KAREN
+	db SPRITE_A_D           ; A_D
+	db SPRITE_LUCAS         ; LUCAS
+	db SPRITE_PERCY         ; PERCY
+	db SPRITE_LEWOT         ; GRATE_ORACLE
+	db SPRITE_KAREN         ; KAREN
 	db SPRITE_BROCK         ; BROCK
 	db SPRITE_MISTY         ; MISTY
 	db SPRITE_SURGE         ; LT_SURGE
@@ -22,7 +22,7 @@ BTTrainerClassSprites:
 	db SPRITE_SABRINA       ; SABRINA
 	db SPRITE_BLAINE        ; BLAINE
 	db SPRITE_BLUE          ; BLUE
-	db SPRITE_REAL_KOGA     ; KOGA
+	db SPRITE_KOGA          ; KOGA
 	db SPRITE_PHARMACIST    ; WILL
 	db SPRITE_BLACK_BELT    ; BRUNO
 	db SPRITE_BEAUTY        ; LORELEI
@@ -39,7 +39,7 @@ BTTrainerClassSprites:
 	db SPRITE_LASS          ; COOLTRAINER_F
 	db SPRITE_CHRIS         ; CAL
 	db SPRITE_KRIS          ; CAL_F
-	db SPRITE_SUPER_NERD    ; MYSTIC
+	db SPRITE_EUSINE        ; MYSTIC
 	db SPRITE_SAGE          ; OLD
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; SCHOOLBOY
