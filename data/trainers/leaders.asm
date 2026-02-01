@@ -9,10 +9,10 @@ GymLeaders:
 	db JASMINE
 	db CHUCK
 	db CLAIR
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db A_D
+	db LUCAS
+	db PERCY
+	db GRATE_ORACLE
 	db CHAMPION
 	db RED
 ; fallthrough
