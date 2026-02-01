@@ -21,19 +21,19 @@ PnP_HiddenPeople_BeatE4:
 	db SABRINA
 	db BLAINE
 	db BLUE
-	db WILL
-	db BRUNO
-	db KOGA
+	db A_D
+	db LUCAS
+	db PERCY
 	db BOSS
-	db REAL_KAREN
-	db REAL_KOGA
+	db KAREN
+	db KOGA
 	db RIVAL1
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL2
 	db LORELEI
 	db AGATHA
-	db REAL_BRUNO
-	db REAL_WILL
+	db BRUNO
+	db WILL
 	db RED
 	db -1
