@@ -42,17 +42,17 @@ BattleTowerText::
 	jr z, .pryce
 	cp CLAIR
 	jr z, .clair
-	cp REAL_KOGA
-	jr z, .koga
-	cp REAL_KAREN
-	jr z, .karen
-	cp WILL
-	jr z, .a_d
 	cp KOGA
-	jr z, .lucas
-	cp BRUNO
-	jr z, .percy
+	jr z, .koga
 	cp KAREN
+	jr z, .karen
+	cp A_D
+	jr z, .a_d
+	cp LUCAS
+	jr z, .lucas
+	cp PERCY
+	jr z, .percy
+	cp GRATE_ORACLE
 	jr z, .lewot
 	cp CHAMPION
 	jr z, .lance
