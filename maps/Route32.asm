@@ -424,6 +424,9 @@ Route32UnionCaveSign:
 Route32PokecenterSign:
 	jumpstd PokecenterSignScript
 
+Route32HiddenTinymushroom:
+	hiddenitem TINYMUSHROOM, EVENT_ROUTE_32_HIDDEN_TINYMUSHROOM
+
 Route32HiddenGreatBall:
 	hiddenitem GREAT_BALL, EVENT_ROUTE_32_HIDDEN_GREAT_BALL
 
@@ -782,6 +785,7 @@ Route32_MapEvents:
 	bg_event  9,  1, BGEVENT_READ, Route32RuinsSign
 	bg_event 10, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
+	bg_event  6,  9, BGEVENT_ITEM, Route32HiddenTinymushroom
 	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 	bg_event 14, 86, BGEVENT_ITEM, Route32HiddenDuskBall
