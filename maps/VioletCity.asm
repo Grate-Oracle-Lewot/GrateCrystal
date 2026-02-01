@@ -9,6 +9,7 @@
 	const VIOLETCITY_POKE_BALL2
 	const VIOLETCITY_SUPER_NERD1
 	const VIOLETCITY_SUPER_NERD2
+	const VIOLETCITY_POKE_BALL3
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -112,6 +113,9 @@ VioletCityPPUp:
 
 VioletCityRareCandy:
 	itemball RARE_CANDY
+
+VioletCityBigMushroom:
+	itemball BIG_MUSHROOM
 
 VioletCityFruitTree:
 	fruittree FRUITTREE_VIOLET_CITY
@@ -364,3 +368,4 @@ VioletCity_MapEvents:
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
 	object_event  6,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdGregg, -1
 	object_event 35,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdJay, -1
+	object_event  3, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityBigMushroom, EVENT_VIOLET_CITY_BIG_MUSHROOM
