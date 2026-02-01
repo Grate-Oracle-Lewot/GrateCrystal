@@ -18,13 +18,13 @@ TrainerBeautyMaeve:
 	closetext
 	end
 
-TrainerMysticalmanOlie:
-	trainer MYSTICALMAN, OLIE, EVENT_BEAT_MYSTICALMAN_OLIE, MysticalmanOlieSeenText, MysticalmanOlieBeatenText, 0, .AfterScript
+TrainerMysticOlie:
+	trainer MYSTIC, OLIE, EVENT_BEAT_MYSTIC_OLIE, MysticOlieSeenText, MysticOlieBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext MysticalmanOlieAfterBattleText
+	writetext MysticOlieAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -51,17 +51,17 @@ BeautyMaeveAfterBattleText:
 	line "eat way to relax."
 	done
 
-MysticalmanOlieSeenText:
+MysticOlieSeenText:
 	text "Behold the grace"
 	line "and potency of my"
 	cont "#MON!"
 	done
 
-MysticalmanOlieBeatenText:
+MysticOlieBeatenText:
 	text "Serenity now!"
 	done
 
-MysticalmanOlieAfterBattleText:
+MysticOlieAfterBattleText:
 	text "What's it take to"
 	line "become a MYSTIC?"
 
@@ -98,4 +98,4 @@ Route28_MapEvents:
 
 	def_object_events
 	object_event 16, 14, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyMaeve, -1
-	object_event  7,  8, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerMysticalmanOlie, -1
+	object_event  7,  8, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerMysticOlie, -1
