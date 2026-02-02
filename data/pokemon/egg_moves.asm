@@ -173,11 +173,11 @@ PsyduckEggMoves:
 
 MankeyEggMoves:
 	db ROCK_WRECKER
-	db JUMP_KICK
-	db ROLLING_KICK
 	db COUNTER
 	db REVERSAL
-	db BEAT_UP
+	db LOW_KICK
+	db JUMP_KICK
+	db MACH_PUNCH
 	db -1 ; end
 
 GrowlitheEggMoves:
