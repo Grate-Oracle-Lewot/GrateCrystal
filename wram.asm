@@ -3021,8 +3021,6 @@ wVictoryRoadSceneID::                             db
 
 wEventFlags:: flag_array NUM_EVENTS
 
-	ds 2
-
 wCurBox:: db
 
 wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES
@@ -3101,6 +3099,9 @@ wKenjiBreakTimer:: ds 2 ; Kenji
 wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
+
+wVermilionGymTrashCan1:: db
+wVermilionGymTrashCan2:: db
 
 wStepCount:: db
 wPoisonStepCount:: db
