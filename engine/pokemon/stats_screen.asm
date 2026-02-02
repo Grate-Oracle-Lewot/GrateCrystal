@@ -798,11 +798,9 @@ LoadOrangePage:
 ; Print caught location
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
-	jr z, .unknown
-	cp LANDMARK_EVENT
 	jr z, .event
-	cp LANDMARK_GIFT
-	jr z, .gift
+	cp NUM_LANDMARKS
+	jr nc, .event
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
@@ -810,16 +808,8 @@ LoadOrangePage:
 	hlcoord 1, 16
 	jp PlaceString
 
-.unknown
-	ld de, MetUnknownString
-	jr .string
-
 .event
 	ld de, MetEventString
-	jr .string
-
-.gift
-	ld de, MetGiftString
 	jr .string
 
 HiddenPowerTypeString:
@@ -831,14 +821,8 @@ MetAtString:
 MetLevelString:
 	db "<EVO_LV>@"
 
-MetUnknownString:
-	db "?????@"
-
 MetEventString:
 	db "FATEFUL EVENT@"
-
-MetGiftString:
-	db "TRADE/GIFT@"
 
 IDNoString:
 	db "<ID>№.@"
