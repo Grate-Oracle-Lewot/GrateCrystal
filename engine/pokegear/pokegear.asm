@@ -191,7 +191,7 @@ TownMap_GetCurrentLandmark:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LANDMARK_SPECIAL
+	and a ; LANDMARK_SPECIAL
 	ret nz
 	ld a, [wBackupMapGroup]
 	ld b, a
@@ -207,7 +207,7 @@ TownMap_InitCursorAndPlayerIconPositions:
 	call GetWorldMapLocation
 	cp LANDMARK_FAST_SHIP
 	jr z, .FastShip
-	cp LANDMARK_SPECIAL
+	and a ; LANDMARK_SPECIAL
 	jr nz, .LoadLandmark
 	ld a, [wBackupMapGroup]
 	ld b, a
@@ -588,6 +588,7 @@ Pokegear_UpdateClock:
 	inc hl
 	ld [hl], $7f
 	ret
+
 .Morn
 	ld de, .MornStr
 	jr .got_tod
@@ -643,6 +644,8 @@ PokegearMap_KantoMap:
 PokegearMap_JohtoMap:
 	ld d, LANDMARK_SILVER_CAVE
 	ld e, LANDMARK_NEW_BARK_TOWN
+	; fallthrough
+
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -818,7 +821,7 @@ PokegearRadio_Init:
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
 	ld [hl], $08
-	call _UpdateRadioStation
+	call UpdateRadioStation
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
@@ -1071,19 +1074,6 @@ PokegearPhone_GetDPad:
 	call PokegearPhone_UpdateDisplayList
 	jp WaitBGMap
 
-PokegearPhone_UpdateCursor:
-	ld a, " "
-for y, PHONE_DISPLAY_HEIGHT
-	hlcoord 1, 4 + y * 2
-	ld [hl], a
-endr
-	hlcoord 1, 4
-	ld a, [wPokegearPhoneCursorPosition]
-	ld bc, 2 * SCREEN_WIDTH
-	call AddNTimes
-	ld [hl], "▶"
-	ret
-
 PokegearPhone_UpdateDisplayList:
 	hlcoord 1, 3
 	ld b, PHONE_DISPLAY_HEIGHT * 2 + 1
@@ -1124,7 +1114,20 @@ PokegearPhone_UpdateDisplayList:
 	ld [wPokegearPhoneDisplayPosition], a
 	cp PHONE_DISPLAY_HEIGHT
 	jr c, .loop
-	jp PokegearPhone_UpdateCursor
+	; fallthrough
+
+PokegearPhone_UpdateCursor:
+	ld a, " "
+for y, PHONE_DISPLAY_HEIGHT
+	hlcoord 1, 4 + y * 2
+	ld [hl], a
+endr
+	hlcoord 1, 4
+	ld a, [wPokegearPhoneCursorPosition]
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
+	ld [hl], "▶"
+	ret
 
 PokegearPhone_DeletePhoneNumber:
 	ld hl, wPhoneList
@@ -1451,9 +1454,6 @@ AnimateTuningKnob:
 	inc [hl]
 .update
 ; fallthrough
-
-_UpdateRadioStation:
-; called from engine/gfx/sprite_anims.asm
 
 UpdateRadioStation:
 	ld hl, wRadioTuningKnob
@@ -1965,7 +1965,6 @@ _TownMap:
 
 .okay2
 	dec [hl]
-
 .next
 	push de
 	ld a, [wTownMapCursorLandmark]
@@ -2336,9 +2335,8 @@ FlyMap:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-; If we're not in a valid location, i.e. Pokecenter floor 2F,
-; the backup map information is used.
-	cp LANDMARK_SPECIAL
+; If we're not in a valid location, i.e. Pokecenter floor 2F, the backup map information is used.
+	and a ; LANDMARK_SPECIAL
 	jr nz, .CheckRegion
 	ld a, [wBackupMapGroup]
 	ld b, a
@@ -2364,14 +2362,11 @@ FlyMap:
 	ret
 
 .KantoFlyMap:
-; The event that there are no flypoints enabled in a map is not
-; accounted for. As a result, if you attempt to select a flypoint
-; when there are none enabled, the game will crash. Additionally,
-; the flypoint selection has a default starting point that
-; can be flown to even if none are enabled.
-; To prevent both of these things from happening when the player
-; enters Kanto, fly access is restricted until Indigo Plateau is
-; visited and its flypoint enabled.
+; The event that there are no flypoints enabled in a map is not accounted for.
+; As a result, if you attempt to select a flypoint when there are none enabled, the game will crash.
+; Additionally, the flypoint selection has a default starting point that can be flown to even if none are enabled.
+; To prevent both of these things from happening when the player enters Kanto,
+; fly access is restricted until Indigo Plateau is visited and its flypoint enabled.
 	push af
 	ld c, SPAWN_INDIGO
 	call HasVisitedSpawn
