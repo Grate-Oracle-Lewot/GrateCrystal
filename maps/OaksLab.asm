@@ -103,7 +103,7 @@ OaksLabPoster2:
 	jumptext OaksLabPoster2Text
 
 OaksLabTrashcan:
-	jumptext OaksLabTrashcanText
+	jumpstd TrashCanScript
 
 OakWelcomeKantoText:
 	text "OAK: Ah, <PLAY_G>!"
@@ -248,11 +248,6 @@ OaksLabPoster2Text:
 
 	para "Use it in a timely"
 	line "manner."
-	done
-
-OaksLabTrashcanText:
-	text "There's nothing in"
-	line "here…"
 	done
 
 OaksLabHealingMachineText1:
