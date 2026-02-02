@@ -822,7 +822,7 @@ MetLevelString:
 	db "<EVO_LV>@"
 
 MetEventString:
-	db "FATEFUL EVENT@"
+	db "FATEFUL ENCOUNTER@"
 
 IDNoString:
 	db "<ID>№.@"
