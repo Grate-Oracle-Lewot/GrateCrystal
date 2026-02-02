@@ -5,6 +5,7 @@
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
 	const RUINSOFALPHOUTSIDE_SUPER_NERD
+	const RUINSOFALPHOUTSIDE_POKE_BALL
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -123,6 +124,9 @@ TrainerSuperNerdStan:
 	waitbutton
 	closetext
 	end
+
+RuinsOfAlphOutsideEscapeRope:
+	itemball ESCAPE_ROPE
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
@@ -305,3 +309,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdStan, -1
+	object_event  1, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOutsideEscapeRope, EVENT_RUINS_OF_ALPH_OUTSIDE_ESCAPE_ROPE
