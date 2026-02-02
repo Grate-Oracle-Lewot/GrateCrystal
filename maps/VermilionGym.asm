@@ -42,6 +42,10 @@ VermilionGymTrashCanScript:
 	iftrue .open_lock
 	checkevent EVENT_VERMILION_GYM_SWITCH_1
 	iftrue .reset_switches
+	opentext
+	writetext VermilionGymTrashCanText
+	sjump VermilionGym_EndText
+
 .trash_can
 	jumpstd TrashCanScript
 
@@ -55,9 +59,7 @@ VermilionGymTrashCanScript:
 	writetext VermilionGymFoundFirstSwitchText
 	playsound SFX_ENTER_DOOR
 	setevent EVENT_VERMILION_GYM_SWITCH_1
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 .second_switch
 	writetext VermilionGymFoundSecondSwitchText
@@ -71,8 +73,6 @@ VermilionGymTrashCanScript:
 
 .reset_switches
 	opentext
-	writetext VermilionGymTrashCanText
-	promptbutton
 	writetext VermilionGymResetSwitchesText
 	playsound SFX_WRONG
 	waitbutton
@@ -225,9 +225,7 @@ VermilionGymSurgeScript:
 	playsound SFX_2ND_PLACE
 	waitsfx
 	writetext LtSurgePikachuBedText
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 .GotThunderTM:
 	writetext LtSurgeFightDoneText
@@ -243,9 +241,7 @@ TrainerGentlemanGregory:
 	endifjustbattled
 	opentext
 	writetext GentlemanGregoryAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 TrainerGuitaristVincent:
 	trainer GUITARIST, VINCENT, EVENT_BEAT_GUITARIST_VINCENT, GuitaristVincentSeenText, GuitaristVincentBeatenText, 0, .Script
@@ -254,9 +250,7 @@ TrainerGuitaristVincent:
 	endifjustbattled
 	opentext
 	writetext GuitaristVincentAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 TrainerJugglerHorton:
 	trainer JUGGLER, HORTON, EVENT_BEAT_JUGGLER_HORTON, JugglerHortonSeenText, JugglerHortonBeatenText, 0, .Script
@@ -265,9 +259,7 @@ TrainerJugglerHorton:
 	endifjustbattled
 	opentext
 	writetext JugglerHortonAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 VermilionGymGuideScript:
 	faceplayer
@@ -275,12 +267,11 @@ VermilionGymGuideScript:
 	checkevent EVENT_BEAT_LTSURGE
 	iftrue .VermilionGymGuideWinScript
 	writetext VermilionGymGuideText
-	waitbutton
-	closetext
-	end
+	sjump VermilionGym_EndText
 
 .VermilionGymGuideWinScript:
 	writetext VermilionGymGuideWinText
+VermilionGym_EndText:
 	waitbutton
 	closetext
 	end
