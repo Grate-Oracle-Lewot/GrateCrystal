@@ -64,10 +64,15 @@ VermilionGymTrashCanScript:
 .second_switch
 	writetext VermilionGymFoundSecondSwitchText
 	waitbutton
-	playsound SFX_ENTER_DOOR
 	setevent EVENT_VERMILION_GYM_SWITCH_2
+	playsound SFX_TRANSACTION
+	pause 21
+	earthquake 42
+	pause 21
+	playsound SFX_STRENGTH
 	changeblock 4, 4, $01 ; floor
 	reloadmappart
+	earthquake 42
 	closetext
 	end
 
