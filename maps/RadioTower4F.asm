@@ -91,13 +91,13 @@ TrainerRocketFortress:
 	closetext
 	end
 
-TrainerGruntF4:
-	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script
+TrainerGruntF5:
+	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF4AfterBattleText
+	writetext GruntF5AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -222,7 +222,7 @@ RocketFortressAfterBattleText:
 	cont "back."
 	done
 
-GruntF4SeenText:
+GruntF5SeenText:
 	text "Don't I think"
 	line "#MON are cute?"
 
@@ -233,12 +233,12 @@ GruntF4SeenText:
 	line "yours!"
 	done
 
-GruntF4BeatenText:
+GruntF5BeatenText:
 	text "Oh, no! They're so"
 	line "useless!"
 	done
 
-GruntF4AfterBattleText:
+GruntF5AfterBattleText:
 	text "I love my"
 	line "beautiful self!"
 
@@ -296,5 +296,5 @@ RadioTower4F_MapEvents:
 	object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMRadio4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerRocketFortress, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF5, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  4,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
