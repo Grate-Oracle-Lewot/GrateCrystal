@@ -118,11 +118,11 @@ RocketBaseMurkrow:
 	end
 
 SlowpokeTailGrunt:
-	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script
+	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, SlowpokeTailGruntSeenText, SlowpokeTailGruntBeatenText, 0, SlowpokeTailGruntScript
 
-GruntF5Script:
+SlowpokeTailGruntScript:
 	opentext
-	writetext GruntF5AfterBattleText
+	writetext SlowpokeTailGruntAfterBattleText
 	waitbutton
 	closetext
 	setevent EVENT_LEARNED_SLOWPOKETAIL
@@ -411,7 +411,7 @@ RocketBaseMurkrowText:
 	para "LECHONK."
 	done
 
-GruntF5SeenText:
+SlowpokeTailGruntSeenText:
 	text "Do I know the"
 	line "password?"
 
@@ -421,12 +421,12 @@ GruntF5SeenText:
 	line "going to get it!"
 	done
 
-GruntF5BeatenText:
+SlowpokeTailGruntBeatenText:
 	text "All right. Stop."
 	line "I'll tell you."
 	done
 
-GruntF5AfterBattleText:
+SlowpokeTailGruntAfterBattleText:
 	text "The password to"
 	line "the boss's room is"
 
