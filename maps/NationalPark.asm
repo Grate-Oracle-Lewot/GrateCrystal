@@ -162,7 +162,7 @@ TrainerPokefanmWilliam:
 	end
 
 TrainerPokefanfBeverly:
-	trainer POKEFANF, BEVERLY1, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverlySeenText, PokefanfBeverlyBeatenText, 0, .Script
+	trainer POKEFANF, BEVERLY, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverlySeenText, PokefanfBeverlyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
@@ -185,7 +185,7 @@ TrainerPokefanfBeverly:
 	askforphonenumber PHONE_POKEFAN_BEVERLY
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
-	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY1
+	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
