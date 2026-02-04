@@ -279,13 +279,13 @@ TrainerBurglarEddie:
 	closetext
 	end
 
-TrainerGruntF3:
-	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script
+TrainerGruntF4:
+	trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF3AfterBattleText
+	writetext GruntF4AfterBattleText
 	waitbutton
 GoldenrodUndergroundSwitchRoomEntrances_DontToggle:
 	closetext
@@ -860,7 +860,7 @@ SwitchRoomText_Switch1:
 	line "SWITCH 1."
 	done
 
-GruntF3SeenText:
+GruntF4SeenText:
 	text "Are you lost? No,"
 	line "you can't be."
 
@@ -872,11 +872,11 @@ GruntF3SeenText:
 	cont "scared about!"
 	done
 
-GruntF3BeatenText:
+GruntF4BeatenText:
 	text "How could you?"
 	done
 
-GruntF3AfterBattleText:
+GruntF4AfterBattleText:
 	text "Go wherever you'd"
 	line "like! Get lost!"
 	cont "See if I care!"
@@ -939,7 +939,7 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMUnder2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1
 	object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
 	object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL
