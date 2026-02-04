@@ -84,13 +84,13 @@ TrainerGruntMSpecialist:
 	closetext
 	end
 
-TrainerGruntF2:
-	trainer GRUNTF, GRUNTF_2, EVENT_BEAT_ROCKET_GRUNTF_2, GruntF2SeenText, GruntF2BeatenText, 0, .Script
+TrainerGruntF3:
+	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GruntF2AfterBattleText
+	writetext GruntF3AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -441,7 +441,7 @@ GruntMSpecialistAfterBattleText:
 	cont "whatever we like."
 	done
 
-GruntF2SeenText:
+GruntF3SeenText:
 	text "Hahaha!"
 
 	para "How boring."
@@ -454,11 +454,11 @@ GruntF2SeenText:
 	line "amused!"
 	done
 
-GruntF2BeatenText:
+GruntF3BeatenText:
 	text "Wh-who are you?"
 	done
 
-GruntF2AfterBattleText:
+GruntF3AfterBattleText:
 	text "You beat me, and"
 	line "I won't forget it!"
 	done
@@ -724,7 +724,7 @@ RadioTower2F_MapEvents:
 	object_event  1,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMRadio2_1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  8,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMSpecialist, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  4,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMRadio2_2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 10,  5, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGruntF2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 10,  5, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  0,  1, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower2FBlackBelt1Script, EVENT_RADIO_TOWER_BLACKBELT_BLOCKS_STAIRS
 	object_event  1,  1, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RadioTower2FBlackBelt2Script, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event 12,  1, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_OW_PINK, OBJECTTYPE_SCRIPT, 0, RadioTowerJigglypuff, -1
