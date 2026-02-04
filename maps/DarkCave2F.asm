@@ -9,7 +9,7 @@ DarkCave2F_MapScripts:
 	def_callbacks
 
 TrainerBlackbeltJackie:
-	trainer BLACKBELT_T, KENJI1, EVENT_BEAT_BLACKBELT_JACKIE, BlackbeltJackieSeenText, BlackbeltJackieBeatenText, 0, .Script
+	trainer BLACKBELT_T, JACKIE, EVENT_BEAT_BLACKBELT_JACKIE, BlackbeltJackieSeenText, BlackbeltJackieBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -20,7 +20,7 @@ TrainerBlackbeltJackie:
 	end
 
 TrainerBlackbeltBruce:
-	trainer BLACKBELT_T, KENJI2, EVENT_BEAT_BLACKBELT_BRUCE, BlackbeltBruceSeenText, BlackbeltBruceBeatenText, 0, .Script
+	trainer BLACKBELT_T, BRUCE, EVENT_BEAT_BLACKBELT_BRUCE, BlackbeltBruceSeenText, BlackbeltBruceBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
