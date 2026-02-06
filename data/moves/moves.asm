@@ -177,7 +177,7 @@ Moves:
 	move KINESIS,      EFFECT_SP_ATK_UP_2,         0, PSYCHIC_TYPE, STATUS,   100 percent,     15,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, FLYING,       STATUS,   100 percent,     10,   0
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         100, FIGHTING,     PHYSICAL,  90 percent + 2, 20,   0
-	move GLARE,        EFFECT_PARALYZE,            0, DARK,         STATUS,    84 percent + 2, 15,   0
+	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,       STATUS,    84 percent + 2, 15,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE, SPECIAL,  100 percent,     15,   0
 	move DRAGON_PULSE, EFFECT_NORMAL_HIT,         90, DRAGON,       SPECIAL,  100 percent,     10,   0
 	move DAZZLY_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY,        SPECIAL,  100 percent,     15,   0
