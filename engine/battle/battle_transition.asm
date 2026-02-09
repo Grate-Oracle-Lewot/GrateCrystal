@@ -287,7 +287,7 @@ StartTrainerBattle_Flash:
 	inc b
 	ld a, b
 	cp NUM_BATTLETRANSITION_FLASHES
-	jr z, StartTrainerBattle_NextScene
+	jr nc, StartTrainerBattle_NextScene
 .inner_loop
 	call .DoFlashAnimation
 	jr c, .loop
