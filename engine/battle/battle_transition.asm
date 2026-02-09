@@ -1,13 +1,52 @@
 ; BattleTransitionJumptable.Jumptable indexes
-BATTLETRANSITION_CAVE             EQU $01
-BATTLETRANSITION_CAVE_STRONGER    EQU $09
-BATTLETRANSITION_NO_CAVE          EQU $10
-BATTLETRANSITION_NO_CAVE_STRONGER EQU $18
-BATTLETRANSITION_FINISH           EQU $20
-BATTLETRANSITION_END              EQU $80
+	const_def
+	const BATTLETRANSITION_LOAD_POKEBALL_GFX ; 0
+	const BATTLETRANSITION_SET_UP_BG_MAP     ; 1
+	const BATTLETRANSITION_FLASH             ; 2
+	const BATTLETRANSITION_DETERMINE_ANIM    ; 3
+NUM_SET_UP_PHASES EQU const_value
+	const BATTLETRANSITION_WAVY              ; 4
+	const_skip                               ; 5
+	const BATTLETRANSITION_ZOOM_TO_BLACK     ; 6
+	; no set up so no skip
+	const BATTLETRANSITION_SPIN              ; 7
+	const_skip                               ; 8
+	const BATTLETRANSITION_SCATTER           ; 9
+	const_skip                               ; a
+	const BATTLETRANSITION_FINISH            ; b
+
+; StartTrainerBattle_DetermineWhichAnimation.StartingPoints indexes
+BATTLETRANSITION_CAVE             EQU BATTLETRANSITION_WAVY
+BATTLETRANSITION_CAVE_STRONGER    EQU BATTLETRANSITION_ZOOM_TO_BLACK
+BATTLETRANSITION_NO_CAVE          EQU BATTLETRANSITION_SPIN
+BATTLETRANSITION_NO_CAVE_STRONGER EQU BATTLETRANSITION_SCATTER
+
+NUM_BATTLETRANSITION_FLASHES EQU 3
 
 BATTLETRANSITION_SQUARE EQU "8" ; $fe
 BATTLETRANSITION_BLACK  EQU "9" ; $ff
+
+; transition animations
+	const_def
+	const TRANS_CAVE             ; 0
+	const TRANS_CAVE_STRONGER    ; 1
+	const TRANS_NO_CAVE          ; 2
+	const TRANS_NO_CAVE_STRONGER ; 3
+
+; transition animation bits
+TRANS_STRONGER_F EQU 0 ; bit set in TRANS_CAVE_STRONGER and TRANS_NO_CAVE_STRONGER
+TRANS_NO_CAVE_F  EQU 1 ; bit set in TRANS_NO_CAVE and TRANS_NO_CAVE_STRONGER
+
+; quadrants
+	const_def
+	const UPPER_LEFT  ; 0
+	const UPPER_RIGHT ; 1
+	const LOWER_LEFT  ; 2
+	const LOWER_RIGHT ; 3
+
+; quadrant bits
+RIGHT_QUADRANT_F EQU 0 ; bit set in UPPER_RIGHT and LOWER_RIGHT
+LOWER_QUADRANT_F EQU 1 ; bit set in LOWER_LEFT and LOWER_RIGHT
 
 DoBattleTransition:
 	ld a, [wLinkMode]
@@ -45,7 +84,6 @@ DoBattleTransition:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	vc_hook FPA_link_fight_begin
 	ld [hl], $1
 
 .loop
@@ -83,7 +121,6 @@ DoBattleTransition:
 	ld a, $1 ; unnecessary bankswitch?
 	ldh [rSVBK], a
 	pop af
-	vc_hook FPA_link_fight_End4
 	ldh [hVBlank], a
 	jp DelayFrame
 
@@ -147,65 +184,37 @@ BattleTransitionJumptable:
 	jumptable .Jumptable, wJumptableIndex
 
 .Jumptable:
-	dw StartTrainerBattle_DetermineWhichAnimation    ; 00
+	; BATTLETRANSITION_LOAD_POKEBALL_GFX
+	dw StartTrainerBattle_LoadPokeBallGraphics
 
-	; BATTLETRANSITION_CAVE
-	dw StartTrainerBattle_LoadPokeBallGraphics       ; 01
-	dw StartTrainerBattle_SetUpBGMap                 ; 02
-	dw StartTrainerBattle_Flash                      ; 03
-	dw StartTrainerBattle_Flash                      ; 04
-	dw StartTrainerBattle_Flash                      ; 05
-	dw StartTrainerBattle_NextScene                  ; 06
-	dw StartTrainerBattle_SetUpForWavyOutro          ; 07
-	dw StartTrainerBattle_SineWave                   ; 08
+	; BATTLETRANSITION_SET_UP_BG_MAP
+	dw StartTrainerBattle_SetUpBGMap
 
-	; BATTLETRANSITION_CAVE_STRONGER
-	dw StartTrainerBattle_LoadPokeBallGraphics       ; 09
-	dw StartTrainerBattle_SetUpBGMap                 ; 0a
-	dw StartTrainerBattle_Flash                      ; 0b
-	dw StartTrainerBattle_Flash                      ; 0c
-	dw StartTrainerBattle_Flash                      ; 0d
-	dw StartTrainerBattle_NextScene                  ; 0e
-	; There is no setup for this one
-	dw StartTrainerBattle_ZoomToBlack                ; 0f
+	; BATTLETRANSITION_FLASH
+	dw StartTrainerBattle_Flash
 
-	; BATTLETRANSITION_NO_CAVE
-	dw StartTrainerBattle_LoadPokeBallGraphics       ; 10
-	dw StartTrainerBattle_SetUpBGMap                 ; 11
-	dw StartTrainerBattle_Flash                      ; 12
-	dw StartTrainerBattle_Flash                      ; 13
-	dw StartTrainerBattle_Flash                      ; 14
-	dw StartTrainerBattle_NextScene                  ; 15
-	dw StartTrainerBattle_SetUpForSpinOutro          ; 16
-	dw StartTrainerBattle_SpinToBlack                ; 17
+	; BATTLETRANSITION_DETERMINE_ANIM
+	dw StartTrainerBattle_DetermineWhichAnimation
 
-	; BATTLETRANSITION_NO_CAVE_STRONGER
-	dw StartTrainerBattle_LoadPokeBallGraphics       ; 18
-	dw StartTrainerBattle_SetUpBGMap                 ; 19
-	dw StartTrainerBattle_Flash                      ; 1a
-	dw StartTrainerBattle_Flash                      ; 1b
-	dw StartTrainerBattle_Flash                      ; 1c
-	dw StartTrainerBattle_NextScene                  ; 1d
-	dw StartTrainerBattle_SetUpForRandomScatterOutro ; 1e
-	dw StartTrainerBattle_SpeckleToBlack             ; 1f
+	; BATTLETRANSITION_WAVY
+	dw StartTrainerBattle_SetUpForWavyOutro
+	dw StartTrainerBattle_SineWave
+
+	; BATTLETRANSITION_ZOOM_TO_BLACK
+	dw StartTrainerBattle_ZoomToBlack
+
+	; BATTLETRANSITION_SPIN
+	dw StartTrainerBattle_SetUpForSpinOutro
+	dw StartTrainerBattle_SpinToBlack
+
+	; BATTLETRANSITION_SCATTER
+	dw StartTrainerBattle_SetUpForRandomScatterOutro
+	dw StartTrainerBattle_SpeckleToBlack
 
 	; BATTLETRANSITION_FINISH
-	dw StartTrainerBattle_Finish                     ; 20
-
-; transition animations
-	const_def
-	const TRANS_CAVE
-	const TRANS_CAVE_STRONGER
-	const TRANS_NO_CAVE
-	const TRANS_NO_CAVE_STRONGER
-
-; transition animation bits
-TRANS_STRONGER_F EQU 0 ; bit set in TRANS_CAVE_STRONGER and TRANS_NO_CAVE_STRONGER
-TRANS_NO_CAVE_F EQU 1 ; bit set in TRANS_NO_CAVE and TRANS_NO_CAVE_STRONGER
+	dw StartTrainerBattle_Finish
 
 StartTrainerBattle_DetermineWhichAnimation:
-; The screen flashes a different number of times depending on the level of
-; your lead Pokemon relative to the opponent's.
 	ld a, [wOtherTrainerClass]
 	and a
 	jr z, .wild
@@ -244,6 +253,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 	add hl, de
 	ld a, [hl]
 	ld [wJumptableIndex], a
+	farcall RespawnPlayerAndOpponent
 	ret
 
 .StartingPoints:
@@ -266,7 +276,19 @@ StartTrainerBattle_SetUpBGMap:
 	ldh [hBGMapMode], a
 	ret
 
+StartTrainerBattle_NextScene:
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
+
 StartTrainerBattle_Flash:
+rept NUM_BATTLETRANSITION_FLASHES
+	call .DoFlashAnimation
+endr
+	ret nc
+	jr StartTrainerBattle_NextScene
+
+.DoFlashAnimation:
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr z, .done
@@ -286,6 +308,12 @@ StartTrainerBattle_Flash:
 	and a
 	ret
 
+.done
+	xor a
+	ld [wBattleTransitionCounter], a
+	scf
+	ret
+
 .pals:
 	dc 3, 3, 2, 1
 	dc 3, 3, 3, 2
@@ -301,20 +329,7 @@ StartTrainerBattle_Flash:
 	dc 3, 2, 1, 0
 	dc 0, 0, 0, 1
 
-.done
-	xor a
-	ld [wBattleTransitionCounter], a
-	scf
-	; fallthrough
-
-StartTrainerBattle_NextScene:
-	ld hl, wJumptableIndex
-	inc [hl]
-	ret
-
 StartTrainerBattle_SetUpForWavyOutro:
-	vc_hook FPA_link_fight_End0
-	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
 	ldh [rSVBK], a
 	call StartTrainerBattle_NextScene
@@ -367,8 +382,6 @@ StartTrainerBattle_SineWave:
 	ret
 
 StartTrainerBattle_SetUpForSpinOutro:
-	vc_hook FPA_link_fight_End1
-	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
 	ldh [rSVBK], a
 	call StartTrainerBattle_NextScene
@@ -410,17 +423,6 @@ endr
 	ld a, BATTLETRANSITION_FINISH
 	ld [wJumptableIndex], a
 	ret
-
-; quadrants
-	const_def
-	const UPPER_LEFT
-	const UPPER_RIGHT
-	const LOWER_LEFT
-	const LOWER_RIGHT
-
-; quadrant bits
-RIGHT_QUADRANT_F EQU 0 ; bit set in UPPER_RIGHT and LOWER_RIGHT
-LOWER_QUADRANT_F EQU 1 ; bit set in LOWER_LEFT and LOWER_RIGHT
 
 .spin_quadrants:
 spin_quadrant: MACRO
@@ -510,8 +512,6 @@ ENDM
 .wedge5: db 4, 0, 3, 0, 3, 0, 2, 0, 2, 0, 1, 0, 1, 0, 1, -1
 
 StartTrainerBattle_SetUpForRandomScatterOutro:
-	vc_hook FPA_link_fight_End2
-	farcall RespawnPlayerAndOpponent
 	ld a, BANK(wLYOverrides)
 	ldh [rSVBK], a
 	call StartTrainerBattle_NextScene
@@ -839,7 +839,6 @@ StartTrainerBattle_DrawSineWave:
 	calc_sine_wave
 
 StartTrainerBattle_ZoomToBlack:
-	vc_hook	FPA_link_fight_End3
 	farcall RespawnPlayerAndOpponent
 	ld de, .boxes
 
