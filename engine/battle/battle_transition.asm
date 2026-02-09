@@ -282,11 +282,17 @@ StartTrainerBattle_NextScene:
 	ret
 
 StartTrainerBattle_Flash:
-rept NUM_BATTLETRANSITION_FLASHES
+	ld b, -1
+.loop
+	inc b
+	ld a, b
+	cp NUM_BATTLETRANSITION_FLASHES
+	jr z, StartTrainerBattle_NextScene
+.inner_loop
 	call .DoFlashAnimation
-endr
-	ret nc
-	jr StartTrainerBattle_NextScene
+	jr c, .loop
+	call DelayFrame
+	jr .inner_loop
 
 .DoFlashAnimation:
 	ld a, [wTimeOfDayPalset]
