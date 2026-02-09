@@ -69,13 +69,7 @@ Gen2ToGen2LinkComms:
 .player_1
 	ld de, MUSIC_NONE
 	call PlayMusic
-	vc_patch NetworkDelay4
-if DEF(_CRYSTAL11_VC)
-	ld c, 26
-else
 	ld c, 3
-endc
-	vc_patch_end
 	call DelayFrames
 	xor a
 	ldh [rIF], a
@@ -1783,13 +1777,7 @@ GetIncompatibleMonName:
 	jp GetPokemonName
 
 EnterTimeCapsule:
-	vc_patch NetworkDelay2
-if DEF(_CRYSTAL11_VC)
-	ld c, 26
-else
 	ld c, 10
-endc
-	vc_patch_end
 	call DelayFrames
 	ld a, $4
 	call Link_EnsureSync
@@ -1988,13 +1976,7 @@ CheckLinkTimeout_Gen2:
 	ld a, $6
 	ld [wPlayerLinkAction], a
 	ld hl, wLinkTimeoutFrames
-	vc_patch NetworkDelay6
-if DEF(_CRYSTAL11_VC)
-	ld a, $3
-else
 	ld a, 1
-endc
-	vc_patch_end
 	ld [hli], a
 	ld [hl], 50
 	call Link_CheckCommunicationError
@@ -2053,13 +2035,7 @@ Link_CheckCommunicationError:
 	ret
 
 .AcknowledgeSerial:
-	vc_patch NetworkDelay3
-if DEF(_CRYSTAL11_VC)
-	ld b, 26
-else
 	ld b, 10
-endc
-	vc_patch_end
 .loop
 	call DelayFrame
 	call LinkDataReceived
