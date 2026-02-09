@@ -53,14 +53,12 @@ BattleAnimRunScript:
 	bit BATTLE_SCENE, a
 	jr z, .disabled
 
-	vc_hook Reduce_move_anim_flashing
 	call BattleAnimClearHud
 	call RunBattleAnimScript
 
 	call BattleAnimAssignPals
 	call BattleAnimRequestPals
 
-	vc_hook Stop_reducing_move_anim_flashing
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a
@@ -633,7 +631,6 @@ BattleAnimCmd_5GFX:
 .loop
 	ld a, [wBattleAnimGFXTempTileID]
 	cp (vTiles1 - vTiles0) / LEN_2BPP_TILE - BATTLEANIM_BASE_TILE
-	vc_hook FPA_042801_Begin
 	ret nc
 	call GetBattleAnimByte
 	ld [hli], a
