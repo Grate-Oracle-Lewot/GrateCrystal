@@ -380,7 +380,6 @@ Script_yesorno:
 	ld a, TRUE
 .no
 	ld [wScriptVar], a
-	vc_hook E_YESNO
 	ret
 
 Script_loadmenu:
