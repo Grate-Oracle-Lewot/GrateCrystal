@@ -88,8 +88,8 @@ DoBattleTransition:
 
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a ; BATTLETRANSITION_END?
-	jr nz, .done
+	cp BATTLETRANSITION_FINISH
+	jr nc, .done
 	call BattleTransitionJumptable
 	call DelayFrame
 	jr .loop
@@ -265,7 +265,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 
 StartTrainerBattle_Finish:
 	call ClearSprites
-	ld a, BATTLETRANSITION_END
+	ld a, BATTLETRANSITION_FINISH
 	ld [wJumptableIndex], a
 	ret
 
