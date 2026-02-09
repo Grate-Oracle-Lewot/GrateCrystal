@@ -37,18 +37,11 @@ DoMysteryGift:
 	; Prepare the first of two messages for wMysteryGiftPartnerData
 	farcall StageDataForMysteryGift
 	call ClearMysteryGiftTrainer
-	vc_patch infrared_fake_0
-if DEF(_CRYSTAL11_VC)
-	farcall StagePartyDataForMysteryGift
-	call ClearMysteryGiftTrainer
-	nop
-else
+
 	ld a, 2
 	ld [wMysteryGiftMessageCount], a
 	ld a, wMysteryGiftPartnerDataEnd - wMysteryGiftPartnerData
 	ld [wMysteryGiftStagedDataLength], a
-endc
-	vc_patch_end
 
 	ldh a, [rIE]
 	push af
