@@ -34,9 +34,43 @@ roms := \
 	GrateCrystal_NoPokemonCenterHealing.gbc \
 	GrateCrystal_LittleCup.gbc \
 	GrateCrystal_Alt_MetronomeOnly.gbc \
-	GrateCrystal_Alt_VanillaTypes.gbc \
-	GrateCrystal11.gbc
-patches := GrateCrystal11.patch
+	GrateCrystal_Alt_VanillaTypes.gbc
+patches := \
+	GrateCrystal_KantoStarters.patch \
+	GrateCrystal_EvolvedJohtoStarters.patch \
+	GrateCrystal_EvolvedKantoStarters.patch \
+	GrateCrystal_PikachuEeveeStarters.patch \
+	GrateCrystal_PikachuSandshrewMarillStarters.patch \
+	GrateCrystal_SixPikachuStarters.patch \
+	GrateCrystal_JynxMagmarElectabuzzStarters.patch \
+	GrateCrystal_HitmonStarters.patch \
+	GrateCrystal_NidoranStarters.patch \
+	GrateCrystal_DoduoMagnemiteDiglettStarters.patch \
+	GrateCrystal_TaurosMiltankGirafarigStarters.patch \
+	GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.patch \
+	GrateCrystal_SlowpokeSlugmaStarters.patch \
+	GrateCrystal_ShuckleSmeargleDelibirdStarters.patch \
+	GrateCrystal_NewStarters1.patch \
+	GrateCrystal_NewStarters2.patch \
+	GrateCrystal_FossilStarters.patch \
+	GrateCrystal_EvolvedFossilStarters.patch \
+	GrateCrystal_DratiniLarvitarStarters.patch \
+	GrateCrystal_DragoniteTyranitarStarters.patch \
+	GrateCrystal_LegendaryBirdStarters.patch \
+	GrateCrystal_LegendaryBeastStarters.patch \
+	GrateCrystal_MewDittoMewtwoStarters.patch \
+	GrateCrystal_HoOhLugiaStarters.patch \
+	GrateCrystal_CelebiWobbuffetStarters.patch \
+	GrateCrystal_Alt_MissingNo.patch \
+	GrateCrystal_Alt_MissingnoStarters.patch \
+	GrateCrystal_Alt_Turbin.patch \
+	GrateCrystal_Alt_AbraShellderStarters.patch \
+	GrateCrystal_StartWithHMReplacementItems.patch \
+	GrateCrystal_NoExperienceGains.patch \
+	GrateCrystal_NoPokemonCenterHealing.patch \
+	GrateCrystal_LittleCup.patch \
+	GrateCrystal_Alt_MetronomeOnly.patch \
+	GrateCrystal_Alt_VanillaTypes.patch
 
 rom_obj := \
 	audio.o \
@@ -56,44 +90,42 @@ rom_obj := \
 	gfx/tilesets.o \
 	lib/mobile/main.o
 
-GrateCrystal_obj                                     := $(rom_obj:.o=.o)
-GrateCrystal_KantoStarters_obj                       := $(rom_obj:.o=kanto.o)
-GrateCrystal_EvolvedJohtoStarters_obj                := $(rom_obj:.o=evolve.o)
-GrateCrystal_EvolvedKantoStarters_obj                := $(rom_obj:.o=kantevo.o)
-GrateCrystal_PikachuEeveeStarters_obj                := $(rom_obj:.o=letsgo.o)
-GrateCrystal_PikachuSandshrewMarillStarters_obj      := $(rom_obj:.o=mice.o)
-GrateCrystal_SixPikachuStarters_obj                  := $(rom_obj:.o=six.o)
-GrateCrystal_JynxMagmarElectabuzzStarters_obj        := $(rom_obj:.o=jinx.o)
-GrateCrystal_HitmonStarters_obj                      := $(rom_obj:.o=hit.o)
-GrateCrystal_NidoranStarters_obj                     := $(rom_obj:.o=nido.o)
-GrateCrystal_DoduoMagnemiteDiglettStarters_obj       := $(rom_obj:.o=trio.o)
-GrateCrystal_TaurosMiltankGirafarigStarters_obj      := $(rom_obj:.o=cattle.o)
-GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj  := $(rom_obj:.o=far.o)
-GrateCrystal_SlowpokeSlugmaStarters_obj              := $(rom_obj:.o=slow.o)
-GrateCrystal_ShuckleSmeargleDelibirdStarters_obj     := $(rom_obj:.o=shucks.o)
-GrateCrystal_NewStarters1_obj                        := $(rom_obj:.o=new1.o)
-GrateCrystal_NewStarters2_obj                        := $(rom_obj:.o=new2.o)
-GrateCrystal_FossilStarters_obj                      := $(rom_obj:.o=fossil.o)
-GrateCrystal_EvolvedFossilStarters_obj               := $(rom_obj:.o=evossil.o)
-GrateCrystal_DratiniLarvitarStarters_obj             := $(rom_obj:.o=pseudo.o)
-GrateCrystal_DragoniteTyranitarStarters_obj          := $(rom_obj:.o=pseudevo.o)
-GrateCrystal_LegendaryBirdStarters_obj               := $(rom_obj:.o=bird.o)
-GrateCrystal_LegendaryBeastStarters_obj              := $(rom_obj:.o=beast.o)
-GrateCrystal_MewDittoMewtwoStarters_obj              := $(rom_obj:.o=mew.o)
-GrateCrystal_HoOhLugiaStarters_obj                   := $(rom_obj:.o=dragon.o)
-GrateCrystal_CelebiWobbuffetStarters_obj             := $(rom_obj:.o=onion.o)
-GrateCrystal_Alt_MissingNo_obj                       := $(rom_obj:.o=miss.o)
-GrateCrystal_Alt_MissingnoStarters_obj               := $(rom_obj:.o=no.o)
-GrateCrystal_Alt_Turbin_obj                          := $(rom_obj:.o=turbid.o)
-GrateCrystal_Alt_AbraShellderStarters_obj            := $(rom_obj:.o=startur.o)
-GrateCrystal_StartWithHMReplacementItems_obj         := $(rom_obj:.o=nohm.o)
-GrateCrystal_NoExperienceGains_obj                   := $(rom_obj:.o=noexp.o)
-GrateCrystal_NoPokemonCenterHealing_obj              := $(rom_obj:.o=centre.o)
-GrateCrystal_LittleCup_obj                           := $(rom_obj:.o=little.o)
-GrateCrystal_Alt_MetronomeOnly_obj                   := $(rom_obj:.o=metro.o)
-GrateCrystal_Alt_VanillaTypes_obj                    := $(rom_obj:.o=bland.o)
-GrateCrystal11_obj                                   := $(rom_obj:.o=11.o)
-GrateCrystal11_vc_obj                                := $(rom_obj:.o=11_vc.o)
+GrateCrystal_obj                                    := $(rom_obj:.o=.o)
+GrateCrystal_KantoStarters_obj                      := $(rom_obj:.o=kanto.o)
+GrateCrystal_EvolvedJohtoStarters_obj               := $(rom_obj:.o=evolve.o)
+GrateCrystal_EvolvedKantoStarters_obj               := $(rom_obj:.o=kantevo.o)
+GrateCrystal_PikachuEeveeStarters_obj               := $(rom_obj:.o=letsgo.o)
+GrateCrystal_PikachuSandshrewMarillStarters_obj     := $(rom_obj:.o=mice.o)
+GrateCrystal_SixPikachuStarters_obj                 := $(rom_obj:.o=six.o)
+GrateCrystal_JynxMagmarElectabuzzStarters_obj       := $(rom_obj:.o=jinx.o)
+GrateCrystal_HitmonStarters_obj                     := $(rom_obj:.o=hit.o)
+GrateCrystal_NidoranStarters_obj                    := $(rom_obj:.o=nido.o)
+GrateCrystal_DoduoMagnemiteDiglettStarters_obj      := $(rom_obj:.o=trio.o)
+GrateCrystal_TaurosMiltankGirafarigStarters_obj     := $(rom_obj:.o=cattle.o)
+GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj := $(rom_obj:.o=far.o)
+GrateCrystal_SlowpokeSlugmaStarters_obj             := $(rom_obj:.o=slow.o)
+GrateCrystal_ShuckleSmeargleDelibirdStarters_obj    := $(rom_obj:.o=shucks.o)
+GrateCrystal_NewStarters1_obj                       := $(rom_obj:.o=new1.o)
+GrateCrystal_NewStarters2_obj                       := $(rom_obj:.o=new2.o)
+GrateCrystal_FossilStarters_obj                     := $(rom_obj:.o=fossil.o)
+GrateCrystal_EvolvedFossilStarters_obj              := $(rom_obj:.o=evossil.o)
+GrateCrystal_DratiniLarvitarStarters_obj            := $(rom_obj:.o=pseudo.o)
+GrateCrystal_DragoniteTyranitarStarters_obj         := $(rom_obj:.o=pseudevo.o)
+GrateCrystal_LegendaryBirdStarters_obj              := $(rom_obj:.o=bird.o)
+GrateCrystal_LegendaryBeastStarters_obj             := $(rom_obj:.o=beast.o)
+GrateCrystal_MewDittoMewtwoStarters_obj             := $(rom_obj:.o=mew.o)
+GrateCrystal_HoOhLugiaStarters_obj                  := $(rom_obj:.o=dragon.o)
+GrateCrystal_CelebiWobbuffetStarters_obj            := $(rom_obj:.o=onion.o)
+GrateCrystal_Alt_MissingNo_obj                      := $(rom_obj:.o=miss.o)
+GrateCrystal_Alt_MissingnoStarters_obj              := $(rom_obj:.o=no.o)
+GrateCrystal_Alt_Turbin_obj                         := $(rom_obj:.o=turbid.o)
+GrateCrystal_Alt_AbraShellderStarters_obj           := $(rom_obj:.o=startur.o)
+GrateCrystal_StartWithHMReplacementItems_obj        := $(rom_obj:.o=nohm.o)
+GrateCrystal_NoExperienceGains_obj                  := $(rom_obj:.o=noexp.o)
+GrateCrystal_NoPokemonCenterHealing_obj             := $(rom_obj:.o=centre.o)
+GrateCrystal_LittleCup_obj                          := $(rom_obj:.o=little.o)
+GrateCrystal_Alt_MetronomeOnly_obj                  := $(rom_obj:.o=metro.o)
+GrateCrystal_Alt_VanillaTypes_obj                   := $(rom_obj:.o=bland.o)
 
 
 ### Build tools
@@ -114,50 +146,48 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp centre little metro bland crystal11 clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp centre little metro bland clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland
-grate:        GrateCrystal.gbc
-kanto:        GrateCrystal_KantoStarters.gbc
-evolve:       GrateCrystal_EvolvedJohtoStarters.gbc
-kantevo:      GrateCrystal_EvolvedKantoStarters.gbc
-letsgo:       GrateCrystal_PikachuEeveeStarters.gbc
-mice:         GrateCrystal_PikachuSandshrewMarillStarters.gbc
-six:          GrateCrystal_SixPikachuStarters.gbc
-jinx:         GrateCrystal_JynxMagmarElectabuzzStarters.gbc
-hit:          GrateCrystal_HitmonStarters.gbc
-nido:         GrateCrystal_NidoranStarters.gbc
-trio:         GrateCrystal_DoduoMagnemiteDiglettStarters.gbc
-cattle:       GrateCrystal_TaurosMiltankGirafarigStarters.gbc
-far:          GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.gbc
-slow:         GrateCrystal_SlowpokeSlugmaStarters.gbc
-shucks:       GrateCrystal_ShuckleSmeargleDelibirdStarters.gbc
-new1:         GrateCrystal_NewStarters1.gbc
-new2:         GrateCrystal_NewStarters2.gbc
-fossil:       GrateCrystal_FossilStarters.gbc
-evossil:      GrateCrystal_EvolvedFossilStarters.gbc
-pseudo:       GrateCrystal_DratiniLarvitarStarters.gbc
-pseudevo:     GrateCrystal_DragoniteTyranitarStarters.gbc
-bird:         GrateCrystal_LegendaryBirdStarters.gbc
-beast:        GrateCrystal_LegendaryBeastStarters.gbc
-mew:          GrateCrystal_MewDittoMewtwoStarters.gbc
-dragon:       GrateCrystal_HoOhLugiaStarters.gbc
-onion:        GrateCrystal_CelebiWobbuffetStarters.gbc
-miss:         GrateCrystal_Alt_MissingNo.gbc
-no:           GrateCrystal_Alt_MissingnoStarters.gbc
-turbid:       GrateCrystal_Alt_Turbin.gbc
-startur:      GrateCrystal_Alt_AbraShellderStarters.gbc
-nohm:         GrateCrystal_StartWithHMReplacementItems.gbc
-noexp:        GrateCrystal_NoExperienceGains.gbc
-centre:       GrateCrystal_NoPokemonCenterHealing.gbc
-little:       GrateCrystal_LittleCup.gbc
-metro:        GrateCrystal_Alt_MetronomeOnly.gbc
-bland:        GrateCrystal_Alt_VanillaTypes.gbc
-crystal11:    GrateCrystal11.gbc
-crystal11_vc: GrateCrystal11.patch
+grate:    GrateCrystal.gbc
+kanto:    GrateCrystal_KantoStarters.gbc
+evolve:   GrateCrystal_EvolvedJohtoStarters.gbc
+kantevo:  GrateCrystal_EvolvedKantoStarters.gbc
+letsgo:   GrateCrystal_PikachuEeveeStarters.gbc
+mice:     GrateCrystal_PikachuSandshrewMarillStarters.gbc
+six:      GrateCrystal_SixPikachuStarters.gbc
+jinx:     GrateCrystal_JynxMagmarElectabuzzStarters.gbc
+hit:      GrateCrystal_HitmonStarters.gbc
+nido:     GrateCrystal_NidoranStarters.gbc
+trio:     GrateCrystal_DoduoMagnemiteDiglettStarters.gbc
+cattle:   GrateCrystal_TaurosMiltankGirafarigStarters.gbc
+far:      GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.gbc
+slow:     GrateCrystal_SlowpokeSlugmaStarters.gbc
+shucks:   GrateCrystal_ShuckleSmeargleDelibirdStarters.gbc
+new1:     GrateCrystal_NewStarters1.gbc
+new2:     GrateCrystal_NewStarters2.gbc
+fossil:   GrateCrystal_FossilStarters.gbc
+evossil:  GrateCrystal_EvolvedFossilStarters.gbc
+pseudo:   GrateCrystal_DratiniLarvitarStarters.gbc
+pseudevo: GrateCrystal_DragoniteTyranitarStarters.gbc
+bird:     GrateCrystal_LegendaryBirdStarters.gbc
+beast:    GrateCrystal_LegendaryBeastStarters.gbc
+mew:      GrateCrystal_MewDittoMewtwoStarters.gbc
+dragon:   GrateCrystal_HoOhLugiaStarters.gbc
+onion:    GrateCrystal_CelebiWobbuffetStarters.gbc
+miss:     GrateCrystal_Alt_MissingNo.gbc
+no:       GrateCrystal_Alt_MissingnoStarters.gbc
+turbid:   GrateCrystal_Alt_Turbin.gbc
+startur:  GrateCrystal_Alt_AbraShellderStarters.gbc
+nohm:     GrateCrystal_StartWithHMReplacementItems.gbc
+noexp:    GrateCrystal_NoExperienceGains.gbc
+centre:   GrateCrystal_NoPokemonCenterHealing.gbc
+little:   GrateCrystal_LittleCup.gbc
+metro:    GrateCrystal_Alt_MetronomeOnly.gbc
+bland:    GrateCrystal_Alt_VanillaTypes.gbc
 
 clean: tidy
 	find gfx \
@@ -219,8 +249,6 @@ tidy:
 	      $(GrateCrystal_LittleCup_obj) \
 	      $(GrateCrystal_Alt_MetronomeOnly_obj) \
 	      $(GrateCrystal_Alt_VanillaTypes_obj) \
-	      $(GrateCrystal11_obj) \
-	      $(GrateCrystal11_vc_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
@@ -339,8 +367,6 @@ $(GrateCrystal_NoPokemonCenterHealing_obj):             RGBASMFLAGS += -D _NO_PO
 $(GrateCrystal_LittleCup_obj):                          RGBASMFLAGS += -D _LITTLE_CUP
 $(GrateCrystal_Alt_MetronomeOnly_obj):                  RGBASMFLAGS += -D _METRONOME_ONLY
 $(GrateCrystal_Alt_VanillaTypes_obj):                   RGBASMFLAGS += -D _VANILLA_TYPES
-$(GrateCrystal11_obj):                                  RGBASMFLAGS += -D _CRYSTAL11
-$(GrateCrystal11_vc_obj):                               RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
 %.patch: vc/%.constants.sym %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -399,8 +425,6 @@ $(foreach obj, $(GrateCrystal_NoPokemonCenterHealing_obj), $(eval $(call DEP,$(o
 $(foreach obj, $(GrateCrystal_LittleCup_obj), $(eval $(call DEP,$(obj),$(obj:little.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_MetronomeOnly_obj), $(eval $(call DEP,$(obj),$(obj:metro.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_VanillaTypes_obj), $(eval $(call DEP,$(obj),$(obj:bland.o=.asm))))
-$(foreach obj, $(GrateCrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
-$(foreach obj, $(GrateCrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
 # Dependencies for VC files that need to run scan_includes
 %.constants.sym: %.constants.asm $(shell tools/scan_includes %.constants.asm) | rgbdscheck.o
@@ -445,8 +469,6 @@ GrateCrystal_NoPokemonCenterHealing_opt              = -Cjv -t PM_CRYSTAL -i BYT
 GrateCrystal_LittleCup_opt                           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_MetronomeOnly_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_VanillaTypes_opt                    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_opt                                   = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal11_vc_opt                                = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
 GrateCrystal_base                                    = us
 GrateCrystal_KantoStarters_base                      = us
@@ -484,8 +506,6 @@ GrateCrystal_NoPokemonCenterHealing_base             = us
 GrateCrystal_LittleCup_base                          = us
 GrateCrystal_Alt_MetronomeOnly_base                  = us
 GrateCrystal_Alt_VanillaTypes_base                   = us
-GrateCrystal11_base                                  = us
-GrateCrystal11_vc_base                               = us
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
