@@ -285,7 +285,6 @@ Serial_PrintWaitingTextAndSyncAndExchangeNybble::
 	jp SafeLoadTempTilemapToTilemap
 
 WaitLinkTransfer::
-	vc_hook Wireless_WaitLinkTransfer
 	ld a, $ff
 	ld [wOtherPlayerLinkAction], a
 .loop
@@ -341,7 +340,6 @@ endc
 
 	ld a, [wOtherPlayerLinkAction]
 	ld [wOtherPlayerLinkMode], a
-	vc_hook Wireless_WaitLinkTransfer_ret
 	ret
 
 LinkTransfer::
