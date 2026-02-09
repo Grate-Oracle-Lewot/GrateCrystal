@@ -85,7 +85,6 @@ endc
 	ld hl, wLinkBattleRNPreamble
 	ld de, wEnemyMon
 	ld bc, SERIAL_RN_PREAMBLE_LENGTH + SERIAL_RNS_LENGTH
-	vc_hook Network360
 	call Serial_ExchangeBytes
 	ld a, SERIAL_NO_DATA_BYTE
 	ld [de], a
@@ -93,7 +92,6 @@ endc
 	ld hl, wLinkData
 	ld de, wOTPartyData
 	ld bc, SERIAL_PREAMBLE_LENGTH + NAME_LENGTH + 1 + PARTY_LENGTH + 1 + 2 + (PARTYMON_STRUCT_LENGTH + NAME_LENGTH * 2) * PARTY_LENGTH + 3
-	vc_hook Network361
 	call Serial_ExchangeBytes
 	ld a, SERIAL_NO_DATA_BYTE
 	ld [de], a
@@ -101,7 +99,6 @@ endc
 	ld hl, wPlayerPatchLists
 	ld de, wOTPatchLists
 	ld bc, 200
-	vc_hook Network362
 	call Serial_ExchangeBytes
 
 	ld a, [wLinkMode]
@@ -110,7 +107,6 @@ endc
 	ld hl, wLinkPlayerMail
 	ld de, wLinkOTMail
 	ld bc, wLinkPlayerMailEnd - wLinkPlayerMail
-	vc_hook Network363
 	call ExchangeBytes
 
 .not_trading
@@ -1288,7 +1284,6 @@ ExitLinkCommunications:
 	ldh [rSC], a
 	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
 	ldh [rSC], a
-	vc_hook ret_heya
 	ret
 
 LinkTradePlaceArrow:
@@ -1650,7 +1645,6 @@ LinkTrade:
 	ld de, String_TradeCompleted
 	call PlaceString
 	farcall Link_WaitBGMap
-	vc_hook save_game_end
 	ld c, 50
 	call DelayFrames
 	ld a, [wLinkMode]
@@ -1852,7 +1846,6 @@ WaitForOtherPlayerToExit:
 	ld [hl], a
 	ldh [hVBlank], a
 	ld [wLinkMode], a
-	vc_hook term_exit
 	ret
 
 SetBitsForLinkTradeRequest:
@@ -1903,15 +1896,6 @@ WaitForLinkedFriend:
 	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
 	ldh [rSC], a
 	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
-; This vc_hook causes the Virtual Console to set [hSerialConnectionStatus] to
-; USING_INTERNAL_CLOCK, which allows the player to proceed past the link
-; receptionist's "Please wait." It assumes that hSerialConnectionStatus is at
-; its original address.
-	vc_hook linkCable_fake_begin
-	vc_assert hSerialConnectionStatus == $ffcb, \
-		"hSerialConnectionStatus is no longer located at 00:ffcb."
-	vc_assert USING_INTERNAL_CLOCK == $02, \
-		"USING_INTERNAL_CLOCK is no longer equal to $02."
 	ldh [rSC], a
 	ld a, [wLinkTimeoutFrames]
 	dec a
@@ -2031,7 +2015,6 @@ endc
 Link_CheckCommunicationError:
 	xor a
 	ldh [hSerialReceivedNewData], a
-	vc_hook linkCable_fake_end
 	ld a, [wLinkTimeoutFrames]
 	ld h, a
 	ld a, [wLinkTimeoutFrames + 1]
@@ -2062,7 +2045,6 @@ Link_CheckCommunicationError:
 .CheckConnected:
 	call WaitLinkTransfer
 	ld hl, wLinkTimeoutFrames
-	vc_hook Network_RECHECK
 	ld a, [hli]
 	inc a
 	ret nz
@@ -2104,10 +2086,8 @@ TryQuickSave:
 	ld a, [wChosenCableClubRoom]
 	push af
 	farcall Link_SaveGame
-	vc_hook linkCable_block_input
 	ld a, TRUE
 	jr nc, .return_result
-	vc_hook linkCable_block_input2
 	xor a ; FALSE
 .return_result
 	ld [wScriptVar], a
@@ -2153,7 +2133,6 @@ CheckBothSelectedSameRoom:
 	ret
 
 TimeCapsule:
-	vc_hook to_play2_mons1
 	ld a, LINK_TIMECAPSULE
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
@@ -2164,7 +2143,6 @@ TimeCapsule:
 	ret
 
 TradeCenter:
-	vc_hook to_play2_trade
 	ld a, LINK_TRADECENTER
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
@@ -2175,7 +2153,6 @@ TradeCenter:
 	ret
 
 Colosseum:
-	vc_hook to_play2_battle
 	ld a, LINK_COLOSSEUM
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
@@ -2190,7 +2167,6 @@ CloseLink:
 	ld [wLinkMode], a
 	ld c, 3
 	call DelayFrames
-	vc_hook room_check
 	jp Link_ResetSerialRegistersAfterLinkClosure
 
 FailedLinkToPast:
