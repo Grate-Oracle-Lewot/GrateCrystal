@@ -806,7 +806,6 @@ endr
 .FinalPush:
 	ld hl, MltReq1Packet
 	call _PushSGBPals
-	vc_hook Network_RESET
 	jp SGBDelayCycles
 
 SGBBorder_PushBGPals:
