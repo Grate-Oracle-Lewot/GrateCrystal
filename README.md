@@ -543,10 +543,6 @@ make metro - Normal Johto starters, but all player and enemy Pokémon can only u
 
 make bland - Normal Johto starters, but all changes to the type chart and to Pokémon types have been reverted to modern standards. Keep in mind that no changes have been made (or unmade, as it were) to stats, learnsets, trainer parties, move types, or dialogue referring to types and matchups; at that point you're asking me to make a whole second hack that's mostly just undoing much of what I've done, which isn't happening. You can always make the rest of those edits yourself.
 
-make crystal11 - Supposed to build the 1.1 version of Pokémon Crystal, which implemented some minor bug fixes. Those fixes have been standardized in GrateCrystal, so this will now just build an identical ROM to the normal one, with the Johto starters. This and the next build are holdovers because I don't know how to properly remove their "hooks" from the code.
-
-make crystal11_vc - The Virtual Console version of Pokémon Crystal, which makes some additional changes on top of the 1.1 version, mostly related to linking with another player or disabling the Game Boy Printer. I recommend you just ignore this build.
-
 # Why remove some Pokémon and moves?
 
 In both cases, the maximum number is limited by the size of a byte. (That's 256, but actually a few less because some values are used for other purposes, such as indicating a lack of an entry or the end of the list.) There are possible ways around this, but they're a bit above my skill level. As for deciding to remove the baby Pokémon, I really didn't want to remove any Pokémon even if they were useless in battle (I think Pichu is cuter than Pikachu!), but I was also really excited about adding new Pokémon, and the way I see it, the main purpose of the baby Pokémon is to encourage the breeding mechanic by requiring it for Pokédex completion, but this particular hack is supposed to be pretty silly and breezy, so I doubt anyone will spend time breeding in it, or even completing the Pokédex for that matter. I kept Togepi because of the free egg and Tyrogue to properly connect the Hitmons, and the rest is recent history.
