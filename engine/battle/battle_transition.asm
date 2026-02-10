@@ -13,13 +13,16 @@ NUM_SET_UP_PHASES EQU const_value
 	const_skip                               ; 8
 	const BATTLETRANSITION_SCATTER           ; 9
 	const_skip                               ; a
-	const BATTLETRANSITION_FINISH            ; b
+	const BATTLETRANSITION_SCANLINE          ; b
+	const_skip                               ; c
+	const BATTLETRANSITION_FINISH            ; d
 
 ; StartTrainerBattle_DetermineWhichAnimation.StartingPoints indexes
 BATTLETRANSITION_CAVE             EQU BATTLETRANSITION_WAVY
 BATTLETRANSITION_CAVE_STRONGER    EQU BATTLETRANSITION_ZOOM_TO_BLACK
 BATTLETRANSITION_NO_CAVE          EQU BATTLETRANSITION_SPIN
 BATTLETRANSITION_NO_CAVE_STRONGER EQU BATTLETRANSITION_SCATTER
+BATTLETRANSITION_BOSS             EQU BATTLETRANSITION_SCANLINE
 
 NUM_BATTLETRANSITION_FLASHES EQU 3
 
@@ -211,6 +214,10 @@ BattleTransitionJumptable:
 	dw StartTrainerBattle_SetUpForRandomScatterOutro
 	dw StartTrainerBattle_SpeckleToBlack
 
+	; BATTLETRANSITION_SCANLINE
+	dw StartTrainerBattle_SetUpForScanlineOutro
+	dw StartTrainerBattle_Scanlines
+
 	; BATTLETRANSITION_FINISH
 	dw StartTrainerBattle_Finish
 
@@ -218,6 +225,10 @@ StartTrainerBattle_DetermineWhichAnimation:
 	ld a, [wOtherTrainerClass]
 	and a
 	jr z, .wild
+	cp EXECUTIVEM
+	jr nc, .boss
+	cp RIVAL2 + 1
+	jr c, .boss
 	farcall SetTrainerBattleLevel
 
 .wild
@@ -252,9 +263,14 @@ StartTrainerBattle_DetermineWhichAnimation:
 	ld hl, .StartingPoints
 	add hl, de
 	ld a, [hl]
+.done
 	ld [wJumptableIndex], a
 	farcall RespawnPlayerAndOpponent
 	ret
+
+.boss
+	ld a, BATTLETRANSITION_BOSS
+	jr .done
 
 .StartingPoints:
 ; entries correspond to TRANS_* constants
@@ -582,6 +598,41 @@ StartTrainerBattle_SpeckleToBlack:
 	cp BATTLETRANSITION_BLACK
 	jr z, .y_loop
 	ld [hl], BATTLETRANSITION_BLACK
+	ret
+
+StartTrainerBattle_SetUpForScanlineOutro:
+	call StartTrainerBattle_NextScene
+	ld a, LOW(rSCX)
+	ldh [hLCDCPointer], a
+	xor a
+	ld [wBattleTransitionCounter], a
+	call WipeLYOverrides
+	ret
+
+StartTrainerBattle_Scanlines:
+	ld hl, wBattleTransitionCounter
+	ld a, [hl]
+	cp $50
+	jr nc, .end
+	inc [hl]
+	ld e, a
+	xor $ff ; switch scroll direction
+	inc a
+	ld d, a
+	ld hl, wLYOverrides
+	ld c, $48
+.loop
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	inc hl
+	dec c
+	jr nz, .loop
+	ret
+
+.end
+	ld a, BATTLETRANSITION_FINISH
+	ld [wJumptableIndex], a
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics:
