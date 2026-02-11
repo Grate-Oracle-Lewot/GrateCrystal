@@ -606,7 +606,30 @@ StartTrainerBattle_SetUpForScanlineOutro:
 	ldh [hLCDCPointer], a
 	xor a
 	ld [wBattleTransitionCounter], a
-	call WipeLYOverrides
+	; fallthrough
+
+WipeLYOverrides:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wLYOverrides)
+	ldh [rSVBK], a
+
+	ld hl, wLYOverrides
+	call .wipe
+	ld hl, wLYOverridesBackup
+	call .wipe
+
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.wipe
+	xor a
+	ld c, SCREEN_HEIGHT_PX
+.loop
+	ld [hli], a
+	dec c
+	jr nz, .loop
 	ret
 
 StartTrainerBattle_Scanlines:
@@ -867,30 +890,6 @@ opt b.X ; . = 0, X = 1
 	bigdw %...XXXXXXXXXXX..
 	bigdw %................
 popo
-
-WipeLYOverrides:
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
-
-	ld hl, wLYOverrides
-	call .wipe
-	ld hl, wLYOverridesBackup
-	call .wipe
-
-	pop af
-	ldh [rSVBK], a
-	ret
-
-.wipe
-	xor a
-	ld c, SCREEN_HEIGHT_PX
-.loop
-	ld [hli], a
-	dec c
-	jr nz, .loop
-	ret
 
 StartTrainerBattle_DrawSineWave:
 	calc_sine_wave
