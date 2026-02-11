@@ -35,10 +35,12 @@ BATTLETRANSITION_BLACK  EQU "9" ; $ff
 	const TRANS_CAVE_STRONGER    ; 1
 	const TRANS_NO_CAVE          ; 2
 	const TRANS_NO_CAVE_STRONGER ; 3
+	const TRANS_BOSS             ; 4
 
 ; transition animation bits
 TRANS_STRONGER_F EQU 0 ; bit set in TRANS_CAVE_STRONGER and TRANS_NO_CAVE_STRONGER
 TRANS_NO_CAVE_F  EQU 1 ; bit set in TRANS_NO_CAVE and TRANS_NO_CAVE_STRONGER
+TRANS_BOSS_F     EQU 2 ; bit set in TRANS_BOSS
 
 ; quadrants
 	const_def
@@ -263,14 +265,14 @@ StartTrainerBattle_DetermineWhichAnimation:
 	ld hl, .StartingPoints
 	add hl, de
 	ld a, [hl]
-.done
 	ld [wJumptableIndex], a
 	farcall RespawnPlayerAndOpponent
 	ret
 
 .boss
-	ld a, BATTLETRANSITION_BOSS
-	jr .done
+	ld de, 0
+	set TRANS_BOSS_F, e
+	jr .cave
 
 .StartingPoints:
 ; entries correspond to TRANS_* constants
@@ -278,6 +280,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 	db BATTLETRANSITION_CAVE_STRONGER
 	db BATTLETRANSITION_NO_CAVE
 	db BATTLETRANSITION_NO_CAVE_STRONGER
+	db BATTLETRANSITION_BOSS
 
 StartTrainerBattle_Finish:
 	call ClearSprites
