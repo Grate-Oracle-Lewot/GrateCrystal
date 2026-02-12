@@ -22,7 +22,7 @@ CrystalIntro:
 	and BUTTONS
 	jr nz, .ShutOffMusic
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call IntroSceneJumper
 	farcall PlaySpriteAnimations
@@ -1164,7 +1164,7 @@ IntroScene28:
 
 .done
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 Intro_Scene24_ApplyPaletteFade:
