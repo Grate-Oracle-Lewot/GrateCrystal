@@ -258,7 +258,7 @@ Function1704e1:
 .loop
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	ret nz
 	call .DoJumptable
 	farcall ReloadMapPart
@@ -341,7 +341,7 @@ Function1704e1:
 
 .pressed_a_or_b
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .NextJumptableFunction:
