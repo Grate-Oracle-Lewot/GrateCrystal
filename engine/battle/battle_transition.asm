@@ -93,8 +93,8 @@ DoBattleTransition:
 
 .loop
 	ld a, [wJumptableIndex]
-	cp BATTLETRANSITION_FINISH
-	jr nc, .done
+	bit JUMPTABLE_EXIT_F, a
+	jr nz, .done
 	call BattleTransitionJumptable
 	call DelayFrame
 	jr .loop
