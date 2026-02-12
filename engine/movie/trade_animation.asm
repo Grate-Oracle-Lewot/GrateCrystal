@@ -227,7 +227,7 @@ TradeAnim_NormalPals:
 
 DoTradeAnimation:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .finished
 	call .DoTradeAnimCommand
 	farcall PlaySpriteAnimations
@@ -297,7 +297,7 @@ DoTradeAnimation:
 
 TradeAnim_End:
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 TradeAnim_TubeToOT1:
