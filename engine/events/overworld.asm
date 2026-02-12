@@ -8,7 +8,7 @@ FieldMoveJumptable:
 	ld a, [wFieldMoveJumptableIndex]
 	rst JumpTable
 	ld [wFieldMoveJumptableIndex], a
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .okay
 	and a
 	ret
