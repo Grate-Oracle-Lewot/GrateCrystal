@@ -7,7 +7,7 @@ BankOfMom:
 	ld [wJumptableIndex], a
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call .RunJumptable
 	jr .loop
@@ -62,7 +62,7 @@ BankOfMom:
 	ld hl, MomLeavingText3
 	call PrintText
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .IsThisAboutYourMoney:
@@ -157,7 +157,7 @@ BankOfMom:
 	ld hl, MomStoredMoneyText
 	call PrintText
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .InsufficientFundsInWallet:
@@ -217,7 +217,7 @@ BankOfMom:
 	ld hl, MomTakenMoneyText
 	call PrintText
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .InsufficientFundsInBank:
@@ -244,7 +244,7 @@ BankOfMom:
 	ld hl, MomStartSavingMoneyText
 	call PrintText
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .StopSavingMoney:
@@ -258,7 +258,7 @@ BankOfMom:
 	ld hl, MomJustDoWhatYouCanText
 	call PrintText
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .SetClockForward:
