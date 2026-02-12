@@ -272,7 +272,11 @@ StartTrainerBattle_DetermineWhichAnimation:
 .boss
 	ld de, 0
 	set TRANS_BOSS_F, e
-	jr .cave
+	ld hl, .StartingPoints
+	add hl, de
+	ld a, [hl]
+	ld [wJumptableIndex], a
+	ret
 
 .StartingPoints:
 ; entries correspond to TRANS_* constants
