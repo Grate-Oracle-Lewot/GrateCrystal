@@ -131,7 +131,7 @@ OWCutAnimation:
 	call PlaySFX
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	ret nz
 	ld a, 36 * SPRITEOAMSTRUCT_LENGTH
 	ld [wCurSpriteOAMAddr], a
@@ -205,7 +205,7 @@ Cut_WaitAnimSFX:
 
 .finished
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 Cut_SpawnLeaf:
@@ -310,7 +310,7 @@ FlyFromAnim:
 	ld [wFrameCounter], a
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .exit
 	ld a, 0 * SPRITEOAMSTRUCT_LENGTH
 	ld [wCurSpriteOAMAddr], a
@@ -347,7 +347,7 @@ FlyToAnim:
 	ld [wFrameCounter], a
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .exit
 	ld a, 0 * SPRITEOAMSTRUCT_LENGTH
 	ld [wCurSpriteOAMAddr], a
@@ -410,7 +410,7 @@ FlyFunction_FrameTimer:
 
 .exit
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .SpawnLeaf:
