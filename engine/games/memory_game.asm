@@ -9,7 +9,6 @@
 	const MEMORYGAME_DELAY_PICK_AGAIN
 	const MEMORYGAME_REVEAL_ALL
 	const MEMORYGAME_ASK_PLAY_AGAIN
-MEMORYGAME_END_LOOP_F EQU 7
 
 ; Reward indices (see gfx/memory_game/memory_game.png)
 	const_def
@@ -75,7 +74,7 @@ _MemoryGame:
 
 .JumptableLoop:
 	ld a, [wJumptableIndex]
-	bit MEMORYGAME_END_LOOP_F, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .quit
 	call .ExecuteJumptable
 	farcall PlaySpriteAnimations
@@ -120,7 +119,7 @@ _MemoryGame:
 
 .NotPlaying:
 	ld hl, wJumptableIndex
-	set MEMORYGAME_END_LOOP_F, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .DeductCoins:
