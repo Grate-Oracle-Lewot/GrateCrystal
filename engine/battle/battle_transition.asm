@@ -284,7 +284,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 
 StartTrainerBattle_Finish:
 	call ClearSprites
-	ld a, BATTLETRANSITION_FINISH
+	ld a, JUMPTABLE_EXIT
 	ld [wJumptableIndex], a
 	ret
 
