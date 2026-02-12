@@ -947,7 +947,7 @@ StartTitleScreen:
 
 RunTitleScreen:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done_title
 	call TitleScreenScene
 	farcall SuicuneFrameIterator
@@ -1063,7 +1063,7 @@ TitleScreenMain:
 
 ; Return to the intro sequence.
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .end
@@ -1097,7 +1097,7 @@ TitleScreenEnd:
 
 ; Back to the intro.
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 Copyright:
