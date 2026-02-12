@@ -43,7 +43,7 @@ MagnetTrain:
 	ld a, [wJumptableIndex]
 	and a
 	jr z, .initialize
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	farcall PlaySpriteAnimations
 	call MagnetTrain_Jumptable
