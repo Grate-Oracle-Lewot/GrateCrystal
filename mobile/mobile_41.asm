@@ -718,7 +718,7 @@ Mobile_AlwaysReturnNotCarry:
 
 Function10635c:
 	ld a, [wMobileCommsJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	ret nz
 	ld a, [wMobileCommsJumptableIndex]
 	ld hl, .Jumptable
@@ -789,6 +789,7 @@ Function1063cc:
 	ld a, [wMobileCommsJumptableIndex]
 	inc a
 	ld [wMobileCommsJumptableIndex], a
+	; fallthrough
 
 Function1063d8:
 	ld hl, wcd42
@@ -868,7 +869,7 @@ Function106442:
 
 Function106453:
 	ld a, [wMobileCommsJumptableIndex]
-	set 7, a
+	set JUMPTABLE_EXIT_F, a
 	ld [wMobileCommsJumptableIndex], a
 	ld a, $4
 	ld [wcf64], a
