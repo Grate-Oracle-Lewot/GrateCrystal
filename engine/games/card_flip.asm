@@ -54,7 +54,7 @@ _CardFlip:
 	call PlayMusic
 .MasterLoop:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .leavethegame
 	call .CardFlip
 	jr .MasterLoop
@@ -309,7 +309,7 @@ _CardFlip:
 
 .Quit:
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 CardFlip_ShuffleDeck:
