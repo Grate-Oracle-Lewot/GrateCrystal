@@ -272,11 +272,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 .boss
 	ld de, 0
 	set TRANS_BOSS_F, e
-	ld hl, .StartingPoints
-	add hl, de
-	ld a, [hl]
-	ld [wJumptableIndex], a
-	ret
+	jr .cave
 
 .StartingPoints:
 ; entries correspond to TRANS_* constants
@@ -742,14 +738,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ld hl, .pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
-	cp DARKNESS_F
-	jr nz, .not_dark
-	ld hl, .darkpals
-.not_dark
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ld bc, 1 palettes
+	call AddNTimes
 	call .copypals
 	push hl
 	ld de, wBGPals1 palette PAL_BG_TEXT
@@ -759,12 +749,16 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ld de, wBGPals2 palette PAL_BG_TEXT
 	ld bc, 1 palettes
 	call CopyBytes
-	pop af
-	ldh [rSVBK], a
+
+	hlcoord 0, 0, wAttrmap
+	ld bc, SCREEN_AREA
+	ld a, PAL_BG_TEXT
+	call ByteFill
+
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	call DelayFrame
-	call BattleStart_CopyTilemapAtOnce
+	call CGBOnly_CopyTilemapAtOnce
 
 .nextscene
 	jp StartTrainerBattle_NextScene
@@ -791,9 +785,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 
 .pals:
 INCLUDE "gfx/overworld/trainer_battle.pal"
-
-.darkpals:
-INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
 .loadpokeballgfx:
 	ld a, [wOtherTrainerClass]
