@@ -22,7 +22,7 @@ TrainerCard:
 	call UpdateTime
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .quit
 	ldh a, [hJoyLast]
 	and B_BUTTON
@@ -93,7 +93,7 @@ TrainerCard:
 
 TrainerCard_Quit:
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 TrainerCard_Page1_LoadGFX:
