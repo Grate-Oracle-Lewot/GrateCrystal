@@ -13,16 +13,13 @@ NUM_SET_UP_PHASES EQU const_value
 	const_skip                               ; 8
 	const BATTLETRANSITION_SCATTER           ; 9
 	const_skip                               ; a
-	const BATTLETRANSITION_SCANLINE          ; b
-	const_skip                               ; c
-	const BATTLETRANSITION_FINISH            ; d
+	const BATTLETRANSITION_FINISH            ; b
 
 ; StartTrainerBattle_DetermineWhichAnimation.StartingPoints indexes
 BATTLETRANSITION_CAVE             EQU BATTLETRANSITION_WAVY
 BATTLETRANSITION_CAVE_STRONGER    EQU BATTLETRANSITION_ZOOM_TO_BLACK
 BATTLETRANSITION_NO_CAVE          EQU BATTLETRANSITION_SPIN
 BATTLETRANSITION_NO_CAVE_STRONGER EQU BATTLETRANSITION_SCATTER
-BATTLETRANSITION_BOSS             EQU BATTLETRANSITION_SCANLINE
 
 NUM_BATTLETRANSITION_FLASHES EQU 3
 
@@ -35,12 +32,10 @@ BATTLETRANSITION_BLACK  EQU "9" ; $ff
 	const TRANS_CAVE_STRONGER    ; 1
 	const TRANS_NO_CAVE          ; 2
 	const TRANS_NO_CAVE_STRONGER ; 3
-	const TRANS_BOSS             ; 4
 
 ; transition animation bits
 TRANS_STRONGER_F EQU 0 ; bit set in TRANS_CAVE_STRONGER and TRANS_NO_CAVE_STRONGER
 TRANS_NO_CAVE_F  EQU 1 ; bit set in TRANS_NO_CAVE and TRANS_NO_CAVE_STRONGER
-TRANS_BOSS_F     EQU 2 ; bit set in TRANS_BOSS
 
 ; quadrants
 	const_def
@@ -216,10 +211,6 @@ BattleTransitionJumptable:
 	dw StartTrainerBattle_SetUpForRandomScatterOutro
 	dw StartTrainerBattle_SpeckleToBlack
 
-	; BATTLETRANSITION_SCANLINE
-	dw StartTrainerBattle_SetUpForScanlineOutro
-	dw StartTrainerBattle_Scanlines
-
 	; BATTLETRANSITION_FINISH
 	dw StartTrainerBattle_Finish
 
@@ -227,10 +218,6 @@ StartTrainerBattle_DetermineWhichAnimation:
 	ld a, [wOtherTrainerClass]
 	and a
 	jr z, .wild
-	cp EXECUTIVEM
-	jr nc, .boss
-	cp RIVAL2 + 1
-	jr c, .boss
 	farcall SetTrainerBattleLevel
 
 .wild
@@ -269,18 +256,12 @@ StartTrainerBattle_DetermineWhichAnimation:
 	farcall RespawnPlayerAndOpponent
 	ret
 
-.boss
-	ld de, 0
-	set TRANS_BOSS_F, e
-	jr .cave
-
 .StartingPoints:
 ; entries correspond to TRANS_* constants
 	db BATTLETRANSITION_CAVE
 	db BATTLETRANSITION_CAVE_STRONGER
 	db BATTLETRANSITION_NO_CAVE
 	db BATTLETRANSITION_NO_CAVE_STRONGER
-	db BATTLETRANSITION_BOSS
 
 StartTrainerBattle_Finish:
 	call ClearSprites
