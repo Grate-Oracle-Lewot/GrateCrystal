@@ -530,7 +530,7 @@ Function117ab4:
 Function117acd:
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .asm_117ae2
 	call Function117ae9
 	farcall HDMATransferAttrmapAndTilemapToWRAMBank3
