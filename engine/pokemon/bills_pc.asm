@@ -20,7 +20,7 @@ _DepositPKMN:
 .loop
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call .RunJumptable
 	call DelayFrame
@@ -251,7 +251,7 @@ _WithdrawPKMN:
 .loop
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call .RunJumptable
 	call DelayFrame
@@ -484,7 +484,7 @@ _MovePKMNWithoutMail:
 .loop
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call .RunJumptable
 	call DelayFrame
@@ -750,7 +750,7 @@ BillsPC_IncrementJumptableIndex:
 
 BillsPC_EndJumptableLoop:
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 _StatsScreenDPad:
