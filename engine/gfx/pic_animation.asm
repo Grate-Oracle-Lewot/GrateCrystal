@@ -189,7 +189,7 @@ PokeAnim_Idle:
 PokeAnim_Play:
 	call PokeAnim_DoAnimScript
 	ld a, [wPokeAnimJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	ret z
 	call PokeAnim_PlaceGraphic
 	ld a, [wPokeAnimSceneIndex]
@@ -200,7 +200,7 @@ PokeAnim_Play:
 PokeAnim_Play2:
 	call PokeAnim_DoAnimScript
 	ld a, [wPokeAnimJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	ret z
 	ld a, [wPokeAnimSceneIndex]
 	inc a
@@ -426,7 +426,7 @@ PokeAnim_DoAnimScript:
 
 PokeAnim_End:
 	ld hl, wPokeAnimJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 PokeAnim_GetDuration:
@@ -468,21 +468,6 @@ PokeAnim_StopWaitAnim:
 	ld a, [wPokeAnimJumptableIndex]
 	dec a
 	ld [wPokeAnimJumptableIndex], a
-	ret
-
-PokeAnim_IsPikachu:
-	ld a, [wPokeAnimSpecies]
-	cp PIKACHU
-	ret
-
-PokeAnim_IsUnown:
-	ld a, [wPokeAnimSpecies]
-	cp UNOWN
-	ret
-
-PokeAnim_IsEgg:
-	ld a, [wPokeAnimSpecies]
-	cp EGG
 	ret
 
 PokeAnim_GetPointer:
@@ -903,18 +888,19 @@ PokeAnim_GetAttrmapCoord:
 	ret
 
 GetMonAnimPointer:
-	call PokeAnim_IsEgg
+	ld a, [wPokeAnimSpecies]
+	cp EGG
 	jr z, .egg
 
 	ld c, BANK(UnownAnimationPointers) ; aka BANK(UnownAnimationIdlePointers)
 	ld hl, UnownAnimationPointers
 	ld de, UnownAnimationIdlePointers
-	call PokeAnim_IsUnown
+	cp UNOWN
 	jr z, .unown_pikachu
 	ld c, BANK(PikachuAnimationPointers) ; aka BANK(PikachuAnimationIdlePointers)
 	ld hl, PikachuAnimationPointers
 	ld de, PikachuAnimationIdlePointers
-	call PokeAnim_IsPikachu
+	cp PIKACHU
 	jr z, .unown_pikachu
 	ld c, BANK(AnimationPointers) ; aka BANK(AnimationIdlePointers)
 	ld hl, AnimationPointers
@@ -977,15 +963,16 @@ PokeAnim_GetFrontpicDims:
 	ret
 
 GetMonFramesPointer:
-	call PokeAnim_IsEgg
+	ld a, [wPokeAnimSpecies]
+	cp EGG
 	jr z, .egg
 
-	call PokeAnim_IsUnown
+	cp UNOWN
 	ld b, BANK(UnownFramesPointers)
 	ld c, BANK(UnownsFrames)
 	ld hl, UnownFramesPointers
 	jr z, .got_frames
-	call PokeAnim_IsPikachu
+	cp PIKACHU
 	ld b, BANK(PikachuFramesPointers)
 	ld c, BANK(PikachusFrames)
 	ld hl, PikachuFramesPointers
@@ -1027,14 +1014,16 @@ GetMonFramesPointer:
 	ret
 
 GetMonBitmaskPointer:
-	call PokeAnim_IsEgg
+	ld a, [wPokeAnimSpecies]
+	cp EGG
 	jr z, .egg
 
-	call PokeAnim_IsUnown
+	cp UNOWN
 	ld a, BANK(UnownBitmasksPointers)
 	ld hl, UnownBitmasksPointers
 	jr z, .unown_pikachu
-	call PokeAnim_IsPikachu
+	ld a, [wPokeAnimSpecies]
+	cp PIKACHU
 	ld a, BANK(PikachuBitmasksPointers)
 	ld hl, PikachuBitmasksPointers
 	jr z, .unown_pikachu
@@ -1069,11 +1058,11 @@ GetMonBitmaskPointer:
 	ret
 
 PokeAnim_GetSpeciesOrUnown:
-	call PokeAnim_IsUnown
-	jr z, .unown
-	call PokeAnim_IsPikachu
-	jr z, .pikachu
 	ld a, [wPokeAnimSpecies]
+	cp UNOWN
+	jr z, .unown
+	cp PIKACHU
+	jr z, .pikachu
 	ret
 
 .unown
