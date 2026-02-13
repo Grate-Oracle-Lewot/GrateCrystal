@@ -736,6 +736,9 @@ StartTrainerBattle_LoadPokeBallGraphics:
 .pals:
 INCLUDE "gfx/overworld/trainer_battle.pal"
 
+.darkpals:
+INCLUDE "gfx/overworld/trainer_battle_dark.pal"
+
 .loadpokeballgfx:
 	ld a, [wOtherTrainerClass]
 	ld de, UbeqcTransition
