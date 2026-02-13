@@ -584,14 +584,6 @@ StartTrainerBattle_SpeckleToBlack:
 	ld [hl], BATTLETRANSITION_BLACK
 	ret
 
-StartTrainerBattle_SetUpForScanlineOutro:
-	call StartTrainerBattle_NextScene
-	ld a, LOW(rSCX)
-	ldh [hLCDCPointer], a
-	xor a
-	ld [wBattleTransitionCounter], a
-	; fallthrough
-
 WipeLYOverrides:
 	ldh a, [rSVBK]
 	push af
@@ -614,32 +606,6 @@ WipeLYOverrides:
 	ld [hli], a
 	dec c
 	jr nz, .loop
-	ret
-
-StartTrainerBattle_Scanlines:
-	ld hl, wBattleTransitionCounter
-	ld a, [hl]
-	cp $50
-	jr nc, .end
-	inc [hl]
-	ld e, a
-	xor $ff ; switch scroll direction
-	inc a
-	ld d, a
-	ld hl, wLYOverrides
-	ld c, $48
-.loop
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	inc hl
-	dec c
-	jr nz, .loop
-	ret
-
-.end
-	ld a, BATTLETRANSITION_FINISH
-	ld [wJumptableIndex], a
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics:
@@ -719,8 +685,14 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ld hl, .pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
-	ld bc, 1 palettes
-	call AddNTimes
+	cp DARKNESS_F
+	jr nz, .not_dark
+	ld hl, .darkpals
+.not_dark
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
 	call .copypals
 	push hl
 	ld de, wBGPals1 palette PAL_BG_TEXT
@@ -730,11 +702,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	ld de, wBGPals2 palette PAL_BG_TEXT
 	ld bc, 1 palettes
 	call CopyBytes
-
-	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, PAL_BG_TEXT
-	call ByteFill
+	pop af
+	ldh [rSVBK], a
 
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
