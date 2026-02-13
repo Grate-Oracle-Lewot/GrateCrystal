@@ -413,7 +413,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
 - Unown ! and ? added (eyes not droopy)
-- Rocket battle music applied to Executives, "R" transition blocks for all Rockets, and other new and beta transition elements
+- Rocket battle music applied to Executives, "R" transition blocks for all Rockets, and two other new transition block arrangements for special battles
 - Trainers automatically offer their phone numbers when defeated, they play encounter music when talked to for rematches, and their rematch parties are based solely on event progress instead of fight count
 - Flypoints for the Battle Tower and the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint
 - Default Fast text speed and Instant speed option
