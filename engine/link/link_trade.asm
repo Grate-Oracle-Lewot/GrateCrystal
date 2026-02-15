@@ -4,7 +4,7 @@ INCBIN "gfx/trade/border_tiles.2bpp"
 LoadMobileTradeBorderTilemap:
 	ld hl, MobileTradeBorderTilemap
 	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	jp CopyBytes
 
 MobileTradeBorderTilemap:
