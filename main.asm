@@ -511,6 +511,7 @@ INCLUDE "mobile/mobile_42.asm"
 SECTION "Title", ROMX
 
 INCLUDE "engine/movie/title.asm"
+INCLUDE "engine/events/magikarp.asm"
 
 
 SECTION "mobile45", ROMX
@@ -706,22 +707,15 @@ PokedexPicsKey:
 INCBIN "gfx/pokedex/slowpoke.2bpp"
 
 
-SECTION "Map GroupNums Names", ROMX
-
-INCLUDE "data/maps/map_names.asm"
-
-
-SECTION "Bank3E Overflow", ROMX
-
-INCLUDE "engine/link/time_capsule.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
-INCLUDE "engine/events/magikarp.asm"
-
-
 SECTION "Type Matchups", ROMX
 
 INCLUDE "data/types/type_matchups.asm"
 INCLUDE "data/types/inverse_type_matchups.asm"
+
+
+SECTION "Map GroupNums Names", ROMX
+
+INCLUDE "data/maps/map_names.asm"
 
 
 SECTION "Lewot Phone Data", ROMX
