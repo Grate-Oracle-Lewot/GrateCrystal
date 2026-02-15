@@ -1,6 +1,18 @@
 PrintMoveDescription:
 	push hl
 	ld hl, MoveDescriptions
+	call PrintMoveDescriptionOptimization
+	pop hl
+	jp PlaceString
+
+PrintMoveDescriptionScrunched:
+	push hl
+	ld hl, MoveDescriptionsScrunched
+	call PrintMoveDescriptionOptimization
+	pop hl
+	jp PlaceString
+
+PrintMoveDescriptionOptimization:
 	ld a, [wCurSpecies]
 	dec a
 	ld c, a
@@ -10,7 +22,8 @@ PrintMoveDescription:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	pop hl
-	jp PlaceString
+	ret
 
 INCLUDE "data/moves/descriptions.asm"
+
+INCLUDE "data/moves/descriptions_scrunched.asm"
