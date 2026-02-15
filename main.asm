@@ -135,6 +135,7 @@ INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/events/move_deleter.asm"
 INCLUDE "engine/events/move_reminder.asm"
 INCLUDE "engine/items/tmhm.asm"
+INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
@@ -636,17 +637,32 @@ SECTION "Nayru Dex", ROMX
 INCLUDE "engine/pokedex/pokedex.asm"
 
 
-SECTION "Print Move Description", ROMX
-
-INCLUDE "engine/pokemon/print_move_description.asm"
-
-
 SECTION "Miscellaneous Text", ROMX
 
 INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
+
+
+SECTION "bank76", ROMX
+
+INCLUDE "engine/pokemon/print_move_description_scrunched.asm"
+
+PokedexGFX:
+INCBIN "gfx/pokedex/pokedex.2bpp"
+
+PokedexSlowpokeGFX:
+INCBIN "gfx/pokedex/slowpoke.2bpp"
+
+Pokedex_ExtraTiles:
+INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
+
+Pokedex_PageNumTiles:
+INCBIN "gfx/pokedex/dex_pagenums.2bpp"
+
+PokedexPicsKey:
+INCBIN "gfx/pokedex/slowpoke.2bpp"
 
 
 SECTION "Print Party", ROMX
@@ -687,24 +703,6 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 SECTION "Voltorb Flip", ROMX
 
 INCLUDE "engine/games/voltorb_flip.asm"
-
-
-SECTION "DEX GFX 2", ROMX
-
-PokedexGFX:
-INCBIN "gfx/pokedex/pokedex.2bpp"
-
-PokedexSlowpokeGFX:
-INCBIN "gfx/pokedex/slowpoke.2bpp"
-
-Pokedex_ExtraTiles:
-INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
-
-Pokedex_PageNumTiles:
-INCBIN "gfx/pokedex/dex_pagenums.2bpp"
-
-PokedexPicsKey:
-INCBIN "gfx/pokedex/slowpoke.2bpp"
 
 
 SECTION "Type Matchups", ROMX
