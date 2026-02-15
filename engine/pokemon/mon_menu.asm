@@ -1316,8 +1316,8 @@ PlaceMoveData:
 
 ; Print move description
 .description
-	hlcoord 1, 14
-	predef PrintMoveDescription
+	hlcoord 1, 15
+	predef PrintMoveDescriptionScrunched
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
