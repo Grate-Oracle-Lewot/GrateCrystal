@@ -26,9 +26,7 @@ BattleIntro:
 	ld [wBattleMenuCursorPosition], a
 	xor a
 	ldh [hMapAnims], a
-	farcall PlayBattleMusic
-	farcall ShowLinkBattleParticipants
-	farcall FindFirstAliveMonAndStartBattle
+	farcall PlayBattleMusic_ShowLinkBattleParticipants_FindFirstAliveMonAndStartBattle
 	call DisableSpriteUpdates
 	farcall ClearBattleRAM
 	call InitEnemy
