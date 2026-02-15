@@ -628,9 +628,16 @@ INCLUDE "data/phone/text/parry_callee.asm"
 INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
-SECTION "Overflow Files", ROMX
+
+SECTION "Nayru Dex", ROMX
 
 INCLUDE "engine/pokedex/pokedex.asm"
+
+
+SECTION "Mystery Gift", ROMX
+
+INCLUDE "engine/link/mystery_gift.asm"
+INCLUDE "engine/link/mystery_gift_2.asm"
 
 
 SECTION "Miscellaneous Text", ROMX
@@ -665,6 +672,12 @@ SECTION "Battle Tower Text", ROMX
 INCLUDE "data/battle_tower/trainer_text.asm"
 
 
+SECTION "Battle Tower Additions", ROMX
+
+INCLUDE "engine/events/battle_tower/additions.asm"
+INCLUDE "engine/events/odd_egg.asm"
+
+
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
@@ -673,12 +686,6 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 SECTION "Voltorb Flip", ROMX
 
 INCLUDE "engine/games/voltorb_flip.asm"
-
-
-SECTION "Battle Tower Additions", ROMX
-
-INCLUDE "engine/events/battle_tower/additions.asm"
-INCLUDE "engine/events/odd_egg.asm"
 
 
 SECTION "DEX GFX 2", ROMX
