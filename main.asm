@@ -130,8 +130,14 @@ INCLUDE "engine/battle/link_result.asm"
 SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"
+INCLUDE "data/trainers/class_names.asm"
+INCLUDE "engine/battle/ai/redundant.asm"
+INCLUDE "engine/events/move_deleter.asm"
+INCLUDE "engine/events/move_reminder.asm"
 INCLUDE "engine/items/tmhm.asm"
-INCLUDE "engine/pokemon/print_move_description.asm"
+INCLUDE "engine/events/pokerus/pokerus.asm"
+INCLUDE "engine/battle/start_battle.asm"
+INCLUDE "engine/gfx/place_graphic.asm"
 
 
 SECTION "Effect Commands", ROMX
@@ -491,11 +497,11 @@ SECTION "bank41", ROMX
 INCLUDE "engine/gfx/dma_transfer.asm"
 INCLUDE "gfx/emotes.asm"
 INCLUDE "engine/overworld/warp_connection.asm"
+INCLUDE "engine/link/mystery_gift.asm"
+INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/battle/used_move_text.asm"
 INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/gfx/load_overworld_font.asm"
-INCLUDE "engine/events/move_deleter.asm"
-INCLUDE "engine/events/move_reminder.asm"
 
 
 SECTION "mobile42", ROMX
@@ -630,13 +636,6 @@ SECTION "Nayru Dex", ROMX
 INCLUDE "engine/pokedex/pokedex.asm"
 
 
-SECTION "Mystery Gift", ROMX
-
-INCLUDE "engine/battle/ai/redundant.asm"
-INCLUDE "engine/link/mystery_gift.asm"
-INCLUDE "engine/link/mystery_gift_2.asm"
-
-
 SECTION "Miscellaneous Text", ROMX
 
 INCLUDE "data/items/names.asm"
@@ -714,12 +713,9 @@ SECTION "Map GroupNums Names", ROMX
 INCLUDE "data/maps/map_names.asm"
 
 
-SECTION "bankB Overflow", ROMX
+SECTION "Print Move Description", ROMX
 
-INCLUDE "data/trainers/class_names.asm"
-INCLUDE "engine/events/pokerus/pokerus.asm"
-INCLUDE "engine/battle/start_battle.asm"
-INCLUDE "engine/gfx/place_graphic.asm"
+INCLUDE "engine/pokemon/print_move_description.asm"
 
 
 SECTION "Lewot Phone Data", ROMX
