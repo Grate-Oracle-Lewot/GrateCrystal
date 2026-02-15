@@ -178,8 +178,6 @@ ROMX $42
 	"mobile42"
 	"Intro Logo"
 	"Credits"
-ROMX $43
-	"Title"
 ROMX $44
 	"Mobile Adapter SDK"
 ROMX $45
