@@ -20,7 +20,7 @@ SpecialsPointers::
 	add_special WaitForOtherPlayerToExit
 	add_special SetBitsForBattleRequest
 	add_special NayruCountCaughtMons ; previously SetBitsForTimeCapsuleRequest
-	add_special CheckTimeCapsuleCompatibility
+	add_special FillPokedex ; previously CheckTimeCapsuleCompatibility
 	add_special EnterTimeCapsule
 	add_special TradeCenter
 	add_special Colosseum
@@ -180,4 +180,3 @@ SpecialsPointers::
 	add_special Function10387b
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
-	add_special FillPokedex ; used for testing
