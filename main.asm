@@ -69,7 +69,7 @@ INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
 INCLUDE "engine/math/get_square_root.asm"
-INCLUDE "engine/events/squirtbottle.asm" ; 14
+INCLUDE "engine/events/squirtbottle.asm"
 
 
 SECTION "bank5", ROMX
@@ -133,7 +133,6 @@ INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
-INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
@@ -716,6 +715,11 @@ INCLUDE "data/types/inverse_type_matchups.asm"
 SECTION "Map GroupNums Names", ROMX
 
 INCLUDE "data/maps/map_names.asm"
+
+
+SECTION "Pokerus", ROMX
+
+INCLUDE "engine/events/pokerus/pokerus.asm"
 
 
 SECTION "Lewot Phone Data", ROMX
