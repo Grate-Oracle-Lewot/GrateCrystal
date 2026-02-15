@@ -1436,7 +1436,7 @@ InitMysteryGiftLayout:
 	call FarCopyBytes
 	hlcoord 0, 0
 	ld a, $42
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 3, 7
 	lb bc, 9, 15
@@ -1727,7 +1727,7 @@ InitNameCardLayout:
 	call FarCopyBytes
 	hlcoord 0, 0
 	ld a, $3f
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 3, 7
 	lb bc, 9, 15
