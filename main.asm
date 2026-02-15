@@ -636,6 +636,11 @@ SECTION "Nayru Dex", ROMX
 INCLUDE "engine/pokedex/pokedex.asm"
 
 
+SECTION "Print Move Description", ROMX
+
+INCLUDE "engine/pokemon/print_move_description.asm"
+
+
 SECTION "Miscellaneous Text", ROMX
 
 INCLUDE "data/items/names.asm"
@@ -711,11 +716,6 @@ INCLUDE "data/types/inverse_type_matchups.asm"
 SECTION "Map GroupNums Names", ROMX
 
 INCLUDE "data/maps/map_names.asm"
-
-
-SECTION "Print Move Description", ROMX
-
-INCLUDE "engine/pokemon/print_move_description.asm"
 
 
 SECTION "Lewot Phone Data", ROMX
