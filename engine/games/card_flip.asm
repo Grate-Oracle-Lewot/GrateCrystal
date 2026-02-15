@@ -481,7 +481,7 @@ CardFlip_InitTilemap:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	ld a, $29
 	call ByteFill
 	hlcoord 9, 0
@@ -1516,7 +1516,7 @@ CardFlip_InitAttrPals:
 	ret z
 
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	call ByteFill
 
