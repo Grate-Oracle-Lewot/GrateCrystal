@@ -34,8 +34,8 @@ LinkCommunications:
 	ld [hl], HIGH(SERIAL_LINK_BYTE_TIMEOUT)
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
-	jp nz, Gen2ToGen2LinkComms
-	jp Gen2ToGen1LinkComms
+	jp z, Gen2ToGen1LinkComms
+	; fallthrough
 
 Gen2ToGen2LinkComms:
 	call ClearLinkData
@@ -384,8 +384,7 @@ LinkTimeout:
 	text_end
 
 ExchangeBytes:
-; This is similar to Serial_ExchangeBytes,
-; but without a SERIAL_PREAMBLE_BYTE check.
+; This is similar to Serial_ExchangeBytes, but without a SERIAL_PREAMBLE_BYTE check.
 	ld a, TRUE
 	ldh [hSerialIgnoringInitialData], a
 .loop
@@ -661,178 +660,6 @@ Link_CopyMailPreamble:
 	jr nz, .loop
 	ret
 
-Link_ConvertPartyStruct1to2:
-	push hl
-	ld d, h
-	ld e, l
-	ld bc, wLinkOTPartyMonTypes
-	ld hl, wCurLinkOTPartyMonTypePointer
-	ld a, c
-	ld [hli], a
-	ld [hl], b
-	ld hl, wOTPartyMon1Species
-	ld c, PARTY_LENGTH
-.loop
-	push bc
-	call .ConvertToGen2
-	pop bc
-	dec c
-	jr nz, .loop
-	pop hl
-	ld bc, PARTY_LENGTH * REDMON_STRUCT_LENGTH
-	add hl, bc
-	ld de, wOTPartyMonOTs
-	ld bc, PARTY_LENGTH * NAME_LENGTH
-	call CopyBytes
-	ld de, wOTPartyMonNicknames
-	ld bc, PARTY_LENGTH * MON_NAME_LENGTH
-	jp CopyBytes
-
-.ConvertToGen2:
-	ld b, h
-	ld c, l
-	ld a, [de]
-	inc de
-	push bc
-	push de
-	ld [wTempSpecies], a
-	farcall ConvertMon_1to2
-	pop de
-	pop bc
-	ld a, [wTempSpecies]
-	ld [bc], a
-	ld [wCurSpecies], a
-	ld hl, MON_HP
-	add hl, bc
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld a, [de]
-	inc de
-	ld [hl], a
-	inc de
-	ld hl, MON_STATUS
-	add hl, bc
-	ld a, [de]
-	inc de
-	ld [hl], a
-	ld hl, wCurLinkOTPartyMonTypePointer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [de]
-	ld [hli], a
-	inc de
-	ld a, [de]
-	ld [hli], a
-	inc de
-	ld a, l
-	ld [wCurLinkOTPartyMonTypePointer], a
-	ld a, h
-	ld [wCurLinkOTPartyMonTypePointer + 1], a
-	push bc
-	ld hl, MON_ITEM
-	add hl, bc
-	push hl
-	ld h, d
-	ld l, e
-	pop de
-	push bc
-	ld a, [hli]
-	ld b, a
-	call TimeCapsule_ReplaceTeruSama
-	ld a, b
-	ld [de], a
-	inc de
-	pop bc
-	ld bc, $19
-	call CopyBytes
-	pop bc
-	ld d, h
-	ld e, l
-	ld hl, $1f
-	add hl, bc
-	ld a, [de]
-	inc de
-	ld [hl], a
-	ld [wCurPartyLevel], a
-	push bc
-	ld hl, $24
-	add hl, bc
-	push hl
-	ld h, d
-	ld l, e
-	pop de
-	ld bc, 8
-	call CopyBytes
-	pop bc
-	call GetBaseData
-	push de
-	push bc
-	ld d, h
-	ld e, l
-	ld hl, MON_STAT_EXP - 1
-	add hl, bc
-	ld c, STAT_SATK
-	ld b, TRUE
-	predef CalcMonStatC
-	pop bc
-	pop hl
-	ldh a, [hQuotient + 2]
-	ld [hli], a
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	push hl
-	push bc
-	ld hl, MON_STAT_EXP - 1
-	add hl, bc
-	ld c, STAT_SDEF
-	ld b, TRUE
-	predef CalcMonStatC
-	pop bc
-	pop hl
-	ldh a, [hQuotient + 2]
-	ld [hli], a
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	push hl
-	ld hl, $1b
-	add hl, bc
-	ld a, $46
-	ld [hli], a
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	pop hl
-	inc de
-	inc de
-	ret
-
-TimeCapsule_ReplaceTeruSama:
-	ld a, b
-	and a
-	ret z
-	push hl
-	ld hl, TimeCapsule_CatchRateItems
-.loop
-	ld a, [hli]
-	and a
-	jr z, .end
-	cp b
-	jr z, .found
-	inc hl
-	jr .loop
-
-.found
-	ld b, [hl]
-
-.end
-	pop hl
-	ret
-
-INCLUDE "data/items/catch_rate_items.asm"
-
 Link_CopyOTData:
 .loop
 	ld a, [hli]
@@ -925,6 +752,7 @@ LinkTrade_OTPartyMenu:
 	ld [w2DMenuFlags1], a
 	xor a
 	ld [w2DMenuFlags2], a
+	; fallthrough
 
 LinkTradeOTPartymonMenuLoop:
 	farcall LinkTradeMenu
@@ -987,6 +815,7 @@ LinkTrade_PlayerPartyMenu:
 	xor a
 	ld [w2DMenuFlags2], a
 	call WaitBGMap2
+	; fallthrough
 
 LinkTradePartymonMenuLoop:
 	farcall LinkTradeMenu
@@ -1681,87 +1510,6 @@ SetTradeRoomBGPals:
 	jp SetPalettes
 
 INCLUDE "engine/movie/trade_animation.asm"
-
-CheckTimeCapsuleCompatibility:
-; Checks to see if your party is compatible with the Gen 1 games.
-; Returns the following in wScriptVar:
-; 0: Party is okay
-; 1: At least one Pokémon was introduced in Gen 2
-; 2: At least one Pokémon has a move that was introduced in Gen 2
-; 3: At least one Pokémon is holding mail
-
-; If any party Pokémon was introduced in the Gen 2 games, don't let it in.
-	ld hl, wPartySpecies
-	ld b, PARTY_LENGTH
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .checkitem
-	cp JOHTO_POKEMON
-	jr nc, .mon_too_new
-	dec b
-	jr nz, .loop
-
-; If any party Pokémon is holding mail, don't let it in.
-.checkitem
-	ld a, [wPartyCount]
-	ld b, a
-	ld hl, wPartyMon1Item
-.itemloop
-	push hl
-	push bc
-	ld d, [hl]
-	farcall ItemIsMail
-	pop bc
-	pop hl
-	jr c, .mon_has_mail
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	dec b
-	jr nz, .itemloop
-
-; If any party Pokémon has a move that was introduced in the Gen 2 games, don't let it in.
-	ld hl, wPartyMon1Moves
-	ld a, [wPartyCount]
-	ld b, a
-.move_loop
-	ld c, NUM_MOVES
-.move_next
-	ld a, [hli]
-	cp PLAY_ROUGH + 1
-	jr nc, .move_too_new
-	dec c
-	jr nz, .move_next
-	ld de, PARTYMON_STRUCT_LENGTH - NUM_MOVES
-	add hl, de
-	dec b
-	jr nz, .move_loop
-	xor a
-	jr .done
-
-.mon_too_new
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	ld a, $1
-	jr .done
-
-.move_too_new
-	push bc
-	ld [wNamedObjectIndex], a
-	call GetMoveName
-	call CopyName1
-	pop bc
-	call GetIncompatibleMonName
-	ld a, $2
-	jr .done
-
-.mon_has_mail
-	call GetIncompatibleMonName
-	ld a, $3
-
-.done
-	ld [wScriptVar], a
-	ret
 
 GetIncompatibleMonName:
 ; Calulate which pokemon is incompatible, and get that pokemon's name
