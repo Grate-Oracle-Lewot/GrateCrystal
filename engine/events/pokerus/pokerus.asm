@@ -1,4 +1,4 @@
-GivePokerusAndConvertBerries:
+GivePokerusAndConvertBerries::
 	call ConvertBerriesToBerryJuice
 	call ProduceMooMooMilk
 	ld hl, wPartyMon1PokerusStatus
