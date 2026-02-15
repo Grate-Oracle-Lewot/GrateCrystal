@@ -12,7 +12,7 @@ PlaceDiplomaOnScreen:
 	call Decompress
 	ld hl, DiplomaPage1Tilemap
 	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call CopyBytes
 	ld de, .Player
 	hlcoord 2, 5
@@ -49,12 +49,12 @@ PlaceDiplomaOnScreen:
 
 PrintDiplomaPage2:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	call ByteFill
 	ld hl, DiplomaPage2Tilemap
 	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call CopyBytes
 	ld de, .GameFreak
 	hlcoord 8, 0
