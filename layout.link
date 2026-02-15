@@ -289,7 +289,7 @@ ROMX $74
 ROMX $75
 	"Nayru Dex"
 ROMX $76
-	"Print Move Description"
+	"bank76"
 ROMX $77
 	"Unown Font"
 	"Print Party"
