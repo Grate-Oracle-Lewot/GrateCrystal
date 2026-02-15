@@ -3,14 +3,14 @@ String_89116:
 
 String_8911c:
 	db   "でんわばんごうが　ただしく" ; Phone number is not
-	next "はいって　いません！@"   ; entered correctly!
+	next "はいって　いません！@" ; entered correctly!
 
 String_89135:
-	db   "データが　かわって　いますが"  ; The data has changed.
+	db   "データが　かわって　いますが" ; The data has changed.
 	next "かきかえないで　やめますか？@" ; Quit anyway?
 
 String_89153:
-	db   "メッセージは　ありません@"    ; No message
+	db   "メッセージは　ありません@" ; No message
 
 OpenSRAMBank4:
 	push af
@@ -98,7 +98,7 @@ Function891b8:
 	call Mobile22_SetBGMapMode0
 	hlcoord 0, 0
 	ld a, " "
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	jp DelayFrame
 
@@ -122,11 +122,11 @@ Function891de:
 	call ClearPalettes
 	hlcoord 0, 0, wAttrmap
 	ld a, $7
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 0, 0
 	ld a, " "
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	jp Function891ab
 
@@ -776,7 +776,7 @@ Function895f2:
 	push bc
 	xor a
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	call Function89605
 	call Function89655
