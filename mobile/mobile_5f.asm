@@ -4469,11 +4469,11 @@ Function17f5e4:
 	ld [wMusicFadeID + 1], a
 	ld a, " "
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	ld a, $6
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 2, 1
 	ld b, $1
