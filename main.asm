@@ -131,7 +131,6 @@ SECTION "bankB", ROMX
 
 INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "data/trainers/class_names.asm"
-INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
@@ -637,6 +636,7 @@ INCLUDE "engine/pokedex/pokedex.asm"
 
 SECTION "Mystery Gift", ROMX
 
+INCLUDE "engine/battle/ai/redundant.asm"
 INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/link/mystery_gift_2.asm"
 
