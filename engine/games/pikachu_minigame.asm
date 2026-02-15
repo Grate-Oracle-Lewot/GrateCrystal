@@ -150,7 +150,7 @@ PikachuMiniGame_ClearBothTilemaps:
 	jr nz, .clear_bgmap
 
 	ld hl, wTilemap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 .clear_tilemap
 	ld [hl], 0
 	inc hl
