@@ -132,7 +132,6 @@ SECTION "bankB", ROMX
 INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
-INCLUDE "engine/battle/start_battle.asm"
 
 
 SECTION "Effect Commands", ROMX
@@ -719,6 +718,7 @@ SECTION "bankB Overflow", ROMX
 
 INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
+INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
 
