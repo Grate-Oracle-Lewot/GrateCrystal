@@ -286,6 +286,10 @@ ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
 	"Pokedex Entries 193-251"
+ROMX $75
+	"Nayru Dex"
+ROMX $76
+	"Mystery Gift"
 ROMX $77
 	"Unown Font"
 	"Print Party"
