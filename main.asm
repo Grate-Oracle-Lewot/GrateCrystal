@@ -134,7 +134,6 @@ INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/battle/start_battle.asm"
-INCLUDE "engine/gfx/place_graphic.asm"
 
 
 SECTION "Effect Commands", ROMX
@@ -720,6 +719,7 @@ INCLUDE "data/maps/map_names.asm"
 SECTION "Pokerus", ROMX
 
 INCLUDE "engine/events/pokerus/pokerus.asm"
+INCLUDE "engine/gfx/place_graphic.asm"
 
 
 SECTION "Lewot Phone Data", ROMX
