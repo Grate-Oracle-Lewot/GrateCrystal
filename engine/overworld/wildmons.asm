@@ -313,10 +313,18 @@ ChooseWildEncounter:
 ; Check if we're on Route 29
 	ld a, [wMapGroup]
 	cp GROUP_ROUTE_29
-	jr nz, .regular_buff
+	jr nz, .check_running
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_29
 	jr z, .route_29_buff
+.check_running
+; Running results in higher levels
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .regular_buff
+	inc b
+	jr .route_29_buff
+
 .regular_buff
 ; Check if we buff the wild mon, and by how much.
 	call Random
@@ -374,6 +382,7 @@ ChooseWildEncounter:
 
 .route_29_buff
 ; Don't buff mons as much on Route 29, in case we've just gotten our Lv5 starter.
+; Also used anywhere except Route 29 at +1 level if the player is running.
 	call Random
 	cp 20 percent
 	jr c, .ok
