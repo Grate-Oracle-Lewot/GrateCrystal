@@ -53,9 +53,10 @@ Tilesets::
 	tileset TilesetSpinners
 	tileset TilesetViridianGym
 	tileset TilesetOlivineGym
-	tileset TilesetJohtoDesert
-	tileset TilesetJohtoBeach
 	tileset TilesetJohtoCherry
+	tileset TilesetJohtoBurned
+	tileset TilesetJohtoBeach
+	tileset TilesetJohtoDesert
 	tileset TilesetKantoExtra
 	tileset TilesetBillsHouse
 	assert_table_length NUM_TILESETS + 1
