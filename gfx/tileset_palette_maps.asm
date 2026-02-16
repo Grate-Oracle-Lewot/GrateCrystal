@@ -23,6 +23,9 @@ INCLUDE "gfx/tilesets/johto_palette_map.asm"
 TilesetJohtoCherryPalMap:
 INCLUDE "gfx/tilesets/johto_cherry_palette_map.asm"
 
+TilesetJohtoBurnedPalMap:
+INCLUDE "gfx/tilesets/johto_burned_palette_map.asm"
+
 TilesetJohtoModernPalMap:
 INCLUDE "gfx/tilesets/johto_modern_palette_map.asm"
 
