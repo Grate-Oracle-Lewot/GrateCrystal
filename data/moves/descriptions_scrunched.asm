@@ -1282,7 +1282,7 @@ MoonblastDescriptionScrunched:
 if DEF(_METRONOME_ONLY)
 StruggleDescriptionScrunched:
 	db   "Randomly uses any"
-	feed "#MON move.@"
+	feed "#MON move.   @"
 else
 StruggleDescriptionScrunched:
 	db   "Used only if all"
