@@ -296,7 +296,7 @@ Gen2ToGen2LinkComms:
 .done
 	ld [wOtherTrainerClass], a
 	call ClearScreen
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 
 	ld hl, wOptions
 	ld a, [hl]
@@ -767,7 +767,7 @@ LinkTradeOTPartymonMenuLoop:
 	bit A_BUTTON_F, a
 	jr z, .not_a_button
 	ld hl, wOTPartyMon1Species
-	farcall LinkMonStatsScreen
+	call LinkMonStatsScreen
 	jp LinkTradePartiesMenuMasterLoop
 
 .not_a_button
@@ -889,7 +889,7 @@ LinkTrade_TradeStatsMenu:
 	hlcoord 2, 16
 	ld de, .String_Stats_Trade
 	call PlaceString
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 
 .joy_loop
 	ld a, " "
@@ -954,7 +954,7 @@ LinkTrade_TradeStatsMenu:
 .show_stats
 	pop af
 	ld [wMenuCursorY], a
-	farcall LinkMonStatsScreen
+	call LinkMonStatsScreen
 	call SafeLoadTempTilemapToTilemap
 	hlcoord 6, 1
 	lb bc, 6, 1
@@ -990,7 +990,7 @@ LinkTrade_TradeStatsMenu:
 	ld b, 4
 	ld c, 18
 	call LinkTextboxAtHL
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 	ld hl, .LinkTradeCantBattleText
 	bccoord 1, 14
 	call PlaceHLTextAtBC
@@ -1118,7 +1118,7 @@ LinkTrade:
 	ld b, 4
 	ld c, 18
 	call LinkTextboxAtHL
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 	ld a, [wCurTradePartyMon]
 	ld hl, wPartySpecies
 	ld c, a
@@ -1168,7 +1168,7 @@ LinkTrade:
 	ld a, 1
 	ld [wMenuCursorY], a
 	ld [wMenuCursorX], a
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 	call ScrollingMenuJoypad
 	push af
 	call Call_ExitMenu
@@ -1410,7 +1410,7 @@ LinkTrade:
 	call ClearScreen
 	call LoadTradeScreenBorderGFX
 	call SetTradeRoomBGPals
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 
 ; Send the byte in a loop until the desired byte has been received.
 	ld b, 0
@@ -1443,7 +1443,7 @@ LinkTrade:
 	hlcoord 1, 14
 	ld de, String_TradeCompleted
 	call PlaceString
-	farcall Link_WaitBGMap
+	call Link_WaitBGMap
 	ld c, 50
 	call DelayFrames
 	ld a, [wLinkMode]
@@ -1960,3 +1960,25 @@ CheckAnyOtherAliveMonsForTrade:
 .done
 	and a
 	ret
+
+LinkMonStatsScreen:
+	ld a, [wMenuCursorY]
+	dec a
+	ld [wCurPartyMon], a
+	call LowVolume
+	predef StatsScreenInit
+	ld a, [wCurPartyMon]
+	inc a
+	ld [wMenuCursorY], a
+	call ClearScreen
+	call ClearBGPalettes
+	call MaxVolume
+	farcall _LoadTradeScreenBorderGFX
+	call Link_WaitBGMap
+	farcall InitTradeSpeciesList
+	call SetTradeRoomBGPals
+	jp WaitBGMap2
+
+Link_WaitBGMap:
+	call WaitBGMap
+	jp WaitBGMap2
