@@ -3,8 +3,8 @@
 	const ROOF_NEW_BARK  ; 0
 	const ROOF_VIOLET    ; 1
 	const ROOF_AZALEA    ; 2
-	const ROOF_OLIVINE   ; 3
-	const ROOF_GOLDENROD ; 4
+	const ROOF_GOLDENROD ; 3
+	const ROOF_OLIVINE   ; 4
 NUM_ROOFS EQU const_value
 
 MapGroupRoofs:
@@ -48,6 +48,6 @@ Roofs:
 INCBIN "gfx/tilesets/roofs/new_bark.2bpp"
 INCBIN "gfx/tilesets/roofs/violet.2bpp"
 INCBIN "gfx/tilesets/roofs/azalea.2bpp"
-INCBIN "gfx/tilesets/roofs/olivine.2bpp"
 INCBIN "gfx/tilesets/roofs/goldenrod.2bpp"
+INCBIN "gfx/tilesets/roofs/olivine.2bpp"
 	assert_table_length NUM_ROOFS
