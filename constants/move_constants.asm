@@ -3,6 +3,7 @@
 ; - Moves (see data/moves/moves.asm)
 ; - MoveNames (see data/moves/names.asm)
 ; - MoveDescriptions (see data/moves/descriptions.asm)
+; - MoveDescriptionsScrunched (see data/moves/descriptions_scrunched.asm)
 ; - BattleAnimations (see data/moves/animations.asm)
 	const_def
 	const NO_MOVE      ; 00
