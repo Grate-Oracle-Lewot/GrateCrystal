@@ -78,9 +78,10 @@ TilesetForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetJohtoAnim:
-TilesetJohtoDesertAnim:
-TilesetJohtoBeachAnim:
 TilesetJohtoCherryAnim:
+TilesetJohtoBurnedAnim:
+TilesetJohtoBeachAnim:
+TilesetJohtoDesertAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
