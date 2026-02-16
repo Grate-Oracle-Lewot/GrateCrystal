@@ -1579,9 +1579,8 @@ WaitForLinkedFriend:
 	ldh [rSC], a
 	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
 	ldh [rSC], a
-	call DelayFrame
-	call DelayFrame
-	call DelayFrame
+	ld c, 3
+	call DelayFrames
 
 .no_link_action
 	ld a, $2
@@ -1640,18 +1639,7 @@ WaitForLinkedFriend:
 
 CheckLinkTimeout_Receptionist:
 	ld a, $1
-	ld [wPlayerLinkAction], a
-	ld hl, wLinkTimeoutFrames
-	ld a, 3
-	ld [hli], a
-	xor a
-	ld [hl], a
-	call WaitBGMap
-	ld a, $2
-	ldh [hVBlank], a
-	call DelayFrame
-	call DelayFrame
-	call Link_CheckCommunicationError
+	call CheckLinkTimeout_Optimization
 	xor a
 	ldh [hVBlank], a
 	ld a, [wScriptVar]
@@ -1659,9 +1647,7 @@ CheckLinkTimeout_Receptionist:
 	ret nz
 	jp Link_ResetSerialRegistersAfterLinkClosure
 
-CheckLinkTimeout_Gen2:
-; if wScriptVar = 0 on exit, link connection is closed
-	ld a, $5
+CheckLinkTimeout_Optimization:
 	ld [wPlayerLinkAction], a
 	ld hl, wLinkTimeoutFrames
 	ld a, 3
@@ -1673,7 +1659,12 @@ CheckLinkTimeout_Gen2:
 	ldh [hVBlank], a
 	call DelayFrame
 	call DelayFrame
-	call Link_CheckCommunicationError
+	jp Link_CheckCommunicationError
+
+CheckLinkTimeout_Gen2:
+; if wScriptVar = 0 on exit, link connection is closed
+	ld a, $5
+	call CheckLinkTimeout_Optimization
 	ld a, [wScriptVar]
 	and a
 	jr z, .exit
@@ -1725,7 +1716,20 @@ Link_CheckCommunicationError:
 	pop hl
 	jr nz, .load_true
 	call .AcknowledgeSerial
-	call .ConvertDW
+
+	; [wLinkTimeoutFrames] = ((hl - $100) / 4) + $100
+	;                      = (hl / 4) + $c0
+	dec h
+	srl h
+	rr l
+	srl h
+	rr l
+	inc h
+	ld a, h
+	ld [wLinkTimeoutFrames], a
+	ld a, l
+	ld [wLinkTimeoutFrames + 1], a
+
 	call .CheckConnected
 	jr nz, .load_true
 	call .AcknowledgeSerial
@@ -1760,21 +1764,6 @@ Link_CheckCommunicationError:
 	call LinkDataReceived
 	dec b
 	jr nz, .loop
-	ret
-
-.ConvertDW:
-	; [wLinkTimeoutFrames] = ((hl - $100) / 4) + $100
-	;                      = (hl / 4) + $c0
-	dec h
-	srl h
-	rr l
-	srl h
-	rr l
-	inc h
-	ld a, h
-	ld [wLinkTimeoutFrames], a
-	ld a, l
-	ld [wLinkTimeoutFrames + 1], a
 	ret
 
 TryQuickSave:
@@ -1829,26 +1818,17 @@ CheckBothSelectedSameRoom:
 
 TimeCapsule:
 	ld a, LINK_TIMECAPSULE
-	ld [wLinkMode], a
-	call DisableSpriteUpdates
-	farcall LinkCommunications
-	call EnableSpriteUpdates
-	xor a
-	ldh [hVBlank], a
-	ret
+	jr Link_Optimization
 
 TradeCenter:
 	ld a, LINK_TRADECENTER
-	ld [wLinkMode], a
-	call DisableSpriteUpdates
-	farcall LinkCommunications
-	call EnableSpriteUpdates
-	xor a
-	ldh [hVBlank], a
-	ret
+	jr Link_Optimization
 
 Colosseum:
 	ld a, LINK_COLOSSEUM
+	; fallthrough
+
+Link_Optimization:
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
 	farcall LinkCommunications
