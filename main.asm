@@ -208,7 +208,6 @@ INCLUDE "engine/phone/phonering_copytilemapatonce.asm"
 
 SECTION "bank13_2", ROMX
 
-INCLUDE "engine/link/link_2.asm"
 INCLUDE "engine/rtc/restart_clock.asm"
 INCLUDE "engine/menus/delete_save.asm"
 INCLUDE "data/tilesets.asm"
