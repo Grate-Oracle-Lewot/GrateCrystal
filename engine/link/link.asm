@@ -347,7 +347,28 @@ Gen2ToGen2LinkComms:
 .ready_to_trade
 	ld de, MUSIC_SHOW_ME_AROUND
 	call PlayMusic
-	jp InitTradeMenuDisplay
+	jr InitTradeMenuDisplay
+
+InitTradeMenuDisplay_Delay:
+	ld c, 100
+	call DelayFrames
+	; fallthrough
+
+InitTradeMenuDisplay:
+	call ClearScreen
+	call LoadTradeScreenBorderGFX
+	farcall InitTradeSpeciesList
+	xor a
+	ld hl, wOtherPlayerLinkMode
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld a, 1
+	ld [wMenuCursorY], a
+	inc a
+	ld [wPlayerLinkAction], a
+	jp LinkTrade_PlayerPartyMenu
 
 LinkTimeout:
 	ld de, .LinkTimeoutText
@@ -714,22 +735,6 @@ Link_FindFirstNonControlCharacter_AllowZero:
 	jr z, .loop
 	dec hl
 	ret
-
-InitTradeMenuDisplay:
-	call ClearScreen
-	call LoadTradeScreenBorderGFX
-	farcall InitTradeSpeciesList
-	xor a
-	ld hl, wOtherPlayerLinkMode
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	ld a, 1
-	ld [wMenuCursorY], a
-	inc a
-	ld [wPlayerLinkAction], a
-	jp LinkTrade_PlayerPartyMenu
 
 LinkTrade_OTPartyMenu:
 	ld a, OTPARTYMON
@@ -1474,11 +1479,6 @@ LinkTrade:
 	cp LINK_TIMECAPSULE
 	jp z, Gen2ToGen1LinkComms
 	jp Gen2ToGen2LinkComms
-
-InitTradeMenuDisplay_Delay:
-	ld c, 100
-	call DelayFrames
-	jp InitTradeMenuDisplay
 
 String_TradeCancel:
 	db   "TRADE"
