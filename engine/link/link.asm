@@ -978,7 +978,7 @@ LinkTrade_TradeStatsMenu:
 	call DelayFrames
 	farcall ValidateOTTrademon
 	jr c, .abnormal
-	farcall CheckAnyOtherAliveMonsForTrade
+	call CheckAnyOtherAliveMonsForTrade
 	jp nc, LinkTrade
 	xor a
 	ld [wUnusedLinkAction], a
@@ -1972,4 +1972,40 @@ GetCaughtGender:
 
 .genderless
 	ld c, CAUGHT_BY_UNKNOWN
+	ret
+
+CheckAnyOtherAliveMonsForTrade:
+	ld a, [wCurTradePartyMon]
+	ld d, a
+	ld a, [wPartyCount]
+	ld b, a
+	ld c, 0
+.loop
+	ld a, c
+	cp d
+	jr z, .next
+	push bc
+	ld a, c
+	ld hl, wPartyMon1HP
+	call GetPartyLocation
+	pop bc
+	ld a, [hli]
+	or [hl]
+	jr nz, .done
+
+.next
+	inc c
+	dec b
+	jr nz, .loop
+	ld a, [wCurOTTradePartyMon]
+	ld hl, wOTPartyMon1HP
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	jr nz, .done
+	scf
+	ret
+
+.done
+	and a
 	ret
