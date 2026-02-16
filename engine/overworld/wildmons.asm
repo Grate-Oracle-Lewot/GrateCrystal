@@ -42,7 +42,22 @@ FindNest:
 	ld hl, JohtoWaterWildMons
 	call .FindWater
 	call .RoamMon1
-	jp .RoamMon2
+
+.RoamMon2:
+	ld a, [wRoamMon2Species]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	ret nz
+	ld a, [wRoamMon2MapGroup]
+	ld b, a
+	ld a, [wRoamMon2MapNumber]
+	ld c, a
+	call .AppendNest
+	ret nc
+	ld [de], a
+	inc de
+	ret
 
 .kanto
 	decoord 0, 0
@@ -147,22 +162,6 @@ FindNest:
 	ld a, [wRoamMon1MapGroup]
 	ld b, a
 	ld a, [wRoamMon1MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
-	ret
-
-.RoamMon2:
-	ld a, [wRoamMon2Species]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	ret nz
-	ld a, [wRoamMon2MapGroup]
-	ld b, a
-	ld a, [wRoamMon2MapNumber]
 	ld c, a
 	call .AppendNest
 	ret nc
