@@ -16,8 +16,8 @@ INCLUDE "gfx/tilesets/kanto_extra_palette_map.asm"
 
 Tileset0PalMap:
 TilesetJohtoPalMap:
-TilesetJohtoDesertPalMap:
 TilesetJohtoBeachPalMap:
+TilesetJohtoDesertPalMap:
 INCLUDE "gfx/tilesets/johto_palette_map.asm"
 
 TilesetJohtoCherryPalMap:
