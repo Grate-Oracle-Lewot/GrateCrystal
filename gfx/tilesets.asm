@@ -29,6 +29,7 @@ INCBIN "data/tilesets/johto_metatiles.bin"
 
 Tileset0Coll::
 TilesetJohtoColl::
+TilesetJohtoBurnedColl::
 INCLUDE "data/tilesets/johto_collision.asm"
 
 TilesetIcePathGFX::
@@ -409,3 +410,9 @@ INCBIN "data/tilesets/johto_cherry_metatiles.bin"
 
 TilesetJohtoCherryColl::
 INCLUDE "data/tilesets/johto_cherry_collision.asm"
+
+TilesetJohtoBurnedGFX::
+INCBIN "gfx/tilesets/johto_burned.2bpp.lz"
+
+TilesetJohtoBurnedMeta::
+INCBIN "data/tilesets/johto_burned_metatiles.bin"
