@@ -322,7 +322,7 @@ ENDM
 	endgroup
 
 	newgroup ECRUTEAK                                       ; group 21
-	map_const ECRUTEAK_CITY,                               20, 18 ;  1
+	map_const ECRUTEAK_CITY,                               21, 18 ;  1
 	map_const ECRUTEAK_POKECENTER_1F,                       5,  4 ;  2
 	map_const ECRUTEAK_MART,                                6,  4 ;  3
 	map_const ECRUTEAK_GYM,                                 5,  9 ;  4
