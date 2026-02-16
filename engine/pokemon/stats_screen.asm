@@ -675,9 +675,6 @@ LoadGreenPage:
 	ld a, [wTempMonItem]
 	and a
 	ret z
-	ld b, a
-	farcall TimeCapsule_ReplaceTeruSama
-	ld a, b
 	ld [wNamedObjectIndex], a
 	jp GetItemName
 
