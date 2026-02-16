@@ -16,15 +16,27 @@ INCBIN "gfx/trade/border_cable_top.tilemap"
 CableTradeBorderBottomTilemap:
 INCBIN "gfx/trade/border_cable_bottom.tilemap"
 
+LinkTextbox2:
+	ld h, d
+	ld l, e
+	push bc
+	push hl
+	call LinkTextboxPlaceBorder2
+	pop hl
+	pop bc
+	jr LinkTextbox_Optimization
+
 LinkTextbox:
 	ld h, d
 	ld l, e
 	push bc
 	push hl
-	call .PlaceBorder
+	call LinkTextboxPlaceBorder
 	pop hl
 	pop bc
+	; fallthrough
 
+LinkTextbox_Optimization:
 	ld de, wAttrmap - wTilemap
 	add hl, de
 	inc b
@@ -47,12 +59,12 @@ LinkTextbox:
 	jr nz, .row
 	ret
 
-.PlaceBorder
+LinkTextboxPlaceBorder:
 	push hl
 	ld a, $30
 	ld [hli], a
 	inc a
-	call .PlaceRow
+	call LinkTextboxPlaceRow
 	inc a
 	ld [hl], a
 	pop hl
@@ -63,7 +75,7 @@ LinkTextbox:
 	ld a, $33
 	ld [hli], a
 	ld a, " "
-	call .PlaceRow
+	call LinkTextboxPlaceRow
 	ld [hl], $34
 	pop hl
 	ld de, SCREEN_WIDTH
@@ -74,16 +86,47 @@ LinkTextbox:
 	ld a, $35
 	ld [hli], a
 	ld a, $36
-	call .PlaceRow
+	call LinkTextboxPlaceRow
 	ld [hl], $37
 	ret
 
-.PlaceRow
+LinkTextboxPlaceRow:
 	ld d, c
-.row_loop
+.loop
 	ld [hli], a
 	dec d
-	jr nz, .row_loop
+	jr nz, .loop
+	ret
+
+LinkTextboxPlaceBorder2:
+	push hl
+	ld a, $76
+	ld [hli], a
+	inc a
+	call LinkTextboxPlaceRow
+	inc a
+	ld [hl], a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+.loop
+	push hl
+	ld a, $79
+	ld [hli], a
+	ld a, " "
+	call LinkTextboxPlaceRow
+	ld [hl], $7a
+	pop hl
+	ld de, SCREEN_WIDTH
+	add hl, de
+	dec b
+	jr nz, .loop
+
+	ld a, $7b
+	ld [hli], a
+	ld a, $7c
+	call LinkTextboxPlaceRow
+	ld [hl], $7d
 	ret
 
 InitTradeSpeciesList:
