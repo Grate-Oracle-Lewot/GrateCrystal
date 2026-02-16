@@ -42,14 +42,6 @@ _LinkTradeCantBattleText::
 	cont "be able to battle."
 	prompt
 
-_LinkAbnormalMonText::
-	text "Your friend's"
-	line "@"
-	text_ram wStringBuffer1
-	text " appears"
-	cont "to be abnormal!"
-	prompt
-
 _LinkAskTradeForText::
 	text "Trade @"
 	text_ram wBufferTrademonNickname
