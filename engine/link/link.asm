@@ -981,8 +981,6 @@ LinkTrade_TradeStatsMenu:
 	call LinkTradePlaceArrow
 	ld c, 100
 	call DelayFrames
-	farcall ValidateOTTrademon
-	jr c, .abnormal
 	call CheckAnyOtherAliveMonsForTrade
 	jp nc, LinkTrade
 	xor a
@@ -996,30 +994,7 @@ LinkTrade_TradeStatsMenu:
 	ld hl, .LinkTradeCantBattleText
 	bccoord 1, 14
 	call PlaceHLTextAtBC
-	jr .cancel_trade
 
-.abnormal
-	xor a
-	ld [wUnusedLinkAction], a
-	ld [wOtherPlayerLinkAction], a
-	ld a, [wCurOTTradePartyMon]
-	ld hl, wOTPartySpecies
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	hlcoord 0, 12
-	ld b, 4
-	ld c, 18
-	call LinkTextboxAtHL
-	farcall Link_WaitBGMap
-	ld hl, .LinkAbnormalMonText
-	bccoord 1, 14
-	call PlaceHLTextAtBC
-
-.cancel_trade
 	hlcoord 0, 12
 	ld b, 4
 	ld c, 18
@@ -1040,10 +1015,6 @@ LinkTrade_TradeStatsMenu:
 
 .String_Stats_Trade:
 	db "STATS     TRADE@"
-
-.LinkAbnormalMonText:
-	text_far _LinkAbnormalMonText
-	text_end
 
 LinkTradeOTPartymonMenuCheckCancel:
 	ld a, [wMenuCursorY]
