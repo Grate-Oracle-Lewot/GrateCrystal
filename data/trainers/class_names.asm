@@ -40,6 +40,7 @@ TrainerClassNames::
 	li "<PKMN> TRAINER"
 	li "<PKMN> TRAINER"
 	li "MYSTIC"
+	li "ELDER"
 	li "OLD"
 	li "YOUNGSTER"
 	li "SCHOOLBOY"
