@@ -5,7 +5,7 @@ BasePickupTable:
   db POTION
   db ESCAPE_ROPE
   db REVIVE
-  db FRESH_WATER
+  db SPRING_WATER
   db SODA_POP
   db LEMONADE
   db ETHER
