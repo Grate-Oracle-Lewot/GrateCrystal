@@ -58,6 +58,10 @@ BattleTowerText::
 	jr z, .lance
 	cp RED
 	jr z, .red
+	cp MYSTIC
+	jr z, .eusine
+	cp ELDER
+	jr z, .li
 	jr .normal
 
 .falkner
@@ -131,6 +135,12 @@ BattleTowerText::
 	jr .special
 .red
 	ld a, 23
+	jr .special
+.eusine
+	ld a, 24
+	jr .special
+.li
+	ld a, 25
 
 .special
 	ld hl, BTSpecialTrainerTexts
@@ -377,6 +387,8 @@ BTSpecialTrainerTexts:
 	dw BTKogaGreetingText
 	dw BTLanceGreetingText
 	dw BTRedGreetingText
+	dw BTEusineGreetingText
+	dw BTLiGreetingText
 
 .PlayerLost:
 	dw BTFalknerLossText
@@ -403,6 +415,8 @@ BTSpecialTrainerTexts:
 	dw BTKogaLossText
 	dw BTLanceLossText
 	dw BTRedWinLossText
+	dw BTEusineLossText
+	dw BTLiLossText
 
 .PlayerWon:
 	dw BTFalknerWinText
@@ -429,6 +443,8 @@ BTSpecialTrainerTexts:
 	dw BTKogaWinText
 	dw BTLanceWinText
 	dw BTRedWinLossText
+	dw BTEusineWinText
+	dw BTLiWinText
 
 BTGreetingM1Text:
 	text_far _BTGreetingM1Text
@@ -1192,4 +1208,28 @@ BTRedGreetingText:
 
 BTRedWinLossText:
 	text_far _BTRedWinLossText
+	text_end
+
+BTEusineGreetingText:
+	text_far _BTEusineGreetingText
+	text_end
+
+BTEusineLossText:
+	text_far _BTEusineLossText
+	text_end
+
+BTEusineWinText:
+	text_far _BTEusineWinText
+	text_end
+
+BTLiGreetingText:
+	text_far _BTLiGreetingText
+	text_end
+
+BTLiLossText:
+	text_far _BTLiLossText
+	text_end
+
+BTLiWinText:
+	text_far _BTLiWinText
 	text_end
