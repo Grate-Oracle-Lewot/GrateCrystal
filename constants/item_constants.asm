@@ -50,7 +50,7 @@
 	const MAX_REPEL    ; 2a
 	const DIRE_HIT     ; 2b
 	const ANTIVENOM    ; 2c
-	const FRESH_WATER  ; 2d
+	const SPRING_WATER ; 2d
 	const SODA_POP     ; 2e
 	const LEMONADE     ; 2f
 	const X_ATTACK     ; 30
