@@ -1,4 +1,4 @@
-	db MISSINGNO ; ???
+	db MISSINGNO ; 252
 
 	db  33, 178,  11,  29,  06,  23
 	;   hp  atk  def  spd  sat  sdf
