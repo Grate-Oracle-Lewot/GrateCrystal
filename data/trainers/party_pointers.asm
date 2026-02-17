@@ -42,6 +42,7 @@ TrainerGroups:
 	dba PKMNTrainerGroup
 	dba CalFGroup
 	dba MysticGroup
+	dba ElderGroup
 	dba OldGroup
 	dba YoungsterGroup
 	dba SchoolboyGroup
