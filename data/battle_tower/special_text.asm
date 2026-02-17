@@ -415,3 +415,42 @@ _BTRedGreetingText:
 _BTRedWinLossText:
 	text "…"
 	done
+
+_BTEusineGreetingText:
+	text "<PLAYER>?"
+	line "We meet again!"
+
+	para "I've accomplished"
+	line "the impossible…"
+
+	para "And now…"
+	line "I challenge you!"
+	done
+
+_BTEusineLossText:
+	text "I'm just happy to"
+	line "have a SUICUNE."
+	done
+
+_BTEusineWinText:
+	text "You still outshine"
+	line "me…"
+	done
+
+_BTLiGreetingText:
+	text "Ah! I remember"
+	line "you."
+
+	para "Have you kept up"
+	line "your training?"
+	done
+
+_BTLiLossText:
+	text "We must always"
+	line "strive to improve."
+	done
+
+_BTLiWinText:
+	text "You are a light in"
+	line "the darkness!"
+	done
