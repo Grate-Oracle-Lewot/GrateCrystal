@@ -185,7 +185,7 @@ Route22HouseGiovanniScript:
 	writetext Route22HouseGiovanniBeforeText
 	waitbutton
 	winlosstext Route22HouseGiovanniBeatenText, 0
-	loadtrainer BOSS, GIOVANNI
+	loadtrainer OUTLAW, GIOVANNI
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
