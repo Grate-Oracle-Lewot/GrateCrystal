@@ -85,5 +85,5 @@ TrainerPicPointers::
 	dba JessiePic
 	dba ExecutivemPic
 	dba ExecutivefPic
-	dba BossPic
+	dba OutlawPic
 	assert_table_length NUM_TRAINER_CLASSES
