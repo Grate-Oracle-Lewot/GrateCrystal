@@ -25,41 +25,41 @@ OverworldLoop::
 
 DisableEvents:
 	xor a
-	ld [wScriptFlags2], a
+	ld [wEnabledPlayerEvents], a
 	ret
 
 EnableEvents::
 	ld a, $ff
-	ld [wScriptFlags2], a
+	ld [wEnabledPlayerEvents], a
 	ret
 
 CheckBit5_ScriptFlags2:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	bit 5, [hl]
 	ret
 
 EnableWildEncounters:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	set 4, [hl]
 	ret
 
 CheckWarpConnxnScriptFlag:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	bit 2, [hl]
 	ret
 
 CheckCoordEventScriptFlag:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	bit 1, [hl]
 	ret
 
 CheckStepCountScriptFlag:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	bit 0, [hl]
 	ret
 
 CheckWildEncountersScriptFlag:
-	ld hl, wScriptFlags2
+	ld hl, wEnabledPlayerEvents
 	bit 4, [hl]
 	ret
 
