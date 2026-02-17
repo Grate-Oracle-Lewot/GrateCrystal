@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 190 ; catch rate
 	db 80 ; base exp
-	db FRESH_WATER, TM_PSYCHIC_M ; items
+	db SPRING_WATER, TM_PSYCHIC_M ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/psyduck/front.dimensions"
