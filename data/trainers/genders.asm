@@ -42,6 +42,7 @@ BTTrainerClassGenders:
 	db MALE   ; CAL
 	db FEMALE ; CAL_F
 	db MALE   ; MYSTIC
+	db MALE   ; ELDER
 	db MALE   ; OLD
 	db MALE   ; YOUNGSTER
 	db MALE   ; SCHOOLBOY
