@@ -2719,12 +2719,12 @@ wScriptFlags::
 ; bit 3: run deferred script
 	db
 	ds 1
-wScriptFlags2::
+wEnabledPlayerEvents::
 ; bit 0: count steps
 ; bit 1: coord events
 ; bit 2: warps and connections
-; bit 4: wild encounters
-; bit 5: unknown
+; bit 3: wild encounters
+; bits 4-7: unused
 	db
 
 wScriptMode:: db
