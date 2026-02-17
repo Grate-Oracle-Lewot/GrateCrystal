@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw MaxRepelDesc
 	dw DireHitDesc
 	dw AntivenomDesc
-	dw FreshWaterDesc
+	dw SpringWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
@@ -435,7 +435,7 @@ AntivenomDesc:
 	db   "Blocks poisoning."
 	next "(HOLD)@"
 
-FreshWaterDesc:
+SpringWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
 
