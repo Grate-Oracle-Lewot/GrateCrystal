@@ -42,7 +42,7 @@ TrainerClassDVs:
 	dn 13, 14, 14, 13 ; CAL_F
 	dn 12, 13, 13, 12 ; MYSTIC
 	dn  8,  9,  9, 10 ; ELDER
-	dn  6,  5,  5,  6 ; OLD
+	dn  6,  5,  5,  6 ; OLD MAN
 	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
 	dn  6,  7,  7,  6 ; BUG_CATCHER
@@ -81,8 +81,8 @@ TrainerClassDVs:
 	dn  9,  8, 10,  9 ; SKIER
 	dn  8,  7,  7,  8 ; GRUNT_M
 	dn  7,  8,  8,  7 ; GRUNTF
-	dn  8,  8,  8,  8 ; JESSIE &
+	dn  8,  8,  8,  8 ; JESSIE & JAMES
 	dn 10, 11, 11, 10 ; EXECUTIVE_M
 	dn 11, 10, 10, 11 ; EXECUTIVE_F
-	dn 12, 13, 13, 12 ; BOSS
+	dn 12, 13, 13, 12 ; OUTLAW
 	assert_table_length NUM_TRAINER_CLASSES
