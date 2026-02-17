@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 120 ; catch rate
 	db 131 ; base exp
-	db FRESH_WATER, KINGS_ROCK ; items
+	db SPRING_WATER, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/poliwhirl/front.dimensions"
