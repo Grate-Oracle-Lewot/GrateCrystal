@@ -173,18 +173,18 @@ KRIS EQU __trainer_class__
 ; Start of creepy music
 ; End of boss music for inverse/neutral battles
 
-	trainerclass AEROBONES ; 25
+	trainerclass AEROBONES ; 20
 	const AEROBONES1
 
-	trainerclass KABUBONES ; 26
+	trainerclass KABUBONES ; 21
 	const KABUBONES1
 
-	trainerclass MISSINGNO_T ; 27
+	trainerclass MISSINGNO_T ; 22
 	const MISSINGNO_T1
 
 ; Start of normal trainer music (region-dependent)
 
-	trainerclass COOLTRAINERM ; 20
+	trainerclass COOLTRAINERM ; 23
 	const NICK
 	const GAVEN1
 	const GAVEN2
@@ -208,7 +208,7 @@ KRIS EQU __trainer_class__
 	const BUZZ
 	const TEAL
 
-	trainerclass COOLTRAINERF ; 21
+	trainerclass COOLTRAINERF ; 24
 	const IRENE
 	const JENN
 	const KATE
@@ -233,25 +233,28 @@ KRIS EQU __trainer_class__
 	const STELLA
 	const AZURE
 
-	trainerclass CAL ; 22
+	trainerclass CAL ; 25
 	const CAL1 ; party is never read; data read from sMysteryGiftTrainer instead
 	const IGGY
 	const FRED
 
-	trainerclass CAL_F ; 23
+	trainerclass CAL_F ; 26
 	const CAL_F1 ; unused
 	const CALLA
 
-	trainerclass MYSTIC ; 24
+	trainerclass MYSTIC ; 27
 	const EUSINE
 	const OLIE
 	const RICO
 	const GROVER
 
-	trainerclass OLD ; 28
+	trainerclass ELDER ; 28
+	const LI
+
+	trainerclass OLD ; 29
 	const MAN
 
-	trainerclass YOUNGSTER ; 29
+	trainerclass YOUNGSTER ; 2a
 	const JOEY1
 	const JOEY2
 	const JOEY3
@@ -267,7 +270,7 @@ KRIS EQU __trainer_class__
 	const WARREN
 	const JIMMY
 
-	trainerclass SCHOOLBOY ; 2a
+	trainerclass SCHOOLBOY ; 2b
 	const JACK1
 	const JACK2
 	const JACK3
@@ -293,7 +296,7 @@ KRIS EQU __trainer_class__
 	const JOE
 	const DANNY
 
-	trainerclass BUG_CATCHER ; 2b
+	trainerclass BUG_CATCHER ; 2c
 	const WADE1
 	const WADE2
 	const WADE3
@@ -315,7 +318,7 @@ KRIS EQU __trainer_class__
 	const DOUG
 	const LOUIE
 
-	trainerclass BIRD_KEEPER ; 2c
+	trainerclass BIRD_KEEPER ; 2d
 	const VANCE1
 	const VANCE2
 	const VANCE3
@@ -336,7 +339,7 @@ KRIS EQU __trainer_class__
 	const BOB
 	const HANK
 
-	trainerclass FISHER ; 2d
+	trainerclass FISHER ; 2e
 	const RALPH1
 	const RALPH2
 	const RALPH3
@@ -363,7 +366,7 @@ KRIS EQU __trainer_class__
 	const SCOTT
 	const ARNOLD
 
-	trainerclass HIKER ; 2e
+	trainerclass HIKER ; 2f
 	const ANTHONY1
 	const ANTHONY2
 	const ANTHONY3
@@ -388,7 +391,7 @@ KRIS EQU __trainer_class__
 	const JIM
 	const HOUSTON
 
-	trainerclass BIKER ; 2f
+	trainerclass BIKER ; 30
 	const BIKER_BENNY
 	const KAZU
 	const DWAYNE
@@ -400,7 +403,7 @@ KRIS EQU __trainer_class__
 	const GLENN
 	const T_BONE
 
-	trainerclass FIREBREATHER ; 30
+	trainerclass FIREBREATHER ; 31
 	const BILL
 	const RAY
 	const WALT
@@ -412,7 +415,7 @@ KRIS EQU __trainer_class__
 	const BURT
 	const IROH
 
-	trainerclass PSYCHIC_T ; 31
+	trainerclass PSYCHIC_T ; 32
 	const MARK
 	const GREG
 	const NORMAN
@@ -427,7 +430,7 @@ KRIS EQU __trainer_class__
 	const JARED
 	const RODNEY
 
-	trainerclass BLACKBELT_T ; 32
+	trainerclass BLACKBELT_T ; 33
 	const KENJI
 	const LUNG
 	const YOSHI
@@ -438,7 +441,7 @@ KRIS EQU __trainer_class__
 	const KIYO
 	const WAI
 
-	trainerclass SAILOR ; 33
+	trainerclass SAILOR ; 34
 	const HUEY1
 	const HUEY2
 	const HUEY3
@@ -453,7 +456,7 @@ KRIS EQU __trainer_class__
 	const KENNETH
 	const STANLY
 
-	trainerclass JUGGLER ; 34
+	trainerclass JUGGLER ; 35
 	const IRWIN1
 	const IRWIN2
 	const IRWIN3
@@ -463,7 +466,7 @@ KRIS EQU __trainer_class__
 	const DALTON
 	const CYAN
 
-	trainerclass SCIENTIST ; 35
+	trainerclass SCIENTIST ; 36
 	const ROSS
 	const MITCH
 	const JED
@@ -481,7 +484,7 @@ KRIS EQU __trainer_class__
 	const SUGURU
 	const TRAVIS
 
-	trainerclass SUPER_NERD ; 36
+	trainerclass SUPER_NERD ; 37
 	const ERIC
 	const TERU
 	const MARKUS
@@ -498,7 +501,7 @@ KRIS EQU __trainer_class__
 	const RUSS
 	const NEIL
 
-	trainerclass POKEMANIAC ; 37
+	trainerclass POKEMANIAC ; 38
 	const BRENT1
 	const BRENT2
 	const BRENT3
@@ -516,7 +519,7 @@ KRIS EQU __trainer_class__
 	const ETHAN
 	const TANNER
 
-	trainerclass GENTLEMAN ; 38
+	trainerclass GENTLEMAN ; 39
 	const PRESTON
 	const ALFRED
 	const VIRGIL
@@ -525,7 +528,7 @@ KRIS EQU __trainer_class__
 	const SYLVAIN
 	const NAVY
 
-	trainerclass ENGINEER ; 39
+	trainerclass ENGINEER ; 3a
 	const SMITH
 	const BAILY
 	const BERNIE
@@ -535,28 +538,28 @@ KRIS EQU __trainer_class__
 	const FLINT
 	const ENRIQUE
 
-	trainerclass GUITARIST ; 3a
+	trainerclass GUITARIST ; 3b
 	const JULES
 	const CASEY
 	const CLYDE
 	const VINCENT
 	const COBALT
 
-	trainerclass OFFICER ; 3b
+	trainerclass OFFICER ; 3c
 	const KEITH
 	const DIRK
 	const TUBBS
 	const DISHER
 	const LASSITER
 
-	trainerclass BURGLAR ; 3c
+	trainerclass BURGLAR ; 3d
 	const FIZBO
 	const DUNCAN
 	const EDDIE
 	const COREY
 	const RAMON
 
-	trainerclass GAMBLER ; 3d
+	trainerclass GAMBLER ; 3e
 	const LUCKY
 	const HARVEY
 	const ACE
@@ -565,7 +568,7 @@ KRIS EQU __trainer_class__
 	const P_T
 	const LIU_HAI
 
-	trainerclass LASS ; 3e
+	trainerclass LASS ; 3f
 	const DANA1
 	const DANA2
 	const DANA3
@@ -583,7 +586,7 @@ KRIS EQU __trainer_class__
 	const ELLEN
 	const LUNA
 
-	trainerclass TWINS ; 3f
+	trainerclass TWINS ; 40
 	const AMYANDMAY1
 	const AMYANDMAY2
 	const ANNANDANNE1
@@ -595,7 +598,7 @@ KRIS EQU __trainer_class__
 	const LEAANDPIA1
 	const LEAANDPIA2
 
-	trainerclass BEAUTY ; 40
+	trainerclass BEAUTY ; 41
 	const BRENDA
 	const VICTORIA
 	const SAMANTHA
@@ -610,14 +613,14 @@ KRIS EQU __trainer_class__
 	const BERYL
 	const MAEVE
 
-	trainerclass TEACHER ; 41
+	trainerclass TEACHER ; 42
 	const FRIZZLE
 	const CALYPSO
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
 
-	trainerclass KIMONO_GIRL ; 42
+	trainerclass KIMONO_GIRL ; 43
 	const NAOKO
 	const SAYO
 	const ZUKI
@@ -625,7 +628,7 @@ KRIS EQU __trainer_class__
 	const MIKI
 	const KYOSHI
 
-	trainerclass CAMPER ; 43
+	trainerclass CAMPER ; 44
 	const TODD1
 	const TODD2
 	const TODD3
@@ -647,7 +650,7 @@ KRIS EQU __trainer_class__
 	const JOHN
 	const JERRY
 
-	trainerclass PICNICKER ; 44
+	trainerclass PICNICKER ; 45
 	const LIZ1
 	const LIZ2
 	const LIZ3
@@ -675,7 +678,7 @@ KRIS EQU __trainer_class__
 	const HOPE
 	const SHARON
 
-	trainerclass POKEFANM ; 45
+	trainerclass POKEFANM ; 46
 	const DEREK1
 	const DEREK2
 	const BRANDON
@@ -690,35 +693,34 @@ KRIS EQU __trainer_class__
 	const JEREMY
 	const COLIN
 
-	trainerclass POKEFANF ; 46
+	trainerclass POKEFANF ; 47
 	const BEVERLY
 	const RUTH
 	const JAIME
 	const VI
 	const GEORGIA
 
-	trainerclass SAGE ; 47
+	trainerclass SAGE ; 48
 	const NICO
 	const CHOW
 	const EDMOND
 	const JIN
 	const NEAL
 	const TROY
-	const LI
 	const PING
 	const JEFFREY
 	const GAKU
 	const MASA
 	const KOJI
 
-	trainerclass MEDIUM ; 48
+	trainerclass MEDIUM ; 49
 	const MARTHA
 	const GRACE
 	const REBECCA
 	const DORIS
 	const CHELL
 
-	trainerclass SWIMMERM ; 49
+	trainerclass SWIMMERM ; 4a
 	const SIMON
 	const RANDALL
 	const CHARLIE
@@ -734,7 +736,7 @@ KRIS EQU __trainer_class__
 	const HAROLD
 	const PHELPS
 
-	trainerclass SWIMMERF ; 4a
+	trainerclass SWIMMERF ; 4b
 	const ELAINE
 	const PAULA
 	const KAYLEE
@@ -751,13 +753,13 @@ KRIS EQU __trainer_class__
 	const BOBBI
 	const MARY
 
-	trainerclass BOARDER ; 4b
+	trainerclass BOARDER ; 4c
 	const RONALD
 	const BRAD
 	const DOUGLAS
 	const SVLAD
 
-	trainerclass SKIER ; 4c
+	trainerclass SKIER ; 4d
 	const ROXANNE
 	const CLARISSA
 	const SKYE
@@ -765,7 +767,7 @@ KRIS EQU __trainer_class__
 
 ; Start of Rocket music
 
-	trainerclass GRUNTM ; 4d
+	trainerclass GRUNTM ; 4e
 	const GRUNTM_WELL1
 	const GRUNTM_WELL2
 	const GRUNTM_WELL3
