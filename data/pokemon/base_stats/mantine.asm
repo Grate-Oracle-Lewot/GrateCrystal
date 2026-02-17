@@ -6,7 +6,7 @@
 	db WATER, FLYING ; type
 	db 45 ; catch rate
 	db 168 ; base exp
-	db FRESH_WATER, TM_STEEL_WING ; items
+	db SPRING_WATER, TM_STEEL_WING ; items
 	db GENDER_F50 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mantine/front.dimensions"
