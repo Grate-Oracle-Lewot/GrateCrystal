@@ -43,7 +43,7 @@ BTTrainerClassGenders:
 	db FEMALE ; CAL_F
 	db MALE   ; MYSTIC
 	db MALE   ; ELDER
-	db MALE   ; OLD
+	db MALE   ; OLD MAN
 	db MALE   ; YOUNGSTER
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BUG_CATCHER
@@ -82,8 +82,8 @@ BTTrainerClassGenders:
 	db FEMALE ; SKIER
 	db MALE   ; GRUNT_M
 	db FEMALE ; GRUNT_F
-	db FEMALE ; JESSIE &
+	db FEMALE ; JESSIE & JAMES
 	db MALE   ; EXECUTIVE_M
 	db FEMALE ; EXECUTIVE_F
-	db MALE   ; BOSS
+	db MALE   ; OUTLAW
 	assert_table_length NUM_TRAINER_CLASSES
