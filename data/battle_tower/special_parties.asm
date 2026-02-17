@@ -1990,85 +1990,168 @@ BattleTowerRed:
 
 	assert_table_length 3
 
-BattleTowerDefaultParty:
-	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerDefaultParty
+BattleTowerEusine:
+	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerEusine
 
-	db MEWTWO
-	db BLACKGLASSES
-	db KINESIS, PSYCHIC_M, AURA_SPHERE, DARK_PULSE
+	db SUICUNE
+	db MYSTIC_WATER
+	db SURF, ICE_BEAM, TRI_ATTACK, AURA_SPHERE
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
-	bigdw 65000
-	bigdw 0
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	dn 1, 15, 15, 15 ; DVs
-	db 24, 16, 16, 24 ; PP
-	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 415 ; HP
-	bigdw 415 ; Max HP
-	bigdw 227 ; Atk
-	bigdw 278 ; Def
-	bigdw 358 ; Spd
-	bigdw 406 ; SAtk
-	bigdw 278 ; SDef
-	db "MEWTWO@@@@@"
-
-	db HO_OH
-	db DICTIONARY
-	db SACRED_FIRE, SUNNY_DAY, SOLARBEAM, OUTRAGE
-	dw 0 ; OT ID
-	dt 1250000 ; Exp
-	; Stat exp
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
 	dn 15, 15, 15, 15 ; DVs
-	db 8, 8, 16, 16 ; PP
-	db 0 ; Happiness
+	db 16, 16, 16, 16 ; PP
+	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 415 ; HP
-	bigdw 415 ; Max HP
-	bigdw 358 ; Atk
-	bigdw 278 ; Def
-	bigdw 278 ; Spd
-	bigdw 318 ; SAtk
-	bigdw 406 ; SDef
-	db "HO-OH@@@@@@"
+	bigdw 391 ; HP
+	bigdw 391 ; Max HP
+	bigdw 236 ; Atk
+	bigdw 316 ; Def
+	bigdw 256 ; Spd
+	bigdw 266 ; SAtk
+	bigdw 316 ; SDef
+	db "SUICUNE@@@@"
 
-	db LUGIA
-	db SCOPE_LENS
-	db AEROBLAST, RECOVER, AIR_SLASH, DRAGON_PULSE
+	db WOBBUFFET
+	db SLOWPOKETAIL
+	db COUNTER, MIRROR_COAT, SAFEGUARD, ENCORE
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	dn 12, 13, 13, 12 ; DVs
+	db 32, 32, 32, 8 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 553 ; HP
+	bigdw 553 ; Max HP
+	bigdw 146 ; Atk
+	bigdw 198 ; Def
+	bigdw 148 ; Spd
+	bigdw 146 ; SAtk
+	bigdw 196 ; SDef
+	db "WOBBUFFET@@"
+
+	db AERODACTYL
+	db HARDHAT
+	db ROCK_WRECKER, SKY_ATTACK, IRON_HEAD, EGG_BOMB
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
 	; Stat exp
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	bigdw 65000
-	dn 1, 15, 15, 15 ; DVs
-	db 8, 16, 24, 16 ; PP
-	db 0 ; Happiness
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	bigdw 42000
+	dn 12, 13, 13, 12 ; DVs
+	db 8, 8, 24, 32 ; PP
+	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 415 ; HP
-	bigdw 415 ; Max HP
-	bigdw 250 ; Atk
-	bigdw 358 ; Def
-	bigdw 318 ; Spd
-	bigdw 278 ; SAtk
-	bigdw 406 ; SDef
-	db "LUGIA@@@@@@"
+	bigdw 333 ; HP
+	bigdw 333 ; Max HP
+	bigdw 290 ; Atk
+	bigdw 212 ; Def
+	bigdw 342 ; Spd
+	bigdw 200 ; SAtk
+	bigdw 230 ; SDef
+	db "AERODACTYL@"
+
+	assert_table_length 3
+
+BattleTowerLi:
+	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLi
+
+	db VICTREEBEL
+	db SCOPE_LENS
+	db RAZOR_LEAF, POISON_JAB, SCALD, FLASH
+	dw 0 ; OT ID
+	dt 949930 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 8, 9, 9, 10 ; DVs
+	db 40, 24, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 345 ; HP
+	bigdw 345 ; Max HP
+	bigdw 294 ; Atk
+	bigdw 216 ; Def
+	bigdw 226 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 228 ; SDef
+	db "VICTREEBEL@"
+
+	db BELLOSSOM
+	db LEFTOVERS
+	db LEECH_SEED, GIGA_DRAIN, PROTECT, FLASH
+	dw 0 ; OT ID
+	dt 949930 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 8, 9, 9, 10 ; DVs
+	db 16, 8, 16, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 335 ; HP
+	bigdw 335 ; Max HP
+	bigdw 244 ; Atk
+	bigdw 276 ; Def
+	bigdw 186 ; Spd
+	bigdw 268 ; SAtk
+	bigdw 288 ; SDef
+	db "BELLOSSOM@@"
+
+	db NOCTOWL
+	db NOISEMAKER
+	db HYPNOSIS, DREAM_EATER, SHADOW_BALL, FLASH
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	bigdw 65535
+	dn 8, 9, 9, 10 ; DVs
+	db 32, 24, 24, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 322 ; HP
+	bigdw 322 ; Max HP
+	bigdw 184 ; Atk
+	bigdw 186 ; Def
+	bigdw 226 ; Spd
+	bigdw 260 ; SAtk
+	bigdw 280 ; SDef
+	db "NOCTOWL@@@@"
 
 	assert_table_length 3
