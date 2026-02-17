@@ -6,7 +6,7 @@
 	db WATER, GROUND ; type
 	db 255 ; catch rate
 	db 52 ; base exp
-	db FRESH_WATER, LIMBO_STICK ; items
+	db SPRING_WATER, LIMBO_STICK ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/wooper/front.dimensions"
