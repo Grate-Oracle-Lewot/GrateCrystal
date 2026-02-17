@@ -1,4 +1,4 @@
-	db TURBIN ; ???
+	db TURBIN ; 252
 
 	db  100, 90, 130,  50,  45, 110
 	;   hp  atk  def  spd  sat  sdf
