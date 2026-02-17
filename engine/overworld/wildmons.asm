@@ -697,7 +697,7 @@ UpdateRoamMons:
 	ld a, [wRoamMon1MapNumber]
 	ld c, a
 	call Random
-	cp 127 ; ~50% chance to stay on the current map
+	cp 50 percent ; 50% chance to stay on the current map
 	jr c, .stay_put1
 	call .Update
 .stay_put1
@@ -714,7 +714,7 @@ UpdateRoamMons:
 	ld a, [wRoamMon2MapNumber]
 	ld c, a
 	call Random
-	cp 127 ; ~50% chance to stay on the current map
+	cp 50 percent ; 50% chance to stay on the current map
 	jr c, .stay_put2
 	call .Update
 .stay_put2
