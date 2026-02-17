@@ -46,6 +46,7 @@ INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/mystic.gbcpal", middle_colors
+INCBIN "gfx/trainers/elder.gbcpal", middle_colors
 INCBIN "gfx/trainers/old.gbcpal", middle_colors
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
