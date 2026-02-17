@@ -818,7 +818,7 @@ KRIS EQU __trainer_class__
 	const EXECUTIVEF_1
 	const EXECUTIVEF_2
 
-	trainerclass BOSS ; 53
+	trainerclass OUTLAW ; 53
 	const GIOVANNI
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
