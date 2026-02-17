@@ -309,7 +309,7 @@ AI_Items:
 	dbw MAX_POTION,   .MaxPotion
 	dbw HYPER_POTION, .HyperPotion
 	dbw SUPER_POTION, .SuperPotion
-	dbw FRESH_WATER,  .FreshWater
+	dbw SPRING_WATER, .SpringWater
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw FRANKENBERRY, .Frankenberry
@@ -420,10 +420,10 @@ AI_Items:
 	call EnemyUsedSuperPotion
 	jp .Use
 
-.FreshWater:
+.SpringWater:
 	call .HealItem
 	jp c, .DontUse
-	call EnemyUsedFreshWater
+	call EnemyUsedSpringWater
 	jp .Use
 
 .XAccuracy:
@@ -594,15 +594,15 @@ FullRestoreContinue:
 	ld [wEnemyMonHP], a
 	jr EnemyPotionFinish
 
-EnemyUsedFreshWater:
-	ld a, FRESH_WATER
-	jr FreshWaterContinue
+EnemyUsedSpringWater:
+	ld a, SPRING_WATER
+	jr SpringWaterContinue
 
 EnemyUsedSuperPotion:
 	ld a, SUPER_POTION
 	; fallthrough
 
-FreshWaterContinue:
+SpringWaterContinue:
 	ld b, 50
 	jr EnemyPotionContinue
 
