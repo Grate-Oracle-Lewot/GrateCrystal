@@ -58,7 +58,7 @@ ItemEffects:
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
 	dw NoEffect            ; ANTIVENOM
-	dw RestoreHPEffect     ; FRESH_WATER
+	dw RestoreHPEffect     ; SPRING_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
