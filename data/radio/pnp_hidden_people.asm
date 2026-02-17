@@ -2,17 +2,20 @@
 
 PnP_HiddenPeople:
 	db POKEMON_PROF
-	db TWINS
-	db JESSIE
 	db AEROBONES
 	db KABUBONES
 	db MISSINGNO_T
 	db CAL
 	db CAL_F
 	db OLD
+	db TWINS
+	db JESSIE
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
-	db CHAMPION
+	db A_D
+	db LUCAS
+	db PERCY
+	db KAREN
 	db BROCK
 	db MISTY
 	db LT_SURGE
@@ -20,20 +23,18 @@ PnP_HiddenPeople_BeatE4:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
-	db A_D
-	db LUCAS
-	db PERCY
-	db BOSS
-	db KAREN
 	db KOGA
+	db CHAMPION
 	db RIVAL1
+	db OUTLAW
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
-	db RIVAL2
+	db WILL
+	db BRUNO
 	db LORELEI
 	db AGATHA
-	db BRUNO
-	db WILL
+	db BLUE
 	db RED
+	db RIVAL2
+	db MYSTIC
 	db -1
