@@ -234,6 +234,9 @@ Pokedex_PrintBaseExp:
 Pokedex_Get_Growth::
 ; Experience growth rate
 	ld a, [wBaseGrowthRate]
+	ld de, .growth_fast
+	cp GROWTH_FAST
+	jr z, .Growth_print
 	ld de, .growth_medfast
 	cp GROWTH_MEDIUM_FAST
 	jr z, .Growth_print
@@ -246,9 +249,6 @@ Pokedex_Get_Growth::
 	ld de, .growth_medslow
 	cp GROWTH_MEDIUM_SLOW
 	jr z, .Growth_print
-	ld de, .growth_fast
-	cp GROWTH_FAST
-	jr z, .Growth_print
 	ld de, .growth_slow
 	cp GROWTH_SLOW
 	jr z, .Growth_print
@@ -260,6 +260,8 @@ Pokedex_Get_Growth::
 	hlcoord 2, 13
 	jp PlaceString
 
+.growth_fast
+	db "Fast Growth@"
 .growth_medfast:
 	db "Med. Fast Growth@"
 .growth_slightfast
@@ -268,8 +270,6 @@ Pokedex_Get_Growth::
 	db "Sltly Slow Growth@"
 .growth_medslow
 	db "Med. Slow Growth@"
-.growth_fast
-	db "Fast Growth@"
 .growth_slow
 	db "Slow Growth@"
 .growth_erratic
@@ -319,11 +319,26 @@ Pokedex_Get_EggGroup:
 ; have the fixed group num in 'a' already
 ; return 'de' as the text for matching group
 	ld a, b
+	ld de, .EggG_Field_text
+	cp EGG_GROUND
+	ret z
 	ld de, .EggG_Monster_text
 	cp EGG_MONSTER
 	ret z
+	ld de, .EggG_Fairy_text
+	cp EGG_FAIRY
+	ret z
+	ld de, .EggG_Fish_text
+	cp EGG_WATER_2
+	ret z
 	ld de, .EggG_Amphibian_text
 	cp EGG_WATER_1
+	ret z
+	ld de, .EggG_Crustacean_text
+	cp EGG_WATER_3
+	ret z
+	ld de, .EggG_Grass_text
+	cp EGG_PLANT
 	ret z
 	ld de, .EggG_Bug_text
 	cp EGG_BUG
@@ -331,32 +346,17 @@ Pokedex_Get_EggGroup:
 	ld de, .EggG_Flying_text
 	cp EGG_FLYING
 	ret z
-	ld de, .EggG_Field_text
-	cp EGG_GROUND
-	ret z
-	ld de, .EggG_Fairy_text
-	cp EGG_FAIRY
-	ret z
-	ld de, .EggG_Grass_text
-	cp EGG_PLANT
-	ret z
-	ld de, .EggG_HumanLike_text
+	ld de, .EggG_Humanoid_text
 	cp EGG_HUMANSHAPE
 	ret z
-	ld de, .EggG_Invertebrate_text
-	cp EGG_WATER_3
+	ld de, .EggG_Dragon_text
+	cp EGG_DRAGON
 	ret z
 	ld de, .EggG_Mineral_text
 	cp EGG_MINERAL
 	ret z
 	ld de, .EggG_Amorphous_text
 	cp EGG_INDETERMINATE
-	ret z
-	ld de, .EggG_Fish_text
-	cp EGG_WATER_2
-	ret z
-	ld de, .EggG_Dragon_text
-	cp EGG_DRAGON
 	ret z
 	ld de, .EggG_Ditto_text
 	cp EGG_DITTO
@@ -365,32 +365,32 @@ Pokedex_Get_EggGroup:
 	ret
 
 ; Egg Groups
+.EggG_Field_text:
+	db "Field@"
 .EggG_Monster_text:
 	db "Monster@"
+.EggG_Fairy_text:
+	db "Fairy@"
+.EggG_Fish_text:
+	db "Fish@"
 .EggG_Amphibian_text:
 	db "Amphibian@"
+.EggG_Crustacean_text:
+	db "Crustacean@"
+.EggG_Grass_text:
+	db "Grass@"
 .EggG_Bug_text:
 	db "Bug@"
 .EggG_Flying_text:
 	db "Flying@"
-.EggG_Field_text:
-	db "Field@"
-.EggG_Fairy_text:
-	db "Fairy@"
-.EggG_Grass_text:
-	db "Grass@"
-.EggG_HumanLike_text:
-	db "Human-Like@"
-.EggG_Invertebrate_text:
-	db "Invertebrate@"
+.EggG_Humanoid_text:
+	db "Humanoid@"
+.EggG_Dragon_text:
+	db "Dragon@"
 .EggG_Mineral_text:
 	db "Mineral@"
 .EggG_Amorphous_text:
 	db "Amorphous@"
-.EggG_Fish_text:
-	db "Fish@"
-.EggG_Dragon_text:
-	db "Dragon@"
 .EggG_Ditto_text:
 	db "ALL@"
 
