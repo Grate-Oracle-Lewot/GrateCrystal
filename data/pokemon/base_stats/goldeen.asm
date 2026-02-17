@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 225 ; catch rate
 	db 111 ; base exp
-	db FRESH_WATER, MYSTIC_WATER ; items
+	db SPRING_WATER, MYSTIC_WATER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/goldeen/front.dimensions"
