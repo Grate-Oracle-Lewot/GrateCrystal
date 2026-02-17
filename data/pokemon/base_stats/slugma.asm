@@ -10,7 +10,7 @@
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/slugma/front.dimensions"
-	db GROWTH_MEDIUM_FAST ; growth rate
+	db GROWTH_FAST ; growth rate
 	dn EGG_INDETERMINATE, EGG_BUG ; egg groups
 
 	; tm/hm learnset
