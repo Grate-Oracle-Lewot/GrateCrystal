@@ -33,34 +33,29 @@ EnableEvents::
 	ld [wEnabledPlayerEvents], a
 	ret
 
-CheckBit5_ScriptFlags2:
-	ld hl, wEnabledPlayerEvents
-	bit 5, [hl]
-	ret
-
 EnableWildEncounters:
 	ld hl, wEnabledPlayerEvents
-	set 4, [hl]
+	set PLAYEREVENTS_WILD_ENCOUNTERS, [hl]
 	ret
 
 CheckWarpConnxnScriptFlag:
 	ld hl, wEnabledPlayerEvents
-	bit 2, [hl]
+	bit PLAYEREVENTS_WARPS_AND_CONNECTIONS, [hl]
 	ret
 
 CheckCoordEventScriptFlag:
 	ld hl, wEnabledPlayerEvents
-	bit 1, [hl]
+	bit PLAYEREVENTS_COORD_EVENTS, [hl]
 	ret
 
 CheckStepCountScriptFlag:
 	ld hl, wEnabledPlayerEvents
-	bit 0, [hl]
+	bit PLAYEREVENTS_COUNT_STEPS, [hl]
 	ret
 
 CheckWildEncountersScriptFlag:
 	ld hl, wEnabledPlayerEvents
-	bit 4, [hl]
+	bit PLAYEREVENTS_WILD_ENCOUNTERS, [hl]
 	ret
 
 StartMap:
