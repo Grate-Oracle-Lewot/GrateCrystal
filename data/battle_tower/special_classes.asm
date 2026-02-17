@@ -25,4 +25,6 @@ BattleTowerSpecialTrainers:
 	db "KOGA@@@@@@", KOGA
 	db "LANCE@@@@@", CHAMPION
 	db "RED@@@@@@@", RED
+	db "EUSINE@@@@", MYSTIC
+	db "LI@@@@@@@@", ELDER
 	assert_table_length BATTLETOWER_NUM_SPECIAL_TRAINERS
