@@ -6,7 +6,7 @@
 	db WATER, ICE ; type
 	db 75 ; catch rate
 	db 176 ; base exp
-	db FRESH_WATER, NEVERMELTICE ; items
+	db SPRING_WATER, NEVERMELTICE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dewgong/front.dimensions"
