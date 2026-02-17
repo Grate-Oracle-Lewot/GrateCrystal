@@ -269,8 +269,8 @@ EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 37, 26, ROUTE_42_ECRUTEAK_GATE, 1
-	warp_event 37, 27, ROUTE_42_ECRUTEAK_GATE, 2
+	warp_event 39, 26, ROUTE_42_ECRUTEAK_GATE, 1
+	warp_event 39, 27, ROUTE_42_ECRUTEAK_GATE, 2
 	warp_event 18, 11, ECRUTEAK_TIN_TOWER_ENTRANCE, 1
 	warp_event 20,  2, WISE_TRIOS_ROOM, 1
 	warp_event 20,  3, WISE_TRIOS_ROOM, 2
