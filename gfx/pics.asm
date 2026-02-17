@@ -716,7 +716,7 @@ UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown_question/front.animated.2bpp
 UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown_question/back.2bpp.lz"
 KarenPic:                 INCBIN "gfx/trainers/karen.2bpp.lz"
 KogaPic:                  INCBIN "gfx/trainers/koga.2bpp.lz"
-BossPic:                  INCBIN "gfx/trainers/giovanni.2bpp.lz"
+OutlawPic:                INCBIN "gfx/trainers/giovanni.2bpp.lz"
 JessiePic:                INCBIN "gfx/trainers/jessie_james.2bpp.lz"
 AerobonesPic:             INCBIN "gfx/trainers/aerobones.2bpp.lz"
 KabubonesPic:             INCBIN "gfx/trainers/kabubones.2bpp.lz"
