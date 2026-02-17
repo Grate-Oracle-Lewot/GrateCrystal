@@ -85,5 +85,5 @@ TrainerGroups:
 	dba JessieGroup
 	dba ExecutiveMGroup
 	dba ExecutiveFGroup
-	dba BossGroup
+	dba OutlawGroup
 	assert_table_length NUM_TRAINER_CLASSES
