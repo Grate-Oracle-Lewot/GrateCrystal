@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 225 ; catch rate
 	db 83 ; base exp
-	db FRESH_WATER, DRAGON_SCALE ; items
+	db SPRING_WATER, DRAGON_SCALE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/horsea/front.dimensions"
