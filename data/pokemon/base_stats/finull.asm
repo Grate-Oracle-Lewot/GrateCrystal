@@ -10,7 +10,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
 	INCBIN "gfx/pokemon/finull/front.dimensions"
-	db GROWTH_SLOW ; growth rate
+	db GROWTH_FLUCTUATING ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
