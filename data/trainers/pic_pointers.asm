@@ -42,6 +42,7 @@ TrainerPicPointers::
 	dba CalPic
 	dba CalfPic
 	dba MysticPic
+	dba ElderPic
 	dba OldPic
 	dba YoungsterPic
 	dba SchoolboyPic
