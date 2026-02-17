@@ -191,8 +191,8 @@ BattleTowerLoadRed:
 	ld hl, BattleTowerRed
 	jr BattleTowerLoadSpecialParty
 
-BattleTowerLoadLi:
-	ld hl, BattleTowerLi
+BattleTowerLoadEusine:
+	ld hl, BattleTowerEusine
 	; fallthrough
 
 BattleTowerLoadSpecialParty:
