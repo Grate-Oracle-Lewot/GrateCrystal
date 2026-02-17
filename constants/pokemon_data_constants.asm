@@ -54,13 +54,13 @@ NUM_GROWTH_RATES EQU const_value
 	const EGG_GROUND        ; 1 (Field)
 	const EGG_MONSTER       ; 2
 	const EGG_FAIRY         ; 3
-	const EGG_WATER_1       ; 4 (Amphibian)
-	const EGG_WATER_2       ; 5 (Fish)
-	const EGG_WATER_3       ; 6 (Invertebrate)
+	const EGG_WATER_2       ; 4 (Fish)
+	const EGG_WATER_1       ; 5 (Amphibian)
+	const EGG_WATER_3       ; 6 (Crustacean)
 	const EGG_PLANT         ; 7 (Grass)
 	const EGG_BUG           ; 8
 	const EGG_FLYING        ; 9
-	const EGG_HUMANSHAPE    ; a (Human-Like)
+	const EGG_HUMANSHAPE    ; a (Humanoid)
 	const EGG_DRAGON        ; b
 	const EGG_MINERAL       ; c
 	const EGG_INDETERMINATE ; d (Amorphous)
