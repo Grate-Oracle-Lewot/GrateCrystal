@@ -10,7 +10,7 @@ else
 endc
 	db 75 ; catch rate
 	db 174 ; base exp
-	db TM_PSYCHIC_M, FRESH_WATER ; items
+	db TM_PSYCHIC_M, SPRING_WATER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/golduck/front.dimensions"
