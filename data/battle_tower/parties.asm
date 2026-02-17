@@ -580,7 +580,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 1000 ; Exp
+	dt 800 ; Exp
 	; Stat exp
 	bigdw 20535
 	bigdw 20535
@@ -1181,7 +1181,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 8000 ; Exp
+	dt 6400 ; Exp
 	; Stat exp
 	bigdw 25535
 	bigdw 25535
@@ -1782,7 +1782,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 27000 ; Exp
+	dt 21600 ; Exp
 	; Stat exp
 	bigdw 30535
 	bigdw 30535
@@ -2383,7 +2383,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 64000 ; Exp
+	dt 51200 ; Exp
 	; Stat exp
 	bigdw 35535
 	bigdw 35535
@@ -2984,7 +2984,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 125000 ; Exp
+	dt 100000 ; Exp
 	; Stat exp
 	bigdw 40535
 	bigdw 40535
@@ -3585,7 +3585,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 216000 ; Exp
+	dt 172800 ; Exp
 	; Stat exp
 	bigdw 45535
 	bigdw 45535
@@ -4186,7 +4186,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 343000 ; Exp
+	dt 274400 ; Exp
 	; Stat exp
 	bigdw 50535
 	bigdw 50535
@@ -4787,7 +4787,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 512000 ; Exp
+	dt 409600 ; Exp
 	; Stat exp
 	bigdw 55535
 	bigdw 55535
@@ -5388,7 +5388,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 729000 ; Exp
+	dt 583200 ; Exp
 	; Stat exp
 	bigdw 60535
 	bigdw 60535
@@ -5989,7 +5989,7 @@ BattleTowerMons:
 	db QUICK_CLAW
 	db TRANSFORM, SELFDESTRUCT, NO_MOVE, NO_MOVE
 	dw 0 ; OT ID
-	dt 1000000 ; Exp
+	dt 800000 ; Exp
 	; Stat exp
 	bigdw 65535
 	bigdw 65535
