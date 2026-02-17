@@ -79,7 +79,7 @@ BattleTowerFalkner:
 	bigdw 218 ; SDef
 	db "GLIGAR@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerBugsy:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBugsy
@@ -162,7 +162,7 @@ BattleTowerBugsy:
 	bigdw 270 ; SDef
 	db "SCIZOR@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerWhitney:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerWhitney
@@ -245,7 +245,7 @@ BattleTowerWhitney:
 	bigdw 230 ; SDef
 	db "MILTANK@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerMorty:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerMorty
@@ -328,7 +328,7 @@ BattleTowerMorty:
 	bigdw 238 ; SDef
 	db "GENGAR@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerChuck:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerChuck
@@ -411,7 +411,7 @@ BattleTowerChuck:
 	bigdw 248 ; SDef
 	db "KANGASKHAN@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerJasmine:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerJasmine
@@ -494,7 +494,7 @@ BattleTowerJasmine:
 	bigdw 220 ; SDef
 	db "STEELIX@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerPryce:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerPryce
@@ -577,7 +577,7 @@ BattleTowerPryce:
 	bigdw 208 ; SDef
 	db "PILOSWINE@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerClair:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerClair
@@ -660,7 +660,7 @@ BattleTowerClair:
 	bigdw 396 ; SDef
 	db "LUGIA@@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerAD:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerAD
@@ -743,7 +743,7 @@ BattleTowerAD:
 	bigdw 238 ; SDef
 	db "UTENA@@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerLucas:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLucas
@@ -826,7 +826,7 @@ BattleTowerLucas:
 	bigdw 294 ; SDef
 	db "MEGANIUM@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerPercy:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerPercy
@@ -909,7 +909,7 @@ BattleTowerPercy:
 	bigdw 246 ; SDef
 	db "WHIMSICOTT@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerLewot:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLewot
@@ -992,7 +992,7 @@ BattleTowerLewot:
 	bigdw 266 ; SDef
 	db "ZIGG@@@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerKaren:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerKaren
@@ -1075,7 +1075,7 @@ BattleTowerKaren:
 	bigdw 272 ; SDef
 	db "HOUNDOOM@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerBrock:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBrock
@@ -1158,7 +1158,7 @@ BattleTowerBrock:
 	bigdw 192 ; SDef
 	db "RHYDON@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerMisty:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerMisty
@@ -1241,7 +1241,7 @@ BattleTowerMisty:
 	bigdw 260 ; SDef
 	db "STARMIE@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerLtSurge:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLtSurge
@@ -1324,7 +1324,7 @@ BattleTowerLtSurge:
 	bigdw 244 ; SDef
 	db "LANTURN@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerErika:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerErika
@@ -1407,7 +1407,7 @@ BattleTowerErika:
 	bigdw 230 ; SDef
 	db "VICTREEBEL@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerJanine:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerJanine
@@ -1490,7 +1490,7 @@ BattleTowerJanine:
 	bigdw 310 ; SDef
 	db "SLOWKING@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerSabrina:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerSabrina
@@ -1573,7 +1573,7 @@ BattleTowerSabrina:
 	bigdw 286 ; SDef
 	db "ALAKAZAM@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerBlaine:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBlaine
@@ -1656,7 +1656,7 @@ BattleTowerBlaine:
 	bigdw 252 ; SDef
 	db "RAPIDASH@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerBlue:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerBlue
@@ -1739,7 +1739,7 @@ BattleTowerBlue:
 	bigdw 256 ; SDef
 	db "MAROWAK@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerKoga:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerKoga
@@ -1822,7 +1822,7 @@ BattleTowerKoga:
 	bigdw 232 ; SDef
 	db "WEEZING@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerLance:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLance
@@ -1905,7 +1905,7 @@ BattleTowerLance:
 	bigdw 296 ; SDef
 	db "DRAGONITE@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerRed:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerRed
@@ -1988,7 +1988,7 @@ BattleTowerRed:
 	bigdw 256 ; SDef
 	db "RAICHU@@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerEusine:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerEusine
@@ -2071,7 +2071,7 @@ BattleTowerEusine:
 	bigdw 230 ; SDef
 	db "AERODACTYL@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
 
 BattleTowerLi:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerLi
@@ -2154,4 +2154,4 @@ BattleTowerLi:
 	bigdw 280 ; SDef
 	db "NOCTOWL@@@@"
 
-	assert_table_length 3
+	assert_table_length BATTLETOWER_PARTY_LENGTH
