@@ -1,4 +1,4 @@
-CELADONDEPTSTORE6F_FRESH_WATER_PRICE EQU 200
+CELADONDEPTSTORE6F_SPRING_WATER_PRICE EQU 200
 CELADONDEPTSTORE6F_SODA_POP_PRICE    EQU 300
 CELADONDEPTSTORE6F_LEMONADE_PRICE    EQU 350
 
@@ -30,19 +30,19 @@ CeladonDeptStore6FVendingMachine:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .FreshWater
+	ifequal 1, .SpringWater
 	ifequal 2, .SodaPop
 	ifequal 3, .Lemonade
 	closetext
 	end
 
-.FreshWater:
-	checkmoney YOUR_MONEY, CELADONDEPTSTORE6F_FRESH_WATER_PRICE
+.SpringWater:
+	checkmoney YOUR_MONEY, CELADONDEPTSTORE6F_SPRING_WATER_PRICE
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
+	giveitem SPRING_WATER
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, CELADONDEPTSTORE6F_FRESH_WATER_PRICE
-	getitemname STRING_BUFFER_3, FRESH_WATER
+	takemoney YOUR_MONEY, CELADONDEPTSTORE6F_SPRING_WATER_PRICE
+	getitemname STRING_BUFFER_3, SPRING_WATER
 	sjump .VendItem
 
 .SodaPop:
@@ -90,7 +90,7 @@ CeladonDeptStore6FVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FRESH WATER  ¥{d:CELADONDEPTSTORE6F_FRESH_WATER_PRICE}@"
+	db "SPRING WATER ¥{d:CELADONDEPTSTORE6F_SPRING_WATER_PRICE}@"
 	db "SODA POP     ¥{d:CELADONDEPTSTORE6F_SODA_POP_PRICE}@"
 	db "LEMONADE     ¥{d:CELADONDEPTSTORE6F_LEMONADE_PRICE}@"
 	db "CANCEL@"
