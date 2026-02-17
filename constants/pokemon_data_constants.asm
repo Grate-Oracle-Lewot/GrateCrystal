@@ -39,11 +39,11 @@ GENDER_UNKNOWN EQU -1
 ; wBaseGrowthRate values
 ; GrowthRates indexes (see data/growth_rates.asm)
 	const_def
+	const GROWTH_FAST
 	const GROWTH_MEDIUM_FAST
 	const GROWTH_SLIGHTLY_FAST
 	const GROWTH_SLIGHTLY_SLOW
 	const GROWTH_MEDIUM_SLOW
-	const GROWTH_FAST
 	const GROWTH_SLOW
 	const GROWTH_ERRATIC
 	const GROWTH_FLUCTUATING
@@ -51,20 +51,20 @@ NUM_GROWTH_RATES EQU const_value
 
 ; wBaseEggGroups values
 	const_def 1
-	const EGG_MONSTER       ; 1
-	const EGG_WATER_1       ; 2 (Amphibian)
-	const EGG_BUG           ; 3
-	const EGG_FLYING        ; 4
-	const EGG_GROUND        ; 5 (Field)
-	const EGG_FAIRY         ; 6
+	const EGG_GROUND        ; 1 (Field)
+	const EGG_MONSTER       ; 2
+	const EGG_FAIRY         ; 3
+	const EGG_WATER_1       ; 4 (Amphibian)
+	const EGG_WATER_2       ; 5 (Fish)
+	const EGG_WATER_3       ; 6 (Invertebrate)
 	const EGG_PLANT         ; 7 (Grass)
-	const EGG_HUMANSHAPE    ; 8 (Human-Like)
-	const EGG_WATER_3       ; 9 (Invertebrate)
-	const EGG_MINERAL       ; a
-	const EGG_INDETERMINATE ; b (Amorphous)
-	const EGG_WATER_2       ; c (Fish)
-	const EGG_DITTO         ; d
-	const EGG_DRAGON        ; e
+	const EGG_BUG           ; 8
+	const EGG_FLYING        ; 9
+	const EGG_HUMANSHAPE    ; a (Human-Like)
+	const EGG_DRAGON        ; b
+	const EGG_MINERAL       ; c
+	const EGG_INDETERMINATE ; d (Amorphous)
+	const EGG_DITTO         ; e
 	const EGG_NONE          ; f (Undiscovered)
 
 ; party_struct members (see macros/wram.asm)
