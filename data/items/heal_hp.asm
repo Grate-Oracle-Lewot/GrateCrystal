@@ -4,7 +4,7 @@ HealingHPAmounts:
 	dbw HYPER_POTION, 200
 	dbw MAX_POTION,   MAX_STAT_VALUE
 	dbw FULL_RESTORE, MAX_STAT_VALUE
-	dbw FRESH_WATER,   50
+	dbw SPRING_WATER,  50
 	dbw SODA_POP,      64
 	dbw LEMONADE,      84
 	dbw MOOMOO_MILK,  100
