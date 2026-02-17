@@ -87,10 +87,12 @@ LoadBattleTowerSpecialTrainer::
 	jr z, BattleTowerLoadLance
 	cp RED
 	jr z, BattleTowerLoadRed
+	cp MYSTIC
+	jr z, BattleTowerLoadEusine
 	; fallthrough
 
-BattleTowerLoadDefaultParty:
-	ld hl, BattleTowerDefaultParty
+BattleTowerLoadLi:
+	ld hl, BattleTowerLi
 	jr BattleTowerLoadSpecialParty
 
 BattleTowerLoadFalkner:
@@ -187,6 +189,10 @@ BattleTowerLoadLance:
 
 BattleTowerLoadRed:
 	ld hl, BattleTowerRed
+	jr BattleTowerLoadSpecialParty
+
+BattleTowerLoadLi:
+	ld hl, BattleTowerLi
 	; fallthrough
 
 BattleTowerLoadSpecialParty:
