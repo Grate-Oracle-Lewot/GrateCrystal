@@ -40,6 +40,7 @@ BTTrainerClassSprites:
 	db SPRITE_CHRIS         ; CAL
 	db SPRITE_KRIS          ; CAL_F
 	db SPRITE_EUSINE        ; MYSTIC
+	db SPRITE_CAPTAIN       ; ELDER
 	db SPRITE_SAGE          ; OLD
 	db SPRITE_YOUNGSTER     ; YOUNGSTER
 	db SPRITE_BUG_CATCHER   ; SCHOOLBOY
