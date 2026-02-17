@@ -494,24 +494,19 @@ StepFunction_FromMovement:
 	dw MovementFunction_ObeyDPad             ; 07
 	dw MovementFunction_Indexed1             ; 08
 	dw MovementFunction_Indexed2             ; 09
-	dw MovementFunction_0a                   ; 0a
-	dw MovementFunction_0b                   ; 0b
-	dw MovementFunction_0c                   ; 0c
-	dw MovementFunction_0d                   ; 0d
-	dw MovementFunction_0e                   ; 0e
-	dw MovementFunction_Follow               ; 0f
-	dw MovementFunction_Script               ; 10
-	dw MovementFunction_Strength             ; 11
-	dw MovementFunction_FollowNotExact       ; 12
-	dw MovementFunction_Shadow               ; 13
-	dw MovementFunction_Emote                ; 14
-	dw MovementFunction_BigStanding          ; 15
-	dw MovementFunction_Bouncing             ; 16
-	dw MovementFunction_ScreenShake          ; 17
-	dw MovementFunction_SpinClockwise        ; 18
-	dw MovementFunction_SpinCounterclockwise ; 19
-	dw MovementFunction_BoulderDust          ; 1a
-	dw MovementFunction_ShakingGrass         ; 1b
+	dw MovementFunction_Follow               ; 0a
+	dw MovementFunction_Script               ; 0b
+	dw MovementFunction_Strength             ; 0c
+	dw MovementFunction_FollowNotExact       ; 0d
+	dw MovementFunction_Shadow               ; 0e
+	dw MovementFunction_Emote                ; 0f
+	dw MovementFunction_BigStanding          ; 10
+	dw MovementFunction_Bouncing             ; 11
+	dw MovementFunction_ScreenShake          ; 12
+	dw MovementFunction_SpinClockwise        ; 13
+	dw MovementFunction_SpinCounterclockwise ; 14
+	dw MovementFunction_BoulderDust          ; 15
+	dw MovementFunction_ShakingGrass         ; 16
 	assert_table_length NUM_SPRITEMOVEFN
 
 MovementFunction_Null:
@@ -583,22 +578,6 @@ MovementFunction_Indexed1:
 MovementFunction_Indexed2:
 	ld hl, GetIndexedMovementByte2
 	jp HandleMovementData
-
-MovementFunction_0a:
-	jp _GetMovementObject
-
-MovementFunction_0b:
-	jp _GetMovementObject
-
-MovementFunction_0c:
-	jp _GetMovementObject
-
-MovementFunction_0d:
-	ld hl, GetPlayerNextMovementByte
-	jp HandleMovementData
-
-MovementFunction_0e:
-	jp _GetMovementObject
 
 MovementFunction_Follow:
 	ld hl, GetFollowerNextMovementByte
@@ -1066,12 +1045,9 @@ StepTypesJumptable:
 	dw StepFunction_RockSmash       ; 11
 	dw StepFunction_DigTo           ; 12
 	dw StepFunction_TrackingObject  ; 13
-	dw StepFunction_14              ; 14
-	dw StepFunction_ScreenShake     ; 15
-	dw StepFunction_16              ; 16
-	dw StepFunction_17              ; 17
-	dw StepFunction_Delete          ; 18
-	dw StepFunction_SkyfallTop      ; 19
+	dw StepFunction_ScreenShake     ; 14
+	dw StepFunction_Delete          ; 15
+	dw StepFunction_SkyfallTop      ; 16
 	assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
@@ -1655,7 +1631,6 @@ StepFunction_TrackingObject:
 .nope
 	jp DeleteMapObject
 
-StepFunction_14:
 StepFunction_ScreenShake:
 	call Field1c_AnonJumptable
 .anon_dw
@@ -1699,18 +1674,6 @@ StepFunction_ScreenShake:
 	cpl
 	inc a
 	ret
-
-StepFunction_16:
-	call Field1c_AnonJumptable
-	; jumptable was dummied out here
-
-StepFunction_17:
-	call Field1c_AnonJumptable
-.anon_dw
-	dw .null
-	dw .null
-	dw .null
-.null
 
 StepFunction_SkyfallTop:
 	call Field1c_AnonJumptable
