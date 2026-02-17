@@ -3163,6 +3163,14 @@ MysticGroup:
 	db 100, ABRA,       BRIGHTPOWDER, DOUBLE_TEAM, SUBSTITUTE, REST, SLEEP_TALK
 	db -1 ; end
 
+ElderGroup:
+	; ELDER (1)
+	db "LI@", TRAINERTYPE_ITEM
+	db  9, BELLSPROUT, BERRY
+	db  9, ODDISH,     BERRY
+	db 10, HOOTHOOT,   BERRY
+	db -1 ; end
+
 OldGroup:
 	; OLD (1)
 	db "MAN@", TRAINERTYPE_NORMAL
@@ -5633,13 +5641,6 @@ SageGroup:
 	db -1 ; end
 
 	; SAGE (7)
-	db "LI@", TRAINERTYPE_ITEM
-	db  9, BELLSPROUT, BERRY
-	db  9, ODDISH,     BERRY
-	db 10, HOOTHOOT,   BERRY
-	db -1 ; end
-
-	; SAGE (8)
 	db "PING@", TRAINERTYPE_NORMAL
 	db 21, GASTLY
 	db 21, GASTLY
@@ -5648,26 +5649,26 @@ SageGroup:
 	db 21, GASTLY
 	db -1 ; end
 
-	; SAGE (9)
+	; SAGE (8)
 	db "JEFFREY@", TRAINERTYPE_ITEM
 	db 28, GIRAFARIG,  FRANKENBERRY
 	db -1 ; end
 
-	; SAGE (10)
+	; SAGE (9)
 	db "GAKU@", TRAINERTYPE_NORMAL
 	db 42, NOCTOWL
 	db 42, FLAREON
 	db 42, TYPHLOSION
 	db -1 ; end
 
-	; SAGE (11)
+	; SAGE (10)
 	db "MASA@", TRAINERTYPE_NORMAL
 	db 42, NOCTOWL
 	db 42, JOLTEON
 	db 42, AMPHAROS
 	db -1 ; end
 
-	; SAGE (12)
+	; SAGE (11)
 	db "KOJI@", TRAINERTYPE_NORMAL
 	db 42, NOCTOWL
 	db 42, VAPOREON
