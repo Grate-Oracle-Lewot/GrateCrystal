@@ -43,6 +43,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER      ; cal
 	db MUSIC_CLAIR                  ; cal_f
 	db MUSIC_MYSTICALMAN_ENCOUNTER  ; mystic
+	db MUSIC_SAGE_ENCOUNTER         ; elder
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; old
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; youngster
 	db MUSIC_YOUNGSTER_ENCOUNTER    ; schoolboy
