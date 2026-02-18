@@ -335,6 +335,9 @@ SetTrainerBattleLevel:
 	ld hl, TrainerGroups
 	add hl, bc
 	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld [wTrainerGroupBank], a
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -344,19 +347,19 @@ SetTrainerBattleLevel:
 .skip_trainer
 	dec b
 	jr z, .got_trainer
-.skip_party
-	ld a, [hli]
-	cp $ff
-	jr nz, .skip_party
+.loop
+	call GetNextTrainerDataByte
+	cp -1
+	jr nz, .loop
 	jr .skip_trainer
 .got_trainer
 
 .skip_name
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp "@"
 	jr nz, .skip_name
 
-	inc hl
-	ld a, [hl]
+	call GetNextTrainerDataByte
+	call GetNextTrainerDataByte
 	ld [wCurPartyLevel], a
 	ret
