@@ -238,7 +238,6 @@ StartTrainerBattle_DetermineWhichAnimation:
 	add hl, de
 	ld de, 0
 	ld a, [hl]
-	add 3
 	ld hl, wCurPartyLevel
 	cp [hl]
 	jr nc, .not_stronger
