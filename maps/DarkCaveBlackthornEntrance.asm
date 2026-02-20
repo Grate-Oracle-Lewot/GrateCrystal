@@ -40,8 +40,14 @@ TrainerSupernerdNorton:
 DarkCaveBlackthornEntranceRevive:
 	itemball REVIVE
 
-DarkCaveBlackthornEntranceTMSnore:
+DarkCaveBlackthornEntranceTMPsychUp:
 	itemball TM_PSYCH_UP, 5
+
+DarkCaveBlackthornEntranceHiddenDuskBall:
+	hiddenitem DUSK_BALL, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_DUSK_BALL
+
+DarkCaveBlackthornEntranceHiddenXSpDefend:
+	hiddenitem X_SP_DEFEND, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_X_SP_DEFEND
 
 DarkCaveBlackthornEntrancePharmacistText1:
 	text "Whoa! You startled"
@@ -94,12 +100,6 @@ SupernerdNortonAfterBattleText:
 	line "binary switch!"
 	done
 
-DarkCaveBlackthornEntranceHiddenDuskBall:
-	hiddenitem DUSK_BALL, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_DUSK_BALL
-
-DarkCaveBlackthornEntranceHiddenXSpDefend:
-	hiddenitem X_SP_DEFEND, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_HIDDEN_X_SP_DEFEND
-
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -118,5 +118,5 @@ DarkCaveBlackthornEntrance_MapEvents:
 	def_object_events
 	object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
-	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
+	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMPsychUp, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_PSYCH_UP
 	object_event 21, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdNorton, -1
