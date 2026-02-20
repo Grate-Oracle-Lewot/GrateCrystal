@@ -522,7 +522,7 @@ ENDM
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 101
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 102
 	map_const DRAGON_SHRINE,                                5,  5 ; 103
-	map_const TOHJO_FALLS,                                 15, 10 ; 104
+	map_const TOHJO_FALLS,                                 20, 18 ; 104
 	map_const MEW_ANTECHAMBER,                              6, 12 ; 105
 	map_const MEW_CHAMBER,                                 10,  9 ; 106
 	map_const VICTORY_ROAD,                                10, 36 ; 107
