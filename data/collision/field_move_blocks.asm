@@ -6,9 +6,10 @@ CutTreeBlockPointers:
 	dbw TILESET_KANTO,        .kanto
 	dbw TILESET_PARK,         .park
 	dbw TILESET_FOREST,       .forest
-	dbw TILESET_JOHTO_DESERT, .johto_desert
-	dbw TILESET_JOHTO_BEACH,  .johto
 	dbw TILESET_JOHTO_CHERRY, .johto
+	dbw TILESET_JOHTO_BURNED, .johto
+	dbw TILESET_JOHTO_BEACH,  .johto
+	dbw TILESET_JOHTO_DESERT, .johto_desert
 	dbw TILESET_KANTO_EXTRA,  .kanto
 	db -1 ; end
 
@@ -50,9 +51,10 @@ CutTreeBlockPointers:
 ; these blocks all use COLL_WHIRLPOOL in one quadrant
 WhirlpoolBlockPointers:
 	dbw TILESET_JOHTO,        .johto
-	dbw TILESET_JOHTO_DESERT, .johto
-	dbw TILESET_JOHTO_BEACH,  .johto
 	dbw TILESET_JOHTO_CHERRY, .johto
+	dbw TILESET_JOHTO_BEACH,  .johto
+	dbw TILESET_JOHTO_BURNED, .johto
+	dbw TILESET_JOHTO_DESERT, .johto
 	db -1 ; end
 
 .johto:
