@@ -82,7 +82,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Ditto won't activate held X items until after Transforming (Transform copies stat levels and thus would overwrite X item boosts)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
-  - Unown and Delibird learn multiple moves
+  - Unown and Delibird learn multiple moves and have better stats
   - Smeargle can learn moves via TM and HM, so you only need to Sketch other moves
   - All learnsets are generally more interesting, containing what would normally be egg moves (and more), while egg moves now go even farther
   - All non-legendary Pokémon can be obtained prior to the Pokémon League, with the vast majority available around mid-Johto
