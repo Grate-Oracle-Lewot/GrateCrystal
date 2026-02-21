@@ -38,8 +38,8 @@ TohjoFalls_MapEvents:
 	bg_event 30, 11, BGEVENT_ITEM, TohjoFallsHiddenXSpDefend
 
 	def_object_events
-	object_event 35,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsBoulderBoulder, -1
-	object_event 36,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsBoulderBoulder, -1
+	object_event 35,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsBoulder, -1
+	object_event 36,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsBoulder, -1
 	object_event 34,  2, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsRock, -1
 	object_event 35,  3, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsRock, -1
 	object_event 15,  3, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TohjoFallsRock, -1
