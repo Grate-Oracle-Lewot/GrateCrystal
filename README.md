@@ -571,6 +571,14 @@ Because level caps can be turned off, so that would be abusable.
 
 Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself. (Or it was until all the starter builds cluttered up the Elm's Lab script. Whoops.)
 
+# Why not correct the spelling of Vicegrip and Faint Attack?
+
+Nostalgia.
+
+# Why not space out the names of Solar Beam and--
+
+NO. Worst decision Game Freak has ever made by a country mile.
+
 # Can I copy your code?
 
 Yes, but to call this repository "disorganized" would be flattery. Don't say I didn't warn you.
