@@ -6,7 +6,7 @@
 if DEF(_VANILLA_TYPES)
 	db GROUND, GROUND ; type
 else
-	db NORMAL, GROUND ; type
+	db GROUND, NORMAL ; type
 endc
 	db 120 ; catch rate
 	db 124 ; base exp
