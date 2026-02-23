@@ -7,9 +7,10 @@
 ; c41d last x
 ; c41e last y
 ; c41f cards flipped this game
+; c420 are you sure?
 ; c440-c449 total numbers for row/col
 ; c450-c459 total voltorb for row/col
-; c498 coins collected this game
+; c498-c499 coins collected this game
 
 ; Card Properties (Bits):
 ; 7    - marked 0
@@ -20,7 +21,7 @@
 ; 2    - Card Flipped
 ; 1, 0 - Card number
 
-; States:
+; States (equal to relevant vanilla SFX_* constants):
 ; 7 move cursor
 ; 34 coin
 ; 91 boom!
