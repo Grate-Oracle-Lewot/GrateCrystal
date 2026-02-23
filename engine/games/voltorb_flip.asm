@@ -53,7 +53,7 @@ VoltorbFlipPaletteBlank:
 	dw $7fff, $7fff, $7fff, $7fff
 	dw $7fff, $7fff, $7fff, $7fff
 	dw $7fff, $7fff, $7fff, $7fff
-	
+
 VoltorbFlip::
 	ld a, $d
 	ld [$ffff], a
@@ -66,7 +66,7 @@ VoltorbFlip::
 	xor a
 	ld [hBGMapMode], a
 	ld a, 1
-	ld [$ffd8], a ; disable sprite update
+	ld [hOAMUpdate], a ; disable sprite update
 	ld [$c41a], a
 	call VFInitLevel
 	jp VFMainLoop
@@ -297,10 +297,10 @@ VFInput:
 	add c
 	add b
 	ld e, a
-	ld a, [$ffa4]
+	ld a, [hJoypadDown]
 	bit 1, a
 	jp nz, .bbutton
-	ld a, [$ffa3]
+	ld a, [hJoypadPressed]
 	and a
 	ret z
 	bit 0, a
@@ -449,7 +449,7 @@ VFInput:
 	and $f0
 	ret z
 	ld b, a
-	ld a, [$ffa3]
+	ld a, [hJoypadPressed]
 	ld c, a
 	ld a, [de]
 	bit 7, b
@@ -588,7 +588,7 @@ VFInitMap:
 	ld bc, $0168
 	ld a, 17
 	call ByteFill
-	ld hl,$cdd9 ; blank the screen
+	ld hl, $cdd9 ; blank the screen
 	ld bc, $0168
 	ld a, 0
 	call ByteFill
@@ -675,7 +675,7 @@ VFInitMap:
 	push bc
 	push hl
 	ld bc, $0939
-	add hl,bc
+	add hl, bc
 	ldi [hl], a
 	ldi [hl], a
 	ld [hl], a
@@ -1574,6 +1574,6 @@ VFExit:
 	ld a, $f
 	ld [$ffff], a
 	xor a
-	ld [$ffd8], a ; enable sprite update
+	ld [hOAMUpdate], a ; enable sprite update
 	pop af
 	ret
