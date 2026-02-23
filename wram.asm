@@ -3356,29 +3356,6 @@ w3_de00:: ds $200
 ENDU
 
 
-SECTION "Voltorb Flip RAM", WRAMX
-
-wVoltorbFlipCardProperties:: ds 25
-
-wVoltorbFlipState:: db
-wVoltorbFlipLevel:: db
-wVoltorbFlipXCoord:: db
-wVoltorbFlipYCoord:: db
-wVoltorbFlipXLast:: db
-wVoltorbFlipYLast:: db
-wVoltorbFlipNumFlipped:: db
-
-wVoltorbFlipTotalNumbers:: ds 5
-wVoltorbFlipHalfTotalNumbers:: ds 5
-wVoltorbFlipTotalNumbersEnd::
-wVoltorbFlipTotalVoltorbs:: ds 5
-wVoltorbFlipHalfTotalVoltorbs:: ds 5
-wVoltorbFlipTotalVoltorbsEnd::
-
-wVoltorbFlipCoins1:: db
-wVoltorbFlipCoins2:: db
-
-
 SECTION "GBC Video", WRAMX, ALIGN[8]
 ; LCD expects wLYOverrides to have an alignment of $100
 
