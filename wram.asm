@@ -3369,7 +3369,9 @@ wVoltorbFlipYLast:: db
 wVoltorbFlipNumFlipped:: db
 
 wVoltorbFlipTotalNumbers:: ds 10
+wVoltorbFlipTotalNumbersEnd::
 wVoltorbFlipTotalVoltorbs:: ds 10
+wVoltorbFlipTotalVoltorbsEnd::
 
 wVoltorbFlipCoins1:: db
 wVoltorbFlipCoins2:: db
