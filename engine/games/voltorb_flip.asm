@@ -1,35 +1,34 @@
-;RAM:
-;c400-c418 Card Properties
-;c419 state
-;c41a level
-;c41b x
-;c41c y
-;c41d last x
-;c41e last y
-;c41f cards flipped this game
-;c440-c449 total numbers for row/col
-;c450-c459 total voltorb for row/col
-;c498 coins collected this game
+; RAM:
+; c400-c418 Card Properties
+; c419 state
+; c41a level
+; c41b x
+; c41c y
+; c41d last x
+; c41e last y
+; c41f cards flipped this game
+; c440-c449 total numbers for row/col
+; c450-c459 total voltorb for row/col
+; c498 coins collected this game
 
-;Card Properties (Bits):
-;7-marked 0
-;6-marked 1
-;5-marked 2
-;4-marked 3
-;3-highlighted
-;2-Card Flipped
-;1,0-Card number
+; Card Properties (Bits):
+; 7    - marked 0
+; 6    - marked 1
+; 5    - marked 2
+; 4    - marked 3
+; 3    - highlighted
+; 2    - Card Flipped
+; 1, 0 - Card number
 
-;States:
-;sounds:
-;7 move cursor
-;157 game over
-;195 flip card
-;154 are you sure?
-;159 quit
-;148 level clear
-;34 coin
-;91 boom!
+; States:
+; 7 move cursor
+; 34 coin
+; 91 boom!
+; 148 level clear
+; 154 are you sure?
+; 157 game over
+; 159 quit
+; 195 flip card
 
 VoltorbFlipGFX:
 INCBIN "gfx/voltorb_flip.2bpp"
@@ -54,7 +53,7 @@ VoltorbFlipPaletteBlank:
 	dw $7fff, $7fff, $7fff, $7fff
 	dw $7fff, $7fff, $7fff, $7fff
 	
-VoltorbFlip::;this is where the magic happens
+VoltorbFlip::
 	ld a, $d
 	ld [$ffff], a
 	call VFLoadGFX
@@ -66,7 +65,7 @@ VoltorbFlip::;this is where the magic happens
 	xor a
 	ld [hBGMapMode], a
 	ld a, 1
-	ld [$ffd8], a ;disable sprite update
+	ld [$ffd8], a ; disable sprite update
 	ld [$c41a], a
 	call VFInitLevel
 	jp VFMainLoop
@@ -83,26 +82,26 @@ VFInitLevel:
 	dec b
 	jr nz, .clearrowcol
 	ld a, 1
-	ld hl, $c400 ;card start
-	ld b, 25 ; because there are 25 cars
+	ld hl, $c400 ; card start
+	ld b, 25 ; because there are 25 cards
 .set1
-	ldi [hl], a ;starts off every card as a 1
+	ldi [hl], a ; starts off every card as a 1
 	dec b
 	jr nz, .set1
-	ld a, [$c41a] ;level
+	ld a, [$c41a] ; level
 	cp 5
 	jr nc, .highlevel
 	add a
-	add a, 7 ;calculate the "base"
+	add a, 7 ; calculate the "base"
 	ld c, a
 	jr .retry23
 
-.highlevel ;base is calculated differently starting at level 6
+.highlevel ; base is calculated differently starting at level 6
 	add a, 12
 	ld c, a
 .retry23
-	ld hl, $c400 ;card start
-	ld b, 25 ; because there are 25 cars
+	ld hl, $c400 ; card start
+	ld b, 25 ; because there are 25 cards
 .loop23
 	call Random
 	ld a, [hRandomSub]
@@ -113,7 +112,7 @@ VFInitLevel:
 .generate3
 	ld a, [hl]
 	cp 1
-	jr nz, .continue23 ;only write it if it's a 1
+	jr nz, .continue23 ; only write it if it's a 1
 	ld a, 3
 	ld [hl], a
 	ld a, c
@@ -126,7 +125,7 @@ VFInitLevel:
 .generate2
 	ld a, [hl]
 	cp 1
-	jr nz, .continue23 ;only write it if it's a 1
+	jr nz, .continue23 ; only write it if it's a 1
 	ld a, 2
 	ld [hl], a
 	ld a, c
@@ -143,14 +142,14 @@ VFInitLevel:
 
 .done
 	ld a, [$c41a]
-	add a, 5 ;number of voltorb
+	add a, 5 ; number of voltorb
 	cp 10
 	ld c, a
 	jr nc, .retryv
-	ld c, 10 ;max of 10 voltorb
+	ld c, 10 ; max of 10 voltorb
 .retryv
-	ld hl, $c400 ;card start
-	ld b, 25 ; because there are 25 cars
+	ld hl, $c400 ; card start
+	ld b, 25 ; because there are 25 cards
 .loopv
 	call Random
 	ld a, [hRandomSub]
@@ -161,7 +160,7 @@ VFInitLevel:
 .generatev
 	ld a, [hl]
 	cp 1
-	jr nz, .continuev ;only write it if it's a 1
+	jr nz, .continuev ; only write it if it's a 1
 	xor a
 	ld [hl], a
 	dec c
@@ -350,7 +349,7 @@ VFInput:
 	call WaitPlaySFX
 	pop de
 	push bc
-	ld c, 120 ;2 seconds
+	ld c, 120 ; 2 seconds
 	call DelayFrames
 	pop bc
 .skipintense
@@ -381,7 +380,7 @@ VFInput:
 	dec c
 	jr nz, .check23left
 	ld a, b
-	ld [$c420], a ;for the are you sure song
+	ld [$c420], a ; for the are you sure song
 	and a
 	ret nz
 	call VFRefreshMap
@@ -393,9 +392,10 @@ VFInput:
 	di
 	call VFRefreshScreen
 	ei
-	ld de, SFX_3RD_PLACE ;level clear
+	ld de, SFX_3RD_PLACE
 	call WaitPlaySFX
-	ld c, 60 ;1 seconds
+	ld de, 148 ; level clear
+	ld c, 60 ; 1 second
 	call DelayFrames
 	ld a, [$c41a]
 	inc a
@@ -550,7 +550,7 @@ VFLoadGFX:
 	jr nz, .wait
 	dec hl
 	res 7, [hl]
-	ld bc, $7f80 ;load the gfx
+	ld bc, $7f80 ; load the gfx
 	ld de, VoltorbFlipGFX
 	ld hl, $9000
 	jp Copy2bpp
@@ -574,20 +574,20 @@ VFInitRAM:
 	xor a
 	call ByteFill
 	ld hl, $c419
-	ldi [hl], a ;state
+	ldi [hl], a ; state
 	ld a, 1
-	ldi [hl], a ;level
+	ldi [hl], a ; level
 	ld a, 2
-	ldi [hl], a ;x
-	ldi [hl], a ;y
+	ldi [hl], a ; x
+	ldi [hl], a ; y
 	ret
 
 VFInitMap:
-	ld hl,$c4a0 ;blank the screen
+	ld hl,$c4a0 ; blank the screen
 	ld bc, $0168
 	ld a, 17
 	call ByteFill
-	ld hl,$cdd9 ;blank the screen
+	ld hl,$cdd9 ; blank the screen
 	ld bc, $0168
 	ld a, 0
 	call ByteFill
@@ -698,10 +698,10 @@ VFInitMap:
 	ldi [hl], a
 	ld a, 246
 	ld [hl], a
-	ld de, $c44a ;$c440 is start of total numbers in row
+	ld de, $c44a ; $c440 is start of total numbers in row
 	ld a, e
 	sub a, b
-	ld e, a ;load the correct row
+	ld e, a ; load the correct row
 	push bc
 	ld bc, $0102
 	call PrintNum
@@ -721,15 +721,15 @@ VFInitMap:
 	inc a
 	ldi [hl], a
 	ld a, 23
-	add hl, de ;should move us to the bottom row of the counter
+	add hl, de ; should move us to the bottom row of the counter
 	ld a, 25
 	ldi [hl], a
 	inc a
 	ldi [hl], a
-	ld de, $c45a ;$c450 is start of total voltorb in row
+	ld de, $c45a ; $c450 is start of total voltorb in row
 	ld a, e
 	sub a, b
-	ld e, a ;load the correct row
+	ld e, a ; load the correct row
 	ld a, [de]
 	add 102
 	ld [hl], a
@@ -765,10 +765,10 @@ VFInitMap:
 	ldi [hl], a
 	ld a, 246
 	ld [hl], a
-	ld de, $c44a ;$c440 is start of total numbers in row
+	ld de, $c44a ; $c440 is start of total numbers in row
 	ld a, e
 	sub a, b
-	ld e, a ;load the correct row
+	ld e, a ; load the correct row
 	push bc
 	ld bc, $0102
 	call PrintNum
@@ -782,15 +782,15 @@ VFInitMap:
 	ld a, 7
 	ld [hl], a
 	inc de
-	add hl, de ;should move us to the bottom row of the counter
+	add hl, de ; should move us to the bottom row of the counter
 	ld a, 27
 	ldi [hl], a
 	inc a
 	ldi [hl], a
-	ld de, $c45a ;$c450 is start of total voltorb in row
+	ld de, $c45a ; $c450 is start of total voltorb in row
 	ld a, e
 	sub a, b
-	ld e, a ;load the correct row
+	ld e, a ; load the correct row
 	ld a, [de]
 	add $f6
 	ld [hl], a
@@ -798,9 +798,9 @@ VFInitMap:
 	ret
 
 VFRefreshMap:
-	ld de, $c400 ;start of card properties
-	ld bc, $0505 ;5x5 board
-	ld hl, $c4a0 ;tiles on screen
+	ld de, $c400 ; start of card properties
+	ld bc, $0505 ; 5x5 board
+	ld hl, $c4a0 ; tiles on screen
 .g1x1
 	push bc
 	ld a, [$c41b]
@@ -822,11 +822,11 @@ VFRefreshMap:
 	set 3, a
 .checkflip
 	ld [de], a
-	bit 2, a ;is the card flipped
+	bit 2, a ; is the card flipped
 	jp nz, .flipped
-	bit 7, a ;is 0 marked?
+	bit 7, a ; is 0 marked?
 	jp nz, .marked0
-	ld a, 0 ;upper left corner blank
+	ld a, 0 ; upper left corner blank
 	ldi [hl], a
 .g2x1
 	push bc
@@ -861,26 +861,26 @@ VFRefreshMap:
 	ld [hl], a	
 	pop hl
 	pop bc
-	ld a, 1 ;upper middle blank
+	ld a, 1 ; upper middle blank
 	ldi [hl], a	
 .g3x1
 	ld a, [de]
-	bit 6, a ;is 1 marked?
+	bit 6, a ; is 1 marked?
 	jp nz, .marked1
-	ld a, 2 ;upper right corner blank
+	ld a, 2 ; upper right corner blank
 	ld [hl], a
 .g1x2	
 	push de
 	ld de, $0012
 	add hl, de
 	pop de
-	ld a, 16 ;left middle blank
+	ld a, 16 ; left middle blank
 	ldi [hl], a
 .g2x2
-	ld a, 17 ;middle blank
+	ld a, 17 ; middle blank
 	ldi [hl], a
 .g3x2
-	ld a, 18 ;right middle blank
+	ld a, 18 ; right middle blank
 	ld [hl], a
 .g1x3	
 	push de
@@ -888,18 +888,18 @@ VFRefreshMap:
 	add hl, de
 	pop de
 	ld a, [de]
-	bit 5, a ;is 2 marked?
+	bit 5, a ; is 2 marked?
 	jp nz, .marked2
-	ld a, 32 ;lower left corner blank
+	ld a, 32 ; lower left corner blank
 	ldi [hl], a
 .g2x3
-	ld a, 33 ;lower middle blank
+	ld a, 33 ; lower middle blank
 	ldi [hl], a
 .g3x3
 	ld a, [de]
-	bit 4, a ;is 3 marked?
+	bit 4, a ; is 3 marked?
 	jp nz, .marked3
-	ld a, 34 ;lower right corner blank
+	ld a, 34 ; lower right corner blank
 	ld [hl], a
 .carddone
 	ld a, [de]
@@ -954,7 +954,7 @@ VFRefreshMap:
 	ld de, .blank
 	call PlaceString
 	inc hl
-	ld de, $c498 ;coins this game
+	ld de, $c498 ; coins this game
 	ld bc, $0204
 	call PrintNum
 	hlcoord 15, 17
@@ -1027,19 +1027,19 @@ VFRefreshMap:
 	jp .carddone
 
 .marked0
-	ld a, 6 ;upper left corner marked
+	ld a, 6 ; upper left corner marked
 	ldi [hl], a
 	jp .g2x1
 .marked1
-	ld a, 8 ;upper right corner marked
+	ld a, 8 ; upper right corner marked
 	ld [hl], a
 	jp .g1x2
 .marked2
-	ld a, 22 ;lower left corner marked
+	ld a, 22 ; lower left corner marked
 	ldi [hl], a
 	jp .g2x3
 .marked3
-	ld a, 24 ;lower right corner marked
+	ld a, 24 ; lower right corner marked
 	ld [hl], a
 	jp .carddone
 
@@ -1095,9 +1095,9 @@ VFRefreshMap:
 	ldi [hl], a
 	inc a
 	ld [hl], a
-	jp .finishcard ;a voltorb card will never have a highlighted palette
+	jp .finishcard ; a voltorb card will never have a highlighted palette
 
-VFRefreshScreen: ;bc is the coordinates to refresh (3x3 tiles)
+VFRefreshScreen: ; bc is the coordinates to refresh (3x3 tiles)
 	push bc
 	ld a, c
 	ld c, 15
@@ -1201,7 +1201,7 @@ VFRefreshScreen: ;bc is the coordinates to refresh (3x3 tiles)
 	pop bc
 	ret
 	
-VFRefreshScreen1: ;bc is the coordinates to refresh (3x3 tiles)
+VFRefreshScreen1: ; bc is the coordinates to refresh (3x3 tiles)
 	push bc
 	ld a, c
 	ld c, 15
@@ -1300,9 +1300,9 @@ VFRefreshScreen1: ;bc is the coordinates to refresh (3x3 tiles)
 
 VFFlipAnimation:
 	push de
-	ld de, SFX_INTRO_SUICUNE_1 ;flip sound
+	ld de, SFX_INTRO_SUICUNE_1
 	call WaitPlaySFX
-	ld de, 3 ;first frame of the flip
+	ld de, 3 ; first frame of the flip
 .flipframe
 	push de
 	ld d, $c4
@@ -1421,7 +1421,8 @@ VFBoom:
 	call WaitPlaySFX
 	ld de, SFX_QUIT_SLOTS
 	call WaitPlaySFX
-	ld c, 240 ;4 seconds
+	ld de, 157 ; quit
+	ld c, 240 ; 4 seconds
 	call DelayFrames
 	ld a, [$c41f]
 	and a
@@ -1513,9 +1514,10 @@ VFMultiplyCoins:
 	jr .updatecoins
 
 VFKeepCoins:
-	ld de, SFX_DEX_FANFARE_LESS_THAN_20 ;level clear
+	ld de, SFX_DEX_FANFARE_LESS_THAN_20
 	call WaitPlaySFX
-	ld c, 120 ;2 seconds
+	ld de, 159 ; level clear
+	ld c, 120 ; 2 seconds
 	call DelayFrames
 	ld a, [$c41f]
 	and a
@@ -1571,6 +1573,6 @@ VFExit:
 	ld a, $f
 	ld [$ffff], a
 	xor a
-	ld [$ffd8], a ;enable sprite update
+	ld [$ffd8], a ; enable sprite update
 	pop af
 	ret
