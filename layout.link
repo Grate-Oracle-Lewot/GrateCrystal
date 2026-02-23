@@ -102,6 +102,7 @@ ROMX $20
 	"bank20"
 ROMX $21
 	"bank21"
+	"Type Matchups"
 ROMX $22
 	"Crystal Features 2"
 ROMX $23
@@ -131,6 +132,7 @@ ROMX $2e
 	"bank2E"
 ROMX $2f
 	"Phone Scripts 2"
+	"Lewot Phone Data"
 ROMX $30
 	"Sprites 1"
 ROMX $31
@@ -170,6 +172,7 @@ ROMX $3e
 	"bank3E"
 ROMX $3f
 	"bank3F"
+	"Map Group Nums Names"
 ROMX $40
 	"mobile40"
 ROMX $41
