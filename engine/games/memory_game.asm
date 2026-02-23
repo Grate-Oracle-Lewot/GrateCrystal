@@ -153,8 +153,6 @@ _MemoryGame:
 	ret
 
 .ResetBoard:
-	ld de, SFX_SLOT_MACHINE_START
-	call PlaySFX
 	call MemoryGame_InitBoard
 	ld hl, wJumptableIndex
 	inc [hl]
@@ -175,6 +173,8 @@ endr
 	call MemoryGame_Card2Coord
 	xor a
 	ld [wMemoryGameLastCardPicked], a
+	ld de, SFX_VINE_WHIP
+	call PlaySFX
 	jp MemoryGame_PlaceCard
 
 .spawn_object
