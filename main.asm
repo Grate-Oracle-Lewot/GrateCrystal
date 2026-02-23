@@ -283,6 +283,12 @@ INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 
 
+SECTION "Type Matchups", ROMX
+
+INCLUDE "data/types/type_matchups.asm"
+INCLUDE "data/types/inverse_type_matchups.asm"
+
+
 SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
@@ -399,6 +405,12 @@ INCLUDE "engine/phone/scripts/generic_callee.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
 
 
+SECTION "Lewot Phone Data", ROMX
+
+INCLUDE "engine/phone/scripts/lewot.asm"
+INCLUDE "data/phone/text/lewot.asm"
+
+
 SECTION "bank32", ROMX
 
 INCLUDE "engine/battle_anims/bg_effects.asm"
@@ -485,6 +497,11 @@ SECTION "bank3F", ROMX
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
+
+
+SECTION "Map Group Nums Names", ROMX
+
+INCLUDE "data/maps/map_names.asm"
 
 
 SECTION "mobile40", ROMX
@@ -702,20 +719,3 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 SECTION "Voltorb Flip", ROMX
 
 INCLUDE "engine/games/voltorb_flip.asm"
-
-
-SECTION "Type Matchups", ROMX
-
-INCLUDE "data/types/type_matchups.asm"
-INCLUDE "data/types/inverse_type_matchups.asm"
-
-
-SECTION "Map GroupNums Names", ROMX
-
-INCLUDE "data/maps/map_names.asm"
-
-
-SECTION "Lewot Phone Data", ROMX
-
-INCLUDE "engine/phone/scripts/lewot.asm"
-INCLUDE "data/phone/text/lewot.asm"
