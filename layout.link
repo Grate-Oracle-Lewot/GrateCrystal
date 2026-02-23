@@ -335,7 +335,6 @@ WRAMX 2
 WRAMX 3
 	"Battle Tower RAM"
 WRAMX 5
-	"Voltorb Flip RAM"
 	align 8
 	"GBC Video"
 	org $d300
