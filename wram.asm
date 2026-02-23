@@ -3371,7 +3371,8 @@ wVoltorbFlipNumFlipped:: db
 wVoltorbFlipTotalNumbers:: ds 10
 wVoltorbFlipTotalVoltorbs:: ds 10
 
-wVoltorbFlipCoins:: db
+wVoltorbFlipCoins1:: db
+wVoltorbFlipCoins2:: db
 
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
