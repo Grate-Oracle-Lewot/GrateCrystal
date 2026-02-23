@@ -575,7 +575,7 @@ Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that ch
 
 Nostalgia.
 
-# Why not space out the names of Solar Beam and--
+# Why not space out the names of Solar Beam and—
 
 NO. Worst decision Game Freak has ever made by a country mile.
 
