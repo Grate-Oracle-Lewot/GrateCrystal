@@ -88,13 +88,15 @@ Route34IlexForestGateTeacherReturnsMovement:
 
 Route34IlexForestGateTeacherText:
 	text "Oh, honey. You're"
-	line "making a #DEX?"
+	line "collecting BADGES?"
 
-	para "It must be hard if"
-	line "#MON won't"
+	para "Isn't it hard to"
+	line "train after your"
 
-	para "appear. Try using"
-	line "this TM."
+	para "#MON's levels"
+	line "get too high?"
+
+	para "Try using this TM."
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:
