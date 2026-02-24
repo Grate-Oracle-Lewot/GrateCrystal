@@ -493,11 +493,11 @@ wEnemySubstituteHP::  db
 
 wEffectCarryover:: db
 ; bit
-; 0 SUBSTITUTE_JUST_BROKE: prevents flinch, Static, Cute Charm
+; 0 SUBSTITUTE_JUST_BROKE: prevents secondary effects of damaging moves that break a Substitute
 ; 1 PERISH_TRAP: enemy was Mean Looked, player switched, enemy can't switch same turn
 ; 2 CRITICAL_RAGE: carries crit status through to BuildOpponentRage
-; 3 FLOAT_MISS: Ground-type attack missed a floatmon
-; 4 PROTECT_MISS: attack missed due to target Protecting
+; 3 FLOAT_MISS: Ground-type attack missed a floatmon (different text)
+; 4 PROTECT_MISS: attack missed due to target Protecting (different text)
 ; 5-7 unused
 
 wCurPlayerMove:: db
