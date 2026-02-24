@@ -2052,7 +2052,7 @@ PorygonEvosAttacks:
 	db 9, MINIMIZE
 	db 12, PAY_DAY
 	db 20, RECOVER
-	db 24, PSYBEAM
+	db 24, THUNDER_WAVE
 	db 29, SIGNAL_BEAM
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
@@ -3565,7 +3565,7 @@ Porygon2EvosAttacks:
 	db 9, MINIMIZE
 	db 12, PAY_DAY
 	db 20, RECOVER
-	db 24, PSYBEAM
+	db 24, THUNDER_WAVE
 	db 29, SIGNAL_BEAM
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
