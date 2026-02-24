@@ -150,7 +150,9 @@ BattleCommand_Conversion:
 	call BattleCommand_SwitchTurn
 	ld a, [hld]
 	ld [wNamedObjectIndex], a
+	push hl
 	predef GetTypeName
+	pop hl
 
 ; Don't print text if we are currently a monotype. Prevents redundant messages if Conversion 1 and 2 both picked the same type.
 	ld a, [hli]
