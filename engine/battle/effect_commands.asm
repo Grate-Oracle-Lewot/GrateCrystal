@@ -5601,6 +5601,11 @@ BattleCommand_TrapTarget:
 	ld a, [wAttackMissed]
 	and a
 	ret nz
+
+	ld a, [wEffectCarryover]
+	bit SUBSTITUTE_JUST_BROKE, a
+	ret nz
+
 	ld hl, wEnemyWrapCount
 	ld de, wEnemyTrappingMove
 	ldh a, [hBattleTurn]
