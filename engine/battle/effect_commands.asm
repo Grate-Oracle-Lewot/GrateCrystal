@@ -6190,6 +6190,9 @@ CheckSubstituteOpp:
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+	ld a, [wEffectCarryover]
+	bit SUBSTITUTE_JUST_BROKE, a
 	ret
 
 INCLUDE "engine/battle/move_effects/selfdestruct.asm"
@@ -6830,10 +6833,6 @@ BattleCommand_HeldFlinch:
 	call CheckSubstituteOpp
 	ret nz
 
-	ld a, [wEffectCarryover]
-	bit SUBSTITUTE_JUST_BROKE, a
-	ret nz
-
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
 	ld d, h
@@ -6980,10 +6979,6 @@ BattleCommand_CheckContact:
 	ret nz
 
 	call CheckSubstituteOpp
-	ret nz
-
-	ld a, [wEffectCarryover]
-	bit SUBSTITUTE_JUST_BROKE, a
 	ret nz
 
 	call CheckSpiderWrap
