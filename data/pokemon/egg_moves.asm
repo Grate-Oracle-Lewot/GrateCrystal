@@ -371,9 +371,9 @@ LickitungEggMoves:
 	db -1 ; end
 
 KoffingEggMoves:
+	db BIDE
 	db SONICBOOM
 	db RAPID_SPIN
-	db FLAME_WHEEL
 	db MIST
 	db -1 ; end
 
