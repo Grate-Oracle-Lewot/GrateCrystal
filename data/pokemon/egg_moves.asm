@@ -280,7 +280,6 @@ DoduoEggMoves:
 	db -1 ; end
 
 SeelEggMoves:
-	db DISABLE
 	db PERISH_SONG
 	db LICK
 	db SLAM
@@ -371,6 +370,7 @@ LickitungEggMoves:
 	db -1 ; end
 
 KoffingEggMoves:
+	db DISABLE
 	db BIDE
 	db SONICBOOM
 	db RAPID_SPIN
