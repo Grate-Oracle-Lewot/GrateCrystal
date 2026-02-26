@@ -528,8 +528,7 @@ StartMenuYesNo:
 
 MonMailAction:
 ; If in the time capsule or trade center,
-; selecting the mail only allows you to
-; read the mail.
+; selecting the mail only allows you to read the mail.
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
 	jr z, .read
@@ -648,6 +647,8 @@ OpenPartyStats:
 	ret
 
 MonMenu_Cut:
+	xor a
+	ld [wUsingHMItem], a
 	farcall CutFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -658,6 +659,7 @@ MonMenu_Cut:
 
 MonMenu_Fly:
 	xor a
+	ld [wUsingHMItem], a
 	ld [wFlyingWithFearowbot], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
@@ -675,6 +677,8 @@ MonMenu_Fly:
 	ret
 
 MonMenu_Flash:
+	xor a
+	ld [wUsingHMItem], a
 	farcall FlashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -684,6 +688,8 @@ MonMenu_Flash:
 	ret
 
 MonMenu_Strength:
+	xor a
+	ld [wUsingHMItem], a
 	farcall StrengthFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -693,6 +699,8 @@ MonMenu_Strength:
 	ret
 
 MonMenu_Whirlpool:
+	xor a
+	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -706,6 +714,8 @@ MonMenu_MoveFail:
 	ret
 
 MonMenu_Waterfall:
+	xor a
+	ld [wUsingHMItem], a
 	farcall WaterfallFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
@@ -724,6 +734,8 @@ MonMenu_Teleport:
 	ret
 
 MonMenu_Surf:
+	xor a
+	ld [wUsingHMItem], a
 	farcall SurfFunction
 	ld a, [wFieldMoveSucceeded]
 	and a
@@ -796,6 +808,8 @@ MonMenu_MoveFail2:
 	ret
 
 MonMenu_RockSmash:
+	xor a
+	ld [wUsingHMItem], a
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $1
