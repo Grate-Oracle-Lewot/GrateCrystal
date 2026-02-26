@@ -157,7 +157,7 @@ FarmerFText_InTrouble:
 	para "So if our own"
 	line "MILTANK won't give"
 
-	para "us any milk, we're"
+	para "us no milk, we're"
 	line "in trouble."
 	done
 
