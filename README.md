@@ -567,6 +567,10 @@ The whole point of that setting is to make the game harder. Turning off computer
 
 Because level caps can be turned off, so that would be abusable.
 
+# Why isn't Nuzlocke mode tailored to my exact specfications?
+
+Them's the breaks. I thought about making typelocke options, but the way I would want to do it, I would need separate catch flags for every type, and that's just too much.
+
 # Why no starter build for my favorite Pokémon?
 
 Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself. (Or it was until all the starter builds cluttered up the Elm's Lab script. Whoops.)
