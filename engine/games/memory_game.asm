@@ -173,7 +173,7 @@ endr
 	call MemoryGame_Card2Coord
 	xor a
 	ld [wMemoryGameLastCardPicked], a
-	ld de, SFX_VINE_WHIP
+	ld de, SFX_MENU
 	call PlaySFX
 	jp MemoryGame_PlaceCard
 
