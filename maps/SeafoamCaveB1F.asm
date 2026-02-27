@@ -62,9 +62,6 @@ SeafoamCaveBook:
 	end
 
 SeafoamCaveBed:
-if DEF(_NO_POKEMON_CENTERS)
-	jumptext SeafoamCaveBedText
-else
 	opentext
 	writetext SeafoamCaveBedText1
 	closetext
@@ -80,7 +77,6 @@ else
 	writetext SeafoamCaveBedText2
 	closetext
 	end
-endc
 
 SeafoamCaveB1FXAccuracy:
 	itemball X_ACCURACY
