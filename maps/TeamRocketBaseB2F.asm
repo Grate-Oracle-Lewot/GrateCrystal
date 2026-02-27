@@ -158,9 +158,6 @@ LanceHealsScript2:
 LanceHealsCommon:
 	opentext
 	writetext LanceHealsText1
-if DEF(_NO_POKEMON_CENTERS)
-	promptbutton
-else
 	waitbutton
 	closetext
 	special FadeOutPalettes
@@ -169,7 +166,6 @@ else
 	special HealParty
 	special FadeInPalettes
 	opentext
-endc
 	writetext LanceHealsText2
 	waitbutton
 	closetext
@@ -379,16 +375,10 @@ TeamRocketBaseB2FHiddenFullHeal:
 
 RocketBaseLanceLeavesAfterHealMovement:
 	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
 RocketBaseLanceLeavesAfterHealRightMovement:
 	step RIGHT
 	step RIGHT
+RocketBaseLanceApproachesBossFMovement:
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -443,16 +433,7 @@ RocketBaseBossFFacesPlayerMovement:
 	turn_head LEFT
 	step_end
 
-RocketBaseLanceApproachesBossFMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
-
 RocketBaseBossFBattlesPlayerMovement:
-	big_step LEFT
-	step_end
-
 RocketBaseGruntBattlesLanceMovement:
 	big_step LEFT
 	step_end
@@ -467,12 +448,6 @@ RocketBaseLanceChecksPlayerMovement:
 	step RIGHT
 	step RIGHT
 	turn_head DOWN
-	step_end
-
-RocketBaseLanceApproachesMachineMovement:
-	step UP
-	step UP
-	step UP
 	step_end
 
 RocketBaseLancePacesMovement:
@@ -499,6 +474,7 @@ RocketBaseLanceApproachesElectrodesMovement:
 	step RIGHT
 	step UP
 	step UP
+RocketBaseLanceApproachesMachineMovement:
 	step UP
 	step UP
 	step UP
@@ -513,10 +489,6 @@ RocketBasePlayerCantLeaveElectrodesMovement:
 	turn_head UP
 	step_end
 
-RocketBasePlayerCantGoRightMovement:
-	step LEFT
-	step_end
-
 RocketBaseLanceLeavesElectrodesMovement:
 	step DOWN
 	step DOWN
@@ -525,6 +497,7 @@ RocketBaseLanceLeavesElectrodesMovement:
 	step DOWN
 	step LEFT
 	step LEFT
+RocketBasePlayerCantGoRightMovement:
 	step LEFT
 	step_end
 
@@ -806,10 +779,6 @@ RocketBaseLanceMonMasterText:
 	done
 
 LanceHealsText1:
-if DEF(_NO_POKEMON_CENTERS)
-	text "LANCE: This base"
-	line "is like a maze…"
-else
 	text "LANCE: Are you all"
 	line "right?"
 
@@ -820,7 +789,6 @@ else
 	line "some of my medi-"
 	cont "cine."
 	done
-endc
 
 LanceHealsText2:
 	text "LANCE: <PLAY_G>,"
