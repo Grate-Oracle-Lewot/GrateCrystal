@@ -31,7 +31,6 @@ roms := \
 	GrateCrystal_Alt_AbraShellderStarters.gbc \
 	GrateCrystal_StartWithHMReplacementItems.gbc \
 	GrateCrystal_NoExperienceGains.gbc \
-	GrateCrystal_NoPokemonCenterHealing.gbc \
 	GrateCrystal_LittleCup.gbc \
 	GrateCrystal_Alt_MetronomeOnly.gbc \
 	GrateCrystal_Alt_VanillaTypes.gbc
@@ -67,7 +66,6 @@ patches := \
 	GrateCrystal_Alt_AbraShellderStarters.patch \
 	GrateCrystal_StartWithHMReplacementItems.patch \
 	GrateCrystal_NoExperienceGains.patch \
-	GrateCrystal_NoPokemonCenterHealing.patch \
 	GrateCrystal_LittleCup.patch \
 	GrateCrystal_Alt_MetronomeOnly.patch \
 	GrateCrystal_Alt_VanillaTypes.patch
@@ -122,7 +120,6 @@ GrateCrystal_Alt_Turbin_obj                         := $(rom_obj:.o=turbid.o)
 GrateCrystal_Alt_AbraShellderStarters_obj           := $(rom_obj:.o=startur.o)
 GrateCrystal_StartWithHMReplacementItems_obj        := $(rom_obj:.o=nohm.o)
 GrateCrystal_NoExperienceGains_obj                  := $(rom_obj:.o=noexp.o)
-GrateCrystal_NoPokemonCenterHealing_obj             := $(rom_obj:.o=centre.o)
 GrateCrystal_LittleCup_obj                          := $(rom_obj:.o=little.o)
 GrateCrystal_Alt_MetronomeOnly_obj                  := $(rom_obj:.o=metro.o)
 GrateCrystal_Alt_VanillaTypes_obj                   := $(rom_obj:.o=bland.o)
@@ -146,7 +143,7 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp centre little metro bland clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -184,7 +181,6 @@ turbid:   GrateCrystal_Alt_Turbin.gbc
 startur:  GrateCrystal_Alt_AbraShellderStarters.gbc
 nohm:     GrateCrystal_StartWithHMReplacementItems.gbc
 noexp:    GrateCrystal_NoExperienceGains.gbc
-centre:   GrateCrystal_NoPokemonCenterHealing.gbc
 little:   GrateCrystal_LittleCup.gbc
 metro:    GrateCrystal_Alt_MetronomeOnly.gbc
 bland:    GrateCrystal_Alt_VanillaTypes.gbc
@@ -245,7 +241,6 @@ tidy:
 	      $(GrateCrystal_Alt_AbraShellderStarters_obj) \
 	      $(GrateCrystal_StartWithHMReplacementItems_obj) \
 	      $(GrateCrystal_NoExperienceGains_obj) \
-	      $(GrateCrystal_NoPokemonCenterHealing_obj) \
 	      $(GrateCrystal_LittleCup_obj) \
 	      $(GrateCrystal_Alt_MetronomeOnly_obj) \
 	      $(GrateCrystal_Alt_VanillaTypes_obj) \
@@ -319,8 +314,6 @@ nohm:
 	tools/free_space.awk BANK=all GrateCrystal_StartWithHMReplacementItems.map
 noexp:
 	tools/free_space.awk BANK=all GrateCrystal_NoExperienceGains.map
-centre:
-	tools/free_space.awk BANK=all GrateCrystal_NoPokemonCenterHealing.map
 little:
 	tools/free_space.awk BANK=all GrateCrystal_LittleCup.map
 metro:
@@ -363,7 +356,6 @@ $(GrateCrystal_Alt_Turbin_obj):                         RGBASMFLAGS += -D _ADD_T
 $(GrateCrystal_Alt_AbraShellderStarters_obj):           RGBASMFLAGS += -D _TURBIN_STARTERS
 $(GrateCrystal_StartWithHMReplacementItems_obj):        RGBASMFLAGS += -D _HM_ITEMS_START
 $(GrateCrystal_NoExperienceGains_obj):                  RGBASMFLAGS += -D _NO_EXPERIENCE
-$(GrateCrystal_NoPokemonCenterHealing_obj):             RGBASMFLAGS += -D _NO_POKEMON_CENTERS
 $(GrateCrystal_LittleCup_obj):                          RGBASMFLAGS += -D _LITTLE_CUP
 $(GrateCrystal_Alt_MetronomeOnly_obj):                  RGBASMFLAGS += -D _METRONOME_ONLY
 $(GrateCrystal_Alt_VanillaTypes_obj):                   RGBASMFLAGS += -D _VANILLA_TYPES
@@ -421,7 +413,6 @@ $(foreach obj, $(GrateCrystal_Alt_Turbin_obj), $(eval $(call DEP,$(obj),$(obj:tu
 $(foreach obj, $(GrateCrystal_Alt_AbraShellderStarters_obj), $(eval $(call DEP,$(obj),$(obj:startur.o=.asm))))
 $(foreach obj, $(GrateCrystal_StartWithHMReplacementItems_obj), $(eval $(call DEP,$(obj),$(obj:nohm.o=.asm))))
 $(foreach obj, $(GrateCrystal_NoExperienceGains_obj), $(eval $(call DEP,$(obj),$(obj:noexp.o=.asm))))
-$(foreach obj, $(GrateCrystal_NoPokemonCenterHealing_obj), $(eval $(call DEP,$(obj),$(obj:centre.o=.asm))))
 $(foreach obj, $(GrateCrystal_LittleCup_obj), $(eval $(call DEP,$(obj),$(obj:little.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_MetronomeOnly_obj), $(eval $(call DEP,$(obj),$(obj:metro.o=.asm))))
 $(foreach obj, $(GrateCrystal_Alt_VanillaTypes_obj), $(eval $(call DEP,$(obj),$(obj:bland.o=.asm))))
@@ -465,7 +456,6 @@ GrateCrystal_Alt_Turbin_opt                          = -Cjv -t PM_CRYSTAL -i BYT
 GrateCrystal_Alt_AbraShellderStarters_opt            = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_StartWithHMReplacementItems_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_NoExperienceGains_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-GrateCrystal_NoPokemonCenterHealing_opt              = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_LittleCup_opt                           = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_MetronomeOnly_opt                   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_Alt_VanillaTypes_opt                    = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -502,7 +492,6 @@ GrateCrystal_Alt_Turbin_base                         = us
 GrateCrystal_Alt_AbraShellderStarters_base           = us
 GrateCrystal_StartWithHMReplacementItems_base        = us
 GrateCrystal_NoExperienceGains_base                  = us
-GrateCrystal_NoPokemonCenterHealing_base             = us
 GrateCrystal_LittleCup_base                          = us
 GrateCrystal_Alt_MetronomeOnly_base                  = us
 GrateCrystal_Alt_VanillaTypes_base                   = us
