@@ -117,10 +117,7 @@ CatchingTutorialDudeScript:
 	opentext
 	writetext CatchingTutorialDebriefText
 	waitbutton
-	closetext
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
-	end
-
 .BoxFull:
 	writetext CatchingTutorialBoxFullText
 	waitbutton
@@ -237,11 +234,30 @@ DudeMovementData2b:
 	step_end
 
 CatchingTutorialBoxFullText:
-	text "#MON hide in"
-	line "the grass. Who"
+	text "If you have"
+	line "catching set to"
 
-	para "knows when they'll"
-	line "pop out…"
+	para "“limited” in your"
+	line "options menu, then"
+
+	para "you can only catch"
+	line "the first wild"
+
+	para "#MON that you"
+	line "find in each area"
+	cont "that you visit."
+
+	para "But you also can't"
+	line "catch more than"
+
+	para "one of the same"
+	line "#MON, so if you"
+
+	para "find the same one,"
+	line "you'll be able to"
+
+	para "catch the next new"
+	line "one after that."
 	done
 
 CatchingTutorialIntroText:
@@ -263,6 +279,8 @@ CatchingTutorialDebriefText:
 	para "If you weaken them"
 	line "first, #MON are"
 	cont "easier to catch."
+
+	para "By the way…"
 	done
 
 CatchingTutorialDeclinedText:
