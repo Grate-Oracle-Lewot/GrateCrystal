@@ -1245,10 +1245,6 @@ LookAtElmPokeBallScript:
 
 ElmsLabHealingMachine:
 	opentext
-if DEF(_NO_POKEMON_CENTERS)
-	writetext ElmsLabHealingMachineText1
-	sjump ElmsLab_EndText
-else
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
@@ -1260,7 +1256,6 @@ else
 	iftrue ElmsLabHealingMachine_HealParty
 	closetext
 	end
-endc
 
 ElmsLabHealingMachine_HealParty:
 	special StubbedTrainerRankings_Healings
@@ -1576,27 +1571,17 @@ OfficerLeavesMovement:
 	step DOWN
 	step_end
 
+AideWalksRight2:
+	step RIGHT
 AideWalksRight1:
 	step RIGHT
 	step RIGHT
 	turn_head UP
 	step_end
 
-AideWalksRight2:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head UP
-	step_end
-
-AideWalksLeft1:
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
 AideWalksLeft2:
 	step LEFT
+AideWalksLeft1:
 	step LEFT
 	step LEFT
 	turn_head DOWN
@@ -1646,12 +1631,6 @@ AfterChikoritaMovement:
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD) || DEF(_LEGENDARY_BIRDS)
 AfterCyndaquilMovement:
 	step LEFT
-	step LEFT
-	step LEFT
-	step UP
-	turn_head UP
-	step_end
-
 AfterTotodileMovement:
 	step LEFT
 	step LEFT
@@ -1659,15 +1638,9 @@ AfterTotodileMovement:
 	turn_head UP
 	step_end
 else
-AfterCyndaquilMovement:
-	step LEFT
-	step LEFT
-	step UP
-	turn_head UP
-	step_end
-
 AfterTotodileMovement:
 	step LEFT
+AfterCyndaquilMovement:
 	step LEFT
 	step LEFT
 	step UP
