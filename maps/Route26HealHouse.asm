@@ -12,9 +12,6 @@ Route26HealHouse_MapScripts:
 	endcallback
 
 Route26HealHouseTeacherScript:
-if DEF(_NO_POKEMON_CENTERS)
-	jumptextfaceplayer Route26HealHouseRestAWhileText
-else
 	faceplayer
 	opentext
 	writetext Route26HealHouseRestAWhileText
@@ -33,7 +30,6 @@ else
 	waitbutton
 	closetext
 	end
-endc
 
 Route26HealHouseBookshelf:
 	jumpstd PictureBookshelfScript
