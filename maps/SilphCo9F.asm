@@ -19,9 +19,6 @@ TrainerScientistHideki:
 	end
 
 SilphCo9FNurseScript:
-if DEF(_NO_POKEMON_CENTERS)
-	jumptextfaceplayer SilphCo9FNurseText
-else
 	faceplayer
 	opentext
 	writetext SilphCo9FNurseBeforeText
@@ -40,7 +37,6 @@ else
 	waitbutton
 	closetext
 	end
-endc
 
 SilphCo9FSign:
 	jumptext SilphCo9FSignText
