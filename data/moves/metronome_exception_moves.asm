@@ -1,7 +1,8 @@
 ; Metronome cannot turn into these moves.
 
-MetronomeExcepts:
 if DEF(_METRONOME_ONLY)
+MetronomeExcepts:
+MetronomeExcepts_BattleTower:
 	db NO_MOVE
 	db DISABLE
 	db COUNTER
@@ -15,11 +16,13 @@ if DEF(_METRONOME_ONLY)
 	db MIRROR_COAT
 	db -1 ; end
 else
+MetronomeExcepts:
+	db THIEF
+MetronomeExcepts_BattleTower:
 	db NO_MOVE
 	db COUNTER
 	db METRONOME
 	db SKETCH
-	db THIEF
 	db PROTECT
 	db DESTINY_BOND
 	db SLEEP_TALK
