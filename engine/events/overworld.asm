@@ -309,7 +309,13 @@ AskHedgerScript:
 	iftrue Script_Hedger
 .declined
 	closetext
+	callasm ResetUsingHMItem
 	end
+
+ResetUsingHMItem:
+	xor a
+	ld [wUsingHMItem], a
+	ret
 
 CutHedgerCheckMap:
 	xor a
@@ -628,6 +634,8 @@ TrySurfOW::
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
 	call CallScript
+	xor a
+	ld [wUsingHMItem], a
 	scf
 	ret
 
@@ -861,6 +869,8 @@ TryWaterfallOW::
 	ld hl, Script_CantDoWaterfall
 .callscf
 	call CallScript
+	xor a
+	ld [wUsingHMItem], a
 	scf
 	ret
 
@@ -1403,6 +1413,8 @@ TryWhirlpoolOW::
 	ld hl, Script_MightyWhirlpool
 .callscf
 	call CallScript
+	xor a
+	ld [wUsingHMItem], a
 	scf
 	ret
 
