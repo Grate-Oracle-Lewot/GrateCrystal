@@ -21,7 +21,14 @@ BattleCommand_Metronome:
 
 ; None of the moves in MetronomeExcepts.
 	push af
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr z, .normal
+	ld hl, MetronomeExcepts_BattleTower
+	jr .array
+.normal
 	ld hl, MetronomeExcepts
+.array
 	call IsInByteArray
 	pop bc
 	jr c, .GetMove
