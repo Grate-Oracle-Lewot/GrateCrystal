@@ -1,10 +1,10 @@
 	db "TASTY LEGS@" ; species name
 	dw 104, 140 ; height, weight
 
-	db   "It can only walk"
-	next "sideways, so it"
-	next "gets stuck if it's"
+	db   "Most KRABBY are"
+	next "genial, but the"
+	next "one owned by the"
 
-	page "somehow backed"
-	next "into a corner."
-	next "@"
+	page "person who named"
+	next "them was very"
+	next "crabby.@"
