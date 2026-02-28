@@ -221,6 +221,7 @@ Script_FinishCut:
 	reloadmappart
 	callasm CutDownTreeOrGrass
 	closetext
+	callasm ResetUsingHMItem
 	end
 
 Script_HedgerFromMenu:
@@ -1163,6 +1164,7 @@ Script_UsedJediRobe:
 	callasm SetStrengthFlag
 	writetext UseJediRobeText
 	closetext
+	callasm ResetUsingHMItem
 	end
 
 UseStrengthText:
@@ -1598,6 +1600,7 @@ RockSmashScript:
 
 FinishRockSmashScript:
 	closetext
+	callasm ResetUsingHMItem
 	special WaitSFX
 	playsound SFX_STRENGTH
 	earthquake 84
