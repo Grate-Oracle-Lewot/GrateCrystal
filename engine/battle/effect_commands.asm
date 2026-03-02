@@ -4750,7 +4750,16 @@ LowerStat:
 	ld [wFailedMessage], a
 	ret
 
+BattleCommand_EggBomb:
+	ld hl, EggBomb_StatusCommands
+	jr TriAttack_EggBomb_Merge
+
 BattleCommand_TriStatusChance:
+	ld hl, TriAttack_StatusCommands
+	; fallthrough
+
+TriAttack_EggBomb_Merge:
+	push hl
 	call BattleCommand_EffectChance
 .loop
 	; 1/3 chance of each status
@@ -4759,13 +4768,18 @@ BattleCommand_TriStatusChance:
 	and %11
 	jr z, .loop
 	dec a
-	ld hl, .StatusCommands
+	pop hl
 	rst JumpTable
 	ret
 
-.StatusCommands:
+TriAttack_StatusCommands:
 	dw BattleCommand_ParalyzeTarget
 	dw BattleCommand_FreezeTarget
+	dw BattleCommand_BurnTarget
+
+EggBomb_StatusCommands:
+	dw BattleCommand_SpecialDefenseDown
+	dw BattleCommand_DefenseDown
 	dw BattleCommand_BurnTarget
 
 BattleCommand_Curl:
