@@ -151,7 +151,7 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw PocketPCEffect      ; POCKET_PC
+	dw GameBoyPCEffect     ; GAME_BOY_PC
 	dw XItemEffect         ; X_SP_DEFEND
 	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
@@ -2273,8 +2273,8 @@ ItemfinderEffect:
 	farcall ItemFinder
 	jp UseDisposableItem
 
-PocketPCEffect:
-	farcall PocketPCFunction
+GameBoyPCEffect:
+	farcall GameBoyPCFunction
 	ret
 
 RestorePPEffect:
