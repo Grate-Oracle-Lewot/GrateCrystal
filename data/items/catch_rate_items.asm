@@ -22,7 +22,7 @@ TimeCapsule_CatchRateItems:
 	db BASEMENT_KEY,  GOLD_BERRY
 	db PASS,          GOLD_BERRY
 	db ODD_ROD,       GOLD_BERRY
-	db POCKET_PC,     GOLD_BERRY
+	db GAME_BOY_PC,   GOLD_BERRY
 	db HEDGER,        GOLD_BERRY
 	db FLOATIE,       GOLD_BERRY
 	db DISCO_BALL,    GOLD_BERRY
