@@ -502,11 +502,11 @@ _RodNothingText::
 	text "Not even a nibble!"
 	autodone
 
-_PocketPCLoadingText::
+_GameBoyPCLoadingText::
 	text "Loading…"
 	done
 
-_PocketPCNoSignalText::
+_GameBoyPCNoSignalText::
 	text "No signal!"
 	done
 
