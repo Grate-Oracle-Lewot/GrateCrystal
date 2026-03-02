@@ -744,8 +744,8 @@ SelfdestructDescription:
 	next "the user faint.@"
 
 EggBombDescription:
-	db   "May burn, freeze,"
-	next "or paralyze.@"
+	db   "May burn or lower"
+	next "defenses.@"
 
 LickDescription:
 	db   "Licks the foe. May"
