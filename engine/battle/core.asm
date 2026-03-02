@@ -50,7 +50,7 @@ BattleIntro:
 	call ClearBox
 	call ClearSprites
 	ld a, [wBattleMode]
-	cp WILD_BATTLE
+	dec a
 	call z, UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
@@ -2380,10 +2380,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	call BreakAttraction
 	ld a, [wBattleMode]
 	dec a
-	jr z, .wild2
-	jr .trainer
-
-.wild2
+	jr nz, .trainer
 	call StopDangerSound
 	ld a, $1
 	ld [wBattleLowHealthAlarm], a
@@ -3877,7 +3874,6 @@ AskUseNextPokemon:
 	call LoadTilemapToTempTilemap
 ; We don't need to be here if we're in a Trainer battle, as that decision is made for us.
 	ld a, [wBattleMode]
-	and a
 	dec a
 	ret nz
 
