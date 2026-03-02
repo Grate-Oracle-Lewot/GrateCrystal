@@ -2,6 +2,12 @@ AIChooseMove:
 ; Score each move of wEnemyMonMoves in wEnemyAIMoveScores. Lower is better.
 ; Pick the move with the lowest score.
 
+; Wildmons attack at random.
+	ld a, [wBattleMode]
+	dec a
+	ret z
+
+; The other player determines the "AI" behavior in a link battle.
 	ld a, [wLinkMode]
 	and a
 	ret nz
@@ -55,20 +61,8 @@ AIChooseMove:
 	ld [hl], 80
 	jr .CheckMovePP
 
-.ApplyLayers:
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .not_wild
-
-; Wild Mewtwo use Falkner's AI layers. Other species have none.
-	ld a, [wTempEnemyMonSpecies]
-	cp MEWTWO
-	ret nz
-	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
-	jr .battle_tower_skip
-
-.not_wild
 ; Apply AI scoring layers depending on the trainer class.
+.ApplyLayers:
 	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
 
 	; If we have a battle in BattleTower just load the Attributes of the first trainer class in wTrainerClass (Falkner)
@@ -79,7 +73,7 @@ AIChooseMove:
 
 	ld a, [wTrainerClass]
 	dec a
-	ld bc, 7 ; Trainer2AI - Trainer1AI
+	ld bc, NUM_TRAINER_ATTRIBUTES
 	call AddNTimes
 
 .battle_tower_skip
