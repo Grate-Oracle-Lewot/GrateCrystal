@@ -28,8 +28,8 @@ TohjoFalls_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 34, ROUTE_27, 2
-	warp_event 25, 34, ROUTE_27, 3
+	warp_event 13, 33, ROUTE_27, 2
+	warp_event 25, 33, ROUTE_27, 3
 	warp_event 35,  1, MEW_ANTECHAMBER, 1
 
 	def_coord_events
