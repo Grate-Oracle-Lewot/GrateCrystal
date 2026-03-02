@@ -138,7 +138,7 @@ ItemDescriptions:
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw PocketPCDesc
+	dw GameBoyPCDesc
 	dw XSpDefendDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
@@ -807,7 +807,7 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-PocketPCDesc:
+GameBoyPCDesc:
 	db   "A handheld PC for"
 	next "use anywhere!@"
 
