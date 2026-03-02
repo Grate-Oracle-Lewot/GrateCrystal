@@ -146,4 +146,5 @@ MoveEffectsPointers:
 	dw Dig
 	dw Avalanche
 	dw Conversion
+	dw EggBomb
 	assert_table_length NUM_MOVE_EFECTS
