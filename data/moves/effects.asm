@@ -1062,6 +1062,27 @@ TriAttack:
 	kingsrock
 	endmove
 
+EggBomb:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	eggbomb
+	kingsrock
+	endmove
+
 Toxic:
 DoPoison:
 	checkobedience
