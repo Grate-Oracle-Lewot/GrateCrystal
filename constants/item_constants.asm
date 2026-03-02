@@ -143,7 +143,7 @@
 	const CHARCOAL     ; 87
 	const BERRY_JUICE  ; 88
 	const SCOPE_LENS   ; 89
-	const POCKET_PC    ; 8a
+	const GAME_BOY_PC  ; 8a
 	const X_SP_DEFEND  ; 8b
 	const METAL_COAT   ; 8c
 	const DRAGON_FANG  ; 8d
