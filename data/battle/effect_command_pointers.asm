@@ -173,4 +173,5 @@ BattleCommandPointers:
 	dw BattleCommand_CheckContact
 	dw BattleCommand_Avalanche
 	dw BattleCommand_Conversion
+	dw BattleCommand_EggBomb
 	assert_table_length NUM_EFFECT_COMMANDS
