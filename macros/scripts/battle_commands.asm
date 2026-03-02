@@ -173,6 +173,7 @@ ENDM
 	command checkcontact            ; a6
 	command doubledamageifhit       ; a7
 	command conversion              ; a8
+	command eggbomb                 ; a9
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
