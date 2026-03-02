@@ -42,7 +42,7 @@ EcruteakPokecenter1F_MapScripts:
 	promptbutton
 	writetext EcruteakPokecenter1F_BillText2
 	promptbutton
-	verbosegiveitem POCKET_PC
+	verbosegiveitem GAME_BOY_PC
 	writetext EcruteakPokecenter1F_BillText3
 	waitbutton
 	closetext
