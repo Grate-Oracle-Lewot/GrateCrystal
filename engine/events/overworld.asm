@@ -1890,19 +1890,19 @@ RodNothingText:
 	text_far _RodNothingText
 	text_end
 
-PocketPCFunction:
+GameBoyPCFunction:
 	call CheckIfInPokemonLeague
-	jr nc, .PocketPCNoSignal
+	jr nc, .GameBoyPCNoSignal
 	call GetMapEnvironment
 	cp CAVE
-	jr z, .PocketPCNoSignal
-	ld hl, Script_LoadPocketPC
-	ld de, Script_LoadPocketPC_Register
+	jr z, .GameBoyPCNoSignal
+	ld hl, Script_LoadGameBoyPC
+	ld de, Script_LoadGameBoyPC_Register
 	jr .finish
 
-.PocketPCNoSignal:
-	ld hl, Script_FailPocketPC
-	ld de, Script_FailPocketPC_Register
+.GameBoyPCNoSignal:
+	ld hl, Script_FailGameBoyPC
+	ld de, Script_FailGameBoyPC_Register
 .finish
 	ld a, [wPlayerState]
 	call CheckIfRegistered
@@ -2017,41 +2017,41 @@ BikeFunction:
 	scf
 	ret
 
-Script_LoadPocketPC:
+Script_LoadGameBoyPC:
 	reloadmappart
 	special UpdateTimePals
 	; fallthrough
 
-Script_LoadPocketPC_Register:
+Script_LoadGameBoyPC_Register:
 	opentext
 	special PokemonCenterPC
 	; fallthough
 
-Script_PocketPC_CloseReload:
+Script_GameBoyPC_CloseReload:
 	closetext
 	reloadmappart
 	end
 
-Script_FailPocketPC:
+Script_FailGameBoyPC:
 	reloadmappart
 	special UpdateTimePals
 	; fallthrough
 
-Script_FailPocketPC_Register:
+Script_FailGameBoyPC_Register:
 	opentext
-	writetext PocketPCLoadingText
+	writetext GameBoyPCLoadingText
 	playsound SFX_NO_SIGNAL
 	waitsfx
 	writetext NoSignalText
 	waitbutton
-	sjump Script_PocketPC_CloseReload
+	sjump Script_GameBoyPC_CloseReload
 
-PocketPCLoadingText:
-	text_far _PocketPCLoadingText
+GameBoyPCLoadingText:
+	text_far _GameBoyPCLoadingText
 	text_end
 
 NoSignalText:
-	text_far _PocketPCNoSignalText
+	text_far _GameBoyPCNoSignalText
 	text_end
 
 Script_GetOnBike:
