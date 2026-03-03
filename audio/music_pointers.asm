@@ -131,4 +131,6 @@ Music:
 	dba Music_HaunterInTheGraveyard
 	dba Music_SeelStage
 	dba Music_BlueField
+	dba Music_EncounterPsychic
+	dba Music_IcePathHGSS
 	assert_table_length NUM_MUSIC_SONGS
