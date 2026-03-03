@@ -603,7 +603,7 @@ Seasick/Mauve Sea - female player running frames, Mary sprites
 
 FrenchOrange - Karen walking frames
 
-TriteHexagon - demixes for Dive, Contests, Cynthia, and Miror B.
+TriteHexagon - demixes for Dive and Contests from RSE, Cynthia and Miror B. battles, some encounter themes, and Ice Path remix
 
 Mmmmmmmmmmmmmmmmm - Route 47 theme demix
 
