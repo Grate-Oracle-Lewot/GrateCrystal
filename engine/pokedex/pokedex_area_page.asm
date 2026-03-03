@@ -1,9 +1,9 @@
 INCLUDE "data/wild/non_wildmon_locations.asm"
 
 String_johto_text:
-	db "JOHTO:     @"
+	db "JOHTO      @"
 String_kanto_text:
-	db "KANTO:     @"
+	db "KANTO      @"
 
 Pokedex_DetailedArea:
 	xor a
@@ -443,7 +443,7 @@ Pokedex_DetailedArea_grass:
 	ret
 
 .grass_walk_text:
-	db " GRASS   @"
+	db " WILD    @"
 
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
