@@ -5,6 +5,6 @@
 	next "a mischievous spi-"
 	next "rit bonds with a"
 
-	page "cloud of smog or"
-	next "swamp gas."
-	next "@"
+	page "cloud of smog,"
+	next "giving it physical"
+	next "form.@"
