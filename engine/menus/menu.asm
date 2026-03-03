@@ -12,7 +12,7 @@ _InterpretBattleMenu::
 	rst FarCall
 
 	call Draw2DMenu
-	farcall MobileTextBorder
+	call MobileTextBorder
 	; fallthrough
 
 _2DMenuBattleMenuMerge:
@@ -26,7 +26,7 @@ _InterpretMobileMenu::
 	rst FarCall
 
 	call Draw2DMenu
-	farcall MobileTextBorder
+	call MobileTextBorder
 	call UpdateSprites
 	call ApplyTilemap
 	call Init2DMenuCursorPosition
