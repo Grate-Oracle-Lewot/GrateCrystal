@@ -106,6 +106,10 @@ OakPCText3:
 	text_far _OakPCText3
 	text_end
 
+OakPCText4:
+	text_far _OakPCText4
+	text_end
+
 OakRating01:
 	text_far _OakRating01
 	text_end
@@ -180,8 +184,4 @@ OakRating18:
 
 OakRating19:
 	text_far _OakRating19
-	text_end
-
-OakPCText4:
-	text_far _OakPCText4
 	text_end
