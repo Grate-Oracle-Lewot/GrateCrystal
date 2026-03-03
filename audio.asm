@@ -160,10 +160,10 @@ INCLUDE "audio/music/dive.asm"
 
 SECTION "Extra Songs 4", ROMX
 
-INCLUDE "audio/music/catchemred.asm"
+INCLUDE "audio/music/mirorbbattle.asm"
+INCLUDE "audio/music/battleCynthia.asm"
+INCLUDE "audio/music/contestRSE.asm"
 INCLUDE "audio/music/mewtwostage.asm"
-INCLUDE "audio/music/endcredits.asm"
-INCLUDE "audio/music/gengarinthegraveyard.asm"
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
 INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/bluefield.asm"
