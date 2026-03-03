@@ -168,6 +168,8 @@ INCLUDE "audio/music/gastlyinthegraveyard.asm"
 INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/bluefield.asm"
 INCLUDE "audio/music/title.asm"
+INCLUDE "audio/music/encounterPsychic.asm"
+INCLUDE "audio/music/icepathHGSS.asm"
 
 
 SECTION "Sound Effects", ROMX
