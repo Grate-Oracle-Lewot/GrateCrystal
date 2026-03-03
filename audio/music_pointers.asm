@@ -123,10 +123,10 @@ Music:
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
 	dba Music_Dive
-	dba Music_CatchEmRed
+	dba Music_MirorBBattle
+	dba Music_BattleCynthia
+	dba Music_ContestRSE
 	dba Music_MewtwoStage
-	dba Music_EndCredits
-	dba Music_GengarInTheGraveyard
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
 	dba Music_SeelStage
