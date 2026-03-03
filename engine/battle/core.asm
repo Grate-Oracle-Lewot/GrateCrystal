@@ -9085,7 +9085,7 @@ InitBattleDisplay:
 	ld b, 4
 	ld c, 18
 	call Textbox
-	farcall MobileTextBorder
+	call MobileTextBorder
 	hlcoord 1, 5
 	lb bc, 3, 7
 	call ClearBox
