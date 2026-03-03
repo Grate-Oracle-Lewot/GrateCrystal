@@ -52,6 +52,8 @@ Route29Tutorial1:
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
 	writetext CatchingTutorialDebriefText
+	promptbutton
+	writetext CatchingTutorialBoxFullText
 	waitbutton
 	closetext
 	setscene SCENE_ROUTE29_NOTHING
@@ -77,6 +79,8 @@ Route29Tutorial2:
 	turnobject ROUTE29_COOLTRAINER_M1, UP
 	opentext
 	writetext CatchingTutorialDebriefText
+	promptbutton
+	writetext CatchingTutorialBoxFullText
 	waitbutton
 	closetext
 	setscene SCENE_ROUTE29_NOTHING
@@ -116,7 +120,7 @@ CatchingTutorialDudeScript:
 	catchtutorial BATTLETYPE_TUTORIAL
 	opentext
 	writetext CatchingTutorialDebriefText
-	waitbutton
+	promptbutton
 	setevent EVENT_LEARNED_TO_CATCH_POKEMON
 .BoxFull:
 	writetext CatchingTutorialBoxFullText
