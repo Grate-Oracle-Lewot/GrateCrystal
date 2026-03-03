@@ -189,6 +189,33 @@ DecoAction_nothing:
 
 DecoBedMenu:
 	call FindOwnedBeds
+	jr DecoMenuMerge
+
+DecoCarpetMenu:
+	call FindOwnedCarpets
+	jr DecoMenuMerge
+
+DecoPlantMenu:
+	call FindOwnedPlants
+	jr DecoMenuMerge
+
+DecoPosterMenu:
+	call FindOwnedPosters
+	jr DecoMenuMerge
+
+DecoConsoleMenu:
+	call FindOwnedConsoles
+	jr DecoMenuMerge
+
+DecoOrnamentMenu:
+	call FindOwnedOrnaments
+	jr DecoMenuMerge
+
+DecoBigDollMenu:
+	call FindOwnedBigDolls
+	; fallthrough
+
+DecoMenuMerge:
 	call PopulateDecoCategoryMenu
 	xor a
 	ret
@@ -205,12 +232,6 @@ FindOwnedBeds:
 	db DECO_PIKACHU_BED ; 5
 	db -1
 
-DecoCarpetMenu:
-	call FindOwnedCarpets
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
-
 FindOwnedCarpets:
 	ld hl, .carpets
 	ld c, CARPETS
@@ -223,12 +244,6 @@ FindOwnedCarpets:
 	db DECO_GREEN_CARPET ; a
 	db -1
 
-DecoPlantMenu:
-	call FindOwnedPlants
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
-
 FindOwnedPlants:
 	ld hl, .plants
 	ld c, PLANTS
@@ -239,12 +254,6 @@ FindOwnedPlants:
 	db DECO_TROPICPLANT ; d
 	db DECO_JUMBOPLANT ; e
 	db -1
-
-DecoPosterMenu:
-	call FindOwnedPosters
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
 
 FindOwnedPosters:
 	ld hl, .posters
@@ -258,12 +267,6 @@ FindOwnedPosters:
 	db DECO_JIGGLYPUFF_POSTER ; 13
 	db -1
 
-DecoConsoleMenu:
-	call FindOwnedConsoles
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
-
 FindOwnedConsoles:
 	ld hl, .consoles
 	ld c, CONSOLES
@@ -275,12 +278,6 @@ FindOwnedConsoles:
 	db DECO_N64 ; 17
 	db DECO_VIRTUAL_BOY ; 18
 	db -1
-
-DecoOrnamentMenu:
-	call FindOwnedOrnaments
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
 
 FindOwnedOrnaments:
 	ld hl, .ornaments
@@ -312,12 +309,6 @@ FindOwnedOrnaments:
 	db DECO_GOLD_TROPHY_DOLL ; 33
 	db DECO_SILVER_TROPHY_DOLL ; 34
 	db -1
-
-DecoBigDollMenu:
-	call FindOwnedBigDolls
-	call PopulateDecoCategoryMenu
-	xor a
-	ret
 
 FindOwnedBigDolls:
 	ld hl, .big_dolls
