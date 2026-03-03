@@ -30,7 +30,7 @@ CheckFirstMonIsEgg:
 	call GetPokemonName
 	jp CopyPokemonName_Buffer1_Buffer3
 
-ChangeHappiness:
+ChangeHappiness::
 ; Perform happiness action c on wCurPartyMon
 
 	ld a, [wCurPartyMon]
