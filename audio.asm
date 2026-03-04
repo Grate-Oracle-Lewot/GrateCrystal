@@ -170,6 +170,7 @@ INCLUDE "audio/music/bluefield.asm"
 INCLUDE "audio/music/title.asm"
 INCLUDE "audio/music/encounterPsychic.asm"
 INCLUDE "audio/music/encounterArtist.asm"
+INCLUDE "audio/music/encounterEliteFour.asm"
 INCLUDE "audio/music/icepathHGSS.asm"
 
 
