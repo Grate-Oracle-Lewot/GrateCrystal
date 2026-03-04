@@ -70,6 +70,7 @@ ROMX $11
 	"bank11"
 ROMX $12
 	"Crystal Features 1"
+	"Extra Songs 5"
 ROMX $13
 	"bank13"
 	"Shrink Pics"
@@ -234,6 +235,7 @@ ROMX $5a
 	"Pics 19"
 ROMX $5b
 	"bank5B"
+	"Extra Songs 4"
 ROMX $5c
 	"mobile5C"
 ROMX $5d
