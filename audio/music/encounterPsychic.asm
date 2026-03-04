@@ -233,7 +233,7 @@ Music_EncounterPsychic_Ch3:
 ;Bar 1
 	octave 3
 	note __, 8
-Music_EncounterPsychic_Ch3_loop
+Music_EncounterPsychic_Ch3_loop:
 	octave 3
 	note F_, 8
 	notetype 3, $17
