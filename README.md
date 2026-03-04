@@ -601,7 +601,7 @@ Tom Wang - male player running frames
 
 Seasick/Mauve Sea - female player running frames, Mary sprites
 
-FrenchOrange - Karen walking frames
+FrenchOrange - Karen and ship captain walking frames
 
 TriteHexagon - demixes for Dive and Contests from RSE, Cynthia and Miror B. battles, some encounter themes, and Ice Path remix
 
