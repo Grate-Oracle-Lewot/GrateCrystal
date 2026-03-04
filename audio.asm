@@ -168,6 +168,10 @@ INCLUDE "audio/music/gastlyinthegraveyard.asm"
 INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/bluefield.asm"
 INCLUDE "audio/music/title.asm"
+
+
+SECTION "Extra Songs 5", ROMX
+
 INCLUDE "audio/music/encounterPsychic.asm"
 INCLUDE "audio/music/encounterArtist.asm"
 INCLUDE "audio/music/encounterEliteFour.asm"
