@@ -132,7 +132,8 @@
 	const MUSIC_GUITARIST_ENCOUNTER          ; 7e
 	const MUSIC_JUGGLER_ENCOUNTER            ; 7f
 	const MUSIC_EXECUTIVE_ENCOUNTER          ; 80
-	const MUSIC_ICE_PATH                     ; 81
+	const MUSIC_POKEFAN_ENCOUNTER            ; 81
+	const MUSIC_ICE_PATH                     ; 82
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
