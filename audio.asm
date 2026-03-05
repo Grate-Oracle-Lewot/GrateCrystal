@@ -175,6 +175,7 @@ SECTION "Extra Songs 5", ROMX
 INCLUDE "audio/music/encounterPsychic.asm"
 INCLUDE "audio/music/encounterArtist.asm"
 INCLUDE "audio/music/encounterEliteFour.asm"
+INCLUDE "audio/music/encounterHiker.asm"
 INCLUDE "audio/music/icepathHGSS.asm"
 
 
