@@ -134,5 +134,6 @@ Music:
 	dba Music_EncounterPsychic
 	dba Music_EncounterArtist
 	dba Music_EncounterE4
+	dba Music_EncounterHikerDPPt
 	dba Music_IcePathHGSS
 	assert_table_length NUM_MUSIC_SONGS
