@@ -622,19 +622,15 @@ endr
 	ld a, [hli]
 	cp -1
 	jr nz, .skip
-	call .backup
-
-.skip
-	farcall GetMapScreenCoords
-	ret
-
-.backup
 	ld a, [wPrevWarp]
 	ld [wBackupWarpNumber], a
 	ld a, [wPrevMapGroup]
 	ld [wBackupMapGroup], a
 	ld a, [wPrevMapNumber]
 	ld [wBackupMapNumber], a
+
+.skip
+	farcall GetMapScreenCoords
 	ret
 
 ChangeMap::
@@ -1277,6 +1273,14 @@ LoadTilesetGFX::
 	cp TILESET_JOHTO_MODERN
 	jr z, .load_roof
 	cp TILESET_BATTLE_TOWER_OUTSIDE
+	jr z, .load_roof
+	cp TILESET_JOHTO_CHERRY
+	jr z, .load_roof
+	cp TILESET_JOHTO_BURNED
+	jr z, .load_roof
+	cp TILESET_JOHTO_BEACH
+	jr z, .load_roof
+	cp TILESET_JOHTO_DESERT
 	jr z, .load_roof
 	jr .skip_roof
 
