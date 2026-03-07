@@ -1462,43 +1462,6 @@ GetMovementPermissions::
 	dec e
 	call GetCoordTile
 	ld [wTileUp], a
-	jp .Up
-
-.LeftRight:
-	ld a, [wPlayerStandingMapX]
-	ld d, a
-	ld a, [wPlayerStandingMapY]
-	ld e, a
-
-	push de
-	dec d
-	call GetCoordTile
-	ld [wTileLeft], a
-	call .Left
-
-	pop de
-	inc d
-	call GetCoordTile
-	ld [wTileRight], a
-	jp .Right
-
-.Down:
-	call .CheckHiNybble
-	ret nz
-	ld a, [wTileDown]
-	and %111
-	cp COLL_UP_WALL & %111 ; COLL_UP_BUOY & %111
-	jr z, .ok_down
-	cp COLL_UP_RIGHT_WALL & %111 ; COLL_UP_RIGHT_BUOY & %111
-	jr z, .ok_down
-	cp COLL_UP_LEFT_WALL & %111 ; COLL_UP_LEFT_BUOY & %111
-	ret nz
-
-.ok_down
-	ld a, [wTilePermissions]
-	or FACE_DOWN
-	ld [wTilePermissions], a
-	ret
 
 .Up:
 	call .CheckHiNybble
@@ -1518,6 +1481,23 @@ GetMovementPermissions::
 	ld [wTilePermissions], a
 	ret
 
+.LeftRight:
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+
+	push de
+	dec d
+	call GetCoordTile
+	ld [wTileLeft], a
+	call .Left
+
+	pop de
+	inc d
+	call GetCoordTile
+	ld [wTileRight], a
+
 .Right:
 	call .CheckHiNybble
 	ret nz
@@ -1533,6 +1513,24 @@ GetMovementPermissions::
 .ok_right
 	ld a, [wTilePermissions]
 	or FACE_RIGHT
+	ld [wTilePermissions], a
+	ret
+
+.Down:
+	call .CheckHiNybble
+	ret nz
+	ld a, [wTileDown]
+	and %111
+	cp COLL_UP_WALL & %111 ; COLL_UP_BUOY & %111
+	jr z, .ok_down
+	cp COLL_UP_RIGHT_WALL & %111 ; COLL_UP_RIGHT_BUOY & %111
+	jr z, .ok_down
+	cp COLL_UP_LEFT_WALL & %111 ; COLL_UP_LEFT_BUOY & %111
+	ret nz
+
+.ok_down
+	ld a, [wTilePermissions]
+	or FACE_DOWN
 	ld [wTilePermissions], a
 	ret
 
