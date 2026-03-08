@@ -64,6 +64,7 @@ ContactMoves::
 	db SHADOW_CLAW
 	db BLITZKRIEG
 	db OUTRAGE
+	db ACROBATICS
 	db ROLLOUT
 	db FALSE_SWIPE
 	db SPARK
