@@ -29,13 +29,7 @@ IsInArray::
 SkipNames::
 ; Skip a names.
 	ld bc, NAME_LENGTH
-	and a
-	ret z
-.loop
-	add hl, bc
-	dec a
-	jr nz, .loop
-	ret
+	; fallthrough
 
 AddNTimes::
 ; Add bc * a to hl.
