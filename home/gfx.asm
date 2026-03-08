@@ -1,22 +1,6 @@
 TILES_PER_CYCLE EQU 8
 MOBILE_TILES_PER_CYCLE EQU 6
 
-Get2bppViaHDMA::
-	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
-	jp z, Copy2bpp
-
-	homecall HDMATransfer2bpp
-	ret
-
-Get1bppViaHDMA::
-	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
-	jp z, Copy1bpp
-
-	homecall HDMATransfer1bpp
-	ret
-
 FarCopyBytesDouble_DoubleBankSwitch::
 	ldh [hTempBank], a
 	ldh a, [hROMBank]
@@ -211,6 +195,14 @@ Request1bpp::
 	ld c, a
 	jr .loop
 
+Get2bppViaHDMA::
+	ldh a, [rLCDC]
+	bit rLCDC_ENABLE, a
+	jr z, Copy2bpp
+
+	homecall HDMATransfer2bpp
+	ret
+
 Get2bpp::
 ; copy c 2bpp tiles from b:de to hl
 	ldh a, [rLCDC]
@@ -252,6 +244,14 @@ FarCopyBytes::
 
 	pop af
 	rst Bankswitch
+	ret
+
+Get1bppViaHDMA::
+	ldh a, [rLCDC]
+	bit rLCDC_ENABLE, a
+	jr z, Copy1bpp
+
+	homecall HDMATransfer1bpp
 	ret
 
 Get1bpp::
