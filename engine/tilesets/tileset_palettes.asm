@@ -1,28 +1,28 @@
 LoadSpecialMapPalette:
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecom_2f
-	cp TILESET_BATTLE_TOWER_INSIDE
-	jr z, .battle_tower_inside
-	cp TILESET_ICE_PATH
-	jr z, .ice_path
 	cp TILESET_HOUSE
 	jr z, .house
+	cp TILESET_POKECOM_CENTER
+	jr z, .pokecom_2f
+	cp TILESET_ICE_PATH
+	jr z, .ice_path
 	cp TILESET_RADIO_TOWER
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	cp TILESET_SPINNERS
 	jr z, .spinners
+	cp TILESET_BATTLE_TOWER_INSIDE
+	jr z, .battle_tower_inside
 	jr .do_nothing
 
-.pokecom_2f
-	call LoadPokeComPalette
+.house
+	call LoadHousePalette
 	scf
 	ret
 
-.battle_tower_inside
-	call LoadBattleTowerInsidePalette
+.pokecom_2f
+	call LoadPokeComPalette
 	scf
 	ret
 
@@ -32,11 +32,6 @@ LoadSpecialMapPalette:
 	cp INDOOR ; Hall of Fame
 	jr z, .do_nothing
 	call LoadIcePathPalette
-	scf
-	ret
-
-.house
-	call LoadHousePalette
 	scf
 	ret
 
@@ -55,9 +50,24 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
+.battle_tower_inside
+	call LoadBattleTowerInsidePalette
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
+
+LoadHousePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, HousePalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+HousePalette:
+INCLUDE "gfx/tilesets/house.pal"
 
 LoadPokeComPalette:
 	ld a, BANK(wBGPals1)
@@ -69,16 +79,6 @@ LoadPokeComPalette:
 PokeComPalette:
 INCLUDE "gfx/tilesets/pokecom_center.pal"
 
-LoadBattleTowerInsidePalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, BattleTowerInsidePalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-BattleTowerInsidePalette:
-INCLUDE "gfx/tilesets/battle_tower_inside.pal"
-
 LoadIcePathPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
@@ -88,16 +88,6 @@ LoadIcePathPalette:
 
 IcePathPalette:
 INCLUDE "gfx/tilesets/ice_path.pal"
-
-LoadHousePalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, HousePalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-HousePalette:
-INCLUDE "gfx/tilesets/house.pal"
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -146,3 +136,13 @@ LoadSpinnersPalette:
 
 SpinnersPalette:
 INCLUDE "gfx/tilesets/spinners.pal"
+
+LoadBattleTowerInsidePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, BattleTowerInsidePalette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+
+BattleTowerInsidePalette:
+INCLUDE "gfx/tilesets/battle_tower_inside.pal"
