@@ -14,49 +14,49 @@ Tilesets::
 ; entries correspond to TILESET_* constants (see constants/tileset_constants.asm)
 	table_width TILESET_LENGTH, Tilesets
 	tileset Tileset0
-	tileset TilesetJohto
-	tileset TilesetJohtoModern
 	tileset TilesetKanto
-	tileset TilesetBattleTowerOutside
+	tileset TilesetKantoExtra
 	tileset TilesetHouse
+	tileset TilesetTraditionalHouse
+	tileset TilesetBillsHouse
 	tileset TilesetPlayersHouse
+	tileset TilesetPlayersRoom
 	tileset TilesetPokecenter
+	tileset TilesetPokeComCenter
+	tileset TilesetMart
 	tileset TilesetGate
-	tileset TilesetPort
+	tileset TilesetCave
+	tileset TilesetDarkCave
+	tileset TilesetIcePath
+	tileset TilesetForest
+	tileset TilesetPark
+	tileset TilesetTower
+	tileset TilesetRadioTower
 	tileset TilesetLab
 	tileset TilesetFacility
-	tileset TilesetMart
-	tileset TilesetMansion
-	tileset TilesetGameCorner
-	tileset TilesetEliteFourRoom
-	tileset TilesetTraditionalHouse
-	tileset TilesetTrainStation
-	tileset TilesetChampionsRoom
-	tileset TilesetLighthouse
-	tileset TilesetPlayersRoom
-	tileset TilesetPokeComCenter
-	tileset TilesetBattleTowerInside
-	tileset TilesetTower
-	tileset TilesetCave
-	tileset TilesetPark
-	tileset TilesetRuinsOfAlph
-	tileset TilesetRadioTower
 	tileset TilesetUnderground
-	tileset TilesetIcePath
-	tileset TilesetDarkCave
-	tileset TilesetForest
-	tileset TilesetHoOhWordRoom
+	tileset TilesetGameCorner
+	tileset TilesetTrainStation
+	tileset TilesetPort
+	tileset TilesetLighthouse
+	tileset TilesetEliteFourRoom
+	tileset TilesetChampionsRoom
+	tileset TilesetMansion
+	tileset TilesetMuseum
+	tileset TilesetSpinners
+	tileset TilesetRuinsOfAlph
 	tileset TilesetKabutoWordRoom
 	tileset TilesetOmanyteWordRoom
 	tileset TilesetAerodactylWordRoom
-	tileset TilesetMuseum
-	tileset TilesetSpinners
+	tileset TilesetHoOhWordRoom
 	tileset TilesetViridianGym
 	tileset TilesetOlivineGym
+	tileset TilesetBattleTowerInside
+	tileset TilesetBattleTowerOutside
+	tileset TilesetJohto
 	tileset TilesetJohtoCherry
 	tileset TilesetJohtoBurned
 	tileset TilesetJohtoBeach
 	tileset TilesetJohtoDesert
-	tileset TilesetKantoExtra
-	tileset TilesetBillsHouse
+	tileset TilesetJohtoModern
 	assert_table_length NUM_TILESETS + 1
