@@ -40,9 +40,11 @@ ScientistHegelBeatenText:
 	done
 
 ScientistHegelAfterBattleText:
-	text "It's too bad"
-	line "EMPOLEON isn't in"
-	cont "this hack."
+	text "I would've added"
+	line "EISCUE or EMPOLEON"
+
+	para "to this hack,"
+	line "myself."
 	done
 
 SilphCo4FClerkText:
