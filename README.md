@@ -366,7 +366,7 @@ Prize TMs:
 - Several new NPC trades, and some alterations to existing ones
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - When the player crosses map borders, roaming beasts now only change maps 50% of the time, making them potentially easier to ambush
-- Except for roamers, Pokémon with a chance to flee now do so less often, and never do so on the first turn (which ones flee have also been adjusted)
+- Except for roamers, Pokémon with a chance to flee now do so less often, and never do so on the first turn (which Pokémon will flee have also been adjusted)
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - Gift Pokémon can be sent to the PC, no longer requiring an empty party slot (with a few exceptions such as the above Dratini, due to unique code)
@@ -409,7 +409,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Colored party menu icons, plus a few new ones (and some old ones from Gen I)
 - Most Gen I songs used somewhere, plus a few from other sources (thanks to dannye and TriteHexagon)
 - A fourth Pokémon stats page showing DVs, Hidden Power type, and caught data
-- One more wild Pokémon slot for both grass and water
+- One more wild Pokémon slot for both grass and water, and no slot is rarer than 5% (with a few exceptions for unusual encounter methods)
 - Surf encounter level variance of +0 to +4 applied to all wild encounters, including fishing (excluding Headbutt and Rock Smash; couldn't get those to work)
 - Time fishgroups actually have different Pokémon at different times
 - Unown ! and ? added (eyes not droopy)
