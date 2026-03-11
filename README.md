@@ -108,7 +108,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - 200 entries: 5 Sacred Ashes
   - 250 entries: 99 Nuggets
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
-- A relatively tame amount of tileset additions, e.g. the unused mine cart graphics are now used in some caves
+- Some tileset additions: pink trees at Cherrygrove, autumn trees around the Tin Tower, palm trees on beaches, the unused mine cart graphics in some caves—and more!
 - Jessie and James now make several appearances throughout the game (inspiration for how to colorize their Pokémon Yellow battle sprite taken from Polished Crystal)
 - All of the rival's dialogue has been replaced with that from the Vietnamese Crystal bootleg
 
