@@ -2803,6 +2803,8 @@ MissingnoTGroup:
 	db -1 ; end
 
 CooltrainerMGroup:
+; Nick's party compensates for extra bytes in Smeargle's starter build,
+; so it should be in the same bank as Rival1.
 	; COOLTRAINERM (1)
 if DEF(_SHUCKLE_SMEARGLE_DELIBIRD)
 	db "NICK@", TRAINERTYPE_ITEM
