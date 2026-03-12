@@ -84,6 +84,13 @@ GBPRINTER_NORMAL   EQU $40
 GBPRINTER_DARKER   EQU $60
 GBPRINTER_DARKEST  EQU $7f
 
+; wFontType::
+	const_def
+	const FONT_1 ; 0
+	const FONT_2 ; 1
+	const FONT_3 ; 2
+NUM_FONTS EQU const_value
+
 ; wOptions2::
 	const_def
 	const BATTLE_ITEMS         ; 0
@@ -93,7 +100,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const HARD_MODE            ; 4
 	const NUZLOCKE             ; 5
 	const MENU_SIDEBAR         ; 6
-	const FONT_NORMAL_UNOWN    ; 7
+	const DIFFICULTY_DOUBLE    ; 7
 
 ; wWalkingDirection::
 	const_def -1
