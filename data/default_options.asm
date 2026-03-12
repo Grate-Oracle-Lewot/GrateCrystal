@@ -9,8 +9,8 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
 	db GBPRINTER_NORMAL
-; Unused byte
-	db 0
+; wFontType: font 1
+	db FONT_1
 ; wOptions2: battle items on
 	db %01000001
 	; BATTLE_ITEMS:         1 (ON)
