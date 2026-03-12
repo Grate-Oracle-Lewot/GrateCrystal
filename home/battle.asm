@@ -261,16 +261,26 @@ PushLYOverrides::
 	ret
 
 DifficultyEnemyBoosts::
-	ld a, [wOptions2]
-	bit HARD_MODE, a
+	ld hl, wOptions2
+	bit HARD_MODE, [hl]
 	ret z
+	bit DIFFICULTY_DOUBLE, [hl]
+	jr z, .single
+	ld hl, wEnemyMonAttack
+	call DifficultyStatBoosts
+.single
 	ld hl, wEnemyMonAttack
 	jr DifficultyStatBoosts
 
 DifficultyPlayerBoosts::
-	ld a, [wOptions2]
-	bit EASY_MODE, a
+	ld hl, wOptions2
+	bit EASY_MODE, [hl]
 	ret z
+	bit DIFFICULTY_DOUBLE, [hl]
+	jr z, .single
+	ld hl, wBattleMonAttack
+	call DifficultyStatBoosts
+.single
 	ld hl, wBattleMonAttack
 	; fallthrough
 
