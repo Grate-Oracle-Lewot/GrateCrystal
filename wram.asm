@@ -1730,7 +1730,7 @@ wGBPrinterBrightness::
 ;   darker:   $60
 ;   darkest:  $7F
 	db
-	ds 1
+wFontType:: db
 wOptions2::
 ; bit 0: battle items off/on
 ; bit 1: level caps off/on
