@@ -32,7 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Battle Items on/off: disable player use of items in battle (balls and held items still work)
   - Difficulty: Normal (unmodified stats), Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Very Easy (Easy boost is applied twice), Hard (computer's active Pokémon gets the aforementioned boost), or Very Hard (again, double boost). None of these boosts apply in link battles or the Battle Tower.
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
-  - Font: four choices
+  - Font: choose between the game's standard font, two alternates taken from Polished Crystal, and one designed by Th3Element05
   - Catching: Normal or Limited (Nuzlocke catching rules)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
     - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you won't be able to catch it, but you will be able to catch the first new species that you find. Different members of an evolutionary line count as different species, but if you've obtained a different stage through evolution, then that stage counts as already caught (though it doesn't use up any particular area's encounter).
@@ -607,8 +607,12 @@ TriteHexagon - demixes for Dive and Contests from RSE, Cynthia and Miror B. batt
 
 Mmmmmmmmmmmmmmmmm - Route 47 theme demix
 
+The3Element05 - graphics for Font #4
+
+WhoaMan - some characters in Font #3
+
 Cottonee frontsprite and Cottonee, Whimsicott, and Yanmega backsprites - edited from a sheet that credits LostImpact, Neslug, Gold Z, Chaos Rush, Solo, lakeofdance, Blue Emerald, bloodless, Pokekoks, boonzeet, and Rangi
 
 Some Pokémon icons taken from sheets by Emi Monserrate, LuigiTKO, Chamber, Solo0993, Blue Emerald, Lake, Neslug, and Pikachu25
 
-Weather icons and Eusine overworld sprites taken from Polished Crystal
+Weather icons, Eusine overworld sprites, and fonts #2-3 taken from Polished Crystal
