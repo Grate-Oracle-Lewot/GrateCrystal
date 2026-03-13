@@ -1,3 +1,5 @@
+Fonts: ; used only for BANK(Fonts)
+
 Font0:
 INCBIN "gfx/font/font0.1bpp"
 
