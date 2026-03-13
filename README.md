@@ -30,9 +30,9 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Physical/Special split
 - New options in the options menu:
   - Battle Items on/off: disable player use of items in battle (balls and held items still work)
-  - Difficulty: Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Normal (nothing), or Hard (computer's active Pokémon gets the aforementioned boost). These boosts aren't present in link battles or the Battle Tower.
+  - Difficulty: Normal (unmodified stats), Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Very Easy (Easy boost is applied twice), Hard (computer's active Pokémon gets the aforementioned boost), or Very Hard (again, double boost). None of these boosts apply in link battles or the Battle Tower.
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
-  - Font: Normal or Unown (all text becomes Unown font, characters permitting)
+  - Font: four choices
   - Catching: Normal or Limited (Nuzlocke catching rules)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
     - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you won't be able to catch it, but you will be able to catch the first new species that you find. Different members of an evolutionary line count as different species, but if you've obtained a different stage through evolution, then that stage counts as already caught (though it doesn't use up any particular area's encounter).
