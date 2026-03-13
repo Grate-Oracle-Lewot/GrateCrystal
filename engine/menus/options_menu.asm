@@ -32,9 +32,11 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_LEVELCAPS_HARDCAP ; 2
 
 	const_def
-	const OPT_DIFFICULTY_EASY   ; 0
-	const OPT_DIFFICULTY_NORMAL ; 1
-	const OPT_DIFFICULTY_HARD   ; 2
+	const OPT_DIFFICULTY_VERY_EASY ; 0
+	const OPT_DIFFICULTY_EASY      ; 1
+	const OPT_DIFFICULTY_NORMAL    ; 2
+	const OPT_DIFFICULTY_HARD      ; 3
+	const OPT_DIFFICULTY_VERY_HARD ; 4
 
 	const_def
 	const OPT_PRINT_LIGHTEST ; 0
@@ -45,7 +47,7 @@ NUM_OPTIONS EQU const_value   ; 8
 
 OnString:     db "ON @"
 OffString:    db "OFF@"
-NormalString: db "NORMAL  @"
+NormalString: db "NORMAL   @"
 
 _Option:
 	call ClearJoypad
@@ -147,7 +149,7 @@ StringOptions2:
 	db "MENU SIDEBAR<LF>"
 	db "        :<LF>"
 	db "FONT<LF>"
-	db "        :<LF>"
+	db "        :TYPE<LF>"
 	db "GB PRINTER<LF>"
 	db "        :<LF>"
 	db "PREVIOUS PAGE<LF>"
@@ -468,9 +470,9 @@ Options_Difficulty:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	ld a, c ; right pressed
-	cp OPT_DIFFICULTY_HARD
+	cp OPT_DIFFICULTY_VERY_HARD
 	jr c, .Increase
-	ld c, OPT_DIFFICULTY_EASY - 1
+	ld c, OPT_DIFFICULTY_VERY_EASY - 1
 
 .Increase:
 	inc c
@@ -480,31 +482,47 @@ Options_Difficulty:
 	ld a, c
 	and a
 	jr nz, .Decrease
-	ld c, OPT_DIFFICULTY_HARD + 1
+	ld c, OPT_DIFFICULTY_VERY_HARD + 1
 
 .Decrease:
 	dec c
 
 .Save:
 	ld a, c
-	and a
+	cp OPT_DIFFICULTY_VERY_EASY
+	jr z, .SetVeryEasy
+	cp OPT_DIFFICULTY_EASY
 	jr z, .SetEasy
-	ld a, c
-	cp OPT_DIFFICULTY_NORMAL
-	jr z, .SetNormal
-; .SetHard:
-	res EASY_MODE, [hl]
-	set HARD_MODE, [hl]
-	jr .NonePressed
+	cp OPT_DIFFICULTY_HARD
+	jr z, .SetHard
+	cp OPT_DIFFICULTY_VERY_HARD
+	jr z, .SetVeryHard
 
 .SetNormal:
 	res EASY_MODE, [hl]
 	res HARD_MODE, [hl]
+	res DIFFICULTY_DOUBLE, [hl]
 	jr .NonePressed
-
+.SetVeryEasy:
+	set EASY_MODE, [hl]
+	res HARD_MODE, [hl]
+	set DIFFICULTY_DOUBLE, [hl]
+	jr .NonePressed
 .SetEasy:
 	set EASY_MODE, [hl]
 	res HARD_MODE, [hl]
+	res DIFFICULTY_DOUBLE, [hl]
+	jr .NonePressed
+.SetHard:
+	res EASY_MODE, [hl]
+	set HARD_MODE, [hl]
+	res DIFFICULTY_DOUBLE, [hl]
+	jr .NonePressed
+.SetVeryHard:
+	res EASY_MODE, [hl]
+	set HARD_MODE, [hl]
+	set DIFFICULTY_DOUBLE, [hl]
+
 .NonePressed:
 	ld b, 0
 	ld hl, .Strings
@@ -520,36 +538,51 @@ Options_Difficulty:
 
 .Strings:
 ; entries correspond to OPT_DIFFICULTY_* constants
+	dw .VeryEasy
 	dw .Easy
 	dw NormalString
 	dw .Hard
+	dw .VeryHard
 
-.Easy: db "EASY  @"
-.Hard: db "HARD  @"
+.VeryEasy: db "VERY EASY@"
+.Easy:     db "EASY     @"
+.Hard:     db "HARD     @"
+.VeryHard: db "VERY HARD@"
 
 GetDifficultySetting:
 ; reads current difficulty settings to return OPT_DIFFICULTY_* value in c
 ; both Easy and Hard being on at once should be impossible but results in Normal as a failsafe
+; bit DIFFICULTY_DOUBLE of wOptions2 "upgrades" Easy into Very Easy and Hard into Very Hard (does nothing to Normal)
 
 	ld hl, wOptions2
 	bit EASY_MODE, [hl]
-	jr z, .EasyOff
-; .EasyOn:
+	jr z, .CheckHard
 	bit HARD_MODE, [hl]
+	jr nz, .Normal
+	bit DIFFICULTY_DOUBLE, [hl]
 	jr z, .Easy
-	jr .Normal
+	jr .VeryEasy
 
-.EasyOff:
+.CheckHard:
 	bit HARD_MODE, [hl]
 	jr z, .Normal
-.Hard:
-	ld c, OPT_DIFFICULTY_HARD
+	bit DIFFICULTY_DOUBLE, [hl]
+	jr z, .Hard
+
+.VeryHard:
+	ld c, OPT_DIFFICULTY_VERY_HARD
 	ret
 .Normal:
 	ld c, OPT_DIFFICULTY_NORMAL
 	ret
 .Easy:
 	ld c, OPT_DIFFICULTY_EASY
+	ret
+.VeryEasy:
+	ld c, OPT_DIFFICULTY_VERY_EASY
+	ret
+.Hard:
+	ld c, OPT_DIFFICULTY_HARD
 	ret
 
 Options_LevelCaps:
@@ -708,40 +741,37 @@ Options_MenuSidebar:
 	ret
 
 Options_Font:
-	ld hl, wOptions2
+	ld hl, wFontType
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	bit FONT_NORMAL_UNOWN, [hl]
-	jr nz, .ToggleNormal
-	jr .ToggleUnown
-
-.LeftPressed:
-	bit FONT_NORMAL_UNOWN, [hl]
-	jr z, .ToggleUnown
-
-.ToggleNormal:
-	res FONT_NORMAL_UNOWN, [hl]
-	ld de, NormalString
-	jr .Display
-
-.NonePressed:
-	bit FONT_NORMAL_UNOWN, [hl]
-	jr z, .ToggleNormal
-
-.ToggleUnown:
-	set FONT_NORMAL_UNOWN, [hl]
-	ld de, .Unown
-
-.Display:
-	hlcoord 11, 11
-	call PlaceString
+	jr nz, .RightPressed
 	and a
 	ret
 
-.Unown: db "UNOWN @"
+.RightPressed:
+	ld a, [hl]
+	inc a
+	jr .Save
+
+.LeftPressed:
+	ld a, [hl]
+	dec a
+
+.Save:
+	maskbits NUM_FONTS
+	ld [hl], a
+	; fallthrough
+
+UpdateFont:
+	ld a, [wFontType]
+	hlcoord 16, 11
+	add "1"
+	ld [hl], a
+	call LoadStandardFont
+	and a
+	ret
 
 Options_GBPrinter:
 	call GetPrinterSetting
