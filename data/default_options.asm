@@ -20,7 +20,7 @@ DefaultOptions:
 	; HARD_MODE:            0 (OFF)
 	; NUZLOCKE:             0 (OFF)
 	; MENU_SIDEBAR:         1 (ON)
-	; FONT_NORMAL_UNOWN:    0 (NORMAL)
+	; DIFFICULTY_DOUBLE:    0 (OFF)
 ; Unused byte
 	db 0
 .End
