@@ -1731,7 +1731,7 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wFontType::
-; font 0-2
+; bits 0-1: font 0-3
 	db
 wOptions2::
 ; bit 0: battle items off/on
