@@ -22,11 +22,17 @@ INCBIN "gfx/credits/theend.2bpp"
 
 SECTION "Font Inversed", ROMX
 
-FontInversed::
-INCBIN "gfx/font/font_inversed.1bpp"
+Font0Inversed::
+INCBIN "gfx/font/font0inversed.1bpp"
 
-UnownSpeakingFontInversed::
-INCBIN "gfx/font/unown_speaking_font_inversed.1bpp"
+Font1Inversed::
+INCBIN "gfx/font/font1inversed.1bpp"
+
+Font2Inversed::
+INCBIN "gfx/font/font2inversed.1bpp"
+
+Font3Inversed::
+INCBIN "gfx/font/font3inversed.1bpp"
 
 
 SECTION "Copyright", ROMX
