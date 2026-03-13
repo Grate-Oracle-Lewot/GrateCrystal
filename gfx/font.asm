@@ -1,8 +1,14 @@
-Font:
-INCBIN "gfx/font/font.1bpp"
+Font0:
+INCBIN "gfx/font/font0.1bpp"
 
-UnownSpeakingFont:
-INCBIN "gfx/font/unown_speaking_font.1bpp"
+Font1:
+INCBIN "gfx/font/font1.1bpp"
+
+Font2:
+INCBIN "gfx/font/font2.1bpp"
+
+Font3:
+INCBIN "gfx/font/font3.1bpp"
 
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"
