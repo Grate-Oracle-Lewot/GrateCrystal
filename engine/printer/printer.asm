@@ -1,3 +1,7 @@
+Printer_ResetRegistersAndStartDataSend:
+	call Printer_ResetJoypadRegisters
+	; fallthrough
+
 SendScreenToPrinter:
 .loop
 	call JoyTextDelay
@@ -32,87 +36,6 @@ Printer_PrepareTilemapForPrint:
 	pop af
 	ld [wPrinterMargins], a
 	jp Printer_CopyTilemapToBuffer
-
-Printer_ExitPrinter:
-	call ReturnToMapFromSubmenu
-	jp Printer_RestartMapMusic
-
-PrintDexEntry:
-	ld a, [wPrinterQueueLength]
-	push af
-
-	ld hl, vTiles1
-	ld de, FontInversed
-	lb bc, BANK(FontInversed), $80
-	call Request1bpp
-
-	xor a
-	ldh [hPrinter], a
-	call Printer_PlayMusic
-
-	ldh a, [rIE]
-	push af
-	xor a
-	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
-	ldh [rIE], a
-
-	call Printer_StartTransmission
-	ln a, 1, 0
-	ld [wPrinterMargins], a
-	farcall PrintPage1
-	call ClearTilemap
-	ld a, %11100100
-	call DmgToCgbBGPals
-	call DelayFrame
-
-	ld hl, hVBlank
-	ld a, [hl]
-	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
-
-	ld a, 8 ; 16 rows
-	ld [wPrinterQueueLength], a
-	call Printer_ResetJoypadRegisters
-	call SendScreenToPrinter
-	jr c, .skip_second_page ; canceled or got an error
-
-	call Printer_CleanUpAfterSend
-	ld c, 12
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-
-	call Printer_StartTransmission
-	ln a, 0, 3
-	ld [wPrinterMargins], a
-	farcall PrintPage2
-	call Printer_ResetJoypadRegisters
-	ld a, 4
-	ld [wPrinterQueueLength], a
-	call SendScreenToPrinter
-
-.skip_second_page
-	pop af
-	ldh [hVBlank], a
-	call Printer_CleanUpAfterSend
-
-	xor a
-	ldh [rIF], a
-	pop af
-	ldh [rIE], a
-
-	call Printer_ExitPrinter
-	ld c, 8
-.low_volume_delay_frames
-	call LowVolume
-	call DelayFrame
-	dec c
-	jr nz, .low_volume_delay_frames
-
-	pop af
-	ld [wPrinterQueueLength], a
-	ret
 
 PrintPCBox:
 	ld a, [wPrinterQueueLength]
@@ -202,10 +125,6 @@ PrintPCBox:
 	ld [wPrinterQueueLength], a
 	ret
 
-Printer_ResetRegistersAndStartDataSend:
-	call Printer_ResetJoypadRegisters
-	jp SendScreenToPrinter
-
 PrintUnownStamp:
 	ld a, [wPrinterQueueLength]
 	push af
@@ -271,10 +190,6 @@ PrintUnownStamp:
 	pop af
 	ld [wPrinterQueueLength], a
 	ret
-
-PrintMailAndExit:
-	call PrintMail
-	jp Printer_ExitPrinter
 
 PrintMail:
 	ld a, [wPrinterQueueLength]
@@ -502,6 +417,10 @@ Printer_PlayMusic:
 	ld de, MUSIC_PRINTER
 	jp PlayMusic2
 
+PrintMailAndExit:
+	call PrintMail
+Printer_ExitPrinter:
+	call ReturnToMapFromSubmenu
 Printer_RestartMapMusic:
 	jp RestartMapMusic
 
@@ -677,7 +596,7 @@ PrintPCBox_Page4:
 	call Printer_GetBoxMonSpecies
 	hlcoord 2, 0
 	ld c, 5
-	jp Printer_PrintBoxListSegment
+	; fallthrough
 
 Printer_PrintBoxListSegment:
 	ld a, [wBankOfBoxToPrint]
