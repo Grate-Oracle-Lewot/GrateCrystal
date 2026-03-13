@@ -89,6 +89,7 @@ GBPRINTER_DARKEST  EQU $7f
 	const FONT_1 ; 0
 	const FONT_2 ; 1
 	const FONT_3 ; 2
+	const FONT_4 ; 3
 NUM_FONTS EQU const_value
 
 ; wOptions2::
