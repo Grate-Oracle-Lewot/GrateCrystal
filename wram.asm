@@ -1730,7 +1730,9 @@ wGBPrinterBrightness::
 ;   darker:   $60
 ;   darkest:  $7F
 	db
-wFontType:: db
+wFontType::
+; font 0-2
+	db
 wOptions2::
 ; bit 0: battle items off/on
 ; bit 1: level caps off/on
@@ -1739,7 +1741,7 @@ wOptions2::
 ; bit 4: hard mode off/on
 ; bit 5: nuzlocke off/on
 ; bit 6: menu sidebar off/on
-; bit 7: font normal/unown
+; bit 7: if set, turns Easy into Very Easy and Hard into Very Hard
 	db
 	ds 1
 wOptionsEnd::
