@@ -4,43 +4,84 @@ EnableHDMAForGraphics:
 	db FALSE
 
 _LoadStandardFont::
-	ld a, [wOptions2]
-	bit FONT_NORMAL_UNOWN, a
-	jr z, .normal
+	ld a, [wFontType]
+	cp FONT_2
+	jr z, .font_2
+	cp FONT_3
+	jr z, .font_3
+	cp FONT_4
+	jr z, .font_4
 
-	ld de, UnownSpeakingFont
+; .font1
+	ld de, Font0
 	ld hl, vTiles1
-	lb bc, BANK(UnownSpeakingFont), 32 ; "A" to "]"
+	lb bc, BANK(Fonts), 32 ; "A" to "]"
 	call Get1bppViaHDMA
-	ld de, UnownSpeakingFont + 32 * LEN_1BPP_TILE
+	ld de, Font0 + 32 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $20
-	lb bc, BANK(UnownSpeakingFont), 26 ; "a" to "z" (skip "┌" to "┘")
+	lb bc, BANK(Fonts), 26 ; "a" to "z" (skip "┌" to "┘")
 	call Get1bppViaHDMA
-	ld de, UnownSpeakingFont + 64 * LEN_1BPP_TILE
+	ld de, Font0 + 64 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $40
-	lb bc, BANK(UnownSpeakingFont), 32 ; $c0 to "←"
+	lb bc, BANK(Fonts), 32 ; $c0 to "←"
 	call Get1bppViaHDMA
-	ld de, UnownSpeakingFont + 96 * LEN_1BPP_TILE
+	ld de, Font0 + 96 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $60
-	lb bc, BANK(UnownSpeakingFont), 32 ; "'" to "9"
+	lb bc, BANK(Fonts), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
-.normal
-	ld de, Font
+.font2
+	ld de, Font1
 	ld hl, vTiles1
-	lb bc, BANK(Font), 32 ; "A" to "]"
+	lb bc, BANK(Fonts), 32 ; "A" to "]"
 	call Get1bppViaHDMA
-	ld de, Font + 32 * LEN_1BPP_TILE
+	ld de, Font1 + 32 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $20
-	lb bc, BANK(Font), 26 ; "a" to "z" (skip "┌" to "┘")
+	lb bc, BANK(Fonts), 26 ; "a" to "z" (skip "┌" to "┘")
 	call Get1bppViaHDMA
-	ld de, Font + 64 * LEN_1BPP_TILE
+	ld de, Font1 + 64 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $40
-	lb bc, BANK(Font), 32 ; $c0 to "←"
+	lb bc, BANK(Fonts), 32 ; $c0 to "←"
 	call Get1bppViaHDMA
-	ld de, Font + 96 * LEN_1BPP_TILE
+	ld de, Font1 + 96 * LEN_1BPP_TILE
 	ld hl, vTiles1 tile $60
-	lb bc, BANK(Font), 32 ; "'" to "9"
+	lb bc, BANK(Fonts), 32 ; "'" to "9"
+	jp Get1bppViaHDMA
+
+.font3
+	ld de, Font2
+	ld hl, vTiles1
+	lb bc, BANK(Fonts), 32 ; "A" to "]"
+	call Get1bppViaHDMA
+	ld de, Font2 + 32 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $20
+	lb bc, BANK(Fonts), 26 ; "a" to "z" (skip "┌" to "┘")
+	call Get1bppViaHDMA
+	ld de, Font2 + 64 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $40
+	lb bc, BANK(Fonts), 32 ; $c0 to "←"
+	call Get1bppViaHDMA
+	ld de, Font2 + 96 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $60
+	lb bc, BANK(Fonts), 32 ; "'" to "9"
+	jp Get1bppViaHDMA
+
+.font4
+	ld de, Font3
+	ld hl, vTiles1
+	lb bc, BANK(Fonts), 32 ; "A" to "]"
+	call Get1bppViaHDMA
+	ld de, Font3 + 32 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $20
+	lb bc, BANK(Fonts), 26 ; "a" to "z" (skip "┌" to "┘")
+	call Get1bppViaHDMA
+	ld de, Font3 + 64 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $40
+	lb bc, BANK(Fonts), 32 ; $c0 to "←"
+	call Get1bppViaHDMA
+	ld de, Font3 + 96 * LEN_1BPP_TILE
+	ld hl, vTiles1 tile $60
+	lb bc, BANK(Fonts), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
 _LoadFontsBattleExtra::
