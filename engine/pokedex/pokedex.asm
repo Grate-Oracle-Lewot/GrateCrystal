@@ -3283,22 +3283,29 @@ Pokedex_LoadInversedFont:
 	ld a, 1
 	ldh [rVBK], a
 	ld hl, vTiles1
+	lb bc, BANK(Font0Inversed), 128 ; $80 tiles
 
-	ld a, [wOptions2]
-	bit FONT_NORMAL_UNOWN, a
-	jr z, .normal
+	ld a, [wFontType]
+	cp FONT_2
+	jr z, .font_2
+	cp FONT_3
+	jr z, .font_3
+	cp FONT_4
+	jr z, .font_4
 
-	lb bc, BANK(UnownSpeakingFontInversed), 128 ; $80 tiles
-	ld de, UnownSpeakingFontInversed
-	ld a, BANK(UnownSpeakingFontInversed)
+; .font1
+	ld de, Font0Inversed
 	jr .finish
-
-.normal
-	lb bc, BANK(FontInversed), 128 ; $80 tiles
-	ld de, FontInversed
-	ld a, BANK(FontInversed)
-
+.font2
+	ld de, Font1Inversed
+	jr .finish
+.font3
+	ld de, Font2Inversed
+	jr .finish
+.font4
+	ld de, Font3Inversed
 .finish
+	ld a, BANK(Font0Inversed) ; they're all in the same bank
 	call Get1bpp ; ViaHDMA
 	ld a, $0
 	ldh [rVBK], a
