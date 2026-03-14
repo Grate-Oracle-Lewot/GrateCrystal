@@ -10,7 +10,7 @@ _LoadStandardFont::
 	cp FONT_3
 	jr z, .font_3
 	cp FONT_4
-	jr z, .font_4
+	jp z, .font_4
 
 ; .font_1
 	ld de, Font0
