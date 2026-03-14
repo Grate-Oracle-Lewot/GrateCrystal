@@ -114,9 +114,8 @@ OptionsMenu_LoadOptions:
 	inc [hl]
 	dec c
 	jr nz, .print_text_loop
-	ld a, [wCurOptionsPage]
-	and a
-	call z, UpdateFrame
+	call UpdateFrame
+	call UpdateFont
 	ld a, 1
 	ldh [hBGMapMode], a
 	ld c, 2
@@ -124,37 +123,35 @@ OptionsMenu_LoadOptions:
 
 StringOptions1:
 	db "TEXT SPEED<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "BATTLE SCENE<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "BATTLE STYLE<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "BATTLE ITEMS<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "SOUND<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "FRAME<LF>"
-	db "        :TYPE<LF>"
+	db "       :TYPE<LF>"
 	db "NEXT PAGE<LF>"
-	db "<LF>"
-	db "DONE@"
+	db "<LF>DONE@"
 
 StringOptions2:
 	db "DIFFICULTY<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "LEVEL CAPS<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "CATCHING<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "MENU SIDEBAR<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "FONT<LF>"
-	db "        :TYPE<LF>"
+	db "       :TYPE<LF>"
 	db "GB PRINTER<LF>"
-	db "        :<LF>"
+	db "       :<LF>"
 	db "PREVIOUS PAGE<LF>"
-	db "<LF>"
-	db "DONE@"
+	db "<LF>DONE@"
 
 GetOptionPointer:
 	ld a, [wCurOptionsPage]
@@ -229,7 +226,7 @@ Options_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 3
+	hlcoord 10, 3
 	call PlaceString
 	and a
 	ret
@@ -305,7 +302,7 @@ Options_BattleScene:
 	ld de, OnString
 
 .Display:
-	hlcoord 11, 5
+	hlcoord 10, 5
 	call PlaceString
 	and a
 	ret
@@ -339,7 +336,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 10, 7
 	call PlaceString
 	and a
 	ret
@@ -376,7 +373,7 @@ Options_BattleItems:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 10, 9
 	call PlaceString
 	and a
 	ret
@@ -421,7 +418,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 11
+	hlcoord 10, 11
 	call PlaceString
 	and a
 	ret
@@ -531,7 +528,7 @@ Options_Difficulty:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 3
+	hlcoord 10, 3
 	call PlaceString
 	and a
 	ret
@@ -638,7 +635,7 @@ Options_LevelCaps:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 5
+	hlcoord 10, 5
 	call PlaceString
 	and a
 	ret
@@ -699,7 +696,7 @@ Options_Nuzlocke:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 10, 7
 	call PlaceString
 	and a
 	ret
@@ -735,7 +732,7 @@ Options_MenuSidebar:
 	ld de, OnString
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 10, 9
 	call PlaceString
 	and a
 	ret
@@ -812,7 +809,7 @@ Options_GBPrinter:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 13
+	hlcoord 10, 13
 	call PlaceString
 	and a
 	ret
