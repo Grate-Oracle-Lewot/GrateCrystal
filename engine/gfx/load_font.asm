@@ -12,7 +12,7 @@ _LoadStandardFont::
 	cp FONT_4
 	jr z, .font_4
 
-; .font1
+; .font_1
 	ld de, Font0
 	ld hl, vTiles1
 	lb bc, BANK(Fonts), 32 ; "A" to "]"
@@ -30,7 +30,7 @@ _LoadStandardFont::
 	lb bc, BANK(Fonts), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
-.font2
+.font_2
 	ld de, Font1
 	ld hl, vTiles1
 	lb bc, BANK(Fonts), 32 ; "A" to "]"
@@ -48,7 +48,7 @@ _LoadStandardFont::
 	lb bc, BANK(Fonts), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
-.font3
+.font_3
 	ld de, Font2
 	ld hl, vTiles1
 	lb bc, BANK(Fonts), 32 ; "A" to "]"
@@ -66,7 +66,7 @@ _LoadStandardFont::
 	lb bc, BANK(Fonts), 32 ; "'" to "9"
 	jp Get1bppViaHDMA
 
-.font4
+.font_4
 	ld de, Font3
 	ld hl, vTiles1
 	lb bc, BANK(Fonts), 32 ; "A" to "]"
