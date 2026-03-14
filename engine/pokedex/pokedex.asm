@@ -3293,16 +3293,16 @@ Pokedex_LoadInversedFont:
 	cp FONT_4
 	jr z, .font_4
 
-; .font1
+; .font_1
 	ld de, Font0Inversed
 	jr .finish
-.font2
+.font_2
 	ld de, Font1Inversed
 	jr .finish
-.font3
+.font_3
 	ld de, Font2Inversed
 	jr .finish
-.font4
+.font_4
 	ld de, Font3Inversed
 .finish
 	ld a, BANK(Font0Inversed) ; they're all in the same bank
