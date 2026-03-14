@@ -67,9 +67,27 @@ ShakeHeadbuttTree:
 	ld bc, wVirtualOAMEnd - wVirtualOAMSprite36
 	xor a
 	call ByteFill
-	ld de, Font
+	ld a, [wFontType]
+	cp FONT_2
+	jr z, .font_2
+	cp FONT_3
+	jr z, .font_3
+	cp FONT_4
+	jr z, .font_4
+; .font_1
+	ld de, Font0
+	jr .finish
+.font_2
+	ld de, Font1
+	jr .finish
+.font_3
+	ld de, Font2
+	jr .finish
+.font_4
+	ld de, Font3
+.finish
 	ld hl, vTiles1
-	lb bc, BANK(Font), 12
+	lb bc, BANK(Fonts), 12
 	call Get1bpp
 	jp UpdatePlayerSprite
 
