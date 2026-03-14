@@ -114,8 +114,12 @@ OptionsMenu_LoadOptions:
 	inc [hl]
 	dec c
 	jr nz, .print_text_loop
-	call UpdateFrame
-	call UpdateFont
+	ld a, [wCurOptionsPage]
+	and a
+	call z, UpdateFrame
+	ld a, [wCurOptionsPage]
+	and a
+	call nz, UpdateFont
 	ld a, 1
 	ldh [hBGMapMode], a
 	ld c, 2
