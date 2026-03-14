@@ -6,22 +6,20 @@ LoadOverworldFont::
 	jr z, .font_3
 	cp FONT_4
 	jr z, .font_4
+; .font_1
 	ld de, .OverworldFont0GFX
 	jr .finish
-
 .font_2
 	ld de, .OverworldFont1GFX
 	jr .finish
-
 .font_3
 	ld de, .OverworldFont2GFX
 	jr .finish
-
 .font_4
 	ld de, .OverworldFont3GFX
 .finish
 	ld hl, vTiles1
-	lb bc, BANK(.OverworldFontGFX), $80
+	lb bc, BANK(LoadOverworldFont), $80
 	call Get2bpp
 	ld de, .OverworldFontSpaceGFX
 	ld hl, vTiles2 tile " "
