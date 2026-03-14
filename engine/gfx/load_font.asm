@@ -1,8 +1,5 @@
 INCLUDE "gfx/font.asm"
 
-EnableHDMAForGraphics:
-	db FALSE
-
 _LoadStandardFont::
 	ld a, [wFontType]
 	cp FONT_2
