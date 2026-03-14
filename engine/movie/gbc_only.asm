@@ -23,9 +23,9 @@ GBCOnlyScreen:
 	lb bc, BANK(GBCOnlyGFX), 84
 	call Get2bpp
 
-	ld de, Font
+	ld de, Font0
 	ld hl, vTiles1
-	lb bc, BANK(Font), $80
+	lb bc, BANK(Fonts), $80
 	call Get1bpp
 
 	call DrawGBCOnlyScreen
