@@ -492,7 +492,6 @@ IlexForestShrineScript:
 	takeitem GS_BALL
 	clearevent EVENT_FOREST_IS_RESTLESS
 	setevent EVENT_AZALEA_TOWN_KURT
-	disappear ILEXFOREST_LASS
 	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	writetext Text_InsertGSBall
 	waitbutton
@@ -506,6 +505,7 @@ IlexForestShrineScript:
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	setevent EVENT_FOUGHT_CELEBI
+	disappear ILEXFOREST_LASS
 	special CelebiShrineEvent
 if DEF(_LITTLE_CUP)
 	loadwildmon HOPPIP, 30
@@ -558,14 +558,6 @@ endc
 	reloadmapafterbattle
 	end
 
-MovementData_Farfetchd_Pos1_Pos2:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
 MovementData_Farfetchd_Pos2_Pos3:
 	big_step UP
 	big_step UP
@@ -575,15 +567,6 @@ MovementData_Farfetchd_Pos2_Pos3:
 	big_step RIGHT
 	big_step RIGHT
 	big_step DOWN
-	step_end
-
-MovementData_Farfetchd_Pos3_Pos4:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
 	step_end
 
 MovementData_Farfetchd_Pos3_Pos2:
@@ -647,6 +630,7 @@ MovementData_Farfetched_Pos5_Pos4_Right:
 	step_sleep 8
 	step_sleep 8
 	remove_fixed_facing
+MovementData_Farfetchd_Pos1_Pos2:
 	big_step UP
 	big_step UP
 	big_step UP
@@ -697,6 +681,7 @@ MovementData_Farfetched_Pos7_Pos6:
 	big_step RIGHT
 	step_end
 
+MovementData_Farfetchd_Pos3_Pos4:
 MovementData_Farfetched_Pos7_Pos5:
 	big_step RIGHT
 MovementData_Farfetched_Pos8_Pos7:
