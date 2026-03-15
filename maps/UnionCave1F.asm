@@ -1,10 +1,10 @@
 	object_const_def
-	const UNIONCAVE1F_TEACHER
 	const UNIONCAVE1F_POKEFAN_M1
 	const UNIONCAVE1F_POKEFAN_M2
 	const UNIONCAVE1F_SUPER_NERD
 	const UNIONCAVE1F_FISHER1
 	const UNIONCAVE1F_FISHER2
+	const UNIONCAVE1F_TEACHER
 	const UNIONCAVE1F_POKE_BALL1
 	const UNIONCAVE1F_POKE_BALL2
 	const UNIONCAVE1F_POKE_BALL3
@@ -14,17 +14,6 @@ UnionCave1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-TrainerTeacherCalypso:
-	trainer TEACHER, CALYPSO, EVENT_BEAT_TEACHER_CALYPSO, TeacherCalypsoSeenText, TeacherCalypsoBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TeacherCalypsoAfterBattleText
-	waitbutton
-	closetext
-	end
 
 TrainerHikerDaniel:
 	trainer HIKER, DANIEL, EVENT_BEAT_HIKER_DANIEL, HikerDanielSeenText, HikerDanielBeatenText, 0, .Script
@@ -81,6 +70,17 @@ TrainerFirebreatherRay:
 	closetext
 	end
 
+TrainerTeacherCalypso:
+	trainer TEACHER, CALYPSO, EVENT_BEAT_TEACHER_CALYPSO, TeacherCalypsoSeenText, TeacherCalypsoBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherCalypsoAfterBattleText
+	waitbutton
+	closetext
+	end
+
 UnionCave1FGreatBall:
 	itemball GREAT_BALL
 
@@ -98,25 +98,6 @@ UnionCaveHiddenTimerBall:
 
 UnionCaveHiddenBrickPiece:
 	hiddenitem BRICK_PIECE, EVENT_UNION_CAVE_HIDDEN_BRICK_PIECE
-
-TeacherCalypsoSeenText:
-	text "The term for expl-"
-	line "oring a cave is"
-	cont "spelunking."
-	done
-
-TeacherCalypsoBeatenText:
-	text "Cave in!"
-	done
-
-TeacherCalypsoAfterBattleText:
-	text "A stalactite holds"
-	line "tight to the ceil-"
-	cont "ing, while a stal-"
-	cont "agmite stands"
-	cont "mighty on the"
-	cont "ground."
-	done
 
 HikerDanielSeenText:
 	text "Whoa! What a"
@@ -228,6 +209,25 @@ FirebreatherRayAfterBattleText:
 	cont "up this cave."
 	done
 
+TeacherCalypsoSeenText:
+	text "The term for expl-"
+	line "oring a cave is"
+	cont "spelunking."
+	done
+
+TeacherCalypsoBeatenText:
+	text "Cave in!"
+	done
+
+TeacherCalypsoAfterBattleText:
+	text "A stalactite holds"
+	line "tight to the ceil-"
+	cont "ing, while a stal-"
+	cont "agmite stands"
+	cont "mighty on the"
+	cont "ground."
+	done
+
 UnionCave1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -244,12 +244,12 @@ UnionCave1F_MapEvents:
 	bg_event  4, 35, BGEVENT_ITEM, UnionCaveHiddenBrickPiece
 
 	def_object_events
-	object_event  7,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherCalypso, -1
 	object_event  3, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerDaniel, -1
 	object_event 11, 26, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerRussell, -1
 	object_event  4, 39, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacLarry, -1
 	object_event 14, 37, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherBill, -1
-	object_event 15, 45, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerFirebreatherRay, -1
+	object_event  7,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherRay, -1
+	object_event 15, 45, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerTeacherCalypso, -1
 	object_event 17, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
 	object_event  3, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
 	object_event  5, 37, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
