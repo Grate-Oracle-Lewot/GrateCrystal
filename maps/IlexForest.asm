@@ -988,16 +988,12 @@ BugCatcherWayneBeatenText:
 	done
 
 BugCatcherWayneAfterBattleText:
-	text "A #MON I've"
-	line "never seen before"
+	text "Did that guy give"
+	line "you some HEADBUTT"
+	cont "TMs, too?"
 
-	para "fell out of the"
-	line "tree when I used"
-	cont "HEADBUTT."
-
-	para "I ought to use"
-	line "HEADBUTT in other"
-	cont "places too."
+	para "I wonder how many"
+	line "he has on him…"
 	done
 
 CooltrainermErickSeenText:
