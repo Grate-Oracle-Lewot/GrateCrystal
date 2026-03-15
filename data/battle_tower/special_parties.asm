@@ -689,7 +689,7 @@ BattleTowerAD:
 	bigdw 108 ; Spd
 	bigdw 114 ; SAtk
 	bigdw 604 ; SDef
-	db "JE-I@@@@@@@"
+	db "JAE-YI@@@@@"
 
 	db NINETALES
 	db FOCUS_BAND
