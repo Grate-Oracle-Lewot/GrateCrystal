@@ -319,7 +319,8 @@ GruntMWell3SeenText:
 	para "You ever try"
 	line "sucking on a"
 	cont "SLOWPOKETAIL?"
-	cont "Delicious!"
+
+	para "Delicious!"
 	done
 
 GruntMWell3BeatenText:
