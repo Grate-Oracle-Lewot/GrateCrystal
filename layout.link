@@ -130,6 +130,7 @@ ROMX $2d
 	"Tileset Data 5"
 ROMX $2e
 	"bank2E"
+	"Extra Songs 6"
 ROMX $2f
 	"Phone Scripts 2"
 	"Lewot Phone Data"
@@ -305,13 +306,13 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $7b
 	"Battle Tower Text"
+	"Extra Songs 4"
 ROMX $7c
 	"Battle Tower Additions"
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
 	"Voltorb Flip"
-	"Extra Songs 4"
 WRAM0
 	"Stack"
 	"Audio RAM"
