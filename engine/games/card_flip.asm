@@ -125,9 +125,11 @@ _CardFlip:
 	ld [wCoins + 1], a
 	ld de, SFX_TRANSACTION
 	call PlaySFX
-	ld a, $1
+	xor a
 	ldh [hBGMapMode], a
 	call CardFlip_PrintCoinBalance
+	ld a, $1
+	ldh [hBGMapMode], a
 	call WaitSFX
 	jr .Increment
 
