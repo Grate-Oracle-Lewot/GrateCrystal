@@ -31,8 +31,17 @@
 ; 159 quit
 ; 195 flip card
 
-VoltorbFlipGFX:
-INCBIN "gfx/voltorb_flip.2bpp"
+VoltorbFlipGFX0:
+INCBIN "gfx/voltorb_flip/voltorb_flip_font0.2bpp"
+
+VoltorbFlipGFX1:
+INCBIN "gfx/voltorb_flip/voltorb_flip_font1.2bpp"
+
+VoltorbFlipGFX2:
+INCBIN "gfx/voltorb_flip/voltorb_flip_font2.2bpp"
+
+VoltorbFlipGFX3:
+INCBIN "gfx/voltorb_flip/voltorb_flip_font3.2bpp"
 
 VoltorbFlipPalette:
 	dw $073f, $7fff, $26c4, $0000
@@ -547,12 +556,32 @@ VFLoadGFX:
 .wait
 	ld a, [hl]
 	and 3
-	cp a,1
+	cp a, 1
 	jr nz, .wait
 	dec hl
 	res 7, [hl]
 	ld bc, $7f80 ; load the gfx
-	ld de, VoltorbFlipGFX
+
+	ld a, [wFontType]
+	cp FONT_2
+	jr z, .font_2
+	cp FONT_3
+	jr z, .font_3
+	cp FONT_4
+	jr z, .font_4
+
+; .font_1
+	ld de, VoltorbFlipGFX0
+	jr .finish
+.font_2
+	ld de, VoltorbFlipGFX1
+	jr .finish
+.font_3
+	ld de, VoltorbFlipGFX2
+	jr .finish
+.font_4
+	ld de, VoltorbFlipGFX3
+.finish
 	ld hl, $9000
 	jp Copy2bpp
 	
