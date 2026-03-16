@@ -165,7 +165,6 @@ INCLUDE "audio/music/battleCynthia.asm"
 INCLUDE "audio/music/contestRSE.asm"
 INCLUDE "audio/music/mewtwostage.asm"
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
-INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/bluefield.asm"
 INCLUDE "audio/music/title.asm"
 
@@ -177,6 +176,11 @@ INCLUDE "audio/music/encounterArtist.asm"
 INCLUDE "audio/music/encounterEliteFour.asm"
 INCLUDE "audio/music/encounterHiker.asm"
 INCLUDE "audio/music/icepathHGSS.asm"
+
+
+SECTION "Extra Songs 6", ROMX
+
+INCLUDE "audio/music/seelstage.asm"
 
 
 SECTION "Sound Effects", ROMX
