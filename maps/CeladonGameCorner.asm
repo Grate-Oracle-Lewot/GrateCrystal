@@ -149,11 +149,14 @@ CeladonGameCornerReceptionistText:
 	done
 
 CeladonGameCornerPokefanMText:
-	text "Seeing VOLTORB go"
-	line "boom…"
+	text "Did you know?"
 
-	para "It's terrible, but"
-	line "thrilling!"
+	para "If you change the"
+	line "font in your op-"
+	cont "tions menu, it"
+
+	para "changes VOLTORB's"
+	line "look in this game!"
 	done
 
 CeladonGameCornerTeacherText:
