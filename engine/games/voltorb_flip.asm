@@ -53,7 +53,25 @@ VoltorbFlipPalette:
 	dw $001f, $7fff, $3B69, $0000
 	dw $001f, $11ff, $3B69, $0000
 
-VoltorbFlipPaletteBlank:
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+
+VoltorbFlipPaletteHisuian:
+	dw $073f, $7fff, $26c4, $0000
+	dw $073f, $11ff, $26c4, $0000
+	dw $001f, $7fff, $26c4, $0000
+	dw $001f, $7fff, $073f, $0000
+	dw $001f, $7fff, $7680, $0000
+	dw $001f, $7fff, $5134, $0000
+	dw $001f, $7fff, $3B69, $0000
+	dw $001f, $11ff, $3B69, $0000
+
 	dw $7fff, $7fff, $7fff, $7fff
 	dw $7fff, $7fff, $7fff, $7fff
 	dw $7fff, $7fff, $7fff, $7fff
@@ -592,7 +610,17 @@ VFLoadPalette:
 	ld [rSVBK], a
 	ld bc, $e408
 	ld hl, wBGPals2
+
+	ld a, [wFontType]
+	cp FONT_2
+	jr z, .hisuian
+	cp FONT_3
+	jr z, .hisuian
 	ld de, VoltorbFlipPalette
+	jr .finish
+.hisuian
+	ld de, VoltorbFlipPaletteHisuian
+.finish
 	call CopyPals
 	pop af
 	ld [rSVBK], a
