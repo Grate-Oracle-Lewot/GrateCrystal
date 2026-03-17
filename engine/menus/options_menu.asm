@@ -714,25 +714,25 @@ Options_MenuSidebar:
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit MENU_SIDEBAR, [hl]
+	bit SIDEBAR_ON_OFF, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit MENU_SIDEBAR, [hl]
+	bit SIDEBAR_ON_OFF, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	res MENU_SIDEBAR, [hl]
+	res SIDEBAR_ON_OFF, [hl]
 	ld de, OffString
 	jr .Display
 
 .NonePressed:
-	bit MENU_SIDEBAR, [hl]
+	bit SIDEBAR_ON_OFF, [hl]
 	jr z, .ToggleOff
 
 .ToggleOn:
-	set MENU_SIDEBAR, [hl]
+	set SIDEBAR_ON_OFF, [hl]
 	ld de, OnString
 
 .Display:
