@@ -456,7 +456,7 @@ Options_Frame:
 
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 13
+	hlcoord 15, 13
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -766,11 +766,13 @@ Options_Font:
 	; fallthrough
 
 UpdateFont:
+	push hl
+	call LoadStandardFont
+	pop hl
 	ld a, [wFontType]
-	hlcoord 16, 11
+	hlcoord 15, 11
 	add "1"
 	ld [hl], a
-	call LoadStandardFont
 	and a
 	ret
 
