@@ -72,14 +72,14 @@ VoltorbFlipPaletteHisuian:
 	dw $001f, $471C, $3B69, $0000
 	dw $001f, $11ff, $3B69, $0000
 
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
-	dw $471C, $471C, $471C, $471C
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
+	dw $7fff, $7fff, $7fff, $7fff
 
 VoltorbFlip::
 	ld a, $d
