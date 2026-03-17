@@ -1740,10 +1740,14 @@ wOptions2::
 ; bit 3: easy mode off/on
 ; bit 4: hard mode off/on
 ; bit 5: nuzlocke off/on
-; bit 6: menu sidebar off/on
+; bit 6: menu sidebar off/on (see wSidebar)
 ; bit 7: if set, turns Easy into Very Easy and Hard into Very Hard
 	db
-	ds 1
+wSidebar::
+; 00 - Time
+; 01 - Level Cap
+; 02 - Nuzlocke Area Catchability
+	db
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since
