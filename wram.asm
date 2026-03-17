@@ -1744,9 +1744,9 @@ wOptions2::
 ; bit 7: if set, turns Easy into Very Easy and Hard into Very Hard
 	db
 wSidebar::
-; 00 - Time
-; 01 - Level Cap
-; 02 - Nuzlocke Area Catchability
+; 00 - SIDEBAR_TIME (clock)
+; 01 - SIDEBAR_CAP (level cap)
+; 02 - SIDEBAR_CATCH (Nuzlocke area catchability)
 	db
 wOptionsEnd::
 
