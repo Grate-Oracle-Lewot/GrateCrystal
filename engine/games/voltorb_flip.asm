@@ -63,23 +63,23 @@ VoltorbFlipPalette:
 	dw $7fff, $7fff, $7fff, $7fff
 
 VoltorbFlipPaletteHisuian:
-	dw $073f, $7fff, $26c4, $0000
+	dw $073f, $471C, $26c4, $0000
 	dw $073f, $11ff, $26c4, $0000
-	dw $001f, $7fff, $26c4, $0000
-	dw $001f, $7fff, $073f, $0000
-	dw $001f, $7fff, $7680, $0000
-	dw $001f, $7fff, $5134, $0000
-	dw $001f, $7fff, $3B69, $0000
+	dw $001f, $471C, $26c4, $0000
+	dw $001f, $471C, $073f, $0000
+	dw $001f, $471C, $7680, $0000
+	dw $001f, $471C, $5134, $0000
+	dw $001f, $471C, $3B69, $0000
 	dw $001f, $11ff, $3B69, $0000
 
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
-	dw $7fff, $7fff, $7fff, $7fff
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
+	dw $471C, $471C, $471C, $471C
 
 VoltorbFlip::
 	ld a, $d
