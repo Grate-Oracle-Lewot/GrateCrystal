@@ -766,13 +766,11 @@ Options_Font:
 	; fallthrough
 
 UpdateFont:
-	push hl
-	call LoadStandardFont
-	pop hl
 	ld a, [wFontType]
 	hlcoord 15, 11
 	add "1"
 	ld [hl], a
+	call LoadStandardFont
 	and a
 	ret
 
