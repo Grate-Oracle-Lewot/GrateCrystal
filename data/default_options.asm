@@ -21,7 +21,7 @@ DefaultOptions:
 	; NUZLOCKE:             0 (OFF)
 	; MENU_SIDEBAR:         1 (ON)
 	; DIFFICULTY_DOUBLE:    0 (OFF)
-; Unused byte
-	db 0
+; wSidebar
+	db 0 ; SIDEBAR_TIME
 .End
 	assert DefaultOptions.End - DefaultOptions == wOptionsEnd - wOptions
