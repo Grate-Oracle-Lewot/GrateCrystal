@@ -361,7 +361,7 @@ endr
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	ld a, [wOptions2]
-	bit MENU_SIDEBAR, a
+	bit SIDEBAR_ON_OFF, a
 	ret z
 .SkipDoubleChecks:
 	hlcoord 0, 0
@@ -373,7 +373,7 @@ endr
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
 	ret nz
 	ld a, [wOptions2]
-	bit MENU_SIDEBAR, a
+	bit SIDEBAR_ON_OFF, a
 	ret z
 	call .SkipDoubleChecks
 	jp .MenuSidebarText
