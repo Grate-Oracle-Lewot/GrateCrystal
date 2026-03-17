@@ -100,8 +100,14 @@ NUM_FONTS EQU const_value
 	const EASY_MODE            ; 3
 	const HARD_MODE            ; 4
 	const NUZLOCKE             ; 5
-	const MENU_SIDEBAR         ; 6
+	const SIDEBAR_ON_OFF       ; 6
 	const DIFFICULTY_DOUBLE    ; 7
+
+; wSidebar::
+	const_def
+	const SIDEBAR_TIME  ; 0
+	const SIDEBAR_CAP   ; 1
+	const SIDEBAR_CATCH ; 2
 
 ; wWalkingDirection::
 	const_def -1
