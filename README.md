@@ -6,7 +6,7 @@ Recommended RGBDS version: 0.5.2
 
 Recommended Emulator: BGB
 
-This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in other words, a Pokémon Crystal romhack. It's called "Grate" Crystal because the editing (but not the original disassembling) was done by me, the Grate Oracle Lewot. There's not much of a theme to this project—it's about 1/3 joke hack, 1/3 "what I would actually change about Crystal," and 1/3 "how far can I push my hacking abilities?" I'll list most of the changes below, but I'm bound to miss more than a few details, so consider the list non-exhaustive.
+This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in other words, a Pokémon Crystal romhack. It's called "Grate" Crystal because the editing (but not the original disassembling) was done by me, the Grate Oracle Lewot. There's not much of a theme to this project—it's about 1/3 joke hack, 1/3 "what I would actually change about Crystal," and 1/3 "how far can I push my hacking abilities?" If I've developed any more of a goal, it's to hit the right balance between nostalgia and QoL, such that I might recapture some of the experience of playing Gen II for the first time, but maybe kind of an alternate version from a parallel reality. Anyway, I'll list most of the changes below, but I'm bound to miss more than a few details, so consider the list non-exhaustive.
 
 # Pokémon removed
 
@@ -275,7 +275,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 ## Game Corners
 
-Voltorb Flip and the unused card-matching game are now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit, and memory game completion courtesy of ProcyonNova.
+Voltorb Flip and the unused card-matching game are now playable in both Johto and Kanto Game Corners, alongside the slots and Card Flip. Voltorb Flip code and graphics courtesy of froggestspirit, and memory game completion courtesy of ProcyonNova. Changing the font in the options menu will change Voltorb's appearance between normal and Hisuian forms of both Voltorb and Electrode, but these don't affect Voltorb Flip's gameplay.
 
 Prize Pokémon:
 
