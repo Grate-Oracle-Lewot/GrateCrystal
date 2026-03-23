@@ -1469,12 +1469,12 @@ HandleLeftovers:
 
 ; Candied Yam restores 1/8
 	ld a, d
-	cp 42
+	cp SLOWHEAL_CANDIED_YAM
 	jr z, .done
 
 ; Leftovers restore 1/16
 	srl c
-	and a
+	and a ; cp SLOWHEAL_LEFTOVERS
 	jr z, .done
 
 ; Slowpoketail restores 1/32
