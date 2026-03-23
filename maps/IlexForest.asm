@@ -456,6 +456,9 @@ IlexForestHiddenSuperPotion:
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
 
+IlexForestHiddenWaterStone:
+	hiddenitem WATER_STONE, EVENT_ILEX_FOREST_HIDDEN_WATER_STONE
+
 IlexForestSignpost:
 	jumptext IlexForestSignpostText
 
@@ -721,18 +724,6 @@ MovementData_Farfetched_Pos8_Pos2:
 	big_step UP
 	step_end
 
-MovementData_Farfetched_Pos9_Pos8_Right:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	step_end
-
 MovementData_Farfetched_Pos9_Pos8_Down:
 	big_step LEFT
 	big_step LEFT
@@ -741,6 +732,7 @@ MovementData_Farfetched_Pos9_Pos8_Down:
 	step_sleep 8
 	step_sleep 8
 	remove_fixed_facing
+MovementData_Farfetched_Pos9_Pos8_Right:
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -1041,6 +1033,7 @@ IlexForest_MapEvents:
 	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
 	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event  2, 13, BGEVENT_ITEM, IlexForestHiddenWaterStone
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
 	def_object_events
