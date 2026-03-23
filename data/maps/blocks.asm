@@ -107,7 +107,6 @@ GuideGentsHouse_Blocks:
 CherrygroveGymSpeechHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
-CharcoalKiln_Blocks:
 GoldenrodHappinessRater_Blocks:
 BillsFamilysHouse_Blocks:
 GoldenrodPPSpeechHouse_Blocks:
@@ -332,6 +331,7 @@ Route27SandstormHouse_Blocks:
 Route28SteelWingHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
+CharcoalKiln_Blocks:
 EcruteakLugiaSpeechHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
