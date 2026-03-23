@@ -464,11 +464,11 @@ LaprasEggMoves:
 	db -1 ; end
 
 EeveeEggMoves:
+	db CONVERSION
 	db REFLECT
 	db LIGHT_SCREEN
 	db SKULL_BASH
 	db FLAIL
-	db CHARM
 	db EXTREMESPEED
 	db -1 ; end
 
