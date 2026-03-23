@@ -158,7 +158,7 @@ Route42UltraBall:
 	itemball ULTRA_BALL
 
 Route42SuperPotion:
-	itemball SUPER_POTION
+	itemball HYPER_POTION
 
 Route42FruitTree1:
 	fruittree FRUITTREE_ROUTE_42_1
