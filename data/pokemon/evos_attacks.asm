@@ -1993,7 +1993,7 @@ EeveeEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, GROWL
+	db 16, CHARM
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, PLAY_ROUGH
