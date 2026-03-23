@@ -335,8 +335,8 @@ MediumMarthaAfterBattleText:
 	done
 
 MediumGraceSeenText:
-	text "Stumped by our in-"
-	line "visible floor?"
+	text "Stumped by our"
+	line "celestial floor?"
 
 	para "Defeat me if you"
 	line "want a hint!"
@@ -350,7 +350,7 @@ MediumGraceAfterBattleText:
 	text "Fine. I shall tell"
 	line "you the secret of"
 
-	para "the invisible"
+	para "the celestial"
 	line "floor."
 
 	para "The path is right"
