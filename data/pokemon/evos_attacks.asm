@@ -3198,13 +3198,13 @@ SnubbullEvosAttacks:
 	db EVOLVE_LEVEL, 23, GRANBULL
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 2, TAIL_WHIP
+	db 2, GROWL
 	db 4, VICEGRIP
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
 	db 19, LOVELY_KISS
-	db 26, ROAR
+	db 26, SCREECH
 	db 34, HYPER_FANG
 	db 43, PLAY_ROUGH
 	db 50, CRUNCH
@@ -3213,13 +3213,13 @@ SnubbullEvosAttacks:
 GranbullEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 2, TAIL_WHIP
+	db 2, GROWL
 	db 4, VICEGRIP
 	db 7, CHARM
 	db 10, BITE
 	db 13, SCARY_FACE
 	db 20, LOVELY_KISS
-	db 28, ROAR
+	db 28, SCREECH
 	db 38, HYPER_FANG
 	db 51, PLAY_ROUGH
 	db 60, CRUNCH
@@ -3486,9 +3486,9 @@ HoundourEvosAttacks:
 	db EVOLVE_LEVEL, 24, HOUNDOOM
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 2, LEER
+	db 2, GROWL
 	db 4, EMBER
-	db 7, ROAR
+	db 7, LEER
 	db 13, SMOG
 	db 20, BITE
 	db 25, BEAT_UP
@@ -3501,9 +3501,9 @@ HoundourEvosAttacks:
 HoundoomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 2, LEER
+	db 2, GROWL
 	db 4, EMBER
-	db 7, ROAR
+	db 7, LEER
 	db 13, SMOG
 	db 20, BITE
 	db 26, BEAT_UP
