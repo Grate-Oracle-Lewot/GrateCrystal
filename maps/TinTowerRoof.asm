@@ -5,7 +5,12 @@ TinTowerRoof_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .Flypoint
 	callback MAPCALLBACK_OBJECTS, .HoOh
+
+.Flypoint:
+	setflag ENGINE_FLYPOINT_TIN_TOWER
+	endcallback
 
 .HoOh:
 	checkevent EVENT_FOUGHT_HO_OH
