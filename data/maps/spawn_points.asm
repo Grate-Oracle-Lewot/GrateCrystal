@@ -32,6 +32,7 @@ SpawnPoints:
 	spawn AZALEA_TOWN,                15, 10
 	spawn GOLDENROD_CITY,             15, 28
 	spawn ECRUTEAK_CITY,              23, 28
+	spawn TIN_TOWER_ROOF,              8, 13
 	spawn OLIVINE_CITY,               13, 22
 	spawn BATTLE_TOWER_OUTSIDE,        8, 10
 	spawn CIANWOOD_CITY,              23, 44
