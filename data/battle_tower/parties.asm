@@ -4213,7 +4213,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db FRANKENBERRY
-	db THUNDER_WAVE, THUNDERBOLT, IRON_TAIL, ROAR
+	db THUNDER_WAVE, THUNDERBOLT, FLASH, ROAR
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4223,7 +4223,7 @@ BattleTowerMons:
 	bigdw 55000
 	bigdw 55000
 	dn 15, 13, 14, 11 ; DVs
-	db 16, 16, 24, 32 ; PP
+	db 16, 16, 16, 32 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
@@ -5493,7 +5493,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db BRIGHTPOWDER
-	db THUNDERBOLT, ROAR, THUNDER_WAVE, IRON_TAIL
+	db THUNDERBOLT, ROAR, THUNDER_WAVE, FLASH
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
@@ -5503,7 +5503,7 @@ BattleTowerMons:
 	bigdw 30000
 	bigdw 50000
 	dn 15, 13, 15, 14 ; DVs
-	db 16, 32, 16, 24 ; PP
+	db 16, 32, 16, 16 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
