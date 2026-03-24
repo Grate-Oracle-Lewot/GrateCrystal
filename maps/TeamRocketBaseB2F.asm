@@ -107,7 +107,10 @@ RocketBaseBossFScript:
 	disappear TEAMROCKETBASEB2F_ROCKET2
 	disappear TEAMROCKETBASEB2F_ROCKET3
 	disappear TEAMROCKETBASEB2F_ROCKET4
-	pause 15
+	pause 10
+	playsound SFX_RUN
+	waitsfx
+	pause 10
 	special FadeInQuickly
 	setscene SCENE_TEAMROCKETBASEB2F_ELECTRODES
 	clearevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
