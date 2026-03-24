@@ -10,11 +10,20 @@ VermilionGym_MapScripts:
 	scene_script .DummyScene ; SCENE_FINISHED
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .VermilionGymDoorsScript
 	callback MAPCALLBACK_TILES, .VermilionGymDoorsCallback
+	callback MAPCALLBACK_OBJECTS, .VermilionGymDoorsScript
 
 .DummyScene:
 	end
+
+.VermilionGymDoorsCallback:
+	checkevent EVENT_VERMILION_GYM_SWITCH_2
+	iftrue .NoDoors
+	endcallback
+
+.NoDoors:
+	changeblock 4, 4, $01 ; floor
+	endcallback
 
 .VermilionGymDoorsScript:
 	checkevent EVENT_VERMILION_GYM_SWITCH_2
@@ -24,15 +33,6 @@ VermilionGym_MapScripts:
 .resample
 	callasm SampleVermilionGymTrashCans
 .done
-	endcallback
-
-.VermilionGymDoorsCallback:
-	checkevent EVENT_VERMILION_GYM_SWITCH_2
-	iftrue .NoDoors
-	endcallback
-
-.NoDoors:
-	changeblock 4, 4, $01 ; floor
 	endcallback
 
 VermilionGymTrashCanScript:
