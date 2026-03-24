@@ -9,12 +9,21 @@ Colosseum_MapScripts:
 	scene_script .DummyScene ; unused
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .SetWhichChris
 	callback MAPCALLBACK_NEWMAP, .PreparePokecenter2F
+	callback MAPCALLBACK_OBJECTS, .SetWhichChris
 
 .InitializeColosseum:
 	sdefer .InitializeAndPreparePokecenter2F
 .DummyScene:
+	end
+
+.PreparePokecenter2F:
+	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+	endcallback
+
+.InitializeAndPreparePokecenter2F:
+	setscene SCENE_FINISHED
+	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 	end
 
 .SetWhichChris:
@@ -28,15 +37,6 @@ Colosseum_MapScripts:
 	disappear COLOSSEUM_LINK_TRAINER1
 	appear COLOSSEUM_LINK_TRAINER2
 	endcallback
-
-.PreparePokecenter2F:
-	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
-	endcallback
-
-.InitializeAndPreparePokecenter2F:
-	setscene SCENE_FINISHED
-	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
-	end
 
 ColosseumConsoleScript:
 	special Colosseum
