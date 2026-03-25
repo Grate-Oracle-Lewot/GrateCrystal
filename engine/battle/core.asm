@@ -552,18 +552,18 @@ DetermineMoveOrder:
 
 	call Core_50_Percent
 	jp c, .player_first
-	jp .enemy_first
+	jp Shared_and_a ; enemy first
 
 .player_2
 	call Core_50_Percent
-	jp c, .enemy_first
+	jp c, Shared_and_a ; enemy first
 	jp .player_first
 
 .switch
 	farcall AI_Switch
 	call SetEnemyTurn
 	call SpikesDamage
-	jp .enemy_first
+	jp Shared_and_a ; enemy first
 
 .use_move
 	ld a, [wBattlePlayerAction]
@@ -572,7 +572,7 @@ DetermineMoveOrder:
 	call CompareMovePriority
 	jr z, .equal_priority
 	jp c, .player_first ; player goes first
-	jp .enemy_first
+	jp Shared_and_a ; enemy first
 
 .equal_priority
 	call SetPlayerTurn
@@ -598,7 +598,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jr nc, .weather_check
-	jp .enemy_first
+	jp Shared_and_a ; enemy first
 
 .both_have_quick_claw
 	ldh a, [hSerialConnectionStatus]
@@ -606,7 +606,7 @@ DetermineMoveOrder:
 	jr z, .player_2b
 	call BattleRandom
 	cp c
-	jr c, .enemy_first
+	jr c, Shared_and_a ; enemy first
 	call BattleRandom
 	cp e
 	jr c, .player_first
@@ -618,7 +618,7 @@ DetermineMoveOrder:
 	jr c, .player_first
 	call BattleRandom
 	cp c
-	jr c, .enemy_first
+	jr c, Shared_and_a ; enemy first
 
 .weather_check
 	ld de, wBattleMonSpeed
@@ -667,7 +667,7 @@ DetermineMoveOrder:
 	call CompareBytes
 	jr z, .speed_tie
 	jr nc, .player_first
-	jr .enemy_first
+	jr Shared_and_a ; enemy first
 
 .speed_tie
 	ldh a, [hSerialConnectionStatus]
@@ -675,17 +675,31 @@ DetermineMoveOrder:
 	jr z, .player_2c
 	call Core_50_Percent
 	jr c, .player_first
-	jr .enemy_first
+	jr Shared_and_a ; enemy first
 
 .player_2c
 	call Core_50_Percent
-	jr c, .enemy_first
+	jr c, Shared_and_a ; enemy first
 .player_first
 	scf
 	ret
 
-.enemy_first
+Shared_and_a:
 	and a
+	ret
+
+CheckContestBattleOver:
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr nz, Shared_and_a
+	ld a, [wParkBallsRemaining]
+	and a
+	jr nz, Shared_and_a
+	ld a, [wBattleResult]
+	and BATTLERESULT_BITMASK
+	add DRAW
+	ld [wBattleResult], a
+	scf
 	ret
 
 ThreeHalfBoost:
@@ -712,24 +726,6 @@ LoadHLintoEnemyMonTemp:
 	ld [wEnemyMonTempStat], a
 	ld a, l
 	ld [wEnemyMonTempStat + 1], a
-	ret
-
-CheckContestBattleOver:
-	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jr nz, .contest_not_over
-	ld a, [wParkBallsRemaining]
-	and a
-	jr nz, .contest_not_over
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	add DRAW
-	ld [wBattleResult], a
-	scf
-	ret
-
-.contest_not_over
-	and a
 	ret
 
 CheckPlayerLockedIn:
