@@ -235,14 +235,7 @@ DoBattle:
 	call SlideBattlePicOut
 	call LoadTilemapToTempTilemap
 	call ResetBattleParticipants
-	call InitBattleMon
-	call ResetPlayerStatLevels
-	call SendOutMonText
-	call NewBattleMonStatus
-	call BreakAttraction
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call InitBattleMon_Etc
 	call SetPlayerTurn
 	call SpikesDamage
 	ld a, [wLinkMode]
@@ -2399,8 +2392,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld a, [wBattleMode]
 	dec a
 	call z, PlayVictoryMusic
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
@@ -2944,11 +2936,7 @@ ForcePlayerMonChoice:
 	call GetMemSGBLayout
 	call SetPalettes
 	call SendOutMonText
-	call NewBattleMonStatus
-	call BreakAttraction
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
 	call SpikesDamage
 	ld a, $1
@@ -2962,14 +2950,7 @@ PlayerPartyMonEntrance:
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 	call AddBattleParticipant
-	call InitBattleMon
-	call ResetPlayerStatLevels
-	call SendOutMonText
-	call NewBattleMonStatus
-	call BreakAttraction
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call InitBattleMon_Etc
 	call SetPlayerTurn
 	jp SpikesDamage
 
@@ -3866,8 +3847,7 @@ CheckIfCurPartyMonIsFitToFight:
 	ret
 
 AskUseNextPokemon:
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 ; We don't need to be here if we're in a Trainer battle, as that decision is made for us.
 	ld a, [wBattleMode]
 	dec a
@@ -4230,11 +4210,7 @@ SwitchPlayerMon:
 	call AddBattleParticipant
 	call InitBattleMon
 	call ResetPlayerStatLevels
-	call NewBattleMonStatus
-	call BreakAttraction
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call NewBattleMonStatus_Etc
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	or [hl]
@@ -5132,8 +5108,7 @@ BattleMenu:
 	jr z, .ok
 	call EmptyBattleTextbox
 	call UpdateBattleHuds
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 .ok
 
 .loop
@@ -5509,14 +5484,7 @@ BattleMonEntrance:
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a
 	call AddBattleParticipant
-	call InitBattleMon
-	call ResetPlayerStatLevels
-	call SendOutMonText
-	call NewBattleMonStatus
-	call BreakAttraction
-	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call InitBattleMon_Etc
 	call SetPlayerTurn
 	call SpikesDamage
 	ld a, $2
@@ -5540,8 +5508,7 @@ PassedBattleMonEntrance:
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
 	call SendOutPlayerMon
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	jp SpikesDamage
 
@@ -6031,8 +5998,7 @@ ParseEnemyAction:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	call z, LinkBattleSendReceiveAction
@@ -7607,8 +7573,7 @@ else
 	call ApplyStatLevelMultiplierOnAllStats
 	call ApplyStatusEffectOnPlayerStats
 	call UpdatePlayerHUD
-	call EmptyBattleTextbox
-	call LoadTilemapToTempTilemap
+	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	ld a, $1
 	ldh [hBGMapMode], a
 
@@ -9424,3 +9389,19 @@ _GetOpponentItem:
 _Battle_GetTrainerName:
 	farcall Battle_GetTrainerName
 	ret
+
+InitBattleMon_Etc:
+	call InitBattleMon
+	call ResetPlayerStatLevels
+	call SendOutMonText
+	; fallthrough
+
+NewBattleMonStatus_Etc:
+	call NewBattleMonStatus
+	call BreakAttraction
+	call SendOutPlayerMon
+	; fallthrough
+
+EmptyBattleTextbox_LoadTilemapToTempTilemap:
+	call EmptyBattleTextbox
+	jp LoadTilemapToTempTilemap
