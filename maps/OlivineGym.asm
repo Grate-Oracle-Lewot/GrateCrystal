@@ -150,9 +150,8 @@ Jasmine_SteelTypeIntro:
 	para "…Do you know about"
 	line "the steel-type?"
 
-	para "It's a type that"
-	line "was only recently"
-	cont "discovered."
+	para "It's powerful and"
+	line "resilient."
 
 	para "…Um… May I begin?"
 	done
