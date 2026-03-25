@@ -5487,6 +5487,7 @@ BattleMonEntrance:
 	call InitBattleMon_Etc
 	call SetPlayerTurn
 	call SpikesDamage
+	call HandleStatBoostingHeldItems
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5510,7 +5511,8 @@ PassedBattleMonEntrance:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp HandleStatBoostingHeldItems
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
