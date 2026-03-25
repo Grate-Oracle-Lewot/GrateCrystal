@@ -4343,11 +4343,6 @@ EnemyUTurnSwitch:
 	inc a
 	ld [wEnemySwitchMonIndex], a
 	call ForceEnemySwitch
-	jr SpikesDamage
-
-EnemyMonEntrance:
-	farcall AI_Switch
-	call SetEnemyTurn
 	; fallthrough
 
 SpikesDamage:
@@ -4725,6 +4720,12 @@ UseHeldStatusHealingItem:
 	ret
 
 INCLUDE "data/battle/held_heal_status.asm"
+
+EnemyMonEntrance:
+	farcall AI_Switch
+	call SetEnemyTurn
+	call SpikesDamage
+	; fallthrough
 
 HandleStatBoostingHeldItems:
 	ldh a, [hSerialConnectionStatus]
@@ -5523,6 +5524,7 @@ BattleMonEntrance:
 	ret
 
 PassedBattleMonEntrance:
+; used by BattleCommand_BatonPass via CallBattleCore
 	ld c, 25
 	call DelayFrames
 
