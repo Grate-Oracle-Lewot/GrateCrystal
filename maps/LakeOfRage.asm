@@ -393,11 +393,8 @@ FisherAndreAfterBattleText:
 	done
 
 FisherRaymondSeenText:
-	text "No matter what I"
-	line "do, all I catch"
-
-	para "are the same #-"
-	line "MON…"
+	text "Did I miss the red"
+	line "GYARADOS?"
 	done
 
 FisherRaymondBeatenText:
@@ -406,8 +403,9 @@ FisherRaymondBeatenText:
 	done
 
 FisherRaymondAfterBattleText:
-	text "Why can't I catch"
-	line "any good #MON?"
+	text "Maybe there are"
+	line "more differently-"
+	cont "colored #MON."
 	done
 
 CooltrainermAaronSeenText:
