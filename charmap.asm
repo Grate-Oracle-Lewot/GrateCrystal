@@ -156,7 +156,7 @@
 	charmap "<BOLD_V>",  $da ; bold V in "VS" for link battles
 	charmap "<BOLD_S>",  $db ; bold S in "VS" for link battles
 
-	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
+	charmap "<NINE>",    $dc ; duplicate 9 for nicknames, since normal 9 = $ff
 	charmap "“",         $dd ; opening quote
 	charmap "”",         $de ; closing quote
 
