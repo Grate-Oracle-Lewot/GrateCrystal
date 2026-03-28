@@ -6380,6 +6380,10 @@ LoadEnemyMon:
 	jr c, .GenerateDVs ; reroll DVs
 	jr .Happiness
 
+if DEF(_LITTLE_CUP)
+.Magikarp:
+	; no special logic for Magikarp
+else
 .Magikarp:
 	cp MAGIKARP
 	jr nz, .Happiness
@@ -6417,6 +6421,7 @@ LoadEnemyMon:
 	ld a, b
 	ld [hli], a
 	ld [hl], c
+endc
 
 ; Finally done with DVs
 
