@@ -6264,7 +6264,7 @@ LoadEnemyMon:
 	inc de
 	ld a, [hl]
 	ld [de], a
-	jr .Happiness
+	jp .Happiness
 
 .InitDVs:
 ; Trainer DVs
