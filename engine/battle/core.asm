@@ -6264,7 +6264,7 @@ LoadEnemyMon:
 	inc de
 	ld a, [hl]
 	ld [de], a
-	jp .Happiness
+	jr .Happiness
 
 .InitDVs:
 ; Trainer DVs
@@ -6347,7 +6347,7 @@ LoadEnemyMon:
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .Happiness
+	jr nz, .Happiness
 
 ; Species-specfic:
 
@@ -6360,7 +6360,7 @@ LoadEnemyMon:
 ; Change second type based on form
 	call GetSecondPikachuType
 	ld [wEnemyMonType2], a
-	jp .Happiness
+	jr .Happiness
 
 .Unown:
 	cp UNOWN
@@ -6373,32 +6373,24 @@ LoadEnemyMon:
 ; For forced shiny, skip rerolling DVs
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jp z, .Happiness
+	jr z, .Happiness
 
 ; In the Ruins of Alph only, reroll until we get an unlocked letter
 	call CheckUnownLetter
 	jr c, .GenerateDVs ; reroll DVs
-	jp .Happiness
+	jr .Happiness
 
 .Magikarp:
 	cp MAGIKARP
-if DEF(_LITTLE_CUP)
 	jr nz, .Happiness
-else
-	jp nz, .Happiness
-
-; For forced shiny, skip rerolling DVs
-	ld a, [wBattleType]
-	cp BATTLETYPE_SHINY
-	jp z, .Happiness
 
 ; Are we at the Lake of Rage?
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_OF_RAGE
-	jr nz, .Skip_Gyarados
+	jr nz, .Happiness
 	ld a, [wMapNumber]
 	cp MAP_LAKE_OF_RAGE
-	jr nz, .Skip_Gyarados
+	jr nz, .Happiness
 
 ; Has the Rocket hideout been cleared?
 	ld hl, wEventFlags
@@ -6407,7 +6399,7 @@ else
 	call EventFlagAction
 	ld a, c
 	and a
-	jr nz, .Skip_Gyarados
+	jr nz, .Happiness
 
 ; If at the lake with Rockets, change any Magikarp into a Gyarados with all 0 DVs
 ; Naturally-occurring Gyarados will still have random DVs
@@ -6425,53 +6417,6 @@ else
 	ld a, b
 	ld [hli], a
 	ld [hl], c
-	jr .Happiness
-
-.Skip_Gyarados:
-endc
-; Get Magikarp's length
-	ld de, wEnemyMonDVs
-	ld bc, wPlayerID
-	farcall CalcMagikarpLength
-
-; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
-	ld a, [wMagikarpLength]
-	cp 5
-	jr nz, .CheckMagikarpArea
-
-; 5% chance of skipping both size checks
-	call Random
-	cp 5 percent
-	jr c, .CheckMagikarpArea
-; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
-	ld a, [wMagikarpLength + 1]
-	cp 4
-	jp nc, .GenerateDVs
-
-; 20% chance of skipping this check
-	call Random
-	cp 20 percent - 1
-	jr c, .CheckMagikarpArea
-; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
-	ld a, [wMagikarpLength + 1]
-	cp 3
-	jp nc, .GenerateDVs
-
-.CheckMagikarpArea:
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
-	jr nz, .Happiness
-	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
-	jr nz, .Happiness
-; 40% chance of not flooring
-	call Random
-	cp 39 percent + 1
-	jr c, .Happiness
-; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
-	ld a, [wMagikarpLength]
-	cp 3
-	jp c, .GenerateDVs ; try again
 
 ; Finally done with DVs
 
