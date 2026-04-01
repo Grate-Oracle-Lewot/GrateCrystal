@@ -230,7 +230,7 @@ MainMenu_NewGame:
 	ret
 
 MainMenu_Option:
-	farcall Option
+	farcall _Option
 	ret
 
 MainMenu_Continue:
