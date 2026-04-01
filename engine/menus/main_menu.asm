@@ -1,16 +1,16 @@
 	; MainMenuItems indexes
 	const_def
-	const MAINMENU_NEW_GAME ; 0
-	const MAINMENU_CONTINUE ; 1
-	const MAINMENU_MOBILE   ; 2
+	const MAINMENU_NEW_GAME      ; 0
+	const MAINMENU_CONTINUE      ; 1
+	const MAINMENU_NEW_GAME_PLUS ; 2
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
-	const MAINMENUITEM_CONTINUE    ; 0
-	const MAINMENUITEM_NEW_GAME    ; 1
-	const MAINMENUITEM_OPTION      ; 2
-	const MAINMENUITEM_DELETE_SAVE ; 3
-	const MAINMENUITEM_MOBILE      ; 4
+	const MAINMENUITEM_CONTINUE      ; 0
+	const MAINMENUITEM_NEW_GAME      ; 1
+	const MAINMENUITEM_NEW_GAME_PLUS ; 2
+	const MAINMENUITEM_OPTION        ; 3
+	const MAINMENUITEM_DELETE_SAVE   ; 4
 
 MobileMenuGFX:
 INCBIN "gfx/mobile/mobile_menu.2bpp"
@@ -56,17 +56,17 @@ MainMenu:
 ; entries correspond to MAINMENUITEM_* constants
 	db "CONTINUE@"
 	db "NEW GAME@"
+	db "NEW GAME +@"
 	db "OPTION@"
 	db "DELETE SAVE@"
-	db "MOBILE@"
 
 .Jumptable:
 ; entries correspond to MAINMENUITEM_* constants
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
+	dw MainMenu_NewGamePlus
 	dw MainMenu_Option
 	dw MainMenu_DeleteSave
-	dw MainMenu_Mobile
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants
@@ -85,32 +85,30 @@ MainMenuItems:
 	db MAINMENUITEM_DELETE_SAVE
 	db -1
 
-	; MAINMENU_MOBILE
+	; MAINMENU_NEW_GAME_PLUS
 	db 5
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
+	db MAINMENUITEM_NEW_GAME_PLUS
 	db MAINMENUITEM_OPTION
 	db MAINMENUITEM_DELETE_SAVE
-	db MAINMENUITEM_MOBILE
 	db -1
 
 MainMenu_GetWhichMenu:
 	ld a, [wSaveFileExists]
 	and a
-	jr nz, .next
+	jr nz, .next1
 	ld a, MAINMENU_NEW_GAME
 	ret
 
-.next
-	ldh a, [hCGB]
-	cp TRUE
+.next1
+	dec a
+	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
-	ret nz
+	ret
 
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-
-	ld a, MAINMENU_CONTINUE
+.next2
+	ld a, MAINMENU_NEW_GAME_PLUS
 	ret
 
 MainMenuJoypadLoop:
@@ -237,6 +235,10 @@ MainMenu_Option:
 
 MainMenu_Continue:
 	farcall Continue
+	ret
+
+MainMenu_NewGamePlus:
+	farcall NewGamePlus
 	ret
 
 MainMenu_DeleteSave:
