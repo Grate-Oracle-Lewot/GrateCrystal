@@ -430,7 +430,7 @@ StartMenu_Option:
 ; Game options.
 
 	call FadeToMenu
-	farcall Option
+	farcall _Option
 	ld a, 6
 	ret
 
