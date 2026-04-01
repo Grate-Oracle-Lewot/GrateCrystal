@@ -32,12 +32,15 @@ NewGame_ClearTilemapEtc:
 	call LoadStandardFont
 	jp ClearWindowData
 
-Option:
-	farcall _Option
-	ret
+NewGamePlus::
+	call NewGamePlusWRAM
+	jr NewGameMerge
 
-NewGame:
+NewGame::
 	call ResetWRAM
+	; fallthrough
+
+NewGameMerge:
 	call NewGame_ClearTilemapEtc
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
@@ -332,13 +335,33 @@ Continue:
 	jr z, .SpawnAfterE4
 	ld a, MAPSETUP_CONTINUE
 	ldh [hMapEntryMethod], a
-	jp FinishContinueFunction
+	jr FinishContinueFunction
 
 .SpawnAfterE4:
 	ld a, SPAWN_NEW_BARK
 	ld [wDefaultSpawnpoint], a
 	call PostCreditsSpawn
-	jp FinishContinueFunction
+	; fallthrough
+
+FinishContinueFunction:
+.loop
+	xor a
+	ld [wDontPlayMapMusicOnReload], a
+	ld [wLinkMode], a
+	ld hl, wGameTimerPaused
+	set GAME_TIMER_PAUSED_F, [hl]
+	res GAME_TIMER_MOBILE_F, [hl]
+	ld hl, wEnteredMapFromContinue
+	set 1, [hl]
+	farcall OverworldLoop
+	ld a, [wSpawnAfterChampion]
+	cp SPAWN_RED
+	jr z, .AfterRed
+	jp Reset
+
+.AfterRed:
+	call SpawnAfterRed
+	jr .loop
 
 SpawnAfterRed:
 	ld a, SPAWN_MT_SILVER
@@ -378,26 +401,6 @@ Continue_CheckRTC_RestartClock:
 .pass
 	xor a
 	ret
-
-FinishContinueFunction:
-.loop
-	xor a
-	ld [wDontPlayMapMusicOnReload], a
-	ld [wLinkMode], a
-	ld hl, wGameTimerPaused
-	set GAME_TIMER_PAUSED_F, [hl]
-	res GAME_TIMER_MOBILE_F, [hl]
-	ld hl, wEnteredMapFromContinue
-	set 1, [hl]
-	farcall OverworldLoop
-	ld a, [wSpawnAfterChampion]
-	cp SPAWN_RED
-	jr z, .AfterRed
-	jp Reset
-
-.AfterRed:
-	call SpawnAfterRed
-	jr .loop
 
 DisplaySaveInfoOnContinue:
 	call CheckRTCStatus
