@@ -1750,3 +1750,33 @@ _PrestoAllDoneText::
 	text "Presto! All done."
 	line "Come again, OK?"
 	done
+
+_NewGamePlusText::
+	text "NEW GAME + will"
+	line "allow you to start"
+
+	para "a new game while"
+	line "retaining all of"
+
+	para "the #MON in"
+	line "your PC, your"
+
+	para "name and trainer"
+	line "ID, your #DEX"
+
+	para "completion status,"
+	line "and your HALL OF"
+	cont "FAME data."
+
+	para "You will lose all"
+	line "of your items,"
+
+	para "money, badges, and"
+	line "the #MON in"
+
+	para "your party and the"
+	line "DAY-CARE."
+
+	para "Start a NEW GAME +"
+	line "now?"
+	done
