@@ -168,14 +168,6 @@ ResetWRAMCommon:
 	xor a
 	call ByteFill
 
-	ld a, -1
-	ld [wRoamMon1MapGroup], a
-	ld [wRoamMon2MapGroup], a
-	ld [wRoamMon3MapGroup], a
-	ld [wRoamMon1MapNumber], a
-	ld [wRoamMon2MapNumber], a
-	ld [wRoamMon3MapNumber], a
-
 	ld hl, wPartyCount
 	call NewGame_InitList
 
@@ -209,12 +201,27 @@ ResetWRAMCommon:
 
 	xor a
 	ld [wMonType], a
+	ld [wWhichMomItem], a
+
+	ld [wCurBox], a
+	ld [wSavedAtLeastOnce], a
 
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
 
 	ld [wCoins], a
 	ld [wCoins + 1], a
+
+	ld [wRoamMon1Species], a
+	ld [wRoamMon2Species], a
+	ld [wRoamMon3Species], a
+	dec a ; -1
+	ld [wRoamMon1MapGroup], a
+	ld [wRoamMon2MapGroup], a
+	ld [wRoamMon3MapGroup], a
+	ld [wRoamMon1MapNumber], a
+	ld [wRoamMon2MapNumber], a
+	ld [wRoamMon3MapNumber], a
 
 if START_MONEY >= $10000
 	ld a, HIGH(START_MONEY >> 8)
