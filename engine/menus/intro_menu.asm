@@ -33,19 +33,47 @@ NewGame_ClearTilemapEtc:
 	jp ClearWindowData
 
 NewGamePlus::
+	farcall BlankScreen
+	ld b, SCGB_DIPLOMA
+	call GetSGBLayout
+	call LoadStandardFont
+	call LoadFontsExtra
+	ld de, MUSIC_MAIN_MENU
+	call PlayMusic
+	ld hl, NewGamePlusText
+	call PrintText
+	ld hl, .NoYesMenuHeader
+	call CopyMenuHeader
+	call VerticalMenu
+	jp c, Init
+	ld a, [wMenuCursorY]
+	cp 1
+	jp z, Init
 	call NewGamePlusWRAM
+	call InitializeWorld_NoShrink
 	jr NewGameMerge
+
+.NoYesMenuHeader:
+	db 0 ; flags
+	menu_coords 14, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
+	db 2 ; items
+	db "NO@"
+	db "YES@"
 
 NewGame::
 	call ResetWRAM
+	call NewGame_ClearTilemapEtc
+	farcall InitGender
+	call OakSpeech
+	call InitializeWorld
 	; fallthrough
 
 NewGameMerge:
-	call NewGame_ClearTilemapEtc
-	call AreYouABoyOrAreYouAGirl
-	call OakSpeech
-	call InitializeWorld
-
 	ld a, LANDMARK_NEW_BARK_TOWN
 	ld [wPrevLandmark], a
 
@@ -56,28 +84,8 @@ NewGameMerge:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
-AreYouABoyOrAreYouAGirl:
-	farcall InitGender
-	ret
-
 ResetWRAM:
-	xor a
-	ldh [hBGMapMode], a
-
-	ld hl, wVirtualOAM
-	ld bc, wOptions - wVirtualOAM
-	xor a
-	call ByteFill
-
-	ld hl, WRAM1_Begin
-	ld bc, wGameData - WRAM1_Begin
-	xor a
-	call ByteFill
-
-	ld hl, wGameData
-	ld bc, wGameDataEnd - wGameData
-	xor a
-	call ByteFill
+	call ResetWRAMCommon
 
 	ldh a, [rLY]
 	ldh [hUnusedBackup], a
@@ -97,40 +105,83 @@ ResetWRAM:
 	call Random
 	ld [wSecretID + 1], a
 
-	ld hl, wPartyCount
-	call .InitList
-
-	xor a
-	ld [wCurBox], a
-	ld [wSavedAtLeastOnce], a
-
 	call SetDefaultBoxNames
 
 	ld a, BANK(sBoxCount)
 	call OpenSRAM
 	ld hl, sBoxCount
-	call .InitList
+	call NewGame_InitList
 	call CloseSRAM
 
-	ld hl, wNumItems
-	call .InitList
+	jp ResetGameTime
 
-	ld hl, wNumKeyItems
-	call .InitList
+NewGamePlusWRAM:
+	call ResetWRAMCommon
 
-	ld hl, wNumBalls
-	call .InitList
+	ld a, BANK(sPlayerName)
+	call OpenSRAM
+	ld hl, sPlayerName
+	ld de, wPlayerName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+	call CloseSRAM
 
-	ld hl, wNumFruits
-	call .InitList
+	ld a, BANK(sPlayerID)
+	call OpenSRAM
+	ld hl, sPlayerID
+	ld a, [hli]
+	ld [wPlayerID], a
+	ld a, [hl]
+	ld [wPlayerID + 1], a
+	call CloseSRAM
 
-	ld hl, wNumPCItems
-	call .InitList
+	ld a, BANK(sSecretID)
+	call OpenSRAM
+	ld hl, sSecretID
+	ld a, [hli]
+	ld [wSecretID], a
+	ld a, [hl]
+	ld [wSecretID + 1], a
+	call CloseSRAM
+
+	ld a, BANK(sCurPokedexColor)
+	call OpenSRAM
+	ld a, [sCurPokedexColor]
+	ld [wCurPokedexColor], a
+	call CloseSRAM
+
+	ld a, BANK(sPokedexCaught)
+	call OpenSRAM
+	ld hl, sPokedexCaught
+	ld de, wPokedexCaught
+	ld bc, wEndPokedexNGPData - wPokedexCaught
+	call CopyBytes
+	call CloseSRAM
 
 	xor a
-	ld [wRoamMon1Species], a
-	ld [wRoamMon2Species], a
-	ld [wRoamMon3Species], a
+	ld [wUnlockedUnowns], a
+
+	jp ResetGameTime
+
+ResetWRAMCommon:
+	xor a
+	ldh [hBGMapMode], a
+
+	ld hl, wVirtualOAM
+	ld bc, wOptions - wVirtualOAM
+	xor a
+	call ByteFill
+
+	ld hl, WRAM1_Begin
+	ld bc, wGameData - WRAM1_Begin
+	xor a
+	call ByteFill
+
+	ld hl, wGameData
+	ld bc, wGameDataEnd - wGameData
+	xor a
+	call ByteFill
+
 	ld a, -1
 	ld [wRoamMon1MapGroup], a
 	ld [wRoamMon2MapGroup], a
@@ -138,6 +189,24 @@ ResetWRAM:
 	ld [wRoamMon1MapNumber], a
 	ld [wRoamMon2MapNumber], a
 	ld [wRoamMon3MapNumber], a
+
+	ld hl, wPartyCount
+	call NewGame_InitList
+
+	ld hl, wNumItems
+	call NewGame_InitList
+
+	ld hl, wNumKeyItems
+	call NewGame_InitList
+
+	ld hl, wNumBalls
+	call NewGame_InitList
+
+	ld hl, wNumFruits
+	call NewGame_InitList
+
+	ld hl, wNumPCItems
+	call NewGame_InitList
 
 	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
 	call OpenSRAM
@@ -170,9 +239,6 @@ endc
 	ld a, LOW(START_MONEY)
 	ld [wMoney + 2], a
 
-	xor a
-	ld [wWhichMomItem], a
-
 	ld hl, wMomItemTriggerBalance
 	ld [hl], HIGH(MOM_MONEY >> 8)
 	inc hl
@@ -184,9 +250,9 @@ endc
 	farcall InitDecorations
 	farcall DeletePartyMonMail
 	farcall DeleteMobileEventIndex
-	jp ResetGameTime
+	ret
 
-.InitList:
+NewGame_InitList:
 ; Loads 0 in the count and -1 in the first item or mon slot.
 	xor a
 	ld [hli], a
@@ -265,6 +331,7 @@ InitializeNPCNames:
 
 InitializeWorld:
 	call ShrinkPlayer
+InitializeWorld_NoShrink:
 	farcall SpawnPlayer
 	farcall _InitializeStartDay
 	farcall InitializeEvents
@@ -296,7 +363,7 @@ LoadOrRegenerateLuckyIDNumber:
 	ld [sLuckyIDNumber + 1], a
 	jp CloseSRAM
 
-Continue:
+Continue::
 	farcall TryLoadSaveFile
 	ret c
 	farcall _LoadData
@@ -657,6 +724,10 @@ OakText6:
 
 OakText7:
 	text_far _OakText7
+	text_end
+
+NewGamePlusText:
+	text_far _NewGamePlusText
 	text_end
 
 StartPCItem:
