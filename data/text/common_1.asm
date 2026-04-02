@@ -1762,11 +1762,10 @@ _NewGamePlusText::
 	line "your PC, your"
 
 	para "name and trainer"
-	line "ID, your #DEX"
+	line "ID, and your"
 
-	para "completion status,"
-	line "and your HALL OF"
-	cont "FAME data."
+	para "#DEX completion"
+	line "status."
 
 	para "You will lose all"
 	line "of your items,"
@@ -1777,6 +1776,6 @@ _NewGamePlusText::
 	para "your party and the"
 	line "DAY-CARE."
 
-	para "Start a NEW GAME +"
-	line "now?"
+	para "Will you start a"
+	line "NEW GAME + now?"
 	done
