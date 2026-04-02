@@ -118,41 +118,27 @@ ResetWRAM:
 NewGamePlusWRAM:
 	call ResetWRAMCommon
 
-	ld a, BANK(sPlayerName)
+	ld a, BANK(sPlayerData)
 	call OpenSRAM
-	ld hl, sPlayerName
-	ld de, wPlayerName
-	ld bc, NAME_LENGTH
+	ld hl, sPlayerData
+	ld de, wPlayerData
+	ld bc, NAME_LENGTH + 2
 	call CopyBytes
-	call CloseSRAM
 
-	ld a, BANK(sPlayerID)
-	call OpenSRAM
-	ld hl, sPlayerID
-	ld a, [hli]
-	ld [wPlayerID], a
-	ld a, [hl]
-	ld [wPlayerID + 1], a
-	call CloseSRAM
-
-	ld a, BANK(sSecretID)
-	call OpenSRAM
-	ld hl, sSecretID
+	ld hl, sPlayerData + wSecretID - wPlayerData
 	ld a, [hli]
 	ld [wSecretID], a
 	ld a, [hl]
 	ld [wSecretID + 1], a
-	call CloseSRAM
 
-	ld a, BANK(sCurPokedexColor)
-	call OpenSRAM
-	ld a, [sCurPokedexColor]
+	ld hl, sPlayerData + wCurPokedexColor - wPlayerData
+	ld a, [hl]
 	ld [wCurPokedexColor], a
 	call CloseSRAM
 
-	ld a, BANK(sPokedexCaught)
+	ld a, BANK(sPokemonData)
 	call OpenSRAM
-	ld hl, sPokedexCaught
+	ld hl, sPokemonData + wEndPokedexNGPData - wPokedexCaught
 	ld de, wPokedexCaught
 	ld bc, wEndPokedexNGPData - wPokedexCaught
 	call CopyBytes
