@@ -49,6 +49,8 @@ NewGamePlus::
 	ld a, [wMenuCursorY]
 	cp 1
 	jp z, Init
+	farcall TryLoadSaveFile
+	jp c, Init
 	call NewGamePlusWRAM
 	call InitializeWorld_NoShrink
 	jr NewGameMerge
