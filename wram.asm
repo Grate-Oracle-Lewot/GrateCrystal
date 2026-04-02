@@ -122,6 +122,8 @@ SECTION "WRAM", WRAM0
 wLZAddress:: dw
 wLZBank::    db
 
+	ds 1
+
 wBoxAlignment:: db
 
 wInputType::        db
@@ -137,7 +139,7 @@ wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
 
-wNGPTrainerID:: dw
+	ds 1
 
 wCurLevelCap:: db
 
@@ -169,7 +171,7 @@ wMovementDataBank:: db
 wMovementDataAddress:: dw
 wIndexedMovement2Pointer:: dw
 
-wNGPSecretID:: dw
+	ds 2
 
 wMovementByteWasControlSwitch:: db
 
@@ -282,7 +284,7 @@ wGlobalAnimXOffset:: db
 
 wSpriteAnimDataEnd::
 
-wNGPPlayerName:: ds NAME_LENGTH
+	ds 11
 
 ; mobile data
 wc3cc:: ds 1
