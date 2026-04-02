@@ -135,6 +135,7 @@ SeafoamCaveB2FLewotScript:
 .SkipPhone:
 	closetext
 .End:
+	setevent EVENT_UNLOCKED_NEW_GAME_PLUS
 	special HealParty
 	refreshscreen
 	credits
