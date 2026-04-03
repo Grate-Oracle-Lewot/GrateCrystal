@@ -1779,3 +1779,12 @@ _NewGamePlusText::
 	para "Will you start a"
 	line "NEW GAME + now?"
 	done
+
+_NGPStartText::
+	text "Once more into the"
+	line "breach!"
+	done
+
+_NGPErrorText::
+	text "An error occurred."
+	done
