@@ -1762,10 +1762,8 @@ _NewGamePlusText::
 	line "your PC, your"
 
 	para "name and trainer"
-	line "ID, and your"
-
-	para "#DEX completion"
-	line "status."
+	line "ID, and your HALL"
+	cont "OF FAME data."
 
 	para "You will lose all"
 	line "of your items,"
