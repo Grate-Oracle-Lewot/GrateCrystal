@@ -51,9 +51,8 @@ NewGamePlus::
 	jp z, Init
 	farcall TryLoadSaveFile
 	jr c, .NoSave
-	ld hl, NGPStartText
-	call PrintText
 	call NewGamePlusWRAM
+	farcall InitGender
 	call InitializeWorld_NoShrink
 	jr NewGameMerge
 
