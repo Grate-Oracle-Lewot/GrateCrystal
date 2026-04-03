@@ -50,10 +50,17 @@ NewGamePlus::
 	cp 1
 	jp z, Init
 	farcall TryLoadSaveFile
-	jp c, Init
+	jr c, .NoSave
+	ld hl, NGPStartText
+	call PrintText
 	call NewGamePlusWRAM
 	call InitializeWorld_NoShrink
 	jr NewGameMerge
+
+.NoSave:
+	ld hl, NGPErrorText
+	call PrintText
+	jp Init
 
 .NoYesMenuHeader:
 	db 0 ; flags
@@ -87,6 +94,19 @@ NewGameMerge:
 	jp FinishContinueFunction
 
 ResetWRAM:
+	xor a
+	ldh [hBGMapMode], a
+
+	ld hl, wVirtualOAM
+	ld bc, wOptions - wVirtualOAM
+	xor a
+	call ByteFill
+
+	ld hl, wGameData
+	ld bc, wGameDataEnd - wGameData
+	xor a
+	call ByteFill
+
 	call ResetWRAMCommon
 
 	ldh a, [rLY]
@@ -115,58 +135,41 @@ ResetWRAM:
 	call NewGame_InitList
 	call CloseSRAM
 
-	jp ResetGameTime
+	jr ResetGameTime
 
 NewGamePlusWRAM:
-	call ResetWRAMCommon
-
-	ld a, BANK(sPlayerData)
-	call OpenSRAM
-	ld hl, sPlayerData
-	ld de, wPlayerData
-	ld bc, NAME_LENGTH + 2
-	call CopyBytes
-
-	ld hl, sPlayerData + wSecretID - wPlayerData
-	ld a, [hli]
-	ld [wSecretID], a
-	ld a, [hl]
-	ld [wSecretID + 1], a
-
-	ld hl, sPlayerData + wCurPokedexColor - wPlayerData
-	ld a, [hl]
-	ld [wCurPokedexColor], a
-	call CloseSRAM
-
-	ld a, BANK(sPokemonData)
-	call OpenSRAM
-	ld hl, sPokemonData + wEndPokedexNGPData - wPokedexCaught
-	ld de, wPokedexCaught
-	ld bc, wEndPokedexNGPData - wPokedexCaught
-	call CopyBytes
-	call CloseSRAM
-
-	xor a
-	ld [wUnlockedUnowns], a
-
-	jp ResetGameTime
-
-ResetWRAMCommon:
 	xor a
 	ldh [hBGMapMode], a
 
 	ld hl, wVirtualOAM
-	ld bc, wOptions - wVirtualOAM
+	ld bc, wBillsPCData - wVirtualOAM
 	xor a
 	call ByteFill
 
+	ld hl, wLinkData
+	ld bc, wOptions - wLinkData
+	xor a
+	call ByteFill
+
+	ld hl, wMomsName
+	ld bc, wSecretID - wMomsName
+	xor a
+	call ByteFill
+
+	ld hl, wStatusFlags
+	ld bc, wBoxNames - wStatusFlags
+	xor a
+	call ByteFill
+
+	ld hl, wCelebiEvent
+	ld bc, wGameDataEnd - wCelebiEvent
+	xor a
+	call ByteFill
+	; fallthrough
+
+ResetWRAMCommon:
 	ld hl, WRAM1_Begin
 	ld bc, wGameData - WRAM1_Begin
-	xor a
-	call ByteFill
-
-	ld hl, wGameData
-	ld bc, wGameDataEnd - wGameData
 	xor a
 	call ByteFill
 
@@ -204,6 +207,7 @@ ResetWRAMCommon:
 	xor a
 	ld [wMonType], a
 	ld [wWhichMomItem], a
+	ld [wUsingHMItem], a
 
 	ld [wCurBox], a
 	ld [wSavedAtLeastOnce], a
