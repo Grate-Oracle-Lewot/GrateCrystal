@@ -165,7 +165,12 @@ NewGamePlusWRAM:
 	ld bc, wGameDataEnd - wCelebiEvent
 	xor a
 	call ByteFill
-	; fallthrough
+
+	call ResetWRAMCommon
+
+	ld a, UNOWN_QUESTION
+	ld [wFirstUnownSeen], a
+	ret
 
 ResetWRAMCommon:
 	ld hl, WRAM1_Begin
