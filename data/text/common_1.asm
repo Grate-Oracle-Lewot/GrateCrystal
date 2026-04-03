@@ -1778,11 +1778,6 @@ _NewGamePlusText::
 	line "NEW GAME + now?"
 	done
 
-_NGPStartText::
-	text "Once more into the"
-	line "breach!"
-	prompt
-
 _NGPErrorText::
 	text "An error occurred."
 	prompt
