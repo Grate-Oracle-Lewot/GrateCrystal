@@ -135,7 +135,7 @@ ResetWRAM:
 	call NewGame_InitList
 	call CloseSRAM
 
-	jr ResetGameTime
+	jp ResetGameTime
 
 NewGamePlusWRAM:
 	xor a
@@ -727,6 +727,14 @@ OakText7:
 
 NewGamePlusText:
 	text_far _NewGamePlusText
+	text_end
+
+NGPStartText:
+	text_far _NGPStartText
+	text_end
+
+NGPErrorText:
+	text_far _NGPErrorText
 	text_end
 
 StartPCItem:
