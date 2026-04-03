@@ -3197,7 +3197,6 @@ wEndPokedexSeen::
 wUnownDex:: ds NUM_UNOWN
 wUnlockedUnowns:: db
 wFirstUnownSeen:: db
-wEndPokedexNGPData::
 
 wDayCareMan::
 ; bit 7: active
