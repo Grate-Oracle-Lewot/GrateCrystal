@@ -733,10 +733,6 @@ NewGamePlusText:
 	text_far _NewGamePlusText
 	text_end
 
-NGPStartText:
-	text_far _NGPStartText
-	text_end
-
 NGPErrorText:
 	text_far _NGPErrorText
 	text_end
