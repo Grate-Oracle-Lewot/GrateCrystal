@@ -102,7 +102,14 @@ MainMenu_GetWhichMenu:
 	ret
 
 .next1
-	dec a
+	ld a, BANK(sNewGamePlusFlag)
+	call OpenSRAM
+	ld a, [sNewGamePlusFlag]
+	ld [wSaveFileExists], a
+	call CloseSRAM
+
+	ld a, [wSaveFileExists]
+	and a
 	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
 	ret
