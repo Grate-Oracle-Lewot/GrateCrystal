@@ -1386,8 +1386,7 @@
 	const EVENT_BEAT_OFFICER_LASSITER
 	const EVENT_BEAT_ENGINEER_ENRIQUE
 	const EVENT_GOLDENROD_GYM_WHITNEY
-	const EVENT_UNLOCKED_NEW_GAME_PLUS
-; Unused: next 116 (now 13) events
+; Unused: next 116 (now 14) events
 
 	const_next 1600
 ; Sprite visibility flags
