@@ -634,7 +634,8 @@ CheckPrimarySaveFile:
 	ld bc, wOptionsEnd - wOptions
 	call CopyBytes
 	call CloseSRAM
-	call SetSaveFileExists_NewGamePlus
+	ld a, TRUE
+	ld [wSaveFileExists], a
 
 .nope
 	jp CloseSRAM
@@ -652,7 +653,8 @@ CheckBackupSaveFile:
 	ld de, wOptions
 	ld bc, wOptionsEnd - wOptions
 	call CopyBytes
-	call SetSaveFileExists_NewGamePlus
+	ld a, TRUE
+	ld [wSaveFileExists], a
 
 .nope
 	jp CloseSRAM
