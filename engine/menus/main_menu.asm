@@ -105,10 +105,10 @@ MainMenu_GetWhichMenu:
 	ld a, BANK(sNewGamePlusFlag)
 	call OpenSRAM
 	ld a, [sNewGamePlusFlag]
-	ld [wSaveFileExists], a
+	ld [wScriptVar], a
 	call CloseSRAM
 
-	ld a, [wSaveFileExists]
+	ld a, [wScriptVar]
 	and a
 	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
