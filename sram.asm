@@ -196,7 +196,9 @@ SECTION "Boxes 8-14", SRAM
 
 SECTION "SRAM Mobile 1", SRAM
 
-	ds $7
+sNewGamePlusFlag:: db
+
+	ds $6
 
 s4_a007:: ; struct size $30
 
