@@ -567,22 +567,20 @@ AnimateFlowerTile:
 	ld b, h
 	ld c, l
 
-; A cycle of 2 frames, updating every other tick
+; A cycle of 4 frames, updating every other tick
 	ld a, [wTileAnimationTimer]
-	and %10
+	and %110
 
-; CGB has different tile graphics for flowers
-	ld e, a
-	ldh a, [hCGB]
-	and 1
-	add e
-
-; hl = .FlowerTileFrames + a * 16
-	swap a
-	ld e, a
-	ld d, 0
-	ld hl, .FlowerTileFrames
-	add hl, de
+; hl = .FlowerTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.FlowerTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.FlowerTileFrames)
+	ld h, a
 
 ; Write the tile graphic from hl (now sp) to tile $03 (now hl)
 	ld sp, hl
@@ -590,10 +588,10 @@ AnimateFlowerTile:
 	jp WriteTile
 
 .FlowerTileFrames:
-	INCBIN "gfx/tilesets/flower/dmg_1.2bpp"
-	INCBIN "gfx/tilesets/flower/cgb_1.2bpp"
-	INCBIN "gfx/tilesets/flower/dmg_2.2bpp"
-	INCBIN "gfx/tilesets/flower/cgb_2.2bpp"
+	INCBIN "gfx/tilesets/flower/flower1.2bpp"
+	INCBIN "gfx/tilesets/flower/flower2.2bpp"
+	INCBIN "gfx/tilesets/flower/flower1.2bpp"
+	INCBIN "gfx/tilesets/flower/flower3.2bpp"
 
 AnimateLavaBubbleTile1:
 ; Save the stack pointer in bc for WriteTile to restore
