@@ -2,7 +2,6 @@
 	const_def
 	const MAINMENU_NEW_GAME      ; 0
 	const MAINMENU_CONTINUE      ; 1
-	const MAINMENU_NEW_GAME_PLUS ; 2
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
@@ -78,14 +77,6 @@ MainMenuItems:
 	db -1
 
 	; MAINMENU_CONTINUE
-	db 4
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_DELETE_SAVE
-	db -1
-
-	; MAINMENU_NEW_GAME_PLUS
 	db 5
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
@@ -102,20 +93,7 @@ MainMenu_GetWhichMenu:
 	ret
 
 .next1
-	ld a, BANK(sNewGamePlusFlag)
-	call OpenSRAM
-	ld a, [sNewGamePlusFlag]
-	ld [wScriptVar], a
-	call CloseSRAM
-
-	ld a, [wScriptVar]
-	and a
-	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
-	ret
-
-.next2
-	ld a, MAINMENU_NEW_GAME_PLUS
 	ret
 
 MainMenuJoypadLoop:
@@ -232,20 +210,20 @@ ClearTilemapEtc:
 	call LoadStandardFont
 	jp ClearWindowData
 
-MainMenu_NewGame:
-	farcall NewGame
-	ret
-
-MainMenu_Option:
-	farcall _Option
-	ret
-
 MainMenu_Continue:
 	farcall Continue
 	ret
 
+MainMenu_NewGame:
+	farcall NewGame
+	ret
+
 MainMenu_NewGamePlus:
 	farcall NewGamePlus
+	ret
+
+MainMenu_Option:
+	farcall _Option
 	ret
 
 MainMenu_DeleteSave:
