@@ -135,18 +135,10 @@ SeafoamCaveB2FLewotScript:
 .SkipPhone:
 	closetext
 .End:
-	callasm .NGPasm
 	special HealParty
 	refreshscreen
 	credits
 	end
-
-.NGPasm:
-	ld a, BANK(sNewGamePlusFlag)
-	call OpenSRAM
-	ld a, $1
-	ld [sNewGamePlusFlag], a
-	jp CloseSRAM
 
 .PhoneAsm:
 	ld c, PHONE_GRATE_ORACLE_LEWOT
