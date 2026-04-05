@@ -203,8 +203,7 @@ ResetWRAMCommon:
 	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
 	dec a ; -1
 	ld [hl], a
-	ld hl, sMysteryGiftUnusedFlag ; reset New Game +
-	ld [hl], a
+	ld [sMysteryGiftUnusedFlag], a ; reset New Game +
 	call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
