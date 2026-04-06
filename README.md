@@ -44,7 +44,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
     - This mode does nothing about Pokémon "dying." It only restricts catching. Release or box them at your own discretion.
     - Since the mode can be switched off at any time, you can disable it to, say, catch an HM user to avoid softlocks. However, new encounters are used up even while the mode is turned off.
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
-- A New Game + option (unlocked by beating the final challenge) that lets you start a new game while keeping your name and trainer ID, your Hall of Fame data, and all of the Pokémon in your PC (but not in your party or the Daycare)
+- A New Game + option that lets you start a new game while keeping your name and trainer ID, your Hall of Fame data, and all of the Pokémon in your PC (but not in your party or the Daycare)
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
 - Time Capsule replaced with player gender swap machine
