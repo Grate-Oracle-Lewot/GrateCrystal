@@ -135,7 +135,6 @@ SeafoamCaveB2FLewotScript:
 .SkipPhone:
 	closetext
 .End:
-	callasm .NGPasm
 	special HealParty
 	refreshscreen
 	credits
@@ -152,13 +151,6 @@ SeafoamCaveB2FLewotScript:
 .done
 	ld [wScriptVar], a
 	ret
-
-.NGPasm:
-	ld a, BANK(sMysteryGiftUnusedFlag)
-	call OpenSRAM
-	xor a
-	ld [sMysteryGiftUnusedFlag], a
-	jp CloseSRAM
 
 SeafoamCaveB2FFeraligatrScript:
 	faceplayer
