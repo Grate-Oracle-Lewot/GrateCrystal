@@ -102,10 +102,10 @@ MainMenu_GetWhichMenu:
 	ret
 
 .next1
-	ld a, BANK(sMysteryGiftUnusedFlag)
+	ld a, BANK(sNumDailyMysteryGiftPartnerIDs)
 	call OpenSRAM
-	ld a, [sMysteryGiftUnusedFlag]
-	and a
+	ld a, [sNumDailyMysteryGiftPartnerIDs]
+	cp -1 ; locked?
 	call CloseSRAM
 	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
