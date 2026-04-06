@@ -105,7 +105,7 @@ MainMenu_GetWhichMenu:
 	ld a, BANK(sMysteryGiftUnusedFlag)
 	call OpenSRAM
 	ld a, [sMysteryGiftUnusedFlag]
-	cp -1 ; locked?
+	and a
 	call CloseSRAM
 	jr nz, .next2
 	ld a, MAINMENU_CONTINUE
