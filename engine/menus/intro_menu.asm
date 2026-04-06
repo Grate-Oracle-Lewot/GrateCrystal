@@ -195,7 +195,7 @@ ResetWRAMCommon:
 	ld hl, wNumPCItems
 	call NewGame_InitList
 
-	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked) aka BANK(sMysteryGiftUnusedFlag)
+	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
 	call OpenSRAM
 	ld hl, sMysteryGiftItem
 	xor a
@@ -203,7 +203,6 @@ ResetWRAMCommon:
 	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
 	dec a ; -1
 	ld [hl], a
-	ld [sMysteryGiftUnusedFlag], a ; reset New Game +
 	call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
