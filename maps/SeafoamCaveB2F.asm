@@ -156,7 +156,8 @@ SeafoamCaveB2FLewotScript:
 .NGPasm:
 ; If [sMysteryGiftUnlocked] was -1, this sets both [sMysteryGiftUnlocked] and [sMysteryGiftItem] to 0.
 ; In Grate Crystal this unlocks New Game + instead of Mystery Gift.
-	call GetMysteryGiftBank
+	ld a, BANK(sMysteryGiftUnlocked) ; aka BANK(sMysteryGiftItem)
+	call OpenSRAM
 	ld hl, sMysteryGiftUnlocked
 	ld a, [hl]
 	inc a
