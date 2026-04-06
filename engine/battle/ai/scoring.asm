@@ -1861,12 +1861,7 @@ AI_Smart_Poison:
 
 AI_Smart_Fissure:
 ; Dismiss this move if the player is a floatmon.
-	push hl
-	ld a, [wBattleMonSpecies]
-	ld hl, FloatMons
-	call IsInByteArray
-	pop hl
-	jr c, AIDismissMove
+	call AI_Smart_Float
 	; fallthrough
 
 AI_Smart_OHKO:
@@ -1907,7 +1902,7 @@ AI_None: ; lol
 
 AI_Smart_Float:
 ; Dismiss this move if the player is a floatmon.
-; Used by AI_Smart_Dig and AI_Smart_Earthquake.
+; Used by AI_Smart_Fissure, AI_Smart_Dig, and AI_Smart_Earthquake.
 	push hl
 	ld a, [wBattleMonSpecies]
 	ld hl, FloatMons
