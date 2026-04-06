@@ -95,6 +95,7 @@ MainMenuItems:
 	db -1
 
 MainMenu_GetWhichMenu:
+	nop
 	ld a, [wSaveFileExists]
 	and a
 	jr nz, .next1
