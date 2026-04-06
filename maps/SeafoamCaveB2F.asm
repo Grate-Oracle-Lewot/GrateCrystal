@@ -135,6 +135,7 @@ SeafoamCaveB2FLewotScript:
 .SkipPhone:
 	closetext
 .End:
+	callasm .NGPasm
 	special HealParty
 	refreshscreen
 	credits
@@ -151,6 +152,20 @@ SeafoamCaveB2FLewotScript:
 .done
 	ld [wScriptVar], a
 	ret
+
+.NGPasm:
+; If [sMysteryGiftUnlocked] was -1, this sets both [sMysteryGiftUnlocked] and [sMysteryGiftItem] to 0.
+; In Grate Crystal this unlocks New Game + instead of Mystery Gift.
+	call GetMysteryGiftBank
+	ld hl, sMysteryGiftUnlocked
+	ld a, [hl]
+	inc a
+	jr nz, .ok
+	ld [hld], a
+	assert sMysteryGiftUnlocked - 1 == sMysteryGiftItem
+	ld [hl], a
+.ok
+	jp CloseSRAM
 
 SeafoamCaveB2FFeraligatrScript:
 	faceplayer
