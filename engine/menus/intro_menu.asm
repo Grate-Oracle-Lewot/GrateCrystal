@@ -686,7 +686,7 @@ OakSpeech:
 AbbreviatedSpeech:
 	call OakSpeechStart
 
-	ld de, MUSIC_PRINTER
+	ld de, MUSIC_MAIN_MENU
 	call PlayMusic
 
 	call OakSpeechMid
