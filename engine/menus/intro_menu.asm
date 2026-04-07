@@ -222,16 +222,6 @@ ResetWRAMCommon:
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
 
-	ld [wMoney], a
-	ld [wMoney + 1], a
-	ld [wMoney + 2], a
-	ld [wMomsMoney], a
-	ld [wMomsMoney + 1], a
-	ld [wMomsMoney + 2], a
-	ld [wMomItemTriggerBalance], a
-	ld [wMomItemTriggerBalance + 1], a
-	ld [wMomItemTriggerBalance + 2], a
-
 	ld [wCoins], a
 	ld [wCoins + 1], a
 
@@ -246,9 +236,7 @@ ResetWRAMCommon:
 	ld [wRoamMon2MapNumber], a
 	ld [wRoamMon3MapNumber], a
 
-if START_MONEY >= $10000
 	ld a, HIGH(START_MONEY >> 8)
-endc
 	ld [wMoney], a
 	ld a, HIGH(START_MONEY) ; mid
 	ld [wMoney + 1], a
