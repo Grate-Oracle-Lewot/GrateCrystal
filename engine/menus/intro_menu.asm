@@ -38,8 +38,6 @@ NewGamePlus::
 	call GetSGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra
-	ld de, MUSIC_MAIN_MENU
-	call PlayMusic
 	ld hl, NewGamePlusText
 	call PrintText
 	ld hl, .NoYesMenuHeader
@@ -52,6 +50,7 @@ NewGamePlus::
 	farcall TryLoadSaveFile
 	jr c, .NoSave
 	call NewGamePlusWRAM
+	call NewGame_ClearTilemapEtc
 	farcall InitGender
 	call InitializeWorld_NoShrink
 	jr NewGameMerge
