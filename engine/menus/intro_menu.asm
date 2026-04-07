@@ -52,6 +52,7 @@ NewGamePlus::
 	call NewGamePlusWRAM
 	call NewGame_ClearTilemapEtc
 	farcall InitGender
+	call AbbreviatedSpeech
 	call InitializeWorld_NoShrink
 	ld c, 42
 	call DelayFrames
@@ -630,26 +631,12 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
-	farcall InitClock
-	call RotateFourPalettesLeft
-	call ClearTilemap
-
-	call StartPCItem
+	call OakSpeechStart
 
 	ld de, MUSIC_AZALEA_TOWN
 	call PlayMusic
 
-	call RotateFourPalettesRight
-	call RotateThreePalettesRight
-	xor a
-	ld [wCurPartySpecies], a
-	ld a, GRATE_ORACLE
-	ld [wTrainerClass], a
-	call Intro_PrepTrainerPic
-
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call OakSpeechMid
 
 	ld hl, OakText1
 	call PrintText
@@ -708,6 +695,19 @@ OakSpeech:
 	ld hl, OakText7
 	jp PrintText
 
+AbbreviatedSpeech:
+	call OakSpeechStart
+
+	ld de, MUSIC_PRINTER
+	call PlayMusic
+
+	call OakSpeechMid
+
+	ld hl, OakTextNGP
+	call PrintText
+	call RotateThreePalettesRight
+	jp ClearTilemap
+
 OakText1:
 	text_far _OakText1
 	text_end
@@ -741,6 +741,10 @@ OakText7:
 	text_far _OakText7
 	text_end
 
+OakTextNGP:
+	text_far _OakTextNGP
+	text_end
+
 NewGamePlusText:
 	text_far _NewGamePlusText
 	text_end
@@ -748,6 +752,12 @@ NewGamePlusText:
 NGPErrorText:
 	text_far _NGPErrorText
 	text_end
+
+OakSpeechStart:
+	farcall InitClock
+	call RotateFourPalettesLeft
+	call ClearTilemap
+	; fallthrough
 
 StartPCItem:
 	ld a, REPEL
@@ -860,6 +870,19 @@ ShrinkPlayer:
 
 	call RotateThreePalettesRight
 	jp ClearTilemap
+
+OakSpeechMid:
+	call RotateFourPalettesRight
+	call RotateThreePalettesRight
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, GRATE_ORACLE
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	; fallthrough
 
 Intro_RotatePalettesLeftFrontpic:
 	ld hl, IntroFadePalettes
