@@ -147,8 +147,8 @@ NewGamePlusWRAM:
 	xor a
 	call ByteFill
 
-	ld hl, wLinkData
-	ld bc, wOptions - wLinkData
+	ld hl, wBGMapBuffer
+	ld bc, wOptions - wBGMapBuffer
 	xor a
 	call ByteFill
 
