@@ -1480,3 +1480,14 @@ _NuzlockeCantCatchText::
 	text "Catching is now"
 	line "forbidden here!"
 	prompt
+
+_OakTextNGP::
+	text "You've done this"
+	line "before, so I'll"
+
+	para "skip the whole"
+	line "spiel."
+
+	para "Once more into the"
+	line "breach!"
+	prompt
