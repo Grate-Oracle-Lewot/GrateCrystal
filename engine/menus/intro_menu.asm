@@ -53,6 +53,9 @@ NewGamePlus::
 	call NewGame_ClearTilemapEtc
 	farcall InitGender
 	call InitializeWorld_NoShrink
+	ld c, 42
+	call DelayFrames
+	call ClearTilemap
 	jr NewGameMerge
 
 .NoSave:
