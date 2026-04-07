@@ -224,6 +224,9 @@ ResetWRAMCommon:
 	ld [wMoney], a
 	ld [wMoney + 1], a
 	ld [wMoney + 2], a
+	ld [wMomsMoney], a
+	ld [wMomsMoney + 1], a
+	ld [wMomsMoney + 2], a
 	ld [wMomItemTriggerBalance], a
 	ld [wMomItemTriggerBalance + 1], a
 	ld [wMomItemTriggerBalance + 2], a
