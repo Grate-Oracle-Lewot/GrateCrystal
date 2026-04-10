@@ -302,27 +302,16 @@ Serve1bppRequest::
 
 .next
 
-rept 3
+rept 4
 	pop de
-	ld [hl], e
-	inc l
-	ld [hl], e
-	inc l
-	ld [hl], d
-	inc l
-	ld [hl], d
-	inc l
+	ld a, e
+	ld [hli], a
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+	ld [hli], a
 endr
-	pop de
-	ld [hl], e
-	inc l
-	ld [hl], e
-	inc l
-	ld [hl], d
-	inc l
-	ld [hl], d
 
-	inc hl
 	dec b
 	jr nz, .next
 
@@ -366,25 +355,16 @@ _Serve2bppRequest::
 
 	ld [hSPBuffer], sp
 
-; Source
-	ld hl, wRequested2bppSource
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld sp, hl
-
-; Destination
-	ld hl, wRequested2bppDest
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-; # tiles to copy
-	ld a, [wRequested2bppSize]
-	ld b, a
-
+	ld hl, wRequested2bppSize
+	ld b, [hl] ; get wRequested2bppSize
 	xor a
-	ld [wRequested2bppSize], a
+	ld [hli], a
+	ld sp, hl
+	pop hl ; get wRequested2bppSource
+	pop de ; get wRequested2bppDest
+	ld sp, hl
+	ld h, d
+	ld l, e
 
 .next
 
@@ -404,17 +384,12 @@ endr
 	dec b
 	jr nz, .next
 
-	ld a, l
-	ld [wRequested2bppDest], a
-	ld a, h
-	ld [wRequested2bppDest + 1], a
-
 	ld [wRequested2bppSource], sp
+	ld sp, hl
+	ld [wRequested2bppDest], sp
 
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 	ret
 
