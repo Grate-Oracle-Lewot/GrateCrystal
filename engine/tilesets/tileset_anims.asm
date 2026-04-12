@@ -279,14 +279,14 @@ endr
 ScrollTileDown:
 	ld h, d
 	ld l, e
-	ld de, TILE_SIZE - 2
+	ld de, LEN_2BPP_TILE - 2
 	push hl
 	add hl, de
 	ld d, [hl]
 	inc hl
 	ld e, [hl]
 	pop hl
-	ld a, TILE_SIZE / 4
+	ld a, LEN_2BPP_TILE / 4
 .loop
 	ld b, [hl]
 	ld [hl], d
