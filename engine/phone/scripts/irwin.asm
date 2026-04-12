@@ -5,7 +5,7 @@ IrwinPhoneCalleeScript:
 	farscall PhoneScript_AnswerPhone_Male
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue IrwinRockets
-	farscall PhoneScript_Random3
+	random 3
 	ifequal 0, .NoBattle
 	ifequal 1, .NoBattle
 	iftrue IrwinSundayNight
@@ -24,7 +24,7 @@ IrwinPhoneCallerScript:
 	iftrue .NoBattle
 	checkflag ENGINE_IRWIN_SUNDAY_NIGHT
 	iftrue .NoBattle
-	farscall PhoneScript_Random3
+	random 3
 	ifequal 0, IrwinWantsBattle
 	ifequal 1, IrwinWantsBattle
 
