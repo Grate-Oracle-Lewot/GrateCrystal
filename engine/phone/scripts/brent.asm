@@ -20,13 +20,13 @@ BrentPhoneCalleeScript:
 BrentPhoneCallerScript:
 	gettrainername STRING_BUFFER_3, POKEMANIAC, BRENT1
 	farscall PhoneScript_GreetPhone_Male
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, BrentBillTrivia
 	checkflag ENGINE_BRENT_READY_FOR_REMATCH
 	iftrue .Generic
 	checkflag ENGINE_BRENT_MONDAY_NIGHT
 	iftrue .Generic
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, BrentWantsBattle
 
 .Generic:
