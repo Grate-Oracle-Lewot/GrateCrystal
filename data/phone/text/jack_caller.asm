@@ -107,16 +107,6 @@ JackFlyTriviaText:
 	cont "stronger."
 	done
 
-JackSunSpeedTriviaText:
-	text "Did you know…?"
-
-	para "If the sunlight is"
-	line "harsh, grass-type"
-
-	para "#MON act faster"
-	line "than usual."
-	done
-
 JackDigTriviaText:
 	text "Did you know…?"
 
@@ -146,6 +136,16 @@ JackHailTriviaText:
 
 	para "HAIL, and their"
 	line "DEFENSE goes up."
+	done
+
+JackSunSpeedTriviaText:
+	text "Did you know…?"
+
+	para "If the sunlight is"
+	line "harsh, grass-type"
+
+	para "#MON act faster"
+	line "than usual."
 	done
 
 JackSunnyDayTriviaText:
