@@ -24,13 +24,13 @@ ArniePhoneCallerScript:
 	iftrue .Special
 	checkflag ENGINE_ARNIE_TUESDAY_MORNING
 	iftrue .Special
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, ArnieWantsBattle
 
 .Special:
-	farscall PhoneScript_Random5
+	random 5
 	ifequal 0, ArnieBugContestSpeech
-	farscall PhoneScript_Random3
+	random 3
 	ifequal 0, ArnieFoundRare
 	farsjump Phone_GenericCall_Male
 
