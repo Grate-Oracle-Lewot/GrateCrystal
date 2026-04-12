@@ -26,11 +26,11 @@ AnthonyPhoneCallerScript:
 	iftrue .TriesSpecial
 	checkflag ENGINE_ANTHONY_FRIDAY_NIGHT
 	iftrue .TriesSpecial
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, AnthonyWantsBattle
 
 .TriesSpecial:
-	farscall PhoneScript_Random5
+	random 5
 	ifequal 0, AnthonyUnionCaveSpeech
 	farsjump Phone_GenericCall_Male
 
