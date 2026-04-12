@@ -24,7 +24,7 @@ RalphPhoneCallerScript:
 	iftrue .Generic
 	checkflag ENGINE_RALPH_WEDNESDAY_MORNING
 	iftrue .Generic
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, Ralph_FightMe
 .Generic:
 	farsjump Phone_GenericCall_Male
