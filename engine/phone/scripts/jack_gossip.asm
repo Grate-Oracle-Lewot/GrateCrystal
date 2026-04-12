@@ -1,21 +1,19 @@
 JackTriviaScript:
-	random 13
-	ifequal  0, .Rollout
+	random 11
+	ifequal  0, .DefenseCurl
 	ifequal  1, .Solarbeam
 	ifequal  2, .Thunder
 	ifequal  3, .Stomp
-	ifequal  4, .Gust
-	ifequal  5, .Twister
-	ifequal  6, .FairyWind
-	ifequal  7, .Earthquake
-	ifequal  8, .Magnitude
-	ifequal  9, .Sandstorm
-	ifequal 10, .Hail
-	ifequal 11, .SunnyDay
-	ifequal 12, .RainDance
+	ifequal  4, .Fly
+	ifequal  5, .Dig
+	ifequal  6, .Sandstorm
+	ifequal  7, .Hail
+	ifequal  8, .SunSpeed
+	ifequal  9, .SunnyDay
+	ifequal 10, .RainDance
 
-.Rollout:
-	farwritetext JackRolloutTriviaText
+.DefenseCurl:
+	farwritetext JackDefenseCurlTriviaText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
@@ -34,28 +32,13 @@ JackTriviaScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
-.Gust:
-	farwritetext JackGustTriviaText
+.Fly:
+	farwritetext JackFlyTriviaText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
-.Twister:
-	farwritetext JackTwisterTriviaText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
-.FairyWind:
-	farwritetext JackFairyWindTriviaText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
-.Earthquake:
-	farwritetext JackEarthquakeTriviaText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
-.Magnitude:
-	farwritetext JackMagnitudeTriviaText
+.Dig:
+	farwritetext JackDigTriviaText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
@@ -66,6 +49,11 @@ JackTriviaScript:
 
 .Hail:
 	farwritetext JackHailTriviaText
+	promptbutton
+	sjump PhoneScript_HangUpText_Male
+
+.SunSpeed:
+	farwritetext JackSunSpeedTriviaText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
