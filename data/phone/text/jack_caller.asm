@@ -57,15 +57,7 @@ JackHangUpText:
 	text "See you later!"
 	done
 
-JackThunderTriviaText:
-	text "Did you know?"
-
-	para "When it's raining,"
-	line "THUNDER is sure to"
-	cont "strike."
-	done
-
-JackRolloutTriviaText:
+JackDefenseCurlTriviaText:
 	text "Did you know…?"
 
 	para "Using DEFENSE CURL"
@@ -86,6 +78,14 @@ JackSolarbeamTriviaText:
 	line "charged up."
 	done
 
+JackThunderTriviaText:
+	text "Did you know?"
+
+	para "When it's raining,"
+	line "THUNDER is sure to"
+	cont "strike."
+	done
+
 JackStompTriviaText:
 	text "Did you know…?"
 
@@ -96,17 +96,18 @@ JackStompTriviaText:
 	line "more powerful."
 	done
 
-JackGustTriviaText:
+JackFlyTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
 	line "uses FLY, your"
 
-	para "GUST and TWISTER"
-	line "become stronger."
+	para "GUST, TWISTER, and"
+	line "FAIRY WIND become"
+	cont "stronger."
 	done
 
-JackTwisterTriviaText:
+JackSunSpeedTriviaText:
 	text "Did you know…?"
 
 	para "If the sunlight is"
@@ -116,7 +117,7 @@ JackTwisterTriviaText:
 	line "than usual."
 	done
 
-JackEarthquakeTriviaText:
+JackDigTriviaText:
 	text "Did you know…?"
 
 	para "If your opponent"
@@ -127,16 +128,6 @@ JackEarthquakeTriviaText:
 	cont "harder."
 	done
 
-JackMagnitudeTriviaText:
-	text "Did you know…?"
-
-	para "Ice type #MON"
-	line "won't be hurt by"
-
-	para "HAIL, and their"
-	line "DEFENSE goes up."
-	done
-
 JackSandstormTriviaText:
 	text "Did you know…?"
 
@@ -145,6 +136,16 @@ JackSandstormTriviaText:
 
 	para "can't be hurt by"
 	line "SANDSTORM."
+	done
+
+JackHailTriviaText:
+	text "Did you know…?"
+
+	para "Ice type #MON"
+	line "won't be hurt by"
+
+	para "HAIL, and their"
+	line "DEFENSE goes up."
 	done
 
 JackSunnyDayTriviaText:
