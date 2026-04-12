@@ -555,12 +555,16 @@ AnimateKantoFlowerTile:
 	ld a, [wTileAnimationTimer]
 	and %10
 
-; hl = .FlowerTileFrames + a * 16
-	swap a
-	ld e, a
-	ld d, 0
-	ld hl, .KantoFlowerTileFrames
-	add hl, de
+; hl = .KantoFlowerTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %10')
+	add a
+	add a
+	add a
+	add LOW(.KantoFlowerTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.KantoFlowerTileFrames)
+	ld h, a
 
 ; Write the tile graphic from hl (now sp) to tile $03 (now hl)
 	ld sp, hl
