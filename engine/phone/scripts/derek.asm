@@ -13,7 +13,7 @@ DerekPhoneCalleeScript:
 	iftrue DerekSaturdayMorning
 
 .NotSaturday:
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, .NoContest
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue .NoContest
@@ -40,11 +40,11 @@ DerekPhoneCallerScript:
 	iftrue .NoBattle
 	checkflag ENGINE_DEREK_SATURDAY_MORNING
 	iftrue .NoBattle
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, DerekWantsBattle
 
 .NoBattle:
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, .NoContest
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue .NoContest
@@ -54,7 +54,7 @@ DerekPhoneCallerScript:
 	ifequal SATURDAY, DerekContestToday
 
 .NoContest:
-	farscall PhoneScript_Random4
+	random 4
 	ifequal 0, .Nugget
 	farsjump Phone_GenericCall_Male
 
