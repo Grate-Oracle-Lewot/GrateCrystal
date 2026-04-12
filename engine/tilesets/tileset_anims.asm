@@ -37,14 +37,13 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetKantoAnim:
 TilesetKantoExtraAnim:
-TilesetJohtoModernAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateKantoFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -210,6 +209,19 @@ TilesetJohtoDesertAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetJohtoModernAnim:
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 DoneTileAnimation:
 ; Reset the animation command loop.
 	xor a
@@ -264,43 +276,17 @@ endr
 	jr nz, .loop
 	ret
 
-ScrollTileUp:
-	ld h, d
-	ld l, e
-	ld d, [hl]
-	inc hl
-	ld e, [hl]
-	ld bc, LEN_2BPP_TILE - 2
-	add hl, bc
-	ld a, LEN_2BPP_TILE / 4
-.loop
-	ld c, [hl]
-	ld [hl], e
-	dec hl
-	ld b, [hl]
-	ld [hl], d
-	dec hl
-	ld e, [hl]
-	ld [hl], c
-	dec hl
-	ld d, [hl]
-	ld [hl], b
-	dec hl
-	dec a
-	jr nz, .loop
-	ret
-
 ScrollTileDown:
 	ld h, d
 	ld l, e
-	ld de, LEN_2BPP_TILE - 2
+	ld de, TILE_SIZE - 2
 	push hl
 	add hl, de
 	ld d, [hl]
 	inc hl
 	ld e, [hl]
 	pop hl
-	ld a, LEN_2BPP_TILE / 4
+	ld a, TILE_SIZE / 4
 .loop
 	ld b, [hl]
 	ld [hl], d
@@ -407,34 +393,13 @@ ForestTreeLeftAnimation:
 	jr .got_frames
 
 .do_animation
-; A cycle of 2 frames, updating every tick
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-
-; hl = ForestTreeLeftFrames + a * 8
-; (a was pre-multiplied by 2 from GetForestTreeFrame)
-	add a
-	add a
-	add a
-	add LOW(ForestTreeLeftFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
-	ld h, a
+	call ForestTreeOptimization1
 
 .got_frames
 ; Write the tile graphic from hl (now sp) to tile $0c (now hl)
 	ld sp, hl
 	ld hl, vTiles2 tile $0c
 	jp WriteTile
-
-ForestTreeLeftFrames:
-	INCBIN "gfx/tilesets/forest-tree/1.2bpp"
-	INCBIN "gfx/tilesets/forest-tree/2.2bpp"
-
-ForestTreeRightFrames:
-	INCBIN "gfx/tilesets/forest-tree/3.2bpp"
-	INCBIN "gfx/tilesets/forest-tree/4.2bpp"
 
 ForestTreeRightAnimation:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -450,20 +415,7 @@ ForestTreeRightAnimation:
 	jr .got_frames
 
 .do_animation
-; A cycle of 2 frames, updating every tick
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-
-; hl = ForestTreeRightFrames + a * 8
-; (a was pre-multiplied by 2 from GetForestTreeFrame)
-	add a
-	add a
-	add a
-	add LOW(ForestTreeLeftFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
-	ld h, a
+	call ForestTreeOptimization1
 	push bc
 	ld bc, ForestTreeRightFrames - ForestTreeLeftFrames
 	add hl, bc
@@ -489,23 +441,7 @@ ForestTreeLeftAnimation2:
 	jr .got_frames
 
 .do_animation
-; A cycle of 2 frames, updating every tick
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-
-; Offset by 1 frame from ForestTreeLeftAnimation
-	xor %10
-
-; hl = ForestTreeLeftFrames + a * 8
-; (a was pre-multiplied by 2 from GetForestTreeFrame)
-	add a
-	add a
-	add a
-	add LOW(ForestTreeLeftFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
-	ld h, a
+	call ForestTreeOptimization2
 
 .got_frames
 ; Write the tile graphic from hl (now sp) to tile $0c (now hl)
@@ -527,23 +463,7 @@ ForestTreeRightAnimation2:
 	jr .got_frames
 
 .do_animation
-; A cycle of 2 frames, updating every tick
-	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
-
-; Offset by 1 frame from ForestTreeRightAnimation
-	xor %10
-
-; hl = ForestTreeRightFrames + a * 8
-; (a was pre-multiplied by 2 from GetForestTreeFrame)
-	add a
-	add a
-	add a
-	add LOW(ForestTreeLeftFrames)
-	ld l, a
-	ld a, 0
-	adc HIGH(ForestTreeLeftFrames)
-	ld h, a
+	call ForestTreeOptimization2
 	push bc
 	ld bc, ForestTreeRightFrames - ForestTreeLeftFrames
 	add hl, bc
@@ -555,10 +475,42 @@ ForestTreeRightAnimation2:
 	ld hl, vTiles2 tile $0f
 	jp WriteTile
 
-GetForestTreeFrame:
-; Return 0 if a is even, or 2 if odd.
+ForestTreeLeftFrames:
+	INCBIN "gfx/tilesets/forest-tree/1.2bpp"
+	INCBIN "gfx/tilesets/forest-tree/2.2bpp"
+
+ForestTreeRightFrames:
+	INCBIN "gfx/tilesets/forest-tree/3.2bpp"
+	INCBIN "gfx/tilesets/forest-tree/4.2bpp"
+
+ForestTreeOptimization2:
+; A cycle of 2 frames, updating every tick
+	ld a, [wTileAnimationTimer]
 	and 1
 	add a
+
+; Offset by 1 frame from ForestTreeLeftAnimation or ForestTreeRightAnimation
+	xor %10
+	jr ForestTreeOptimization0
+
+ForestTreeOptimization1:
+; A cycle of 2 frames, updating every tick
+	ld a, [wTileAnimationTimer]
+	and 1
+	add a
+	; fallthrough
+
+ForestTreeOptimization0:
+; hl = ForestTreeLeftFrames or ForestTreeRightFrames + a * 8
+; (a was pre-multiplied by 2 from GetForestTreeFrame)
+	add a
+	add a
+	add a
+	add LOW(ForestTreeLeftFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(ForestTreeLeftFrames)
+	ld h, a
 	ret
 
 AnimateFlowerTile:
@@ -592,6 +544,32 @@ AnimateFlowerTile:
 	INCBIN "gfx/tilesets/flower/flower2.2bpp"
 	INCBIN "gfx/tilesets/flower/flower1.2bpp"
 	INCBIN "gfx/tilesets/flower/flower3.2bpp"
+
+AnimateKantoFlowerTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 2 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %10
+
+; hl = .FlowerTileFrames + a * 16
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, .KantoFlowerTileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $03 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $03
+	jp WriteTile
+
+.KantoFlowerTileFrames:
+	INCBIN "gfx/tilesets/flower/flower_jp0.2bpp"
+	INCBIN "gfx/tilesets/flower/flower_jp1.2bpp"
 
 AnimateLavaBubbleTile1:
 ; Save the stack pointer in bc for WriteTile to restore
