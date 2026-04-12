@@ -24,11 +24,11 @@ GavenPhoneCallerScript:
 	iftrue .WaitingForBattle
 	checkflag ENGINE_GAVEN_THURSDAY_MORNING
 	iftrue .WaitingForBattle
-	farscall PhoneScript_Random2
+	random 2
 	ifequal 0, GavenWantsRematch
 
 .WaitingForBattle:
-	farscall PhoneScript_Random3
+	random 3
 	ifequal 0, GavenFoundRare
 	farsjump Phone_GenericCall_Male
 
