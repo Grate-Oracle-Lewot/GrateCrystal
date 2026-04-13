@@ -596,7 +596,7 @@ OaksLab2FBugsyIntroText2:
 	line "against water, and"
 
 	para "grass good against"
-	line "fire, that kind of"
+	line "fire", $9d, " that kind of"
 	cont "thing."
 
 	para "It really twists"
