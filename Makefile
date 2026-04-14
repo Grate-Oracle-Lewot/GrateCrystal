@@ -12,6 +12,7 @@ roms := \
 	GrateCrystal_DoduoMagnemiteDiglettStarters.gbc \
 	GrateCrystal_TaurosMiltankGirafarigStarters.gbc \
 	GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.gbc \
+	GrateCrystal_PorygonLaprasDunsparceStarters.gbc \
 	GrateCrystal_SlowpokeSlugmaStarters.gbc \
 	GrateCrystal_ShuckleSmeargleDelibirdStarters.gbc \
 	GrateCrystal_NewStarters1.gbc \
@@ -47,6 +48,7 @@ patches := \
 	GrateCrystal_DoduoMagnemiteDiglettStarters.patch \
 	GrateCrystal_TaurosMiltankGirafarigStarters.patch \
 	GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.patch \
+	GrateCrystal_PorygonLaprasDunsparceStarters.patch \
 	GrateCrystal_SlowpokeSlugmaStarters.patch \
 	GrateCrystal_ShuckleSmeargleDelibirdStarters.patch \
 	GrateCrystal_NewStarters1.patch \
@@ -101,6 +103,7 @@ GrateCrystal_NidoranStarters_obj                    := $(rom_obj:.o=nido.o)
 GrateCrystal_DoduoMagnemiteDiglettStarters_obj      := $(rom_obj:.o=trio.o)
 GrateCrystal_TaurosMiltankGirafarigStarters_obj     := $(rom_obj:.o=cattle.o)
 GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj := $(rom_obj:.o=far.o)
+GrateCrystal_PorygonLaprasDunsparceStarters_obj     := $(rom_obj:.o=lap.o)
 GrateCrystal_SlowpokeSlugmaStarters_obj             := $(rom_obj:.o=slow.o)
 GrateCrystal_ShuckleSmeargleDelibirdStarters_obj    := $(rom_obj:.o=shucks.o)
 GrateCrystal_NewStarters1_obj                       := $(rom_obj:.o=new1.o)
@@ -143,12 +146,12 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland clean tidy tools
+.PHONY: all grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far lap slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland
+all: grate kanto evolve kantevo letsgo mice six jinx hit nido trio cattle far lap slow shucks new1 new2 fossil evossil pseudo pseudevo bird beast mew dragon onion miss no turbid startur nohm noexp little metro bland
 grate:    GrateCrystal.gbc
 kanto:    GrateCrystal_KantoStarters.gbc
 evolve:   GrateCrystal_EvolvedJohtoStarters.gbc
@@ -162,6 +165,7 @@ nido:     GrateCrystal_NidoranStarters.gbc
 trio:     GrateCrystal_DoduoMagnemiteDiglettStarters.gbc
 cattle:   GrateCrystal_TaurosMiltankGirafarigStarters.gbc
 far:      GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.gbc
+lap:      GrateCrystal_PorygonLaprasDunsparceStarters.gbc
 slow:     GrateCrystal_SlowpokeSlugmaStarters.gbc
 shucks:   GrateCrystal_ShuckleSmeargleDelibirdStarters.gbc
 new1:     GrateCrystal_NewStarters1.gbc
@@ -221,7 +225,8 @@ tidy:
 	      $(GrateCrystal_NidoranStarters_obj) \
 	      $(GrateCrystal_DoduoMagnemiteDiglettStarters_obj) \
 	      $(GrateCrystal_TaurosMiltankGirafarigStarters_obj) \
-	      $(GrateCrystal_SnorlaxMisdreavusFarfetchd_obj) \
+	      $(GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj) \
+	      $(GrateCrystal_PorygonLaprasDunsparceStarters_obj) \
 	      $(GrateCrystal_SlowpokeSlugmaStarters_obj) \
 	      $(GrateCrystal_ShuckleSmeargleDelibirdStarters_obj) \
 	      $(GrateCrystal_NewStarters1_obj) \
@@ -276,6 +281,8 @@ cattle:
 	tools/free_space.awk BANK=all GrateCrystal_TaurosMiltankGirafarigStarters.map
 far:
 	tools/free_space.awk BANK=all GrateCrystal_SnorlaxMisdreavusFarfetchdStarters.map
+lap:
+	tools/free_space.awk BANK=all GrateCrystal_PorygonLaprasDunsparceStarters.map
 slow:
 	tools/free_space.awk BANK=all GrateCrystal_SlowpokeSlugmaStarters.map
 shucks:
@@ -337,6 +344,7 @@ $(GrateCrystal_NidoranStarters_obj):                    RGBASMFLAGS += -D _NIDOR
 $(GrateCrystal_DoduoMagnemiteDiglettStarters_obj):      RGBASMFLAGS += -D _TRIO_STARTERS
 $(GrateCrystal_TaurosMiltankGirafarigStarters_obj):     RGBASMFLAGS += -D _CATTLE_STARTERS
 $(GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj): RGBASMFLAGS += -D _SNORLAX_MISDREAVUS_FARFETCHD
+$(GrateCrystal_PorygonLaprasDunsparceStarters_obj):     RGBASMFLAGS += -D _PORYGON_LAPRAS_DUNSPARCE
 $(GrateCrystal_SlowpokeSlugmaStarters_obj):             RGBASMFLAGS += -D _SLOW_STARTERS
 $(GrateCrystal_ShuckleSmeargleDelibirdStarters_obj):    RGBASMFLAGS += -D _SHUCKLE_SMEARGLE_DELIBIRD
 $(GrateCrystal_NewStarters1_obj):                       RGBASMFLAGS += -D _NEWCOMERS1
@@ -394,6 +402,7 @@ $(foreach obj, $(GrateCrystal_NidoranStarters_obj), $(eval $(call DEP,$(obj),$(o
 $(foreach obj, $(GrateCrystal_DoduoMagnemiteDiglettStarters_obj), $(eval $(call DEP,$(obj),$(obj:trio.o=.asm))))
 $(foreach obj, $(GrateCrystal_TaurosMiltankGirafarigStarters_obj), $(eval $(call DEP,$(obj),$(obj:cattle.o=.asm))))
 $(foreach obj, $(GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_obj), $(eval $(call DEP,$(obj),$(obj:far.o=.asm))))
+$(foreach obj, $(GrateCrystal_PorygonLaprasDunsparceStarters_obj), $(eval $(call DEP,$(obj),$(obj:lap.o=.asm))))
 $(foreach obj, $(GrateCrystal_SlowpokeSlugmaStarters_obj), $(eval $(call DEP,$(obj),$(obj:slow.o=.asm))))
 $(foreach obj, $(GrateCrystal_ShuckleSmeargleDelibirdStarters_obj), $(eval $(call DEP,$(obj),$(obj:shucks.o=.asm))))
 $(foreach obj, $(GrateCrystal_NewStarters1_obj), $(eval $(call DEP,$(obj),$(obj:new1.o=.asm))))
@@ -437,6 +446,7 @@ GrateCrystal_NidoranStarters_opt                     = -Cjv -t PM_CRYSTAL -i BYT
 GrateCrystal_DoduoMagnemiteDiglettStarters_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_TaurosMiltankGirafarigStarters_opt      = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_opt  = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+GrateCrystal_PorygonLaprasDunsparceStarters_opt      = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_SlowpokeSlugmaStarters_opt              = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_ShuckleSmeargleDelibirdStarters_opt     = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 GrateCrystal_NewStarters1_opt                        = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
@@ -473,6 +483,7 @@ GrateCrystal_NidoranStarters_base                    = us
 GrateCrystal_DoduoMagnemiteDiglettStarters_base      = us
 GrateCrystal_TaurosMiltankGirafarigStarters_base     = us
 GrateCrystal_SnorlaxMisdreavusFarfetchdStarters_base = us
+GrateCrystal_PorygonLaprasDunsparceStarters_base     = us
 GrateCrystal_SlowpokeSlugmaStarters_base             = us
 GrateCrystal_ShuckleSmeargleDelibirdStarters_base    = us
 GrateCrystal_NewStarters1_base                       = us
