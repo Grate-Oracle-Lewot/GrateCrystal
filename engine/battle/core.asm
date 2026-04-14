@@ -4532,7 +4532,20 @@ HandleHPHealingItem:
 	call _GetOpponentItem
 	ld a, b
 	cp HELD_BERRY
+	jr z, .proceed
+	cp HELD_BERRY_JUICE
 	ret nz
+
+; Berry Juice heals 1/4 HP
+	push bc
+	call SwitchTurnCore
+	call GetQuarterMaxHP
+	call SwitchTurnCore
+	ld a, c
+	pop bc
+	ld c, a
+
+.proceed
 	ld de, wEnemyMonHP + 1
 	ld hl, wEnemyMonMaxHP
 	ldh a, [hBattleTurn]
