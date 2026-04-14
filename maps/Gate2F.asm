@@ -259,6 +259,12 @@ Gate2FLassText:
 
 	para "turn it into"
 	line "BERRY JUICE."
+
+	para "BERRY JUICE heals"
+	line "1/4 the user's HP"
+
+	para "instead of a spec-"
+	line "ific number."
 	done
 
 Gate2FFisherText:
