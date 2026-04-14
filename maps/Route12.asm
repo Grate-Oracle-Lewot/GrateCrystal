@@ -175,8 +175,8 @@ FishingSpotSignText:
 	para "while it'll turn"
 	line "into BERRY JUICE."
 
-	para "BERRY JUICE heals"
-	line "a lot more HP!"
+	para "No other #MON"
+	line "has this ability!"
 	done
 
 Route12_MapEvents:
