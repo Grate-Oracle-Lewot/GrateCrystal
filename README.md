@@ -76,7 +76,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Ice types get a 50% Defense boost in Hail
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
   - Fighting types don't lose Attack while Burned
-  - We can count Shuckle's ability to make Berry Juice, which is now a much better item
+  - We can count Shuckle's ability to make Berry Juice
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
   - Spinarak and Ariados don't make contact when using Bind or Wrap (yes, I bothered to code this)
   - Ditto won't activate held X items until after Transforming (Transform copies stat levels and thus would overwrite X item boosts)
@@ -255,6 +255,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
 - Lucky Punch works for Blissey as well as Chansey, and it and the Stick/Leek can now stack with other crit rate boosts instead of locking in a flat 2-stage boost; Dire Hit is now separate from Focus Energy, allowing both to stack (for the chance to crit at each boost stage, see https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/critical_hit_chances.asm)
 - Sacred Ash can be used even if no party Pokémon are currently fainted
+- Gold Berry now heals 42 HP instead of 30, and Berry Juice now heals 1/4 of max HP and activates when held like Berries
 - Most Berries and some other items renamed for flavor (but not to the Gen III+ Berry names)
 - X Sp. Defend, X Evade, Dusk Ball, and Timer Ball (Timer Ball can tick up to x10 catch chance)
 - 60 TMs and 8 HMs
