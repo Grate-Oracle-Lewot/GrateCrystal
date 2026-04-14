@@ -497,6 +497,8 @@ make cattle - Tauros and Miltank, who will face each other, and Girafarig, who w
 
 make far - Snorlax and Misdreavus, who will face each other, and Farfetch'd, who will face itself.
 
+make lap - Porygon and Dunsparce, who will each face themselves, and Lapras, who will face... Electabuzz.
+
 make slow - Slowpoke and Slugma. If you lose to the rival in the first battle, his Slowpoke will evolve into Slowking; if you win, Slowbro.
 
 make shucks - Shuckle, Delibird, and Smeargle.
