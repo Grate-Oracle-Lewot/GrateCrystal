@@ -300,7 +300,7 @@ Prize TMs:
 - Cerulean Cave (layout most resembles English Red/Blue; navigate to find a special item)
 - An abandoned version of the Safari Zone
 - A room linking Union Cave and Slowpoke Well together
-- An extra room in Dark Cave
+- Some extra parts to Dark Cave
 - A backroom to the Goldenrod Game Corner where you can battle Gamblers whose Pokémon are high-level but use luck-based moves like one-hit-KOs or Metronome
 - A version of Seafoam Cave hosting a final, all-Lv100 battle against me (unlocked by beating Red)
 - Route 22 expanded (similar to Gen I's Route 23, the badge check area)
