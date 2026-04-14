@@ -1494,16 +1494,6 @@ GetItemHealingAction:
 
 INCLUDE "data/items/heal_status.asm"
 
-StatusHealer_Jumptable:
-	ld hl, .dw
-	rst JumpTable
-	ret
-
-.dw
-	dw StatusHealer_ClearPalettes
-	dw StatusHealer_NoEffect
-	dw StatusHealer_ExitMenu
-
 RevivalHerbEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1520,7 +1510,7 @@ RevivalHerbEffect:
 	ld a, $0
 
 .not_used
-	jp StatusHealer_Jumptable
+	jr StatusHealer_Jumptable
 
 ReviveEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1528,7 +1518,17 @@ ReviveEffect:
 	jp c, StatusHealer_ExitMenu
 
 	call RevivePokemon
-	jp StatusHealer_Jumptable
+	; fallthrough
+
+StatusHealer_Jumptable:
+	ld hl, .dw
+	rst JumpTable
+	ret
+
+.dw
+	dw StatusHealer_ClearPalettes
+	dw StatusHealer_NoEffect
+	dw StatusHealer_ExitMenu
 
 RevivePokemon:
 	call IsMonFainted
@@ -1954,6 +1954,9 @@ GetHealingItemAmount:
 	push bc
 	ld b, a
 	farcall GetItemHeldEffect
+	ld a, b
+	cp HELD_BERRY_JUICE
+	jr z, .Juice
 	ld e, c
 	ld d, 0
 	ld a, c
@@ -1972,6 +1975,24 @@ GetHealingItemAmount:
 	ld d, [hl]
 	pop hl
 	ret
+
+.Juice:
+; restore 1/4 max HP
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+	ld c, a
+	srl b
+	rr c
+	srl b
+	rr c
+	ld a, b
+	ld d, a
+	ld a, c
+	ld e, a
+	jr .no_carry
 
 .MaxStatValue:
 	dw MAX_STAT_VALUE
