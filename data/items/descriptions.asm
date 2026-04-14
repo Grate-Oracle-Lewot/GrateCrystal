@@ -800,8 +800,8 @@ CharcoalDesc:
 	next "type moves. (HOLD)@"
 
 BerryJuiceDesc:
-	db   "A self-restore"
-	next "item. (84HP, HOLD)@"
+	db   "Heals 1/4 HP when"
+	next "low. (HOLD)@"
 
 ScopeLensDesc:
 	db   "Raises critical"
@@ -936,12 +936,12 @@ UpGradeDesc:
 	next "into PORYGON2.@"
 
 BerryDesc:
-	db   "A self-restore"
-	next "item. (10HP, HOLD)@"
+	db   "Heals 10HP when"
+	next "low. (HOLD)@"
 
 GoldBerryDesc:
-	db   "A self-restore"
-	next "item. (42HP, HOLD)@"
+	db   "Heals 42HP when"
+	next "low. (HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"
