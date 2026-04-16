@@ -90,7 +90,7 @@ DarkCaveVioletEntrance_MapEvents:
 
 	def_bg_events
 	bg_event 26,  3, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenElixer
-	bg_event  3, 22, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenXAccuracy
+	bg_event 16, 25, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenXAccuracy
 	bg_event  3, 22, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenXEvade
 
 	def_object_events
