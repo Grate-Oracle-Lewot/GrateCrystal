@@ -155,6 +155,7 @@ FacingPlayerDistance::
 	cp e
 	jr z, .CheckX
 
+.NotFacing:
 	and a
 	ret
 
@@ -198,10 +199,6 @@ FacingPlayerDistance::
 	cp e
 	jr nz, .NotFacing
 	scf
-	ret
-
-.NotFacing:
-	and a
 	ret
 
 PrintWinLossText::
