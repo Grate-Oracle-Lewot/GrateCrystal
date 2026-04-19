@@ -415,7 +415,7 @@ CapNuzlockeEncounterLevel:
 	ld a, [wOptions2]
 	and %01100100 ; Nuzlocke + Hard Level Caps
 	cp %01100100
-	ret z
+	ret nz
 
 	push hl
 	push de
