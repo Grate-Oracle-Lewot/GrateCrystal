@@ -78,7 +78,7 @@ endr
 	jr c, .buffed
 	inc e
 .buffed
-	ret
+	jr FishCapNuzlockeEncounterLevel
 
 .no_bite
 	ld de, 0
@@ -103,6 +103,38 @@ endr
 .time_species
 	ld d, [hl]
 	inc hl
+	ret
+
+FishCapNuzlockeEncounterLevel:
+; If both Nuzlocke mode AND hard level caps are on, AND the current fish is a valid Nuzlocke encounter,
+; AND its level exceeds the current level cap, reduce its level to the current level cap.
+
+	ld a, [wOptions2]
+	and %01100100 ; Nuzlocke + Hard Level Caps
+	cp %01100100
+	ret z
+
+	push hl
+	push de
+	push bc
+	farcall NuzlockeCheckAreaFlag
+	ld a, [wScriptVar]
+	and a
+	jr nz, .nope
+	call GetLevelCap
+	pop bc
+	pop de
+	pop hl
+	ld a, [wCurLevelCap]
+	cp e
+	ret nc
+	ld e, a
+	ret
+
+.nope
+	pop bc
+	pop de
+	pop hl
 	ret
 
 GetFishGroupIndex:
