@@ -7328,6 +7328,18 @@ else
 	dec c
 	jr nz, .stat_exp_loop_2
 
+	pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [wCurLevelCap]
+	push bc
+	ld b, a
+	ld a, [hl]
+	cp b
+	pop bc
+	jp nc, .next_mon
+	push bc
+
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
