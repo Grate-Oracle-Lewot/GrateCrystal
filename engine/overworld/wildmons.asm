@@ -420,7 +420,13 @@ CapNuzlockeEncounterLevel:
 	push hl
 	push de
 	push bc
+	ld a, WILD_BATTLE
+	ld [wBattleMode], a
+	ld a, b
+	ld [wTempEnemyMonSpecies], a
 	farcall NuzlockeCheckAreaFlag
+	xor a
+	ld [wBattleMode], a
 	ld a, [wScriptVar]
 	and a
 	jr nz, .nope
