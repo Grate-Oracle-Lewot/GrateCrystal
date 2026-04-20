@@ -3912,10 +3912,17 @@ TryToRunAwayFromBattle:
 	jp .can_escape
 
 .no_flee_item
+	ld a, [wEnemyMonLevel]
+	ld b, a
+	ld a, [wBattleMonLevel]
+	cp b
+	jr c, .skip_magikarp
+
 	ld a, [wEnemyMonSpecies]
 	cp MAGIKARP
 	jp z, .can_escape
 
+.skip_magikarp
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	jr nz, .no_sun
