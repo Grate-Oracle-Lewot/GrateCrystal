@@ -420,10 +420,10 @@ CapNuzlockeEncounterLevel:
 	push hl
 	push de
 	push bc
-	ld a, WILD_BATTLE
+	ld a, WILD_BATTLE ; trick NuzlockeCheckAreaFlag into checking for a dupe
 	ld [wBattleMode], a
 	ld a, b
-	ld [wTempEnemyMonSpecies], a
+	ld [wTempEnemyMonSpecies], a ; load the species for dupe check
 	farcall NuzlockeCheckAreaFlag
 	xor a
 	ld [wBattleMode], a
