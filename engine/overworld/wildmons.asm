@@ -339,6 +339,8 @@ ChooseWildEncounter:
 	inc b
 
 .ok
+	call CapNuzlockeEncounterLevel
+
 ; Store the level
 	ld a, b
 	ld [wCurPartyLevel], a
@@ -405,6 +407,38 @@ ChooseWildEncounter:
 	jr .ok
 
 INCLUDE "data/wild/probabilities.asm"
+
+CapNuzlockeEncounterLevel:
+; If both Nuzlocke mode AND hard level caps are on, AND the current wildmon is a valid Nuzlocke encounter,
+; AND its level exceeds the current level cap, reduce its level to the current level cap.
+
+	ld a, [wOptions2]
+	and %01100100 ; Nuzlocke + Hard Level Caps
+	cp %01100100
+	ret nz
+
+	push hl
+	push de
+	push bc
+	farcall NuzlockeCheckAreaFlag
+	ld a, [wScriptVar]
+	and a
+	jr nz, .nope
+	call GetLevelCap
+	pop bc
+	pop de
+	pop hl
+	ld a, [wCurLevelCap]
+	cp b
+	ret nc
+	ld b, a
+	ret
+
+.nope
+	pop bc
+	pop de
+	pop hl
+	ret
 
 CheckRepelEffect::
 ; If there is no active Repel, there's no need to be here.
