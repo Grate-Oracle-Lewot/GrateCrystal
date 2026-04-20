@@ -3915,6 +3915,7 @@ TryToRunAwayFromBattle:
 	ld a, [wEnemyMonLevel]
 	ld b, a
 	ld a, [wBattleMonLevel]
+	inc a
 	cp b
 	jr c, .skip_magikarp
 
