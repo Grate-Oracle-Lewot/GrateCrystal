@@ -136,12 +136,17 @@ AI_TryItem:
 	or b
 	ret z
 
+; don't use items on Abra, it can't learn any damaging moves
+	ld a, [wEnemyMonSpecies]
+	cp ABRA
+	jr z, .dont_use
+
 ; don't use items on Ditto before it Transforms
 ; Transform copies stat levels and thus erases prior X item boosts
-	ld a, [wEnemyMonSpecies]
 	cp DITTO
 	jr nz, .not_ditto
 
+.dont_use
 ; clear carry flag
 	and a
 	ret
