@@ -3912,6 +3912,7 @@ TryToRunAwayFromBattle:
 	jp .can_escape
 
 .no_flee_item
+; always escape from Magikarp unless it's more than 1 level above us
 	ld a, [wEnemyMonLevel]
 	ld b, a
 	ld a, [wBattleMonLevel]
