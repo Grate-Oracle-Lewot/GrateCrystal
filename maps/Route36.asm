@@ -40,8 +40,6 @@ Route36SuicuneScript:
 	turnobject PLAYER, DOWN
 	pause 10
 	setscene SCENE_ROUTE36_NOTHING
-	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 	end
 
 SudowoodoScript:
