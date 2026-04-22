@@ -57,7 +57,7 @@ GivePokerusAndConvertBerries::
 .TrySpreadPokerus:
 ; only one mon, nothing to do
 	ld a, b ; [wPartyCount]
-	cp 1
+	dec a
 	jr z, .de_novo
 
 ; 1/3 chance
