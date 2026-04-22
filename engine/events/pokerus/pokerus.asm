@@ -7,8 +7,6 @@ GivePokerusAndConvertBerries::
 	ld de, PARTYMON_STRUCT_LENGTH
 ; Check to see if any of your Pokemon already has Pokerus.
 ; If so, sample its spread through your party.
-; This means that you cannot get Pokerus de novo while
-; a party member has an active infection.
 .loopMons
 	ld a, [hl]
 	and $f
@@ -17,6 +15,7 @@ GivePokerusAndConvertBerries::
 	dec b
 	jr nz, .loopMons
 
+.de_novo
 	call Random
 	ldh a, [hRandomAdd]
 	and a
@@ -46,8 +45,8 @@ GivePokerusAndConvertBerries::
 	ld a, b
 	and $7
 	inc a
+	ld b, a
 .load_pkrs
-	ld b, a ; this should come before the label
 	swap b
 	and $3
 	inc a
@@ -56,13 +55,15 @@ GivePokerusAndConvertBerries::
 	ret
 
 .TrySpreadPokerus:
+; only one mon, nothing to do
+	ld a, b ; [wPartyCount]
+	cp 1
+	jr z, .de_novo
+
+; 1/3 chance
 	call Random
 	cp 33 percent + 1
-	ret nc ; 1/3 chance
-
-	ld a, [wPartyCount]
-	cp 1
-	ret z ; only one mon, nothing to do
+	jr nc, .de_novo
 
 	ld c, [hl]
 	ld a, b
@@ -79,17 +80,17 @@ GivePokerusAndConvertBerries::
 	jr z, .infectMon
 	ld c, a
 	and $3
-	ret z ; if mon has cured pokerus, stop searching
+	jr z, .de_novo ; if mon has cured pokerus, stop searching
 	dec b ; go on to next mon
 	ld a, b
 	cp 1
 	jr nz, .checkFollowingMonsLoop ; no more mons left
-	ret
+	jr .de_novo
 
 .checkPreviousMonsLoop
 	ld a, [wPartyCount]
 	cp b
-	ret z ; no more mons
+	jr z, .de_novo ; no more mons
 	ld a, l
 	sub e
 	ld l, a
@@ -101,7 +102,7 @@ GivePokerusAndConvertBerries::
 	jr z, .infectMon
 	ld c, a
 	and $3
-	ret z ; if mon has cured pokerus, stop searching
+	jr z, .de_novo ; if mon has cured pokerus, stop searching
 	inc b ; go on to next mon
 	jr .checkPreviousMonsLoop
 
@@ -115,7 +116,7 @@ GivePokerusAndConvertBerries::
 	inc a
 	add b
 	ld [hl], a
-	ret
+	jr .de_novo
 
 ConvertBerriesToBerryJuice:
 	call Random
