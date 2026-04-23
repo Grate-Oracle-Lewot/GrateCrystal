@@ -51,8 +51,8 @@ NursePokerusText:
 	para "increase more when"
 	line "they're infected."
 
-	para "It's contagious"
-	line "for a few days."
+	para "Not much else is"
+	line "known about it."
 	done
 
 PokecenterChanseyText:
