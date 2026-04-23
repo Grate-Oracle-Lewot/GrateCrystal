@@ -16,13 +16,17 @@ GivePokerusAndConvertBerries::
 	jr nz, .loopMons
 
 .de_novo
-	call Random
-	ldh a, [hRandomAdd]
-	and a
+; Pokerus can only be caught in the Ruins of Alph.
+	ld a, [wMapGroup]
+	cp GROUP_RUINS_OF_ALPH_INNER_CHAMBER
 	ret nz
-	ldh a, [hRandomSub]
-	cp 42 ; 42/65536 chance (originally 3/65536)
-	ret nc
+	ld a, [wMapNumber]
+	cp MAP_RUINS_OF_ALPH_INNER_CHAMBER
+	ret nz
+
+	call Random
+	and a
+	ret nz ; 1/256 chance
 	ld a, [wPartyCount]
 	ld b, a
 .randomMonSelectLoop
@@ -83,7 +87,7 @@ GivePokerusAndConvertBerries::
 	jr z, .de_novo ; if mon has cured pokerus, stop searching
 	dec b ; go on to next mon
 	ld a, b
-	cp 1
+	dec a
 	jr nz, .checkFollowingMonsLoop ; no more mons left
 	jr .de_novo
 
