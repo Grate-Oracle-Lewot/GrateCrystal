@@ -120,7 +120,7 @@ GivePokerusAndConvertBerries::
 	inc a
 	add b
 	ld [hl], a
-	jr .de_novo
+	jp .de_novo
 
 ConvertBerriesToBerryJuice:
 	call Random
