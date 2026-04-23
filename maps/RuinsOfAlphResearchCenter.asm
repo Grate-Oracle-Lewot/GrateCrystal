@@ -363,14 +363,19 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
-	text "Why did those"
-	line "ancient patterns"
+	text "Have you run acr-"
+	line "oss that virus"
 
-	para "appear on the wall"
-	line "now?"
+	para "that the UNOWN may"
+	line "be carrying,"
+	cont "#RUS?"
 
-	para "The mystery"
-	line "deepens…"
+	para "It can spread to"
+	line "other #MON,"
+
+	para "but it only seems"
+	line "to originate from"
+	cont "UNOWN…"
 	done
 
 RuinsOfAlphResearchCenterComputerText:
