@@ -76,7 +76,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Ice types get a 50% Defense boost in Hail
   - Ghost types are immune to Mean Look and Spider Web (they can still be trapped by Fire Spin, etc.)
   - Fighting types don't lose Attack while Burned
-  - We can count Shuckle's ability to make Berry Juice
+  - We can count Shuckle's ability to make Berry Juice (this now works even before you reach Goldenrod City)
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
   - Spinarak and Ariados don't make contact when using Bind or Wrap (yes, I bothered to code this)
   - Ditto won't activate held X items until after Transforming (Transform copies stat levels and thus would overwrite X item boosts)
@@ -107,6 +107,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - 150 entries: 1 Master Ball
   - 200 entries: 5 Sacred Ashes
   - 250 entries: 99 Nuggets
+- Pokérus can now only be initially contracted from wild Unown found specifically in the Ruins of Alph, but with a 1/256 chance instead of 3/65536
 - A few Pokémon have been reverted to their beta designs, a few have palette changes to reflect their type changes (see below), some shiny palettes changed for various reasons, and Butterfree and Venomoth have had their sprites swapped
 - Some tileset additions: pink trees at Cherrygrove, autumn trees around the Tin Tower, palm trees on beaches, the unused mine cart graphics in some caves—and more!
 - Jessie and James now make several appearances throughout the game (inspiration for how to colorize their Pokémon Yellow battle sprite taken from Polished Crystal)
@@ -381,7 +382,6 @@ Prize TMs:
 - Most trainer money rewards increased, but Rockets now give no money due to being criminals (and Teachers give minimal due to not getting paid enough)
 - Happiness builds a bit faster
 - Eggs hatch roughly twice as fast, and come out at Lv.1 instead of Lv.5
-- Higher chance to contract Pokérus, and no requirement to reach Goldenrod first (no Goldenrod requirement for Shuckle to make Berry Juice either)
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs; Tauros and Miltank can produce each other's eggs, and Metapod, Kakuna, and Porygon can no longer breed (Porygon2 still can)
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
