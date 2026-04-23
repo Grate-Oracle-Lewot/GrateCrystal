@@ -103,9 +103,14 @@ ElmPhoneDiscoveredPokerusText:
 	line "MON caught #-"
 	cont "RUS."
 
-	para "Yes, it's like a"
-	line "virus, so it's"
-	cont "called #RUS."
+	para "This is a strange"
+	line "virus that seems"
+
+	para "to be associated"
+	line "with the UNOWN, or"
+
+	para "the RUINS OF ALPH,"
+	line "or both."
 
 	para "It's not dangerous"
 	line "though, so don't"
