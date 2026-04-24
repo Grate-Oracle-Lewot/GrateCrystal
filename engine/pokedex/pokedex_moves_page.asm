@@ -136,7 +136,7 @@ Pokedex_Print_NextLvlMoves:
 	call DexEntry_adjusthlcoord
 	ld de, wTextDecimalByte
 	push bc
-	lb bc, PRINTNUM_LEFTALIGN | 1, 2
+	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
 	pop bc 
 	pop hl
