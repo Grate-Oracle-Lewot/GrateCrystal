@@ -576,7 +576,7 @@ Them's the breaks. I thought about making typelocke options, but the way I would
 
 Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that change for yourself. (Or it was until all the starter builds cluttered up the Elm's Lab script. Whoops.)
 
-# Why not correct the spelling of Vicegrip and Faint Attack?
+# Why not correct the spelling of Vicegrip, Faint Attack, and Elixer?
 
 Nostalgia.
 
