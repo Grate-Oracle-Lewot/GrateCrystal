@@ -222,9 +222,9 @@ RocketElectrode1:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE1, 20
 if DEF(_LITTLE_CUP)
-	loadwildmon VOLTORB, 25
+	loadwildmon VOLTORB, 30
 else
-	loadwildmon ELECTRODE, 25
+	loadwildmon ELECTRODE, 30
 endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
@@ -246,9 +246,9 @@ RocketElectrode2:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE2, 20
 if DEF(_LITTLE_CUP)
-	loadwildmon VOLTORB, 25
+	loadwildmon VOLTORB, 30
 else
-	loadwildmon ELECTRODE, 25
+	loadwildmon ELECTRODE, 30
 endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
@@ -270,9 +270,9 @@ RocketElectrode3:
 	cry ELECTRODE
 	showemote EMOTE_BOLT, TEAMROCKETBASEB2F_ELECTRODE3, 20
 if DEF(_LITTLE_CUP)
-	loadwildmon VOLTORB, 25
+	loadwildmon VOLTORB, 30
 else
-	loadwildmon ELECTRODE, 25
+	loadwildmon ELECTRODE, 30
 endc
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
