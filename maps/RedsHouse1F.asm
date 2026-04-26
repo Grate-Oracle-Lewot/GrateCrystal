@@ -1,5 +1,6 @@
 	object_const_def
 	const REDSHOUSE1F_REDS_MOM
+	const REDSHOUSE1F_MIMEY
 
 RedsHouse1F_MapScripts:
 	def_scene_scripts
@@ -22,6 +23,14 @@ RedsMom:
 	end
 .MetAlready:
 	writetext RedsMomText2
+	waitbutton
+	closetext
+	end
+
+MimeyScript:
+	opentext
+	writetext MimeyText
+	cry MR__MIME
 	waitbutton
 	closetext
 	end
@@ -63,6 +72,10 @@ RedsMomText2:
 	cont "trainer."
 	done
 
+MimeyText:
+	text "MR.MIME: Mime?"
+	done
+
 RedsHouse1FTVText:
 	text "They have programs"
 	line "that aren't shown"
@@ -86,3 +99,4 @@ RedsHouse1F_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsMom, -1
+	object_event  2,  4, SPRITE_MR_MIME, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MimeyScript, -1
