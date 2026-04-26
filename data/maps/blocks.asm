@@ -122,9 +122,7 @@ PokeSeersHouse_Blocks:
 MahoganyRedGyaradosSpeechHouse_Blocks:
 LakeOfRageHiddenPowerHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
-BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
-MoveDeletersHouse_Blocks:
 BluesHouse_Blocks:
 ViridianNicknameSpeechHouse_Blocks:
 Route2NuggetHouse_Blocks:
@@ -333,6 +331,8 @@ VioletNicknameSpeechHouse_Blocks:
 VioletKylesHouse_Blocks:
 CharcoalKiln_Blocks:
 EcruteakLugiaSpeechHouse_Blocks:
+BlackthornDragonSpeechHouse_Blocks:
+MoveDeletersHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
 UnionCaveB1F_Blocks:
