@@ -4775,12 +4775,10 @@ TriAttack_EggBomb_Merge:
 TriAttack_StatusCommands:
 	dw BattleCommand_ParalyzeTarget
 	dw BattleCommand_FreezeTarget
-	dw BattleCommand_BurnTarget
-
 EggBomb_StatusCommands:
+	dw BattleCommand_BurnTarget
 	dw BattleCommand_SpecialDefenseDown
 	dw BattleCommand_DefenseDown
-	dw BattleCommand_BurnTarget
 
 BattleCommand_Curl:
 	ld a, BATTLE_VARS_SUBSTATUS2
