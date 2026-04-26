@@ -1080,6 +1080,7 @@ EggBomb:
 	checkfaint
 	buildopponentrage
 	eggbomb
+	statdownmessage
 	kingsrock
 	endmove
 
