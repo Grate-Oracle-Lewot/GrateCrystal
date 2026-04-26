@@ -293,7 +293,7 @@ RadioTower5FRocketBossWinText:
 	cont "moment…"
 
 	para "What is it with"
-	line "these children?"
+	line "these children?!"
 	done
 
 RadioTower5FRocketBossAfterText:
