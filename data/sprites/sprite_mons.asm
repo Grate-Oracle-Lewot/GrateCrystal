@@ -11,20 +11,18 @@ SpriteMons:
 	db ZUBAT
 	db MAGIKARP
 	db SQUIRTLE
-	db TOGEPI
 	db BUTTERFREE
 	db DIGLETT
 	db POLIWAG
 	db PIKACHU
 	db CLEFAIRY
 	db CHARMANDER
-	db JYNX
+	db MR__MIME
 	db STARMIE
 	db BULBASAUR
 	db JIGGLYPUFF
 	db GRIMER
 	db EKANS
-	db PARAS
 	db TENTACOOL
 	db TAUROS
 	db MACHOP
@@ -32,7 +30,6 @@ SpriteMons:
 	db LAPRAS
 	db RHYDON
 	db MOLTRES
-	db SNORLAX
 	db GYARADOS
 	db LUGIA
 	db HO_OH
