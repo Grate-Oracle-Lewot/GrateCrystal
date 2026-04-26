@@ -144,36 +144,32 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_ZUBAT      ; 87
 	const SPRITE_MAGIKARP   ; 88
 	const SPRITE_SQUIRTLE   ; 89
-	const SPRITE_TOGEPI     ; 8a
-	const SPRITE_BUTTERFREE ; 8b
-	const SPRITE_DIGLETT    ; 8c
-	const SPRITE_POLIWAG    ; 8d
-	const SPRITE_PIKACHU    ; 8e
-	const SPRITE_CLEFAIRY   ; 8f
-	const SPRITE_CHARMANDER ; 90
-	const SPRITE_JYNX       ; 91
-	const SPRITE_STARMIE    ; 92
-	const SPRITE_BULBASAUR  ; 93
-	const SPRITE_JIGGLYPUFF ; 94
-	const SPRITE_GRIMER     ; 95
-	const SPRITE_EKANS      ; 96
-	const SPRITE_PARAS      ; 97
-	const SPRITE_TENTACOOL  ; 98
-	const SPRITE_TAUROS     ; 99
-	const SPRITE_MACHOP     ; 9a
-	const SPRITE_VOLTORB    ; 9b
-	const SPRITE_LAPRAS     ; 9c
-	const SPRITE_RHYDON     ; 9d
-	const SPRITE_MOLTRES    ; 9e
-	const SPRITE_SNORLAX    ; 9f
-	const SPRITE_GYARADOS   ; a0
-	const SPRITE_LUGIA      ; a1
-	const SPRITE_HO_OH      ; a2
-	const SPRITE_CHANSEY    ; a3
-	const SPRITE_FLOWER     ; a4
-	const SPRITE_FISH       ; a5
-	const SPRITE_DRAGONITE  ; a6
-	const SPRITE_ABRA       ; a7
+	const SPRITE_BUTTERFREE ; 8a
+	const SPRITE_DIGLETT    ; 8b
+	const SPRITE_POLIWAG    ; 8c
+	const SPRITE_PIKACHU    ; 8d
+	const SPRITE_CLEFAIRY   ; 8e
+	const SPRITE_CHARMANDER ; 8f
+	const SPRITE_MR_MIME    ; 90
+	const SPRITE_STARMIE    ; 91
+	const SPRITE_BULBASAUR  ; 92
+	const SPRITE_JIGGLYPUFF ; 93
+	const SPRITE_GRIMER     ; 94
+	const SPRITE_EKANS      ; 95
+	const SPRITE_TENTACOOL  ; 96
+	const SPRITE_TAUROS     ; 97
+	const SPRITE_MACHOP     ; 98
+	const SPRITE_VOLTORB    ; 99
+	const SPRITE_RHYDON     ; 9a
+	const SPRITE_MOLTRES    ; 9b
+	const SPRITE_GYARADOS   ; 9c
+	const SPRITE_LUGIA      ; 9d
+	const SPRITE_HO_OH      ; 9e
+	const SPRITE_CHANSEY    ; 9f
+	const SPRITE_FLOWER     ; a0
+	const SPRITE_FISH       ; a1
+	const SPRITE_DRAGONITE  ; a2
+	const SPRITE_ABRA       ; a3
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
