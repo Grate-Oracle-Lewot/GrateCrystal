@@ -10,7 +10,8 @@
 	const ROUTE26_BEAUTY3
 	const ROUTE26_BEAUTY4
 	const ROUTE26_FRUIT_TREE
-	const ROUTE26_POKE_BALL
+	const ROUTE26_POKE_BALL1
+	const ROUTE26_POKE_BALL2
 
 Route26_MapScripts:
 	def_scene_scripts
@@ -240,6 +241,9 @@ Route26FruitTree:
 
 Route26MaxElixer:
 	itemball MAX_ELIXER
+
+Route26PPUp:
+	itemball PP_UP
 
 CooltrainermJakeSeenText:
 	text "I'm making my"
@@ -497,3 +501,4 @@ Route26_MapEvents:
 	object_event  1, 88, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyCaroline, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event 14, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26PPUp, EVENT_ROUTE_26_PP_UP
