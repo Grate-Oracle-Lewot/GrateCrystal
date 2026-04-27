@@ -1403,9 +1403,9 @@ Dungeons_Map_Name99: ; ICE_PATH_B3F
 Dungeons_Map_Name100: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
 Dungeons_Map_Name101: ; DRAGONS_DEN_1F
-	db "DRAGON'S DEN 1F@"
+	db "DRAGON'S MOUTH@"
 Dungeons_Map_Name102: ; DRAGONS_DEN_B1F
-	db "DRAGON'S DEN B1@"
+	db "DRAGON'S DEN@"
 Dungeons_Map_Name103: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
 Dungeons_Map_Name104: ; TOHJO_FALLS
