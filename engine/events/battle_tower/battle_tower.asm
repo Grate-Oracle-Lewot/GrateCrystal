@@ -14,11 +14,6 @@ Function1700ba:
 
 Function170114:
 	call InitBattleTowerChallengeRAM
-	call .Function170121
-	farcall Function11805f
-	ret
-
-.Function170121:
 	ld a, BANK(s5_a948)
 	call OpenSRAM
 	ld hl, s5_a948
@@ -26,7 +21,9 @@ Function170114:
 	ld bc, 246
 	call CopyBytes
 	call CloseSRAM
-	jp Function170c8b
+	call Function170c8b
+	farcall Function11805f
+	ret
 
 InitBattleTowerChallengeRAM:
 	xor a
@@ -320,22 +317,21 @@ Function1704e1:
 	jr nz, .pressed_up
 	ld a, [hl]
 	and D_DOWN
-	jr nz, .pressed_down
-	ret
-
-.pressed_up
-	ld a, [wNrOfBeatenBattleTowerTrainers]
-	and a
 	ret z
-	sub 15
-	ld [wNrOfBeatenBattleTowerTrainers], a
-	jp .PlaceTextItems
 
 .pressed_down
 	ld a, [wNrOfBeatenBattleTowerTrainers]
 	cp 60
 	ret z
 	add 15
+	ld [wNrOfBeatenBattleTowerTrainers], a
+	jp .PlaceTextItems
+
+.pressed_up
+	ld a, [wNrOfBeatenBattleTowerTrainers]
+	and a
+	ret z
+	sub 15
 	ld [wNrOfBeatenBattleTowerTrainers], a
 	jp .PlaceTextItems
 
@@ -652,6 +648,8 @@ BattleTowerAction_SetByteToQuickSaveChallenge:
 
 BattleTowerAction_SetByteToCancelChallenge:
 	ld c, BATTLETOWER_NO_CHALLENGE
+	; fallthrough
+
 SetBattleTowerChallengeState:
 	ld a, BANK(sBattleTowerChallengeState)
 	call OpenSRAM
@@ -699,6 +697,7 @@ Function1707ac:
 .asm_1707ef
 	ld a, 8
 	ld [wScriptVar], a
+	; fallthrough
 
 Function1707f4:
 	ld a, BANK(s5_be46) ; aka BANK(s5_aa8b) and BANK(s5_aa8c)
@@ -875,61 +874,6 @@ BattleTowerAction_EggTicket: ; BattleTowerAction $0e
 	ld [wScriptVar], a
 	ret
 
-	ld a, [wPartyCount]
-	ld b, 0
-	ld c, a
-	ld hl, wPartySpecies
-.loop
-	ld a, [hli]
-	cp EGG
-	jr nz, .not_egg
-	push hl
-	ld hl, wPartyMonOTs
-	ld de, NAME_LENGTH_JAPANESE
-	ld a, b
-	and a
-	jr z, .skip
-.loop2
-	add hl, de
-	dec a
-	jr nz, .loop2
-.skip
-	ld de, String_MysteryJP
-	ld a, NAME_LENGTH_JAPANESE
-.compare_loop
-	push af
-	ld a, [de]
-	inc de
-	cp [hl]
-	inc hl
-	jr nz, .different
-	pop af
-	dec a
-	jr nz, .compare_loop
-rept 4
-	dec hl
-endr
-	ld a, "@"
-	ld [hli], a
-	ld [hli], a
-	pop hl
-
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-.different
-	pop af
-	pop hl
-.not_egg
-	inc b
-	dec c
-	jr nz, .loop
-	ret
-
-String_MysteryJP:
-	db "なぞナゾ@@" ; MYSTERY
-
 Function1709aa: ; BattleTowerAction $0f
 	ldh a, [rSVBK]
 	push af
@@ -1066,6 +1010,8 @@ Function170a9c:
 
 Function170aa0:
 	ld c, TRUE
+	; fallthrough
+
 Set_s5_aa8d:
 	ld a, BANK(s5_aa8d)
 	call OpenSRAM
