@@ -4751,6 +4751,8 @@ LowerStat:
 	ret
 
 BattleCommand_EggBomb:
+	ld a, 1
+	ld [wFailedMessage], a
 	ld hl, EggBomb_StatusCommands
 	jr TriAttack_EggBomb_Merge
 
