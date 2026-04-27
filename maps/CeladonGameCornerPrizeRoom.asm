@@ -15,6 +15,7 @@ CeladonGameCornerPrizeRoom_MapScripts:
 	def_callbacks
 
 CeladonGameCornerPrizeRoomPorygonScript:
+	faceplayer
 	opentext
 	writetext CeladonGameCornerPrizeRoomPorygonText
 	cry PORYGON
