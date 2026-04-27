@@ -119,7 +119,7 @@ CreditsStringsPointers:
 .SatoshiOota:         db " Pyrois81   Seasick@"        ; "おおた　さとし@"
 .RenaYoshikawa:       db "     Jordanar21@"           ; "よしかわ　れな@"
 .JunOkutani:          db " i-am-the-pokeman@"         ; "おくたに　じゅん@"
-.HironobuYoshida:     db "     growlie777@"           ; "よしだ　ひろのぶ@"
+.HironobuYoshida:     db "    growlie777@"            ; "よしだ　ひろのぶ@"
 .AsukaIwashita:       db "  Chikorita-Lover@"         ; "いわした　あすか@"
 .GoIchinose:          db "     gordjscott@"           ; "いちのせ　ごう@"
 .MorikazuAoki:        db " mimi-m   AustinN10@"       ; "あおき　もりかず@"
