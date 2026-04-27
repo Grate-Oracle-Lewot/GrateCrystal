@@ -425,19 +425,11 @@ PokemaniacZachAfterBattleText:
 
 	para "from usual, it's"
 	line "more valuable."
-
-	para "What? You mean"
-	line "that's not true?"
 	done
 
 CooltrainermAllenSeenText:
-	text "I can tell you're"
-	line "a good trainer by"
-	cont "looking at you."
-
-	para "I'm good at #-"
-	line "MON, and I can see"
-	cont "that you are too."
+	text "All you need is"
+	line "one good #MON!"
 	done
 
 CooltrainermAllenBeatenText:
