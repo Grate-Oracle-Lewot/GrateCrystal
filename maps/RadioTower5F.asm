@@ -24,7 +24,7 @@ FakeDirectorScript:
 	waitbutton
 	closetext
 	applymovement RADIOTOWER5F_DIRECTOR, FakeDirectorMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_EXECUTIVE_ENCOUNTER
 	opentext
 	writetext FakeDirectorTextBefore2
 	waitbutton
