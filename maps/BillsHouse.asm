@@ -107,7 +107,7 @@ BillsGrandpa:
 	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
 .Done:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	applymovement BILLSHOUSE_GRAMPS, BillsHouse_CouchMovement
+	turnobject BILLSHOUSE_GRAMPS, DOWN
 	closetext
 	end
 
@@ -194,15 +194,11 @@ endc
 	waitbutton
 .BagFull:
 	closetext
-	applymovement BILLSHOUSE_GRAMPS, BillsHouse_CouchMovement
+	turnobject BILLSHOUSE_GRAMPS, DOWN
 	end
 
 BillsHouseMachine:
 	jumptext BillsHouseMachineText
-
-BillsHouse_CouchMovement:
-	turn_head DOWN
-	step_end
 
 BillsGrandpaIntroText:
 	text "Hm? You know BILL?"
