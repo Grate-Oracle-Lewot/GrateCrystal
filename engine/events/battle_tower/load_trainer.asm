@@ -99,7 +99,7 @@ LoadRandomBattleTowerMon:
 	ld a, [wBTChoiceOfLvlGroup]
 	dec a
 	ld hl, BattleTowerMons
-	ld bc, BATTLETOWER_NUM_UNIQUE_MON * NICKNAMED_MON_STRUCT_LENGTH
+	ld bc, BATTLETOWER_NUM_UNIQUE_MON * PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 
 	ld a, [wBTChoiceOfLvlGroup]
@@ -135,7 +135,7 @@ LoadRandomBattleTowerMon:
 	; Check if mon was already loaded before
 	; Check current and the 2 previous teams
 	; includes check if item is double at the current team
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
+	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hli]
 	ld b, a
