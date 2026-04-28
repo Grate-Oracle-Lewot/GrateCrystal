@@ -71,21 +71,6 @@ BillsGrandpa:
 	sjump .ShowedStaryu
 
 .GotWaterStone:
-	sjump .AskVulpix
-	writetext BillsGrandpaGrowlitheText
-	promptbutton
-	writetext BillsGrandpaAskToSeeMonText
-	yesorno
-	iffalse .SaidNo
-	scall .ExcitedToSee
-	special BillsGrandfather
-	iffalse .SaidNo
-	ifnotequal GROWLITHE, .WrongPokemon
-	scall .CorrectPokemon
-	setevent EVENT_SHOWED_GROWLITHE_VULPIX_TO_BILLS_GRANDPA
-	sjump .ShowedGrowlitheVulpix
-
-.AskVulpix:
 	writetext BillsGrandpaVulpixText
 	promptbutton
 	writetext BillsGrandpaAskToSeeMonText
@@ -338,17 +323,6 @@ BillsGrandpaStaryuText:
 
 	para "I would surely"
 	line "like to see it."
-	done
-
-BillsGrandpaGrowlitheText:
-	text "BILL told me about"
-	line "a #MON that is"
-
-	para "very loyal to its"
-	line "trainer."
-
-	para "It's supposed to"
-	line "ROAR well."
 	done
 
 BillsGrandpaVulpixText:
