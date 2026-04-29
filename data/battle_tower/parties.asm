@@ -1,5 +1,5 @@
 BattleTowerMons:
-; 10 groups (one per floor level) of 23 mons (BATTLETOWER_NUM_UNIQUE_MON).
+; 10 groups (one per floor level) of 24 mons (BATTLETOWER_NUM_UNIQUE_MON).
 	table_width PARTYMON_STRUCT_LENGTH, BattleTowerMons
 
 ; BattleTowerMons group 1
@@ -528,6 +528,31 @@ BattleTowerMons:
 	bigdw 26 ; Spd
 	bigdw 31 ; SAtk
 	bigdw 34 ; SDef
+
+	db SMEARGLE
+	db CAKE_OF_RAGE
+	db DRAGON_RAGE, SPORE, LEECH_SEED, SPIKES
+	dw 0 ; OT ID
+	dt 800 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 1, 15, 15, 10 ; DVs
+	db 16, 8, 16, 16
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 10 ; Level
+	db 0, 0 ; Status
+	bigdw 40 ; HP
+	bigdw 40 ; Max HP
+	bigdw 19 ; Atk
+	bigdw 22 ; Def
+	bigdw 29 ; Spd
+	bigdw 21 ; SAtk
+	bigdw 21 ; SDef
 
 	db JIRK
 	db X_EVADE
@@ -1107,6 +1132,31 @@ BattleTowerMons:
 	bigdw 42 ; SAtk
 	bigdw 42 ; SDef
 
+	db SMEARGLE
+	db FOCUS_BAND
+	db DRAGON_RAGE, THUNDER_WAVE, LEECH_SEED, SPIKES
+	dw 0 ; OT ID
+	dt 6400 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 1, 15, 15, 10 ; DVs
+	db 16, 16, 16, 16
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 20 ; Level
+	db 0, 0 ; Status
+	bigdw 70 ; HP
+	bigdw 70 ; Max HP
+	bigdw 34 ; Atk
+	bigdw 40 ; Def
+	bigdw 53 ; Spd
+	bigdw 38 ; SAtk
+	bigdw 38 ; SDef
+
 	db JIRK
 	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
@@ -1684,6 +1734,31 @@ BattleTowerMons:
 	bigdw 77 ; Spd
 	bigdw 55 ; SAtk
 	bigdw 70 ; SDef
+
+	db AMPHAROS
+	db QUICK_CLAW
+	db COTTON_SPORE, THUNDERBOLT, DRAGONBREATH, AURA_SPHERE
+	dw 0 ; OT ID
+	dt 21760 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 20000
+	bigdw 30000
+	bigdw 10000
+	bigdw 60000
+	dn 5, 7, 9, 13 ; DVs
+	db 32, 16, 32, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 30 ; Level
+	db 0, 0 ; Status
+	bigdw 115 ; HP
+	bigdw 115 ; Max HP
+	bigdw 63 ; Atk
+	bigdw 73 ; Def
+	bigdw 50 ; Spd
+	bigdw 100 ; SAtk
+	bigdw 85 ; SDef
 
 	db JIRK
 	db X_EVADE
@@ -2263,6 +2338,31 @@ BattleTowerMons:
 	bigdw 103 ; SAtk
 	bigdw 95 ; SDef
 
+	db RAPIDASH
+	db X_ATTACK
+	db FLAME_WHEEL, HEADBUTT, ACROBATICS, U_TURN
+	dw 0 ; OT ID
+	dt 31970 ; Exp
+	; Stat exp
+	bigdw 40000
+	bigdw 65000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	dn 11, 8, 9, 3 ; DVs
+	db 32, 32, 16, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 40 ; Level
+	db 0, 0 ; Status
+	bigdw 130 ; HP
+	bigdw 130 ; Max HP
+	bigdw 119 ; Atk
+	bigdw 87 ; Def
+	bigdw 116 ; Spd
+	bigdw 91 ; SAtk
+	bigdw 91 ; SDef
+
 	db JIRK
 	db X_EVADE
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
@@ -2840,6 +2940,31 @@ BattleTowerMons:
 	bigdw 120 ; Spd
 	bigdw 131 ; SAtk
 	bigdw 161 ; SDef
+
+	db TOGETIC
+	db QUICK_CLAW
+	db MOONBLAST, AIR_SLASH, SILVER_WIND, CHARM
+	dw 0 ; OT ID
+	dt 100000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 7, 7, 7, 8 ; DVs
+	db 8, 24, 16, 32 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 50 ; Level
+	db 0, 0 ; Status
+	bigdw 171 ; HP
+	bigdw 171 ; Max HP
+	bigdw 81 ; Atk
+	bigdw 129 ; Def
+	bigdw 99 ; Spd
+	bigdw 140 ; SAtk
+	bigdw 150 ; SDef
 
 	db JIRK
 	db X_EVADE
@@ -3419,6 +3544,31 @@ BattleTowerMons:
 	bigdw 105 ; SAtk
 	bigdw 123 ; SDef
 
+	db WHIMSICOTT
+	db KINGS_ROCK
+	db GIGA_DRAIN, MOONBLAST, PSYCHIC_M, COTTON_SPORE
+	dw 0 ; OT ID
+	dt 216000 ; Exp
+	; Stat exp
+	bigdw 30000
+	bigdw 30000
+	bigdw 30000
+	bigdw 60000
+	bigdw 40000
+	dn 4, 2, 8, 4 ; DVs
+	db 8, 8, 16, 32 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 60 ; Level
+	db 0, 0 ; Status
+	bigdw 167 ; HP
+	bigdw 167 ; Max HP
+	bigdw 116 ; Atk
+	bigdw 135 ; Def
+	bigdw 190 ; Spd
+	bigdw 132 ; SAtk
+	bigdw 129 ; SDef
+
 	db JIRK
 	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
@@ -3996,6 +4146,31 @@ BattleTowerMons:
 	bigdw 152 ; Spd
 	bigdw 159 ; SAtk
 	bigdw 184 ; SDef
+
+	db SUNFLORA
+	db QUICK_CLAW
+	db SUNNY_DAY, SOLARBEAM, FLAMETHROWER, SYNTHESIS
+	dw 0 ; OT ID
+	dt 159180 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 20000
+	bigdw 50000
+	bigdw 10000
+	bigdw 65000
+	dn 5, 4, 0, 11 ; DVs
+	db 8, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 70 ; Level
+	db 0, 0 ; Status
+	bigdw 248 ; HP
+	bigdw 248 ; Max HP
+	bigdw 154 ; Atk
+	bigdw 138 ; Def
+	bigdw 49 ; Spd
+	bigdw 281 ; SAtk
+	bigdw 182 ; SDef
 
 	db JIRK
 	db BRIGHTPOWDER
@@ -4575,6 +4750,31 @@ BattleTowerMons:
 	bigdw 146 ; SAtk
 	bigdw 146 ; SDef
 
+	db QWILFISH
+	db NOISEMAKER
+	db SCALD, DEFENSE_CURL, FLAME_WHEEL, SELFDESTRUCT
+	dw 0 ; OT ID
+	dt 512000 ; Exp
+	; Stat exp
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	bigdw 40000
+	dn 8, 8, 8, 13 ; DVs
+	db 24, 48, 32, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 80 ; Level
+	db 0, 0 ; Status
+	bigdw 251 ; HP
+	bigdw 251 ; Max HP
+	bigdw 225 ; Atk
+	bigdw 201 ; Def
+	bigdw 193 ; Spd
+	bigdw 161 ; SAtk
+	bigdw 161 ; SDef
+
 	db JIRK
 	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
@@ -5153,6 +5353,31 @@ BattleTowerMons:
 	bigdw 167 ; SAtk
 	bigdw 230 ; SDef
 
+	db TANGELA
+	db LEFTOVERS
+	db SURF, GIGA_DRAIN, ANCIENTPOWER, GROWTH
+	dw 0 ; OT ID
+	dt 729000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 20000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 6, 13, 4, 11 ; DVs
+	db 16, 8, 16, 48 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 90 ; Level
+	db 0, 0 ; Status
+	bigdw 309 ; HP
+	bigdw 309 ; Max HP
+	bigdw 155 ; Atk
+	bigdw 302 ; Def
+	bigdw 160 ; Spd
+	bigdw 272 ; SAtk
+	bigdw 146 ; SDef
+
 	db JIRK
 	db BRIGHTPOWDER
 	db CONFUSE_RAY, SPORE, MIND_READER, HORN_DRILL
@@ -5730,6 +5955,31 @@ BattleTowerMons:
 	bigdw 192 ; Spd
 	bigdw 214 ; SAtk
 	bigdw 214 ; SDef
+
+	db DODRIO
+	db X_ATTACK
+	db TRIPLE_KICK, ACROBATICS, RETURN, STEEL_WING
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 65000
+	bigdw 40000
+	bigdw 65000
+	bigdw 50000
+	dn 13, 3, 11, 9 ; DVs
+	db 16, 16, 24, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 327 ; HP
+	bigdw 327 ; Max HP
+	bigdw 316 ; Atk
+	bigdw 199 ; Def
+	bigdw 312 ; Spd
+	bigdw 210 ; SAtk
+	bigdw 210 ; SDef
 
 	db JIRK
 	db BRIGHTPOWDER
