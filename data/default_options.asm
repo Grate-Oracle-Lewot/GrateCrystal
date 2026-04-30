@@ -12,14 +12,14 @@ DefaultOptions:
 ; wFontType: font 1
 	db FONT_1
 ; wOptions2: battle items on
-	db %01000001
+	db %00000001
 	; BATTLE_ITEMS:         1 (ON)
 	; LEVEL_CAPS_ON_OFF:    0 (OFF)
 	; LEVEL_CAPS_OBEDIENCE: 0 (DISOBEY)
 	; EASY_MODE:            0 (OFF)
 	; HARD_MODE:            0 (OFF)
 	; NUZLOCKE:             0 (OFF)
-	; MENU_SIDEBAR:         1 (ON)
+	; PARTYWIDE_EXP:        0 (OFF)
 	; DIFFICULTY_DOUBLE:    0 (OFF)
 ; wSidebar
 	db 0 ; SIDEBAR_TIME
