@@ -100,7 +100,7 @@ NUM_FONTS EQU const_value
 	const EASY_MODE            ; 3
 	const HARD_MODE            ; 4
 	const NUZLOCKE             ; 5
-	const SIDEBAR_ON_OFF       ; 6
+	const PARTYWIDE_EXP        ; 6
 	const DIFFICULTY_DOUBLE    ; 7
 
 ; wSidebar::
