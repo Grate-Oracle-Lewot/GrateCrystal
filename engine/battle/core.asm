@@ -139,7 +139,8 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	call StdBattleTextbox
 
 .skip_text
-	call StopDangerSound
+	xor a
+	ld [wLowHealthAlarm], a
 	call CheckMobileBattleError
 	jr c, .skip_sfx
 
@@ -2370,7 +2371,8 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer
-	call StopDangerSound
+	xor a
+	ld [wLowHealthAlarm], a
 	ld a, $1
 	ld [wBattleLowHealthAlarm], a
 
@@ -2502,13 +2504,9 @@ IsAnyMonHoldingExpShare:
 	and a
 	ret
 
-StopDangerSound:
+FaintYourPokemon:
 	xor a
 	ld [wLowHealthAlarm], a
-	ret
-
-FaintYourPokemon:
-	call StopDangerSound
 	call WaitSFX
 	ld a, $f0
 	ld [wCryTracks], a
@@ -2605,7 +2603,8 @@ EnemyPartyMonEntrance:
 
 WinTrainerBattle:
 ; Player won the battle
-	call StopDangerSound
+	xor a
+	ld [wLowHealthAlarm], a
 	ld a, $1
 	ld [wBattleLowHealthAlarm], a
 	ld [wBattleEnded], a
@@ -2954,23 +2953,6 @@ PlayerPartyMonEntrance:
 	call SetPlayerTurn
 	jp SpikesDamage
 
-CheckMobileBattleError:
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jr nz, .not_mobile ; It's not a mobile battle
-
-	ld a, [wcd2b]
-	and a
-	jr z, .not_mobile
-
-; We have a mobile battle and something else happened
-	scf
-	ret
-
-.not_mobile
-	xor a
-	ret
-
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
 	; fallthrough
@@ -3000,6 +2982,19 @@ SelectBattleMon:
 	farcall Mobile_PartyMenuSelect
 	ret
 
+CheckMobileBattleError:
+	ld a, [wLinkMode]
+	cp LINK_MOBILE
+	jr nz, .not_mobile ; It's not a mobile battle
+
+	ld a, [wcd2b]
+	and a
+	jr z, Optimized_xor_a
+
+; We have a mobile battle and something else happened
+	scf
+	ret
+
 PickPartyMonInBattle:
 .loop
 	ld a, PARTYMENUACTION_SWITCH ; Which PKMN?
@@ -3009,6 +3004,9 @@ PickPartyMonInBattle:
 	ret c
 	call CheckIfCurPartyMonIsFitToFight
 	jr z, .loop
+	; fallthrough
+
+Optimized_xor_a:
 	xor a
 	ret
 
@@ -3016,15 +3014,11 @@ SwitchMonAlreadyOut:
 	ld hl, wCurBattleMon
 	ld a, [wCurPartyMon]
 	cp [hl]
-	jr nz, .notout
+	jr nz, Optimized_xor_a
 
 	ld hl, BattleText_MonIsAlreadyOut
 	call StdBattleTextbox
 	scf
-	ret
-
-.notout
-	xor a
 	ret
 
 ForcePickPartyMonInBattle:
@@ -4077,7 +4071,8 @@ TryToRunAwayFromBattle:
 	ld [wBattleResult], a
 	ld a, 1
 	ld [wForcedSwitch], a ; skips Nuzlocke flag for roamers
-	call StopDangerSound
+	xor a
+	ld [wLowHealthAlarm], a
 	push de
 	ld de, SFX_RUN
 	call WaitPlaySFX
@@ -4092,7 +4087,8 @@ TryToRunAwayFromBattle:
 	ret
 
 .mobile
-	call StopDangerSound
+	xor a
+	ld [wLowHealthAlarm], a
 	ld hl, wcd2a
 	bit 4, [hl]
 	jr nz, .skip_link_error
