@@ -3006,7 +3006,7 @@ SelectBattleMon:
 CheckMobileBattleError:
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
-	jr nz, .not_mobile ; It's not a mobile battle
+	jr nz, Optimized_xor_a ; It's not a mobile battle
 
 	ld a, [wcd2b]
 	and a
