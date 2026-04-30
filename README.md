@@ -32,6 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Battle Items on/off: disable player use of items in battle (balls and held items still work)
   - Difficulty: Normal (unmodified stats), Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Very Easy (Easy boost is applied twice), Hard (computer's active Pokémon gets the aforementioned boost instead), or Very Hard (again, double boost). None of these boosts apply in link battles or the Battle Tower.
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
+  - Experience Gains: Classic or Partywide
   - Font: choose between the game's standard font, two alternates taken from Polished Crystal, or one designed by Th3Element05
   - Catching: Normal or Limited (Nuzlocke catching rules)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
