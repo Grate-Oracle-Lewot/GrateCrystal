@@ -2402,7 +2402,7 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 
 ApplyExperienceAfterEnemyCaught:
 	ld a, [wOptions2]
-	bit SIDEBAR_ON_OFF, a
+	bit PARTYWIDE_EXP, a
 	jr z, .classic
 
 ; Party-wide experience
@@ -7216,7 +7216,7 @@ else
 
 ; party-wide experience
 	ld a, [wOptions2]
-	bit SIDEBAR_ON_OFF, a
+	bit PARTYWIDE_EXP, a
 	jr nz, .got_amount
 
 ; evenly divide exp among participants
