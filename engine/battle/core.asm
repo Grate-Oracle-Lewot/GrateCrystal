@@ -7217,7 +7217,7 @@ else
 ; party-wide experience
 	ld a, [wOptions2]
 	bit SIDEBAR_ON_OFF, a
-	jp nz, .got_amount
+	jr nz, .got_amount
 
 ; evenly divide exp among participants
 	ld a, [wBattleParticipantsNotFainted]
