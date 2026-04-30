@@ -15,7 +15,7 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_DIFFICULTY     ; 0
 	const OPT_LEVEL_CAPS     ; 1
 	const OPT_NUZLOCKE       ; 2
-	const OPT_MENU_SIDEBAR   ; 3
+	const OPT_EXPERIENCE     ; 3
 	const OPT_FONT           ; 4
 	const OPT_GB_PRINTER     ; 5
 	const OPT_PREVIOUS_PAGE  ; 6
@@ -148,7 +148,7 @@ StringOptions2:
 	db "       :<LF>"
 	db "CATCHING<LF>"
 	db "       :<LF>"
-	db "MENU SIDEBAR<LF>"
+	db "EXP. GAINS<LF>"
 	db "       :<LF>"
 	db "FONT<LF>"
 	db "       :TYPE<LF>"
@@ -182,7 +182,7 @@ GetOptionPointer:
 	dw Options_Difficulty
 	dw Options_LevelCaps
 	dw Options_Nuzlocke
-	dw Options_MenuSidebar
+	dw Options_Experience
 	dw Options_Font
 	dw Options_GBPrinter
 	dw Options_PreviousPage
@@ -707,39 +707,42 @@ Options_Nuzlocke:
 
 .On: db "LIMITED@"
 
-Options_MenuSidebar:
+Options_Experience:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit SIDEBAR_ON_OFF, [hl]
+	bit PARTYWIDE_EXP, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit SIDEBAR_ON_OFF, [hl]
+	bit PARTYWIDE_EXP, [hl]
 	jr z, .ToggleOn
 
 .ToggleOff:
-	res SIDEBAR_ON_OFF, [hl]
-	ld de, OffString
+	res PARTYWIDE_EXP, [hl]
+	ld de, .Off
 	jr .Display
 
 .NonePressed:
-	bit SIDEBAR_ON_OFF, [hl]
+	bit PARTYWIDE_EXP, [hl]
 	jr z, .ToggleOff
 
 .ToggleOn:
-	set SIDEBAR_ON_OFF, [hl]
-	ld de, OnString
+	set PARTYWIDE_EXP, [hl]
+	ld de, .On
 
 .Display:
 	hlcoord 10, 9
 	call PlaceString
 	and a
 	ret
+
+.Off: db "CLASSIC@"
+.On:  db "PARTYWIDE@"
 
 Options_Font:
 	ld hl, wFontType
