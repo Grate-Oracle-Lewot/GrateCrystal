@@ -313,6 +313,36 @@ LewotPhoneCoinFlipText:
 	cont "ment to this day."
 	done
 
+LewotPhoneOmastarText:
+	para "You might be won-"
+	line "dering why I had"
+
+	para "OMASTAR bend a"
+	line "spoon in its"
+	cont "animation."
+
+	para "The animation is"
+	line "otherwise un-"
+	cont "changed, and"
+
+	para "every time I saw"
+	line "it, I thought it"
+
+	para "looked like it was"
+	line "concentrating"
+
+	para "really hard, kind"
+	line "of like the OMNI-"
+	cont "MAN meme."
+
+	para "As a result of the"
+	line "change, OMASTAR"
+
+	para "can now learn"
+	line "moves like KINESIS"
+	cont "and PSYCHIC."
+	done
+
 LewotCallerGlitchesText:
 	text "Have you noticed"
 	line "any glitches or"
