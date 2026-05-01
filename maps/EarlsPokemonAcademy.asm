@@ -254,6 +254,18 @@ TeacherFrizzleExplainExpShareText:
 
 	para "they were never"
 	line "sent out!"
+
+	para "BUT BE WARNED!"
+
+	para "If you have exp."
+	line "gains set to"
+
+	para "“partywide” in"
+	line "your options menu,"
+
+	para "then the EXP.SHARE"
+	line "is just a fancy"
+	cont "paperweight."
 	done
 
 TeacherFrizzleAfterText:
