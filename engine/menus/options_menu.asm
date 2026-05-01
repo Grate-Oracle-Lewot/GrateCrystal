@@ -741,7 +741,7 @@ Options_Experience:
 	and a
 	ret
 
-.Off: db "CLASSIC@"
+.Off: db "CLASSIC  @"
 .On:  db "PARTYWIDE@"
 
 Options_Font:
