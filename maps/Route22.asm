@@ -23,12 +23,12 @@ OfficerLassiterScript:
 	iffalse .NoFight
 	checkevent EVENT_BEAT_OFFICER_LASSITER
 	iftrue .AfterScript
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	loadtrainer OFFICER, LASSITER
+	encountermusic
 	writetext OfficerLassiterSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerLassiterBeatenText, 0
-	loadtrainer OFFICER, LASSITER
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_LASSITER
@@ -39,11 +39,11 @@ OfficerLassiterScript:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .FemalePlayer
 	writetext OfficerLassiterAfterMaleText
-	sjump .WolfMerge
+	sjump .LassiterMerge
 
 .FemalePlayer
 	writetext OfficerLassiterAfterFemaleText
-.WolfMerge
+.LassiterMerge
 	waitbutton
 	closetext
 	end
