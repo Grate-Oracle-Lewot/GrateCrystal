@@ -21,13 +21,13 @@ TrainerOfficerTubbs:
 	checkevent EVENT_BEAT_OFFICER_TUBBS
 	iftrue .AfterBattle
 	showemote EMOTE_SLEEP, ROUTE40BATTLETOWERGATE_OFFICER, 15
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	loadtrainer OFFICER, TUBBS
+	encountermusic
 	opentext
 	writetext OfficerTubbsSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerTubbsBeatenText, 0
-	loadtrainer OFFICER, TUBBS
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_TUBBS
