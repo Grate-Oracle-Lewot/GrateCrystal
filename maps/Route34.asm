@@ -280,12 +280,12 @@ OfficerKeithScript:
 	iffalse .NoFight
 	checkevent EVENT_BEAT_OFFICER_KEITH
 	iftrue .AfterScript
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	loadtrainer OFFICER, KEITH
+	encountermusic
 	writetext OfficerKeithSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerKeithWinText, 0
-	loadtrainer OFFICER, KEITH
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_KEITH
