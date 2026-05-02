@@ -525,7 +525,7 @@ ChooseMoveToLearn:
 	dec a
 	ld [wCurSpecies], a
 	hlcoord 1, 15
-	predef PrintMoveDescriptionScrunched
+	predef PrintMoveDescription
 
 .print_move_type
 	ld a, [wCurSpecies]
