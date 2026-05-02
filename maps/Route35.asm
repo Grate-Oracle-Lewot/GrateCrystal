@@ -231,12 +231,12 @@ TrainerOfficerDirk:
 	iffalse .NotNight
 	checkevent EVENT_BEAT_OFFICER_DIRK
 	iftrue .AfterBattle
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	loadtrainer OFFICER, DIRK
+	encountermusic
 	writetext OfficerDirkSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerDirkBeatenText, 0
-	loadtrainer OFFICER, DIRK
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_DIRK
