@@ -13,12 +13,12 @@ TrainerOfficerDisher:
 	iffalse .AfterBattle
 	checkevent EVENT_BEAT_OFFICER_DISHER
 	iftrue .AfterBattle
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	loadtrainer OFFICER, DISHER
+	encountermusic
 	writetext OfficerDisherSeenText
 	waitbutton
 	closetext
 	winlosstext OfficerDisherBeatenText, 0
-	loadtrainer OFFICER, DISHER
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_DISHER
