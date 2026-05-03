@@ -2616,6 +2616,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
+	call HandleStatBoostingHeldItems
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2963,16 +2964,6 @@ ForcePlayerMonChoice:
 	and a
 	ld c, a
 	ret
-
-PlayerPartyMonEntrance:
-	ld a, [wCurBattleMon]
-	ld [wLastPlayerMon], a
-	ld a, [wCurPartyMon]
-	ld [wCurBattleMon], a
-	call AddBattleParticipant
-	call InitBattleMon_Etc
-	call SetPlayerTurn
-	jp SpikesDamage
 
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
@@ -4735,6 +4726,17 @@ UseHeldStatusHealingItem:
 	ret
 
 INCLUDE "data/battle/held_heal_status.asm"
+
+PlayerPartyMonEntrance:
+	ld a, [wCurBattleMon]
+	ld [wLastPlayerMon], a
+	ld a, [wCurPartyMon]
+	ld [wCurBattleMon], a
+	call AddBattleParticipant
+	call InitBattleMon_Etc
+	call SetPlayerTurn
+	call SpikesDamage
+	jr HandleStatBoostingHeldItems
 
 EnemyMonEntrance:
 	farcall AI_Switch
