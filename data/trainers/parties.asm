@@ -5031,16 +5031,16 @@ LassGroup:
 
 	; LASS (12)
 	db "LINDA@", TRAINERTYPE_NORMAL
-	db 41, BULBASAUR
-	db 43, IVYSAUR
+	db 44, VICTREEBEL
+	db 44, VILEPLUME
 	db 45, VENUSAUR
 	db -1 ; end
 
 	; LASS (13)
 	db "ALICE@", TRAINERTYPE_NORMAL
-	db 45, SLOWKING
+	db 44, MUK
 	db 47, ARBOK
-	db 45, VILEPLUME
+	db 45, GENGAR
 	db -1 ; end
 
 	; LASS (14)
