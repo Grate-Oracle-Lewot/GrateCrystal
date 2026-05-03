@@ -80,8 +80,11 @@ Route4PercyScript:
 	setevent EVENT_FOUND_PERCY_ON_ROUTE_4
 	end
 
-MtMoonSquareSign:
-	jumptext MtMoonSquareSignText
+Route4Sign:
+	jumptext Route4SignText
+
+CeruleanCaveSign:
+	jumptext CeruleanCaveSignText
 
 Route4HPUp:
 	itemball FIBER
@@ -153,11 +156,16 @@ PicnickerSharonAfterBattleText:
 	line "some more…"
 	done
 
-MtMoonSquareSignText:
+Route4SignText:
 	text "ROUTE 4"
 
 	para "MT. MOON -"
 	line "CERULEAN CITY"
+	done
+
+CeruleanCaveSignText:
+	text "DANGER!"
+	line "DO NOT ENTER!"
 	done
 
 Route4PercyIntroText:
@@ -195,7 +203,8 @@ Route4_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  7, BGEVENT_READ, MtMoonSquareSign
+	bg_event  3,  7, BGEVENT_READ, Route4Sign
+	bg_event 39,  5, BGEVENT_READ, CeruleanCaveSign
 	bg_event 10,  3, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	def_object_events
