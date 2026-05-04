@@ -27,16 +27,21 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_TEXT_SPEED_NONE ; 3
 
 	const_def
-	const OPT_LEVELCAPS_NONE    ; 0
-	const OPT_LEVELCAPS_DISOBEY ; 1
-	const OPT_LEVELCAPS_HARDCAP ; 2
-
-	const_def
 	const OPT_DIFFICULTY_VERY_EASY ; 0
 	const OPT_DIFFICULTY_EASY      ; 1
 	const OPT_DIFFICULTY_NORMAL    ; 2
 	const OPT_DIFFICULTY_HARD      ; 3
 	const OPT_DIFFICULTY_VERY_HARD ; 4
+
+	const_def
+	const OPT_LEVELCAPS_NONE    ; 0
+	const OPT_LEVELCAPS_DISOBEY ; 1
+	const OPT_LEVELCAPS_HARDCAP ; 2
+
+	const_def
+	const OPT_EXPERIENCE_NONE    ; 0
+	const OPT_EXPERIENCE_CLASSIC ; 1
+	const OPT_EXPERIENCE_PARTY   ; 2
 
 	const_def
 	const OPT_PRINT_LIGHTEST ; 0
@@ -48,6 +53,7 @@ NUM_OPTIONS EQU const_value   ; 8
 OnString:     db "ON @"
 OffString:    db "OFF@"
 NormalString: db "NORMAL   @"
+NoneString:   db "NONE     @"
 
 _Option:
 	call ClearJoypad
@@ -646,11 +652,10 @@ Options_LevelCaps:
 
 .Strings:
 ; entries correspond to OPT_LEVELCAPS_* constants
-	dw .None
+	dw NoneString
 	dw .Disobey
 	dw .HardCap
 
-.None:    db "NONE    @"
 .Disobey: db "DISOBEY @"
 .HardCap: db "HARD CAP@"
 
@@ -708,41 +713,80 @@ Options_Nuzlocke:
 .On: db "LIMITED@"
 
 Options_Experience:
-	ld hl, wOptions2
+	call GetExperienceSetting
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit PARTYWIDE_EXP, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	ld a, c
+	cp OPT_EXPERIENCE_PARTY
+	jr c, .Increase
+	ld c, OPT_EXPERIENCE_NONE - 1
+
+.Increase:
+	inc c
+	ld a, e
+	jr .Save
 
 .LeftPressed:
-	bit PARTYWIDE_EXP, [hl]
-	jr z, .ToggleOn
+	ld a, c
+	and a
+	jr nz, .Decrease
+	ld c, OPT_EXPERIENCE_PARTY + 1
 
-.ToggleOff:
-	res PARTYWIDE_EXP, [hl]
-	ld de, .Off
-	jr .Display
+.Decrease:
+	dec c
+	ld a, d
+
+.Save:
+	ld b, a
+	ld [wExperienceSetting], a
 
 .NonePressed:
-	bit PARTYWIDE_EXP, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
-	set PARTYWIDE_EXP, [hl]
-	ld de, .On
-
-.Display:
+	ld b, 0
+	ld hl, .Strings
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
 	hlcoord 10, 9
 	call PlaceString
 	and a
 	ret
 
-.Off: db "CLASSIC  @"
-.On:  db "PARTYWIDE@"
+.Strings:
+; entries correspond to OPT_EXPERIENCE_* constants
+	dw NoneString
+	dw .Classic
+	dw .Partywide
+
+.Classic:   db "CLASSIC  @"
+.Partywide: db "PARTYWIDE@"
+
+GetExperienceSetting:
+; converts EXP_GAINS_* value in a to OPT_EXPERIENCE_* value in c,
+; with previous/next EXP_GAINS_* values in d/e
+	ld a, [wExperienceSetting]
+	and a
+	jr z, .IsNone
+	cp EXP_GAINS_PARTY
+	jr z, .IsParty
+	; none of the above
+	ld c, OPT_EXPERIENCE_CLASSIC
+	lb de, EXP_GAINS_NONE, EXP_GAINS_PARTY
+	ret
+
+.IsNone:
+	ld c, OPT_EXPERIENCE_NONE
+	lb de, EXP_GAINS_PARTY, EXP_GAINS_CLASSIC
+	ret
+
+.IsParty:
+	ld c, OPT_EXPERIENCE_PARTY
+	lb de, EXP_GAINS_CLASSIC, EXP_GAINS_NONE
+	ret
 
 Options_Font:
 	ld hl, wFontType
