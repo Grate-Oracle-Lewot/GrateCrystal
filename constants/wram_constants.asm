@@ -100,14 +100,14 @@ NUM_FONTS EQU const_value
 	const EASY_MODE            ; 3
 	const HARD_MODE            ; 4
 	const NUZLOCKE             ; 5
-	const PARTYWIDE_EXP        ; 6
+	const_skip                 ; 6
 	const DIFFICULTY_DOUBLE    ; 7
 
-; wSidebar::
+; wExperienceSetting::
 	const_def
-	const SIDEBAR_TIME  ; 0
-	const SIDEBAR_CAP   ; 1
-	const SIDEBAR_CATCH ; 2
+	const EXP_GAINS_NONE    ; 0
+	const EXP_GAINS_CLASSIC ; 1
+	const EXP_GAINS_PARTY   ; 2
 
 ; wWalkingDirection::
 	const_def -1
