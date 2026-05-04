@@ -2401,9 +2401,9 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	; fallthrough
 
 ApplyExperienceAfterEnemyCaught:
-	ld a, [wOptions2]
-	bit PARTYWIDE_EXP, a
-	jr z, .classic
+	ld a, [wExperienceSetting]
+	cp EXP_GAINS_PARTY
+	jr nz, .classic
 
 ; Party-wide experience
 	ld a, [wBattleParticipantsNotFainted]
