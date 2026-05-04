@@ -1,10 +1,9 @@
 BattleCommand_Conversion:
 ; Combines Conversion and Conversion2. The idea is to result in type 1 STAB and type 2 resistance. How they combine is not really considered.
 ; CURSE_TYPE is excluded from Conversion1. CURSE_TYPE and BIRD are searched by Conversion2 but have no resistances, so should never be selected.
-; Should work fine for inverse battles. Conversion2 specifically fails in typeless battles, but 1 can still work, as STAB still exists.
 
 ; Conversion1, changes both types. Second type may then be changed again by Conversion2.
-; Only plays move animation if conversion is successeful.
+; Only plays move animation if conversion is successeful. Works in typeless battles, since STAB still exists.
 	ld hl, wBattleMonMoves
 	ld de, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -117,6 +116,8 @@ BattleCommand_Conversion:
 	and TYPE_MASK
 	ld d, a
 	pop hl
+	call ConversionLoophole
+	ret z
 	call BattleCommand_SwitchTurn
 
 .loop4
@@ -185,6 +186,8 @@ BattleCommand_Conversion:
 	and TYPE_MASK
 	ld d, a
 	pop hl
+	call ConversionLoophole
+	jp z, FailMove
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
@@ -243,3 +246,15 @@ ConversionCheckTypeMatchup:
 	ld d, a
 	ld b, [hl]
 	jp CheckType2Matchup
+
+ConversionLoophole:
+; Return z if we're in an inverse battle and the opponent's last move was Normal-type.
+; Used to prevent an infinite loop due to nothing resisting Normal in inverse mode.
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_INVERSE
+	ret nz
+
+	ld a, d
+	cp NORMAL
+	ret
