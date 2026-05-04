@@ -40,7 +40,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
     - Gift or trade Pokémon given by NPCs (including your starter) count as your encounter for the area in which the NPC appears. NPCs will refuse to make the trade or gift if you've already used that encounter. However, gifts or trades are allowed to be species that you've already caught, and link trading is completely unrestricted.
     - Apart from your starter, encounters won't be used up until after you get your first Poké Balls from Elm's aide.
     - Eggs can be freely obtained in any area, but will only hatch in areas where you haven't caught something yet, and upon hatching count as that area's encounter.
-    - Roaming beasts count as your encounter if caught or defeated, and can only be caught in areas with available encounters, but they do not use up an encounter when they flee.
+    - Roaming beasts count as your encounter if caught or defeated, and can only be caught in areas with available encounters, but they do not use up an encounter when they flee (or if you flee from them).
     - No exceptions for shinies. Play at your own risk.
     - This mode does nothing about Pokémon "dying." It only restricts catching. Release or box them at your own discretion.
     - Since the mode can be switched off at any time, you can disable it to, say, catch an HM user to avoid softlocks. However, new encounters are used up even while the mode is turned off.
