@@ -19,9 +19,9 @@ DefaultOptions:
 	; EASY_MODE:            0 (OFF)
 	; HARD_MODE:            0 (OFF)
 	; NUZLOCKE:             0 (OFF)
-	; PARTYWIDE_EXP:        0 (OFF)
+	; unused
 	; DIFFICULTY_DOUBLE:    0 (OFF)
-; wSidebar
-	db 0 ; SIDEBAR_TIME
+; wExperienceSetting
+	db EXP_GAINS_CLASSIC
 .End
 	assert DefaultOptions.End - DefaultOptions == wOptionsEnd - wOptions
