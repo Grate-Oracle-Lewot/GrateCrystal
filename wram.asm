@@ -1740,13 +1740,13 @@ wOptions2::
 ; bit 3: easy mode off/on
 ; bit 4: hard mode off/on
 ; bit 5: nuzlocke off/on
-; bit 6: menu sidebar off/on (see wSidebar)
+; bit 6: unused
 ; bit 7: if set, turns Easy into Very Easy and Hard into Very Hard
 	db
-wSidebar::
-; 00 - SIDEBAR_TIME (clock)
-; 01 - SIDEBAR_CAP (level cap)
-; 02 - SIDEBAR_CATCH (Nuzlocke area catchability)
+wExperienceSetting::
+; 00 - EXP_GAINS_NONE
+; 01 - EXP_GAINS_CLASSIC
+; 02 - EXP_GAINS_PARTY
 	db
 wOptionsEnd::
 
