@@ -32,7 +32,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Battle Items on/off: disable player use of items in battle (balls and held items still work)
   - Difficulty: Normal (unmodified stats), Easy (player's active Pokémon gets a 1/8 boost to all non-HP stats at all times), Very Easy (Easy boost is applied twice), Hard (computer's active Pokémon gets the aforementioned boost instead), or Very Hard (again, double boost). None of these boosts apply in link battles or the Battle Tower.
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
-  - Experience Gains: Classic or Partywide
+  - Experience Gains: Classic, Partywide, or None (for a no-exp challenge)
   - Font: choose between the game's standard font, two alternates taken from Polished Crystal, or one designed by Th3Element05
   - Catching: Normal or Limited (Nuzlocke catching rules)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
@@ -536,8 +536,6 @@ make turbid - Normal Johto starters, but the new/beta legendary is replaced with
 make startur - Same as previous, but the starters are Abra and Shellder. If you lose to the rival in the first battle, his Shellder will evolve into the beta Pokémon, which is Water/Poison; if you win, it will evolve into Cloyster. The Kadabra/Alakazam that's normally on the rival's team is replaced with a Machoke/Machamp, regardless of which starter you pick.
 
 make nohm - Normal Johto starters, but when you get your starter you also get all of the HM-replacement items, meaning that you'll never have to teach an HM move to any Pokémon. You do still need the respective badges to use the field effects, and HMs themselves still exist to allow access to those moves in battle, but HM moves can be forgotten without the Move Deleter. The reason I didn't just do this in the normal build was because the HM-replacement items were handy as rewards for completing certain challenges or areas, so in this build those things lack proper rewards.
-
-make noexp - Normal Johto starters, but Pokémon gain no experience from either battling or the Daycare. (Rare Candies and vitamins still work.) This is a particular type of challenge run, although I can't guarantee that the game is beatable this way.
 
 make little - Normal Johto starters, but the player can only acquire first-stage Pokémon (no single-stagers), and no Pokémon that the player owns will ever evolve. Computer trainers still use evolved and single-stage Pokémon as much as ever, so this is another kind of challenge run. You *can* obtain any Pokémon by trading with a normal copy of Grate Crystal, so do with that what you will. The Everstone also still works as an Eviolite; I chose to do this since some enemy trainers use it, and I didn't want to reconfigure their teams.
 
