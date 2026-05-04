@@ -4069,8 +4069,8 @@ BattleAnim_Attract:
 
 BattleAnim_SleepTalk:
 	anim_1gfx ANIM_GFX_STATUS
+	anim_cry $0
 .loop
-	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ASLEEP, 64, 80, $0
 	anim_wait 40
 	anim_loop 2, .loop
