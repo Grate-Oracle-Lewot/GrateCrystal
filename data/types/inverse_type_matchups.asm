@@ -2,6 +2,7 @@ InverseTypeMatchups:
 	;  attacker,     defender,     *=
 if DEF(_VANILLA_TYPES)
 	db NORMAL,       ROCK,         SUPER_EFFECTIVE
+	db NORMAL,       GHOST,        SUPER_EFFECTIVE
 	db NORMAL,       STEEL,        SUPER_EFFECTIVE
 	db FIRE,         FIRE,         SUPER_EFFECTIVE
 	db FIRE,         WATER,        SUPER_EFFECTIVE
@@ -93,6 +94,7 @@ if DEF(_VANILLA_TYPES)
 	db ROCK,         FLYING,       NOT_VERY_EFFECTIVE
 	db ROCK,         BUG,          NOT_VERY_EFFECTIVE
 	db ROCK,         STEEL,        SUPER_EFFECTIVE
+	db GHOST,        NORMAL,       SUPER_EFFECTIVE
 	db GHOST,        PSYCHIC_TYPE, NOT_VERY_EFFECTIVE
 	db GHOST,        DARK,         SUPER_EFFECTIVE
 	db GHOST,        GHOST,        NOT_VERY_EFFECTIVE
