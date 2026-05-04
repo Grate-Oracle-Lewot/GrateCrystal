@@ -7203,10 +7203,6 @@ FinishBattleAnim:
 	ret
 
 GiveExperiencePoints:
-if DEF(_NO_EXPERIENCE)
-	ret
-else
-; Give experience.
 ; Don't give experience if linked or in the Battle Tower.
 	ld a, [wLinkMode]
 	and a
@@ -7216,10 +7212,13 @@ else
 	and a
 	ret nz
 
-; party-wide experience
-	ld a, [wOptions2]
-	bit PARTYWIDE_EXP, a
-	jr nz, .got_amount
+; Don't give if experience gains are set to None.
+	ld a, [wExperienceSetting]
+	and a
+	ret z
+; If set to Partywide, give full amount to all participants.
+	cp EXP_GAINS_PARTY
+	jr z, .got_amount
 
 ; evenly divide exp among participants
 	ld a, [wBattleParticipantsNotFainted]
@@ -7435,7 +7434,7 @@ else
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
-; Boost Experience for traded Pokemon
+; boost experience for traded Pokemon
 	pop bc
 	ld hl, MON_ID
 	add hl, bc
@@ -7453,12 +7452,12 @@ else
 	ld a, 1
 
 .no_boost
-; Boost experience for a Trainer Battle
+; boost experience for a trainer battle
 	ld [wStringBuffer2 + 2], a
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-; Boost experience for Lucky Egg
+; boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM
 	call GetPartyParamLocation
@@ -7709,7 +7708,6 @@ else
 	ld b, h
 	ld c, l
 	jp .loop
-endc
 
 BoostExp:
 ; Multiply experience by 1.5x
@@ -7738,7 +7736,6 @@ Text_MonGainedExpPoint:
 	ld a, [wStringBuffer2 + 2] ; IsTradedMon
 	and a
 	ret z
-
 	ld hl, BoostedExpPointsText
 	ret
 
