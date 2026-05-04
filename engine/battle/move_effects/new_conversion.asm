@@ -253,8 +253,7 @@ ConversionLoophole:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_INVERSE
-	ret nz
-
 	ld a, d
+	ret nz
 	cp NORMAL
 	ret
