@@ -1408,63 +1408,25 @@ CalcMonStatC:
 	ld e, a
 	ld d, [hl]
 
-; optimized square root by DamienDoury
-	push bc
+; optimized square root from Prism
 	ld h, d
-	ld l, e          
-
-	ld de, 0         
-	ld bc, $4000     
-
-.loop:
-	push hl
-
-	ld a, l
-	sub e
-	ld l, a
-	ld a, h
-	sbc a, d
-	jr c, .restore
-
-	ld h, a
-	ld a, l
-	sub c
-	ld l, a
-	ld a, h
-	sbc a, b
-	jr c, .restore
-
-	srl d
-	rr e
-
-	ld a, e
-	add a, c
-	ld e, a
-	ld a, d
-	adc a, b
-	ld d, a
-
-	pop hl
-	jr .shift
-
-.restore:
-	pop hl
-
-	srl d
-	rr e
-
-.shift:
-	srl b
-	rr c
-	srl b
-	rr c
-
+	ld l, e
+	ld de, 1
+	ld b, d
+.loop
+	inc b
 	ld a, b
-	or c
+	inc a
+	jr z, .got_squrt
+	dec e
+	dec de
+	add hl, de
+	jr nc, .got_squrt
+	ld a, h
+	or l
 	jr nz, .loop
-
-	pop bc
-	ld b, e
+    
+.got_squrt
 	pop de
 
 .no_stat_exp
