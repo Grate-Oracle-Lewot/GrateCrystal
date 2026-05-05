@@ -335,7 +335,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons CINNABAR_ISLAND
-	db 6 percent ; encounter rate
+	db 3 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 35, TENTACOOL
 	db 35, MAGIKARP
