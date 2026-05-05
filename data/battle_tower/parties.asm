@@ -6436,4 +6436,254 @@ BattleTowerExtraMons:
 	bigdw 232 ; SAtk
 	bigdw 224 ; SDef
 
+	db TOGETIC
+	db QUICK_CLAW
+	db MOONBLAST, AIR_SLASH, SILVER_WIND, CHARM
+	dw 0 ; OT ID
+	dt 800000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	dn 7, 7, 7, 8 ; DVs
+	db 8, 24, 16, 32 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 333 ; HP
+	bigdw 333 ; Max HP
+	bigdw 158 ; Atk
+	bigdw 254 ; Def
+	bigdw 194 ; Spd
+	bigdw 276 ; SAtk
+	bigdw 296 ; SDef
+
+	db AIPOM
+	db PINK_BOW
+	db RETURN, STRENGTH, DYNAMICPUNCH, NIGHTMARE
+	dw 0 ; OT ID
+	dt 800000 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	bigdw 65000
+	dn 15, 15, 15, 0 ; DVs
+	db 24, 24, 8, 16 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 331 ; HP
+	bigdw 331 ; Max HP
+	bigdw 266 ; Atk
+	bigdw 218 ; Def
+	bigdw 298 ; Spd
+	bigdw 168 ; SAtk
+	bigdw 188 ; SDef
+
+	db CORSOLA
+	db SCOPE_LENS
+	db SURF, PSYCHIC_M, RECOVER, POWER_GEM
+	dw 0 ; OT ID
+	dt 800000 ; Exp
+	; Stat exp
+	bigdw 40000
+	bigdw 30000
+	bigdw 33300
+	bigdw 30000
+	bigdw 30000
+	dn 15, 14, 15, 13 ; DVs
+	db 16, 16, 16, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 322 ; HP
+	bigdw 322 ; Max HP
+	bigdw 198 ; Atk
+	bigdw 292 ; Def
+	bigdw 148 ; Spd
+	bigdw 214 ; SAtk
+	bigdw 274 ; SDef
+
+	db SUNFLORA
+	db QUICK_CLAW
+	db SUNNY_DAY, SOLARBEAM, FLAMETHROWER, SYNTHESIS
+	dw 0 ; OT ID
+	dt 949930 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 20000
+	bigdw 50000
+	bigdw 10000
+	bigdw 65000
+	dn 5, 4, 0, 11 ; DVs
+	db 8, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 351 ; HP
+	bigdw 351 ; Max HP
+	bigdw 218 ; Atk
+	bigdw 196 ; Def
+	bigdw 68 ; Spd
+	bigdw 400 ; SAtk
+	bigdw 258 ; SDef
+
+	db DUGTRIO
+	db BERRY_JUICE
+	db HEADBUTT, EARTHQUAKE, THIEF, MUD_SLAP
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 40000
+	bigdw 50000
+	bigdw 40000
+	dn 15, 13, 13, 13 ; DVs
+	db 32, 16, 48, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 267 ; HP
+	bigdw 267 ; Max HP
+	bigdw 288 ; Atk
+	bigdw 183 ; Def
+	bigdw 326 ; Spd
+	bigdw 183 ; SAtk
+	bigdw 219 ; SDef
+
+	db DONPHAN
+	db LEFTOVERS
+	db STRENGTH, BODY_SLAM, EARTHQUAKE, ROCK_WRECKER
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 65000
+	bigdw 50000
+	bigdw 50000
+	bigdw 40000
+	bigdw 40000
+	dn 9, 8, 7, 6 ; DVs
+	db 24, 24, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 393 ; HP
+	bigdw 393 ; Max HP
+	bigdw 318 ; Atk
+	bigdw 316 ; Def
+	bigdw 169 ; Spd
+	bigdw 187 ; SAtk
+	bigdw 217 ; SDef
+
+	db URSARING
+	db SCOPE_LENS
+	db SLASH, EARTHQUAKE, HYPER_BEAM, THUNDERPUNCH
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	bigdw 45000
+	bigdw 50000
+	dn 15, 13, 14, 13 ; DVs
+	db 32, 16, 8, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 411 ; HP
+	bigdw 411 ; Max HP
+	bigdw 358 ; Atk
+	bigdw 266 ; Def
+	bigdw 192 ; Spd
+	bigdw 206 ; SAtk
+	bigdw 240 ; SDef
+
+	db CELEBI
+	db BLACK_PEARL
+	db SUNNY_DAY, SOLARBEAM, PSYCHIC_M, FUTURE_SIGHT
+	dw 0 ; OT ID
+	dt 1059860 ; Exp
+	; Stat exp
+	bigdw 58000
+	bigdw 58000
+	bigdw 58000
+	bigdw 58000
+	bigdw 58000
+	dn 10, 10, 10, 10 ; DVs
+	db 8, 16, 16, 16 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 370 ; HP
+	bigdw 370 ; Max HP
+	bigdw 285 ; Atk
+	bigdw 285 ; Def
+	bigdw 285 ; Spd
+	bigdw 285 ; SAtk
+	bigdw 285 ; SDef
+
+	db OCTILLERY
+	db SOUR_BERRY
+	db CONVERSION, FLASH, TRI_ATTACK, REST
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 50000
+	bigdw 50000
+	bigdw 50000
+	bigdw 25000
+	bigdw 50000
+	dn 8, 8, 8, 8 ; DVs
+	db 16, 16, 16, 8 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 315 ; HP
+	bigdw 315 ; Max HP
+	bigdw 286 ; Atk
+	bigdw 226 ; Def
+	bigdw 150 ; Spd
+	bigdw 286 ; SAtk
+	bigdw 226 ; SDef
+
+	db HYPNO
+	db BERRY_JUICE
+	db NIGHTMARE, DREAM_EATER, DARK_PULSE, SHADOW_CLAW
+	dw 0 ; OT ID
+	dt 1000000 ; Exp
+	; Stat exp
+	bigdw 45000
+	bigdw 40000
+	bigdw 45000
+	bigdw 50000
+	bigdw 50000
+	dn 8, 4, 9, 11 ; DVs
+	db 16, 24, 24, 24 ; PP
+	db 0 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 339 ; HP
+	bigdw 339 ; Max HP
+	bigdw 217 ; Atk
+	bigdw 206 ; Def
+	bigdw 212 ; Spd
+	bigdw 230 ; SAtk
+	bigdw 312 ; SDef
+
 	assert_table_length BATTLETOWER_NUM_EXTRA_MON
