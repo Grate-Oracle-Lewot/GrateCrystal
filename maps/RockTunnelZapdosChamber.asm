@@ -1,4 +1,6 @@
 	object_const_def
+	const ROCKTUNNELZAPDOSCHAMBER_BOULDER1
+	const ROCKTUNNELZAPDOSCHAMBER_BOULDER2
 	const ROCKTUNNELZAPDOSCHAMBER_POKE_BALL
 	const ROCKTUNNELZAPDOSCHAMBER_SLOWKING
 	const ROCKTUNNELZAPDOSCHAMBER_ZAPDOS
@@ -47,6 +49,15 @@ endc
 	disappear ROCKTUNNELZAPDOSCHAMBER_ZAPDOS
 	reloadmapafterbattle
 	end
+
+RockTunnelZapdosChamberBoulder:
+	jumpstd StrengthBoulderScript
+
+RockTunnelZapdosChamberHiddenXSpeed:
+	hiddenitem X_SPEED, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_HIDDEN_X_SPEED
+
+RockTunnelZapdosChamberHiddenXSpecial:
+	hiddenitem X_SPECIAL, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_HIDDEN_X_SPECIAL
 
 RockTunnelZapdosChamberSlowkingText:
 	text "SLOWKING: …"
@@ -97,8 +108,12 @@ RockTunnelZapdosChamber_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event 16, 30, BGEVENT_ITEM, RockTunnelZapdosChamberHiddenXSpeed
+	bg_event  3, 17, BGEVENT_ITEM, RockTunnelZapdosChamberHiddenXSpecial
 
 	def_object_events
+	object_event  9, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RockTunnelZapdosChamberBoulder, -1
+	object_event 10, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RockTunnelZapdosChamberBoulder, -1
 	object_event  4, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RockTunnelZapdosChamberScopeLens, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_SCOPE_LENS
-	object_event 16, 12, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, RockTunnelZapdosChamberSlowkingScript, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_ZAPDOS
+	object_event 14, 14, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, RockTunnelZapdosChamberSlowkingScript, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_ZAPDOS
 	object_event 15,  3, SPRITE_BIRD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RockTunnelZapdosChamberZapdosScript, EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_ZAPDOS
