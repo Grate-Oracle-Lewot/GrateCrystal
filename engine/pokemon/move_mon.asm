@@ -1407,7 +1407,64 @@ CalcMonStatC:
 	ld a, [hld]
 	ld e, a
 	ld d, [hl]
-	farcall GetSquareRoot
+
+; optimized square root by DamienDoury
+	push bc
+	ld h, d
+	ld l, e          
+
+	ld de, 0         
+	ld bc, $4000     
+
+.loop:
+	push hl
+
+	ld a, l
+	sub e
+	ld l, a
+	ld a, h
+	sbc a, d
+	jr c, .restore
+
+	ld h, a
+	ld a, l
+	sub c
+	ld l, a
+	ld a, h
+	sbc a, b
+	jr c, .restore
+
+	srl d
+	rr e
+
+	ld a, e
+	add a, c
+	ld e, a
+	ld a, d
+	adc a, b
+	ld d, a
+
+	pop hl
+	jr .shift
+
+.restore:
+	pop hl
+
+	srl d
+	rr e
+
+.shift:
+	srl b
+	rr c
+	srl b
+	rr c
+
+	ld a, b
+	or c
+	jr nz, .loop
+
+	pop bc
+	ld b, e
 	pop de
 
 .no_stat_exp
