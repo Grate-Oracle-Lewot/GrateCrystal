@@ -922,7 +922,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, ALAKAZAM
+	db EVOLVE_LEVEL, 32, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, KINESIS
