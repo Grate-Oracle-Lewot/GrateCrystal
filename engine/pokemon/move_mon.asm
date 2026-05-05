@@ -1407,26 +1407,7 @@ CalcMonStatC:
 	ld a, [hld]
 	ld e, a
 	ld d, [hl]
-
-; optimized square root from Prism
-	ld h, d
-	ld l, e
-	ld de, 1
-	ld b, d
-.loop
-	inc b
-	ld a, b
-	inc a
-	jr z, .got_squrt
-	dec e
-	dec de
-	add hl, de
-	jr nc, .got_squrt
-	ld a, h
-	or l
-	jr nz, .loop
-    
-.got_squrt
+	call GetSquareRoot
 	pop de
 
 .no_stat_exp
