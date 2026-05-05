@@ -707,8 +707,8 @@ BattleTowerMons:
 	bigdw 44 ; SAtk
 	bigdw 48 ; SDef
 
-	db ALAKAZAM
-	db SLOWPOKETAIL
+	db KADABRA
+	db TWISTEDSPOON
 	db PSYCHIC_M, KINESIS, PROTECT, TRI_ATTACK
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -724,13 +724,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 68 ; HP
-	bigdw 68 ; Max HP
-	bigdw 42 ; Atk
-	bigdw 36 ; Def
-	bigdw 69 ; Spd
-	bigdw 75 ; SAtk
-	bigdw 60 ; SDef
+	bigdw 63 ; HP
+	bigdw 63 ; Max HP
+	bigdw 36 ; Atk
+	bigdw 30 ; Def
+	bigdw 63 ; Spd
+	bigdw 70 ; SAtk
+	bigdw 50 ; SDef
 
 	db ARCANINE
 	db BRIGHTPOWDER
