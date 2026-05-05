@@ -1391,7 +1391,9 @@
 	const EVENT_TOHJO_FALLS_HIDDEN_X_SP_DEFEND
 	const EVENT_ILEX_FOREST_HIDDEN_WATER_STONE
 	const EVENT_ROUTE_26_PP_UP
-; Unused: next 116 (now 4) events
+	const EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_HIDDEN_X_SPEED
+	const EVENT_ROCK_TUNNEL_ZAPDOS_CHAMBER_HIDDEN_X_SPECIAL
+; Unused: next 116 (now 2) events
 
 	const_next 1600
 ; Sprite visibility flags
