@@ -955,7 +955,7 @@ MoonBallMultiplier:
 	ld b, $ff
 	ret
 
-INCLUDE "engine/items/moon_ball_mons.asm"
+INCLUDE "data/pokemon/moon_ball_mons.asm"
 
 LoveBallMultiplier:
 	; does species match?
