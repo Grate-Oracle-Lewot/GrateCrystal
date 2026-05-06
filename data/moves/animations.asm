@@ -4720,24 +4720,24 @@ BattleAnim_PowerGem:
 	anim_ret
 
 BattleAnim_Moonblast:
-	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_BEAM
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 0, 40, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 16, 56, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 32, 72, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 48, 88, $0
-	anim_obj ANIM_OBJ_MOONLIGHT, 64, 104, $0
-	anim_wait 1
-	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_wait 42
-	anim_clearobjs
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_call BattleAnimSub_Beam
-	anim_wait 48
-	anim_incobj 5
-	anim_wait 64
+	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_obj ANIM_OBJ_MOONBLAST, 64, 104, $1
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $80
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $88
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $90
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $98
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $a8
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
+	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
+.loop
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 16
+	anim_loop 8, .loop
+	anim_wait 32
 	anim_ret
 
 if DEF(_METRONOME_ONLY)
