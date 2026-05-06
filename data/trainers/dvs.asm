@@ -11,7 +11,7 @@ TrainerClassDVs:
 	dn 10, 10, 10, 10 ; PRYCE
 	dn 11, 12, 11, 11 ; CLAIR
 	dn 11, 15, 15, 13 ; A_D
-	dn 13, 14, 13, 14 ; LUCAS
+	dn 13, 13, 13, 14 ; LUCAS
 	dn 13, 14, 13, 14 ; PERCY
 	dn 14, 14, 14, 14 ; GRATE_ORACLE
 	dn 13, 14, 14, 13 ; KAREN
