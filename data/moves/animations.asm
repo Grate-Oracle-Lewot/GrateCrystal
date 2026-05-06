@@ -4723,7 +4723,7 @@ BattleAnim_Moonblast:
 	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_obj ANIM_OBJ_MOONBLAST, 64, 104, $1
+	anim_obj ANIM_OBJ_MOONBLAST, 96, 104, $1
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $0
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $80
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $88
@@ -4734,9 +4734,10 @@ BattleAnim_Moonblast:
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b0
 	anim_obj ANIM_OBJ_CONFUSE_RAY, 64, 88, $b8
 .loop
-	anim_sound 0, 0, SFX_METRONOME
+	anim_sound 0, 1, SFX_MORNING_SUN
 	anim_wait 16
 	anim_loop 8, .loop
+	anim_sound 0, 0, SFX_METRONOME
 	anim_wait 32
 	anim_ret
 
