@@ -13,7 +13,7 @@ TrainerClassDVs:
 	dn 11, 15, 15, 13 ; A_D
 	dn 13, 13, 13, 14 ; LUCAS
 	dn 13, 14, 13, 14 ; PERCY
-	dn 14, 14, 14, 14 ; GRATE_ORACLE
+	dn 13, 14, 14, 14 ; GRATE_ORACLE
 	dn 13, 14, 14, 13 ; KAREN
 	dn 12, 11, 11, 12 ; BROCK
 	dn 11, 12, 12, 11 ; MISTY
@@ -28,7 +28,7 @@ TrainerClassDVs:
 	dn 14, 13, 13, 14 ; BRUNO
 	dn 13, 14, 14, 13 ; LORELEI
 	dn 13, 14, 14, 13 ; AGATHA
-	dn 14, 14, 14, 14 ; CHAMPION
+	dn 15, 14, 14, 14 ; CHAMPION
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 14, 15, 15, 14 ; RED
 	dn 12, 13, 13, 12 ; RIVAL1
