@@ -1838,15 +1838,15 @@ BattleTowerLance:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 14, 14, 14, 14 ; DVs
+	dn 15, 14, 14, 14 ; DVs
 	db 24, 16, 24, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 363 ; HP
-	bigdw 363 ; Max HP
-	bigdw 346 ; Atk
+	bigdw 379 ; HP
+	bigdw 379 ; Max HP
+	bigdw 348 ; Atk
 	bigdw 254 ; Def
 	bigdw 258 ; Spd
 	bigdw 216 ; SAtk
@@ -1864,15 +1864,15 @@ BattleTowerLance:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 14, 14, 14, 14 ; DVs
+	dn 15, 14, 14, 14 ; DVs
 	db 24, 24, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 373 ; HP
-	bigdw 373 ; Max HP
-	bigdw 364 ; Atk
+	bigdw 389 ; HP
+	bigdw 389 ; Max HP
+	bigdw 366 ; Atk
 	bigdw 316 ; Def
 	bigdw 218 ; Spd
 	bigdw 286 ; SAtk
@@ -1890,15 +1890,15 @@ BattleTowerLance:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 14, 14, 14, 14 ; DVs
+	dn 15, 14, 14, 14 ; DVs
 	db 8, 16, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 355 ; HP
-	bigdw 355 ; Max HP
-	bigdw 364 ; Atk
+	bigdw 371 ; HP
+	bigdw 371 ; Max HP
+	bigdw 366 ; Atk
 	bigdw 286 ; Def
 	bigdw 256 ; Spd
 	bigdw 296 ; SAtk
