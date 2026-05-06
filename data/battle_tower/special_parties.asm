@@ -759,7 +759,7 @@ BattleTowerLucas:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 12 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 8, 8, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -768,10 +768,10 @@ BattleTowerLucas:
 	bigdw 381 ; HP
 	bigdw 381 ; Max HP
 	bigdw 181 ; Atk
-	bigdw 264 ; Def
+	bigdw 266 ; Def
 	bigdw 204 ; Spd
-	bigdw 322 ; SAtk
-	bigdw 272 ; SDef
+	bigdw 326 ; SAtk
+	bigdw 276 ; SDef
 	db "AMPHAROS@@@"
 
 	db POLITOED
@@ -785,7 +785,7 @@ BattleTowerLucas:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 12 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -794,10 +794,10 @@ BattleTowerLucas:
 	bigdw 401 ; HP
 	bigdw 401 ; Max HP
 	bigdw 181 ; Atk
-	bigdw 244 ; Def
+	bigdw 246 ; Def
 	bigdw 234 ; Spd
-	bigdw 272 ; SAtk
-	bigdw 292 ; SDef
+	bigdw 276 ; SAtk
+	bigdw 296 ; SDef
 	db "POLITOED@@@"
 
 	db MEGANIUM
@@ -811,7 +811,7 @@ BattleTowerLucas:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 12 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 24, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -820,10 +820,10 @@ BattleTowerLucas:
 	bigdw 365 ; HP
 	bigdw 365 ; Max HP
 	bigdw 264 ; Atk
-	bigdw 296 ; Def
+	bigdw 298 ; Def
 	bigdw 254 ; Spd
-	bigdw 262 ; SAtk
-	bigdw 294 ; SDef
+	bigdw 266 ; SAtk
+	bigdw 298 ; SDef
 	db "MEGANIUM@@@"
 
 	assert_table_length BATTLETOWER_PARTY_LENGTH
@@ -842,7 +842,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 14 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 8, 24, 32, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -851,11 +851,11 @@ BattleTowerPercy:
 	bigdw 499 ; HP
 	bigdw 499 ; Max HP
 	bigdw 244 ; Atk
-	bigdw 194 ; Def
+	bigdw 196 ; Def
 	bigdw 204 ; Spd
 	bigdw 286 ; SAtk
 	bigdw 216 ; SDef
-	db "WIGGLYTUFF@"
+	db "vektroid@@@"
 
 	db SUDOWOODO
 	db HARDHAT
@@ -868,7 +868,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 14 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 8, 24, 32, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -877,7 +877,7 @@ BattleTowerPercy:
 	bigdw 361 ; HP
 	bigdw 361 ; Max HP
 	bigdw 294 ; Atk
-	bigdw 334 ; Def
+	bigdw 336 ; Def
 	bigdw 154 ; Spd
 	bigdw 176 ; SAtk
 	bigdw 236 ; SDef
@@ -894,7 +894,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 13, 13, 13, 14 ; DVs
+	dn 13, 14, 13, 14 ; DVs
 	db 16, 24, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -903,7 +903,7 @@ BattleTowerPercy:
 	bigdw 321 ; HP
 	bigdw 321 ; Max HP
 	bigdw 165 ; Atk
-	bigdw 264 ; Def
+	bigdw 266 ; Def
 	bigdw 326 ; Spd
 	bigdw 250 ; SAtk
 	bigdw 246 ; SDef
