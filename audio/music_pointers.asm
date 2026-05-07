@@ -123,7 +123,7 @@ Music:
 	dba Music_OldGameCorner
 	dba Music_OldRocketHideout
 	dba Music_Dive
-	dba Music_MirorBBattle
+	dba Music_TrainerBattle
 	dba Music_BattleCynthia
 	dba Music_ContestRSE
 	dba Music_MewtwoStage
