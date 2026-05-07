@@ -160,7 +160,7 @@ INCLUDE "audio/music/dive.asm"
 
 SECTION "Extra Songs 4", ROMX
 
-INCLUDE "audio/music/mirorbbattle.asm"
+INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/battleCynthia.asm"
 INCLUDE "audio/music/contestRSE.asm"
 INCLUDE "audio/music/mewtwostage.asm"
