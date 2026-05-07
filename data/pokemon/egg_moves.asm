@@ -871,8 +871,9 @@ RemoraidEggMoves:
 	db -1 ; end
 
 DelibirdEggMoves:
-	db KINESIS
 	db SWORDS_DANCE
+	db KINESIS
+	db RAZOR_LEAF
 	db POWER_GEM
 	db COTTON_SPORE
 	db HYDRO_PUMP
