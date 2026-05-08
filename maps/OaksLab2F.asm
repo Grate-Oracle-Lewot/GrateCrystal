@@ -798,9 +798,9 @@ InversePokemaniacTannerAfterBattleText:
 	done
 
 InversePokefanMJoshuaSeenText:
-	text "Me and my rodent"
-	line "gang are just here"
-	cont "for fun!"
+	text "Me and my pack of"
+	line "PIKACHU are just"
+	cont "here for fun!"
 	done
 
 InversePokefanMJoshuaBeatenText:
