@@ -881,7 +881,7 @@ BattleTowerPercy:
 	bigdw 154 ; Spd
 	bigdw 176 ; SAtk
 	bigdw 236 ; SDef
-	db "SUDOWOODO@@"
+	db "stereolab@@"
 
 	db WHIMSICOTT
 	db KINGS_ROCK
@@ -907,7 +907,7 @@ BattleTowerPercy:
 	bigdw 326 ; Spd
 	bigdw 250 ; SAtk
 	bigdw 246 ; SDef
-	db "WHIMSICOTT@"
+	db "moonshake@@"
 
 	assert_table_length BATTLETOWER_PARTY_LENGTH
 
