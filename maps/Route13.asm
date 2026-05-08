@@ -96,7 +96,7 @@ PokefanmAlexAfterBattleText:
 PokefanmJoshuaSeenText:
 	text "Nihihi! Would you"
 	line "like to battle my"
-	cont "rodent gang?"
+	cont "pack of PIKACHU?"
 	done
 
 PokefanmJoshuaBeatenText:
