@@ -252,20 +252,17 @@ PlateauRivalLeavesMovement:
 	step_end
 
 IndigoPlateauPokecenter1FCooltrainerFText:
-	text "Two of the ELITE"
-	line "FOUR, LUCAS and"
+	text "At the #MON"
+	line "LEAGUE, you'll get"
 
-	para "PERCY, are"
-	line "transgender."
+	para "tested by the"
+	line "ELITE FOUR."
 
-	para "That's great, but"
-	line "that means all"
+	para "You have to beat"
+	line "them all. If you"
 
-	para "five LEAGUE memb-"
-	line "ers are guys!"
-
-	para "Where are the"
-	line "strong ladies?"
+	para "lose, you have to"
+	line "start all over!"
 	done
 
 PlateauRivalText1:
