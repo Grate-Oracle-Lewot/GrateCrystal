@@ -87,8 +87,10 @@ LucasScript_LucasBeforeText:
 	cont "brother."
 
 	para "Oh, and the last"
-	line "guy, A.D.? He's"
-	cont "our cousin."
+	line "person, A.D.?"
+
+	para "They're our"
+	cont "cousin."
 
 	para "Crying nepotism"
 	line "won't save you"
