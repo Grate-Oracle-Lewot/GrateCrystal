@@ -474,15 +474,10 @@ ChooseMoveToLearn:
 	ld a, BANK(Moves)
 	call GetFarByte
 	ld [wBuffer1], a
-	ld hl, wStringBuffer1 + 9
 	ld de, wBuffer1
 	lb bc, 1, 2
-	call PrintNum
-	ld hl, wStringBuffer1 + 11
-	ld [hl], "/"
 	ld hl, wStringBuffer1 + 12
 	call PrintNum
-	
 	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
 
@@ -491,7 +486,7 @@ ChooseMoveToLearn:
 	call PlaceString
 
 ; This prints the PP gfx before the move's PP.
-	ld bc, 6
+	ld bc, 9
 	add hl, bc
 	ld a, "P"
 	ld [hli], a
@@ -524,7 +519,7 @@ ChooseMoveToLearn:
 	ret z
 	dec a
 	ld [wCurSpecies], a
-	hlcoord 1, 15
+	hlcoord 1, 14
 	predef PrintMoveDescription
 
 .print_move_type
