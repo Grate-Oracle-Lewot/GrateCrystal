@@ -125,7 +125,7 @@ ENDM
 
 	map_attributes CeruleanCity, CERULEAN_CITY, $2c, NORTH | SOUTH | WEST | EAST
 	connection north, Route24, ROUTE_24, 6
-	connection south, Route5, ROUTE_5, 5
+	connection south, Route5, ROUTE_5, 0
 	connection west, Route4, ROUTE_4, 5
 	connection east, Route9, ROUTE_9, 9
 
@@ -215,13 +215,13 @@ ENDM
 	connection east, FuchsiaCity, FUCHSIA_CITY, -7
 
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | EAST
-	connection north, Route5, ROUTE_5, 10
+	connection north, Route5, ROUTE_5, 5
 	connection south, Route6, ROUTE_6, 10
 	connection east, Route8, ROUTE_8, 9
 
 	map_attributes Route5, ROUTE_5, $0f, NORTH | SOUTH
-	connection north, CeruleanCity, CERULEAN_CITY, -5
-	connection south, SaffronCity, SAFFRON_CITY, -10
+	connection north, CeruleanCity, CERULEAN_CITY, 0
+	connection south, SaffronCity, SAFFRON_CITY, -5
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0
