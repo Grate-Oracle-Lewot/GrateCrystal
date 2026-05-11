@@ -85,7 +85,7 @@ ENDM
 	endgroup
 
 	newgroup CERULEAN                                       ; group  5
-	map_const CERULEAN_CITY,                               20, 18 ;  1
+	map_const CERULEAN_CITY,                               21, 18 ;  1
 	map_const CERULEAN_POKECENTER_1F,                       5,  4 ;  2
 	map_const CERULEAN_MART,                                6,  4 ;  3
 	map_const CERULEAN_GYM,                                 5,  8 ;  4
@@ -198,7 +198,7 @@ ENDM
 	endgroup
 
 	newgroup SAFFRON_OUTER                                  ; group 12
-	map_const ROUTE_5,                                     10,  9 ;  1
+	map_const ROUTE_5,                                     21,  9 ;  1
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ;  2
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ;  3
 	map_const ROUTE_5_SAFFRON_GATE,                         4,  3 ;  4
