@@ -123,7 +123,7 @@ ENDM
 	connection west, PewterCity, PEWTER_CITY, -5
 	connection east, Route4, ROUTE_4, 0
 
-	map_attributes CeruleanCity, CERULEAN_CITY, $0f, NORTH | SOUTH | WEST | EAST
+	map_attributes CeruleanCity, CERULEAN_CITY, $2c, NORTH | SOUTH | WEST | EAST
 	connection north, Route24, ROUTE_24, 6
 	connection south, Route5, ROUTE_5, 5
 	connection west, Route4, ROUTE_4, 5
