@@ -1481,6 +1481,11 @@ _NuzlockeCantCatchText::
 	line "forbidden here!"
 	prompt
 
+_GiftOnlyCantCatchText::
+	text "Only gift #MON"
+	line "are allowed!"
+	prompt
+
 _OakTextNGP::
 	text "You've done this"
 	line "before, so I'll"
