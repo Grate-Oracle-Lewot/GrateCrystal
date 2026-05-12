@@ -39,6 +39,11 @@ NUM_OPTIONS EQU const_value   ; 8
 	const OPT_LEVELCAPS_HARDCAP ; 2
 
 	const_def
+	const OPT_CATCHING_NORMAL    ; 0
+	const OPT_CATCHING_LIMITED   ; 1
+	const OPT_CATCHING_GIFT_ONLY ; 2
+
+	const_def
 	const OPT_EXPERIENCE_NONE    ; 0
 	const OPT_EXPERIENCE_CLASSIC ; 1
 	const OPT_EXPERIENCE_PARTY   ; 2
@@ -187,7 +192,7 @@ GetOptionPointer:
 ; entries correspond to OPT_* constants starting with OPT_DIFFICULTY
 	dw Options_Difficulty
 	dw Options_LevelCaps
-	dw Options_Nuzlocke
+	dw Options_Catching
 	dw Options_Experience
 	dw Options_Font
 	dw Options_GBPrinter
@@ -676,41 +681,89 @@ GetLevelCapSetting:
 	ld c, OPT_LEVELCAPS_DISOBEY
 	ret
 
-Options_Nuzlocke:
-	ld hl, wOptions2
+Options_Catching:
+	call GetCatchingSetting
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit NUZLOCKE, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	ld a, c ; right pressed
+	cp OPT_CATCHING_GIFT_ONLY
+	jr c, .Increase
+	ld c, OPT_CATCHING_NORMAL - 1
+
+.Increase:
+	inc c
+	jr .Save
 
 .LeftPressed:
-	bit NUZLOCKE, [hl]
-	jr z, .ToggleOn
+	ld a, c
+	and a
+	jr nz, .Decrease
+	ld c, OPT_CATCHING_GIFT_ONLY + 1
 
-.ToggleOff:
+.Decrease:
+	dec c
+
+.Save:
+	ld a, c
+	and a
+	jr z, .SetNormal
+	ld a, c
+	cp OPT_CATCHING_LIMITED
+	jr z, .SetLimited
+; .SetGiftOnly:
 	res NUZLOCKE, [hl]
-	ld de, NormalString
-	jr .Display
+	set GIFT_ONLY, [hl]
+	jr .NonePressed
 
-.NonePressed:
-	bit NUZLOCKE, [hl]
-	jr z, .ToggleOff
-
-.ToggleOn:
+.SetLimited:
 	set NUZLOCKE, [hl]
-	ld de, .On
+	res GIFT_ONLY, [hl]
+	jr .NonePressed
 
-.Display:
+.SetNormal:
+	res NUZLOCKE, [hl]
+	res GIFT_ONLY, [hl]
+.NonePressed:
+	ld b, 0
+	ld hl, .Strings
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
 	hlcoord 10, 7
 	call PlaceString
 	and a
 	ret
 
-.On: db "LIMITED@"
+.Strings:
+; entries correspond to OPT_CATCHING_* constants
+	dw NormalString
+	dw .Limited
+	dw .GiftOnly
+
+.Limited:  db "LIMITED  @"
+.GiftOnly: db "GIFT ONLY@"
+
+GetCatchingSetting:
+; reads current catching settings to return OPT_CATCHING_* value in c
+	ld hl, wOptions2
+	bit GIFT_ONLY, [hl]
+	jr nz, .GiftOnly
+	bit NUZLOCKE, [hl]
+	jr nz, .Limited
+; .Normal:
+	ld c, OPT_CATCHING_NORMAL
+	ret
+.Limited:
+	ld c, OPT_CATCHING_LIMITED
+	ret
+.GiftOnly:
+	ld c, OPT_CATCHING_GIFT_ONLY
+	ret
 
 Options_Experience:
 	call GetExperienceSetting
