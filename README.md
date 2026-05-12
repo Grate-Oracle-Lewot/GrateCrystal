@@ -34,7 +34,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Level Caps: None, Disobey (Pokémon above the cap disobey like traded Pokémon), or Hard Cap (Pokémon stop gaining experience at the cap)
   - Experience Gains: Classic, Partywide, or None (for a no-exp challenge)
   - Font: choose between the game's standard font, two alternates taken from Polished Crystal, or one designed by Th3Element05
-  - Catching: Normal or Limited (Nuzlocke catching rules)
+  - Catching: Normal (no restrictions), Limited (Nuzlocke rules described below), or Gift Only (includes trades)
     - You can only catch the first wild Pokémon that appears in a given area (divided by landmarks, not individual maps). Even if you fail to catch it, you can't catch another one in that area.
     - Species/Dupes Clause is in effect: if the first wild Pokémon that appears is already registered as caught in the Pokédex, then it won't count as your encounter, and you won't be able to catch it, but you will be able to catch the first new species that you find. Different members of an evolutionary line count as different species, but if you've obtained a different stage through evolution, then that stage counts as already caught (though it doesn't use up any particular area's encounter).
     - Gift or trade Pokémon given by NPCs (including your starter) count as your encounter for the area in which the NPC appears. NPCs will refuse to make the trade or gift if you've already used that encounter. However, gifts or trades are allowed to be species that you've already caught, and link trading is completely unrestricted.
