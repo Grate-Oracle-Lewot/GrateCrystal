@@ -2164,7 +2164,7 @@ Script_checknuzlocke:
 
 ; If GIFT_ONLY bit is set, validate gift, ignoring whether NUZLOCKE bit is set.
 	ld a, [wOptions2]
-	bit GIFT_ONLY
+	bit GIFT_ONLY, a
 	jr nz, .valid
 
 ; Otherwise, check Nuzlocke flag to determine gift validity.
