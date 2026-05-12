@@ -3,7 +3,11 @@
 	db  45,  30,  15,  65,  85,  65
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ICE, PSYCHIC_TYPE ; type
+else
 	db ICE, FAIRY ; type
+endc
 	db 45 ; catch rate
 	db 87 ; base exp
 	db MINTY_BERRY, TM_ICE_PUNCH ; items
