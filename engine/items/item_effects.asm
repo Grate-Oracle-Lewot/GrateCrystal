@@ -207,6 +207,10 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
+	ld a, [wOptions2]
+	bit GIFT_ONLY, a
+	jr nz, .gift_only
+
 	farcall NuzlockeCheckAreaFlag
 	ld a, [wScriptVar]
 	and a
@@ -214,10 +218,16 @@ PokeBallEffect:
 	ld hl, NuzlockeCantCatchText
 	call PrintText
 
+.not_used
 	; Item wasn't used.
 	ld a, $2
 	ld [wItemEffectSucceeded], a
 	ret
+
+.gift_only
+	ld hl, GiftOnlyCantCatchText
+	call PrintText
+	jr .not_used
 
 .valid
 	ld a, [wBattleType]
@@ -2658,10 +2668,6 @@ ItemOakWarningText:
 	text_far _ItemOakWarningText
 	text_end
 
-ItemBelongsToSomeoneElseText:
-	text_far _ItemBelongsToSomeoneElseText
-	text_end
-
 ItemWontHaveEffectText:
 	text_far _ItemWontHaveEffectText
 	text_end
@@ -2674,16 +2680,16 @@ NoCyclingText:
 	text_far _NoCyclingText
 	text_end
 
-ItemCantGetOnText:
-	text_far _ItemCantGetOnText
-	text_end
-
 BallBoxFullText:
 	text_far _BallBoxFullText
 	text_end
 
 NuzlockeCantCatchText:
 	text_far _NuzlockeCantCatchText
+	text_end
+
+GiftOnlyCantCatchText:
+	text_far _GiftOnlyCantCatchText
 	text_end
 
 ItemUsedText:
