@@ -2161,11 +2161,24 @@ Script_checknuzlocke:
 	push hl
 	push de
 	push bc
+
+; If GIFT_ONLY bit is set, validate gift, ignoring whether NUZLOCKE bit is set.
+	ld a, [wOptions2]
+	bit GIFT_ONLY
+	jr nz, .valid
+
+; Otherwise, check Nuzlocke flag to determine gift validity.
 	farcall NuzlockeCheckAreaFlag
+.done
 	pop bc
 	pop de
 	pop hl
 	ret
+
+.valid
+	xor a
+	ld [wScriptVar], a
+	jr .done
 
 Script_closetext:
 	call _OpenAndCloseMenu_HDMATransferTilemapAndAttrmap
