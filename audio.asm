@@ -181,6 +181,7 @@ INCLUDE "audio/music/icepathHGSS.asm"
 SECTION "Extra Songs 6", ROMX
 
 INCLUDE "audio/music/seelstage.asm"
+INCLUDE "audio/music/cinnabarislandGBS.asm"
 
 
 SECTION "Sound Effects", ROMX
