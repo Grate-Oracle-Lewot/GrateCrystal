@@ -136,4 +136,5 @@ Music:
 	dba Music_EncounterE4
 	dba Music_EncounterHikerDPPt
 	dba Music_IcePathHGSS
+	dba Music_CinnabarIslandGBS
 	assert_table_length NUM_MUSIC_SONGS
