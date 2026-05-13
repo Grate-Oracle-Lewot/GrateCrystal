@@ -134,6 +134,7 @@
 	const MUSIC_EXECUTIVE_ENCOUNTER          ; 80
 	const MUSIC_POKEFAN_ENCOUNTER            ; 81
 	const MUSIC_ICE_PATH                     ; 82
+	const MUSIC_CINNABAR_ISLAND              ; 83
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
