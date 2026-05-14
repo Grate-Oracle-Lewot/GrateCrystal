@@ -717,6 +717,7 @@ EnemyUsedXSpDefend:
 ; b = BATTLE_CONSTANT (ATTACK, DEFENSE, SPEED, SP_ATTACK, SP_DEFENSE, ACCURACY, EVASION)
 EnemyUsedXItem:
 	ld [wCurEnemyItem], a
+	call AIUsedItemSound
 	push bc
 	call PrintText_UsedItemOn
 	pop bc
