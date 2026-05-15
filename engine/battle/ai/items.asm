@@ -152,49 +152,10 @@ AI_TryItem:
 	ret
 
 .not_ditto
-; if only one mon in party, use items on it
-	ld a, [wOTPartyCount]
-	cp 2
+; if only one mon [remaining], use items on it
+	call AICheckLastEnemyMon
 	jr c, .only_one_mon
 
-; else, check if more than one mon is still alive
-	ld d, a
-	ld e, 0
-	ld b, 1 << (PARTY_LENGTH - 1)
-	ld c, 0
-	ld hl, wOTPartyMon1HP
-
-.loop_alive
-	ld a, [wCurOTMon]
-	cp e
-	jr z, .next_alive
-
-	push bc
-	ld b, [hl]
-	inc hl
-	ld a, [hld]
-	or b
-	pop bc
-	jr z, .next_alive
-
-	ld a, c
-	or b
-	ld c, a
-
-.next_alive
-	srl b
-	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	pop bc
-	inc e
-	dec d
-	jr nz, .loop_alive
-
-	ld a, c
-	and a
-	jr z, .only_one_mon
-; if only one mon is alive, use items on it
 ; if more than one are alive, only use items on highest level mon
 	call .IsHighestLevel
 	ret nc
@@ -277,6 +238,11 @@ AI_TryItem:
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr nz, .no
+
+; if player has type advantage against enemy mon, don't use items on it
+; mostly exists for when multiple mons are at the highest level
+	call CheckPlayerTypeAdvantage
+	jr nc, .no
 
 ; set carry if current mon is highest-leveled one in party
 	ld a, [wOTPartyCount]
