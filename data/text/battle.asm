@@ -965,8 +965,8 @@ ProtectedByText:
 	autodone
 
 MirrorMoveFailedText:
-	text "But nothing was"
-	next "mirrored!"
+	text "But nothing could"
+	next "be mirrored!"
 	autodone
 
 StoleText:
