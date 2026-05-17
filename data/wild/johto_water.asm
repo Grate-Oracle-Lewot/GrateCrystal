@@ -66,7 +66,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_40
-	db 6 percent ; encounter rate
+	db 7 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 20, TENTACOOL
 	db 20, TENTACOOL
@@ -81,7 +81,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
-	db 6 percent ; encounter rate
+	db 7 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 20, TENTACOOL
 	db 20, TENTACOOL
@@ -109,7 +109,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43
-	db 2 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 20, MAGIKARP
 	db 15, MAGIKARP
 	db 10, MAGIKARP
@@ -133,7 +133,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_45
-	db 2 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 20, MAGIKARP
 	db 15, MAGIKARP
 	db 5, MAGIKARP
@@ -269,7 +269,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ILEX_FOREST
-	db 2 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 15, PSYDUCK
 	db 15, PINECO
 if DEF(_LITTLE_CUP)
@@ -307,7 +307,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
-	db 4 percent ; encounter rate
+	db 3 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 25, SLOWPOKE
 	db 25, SLOWPOKE
@@ -322,7 +322,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_1F_OUTSIDE
-	db 4 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 15, GOLDEEN
 	db 20, MARILL
 if DEF(_LITTLE_CUP)
@@ -335,7 +335,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
-	db 2 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 20, GOLDEEN
 	db 25, MARILL
 if DEF(_LITTLE_CUP)
@@ -348,7 +348,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_B1F
-	db 2 percent ; encounter rate
+	db 3 percent ; encounter rate
 	db 15, GOLDEEN
 	db 20, MARILL
 if DEF(_LITTLE_CUP)
@@ -373,7 +373,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
-	db 2 percent ; encounter rate
+	db 4 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 40, MAGIKARP
 	db 40, POLIWAG
@@ -388,7 +388,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
-	db 2 percent ; encounter rate
+	db 4 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 50, GOLDEEN
 	db 50, PSYDUCK
@@ -454,7 +454,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
-	db 6 percent ; encounter rate
+	db 5 percent ; encounter rate
 	db 20, TENTACOOL
 	db 15, TENTACOOL
 if DEF(_LITTLE_CUP)
@@ -480,7 +480,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons CIANWOOD_CITY
-	db 6 percent ; encounter rate
+	db 5 percent ; encounter rate
 	db 20, TENTACOOL
 	db 15, TENTACOOL
 if DEF(_LITTLE_CUP)
