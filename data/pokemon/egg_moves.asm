@@ -287,15 +287,6 @@ SeelEggMoves:
 	db PECK
 	db -1 ; end
 
-GrimerEggMoves:
-	db POWER_GEM
-	db HAZE
-	db MEAN_LOOK
-	db MEGA_PUNCH
-	db CRUNCH
-	db LICK
-	db -1 ; end
-
 ShellderEggMoves:
 	db METAL_SOUND
 	db LICK
@@ -367,14 +358,6 @@ LickitungEggMoves:
 	db PLAY_ROUGH
 	db WATER_GUN
 	db HYDRO_PUMP
-	db -1 ; end
-
-KoffingEggMoves:
-	db DISABLE
-	db BIDE
-	db SONICBOOM
-	db RAPID_SPIN
-	db MIST
 	db -1 ; end
 
 RhyhornEggMoves:
