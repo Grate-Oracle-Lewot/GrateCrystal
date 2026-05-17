@@ -281,7 +281,7 @@ AI_Items:
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
 	dbw FRANKENBERRY, .Frankenberry
-	dbw OLD_GATEAU,   .HealPowder
+	dbw OLD_GATEAU,   .OldGateau
 	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
 	dbw X_ATTACK,     .XAttack
@@ -303,10 +303,10 @@ AI_Items:
 	call EnemyUsedFrankenberry
 	jp .Use
 
-.HealPowder:
+.OldGateau:
 	call .Status
 	jp c, .DontUse
-	call EnemyUsedHealPowder
+	call EnemyUsedOldGateau
 	jp .Use
 
 .Status:
@@ -525,7 +525,7 @@ EnemyUsedFrankenberry:
 	ld a, FRANKENBERRY
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
-EnemyUsedHealPowder:
+EnemyUsedOldGateau:
 	call StatusHealDoubleCall
 	ld a, OLD_GATEAU
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
