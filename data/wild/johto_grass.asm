@@ -428,7 +428,7 @@ endc
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 10 percent, 6 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, SENTRET
 if DEF(_LITTLE_CUP)
