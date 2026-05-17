@@ -1316,6 +1316,7 @@ MukEvosAttacks:
 	db 20, BITE
 	db 23, MINIMIZE
 	db 31, ACID_ARMOR
+	db 37, MEAN_LOOK
 	db 45, BODY_SLAM
 	db 55, SCREECH
 	db 60, SLUDGE_BOMB
