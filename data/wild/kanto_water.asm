@@ -78,7 +78,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_19
-	db 6 percent ; encounter rate
+	db 7 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 35, TENTACOOL
 	db 35, TENTACOOL
@@ -93,7 +93,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_20
-	db 6 percent ; encounter rate
+	db 7 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 35, TENTACOOL
 	db 35, TENTACOOL
@@ -108,7 +108,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_21
-	db 6 percent ; encounter rate
+	db 7 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 35, TENTACOOL
 	db 35, TENTACOOL
@@ -184,7 +184,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28
-	db 2 percent ; encounter rate
+	db 4 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 40, POLIWAG
 	db 35, POLIWAG
@@ -238,7 +238,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
-	db 6 percent ; encounter rate
+	db 5 percent ; encounter rate
 	db 10, TENTACOOL
 	db 5, TENTACOOL
 if DEF(_LITTLE_CUP)
@@ -275,7 +275,7 @@ endc
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_CITY
-	db 6 percent ; encounter rate
+	db 5 percent ; encounter rate
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 if DEF(_LITTLE_CUP)
