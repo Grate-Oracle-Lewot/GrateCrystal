@@ -230,6 +230,7 @@ AI_TryItem:
 	xor a
 	ld [wLastEnemyCounterMove], a
 
+.yes
 	scf
 	ret
 
@@ -269,10 +270,6 @@ AI_TryItem:
 
 .no
 	and a
-	ret
-
-.yes
-	scf
 	ret
 
 AI_Items:
