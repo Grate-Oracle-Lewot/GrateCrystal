@@ -243,7 +243,7 @@ AI_TryItem:
 ; if player has type advantage against enemy mon, don't use items on it
 ; mostly exists for when multiple mons are at the highest level
 	call CheckPlayerTypeAdvantage
-	jr nc, .no
+	ret nc
 
 ; set carry if current mon is highest-leveled one in party
 	ld a, [wOTPartyCount]
