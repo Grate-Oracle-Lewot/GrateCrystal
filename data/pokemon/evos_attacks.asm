@@ -1291,9 +1291,9 @@ DewgongEvosAttacks:
 GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, MUD_SLAP
 	db 2, HARDEN
-	db 5, MUD_SLAP
+	db 5, LICK
 	db 7, ACID
 	db 10, DISABLE
 	db 16, SLUDGE
@@ -1307,9 +1307,9 @@ GrimerEvosAttacks:
 
 MukEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, MUD_SLAP
 	db 2, HARDEN
-	db 5, MUD_SLAP
+	db 5, LICK
 	db 7, ACID
 	db 10, DISABLE
 	db 16, SLUDGE
@@ -1636,14 +1636,14 @@ KoffingEvosAttacks:
 	db EVOLVE_LEVEL, 35, WEEZING
 	db 0 ; no more evolutions
 	db 1, POISONPOWDER
-	db 1, FAIRY_WIND
+	db 2, FAIRY_WIND
 	db 9, SMOG
 	db 17, SELFDESTRUCT
 	db 21, SLUDGE
 	db 25, SMOKESCREEN
 	db 27, FLAME_WHEEL
 	db 33, HAZE
-	db 35, SLUDGE_BOMB
+	db 35, BIDE
 	db 41, SILVER_WIND
 	db 45, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -1651,14 +1651,14 @@ KoffingEvosAttacks:
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISONPOWDER
-	db 1, FAIRY_WIND
+	db 2, FAIRY_WIND
 	db 9, SMOG
 	db 17, SELFDESTRUCT
 	db 21, SLUDGE
 	db 25, SMOKESCREEN
 	db 27, FLAME_WHEEL
 	db 33, HAZE
-	db 37, SLUDGE_BOMB
+	db 37, BIDE
 	db 44, SILVER_WIND
 	db 51, DESTINY_BOND
 	db 0 ; no more level-up moves
