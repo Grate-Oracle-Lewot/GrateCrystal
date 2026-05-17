@@ -87,8 +87,8 @@ EggMovePointers::
 	dw DoduoEggMoves
 	dw SeelEggMoves
 	dw SeelEggMoves
-	dw GrimerEggMoves
-	dw GrimerEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw ShellderEggMoves
 	dw ShellderEggMoves
 	dw GastlyEggMoves
@@ -108,8 +108,8 @@ EggMovePointers::
 	dw TyrogueEggMoves
 	dw TyrogueEggMoves
 	dw LickitungEggMoves
-	dw KoffingEggMoves
-	dw KoffingEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw RhyhornEggMoves
 	dw RhyhornEggMoves
 	dw ChanseyEggMoves
