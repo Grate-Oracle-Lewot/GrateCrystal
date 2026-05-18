@@ -1326,8 +1326,14 @@ BattleCommand_Stab:
 	ld [wTypeModifier], a
 	ret
 
-AI_CheckTypeMatchup:
+AI_CheckPlayerAdvantage::
 	ld a, b
+	ld hl, wEnemyMonType1
+	jr CheckTypeMatchup
+
+AI_CheckEnemyAdvantage::
+	ld a, b
+	ld hl, wBattleMonType1
 	jr CheckTypeMatchup
 
 BattleCheckTypeMatchup:
