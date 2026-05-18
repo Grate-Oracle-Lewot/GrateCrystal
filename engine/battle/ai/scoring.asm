@@ -360,18 +360,16 @@ CheckPlayerTypeAdvantage:
 	push hl
 	push de
 	push bc
-	ld hl, wEnemyMonType1
 
 	ld a, [wBattleMonType1]
 	cp CURSE_TYPE
 	jr z, .type_two
 
 	ld b, a
-	call _AI_CheckTypeMatchup
+	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, AdvantageCheckDone
-	ld hl, wEnemyMonType1
 
 .type_two
 	ld a, [wBattleMonType2]
@@ -379,7 +377,7 @@ CheckPlayerTypeAdvantage:
 	jr z, AdvantageSetCarry
 
 	ld b, a
-	call _AI_CheckTypeMatchup
+	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr AdvantageCheckDone
@@ -400,18 +398,16 @@ CheckEnemyTypeAdvantage:
 	push hl
 	push de
 	push bc
-	ld hl, wBattleMonType1
 
 	ld a, [wEnemyMonType1]
 	cp CURSE_TYPE
 	jr z, .type_two
 
 	ld b, a
-	call _AI_CheckTypeMatchup
+	farcall AI_CheckEnemyAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, AdvantageCheckDone
-	ld hl, wBattleMonType1
 
 .type_two
 	ld a, [wEnemyMonType2]
@@ -419,7 +415,7 @@ CheckEnemyTypeAdvantage:
 	jr z, AdvantageSetCarry
 
 	ld b, a
-	call _AI_CheckTypeMatchup
+	farcall AI_CheckEnemyAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr AdvantageCheckDone
@@ -4040,10 +4036,6 @@ AI_90_10:
 
 _BattleCheckTypeMatchup:
 	farcall BattleCheckTypeMatchup
-	ret
-
-_AI_CheckTypeMatchup:
-	farcall AI_CheckTypeMatchup
 	ret
 
 _CheckPlayerMoveTypeMatchups:
