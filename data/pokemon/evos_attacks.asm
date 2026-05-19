@@ -1653,7 +1653,8 @@ KoffingEvosAttacks:
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISONPOWDER
-	db 2, FAIRY_WIND
+	db 2, TACKLE
+	db 3, FAIRY_WIND
 	db 9, SMOG
 	db 17, SELFDESTRUCT
 	db 21, SLUDGE
