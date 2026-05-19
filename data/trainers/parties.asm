@@ -3,6 +3,7 @@
 ; - 1 to 6 Pokémon:
 ;    * in all cases:              db level, species
 ;    * with TRAINERTYPE_NICKNAME: db "NICKNAME@"
+;    * with TRAINERTYPE_DVS:      db atk|def dv, spd|spc dv
 ;    * with TRAINERTYPE_ITEM:     db item
 ;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
 ; - db -1 ; end
@@ -3202,10 +3203,10 @@ MysticGroup:
 	db -1 ; end
 
 	; MYSTIC (2)
-	db "OLIE@", TRAINERTYPE_NORMAL
-	db 66, WOBBUFFET
-	db 67, UNOWN
-	db 68, DITTO
+	db "OLIE@", TRAINERTYPE_DVS
+	db 66, WOBBUFFET,  $11, $11
+	db 67, UNOWN,      $D9, $BD
+	db 68, DITTO,      $1F, $1F
 	db -1 ; end
 
 	; MYSTIC (3)
@@ -5588,12 +5589,12 @@ PokefanMGroup:
 
 	; POKEFANM (8)
 	db "JOSHUA@", TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 42, PIKACHU,    $9d, $dd, GOLD_BERRY
-	db 42, PIKACHU,    $bb, $ba, GOLD_BERRY
-	db 42, PIKACHU,    $d9, $99, GOLD_BERRY
-	db 42, PIKACHU,    $dd, $de, GOLD_BERRY
-	db 42, PIKACHU,    $fb, $bd, GOLD_BERRY
-	db 42, PIKACHU,    $00, $fe, GOLD_BERRY
+	db 42, PIKACHU,    $9D, $DD, GOLD_BERRY
+	db 42, PIKACHU,    $BB, $BA, GOLD_BERRY
+	db 42, PIKACHU,    $D9, $99, GOLD_BERRY
+	db 42, PIKACHU,    $DD, $DE, GOLD_BERRY
+	db 42, PIKACHU,    $FB, $BD, GOLD_BERRY
+	db 42, PIKACHU,    $00, $FE, GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (9)
