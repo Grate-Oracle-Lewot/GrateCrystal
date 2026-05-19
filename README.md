@@ -332,7 +332,7 @@ Prize TMs:
 
 (Some of the following improvements are now available [in this tutorial](https://github.com/pret/pokecrystal/wiki/Improve-the-enemy-trainer-AI).)
 
-- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They will also avoid using items on a Pokémon that is currently afflicted with Perish Song, or on an un-Transformed Ditto.
+- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They will also avoid using items on a Pokémon that is currently afflicted with Perish Song, or in a few other circumstances.
 
 - Trainers will now switch out their Pokémon... like, ever, but also intelligently, based on factors such as remaining HP, volatile status conditions, and player and AI stat increases and decreases, with variations in this behavior depending on trainer class. This code was adapted from Lunatic Crystal by GetKosiorekt.
 
@@ -368,7 +368,7 @@ Prize TMs:
 - Several new NPC trades, and some alterations to existing ones
 - When you set loose the Legendary Beasts beneath the Burned Tower, they automatically count as seen in the Pokédex, allowing you to track their roaming without having to stumble upon them first
 - When the player crosses map borders, roaming beasts now only change maps 50% of the time, making them potentially easier to ambush
-- Except for roamers, Pokémon with a chance to flee now do so less often, and never do so on the first turn (which Pokémon will flee have also been adjusted)
+- Except for roamers, Pokémon with a chance to flee now do so less often, and never do so on the first turn. Which Pokémon will flee have also been adjusted.
 - The Odd Egg will always hatch into a shiny, and now may hatch into starters
 - The Dratini gifted from the Dragon Shrine always knows Extremespeed, not only if you answer all the questions right
 - Gift Pokémon can be sent to the PC, no longer requiring an empty party slot (with a few exceptions such as the above Dratini, due to unique code)
@@ -382,6 +382,7 @@ Prize TMs:
 - Most trainer money rewards increased, but Rockets now give no money due to being criminals (and Teachers give minimal due to not getting paid enough)
 - Happiness builds a bit faster
 - Eggs hatch roughly twice as fast, and come out at Lv.1 instead of Lv.5
+- The Grimer and Koffing lines are now genderless
 - Nidorina and Nidoqueen can breed, and any of the Nidos can produce either gender of Nidoran eggs; Tauros and Miltank can produce each other's eggs, and Metapod, Kakuna, and Porygon can no longer breed (Porygon2 still can)
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
@@ -418,7 +419,7 @@ See: https://github.com/pret/pokecrystal/wiki/Tutorials
 - Unown ! and ? added (eyes not droopy)
 - Rocket battle music applied to Executives, "R" transition blocks for all Rockets, and two other new transition block arrangements for special battles
 - Trainers automatically offer their phone numbers when defeated, they play encounter music when talked to for rematches, and their rematch parties are based solely on event progress instead of fight count
-- Flypoints for the Battle Tower and the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint
+- Flypoints for the Battle Tower and the Pokémon Centers at Union Cave and Rock Tunnel, plus the heal house on Route 26; Route 3's Pokémon Center restored with a flypoint, and a flypoint for the roof of the Tin Tower
 - Default Fast text speed and Instant speed option
 - Default player and rival names changed
 - Tilesets expanded from 192 to 255
