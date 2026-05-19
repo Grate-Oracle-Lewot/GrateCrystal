@@ -2845,10 +2845,10 @@ AerobonesGroup:
 
 KabubonesGroup:
 	; KABUBONES (1)
-	db "'M@", TRAINERTYPE_NICKNAME
-	db 50, KABUTOPS,   "SMOOCHUM@"
-	db 50, UNOWN,      "ARCEUS@"
-	db 50, HAUNTER,    "PIKABLU@"
+	db "'M@", TRAINERTYPE_NICKNAME | TRAINERTYPE_DVS
+	db 50, KABUTOPS,   "SMOOCHUM@",   $FE, $EE
+	db 50, UNOWN,      "ARCEUS@",     $FD, $DF
+	db 50, HAUNTER,    "PIKABLU@",    $FE, $EE
 	db -1 ; end
 
 MissingnoTGroup:
