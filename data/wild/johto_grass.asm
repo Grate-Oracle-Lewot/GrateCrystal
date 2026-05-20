@@ -382,7 +382,7 @@ endc
 	db 23, SENTRET
 if DEF(_LITTLE_CUP)
 	db 23, PIDGEY
-	db 23, MAGNEMITE
+	db 22, MAREEP
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, SENTRET
@@ -390,7 +390,7 @@ if DEF(_LITTLE_CUP)
 	db 20, RATTATA
 else
 	db 23, PIDGEOTTO
-	db 23, MAGNEMITE
+	db 22, FLAAFFY
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, FURRET
@@ -400,7 +400,11 @@ endc
 	; day
 	db 23, RATTATA
 	db 23, PIDGEY
-	db 23, MAGNEMITE
+if DEF(_LITTLE_CUP)
+	db 22, MAREEP
+else
+	db 22, FLAAFFY
+endc
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, PONYTA
@@ -410,7 +414,7 @@ endc
 	db 23, RATTATA
 if DEF(_LITTLE_CUP)
 	db 23, HOOTHOOT
-	db 23, MAGNEMITE
+	db 22, MAREEP
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, RATTATA
@@ -418,7 +422,7 @@ if DEF(_LITTLE_CUP)
 	db 22, RATTATA
 else
 	db 23, NOCTOWL
-	db 23, MAGNEMITE
+	db 22, FLAAFFY
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, RATICATE
@@ -433,7 +437,7 @@ endc
 	db 23, SENTRET
 if DEF(_LITTLE_CUP)
 	db 23, PIDGEY
-	db 23, MAGNEMITE
+	db 23, MAREEP
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 24, SENTRET
@@ -441,7 +445,7 @@ if DEF(_LITTLE_CUP)
 	db 22, RATTATA
 else
 	db 23, PIDGEOTTO
-	db 23, MAGNEMITE
+	db 23, FLAAFFY
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 24, FURRET
@@ -452,7 +456,7 @@ endc
 	db 23, RATTATA
 if DEF(_LITTLE_CUP)
 	db 23, PIDGEY
-	db 23, MAGNEMITE
+	db 23, MAREEP
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, PONYTA
@@ -460,7 +464,7 @@ if DEF(_LITTLE_CUP)
 	db 22, RATTATA
 else
 	db 23, PIDGEOTTO
-	db 23, MAGNEMITE
+	db 23, FLAAFFY
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 23, PONYTA
@@ -471,7 +475,7 @@ endc
 	db 23, RATTATA
 if DEF(_LITTLE_CUP)
 	db 23, HOOTHOOT
-	db 23, MAGNEMITE
+	db 23, MAREEP
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 24, RATTATA
@@ -479,7 +483,7 @@ if DEF(_LITTLE_CUP)
 	db 23, RATTATA
 else
 	db 23, NOCTOWL
-	db 23, MAGNEMITE
+	db 23, FLAAFFY
 	db 23, SNUBBULL
 	db 23, MEOWTH
 	db 24, RATICATE
@@ -2251,7 +2255,7 @@ endc
 	db 22, MACHOP
 	db 22, GEODUDE
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 21, ONIX
 if DEF(_LITTLE_CUP)
@@ -2259,12 +2263,12 @@ if DEF(_LITTLE_CUP)
 else
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	; day
 	db 22, MACHOP
 	db 22, GEODUDE
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 21, ONIX
 if DEF(_LITTLE_CUP)
@@ -2272,24 +2276,24 @@ if DEF(_LITTLE_CUP)
 else
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	; nite
 	db 22, MACHOP
 	db 22, GEODUDE
 if DEF(_LITTLE_CUP)
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 21, ONIX
 	db 24, RATTATA
 else
 	db 21, GOLBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 21, ONIX
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
@@ -2298,7 +2302,7 @@ endc
 	db 22, MACHOP
 	db 22, GEODUDE
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 23, ONIX
 if DEF(_LITTLE_CUP)
@@ -2306,12 +2310,12 @@ if DEF(_LITTLE_CUP)
 else
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	; day
 	db 22, MACHOP
 	db 22, GEODUDE
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 23, ONIX
 if DEF(_LITTLE_CUP)
@@ -2319,24 +2323,24 @@ if DEF(_LITTLE_CUP)
 else
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	; nite
 	db 22, MACHOP
 	db 22, GEODUDE
 if DEF(_LITTLE_CUP)
 	db 21, ZUBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 23, ONIX
 	db 24, RATTATA
 else
 	db 21, GOLBAT
-	db 23, ZUBAT
+	db 21, MAGNEMITE
 	db 22, RATTATA
 	db 23, ONIX
 	db 24, RATICATE
 endc
-	db 22, MARILL
+	db 23, ZUBAT
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
@@ -2359,7 +2363,7 @@ else
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
 endc
-	db 26, MARILL
+	db 25, MAGNEMITE
 	; day
 if DEF(_LITTLE_CUP)
 	db 30, MACHOP
@@ -2378,7 +2382,7 @@ else
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
 endc
-	db 26, MARILL
+	db 25, MAGNEMITE
 	; nite
 if DEF(_LITTLE_CUP)
 	db 30, MACHOP
@@ -2397,7 +2401,7 @@ else
 	db 28, HITMONCHAN
 	db 28, HITMONTOP
 endc
-	db 26, MARILL
+	db 25, MAGNEMITE
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F
@@ -2406,7 +2410,7 @@ endc
 	db 24, MACHOP
 	db 24, GEODUDE
 	db 23, ZUBAT
-	db 25, ZUBAT
+	db 23, MAGNEMITE
 	db 24, RATTATA
 	db 25, ONIX
 if DEF(_LITTLE_CUP)
@@ -2414,12 +2418,12 @@ if DEF(_LITTLE_CUP)
 else
 	db 26, RATICATE
 endc
-	db 24, MARILL
+	db 25, ZUBAT
 	; day
 	db 24, MACHOP
 	db 24, GEODUDE
 	db 23, ZUBAT
-	db 25, ZUBAT
+	db 23, MAGNEMITE
 	db 24, RATTATA
 	db 25, ONIX
 if DEF(_LITTLE_CUP)
@@ -2427,24 +2431,24 @@ if DEF(_LITTLE_CUP)
 else
 	db 26, RATICATE
 endc
-	db 24, MARILL
+	db 25, ZUBAT
 	; nite
 	db 24, MACHOP
 	db 24, GEODUDE
 if DEF(_LITTLE_CUP)
 	db 23, ZUBAT
-	db 25, ZUBAT
+	db 23, MAGNEMITE
 	db 24, RATTATA
 	db 25, ONIX
 	db 26, RATTATA
 else
 	db 23, GOLBAT
-	db 25, ZUBAT
+	db 23, MAGNEMITE
 	db 24, RATTATA
 	db 25, ONIX
 	db 26, RATICATE
 endc
-	db 24, MARILL
+	db 25, ZUBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F
