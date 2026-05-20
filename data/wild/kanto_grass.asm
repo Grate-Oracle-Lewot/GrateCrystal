@@ -222,7 +222,7 @@ endc
 if DEF(_LITTLE_CUP)
 	db 11, RATTATA
 	db 11, SNUBBULL
-	db 12, MAGNEMITE
+	db 12, NATU
 	db 13, RATTATA
 	db 10, JIGGLYPUFF
 	db 13, SNUBBULL
@@ -231,7 +231,7 @@ if DEF(_LITTLE_CUP)
 else
 	db 11, RATTATA
 	db 11, SNUBBULL
-	db 12, MAGNEMITE
+	db 12, NATU
 	db 13, RATICATE
 	db 10, JIGGLYPUFF
 	db 13, GRANBULL
@@ -242,7 +242,7 @@ endc
 if DEF(_LITTLE_CUP)
 	db 11, RATTATA
 	db 11, SNUBBULL
-	db 12, MAGNEMITE
+	db 12, NATU
 	db 13, RATTATA
 	db 10, JIGGLYPUFF
 	db 13, SNUBBULL
@@ -251,7 +251,7 @@ if DEF(_LITTLE_CUP)
 else
 	db 11, RATTATA
 	db 11, SNUBBULL
-	db 12, MAGNEMITE
+	db 12, NATU
 	db 13, RATICATE
 	db 10, JIGGLYPUFF
 	db 13, GRANBULL
@@ -261,7 +261,7 @@ endc
 	; nite
 	db 11, MEOWTH
 	db 11, DROWZEE
-	db 12, MAGNEMITE
+	db 12, NATU
 	db 13, PSYDUCK
 	db 10, JIGGLYPUFF
 if DEF(_LITTLE_CUP)
@@ -521,7 +521,7 @@ endc
 	; day
 	db 13, PONYTA
 	db 11, MEOWTH
-	db 13, MAGNEMITE
+	db 13, NATU
 if DEF(_LITTLE_CUP)
 	db 14, PIDGEY
 else
