@@ -2080,7 +2080,7 @@ else
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, MARILL
+	db 23, AZUMARILL
 endc
 	; day
 if DEF(_LITTLE_CUP)
@@ -2100,7 +2100,7 @@ else
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, MARILL
+	db 23, AZUMARILL
 endc
 	; nite
 if DEF(_LITTLE_CUP)
@@ -2120,7 +2120,7 @@ else
 	db 26, GLIGAR
 	db 24, GRAVELER
 	db 22, KADABRA
-	db 23, MARILL
+	db 23, AZUMARILL
 endc
 	end_grass_wildmons
 
