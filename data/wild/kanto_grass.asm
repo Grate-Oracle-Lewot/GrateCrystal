@@ -508,7 +508,7 @@ endc
 	; morn
 	db 13, PONYTA
 	db 11, MEOWTH
-	db 13, MAGNEMITE
+	db 13, VULPIX
 if DEF(_LITTLE_CUP)
 	db 14, PIDGEY
 else
@@ -535,7 +535,7 @@ endc
 if DEF(_LITTLE_CUP)
 	db 13, DROWZEE
 	db 11, RATTATA
-	db 13, MAGNEMITE
+	db 13, VULPIX
 	db 14, HOOTHOOT
 	db 14, RATTATA
 	db 12, DROWZEE
@@ -544,7 +544,7 @@ if DEF(_LITTLE_CUP)
 else
 	db 13, DROWZEE
 	db 11, RATICATE
-	db 13, MAGNEMITE
+	db 13, VULPIX
 	db 14, NOCTOWL
 	db 14, RATICATE
 	db 12, HYPNO
