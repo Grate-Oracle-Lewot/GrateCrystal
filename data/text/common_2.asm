@@ -759,7 +759,7 @@ _MoveNameText::
 	done
 
 Text_BreedHuh::
-	text "…?"
+	text "…?!"
 
 	para "@"
 	text_end
