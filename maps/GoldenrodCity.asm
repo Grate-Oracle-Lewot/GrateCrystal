@@ -102,12 +102,11 @@ MoveTutorScript:
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 5 ; items
+	db 4 ; items
 	db "FLAMETHROWER@"
 	db "THUNDERBOLT@"
 	db "ICE BEAM@"
 	db "TRI ATTACK@"
-	db "CANCEL@"
 
 .Refused:
 	writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText
