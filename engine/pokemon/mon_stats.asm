@@ -578,3 +578,47 @@ GetMonTypeIndex:
 .handle_curse
 	ld c, 18
 	ret
+
+GetStatusConditionIndex:
+; de points to status condition bytes of a pokemon from a party_struct or battle_struct
+; return the status condition index in 'a', and also 'd' for those who farcall
+	push de
+	inc de
+	inc de
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	or b
+	pop de
+	jr z, .fnt
+	ld a, [de]
+	ld b, a
+	and SLP
+	ld a, 0
+	jr nz, .slp
+	bit PSN, b
+	jr nz, .psn
+	bit PAR, b
+	jr nz, .par
+	bit BRN, b
+	jr nz, .brn
+	bit FRZ, b
+	jr nz, .frz
+	ld d, a
+	ret
+	
+.fnt
+	inc a ; 6
+.frz
+	inc a ; 5
+.brn
+	inc a ; 4
+.slp
+	inc a ; 3
+.par
+	inc a ; 2
+.psn
+	inc a ; 1
+	ld d, a
+	ret
