@@ -43,39 +43,6 @@ CheckShininess:
 	and a
 	ret
 
-Unused_CheckShininess:
-; Return carry if the DVs at hl are all 10 or higher.
-
-; Attack
-	ld a, [hl]
-	cp 10 << 4
-	jr c, .not_shiny
-
-; Defense
-	ld a, [hli]
-	and $f
-	cp 10
-	jr c, .not_shiny
-
-; Speed
-	ld a, [hl]
-	cp 10 << 4
-	jr c, .not_shiny
-
-; Special
-	ld a, [hl]
-	and $f
-	cp 10
-	jr c, .not_shiny
-
-; shiny
-	scf
-	ret
-
-.not_shiny
-	and a
-	ret
-
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
 	call CopyFourPalettes
@@ -1268,12 +1235,6 @@ INCLUDE "gfx/diploma/diploma.pal"
 PartyMenuOBPals:
 INCLUDE "gfx/stats/party_menu_ob.pal"
 
-UnusedGSTitleBGPals:
-INCLUDE "gfx/title/unused_gs_bg.pal"
-
-UnusedGSTitleOBPals:
-INCLUDE "gfx/title/unused_gs_fg.pal"
-
 MalePokegearPals:
 INCLUDE "gfx/pokegear/pokegear.pal"
 
@@ -1283,45 +1244,7 @@ INCLUDE "gfx/pokegear/pokegear_f.pal"
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
 
-TypeIconPals:
-; NORMAL      (0)
-	RGB 21, 21, 14
-; FIGHTING    (1)
-	RGB 25, 05, 02
-; FLYING      (2)
-	RGB 22, 17, 30
-; POISON      (3)
-	RGB 22, 07, 19
-; GROUND      (4)
-	RGB 29, 24, 12
-; ROCK        (5)
-	RGB 24, 20, 07
-; BUG         (6)
-	RGB 21, 23, 06
-; GHOST       (7)
-	RGB 15, 11, 18
-; STEEL       (8)
-	RGB 23, 23, 25
-; FIRE        (9)
-	RGB 31, 15, 04
-; WATER      (10)
-	RGB 11, 18, 30
-; GRASS      (11)
-	RGB 11, 25, 11
-; ELECTRIC   (12)
-	RGB 31, 24, 06
-; PSYCHIC_T  (13)
-	RGB 31, 09, 15
-; ICE        (14)
-	RGB 16, 27, 27
-; DRAGON     (15)
-	RGB 15, 07, 31
-; DARK       (16)
-	RGB 15, 11, 09
-; FAIRY      (17)
-	RGB 31, 20, 29
-; CURSE_TYPE (18)
-	RGB 13, 19, 19
+INCLUDE "gfx/types_cats_status_pals.asm"
 
 LoadPokemonPalette:
 	ld a, [wCurPartySpecies]
