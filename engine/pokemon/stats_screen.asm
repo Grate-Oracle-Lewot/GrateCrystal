@@ -453,7 +453,7 @@ StatsScreen_PlaceFloatIcon:
 	call IsInByteArray
 	ret nc
 	hlcoord 18, 0
-	ld [hl], "<DO>"
+	ld [hl], "<FLOAT>"
 	ret
 
 StatsScreen_LoadGFX:
