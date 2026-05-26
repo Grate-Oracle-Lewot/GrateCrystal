@@ -1246,11 +1246,64 @@ INCLUDE "gfx/slots/slots.pal"
 
 INCLUDE "gfx/types_cats_status_pals.asm"
 
-LoadPokemonPalette:
-	ld a, [wCurPartySpecies]
-	; hl = palette
-	call GetMonPalettePointer
-	; load palette into de (set by caller)
-	ld bc, PAL_COLOR_SIZE * 2
+InitPartyMenuStatusPals:
+	ld hl, StatusIconPals
+	ld c, $1 ; PSN Index
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette 4 + 2 ; Color 2 of Palette 4 (Light Gray Pixels)
+	ld bc, 2 ; 1 Color (2 bytes)
+	call FarCopyColorWRAM
+
+	ld hl, StatusIconPals
+	ld c, $2 ; PAR Index
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette 5 + 2 ; Color 2 of Palette 5 (Light Gray Pixels)
+	ld bc, 2 ; 1 Color (2 bytes)
+	call FarCopyColorWRAM
+
+	ld hl, StatusIconPals
+	ld c, $3 ; SLP Index
+	ld b, 0
+	add hl, bc
+	add hl, bc
+ 	ld de, wBGPals1 palette 6 + 2 ; Color 2 of Palette 6 (Light Gray Pixels)
+	ld bc, 2 ; 1 Color (2 bytes)
+	call FarCopyColorWRAM
+
+	ld hl, StatusIconPals
+	ld c, $4 ; BRN Index
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette 4 + 4 ; Color 3 of Palette 4 (Dark Gray Pixels)
+	ld bc, 2 ; 1 Color (2 bytes)
+	call FarCopyColorWRAM
+
+	ld hl, StatusIconPals
+	ld c, $5 ; FRZ Index
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette 5 + 4 ; Color 3 of Palette 5 (Dark Gray Pixels)
+	ld bc, 2 ; 1 Color (2 bytes)
+	call FarCopyColorWRAM
+	
+	; put white (7fff) into the slot 4 of pals 4, 5, 6
+	ldh a, [rSVBK]
+	push af
 	ld a, BANK(wBGPals1)
-	jp FarCopyWRAM
+	ldh [rSVBK], a
+	ld a, $FF
+	ld [wBGPals1 palette 4 + 6], a ; pal 4, slot 4, byte 1
+	ld [wBGPals1 palette 5 + 6], a ; pal 5, slot 4, byte 1
+	ld [wBGPals1 palette 6 + 6], a ; pal 6, slot 4, byte 1
+	ld [wBGPals1 palette 4 + 7], a ; pal 4, slot 4, byte 2
+	ld [wBGPals1 palette 5 + 7], a ; pal 5, slot 4, byte 2
+	ld [wBGPals1 palette 6 + 7], a ; pal 6, slot 4, byte 2
+	pop af
+	ldh [rSVBK], a
+	ret
