@@ -1222,19 +1222,44 @@ PlaceMoveData:
 ; Print move category
 	ld a, [wCurSpecies]
 	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 11, 13
-	ld de, wStringBuffer1
-	call PlaceString
-	hlcoord 10, 13
-	ld [hl], "/"
-	inc hl
+	farcall GetMoveCategoryIndex
+	ld hl, CategoryIconGFX ; ptr to Category GFX loaded from PNG(2bpp)
+	ld bc, 2 tiles
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $59 ; category icon tile slot in VRAM, destination
+	lb bc, BANK(CategoryIconGFX), 2
+	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
+	hlcoord 7, 13
+	ld a, $59 ; category icon tile 1
+	ld [hli], a
+	ld [hl], $5a ; category icon tile 2
 
 ; Print move type
-	ld a, [wCurSpecies]
-	ld b, a
-	hlcoord 10, 12
-	predef PrintMoveType
+	pop af ; raw Move Type+category Byte, unmasked
+	and TYPE_MASK ; Phys/Spec Split specific
+	ld c, a
+	farcall GetMonTypeIndex
+	ld a, c
+; Type Index adjust done
+; Load Type GFX Tiles, color will be in Slot 4 of Palette
+	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
+	ld bc, 4 * LEN_1BPP_TILE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
+	call AddNTimes ; increments pointer based on Type Index
+	ld d, h
+	ld e, l ; de is the source Pointer
+	ld hl, vTiles2 tile $5b ; $5b is destination Tile for first Type Tile
+	lb bc, BANK(TypeIconGFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
+	call Request1bpp
+	hlcoord 2, 13
+	ld a, $5b ; first Type Tile
+	ld [hli], a
+	inc a ; Tile $5c
+	ld [hli], a
+	inc a ; Tile $5d
+	ld [hli], a
+	ld [hl], $5e ; final Type Tile
 
 ; Print move effect chance
 	ld a, [wCurSpecies]
