@@ -4052,7 +4052,6 @@ Defrost:
 	xor a
 	ld [hl], a
 	call UpdateOpponentInParty
-	call RefreshBattlePalettes
 
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
