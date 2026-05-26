@@ -576,7 +576,7 @@ GetMonTypeIndex:
 	ret
 
 .handle_curse
-	ld c, 18
+	ld c, CURSE_TYPE_PALETTE
 	ret
 
 GetStatusConditionIndex:
