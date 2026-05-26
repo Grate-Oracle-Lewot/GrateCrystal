@@ -8231,7 +8231,18 @@ PlaceExpBar:
 .next
 	add $8
 	jr z, .loop2
-	add $54 ; tile to the left of small exp bar tile
+	push hl
+	push af
+	hlcoord 9, 0 ; coord of HP bar label, usually 0, 9
+	ld a, [hl]
+	ld b, $62
+	cp $e8 ; if we are in stats screen
+	jr nz, .inbattle
+	ld b, $54
+.inbattle
+	pop af
+	pop hl
+	add b
 	jr .skip
 
 .loop2
