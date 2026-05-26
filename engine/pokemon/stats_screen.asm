@@ -511,7 +511,7 @@ LoadPinkPage:
 	predef DrawPlayerHP
 	hlcoord 8, 9
 	ld [hl], $41 ; right HP/exp bar end cap
-	ld de, ld de, .Status_Text ; string for "STATUS:"
+	ld de, .Status_Text ; string for "STATUS:"
 	hlcoord 0, 12
 	call PlaceString
 	ld de, .Type_Text ; string for "TYPE:"
