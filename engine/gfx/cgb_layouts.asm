@@ -142,6 +142,22 @@ _CGB_FinishBattleScreenLayout:
 	ld bc, 6 * SCREEN_WIDTH
 	ld a, PAL_BATTLE_BG_TEXT
 	call ByteFill
+
+; flip reused tiles
+; HUD vertical bar thingy
+	hlcoord 18, 10, wAttrmap
+	ld bc, 1
+	ld a, PAL_BATTLE_BG_PLAYER_HP
+	set 5, a ; flips tiles on x axis
+	call ByteFill
+
+; player exp
+	hlcoord 10, 11, wAttrmap
+	lb bc, 1, 8
+	ld a, PAL_BATTLE_BG_EXP
+	set 5, a ; flips tiles on x axis
+	call FillBoxCGB
+
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes
@@ -214,18 +230,42 @@ _CGB_StatsScreenHPPals:
 	add hl, hl
 	ld bc, HPBarPals
 	add hl, bc
-	call LoadPalette_White_Col1_Col2_Black ; hp palette
+	call LoadPalette_White_Col1_Col2_Black ; hp palette, palette 0
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
 	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette
+	call LoadPalette_White_Col1_Col2_Black ; mon palette, palette 1
 	ld hl, ExpBarPalette
-	call LoadPalette_White_Col1_Col2_Black ; exp palette
+	call LoadPalette_White_Col1_Col2_Black ; exp palette, palette 2
 	ld hl, StatsScreenPagePals
-	ld de, wBGPals1 palette 3
-	ld bc, 4 palettes ; pink, green, blue, and orange page palettes
+	ld de, wBGPals1 palette 3 ; palettes 3 & 4
+	ld bc, 2 palettes ; pink, green, blue, ( and orange page) palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
+	call LoadStatsScreenStatusIconPalette
+
+; Load Pokemon's Type Palette(s)
+	call GetBaseData
+	ld a, [wBaseType1]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 1st type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
+	call LoadMonBaseTypePal	
+
+	ld a, [wBaseType1]
+	ld b, a
+	ld a, [wBaseType2]
+	cp b
+	jr z, .palettes_done
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+; load the 2nd type pal 
+	; type index is already in c
+	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7, byte 1
+	call LoadMonBaseTypePal	
+.palettes_done
 	call WipeAttrmap
 
 	hlcoord 0, 0, wAttrmap
@@ -239,23 +279,25 @@ _CGB_StatsScreenHPPals:
 	call ByteFill
 
 	hlcoord 11, 5, wAttrmap
-	lb bc, 2, 2
-	ld a, $3 ; pink page palette
-	call FillBoxCGB
-
-	hlcoord 13, 5, wAttrmap
-	lb bc, 2, 2
-	ld a, $4 ; green page palette
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
+	ld a, $3 ; pink & green page palette
 	call FillBoxCGB
 
 	hlcoord 15, 5, wAttrmap
-	lb bc, 2, 2
-	ld a, $5 ; blue page palette
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
+	ld a, $4 ; blue & orange box palette
 	call FillBoxCGB
 
-	hlcoord 17, 5, wAttrmap
-	lb bc, 2, 2
-	ld a, $6 ; orange page palette
+; mon status
+	hlcoord 7, 12, wAttrmap
+	lb bc, 1, 2 ; 1 Tile in HEIGHT, 2 Tiles in WIDTH 
+	ld a, $6 ; mon base type light/dark pals
+	call FillBoxCGB
+
+; mon type(s) 
+	hlcoord 5, 14, wAttrmap
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
+	ld a, $7 ; mon base type light/dark pals
 	call FillBoxCGB
 
 	call ApplyAttrmap
