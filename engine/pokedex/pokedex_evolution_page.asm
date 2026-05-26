@@ -576,7 +576,7 @@ EVO_place_Mon_Types:
 	pop af
 .done_3
 
-	ld hl, TypeLightIconGFX
+	ld hl, TypeLightIconDex
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
@@ -584,7 +584,7 @@ EVO_place_Mon_Types:
 	call .determine_mon_slot1
 	ld a, b
 	push af
-	lb bc, BANK(TypeLightIconGFX), 4
+	lb bc, BANK(TypeLightIconDex), 4
 	
 	ld a, $1
 	ldh [rVBK], a
@@ -623,7 +623,7 @@ EVO_place_Mon_Types:
 .skip_to_unk_4
 
 ; load type 2 tiles
-	ld hl, TypeDarkIconGFX ; DexTypeDarkIconGFX
+	ld hl, TypeDarkIconDex
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
@@ -634,7 +634,7 @@ EVO_place_Mon_Types:
 
 	ld a, $1
 	ldh [rVBK], a
-	lb bc, BANK(TypeDarkIconGFX), 4
+	lb bc, BANK(TypeDarkIconDex), 4
 	call Request2bpp
 	
 	call EVO_type2_gethlcoord
