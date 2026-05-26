@@ -315,7 +315,7 @@ DisplayDexMonType_CustomGFX:
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
 ; load the tiles
-	ld hl, TypeLightIconGFX
+	ld hl, TypeLightIconDex
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
@@ -324,7 +324,7 @@ DisplayDexMonType_CustomGFX:
 	ld a, $1
 	ldh [rVBK], a
 	ld hl, vTiles2 tile $77
-	lb bc, BANK(TypeLightIconGFX), 4
+	lb bc, BANK(TypeLightIconDex), 4
 	call Request2bpp
 
 	hlcoord 9, 4
@@ -349,7 +349,7 @@ DisplayDexMonType_CustomGFX:
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
 ; load type 2 tiles
-	ld hl, TypeDarkIconGFX
+	ld hl, TypeDarkIconDex
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
@@ -359,7 +359,7 @@ DisplayDexMonType_CustomGFX:
 	ldh [rVBK], a
 
 	ld hl, vTiles2 tile $7b
-	lb bc, BANK(TypeDarkIconGFX), 4
+	lb bc, BANK(TypeDarkIconDex), 4
 	call Request2bpp
 	hlcoord 13, 4
 	ld [hl], $7b
@@ -388,9 +388,9 @@ INCLUDE "engine/pokedex/pokedex_area_page.asm"
 INCLUDE "engine/pokedex/pokedex_evolution_page.asm"
 INCLUDE "engine/pokedex/pokedex_pics_page.asm"
 
-TypeLightIconGFX:: INCBIN "gfx/pokedex/types_light.2bpp"
+TypeLightIconDex:: INCBIN "gfx/pokedex/types_light.2bpp"
 
-TypeDarkIconGFX:: INCBIN "gfx/pokedex/types_dark.2bpp"
+TypeDarkIconDex:: INCBIN "gfx/pokedex/types_dark.2bpp"
 
 Pokedex_Clearbox:
 	lb bc, 7, SCREEN_WIDTH - 1
