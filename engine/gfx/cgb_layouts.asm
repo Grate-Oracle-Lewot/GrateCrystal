@@ -723,6 +723,80 @@ _CGB_PartyMenu:
 	call InitPartyMenuBGPal0
 	call InitPartyMenuBGPal7
 	call InitPartyMenuOBPals
+	call InitPartyMenuStatusPals ; this is the new function added in engine\gfx\color.asm
+
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld c, a ; max number of Party Mons
+	ld b, 0 ; how many checked so far
+	hlcoord 3, 2, wAttrmap ; matches the new location specified in PlacePartyMonStatus, in party_menu.asm
+.loop
+	push bc ; party pokemon count (up to six) left, in 'c', number already done in 'b'
+	push hl ; hlcoord 3, 2, wAttrmap, will become adjusted based on which Party member we're working on
+	; checking for egg, skipping to next party mon if so
+	ld a, LOW(wPartySpecies)
+	add b
+	ld e, a
+	ld a, HIGH(wPartySpecies)
+	adc 0
+	ld d, a
+	; 'de' now contains fully adjusted pointer to current Pokemon species in the Party
+	ld a, [de] ; the species
+	cp EGG
+	jr z, .next
+
+	; not an egg
+	push hl ; which row we are printing on, based on hlcoord 3, 2, wAttrmap
+	ld a, b ; number of Pokemon in Party checked so far
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld hl, wPartyMon1Status ; more pointer math to calc the pointer to Status Condition of the Party Mon
+	call AddNTimes ; adds 'hl' to 'bc' number of times specified in 'a'
+	ld e, l
+	ld d, h
+	farcall GetStatusConditionIndex ; expects the pointer in 'de'
+	; returns Status Condition Index in 'd'
+	ld a, d ; status condition index
+	pop hl ; which row we are printing on, based on hlcoord 3, 2, wAttrmap
+	and a
+	jr z, .next ; Status is "OK", nothing else to be done for this Mon
+	; get the right Pal for the status condition index, which is in 'a' 
+	ld b, $1 ; PSN status index
+	ld c, $4 ; PSN pal, includes Toxic, they use same pal
+	cp b
+	jr z, .done
+	ld b, $2 ; PAR status index
+	ld c, $5 ; PAR pal
+	cp b
+	jr z, .done
+	ld b, $3 ; SLP status index
+	ld c, $6 ; SLP pal
+	cp b
+	jr z, .done
+	ld b, $4 ; BRN Status Index
+	ld c, $4 ; BRN pal
+	cp b
+	jr z, .done
+	ld b, $5 ; FRZ Status Index
+	ld c, $5 ; FRZ pal
+	cp b
+	jr z, .done
+	; if we are here, only status left is FNT
+	ld c, $6 ; FNT pal
+.done
+	; hlcoord is already done and ready: hlcoord 3, 2, wAttrmap + (Party Mon Row x2)
+	ld a, c ; the Status palette
+	lb bc, 1, 2 ; box 1 Tile in HEIGHT, 2 Tiles in WIDTH.
+	call FillBoxCGB
+.next
+	pop hl ; 
+	ld de, SCREEN_WIDTH * 2 ; adjusts hl to two rows down
+	add hl, de
+	pop bc ; party pokemon count (up to six) left, in 'c', number already done in 'b'
+	inc b ; number of Party Mons checked so far, used in various calculations
+	dec c ; number of party mons left to check, stop when 0
+	jr nz, .loop
+	; done with all party pokemon
 	jp ApplyAttrmap
 
 _CGB_Evolution:
