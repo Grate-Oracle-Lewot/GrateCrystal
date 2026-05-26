@@ -40,7 +40,6 @@ PredefPointers::
 	add_predef TradeAnimation
 	add_predef CopyMonToTempMon
 	add_predef ListMoves
-	add_predef PlaceNonFaintStatus
 	add_predef PrintTempMonDVs
 	add_predef ListMovePP
 	add_predef GetGender
@@ -69,9 +68,11 @@ PredefPointers::
 	add_predef DecompressGet2bpp
 	add_predef CheckTypeMatchup
 	add_predef NewPokedexEntry
-	add_predef PlaceStatusString
 	add_predef LoadMonAnimation
 	add_predef AnimateFrontpic
 	add_predef HOF_AnimateFrontpic
 	add_predef GetMonTypeIndex
+	add_predef GetStatusConditionIndex
+	add_predef Player_LoadNonFaintStatus
+	add_predef Enemy_LoadNonFaintStatus
 	db -1 ; end
