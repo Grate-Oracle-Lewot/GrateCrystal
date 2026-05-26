@@ -93,6 +93,7 @@ LoadMonPaletteAsNthBGPal:
 	inc hl
 	inc hl
 	inc hl
+	; fallthrough
 
 LoadNthMiddleBGPal:
 	push hl
@@ -295,6 +296,7 @@ INCLUDE "engine/gfx/cgb_layouts.asm"
 CopyFourPalettes:
 	ld de, wBGPals1
 	ld c, 4
+	; fallthrough
 
 CopyPalettes:
 .loop
@@ -547,6 +549,7 @@ GetFrontpicPalettePointer:
 	and a
 	jp nz, GetMonNormalOrShinyPalettePointer
 	ld a, [wTrainerClass]
+	; fallthrough
 
 GetTrainerPalettePointer:
 	ld l, a
@@ -1380,4 +1383,49 @@ LoadPlayerStatusIconPalette:
 	add hl, bc
 	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
 	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	jp FarCopyColorWRAM
+
+LoadCategoryAndTypePals:
+	; given: de holds the address of destination Palette and Slot
+	; adding a single white pal the way vanilla game does it
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld a, LOW(PALRGB_WHITE)
+	ld [de], a
+	inc de ; slot 1 + 1 byte, now pointing at 2nd byte of slot 1
+	ld a, HIGH(PALRGB_WHITE)
+	ld [de], a
+	inc de ; now pointing at slot 2
+	pop af
+	ldh [rSVBK], a
+	; done adding the single white pal
+
+	ld hl, CategoryIconPals ; from gfx\types_cats_status_pals.asm
+	ld a, b
+	add a ; doubles the Category Index
+	add a ; Quadruples the Category Index
+	; each Category has two colors, so each entry is 4 bytes long, 2 bytes per Color
+	push bc
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld bc, 4 ; 4 bytes worth of colors means 2 slots are being filled at the same time, the two category colors
+	push de
+	call FarCopyColorWRAM
+	pop de ; still pointing to Slot 2 of the Palette
+
+	ld hl, TypeIconPals ; from gfx\types_cats_status_pals.asm
+	pop bc
+	ld a, c
+	add a ; doubles the Index, since each color is 2 bytes
+	ld c, a
+	ld b, 0
+	add hl, bc
+	inc de 
+	inc de
+	inc de
+	inc de ; incs 4 bytes, skips 2 slots of a Palette, now at Slot 4
+	ld bc, 2 ; 2 bytes, 1 color, the type color in slot 4
 	jp FarCopyColorWRAM
