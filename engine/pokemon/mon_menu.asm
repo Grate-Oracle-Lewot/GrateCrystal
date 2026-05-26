@@ -1361,7 +1361,7 @@ PlaceMoveScreenLeftArrow:
 
 .legal
 	hlcoord 16, 0
-	ld [hl], "◀"
+	ld [hl], "▶" ; flipped in CGB Layouts
 	ret
 
 PlaceMoveScreenArrows:
