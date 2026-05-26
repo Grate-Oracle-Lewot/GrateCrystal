@@ -192,12 +192,55 @@ LoadStatsScreenPals:
 	push af
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
-	ld a, [hli]
-	ld [wBGPals1 palette 0], a
-	ld [wBGPals1 palette 2], a
+	ld a, [hli] ; byte 1 of the stats screen page color
+	ld [wBGPals1 palette 0], a ; into slot 1 byte 1 of pal 0
+	ld [wBGPals1 palette 2], a ; into slot 1 byte 1 of pal 2
+	ld [wBGPals1 palette 6], a ; into slot 1 byte 1 of pal 6
+	ld [wBGPals1 palette 7], a ; into slot 1 byte 1 of pal 7
 	ld a, [hl]
-	ld [wBGPals1 palette 0 + 1], a
-	ld [wBGPals1 palette 2 + 1], a
+	ld [wBGPals1 palette 0 + 1], a ; into slot 1 byte 2 of pal 0
+	ld [wBGPals1 palette 2 + 1], a ; into slot 1 byte 2 of pal 2
+	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
+	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
+
+	dec hl
+	ld a, [hli]
+	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
+	; so check $7F first since it will be the first one read
+	jr nz, .notpinkpage
+	ld a, [hl]
+	cp $7e ; first half of pink page color
+	jr nz, .notpinkpage
+
+	; if we're here, we're on the pink page
+	; set slot 4 (the "text" slot) of Pal 7 to WHITE (FFFF or 7FFF)
+	; pal 6 too, status condition, if slot 2 of pal 6 isn't white
+	; if it is white, means we are "OK", and don't change slot 4 of pal 6
+	ld a, $FF ; loading white into slot 4 of pal 6 and 7, checking pal 6 after
+	ld [wBGPals1 palette 7 + 6], a ; slot 4 of Palette 7, byte 1
+	ld [wBGPals1 palette 7 + 7], a ; slot 4 of palette 7, byte 2
+	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
+	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
+
+	; check if $7F $FF is loaded into pal 6 + 2, means we are "OK" and need black in slot 4 of pal 6
+	ld a, [wBGPals1 palette 6 + 2] ; pal 6 slot 2 byte 1
+	cp $FF ; white color by default will be $7FFF but $ff will be read first
+	jr nz, .done
+	ld a, [wBGPals1 palette 6 + 3] ; pal 6 slot 2 byte 1
+	cp $7F
+	jr nz, .done
+	xor a ; loading black into slot 4 of pal 6
+	ld [wBGPals1 palette 6 + 6], a
+	ld [wBGPals1 palette 6 + 7], a
+	jr .done
+
+.notpinkpage
+	xor a ; loading black into slot 4 of pal 6 and 7
+	ld [wBGPals1 palette 6 + 6], a
+	ld [wBGPals1 palette 6 + 7], a
+	ld [wBGPals1 palette 7 + 6], a
+	ld [wBGPals1 palette 7 + 7], a
+.done
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
@@ -1307,3 +1350,34 @@ InitPartyMenuStatusPals:
 	pop af
 	ldh [rSVBK], a
 	ret
+
+LoadStatsScreenStatusIconPalette:
+	ld de, wTempMonStatus
+	predef GetStatusConditionIndex
+	; index is in 'd'
+	jr LoadPlayerStatusIconPalette.phase2 ; do not load the white pal in slot 4 of pal 6
+
+LoadPlayerStatusIconPalette:
+	; given: Status condition index in 'd'
+	
+	; load single white color in slot 4 of palette 6
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, wBGPals1 palette 6 + 6 ; slot 4 of pal 6
+	ld a, $FF
+	ld [hli], a
+	ld [hl], a
+	pop af
+	ldh [rSVBK], a
+	; done loading white color directly into slot 4 of pal 6
+.phase2 
+	ld hl, StatusIconPals
+	ld c, d
+	ld b, 0
+	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
+	add hl, bc
+	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	jp FarCopyColorWRAM
