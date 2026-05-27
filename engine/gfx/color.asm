@@ -1360,6 +1360,26 @@ LoadStatsScreenStatusIconPalette:
 	; index is in 'd'
 	jr LoadPlayerStatusIconPalette.phase2 ; do not load the white pal in slot 4 of pal 6
 
+LoadPlayerBattleCGBLayoutStatusIconPalette:
+	ld bc, 0
+	farcall Player_CheckToxicStatus
+	jr nc, .check_status_nottoxic
+	ld c, 7
+.check_status_nottoxic
+	ld a, 7
+	cp c ; checking if we are Toxic'd
+	jr z, .player_gotstatus ; yes, we are toxic
+	ld de, wBattleMonStatus
+	farcall GetStatusConditionIndex
+	ld a, d
+	and a
+	ret z ; .no_status
+	cp $6 ; faint
+	ret z
+.player_gotstatus
+	ld d, a
+	; fallthrough
+
 LoadPlayerStatusIconPalette:
 	; given: Status condition index in 'd'
 	
@@ -1384,6 +1404,21 @@ LoadPlayerStatusIconPalette:
 	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
 	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
 	jp FarCopyColorWRAM
+
+LoadBattleCategoryAndTypePals:
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
+	ld b, a ; Move Category Index
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	ld c, a ; farcall will clobber a for the bank
+	farcall GetMonTypeIndex
+	; type index is already in c
+	ld de, wBGPals1 palette 5
+	; fallthrough
 
 LoadCategoryAndTypePals:
 	; given: de holds the address of destination Palette and Slot
@@ -1428,4 +1463,37 @@ LoadCategoryAndTypePals:
 	inc de
 	inc de ; incs 4 bytes, skips 2 slots of a Palette, now at Slot 4
 	ld bc, 2 ; 2 bytes, 1 color, the type color in slot 4
+	jp FarCopyColorWRAM
+
+LoadEnemyBattleCGBLayoutStatusIconPalette:
+	ld bc, 0	
+	farcall Enemy_CheckToxicStatus
+	jr nc, .check_status_nottoxic
+	ld c, 7
+.check_status_nottoxic
+	ld a, 7
+	cp c ; checking if we are Toxic'd
+	jr z, .enemy_gotstatus ; yes, we are toxic
+	ld de, wEnemyMonStatus
+	predef GetStatusConditionIndex
+	ld a, d
+	and a
+	ret z ; .no_status
+	cp $6 ; faint
+	ret z
+.enemy_gotstatus
+	ld d, a
+	; fallthrough
+
+LoadEnemyStatusIconPalette:
+	ld a, [wEnemySubStatus2]
+	ld de, wEnemyMonStatus
+	farcall GetStatusConditionIndex ; status cond. index returned in 'd'
+	ld hl, StatusIconPals ; from gfx\types_cats_status_pals.asm
+	ld c, d
+	ld b, 0
+	add hl, bc ; add the index twice because file is list of colors 2 bytes each
+	add hl, bc
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of Palette 6
+	ld bc, 2 ; two bytes, 1 color
 	jp FarCopyColorWRAM
