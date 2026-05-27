@@ -239,9 +239,10 @@ _CGB_StatsScreenHPPals:
 	call LoadPalette_White_Col1_Col2_Black ; exp palette, palette 2
 	ld hl, StatsScreenPagePals
 	ld de, wBGPals1 palette 3 ; palettes 3 & 4
-	ld bc, 2 palettes ; pink, green, blue, ( and orange page) palettes
+	ld bc, 2 palettes ; pink, green, blue, and orange page palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
+
 	call LoadStatsScreenStatusIconPalette
 
 ; Load Pokemon's Type Palette(s)
