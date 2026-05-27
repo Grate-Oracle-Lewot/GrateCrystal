@@ -403,10 +403,6 @@ Script_SpecialBillCall::
 
 RingTwice_StartCall:
 	call .Ring
-	call .Ring
-	farcall StubbedTrainerRankings_PhoneCalls
-	ret
-
 .Ring:
 	call Phone_StartRingingWait20Frames
 	call .CallerTextboxWithName
