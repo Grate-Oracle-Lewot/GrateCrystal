@@ -56,6 +56,8 @@ HandlePlayerStep:
 	ld a, [hl]
 	ld hl, .Jumptable
 	rst JumpTable
+.mobile
+.fail
 	ret
 
 .Jumptable:
@@ -63,11 +65,6 @@ HandlePlayerStep:
 	dw BufferScreen
 	dw .mobile
 	dw .fail
-
-.mobile
-	farcall StubbedTrainerRankings_StepCount
-.fail
-	ret
 
 UpdatePlayerCoords:
 	ld a, [wPlayerStepDirection]
