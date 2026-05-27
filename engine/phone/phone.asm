@@ -422,10 +422,6 @@ PhoneCall::
 	ld a, d
 	ld [wPhoneCaller + 1], a
 	call .Ring
-	call .Ring
-	farcall StubbedTrainerRankings_PhoneCalls
-	ret
-
 .Ring:
 	call Phone_StartRingingWait20Frames
 	call .CallerTextboxWithName
