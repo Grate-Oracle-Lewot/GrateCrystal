@@ -5,6 +5,7 @@ Script_BattleWhiteout::
 OverworldWhiteoutScript::
 	refreshscreen
 	callasm OverworldBGMap
+	; fallthrough
 
 Script_Whiteout:
 	writetext .WhitedOutText
@@ -43,7 +44,6 @@ BattleBGMap:
 	jp SetPalettes
 
 HalveMoney:
-	farcall StubbedTrainerRankings_WhiteOuts
 	xor a
 	ld [wSpinning], a
 ; Halve the player's money.
