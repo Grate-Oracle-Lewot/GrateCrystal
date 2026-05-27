@@ -515,8 +515,6 @@ PokeBallEffect:
 	cp BATTLETYPE_TUTORIAL
 	jp z, .FinishTutorial
 
-	farcall StubbedTrainerRankings_WildMonsCaught
-
 	ld hl, Text_GotchaMonWasCaught
 	call PrintText
 
@@ -2945,7 +2943,6 @@ FearowbotEffect:
 	jr z, FailHMItem
 	and a
 	jr z, .Error
-	farcall StubbedTrainerRankings_Fly
 	ld b, $4
 	ld a, $2
 	ret
