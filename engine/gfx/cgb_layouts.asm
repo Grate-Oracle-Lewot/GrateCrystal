@@ -107,6 +107,10 @@ _CGB_BattleColors:
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
 	pop hl
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_PLAYER
+
+	call LoadPlayerBattleCGBLayoutStatusIconPalette
+	call LoadEnemyBattleCGBLayoutStatusIconPalette
+
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
@@ -158,6 +162,31 @@ _CGB_FinishBattleScreenLayout:
 	set 5, a ; flips tiles on x axis
 	call FillBoxCGB
 
+; status icons
+	; enemy
+	hlcoord 2, 1, wAttrmap
+	lb bc, 1, 2
+	ld a, $6
+	call FillBoxCGB
+	; player's
+	hlcoord 10, 8, wAttrmap
+	lb bc, 1, 2
+	ld a, $6
+	call FillBoxCGB
+
+; check if we're in the MoveInfoBox
+	hlcoord 0, 12
+	ld a, [hl]
+	cp $7d
+	jr nz, .done
+
+	; Move Type and Category pal
+	hlcoord 1, 11, wAttrmap
+	ld bc, 7
+	ld a, $5
+	call ByteFill
+
+.done
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes
