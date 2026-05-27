@@ -773,7 +773,8 @@ ParsePlayerAction:
 	call MoveSelectionScreen
 	push af
 	call SafeLoadTempTilemapToTilemap
-	call UpdateBattleHuds
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle
@@ -4961,18 +4962,21 @@ PrintPlayerHUD:
 .got_gender_char
 	hlcoord 17, 8
 	ld [hl], a
-	hlcoord 14, 8
-	push af ; back up gender
-	push hl
-	ld de, wBattleMonStatus
-	predef PlaceNonFaintStatus
-	pop hl
-	pop bc
-	jr nz, .place_floaticon
+; Player Mon Status Condition GFX
+	predef Player_LoadNonFaintStatus ; loads needed Status Conditon GFX into VRAM
+ 	ld a, c
+	and a 
+	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
+; place status tiles:
+	hlcoord 10, 8 ; status icon tile 1
+	ld [hl], $70
+	inc hl
+	ld [hl], $71
+.status_done
+	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
-.place_floaticon
 	ld a, [wCurSpecies]
 	ld hl, FloatMons
 	call IsInByteArray
@@ -5038,15 +5042,17 @@ DrawEnemyHUD:
 .got_gender
 	hlcoord 9, 1
 	ld [hl], a
-
-	hlcoord 6, 1
-	push af
-	push hl
-	ld de, wEnemyMonStatus
-	predef PlaceNonFaintStatus
-	pop hl
-	pop bc
-	jr nz, .skip_level
+; Enemy Status Condition GFX
+	predef Enemy_LoadNonFaintStatus ; load Status Condition GFX Tiles
+	ld a, c
+	and a
+	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
+	hlcoord 2, 1
+	ld [hl], $72 ; enemy status left half
+	inc hl
+	ld [hl], $73 ; enemy status left half
+.status_done
+	hlcoord 6, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
@@ -5779,6 +5785,8 @@ MoveSelectionScreen:
 .place_textbox_start_over
 	push hl
 	call ClearSprites
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
 	pop hl
 	call StdBattleTextbox
 	call SafeLoadTempTilemapToTilemap
