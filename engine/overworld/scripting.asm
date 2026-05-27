@@ -305,6 +305,8 @@ Script_jumptext:
 
 JumpTextFacePlayerScript:
 	faceplayer
+	; fallthrough
+
 JumpTextScript:
 	opentext
 	repeattext -1, -1
@@ -550,6 +552,8 @@ Script_specialsound:
 	ld de, SFX_ITEM
 .play
 	call PlaySFX
+	; fallthrough
+
 Script_waitsfx:
 	jp WaitSFX
 
@@ -640,9 +644,11 @@ Script_askforphonenumber:
 	jr c, .phonefull
 	xor a ; PHONE_CONTACT_GOT
 	jr .done
+
 .phonefull
 	ld a, PHONE_CONTACTS_FULL
 	jr .done
+
 .refused
 	call GetScriptByte
 	ld a, PHONE_CONTACT_REFUSED
@@ -988,6 +994,7 @@ ApplyEventActionAppearDisappear:
 	jr nz, .okay
 	xor a
 	ret
+
 .okay
 	jp EventFlagAction
 
@@ -1771,9 +1778,11 @@ CompareMoneyAction:
 	jr z, .exact
 	ld a, HAVE_MORE
 	jr .done
+
 .exact
 	ld a, HAVE_AMOUNT
 	jr .done
+
 .less
 	ld a, HAVE_LESS
 .done
@@ -2266,6 +2275,7 @@ ExitScriptSubroutine:
 	ld [wScriptPos + 1], a
 	and a
 	ret
+
 .done
 	scf
 	ret
@@ -2283,8 +2293,6 @@ Script_endall:
 Script_halloffame:
 	ld hl, wGameTimerPaused
 	res GAME_TIMER_PAUSED_F, [hl]
-	farcall StubbedTrainerRankings_HallOfFame
-	farcall StubbedTrainerRankings_HallOfFame2
 	farcall HallOfFame
 	ld hl, wGameTimerPaused
 	set GAME_TIMER_PAUSED_F, [hl]
@@ -2292,6 +2300,8 @@ Script_halloffame:
 
 Script_credits:
 	farcall RedCredits
+	; fallthrough
+
 ReturnFromCredits:
 	call Script_endall
 	ld a, MAPSTATUS_DONE
