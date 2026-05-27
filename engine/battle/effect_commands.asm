@@ -3738,8 +3738,7 @@ BattleCommand_PoisonTarget:
 
 	call PoisonOpponent
 	ld de, ANIM_PSN
-	call PlayOpponentBattleAnim
-	call RefreshBattlePalettes
+	call PlayOpponentBattleAnim_RefreshBattlePalettes
 
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
@@ -4023,8 +4022,7 @@ BattleCommand_BurnTarget:
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 	ld de, ANIM_BRN
-	call PlayOpponentBattleAnim
-	call RefreshBattlePalettes
+	call PlayOpponentBattleAnim_RefreshBattlePalettes
 
 	ld hl, WasBurnedText
 	call StdBattleTextbox
@@ -4091,8 +4089,7 @@ BattleCommand_FreezeTarget:
 	set FRZ, [hl]
 	call UpdateOpponentInParty
 	ld de, ANIM_FRZ
-	call PlayOpponentBattleAnim
-	call RefreshBattlePalettes
+	call PlayOpponentBattleAnim_RefreshBattlePalettes
 
 	ld hl, WasFrozenText
 	call StdBattleTextbox
@@ -4139,8 +4136,7 @@ BattleCommand_ParalyzeTarget:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 	ld de, ANIM_PAR
-	call PlayOpponentBattleAnim
-	call RefreshBattlePalettes
+	call PlayOpponentBattleAnim_RefreshBattlePalettes
 
 	call PrintParalyze
 	ld hl, UseHeldStatusHealingItem
@@ -7106,6 +7102,10 @@ GetWeatherTurns:
 .five
 	ld a, 5
 	ret
+
+PlayOpponentBattleAnim_RefreshBattlePalettes:
+	call PlayOpponentBattleAnim
+	; fallthrough
 
 RefreshBattlePalettes:
 	ld b, SCGB_BATTLE_COLORS
