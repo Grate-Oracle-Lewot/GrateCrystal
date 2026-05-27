@@ -664,7 +664,6 @@ MonMenu_Fly:
 	jr z, MonMenu_MoveFail
 	cp $0
 	jr z, .Error
-	farcall StubbedTrainerRankings_Fly
 	ld b, $4
 	ld a, $2
 	ret
