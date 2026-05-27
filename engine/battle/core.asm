@@ -18,7 +18,6 @@ StartBattle:
 	ret
 
 BattleIntro:
-	farcall StubbedTrainerRankings_Battles
 	call GetLevelCap ; only needed once, can't change cap settings mid-battle
 	call LoadTrainerOrWildMonPic
 	xor a
@@ -2762,13 +2761,6 @@ AddBattleMoneyToAccount:
 	ld c, 3
 	and a
 	push de
-	push hl
-	push bc
-	ld b, h
-	ld c, l
-	farcall StubbedTrainerRankings_AddToBattlePayouts
-	pop bc
-	pop hl
 .loop
 	ld a, [de]
 	adc [hl]
@@ -8239,7 +8231,6 @@ BackUpBGMap2:
 
 InitEnemyTrainer:
 	ld [wTrainerClass], a
-	farcall StubbedTrainerRankings_TrainerBattles
 	xor a
 	ld [wTempEnemyMonSpecies], a
 	farcall GetTrainerAttributes
@@ -8293,7 +8284,6 @@ InitEnemy:
 InitEnemyWildmon:
 	ld a, WILD_BATTLE
 	ld [wBattleMode], a
-	farcall StubbedTrainerRankings_WildBattles
 	call LoadEnemyMon
 	ld hl, wEnemyMonMoves
 	ld de, wWildMonMoves
@@ -8419,7 +8409,6 @@ CheckPayDay:
 	jp ClearBGPalettes
 
 ShowLinkBattleParticipantsAfterEnd:
-	farcall StubbedTrainerRankings_LinkBattles
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
 	call GetPartyLocation
@@ -8436,19 +8425,15 @@ DisplayLinkBattleResult:
 	jr c, .win ; WIN
 	jr z, .lose ; LOSE
 	; DRAW
-	farcall StubbedTrainerRankings_ColosseumDraws
 	ld de, .Draw
 	jr .store_result
 
 .win
-	farcall StubbedTrainerRankings_ColosseumWins
 	ld de, .YouWin
 	jr .store_result
 
 .lose
-	farcall StubbedTrainerRankings_ColosseumLosses
 	ld de, .YouLose
-
 .store_result
 	hlcoord 6, 8
 	call PlaceString
@@ -9116,8 +9101,6 @@ BattleStartMessage:
 	ld a, [wBattleType]
 	cp BATTLETYPE_FISH
 	jr nz, .NotFishing
-
-	farcall StubbedTrainerRankings_HookedEncounters
 
 	ld hl, HookedPokemonAttackedText
 	jr .PlaceBattleStartText
