@@ -16,7 +16,6 @@ TreeMonEncounter:
 	call GetTreeMon
 	jr nc, .no_battle
 
-	farcall StubbedTrainerRankings_TreeEncounters
 	ld a, BATTLETYPE_TREE
 	ld [wBattleType], a
 	ld a, 1
@@ -104,7 +103,6 @@ RockMonEncounter:
 	call SelectTreeMon
 	jr nc, XorARet
 
-	farcall StubbedTrainerRankings_RockEncounters
 	ld a, 1
 	ld [wScriptVar], a
 	ret
