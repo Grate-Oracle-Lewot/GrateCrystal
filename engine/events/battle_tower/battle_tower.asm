@@ -3,7 +3,6 @@ BattleTowerRoomMenu:
 	call InitBattleTowerChallengeRAM
 	farcall _BattleTowerRoomMenu
 SkipBattleTowerTrainer:
-UnusedBattleTowerDummySpecial1:
 	ret
 
 Function1700ba:
