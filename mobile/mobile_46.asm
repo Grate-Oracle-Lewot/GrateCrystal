@@ -1462,7 +1462,7 @@ Function118ded:
 	push af
 	ld a, $1
 	ldh [rSVBK], a
-	farcall Function11b93b
+	call Function11b93b
 	pop af
 	ldh [rSVBK], a
 .asm_118e03
