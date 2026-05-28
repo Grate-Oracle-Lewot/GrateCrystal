@@ -1362,8 +1362,9 @@ LoadStatsScreenStatusIconPalette:
 
 LoadPlayerBattleCGBLayoutStatusIconPalette:
 	ld bc, 0
-	farcall Player_CheckToxicStatus
-	jr nc, .check_status_nottoxic
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr z, .check_status_nottoxic
 	ld c, 7
 .check_status_nottoxic
 	ld a, 7
@@ -1467,8 +1468,9 @@ LoadCategoryAndTypePals:
 
 LoadEnemyBattleCGBLayoutStatusIconPalette:
 	ld bc, 0	
-	farcall Enemy_CheckToxicStatus
-	jr nc, .check_status_nottoxic
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr z, .check_status_nottoxic
 	ld c, 7
 .check_status_nottoxic
 	ld a, 7
