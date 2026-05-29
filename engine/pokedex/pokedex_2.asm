@@ -310,10 +310,7 @@ endr
 DisplayDexMonType_CustomGFX:
 	call GetBaseData
 	ld a, [wBaseType1]
-
-	ld c, a ; farcall will clobber a for the bank
-	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
-	ld a, c
+	call GetMonTypeIndex
 ; load the tiles
 	ld hl, TypeLightIconDex
 	ld bc, 4 * LEN_2BPP_TILE
@@ -345,9 +342,7 @@ DisplayDexMonType_CustomGFX:
 	cp b
 	jr z, .check_floatmon
 
-	ld c, a ; farcall will clobber a for the bank
-	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
-	ld a, c
+	predef GetMonTypeIndex
 ; load type 2 tiles
 	ld hl, TypeDarkIconDex
 	ld bc, 4 * LEN_2BPP_TILE
