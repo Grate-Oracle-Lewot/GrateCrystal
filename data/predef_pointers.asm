@@ -71,7 +71,6 @@ PredefPointers::
 	add_predef LoadMonAnimation
 	add_predef AnimateFrontpic
 	add_predef HOF_AnimateFrontpic
-	add_predef GetMonTypeIndex
 	add_predef GetStatusConditionIndex
 	add_predef Player_LoadNonFaintStatus
 	add_predef Enemy_LoadNonFaintStatus
