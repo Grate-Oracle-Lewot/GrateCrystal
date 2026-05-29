@@ -534,13 +534,12 @@ EVO_place_Mon_Types:
 
 ; set up the palette based on the current mon slot
 	ld a, [wBaseType1]
-	ld c, a
-	predef GetMonTypeIndex
+	call GetMonTypeIndex
 .skip_to_unk_1
-	ld d, c
+	ld d, a
 	ld a, [wBaseType2]
-	ld c, a ; type 2
-	predef GetMonTypeIndex
+	call GetMonTypeIndex
+	ld c, a
 	ld b, d
 
 	push de
@@ -549,7 +548,7 @@ EVO_place_Mon_Types:
 	jr nz, .seen_done_2
 	pop bc
 	pop de
-	ld c, 18 ; index of ???-type
+	ld c, CURSE_TYPE_PALETTE
 	jr .skip_to_unk_2
 .seen_done_2
 	pop bc
@@ -562,9 +561,7 @@ EVO_place_Mon_Types:
 	call DelayFrame
 
 	ld a, [wBaseType1]
-	ld c, a
-	predef GetMonTypeIndex
-	ld a, c
+	call GetMonTypeIndex
 
 	push af
 	call EVO_CheckSeenMon
@@ -608,15 +605,13 @@ EVO_place_Mon_Types:
 	cp b
 	jp z, .done
 
-	ld c, a ; type 2
-	predef GetMonTypeIndex
-	ld a, c ; type 2
+	call GetMonTypeIndex
 
 	push af
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_4
 	pop af
-	ld a, 18 ; index of ???-type
+	ld a, CURSE_TYPE_PALETTE
 	jr .skip_to_unk_4
 .seen_done_4
 	pop af
