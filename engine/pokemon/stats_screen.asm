@@ -673,9 +673,7 @@ LoadPinkPage:
 PrintMonTypeTiles:
 	call GetBaseData
 	ld a, [wBaseType1]
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
-	ld a, c
+	call GetMonTypeIndex
 	ld hl, TypeLightIconGFX ; from gfx\stats\types_light.png
 	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
 	call AddNTimes
@@ -703,9 +701,7 @@ PrintMonTypeTiles:
 
 	; Load Type2 GFX
 	; 2nd Type
-	ld c, a ; Pokemon's second type
-	farcall GetMonTypeIndex
-	ld a, c
+	call GetMonTypeIndex
 	ld hl, TypeDarkIconGFX ; from gfx\stats\types_dark.png
 	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 Tiles Wide
 	call AddNTimes ; type index needs to be in 'a'
