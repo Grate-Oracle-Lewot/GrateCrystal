@@ -342,7 +342,7 @@ DisplayDexMonType_CustomGFX:
 	cp b
 	jr z, .check_floatmon
 
-	predef GetMonTypeIndex
+	call GetMonTypeIndex
 ; load type 2 tiles
 	ld hl, TypeDarkIconDex
 	ld bc, 4 * LEN_2BPP_TILE
