@@ -1415,9 +1415,8 @@ LoadBattleCategoryAndTypePals:
 	dec a
 	ld b, a ; Move Category Index
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
-	; type index is already in c
+	call GetMonTypeIndex
+	ld c, a
 	ld de, wBGPals1 palette 5
 	; fallthrough
 
