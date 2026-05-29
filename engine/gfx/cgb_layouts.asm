@@ -1152,9 +1152,18 @@ _CGB_MoveList:
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap
 
+	ld hl, Moves + MOVE_TYPE
 	ld a, [wCurSpecies]
-	ld b, a
-	farcall GetMoveCategoryIndex
+	dec a
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
 	add a ; double the index
 	add a ; quadruple the index
 	; since entries of CategoryIconPals are 4 bytes (2 colors, 2 bytes each) instead of normal 2 bytes (1 color) 
@@ -1190,7 +1199,7 @@ _CGB_MoveList:
 	ld a, $2 ; Palette 2
 	call ByteFill
 	
-; fix left menu arrow, since we don't have left facing arrow
+; fix left menu arrow, since we dont have left facing arrow
 	hlcoord 16, 0, wAttrmap
 	ld bc, 1 ; 1x1 Square
 	xor a ; pal 0, default palette
