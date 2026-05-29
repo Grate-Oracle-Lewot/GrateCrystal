@@ -131,6 +131,7 @@ _ApplyMenuMonIconColor:
 	dec c
 	jr nz, .loop
 	; fallthrough
+
 _FinishMenuMonIconColor:
 	pop af
 	pop bc
@@ -142,6 +143,8 @@ GetMenuMonIconPalette::
 	ld c, l
 	ld b, h
 	farcall CheckShininess
+	; fallthrough
+
 GetMenuMonIconPalette_PredeterminedShininess:
 	push af
 	ld a, [wCurPartySpecies]
@@ -189,42 +192,6 @@ LoadMenuMonIcon:
 	dw Mobile_InitAnimatedMonIcon       ; MONICON_MOBILE1
 	dw Mobile_InitPartyMenuBGPal71      ; MONICON_MOBILE2
 	dw Pokedex_InitAnimatedMonIcon      ; MONICON_UNUSED
-
-Unused_GetPartyMenuMonIcon:
-	call InitPartyMenuIcon
-	call .GetPartyMonItemGFX
-	jp SetPartyMonIconAnimSpeed
-
-.GetPartyMonItemGFX:
-	push bc
-	ldh a, [hObjectStructIndex]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop bc
-	ld a, [hl]
-	and a
-	jr z, .no_item
-	push hl
-	push bc
-	ld d, a
-	farcall ItemIsMail
-	pop bc
-	pop hl
-	jr c, .not_mail
-	ld a, $06
-	jr .got_tile
-.not_mail
-	ld a, $05
-	; fallthrough
-
-.no_item
-	ld a, $04
-.got_tile
-	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
-	add hl, bc
-	ld [hl], a
-	ret
 
 Mobile_InitAnimatedMonIcon:
 	call PartyMenu_InitAnimatedMonIcon
@@ -414,6 +381,7 @@ Pokedex_InitAnimatedMonIcon:
 	ld d, $88
 	ld e, $20
 	jr .setxdone
+
 .evo_page
 	ld a, [wStatsScreenFlags]
 	inc a
@@ -502,6 +470,8 @@ FlyFunction_GetMonIcon:
 
 GetMemIconGFX:
 	ld a, [wCurIconTile]
+	; fallthrough
+
 GetIconGFX:
 	call GetIcon_a
 	ld de, 8 tiles
@@ -522,6 +492,7 @@ GetIcon_a:
 ; Load icon graphics into VRAM starting from tile a.
 	ld l, a
 	ld h, 0
+	; fallthrough
 
 GetIcon:
 ; Load icon graphics into VRAM starting from tile hl.
@@ -656,6 +627,7 @@ ReadMonMenuIcon:
 	add hl, de
 	ld a, [hl]
 	ret
+
 .egg
 	ld a, ICON_EGG
 	ret
