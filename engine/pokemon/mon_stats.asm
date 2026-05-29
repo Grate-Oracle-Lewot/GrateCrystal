@@ -495,22 +495,6 @@ ListMoves:
 	jr nz, .nonmove_loop
 	ret
 
-GetMonTypeIndex:
-	; type in c, because farcall clobbers a
-	ld a, c
-	cp CURSE_TYPE
-	jr z, .handle_curse
-	cp UNUSED_TYPES
-	jr c, .done
-	sub UNUSED_TYPES_END - UNUSED_TYPES
-.done
-	ld c, a
-	ret
-
-.handle_curse
-	ld c, CURSE_TYPE_PALETTE
-	ret
-
 GetStatusConditionIndex:
 ; de points to status condition bytes of a pokemon from a party_struct or battle_struct
 ; return the status condition index in 'a', and also 'd' for those who farcall
