@@ -1,17 +1,30 @@
 IsAPokemon::
 ; Return carry if species a is not a Pokemon.
 	and a
-	jr z, .NotAPokemon
+	jr z, IsAPokemon_GetCryIndex_scf
 	cp EGG
-	jr z, .Pokemon
+	jr z, IsAPokemon_and_a
 	cp NUM_POKEMON + 1
-	jr c, .Pokemon
+	jr c, IsAPokemon_and_a
+	; fallthrough
 
-.NotAPokemon:
+IsAPokemon_GetCryIndex_scf:
 	scf
 	ret
 
-.Pokemon:
+IsAPokemon_and_a:
+	and a
+	ret
+
+GetCryIndex::
+	and a
+	jr z, IsAPokemon_GetCryIndex_scf
+	cp NUM_POKEMON + 1
+	jr nc, IsAPokemon_GetCryIndex_scf
+
+	dec a
+	ld c, a
+	ld b, 0
 	and a
 	ret
 
@@ -187,22 +200,6 @@ endr
 	and a
 	ret
 
-GetCryIndex::
-	and a
-	jr z, .no
-	cp NUM_POKEMON + 1
-	jr nc, .no
-
-	dec a
-	ld c, a
-	ld b, 0
-	and a
-	ret
-
-.no
-	scf
-	ret
-
 PrintLevel::
 ; Print wTempMonLevel at hl
 
@@ -298,4 +295,17 @@ GetNickname::
 
 	pop bc
 	pop hl
+	ret
+
+GetMonTypeIndex::
+	; type in a
+	cp CURSE_TYPE
+	jr z, .handle_curse
+	cp UNUSED_TYPES
+	ret c
+	sub UNUSED_TYPES_END - UNUSED_TYPES
+	ret
+
+.handle_curse
+	ld a, CURSE_TYPE_PALETTE
 	ret
