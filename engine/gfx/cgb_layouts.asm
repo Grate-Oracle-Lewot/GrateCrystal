@@ -277,10 +277,9 @@ _CGB_StatsScreenHPPals:
 ; Load Pokemon's Type Palette(s)
 	call GetBaseData
 	ld a, [wBaseType1]
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
+	call GetMonTypeIndex
 ; load the 1st type pal 
-	; type index is already in c
+	ld c, a
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
 	call LoadMonBaseTypePal	
 
@@ -289,10 +288,9 @@ _CGB_StatsScreenHPPals:
 	ld a, [wBaseType2]
 	cp b
 	jr z, .palettes_done
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
+	call GetMonTypeIndex
 ; load the 2nd type pal 
-	; type index is already in c
+	ld c, a
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7, byte 1
 	call LoadMonBaseTypePal	
 .palettes_done
@@ -375,10 +373,9 @@ _CGB_Pokedex:
 	ld [wCurSpecies], a	
 	call GetBaseData
 	ld a, [wBaseType1]
-	ld c, a ; farcall will clobber a for the bank
-	predef GetMonTypeIndex
+	call GetMonTypeIndex
 ; load the 1st type pal 
-	; type index is already in c
+	ld c, a
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7
 	farcall LoadMonBaseTypePal ; loads type color into slot 2 of pal 7
 ; mon type 2
@@ -386,10 +383,11 @@ _CGB_Pokedex:
 	ld c, a ; farcall will clobber a for the bank
 	ld a, [wBaseType1]
 	cp c
-	jr z, .same_type	
-	predef GetMonTypeIndex
+	jr z, .same_type
+	ld a, c
+	call GetMonTypeIndex
 ; load the 2nd type pal 
-	; type index is already in c
+	ld c, a
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7
 	farcall LoadMonBaseTypePal ; loads type color into slot 3 of pal 7
 	jr .got_palette
@@ -1176,9 +1174,7 @@ _CGB_MoveList:
 	ld a, BANK(Moves)
 	call GetFarByte
 	and TYPE_MASK
-	ld c, a ; farcall will clobber a for the bank
-	farcall GetMonTypeIndex
-	ld a, c
+	call GetMonTypeIndex
 	ld hl, TypeIconPals
 	add a ; double the index, entries of TypeIconPals are 2 bytes (1 color). Same as a list of pointers
 	ld c, a
