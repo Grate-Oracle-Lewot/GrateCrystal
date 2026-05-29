@@ -5861,16 +5861,16 @@ MoveInfoBox:
 	hlcoord 4, 8
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	cp 2
-	jr c, .haspower
-	ld de, .novalue_string
-	call PlaceString
-	jr .print_acc
-
-.haspower	
+	jr c, .nopower
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
 	call PrintNum
+	jr .print_acc
+
+.nopower
+	ld de, .novalue_string
+	call PlaceString
 
 ; print move accuracy
 .print_acc
