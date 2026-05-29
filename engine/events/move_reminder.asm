@@ -593,7 +593,7 @@ ChooseMoveToLearn:
 	call GetFarByte
 	ld hl, PerfectAccuracyEffects
 	call IsInByteArray
-	jr c, .imperfect
+	jr c, .perfect
 
 	ld a, [wMenuSelection]
 	ld bc, MOVE_LENGTH
@@ -611,7 +611,7 @@ ChooseMoveToLearn:
 
 ; This prints "---" if the move's effect is in the list of perfect accuracy effects.
 ; This list is stored in the home bank, so it can be accessed from anywhere.
-.imperfect
+.perfect
 	ld de, MoveNullValueString
 	ld bc, 3
 	hlcoord 5, 11
