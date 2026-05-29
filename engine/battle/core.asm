@@ -5761,9 +5761,9 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 8
-	ld b, 3
-	ld c, 9
+	hlcoord 0, 7 ; upper right corner of the textbox
+	ld b, 4 ; Box height
+	ld c, 7 ; Box length
 	call Textbox
 
 	ld a, [wPlayerDisableCount]
@@ -5777,7 +5777,7 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
-	hlcoord 1, 10
+	hlcoord 1, 11
 	ld de, .Disabled
 	jp PlaceString
 
@@ -5811,27 +5811,98 @@ MoveInfoBox:
 	call .PrintPP
 
 	farcall UpdateMoveData
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 1, 9
-	ld de, wStringBuffer1
+	farcall LoadBattleCategoryAndTypePals
+	call SetPalettes
+
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	call GetMonTypeIndex
+	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
+	ld bc, 4 * LEN_1BPP_TILE ; Type GFX is 4 Tiles Wide
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $55 
+	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
+	call Request1bpp
+	hlcoord 4, 11 ; placing the Type Tiles in the MoveInfoBox
+	ld [hl], $55
+	inc hl
+	ld [hl], $56
+	inc hl
+	ld [hl], $57
+	inc hl
+	ld [hl], $58
+
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
+	ld hl, CategoryIconGFX
+	ld bc, 2 tiles ; Move Category is 2 Tiles wide 
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $59
+	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
+	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
+	hlcoord 1, 11 ; placing the Category Tiles in the MoveInfoBox
+	ld [hl], $59
+	inc hl
+	ld [hl], $5a
+
+; print move power
+	ld de, .power_string
+	hlcoord 1, 8
 	call PlaceString
 
-	ld h, b
-	ld l, c
-	ld [hl], "/"
+	hlcoord 4, 8
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	cp 2
+	jr c, .haspower
+	ld de, .novalue_string
+	call PlaceString
+	jr .print_acc
 
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	hlcoord 2, 10
-	predef_jump PrintBattleMoveType
+.haspower	
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
+	call PrintNum
 
-.Disabled:
-	db "Disabled!@"
+; print move accuracy
+.print_acc
+	hlcoord 1, 9
+	ld de, .accuracy_string
+	call PlaceString
+	hlcoord 7, 9
+	ld [hl], "<%>"
+
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	ld hl, PerfectAccuracyEffects
+	call IsInByteArray
+	jr c, .perfect_acc
+	hlcoord 4, 9
+	ld a, [wPlayerMoveStruct + MOVE_ACC]
+	call ConvertPercentages
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
+	call PrintNum
+	jr .done
+
+.perfect_acc
+	hlcoord 4, 9
+	ld de, .novalue_string
+	call PlaceString
+.done
+	ld b, SCGB_BATTLE_COLORS
+	jp GetSGBLayout
 
 .PrintPP:
-	hlcoord 5, 11
+	hlcoord 3, 10
 	push hl
 	ld de, wStringBuffer1
 	lb bc, 1, 2
@@ -5843,7 +5914,21 @@ MoveInfoBox:
 	inc hl
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
-	jp PrintNum
+	call PrintNum
+	hlcoord 1, 10
+	ld a, "P"
+	ld [hli], a
+	ld [hl], a
+	ret
+
+.power_string:
+	db "PW@"
+.accuracy_string:
+	db "HT@"
+.novalue_string:
+	db "---@"
+.Disabled:
+	db "Disabled!@"
 
 CheckPlayerHasUsableMoves:
 if DEF(_METRONOME_ONLY)
