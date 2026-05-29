@@ -1238,9 +1238,7 @@ PlaceMoveData:
 ; Print move type
 	pop af ; raw Move Type+category Byte, unmasked
 	and TYPE_MASK ; Phys/Spec Split specific
-	ld c, a
-	farcall GetMonTypeIndex
-	ld a, c
+	call GetMonTypeIndex
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette
 	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
