@@ -1220,8 +1220,18 @@ PlaceMoveData:
 
 ; Print move category
 	ld a, [wCurSpecies]
-	ld b, a
-	farcall GetMoveCategoryIndex
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	push af ; raw Move Type+category Byte, unmasked
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
 	ld hl, CategoryIconGFX ; ptr to Category GFX loaded from PNG(2bpp)
 	ld bc, 2 tiles
 	call AddNTimes
@@ -1237,7 +1247,7 @@ PlaceMoveData:
 
 ; Print move type
 	pop af ; raw Move Type+category Byte, unmasked
-	and TYPE_MASK ; Phys/Spec Split specific
+	and TYPE_MASK
 	call GetMonTypeIndex
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette
