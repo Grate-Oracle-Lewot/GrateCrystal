@@ -1178,7 +1178,6 @@ _CGB_MoveList:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	and TYPE_MASK
 	call GetMonTypeIndex
 	ld hl, TypeIconPals
 	add a ; double the index, entries of TypeIconPals are 2 bytes (1 color). Same as a list of pointers
