@@ -47,6 +47,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
+- Colorful type, category, and status icons from Polished Crystal, via Nayru62's tutorial
 - Time Capsule replaced with player gender swap machine
 - Poké Seer replaced with move reminder
 - Egg move tutor unlockable in Kanto
@@ -619,4 +620,4 @@ Cottonee frontsprite and Cottonee, Whimsicott, and Yanmega backsprites - edited 
 
 Some Pokémon icons taken from sheets by Emi Monserrate, LuigiTKO, Chamber, Solo0993, Blue Emerald, Lake, Neslug, and Pikachu25
 
-Weather icons, Eusine overworld sprites, and fonts #2-3 taken from Polished Crystal
+Type, category, status, and weather icons; Eusine overworld sprites; and fonts #2-3 taken from Polished Crystal
