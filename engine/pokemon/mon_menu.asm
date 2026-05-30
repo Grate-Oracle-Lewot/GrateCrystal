@@ -1348,6 +1348,8 @@ PlaceMoveData:
 .description
 	hlcoord 1, 15
 	predef PrintMoveDescriptionScrunched
+	ld b, SCGB_MOVE_LIST
+	call GetSGBLayout ; reload proper palettes for new Move Type and Category, and apply
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
