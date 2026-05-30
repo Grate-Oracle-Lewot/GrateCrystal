@@ -299,13 +299,16 @@ GetNickname::
 
 GetMonTypeIndex::
 	; type in a
+	and TYPE_MASK
 	cp CURSE_TYPE
 	jr z, .handle_curse
 	cp UNUSED_TYPES
-	ret c
+	jr c, .done
 	sub UNUSED_TYPES_END - UNUSED_TYPES
-	ret
+	jr .done
 
-.handle_curse
+handle_curse:
 	ld a, CURSE_TYPE_PALETTE
+.done:
+	ld c, a
 	ret
