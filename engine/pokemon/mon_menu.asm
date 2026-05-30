@@ -1247,7 +1247,6 @@ PlaceMoveData:
 
 ; Print move type
 	pop af ; raw Move Type+category Byte, unmasked
-	and TYPE_MASK
 	call GetMonTypeIndex
 ; Type Index adjust done
 ; Load Type GFX Tiles, color will be in Slot 4 of Palette
