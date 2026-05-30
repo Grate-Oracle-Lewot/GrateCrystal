@@ -278,8 +278,7 @@ _CGB_StatsScreenHPPals:
 	call GetBaseData
 	ld a, [wBaseType1]
 	call GetMonTypeIndex
-; load the 1st type pal 
-	ld c, a
+; load the 1st type pal
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
 	call LoadMonBaseTypePal	
 
@@ -289,8 +288,7 @@ _CGB_StatsScreenHPPals:
 	cp b
 	jr z, .palettes_done
 	call GetMonTypeIndex
-; load the 2nd type pal 
-	ld c, a
+; load the 2nd type pal
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7, byte 1
 	call LoadMonBaseTypePal	
 .palettes_done
@@ -368,14 +366,13 @@ _CGB_Pokedex:
 ; black background for Pal 7
 	ld de, wBGPals1 palette 7 ; First color slot of Pal 7	
 	call LoadSingleBlackPal ; loads black into slot 1 of pal 7, since it is normally white but pokedex has black background
-; mon type 1	
+; mon type 1
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a	
 	call GetBaseData
 	ld a, [wBaseType1]
 	call GetMonTypeIndex
-; load the 1st type pal 
-	ld c, a
+; load the 1st type pal
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7
 	farcall LoadMonBaseTypePal ; loads type color into slot 2 of pal 7
 ; mon type 2
@@ -386,8 +383,7 @@ _CGB_Pokedex:
 	jr z, .same_type
 	ld a, c
 	call GetMonTypeIndex
-; load the 2nd type pal 
-	ld c, a
+; load the 2nd type pal
 	ld de, wBGPals1 palette 7 + 4 ; slot 3 of pal 7
 	farcall LoadMonBaseTypePal ; loads type color into slot 3 of pal 7
 	jr .got_palette
