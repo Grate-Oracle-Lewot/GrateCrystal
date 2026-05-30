@@ -1,6 +1,6 @@
 INCLUDE "engine/gfx/sgb_layouts.asm"
 
-SHINY_ATK_BIT EQU 5
+SHINY_ATK_MASK EQU %0010
 SHINY_DEF_VAL EQU 15
 SHINY_SPD_VAL EQU 15
 SHINY_SPC_VAL EQU 15
@@ -12,27 +12,15 @@ CheckShininess:
 	ld l, c
 	ld h, b
 
-; Attack
-	ld a, [hl]
-	and 1 << SHINY_ATK_BIT
-	jr z, .not_shiny
-
-; Defense
+; Attack and Defense
 	ld a, [hli]
-	and $f
-	cp  SHINY_DEF_VAL
+	and SHINY_ATK_MASK << 4 | %1111
+	cp SHINY_ATK_MASK << 4 | SHINY_DEF_VAL
 	jr nz, .not_shiny
 
-; Speed
+; Speed and Special
 	ld a, [hl]
-	and $f0
-	cp  SHINY_SPD_VAL << 4
-	jr nz, .not_shiny
-
-; Special
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPC_VAL
+	cp SHINY_SPD_VAL << 4 | SHINY_SPC_VAL
 	jr nz, .not_shiny
 
 ; shiny
