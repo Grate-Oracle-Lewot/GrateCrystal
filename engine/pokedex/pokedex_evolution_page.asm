@@ -528,7 +528,7 @@ EVO_place_Mon_Types:
 
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_1
-	ld c, 18 ; index of ???-type
+	ld c, CURSE_TYPE_PALETTE
 	jr .skip_to_unk_1
 .seen_done_1
 
@@ -539,7 +539,6 @@ EVO_place_Mon_Types:
 	ld d, a
 	ld a, [wBaseType2]
 	call GetMonTypeIndex
-	ld c, a
 	ld b, d
 
 	push de
@@ -567,7 +566,7 @@ EVO_place_Mon_Types:
 	call EVO_CheckSeenMon
 	jr nz, .seen_done_3
 	pop af ; unload stack
-	ld a, 18 ; index of ???-type
+	ld a, CURSE_TYPE_PALETTE
 	jr .done_3
 .seen_done_3
 	pop af
