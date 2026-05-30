@@ -1416,7 +1416,6 @@ LoadBattleCategoryAndTypePals:
 	ld b, a ; Move Category Index
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
 	call GetMonTypeIndex
-	ld c, a
 	ld de, wBGPals1 palette 5
 	; fallthrough
 
