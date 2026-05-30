@@ -307,7 +307,7 @@ GetMonTypeIndex::
 	sub UNUSED_TYPES_END - UNUSED_TYPES
 	jr .done
 
-handle_curse:
+.handle_curse:
 	ld a, CURSE_TYPE_PALETTE
 .done:
 	ld c, a
