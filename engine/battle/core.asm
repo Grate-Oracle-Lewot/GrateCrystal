@@ -5921,9 +5921,9 @@ MoveInfoBox:
 	ret
 
 .power_string:
-	db "PW@"
+	db "POW@"
 .accuracy_string:
-	db "HT@"
+	db "HIT@"
 .novalue_string:
 	db "---@"
 .Disabled:
