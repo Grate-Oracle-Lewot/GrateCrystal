@@ -1342,27 +1342,6 @@ InitPartyMenuStatusPals:
 	ldh [rSVBK], a
 	ret
 
-LoadPlayerBattleCGBLayoutStatusIconPalette:
-	ld bc, 0	
-	ld a, [wPlayerSubstatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr nz, .check_status_nottoxic
-	ld c, 7
-.check_status_nottoxic
-	ld a, 7
-	cp c ; checking if we are Toxic'd
-	jr z, .player_gotstatus ; yes, we are toxic
-	ld de, wBattleMonStatus
-	farcall GetStatusConditionIndex
-	ld a, d
-	and a
-	ret z ; .no_status
-	cp $6 ; faint
-	ret z
-.player_gotstatus
-	ld d, a
-	jr LoadPlayerStatusIconPalette
-
 LoadStatsScreenStatusIconPalette:
 	ld de, wTempMonStatus
 	predef GetStatusConditionIndex
