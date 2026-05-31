@@ -5761,7 +5761,7 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 7 ; upper right corner of the textbox
+	hlcoord 0, 7 ; upper left corner of the textbox
 	ld b, 4 ; Box height
 	ld c, 7 ; Box length
 	call Textbox
@@ -5815,7 +5815,6 @@ MoveInfoBox:
 	call SetPalettes
 
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
 	call GetMonTypeIndex
 	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
 	ld bc, 4 * LEN_1BPP_TILE ; Type GFX is 4 Tiles Wide
