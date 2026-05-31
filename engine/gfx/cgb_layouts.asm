@@ -177,7 +177,7 @@ _CGB_FinishBattleScreenLayout:
 ; check if we're in the MoveInfoBox
 	hlcoord 0, 12
 	ld a, [hl]
-	cp $7d
+	cp "└"
 	jr nz, .done
 
 	; Move Type and Category pal
