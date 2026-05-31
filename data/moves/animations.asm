@@ -1878,6 +1878,7 @@ BattleAnim_MetalSound:
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 3
 	anim_loop 10, .loop
+	anim_sound 6, 2, SFX_SUPERSONIC
 	anim_wait 64
 	anim_ret
 
