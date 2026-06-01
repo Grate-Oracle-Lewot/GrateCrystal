@@ -16,6 +16,12 @@ GetTypeName:
 
 INCLUDE "data/types/names.asm"
 
+FarHiddenPowerType::
+; dvs in bc
+	ld h, b
+	ld l, c
+	; fallthrough
+
 HiddenPowerType:
 	; Def & 3
 	ld a, [hl]
