@@ -5762,8 +5762,7 @@ MoveInfoBox:
 	ldh [hBGMapMode], a
 
 	hlcoord 0, 7 ; upper left corner of the textbox
-	ld b, 4 ; Box height
-	ld c, 7 ; Box length
+	lb bc, 4, 7 ; height, length
 	call Textbox
 
 	ld a, [wPlayerDisableCount]
