@@ -138,13 +138,6 @@ SpecialsPointers::
 	add_special RefreshSprites
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
-	add_special Mobile_DummyReturnFalse
-	add_special Function101225
-	add_special Function101231
-	add_special Function1037eb
-	add_special Function10383c
-	add_special Function1037c2
-	add_special Function10387b
 
 ; Grate Crystal only
 	add_special CheckOtherPlayerGender
