@@ -208,58 +208,6 @@ Function4aa34:
 	pop af
 	ret
 
-Function4aa7a:
-	ld hl, wd002
-	ld d, $3
-.loop
-	ld e, PARTY_LENGTH
-	ld a, [hli]
-	push de
-	push hl
-	cp -1
-	jr z, .done
-	ld hl, wSpriteAnimationStructs
-	inc a
-	ld d, a
-.inner_loop
-	ld a, [hl]
-	and a
-	jr z, .next
-	cp d
-	jr z, .same_as_d
-	jr .next
-
-	ld a, $3
-	jr .proceed
-
-.same_as_d
-	ld a, $2
-
-.proceed
-	push hl
-	ld c, l
-	ld b, h
-	ld hl, $2
-	add hl, bc
-	ld [hl], a
-	pop hl
-
-.next
-	ld bc, $10
-	add hl, bc
-	dec e
-	jr nz, .inner_loop
-	pop hl
-	pop de
-	dec d
-	jr nz, .loop
-	ret
-
-.done
-	pop hl
-	pop de
-	ret
-
 Function4aab6:
 	ld hl, wd002
 	ld d, $3
@@ -512,10 +460,6 @@ Function4ad17:
 MobileOnlyThreeMonMayEnterText:
 	text_far _MobileOnlyThreeMonMayEnterText
 	text_end
-
-Function4ad56:
-	farcall OpenPartyStats
-	jp WaitBGMap2
 
 Function4ad60:
 	farcall ManagePokemonMoves
