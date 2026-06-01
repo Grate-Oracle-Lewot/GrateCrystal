@@ -599,21 +599,6 @@ Function100675:
 	ret nz
 	jp Function1006d3
 
-Function100681:
-	push hl
-	ld hl, wcd2a
-	bit 2, [hl]
-	ld hl, wcd2a
-	set 2, [hl]
-	pop hl
-	jr nz, .asm_100694
-	push hl
-	call Function1006d3
-	pop hl
-.asm_100694
-	ld de, wcd32
-	; fallthrough
-
 Function100697:
 	ld a, [de]
 	and a
@@ -3952,29 +3937,6 @@ Function1020bf:
 	scf
 	ret
 
-Function1020ea:
-	ld hl, wdc41
-	bit 4, [hl]
-	jr z, .quit
-	ld hl, wdc41
-	bit 2, [hl]
-	jr nz, .quit
-	call Function10218d
-	ld hl, wc608
-	bit 4, [hl]
-	jr z, .quit
-	ld hl, wc608
-	bit 2, [hl]
-	jr nz, .quit
-	call Function102112
-	jr z, .quit
-	and a
-	ret
-
-.quit
-	scf
-	ret
-
 Function102112:
 	ld a, $04
 	call OpenSRAM
@@ -4028,11 +3990,6 @@ PutCardInCardFolderText:
 CardWasListedText:
 	text_far _CardWasListedText
 	text_end
-
-Function1021e0:
-	call MenuTextbox
-	call JoyWaitAorB
-	jp ExitMenu
 
 LinkTerminatedText:
 	text_far _LinkTerminatedText
