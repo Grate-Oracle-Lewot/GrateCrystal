@@ -2256,35 +2256,6 @@ Function10165a:
 	ld hl, w5_da00
 	jp MobileCopyTransferData
 
-Unknown_10173a:
-	db $50
-
-Function10173b:
-	push bc
-	push af
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [Unknown_10173a]
-	ld c, a
-	ld b, 0
-	pop af
-	call AddNTimes
-	pop bc
-	ret
-
-Function1017b0:
-	ld a, c
-	ld [wccb4], a
-	push bc
-	ld a, [wcd3a]
-	dec a
-	ld hl, wcd3b
-	call Function10173b
-	pop bc
-	ld de, wccb5
-	jp CopyBytes
-
 _SelectMonsForMobileBattle:
 	farcall BlankScreen
 	farcall Mobile_CommunicationStandby
@@ -2412,19 +2383,6 @@ Function10204c:
 	ld [hli], a
 	dec c
 	jr nz, .asm_102054
-	ret
-
-Function102080:
-	and $0f
-	cp $0f
-	jr z, .asm_10208a
-	add $30
-	ld [hli], a
-	ret
-
-.asm_10208a
-	ld [hl], 0
-	scf
 	ret
 
 NewCardArrivedText:
