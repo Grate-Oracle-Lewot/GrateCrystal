@@ -5089,54 +5089,6 @@ Function11ad8a:
 	inc [hl]
 	ret
 
-Function11afb7:
-	ld e, $ed
-	jr asm_11afbd
-
-Function11afbb:
-	ld e, $7f
-	; fallthrough
-
-asm_11afbd:
-	ld a, [wMenuCursorY]
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, e
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	ld [de], a
-	ret
-
-Unknown_11afcc:
-	dwcoord 11, 12
-	dwcoord 11, 14
-	dwcoord 11, 16
-
-Unknown_11afd2:
-	dwcoord 15,  8
-	dwcoord 15, 10
-
-Function11afd6:
-	ld de, SCREEN_WIDTH
-	ld a, $3
-.row
-	push bc
-	push hl
-.col
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	add hl, de
-	pop bc
-	dec b
-	jr nz, .row
-	ret
-
 MenuHeader_11afe8:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 9, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
@@ -5160,21 +5112,6 @@ MenuHeader_11b013:
 String_11b01b:
 	db   "はい"
 	next "いいえ@"
-
-Function11b022:
-	ld a, [wcd2e]
-	and a
-	jr z, .asm_11b02e
-	ld hl, wStringBuffer3
-	call Function11b03d
-.asm_11b02e
-	ld a, [wcd30]
-	and a
-	ret z
-	cp $3
-	ret z
-	ld hl, wStringBuffer4
-	; fallthrough
 
 Function11b03d:
 	push hl
@@ -5226,194 +5163,6 @@ Function11b03d:
 .MaleString: db "オスの　"
 .FemaleString: db "メスの　"
 
-Function11b099:
-	ld c, $6
-	hlcoord 11, 1
-	ld a, [wc7d3]
-	add a
-	ld b, a
-	xor a
-	call FillBoxWithByte
-	ld a, [wc7d0]
-	ld e, a
-	ld d, 0
-	ld hl, wPokedexOrder
-	add hl, de
-	ld e, l
-	ld d, h
-	hlcoord 11, 2
-	ld a, [wc7d3]
-.loop
-	push af
-	ld a, [de]
-	ld [wTempSpecies], a
-	push de
-	push hl
-	call .PlaceMonNameOrPlaceholderString
-	pop hl
-	ld de, 2 * SCREEN_WIDTH
-	add hl, de
-	pop de
-	inc de
-	pop af
-	dec a
-	jr nz, .loop
-	ret
-
-.PlaceMonNameOrPlaceholderString:
-	and a
-	ret z
-
-	call .CheckSeenFlag
-	ret c
-
-	call .SetCaughtFlag
-	push hl
-	call GetPokemonName
-	pop hl
-	jp PlaceString
-
-.SetCaughtFlag:
-	call CheckCaughtMemMon
-	jr nz, .okay
-	inc hl
-	ret
-
-.okay
-	ld a, $1
-	ld [hli], a
-	ret
-
-.CheckSeenFlag:
-	call CheckSeenMemMon
-	ret nz
-
-	inc hl
-	ld de, .EmptySlot
-	call PlaceString
-	scf
-	ret
-
-.EmptySlot:
-	db "ーーーーー@"
-
-Function11b175:
-	ld a, [wc7d3]
-	ld d, a
-	ld a, [wc7d2]
-	ld e, a
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_UP
-	jr nz, .asm_11b19a
-	ld a, [hl]
-	and D_DOWN
-	jr nz, .asm_11b1ae
-	ld a, d
-	cp e
-	jr nc, .asm_11b1ed
-	ld a, [hl]
-	and D_LEFT
-	jr nz, .asm_11b1c6
-	ld a, [hl]
-	and D_RIGHT
-	jr nz, .asm_11b1d8
-	jr .asm_11b1ed
-
-.asm_11b19a
-	ld hl, wc7d1
-	ld a, [hl]
-	and a
-	jr z, .asm_11b1a4
-	dec [hl]
-	jr .asm_11b1ef
-
-.asm_11b1a4
-	ld hl, wc7d0
-	ld a, [hl]
-	and a
-	jr z, .asm_11b1ed
-	dec [hl]
-	jr .asm_11b1ef
-
-.asm_11b1ae
-	ld hl, wc7d1
-	ld a, [hl]
-	inc a
-	cp e
-	jr nc, .asm_11b1ed
-	cp d
-	jr nc, .asm_11b1bc
-	inc [hl]
-	jr .asm_11b1ef
-
-.asm_11b1bc
-	ld hl, wc7d0
-	add [hl]
-	cp e
-	jr nc, .asm_11b1ed
-	inc [hl]
-	jr .asm_11b1ef
-
-.asm_11b1c6
-	ld hl, wc7d0
-	ld a, [hl]
-	and a
-	jr z, .asm_11b1ed
-	cp d
-	jr nc, .asm_11b1d4
-	xor a
-	ld [hl], a
-	jr .asm_11b1ef
-
-.asm_11b1d4
-	sub d
-	ld [hl], a
-	jr .asm_11b1ef
-
-.asm_11b1d8
-	ld hl, wc7d0
-	ld a, d
-	add a
-	add [hl]
-	jr c, .asm_11b1e3
-	cp e
-	jr c, .asm_11b1e8
-
-.asm_11b1e3
-	ld a, e
-	sub d
-	ld [hl], a
-	jr .asm_11b1ef
-
-.asm_11b1e8
-	ld a, [hl]
-	add d
-	ld [hl], a
-	jr .asm_11b1ef
-
-.asm_11b1ed
-	and a
-	ret
-
-.asm_11b1ef
-	call Function11b295
-	call Function11b279
-	scf
-	ret
-
-Function11b20b:
-	ld a, [wc7d1]
-	ld hl, wc7d0
-	add [hl]
-	ld e, a
-	ld d, 0
-	ld hl, $c6d0
-	add hl, de
-	ld a, [hl]
-	ld [wTempSpecies], a
-	ret
-
 CheckCaughtMemMon:
 	push de
 	push hl
@@ -5434,24 +5183,6 @@ CheckSeenMemMon:
 	pop de
 	ret
 
-Function11b242:
-	hlcoord 3, 4
-	ld de, wStringBuffer3
-	call PlaceString
-	xor a
-	ld [wMonType], a
-	farcall GetGender
-	hlcoord 1, 4
-	ld a, [wCurPartySpecies]
-	ld bc, wcd2f
-	ld [bc], a
-	dec bc
-	jr c, asm_11b26a
-	jr z, asm_11b26f
-	ld a, $1
-	ld [bc], a
-	; fallthrough
-
 Function11b267:
 	ld [hl], $ef
 	ret
@@ -5469,21 +5200,6 @@ asm_11b26f:
 
 Function11b272:
 	ld [hl], $f5
-	ret
-
-Function11b279:
-	ld a, [wTempSpecies]
-	ld [wCurSpecies], a
-	call CheckSeenMemMon
-	jr z, .asm_11b28f
-	call GetBaseData
-	ld a, [wBaseGender]
-	ld [wcf65], a
-	ret
-
-.asm_11b28f
-	ld a, $ff
-	ld [wcf65], a
 	ret
 
 Function11b295:
@@ -5547,33 +5263,6 @@ String_11b308:
 
 String_11b30e:
 	db "みはっけん@"
-
-Function11b397:
-	ld de, wVirtualOAMSprite00
-.loop
-	ld a, [hl]
-	cp $ff
-	ret z
-	ld a, [wc7d1]
-	and $7
-	swap a
-	add [hl]
-	inc hl
-	ld [de], a ; y
-	inc de
-
-	ld a, [hli]
-	ld [de], a ; x
-	inc de
-
-	ld a, [bc]
-	inc bc
-	ld [de], a ; tile id
-	inc de
-	ld a, $5
-	ld [de], a ; attributes
-	inc de
-	jr .loop
 
 Mobile46_InitJumptable:
 	xor a
