@@ -42,11 +42,20 @@
 
 	charmap "<LV>",      $6e
 
+; <DO>, "◀", and "『" are no longer loaded to make space for the type and category tiles
+
 	charmap "<DO>",      $70 ; floatmon arrow
 	charmap "◀",         $71
 	charmap "『",         $72 ; Japanese opening quote, unused
 	charmap "<ID>",      $73
 	charmap "№",         $74
+
+; Actual characters (from gfx/stats/stats_tiles.png)
+
+	charmap "<MALE>",    $32 ; colored male gender symbol
+	charmap "<FEMALE>",  $33 ; colored female gender symbol
+	charmap "<FLT_BAT>", $34 ; yet another floatmon arrow, this one used in battle
+	charmap "<CURED>",   $35 ; Pokerus immunity face
 
 ; Actual characters (from other graphics files)
 
