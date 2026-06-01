@@ -581,17 +581,6 @@ IncrementMobileInactivityTimerByCFrames:
 	inc [hl]
 	ret
 
-Function100665:
-	call UpdateTime
-	ld hl, wcd36
-	ldh a, [hHours]
-	ld [hli], a
-	ldh a, [hMinutes]
-	ld [hli], a
-	ldh a, [hSeconds]
-	ld [hl], a
-	ret
-
 Function100675:
 	ld hl, wcd2a
 	bit 2, [hl]
@@ -2262,123 +2251,6 @@ Function1013aa:
 	call UpdateSprites
 	jp FinishExitMenu
 
-Function1013c0:
-	farcall BlankScreen
-	farcall Function106464
-	jp FinishExitMenu
-
-Function1013d6:
-	farcall HDMATransferAttrmapAndTilemapToWRAMBank3
-	ret
-
-Function1013dd:
-	jp CGBOnly_CopyTilemapAtOnce
-
-Function1013f5:
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld c, a
-.asm_1013f9
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .asm_1013f9
-	ret
-
-Function101406:
-	ld c, a
-	ld b, 0
-.asm_101409
-	ld a, [de]
-	inc de
-	cp [hl]
-	jr nz, asm_101416
-	inc hl
-	dec bc
-	ld a, b
-	or c
-	jr nz, .asm_101409
-	and a
-	ret
-
-asm_101416:
-	scf
-	ret
-
-Function101418:
-	call GetJoypad
-	ldh a, [hJoyDown]
-	and SELECT + A_BUTTON
-	cp SELECT + A_BUTTON
-	jr z, .asm_101425
-	xor a
-	ret
-
-.asm_101425
-	ld a, $f7
-	ld [wcd2b], a
-	scf
-	ret
-
-Function10142c:
-	ld a, $01
-	ld [wc305], a
-	farcall Function115e18
-	ret
-
-Function10145b:
-	ld a, $3c
-	ld [wcd42], a
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	; fallthrough
-
-Function101467:
-	ld hl, wcd42
-	dec [hl]
-	ret nz
-	ld a, [wcd26]
-	set 7, a
-	ld [wcd26], a
-	ret
-
-Function10149a:
-	ld a, $28
-	ld [wcd42], a
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	; fallthrough
-
-Function1014a6:
-	ld hl, wcd42
-	dec [hl]
-	ret nz
-	ld a, $50
-	ld [wcd42], a
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	; fallthrough
-
-Function1014b7:
-	call GetJoypad
-	ldh a, [hJoyPressed]
-	and $03
-	jr nz, .asm_1014c5
-	ld hl, wcd42
-	dec [hl]
-	ret nz
-
-.asm_1014c5
-	ld a, [wcd26]
-	set 7, a
-	ld [wcd26], a
-	ret
-
 MobileCopyTransferData:
 	ld de, wMobileTransferData
 	ld bc, $1e0
@@ -2389,90 +2261,10 @@ MobileCopyTransferData2:
 	ld bc, $1e0
 	jp FarCopyWRAM
 
-Function101649:
-	ld a, BANK(w5_d800)
-	ld hl, w5_d800
-	call MobileCopyTransferData
-	ld a, BANK(w5_da00)
-	ld de, w5_da00
-	jp MobileCopyTransferData2
-
 Function10165a:
 	ld a, BANK(w5_da00)
 	ld hl, w5_da00
 	jp MobileCopyTransferData
-
-Function101663:
-	ld a, BANK(w5_dc00)
-	ld hl, w5_d800
-	call MobileCopyTransferData
-	ld a, BANK(w5_dc00)
-	ld de, w5_dc00
-	jp MobileCopyTransferData2
-
-Function1016cf:
-	ld hl, wcd3a
-	inc [hl]
-	call Function10176f
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-Function1016de:
-	call Function10177b
-	jr nc, .asm_1016eb
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-.asm_1016eb
-	ld a, $ff
-	ld [wcd39], a
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-Function1016f8:
-	ld a, 0
-	ld [wcd27], a
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-Function101705:
-	farcall Function100382
-	ld a, [wcd27]
-	bit 7, a
-	ret z
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-Function101719:
-	call Function1017c7
-	ld a, [wcd26]
-	inc a
-	ld [wcd26], a
-	ret
-
-Function101724:
-	ld a, [wcd39]
-	cp $ff
-	jr z, .asm_101731
-	ld a, 0
-	ld [wcd26], a
-	ret
-
-.asm_101731
-	ld a, [wcd26]
-	set 7, a
-	ld [wcd26], a
-	ret
 
 Unknown_10173a:
 	db $50
@@ -2489,25 +2281,6 @@ Function10173b:
 	pop af
 	call AddNTimes
 	pop bc
-	ret
-
-Function10174c:
-	ld [wcd3d], a
-	ld a, l
-	ld [wcd3e], a
-	ld a, h
-	ld [wcd3f], a
-	ld a, e
-	ld [wcd3b], a
-	ld a, d
-	ld [wBattleTowerRoomMenu2JumptableIndex], a
-	ld a, c
-	ld [wcd40], a
-	ld a, b
-	ld [wcd41], a
-	xor a
-	ld [wcd39], a
-	ld [wcd3a], a
 	ret
 
 Function10176f:
@@ -2581,33 +2354,6 @@ Function1017c7:
 	call FarCopyWRAM
 	and a
 	ret
-
-Function1018ec:
-	ld a, $0a
-	ld hl, wccb4
-	ld [hli], a
-	ld c, a
-.asm_1018f3
-	call Random
-	ld [hli], a
-	dec c
-	jr nz, .asm_1018f3
-	ret
-
-Function1018fb:
-	ld a, [wcd2f]
-	and a
-	jr z, .asm_101906
-	ld hl, wcc61
-	jr .asm_101909
-
-.asm_101906
-	ld hl, wccb5
-
-.asm_101909
-	ld de, wLinkBattleRNs
-	ld bc, 10
-	jp CopyBytes
 
 _SelectMonsForMobileBattle:
 	farcall BlankScreen
@@ -2719,136 +2465,6 @@ CopyOtherPlayersBattleMonSelection:
 	farcall LoadSelectedPartiesForColosseum
 	ret
 
-Function101e98:
-	call ClearSprites
-	farcall Function8adb3
-	ret c
-	ld hl, wGameTimerPaused
-	set GAME_TIMER_MOBILE_F, [hl]
-	ld hl, wdc41
-	set 4, [hl]
-	ret
-
-Function101ead:
-	ld hl, wGameTimerPaused
-	bit GAME_TIMER_MOBILE_F, [hl]
-	jr nz, .asm_101ec8
-	ld hl, wdc41
-	bit 2, [hl]
-	jr z, .asm_101eca
-	ld a, [wcd2f]
-	and a
-	jr nz, .asm_101ec8
-	ld hl, wdc41
-	bit 1, [hl]
-	jr z, .asm_101eca
-
-.asm_101ec8
-	xor a
-	ret
-
-.asm_101eca
-	scf
-	ret
-
-Function101ecc:
-	call Function101ee2
-	jp FadeToMenu
-
-Function101ed3:
-	call Function1013aa
-	farcall Function115d99
-	ld hl, wcd29
-	set 7, [hl]
-	ret
-
-Function101ee2:
-	ld e, 0
-	; fallthrough
-
-Function101ee4:
-	ld d, 0
-	ld hl, Unknown_101ef5
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	farcall Function100504
-	ret
-
-Unknown_101ef5:
-	dw String_101f13
-	dw String_101f14
-	dw String_101f32
-	dw String_101f4f
-	dw String_101f69
-	dw String_101f81
-	dw String_101f93
-	dw String_101faa
-	dw String_101fc5
-	dw String_101fd2
-	dw String_101fe1
-	dw String_101fef
-	dw String_102000
-	dw String_10200c
-	dw String_102014
-
-String_101f13:
-	db "@"
-
-String_101f14:
-	db   "モバイルアダプタを　つかって"
-	next "おともだちと　つうしんします@"
-
-String_101f32:
-	db   "でんわを　かけるひとには"
-	next "つうわりょうきんが　かかります@"
-
-String_101f4f:
-	db   "モバイルアダプタの　じゅんびは"
-	next "できて　いますか？@"
-
-String_101f69:
-	db   "あなたが　おともだちに"
-	next "でんわを　かけますか？@"
-
-String_101f81:
-	db   "めいしフォルダーを"
-	next "つかいますか？@"
-
-String_101f93:
-	db   "でんわばんごうを　にゅうりょく"
-	next "してください@"
-
-String_101faa:
-	db   "それでは　おともだちからの"
-	next "でんわを　おまちします⋯@"
-
-String_101fc5:
-	next "に　でんわを　かけます@"
-
-String_101fd2:
-	next "に　でんわを　かけています@"
-
-String_101fe1:
-	db   "でんわが　つながりました!@"
-
-String_101fef:
-	db   "つうわを"
-	next "しゅうりょう　します⋯@"
-
-String_102000:
-	db   "つうしん　しゅうりょう@"
-
-String_10200c:
-	db   "つうわ　じかん@"
-
-String_102014:
-	db   "それでは　つうしんの"
-	next "せっていを　してください@"
-
-Function102048:
 Function10204c:
 	hlcoord 3, 2
 	ld c, $10
@@ -2912,41 +2528,6 @@ Function10209c:
 	ld hl, wdc42
 	ld bc, 8
 	jp ByteFill
-
-Function1020a8:
-	call Function10209c
-	ld c, $01
-	ld de, wdc42
-	farcall Function17a68f
-	ret c
-	call Function10208e
-	call Function102068
-	xor a
-	ret
-
-Function1020bf:
-	call ClearSprites
-	farcall Function8aba9
-	ld a, c
-	and a
-	jr z, .asm_1020e8
-	dec a
-	ld hl, $a04c
-	ld bc, $25
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ld a, $04
-	call OpenSRAM
-	call Function10208e
-	call Function102068
-	call CloseSRAM
-	xor a
-	ret
-
-.asm_1020e8
-	scf
-	ret
 
 NewCardArrivedText:
 	text_far _NewCardArrivedText
