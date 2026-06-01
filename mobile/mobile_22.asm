@@ -3961,21 +3961,6 @@ String_8ac3b:
 	db   "こ<NO>ともだち<NI>でんわを"
 	next "かけますか？@"
 
-Function8ac4e:
-	xor a
-	ld [wMenuSelection], a
-	push de
-	call Function891de
-	call ClearBGPalettes
-	call Function893cc
-	pop bc
-	call Function89844
-	call Function8939a
-	call Function89856
-	hlcoord 1, 13
-	call Function899fe
-	jp Function891ab
-
 Function8ac70:
 	push de
 	ld a, $3
