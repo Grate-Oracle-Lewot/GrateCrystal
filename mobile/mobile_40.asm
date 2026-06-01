@@ -1,31 +1,3 @@
-Function100022:
-	push de
-	push bc
-	call SetRAMStateForMobile
-	pop bc
-	pop de
-	ld a, d
-	ld [wcd21], a
-	ld a, e
-	ld [wcd22], a
-	ld a, c
-	ld [wcd23], a
-	ld a, b
-	ld [wcd24], a
-	farcall Function10127e
-	farcall Function106464 ; load broken gfx
-	farcall Function11615a ; init RAM
-	ld hl, wVramState
-	set 1, [hl]
-	ret
-
-Function100057:
-	call DisableMobile
-	call ReturnToMapFromSubmenu
-	ld hl, wVramState
-	res 1, [hl]
-	ret
-
 SetRAMStateForMobile:
 	xor a
 	ld hl, wBGMapBuffer
@@ -75,32 +47,6 @@ DisableMobile:
 	ld a, [wBGMapBuffer]
 	ldh [rIE], a
 	reti
-
-Function1000ba:
-.loop
-	; call [wcd22]:([wcd23][wcd24] + [wMobileCommsJumptableIndex])
-	ld hl, wcd23
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wMobileCommsJumptableIndex]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [wcd22]
-	call GetFarWord
-	ld a, [wcd22]
-	rst FarCall
-
-	call Function1000e8
-	call Function1000fa
-	call Function100144
-	call Function100163
-	ld a, [wcd2b]
-	and a
-	jr z, .loop
-	jp DelayFrame
 
 Function1000e8:
 	ld hl, wcd29
@@ -175,92 +121,6 @@ Function100163:
 	res 6, [hl]
 	jp DelayFrame
 
-Function10016f:
-	ld a, [wcd2b]
-	cp $01
-	ret z
-	cp $02
-	ret z
-	cp $ff
-	jp z, .asm_1001f5
-	cp $fe
-	jr z, .asm_1001c4
-	cp $f5
-	jr z, .asm_1001e7
-	cp $f6
-	jr z, .asm_1001b6
-	cp $fa
-	jp z, .asm_1001bd
-	cp $f7
-	jp z, .asm_1001ee
-	cp $f4
-	jr z, .asm_1001d2
-	cp $f3
-	jr z, .asm_1001cb
-	cp $f1
-	jr z, .asm_1001c4
-	cp $f2
-	jr z, .asm_1001c4
-	cp $fc
-	ret z
-	cp $fb
-	jr z, .asm_1001af
-	ret
-
-.asm_1001af
-	ld a, $d7
-	ld de, 0
-	jr .asm_1001d7
-
-.asm_1001b6
-	ld a, $d5
-	ld de, 0
-	jr .asm_1001d7
-
-.asm_1001bd
-	ld a, $d6
-	ld de, 0
-	jr .asm_1001d7
-
-.asm_1001c4
-	ld a, $d2
-	ld de, 2
-	jr .asm_1001d7
-
-.asm_1001cb
-	ld a, $d1
-	ld de, 1
-	jr .asm_1001d7
-
-.asm_1001d2
-	ld a, $d0
-	ld de, 0
-
-.asm_1001d7
-	ld [wMobileErrorCodeBuffer], a
-	ld a, d
-	ld [wMobileErrorCodeBuffer + 2], a
-	ld a, e
-	ld [wMobileErrorCodeBuffer + 1], a
-	jp Function10020b
-
-.asm_1001e7
-	ld de, String10025e
-	jp Function100232
-
-.asm_1001ee
-	ld de, String10024d
-	jp Function100232
-
-.asm_1001f5
-	ld a, [wcd2c]
-	ld [wMobileErrorCodeBuffer], a
-	ld a, [wcd2d]
-	ld [wMobileErrorCodeBuffer + 2], a
-	ld a, [wcd2d]
-	ld [wMobileErrorCodeBuffer + 1], a
-	jp Function10020b
-
 Function10020b:
 	xor a
 	ld [wc303], a
@@ -298,56 +158,6 @@ String10025e:
 	db   "おともだちと　えらんだ　へやが"
 	next "ちがうようです@"
 
-Function100276:
-	ld a, [wcd2b]
-	cp $01
-	jr z, .asm_10029f
-	cp $02
-	jr z, .asm_100296
-	cp $f5
-	jr z, .asm_1002a5
-	cp $f6
-	jr z, .asm_1002a5
-	cp $f7
-	jr z, .asm_100293
-	cp $f8
-	jr z, .asm_1002b1
-	jr .asm_1002c0
-
-.asm_100293
-	ld c, $02
-	ret
-
-.asm_100296
-	farcall Script_reloadmappart
-	ld c, $04
-	ret
-
-.asm_10029f
-	call Function1002dc
-	ld c, 0
-	ret
-
-.asm_1002a5
-	farcall Script_reloadmappart
-	call Function1002ed
-	ld c, $03
-	ret
-
-.asm_1002b1
-	call Function1002c9
-	call Function1002dc
-	ld de, String10024d
-	call Function100232
-	ld c, $02
-	ret
-
-.asm_1002c0
-	call Function1002c9
-	call Function1002dc
-	ld c, $01
-	ret
-
 Function1002c9:
 	ld hl, wcd2a
 	bit 0, [hl]
@@ -370,16 +180,6 @@ Function1002ed:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	jp DelayFrame
-
-Function100301:
-	ld hl, wcd2a
-	bit 1, [hl]
-	ret z
-	farcall Function106464
-	farcall Function10202c
-	farcall Function115dd3
-	call Function100320
-	jp JoyWaitAorB
 
 Function100320:
 	farcall Mobile_ReloadMapPart
@@ -2565,13 +2365,6 @@ LoadSelectedPartiesForColosseum:
 	ld a, [wStringBuffer2 + 3]
 	ld b, a
 	ret
-
-Jumptable_101247:
-	dw Function101251
-	dw Function10127d
-	dw Function10127c
-	dw Function10126c
-	dw Function101265
 
 Function101251:
 	call UpdateSprites
