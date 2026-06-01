@@ -57,12 +57,12 @@
 	charmap "<FLT_BAT>", $34 ; yet another floatmon arrow, this one used in battle
 	charmap "<CURED>",   $35 ; Pokerus immunity face
 
+	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
+	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
+
 ; Actual characters (from other graphics files)
 
 	charmap " ",         $7f ; gfx/frames/space.png
-
-	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
-	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
 
 ; Actual characters (from gfx/font/font.png)
 
