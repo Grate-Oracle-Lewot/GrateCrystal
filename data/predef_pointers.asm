@@ -48,14 +48,12 @@ PredefPointers::
 	add_predef DrawEnemyHP
 	add_predef PrintTempMonStats
 	add_predef GetTypeName
-	add_predef PrintType
-	add_predef PrintMonTypes
 	add_predef GetUnownLetter
+	add_predef GetPikachuForm
 	add_predef LoadPoisonBGPals
 	add_predef InitSGBBorder
 	add_predef LoadSGBLayout
 	add_predef Pokedex_GetArea
-	add_predef GetPikachuForm
 	add_predef DoBattleTransition
 	add_predef PlayBattleAnim
 	add_predef PartyMonItemName
