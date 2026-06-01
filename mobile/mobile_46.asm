@@ -1,8 +1,3 @@
-Function118000:
-	ld a, $1
-	ld [wcd38], a
-	jr asm_11800b
-
 Function118007:
 	xor a
 	ld [wcd38], a
@@ -446,7 +441,6 @@ Function118440:
 	ld [s5_bfff], a
 	call CloseSRAM
 	pop af
-Function11b6b3:
 	ret
 
 BattleTowerRoomMenu_Cleanup:
@@ -5197,54 +5191,6 @@ Text_CheckBattleRoomListByMaxLevel:
 	line "list by max level?"
 	done
 
-Function11ac51:
-	xor a
-	ldh [hBGMapMode], a
-	ld hl, wOptions
-	ld a, [hl]
-	push af
-	set 4, [hl]
-	ld a, [wVramState]
-	push af
-	xor a
-	ld [wVramState], a
-	ldh a, [hInMenu]
-	push af
-	ld a, $1
-	ldh [hInMenu], a
-	xor a
-	ldh [hMapAnims], a
-	ld [wcd49], a
-	ld [wcd4a], a
-	ld [wcd4c], a
-	ld [wcd4d], a
-	ld [wcd4e], a
-	call Function11ad1b
-	call DelayFrame
-.loop
-	call JoyTextDelay
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr nz, .asm_11aca8
-	call Function11b314
-	call Function11acb7
-	call Function11ad6e
-	ld a, 30 * SPRITEOAMSTRUCT_LENGTH
-	ld [wCurSpriteOAMAddr], a
-	farcall DoNextFrameForAllSprites
-	farcall ReloadMapPart
-	jr .loop
-
-.asm_11aca8
-	call ClearSprites
-	pop af
-	ldh [hInMenu], a
-	pop af
-	ld [wVramState], a
-	pop af
-	ld [wOptions], a
-	ret
-
 Function11acb7:
 	ld hl, TilemapPack_11ba44
 	ld a, [wcd49]
@@ -6660,45 +6606,6 @@ Function11b5c0:
 Function11b5e0:
 	xor a
 	ld [wScriptVar], a
-	jp Function11ad8a
-
-Function11b66d:
-	call Function1180b8
-	ld a, [wScriptVar]
-	and a
-	jr nz, .asm_11b6b0
-	ldh a, [rSVBK]
-	push af
-	ld a, $3
-	ldh [rSVBK], a
-	ld a, [w3_d090]
-	ld b, a
-	pop af
-	ldh [rSVBK], a
-	ld a, b
-	and a
-	jr z, .asm_11b691
-	cp $1
-	jr nz, .asm_11b6b0
-	call Function11b6b4
-	jr .asm_11b6b0
-
-.asm_11b691
-	farcall Function17081d
-	ld a, [wScriptVar]
-	and a
-	jr z, .asm_11b6b0
-	xor a
-	ld [wScriptVar], a
-	ldh a, [rSVBK]
-	push af
-	ld a, $3
-	ldh [rSVBK], a
-	ld a, $2
-	ld [w3_d090], a
-	pop af
-	ldh [rSVBK], a
-.asm_11b6b0
 	jp Function11ad8a
 
 Function11b6b4:
