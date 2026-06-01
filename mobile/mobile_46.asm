@@ -5497,83 +5497,167 @@ AddMobileMonToParty:
 	call CopyBytes
 	jp CloseSRAM
 
-TilemapPack_11ba44:
-	db $47, $30, $0a, $0a, $0a, $0a, $0a, $56 ; 00
-	db $46, $2f, $0a, $0a, $0a, $0a, $0a, $55 ; 01
-	db $45, $3d, $0a, $0a, $0a, $0a, $0a, $54 ; 02
-	db $44, $30, $0a, $0a, $0a, $0a, $0a, $53 ; 03
-	db $43, $2f, $0a, $0a, $0a, $0a, $0a, $52 ; 04
-	db $4a, $3d, $0a, $0a, $0a, $0a, $0a, $51 ; 05
-	db $4a, $30, $0a, $0a, $0a, $0a, $0a, $50 ; 06
-	db $4a, $2f, $0a, $0a, $0a, $0a, $0a, $4f ; 07
-	db $4a, $3d, $0a, $0a, $0a, $0a, $0a, $4e ; 08
-	db $4a, $30, $0a, $0a, $0a, $0a, $4d, $42 ; 09
-	db $4a, $2f, $0a, $0a, $0a, $0a, $6b, $58 ; 0a
-	db $4a, $3d, $0a, $0a, $0a, $0a, $6a, $58 ; 0b
-	db $4a, $30, $0a, $0a, $0a, $0a, $69, $58 ; 0c
-	db $4a, $2f, $0a, $0a, $0a, $0a, $68, $58 ; 0d
-	db $4a, $3d, $0a, $0a, $0a, $66, $67, $58 ; 0e
-	db $4a, $30, $0a, $0a, $0a, $65, $0a, $58 ; 0f
-	db $4a, $2f, $0a, $0a, $0a, $64, $0a, $58 ; 10
-	db $4a, $3d, $0a, $0a, $0a, $63, $0a, $58 ; 11
-	db $4a, $30, $0a, $0a, $61, $62, $0a, $58 ; 12
-	db $4a, $2f, $0a, $0a, $5f, $60, $0a, $58 ; 13
-	db $4a, $3d, $0a, $61, $62, $0a, $0a, $58 ; 14
-	db $4a, $30, $0a, $63, $0a, $0a, $0a, $58 ; 15
-	db $4a, $2f, $69, $0a, $0a, $0a, $0a, $58 ; 16
-	db $4a, $3d, $81, $0a, $0a, $0a, $0a, $58 ; 17
-	db $4a, $30, $80, $0a, $0a, $0a, $0a, $58 ; 18
-	db $4a, $2f, $7f, $0a, $0a, $0a, $0a, $58 ; 19
-	db $4a, $3d, $0a, $0a, $0a, $0a, $0a, $58 ; 1a
-	db $4a, $30, $0a, $0a, $0a, $0a, $0a, $58 ; 1b
-	db $4a, $2f, $68, $87, $88, $89, $0a, $58 ; 1c
-	db $4a, $3d, $6e, $6f, $70, $75, $76, $58 ; 1d
-	db $4a, $30, $75, $76, $5c, $5d, $5e, $58 ; 1e
-	db $4a, $2f, $71, $72, $73, $74, $6d, $58 ; 1f
-	db $4a, $3d, $75, $76, $77, $8a, $8b, $58 ; 20
-	db $4a, $30, $66, $67, $65, $0a, $6a, $58 ; 21
-	db $4a, $2f, $83, $84, $0a, $83, $84, $58 ; 22
-	db $4a, $3d, $0a, $85, $82, $84, $0a, $58 ; 23
-	db $4a, $30, $41, $80, $40, $0a, $0a, $58 ; 24
-	db $4a, $2f, $83, $0a, $0a, $0a, $0a, $58 ; 25
-	db $4a, $3d, $40, $0a, $0a, $0a, $0a, $58 ; 26
-	db -1
+Function11b93b:
+	ld a, $5
+	call OpenSRAM
+	xor a
+	ld [$a800], a
+	ld hl, $a823
+	ld de, $c608
+	ld bc, $008f
+	call CopyBytes
+	call CloseSRAM
 
-TilemapPack_11bb7d:
-	db $0a, $0a, $0a, $0a, $0a, $0a, $16, $00 ; 00
-	db $78, $0a, $0a, $0a, $0a, $0a, $8c, $00 ; 01
-	db $79, $0a, $0a, $0a, $0a, $0a, $8d, $00 ; 02
-	db $7a, $0a, $0a, $0a, $0a, $0a, $8e, $00 ; 03
-	db $7b, $0a, $0a, $0a, $0a, $0a, $8c, $00 ; 04
-	db $7c, $0a, $0a, $0a, $0a, $0a, $8d, $00 ; 05
-	db $7d, $0a, $0a, $0a, $0a, $0a, $8e, $00 ; 06
-	db $2e, $7e, $0a, $0a, $0a, $0a, $8c, $00 ; 07
-	db $2e, $80, $0a, $0a, $0a, $0a, $8d, $00 ; 08
-	db $2e, $81, $0a, $0a, $0a, $0a, $8e, $00 ; 09
-	db $2e, $82, $0a, $0a, $0a, $0a, $8c, $00 ; 0a
-	db $2e, $69, $0a, $0a, $0a, $0a, $8d, $00 ; 0b
-	db $2e, $6a, $0a, $0a, $0a, $0a, $8e, $00 ; 0c
-	db $2e, $6b, $0a, $0a, $0a, $0a, $8c, $00 ; 0d
-	db $2e, $0a, $68, $0a, $0a, $0a, $8d, $00 ; 0e
-	db $2e, $0a, $69, $0a, $0a, $0a, $8e, $00 ; 0f
-	db $2e, $0a, $0a, $6a, $0a, $0a, $8c, $00 ; 10
-	db $2e, $0a, $0a, $6b, $0a, $0a, $8d, $00 ; 11
-	db $2e, $0a, $0a, $0a, $80, $0a, $8e, $00 ; 12
-	db $2e, $0a, $0a, $0a, $82, $0a, $8c, $00 ; 13
-	db $2e, $0a, $0a, $0a, $6c, $0a, $8d, $00 ; 14
-	db $2e, $0a, $0a, $0a, $0a, $83, $8e, $00 ; 15
-	db $2e, $0a, $6b, $0a, $0a, $0a, $8c, $00 ; 16
-	db $2e, $0a, $0a, $69, $0a, $0a, $8d, $00 ; 17
-	db $2e, $0a, $0a, $6a, $0a, $0a, $8e, $00 ; 18
-	db $2e, $0a, $0a, $0a, $68, $0a, $8c, $00 ; 19
-	db $2e, $0a, $0a, $0a, $63, $0a, $8d, $00 ; 1a
-	db $2e, $0a, $0a, $61, $62, $0a, $8e, $00 ; 1b
-	db $2e, $0a, $0a, $0a, $5f, $60, $8c, $00 ; 1c
-	db $2e, $0a, $0a, $0a, $63, $0a, $8d, $00 ; 1d
-	db $2e, $0a, $0a, $0a, $0a, $69, $8c, $00 ; 1e
-	db $2e, $0a, $0a, $0a, $0a, $6b, $8d, $00 ; 1f
-	db $2e, $0a, $0a, $0a, $0a, $83, $8e, $00 ; 20
-	db $2e, $0a, $0a, $0a, $0a, $86, $8c, $00 ; 21
-	db $2e, $0a, $85, $0a, $0a, $0a, $8d, $00 ; 22
-	db $2e, $0a, $0a, $84, $0a, $0a, $8e, $00 ; 23
-	db -1
+	ld a, LOW($c608)
+	ld [wMobileMonSpeciesPointer], a
+	ld a, HIGH($c608)
+	ld [wMobileMonSpeciesPointer + 1], a
+
+	ld a, LOW($c611)
+	ld [wMobileMonStructPointer], a
+	ld a, HIGH($c611)
+	ld [wMobileMonStructPointer + 1], a
+
+	ld a, LOW($c641)
+	ld [wMobileMonOTPointer], a
+	ld a, HIGH($c641)
+	ld [wMobileMonOTPointer + 1], a
+
+	ld a, LOW($c646)
+	ld [wMobileMonNicknamePointer], a
+	ld a, HIGH($c646)
+	ld [wMobileMonNicknamePointer + 1], a
+
+	ld a, LOW($c64b)
+	ld [wMobileMonMailPointer], a
+	ld a, HIGH($c64b)
+	ld [wMobileMonMailPointer + 1], a
+	call AddMobileMonToParty
+	farcall SaveAfterLinkTrade
+	ret
+
+Function11b6b4:
+	ld a, $5
+	call OpenSRAM
+	ld a, [wcd30]
+	ld [$c708], a
+	ld a, [wcd31]
+	ld [$c709], a
+
+	ld a, LOW($c708) ; Species
+	ld [wMobileMonSpeciesPointer], a
+	ld a, HIGH($c708)
+	ld [wMobileMonSpeciesPointer + 1], a
+
+	ld a, LOW($c60d) ; Partymon Struct
+	ld [wMobileMonStructPointer], a
+	ld a, HIGH($c60d)
+	ld [wMobileMonStructPointer + 1], a
+
+	ld a, LOW($c63d) ; OT
+	ld [wMobileMonOTPointer], a
+	ld a, HIGH($c63d)
+	ld [wMobileMonOTPointer + 1], a
+
+	ld a, LOW($c642) ; Nickname
+	ld [wMobileMonNicknamePointer], a
+	ld a, HIGH($c642)
+	ld [wMobileMonNicknamePointer + 1], a
+
+	ld a, LOW($c647) ; Mail
+	ld [wMobileMonMailPointer], a
+	ld a, HIGH($c647)
+	ld [wMobileMonMailPointer + 1], a
+
+	ld a, $46
+	ld [$c628], a
+
+	ld de, $c63d
+	ld c, 5
+	farcall CheckStringForErrors
+	jr nc, .length_check_OT
+	farcall Mobile_CopyDefaultOTName
+.length_check_OT
+	ld de, $c63d
+	lb bc, 1, 5
+	farcall CheckStringContainsLessThanBNextCharacters
+	jr nc, .error_check_nick
+	farcall Mobile_CopyDefaultOTName
+.error_check_nick
+	ld de, $c642
+	ld c, 5
+	farcall CheckStringForErrors
+	jr nc, .length_check_nick
+	farcall Mobile_CopyDefaultNickname
+.length_check_nick
+	ld de, $c642
+	lb bc, 1, 5
+	farcall CheckStringContainsLessThanBNextCharacters
+	jr nc, .error_check_mail
+	farcall Mobile_CopyDefaultNickname
+.error_check_mail
+	ld de, $c647
+	ld c, MAIL_MSG_LENGTH + 1
+	farcall CheckStringForErrors
+	jr nc, .length_check_mail
+	farcall Mobile_CopyDefaultMail
+.length_check_mail
+	ld de, $c647
+	lb bc, 2, MAIL_MSG_LENGTH + 1
+	farcall CheckStringContainsLessThanBNextCharacters
+	jr c, .fix_mail
+	ld a, b
+	cp $2
+	jr nz, .mail_ok
+.fix_mail
+	farcall Mobile_CopyDefaultMail
+.mail_ok
+	ld de, $c668
+	ld c, $5
+	farcall CheckStringForErrors
+	jr nc, .length_check_author
+	farcall Mobile_CopyDefaultMailAuthor
+.length_check_author
+	ld de, $c668
+	lb bc, 1, 5
+	farcall CheckStringContainsLessThanBNextCharacters
+	jr nc, .author_okay
+	farcall Mobile_CopyDefaultMailAuthor
+.author_okay
+	ld a, [$c60e]
+	cp -1
+	jr nz, .item_okay
+	xor a
+	ld [$c60e], a
+.item_okay
+	ld a, [wcd31]
+	ld [$c60d], a
+	ld [wCurSpecies], a
+	call GetBaseData
+
+	ld hl, $c60d + MON_LEVEL
+	ld a, [hl]
+	cp MIN_LEVEL
+	ld a, MIN_LEVEL
+	jr c, .replace_level
+	ld a, [hl]
+	cp MAX_LEVEL
+	jr c, .done_level
+	ld a, MAX_LEVEL
+.replace_level
+	ld [hl], a
+.done_level
+	ld [wCurPartyLevel], a
+
+	ld hl, $c60d + MON_STAT_EXP - 1
+	ld de, $c60d + MON_MAXHP
+	ld b, TRUE
+	predef CalcMonStats
+	ld de, $c60d + MON_MAXHP
+	ld hl, $c60d + MON_HP
+	ld a, [de]
+	ld [hli], a
+	inc de
+	ld a, [de]
+	ld [hl], a
+	jp AddMobileMonToParty
