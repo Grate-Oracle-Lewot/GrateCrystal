@@ -1,27 +1,3 @@
-Function100000:
-; d: 1 or 2
-; e: bank
-; bc: addr
-	ldh a, [rSVBK]
-	push af
-	ld a, 1
-	ldh [rSVBK], a
-
-	call Function100022
-	call Function1000ba
-	call Function100675
-	call Function100057
-	call Function10016f
-	call Function100276
-
-	push bc
-	call Function100301
-	pop bc
-
-	pop af
-	ldh [rSVBK], a
-	ret
-
 Function100022:
 	push de
 	push bc
@@ -2590,14 +2566,6 @@ LoadSelectedPartiesForColosseum:
 	ld b, a
 	ret
 
-Function10123d:
-	xor a
-	ld [wScriptVar], a
-	ld a, c
-	ld hl, Jumptable_101247
-	rst JumpTable
-	ret
-
 Jumptable_101247:
 	dw Function101251
 	dw Function10127d
@@ -4542,39 +4510,12 @@ Function102112:
 	pop af
 	ret
 
-Function102180:
-	ld hl, wc608 + 1
-	ld de, wStringBuffer2
-	ld bc, 11
-	jp CopyBytes
-
 Function10218d:
 	ld hl, w5_dc00
 	ld de, wc608
 	ld bc, $26
 	ld a, $05
 	jp FarCopyWRAM
-
-Function10219f:
-	call FadeToMenu
-	call Function10218d
-	ld de, wc608 + 1
-	farcall Function8ac4e
-	call JoyWaitAorB
-	call PlayClickSFX
-	jp Function1013aa
-
-Function1021b8:
-	call FadeToMenu
-	call Function10218d
-	ld de, wPlayerMoveStruct
-	farcall Function8ac70
-	ld a, c
-	ld [wStringBuffer1], a
-	push af
-	call Function1013aa
-	pop af
-	ret
 
 NewCardArrivedText:
 	text_far _NewCardArrivedText
@@ -7202,38 +7143,6 @@ WantToRushThroughAMobileBattleText:
 PleaseTryAgainTomorrowText:
 	text_far _PleaseTryAgainTomorrowText
 	text_end
-
-Function10378c:
-	ld c, 0
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_MOBILE_4_F, [hl]
-	jr nz, .already_set
-	ld c, 1
-	ld hl, wSwarmFlags
-	set SWARMFLAGS_MOBILE_4_F, [hl]
-
-.already_set
-	push bc
-	farcall Link_SaveGame
-	pop bc
-	jr c, .failed_to_save
-	ld a, 1
-	ld [wScriptVar], a
-	ld a, c
-	and a
-	ret z
-	farcall MobileBattleResetTimer
-	ret
-
-.failed_to_save
-	xor a
-	ld [wScriptVar], a
-	ld a, c
-	and a
-	ret z
-	ld hl, wSwarmFlags
-	res SWARMFLAGS_MOBILE_4_F, [hl]
-	ret
 
 TryAgainUsingSameSettingsText:
 	text_far _TryAgainUsingSameSettingsText
