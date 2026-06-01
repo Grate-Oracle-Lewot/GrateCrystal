@@ -4881,7 +4881,7 @@ PrintPlayerHUD:
 	call IsInByteArray
 	ret nc
 	hlcoord 18, 8
-	ld [hl], "<FLOAT>"
+	ld [hl], "<FLT_BAT>"
 	ret
 
 UpdateEnemyHUD::
@@ -4961,7 +4961,7 @@ DrawEnemyHUD:
 	call IsInByteArray
 	jr nc, .skip_floaticon
 	hlcoord 10, 1
-	ld [hl], "<FLOAT>"
+	ld [hl], "<FLT_BAT>"
 .skip_floaticon
 	ld hl, wEnemyMonHP
 	ld a, [hli]
