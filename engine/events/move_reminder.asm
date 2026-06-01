@@ -493,12 +493,11 @@ ChooseMoveToLearn:
 	ld [hl], a
 	ret
 
-; This adds a text box border line to the description box that replaces a leftover piece of the notch that remains when the cancel option is highlighted.
+; This prints a section of the bottom-left part of the moves list border box that would otherwise be messed up when the Cancel option is highlighted.
 .cancel_border_fix
-	hlcoord 0, 9
-	ld [hl], "│"
-	inc hl
-	ret
+	hlcoord 0, 10
+	ld de, MoveReminderBottomString
+	jp PlaceString
 
 ; This begins the printing of all of the move's details, including the border around the description.
 .print_move_details
@@ -687,6 +686,8 @@ MoveChanceString:
 	db " FX@"
 MoveNullValueString:
 	db "---@"
+MoveReminderBottomString:
+	db "└────────@"
 
 Text_MoveReminderIntro:
 	text_far _MoveReminderIntro
