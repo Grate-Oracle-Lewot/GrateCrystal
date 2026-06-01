@@ -2237,19 +2237,9 @@ Function10138b:
 	sla c
 	ld a, [wcd21]
 	cp $01
-	jr z, .asm_1013a9
+	ret z
 	inc c
-
-.asm_1013a9
 	ret
-
-Function1013aa:
-	call ClearBGPalettes
-	call Call_ExitMenu
-	call ReloadTilesetAndPalettes
-	farcall Function106464
-	call UpdateSprites
-	jp FinishExitMenu
 
 MobileCopyTransferData:
 	ld de, wMobileTransferData
@@ -2283,50 +2273,6 @@ Function10173b:
 	pop bc
 	ret
 
-Function10176f:
-	ld hl, wccb4
-	ld bc, $54
-	ld a, $11
-	jp ByteFill
-
-Function10177b:
-	ld a, [Unknown_10173a]
-	ld c, a
-	ld b, 0
-	ld a, [wcd3a]
-	ld hl, 0
-	call AddNTimes
-	ld e, l
-	ld d, h
-	ld hl, wcd40
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, l
-	sub e
-	ld l, a
-	ld a, h
-	sbc d
-	ld h, a
-	jr c, .asm_1017a0
-	add hl, bc
-	call Function1017b0
-	scf
-	ret
-
-.asm_1017a0
-	ld a, $ff
-	ld [wcd39], a
-	add hl, bc
-	ld a, h
-	or l
-	ret z
-	ld c, l
-	ld b, h
-	call Function1017b0
-	xor a
-	ret
-
 Function1017b0:
 	ld a, c
 	ld [wccb4], a
@@ -2338,22 +2284,6 @@ Function1017b0:
 	pop bc
 	ld de, wccb5
 	jp CopyBytes
-
-Function1017c7:
-	ld a, [wcc60]
-	ld c, a
-	ld b, 0
-	ld a, [wcd3a]
-	dec a
-	ld hl, wcd3e
-	call Function10173b
-	ld e, l
-	ld d, h
-	ld hl, wcc61
-	ld a, [wcd3d]
-	call FarCopyWRAM
-	and a
-	ret
 
 _SelectMonsForMobileBattle:
 	farcall BlankScreen
@@ -2484,22 +2414,6 @@ Function10204c:
 	jr nz, .asm_102054
 	ret
 
-Function102068:
-	ld hl, wcd53
-	ld c, $08
-.asm_10206d
-	ld a, [de]
-	call Function102080
-	ret c
-	ld a, [de]
-	swap a
-	call Function102080
-	ret c
-	inc de
-	dec c
-	jr nz, .asm_10206d
-	ret
-
 Function102080:
 	and $0f
 	cp $0f
@@ -2512,22 +2426,6 @@ Function102080:
 	ld [hl], 0
 	scf
 	ret
-
-Function10208e:
-	push de
-	ld h, d
-	ld l, e
-	ld de, wdc42
-	ld bc, 8
-	call CopyBytes
-	pop de
-	ret
-
-Function10209c:
-	ld a, $ff
-	ld hl, wdc42
-	ld bc, 8
-	jp ByteFill
 
 NewCardArrivedText:
 	text_far _NewCardArrivedText
