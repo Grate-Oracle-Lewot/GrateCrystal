@@ -155,66 +155,6 @@ MobileCheckOwnMonAnywhere:
 	pop hl
 	ret
 
-Function4a94e:
-	call FadeToMenu
-	ld a, -1
-	ld hl, wd002
-	ld bc, 3
-	call ByteFill
-	xor a
-	ld [wd018], a
-	ld [wd019], a
-	ld b, SCGB_PACKPALS
-	call GetSGBLayout
-	call SetPalettes
-	call Function4aa22
-	jr c, .asm_4a985
-	jr z, .asm_4a9a1
-	jr .asm_4a97b
-
-.asm_4a974
-	call Function4aa25
-	jr c, .asm_4a985
-	jr z, .asm_4a9a1
-
-.asm_4a97b
-	call Function4ac58
-	ld hl, wd019
-	res 1, [hl]
-	jr .asm_4a974
-
-.asm_4a985
-	ld a, [wd018]
-	and a
-	jr nz, .asm_4a990
-	call Function4aba8
-	jr c, .asm_4a974
-
-.asm_4a990
-	call CloseSubmenu
-	ld hl, wd002
-	ld a, -1
-	ld bc, 3
-	call ByteFill
-	scf
-	ret
-
-.asm_4a9a1
-	call Function4a9c3
-	jr c, .asm_4a9b0
-	call Function4a9d7
-	jr c, .asm_4a974
-	call CloseSubmenu
-	and a
-	ret
-
-.asm_4a9b0
-	ld de, SFX_WRONG
-	call PlaySFX
-	ld hl, MobilePickThreeMonForBattleText
-	call PrintText
-	jr .asm_4a974
-
 MobilePickThreeMonForBattleText:
 	text_far _MobilePickThreeMonForBattleText
 	text_end
