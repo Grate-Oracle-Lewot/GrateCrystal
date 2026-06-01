@@ -2590,48 +2590,6 @@ LoadSelectedPartiesForColosseum:
 	ld b, a
 	ret
 
-Function1011f1:
-	ld a, BANK(s4_a60c)
-	call OpenSRAM
-	ld a, [s4_a60c]
-	ld [wdc41], a
-	call CloseSRAM
-	ld hl, wdc41
-	res 4, [hl]
-	ld hl, wGameTimerPaused
-	bit GAME_TIMER_MOBILE_F, [hl]
-	jr z, .skip
-	ld hl, wdc41
-	set 4, [hl]
-
-.skip
-	call Function10209c
-	xor a
-	ld [wdc5f], a
-	ld [wdc60], a
-	ld a, LINK_MOBILE
-	ld [wLinkMode], a
-	ret
-
-Function101220:
-	xor a
-	ld [wLinkMode], a
-	ret
-
-Function101225:
-	ld d, 1
-	ld e, BANK(Jumptable_101297)
-	ld bc, Jumptable_101297
-	call Function100000
-	jr Function10123d
-
-Function101231:
-	ld d, 2
-	ld e, BANK(Jumptable_101297)
-	ld bc, Jumptable_101297
-	call Function100000
-	jr Function10123d
-
 Function10123d:
 	xor a
 	ld [wScriptVar], a
@@ -4583,30 +4541,6 @@ Function102112:
 	call CloseSRAM
 	pop af
 	ret
-
-Function102142:
-	call Function10218d
-	call Function102180
-	ld hl, NewCardArrivedText
-	call MenuTextbox
-	ld de, SFX_LEVEL_UP
-	call PlaySFX
-	call JoyWaitAorB
-	call ExitMenu
-	call Function10219f
-	ld hl, PutCardInCardFolderText
-	call MenuTextbox
-	call YesNoBox
-	call ExitMenu
-	jr c, .asm_10217c
-	call Function1021b8
-	jr c, .asm_10217c
-	call Function10218d
-	call Function102180
-	ld hl, CardWasListedText
-	call PrintText
-.asm_10217c
-	jp Function1013d6
 
 Function102180:
 	ld hl, wc608 + 1
@@ -7269,14 +7203,6 @@ PleaseTryAgainTomorrowText:
 	text_far _PleaseTryAgainTomorrowText
 	text_end
 
-Function103780:
-	ld a, [wChosenCableClubRoom]
-	push af
-	call Function10378c
-	pop af
-	ld [wChosenCableClubRoom], a
-	ret
-
 Function10378c:
 	ld c, 0
 	ld hl, wSwarmFlags
@@ -7309,55 +7235,9 @@ Function10378c:
 	res SWARMFLAGS_MOBILE_4_F, [hl]
 	ret
 
-Function1037c2:
-	call MobileCheckRemainingBattleTime
-	jr c, .nope
-	ld a, [wdc5f]
-	and a
-	jr z, .nope
-	ld hl, TryAgainUsingSameSettingsText
-	call PrintText
-	call YesNoBox
-	jr c, .nope
-	ld a, $01
-	ld [wScriptVar], a
-	ret
-
-.nope
-	xor a
-	ld [wdc5f], a
-	ld [wScriptVar], a
-	ret
-
 TryAgainUsingSameSettingsText:
 	text_far _TryAgainUsingSameSettingsText
 	text_end
-
-Function1037eb:
-	call MobileCheckRemainingBattleTime
-	jr nc, .asm_103807
-	ld hl, MobileBattleLessThanOneMinuteLeftText
-	call PrintText
-	call JoyWaitAorB
-	ld hl, MobileBattleNoTimeLeftForLinkingText
-	call PrintText
-	call JoyWaitAorB
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.asm_103807
-	ld a, [wdc60]
-	and a
-	jr nz, .asm_103813
-	ld a, $01
-	ld [wScriptVar], a
-	ret
-
-.asm_103813
-	ld a, $02
-	ld [wScriptVar], a
-	ret
 
 MobileBattleLessThanOneMinuteLeftText:
 	text_far _MobileBattleLessThanOneMinuteLeftText
@@ -7385,47 +7265,9 @@ MobileCheckRemainingBattleTime:
 	scf
 	ret
 
-Function10383c:
-	ld a, $01
-	ld [wdc60], a
-	xor a
-	ld hl, wPlayerMonSelection
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	ld hl, PickThreeMonForMobileBattleText
-	call PrintText
-	call JoyWaitAorB
-	farcall Script_reloadmappart
-	farcall Function4a94e
-	jr c, .asm_103870
-	ld hl, wd002
-	ld de, wPlayerMonSelection
-	ld bc, 3
-	call CopyBytes
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.asm_103870
-	ld a, $01
-	ld [wScriptVar], a
-	ret
-
 PickThreeMonForMobileBattleText:
 	text_far _PickThreeMonForMobileBattleText
 	text_end
-
-Function10387b:
-	farcall Mobile_AlwaysReturnNotCarry
-	bit 7, c
-	ret nz
-	farcall MobileBattleGetRemainingTime
-	ld a, c
-	ld [wStringBuffer2], a
-	ld hl, MobileBattleRemainingTimeText
-	call PrintText
-	jp JoyWaitAorB
 
 MobileBattleRemainingTimeText:
 	text_far _MobileBattleRemainingTimeText
