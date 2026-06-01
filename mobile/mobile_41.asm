@@ -1,3 +1,42 @@
+; Used when SRAM bank 5 isn’t already loaded — what’s the point of this?
+UpdateTrainerRankingsChecksum2:
+	ld a, BANK(sTrainerRankings)
+	call OpenSRAM
+	call UpdateTrainerRankingsChecksum
+	jp CloseSRAM
+
+UpdateTrainerRankingsChecksum:
+	push de
+	call CalculateTrainerRankingsChecksum
+	ld hl, sTrainerRankingsChecksum
+	ld [hl], d
+	inc hl
+	ld [hl], e
+	pop de
+	ret
+
+CalculateTrainerRankingsChecksum:
+	push bc
+	ld hl, sTrainerRankings
+	ld bc, sTrainerRankingsChecksum - sTrainerRankings
+	xor a
+	ld de, 0
+.asm_106179
+	ld a, e
+	add [hl]
+	ld e, a
+	jr nc, .asm_10617f
+	inc d
+
+.asm_10617f
+	inc hl
+	dec bc
+	ld a, b
+	or c
+	jr nz, .asm_106179
+	pop bc
+	ret
+
 BackupMobileEventIndex:
 	ld a, BANK(sMobileEventIndex)
 	call OpenSRAM
