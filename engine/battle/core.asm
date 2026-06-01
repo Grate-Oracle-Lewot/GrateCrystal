@@ -5821,7 +5821,7 @@ MoveInfoBox:
 
 .hidden_power
 	ld hl, wBattleMonDVs
-	farcall GetHiddenPowerBattleType
+	farcall GetHiddenPowerType
 .got_move_type
 	call GetMonTypeIndex
 	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
