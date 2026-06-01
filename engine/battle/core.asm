@@ -5813,16 +5813,7 @@ MoveInfoBox:
 	farcall LoadBattleCategoryAndTypePals
 	call SetPalettes
 
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	cp EFFECT_HIDDEN_POWER
-	jr z, .hidden_power
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	jr .got_move_type
-
-.hidden_power
-	ld hl, wBattleMonDVs
-	farcall GetHiddenPowerType
-.got_move_type
+	farcall GetHiddenPowerBattleType
 	call GetMonTypeIndex
 	ld hl, TypeIconGFX ; from gfx\battle\types.png, uses Color 4
 	ld bc, 4 * LEN_1BPP_TILE ; Type GFX is 4 Tiles Wide
