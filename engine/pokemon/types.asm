@@ -16,16 +16,6 @@ GetTypeName:
 
 INCLUDE "data/types/names.asm"
 
-GetHiddenPowerBattleType::
-; Return player's move type in a, adjusting for Hidden Power's type
-
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	cp EFFECT_HIDDEN_POWER
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-	ret nz
-	ld hl, wBattleMonDVs
-	; fallthrough
-
 HiddenPowerType:
 	; Def & 3
 	ld a, [hl]
