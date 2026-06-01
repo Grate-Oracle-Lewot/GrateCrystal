@@ -279,32 +279,6 @@ Function4aab6:
 	jr nz, .loop
 	ret
 
-Function4aad3:
-	ld hl, wPartyCount
-	ld a, [hli]
-	and a
-	ret z ; Nothing in your party
-
-	ld c, a
-	xor a
-	ldh [hObjectStructIndex], a
-.loop
-	push bc
-	push hl
-	ld e, MONICON_PARTYMENU
-	farcall LoadMenuMonIcon
-	ldh a, [hObjectStructIndex]
-	inc a
-	ldh [hObjectStructIndex], a
-	pop hl
-	pop bc
-	dec c
-	jr nz, .loop
-
-	call Function4aa7a
-	farcall PlaySpriteAnimations
-	ret
-
 Function4aafb:
 	ld a, [wCurPartySpecies]
 	cp EGG
@@ -502,62 +476,6 @@ MenuHeader_0x4aca2:
 	dw NULL
 	db 1 ; default option
 
-Function4acaa:
-.asm_4acaa
-	ld a, $a0
-	ld [wMenuDataFlags], a
-	ld a, [wd019]
-	bit 1, a
-	jr z, .asm_4acc2
-	ld a, $2
-	ld [wMenuDataItems], a
-	ld a, $c
-	ld [wMenuBorderTopCoord], a
-	jr .asm_4accc
-
-.asm_4acc2
-	ld a, $4
-	ld [wMenuDataItems], a
-	ld a, $8
-	ld [wMenuBorderTopCoord], a
-
-.asm_4accc
-	ld a, $b
-	ld [wMenuBorderLeftCoord], a
-	ld a, $1
-	ld [wMenuCursorPosition], a
-	call InitVerticalMenuCursor
-	ld hl, w2DMenuFlags1
-	set 6, [hl]
-	call StaticMenuJoypad
-	ld de, SFX_READ_TEXT
-	call PlaySFX
-	ldh a, [hJoyPressed]
-	bit 0, a
-	jr nz, .asm_4acf4
-	bit 1, a
-	ret nz
-	jr .asm_4acaa
-
-.asm_4acf4
-	ld a, [wd019]
-	bit 1, a
-	jr nz, .asm_4ad0e
-	ld a, [wMenuCursorY]
-	cp $1
-	jr z, Function4ad17
-	cp $2
-	jp z, Function4ad56
-	cp $3
-	jp z, Function4ad60
-	ret
-
-.asm_4ad0e
-	ld a, [wMenuCursorY]
-	cp $1
-	jr z, Function4ad56
-	ret
-
 Function4ad17:
 	call Function4adb2
 	jr z, .asm_4ad4a
@@ -602,38 +520,6 @@ Function4ad56:
 Function4ad60:
 	farcall ManagePokemonMoves
 	ret
-
-Function4ad68:
-	hlcoord 13, 12
-	ld de, String_4ad88
-	call PlaceString
-	call Function4adb2
-	jr c, .asm_4ad7e
-	hlcoord 13, 10
-	ld de, String_4ada0
-	jr .asm_4ad84
-
-.asm_4ad7e
-	hlcoord 13, 10
-	ld de, String_4ad9a
-
-.asm_4ad84
-	jp PlaceString
-
-String_4ad88:
-	db   "つよさをみる"
-	next "つかえるわざ"
-	next "もどる@"
-
-String_4ad9a:
-	db   "さんかする@"
-
-String_4ada0:
-	db   "さんかしない@"
-
-String_4ada7:
-	db   "つよさをみる"
-	next "もどる@" ; BACK
 
 Function4adb2:
 	ld hl, wd002
