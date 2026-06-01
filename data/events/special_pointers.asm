@@ -134,7 +134,6 @@ SpecialsPointers::
 	add_special SetPlayerPalette
 	add_special LoadSpecialTrainerAndPokemonWithOTSprite
 	add_special Mobile_SelectThreeMons
-	add_special StubbedTrainerRankings_Healings
 	add_special RefreshSprites
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
