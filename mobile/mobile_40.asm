@@ -3937,48 +3937,6 @@ Function1020bf:
 	scf
 	ret
 
-Function102112:
-	ld a, $04
-	call OpenSRAM
-	ld hl, $a041
-	ld c, 40
-.outer_loop
-	push hl
-	ld de, $c60f
-	ld b, 31
-.inner_loop
-	ld a, [de]
-	cp [hl]
-	jr nz, .not_matching
-	inc de
-	inc hl
-	dec b
-	jr nz, .inner_loop
-	pop hl
-	xor a
-	jr .done
-
-.not_matching
-	pop hl
-	ld de, 37
-	add hl, de
-	dec c
-	jr nz, .outer_loop
-	ld a, $01
-	and a
-.done
-	push af
-	call CloseSRAM
-	pop af
-	ret
-
-Function10218d:
-	ld hl, w5_dc00
-	ld de, wc608
-	ld bc, $26
-	ld a, $05
-	jp FarCopyWRAM
-
 NewCardArrivedText:
 	text_far _NewCardArrivedText
 	text_end
