@@ -40,27 +40,6 @@ PrintMonTypes:
 
 .Print:
 	ld b, a
-	jr PrintType
-
-PrintMoveType:
-; Print the type of move b at hl.
-
-	push hl
-	ld a, b
-	; fallthrough
-
-FinishPrintingMoveType:
-	dec a
-	ld bc, MOVE_LENGTH
-	ld hl, Moves
-	call AddNTimes
-	ld de, wStringBuffer1
-	ld a, BANK(Moves)
-	call FarCopyBytes
-	ld a, [wStringBuffer1 + MOVE_TYPE]
-	and TYPE_MASK
-	pop hl
-	ld b, a
 	; fallthrough
 
 PrintType:
@@ -78,20 +57,6 @@ PrintType:
 	ld d, [hl]
 	pop hl
 	jp PlaceString
-
-PrintBattleMoveType:
-; Print the type of move b at hl.
-	push hl
-	ld a, b
-	cp HIDDEN_POWER
-	jr z, .print_hidden_power
-	jr FinishPrintingMoveType
-
-.print_hidden_power
-	call GetHiddenPowerBattleType
-	pop hl
-	ld b, a
-	jr PrintType
 
 GetTypeName:
 ; Copy the name of type [wNamedObjectIndex] to wStringBuffer1.
@@ -111,12 +76,14 @@ GetTypeName:
 
 INCLUDE "data/types/names.asm"
 
-GetHiddenPowerBattleType:
+GetHiddenPowerBattleType::
+; Return player's move type in a, adjusting for Hidden Power's type
+
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_HIDDEN_POWER
+	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+	ret nz
 	ld hl, wBattleMonDVs
-	ldh a, [hBattleTurn]
-	and a
-	jr z, HiddenPowerType
-	ld hl, wEnemyMonDVs
 	; fallthrough
 
 HiddenPowerType:
@@ -148,35 +115,3 @@ HiddenPowerType:
 	ret c
 	add UNUSED_TYPES_END - UNUSED_TYPES
 	ret
-
-GetMoveCategoryName:
-; Copy the category name of move b to wStringBuffer1.
-
-	ld a, b
-	dec a
-	ld bc, MOVE_LENGTH
-	ld hl, Moves + MOVE_TYPE
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-
-; Mask out the type
-	and $ff ^ TYPE_MASK
-; Shift the category bits into the range 0-2
-	rlc a
-	rlc a
-	dec a
-
-	ld hl, CategoryNames
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
-	jp CopyBytes
-
-INCLUDE "data/types/category_names.asm"
