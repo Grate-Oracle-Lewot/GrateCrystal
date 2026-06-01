@@ -177,48 +177,9 @@ Function4a9c3:
 	scf
 	ret
 
-Function4a9d7:
-	ld a, [wd002]
-	ld hl, wPartyMonNicknames
-	call GetNickname
-	ld h, d
-	ld l, e
-	ld de, wMobileParticipant1Nickname
-	ld bc, NAME_LENGTH_JAPANESE
-	call CopyBytes
-	ld a, [wd003]
-	ld hl, wPartyMonNicknames
-	call GetNickname
-	ld h, d
-	ld l, e
-	ld de, wMobileParticipant2Nickname
-	ld bc, NAME_LENGTH_JAPANESE
-	call CopyBytes
-	ld a, [wd004]
-	ld hl, wPartyMonNicknames
-	call GetNickname
-	ld h, d
-	ld l, e
-	ld de, wMobileParticipant3Nickname
-	ld bc, NAME_LENGTH_JAPANESE
-	call CopyBytes
-	ld hl, MobileUseTheseThreeMonText
-	call PrintText
-	jp YesNoBox
-
 MobileUseTheseThreeMonText:
 	text_far _MobileUseTheseThreeMonText
 	text_end
-
-Function4aa22:
-	call ClearBGPalettes
-	; fallthrough
-
-Function4aa25:
-	farcall LoadPartyMenuGFX
-	farcall InitPartyMenuWithCancel
-	call Function4aad3
-	; fallthrough
 
 Function4aa34:
 	ld a, PARTYMENUACTION_MOBILE
@@ -445,28 +406,6 @@ Function4ab99:
 	and a
 	ret
 
-Function4aba8:
-	ld hl, wd004
-	ld a, [hl]
-	cp $ff
-	jr nz, .asm_4abbe
-	dec hl
-	ld a, [hl]
-	cp $ff
-	jr nz, .asm_4abbe
-	dec hl
-	ld a, [hl]
-	cp $ff
-	jr nz, .asm_4abbe
-	and a
-	ret
-
-.asm_4abbe
-	ld a, $ff
-	ld [hl], a
-	scf
-	ret
-
 Function4abc3:
 	bit 3, a
 	jr z, .asm_4abd5
@@ -554,40 +493,6 @@ Function4abc3:
 	ret
 
 .asm_4ac56
-	and a
-	ret
-
-Function4ac58:
-	lb bc, 2, 18
-	hlcoord 1, 15
-	call ClearBox
-	farcall FreezeMonIcons
-	ld hl, MenuHeader_0x4aca2
-	call LoadMenuHeader
-	ld hl, wd019
-	bit 1, [hl]
-	jr z, .asm_4ac89
-	hlcoord 11, 13
-	ld b, $3
-	ld c, $7
-	call Textbox
-	hlcoord 13, 14
-	ld de, String_4ada7
-	call PlaceString
-	jr .asm_4ac96
-
-.asm_4ac89
-	hlcoord 11, 9
-	ld b, $7
-	ld c, $7
-	call Textbox
-	call Function4ad68
-
-.asm_4ac96
-	ld a, $1
-	ldh [hBGMapMode], a
-	call Function4acaa
-	call ExitMenu
 	and a
 	ret
 
