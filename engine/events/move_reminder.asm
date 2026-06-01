@@ -502,8 +502,8 @@ ChooseMoveToLearn:
 
 ; This begins the printing of all of the move's details, including the border around the description.
 .print_move_details
-	hlcoord 0, 10
-	lb bc, 6, 18
+	hlcoord 0, 11
+	lb bc, 5, 18
 	call TextboxBorder
 
 ; This code will relative jump to the ".cancel_border_fix" local label if the cancel entry is highlighted.
@@ -511,7 +511,7 @@ ChooseMoveToLearn:
 	cp -1
 	jr z, .cancel_border_fix
 
-.print_move_desc
+; Print move description
 	push de
 	ld a, [wMenuSelection]
 	inc a
@@ -519,44 +519,76 @@ ChooseMoveToLearn:
 	ret z
 	dec a
 	ld [wCurSpecies], a
-	hlcoord 1, 14
-	predef PrintMoveDescription
+	hlcoord 1, 15
+	predef PrintMoveDescriptionScrunched
 
-.print_move_type
-	ld a, [wCurSpecies]
-	ld b, a
-	hlcoord 10, 11
-	predef PrintMoveType
-
-.print_move_stat_strings
-	hlcoord 0, 9
+; Print move stat strings
+	hlcoord 0, 10
 	ld de, MoveTypeTopString
 	call PlaceString
-	hlcoord 0, 10
+	hlcoord 0, 11
 	ld de, MoveTypeString
 	call PlaceString
-	hlcoord 1, 10
+	hlcoord 1, 11
 	ld de, MoveAttackString
 	call PlaceString
 	hlcoord 1, 12
-	ld de, MoveChanceString
-	call PlaceString
-	hlcoord 1, 11
 	ld de, MoveAccuracyString
 	call PlaceString
-
-.print_move_category
-	ld a, [wCurSpecies]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 11, 12
-	ld de, wStringBuffer1
+	hlcoord 1, 13
+	ld de, MoveChanceString
 	call PlaceString
-	hlcoord 10, 12
-	ld [hl], "/"
-	inc hl
 
-.print_move_chance
+; Print move category
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	push af ; raw Move Type+category Byte, unmasked
+	and ~TYPE_MASK
+	swap a
+	srl a
+	srl a
+	dec a
+	ld hl, CategoryIconGFX ; ptr to Category GFX loaded from PNG(2bpp)
+	ld bc, 2 tiles
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $59 ; category icon tile slot in VRAM, destination
+	lb bc, BANK(CategoryIconGFX), 2
+	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
+	hlcoord 16, 13
+	ld a, $59 ; category icon tile 1
+	ld [hli], a
+	ld [hl], $5a ; category icon tile 2
+
+; Print move type
+	pop af ; raw Move Type+category Byte, unmasked
+	call GetMonTypeIndex
+; Type Index adjust done
+; Load Type GFX Tiles, color will be in Slot 4 of Palette
+	ld hl, TypeIconGFX ; ptr for PNG w/ black Tiles, since this screen is using Slot 4 in the Palette for Type color
+	ld bc, 4 * LEN_1BPP_TILE ; purely Black and White tiles are 1bpp. Type Tiles are 4 Tiles wide
+	call AddNTimes ; increments pointer based on Type Index
+	ld d, h
+	ld e, l ; de is the source Pointer
+	ld hl, vTiles2 tile $5b ; $5b is destination Tile for first Type Tile
+	lb bc, BANK(TypeIconGFX), 4 ; Bank in 'b', num of Tiles to load in 'c'
+	call Request1bpp
+	hlcoord 11, 13
+	ld a, $5b ; first Type Tile
+	ld [hli], a
+	inc a ; Tile $5c
+	ld [hli], a
+	inc a ; Tile $5d
+	ld [hli], a
+	ld [hl], $5e ; final Type Tile
+
+; Print move effect chance
 	ld a, [wMenuSelection]
 	ld bc, MOVE_LENGTH
 	ld hl, (Moves + MOVE_CHANCE) - MOVE_LENGTH
@@ -569,7 +601,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 5, 12
+	hlcoord 5, 13
 	call PrintNum
 	jr .print_move_accuracy
 
@@ -581,7 +613,7 @@ ChooseMoveToLearn:
 .print_move_null_chance
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord 5, 12
+	hlcoord 5, 13
 	call PlaceString
 
 .print_move_accuracy
@@ -605,7 +637,7 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 5, 11
+	hlcoord 5, 12
 	call PrintNum
 	jr .print_move_attack
 
@@ -614,7 +646,7 @@ ChooseMoveToLearn:
 .perfect
 	ld de, MoveNullValueString
 	ld bc, 3
-	hlcoord 5, 11
+	hlcoord 5, 12
 	call PlaceString
 
 .print_move_attack
@@ -629,13 +661,13 @@ ChooseMoveToLearn:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
-	hlcoord 5, 10
+	hlcoord 5, 11
 	jp PrintNum
 
 ; This prints "---" if the move has an attack of 0 or 1.
 ; This covers status moves, OHKO moves, level damage, etc.
 .print_move_null_attack
-	hlcoord 5, 10
+	hlcoord 5, 11
 	ld de, MoveNullValueString
 	ld bc, 3
 	jp PlaceString
