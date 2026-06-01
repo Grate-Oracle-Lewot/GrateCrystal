@@ -276,6 +276,25 @@ _CGB_StatsScreenHPPals:
 
 ; Load Pokemon's Type Palette(s)
 	call GetBaseData
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .done_pikachu
+	ld hl, wTempMonDVs
+	predef GetPikachuForm
+	ld a, [wPikachuForm]
+	dec a
+	ld hl, SecondPikachuTypes
+
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+
+	ld a, [hl]
+	ld [wBaseType2], a
+
+.done_pikachu
 	ld a, [wBaseType1]
 	call GetMonTypeIndex
 ; load the 1st type pal
