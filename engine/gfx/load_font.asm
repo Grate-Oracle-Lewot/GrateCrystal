@@ -118,17 +118,13 @@ LoadHPBar:
 	ld hl, vTiles2 tile $6c
 	lb bc, BANK(EnemyHPBarBorderGFX), 4
 	call Get1bppViaHDMA
-	ld de, HPExpBarBorderGFX + 1 * LEN_1BPP_TILE
-	ld hl, vTiles2 tile $74
-	lb bc, BANK(HPExpBarBorderGFX), 5
+	ld de, HPExpBarBorderGFX
+	ld hl, vTiles2 tile $73
+	lb bc, BANK(HPExpBarBorderGFX), 6
 	call Get1bppViaHDMA
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 9
-	call Get2bppViaHDMA
-	ld de, MobilePhoneTilesGFX + 7 tiles ; mobile phone icon
-	ld hl, vTiles2 tile $5e
-	lb bc, BANK(MobilePhoneTilesGFX), 2
 	jp Get2bppViaHDMA
 
 StatsScreen_LoadFont:
@@ -157,6 +153,6 @@ StatsScreen_LoadFont:
 
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
-	ld hl, vTiles2 tile $31
-	lb bc, BANK(StatsScreenPageTilesGFX), 27 ; Loading More Tiles than in Vanilla
+	ld hl, vTiles2 tile $36
+	lb bc, BANK(StatsScreenPageTilesGFX), 22 ; Loading More Tiles than in Vanilla
 	jp Get2bppViaHDMA
