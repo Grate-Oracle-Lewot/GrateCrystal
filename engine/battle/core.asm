@@ -7616,6 +7616,7 @@ GiveExperiencePoints:
 	call DelayFrames
 	call WaitPressAorB_BlinkCursor
 	call SafeLoadTempTilemapToTilemap
+	call UpdatePlayerHUD
 	xor a ; PARTYMON
 	ld [wMonType], a
 	ld a, [wCurSpecies]
