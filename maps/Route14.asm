@@ -171,7 +171,7 @@ Route14BugsyText:
 	para "Then I wandered"
 	line "over this way"
 
-	para "looking for bugs,"
+	para "looking for bugs<SEMI>"
 	line "you know how it"
 	cont "is."
 
