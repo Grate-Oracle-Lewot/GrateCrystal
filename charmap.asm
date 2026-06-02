@@ -54,7 +54,7 @@
 
 	charmap "<MALE>",    $32 ; colored male gender symbol
 	charmap "<FEMALE>",  $33 ; colored female gender symbol
-	charmap "<FLT_BAT>", $34 ; yet another floatmon arrow, this one used in battle
+
 	charmap "<CURED>",   $35 ; Pokerus immunity face
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
