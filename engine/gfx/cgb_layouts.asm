@@ -1218,13 +1218,6 @@ _CGB_MoveList:
 	ld bc, 8 ; area 1 Tile in HEIGHT, 8 Tiles in WIDTH
 	ld a, $2 ; Palette 2
 	call ByteFill
-	
-; fix left menu arrow, since we dont have left facing arrow
-	hlcoord 16, 0, wAttrmap
-	ld bc, 1 ; 1x1 Square
-	xor a ; pal 0, default palette
-	set 5, a ; flip on x axis
-	call ByteFill
 
 	call ApplyAttrmap
 	call ApplyPals
