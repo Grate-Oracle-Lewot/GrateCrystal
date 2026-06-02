@@ -416,15 +416,7 @@ _YesNoBox::
 	ld hl, YesNoMenuHeader
 	call CopyMenuHeader
 	pop bc
-; This seems to be an overflow prevention,
-; but it was coded wrong.
-	ld a, b
-	cp SCREEN_WIDTH - 1 - 5
-	jr nz, .okay ; should this be "jr nc"?
-	ld a, SCREEN_WIDTH - 1 - 5
-	ld b, a
 
-.okay
 	ld a, b
 	ld [wMenuBorderLeftCoord], a
 	add 5
