@@ -919,7 +919,7 @@ IDNoString:
 	db "<ID>№.@"
 
 OTString:
-	db "OT/@"
+	db "OT:@"
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
