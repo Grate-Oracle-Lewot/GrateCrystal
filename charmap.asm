@@ -96,7 +96,7 @@
 	charmap "(",         $9a
 	charmap ")",         $9b
 	charmap ":",         $9c
-	charmap ";",         $9d
+	charmap "<SEMI>",    $9d ; semicolon
 	charmap "[",         $9e
 	charmap "]",         $9f
 
