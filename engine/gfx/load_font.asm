@@ -153,6 +153,6 @@ StatsScreen_LoadFont:
 
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
-	ld hl, vTiles2 tile $36
-	lb bc, BANK(StatsScreenPageTilesGFX), 22 ; Loading More Tiles than in Vanilla
+	ld hl, vTiles2 tile $31
+	lb bc, BANK(StatsScreenPageTilesGFX), 24 ; Loading More Tiles than in Vanilla
 	jp Get2bppViaHDMA
