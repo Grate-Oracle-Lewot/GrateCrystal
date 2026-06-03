@@ -349,6 +349,7 @@ CheckAlreadyInList:
 	pop hl
 	scf
 	ret
+
 .nope
 	pop hl
 	and a
@@ -370,6 +371,7 @@ CheckPokemonAlreadyKnowsMove:
 	pop hl
 	and a
 	ret
+
 .yes
 	pop bc
 	pop hl
@@ -675,19 +677,19 @@ ChooseMoveToLearn:
 	jp PlaceString
 
 MoveTypeTopString:
-	db "┌───────┐@"
+	db "┌────────┐@"
 MoveTypeString:
-	db "│       └@"
+	db "│        └@"
 MoveAttackString:
 	db "POW@"
 MoveAccuracyString:
-	db "HIT@"
+	db "HIT    %@"
 MoveChanceString:
-	db " FX@"
+	db " FX    %@"
 MoveNullValueString:
 	db "---@"
 MoveReminderBottomString:
-	db "└────────@"
+	db "└─────────@"
 
 Text_MoveReminderIntro:
 	text_far _MoveReminderIntro
