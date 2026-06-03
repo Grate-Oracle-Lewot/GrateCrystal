@@ -42,20 +42,13 @@
 
 	charmap "<LV>",      $6e
 
-; <DO>, "◀", and "『" are no longer loaded to make space for the type and category tiles
-
-	charmap "<DO>",      $70 ; floatmon arrow
+	charmap "<DO>",      $70 ; duplicate floatmon arrow
 	charmap "◀",         $71
-	charmap "『",         $72 ; Japanese opening quote, unused
+	charmap "<SHINY>",   $72 ; duplicate shiny symbol
 	charmap "<ID>",      $73
 	charmap "№",         $74
 
 ; Actual characters (from gfx/stats/stats_tiles.png)
-
-	charmap "<MALE>",    $32 ; colored male gender symbol
-	charmap "<FEMALE>",  $33 ; colored female gender symbol
-
-	charmap "<CURED>",   $35 ; Pokerus immunity face
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
 	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
