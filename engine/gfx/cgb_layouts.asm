@@ -308,12 +308,6 @@ _CGB_StatsScreenHPPals:
 	ld a, $2 ; exp palette
 	call ByteFill
 
-	hlcoord 10, 16, wAttrmap
-	lb bc, 1, 8
-	ld a, $2 ; exp palette
-	set 5, a ; flips tiles on x axis
-	call FillBoxCGB
-
 	hlcoord 11, 5, wAttrmap
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
 	ld a, $3 ; pink & green page palette
