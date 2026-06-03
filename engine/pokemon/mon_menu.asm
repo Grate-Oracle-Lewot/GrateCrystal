@@ -1362,9 +1362,9 @@ String_MoveType_Bottom:
 String_MoveAtk:
 	db "POW@"
 String_MoveAcc:
-	db "HIT    %@"
+	db "HIT    <%>@"
 String_MoveEff:
-	db " FX    %@"
+	db " FX    <%>@"
 String_MoveBlank:
 	db "---@"
 
