@@ -683,9 +683,9 @@ MoveTypeString:
 MoveAttackString:
 	db "POW@"
 MoveAccuracyString:
-	db "HIT    %@"
+	db "HIT    <%>@"
 MoveChanceString:
-	db " FX    %@"
+	db " FX    <%>@"
 MoveNullValueString:
 	db "---@"
 MoveReminderBottomString:
