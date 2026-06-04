@@ -86,11 +86,8 @@ LucasScript_LucasBeforeText:
 	line "this hack is my"
 	cont "brother."
 
-	para "Oh, and the last"
-	line "person, A.D.?"
-
-	para "They're our"
-	cont "cousin."
+	para "Oh, and A.D. is"
+	line "our cousin."
 
 	para "Crying nepotism"
 	line "won't save you"
