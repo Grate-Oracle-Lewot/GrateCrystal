@@ -84,7 +84,7 @@ _LoadStandardFont::
 _LoadFontsBattleExtra::
 	ld de, FontBattleExtra
 	ld hl, vTiles2 tile $60
-	lb bc, BANK(FontBattleExtra), 16
+	lb bc, BANK(FontBattleExtra), 25
 	call Get2bppViaHDMA
 	; fallthrough
 
@@ -154,5 +154,5 @@ StatsScreen_LoadFont:
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(StatsScreenPageTilesGFX), 24 ; Loading More Tiles than in Vanilla
+	lb bc, BANK(StatsScreenPageTilesGFX), 25 ; Loading More Tiles than in Vanilla
 	jp Get2bppViaHDMA
