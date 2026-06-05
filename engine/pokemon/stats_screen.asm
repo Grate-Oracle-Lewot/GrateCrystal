@@ -528,7 +528,7 @@ LoadPinkPage:
 	and $f0
 	jr z, .NotImmuneToPkrs
 	hlcoord 19, 1
-	ld [hl], "<CURED>"
+	ld [hl], "."
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
