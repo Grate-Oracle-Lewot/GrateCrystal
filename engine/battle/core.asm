@@ -4865,12 +4865,12 @@ PrintPlayerHUD:
 	predef Player_LoadNonFaintStatus ; loads needed Status Conditon GFX into VRAM
  	ld a, c
 	and a 
-	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
+	jr z, .status_done ; if Mon is fainted, or it doesn't have a Status Cond, don't print Tiles
 ; place status tiles:
-	hlcoord 10, 8 ; status icon tile 1
-	ld [hl], $70
+	hlcoord 10, 8
+	ld [hl], $79 ; player status left half
 	inc hl
-	ld [hl], $71
+	ld [hl], $7a ; player status right half
 .status_done
 	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
@@ -4945,11 +4945,11 @@ DrawEnemyHUD:
 	predef Enemy_LoadNonFaintStatus ; load Status Condition GFX Tiles
 	ld a, c
 	and a
-	jr z, .status_done ; if Mon is fainted, or it doesnt have a Status Cond, dont print Tiles
+	jr z, .status_done ; if Mon is fainted, or it doesn't have a Status Cond, don't print Tiles
 	hlcoord 2, 1
-	ld [hl], $72 ; enemy status left half
+	ld [hl], $7b ; enemy status left half
 	inc hl
-	ld [hl], $73 ; enemy status left half
+	ld [hl], $7c ; enemy status right half
 .status_done
 	hlcoord 6, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
@@ -5911,7 +5911,7 @@ MoveInfoBox:
 	ld [hl], "/"
 	inc hl
 	ld de, wNamedObjectIndex
-	lb bc, 1, 2
+	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
 	hlcoord 1, 10
 	ld a, "P"
