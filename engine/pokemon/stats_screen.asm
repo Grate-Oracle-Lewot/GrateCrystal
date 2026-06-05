@@ -558,7 +558,7 @@ LoadPinkPage:
 
 .HasPokerus:
 	ld de, .PkrsStr
-	hlcoord 1, 13
+	hlcoord 1, 16
 	call PlaceString
 	jr .NotImmuneToPkrs
 
