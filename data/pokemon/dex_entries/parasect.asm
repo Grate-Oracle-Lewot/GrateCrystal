@@ -1,10 +1,10 @@
 	db "ENTOMOPATH@" ; species name
 	dw 303, 650 ; height, weight
 
-	db   "The mushroom is"
-	next "intelligent enough"
-	next "to know what it"
+	db   "Only once the"
+	next "mushroom takes"
+	next "full control does"
 
-	page "did to the bug,"
-	next "but it's too late"
-	next "to go back now.@"
+	page "it finally gain"
+	next "the capacity for"
+	next "remorse.@"
