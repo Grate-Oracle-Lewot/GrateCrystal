@@ -177,7 +177,7 @@ Text_ReceivedMineralBadge:
 
 Jasmine_BadgeSpeech:
 	text "With it, #MON"
-	line "up to <EVO_LV>50 will"
+	line "up to <LV>50 will"
 	cont "obey you…"
 
 	para "Um… Please take"
