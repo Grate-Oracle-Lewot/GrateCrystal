@@ -410,7 +410,7 @@ ChooseMoveToLearn:
 	farcall CopyMonToTempMon
 	hlcoord 13, 0
 	ld a, [wTempMonLevel]
-	ld [hl], "<EVO_LV>"
+	ld [hl], "<LV>"
 	inc hl
 	ld c, 3
 	call Print8BitNumLeftAlign
