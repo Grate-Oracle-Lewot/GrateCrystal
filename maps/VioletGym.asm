@@ -163,7 +163,7 @@ FalknerZephyrBadgeText:
 	line "receive in trades"
 
 	para "will also obey you"
-	line "up to <EVO_LV>20."
+	line "up to <LV>20."
 
 	para "Here--take this"
 	line "too."
