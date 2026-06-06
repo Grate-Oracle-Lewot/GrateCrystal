@@ -4949,7 +4949,7 @@ DrawEnemyHUD:
 	hlcoord 2, 1
 	ld [hl], $72 ; enemy status left half
 	inc hl
-	ld [hl], $79 ; enemy status right half
+	ld [hl], $75 ; enemy status right half
 .status_done
 	hlcoord 6, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
@@ -5820,17 +5820,17 @@ MoveInfoBox:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $7a
+	ld hl, vTiles2 tile $79
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
 	hlcoord 4, 11 ; placing the Type Tiles in the MoveInfoBox
+	ld [hl], $79
+	inc hl
 	ld [hl], $7a
 	inc hl
 	ld [hl], $7b
 	inc hl
 	ld [hl], $7c
-	inc hl
-	ld [hl], $7d
 
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
 	and ~TYPE_MASK
@@ -5843,13 +5843,13 @@ MoveInfoBox:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $7e
+	ld hl, vTiles2 tile $7d
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
 	hlcoord 1, 11 ; placing the Category Tiles in the MoveInfoBox
-	ld [hl], $7e
+	ld [hl], $7d
 	inc hl
-	ld [hl], $7f
+	ld [hl], $7e
 
 ; print move power
 	ld de, .power_string
