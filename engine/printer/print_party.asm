@@ -1,4 +1,4 @@
-PRINTPARTY_HP EQU "◀" ; $71
+PRINTPARTY_HP EQU $71
 
 PrintPage1:
 	hlcoord 0, 0
@@ -326,13 +326,13 @@ PlaceGenderAndShininess:
 	ret
 
 PrintParty_OTString:
-	db "OT/@"
+	db "OT:@"
 
 PrintParty_MoveString:
 	db "MOVE@"
 
 PrintParty_IDNoString:
-	db "<ID>№.@"
+	db "ID:@"
 
 PrintParty_StatsString:
 	db   "ATTACK"
