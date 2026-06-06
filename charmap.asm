@@ -41,7 +41,6 @@
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
 	charmap "◀",         $6e
-	charmap "№",         $75
 
 ; Actual characters (from gfx/stats/stats_tiles.png)
 
@@ -132,8 +131,9 @@
 	charmap "<INV_QU>",  $c6 ; inverted question mark
 	charmap "<FLOAT>",   $c7 ; floatmon arrow
 	charmap "<LV>",      $c8 ; level icon
-	charmap "<NUZ0>",    $c9 ; poke ball, available encounter
-	charmap "<NUZ1>",    $ca ; crossed-out ball, used encounter
+	charmap "№",         $c9
+	charmap "<NUZ0>",    $ca ; poke ball, available encounter
+	charmap "<NUZ1>",    $cb ; crossed-out ball, used encounter
 
 	charmap "′",         $ce
 	charmap "″",         $cf
