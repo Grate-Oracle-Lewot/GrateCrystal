@@ -505,11 +505,11 @@ DisplayHOFMon:
 
 .print_id_no
 	hlcoord 7, 16
-	ld a, "<ID>"
+	ld a, "I"
 	ld [hli], a
-	ld a, "№"
+	ld a, "D"
 	ld [hli], a
-	ld [hl], "/"
+	ld [hl], ":"
 	hlcoord 10, 16
 	ld de, wTempMonID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
@@ -570,11 +570,11 @@ HOF_AnimatePlayerPic:
 	ld de, wPlayerName
 	call PlaceString
 	hlcoord 1, 6
-	ld a, "<ID>"
+	ld a, "I"
 	ld [hli], a
-	ld a, "№"
+	ld a, "D"
 	ld [hli], a
-	ld [hl], "/"
+	ld [hl], ":"
 	hlcoord 4, 6
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
