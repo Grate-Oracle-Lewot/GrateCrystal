@@ -249,7 +249,7 @@ WhitneyPlainBadgeText:
 
 	para "Traded #MON"
 	line "will also obey you"
-	cont "up to <EVO_LV>30."
+	cont "up to <LV>30."
 
 	para "Oh, you can have"
 	line "these too!"
