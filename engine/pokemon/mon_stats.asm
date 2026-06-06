@@ -562,7 +562,7 @@ Player_LoadNonFaintStatus:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $79
+	ld hl, vTiles2 tile $70
 	lb bc, BANK(StatusIconGFX), 2
 	call Request2bpp
 	pop de ; status index, needs to be in 'd'
@@ -596,14 +596,27 @@ Enemy_LoadNonFaintStatus:
 	ret z
 .enemy_loadgfx
 ; Load Enemy Status Tiles GFX into VRAM
+; broken in half at $72 and $79
+
 	push af ; status condition index
 	ld hl, EnemyStatusIconGFX
-	ld bc, 2 * LEN_2BPP_TILE
+	ld bc, LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $7b
-	lb bc, BANK(EnemyStatusIconGFX), 2
+	ld hl, vTiles2 tile $72
+	lb bc, BANK(EnemyStatusIconGFX), 1
+	call Request2bpp
+
+	pop af ; status condition index
+	push af
+	ld hl, EnemyStatusIconGFX
+	ld bc, LEN_2BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $79
+	lb bc, BANK(EnemyStatusIconGFX), 1
 	call Request2bpp
 
 	pop de ; status condition index, needs to be in 'd'
