@@ -602,18 +602,16 @@ Enemy_LoadNonFaintStatus:
 	ld hl, EnemyStatusIconGFX
 	ld bc, 2 * LEN_2BPP_TILE
 	call AddNTimes
+	push hl ; save status tile address
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $72
 	lb bc, BANK(EnemyStatusIconGFX), 1
 	call Request2bpp
 
-	pop af ; status condition index
-	push af
-	inc a ; move to second half of status tile
-	ld hl, EnemyStatusIconGFX
-	ld bc, 2 * LEN_2BPP_TILE
-	call AddNTimes
+	pop hl ; restore status tile address
+	ld bc, LEN_2BPP_TILE ; move to second half of status tile
+	add hl, bc
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $75
