@@ -910,13 +910,13 @@ MetAtString:
 	db "MET:@"
 
 MetLevelString:
-	db "<EVO_LV>@"
+	db "<LV>@"
 
 MetEventString:
 	db "FATEFUL ENCOUNTER@"
 
 IDNoString:
-	db "<ID>№.@"
+	db "ID:@"
 
 OTString:
 	db "OT:@"
