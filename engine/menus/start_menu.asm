@@ -194,7 +194,7 @@ StartMenu::
 	db "@"
 
 .CapString:
-	db "CAP <EVO_LV>@"
+	db "CAP <LV>@"
 
 .NuzlockeString:
 	db "CATCH:@"
