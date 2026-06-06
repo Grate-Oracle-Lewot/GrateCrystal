@@ -596,7 +596,7 @@ Enemy_LoadNonFaintStatus:
 	ret z
 .enemy_loadgfx
 ; Load Enemy Status Tiles GFX into VRAM
-; broken in half at $72 and $79
+; broken in half at $72 and $75
 
 	push af ; status condition index
 	ld hl, EnemyStatusIconGFX
@@ -615,7 +615,7 @@ Enemy_LoadNonFaintStatus:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $79
+	ld hl, vTiles2 tile $75
 	lb bc, BANK(EnemyStatusIconGFX), 1
 	call Request2bpp
 
