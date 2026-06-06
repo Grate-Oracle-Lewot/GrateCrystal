@@ -600,7 +600,7 @@ Enemy_LoadNonFaintStatus:
 
 	push af ; status condition index
 	ld hl, EnemyStatusIconGFX
-	ld bc, LEN_2BPP_TILE
+	ld bc, 2 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
@@ -610,8 +610,9 @@ Enemy_LoadNonFaintStatus:
 
 	pop af ; status condition index
 	push af
+	inc a ; move to second half of status tile
 	ld hl, EnemyStatusIconGFX
-	ld bc, LEN_2BPP_TILE
+	ld bc, 2 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
