@@ -4868,9 +4868,9 @@ PrintPlayerHUD:
 	jr z, .status_done ; if Mon is fainted, or it doesn't have a Status Cond, don't print Tiles
 ; place status tiles:
 	hlcoord 10, 8
-	ld [hl], $79 ; player status left half
+	ld [hl], $70 ; player status left half
 	inc hl
-	ld [hl], $7a ; player status right half
+	ld [hl], $71 ; player status right half
 .status_done
 	hlcoord 14, 8 ; where the player mon's lvl is printed
 	ld a, [wBattleMonLevel]
@@ -4947,9 +4947,9 @@ DrawEnemyHUD:
 	and a
 	jr z, .status_done ; if Mon is fainted, or it doesn't have a Status Cond, don't print Tiles
 	hlcoord 2, 1
-	ld [hl], $7b ; enemy status left half
+	ld [hl], $72 ; enemy status left half
 	inc hl
-	ld [hl], $7c ; enemy status right half
+	ld [hl], $79 ; enemy status right half
 .status_done
 	hlcoord 6, 1 ; enemy's level
 	ld a, [wEnemyMonLevel]
@@ -5820,17 +5820,17 @@ MoveInfoBox:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $55 
+	ld hl, vTiles2 tile $7a
 	lb bc, BANK(TypeIconGFX), 4 ; bank in 'b', Num of Tiles in 'c'
 	call Request1bpp
 	hlcoord 4, 11 ; placing the Type Tiles in the MoveInfoBox
-	ld [hl], $55
+	ld [hl], $7a
 	inc hl
-	ld [hl], $56
+	ld [hl], $7b
 	inc hl
-	ld [hl], $57
+	ld [hl], $7c
 	inc hl
-	ld [hl], $58
+	ld [hl], $7d
 
 	ld a, [wPlayerMoveStruct + MOVE_TYPE]
 	and ~TYPE_MASK
@@ -5843,13 +5843,13 @@ MoveInfoBox:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile $59
+	ld hl, vTiles2 tile $7e
 	lb bc, BANK(CategoryIconGFX), 2 ; bank in 'b', Num of Tiles in 'c'
 	call Request2bpp ; Load 2bpp at b:de to occupy c tiles of hl.
 	hlcoord 1, 11 ; placing the Category Tiles in the MoveInfoBox
-	ld [hl], $59
+	ld [hl], $7e
 	inc hl
-	ld [hl], $5a
+	ld [hl], $7f
 
 ; print move power
 	ld de, .power_string
