@@ -40,13 +40,8 @@
 
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
-	charmap "<LV>",      $6e
-
-	charmap "<DO>",      $70 ; duplicate floatmon arrow
-	charmap "◀",         $71
-	charmap "<SHINY>",   $72 ; duplicate shiny symbol
-	charmap "<ID>",      $73
-	charmap "№",         $74
+	charmap "◀",         $6e
+	charmap "№",         $75
 
 ; Actual characters (from gfx/stats/stats_tiles.png)
 
@@ -136,7 +131,7 @@
 	charmap "<INV_EX>",  $c5 ; inverted exclamation mark
 	charmap "<INV_QU>",  $c6 ; inverted question mark
 	charmap "<FLOAT>",   $c7 ; floatmon arrow
-	charmap "<EVO_LV>",  $c8 ; level icon, added for dex evo page because I can't get it to work otherwise
+	charmap "<LV>",      $c8 ; level icon
 	charmap "<NUZ0>",    $c9 ; poke ball, available encounter
 	charmap "<NUZ1>",    $ca ; crossed-out ball, used encounter
 
