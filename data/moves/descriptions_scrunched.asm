@@ -744,8 +744,8 @@ SelfdestructDescriptionScrunched:
 	feed "the user faint.@"
 
 EggBombDescriptionScrunched:
-	db   "May burn, freeze,"
-	feed "or paralyze.@"
+	db   "May burn or lower"
+	feed "defenses.@"
 
 LickDescriptionScrunched:
 	db   "Licks the foe. May"
