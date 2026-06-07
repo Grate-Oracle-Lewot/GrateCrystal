@@ -36,6 +36,7 @@ CGBLayoutJumptable:
 	dw _CGB_BattleColors
 	dw _CGB_PokegearPals
 	dw _CGB_StatsScreenHPPals
+	dw _CGB_StatsScreenHiddenPal
 	dw _CGB_Pokedex
 	dw _CGB_Pokedex_EvoPage
 	dw _CGB_Pokedex_PicsPage
@@ -284,7 +285,7 @@ _CGB_StatsScreenHPPals:
 	call GetMonTypeIndex
 ; load the 1st type pal
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
-	call LoadMonBaseTypePal	
+	call LoadMonBaseTypePal
 
 	ld a, [wBaseType1]
 	ld b, a
@@ -326,6 +327,68 @@ _CGB_StatsScreenHPPals:
 
 ; mon type(s) 
 	hlcoord 5, 14, wAttrmap
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
+	ld a, $7 ; mon base type light/dark pals
+	call FillBoxCGB
+
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+_CGB_StatsScreenHiddenPal:
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	call GetPlayerOrMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black ; mon palette, palette 1
+	ld hl, StatsScreenPagePals
+	ld de, wBGPals1 palette 3 ; palettes 3 & 4
+	ld bc, 2 palettes ; pink, green, blue, and orange page palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	ld hl, wTempMonDVs
+	ld a, [hl]
+	and %0011
+	ld b, a
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+	inc a
+	cp UNUSED_TYPES
+	jr c, .got_type
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.got_type
+	call GetMonTypeIndex
+	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
+	call LoadMonBaseTypePal
+	call WipeAttrmap
+
+	hlcoord 0, 0, wAttrmap
+	lb bc, 8, SCREEN_WIDTH
+	ld a, $1 ; mon palette
+	call FillBoxCGB
+
+	hlcoord 11, 5, wAttrmap
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
+	ld a, $3 ; pink & green page palette
+	call FillBoxCGB
+
+	hlcoord 15, 5, wAttrmap
+	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
+	ld a, $4 ; blue & orange box palette
+	call FillBoxCGB
+
+	hlcoord 15, 13, wAttrmap
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
 	call FillBoxCGB
