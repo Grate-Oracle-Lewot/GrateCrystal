@@ -741,6 +741,49 @@ PrintMonTypeTiles:
 	ld [hl], $5f
 	ret
 
+PrintHiddenPowerTypeTile:
+	ld hl, wTempMonDVs
+	ld a, [hl]
+	and %0011
+	ld b, a
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+	inc a
+	cp UNUSED_TYPES
+	jr c, .got_type
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.got_type
+	call GetMonTypeIndex
+	ld hl, TypeLightIconGFX ; from gfx\stats\types_light.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles2 tile $4c
+	lb bc, BANK(TypeLightIconGFX), 4 ; Bank in 'c', Number of Tiles in 'c'
+	call Request2bpp
+
+; placing the Type1 Tiles (from gfx\stats\types_light.png)
+	hlcoord 15, 13
+	ld [hl], $4c
+	inc hl
+	ld [hl], $4d
+	inc hl
+	ld [hl], $4e
+	inc hl
+	ld [hl], $4f
+	inc hl
+	ret
+
 LoadGreenPage:
 	ld de, .Item
 	hlcoord 0, 8
@@ -835,7 +878,7 @@ LoadBluePage:
 
 LoadOrangePage:
 	ld de, HiddenPowerTypeString
-	hlcoord 1, 12
+	hlcoord 1, 13
 	call PlaceString
 
 	ld de, MetAtString
@@ -845,32 +888,8 @@ LoadOrangePage:
 ; Print DVs
 	predef PrintTempMonDVs
 
-; Print Hidden Power type
-	ld hl, wTempMonDVs
-	ld a, [hl]
-	and %0011
-	ld b, a
-	ld a, [hli]
-	and %0011 << 4
-	swap a
-	add a
-	add a
-	or b
-	ld b, a
-	ld a, [hl]
-	swap a
-	and %0001
-	add b
-	inc a
-	cp UNUSED_TYPES
-	jr c, .done1
-	add UNUSED_TYPES_END - UNUSED_TYPES
-.done1
-	ld [wNamedObjectIndex], a
-	farcall GetTypeName
-	ld de, wStringBuffer1
-	hlcoord 1, 13
-	call PlaceString
+; Print Hidden Power type tile
+	call PrintHiddenPowerTypeTile
 
 ; Print caught level
 	ld a, [wTempMonCaughtLevel]
