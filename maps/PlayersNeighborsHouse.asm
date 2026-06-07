@@ -8,7 +8,12 @@ PlayersNeighborsHouse_MapScripts:
 	def_callbacks
 
 PlayersNeighborsDaughterScript:
-	jumptextfaceplayer PlayersNeighborsDaughterText
+	faceplayer
+	opentext
+	special MoveDex
+	waitbutton
+	closetext
+	end
 
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
