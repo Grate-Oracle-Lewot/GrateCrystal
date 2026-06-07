@@ -135,7 +135,7 @@ ViewMoveList:
 	ld de, MoveDexTopString
 	call PlaceString
 	hlcoord 0, 11
-	ld de, MoveDexString
+	ld de, MoveDexSidesString
 	call PlaceString
 	hlcoord 1, 11
 	ld de, MoveDexAttackString
@@ -280,9 +280,9 @@ ViewMoveList:
 	ld bc, 3
 	jp PlaceString
 
-MoveDexTypeTopString:
+MoveDexTopString:
 	db "┌────────┐@"
-MoveDexTypeString:
+MoveDexSidesString:
 	db "│        └@"
 MoveDexAttackString:
 	db "POW@"
