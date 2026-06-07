@@ -211,6 +211,18 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
 	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
 
+	; check for faint status
+	ld hl, wTempMonHP
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	xor a
+	cp b
+	jr nz, .nonzero
+	cp c
+	jr z, .done
+
+.nonzero
 	; check if $7F $FF is loaded into pal 6 + 2, means we are "OK" and need black in slot 4 of pal 6
 	ld a, [wBGPals1 palette 6 + 2] ; pal 6 slot 2 byte 1
 	cp $FF ; white color by default will be $7FFF but $ff will be read first
