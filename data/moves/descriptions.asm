@@ -316,8 +316,8 @@ SignalBeamDescription:
 	next "might confuse.@"
 
 SwordsDanceDescription:
-	db   "A dance that in-"
-	next "creases ATTACK.@"
+	db   "“Sharply” raises"
+	next "ATTACK.@"
 
 CutDescription:
 	db   "Cuts using claws,"
@@ -332,8 +332,8 @@ WingAttackDescription:
 	next "with wings.@"
 
 WhirlwindDescription:
-	db   "Blows away the foe"
-	next "& ends battle.@"
+	db   "Makes the foe flee"
+	next "or switch out.@"
 
 FlyDescription:
 	db   "1st turn: Fly"
@@ -416,8 +416,8 @@ DoubleEdgeDescription:
 	next "hurts the user.@"
 
 TailWhipDescription:
-	db   "Lowers the foe's"
-	next "DEFENSE.@"
+	db   "Lowers DEFENSE by"
+	next "breaking stance.@"
 
 PoisonStingDescription:
 	db   "A sting that may"
@@ -425,7 +425,7 @@ PoisonStingDescription:
 
 TwineedleDescription:
 	db   "Jabs the foe twice"
-	next "using stingers.@"
+	next "and may poison.@"
 
 PinMissileDescription:
 	db   "Fires pins that"
@@ -444,12 +444,12 @@ GrowlDescription:
 	next "ATTACK.@"
 
 RoarDescription:
-	db   "Scares away foes"
-	next "& ends battle.@"
+	db   "Makes the foe flee"
+	next "or switch out.@"
 
 SingDescription:
-	db   "May cause the foe"
-	next "to fall asleep.@"
+	db   "May lull the foe"
+	next "to sleep.@"
 
 SupersonicDescription:
 	db   "Sound waves that"
@@ -648,8 +648,8 @@ MeditateDescription:
 	next "raise ATTACK.@"
 
 AgilityDescription:
-	db   "Sharply increases"
-	next "the user's SPEED.@"
+	db   "Sharply raises the"
+	next "user's SPEED.@"
 
 QuickAttackDescription:
 	db   "Lets the user get"
@@ -677,11 +677,11 @@ ScreechDescription:
 
 DoubleTeamDescription:
 	db   "Makes copies to"
-	next "raise EVASION.@"
+	next "raise evasion.@"
 
 RecoverDescription:
-	db   "Restores HP by 1/2"
-	next "the max HP.@"
+	db   "Restores 1/2 of"
+	next "the user's max HP.@"
 
 HardenDescription:
 	db   "Raises the user's"
@@ -689,15 +689,15 @@ HardenDescription:
 
 MinimizeDescription:
 	db   "Shrinks to raise"
-	next "EVASION.@"
+	next "evasion.@"
 
 SmokescreenDescription:
 	db   "Lowers the foe's"
 	next "accuracy.@"
 
 ConfuseRayDescription:
-	db   "Confuses the foe"
-	next "with a ray.@"
+	db   "Dancing lights"
+	next "confuse the foe.@"
 
 ScaldDescription:
 	db   "Sprays hot water."
@@ -708,7 +708,7 @@ DefenseCurlDescription:
 	next "rolling power.@"
 
 BarrierDescription:
-	db   "Sharply increases"
+	db   "Sharply raises the"
 	next "user's DEFENSE.@"
 
 LightScreenDescription:
@@ -716,16 +716,16 @@ LightScreenDescription:
 	next "for 5 turns.@"
 
 HazeDescription:
-	db   "Eliminates all"
-	next "stat changes.@"
+	db   "Clears user and"
+	next "foe stat changes.@"
 
 ReflectDescription:
 	db   "Doubles DEFENSE"
 	next "for 5 turns.@"
 
 FocusEnergyDescription:
-	db   "Raises the user's"
-	next "critical ratio.@"
+	db   "Ups crit rate,"
+	next "then offenses.@"
 
 BideDescription:
 	db   "Waits 2 turns and"
@@ -800,7 +800,7 @@ KinesisDescription:
 	next "user's SPCL.ATK.@"
 
 SoftboiledDescription:
-	db   "Restores HP by 1/2"
+	db   "Restores 1/2 of"
 	next "the user's max HP.@"
 
 HiJumpKickDescription:
@@ -809,7 +809,7 @@ HiJumpKickDescription:
 
 GlareDescription:
 	db   "Paralyzes the foe"
-	next "with a stare.@"
+	next "with a sharp gaze.@"
 
 DreamEaterDescription:
 	db   "Steals HP from a"
@@ -900,8 +900,8 @@ SilverWindDescription:
 	next "Hits flying foes.@"
 
 RockPolishDescription:
-	db   "Sharply increases"
-	next "the user's SPEED.@"
+	db   "Sharply raises the"
+	next "user's SPEED.@"
 
 TriAttackDescription:
 	db   "May burn, freeze,"
@@ -1088,12 +1088,12 @@ FalseSwipeDescription:
 	next "with at least 1HP.@"
 
 SwaggerDescription:
-	db   "Causes confusion"
-	next "and raises ATTACK.@"
+	db   "Foe's confused and"
+	next "their ATK soars.@"
 
 MilkDrinkDescription:
-	db   "Restores HP by 1/2"
-	next "the max HP.@"
+	db   "Restores 1/2 of"
+	next "the user's max HP.@"
 
 SparkDescription:
 	db   "A charge that may"
@@ -1112,8 +1112,8 @@ MeanLookDescription:
 	next "or switching.@"
 
 AttractDescription:
-	db   "Makes the opposite"
-	next "gender infatuated.@"
+	db   "Opposite gender is"
+	next "unlikely to move.@"
 
 SleepTalkDescription:
 	db   "Uses other moves"
@@ -1128,16 +1128,16 @@ ReturnDescription:
 	next "into power.@"
 
 PresentDescription:
-	db   "A bomb that may"
-	next "restore HP.@"
+	db   "Variable power, or"
+	next "may heal the foe.@"
 
 PoisonJabDescription:
 	db   "A stab that may"
 	next "poison the target.@"
 
 SafeguardDescription:
-	db   "Prevents all"
-	next "status problems.@"
+	db   "Blocks status pro-"
+	next "blems for 5 turns.@"
 
 NightTerrorDescription:
 	db   "Hits while asleep."
@@ -1157,7 +1157,7 @@ DynamicpunchDescription:
 
 MegahornDescription:
 	db   "A super-powerful"
-	next "horn attack.@"
+	next "horn charge.@"
 
 DragonbreathDescription:
 	db   "Breath that may"
@@ -1181,7 +1181,7 @@ RapidSpinDescription:
 
 SweetScentDescription:
 	db   "Reduces the foe's"
-	next "EVASION.@"
+	next "evasion.@"
 
 IronTailDescription:
 	db   "Hard tail attack."
@@ -1252,8 +1252,8 @@ ShadowBallDescription:
 	next "lower SPCL.DEF.@"
 
 FutureSightDescription:
-	db   "Attacks in the"
-	next "future.@"
+	db   "Attacks 2 turns in"
+	next "the future.@"
 
 RockSmashDescription:
 	db   "Hits and lowers"
