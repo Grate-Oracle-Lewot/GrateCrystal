@@ -148,4 +148,5 @@ SpecialsPointers::
 	add_special InitRoamingEntei
 	add_special InitRoamingSuicune
 	add_special Menu_BattleTowerSettings
+	add_special MoveDex
 	add_special FillPokedex
