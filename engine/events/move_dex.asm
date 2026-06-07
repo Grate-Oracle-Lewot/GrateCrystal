@@ -1,4 +1,4 @@
-MoveDex:
+MoveDex::
 	ld hl, Text_MoveDexIntro
 	call PrintText
 	call YesNoBox
