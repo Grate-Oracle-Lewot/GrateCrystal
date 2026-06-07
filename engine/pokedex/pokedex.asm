@@ -13,8 +13,6 @@
 	const DEXSTATE_UPDATE_SEARCH_RESULTS_SCR
 	const DEXSTATE_COLOR_OPTION
 	const DEXSTATE_UPDATE_COLOR_OPTION
-	const DEXSTATE_MOVE_DEX_OPTION
-	const DEXSTATE_UPDATE_MOVE_DEX_OPTION
 	const DEXSTATE_UNOWN_MODE
 	const DEXSTATE_UPDATE_UNOWN_MODE
 	const DEXSTATE_EXIT
@@ -206,8 +204,6 @@ Pokedex_RunJumptable:
 	dw Pokedex_UpdateSearchResultsScreen
 	dw Pokedex_InitColorOption
 	dw Pokedex_UpdateColorOption
-	dw Pokedex_InitMoveDexOption
-	dw Pokedex_UpdateMoveDexOption
 	dw Pokedex_InitUnownMode
 	dw Pokedex_UpdateUnownMode
 	dw Pokedex_Exit
@@ -1398,6 +1394,19 @@ endr
 	ld [hl], c
 	ret
 
+Pokedex_InitColorOption:
+	xor a
+	ldh [hBGMapMode], a
+	call ClearSprites
+	call Pokedex_DrawColorScreenBG
+	call Pokedex_InitArrowCursor
+	ld a, [wCurPokedexColor]
+	ld [wDexArrowCursorPosIndex], a
+	call WaitBGMap
+	ld a, SCGB_POKEDEX_SEARCH_OPTION
+	call Pokedex_GetSGBLayout
+	jp Pokedex_IncrementDexPointer
+
 Pokedex_NextOrPreviousDexEntry:
 	ld a, [wDexListingCursor]
 	ld [wBackupDexListingCursor], a
@@ -1874,7 +1883,7 @@ Pokedex_DrawColorScreenBG:
 	db "YELLOW ", $4f, -1
 
 .Purple
-	db "PURPLE ", $4f, -1	
+	db "PURPLE ", $4f, -1
 
 .Orange
 	db "ORANGE ", $4f, -1
@@ -1883,10 +1892,10 @@ Pokedex_DrawColorScreenBG:
 	db "GREEN  ", $4f, -1
 
 .Pink
-	db "PINK   ", $4f, -1	
+	db "PINK   ", $4f, -1
 
 .Cyan
-	db "CYAN   ", $4f, -1	
+	db "CYAN   ", $4f, -1
 
 .Lilac
 	db "LILAC  ", $4f, -1
@@ -1895,16 +1904,16 @@ Pokedex_DrawColorScreenBG:
 	db "LIME   ", $4f, -1
 
 .Brown
-	db "BROWN  ", $4f, -1	
+	db "BROWN  ", $4f, -1
 
 .Black
 	db "BLACK  ", $4f, -1
 
 .Gray
-	db "GRAY   ", $4f, -1	
+	db "GRAY   ", $4f, -1
 
 .White
-	db "WHITE  ", $4f, -1	
+	db "WHITE  ", $4f, -1
 
 Pokedex_UpdateColorOption:
 	ld de, .ArrowCursorData
@@ -2456,7 +2465,6 @@ Pokedex_OrderMonsByMode:
 	inc a
 	dec c
 	jr nz, .loopold
-	; fallthrough
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
@@ -2979,6 +2987,7 @@ Pokedex_PutScrollbarOAM:
 	jr c, .done
 	inc b
 	jr .loop
+
 .max
 	ld b, 121 ; max y - min y
 .done
@@ -3134,6 +3143,7 @@ Pokedex_BlackOutBG:
 	call ByteFill
 	pop af
 	ldh [rSVBK], a
+	; fallthrough
 
 Pokedex_ApplyPrintPals:
 	ld a, $ff
@@ -3143,6 +3153,7 @@ Pokedex_ApplyPrintPals:
 Pokedex_GetSGBLayout:
 	ld b, a
 	call GetSGBLayout
+	; fallthrough
 
 Pokedex_ApplyUsualPals:
 ; This applies the palettes used for most Pokédex screens.
@@ -3188,6 +3199,7 @@ Pokedex_LoadSelectedMonTiles:
 
 Pokedex_LoadCurrentFootprint:
 	call Pokedex_GetSelectedMon
+	; fallthrough
 
 Pokedex_LoadAnyFootprint:
 	ld a, [wTempSpecies]
@@ -3460,16 +3472,3 @@ Pokedex_ResetBGMapMode:
 	xor a
 	ldh [hBGMapMode], a
 	ret
-
-Pokedex_InitColorOption:
-	xor a
-	ldh [hBGMapMode], a
-	call ClearSprites
-	call Pokedex_DrawColorScreenBG
-	call Pokedex_InitArrowCursor
-	ld a, [wCurPokedexColor]
-	ld [wDexArrowCursorPosIndex], a
-	call WaitBGMap
-	ld a, SCGB_POKEDEX_SEARCH_OPTION
-	call Pokedex_GetSGBLayout
-	jp Pokedex_IncrementDexPointer
