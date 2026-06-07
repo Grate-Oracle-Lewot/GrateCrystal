@@ -716,8 +716,8 @@ LightScreenDescription:
 	next "for 5 turns.@"
 
 HazeDescription:
-	db   "Clears user and"
-	next "foe stat changes.@"
+	db   "Clears user's and"
+	next "foe's stat changes.@"
 
 ReflectDescription:
 	db   "Doubles DEFENSE"
@@ -1157,7 +1157,7 @@ DynamicpunchDescription:
 
 MegahornDescription:
 	db   "A super-powerful"
-	next "horn charge.@"
+	next "horn thrust.@"
 
 DragonbreathDescription:
 	db   "Breath that may"
