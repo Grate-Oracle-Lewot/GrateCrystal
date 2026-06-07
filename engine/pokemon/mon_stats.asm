@@ -123,7 +123,10 @@ PrintTempMonStats:
 	next "@"
 
 PrintTempMonDVs:
-	hlcoord 1, 9
+	hlcoord 7, 9
+	ld de, .DVGenesString
+	call PlaceString
+	hlcoord 1, 10
 	ld de, .DVstring
 	call PlaceString
 	; we're using wPokedexStatus because why not, nobody using it atm lol
@@ -145,7 +148,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 5, 10 ; 1, 5, 9, 13
+	hlcoord 5, 11
 	call PrintNum
 
 	; DEF DV
@@ -165,7 +168,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2
-	hlcoord 9, 10 ; 1, 5, 9, 13
+	hlcoord 9, 11
 	call PrintNum
 
 	; SPE DV
@@ -186,7 +189,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 13, 10 ; 1, 5, 9, 13
+	hlcoord 13, 11
 	call PrintNum
 
 	; SPC DV
@@ -206,7 +209,7 @@ PrintTempMonDVs:
 	push bc
 	ld de, wPokedexStatus
 	lb bc, 1, 2 ; bytes, digits
-	hlcoord 17, 10 ; 1, 4, 7, 10, 13 
+	hlcoord 17, 11
 	call PrintNum
 	; HP
 	; HP DV is determined by the last bit of each of these four DVs
@@ -224,9 +227,11 @@ PrintTempMonDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc,  1, 2 ; bytes, digits
-	hlcoord 1, 10 ; 1, 4, 7, 10, 13 
+	hlcoord 1, 11
 	jp PrintNum
 
+.DVGenesString:
+	db       "GENES@"     
 .DVstring:
 	db "HP ATK DEF SPE SPC@"
 	;   123456789ABCDEF123
