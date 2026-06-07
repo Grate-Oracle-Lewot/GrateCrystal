@@ -1110,6 +1110,8 @@ Pokedex_UpdateOptionScreen:
 	ret
 
 .MenuAction_MoveDex:
+	call LoadStandardFont
+	call LoadFontsExtra
 	farcall ViewMoveList
 	jp Pokedex
 
