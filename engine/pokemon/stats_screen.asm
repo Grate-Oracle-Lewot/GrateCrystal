@@ -656,7 +656,7 @@ LoadPinkPage:
 	db   "TYPE:@"
 
 .OK_str:
-	db "OK @"
+	db "OK@"
 
 .ExpPointStr:
 	db "EXP POINTS@"
