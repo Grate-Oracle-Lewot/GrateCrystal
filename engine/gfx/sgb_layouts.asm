@@ -27,6 +27,7 @@ SGBLayoutJumptable:
 	dw .SGB_BattleColors
 	dw .SGB_PokegearPals
 	dw .SGB_StatsScreenHPPals
+	dw .SGB_StatsScreenHiddenPal
 	dw .SGB_Pokedex
 	dw .SGB_Pokedex_EvoPage
 	dw .SGB_Pokedex_PicsPage
@@ -155,6 +156,7 @@ SGBLayoutJumptable:
 	ret
 
 .SGB_StatsScreenHPPals:
+.SGB_StatsScreenHiddenPal:
 	ld hl, PalPacket_Pal01
 	ld de, wSGBPals
 	ld bc, PALPACKET_LENGTH
@@ -195,6 +197,8 @@ SGBLayoutJumptable:
 	ret
 
 .SGB_Pokedex:
+.SGB_Pokedex_EvoPage:
+.SGB_Pokedex_PicsPage:
 	ld hl, PalPacket_Pal01
 	ld de, wSGBPals
 	ld bc, PALPACKET_LENGTH
@@ -219,8 +223,6 @@ SGBLayoutJumptable:
 	ld [wSGBPals + 12], a
 	ld hl, wSGBPals
 	ld de, BlkPacket_Pokedex_PC
-.SGB_Pokedex_EvoPage:
-.SGB_Pokedex_PicsPage:
 	ret
 
 .SGB_BillsPC:
