@@ -78,15 +78,15 @@ ChooseMonToLearnTMHM:
 	; fallthrough
 
 ChooseMonToLearnTMHM_NoRefresh:
-	farcall LoadPartyMenuGFX
-	farcall InitPartyMenuWithCancel
-	farcall InitPartyMenuGFX
+	farcall LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX
 	ld a, PARTYMENUACTION_TEACH_TMHM
 	ld [wPartyMenuActionText], a
 .loopback
 	farcall WritePartyMenuTilemap
 	farcall PrintPartyMenuText
 	call WaitBGMap
+	ld b, SCGB_PARTY_MENU
+	call GetSGBLayout
 	call SetPalettes
 	call DelayFrame
 	farcall PartyMenuSelect
