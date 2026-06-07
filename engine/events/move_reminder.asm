@@ -498,7 +498,7 @@ ChooseMoveToLearn:
 ; This prints a section of the bottom-left part of the moves list border box that would otherwise be messed up when the Cancel option is highlighted.
 .cancel_border_fix
 	hlcoord 0, 10
-	ld de, MoveReminderBottomString
+	ld de, MoveBottomString
 	jp PlaceString
 
 ; This begins the printing of all of the move's details, including the border around the description.
@@ -528,10 +528,10 @@ ChooseMoveToLearn:
 
 ; Print move stat strings
 	hlcoord 0, 10
-	ld de, MoveTypeTopString
+	ld de, MoveTopString
 	call PlaceString
 	hlcoord 0, 11
-	ld de, MoveTypeString
+	ld de, MoveSidesString
 	call PlaceString
 	hlcoord 1, 11
 	ld de, MoveAttackString
@@ -676,9 +676,9 @@ ChooseMoveToLearn:
 	ld bc, 3
 	jp PlaceString
 
-MoveTypeTopString:
+MoveTopString:
 	db "┌────────┐@"
-MoveTypeString:
+MoveSidesString:
 	db "│        └@"
 MoveAttackString:
 	db "POW@"
@@ -688,7 +688,7 @@ MoveChanceString:
 	db " FX    <%>@"
 MoveNullValueString:
 	db "---@"
-MoveReminderBottomString:
+MoveBottomString:
 	db "└─────────@"
 
 Text_MoveReminderIntro:
