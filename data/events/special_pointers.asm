@@ -149,3 +149,4 @@ SpecialsPointers::
 	add_special InitRoamingSuicune
 	add_special Menu_BattleTowerSettings
 	add_special FillPokedex
+	add_special MoveDex
