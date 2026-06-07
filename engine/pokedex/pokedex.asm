@@ -11,10 +11,12 @@
 	const DEXSTATE_UPDATE_OPTION_SCR
 	const DEXSTATE_SEARCH_RESULTS_SCR
 	const DEXSTATE_UPDATE_SEARCH_RESULTS_SCR
-	const DEXSTATE_UNOWN_MODE
-	const DEXSTATE_UPDATE_UNOWN_MODE
 	const DEXSTATE_COLOR_OPTION
 	const DEXSTATE_UPDATE_COLOR_OPTION
+	const DEXSTATE_MOVE_DEX_OPTION
+	const DEXSTATE_UPDATE_MOVE_DEX_OPTION
+	const DEXSTATE_UNOWN_MODE
+	const DEXSTATE_UPDATE_UNOWN_MODE
 	const DEXSTATE_EXIT
 
 POKEDEX_SCX EQU 5
@@ -202,10 +204,12 @@ Pokedex_RunJumptable:
 	dw Pokedex_UpdateOptionScreen
 	dw Pokedex_InitSearchResultsScreen
 	dw Pokedex_UpdateSearchResultsScreen
-	dw Pokedex_InitUnownMode
-	dw Pokedex_UpdateUnownMode
 	dw Pokedex_InitColorOption
 	dw Pokedex_UpdateColorOption
+	dw Pokedex_InitMoveDexOption
+	dw Pokedex_UpdateMoveDexOption
+	dw Pokedex_InitUnownMode
+	dw Pokedex_UpdateUnownMode
 	dw Pokedex_Exit
 
 Pokedex_IncrementDexPointer:
@@ -1044,6 +1048,7 @@ Pokedex_UpdateOptionScreen:
 	dwcoord 2,  5 ; OLD
 	dwcoord 2,  6 ; ABC
 	dwcoord 2,  7 ; COLOR
+	dwcoord 2,  8 ; MOVE DEX
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 6
@@ -1052,7 +1057,8 @@ Pokedex_UpdateOptionScreen:
 	dwcoord 2,  5 ; OLD
 	dwcoord 2,  6 ; ABC
 	dwcoord 2,  7 ; COLOR
-	dwcoord 2,  8 ; UNOWN
+	dwcoord 2,  8 ; MOVE DEX
+	dwcoord 2,  9 ; UNOWN
 
 .MenuActionJumptable:
 	dw .MenuAction_NayDexInfoPage
@@ -1060,6 +1066,7 @@ Pokedex_UpdateOptionScreen:
 	dw .MenuAction_OldMode
 	dw .MenuAction_ABCMode
 	dw .MenuAction_ColorOption
+	dw .MenuAction_MoveDex
 	dw .MenuAction_UnownMode
 
 .MenuAction_NayDexInfoPage
@@ -1096,11 +1103,15 @@ Pokedex_UpdateOptionScreen:
 	ld [wJumptableIndex], a
 	ret
 
-.MenuAction_ColorOption
+.MenuAction_ColorOption:
 	call Pokedex_BlackOutBG
 	ld a, DEXSTATE_COLOR_OPTION
 	ld [wJumptableIndex], a
 	ret
+
+.MenuAction_MoveDex:
+	farcall ViewMoveList
+	jp Pokedex
 
 .MenuAction_UnownMode:
 	call Pokedex_BlackOutBG
@@ -1370,6 +1381,7 @@ Pokedex_UnownModeEraseCursor:
 Pokedex_UnownModePlaceCursor:
 	ld a, [wDexCurUnownIndex]
 	ld c, FIRST_UNOWN_CHAR + NUM_UNOWN ; diamond cursor
+	; fallthrough
 
 Pokedex_UnownModeUpdateCursorGfx:
 	ld e, a
@@ -1762,10 +1774,13 @@ Pokedex_DrawOptionScreenBG:
 	hlcoord 3, 7
 	ld de, .Color
 	call PlaceString
+	hlcoord 3, 8
+	ld de, .MoveDex
+	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
 	ret z
-	hlcoord 3, 8
+	hlcoord 3, 9
 	ld de, .UnownMode
 	jp PlaceString
 
@@ -1786,6 +1801,9 @@ Pokedex_DrawOptionScreenBG:
 	
 .Color:
 	db "#DEX COLOR@"
+
+.MoveDex:
+	db "MOVE DEX@"
 
 .UnownMode:
 	db "UNOWN DEX@"
@@ -1997,7 +2015,6 @@ Pokedex_UpdateColorOption:
 
 .MenuAction_White
 	ld b, DEXCOLOR_WHITE
-	; fallthrough
 
 .ChangeColor:
 	ld a, [wCurPokedexColor]
@@ -2185,6 +2202,8 @@ Pokedex_FillBackgroundColor2:
 
 Pokedex_PlaceFrontpicTopLeftCorner:
 	hlcoord 1, 1
+	; fallthrough
+
 Pokedex_PlaceFrontpicAtHL:
 	xor a
 	ld b, $7
@@ -2514,6 +2533,7 @@ Pokedex_DisplayModeDescription:
 	dw .OldMode
 	dw .ABCMode
 	dw .Color
+	dw .MoveDex
 	dw .UnownMode
 
 .NayDexInfo:	
@@ -2536,10 +2556,15 @@ Pokedex_DisplayModeDescription:
 		 "                  ", $37, $36, \
 		 "alphabetically.", -1
 
-.Color
+.Color:
 	db   "Change the color  ", $37, $36, \
 		 "                  ", $37, $36, \
 		 "of the DEX border.", -1
+
+.MoveDex:
+	db   "Check the stats of", $37, $36, \
+		 "                  ", $37, $36, \
+		 "every <PK><MN> move.   ", -1
 
 .UnownMode:
 	db   "UNOWN are listed  ", $37, $36, \
