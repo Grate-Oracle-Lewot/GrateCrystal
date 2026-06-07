@@ -504,6 +504,7 @@ INCLUDE "data/maps/map_names.asm"
 SECTION "mobile40", ROMX
 
 INCLUDE "mobile/mobile_40.asm"
+INCLUDE "engine/events/move_dex.asm"
 
 
 SECTION "bank41", ROMX
