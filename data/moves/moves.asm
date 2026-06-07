@@ -239,7 +239,7 @@ Moves:
 	move AVALANCHE,    EFFECT_AVALANCHE,          60, ICE,          PHYSICAL, 100 percent,     10,   0
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         90, FIGHTING,     SPECIAL,  100 percent,     10,   0
 	move BONE_RUSH,    EFFECT_MULTI_HIT,          30, GROUND,       PHYSICAL,  90 percent + 2, 10,   0
-	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       STATUS,   100 percent,      5,   0
+	move LOCK_ON,      EFFECT_LOCK_ON,             0, STEEL,        STATUS,   100 percent,      5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            95, DRAGON,       PHYSICAL,  95 percent + 2, 10,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         STATUS,   100 percent,      5,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,        SPECIAL,  100 percent,      5,   0
