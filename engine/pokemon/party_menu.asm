@@ -648,6 +648,11 @@ GetPartyMenuQualityIndexes:
 
 INCLUDE "data/party_menu_qualities.asm"
 
+LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX:
+	call LoadPartyMenuGFX
+	call InitPartyMenuWithCancel
+	; fallthrough
+
 InitPartyMenuGFX:
 	ld hl, wPartyCount
 	ld a, [hli]
