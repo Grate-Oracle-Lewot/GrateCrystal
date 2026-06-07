@@ -1,6 +1,9 @@
 MovesDexOrder:
 	table_width 1, MovesDexOrder
 
+; size byte
+	db NUM_ATTACKS
+
 ; Normal, physical
 	db POUND
 	db TACKLE
@@ -434,6 +437,5 @@ MovesDexOrder:
 
 	db TRANSFORM
 
-; Struggle, end list
-	db STRUGGLE ; -1
-	assert_table_length NUM_ATTACKS
+	db -1 ; end
+	assert_table_length NUM_ATTACKS + 1
