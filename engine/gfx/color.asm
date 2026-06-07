@@ -217,7 +217,6 @@ LoadStatsScreenPals:
 	ld b, a
 	ld a, [hl]
 	add b
-	and a
 	jr z, .done
 
 	; check if $7F $FF is loaded into pal 6 + 2, means we are "OK" and need black in slot 4 of pal 6
