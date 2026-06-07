@@ -1,18 +1,4 @@
-MoveDex::
-	ld hl, Text_MoveDexIntro
-	call PrintText
-	call YesNoBox
-	jr c, .cancel
-
-	ld hl, MovesDexOrder
-	call ViewMoveList
-	call ReturnToMapWithSpeechTextbox
-
-.cancel
-	ld hl, Text_MoveDexOutro
-	jp PrintText
-
-ViewMoveList:
+ViewMoveList::
 	farcall BlankScreen
 	ld hl, .MenuHeader
 	call CopyMenuHeader
@@ -294,17 +280,5 @@ MoveDexNullValueString:
 	db "---@"
 MoveDexBottomString:
 	db "└─────────@"
-
-Text_MoveDexIntro:
-  text "I've memorized the"
-  line "stats of every"
-
-  para "#MON move."
-  line "Wanna see?"
-  done
-
-Text_MoveDexOutro:
-  text "Come back anytime!"
-  done
 
 INCLUDE "data/moves/dex_order.asm"
