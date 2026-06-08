@@ -356,7 +356,7 @@ _CGB_StatsScreenHPPals:
 	call LoadMonBaseTypePal
 	hlcoord 15, 13, wAttrmap
 	lb bc, 1, 4 ; 1 Tile in HEIGHT, 4 Tiles in WIDTH 
-	ld a, $7 ; mon base type light/dark pals
+	ld a, $5 ; Hidden Power type tile
 	call FillBoxCGB
 
 .done
