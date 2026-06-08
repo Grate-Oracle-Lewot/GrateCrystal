@@ -179,7 +179,6 @@ EggStatsJoypad:
 
 StatsScreen_LoadPage:
 	call StatsScreen_LoadGFX
-	call HPPalOptimization
 	ld hl, wStatsScreenFlags
 	res 4, [hl]
 	ld a, [wJumptableIndex]
