@@ -193,6 +193,7 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
 	dec hl
+	push hl
 	ld a, [hli]
 	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
 	; so check $7F first since it will be the first one read
@@ -200,6 +201,7 @@ LoadStatsScreenPals:
 	ld a, [hl]
 	cp $7e ; first half of pink page color
 	jr nz, .checkorange
+	pop hl
 
 	; if we're here, we're on the pink page
 	; set slot 4 (the "text" slot) of Pal 7 to WHITE (FFFF or 7FFF)
@@ -246,8 +248,7 @@ LoadStatsScreenPals:
 	ret
 
 .checkorange
-	ld hl, StatsScreenPals
-	dec hl
+	pop hl
 	ld a, [hli]
 	cp $1E
 	jr nz, .notpinkorange
