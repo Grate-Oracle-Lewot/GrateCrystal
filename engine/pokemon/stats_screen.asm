@@ -179,6 +179,7 @@ EggStatsJoypad:
 
 StatsScreen_LoadPage:
 	call StatsScreen_LoadGFX
+	call HPPalOptimization
 	ld hl, wStatsScreenFlags
 	res 4, [hl]
 	ld a, [wJumptableIndex]
@@ -354,7 +355,7 @@ StatsScreen_JoypadAction:
 	jp StatsScreen_SetJumptableIndex
 
 StatsScreen_InitUpperHalf:
-	call PlaceHPBar
+	call .PlaceHPBar
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [wBaseDexNo]
@@ -388,6 +389,19 @@ StatsScreen_InitUpperHalf:
 	call StatsScreen_PlaceShinyIcon
 	jp StatsScreen_PlaceFloatIcon
 
+.PlaceHPBar:
+	ld hl, wTempMonHP
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wTempMonMaxHP
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	farcall ComputeHPBarPixels
+	call HPPalOptimization
+	jp DelayFrame
+
 .PlaceGenderChar:
 	push hl
 	farcall GetGender
@@ -405,22 +419,6 @@ StatsScreen_InitUpperHalf:
 	dw wOTPartyMonNicknames
 	dw sBoxMonNicknames
 	dw wBufferMonNickname
-
-PlaceHPBar:
-	ld hl, wTempMonHP
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wTempMonMaxHP
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	farcall ComputeHPBarPixels
-	ld hl, wCurHPPal
-	call SetHPPal
-	ld b, SCGB_STATS_SCREEN_HP_PALS
-	call GetSGBLayout
-	jp DelayFrame
 
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
@@ -506,7 +504,6 @@ StatsScreen_LoadGFX:
 	assert_table_length NUM_STAT_PAGES
 
 LoadPinkPage:
-	call PlaceHPBar
 	hlcoord 0, 9
 	ld b, $0
 	predef DrawPlayerHP
@@ -878,9 +875,6 @@ LoadBluePage:
 	dw wBufferMonOT
 
 LoadOrangePage:
-	ld b, SCGB_STATS_SCREEN_HIDDEN_PAL
-	call GetSGBLayout
-
 	ld de, HiddenPowerTypeString
 	hlcoord 1, 13
 	call PlaceString
@@ -1109,10 +1103,7 @@ StatsScreen_LoadTextboxSpaceGFX:
 EggStatsScreen:
 	xor a
 	ldh [hBGMapMode], a
-	ld hl, wCurHPPal
-	call SetHPPal
-	ld b, SCGB_STATS_SCREEN_HP_PALS
-	call GetSGBLayout
+	call HPPalOptimization
 	call StatsScreen_PlaceHorizontalDivider
 	ld de, EggString
 	hlcoord 8, 1
@@ -1309,3 +1300,9 @@ CheckFaintedFrzSlp:
 .fainted_frz_slp
 	scf
 	ret
+
+HPPalOptimization:
+	ld hl, wCurHPPal
+	call SetHPPal
+	ld b, SCGB_STATS_SCREEN_HP_PALS
+	jp GetSGBLayout
