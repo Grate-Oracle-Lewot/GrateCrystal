@@ -136,7 +136,7 @@ if DEF(_HM_ITEMS_START)
 	special BattleTowerAction
 	ifequal POTION, Script_YourPackIsStuffedFull
 	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
-	giveitem ITEM_FROM_MEM, 5
+	giveitem ITEM_FROM_MEM, BATTLETOWER_REWARD_QUANTITY
 	writetext Text_PlayerGotFive
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
@@ -164,7 +164,7 @@ else
 	special BattleTowerAction
 	ifequal POTION, Script_YourPackIsStuffedFull
 	getitemname STRING_BUFFER_4, USE_SCRIPT_VAR
-	giveitem ITEM_FROM_MEM, 5
+	giveitem ITEM_FROM_MEM, BATTLETOWER_REWARD_QUANTITY
 	writetext Text_PlayerGotFive
 	setval BATTLETOWERACTION_1D
 	special BattleTowerAction
