@@ -338,6 +338,8 @@ _CGB_StatsScreenHPPals:
 	ret
 
 _CGB_StatsScreenHiddenPal:
+	call _CGB_StatsScreenHPPals
+
 	ld hl, wTempMonDVs
 	ld a, [hl]
 	and %0011
