@@ -62,3 +62,9 @@ MOBILE_EVENT_OBJECT_GS_BALL EQU $b
 	const BATTLETOWER_CHALLENGE_IN_PROGRESS
 	const BATTLETOWER_WON_CHALLENGE
 	const BATTLETOWER_RECEIVED_REWARD
+
+; BATTLETOWERACTION_GIVEREWARD values (see BattleTower_GiveReward in engine/events/battle_tower/battle_tower.asm)
+BATTLETOWER_REWARD_QUANTITY EQU 5
+BATTLETOWER_MIN_REWARD EQU FIBER   ; the lowest possible item to give as a reward
+BATTLETOWER_MAX_REWARD EQU CALCIUM ; the highest possible item to give as a reward
+assert BATTLETOWER_MIN_REWARD < BATTLETOWER_MAX_REWARD
