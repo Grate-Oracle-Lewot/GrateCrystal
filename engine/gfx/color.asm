@@ -192,74 +192,15 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	push hl
-	ld a, [hli]
-	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
-	; so check $7F first since it will be the first one read
-	jr nz, .checkorange
-	ld a, [hl]
-	cp $7e ; first half of pink page color
-	jr nz, .checkorange
-	pop hl
-	inc hl
-
-	; if we're here, we're on the pink page
-	; set slot 4 (the "text" slot) of Pal 7 to WHITE (FFFF or 7FFF)
-	; pal 6 too, status condition, if slot 2 of pal 6 isn't white
-	; if it is white, means we are "OK", and don't change slot 4 of pal 6
-	ld a, $FF ; loading white into slot 4 of pal 6 and 7, checking pal 6 after
-	ld [wBGPals1 palette 7 + 6], a ; slot 4 of Palette 7, byte 1
-	ld [wBGPals1 palette 7 + 7], a ; slot 4 of palette 7, byte 2
+	ld a, $FF ; loading white into slot 4 of pal 6
 	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
 	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
 
-	; check for faint status
-	ld hl, wTempMonHP
-	ld a, [hli]
-	ld b, a
-	ld a, [hl]
-	add b
-	jr z, .done
-
-	; check if $7F $FF is loaded into pal 6 + 2, means we are "OK" and need black in slot 4 of pal 6
-	ld a, [wBGPals1 palette 6 + 2] ; pal 6 slot 2 byte 1
-	cp $FF ; white color by default will be $7FFF but $ff will be read first
-	jr nz, .done
-	ld a, [wBGPals1 palette 6 + 3] ; pal 6 slot 2 byte 1
-	cp $7F
-	jr nz, .done
-	xor a ; loading black into slot 4 of pal 6
-	ld [wBGPals1 palette 6 + 6], a
-	ld [wBGPals1 palette 6 + 7], a
-	jr .done
-
-.notpinkorange
-	xor a ; loading black into slot 4 of pal 6 and 7
-	ld [wBGPals1 palette 6 + 6], a
-	ld [wBGPals1 palette 6 + 7], a
-.doneorange
-	ld [wBGPals1 palette 7 + 6], a
-	ld [wBGPals1 palette 7 + 7], a
-.done
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
 	ld a, $1
 	ret
-
-.checkorange
-	pop hl
-	ld a, [hli]
-	cp $1E
-	jr nz, .notpinkorange
-	ld a, [hl]
-	cp $43
-	jr nz, .notpinkorange
-
-	ld a, $FF ; loading white into slot 4 of pal 5, Hidden Power type tile
-	ld [wBGPals1 palette 5 + 6], a ; slot 4 of Palette 5, byte 1
-	ld [wBGPals1 palette 5 + 7], a ; slot 4 of palette 5, byte 2
-	jr .doneorange
 
 LoadMailPalettes:
 	ld l, e
