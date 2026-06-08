@@ -186,13 +186,12 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 2], a ; into slot 1 byte 1 of pal 2
 	ld [wBGPals1 palette 6], a ; into slot 1 byte 1 of pal 6
 	ld [wBGPals1 palette 7], a ; into slot 1 byte 1 of pal 7
-	ld a, [hl]
+	ld a, [hld]
 	ld [wBGPals1 palette 0 + 1], a ; into slot 1 byte 2 of pal 0
 	ld [wBGPals1 palette 2 + 1], a ; into slot 1 byte 2 of pal 2
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	dec hl
 	push hl
 	ld a, [hli]
 	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
