@@ -36,7 +36,6 @@ CGBLayoutJumptable:
 	dw _CGB_BattleColors
 	dw _CGB_PokegearPals
 	dw _CGB_StatsScreenHPPals
-	dw _CGB_StatsScreenHiddenPal
 	dw _CGB_Pokedex
 	dw _CGB_Pokedex_EvoPage
 	dw _CGB_Pokedex_PicsPage
@@ -325,21 +324,20 @@ _CGB_StatsScreenHPPals:
 	ld a, $6 ; mon base type light/dark pals
 	call FillBoxCGB
 
+	ld a, [wStatsScreenFlags]
+	maskbits NUM_STAT_PAGES
+	cp ORANGE_PAGE
+	jr z, .orange
+
 ; mon type(s) 
 	hlcoord 5, 14, wAttrmap
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
 	call FillBoxCGB
+	jr .done
 
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_StatsScreenHiddenPal:
-	call _CGB_StatsScreenHPPals
-
+.orange
+; Hidden Power type
 	ld hl, wTempMonDVs
 	ld a, [hl]
 	and %0011
@@ -366,7 +364,14 @@ _CGB_StatsScreenHiddenPal:
 	hlcoord 15, 13, wAttrmap
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
-	jp FillBoxCGB
+	call FillBoxCGB
+
+.done
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
 
 StatsScreenPagePals:
 INCLUDE "gfx/stats/pages.pal"
