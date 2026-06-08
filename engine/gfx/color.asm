@@ -192,10 +192,6 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	ld a, $FF ; loading white into slot 4 of pal 6
-	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
-	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
-
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
