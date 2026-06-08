@@ -5886,11 +5886,7 @@ BattleCommand_Paralyze:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
-	call DelayFrame
-	call UpdateBattleHuds
+	call PaletteOptimization
 	call PrintParalyze
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
@@ -6950,7 +6946,7 @@ ContactStatic:
 	ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
 	call BattleCommand_SwitchTurn
-	call RefreshBattleHuds
+	call PaletteOptimization
 	ld hl, StaticParalysisText
 	call StdBattleTextbox
 
@@ -7108,14 +7104,17 @@ PlayOpponentBattleAnim_RefreshBattlePalettes:
 	; fallthrough
 
 RefreshBattlePalettes:
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
-	call DelayFrame	
-	call UpdateBattleHuds
+	call PaletteOptimization
 	ld c, 3
 	call DelayFrames
 	jp WaitBGMap
+
+PaletteOptimization:
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetPalettes
+	call DelayFrame
+	jp UpdateBattleHuds
 
 EffectCommands_50_50:
 	call BattleRandom
