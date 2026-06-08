@@ -186,16 +186,21 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 2], a ; into slot 1 byte 1 of pal 2
 	ld [wBGPals1 palette 6], a ; into slot 1 byte 1 of pal 6
 	ld [wBGPals1 palette 7], a ; into slot 1 byte 1 of pal 7
-	ld a, [hl]
+	ld a, [hld]
 	ld [wBGPals1 palette 0 + 1], a ; into slot 1 byte 2 of pal 0
 	ld [wBGPals1 palette 2 + 1], a ; into slot 1 byte 2 of pal 2
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	ld a, [wStatsScreenFlags]
-	maskbits NUM_STAT_PAGES
-	cp PINK_PAGE
+	push hl
+	ld a, [hli]
+	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
+	; so check $7F first since it will be the first one read
 	jr nz, .checkorange
+	ld a, [hl]
+	cp $7e ; first half of pink page color
+	jr nz, .checkorange
+	pop hl
 
 	; if we're here, we're on the pink page
 	; set slot 4 (the "text" slot) of Pal 7 to WHITE (FFFF or 7FFF)
@@ -242,7 +247,12 @@ LoadStatsScreenPals:
 	ret
 
 .checkorange
-	cp ORANGE_PAGE
+	pop hl
+	ld a, [hli]
+	cp $1E
+	jr nz, .notpinkorange
+	ld a, [hl]
+	cp $43
 	jr nz, .notpinkorange
 
 	ld a, $FF ; loading white into slot 4 of pal 7
