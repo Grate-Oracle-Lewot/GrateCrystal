@@ -338,16 +338,6 @@ _CGB_StatsScreenHPPals:
 	ret
 
 _CGB_StatsScreenHiddenPal:
-	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette, palette 1
-	ld hl, StatsScreenPagePals
-	ld de, wBGPals1 palette 3 ; palettes 3 & 4
-	ld bc, 2 palettes ; pink, green, blue, and orange page palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-
 	ld hl, wTempMonDVs
 	ld a, [hl]
 	and %0011
@@ -371,33 +361,10 @@ _CGB_StatsScreenHiddenPal:
 	call GetMonTypeIndex
 	ld de, wBGPals1 palette 7 + 2 ; slot 2 of pal 7, byte 1
 	call LoadMonBaseTypePal
-	call WipeAttrmap
-
-	hlcoord 0, 0, wAttrmap
-	lb bc, 8, SCREEN_WIDTH
-	ld a, $1 ; mon palette
-	call FillBoxCGB
-
-	hlcoord 11, 5, wAttrmap
-	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
-	ld a, $3 ; pink & green page palette
-	call FillBoxCGB
-
-	hlcoord 15, 5, wAttrmap
-	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH
-	ld a, $4 ; blue & orange box palette
-	call FillBoxCGB
-
 	hlcoord 15, 13, wAttrmap
 	lb bc, 2, 4 ; 2 Tiles in HEIGHT, 4 Tiles in WIDTH 
 	ld a, $7 ; mon base type light/dark pals
-	call FillBoxCGB
-
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FillBoxCGB
 
 StatsScreenPagePals:
 INCLUDE "gfx/stats/pages.pal"
