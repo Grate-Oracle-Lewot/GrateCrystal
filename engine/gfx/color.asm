@@ -1306,12 +1306,6 @@ InitPartyMenuStatusPals:
 	ldh [rSVBK], a
 	ret
 
-LoadStatsScreenStatusIconPalette:
-	ld de, wTempMonStatus
-	predef GetStatusConditionIndex
-	; index is in 'd'
-	jr LoadPlayerStatusIconPalette.phase2 ; do not load the white pal in slot 4 of pal 6
-
 LoadPlayerBattleCGBLayoutStatusIconPalette:
 	ld bc, 0
 	ld a, [wPlayerSubStatus5]
@@ -1347,14 +1341,27 @@ LoadPlayerStatusIconPalette:
 	ld [hl], a
 	pop af
 	ldh [rSVBK], a
-	; done loading white color directly into slot 4 of pal 6
-.phase2 
+
 	ld hl, StatusIconPals
 	ld c, d
 	ld b, 0
 	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
 	add hl, bc
 	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	jp FarCopyColorWRAM
+
+LoadStatsScreenStatusIconPalette:
+	ld de, wTempMonStatus
+	predef GetStatusConditionIndex
+	; index is in 'd'
+
+	ld hl, StatusIconPals
+	ld c, d
+	ld b, 0
+	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
+	add hl, bc
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
 	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
 	jp FarCopyColorWRAM
 
