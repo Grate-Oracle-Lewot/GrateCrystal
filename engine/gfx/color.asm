@@ -192,15 +192,13 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	push hl
 	ld a, [hli]
 	cp $7f ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
 	; so check $7F first since it will be the first one read
-	jr nz, .checkorange
+	jr nz, .notpink
 	ld a, [hl]
 	cp $7e ; first half of pink page color
-	jr nz, .checkorange
-	pop hl
+	jr nz, .notpink
 
 	; if we're here, we're on the pink page
 	; set slot 4 (the "text" slot) of Pal 7 to WHITE (FFFF or 7FFF)
@@ -227,38 +225,26 @@ LoadStatsScreenPals:
 	ld a, [wBGPals1 palette 6 + 3] ; pal 6 slot 2 byte 1
 	cp $7F
 	jr nz, .done
-.doneorange
 	xor a ; loading black into slot 4 of pal 6
 	ld [wBGPals1 palette 6 + 6], a
 	ld [wBGPals1 palette 6 + 7], a
 	jr .done
 
-.notpinkorange
+.notpink
 	xor a ; loading black into slot 4 of pal 6 and 7
 	ld [wBGPals1 palette 6 + 6], a
 	ld [wBGPals1 palette 6 + 7], a
 	ld [wBGPals1 palette 7 + 6], a
 	ld [wBGPals1 palette 7 + 7], a
 .done
+	ld a, $FF ; loading white into slot 4 of pal 5, Hidden Power type tile
+	ld [wBGPals1 palette 5 + 6], a ; slot 4 of Palette 5, byte 1
+	ld [wBGPals1 palette 5 + 7], a ; slot 4 of palette 5, byte 2
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
 	ld a, $1
 	ret
-
-.checkorange
-	pop hl
-	ld a, [hli]
-	cp $1E
-	jr nz, .notpinkorange
-	ld a, [hl]
-	cp $43
-	jr nz, .notpinkorange
-
-	ld a, $FF ; loading white into slot 4 of pal 7
-	ld [wBGPals1 palette 7 + 6], a ; slot 4 of Palette 7, byte 1
-	ld [wBGPals1 palette 7 + 7], a ; slot 4 of palette 7, byte 2
-	jr .doneorange
 
 LoadMailPalettes:
 	ld l, e
