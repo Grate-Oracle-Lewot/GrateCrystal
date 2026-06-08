@@ -27,7 +27,6 @@ SGBLayoutJumptable:
 	dw .SGB_BattleColors
 	dw .SGB_PokegearPals
 	dw .SGB_StatsScreenHPPals
-	dw .SGB_StatsScreenHiddenPal
 	dw .SGB_Pokedex
 	dw .SGB_Pokedex_EvoPage
 	dw .SGB_Pokedex_PicsPage
@@ -156,7 +155,6 @@ SGBLayoutJumptable:
 	ret
 
 .SGB_StatsScreenHPPals:
-.SGB_StatsScreenHiddenPal:
 	ld hl, PalPacket_Pal01
 	ld de, wSGBPals
 	ld bc, PALPACKET_LENGTH
