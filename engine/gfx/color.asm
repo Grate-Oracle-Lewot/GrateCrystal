@@ -246,11 +246,13 @@ LoadStatsScreenPals:
 	ret
 
 .checkorange
-	cp $43
-	jr nz, .notpinkorange
+	ld hl, StatsScreenPals
 	dec hl
+	ld a, [hli]
+	cp $1E
+	jr nz, .notpinkorange
 	ld a, [hl]
-	cp $1e
+	cp $43
 	jr nz, .notpinkorange
 
 	ld a, $FF ; loading white into slot 4 of pal 7
