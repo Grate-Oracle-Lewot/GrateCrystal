@@ -1356,6 +1356,18 @@ LoadStatsScreenStatusIconPalette:
 	predef GetStatusConditionIndex
 	; index is in 'd'
 
+	; load single black color in slot 2 of palette 6
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	xor a
+	ld [hli], a
+	ld [hl], a
+	pop af
+	ldh [rSVBK], a
+
 	ld hl, StatusIconPals
 	ld c, d
 	ld b, 0
