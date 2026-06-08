@@ -537,13 +537,13 @@ LoadPinkPage:
 	jr z, .StatusOK
 
 	; status index in a
-	ld hl, StatusIconGFX
+	ld hl, EnemyStatusIconGFX
 	ld bc, 2 * LEN_2BPP_TILE
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $50
-	lb bc, BANK(StatusIconGFX), 2
+	lb bc, BANK(EnemyStatusIconGFX), 2
 	call Request2bpp
 
 	hlcoord 7, 12
