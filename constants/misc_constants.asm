@@ -47,13 +47,3 @@ MAX_DAY_CARE_EXP EQU $500000
 
 ; hall of fame
 HOF_MASTER_COUNT EQU 100
-
-; stats screen pages
-	const_def
-	const PINK_PAGE   ; 0
-	const GREEN_PAGE  ; 1
-	const BLUE_PAGE   ; 2
-	const ORANGE_PAGE ; 3
-NUM_STAT_PAGES EQU const_value
-
-STAT_PAGE_MASK EQU %00000011
