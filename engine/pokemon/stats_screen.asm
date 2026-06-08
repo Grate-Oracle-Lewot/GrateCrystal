@@ -880,7 +880,6 @@ LoadBluePage:
 LoadOrangePage:
 	ld b, SCGB_STATS_SCREEN_HIDDEN_PAL
 	call GetSGBLayout
-	call DelayFrame
 
 	ld de, HiddenPowerTypeString
 	hlcoord 1, 13
