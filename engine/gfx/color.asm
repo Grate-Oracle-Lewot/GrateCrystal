@@ -194,21 +194,6 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
-	ld a, [hli]
-	cp $7F ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
-	; so check $7F first since it will be the first one read
-	jr nz, .notpink
-	cp $7E ; first half of pink page color
-	jr nz, .notpink
-	ld a, $FF ; loading white into slot 4 of pal 6
-	jr .done
-
-.notpink
-	xor a
-.done
-	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
-	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
-
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
@@ -1259,6 +1244,32 @@ INCLUDE "gfx/slots/slots.pal"
 
 INCLUDE "gfx/types_cats_status_pals.asm"
 
+LoadStatsScreenStatusIconPalette:
+	ld de, wTempMonStatus
+	predef GetStatusConditionIndex
+	; index is in 'd'
+
+	; load single white color in slot 2 of palette 6
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	ld a, $FF
+	ld [hli], a
+	ld [hl], a
+	pop af
+	ldh [rSVBK], a
+
+	ld hl, StatusIconPals
+	ld c, d
+	ld b, 0
+	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
+	add hl, bc
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
+	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	jp FarCopyColorWRAM
+
 InitPartyMenuStatusPals:
 	ld hl, StatusIconPals
 	ld c, $1 ; PSN Index
@@ -1366,30 +1377,38 @@ LoadPlayerStatusIconPalette:
 	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
 	jp FarCopyColorWRAM
 
-LoadStatsScreenStatusIconPalette:
-	ld de, wTempMonStatus
+LoadEnemyBattleCGBLayoutStatusIconPalette:
+	ld bc, 0	
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jr z, .check_status_nottoxic
+	ld c, 7
+.check_status_nottoxic
+	ld a, 7
+	cp c ; checking if we are Toxic'd
+	jr z, .enemy_gotstatus ; yes, we are toxic
+	ld de, wEnemyMonStatus
 	predef GetStatusConditionIndex
-	; index is in 'd'
+	ld a, d
+	and a
+	ret z ; .no_status
+	cp $6 ; faint
+	ret z
+.enemy_gotstatus
+	ld d, a
+	; fallthrough
 
-	; load single black color in slot 3 of palette 6
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld hl, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
-	xor a
-	ld [hli], a
-	ld [hl], a
-	pop af
-	ldh [rSVBK], a
-
-	ld hl, StatusIconPals
+LoadEnemyStatusIconPalette:
+	ld a, [wEnemySubStatus2]
+	ld de, wEnemyMonStatus
+	farcall GetStatusConditionIndex ; status cond. index returned in 'd'
+	ld hl, StatusIconPals ; from gfx\types_cats_status_pals.asm
 	ld c, d
 	ld b, 0
-	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
+	add hl, bc ; add the index twice because file is list of colors 2 bytes each
 	add hl, bc
-	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
-	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of Palette 6
+	ld bc, 2 ; two bytes, 1 color
 	jp FarCopyColorWRAM
 
 LoadBattleCategoryAndTypePals:
@@ -1448,38 +1467,4 @@ LoadCategoryAndTypePals:
 	inc de
 	inc de ; incs 4 bytes, skips 2 slots of a Palette, now at Slot 4
 	ld bc, 2 ; 2 bytes, 1 color, the type color in slot 4
-	jp FarCopyColorWRAM
-
-LoadEnemyBattleCGBLayoutStatusIconPalette:
-	ld bc, 0	
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
-	jr z, .check_status_nottoxic
-	ld c, 7
-.check_status_nottoxic
-	ld a, 7
-	cp c ; checking if we are Toxic'd
-	jr z, .enemy_gotstatus ; yes, we are toxic
-	ld de, wEnemyMonStatus
-	predef GetStatusConditionIndex
-	ld a, d
-	and a
-	ret z ; .no_status
-	cp $6 ; faint
-	ret z
-.enemy_gotstatus
-	ld d, a
-	; fallthrough
-
-LoadEnemyStatusIconPalette:
-	ld a, [wEnemySubStatus2]
-	ld de, wEnemyMonStatus
-	farcall GetStatusConditionIndex ; status cond. index returned in 'd'
-	ld hl, StatusIconPals ; from gfx\types_cats_status_pals.asm
-	ld c, d
-	ld b, 0
-	add hl, bc ; add the index twice because file is list of colors 2 bytes each
-	add hl, bc
-	ld de, wBGPals1 palette 6 + 4 ; slot 3 of Palette 6
-	ld bc, 2 ; two bytes, 1 color
 	jp FarCopyColorWRAM
