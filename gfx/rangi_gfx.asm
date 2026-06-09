@@ -10,6 +10,9 @@ INCBIN "gfx/battle/status.2bpp"
 EnemyStatusIconGFX::
 INCBIN "gfx/battle/status_enemy.2bpp"
 
+StatsScreenStatusGFX::
+INCBIN "gfx/stats/status_screen.2bpp"
+
 TypeLightIconGFX::
 INCBIN "gfx/stats/types_light.2bpp"
 
