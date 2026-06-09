@@ -130,7 +130,7 @@ RefreshBattleHuds::
 	jp WaitBGMap
 
 UpdateBattleHuds::
-	farcall UpdateBattleHUDs
+	farcall _UpdateBattleHuds
 	ret
 
 INCLUDE "home/battle_vars.asm"
