@@ -1244,32 +1244,6 @@ INCLUDE "gfx/slots/slots.pal"
 
 INCLUDE "gfx/types_cats_status_pals.asm"
 
-LoadStatsScreenStatusIconPalette:
-	ld de, wTempMonStatus
-	predef GetStatusConditionIndex
-	; index is in 'd'
-
-	; load single white color in slot 2 of palette 6
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld hl, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
-	ld a, $FF
-	ld [hli], a
-	ld [hl], a
-	pop af
-	ldh [rSVBK], a
-
-	ld hl, StatusIconPals
-	ld c, d
-	ld b, 0
-	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
-	add hl, bc
-	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
-	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
-	jp FarCopyColorWRAM
-
 InitPartyMenuStatusPals:
 	ld hl, StatusIconPals
 	ld c, $1 ; PSN Index
@@ -1331,6 +1305,32 @@ InitPartyMenuStatusPals:
 	pop af
 	ldh [rSVBK], a
 	ret
+
+LoadStatsScreenStatusIconPalette:
+	ld de, wTempMonStatus
+	predef GetStatusConditionIndex
+	; index is in 'd'
+
+	; load single white color in slot 2 of palette 6
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	ld a, $FF
+	ld [hli], a
+	ld [hl], a
+	pop af
+	ldh [rSVBK], a
+
+	ld hl, StatusIconPals
+	ld c, d
+	ld b, 0
+	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
+	add hl, bc
+	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
+	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
+	jp FarCopyColorWRAM
 
 LoadPlayerBattleCGBLayoutStatusIconPalette:
 	ld bc, 0
