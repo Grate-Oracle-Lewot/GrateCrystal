@@ -1371,12 +1371,12 @@ LoadStatsScreenStatusIconPalette:
 	predef GetStatusConditionIndex
 	; index is in 'd'
 
-	; load single black color in slot 2 of palette 6
+	; load single black color in slot 3 of palette 6
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
-	ld hl, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
+	ld hl, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
 	xor a
 	ld [hli], a
 	ld [hl], a
@@ -1388,7 +1388,7 @@ LoadStatsScreenStatusIconPalette:
 	ld b, 0
 	add hl, bc ; pointers are 2 bytes long, so double the index to point at the right color
 	add hl, bc
-	ld de, wBGPals1 palette 6 + 4 ; slot 3 of pal 6
+	ld de, wBGPals1 palette 6 + 2 ; slot 2 of pal 6
 	ld bc, 2 ; number of bytes of the color, 2 bytes per slot
 	jp FarCopyColorWRAM
 
