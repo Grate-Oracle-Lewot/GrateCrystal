@@ -1678,7 +1678,7 @@ HandleDefrost:
 	ld hl, wPartyMon1Status
 	call GetPartyLocation
 	ld [hl], 0
-	call UpdateBattleHUDs
+	call UpdateBattleHuds
 	call SetEnemyTurn
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
@@ -1705,7 +1705,7 @@ HandleDefrost:
 	ld [hl], 0
 .wild
 
-	call UpdateBattleHUDs
+	call UpdateBattleHuds
 	call SetPlayerTurn
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
@@ -2155,7 +2155,7 @@ SubtractHPFromUser:
 
 UpdateHPBarBattleHuds:
 	call UpdateHPBar
-	jp UpdateBattleHUDs
+	jp UpdateBattleHuds
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -4736,7 +4736,7 @@ GetOTPartymonItem:
 	ld bc, wEnemyMonItem
 	ret
 
-UpdateBattleHUDs::
+UpdateBattleHUDs:
 	push hl
 	push de
 	push bc
@@ -4887,6 +4887,10 @@ PrintPlayerHUD:
 	hlcoord 18, 8
 	ld [hl], "<FLOAT>"
 	ret
+
+_UpdateBattleHuds::
+	call UpdatePlayerHUD
+	; fallthrough
 
 UpdateEnemyHUD::
 	push hl
@@ -5057,7 +5061,7 @@ BattleMenu:
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox
-	call UpdateBattleHUDs
+	call UpdateBattleHuds
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 .ok
 
