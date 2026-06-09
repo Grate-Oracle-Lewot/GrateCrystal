@@ -194,6 +194,21 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 6 + 1], a ; into slot 1 byte 2 of pal 6
 	ld [wBGPals1 palette 7 + 1], a ; into slot 1 byte 2 of pal 7
 
+	ld a, [hli]
+	cp $7F ; half of pink page color, which is $7E7F but bytes are reversed when stored in data (endianness), 
+	; so check $7F first since it will be the first one read
+	jr nz, .notpink
+	cp $7E ; first half of pink page color
+	jr nz, .notpink
+	ld a, $FF ; loading white into slot 4 of pal 6
+	jr .done
+
+.notpink
+	xor a
+.done
+	ld [wBGPals1 palette 6 + 6], a ; slot 4 of palette 6, byte 1
+	ld [wBGPals1 palette 6 + 7], a ; slot 4 of palette 6, byte 2
+
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
