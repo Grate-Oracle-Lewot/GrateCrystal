@@ -3,18 +3,22 @@ _ReturnToBattle_UseBall:
 	call ClearTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .gettutorialbackpic
+	jr z, .tutorial
 	farcall GetBattleMonBackpic
-	jr .continue
+	call .common
+	call UpdateBattleHuds
+.end
+	call WaitBGMap
+	jp SetPalettes
 
-.gettutorialbackpic
+.tutorial
 	farcall GetTrainerBackpic
-.continue
+	call .common
+	jr .end
+
+.common
 	farcall GetEnemyMonFrontpic
 	farcall _LoadBattleFontsHPBar
 	call GetMemSGBLayout
 	call CloseWindow
-	call LoadStandardMenuHeader
-	call UpdateBattleHuds
-	call WaitBGMap
-	jp SetPalettes
+	jp LoadStandardMenuHeader
