@@ -2,7 +2,7 @@ MovesDexOrder:
 	table_width 1, MovesDexOrder
 
 ; size byte
-	db NUM_ATTACKS
+	db NUM_ATTACKS - 1
 
 ; Normal, physical
 	db POUND
