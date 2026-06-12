@@ -601,8 +601,8 @@ ThunderDescriptionScrunched:
 	feed "to hit in rain.@"
 
 RockThrowDescriptionScrunched:
-	db   "Pretty much what"
-	feed "it sounds like.@"
+	db   "Throws rocks at"
+	feed "the enemy.@"
 
 EarthquakeDescriptionScrunched:
 	db   "Doubles damage on"
