@@ -46,30 +46,6 @@ PlayersNeighborsHouseRadioScript:
 	closetext
 	end
 
-PlayersNeighborsDaughterText:
-	text "PIKACHU comes in"
-	line "six different"
-	cont "varieties."
-
-	para "It might ride a"
-	line "surfboard or get"
-
-	para "carried around by"
-	line "balloons."
-
-	para "They're always"
-	line "electric type, but"
-
-	para "some are also nor-"
-	line "mal, fairy, fight-"
-	cont "ing, water, or"
-	cont "flying."
-
-	para "They all evolve"
-	line "into the same"
-	cont "RAICHU, though."
-	done
-
 PlayersNeighborText:
 	text "Some moves that"
 	line "#MON use make"
@@ -121,5 +97,5 @@ PlayersNeighborsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
 
 	def_object_events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1
+	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1
 	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
