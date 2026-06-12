@@ -601,8 +601,8 @@ ThunderDescription:
 	next "to hit in rain.@"
 
 RockThrowDescription:
-	db   "Pretty much what"
-	next "it sounds like.@"
+	db   "Throws rocks at"
+	next "the enemy.@"
 
 EarthquakeDescription:
 	db   "Doubles damage on"
