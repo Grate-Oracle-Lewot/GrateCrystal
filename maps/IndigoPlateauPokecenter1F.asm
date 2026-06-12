@@ -175,7 +175,12 @@ IndigoPlateauPokecenter1FDelibirdScript:
 	jumpstd MartDelibirdScript
 
 IndigoPlateauPokecenter1FCooltrainerFScript:
-	jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerFText
+	faceplayer
+	opentext
+	special MoveDex
+	waitbutton
+	closetext
+	end
 
 TeleportGuyScript:
 	faceplayer
@@ -250,20 +255,6 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step DOWN
 	step_end
-
-IndigoPlateauPokecenter1FCooltrainerFText:
-	text "At the #MON"
-	line "LEAGUE, you'll get"
-
-	para "tested by the"
-	line "ELITE FOUR."
-
-	para "You have to beat"
-	line "them all. If you"
-
-	para "lose, you have to"
-	line "start all over!"
-	done
 
 PlateauRivalText1:
 	text "WAIT"
@@ -362,7 +353,7 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  4,  7, SPRITE_CHANSEY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FBlisseyScript, -1
 	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 12,  7, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FDelibirdScript, -1
-	object_event 11, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerFScript, -1
+	object_event 11, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerFScript, -1
 	object_event 16,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  0,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
