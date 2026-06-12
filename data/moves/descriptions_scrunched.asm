@@ -177,7 +177,7 @@ MoveDescriptionsScrunched::
 	dw CurseDescriptionScrunched
 	dw FlailDescriptionScrunched
 	dw RockWreckerDescriptionScrunched
-	dw AeroblastDescriptionScrunched
+	dw ZeroblastDescriptionScrunched
 	dw CottonSporeDescriptionScrunched
 	dw ReversalDescriptionScrunched
 	dw SpiteDescriptionScrunched
@@ -324,23 +324,27 @@ CutDescriptionScrunched:
 	feed "scythes, etc.@"
 
 GustDescriptionScrunched:
+FairyWindDescriptionScrunched:
 	db   "Doubles damage on"
 	feed "a foe in flight.@"
 
 WingAttackDescriptionScrunched:
-	db   "Strikes the target"
+	db   "Slaps the target"
 	feed "with wings.@"
 
 WhirlwindDescriptionScrunched:
+RoarDescriptionScrunched:
 	db   "Makes the foe flee"
 	feed "or switch out.@"
 
 FlyDescriptionScrunched:
+SkyAttackDescriptionScrunched:
 	db   "1st turn: Fly"
 	feed "2nd turn: Attack@"
 
 BindDescriptionScrunched:
-	db   "Binds the target"
+WrapDescriptionScrunched:
+	db   "Squeezes the foe"
 	feed "for 2-5 turns.@"
 
 SlamDescriptionScrunched:
@@ -368,6 +372,7 @@ JumpKickDescriptionScrunched:
 	feed "if it misses.@"
 
 RollingKickDescriptionScrunched:
+FlameWheelDescriptionScrunched:
 	db   "Doubles power aft-"
 	feed "er DEFENSE CURL.@"
 
@@ -376,16 +381,18 @@ SandAttackDescriptionScrunched:
 	feed "by throwing sand.@"
 
 HeadbuttDescriptionScrunched:
-	db   "A headbutt. May"
-	feed "cause flinching.@"
+BiteDescriptionScrunched:
+RockSlideDescriptionScrunched:
+	db   "May cause the"
+	feed "target to flinch.@"
 
 HornAttackDescriptionScrunched:
 	db   "An attack using a"
 	feed "horn to jab.@"
 
 FuryAttackDescriptionScrunched:
-	db   "Jabs the target"
-	feed "2-5 times.@"
+	db   "Quickly jabs the"
+	feed "foe 2-5 times.@"
 
 HornDrillDescriptionScrunched:
 	db   "A one-hit KO,"
@@ -396,24 +403,19 @@ TackleDescriptionScrunched:
 	feed "attack.@"
 
 BodySlamDescriptionScrunched:
-	db   "A tackle that may"
-	feed "cause paralysis.@"
-
-WrapDescriptionScrunched:
-	db   "Squeezes the foe"
-	feed "for 2-5 turns.@"
+	db   "Falls on the foe."
+	feed "May paralyze.@"
 
 TakeDownDescriptionScrunched:
+DoubleEdgeDescriptionScrunched:
 	db   "A tackle that also"
 	feed "hurts the user.@"
 
 ThrashDescriptionScrunched:
-	db   "Works 2-3 turns"
+PetalDanceDescriptionScrunched:
+OutrageDescriptionScrunched:
+	db   "Attacks 2-3 turns"
 	feed "and confuses user.@"
-
-DoubleEdgeDescriptionScrunched:
-	db   "A tackle that also"
-	feed "hurts the user.@"
 
 TailWhipDescriptionScrunched:
 	db   "Lowers DEFENSE by"
@@ -435,17 +437,9 @@ LeerDescriptionScrunched:
 	db   "Reduces the foe's"
 	feed "SPCL.DEF.@"
 
-BiteDescriptionScrunched:
-	db   "Bites the foe. May"
-	feed "cause flinching.@"
-
 GrowlDescriptionScrunched:
 	db   "Reduces the foe's"
 	feed "ATTACK.@"
-
-RoarDescriptionScrunched:
-	db   "Makes the foe flee"
-	feed "or switch out.@"
 
 SingDescriptionScrunched:
 	db   "May lull the foe"
@@ -456,6 +450,7 @@ SupersonicDescriptionScrunched:
 	feed "cause confusion.@"
 
 SonicboomDescriptionScrunched:
+DragonRageDescriptionScrunched:
 	db   "Always inflicts"
 	feed "42HP damage.@"
 
@@ -464,8 +459,8 @@ DisableDescriptionScrunched:
 	feed "most recent move.@"
 
 AcidDescriptionScrunched:
-	db   "Sprays acid that"
-	feed "lowers DEFENSE.@"
+	db   "Lowers DEFENSE by"
+	feed "melting armor.@"
 
 EmberDescriptionScrunched:
 	db   "Throws embers. May"
@@ -492,7 +487,7 @@ SurfDescriptionScrunched:
 	feed "over the foe.@"
 
 IceBeamDescriptionScrunched:
-	db   "A beam that may"
+	db   "Cold beam that may"
 	feed "freeze the foe.@"
 
 BlizzardDescriptionScrunched:
@@ -508,12 +503,12 @@ BubblebeamDescriptionScrunched:
 	feed "lower SPEED.@"
 
 AuroraBeamDescriptionScrunched:
-	db   "A beam that may"
+	db   "Pretty beam. May"
 	feed "lower ATTACK.@"
 
 HyperBeamDescriptionScrunched:
-	db   "1st turn: Attack"
-	feed "2nd turn: Rest@"
+	db   "User's too tired to"
+	feed "to act next turn.@"
 
 PeckDescriptionScrunched:
 	db   "Jabs the foe with"
@@ -529,13 +524,14 @@ SubmissionDescriptionScrunched:
 
 LowKickDescriptionScrunched:
 	db   "A kick that lowers"
-	feed "the foe's EVASION.@"
+	feed "the foe's evasion.@"
 
 CounterDescriptionScrunched:
 	db   "Returns a physical"
 	feed "blow double.@"
 
 SeismicTossDescriptionScrunched:
+NightShadeDescriptionScrunched:
 	db   "The user's level"
 	feed "equals HP damage.@"
 
@@ -544,11 +540,12 @@ StrengthDescriptionScrunched:
 	feed "with the mind.@"
 
 AbsorbDescriptionScrunched:
-	db   "Steals 1/2 of the"
-	feed "damage inflicted.@"
-
 MegaDrainDescriptionScrunched:
-	db   "Steals 1/2 of the"
+LeechLifeDescriptionScrunched:
+LovelyKissDescriptionScrunched:
+HyperFangDescriptionScrunched:
+GigaDrainDescriptionScrunched:
+	db   "Drains 1/2 of the"
 	feed "damage inflicted.@"
 
 LeechSeedDescriptionScrunched:
@@ -579,17 +576,9 @@ SleepPowderDescriptionScrunched:
 	db   "Scatters sleep-"
 	feed "inducing powder.@"
 
-PetalDanceDescriptionScrunched:
-	db   "Works 2-3 turns"
-	feed "and confuses user.@"
-
 StringShotDescriptionScrunched:
 	db   "Ties up the foe to"
 	feed "lower SPEED.@"
-
-DragonRageDescriptionScrunched:
-	db   "Always inflicts"
-	feed "42HP damage.@"
 
 FireSpinDescriptionScrunched:
 	db   "Traps foe in fire"
@@ -612,8 +601,8 @@ ThunderDescriptionScrunched:
 	feed "to hit in rain.@"
 
 RockThrowDescriptionScrunched:
-	db   "Drops rocks on the"
-	feed "enemy.@"
+	db   "Pretty much what"
+	feed "it sounds like.@"
 
 EarthquakeDescriptionScrunched:
 	db   "Doubles damage on"
@@ -648,6 +637,7 @@ MeditateDescriptionScrunched:
 	feed "raise ATTACK.@"
 
 AgilityDescriptionScrunched:
+RockPolishDescriptionScrunched:
 	db   "Sharply raises the"
 	feed "user's SPEED.@"
 
@@ -656,16 +646,13 @@ QuickAttackDescriptionScrunched:
 	feed "in the first hit.@"
 
 RageDescriptionScrunched:
-	db   "Gets stronger if"
+	db   "Stronger each time"
 	feed "the user is hit.@"
 
 TeleportDescriptionScrunched:
-	db   "Switches #MON"
-	feed "or flees battle.@"
-
-NightShadeDescriptionScrunched:
-	db   "The user's level"
-	feed "equals HP damage.@"
+BatonPassDescriptionScrunched:
+	db   "Switches #MON."
+	feed "Keeps stat boosts.@"
 
 IronHeadDescriptionScrunched:
 	db   "Hard headbutt. May"
@@ -676,10 +663,12 @@ ScreechDescriptionScrunched:
 	feed "the foe's DEFENSE.@"
 
 DoubleTeamDescriptionScrunched:
-	db   "Makes copies to"
-	feed "raise evasion.@"
+	db   "Raises evasion"
+	feed "with afterimages.@"
 
 RecoverDescriptionScrunched:
+SoftboiledDescriptionScrunched:
+MilkDrinkDescriptionScrunched:
 	db   "Restores 1/2 of"
 	feed "the user's max HP.@"
 
@@ -688,12 +677,12 @@ HardenDescriptionScrunched:
 	feed "DEFENSE.@"
 
 MinimizeDescriptionScrunched:
-	db   "Shrinks to raise"
-	feed "evasion.@"
+	db   "The user shrinks,"
+	feed "raising evasion.@"
 
 SmokescreenDescriptionScrunched:
-	db   "Lowers the foe's"
-	feed "accuracy.@"
+	db   "Reduces accuracy"
+	feed "by blowing smoke.@"
 
 ConfuseRayDescriptionScrunched:
 	db   "Dancing lights"
@@ -708,6 +697,7 @@ DefenseCurlDescriptionScrunched:
 	feed "rolling power.@"
 
 BarrierDescriptionScrunched:
+AcidArmorDescriptionScrunched:
 	db   "Sharply raises the"
 	feed "user's DEFENSE.@"
 
@@ -748,12 +738,12 @@ EggBombDescriptionScrunched:
 	feed "defenses.@"
 
 LickDescriptionScrunched:
-	db   "Licks the foe. May"
-	feed "cause paralysis.@"
+	db   "Saliva may cause"
+	feed "paralysis.@"
 
 SmogDescriptionScrunched:
-	db   "Inaccurate but"
-	feed "sure to poison.@"
+	db   "Noxious fumes."
+	feed "Sure to poison.@"
 
 SludgeDescriptionScrunched:
 	db   "Throws goop. May"
@@ -780,8 +770,8 @@ SwiftDescriptionScrunched:
 	feed "never miss.@"
 
 SkullBashDescriptionScrunched:
-	db   "1st turn: DEF up"
-	feed "2nd turn: Attack@"
+	db   "DEF up, then hit."
+	feed "Foe may flinch.@"
 
 SpikeCannonDescriptionScrunched:
 	db   "Fires spikes to"
@@ -799,10 +789,6 @@ KinesisDescriptionScrunched:
 	db   "Sharply raises the"
 	feed "user's SPCL.ATK.@"
 
-SoftboiledDescriptionScrunched:
-	db   "Restores 1/2 of"
-	feed "the user's max HP.@"
-
 HiJumpKickDescriptionScrunched:
 	db   "Hits fliers but"
 	feed "hurts on a miss.@"
@@ -816,24 +802,12 @@ DreamEaterDescriptionScrunched:
 	feed "sleeping victim.@"
 
 DragonPulseDescriptionScrunched:
-	db   "Fires a beam from"
-	feed "the mouth.@"
+	db   "Fires a ki beam"
+	feed "from the mouth.@"
 
 DazzlyGleamDescriptionScrunched:
 	db   "Dazzles foes with"
 	feed "gleaming lights.@"
-
-LeechLifeDescriptionScrunched:
-	db   "Steals 1/2 of the"
-	feed "damage inflicted.@"
-
-LovelyKissDescriptionScrunched:
-	db   "Steals 1/2 of the"
-	feed "damage inflicted.@"
-
-SkyAttackDescriptionScrunched:
-	db   "1st turn: Fly"
-	feed "2nd turn: Attack@"
 
 TransformDescriptionScrunched:
 	db   "Copies foe's type,"
@@ -863,10 +837,6 @@ EarthPowerDescriptionScrunched:
 	db   "Hits diggers. May"
 	feed "lower SPCL.DEF.@"
 
-AcidArmorDescriptionScrunched:
-	db   "Sharply raises the"
-	feed "user's DEFENSE.@"
-
 CrabhammerDescriptionScrunched:
 	db   "Pincer smash. High"
 	feed "critical ratio.@"
@@ -887,29 +857,17 @@ RestDescriptionScrunched:
 	db   "Sleep for 2 turns"
 	feed "to fully recover.@"
 
-RockSlideDescriptionScrunched:
-	db   "Falling rocks. May"
-	feed "cause flinching.@"
-
-HyperFangDescriptionScrunched:
-	db   "Steals 1/2 of the"
-	feed "damage inflicted.@"
-
 SilverWindDescriptionScrunched:
 	db   "May up all stats."
 	feed "Hits flying foes.@"
-
-RockPolishDescriptionScrunched:
-	db   "Sharply raises the"
-	feed "the user's SPEED.@"
 
 TriAttackDescriptionScrunched:
 	db   "May burn, freeze,"
 	feed "or paralyze.@"
 
 SuperFangDescriptionScrunched:
-	db   "Cuts the foe's HP"
-	feed "by 1/2.@"
+	db   "Damage = half of"
+	feed "foe's current HP.@"
 
 SlashDescriptionScrunched:
 	db   "A claw swipe. High"
@@ -932,14 +890,16 @@ TripleKickDescriptionScrunched:
 	feed "with rising power.@"
 
 ThiefDescriptionScrunched:
-	db   "An attack that may"
-	feed "steal a held item.@"
+	db   "Steals or knocks"
+	feed "off the foe's item.@"
 
 SpiderWebDescriptionScrunched:
+MeanLookDescriptionScrunched:
 	db   "Prevents fleeing"
 	feed "or switching.@"
 
 MindReaderDescriptionScrunched:
+LockOnDescriptionScrunched:
 	db   "Ensures the next"
 	feed "attack will hit.@"
 
@@ -947,11 +907,8 @@ NightmareDescriptionScrunched:
 	db   "A sleeper loses"
 	feed "1/4 HP every turn.@"
 
-FlameWheelDescriptionScrunched:
-	db   "Doubles power aft-"
-	feed "er DEFENSE CURL.@"
-
 SnoreDescriptionScrunched:
+NightTerrorDescriptionScrunched:
 	db   "Hits while asleep."
 	feed "Foes may flinch.@"
 
@@ -960,6 +917,7 @@ CurseDescriptionScrunched:
 	feed "for ghost-types.@"
 
 FlailDescriptionScrunched:
+ReversalDescriptionScrunched:
 	db   "Stronger if the"
 	feed "user's HP is low.@"
 
@@ -967,20 +925,16 @@ RockWreckerDescriptionScrunched:
 	db   "Wrecks rocks. Also"
 	feed "hurts the user.@"
 
-AeroblastDescriptionScrunched:
-	db   "A cold beam. High"
+ZeroblastDescriptionScrunched:
+	db   "Vacuum beam. High"
 	feed "critical ratio.@"
 
 CottonSporeDescriptionScrunched:
 	db   "Sharply reduces"
 	feed "the foe's SPCL.ATK.@"
 
-ReversalDescriptionScrunched:
-	db   "Stronger if the"
-	feed "user's HP is low.@"
-
 SpiteDescriptionScrunched:
-	db   "Cuts the PP of the"
+	db   "Cuts 5 PP from the"
 	feed "foe's last move.@"
 
 PowderSnowDescriptionScrunched:
@@ -1004,7 +958,7 @@ FaintAttackDescriptionScrunched:
 	feed "ows. Never misses.@"
 
 ShadowClawDescriptionScrunched:
-	db   "Ghostly claw. High"
+	db   "Phantom claw. High"
 	feed "critical ratio.@"
 
 BellyDrumDescriptionScrunched:
@@ -1055,29 +1009,17 @@ BoneRushDescriptionScrunched:
 	db   "A bone attack that"
 	feed "hits 2-5 times.@"
 
-LockOnDescriptionScrunched:
-	db   "Ensures the next"
-	feed "attack will hit.@"
-
-OutrageDescriptionScrunched:
-	db   "Works 2-3 turns"
-	feed "and confuses user.@"
-
 SandstormDescriptionScrunched:
 	db   "Hurts every turn."
 	feed "Ups rock SPCL.DEF.@"
-
-GigaDrainDescriptionScrunched:
-	db   "Steals 1/2 of the"
-	feed "damage inflicted.@"
 
 AcrobaticsDescriptionScrunched:
 	db   "Doubles power if"
 	feed "holding no item.@"
 
 CharmDescriptionScrunched:
-	db   "Sharply lowers the"
-	feed "foe's ATTACK.@"
+	db   "Sharply reduces"
+	feed "the foe's ATTACK.@"
 
 RolloutDescriptionScrunched:
 	db   "Attacks 5 turns"
@@ -1091,10 +1033,6 @@ SwaggerDescriptionScrunched:
 	db   "Foe's confused and"
 	feed "their ATK soars.@"
 
-MilkDrinkDescriptionScrunched:
-	db   "Restores 1/2 of"
-	feed "the user's max HP.@"
-
 SparkDescriptionScrunched:
 	db   "A charge that may"
 	feed "cause paralysis.@"
@@ -1106,10 +1044,6 @@ FuryCutterDescriptionScrunched:
 SteelWingDescriptionScrunched:
 	db   "High crit rate."
 	feed "May raise DEFENSE.@"
-
-MeanLookDescriptionScrunched:
-	db   "Prevents fleeing"
-	feed "or switching.@"
 
 AttractDescriptionScrunched:
 	db   "Opposite gender is"
@@ -1139,10 +1073,6 @@ SafeguardDescriptionScrunched:
 	db   "Blocks status pro-"
 	feed "blems for 5 turns.@"
 
-NightTerrorDescriptionScrunched:
-	db   "Hits while asleep."
-	feed "Foes may flinch.@"
-
 SacredFireDescriptionScrunched:
 	db   "A flaming tackle"
 	feed "that often burns.@"
@@ -1160,31 +1090,27 @@ MegahornDescriptionScrunched:
 	feed "horn thrust.@"
 
 DragonbreathDescriptionScrunched:
-	db   "Breath that may"
+	db   "Cold fire that may"
 	feed "cause paralysis.@"
-
-BatonPassDescriptionScrunched:
-	db   "Switches #MON"
-	feed "or flees battle.@"
 
 EncoreDescriptionScrunched:
 	db   "Makes the foe re-"
 	feed "peat 2-6 times.@"
 
 PursuitDescriptionScrunched:
-	db   "Heavily strikes"
-	feed "switching #MON.@"
+	db   "Hits double if the"
+	feed "foe switches out.@"
 
 RapidSpinDescriptionScrunched:
-	db   "A spin that clears"
-	feed "SPIKES, etc.@"
+	db   "Clears SPIKES,"
+	feed "LEECH SEED, etc.@"
 
 SweetScentDescriptionScrunched:
-	db   "Reduces the foe's"
-	feed "evasion.@"
+	db   "Entices the foe to"
+	feed "lower evasion.@"
 
 IronTailDescriptionScrunched:
-	db   "Hard tail attack."
+	db   "Hard tail slam."
 	feed "May lower DEFENSE.@"
 
 MetalClawDescriptionScrunched:
@@ -1192,12 +1118,12 @@ MetalClawDescriptionScrunched:
 	feed "up user's ATTACK.@"
 
 VitalThrowDescriptionScrunched:
-	db   "A slow throw that"
+	db   "Moves second, but"
 	feed "never misses.@"
 
 UTurnDescriptionScrunched:
-	db   "Attacks and"
-	feed "switches #MON.@"
+	db   "Attacks and swit-"
+	feed "ches out #MON.@"
 
 SynthesisDescriptionScrunched:
 	db   "Restores more HP"
@@ -1216,8 +1142,8 @@ CrossChopDescriptionScrunched:
 	feed "critical ratio.@"
 
 TwisterDescriptionScrunched:
-	db   "Doubles damage on"
-	feed "a foe in flight.@"
+	db   "Hits fliers double"
+	feed "and may flinch.@"
 
 RainDanceDescriptionScrunched:
 	db   "Boosts water-type"
@@ -1228,7 +1154,7 @@ SunnyDayDescriptionScrunched:
 	feed "and grass speed.@"
 
 CrunchDescriptionScrunched:
-	db   "A chomp that may"
+	db   "A strong bite. May"
 	feed "lower DEFENSE.@"
 
 MirrorCoatDescriptionScrunched:
@@ -1244,11 +1170,11 @@ ExtremespeedDescriptionScrunched:
 	feed "as possible.@"
 
 AncientpowerDescriptionScrunched:
-	db   "An attack that may"
-	feed "raise all stats.@"
+	db   "Secret technique."
+	feed "May up all stats.@"
 
 ShadowBallDescriptionScrunched:
-	db   "An orb that may"
+	db   "Evil ki ball. May"
 	feed "lower SPCL.DEF.@"
 
 FutureSightDescriptionScrunched:
@@ -1256,8 +1182,8 @@ FutureSightDescriptionScrunched:
 	feed "the future.@"
 
 RockSmashDescriptionScrunched:
-	db   "Hits and lowers"
-	feed "the foe's DEFENSE.@"
+	db   "Breaks armor to"
+	feed "lower DEFENSE.@"
 
 WhirlpoolDescriptionScrunched:
 	db   "Traps the foe for"
@@ -1266,10 +1192,6 @@ WhirlpoolDescriptionScrunched:
 BeatUpDescriptionScrunched:
 	db   "Hits once for each"
 	feed "party #MON.@"
-
-FairyWindDescriptionScrunched:
-	db   "Doubles damage on"
-	feed "a foe in flight.@"
 
 PowerGemDescriptionScrunched:
 	db   "Fires gems. Get"
