@@ -3,6 +3,7 @@
 	const LAVENDERNAMERATER_SUPER_NERD
 	const LAVENDERNAMERATER_TEACHER
 	const LAVENDERNAMERATER_GRANNY
+	const LAVENDERNAMERATER_POKEFAN_F
 
 LavenderNameRater_MapScripts:
 	def_scene_scripts
@@ -28,6 +29,12 @@ LavenderSeerScript:
 	faceplayer
 	opentext
 	special MoveReminder
+	sjump LavNameRater_EndText
+
+LavenderMoveDexScript:
+	faceplayer
+	opentext
+	special MoveDex
 	sjump LavNameRater_EndText
 
 LavenderHappinessRater:
@@ -139,3 +146,4 @@ LavenderNameRater_MapEvents:
 	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, LavenderMoveDeleter, -1
 	object_event  6,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderHappinessRater, -1
 	object_event  0,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderSeerScript, -1
+	object_event  1,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LavenderMoveDexScript, -1
