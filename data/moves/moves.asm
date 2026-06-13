@@ -288,7 +288,7 @@ Moves:
 	move EXTREMESPEED, EFFECT_PRIORITY_HIT,       84, NORMAL,       PHYSICAL, 100 percent,      5,   0
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,         SPECIAL,  100 percent,     10,  10 percent + 1
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    84, GHOST,        SPECIAL,  100 percent,     15,  20 percent + 1
-	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      100, PSYCHIC_TYPE, SPECIAL,  100 percent,     10,   0
+	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT, FUTURE_SIGHT_BASE_POWER, PSYCHIC_TYPE, SPECIAL, 100 percent, 10, 0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING,     PHYSICAL, 100 percent,     15, 100 percent
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        40, WATER,        SPECIAL,  100 percent,     15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            40, DARK,         PHYSICAL, 100 percent,     10,   0
