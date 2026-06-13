@@ -1873,11 +1873,16 @@ BattleAnim_Supersonic:
 
 BattleAnim_MetalSound:
 	anim_1gfx ANIM_GFX_PSYCHIC
-.loop
+.loop1
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 3
+	anim_loop 5, .loop1
+.loop2
 	anim_sound 0, 0, SFX_HEAL_BELL
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 3
-	anim_loop 19, .loop
+	anim_loop 10, .loop2
 	anim_wait 64
 	anim_ret
 
