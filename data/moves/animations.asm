@@ -1882,7 +1882,7 @@ BattleAnim_MetalSound:
 	anim_sound 0, 0, SFX_HEAL_BELL
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 3
-	anim_loop 10, .loop2
+	anim_loop 13, .loop2
 	anim_wait 64
 	anim_ret
 
