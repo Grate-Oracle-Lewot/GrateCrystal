@@ -1599,9 +1599,7 @@ BattleCommand_CheckHit:
 	ld hl, wEffectCarryover
 	set PROTECT_MISS, [hl]
 
-	ld a, 1
-	and a
-	ret
+	jr .nz
 
 .LockOn:
 ; Return nz if we are locked-on and aren't trying to use Earthquake,
@@ -1615,7 +1613,7 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_FLYING, a
-	jr z, .LockedOn
+	jr z, .nz
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
@@ -1629,7 +1627,7 @@ BattleCommand_CheckHit:
 	cp MAGNITUDE
 	ret z
 
-.LockedOn:
+.nz
 	ld a, 1
 	and a
 	ret
@@ -1637,7 +1635,7 @@ BattleCommand_CheckHit:
 .DrainSub:
 ; Return z if using an HP drain move on a Substitute.
 	call CheckSubstituteOpp
-	jr z, .not_draining_sub
+	jr z, .nz
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -1647,10 +1645,7 @@ BattleCommand_CheckHit:
 	cp EFFECT_DREAM_EATER
 	ret z
 
-.not_draining_sub
-	ld a, 1
-	and a
-	ret
+	jr .nz
 
 .FlyDigMoves:
 ; Check for moves that can hit underground/flying opponents.
