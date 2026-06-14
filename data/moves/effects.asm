@@ -1953,9 +1953,7 @@ FutureSight:
 	futuresight
 	damagecalc
 	damagevariation
-	checkhit
 	moveanimnosub
-	failuretext
 	applydamage
 	checkfaint
 	buildopponentrage
