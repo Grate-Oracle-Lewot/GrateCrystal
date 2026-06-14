@@ -1950,10 +1950,9 @@ FutureSight:
 	checkobedience
 	usedmovetext
 	doturn
-	damagestats
-	damagecalc
 	futuresight
-	damagevariation ; skip here if last turn
+	damagecalc
+	damagevariation
 	checkhit
 	moveanimnosub
 	failuretext
