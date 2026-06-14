@@ -1,11 +1,9 @@
 BattleCommand_CheckFutureSight:
 	ld hl, wPlayerFutureSightCount
-	ld de, wPlayerFutureSightDamage
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
 	ld hl, wEnemyFutureSightCount
-	ld de, wEnemyFutureSightDamage
 .ok
 
 	ld a, [hl]
@@ -15,11 +13,6 @@ BattleCommand_CheckFutureSight:
 	ret nz
 
 	ld [hl], 0
-	ld a, [de]
-	inc de
-	ld [wCurDamage], a
-	ld a, [de]
-	ld [wCurDamage + 1], a
 	ld b, futuresight_command
 	jp SkipToBattleCommand
 
@@ -44,7 +37,7 @@ BattleCommand_FutureSight:
 .GotFutureSightCount:
 	ld a, [hl]
 	and a
-	jr nz, .failed
+	jp nz, .Failed
 	ld a, 4
 	ld [hl], a
 	call BattleCommand_LowerSub
@@ -52,26 +45,63 @@ BattleCommand_FutureSight:
 	ld hl, ForesawAttackText
 	call StdBattleTextbox
 	call BattleCommand_RaiseSub
-	ld de, wPlayerFutureSightDamage
+	call ResetDamage
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .StoreDamage
-	ld de, wEnemyFutureSightDamage
-.StoreDamage:
-	ld hl, wCurDamage
-	ld a, [hl]
-	ld [de], a
-	ld [hl], 0
-	inc hl
-	inc de
-	ld a, [hl]
-	ld [de], a
-	ld [hl], 0
-	jp EndMoveEffect
+	jr z, .Player
 
-.failed
+; .Enemy:
+	ld hl, wBattleMonSpclDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	call SandstormSpDefBoost
+
+	ld a, [wPlayerScreens]
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .enemy_ok
+	sla c
+	rl b
+
+.enemy_ok
+	ld hl, wEnemyFutureSightSpAtk
+	ld a, [wEnemyFutureSightLevel]
+	jr .End
+
+.Player:
+	ld hl, wEnemyMonSpclDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	call SandstormSpDefBoost
+
+	ld a, [wEnemyScreens]
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .player_ok
+	sla c
+	rl b
+
+.player_ok
+	ld hl, wPlayerFutureSightSpAtk
+	ld a, [wPlayerFutureSightLevel]
+
+.End:
+	ld e, a
+	ld d, FUTURE_SIGHT_BASE_POWER
+	push de
+	call UnevolvedEviolite
+	call TruncateHL_BC
+	pop de
+	ld a, 1
+	and a
+	jr .Done
+
+.Failed:
 	pop bc
 	call ResetDamage
 	call AnimateFailedMove
 	call PrintButItFailed
+.Done:
 	jp EndMoveEffect
