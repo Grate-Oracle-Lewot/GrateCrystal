@@ -332,12 +332,11 @@ CantMove:
 .fly_dig
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
-	jp AppearUserRaiseSub
+	; fallthrough
 
-OpponentCantMove:
-	call BattleCommand_SwitchTurn
-	call CantMove
-	jp BattleCommand_SwitchTurn
+AppearUserRaiseSub:
+	farcall _AppearUserRaiseSub
+	ret
 
 CheckEnemyTurn:
 	ld hl, wEnemySubStatus4
@@ -1974,7 +1973,7 @@ BattleCommand_MoveAnimNoSub:
 	cp DIG
 	ret nz
 .clear_sprite
-	jp AppearUserLowerSub
+	jr AppearUserLowerSub
 
 .alternate_anim
 	ld a, [wBattleAnimParam]
@@ -1993,6 +1992,10 @@ BattleCommand_MoveAnimNoSub:
 	xor a
 	ld [wNumHits], a
 	jp PlayFXAnimID
+
+AppearUserLowerSub:
+	farcall _AppearUserLowerSub
+	ret
 
 BattleCommand_StatUpAnim:
 	ld a, [wAttackMissed]
@@ -2500,6 +2503,11 @@ BattleCommand_SwitchTurn:
 	xor 1
 	ldh [hBattleTurn], a
 	ret
+
+OpponentCantMove:
+	call BattleCommand_SwitchTurn
+	call CantMove
+	jr BattleCommand_SwitchTurn
 
 BattleCommand_RageDamage:
 	ld a, [wCurDamage]
@@ -6684,14 +6692,6 @@ GetMoveByte:
 
 DisappearUser:
 	farcall _DisappearUser
-	ret
-
-AppearUserLowerSub:
-	farcall _AppearUserLowerSub
-	ret
-
-AppearUserRaiseSub:
-	farcall _AppearUserRaiseSub
 	ret
 
 SandstormSpDefBoost: 
