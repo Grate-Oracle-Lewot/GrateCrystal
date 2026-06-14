@@ -92,3 +92,13 @@ BattleCommand_UnleashEnergy:
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
 	jp EndMoveEffect
+
+BattleCommand_BideFailText:
+	ld a, [wAttackMissed]
+	and a
+	ret z
+
+	ld a, [wTypeModifier]
+	and EFFECTIVENESS_MASK
+	jp z, PrintDoesntAffect
+	jp PrintButItFailed
