@@ -1119,10 +1119,6 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
-GetNextTypeMatchupsByte:
-	ld a, BANK(TypeMatchups)
-	jp GetFarByte
-
 EnemyAttackDamage_DamageCalc_Stab::
 	call EnemyAttackDamage
 	call BattleCommand_DamageCalc
@@ -6676,8 +6672,13 @@ GetMoveData:
 	ld a, BANK(Moves)
 	jp FarCopyBytes
 
+GetNextTypeMatchupsByte:
+	ld a, BANK(TypeMatchups)
+	jr GetFarByteCommon
+
 GetMoveByte:
 	ld a, BANK(Moves)
+GetFarByteCommon:
 	jp GetFarByte
 
 DisappearUser:
