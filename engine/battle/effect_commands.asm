@@ -2692,9 +2692,6 @@ PlayerAttackDamage:
 
 	ld a, [wBattleMonLevel]
 	ld e, a
-
-	ld a, 1
-	and a
 	ret
 
 EnemyAttackDamage:
@@ -2772,9 +2769,6 @@ EnemyAttackDamage:
 
 	ld a, [wEnemyMonLevel]
 	ld e, a
-
-	ld a, 1
-	and a
 	ret
 
 TruncateHL_BC:
