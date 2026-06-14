@@ -1598,7 +1598,6 @@ BattleCommand_CheckHit:
 
 	ld hl, wEffectCarryover
 	set PROTECT_MISS, [hl]
-
 	jr .nz
 
 .LockOn:
@@ -1644,7 +1643,6 @@ BattleCommand_CheckHit:
 	ret z
 	cp EFFECT_DREAM_EATER
 	ret z
-
 	jr .nz
 
 .FlyDigMoves:
