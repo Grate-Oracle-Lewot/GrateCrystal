@@ -549,12 +549,12 @@ wEnemyScreens::
 wPlayerSafeguardCount:: db
 wPlayerLightScreenCount:: db
 wPlayerReflectCount:: db
-	ds 1
+wPlayerFutureSightCount:: db
 
 wEnemySafeguardCount:: db
 wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
-	ds 1
+wEnemyFutureSightCount:: db
 
 wMoveCheckArrayAddr:: dw
 
@@ -595,8 +595,8 @@ wLastPlayerMon:: db
 wLastPlayerMove:: db
 wLastEnemyMove:: db
 
-wPlayerFutureSightCount:: db
-wEnemyFutureSightCount:: db
+wPlayerFutureSightLevel:: db
+wEnemyFutureSightLevel:: db
 
 wGivingExperienceToExpShareHolders:: db
 
@@ -604,8 +604,8 @@ wBackupEnemyMonBaseStats:: ds NUM_STATS
 wBackupEnemyMonCatchRate:: db
 wBackupEnemyMonBaseExp:: db
 
-wPlayerFutureSightDamage:: dw
-wEnemyFutureSightDamage:: dw
+wPlayerFutureSightSpAtk:: dw
+wEnemyFutureSightSpAtk:: dw
 wPlayerRageCounter:: db
 wEnemyRageCounter:: db
 
