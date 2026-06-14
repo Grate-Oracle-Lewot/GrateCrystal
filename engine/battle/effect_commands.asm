@@ -33,6 +33,7 @@ DoTurn:
 	ret nz
 
 	call UpdateMoveData
+	; fallthrough
 
 DoMove:
 ; Get the user's move effect.
@@ -97,11 +98,8 @@ DoMove:
 	ld a, BANK(BattleCommandPointers)
 	call GetFarWord
 
-	call .DoMoveEffectCommand
+	call _hl_
 	jr .ReadMoveEffectCommand
-
-.DoMoveEffectCommand:
-	jp hl
 
 CheckTurn:
 BattleCommand_CheckTurn:
