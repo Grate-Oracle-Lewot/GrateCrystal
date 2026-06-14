@@ -2602,6 +2602,8 @@ UnevolvedEviolite:
 	ret
 
 BattleCommand_DamageStats:
+	call ResetDamage
+
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, EnemyAttackDamage
@@ -2609,8 +2611,6 @@ BattleCommand_DamageStats:
 
 PlayerAttackDamage:
 ; Return move power d, player level e, enemy defense c and player attack b.
-
-	call ResetDamage
 
 	ld hl, wPlayerMoveStructPower
 	ld a, [hli]
@@ -2690,6 +2690,89 @@ PlayerAttackDamage:
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
+	ld e, a
+
+	ld a, 1
+	and a
+	ret
+
+EnemyAttackDamage:
+; No damage dealt with 0 power.
+	ld hl, wEnemyMoveStructPower
+	ld a, [hli] ; hl = wEnemyMoveStructType
+	ld d, a
+	and a
+	ret z
+
+	ld a, [hl]
+	cp SPECIAL
+	jr nc, .special
+
+; physical
+	ld hl, wBattleMonDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	call HailDefenseBoost
+
+	ld a, [wPlayerScreens]
+	bit SCREENS_REFLECT, a
+	jr z, .physicalcrit
+	sla c
+	rl b
+
+.physicalcrit
+	ld hl, wEnemyMonAttack
+	call CheckDamageStatsCritical
+	jr c, .thickclub
+
+	ld hl, wPlayerDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemyAttack
+	jr .thickclub
+
+.special
+	ld hl, wBattleMonSpclDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	call SandstormSpDefBoost
+
+	ld a, [wPlayerScreens]
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .specialcrit
+	sla c
+	rl b
+
+.specialcrit
+	ld hl, wEnemyMonSpclAtk
+	call CheckDamageStatsCritical
+	jr c, .lightball
+	ld hl, wPlayerSpDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemySpAtk
+
+.lightball
+	call LightBallBoost
+	jr .done
+
+.thickclub
+	call ThickClubBoost
+
+.done
+	push hl
+	call UnevolvedEviolite
+	pop hl
+
+	call TruncateHL_BC
+
+	ld a, [wEnemyMonLevel]
 	ld e, a
 
 	ld a, 1
@@ -2851,91 +2934,6 @@ SpeciesItemBoost:
 .done
 	pop de
 	pop bc
-	ret
-
-EnemyAttackDamage:
-	call ResetDamage
-
-; No damage dealt with 0 power.
-	ld hl, wEnemyMoveStructPower
-	ld a, [hli] ; hl = wEnemyMoveStructType
-	ld d, a
-	and a
-	ret z
-
-	ld a, [hl]
-	cp SPECIAL
-	jr nc, .special
-
-; physical
-	ld hl, wBattleMonDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-
-	call HailDefenseBoost
-
-	ld a, [wPlayerScreens]
-	bit SCREENS_REFLECT, a
-	jr z, .physicalcrit
-	sla c
-	rl b
-
-.physicalcrit
-	ld hl, wEnemyMonAttack
-	call CheckDamageStatsCritical
-	jr c, .thickclub
-
-	ld hl, wPlayerDefense
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wEnemyAttack
-	jr .thickclub
-
-.special
-	ld hl, wBattleMonSpclDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-
-	call SandstormSpDefBoost
-
-	ld a, [wPlayerScreens]
-	bit SCREENS_LIGHT_SCREEN, a
-	jr z, .specialcrit
-	sla c
-	rl b
-
-.specialcrit
-	ld hl, wEnemyMonSpclAtk
-	call CheckDamageStatsCritical
-	jr c, .lightball
-	ld hl, wPlayerSpDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wEnemySpAtk
-
-.lightball
-	call LightBallBoost
-	jr .done
-
-.thickclub
-	call ThickClubBoost
-
-.done
-	push hl
-	call UnevolvedEviolite
-	pop hl
-
-	call TruncateHL_BC
-
-	ld a, [wEnemyMonLevel]
-	ld e, a
-
-	ld a, 1
-	and a
 	ret
 
 INCLUDE "engine/battle/move_effects/beat_up.asm"
