@@ -2219,12 +2219,6 @@ GetFailureResultText:
 	bit FLOAT_MISS, a
 	jr nz, .got_text
 
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_FUTURE_SIGHT
-	ld hl, DidntAffectText
-	jr z, .got_text
-
 	ld hl, AttackMissedText
 	ld a, [wCriticalHit]
 	cp -1
