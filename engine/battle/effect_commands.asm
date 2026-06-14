@@ -2279,16 +2279,6 @@ endr
 	jp nz, DoEnemyDamage
 	jp DoPlayerDamage
 
-BattleCommand_BideFailText:
-	ld a, [wAttackMissed]
-	and a
-	ret z
-
-	ld a, [wTypeModifier]
-	and EFFECTIVENESS_MASK
-	jp z, PrintDoesntAffect
-	jp PrintButItFailed
-
 BattleCommand_CriticalText:
 ; Prints the message for critical hits or one-hit KOs.
 
