@@ -259,6 +259,8 @@ ViewMoveList:
 
 .print_move_attack
 	ld a, [wMenuSelection]
+	cp SELFDESTRUCT
+	jr z, .print_selfdestruct_attack
 	ld bc, MOVE_LENGTH
 	ld hl, (Moves + MOVE_POWER) - MOVE_LENGTH
 	call AddNTimes
@@ -272,6 +274,13 @@ ViewMoveList:
 	hlcoord 5, 11
 	jp PrintNum
 
+; Print 500 for Selfdestruct's power, since it halves enemy defense.
+.print_selfdestruct_attack
+	hlcoord 5, 11
+	ld de, MoveDex500String
+	ld bc, 3
+	jp PlaceString
+
 ; This prints "---" if the move has an attack of 0 or 1.
 ; This covers status moves, OHKO moves, level damage, etc.
 .print_move_null_attack
@@ -284,6 +293,8 @@ MoveDexTopString:
 	db "┌────────┐@"
 MoveDexSidesString:
 	db "│        └@"
+MoveDexBottomString:
+	db "└─────────@"
 MoveDexAttackString:
 	db "POW@"
 MoveDexAccuracyString:
@@ -292,8 +303,8 @@ MoveDexChanceString:
 	db " FX    <%>@"
 MoveDexNullValueString:
 	db "---@"
-MoveDexBottomString:
-	db "└─────────@"
+MoveDex500String:
+	db "500@"
 
 Text_MoveDexIntro:
   text "I've memorized the"
