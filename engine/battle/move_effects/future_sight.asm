@@ -94,8 +94,8 @@ BattleCommand_FutureSight:
 	call UnevolvedEviolite
 	call TruncateHL_BC
 	pop de
-	ld a, 1
-	and a
+	xor a
+	ld [wAttackMissed], a
 	jr .Done
 
 .Failed:
