@@ -2544,6 +2544,8 @@ EndMoveEffect:
 	ret
 
 UnevolvedEviolite:
+	push hl
+
 ; get the defender's species
 	ld a, MON_SPECIES
 	call BattlePartyAttr
@@ -2574,7 +2576,7 @@ UnevolvedEviolite:
 	and a
 	pop bc
 	pop hl
-	ret z
+	jr z, .superdone
 
 ; check if the defender's item has the Eviolite effect
 	push bc
@@ -2582,14 +2584,14 @@ UnevolvedEviolite:
 	ld a, b
 	cp HELD_EVIOLITE
 	pop bc
-	ret nz
+	jr nz, .superdone
 
 ; boost the relevant defense stat in bc by 50%
 	ld a, c
 	srl a
 	add c
 	ld c, a
-	ret nc
+	jr nc, .superdone
 
 	srl b
 	ld a, b
@@ -2599,6 +2601,8 @@ UnevolvedEviolite:
 .done
 	scf
 	rr c
+.superdone
+	pop hl
 	ret
 
 BattleCommand_DamageStats:
@@ -2683,10 +2687,7 @@ PlayerAttackDamage:
 	call ThickClubBoost
 
 .done
-	push hl
 	call UnevolvedEviolite
-	pop hl
-
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
@@ -2766,10 +2767,7 @@ EnemyAttackDamage:
 	call ThickClubBoost
 
 .done
-	push hl
 	call UnevolvedEviolite
-	pop hl
-
 	call TruncateHL_BC
 
 	ld a, [wEnemyMonLevel]
