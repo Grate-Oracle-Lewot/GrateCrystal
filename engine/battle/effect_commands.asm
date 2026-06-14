@@ -2081,11 +2081,11 @@ BattleCommand_FailureText:
 	jr z, .multihit
 	cp EFFECT_BEAT_UP
 	jr z, .multihit
-	jp EndMoveEffect
+	jr EndMoveEffect
 
 .multihit
 	call BattleCommand_RaiseSub
-	jp EndMoveEffect
+	jr EndMoveEffect
 
 .fly_dig
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -2093,7 +2093,21 @@ BattleCommand_FailureText:
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
 	call AppearUserRaiseSub
-	jp EndMoveEffect
+	; fallthrough
+
+EndMoveEffect:
+	ld hl, wEffectCarryover
+	res SUBSTITUTE_JUST_BROKE, [hl]
+
+	ld a, [wBattleScriptBufferAddress]
+	ld l, a
+	ld a, [wBattleScriptBufferAddress + 1]
+	ld h, a
+	ld a, endmove_command
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ret
 
 BattleCommand_ApplyDamage:
 	call GetOpponentItem
@@ -2533,20 +2547,6 @@ BattleCommand_RageDamage:
 	ld [wCurDamage], a
 	ld a, l
 	ld [wCurDamage + 1], a
-	ret
-
-EndMoveEffect:
-	ld hl, wEffectCarryover
-	res SUBSTITUTE_JUST_BROKE, [hl]
-
-	ld a, [wBattleScriptBufferAddress]
-	ld l, a
-	ld a, [wBattleScriptBufferAddress + 1]
-	ld h, a
-	ld a, endmove_command
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
 	ret
 
 UnevolvedEviolite:
