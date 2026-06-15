@@ -7,7 +7,7 @@
 	db 45 ; catch rate
 	db 167 ; base exp
 	db CLEANSE_TAG, SPELL_TAG ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_F75 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/misdreavus/front.dimensions"
 	db GROWTH_FAST ; growth rate
