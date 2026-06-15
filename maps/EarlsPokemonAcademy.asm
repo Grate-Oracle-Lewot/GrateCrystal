@@ -148,6 +148,11 @@ AcademyNotebook:
 	iffalse .Done
 	writetext AcademyNotebookText3
 	waitbutton
+	closetext
+	turnobject EARLSPOKEMONACADEMY_YOUNGSTER1, UP
+	opentext
+	writetext AcademyNotebookText4
+	waitbutton
 .Done:
 	closetext
 	end
@@ -551,8 +556,10 @@ AcademyNotebookText3:
 
 	para "The next page"
 	line "is… Blank!"
+	done
 
-	para "Boy: E-he-he…"
+AcademyNotebookText4:
+	text "Boy: E-he-he…"
 
 	para "I haven't written"
 	line "anymore…"
