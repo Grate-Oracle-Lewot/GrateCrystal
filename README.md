@@ -195,6 +195,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Nightmare now inflicts both Sleep and the Nightmare status all in one turn. Since this is powerful, it now has low accuracy, but if the target is already asleep, the Nightmare status will be inflicted without fail, just like how the move worked before.
 
+- Future Sight now calculates damage with the user's Sp.Atk at the time of use, but the target's Sp.Def when it hits. It also never misses, even against Fly, Dig, Protect, etc.
+
 - Hidden Power always has a base power of 70; the type still changes based on DVs, but it can now be Fairy type.
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
@@ -223,7 +225,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Conversion now also has the effect of Conversion2: the user will become a dual-type, with the first type matching a random one of the user's moves, and the second being a random type with a resistance or immunity to the foe's last attack. If the Conversion(1) half of the effect fails, the Conversion2 half may still work, changing the second type while leaving the first intact (regardless of whether the first has been converted or is just the natural type). If the Conversion(1) half succeeds but the Conversion2 half fails, the user becomes a monotype.
 
-- Struggle is no longer boosted by the Pink Bow. Beat Up and Future Sight are still boosted by the Blackglasses and Twistedspoon despite still being functionally typeless, because frankly they need the help.
+- Struggle is no longer boosted by the Pink Bow.
 
 - Counter and Mirror Coat now ignore type immunities.
 
