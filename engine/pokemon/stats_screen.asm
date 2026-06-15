@@ -739,8 +739,26 @@ PrintMonTypeTiles:
 	ret
 
 PrintHiddenPowerTypeTile:
-	ld bc, wTempMonDVs
-	farcall FarHiddenPowerType
+	ld hl, wTempMonDVs
+	ld a, [hl]
+	and %0011
+	ld b, a
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+	inc a
+	cp UNUSED_TYPES
+	jr c, .got_type
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.got_type
 	call GetMonTypeIndex
 	ld hl, TypeLightIconGFX ; from gfx\stats\types_light.png
 	ld bc, 4 * LEN_2BPP_TILE ; Type GFX is 4 tiles wide
