@@ -2180,9 +2180,9 @@ ZapdosEvosAttacks:
 	db 1, PECK
 	db 1, THUNDERSHOCK
 	db 13, THUNDER_WAVE
-	db 25, THUNDERBOLT
+	db 25, DRILL_PECK
 	db 37, DISABLE
-	db 49, DRILL_PECK
+	db 49, THUNDERBOLT
 	db 61, LIGHT_SCREEN
 	db 73, THUNDER
 	db 85, AGILITY
@@ -2193,8 +2193,8 @@ MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WING_ATTACK
 	db 1, EMBER
-	db 13, FIRE_SPIN
-	db 25, SOLARBEAM
+	db 13, SMOKESCREEN
+	db 25, FIRE_SPIN
 	db 37, FOCUS_ENERGY
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
