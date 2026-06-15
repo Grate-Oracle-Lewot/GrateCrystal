@@ -49,11 +49,8 @@ SproutTower3FRivalScene:
 	pause 15
 	closetext
 	playsound SFX_WARP_TO
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	applymovement SPROUTTOWER3F_SILVER, SproutTower3FRivalEscapeRopeMovement
 	disappear SPROUTTOWER3F_SILVER
-	waitsfx
-	special FadeInQuickly
 	setscene SCENE_FINISHED
 	special RestartMapMusic
 	end
@@ -143,6 +140,10 @@ SproutTower3FRivalApproachesElderMovement:
 SproutTower3FRivalLeavesElderMovement:
 	step RIGHT
 	step DOWN
+	step_end
+
+SproutTower3FRivalEscapeRopeMovement:
+	teleport_from
 	step_end
 
 SproutTowerElderLecturesRivalText:
