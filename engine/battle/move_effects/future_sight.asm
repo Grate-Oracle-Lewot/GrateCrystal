@@ -13,6 +13,27 @@ BattleCommand_CheckFutureSight:
 	ret nz
 
 	ld [hl], 0
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+; .enemy
+	ld a, [wEnemyMonLevel]
+	ld [wEnemyFutureSightLevel], a
+	ld a, [wEnemyMonSpclAtk]
+	ld [wEnemyFutureSightSpAtk], a
+	ld a, [wEnemyMonSpclAtk + 1]
+	ld [wEnemyFutureSightSpAtk + 1], a
+	jr .end
+
+.player
+	ld a, [wBattleMonLevel]
+	ld [wPlayerFutureSightLevel], a
+	ld a, [wBattleMonSpclAtk]
+	ld [wPlayerFutureSightSpAtk], a
+	ld a, [wBattleMonSpclAtk + 1]
+	ld [wPlayerFutureSightSpAtk + 1], a
+.end
 	ld b, futuresight_command
 	jp SkipToBattleCommand
 
