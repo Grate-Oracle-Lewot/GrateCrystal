@@ -2626,7 +2626,7 @@ wNiteEncounterRate::  db
 wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
-	ds 1
+wTempSpecies:: db
 wBattleHasJustStarted:: db
 
 wNamedObjectIndex::
@@ -2635,14 +2635,12 @@ wTempByteValue::
 wNumSetBits::
 wTypeMatchup::
 wCurType::
-wTempSpecies::
 wTempIconSpecies::
 wTempTMHM::
 wTempPP::
 wNextBoxOrPartyIndex::
 wChosenCableClubRoom::
 wBreedingCompatibility::
-wMoveGrammar::
 wApplyStatLevelMultipliersToEnemy::
 wUsePPUp::
 wd265:: ; mobile
