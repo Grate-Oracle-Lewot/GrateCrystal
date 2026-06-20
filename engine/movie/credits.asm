@@ -80,8 +80,6 @@ Credits::
 	push af
 	ld a, $5
 	ldh [hVBlank], a
-	ld a, TRUE
-	ldh [hInMenu], a
 	xor a
 	ldh [hBGMapMode], a
 	ld [wCreditsPos], a
