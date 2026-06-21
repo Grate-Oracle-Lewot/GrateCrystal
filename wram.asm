@@ -2626,7 +2626,7 @@ wNiteEncounterRate::  db
 wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
-wTempSpecies:: db
+wBackupTempSpecies:: db
 wBattleHasJustStarted:: db
 
 wNamedObjectIndex::
@@ -2635,6 +2635,7 @@ wTempByteValue::
 wNumSetBits::
 wTypeMatchup::
 wCurType::
+wTempSpecies::
 wTempIconSpecies::
 wTempTMHM::
 wTempPP::
