@@ -651,7 +651,6 @@ MareepEggMoves:
 	db POWER_GEM
 	db HEAL_BELL
 	db IRON_HEAD
-	db SPORE
 	db -1 ; end
 
 MarillEggMoves:
