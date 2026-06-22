@@ -143,6 +143,10 @@ RuinsOfAlphKabutoChamberSkyfallTopMovement:
 	skyfall_top
 	step_end
 
+RuinsOfAlphKabutoChamberAncientReplicaText:
+	text_far _AncientPokemonStatueText
+	text_end
+
 RuinsOfAlphKabutoChamberReceptionistText:
 	text "Welcome to this"
 	line "chamber."
@@ -206,12 +210,6 @@ RuinsOfAlphKabutoChamberWallPatternText:
 RuinsOfAlphKabutoChamberWallHoleText:
 	text "A secret passage"
 	line "opened!"
-	done
-
-RuinsOfAlphKabutoChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
 	done
 
 RuinsOfAlphKabutoChamberDescriptionText:
