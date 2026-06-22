@@ -106,6 +106,10 @@ RuinsOfAlphHoOhChamberSkyfallTopMovement:
 	skyfall_top
 	step_end
 
+RuinsOfAlphHoOhChamberAncientReplicaText:
+	text_far _AncientPokemonStatueText
+	text_end
+
 RuinsOfAlphHoOhChamberWallPatternText:
 	text "Patterns appeared"
 	line "on the walls…"
@@ -114,12 +118,6 @@ RuinsOfAlphHoOhChamberWallPatternText:
 RuinsOfAlphHoOhChamberWallHoleText:
 	text "A secret passage"
 	line "opened!"
-	done
-
-RuinsOfAlphHoOhChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
 	done
 
 RuinsOfAlphHoOhChamberDescriptionText:
