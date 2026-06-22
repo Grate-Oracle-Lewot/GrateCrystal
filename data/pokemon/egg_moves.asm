@@ -649,8 +649,9 @@ MareepEggMoves:
 	db REFLECT
 	db SCREECH
 	db POWER_GEM
-	db HEAL_BELL
 	db IRON_HEAD
+	db HEAL_BELL
+	db JUMP_KICK
 	db -1 ; end
 
 MarillEggMoves:
