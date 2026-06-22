@@ -1484,3 +1484,11 @@ _OakTextNGP::
 	para "Once more into the"
 	line "breach!"
 	prompt
+
+_AncientPokemonStatueText::
+	text "It's an ancient"
+	line "#MON statue."
+
+	para "It's hard to tell"
+	line "the species…"
+	done
