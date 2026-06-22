@@ -25,10 +25,8 @@ RuinsOfAlphOmanyteItemRoomAncientReplica:
 	jumptext RuinsOfAlphOmanyteItemRoomAncientReplicaText
 
 RuinsOfAlphOmanyteItemRoomAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
-	done
+	text_far _AncientPokemonStatueText
+	text_end
 
 RuinsOfAlphOmanyteItemRoom_MapEvents:
 	db 0, 0 ; filler
