@@ -39,6 +39,10 @@ RuinsOfAlphInnerChamberGrampsScript:
 RuinsOfAlphInnerChamberStatue:
 	jumptext RuinsOfAlphInnerChamberStatueText
 
+RuinsOfAlphInnerChamberStatueText:
+	text_far _AncientPokemonStatueText
+	text_end
+
 RuinsOfAlphStrangePresenceText:
 	text "Ow…"
 	done
@@ -65,12 +69,6 @@ RuinsOfAlphInnerChamberGrampsText:
 
 	para "Like the pyramids,"
 	line "for instance."
-	done
-
-RuinsOfAlphInnerChamberStatueText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
 	done
 
 RuinsOfAlphInnerChamber_MapEvents:
