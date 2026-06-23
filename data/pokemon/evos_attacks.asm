@@ -2763,7 +2763,7 @@ MareepEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, GROWL
-	db 6, THUNDERSHOCK
+	db 7, THUNDERSHOCK
 	db 13, HEADBUTT
 	db 16, THUNDER_WAVE
 	db 21, COTTON_SPORE
@@ -2778,7 +2778,7 @@ FlaaffyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, GROWL
-	db 6, THUNDERSHOCK
+	db 7, THUNDERSHOCK
 	db 13, HEADBUTT
 	db 18, THUNDER_WAVE
 	db 24, COTTON_SPORE
@@ -2792,7 +2792,7 @@ AmpharosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 2, GROWL
-	db 6, THUNDERSHOCK
+	db 7, THUNDERSHOCK
 	db 13, HEADBUTT
 	db 18, THUNDER_WAVE
 	db 24, DRAGONBREATH
