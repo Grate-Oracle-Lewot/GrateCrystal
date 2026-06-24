@@ -10,7 +10,7 @@ else
 endc
 	db 255 ; catch rate
 	db 62 ; base exp
-	db ANTIDOTE, LUCKY_EGG ; items
+	db ANTIDOTE, FABERGE_EGG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ekans/front.dimensions"
