@@ -183,7 +183,7 @@
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const ROCK_WRECKER ; b0
-	const AEROBLAST    ; b1
+	const ZEROBLAST    ; b1
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
