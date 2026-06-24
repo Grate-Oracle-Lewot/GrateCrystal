@@ -3,8 +3,8 @@
 	const MARTTYPE_STANDARD
 	const MARTTYPE_BITTER
 	const MARTTYPE_BARGAIN
-	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
+	const MARTTYPE_PHARMACY
 	const MARTTYPE_FRUIT
 
 ; Marts indexes (see data/items/marts.asm)
@@ -30,6 +30,7 @@
 	const MART_PEWTER
 	const MART_MT_MOON
 	const MART_CERULEAN
+	const MART_JEWELER
 	const MART_VERMILION
 	const MART_LAVENDER
 	const MART_CELADON_2F_1
@@ -45,5 +46,4 @@
 	const MART_INDIGO_PLATEAU
 	const MART_BERRY
 	const MART_APRICORN
-	const MART_JEWELER
 NUM_MARTS EQU const_value
