@@ -7416,12 +7416,12 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-; boost experience for Lucky Egg
+; boost experience for Faberge Egg
 	push bc
 	ld a, MON_ITEM
 	call GetPartyParamLocation
 	ld a, [hl]
-	cp LUCKY_EGG
+	cp FABERGE_EGG
 	call z, BoostExp
 	ldh a, [hQuotient + 3]
 	ld [wStringBuffer2 + 1], a
