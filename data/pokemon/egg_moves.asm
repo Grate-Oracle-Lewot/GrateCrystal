@@ -245,6 +245,7 @@ GeodudeEggMoves:
 PonytaEggMoves:
 	db THRASH
 	db DOUBLE_KICK
+	db JUMP_KICK
 	db PLAY_ROUGH
 	db CHARM
 	db EXTREMESPEED
@@ -711,8 +712,9 @@ MurkrowEggMoves:
 	db WHIRLWIND
 	db DRILL_PECK
 	db QUICK_ATTACK
-	db MIRROR_MOVE
 	db SILVER_WIND
+	db BEAT_UP
+	db MIRROR_MOVE
 	db EGG_BOMB
 	db SOFTBOILED
 	db -1 ; end
