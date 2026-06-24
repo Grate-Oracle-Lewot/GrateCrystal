@@ -113,7 +113,7 @@ SFX:
 	dba Sfx_Protect
 	dba Sfx_Sketch
 	dba Sfx_RainDance
-	dba Sfx_Aeroblast
+	dba Sfx_Zeroblast
 	dba Sfx_Spark
 	dba Sfx_Curse
 	dba Sfx_Rage
