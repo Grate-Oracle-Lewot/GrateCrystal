@@ -20,9 +20,9 @@ OpenMartDialog::
 	dw MartDialog
 	dw HerbShop
 	dw BargainShop
-	dw Pharmacist
 	dw RooftopSale
-	dw BerryShop
+	dw Pharmacist
+	dw FruitShop
 
 HerbShop:
 	call FarReadMart
@@ -58,13 +58,13 @@ MartTextbox:
 	call JoyWaitAorB
 	jp ExitMenu
 
-BerryShop:
+FruitShop:
 	call FarReadMart
 	call LoadStandardMenuHeader
-	ld hl, Text_BerryShop_Intro
+	ld hl, Text_FruitShop_Intro
 	call MartTextbox
 	call BuyMenu
-	ld hl, Text_BerryShop_ComeAgain
+	ld hl, Text_FruitShop_ComeAgain
 	jr MartTextbox
 
 Pharmacist:
@@ -388,9 +388,9 @@ GetMartDialogGroup:
 	dwb .StandardMartPointers, 0
 	dwb .HerbShopPointers, 0
 	dwb .BargainShopPointers, 1
-	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
-	dwb .BerryPointers, 0
+	dwb .PharmacyPointers, 0
+	dwb .FruitPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -424,12 +424,12 @@ GetMartDialogGroup:
 	dw PharmacyThanksText
 	dw BuyMenuLoop
 
-.BerryPointers:
-	dw Text_BerryShop_HowMany
-	dw Text_BerryShop_CostsThisMuch
-	dw Text_BerryShop_InsufficientFunds
-	dw Text_BerryShop_BagFull
-	dw Text_BerryShop_HereYouGo
+.FruitPointers:
+	dw Text_FruitShop_HowMany
+	dw Text_FruitShop_CostsThisMuch
+	dw Text_FruitShop_InsufficientFunds
+	dw Text_FruitShop_BagFull
+	dw Text_FruitShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -708,32 +708,32 @@ PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
 	text_end
 
-Text_BerryShop_Intro:
-	text_far BerryShop_IntroText
+Text_FruitShop_Intro:
+	text_far FruitShop_IntroText
 	text_end
 
-Text_BerryShop_ComeAgain:
-	text_far BerryShop_ComeAgainText
+Text_FruitShop_ComeAgain:
+	text_far FruitShop_ComeAgainText
 	text_end
 
-Text_BerryShop_HowMany:
-	text_far BerryShop_HowManyText
+Text_FruitShop_HowMany:
+	text_far FruitShop_HowManyText
 	text_end
 
-Text_BerryShop_CostsThisMuch:
-	text_far BerryShop_CostsThisMuchText
+Text_FruitShop_CostsThisMuch:
+	text_far FruitShop_CostsThisMuchText
 	text_end
 
-Text_BerryShop_InsufficientFunds:
-	text_far BerryShop_InsufficientFundsText
+Text_FruitShop_InsufficientFunds:
+	text_far FruitShop_InsufficientFundsText
 	text_end
 
-Text_BerryShop_BagFull:
-	text_far BerryShop_BagFullText
+Text_FruitShop_BagFull:
+	text_far FruitShop_BagFullText
 	text_end
 
-Text_BerryShop_HereYouGo:
-	text_far BerryShop_HereYouGoText
+Text_FruitShop_HereYouGo:
+	text_far FruitShop_HereYouGoText
 	text_end
 
 SellMenu:
