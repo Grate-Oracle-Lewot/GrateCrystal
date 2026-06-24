@@ -584,28 +584,28 @@ _PharmacyComeAgainText::
 	line "See you around."
 	done
 
-BerryShop_IntroText::
+FruitShop_IntroText::
 	text "I sell fruit."
 	line "Interested?"
 	done
 
-BerryShop_ComeAgainText::
+FruitShop_ComeAgainText::
 	text "Have a nice day."
 	done
 
-BerryShop_CostsThisMuchText::
+FruitShop_CostsThisMuchText::
 	text "That'll be"
 	line "¥@"
 	text_decimal hMoneyTemp, 3, 6
 	text ". Deal?"
 	done
 
-BerryShop_InsufficientFundsText::
+FruitShop_InsufficientFundsText::
 	text "Uh… you ain't got"
 	line "enough."
 	done
 
-BerryShop_BagFullText::
+FruitShop_BagFullText::
 	text "Uh… you ain't got"
 	line "room."
 	done
@@ -1297,21 +1297,6 @@ _ItemUsedText::
 	text_ram wStringBuffer2
 	text "."
 	done
-
-_ItemGotOnText::
-	text "<PLAYER> got on the@"
-	text_low
-	text_ram wStringBuffer2
-	text "."
-	prompt
-
-_ItemGotOffText::
-	text "<PLAYER> got off@"
-	text_low
-	text "the @"
-	text_ram wStringBuffer2
-	text "."
-	prompt
 
 _KnowsMoveText::
 	text_ram wStringBuffer1
