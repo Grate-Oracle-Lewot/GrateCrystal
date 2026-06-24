@@ -9,7 +9,7 @@ Route16FuchsiaSpeechHouse_MapScripts:
 Route16FuchsiaSpeechHouseSuperNerdScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_BERRY, MART_BERRY
+	pokemart MARTTYPE_FRUIT, MART_BERRY
 	closetext
 	end
 
