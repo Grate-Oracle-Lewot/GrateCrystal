@@ -184,7 +184,7 @@ MovesDexOrder:
 	db POWDER_SNOW
 	db AURORA_BEAM
 	db ICE_BEAM
-	db AEROBLAST
+	db ZEROBLAST
 	db BLIZZARD
 
 ; Poison, physical
