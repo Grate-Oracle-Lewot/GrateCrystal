@@ -301,7 +301,7 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const MOVETUTOR_ICE_BEAM     ; 3
 	const MOVETUTOR_TRI_ATTACK   ; 4
 	const MOVETUTOR_SACRED_FIRE  ; 5
-	const MOVETUTOR_AEROBLAST    ; 6
+	const MOVETUTOR_ZEROBLAST    ; 6
 	const MOVETUTOR_AURA_SPHERE  ; 7
 
 ; FossilScientist setval arguments
