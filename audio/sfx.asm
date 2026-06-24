@@ -2157,19 +2157,19 @@ Sfx_RainDance_Ch8:
 	noise_note 10, 3, 2, 70
 	sound_ret
 
-Sfx_Aeroblast:
+Sfx_Zeroblast:
 	channel_count 2
-	channel 5, Sfx_Aeroblast_Ch5
-	channel 8, Sfx_Aeroblast_Ch8
+	channel 5, Sfx_Zeroblast_Ch5
+	channel 8, Sfx_Zeroblast_Ch8
 
-Sfx_Aeroblast_Ch5:
+Sfx_Zeroblast_Ch5:
 	duty_cycle_pattern 3, 3, 0, 2
 	pitch_sweep 15, 5
 	square_note 28, 15, 8, 1408
 	pitch_sweep 0, 8
 	sound_ret
 
-Sfx_Aeroblast_Ch8:
+Sfx_Zeroblast_Ch8:
 	noise_note 4, 15, 8, 108
 	noise_note 4, 12, 8, 92
 	noise_note 4, 7, 8, 91
