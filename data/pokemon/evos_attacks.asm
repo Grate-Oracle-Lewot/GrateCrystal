@@ -3801,7 +3801,7 @@ LugiaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TWISTER
 	db 11, MIST
-	db 22, AEROBLAST
+	db 22, ZEROBLAST
 	db 33, ANCIENTPOWER
 	db 44, AIR_SLASH
 	db 55, DRAGON_PULSE
