@@ -50,34 +50,34 @@ CeladonCityTutorSacredFireScript:
 	writetext CeladonCityTutorSacredFireTaught
 	sjump CeladonCity_EndText
 
-CeladonCityTutorAeroblastScript:
+CeladonCityTutorZeroblastScript:
 	faceplayer
 	opentext
-	writetext CeladonCityTutorAeroblastText1
+	writetext CeladonCityTutorZeroblastText1
 	waitbutton
 	checkitem SILVER_LEAF
 	iffalse .NoLeaf
-	writetext CeladonCityTutorAeroblastText2
+	writetext CeladonCityTutorZeroblastText2
 	yesorno
 	iffalse .TutorRefused
-	writebyte AEROBLAST
-	writetext CeladonCityTutorAeroblastClear
+	writebyte ZEROBLAST
+	writetext CeladonCityTutorZeroblastClear
 	special MoveTutor
 	if_equal $0, .TeachMove
 
 .TutorRefused
-	writetext CeladonCityTutorAeroblastRefused
+	writetext CeladonCityTutorZeroblastRefused
 	sjump CeladonCity_EndText
 
 .NoLeaf:
-	writetext CeladonCityTutorAeroblastNoLeaf
+	writetext CeladonCityTutorZeroblastNoLeaf
 	sjump CeladonCity_EndText
 
 .TeachMove
-	writetext CeladonCityTutorAeroblastPayment
+	writetext CeladonCityTutorZeroblastPayment
 	takeitem SILVER_LEAF
 	waitbutton
-	writetext CeladonCityTutorAeroblastTaught
+	writetext CeladonCityTutorZeroblastTaught
 	sjump CeladonCity_EndText
 
 CeladonCityFisherScript:
@@ -199,7 +199,7 @@ CeladonCityTutorSacredFireNoLeaf:
 	cont "JOHTO."
 	done
 
-CeladonCityTutorAeroblastText1:
+CeladonCityTutorZeroblastText1:
 	text "If you bring me a"
 	line "SILVER LEAF, I can"
 
@@ -208,25 +208,25 @@ CeladonCityTutorAeroblastText1:
 	cont "ZEROBLAST."
 	done
 
-CeladonCityTutorAeroblastText2:
+CeladonCityTutorZeroblastText2:
 	text "Oh! A SILVER LEAF!"
 
 	para "May I have it"
 
-CeladonCityTutorAeroblastClear:
+CeladonCityTutorZeroblastClear:
 	text ""
 	done
 
-CeladonCityTutorAeroblastRefused:
+CeladonCityTutorZeroblastRefused:
 	text "Then scram, punk."
 	done
 
-CeladonCityTutorAeroblastPayment:
+CeladonCityTutorZeroblastPayment:
 	text "<PLAYER> gave her"
 	line "a SILVER LEAF."
 	done
 
-CeladonCityTutorAeroblastTaught:
+CeladonCityTutorZeroblastTaught:
 	text "It's done!"
 
 	para "If you want me to"
@@ -237,7 +237,7 @@ CeladonCityTutorAeroblastTaught:
 	cont "LEAF."
 	done
 
-CeladonCityTutorAeroblastNoLeaf:
+CeladonCityTutorZeroblastNoLeaf:
 	text "You don't have a"
 	line "SILVER LEAF."
 
@@ -433,7 +433,7 @@ CeladonCity_MapEvents:
 	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
 	object_event 20, 24, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
 	object_event 13, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorSacredFireScript, -1
-	object_event 15, 16, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorAeroblastScript, -1
+	object_event 15, 16, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorZeroblastScript, -1
 	object_event  8, 31, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
 	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
 	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
