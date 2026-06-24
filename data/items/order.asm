@@ -8,7 +8,7 @@ ItemNameOrder::
 	db ESCAPE_ROPE
 	db SWAG_BEACON
 	db EXP_SHARE
-	db LUCKY_EGG
+	db FABERGE_EGG
 
 	db REVIVE
 	db MAX_REVIVE
@@ -199,7 +199,7 @@ ItemNameOrder::
 	db RED_SCALE
 	db BASEMENT_KEY
 	db CARD_KEY
-	db LOST_ITEM
+	db LOST_DOLL
 	db MACHINE_PART
 	db RAINBOW_WING
 	db SILVER_WING
