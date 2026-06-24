@@ -9,7 +9,7 @@ CeruleanGymBadgeSpeechHouse_MapScripts:
 CeruleanGymBadgeSpeechHousePokefanMScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_BERRY, MART_APRICORN
+	pokemart MARTTYPE_FRUIT, MART_APRICORN
 	closetext
 	end
 
