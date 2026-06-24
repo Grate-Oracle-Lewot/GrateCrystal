@@ -112,7 +112,7 @@
 	const SFX_PROTECT                     ; 6d
 	const SFX_SKETCH                      ; 6e
 	const SFX_RAIN_DANCE                  ; 6f
-	const SFX_AEROBLAST                   ; 70
+	const SFX_ZEROBLAST                   ; 70
 	const SFX_SPARK                       ; 71
 	const SFX_CURSE                       ; 72
 	const SFX_RAGE                        ; 73
