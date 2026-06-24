@@ -5,23 +5,26 @@ Marts:
 	dw MartCherrygroveDex
 	dw MartViolet
 	dw MartAzalea
-	dw MartCianwood
 	dw MartGoldenrod2F1
 	dw MartGoldenrod2F2
 	dw MartGoldenrod3F
 	dw MartGoldenrod3F2
 	dw MartGoldenrod4F
 	dw MartGoldenrod5F
-	dw MartOlivine
+	dw MartUnderground
 	dw MartEcruteak
+	dw MartOlivine
+	dw MartCianwood
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartBlackthorn
 	dw MartViridian
 	dw MartPewter
+	dw MartMtMoon
 	dw MartCerulean
-	dw MartLavender
+	dw MartJeweler
 	dw MartVermilion
+	dw MartLavender
 	dw MartCeladon2F1
 	dw MartCeladon2F2
 	dw MartCeladon3F
@@ -32,9 +35,7 @@ Marts:
 	dw MartCeladon5F2
 	dw MartFuchsia
 	dw MartSaffron
-	dw MartMtMoon
 	dw MartIndigoPlateau
-	dw MartUnderground
 	dw MartBerry
 	dw MartApricorn
 	assert_table_length NUM_MARTS
@@ -80,15 +81,6 @@ MartAzalea:
 	db ESCAPE_ROPE
 	db REPEL
 	db FLOWER_MAIL
-	db -1 ; end
-
-MartCianwood:
-	db 5 ; # items
-	db POTION
-	db SUPER_POTION
-	db HYPER_POTION
-	db FULL_HEAL
-	db REVIVE
 	db -1 ; end
 
 MartGoldenrod2F1:
@@ -161,13 +153,12 @@ MartGoldenrod5F:
 	db TM_THIEF
 	db -1 ; end
 
-MartOlivine:
-	db 5 ; # items
-	db GREAT_BALL
-	db SUPER_POTION
-	db MOOMOO_MILK
-	db SUPER_REPEL
-	db SURF_MAIL
+MartUnderground:
+	db 4 ; # items
+	db BUGWORT
+	db SOOTFOOTROOT
+	db VIVICHOKE
+	db OLD_GATEAU
 	db -1 ; end
 
 MartEcruteak:
@@ -180,6 +171,24 @@ MartEcruteak:
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db REVIVE
+	db -1 ; end
+
+MartOlivine:
+	db 5 ; # items
+	db GREAT_BALL
+	db SUPER_POTION
+	db MOOMOO_MILK
+	db SUPER_REPEL
+	db SURF_MAIL
+	db -1 ; end
+
+MartCianwood:
+	db 5 ; # items
+	db POTION
+	db SUPER_POTION
+	db HYPER_POTION
+	db FULL_HEAL
 	db REVIVE
 	db -1 ; end
 
@@ -243,6 +252,19 @@ MartPewter:
 	db TM_ROLLOUT
 	db -1 ; end
 
+MartMtMoon:
+	db 9 ; # items
+	db MOON_STONE
+	db DUSK_BALL
+	db LEEK
+	db LUCKY_PUNCH
+	db BONE
+	db VOLTECCER
+	db CLEANSE_TAG
+	db EON_MAIL
+	db TM_MOONBLAST
+	db -1 ; end
+
 MartCerulean:
 	db 9 ; # items
 	db GREAT_BALL
@@ -256,16 +278,12 @@ MartCerulean:
 	db TM_SCALD
 	db -1 ; end
 
-MartLavender:
-	db 8 ; # items
-	db DUSK_BALL
-	db POTION
-	db SUPER_POTION
-	db MAX_REPEL
-	db REVIVE
-	db AWAKENING
-	db ESCAPE_ROPE
-	db TM_NIGHTMARE
+MartJeweler:
+	db 4 ; # items
+	db FABERGE_EGG
+	db CATCH_CHARM
+	db AMULET_COIN
+	db BRIGHTPOWDER
 	db -1 ; end
 
 MartVermilion:
@@ -276,6 +294,18 @@ MartVermilion:
 	db SWAG_BEACON
 	db MORPH_MAIL
 	db TM_ACROBATICS
+	db -1 ; end
+
+MartLavender:
+	db 8 ; # items
+	db DUSK_BALL
+	db POTION
+	db SUPER_POTION
+	db MAX_REPEL
+	db REVIVE
+	db AWAKENING
+	db ESCAPE_ROPE
+	db TM_NIGHTMARE
 	db -1 ; end
 
 MartCeladon2F1:
@@ -409,19 +439,6 @@ MartSaffron:
 	db TM_DREAM_EATER
 	db -1 ; end
 
-MartMtMoon:
-	db 9 ; # items
-	db MOON_STONE
-	db DUSK_BALL
-	db LEEK
-	db LUCKY_PUNCH
-	db BONE
-	db VOLTECCER
-	db CLEANSE_TAG
-	db EON_MAIL
-	db TM_MOONBLAST
-	db -1 ; end
-
 MartIndigoPlateau:
 	db 10 ; # items
 	db ULTRA_BALL
@@ -434,14 +451,6 @@ MartIndigoPlateau:
 	db FULL_HEAL
 	db TM_DARK_PULSE
 	db TM_NIGHT_TERROR
-	db -1 ; end
-
-MartUnderground:
-	db 4 ; # items
-	db BUGWORT
-	db SOOTFOOTROOT
-	db VIVICHOKE
-	db OLD_GATEAU
 	db -1 ; end
 
 MartBerry:
