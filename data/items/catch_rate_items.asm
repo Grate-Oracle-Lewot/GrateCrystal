@@ -18,7 +18,7 @@ TimeCapsule_CatchRateItems:
 	db BLUE_CARD,     GOLD_BERRY
 	db CARD_KEY,      GOLD_BERRY
 	db MACHINE_PART,  GOLD_BERRY
-	db LOST_ITEM,     GOLD_BERRY
+	db LOST_DOLL,     GOLD_BERRY
 	db BASEMENT_KEY,  GOLD_BERRY
 	db PASS,          GOLD_BERRY
 	db ODD_ROD,       GOLD_BERRY
