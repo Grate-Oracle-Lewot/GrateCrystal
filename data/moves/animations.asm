@@ -178,7 +178,7 @@ BattleAnimations::
 	dw BattleAnim_Curse
 	dw BattleAnim_Flail
 	dw BattleAnim_RockWrecker
-	dw BattleAnim_Aeroblast
+	dw BattleAnim_Zeroblast
 	dw BattleAnim_CottonSpore
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
@@ -3450,13 +3450,13 @@ BattleAnim_RockPolish:
 	anim_call BattleAnimSub_Glimmer2
 	anim_ret
 
-BattleAnim_Aeroblast:
-	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
+BattleAnim_Zeroblast:
+	anim_2gfx ANIM_GFX_BEAM, ANIM_GFX_ZEROBLAST
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $4, $10
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj ANIM_OBJ_AEROBLAST, 72, 88, $0
+	anim_sound 0, 0, SFX_ZEROBLAST
+	anim_obj ANIM_OBJ_ZEROBLAST, 72, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_BLUE_BEAM, 80, 84, $0
