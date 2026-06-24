@@ -128,6 +128,7 @@ ParasEggMoves:
 	db COUNTER
 	db SCREECH
 	db PURSUIT
+	db METAL_CLAW
 	db -1 ; end
 
 VenonatEggMoves:
@@ -469,8 +470,9 @@ PorygonEggMoves:
 
 OmanyteEggMoves:
 	db KINESIS
-	db ROCK_POLISH
 	db SLAM
+	db ROCK_POLISH
+	db WRAP
 	db HAZE
 	db -1 ; end
 
@@ -784,6 +786,7 @@ QwilfishEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db SPIKE_CANNON
+	db GROWTH
 	db -1 ; end
 
 ShuckleEggMoves:
@@ -865,9 +868,11 @@ DelibirdEggMoves:
 	db -1 ; end
 
 MantineEggMoves:
+	db AURORA_BEAM
 	db TWISTER
-	db HAZE
 	db SILVER_WIND
+	db WHIRLWIND
+	db HAZE
 	db SMOKESCREEN
 	db -1 ; end
 
