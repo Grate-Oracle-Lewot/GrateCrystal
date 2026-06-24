@@ -123,11 +123,11 @@ ItemDescriptions:
 	dw OldGateauDesc
 	dw VivichokeDesc
 	dw HardStoneDesc
-	dw LuckyEggDesc
+	dw FabergeEggDesc
 	dw CardKeyDesc
 	dw MachinePartDesc
 	dw HardhatDesc
-	dw LostItemDesc
+	dw LostDollDesc
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
@@ -747,7 +747,7 @@ HardStoneDesc:
 	db   "Powers up rock-"
 	next "type moves. (HOLD)@"
 
-LuckyEggDesc:
+FabergeEggDesc:
 	db   "Earns extra EXP."
 	next "points. (HOLD)@"
 
@@ -763,7 +763,7 @@ HardhatDesc:
 	db   "Prevents recoil"
 	next "damage. (HOLD)@"
 
-LostItemDesc:
+LostDollDesc:
 	db   "The # DOLL lost"
 	next "by the COPYCAT.@"
 
