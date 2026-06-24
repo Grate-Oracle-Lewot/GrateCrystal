@@ -29,7 +29,7 @@ PokemonFanClubChairmanScript:
 	opentext
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
-	verbosegiveitem LUCKY_EGG
+	verbosegiveitem FABERGE_EGG
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext PokemonFanClubChairmanItsARareCandyText
@@ -164,7 +164,7 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a LUCKY EGG."
+	text "It's a FABERGé EGG."
 	line "If a #MON holds"
 
 	para "that, it will gain"
