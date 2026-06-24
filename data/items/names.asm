@@ -122,7 +122,7 @@ ItemNames::
 	li "OLD GATEAU"
 	li "VIVICHOKE"
 	li "HARD STONE"
-	li "LUCKY EGG"
+	li "FABERGé EGG"
 	li "CARD KEY"
 	li "ARC REACTOR"
 	li "HARDHAT"
