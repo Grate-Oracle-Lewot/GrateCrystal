@@ -217,7 +217,7 @@ Moves:
 	move CURSE,        EFFECT_CURSE,               0, GHOST,        STATUS,   100 percent,      5,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       PHYSICAL, 100 percent,     20,   0
 	move ROCK_WRECKER, EFFECT_RECOIL_HIT,        125, ROCK,         PHYSICAL, 100 percent,      5,   0
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100 percent,      5,   0
+	move ZEROBLAST,    EFFECT_NORMAL_HIT,        105, ICE,          SPECIAL,  100 percent,      5,   0
 	move COTTON_SPORE, EFFECT_SP_ATK_DOWN_2,       0, GRASS,        STATUS,   100 percent,     20,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,     PHYSICAL, 100 percent,     15,   0
 	move SPITE,        EFFECT_SPITE,               0, GHOST,        STATUS,   100 percent,     20,   0
