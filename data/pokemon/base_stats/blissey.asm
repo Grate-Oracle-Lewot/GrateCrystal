@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 30 ; catch rate
 	db 255 ; base exp
-	db LUCKY_EGG, LUCKY_PUNCH ; items
+	db FABERGE_EGG, LUCKY_PUNCH ; items
 	db GENDER_F100 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/blissey/front.dimensions"
