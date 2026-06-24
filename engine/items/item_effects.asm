@@ -136,11 +136,11 @@ ItemEffects:
 	dw HealPowderEffect    ; OLD_GATEAU
 	dw RevivalHerbEffect   ; VIVICHOKE
 	dw NoEffect            ; HARD_STONE
-	dw NoEffect            ; LUCKY_EGG
+	dw NoEffect            ; FABERGE_EGG
 	dw CardKeyEffect       ; CARD_KEY
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; HARDHAT
-	dw NoEffect            ; LOST_ITEM
+	dw NoEffect            ; LOST_DOLL
 	dw StatusHealingEffect ; STARDUST
 	dw ReviveEffect        ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
