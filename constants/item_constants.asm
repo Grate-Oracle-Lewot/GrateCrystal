@@ -128,11 +128,11 @@
 	const OLD_GATEAU   ; 78
 	const VIVICHOKE    ; 79
 	const HARD_STONE   ; 7a
-	const LUCKY_EGG    ; 7b
+	const FABERGE_EGG  ; 7b
 	const CARD_KEY     ; 7c
 	const MACHINE_PART ; 7d
 	const HARDHAT      ; 7e
-	const LOST_ITEM    ; 7f
+	const LOST_DOLL    ; 7f
 	const STARDUST     ; 80
 	const STAR_PIECE   ; 81
 	const BASEMENT_KEY ; 82
