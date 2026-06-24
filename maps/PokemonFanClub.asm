@@ -73,7 +73,7 @@ PokemonFanClubClefairyGuyScript:
 	writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
 	promptbutton
 	waitsfx
-	giveitem LOST_ITEM
+	giveitem LOST_DOLL
 	iffalse .NoRoom
 	disappear POKEMONFANCLUB_FAIRY
 	writetext PokemonFanClubPlayerReceivedDollText
