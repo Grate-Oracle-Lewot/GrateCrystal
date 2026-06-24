@@ -923,22 +923,9 @@ AbraEvosAttacks:
 
 KadabraEvosAttacks:
 	db EVOLVE_LEVEL, 32, ALAKAZAM
-	db 0 ; no more evolutions
-	db 1, CONFUSION
-	db 1, KINESIS
-	db 16, CONFUSION
-	db 18, DISABLE
-	db 21, PSYBEAM
-	db 26, RECOVER
-	db 31, FUTURE_SIGHT
-	db 38, PSYCHIC_M
-	db 45, REFLECT
-	db 51, SIGNAL_BEAM
-	db 58, POWER_GEM
-	db 0 ; no more level-up moves
-
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TELEPORT
 	db 1, CONFUSION
 	db 1, KINESIS
 	db 16, CONFUSION
@@ -1087,20 +1074,6 @@ GeodudeEvosAttacks:
 
 GravelerEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GOLEM
-	db 0 ; no more evolutions
-	db 1, RAPID_SPIN
-	db 2, HARDEN
-	db 6, ROCK_THROW
-	db 11, SPARK
-	db 16, MAGNITUDE
-	db 21, SELFDESTRUCT
-	db 27, ROCK_POLISH
-	db 34, POWER_GEM
-	db 41, ROCK_SLIDE
-	db 48, EARTHQUAKE
-	db 52, ROCK_WRECKER
-	db 0 ; no more level-up moves
-
 GolemEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
@@ -1374,22 +1347,6 @@ GastlyEvosAttacks:
 
 HaunterEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, GENGAR
-	db 0 ; no more evolutions
-	db 1, HYPNOSIS
-	db 1, LICK
-	db 4, SPITE
-	db 9, SMOG
-	db 13, MEAN_LOOK
-	db 16, CURSE
-	db 21, NIGHT_SHADE
-	db 26, FAINT_ATTACK
-	db 31, CONFUSE_RAY
-	db 39, DREAM_EATER
-	db 48, SHADOW_BALL
-	db 53, NIGHTMARE
-	db 59, DESTINY_BOND
-	db 0 ; no more level-up moves
-
 GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
@@ -2048,6 +2005,7 @@ FlareonEvosAttacks:
 
 PorygonEvosAttacks:
 	db EVOLVE_ITEM, UP_GRADE, PORYGON2
+Porygon2EvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, CONVERSION
@@ -2924,6 +2882,7 @@ AipomEvosAttacks:
 	db 36, AGILITY
 	db 42, SEISMIC_TOSS
 	db 47, MEGA_PUNCH
+	db 54, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
@@ -3561,23 +3520,6 @@ DonphanEvosAttacks:
 	db 42, EARTHQUAKE
 	db 50, SKULL_BASH
 	db 64, MEGAHORN
-	db 0 ; no more level-up moves
-
-Porygon2EvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 4, CONVERSION
-	db 9, GROWTH
-	db 9, MINIMIZE
-	db 12, PAY_DAY
-	db 20, RECOVER
-	db 24, THUNDER_WAVE
-	db 29, SIGNAL_BEAM
-	db 32, LOCK_ON
-	db 36, TRI_ATTACK
-	db 44, BLITZKRIEG
-	db 50, LIGHT_SCREEN
-	db 55, REFLECT
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
