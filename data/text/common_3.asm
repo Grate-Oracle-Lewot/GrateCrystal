@@ -447,7 +447,7 @@ _EvolvingText::
 _MartHowManyText::
 _HerbalLadyHowManyText::
 _PharmacyHowManyText::
-BerryShop_HowManyText::
+FruitShop_HowManyText::
 _MartSellHowManyText::
 	text "How many?"
 	done
@@ -525,7 +525,7 @@ _BargainShopFinalPriceText::
 	done
 
 _BargainShopThanksText::
-BerryShop_HereYouGoText::
+FruitShop_HereYouGoText::
 	text "Thanks."
 	done
 
