@@ -192,3 +192,5 @@ SPRITE_VARS EQU const_value
 	const SPRITE_JANINE_IMPERSONATOR ; f9
 	const SPRITE_LINK_TRAINER        ; fa
 	const SPRITE_TRAINER_HOUSE       ; fb
+	const SPRITE_JESSIE_DISGUISE     ; fc
+	const SPRITE_JAMES_DISGUISE      ; fd
