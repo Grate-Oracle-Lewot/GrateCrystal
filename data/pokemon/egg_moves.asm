@@ -782,7 +782,9 @@ SnubbullEggMoves:
 	db -1 ; end
 
 QwilfishEggMoves:
+	db SPARK
 	db FLAIL
+	db SMOKESCREEN
 	db HAZE
 	db MEAN_LOOK
 	db SPIKE_CANNON
