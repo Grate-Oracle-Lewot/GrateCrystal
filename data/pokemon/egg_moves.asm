@@ -786,7 +786,6 @@ QwilfishEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db SPIKE_CANNON
-	db GROWTH
 	db -1 ; end
 
 ShuckleEggMoves:
