@@ -27,17 +27,23 @@ Route24JessieScript:
 	waitbutton
 	closetext
 	applymovement ROUTE24_JESSIE, Movement_JessieJamesSpin
+	faceplayer
 	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
 	special LoadUsedSpritesGFX
 	faceplayer
 	applymovement ROUTE24_JAMES, Movement_JessieJamesSpin
+	readvar VAR_FACING
+	ifequal UP, .facedown1
+	ifequal DOWN, .faceup1
+	turnobject ROUTE24_JAMES, RIGHT
+.finish1
 	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
 	special LoadUsedSpritesGFX
 	readvar VAR_FACING
-	ifequal UP, .facedown
-	ifequal DOWN, .faceup
+	ifequal UP, .facedown2
+	ifequal DOWN, .faceup2
 	turnobject ROUTE24_JAMES, RIGHT
-.finish
+.finish2
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
 	writetext Route24JessieSeen2Text
@@ -67,13 +73,21 @@ Route24JessieScript:
 	playmapmusic
 	end
 
-.facedown
+.facedown1
 	turnobject ROUTE24_JAMES, DOWN
-	sjump .finish
+	sjump .finish1
 
-.faceup
+.faceup1
 	turnobject ROUTE24_JAMES, UP
-	sjump .finish
+	sjump .finish1
+
+.facedown2
+	turnobject ROUTE24_JAMES, DOWN
+	sjump .finish2
+
+.faceup2
+	turnobject ROUTE24_JAMES, UP
+	sjump .finish2
 
 Route24JamesScript:
 	faceplayer
@@ -82,17 +96,23 @@ Route24JamesScript:
 	waitbutton
 	closetext
 	applymovement ROUTE24_JAMES, Movement_JessieJamesSpin
+	faceplayer
 	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
 	special LoadUsedSpritesGFX
 	faceplayer
 	applymovement ROUTE24_JESSIE, Movement_JessieJamesSpin
+	readvar VAR_FACING
+	ifequal UP, .facedown1
+	ifequal DOWN, .faceup1
+	turnobject ROUTE24_JESSIE, RIGHT
+.finish1
 	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
 	special LoadUsedSpritesGFX
 	readvar VAR_FACING
-	ifequal UP, .facedown
-	ifequal DOWN, .faceup
+	ifequal UP, .facedown2
+	ifequal DOWN, .faceup2
 	turnobject ROUTE24_JESSIE, RIGHT
-.finish
+.finish2
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
 	writetext Route24JamesSeen2Text
@@ -122,13 +142,21 @@ Route24JamesScript:
 	playmapmusic
 	end
 
-.facedown
+.facedown1
 	turnobject ROUTE24_JESSIE, DOWN
-	sjump .finish
+	sjump .finish1
 
-.faceup
+.faceup1
 	turnobject ROUTE24_JESSIE, UP
-	sjump .finish
+	sjump .finish1
+
+.facedown2
+	turnobject ROUTE24_JESSIE, DOWN
+	sjump .finish2
+
+.faceup2
+	turnobject ROUTE24_JESSIE, UP
+	sjump .finish2
 
 Movement_JessieJamesSpin:
 	turn_head DOWN
@@ -179,7 +207,7 @@ Route24JamesSeen1Text:
 	line "ROCKET?"
 
 	para "I'm afraid I'm not"
-	cont "familiar!"
+	line "familiar!"
 
 	para "… … …"
 
