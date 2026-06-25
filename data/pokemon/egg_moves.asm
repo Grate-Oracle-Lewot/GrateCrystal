@@ -618,6 +618,7 @@ CleffaEggMoves:
 	db -1 ; end
 
 IgglybuffEggMoves:
+	db SPARK
 	db DAZZLY_GLEAM
 	db METRONOME
 	db BIDE
