@@ -22,9 +22,25 @@ Route24_MapScripts:
 
 Route24JessieScript:
 	faceplayer
+	opentext
+	writetext Route24JessieSeen1Text
+	waitbutton
+	closetext
+	applymovement ROUTE24_JESSIE, Movement_JessieJamesSpin
+	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
+	special LoadUsedSpritesGFX
+	faceplayer
+	applymovement ROUTE24_JAMES, Movement_JessieJamesSpin
+	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
+	special LoadUsedSpritesGFX
+	readvar VAR_FACING
+	ifequal UP, .facedown
+	ifequal DOWN, .faceup
+	turnobject ROUTE24_JAMES, RIGHT
+.finish
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
-	writetext Route24JessieSeenText
+	writetext Route24JessieSeen2Text
 	waitbutton
 	closetext
 	winlosstext JessieJames3BeatenText, -1
@@ -43,16 +59,43 @@ Route24JessieScript:
 	disappear ROUTE24_JESSIE
 	setevent EVENT_CERULEAN_CITY_PERSIAN
 	setevent EVENT_ROUTE_24_ROCKET
-	pause 25
+	pause 10
+	playsound SFX_RUN
+	waitsfx
+	pause 10
 	special FadeInQuickly
 	playmapmusic
 	end
 
+.facedown
+	turnobject ROUTE24_JAMES, DOWN
+	sjump .finish
+
+.faceup
+	turnobject ROUTE24_JAMES, UP
+	sjump .finish
+
 Route24JamesScript:
 	faceplayer
+	opentext
+	writetext Route24JamesSeen1Text
+	waitbutton
+	closetext
+	applymovement ROUTE24_JAMES, Movement_JessieJamesSpin
+	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
+	special LoadUsedSpritesGFX
+	faceplayer
+	applymovement ROUTE24_JESSIE, Movement_JessieJamesSpin
+	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
+	special LoadUsedSpritesGFX
+	readvar VAR_FACING
+	ifequal UP, .facedown
+	ifequal DOWN, .faceup
+	turnobject ROUTE24_JESSIE, RIGHT
+.finish
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
-	writetext Route24JamesSeenText
+	writetext Route24JamesSeen2Text
 	waitbutton
 	closetext
 	winlosstext JessieJames3BeatenText, -1
@@ -71,28 +114,88 @@ Route24JamesScript:
 	disappear ROUTE24_JAMES
 	setevent EVENT_CERULEAN_CITY_PERSIAN
 	setevent EVENT_ROUTE_24_ROCKET
-	pause 25
+	pause 10
+	playsound SFX_RUN
+	waitsfx
+	pause 10
 	special FadeInQuickly
 	playmapmusic
 	end
 
-Route24JessieSeenText:
-	text "JESSIE: Ugh! You're"
-	line "such a brat!"
+.facedown
+	turnobject ROUTE24_JESSIE, DOWN
+	sjump .finish
 
-	para "Fine! You want a"
-	line "battle? Let's go,"
-	cont "JAMES!"
+.faceup
+	turnobject ROUTE24_JESSIE, UP
+	sjump .finish
+
+Movement_JessieJamesSpin:
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	step_end
+
+Route24JessieSeen1Text:
+	text "Hm? What do you"
+	line "want?"
+
+	para "It's rude to bother"
+	line "people, you know!"
+
+	para "…Huh? TEAM ROCKET?"
+	line "Never heard of it!"
+
+	para "… … …"
+
+	para "Oh, forget it!"
 	done
 
-Route24JamesSeenText:
-	text "JAMES: Oh no!"
-	line "JESSIE, the kid"
-	cont "found us!"
+Route24JessieSeen2Text:
+	text "JESSIE: Fine, you"
+	line "little brat!"
 
-	para "I guess it's time"
-	line "to show what we're"
-	cont "made of!"
+	para "If you want a"
+	line "battle, you've got"
+	cont "one!"
+	done
+
+Route24JamesSeen1Text:
+	text "Why, hello there!"
+	line "Lovely day, isn't"
+	cont "it, darling?"
+
+	para "What's that? TEAM"
+	line "ROCKET?"
+
+	para "I'm afraid I'm not"
+	cont "familiar!"
+
+	para "… … …"
+
+	para "…Drat! Jig's up!"
+	done
+
+Route24JamesSeen2Text:
+	text "JAMES: How did you"
+	line "see through our"
+	cont "disguises?"
+
+	para "You're too good for"
+	line "your own… good!"
+
+	para "I guess it's battle"
+	line "time!"
 	done
 
 JessieJames3BeatenText:
@@ -160,5 +263,5 @@ Route24_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  8, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route24JessieScript, EVENT_ROUTE_24_JESSIE
-	object_event  8,  7, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route24JamesScript, EVENT_ROUTE_24_JAMES
+	object_event  8,  8, SPRITE_JESSIE_DISGUISE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route24JessieScript, EVENT_ROUTE_24_JESSIE
+	object_event  8,  7, SPRITE_JAMES_DISGUISE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route24JamesScript, EVENT_ROUTE_24_JAMES
