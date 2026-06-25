@@ -5,7 +5,8 @@ CERULEANJEWELER_STAR_PIECE_MONEY  EQU 10000
 CERULEANJEWELER_NUGGET_MONEY      EQU 50000
 
 	object_const_def
-	const CERULEANJEWELER_BEAUTY
+	const CERULEANJEWELER_BEAUTY1
+	const CERULEANJEWELER_BEAUTY2
 	const CERULEANJEWELER_GENTLEMAN
 	const CERULEANJEWELER_PERSIAN
 	const CERULEANJEWELER_GOLD_TROPHY
@@ -17,7 +18,7 @@ CeruleanJeweler_MapScripts:
 
 	def_callbacks
 
-CeruleanJewelerBeautyScript:
+CeruleanJewelerBeauty1Script:
 	faceplayer
 	opentext
 	writetext CeruleanJewelerBeauty_StdText
@@ -104,6 +105,12 @@ CeruleanJewelerBeautyScript:
 	writetext CeruleanJewelerBeauty_RefusedText
 CeruleanJeweler_EndText:
 	waitbutton
+	closetext
+	end
+
+CeruleanJewelerBeauty2Script:
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_JEWELER
 	closetext
 	end
 
@@ -253,9 +260,10 @@ CeruleanJeweler_MapEvents:
 	bg_event  8,  2, BGEVENT_READ, CeruleanJewelerCaseScript
 
 	def_object_events
-	object_event  6,  1, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerBeautyScript, -1
+	object_event  6,  1, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerBeauty1Script, -1
+	object_event  2,  1, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerBeauty2Script, -1
 	object_event  2,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerGentlemanScript, -1
-	object_event  1,  1, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerPersianScript, -1
+	object_event  6,  9, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerPersianScript, -1
 	object_event  2,  4, SPRITE_GOLD_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerTrophyScript, -1
 	object_event  4,  4, SPRITE_SILVER_TROPHY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerTrophyScript, -1
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanJewelerNuggetScript, -1
