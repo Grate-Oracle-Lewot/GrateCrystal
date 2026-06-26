@@ -253,10 +253,11 @@ PonytaEggMoves:
 	db -1 ; end
 
 SlowpokeEggMoves:
-	db SAFEGUARD
-	db BELLY_DRUM
 	db STOMP
 	db SLUDGE
+	db SAFEGUARD
+	db BELLY_DRUM
+	db BIDE
 	db FUTURE_SIGHT
 	db EXTREMESPEED
 	db -1 ; end
@@ -410,6 +411,7 @@ HorseaEggMoves:
 	db -1 ; end
 
 GoldeenEggMoves:
+	db LOVELY_KISS
 	db HAZE
 	db SKULL_BASH
 	db IRON_HEAD
@@ -806,6 +808,7 @@ HeracrossEggMoves:
 	db BIDE
 	db LOW_KICK
 	db WING_ATTACK
+	db SEISMIC_TOSS
 	db IRON_HEAD
 	db -1 ; end
 
