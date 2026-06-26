@@ -159,22 +159,22 @@ PowerPlant2FManagerWhoWouldRuinMyGeneratorText:
 	para "I spent so much"
 	line "time on it!"
 
-	para "If I catch him,"
-	line "he's going to get"
+	para "If I catch them,"
+	line "they're going to"
 
-	para "a taste of my"
+	para "get a taste of my"
 	line "BLITZKRIEG!"
 	done
 
 PowerPlant2FManagerIWontForgiveCulpritText:
 	text "MANAGER: I won't"
-	line "forgive him!"
+	line "forgive them!"
 
 	para "The culprit can"
 	line "cry and apologize,"
 
 	para "but I'll still"
-	line "hammer him!"
+	line "hammer them!"
 	done
 
 PowerPlant2FManagerThatsThePartText:
