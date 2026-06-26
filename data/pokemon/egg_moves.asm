@@ -784,10 +784,13 @@ SnubbullEggMoves:
 
 QwilfishEggMoves:
 	db SPARK
+	db SUBMISSION
+	db BIDE
 	db FLAIL
 	db SMOKESCREEN
 	db HAZE
 	db MEAN_LOOK
+	db RAPID_SPIN
 	db SPIKE_CANNON
 	db -1 ; end
 
