@@ -1917,9 +1917,11 @@ GyaradosEvosAttacks:
 	db 25, TWISTER
 	db 30, DRAGON_RAGE
 	db 35, OUTRAGE
-	db 40, HYDRO_PUMP
-	db 45, HYPER_FANG
-	db 50, DOUBLE_EDGE
+	db 40, HYPER_FANG
+	db 45, CRUNCH
+	db 50, HYDRO_PUMP
+	db 55, DOUBLE_EDGE
+	db 60, SUPER_FANG
 	db 0 ; no more level-up moves
 
 LaprasEvosAttacks:
