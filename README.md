@@ -615,12 +615,12 @@ TriteHexagon - demixes for Dive and Contests from RSE, Cynthia battle, some enco
 
 Mmmmmmmmmmmmmmmmm - Route 47 theme demix
 
-The3Element05 - graphics for Font #4
+The3Element05 - graphics for Font #2
 
-WhoaMan - some characters in Font #3
+WhoaMan - some characters in Font #4
 
 Cottonee frontsprite and Cottonee, Whimsicott, and Yanmega backsprites - edited from a sheet that credits LostImpact, Neslug, Gold Z, Chaos Rush, Solo, lakeofdance, Blue Emerald, bloodless, Pokekoks, boonzeet, and Rangi
 
 Some Pokémon icons taken from sheets by Emi Monserrate, LuigiTKO, Chamber, Solo0993, Blue Emerald, Lake, Neslug, and Pikachu25
 
-Type, category, status, and weather icons; Eusine overworld sprites; and fonts #2-3 taken from Polished Crystal
+Type, category, status, and weather icons; Eusine overworld sprites; and fonts #3-4 taken from Polished Crystal
