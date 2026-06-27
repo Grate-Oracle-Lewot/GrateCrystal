@@ -483,6 +483,7 @@ INCLUDE "data/battle/ai/residual_moves.asm"
 AI_Types:
 ; Encourage super effective moves and discourage not very effective moves.
 ; Ignore moves with a power of 0 or 1. Skip discouragement if all damaging moves are the same type.
+; Further encourage moves that are extremely effective (or super duper effective).
 ; Encourage moves based on the weather. Includes Solarbeam, Thunder, and Blizzard.
 
 	ld hl, wEnemyAIMoveScores - 1
@@ -519,6 +520,11 @@ AI_Types:
 	jr c, .noteffective
 
 ; greater than effective
+	dec [hl]
+	cp SUPER_EFFECTIVE
+	jr c, .checkmove
+
+; greater than super effective
 	dec [hl]
 	jr .checkmove
 
