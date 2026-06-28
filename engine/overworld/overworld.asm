@@ -1,19 +1,3 @@
-GetEmote2bpp:
-	ld a, $1
-	ldh [rVBK], a
-	call Get2bpp
-	xor a
-	ldh [rVBK], a
-	ret
-
-_UpdatePlayerSprite::
-	call GetPlayerSprite
-	ld a, [wUsedSprites]
-	ldh [hUsedSpriteIndex], a
-	ld a, [wUsedSprites + 1]
-	ldh [hUsedSpriteTile], a
-	jp GetUsedSprite
-
 _RefreshSprites: ; mobile
 	ld hl, wSpriteFlags
 	ld a, [hl]
@@ -35,19 +19,6 @@ _ClearSprites: ; mobile
 	pop af
 	ld [wSpriteFlags], a
 	ret
-
-RefreshSprites::
-	call .Refresh
-	jp LoadUsedSpritesGFX
-
-.Refresh:
-	xor a
-	ld bc, wUsedSpritesEnd - wUsedSprites
-	ld hl, wUsedSprites
-	call ByteFill
-	call GetPlayerSprite
-	call AddMapSprites
-	jp LoadAndSortSprites
 
 GetPlayerSprite:
 ; Get Chris or Kris's sprite.
@@ -127,28 +98,6 @@ AddOutdoorSprites:
 	call AddSpriteGFX
 	jr .loop
 
-LoadUsedSpritesGFX:
-	ld a, MAPCALLBACK_SPRITES
-	call RunMapCallback
-	call GetUsedSprites
-	; fallthrough
-
-LoadMiscTiles:
-	ld a, [wSpriteFlags]
-	bit 6, a
-	ret nz
-
-	ld c, EMOTE_SHADOW
-	farcall LoadEmote
-	call GetMapEnvironment
-	cp GATE
-	ld c, EMOTE_GRASS_RUSTLE
-	jr c, .outdoor
-	ld c, EMOTE_BOULDER_DUST
-.outdoor
-	farcall LoadEmote
-	ret
-
 SafeGetSprite:
 	push hl
 	call GetSprite
@@ -214,7 +163,6 @@ GetMonSprite:
 
 .BreedMon2
 	ld a, [wBreedMon2Species]
-
 .Mon:
 	ld e, a
 	and a
@@ -314,14 +262,9 @@ AddSpriteGFX:
 	scf
 	ret
 
-.exists
-	pop bc
-	pop hl
-	and a
-	ret
-
 .new
 	ld [hl], b
+.exists
 	pop bc
 	pop hl
 	and a
@@ -348,6 +291,19 @@ LoadSpriteGFX:
 	pop bc
 	ld a, l
 	ret
+
+RefreshSprites::
+	call .Refresh
+	jp LoadUsedSpritesGFX
+
+.Refresh:
+	xor a
+	ld bc, wUsedSpritesEnd - wUsedSprites
+	ld hl, wUsedSprites
+	call ByteFill
+	call GetPlayerSprite
+	call AddMapSprites
+	; fallthrough
 
 LoadAndSortSprites:
 	call LoadSpriteGFX
@@ -456,11 +412,32 @@ GetUsedSprites:
 	jr nz, .loop
 	ret
 
+_UpdatePlayerSprite::
+	call GetPlayerSprite
+	ld a, [wUsedSprites]
+	ldh [hUsedSpriteIndex], a
+	ld a, [wUsedSprites + 1]
+	ldh [hUsedSpriteTile], a
+	; fallthrough
+
 GetUsedSprite:
 	ldh a, [hUsedSpriteIndex]
 	call SafeGetSprite
 	ldh a, [hUsedSpriteTile]
-	call .GetTileAddr
+
+	and $7f
+	ld l, a
+	ld h, 0
+rept 4
+	add hl, hl
+endr
+	ld a, l
+	add LOW(vTiles0)
+	ld l, a
+	ld a, h
+	adc HIGH(vTiles0)
+	ld h, a
+
 	push hl
 	push de
 	push bc
@@ -512,21 +489,26 @@ endr
 	ldh [rVBK], a
 	ret
 
-.GetTileAddr:
-; Return the address of tile (a) in (hl).
-	and $7f
-	ld l, a
-	ld h, 0
-rept 4
-	add hl, hl
-endr
-	ld a, l
-	add LOW(vTiles0)
-	ld l, a
-	ld a, h
-	adc HIGH(vTiles0)
-	ld h, a
-	ret
+LoadUsedSpritesGFX:
+	ld a, MAPCALLBACK_SPRITES
+	call RunMapCallback
+	call GetUsedSprites
+	; fallthrough
+
+LoadMiscTiles:
+	ld a, [wSpriteFlags]
+	bit 6, a
+	ret nz
+
+	ld c, EMOTE_SHADOW
+	call LoadEmote
+	call GetMapEnvironment
+	cp GATE
+	ld c, EMOTE_GRASS_RUSTLE
+	jr c, .outdoor
+	ld c, EMOTE_BOULDER_DUST
+.outdoor
+	; fallthrough
 
 LoadEmote::
 ; Get the address of the pointer to emote c.
@@ -554,7 +536,15 @@ LoadEmote::
 	ld a, c
 	and a
 	ret z
-	jp GetEmote2bpp
+	; fallthrough
+
+GetEmote2bpp:
+	ld a, $1
+	ldh [rVBK], a
+	call Get2bpp
+	xor a
+	ldh [rVBK], a
+	ret
 
 INCLUDE "data/sprites/emotes.asm"
 
