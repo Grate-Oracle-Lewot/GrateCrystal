@@ -30,20 +30,14 @@ Route24JessieScript:
 	faceplayer
 	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
 	special LoadUsedSpritesGFX
-	faceplayer
 	applymovement ROUTE24_JAMES, Movement_JessieJamesSpin
 	readvar VAR_FACING
-	ifequal UP, .facedown1
-	ifequal DOWN, .faceup1
+	ifequal UP, .facedown
+	ifequal DOWN, .faceup
 	turnobject ROUTE24_JAMES, RIGHT
-.finish1
+.finish
 	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
 	special LoadUsedSpritesGFX
-	readvar VAR_FACING
-	ifequal UP, .facedown2
-	ifequal DOWN, .faceup2
-	turnobject ROUTE24_JAMES, RIGHT
-.finish2
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
 	writetext Route24JessieSeen2Text
@@ -73,21 +67,13 @@ Route24JessieScript:
 	playmapmusic
 	end
 
-.facedown1
+.facedown
 	turnobject ROUTE24_JAMES, DOWN
-	sjump .finish1
+	sjump .finish
 
-.faceup1
+.faceup
 	turnobject ROUTE24_JAMES, UP
-	sjump .finish1
-
-.facedown2
-	turnobject ROUTE24_JAMES, DOWN
-	sjump .finish2
-
-.faceup2
-	turnobject ROUTE24_JAMES, UP
-	sjump .finish2
+	sjump .finish
 
 Route24JamesScript:
 	faceplayer
@@ -99,20 +85,14 @@ Route24JamesScript:
 	faceplayer
 	variablesprite SPRITE_JAMES_DISGUISE, SPRITE_JAMES
 	special LoadUsedSpritesGFX
-	faceplayer
 	applymovement ROUTE24_JESSIE, Movement_JessieJamesSpin
 	readvar VAR_FACING
-	ifequal UP, .facedown1
-	ifequal DOWN, .faceup1
+	ifequal UP, .facedown
+	ifequal DOWN, .faceup
 	turnobject ROUTE24_JESSIE, RIGHT
-.finish1
+.finish
 	variablesprite SPRITE_JESSIE_DISGUISE, SPRITE_JESSIE
 	special LoadUsedSpritesGFX
-	readvar VAR_FACING
-	ifequal UP, .facedown2
-	ifequal DOWN, .faceup2
-	turnobject ROUTE24_JESSIE, RIGHT
-.finish2
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
 	writetext Route24JamesSeen2Text
@@ -142,21 +122,13 @@ Route24JamesScript:
 	playmapmusic
 	end
 
-.facedown1
+.facedown
 	turnobject ROUTE24_JESSIE, DOWN
-	sjump .finish1
+	sjump .finish
 
-.faceup1
+.faceup
 	turnobject ROUTE24_JESSIE, UP
-	sjump .finish1
-
-.facedown2
-	turnobject ROUTE24_JESSIE, DOWN
-	sjump .finish2
-
-.faceup2
-	turnobject ROUTE24_JESSIE, UP
-	sjump .finish2
+	sjump .finish
 
 Movement_JessieJamesSpin:
 	turn_head DOWN
