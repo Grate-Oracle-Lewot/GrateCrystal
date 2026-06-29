@@ -6,7 +6,7 @@ JackIntelligenceKeepsRisingText:
 
 	para "rising. It might"
 	line "be smarter than"
-	cont "yours!"
+	cont "your #MON!"
 	done
 
 JackDefeatedMonText:
