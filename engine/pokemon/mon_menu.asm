@@ -930,7 +930,7 @@ MoveScreenLoop:
 	hlcoord 1, 12
 	lb bc, 5, SCREEN_WIDTH - 2
 	call ClearBox
-	hlcoord 2, 13
+	hlcoord 2, 14
 	ld de, String_MoveWhere
 	call PlaceString
 	jp .joy_loop
@@ -1106,7 +1106,7 @@ MoveScreen2DMenuData:
 	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
 
 String_MoveWhere:
-	db "Select a move<NEXT>to swap places.@"
+	db "Select a move<LF>to swap places.@"
 
 SetUpMoveScreenBG:
 	call ClearBGPalettes
