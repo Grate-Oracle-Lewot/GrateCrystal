@@ -5784,7 +5784,7 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
-	hlcoord 1, 11
+	hlcoord 2, 9
 	ld de, .Disabled
 	jp PlaceString
 
@@ -5934,7 +5934,7 @@ MoveInfoBox:
 .novalue_string:
 	db "---@"
 .Disabled:
-	db "Disabled!@"
+	db " DIS-<LF>ABLED@"
 
 CheckPlayerHasUsableMoves:
 if DEF(_METRONOME_ONLY)
