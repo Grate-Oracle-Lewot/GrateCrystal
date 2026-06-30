@@ -374,13 +374,23 @@ MahoganyGymGuideText:
 
 	para "Ice is good again-"
 	line "st grass, ground,"
-	cont "flying, and drag-"
-	cont "on."
+	cont "flying, and"
+	cont "dragon."
 
 	para "It also resists"
 	line "fairy."
 
-	para "Go for it!"
+	para "You may notice"
+	line "that it's hailing"
+	cont "in here!"
+
+	para "Hail hurts all"
+	line "#MON except for"
+	cont "ice types, and it"
+
+	para "also boosts the"
+	line "DEFENSE of ice"
+	cont "types!"
 	done
 
 MahoganyGymGuideWinText:
