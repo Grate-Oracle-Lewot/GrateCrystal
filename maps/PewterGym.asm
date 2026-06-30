@@ -239,8 +239,19 @@ PewterGymGuideText:
 
 	para "Rock moves will do"
 	line "extra damage to"
-	cont "bug or ice-type"
-	cont "#MON."
+
+	para "bug, ice, fire, or"
+	line "flying #MON."
+
+	para "And mind the sand-"
+	line "storm! It raises"
+
+	para "the SPCL.DEFENSE"
+	line "of rock-types, and"
+
+	para "hurts all types"
+	line "except for rock,"
+	cont "ground, and steel."
 	done
 
 PewterGymGuideWinText:
