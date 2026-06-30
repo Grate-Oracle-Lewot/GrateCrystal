@@ -375,6 +375,13 @@ CeruleanGymGuideText:
 
 	para "are bad against"
 	line "water."
+
+	para "And watch out for"
+	line "the rain in here!"
+
+	para "Rain boosts water,"
+	line "weakens fire, and"
+	cont "prevents burns."
 	done
 
 CeruleanGymGuideWinText:
