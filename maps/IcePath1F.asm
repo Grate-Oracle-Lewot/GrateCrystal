@@ -1,25 +1,16 @@
 	object_const_def
+	const ICEPATH1F_BEAUTY
+	const ICEPATH1F_ROCKER
+	const ICEPATH1F_FISHER
+	const ICEPATH1F_DRAGONITE
 	const ICEPATH1F_POKE_BALL1
 	const ICEPATH1F_POKE_BALL2
 	const ICEPATH1F_POKE_BALL3
-	const ICEPATH1F_BEAUTY
-	const ICEPATH1F_ROCKER
-	const ICEPATH1F_DRAGONITE
-	const ICEPATH1F_FISHER
 
 IcePath1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-IcePath1FHMWaterfall:
-	itemball HM_WATERFALL
-
-IcePath1FPPUp:
-	itemball PP_UP
-
-IcePath1FProtein:
-	itemball PROTEIN
 
 TrainerSkierSkye:
 	trainer SKIER, SKYE, EVENT_BEAT_SKIER_SKYE, SkierSkyeSeenText, SkierSkyeBeatenText, 0, .AfterScript
@@ -69,6 +60,15 @@ IcePath1FDragoniteScript:
 	waitbutton
 	closetext
 	end
+
+IcePath1FHMWaterfall:
+	itemball HM_WATERFALL
+
+IcePath1FPPUp:
+	itemball PP_UP
+
+IcePath1FProtein:
+	itemball PROTEIN
 
 SkierSkyeSeenText:
 	text "Here comes the"
@@ -151,10 +151,10 @@ IcePath1F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 11, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSkierSkye, -1
+	object_event 21,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBoarderSvlad, -1
+	object_event 34, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherSven, -1
+	object_event 15, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FDragoniteScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_GREEN, OBJECTTYPE_ITEMBALL, 0, IcePath1FHMWaterfall, EVENT_GOT_HM07_WATERFALL
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPPUp, EVENT_ICE_PATH_1F_PP_UP
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FProtein, EVENT_ICE_PATH_1F_PROTEIN
-	object_event 11, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSkierSkye, -1
-	object_event 21,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBoarderSvlad, -1
-	object_event 15, 13, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePath1FDragoniteScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
-	object_event 34, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherSven, -1
