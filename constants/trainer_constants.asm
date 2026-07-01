@@ -758,6 +758,7 @@ KRIS EQU __trainer_class__
 	const BRAD
 	const DOUGLAS
 	const SVLAD
+	const EOIN
 
 	trainerclass SKIER ; 4d
 	const ROXANNE
