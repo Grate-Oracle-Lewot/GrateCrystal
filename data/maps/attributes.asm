@@ -695,8 +695,7 @@ ENDM
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $00, 0
 	map_attributes IcePath1F, ICE_PATH_1F, $09, 0
 	map_attributes IcePathB1F, ICE_PATH_B1F, $19, 0
-	map_attributes IcePathB2FMahoganySide, ICE_PATH_B2F_MAHOGANY_SIDE, $19, 0
-	map_attributes IcePathB2FBlackthornSide, ICE_PATH_B2F_BLACKTHORN_SIDE, $19, 0
+	map_attributes IcePathB2F, ICE_PATH_B2F, $19, 0
 	map_attributes IcePathB3F, ICE_PATH_B3F, $19, 0
 	map_attributes IcePathArticunoChamber, ICE_PATH_ARTICUNO_CHAMBER, $19, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $09, 0
