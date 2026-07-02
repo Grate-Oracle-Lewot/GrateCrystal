@@ -515,22 +515,21 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ;  94
 	map_const ICE_PATH_1F,                                 20, 15 ;  95
 	map_const ICE_PATH_B1F,                                10, 18 ;  96
-	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ;  97
-	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ;  98
-	map_const ICE_PATH_B3F,                                10,  9 ;  99
-	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ; 100
-	map_const DRAGONS_DEN_1F,                               5,  9 ; 101
-	map_const DRAGONS_DEN_B1F,                             20, 18 ; 102
-	map_const DRAGON_SHRINE,                                5,  5 ; 103
-	map_const TOHJO_FALLS,                                 20, 18 ; 104
-	map_const MEW_ANTECHAMBER,                              6, 12 ; 105
-	map_const MEW_CHAMBER,                                 10,  9 ; 106
-	map_const VICTORY_ROAD,                                10, 36 ; 107
-	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 108
-	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 109
-	map_const SILVER_CAVE_ROOM_3,                          20, 35 ; 110
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 111
-	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 17 ; 112
+	map_const ICE_PATH_B2F,                                18,  9 ;  97
+	map_const ICE_PATH_B3F,                                10,  9 ;  98
+	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ;  99
+	map_const DRAGONS_DEN_1F,                               5,  9 ; 100
+	map_const DRAGONS_DEN_B1F,                             20, 18 ; 101
+	map_const DRAGON_SHRINE,                                5,  5 ; 102
+	map_const TOHJO_FALLS,                                 20, 18 ; 103
+	map_const MEW_ANTECHAMBER,                              6, 12 ; 104
+	map_const MEW_CHAMBER,                                 10,  9 ; 105
+	map_const VICTORY_ROAD,                                10, 36 ; 106
+	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 107
+	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 108
+	map_const SILVER_CAVE_ROOM_3,                          20, 35 ; 109
+	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 110
+	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 17 ; 111
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 28
