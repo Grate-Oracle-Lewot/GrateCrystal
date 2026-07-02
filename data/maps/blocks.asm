@@ -509,11 +509,8 @@ IcePath1F_Blocks:
 IcePathB1F_Blocks:
 	INCBIN "maps/IcePathB1F.blk"
 
-IcePathB2FMahoganySide_Blocks:
-	INCBIN "maps/IcePathB2FMahoganySide.blk"
-
-IcePathB2FBlackthornSide_Blocks:
-	INCBIN "maps/IcePathB2FBlackthornSide.blk"
+IcePathB2F_Blocks:
+	INCBIN "maps/IcePathB2F.blk"
 
 IcePathB3F_Blocks:
 	INCBIN "maps/IcePathB3F.blk"
