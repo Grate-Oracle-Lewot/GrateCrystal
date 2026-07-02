@@ -2564,69 +2564,7 @@ else
 endc
 	end_grass_wildmons
 
-	def_grass_wildmons ICE_PATH_B2F_MAHOGANY_SIDE
-	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
-	; morn
-	db 29, SWINUB
-if DEF(_LITTLE_CUP)
-	db 30, SEEL
-	db 28, VULPIX
-	db 30, SWINUB
-	db 29, SLOWPOKE
-	db 28, ZUBAT
-	db 28, SLOWPOKE
-	db 28, SANDSHREW
-else
-	db 30, DEWGONG
-	db 28, VULPIX
-	db 30, SNOCONEY
-	db 29, JYNX
-	db 28, DELIBIRD
-	db 28, MR__MIME
-	db 28, SANDSLASH
-endc
-	; day
-	db 29, SWINUB
-if DEF(_LITTLE_CUP)
-	db 30, SEEL
-	db 28, VULPIX
-	db 30, SWINUB
-	db 29, SLOWPOKE
-	db 28, ZUBAT
-	db 28, SLOWPOKE
-	db 28, SANDSHREW
-else
-	db 30, DEWGONG
-	db 28, VULPIX
-	db 30, SNOCONEY
-	db 29, JYNX
-	db 28, DELIBIRD
-	db 28, MR__MIME
-	db 28, SANDSLASH
-endc
-	; nite
-if DEF(_LITTLE_CUP)
-	db 29, SWINUB
-	db 30, SEEL
-	db 28, VULPIX
-	db 30, SWINUB
-	db 29, SLOWPOKE
-	db 28, ZUBAT
-	db 28, SLOWPOKE
-	db 28, SANDSHREW
-else
-	db 29, SNEASEL
-	db 30, DEWGONG
-	db 28, VULPIX
-	db 30, SNOCONEY
-	db 29, JYNX
-	db 28, DELIBIRD
-	db 28, MR__MIME
-	db 28, SANDSLASH
-endc
-	end_grass_wildmons
-
-	def_grass_wildmons ICE_PATH_B2F_BLACKTHORN_SIDE
+	def_grass_wildmons ICE_PATH_B2F
 	db 2 percent, 2 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, SWINUB
