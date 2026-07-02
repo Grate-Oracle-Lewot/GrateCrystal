@@ -3654,9 +3654,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (9)
 	db "PETER@", TRAINERTYPE_NORMAL
-	db  9, PIDGEY
-	db  9, HOOTHOOT
-	db  9, SPEAROW
+	db  9, NATU
+	db  9, SKARMORY
 	db -1 ; end
 
 	; BIRD_KEEPER (10)
