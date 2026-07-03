@@ -40,8 +40,8 @@ UndergroundPath_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  2, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 3
-	warp_event  3, 24, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 3
+	warp_event  3,  2, UNDERGROUND_PATH_ENTRANCE, 3
+	warp_event  3, 24, UNDERGROUND_PATH_ENTRANCE, 6
 
 	def_coord_events
 
