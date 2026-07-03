@@ -114,9 +114,8 @@ ENDM
 	map_const VERMILION_MAGNET_TRAIN_SPEECH_HOUSE,          4,  4 ;  7
 	map_const VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE,         4,  4 ;  8
 	map_const ROUTE_6,                                     10,  9 ;  9
-	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 10
-	map_const ROUTE_6_SAFFRON_GATE,                         4,  3 ; 11
-	map_const ROUTE_11,                                    20,  9 ; 12
+	map_const ROUTE_6_SAFFRON_GATE,                         4,  3 ; 10
+	map_const ROUTE_11,                                    20,  9 ; 11
 	endgroup
 
 	newgroup LAVENDER                                       ; group  7
@@ -199,9 +198,9 @@ ENDM
 
 	newgroup SAFFRON_OUTER                                  ; group 12
 	map_const ROUTE_5,                                     21,  9 ;  1
-	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ;  2
-	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ;  3
-	map_const ROUTE_5_SAFFRON_GATE,                         4,  3 ;  4
+	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ;  2
+	map_const ROUTE_5_SAFFRON_GATE,                         4,  3 ;  3
+	map_const UNDERGROUND_PATH_ENTRANCE,                    4, 12 ;  4
 	endgroup
 
 	newgroup CINNABAR                                       ; group 13
