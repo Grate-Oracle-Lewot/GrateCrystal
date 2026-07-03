@@ -216,7 +216,7 @@ TrainerSkierTheresa:
 	sjump Route26_EndText
 
 TrainerSwimmerfJaclyn:
-	trainer SWIMMER_F, JACLYN, EVENT_BEAT_SWIMMER_F_JACLYN, SwimmerfJaclynSeenText, SwimmerfJaclynBeatenText, 0, .AfterScript
+	trainer SWIMMERF, JACLYN, EVENT_BEAT_SWIMMERF_JACLYN, SwimmerfJaclynSeenText, SwimmerfJaclynBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
@@ -225,7 +225,7 @@ TrainerSwimmerfJaclyn:
 	sjump Route26_EndText
 
 TrainerPokefanfCaroline:
-	trainer POKEFAN_F, CAROLINE, EVENT_BEAT_POKEFAN_F_CAROLINE, PokefanfCarolineSeenText, PokefanfCarolineBeatenText, 0, .AfterScript
+	trainer POKEFANF, CAROLINE, EVENT_BEAT_POKEFANF_CAROLINE, PokefanfCarolineSeenText, PokefanfCarolineBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
