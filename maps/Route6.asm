@@ -96,7 +96,7 @@ Route6_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 17,  3, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, 1
+	warp_event 17,  3, UNDERGROUND_PATH_ENTRANCE, 4
 	warp_event  6,  1, ROUTE_6_SAFFRON_GATE, 3
 
 	def_coord_events
