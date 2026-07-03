@@ -140,9 +140,8 @@ Vermilion_Map_Names: ; VERMILION
 	dw Vermilion_Map_Name7  ; VERMILION_MAGNET_TRAIN_SPEECH_HOUSE
 	dw Vermilion_Map_Name8  ; VERMILION_DIGLETTS_CAVE_SPEECH_HOUSE
 	dw Vermilion_Map_Name9  ; ROUTE_6
-	dw Vermilion_Map_Name10 ; ROUTE_6_UNDERGROUND_PATH_ENTRANCE
-	dw Vermilion_Map_Name11 ; ROUTE_6_SAFFRON_GATE
-	dw Vermilion_Map_Name12 ; ROUTE_11
+	dw Vermilion_Map_Name10 ; ROUTE_6_SAFFRON_GATE
+	dw Vermilion_Map_Name11 ; ROUTE_11
 	assert_table_length NUM_VERMILION_MAPS
 
 Lavender_Map_Names: ; LAVENDER
@@ -231,9 +230,9 @@ Saffron_Inner_Map_Names: ; SAFFRON_INNER
 Saffron_Outer_Map_Names: ; SAFFRON_OUTER
 	table_width 2, Saffron_Outer_Map_Names
 	dw Saffron_Outer_Map_Name1 ; ROUTE_5
-	dw Saffron_Outer_Map_Name2 ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	dw Saffron_Outer_Map_Name3 ; ROUTE_5_CLEANSE_TAG_HOUSE
-	dw Saffron_Outer_Map_Name4 ; ROUTE_5_SAFFRON_GATE
+	dw Saffron_Outer_Map_Name2 ; ROUTE_5_CLEANSE_TAG_HOUSE
+	dw Saffron_Outer_Map_Name3 ; ROUTE_5_SAFFRON_GATE
+	dw Saffron_Outer_Map_Name4 ; UNDERGROUND_PATH_ENTRANCE
 	assert_table_length NUM_SAFFRON_OUTER_MAPS
 
 Cinnabar_Map_Names: ; CINNABAR
@@ -709,9 +708,7 @@ Vermilion_Map_Name9: ; ROUTE_6
 	db "ROUTE 6@"
 Vermilion_Map_Name10: ; ROUTE_6_SAFFRON_GATE
 	db "ROUTE 6 GATE@"
-Vermilion_Map_Name11: ; ROUTE_6_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 6 UTILITY@"
-Vermilion_Map_Name12: ; ROUTE_11
+Vermilion_Map_Name11: ; ROUTE_11
 	db "ROUTE 11@"
 
 Lavender_Map_Name1: ; LAVENDER_TOWN
@@ -847,12 +844,12 @@ Saffron_Inner_Map_Name10: ; MR_PSYCHICS_HOUSE
 
 Saffron_Outer_Map_Name1: ; ROUTE_5
 	db "ROUTE 5@"
-Saffron_Outer_Map_Name2: ; ROUTE_5_UNDERGROUND_PATH_ENTRANCE
-	db "ROUTE 5 UTILITY@"
-Saffron_Outer_Map_Name3: ; ROUTE_5_CLEANSE_TAG_HOUSE
+Saffron_Outer_Map_Name2: ; ROUTE_5_CLEANSE_TAG_HOUSE
 	db "ROUTE 5 COTTAGE@"
-Saffron_Outer_Map_Name4: ; ROUTE_5_SAFFRON_GATE
+Saffron_Outer_Map_Name3: ; ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
+Saffron_Outer_Map_Name4: ; UNDERGROUND_PATH_ENTRANCE
+	db "UTILITY SHED@"
 
 Cinnabar_Map_Name1: ; CINNABAR_ISLAND
 	db "CINNABAR ISLAND@"
