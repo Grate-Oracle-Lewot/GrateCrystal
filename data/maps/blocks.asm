@@ -348,8 +348,7 @@ NationalPark_Blocks:
 NationalParkBugContest_Blocks:
 	INCBIN "maps/NationalPark.blk"
 
-Route5UndergroundPathEntrance_Blocks:
-Route6UndergroundPathEntrance_Blocks:
+UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.blk"
 
 KurtsHouse_Blocks:
