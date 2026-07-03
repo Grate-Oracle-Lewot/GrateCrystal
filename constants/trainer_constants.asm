@@ -605,9 +605,6 @@ KRIS EQU __trainer_class__
 	const VALERIE
 	const OLIVIA
 	const JULIE
-	const THERESA
-	const JACLYN
-	const CAROLINE
 	const CASSIE
 	const JULIA
 	const BERYL
@@ -698,6 +695,7 @@ KRIS EQU __trainer_class__
 	const RUTH
 	const JAIME
 	const VI
+	const CAROLINE
 	const GEORGIA
 
 	trainerclass SAGE ; 48
@@ -745,6 +743,7 @@ KRIS EQU __trainer_class__
 	const KARA
 	const WENDY
 	const DAWN
+	const JACLYN
 	const NICOLE
 	const LORI
 	const NIKKI
@@ -764,6 +763,7 @@ KRIS EQU __trainer_class__
 	const ROXANNE
 	const CLARISSA
 	const SKYE
+	const THERESA
 	const MIKAELA
 
 ; Start of Rocket music
