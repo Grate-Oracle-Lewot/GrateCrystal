@@ -206,31 +206,31 @@ TrainerBeautyJulie:
 	writetext BeautyJulieAfterBattleText
 	sjump Route26_EndText
 
-TrainerBeautyTheresa:
-	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .AfterScript
+TrainerSkierTheresa:
+	trainer SKIER, THERESA, EVENT_BEAT_SKIER_THERESA, SkierTheresaSeenText, SkierTheresaBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BeautyTheresaAfterBattleText
+	writetext SkierTheresaAfterBattleText
 	sjump Route26_EndText
 
-TrainerBeautyJaclyn:
-	trainer BEAUTY, JACLYN, EVENT_BEAT_BEAUTY_JACLYN, BeautyJaclynSeenText, BeautyJaclynBeatenText, 0, .AfterScript
+TrainerSwimmerfJaclyn:
+	trainer SWIMMER_F, JACLYN, EVENT_BEAT_SWIMMER_F_JACLYN, SwimmerfJaclynSeenText, SwimmerfJaclynBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BeautyJaclynAfterBattleText
+	writetext SwimmerfJaclynAfterBattleText
 	sjump Route26_EndText
 
-TrainerBeautyCaroline:
-	trainer BEAUTY, CAROLINE, EVENT_BEAT_BEAUTY_CAROLINE, BeautyCarolineSeenText, BeautyCarolineBeatenText, 0, .AfterScript
+TrainerPokefanfCaroline:
+	trainer POKEFAN_F, CAROLINE, EVENT_BEAT_POKEFAN_F_CAROLINE, PokefanfCarolineSeenText, PokefanfCarolineBeatenText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BeautyCarolineAfterBattleText
+	writetext PokefanfCarolineAfterBattleText
 	sjump Route26_EndText
 
 Route26Sign:
@@ -415,38 +415,38 @@ BeautyJulieAfterBattleText:
 	cont "we have fun."
 	done
 
-BeautyTheresaSeenText:
+SkierTheresaSeenText:
 	text "I'm the second"
 	line "PETITE FOUR"
 	cont "member. Come on!"
 	done
 
-BeautyTheresaBeatenText:
+SkierTheresaBeatenText:
 	text "You're incredible!"
 	done
 
-BeautyTheresaAfterBattleText:
+SkierTheresaAfterBattleText:
 	text "You're the first"
 	line "one to actually"
 	cont "challenge us."
 	done
 
-BeautyJaclynSeenText:
+SwimmerfJaclynSeenText:
 	text "I'm known as the"
 	line "scariest member of"
 	cont "the PETITE FOUR…"
 	done
 
-BeautyJaclynBeatenText:
+SwimmerfJaclynBeatenText:
 	text "You're awesome!"
 	done
 
-BeautyJaclynAfterBattleText:
+SwimmerfJaclynAfterBattleText:
 	text "I know, we're not"
 	line "very scary."
 	done
 
-BeautyCarolineSeenText:
+PokefanfCarolineSeenText:
 	text "I'm the final"
 	line "challenge of the"
 	cont "PETITE FOUR."
@@ -457,12 +457,12 @@ BeautyCarolineSeenText:
 	para "Let's find out!"
 	done
 
-BeautyCarolineBeatenText:
+PokefanfCarolineBeatenText:
 	text "You're the"
 	line "BEEDRILL's knees!"
 	done
 
-BeautyCarolineAfterBattleText:
+PokefanfCarolineAfterBattleText:
 	text "Care to join our"
 	line "league as the"
 	cont "CHAMPION?"
@@ -495,10 +495,10 @@ Route26_MapEvents:
 	object_event  5,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfBeth, -1
 	object_event 13, 79, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 4, TrainerPsychicRichard, -1
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
-	object_event  1, 85, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulie, -1
-	object_event  1, 86, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBeautyTheresa, -1
-	object_event  1, 87, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerBeautyJaclyn, -1
-	object_event  1, 88, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyCaroline, -1
+	object_event  1, 85, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulie, -1
+	object_event  1, 86, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSkierTheresa, -1
+	object_event  1, 87, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfJaclyn, -1
+	object_event  1, 88, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerPokefanfCaroline, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
 	object_event 14, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26PPUp, EVENT_ROUTE_26_PP_UP
