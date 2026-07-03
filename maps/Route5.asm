@@ -59,7 +59,7 @@ Route5_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 27, 15, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, 1
+	warp_event 27, 15, UNDERGROUND_PATH_ENTRANCE, 1
 	warp_event 18, 17, ROUTE_5_SAFFRON_GATE, 1
 	warp_event 19, 17, ROUTE_5_SAFFRON_GATE, 2
 	warp_event 20, 11, ROUTE_5_CLEANSE_TAG_HOUSE, 1
