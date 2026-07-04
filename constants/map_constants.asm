@@ -180,7 +180,9 @@ ENDM
 	endgroup
 
 	newgroup SAFARI                                         ; group 10
-	map_const SAFARI_ZONE,                                 30, 27 ;  1
+	map_const SAFARI_ZONE_SW,                               31, 26 ;  1
+	map_const SAFARI_ZONE_E,                                13, 14 ;  2
+	map_const SAFARI_ZONE_N,                                23, 12 ;  3
 	endgroup
 
 	newgroup SAFFRON_INNER                                  ; group 11
