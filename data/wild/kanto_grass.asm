@@ -1996,7 +1996,7 @@ else
 endc
 	end_grass_wildmons
 
-	def_grass_wildmons SAFARI_ZONE
+	def_grass_wildmons SAFARI_ZONE_SW
 	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
 	; morn
 if DEF(_LITTLE_CUP)
@@ -2057,6 +2057,134 @@ else
 	db 33, RATICATE
 	db 30, VENOMOTH
 	db 28, YANMEGA
+endc
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE_E
+	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
+	; morn
+if DEF(_LITTLE_CUP)
+	db 28, JIGGLYPUFF
+	db 28, GROWLITHE
+	db 30, RATTATA
+	db 30, SENTRET
+	db 33, NIDORAN_M
+	db 33, NIDORAN_F
+	db 19, MANKEY
+	db 45, SUNKERN
+else
+	db 28, JIGGLYPUFF
+	db 28, GROWLITHE
+	db 30, STANTLER
+	db 30, LICKITUNG
+	db 33, NIDOKING
+	db 33, NIDOQUEEN
+	db 19, AIPOM
+	db 46, DITTO
+endc
+	; day
+if DEF(_LITTLE_CUP)
+	db 30, NIDORAN_M
+	db 30, NIDORAN_F
+	db 30, RATTATA
+	db 30, SENTRET
+	db 33, SCYTHER
+	db 33, KRABBY
+	db 33, CHANSEY
+	db 33, CUBONE
+else
+	db 30, NIDORINO
+	db 30, NIDORINA
+	db 30, TAUROS
+	db 30, MILTANK
+	db 33, SCYTHER
+	db 33, PINSIR
+	db 33, CHANSEY
+	db 33, KANGASKHAN
+endc
+	; nite
+if DEF(_LITTLE_CUP)
+	db 30, GASTLY
+	db 30, RATTATA
+	db 30, CUBONE
+	db 30, DROWZEE
+	db 33, NIDORAN_M
+	db 33, NIDORAN_F
+	db 30, VENONAT
+	db 33, TEDDIURSA
+else
+	db 30, HAUNTER
+	db 30, GIRAFARIG
+	db 30, MAROWAK
+	db 30, HYPNO
+	db 33, NIDOKING
+	db 33, NIDOQUEEN
+	db 30, VENOMOTH
+	db 33, SNORLAX
+endc
+	end_grass_wildmons
+
+	def_grass_wildmons SAFARI_ZONE_N
+	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
+	; morn
+if DEF(_LITTLE_CUP)
+	db 28, VENONAT
+	db 32, SANDSHREW
+	db 20, ABRA
+	db 25, ABRA
+	db 30, ABRA
+	db 35, ABRA
+	db 33, MANKEY
+	db 33, SWINUB
+else
+	db 28, VENONAT
+	db 32, SANDSLASH
+	db 20, WOBBUFFET
+	db 25, WOBBUFFET
+	db 30, WOBBUFFET
+	db 35, WOBBUFFET
+	db 33, AIPOM
+	db 33, SNOCONEY
+endc
+	; day
+if DEF(_LITTLE_CUP)
+	db 30, PARAS
+	db 30, RHYHORN
+	db 32, TEDDIURSA
+	db 32, PHANPY
+	db 33, SCYTHER
+	db 33, KRABBY
+	db 33, CHANSEY
+	db 33, CUBONE
+else
+	db 30, PARASECT
+	db 30, RHYHORN
+	db 32, URSARING
+	db 32, DONPHAN
+	db 33, SCYTHER
+	db 33, PINSIR
+	db 33, CHANSEY
+	db 33, KANGASKHAN
+endc
+	; nite
+if DEF(_LITTLE_CUP)
+	db 33, GASTLY
+	db 30, RATTATA
+	db 30, CUBONE
+	db 30, DROWZEE
+	db 32, TEDDIURSA
+	db 32, PHANPY
+	db 30, VENONAT
+	db 33, MANKEY
+else
+	db 33, MISDREAVUS
+	db 30, GIRAFARIG
+	db 30, MAROWAK
+	db 30, HYPNO
+	db 32, URSARING
+	db 32, DONPHAN
+	db 30, VENOMOTH
+	db 33, PRIMEAPE
 endc
 	end_grass_wildmons
 
