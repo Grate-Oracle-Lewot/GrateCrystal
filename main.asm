@@ -577,11 +577,6 @@ INCLUDE "data/phone/text/todd_caller.asm"
 INCLUDE "data/phone/text/gina_caller.asm"
 
 
-SECTION "UpdateBattleHUDs", ROMX
-
-INCLUDE "engine/battle/update_battle_huds.asm"
-
-
 SECTION "mobile5E", ROMX
 
 INCLUDE "mobile/mobile_5e.asm"
