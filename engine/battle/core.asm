@@ -3238,7 +3238,8 @@ EnemySwitch_SetMode:
 
 EnemySwitch_ShowSendOutTextAndAnimation:
 	call ShowBattleTextEnemySentOut
-	jp ShowSetEnemyMonAndSendOutAnimation
+	call ShowSetEnemyMonAndSendOutAnimation
+	jp HandleStatBoostingHeldItems
 
 CheckWhetherSwitchmonIsPredetermined:
 ; returns the enemy switchmon index in b, or
