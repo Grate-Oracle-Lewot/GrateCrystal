@@ -1,5 +1,6 @@
 	object_const_def
 	const SAFARIZONEE_BIRD
+	const SAFARIZONEE_POKE_BALL
 
 SafariZoneE_MapScripts:
 	def_scene_scripts
@@ -21,6 +22,9 @@ endc
 	reloadmapafterbattle
 	end
 
+SafariZoneEEscapeRope:
+	itemball ESCAPE_ROPE
+
 SafariZoneE_MapEvents:
 	db 0, 0 ; filler
 
@@ -32,3 +36,4 @@ SafariZoneE_MapEvents:
 
 	def_object_events
 	object_event 14, 19, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 1, 1, NITE_HOUR, MORN_HOUR, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, SafariZoneEAerodactylScript, EVENT_SAFARI_ZONE_E_AERODACTYL
+	object_event 25, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneEEscapeRope, EVENT_SAFARI_ZONE_E_ESCAPE_ROPE
