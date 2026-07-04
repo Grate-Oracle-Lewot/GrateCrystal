@@ -714,6 +714,7 @@ PokeBallEffect:
 .shake_and_break_free
 	call PrintText
 	call ClearSprites
+	call UpdateEnemyHUD
 
 .return_from_capture
 	ld a, [wBattleType]
