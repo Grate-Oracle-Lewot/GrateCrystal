@@ -713,7 +713,6 @@ PokeBallEffect:
 
 .shake_and_break_free
 	call PrintText
-	farcall UpdateEnemyHUD
 	call ClearSprites
 
 .return_from_capture
