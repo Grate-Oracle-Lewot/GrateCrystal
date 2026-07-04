@@ -214,6 +214,16 @@ ENDM
 	connection west, Route17, ROUTE_17, -38
 	connection east, FuchsiaCity, FUCHSIA_CITY, -7
 
+	map_attributes SafariZoneSW, SAFARI_ZONE_SW, $4B, NORTH | EAST
+	connection north, SafariZoneN, SAFARI_ZONE_N, 8
+	connection east, SafariZoneE, SAFARI_ZONE_E, 5
+
+	map_attributes SafariZoneE, SAFARI_ZONE_E, $4B, WEST
+	connection west, SafariZoneSW, SAFARI_ZONE_SW, -5
+
+	map_attributes SafariZoneN, SAFARI_ZONE_N, $4B, SOUTH
+	connection west, SafariZoneSW, SAFARI_ZONE_SW, -8
+
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | EAST
 	connection north, Route5, ROUTE_5, 5
 	connection south, Route6, ROUTE_6, 10
@@ -456,7 +466,6 @@ ENDM
 	map_attributes SafariZoneWardensHome, SAFARI_ZONE_WARDENS_HOME, $00, 0
 	map_attributes SafariZoneGate, SAFARI_ZONE_GATE, $00, 0
 	map_attributes Route15FuchsiaGate, ROUTE_15_FUCHSIA_GATE, $00, 0
-	map_attributes SafariZone, SAFARI_ZONE, $4B, 0
 	map_attributes SaffronPokecenter1F, SAFFRON_POKECENTER_1F, $00, 0
 	map_attributes SaffronMart, SAFFRON_MART, $00, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $00, 0
