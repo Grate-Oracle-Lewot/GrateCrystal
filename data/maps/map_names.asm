@@ -210,7 +210,9 @@ Fuchsia_Map_Names: ; FUCHSIA
 
 Safari_Map_Names: ; SAFARI
 	table_width 2, Safari_Map_Names
-	dw Safari_Map_Name1 ; SAFARI_ZONE
+	dw Safari_Map_Name1 ; SAFARI_ZONE_SW
+	dw Safari_Map_Name2 ; SAFARI_ZONE_E
+	dw Safari_Map_Name3 ; SAFARI_ZONE_N
 	assert_table_length NUM_SAFARI_MAPS
 
 Saffron_Inner_Map_Names: ; SAFFRON_INNER
@@ -818,8 +820,12 @@ Fuchsia_Map_Name12: ; ROUTE_15_FUCHSIA_GATE
 Fuchsia_Map_Name13: ; ROUTE_18
 	db "ROUTE 18@"
 
-Safari_Map_Name1: ; SAFARI_ZONE
-	db "SAFARI ZONE@"
+Safari_Map_Name1: ; SAFARI_ZONE_SW
+	db "SAFARI ZONE SW@"
+Safari_Map_Name2: ; SAFARI_ZONE_E
+	db "SAFARI ZONE E@"
+Safari_Map_Name3: ; SAFARI_ZONE_N
+	db "SAFARI ZONE N@"
 
 Saffron_Inner_Map_Name1: ; SAFFRON_CITY
 	db "SAFFRON CITY@"
