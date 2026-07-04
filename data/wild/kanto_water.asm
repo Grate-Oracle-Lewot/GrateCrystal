@@ -198,14 +198,26 @@ else
 endc
 	end_water_wildmons
 
-	def_water_wildmons SAFARI_ZONE
-	db 1 percent ; encounter rate
-if DEF(_LITTLE_CUP)
-	db 35, SEEL
-else
-	db 35, LAPRAS
-endc
+	def_water_wildmons SAFARI_ZONE_SW
+	db 3 percent ; encounter rate
+	db 35, SEAKING
 	db 35, YANMA
+	db 35, STARYU
+	db 35, JIRK
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_E
+	db 1 percent ; encounter rate
+	db 35, CORSOLA
+	db 35, QWILFISH
+	db 35, OMANYTE
+	db 35, KABUTO
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_N
+	db 1 percent ; encounter rate
+	db 35, LAPRAS
+	db 35, SEADRA
 	db 5, SQUIRTLE
 	db 5, TOTODILE
 	end_water_wildmons
