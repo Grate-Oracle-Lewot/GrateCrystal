@@ -222,7 +222,7 @@ ENDM
 	connection west, SafariZoneSW, SAFARI_ZONE_SW, -5
 
 	map_attributes SafariZoneN, SAFARI_ZONE_N, $4B, SOUTH
-	connection west, SafariZoneSW, SAFARI_ZONE_SW, -8
+	connection south, SafariZoneSW, SAFARI_ZONE_SW, -8
 
 	map_attributes SaffronCity, SAFFRON_CITY, $0f, NORTH | SOUTH | EAST
 	connection north, Route5, ROUTE_5, 5
