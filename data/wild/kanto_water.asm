@@ -200,24 +200,41 @@ endc
 
 	def_water_wildmons SAFARI_ZONE_SW
 	db 3 percent ; encounter rate
+if DEF(_LITTLE_CUP)
+	db 35, GOLDEEN
+	db 35, YANMA
+	db 35, STARYU
+	db 35, YANMA
+else
 	db 35, SEAKING
 	db 35, YANMA
 	db 35, STARYU
 	db 35, JIRK
+endc
 	end_water_wildmons
 
 	def_water_wildmons SAFARI_ZONE_E
 	db 1 percent ; encounter rate
+if DEF(_LITTLE_CUP)
+	db 35, GEODUDE
+	db 35, MAGIKARP
+else
 	db 35, CORSOLA
 	db 35, QWILFISH
+endc
 	db 35, OMANYTE
 	db 35, KABUTO
 	end_water_wildmons
 
 	def_water_wildmons SAFARI_ZONE_N
 	db 1 percent ; encounter rate
+if DEF(_LITTLE_CUP)
+	db 35, SEEL
+	db 35, HORSEA
+else
 	db 35, LAPRAS
 	db 35, SEADRA
+endc
 	db 5, SQUIRTLE
 	db 5, TOTODILE
 	end_water_wildmons
