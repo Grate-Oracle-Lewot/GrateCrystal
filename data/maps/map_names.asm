@@ -821,7 +821,7 @@ Fuchsia_Map_Name13: ; ROUTE_18
 	db "ROUTE 18@"
 
 Safari_Map_Name1: ; SAFARI_ZONE_SW
-	db "SAFARI ZONE SW@"
+	db "SAFARI ZONE S.W.@"
 Safari_Map_Name2: ; SAFARI_ZONE_E
 	db "SAFARI ZONE EAST@"
 Safari_Map_Name3: ; SAFARI_ZONE_N
