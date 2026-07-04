@@ -889,8 +889,8 @@ SeafoamCaveB2F_Blocks:
 SafariZoneGate_Blocks:
 	INCBIN "maps/SafariZoneGate.blk"
 
-SafariZone_Blocks:
-	INCBIN "maps/SafariZone.blk"
+SafariZoneSW_Blocks:
+	INCBIN "maps/SafariZoneSW.blk"
 
 PewterMuseum1F_Blocks:
 	INCBIN "maps/PewterMuseum1F.blk"
@@ -999,3 +999,9 @@ Route17Route18Gate_Blocks:
 
 CeruleanJeweler_Blocks:
 	INCBIN "maps/CeruleanJeweler.blk"
+
+SafariZoneE_Blocks:
+	INCBIN "maps/SafariZoneE.blk"
+
+SafariZoneN_Blocks:
+	INCBIN "maps/SafariZoneN.blk"
