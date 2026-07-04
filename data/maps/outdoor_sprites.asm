@@ -117,12 +117,11 @@ FuchsiaGroupSprites:
 SafariGroupSprites:
 ; Safari Zone
 	db SPRITE_BIRD
-	db SPRITE_SURF
-	; 2 of max 9 walking sprites
-	db SPRITE_CHANSEY
-	db SPRITE_FLOWER
-	db SPRITE_FISH
+	; 1 of max 9 walking sprites
 	db SPRITE_SUDOWOODO
+	db SPRITE_FISH
+	db SPRITE_FLOWER
+	db SPRITE_CHANSEY
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
