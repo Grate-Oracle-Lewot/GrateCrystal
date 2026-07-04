@@ -823,9 +823,9 @@ Fuchsia_Map_Name13: ; ROUTE_18
 Safari_Map_Name1: ; SAFARI_ZONE_SW
 	db "SAFARI ZONE SW@"
 Safari_Map_Name2: ; SAFARI_ZONE_E
-	db "SAFARI ZONE E@"
+	db "SAFARI ZONE EAST@"
 Safari_Map_Name3: ; SAFARI_ZONE_N
-	db "SAFARI ZONE N@"
+	db "SAFARI ZONE NORTH@"
 
 Saffron_Inner_Map_Name1: ; SAFFRON_CITY
 	db "SAFFRON CITY@"
