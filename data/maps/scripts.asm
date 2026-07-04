@@ -179,6 +179,7 @@ INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
+INCLUDE "maps/SafariZoneE.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -471,7 +472,7 @@ INCLUDE "maps/SeafoamCavePuzzleChamber.asm"
 INCLUDE "maps/SeafoamCave1F.asm"
 INCLUDE "maps/SeafoamCaveB2F.asm"
 INCLUDE "maps/SafariZoneGate.asm"
-INCLUDE "maps/SafariZone.asm"
+INCLUDE "maps/SafariZoneSW.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
 
 
@@ -516,3 +517,4 @@ SECTION "Map Scripts 28", ROMX
 INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/Gate2F.asm"
 INCLUDE "maps/CeruleanJeweler.asm"
+INCLUDE "maps/SafariZoneN.asm"
