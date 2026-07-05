@@ -179,7 +179,7 @@ _CGB_FinishBattleScreenLayout:
 	call FarCopyWRAM
 	jp ApplyAttrmap
 
-InitPartyMenuBGPal7:
+InitPartyMenuBGPal7::
 	farcall Function100dc0
 	; fallthrough
 
