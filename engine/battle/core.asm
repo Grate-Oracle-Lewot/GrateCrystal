@@ -2910,10 +2910,7 @@ ForcePlayerMonChoice:
 	call AddBattleParticipant
 	call InitBattleMon
 	call ResetPlayerStatLevels
-	call SwitchReloadBackpic
-	call CloseWindow
-	call GetMemSGBLayout
-	call SetPalettes
+	call SwitchReloadBackpic_Etc
 	call SendOutMonText
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
@@ -2922,6 +2919,12 @@ ForcePlayerMonChoice:
 	and a
 	ld c, a
 	ret
+
+SwitchReloadBackpic_Etc:
+	call SwitchReloadBackpic
+	call CloseWindow
+	call GetMemSGBLayout
+	jp SetPalettes
 
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
@@ -5326,10 +5329,7 @@ TryPlayerSwitch:
 	ld a, BATTLEPLAYERACTION_SWITCH
 	ld [wBattlePlayerAction], a
 	call ClearSprites
-	call SwitchReloadBackpic
-	call CloseWindow
-	call GetMemSGBLayout
-	call SetPalettes
+	call SwitchReloadBackpic_Etc
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 	; fallthrough
