@@ -2931,15 +2931,11 @@ SetUpBattlePartyMenu:
 	; fallthrough
 
 SetUpBattlePartyMenu_Loop: ; switch to fullscreen menu?
-	farcall LoadPartyMenuGFX
-	farcall InitPartyMenuWithCancel
-	farcall InitPartyMenuBGPal7
-	farcall InitPartyMenuGFX
+	farcall LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuBGPal7_InitPartyMenuGFX
 	ret
 
 JumpToPartyMenuAndPrintText:
-	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuText
+	farcall WritePartyMenuTilemap_PrintPartyMenuText
 	call WaitBGMap
 	call SetPalettes
 	jp DelayFrame
