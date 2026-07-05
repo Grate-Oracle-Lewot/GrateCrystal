@@ -530,13 +530,13 @@ DetermineMoveOrder:
 	jr z, .player_2
 
 	call Core_50_Percent
-	jp c, .player_first
+	jp c, Shared_scf ; player first
 	jp Shared_and_a ; enemy first
 
 .player_2
 	call Core_50_Percent
 	jp c, Shared_and_a ; enemy first
-	jp .player_first
+	jp Shared_scf ; player first
 
 .switch
 	farcall AI_Switch
@@ -547,10 +547,10 @@ DetermineMoveOrder:
 .use_move
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
-	jp nz, .player_first
+	jp nz, Shared_scf ; player first
 	call CompareMovePriority
 	jr z, .equal_priority
-	jp c, .player_first ; player goes first
+	jp c, Shared_scf ; player first
 	jp Shared_and_a ; enemy first
 
 .equal_priority
@@ -568,7 +568,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp e
 	jr nc, .weather_check
-	jp .player_first
+	jp Shared_scf ; player first
 
 .player_no_quick_claw
 	ld a, b
@@ -588,13 +588,13 @@ DetermineMoveOrder:
 	jr c, Shared_and_a ; enemy first
 	call BattleRandom
 	cp e
-	jr c, .player_first
+	jr c, Shared_scf ; player first
 	jr .weather_check
 
 .player_2b
 	call BattleRandom
 	cp e
-	jr c, .player_first
+	jr c, Shared_scf ; player first
 	call BattleRandom
 	cp c
 	jr c, Shared_and_a ; enemy first
@@ -645,7 +645,7 @@ DetermineMoveOrder:
 	ld c, 2
 	call CompareBytes
 	jr z, .speed_tie
-	jr nc, .player_first
+	jr nc, Shared_scf ; player first
 	jr Shared_and_a ; enemy first
 
 .speed_tie
@@ -653,17 +653,40 @@ DetermineMoveOrder:
 	cp USING_INTERNAL_CLOCK
 	jr z, .player_2c
 	call Core_50_Percent
-	jr c, .player_first
+	jr c, Shared_scf ; player first
 	jr Shared_and_a ; enemy first
 
 .player_2c
 	call Core_50_Percent
 	jr c, Shared_and_a ; enemy first
-.player_first
+	; fallthrough
+
+Shared_scf:
 	scf
 	ret
 
 Shared_and_a:
+	and a
+	ret
+
+CheckPlayerLockedIn:
+	ld a, [wPlayerSubStatus4]
+	and 1 << SUBSTATUS_RECHARGE
+	jr nz, Shared_scf
+
+	ld hl, wEnemySubStatus3
+	res SUBSTATUS_FLINCHED, [hl]
+	ld hl, wPlayerSubStatus3
+	res SUBSTATUS_FLINCHED, [hl]
+
+	ld a, [hl]
+	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
+	jr nz, Shared_scf
+
+	ld hl, wPlayerSubStatus1
+	bit SUBSTATUS_ROLLOUT, [hl]
+	jr nz, Shared_scf
+
 	and a
 	ret
 
@@ -705,31 +728,6 @@ LoadHLintoEnemyMonTemp:
 	ld [wEnemyMonTempStat], a
 	ld a, l
 	ld [wEnemyMonTempStat + 1], a
-	ret
-
-CheckPlayerLockedIn:
-	ld a, [wPlayerSubStatus4]
-	and 1 << SUBSTATUS_RECHARGE
-	jr nz, .quit
-
-	ld hl, wEnemySubStatus3
-	res SUBSTATUS_FLINCHED, [hl]
-	ld hl, wPlayerSubStatus3
-	res SUBSTATUS_FLINCHED, [hl]
-
-	ld a, [hl]
-	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
-	jr nz, .quit
-
-	ld hl, wPlayerSubStatus1
-	bit SUBSTATUS_ROLLOUT, [hl]
-	jr nz, .quit
-
-	and a
-	ret
-
-.quit
-	scf
 	ret
 
 ParsePlayerAction:
