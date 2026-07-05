@@ -728,6 +728,7 @@ PokeBallEffect:
 
 	call ClearBGPalettes
 	call ClearTilemap
+	farcall UpdateEnemyHUD
 
 .toss
 	ld hl, wNumItems
