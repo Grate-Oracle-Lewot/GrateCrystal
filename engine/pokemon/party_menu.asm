@@ -648,6 +648,11 @@ GetPartyMenuQualityIndexes:
 
 INCLUDE "data/party_menu_qualities.asm"
 
+LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuBGPal7_InitPartyMenuGFX::
+	call LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX
+	farcall InitPartyMenuBGPal7
+	jr InitPartyMenuGFX
+
 LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX:
 	call LoadPartyMenuGFX
 	call InitPartyMenuWithCancel
@@ -771,6 +776,10 @@ PartyMenuSelect:
 	ld de, SFX_READ_TEXT
 	call PlaySFX
 	jp WaitSFX
+
+WritePartyMenuTilemap_PrintPartyMenuText::
+	call WritePartyMenuTilemap
+	jr PrintPartyMenuText
 
 InitPartyMenuLayout:
 	call LoadPartyMenuGFX
