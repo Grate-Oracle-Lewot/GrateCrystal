@@ -649,7 +649,8 @@ GetPartyMenuQualityIndexes:
 INCLUDE "data/party_menu_qualities.asm"
 
 LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuBGPal7_InitPartyMenuGFX::
-	call LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX
+	call LoadPartyMenuGFX
+	call InitPartyMenuWithCancel
 	farcall InitPartyMenuBGPal7
 	jr InitPartyMenuGFX
 
