@@ -122,6 +122,7 @@ SafariGroupSprites:
 	db SPRITE_FISH
 	db SPRITE_FLOWER
 	db SPRITE_CHANSEY
+	db SPRITE_MR_MIME
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
