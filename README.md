@@ -469,7 +469,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - U-Turn doesn't switch in link battles. (It still does damage.) I would like it to work, but I can't figure it out, so for now it just doesn't even try, thus preventing desynchronization.
 
-- If a wild Pokémon has a status problem and breaks out of a ball, half of its status icon briefly disappears. This is temporary and purely cosmetic, but has also proven resistant to the expected solutions.
+- A few minor, temporary and purely cosmetic visual issues persist with the status problem icons in battle.
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. For now it's framed as fishing appealing to people who want some mystery in their encounters, but if I can get some help I'll make it work.
 
