@@ -2922,7 +2922,8 @@ SwitchReloadBackpic_Etc:
 	call SwitchReloadBackpic
 	call CloseWindow
 	call GetMemSGBLayout
-	jp SetPalettes
+	call SetPalettes
+	jp UpdateBattleHuds
 
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
@@ -5254,7 +5255,6 @@ BattleMenuPKMN_Loop:
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
 	call SetPalettes
-	call UpdateBattleHuds
 	jp BattleMenu
 
 Battle_StatsScreen:
