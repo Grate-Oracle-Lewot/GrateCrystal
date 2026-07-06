@@ -115,8 +115,8 @@ MountMortarB1FKiyoIntroText:
 	para "I am the KARATE"
 	line "KING!"
 
-	para "I train alone here"
-	line "in the dark!"
+	para "I train alone"
+	line "here!"
 
 	para "You!"
 	line "Battle with me!"
