@@ -5254,6 +5254,7 @@ BattleMenuPKMN_Loop:
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
 	call SetPalettes
+	call UpdateBattleHuds
 	jp BattleMenu
 
 Battle_StatsScreen:
