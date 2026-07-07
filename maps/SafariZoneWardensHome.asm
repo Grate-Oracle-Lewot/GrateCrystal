@@ -32,9 +32,9 @@ WardensHomeBookshelf:
 	jumpstd PictureBookshelfScript
 
 WardensGranddaughterText1:
-	text "My grandpa is the"
-	line "SAFARI ZONE WAR-"
-	cont "DEN."
+	text "My grandpa BAOBA"
+	line "is the SAFARI ZONE"
+	cont "WARDEN."
 
 	para "At least he was…"
 
