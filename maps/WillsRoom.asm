@@ -91,9 +91,16 @@ ADScript_ADBeforeText:
 	para "You'll have to be"
 	line "adaptable to win."
 
-	para "Anyway, buy my"
-	line "book, THE CARDS OF"
-	cont "CHAOS, on KINDLE."
+	para "Anyway, you should"
+	line "buy my book, THE"
+	cont "CARDS OF CHAOS."
+
+	para "It's on KINDLE, but"
+	line "I don't really want"
+
+	para "to support AMAZON,"
+	line "so just buy from"
+	cont "me directly."
 
 	para "Hm? Oh, fine, we"
 	line "can take care of"
