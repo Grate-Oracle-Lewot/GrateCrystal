@@ -1,6 +1,6 @@
 	object_const_def
-	const CERULEANPOLICESTATION_FISHING_GURU
-	const CERULEANPOLICESTATION_POKEFAN_F
+	const CERULEANPOLICESTATION_OFFICER
+	const CERULEANPOLICESTATION_OFFICER_JENNY
 	const CERULEANPOLICESTATION_DIGLETT
 
 CeruleanPoliceStation_MapScripts:
@@ -8,11 +8,11 @@ CeruleanPoliceStation_MapScripts:
 
 	def_callbacks
 
-CeruleanPoliceStationFishingGuruScript:
-	jumptextfaceplayer CeruleanPoliceStationFishingGuruText
+CeruleanPoliceStationOfficerScript:
+	jumptextfaceplayer CeruleanPoliceStationOfficerText
 
 CeruleanPoliceStationPokefanFScript:
-	jumptextfaceplayer CeruleanPoliceStationPokefanFText
+	jumptextfaceplayer CeruleanPoliceStationJennyText
 
 CeruleanDiglett:
 	opentext
@@ -22,19 +22,24 @@ CeruleanDiglett:
 	closetext
 	end
 
-CeruleanPoliceStationFishingGuruText:
+CeruleanPoliceStationOfficerText:
 	text "I heard that some"
-	line "shady character is"
-	cont "skulking about."
+	line "shady characters"
+
+	para "have been skulking"
+	cont "about."
 
 	para "I won't stand for"
-	line "it if he turns out"
-	cont "to be a thief."
+	line "it if they turn"
+	cont "out to be thieves."
 	done
 
-CeruleanPoliceStationPokefanFText:
-	text "We were held up by"
-	line "robbers before."
+CeruleanPoliceStationJennyText:
+	text "We've had to stop"
+	line "keeping TMs here"
+
+	para "to discourage"
+	line "robbers."
 	done
 
 CeruleanDiglettText:
@@ -53,6 +58,6 @@ CeruleanPoliceStation_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationFishingGuruScript, -1
-	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationPokefanFScript, -1
+	object_event  5,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationOfficerScript, -1
+	object_event  5,  4, SPRITE_OFFICER_JENNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationJennyScript, -1
 	object_event  3,  5, SPRITE_DIGLETT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanDiglett, -1
