@@ -11,7 +11,7 @@ CeruleanPoliceStation_MapScripts:
 CeruleanPoliceStationOfficerScript:
 	jumptextfaceplayer CeruleanPoliceStationOfficerText
 
-CeruleanPoliceStationPokefanFScript:
+CeruleanPoliceStationJennyScript:
 	jumptextfaceplayer CeruleanPoliceStationJennyText
 
 CeruleanDiglett:
