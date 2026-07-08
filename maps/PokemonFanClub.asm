@@ -172,6 +172,10 @@ PokemonFanClubChairmanItsARareCandyText:
 
 	para "than usual from"
 	line "battles!"
+
+	para "You can buy them"
+	line "at the jewelry"
+	cont "store in CERULEAN."
 	done
 
 PokemonFanClubChairmanMoreTalesToTellText:
