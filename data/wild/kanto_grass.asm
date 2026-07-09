@@ -2161,8 +2161,8 @@ else
 	db 30, RHYHORN
 	db 32, URSARING
 	db 32, DONPHAN
-	db 33, SCYTHER
-	db 33, PINSIR
+	db 33, SCIZOR
+	db 33, SHUCKLE
 	db 33, CHANSEY
 	db 33, KANGASKHAN
 endc
