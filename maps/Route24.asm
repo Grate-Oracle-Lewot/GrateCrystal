@@ -105,7 +105,17 @@ Route24JamesScript:
 	reloadmapafterbattle
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
-	writetext Route24JamesAfterBattleText
+	writetext Route24JamesAfterBattleText1
+	waitbutton
+	closetext
+	turnobject ROUTE24_JAMES, DOWN
+	opentext
+	writetext Route24JamesAfterBattleText2
+	waitbutton
+	closetext
+	turnobject ROUTE24_JESSIE, UP
+	opentext
+	writetext Route24JamesAfterBattleText3
 	waitbutton
 	closetext
 	special FadeBlackQuickly
@@ -228,7 +238,7 @@ Route24JessieAfterBattleText:
 	line "We're leaving!"
 	done
 
-Route24JamesAfterBattleText:
+Route24JamesAfterBattleText1:
 	text "JAMES: Why do you"
 	line "always have to be"
 	cont "so harsh?"
@@ -238,11 +248,15 @@ Route24JamesAfterBattleText:
 
 	para "Go find it if you"
 	line "want it."
+	done
 
-	para "What do we do now,"
+Route24JamesAfterBattleText2:
+	text "What do we do now,"
 	line "JESSIE?"
+	done
 
-	para "JESSIE: We keep"
+Route24JamesAfterBattleText3:
+	text "JESSIE: We keep"
 	line "searching for the"
 	cont "boss!"
 
