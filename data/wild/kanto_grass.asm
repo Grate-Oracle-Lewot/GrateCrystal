@@ -2042,20 +2042,20 @@ endc
 if DEF(_LITTLE_CUP)
 	db 30, GASTLY
 	db 30, RATTATA
-	db 30, CUBONE
+	db 30, VENONAT
 	db 30, DROWZEE
 	db 33, GASTLY
 	db 33, RATTATA
-	db 30, VENONAT
+	db 30, CUBONE
 	db 28, YANMA
 else
 	db 30, HAUNTER
 	db 30, GIRAFARIG
-	db 30, MAROWAK
+	db 30, VENOMOTH
 	db 30, HYPNO
 	db 33, MISDREAVUS
 	db 33, RATICATE
-	db 30, VENOMOTH
+	db 30, MAROWAK
 	db 28, YANMEGA
 endc
 	end_grass_wildmons
@@ -2106,20 +2106,20 @@ endc
 if DEF(_LITTLE_CUP)
 	db 30, GASTLY
 	db 30, RATTATA
-	db 30, CUBONE
+	db 30, VENONAT
 	db 30, DROWZEE
 	db 33, NIDORAN_M
 	db 33, NIDORAN_F
-	db 30, VENONAT
+	db 30, HOUNDOUR
 	db 33, TEDDIURSA
 else
 	db 30, HAUNTER
 	db 30, GIRAFARIG
-	db 30, MAROWAK
+	db 30, VENOMOTH
 	db 30, HYPNO
 	db 33, NIDOKING
 	db 33, NIDOQUEEN
-	db 30, VENOMOTH
+	db 30, HOUNDOOM
 	db 33, SNORLAX
 endc
 	end_grass_wildmons
