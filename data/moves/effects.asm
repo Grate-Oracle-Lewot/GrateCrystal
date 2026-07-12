@@ -1857,6 +1857,7 @@ SkullBash:
 	flinchtarget
 	endturn
 	defenseup
+	curl
 	statupmessage
 	endmove
 
