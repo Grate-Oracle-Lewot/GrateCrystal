@@ -1933,11 +1933,12 @@ LaprasEvosAttacks:
 	db 11, AURORA_BEAM
 	db 15, BODY_SLAM
 	db 22, CONFUSE_RAY
-	db 29, PERISH_SONG
-	db 36, ICE_BEAM
-	db 43, RAIN_DANCE
+	db 29, BUBBLEBEAM
+	db 36, PERISH_SONG
+	db 43, ICE_BEAM
 	db 50, SAFEGUARD
 	db 57, HYDRO_PUMP
+	db 66, SKULL_BASH
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:
