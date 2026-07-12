@@ -1171,6 +1171,7 @@ MagnemiteEvosAttacks:
 	db 33, DAZZLY_GLEAM
 	db 39, SIGNAL_BEAM
 	db 45, BLITZKRIEG
+	db 50, THUNDER
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1186,6 +1187,7 @@ MagnetonEvosAttacks:
 	db 35, DAZZLY_GLEAM
 	db 43, SIGNAL_BEAM
 	db 53, BLITZKRIEG
+	db 63, THUNDER
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
