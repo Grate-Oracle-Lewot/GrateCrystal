@@ -1248,7 +1248,8 @@ SeelEvosAttacks:
 	db 26, BUBBLEBEAM
 	db 32, SAFEGUARD
 	db 37, ICE_BEAM
-	db 48, SKULL_BASH
+	db 42, SKULL_BASH
+	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 DewgongEvosAttacks:
@@ -1261,8 +1262,9 @@ DewgongEvosAttacks:
 	db 21, REST
 	db 26, BUBBLEBEAM
 	db 32, SAFEGUARD
-	db 43, ICE_BEAM
-	db 60, SKULL_BASH
+	db 40, ICE_BEAM
+	db 48, SKULL_BASH
+	db 56, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -1816,6 +1818,7 @@ MrMimeEvosAttacks:
 	db 41, BATON_PASS
 	db 46, SAFEGUARD
 	db 51, BELLY_DRUM
+	db 56, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
@@ -1845,6 +1848,7 @@ JynxEvosAttacks:
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
 	db 41, BODY_SLAM
+	db 47, PSYCHIC_M
 	db 51, PERISH_SONG
 	db 57, BLIZZARD
 	db 0 ; no more level-up moves
@@ -2182,6 +2186,7 @@ DratiniEvosAttacks:
 	db 38, SLAM
 	db 43, SAFEGUARD
 	db 50, OUTRAGE
+	db 59, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
@@ -2197,6 +2202,7 @@ DragonairEvosAttacks:
 	db 40, SLAM
 	db 47, SAFEGUARD
 	db 56, OUTRAGE
+	db 64, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
@@ -2579,7 +2585,7 @@ LanturnEvosAttacks:
 ;	db 1, THUNDERSHOCK
 ;	db 2, CHARM
 ;	db 6, THUNDER_WAVE
-;       db 8, QUICK_ATTACK
+;	db 8, QUICK_ATTACK
 ;	db 11, DOUBLE_TEAM
 ;	db 14, AGILITY
 ;	db 20, THUNDERBOLT
@@ -2914,6 +2920,7 @@ SunfloraEvosAttacks:
 	db 31, PETAL_DANCE
 	db 39, DAZZLY_GLEAM
 	db 46, SOLARBEAM
+	db 51, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
@@ -2948,6 +2955,7 @@ WooperEvosAttacks:
 	db 51, MIST
 	db 51, HAZE
 	db 61, VITAL_THROW
+	db 71, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
@@ -2963,6 +2971,7 @@ QuagsireEvosAttacks:
 	db 59, MIST
 	db 59, HAZE
 	db 71, VITAL_THROW
+	db 84, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:
@@ -3181,6 +3190,7 @@ SnubbullEvosAttacks:
 	db 34, HYPER_FANG
 	db 43, PLAY_ROUGH
 	db 50, CRUNCH
+	db 59, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 GranbullEvosAttacks:
@@ -3196,6 +3206,7 @@ GranbullEvosAttacks:
 	db 38, HYPER_FANG
 	db 51, PLAY_ROUGH
 	db 60, CRUNCH
+	db 71, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
