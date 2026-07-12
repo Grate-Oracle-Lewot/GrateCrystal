@@ -2955,7 +2955,7 @@ WooperEvosAttacks:
 	db 51, MIST
 	db 51, HAZE
 	db 61, VITAL_THROW
-	db 71, HYDRO_PUMP
+	db 71, FISSURE
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
@@ -2971,7 +2971,7 @@ QuagsireEvosAttacks:
 	db 59, MIST
 	db 59, HAZE
 	db 71, VITAL_THROW
-	db 84, HYDRO_PUMP
+	db 83, FISSURE
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:
