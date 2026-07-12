@@ -70,7 +70,6 @@ EkansEggMoves:
 	db -1 ; end
 
 SandshrewEggMoves:
-	db ROCK_WRECKER
 	db FLAIL
 	db COUNTER
 	db SAFEGUARD
