@@ -397,6 +397,7 @@ SandshrewEvosAttacks:
 	db 37, FURY_SWIPES
 	db 42, SANDSTORM
 	db 45, EARTHQUAKE
+	db 50, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
@@ -412,6 +413,7 @@ SandslashEvosAttacks:
 	db 42, FURY_SWIPES
 	db 47, SANDSTORM
 	db 50, EARTHQUAKE
+	db 60, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
@@ -1939,6 +1941,7 @@ LaprasEvosAttacks:
 	db 50, SAFEGUARD
 	db 57, HYDRO_PUMP
 	db 66, SKULL_BASH
+	db 73, BLIZZARD
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:
