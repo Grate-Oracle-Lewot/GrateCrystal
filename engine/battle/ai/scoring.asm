@@ -2173,13 +2173,28 @@ AI_SpDefUp2_Acrobatics_Discourage:
 
 AI_Smart_Acrobatics:
 ; Discourage this move if the enemy has any held item.
-; Encourage this move if the enemy has no held item. If encouraged, 80% chance to encourage again.
+; Encourage this move if the enemy has no held item. If encouraged, 50% chance to encourage again.
 	ld a, [wEnemyMonItem]
 	and a
 	jr nz, AI_SpDefUp2_Acrobatics_Discourage
-	dec [hl]
+	jr AI_Smart_Acrobatics_FlameWheel
+
+AI_Smart_FlameWheel:
+; 80% chance to encourage this move if the enemy is curled.
+; If encouraged, 50% chance to encourage again.
+
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CURLED, a
+	ret z
 
 	call AI_80_20
+	ret c
+	; fallthrough
+
+AI_Smart_Acrobatics_FlameWheel:
+	dec [hl]
+
+	call AI_50_50
 	ret c
 	dec [hl]
 	ret
@@ -2468,23 +2483,6 @@ AI_Smart_Encore:
 	ret
 
 INCLUDE "data/battle/ai/encore_moves.asm"
-
-AI_Smart_FlameWheel:
-; 80% chance to encourage this move if the enemy is curled.
-; If encouraged, 50% chance to encourage again.
-
-	ld a, [wEnemySubStatus2]
-	bit SUBSTATUS_CURLED, a
-	ret z
-
-	call AI_80_20
-	ret c
-	dec [hl]
-
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
 
 AI_Smart_Spite:
 ; Dismiss this move if the player hasn't used a move yet and the enemy is faster.
