@@ -92,7 +92,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
   - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
-  - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present
+  - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present (true of evolutions through Gen 9)
   - All Pokémon that only belonged to one Egg Group now belong to two, Ditto can breed with itself, and legendaries can now breed with Ditto (except for Mewtwo)
 - Mr. Pokémon is now named Pokey Man. After defeating Blue, you can battle Prof. Oak at Pokey Man's house once per day, and if you win, Pokey Man will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
 - If you have all 16 Badges, you can fight former Elite Four members in a secondary gauntlet at the Cianwood Photo Studio
@@ -207,6 +207,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types. Foresight, Mind Reader, and Lock-On also can't miss, with a few exceptions like Fly/Dig.
 
 - Flame Wheel, Rolling Kick, and Rapid Spin now double in power after you've used Defense Curl. (However, Flame Wheel and Sacred Fire no longer thaw out a Frozen user.)
+
+- Skull Bash, on its Defense-raising turn, now also sets the Defense Curl status, so it can be used instead of Defense Curl to power up the above-mentioned moves. Additionally, when Skull Bash hits, it has a small chance to cause a flinch.
 
 - Psych Up no longer fails if the target has no stat changes, and now also copies the Defense Curl, Focus Energy, Dire Hit, and X Accuracy statuses.
 
@@ -469,7 +471,7 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 - U-Turn doesn't switch in link battles. (It still does damage.) I would like it to work, but I can't figure it out, so for now it just doesn't even try, thus preventing desynchronization.
 
-- A few minor, temporary and purely cosmetic visual issues persist with the status problem icons in battle.
+- A few minor, temporary and purely cosmetic visual issues persist with the status problem icons.
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. For now it's framed as fishing appealing to people who want some mystery in their encounters, but if I can get some help I'll make it work.
 
@@ -557,7 +559,7 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 # Why aren't you using newbox?
 
-Again, above my skill level. It also has some requirements like variable-width font and certain pixel restrictions on Pokémon icons, and I don't really want to deal with all that.
+To be honest, it's because I keep seeing people having (small but significant) bugs with it. It's a great achievement, but I'm too paranoid.
 
 # Why not unique icons for every Pokémon?
 
