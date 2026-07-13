@@ -304,13 +304,11 @@ ChucksWifeChubbyText:
 	done
 
 CianwoodCityYoungsterText:
-	text "There are several"
-	line "islands between"
-	cont "here and OLIVINE."
+	text "I can see it!"
+	line "MIRAGE ISLAND!"
 
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
+	para "…Hah! Made you"
+	line "look!"
 	done
 
 CianwoodCityPokefanMText:
