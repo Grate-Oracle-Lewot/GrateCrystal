@@ -235,8 +235,8 @@ else
 	db 35, LAPRAS
 	db 35, SEADRA
 endc
-	db 5, SQUIRTLE
-	db 5, TOTODILE
+	db 10, SQUIRTLE
+	db 10, TOTODILE
 	end_water_wildmons
 
 	def_water_wildmons TOHJO_FALLS
