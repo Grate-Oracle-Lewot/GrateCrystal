@@ -601,8 +601,6 @@ Lounge1FPrinterText:
 	done
 
 Lounge1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  8, 17, ROUTE_23, 5
 	warp_event  9, 17, ROUTE_23, 5
