@@ -34,9 +34,6 @@ BattleTowerElevator_MapScripts:
 
 MovementData_BattleTowerElevatorReceptionistWalksIn:
 	step RIGHT
-	turn_head DOWN
-	step_end
-
 MovementData_BattleTowerElevatorPlayerWalksIn:
 	turn_head DOWN
 	step_end
