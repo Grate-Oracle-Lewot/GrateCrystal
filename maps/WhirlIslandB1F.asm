@@ -39,8 +39,6 @@ WhirlIslandB1FHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_WHIRL_ISLAND_B1F_HIDDEN_FULL_RESTORE
 
 WhirlIslandB1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  5,  5, WHIRL_ISLAND_1F, 2
 	warp_event 35,  3, WHIRL_ISLAND_1F, 6
