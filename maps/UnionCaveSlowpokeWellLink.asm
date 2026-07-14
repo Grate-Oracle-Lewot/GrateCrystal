@@ -87,8 +87,6 @@ GruntMStrayAfterBattleText:
 	done
 
 UnionCaveSlowpokeWellLink_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 31,  5, UNION_CAVE_B2F, 2
 	warp_event  7, 13, SLOWPOKE_WELL_B2F, 2
