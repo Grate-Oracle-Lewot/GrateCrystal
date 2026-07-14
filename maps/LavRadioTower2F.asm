@@ -96,8 +96,6 @@ LavRadioTower2FDirectoryText:
 	done
 
 LavRadioTower2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 13,  2, LAV_RADIO_TOWER_1F, 3
 
