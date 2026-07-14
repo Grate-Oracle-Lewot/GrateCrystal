@@ -23,8 +23,6 @@ Route38EcruteakGateOfficerText:
 	done
 
 Route38EcruteakGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  4, ROUTE_38, 1
 	warp_event  0,  5, ROUTE_38, 2
