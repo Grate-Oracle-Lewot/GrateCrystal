@@ -20,8 +20,6 @@ Route2NorthGateBugCatcherText:
 	done
 
 Route2NorthGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  4, VIRIDIAN_FOREST, 1
 	warp_event  0,  5, VIRIDIAN_FOREST, 2
