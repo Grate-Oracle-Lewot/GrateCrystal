@@ -10,8 +10,6 @@ AbandonedLabRoofTwistedspoon:
 	itemball TWISTEDSPOON
 
 AbandonedLabRoof_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 25,  9, ABANDONED_LAB_2F, 2
 	warp_event 10, 25, ABANDONED_LAB_2F, 3
