@@ -270,8 +270,6 @@ NewBarkTownElmsHouseSignText:
 	done
 
 NewBarkTown_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  6,  3, ELMS_LAB, 1
 	warp_event 13,  5, PLAYERS_HOUSE_1F, 1
