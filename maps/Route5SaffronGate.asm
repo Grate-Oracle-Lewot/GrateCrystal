@@ -19,8 +19,6 @@ Route5SaffronGateOfficerText:
 	done
 
 Route5SaffronGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  0, ROUTE_5, 2
 	warp_event  4,  0, ROUTE_5, 3
