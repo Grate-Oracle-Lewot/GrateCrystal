@@ -71,8 +71,6 @@ MoltresText:
 	done
 
 SilverCaveMoltresChamber_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 12, 33, SILVER_CAVE_ITEM_ROOMS, 3
 	warp_event 13, 33, SILVER_CAVE_ITEM_ROOMS, 3
