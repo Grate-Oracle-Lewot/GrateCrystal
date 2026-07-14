@@ -18,8 +18,6 @@ Route15FuchsiaGateOfficerText:
 	done
 
 Route15FuchsiaGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  4, FUCHSIA_CITY, 7
 	warp_event  0,  5, FUCHSIA_CITY, 8
