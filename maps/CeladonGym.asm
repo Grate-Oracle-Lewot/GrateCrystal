@@ -339,8 +339,6 @@ CeladonGymSexismText:
 	done
 
 CeladonGym_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4, 17, CELADON_CITY, 8
 	warp_event  5, 17, CELADON_CITY, 8
