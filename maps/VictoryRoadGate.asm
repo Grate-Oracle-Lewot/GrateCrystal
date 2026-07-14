@@ -128,8 +128,6 @@ VictoryRoadGateRightBlackBeltText:
 	done
 
 VictoryRoadGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 17,  7, ROUTE_22, 1
 	warp_event 18,  7, ROUTE_22, 1
