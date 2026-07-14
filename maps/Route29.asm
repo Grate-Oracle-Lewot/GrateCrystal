@@ -414,8 +414,6 @@ Route29Sign2Text:
 	done
 
 Route29_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3
 
