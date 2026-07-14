@@ -16,6 +16,7 @@ WardensGranddaughter:
 	closetext
 	setevent EVENT_TALKED_TO_WARDENS_GRANDDAUGHTER
 	end
+
 .AlreadyMet:
 	writetext WardensGranddaughterText2
 	waitbutton
