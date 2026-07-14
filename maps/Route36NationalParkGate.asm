@@ -806,8 +806,6 @@ Route36NationalParkGateOfficer1HeresThePrizeText:
 	done
 
 Route36NationalParkGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  4, NATIONAL_PARK, 1
 	warp_event  0,  5, NATIONAL_PARK, 2
