@@ -79,8 +79,6 @@ RedDecorationText:
 	done
 
 SilverCaveRoom3_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 19, 55, SILVER_CAVE_ROOM_2, 2
 
