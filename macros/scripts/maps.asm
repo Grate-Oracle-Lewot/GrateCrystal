@@ -16,7 +16,6 @@ ENDM
 scene_script: MACRO
 ;\1: script pointer
 	dw \1
-	dw 0 ; filler
 {_NUM_SCENE_SCRIPTS} += 1
 ENDM
 
@@ -61,9 +60,7 @@ coord_event: MACRO
 ;\3: scene id: a SCENE_* constant; controlled by setscene/setmapscene
 ;\4: script pointer
 	db \3, \2, \1
-	db 0 ; filler
 	dw \4
-	dw 0 ; filler
 {_NUM_COORD_EVENTS} += 1
 ENDM
 
