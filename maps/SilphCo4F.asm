@@ -58,8 +58,6 @@ SilphCo4FSignText:
 	done
 
 SilphCo4F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 25,  2, SILPH_CO_3F, 2
 	warp_event 27,  2, SILPH_CO_5F, 1
