@@ -227,8 +227,6 @@ CeruleanJewelerCaseText:
 	done
 
 CeruleanJeweler_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  9, CERULEAN_CITY, 8
 	warp_event  5,  9, CERULEAN_CITY, 8
