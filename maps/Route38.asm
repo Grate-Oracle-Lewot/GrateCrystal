@@ -392,8 +392,6 @@ Route38TrainerTipsText:
 	done
 
 Route38_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 35,  8, ROUTE_38_ECRUTEAK_GATE, 1
 	warp_event 35,  9, ROUTE_38_ECRUTEAK_GATE, 2
