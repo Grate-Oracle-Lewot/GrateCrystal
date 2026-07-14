@@ -25,8 +25,6 @@ TohjoFallsHiddenXSpDefend:
 	hiddenitem X_SP_DEFEND, EVENT_TOHJO_FALLS_HIDDEN_X_SP_DEFEND
 
 TohjoFalls_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 13, 33, ROUTE_27, 2
 	warp_event 25, 33, ROUTE_27, 3
