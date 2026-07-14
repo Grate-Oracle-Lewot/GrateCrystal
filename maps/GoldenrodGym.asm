@@ -412,8 +412,6 @@ GoldenrodGymGuideWinText:
 	done
 
 GoldenrodGym_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2, 17, GOLDENROD_CITY, 1
 	warp_event  3, 17, GOLDENROD_CITY, 1
