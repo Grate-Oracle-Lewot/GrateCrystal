@@ -10,8 +10,6 @@ Route48WaterStone:
 	itemball WATER_STONE
 
 Route48_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 
 	def_coord_events
