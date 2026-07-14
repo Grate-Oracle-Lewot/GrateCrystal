@@ -19,8 +19,6 @@ else
 endc
 
 CeruleanCaveB1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  7, CERULEAN_CAVE_1F, 8
 	warp_event 31, 15, CERULEAN_CAVE_1F, 9
