@@ -93,8 +93,6 @@ SafariZoneSWTrashcan:
 	jumpstd TrashCanScript
 
 SafariZoneSW_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 42, 45, SAFARI_ZONE_GATE, 1
 	warp_event 43, 45, SAFARI_ZONE_GATE, 2
