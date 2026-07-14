@@ -195,8 +195,6 @@ Route4PercyOutroText:
 	done
 
 Route4_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2,  5, MOUNT_MOON_B1F, 12
 
