@@ -302,8 +302,6 @@ CooltrainerfStellaAfterBattleText:
 	done
 
 MountMoon1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 15, 33, ROUTE_3, 1
 	warp_event 25, 15, MOUNT_MOON_B1F, 1
