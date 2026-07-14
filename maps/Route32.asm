@@ -768,8 +768,6 @@ Route32UnionCaveSignText:
 	done
 
 Route32_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 11, 73, ROUTE_32_POKECENTER_1F, 1
 	warp_event  4,  2, ROUTE_32_RUINS_OF_ALPH_GATE, 3
