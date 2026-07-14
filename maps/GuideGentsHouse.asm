@@ -23,8 +23,6 @@ GuideGentsHouseGuideGentText:
 	done
 
 GuideGentsHouse_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2,  7, CHERRYGROVE_CITY, 4
 	warp_event  3,  7, CHERRYGROVE_CITY, 4
