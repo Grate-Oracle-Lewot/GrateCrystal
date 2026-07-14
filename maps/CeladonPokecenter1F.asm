@@ -66,12 +66,6 @@ CeladonEusine:
 
 .Movement2:
 	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 .Movement1:
 	step DOWN
 	step DOWN
@@ -171,8 +165,6 @@ NoBeastsText:
 	done
 
 CeladonPokecenter1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  7, CELADON_CITY, 5
 	warp_event  4,  7, CELADON_CITY, 5
