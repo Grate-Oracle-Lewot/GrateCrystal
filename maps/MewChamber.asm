@@ -41,8 +41,6 @@ MewText:
 	done
 
 MewChamber_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  8, 15, MEW_ANTECHAMBER, 3
 
