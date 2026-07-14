@@ -106,8 +106,6 @@ MysticGroverAfterBattleText:
 	done
 
 SilverCaveRoom2_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 17, 31, SILVER_CAVE_ROOM_1, 2
 	warp_event 11,  5, SILVER_CAVE_ROOM_3, 1
