@@ -24,12 +24,10 @@ Pokecenter2F_MapScripts:
 	appear POKECENTER2F_NAYRU
 	endcallback
 
-.Scene0:
-.Scene3:
-	end
-
 .Scene1:
 	sdefer Script_LeftCableTradeCenter
+.Scene0:
+.Scene3:
 	end
 
 .Scene2:
@@ -819,8 +817,6 @@ Pokecenter2FNayru_NoMoreRewardsText:
 	done
 
 Pokecenter2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  7, POKECENTER_2F, -1
 	warp_event  5,  0, TRADE_CENTER, 1
