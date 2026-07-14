@@ -35,8 +35,6 @@ Route29Route46GateYoungsterText:
 	done
 
 Route29Route46Gate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  0, ROUTE_46, 1
 	warp_event  5,  0, ROUTE_46, 2
