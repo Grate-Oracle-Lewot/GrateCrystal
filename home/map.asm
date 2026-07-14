@@ -272,7 +272,6 @@ GetDestinationWarpNumber::
 	pop hl
 	inc hl
 	inc hl
-	scf
 
 	ld a, [wCurMapWarpCount]
 	inc a
