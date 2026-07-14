@@ -613,8 +613,6 @@ Text_BattleTowerBugCatcher:
 	done
 
 BattleTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  7,  9, BATTLE_TOWER_OUTSIDE, 3
 	warp_event  8,  9, BATTLE_TOWER_OUTSIDE, 4
