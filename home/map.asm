@@ -1742,8 +1742,7 @@ CheckCurrentMapCoordEvents::
 	jr nz, .next
 	ld a, [hli]
 	cp d
-	jr nz, .next
-	jr .copy_coord_event
+	jr z, .copy_coord_event
 
 .next
 	pop hl
