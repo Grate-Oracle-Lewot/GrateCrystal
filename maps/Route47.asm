@@ -6,8 +6,6 @@ Route47_MapScripts:
 	def_callbacks
 
 Route47_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 35, 11, ABANDONED_LAB_1F, 1
 
