@@ -1671,8 +1671,7 @@ CheckIfFacingTileCoordIsBGEvent::
 	jr nz, .next
 	ld a, [hli]
 	cp d
-	jr nz, .next
-	jr .copysign
+	jr z, .copysign
 
 .next
 	pop hl
