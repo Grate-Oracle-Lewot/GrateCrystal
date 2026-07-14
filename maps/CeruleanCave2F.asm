@@ -53,8 +53,6 @@ CeruleanCave2FHiddenDuskBall:
 	hiddenitem DUSK_BALL, EVENT_CERULEAN_CAVE_2F_HIDDEN_DUSK_BALL
 
 CeruleanCave2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 29, 11, CERULEAN_CAVE_1F, 2
 	warp_event 35,  5, CERULEAN_CAVE_1F, 3
