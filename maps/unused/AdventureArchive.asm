@@ -432,8 +432,6 @@ AdventureArchiveText15:
 	done
 
 AdventureArchive_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  7, BATTLE_TOWER_1F, 4
 	warp_event  4,  7, BATTLE_TOWER_1F, 4
