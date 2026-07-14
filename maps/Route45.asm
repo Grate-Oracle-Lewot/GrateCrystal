@@ -465,8 +465,6 @@ Route45SignText:
 	done
 
 Route45_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2,  5, DARK_CAVE_BLACKTHORN_ENTRANCE, 1
 
