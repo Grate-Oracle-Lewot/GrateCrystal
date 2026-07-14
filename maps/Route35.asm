@@ -443,8 +443,6 @@ Route35SignText:
 	done
 
 Route35_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9, 33, ROUTE_35_GOLDENROD_GATE, 1
 	warp_event 10, 33, ROUTE_35_GOLDENROD_GATE, 2
