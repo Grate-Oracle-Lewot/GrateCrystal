@@ -908,8 +908,6 @@ SwitchRoomText_Emergency:
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 23,  3, GOLDENROD_UNDERGROUND, 6
 	warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1
