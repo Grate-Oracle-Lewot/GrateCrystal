@@ -35,8 +35,6 @@ OlivineLighthouse1FPokefanFText:
 	done
 
 OlivineLighthouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 10, 17, OLIVINE_CITY, 8
 	warp_event 11, 17, OLIVINE_CITY, 8
