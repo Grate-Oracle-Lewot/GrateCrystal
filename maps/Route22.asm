@@ -124,8 +124,6 @@ VictoryRoadEntranceSign2Text:
 	done
 
 Route22_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9,  5, VICTORY_ROAD_GATE, 1
 	warp_event 20, 67, ROUTE_22_HOUSE, 1
