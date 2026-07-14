@@ -51,8 +51,6 @@ HoOhText:
 	done
 
 TinTowerRoof_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9, 13, TIN_TOWER_9F, 4
 
