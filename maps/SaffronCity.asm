@@ -289,8 +289,6 @@ SaffronCityMagnetTrainStationSignText:
 	done
 
 SaffronCity_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 36,  3, FIGHTING_DOJO, 1
 	warp_event 44,  3, SAFFRON_GYM, 1
