@@ -367,8 +367,6 @@ PlayersHouse1FTVText:
 	done
 
 PlayersHouse1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  6,  7, NEW_BARK_TOWN, 2
 	warp_event  7,  7, NEW_BARK_TOWN, 2
