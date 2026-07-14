@@ -271,8 +271,6 @@ PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
 	done
 
 PowerPlant_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2, 17, ROUTE_10_NORTH, 2
 	warp_event  3, 17, ROUTE_10_NORTH, 2
