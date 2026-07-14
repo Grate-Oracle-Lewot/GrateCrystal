@@ -52,8 +52,6 @@ CamperJohnAfterBattleText:
 	done
 
 DiglettsCave_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3, 33, VERMILION_CITY, 10
 	warp_event  5, 31, DIGLETTS_CAVE, 5
