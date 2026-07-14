@@ -273,8 +273,6 @@ FastShip1FSailor1Text_InVermilion:
 	done
 
 FastShip1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 25,  1, FAST_SHIP_1F, -1
 	warp_event 27,  8, FAST_SHIP_CABINS_NNW_NNE_NE, 1
