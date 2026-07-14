@@ -163,8 +163,6 @@ PewterCityWelcomeSignText:
 	done
 
 PewterCity_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 29, 13, PEWTER_NIDORAN_SPEECH_HOUSE, 1
 	warp_event 16, 17, PEWTER_GYM, 1
