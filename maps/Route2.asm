@@ -49,8 +49,6 @@ Route2DiglettsCaveSignText:
 	done
 
 Route2_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  6, 16, ROUTE_2_NORTH_GATE, 3
 	warp_event  6, 17, ROUTE_2_NORTH_GATE, 4
