@@ -10,11 +10,9 @@ RuinsOfAlphInnerChamber_MapScripts:
 
 	def_callbacks
 
-.DummyScene0:
-	end
-
 .UnownAppear:
 	sdefer .StrangePresenceScript
+.DummyScene0:
 	end
 
 .StrangePresenceScript:
@@ -72,8 +70,6 @@ RuinsOfAlphInnerChamberGrampsText:
 	done
 
 RuinsOfAlphInnerChamber_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 10, 13, RUINS_OF_ALPH_ANTECHAMBER, 3
 	warp_event  3, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 3
