@@ -78,13 +78,9 @@ FightingDojoSign2:
 FightingDojoFocusBand:
 	itemball FOCUS_BAND
 
-FightingDojo_KiyoMovement:
-	step DOWN
-	step DOWN
-	step_end
-
 FightingDojo_SabrinaMovement:
 	step RIGHT
+FightingDojo_KiyoMovement:
 	step DOWN
 	step DOWN
 	step_end
@@ -158,8 +154,6 @@ FightingDojoSign2Text:
 	done
 
 FightingDojo_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4, 11, SAFFRON_CITY, 1
 	warp_event  5, 11, SAFFRON_CITY, 1
