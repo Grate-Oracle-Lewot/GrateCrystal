@@ -113,37 +113,6 @@ WhirlIslandLugiaChamberSlowkingAfterText:
 	para "Please don't tell…"
 	done
 
-WhirlIslandLugiaChamberSlowkingRareCandySellText:
-	text "SLOWKING: …"
-
-	para "Hey, uh, could you"
-	line "do me a favor…?"
-
-	para "…"
-
-	para "If you give me"
-	line "¥999999, I'll give"
-	cont "you 99 RARE"
-	cont "CANDIES…"
-
-	para "…"
-
-	para "What do you say?"
-	done
-
-WhirlIslandLugiaChamberSlowkingRareCandyRefusedText:
-	text "…Oh… okay…"
-	done
-
-WhirlIslandLugiaChamberSlowkingRareCandyNoRoomText:
-	text "…Oh… you can't"
-	line "carry them…"
-	done
-
-WhirlIslandLugiaChamberSlowkingRareCandyBoughtText:
-	text "…Thanks, kid…"
-	done
-
 WhirlIslandLugiaChamber_MapEvents:
 	db 0, 0 ; filler
 
@@ -155,5 +124,5 @@ WhirlIslandLugiaChamber_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
+	object_event 10,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
 	object_event 11, 12, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, WhirlIslandLugiaChamberSlowkingScript, -1
