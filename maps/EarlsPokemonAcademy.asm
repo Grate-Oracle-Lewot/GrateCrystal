@@ -566,8 +566,6 @@ AcademyNotebookText4:
 	done
 
 EarlsPokemonAcademy_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3, 15, VIOLET_CITY, 3
 	warp_event  4, 15, VIOLET_CITY, 3
