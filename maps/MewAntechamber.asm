@@ -25,8 +25,6 @@ MewAntechamberTMDarkPulse:
 	itemball TM_DARK_PULSE, 5
 
 MewAntechamber_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  5, 17, TOHJO_FALLS, 3
 	warp_event  6, 17, TOHJO_FALLS, 3
