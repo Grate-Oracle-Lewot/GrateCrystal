@@ -261,8 +261,6 @@ RadioTower4FStudio2SignText:
 	done
 
 RadioTower4F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  0, RADIO_TOWER_5F, 1
 	warp_event  9,  0, RADIO_TOWER_3F, 2
