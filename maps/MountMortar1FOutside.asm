@@ -24,8 +24,6 @@ MountMortar1FOutsideHiddenDuskBall:
 	hiddenitem DUSK_BALL, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_DUSK_BALL
 
 MountMortar1FOutside_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3, 33, ROUTE_42, 3
 	warp_event 17, 33, ROUTE_42, 4
