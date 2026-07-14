@@ -385,8 +385,6 @@ LavRadioTower1FReferenceLibraryText:
 	done
 
 LavRadioTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2,  7, LAVENDER_TOWN, 7
 	warp_event  3,  7, LAVENDER_TOWN, 7
