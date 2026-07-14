@@ -62,8 +62,6 @@ SilphCo10FSignText:
 	done
 
 SilphCo10F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  7,  2, SILPH_CO_9F, 2
 	warp_event  9,  2, SILPH_CO_11F, 1
