@@ -1,6 +1,6 @@
 	object_const_def
-	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS
 	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_YOUNGSTER
+	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS
 
 CherrygroveEvolutionSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -8,17 +8,21 @@ CherrygroveEvolutionSpeechHouse_MapScripts:
 	def_callbacks
 
 CherrygroveEvolutionSpeechHouseYoungsterScript:
+	faceplayer
 	opentext
 	writetext CherrygroveEvolutionSpeechHouseYoungsterText
 	waitbutton
 	closetext
+	turnobject CHERRYGROVEEVOLUTIONSPEECHHOUSE_YOUNGSTER, RIGHT
 	end
 
 CherrygroveEvolutionSpeechHouseLassScript:
+	faceplayer
 	opentext
 	writetext CherrygroveEvolutionSpeechHouseLassText
 	waitbutton
 	closetext
+	turnobject CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS, LEFT
 	end
 
 CherrygroveEvolutionSpeechHouseYoungsterText:
@@ -46,5 +50,5 @@ CherrygroveEvolutionSpeechHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseLassScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseYoungsterScript, -1
+	object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseLassScript, -1
