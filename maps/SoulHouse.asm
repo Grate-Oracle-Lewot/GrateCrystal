@@ -87,8 +87,6 @@ SoulHouseGrannyText:
 	done
 
 SoulHouse_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  7, LAVENDER_TOWN, 6
 	warp_event  5,  7, LAVENDER_TOWN, 6
