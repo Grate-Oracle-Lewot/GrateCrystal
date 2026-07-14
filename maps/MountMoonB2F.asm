@@ -44,8 +44,6 @@ SuperNerdNeilAfterBattleText:
 	done
 
 MountMoonB2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 19, 29, MOUNT_MOON_B1F, 4
 	warp_event 29, 13, MOUNT_MOON_B1F, 5
