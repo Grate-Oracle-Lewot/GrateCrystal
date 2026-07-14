@@ -180,8 +180,6 @@ FishingSpotSignText:
 	done
 
 Route12_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 11, 33, ROUTE_12_SUPER_ROD_HOUSE, 1
 
