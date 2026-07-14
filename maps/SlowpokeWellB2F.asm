@@ -60,8 +60,6 @@ SlowpokeWellB2FGymGuideText_GotKingsRock:
 	done
 
 SlowpokeWellB2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9, 11, SLOWPOKE_WELL_B1F, 2
 	warp_event 13,  5, UNION_CAVE_SLOWPOKE_WELL_LINK, 2
