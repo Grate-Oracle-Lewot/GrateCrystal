@@ -116,8 +116,6 @@ DontLitterSignText:
 	done
 
 MountMoonSquare_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 20,  5, MOUNT_MOON_B1F, 10
 	warp_event 22, 11, MOUNT_MOON_B1F, 11
