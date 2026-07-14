@@ -417,8 +417,6 @@ SeafoamCaveB2FFeraligatrText2:
 	done
 
 SeafoamCaveB2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  1,  1, SEAFOAM_CAVE_B1F, 2
 	warp_event  3,  1, SEAFOAM_CAVE_B2F, 3
