@@ -39,8 +39,6 @@ BoarderEoinAfterBattleText:
 	done
 
 IcePathB2FBlackthornSide_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3, 15, ICE_PATH_B1F, 8
 	warp_event  3,  3, ICE_PATH_B3F, 2
