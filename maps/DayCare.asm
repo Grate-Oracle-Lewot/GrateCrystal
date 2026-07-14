@@ -135,8 +135,6 @@ DayCareText_PartyFull:
 	done
 
 DayCare_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  0,  5, ROUTE_34, 3
 	warp_event  0,  6, ROUTE_34, 4
