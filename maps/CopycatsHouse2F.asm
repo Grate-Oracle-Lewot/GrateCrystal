@@ -245,7 +245,7 @@ CopycatText_Male_2:
 
 	para "<PLAYER>: If I find"
 	line "it, you'll give me"
-	cont "a rail PASS?"
+	cont "a RAIL PASS?"
 
 	para "<PLAYER>: I'll go"
 	line "find it for you."
@@ -301,7 +301,7 @@ CopycatText_ExplainPass:
 CopycatText_Male_3:
 	text "<PLAYER>: Hi!"
 	line "Thanks a lot for"
-	cont "the rail PASS!"
+	cont "the RAIL PASS!"
 
 	para "<PLAYER>: Pardon?"
 
@@ -334,7 +334,7 @@ CopycatText_Female_2:
 	para "<PLAYER>: You'll"
 	line "really give me a"
 
-	para "rail PASS if I"
+	para "RAIL PASS if I"
 	line "find it for you?"
 
 	para "<PLAYER>: Sure,"
@@ -347,7 +347,7 @@ CopycatText_Female_2:
 
 CopycatText_Female_3:
 	text "<PLAYER>: Thank you"
-	line "for the rail PASS!"
+	line "for the RAIL PASS!"
 
 	para "<PLAYER>: …Pardon?"
 
