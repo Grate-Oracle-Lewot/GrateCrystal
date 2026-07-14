@@ -39,8 +39,6 @@ AbandonedLabB1FComputerText:
 	done
 
 AbandonedLabB1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 27, 24, ABANDONED_LAB_1F, 4
 
