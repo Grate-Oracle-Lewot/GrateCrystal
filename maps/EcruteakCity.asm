@@ -266,8 +266,6 @@ BurnedTowerSignText:
 	done
 
 EcruteakCity_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 39, 26, ROUTE_42_ECRUTEAK_GATE, 1
 	warp_event 39, 27, ROUTE_42_ECRUTEAK_GATE, 2
