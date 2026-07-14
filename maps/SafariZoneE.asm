@@ -26,8 +26,6 @@ SafariZoneEEscapeRope:
 	itemball ESCAPE_ROPE
 
 SafariZoneE_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 
 	def_coord_events
