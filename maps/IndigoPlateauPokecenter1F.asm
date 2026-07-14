@@ -331,8 +331,6 @@ PokemonLeagueStatueText:
 	done
 
 IndigoPlateauPokecenter1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  5, 13, ROUTE_23, 1
 	warp_event  6, 13, ROUTE_23, 2
