@@ -129,8 +129,6 @@ LewotScript_LewotDefeatText:
 	done
 
 KarensRoom_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4, 17, BRUNOS_ROOM, 3
 	warp_event  5, 17, BRUNOS_ROOM, 4
