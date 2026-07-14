@@ -305,8 +305,6 @@ AmphyPaluPaluluText:
 	done
 
 OlivineLighthouse6F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9, 15, OLIVINE_LIGHTHOUSE_5F, 1
 	warp_event 16,  5, OLIVINE_LIGHTHOUSE_5F, 6
