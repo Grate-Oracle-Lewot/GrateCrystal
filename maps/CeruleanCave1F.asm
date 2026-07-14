@@ -32,8 +32,6 @@ CeruleanCave1FHiddenLuckyPunch:
 	hiddenitem LUCKY_PUNCH, EVENT_CERULEAN_CAVE_1F_HIDDEN_LUCKY_PUNCH
 
 CeruleanCave1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 25, 19, CERULEAN_CITY, 7
 	warp_event 25,  9, CERULEAN_CAVE_2F, 1
