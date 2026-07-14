@@ -231,8 +231,6 @@ Route46SignText:
 	done
 
 Route46_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  7, 33, ROUTE_29_ROUTE_46_GATE, 1
 	warp_event  8, 33, ROUTE_29_ROUTE_46_GATE, 2
