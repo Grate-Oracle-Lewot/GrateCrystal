@@ -48,8 +48,6 @@ PsychicMelvinAfterBattleText:
 	done
 
 IcePathB3F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  5, ICE_PATH_B2F, 2
 	warp_event 15,  5, ICE_PATH_B2F, 8
