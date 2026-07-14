@@ -65,8 +65,6 @@ AbandonedLab1FJournalReadText:
 	done
 
 AbandonedLab1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4, 26, ROUTE_47, 1
 	warp_event  5, 26, ROUTE_47, 1
