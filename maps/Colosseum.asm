@@ -56,8 +56,6 @@ CableClubFriendScript:
 	done
 
 Colosseum_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  7, POKECENTER_2F, 3
 	warp_event  5,  7, POKECENTER_2F, 3
