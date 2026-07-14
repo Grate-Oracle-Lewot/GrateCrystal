@@ -305,8 +305,6 @@ OlivineGymGuidePreText:
 	done
 
 OlivineGym_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 11, 41, OLIVINE_CITY, 2
 
