@@ -191,8 +191,6 @@ Route13DirectionsSignText:
 	done
 
 Route13_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 
 	def_coord_events
