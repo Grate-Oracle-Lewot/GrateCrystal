@@ -294,8 +294,6 @@ BurglarRamonAfterBattleText:
 	done
 
 SeafoamGym_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  9, 15, ROUTE_20, 1
 	warp_event  9,  1, SEAFOAM_CAVE_1F, 3
