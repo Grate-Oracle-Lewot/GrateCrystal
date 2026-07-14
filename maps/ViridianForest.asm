@@ -207,8 +207,6 @@ ViridianForestSign5Text:
 	done
 
 ViridianForest_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  1,  4, ROUTE_2_NORTH_GATE, 1
 	warp_event  1,  5, ROUTE_2_NORTH_GATE, 2
