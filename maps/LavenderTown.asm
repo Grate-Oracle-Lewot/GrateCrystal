@@ -108,8 +108,6 @@ SoulHouseSignText:
 	done
 
 LavenderTown_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  5,  5, LAVENDER_POKECENTER_1F, 1
 	warp_event  5,  9, MR_FUJIS_HOUSE, 1
