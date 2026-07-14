@@ -229,8 +229,6 @@ TeacherCalypsoAfterBattleText:
 	done
 
 UnionCave1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  3, UNION_CAVE_B1F, 3
 	warp_event  3, 51, UNION_CAVE_B1F, 4
