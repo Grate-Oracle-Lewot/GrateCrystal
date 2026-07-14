@@ -50,8 +50,6 @@ Route3Pokecenter1FLassText:
 	done
 
 Route3Pokecenter1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  7, ROUTE_3, 2
 	warp_event  4,  7, ROUTE_3, 2
