@@ -292,8 +292,6 @@ SeafoamCaveBedText2:
 endc
 
 SeafoamCaveB1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 11, 16, SEAFOAM_CAVE_1F, 2
 	warp_event  6, 41, SEAFOAM_CAVE_B2F, 1
