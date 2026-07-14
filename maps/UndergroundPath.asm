@@ -37,8 +37,6 @@ SupernerdRussAfterBattleText:
 	done
 
 UndergroundPath_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  3,  2, UNDERGROUND_PATH_ENTRANCE, 3
 	warp_event  3, 24, UNDERGROUND_PATH_ENTRANCE, 6
