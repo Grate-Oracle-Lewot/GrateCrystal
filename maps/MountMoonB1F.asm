@@ -9,8 +9,6 @@ MountMoonB1FHiddenMaxRepel:
 	hiddenitem MAX_REPEL, EVENT_MOUNT_MOON_B1F_HIDDEN_MAX_REPEL
 
 MountMoonB1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 27,  9, MOUNT_MOON_1F, 2
 	warp_event 21,  7, MOUNT_MOON_1F, 3
