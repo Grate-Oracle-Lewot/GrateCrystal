@@ -57,8 +57,7 @@ GetMapSceneID::
 	jr nz, .next ; map group did not match
 	ld a, [hli] ; map number
 	cp c
-	jr nz, .next ; map number did not match
-	jr .found ; we found our map
+	jr z, .found ; we found our map
 
 .next
 	pop hl
