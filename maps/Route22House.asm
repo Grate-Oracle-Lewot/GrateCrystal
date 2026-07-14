@@ -695,8 +695,6 @@ Route22HouseRadioText:
 	done
 
 Route22House_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  6,  7, ROUTE_22, 2
 	warp_event  7,  7, ROUTE_22, 2
