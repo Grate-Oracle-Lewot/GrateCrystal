@@ -146,8 +146,6 @@ MuseumBinocularsText:
 	done
 
 PewterMuseum2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  7,  9, PEWTER_MUSEUM_1F, 5
 
