@@ -463,8 +463,6 @@ RadioTower1FLuckyChannelSignText:
 	done
 
 RadioTower1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  2,  7, GOLDENROD_CITY, 11
 	warp_event  3,  7, GOLDENROD_CITY, 11
