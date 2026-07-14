@@ -365,8 +365,8 @@ TinTower1FSage2Text:
 
 	para "They are…"
 
-	para "SUICUNE, ENTEI and"
-	line "RAIKOU."
+	para "RAIKOU, ENTEI, and"
+	line "SUICUNE."
 
 	para "That is what they"
 	line "say."
