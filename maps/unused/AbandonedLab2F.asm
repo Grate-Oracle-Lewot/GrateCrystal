@@ -30,8 +30,6 @@ AbandonedLab2FJournalText:
 	done
 
 AbandonedLab2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 25, 24, ABANDONED_LAB_1F, 3
 	warp_event 19,  8, ABANDONED_LAB_ROOF, 1
