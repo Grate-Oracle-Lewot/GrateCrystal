@@ -328,8 +328,6 @@ PowerPlant2FTrapdoorText:
 	done
 
 PowerPlant2F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4, 35, POWER_PLANT, 3
 	warp_event  5, 35, POWER_PLANT, 3
