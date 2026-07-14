@@ -52,8 +52,6 @@ CamperDavidAfterBattleText:
 	done
 
 RockTunnel1F_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event 15,  3, ROUTE_9, 1
 	warp_event 11, 25, ROUTE_10_SOUTH, 1
