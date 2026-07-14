@@ -33,8 +33,6 @@ Route36RuinsOfAlphGateGrampsText:
 	done
 
 Route36RuinsOfAlphGate_MapEvents:
-	db 0, 0 ; filler
-
 	def_warp_events
 	warp_event  4,  0, ROUTE_36, 3
 	warp_event  5,  0, ROUTE_36, 4
