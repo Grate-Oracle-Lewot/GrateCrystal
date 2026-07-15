@@ -1339,18 +1339,6 @@ LoadPlayerBattleCGBLayoutStatusIconPalette:
 
 LoadPlayerStatusIconPalette:
 	; given: Status condition index in 'd'
-	
-	; load single white color in slot 4 of palette 6
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld hl, wBGPals1 palette 6 + 6 ; slot 4 of pal 6
-	ld a, $FF
-	ld [hli], a
-	ld [hl], a
-	pop af
-	ldh [rSVBK], a
 
 	ld hl, StatusIconPals
 	ld c, d
