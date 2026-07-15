@@ -35,7 +35,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $50 ; Destination Tile address
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $2 ; PAR Index
@@ -45,7 +45,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $52
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $3 ; SLP
@@ -55,7 +55,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $54
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $4 ; BRN
@@ -65,7 +65,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $56
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(EnemyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $5 ; FRZ
@@ -75,7 +75,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $58
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(EnemyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $6 ; FNT Index
@@ -85,7 +85,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $5a
-	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(StatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 	pop hl
 	pop bc
