@@ -18,6 +18,3 @@ INCBIN "gfx/stats/types_light.2bpp"
 
 TypeDarkIconGFX::
 INCBIN "gfx/stats/types_dark.2bpp"
-
-StatusIconGFX::
-INCBIN "gfx/battle/status_party.2bpp"
