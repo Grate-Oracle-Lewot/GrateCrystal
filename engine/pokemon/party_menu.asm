@@ -65,7 +65,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $56
-	lb bc, BANK(EnemyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $5 ; FRZ
@@ -75,7 +75,7 @@ LoadPartyMenuGFX:
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile $58
-	lb bc, BANK(EnemyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
+	lb bc, BANK(PartyStatusIconGFX), 2 ; bank in 'b', number of Tiles in 'c'
 	call Request2bpp
 
 	ld a, $6 ; FNT Index
