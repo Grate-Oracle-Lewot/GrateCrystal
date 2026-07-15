@@ -118,10 +118,17 @@ LoadHPBar:
 	ld hl, vTiles2 tile $6c
 	lb bc, BANK(EnemyHPBarBorderGFX), 4
 	call Get1bppViaHDMA
+
+; skip loading blank tile $75 to avoid overwriting second half of enemy status icon
 	ld de, HPExpBarBorderGFX
 	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
+	lb bc, BANK(HPExpBarBorderGFX), 2
 	call Get1bppViaHDMA
+	ld de, HPExpBarBorderGFX + 3 * LEN_1BPP_TILE
+	ld hl, vTiles2 tile $76
+	lb bc, BANK(HPExpBarBorderGFX), 3
+	call Get1bppViaHDMA
+
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 9
