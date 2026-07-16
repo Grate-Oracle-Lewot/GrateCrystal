@@ -115,6 +115,7 @@ TilesetParkAnim:
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -523,15 +524,15 @@ AnimateFlowerTile:
 	ld a, [wTileAnimationTimer]
 	and %110
 
-; hl = .FlowerTileFrames + a * 8
+; hl = FlowerTileFrames + a * 8
 ; (a was pre-multiplied by 2 from 'and %110')
 	add a
 	add a
 	add a
-	add LOW(.FlowerTileFrames)
+	add LOW(FlowerTileFrames)
 	ld l, a
 	ld a, 0
-	adc HIGH(.FlowerTileFrames)
+	adc HIGH(FlowerTileFrames)
 	ld h, a
 
 ; Write the tile graphic from hl (now sp) to tile $03 (now hl)
@@ -539,11 +540,40 @@ AnimateFlowerTile:
 	ld hl, vTiles2 tile $03
 	jp WriteTile
 
-.FlowerTileFrames:
+AnimateFlowerTile2:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = FlowerTileFrames2 + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(FlowerTileFrames2)
+	ld l, a
+	ld a, 0
+	adc HIGH(FlowerTileFrames2)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to tile $48 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $48
+	jp WriteTile
+
+FlowerTileFrames:
 	INCBIN "gfx/tilesets/flower/flower1.2bpp"
 	INCBIN "gfx/tilesets/flower/flower2.2bpp"
+FlowerTileFrames2:
 	INCBIN "gfx/tilesets/flower/flower1.2bpp"
 	INCBIN "gfx/tilesets/flower/flower3.2bpp"
+	INCBIN "gfx/tilesets/flower/flower1.2bpp"
+	INCBIN "gfx/tilesets/flower/flower2.2bpp"
 
 AnimateKantoFlowerTile:
 ; Save the stack pointer in bc for WriteTile to restore
