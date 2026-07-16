@@ -2070,7 +2070,7 @@ if DEF(_LITTLE_CUP)
 	db 30, SENTRET
 	db 33, NIDORAN_M
 	db 33, NIDORAN_F
-	db 19, MANKEY
+	db 16, EEVEE
 	db 45, SUNKERN
 else
 	db 28, JIGGLYPUFF
@@ -2079,7 +2079,7 @@ else
 	db 30, LICKITUNG
 	db 33, NIDOKING
 	db 33, NIDOQUEEN
-	db 19, AIPOM
+	db 16, EEVEE
 	db 46, DITTO
 endc
 	; day
