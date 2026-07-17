@@ -154,13 +154,17 @@ AI_TryItem:
 .not_ditto
 ; if only one mon [remaining], use items on it
 	call AICheckLastEnemyMon
-	jr c, .only_one_mon
+	jr c, .skip_level_check
 
-; if more than one are alive, only use items on highest level mon
+; use items if there's nothing better to do (Fly/Dig etc.)
+	call CheckGoodItemTurn
+	jr c, .skip_level_check
+
+; otherwise, only use items on highest level mon
 	call .IsHighestLevel
 	ret nc
 
-.only_one_mon
+.skip_level_check
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
@@ -238,7 +242,7 @@ AI_TryItem:
 ; if current enemy mon is Perish Songed, don't use items on it
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
-	jr nz, .no
+	jr nz, AI_ClearCarryFlag2
 
 ; if player has type advantage against enemy mon, don't use items on it
 ; mostly exists for when multiple mons are at the highest level
@@ -267,8 +271,9 @@ AI_TryItem:
 	ld a, [hl]
 	cp e
 	jr nc, .yes
+	; fallthrough
 
-.no
+AI_ClearCarryFlag2:
 	and a
 	ret
 
@@ -293,36 +298,36 @@ AI_Items:
 
 .FullHeal:
 	call .Status
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedFullHeal
-	jp .Use
+	jr AI_ClearCarryFlag2
 
 .Frankenberry:
 	call .Status
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedFrankenberry
-	jp .Use
+	jr AI_ClearCarryFlag2
 
 .OldGateau:
 	call .Status
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedOldGateau
-	jp .Use
+	jr AI_ClearCarryFlag2
 
 .Status:
 	ld a, [wEnemyMonStatus]
 	and a
-	jp z, .DontUse
+	jp z, AI_SetCarryFlag
 
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
-	jp nz, .Use
+	jr nz, AI_ClearCarryFlag2
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .StatusCheckContext
 	call AI_80_20
-	jp c, .Use
-	jp .DontUse
+	jr c, AI_ClearCarryFlag2
+	jp AI_SetCarryFlag
 
 .StatusCheckContext:
 	ld a, [wEnemySubStatus5]
@@ -332,143 +337,162 @@ AI_Items:
 	cp 4
 	jr c, .FailToxicCheck
 	call AI_50_50
-	jp c, .Use
+	jp c, AI_ClearCarryFlag
 
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
-	jp z, .DontUse
-	jp .Use
+	jp z, AI_SetCarryFlag
+	jp AI_ClearCarryFlag
 
 .FullRestore:
 	call .HealItem
 	jp nc, .UseFullRestore
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
-	jp z, .DontUse
+	jp z, AI_SetCarryFlag
 	call .Status
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 
 .UseFullRestore:
 	call EnemyUsedFullRestore
-	jp .Use
+	jp AI_ClearCarryFlag
 
 .MaxPotion:
 	call .HealItem
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedMaxPotion
-	jp .Use
+	jp AI_ClearCarryFlag
 
 .HealItem:
 	farcall AICheckEnemyHalfHP
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	farcall AICheckEnemyQuarterHP
-	jp nc, .Use
+	jp nc, AI_ClearCarryFlag
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .20Not50
 	call AI_50_50
-	jp c, .Use
-	jp .DontUse
+	jp c, AI_ClearCarryFlag
+	jp AI_SetCarryFlag
 
 .20Not50:
 	call AI_80_20
-	jp nc, .DontUse
-	jp .Use
+	jp nc, AI_SetCarryFlag
+	jp AI_ClearCarryFlag
 
 .HyperPotion:
 	call .HealItem
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedHyperPotion
-	jp .Use
+	jp AI_ClearCarryFlag
 
 .SuperPotion:
 	call .HealItem
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedSuperPotion
-	jp .Use
+	jp AI_ClearCarryFlag
 
 .SpringWater:
 	call .HealItem
-	jp c, .DontUse
+	jp c, AI_SetCarryFlag
 	call EnemyUsedSpringWater
-	jp .Use
+	jp AI_ClearCarryFlag
 
 .XAccuracy:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXAccuracy
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .GuardSpec:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedGuardSpec
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .DireHit:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedDireHit
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XAttack:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXAttack
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XDefend:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXDefend
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XSpeed:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXSpeed
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XSpecial:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXSpecial
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XSpDefend:
 	call .XItem
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	call EnemyUsedXSpDefend
-	jr .Use
+	jr AI_ClearCarryFlag
 
 .XItem:
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
-	jr nz, .Use
+	jr nz, AI_ClearCarryFlag
+	call CheckGoodItemTurn
+	jr c, AI_ClearCarryFlag
 	ld a, [wEnemyTurnsTaken]
 	and a
 	jr nz, .notfirstturnout
 	call AI_50_50
-	jr c, .DontUse
+	jr c, AI_SetCarryFlag
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
-	jr nz, .Use
+	jr nz, AI_ClearCarryFlag
 	call AI_50_50
-	jr c, .DontUse
-	jr .Use
+	jr c, AI_SetCarryFlag
+	jr AI_ClearCarryFlag
 
 .notfirstturnout
 	call AI_80_20
-	jr c, .Use
+	jr c, AI_ClearCarryFlag
+	; fallthrough
 
-.DontUse:
+AI_SetCarryFlag:
 	scf
 	ret
 
-.Use:
+AI_ClearCarryFlag:
 	and a
 	ret
+
+CheckGoodItemTurn:
+; return c if it's a good turn to use an item
+
+; if player is Biding, use an item instead of attacking
+	ld a, [wPlayerSubStatus3]
+	bit SUBSTATUS_BIDE, a
+	jr nz, AI_SetCarryFlag
+
+; if player is flying or underground and enemy is faster, use an item
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr z, AI_ClearCarryFlag
+
+; c = enemy faster
+	jp AICompareSpeed
 
 AIUsedItemSound:
 	push de
