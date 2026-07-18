@@ -481,6 +481,11 @@ AI_ClearCarryFlag:
 CheckGoodItemTurn:
 ; return c if it's a good turn to use an item
 
+; if player is Wobbuffet, use an item, since it can't retaliate
+	ld a, [wBattleMonSpecies]
+	cp WOBBUFFET
+	jr z, AI_SetCarryFlag
+
 ; if player is Biding, use an item instead of attacking
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_BIDE, a
