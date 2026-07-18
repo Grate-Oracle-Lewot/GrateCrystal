@@ -573,7 +573,7 @@ FlowerTileFrames2:
 	INCBIN "gfx/tilesets/flower/flower1.2bpp"
 	INCBIN "gfx/tilesets/flower/flower3.2bpp"
 	INCBIN "gfx/tilesets/flower/flower1.2bpp"
-	INCBIN "gfx/tilesets/flower/flower2.2bpp"
+	INCBIN "gfx/tilesets/flower/flower4.2bpp"
 
 AnimateKantoFlowerTile:
 ; Save the stack pointer in bc for WriteTile to restore
