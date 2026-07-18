@@ -9,15 +9,6 @@ MoonBallMons:
 	db CLEFABLE
 	db JIGGLYPUFF
 	db WIGGLYTUFF
-	db MACHOP
-	db MACHOKE
-	db MACHAMP
-	db GEODUDE
-	db GRAVELER
-	db GOLEM
-	db GASTLY
-	db HAUNTER
-	db GENGAR
 ;	db CLEFFA
 ;	db IGGLYBUFF
 	db -1 ; end
