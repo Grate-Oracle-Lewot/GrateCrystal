@@ -924,7 +924,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_LEVEL, 32, ALAKAZAM
+	db EVOLVE_TRADE, -1, ALAKAZAM
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
@@ -957,7 +957,7 @@ MachopEvosAttacks:
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, MACHAMP
+	db EVOLVE_TRADE, -1, MACHAMP
 	db 0 ; no more evolutions
 	db 1, KARATE_CHOP
 	db 3, LEER
@@ -1075,7 +1075,7 @@ GeodudeEvosAttacks:
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, GOLEM
+	db EVOLVE_TRADE, -1, GOLEM
 GolemEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
@@ -1352,7 +1352,7 @@ GastlyEvosAttacks:
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, GENGAR
+	db EVOLVE_TRADE, -1, GENGAR
 GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
@@ -1372,6 +1372,7 @@ GengarEvosAttacks:
 
 OnixEvosAttacks:
 	db EVOLVE_HELD, METAL_COAT, STEELIX
+	db EVOLVE_TRADE, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, BIND
 	db 2, HARDEN
@@ -1730,6 +1731,7 @@ HorseaEvosAttacks:
 
 SeadraEvosAttacks:
 	db EVOLVE_HELD, DRAGON_SCALE, KINGDRA
+	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 3, LEER
@@ -1823,6 +1825,7 @@ MrMimeEvosAttacks:
 
 ScytherEvosAttacks:
 	db EVOLVE_HELD, METAL_COAT, SCIZOR
+	db EVOLVE_TRADE, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2597,7 +2600,7 @@ LanturnEvosAttacks:
 ;	db 0 ; no more level-up moves
 
 ; CleffaEvosAttacks:
-;	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
+;	db EVOLVE_HAPPINESS, TR_NITE, CLEFAIRY
 ;	db 0 ; no more evolutions
 ;	db 1, POUND
 ;	db 1, CHARM
@@ -2925,6 +2928,7 @@ SunfloraEvosAttacks:
 
 YanmaEvosAttacks:
 	db EVOLVE_HELD, DRAGON_SCALE, YANMEGA
+	db EVOLVE_TRADE, DRAGON_SCALE, YANMEGA
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 2, FORESIGHT
