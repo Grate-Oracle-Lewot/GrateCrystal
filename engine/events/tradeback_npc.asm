@@ -128,9 +128,7 @@ TradebackGuyText::
 	done
 
 TradebackGuyCanceledText::
-	text "Oh, ok then."
-
-	para "Come back if you"
+	text "Come back if you"
 	line "need me!"
 	done
 
