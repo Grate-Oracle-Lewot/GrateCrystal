@@ -393,7 +393,6 @@ Prize TMs:
 - Nidorino can now evolve into Nidoqueen instead of Nidoking by using a Sun Stone instead of a Moon Stone, and Nidorina into Nidoking (Moon Stones still work normally for both)
 - Weepinbell can now evolve into Bellossom with a Sun Stone (Gloom still can as well)
 - Marill now evolves with a Water Stone, increasing parallels to Pikachu
-- Kadabra evolves at Lv.32 instead of with a Moon Stone like the other Gen I trade evolutions
 - Ivysaur evolves at Lv.36 like the other Gen I starters, instead of for some reason getting Lv.32
 - Automatic weather in certain areas: Harsh Sunlight in the National Park, the top of the Tin Tower, and Blaine's Gym; Rain inside Slowpoke Well, the Whirl Islands, and Misty's Gym; Hail in the Ice Path, Lugia's chamber, and Pryce's Gym; and Sandstorms in Victory Road, Mt. Silver, and Brock's Gym
 - Unfought Gym trainers can still be fought after the Leader is defeated
