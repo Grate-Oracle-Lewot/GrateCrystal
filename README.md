@@ -91,7 +91,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - All non-legendary Pokémon can be obtained prior to the Pokémon League, with the vast majority available around mid-Johto
   - Enemy trainer parties are more diverse and generally stronger, and new trainers are found throughout the game
   - All items are more widely available, either in shops, as wild held items, or things like Beuna's Password prizes
-  - Trade evolutions have all been replaced with other methods, making them more easily obtainable in a ROM
+  - Some trade evolutions have been replaced with other methods, and for those that are still trades there's an NPC on the second floor of every Pokémon Center who will trade your Pokémon back to you in order to evolve them
   - Any Pokémon that received a new evolution in a later generation has its base stats increased to about halfway between its original stats and those of its evolution, to compensate for the evolutions not being present (true of evolutions through Gen 9)
   - All Pokémon that only belonged to one Egg Group now belong to two, Ditto can breed with itself, and legendaries can now breed with Ditto (except for Mewtwo)
 - Mr. Pokémon is now named Pokey Man. After defeating Blue, you can battle Prof. Oak at Pokey Man's house once per day, and if you win, Pokey Man will give you another Odd Egg (or if you have Mewtwo in your party at the time, a Mewtwo egg)
