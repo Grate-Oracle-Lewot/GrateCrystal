@@ -381,3 +381,7 @@ NayruCountCaughtMons:
 	call CountSetBits
 	ld [wScriptVar], a
 	ret
+
+TradebackNPC:
+	farcall TradebackGuy
+	ret
