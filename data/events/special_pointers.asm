@@ -141,6 +141,7 @@ SpecialsPointers::
 ; Grate Crystal only
 	add_special CheckOtherPlayerGender
 	add_special NayruCountCaughtMons
+	add_special TradebackNPC
 	add_special _VoltorbFlip
 	add_special MoveReminder
 	add_special EggMoveTutor
