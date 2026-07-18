@@ -24,14 +24,15 @@ OutdoorSprites:
 	dw VioletGroupSprites       ; 18
 	dw AzaleaGroupSprites       ; 19
 	dw GoldenrodGroupSprites    ; 20
-	dw EcruteakGroupSprites     ; 21
-	dw OlivineGroupSprites      ; 22
-	dw CianwoodGroupSprites     ; 23
-	dw MahoganyGroupSprites     ; 24
-	dw LakeOfRageGroupSprites   ; 25
-	dw BlackthornGroupSprites   ; 26
-	dw FastShipGroupSprites     ; 27
-	dw DungeonsGroupSprites     ; 28
+	dw NationalGroupSprites     ; 21
+	dw EcruteakGroupSprites     ; 22
+	dw OlivineGroupSprites      ; 23
+	dw CianwoodGroupSprites     ; 24
+	dw MahoganyGroupSprites     ; 25
+	dw LakeOfRageGroupSprites   ; 26
+	dw BlackthornGroupSprites   ; 27
+	dw FastShipGroupSprites     ; 28
+	dw DungeonsGroupSprites     ; 29
 	assert_table_length NUM_MAP_GROUPS
 
 ; Route1 and ViridianCity are connected
@@ -333,8 +334,10 @@ FastShipGroupSprites:
 	db SPRITE_HO_OH
 	db 0 ; end
 
+NationalGroupSprites:
+; NationalPark, NationalParkBugContest
 DungeonsGroupSprites:
-; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
+; RuinsOfAlphOutside
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
 	db SPRITE_TEACHER
