@@ -536,4 +536,4 @@ ENDM
 	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 17 ; 109
 	endgroup
 
-NUM_MAP_GROUPS EQU const_value ; 28
+NUM_MAP_GROUPS EQU const_value ; 29
