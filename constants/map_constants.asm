@@ -180,9 +180,9 @@ ENDM
 	endgroup
 
 	newgroup SAFARI                                         ; group 10
-	map_const SAFARI_ZONE_SW,                               31, 26 ;  1
-	map_const SAFARI_ZONE_E,                                13, 14 ;  2
-	map_const SAFARI_ZONE_N,                                23, 12 ;  3
+	map_const SAFARI_ZONE_SW,                              31, 26 ;  1
+	map_const SAFARI_ZONE_E,                               13, 14 ;  2
+	map_const SAFARI_ZONE_N,                               23, 12 ;  3
 	endgroup
 
 	newgroup SAFFRON_INNER                                  ; group 11
@@ -322,7 +322,12 @@ ENDM
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 24
 	endgroup
 
-	newgroup ECRUTEAK                                       ; group 21
+	newgroup NATIONAL                                       ; group 21
+	map_const NATIONAL_PARK,                               20, 27 ;  1
+	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ;  2
+	endgroup
+
+	newgroup ECRUTEAK                                       ; group 22
 	map_const ECRUTEAK_CITY,                               22, 18 ;  1
 	map_const ECRUTEAK_POKECENTER_1F,                       5,  4 ;  2
 	map_const ECRUTEAK_MART,                                6,  4 ;  3
@@ -333,7 +338,7 @@ ENDM
 	map_const ECRUTEAK_LUGIA_SPEECH_HOUSE,                  4,  4 ;  8
 	endgroup
 
-	newgroup OLIVINE                                        ; group 22
+	newgroup OLIVINE                                        ; group 23
 	map_const OLIVINE_CITY,                                20, 18 ;  1
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  2
 	map_const OLIVINE_MART,                                 6,  4 ;  3
@@ -349,7 +354,7 @@ ENDM
 	map_const ROUTE_39_BARN,                                4,  4 ; 13
 	endgroup
 
-	newgroup CIANWOOD                                       ; group 23
+	newgroup CIANWOOD                                       ; group 24
 	map_const CIANWOOD_CITY,                               15, 27 ;  1
 	map_const CIANWOOD_POKECENTER_1F,                       5,  4 ;  2
 	map_const CIANWOOD_GYM,                                 5,  9 ;  3
@@ -369,7 +374,7 @@ ENDM
 	map_const BATTLE_TOWER_BATTLE_ROOM,                     4,  4 ; 17
 	endgroup
 
-	newgroup MAHOGANY                                       ; group 24
+	newgroup MAHOGANY                                       ; group 25
 	map_const MAHOGANY_TOWN,                               10,  9 ;  1
 	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  2
 	map_const MAHOGANY_GYM,                                 5,  9 ;  3
@@ -379,7 +384,7 @@ ENDM
 	map_const ROUTE_44,                                    30,  9 ;  7
 	endgroup
 
-	newgroup LAKE_OF_RAGE                                   ; group 25
+	newgroup LAKE_OF_RAGE                                   ; group 26
 	map_const LAKE_OF_RAGE,                                20, 18 ;  1
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,                  4,  4 ;  2
 	map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE,              4,  4 ;  3
@@ -388,7 +393,7 @@ ENDM
 	map_const ROUTE_43_MAHOGANY_GATE,                       5,  4 ;  6
 	endgroup
 
-	newgroup BLACKTHORN                                     ; group 26
+	newgroup BLACKTHORN                                     ; group 27
 	map_const BLACKTHORN_CITY,                             20, 18 ;  1
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  2
 	map_const BLACKTHORN_MART,                              6,  4 ;  3
@@ -404,7 +409,7 @@ ENDM
 ; NOTE: Mt. Moon Square and the Tin Tower Roof are purposely in this group.
 ; EnterMapWarp in engine/overworld/warp_connection.asm checks for them specifically.
 ; This way it only has to check for one group prior to checking the individual map.
-	newgroup FAST_SHIP                                      ; group 27
+	newgroup FAST_SHIP                                      ; group 28
 	map_const MOUNT_MOON_SQUARE,                           15,  9 ;  1
 	map_const MOUNT_MOON_GIFT_SHOP,                         4,  4 ;  2
 	map_const FAST_SHIP_1F,                                16,  9 ;  3
@@ -419,7 +424,7 @@ ENDM
 	map_const TIN_TOWER_ROOF,                              10,  9 ; 13
 	endgroup
 
-	newgroup DUNGEONS                                       ; group 28
+	newgroup DUNGEONS                                       ; group 29
 	map_const MOUNT_MOON_1F,                               20, 18 ;   1
 	map_const MOUNT_MOON_B1F,                              20, 18 ;   2
 	map_const MOUNT_MOON_B2F,                              25, 19 ;   3
@@ -483,54 +488,52 @@ ENDM
 	map_const RADIO_TOWER_3F,                               9,  4 ;  61
 	map_const RADIO_TOWER_4F,                               9,  4 ;  62
 	map_const RADIO_TOWER_5F,                               9,  4 ;  63
-	map_const NATIONAL_PARK,                               20, 27 ;  64
-	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ;  65
-	map_const BURNED_TOWER_1F,                             10,  9 ;  66
-	map_const BURNED_TOWER_B1F,                            10,  9 ;  67
-	map_const TIN_TOWER_1F,                                10,  9 ;  68
-	map_const TIN_TOWER_2F,                                10,  9 ;  69
-	map_const TIN_TOWER_3F,                                10,  9 ;  70
-	map_const TIN_TOWER_4F,                                10,  9 ;  71
-	map_const TIN_TOWER_5F,                                10,  9 ;  72
-	map_const TIN_TOWER_6F,                                10,  9 ;  73
-	map_const TIN_TOWER_7F,                                10,  9 ;  74
-	map_const TIN_TOWER_8F,                                10,  9 ;  75
-	map_const TIN_TOWER_9F,                                10,  9 ;  76
-	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ;  77
-	map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ;  78
-	map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ;  79
-	map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ;  80
-	map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ;  81
-	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ;  82
-	map_const WHIRL_ISLAND_1F,                             20, 28 ;  83
-	map_const WHIRL_ISLAND_B1F,                            20, 18 ;  84
-	map_const WHIRL_ISLAND_B2F,                            10, 18 ;  85
-	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ;  86
-	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ;  87
-	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ;  88
-	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ;  89
-	map_const MOUNT_MORTAR_B1F,                            20, 18 ;  90
-	map_const MAHOGANY_MART_1F,                             4,  4 ;  91
-	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ;  92
-	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ;  93
-	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ;  94
-	map_const ICE_PATH_1F,                                 20, 15 ;  95
-	map_const ICE_PATH_B1F,                                10, 18 ;  96
-	map_const ICE_PATH_B2F,                                18,  9 ;  97
-	map_const ICE_PATH_B3F,                                10,  9 ;  98
-	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ;  99
-	map_const DRAGONS_DEN_1F,                               5,  9 ; 100
-	map_const DRAGONS_DEN_B1F,                             20, 18 ; 101
-	map_const DRAGON_SHRINE,                                5,  5 ; 102
-	map_const TOHJO_FALLS,                                 20, 18 ; 103
-	map_const MEW_ANTECHAMBER,                              6, 12 ; 104
-	map_const MEW_CHAMBER,                                 10,  9 ; 105
-	map_const VICTORY_ROAD,                                10, 36 ; 106
-	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 107
-	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 108
-	map_const SILVER_CAVE_ROOM_3,                          20, 35 ; 109
-	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 110
-	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 17 ; 111
+	map_const BURNED_TOWER_1F,                             10,  9 ;  64
+	map_const BURNED_TOWER_B1F,                            10,  9 ;  65
+	map_const TIN_TOWER_1F,                                10,  9 ;  66
+	map_const TIN_TOWER_2F,                                10,  9 ;  67
+	map_const TIN_TOWER_3F,                                10,  9 ;  68
+	map_const TIN_TOWER_4F,                                10,  9 ;  69
+	map_const TIN_TOWER_5F,                                10,  9 ;  70
+	map_const TIN_TOWER_6F,                                10,  9 ;  71
+	map_const TIN_TOWER_7F,                                10,  9 ;  72
+	map_const TIN_TOWER_8F,                                10,  9 ;  73
+	map_const TIN_TOWER_9F,                                10,  9 ;  74
+	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ;  75
+	map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ;  76
+	map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ;  77
+	map_const OLIVINE_LIGHTHOUSE_4F,                       10,  9 ;  78
+	map_const OLIVINE_LIGHTHOUSE_5F,                       10,  9 ;  79
+	map_const OLIVINE_LIGHTHOUSE_6F,                       10,  9 ;  80
+	map_const WHIRL_ISLAND_1F,                             20, 28 ;  81
+	map_const WHIRL_ISLAND_B1F,                            20, 18 ;  82
+	map_const WHIRL_ISLAND_B2F,                            10, 18 ;  83
+	map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ;  84
+	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ;  85
+	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ;  86
+	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ;  87
+	map_const MOUNT_MORTAR_B1F,                            20, 18 ;  88
+	map_const MAHOGANY_MART_1F,                             4,  4 ;  89
+	map_const TEAM_ROCKET_BASE_B1F,                        15,  9 ;  90
+	map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ;  91
+	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ;  92
+	map_const ICE_PATH_1F,                                 20, 15 ;  93
+	map_const ICE_PATH_B1F,                                10, 18 ;  94
+	map_const ICE_PATH_B2F,                                18,  9 ;  95
+	map_const ICE_PATH_B3F,                                10,  9 ;  96
+	map_const ICE_PATH_ARTICUNO_CHAMBER,                   10, 18 ;  97
+	map_const DRAGONS_DEN_1F,                               5,  9 ;  98
+	map_const DRAGONS_DEN_B1F,                             20, 18 ;  99
+	map_const DRAGON_SHRINE,                                5,  5 ; 100
+	map_const TOHJO_FALLS,                                 20, 18 ; 101
+	map_const MEW_ANTECHAMBER,                              6, 12 ; 102
+	map_const MEW_CHAMBER,                                 10,  9 ; 103
+	map_const VICTORY_ROAD,                                10, 36 ; 104
+	map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 105
+	map_const SILVER_CAVE_ROOM_2,                          15, 18 ; 106
+	map_const SILVER_CAVE_ROOM_3,                          20, 35 ; 107
+	map_const SILVER_CAVE_ITEM_ROOMS,                      10,  9 ; 108
+	map_const SILVER_CAVE_MOLTRES_CHAMBER,                 13, 17 ; 109
 	endgroup
 
 NUM_MAP_GROUPS EQU const_value ; 28
