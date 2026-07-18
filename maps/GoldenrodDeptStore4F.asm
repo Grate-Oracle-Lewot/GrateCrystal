@@ -60,20 +60,21 @@ GoldenrodDeptStore4FBugCatcherText:
 	done
 
 GoldenrodDeptStore4FGameboyKidText:
-	text "Trading #MON is"
-	line "tricky in a hack,"
+	text "Some #MON only"
+	line "evolve by being"
+	cont "traded."
 
-	para "so we replaced"
-	line "trade evolutions"
+	para "If you don't have"
+	line "any friends,"
 
-	para "with other methods"
-	line "like MOON STONE."
+	para "there's a guy who"
+	line "will trade your"
 
-	para "The method varies"
-	line "with the #MON,"
+	para "own #MON back to"
+	line "you on the 2nd"
 
-	para "so try different"
-	line "things out!"
+	para "floor of every"
+	line "#MON CENTER."
 	done
 
 GoldenrodDeptStore4FDirectoryText:
