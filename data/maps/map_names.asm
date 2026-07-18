@@ -20,14 +20,15 @@ MapGroupNum_Names::
 	dw Violet_Map_Names        ; 18
 	dw Azalea_Map_Names        ; 19
 	dw Goldenrod_Map_Names     ; 20
-	dw Ecruteak_Map_Names      ; 21
-	dw Olivine_Map_Names       ; 22
-	dw Cianwood_Map_Names      ; 23
-	dw Mahogany_Map_Names      ; 24
-	dw Lake_of_Rage_Map_Names  ; 25
-	dw Blackthorn_Map_Names    ; 26
-	dw Fast_Ship_Map_Names     ; 27
-	dw Dungeons_Map_Names      ; 28
+	dw National_Map_Names      ; 21
+	dw Ecruteak_Map_Names      ; 22
+	dw Olivine_Map_Names       ; 23
+	dw Cianwood_Map_Names      ; 24
+	dw Mahogany_Map_Names      ; 25
+	dw Lake_of_Rage_Map_Names  ; 26
+	dw Blackthorn_Map_Names    ; 27
+	dw Fast_Ship_Map_Names     ; 28
+	dw Dungeons_Map_Names      ; 29
 	assert_table_length NUM_MAP_GROUPS
 
 GetMapGroupNum_Name::
@@ -362,6 +363,12 @@ Goldenrod_Map_Names: ; GOLDENROD
 	dw Goldenrod_Map_Name24 ; ILEX_FOREST_AZALEA_GATE
 	assert_table_length NUM_GOLDENROD_MAPS
 
+National_Map_Names: ; NATIONAL
+	table_width 2, National_Map_Names
+	dw National_Map_Name1 ; NATIONAL_PARK
+	dw National_Map_Name2 ; NATIONAL_PARK_BUG_CONTEST
+	assert_table_length NUM_NATIONAL_MAPS
+
 Ecruteak_Map_Names: ; ECRUTEAK
 	table_width 2, Ecruteak_Map_Names
 	dw Ecruteak_Map_Name1 ; ECRUTEAK_CITY
@@ -528,54 +535,52 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name61  ; RADIO_TOWER_3F
 	dw Dungeons_Map_Name62  ; RADIO_TOWER_4F
 	dw Dungeons_Map_Name63  ; RADIO_TOWER_5F
-	dw Dungeons_Map_Name64  ; NATIONAL_PARK
-	dw Dungeons_Map_Name65  ; NATIONAL_PARK_BUG_CONTEST
-	dw Dungeons_Map_Name66  ; BURNED_TOWER_1F
-	dw Dungeons_Map_Name67  ; BURNED_TOWER_B1F
-	dw Dungeons_Map_Name68  ; TIN_TOWER_1F
-	dw Dungeons_Map_Name69  ; TIN_TOWER_2F
-	dw Dungeons_Map_Name70  ; TIN_TOWER_3F
-	dw Dungeons_Map_Name71  ; TIN_TOWER_4F
-	dw Dungeons_Map_Name72  ; TIN_TOWER_5F
-	dw Dungeons_Map_Name73  ; TIN_TOWER_6F
-	dw Dungeons_Map_Name74  ; TIN_TOWER_7F
-	dw Dungeons_Map_Name75  ; TIN_TOWER_8F
-	dw Dungeons_Map_Name76  ; TIN_TOWER_9F
-	dw Dungeons_Map_Name77  ; OLIVINE_LIGHTHOUSE_1F
-	dw Dungeons_Map_Name78  ; OLIVINE_LIGHTHOUSE_2F
-	dw Dungeons_Map_Name79  ; OLIVINE_LIGHTHOUSE_3F
-	dw Dungeons_Map_Name80  ; OLIVINE_LIGHTHOUSE_4F
-	dw Dungeons_Map_Name81  ; OLIVINE_LIGHTHOUSE_5F
-	dw Dungeons_Map_Name82  ; OLIVINE_LIGHTHOUSE_6F
-	dw Dungeons_Map_Name83  ; WHIRL_ISLAND_1F
-	dw Dungeons_Map_Name84  ; WHIRL_ISLAND_B1F
-	dw Dungeons_Map_Name85  ; WHIRL_ISLAND_B2F
-	dw Dungeons_Map_Name86  ; WHIRL_ISLAND_LUGIA_CHAMBER
-	dw Dungeons_Map_Name87  ; MOUNT_MORTAR_1F_OUTSIDE
-	dw Dungeons_Map_Name88  ; MOUNT_MORTAR_1F_INSIDE
-	dw Dungeons_Map_Name89  ; MOUNT_MORTAR_2F_INSIDE
-	dw Dungeons_Map_Name90  ; MOUNT_MORTAR_B1F
-	dw Dungeons_Map_Name91  ; MAHOGANY_MART_1F
-	dw Dungeons_Map_Name92  ; TEAM_ROCKET_BASE_B1F
-	dw Dungeons_Map_Name93  ; TEAM_ROCKET_BASE_B2F
-	dw Dungeons_Map_Name94  ; TEAM_ROCKET_BASE_B3F
-	dw Dungeons_Map_Name95  ; ICE_PATH_1F
-	dw Dungeons_Map_Name96  ; ICE_PATH_B1F
-	dw Dungeons_Map_Name97  ; ICE_PATH_B2F
-	dw Dungeons_Map_Name98  ; ICE_PATH_B3F
-	dw Dungeons_Map_Name99  ; ICE_PATH_ARTICUNO_CHAMBER
-	dw Dungeons_Map_Name100 ; DRAGONS_DEN_1F
-	dw Dungeons_Map_Name101 ; DRAGONS_DEN_B1F
-	dw Dungeons_Map_Name102 ; DRAGON_SHRINE
-	dw Dungeons_Map_Name103 ; TOHJO_FALLS
-	dw Dungeons_Map_Name104 ; MEW_ANTECHAMBER
-	dw Dungeons_Map_Name105 ; MEW_CHAMBER
-	dw Dungeons_Map_Name106 ; VICTORY_ROAD
-	dw Dungeons_Map_Name107 ; SILVER_CAVE_ROOM_1
-	dw Dungeons_Map_Name108 ; SILVER_CAVE_ROOM_2
-	dw Dungeons_Map_Name109 ; SILVER_CAVE_ROOM_3
-	dw Dungeons_Map_Name110 ; SILVER_CAVE_ITEM_ROOMS
-	dw Dungeons_Map_Name111 ; SILVER_CAVE_MOLTRES_CHAMBER
+	dw Dungeons_Map_Name64  ; BURNED_TOWER_1F
+	dw Dungeons_Map_Name65  ; BURNED_TOWER_B1F
+	dw Dungeons_Map_Name66  ; TIN_TOWER_1F
+	dw Dungeons_Map_Name67  ; TIN_TOWER_2F
+	dw Dungeons_Map_Name68  ; TIN_TOWER_3F
+	dw Dungeons_Map_Name69  ; TIN_TOWER_4F
+	dw Dungeons_Map_Name70  ; TIN_TOWER_5F
+	dw Dungeons_Map_Name71  ; TIN_TOWER_6F
+	dw Dungeons_Map_Name72  ; TIN_TOWER_7F
+	dw Dungeons_Map_Name73  ; TIN_TOWER_8F
+	dw Dungeons_Map_Name74  ; TIN_TOWER_9F
+	dw Dungeons_Map_Name75  ; OLIVINE_LIGHTHOUSE_1F
+	dw Dungeons_Map_Name76  ; OLIVINE_LIGHTHOUSE_2F
+	dw Dungeons_Map_Name77  ; OLIVINE_LIGHTHOUSE_3F
+	dw Dungeons_Map_Name78  ; OLIVINE_LIGHTHOUSE_4F
+	dw Dungeons_Map_Name79  ; OLIVINE_LIGHTHOUSE_5F
+	dw Dungeons_Map_Name80  ; OLIVINE_LIGHTHOUSE_6F
+	dw Dungeons_Map_Name81  ; WHIRL_ISLAND_1F
+	dw Dungeons_Map_Name82  ; WHIRL_ISLAND_B1F
+	dw Dungeons_Map_Name83  ; WHIRL_ISLAND_B2F
+	dw Dungeons_Map_Name84  ; WHIRL_ISLAND_LUGIA_CHAMBER
+	dw Dungeons_Map_Name85  ; MOUNT_MORTAR_1F_OUTSIDE
+	dw Dungeons_Map_Name86  ; MOUNT_MORTAR_1F_INSIDE
+	dw Dungeons_Map_Name87  ; MOUNT_MORTAR_2F_INSIDE
+	dw Dungeons_Map_Name88  ; MOUNT_MORTAR_B1F
+	dw Dungeons_Map_Name89  ; MAHOGANY_MART_1F
+	dw Dungeons_Map_Name90  ; TEAM_ROCKET_BASE_B1F
+	dw Dungeons_Map_Name91  ; TEAM_ROCKET_BASE_B2F
+	dw Dungeons_Map_Name92  ; TEAM_ROCKET_BASE_B3F
+	dw Dungeons_Map_Name93  ; ICE_PATH_1F
+	dw Dungeons_Map_Name94  ; ICE_PATH_B1F
+	dw Dungeons_Map_Name95  ; ICE_PATH_B2F
+	dw Dungeons_Map_Name96  ; ICE_PATH_B3F
+	dw Dungeons_Map_Name97  ; ICE_PATH_ARTICUNO_CHAMBER
+	dw Dungeons_Map_Name98  ; DRAGONS_DEN_1F
+	dw Dungeons_Map_Name99  ; DRAGONS_DEN_B1F
+	dw Dungeons_Map_Name100 ; DRAGON_SHRINE
+	dw Dungeons_Map_Name101 ; TOHJO_FALLS
+	dw Dungeons_Map_Name102 ; MEW_ANTECHAMBER
+	dw Dungeons_Map_Name103 ; MEW_CHAMBER
+	dw Dungeons_Map_Name104 ; VICTORY_ROAD
+	dw Dungeons_Map_Name105 ; SILVER_CAVE_ROOM_1
+	dw Dungeons_Map_Name106 ; SILVER_CAVE_ROOM_2
+	dw Dungeons_Map_Name107 ; SILVER_CAVE_ROOM_3
+	dw Dungeons_Map_Name108 ; SILVER_CAVE_ITEM_ROOMS
+	dw Dungeons_Map_Name109 ; SILVER_CAVE_MOLTRES_CHAMBER
 	assert_table_length NUM_DUNGEONS_MAPS
 
 ; MAX LENGTH: 17 (preferred: 16)
@@ -1051,6 +1056,11 @@ Goldenrod_Map_Name23: ; ROUTE_34_ILEX_FOREST_GATE
 Goldenrod_Map_Name24: ; ILEX_FOREST_AZALEA_GATE
 	db "ILEX GATE@"
 
+National_Map_Name1: ; NATIONAL_PARK
+	db "NATIONAL PARK@"
+National_Map_Name2: ; NATIONAL_PARK_BUG_CONTEST
+	db "BUG CONTEST@"
+
 Ecruteak_Map_Name1: ; ECRUTEAK_CITY
 	db "ECRUTEAK CITY@"
 Ecruteak_Map_Name2: ; ECRUTEAK_POKECENTER_1F
@@ -1330,99 +1340,95 @@ Dungeons_Map_Name62: ; RADIO_TOWER_4F
 	db "RADIO TOWER 4F@"
 Dungeons_Map_Name63: ; RADIO_TOWER_5F
 	db "RADIO TOWER 5F@"
-Dungeons_Map_Name64: ; NATIONAL_PARK
-	db "NATIONAL PARK@"
-Dungeons_Map_Name65: ; NATIONAL_PARK_BUG_CONTEST
-	db "BUG CONTEST@"
-Dungeons_Map_Name66: ; BURNED_TOWER_1F
+Dungeons_Map_Name64: ; BURNED_TOWER_1F
 	db "BURNED TOWER@"
-Dungeons_Map_Name67: ; BURNED_TOWER_B1F
+Dungeons_Map_Name65: ; BURNED_TOWER_B1F
 	db "DEN OF SLUMBER@"
-Dungeons_Map_Name68: ; TIN_TOWER_1F
+Dungeons_Map_Name66: ; TIN_TOWER_1F
 	db "TIN TOWER 1F@"
-Dungeons_Map_Name69: ; TIN_TOWER_2F
+Dungeons_Map_Name67: ; TIN_TOWER_2F
 	db "TIN TOWER 2F@"
-Dungeons_Map_Name70: ; TIN_TOWER_3F
+Dungeons_Map_Name68: ; TIN_TOWER_3F
 	db "TIN TOWER 3F@"
-Dungeons_Map_Name71: ; TIN_TOWER_4F
+Dungeons_Map_Name69: ; TIN_TOWER_4F
 	db "TIN TOWER 4F@"
-Dungeons_Map_Name72: ; TIN_TOWER_5F
+Dungeons_Map_Name70: ; TIN_TOWER_5F
 	db "TIN TOWER 5F@"
-Dungeons_Map_Name73: ; TIN_TOWER_6F
+Dungeons_Map_Name71: ; TIN_TOWER_6F
 	db "TIN TOWER 6F@"
-Dungeons_Map_Name74: ; TIN_TOWER_7F
+Dungeons_Map_Name72: ; TIN_TOWER_7F
 	db "TIN TOWER 7F@"
-Dungeons_Map_Name75: ; TIN_TOWER_8F
+Dungeons_Map_Name73: ; TIN_TOWER_8F
 	db "TIN TOWER 8F@"
-Dungeons_Map_Name76: ; TIN_TOWER_9F
+Dungeons_Map_Name74: ; TIN_TOWER_9F
 	db "TIN TOWER 9F@"
-Dungeons_Map_Name77: ; OLIVINE_LIGHTHOUSE_1F
+Dungeons_Map_Name75: ; OLIVINE_LIGHTHOUSE_1F
 	db "LIGHTHOUSE 1F@"
-Dungeons_Map_Name78: ; OLIVINE_LIGHTHOUSE_2F
+Dungeons_Map_Name76: ; OLIVINE_LIGHTHOUSE_2F
 	db "LIGHTHOUSE 2F@"
-Dungeons_Map_Name79: ; OLIVINE_LIGHTHOUSE_3F
+Dungeons_Map_Name77: ; OLIVINE_LIGHTHOUSE_3F
 	db "LIGHTHOUSE 3F@"
-Dungeons_Map_Name80: ; OLIVINE_LIGHTHOUSE_4F
+Dungeons_Map_Name78: ; OLIVINE_LIGHTHOUSE_4F
 	db "LIGHTHOUSE 4F@"
-Dungeons_Map_Name81: ; OLIVINE_LIGHTHOUSE_5F
+Dungeons_Map_Name79: ; OLIVINE_LIGHTHOUSE_5F
 	db "LIGHTHOUSE 5F@"
-Dungeons_Map_Name82: ; OLIVINE_LIGHTHOUSE_6F
+Dungeons_Map_Name80: ; OLIVINE_LIGHTHOUSE_6F
 	db "LIGHTHOUSE 6F@"
-Dungeons_Map_Name83: ; WHIRL_ISLAND_1F
+Dungeons_Map_Name81: ; WHIRL_ISLAND_1F
 	db "WHIRL ISLANDS 1F@"
-Dungeons_Map_Name84: ; WHIRL_ISLAND_B1F
+Dungeons_Map_Name82: ; WHIRL_ISLAND_B1F
 	db "WHIRL ISLANDS B1@"
-Dungeons_Map_Name85: ; WHIRL_ISLAND_B2F
+Dungeons_Map_Name83: ; WHIRL_ISLAND_B2F
 	db "WHIRL ISLANDS B2@"
-Dungeons_Map_Name86: ; WHIRL_ISLAND_LUGIA_CHAMBER
+Dungeons_Map_Name84: ; WHIRL_ISLAND_LUGIA_CHAMBER
 	db "SEABED SANCTUARY@"
-Dungeons_Map_Name87: ; MOUNT_MORTAR_1F_OUTSIDE
+Dungeons_Map_Name85: ; MOUNT_MORTAR_1F_OUTSIDE
 	db "MT.MORTAR FALLS@"
-Dungeons_Map_Name88: ; MOUNT_MORTAR_1F_INSIDE
+Dungeons_Map_Name86: ; MOUNT_MORTAR_1F_INSIDE
 	db "MT. MORTAR 1F@"
-Dungeons_Map_Name89: ; MOUNT_MORTAR_2F_INSIDE
+Dungeons_Map_Name87: ; MOUNT_MORTAR_2F_INSIDE
 	db "MT. MORTAR 2F@"
-Dungeons_Map_Name90: ; MOUNT_MORTAR_B1F
+Dungeons_Map_Name88: ; MOUNT_MORTAR_B1F
 	db "MT. MORTAR B1@"
-Dungeons_Map_Name91: ; MAHOGANY_MART_1F
+Dungeons_Map_Name89: ; MAHOGANY_MART_1F
 	db "MAHOGANY BOUTIQUE@"
-Dungeons_Map_Name92: ; TEAM_ROCKET_BASE_B1F
+Dungeons_Map_Name90: ; TEAM_ROCKET_BASE_B1F
 	db "ROCKET BASE B1@"
-Dungeons_Map_Name93: ; TEAM_ROCKET_BASE_B2F
+Dungeons_Map_Name91: ; TEAM_ROCKET_BASE_B2F
 	db "ROCKET BASE B2@"
-Dungeons_Map_Name94: ; TEAM_ROCKET_BASE_B3F
+Dungeons_Map_Name92: ; TEAM_ROCKET_BASE_B3F
 	db "ROCKET BASE B3@"
-Dungeons_Map_Name95: ; ICE_PATH_1F
+Dungeons_Map_Name93: ; ICE_PATH_1F
 	db "ICE PATH 1F@"
-Dungeons_Map_Name96: ; ICE_PATH_B1F
+Dungeons_Map_Name94: ; ICE_PATH_B1F
 	db "ICE PATH B1@"
-Dungeons_Map_Name97: ; ICE_PATH_B2F
+Dungeons_Map_Name95: ; ICE_PATH_B2F
 	db "ICE PATH B2@"
-Dungeons_Map_Name98: ; ICE_PATH_B3F
+Dungeons_Map_Name96: ; ICE_PATH_B3F
 	db "ICE PATH B3@"
-Dungeons_Map_Name99: ; ICE_PATH_ARTICUNO_CHAMBER
+Dungeons_Map_Name97: ; ICE_PATH_ARTICUNO_CHAMBER
 	db "ICE PATH DEPTHS@"
-Dungeons_Map_Name100: ; DRAGONS_DEN_1F
+Dungeons_Map_Name98: ; DRAGONS_DEN_1F
 	db "DRAGON'S MOUTH@"
-Dungeons_Map_Name101: ; DRAGONS_DEN_B1F
+Dungeons_Map_Name99: ; DRAGONS_DEN_B1F
 	db "DRAGON'S DEN@"
-Dungeons_Map_Name102: ; DRAGON_SHRINE
+Dungeons_Map_Name100: ; DRAGON_SHRINE
 	db "DRAGON SHRINE@"
-Dungeons_Map_Name103: ; TOHJO_FALLS
+Dungeons_Map_Name101: ; TOHJO_FALLS
 	db "TOHJO FALLS@"
-Dungeons_Map_Name104: ; MEW_ANTECHAMBER
+Dungeons_Map_Name102: ; MEW_ANTECHAMBER
 	db "TOHJO GROTTO@"
-Dungeons_Map_Name105: ; MEW_CHAMBER
+Dungeons_Map_Name103: ; MEW_CHAMBER
 	db "????????????????@"
-Dungeons_Map_Name106: ; VICTORY_ROAD
+Dungeons_Map_Name104: ; VICTORY_ROAD
 	db "VICTORY ROAD@"
-Dungeons_Map_Name107: ; SILVER_CAVE_ROOM_1
+Dungeons_Map_Name105: ; SILVER_CAVE_ROOM_1
 	db "MT.SILVER FOYER@"
-Dungeons_Map_Name108: ; SILVER_CAVE_ROOM_2
+Dungeons_Map_Name106: ; SILVER_CAVE_ROOM_2
 	db "MT.SILVER FALLS@"
-Dungeons_Map_Name109: ; SILVER_CAVE_ROOM_3
+Dungeons_Map_Name107: ; SILVER_CAVE_ROOM_3
 	db "MT.SILVER SHAFT@"
-Dungeons_Map_Name110: ; SILVER_CAVE_ITEM_ROOMS
+Dungeons_Map_Name108: ; SILVER_CAVE_ITEM_ROOMS
 	db "MT.SILVER DEPTHS@"
-Dungeons_Map_Name111: ; SILVER_CAVE_MOLTRES_CHAMBER
+Dungeons_Map_Name109: ; SILVER_CAVE_MOLTRES_CHAMBER
 	db "MT.SILVER RUINS@"
