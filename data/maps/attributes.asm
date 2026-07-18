@@ -549,6 +549,8 @@ ENDM
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes Route34IlexForestGate, ROUTE_34_ILEX_FOREST_GATE, $00, 0
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0
+	map_attributes NationalPark, NATIONAL_PARK, $00, 0
+	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
 	map_attributes EcruteakMart, ECRUTEAK_MART, $00, 0
 	map_attributes EcruteakGym, ECRUTEAK_GYM, $00, 0
@@ -670,8 +672,6 @@ ENDM
 	map_attributes RadioTower3F, RADIO_TOWER_3F, $00, 0
 	map_attributes RadioTower4F, RADIO_TOWER_4F, $00, 0
 	map_attributes RadioTower5F, RADIO_TOWER_5F, $00, 0
-	map_attributes NationalPark, NATIONAL_PARK, $00, 0
-	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes TinTower1F, TIN_TOWER_1F, $00, 0
