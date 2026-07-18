@@ -32,14 +32,15 @@ MapGroupRoofs:
 	db ROOF_VIOLET    ; 18 (Violet)
 	db ROOF_AZALEA    ; 19 (Azalea)
 	db ROOF_GOLDENROD ; 20 (Goldenrod)
-	db ROOF_VIOLET    ; 21 (Ecruteak)
-	db ROOF_OLIVINE   ; 22 (Olivine)
-	db ROOF_OLIVINE   ; 23 (Cianwood)
-	db ROOF_AZALEA    ; 24 (Mahogany)
-	db ROOF_AZALEA    ; 25 (Lake of Rage)
-	db ROOF_AZALEA    ; 26 (Blackthorn)
-	db -1             ; 27 (Fast Ship)
-	db -1             ; 28 (Dungeons)
+	db -1             ; 21 (National)
+	db ROOF_VIOLET    ; 22 (Ecruteak)
+	db ROOF_OLIVINE   ; 23 (Olivine)
+	db ROOF_OLIVINE   ; 24 (Cianwood)
+	db ROOF_AZALEA    ; 25 (Mahogany)
+	db ROOF_AZALEA    ; 26 (Lake of Rage)
+	db ROOF_AZALEA    ; 27 (Blackthorn)
+	db -1             ; 28 (Fast Ship)
+	db -1             ; 29 (Dungeons)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:
