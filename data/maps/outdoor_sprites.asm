@@ -34,11 +34,6 @@ OutdoorSprites:
 	dw DungeonsGroupSprites     ; 28
 	assert_table_length NUM_MAP_GROUPS
 
-CableClubGroupSprites:
-; (no outdoor maps)
-	; 0 of max 9 walking sprites
-	db 0 ; end
-
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
 ; PalletTown and Route21 are connected
@@ -66,6 +61,9 @@ CinnabarGroupSprites:
 	db SPRITE_BLUE
 	db SPRITE_A_D
 	db SPRITE_POKE_BALL
+CableClubGroupSprites:
+; (no outdoor maps)
+	; 0 of max 9 walking sprites
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
