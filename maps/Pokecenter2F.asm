@@ -2,6 +2,7 @@
 	const POKECENTER2F_TRADE_RECEPTIONIST
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_GENDER_RECEPTIONIST
+	const POKECENTER2F_TRADEBACK_GUY
 	const POKECENTER2F_NAYRU
 
 Pokecenter2F_MapScripts:
@@ -463,6 +464,13 @@ Pokecenter2FNayruScript:
 	writetext Pokecenter2FNayru_PackFullText
 	sjump .EndText
 
+TradebackNPCScript:
+	opentext
+	special TradebackNPC
+	waitbutton
+	closetext
+	end
+
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
 	slow_step UP
 	slow_step LEFT
@@ -831,4 +839,5 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_GenderSwap, -1
-	object_event  1,  1, SPRITE_DAISY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FNayruScript, EVENT_POKECENTER_2F_NAYRU
+	object_event  1,  1, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TradebackNPCScript, -1
+	object_event  7,  6, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FNayruScript, EVENT_POKECENTER_2F_NAYRU
