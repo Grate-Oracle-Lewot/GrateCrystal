@@ -37,14 +37,15 @@ MapGroupPointers::
 	dw MapGroup_Violet        ; 18
 	dw MapGroup_Azalea        ; 19
 	dw MapGroup_Goldenrod     ; 20
-	dw MapGroup_Ecruteak      ; 21
-	dw MapGroup_Olivine       ; 22
-	dw MapGroup_Cianwood      ; 23
-	dw MapGroup_Mahogany      ; 24
-	dw MapGroup_LakeOfRage    ; 25
-	dw MapGroup_Blackthorn    ; 26
-	dw MapGroup_FastShip      ; 27
-	dw MapGroup_Dungeons      ; 28
+	dw MapGroup_National      ; 21
+	dw MapGroup_Ecruteak      ; 22
+	dw MapGroup_Olivine       ; 23
+	dw MapGroup_Cianwood      ; 24
+	dw MapGroup_Mahogany      ; 25
+	dw MapGroup_LakeOfRage    ; 26
+	dw MapGroup_Blackthorn    ; 27
+	dw MapGroup_FastShip      ; 28
+	dw MapGroup_Dungeons      ; 29
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_CableClub:
