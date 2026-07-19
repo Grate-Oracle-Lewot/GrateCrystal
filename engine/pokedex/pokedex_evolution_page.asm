@@ -448,7 +448,7 @@ EVO_trade:
 .trade_text:
 	db "TRADE@"
 .hold_text:
-	db " ", "<+>","@"
+	db " ", "+","@"
 
 EVO_happiness:
 	ld a, BANK("Evolutions and Attacks")
