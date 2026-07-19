@@ -12,10 +12,6 @@ IsAPokemon_GetCryIndex_scf:
 	scf
 	ret
 
-IsAPokemon_and_a:
-	and a
-	ret
-
 GetCryIndex::
 	and a
 	jr z, IsAPokemon_GetCryIndex_scf
@@ -25,6 +21,9 @@ GetCryIndex::
 	dec a
 	ld c, a
 	ld b, 0
+	; fallthrough
+
+IsAPokemon_and_a:
 	and a
 	ret
 
