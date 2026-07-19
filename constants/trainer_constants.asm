@@ -354,11 +354,11 @@ KRIS EQU __trainer_class__
 	const WILTON3
 	const JUSTIN
 	const HENRY
-	const KYLE
 	const MARVIN
 	const RAYMOND
 	const ANDRE
 	const EDGAR
+	const KYLE
 	const STEPHEN
 	const MARTIN
 	const JONAH
