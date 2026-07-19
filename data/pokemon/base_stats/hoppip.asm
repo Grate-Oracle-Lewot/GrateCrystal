@@ -7,7 +7,7 @@
 	db 255 ; catch rate
 	db 74 ; base exp
 	db NO_ITEM, FRANKENBERRY ; items
-	db GENDER_F50 ; gender ratio
+	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoppip/front.dimensions"
 	db GROWTH_SLIGHTLY_SLOW ; growth rate
