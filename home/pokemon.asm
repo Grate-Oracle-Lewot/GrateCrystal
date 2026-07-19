@@ -3,9 +3,9 @@ IsAPokemon::
 	and a
 	jr z, IsAPokemon_GetCryIndex_scf
 	cp EGG
-	jr z, IsAPokemon_and_a
+	jr z, IsAPokemon_GetCryIndex_and_a
 	cp NUM_POKEMON + 1
-	jr c, IsAPokemon_and_a
+	jr c, IsAPokemon_GetCryIndex_and_a
 	; fallthrough
 
 IsAPokemon_GetCryIndex_scf:
@@ -23,7 +23,7 @@ GetCryIndex::
 	ld b, 0
 	; fallthrough
 
-IsAPokemon_and_a:
+IsAPokemon_GetCryIndex_and_a:
 	and a
 	ret
 
