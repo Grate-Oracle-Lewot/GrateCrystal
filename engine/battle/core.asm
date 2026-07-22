@@ -2593,7 +2593,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
-	call HandleStatBoostingHeldItems
+	call HandleEnemyStatBoostingHeldItem
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -3237,7 +3237,7 @@ EnemySwitch_SetMode:
 EnemySwitch_ShowSendOutTextAndAnimation:
 	call ShowBattleTextEnemySentOut
 	call ShowSetEnemyMonAndSendOutAnimation
-	jp HandleStatBoostingHeldItems
+	jp HandleEnemyStatBoostingHeldItem
 
 CheckWhetherSwitchmonIsPredetermined:
 ; returns the enemy switchmon index in b, or
@@ -4630,6 +4630,17 @@ UseHeldStatusHealingItem:
 
 INCLUDE "data/battle/held_heal_status.asm"
 
+HandleStatBoostingHeldItems:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player_1
+	call HandlePlayerStatBoostingHeldItem
+	jr HandleEnemyStatBoostingHeldItem
+
+.player_1
+	call HandleEnemyStatBoostingHeldItem
+	jr HandlePlayerStatBoostingHeldItem
+
 PlayerPartyMonEntrance:
 	ld a, [wCurBattleMon]
 	ld [wLastPlayerMon], a
@@ -4639,7 +4650,15 @@ PlayerPartyMonEntrance:
 	call InitBattleMon_Etc
 	call SetPlayerTurn
 	call SpikesDamage
-	jr HandleStatBoostingHeldItems
+	; fallthrough
+
+HandlePlayerStatBoostingHeldItem:
+	ld a, [wBattleMonSpecies]
+	cp DITTO
+	ret z
+	call GetPartymonItem
+	ld a, $0
+	jr HandleStatBoostingHeldItem
 
 EnemyMonEntrance:
 	farcall AI_Switch
@@ -4647,31 +4666,15 @@ EnemyMonEntrance:
 	call SpikesDamage
 	; fallthrough
 
-HandleStatBoostingHeldItems:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .DoPlayer
-	jr .DoEnemy
-
-.player_1
-	call .DoEnemy
-
-.DoPlayer:
-	ld a, [wBattleMonSpecies]
-	cp DITTO
-	ret z
-	call GetPartymonItem
-	ld a, $0
-	jr .HandleItem
-
-.DoEnemy:
+HandleEnemyStatBoostingHeldItem:
 	ld a, [wEnemyMonSpecies]
 	cp DITTO
 	ret z
 	call GetOTPartymonItem
 	ld a, $1
-.HandleItem:
+	; fallthrough
+
+HandleStatBoostingHeldItem:
 	ldh [hBattleTurn], a
 	ld d, h
 	ld e, l
@@ -5402,7 +5405,7 @@ BattleMonEntrance:
 	call InitBattleMon_Etc
 	call SetPlayerTurn
 	call SpikesDamage
-	call HandleStatBoostingHeldItems
+	call HandlePlayerStatBoostingHeldItem
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5427,7 +5430,7 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
-	jp HandleStatBoostingHeldItems
+	jp HandlePlayerStatBoostingHeldItem
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
