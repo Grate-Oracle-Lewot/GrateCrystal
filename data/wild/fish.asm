@@ -26,17 +26,19 @@ FishGroups:
 	db  75 percent + 1, GEODUDE,     8
 	db 100 percent,     KRABBY,      8
 .Shore_Good:
-	db  25 percent,     MAGIKARP,   19
+	db  25 percent,     SEEL,       19
 	db  50 percent,     KRABBY,     19
 	db  75 percent + 1, KRABBY,     21
 	db 100 percent,     time_group 0
 .Shore_Super:
-	db  25 percent,     KRABBY,     40
-	db  50 percent,     time_group 1
 if DEF(_LITTLE_CUP)
+	db  25 percent,     SEEL,       40
+	db  50 percent,     time_group 1
 	db  75 percent + 1, PHANPY,     40
 	db 100 percent,     KRABBY,     40
 else
+	db  25 percent,     DEWGONG,    40
+	db  50 percent,     time_group 1
 	db  75 percent + 1, DONPHAN,    40
 	db 100 percent,     KINGLER,    40
 endc
@@ -47,9 +49,9 @@ endc
 	db 100 percent,     KABUTO,     21
 
 .Ocean_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GEODUDE,     8
-	db 100 percent,     TENTACOOL,   8
+	db  50 percent + 1, TENTACOOL,   8
+	db  75 percent + 1, MAGIKARP,    8
+	db 100 percent,     SEEL,        8
 .Ocean_Good:
 if DEF(_LITTLE_CUP)
 	db  25 percent,     MAGIKARP,   19
@@ -138,11 +140,11 @@ endc
 
 .Dratini_Old:
 	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, MAGIKARP,    9
+	db  75 percent + 1, GOLDEEN,     8
 	db 100 percent,     MAGIKARP,   10
 .Dratini_Good:
 	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     MAGIKARP,   21
+	db  50 percent,     GOLDEEN,    19
 if DEF(_LITTLE_CUP)
 	db  75 percent + 1, MAGIKARP,   19
 else
@@ -178,10 +180,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     MAGIKARP,   20
 	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 14
+	db 100 percent,     time_group 10
 .Gyarados_Super:
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 15
+	db  50 percent,     time_group 11
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     MAGIKARP,   37
 .Gyarados_Odd:
@@ -197,20 +199,21 @@ endc
 
 .Dratini_2_Old:
 	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, MAGIKARP,    9
+	db  75 percent + 1, HORSEA,      8
 	db 100 percent,     MAGIKARP,   10
 .Dratini_2_Good:
 	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     MAGIKARP,   20
+	db  50 percent,     HORSEA,     19
 	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 16
+	db 100 percent,     time_group 12
 .Dratini_2_Super:
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 17
-	db  75 percent + 1, MAGIKARP,   42
+	db  50 percent,     time_group 13
 if DEF(_LITTLE_CUP)
+	db  75 percent + 1, HORSEA,     40
 	db 100 percent,     DRATINI,    40
 else
+	db  75 percent + 1, SEADRA,     40
 	db 100 percent,     DRAGONAIR,  40
 endc
 .Dratini_2_Odd:
@@ -242,16 +245,16 @@ if DEF(_LITTLE_CUP)
 else
 	db  75 percent + 1, CASTAWEIGH, 19
 endc
-	db 100 percent,     time_group 18
+	db 100 percent,     time_group 14
 .WhirlIslands_Super:
 if DEF(_LITTLE_CUP)
 	db  25 percent,     KRABBY,     40
-	db  50 percent,     time_group 19
+	db  50 percent,     time_group 15
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     HORSEA,     40
 else
 	db  25 percent,     KINGLER,    40
-	db  50 percent,     time_group 19
+	db  50 percent,     time_group 15
 	db  75 percent + 1, CASTAWEIGH, 40
 	db 100 percent,     SEADRA,     40
 endc
@@ -274,10 +277,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     TENTACOOL,  19
 	db  75 percent + 1, TENTACOOL,  21
-	db 100 percent,     time_group 20
+	db 100 percent,     time_group 16
 .Qwilfish_Super:
 	db  25 percent,     TENTACOOL,  40
-	db  50 percent,     time_group 21
+	db  50 percent,     time_group 17
 	db  75 percent + 1, MAGIKARP,   40
 if DEF(_LITTLE_CUP)
 	db 100 percent,     GEODUDE,    40
@@ -285,7 +288,7 @@ else
 	db 100 percent,     QWILFISH,   40
 endc
 .Qwilfish_Odd:
-	db  20 percent,     time_group 20
+	db  20 percent,     time_group 16
 if DEF(_LITTLE_CUP)
 	db 100 percent,     GEODUDE,    21
 else
@@ -329,18 +332,14 @@ if DEF(_LITTLE_CUP)
 	db POLIWAG,    40,  POLIWAG,    40 ;  7
 	db DRATINI,    20,  DRATINI,    20 ;  8
 	db DRATINI,    40,  DRATINI,    40 ;  9
-	db GEODUDE,    21,  GEODUDE,    19 ; 10
-	db GEODUDE,    42,  GEODUDE,    40 ; 11
-	db REMORAID,   20,  REMORAID,   20 ; 12
-	db REMORAID,   40,  REMORAID,   40 ; 13
-	db MAGIKARP,   19,  MAGIKARP,   21 ; 14
-	db MAGIKARP,   40,  MAGIKARP,   42 ; 15
-	db DRATINI,    20,  DRATINI,    20 ; 16
-	db DRATINI,    40,  DRATINI,    40 ; 17
-	db HORSEA,     20,  SLOWPOKE,   24 ; 18
-	db HORSEA,     40,  HORSEA,     40 ; 19
-	db TENTACOOL,  20,  GRIMER,     20 ; 20
-	db TENTACOOL,  40,  GRIMER,     40 ; 21
+	db MAGIKARP,   19,  MAGIKARP,   21 ; 10
+	db MAGIKARP,   40,  MAGIKARP,   42 ; 11
+	db DRATINI,    20,  DRATINI,    20 ; 12
+	db DRATINI,    40,  DRATINI,    40 ; 13
+	db HORSEA,     20,  SLOWPOKE,   24 ; 14
+	db HORSEA,     40,  HORSEA,     40 ; 15
+	db TENTACOOL,  20,  GRIMER,     20 ; 16
+	db TENTACOOL,  40,  GRIMER,     40 ; 17
 else
 	db CORSOLA,    20,  STARYU,     20 ;  0
 	db CORSOLA,    40,  STARMIE,    40 ;  1
@@ -356,18 +355,14 @@ endc
 	db POLIWHIRL,  40,  POLITOED,   40 ;  7
 	db DRATINI,    20,  DRAGONAIR,  20 ;  8
 	db DRAGONAIR,  40,  DUNSPARCE,  40 ;  9
-	db QWILFISH,   21,  QWILFISH,   19 ; 10
-	db QWILFISH,   42,  QWILFISH,   40 ; 11
-	db REMORAID,   20,  OCTILLERY,  20 ; 12
-	db OCTILLERY,  40,  REMORAID,   40 ; 13
-	db GYARADOS,   19,  GYARADOS,   21 ; 14
-	db GYARADOS,   40,  GYARADOS,   42 ; 15
-	db DRAGONAIR,  20,  DRATINI,    20 ; 16
-	db DRATINI,    40,  DUNSPARCE,  40 ; 17
-	db HORSEA,     20,  UNOWN,      24 ; 18
-	db SEADRA,     40,  KINGDRA,    40 ; 19
-	db TENTACOOL,  20,  GRIMER,     20 ; 20
-	db TENTACRUEL, 40,  MUK,        40 ; 21
+	db GYARADOS,   19,  GYARADOS,   21 ; 10
+	db GYARADOS,   40,  GYARADOS,   42 ; 11
+	db DRAGONAIR,  20,  DRATINI,    20 ; 12
+	db DRATINI,    40,  DUNSPARCE,  40 ; 13
+	db HORSEA,     20,  UNOWN,      24 ; 14
+	db SEADRA,     40,  KINGDRA,    40 ; 15
+	db TENTACOOL,  20,  GRIMER,     20 ; 16
+	db TENTACRUEL, 40,  MUK,        40 ; 17
 endc
 
 FishGroups_Names::
