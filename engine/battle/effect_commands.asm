@@ -5055,7 +5055,7 @@ BattleCommand_ForceSwitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, SpikesDamage_HandleStatBoostingHeldItems
 	jp CallBattleCore
 
 .force_player_switch
@@ -5148,7 +5148,7 @@ BattleCommand_ForceSwitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, SpikesDamage_HandleStatBoostingHeldItems
 	jp CallBattleCore
 
 .fail
