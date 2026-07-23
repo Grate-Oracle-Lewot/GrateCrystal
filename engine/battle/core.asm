@@ -4651,7 +4651,7 @@ PlayerPartyMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call SpikesDamage
 	; fallthrough
 
 HandlePlayerStatBoostingHeldItem:
@@ -4665,7 +4665,7 @@ HandlePlayerStatBoostingHeldItem:
 EnemyMonEntrance:
 	farcall AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call SpikesDamage
 	; fallthrough
 
 HandleEnemyStatBoostingHeldItem:
