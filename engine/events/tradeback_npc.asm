@@ -4,16 +4,15 @@
 
 TradebackGuy::
 	ld hl, TradebackGuyText
+.start
 	call PrintText
 	call YesNoBox
-	ld hl, TradebackGuyCanceledText
 	jr c, .done
 
 ; Select a Pokémon from the party.
 	ld b, PARTYMENUACTION_GIVE_MON
 	farcall SelectTradeOrDayCareMon
 	ld a, [wCurPartyMon]
-	ld hl, TradebackGuyCanceledText
 	jr c, .done
 
 	ld hl, NPCTradeCableText
@@ -22,8 +21,11 @@ TradebackGuy::
 	call TradeWithTradebackGuy
 	call RestartMapMusic
 
-	ld hl, TradebackGuyCompleteText
+	ld hl, TradebackGuyAgainText
+	jr .start
+
 .done
+	ld hl, TradebackGuyCanceledText
 	jp PrintText
 
 ; Loads the appropriate data to perform the trade animation.
@@ -132,9 +134,6 @@ TradebackGuyCanceledText::
 	line "need me!"
 	done
 
-TradebackGuyCompleteText::
-	text "And… Done!"
-
-	para "I hope that"
-	line "was helpful!"
+TradebackGuyAgainText::
+	text "Any more?"
 	done
