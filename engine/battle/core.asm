@@ -542,6 +542,7 @@ DetermineMoveOrder:
 	farcall AI_Switch
 	call SetEnemyTurn
 	call SpikesDamage
+	call HandleEnemyStatBoostingHeldItem
 	jp Shared_and_a ; enemy first
 
 .use_move
@@ -1059,6 +1060,7 @@ EnemySwitchSpikes:
 	and a
 	jr z, .no
 	call SpikesDamage
+	call HandleEnemyStatBoostingHeldItem
 	jr HasEnemyFainted
 
 .no
@@ -2243,6 +2245,7 @@ HandleEnemyMonFaint:
 PlayerUTurnSwitch:
 	call SwitchPlayerMon
 	call SpikesDamage
+	call HandlePlayerStatBoostingHeldItem
 	call HasPlayerFainted
 	ret nz
 	; fallthrough
@@ -2914,6 +2917,7 @@ ForcePlayerMonChoice:
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
 	call SpikesDamage
+	call HandlePlayerStatBoostingHeldItem
 	ld a, $1
 	and a
 	ld c, a
