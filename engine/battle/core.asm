@@ -2320,6 +2320,7 @@ DoubleSwitch:
 	call PlayerPartyMonEntrance
 
 .done
+	call HandleStatBoostingHeldItems
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
