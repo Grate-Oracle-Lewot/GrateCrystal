@@ -4185,7 +4185,7 @@ SendOutPlayerMon:
 	jr c, .statused
 	ld a, $f0
 	ld [wCryTracks], a
-	ld a, [wCurPartySpecies]
+	ld a, [wBattleMonSpecies]
 	call PlayStereoCry
 
 .statused
