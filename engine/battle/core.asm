@@ -232,7 +232,7 @@ DoBattle:
 	call ResetBattleParticipants
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage
+	call SpikesDamage_HandleStatBoostingHeldItems
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -245,7 +245,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage
+	call SpikesDamage_HandleStatBoostingHeldItems
 
 .not_linked_2
 	call StartAutomaticBattleWeather
@@ -541,8 +541,7 @@ DetermineMoveOrder:
 .switch
 	farcall AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage
-	call HandleEnemyStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	jp Shared_and_a ; enemy first
 
 .use_move
@@ -1059,8 +1058,7 @@ EnemySwitchSpikes:
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .no
-	call SpikesDamage
-	call HandleEnemyStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	jr HasEnemyFainted
 
 .no
@@ -2244,8 +2242,7 @@ HandleEnemyMonFaint:
 
 PlayerUTurnSwitch:
 	call SwitchPlayerMon
-	call SpikesDamage
-	call HandlePlayerStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	call HasPlayerFainted
 	ret nz
 	; fallthrough
@@ -2323,7 +2320,6 @@ DoubleSwitch:
 	call PlayerPartyMonEntrance
 
 .done
-	call HandleStatBoostingHeldItems
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
@@ -2596,8 +2592,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage
-	call HandleEnemyStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2916,8 +2911,7 @@ ForcePlayerMonChoice:
 	call SendOutMonText
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
-	call SpikesDamage
-	call HandlePlayerStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	ld a, $1
 	and a
 	ld c, a
@@ -3241,8 +3235,59 @@ EnemySwitch_SetMode:
 
 EnemySwitch_ShowSendOutTextAndAnimation:
 	call ShowBattleTextEnemySentOut
-	call ShowSetEnemyMonAndSendOutAnimation
-	jp HandleEnemyStatBoostingHeldItem
+	; fallthrough
+
+ShowSetEnemyMonAndSendOutAnimation:
+	ld a, [wTempEnemyMonSpecies]
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, OTPARTYMON
+	ld [wMonType], a
+	predef CopyMonToTempMon
+	call GetEnemyMonFrontpic
+
+	xor a
+	ld [wNumHits], a
+	ld [wBattleAnimParam], a
+	call SetEnemyTurn
+	ld de, ANIM_SEND_OUT_MON
+	call Call_PlayBattleAnim
+
+	call BattleCheckEnemyShininess
+	jr nc, .not_shiny
+
+	ld a, 1 ; shiny anim
+	ld [wBattleAnimParam], a
+	ld de, ANIM_SEND_OUT_MON
+	call Call_PlayBattleAnim
+
+.not_shiny
+	ld bc, wTempMonSpecies
+	farcall CheckFaintedFrzSlp
+	jr c, .skip_cry
+
+	ld a, [wOptions]
+	bit BATTLE_SCENE, a
+	jr z, .cry_no_anim
+
+	hlcoord 12, 0
+	ld d, $0
+	ld e, ANIM_MON_SLOW
+	predef AnimateFrontpic
+	jr .skip_cry
+
+.cry_no_anim
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wTempEnemyMonSpecies]
+	call PlayStereoCry
+
+.skip_cry
+	call UpdateEnemyHUD
+	ld a, $1
+	ldh [hBGMapMode], a
+	ret
 
 CheckWhetherSwitchmonIsPredetermined:
 ; returns the enemy switchmon index in b, or
@@ -3635,58 +3680,6 @@ ShowBattleTextEnemySentOut:
 	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
 	jp WaitBGMap
-
-ShowSetEnemyMonAndSendOutAnimation:
-	ld a, [wTempEnemyMonSpecies]
-	ld [wCurPartySpecies], a
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, OTPARTYMON
-	ld [wMonType], a
-	predef CopyMonToTempMon
-	call GetEnemyMonFrontpic
-
-	xor a
-	ld [wNumHits], a
-	ld [wBattleAnimParam], a
-	call SetEnemyTurn
-	ld de, ANIM_SEND_OUT_MON
-	call Call_PlayBattleAnim
-
-	call BattleCheckEnemyShininess
-	jr nc, .not_shiny
-
-	ld a, 1 ; shiny anim
-	ld [wBattleAnimParam], a
-	ld de, ANIM_SEND_OUT_MON
-	call Call_PlayBattleAnim
-
-.not_shiny
-	ld bc, wTempMonSpecies
-	farcall CheckFaintedFrzSlp
-	jr c, .skip_cry
-
-	ld a, [wOptions]
-	bit BATTLE_SCENE, a
-	jr z, .cry_no_anim
-
-	hlcoord 12, 0
-	ld d, $0
-	ld e, ANIM_MON_SLOW
-	predef AnimateFrontpic
-	jr .skip_cry
-
-.cry_no_anim
-	ld a, $f
-	ld [wCryTracks], a
-	ld a, [wTempEnemyMonSpecies]
-	call PlayStereoCry
-
-.skip_cry
-	call UpdateEnemyHUD
-	ld a, $1
-	ldh [hBGMapMode], a
-	ret
 
 NewEnemyMonStatus:
 	xor a
@@ -4237,15 +4230,6 @@ BreakAttraction:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
-EnemyUTurnSwitch:
-	call FindMonInOTPartyToSwitchIntoBattle
-	; 'b' contains the PartyNr of the mon the AI will switch to
-	ld a, b
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	call ForceEnemySwitch
-	; fallthrough
-
 SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4635,6 +4619,19 @@ UseHeldStatusHealingItem:
 
 INCLUDE "data/battle/held_heal_status.asm"
 
+EnemyUTurnSwitch:
+	call FindMonInOTPartyToSwitchIntoBattle
+	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, b
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	call ForceEnemySwitch
+	; fallthrough
+
+SpikesDamage_HandleStatBoostingHeldItems:
+	call SpikesDamage
+	; fallthrough
+
 HandleStatBoostingHeldItems:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -4654,7 +4651,7 @@ PlayerPartyMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage
+	call SpikesDamage_HandleStatBoostingHeldItems
 	; fallthrough
 
 HandlePlayerStatBoostingHeldItem:
@@ -4668,7 +4665,7 @@ HandlePlayerStatBoostingHeldItem:
 EnemyMonEntrance:
 	farcall AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage
+	call SpikesDamage_HandleStatBoostingHeldItems
 	; fallthrough
 
 HandleEnemyStatBoostingHeldItem:
@@ -5409,8 +5406,7 @@ BattleMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage
-	call HandlePlayerStatBoostingHeldItem
+	call SpikesDamage_HandleStatBoostingHeldItems
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5434,8 +5430,7 @@ PassedBattleMonEntrance:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	call SpikesDamage
-	jp HandlePlayerStatBoostingHeldItem
+	jp SpikesDamage_HandleStatBoostingHeldItems
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
