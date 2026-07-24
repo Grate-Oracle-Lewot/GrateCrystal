@@ -41,7 +41,7 @@ CinnabarPokecenter1F_MapScripts:
 	iftrue .Done
 	checkitem LURE_BALL
 	iftrue .Done
-	checkitem FAST_BALL
+	checkitem HASTE_BALL
 	iftrue .Done
 	checkitem FRIEND_BALL
 	iftrue .Done
