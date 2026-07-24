@@ -313,7 +313,6 @@ BattleTurn:
 	jr nz, .quit
 
 	call HandleBetweenTurnEffects
-	call HandleStatBoostingHeldItems
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
