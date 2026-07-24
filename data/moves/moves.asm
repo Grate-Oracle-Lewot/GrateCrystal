@@ -200,7 +200,7 @@ Moves:
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         84, ROCK,         PHYSICAL, 100 percent,     15,  20 percent + 1
 	move HYPER_FANG,   EFFECT_LEECH_HIT,          84, NORMAL,       PHYSICAL,  90 percent + 2, 10,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,          SPECIAL,  100 percent,     10,  10 percent + 1
-	move ROCK_POLISH,  EFFECT_SPEED_UP_2,          0, ROCK,         STATUS,   100 percent,     20,   0
+	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,       STATUS,   100 percent,     10,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         90, CURSE_TYPE,   SPECIAL,  100 percent,     10,  33 percent + 1
 	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,       PHYSICAL, 100 percent,     10,   0
 	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,       PHYSICAL, 100 percent,     20,   0
@@ -230,7 +230,7 @@ Moves:
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,       STATUS,   100 percent,      5,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,       SPECIAL,  100 percent,     10,  30 percent + 1
 	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  40, GROUND,       SPECIAL,  100 percent,     10, 100 percent
-	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,       STATUS,   100 percent,     10,   0
+	move ROCK_POLISH,  EFFECT_SPEED_UP_2,          0, ROCK,         STATUS,   100 percent,     20,   0
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,       STATUS,   100 percent,     10,   0
 	move BLITZKRIEG,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,     PHYSICAL,  50 percent + 1,  5, 100 percent
 	move FORESIGHT,    EFFECT_FORESIGHT,           0, FIGHTING,     STATUS,   100 percent,     20,   0
