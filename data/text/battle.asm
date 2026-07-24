@@ -315,11 +315,11 @@ RecoveredUsingText:
 	autodone
 
 BattleText_UsersStringBuffer1Activated:
-	text "<USER>'s"
-	line "@"
+	text "<USER>"
+	line "ate its held"
+	scroll "@"
 	text_ram wStringBuffer1
-	text_start
-	scroll "activated!"
+	text "!"
 	autodone
 
 BattleText_ItemsCantBeUsedHere:
