@@ -166,7 +166,7 @@ CianwoodCitySailor:
 	iftrue .Alola
 	checkitem LURE_BALL
 	iftrue .Alola
-	checkitem FAST_BALL
+	checkitem HASTE_BALL
 	iftrue .Alola
 	checkitem FRIEND_BALL
 	iftrue .Alola
