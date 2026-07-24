@@ -81,7 +81,7 @@ Kurt1:
 	checkevent EVENT_GAVE_KURT_BLU_APRICORN
 	iftrue .GiveLureBall
 	checkevent EVENT_GAVE_KURT_YLW_APRICORN
-	iftrue .GiveFastBall
+	iftrue .GiveHasteBall
 	checkevent EVENT_GAVE_KURT_GRN_APRICORN
 	iftrue .GiveFriendBall
 	checkevent EVENT_GAVE_KURT_WHT_APRICORN
@@ -165,8 +165,6 @@ Kurt1:
 
 .Pnk:
 	setevent EVENT_GAVE_KURT_PNK_APRICORN
-	sjump .GaveKurtApricorns
-
 .GaveKurtApricorns:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 .WaitForApricorns:
@@ -230,12 +228,12 @@ Kurt1:
 	clearevent EVENT_GAVE_KURT_GRN_APRICORN
 	sjump ._ThatTurnedOutGreat
 
-.GiveFastBall:
+.GiveHasteBall:
 	checkflag ENGINE_KURT_MAKING_BALLS
 	iftrue KurtMakingBallsScript
 	writetext KurtsHouseKurtJustFinishedYourBallText
 	promptbutton
-	verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS
+	verbosegiveitemvar HASTE_BALL, VAR_KURT_APRICORNS
 	iffalse .NoRoomForBall
 	clearevent EVENT_GAVE_KURT_YLW_APRICORN
 	sjump ._ThatTurnedOutGreat
