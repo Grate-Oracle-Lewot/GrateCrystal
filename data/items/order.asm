@@ -144,7 +144,7 @@ ItemNameOrder::
 	db TIMER_BALL
 	db LEVEL_BALL
 	db LURE_BALL
-	db FAST_BALL
+	db HASTE_BALL
 	db FRIEND_BALL
 	db LOVE_BALL
 	db HEAVY_BALL
