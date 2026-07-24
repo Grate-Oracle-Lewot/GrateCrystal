@@ -65,10 +65,6 @@ CeladonDeptStore4FYoungsterText:
 
 	para "holding a FIRE"
 	line "STONE or a NUGGET."
-
-	para "Even APRICORNS"
-	line "have a slight"
-	cont "effect, I hear."
 	done
 
 CeladonDeptStore4FDirectoryText:
