@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
 	dw CatchCharmDesc
-	dw HPUpDesc
+	dw FiberDesc
 	dw ProteinDesc
 	dw IronDesc
 	dw CarbosDesc
@@ -355,7 +355,7 @@ CatchCharmDesc:
 	db   "Ups wild catching"
 	next "odds. (HOLD)@"
 
-HPUpDesc:
+FiberDesc:
 	db   "Raises the HP of"
 	next "one #MON.@"
 
@@ -584,8 +584,8 @@ SourBerryDesc:
 	next "for sleep. (HOLD)@"
 
 RedApricornDesc:
-	db   "Can be made into a"
-	next "LEVEL BALL.@"
+	db   "Raises ATTACK."
+	next "(1 BTL, HOLD)@"
 
 TinyMushroomDesc:
 	db   "Restores 10 HP."
@@ -600,8 +600,8 @@ SilverPowderDesc:
 	next "moves. (HOLD)@"
 
 BluApricornDesc:
-	db   "Can be made into a"
-	next "LURE BALL.@"
+	db   "Raises DEFENSE."
+	next "(1 BTL, HOLD)@"
 
 HandwarmerDesc:
 	db   "Prevents freezing."
@@ -612,12 +612,12 @@ AmuletCoinDesc:
 	next "earnings. (HOLD)@"
 
 YlwApricornDesc:
-	db   "Can be made into a"
-	next "HASTE BALL.@"
+	db   "Raises SPEED."
+	next "(1 BTL, HOLD)@"
 
 GrnApricornDesc:
-	db   "Can be made into a"
-	next "FRIEND BALL.@"
+	db   "Raises SPCL.DEF."
+	next "(1 BTL, HOLD)@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"
@@ -632,24 +632,24 @@ TwistedSpoonDesc:
 	next "type moves. (HOLD)@"
 
 WhtApricornDesc:
-	db   "Can be made into a"
-	next "MOON BALL.@"
+	db   "Raises accuracy."
+	next "(1 BTL, HOLD)@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (HOLD)@"
 
 BlkApricornDesc:
-	db   "Can be made into a"
-	next "HEAVY BALL.@"
+	db   "Raises evasion."
+	next "(1 BTL, HOLD)@"
 
 NoisemakerDesc:
 	db   "Prevents sleep."
 	next "(HOLD)@"
 
 PnkApricornDesc:
-	db   "Can be made into a"
-	next "LOVE BALL.@"
+	db   "Raises SPCL.ATK."
+	next "(1 BTL, HOLD)@"
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
