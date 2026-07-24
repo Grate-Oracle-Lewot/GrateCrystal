@@ -3285,7 +3285,6 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 .skip_cry
 	call UpdateEnemyHUD
-	call HandleEnemyStatBoostingHeldItem
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
@@ -4188,7 +4187,6 @@ SendOutPlayerMon:
 
 .statused
 	call UpdatePlayerHUD
-	call HandlePlayerStatBoostingHeldItem
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
