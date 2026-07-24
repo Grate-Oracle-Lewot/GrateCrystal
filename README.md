@@ -62,7 +62,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - Stat experience from battles is awarded twice, with the second round using Sp.Def instead of Sp.Atk for the Special experience; vitamins give 1.9x what they used to, and keep working until their stat is near maximized
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
-- X items (X Attack, X Defend, etc.) now activate automatically if held in battle
+- Apricorns, in addition to being Kurt's ingredients, now also trigger a 1-stage stat boost when held, with the stat depending on the color (but they can't be used outright like X items)
 - Pseudo-Abilities: there's no proper Ability system and the following effects are not named in-game, but they are described by various NPCs and such. Dual-typed Pokémon can have two type-dependent effects.
   - Levitate: Includes Pokémon that have Levitate in the real games as well as some others that I think should, plus some would-be Flying types who have had their types changed. This effect grants an immunity to some Ground type moves, but not others. The ones that still hit are those not bound to the floor: the bone moves and Mud-Slap. A special up-arrow icon indicates a Levitating Pokémon, shown in battle, on the stats screen, and in the Pokédex.
   - Liquid Ooze: Applies to all Poison types. Draining moves used against them will hurt instead of heal, including Leech Seed but excluding Dream Eater as a special exception. However, if the user of the draining move is also Poison type, then they still get healed.
@@ -82,7 +82,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
   - We can count Shuckle's ability to make Berry Juice (this now works even before you reach Goldenrod City)
   - Miltank can produce Moomoo Milk in the same manner as Shuckle fermenting Berries (in this case it needs an empty held item slot)
   - Spinarak and Ariados don't make contact when using Bind or Wrap (yes, I bothered to code this)
-  - Ditto won't activate held X items until after Transforming (Transform copies stat levels and thus would overwrite X item boosts)
+  - Ditto won't activate held Apricorns until after Transforming (Transform copies stat levels and thus would overwrite prior boosts)
 - Overhaul of Pokémon learnsets, egg moves, breeding groups, encounter locations, encounter levels, enemy trainer parties, wild held items, some base stats, etc.
   - Ditto is now the fastest Pokémon, letting it Transform before getting hit, and it can also learn a small number of TM moves
   - Unown and Delibird learn multiple moves and have better stats
