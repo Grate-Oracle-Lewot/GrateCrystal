@@ -161,7 +161,7 @@ BattleAnimations::
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang
 	dw BattleAnim_SilverWind
-	dw BattleAnim_RockPolish
+	dw BattleAnim_Conversion
 	dw BattleAnim_TriAttack
 	dw BattleAnim_SuperFang
 	dw BattleAnim_Slash
@@ -191,7 +191,7 @@ BattleAnimations::
 	dw BattleAnim_BellyDrum
 	dw BattleAnim_SludgeBomb
 	dw BattleAnim_MudSlap
-	dw BattleAnim_Conversion
+	dw BattleAnim_RockPolish
 	dw BattleAnim_Spikes
 	dw BattleAnim_Blitzkrieg
 	dw BattleAnim_Foresight
