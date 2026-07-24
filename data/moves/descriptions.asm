@@ -160,7 +160,7 @@ MoveDescriptions::
 	dw RockSlideDescription
 	dw HyperFangDescription
 	dw SilverWindDescription
-	dw RockPolishDescription
+	dw ConversionDescription
 	dw TriAttackDescription
 	dw SuperFangDescription
 	dw SlashDescription
@@ -190,7 +190,7 @@ MoveDescriptions::
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
-	dw ConversionDescription
+	dw RockPolishDescription
 	dw SpikesDescription
 	dw BlitzkriegDescription
 	dw ForesightDescription
@@ -861,6 +861,10 @@ SilverWindDescription:
 	db   "May up all stats."
 	next "Hits flying foes.@"
 
+ConversionDescription:
+	db   "Changes type(s) to"
+	next "gain advantages.@"
+
 TriAttackDescription:
 	db   "May burn, freeze,"
 	next "or paralyze.@"
@@ -972,10 +976,6 @@ SludgeBombDescription:
 MudSlapDescription:
 	db   "Reduces accuracy"
 	next "by throwing mud.@"
-
-ConversionDescription:
-	db   "Changes type(s) to"
-	next "gain advantages.@"
 
 SpikesDescription:
 	db   "Hurts upon switch."
