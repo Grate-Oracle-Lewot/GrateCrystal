@@ -163,7 +163,7 @@
 	const FLOWER_MAIL  ; 9b
 	const LEVEL_BALL   ; 9c
 	const LURE_BALL    ; 9d
-	const FAST_BALL    ; 9e
+	const HASTE_BALL   ; 9e
 	const SWAG_BEACON  ; 9f
 	const VOLTECCER    ; a0
 	const FRIEND_BALL  ; a1
