@@ -160,7 +160,7 @@ MoveDescriptionsScrunched::
 	dw RockSlideDescriptionScrunched
 	dw HyperFangDescriptionScrunched
 	dw SilverWindDescriptionScrunched
-	dw RockPolishDescriptionScrunched
+	dw ConversionDescriptionScrunched
 	dw TriAttackDescriptionScrunched
 	dw SuperFangDescriptionScrunched
 	dw SlashDescriptionScrunched
@@ -190,7 +190,7 @@ MoveDescriptionsScrunched::
 	dw BellyDrumDescriptionScrunched
 	dw SludgeBombDescriptionScrunched
 	dw MudSlapDescriptionScrunched
-	dw ConversionDescriptionScrunched
+	dw RockPolishDescriptionScrunched
 	dw SpikesDescriptionScrunched
 	dw BlitzkriegDescriptionScrunched
 	dw ForesightDescriptionScrunched
@@ -861,6 +861,10 @@ SilverWindDescriptionScrunched:
 	db   "May up all stats."
 	feed "Hits flying foes.@"
 
+ConversionDescriptionScrunched:
+	db   "Changes type(s) to"
+	feed "gain advantages.@"
+
 TriAttackDescriptionScrunched:
 	db   "May burn, freeze,"
 	feed "or paralyze.@"
@@ -972,10 +976,6 @@ SludgeBombDescriptionScrunched:
 MudSlapDescriptionScrunched:
 	db   "Reduces accuracy"
 	feed "by throwing mud.@"
-
-ConversionDescriptionScrunched:
-	db   "Changes type(s) to"
-	feed "gain advantages.@"
 
 SpikesDescriptionScrunched:
 	db   "Hurts upon switch."
