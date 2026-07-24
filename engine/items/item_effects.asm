@@ -171,7 +171,7 @@ ItemEffects:
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
-	dw PokeBallEffect      ; FAST_BALL
+	dw PokeBallEffect      ; HASTE_BALL
 	dw ItemfinderEffect    ; SWAG_BEACON
 	dw NoEffect            ; VOLTECCER
 	dw PokeBallEffect      ; FRIEND_BALL
@@ -749,7 +749,7 @@ BallMultiplierFunctionTable:
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
-	dbw FAST_BALL,   FastBallMultiplier
+	dbw HASTE_BALL,  HasteBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
@@ -1026,7 +1026,7 @@ LoveBallMultiplier:
 	pop bc
 	ret
 
-FastBallMultiplier:
+HasteBallMultiplier:
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	ld hl, FleeMons
