@@ -166,7 +166,7 @@
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
 	const SILVER_WIND  ; 9f
-	const ROCK_POLISH  ; a0
+	const CONVERSION   ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
@@ -196,7 +196,7 @@
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const MUD_SLAP     ; bd
-	const CONVERSION   ; be
+	const ROCK_POLISH  ; be
 	const SPIKES       ; bf
 	const BLITZKRIEG   ; c0
 	const FORESIGHT    ; c1
