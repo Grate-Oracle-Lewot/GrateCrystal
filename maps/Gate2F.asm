@@ -240,7 +240,7 @@ Gate2FCooltrainerFText:
 	done
 
 Gate2FCooltrainerMText:
-	text "DITTO won't use"
+	text "DITTO won't eat"
 	line "held APRICORNS"
 
 	para "until after it"
