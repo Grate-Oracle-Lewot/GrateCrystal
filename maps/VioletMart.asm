@@ -43,11 +43,9 @@ VioletMartCooltrainerMText:
 	line "#MON's stats in"
 	cont "battle."
 
-	para "If you have a"
-	line "#MON hold one,"
-
-	para "it'll activate"
-	line "automatically!"
+	para "APRICORNS have a"
+	line "similar effect"
+	cont "when held."
 	done
 
 VioletMart_MapEvents:
