@@ -220,7 +220,7 @@ BattleTowerWhitney:
 	db "GIRAFARIG@@"
 
 	db MILTANK
-	db X_ACCURACY
+	db WHT_APRICORN
 	db ROLLOUT, ATTRACT, BODY_SLAM, MILK_DRINK
 	dw 0 ; OT ID
 	dt 1250000 ; Exp
@@ -334,7 +334,7 @@ BattleTowerChuck:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerChuck
 
 	db PRIMEAPE
-	db X_ATTACK
+	db RED_APRICORN
 	db SWAGGER, OUTRAGE, CROSS_CHOP, MEGA_PUNCH
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -386,7 +386,7 @@ BattleTowerChuck:
 	db "POLIWRATH@@"
 
 	db KANGASKHAN
-	db X_ACCURACY
+	db WHT_APRICORN
 	db DIZZY_PUNCH, DYNAMICPUNCH, STRENGTH, MILK_DRINK
 	dw 0 ; OT ID
 	dt 849970 ; Exp
@@ -443,7 +443,7 @@ BattleTowerJasmine:
 	db "SKARMORY@@@"
 
 	db CLOYSTER
-	db X_SP_DEFEND
+	db GRN_APRICORN
 	db CRABHAMMER, SPIKE_CANNON, AVALANCHE, PROTECT
 	dw 0 ; OT ID
 	dt 1059860 ; Exp
@@ -1496,7 +1496,7 @@ BattleTowerSabrina:
 	table_width NICKNAMED_MON_STRUCT_LENGTH, BattleTowerSabrina
 
 	db MR__MIME
-	db X_SPECIAL
+	db PNK_APRICORN
 	db BARRIER, BATON_PASS, PSYCHIC_M, MOONBLAST
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -1522,7 +1522,7 @@ BattleTowerSabrina:
 	db "MR.MIME@@@@"
 
 	db JYNX
-	db X_ATTACK
+	db RED_APRICORN
 	db LOVELY_KISS, ATTRACT, PSYCHIC_M, ICE_PUNCH
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
