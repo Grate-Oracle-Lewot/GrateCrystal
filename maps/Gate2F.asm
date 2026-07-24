@@ -241,12 +241,12 @@ Gate2FCooltrainerFText:
 
 Gate2FCooltrainerMText:
 	text "DITTO won't use"
-	line "held X items"
+	line "held APRICORNS"
 
 	para "until after it"
 	line "TRANSFORMS."
 
-	para "With an X SPEED,"
+	para "With a YELLOW one,"
 	line "it can outspeed"
 
 	para "whatever it turns"
