@@ -10,7 +10,7 @@ else
 endc
 	db 5 ; catch rate
 	db 220 ; base exp
-	db X_SPECIAL, TWISTEDSPOON ; items
+	db PNK_APRICORN, TWISTEDSPOON ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 84 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mewtwo/front.dimensions"
