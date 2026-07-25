@@ -315,7 +315,7 @@ BattleTurn:
 	call HandleBetweenTurnEffects
 	ld a, [wBattleEnded]
 	and a
-	jr z .loop
+	jr z, .loop
 
 .quit
 	pop af
