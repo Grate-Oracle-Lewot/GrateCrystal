@@ -232,7 +232,7 @@ DoBattle:
 	call ResetBattleParticipants
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -245,7 +245,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 
 .not_linked_2
 	call StartAutomaticBattleWeather
@@ -541,7 +541,7 @@ DetermineMoveOrder:
 .switch
 	farcall AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	jp Shared_and_a ; enemy first
 
 .use_move
@@ -1058,7 +1058,7 @@ EnemySwitchSpikes:
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .no
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	jr HasEnemyFainted
 
 .no
@@ -2242,7 +2242,7 @@ HandleEnemyMonFaint:
 
 PlayerUTurnSwitch:
 	call SwitchPlayerMon
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	call HasPlayerFainted
 	ret nz
 	; fallthrough
@@ -2592,7 +2592,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2911,7 +2911,7 @@ ForcePlayerMonChoice:
 	call SendOutMonText
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	ld a, $1
 	and a
 	ld c, a
@@ -4230,56 +4230,6 @@ BreakAttraction:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
-SpikesDamage:
-	ld hl, wPlayerScreens
-	ld de, wBattleMonType
-	ld bc, UpdatePlayerHUD
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyScreens
-	ld de, wEnemyMonType
-	ld bc, UpdateEnemyHUD
-.ok
-
-	bit SCREENS_SPIKES, [hl]
-	ret z
-
-	; Flying-types aren't affected by Spikes.
-	ld a, [de]
-	cp FLYING
-	ret z
-	inc de
-	ld a, [de]
-	cp FLYING
-	ret z
-
-	; Floatmons aren't affected by Spikes.
-	push bc
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .ok2
-	ld a, [wEnemyMonSpecies]
-.ok2
-	ld hl, FloatMons
-	call IsInByteArray
-	pop bc
-	ret c
-
-	push bc
-
-	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
-	call StdBattleTextbox
-
-	call GetEighthMaxHP
-	call SubtractHPFromTarget
-
-	pop hl
-	call _hl_
-
-	jp WaitBGMap
-
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
@@ -4628,9 +4578,59 @@ EnemyUTurnSwitch:
 	call ForceEnemySwitch
 	; fallthrough
 
-SpikesDamage_HandleStatBoostingHeldItems:
-	call SpikesDamage
+HandleApricornsAndSpikes:
+	call HandleStatBoostingHeldItems
 	; fallthrough
+
+SpikesDamage:
+	ld hl, wPlayerScreens
+	ld de, wBattleMonType
+	ld bc, UpdatePlayerHUD
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemyMonType
+	ld bc, UpdateEnemyHUD
+.ok
+
+	bit SCREENS_SPIKES, [hl]
+	ret z
+
+	; Flying-types aren't affected by Spikes.
+	ld a, [de]
+	cp FLYING
+	ret z
+	inc de
+	ld a, [de]
+	cp FLYING
+	ret z
+
+	; Floatmons aren't affected by Spikes.
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .ok2
+	ld a, [wEnemyMonSpecies]
+.ok2
+	ld hl, FloatMons
+	call IsInByteArray
+	pop bc
+	ret c
+
+	push bc
+
+	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
+	call StdBattleTextbox
+
+	call GetEighthMaxHP
+	call SubtractHPFromTarget
+
+	pop hl
+	call _hl_
+
+	jp WaitBGMap
 
 HandleStatBoostingHeldItems:
 	ldh a, [hSerialConnectionStatus]
@@ -5406,7 +5406,7 @@ BattleMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage_HandleStatBoostingHeldItems
+	call HandleApricornsAndSpikes
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5430,7 +5430,7 @@ PassedBattleMonEntrance:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage_HandleStatBoostingHeldItems
+	jp HandleApricornsAndSpikes
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
