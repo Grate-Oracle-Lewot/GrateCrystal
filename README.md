@@ -56,13 +56,13 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Run at bike speed by holding B (including while Surfing); brake on Cycling Road by holding B
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
+- Apricorns, in addition to being Kurt's ingredients, now also trigger a 1-stage stat boost when held, with the stat depending on the color (but they can't be used outright like X items)
 - Room for 30 phone contacts in the Pokégear, and you can get my phone number to hear stupid anecdotes
 - While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, some of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
 - Stat experience from battles is awarded twice, with the second round using Sp.Def instead of Sp.Atk for the Special experience; vitamins give 1.9x what they used to, and keep working until their stat is near maximized
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
-- Apricorns, in addition to being Kurt's ingredients, now also trigger a 1-stage stat boost when held, with the stat depending on the color (but they can't be used outright like X items)
 - Pseudo-Abilities: there's no proper Ability system and the following effects are not named in-game, but they are described by various NPCs and such. Dual-typed Pokémon can have two type-dependent effects.
   - Levitate: Includes Pokémon that have Levitate in the real games as well as some others that I think should, plus some would-be Flying types who have had their types changed. This effect grants an immunity to some Ground type moves, but not others. The ones that still hit are those not bound to the floor: the bone moves and Mud-Slap. A special up-arrow icon indicates a Levitating Pokémon, shown in battle, on the stats screen, and in the Pokédex.
   - Liquid Ooze: Applies to all Poison types. Draining moves used against them will hurt instead of heal, including Leech Seed but excluding Dream Eater as a special exception. However, if the user of the draining move is also Poison type, then they still get healed.
