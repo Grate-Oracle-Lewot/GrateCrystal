@@ -384,8 +384,8 @@ RareCandyDesc:
 	next "#MON by one.@"
 
 XAccuracyDesc:
-	db   "Raises accuracy."
-	next "(1 BTL)@"
+	db   "Makes moves always"
+	next "hit. (1 BTL)@"
 
 LeafStoneDesc:
 	db   "Evolves certain"
