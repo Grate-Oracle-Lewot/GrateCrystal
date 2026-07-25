@@ -232,7 +232,7 @@ DoBattle:
 	call ResetBattleParticipants
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -245,7 +245,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 
 .not_linked_2
 	call StartAutomaticBattleWeather
@@ -540,7 +540,7 @@ DetermineMoveOrder:
 .switch
 	farcall AI_Switch
 	call SetEnemyTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	jp Shared_and_a ; enemy first
 
 .use_move
@@ -1057,7 +1057,7 @@ EnemySwitchSpikes:
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .no
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	jr HasEnemyFainted
 
 .no
@@ -2241,7 +2241,7 @@ HandleEnemyMonFaint:
 
 PlayerUTurnSwitch:
 	call SwitchPlayerMon
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	call HasPlayerFainted
 	ret nz
 	; fallthrough
@@ -2591,7 +2591,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2910,7 +2910,7 @@ ForcePlayerMonChoice:
 	call SendOutMonText
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	ld a, $1
 	and a
 	ld c, a
@@ -4576,12 +4576,12 @@ PlayerPartyMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	jr HandleApricornsAndSpikes
+	jr SpikesDamage
 
 EnemyMonEntrance:
 	farcall AI_Switch
 	call SetEnemyTurn
-	jr HandleApricornsAndSpikes
+	jr SpikesDamage
 
 EnemyUTurnSwitch:
 	call FindMonInOTPartyToSwitchIntoBattle
@@ -4590,10 +4590,6 @@ EnemyUTurnSwitch:
 	inc a
 	ld [wEnemySwitchMonIndex], a
 	call ForceEnemySwitch
-	; fallthrough
-
-HandleApricornsAndSpikes:
-	call HandleStatBoostingHeldItems
 	; fallthrough
 
 SpikesDamage:
@@ -5401,7 +5397,7 @@ BattleMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call HandleApricornsAndSpikes
+	call SpikesDamage
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5425,7 +5421,7 @@ PassedBattleMonEntrance:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp HandleApricornsAndSpikes
+	jp SpikesDamage
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
