@@ -10,7 +10,7 @@ else
 endc
 	db 190 ; catch rate
 	db 152 ; base exp
-	db X_SPEED, CHARCOAL ; items
+	db YLW_APRICORN, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ponyta/front.dimensions"
