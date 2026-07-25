@@ -1223,6 +1223,12 @@ AI_Smart_LeechHit:
 	ret
 
 AI_Smart_LockOn:
+; If the enemy has X Accuracy status, act like they've aleady used Lock-On.
+; This results in an enemy who knows Lock-On or Mind Reader taking better advantage of X Accuracy than one who doesn't.
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	jr nz, .player_locked_on
+
 ; Check if the player is already locked onto.
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_LOCK_ON, a
