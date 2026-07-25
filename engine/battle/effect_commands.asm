@@ -5055,7 +5055,7 @@ BattleCommand_ForceSwitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, HandleApricornsAndSpikes
+	ld hl, SpikesDamage
 	jp CallBattleCore
 
 .force_player_switch
