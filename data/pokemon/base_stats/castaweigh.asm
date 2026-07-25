@@ -6,7 +6,7 @@
 	db WATER, DARK ; type
 	db 60 ; catch rate
 	db 175 ; base exp
-	db X_ATTACK, SLOWPOKETAIL ; items
+	db RED_APRICORN, SLOWPOKETAIL ; items
 	db GENDER_F50 ; gender ratio
 	db 19 ; step cycles to hatch
 	INCBIN "gfx/pokemon/castaweigh/front.dimensions"
