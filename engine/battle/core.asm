@@ -259,7 +259,7 @@ BattleTurn:
 
 .loop
 	call CheckContestBattleOver
-	jp c, .quit
+	jr c, .quit
 
 	xor a
 	ld [wPlayerIsSwitching], a
