@@ -10,7 +10,7 @@ else
 endc
 	db 190 ; catch rate
 	db 74 ; base exp
-	db X_ATTACK, TM_THIEF ; items
+	db RED_APRICORN, TM_THIEF ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/mankey/front.dimensions"
