@@ -49,7 +49,7 @@ BattleCommand_BatonPass:
 	ld hl, ApplyStatLevelMultiplierOnAllStats
 	call CallBattleCore
 
-	ld hl, HandleApricornsAndSpikes
+	ld hl, SpikesDamage
 	call CallBattleCore
 	; fallthrough
 
