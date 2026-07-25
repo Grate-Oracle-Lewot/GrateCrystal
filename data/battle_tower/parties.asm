@@ -405,7 +405,7 @@ BattleTowerMons:
 	bigdw 32 ; SDef
 
 	db EXEGGUTOR
-	db X_SPEED
+	db YLW_APRICORN
 	db TOXIC, GIGA_DRAIN, THIEF, CONFUSION
 	dw 0 ; OT ID
 	dt 560 ; Exp
@@ -555,7 +555,7 @@ BattleTowerMons:
 	bigdw 21 ; SDef
 
 	db JIRK
-	db X_EVADE
+	db BLK_APRICORN
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 1000 ; Exp
@@ -1158,7 +1158,7 @@ BattleTowerMons:
 	bigdw 38 ; SDef
 
 	db JIRK
-	db X_EVADE
+	db BLK_APRICORN
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 8000 ; Exp
@@ -1761,7 +1761,7 @@ BattleTowerMons:
 	bigdw 85 ; SDef
 
 	db JIRK
-	db X_EVADE
+	db BLK_APRICORN
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 27000 ; Exp
@@ -2114,7 +2114,7 @@ BattleTowerMons:
 	bigdw 103 ; SDef
 
 	db PORYGON2
-	db X_SPEED
+	db YLW_APRICORN
 	db RECOVER, HYPER_BEAM, PSYCHIC_M, THIEF
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2339,7 +2339,7 @@ BattleTowerMons:
 	bigdw 95 ; SDef
 
 	db RAPIDASH
-	db X_ATTACK
+	db RED_APRICORN
 	db FLAME_WHEEL, HEADBUTT, ACROBATICS, U_TURN
 	dw 0 ; OT ID
 	dt 31970 ; Exp
@@ -2364,7 +2364,7 @@ BattleTowerMons:
 	bigdw 91 ; SDef
 
 	db JIRK
-	db X_EVADE
+	db BLK_APRICORN
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 64000 ; Exp
@@ -2967,7 +2967,7 @@ BattleTowerMons:
 	bigdw 150 ; SDef
 
 	db JIRK
-	db X_EVADE
+	db BLK_APRICORN
 	db THIEF, NIGHTMARE, SUBSTITUTE, REST
 	dw 0 ; OT ID
 	dt 125000 ; Exp
@@ -4376,7 +4376,7 @@ BattleTowerMons:
 	bigdw 226 ; SDef
 
 	db GENGAR
-	db X_SPECIAL
+	db PNK_APRICORN
 	db THUNDERBOLT, SHADOW_BALL, CONFUSE_RAY, THIEF
 	dw 0 ; OT ID
 	dt 512000 ; Exp
@@ -5957,7 +5957,7 @@ BattleTowerMons:
 	bigdw 214 ; SDef
 
 	db DODRIO
-	db X_ATTACK
+	db RED_APRICORN
 	db TRIPLE_KICK, ACROBATICS, RETURN, STEEL_WING
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
@@ -6412,7 +6412,7 @@ BattleTowerExtraMons:
 	bigdw 196 ; SDef
 
 	db SNOCONEY
-	db X_ATTACK
+	db RED_APRICORN
 	db THIEF, GIGA_DRAIN, DIG, SELFDESTRUCT
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
