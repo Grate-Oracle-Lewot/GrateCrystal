@@ -316,7 +316,8 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
-	jp .loop
+	call HandleStatBoostingHeldItems
+	jr .loop
 
 .quit
 	pop af
