@@ -6,7 +6,7 @@
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
 	db 177 ; base exp
-	db BRICK_PIECE, MOON_STONE ; items
+	db BLU_APRICORN, BRICK_PIECE ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/golem/front.dimensions"
