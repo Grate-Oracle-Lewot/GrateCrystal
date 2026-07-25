@@ -6,7 +6,7 @@
 	db BUG, BUG ; type
 	db 120 ; catch rate
 	db 72 ; base exp
-	db X_DEFEND, IRON ; items
+	db BLU_APRICORN, GRN_APRICORN ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
 	INCBIN "gfx/pokemon/metapod/front.dimensions"
