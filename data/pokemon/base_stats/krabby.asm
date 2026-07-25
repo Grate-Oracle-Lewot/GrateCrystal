@@ -10,7 +10,7 @@ else
 endc
 	db 225 ; catch rate
 	db 115 ; base exp
-	db X_ATTACK, PROTEIN ; items
+	db RED_APRICORN, PROTEIN ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/krabby/front.dimensions"
