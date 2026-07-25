@@ -6,7 +6,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 180 ; catch rate
 	db 88 ; base exp
-	db X_ATTACK, BLACKBELT_I ; items
+	db RED_APRICORN, BLACKBELT_I ; items
 	db GENDER_F25 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/machop/front.dimensions"
