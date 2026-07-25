@@ -315,9 +315,7 @@ BattleTurn:
 	call HandleBetweenTurnEffects
 	ld a, [wBattleEnded]
 	and a
-	jr nz, .quit
-	call HandleStatBoostingHeldItems
-	jr .loop
+	jr z .loop
 
 .quit
 	pop af
