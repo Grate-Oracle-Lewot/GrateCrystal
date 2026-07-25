@@ -1835,6 +1835,11 @@ AI_OHKO_CheckLockOn:
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, AI_Smart_Heal_OHKO_Encourage
 
+; Greatly encourage this move if the enemy has X Accuracy status.
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	jr nz, AI_Smart_Heal_OHKO_Encourage
+
 ; Else, 50% chance to discourage this move. Regardless, execute AI_DiscourageIfPlayerHPBelowHalf.
 	call AI_50_50
 	jr c, AI_DiscourageIfPlayerHPBelowHalf
