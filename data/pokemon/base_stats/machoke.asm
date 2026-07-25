@@ -6,7 +6,7 @@
 	db FIGHTING, FIGHTING ; type
 	db 90 ; catch rate
 	db 146 ; base exp
-	db BLACKBELT_I, X_ATTACK ; items
+	db BLACKBELT_I, RED_APRICORN ; items
 	db GENDER_F25 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/machoke/front.dimensions"
