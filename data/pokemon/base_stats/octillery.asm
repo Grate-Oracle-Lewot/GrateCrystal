@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 75 ; catch rate
 	db 164 ; base exp
-	db FIBER, X_ACCURACY ; items
+	db FIBER, WHT_APRICORN ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/octillery/front.dimensions"
