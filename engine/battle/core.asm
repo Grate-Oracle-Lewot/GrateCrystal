@@ -2235,7 +2235,6 @@ HandleEnemyMonFaint:
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
-	call HandleStatBoostingHeldItems
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
@@ -2320,7 +2319,6 @@ DoubleSwitch:
 	call PlayerPartyMonEntrance
 
 .done
-	call HandleStatBoostingHeldItems
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
