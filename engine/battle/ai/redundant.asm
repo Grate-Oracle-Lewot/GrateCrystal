@@ -179,6 +179,9 @@ AI_Redundant:
 	jr .NotRedundant
 
 .EvasionUp:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	ret nz
 	ld a, [wEnemyEvaLevel]
 	cp MAX_STAT_LEVEL
 	jr nc, .Redundant
