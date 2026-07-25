@@ -6,7 +6,7 @@
 	db BUG, PSYCHIC_TYPE ; type
 	db 84 ; catch rate
 	db 184 ; base exp
-	db BITTER_BERRY, DICTIONARY ; items
+	db BITTER_BERRY, BLK_APRICORN ; items
 	db GENDER_F50 ; gender ratio
 	db 13 ; step cycles to hatch
 	INCBIN "gfx/pokemon/jirk/front.dimensions"
