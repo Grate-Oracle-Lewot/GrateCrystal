@@ -365,6 +365,7 @@ KRIS EQU __trainer_class__
 	const BARNEY
 	const SCOTT
 	const ARNOLD
+	const FISCHER
 
 	trainerclass HIKER ; 2f
 	const ANTHONY1
