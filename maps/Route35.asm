@@ -80,31 +80,24 @@ TrainerJugglerIrwin:
 
 Route35NumberAcceptedM:
 	jumpstd NumberAcceptedMScript
-	end
 
 Route35AskNumber1M:
 	jumpstd AskNumber1MScript
-	end
 
 Route35AskNumber2M:
 	jumpstd AskNumber2MScript
-	end
 
 Route35RegisteredNumberM:
 	jumpstd RegisteredNumberMScript
-	end
 
 Route35NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
-	end
 
 Route35PhoneFullM:
 	jumpstd PhoneFullMScript
-	end
 
 Route35RematchM:
 	jumpstd RematchMScript
-	end
 
 TrainerCamperIvan:
 	trainer CAMPER, IVAN, EVENT_BEAT_CAMPER_IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
@@ -240,7 +233,6 @@ TrainerOfficerDirk:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_DIRK
-	closetext
 	end
 
 .AfterBattle:
