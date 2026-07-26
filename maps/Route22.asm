@@ -32,7 +32,6 @@ OfficerLassiterScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_LASSITER
-	closetext
 	end
 
 .AfterScript:
@@ -50,9 +49,7 @@ OfficerLassiterScript:
 
 .NoFight:
 	writetext OfficerLassiterDaytimeText
-	waitbutton
-	closetext
-	end
+	sjump .LassiterMerge
 
 VictoryRoadEntranceSign1:
 	jumptext VictoryRoadEntranceSign1Text
