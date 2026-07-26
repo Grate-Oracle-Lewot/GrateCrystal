@@ -4568,34 +4568,6 @@ UseHeldStatusHealingItem:
 
 INCLUDE "data/battle/held_heal_status.asm"
 
-PlayerPartyMonEntrance:
-	ld a, [wCurBattleMon]
-	ld [wLastPlayerMon], a
-	ld a, [wCurPartyMon]
-	ld [wCurBattleMon], a
-	call AddBattleParticipant
-	call InitBattleMon_Etc
-	call SetPlayerTurn
-	jr HandleApricornsAndSpikes
-
-EnemyMonEntrance:
-	farcall AI_Switch
-	call SetEnemyTurn
-	jr HandleApricornsAndSpikes
-
-EnemyUTurnSwitch:
-	call FindMonInOTPartyToSwitchIntoBattle
-	; 'b' contains the PartyNr of the mon the AI will switch to
-	ld a, b
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	call ForceEnemySwitch
-	; fallthrough
-
-HandleApricornsAndSpikes:
-	call HandleStatBoostingHeldItems
-	; fallthrough
-
 SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4646,6 +4618,34 @@ SpikesDamage:
 
 	jp WaitBGMap
 
+PlayerPartyMonEntrance:
+	ld a, [wCurBattleMon]
+	ld [wLastPlayerMon], a
+	ld a, [wCurPartyMon]
+	ld [wCurBattleMon], a
+	call AddBattleParticipant
+	call InitBattleMon_Etc
+	call SetPlayerTurn
+	jr HandleApricornsAndSpikes
+
+EnemyMonEntrance:
+	farcall AI_Switch
+	call SetEnemyTurn
+	jr HandleApricornsAndSpikes
+
+EnemyUTurnSwitch:
+	call FindMonInOTPartyToSwitchIntoBattle
+	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, b
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	call ForceEnemySwitch
+	; fallthrough
+
+HandleApricornsAndSpikes:
+	call SpikesDamage
+	; fallthrough
+
 HandleStatBoostingHeldItems:
 ; reset failure conditions for RaiseStat
 	xor a
@@ -4665,6 +4665,8 @@ HandleStatBoostingHeldItems:
 	ld a, [wBattleMonSpecies]
 	cp DITTO
 	ret z
+	call HasPlayerFainted
+	ret z
 	call GetPartymonItem
 	ld a, $0
 	jr .HandleItem
@@ -4672,6 +4674,8 @@ HandleStatBoostingHeldItems:
 .DoEnemy:
 	ld a, [wEnemyMonSpecies]
 	cp DITTO
+	ret z
+	call HasEnemyFainted
 	ret z
 	call GetOTPartymonItem
 	ld a, $1
