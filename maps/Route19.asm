@@ -31,6 +31,7 @@ TrainerSwimmerfDawn:
 	endifjustbattled
 	opentext
 	writetext SwimmerfDawnAfterBattleText
+Route19_EndText:
 	waitbutton
 	closetext
 	end
@@ -42,9 +43,7 @@ TrainerSwimmermHarold:
 	endifjustbattled
 	opentext
 	writetext SwimmermHaroldAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 TrainerSwimmermJerome:
 	trainer SWIMMERM, JEROME, EVENT_BEAT_SWIMMERM_JEROME, SwimmermJeromeSeenText, SwimmermJeromeBeatenText, 0, .Script
@@ -53,9 +52,7 @@ TrainerSwimmermJerome:
 	endifjustbattled
 	opentext
 	writetext SwimmermJeromeAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 TrainerSwimmermTucker:
 	trainer SWIMMERM, TUCKER, EVENT_BEAT_SWIMMERM_TUCKER, SwimmermTuckerSeenText, SwimmermTuckerBeatenText, 0, .Script
@@ -64,9 +61,7 @@ TrainerSwimmermTucker:
 	endifjustbattled
 	opentext
 	writetext SwimmermTuckerAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 Route19Fisher1Script:
 	faceplayer
@@ -74,15 +69,11 @@ Route19Fisher1Script:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .RocksCleared
 	writetext Route19Fisher1Text
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 .RocksCleared:
 	writetext Route19Fisher1Text_RocksCleared
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 Route19Fisher2Script:
 	faceplayer
@@ -90,15 +81,25 @@ Route19Fisher2Script:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .RocksCleared
 	writetext Route19Fisher2Text
-	waitbutton
-	closetext
-	end
+	sjump Route19_EndText
 
 .RocksCleared:
-	writetext Route19Fisher2Text_RocksCleared
+	checkevent EVENT_BEAT_FISHER_FISCHER
+	iftrue .After
+	loadtrainer FISHER, FISCHER
+	encountermusic
+	writetext Route19Fisher2SeenText
 	waitbutton
 	closetext
+	winlosstext Route19Fisher2BeatenText, 0
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FISHER_FISCHER
 	end
+
+.After
+	writetext Route19Fisher2Text_RocksCleared
+	sjump Route19_EndText
 
 Route19Sign:
 	jumptext Route19SignText
@@ -213,6 +214,16 @@ Route19Fisher2Text:
 	para "It's almost like"
 	line "someone paid it to"
 	cont "stand here!"
+	done
+
+Route19Fisher2SeenText:
+	text "Now that the road"
+	line "is clear, how"
+	cont "about a battle?"
+	done
+
+Route19Fisher2BeatenText:
+	text "That's fishy…"
 	done
 
 Route19Fisher2Text_RocksCleared:
