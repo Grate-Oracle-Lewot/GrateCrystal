@@ -302,6 +302,7 @@
 	const EVENT_BEAT_HIKER_HOUSTON
 	const EVENT_BEAT_COOLTRAINERM_BUZZ
 	const EVENT_BEAT_COOLTRAINERF_STELLA
+	const EVENT_BEAT_FISHER_FISCHER
 	const EVENT_ROUTE_4_PERCY
 	const EVENT_ROUTE_17_LUCAS
 	const EVENT_ROUTE_20_A_D
@@ -368,7 +369,7 @@
 	const EVENT_SILPH_CO_6F_SWAG_BEACON
 	const EVENT_SILPH_CO_10F_X_EVADE
 	const EVENT_ROUTE_26_PP_UP
-; Unused: next 246 events
+; Unused: next 245 events
 
 	const_next 600
 ; Kurt Apricorn events
