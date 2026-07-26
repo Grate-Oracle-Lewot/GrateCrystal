@@ -184,10 +184,10 @@ AI_Redundant:
 
 .Stat_Up:
 	cp MAX_STAT_LEVEL
-	jr nc, .Redundant
+	jp nc, .Redundant
 	ld a, [bc]
 	cp LOW(MAX_STAT_VALUE)
-	jr nz, .NotRedundant
+	jp nz, .NotRedundant
 	inc bc
 	ld a, [bc]
 	cp HIGH(MAX_STAT_VALUE)
