@@ -4647,7 +4647,7 @@ HandleApricornsAndSpikes:
 	; fallthrough
 
 HandleStatBoostingHeldItems:
-; reset failure conditions for RaiseStat
+	; reset failure conditions for RaiseStat
 	xor a
 	ld [wAttackMissed], a
 	ld [wEffectFailed], a
