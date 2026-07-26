@@ -4593,6 +4593,8 @@ EnemyUTurnSwitch:
 	; fallthrough
 
 SpikesDamage:
+	call HandleStatBoostingHeldItems
+
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
