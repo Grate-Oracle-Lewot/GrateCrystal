@@ -4647,6 +4647,11 @@ HandleApricornsAndSpikes:
 	; fallthrough
 
 HandleStatBoostingHeldItems:
+; reset failure conditions for RaiseStat
+	xor a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
