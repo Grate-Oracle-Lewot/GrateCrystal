@@ -14,49 +14,65 @@ AI_Redundant:
 	jp hl
 
 .Moves:
-	dbw EFFECT_LEECH_HIT,    .LeechHit
-	dbw EFFECT_DREAM_EATER,  .DreamEater
-	dbw EFFECT_ATTACK_UP,    .AttackUp
-	dbw EFFECT_DEFENSE_UP,   .DefenseUp
-	dbw EFFECT_SP_ATK_UP,    .SpAtkUp
-	dbw EFFECT_EVASION_UP,   .EvasionUp
-	dbw EFFECT_HEAL,         .Heal
-	dbw EFFECT_FORCE_SWITCH, .ForceSwitch
-	dbw EFFECT_LIGHT_SCREEN, .LightScreen
-	dbw EFFECT_MIST,         .Mist
-	dbw EFFECT_CONFUSE,      .Confuse
-	dbw EFFECT_ATTACK_UP_2,  .AttackUp
-	dbw EFFECT_DEFENSE_UP_2, .DefenseUp
-	dbw EFFECT_SPEED_UP_2,   .SpeedUp
-	dbw EFFECT_SP_ATK_UP_2,  .SpAtkUp
-	dbw EFFECT_SP_DEF_UP_2,  .SpDefUp
-	dbw EFFECT_TRANSFORM,    .Transform
-	dbw EFFECT_REFLECT,      .Reflect
-	dbw EFFECT_LEECH_SEED,   .LeechSeed
-	dbw EFFECT_DISABLE,      .Disable
-	dbw EFFECT_ENCORE,       .Encore
-	dbw EFFECT_SNORE,        .Snore
-	dbw EFFECT_SLEEP_TALK,   .SleepTalk
-	dbw EFFECT_MEAN_LOOK,    .MeanLook
-	dbw EFFECT_NIGHTMARE,    .Nightmare
-	dbw EFFECT_FORESIGHT,    .Foresight
-	dbw EFFECT_PERISH_SONG,  .PerishSong
-	dbw EFFECT_SANDSTORM,    .Sandstorm
-	dbw EFFECT_SWAGGER,      .Confuse
-	dbw EFFECT_ATTRACT,      .Attract
-	dbw EFFECT_SAFEGUARD,    .Safeguard
-	dbw EFFECT_BATON_PASS,   .BatonPass
-	dbw EFFECT_SYNTHESIS,    .Heal
-	dbw EFFECT_RAIN_DANCE,   .RainDance
-	dbw EFFECT_SUNNY_DAY,    .SunnyDay
-	dbw EFFECT_FUTURE_SIGHT, .FutureSight
-	dbw EFFECT_DEFENSE_CURL, .DefenseUp
-	dbw EFFECT_HAIL,         .Hail
+	dbw EFFECT_LEECH_HIT,     .LeechHit
+	dbw EFFECT_DREAM_EATER,   .DreamEater
+	dbw EFFECT_ATTACK_UP,     .AttackUp
+	dbw EFFECT_DEFENSE_UP,    .DefenseUp
+	dbw EFFECT_SP_ATK_UP,     .SpAtkUp
+	dbw EFFECT_EVASION_UP,    .EvasionUp
+	dbw EFFECT_ACCURACY_DOWN, .AccuracyDown
+	dbw EFFECT_EVASION_DOWN,  .EvasionDown
+	dbw EFFECT_HEAL,          .Heal
+	dbw EFFECT_FORCE_SWITCH,  .ForceSwitch
+	dbw EFFECT_LIGHT_SCREEN,  .LightScreen
+	dbw EFFECT_MIST,          .Mist
+	dbw EFFECT_CONFUSE,       .Confuse
+	dbw EFFECT_ATTACK_UP_2,   .AttackUp
+	dbw EFFECT_DEFENSE_UP_2,  .DefenseUp
+	dbw EFFECT_SPEED_UP_2,    .SpeedUp
+	dbw EFFECT_SP_ATK_UP_2,   .SpAtkUp
+	dbw EFFECT_SP_DEF_UP_2,   .SpDefUp
+	dbw EFFECT_TRANSFORM,     .Transform
+	dbw EFFECT_REFLECT,       .Reflect
+	dbw EFFECT_LEECH_SEED,    .LeechSeed
+	dbw EFFECT_DISABLE,       .Disable
+	dbw EFFECT_ENCORE,        .Encore
+	dbw EFFECT_SNORE,         .Snore
+	dbw EFFECT_SLEEP_TALK,    .SleepTalk
+	dbw EFFECT_MEAN_LOOK,     .MeanLook
+	dbw EFFECT_NIGHTMARE,     .Nightmare
+	dbw EFFECT_FORESIGHT,     .Foresight
+	dbw EFFECT_PERISH_SONG,   .PerishSong
+	dbw EFFECT_SANDSTORM,     .Sandstorm
+	dbw EFFECT_SWAGGER,       .Confuse
+	dbw EFFECT_ATTRACT,       .Attract
+	dbw EFFECT_SAFEGUARD,     .Safeguard
+	dbw EFFECT_BATON_PASS,    .BatonPass
+	dbw EFFECT_SYNTHESIS,     .Heal
+	dbw EFFECT_RAIN_DANCE,    .RainDance
+	dbw EFFECT_SUNNY_DAY,     .SunnyDay
+	dbw EFFECT_FUTURE_SIGHT,  .FutureSight
+	dbw EFFECT_DEFENSE_CURL,  .DefenseUp
+	dbw EFFECT_HAIL,          .Hail
 	db -1
 
 .LeechHit:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
+	ret
+
+.AccuracyDown:
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
+	ret
+
+; AccuracyDown and EvasionDown technically won't fail, but they're functionally useless.
+; Other stat downs make some concessions for the idea of the mon switching out to clear the stat drops,
+; but switching is unlikely for a mon that has the X Accuracy status.
+
+.EvasionDown:
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_X_ACCURACY, a
 	ret
 
 .LightScreen:
