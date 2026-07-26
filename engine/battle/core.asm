@@ -232,7 +232,7 @@ DoBattle:
 	call ResetBattleParticipants
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -245,7 +245,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 
 .not_linked_2
 	call StartAutomaticBattleWeather
@@ -540,7 +540,7 @@ DetermineMoveOrder:
 .switch
 	farcall AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	jp Shared_and_a ; enemy first
 
 .use_move
@@ -1057,7 +1057,7 @@ EnemySwitchSpikes:
 	ld a, [wEnemyIsSwitching]
 	and a
 	jr z, .no
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	jr HasEnemyFainted
 
 .no
@@ -2241,7 +2241,7 @@ HandleEnemyMonFaint:
 
 PlayerUTurnSwitch:
 	call SwitchPlayerMon
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	call HasPlayerFainted
 	ret nz
 	; fallthrough
@@ -2591,7 +2591,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2910,7 +2910,7 @@ ForcePlayerMonChoice:
 	call SendOutMonText
 	call NewBattleMonStatus_Etc
 	call SetPlayerTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	ld a, $1
 	and a
 	ld c, a
@@ -4568,33 +4568,7 @@ UseHeldStatusHealingItem:
 
 INCLUDE "data/battle/held_heal_status.asm"
 
-PlayerPartyMonEntrance:
-	ld a, [wCurBattleMon]
-	ld [wLastPlayerMon], a
-	ld a, [wCurPartyMon]
-	ld [wCurBattleMon], a
-	call AddBattleParticipant
-	call InitBattleMon_Etc
-	call SetPlayerTurn
-	jr SpikesDamage
-
-EnemyMonEntrance:
-	farcall AI_Switch
-	call SetEnemyTurn
-	jr SpikesDamage
-
-EnemyUTurnSwitch:
-	call FindMonInOTPartyToSwitchIntoBattle
-	; 'b' contains the PartyNr of the mon the AI will switch to
-	ld a, b
-	inc a
-	ld [wEnemySwitchMonIndex], a
-	call ForceEnemySwitch
-	; fallthrough
-
 SpikesDamage:
-	call HandleStatBoostingHeldItems
-
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
@@ -4643,6 +4617,35 @@ SpikesDamage:
 	call _hl_
 
 	jp WaitBGMap
+
+PlayerPartyMonEntrance:
+	ld a, [wCurBattleMon]
+	ld [wLastPlayerMon], a
+	ld a, [wCurPartyMon]
+	ld [wCurBattleMon], a
+	call AddBattleParticipant
+	call InitBattleMon_Etc
+	call SetPlayerTurn
+	jr HandleApricornsAndSpikes
+
+EnemyMonEntrance:
+	farcall AI_Switch
+	call SetEnemyTurn
+	jr HandleApricornsAndSpikes
+
+EnemyUTurnSwitch:
+	call FindMonInOTPartyToSwitchIntoBattle
+	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, b
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	call ForceEnemySwitch
+	; fallthrough
+
+HandleApricornsAndSpikes:
+	call HandleStatBoostingHeldItems
+	call SpikesDamage
+	; fallthrough
 
 HandleStatBoostingHeldItems:
 	ldh a, [hSerialConnectionStatus]
@@ -5399,7 +5402,7 @@ BattleMonEntrance:
 	call AddBattleParticipant
 	call InitBattleMon_Etc
 	call SetPlayerTurn
-	call SpikesDamage
+	call HandleApricornsAndSpikes
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5423,7 +5426,7 @@ PassedBattleMonEntrance:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	jp HandleApricornsAndSpikes
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
