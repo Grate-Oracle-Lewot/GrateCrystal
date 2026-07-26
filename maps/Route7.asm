@@ -22,7 +22,6 @@ TrainerOfficerDisher:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_DISHER
-	closetext
 	end
 
 .AfterBattle:
