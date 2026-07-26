@@ -4643,7 +4643,6 @@ EnemyUTurnSwitch:
 	; fallthrough
 
 HandleApricornsAndSpikes:
-	call HandleStatBoostingHeldItems
 	call SpikesDamage
 	; fallthrough
 
