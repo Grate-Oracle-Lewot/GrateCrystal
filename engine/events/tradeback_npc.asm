@@ -112,7 +112,7 @@ TradeWithTradebackGuy:
 	ret
 
 .tradeback_guy_name:
-	db "BACKER@@@@"
+	db "INSIDER@@@"
 
 TradebackGuyText::
 	text "Hello there! I'm an"
