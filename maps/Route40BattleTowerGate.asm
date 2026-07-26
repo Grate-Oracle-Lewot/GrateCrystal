@@ -31,7 +31,6 @@ TrainerOfficerTubbs:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_TUBBS
-	closetext
 	end
 
 .AfterBattle:
