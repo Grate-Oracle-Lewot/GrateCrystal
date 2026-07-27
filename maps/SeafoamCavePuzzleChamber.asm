@@ -83,18 +83,14 @@ SeafoamCavePuzzleChamberWallPatternRight:
 	end
 
 SeafoamCavePuzzleChamberWallPatternLeftText:
-	text "Familiar symbols"
-	line "dot the walls…"
-	done
-
 SeafoamCavePuzzleChamberWallPatternRightText:
 	text "Familiar symbols"
 	line "dot the walls…"
 	done
 
 SeafoamCavePuzzleChamberWallHoleText:
-	text "There's a big hole"
-	line "in the wall!"
+	text "Every hole is a"
+	line "chance for glory!"
 	done
 
 SeafoamCavePuzzleChamberAncientReplicaText:
