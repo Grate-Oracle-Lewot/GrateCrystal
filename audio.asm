@@ -182,6 +182,7 @@ SECTION "Extra Songs 6", ROMX
 
 INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/cinnabarislandGBS.asm"
+INCLUDE "audio/music/nuggetbridge.asm"
 
 
 SECTION "Sound Effects", ROMX
