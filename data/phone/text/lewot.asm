@@ -254,7 +254,7 @@ LewotPhoneCoinFlipText:
 	line "class, and yet it"
 
 	para "was a multiple"
-	line "choice test, not"
+	line "choice test<SEMI> not"
 
 	para "sure what happened"
 	line "there…"
@@ -335,12 +335,12 @@ LewotPhoneOmastarText:
 	line "of like the OMNI-"
 	cont "MAN meme."
 
-	para "As a result of the"
-	line "change, OMASTAR"
+	para "To go along with"
+	line "the change, it can"
 
-	para "can now learn"
-	line "moves like KINESIS"
-	cont "and PSYCHIC."
+	para "now learn moves"
+	line "like KINESIS and"
+	cont "PSYCHIC."
 	done
 
 LewotCallerGlitchesText:
