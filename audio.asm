@@ -183,6 +183,8 @@ SECTION "Extra Songs 6", ROMX
 INCLUDE "audio/music/seelstage.asm"
 INCLUDE "audio/music/cinnabarislandGBS.asm"
 INCLUDE "audio/music/nuggetbridge.asm"
+INCLUDE "audio/music/safarizonegate.asm"
+INCLUDE "audio/music/indigoplateauRBY.asm"
 
 
 SECTION "Sound Effects", ROMX
