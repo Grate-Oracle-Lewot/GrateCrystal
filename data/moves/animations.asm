@@ -2475,7 +2475,7 @@ BattleAnim_Crabhammer:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
 .loop
 	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX_BLUE, 136, 56, $0
 	anim_wait 12
 	anim_loop 3, .loop
 	anim_ret
@@ -3090,19 +3090,19 @@ BattleAnim_Waterfall:
 	anim_wait 16
 	anim_call BattleAnim_ShowMon_0
 	anim_sound 0, 1, SFX_LICK
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj ANIM_OBJ_HIT_YFIX_BLUE, 136, 56, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_LICK
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_LICK
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_obj ANIM_OBJ_HIT_YFIX_BLUE, 136, 40, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_LICK
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 32, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_LICK
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 24, $0
+	anim_obj ANIM_OBJ_HIT_YFIX_BLUE, 136, 24, $0
 	anim_wait 8
 	anim_ret
 
