@@ -6,7 +6,7 @@
 if DEF(_VANILLA_TYPES)
 	db WATER, FLYING ; type
 else
-	db WATER, DRAGON ; type
+	db DRAGON, WATER ; type
 endc
 	db 45 ; catch rate
 	db 214 ; base exp
