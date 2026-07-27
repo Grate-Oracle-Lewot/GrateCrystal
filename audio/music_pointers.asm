@@ -138,4 +138,6 @@ Music:
 	dba Music_IcePathHGSS
 	dba Music_CinnabarIslandGBS
 	dba Music_NuggetBridgeHGSS
+	dba Music_SafariZoneGateHGSS
+	dba Music_RBYIndigoPlateau
 	assert_table_length NUM_MUSIC_SONGS
