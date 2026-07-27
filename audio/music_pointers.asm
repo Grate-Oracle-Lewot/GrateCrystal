@@ -137,4 +137,5 @@ Music:
 	dba Music_EncounterHikerDPPt
 	dba Music_IcePathHGSS
 	dba Music_CinnabarIslandGBS
+	dba Music_NuggetBridgeHGSS
 	assert_table_length NUM_MUSIC_SONGS
