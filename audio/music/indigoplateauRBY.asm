@@ -10,7 +10,7 @@ Music_RBYIndigoPlateau_Ch1::
 	volume 7, 7
 	duty_cycle 3
 	vibrato 6, 3, 4
-	toggle_perfect_pitch
+	pitch_offset 1
 	note_type 12, 11, 2
 	octave 2
 	note A_, 8
