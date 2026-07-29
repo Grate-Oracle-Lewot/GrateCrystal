@@ -455,6 +455,12 @@ EvolvingText:
 	text_end
 
 LearnLevelMoves:
+	ld a, [wOptions]
+	push af
+	and ~TEXT_DELAY_MASK
+	add TEXT_DELAY_FAST
+	ld [wOptions], a
+
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	dec a
@@ -516,6 +522,8 @@ LearnLevelMoves:
 .done
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
+	pop af
+	ld [wOptions], a
 	ret
 
 FillMoves:
@@ -694,6 +702,12 @@ GetPreEvolution:
 	ret
 
 LearnEvolutionMove:
+	ld a, [wOptions]
+	push af
+	and ~TEXT_DELAY_MASK
+	add TEXT_DELAY_FAST
+	ld [wOptions], a
+
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	dec a
@@ -703,7 +717,7 @@ LearnEvolutionMove:
 	add hl, bc
 	ld a, [hl]
 	and a
-	ret z
+	jr z, .done
 
 	push hl
 	ld d, a
@@ -731,4 +745,7 @@ LearnEvolutionMove:
 
 .has_move
 	pop hl
+.done
+	pop af
+	ld [wOptions], a
 	ret
