@@ -70,8 +70,8 @@ GoldenrodDeptStore4FGameboyKidText:
 	para "there's a guy who"
 	line "will trade your"
 
-	para "own #MON back to"
-	line "you on the 2nd"
+	para "own #MON back"
+	line "to you on the 2nd"
 
 	para "floor of every"
 	line "#MON CENTER."
