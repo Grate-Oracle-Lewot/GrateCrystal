@@ -772,7 +772,7 @@ IlexForestApprenticeIntroText:
 	para "The FARFETCH'D"
 	line "that CUTS trees"
 
-	para "for charcoal took"
+	para "for CHARCOAL took"
 	line "off on me."
 
 	para "I can't go looking"
@@ -812,7 +812,7 @@ Text_CharcoalMasterIntro:
 	line "wouldn't be able"
 
 	para "to CUT trees for"
-	line "charcoal."
+	line "CHARCOAL."
 
 	para "Thanks, kid!"
 
@@ -841,7 +841,7 @@ Text_CharcoalMasterTalkAfter:
 	text "Do you want to"
 	line "apprentice as a"
 
-	para "charcoal maker"
+	para "CHARCOAL maker"
 	line "with me?"
 
 	para "You'll be first-"
