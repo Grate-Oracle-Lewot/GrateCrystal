@@ -30,15 +30,12 @@ RadioTower1FReceptionistScript:
 RadioTower1FLuckyNumberManScript:
 	faceplayer
 	opentext
-	writetext RadioTower1FLuckyNumberManAskToPlayText
-	promptbutton
-	checkflag ENGINE_LUCKY_NUMBER_SHOW
-	iftrue .skip
-	special ResetLuckyNumberShowFlag
-.skip
-	special PrintTodaysLuckyNumber
 	checkflag ENGINE_LUCKY_NUMBER_SHOW
 	iftrue .GameOver
+	writetext RadioTower1FLuckyNumberManAskToPlayText
+	promptbutton
+	special ResetLuckyNumberShowFlag
+	special PrintTodaysLuckyNumber
 	writetext RadioTower1FLuckyNumberManThisWeeksIdIsText
 	promptbutton
 	closetext
@@ -58,10 +55,8 @@ RadioTower1FLuckyNumberManScript:
 	ifequal 1, .FirstPlace
 	ifequal 2, .SecondPlace
 	ifequal 3, .ThirdPlace
-	sjump .NoPrize
-
-.GameOver:
-	writetext RadioTower1FLuckyNumberManComeAgainText
+.NoPrize:
+	writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
 	waitbutton
 	closetext
 	end
@@ -75,7 +70,11 @@ RadioTower1FLuckyNumberManScript:
 	iffalse .BagFull
 	itemnotify
 	setflag ENGINE_LUCKY_NUMBER_SHOW
-	sjump .GameOver
+.GameOver:
+	writetext RadioTower1FLuckyNumberManComeAgainText
+	waitbutton
+	closetext
+	end
 
 .SecondPlace:
 	writetext RadioTower1FLuckyNumberManOkayMatchText
@@ -98,12 +97,6 @@ RadioTower1FLuckyNumberManScript:
 	itemnotify
 	setflag ENGINE_LUCKY_NUMBER_SHOW
 	sjump .GameOver
-
-.NoPrize:
-	writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
-	waitbutton
-	closetext
-	end
 
 .BagFull:
 	writetext RadioTower1FLuckyNumberManNoRoomForYourPrizeText
