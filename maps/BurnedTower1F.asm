@@ -250,23 +250,28 @@ BurnedTowerSilver_AfterText2:
 BurnedTower1FEusineIntroText:
 	text "My name's EUSINE."
 
-	para "I'm on the trail"
-	line "of a #MON named"
-	cont "SUICUNE."
+	para "As in… “You seen"
+	line "SUICUNE?”"
 
 	para "And you are…?"
 
 	para "<PLAYER>? Glad to"
 	line "meet you!"
 
-	para "I heard rumors"
-	line "that SUICUNE is in"
+	para "SUICUNE is a #-"
+	line "MON tied to the"
 
-	para "this BURNED TOWER,"
-	line "so I came to look."
+	para "legend of this"
+	line "tower."
 
-	para "But where exactly"
-	line "could it be?"
+	para "I've been here many"
+	line "times, but I've"
+
+	para "never so much as"
+	line "glimpsed it."
+
+	para "What must be the"
+	line "secret…?"
 	done
 
 BurnedTower1FEusineText:
