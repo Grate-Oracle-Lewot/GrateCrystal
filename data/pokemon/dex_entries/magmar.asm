@@ -1,10 +1,10 @@
 	db "ROAST DUCK@" ; species name
 	dw 403, 980 ; height, weight
 
-	db   "It lives inside"
-	next "volcanoes, bathing"
-	next "in lava."
+	db   "If it drinks too"
+	next "much lava, the"
+	next "excess is stored"
 
-	page "Its forehead"
-	next "swells as its"
-	next "power grows.@"
+	page "in two pouches"
+	next "on its forehead."
+	next "Don't touch them.@"
