@@ -2304,7 +2304,10 @@ AI_Smart_Rage:
 	ret
 
 AI_Smart_SkullBash:
-; If enemy is faster than player, maybe fish for a flinch. Regardless, fall through to AI_Smart_Substitute.
+; If not already curled, likely encourage if enemy knows a move empowered by curl. Continue regardless.
+	call AI_Smart_DefenseCurl
+
+; If enemy is faster than player, maybe fish for a flinch. Continue regardless.
 	call AI_Smart_FlinchHit
 	; fallthrough
 
