@@ -18,7 +18,7 @@ TreeMonEncounter:
 
 	ld a, BATTLETYPE_TREE
 	ld [wBattleType], a
-	ld a, 1
+	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 
@@ -103,7 +103,9 @@ RockMonEncounter:
 	call SelectTreeMon
 	jr nc, XorARet
 
-	ld a, 1
+	ld a, BATTLETYPE_ROCK
+	ld [wBattleType], a
+	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 
