@@ -6650,8 +6650,11 @@ CheckSleepingTreeMon:
 ; Don't do anything if this isn't a tree encounter
 	ld a, [wBattleType]
 	cp BATTLETYPE_TREE
+	jr z, .Sleeping
+	cp BATTLETYPE_ROCK
 	jr nz, .NotSleeping
 
+.Sleeping:
 ; Get list for the time of day
 	ld hl, AsleepTreeMonsMorn
 	ld a, [wTimeOfDay]
@@ -9185,16 +9188,20 @@ BattleStartMessage:
 
 .skip_cry
 	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	jr nz, .NotFishing
 
 	ld hl, HookedPokemonAttackedText
-	jr .PlaceBattleStartText
+	cp BATTLETYPE_FISH
+	jr z, .PlaceBattleStartText
 
-.NotFishing:
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
+
+	ld hl, PokemonWasUnderRockText
+	cp BATTLETYPE_ROCK
+	jr z, .PlaceBattleStartText
+
+; else
 	ld hl, WildPokemonAppearedText
 
 .PlaceBattleStartText:
