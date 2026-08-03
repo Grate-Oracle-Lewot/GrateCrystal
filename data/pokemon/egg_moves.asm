@@ -63,6 +63,7 @@ SpearowEggMoves:
 EkansEggMoves:
 	db PURSUIT
 	db SPITE
+	db SUBMISSION
 	db EGG_BOMB
 	db SOFTBOILED
 	db SUPER_FANG
@@ -140,6 +141,7 @@ VenonatEggMoves:
 
 DiglettEggMoves:
 	db BONE_RUSH
+	db SUBMISSION
 	db ROCK_SLIDE
 	db POWER_GEM
 	db SPIKES
@@ -283,6 +285,7 @@ DoduoEggMoves:
 
 SeelEggMoves:
 	db PERISH_SONG
+	db SUBMISSION
 	db LICK
 	db SLAM
 	db PLAY_ROUGH
@@ -412,6 +415,7 @@ HorseaEggMoves:
 GoldeenEggMoves:
 	db LOVELY_KISS
 	db HAZE
+	db SUBMISSION
 	db SKULL_BASH
 	db IRON_HEAD
 	db DRILL_PECK
@@ -499,6 +503,7 @@ SnorlaxEggMoves:
 	db LOVELY_KISS
 	db HYPER_FANG
 	db LOW_KICK
+	db SUBMISSION
 	db STOMP
 	db SLAM
 	db IRON_HEAD
@@ -537,6 +542,7 @@ CyndaquilEggMoves:
 TotodileEggMoves:
 	db OUTRAGE
 	db ANCIENTPOWER
+	db SUBMISSION
 	db SLASH
 	db SUPER_FANG
 	db BIDE
@@ -777,6 +783,7 @@ GligarEggMoves:
 SnubbullEggMoves:
 	db REFLECT
 	db METRONOME
+	db SUBMISSION
 	db CLAMP
 	db MEAN_LOOK
 	db PRESENT
@@ -940,6 +947,7 @@ SmoochumEggMoves:
 	db -1 ; end
 
 ElekidEggMoves:
+	db SUBMISSION
 	db KARATE_CHOP
 	db BARRIER
 	db ROLLING_KICK
