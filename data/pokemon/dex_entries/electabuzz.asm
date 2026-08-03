@@ -1,10 +1,10 @@
 	db "ABOMINABLE@" ; species name
 	dw 307, 660 ; height, weight
 
-	db   "It tries to chall-"
-	next "enge thunderstorms"
-	next "to boxing matches."
+	db   "Its body's electric"
+	next "charge stimulates"
+	next "its muscles in"
 
-	page "Obviously, this"
-	next "doesn't go well."
-	next "@"
+	page "such a way that it"
+	next "doesn't need to"
+	next "work out.@"
