@@ -477,7 +477,7 @@ ENDM
 	map_const UNION_CAVE_B2F,                              10, 18 ;  50
 	map_const UNION_CAVE_SLOWPOKE_WELL_LINK,               20,  9 ;  51
 	map_const SLOWPOKE_WELL_B1F,                           10,  9 ;  52
-	map_const SLOWPOKE_WELL_B2F,                           10,  9 ;  53
+	map_const SLOWPOKE_WELL_B2F,                           10, 27 ;  53
 	map_const ILEX_FOREST,                                 15, 27 ;  54
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ;  55
 	map_const GOLDENROD_UNDERGROUND,                       15, 18 ;  56
