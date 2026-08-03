@@ -28,6 +28,12 @@ PokemonFellFromTreeText:
 	line "out of the tree!"
 	autodone
 
+PokemonWasUnderRockText:
+	text_ram wEnemyMonNickname
+	text " was"
+	line "under the rock!"
+	autodone
+
 WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
