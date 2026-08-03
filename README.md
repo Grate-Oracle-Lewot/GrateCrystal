@@ -556,7 +556,7 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 # Why aren't you using newbox?
 
-To be honest, it's because I keep seeing people having (small but significant) bugs with it. It's a great achievement, but I'm too paranoid.
+To be honest, it's because I keep seeing people having (small but significant) bugs with it. Additionally, it discourages you from abusing the Game Boy PC for healing =P
 
 # Why not unique icons for every Pokémon?
 
