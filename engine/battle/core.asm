@@ -1246,6 +1246,7 @@ ResidualDamage:
 
 	call SubtractHPFromUser
 	call SwitchTurnCore
+	call CheckDanger
 	jp .finish_leech_seed
 
 .HotPoisonOnPoisonAction
