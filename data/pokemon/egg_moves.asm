@@ -175,6 +175,7 @@ PsyduckEggMoves:
 
 MankeyEggMoves:
 	db ROCK_WRECKER
+	db SEISMIC_TOSS
 	db COUNTER
 	db REVERSAL
 	db LOW_KICK
@@ -515,6 +516,7 @@ DratiniEggMoves:
 	db BARRIER
 	db LIGHT_SCREEN
 	db SILVER_WIND
+	db SEISMIC_TOSS
 	db EARTH_POWER
 	db AIR_SLASH
 	db DOUBLE_EDGE
