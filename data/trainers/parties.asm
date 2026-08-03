@@ -5859,6 +5859,7 @@ endc
 SwimmerFGroup:
 	; SWIMMERF (1)
 	db "ELAINE@", TRAINERTYPE_NORMAL
+	db 29, CHINCHOU
 	db 31, STARYU
 	db -1 ; end
 
