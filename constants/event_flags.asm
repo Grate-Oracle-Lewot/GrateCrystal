@@ -370,7 +370,9 @@
 	const EVENT_SILPH_CO_6F_SWAG_BEACON
 	const EVENT_SILPH_CO_10F_X_EVADE
 	const EVENT_ROUTE_26_PP_UP
-; Unused: next 244 events
+	const EVENT_SLOWPOKE_WELL_B2F_LEFTOVERS
+	const EVENT_SLOWPOKE_WELL_B2F_QUICK_CLAW
+; Unused: next 242 events
 
 	const_next 600
 ; Kurt Apricorn events
