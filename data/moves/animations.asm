@@ -4694,16 +4694,19 @@ BattleAnim_PowerGem:
 	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
 	anim_call BattleAnim_ShowMon_0
 	anim_sound 0, 0, SFX_GAME_FREAK_PRESENTS
-.loop
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
 	anim_wait 4
 	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 80, $4
 	anim_wait 4
 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_wait 8
+	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 88, $4
 	anim_wait 4
-	anim_loop 2, .loop
-	anim_wait 12
+	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_SILVER_SPARKLE, 64, 96, $4
+	anim_wait 16
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_RED_GEM, 128, 42, $0
 	anim_wait 6
