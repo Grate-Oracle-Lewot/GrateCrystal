@@ -27,7 +27,7 @@ CeruleanPoliceStationOfficerText:
 	line "shady characters"
 
 	para "have been skulking"
-	cont "about."
+	line "about."
 
 	para "I won't stand for"
 	line "it if they turn"
