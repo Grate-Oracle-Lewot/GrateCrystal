@@ -1,10 +1,10 @@
 	db "OPERATIC@" ; species name
 	dw 407, 900 ; height, weight
 
-	db   "Its strange songs"
-	next "flow like music,"
-	next "and its movements"
+	db   "Legend holds that"
+	next "if you mimic a"
+	next "JYNX's cry in"
 
-	page "resemble dance."
-	next "It can suck energy"
-	next "out with a kiss.@"
+	page "chorus with it,"
+	next "you'll be blessed"
+	next "with beverages.@"
