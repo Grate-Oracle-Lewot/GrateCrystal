@@ -292,10 +292,11 @@ MediumChellText:
 
 ScientistHeinzSeenText:
 	text "Your timing is"
-	line "exquisite… And by"
+	line "exquisite…"
 
-	para "that I mean COMPL-"
-	line "ETELY QUISITE!"
+	para "And by exquisite,"
+	line "I mean COMPLETELY"
+	cont "QUISITE!"
 	done
 
 ScientistHeinzBeatenText:
