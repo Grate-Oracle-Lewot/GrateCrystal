@@ -743,8 +743,8 @@ KRIS EQU __trainer_class__
 	const DENISE
 	const KARA
 	const WENDY
-	const DAWN
 	const JACLYN
+	const DAWN
 	const NICOLE
 	const LORI
 	const NIKKI
