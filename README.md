@@ -584,7 +584,7 @@ Sorry, I'm not doing them all. It's pretty easy to hack my hack and make that ch
 
 # Why not correct the spelling of Vicegrip, Faint Attack, and Elixer?
 
-Nostalgia.
+My nostalgia overrides my grammatical persnicketiness in this particular case, apparently.
 
 # Why not space out the names of Solar Beam and—
 
