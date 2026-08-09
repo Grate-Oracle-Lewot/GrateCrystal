@@ -138,6 +138,7 @@
 	const MUSIC_NUGGET_BRIDGE                ; 84
 	const MUSIC_SAFFRON_CITY                 ; 85
 	const MUSIC_MT_SILVER                    ; 86
+	const MUSIC_OLD_MT_MOON                  ; 87
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
