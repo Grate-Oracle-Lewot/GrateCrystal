@@ -140,4 +140,5 @@ Music:
 	dba Music_NuggetBridgeHGSS
 	dba Music_SafariZoneGateHGSS
 	dba Music_RBYIndigoPlateau
+	dba Music_OldMtMoon
 	assert_table_length NUM_MUSIC_SONGS
