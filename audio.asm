@@ -185,6 +185,7 @@ INCLUDE "audio/music/cinnabarislandGBS.asm"
 INCLUDE "audio/music/nuggetbridge.asm"
 INCLUDE "audio/music/safarizonegate.asm"
 INCLUDE "audio/music/indigoplateauRBY.asm"
+INCLUDE "audio/music/oldmtmoon.asm"
 
 
 SECTION "Sound Effects", ROMX
