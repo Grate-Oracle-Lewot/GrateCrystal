@@ -1165,7 +1165,7 @@ ResidualDamage:
 	call GetEighthMaxHP
 	push bc
 	call SubtractHPFromUser
-	pop pc
+	pop bc
 	call CheckForPoisonType
 	jp z, .HandlePoisonLeechSeed
 .non_poison_leech
