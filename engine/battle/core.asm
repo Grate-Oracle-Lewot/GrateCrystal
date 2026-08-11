@@ -1163,7 +1163,9 @@ ResidualDamage:
 	call SwitchTurnCore
 
 	call GetEighthMaxHP
+	push bc
 	call SubtractHPFromUser
+	pop pc
 	call CheckForPoisonType
 	jp z, .HandlePoisonLeechSeed
 .non_poison_leech
