@@ -5374,7 +5374,6 @@ CamperGroup:
 	db "JOHN@", TRAINERTYPE_NORMAL
 	db 63, DUGTRIO
 	db 56, SANDSLASH
-	db 60, STARMIE
 	db 64, DONPHAN
 	db -1 ; end
 
@@ -5578,21 +5577,21 @@ PokefanMGroup:
 
 	; POKEFANM (8)
 	db "JOSHUA@", TRAINERTYPE_NICKNAME | TRAINERTYPE_DVS | TRAINERTYPE_ITEM
-	db 42, PIKACHU,    "THUNDERA",   $9D, $DD, GOLD_BERRY
-	db 42, PIKACHU,    "NORM",       $BB, $BA, GOLD_BERRY
-	db 42, PIKACHU,    "FEY",        $D9, $99, GOLD_BERRY
-	db 42, PIKACHU,    "CASSIUS",    $DD, $DE, GOLD_BERRY
-	db 42, PIKACHU,    "NANI",       $FB, $BD, GOLD_BERRY
-	db 42, PIKACHU,    "CARL",       $00, $FE, GOLD_BERRY
+	db 42, PIKACHU,    "THUNDERA@",  $9D, $DD, GOLD_BERRY
+	db 42, PIKACHU,    "NORM@",      $BB, $BA, GOLD_BERRY
+	db 42, PIKACHU,    "FEY@",       $D9, $99, GOLD_BERRY
+	db 42, PIKACHU,    "CASSIUS@",   $DD, $DE, GOLD_BERRY
+	db 42, PIKACHU,    "NANI@",      $FB, $BD, GOLD_BERRY
+	db 42, PIKACHU,    "CARL@",      $00, $FE, GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (9)
 	db "ALEX@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 50, SEAKING,    "seaKING",    GOLD_BERRY
-	db 50, KINGLER,    "KINGler",    GOLD_BERRY
-	db 54, SLOWKING,   "slowKING",   GOLD_BERRY
-	db 54, KINGDRA,    "KINGdra",    GOLD_BERRY
-	db 60, NIDOKING,   "nidoKING",   GOLD_BERRY
+	db 50, SEAKING,    "seaKING@",   GOLD_BERRY
+	db 50, KINGLER,    "KINGler@",   GOLD_BERRY
+	db 54, SLOWKING,   "slowKING@",  GOLD_BERRY
+	db 54, KINGDRA,    "KINGdra@",   GOLD_BERRY
+	db 60, NIDOKING,   "nidoKING@",  GOLD_BERRY
 	db -1 ; end
 
 	; POKEFANM (10)
