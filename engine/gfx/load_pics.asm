@@ -392,14 +392,8 @@ FixBackpicAlignment:
 	ld a, [wBoxAlignment]
 	and a
 	jr z, .keep_dims
-	ld a, c
-	cp 7 * 7
-	ld de, 7 * 7 tiles
-	jr z, .got_dims
-	cp 6 * 6
+	; assumes all backpics are 48x48
 	ld de, 6 * 6 tiles
-	jr z, .got_dims
-	ld de, 5 * 5 tiles
 
 .got_dims
 	ld a, [hl]
