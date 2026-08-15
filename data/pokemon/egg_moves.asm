@@ -620,6 +620,7 @@ FlogistanEggMoves:
 CleffaEggMoves:
 	db CONVERSION
 	db NIGHT_SHADE
+	db POWER_GEM
 	db AMNESIA
 	db BELLY_DRUM
 	db MIST
