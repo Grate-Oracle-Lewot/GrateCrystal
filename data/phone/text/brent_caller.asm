@@ -69,6 +69,9 @@ BrentFatherGossipText:
 
 	para "teach #MON"
 	line "powerful moves."
+
+	para "But apparently he's"
+	line "a gambling addict…"
 	done
 
 BrentGrandpaGossipText:
