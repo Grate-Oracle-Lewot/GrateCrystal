@@ -99,6 +99,10 @@ BrentAbraGossipText:
 
 	para "#MON that BILL"
 	line "ostensibly caught."
+
+	para "That must've been"
+	line "quite a stroke of"
+	cont "luck, huh?"
 	done
 
 BrentSisterGossipText:
@@ -123,6 +127,9 @@ BrentBattlingGossipText:
 
 	para "isn't very good at"
 	line "battling."
+
+	para "That's why he foc-"
+	line "uses on research."
 	done
 
 BrentFlowerShopGossipText:
