@@ -1453,7 +1453,7 @@ HeadbuttFunction:
 
 TryHeadbuttFromMenu:
 	call GetFacingTileCoord
-	call CheckHeadbuttTreeTile
+	cp COLL_HEADBUTT_TREE
 	jr nz, .no_tree
 
 	ld hl, HeadbuttFromMenuScript
