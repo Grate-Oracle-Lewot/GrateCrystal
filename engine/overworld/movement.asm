@@ -671,7 +671,7 @@ NormalStep:
 	ld hl, OBJECT_NEXT_TILE
 	add hl, bc
 	ld a, [hl]
-	call CheckSuperTallGrassTile
+	cp COLL_LONG_GRASS
 	jr z, .shake_grass
 
 	call CheckGrassTile
