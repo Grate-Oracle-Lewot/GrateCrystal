@@ -239,7 +239,7 @@ UpdateTallGrassFlags:
 	ret
 
 SetTallGrassFlags:
-	call CheckSuperTallGrassTile
+	cp COLL_LONG_GRASS
 	jr z, .set
 	call CheckGrassTile
 	jr c, .reset
@@ -597,7 +597,7 @@ MovementFunction_Strength:
 	ld hl, OBJECT_NEXT_TILE
 	add hl, bc
 	ld a, [hl]
-	call CheckPitTile
+	cp COLL_PIT
 	jr z, .on_pit
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
