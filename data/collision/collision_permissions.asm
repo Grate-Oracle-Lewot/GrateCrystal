@@ -34,7 +34,7 @@ TileCollisionTable::
 	db LAND_TILE         ; 1e
 	db LAND_TILE         ; 1f
 	db WATER_TILE        ; 20
-	db WATER_TILE        ; COLL_WATER_21
+	db WATER_TILE        ; COLL_DIVE_SPOT
 	db WATER_TILE | TALK ; 22
 	db LAND_TILE         ; COLL_ICE
 	db WATER_TILE | TALK ; COLL_WHIRLPOOL
