@@ -128,26 +128,6 @@ CheckGrassTile::
 	scf
 	ret
 
-CheckSuperTallGrassTile::
-	cp COLL_LONG_GRASS
-	ret
-
-CheckCutTreeTile::
-	cp COLL_CUT_TREE
-	ret
-
-CheckHeadbuttTreeTile::
-	cp COLL_HEADBUTT_TREE
-	ret
-
-CheckCounterTile::
-	cp COLL_COUNTER
-	ret
-
-CheckPitTile::
-	cp COLL_PIT
-	ret
-
 CheckIceTile::
 	cp COLL_ICE
 	ret z
