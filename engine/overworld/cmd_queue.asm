@@ -26,7 +26,7 @@ HandleStoneTable::
 	ld hl, OBJECT_NEXT_TILE
 	add hl, de
 	ld a, [hl]
-	call CheckPitTile
+	cp COLL_PIT
 	jr nz, .next
 
 	ld hl, OBJECT_DIRECTION_WALKING
