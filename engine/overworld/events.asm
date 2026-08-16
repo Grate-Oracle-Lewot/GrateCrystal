@@ -306,7 +306,7 @@ CheckTileEvent:
 
 .warp_tile
 	ld a, [wPlayerStandingTile]
-	call CheckPitTile
+	cp COLL_PIT
 	jr nz, .not_pit
 	ld a, PLAYEREVENT_FALL
 	scf
@@ -981,7 +981,7 @@ TryTileCollisionEvent::
 	farcall CheckFacingTileForStdScript
 	jr c, .done
 
-	call CheckCutTreeTile
+	cp COLL_CUT_TREE
 	jr nz, .whirlpool
 	farcall TryCutOW
 	jr .done
@@ -1002,7 +1002,7 @@ TryTileCollisionEvent::
 
 .headbutt
 	ld a, [wFacingTileID]
-	call CheckHeadbuttTreeTile
+	cp COLL_HEADBUTT_TREE
 	jr nz, .surf
 	farcall TryHeadbuttOW
 	jr c, .done
@@ -1148,7 +1148,7 @@ ChooseWildEncounter_BugContest::
 
 TryWildEncounter_BugContest:
 	ld a, [wPlayerStandingTile]
-	call CheckSuperTallGrassTile
+	cp COLL_LONG_GRASS
 	ld b, 40 percent
 	jr z, .ok
 	ld b, 20 percent
