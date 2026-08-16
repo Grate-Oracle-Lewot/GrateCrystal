@@ -414,8 +414,15 @@ RestartMapMusic::
 	pop hl
 	ret
 
+GetMapMusic_MaybeSpecial::
+	call SpecialMapMusic
+	ret c
+	jp GetMapMusic
+
 SpecialMapMusic::
 	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .bike
 	cp PLAYER_SURF
 	jr z, .surf
 	cp PLAYER_SURF_PIKA
@@ -434,6 +441,22 @@ SpecialMapMusic::
 	scf
 	ret
 
+.bike
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_16
+	jr nz, .normbike
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_16
+	jr c, .normbike
+	ld de, MUSIC_CYCLING_ROAD
+	jr .donebike
+
+.normbike
+	ld de, MUSIC_BICYCLE
+.donebike
+	scf
+	ret
+
 .contest
 	ld a, [wMapGroup]
 	cp GROUP_ROUTE_35_NATIONAL_PARK_GATE
@@ -446,32 +469,27 @@ SpecialMapMusic::
 
 .ranking
 	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
+	; fallthrough
+
+HomeAudio_SharedScf:
 	scf
 	ret
-
-GetMapMusic_MaybeSpecial::
-	call SpecialMapMusic
-	ret c
-	jp GetMapMusic
 
 CheckSFX::
 ; Return carry if any SFX channels are active.
 	ld a, [wChannel5Flags1]
 	bit 0, a
-	jr nz, .playing
+	jr nz, HomeAudio_SharedScf
 	ld a, [wChannel6Flags1]
 	bit 0, a
-	jr nz, .playing
+	jr nz, HomeAudio_SharedScf
 	ld a, [wChannel7Flags1]
 	bit 0, a
-	jr nz, .playing
+	jr nz, HomeAudio_SharedScf
 	ld a, [wChannel8Flags1]
 	bit 0, a
-	jr nz, .playing
+	jr nz, HomeAudio_SharedScf
 	and a
-	ret
-.playing
-	scf
 	ret
 
 TerminateExpBarSound::
