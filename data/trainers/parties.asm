@@ -5356,7 +5356,7 @@ CamperGroup:
 
 	; CAMPER (17)
 	db "LEROY@", TRAINERTYPE_NORMAL
-	db 48, GOLEM
+	db 48, STARMIE
 	db 46, OMASTAR
 	db 42, MURKROW
 	db 44, SLOWBRO
