@@ -1391,33 +1391,35 @@ OnixEvosAttacks:
 DrowzeeEvosAttacks:
 	db EVOLVE_LEVEL, 26, HYPNO
 	db 0 ; no more evolutions
+	db 1, MEDITATE
 	db 1, LEECH_LIFE
 	db 1, HYPNOSIS
 	db 5, DISABLE
 	db 8, CONFUSION
 	db 17, PURSUIT
-	db 25, FAINT_ATTACK
+	db 25, METRONOME
 	db 31, DREAM_EATER
-	db 36, MEDITATE
-	db 40, PSYCHIC_M
+	db 36, DARK_PULSE
+	db 40, FORESIGHT
 	db 43, NIGHTMARE
-	db 45, FORESIGHT
+	db 45, PSYCHIC_M
 	db 49, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
 HypnoEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, MEDITATE
 	db 1, LEECH_LIFE
 	db 1, HYPNOSIS
 	db 5, DISABLE
 	db 8, CONFUSION
 	db 17, PURSUIT
-	db 25, FAINT_ATTACK
+	db 25, METRONOME
 	db 33, DREAM_EATER
-	db 40, MEDITATE
-	db 46, PSYCHIC_M
+	db 40, DARK_PULSE
+	db 46, FORESIGHT
 	db 50, NIGHTMARE
-	db 55, FORESIGHT
+	db 55, PSYCHIC_M
 	db 60, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
