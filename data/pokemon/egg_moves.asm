@@ -323,6 +323,7 @@ OnixEggMoves:
 	db -1 ; end
 
 DrowzeeEggMoves:
+	db FAINT_ATTACK
 	db LIGHT_SCREEN
 	db BARRIER
 	db MEAN_LOOK
