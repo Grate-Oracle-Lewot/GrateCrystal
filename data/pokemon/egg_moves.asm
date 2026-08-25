@@ -600,7 +600,6 @@ ChinchouEggMoves:
 	db -1 ; end
 
 PichuEggMoves:
-	db PRESENT
 	db DOUBLESLAP
 	db TRIPLE_KICK
 	db HI_JUMP_KICK
@@ -670,13 +669,12 @@ MareepEggMoves:
 	db -1 ; end
 
 MarillEggMoves:
-	db FUTURE_SIGHT
-	db SUPERSONIC
-	db PERISH_SONG
-	db AMNESIA
+	db BATON_PASS
+	db ROLLING_KICK
 	db LIGHT_SCREEN
-	db PRESENT
-	db FORESIGHT
+	db AMNESIA
+	db SLAM
+	db DOUBLESLAP
 	db -1 ; end
 
 SudowoodoEggMoves:
@@ -684,6 +682,7 @@ SudowoodoEggMoves:
 	db ANCIENTPOWER
 	db KARATE_CHOP
 	db SWORDS_DANCE
+	db SLAM
 	db METRONOME
 	db -1 ; end
 
