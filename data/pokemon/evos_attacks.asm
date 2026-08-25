@@ -2902,6 +2902,7 @@ AipomEvosAttacks:
 	db 42, SEISMIC_TOSS
 	db 47, MEGA_PUNCH
 	db 54, DOUBLE_EDGE
+	db 60, METRONOME
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
