@@ -1393,7 +1393,7 @@ DrowzeeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, MEDITATE
 	db 1, LEECH_LIFE
-	db 1, HYPNOSIS
+	db 2, HYPNOSIS
 	db 5, DISABLE
 	db 8, CONFUSION
 	db 17, PURSUIT
@@ -1410,7 +1410,7 @@ HypnoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, MEDITATE
 	db 1, LEECH_LIFE
-	db 1, HYPNOSIS
+	db 2, HYPNOSIS
 	db 5, DISABLE
 	db 8, CONFUSION
 	db 17, PURSUIT
