@@ -29,9 +29,9 @@ DragonShrine_MapScripts:
 	loadmenu DragonShrineQuestion1_MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .RightAnswer
-	ifequal 2, .WrongAnswer
-	ifequal 3, .RightAnswer
+	ifequal 1, .WrongAnswer
+	ifequal 2, .RightAnswer
+	ifequal 3, .WrongAnswer
 	end
 
 .Question2:
@@ -51,7 +51,7 @@ DragonShrine_MapScripts:
 	loadmenu DragonShrineQuestion3_MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .WrongAnswer
+	ifequal 1, .RightAnswer
 	ifequal 2, .RightAnswer
 	ifequal 3, .RightAnswer
 .Question4:
@@ -61,9 +61,9 @@ DragonShrine_MapScripts:
 	loadmenu DragonShrineQuestion4_MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .RightAnswer
-	ifequal 2, .WrongAnswer
-	ifequal 3, .RightAnswer
+	ifequal 1, .WrongAnswer
+	ifequal 2, .RightAnswer
+	ifequal 3, .WrongAnswer
 .Question5:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	writetext DragonShrineQuestion5Text
@@ -72,8 +72,8 @@ DragonShrine_MapScripts:
 	verticalmenu
 	closewindow
 	ifequal 1, .WrongAnswer
-	ifequal 2, .RightAnswer
-	ifequal 3, .WrongAnswer
+	ifequal 2, .WrongAnswer
+	ifequal 3, .RightAnswer
 .RightAnswer:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .PassedTheTest
@@ -201,9 +201,7 @@ DragonShrineElder1Script:
 	checkevent EVENT_BEAT_RIVAL_IN_MT_MOON
 	iftrue .BeatRivalInMtMoon
 	writetext DragonShrineClairsGrandfatherText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 .GiveDratini:
 	writetext DragonShrineTakeThisDratiniText
@@ -220,9 +218,7 @@ DragonShrineElder1Script:
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 .nuzlocke
 	farcall NuzlockeSetAreaFlag
@@ -230,58 +226,88 @@ DragonShrineElder1Script:
 
 .PartyFull:
 	writetext DragonShrinePartyFullText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 .BeatRivalInMtMoon:
 	writetext DragonShrineSilverIsInTrainingText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 .DontGiveDratiniYet:
 	writetext DragonShrineComeAgainText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 .ReceivedDratini:
 	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 DragonShrineElder2Script:
 	faceplayer
 	opentext
 	writetext DragonShrineElder2Text
-	waitbutton
-	closetext
-	end
+	sjump DragonShrine_EndText
 
 DragonShrineElder3Script:
 	faceplayer
 	opentext
 	writetext DragonShrineElder3Text
+DragonShrine_EndText:
 	waitbutton
 	closetext
 	end
 
 DragonShrineQuestion1_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 10, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "Partner@"
-	db "Underling@"
-	db "Friend@"
+	db "<RIVAL>@"
+	db "<PLAYER>@"
+	db "LEWOT@"
 
 DragonShrineQuestion2_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 6, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db 3 ; items
+	db "<PKMN> LEAGUE@"
+	db "World peace@"
+	db "Skip school@"
+
+DragonShrineQuestion3_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 10, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db 3 ; items
+	db "Gold@"
+	db "Silver@"
+	db "Rainbow@"
+
+DragonShrineQuestion4_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 11, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db 3 ; items
+	db "MACH 1@"
+	db "MACH 2@"
+	db "MACH 5@"
+
+DragonShrineQuestion5_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 9, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MenuData
@@ -290,48 +316,9 @@ DragonShrineQuestion2_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "Strategy@"
-	db "Training@"
-	db "Cheating@"
-
-DragonShrineQuestion3_MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 5, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	db 3 ; items
-	db "Weak person@"
-	db "Tough person@"
-	db "Anybody@"
-
-DragonShrineQuestion4_MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	db 3 ; items
-	db "Love@"
-	db "Violence@"
-	db "Knowledge@"
-
-DragonShrineQuestion5_MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 12, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	db 3 ; items
-	db "Tough@"
-	db "Both@"
-	db "Weak@"
+	db "Style@"
+	db "Money@"
+	db "Humility@"
 
 DragonShrinePlayerWalkInMovement:
 	slow_step UP
@@ -416,51 +403,44 @@ DragonShrineElderGreetingText:
 	done
 
 DragonShrineQuestion1Text:
-	text "What are #MON"
-	line "to you?"
+	text "What is your name?"
 	done
 
 DragonShrineQuestion2Text:
-	text "What helps you to"
-	line "win battles?"
+	text "What is your"
+	line "quest?"
 	done
 
 DragonShrineQuestion3Text:
-	text "What kind of"
-	line "trainer do you"
-	cont "wish to battle?"
+	text "What is your"
+	line "favorite color?"
 	done
 
 DragonShrineQuestion4Text:
-	text "What is most"
-	line "important for"
-	cont "raising #MON?"
+	text "What is the airsp-"
+	line "eed velocity of an"
+	cont "unladen PIDGEOT?"
 	done
 
 DragonShrineQuestion5Text:
-	text "Strong #MON."
-	line "Weak #MON."
-
-	para "Which is more"
-	line "important?"
+	text "What is it that"
+	line "CLAIR lacks?"
 	done
 
 DragonShrinePassedTestText:
-	text "Hm… I see…"
+	text "Indeed…"
 
-	para "You care deeply"
-	line "for #MON."
+	para "Her skill is true,"
+	line "but her desire to"
 
-	para "Very commendable."
+	para "prove herself"
+	line "blinds her to the"
 
-	para "That conviction is"
-	line "what is important!"
+	para "lessons she might"
+	line "learn in defeat."
 
-	para "<PLAYER>, don't"
-	line "lose that belief."
-
-	para "It will see you"
-	line "through at the"
+	para "Keep this in mind"
+	line "when you face the"
 	cont "#MON LEAGUE."
 	done
 
@@ -568,7 +548,7 @@ DragonShrineWrongAnswerText2:
 	done
 
 DragonShrineRightAnswerText:
-	text "Oh, I understand…"
+	text "I see…"
 	done
 
 DragonShrineElder2Text:
