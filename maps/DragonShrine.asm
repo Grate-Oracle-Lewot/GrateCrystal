@@ -355,6 +355,7 @@ DragonShrineElderWalkToClairMovement:
 	step_end
 
 DragonShrineElderWalkAway1Movement:
+DragonShrineClairTwoSlowStepsRightMovement:
 	slow_step RIGHT
 	slow_step RIGHT
 	step_end
@@ -380,11 +381,6 @@ DragonShrineClairBigStepLeftMovement:
 DragonShrineClairSlowStepLeftMovement:
 	slow_step LEFT
 	remove_fixed_facing
-	step_end
-
-DragonShrineClairTwoSlowStepsRightMovement:
-	slow_step RIGHT
-	slow_step RIGHT
 	step_end
 
 DragonShrineClairWalkOutMovement:
