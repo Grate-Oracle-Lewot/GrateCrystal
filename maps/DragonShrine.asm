@@ -90,14 +90,10 @@ DragonShrine_MapScripts:
 	turnobject DRAGONSHRINE_ELDER1, LEFT
 	showemote EMOTE_QUESTION, DRAGONSHRINE_ELDER1, 10
 	opentext
-	writetext DragonShrineWrongAnswerText1
+	writetext DragonShrineWrongAnswerText
 	waitbutton
 	closetext
 	turnobject DRAGONSHRINE_ELDER1, DOWN
-	opentext
-	writetext DragonShrineWrongAnswerText2
-	waitbutton
-	closetext
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .Question5
@@ -535,14 +531,9 @@ DragonShrineSilverIsInTrainingText:
 	line "little worrisome…"
 	done
 
-DragonShrineWrongAnswerText1:
+DragonShrineWrongAnswerText:
 	text "Hah? I didn't"
 	line "quite catch that…"
-	done
-
-DragonShrineWrongAnswerText2:
-	text "What was it you"
-	line "said?"
 	done
 
 DragonShrineElder2Text:
