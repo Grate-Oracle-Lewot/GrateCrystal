@@ -77,8 +77,6 @@ DragonShrine_MapScripts:
 .RightAnswer:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .PassedTheTest
-	writetext DragonShrineRightAnswerText
-	promptbutton
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	iftrue .Question5
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
@@ -545,10 +543,6 @@ DragonShrineWrongAnswerText1:
 DragonShrineWrongAnswerText2:
 	text "What was it you"
 	line "said?"
-	done
-
-DragonShrineRightAnswerText:
-	text "I see…"
 	done
 
 DragonShrineElder2Text:
