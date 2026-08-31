@@ -236,7 +236,7 @@ BattleCommand_CheckTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of hitting itself
-	call EffectCommands_50_50
+	call BattleRandom_50_50
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -261,7 +261,7 @@ BattleCommand_CheckTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of infatuation
-	call EffectCommands_50_50
+	call BattleRandom_50_50
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
@@ -449,7 +449,7 @@ CheckEnemyTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of hitting itself
-	call EffectCommands_50_50
+	call BattleRandom_50_50
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -491,7 +491,7 @@ CheckEnemyTurn:
 	call FarPlayBattleAnimation
 
 	; 50% chance of infatuation
-	call EffectCommands_50_50
+	call BattleRandom_50_50
 	jr c, .not_infatuated
 
 	ld hl, InfatuationText
@@ -2144,7 +2144,7 @@ BattleCommand_ApplyDamage:
 	ld a, b
 	cp HELD_FOCUS_SASH
 	jr nz, .dont_consume
-	farcall ConsumeHeldItem
+	call _ConsumeHeldItem
 .dont_consume
 	ld hl, HungOnText
 	jp StdBattleTextbox
@@ -6990,7 +6990,7 @@ ContactStatic:
 	call GetItemName
 
 	call BattleCommand_SwitchTurn
-	farcall ConsumeHeldItem
+	call _ConsumeHeldItem
 	call BattleCommand_SwitchTurn
 	ld hl, StaticChewyBerryText
 	jp StdBattleTextbox
@@ -7119,7 +7119,6 @@ PaletteOptimization:
 	call DelayFrame
 	jp UpdateBattleHuds
 
-EffectCommands_50_50:
-	call BattleRandom
-	cp 50 percent + 1
+_ConsumeHeldItem:
+	farcall ConsumeHeldItem
 	ret
