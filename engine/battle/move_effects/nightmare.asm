@@ -59,7 +59,8 @@ BattleCommand_Nightmare:
 	ld hl, FellAsleepText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
+	ld hl, UseHeldStatusHealingItem
+	call CallBattleCore
 ; If Nightmare-induced Sleep is cured by a held item, don't bother trying to inflict Nightmare due to grammatical awkwardness of "but it failed" in that case.
 ; This is effectively similar to special-text fails for Noisemaker and Safeguard, just cutting off after the "recovered with item" text.
 	ret nz
