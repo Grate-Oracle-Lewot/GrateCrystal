@@ -2085,6 +2085,10 @@ GetMaxHP:
 	ld c, a
 	ret
 
+GetHalfMaxHP_CheckUserHasEnoughHP::
+	call GetHalfMaxHP
+	; fallthrough
+
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
 	ldh a, [hBattleTurn]
@@ -2149,7 +2153,7 @@ SwitchTurnCore:
 	ldh [hBattleTurn], a
 	ret
 
-SubtractHPFromUser:
+SubtractHPFromUser::
 	call SubtractHP
 	; fallthrough
 
