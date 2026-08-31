@@ -245,7 +245,7 @@ BattleCommand_UTurn:
 	call SwitchMoveReturnToBattleScene
 
 	ld hl, PlayerUTurnSwitch
-	jp CallBattleCore
+	jr SwitchMoves_CallBattleCore
 
 .Enemy:
 ; Wildmons don't have anything to switch to
@@ -260,13 +260,15 @@ BattleCommand_UTurn:
 
 ; Passed enemy PartyMon entrance
 	ld hl, EnemyUTurnSwitch
+	; fallthrough
+
+SwitchMoves_CallBattleCore:
 	jp CallBattleCore
 
 SwitchMoveTransitionIntoMenu:
 	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu
-	farcall ForcePickSwitchMonInBattle
-	ret
+	ld hl, SetUpBattlePartyMenu_ForcePickSwitchMonInBattle
+	jr SwitchMoves_CallBattleCore
 
 SwitchMoveReturnToBattleScene:
 	call ClearPalettes
