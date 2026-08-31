@@ -23,7 +23,7 @@ BattleCommand_Selfdestruct:
 	ld a, [wOptions]
 	bit BATTLE_SCENE, a
 	ret nz
-	farcall DrawPlayerHUD
-	farcall DrawEnemyHUD
+	ld hl, DrawPlayerHUD_DrawEnemyHUD
+	call CallBattleCore
 	call WaitBGMap
 	jp RefreshBattleHuds
