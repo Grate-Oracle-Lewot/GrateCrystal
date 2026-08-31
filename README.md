@@ -202,7 +202,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Tri Attack is now ???-type like Unown, and its effectiveness is based on Fire, Ice, and Electric combined.
 
-- Thief, if the user is already holding an item, now still removes the target's item, effectively acting like Knock Off in that case, except the item is permanently lost.
+- Thief now combines its effect with that of Knock Off: it knocks off a held item if it can't steal one, and if knocked off or stolen, the damage is doubled. However, knocked off items are permanently lost.
 
 - Foresight, along with letting Normal and Fighting moves hit Ghost types, now lets Ghost moves hit Normal types and Psychic moves hit Dark types. Foresight, Mind Reader, and Lock-On also can't miss, with a few exceptions like Fly/Dig.
 
