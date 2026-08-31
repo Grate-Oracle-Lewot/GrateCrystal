@@ -27,7 +27,7 @@ BattleCommand_LeechSeed:
 	set SUBSTATUS_LEECH_SEED, [hl]
 	call AnimateCurrentMove
 	ld hl, WasSeededText
-	jp StdBattleTextbox
+	jr .done
 
 .grass
 	call AnimateFailedMove
@@ -36,4 +36,5 @@ BattleCommand_LeechSeed:
 .evaded
 	call AnimateFailedMove
 	ld hl, EvadedText
+.done
 	jp StdBattleTextbox
