@@ -2991,6 +2991,10 @@ PickSwitchMonInBattle:
 	xor a
 	ret
 
+SetUpBattlePartyMenu_ForcePickSwitchMonInBattle::
+	call SetUpBattlePartyMenu
+	; fallthrough
+
 ForcePickSwitchMonInBattle:
 ; Can't back out.
 
@@ -2998,7 +3002,6 @@ ForcePickSwitchMonInBattle:
 	call ForcePickPartyMonInBattle
 	call SwitchMonAlreadyOut
 	jr c, .pick
-
 	xor a
 	ret
 
