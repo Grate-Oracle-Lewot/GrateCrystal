@@ -3712,7 +3712,12 @@ BattleCommand_PoisonTarget:
 	; fallthrough
 
 _UseHeldStatusHealingItem:
-	farcall UseHeldStatusHealingItem
+	ld hl, UseHeldStatusHealingItem
+	; fallthrough
+
+CallBattleCore:
+	ld a, BANK("Battle Core")
+	rst FarCall
 	ret
 
 BattleCommand_Poison:
@@ -3846,8 +3851,8 @@ LiquidOoze:
 	call CheckIfTargetIsGivenType
 	jr z, .no_ooze
 	call BattleCommand_SwitchTurn
-	farcall _LiquidOoze
-	ret
+	ld hl, _LiquidOoze
+	jp CallBattleCore
 
 .no_ooze
 	; Poison-types can drain each other without being hurt
@@ -5048,7 +5053,8 @@ BattleCommand_ForceSwitch:
 	ld a, d
 	inc a
 	ld [wEnemySwitchMonIndex], a
-	farcall ForceEnemySwitch
+	ld hl, ForceEnemySwitch
+	call CallBattleCore
 
 	ld hl, DraggedOutText
 	call StdBattleTextbox
@@ -5456,7 +5462,7 @@ BattleCommand_Charge:
 	jr .not_flying
 
 .flying
-	call DisappearUser
+	farcall _DisappearUser
 .not_flying
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
@@ -6412,7 +6418,8 @@ BattleCommand_Synthesis:
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
-	farcall RestoreHP
+	ld hl, RestoreHP
+	call CallBattleCore
 
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
@@ -6636,11 +6643,6 @@ PlayOpponentBattleAnim:
 	pop hl
 	ret
 
-CallBattleCore:
-	ld a, BANK("Battle Core")
-	rst FarCall
-	ret
-
 BattleCommand_MoveDelay:
 ; Pause between actions.
 	ld c, 19
@@ -6704,10 +6706,6 @@ GetMoveByte:
 	ld a, BANK(Moves)
 GetFarByteCommon:
 	jp GetFarByte
-
-DisappearUser:
-	farcall _DisappearUser
-	ret
 
 SandstormSpDefBoost: 
 ; First, check if Sandstorm is active.
