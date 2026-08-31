@@ -174,4 +174,5 @@ BattleCommandPointers:
 	dw BattleCommand_Avalanche
 	dw BattleCommand_Conversion
 	dw BattleCommand_EggBomb
+	dw BattleCommand_DoubleHeldItemDamage
 	assert_table_length NUM_EFFECT_COMMANDS
