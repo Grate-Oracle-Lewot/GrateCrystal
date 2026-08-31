@@ -1434,6 +1434,7 @@ Thief:
 	damagevariation
 	doublehelditemdamage
 	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
