@@ -894,8 +894,8 @@ TripleKickDescriptionScrunched:
 	feed "with rising power.@"
 
 ThiefDescriptionScrunched:
-	db   "Steals or knocks"
-	feed "off the foe's item.@"
+	db   "Steals held items,"
+	feed "doubling damage.@"
 
 SpiderWebDescriptionScrunched:
 MeanLookDescriptionScrunched:
