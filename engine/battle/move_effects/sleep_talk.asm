@@ -119,9 +119,7 @@ BattleCommand_SleepTalk:
 	push de
 	push bc
 
-	ld b, a
-	farcall GetMoveEffect
-	ld a, b
+	call CounterMirrorCoatGetMoveEffect
 
 	pop bc
 	pop de
