@@ -1,11 +1,6 @@
-BattleCommand_Thief:
+BattleCommand_DoubleHeldItemDamage:
 ; Don't steal items in link battles.
 	ld a, [wLinkMode]
-	and a
-	ret nz
-
-; Don't steal if the move effect didn't trigger. Redundant because Thief has a 100% effect chance.
-	ld a, [wEffectFailed]
 	and a
 	ret nz
 
@@ -20,9 +15,40 @@ BattleCommand_Thief:
 	ret z
 
 ; Can't steal mail!
-	ld [wNamedObjectIndex], a
-	ld d, a
-	farcall ItemIsMail
+	call Thief_MailItem
+	ret c
+	jp DoubleDamage
+
+.enemy
+; The player must have an item to steal.
+	call Thief_PlayerItem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail!
+	call Thief_MailItem
+	ret c
+	jp DoubleDamage
+
+BattleCommand_Thief:
+; Don't steal items in link battles.
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+; The enemy must have an item to steal.
+	call Thief_EnemyItem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail!
+	call Thief_MailItem
 	ret c
 
 	call Thief_EnemyItem
@@ -49,9 +75,7 @@ BattleCommand_Thief:
 	ret z
 
 ; Can't steal mail!
-	ld [wNamedObjectIndex], a
-	ld d, a
-	farcall ItemIsMail
+	call Thief_MailItem
 	ret c
 
 	call Thief_PlayerItem
@@ -93,4 +117,10 @@ Thief_EnemyItem:
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonItem
+	ret
+
+Thief_MailItem:
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
 	ret
