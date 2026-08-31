@@ -133,8 +133,8 @@ BattleCommand_Transform:
 	call nz, LoadAnim
 	ld hl, TransformedText
 	call StdBattleTextbox
-	farcall HandleStatBoostingHeldItems
-	ret
+	ld hl, HandleStatBoostingHeldItems
+	jp CallBattleCore
 
 BattleSideCopy:
 ; Copy bc bytes from hl to de if it's the player's turn.
