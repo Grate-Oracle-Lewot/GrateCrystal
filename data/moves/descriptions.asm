@@ -894,7 +894,7 @@ TripleKickDescription:
 	next "with rising power.@"
 
 ThiefDescription:
-	db   "Steals held item,"
+	db   "Steals held items,"
 	next "doubling damage.@"
 
 SpiderWebDescription:
