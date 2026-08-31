@@ -1,6 +1,14 @@
 BattleCommand_DoubleHeldItemDamage:
+; Double the damage if the target is holding an item, prior to removing that item.
+; Separate from the actual stealing function becuase it needs to be used earlier in data/moves/effects.asm.
+
 ; Don't steal items in link battles.
 	ld a, [wLinkMode]
+	and a
+	ret nz
+
+; Don't steal if the move effect didn't trigger.
+	ld a, [wEffectFailed]
 	and a
 	ret nz
 
@@ -17,7 +25,7 @@ BattleCommand_DoubleHeldItemDamage:
 ; Can't steal mail!
 	call Thief_MailItem
 	ret c
-	jp DoubleDamage
+	jr .double
 
 .enemy
 ; The player must have an item to steal.
@@ -29,11 +37,17 @@ BattleCommand_DoubleHeldItemDamage:
 ; Can't steal mail!
 	call Thief_MailItem
 	ret c
+.double
 	jp DoubleDamage
 
 BattleCommand_Thief:
 ; Don't steal items in link battles.
 	ld a, [wLinkMode]
+	and a
+	ret nz
+
+; Don't steal if the move effect didn't trigger.
+	ld a, [wEffectFailed]
 	and a
 	ret nz
 
