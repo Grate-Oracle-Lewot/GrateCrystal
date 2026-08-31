@@ -4922,6 +4922,10 @@ UpdateEnemyHUD::
 	pop hl
 	ret
 
+DrawPlayerHUD_DrawEnemyHUD::
+	call DrawPlayerHUD
+	; fallthrough
+
 DrawEnemyHUD:
 	xor a
 	ldh [hBGMapMode], a
