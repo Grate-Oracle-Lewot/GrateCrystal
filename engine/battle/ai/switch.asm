@@ -191,7 +191,7 @@ CheckAbleToSwitch:
 	jp nz, .likely_switch
 
 	; 50% chance of skipping SubStatus5 checks
-	call EffectCommands_50_50
+	call BattleRandom_50_50
 	jr c, .no_status
 
 	; ~40% chance (due to above 50/50) to switch if badly poisoned, Encored, or Destiny Bonded
