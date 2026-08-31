@@ -78,3 +78,8 @@ RandomRange::
 
 	pop bc
 	ret
+
+BattleRandom_50_50::
+	call BattleRandom
+	cp 50 percent + 1
+	ret
