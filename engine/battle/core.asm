@@ -923,7 +923,7 @@ GetMovePriority:
 
 INCLUDE "data/moves/effects_priorities.asm"
 
-GetMoveEffect:
+GetMoveEffect::
 	ld a, b
 	dec a
 	ld hl, Moves + MOVE_EFFECT
@@ -2103,7 +2103,7 @@ CheckUserHasEnoughHP:
 	sbc [hl]
 	ret
 
-RestoreHP:
+RestoreHP::
 	ld hl, wEnemyMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
@@ -3190,7 +3190,7 @@ SlideBattlePicOut:
 	jr nz, .back
 	ret
 
-ForceEnemySwitch:
+ForceEnemySwitch::
 	call ResetEnemyBattleVars
 	ld a, [wEnemySwitchMonIndex]
 	dec a
@@ -4522,7 +4522,7 @@ ItemRecoveryAnim:
 	pop hl
 	ret
 
-UseHeldStatusHealingItem:
+UseHeldStatusHealingItem::
 	call _GetOpponentItem
 	ld hl, HeldStatusHealingEffects
 .loop
@@ -4656,7 +4656,7 @@ HandleApricornsAndSpikes:
 	call SpikesDamage
 	; fallthrough
 
-HandleStatBoostingHeldItems:
+HandleStatBoostingHeldItems::
 	; reset failure conditions for RaiseStat
 	xor a
 	ld [wAttackMissed], a
