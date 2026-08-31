@@ -2144,7 +2144,7 @@ BattleCommand_ApplyDamage:
 	ld a, b
 	cp HELD_FOCUS_SASH
 	jr nz, .dont_consume
-	call _ConsumeHeldItem
+	farcall ConsumeHeldItem
 .dont_consume
 	ld hl, HungOnText
 	jp StdBattleTextbox
@@ -6990,7 +6990,7 @@ ContactStatic:
 	call GetItemName
 
 	call BattleCommand_SwitchTurn
-	call _ConsumeHeldItem
+	farcall ConsumeHeldItem
 	call BattleCommand_SwitchTurn
 	ld hl, StaticChewyBerryText
 	jp StdBattleTextbox
@@ -7118,7 +7118,3 @@ PaletteOptimization:
 	call SetPalettes
 	call DelayFrame
 	jp UpdateBattleHuds
-
-_ConsumeHeldItem:
-	farcall ConsumeHeldItem
-	ret
