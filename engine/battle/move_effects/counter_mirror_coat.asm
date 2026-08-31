@@ -2,9 +2,7 @@ BattleCommand_Counter:
 	call CounterMirrorCoatFirstCheck
 	ret z
 
-	ld b, a
-	farcall GetMoveEffect
-	ld a, b
+	call CounterMirrorCoatGetMoveEffect
 	cp EFFECT_COUNTER
 	ret z
 
@@ -23,9 +21,7 @@ BattleCommand_MirrorCoat:
 	call CounterMirrorCoatFirstCheck
 	ret z
 
-	ld b, a
-	farcall GetMoveEffect
-	ld a, b
+	call CounterMirrorCoatGetMoveEffect
 	cp EFFECT_MIRROR_COAT
 	ret z
 
@@ -89,4 +85,11 @@ CounterMirrorCoatThirdCheck:
 	call GetMoveData
 	ld a, [wStringBuffer1 + MOVE_POWER]
 	and a
+	ret
+
+CounterMirrorCoatGetMoveEffect:
+	ld b, a
+	ld hl, GetMoveEffect
+	call CallBattleCore
+	ld a, b
 	ret
