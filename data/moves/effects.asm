@@ -1432,8 +1432,8 @@ Thief:
 	damagecalc
 	stab
 	damagevariation
+	doublehelditemdamage
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
