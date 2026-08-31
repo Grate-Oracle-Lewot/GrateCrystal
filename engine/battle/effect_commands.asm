@@ -3342,8 +3342,6 @@ INCLUDE "data/moves/flail_reversal_power.asm"
 
 INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
 
-INCLUDE "engine/battle/move_effects/avalanche.asm"
-
 INCLUDE "engine/battle/move_effects/encore.asm"
 
 INCLUDE "engine/battle/move_effects/snore.asm"
@@ -5890,6 +5888,38 @@ EndRechargeOpp:
 
 INCLUDE "engine/battle/move_effects/rage.asm"
 
+BattleCommand_Avalanche:
+	call CheckOpponentWentFirst
+	ret z
+
+	ld hl, wPlayerDamageTaken
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyDamageTaken
+.ok
+	ld a, [hli]
+	or [hl]
+	ret z
+
+;	ld a, $1
+;	ld [wBattleAnimParam], a
+	jr DoubleDamage
+
+BattleCommand_NoItemDamage:
+	call GetUserItem
+	ld a, [hl]
+	and a
+	ret nz
+	jr DoubleDamage
+
+BattleCommand_FlameWheel:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_CURLED, a
+	ret z
+	jr DoubleDamage
+
 BattleCommand_DoubleFlyingDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
@@ -5922,6 +5952,19 @@ BattleCommand_DoubleMinimizeDamage:
 	and a
 	jr z, .ok
 	ld hl, wPlayerMinimized
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	jr DoubleDamage
+
+BattleCommand_Pursuit:
+; Double damage if the opponent is switching.
+	ld hl, wEnemyIsSwitching
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wPlayerIsSwitching
 .ok
 	ld a, [hl]
 	and a
@@ -6264,10 +6307,6 @@ BattleCommand_ArenaTrap:
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 
-INCLUDE "engine/battle/move_effects/flame_wheel.asm"
-
-INCLUDE "engine/battle/move_effects/acrobatics.asm"
-
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
@@ -6322,8 +6361,6 @@ BattleCommand_CheckSafeguard:
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
 INCLUDE "engine/battle/move_effects/baton_pass_teleport_u_turn.asm"
-
-INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
