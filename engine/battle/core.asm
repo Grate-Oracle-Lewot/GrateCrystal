@@ -4828,11 +4828,11 @@ CheckDanger:
 	ld hl, wBattleMonHP
 	ld a, [hli]
 	or [hl]
+	ld hl, wLowHealthAlarm
 	jr z, .no_danger
 	ld a, [wBattleLowHealthAlarm]
 	and a
 	ret nz
-	ld hl, wLowHealthAlarm
 	ld a, [wPlayerHPPal]
 	cp HP_RED
 	jr z, .danger
