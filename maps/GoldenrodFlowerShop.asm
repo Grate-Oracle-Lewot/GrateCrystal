@@ -1,6 +1,7 @@
 	object_const_def
 	const GOLDENRODFLOWERSHOP_TEACHER
 	const GOLDENRODFLOWERSHOP_FLORIA
+	const GOLDENRODFLOWERSHOP_FLOWER
 
 GoldenrodFlowerShop_MapScripts:
 	def_scene_scripts
@@ -93,6 +94,14 @@ FlowerShopFloriaScript:
 	checknuzlocke
 	iftrue .GotSquirtbottle
 	trade NPC_TRADE_FLORIA
+	waitbutton
+	closetext
+	end
+
+GoldenrodFlowerShopSunfloraScript:
+	opentext
+	writetext GoldenrodFlowerShopSunfloraText
+	cry SUNFLORA
 	waitbutton
 	closetext
 	end
@@ -218,6 +227,11 @@ GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	line "WHITNEY? Cool!"
 	done
 
+GoldenrodFlowerShopSunfloraText:
+	text "SUNFLORA: Meep"
+	line "meep!"
+	done
+
 GoldenrodFlowerShop_MapEvents:
 	def_warp_events
 	warp_event  2,  7, GOLDENROD_CITY, 6
@@ -230,3 +244,4 @@ GoldenrodFlowerShop_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
 	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
+	object_event  5,  1, SPRITE_FLOWER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodFlowerShopSunfloraScript, -1
