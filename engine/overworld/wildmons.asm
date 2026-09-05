@@ -581,6 +581,7 @@ InitRoamingRaikou:
 
 ; check if Raikou is still alive, if so do nothing
 	ld a, [wRoamMon1Species]
+	and a
 	ret nz
 
 ; species
@@ -611,6 +612,7 @@ InitRoamingEntei:
 
 ; check if Entei is still alive, if so do nothing
 	ld a, [wRoamMon2Species]
+	and a
 	ret nz
 
 ; species
@@ -641,8 +643,10 @@ InitRoamingSuicune:
 
 ; check for a free roaming slot (no logic for slot 3 in battle core)
 	ld a, [wRoamMon1Species]
+	and a
 	jr z, .slot_one
 	ld a, [wRoamMon2Species]
+	and a
 	jr z, .slot_two
 	ret
 
@@ -699,28 +703,33 @@ CheckEncounterRoamMon:
 ; Don't trigger an encounter if we're on water.
 	call CheckOnWater
 	jr z, .DontEncounterRoamMon
+
+; 3/4 chance for a roamer, 1/4 for a normal wildmon
+	call Random
+	and %00000011
+	jr z, .DontEncounterRoamMon
+
 ; Load the current map group and number to de
 	call CopyCurrMapDE
-; Randomly select a beast.
-	call Random
-	cp 100 ; 25/64 chance
-	jr nc, .DontEncounterRoamMon
-	and %00000011 ; Of that, a 3/4 chance.  Running total: 75/256, or around 29.3%.
-	jr z, .DontEncounterRoamMon
-	dec a ; 1/3 chance that it's Entei, 1/3 chance that it's Raikou
-; Compare its current location with yours
+; Check for any roamers at your current location
 	ld hl, wRoamMon1MapGroup
-	ld c, a
-	ld b, 0
-	ld a, 7 ; length of the roam_struct
-	call AddNTimes
-	ld a, d
-	cp [hl]
+	ld a, [hli]
+	cp d
+	jr nz, .roammon2
+	ld a, [hl] ; wRoamMon1MapNumber
+	cp e
+	jr z, .FoundRoamMon
+
+.roammon2
+	ld hl, wRoamMon2MapGroup
+	ld a, [hli]
+	cp d
 	jr nz, .DontEncounterRoamMon
-	inc hl
-	ld a, e
-	cp [hl]
+	ld a, [hl] ; wRoamMon2MapNumber
+	cp e
 	jr nz, .DontEncounterRoamMon
+
+.FoundRoamMon
 ; We've decided to take on a beast, so stage its information for battle.
 	dec hl
 	dec hl
@@ -748,11 +757,7 @@ UpdateRoamMons:
 	ld b, a
 	ld a, [wRoamMon1MapNumber]
 	ld c, a
-	call Random
-	cp 50 percent ; 50% chance to stay on the current map
-	jr c, .stay_put1
 	call .Update
-.stay_put1
 	ld a, b
 	ld [wRoamMon1MapGroup], a
 	ld a, c
@@ -765,11 +770,7 @@ UpdateRoamMons:
 	ld b, a
 	ld a, [wRoamMon2MapNumber]
 	ld c, a
-	call Random
-	cp 50 percent ; 50% chance to stay on the current map
-	jr c, .stay_put2
 	call .Update
-.stay_put2
 	ld a, b
 	ld [wRoamMon2MapGroup], a
 	ld a, c
@@ -793,7 +794,7 @@ UpdateRoamMons:
 	ld a, c
 	cp [hl]
 	jr z, .yes
-; We don't have the correct entry yet, so let's continue.  A 0 terminates each entry.
+; We don't have the correct entry yet, so let's continue. A 0 terminates each entry.
 .next
 	ld a, [hli]
 	and a
@@ -859,36 +860,18 @@ JumpRoamMons:
 	jp _BackUpMapIndices
 
 JumpRoamMon:
-.loop
 	ld hl, RoamMaps
-.innerloop1
-	; 0-15 are all valid indexes into RoamMaps,
-	; so this retry loop is unnecessary
-	; since NUM_ROAMMON_MAPS happens to be 16
 	call Random
-	maskbits NUM_ROAMMON_MAPS
-	cp NUM_ROAMMON_MAPS
-	jr nc, .innerloop1
+	maskbits NUM_ROAMMON_MAPS ; 0-15 are all valid indexes into RoamMaps, since NUM_ROAMMON_MAPS happens to be 16
 	inc a
 	ld b, a
-.innerloop2 ; Loop to get hl to the address of the chosen roam map.
+; Loop to get hl to the address of the chosen roam map.
+.loop
 	dec b
-	jr z, .ok
-.innerloop3 ; Loop to skip the current roam map, which is terminated by a 0.
-	ld a, [hli]
-	and a
-	jr nz, .innerloop3
-	jr .innerloop2
-; Check to see if the selected map is the one the player is currently in.  If so, try again.
-.ok
-	ld a, [wMapGroup]
-	cp [hl]
-	jr nz, .done
+	jr z, .done
 	inc hl
-	ld a, [wMapNumber]
-	cp [hl]
-	jr z, .loop
-	dec hl
+	jr .loop
+
 ; Return the map group and number in bc.
 .done
 	ld a, [hli]
