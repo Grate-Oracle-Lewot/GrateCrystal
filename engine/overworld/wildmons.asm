@@ -706,11 +706,18 @@ CheckEncounterRoamMon:
 
 ; 3/4 chance for a roamer, 1/4 for a normal wildmon
 	call Random
+	ld b, a
 	and %00000011
 	jr z, .DontEncounterRoamMon
 
 ; Load the current map group and number to de
 	call CopyCurrMapDE
+
+; If both roamers are on the same map, ensure one isn't favored over the other
+	ld a, b
+	and %10000000
+	jr z, .Favor_2nd
+
 ; Check for any roamers at your current location
 	ld hl, wRoamMon1MapGroup
 	ld a, [hli]
@@ -745,10 +752,30 @@ CheckEncounterRoamMon:
 	scf
 	ret
 
-.DontEncounterRoamMon:
+.DontEncounterRoamMon
 	pop hl
 	and a
 	ret
+
+.Favor_2nd
+; Check RoamMon2 before 1
+	ld hl, wRoamMon2MapGroup
+	ld a, [hli]
+	cp d
+	jr nz, .roammon1
+	ld a, [hl] ; wRoamMon2MapNumber
+	cp e
+	jr z, .FoundRoamMon
+
+.roammon1
+	ld hl, wRoamMon1MapGroup
+	ld a, [hli]
+	cp d
+	jr nz, .DontEncounterRoamMon
+	ld a, [hl] ; wRoamMon1MapNumber
+	cp e
+	jr nz, .DontEncounterRoamMon
+	jr .FoundRoamMon
 
 UpdateRoamMons:
 	ld a, [wRoamMon1MapGroup]
