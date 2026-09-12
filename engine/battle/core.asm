@@ -6261,11 +6261,6 @@ LoadEnemyMon:
 
 ; Initialize DVs
 
-; Skip Transform check in the overworld, for GivePoke
-	ld a, [wBattleMode]
-	and a
-	jr z, .InitDVs
-
 ; Check if wildmon was Transformed when caught
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
