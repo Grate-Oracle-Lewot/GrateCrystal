@@ -6260,11 +6260,12 @@ LoadEnemyMon:
 	ld [wEnemyMonItem], a
 
 ; Initialize DVs
+	farcall GetTrainerDVs
 
 ; Skip Transform check for wildmons
 	ld a, [wBattleMode]
 	and a
-	jr z, .InitDVs
+	jr z, .WildDVs
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
@@ -6281,11 +6282,12 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-	ld a, [wBattleMode]
-	dec a
-	jr z, .WildDVs
-
 ; Trainer DVs
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_DVS_F, a
+	jr z, .UpdateDVs
+
+; Custom DVs via TRAINERTYPE_DVS
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
