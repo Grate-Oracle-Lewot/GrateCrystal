@@ -6260,18 +6260,18 @@ LoadEnemyMon:
 	ld [wEnemyMonItem], a
 
 ; Initialize DVs
-	farcall GetTrainerDVs
 
-; Skip Transform check for wildmons
+; I believe the following Transform check restores a caught wildmon's proper DVs when sent to the box
+; Hence, here, we're checking if wBattleMode is 0, which is the overworld, not a wild battle
 	ld a, [wBattleMode]
 	and a
-	jr z, .WildDVs
+	jr z, .InitDVs
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	jr z, .InitDVs
 
-; If Transformed, restore pre-transformation DVs
+; If Transformed, restore backed-up DVs
 	ld hl, wEnemyBackupDVs
 	ld de, wEnemyMonDVs
 	ld a, [hli]
@@ -6282,12 +6282,21 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Trainer DVs
+; Check if we're in a wild battle (1) or trainer battle (2)
+; Don't confuse this with the earlier check for the overworld (0)
+	ld a, [wBattleMode]
+	dec a
+	jr z, .WildDVs
+
+; For trainers, first load the DVs based on trainer class
+	farcall GetTrainerDVs
+
+; Then check if we should overwrite them with custom DVs
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_DVS_F, a
 	jr z, .UpdateDVs
 
-; Custom DVs via TRAINERTYPE_DVS
+; Load the custom DVs from data/trainer/parties.asm
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
