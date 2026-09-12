@@ -6277,20 +6277,11 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Wild or trainer?
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildDVs
 
-; Load class-based trainer DVs
-	farcall GetTrainerDVs
-
-; Check if the trainer uses custom DVs
-	ld a, [wOtherTrainerType]
-	bit TRAINERTYPE_DVS_F, a
-	jr z, .UpdateDVs
-
-; Overwrite class DVs with custom ones
+; Trainer DVs
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
