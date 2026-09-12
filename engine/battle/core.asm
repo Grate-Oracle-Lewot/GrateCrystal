@@ -6260,23 +6260,6 @@ LoadEnemyMon:
 	ld [wEnemyMonItem], a
 
 ; Initialize DVs
-
-; Check if wildmon was Transformed when caught
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TRANSFORMED, a
-	jr z, .InitDVs
-
-; If Transformed, restore backed-up DVs
-	ld hl, wEnemyBackupDVs
-	ld de, wEnemyMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
-	jp .Happiness
-
-.InitDVs:
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildDVs
@@ -6293,8 +6276,23 @@ LoadEnemyMon:
 .WildDVs:
 ; Here's where the fun starts
 
-; Roaming monsters (Entei, Raikou) work differently
-; They have their own structs, which are shorter than normal
+; Check if wildmon was Transformed when caught
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TRANSFORMED, a
+	jr z, .NotTransformed
+
+; If Transformed, restore backed-up DVs
+	ld hl, wEnemyBackupDVs
+	ld de, wEnemyMonDVs
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	jp .Happiness
+
+.NotTransformed:
+; Roaming monsters have their own structs, which are shorter than normal
 	ld a, [wBattleType]
 	cp BATTLETYPE_ROAMING
 	jr nz, .NotRoaming
