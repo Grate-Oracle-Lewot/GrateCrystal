@@ -6261,11 +6261,12 @@ LoadEnemyMon:
 
 ; Initialize DVs
 
-; Not sure what this overworld check is about
+; Skip Transform check in the overworld, for GivePoke
 	ld a, [wBattleMode]
 	and a
 	jr z, .InitDVs
 
+; Check if wildmon was Transformed when caught
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	jr z, .InitDVs
@@ -6281,20 +6282,20 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Load class-based trainer DVs
-	farcall GetTrainerDVs
-
-; Do we need GetTrainerDVs for wildmons...?
+; Wild or trainer?
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildDVs
+
+; Load class-based trainer DVs
+	farcall GetTrainerDVs
 
 ; Check if the trainer uses custom DVs
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_DVS_F, a
 	jr z, .UpdateDVs
 
-; Load the custom DVs from data/trainer/parties.asm
+; Overwrite class DVs with custom ones
 	ld a, [wCurPartyMon]
 	ld hl, wOTPartyMon1DVs
 	call GetPartyLocation
