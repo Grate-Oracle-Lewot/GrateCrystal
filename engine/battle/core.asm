@@ -6261,8 +6261,7 @@ LoadEnemyMon:
 
 ; Initialize DVs
 
-; I believe the following Transform check restores a caught wildmon's proper DVs when sent to the box
-; Hence, here, we're checking if wBattleMode is 0, which is the overworld, not a wild battle
+; Not sure what this overworld check is about
 	ld a, [wBattleMode]
 	and a
 	jr z, .InitDVs
@@ -6282,16 +6281,15 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Check if we're in a wild battle (1) or trainer battle (2)
-; Don't confuse this with the earlier check for the overworld (0)
+; Load class-based trainer DVs
+	farcall GetTrainerDVs
+
+; Do we need GetTrainerDVs for wildmons...?
 	ld a, [wBattleMode]
 	dec a
 	jr z, .WildDVs
 
-; For trainers, first load the DVs based on trainer class
-	farcall GetTrainerDVs
-
-; Then check if we should overwrite them with custom DVs
+; Check if the trainer uses custom DVs
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_DVS_F, a
 	jr z, .UpdateDVs
