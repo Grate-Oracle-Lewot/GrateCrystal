@@ -302,7 +302,7 @@ BugContestResultsScript:
 	clearflag ENGINE_BUG_CONTEST_TIMER
 	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+	clearevent EVENT_CONTEST_OFFICER_HAS_MOON_STONE
 	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	opentext
@@ -377,6 +377,8 @@ BugContestResults_CleanUp:
 
 BugContestResults_FirstPlace:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
+	iffalse .Hedger
 	getitemname STRING_BUFFER_4, SUN_STONE
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
@@ -384,12 +386,20 @@ BugContestResults_FirstPlace:
 	iffalse BugContestResults_NoRoomForSunStone
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
-BugContestResults_SecondPlace:
-	getitemname STRING_BUFFER_4, EVERSTONE
+.Hedger:
+	getitemname STRING_BUFFER_4, HEDGER
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
-	verbosegiveitem EVERSTONE
-	iffalse BugContestResults_NoRoomForEverstone
+	verbosegiveitem HEDGER
+	iffalse BugContestResults_NoRoomForSunStone
+	sjump BugContestResults_ReturnAfterWinnersPrize
+
+BugContestResults_SecondPlace:
+	getitemname STRING_BUFFER_4, MOON_STONE
+	farwritetext ContestResults_PlayerWonAPrizeText
+	waitbutton
+	verbosegiveitem MOON_STONE
+	iffalse BugContestResults_NoRoomForMoonStone
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_ThirdPlace:
@@ -406,10 +416,10 @@ BugContestResults_NoRoomForSunStone:
 	setevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
-BugContestResults_NoRoomForEverstone:
+BugContestResults_NoRoomForMoonStone:
 	farwritetext BugContestPrizeNoRoomText
 	promptbutton
-	setevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+	setevent EVENT_CONTEST_OFFICER_HAS_MOON_STONE
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForGoldBerry:
