@@ -234,7 +234,7 @@ Route36Officer_ContestHasConcluded:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
 	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
-	iftrue .Hedger
+	iffalse .Hedger
 	verbosegiveitem SUN_STONE
 	iffalse .BagFull
 .FinishSunStone:
