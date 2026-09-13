@@ -6,7 +6,7 @@
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
 	db 159 ; base exp
-	db EXP_SHARE, TRIDENT ; items
+	db TRIDENT, EXP_SHARE ; items
 	db GENDER_F50 ; gender ratio
 	db 11 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dodrio/front.dimensions"
