@@ -197,30 +197,23 @@ Route36OfficerScriptContest:
 
 .DecidedNotToJoinContest:
 	writetext Route36NationalParkGateOfficer1TakePartInFutureText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .RefusedToLeaveMons:
 	writetext Route36NationalParkGateOfficer1ChooseMonAndComeBackText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .FirstMonIsFainted:
 	writetext Route36NationalParkGateOfficer1FirstMonCantBattleText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .BoxFull:
 	writetext Route36NationalParkGateOfficer1MakeRoomText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .FirstMonIsEgg:
 	writetext Route36NationalParkGateOfficer1EggAsFirstMonText
+BugContest_EndText:
 	waitbutton
 	closetext
 	end
@@ -235,18 +228,24 @@ Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	iftrue .Berry
 	writetext Route36NationalParkGateOfficer1ContestIsOverText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .Sunstone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
+	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
+	iftrue .Hedger
 	verbosegiveitem SUN_STONE
 	iffalse .BagFull
+.FinishSunStone:
 	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	closetext
 	end
+
+Hedger:
+	verbosegiveitem HEDGER
+	iffalse .BagFull
+	sjump .FinishSunStone
 
 .MoonStone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
@@ -277,9 +276,7 @@ Route36Officer_ContestHasConcluded:
 
 .BagFull:
 	writetext Route36NationalParkGateOfficer1WellHoldPrizeText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 _ContestNotOn:
 	jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
@@ -290,9 +287,7 @@ Route36NationalParkGateOfficerScript:
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route36Officer_ContestHasConcluded
 	writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 Route36ParkGate_DayToText:
 	jumpstd DayToTextScript
@@ -303,15 +298,11 @@ BugCatchingContestant1BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant1BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant1BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant2BScript:
 	faceplayer
@@ -319,15 +310,11 @@ BugCatchingContestant2BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant2BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant2BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant3BScript:
 	faceplayer
@@ -335,15 +322,11 @@ BugCatchingContestant3BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant3BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant3BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant4BScript:
 	faceplayer
@@ -351,15 +334,11 @@ BugCatchingContestant4BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant4BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant4BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant5BScript:
 	faceplayer
@@ -367,15 +346,11 @@ BugCatchingContestant5BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant5BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant5BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant6BScript:
 	faceplayer
@@ -383,15 +358,11 @@ BugCatchingContestant6BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant6BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant6BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant7BScript:
 	faceplayer
@@ -399,15 +370,11 @@ BugCatchingContestant7BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant7BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant7BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant8BScript:
 	faceplayer
@@ -415,15 +382,11 @@ BugCatchingContestant8BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant8BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant8BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant9BScript:
 	faceplayer
@@ -431,15 +394,11 @@ BugCatchingContestant9BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant9BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant9BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 BugCatchingContestant10BScript:
 	faceplayer
@@ -447,15 +406,11 @@ BugCatchingContestant10BScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
 	writetext BugCatchingContestant10BText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestant10BStillCompetingText
-	waitbutton
-	closetext
-	end
+	sjump BugContest_EndText
 
 Route36NationalParkGatePlayerWaitWithContestantsMovement:
 	big_step DOWN
