@@ -50,8 +50,6 @@ MagikarpLengthRaterScript:
 	closetext
 	showemote EMOTE_FISH, LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU, 15
 	opentext
-	sjump .GetReward
-
 .GetReward:
 if DEF(_HM_ITEMS_START)
 	writetext MagikarpLengthRaterText_Memento
