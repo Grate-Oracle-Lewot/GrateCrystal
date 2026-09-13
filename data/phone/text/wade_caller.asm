@@ -81,8 +81,11 @@ WadeBugCatchingContestText:
 	para "Are you going,"
 	line "<PLAY_G>?"
 
-	para "I'm trying to make"
-	line "up my mind."
+	para "I hear you can win"
+	line "an item that lets"
+
+	para "you get past trees"
+	line "without CUT!"
 	done
 
 WadeFoundItemText:
