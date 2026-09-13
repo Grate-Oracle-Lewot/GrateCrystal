@@ -3018,14 +3018,24 @@ AIGoodWeatherType:
 	ret
 
 AI_Smart_Snore_SleepTalk:
-; Highly encourage this move if enemy is fast asleep.
-; Highly discourage this move otherwise.
+; The AI_Basic layer dismisses these moves if the enemy is not Sleeping.
 
-	ld a, [wEnemyMonStatus]
-	and SLP
-	cp 1
-	jr z, AIBadWeatherType ; hijacking this for space
+; If enemy's last move was Snore, Sleep Talk, or Night Terror, 50% chance to skip encouragement.
+; This is an attempt to predict when the enemy will wake up.
+	ld a, [wLastEnemyMove]
+	cp SNORE
+	jr z, .50_50
+	cp SLEEP_TALK
+	jr z, .50_50
+	cp NIGHT_TERROR
+	jr nz, .encourage
 
+.50_50
+	call AI_50_50
+	ret c
+
+; Else highly encourage this move.
+.encourage
 	dec [hl]
 	dec [hl]
 	dec [hl]
