@@ -10,7 +10,7 @@ else
 endc
 	db 100 ; catch rate
 	db 156 ; base exp
-	db SUN_STONE, TM_SUNNY_DAY ; items
+	db SUN_STONE, TM_SOLARBEAM ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/sunflora/front.dimensions"
