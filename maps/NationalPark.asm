@@ -43,7 +43,19 @@ NationalParkTeacher1Script:
 	end
 
 NationalParkYoungster1Script:
-	jumptextfaceplayer NationalParkYoungster1Text
+	faceplayer
+	opentext
+	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
+	iftrue .After
+	writetext NationalParkYoungster1TextBefore
+	sjump NationalPark_EndText
+
+.After:
+	writetext NationalParkYoungster1TextAfter
+NationalPark_EndText
+	waitbutton
+	closetext
+	end
 
 NationalParkYoungster2Script:
 	jumptextfaceplayer NationalParkYoungster2Text
@@ -55,9 +67,7 @@ NationalParkPersian:
 	opentext
 	writetext NationalParkPersianText
 	cry PERSIAN
-	waitbutton
-	closetext
-	end
+	sjump NationalPark_EndText
 
 NationalParkGameboyKidScript:
 	faceplayer
@@ -157,9 +167,7 @@ TrainerPokefanmWilliam:
 	endifjustbattled
 	opentext
 	writetext PokefanmWilliamAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump NationalPark_EndText
 
 TrainerPokefanfBeverly:
 	trainer POKEFANF, BEVERLY, EVENT_BEAT_POKEFANF_BEVERLY, PokefanfBeverlySeenText, PokefanfBeverlyBeatenText, 0, .Script
@@ -197,12 +205,6 @@ TrainerPokefanfBeverly:
 	clearflag ENGINE_BEVERLY_HAS_NUGGET
 	sjump .NumberAccepted
 
-.NoMarill:
-	writetext PokefanFBeverlyMarillFriendText
-	waitbutton
-	closetext
-	end
-
 .AskNumber1:
 	jumpstd AskNumber1FScript
 
@@ -231,9 +233,7 @@ TrainerLassKrise:
 	endifjustbattled
 	opentext
 	writetext LassKriseAfterBattleText
-	waitbutton
-	closetext
-	end
+	sjump NationalPark_EndText
 
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
@@ -299,10 +299,34 @@ NationalParkTeacher1Text_GotQuickClaw:
 	cont "during battle."
 	done
 
-NationalParkYoungster1Text:
-	text "I'm playing with"
-	line "stickers I printed"
-	cont "from my #DEX."
+NationalParkYoungster1TextBefore:
+	text "You know the Bug-"
+	line "Catching Contest?"
+
+	para "You can win things"
+	line "like SUN and MOON"
+	cont "STONES, but…"
+
+	para "If it's your first"
+	line "time winning, you"
+
+	para "get an extra-"
+	line "special prize."
+
+	para "I wonder what it"
+	line "could be?"
+	done
+
+NationalParkYoungster1TextAfter:
+	text "NAYRU's #DEX is"
+	line "cool, but it can't"
+
+	para "print out #MON"
+	line "stickers anymore…"
+
+	para "I'll have to visit"
+	line "the PHOTO STUDIO"
+	cont "in CIANWOOD CITY."
 	done
 
 NationalParkYoungster2Text:
