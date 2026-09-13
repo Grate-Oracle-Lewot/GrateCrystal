@@ -174,9 +174,6 @@ DoPlayerMovement::
 	db LEFT     ; COLL_WALK_LEFT
 	db UP       ; COLL_WALK_UP
 	db DOWN     ; COLL_WALK_DOWN
-	db STANDING ; COLL_BRAKE_45
-	db STANDING ; COLL_BRAKE_46
-	db STANDING ; COLL_BRAKE_47
 
 .land2
 	ld a, c
@@ -197,15 +194,10 @@ DoPlayerMovement::
 	db UP       ; COLL_WALK_UP_ALT
 	db DOWN     ; COLL_WALK_DOWN_ALT
 	db STANDING ; COLL_BRAKE_ALT
-	db STANDING ; COLL_BRAKE_55
-	db STANDING ; COLL_BRAKE_56
-	db STANDING ; COLL_BRAKE_57
 
 .warps
 	ld a, c
 	cp COLL_DOOR
-	jr z, .down
-	cp COLL_DOOR_79
 	jr z, .down
 	cp COLL_STAIRCASE
 	jr z, .down
