@@ -228,8 +228,8 @@ Route36OfficerScriptContest:
 Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	iftrue .Sunstone
-	checkevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	iftrue .Everstone
+	checkevent EVENT_CONTEST_OFFICER_HAS_MOON_STONE
+	iftrue .MoonStone
 	checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	iftrue .GoldBerry
 	checkevent EVENT_CONTEST_OFFICER_HAS_BERRY
@@ -248,12 +248,12 @@ Route36Officer_ContestHasConcluded:
 	closetext
 	end
 
-.Everstone:
+.MoonStone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem EVERSTONE
+	verbosegiveitem MOON_STONE
 	iffalse .BagFull
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+	clearevent EVENT_CONTEST_OFFICER_HAS_MOON_STONE
 	closetext
 	end
 
@@ -547,7 +547,7 @@ Route36NationalParkGateOfficer1WellHoldYourMonText:
 Route36NationalParkGatePlayersMonLeftWithHelperText:
 	text "<PLAYER>'s #MON"
 	line "were left with the"
-	cont "CONTEST HELPER."
+	cont "PARK RANGER."
 	done
 
 Route36NationalParkGateOfficer1ChooseMonAndComeBackText:
