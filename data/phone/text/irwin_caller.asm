@@ -111,7 +111,7 @@ IrwinEliteFourGossipText:
 	text "Yesterday, I went"
 	line "out to NEW BARK"
 
-	para "TOWN.  There was a"
+	para "TOWN. There was a"
 	line "lady who looked a"
 
 	para "lot like you,"
