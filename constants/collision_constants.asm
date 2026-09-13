@@ -73,16 +73,16 @@ COLL_UP_WALL           EQU $b2
 COLL_DOWN_WALL         EQU $b3 ; unused
 COLL_DOWN_RIGHT_WALL   EQU $b4 ; unused
 COLL_DOWN_LEFT_WALL    EQU $b5 ; unused
-COLL_UP_RIGHT_WALL     EQU $b6 ; unused
-COLL_UP_LEFT_WALL      EQU $b7 ; unused
-COLL_RIGHT_BUOY        EQU $c0 ; unused
-COLL_LEFT_BUOY         EQU $c1 ; unused
-COLL_UP_BUOY           EQU $c2 ; unused
-COLL_DOWN_BUOY         EQU $c3 ; unused
-COLL_DOWN_RIGHT_BUOY   EQU $c4 ; unused
-COLL_DOWN_LEFT_BUOY    EQU $c5 ; unused
-COLL_UP_RIGHT_BUOY     EQU $c6 ; unused
-COLL_UP_LEFT_BUOY      EQU $c7 ; unused
+COLL_UP_RIGHT_WALL     EQU $b6
+COLL_UP_LEFT_WALL      EQU $b7
+COLL_RIGHT_BUOY        EQU $c0
+COLL_LEFT_BUOY         EQU $c1
+COLL_UP_BUOY           EQU $c2
+COLL_DOWN_BUOY         EQU $c3
+COLL_DOWN_RIGHT_BUOY   EQU $c4
+COLL_DOWN_LEFT_BUOY    EQU $c5
+COLL_UP_RIGHT_BUOY     EQU $c6
+COLL_UP_LEFT_BUOY      EQU $c7
 COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles
