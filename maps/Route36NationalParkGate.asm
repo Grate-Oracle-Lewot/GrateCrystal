@@ -245,6 +245,7 @@ Route36Officer_ContestHasConcluded:
 .Hedger:
 	verbosegiveitem HEDGER
 	iffalse .BagFull
+	setevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
 	sjump .FinishSunStone
 
 .MoonStone:
