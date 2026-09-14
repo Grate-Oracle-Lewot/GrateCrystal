@@ -1,7 +1,3 @@
-_FindPartyMonThatSpecies:
-	ld hl, wPartyMon1Species
-	jp FindThatSpecies
-
 _FindPartyMonThatSpeciesYourTrainerID:
 	ld hl, wPartyMon1Species
 	call FindThatSpecies
@@ -24,6 +20,10 @@ _FindPartyMonThatSpeciesYourTrainerID:
 .nope
 	xor a
 	ret
+
+_FindPartyMonThatSpecies:
+	ld hl, wPartyMon1Species
+	; fallthrough
 
 FindThatSpecies:
 ; Find species b in your party.
