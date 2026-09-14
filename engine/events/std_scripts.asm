@@ -392,6 +392,7 @@ BugContestResults_FirstPlace:
 	waitbutton
 	verbosegiveitem HEDGER
 	iffalse BugContestResults_NoRoomForSunStone
+	setevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_SecondPlace:
