@@ -242,7 +242,7 @@ Route36Officer_ContestHasConcluded:
 	closetext
 	end
 
-Hedger:
+.Hedger:
 	verbosegiveitem HEDGER
 	iffalse .BagFull
 	sjump .FinishSunStone
