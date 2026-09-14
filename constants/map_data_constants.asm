@@ -51,6 +51,7 @@ NUM_MAP_PALETTES EQU const_value
 	const FISHGROUP_WHIRL_ISLANDS
 	const FISHGROUP_QWILFISH
 	const FISHGROUP_REMORAID
+	const FISHGROUP_BUG_CONTEST
 NUM_FISHGROUPS EQU const_value - 1
 
 ; connection directions (see data/maps/data.asm)
