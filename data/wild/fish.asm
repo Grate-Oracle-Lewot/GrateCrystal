@@ -19,6 +19,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .WhirlIslands_Old,     .WhirlIslands_Good,     .WhirlIslands_Super,     .WhirlIslands_Odd
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super,         .Qwilfish_Odd
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super,         .Remoraid_Odd
+	fishgroup 50 percent + 1, .BugContest_Old,       .BugContest_Good,       .BugContest_Super,       .BugContest_Odd
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
@@ -319,6 +320,20 @@ else
 	db 100 percent,     QUAGSIRE,   21
 endc
 
+.BugContest_Old:
+.BugContest_Good:
+.BugContest_Super:
+	db  40 percent,     KRABBY,      5
+	db  80 percent,     KRABBY,     10
+	db  90 percent + 1, KRABBY,     15
+	db 100 percent,     SHUCKLE,    15
+
+.BugContest_Odd:
+	db  40 percent,     KABUTO,     10
+	db  80 percent,     KABUTO,     15
+	db  90 percent + 1, PINECO,     10
+	db 100 percent,     PINECO,     15
+
 TimeFishGroups:
 	;  day              nite
 if DEF(_LITTLE_CUP)
@@ -378,6 +393,7 @@ FishGroups_Names::
 	dw Group8_Name
 	dw Group9_Name
 	dw Group10_Name
+	dw Group11_Name
 	assert_table_length NUM_FISHGROUPS + 1 ; to include NONE group
 
 Group0_Name:
@@ -402,6 +418,8 @@ Group9_Name:
 	db "RIVER@"
 Group10_Name:
 	db "STREAM@"
+Group11_Name:
+	db "CONTEST@"
 
 GetMapsFishGroup::
 	dec d ; map num
