@@ -170,7 +170,7 @@ ContestResults_PlayerWonAPrizeText:
 	text_ram wStringBuffer3
 	text_start
 	line "finisher, wins"
-	cont "@"
+	cont "a @"
 	text_ram wStringBuffer4
 	text "!"
 	done
