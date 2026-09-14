@@ -52,7 +52,7 @@ NationalParkYoungster1Script:
 
 .After:
 	writetext NationalParkYoungster1TextAfter
-NationalPark_EndText
+NationalPark_EndText:
 	waitbutton
 	closetext
 	end
