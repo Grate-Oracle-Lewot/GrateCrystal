@@ -1,8 +1,7 @@
 HoOhChamber:
-	ld hl, wPartySpecies
-	ld a, [hl]
-	cp HO_OH ; is Ho-oh the first Pokémon in the party?
-	ret nz ; if not, we're done
+	ld b, HO_OH ; is Ho-oh in the party?
+	farcall _FindPartyMonThatSpecies
+	ret z ; if not, we're done
 	ld de, EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
 	ld b, SET_FLAG
 	jp EventFlagAction
