@@ -18,7 +18,6 @@ OftenFleeMons:
 	db DELIBIRD
 	db PHANPY
 	db TEDDIURSA
-	db JIRK
 	db -1
 
 AlwaysFleeMons:
