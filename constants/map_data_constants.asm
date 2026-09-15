@@ -41,17 +41,17 @@ NUM_MAP_PALETTES EQU const_value
 ; FishGroups indexes (see data/wild/fish.asm)
 	const_def
 	const FISHGROUP_NONE
+	const FISHGROUP_BUG_CONTEST
+	const FISHGROUP_POND
+	const FISHGROUP_LAGOON
+	const FISHGROUP_LAKE
+	const FISHGROUP_STREAM
+	const FISHGROUP_RIVER
 	const FISHGROUP_SHORE
 	const FISHGROUP_OCEAN
-	const FISHGROUP_LAGOON
-	const FISHGROUP_POND
-	const FISHGROUP_SPRING
-	const FISHGROUP_LAKE
-	const FISHGROUP_CENOTE
 	const FISHGROUP_COVE
-	const FISHGROUP_RIVER
-	const FISHGROUP_STREAM
-	const FISHGROUP_BUG_CONTEST
+	const FISHGROUP_SPRING
+	const FISHGROUP_CENOTE
 NUM_FISHGROUPS EQU const_value - 1
 
 ; connection directions (see data/maps/data.asm)
