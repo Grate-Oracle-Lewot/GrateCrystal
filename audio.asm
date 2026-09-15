@@ -162,11 +162,12 @@ SECTION "Extra Songs 4", ROMX
 
 INCLUDE "audio/music/trainerbattle.asm"
 INCLUDE "audio/music/battleCynthia.asm"
-INCLUDE "audio/music/contestRSE.asm"
+INCLUDE "audio/music/whackthediglett.asm"
 INCLUDE "audio/music/mewtwostage.asm"
 INCLUDE "audio/music/gastlyinthegraveyard.asm"
 INCLUDE "audio/music/bluefield.asm"
 INCLUDE "audio/music/title.asm"
+INCLUDE "audio/music/contestRSE.asm"
 
 
 SECTION "Extra Songs 5", ROMX
