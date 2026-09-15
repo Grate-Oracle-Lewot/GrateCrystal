@@ -1746,7 +1746,17 @@ FishFunction:
 	ld [wTempWildMonSpecies], a
 	ld a, e
 	ld [wCurPartyLevel], a
+
+	ld a, [wMapGroup]
+	cp GROUP_NATIONAL_PARK_BUG_CONTEST
+	jr nz, .not_contest
+	ld a, [wMapNumber]
+	cp MAP_NATIONAL_PARK_BUG_CONTEST
+	jr z, .contest
+
+.not_contest
 	ld a, BATTLETYPE_FISH
+.got_battletype
 	ld [wBattleType], a
 	ld a, $2
 	ret
@@ -1778,6 +1788,10 @@ FishFunction:
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
+
+.contest
+	ld a, BATTLETYPE_CONTEST
+	jr .got_battletype
 
 Script_NotEvenANibble:
 	scall Script_FishCastRod
