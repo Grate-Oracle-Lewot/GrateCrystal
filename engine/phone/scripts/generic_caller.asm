@@ -861,7 +861,14 @@ PhoneScript_BugCatchingContest:
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 
 ; .Wade:
-	farwritetext WadeBugCatchingContestText
+	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
+	iftrue .After
+	farwritetext WadeBugCatchingContestBeforeText
+	promptbutton
+	sjump PhoneScript_HangUpText_Male
+
+.After:
+	farwritetext WadeBugCatchingContestAfterText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
