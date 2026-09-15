@@ -88,6 +88,10 @@ endc
 endc
 
 	ld a, [wBattleType]
+	ld de, MUSIC_BUG_CONTEST_BATTLE
+	cp BATTLETYPE_CONTEST
+	jp z, .done
+
 	ld de, MUSIC_LEGENDARY_BATTLE
 	cp BATTLETYPE_ROAMING
 	jp z, .done
