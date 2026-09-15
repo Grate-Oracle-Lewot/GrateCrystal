@@ -631,9 +631,13 @@ BugCatchingContestant2BStillCompetingText:
 	done
 
 BugCatchingContestant3BText:
-	text "NICK: Well done!"
-	line "I'm going to raise"
-	cont "my #MON better."
+	text "NICK: Since you"
+	line "beat me, here's a"
+	cont "tip."
+
+	para "Register a ROD to"
+	line "SELECT to fish in"
+	cont "the fountain!"
 	done
 
 BugCatchingContestant3BStillCompetingText:
