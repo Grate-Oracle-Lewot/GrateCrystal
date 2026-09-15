@@ -125,7 +125,7 @@ Music:
 	dba Music_Dive
 	dba Music_TrainerBattle
 	dba Music_BattleCynthia
-	dba Music_ContestRSE
+	dba Music_WhackTheDiglett
 	dba Music_MewtwoStage
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
@@ -141,4 +141,5 @@ Music:
 	dba Music_SafariZoneGateHGSS
 	dba Music_RBYIndigoPlateau
 	dba Music_OldMtMoon
+	dba Music_ContestRSE
 	assert_table_length NUM_MUSIC_SONGS
