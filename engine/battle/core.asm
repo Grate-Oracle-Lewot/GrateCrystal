@@ -849,6 +849,11 @@ TryEnemyFlee:
 	and a
 	jr z, .Stay
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, .Jirk
+
+.NotJirk:
 	call BattleRandom
 	ld b, a
 	cp 10 percent + 1
@@ -874,9 +879,20 @@ TryEnemyFlee:
 	and a
 	ret
 
+.Jirk:
+; Jirk has a 10% chance to flee during the Bug-Catching Contest, but none normally.
+; This prevents it from getting the Haste Ball catching bonus. What a jerk.
+	ld a, [wTempEnemyMonSpecies]
+	cp JIRK
+	jr nz, .NotJirk
+	call BattleRandom
+	cp 10 percent + 1
+	jr nc, .Stay
+
 .Flee:
 	scf
 	ret
+
 
 INCLUDE "data/wild/flee_mons.asm"
 
