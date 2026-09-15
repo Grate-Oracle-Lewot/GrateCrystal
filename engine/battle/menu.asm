@@ -38,13 +38,13 @@ BattleMenuHeader:
 	db "RUN@"
 
 ContestBattleMenuHeader:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	menu_coords 0, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_CURSOR ; flags
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 2 ; rows, columns
 	db 14 ; spacing
 	dba .Text
