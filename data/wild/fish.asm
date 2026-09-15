@@ -337,47 +337,47 @@ endc
 TimeFishGroups:
 	;  day              nite
 if DEF(_LITTLE_CUP)
-	db GEODUDE,    20,  STARYU,     20 ;  0
-	db GEODUDE,    40,  STARYU,     40 ;  1
-	db SHELLDER,   20,  SHELLDER,   20 ;  2
-	db SHELLDER,   40,  MAGIKARP,   40 ;  3
-	db GOLDEEN,    20,  SUNKERN,    20 ;  4
-	db GOLDEEN,    40,  SUNKERN,    40 ;  5
-	db POLIWAG,    20,  GEODUDE,    20 ;  6
-	db POLIWAG,    40,  POLIWAG,    40 ;  7
-	db DRATINI,    20,  DRATINI,    20 ;  8
-	db DRATINI,    40,  DRATINI,    40 ;  9
-	db MAGIKARP,   19,  MAGIKARP,   21 ; 10
-	db MAGIKARP,   40,  MAGIKARP,   42 ; 11
-	db DRATINI,    20,  DRATINI,    20 ; 12
-	db DRATINI,    40,  DRATINI,    40 ; 13
-	db HORSEA,     20,  SLOWPOKE,   24 ; 14
-	db HORSEA,     40,  HORSEA,     40 ; 15
-	db TENTACOOL,  20,  GRIMER,     20 ; 16
-	db TENTACOOL,  40,  GRIMER,     40 ; 17
+	db POLIWAG,    20,  GEODUDE,    20 ;  0
+	db POLIWAG,    40,  POLIWAG,    40 ;  1
+	db GOLDEEN,    20,  SUNKERN,    20 ;  2
+	db GOLDEEN,    40,  SUNKERN,    40 ;  3
+	db MAGIKARP,   19,  MAGIKARP,   21 ;  4
+	db MAGIKARP,   40,  MAGIKARP,   42 ;  5
+	db TENTACOOL,  20,  GRIMER,     20 ;  6
+	db TENTACOOL,  40,  GRIMER,     40 ;  7
+	db GEODUDE,    20,  STARYU,     20 ;  8
+	db GEODUDE,    40,  STARYU,     40 ;  9
+	db SHELLDER,   20,  SHELLDER,   20 ; 10
+	db SHELLDER,   40,  MAGIKARP,   40 ; 11
+	db HORSEA,     20,  SLOWPOKE,   24 ; 12
+	db HORSEA,     40,  HORSEA,     40 ; 13
+	db DRATINI,    20,  DRATINI,    20 ; 14
+	db DRATINI,    40,  DRATINI,    40 ; 15
+	db DRATINI,    20,  DRATINI,    20 ; 16
+	db DRATINI,    40,  DRATINI,    40 ; 17
 else
-	db CORSOLA,    20,  STARYU,     20 ;  0
-	db CORSOLA,    40,  STARMIE,    40 ;  1
-	db SHELLDER,   20,  CLOYSTER,   20 ;  2
+	db POLIWAG,    20,  GEODUDE,    20 ;  0
+	db POLIWHIRL,  40,  POLITOED,   40 ;  1
+	db GOLDEEN,    20,  TANGELA,    20 ;  2
+	db SEAKING,    40,  TANGELA,    40 ;  3
+	db GYARADOS,   19,  GYARADOS,   21 ;  4
+	db GYARADOS,   40,  GYARADOS,   42 ;  5
+	db TENTACOOL,  20,  GRIMER,     20 ;  6
+	db TENTACRUEL, 40,  MUK,        40 ;  7
+	db CORSOLA,    20,  STARYU,     20 ;  8
+	db CORSOLA,    40,  STARMIE,    40 ;  9
+	db SHELLDER,   20,  CLOYSTER,   20 ; 10
 if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
-	db CLOYSTER,   40,  TURBIN,     40 ;  3
+	db CLOYSTER,   40,  TURBIN,     40 ; 11
 else
-	db CLOYSTER,   40,  CASTAWEIGH, 40 ;  3
+	db CLOYSTER,   40,  CASTAWEIGH, 40 ; 11
 endc
-	db GOLDEEN,    20,  TANGELA,    20 ;  4
-	db SEAKING,    40,  TANGELA,    40 ;  5
-	db POLIWAG,    20,  GEODUDE,    20 ;  6
-	db POLIWHIRL,  40,  POLITOED,   40 ;  7
-	db DRATINI,    20,  DRAGONAIR,  20 ;  8
-	db DRAGONAIR,  40,  DUNSPARCE,  40 ;  9
-	db GYARADOS,   19,  GYARADOS,   21 ; 10
-	db GYARADOS,   40,  GYARADOS,   42 ; 11
-	db DRAGONAIR,  20,  DRATINI,    20 ; 12
-	db DRATINI,    40,  DUNSPARCE,  40 ; 13
-	db HORSEA,     20,  UNOWN,      24 ; 14
-	db SEADRA,     40,  KINGDRA,    40 ; 15
-	db TENTACOOL,  20,  GRIMER,     20 ; 16
-	db TENTACRUEL, 40,  MUK,        40 ; 17
+	db HORSEA,     20,  UNOWN,      24 ; 12
+	db SEADRA,     40,  KINGDRA,    40 ; 13
+	db DRATINI,    20,  DRAGONAIR,  20 ; 14
+	db DRAGONAIR,  40,  DUNSPARCE,  40 ; 15
+	db DRAGONAIR,  20,  DRATINI,    20 ; 16
+	db DRATINI,    40,  DUNSPARCE,  40 ; 17
 endc
 
 FishGroups_Names::
