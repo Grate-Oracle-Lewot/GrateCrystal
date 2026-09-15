@@ -140,8 +140,8 @@ RockItemEncounter:
 
 FishingItemEncounter:
 	call GetFishingGroup
-	and a
-	jr z, FishingItemEncounterFail
+	cp FISHGROUP_SHORE ; only SHORE or higher yield fishing items
+	jr c, FishingItemEncounterFail
 	ld hl, FishingItemTable
 	; fallthrough
 
