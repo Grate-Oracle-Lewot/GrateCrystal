@@ -44,10 +44,10 @@ FishGroups:
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     POLIWAG,    19
 	db  75 percent + 1, POLIWAG,    21
-	db 100 percent,     time_group 6
+	db 100 percent,     time_group 0
 .Pond_Super:
 	db  25 percent,     POLIWAG,    40
-	db  50 percent,     time_group 7
+	db  50 percent,     time_group 1
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     POLIWAG,    42
 .Pond_Odd:
@@ -69,10 +69,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     GOLDEEN,    19
 	db  75 percent + 1, GOLDEEN,    21
-	db 100 percent,     time_group 4
+	db 100 percent,     time_group 2
 .Lagoon_Super:
 	db  25 percent,     GOLDEEN,    40
-	db  50 percent,     time_group 5
+	db  50 percent,     time_group 3
 	db  75 percent + 1, MAGIKARP,   40
 if DEF(_LITTLE_CUP)
 	db 100 percent,     GOLDEEN,    40
@@ -98,10 +98,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     MAGIKARP,   20
 	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 10
+	db 100 percent,     time_group 4
 .Lake_Super:
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 11
+	db  50 percent,     time_group 5
 	db  75 percent + 1, MAGIKARP,   42
 	db 100 percent,     MAGIKARP,   37
 .Lake_Odd:
@@ -123,10 +123,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     POLIWAG,    19
 	db  75 percent + 1, POLIWAG,    21
-	db 100 percent,     time_group 6
+	db 100 percent,     time_group 0
 .Sream_Super:
 	db  25 percent,     POLIWAG,    40
-	db  50 percent,     time_group 7
+	db  50 percent,     time_group 1
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     REMORAID,   40
 .Stream_Odd:
@@ -147,10 +147,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     TENTACOOL,  19
 	db  75 percent + 1, TENTACOOL,  21
-	db 100 percent,     time_group 16
+	db 100 percent,     time_group 6
 .River_Super:
 	db  25 percent,     TENTACOOL,  40
-	db  50 percent,     time_group 17
+	db  50 percent,     time_group 7
 	db  75 percent + 1, MAGIKARP,   40
 if DEF(_LITTLE_CUP)
 	db 100 percent,     GEODUDE,    40
@@ -158,7 +158,7 @@ else
 	db 100 percent,     QWILFISH,   40
 endc
 .River_Odd:
-	db  20 percent,     time_group 16
+	db  20 percent,     time_group 6
 if DEF(_LITTLE_CUP)
 	db 100 percent,     GEODUDE,    21
 else
@@ -173,21 +173,21 @@ endc
 	db  25 percent,     SEEL,       19
 	db  50 percent,     KRABBY,     19
 	db  75 percent + 1, KRABBY,     21
-	db 100 percent,     time_group 0
+	db 100 percent,     time_group 8
 .Shore_Super:
 if DEF(_LITTLE_CUP)
 	db  25 percent,     SEEL,       40
-	db  50 percent,     time_group 1
+	db  50 percent,     time_group 9
 	db  75 percent + 1, PHANPY,     40
 	db 100 percent,     KRABBY,     40
 else
 	db  25 percent,     DEWGONG,    40
-	db  50 percent,     time_group 1
+	db  50 percent,     time_group 9
 	db  75 percent + 1, DONPHAN,    40
 	db 100 percent,     KINGLER,    40
 endc
 .Shore_Odd:
-	db  25 percent,     time_group 0
+	db  25 percent,     time_group 8
 	db  50 percent,     CHINCHOU,   21
 	db  75 percent + 1, OMANYTE,    21
 	db 100 percent,     KABUTO,     21
@@ -204,16 +204,16 @@ else
 endc
 	db  50 percent,     TENTACOOL,  19
 	db  75 percent + 1, CHINCHOU,   19
-	db 100 percent,     time_group 2
+	db 100 percent,     time_group 10
 .Ocean_Super:
 if DEF(_LITTLE_CUP)
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 3
+	db  50 percent,     time_group 11
 	db  75 percent + 1, TENTACOOL,  40
 	db 100 percent,     CHINCHOU,   40
 else
 	db  25 percent,     CASTAWEIGH, 40
-	db  50 percent,     time_group 3
+	db  50 percent,     time_group 11
 	db  75 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
 endc
@@ -244,16 +244,16 @@ if DEF(_LITTLE_CUP)
 else
 	db  75 percent + 1, CASTAWEIGH, 19
 endc
-	db 100 percent,     time_group 14
+	db 100 percent,     time_group 12
 .Cove_Super:
 if DEF(_LITTLE_CUP)
 	db  25 percent,     KRABBY,     40
-	db  50 percent,     time_group 15
+	db  50 percent,     time_group 13
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     HORSEA,     40
 else
 	db  25 percent,     KINGLER,    40
-	db  50 percent,     time_group 15
+	db  50 percent,     time_group 13
 	db  75 percent + 1, CASTAWEIGH, 40
 	db 100 percent,     SEADRA,     40
 endc
@@ -280,10 +280,10 @@ if DEF(_LITTLE_CUP)
 else
 	db  75 percent + 1, GYARADOS,   19
 endc
-	db 100 percent,     time_group 8
+	db 100 percent,     time_group 14
 .Spring_Super:
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 9
+	db  50 percent,     time_group 15
 if DEF(_LITTLE_CUP)
 	db  75 percent + 1, MAGIKARP,   40
 	db 100 percent,     DRATINI,    40
@@ -310,10 +310,10 @@ endc
 	db  25 percent,     MAGIKARP,   19
 	db  50 percent,     HORSEA,     19
 	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 12
+	db 100 percent,     time_group 16
 .Cenote_Super:
 	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 13
+	db  50 percent,     time_group 17
 if DEF(_LITTLE_CUP)
 	db  75 percent + 1, HORSEA,     40
 	db 100 percent,     DRATINI,    40
