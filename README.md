@@ -365,6 +365,7 @@ Prize TMs:
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. Conversely, if you turn level caps off, walk around to give Daycare Pokémon experience, and turn hard caps back on, they may exceed the current cap. This is the best I could do given the cap toggle and how Daycare experience and leveling work, so please forgive me.
 - Until you've cleared out Team Rocket's hideout in Mahogany Town, any would-be Magikarp encounter at the Lake of Rage becomes a Gyarados with all 0 DVs (representing the negative effects of the forced evolution). Encounters that are generated as Gyarados in the first place have normal, randomized DVs (or perfect DVs for the Red Gyarados).
+- You can now fish (but not Surf) in the National Park's fountain, including during the Bug-Catching Contest. Only Bug-types will be fished up during the Contest regardless of Rod type, and can be entered in the Contest. However, since you can't access the Pack during the Contest, you must have a Rod registered to Select in order to do this.
 - Cianwood City and Cinnabar Island each have a sailor who attempts to prevent Surf softlocks
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower (0-3 for Flying types)
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
