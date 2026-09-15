@@ -329,9 +329,9 @@ endc
 	db 100 percent,     SHUCKLE,    15
 
 .BugContest_Odd:
-	db  40 percent,     KABUTO,     10
+	db  40 percent,     KABUTO,      8
 	db  80 percent,     KABUTO,     15
-	db  90 percent + 1, PINECO,     10
+	db  90 percent + 1, PINECO,      8
 	db 100 percent,     PINECO,     15
 
 TimeFishGroups:
