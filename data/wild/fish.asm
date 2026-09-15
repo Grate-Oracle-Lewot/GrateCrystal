@@ -124,7 +124,7 @@ endc
 	db  50 percent,     POLIWAG,    19
 	db  75 percent + 1, POLIWAG,    21
 	db 100 percent,     time_group 0
-.Sream_Super:
+.Stream_Super:
 	db  25 percent,     POLIWAG,    40
 	db  50 percent,     time_group 1
 	db  75 percent + 1, MAGIKARP,   40
