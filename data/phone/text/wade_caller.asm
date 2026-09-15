@@ -71,7 +71,7 @@ WadeHangUpText:
 	text "See you later!"
 	done
 
-WadeBugCatchingContestText:
+WadeBugCatchingContestBeforeText:
 	text "The Bug-Catching"
 	line "Contest is at the"
 
@@ -86,6 +86,20 @@ WadeBugCatchingContestText:
 
 	para "you get past trees"
 	line "without CUT!"
+	done
+
+WadeBugCatchingContestAfterText:
+	text "The Bug-Catching"
+	line "Contest is at the"
+
+	para "NATIONAL PARK"
+	line "today."
+
+	para "Are you going,"
+	line "<PLAY_G>?"
+
+	para "I'm trying to make"
+	line "up my mind."
 	done
 
 WadeFoundItemText:
