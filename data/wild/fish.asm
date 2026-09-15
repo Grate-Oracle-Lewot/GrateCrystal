@@ -9,18 +9,161 @@ ENDM
 FishGroups:
 ; entries correspond to FISHGROUP_* constants
 	table_width FISHGROUP_DATA_LENGTH, FishGroups
+	fishgroup 50 percent + 1, .BugContest_Old,       .BugContest_Good,       .BugContest_Super,       .BugContest_Odd
+	fishgroup 50 percent + 1, .Pond_Old,             .Pond_Good,             .Pond_Super,             .Pond_Odd
+	fishgroup 50 percent + 1, .Lagoon_Old,           .Lagoon_Good,           .Lagoon_Super,           .Lagoon_Odd
+	fishgroup 50 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super,             .Lake_Odd
+	fishgroup 50 percent + 1, .Stream_Old,           .Stream_Good,           .Stream_Super,           .Stream_Odd
+	fishgroup 50 percent + 1, .River_Old,            .River_Good,            .River_Super,            .River_Odd
 	fishgroup 50 percent + 1, .Shore_Old,            .Shore_Good,            .Shore_Super,            .Shore_Odd
 	fishgroup 50 percent + 1, .Ocean_Old,            .Ocean_Good,            .Ocean_Super,            .Ocean_Odd
-	fishgroup 50 percent + 1, .Lagoon_Old,           .Lagoon_Good,           .Lagoon_Super,           .Lagoon_Odd
-	fishgroup 50 percent + 1, .Pond_Old,             .Pond_Good,             .Pond_Super,             .Pond_Odd
-	fishgroup 50 percent + 1, .Spring_Old,           .Spring_Good,           .Spring_Super,           .Spring_Odd
-	fishgroup 50 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super,             .Lake_Odd
-	fishgroup 50 percent + 1, .Cenote_Old,           .Cenote_Good,           .Cenote_Super,           .Cenote_Odd
 	fishgroup 50 percent + 1, .Cove_Old,             .Cove_Good,             .Cove_Super,             .Cove_Odd
-	fishgroup 50 percent + 1, .River_Old,            .River_Good,            .River_Super,            .River_Odd
-	fishgroup 50 percent + 1, .Stream_Old,           .Stream_Good,           .Stream_Super,           .Stream_Odd
-	fishgroup 50 percent + 1, .BugContest_Old,       .BugContest_Good,       .BugContest_Super,       .BugContest_Odd
+	fishgroup 50 percent + 1, .Spring_Old,           .Spring_Good,           .Spring_Super,           .Spring_Odd
+	fishgroup 50 percent + 1, .Cenote_Old,           .Cenote_Good,           .Cenote_Super,           .Cenote_Odd
 	assert_table_length NUM_FISHGROUPS
+
+.BugContest_Old:
+.BugContest_Good:
+.BugContest_Super:
+	db  40 percent,     KRABBY,      5
+	db  80 percent,     KRABBY,     10
+	db  90 percent + 1, KRABBY,     15
+	db 100 percent,     SHUCKLE,    15
+
+.BugContest_Odd:
+	db  40 percent,     KABUTO,      8
+	db  80 percent,     KABUTO,     15
+	db  90 percent + 1, PINECO,      8
+	db 100 percent,     PINECO,     15
+
+.Pond_Old:
+	db  50 percent + 1, MAGIKARP,    8
+	db  75 percent + 1, GEODUDE,     8
+	db 100 percent,     POLIWAG,     8
+.Pond_Good:
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     POLIWAG,    19
+	db  75 percent + 1, POLIWAG,    21
+	db 100 percent,     time_group 6
+.Pond_Super:
+	db  25 percent,     POLIWAG,    40
+	db  50 percent,     time_group 7
+	db  75 percent + 1, MAGIKARP,   40
+	db 100 percent,     POLIWAG,    42
+.Pond_Odd:
+	db  40 percent,     WOOPER,     21
+	db  80 percent,     PSYDUCK,    21
+if DEF(_LITTLE_CUP)
+	db  90 percent + 1, PSYDUCK,    21
+	db 100 percent,     SQUIRTLE,   21
+else
+	db  90 percent + 1, FARFETCH_D, 21
+	db 100 percent,     WARTORTLE,  21
+endc
+
+.Lagoon_Old:
+	db  50 percent + 1, MAGIKARP,    8
+	db  75 percent + 1, GEODUDE,     8
+	db 100 percent,     GOLDEEN,     8
+.Lagoon_Good:
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     GOLDEEN,    19
+	db  75 percent + 1, GOLDEEN,    21
+	db 100 percent,     time_group 4
+.Lagoon_Super:
+	db  25 percent,     GOLDEEN,    40
+	db  50 percent,     time_group 5
+	db  75 percent + 1, MAGIKARP,   40
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GOLDEEN,    40
+else
+	db 100 percent,     SEAKING,    40
+endc
+.Lagoon_Odd:
+	db  40 percent,     SLOWPOKE,   23
+	db  80 percent,     PSYDUCK,    23
+if DEF(_LITTLE_CUP)
+	db  90 percent + 1, PSYDUCK,    23
+	db 100 percent,     TOTODILE,   23
+else
+	db  90 percent + 1, FARFETCH_D, 23
+	db 100 percent,     CROCONAW,   23
+endc
+
+.Lake_Old:
+	db  50 percent + 1, MAGIKARP,    8
+	db  75 percent + 1, MAGIKARP,    9
+	db 100 percent,     MAGIKARP,   10
+.Lake_Good:
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     MAGIKARP,   20
+	db  75 percent + 1, MAGIKARP,   21
+	db 100 percent,     time_group 10
+.Lake_Super:
+	db  25 percent,     MAGIKARP,   40
+	db  50 percent,     time_group 11
+	db  75 percent + 1, MAGIKARP,   42
+	db 100 percent,     MAGIKARP,   37
+.Lake_Odd:
+if DEF(_LITTLE_CUP)
+	db  50 percent + 1, MAGIKARP,   19
+	db  75 percent + 1, MAGIKARP,   20
+	db 100 percent,     MAGIKARP,   21
+else
+	db  50 percent + 1, GYARADOS,   19
+	db  75 percent + 1, GYARADOS,   20
+	db 100 percent,     GYARADOS,   21
+endc
+
+.Stream_Old:
+	db  50 percent + 1, MAGIKARP,    8
+	db  75 percent + 1, GEODUDE,     8
+	db 100 percent,     POLIWAG,     8
+.Stream_Good:
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     POLIWAG,    19
+	db  75 percent + 1, POLIWAG,    21
+	db 100 percent,     time_group 6
+.Sream_Super:
+	db  25 percent,     POLIWAG,    40
+	db  50 percent,     time_group 7
+	db  75 percent + 1, MAGIKARP,   40
+	db 100 percent,     REMORAID,   40
+.Stream_Odd:
+	db  50 percent + 1, REMORAID,   21
+if DEF(_LITTLE_CUP)
+	db  75 percent + 1, REMORAID,   21
+	db 100 percent,     WOOPER,     21
+else
+	db  75 percent + 1, OCTILLERY,  21
+	db 100 percent,     QUAGSIRE,   21
+endc
+
+.River_Old:
+	db  50 percent + 1, MAGIKARP,    8
+	db  75 percent + 1, GEODUDE,     8
+	db 100 percent,     TENTACOOL,   8
+.River_Good:
+	db  25 percent,     MAGIKARP,   19
+	db  50 percent,     TENTACOOL,  19
+	db  75 percent + 1, TENTACOOL,  21
+	db 100 percent,     time_group 16
+.River_Super:
+	db  25 percent,     TENTACOOL,  40
+	db  50 percent,     time_group 17
+	db  75 percent + 1, MAGIKARP,   40
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GEODUDE,    40
+else
+	db 100 percent,     QWILFISH,   40
+endc
+.River_Odd:
+	db  20 percent,     time_group 16
+if DEF(_LITTLE_CUP)
+	db 100 percent,     GEODUDE,    21
+else
+	db 100 percent,     QWILFISH,   21
+endc
 
 .Shore_Old:
 	db  50 percent + 1, MAGIKARP,    8
@@ -85,151 +228,6 @@ endc
 	db  75 percent + 1, OMANYTE,    28
 	db 100 percent,     KABUTO,     28
 
-.Lagoon_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GEODUDE,     8
-	db 100 percent,     GOLDEEN,     8
-.Lagoon_Good:
-	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     GOLDEEN,    19
-	db  75 percent + 1, GOLDEEN,    21
-	db 100 percent,     time_group 4
-.Lagoon_Super:
-	db  25 percent,     GOLDEEN,    40
-	db  50 percent,     time_group 5
-	db  75 percent + 1, MAGIKARP,   40
-if DEF(_LITTLE_CUP)
-	db 100 percent,     GOLDEEN,    40
-else
-	db 100 percent,     SEAKING,    40
-endc
-.Lagoon_Odd:
-	db  40 percent,     SLOWPOKE,   23
-	db  80 percent,     PSYDUCK,    23
-if DEF(_LITTLE_CUP)
-	db  90 percent + 1, PSYDUCK,    23
-	db 100 percent,     TOTODILE,   23
-else
-	db  90 percent + 1, FARFETCH_D, 23
-	db 100 percent,     CROCONAW,   23
-endc
-
-.Pond_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GEODUDE,     8
-	db 100 percent,     POLIWAG,     8
-.Pond_Good:
-	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     POLIWAG,    19
-	db  75 percent + 1, POLIWAG,    21
-	db 100 percent,     time_group 6
-.Pond_Super:
-	db  25 percent,     POLIWAG,    40
-	db  50 percent,     time_group 7
-	db  75 percent + 1, MAGIKARP,   40
-	db 100 percent,     POLIWAG,    42
-.Pond_Odd:
-	db  40 percent,     WOOPER,     21
-	db  80 percent,     PSYDUCK,    21
-if DEF(_LITTLE_CUP)
-	db  90 percent + 1, PSYDUCK,    21
-	db 100 percent,     SQUIRTLE,   21
-else
-	db  90 percent + 1, FARFETCH_D, 21
-	db 100 percent,     WARTORTLE,  21
-endc
-
-.Spring_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GOLDEEN,     8
-	db 100 percent,     MAGIKARP,   10
-.Spring_Good:
-	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     GOLDEEN,    19
-if DEF(_LITTLE_CUP)
-	db  75 percent + 1, MAGIKARP,   19
-else
-	db  75 percent + 1, GYARADOS,   19
-endc
-	db 100 percent,     time_group 8
-.Spring_Super:
-	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 9
-if DEF(_LITTLE_CUP)
-	db  75 percent + 1, MAGIKARP,   40
-	db 100 percent,     DRATINI,    40
-else
-	db  75 percent + 1, GYARADOS,   40
-	db 100 percent,     DRAGONAIR,  40
-endc
-.Spring_Odd:
-if DEF(_LITTLE_CUP)
-	db  50 percent + 1, POLIWAG,    21
-	db  75 percent + 1, DRATINI,    21
-	db 100 percent,     DRATINI,    21
-else
-	db  50 percent + 1, POLITOED,   21
-	db  75 percent + 1, DRATINI,    21
-	db 100 percent,     DRAGONAIR,  21
-endc
-
-.Lake_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, MAGIKARP,    9
-	db 100 percent,     MAGIKARP,   10
-.Lake_Good:
-	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     MAGIKARP,   20
-	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 10
-.Lake_Super:
-	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 11
-	db  75 percent + 1, MAGIKARP,   42
-	db 100 percent,     MAGIKARP,   37
-.Lake_Odd:
-if DEF(_LITTLE_CUP)
-	db  50 percent + 1, MAGIKARP,   19
-	db  75 percent + 1, MAGIKARP,   20
-	db 100 percent,     MAGIKARP,   21
-else
-	db  50 percent + 1, GYARADOS,   19
-	db  75 percent + 1, GYARADOS,   20
-	db 100 percent,     GYARADOS,   21
-endc
-
-.Cenote_Old:
-	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, HORSEA,      8
-	db 100 percent,     MAGIKARP,   10
-.Cenote_Good:
-	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     HORSEA,     19
-	db  75 percent + 1, MAGIKARP,   21
-	db 100 percent,     time_group 12
-.Cenote_Super:
-	db  25 percent,     MAGIKARP,   40
-	db  50 percent,     time_group 13
-if DEF(_LITTLE_CUP)
-	db  75 percent + 1, HORSEA,     40
-	db 100 percent,     DRATINI,    40
-else
-	db  75 percent + 1, SEADRA,     40
-	db 100 percent,     DRAGONAIR,  40
-endc
-.Cenote_Odd:
-if DEF(_LITTLE_CUP)
-	db  25 percent,     REMORAID,   23
-	db  50 percent,     MAGIKARP,   23
-	db  75 percent + 1, DRATINI,    23
-	db 100 percent,     DRATINI,    23
-else
-	db  25 percent,     OCTILLERY,  23
-	db  50 percent,     CASTAWEIGH, 23
-	db  75 percent + 1, DRATINI,    23
-	db 100 percent,     DRAGONAIR,  23
-endc
-
 .Cove_Old:
 	db  50 percent + 1, MAGIKARP,    8
 if DEF(_LITTLE_CUP)
@@ -270,69 +268,71 @@ else
 	db 100 percent,     LAPRAS,     21
 endc
 
-.River_Old:
+.Spring_Old:
 	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GEODUDE,     8
-	db 100 percent,     TENTACOOL,   8
-.River_Good:
+	db  75 percent + 1, GOLDEEN,     8
+	db 100 percent,     MAGIKARP,   10
+.Spring_Good:
 	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     TENTACOOL,  19
-	db  75 percent + 1, TENTACOOL,  21
-	db 100 percent,     time_group 16
-.River_Super:
-	db  25 percent,     TENTACOOL,  40
-	db  50 percent,     time_group 17
-	db  75 percent + 1, MAGIKARP,   40
+	db  50 percent,     GOLDEEN,    19
 if DEF(_LITTLE_CUP)
-	db 100 percent,     GEODUDE,    40
+	db  75 percent + 1, MAGIKARP,   19
 else
-	db 100 percent,     QWILFISH,   40
+	db  75 percent + 1, GYARADOS,   19
 endc
-.River_Odd:
-	db  20 percent,     time_group 16
+	db 100 percent,     time_group 8
+.Spring_Super:
+	db  25 percent,     MAGIKARP,   40
+	db  50 percent,     time_group 9
 if DEF(_LITTLE_CUP)
-	db 100 percent,     GEODUDE,    21
+	db  75 percent + 1, MAGIKARP,   40
+	db 100 percent,     DRATINI,    40
 else
-	db 100 percent,     QWILFISH,   21
+	db  75 percent + 1, GYARADOS,   40
+	db 100 percent,     DRAGONAIR,  40
+endc
+.Spring_Odd:
+if DEF(_LITTLE_CUP)
+	db  50 percent + 1, POLIWAG,    21
+	db  75 percent + 1, DRATINI,    21
+	db 100 percent,     DRATINI,    21
+else
+	db  50 percent + 1, POLITOED,   21
+	db  75 percent + 1, DRATINI,    21
+	db 100 percent,     DRAGONAIR,  21
 endc
 
-.Stream_Old:
+.Cenote_Old:
 	db  50 percent + 1, MAGIKARP,    8
-	db  75 percent + 1, GEODUDE,     8
-	db 100 percent,     POLIWAG,     8
-.Stream_Good:
+	db  75 percent + 1, HORSEA,      8
+	db 100 percent,     MAGIKARP,   10
+.Cenote_Good:
 	db  25 percent,     MAGIKARP,   19
-	db  50 percent,     POLIWAG,    19
-	db  75 percent + 1, POLIWAG,    21
-	db 100 percent,     time_group 6
-.Sream_Super:
-	db  25 percent,     POLIWAG,    40
-	db  50 percent,     time_group 7
-	db  75 percent + 1, MAGIKARP,   40
-	db 100 percent,     REMORAID,   40
-.Stream_Odd:
-	db  50 percent + 1, REMORAID,   21
+	db  50 percent,     HORSEA,     19
+	db  75 percent + 1, MAGIKARP,   21
+	db 100 percent,     time_group 12
+.Cenote_Super:
+	db  25 percent,     MAGIKARP,   40
+	db  50 percent,     time_group 13
 if DEF(_LITTLE_CUP)
-	db  75 percent + 1, REMORAID,   21
-	db 100 percent,     WOOPER,     21
+	db  75 percent + 1, HORSEA,     40
+	db 100 percent,     DRATINI,    40
 else
-	db  75 percent + 1, OCTILLERY,  21
-	db 100 percent,     QUAGSIRE,   21
+	db  75 percent + 1, SEADRA,     40
+	db 100 percent,     DRAGONAIR,  40
 endc
-
-.BugContest_Old:
-.BugContest_Good:
-.BugContest_Super:
-	db  40 percent,     KRABBY,      5
-	db  80 percent,     KRABBY,     10
-	db  90 percent + 1, KRABBY,     15
-	db 100 percent,     SHUCKLE,    15
-
-.BugContest_Odd:
-	db  40 percent,     KABUTO,      8
-	db  80 percent,     KABUTO,     15
-	db  90 percent + 1, PINECO,      8
-	db 100 percent,     PINECO,     15
+.Cenote_Odd:
+if DEF(_LITTLE_CUP)
+	db  25 percent,     REMORAID,   23
+	db  50 percent,     MAGIKARP,   23
+	db  75 percent + 1, DRATINI,    23
+	db 100 percent,     DRATINI,    23
+else
+	db  25 percent,     OCTILLERY,  23
+	db  50 percent,     CASTAWEIGH, 23
+	db  75 percent + 1, DRATINI,    23
+	db 100 percent,     DRAGONAIR,  23
+endc
 
 TimeFishGroups:
 	;  day              nite
@@ -399,27 +399,27 @@ FishGroups_Names::
 Group0_Name:
 	db "NONE@"
 Group1_Name:
-	db "SHORE@"
+	db "CONTEST@"
 Group2_Name:
-	db "OCEAN@"
+	db "POND@"
 Group3_Name:
 	db "LAGOON@"
 Group4_Name:
-	db "POND@"
-Group5_Name:
-	db "SPRING@"
-Group6_Name:
 	db "LAKE@"
-Group7_Name:
-	db "CENOTE@"
-Group8_Name:
-	db "COVE@"
-Group9_Name:
-	db "RIVER@"
-Group10_Name:
+Group5_Name:
 	db "STREAM@"
+Group6_Name:
+	db "RIVER@"
+Group7_Name:
+	db "SHORE@"
+Group8_Name:
+	db "OCEAN@"
+Group9_Name:
+	db "COVE@"
+Group10_Name:
+	db "SPRING@"
 Group11_Name:
-	db "CONTEST@"
+	db "CENOTE@"
 
 GetMapsFishGroup::
 	dec d ; map num
