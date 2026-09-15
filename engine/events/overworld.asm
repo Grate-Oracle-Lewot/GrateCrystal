@@ -1791,6 +1791,12 @@ FishFunction:
 
 .contest
 	ld a, BATTLETYPE_CONTEST
+; Fishing in the National Park fountain during the Bug-Catching Contest uses BATTLETYPE_CONTEST instead of BATTLETYPE_FISH.
+; This means Lure Balls won't have their catching bonus, but you can only use Park Balls anyway.
+; It also means we won't get the "hooked mon attacked" text, but that's not too big a deal.
+; BATTLETYPE_CONTEST gives us the Contest battle menu instead of the normal one, so we want that.
+; Because the Contest is technically a different map than the National Park, it can have a separate fishgroup.
+; Naturally, this fishgroup is full of Bug-types and isn't used on any other map.
 	jr .got_battletype
 
 Script_NotEvenANibble:
