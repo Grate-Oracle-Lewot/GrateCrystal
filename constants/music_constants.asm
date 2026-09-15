@@ -139,6 +139,7 @@
 	const MUSIC_SAFFRON_CITY                 ; 85
 	const MUSIC_MT_SILVER                    ; 86
 	const MUSIC_OLD_MT_MOON                  ; 87
+	const MUSIC_BUG_CONTEST_BATTLE           ; 88
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
