@@ -387,14 +387,15 @@ TakePartyItem:
 	ld [hl], NO_ITEM
 	call GetItemName
 	ld hl, PokemonTookItemText
-	jp MenuTextboxBackup
+	jr .done
 
 .not_holding_item
 	ld hl, PokemonNotHoldingText
-	jp MenuTextboxBackup
+	jr .done
 
 .item_storage_full
 	ld hl, ItemStorageFullText
+.done
 	jp MenuTextboxBackup
 
 SwapPartyItem:
@@ -842,7 +843,7 @@ ChooseMoveToDelete:
 .enter_loop
 	call PrepareToPlaceMoveData
 	call PlaceMoveData
-	jp .loop
+	jr .loop
 
 .a_button
 	and a
