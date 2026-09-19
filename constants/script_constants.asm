@@ -186,16 +186,16 @@ EMOTE_LENGTH EQU 6
 	const FRUITTREE_VIOLET_CITY   ; 05
 	const FRUITTREE_ROUTE_33      ; 06
 	const FRUITTREE_AZALEA_TOWN   ; 07
-	const FRUITTREE_ROUTE_35      ; 08
-	const FRUITTREE_ROUTE_36      ; 09
-	const FRUITTREE_ROUTE_37_1    ; 0a
-	const FRUITTREE_ROUTE_37_2    ; 0b
-	const FRUITTREE_ROUTE_37_3    ; 0c
-	const FRUITTREE_ROUTE_38      ; 0d
-	const FRUITTREE_ROUTE_39      ; 0e
-	const FRUITTREE_ROUTE_42_1    ; 0f
-	const FRUITTREE_ROUTE_42_2    ; 10
-	const FRUITTREE_ROUTE_42_3    ; 11
+	const FRUITTREE_ILEX_FOREST   ; 08
+	const FRUITTREE_ROUTE_35      ; 09
+	const FRUITTREE_ROUTE_36      ; 0a
+	const FRUITTREE_ROUTE_37_1    ; 0b
+	const FRUITTREE_ROUTE_37_2    ; 0c
+	const FRUITTREE_ROUTE_37_3    ; 0d
+	const FRUITTREE_ROUTE_38      ; 0e
+	const FRUITTREE_ROUTE_39      ; 0f
+	const FRUITTREE_ROUTE_42_1    ; 10
+	const FRUITTREE_ROUTE_42_2    ; 11
 	const FRUITTREE_ROUTE_43      ; 12
 	const FRUITTREE_ROUTE_44      ; 13
 	const FRUITTREE_ROUTE_45      ; 14
