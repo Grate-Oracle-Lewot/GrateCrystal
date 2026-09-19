@@ -1,10 +1,10 @@
 	db "RAVEN@" ; species name
 	dw 108, 50 ; height, weight
 
-	db   "A traditional"
-	next "companion of those"
-	next "who practice"
+	db   "Even trained ones"
+	next "will grab random"
+	next "items that catch"
 
-	page "witchcraft and"
-	next "other occult"
-	next "activities.@"
+	page "their interest and"
+	next "toss them into"
+	next "cauldrons.@"
