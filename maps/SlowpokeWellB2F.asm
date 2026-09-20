@@ -38,6 +38,9 @@ SlowpokeWellB2FLeftovers:
 SlowpokeWellB2FQuickClaw:
 	itemball QUICK_CLAW
 
+SlowpokeWellB2FHiddenSpringWater:
+	hiddenitem SPRING_WATER, EVENT_SLOWPOKE_WELL_B2F_HIDDEN_SPRING_WATER
+
 SlowpokeWellB2FGymGuideText:
 	text "In this hack,"
 	line "SLOWPOKE evolves"
@@ -75,6 +78,7 @@ SlowpokeWellB2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  9, 51, BGEVENT_ITEM, SlowpokeWellB2FHiddenSpringWater
 
 	def_object_events
 	object_event  4,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 1, SlowpokeWellB2FGymGuideScript, -1
