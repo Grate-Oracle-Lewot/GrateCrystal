@@ -9,16 +9,16 @@ RuinsOfAlphKabutoItemRoom_MapScripts:
 
 	def_callbacks
 
-RuinsOfAlphKabutoItemRoomBerry:
+RuinsOfAlphKabutoItemRoomGoldBerry:
 	itemball GOLD_BERRY
 
-RuinsOfAlphKabutoItemRoomPsncureberry:
+RuinsOfAlphKabutoItemRoomTMFalseSwipe:
 	itemball TM_FALSE_SWIPE, 5
 
-RuinsOfAlphKabutoItemRoomHealPowder:
+RuinsOfAlphKabutoItemRoomOldGateau:
 	itemball OLD_GATEAU
 
-RuinsOfAlphKabutoItemRoomEnergypowder:
+RuinsOfAlphKabutoItemRoomBugwort:
 	itemball BUGWORT
 
 RuinsOfAlphKabutoItemRoomAncientReplica:
@@ -42,7 +42,7 @@ RuinsOfAlphKabutoItemRoom_MapEvents:
 	bg_event  5,  1, BGEVENT_READ, RuinsOfAlphKabutoItemRoomAncientReplica
 
 	def_object_events
-	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomBerry, EVENT_PICKED_UP_BERRY_FROM_KABUTO_ITEM_ROOM
-	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomPsncureberry, EVENT_PICKED_UP_PSNCUREBERRY_FROM_KABUTO_ITEM_ROOM
-	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomHealPowder, EVENT_PICKED_UP_HEAL_POWDER_FROM_KABUTO_ITEM_ROOM
-	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomEnergypowder, EVENT_PICKED_UP_ENERGYPOWDER_FROM_KABUTO_ITEM_ROOM
+	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomGoldBerry, EVENT_PICKED_UP_GOLD_BERRY_FROM_KABUTO_ITEM_ROOM
+	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomTMFalseSwipe, EVENT_PICKED_UP_TM_FALSE_SWIPE_FROM_KABUTO_ITEM_ROOM
+	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomOldGateau, EVENT_PICKED_UP_OLD_GATEAU_FROM_KABUTO_ITEM_ROOM
+	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomBugwort, EVENT_PICKED_UP_BUGWORT_FROM_KABUTO_ITEM_ROOM
