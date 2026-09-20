@@ -1856,7 +1856,8 @@
 	const EVENT_ROUTE_46_SWAG_BEACON
 	const EVENT_ROUTE_21_SWAG_BEACON
 	const EVENT_SAFARI_ZONE_MAIN_OFFICE_LEEK
-; Unused: next 49 (now 1) events
+	const EVENT_SLOWPOKE_WELL_B2F_HIDDEN_SPRING_WATER
+; Unused: next 49 (now 0) events
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
