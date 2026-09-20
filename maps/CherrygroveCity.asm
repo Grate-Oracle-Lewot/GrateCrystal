@@ -216,6 +216,7 @@ MysticWaterGuy:
 	waitbutton
 .Exit:
 	closetext
+	turnobject CHERRYGROVECITY_FISHER, RIGHT
 	end
 
 CherrygroveCitySign:
