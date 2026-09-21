@@ -18,7 +18,7 @@ RuinsOfAlphAerodactylItemRoomMoonStone:
 RuinsOfAlphAerodactylItemRoomTMUTurn:
 	itemball TM_U_TURN, 5
 
-RuinsOfAlphAerodactylItemSootfootroot:
+RuinsOfAlphAerodactylItemRoomSootfootroot:
 	itemball SOOTFOOTROOT
 
 RuinsOfAlphAerodactylItemRoomAncientReplica:
