@@ -508,9 +508,9 @@ _CheckSFX:
 
 PlayDanger:
 	ld a, [wLowHealthAlarm]
-	bit DANGER_ON_F, a
-	ret z
 	cp $ff
+	ret z
+	bit DANGER_ON_F, a
 	ret z
 
 	; Don't do anything if SFX is being played
