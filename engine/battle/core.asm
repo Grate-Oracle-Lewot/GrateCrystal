@@ -4835,11 +4835,6 @@ DrawPlayerHUD:
 	pop de
 	ret
 
-_UpdateBattleHuds::
-	call UpdatePlayerHUD
-	call UpdateEnemyHUD
-	; fallthrough
-
 CheckDanger:
 	ld hl, wBattleMonHP
 	ld a, [hli]
@@ -4926,6 +4921,10 @@ PrintPlayerHUD:
 	hlcoord 18, 8
 	ld [hl], "<FLOAT>"
 	ret
+
+_UpdateBattleHuds::
+	call UpdatePlayerHUD
+	; fallthrough
 
 UpdateEnemyHUD::
 	push hl
