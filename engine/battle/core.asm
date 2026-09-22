@@ -4848,8 +4848,8 @@ CheckDanger:
 	jr z, .danger
 
 .no_danger
-	ld hl, wLowHealthAlarm
-	ld [hl], 0
+	xor a
+	ld [wLowHealthAlarm], a
 	ret
 
 .danger
