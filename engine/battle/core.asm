@@ -757,6 +757,7 @@ ParsePlayerAction:
 	call SafeLoadTempTilemapToTilemap
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
+	call UpdateBattleHuds
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle
