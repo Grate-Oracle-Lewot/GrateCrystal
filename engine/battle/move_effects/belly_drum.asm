@@ -13,7 +13,7 @@ BattleCommand_BellyDrum:
 	push bc
 	call AnimateCurrentMove
 	pop bc
-	ld hl, SubtractHPFromUser
+	ld hl, SubtractHPFromMon
 	call CallBattleCore
 	call UpdateUserInParty
 	ld a, MAX_STAT_LEVEL - BASE_STAT_LEVEL - 1
