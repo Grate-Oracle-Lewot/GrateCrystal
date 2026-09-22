@@ -67,7 +67,7 @@ BattleCommand_Curse:
 	call AnimateCurrentMove
 	ld hl, GetHalfMaxHP
 	call CallBattleCore
-	ld hl, SubtractHPFromUser
+	ld hl, SubtractHPFromMon
 	call CallBattleCore
 	call UpdateUserInParty
 	ld hl, PutACurseText
