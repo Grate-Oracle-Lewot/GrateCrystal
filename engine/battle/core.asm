@@ -1157,7 +1157,7 @@ ResidualDamage:
 	ld c, l
 .did_toxic
 
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 .did_psn_brn
 
 	call HasUserFainted
@@ -1180,7 +1180,7 @@ ResidualDamage:
 
 	call GetEighthMaxHP
 	push bc
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	pop bc
 	call CheckForPoisonType
 	jp z, .HandlePoisonLeechSeed
@@ -1205,7 +1205,7 @@ ResidualDamage:
 	ld de, ANIM_IN_NIGHTMARE
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call GetQuarterMaxHP
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	ld hl, HasANightmareText
 	call StdBattleTextbox
 .not_nightmare
@@ -1223,7 +1223,7 @@ ResidualDamage:
 	ld de, ANIM_IN_NIGHTMARE
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call GetQuarterMaxHP
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	ld hl, HurtByCurseText
 	call StdBattleTextbox
 
@@ -1262,7 +1262,7 @@ ResidualDamage:
 	ld a, [hl]
 	ld [wHPBuffer1], a
 
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	call SwitchTurnCore
 	call CheckDanger
 	jp .finish_leech_seed
@@ -1393,7 +1393,7 @@ HandleWrap:
 
 .skip_anim
 	call GetSixteenthMaxHP
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	ld hl, BattleText_UsersHurtByStringBuffer1
 	jr .print_text
 
@@ -1916,7 +1916,7 @@ HandleWeather:
 	call SwitchTurnCore
 
 	call GetEighthMaxHP
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
@@ -1969,7 +1969,7 @@ HandleWeather:
 	call SwitchTurnCore
 
 	call GetSixteenthMaxHP
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 
 	ld hl, PeltedByHailText
 	jp StdBattleTextbox
@@ -2169,17 +2169,13 @@ SwitchTurnCore:
 	ldh [hBattleTurn], a
 	ret
 
-SubtractHPFromUser::
+SubtractHPFromMon::
 	call SubtractHP
 	; fallthrough
 
 UpdateHPBarBattleHuds:
 	call UpdateHPBar
 	jp UpdateBattleHuds
-
-SubtractHPFromTarget:
-	call SubtractHP
-	; fallthrough
 
 UpdateHPBar:
 	hlcoord 10, 9
@@ -4637,7 +4633,7 @@ SpikesDamage:
 	call StdBattleTextbox
 
 	call GetEighthMaxHP
-	call SubtractHPFromTarget
+	call SubtractHPFromMon
 
 	pop hl
 	call _hl_
@@ -9305,7 +9301,7 @@ _LiquidOoze::
 	inc c
 .got_damage
 
-	call SubtractHPFromUser
+	call SubtractHPFromMon
 	ld c, 10
 	call DelayFrames
 	ld hl, LiquidOozeText
