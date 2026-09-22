@@ -4839,7 +4839,6 @@ CheckDanger:
 	ld hl, wBattleMonHP
 	ld a, [hli]
 	or [hl]
-	ld hl, wLowHealthAlarm
 	jr z, .no_danger
 	ld a, [wBattleLowHealthAlarm]
 	and a
@@ -4849,10 +4848,12 @@ CheckDanger:
 	jr z, .danger
 
 .no_danger
+	ld hl, wLowHealthAlarm
 	ld [hl], 0
 	ret
 
 .danger
+	ld hl, wLowHealthAlarm
 	set DANGER_ON_F, [hl]
 	ret
 
