@@ -492,8 +492,8 @@ Dungeons_Map_Names: ; DUNGEONS
 	dw Dungeons_Map_Name18  ; SILPH_CO_11F
 	dw Dungeons_Map_Name19  ; SEAFOAM_CAVE_PUZZLE_CHAMBER
 	dw Dungeons_Map_Name20  ; SEAFOAM_CAVE_1F
-	dw Dungeons_Map_Name21  ; SEAFOAM_CAVE_B1F
-	dw Dungeons_Map_Name22  ; SEAFOAM_CAVE_B2F
+	dw Dungeons_Map_Name21  ; SEAFOAM_CAVE_HIDEOUT
+	dw Dungeons_Map_Name22  ; SEAFOAM_CAVE_DEPTHS
 	dw Dungeons_Map_Name23  ; CERULEAN_CAVE_1F
 	dw Dungeons_Map_Name24  ; CERULEAN_CAVE_2F
 	dw Dungeons_Map_Name25  ; CERULEAN_CAVE_B1F
@@ -1253,10 +1253,10 @@ Dungeons_Map_Name18: ; SILPH_CO_11F
 Dungeons_Map_Name19: ; SEAFOAM_CAVE_PUZZLE_CHAMBER
 	db "UBEQC CHAMBER@"
 Dungeons_Map_Name20: ; SEAFOAM_CAVE_1F
-	db "SEAFOAM CAVE@"
-Dungeons_Map_Name21: ; SEAFOAM_CAVE_B1F
+	db "SEAFOAM CAVE 1F@"
+Dungeons_Map_Name21: ; SEAFOAM_CAVE_HIDEOUT
 	db "LEWOT'S HIDEOUT@"
-Dungeons_Map_Name22: ; SEAFOAM_CAVE_B2F
+Dungeons_Map_Name22: ; SEAFOAM_CAVE_DEPTHS
 	db "SEAFOAM DEPTHS@"
 Dungeons_Map_Name23: ; CERULEAN_CAVE_1F
 	db "CERULEAN CAVE 1F@"
@@ -1327,7 +1327,7 @@ Dungeons_Map_Name55: ; GOLDENROD_DEPT_STORE_B1F
 Dungeons_Map_Name56: ; GOLDENROD_UNDERGROUND
 	db "GOLD. UNDERGROUND@"
 Dungeons_Map_Name57: ; GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES
-	db "UND. SWITCH ROOM@"
+	db "UNDERGROUND MAZE@"
 Dungeons_Map_Name58: ; GOLDENROD_UNDERGROUND_WAREHOUSE
 	db "UNDER. WAREHOUSE@"
 Dungeons_Map_Name59: ; RADIO_TOWER_1F
