@@ -880,11 +880,11 @@ LavRadioTower2F_Blocks:
 SeafoamCave1F_Blocks:
 	INCBIN "maps/SeafoamCave1F.blk"
 
-SeafoamCaveB1F_Blocks:
-	INCBIN "maps/SeafoamCaveB1F.blk"
+SeafoamCaveHideout_Blocks:
+	INCBIN "maps/SeafoamCaveHideout.blk"
 
-SeafoamCaveB2F_Blocks:
-	INCBIN "maps/SeafoamCaveB2F.blk"
+SeafoamCaveDepths_Blocks:
+	INCBIN "maps/SeafoamCaveDepths.blk"
 
 SafariZoneGate_Blocks:
 	INCBIN "maps/SafariZoneGate.blk"
