@@ -311,11 +311,8 @@ ChooseWildEncounter:
 	cp BATTLETYPE_TRAP
 	jr nc, .ok
 ; Check if we're on Route 29
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_29
-	jr nz, .check_running
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_29
+	ld a, [wCurLandmark]
+	cp LANDMARK_ROUTE_29
 	jr z, .route_29_buff
 .check_running
 ; Running results in higher levels (unless on Route 29)
@@ -355,11 +352,8 @@ ChooseWildEncounter:
 	jr nz, .loadwildmon
 
 ; Allow any letter if we're not inside the Ruins of Alph
-	ld a, [wMapGroup]
-	cp GROUP_RUINS_OF_ALPH_INNER_CHAMBER
-	jr nz, .loadwildmon
-	ld a, [wMapNumber]
-	cp MAP_RUINS_OF_ALPH_INNER_CHAMBER
+	ld a, [wCurLandmark]
+	cp LANDMARK_RUINS_OF_ALPH
 	jr nz, .loadwildmon
 
 ; If no letters are unlocked, don't trigger a battle
