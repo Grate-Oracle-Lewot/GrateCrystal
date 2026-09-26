@@ -73,8 +73,4 @@
 	const CRY_DUNSPARCE
 	const CRY_DONPHAN
 
-; gen 3+
-	const CRY_WHIMSICOTT
-	const CRY_YANMEGA
-
 NUM_CRIES EQU const_value
