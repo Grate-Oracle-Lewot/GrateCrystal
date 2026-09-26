@@ -886,15 +886,15 @@ Indigo_Map_Name3: ; LOUNGE_2F
 Indigo_Map_Name4: ; INDIGO_PLATEAU_POKECENTER_1F
 	db "INDIGO PLATEAU@"
 Indigo_Map_Name5: ; WILLS_ROOM
-	db "A.D.'S ROOM@"
+	db "A.D.'S ARENA@"
 Indigo_Map_Name6: ; KOGAS_ROOM
-	db "LUCAS'S ROOM@"
+	db "LUCAS'S ARENA@"
 Indigo_Map_Name7: ; BRUNOS_ROOM
-	db "PERCY'S ROOM@"
+	db "PERCY'S ARENA@"
 Indigo_Map_Name8: ; KARENS_ROOM
-	db "LEWOT'S ROOM@"
+	db "LEWOT'S ARENA@"
 Indigo_Map_Name9: ; LANCES_ROOM
-	db "LANCE'S ROOM@"
+	db "LANCE'S ARENA@"
 Indigo_Map_Name10: ; HALL_OF_FAME
 	db "HALL OF FAME@"
 
