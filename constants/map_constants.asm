@@ -445,8 +445,8 @@ ENDM
 	map_const SILPH_CO_11F,                                 8,  9 ;  18
 	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ;  19
 	map_const SEAFOAM_CAVE_1F,                             15,  4 ;  20
-	map_const SEAFOAM_CAVE_B1F,                            24, 22 ;  21
-	map_const SEAFOAM_CAVE_B2F,                            10, 18 ;  22
+	map_const SEAFOAM_CAVE_HIDEOUT,                        24, 22 ;  21
+	map_const SEAFOAM_CAVE_DEPTHS,                         10, 18 ;  22
 	map_const CERULEAN_CAVE_1F,                            17, 11 ;  23
 	map_const CERULEAN_CAVE_2F,                            20, 14 ;  24
 	map_const CERULEAN_CAVE_B1F,                           18, 11 ;  25
