@@ -370,7 +370,7 @@ TrainerClassAttributes:
 
 ; Burglar
 	db OLD_GATEAU, NO_ITEM ; items
-	db 27 ; base reward
+	db 0 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_CAUTIOUS | AI_IMMUNITIES | AI_OFFENSIVE
 	dw SWITCH_SOMETIMES | CONTEXT_USE
 
