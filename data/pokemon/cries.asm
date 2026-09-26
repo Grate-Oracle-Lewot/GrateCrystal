@@ -179,7 +179,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
 	mon_cry CRY_RATTATA,       0,  840 ; FLOGISTAN
 	mon_cry CRY_AMPHAROS,   -154,  142 ; COTTONEE
-	mon_cry CRY_WHIMSICOTT,    0,  256 ; WHIMSICOTT
+	mon_cry CRY_SENTRET,     142,  840 ; WHIMSICOTT
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
 	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
 	mon_cry CRY_NATU,       -103,  256 ; NATU
@@ -266,7 +266,7 @@ else
 	mon_cry CRY_ENTEI,       168,  273 ; FINULL
 endc
 endc
-	mon_cry CRY_YANMEGA,       0,  256 ; YANMEGA
+	mon_cry CRY_TOTODILE,   -420,  575 ; YANMEGA
 	assert_table_length NUM_POKEMON
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
