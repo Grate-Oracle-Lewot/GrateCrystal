@@ -1030,8 +1030,12 @@ endr
 	call FarCopyWRAM
 
 	; Day Care outdoor palettes
-	ld a, [wCurLandmark]
-	cp LANDMARK_ROUTE_34
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_34
+	ret nz
+
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_34
 	ret nz
 
 	ld a, BANK(wBreedMon1Species)
