@@ -70,15 +70,7 @@ NuzlockeSetAreaFlag::
 	; fallthrough
 
 NuzlockeAreaFlagMerge:
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	ld c, a
-	ld a, d
-	ld b, a
-	ld a, c
+	ld a, [wCurLandmark]
 	cp LANDMARK_FAST_SHIP
 	jp z, .fast_ship
 	cp LANDMARK_ROUTE_28
