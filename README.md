@@ -338,7 +338,7 @@ Prize TMs:
 
 (Some of the following improvements are now available [in this tutorial](https://github.com/pret/pokecrystal/wiki/Improve-the-enemy-trainer-AI).)
 
-- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They will also avoid using items on a Pokémon that is currently afflicted with Perish Song, or in a few other circumstances.
+- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They also have additional item logic that considers type matchups, Fly/Dig, Perish Song, etc.
 
 - Trainers will now switch out their Pokémon... like, ever, but also intelligently, based on factors such as remaining HP, volatile status conditions, and player and AI stat increases and decreases, with variations in this behavior depending on trainer class. This code was adapted from Lunatic Crystal by GetKosiorekt.
 
@@ -386,7 +386,7 @@ Prize TMs:
 - Chansey NPCs in Pokémon Centers, Delibird NPCs in Poké Marts, and nurses and clerks are color-coded based on the city's name
 - Color-coded starter balls
 - Color-coded item balls in the field (blue for TMs, green for HMs and their replacement items, gray for Sacred Ash, brown for the Coin Case)
-- Most trainer money rewards increased, but Rockets now give no money due to being criminals (and Teachers give minimal due to not getting paid enough)
+- Most trainer money rewards increased, but Rockets and Burglars now give no money due to being criminals (and Teachers give minimal due to not getting paid enough)
 - Happiness builds a bit faster
 - Eggs hatch roughly twice as fast, and come out at Lv.1 instead of Lv.5
 - The Grimer and Koffing lines are now genderless
