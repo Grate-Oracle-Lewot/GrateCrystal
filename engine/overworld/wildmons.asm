@@ -961,13 +961,13 @@ RandomUnseenWildMon:
 	add hl, de
 	inc hl ; Species index of the most common Pokemon on that route
 	ld b, 4
-.loop2
+.loop
 	ld a, [hli]
 	cp c ; Compare this most common Pokemon with the rare one stored in c.
 	jr z, .done
 	inc hl
 	dec b
-	jr nz, .loop2
+	jr nz, .loop
 ; This Pokemon truly is rare.
 	push bc
 	dec c
