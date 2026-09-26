@@ -69,4 +69,6 @@ Cries:
 	dba Cry_Aipom
 	dba Cry_Dunsparce
 	dba Cry_Donphan
+	dba Cry_Whimsicott
+	dba Cry_Yanmega
 	assert_table_length NUM_CRIES
