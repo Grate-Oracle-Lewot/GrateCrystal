@@ -947,16 +947,13 @@ RandomUnseenWildMon:
 	push hl
 	ld bc, 5 + 4 * 2 ; Location of the level of the 5th wild Pokemon in that map
 	add hl, bc
-.randloop1
 	call Random
 	and %11
-	jr z, .randloop1
-	dec a
 	ld c, a
 	ld b, 0
 	add hl, bc
 	add hl, bc
-; We now have the pointer to one of the last (rarest) three wild Pokemon found in that area.
+; We now have the pointer to one of the last (rarest) four wild Pokemon found in that area.
 	inc hl
 	ld c, [hl] ; Contains the species index of this rare Pokemon
 	pop hl
