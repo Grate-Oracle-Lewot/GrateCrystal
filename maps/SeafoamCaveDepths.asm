@@ -1,133 +1,133 @@
 	object_const_def
-	const SEAFOAMCAVEB2F_LEWOT
-	const SEAFOAMCAVEB2F_MONSTER
-	const SEAFOAMCAVEB2F_POKE_BALL
-	const SEAFOAMCAVEB2F_OAK1
-	const SEAFOAMCAVEB2F_OAK2
+	const SEAFOAMCAVEDEPTHS_LEWOT
+	const SEAFOAMCAVEDEPTHS_MONSTER
+	const SEAFOAMCAVEDEPTHS_POKE_BALL
+	const SEAFOAMCAVEDEPTHS_OAK1
+	const SEAFOAMCAVEDEPTHS_OAK2
 
-SeafoamCaveB2F_MapScripts:
+SeafoamCaveDepths_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Setup
 
 .Setup:
-	disappear SEAFOAMCAVEB2F_OAK1
-	disappear SEAFOAMCAVEB2F_OAK2
-	appear SEAFOAMCAVEB2F_MONSTER
+	disappear SEAFOAMCAVEDEPTHS_OAK1
+	disappear SEAFOAMCAVEDEPTHS_OAK2
+	appear SEAFOAMCAVEDEPTHS_MONSTER
 	endcallback
 
-SeafoamCaveB2FLewotScript:
+SeafoamCaveDepthsLewotScript:
 	faceplayer
 	checkevent EVENT_BEAT_RED
 	iftrue .AfterRedScript
-	showemote EMOTE_SLEEP, SEAFOAMCAVEB2F_LEWOT, 30
+	showemote EMOTE_SLEEP, SEAFOAMCAVEDEPTHS_LEWOT, 30
 	opentext
-	writetext SeafoamCaveB2FLewotEarlyText
+	writetext SeafoamCaveDepthsLewotEarlyText
 	waitbutton
 	closetext
 	end
 
 .AfterRedScript:
 	opentext
-	writetext SeafoamCaveB2FLewotBattleText
+	writetext SeafoamCaveDepthsLewotBattleText
 	waitbutton
 	closetext
-	winlosstext SeafoamCaveB2FLewotWinText, 0
+	winlosstext SeafoamCaveDepthsLewotWinText, 0
 	loadtrainer GRATE_ORACLE, LEWOT2
 	startbattle
-	disappear SEAFOAMCAVEB2F_MONSTER
+	disappear SEAFOAMCAVEDEPTHS_MONSTER
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
 	opentext
-	writetext SeafoamCaveB2FLewotThanksForPlayingText
+	writetext SeafoamCaveDepthsLewotThanksForPlayingText
 	waitbutton
 	closetext
-	showemote EMOTE_QUESTION, SEAFOAMCAVEB2F_LEWOT, 10
+	showemote EMOTE_QUESTION, SEAFOAMCAVEDEPTHS_LEWOT, 10
 	playmusic MUSIC_PROF_OAK
-	appear SEAFOAMCAVEB2F_OAK1
-	applymovement SEAFOAMCAVEB2F_OAK1, SeafoamCaveMovementData_OakWalksUp
+	appear SEAFOAMCAVEDEPTHS_OAK1
+	applymovement SEAFOAMCAVEDEPTHS_OAK1, SeafoamCaveDepthsMovementData_OakWalksUp
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext SeafoamCaveB2FOakCongratulationsText
+	writetext SeafoamCaveDepthsOakCongratulationsText
 	waitbutton
 	closetext
 	special FadeOutMusic
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
 	pause 10
-	appear SEAFOAMCAVEB2F_OAK2
+	appear SEAFOAMCAVEDEPTHS_OAK2
 	playsound SFX_PSYBEAM
 	waitsfx
 	special FadeInQuickly
-	turnobject SEAFOAMCAVEB2F_OAK1, DOWN
+	turnobject SEAFOAMCAVEDEPTHS_OAK1, DOWN
 	turnobject PLAYER, DOWN
 	opentext
-	writetext SeafoamCaveB2FOakWhoAreYouText
+	writetext SeafoamCaveDepthsOakWhoAreYouText
 	waitbutton
-	writetext SeafoamCaveB2FPoisonOakFufuText
+	writetext SeafoamCaveDepthsPoisonOakFufuText
 	waitbutton
-	writetext SeafoamCaveB2FOakItCantBeText
+	writetext SeafoamCaveDepthsOakItCantBeText
 	waitbutton
-	writetext SeafoamCaveB2FPoisonOakGivePokemonText
+	writetext SeafoamCaveDepthsPoisonOakGivePokemonText
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, SEAFOAMCAVEB2F_OAK1, 5
-	showemote EMOTE_SHOCK, SEAFOAMCAVEB2F_LEWOT, 10
+	showemote EMOTE_SHOCK, SEAFOAMCAVEDEPTHS_OAK1, 5
+	showemote EMOTE_SHOCK, SEAFOAMCAVEDEPTHS_LEWOT, 10
 	opentext
-	writetext SeafoamCaveB2FLewotCutOutOfScriptText
+	writetext SeafoamCaveDepthsLewotCutOutOfScriptText
 	waitbutton
-	writetext SeafoamCaveB2FPoisonOakButYouDidntText
+	writetext SeafoamCaveDepthsPoisonOakButYouDidntText
 	waitbutton
 	closetext
-	applymovement SEAFOAMCAVEB2F_OAK2, SeafoamCaveMovementData_PoisonOak
+	applymovement SEAFOAMCAVEDEPTHS_OAK2, SeafoamCaveDepthsMovementData_PoisonOak
 	opentext
-	writetext SeafoamCaveB2FPoisonOakChampionText
+	writetext SeafoamCaveDepthsPoisonOakChampionText
 	waitbutton
 	closetext
-	turnobject SEAFOAMCAVEB2F_OAK1, LEFT
+	turnobject SEAFOAMCAVEDEPTHS_OAK1, LEFT
 	opentext
-	writetext SeafoamCaveB2FOakBlitherText
+	writetext SeafoamCaveDepthsOakBlitherText
 	waitbutton
-	writetext SeafoamCaveB2FLewotUpToYouText
+	writetext SeafoamCaveDepthsLewotUpToYouText
 	waitbutton
-	writetext SeafoamCaveB2FPoisonOakBattleText
+	writetext SeafoamCaveDepthsPoisonOakBattleText
 	waitbutton
 	closetext
-	winlosstext SeafoamCaveB2FPoisonOakWinText, 0
+	winlosstext SeafoamCaveDepthsPoisonOakWinText, 0
 	loadtrainer POKEMON_PROF, POKEMON_PROF2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	special FadeOutMusic
 	opentext
-	writetext SeafoamCaveB2FPoisonOakNoText
+	writetext SeafoamCaveDepthsPoisonOakNoText
 	waitbutton
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	disappear SEAFOAMCAVEB2F_OAK2
+	disappear SEAFOAMCAVEDEPTHS_OAK2
 	playsound SFX_WARP_TO
 	waitsfx
 	special FadeInQuickly
 	pause 42
 	opentext
-	writetext SeafoamCaveB2FLewotThatWasWeirdText
+	writetext SeafoamCaveDepthsLewotThatWasWeirdText
 	waitbutton
 	closetext
 	opentext
-	writetext SeafoamCaveB2FOakApologizeText
+	writetext SeafoamCaveDepthsOakApologizeText
 	waitbutton
 	closetext
 	opentext
-	writetext SeafoamCaveB2FLewotCreditsText
+	writetext SeafoamCaveDepthsLewotCreditsText
 	waitbutton
 	checkcellnum PHONE_GRATE_ORACLE_LEWOT
 	iftrue .SkipPhone
 	callasm .PhoneAsm
 	ifequal PHONE_CONTACTS_FULL, .SkipPhone
-	writetext SeafoamCaveB2FPhoneText
+	writetext SeafoamCaveDepthsPhoneText
 	addcellnum PHONE_GRATE_ORACLE_LEWOT
 	playsound SFX_REGISTER_PHONE_NUMBER
 	waitsfx
@@ -152,34 +152,34 @@ SeafoamCaveB2FLewotScript:
 	ld [wScriptVar], a
 	ret
 
-SeafoamCaveB2FFeraligatrScript:
+SeafoamCaveDepthsFeraligatrScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_RED
 	iftrue .AfterRedScript
-	writetext SeafoamCaveB2FFeraligatrText
+	writetext SeafoamCaveDepthsFeraligatrText
 	cry FERALIGATR
 	waitsfx
 	promptbutton
-	writetext SeafoamCaveB2FFeraligatrText2
+	writetext SeafoamCaveDepthsFeraligatrText2
 	waitbutton
 	closetext
 	end
 
 .AfterRedScript
-	writetext SeafoamCaveB2FFeraligatrText
+	writetext SeafoamCaveDepthsFeraligatrText
 	cry FERALIGATR
 	pause 15
 	closetext
 	end
 
-SeafoamCaveB2FSacredAsh:
+SeafoamCaveDepthsSacredAsh:
 	itemball SACRED_ASH
 
-SeafoamCaveB2FHiddenBerryJuice:
-	hiddenitem BERRY_JUICE, EVENT_SEAFOAM_CAVE_B2F_HIDDEN_BERRY_JUICE
+SeafoamCaveDepthsHiddenBerryJuice:
+	hiddenitem BERRY_JUICE, EVENT_SEAFOAM_CAVE_DEPTHS_HIDDEN_BERRY_JUICE
 
-SeafoamCaveMovementData_OakWalksUp:
+SeafoamCaveDepthsMovementData_OakWalksUp:
 	step UP
 	step UP
 	step UP
@@ -188,16 +188,16 @@ SeafoamCaveMovementData_OakWalksUp:
 	turn_head LEFT
 	step_end
 
-SeafoamCaveMovementData_PoisonOak:
+SeafoamCaveDepthsMovementData_PoisonOak:
 	big_step LEFT
 	turn_head UP
 	step_end
 
-SeafoamCaveB2FLewotEarlyText:
+SeafoamCaveDepthsLewotEarlyText:
 	text "He's asleep…"
 	done
 
-SeafoamCaveB2FLewotBattleText:
+SeafoamCaveDepthsLewotBattleText:
 	text "LEWOT: I love"
 	line "snow… I just had"
 
@@ -219,11 +219,11 @@ SeafoamCaveB2FLewotBattleText:
 	para "Here we go!"
 	done
 
-SeafoamCaveB2FLewotWinText:
+SeafoamCaveDepthsLewotWinText:
 	text "Wow. You did it!"
 	done
 
-SeafoamCaveB2FLewotThanksForPlayingText:
+SeafoamCaveDepthsLewotThanksForPlayingText:
 	text "LEWOT: Well. I'm"
 	line "not sure what to"
 	cont "say."
@@ -246,7 +246,7 @@ SeafoamCaveB2FLewotThanksForPlayingText:
 	para "So… Thank you."
 	done
 
-SeafoamCaveB2FOakCongratulationsText:
+SeafoamCaveDepthsOakCongratulationsText:
 	text "OAK: <PLAYER>!"
 
 	para "So MARY's scoop"
@@ -279,14 +279,14 @@ SeafoamCaveB2FOakCongratulationsText:
 	line "happening?"
 	done
 
-SeafoamCaveB2FOakWhoAreYouText:
+SeafoamCaveDepthsOakWhoAreYouText:
 	text "OAK: What… what is"
 	line "this?!"
 
 	para "Who are you?"
 	done
 
-SeafoamCaveB2FPoisonOakFufuText:
+SeafoamCaveDepthsPoisonOakFufuText:
 	text "???: Fufufu…"
 
 	para "Do you not recog-"
@@ -294,12 +294,12 @@ SeafoamCaveB2FPoisonOakFufuText:
 	cont "in the mirror?"
 	done
 
-SeafoamCaveB2FOakItCantBeText:
+SeafoamCaveDepthsOakItCantBeText:
 	text "OAK: No… it can't"
 	line "be!"
 	done
 
-SeafoamCaveB2FPoisonOakGivePokemonText:
+SeafoamCaveDepthsPoisonOakGivePokemonText:
 	text "???: Of course it"
 	line "can, SAMUEL OAK."
 
@@ -318,7 +318,7 @@ SeafoamCaveB2FPoisonOakGivePokemonText:
 	line "#MON!!"
 	done
 
-SeafoamCaveB2FLewotCutOutOfScriptText:
+SeafoamCaveDepthsLewotCutOutOfScriptText:
 	text "LEWOT: Uh… dude,"
 	line "you realize I can"
 
@@ -326,7 +326,7 @@ SeafoamCaveB2FLewotCutOutOfScriptText:
 	line "of the script?"
 	done
 
-SeafoamCaveB2FPoisonOakButYouDidntText:
+SeafoamCaveDepthsPoisonOakButYouDidntText:
 	text "???: Ah, but you"
 	line "didn't. Your need"
 
@@ -335,7 +335,7 @@ SeafoamCaveB2FPoisonOakButYouDidntText:
 	cont "your undoing!"
 	done
 
-SeafoamCaveB2FPoisonOakChampionText:
+SeafoamCaveDepthsPoisonOakChampionText:
 	text "You, CHAMPION!"
 	line "Fork 'em over!"
 
@@ -343,12 +343,12 @@ SeafoamCaveB2FPoisonOakChampionText:
 	line "belong to me!"
 	done
 
-SeafoamCaveB2FOakBlitherText:
+SeafoamCaveDepthsOakBlitherText:
 	text "OAK: Wh-what is…"
 	line "I don't… how… wh…"
 	done
 
-SeafoamCaveB2FLewotUpToYouText:
+SeafoamCaveDepthsLewotUpToYouText:
 	text "LEWOT: Well,"
 	line "<PLAYER>, I'd take"
 
@@ -362,7 +362,7 @@ SeafoamCaveB2FLewotUpToYouText:
 	line "you!"
 	done
 
-SeafoamCaveB2FPoisonOakBattleText:
+SeafoamCaveDepthsPoisonOakBattleText:
 	text "???: You dare to"
 	line "challenge fate?"
 
@@ -370,33 +370,33 @@ SeafoamCaveB2FPoisonOakBattleText:
 	line "it be so!"
 	done
 
-SeafoamCaveB2FPoisonOakWinText:
+SeafoamCaveDepthsPoisonOakWinText:
 	text "IMPOSSIBLE!"
 	done
 
-SeafoamCaveB2FPoisonOakNoText:
+SeafoamCaveDepthsPoisonOakNoText:
 	text "POISON OAK:"
 	line "NOOOOOOOOooooooo…!"
 	done
 
-SeafoamCaveB2FLewotThatWasWeirdText:
+SeafoamCaveDepthsLewotThatWasWeirdText:
 	text "LEWOT: Well… that"
 	line "was weird."
 	done
 
-SeafoamCaveB2FOakApologizeText:
+SeafoamCaveDepthsOakApologizeText:
 	text "OAK: I… I"
 	line "apologize."
 	done
 
-SeafoamCaveB2FLewotCreditsText:
+SeafoamCaveDepthsLewotCreditsText:
 	text "LEWOT: …"
 
 	para "Let's just cut to"
 	line "the credits."
 	done
 
-SeafoamCaveB2FPhoneText:
+SeafoamCaveDepthsPhoneText:
 	text "…Oh, but take my"
 	line "number first."
 
@@ -404,11 +404,11 @@ SeafoamCaveB2FPhoneText:
 	line "LEWOT's number."
 	done
 
-SeafoamCaveB2FFeraligatrText:
+SeafoamCaveDepthsFeraligatrText:
 	text "FERALIGATR: Zigg!"
 	done
 
-SeafoamCaveB2FFeraligatrText2:
+SeafoamCaveDepthsFeraligatrText2:
 	text "It looks like it's"
 	line "saying…"
 
@@ -416,22 +416,22 @@ SeafoamCaveB2FFeraligatrText2:
 	line "RED first.”"
 	done
 
-SeafoamCaveB2F_MapEvents:
+SeafoamCaveDepths_MapEvents:
 	def_warp_events
-	warp_event  1,  1, SEAFOAM_CAVE_B1F, 2
-	warp_event  3,  1, SEAFOAM_CAVE_B2F, 3
-	warp_event 17,  1, SEAFOAM_CAVE_B2F, 2
-	warp_event 15,  1, SEAFOAM_CAVE_B2F, 5
-	warp_event  9, 33, SEAFOAM_CAVE_B2F, 4
+	warp_event  1,  1, SEAFOAM_CAVE_HIDEOUT, 2
+	warp_event  3,  1, SEAFOAM_CAVE_DEPTHS, 3
+	warp_event 17,  1, SEAFOAM_CAVE_DEPTHS, 2
+	warp_event 15,  1, SEAFOAM_CAVE_DEPTHS, 5
+	warp_event  9, 33, SEAFOAM_CAVE_DEPTHS, 4
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 17, 13, BGEVENT_ITEM, SeafoamCaveB2FHiddenBerryJuice
+	bg_event 17, 13, BGEVENT_ITEM, SeafoamCaveDepthsHiddenBerryJuice
 
 	def_object_events
-	object_event  9, 14, SPRITE_LEWOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB2FLewotScript, -1
-	object_event 10, 14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveB2FFeraligatrScript, EVENT_SEAFOAM_CAVE_B2F_FERALIGATR
-	object_event  5,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB2FSacredAsh, EVENT_SEAFOAM_CAVE_B2F_SACRED_ASH
-	object_event 10, 20, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B2F_OAK
-	object_event 10, 16, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_B2F_PSN_OAK
+	object_event  9, 14, SPRITE_LEWOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamCaveDepthsLewotScript, -1
+	object_event 10, 14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveDepthsFeraligatrScript, EVENT_SEAFOAM_CAVE_DEPTHS_FERALIGATR
+	object_event  5,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB2FSacredAsh, EVENT_SEAFOAM_CAVE_DEPTHS_SACRED_ASH
+	object_event 10, 20, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_DEPTHS_OAK
+	object_event 10, 16, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SEAFOAM_CAVE_DEPTHS_PSN_OAK
