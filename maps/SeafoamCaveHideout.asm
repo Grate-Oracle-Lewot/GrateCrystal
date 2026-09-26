@@ -1,21 +1,21 @@
 	object_const_def
-	const SEAFOAMCAVEB1F_POKEDEX
-	const SEAFOAMCAVEB1F_BOULDER1
-	const SEAFOAMCAVEB1F_BOULDER2
-	const SEAFOAMCAVEB1F_BOULDER3
-	const SEAFOAMCAVEB1F_BOULDER4
-	const SEAFOAMCAVEB1F_BOULDER5
-	const SEAFOAMCAVEB1F_BOULDER6
-	const SEAFOAMCAVEB1F_BOULDER7
-	const SEAFOAMCAVEB1F_BOULDER8
-	const SEAFOAMCAVEB1F_POKE_BALL
+	const SEAFOAMCAVEHIDEOUT_POKEDEX
+	const SEAFOAMCAVEHIDEOUT_BOULDER1
+	const SEAFOAMCAVEHIDEOUT_BOULDER2
+	const SEAFOAMCAVEHIDEOUT_BOULDER3
+	const SEAFOAMCAVEHIDEOUT_BOULDER4
+	const SEAFOAMCAVEHIDEOUT_BOULDER5
+	const SEAFOAMCAVEHIDEOUT_BOULDER6
+	const SEAFOAMCAVEHIDEOUT_BOULDER7
+	const SEAFOAMCAVEHIDEOUT_BOULDER8
+	const SEAFOAMCAVEHIDEOUT_POKE_BALL
 
-SeafoamCaveB1F_MapScripts:
+SeafoamCaveHideout_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-SeafoamCaveRadio:
+SeafoamCaveHideoutRadio:
 	playsound SFX_WRONG
 	waitsfx
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -29,41 +29,41 @@ SeafoamCaveRadio:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 
-SeafoamCaveStatue:
-	jumptext SeafoamCaveStatueText
+SeafoamCaveHideoutStatue:
+	jumptext SeafoamCaveHideoutStatueText
 
-SeafoamCaveBoulder:
+SeafoamCaveHideoutBoulder:
 	jumpstd StrengthBoulderScript
 
-SeafoamCaveBook:
+SeafoamCaveHideoutBook:
 	opentext
-	writetext SeafoamCaveBookText1
+	writetext SeafoamCaveHideoutBookText1
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText2
+	writetext SeafoamCaveHideoutBookText2
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText3
+	writetext SeafoamCaveHideoutBookText3
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText4
+	writetext SeafoamCaveHideoutBookText4
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText5
+	writetext SeafoamCaveHideoutBookText5
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText6
+	writetext SeafoamCaveHideoutBookText6
 	yesorno
 	iffalse .Done
-	writetext SeafoamCaveBookText7
+	writetext SeafoamCaveHideoutBookText7
 	waitbutton
 .Done:
 	closetext
 	end
 
-SeafoamCaveBed:
+SeafoamCaveHideoutBed:
 	opentext
-	writetext SeafoamCaveBedText1
+	writetext SeafoamCaveHideoutBedText1
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
@@ -73,28 +73,28 @@ SeafoamCaveBed:
 	special RestartMapMusic
 	special FadeInQuickly
 	opentext
-	writetext SeafoamCaveBedText2
+	writetext SeafoamCaveHideoutBedText2
 	closetext
 	end
 
-SeafoamCaveB1FXAccuracy:
+SeafoamCaveHideoutXAccuracy:
 	itemball X_ACCURACY
 
-SeafoamCaveB1FHiddenTimerBall:
-	hiddenitem TIMER_BALL, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_TIMER_BALL
+SeafoamCaveHideoutHiddenTimerBall:
+	hiddenitem TIMER_BALL, EVENT_SEAFOAM_CAVE_HIDEOUT_HIDDEN_TIMER_BALL
 
-SeafoamCaveB1FHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_MAX_POTION
+SeafoamCaveHideoutHiddenMaxPotion:
+	hiddenitem MAX_POTION, EVENT_SEAFOAM_CAVE_HIDEOUT_HIDDEN_MAX_POTION
 
-SeafoamCaveB1FHiddenSilverLeaf:
-	hiddenitem SILVER_LEAF, EVENT_SEAFOAM_CAVE_B1F_HIDDEN_SILVER_LEAF
+SeafoamCaveHideoutHiddenSilverLeaf:
+	hiddenitem SILVER_LEAF, EVENT_SEAFOAM_CAVE_HIDEOUT_HIDDEN_SILVER_LEAF
 
-SeafoamCaveStatueText:
+SeafoamCaveHideoutStatueText:
 	text "It's a statue of a"
 	line "FERALIGATR."
 	done
 
-SeafoamCaveBookText1:
+SeafoamCaveHideoutBookText1:
 	text "It's a book titled"
 	line "EVERYTHING YOU"
 
@@ -105,7 +105,7 @@ SeafoamCaveBookText1:
 	line "LEWOT. Read it?"
 	done
 
-SeafoamCaveBookText2:
+SeafoamCaveHideoutBookText2:
 	text "What does it mean"
 	line "to be a GRATE"
 	cont "ORACLE?"
@@ -132,7 +132,7 @@ SeafoamCaveBookText2:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText3:
+SeafoamCaveHideoutBookText3:
 	text "LEWOT is TOWEL"
 	line "spelled backwards."
 
@@ -161,7 +161,7 @@ SeafoamCaveBookText3:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText4:
+SeafoamCaveHideoutBookText4:
 	text "My very favorite"
 	line "#MON is YANMA."
 
@@ -190,7 +190,7 @@ SeafoamCaveBookText4:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText5:
+SeafoamCaveHideoutBookText5:
 	text "My favorite video"
 	line "games of all time"
 	cont "are, in order:"
@@ -225,7 +225,7 @@ SeafoamCaveBookText5:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText6:
+SeafoamCaveHideoutBookText6:
 	text "You're probably"
 	line "wondering about"
 	cont "that UBEQC thing."
@@ -260,7 +260,7 @@ SeafoamCaveBookText6:
 	para "Keep reading?"
 	done
 
-SeafoamCaveBookText7:
+SeafoamCaveHideoutBookText7:
 	text "What about that"
 	line "GOLDGEM on the"
 	cont "title screen?"
@@ -275,48 +275,42 @@ SeafoamCaveBookText7:
 	line "a real company."
 	done
 
-if DEF(_NO_POKEMON_CENTERS)
-SeafoamCaveBedText:
-	text "Looks comfy…"
-	done
-else
-SeafoamCaveBedText1:
+SeafoamCaveHideoutBedText1:
 	text "A comfy bed!"
 	line "Time to sleep…"
 	autodone
 
-SeafoamCaveBedText2:
+SeafoamCaveHideoutBedText2:
 	text "Ah, refreshed and"
 	line "restored!"
 	autodone
-endc
 
-SeafoamCaveB1F_MapEvents:
+SeafoamCaveHideout_MapEvents:
 	def_warp_events
 	warp_event 11, 16, SEAFOAM_CAVE_1F, 2
-	warp_event  6, 41, SEAFOAM_CAVE_B2F, 1
+	warp_event  6, 41, SEAFOAM_CAVE_DEPTHS, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  0, BGEVENT_READ, SeafoamCaveRadio
-	bg_event 11, 21, BGEVENT_READ, SeafoamCaveStatue
-	bg_event 21, 29, BGEVENT_READ, SeafoamCaveStatue
-	bg_event 26, 29, BGEVENT_READ, SeafoamCaveStatue
-	bg_event 16, 22, BGEVENT_READ, SeafoamCaveBed
-	bg_event 16, 23, BGEVENT_READ, SeafoamCaveBed
-	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveB1FHiddenTimerBall
-	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveB1FHiddenMaxPotion
-	bg_event 28, 30, BGEVENT_ITEM, SeafoamCaveB1FHiddenSilverLeaf
+	bg_event  3,  0, BGEVENT_READ, SeafoamCaveHideoutRadio
+	bg_event 11, 21, BGEVENT_READ, SeafoamCaveHideoutStatue
+	bg_event 21, 29, BGEVENT_READ, SeafoamCaveHideoutStatue
+	bg_event 26, 29, BGEVENT_READ, SeafoamCaveHideoutStatue
+	bg_event 16, 22, BGEVENT_READ, SeafoamCaveHideoutBed
+	bg_event 16, 23, BGEVENT_READ, SeafoamCaveHideoutBed
+	bg_event 17, 40, BGEVENT_ITEM, SeafoamCaveHideoutHiddenTimerBall
+	bg_event 32, 13, BGEVENT_ITEM, SeafoamCaveHideoutHiddenMaxPotion
+	bg_event 28, 30, BGEVENT_ITEM, SeafoamCaveHideoutHiddenSilverLeaf
 
 	def_object_events
-	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBook, -1
-	object_event 22, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 23, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 24, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 25, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 22, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 23, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 24, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event 25, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveBoulder, -1
-	object_event  6, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveB1FXAccuracy, EVENT_SEAFOAM_CAVE_B1F_X_ACCURACY
+	object_event  3, 28, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBook, -1
+	object_event 22, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 23, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 24, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 25, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 22, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 23, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 24, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event 25, 36, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveHideoutBoulder, -1
+	object_event  6, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveHideoutXAccuracy, EVENT_SEAFOAM_CAVE_HIDEOUT_X_ACCURACY
