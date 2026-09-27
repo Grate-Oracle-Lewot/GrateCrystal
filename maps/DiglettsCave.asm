@@ -59,6 +59,7 @@ DiglettsCave_MapEvents:
 	warp_event 17,  3, DIGLETTS_CAVE, 6
 	warp_event 17, 33, DIGLETTS_CAVE, 2
 	warp_event  3,  3, DIGLETTS_CAVE, 4
+	warp_event  8, 17, UNDERGROUND_PATH, 9
 
 	def_coord_events
 
@@ -67,4 +68,4 @@ DiglettsCave_MapEvents:
 
 	def_object_events
 	object_event  3, 31, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1
-	object_event  8, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperJohn, -1
+	object_event  9, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJohn, -1
