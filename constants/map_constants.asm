@@ -202,7 +202,6 @@ ENDM
 	map_const ROUTE_5,                                     21,  9 ;  1
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ;  2
 	map_const ROUTE_5_SAFFRON_GATE,                         4,  3 ;  3
-	map_const UNDERGROUND_PATH_ENTRANCE,                    4, 12 ;  4
 	endgroup
 
 	newgroup CINNABAR                                       ; group 13
@@ -428,7 +427,7 @@ ENDM
 	map_const MOUNT_MOON_1F,                               20, 18 ;   1
 	map_const MOUNT_MOON_B1F,                              20, 18 ;   2
 	map_const MOUNT_MOON_B2F,                              25, 19 ;   3
-	map_const UNDERGROUND_PATH,                             3, 14 ;   4
+	map_const UNDERGROUND_PATH,                            10, 14 ;   4
 	map_const DIGLETTS_CAVE,                               10, 18 ;   5
 	map_const ROCK_TUNNEL_1F,                              15, 14 ;   6
 	map_const ROCK_TUNNEL_B1F,                             15, 14 ;   7
