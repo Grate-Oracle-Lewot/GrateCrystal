@@ -235,7 +235,6 @@ Saffron_Outer_Map_Names: ; SAFFRON_OUTER
 	dw Saffron_Outer_Map_Name1 ; ROUTE_5
 	dw Saffron_Outer_Map_Name2 ; ROUTE_5_CLEANSE_TAG_HOUSE
 	dw Saffron_Outer_Map_Name3 ; ROUTE_5_SAFFRON_GATE
-	dw Saffron_Outer_Map_Name4 ; UNDERGROUND_PATH_ENTRANCE
 	assert_table_length NUM_SAFFRON_OUTER_MAPS
 
 Cinnabar_Map_Names: ; CINNABAR
@@ -859,8 +858,6 @@ Saffron_Outer_Map_Name2: ; ROUTE_5_CLEANSE_TAG_HOUSE
 	db "ROUTE 5 COTTAGE@"
 Saffron_Outer_Map_Name3: ; ROUTE_5_SAFFRON_GATE
 	db "ROUTE 5 GATE@"
-Saffron_Outer_Map_Name4: ; UNDERGROUND_PATH_ENTRANCE
-	db "UTILITY SHED@"
 
 Cinnabar_Map_Name1: ; CINNABAR_ISLAND
 	db "CINNABAR ISLAND@"
