@@ -11,7 +11,7 @@ SeafoamCave1FHiddenXSpDefend:
 SeafoamCave1F_MapEvents:
 	def_warp_events
 	warp_event  5,  5, SEAFOAM_CAVE_PUZZLE_CHAMBER, 3
-	warp_event  3,  3, SEAFOAM_CAVE_B1F, 1
+	warp_event  3,  3, SEAFOAM_CAVE_HIDEOUT, 1
 	warp_event 25,  5, SEAFOAM_GYM, 2
 
 	def_coord_events
