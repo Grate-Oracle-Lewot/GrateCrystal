@@ -477,7 +477,6 @@ ENDM
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $00, 0
 	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes Route5SaffronGate, ROUTE_5_SAFFRON_GATE, $00, 0
-	map_attributes UndergroundPathEntrance, UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes CinnabarPokecenter1F, CINNABAR_POKECENTER_1F, $00, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
