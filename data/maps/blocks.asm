@@ -348,9 +348,6 @@ NationalPark_Blocks:
 NationalParkBugContest_Blocks:
 	INCBIN "maps/NationalPark.blk"
 
-UndergroundPathEntrance_Blocks:
-	INCBIN "maps/UndergroundPathEntrance.blk"
-
 KurtsHouse_Blocks:
 	INCBIN "maps/KurtsHouse.blk"
 
