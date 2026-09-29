@@ -601,6 +601,9 @@ OlivineLighthouse5F_Blocks:
 OlivineLighthouse6F_Blocks:
 	INCBIN "maps/OlivineLighthouse6F.blk"
 
+SafariZoneGate_Blocks:
+	INCBIN "maps/SafariZoneGate.blk"
+
 
 SECTION "Map Blocks 3", ROMX
 
@@ -874,17 +877,17 @@ MewChamber_Blocks:
 LavRadioTower2F_Blocks:
 	INCBIN "maps/LavRadioTower2F.blk"
 
-SeafoamCave1F_Blocks:
-	INCBIN "maps/SeafoamCave1F.blk"
+SeafoamCaveUpperFloors_Blocks:
+	INCBIN "maps/SeafoamCaveUpperFloors.blk"
+
+SeafoamCaveLowerFloors_Blocks:
+	INCBIN "maps/SeafoamCaveLowerFloors.blk"
 
 SeafoamCaveHideout_Blocks:
 	INCBIN "maps/SeafoamCaveHideout.blk"
 
 SeafoamCaveDepths_Blocks:
 	INCBIN "maps/SeafoamCaveDepths.blk"
-
-SafariZoneGate_Blocks:
-	INCBIN "maps/SafariZoneGate.blk"
 
 SafariZoneSW_Blocks:
 	INCBIN "maps/SafariZoneSW.blk"
