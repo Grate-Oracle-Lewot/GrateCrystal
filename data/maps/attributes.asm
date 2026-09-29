@@ -627,7 +627,8 @@ ENDM
 	map_attributes SilphCo10F, SILPH_CO_10F, $00, 0
 	map_attributes SilphCo11F, SILPH_CO_11F, $00, 0
 	map_attributes SeafoamCavePuzzleChamber, SEAFOAM_CAVE_PUZZLE_CHAMBER, $00, 0
-	map_attributes SeafoamCave1F, SEAFOAM_CAVE_1F, $09, 0
+	map_attributes SeafoamCaveUpperFloors, SEAFOAM_CAVE_UPPER_FLOORS, $09, 0
+	map_attributes SeafoamCaveLowerFloors, SEAFOAM_CAVE_LOWER_FLOORS, $0f, 0
 	map_attributes SeafoamCaveHideout, SEAFOAM_CAVE_HIDEOUT, $2e, 0
 	map_attributes SeafoamCaveDepths, SEAFOAM_CAVE_DEPTHS, $19, 0
 	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $09, 0
