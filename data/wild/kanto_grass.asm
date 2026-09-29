@@ -1740,8 +1740,8 @@ else
 endc
 	end_grass_wildmons
 
-	def_grass_wildmons SEAFOAM_CAVE_1F
-	db 1 percent, 1 percent, 2 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons SEAFOAM_CAVE_UPPER_FLOORS
+	db 2 percent, 2 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 if DEF(_LITTLE_CUP)
 	db 37, ZUBAT
@@ -1801,6 +1801,70 @@ else
 	db 38, DELIBIRD
 	db 37, HAUNTER
 	db 38, HAUNTER
+endc
+	end_grass_wildmons
+
+	def_grass_wildmons SEAFOAM_CAVE_LOWER_FLOORS
+	db 4 percent, 4 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+if DEF(_LITTLE_CUP)
+	db 37, ZUBAT
+	db 37, GEODUDE
+	db 37, SLOWPOKE
+	db 37, WOOPER
+	db 38, SEEL
+	db 40, ZUBAT
+	db 37, VULPIX
+	db 38, VULPIX
+else
+	db 37, GOLBAT
+	db 37, GRAVELER
+	db 37, SLOWPOKE
+	db 37, QUAGSIRE
+	db 38, DEWGONG
+	db 40, DELIBIRD
+	db 37, SNOCONEY
+	db 38, SNOCONEY
+endc
+	; day
+if DEF(_LITTLE_CUP)
+	db 37, ZUBAT
+	db 38, GEODUDE
+	db 37, SLOWPOKE
+	db 37, WOOPER
+	db 38, SEEL
+	db 40, ZUBAT
+	db 37, CHINCHOU
+	db 38, CHINCHOU
+else
+	db 37, GOLBAT
+	db 38, GRAVELER
+	db 37, SLOWPOKE
+	db 37, QUAGSIRE
+	db 38, DEWGONG
+	db 40, DELIBIRD
+	db 37, CHINCHOU
+	db 38, CHINCHOU
+endc
+	; nite
+if DEF(_LITTLE_CUP)
+	db 38, ZUBAT
+	db 37, GEODUDE
+	db 37, SLOWPOKE
+	db 37, WOOPER
+	db 38, SEEL
+	db 40, ZUBAT
+	db 37, GASTLY
+	db 38, GASTLY
+else
+	db 38, GOLBAT
+	db 37, GRAVELER
+	db 37, SLOWPOKE
+	db 37, QUAGSIRE
+	db 38, DEWGONG
+	db 40, DELIBIRD
+	db 37, HAUNTER
+	db 38, GENGAR
 endc
 	end_grass_wildmons
 
