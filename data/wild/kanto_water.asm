@@ -382,6 +382,21 @@ endc
 endc
 	end_water_wildmons
 
+	def_water_wildmons SEAFOAM_CAVE_LOWER_FLOORS
+	db 2 percent ; encounter rate
+if DEF(_LITTLE_CUP)
+	db 40, CHINCHOU
+	db 40, MAGIKARP
+	db 40, SEEL
+	db 40, YANMA
+else
+	db 40, LANTURN
+	db 40, CASTAWEIGH
+	db 40, LAPRAS
+	db 40, JIRK
+endc
+	end_water_wildmons
+
 	def_water_wildmons CERULEAN_CAVE_1F
 	db 8 percent ; encounter rate
 if DEF(_LITTLE_CUP)
