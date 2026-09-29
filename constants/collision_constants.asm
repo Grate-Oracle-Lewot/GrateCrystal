@@ -21,10 +21,10 @@ COLL_WATERFALL_RIGHT   EQU $30 ; unused
 COLL_WATERFALL_LEFT    EQU $31 ; unused
 COLL_WATERFALL_UP      EQU $32 ; unused
 COLL_WATERFALL         EQU $33
-COLL_CURRENT_RIGHT     EQU $38 ; unused
-COLL_CURRENT_LEFT      EQU $39 ; unused
-COLL_CURRENT_UP        EQU $3a ; unused
-COLL_CURRENT_DOWN      EQU $3b ; unused
+COLL_CURRENT_RIGHT     EQU $38
+COLL_CURRENT_LEFT      EQU $39
+COLL_CURRENT_UP        EQU $3a
+COLL_CURRENT_DOWN      EQU $3b
 COLL_BRAKE             EQU $40 ; unused
 COLL_WALK_RIGHT        EQU $41 ; unused
 COLL_WALK_LEFT         EQU $42 ; unused
