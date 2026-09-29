@@ -281,6 +281,7 @@ INCLUDE "maps/CopycatsHouse1F.asm"
 INCLUDE "maps/CopycatsHouse2F.asm"
 INCLUDE "maps/Route5SaffronGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
+INCLUDE "maps/SafariZoneGate.asm"
 
 
 SECTION "Map Scripts 16", ROMX
@@ -468,9 +469,9 @@ INCLUDE "maps/MewAntechamber.asm"
 INCLUDE "maps/MewChamber.asm"
 INCLUDE "maps/LavRadioTower2F.asm"
 INCLUDE "maps/SeafoamCavePuzzleChamber.asm"
-INCLUDE "maps/SeafoamCave1F.asm"
+INCLUDE "maps/SeafoamCaveUpperFloors.asm"
+INCLUDE "maps/SeafoamCaveLowerFloors.asm"
 INCLUDE "maps/SeafoamCaveDepths.asm"
-INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZoneSW.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
 
