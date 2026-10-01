@@ -1863,8 +1863,8 @@ else
 	db 39, QUAGSIRE
 	db 40, DEWGONG
 	db 40, DELIBIRD
-	db 40, HAUNTER
-	db 41, GENGAR
+	db 40, SNEASEL
+	db 41, SNEASEL
 endc
 	end_grass_wildmons
 
