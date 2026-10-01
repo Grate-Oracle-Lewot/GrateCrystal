@@ -386,14 +386,14 @@ endc
 	db 2 percent ; encounter rate
 if DEF(_LITTLE_CUP)
 	db 40, CHINCHOU
-	db 40, MAGIKARP
+	db 40, GEODUDE
 	db 40, SEEL
-	db 40, YANMA
+	db 40, MAGIKARP
 else
 	db 40, LANTURN
-	db 40, CASTAWEIGH
+	db 40, CORSOLA
 	db 40, LAPRAS
-	db 40, JIRK
+	db 40, CASTAWEIGH
 endc
 	end_water_wildmons
 
