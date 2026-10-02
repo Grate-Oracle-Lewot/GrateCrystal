@@ -388,12 +388,16 @@ if DEF(_LITTLE_CUP)
 	db 40, CHINCHOU
 	db 40, GEODUDE
 	db 40, SEEL
-	db 40, MAGIKARP
+	db 40, STARYU
 else
 	db 40, LANTURN
 	db 40, CORSOLA
+if DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
+	db 40, TURBIN
+else
 	db 40, LAPRAS
-	db 40, CASTAWEIGH
+endc
+	db 40, STARMIE
 endc
 	end_water_wildmons
 
