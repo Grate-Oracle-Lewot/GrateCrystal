@@ -121,7 +121,7 @@ SeafoamCavePuzzleChamber_MapEvents:
 	def_warp_events
 	warp_event  3,  9, ROUTE_20, 2
 	warp_event  4,  9, ROUTE_20, 2
-	warp_event  4,  0, SEAFOAM_CAVE_1F, 1
+	warp_event  4,  0, SEAFOAM_CAVE_UPPER_FLOORS, 1
 
 	def_coord_events
 
