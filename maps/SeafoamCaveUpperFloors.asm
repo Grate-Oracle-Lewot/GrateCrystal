@@ -51,5 +51,5 @@ SeafoamCaveUpperFloors_MapEvents:
 	bg_event 15, 57, BGEVENT_ITEM, SeafoamCaveUpperFloorsHiddenXSpDefend
 
 	def_object_events
-	object_event 20, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveUpperFloorsBoulder, -1
-	object_event 28,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveUpperFloorsBoulder, -1
+	object_event 20, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveUpperFloorsBoulder, EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1
+	object_event 28,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveUpperFloorsBoulder, EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2
