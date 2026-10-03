@@ -811,6 +811,7 @@ Script_applymovement:
 	call GetScriptByte
 	call GetScriptObject
 	ld c, a
+	; fallthrough
 
 ApplyMovement:
 	push bc
