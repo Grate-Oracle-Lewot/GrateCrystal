@@ -4729,13 +4729,13 @@ PokemaniacGroup:
 	db -1 ; end
 
 	; POKEMANIAC (16)
-	db "TANNER@", TRAINERTYPE_NORMAL
-	db 50, FLOGISTAN
-	db 50, SNOCONEY
-	db 50, JIRK
-	db 50, CASTAWEIGH
-	db 50, YANMEGA
-	db 50, WHIMSICOTT
+	db "TANNER@", TRAINERTYPE_DVS
+	db 50, FLOGISTAN,  $00, $00
+	db 50, SNOCONEY,   $00, $00
+	db 50, JIRK,       $00, $00
+	db 50, CASTAWEIGH, $00, $00
+	db 50, YANMEGA,    $EF, $FE
+	db 50, WHIMSICOTT, $0F, $FE
 	db -1 ; end
 
 GentlemanGroup:
