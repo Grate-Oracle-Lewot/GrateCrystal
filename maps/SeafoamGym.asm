@@ -296,7 +296,7 @@ BurglarRamonAfterBattleText:
 SeafoamGym_MapEvents:
 	def_warp_events
 	warp_event  9, 15, ROUTE_20, 1
-	warp_event  9,  1, SEAFOAM_CAVE_1F, 3
+	warp_event  9,  1, SEAFOAM_CAVE_UPPER_FLOORS, 2
 
 	def_coord_events
 
