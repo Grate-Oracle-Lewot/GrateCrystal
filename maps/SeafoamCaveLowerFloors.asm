@@ -20,61 +20,61 @@ SeafoamCaveLowerFloors_MapScripts:
 	end
 
 SeafoamCaveLowerFloorsFakeWarpDownScene:
-  playsound SFX_ENTER_DOOR
-  applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpDownMovement
-  end
+	playsound SFX_ENTER_DOOR
+	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpDownMovement
+	end
 
 SeafoamCaveLowerFloorsFakeWarpUpScene:
-  playsound SFX_ENTER_DOOR
-  applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpUpMovement
-  end
+	playsound SFX_ENTER_DOOR
+	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpUpMovement
+	end
 
 SeafoamCaveLowerFloorsBoulder:
 	jumpstd StrengthBoulderScript
 
 SeafoamCaveLowerFloorsBlockingBoulder:
-  jumptext SeafoamCaveLowerFloorsBlockingBoulderText
+	jumptext SeafoamCaveLowerFloorsBlockingBoulderText
 
 SeafoamCaveLowerFloorsHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_HIDDEN_MAX_REVIVE
 
 SeafoamCaveLowerFloorsFakeWarpDownMovement:
-  hide_object
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  step DOWN
-  show_object
-  step DOWN
-  step_end
+	hide_object
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	show_object
+	step DOWN
+	step_end
 
 SeafoamCaveLowerFloorsFakeWarpUpMovement:
-  hide_object
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  step UP
-  show_object
-  step RIGHT
-  step_end
+	hide_object
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	show_object
+	step RIGHT
+	step_end
 
 SeafoamCaveLowerFloorsBlockingBoulderText:
-  text "The boulder is"
-  line "blocking the water"
-  cont "current."
-  done
+	text "The boulder is"
+	line "blocking the water"
+	cont "current."
+	done
 
 SeafoamCaveLowerFloors_MapEvents:
 	def_warp_events
