@@ -580,148 +580,143 @@ verticalmenu: MACRO
 	db verticalmenu_command
 ENDM
 
-	const loadpikachudata_command ; $5a
-loadpikachudata: MACRO
-	db loadpikachudata_command
-ENDM
-
-	const randomwildmon_command ; $5b
+	const randomwildmon_command ; $5a
 randomwildmon: MACRO
 	db randomwildmon_command
 ENDM
 
-	const loadtemptrainer_command ; $5c
+	const loadtemptrainer_command ; $5b
 loadtemptrainer: MACRO
 	db loadtemptrainer_command
 ENDM
 
-	const loadwildmon_command ; $5d
+	const loadwildmon_command ; $5c
 loadwildmon: MACRO
 	db loadwildmon_command
 	db \1 ; pokemon
 	db \2 ; level
 ENDM
 
-	const loadtrainer_command ; $5e
+	const loadtrainer_command ; $5d
 loadtrainer: MACRO
 	db loadtrainer_command
 	db \1 ; trainer_group
 	db \2 ; trainer_id
 ENDM
 
-	const startbattle_command ; $5f
+	const startbattle_command ; $5e
 startbattle: MACRO
 	db startbattle_command
 ENDM
 
-	const reloadmapafterbattle_command ; $60
+	const reloadmapafterbattle_command ; $5f
 reloadmapafterbattle: MACRO
 	db reloadmapafterbattle_command
 ENDM
 
-	const catchtutorial_command ; $61
+	const catchtutorial_command ; $60
 catchtutorial: MACRO
 	db catchtutorial_command
 	db \1 ; byte
 ENDM
 
-	const trainertext_command ; $62
+	const trainertext_command ; $61
 trainertext: MACRO
 	db trainertext_command
 	db \1 ; text_id
 ENDM
 
-	const trainerflagaction_command ; $63
+	const trainerflagaction_command ; $62
 trainerflagaction: MACRO
 	db trainerflagaction_command
 	db \1 ; action
 ENDM
 
-	const winlosstext_command ; $64
+	const winlosstext_command ; $63
 winlosstext: MACRO
 	db winlosstext_command
 	dw \1 ; win_text_pointer
 	dw \2 ; loss_text_pointer
 ENDM
 
-	const scripttalkafter_command ; $65
+	const scripttalkafter_command ; $64
 scripttalkafter: MACRO
 	db scripttalkafter_command
 ENDM
 
-	const endifjustbattled_command ; $66
+	const endifjustbattled_command ; $65
 endifjustbattled: MACRO
 	db endifjustbattled_command
 ENDM
 
-	const checkjustbattled_command ; $67
+	const checkjustbattled_command ; $66
 checkjustbattled: MACRO
 	db checkjustbattled_command
 ENDM
 
-	const setlasttalked_command ; $68
+	const setlasttalked_command ; $67
 setlasttalked: MACRO
 	db setlasttalked_command
 	db \1 ; object id
 ENDM
 
-	const applymovement_command ; $69
+	const applymovement_command ; $68
 applymovement: MACRO
 	db applymovement_command
 	db \1 ; object id
 	dw \2 ; data
 ENDM
 
-	const applymovementlasttalked_command ; $6a
+	const applymovementlasttalked_command ; $69
 applymovementlasttalked: MACRO
 	db applymovementlasttalked_command
 	dw \1 ; data
 ENDM
 
-	const faceplayer_command ; $6b
+	const faceplayer_command ; $6a
 faceplayer: MACRO
 	db faceplayer_command
 ENDM
 
-	const faceobject_command ; $6c
+	const faceobject_command ; $6b
 faceobject: MACRO
 	db faceobject_command
 	db \1 ; object1
 	db \2 ; object2
 ENDM
 
-	const variablesprite_command ; $6d
+	const variablesprite_command ; $6c
 variablesprite: MACRO
 	db variablesprite_command
 	db \1 - SPRITE_VARS ; byte
 	db \2 ; sprite
 ENDM
 
-	const disappear_command ; $6e
+	const disappear_command ; $6d
 disappear: MACRO
 	db disappear_command
 	db \1 ; object id
 ENDM
 
-	const appear_command ; $6f
+	const appear_command ; $6e
 appear: MACRO
 	db appear_command
 	db \1 ; object id
 ENDM
 
-	const follow_command ; $70
+	const follow_command ; $6f
 follow: MACRO
 	db follow_command
 	db \1 ; object2
 	db \2 ; object1
 ENDM
 
-	const stopfollow_command ; $71
+	const stopfollow_command ; $70
 stopfollow: MACRO
 	db stopfollow_command
 ENDM
 
-	const moveobject_command ; $72
+	const moveobject_command ; $71
 moveobject: MACRO
 	db moveobject_command
 	db \1 ; object id
@@ -729,19 +724,19 @@ moveobject: MACRO
 	db \3 ; y
 ENDM
 
-	const writeobjectxy_command ; $73
+	const writeobjectxy_command ; $72
 writeobjectxy: MACRO
 	db writeobjectxy_command
 	db \1 ; object id
 ENDM
 
-	const loademote_command ; $74
+	const loademote_command ; $73
 loademote: MACRO
 	db loademote_command
 	db \1 ; bubble
 ENDM
 
-	const showemote_command ; $75
+	const showemote_command ; $74
 showemote: MACRO
 	db showemote_command
 	db \1 ; bubble
@@ -749,33 +744,33 @@ showemote: MACRO
 	db \3 ; time
 ENDM
 
-	const turnobject_command ; $76
+	const turnobject_command ; $75
 turnobject: MACRO
 	db turnobject_command
 	db \1 ; object id
 	db \2 ; facing
 ENDM
 
-	const follownotexact_command ; $77
+	const follownotexact_command ; $76
 follownotexact: MACRO
 	db follownotexact_command
 	db \1 ; object2
 	db \2 ; object1
 ENDM
 
-	const earthquake_command ; $78
+	const earthquake_command ; $77
 earthquake: MACRO
 	db earthquake_command
 	db \1 ; param
 ENDM
 
-	const changemapblocks_command ; $79
+	const changemapblocks_command ; $78
 changemapblocks: MACRO
 	db changemapblocks_command
 	dba \1 ; map_data_pointer
 ENDM
 
-	const changeblock_command ; $7a
+	const changeblock_command ; $79
 changeblock: MACRO
 	db changeblock_command
 	db \1 ; x
@@ -783,204 +778,204 @@ changeblock: MACRO
 	db \3 ; block
 ENDM
 
-	const reloadmap_command ; $7b
+	const reloadmap_command ; $7a
 reloadmap: MACRO
 	db reloadmap_command
 ENDM
 
-	const reloadmappart_command ; $7c
+	const reloadmappart_command ; $7b
 reloadmappart: MACRO
 	db reloadmappart_command
 ENDM
 
-	const usestonetable_command ; $7d
+	const usestonetable_command ; $7c
 usestonetable: MACRO
 	db usestonetable_command
 	dw \1 ; stonetable_pointer
 ENDM
 
-	const clearstonetable_command ; $7e
+	const clearstonetable_command ; $7d
 clearstonetable: MACRO
 	db clearstonetable_command
 ENDM
 
-	const playmusic_command ; $7f
+	const playmusic_command ; $7e
 playmusic: MACRO
 	db playmusic_command
 	dw \1 ; music_pointer
 ENDM
 
-	const encountermusic_command ; $80
+	const encountermusic_command ; $7f
 encountermusic: MACRO
 	db encountermusic_command
 ENDM
 
-	const musicfadeout_command ; $81
+	const musicfadeout_command ; $80
 musicfadeout: MACRO
 	db musicfadeout_command
 	dw \1 ; music
 	db \2 ; fadetime
 ENDM
 
-	const playmapmusic_command ; $82
+	const playmapmusic_command ; $81
 playmapmusic: MACRO
 	db playmapmusic_command
 ENDM
 
-	const dontrestartmapmusic_command ; $83
+	const dontrestartmapmusic_command ; $82
 dontrestartmapmusic: MACRO
 	db dontrestartmapmusic_command
 ENDM
 
-	const cry_command ; $84
+	const cry_command ; $83
 cry: MACRO
 	db cry_command
 	dw \1 ; cry_id
 ENDM
 
-	const playsound_command ; $85
+	const playsound_command ; $84
 playsound: MACRO
 	db playsound_command
 	dw \1 ; sound_pointer
 ENDM
 
-	const waitsfx_command ; $86
+	const waitsfx_command ; $85
 waitsfx: MACRO
 	db waitsfx_command
 ENDM
 
-	const warpsound_command ; $87
+	const warpsound_command ; $86
 warpsound: MACRO
 	db warpsound_command
 ENDM
 
-	const specialsound_command ; $88
+	const specialsound_command ; $87
 specialsound: MACRO
 	db specialsound_command
 ENDM
 
-	const autoinput_command ; $89
+	const autoinput_command ; $88
 autoinput: MACRO
 	db autoinput_command
 	dba \1
 ENDM
 
-	const newloadmap_command ; $8a
+	const newloadmap_command ; $89
 newloadmap: MACRO
 	db newloadmap_command
 	db \1 ; which_method
 ENDM
 
-	const pause_command ; $8b
+	const pause_command ; $8a
 pause: MACRO
 	db pause_command
 	db \1 ; length
 ENDM
 
-	const deactivatefacing_command ; $8c
+	const deactivatefacing_command ; $8b
 deactivatefacing: MACRO
 	db deactivatefacing_command
 	db \1 ; time
 ENDM
 
-	const sdefer_command ; $8d
+	const sdefer_command ; $8c
 sdefer: MACRO
 	db sdefer_command
 	dw \1 ; pointer
 ENDM
 
-	const warpcheck_command ; $8e
+	const warpcheck_command ; $8d
 warpcheck: MACRO
 	db warpcheck_command
 ENDM
 
-	const stopandsjump_command ; $8f
+	const stopandsjump_command ; $8e
 stopandsjump: MACRO
 	db stopandsjump_command
 	dw \1 ; pointer
 ENDM
 
-	const endcallback_command ; $90
+	const endcallback_command ; $8f
 endcallback: MACRO
 	db endcallback_command
 ENDM
 
-	const end_command ; $91
+	const end_command ; $90
 end: MACRO
 	db end_command
 ENDM
 
-	const reloadend_command ; $92
+	const reloadend_command ; $91
 reloadend: MACRO
 	db reloadend_command
 	db \1 ; which_method
 ENDM
 
-	const endall_command ; $93
+	const endall_command ; $92
 endall: MACRO
 	db endall_command
 ENDM
 
-	const pokemart_command ; $94
+	const pokemart_command ; $93
 pokemart: MACRO
 	db pokemart_command
 	db \1 ; dialog_id
 	dw \2 ; mart_id
 ENDM
 
-	const elevator_command ; $95
+	const elevator_command ; $94
 elevator: MACRO
 	db elevator_command
 	dw \1 ; floor_list_pointer
 ENDM
 
-	const trade_command ; $96
+	const trade_command ; $95
 trade: MACRO
 	db trade_command
 	db \1 ; trade_id
 ENDM
 
-	const askforphonenumber_command ; $97
+	const askforphonenumber_command ; $96
 askforphonenumber: MACRO
 	db askforphonenumber_command
 	db \1 ; number
 ENDM
 
-	const phonecall_command ; $98
+	const phonecall_command ; $97
 phonecall: MACRO
 	db phonecall_command
 	dw \1 ; caller_name
 ENDM
 
-	const hangup_command ; $99
+	const hangup_command ; $98
 hangup: MACRO
 	db hangup_command
 ENDM
 
-	const describedecoration_command ; $9a
+	const describedecoration_command ; $99
 describedecoration: MACRO
 	db describedecoration_command
 	db \1 ; byte
 ENDM
 
-	const fruittree_command ; $9b
+	const fruittree_command ; $9a
 fruittree: MACRO
 	db fruittree_command
 	db \1 ; tree_id
 ENDM
 
-	const specialphonecall_command ; $9c
+	const specialphonecall_command ; $9b
 specialphonecall: MACRO
 	db specialphonecall_command
 	dw \1 ; call_id
 ENDM
 
-	const checkphonecall_command ; $9d
+	const checkphonecall_command ; $9c
 checkphonecall: MACRO
 	db checkphonecall_command
 ENDM
 
-	const verbosegiveitem_command ; $9e
+	const verbosegiveitem_command ; $9d
 verbosegiveitem: MACRO
 if _NARG == 1
 	verbosegiveitem \1, 1
@@ -991,14 +986,14 @@ else
 endc
 ENDM
 
-	const verbosegiveitemvar_command ; $9f
+	const verbosegiveitemvar_command ; $9e
 verbosegiveitemvar: MACRO
 	db verbosegiveitemvar_command
 	db \1 ; item
 	db \2 ; var
 ENDM
 
-	const verbosegiveitemfive_command ; $a0
+	const verbosegiveitemfive_command ; $9f
 verbosegiveitemfive: MACRO
 if _NARG == 1
 	verbosegiveitemfive \1, 1
@@ -1009,17 +1004,17 @@ else
 endc
 ENDM
 
-	const halloffame_command ; $a1
+	const halloffame_command ; $a0
 halloffame: MACRO
 	db halloffame_command
 ENDM
 
-	const credits_command ; $a2
+	const credits_command ; $a1
 credits: MACRO
 	db credits_command
 ENDM
 
-	const warpfacing_command ; $a3
+	const warpfacing_command ; $a2
 warpfacing: MACRO
 	db warpfacing_command
 	db \1 ; facing
@@ -1028,27 +1023,27 @@ warpfacing: MACRO
 	db \4 ; y
 ENDM
 
-	const battletowertext_command ; $a4
+	const battletowertext_command ; $a3
 battletowertext: MACRO
 	db battletowertext_command
 	db \1 ; bttext_id
 ENDM
 
-	const getlandmarkname_command ; $a5
+	const getlandmarkname_command ; $a4
 getlandmarkname: MACRO
 	db getlandmarkname_command
 	db \2 ; landmark_id
 	db \1 ; string_buffer
 ENDM
 
-	const gettrainerclassname_command ; $a6
+	const gettrainerclassname_command ; $a5
 gettrainerclassname: MACRO
 	db gettrainerclassname_command
 	db \2 ; trainer_group
 	db \1 ; string_buffer
 ENDM
 
-	const getname_command ; $a7
+	const getname_command ; $a6
 getname: MACRO
 	db getname_command
 	db \2 ; type
@@ -1056,24 +1051,24 @@ getname: MACRO
 	db \1 ; memory
 ENDM
 
-	const wait_command ; $a8
+	const wait_command ; $a7
 wait: MACRO
 	db wait_command
 	db \1 ; duration
 ENDM
 
-	const checksave_command ; $a9
+	const checksave_command ; $a8
 checksave: MACRO
 	db checksave_command
 ENDM
 
-	const trainerpic_command ; $aa
+	const trainerpic_command ; $a9
 trainerpic: MACRO
 	db trainerpic_command
 	db \1 ; trainer
 ENDM
 
-	const verbosegiveitemfish_command ; $ab
+	const verbosegiveitemfish_command ; $aa
 verbosegiveitemfish: MACRO
 if _NARG == 1
 	verbosegiveitemfish \1, 1
