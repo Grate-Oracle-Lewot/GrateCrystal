@@ -287,7 +287,7 @@ SeafoamCaveHideoutBedText2:
 
 SeafoamCaveHideout_MapEvents:
 	def_warp_events
-	warp_event 11, 16, SEAFOAM_CAVE_1F, 2
+	warp_event 11, 16, SEAFOAM_CAVE_LOWER_FLOORS, 8
 	warp_event  6, 41, SEAFOAM_CAVE_DEPTHS, 1
 
 	def_coord_events
