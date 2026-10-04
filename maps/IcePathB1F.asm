@@ -40,20 +40,14 @@ IcePathB1F_MapScripts:
 .Boulder4:
 	disappear ICEPATHB1F_BOULDER4
 	clearevent EVENT_BOULDER_IN_ICE_PATH_4A
-	sjump .FinishBoulder
-
 .FinishBoulder:
 	pause 30
-	scall .BoulderFallsThrough
+	playsound SFX_STRENGTH
+	earthquake 80
 	opentext
 	writetext IcePathBoulderFellThroughText
 	waitbutton
 	closetext
-	end
-
-.BoulderFallsThrough:
-	playsound SFX_STRENGTH
-	earthquake 80
 	end
 
 IcePathB1FBoulder:
