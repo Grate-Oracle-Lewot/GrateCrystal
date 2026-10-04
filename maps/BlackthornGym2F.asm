@@ -34,20 +34,14 @@ BlackthornGym2F_MapScripts:
 
 .Boulder3:
 	disappear BLACKTHORNGYM2F_BOULDER3
-	sjump .Fall
-
 .Fall:
 	pause 30
-	scall .FX
+	playsound SFX_STRENGTH
+	earthquake 80
 	opentext
 	writetext BlackthornGym2FBoulderFellText
 	waitbutton
 	closetext
-	end
-
-.FX:
-	playsound SFX_STRENGTH
-	earthquake 80
 	end
 
 BlackthornGymBoulder:
