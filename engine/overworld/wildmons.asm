@@ -447,10 +447,17 @@ CapNuzlockeEncounterLevel:
 	ret
 
 CheckRepelEffect::
+; If Roar's field effect is active, act like a Repel is up.
+	ld a, [wRoar]
+	and a
+	jr nz, .roar
+
 ; If there is no active Repel, there's no need to be here.
 	ld a, [wRepelEffect]
 	and a
 	jr z, .encounter
+
+.roar
 ; Get the first Pokemon in your party that isn't fainted.
 	ld hl, wPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
