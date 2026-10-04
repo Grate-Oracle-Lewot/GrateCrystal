@@ -1781,3 +1781,14 @@ _NewGamePlusText::
 _NGPErrorText::
 	text "An error occurred."
 	prompt
+
+_UseRoarText::
+	text_ram wStringBuffer3
+	text " used"
+	line "SWEET SCENT!"
+	autodone
+
+_RoarRepelText::
+	text "Wild #MON will"
+	line "be repelled."
+	autodone
