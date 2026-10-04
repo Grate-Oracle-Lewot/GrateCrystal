@@ -94,3 +94,34 @@ UseSweetScentText:
 SweetScentNothingText:
 	text_far _SweetScentNothingText
 	text_end
+
+RoarFunction:
+	ld hl, .Roar
+	call QueueScript
+	ld a, $1
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.Roar:
+	reloadmappart
+	special UpdateTimePals
+	callasm GetPartyNickname
+	writetext UseRoarText
+	closetext
+	callasm PlayRoarCry
+	writetext RoarRepelText
+	closetext
+	end
+
+PlayRoarCry:
+	ld a, [wCurPartySpecies]
+	ld [wRoar], a
+	jp PlayMonCry
+
+UseRoarText:
+	text_far _UseRoarText
+	text_end
+
+RoarRepelText:
+	text_far _RoarRepelText
+	text_end
