@@ -135,6 +135,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_WATERFALL,  MonMenu_Waterfall
 	dbw MONMENUITEM_ROCKSMASH,  MonMenu_RockSmash
 	dbw MONMENUITEM_SWEETSCENT, MonMenu_SweetScent
+	dbw MONMENUITEM_ROAR,       MonMenu_Roar
 	dbw MONMENUITEM_STATS,      OpenPartyStats
 	dbw MONMENUITEM_SWITCH,     SwitchPartyMons
 	dbw MONMENUITEM_ITEM,       GiveTakePartyMonItem
@@ -242,7 +243,6 @@ GiveTakePartyMonItem:
 
 .swap
 	call SwapPartyItem
-
 .cancel
 	ld a, 3
 	ret
@@ -268,7 +268,6 @@ GiveTakePartyMonItem:
 	ld a, [wItemAttributeValue]
 	and a
 	jr nz, .next
-
 	jr TryGiveItemToPartymon
 
 .next
@@ -592,7 +591,6 @@ MonMailAction:
 .BagIsFull:
 	ld hl, .MailNoSpaceText
 	call MenuTextboxBackup
-
 .done
 	ld a, $3
 	ret
@@ -749,7 +747,6 @@ MonMenu_Softboiled_MilkDrink:
 .NotEnoughHP:
 	ld hl, .PokemonNotEnoughHPText
 	call PrintText
-
 .finish
 	xor a
 	ld [wPartyMenuActionText], a
@@ -790,10 +787,6 @@ MonMenu_Headbutt:
 	ld a, $2
 	ret
 
-MonMenu_MoveFail2:
-	ld a, $3
-	ret
-
 MonMenu_RockSmash:
 	farcall RockSmashFunction
 	ld a, [wFieldMoveSucceeded]
@@ -803,8 +796,21 @@ MonMenu_RockSmash:
 	ld a, $2
 	ret
 
+MonMenu_MoveFail2:
+	ld a, $3
+	ret
+
 MonMenu_SweetScent:
 	farcall SweetScentFromMenu
+	ld b, $4
+	ld a, $2
+	ret
+
+MonMenu_Roar:
+	farcall RoarFunction
+	ld a, [wFieldMoveSucceeded]
+	and a
+	jr z, MonMenu_MoveFail2
 	ld b, $4
 	ld a, $2
 	ret
