@@ -700,6 +700,9 @@ Text_RoarOutro:
 
 	para "EVEN #MON RUN"
 	line "FROM A GOOD ROAR!"
+
+	para "USE IT OUTSIDE"
+	line "BATTLE TOO!"
 	done
 
 MeetFriedaText:
