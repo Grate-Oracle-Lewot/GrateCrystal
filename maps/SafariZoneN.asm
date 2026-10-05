@@ -8,8 +8,8 @@ SafariZoneN_MapScripts:
 	def_callbacks
 
 SafariZoneNXatuScript:
-	waitsfx
 	cry XATU
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 if DEF(_LITTLE_CUP)
 	loadwildmon NATU, 55
