@@ -9,8 +9,8 @@ SafariZoneE_MapScripts:
 
 SafariZoneEAerodactylScript:
 	faceplayer
-	waitsfx
 	cry AERODACTYL
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 if DEF(_LITTLE_CUP)
 	loadwildmon SPEAROW, 56
