@@ -109,6 +109,7 @@ RoarFunction:
 	writetext UseRoarText
 	closetext
 	callasm PlayRoarCry
+	opentext
 	writetext RoarRepelText
 	closetext
 	end
