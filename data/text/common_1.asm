@@ -1785,7 +1785,7 @@ _NGPErrorText::
 _UseRoarText::
 	text_ram wStringBuffer3
 	text " used"
-	line "SWEET SCENT!"
+	line "ROAR!"
 	autodone
 
 _RoarRepelText::
