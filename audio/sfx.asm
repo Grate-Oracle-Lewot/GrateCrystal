@@ -445,6 +445,7 @@ Sfx_Shine:
 	channel 5, Sfx_Shine_Ch5
 
 Sfx_Sandstorm:
+	channel_count 1
 	channel 8, Sfx_Sandstorm_Ch8
 
 Sfx_HangUp:
