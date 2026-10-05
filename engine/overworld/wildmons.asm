@@ -477,6 +477,7 @@ endr
 	ld a, [wCurPartyLevel]
 	cp [hl]
 	jr nc, .encounter
+; no encounter
 	and a
 	ret
 
