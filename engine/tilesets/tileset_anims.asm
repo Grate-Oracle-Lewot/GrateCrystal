@@ -72,31 +72,31 @@ TilesetOlivineGymAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $45, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDownTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDownTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDownTwice
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $45, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $46, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileRight
+	dw wTileAnimBuffer, ScrollTileRightTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileRight
+	dw wTileAnimBuffer, ScrollTileRightTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileRight
+	dw wTileAnimBuffer, ScrollTileRightTwice
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $46, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $47, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileLeft
+	dw wTileAnimBuffer, ScrollTileLeftTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileLeft
+	dw wTileAnimBuffer, ScrollTileLeftTwice
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileLeft
+	dw wTileAnimBuffer, ScrollTileLeftTwice
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $47, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -277,8 +277,10 @@ ScrollTileRightLeft:
 	ld [wTileAnimationTimer], a
 	and %100
 	jr nz, ScrollTileLeft
-	; fallthrough
+	jr ScrollTileRight
 
+ScrollTileRightTwice:
+	call ScrollTileRight
 ScrollTileRight:
 	ld h, d
 	ld l, e
@@ -293,6 +295,8 @@ endr
 	jr nz, .loop
 	ret
 
+ScrollTileLeftTwice:
+	call ScrollTileLeft
 ScrollTileLeft:
 	ld h, d
 	ld l, e
@@ -307,6 +311,8 @@ endr
 	jr nz, .loop
 	ret
 
+ScrollTileDownTwice:
+	call ScrollTileDown
 ScrollTileDown:
 	ld h, d
 	ld l, e
