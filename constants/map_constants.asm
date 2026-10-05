@@ -443,7 +443,7 @@ ENDM
 	map_const SILPH_CO_10F,                                 8,  9 ;  17
 	map_const SILPH_CO_11F,                                 8,  9 ;  18
 	map_const SEAFOAM_CAVE_PUZZLE_CHAMBER,                  4,  5 ;  19
-	map_const SEAFOAM_CAVE_UPPER_FLOORS,                   17, 32 ;  20
+	map_const SEAFOAM_CAVE_UPPER_FLOORS,                   16, 30 ;  20
 	map_const SEAFOAM_CAVE_LOWER_FLOORS,                   25, 30 ;  21
 	map_const SEAFOAM_CAVE_HIDEOUT,                        24, 22 ;  22
 	map_const SEAFOAM_CAVE_DEPTHS,                         10, 18 ;  23
