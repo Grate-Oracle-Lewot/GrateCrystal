@@ -13,8 +13,8 @@ SafariZoneSW_MapScripts:
 	def_callbacks
 
 SafariZoneSWMagikarpScript:
-	waitsfx
 	cry MAGIKARP
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 	loadwildmon MAGIKARP, 57
 	startbattle
@@ -23,8 +23,8 @@ SafariZoneSWMagikarpScript:
 	end
 
 SafariZoneSWSunfloraScript:
-	waitsfx
 	cry SUNFLORA
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 if DEF(_LITTLE_CUP)
 	loadwildmon SUNKERN, 53
@@ -37,7 +37,6 @@ endc
 	end
 
 SafariZoneSWSudowoodoScript:
-	waitsfx
 	playsound SFX_SANDSTORM
 	applymovement SAFARIZONESW_SUDOWOODO, SafariZoneSWShakeMovement
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
@@ -46,14 +45,15 @@ if DEF(_LITTLE_CUP)
 else
 	loadwildmon SUDOWOODO, 54
 endc
+	waitsfx
 	startbattle
 	disappear SAFARIZONESW_SUDOWOODO
 	reloadmapafterbattle
 	end
 
 SafariZoneSWBlisseyScript:
-	waitsfx
 	cry BLISSEY
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 if DEF(_LITTLE_CUP)
 	loadwildmon CHANSEY, 58
@@ -66,8 +66,8 @@ endc
 	end
 
 SafariZoneSWMrMimeScript:
-	waitsfx
 	cry MR__MIME
+	waitsfx
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
 if DEF(_LITTLE_CUP)
 	loadwildmon ABRA, 52
