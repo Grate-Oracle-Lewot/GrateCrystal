@@ -100,6 +100,10 @@ SeafoamCaveLowerFloors_MapScripts:
 	appear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
 	endcallback
 
+.SetUpStoneTable:
+	usestonetable .StoneTable
+ 	endcallback
+
 .StoneTable:
 	stonetable 11, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1, .Boulder1
 	stonetable 12, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_2, .Boulder2
