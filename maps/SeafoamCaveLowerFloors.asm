@@ -17,9 +17,9 @@ SeafoamCaveLowerFloors_MapScripts:
 	callback MAPCALLBACK_STONETABLE, .SetUpStoneTable
 
 .WaterCurrents:
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
 	iffalse .Check2ndPair
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
 	iffalse .Check2ndPair
 	changeblock 20,  4, $0f ; water, no current
 	changeblock 22,  4, $0f ; water, no current
@@ -40,12 +40,11 @@ SeafoamCaveLowerFloors_MapScripts:
 	iffalse .End
 	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_2
 	iffalse .End
-	changeblock 16, 28, $0f ; water, no current
 	changeblock 16, 30, $0f ; water, no current
 	changeblock 16, 32, $0f ; water, no current
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
 	iffalse .End
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
 	iffalse .End
 	changeblock 26, 28, $0f ; water, no current
 	changeblock 26, 30, $0f ; water, no current
@@ -66,10 +65,14 @@ SeafoamCaveLowerFloors_MapScripts:
 	endcallback
 
 .BlockingBoulders:
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1
+	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER1
+	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER2
+	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER3
+	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
 	iftrue .AppearBlock1
 .Check2:
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
 	iftrue .AppearBlock2
 .Check3:
 	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1
@@ -172,5 +175,5 @@ SeafoamCaveLowerFloors_MapEvents:
 	object_event 15, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBoulder, -1
 	object_event 20,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_1
 	object_event 21,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_2
-	object_event 16, 28, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_3
-	object_event 17, 28, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_4
+	object_event 16, 29, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_3
+	object_event 17, 29, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_4
