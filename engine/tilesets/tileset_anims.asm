@@ -50,43 +50,51 @@ TilesetKantoExtraAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetCaveAnim:
+	dw vTiles2 tile $14, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+	dw NULL,  AnimateWaterPalette
+	dw vTiles2 tile $40, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $40, WriteTileFromAnimBuffer
+	dw vTiles2 tile $45, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $45, WriteTileFromAnimBuffer
+	dw vTiles2 tile $46, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileRight
+	dw wTileAnimBuffer, ScrollTileRight
+	dw wTileAnimBuffer, ScrollTileRight
+	dw vTiles2 tile $46, WriteTileFromAnimBuffer
+	dw vTiles2 tile $47, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileLeft
+	dw wTileAnimBuffer, ScrollTileLeft
+	dw wTileAnimBuffer, ScrollTileLeft
+	dw vTiles2 tile $47, WriteTileFromAnimBuffer
+	dw NULL,  DoneTileAnimation
+
 TilesetDarkCaveAnim:
 TilesetOlivineGymAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $14, WriteTileFromAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, ReadTileToAnimBuffer
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileFromAnimBuffer
-	dw vTiles2 tile $45, ReadTileToAnimBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $45, WriteTileFromAnimBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $46, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRight
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileRight
-	dw wTileAnimBuffer, ScrollTileRight
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $46, WriteTileFromAnimBuffer
-	dw vTiles2 tile $47, ReadTileToAnimBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileLeft
-	dw wTileAnimBuffer, ScrollTileLeft
-	dw NULL,  FlickeringCaveEntrancePalette
-	dw wTileAnimBuffer, ScrollTileLeft
-	dw vTiles2 tile $47, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
