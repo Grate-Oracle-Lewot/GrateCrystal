@@ -144,7 +144,7 @@ SeafoamCaveUpperFloors_MapEvents:
 	warp_event 25, 45, SEAFOAM_CAVE_LOWER_FLOORS, 4
 	warp_event 25, 55, SEAFOAM_CAVE_LOWER_FLOORS, 5
 	warp_event 19, 48, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
-	warp_event 22, 48, SEAFOAM_CAVE_LOWER_FLOORS, 2 ; hole
+	warp_event 22, 48, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
 
 	def_coord_events
 
