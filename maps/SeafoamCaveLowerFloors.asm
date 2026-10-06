@@ -7,6 +7,7 @@
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER2
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER3
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
+	const SEAFOAMCAVELOWERFLOORS_POKE_BALL
 
 SeafoamCaveLowerFloors_MapScripts:
 	def_scene_scripts
@@ -131,6 +132,9 @@ SeafoamCaveLowerFloorsBoulder:
 SeafoamCaveLowerFloorsBlockingBoulder:
 	jumptext SeafoamCaveLowerFloorsBlockingBoulderText
 
+SeafoamCaveLowerFloorsNugget:
+	itemball NUGGET
+
 SeafoamCaveLowerFloorsHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_HIDDEN_MAX_REVIVE
 
@@ -177,3 +181,4 @@ SeafoamCaveLowerFloors_MapEvents:
 	object_event 21,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_2
 	object_event 16, 29, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_3
 	object_event 17, 29, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_4
+	object_event  9,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveLowerFloorsNugget, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_NUGGET
