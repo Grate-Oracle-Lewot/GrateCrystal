@@ -201,20 +201,19 @@ SeafoamCaveLowerFloorsBlockingBoulderText:
 
 SeafoamCaveLowerFloors_MapEvents:
 	def_warp_events
-	warp_event 22, 54, SEAFOAM_CAVE_UPPER_FLOORS, 28
-	warp_event 24, 54, SEAFOAM_CAVE_UPPER_FLOORS, 29
+	warp_event 26, 54, SEAFOAM_CAVE_UPPER_FLOORS, 28
 	warp_event 11, 13, SEAFOAM_CAVE_UPPER_FLOORS, 25
 	warp_event 31,  3, SEAFOAM_CAVE_UPPER_FLOORS, 26
 	warp_event 31, 15, SEAFOAM_CAVE_UPPER_FLOORS, 27
-	warp_event 23, 29, SEAFOAM_CAVE_LOWER_FLOORS, 7
-	warp_event 47,  3, SEAFOAM_CAVE_LOWER_FLOORS, 6
+	warp_event 23, 29, SEAFOAM_CAVE_LOWER_FLOORS, 6
+	warp_event 47,  3, SEAFOAM_CAVE_LOWER_FLOORS, 5
 	warp_event 47,  5, SEAFOAM_CAVE_HIDEOUT, 1
-	warp_event 15,  9, SEAFOAM_CAVE_LOWER_FLOORS, 13
-	warp_event 31,  5, SEAFOAM_CAVE_LOWER_FLOORS, 14
+	warp_event 15,  9, SEAFOAM_CAVE_LOWER_FLOORS, 12
+	warp_event 31,  5, SEAFOAM_CAVE_LOWER_FLOORS, 13
 	warp_event  9, 18, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
-	warp_event 12, 18, SEAFOAM_CAVE_LOWER_FLOORS, 2 ; hole
-	warp_event 25, 35, SEAFOAM_CAVE_LOWER_FLOORS, 9
-	warp_event 39, 31, SEAFOAM_CAVE_LOWER_FLOORS, 10
+	warp_event 12, 18, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
+	warp_event 25, 35, SEAFOAM_CAVE_LOWER_FLOORS, 8
+	warp_event 39, 31, SEAFOAM_CAVE_LOWER_FLOORS, 9
 
 	def_coord_events
 	coord_event 23, 43, 0, SeafoamCaveLowerFloorsFakeWarpDownScene
