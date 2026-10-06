@@ -122,20 +122,6 @@ SeafoamCaveLowerFloors_MapScripts:
 	closetext
 	end
 
-SeafoamCaveLowerFloorsFakeWarpDownScene:
-	playsound SFX_ENTER_DOOR
-	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpDownMovement1
-	playsound SFX_EXIT_BUILDING
-	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpDownMovement2
-	end
-
-SeafoamCaveLowerFloorsFakeWarpUpScene:
-	playsound SFX_ENTER_DOOR
-	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpUpMovement1
-	playsound SFX_EXIT_BUILDING
-	applymovement PLAYER, SeafoamCaveLowerFloorsFakeWarpUpMovement2
-	end
-
 SeafoamCaveLowerFloorsBoulder:
 	jumpstd StrengthBoulderScript
 
