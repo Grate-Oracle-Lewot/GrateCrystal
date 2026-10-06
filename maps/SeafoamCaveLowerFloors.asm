@@ -10,16 +10,11 @@
 
 SeafoamCaveLowerFloors_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene
-	scene_script .DummyScene
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, .WaterCurrents
 	callback MAPCALLBACK_OBJECTS, .BlockingBoulders
 	callback MAPCALLBACK_STONETABLE, .SetUpStoneTable
-
-.DummyScene:
-	end
 
 .WaterCurrents:
 	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1
@@ -150,44 +145,6 @@ SeafoamCaveLowerFloorsBlockingBoulder:
 SeafoamCaveLowerFloorsHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_HIDDEN_MAX_REVIVE
 
-SeafoamCaveLowerFloorsFakeWarpDownMovement1:
-	hide_object
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
-SeafoamCaveLowerFloorsFakeWarpDownMovement2:
-	show_object
-	step DOWN
-	step_end
-
-SeafoamCaveLowerFloorsFakeWarpUpMovement1:
-	hide_object
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-SeafoamCaveLowerFloorsFakeWarpUpMovement2:
-	show_object
-	step RIGHT
-	step_end
-
 SeafoamCaveUpperFloorsBoulderFallText:
 	text "Sounds like it"
 	line "landed in water…"
@@ -214,10 +171,10 @@ SeafoamCaveLowerFloors_MapEvents:
 	warp_event 12, 18, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
 	warp_event 25, 35, SEAFOAM_CAVE_LOWER_FLOORS, 8
 	warp_event 39, 31, SEAFOAM_CAVE_LOWER_FLOORS, 9
+	warp_event 23, 43, SEAFOAM_CAVE_LOWER_FLOORS, 15
+	warp_event 23, 55, SEAFOAM_CAVE_LOWER_FLOORS, 14
 
 	def_coord_events
-	coord_event 23, 43, 0, SeafoamCaveLowerFloorsFakeWarpDownScene
-	coord_event 23, 53, 0, SeafoamCaveLowerFloorsFakeWarpUpScene
 
 	def_bg_events
 	bg_event 15, 57, BGEVENT_ITEM, SeafoamCaveLowerFloorsHiddenMaxRevive
