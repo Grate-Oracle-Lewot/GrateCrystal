@@ -136,8 +136,8 @@ SeafoamCaveUpperFloors_MapEvents:
 	warp_event 25, 15, SEAFOAM_CAVE_UPPER_FLOORS, 12
 	warp_event 19,  6, SEAFOAM_CAVE_UPPER_FLOORS, 8 ; hole
 	warp_event 26,  6, SEAFOAM_CAVE_UPPER_FLOORS, 9 ; hole
-	warp_event 18, 29, SEAFOAM_CAVE_UPPER_FLOORS, 6
-	warp_event 23, 29, SEAFOAM_CAVE_UPPER_FLOORS, 7
+	warp_event 18, 29, SEAFOAM_CAVE_UPPER_FLOORS, 6 ; landing
+	warp_event 23, 29, SEAFOAM_CAVE_UPPER_FLOORS, 7 ; landing
 	warp_event  7, 27, SEAFOAM_CAVE_UPPER_FLOORS, 3
 	warp_event 25, 25, SEAFOAM_CAVE_UPPER_FLOORS, 4
 	warp_event 23, 37, SEAFOAM_CAVE_UPPER_FLOORS, 5
@@ -147,17 +147,17 @@ SeafoamCaveUpperFloors_MapEvents:
 	warp_event 25, 33, SEAFOAM_CAVE_UPPER_FLOORS, 24
 	warp_event 18, 28, SEAFOAM_CAVE_UPPER_FLOORS, 19 ; hole
 	warp_event 23, 28, SEAFOAM_CAVE_UPPER_FLOORS, 20 ; hole
-	warp_event 19, 49, SEAFOAM_CAVE_UPPER_FLOORS, 17
-	warp_event 22, 49, SEAFOAM_CAVE_UPPER_FLOORS, 18
+	warp_event 19, 49, SEAFOAM_CAVE_UPPER_FLOORS, 17 ; landing
+	warp_event 22, 49, SEAFOAM_CAVE_UPPER_FLOORS, 18 ; landing
 	warp_event  5, 45, SEAFOAM_CAVE_UPPER_FLOORS, 13
 	warp_event 13, 49, SEAFOAM_CAVE_UPPER_FLOORS, 14
 	warp_event 19, 57, SEAFOAM_CAVE_UPPER_FLOORS, 15
 	warp_event 25, 53, SEAFOAM_CAVE_UPPER_FLOORS, 16
-	warp_event  5, 55, SEAFOAM_CAVE_LOWER_FLOORS, 2
-	warp_event 25, 45, SEAFOAM_CAVE_LOWER_FLOORS, 3
-	warp_event 25, 55, SEAFOAM_CAVE_LOWER_FLOORS, 4
+	warp_event  5, 55, SEAFOAM_CAVE_LOWER_FLOORS, 3
+	warp_event 25, 45, SEAFOAM_CAVE_LOWER_FLOORS, 4
+	warp_event 25, 55, SEAFOAM_CAVE_LOWER_FLOORS, 5
 	warp_event 19, 48, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
-	warp_event 22, 48, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
+	warp_event 22, 48, SEAFOAM_CAVE_LOWER_FLOORS, 2 ; hole
 
 	def_coord_events
 
