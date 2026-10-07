@@ -163,7 +163,7 @@ SeafoamCaveLowerFloors_MapEvents:
 	warp_event 31,  5, SEAFOAM_CAVE_LOWER_FLOORS, 15
 	warp_event  9, 18, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
 	warp_event 12, 18, SEAFOAM_CAVE_LOWER_FLOORS, 1 ; hole
-	warp_event 21, 34, SEAFOAM_CAVE_LOWER_FLOORS, 28 ; shared landing
+	warp_event 21, 34, SEAFOAM_CAVE_LOWER_FLOORS, 13 ; shared landing
 	warp_event 25, 35, SEAFOAM_CAVE_LOWER_FLOORS, 9
 	warp_event 39, 31, SEAFOAM_CAVE_LOWER_FLOORS, 10
 	warp_event 23, 43, SEAFOAM_CAVE_LOWER_FLOORS, 17
