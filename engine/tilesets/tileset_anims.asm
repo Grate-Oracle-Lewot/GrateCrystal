@@ -50,6 +50,7 @@ TilesetKantoExtraAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetCaveAnim:
+TilesetKantoCaveAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw vTiles2 tile $14, WriteTileFromAnimBuffer
@@ -74,6 +75,7 @@ TilesetCaveAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetDarkCaveAnim:
+TilesetKantoDarkCaveAnim:
 TilesetOlivineGymAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
