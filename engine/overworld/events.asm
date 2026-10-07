@@ -995,7 +995,7 @@ TryTileCollisionEvent::
 
 .waterfall
 	ld a, [wFacingTileID]
-	call CheckWaterfallTile
+	cp COLL_WATERFALL
 	jr nz, .headbutt
 	farcall TryWaterfallOW
 	jr .done
