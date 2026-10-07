@@ -27,6 +27,8 @@ Tilesets::
 	tileset TilesetGate
 	tileset TilesetCave
 	tileset TilesetDarkCave
+	tileset TilesetKantoCave
+	tileset TilesetKantoDarkCave
 	tileset TilesetIcePath
 	tileset TilesetForest
 	tileset TilesetPark
