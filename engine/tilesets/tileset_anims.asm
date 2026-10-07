@@ -62,15 +62,12 @@ TilesetCaveAnim:
 	dw vTiles2 tile $45, ReadTileToAnimBuffer
 	dw wTileAnimBuffer, ScrollTileDown
 	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
 	dw vTiles2 tile $45, WriteTileFromAnimBuffer
 	dw vTiles2 tile $46, ReadTileToAnimBuffer
 	dw wTileAnimBuffer, ScrollTileRight
 	dw wTileAnimBuffer, ScrollTileRight
-	dw wTileAnimBuffer, ScrollTileRight
 	dw vTiles2 tile $46, WriteTileFromAnimBuffer
 	dw vTiles2 tile $47, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileLeft
 	dw wTileAnimBuffer, ScrollTileLeft
 	dw wTileAnimBuffer, ScrollTileLeft
 	dw vTiles2 tile $47, WriteTileFromAnimBuffer
