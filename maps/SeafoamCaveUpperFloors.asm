@@ -96,10 +96,12 @@ SeafoamCaveUpperFloors_MapScripts:
 
 .Boulder5:
 	disappear SEAFOAMCAVEUPPERFLOORS_BOULDER5
+	setevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
 	sjump .Splash
 
 .Boulder6:
 	disappear SEAFOAMCAVEUPPERFLOORS_BOULDER6
+	setevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
 .Splash:
 	pause 30
 	playsound SFX_HYDRO_PUMP
