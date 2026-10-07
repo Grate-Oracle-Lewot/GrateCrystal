@@ -90,6 +90,7 @@ TilesetMansionColl::
 INCLUDE "data/tilesets/mansion_collision.asm"
 
 TilesetCaveGFX::
+TilesetKantoCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
 TilesetCaveMeta::
@@ -98,6 +99,8 @@ INCBIN "data/tilesets/cave_metatiles.bin"
 
 TilesetCaveColl::
 TilesetDarkCaveColl::
+TilesetKantoCaveColl::
+TilesetKantoDarkCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
 
@@ -188,6 +191,7 @@ TilesetUndergroundColl::
 INCLUDE "data/tilesets/underground_collision.asm"
 
 TilesetDarkCaveGFX::
+TilesetKantoDarkCaveGFX::
 INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
 
 
@@ -416,3 +420,7 @@ INCBIN "gfx/tilesets/johto_burned.2bpp.lz"
 
 TilesetJohtoBurnedMeta::
 INCBIN "data/tilesets/johto_burned_metatiles.bin"
+
+TilesetKantoCaveMeta::
+TilesetKantoDarkCaveMeta::
+INCBIN "data/tilesets/kanto_cave_metatiles.bin"
