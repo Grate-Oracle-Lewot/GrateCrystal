@@ -144,7 +144,7 @@ SeafoamCaveUpperFloorsBoulderFallText:
 	done
 
 SeafoamCaveLowerFloorsBlockingBoulderText:
-	text "The boulder is"
+	text "The boulders are"
 	line "blocking the water"
 	cont "current."
 	done
