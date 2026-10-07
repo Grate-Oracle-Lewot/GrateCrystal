@@ -789,7 +789,7 @@ CheckMapCanWaterfall:
 	cp FACE_UP
 	jr nz, .failed
 	ld a, [wTileUp]
-	call CheckWaterfallTile
+	cp COLL_WATERFALL
 	jr nz, .failed
 	xor a
 	ret
@@ -818,7 +818,7 @@ Script_UsedWaterfall:
 	xor a
 	ld [wScriptVar], a
 	ld a, [wPlayerStandingTile]
-	call CheckWaterfallTile
+	cp COLL_WATERFALL
 	ret z
 	ld a, $1
 	ld [wScriptVar], a
