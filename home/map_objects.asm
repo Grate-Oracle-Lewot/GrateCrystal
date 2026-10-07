@@ -140,12 +140,6 @@ CheckWhirlpoolTile::
 	scf
 	ret
 
-CheckWaterfallTile::
-	cp COLL_WATERFALL
-	ret z
-	cp COLL_CURRENT_DOWN
-	ret
-
 CheckStandingOnEntrance::
 	ld a, [wPlayerStandingTile]
 	cp COLL_DOOR
