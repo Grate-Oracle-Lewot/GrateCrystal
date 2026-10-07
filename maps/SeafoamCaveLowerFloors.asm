@@ -18,9 +18,9 @@ SeafoamCaveLowerFloors_MapScripts:
 	callback MAPCALLBACK_STONETABLE, .SetUpStoneTable
 
 .WaterCurrents:
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
 	iffalse .Check2ndPair
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
 	iffalse .Check2ndPair
 	changeblock 20,  4, $0f ; water, no current
 	changeblock 22,  4, $0f ; water, no current
@@ -43,9 +43,9 @@ SeafoamCaveLowerFloors_MapScripts:
 	iffalse .End
 	changeblock 16, 30, $0f ; water, no current
 	changeblock 16, 32, $0f ; water, no current
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
 	iffalse .End
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
 	iffalse .End
 	changeblock 26, 28, $0f ; water, no current
 	changeblock 26, 30, $0f ; water, no current
@@ -70,10 +70,10 @@ SeafoamCaveLowerFloors_MapScripts:
 	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER2
 	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER3
 	disappear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_5
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
 	iftrue .AppearBlock1
 .Check2:
-	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_6
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
 	iftrue .AppearBlock2
 .Check3:
 	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1
