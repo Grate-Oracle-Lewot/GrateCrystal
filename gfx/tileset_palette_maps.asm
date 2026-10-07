@@ -43,6 +43,8 @@ INCLUDE "gfx/tilesets/gate_palette_map.asm"
 
 TilesetCavePalMap:
 TilesetDarkCavePalMap:
+TilesetKantoCavePalMap:
+TilesetKantoDarkCavePalMap:
 INCLUDE "gfx/tilesets/cave_palette_map.asm"
 
 TilesetIcePathPalMap:
