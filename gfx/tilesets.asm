@@ -421,6 +421,9 @@ INCBIN "gfx/tilesets/johto_burned.2bpp.lz"
 TilesetJohtoBurnedMeta::
 INCBIN "data/tilesets/johto_burned_metatiles.bin"
 
+
+SECTION "Tileset Data 11", ROMX
+
 TilesetKantoCaveMeta::
 TilesetKantoDarkCaveMeta::
 INCBIN "data/tilesets/kanto_cave_metatiles.bin"
