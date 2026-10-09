@@ -4730,12 +4730,12 @@ PokemaniacGroup:
 
 	; POKEMANIAC (16)
 	db "TANNER@", TRAINERTYPE_DVS
-	db 50, FLOGISTAN,  $00, $00
+	db 50, FLOGISTAN,  $3F, $00
 	db 50, SNOCONEY,   $00, $00
-	db 50, JIRK,       $00, $00
+	db 50, JIRK,       $3F, $00
 	db 50, CASTAWEIGH, $00, $00
-	db 50, YANMEGA,    $EF, $FE
-	db 50, WHIMSICOTT, $0F, $FE
+	db 50, YANMEGA,    $00, $00
+	db 50, WHIMSICOTT, $3F, $00
 	db -1 ; end
 
 GentlemanGroup:
@@ -6108,13 +6108,13 @@ GruntMGroup:
 	db -1 ; end
 
 	; GRUNTM_SPECIALIST
-	db "SPECIALIST@", TRAINERTYPE_NORMAL
-	db 13, RATTATA
-	db 20, RATTATA
-	db 27, RATTATA
-	db 34, RATTATA
-	db 41, RATTATA
-	db 48, RATTATA
+	db "SPECIALIST@", TRAINERTYPE_DVS
+	db 13, RATTATA, $87, $78
+	db 20, RATTATA, $87, $78
+	db 27, RATTATA, $87, $78
+	db 34, RATTATA, $87, $78
+	db 41, RATTATA, $87, $78
+	db 48, RATTATA, $00, $00
 	db -1 ; end
 
 	; GRUNTM_RADIO3_1
