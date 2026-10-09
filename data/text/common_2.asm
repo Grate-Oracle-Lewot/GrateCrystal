@@ -336,8 +336,8 @@ _AlreadySurfingText::
 	prompt
 
 _AskSurfText::
-	text "The water is calm."
-	line "Want to surf?"
+	text "Want to surf on"
+	line "the water?"
 	done
 
 _UseWaterfallText::
