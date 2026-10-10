@@ -189,6 +189,15 @@ INCLUDE "audio/music/indigoplateauRBY.asm"
 INCLUDE "audio/music/oldmtmoon.asm"
 
 
+SECTION "Extra Songs 7", ROMX
+
+INCLUDE "audio/music/meowthstage.asm"
+INCLUDE "audio/music/caveoforigin.asm"
+INCLUDE "audio/music/mirorbbattle.asm"
+INCLUDE "audio/music/tetris.asm"
+INCLUDE "audio/music/megalovania.asm"
+
+
 SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"
