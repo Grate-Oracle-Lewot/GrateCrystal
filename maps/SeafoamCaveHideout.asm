@@ -18,8 +18,12 @@ SeafoamCaveHideout_MapScripts:
 SeafoamCaveHideoutRadio:
 	playsound SFX_WRONG
 	waitsfx
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	iftrue .Zero
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	iftrue .Eight
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .Seven
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	iftrue .Six
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
@@ -51,13 +55,23 @@ SeafoamCaveHideoutRadio:
 	end
 
 .Five:
-	playmusic MUSIC_LEWOT1_RADIO_5
+	playmusic MUSIC_ROCKET_OVERTURE
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	end
 
 .Six:
-	playmusic MUSIC_LEWOT1_RADIO_6
+	playmusic MUSIC_PRINTER
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	end
+
+.Seven:
+	playmusic MUSIC_LEWOT1_RADIO_5
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	end
+
+.Eight:
+	playmusic MUSIC_LEWOT1_RADIO_6
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	end
 
 .Zero:
@@ -68,6 +82,8 @@ SeafoamCaveHideoutRadio:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	end
 
 SeafoamCaveHideoutStatue:
