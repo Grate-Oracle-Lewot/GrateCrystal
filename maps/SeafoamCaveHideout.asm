@@ -18,15 +18,56 @@ SeafoamCaveHideout_MapScripts:
 SeafoamCaveHideoutRadio:
 	playsound SFX_WRONG
 	waitsfx
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .Zero
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	iftrue .Six
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	iftrue .Five
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	iftrue .Four
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .Three
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .AlreadyOn
-	playmusic MUSIC_LEWOTS_RADIO
+	iftrue .Two
+; .One:
+	playmusic MUSIC_LEWOT1_RADIO_1
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 
-.AlreadyOn:
+.Two:
+	playmusic MUSIC_LEWOT1_RADIO_2
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	end
+
+.Three:
+	playmusic MUSIC_LEWOT1_RADIO_3
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	end
+
+.Four:
+	playmusic MUSIC_LEWOT1_RADIO_4
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	end
+
+.Five:
+	playmusic MUSIC_LEWOT1_RADIO_5
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	end
+
+.Six:
+	playmusic MUSIC_LEWOT1_RADIO_6
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	end
+
+.Zero:
 	special RestartMapMusic
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	end
 
 SeafoamCaveHideoutStatue:
