@@ -129,7 +129,6 @@ Music:
 	dba Music_MewtwoStage
 	dba Music_GastlyInTheGraveyard
 	dba Music_HaunterInTheGraveyard
-	dba Music_SeelStage
 	dba Music_BlueField
 	dba Music_EncounterPsychic
 	dba Music_EncounterArtist
@@ -142,4 +141,10 @@ Music:
 	dba Music_RBYIndigoPlateau
 	dba Music_OldMtMoon
 	dba Music_ContestRSE
+	dba Music_MeowthStage
+	dba Music_SeelStage
+	dba Music_CaveOfOrigin
+	dba Music_MirorBBattle
+	dba Music_Tetris
+	dba Music_Megalovania
 	assert_table_length NUM_MUSIC_SONGS
