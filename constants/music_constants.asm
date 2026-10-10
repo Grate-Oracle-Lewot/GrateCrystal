@@ -127,19 +127,24 @@
 	const MUSIC_NEUTRAL_BOSS                 ; 79
 	const MUSIC_CREEPY_WILD_BATTLE           ; 7a
 	const MUSIC_CREEPY_TRAINER_BATTLE        ; 7b
-	const MUSIC_LEWOTS_RADIO                 ; 7c
-	const MUSIC_DEPARTMENT_STORE             ; 7d
-	const MUSIC_GUITARIST_ENCOUNTER          ; 7e
-	const MUSIC_JUGGLER_ENCOUNTER            ; 7f
-	const MUSIC_EXECUTIVE_ENCOUNTER          ; 80
-	const MUSIC_POKEFAN_ENCOUNTER            ; 81
-	const MUSIC_ICE_PATH                     ; 82
-	const MUSIC_CINNABAR_ISLAND              ; 83
-	const MUSIC_NUGGET_BRIDGE                ; 84
-	const MUSIC_SAFFRON_CITY                 ; 85
-	const MUSIC_MT_SILVER                    ; 86
-	const MUSIC_OLD_MT_MOON                  ; 87
-	const MUSIC_BUG_CONTEST_BATTLE           ; 88
+	const MUSIC_DEPARTMENT_STORE             ; 7c
+	const MUSIC_GUITARIST_ENCOUNTER          ; 7d
+	const MUSIC_JUGGLER_ENCOUNTER            ; 7e
+	const MUSIC_EXECUTIVE_ENCOUNTER          ; 7f
+	const MUSIC_POKEFAN_ENCOUNTER            ; 80
+	const MUSIC_ICE_PATH                     ; 81
+	const MUSIC_CINNABAR_ISLAND              ; 82
+	const MUSIC_NUGGET_BRIDGE                ; 83
+	const MUSIC_SAFFRON_CITY                 ; 84
+	const MUSIC_MT_SILVER                    ; 85
+	const MUSIC_OLD_MT_MOON                  ; 86
+	const MUSIC_BUG_CONTEST_BATTLE           ; 87
+	const MUSIC_LEWOT_RADIO_1                ; 88
+	const MUSIC_LEWOT_RADIO_2                ; 89
+	const MUSIC_LEWOT_RADIO_3                ; 8a
+	const MUSIC_LEWOT_RADIO_4                ; 8b
+	const MUSIC_LEWOT_RADIO_5                ; 8c
+	const MUSIC_LEWOT_RADIO_6                ; 8d
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
