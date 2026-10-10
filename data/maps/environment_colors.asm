@@ -11,7 +11,7 @@ EnvironmentColorsPointers:
 	dw .DungeonColors ; DUNGEON
 	assert_table_length NUM_ENVIRONMENTS + 1
 
-; Valid indices: $00 - $29 (see gfx/tilesets/bg_tiles.pal)
+; Valid indices: $00 - $2a (see gfx/tilesets/bg_tiles.pal)
 .OutdoorColors:
 	db $00, $01, $02, $28, $04, $05, $06, $07 ; morn
 	db $08, $09, $0a, $28, $0c, $0d, $0e, $0f ; day
