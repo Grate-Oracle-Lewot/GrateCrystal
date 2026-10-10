@@ -31,6 +31,7 @@ ROM0
 	"Home"
 ROMX $01
 	"bank1"
+	"Tileset Data 11"
 ROMX $02
 	"bank2"
 ROMX $03
@@ -100,6 +101,7 @@ ROMX $1f
 	"Map Scripts 10"
 ROMX $20
 	"bank20"
+	"Tileset Data 10"
 ROMX $21
 	"bank21"
 	"Type Matchups"
@@ -184,6 +186,7 @@ ROMX $42
 	"Credits"
 ROMX $43
 	"Title"
+	"Tileset Data 9"
 ROMX $44
 	"Mobile Adapter SDK"
 ROMX $45
