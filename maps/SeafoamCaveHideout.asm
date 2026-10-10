@@ -35,22 +35,22 @@ SeafoamCaveHideoutRadio:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .Two
 ; .One:
-	playmusic MUSIC_LEWOT1_RADIO_1
+	playmusic MUSIC_LEWOT_RADIO_1
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 
 .Two:
-	playmusic MUSIC_LEWOT1_RADIO_2
+	playmusic MUSIC_LEWOT_RADIO_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	end
 
 .Three:
-	playmusic MUSIC_LEWOT1_RADIO_3
+	playmusic MUSIC_LEWOT_RADIO_3
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	end
 
 .Four:
-	playmusic MUSIC_LEWOT1_RADIO_4
+	playmusic MUSIC_LEWOT_RADIO_4
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	end
 
@@ -65,12 +65,12 @@ SeafoamCaveHideoutRadio:
 	end
 
 .Seven:
-	playmusic MUSIC_LEWOT1_RADIO_5
+	playmusic MUSIC_LEWOT_RADIO_5
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	end
 
 .Eight:
-	playmusic MUSIC_LEWOT1_RADIO_6
+	playmusic MUSIC_LEWOT_RADIO_6
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	end
 
