@@ -528,8 +528,8 @@ ClearBellDesc:
 	next "#MON in battle.@"
 
 SilverWingDesc:
-	db   "A strange, silver-"
-	next "colored feather.@"
+	db   "An iridescent"
+	next "silver feather.@"
 
 MoomooMilkDesc:
 	db   "Restores #MON"
@@ -876,8 +876,8 @@ HeavyBallDesc:
 	next "ing heavy #MON.@"
 
 FlowerMailDesc:
-	db   "Flower-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with an"
+	next "ODDISH design.@"
 
 LevelBallDesc:
 	db   "A BALL for lower-"
@@ -956,48 +956,48 @@ ParkBallDesc:
 	next "Contest BALL.@"
 
 RainbowWingDesc:
-	db   "A mystical feather"
-	next "of rainbow colors.@"
+	db   "A feather of inde-"
+	next "terminate color.@"
 
 BrickPieceDesc:
 	db   "Brick. Brick."
 	next "Brick. It's fun!@"
 
 SurfMailDesc:
-	db   "LAPRAS-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with a LAPRAS"
+	next "design.@"
 
 LiteBlueMailDesc:
-	db   "DRATINI-print"
-	next "MAIL. (HOLD)@"
+	db   "MAIL that has a"
+	next "DRATINI design.@"
 
 PortraitMailDesc:
 	db   "MAIL featuring the"
 	next "holder's likeness.@"
 
 LovelyMailDesc:
-	db   "Heart-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL that has a"
+	next "POLIWAG design.@"
 
 EonMailDesc:
-	db   "EEVEE-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL that has an"
+	next "EEVEE design.@"
 
 MorphMailDesc:
-	db   "DITTO-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with a DITTO"
+	next "design.@"
 
 BlueSkyMailDesc:
-	db   "Sky-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with SENTRET"
+	next "and DRAGONITE.@"
 
 MusicMailDesc:
-	db   "NATU-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with a NATU"
+	next "design.@"
 
 MirageMailDesc:
-	db   "MEW-print MAIL."
-	next "(HOLD)@"
+	db   "MAIL with a MEW"
+	next "design.@"
 
 CandiedYamDesc:
 	db   "YAMMY's signature"
