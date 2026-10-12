@@ -513,7 +513,7 @@ ClefairyEvosAttacks:
 	db 1, CHARM
 	db 4, ENCORE
 	db 8, SING
-	db 12, FAIRY_WIND
+	db 12, DISABLE
 	db 16, DOUBLESLAP
 	db 19, MINIMIZE
 	db 22, LIGHT_SCREEN
@@ -2608,7 +2608,7 @@ LanturnEvosAttacks:
 ;	db 1, CHARM
 ;	db 4, ENCORE
 ;	db 8, SING
-;	db 11, FAIRY_WIND
+;	db 11, DISABLE
 ;	db 14, DOUBLESLAP
 ;	db 17, MINIMIZE
 ;	db 21, LIGHT_SCREEN
