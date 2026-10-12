@@ -16,7 +16,7 @@ if DEF(_LITTLE_CUP)
 	db  5, WEEDLE,     10, 20
 	db  5, SCYTHER,    10, 20
 	db  5, KRABBY,     10, 20
-	db  1, LEDBYA,     18, 20
+	db  1, LEDYBA,     18, 20
 	db -1, PINECO,     10, 10 ; end
 else
 	db  9, CATERPIE,    1, 20
