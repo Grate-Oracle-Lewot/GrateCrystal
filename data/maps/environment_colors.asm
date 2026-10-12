@@ -25,7 +25,7 @@ EnvironmentColorsPointers:
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $07 ; dark
 
 .DungeonColors:
-	db $00, $03, $02, $0b, $04, $2a, $06, $07 ; morn
+	db $03, $01, $02, $0b, $04, $2a, $06, $07 ; morn
 	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ; day
 	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
