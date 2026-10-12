@@ -617,7 +617,7 @@ Seasick/Mauve Sea - female player running frames, Mary sprites
 
 FrenchOrange - Karen and ship captain walking frames
 
-TriteHexagon - demixes for Dive and Contests from RSE, Cynthia battle, some encounter themes, and Ice Path remix
+TriteHexagon - many demixed songs
 
 Mmmmmmmmmmmmmmmmm - demixes for HGSS Routes 24 and 47
 
