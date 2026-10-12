@@ -125,9 +125,9 @@ SeafoamCaveLowerFloors_MapScripts:
 	waitbutton
 	closetext
 	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1
-	iffalse .End
+	iffalse .End2
 	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_2
-	iffalse .End
+	iffalse .End2
 	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
 	iffalse .Lower
 	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
@@ -151,7 +151,7 @@ SeafoamCaveLowerFloors_MapScripts:
 	changeblock 16, 30, $0f ; water, no current
 	changeblock 16, 32, $0f ; water, no current
 	reloadmappart
-.End:
+.End2:
 	end
 
 SeafoamCaveLowerFloorsBoulder:
