@@ -39,15 +39,16 @@ HallOfFame_MapScripts:
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
 .SkipPhoneCall:
+if DEF(_LITTLE_CUP)
+	halloffame
+	end
+else
 	setval ARTICUNO
 	special MonCheck
 	iftrue .SkipArticuno
 	clearevent EVENT_FOUGHT_ARTICUNO
 	clearevent EVENT_ICE_PATH_ARTICUNO_CHAMBER_ARTICUNO
 .SkipArticuno:
-if DEF(_LITTLE_CUP)
-	end
-else
 	setval ZAPDOS
 	special MonCheck
 	iftrue .SkipZapdos
@@ -66,6 +67,26 @@ else
 	clearevent EVENT_FOUGHT_MEW
 	clearevent EVENT_MEW_CHAMBER_MEW
 .SkipMew:
+	setval HO_OH
+	special MonCheck
+	iftrue .SkipHoOh
+	clearevent EVENT_FOUGHT_HO_OH
+	clearevent EVENT_TIN_TOWER_ROOF_HO_OH
+.SkipHoOh:
+	setval LUGIA
+	special MonCheck
+	iftrue .SkipLugia
+	clearevent EVENT_FOUGHT_LUGIA
+	clearevent EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
+.SkipLugia:
+	setval MEWTWO
+	special MonCheck
+	iftrue .SkipMewtwo
+	clearevent EVENT_FOUGHT_MEWTWO
+	clearevent EVENT_LAV_RADIO_TOWER_2F_MEWTWO
+	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
+	setflag ENGINE_MEWTWO_RADIO
+.SkipMewtwo:
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iffalse .FinishRespawns
 	setval RAIKOU
