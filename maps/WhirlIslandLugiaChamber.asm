@@ -29,7 +29,6 @@ Lugia:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_LUGIA
-	takeitem SILVER_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 if DEF(_LITTLE_CUP)
 	loadwildmon DRATINI, 64
