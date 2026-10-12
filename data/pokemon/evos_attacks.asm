@@ -563,9 +563,9 @@ JigglypuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 1, CHARM
-	db 4, POUND
-	db 9, DEFENSE_CURL
-	db 12, FAIRY_WIND
+	db 4, SUPERSONIC
+	db 9, POUND
+	db 12, DEFENSE_CURL
 	db 16, DISABLE
 	db 19, ROLLOUT
 	db 24, PLAY_ROUGH
@@ -578,8 +578,8 @@ JigglypuffEvosAttacks:
 WigglytuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
+	db 1, SUPERSONIC
 	db 1, DISABLE
-	db 1, DEFENSE_CURL
 	db 1, PLAY_ROUGH
 	db 42, PERISH_SONG
 	db 0 ; no more level-up moves
@@ -1754,8 +1754,8 @@ GoldeenEvosAttacks:
 	db 1, BUBBLE
 	db 2, TAIL_WHIP
 	db 4, PECK
-	db 10, SUPERSONIC
-	db 15, HORN_ATTACK
+	db 10, HORN_ATTACK
+	db 15, U_TURN
 	db 24, FLAIL
 	db 29, FURY_ATTACK
 	db 38, AGILITY
@@ -1769,8 +1769,8 @@ SeakingEvosAttacks:
 	db 1, BUBBLE
 	db 2, TAIL_WHIP
 	db 4, PECK
-	db 10, SUPERSONIC
-	db 15, HORN_ATTACK
+	db 10, HORN_ATTACK
+	db 15, U_TURN
 	db 24, FLAIL
 	db 29, FURY_ATTACK
 	db 41, AGILITY
@@ -2623,9 +2623,9 @@ LanturnEvosAttacks:
 ;	db 0 ; no more evolutions
 ;	db 1, SING
 ;	db 1, CHARM
-;	db 4, DEFENSE_CURL
+;	db 4, SUPERSONIC
 ;	db 9, POUND
-;	db 12, FAIRY_WIND
+;	db 12, DEFENSE_CURL
 ;	db 16, DISABLE
 ;	db 19, ROLLOUT
 ;	db 23, PLAY_ROUGH
@@ -2937,8 +2937,8 @@ YanmaEvosAttacks:
 	db 2, FORESIGHT
 	db 6, GUST
 	db 11, HYPNOSIS
-	db 14, SUPERSONIC
-	db 17, LEECH_LIFE
+	db 14, AGILITY
+	db 17, U_TURN
 	db 22, SONICBOOM
 	db 28, AIR_SLASH
 	db 33, SILVER_WIND
@@ -3919,8 +3919,8 @@ YanmegaEvosAttacks:
 	db 2, FORESIGHT
 	db 6, TWISTER
 	db 11, HYPNOSIS
-	db 14, SUPERSONIC
-	db 17, LEECH_LIFE
+	db 14, AGILITY
+	db 17, U_TURN
 	db 22, DRAGON_RAGE
 	db 28, AIR_SLASH
 	db 33, ANCIENTPOWER
