@@ -330,8 +330,8 @@ NationalParkYoungster1TextAfter:
 	done
 
 NationalParkYoungster2Text:
-	text "I like the white"
-	line "belly on RETRO"
+	text "I like the belly"
+	line "pattern on RETRO"
 	cont "PIKACHU."
 
 	para "None of the other"
