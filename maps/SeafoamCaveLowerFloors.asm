@@ -124,6 +124,34 @@ SeafoamCaveLowerFloors_MapScripts:
 	writetext SeafoamCaveUpperFloorsBoulderFallText
 	waitbutton
 	closetext
+	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1
+	iffalse .End
+	checkevent EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_2
+	iffalse .End
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_1C
+	iffalse .Lower
+	checkevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
+	iffalse .Lower
+	changeblock 26, 28, $0f ; water, no current
+	changeblock 26, 30, $0f ; water, no current
+	changeblock 26, 32, $0f ; water, no current
+	changeblock 24, 32, $0f ; water, no current
+	changeblock 22, 32, $0f ; water, no current
+	changeblock 20, 32, $0f ; water, no current
+	changeblock 18, 32, $0f ; water, no current
+	changeblock 18, 34, $0f ; water, no current
+	changeblock 18, 36, $0f ; water, no current
+	changeblock 18, 38, $0f ; water, no current
+	changeblock 18, 40, $0f ; water, no current
+	changeblock 18, 42, $0f ; water, no current
+	changeblock 18, 44, $0f ; water, no current
+	changeblock 20, 40, $0f ; water, no current
+	changeblock 22, 40, $0f ; water, no current
+.Lower:
+	changeblock 16, 30, $0f ; water, no current
+	changeblock 16, 32, $0f ; water, no current
+	reloadmappart
+.End:
 	end
 
 SeafoamCaveLowerFloorsBoulder:
