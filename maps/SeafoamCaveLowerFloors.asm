@@ -118,7 +118,7 @@ SeafoamCaveLowerFloors_MapScripts:
 	appear SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
 .Fall:
 	pause 30
-	playsound SFX_HYDRO_PUMP
+	playsound SFX_KARATE_CHOP
 	earthquake 80
 	opentext
 	writetext SeafoamCaveUpperFloorsBoulderFallText
