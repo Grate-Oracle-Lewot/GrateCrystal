@@ -33,7 +33,6 @@ TinTowerHoOh:
 	pause 15
 	closetext
 	setevent EVENT_FOUGHT_HO_OH
-	takeitem RAINBOW_WING
 	loadvar VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 if DEF(_LITTLE_CUP)
 	loadwildmon DRATINI, 64
