@@ -7,7 +7,8 @@
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER2
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER3
 	const SEAFOAMCAVELOWERFLOORS_BLOCKINGBOULDER4
-	const SEAFOAMCAVELOWERFLOORS_POKE_BALL
+	const SEAFOAMCAVELOWERFLOORS_POKE_BALL1
+	const SEAFOAMCAVELOWERFLOORS_POKE_BALL2
 
 SeafoamCaveLowerFloors_MapScripts:
 	def_scene_scripts
@@ -160,6 +161,20 @@ SeafoamCaveLowerFloorsBoulder:
 SeafoamCaveLowerFloorsBlockingBoulder:
 	jumptext SeafoamCaveLowerFloorsBlockingBoulderText
 
+SeafoamCaveLowerFloorsElectrode:
+	waitsfx
+	cry ELECTRODE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
+if DEF(_LITTLE_CUP)
+	loadwildmon VOLTORB, 42
+else
+	loadwildmon ELECTRODE, 42
+endc
+	startbattle
+	disappear SEAFOAMCAVELOWERFLOORS_POKE_BALL2
+	reloadmapafterbattle
+	end
+
 SeafoamCaveLowerFloorsNugget:
 	itemball NUGGET
 
@@ -200,7 +215,7 @@ SeafoamCaveLowerFloors_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 15, 57, BGEVENT_ITEM, SeafoamCaveLowerFloorsHiddenMaxRevive
+	bg_event 39, 45, BGEVENT_ITEM, SeafoamCaveLowerFloorsHiddenMaxRevive
 
 	def_object_events
 	object_event  9, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BOULDER_1
@@ -212,3 +227,4 @@ SeafoamCaveLowerFloors_MapEvents:
 	object_event 16, 30, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_3
 	object_event 17, 30, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsBlockingBoulder, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_BLOCKING_BOULDER_4
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamCaveLowerFloorsNugget, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_NUGGET
+	object_event 39, 44, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeafoamCaveLowerFloorsElectrode, EVENT_SEAFOAM_CAVE_LOWER_FLOORS_ELECTRODE
