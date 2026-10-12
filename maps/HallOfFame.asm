@@ -87,6 +87,27 @@ else
 	setevent EVENT_LAV_RADIO_TOWER_TAKEOVER
 	setflag ENGINE_MEWTWO_RADIO
 .SkipMewtwo:
+	setval CELEBI
+	special MonCheck
+	iftrue .SkipCelebi
+	clearevent EVENT_FOUGHT_CELEBI
+	setevent EVENT_FOREST_IS_RESTLESS
+	setflag ENGINE_FOREST_IS_RESTLESS
+	clearevent EVENT_ILEX_FOREST_LASS
+	setevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
+.SkipCelebi:
+if DEF(_ADD_MISSINGNO) || DEF(_MISSINGNO_STARTERS) || DEF(_ADD_TURBIN) || DEF(_TURBIN_STARTERS)
+	; don't bother respawning Finull encounter replacements
+	; Missingno can be found elsewhere and Turbin builds just give another Celebi
+else
+	setval FINULL
+	special MonCheck
+	iftrue .SkipFinull
+	checkevent EVENT_FOUGHT_CELEBI
+	iffalse .SkipFinull
+	clearevent EVENT_FOUGHT_FINULL
+.SkipFinull:
+endc
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iffalse .FinishRespawns
 	setval RAIKOU
