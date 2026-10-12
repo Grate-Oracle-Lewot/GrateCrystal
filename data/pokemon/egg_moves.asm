@@ -631,10 +631,9 @@ IgglybuffEggMoves:
 	db SPARK
 	db DAZZLY_GLEAM
 	db METRONOME
+	db DISABLE
 	db BIDE
 	db SONICBOOM
-	db SCREECH
-	db SUPERSONIC
 	db -1 ; end
 
 TogepiEggMoves:
