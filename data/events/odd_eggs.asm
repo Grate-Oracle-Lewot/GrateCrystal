@@ -175,7 +175,7 @@ OddEggs:
 
 	db JIGGLYPUFF
 	db NO_ITEM
-	db SING, CHARM, SCREECH, DIZZY_PUNCH
+	db SING, CHARM, SONICBOOM, DIZZY_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
