@@ -461,17 +461,16 @@ IlexForestSignpost:
 IlexForestShrineScript:
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
-	sjump .DontDoCelebiEvent
-
-.ForestIsRestless:
-	checkitem GS_BALL
-	iftrue .AskCelebiEvent
-.DontDoCelebiEvent:
 	checkevent EVENT_FOUGHT_FINULL
 	iftrue .DontDoFinullEvent
 	checkevent EVENT_FOUGHT_CELEBI
 	iftrue .CheckEliteFour
 	sjump .DontDoFinullEvent
+
+.ForestIsRestless:
+	checkitem GS_BALL
+	iftrue .AskCelebiEvent
+	sjump .AbbreviatedCelebi
 
 .CheckEliteFour:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -489,13 +488,14 @@ IlexForestShrineScript:
 
 .CelebiEvent:
 	takeitem GS_BALL
-	clearevent EVENT_FOREST_IS_RESTLESS
-	setevent EVENT_AZALEA_TOWN_KURT
-	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	writetext Text_InsertGSBall
 	waitbutton
 	closetext
 	pause 20
+.AbbreviatedCelebi:
+	clearevent EVENT_FOREST_IS_RESTLESS
+	setevent EVENT_AZALEA_TOWN_KURT
+	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	showemote EMOTE_SHOCK, PLAYER, 20
 	special FadeOutMusic
 	applymovement PLAYER, IlexForestPlayerStepsDownMovement
