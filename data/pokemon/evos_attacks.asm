@@ -566,7 +566,7 @@ JigglypuffEvosAttacks:
 	db 4, SUPERSONIC
 	db 9, POUND
 	db 12, DEFENSE_CURL
-	db 16, DISABLE
+	db 16, SCREECH
 	db 19, ROLLOUT
 	db 24, PLAY_ROUGH
 	db 29, REST
@@ -579,7 +579,7 @@ WigglytuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 1, SUPERSONIC
-	db 1, DISABLE
+	db 1, SCREECH
 	db 1, PLAY_ROUGH
 	db 42, PERISH_SONG
 	db 0 ; no more level-up moves
@@ -2626,7 +2626,7 @@ LanturnEvosAttacks:
 ;	db 4, SUPERSONIC
 ;	db 9, POUND
 ;	db 12, DEFENSE_CURL
-;	db 16, DISABLE
+;	db 16, SCREECH
 ;	db 19, ROLLOUT
 ;	db 23, PLAY_ROUGH
 ;	db 27, REST
