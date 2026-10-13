@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db WATER, FIRE ; type
 endc
-	db 45 ; catch rate
+	db 55 ; catch rate
 	db 129 ; base exp
 	db TM_SCALD, SODA_POP ; items
 	db GENDER_F50 ; gender ratio
