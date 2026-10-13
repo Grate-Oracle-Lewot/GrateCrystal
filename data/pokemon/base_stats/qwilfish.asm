@@ -9,7 +9,7 @@ else
 	db WATER, FIRE ; type
 endc
 	db 45 ; catch rate
-	db 121 ; base exp
+	db 129 ; base exp
 	db TM_SCALD, SODA_POP ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
