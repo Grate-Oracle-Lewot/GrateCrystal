@@ -272,7 +272,8 @@ RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 2, TAIL_WHIP
+	db 2, LEER
+	db 3, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 13, PURSUIT
@@ -285,7 +286,8 @@ RattataEvosAttacks:
 RaticateEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 2, TAIL_WHIP
+	db 2, LEER
+	db 3, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 13, PURSUIT
