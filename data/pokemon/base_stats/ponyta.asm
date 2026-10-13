@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db FIRE, FAIRY ; type
 endc
-	db 190 ; catch rate
+	db 145 ; catch rate
 	db 152 ; base exp
 	db YLW_APRICORN, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
