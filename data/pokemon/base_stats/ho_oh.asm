@@ -9,7 +9,7 @@ else
 	db FIRE, DRAGON ; type
 endc
 	db 10 ; catch rate
-	db 220 ; base exp
+	db 233 ; base exp
 	db SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
