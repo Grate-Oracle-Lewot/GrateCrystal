@@ -5,7 +5,7 @@
 
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
-	db 159 ; base exp
+	db 162 ; base exp
 	db TRIDENT, EXP_SHARE ; items
 	db GENDER_F50 ; gender ratio
 	db 11 ; step cycles to hatch
