@@ -9,7 +9,7 @@ else
 	db FIRE, ICE ; type
 endc
 	db 190 ; catch rate
-	db 63 ; base exp
+	db 91 ; base exp
 	db SPICY_BERRY, MINTY_BERRY ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
