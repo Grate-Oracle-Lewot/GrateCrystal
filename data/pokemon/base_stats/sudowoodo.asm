@@ -5,7 +5,7 @@
 
 	db ROCK, ROCK ; type
 	db 65 ; catch rate
-	db 135 ; base exp
+	db 142 ; base exp
 	db BERRY, LEAF_STONE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
