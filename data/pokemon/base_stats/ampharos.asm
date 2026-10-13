@@ -9,7 +9,7 @@ else
 	db ELECTRIC, DRAGON ; type
 endc
 	db 45 ; catch rate
-	db 194 ; base exp
+	db 199 ; base exp
 	db CHEWY_BERRY, DRAGON_FANG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
