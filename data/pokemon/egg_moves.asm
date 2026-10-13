@@ -553,9 +553,9 @@ TotodileEggMoves:
 
 SentretEggMoves:
 	db FOCUS_ENERGY
+	db FLAIL
 	db REVERSAL
 	db LOVELY_KISS
-	db SUPER_FANG
 	db DOUBLE_EDGE
 	db PURSUIT
 	db SLASH
