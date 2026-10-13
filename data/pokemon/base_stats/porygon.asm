@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
-	db 45 ; catch rate
+	db 255 ; catch rate
 	db 130 ; base exp
 	db SWAG_BEACON, UP_GRADE ; items
 	db GENDER_UNKNOWN ; gender ratio
