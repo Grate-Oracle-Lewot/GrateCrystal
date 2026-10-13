@@ -9,7 +9,7 @@ else
 	db WATER, STEEL ; type
 endc
 	db 190 ; catch rate
-	db 97 ; base exp
+	db 107 ; base exp
 	db PEARL, BLACK_PEARL ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
