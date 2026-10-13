@@ -9,7 +9,7 @@ else
 	db NORMAL, GROUND ; type
 endc
 	db 60 ; catch rate
-	db 189 ; base exp
+	db 198 ; base exp
 	db TM_ROLLOUT, LEFTOVERS ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
