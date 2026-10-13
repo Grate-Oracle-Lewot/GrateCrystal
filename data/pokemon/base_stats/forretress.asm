@@ -5,7 +5,7 @@
 
 	db BUG, STEEL ; type
 	db 75 ; catch rate
-	db 118 ; base exp
+	db 128 ; base exp
 	db IRON, BRICK_PIECE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
