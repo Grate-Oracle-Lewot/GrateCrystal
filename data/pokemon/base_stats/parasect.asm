@@ -5,7 +5,7 @@
 
 	db BUG, GRASS ; type
 	db 75 ; catch rate
-	db 128 ; base exp
+	db 138 ; base exp
 	db BIG_MUSHROOM, TINYMUSHROOM ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
