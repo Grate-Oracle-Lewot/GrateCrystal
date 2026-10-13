@@ -5,7 +5,7 @@
 
 	db POISON, GROUND ; type
 	db 45 ; catch rate
-	db 195 ; base exp
+	db 194 ; base exp
 	db MOON_STONE, KINGS_ROCK ; items
 	db GENDER_F0 ; gender ratio
 	db 10 ; step cycles to hatch
