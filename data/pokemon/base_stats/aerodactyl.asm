@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, FLYING ; type
-	db 45 ; catch rate
+	db 40 ; catch rate
 	db 202 ; base exp
 	db HARD_STONE, VIVICHOKE ; items
 	db GENDER_F12_5 ; gender ratio
