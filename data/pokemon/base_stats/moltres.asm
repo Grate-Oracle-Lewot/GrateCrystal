@@ -5,7 +5,7 @@
 
 	db FIRE, FLYING ; type
 	db 10 ; catch rate
-	db 217 ; base exp
+	db 221 ; base exp
 	db SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 42 ; step cycles to hatch
