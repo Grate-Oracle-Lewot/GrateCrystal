@@ -1,11 +1,11 @@
 	db ONIX ; 095
 
-	db  55,  65, 160,  50,  42,  55
+	db  55,  65, 160,  70,  35,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
-	db 108 ; base exp
+	db 127 ; base exp
 	db HARD_STONE, METAL_COAT ; items
 	db GENDER_F50 ; gender ratio
 	db 13 ; step cycles to hatch
