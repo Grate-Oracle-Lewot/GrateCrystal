@@ -2407,14 +2407,14 @@ SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, GROWL
-	db 3, TAIL_WHIP
-	db 5, FORESIGHT
+	db 2, TAIL_WHIP
+	db 3, FORESIGHT
+	db 5, CHARM
 	db 11, QUICK_ATTACK
 	db 17, BIND
 	db 25, FURY_SWIPES
 	db 28, PLAY_ROUGH
-	db 33, CHARM
+	db 33, AGILITY
 	db 37, SLAM
 	db 41, AMNESIA
 	db 42, BATON_PASS
@@ -2424,14 +2424,14 @@ SentretEvosAttacks:
 FurretEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 2, GROWL
-	db 3, TAIL_WHIP
-	db 5, FORESIGHT
+	db 2, TAIL_WHIP
+	db 3, FORESIGHT
+	db 5, CHARM
 	db 11, QUICK_ATTACK
 	db 18, BIND
 	db 28, FURY_SWIPES
 	db 33, PLAY_ROUGH
-	db 38, CHARM
+	db 38, AGILITY
 	db 42, SLAM
 	db 48, AMNESIA
 	db 50, BATON_PASS
