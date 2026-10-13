@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db STEEL, FLYING ; type
-	db 45 ; catch rate
+	db 25 ; catch rate
 	db 168 ; base exp
 	db TM_STEEL_WING, SHARP_BEAK ; items
 	db GENDER_F50 ; gender ratio
