@@ -5,7 +5,7 @@
 
 	db POISON, POISON ; type
 	db 120 ; catch rate
-	db 117 ; base exp
+	db 118 ; base exp
 	db POISON_BARB, MOON_STONE ; items
 	db GENDER_F100 ; gender ratio
 	db 10 ; step cycles to hatch
