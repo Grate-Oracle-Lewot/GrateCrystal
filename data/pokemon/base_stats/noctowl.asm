@@ -9,7 +9,7 @@ else
 	db GHOST, FLYING ; type
 endc
 	db 90 ; catch rate
-	db 162 ; base exp
+	db 164 ; base exp
 	db NOISEMAKER, TM_DREAM_EATER ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
