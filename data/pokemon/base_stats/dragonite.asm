@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, FLYING ; type
-	db 45 ; catch rate
+	db 42 ; catch rate
 	db 218 ; base exp
 	db DRAGON_FANG, DRAGON_SCALE ; items
 	db GENDER_F50 ; gender ratio
