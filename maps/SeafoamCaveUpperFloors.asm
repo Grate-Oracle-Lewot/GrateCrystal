@@ -105,7 +105,7 @@ SeafoamCaveUpperFloors_MapScripts:
 	setevent EVENT_SEAFOAM_CAVE_UPPER_FLOORS_BOULDER_2C
 .Splash:
 	pause 30
-	playsound SFX_KARATE_CHOP
+	playsound SFX_BOULDER_SPLASH
 	earthquake 80
 	opentext
 	writetext SeafoamCaveUpperFloorsBoulderSplashText
