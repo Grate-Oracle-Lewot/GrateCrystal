@@ -5,7 +5,7 @@
 
 	db BUG, BUG ; type
 	db 190 ; catch rate
-	db 60 ; base exp
+	db 64 ; base exp
 	db BUGWORT, LIMBO_STICK ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
