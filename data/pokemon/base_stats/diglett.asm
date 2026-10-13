@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type
-	db 255 ; catch rate
+	db 190 ; catch rate
 	db 81 ; base exp
 	db SOFT_SAND, TM_DIG ; items
 	db GENDER_F50 ; gender ratio
