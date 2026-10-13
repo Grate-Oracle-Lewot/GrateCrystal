@@ -4,8 +4,8 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, ROCK ; type
-	db 190 ; catch rate
-	db 80 ; base exp
+	db 180 ; catch rate
+	db 90 ; base exp
 	db BERRY_JUICE, BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
