@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db FLYING, FLYING ; type
 endc
-	db 255 ; catch rate
+	db 250 ; catch rate
 	db 58 ; base exp
 	db BERRY, SHARP_BEAK ; items
 	db GENDER_F50 ; gender ratio
