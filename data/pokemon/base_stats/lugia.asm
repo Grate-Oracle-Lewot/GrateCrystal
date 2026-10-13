@@ -9,7 +9,7 @@ else
 	db ICE, DRAGON ; type
 endc
 	db 10 ; catch rate
-	db 220 ; base exp
+	db 233 ; base exp
 	db BLACK_PEARL, BLACK_PEARL ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 64 ; step cycles to hatch
