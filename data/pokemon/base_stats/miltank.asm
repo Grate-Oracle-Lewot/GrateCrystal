@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
-	db 200 ; base exp
+	db 211 ; base exp
 	db MOOMOO_MILK, MOOMOO_MILK ; items
 	db GENDER_F100 ; gender ratio
 	db 10 ; step cycles to hatch
