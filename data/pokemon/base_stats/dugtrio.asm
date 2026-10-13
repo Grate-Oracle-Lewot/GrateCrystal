@@ -4,8 +4,8 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type
-	db 50 ; catch rate
-	db 153 ; base exp
+	db 54 ; catch rate
+	db 162 ; base exp
 	db TRIDENT, TM_EARTHQUAKE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
