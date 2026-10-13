@@ -5,7 +5,7 @@
 
 	db DARK, FIRE ; type
 	db 45 ; catch rate
-	db 204 ; base exp
+	db 213 ; base exp
 	db BONE, BLACKGLASSES ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
