@@ -9,7 +9,7 @@ else
 	db GRASS, FIRE ; type
 endc
 	db 100 ; catch rate
-	db 156 ; base exp
+	db 186 ; base exp
 	db SUN_STONE, TM_SOLARBEAM ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
