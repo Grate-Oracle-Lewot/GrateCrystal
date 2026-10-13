@@ -5,7 +5,7 @@
 
 	db NORMAL, FAIRY ; type
 	db 50 ; catch rate
-	db 109 ; base exp
+	db 120 ; base exp
 	db PINK_BOW, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
 	db 5 ; step cycles to hatch
