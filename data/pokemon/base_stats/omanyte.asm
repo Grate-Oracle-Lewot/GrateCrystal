@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type
-	db 45 ; catch rate
+	db 50 ; catch rate
 	db 120 ; base exp
 	db HARD_STONE, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
