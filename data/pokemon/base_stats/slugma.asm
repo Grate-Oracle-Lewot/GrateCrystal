@@ -5,7 +5,7 @@
 
 	db FIRE, FIRE ; type
 	db 190 ; catch rate
-	db 78 ; base exp
+	db 87 ; base exp
 	db YLW_APRICORN, CARBOS ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
