@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
-	db 45 ; catch rate
+	db 42 ; catch rate
 	db 108 ; base exp
 	db SILVER_BERRY, PP_UP ; items
 	db GENDER_F50 ; gender ratio
