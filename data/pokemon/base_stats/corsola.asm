@@ -5,7 +5,7 @@
 
 	db WATER, ROCK ; type
 	db 60 ; catch rate
-	db 113 ; base exp
+	db 131 ; base exp
 	db BRICK_PIECE, CALCIUM ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
