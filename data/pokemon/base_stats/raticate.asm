@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db NORMAL, DARK ; type
 endc
-	db 90 ; catch rate
+	db 127 ; catch rate
 	db 116 ; base exp
 	db BERRY, GOLD_BERRY ; items
 	db GENDER_F50 ; gender ratio
