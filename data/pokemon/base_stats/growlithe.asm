@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
-	db 190 ; catch rate
+	db 210 ; catch rate
 	db 91 ; base exp
 	db POKE_BALL, BONE ; items
 	db GENDER_F25 ; gender ratio
