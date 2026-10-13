@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, FLYING ; type
-	db 255 ; catch rate
+	db 250 ; catch rate
 	db 54 ; base exp
 	db BITTER_BERRY, SWEET_BERRY ; items
 	db GENDER_F50 ; gender ratio
