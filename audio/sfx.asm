@@ -5004,3 +5004,27 @@ Sfx_PetalDance_Ch6:
 	octave 5
 	note G_, 8
 	sound_ret
+
+Sfx_BoulderSplash:
+	channel_count 2
+	channel 5, Sfx_BoulderSplash_Ch5
+	channel 8, Sfx_BoulderSplash_Ch8
+
+Sfx_BoulderSplash_Ch5:
+	duty_cycle_pattern 3, 1, 0, 2
+	square_note 3, 8, 1, 768
+	square_note 3, 12, 1, 1024
+	square_note 3, 15, 1, 1280
+	square_note 3, 11, 1, 1024
+	square_note 3, 7, 1, 768
+	square_note 8, 8, 1, 1024
+	sound_ret
+
+Sfx_BoulderSplash_Ch8:
+	noise_note 3, 6, 2, 34
+	noise_note 3, 10, 2, 50
+	noise_note 3, 13, 2, 51
+	noise_note 3, 9, 2, 35
+	noise_note 3, 5, 2, 18
+	noise_note 8, 8, 1, 18
+	sound_ret
