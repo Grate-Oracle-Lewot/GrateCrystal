@@ -5,7 +5,7 @@
 
 	db FIRE, FIRE ; type
 	db 75 ; catch rate
-	db 213 ; base exp
+	db 195 ; base exp
 	db BONE, FIRE_STONE ; items
 	db GENDER_F25 ; gender ratio
 	db 10 ; step cycles to hatch
