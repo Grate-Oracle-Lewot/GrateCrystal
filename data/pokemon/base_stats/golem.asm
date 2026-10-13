@@ -5,7 +5,7 @@
 
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
-	db 177 ; base exp
+	db 180 ; base exp
 	db BLU_APRICORN, BRICK_PIECE ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
