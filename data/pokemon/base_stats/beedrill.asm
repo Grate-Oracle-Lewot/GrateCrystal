@@ -5,7 +5,7 @@
 
 	db BUG, POISON ; type
 	db 45 ; catch rate
-	db 159 ; base exp
+	db 160 ; base exp
 	db SWEET_BERRY, POISON_BARB ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
