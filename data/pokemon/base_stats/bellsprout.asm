@@ -5,7 +5,7 @@
 
 	db GRASS, POISON ; type
 	db 250 ; catch rate
-	db 84 ; base exp
+	db 81 ; base exp
 	db SOOTFOOTROOT, SILVER_LEAF ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
