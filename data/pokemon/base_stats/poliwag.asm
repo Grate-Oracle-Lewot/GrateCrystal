@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
-	db 255 ; catch rate
+	db 245 ; catch rate
 	db 77 ; base exp
 	db SPRING_WATER, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
