@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type
-	db 120 ; catch rate
+	db 255 ; catch rate
 	db 72 ; base exp
 	db BLU_APRICORN, GRN_APRICORN ; items
 	db GENDER_F50 ; gender ratio
