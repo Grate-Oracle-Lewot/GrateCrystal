@@ -2411,8 +2411,8 @@ SentretEvosAttacks:
 	db 3, TAIL_WHIP
 	db 5, FORESIGHT
 	db 11, QUICK_ATTACK
-	db 17, FURY_SWIPES
-	db 25, RETURN
+	db 17, BIND
+	db 25, FURY_SWIPES
 	db 28, PLAY_ROUGH
 	db 33, CHARM
 	db 37, SLAM
@@ -2428,8 +2428,8 @@ FurretEvosAttacks:
 	db 3, TAIL_WHIP
 	db 5, FORESIGHT
 	db 11, QUICK_ATTACK
-	db 18, FURY_SWIPES
-	db 28, RETURN
+	db 18, BIND
+	db 28, FURY_SWIPES
 	db 33, PLAY_ROUGH
 	db 38, CHARM
 	db 42, SLAM
