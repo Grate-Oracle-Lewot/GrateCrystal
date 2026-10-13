@@ -9,7 +9,7 @@ else
 	db DARK, FAIRY ; type
 endc
 	db 190 ; catch rate
-	db 100 ; base exp
+	db 110 ; base exp
 	db SWAG_BEACON, TM_CURSE ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
