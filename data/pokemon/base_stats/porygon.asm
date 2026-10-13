@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 255 ; catch rate
-	db 130 ; base exp
+	db 128 ; base exp
 	db SWAG_BEACON, UP_GRADE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 10 ; step cycles to hatch
