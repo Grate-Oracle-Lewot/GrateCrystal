@@ -5,7 +5,7 @@
 
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
-	db 183 ; base exp
+	db 177 ; base exp
 	db TM_FIRE_PUNCH, TM_FIRE_BLAST ; items
 	db GENDER_F25 ; gender ratio
 	db 13 ; step cycles to hatch
