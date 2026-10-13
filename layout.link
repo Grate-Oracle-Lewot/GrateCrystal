@@ -62,6 +62,7 @@ ROMX $0d
 	"Effect Commands"
 ROMX $0e
 	"Enemy Trainers"
+	"Map Blocks 4"
 ROMX $0f
 	"Battle Core"
 ROMX $10
@@ -120,6 +121,7 @@ ROMX $27
 	"Map Scripts 12"
 ROMX $28
 	"Phone Scripts 1"
+	"Map Scripts 28"
 ROMX $29
 	"Phone Text"
 ROMX $2a
@@ -292,8 +294,8 @@ ROMX $72
 	"Miscellaneous Text"
 ROMX $73
 	"Extra Songs 7"
-; ROMX $74
-;	
+ROMX $74
+	"Map Scripts 27"
 ROMX $75
 	"Nayru Dex"
 	"Pokedex Entries 193-251"
@@ -308,6 +310,8 @@ ROMX $77
 	"European Mail"
 ROMX $78
 	"Tileset Data 8"
+ROMX $79
+	"Map Scripts 26"
 ROMX $7b
 	"Battle Tower Text"
 	"Extra Songs 4"
