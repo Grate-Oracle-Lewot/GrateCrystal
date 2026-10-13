@@ -9,7 +9,7 @@ else
 	db NORMAL, STEEL ; type
 endc
 	db 90 ; catch rate
-	db 148 ; base exp
+	db 168 ; base exp
 	db NUGGET, AMULET_COIN ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
