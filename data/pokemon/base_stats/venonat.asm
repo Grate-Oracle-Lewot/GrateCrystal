@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type
-	db 190 ; catch rate
+	db 210 ; catch rate
 	db 75 ; base exp
 	db BUGWORT, SWAG_BEACON ; items
 	db GENDER_F50 ; gender ratio
