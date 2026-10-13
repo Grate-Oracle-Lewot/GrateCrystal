@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, DARK ; type
-	db 45 ; catch rate
+	db 42 ; catch rate
 	db 218 ; base exp
 	db BLACKGLASSES, HARD_STONE ; items
 	db GENDER_F50 ; gender ratio
