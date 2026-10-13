@@ -5,7 +5,7 @@
 
 	db GRASS, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
-	db 212 ; base exp
+	db 216 ; base exp
 	db BERRY, FABERGE_EGG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
