@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
-	db 190 ; catch rate
+	db 200 ; catch rate
 	db 96 ; base exp
 	db SHARP_BEAK, EXP_SHARE ; items
 	db GENDER_F50 ; gender ratio
