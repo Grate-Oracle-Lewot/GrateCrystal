@@ -47,6 +47,7 @@ RattataEggMoves:
 	db FURY_SWIPES
 	db COUNTER
 	db REVERSAL
+	db DOUBLE_EDGE
 	db -1 ; end
 
 SpearowEggMoves:
