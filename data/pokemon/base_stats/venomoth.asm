@@ -5,7 +5,7 @@
 
 	db BUG, POISON ; type
 	db 75 ; catch rate
-	db 138 ; base exp
+	db 183 ; base exp
 	db VIVICHOKE, SILVERPOWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
