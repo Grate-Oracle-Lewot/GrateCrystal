@@ -5,7 +5,7 @@
 
 	db WATER, FAIRY ; type
 	db 190 ; catch rate
-	db 58 ; base exp
+	db 84 ; base exp
 	db BERRY, MYSTIC_WATER ; items
 	db GENDER_F50 ; gender ratio
 	db 6 ; step cycles to hatch
