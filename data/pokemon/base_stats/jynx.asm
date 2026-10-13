@@ -5,7 +5,7 @@
 
 	db ICE, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
-	db 160 ; base exp
+	db 177 ; base exp
 	db TM_ICE_PUNCH, TM_BLIZZARD ; items
 	db GENDER_F100 ; gender ratio
 	db 13 ; step cycles to hatch
