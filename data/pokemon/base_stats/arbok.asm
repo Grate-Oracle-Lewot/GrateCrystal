@@ -9,7 +9,7 @@ else
 	db POISON, DARK ; type
 endc
 	db 90 ; catch rate
-	db 147 ; base exp
+	db 157 ; base exp
 	db ANTIDOTE, FABERGE_EGG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
