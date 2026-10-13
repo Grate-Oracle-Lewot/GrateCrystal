@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db ROCK, DARK ; type
 endc
-	db 45 ; catch rate
+	db 44 ; catch rate
 	db 144 ; base exp
 	db BLU_APRICORN, IRON ; items
 	db GENDER_F50 ; gender ratio
