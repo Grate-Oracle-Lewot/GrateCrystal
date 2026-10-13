@@ -705,7 +705,7 @@ YanmaEggMoves:
 	db WHIRLWIND
 	db DRAGON_PULSE
 	db BITE
-	db HYPER_FANG
+	db CRUNCH
 	db SUPER_FANG
 	db LEECH_LIFE
 	db -1 ; end
