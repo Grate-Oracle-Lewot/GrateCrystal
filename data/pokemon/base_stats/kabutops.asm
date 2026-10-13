@@ -9,7 +9,7 @@ else
 	db ROCK, BUG ; type
 endc
 	db 45 ; catch rate
-	db 199 ; base exp
+	db 201 ; base exp
 	db QUICK_CLAW, KINGS_ROCK ; items
 	db GENDER_F12_5 ; gender ratio
 	db 15 ; step cycles to hatch
