@@ -8,8 +8,8 @@ if DEF(_VANILLA_TYPES)
 else
 	db BUG, DARK ; type
 endc
-	db 255 ; catch rate
-	db 54 ; base exp
+	db 240 ; catch rate
+	db 60 ; base exp
 	db ESCAPE_ROPE, ANTIDOTE ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
