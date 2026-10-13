@@ -4,8 +4,8 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, PSYCHIC_TYPE ; type
-	db 90 ; catch rate
-	db 98 ; base exp
+	db 99 ; catch rate
+	db 99 ; base exp
 	db BERRY, FABERGE_EGG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
