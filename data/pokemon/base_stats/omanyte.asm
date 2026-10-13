@@ -5,7 +5,7 @@
 
 	db ROCK, WATER ; type
 	db 45 ; catch rate
-	db 120 ; base exp
+	db 119 ; base exp
 	db HARD_STONE, MYSTIC_WATER ; items
 	db GENDER_F12_5 ; gender ratio
 	db 15 ; step cycles to hatch
