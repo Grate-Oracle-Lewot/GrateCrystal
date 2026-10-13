@@ -202,4 +202,5 @@
 	const SFX_4_NOTE_DITTY                ; c6
 	const SFX_TWINKLE                     ; c7
 	const SFX_PETAL_DANCE                 ; c8
+	const SFX_BOULDER_SPLASH              ; c9
 NUM_SFX EQU const_value
