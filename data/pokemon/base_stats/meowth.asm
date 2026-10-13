@@ -8,7 +8,7 @@ if DEF(_VANILLA_TYPES)
 else
 	db NORMAL, STEEL ; type
 endc
-	db 255 ; catch rate
+	db 215 ; catch rate
 	db 69 ; base exp
 	db NUGGET, AMULET_COIN ; items
 	db GENDER_F50 ; gender ratio
