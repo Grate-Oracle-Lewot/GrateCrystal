@@ -5,7 +5,7 @@
 
 	db FIGHTING, FIGHTING ; type
 	db 180 ; catch rate
-	db 88 ; base exp
+	db 89 ; base exp
 	db RED_APRICORN, BLACKBELT_I ; items
 	db GENDER_F25 ; gender ratio
 	db 10 ; step cycles to hatch
