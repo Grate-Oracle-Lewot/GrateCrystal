@@ -5,7 +5,7 @@
 
 	db FAIRY, FAIRY ; type
 	db 25 ; catch rate
-	db 130 ; base exp
+	db 120 ; base exp
 	db STARDUST, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
 	db 5 ; step cycles to hatch
