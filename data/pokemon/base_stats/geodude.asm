@@ -5,7 +5,7 @@
 
 	db ROCK, GROUND ; type
 	db 255 ; catch rate
-	db 86 ; base exp
+	db 87 ; base exp
 	db NO_ITEM, BRICK_PIECE ; items
 	db GENDER_F50 ; gender ratio
 	db 8 ; step cycles to hatch
