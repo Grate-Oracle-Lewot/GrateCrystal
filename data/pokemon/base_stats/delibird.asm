@@ -5,7 +5,7 @@
 
 	db ICE, FLYING ; type
 	db 25 ; catch rate
-	db 183 ; base exp
+	db 250 ; base exp
 	db RARE_CANDY, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
