@@ -203,4 +203,5 @@ SFX:
 	dba Sfx_4NoteDitty
 	dba Sfx_Twinkle
 	dba Sfx_PetalDance
+	dba Sfx_BoulderSplash
 	assert_table_length NUM_SFX
