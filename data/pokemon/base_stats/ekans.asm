@@ -8,8 +8,8 @@ if DEF(_VANILLA_TYPES)
 else
 	db POISON, DARK ; type
 endc
-	db 255 ; catch rate
-	db 62 ; base exp
+	db 213 ; catch rate
+	db 64 ; base exp
 	db ANTIDOTE, FABERGE_EGG ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
