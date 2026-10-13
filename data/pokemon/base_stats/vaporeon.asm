@@ -5,7 +5,7 @@
 
 	db WATER, WATER ; type
 	db 45 ; catch rate
-	db 196 ; base exp
+	db 197 ; base exp
 	db WATER_STONE, WATER_STONE ; items
 	db GENDER_F12_5 ; gender ratio
 	db 19 ; step cycles to hatch
