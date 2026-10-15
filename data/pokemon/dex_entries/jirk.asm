@@ -1,10 +1,10 @@
 	db "MOSQUITO@" ; species name
 	dw 210, 140 ; height, weight
 
-	db   "It drains mental"
-	next "energy from its"
-	next "prey to make them"
+	db   "It senses anger,"
+	next "fear, and despair,"
+	next "and finds any way"
 
-	page "vulnerable, then"
-	next "drinks their bodi-"
-	next "ly fluids.@"
+	page "it can to make the"
+	next "situation worse."
+	next "Because it can.@"
