@@ -85,6 +85,13 @@ TextboxBorder::
 	jr nz, .loop
 	ret
 
+SpeechTextbox::
+; Standard textbox.
+	hlcoord TEXTBOX_X, TEXTBOX_Y
+	ld b, TEXTBOX_INNERH
+	ld c, TEXTBOX_INNERW
+	; fallthrough
+
 Textbox::
 ; Draw a text box at hl with room for b lines of c characters each.
 ; Places a border around the textbox, then switches the palette to the text black-and-white scheme.
@@ -118,13 +125,6 @@ TextboxPalette::
 	dec b
 	jr nz, .col
 	ret
-
-SpeechTextbox::
-; Standard textbox.
-	hlcoord TEXTBOX_X, TEXTBOX_Y
-	ld b, TEXTBOX_INNERH
-	ld c, TEXTBOX_INNERW
-	jp Textbox
 
 PrintText::
 	call SetUpTextbox
@@ -162,6 +162,12 @@ SetUpTextbox::
 	pop hl
 	ret
 
+MobileScriptChar::
+	ld c, l
+	ld b, h
+	farcall RunMobileScript
+	jr PlaceNextChar
+
 PlaceString::
 	push hl
 	; fallthrough
@@ -175,9 +181,35 @@ PlaceNextChar::
 	pop hl
 	ret
 
+NextLineChar::
+	pop hl
+	ld bc, SCREEN_WIDTH * 2
+	add hl, bc
+	push hl
+	; fallthrough
+
 NextChar::
 	inc de
-	jp PlaceNextChar
+	jr PlaceNextChar
+
+LineFeedChar::
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	push hl
+	jr NextChar
+
+LineChar::
+	pop hl
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
+	push hl
+	jr NextChar
+
+NullChar::
+	ld a, "?"
+	ld [hli], a
+	call PrintLetterDelay
+	jr NextChar
 
 CheckDict::
 dict: MACRO
@@ -243,12 +275,6 @@ ENDM
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
-
-MobileScriptChar::
-	ld c, l
-	ld b, h
-	farcall RunMobileScript
-	jp PlaceNextChar
 
 print_name: MACRO
 	push de
@@ -370,20 +396,6 @@ PlaceKokoWaText::  db "ここは@"
 KunSuffixText:: ; no suffixes in English
 ChanSuffixText::   db "@"
 
-NextLineChar::
-	pop hl
-	ld bc, SCREEN_WIDTH * 2
-	add hl, bc
-	push hl
-	jp NextChar
-
-LineFeedChar::
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	push hl
-	jp NextChar
-
 CarriageReturnChar::
 	pop hl
 	push de
@@ -422,12 +434,6 @@ CarriageReturnChar::
 	ld c, a
 	ld b, 0
 	add hl, bc
-	push hl
-	jp NextChar
-
-LineChar::
-	pop hl
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	push hl
 	jp NextChar
 
@@ -556,12 +562,6 @@ AutoDoneText::
 	ld c, 20
 	call DelayFrames
 	jr DoneText
-
-NullChar::
-	ld a, "?"
-	ld [hli], a
-	call PrintLetterDelay
-	jp NextChar
 
 TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
