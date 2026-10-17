@@ -117,39 +117,30 @@ TrainerBugCatcherWade1:
 	clearflag ENGINE_WADE_HAS_ITEM
 .AcceptedNumberSTD:
 	jumpstd NumberAcceptedMScript
-	end
 
 .AskPhoneNumberSTD:
 	jumpstd AskNumber1MScript
-	end
 
 .AskAgainSTD:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisterNumberSTD:
 	jumpstd RegisteredNumberMScript
-	end
 
 .DeclinedNumberSTD:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFullSTD:
 	jumpstd PhoneFullMScript
-	end
 
 .RematchSTD:
 	jumpstd RematchMScript
-	end
 
 .ItemSTD:
 	jumpstd GiftMScript
-	end
 
 .PackFullSTD:
 	jumpstd PackFullMScript
-	end
 
 Route31MailRecipientScript:
 	faceplayer
