@@ -128,6 +128,7 @@ CanObjectLeaveTile:
 	push af
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
+	ld a, [hl]
 	maskbits NUM_DIRECTIONS
 	ld e, a
 	ld d, 0
