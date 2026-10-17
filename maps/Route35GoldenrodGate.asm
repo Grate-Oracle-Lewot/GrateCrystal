@@ -30,7 +30,7 @@ RandyScript:
 	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
 	playsound SFX_KEY_ITEM
 	waitsfx
-	givepoke SPEAROW, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName
+	givepoke DELIBIRD, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName
 	givepokemail GiftSpearowMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
@@ -73,7 +73,7 @@ GiftSpearowMail:
 	next "to another road@"
 
 GiftSpearowName:
-	db "KENYA@"
+	db "KRINGLE@"
 
 GiftSpearowOTName:
 	db "RANDY@"
