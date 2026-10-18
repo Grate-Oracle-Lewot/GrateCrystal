@@ -4,14 +4,14 @@
 	const NATIONALPARK_TEACHER1
 	const NATIONALPARK_YOUNGSTER1
 	const NATIONALPARK_YOUNGSTER2
-	const NATIONALPARK_TEACHER2
+	const NATIONALPARK_POKEFAN_F2
 	const NATIONALPARK_PERSIAN
 	const NATIONALPARK_YOUNGSTER3
-	const NATIONALPARK_POKEFAN_F2
+	const NATIONALPARK_TEACHER2
 	const NATIONALPARK_POKEFAN_M
 	const NATIONALPARK_LASS2
-	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_GAMEBOY_KID
+	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_POKE_BALL2
 
 NationalPark_MapScripts:
@@ -25,18 +25,18 @@ NationalParkLassScript:
 NationalParkPokefanFScript:
 	jumptextfaceplayer NationalParkPokefanFText
 
-NationalParkTeacher1Script:
+NationalParkQuickClawTeacherScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_QUICK_CLAW
 	iftrue .GotQuickClaw
-	writetext NationalParkTeacher1Text
+	writetext NationalParkQuickClawTeacherBeforeText
 	promptbutton
 	verbosegiveitem QUICK_CLAW
 	iffalse .NoRoom
 	setevent EVENT_GOT_QUICK_CLAW
 .GotQuickClaw:
-	writetext NationalParkTeacher1Text_GotQuickClaw
+	writetext NationalParkQuickClawTeacherAfterText
 	waitbutton
 .NoRoom:
 	closetext
@@ -60,8 +60,8 @@ NationalPark_EndText:
 NationalParkYoungster2Script:
 	jumptextfaceplayer NationalParkYoungster2Text
 
-NationalParkTeacher2Script:
-	jumptextfaceplayer NationalParkTeacher2Text
+NationalParkTeacherScript:
+	jumptextfaceplayer NationalParkTeacherText
 
 NationalParkPersian:
 	opentext
@@ -270,7 +270,7 @@ NationalParkPokefanFText:
 	cont "It cheers me up."
 	done
 
-NationalParkTeacher1Text:
+NationalParkQuickClawTeacherBeforeText:
 	text "Pay attention,"
 	line "please!"
 
@@ -290,7 +290,7 @@ NationalParkTeacher1Text:
 	line "this."
 	done
 
-NationalParkTeacher1Text_GotQuickClaw:
+NationalParkQuickClawTeacherAfterText:
 	text "Let a #MON hold"
 	line "that QUICK CLAW."
 
@@ -338,7 +338,7 @@ NationalParkYoungster2Text:
 	line "forms have it!"
 	done
 
-NationalParkTeacher2Text:
+NationalParkTeacherText:
 	text "I take walks in"
 	line "the PARK, but I"
 
@@ -515,15 +515,15 @@ NationalPark_MapEvents:
 	def_object_events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
 	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
-	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
+	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkTeacherScript, -1
 	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
-	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
+	object_event 27, 40, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkQuickClawTeacherScript, -1
 	object_event 26, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event 27, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack, -1
-	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly, -1
+	object_event 18, 29, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
 	object_event  8, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassKrise, -1
-	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
+	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
