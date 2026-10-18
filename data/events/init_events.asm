@@ -146,6 +146,7 @@ initvarsprite: MACRO
 ; variable sprite, appearance sprite
 	db \1 - SPRITE_VARS, \2
 ENDM
+	initvarsprite SPRITE_OLIVINE_CIANWOOD, SPRITE_SILVER
 	initvarsprite SPRITE_FUCHSIA_GYM_1, SPRITE_JANINE
 	initvarsprite SPRITE_FUCHSIA_GYM_2, SPRITE_JANINE
 	initvarsprite SPRITE_FUCHSIA_GYM_3, SPRITE_JANINE
