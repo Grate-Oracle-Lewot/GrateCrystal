@@ -30,8 +30,8 @@ RandyScript:
 	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
 	playsound SFX_KEY_ITEM
 	waitsfx
-	givepoke DELIBIRD, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName
-	givepokemail GiftSpearowMail
+	givepoke DELIBIRD, 10, NO_ITEM, GiftDelibirdName, GiftDelibirdOTName
+	givepokemail GiftDelibirdMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
@@ -67,15 +67,15 @@ RandyScript:
 .nuzlocke
 	jumpstd NuzlockeNPCScript
 
-GiftSpearowMail:
+GiftDelibirdMail:
 	db FLOWER_MAIL
 	db   "DARK CAVE leads"
 	next "to another road@"
 
-GiftSpearowName:
+GiftDelibirdName:
 	db "KRINGLE@"
 
-GiftSpearowOTName:
+GiftDelibirdOTName:
 	db "RANDY@"
 
 Route35GoldenrodGatePokefanFScript:
