@@ -10,7 +10,7 @@ BTTrainerClassSprites:
 	db SPRITE_PRYCE         ; PRYCE
 	db SPRITE_CLAIR         ; CLAIR
 	db SPRITE_GENTLEMAN     ; A_D
-	db SPRITE_CAL           ; LUCAS
+	db SPRITE_LUCAS         ; LUCAS
 	db SPRITE_PERCY         ; PERCY
 	db SPRITE_CHRIS         ; GRATE_ORACLE
 	db SPRITE_KAREN         ; KAREN
