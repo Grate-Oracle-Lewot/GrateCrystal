@@ -616,7 +616,7 @@ Tom Wang - male player running frames
 
 Seasick/Mauve Sea - female player running frames, Mary sprites
 
-FrenchOrange - Karen and ship captain walking frames
+FrenchOrange - walking frames for Karen, ship captain, and Safari Zone Worker (Engineer)
 
 TriteHexagon - many demixed songs
 
