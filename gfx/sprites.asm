@@ -1,9 +1,6 @@
 SECTION "Sprites 1", ROMX
 
-ChrisSpriteGFX::
-LucasSpriteGFX::
-INCBIN "gfx/sprites/chris.2bpp"
-
+ChrisSpriteGFX::               INCBIN "gfx/sprites/chris.2bpp"
 ChrisBikeSpriteGFX::           INCBIN "gfx/sprites/chris_bike.2bpp"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp"
 SilverSpriteGFX::              INCBIN "gfx/sprites/silver.2bpp"
@@ -49,6 +46,10 @@ RockerSpriteGFX::              INCBIN "gfx/sprites/rocker.2bpp"
 
 SECTION "Sprites 2", ROMX
 
+CalSpriteGFX::
+LucasSpriteGFX::
+INCBIN "gfx/sprites/cal.2bpp"
+
 PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp"
 GrampsSpriteGFX::              INCBIN "gfx/sprites/gramps.2bpp"
@@ -72,7 +73,6 @@ GentlemanSpriteGFX::           INCBIN "gfx/sprites/gentleman.2bpp"
 BlackBeltSpriteGFX::           INCBIN "gfx/sprites/black_belt.2bpp"
 ReceptionistSpriteGFX::        INCBIN "gfx/sprites/receptionist.2bpp"
 OfficerSpriteGFX::             INCBIN "gfx/sprites/officer.2bpp"
-CalSpriteGFX::                 INCBIN "gfx/sprites/cal.2bpp"
 SlowpokeSpriteGFX::            INCBIN "gfx/sprites/slowpoke.2bpp"
 CaptainSpriteGFX::             INCBIN "gfx/sprites/captain.2bpp"
 BigLaprasSpriteGFX::           INCBIN "gfx/sprites/big_lapras.2bpp"
