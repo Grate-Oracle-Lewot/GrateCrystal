@@ -1,24 +1,15 @@
 	object_const_def
-	const SILVERCAVEROOM2_POKE_BALL1
-	const SILVERCAVEROOM2_POKE_BALL2
-	const SILVERCAVEROOM2_POKE_BALL3
 	const SILVERCAVEROOM2_CAL
 	const SILVERCAVEROOM2_EUSINE1
 	const SILVERCAVEROOM2_EUSINE2
+	const SILVERCAVEROOM2_POKE_BALL1
+	const SILVERCAVEROOM2_POKE_BALL2
+	const SILVERCAVEROOM2_POKE_BALL3
 
 SilverCaveRoom2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-
-SilverCaveRoom2Calcium:
-	itemball CALCIUM
-
-SilverCaveRoom2UltraBall:
-	itemball ULTRA_BALL
-
-SilverCaveRoom2PPUp:
-	itemball PP_UP
 
 TrainerFred:
 	trainer CAL, FRED, EVENT_BEAT_TRAINER_FRED, TrainerFredSeenText, TrainerFredBeatenText, 0, .AfterScript
@@ -52,6 +43,15 @@ TrainerMysticGrover:
 	waitbutton
 	closetext
 	end
+
+SilverCaveRoom2Calcium:
+	itemball CALCIUM
+
+SilverCaveRoom2UltraBall:
+	itemball ULTRA_BALL
+
+SilverCaveRoom2PPUp:
+	itemball PP_UP
 
 SilverCaveRoom2HiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
@@ -118,9 +118,9 @@ SilverCaveRoom2_MapEvents:
 	bg_event 14, 31, BGEVENT_ITEM, SilverCaveRoom2HiddenMaxPotion
 
 	def_object_events
-	object_event 24, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2Calcium, EVENT_SILVER_CAVE_ROOM_2_CALCIUM
-	object_event 22, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2UltraBall, EVENT_SILVER_CAVE_ROOM_2_ULTRA_BALL
-	object_event  4, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2PPUp, EVENT_SILVER_CAVE_ROOM_2_PP_UP
 	object_event  9, 16, SPRITE_CAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFred, -1
 	object_event 24,  6, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerMysticRico, -1
 	object_event  3, 30, SPRITE_EUSINE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerMysticGrover, -1
+	object_event 24, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2Calcium, EVENT_SILVER_CAVE_ROOM_2_CALCIUM
+	object_event 22, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2UltraBall, EVENT_SILVER_CAVE_ROOM_2_ULTRA_BALL
+	object_event  4, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2PPUp, EVENT_SILVER_CAVE_ROOM_2_PP_UP
