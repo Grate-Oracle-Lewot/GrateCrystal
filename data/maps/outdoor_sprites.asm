@@ -213,6 +213,7 @@ EcruteakGroupSprites:
 	db SPRITE_OFFICER
 	db SPRITE_SUDOWOODO
 	db SPRITE_POKE_BALL
+	db SPRITE_ROCKET
 	db SPRITE_SUICUNE
 	db 0 ; end
 
