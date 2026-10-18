@@ -60,7 +60,7 @@ CinnabarGroupSprites:
 	db SPRITE_ROCK
 	db SPRITE_OFFICER
 	db SPRITE_BLUE
-	db SPRITE_A_D
+	db SPRITE_GENTLEMAN
 	db SPRITE_POKE_BALL
 CableClubGroupSprites:
 ; (no outdoor maps)
