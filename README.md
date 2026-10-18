@@ -618,7 +618,7 @@ Seasick/Mauve Sea - female player running frames, Mary sprites
 
 FrenchOrange - walking frames for Karen, ship captain, and Safari Zone Worker (Engineer)
 
-TriteHexagon - many demixed songs
+TriteHexagon - demixes for Cynthia and Miror B. battles, Gen III contest and Dive themes, ruined Cinnabar, Ice Path remix, Cave of Origin, and multiple trainer encounter themes
 
 Mmmmmmmmmmmmmmmmm - demixes for HGSS Routes 24 and 47
 
