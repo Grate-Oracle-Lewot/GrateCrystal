@@ -5334,15 +5334,7 @@ BattleCommand_FlinchTarget:
 	call CheckIfTargetIsGivenType
 	ret z
 
-	call CheckSubstituteOpp
-	ret nz
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP
-	ret nz
-
-	call CheckOpponentWentFirst
+	call CheckFlinchConditions
 	ret nz
 
 	ld a, [wEffectFailed]
@@ -5355,6 +5347,16 @@ FlinchTarget:
 	call GetBattleVarAddr
 	set SUBSTATUS_FLINCHED, [hl]
 	jp EndRechargeOpp
+
+CheckFlinchConditions:
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and 1 << FRZ | SLP
+	ret nz
+	; fallthrough
 
 CheckOpponentWentFirst:
 ; Returns a=0, z if user went first
@@ -6850,7 +6852,7 @@ BattleCommand_HeldFlinch:
 	cp HELD_FLINCH
 	ret nz
 
-	call CheckSubstituteOpp
+	call CheckFlinchConditions
 	ret nz
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
