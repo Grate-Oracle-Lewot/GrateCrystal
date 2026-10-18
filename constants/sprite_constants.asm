@@ -184,13 +184,14 @@ SPRITE_VARS EQU const_value
 	const SPRITE_DOLL_1              ; f1
 	const SPRITE_DOLL_2              ; f2
 	const SPRITE_BIG_DOLL            ; f3
-	const SPRITE_FUCHSIA_GYM_1       ; f4
-	const SPRITE_FUCHSIA_GYM_2       ; f5
-	const SPRITE_FUCHSIA_GYM_3       ; f6
-	const SPRITE_FUCHSIA_GYM_4       ; f7
-	const SPRITE_COPYCAT             ; f8
-	const SPRITE_JANINE_IMPERSONATOR ; f9
-	const SPRITE_LINK_TRAINER        ; fa
-	const SPRITE_TRAINER_HOUSE       ; fb
-	const SPRITE_JESSIE_DISGUISE     ; fc
-	const SPRITE_JAMES_DISGUISE      ; fd
+	const SPRITE_OLIVINE_CIANWOOD    ; f4
+	const SPRITE_FUCHSIA_GYM_1       ; f5
+	const SPRITE_FUCHSIA_GYM_2       ; f6
+	const SPRITE_FUCHSIA_GYM_3       ; f7
+	const SPRITE_FUCHSIA_GYM_4       ; f8
+	const SPRITE_COPYCAT             ; f9
+	const SPRITE_JANINE_IMPERSONATOR ; fa
+	const SPRITE_LINK_TRAINER        ; fb
+	const SPRITE_TRAINER_HOUSE       ; fc
+	const SPRITE_JESSIE_DISGUISE     ; fd
+	const SPRITE_JAMES_DISGUISE      ; fe
