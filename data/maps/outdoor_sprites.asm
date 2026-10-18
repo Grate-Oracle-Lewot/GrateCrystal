@@ -255,7 +255,7 @@ OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
 CianwoodGroupSprites:
 ; Route40, Route41, CianwoodCity, BattleTowerOutside
-	db SPRITE_SILVER
+	db SPRITE_OLIVINE_CIANWOOD
 	db SPRITE_SWIMMER_GUY
 	db SPRITE_POKEFAN_M
 	db SPRITE_COOLTRAINER_F
@@ -263,7 +263,7 @@ CianwoodGroupSprites:
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SAILOR
 	db SPRITE_POKEFAN_F
-	db SPRITE_EUSINE
+	db SPRITE_TEACHER
 	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_YOUNGSTER
