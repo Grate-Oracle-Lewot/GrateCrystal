@@ -3,7 +3,11 @@
 	db  60,  50,  70, 152,  84,  84
 	;   hp  atk  def  spd  sat  sdf
 
+if DEF(_VANILLA_TYPES)
+	db ELECTRIC, ELECTRIC ; type
+else
 	db ELECTRIC, FIRE ; type
+endc
 	db 60 ; catch rate
 	db 150 ; base exp
 	db ULTRA_BALL, POKE_BALL ; items
