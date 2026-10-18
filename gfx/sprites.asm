@@ -1,6 +1,9 @@
 SECTION "Sprites 1", ROMX
 
-ChrisSpriteGFX::               INCBIN "gfx/sprites/chris.2bpp"
+ChrisSpriteGFX::
+LucasSpriteGFX::
+INCBIN "gfx/sprites/chris.2bpp"
+
 ChrisBikeSpriteGFX::           INCBIN "gfx/sprites/chris_bike.2bpp"
 GameboyKidSpriteGFX::          INCBIN "gfx/sprites/gameboy_kid.2bpp"
 SilverSpriteGFX::              INCBIN "gfx/sprites/silver.2bpp"
@@ -25,7 +28,7 @@ JasmineSpriteGFX::             INCBIN "gfx/sprites/jasmine.2bpp"
 PryceSpriteGFX::               INCBIN "gfx/sprites/pryce.2bpp"
 ClairSpriteGFX::               INCBIN "gfx/sprites/clair.2bpp"
 BrockSpriteGFX::               INCBIN "gfx/sprites/brock.2bpp"
-LewotSpriteGFX::               INCBIN "gfx/sprites/lewot.2bpp"
+EngineerSpriteGFX::            INCBIN "gfx/sprites/engineer.2bpp"
 PercySpriteGFX::               INCBIN "gfx/sprites/percy.2bpp"
 MistySpriteGFX::               INCBIN "gfx/sprites/misty.2bpp"
 LanceSpriteGFX::               INCBIN "gfx/sprites/lance.2bpp"
@@ -134,4 +137,3 @@ LotusLadySpriteGFX::           INCBIN "gfx/sprites/lotus_lady.2bpp"
 YellowPikachuSpriteGFX::       INCBIN "gfx/sprites/yellow_pikachu.2bpp"
 EusineSpriteGFX::              INCBIN "gfx/sprites/eusine.2bpp"
 KantoNurseSpriteGFX::          INCBIN "gfx/sprites/kanto_nurse.2bpp"
-EngineerSpriteGFX::            INCBIN "gfx/sprites/engineer.2bpp"
