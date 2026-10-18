@@ -147,6 +147,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Shellder/Cloyster: Water(/Ice) -> Water/Steel
 - Drowzee/Hypno: Psychic -> Psychic/Dark
 - Krabby/Kingler: Water -> Water/Bug
+- Voltorb/Electrode: Electric -> Electric/Fire
 - Marowak: Ground -> Ground/Ghost
 - Koffing/Weezing: Poison -> Poison/Fairy
 - Rhyhorn/Rhydon: Ground/Rock -> Steel/Rock
