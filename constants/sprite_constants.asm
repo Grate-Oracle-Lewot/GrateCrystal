@@ -28,7 +28,7 @@
 	const SPRITE_PRYCE                 ; 18
 	const SPRITE_CLAIR                 ; 19
 	const SPRITE_BROCK                 ; 1a
-	const SPRITE_LEWOT                 ; 1b
+	const SPRITE_LUCAS                 ; 1b
 	const SPRITE_PERCY                 ; 1c
 	const SPRITE_MISTY                 ; 1d
 	const SPRITE_LANCE                 ; 1e
