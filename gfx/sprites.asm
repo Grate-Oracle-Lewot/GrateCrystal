@@ -46,10 +46,7 @@ RockerSpriteGFX::              INCBIN "gfx/sprites/rocker.2bpp"
 
 SECTION "Sprites 2", ROMX
 
-CalSpriteGFX::
-LucasSpriteGFX::
-INCBIN "gfx/sprites/cal.2bpp"
-
+CalSpriteGFX::                 INCBIN "gfx/sprites/cal.2bpp"
 PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp"
 GrampsSpriteGFX::              INCBIN "gfx/sprites/gramps.2bpp"
@@ -137,3 +134,4 @@ LotusLadySpriteGFX::           INCBIN "gfx/sprites/lotus_lady.2bpp"
 YellowPikachuSpriteGFX::       INCBIN "gfx/sprites/yellow_pikachu.2bpp"
 EusineSpriteGFX::              INCBIN "gfx/sprites/eusine.2bpp"
 KantoNurseSpriteGFX::          INCBIN "gfx/sprites/kanto_nurse.2bpp"
+BikeShopClerkSpriteGFX::       INCBIN "gfx/sprites/bike_shop_clerk.2bpp"
