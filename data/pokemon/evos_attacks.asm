@@ -2948,7 +2948,7 @@ YanmaEvosAttacks:
 	db 28, AIR_SLASH
 	db 33, SILVER_WIND
 	db 37, EXTREMESPEED
-	db 42, HYPER_FANG
+	db 42, CRUNCH
 	db 46, SCREECH
 	db 60, SKY_ATTACK
 	db 0 ; no more level-up moves
@@ -3930,7 +3930,7 @@ YanmegaEvosAttacks:
 	db 28, AIR_SLASH
 	db 33, ANCIENTPOWER
 	db 37, EXTREMESPEED
-	db 42, HYPER_FANG
+	db 42, CRUNCH
 	db 46, SCREECH
 	db 50, SLAM
 	db 0 ; no more level-up moves
