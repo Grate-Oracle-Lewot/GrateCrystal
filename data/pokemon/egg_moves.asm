@@ -195,7 +195,7 @@ GrowlitheEggMoves:
 PoliwagEggMoves:
 	db MIST
 	db HAZE
-	db MIND_READER
+	db LOCK_ON
 	db EARTH_POWER
 	db TRIPLE_KICK
 	db METRONOME
@@ -205,11 +205,11 @@ AbraEggMoves:
 	db CONVERSION
 	db LIGHT_SCREEN
 	db ENCORE
+	db LOCK_ON
 	db BARRIER
 	db FOCUS_ENERGY
 	db FORESIGHT
 	db HYPNOSIS
-	db MIND_READER
 	db -1 ; end
 
 MachopEggMoves:
@@ -979,7 +979,7 @@ JirkEggMoves:
 	db FAINT_ATTACK
 	db SKY_ATTACK
 	db DRILL_PECK
-	db MIND_READER
+	db LOCK_ON
 	db DESTINY_BOND
 	db SPIKES
 	db WHIRLWIND
