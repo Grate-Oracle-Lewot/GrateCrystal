@@ -169,7 +169,7 @@ MoveNames::
 	li "TRIPLE KICK"
 	li "THIEF"
 	li "SPIDER WEB"
-	li "MIND READER"
+	li "HYPER VOICE"
 	li "NIGHTMARE"
 	li "FLAME WHEEL"
 	li "SNORE"
