@@ -35,7 +35,6 @@ StallMoves:
 	db SUPER_FANG
 	db SUBSTITUTE
 	db SPIDER_WEB
-	db MIND_READER
 	db CURSE
 	db COTTON_SPORE
 	db SPITE
