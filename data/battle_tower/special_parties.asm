@@ -833,7 +833,7 @@ BattleTowerPercy:
 
 	db WIGGLYTUFF
 	db BRIGHTPOWDER
-	db MOONBLAST, BODY_SLAM, ROLLOUT, PSYCHIC_M
+	db HYPER_VOICE, MOONBLAST, ROLLOUT, PSYCHIC_M
 	dw 0 ; OT ID
 	dt 800000 ; Exp
 	; Stat exp
@@ -843,7 +843,7 @@ BattleTowerPercy:
 	bigdw 65535
 	bigdw 65535
 	dn 13, 14, 13, 14 ; DVs
-	db 8, 24, 32, 16 ; PP
+	db 24, 8, 32, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
