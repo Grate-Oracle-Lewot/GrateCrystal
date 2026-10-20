@@ -114,7 +114,7 @@
 	const SFX_THIEF                       ; 6f
 	const SFX_THIEF_2                     ; 70
 	const SFX_SPIDER_WEB                  ; 71
-	const SFX_MIND_READER                 ; 72
+	const SFX_LOCK_ON                     ; 72
 	const SFX_NIGHTMARE                   ; 73
 	const SFX_SNORE                       ; 74
 	const SFX_SWEET_KISS                  ; 75
