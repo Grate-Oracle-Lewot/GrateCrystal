@@ -3287,7 +3287,7 @@ BattleAnim_SpiderWeb:
 
 BattleAnim_MindReader:
 	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_MIND_READER
+	anim_sound 0, 1, SFX_LOCK_ON
 .loop
 	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $3
 	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $12
@@ -3798,7 +3798,7 @@ BattleAnim_AuraSphere:
 
 BattleAnim_LockOn:
 	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_MIND_READER
+	anim_sound 0, 1, SFX_LOCK_ON
 .loop
 	anim_obj ANIM_OBJ_LOCK_ON, 132, 48, $3
 	anim_obj ANIM_OBJ_LOCK_ON, 132, 48, $12
