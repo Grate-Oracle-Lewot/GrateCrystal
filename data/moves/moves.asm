@@ -210,7 +210,7 @@ Moves:
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        15, FIGHTING,     PHYSICAL, 100 percent,     10,   0
 	move THIEF,        EFFECT_THIEF,              40, DARK,         PHYSICAL, 100 percent,     25, 100 percent
 	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,          STATUS,   100 percent,      5,   0
-	move MIND_READER,  EFFECT_LOCK_ON,             0, PSYCHIC_TYPE, STATUS,   100 percent,      5,   0
+	move HYPER_VOICE,  EFFECT_FLINCH_HIT,         90, NORMAL,       SPECIAL,   90 percent + 2, 15,  20 percent + 1
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,    50 percent + 1, 10,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,         PHYSICAL, 100 percent,     20,   0
 	move SNORE,        EFFECT_SNORE,              40, NORMAL,       SPECIAL,  100 percent,     20,  30 percent + 1
@@ -239,7 +239,7 @@ Moves:
 	move AVALANCHE,    EFFECT_AVALANCHE,          60, ICE,          PHYSICAL, 100 percent,     10,   0
 	move AURA_SPHERE,  EFFECT_ALWAYS_HIT,         90, FIGHTING,     SPECIAL,  100 percent,     10,   0
 	move BONE_RUSH,    EFFECT_MULTI_HIT,          30, GROUND,       PHYSICAL,  90 percent + 2, 10,   0
-	move LOCK_ON,      EFFECT_LOCK_ON,             0, STEEL,        STATUS,   100 percent,      5,   0
+	move LOCK_ON,      EFFECT_LOCK_ON,             0, PSYCHIC_TYPE, STATUS,   100 percent,      5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            95, DRAGON,       PHYSICAL,  95 percent + 2, 10,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         STATUS,   100 percent,      5,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,        SPECIAL,  100 percent,      5,   0
