@@ -916,7 +916,7 @@ PoliwrathEvosAttacks:
 	db 21, SEISMIC_TOSS
 	db 35, SUBMISSION
 	db 42, VITAL_THROW
-	db 51, HYDRO_PUMP
+	db 51, FISSURE
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
