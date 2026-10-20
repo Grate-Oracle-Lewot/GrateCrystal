@@ -305,12 +305,12 @@ SpearowEvosAttacks:
 	db 2, LEER
 	db 7, SCREECH
 	db 13, FURY_ATTACK
-	db 17, SWIFT
+	db 17, PURSUIT
 	db 20, STEEL_WING
-	db 25, PURSUIT
+	db 25, AGILITY
 	db 31, MIRROR_MOVE
 	db 37, DRILL_PECK
-	db 43, AGILITY
+	db 43, HYPER_VOICE
 	db 50, SKY_ATTACK
 	db 0 ; no more level-up moves
 
@@ -320,12 +320,12 @@ FearowEvosAttacks:
 	db 2, LEER
 	db 7, SCREECH
 	db 13, FURY_ATTACK
-	db 18, SWIFT
+	db 18, PURSUIT
 	db 21, STEEL_WING
-	db 26, PURSUIT
+	db 26, AGILITY
 	db 32, MIRROR_MOVE
 	db 40, DRILL_PECK
-	db 47, AGILITY
+	db 47, HYPER_VOICE
 	db 59, SKY_ATTACK
 	db 0 ; no more level-up moves
 
@@ -570,9 +570,9 @@ JigglypuffEvosAttacks:
 	db 12, DEFENSE_CURL
 	db 16, SCREECH
 	db 19, ROLLOUT
-	db 24, PLAY_ROUGH
-	db 29, REST
-	db 34, BODY_SLAM
+	db 24, BODY_SLAM
+	db 29, PLAY_ROUGH
+	db 34, HYPER_VOICE
 	db 39, DOUBLE_EDGE
 	db 43, BELLY_DRUM
 	db 0 ; no more level-up moves
@@ -582,7 +582,7 @@ WigglytuffEvosAttacks:
 	db 1, SING
 	db 1, SUPERSONIC
 	db 1, SCREECH
-	db 1, PLAY_ROUGH
+	db 1, HYPER_VOICE
 	db 42, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -1854,7 +1854,7 @@ JynxEvosAttacks:
 	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
-	db 41, BODY_SLAM
+	db 41, HYPER_VOICE
 	db 47, PSYCHIC_M
 	db 51, PERISH_SONG
 	db 57, BLIZZARD
@@ -1977,7 +1977,7 @@ EeveeEvosAttacks:
 	db 30, BITE
 	db 36, PLAY_ROUGH
 	db 42, TAKE_DOWN
-	db 51, TRI_ATTACK
+	db 51, HYPER_VOICE
 	db 0 ; no more level-up moves
 
 VaporeonEvosAttacks:
@@ -2130,7 +2130,7 @@ SnorlaxEvosAttacks:
 	db 11, BITE
 	db 17, AMNESIA
 	db 22, MEGA_PUNCH
-	db 29, ROLLOUT
+	db 29, HYPER_FANG
 	db 36, SOFTBOILED
 	db 43, BODY_SLAM
 	db 50, BELLY_DRUM
@@ -2451,10 +2451,11 @@ HoothootEvosAttacks:
 	db 16, FAINT_ATTACK
 	db 22, REFLECT
 	db 28, TAKE_DOWN
-	db 34, AIR_SLASH
+	db 32, HYPER_VOICE
+	db 37, AIR_SLASH
 	db 40, CONFUSE_RAY
-	db 48, MOONBLAST
-	db 54, NIGHT_TERROR
+	db 44, MOONBLAST
+	db 50, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
@@ -2468,10 +2469,11 @@ NoctowlEvosAttacks:
 	db 19, MEAN_LOOK
 	db 25, REFLECT
 	db 33, NIGHT_SHADE
-	db 41, AIR_SLASH
-	db 50, CONFUSE_RAY
-	db 57, MOONBLAST
-	db 64, NIGHT_TERROR
+	db 37, HYPER_VOICE
+	db 42, AIR_SLASH
+	db 45, CONFUSE_RAY
+	db 52, MOONBLAST
+	db 60, NIGHT_TERROR
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
@@ -2630,9 +2632,9 @@ LanturnEvosAttacks:
 ;	db 12, DEFENSE_CURL
 ;	db 16, SCREECH
 ;	db 19, ROLLOUT
-;	db 23, PLAY_ROUGH
-;	db 27, REST
-;	db 32, BODY_SLAM
+;	db 23, BODY_SLAM
+;	db 27, PLAY_ROUGH
+;	db 32, HYPER_VOICE
 ;	db 37, DOUBLE_EDGE
 ;	db 42, BELLY_DRUM
 ;	db 0 ; no more level-up moves
@@ -2650,8 +2652,7 @@ FlogistanEvosAttacks:
 	db 30, THRASH
 	db 37, TRANSFORM
 	db 42, DAZZLY_GLEAM
-	db 49, SNORE
-	db 49, REST
+	db 49, HYPER_VOICE
 	db 55, POWER_GEM
 	db 60, FIRE_BLAST
 	db 0 ; no more level-up moves
@@ -2839,8 +2840,8 @@ PolitoedEvosAttacks:
 	db 1, SING
 	db 1, LICK
 	db 5, SUPERSONIC
-	db 15, SONICBOOM
-	db 25, BUBBLEBEAM
+	db 15, BUBBLEBEAM
+	db 25, HYPER_VOICE
 	db 35, PERISH_SONG
 	db 42, NIGHT_SHADE
 	db 51, DESTINY_BOND
@@ -3017,7 +3018,7 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 5, HAZE
+	db 5, METAL_SOUND
 	db 11, PURSUIT
 	db 16, SPIKES
 	db 21, WING_ATTACK
@@ -3057,9 +3058,9 @@ MisdreavusEvosAttacks:
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
 	db 36, POWER_GEM
-	db 41, SHADOW_BALL
+	db 41, HYPER_VOICE
 	db 46, PERISH_SONG
-	db 54, NIGHT_TERROR
+	db 54, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
@@ -3409,6 +3410,7 @@ RemoraidEvosAttacks:
 	db EVOLVE_LEVEL, 25, OCTILLERY
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
+	db 1, SMOKESCREEN
 	db 11, FOCUS_ENERGY
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
@@ -3423,6 +3425,7 @@ RemoraidEvosAttacks:
 OctilleryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
+	db 1, SMOKESCREEN
 	db 11, FOCUS_ENERGY
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
@@ -3454,10 +3457,10 @@ MantineEvosAttacks:
 	db 1, BUBBLE
 	db 2, TACKLE
 	db 10, SUPERSONIC
-	db 18, BUBBLEBEAM
-	db 25, TAKE_DOWN
+	db 18, WING_ATTACK
+	db 25, BUBBLEBEAM
 	db 32, AGILITY
-	db 40, WING_ATTACK
+	db 40, HYPER_VOICE
 	db 44, CONFUSE_RAY
 	db 49, AIR_SLASH
 	db 56, HYDRO_PUMP
@@ -3621,7 +3624,7 @@ HitmontopEvosAttacks:
 ;	db 21, DOUBLESLAP
 ;	db 25, CONFUSION
 ;	db 33, ICE_PUNCH
-;	db 37, PLAY_ROUGH
+;	db 37, HYPER_VOICE
 ;	db 45, PERISH_SONG
 ;	db 49, BLIZZARD
 ;	db 0 ; no more level-up moves
