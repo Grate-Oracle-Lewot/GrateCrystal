@@ -26,7 +26,6 @@ EncoreMoves:
 	db ROCK_POLISH
 	db SUPER_FANG
 	db SPIDER_WEB
-	db MIND_READER
 	db SNORE
 	db CURSE
 	db PROTECT
