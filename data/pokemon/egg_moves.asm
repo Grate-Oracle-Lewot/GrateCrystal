@@ -109,10 +109,9 @@ ZubatEggMoves:
 	db WHIRLWIND
 	db SILVER_WIND
 	db AIR_SLASH
-	db ABSORB
-	db MEGA_DRAIN
 	db SUPER_FANG
 	db BEAT_UP
+	db HYPER_VOICE
 	db -1 ; end
 
 OddishEggMoves:
@@ -155,6 +154,7 @@ DiglettEggMoves:
 MeowthEggMoves:
 	db SING
 	db METAL_SOUND
+	db HYPER_VOICE
 	db SPITE
 	db CHARM
 	db EXTREMESPEED
@@ -182,12 +182,13 @@ MankeyEggMoves:
 	db LOW_KICK
 	db JUMP_KICK
 	db MACH_PUNCH
+	db HYPER_VOICE
 	db -1 ; end
 
 GrowlitheEggMoves:
 	db BODY_SLAM
 	db SAFEGUARD
-	db DRAGON_PULSE
+	db HYPER_VOICE
 	db FIRE_SPIN
 	db EXTREMESPEED
 	db -1 ; end
@@ -504,7 +505,7 @@ AerodactylEggMoves:
 
 SnorlaxEggMoves:
 	db LOVELY_KISS
-	db HYPER_FANG
+	db HYPER_VOICE
 	db LOW_KICK
 	db SUBMISSION
 	db STOMP
@@ -695,6 +696,7 @@ HoppipEggMoves:
 	db -1 ; end
 
 AipomEggMoves:
+	db HYPER_VOICE
 	db BEAT_UP
 	db TRIPLE_KICK
 	db COUNTER
@@ -721,9 +723,9 @@ WooperEggMoves:
 	db -1 ; end
 
 MurkrowEggMoves:
-	db METAL_SOUND
+	db HYPER_VOICE
 	db WHIRLWIND
-	db DRILL_PECK
+	db HAZE
 	db QUICK_ATTACK
 	db SILVER_WIND
 	db BEAT_UP
@@ -733,13 +735,11 @@ MurkrowEggMoves:
 	db -1 ; end
 
 MisdreavusEggMoves:
-	db DESTINY_BOND
 	db PLAY_ROUGH
 	db SCREECH
 	db SING
 	db SUPER_FANG
 	db LEECH_LIFE
-	db MEGA_DRAIN
 	db -1 ; end
 
 WobbuffetEggMoves:
@@ -784,7 +784,7 @@ GligarEggMoves:
 	db -1 ; end
 
 SnubbullEggMoves:
-	db REFLECT
+	db HYPER_VOICE
 	db METRONOME
 	db SUBMISSION
 	db CLAMP
@@ -836,6 +836,7 @@ TeddiursaEggMoves:
 	db SEISMIC_TOSS
 	db FOCUS_ENERGY
 	db METAL_CLAW
+	db HYPER_VOICE
 	db TAKE_DOWN
 	db BITE
 	db -1 ; end
@@ -871,6 +872,7 @@ RemoraidEggMoves:
 	db SCREECH
 	db SUPERSONIC
 	db SONICBOOM
+	db HYPER_VOICE
 	db DRAGON_PULSE
 	db HYDRO_PUMP
 	db -1 ; end
@@ -911,16 +913,17 @@ HoundourEggMoves:
 	db PURSUIT
 	db SPITE
 	db REVERSAL
+	db HYPER_VOICE
 	db FIRE_SPIN
 	db -1 ; end
 
 PhanpyEggMoves:
 	db ROCK_WRECKER
 	db SCREECH
+	db HYPER_VOICE
 	db FOCUS_ENERGY
 	db EARTH_POWER
 	db IRON_HEAD
-	db HYDRO_PUMP
 	db FLAME_WHEEL
 	db -1 ; end
 
@@ -947,6 +950,7 @@ SmoochumEggMoves:
 	db SCARY_FACE
 	db PSYBEAM
 	db HYPNOSIS
+	db PLAY_ROUGH
 	db -1 ; end
 
 ElekidEggMoves:
