@@ -42,6 +42,7 @@ MovesDexOrder:
 	db SNORE
 	db SONICBOOM
 	db SWIFT
+	db HYPER_VOICE
 	db HYPER_BEAM
 
 ; Fighting, physical
@@ -415,7 +416,6 @@ MovesDexOrder:
 
 ; Guarantee next hit
 	db LOCK_ON
-	db MIND_READER
 
 ; Conditional KO
 	db DESTINY_BOND
