@@ -170,7 +170,7 @@ MoveDescriptions::
 	dw TripleKickDescription
 	dw ThiefDescription
 	dw SpiderWebDescription
-	dw MindReaderDescription
+	dw HyperVoiceDescription
 	dw NightmareDescription
 	dw FlameWheelDescription
 	dw SnoreDescription
@@ -383,6 +383,7 @@ SandAttackDescription:
 HeadbuttDescription:
 BiteDescription:
 RockSlideDescription:
+HyperVoiceDescription:
 	db   "May cause the"
 	next "target to flinch.@"
 
@@ -902,7 +903,6 @@ MeanLookDescription:
 	db   "Prevents fleeing"
 	next "or switching.@"
 
-MindReaderDescription:
 LockOnDescription:
 	db   "Ensures the next"
 	next "attack will hit.@"
