@@ -916,7 +916,7 @@ PoliwrathEvosAttacks:
 	db 21, SEISMIC_TOSS
 	db 35, SUBMISSION
 	db 42, VITAL_THROW
-	db 51, MIND_READER
+	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -1560,7 +1560,7 @@ HitmonleeEvosAttacks:
 	db 16, JUMP_KICK
 	db 21, FOCUS_ENERGY
 	db 26, HI_JUMP_KICK
-	db 31, MIND_READER
+	db 31, LOCK_ON
 	db 36, FORESIGHT
 	db 41, ROLLING_KICK
 	db 46, SUBMISSION
@@ -2144,7 +2144,7 @@ ArticunoEvosAttacks:
 	db 1, POWDER_SNOW
 	db 13, MIST
 	db 25, AIR_SLASH
-	db 37, MIND_READER
+	db 37, LOCK_ON
 	db 49, ICE_BEAM
 	db 61, REFLECT
 	db 73, BLIZZARD
@@ -3075,7 +3075,7 @@ UnownEvosAttacks:
 	db 21, SONICBOOM
 	db 26, METRONOME
 	db 33, PSYCH_UP
-	db 37, MIND_READER
+	db 37, LOCK_ON
 	db 42, FUTURE_SIGHT
 	db 51, MINIMIZE
 	db 55, DESTINY_BOND
@@ -3905,7 +3905,7 @@ FinullEvosAttacks:
 	db 1, FORESIGHT
 	db 1, HAZE
 	db 1, DESTINY_BOND
-	db 10, MIND_READER
+	db 10, LOCK_ON
 	db 20, MEAN_LOOK
 	db 30, PERISH_SONG
 	db 40, BIDE
