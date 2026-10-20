@@ -171,7 +171,7 @@ BattleAnimations::
 	dw BattleAnim_TripleKick
 	dw BattleAnim_Thief
 	dw BattleAnim_SpiderWeb
-	dw BattleAnim_MindReader
+	dw BattleAnim_HyperVoice
 	dw BattleAnim_Nightmare
 	dw BattleAnim_FlameWheel
 	dw BattleAnim_Snore
@@ -3285,17 +3285,20 @@ BattleAnim_SpiderWeb:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_MindReader:
-	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_LOCK_ON
+BattleAnim_HyperVoice:
+	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_PSYCHIC
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $1, $20
+	anim_cry $1
 .loop
-	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $3
-	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $12
-	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $20
-	anim_obj ANIM_OBJ_MIND_READER, 132, 48, $31
-	anim_wait 16
-	anim_loop 2, .loop
-	anim_wait 32
+	anim_call BattleAnimSub_Sound
+	anim_wait 2
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 12
+	anim_loop 3, .loop
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Nightmare:
