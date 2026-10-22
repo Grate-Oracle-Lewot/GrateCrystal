@@ -5006,25 +5006,31 @@ Sfx_PetalDance_Ch6:
 	sound_ret
 
 Sfx_BoulderSplash:
-	channel_count 2
+	channel_count 3
 	channel 5, Sfx_BoulderSplash_Ch5
+	channel 6, Sfx_BoulderSplash_Ch6
 	channel 8, Sfx_BoulderSplash_Ch8
 
 Sfx_BoulderSplash_Ch5:
-	duty_cycle_pattern 3, 1, 0, 2
-	square_note 3, 8, 1, 768
-	square_note 3, 12, 1, 1024
-	square_note 3, 15, 1, 1280
-	square_note 3, 11, 1, 1024
-	square_note 3, 7, 1, 768
-	square_note 8, 8, 1, 1024
+	duty_cycle_pattern 0, 3, 2, 1
+	square_note 4, 15, 4, 1536
+	square_note 3, 12, 4, 1280
+	square_note 5, 11, 5, 1536
+	square_note 13, 14, 2, 1728
+	square_note 8, 13, 1, 1536
+	sound_ret
+
+Sfx_BoulderSplash_Ch6:
+	duty_cycle_pattern 2, 0, 3, 1
+	square_note 5, 14, 4, 1504
+	square_note 4, 11, 4, 1248
+	square_note 6, 10, 5, 1512
+	square_note 14, 13, 1, 1696
 	sound_ret
 
 Sfx_BoulderSplash_Ch8:
-	noise_note 3, 6, 2, 34
-	noise_note 3, 10, 2, 50
-	noise_note 3, 13, 2, 51
-	noise_note 3, 9, 2, 35
-	noise_note 3, 5, 2, 18
-	noise_note 8, 8, 1, 18
+	noise_note 5, 12, 3, 51
+	noise_note 3, 9, 2, 67
+	noise_note 10, 11, 5, 51
+	noise_note 15, 12, 3, 50
 	sound_ret
