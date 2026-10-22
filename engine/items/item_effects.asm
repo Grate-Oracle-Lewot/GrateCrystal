@@ -1171,7 +1171,6 @@ EvoStoneEffect:
 VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
-
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
@@ -1183,10 +1182,20 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
-	cp 235
-	jr nc, NoEffectMessage
+	cp $ff
+	jr nz, .not_maxed
+	inc hl
+	ld a, [hld]
+	cp $ff
+	jr z, NoEffectMessage
 
+.not_maxed
 	add 19
+	jr nc, .no_overflow
+	ld a, $ff
+	inc hl
+	ld [hld], a
+.no_overflow
 	ld [hl], a
 	call UpdateStatsAfterItem
 
