@@ -61,7 +61,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, all of which respawn after beating the League if you didn't catch them the first time
 - Slight increase to all experience gains, and experience is now gained from catching Pokémon
-- Stat experience from battles is awarded twice, with the second round using Sp.Def instead of Sp.Atk for the Special experience; vitamins give 1.9x what they used to, and keep working until their stat is near maximized
+- Stat experience from battles is awarded twice, with the second round using Sp.Def instead of Sp.Atk for the Special experience; vitamins give 1.9x what they used to, and keep working until their stat is maximized
 - A completely different Elite Four based on me and my friends/family (Lance is still the Champion)
 - Pseudo-Abilities: there's no proper Ability system and the following effects are not named in-game, but they are described by various NPCs and such. Dual-typed Pokémon can have two type-dependent effects.
   - Levitate: Includes Pokémon that have Levitate in the real games as well as some others that I think should, plus some would-be Flying types who have had their types changed. This effect grants an immunity to some Ground type moves, but not others. The ones that still hit are those not bound to the floor: the bone moves and Mud-Slap. A special up-arrow icon indicates a Levitating Pokémon, shown in battle, on the stats screen, and in the Pokédex.
