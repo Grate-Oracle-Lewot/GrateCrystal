@@ -3292,11 +3292,11 @@ BattleAnim_HyperVoice:
 	anim_cry $1
 .loop
 	anim_call BattleAnimSub_Sound
-	anim_wait 3
+	anim_wait 4
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
-	anim_wait 3
+	anim_wait 4
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
-	anim_wait 10
+	anim_wait 8
 	anim_loop 3, .loop
 	anim_wait 64
 	anim_ret
