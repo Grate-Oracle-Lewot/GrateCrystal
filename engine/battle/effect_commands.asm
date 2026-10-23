@@ -4506,36 +4506,6 @@ BattleCommand_StatUpMessage:
 	text_far _BattleStatWentUpText
 	text_end
 
-BattleCommand_StatDownMessage:
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	ld a, [wLoweredStat]
-	and $f
-	ld b, a
-	inc b
-	call GetStatName
-	ld hl, .stat
-	jp BattleTextbox
-
-.stat
-	text_far Text_BattleFoeEffectActivate
-	text_asm
-	ld hl, .BattleStatFellText
-	ld a, [wLoweredStat]
-	and $f0
-	ret z
-	ld hl, .BattleStatSharplyFellText
-	ret
-
-.BattleStatSharplyFellText:
-	text_far _BattleStatSharplyFellText
-	text_end
-
-.BattleStatFellText:
-	text_far _BattleStatFellText
-	text_end
-
 TryLowerStat:
 ; Lower stat c from stat struct hl (buffer de).
 
@@ -4593,26 +4563,6 @@ BattleCommand_StatUpFailText:
 	inc b
 	call GetStatName
 	ld hl, WontRiseAnymoreText
-	jp StdBattleTextbox
-
-BattleCommand_StatDownFailText:
-	ld a, [wFailedMessage]
-	and a
-	ret z
-	push af
-	call BattleCommand_MoveDelay
-	pop af
-	dec a
-	jp z, TryPrintButItFailed
-	dec a
-	ld hl, ProtectedByMistText
-	jp z, StdBattleTextbox
-	ld a, [wLoweredStat]
-	and $f
-	ld b, a
-	inc b
-	call GetStatName
-	ld hl, WontDropAnymoreText
 	jp StdBattleTextbox
 
 GetStatName:
@@ -6273,53 +6223,118 @@ ResetTurn:
 
 INCLUDE "engine/battle/move_effects/thief.asm"
 
-BattleCommand_ArenaTrap:
-; Mean Look, Spider Web
-
-; Nether works on an absent opponent.
+ArenaTrapFailureConditions:
 	call CheckHiddenOpponent
-	jr nz, .miss
+	ret nz
 
-; Neither works through Protect.
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_PROTECT, [hl]
-	jr nz, .miss
+	ret nz
 
- ; Ghost types are immune to both, including Spider Web's speed drop.
 	ld b, GHOST
 	call CheckIfTargetIsGivenType
-	jr z, .miss
+	jr z, .fail
 
-; Don't trap if the opponent is already trapped (though Spider Web can still lower speed).
+	; return z
+	and a
+	ret
+
+.fail
+	; return nz
+	or 1
+	ret
+
+CheckAlreadyArenaTrapped:
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	bit SUBSTATUS_CANT_RUN, [hl]
-	jr nz, .failed
+	ret
 
-; Otherwise trap the opponent. Spider Web's speed drop is handled separately.
+BattleCommand_MeanLook:
+	call ArenaTrapFailureConditions
+	jr nz, BattleEffect_ButItFailed
+
+	call CheckAlreadyArenaTrapped
+	jr nz, BattleEffect_ButItFailed
+	; fallthrough
+
+ArenaTrap:
 	set SUBSTATUS_CANT_RUN, [hl]
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
-.done
 	jp StdBattleTextbox
-
-.miss
-; Tell Spider Web's speeddown when to fail, since there's no checkhit.
-	ld a, 1
-	ld [wAttackMissed], a
-.failed
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-	cp SPIDER_WEB
-	jr nz, BattleEffect_ButItFailed
-
-; Unlike Mean Look, Spider Web animates even if it fails.
-	call AnimateCurrentMove
-	jr .done
 
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
+
+BattleCommand_SpiderWeb:
+	call ArenaTrapFailureConditions
+	jr nz, BattleEffect_ButItFailed
+
+	call CheckAlreadyArenaTrapped
+	jr nz, .already_trapped
+
+	call ArenaTrap
+	call BattleCommand_SpeedDown
+	jr BattleCommand_StatDownMessage
+
+.already_trapped
+	call BattleCommand_SpeedDown
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	; fallthrough
+
+BattleCommand_StatDownFailText:
+	ld a, [wFailedMessage]
+	and a
+	ret z
+	push af
+	call BattleCommand_MoveDelay
+	pop af
+	dec a
+	jp z, TryPrintButItFailed
+	dec a
+	ld hl, ProtectedByMistText
+	jp z, StdBattleTextbox
+	ld a, [wLoweredStat]
+	and $f
+	ld b, a
+	inc b
+	call GetStatName
+	ld hl, WontDropAnymoreText
+	jp StdBattleTextbox
+
+BattleCommand_StatDownMessage:
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld a, [wLoweredStat]
+	and $f
+	ld b, a
+	inc b
+	call GetStatName
+	ld hl, .stat
+	jp BattleTextbox
+
+.stat
+	text_far Text_BattleFoeEffectActivate
+	text_asm
+	ld hl, .BattleStatFellText
+	ld a, [wLoweredStat]
+	and $f0
+	ret z
+	ld hl, .BattleStatSharplyFellText
+	ret
+
+.BattleStatSharplyFellText:
+	text_far _BattleStatSharplyFellText
+	text_end
+
+.BattleStatFellText:
+	text_far _BattleStatFellText
+	text_end
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 
