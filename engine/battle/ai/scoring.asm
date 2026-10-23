@@ -1096,6 +1096,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_DIG,              AI_Smart_Dig
 	dbw EFFECT_AVALANCHE,        AI_Smart_Avalanche
 	dbw EFFECT_CONVERSION,       AI_Smart_Conversion
+	dbw EFFECT_SPIDER_WEB,       AI_Smart_SpiderWeb
 	db -1 ; end
 
 AI_Smart_Nightmare:
@@ -2606,8 +2607,6 @@ AI_Smart_HealBell:
 	ret
 
 AI_Smart_MeanLook:
-; Mean Look, Spider Web
-
 ; The AI_Basic layer dismisses Mean Look if it's already in effect.
 ; The AI_Status layer dismisses Mean Look if the player is Ghost-type and therefore immune.
 
@@ -2624,9 +2623,9 @@ AI_Smart_MeanLook:
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 
-; 80% chance to highly encourage this move if the player is either in love, identified, stuck in Rollout, or has a Nightmare.
+; 80% chance to highly encourage this move if the player is either in love, stuck in Rollout, Perish Songed, identified, Cursed, or has a Nightmare.
 	ld a, [wPlayerSubStatus1]
-	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
+	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_PERISH | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_CURSE | 1 << SUBSTATUS_NIGHTMARE
 	jr nz, .encourage
 
 ; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
@@ -3686,17 +3685,42 @@ AI_Smart_Focus_Energy:
 	ret c
 	jp AIDismissMove
 
+AI_Smart_SpiderWeb:
+; The AI_Basic layer dismisses Spider Web if the player is Ghost-type and therefore immune.
+
+; If the player is already trapped, treat Spider Web as just a speed-down move.
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_CANT_RUN, a
+	jr nz, AI_Smart_SpeedDown
+
+; If the player has only one Pokemon [remaining], treat Spider Web as just a speed-down move.
+	call AICheckLastPlayerMon
+	jr z, AI_Smart_SpeedDown
+
+; 80% chance to highly encourage this move if the player is badly poisoned.
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TOXIC, a
+	jp nz, AI_Smart_Highly_Encourage
+
+; 80% chance to highly encourage this move if the player is either in love, stuck in Rollout, Perish Songed, identified, Cursed, or has a Nightmare.
+	ld a, [wPlayerSubStatus1]
+	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_PERISH | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_CURSE | 1 << SUBSTATUS_NIGHTMARE
+	jp nz, AI_Smart_Highly_Encourage
+
+; Else treat Spider Web as just a speed-down move.
+	; fallthrough
+
+AI_Smart_SpeedDown:
+; Called by AI_Smart_SpeedControl.
+	ld a, [wPlayerSpdLevel]
+	jr AI_Smart_StatDown
+
 AI_Smart_AttackDown:
 	ld a, [wPlayerAtkLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_DefenseDown:
 	ld a, [wPlayerDefLevel]
-	jr AI_Smart_StatDown
-
-AI_Smart_SpeedDown:
-; Called by AI_Smart_SpeedControl.
-	ld a, [wPlayerSpdLevel]
 	jr AI_Smart_StatDown
 
 AI_Smart_SpAtkDown:
