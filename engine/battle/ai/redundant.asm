@@ -54,6 +54,7 @@ AI_Redundant:
 	dbw EFFECT_FUTURE_SIGHT,  .FutureSight
 	dbw EFFECT_DEFENSE_CURL,  .DefenseUp
 	dbw EFFECT_HAIL,          .Hail
+	dbw EFFECT_SPIDER_WEB,    .SpiderWeb
 	db -1
 
 .LeechHit:
@@ -268,6 +269,14 @@ AI_Redundant:
 	ld a, 1
 	and a
 	ret
+
+.SpiderWeb:
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .Redundant
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jr z, .Redundant
 
 .NotRedundant:
 	xor a
