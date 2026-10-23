@@ -6293,18 +6293,18 @@ BattleCommand_ArenaTrap:
 	bit SUBSTATUS_PROTECT, [hl]
 	jr nz, .miss
 
- ; Ghost types are immune to trapping.
+ ; Ghost types are immune to both, including Spider Web's speed drop.
 	ld b, GHOST
 	call CheckIfTargetIsGivenType
 	jr z, .miss
 
-; Don't trap if the opponent is already trapped.
+; Don't trap if the opponent is already trapped (though Spider Web can still lower speed).
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	bit SUBSTATUS_CANT_RUN, [hl]
 	jr nz, .failed
 
-; Otherwise trap the opponent.
+; Otherwise trap the opponent. Spider Web's speed drop is handled separately.
 	set SUBSTATUS_CANT_RUN, [hl]
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
