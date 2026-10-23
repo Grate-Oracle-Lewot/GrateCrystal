@@ -409,6 +409,7 @@ SandslashEvosAttacks:
 	db 6, DEFENSE_CURL
 	db 11, LICK
 	db 17, METAL_CLAW
+	db 21, PIN_MISSILE
 	db 24, SLASH
 	db 33, SPIKES
 	db 36, DIG
