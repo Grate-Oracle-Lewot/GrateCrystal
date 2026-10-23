@@ -154,8 +154,7 @@ BattleCommand_CheckTurn:
 
 .woke_up
 	ld hl, WokeUpText
-	call StdBattleTextbox
-	call CantMove
+	call StdBattleTextboxCantMove
 	call UpdateBattleMonInParty
 	ld hl, UpdatePlayerHUD
 	call CallBattleCore
@@ -296,9 +295,7 @@ BattleCommand_CheckTurn:
 	; fallthrough
 
 StdBattleTextboxCantMoveEndTurn:
-	call StdBattleTextbox
-CantMoveEndTurn:
-	call CantMove
+	call StdBattleTextboxCantMove
 EndTurn:
 	ld hl, wEffectCarryover
 	res SUBSTITUTE_JUST_BROKE, [hl]
@@ -307,6 +304,8 @@ EndTurn:
 	ld [wTurnEnded], a
 	jp ResetDamage
 
+StdBattleTextboxCantMove:
+	call StdBattleTextbox
 CantMove:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
@@ -369,8 +368,7 @@ CheckEnemyTurn:
 
 .woke_up
 	ld hl, WokeUpText
-	call StdBattleTextbox
-	call CantMove
+	call StdBattleTextboxCantMove
 	call UpdateEnemyMonInParty
 	ld hl, UpdateEnemyHUD
 	call CallBattleCore
@@ -5694,7 +5692,7 @@ BattleCommand_Confuse:
 	call GetItemName
 	call AnimateFailedMove
 	ld hl, ProtectedByText
-	jp StdBattleTextbox
+	jr .optimization
 
 .no_item_protection
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
@@ -5703,6 +5701,7 @@ BattleCommand_Confuse:
 	jr z, .not_already_confused
 	call AnimateFailedMove
 	ld hl, AlreadyConfusedText
+.optimization
 	jp StdBattleTextbox
 
 .not_already_confused
@@ -6114,15 +6113,15 @@ BattleCommand_Screen:
 
 .good
 	call AnimateCurrentMove
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 PrintDoesntAffect:
 	ld hl, DoesntAffectText
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 PrintNothingHappened:
 	ld hl, NothingHappenedText
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 TryPrintButItFailed:
 	ld a, [wAlreadyFailed]
@@ -6132,11 +6131,11 @@ TryPrintButItFailed:
 
 PrintButItFailed:
 	ld hl, ButItFailedText
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 PrintButNobodyJoinedIn:
 	ld hl, ButNobodyJoinedInText
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 FailMove:
 	call AnimateFailedMove
@@ -6146,6 +6145,7 @@ FailMove:
 
 PrintDidntAffect:
 	ld hl, DidntAffectText
+StdBattleTextbox_Optimization:
 	jp StdBattleTextbox
 
 PrintDidntAffect2:
@@ -6158,15 +6158,14 @@ FailText_CheckOpponentProtect:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_PROTECT, a
-	jr z, .not_protected
+	jr z, StdBattleTextbox_Optimization
 	ld h, d
 	ld l, e
-.not_protected
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 PrintParalyze:
 	ld hl, ParalyzedText
-	jp StdBattleTextbox
+	jr StdBattleTextbox_Optimization
 
 CheckSubstituteOpp:
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
@@ -6297,13 +6296,14 @@ BattleCommand_StatDownFailText:
 	jp z, TryPrintButItFailed
 	dec a
 	ld hl, ProtectedByMistText
-	jp z, StdBattleTextbox
+	jr z, .text
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
 	inc b
 	call GetStatName
 	ld hl, WontDropAnymoreText
+.text
 	jp StdBattleTextbox
 
 BattleCommand_StatDownMessage:
@@ -6450,12 +6450,13 @@ BattleCommand_Synthesis:
 	call UpdateUserInParty
 
 	ld hl, RegainedHealthText
+.optimization
 	jp StdBattleTextbox
 
 .Full:
 	call AnimateFailedMove
 	ld hl, HPIsFullText
-	jp StdBattleTextbox
+	jr .optimization
 
 .Multipliers:
 	dw GetQuarterMaxHP
