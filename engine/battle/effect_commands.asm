@@ -186,7 +186,7 @@ BattleCommand_CheckTurn:
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
-	jp StdBattleTextboxCantMoveEndTurn
+	jr .optimization
 
 .not_frozen
 	ld hl, wPlayerSubStatus3
@@ -195,6 +195,7 @@ BattleCommand_CheckTurn:
 
 	res SUBSTATUS_FLINCHED, [hl]
 	ld hl, FlinchedText
+.optimization
 	jp StdBattleTextboxCantMoveEndTurn
 
 .not_flinched
