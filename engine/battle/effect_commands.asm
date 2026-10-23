@@ -395,7 +395,7 @@ CheckEnemyTurn:
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
-	jp StdBattleTextboxCantMoveEndTurn
+	jr .optimization
 
 .not_frozen
 	ld hl, wEnemySubStatus3
@@ -404,6 +404,7 @@ CheckEnemyTurn:
 
 	res SUBSTATUS_FLINCHED, [hl]
 	ld hl, FlinchedText
+.optimization
 	jp StdBattleTextboxCantMoveEndTurn
 
 .not_flinched
