@@ -81,6 +81,7 @@ Credits::
 	ld a, $5
 	ldh [hVBlank], a
 	xor a
+	ldh [hInMenu], a
 	ldh [hBGMapMode], a
 	ld [wCreditsPos], a
 	ld [wCreditsPos + 1], a
