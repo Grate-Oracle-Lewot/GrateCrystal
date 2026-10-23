@@ -79,7 +79,7 @@ ENDM
 	command triplekick              ; 48
 	command kickcounter             ; 49
 	command thief                   ; 4a
-	command arenatrap               ; 4b
+	command meanlook                ; 4b
 	command nightmare               ; 4c
 	command flamewheel              ; 4d
 	command curse                   ; 4e
@@ -175,6 +175,7 @@ ENDM
 	command conversion              ; a8
 	command eggbomb                 ; a9
 	command doublehelditemdamage    ; aa
+	command spiderweb               ; ab
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
