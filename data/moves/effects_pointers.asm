@@ -147,4 +147,5 @@ MoveEffectsPointers:
 	dw Avalanche
 	dw Conversion
 	dw EggBomb
+	dw SpiderWeb
 	assert_table_length NUM_MOVE_EFECTS
