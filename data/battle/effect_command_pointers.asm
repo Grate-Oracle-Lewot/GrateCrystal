@@ -79,7 +79,7 @@ BattleCommandPointers:
 	dw BattleCommand_TripleKick
 	dw BattleCommand_KickCounter
 	dw BattleCommand_Thief
-	dw BattleCommand_ArenaTrap
+	dw BattleCommand_MeanLook
 	dw BattleCommand_Nightmare
 	dw BattleCommand_FlameWheel
 	dw BattleCommand_Curse
@@ -175,4 +175,5 @@ BattleCommandPointers:
 	dw BattleCommand_Conversion
 	dw BattleCommand_EggBomb
 	dw BattleCommand_DoubleHeldItemDamage
+	dw BattleCommand_SpiderWeb
 	assert_table_length NUM_EFFECT_COMMANDS
