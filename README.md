@@ -227,7 +227,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage. This bypasses accuracy checks, and even works on Flying types and pseudo-Levitaters, who dodge the actual Spikes damage.
 
-- Spider Web now lowers the target's Speed in addition to trapping them. Ghost-types, due to their trapping immunity, are also immune to the Speed drop, but the Speed drop otherwise ignores accuracy (barring Protect, Fly, Dig, etc.).
+- Spider Web now lowers the target's Speed in addition to trapping them. Ghost-types, due to their trapping immunity, are also immune to the Speed drop, but the Speed drop otherwise ignores accuracy (barring Protect, Fly, Dig, etc.). Spider Web can be used if the target is already trapped in order to lower their Speed further.
 
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
