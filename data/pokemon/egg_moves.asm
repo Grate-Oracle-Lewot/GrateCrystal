@@ -584,6 +584,7 @@ LedybaEggMoves:
 	db -1 ; end
 
 SpinarakEggMoves:
+	db PIN_MISSILE
 	db DISABLE
 	db FAINT_ATTACK
 	db SIGNAL_BEAM
