@@ -6283,19 +6283,20 @@ INCLUDE "engine/battle/move_effects/thief.asm"
 BattleCommand_ArenaTrap:
 ; Mean Look, Spider Web
 
-	ld b, GHOST ; Ghost types are immune to trapping
-	call CheckIfTargetIsGivenType
-	jr z, .failed
-
-; Doesn't work on an absent opponent.
+; Nether works on an absent opponent.
 	call CheckHiddenOpponent
-	jr nz, .failed
+	jr nz, .miss
 
-; Doesn't work through Protect.
+; Neither works through Protect.
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_PROTECT, [hl]
-	jr nz, .failed
+	jr nz, .miss
+
+ ; Ghost types are immune to trapping.
+	ld b, GHOST
+	call CheckIfTargetIsGivenType
+	jr z, .miss
 
 ; Don't trap if the opponent is already trapped.
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -6307,9 +6308,23 @@ BattleCommand_ArenaTrap:
 	set SUBSTATUS_CANT_RUN, [hl]
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
+.done
 	jp StdBattleTextbox
 
+.miss
+; Tell Spider Web's speeddown when to fail, since there's no checkhit.
+	ld a, 1
+	ld [wAttackMissed], a
 .failed
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp SPIDER_WEB
+	jr nz, .not_spider_web
+
+; Unlike Mean Look, Spider Web animates even if it fails.
+	call AnimateCurrentMove
+	jr .done
+
+.not_spider_web
 	call AnimateFailedMove
 	jp PrintButItFailed
 
