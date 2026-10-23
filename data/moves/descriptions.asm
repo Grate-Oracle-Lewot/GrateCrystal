@@ -899,9 +899,8 @@ ThiefDescription:
 	next "doubling damage.@"
 
 SpiderWebDescription:
-MeanLookDescription:
-	db   "Prevents fleeing"
-	next "or switching.@"
+	db   "Traps the foe and"
+	next "drops their SPEED.@"
 
 LockOnDescription:
 	db   "Ensures the next"
@@ -1044,6 +1043,10 @@ FuryCutterDescription:
 SteelWingDescription:
 	db   "High crit rate."
 	next "May raise DEFENSE.@"
+
+MeanLookDescription:
+	db   "Prevents fleeing"
+	next "or switching.@"
 
 AttractDescription:
 	db   "Opposite gender is"
