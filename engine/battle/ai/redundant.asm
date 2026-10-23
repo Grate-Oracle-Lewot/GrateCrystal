@@ -216,12 +216,6 @@ AI_Redundant:
 	jr z, .Redundant
 	jr .NotRedundant
 
-.Sandstorm:
-	ld a, [wBattleWeather]
-	cp WEATHER_SANDSTORM
-	jr z, .Redundant
-	jr .NotRedundant
-
 .Attract:
 	farcall CheckOppositeGender
 	jr c, .Redundant
@@ -241,24 +235,6 @@ AI_Redundant:
 .BatonPass:
 	farcall AICheckLastEnemyMon
 	jr c, .Redundant
-	jr .NotRedundant
-
-.RainDance:
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	jr z, .Redundant
-	jr .NotRedundant
-
-.SunnyDay:
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .Redundant
-	jr .NotRedundant
-
-.Hail:
-	ld a, [wBattleWeather]
-	cp WEATHER_HAIL
-	jr z, .Redundant
 	jr .NotRedundant
 
 .Heal:
@@ -281,3 +257,27 @@ AI_Redundant:
 .NotRedundant:
 	xor a
 	ret
+
+.RainDance:
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .Redundant
+	jr .NotRedundant
+
+.SunnyDay:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .Redundant
+	jr .NotRedundant
+
+.Sandstorm:
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr z, .Redundant
+	jr .NotRedundant
+
+.Hail:
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .Redundant
+	jr .NotRedundant
