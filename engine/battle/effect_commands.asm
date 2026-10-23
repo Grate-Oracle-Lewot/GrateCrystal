@@ -295,7 +295,9 @@ BattleCommand_CheckTurn:
 	; fallthrough
 
 StdBattleTextboxCantMoveEndTurn:
-	call StdBattleTextboxCantMove
+	call StdBattleTextbox
+CantMoveEndTurn:
+	call CantMove
 EndTurn:
 	ld hl, wEffectCarryover
 	res SUBSTITUTE_JUST_BROKE, [hl]
