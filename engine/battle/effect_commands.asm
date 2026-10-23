@@ -5000,7 +5000,7 @@ BattleCommand_ForceSwitch:
 	cp b
 	jr nc, .wild_force_flee
 .missed
-	jp .fail
+	jp BattleEffect_ButItFailed
 
 .wild_force_flee
 	call UpdateBattleMonInParty
@@ -5090,7 +5090,7 @@ BattleCommand_ForceSwitch:
 	cp b
 	jr nc, .wild_succeed_playeristarget
 .player_miss
-	jr .fail
+	jp BattleEffect_ButItFailed
 
 .wild_succeed_playeristarget
 	call UpdateBattleMonInParty
@@ -5104,11 +5104,11 @@ BattleCommand_ForceSwitch:
 
 .vs_trainer
 	call CheckPlayerHasMonToSwitchTo
-	jr c, .fail
+	jr c, .player_miss
 
 	ld a, [wEnemyGoesFirst]
 	cp $1
-	jr z, .fail
+	jr z, .player_miss
 
 	call UpdateBattleMonInParty
 	ld a, $1
@@ -5154,10 +5154,6 @@ BattleCommand_ForceSwitch:
 
 	ld hl, HandleApricornsAndSpikes
 	jp CallBattleCore
-
-.fail
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 .succeed
 	push af
@@ -6104,10 +6100,6 @@ BattleCommand_Heal:
 
 INCLUDE "engine/battle/move_effects/transform.asm"
 
-BattleEffect_ButItFailed:
-	call AnimateFailedMove
-	jp PrintButItFailed
-
 ClearLastMove:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
 	call GetBattleVarAddr
@@ -6318,13 +6310,13 @@ BattleCommand_ArenaTrap:
 .failed
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp SPIDER_WEB
-	jr nz, .not_spider_web
+	jr nz, BattleEffect_ButItFailed
 
 ; Unlike Mean Look, Spider Web animates even if it fails.
 	call AnimateCurrentMove
 	jr .done
 
-.not_spider_web
+BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
