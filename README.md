@@ -227,6 +227,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - If you use Spikes while Spikes are already up, it lowers the opponent's Evasion by one stage. This bypasses accuracy checks, and even works on Flying types and pseudo-Levitaters, who dodge the actual Spikes damage.
 
+- Spider Web now lowers the target's Speed in addition to trapping them. Ghost-types, due to their trapping immunity, are also immune to the Speed drop, but the Speed drop otherwise ignores accuracy (barring Protect, Fly, Dig, etc.).
+
 - The effects of Teleport and Baton Pass are combined: either move will act like Teleport in a wild battle and Baton Pass in a trainer battle. Against a wild Pokémon, if the player has more than one party member, either move will act like Baton Pass, but with only one they will act like Teleport. Teleport still has its out-of-battle effect, but Baton Pass doesn't get that.
 
 - Conversion now also has the effect of Conversion2: the user will become a dual-type, with the first type matching a random one of the user's moves, and the second being a random type with a resistance or immunity to the foe's last attack. If the Conversion(1) half of the effect fails, the Conversion2 half may still work, changing the second type while leaving the first intact (regardless of whether the first has been converted or is just the natural type). If the Conversion(1) half succeeds but the Conversion2 half fails, the user becomes a monotype.
