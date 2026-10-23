@@ -4203,7 +4203,12 @@ MinimizeDropSub:
 	ldh [hBGMapMode], a
 	call CallBattleCore
 	call WaitBGMap
-	jp BattleCommand_MoveDelay
+	; fallthrough
+
+BattleCommand_MoveDelay:
+; Pause between actions.
+	ld c, 19
+	jp DelayFrames
 
 RaiseStat:
 	ld a, b
@@ -6669,11 +6674,6 @@ PlayOpponentBattleAnim:
 	pop de
 	pop hl
 	ret
-
-BattleCommand_MoveDelay:
-; Pause between actions.
-	ld c, 19
-	jp DelayFrames
 
 BattleCommand_ClearText:
 ; Used in multi-hit moves.
