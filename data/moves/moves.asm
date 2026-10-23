@@ -209,7 +209,7 @@ Moves:
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,       STATUS,   100 percent,      1,   0
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        15, FIGHTING,     PHYSICAL, 100 percent,     10,   0
 	move THIEF,        EFFECT_THIEF,              40, DARK,         PHYSICAL, 100 percent,     25, 100 percent
-	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,          STATUS,   100 percent,      5,   0
+	move SPIDER_WEB,   EFFECT_SPIDER_WEB,          0, BUG,          STATUS,   100 percent,     10,   0
 	move HYPER_VOICE,  EFFECT_FLINCH_HIT,         90, NORMAL,       SPECIAL,   90 percent + 2, 15,  20 percent + 1
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,        STATUS,    50 percent + 1, 10,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,         PHYSICAL, 100 percent,     20,   0
