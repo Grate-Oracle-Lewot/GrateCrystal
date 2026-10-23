@@ -168,11 +168,6 @@ AI_Redundant:
 	ld bc, wEnemyDefense
 	jr .Stat_Up
 
-.SpeedUp:
-	ld a, [wEnemySpdLevel]
-	ld bc, wEnemySpeed
-	jr .Stat_Up
-
 .SpAtkUp:
 	ld a, [wEnemySAtkLevel]
 	ld bc, wEnemySpAtk
@@ -181,6 +176,11 @@ AI_Redundant:
 .SpDefUp:
 	ld a, [wEnemySDefLevel]
 	ld bc, wEnemySpDef
+	jr .Stat_Up
+
+.SpeedUp:
+	ld a, [wEnemySpdLevel]
+	ld bc, wEnemySpeed
 	; fallthrough
 
 .Stat_Up:
