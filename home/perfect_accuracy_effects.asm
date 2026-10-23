@@ -45,4 +45,5 @@ PerfectAccuracyEffects::
 	db EFFECT_DEFENSE_CURL
 	db EFFECT_HAIL
 	db EFFECT_CONVERSION
+	db EFFECT_SPIDER_WEB
 	db -1 ; end
