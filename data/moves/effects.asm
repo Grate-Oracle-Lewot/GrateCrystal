@@ -1451,7 +1451,7 @@ MeanLook:
 	checkobedience
 	usedmovetext
 	doturn
-	arenatrap
+	meanlook
 	endmove
 
 Nightmare:
@@ -2128,11 +2128,5 @@ SpiderWeb:
 	checkobedience
 	usedmovetext
 	doturn
-	arenatrap
-	speeddown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	spiderweb
 	endmove
