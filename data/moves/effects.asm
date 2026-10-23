@@ -2123,3 +2123,16 @@ Conversion:
 	doturn
 	conversion
 	endmove
+
+SpiderWeb:
+	checkobedience
+	usedmovetext
+	doturn
+	arenatrap
+	speeddown
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove
