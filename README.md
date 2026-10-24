@@ -618,7 +618,7 @@ Tom Wang - male player running frames
 
 Seasick/Mauve Sea - female player running frames, Mary sprites
 
-FrenchOrange - walking frames for Karen, ship captain, and Safari Zone Worker (Engineer)
+FrenchOrange - walking frames for Karen, ship captain, and Safari Zone Worker (Engineer), and Kanto Nurse sprites
 
 TriteHexagon - demixes for Cynthia and Miror B. battles, Gen III contest and Dive themes, ruined Cinnabar, Ice Path remix, Cave of Origin, and multiple trainer encounter themes
 
