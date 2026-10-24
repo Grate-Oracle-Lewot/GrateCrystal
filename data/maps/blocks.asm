@@ -246,17 +246,6 @@ BlackthornMart_Blocks:
 Route10North_Blocks:
 	INCBIN "maps/Route10North.blk"
 
-ViridianPokecenter1F_Blocks:
-PewterPokecenter1F_Blocks:
-Route3Pokecenter1F_Blocks:
-CeruleanPokecenter1F_Blocks:
-VermilionPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
-LavenderPokecenter1F_Blocks:
-CeladonPokecenter1F_Blocks:
-SaffronPokecenter1F_Blocks:
-FuchsiaPokecenter1F_Blocks:
-CinnabarPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
 VioletPokecenter1F_Blocks:
 Route32Pokecenter1F_Blocks:
@@ -1005,3 +994,16 @@ SafariZoneE_Blocks:
 
 SafariZoneN_Blocks:
 	INCBIN "maps/SafariZoneN.blk"
+
+ViridianPokecenter1F_Blocks:
+PewterPokecenter1F_Blocks:
+Route3Pokecenter1F_Blocks:
+CeruleanPokecenter1F_Blocks:
+VermilionPokecenter1F_Blocks:
+Route10Pokecenter1F_Blocks:
+LavenderPokecenter1F_Blocks:
+CeladonPokecenter1F_Blocks:
+SaffronPokecenter1F_Blocks:
+FuchsiaPokecenter1F_Blocks:
+CinnabarPokecenter1F_Blocks:
+	INCBIN "maps/KantoPokecenter1F.blk"
