@@ -193,8 +193,6 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - HM moves are better in battle, and a few moves have had their effects changed completely. Cut is now basically X-Scissor, Flash is Flash Cannon, Lovely Kiss is Draining Kiss, Hyper Fang also drains HP, Low Kick lowers Evasion (in addition to damaging), Leer lowers Special Defense, Kinesis sharply raises Special Attack, Cotton Spore sharply lowers Special Attack, Sky Attack flies up on the first turn like Fly and can hit an opponent who's currently flying, etc.
 
-- Roar can now be used outside of battle, which has the same effect as using a Repel. It has no step count, but is reset whenever you change maps.
-
 - With the removal of Morning Sun and Moonlight, their remaining counterpart Synthesis is now just weather-dependent, not time-of-day-dependent.
 
 - Nightmare now inflicts both Sleep and the Nightmare status all in one turn. Since this is powerful, it now has low accuracy, but if the target is already asleep, the Nightmare status will be inflicted without fail, just like how the move worked before.
@@ -248,6 +246,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Reflect, Light Screen, Safeguard, and weather moves can be used even if they're already in effect, resetting their turn counts to 5. The computer still avoids using them if they're already up.
 
 - Metronome can now turn into moves that the user already knows.
+
+- Roar can now be used outside of battle, which has the same effect as using a Repel. It has no step count, but is reset whenever you change maps.
 
 - When Sweet Scent is used outside of battle, the wild Pokémon encountered will have its level set to the level of the first Pokémon in your party plus or minus 2 (accounting for underflow or overflow). This is inspired by Polished Crystal's Sweet Honey.
 
