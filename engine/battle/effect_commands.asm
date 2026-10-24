@@ -6244,12 +6244,13 @@ ArenaTrapFailureConditions:
 	jr z, .fail
 
 	; return z
-	and a
+	cp a
 	ret
 
 .fail
 	; return nz
-	or 1
+	; no type can = 255 because the high bytes are used for the phys/spec mask
+	inc a
 	ret
 
 CheckAlreadyArenaTrapped:
