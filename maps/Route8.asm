@@ -118,8 +118,7 @@ BikerHarrisAfterBattleText:
 BikerZekeSeenText:
 	text "We're the KANTO"
 	line "#MON FEDERA-"
-	cont "TION!"
-	cont "Right on!"
+	cont "TION! Right on!"
 	done
 
 BikerZekeBeatenText:
