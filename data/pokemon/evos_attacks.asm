@@ -458,7 +458,7 @@ NidoqueenEvosAttacks:
 	db 1, DOUBLE_KICK
 	db 1, TAIL_WHIP
 	db 23, BODY_SLAM
-	db 35, SLUDGE_BOMB
+	db 35, SLUDGE
 	db 46, EARTH_POWER
 	db 50, BELLY_DRUM
 	db 60, FISSURE
@@ -999,7 +999,7 @@ BellsproutEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, SLEEP_POWDER
 	db 23, ACID
-	db 29, SWORDS_DANCE
+	db 26, SLUDGE
 	db 30, RAZOR_LEAF
 	db 37, SLUDGE_BOMB
 	db 45, SLAM
@@ -1016,7 +1016,7 @@ WeepinbellEvosAttacks:
 	db 17, POISONPOWDER
 	db 19, SLEEP_POWDER
 	db 24, ACID
-	db 32, SWORDS_DANCE
+	db 29, SLUDGE
 	db 34, RAZOR_LEAF
 	db 42, SLUDGE_BOMB
 	db 54, SLAM
