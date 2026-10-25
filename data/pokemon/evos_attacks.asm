@@ -3019,7 +3019,7 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 5, METAL_SOUND
+	db 6, METAL_SOUND
 	db 11, PURSUIT
 	db 16, SPIKES
 	db 21, WING_ATTACK
@@ -3158,16 +3158,16 @@ DunsparceEvosAttacks:
 GligarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 3, WING_ATTACK
-	db 6, SAND_ATTACK
-	db 13, HARDEN
+	db 3, HARDEN
+	db 6, WING_ATTACK
+	db 13, SAND_ATTACK
 	db 16, VICEGRIP
 	db 20, SCREECH
 	db 28, FURY_ATTACK
 	db 32, SLASH
 	db 36, SEISMIC_TOSS
-	db 44, SKY_ATTACK
-	db 50, SWORDS_DANCE
+	db 44, SWORDS_DANCE
+	db 50, SKY_ATTACK
 	db 56, GUILLOTINE
 	db 64, CRABHAMMER
 	db 0 ; no more level-up moves
