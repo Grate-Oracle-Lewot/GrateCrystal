@@ -233,7 +233,7 @@ JessieJames1SeenText:
 JessieJames1BeatenText:
 	text "Looks like TEAM"
 	line "ROCKET's blasting"
-	cont "off again!"
+	cont "oooooff!"
 	done
 
 JessieJames1AfterBattleText:
