@@ -62,7 +62,7 @@ TrainerYoungsterJoey:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, YOUNGSTER, JOEY1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 	sjump .NumberAccepted
 
 .Rematch:
@@ -128,9 +128,6 @@ TrainerYoungsterJoey:
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
