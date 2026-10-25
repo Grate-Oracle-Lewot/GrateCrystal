@@ -74,7 +74,6 @@ TrainerPokemaniacBrent:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -107,27 +106,21 @@ TrainerPokemaniacBrent:
 
 .AskNumber1:
 	jumpstd AskNumber1MScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-	end
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
-	end
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullMScript
-	end
 
 .Rematch:
 	jumpstd RematchMScript
-	end
 
 TrainerPokemaniacRon:
 	trainer POKEMANIAC, RON, EVENT_BEAT_POKEMANIAC_RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, .Script
@@ -181,7 +174,6 @@ TrainerPicnickerTiffany:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -222,35 +214,27 @@ TrainerPicnickerTiffany:
 
 .AskNumber1:
 	jumpstd AskNumber1FScript
-	end
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-	end
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
-	end
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
-	end
 
 .PhoneFull:
 	jumpstd PhoneFullFScript
-	end
 
 .Rematch:
 	jumpstd RematchFScript
-	end
 
 .Gift:
 	jumpstd GiftFScript
-	end
 
 .PackFull:
 	jumpstd PackFullFScript
-	end
 
 Route43Sign1:
 	jumptext Route43Sign1Text
