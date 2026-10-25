@@ -212,7 +212,7 @@ Route22HouseJessieScript:
 	waitbutton
 	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES4
+	loadtrainer JESSIE, JAMES5
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -235,7 +235,7 @@ Route22HouseJamesScript:
 	waitbutton
 	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES4
+	loadtrainer JESSIE, JAMES5
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
