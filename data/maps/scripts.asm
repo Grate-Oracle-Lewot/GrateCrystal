@@ -177,9 +177,6 @@ INCLUDE "maps/LavenderSpeechHouse.asm"
 INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
-INCLUDE "maps/LavRadioTower1F.asm"
-INCLUDE "maps/Route8SaffronGate.asm"
-INCLUDE "maps/SafariZoneE.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -518,3 +515,10 @@ INCLUDE "maps/OaksLab2F.asm"
 INCLUDE "maps/Gate2F.asm"
 INCLUDE "maps/CeruleanJeweler.asm"
 INCLUDE "maps/SafariZoneN.asm"
+
+
+SECTION "Map Scripts 29", ROMX
+
+INCLUDE "maps/LavRadioTower1F.asm"
+INCLUDE "maps/Route8SaffronGate.asm"
+INCLUDE "maps/SafariZoneE.asm"
