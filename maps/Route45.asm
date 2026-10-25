@@ -42,7 +42,7 @@ TrainerBlackbeltKenji:
 	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BLACKBELT_T, KENJI
-	scall Route45RegisteredNumberM
+	scall Route45RegisteredNumber
 	sjump Route45NumberAcceptedM
 
 .Registered:
@@ -78,9 +78,6 @@ Route45AskNumber1M:
 Route45AskNumber2M:
 	jumpstd AskNumber2MScript
 
-Route45RegisteredNumberM:
-	jumpstd RegisteredNumberMScript
-
 Route45NumberAcceptedM:
 	jumpstd NumberAcceptedMScript
 
@@ -95,6 +92,9 @@ Route45RematchM:
 
 Route45GiftM:
 	jumpstd GiftMScript
+
+Route45RegisteredNumber:
+	jumpstd RegisteredNumberScript
 
 HikerParryHasIron:
 	setevent EVENT_PARRY_IRON
@@ -147,7 +147,7 @@ TrainerHikerParry:
 	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
 	gettrainername STRING_BUFFER_3, HIKER, PARRY1
-	scall Route45RegisteredNumberM
+	scall Route45RegisteredNumber
 	sjump Route45NumberAcceptedM
 
 .WantsBattle:
