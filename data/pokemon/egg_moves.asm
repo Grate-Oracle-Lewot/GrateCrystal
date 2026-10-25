@@ -730,7 +730,6 @@ WooperEggMoves:
 MurkrowEggMoves:
 	db HYPER_VOICE
 	db WHIRLWIND
-	db HAZE
 	db QUICK_ATTACK
 	db SILVER_WIND
 	db BEAT_UP
