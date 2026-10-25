@@ -128,7 +128,7 @@ TrainerBirdKeeperJose:
 	jumpstd AskNumber2MScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
@@ -226,7 +226,7 @@ TrainerCooltrainerfReena:
 	jumpstd AskNumber2FScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
