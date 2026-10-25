@@ -101,6 +101,7 @@ Route22HouseKarenScript:
 	sjump Route22House_EndText
 
 .DoBattle:
+	closetext
 	winlosstext Route22HouseKarenBeatenText, 0
 	loadtrainer KAREN, KAREN1
 	startbattle
@@ -129,6 +130,7 @@ Route22HouseKogaScript:
 	sjump Route22House_EndText
 
 .DoBattle:
+	closetext
 	winlosstext Route22HouseKogaBeatenText, 0
 	loadtrainer KOGA, KOGA1
 	startbattle
@@ -154,6 +156,7 @@ Route22HouseLanceScript:
 	sjump Route22House_EndText
 
 .DoBattle:
+	closetext
 	winlosstext Route22HouseLanceBeatenText, 0
 	loadtrainer CHAMPION, LANCE2
 	startbattle
@@ -184,6 +187,7 @@ Route22HouseGiovanniScript:
 	playmusic MUSIC_GIOVANNI_ENCOUNTER
 	writetext Route22HouseGiovanniBeforeText
 	waitbutton
+	closetext
 	winlosstext Route22HouseGiovanniBeatenText, 0
 	loadtrainer OUTLAW, GIOVANNI
 	startbattle
@@ -206,6 +210,7 @@ Route22HouseJessieScript:
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	writetext Route22HouseJessieBeforeText
 	waitbutton
+	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
 	loadtrainer JESSIE, JAMES4
 	startbattle
@@ -228,6 +233,7 @@ Route22HouseJamesScript:
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	writetext Route22HouseJamesBeforeText
 	waitbutton
+	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
 	loadtrainer JESSIE, JAMES4
 	startbattle
