@@ -75,7 +75,7 @@ TrainerJugglerIrwin:
 	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
-	scall Route35RegisteredNumberM
+	scall Route35RegisteredNumber
 	; fallthrough
 
 Route35NumberAcceptedM:
@@ -87,9 +87,6 @@ Route35AskNumber1M:
 Route35AskNumber2M:
 	jumpstd AskNumber2MScript
 
-Route35RegisteredNumberM:
-	jumpstd RegisteredNumberMScript
-
 Route35NumberDeclinedM:
 	jumpstd NumberDeclinedMScript
 
@@ -98,6 +95,9 @@ Route35PhoneFullM:
 
 Route35RematchM:
 	jumpstd RematchMScript
+
+Route35RegisteredNumber:
+	jumpstd RegisteredNumberScript
 
 TrainerCamperIvan:
 	trainer CAMPER, IVAN, EVENT_BEAT_CAMPER_IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
@@ -168,7 +168,7 @@ TrainerBugCatcherArnie:
 	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, ARNIE1
-	scall Route35RegisteredNumberM
+	scall Route35RegisteredNumber
 	sjump Route35NumberAcceptedM
 
 .WantsBattle:
