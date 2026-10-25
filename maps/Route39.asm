@@ -61,7 +61,6 @@ TrainerPokefanmDerek:
 	scall .RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
-	end
 
 .WantsBattle:
 	scall .Rematch
@@ -94,7 +93,7 @@ TrainerPokefanmDerek:
 	jumpstd AskNumber2MScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
