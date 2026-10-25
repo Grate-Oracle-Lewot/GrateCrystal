@@ -37,7 +37,7 @@ TrainerHikerAnthony:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, HIKER, ANTHONY1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -81,9 +81,6 @@ TrainerHikerAnthony:
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
