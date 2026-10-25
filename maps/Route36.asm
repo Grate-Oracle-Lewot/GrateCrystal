@@ -76,6 +76,7 @@ else
 endc
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
+	setevent EVENT_GOLDENROD_UNDERGROUND_JESSIE_JAMES
 	ifequal DRAW, DidntCatchSudowoodo
 	disappear ROUTE36_SUDOWOODO
 	reloadmapafterbattle
