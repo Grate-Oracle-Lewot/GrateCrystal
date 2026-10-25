@@ -118,6 +118,7 @@ OddishEggMoves:
 	db SWORDS_DANCE
 	db RAZOR_LEAF
 	db GROWTH
+	db SLUDGE
 	db ACID
 	db LEECH_SEED
 	db -1 ; end
@@ -223,6 +224,7 @@ MachopEggMoves:
 	db -1 ; end
 
 BellsproutEggMoves:
+	db SWORDS_DANCE
 	db SYNTHESIS
 	db ENCORE
 	db LEECH_SEED
@@ -408,6 +410,7 @@ KangaskhanEggMoves:
 	db -1 ; end
 
 HorseaEggMoves:
+	db SLUDGE
 	db FLAIL
 	db DISABLE
 	db DRAGON_RAGE
@@ -715,6 +718,7 @@ YanmaEggMoves:
 	db -1 ; end
 
 WooperEggMoves:
+	db SLUDGE
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db SAFEGUARD
@@ -870,6 +874,7 @@ CorsolaEggMoves:
 	db -1 ; end
 
 RemoraidEggMoves:
+	db SLUDGE
 	db SCREECH
 	db SUPERSONIC
 	db SONICBOOM
