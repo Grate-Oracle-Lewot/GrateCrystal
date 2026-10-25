@@ -280,7 +280,7 @@ RocketText_Jessie:
 	line "toll duty after"
 
 	para "what you did to"
-	line "us at the WELL."
+	line "us last time."
 
 	para "We'll get you back"
 	line "some day!"
