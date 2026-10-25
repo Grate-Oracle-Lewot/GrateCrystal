@@ -809,6 +809,7 @@ KRIS EQU __trainer_class__
 	const JAMES1
 	const JAMES2
 	const JAMES3
+	const JAMES4
 
 	trainerclass EXECUTIVEM ; 51
 	const EXECUTIVEM_1
