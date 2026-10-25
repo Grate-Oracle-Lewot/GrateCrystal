@@ -34,24 +34,36 @@ RocketScript_Southbound:
 	applymovement ROUTE43GATE_JESSIE, Rocket1Script_BlocksYouSouth
 	opentext
 	writetext RocketText_TollFee
-	promptbutton
+	yesorno
+	iffalse RocketScript_BattleSouth
 	checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1
 	ifequal HAVE_MORE, RocketScript_TollSouth
-	sjump RocketScript_YoureBrokeSouth
-
-RocketScript_TollSouth:
-	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
-	writetext RocketText_ThankYou
-	sjump RocketScript_ShakeDownSouth
+	; fallthrough
 
 RocketScript_YoureBrokeSouth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
+	sjump RocketScript_ShakeDownSouth
+
+RocketScript_BattleSouth:
+	writetext RocketText_SaidNo
+	waitbutton
+	closetext
+	winlosstext JessieJames2BeatenText, 0
+	loadtrainer JESSIE, JAMES2
+	startbattle
+	reloadmapafterbattle
+	sjump RocketScript_ShakeDownSouth_AfterBattle
+
+RocketScript_TollSouth:
+	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
+	writetext RocketText_ThankYou
 	; fallthrough
 
 RocketScript_ShakeDownSouth:
 	promptbutton
 	closetext
+RocketScript_ShakeDownSouth_AfterBattle:
 	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassSouth
 	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassSouth
 	setscene SCENE_FINISHED
@@ -66,24 +78,36 @@ RocketScript_Northbound:
 	applymovement ROUTE43GATE_JAMES, Rocket2Script_BlocksYouNorth
 	opentext
 	writetext RocketText_TollFee
-	promptbutton
+	yesorno
+	iffalse RocketScript_BattleNorth
 	checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1
 	ifequal HAVE_MORE, RocketScript_TollNorth
-	sjump RocketScript_YoureBrokeNorth
-
-RocketScript_TollNorth:
-	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
-	writetext RocketText_ThankYou
-	sjump RocketScript_ShakeDownNorth
+	; fallthrough
 
 RocketScript_YoureBrokeNorth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
 	writetext RocketText_AllYouGot
+	sjump RocketScript_ShakeDownNorth
+
+RocketScript_BattleNorth:
+	writetext RocketText_SaidNo
+	waitbutton
+	closetext
+	winlosstext JessieJames2BeatenText, 0
+	loadtrainer JESSIE, JAMES2
+	startbattle
+	reloadmapafterbattle
+	sjump RocketScript_ShakeDownNorth_AfterBattle
+
+RocketScript_TollNorth:
+	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
+	writetext RocketText_ThankYou
 	; fallthrough
 
 RocketScript_ShakeDownNorth:
 	promptbutton
 	closetext
+RocketScript_ShakeDownNorth_AfterBattle:
 	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassNorth
 	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassNorth
 	setscene SCENE_FINISHED
@@ -188,6 +212,9 @@ RocketText_TollFee:
 
 	para "The toll is ¥{d:ROUTE43GATE_TOLL}"
 	line "to go through."
+
+	para "Are you gonna pony"
+	line "up?"
 	done
 
 RocketText_ThankYou:
@@ -201,6 +228,51 @@ RocketText_AllYouGot:
 
 	para "Then we'll take it"
 	line "all, brat!"
+	done
+
+RocketText_SaidNo:
+	text "Hee hee hee…"
+	line "In that case…"
+
+	para "JESSIE: Prepare"
+	line "for trouble!"
+
+	para "JAMES: Make it"
+	line "double!"
+
+	para "To protect the"
+	line "world from"
+	cont "devastation!"
+
+	para "To unite all"
+	line "peoples within"
+	cont "our nation!"
+
+	para "To denounce the"
+	line "evils of truth"
+	cont "and love!"
+
+	para "To extend our"
+	line "reach to the"
+	cont "stars above!"
+
+	para "JESSIE: JESSIE!"
+	line "JAMES: JAMES!"
+
+	para "TEAM ROCKET! Blast"
+	line "off at the speed"
+	cont "of light!"
+
+	para "Surrender now or"
+	line "prepare to fight!"
+
+	para "MEOWTH: MEOWTH!"
+	line "That's right!"
+	done
+
+JessieJames2BeatenText:
+	text "Alright already!"
+	line "Just go through!"
 	done
 
 RocketText_Jessie:
