@@ -208,7 +208,7 @@ Route22HouseJessieScript:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
-	writetext Route22HouseJessieBeforeText
+	farwritetext TeamRocketMottoText
 	waitbutton
 	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
@@ -231,7 +231,7 @@ Route22HouseJamesScript:
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .NoRematch
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
-	writetext Route22HouseJamesBeforeText
+	farwritetext TeamRocketMottoText
 	waitbutton
 	closetext
 	winlosstext Route22HouseJessieJamesBeatenText, 0
@@ -549,34 +549,12 @@ Route22HouseGiovanniAfterText:
 	para "But one day…"
 	done
 
-Route22HouseJessieBeforeText:
-	text "Hey! It's this"
-	line "twerp again!"
-
-	para "You won't get away"
-	line "unscathed this"
-	cont "time! Come on,"
-	cont "JAMES!"
-	done
-
 Route22HouseJessieAfterText:
 	text "Next time, we'll"
 	line "pummel you and"
 
 	para "take your #MON"
 	line "for the boss!"
-	done
-
-Route22HouseJamesBeforeText:
-	text "Ooh, what do we"
-	line "have here?"
-
-	para "You're that knee-"
-	line "biter from JOHTO,"
-	cont "aren't you?"
-
-	para "It's payback time"
-	line "now!"
 	done
 
 Route22HouseJamesAfterText:
