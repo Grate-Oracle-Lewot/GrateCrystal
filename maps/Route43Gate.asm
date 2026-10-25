@@ -49,8 +49,8 @@ RocketScript_BattleSouth:
 	writetext RocketText_SaidNo
 	waitbutton
 	closetext
-	winlosstext JessieJames2BeatenText, 0
-	loadtrainer JESSIE, JAMES2
+	winlosstext JessieJames3BeatenText, 0
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
 	sjump RocketScript_ShakeDownSouth_AfterBattle
@@ -93,8 +93,8 @@ RocketScript_BattleNorth:
 	writetext RocketText_SaidNo
 	waitbutton
 	closetext
-	winlosstext JessieJames2BeatenText, 0
-	loadtrainer JESSIE, JAMES2
+	winlosstext JessieJames3BeatenText, 0
+	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
 	sjump RocketScript_ShakeDownNorth_AfterBattle
@@ -270,7 +270,7 @@ RocketText_SaidNo:
 	line "That's right!"
 	done
 
-JessieJames2BeatenText:
+JessieJames3BeatenText:
 	text "Alright already!"
 	line "Just go through!"
 	done
