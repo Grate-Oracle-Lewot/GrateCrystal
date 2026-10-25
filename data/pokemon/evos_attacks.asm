@@ -3019,6 +3019,7 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
+	db 1, HAZE
 	db 6, METAL_SOUND
 	db 11, PURSUIT
 	db 16, SPIKES
