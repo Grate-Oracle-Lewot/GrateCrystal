@@ -100,6 +100,43 @@ TeamRocketOathText:
 	cont "TEAM ROCKET!"
 	done
 
+TeamRocketMottoText:
+	text "JESSIE: Prepare"
+	line "for trouble!"
+
+	para "JAMES: Make it"
+	line "double!"
+
+	para "To protect the"
+	line "world from"
+	cont "devastation!"
+
+	para "To unite all"
+	line "peoples within"
+	cont "our nation!"
+
+	para "To denounce the"
+	line "evils of truth"
+	cont "and love!"
+
+	para "To extend our"
+	line "reach to the"
+	cont "stars above!"
+
+	para "JESSIE: JESSIE!"
+	line "JAMES: JAMES!"
+
+	para "TEAM ROCKET! Blast"
+	line "off at the speed"
+	cont "of light!"
+
+	para "Surrender now or"
+	line "prepare to fight!"
+
+	para "MEOWTH: MEOWTH!"
+	line "That's right!"
+	done
+
 IncenseBurnerText:
 	text "Oh, an incense"
 	line "burner!"
@@ -123,14 +160,6 @@ TVText:
 	text "It's a TV!"
 
 	para "…DIGIMON is on…"
-	done
-
-HomepageText:
-	text "#MON JOURNAL"
-	line "HOME PAGE…"
-
-	para "It hasn't been"
-	line "updated…"
 	done
 
 TrashCanText:
@@ -314,14 +343,7 @@ HappinessText1:
 	line "nice, it'll pout."
 	done
 
-RegisteredNumber1Text:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
-	done
-
-RegisteredNumber2Text:
+RegisteredNumberText:
 	text "<PLAYER> registered"
 	line "@"
 	text_ram wStringBuffer3
