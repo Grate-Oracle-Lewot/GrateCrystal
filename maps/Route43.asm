@@ -71,7 +71,7 @@ TrainerPokemaniacBrent:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEMANIAC, BRENT1
-	scall .RegisteredNumber
+	scall Route43RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -110,9 +110,6 @@ TrainerPokemaniacBrent:
 .AskNumber2:
 	jumpstd AskNumber2MScript
 
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 
@@ -121,6 +118,9 @@ TrainerPokemaniacBrent:
 
 .Rematch:
 	jumpstd RematchMScript
+
+Route43RegisteredNumber:
+	jumpstd RegisteredNumberScript
 
 TrainerPokemaniacRon:
 	trainer POKEMANIAC, RON, EVENT_BEAT_POKEMANIAC_RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, .Script
@@ -171,7 +171,7 @@ TrainerPicnickerTiffany:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY1
-	scall .RegisteredNumber
+	scall Route43RegisteredNumber
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -217,9 +217,6 @@ TrainerPicnickerTiffany:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
