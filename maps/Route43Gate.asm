@@ -47,6 +47,8 @@ RocketScript_YoureBrokeSouth:
 
 RocketScript_BattleSouth:
 	writetext RocketText_SaidNo
+	promptbutton
+	farwritetext TeamRocketMottoText
 	waitbutton
 	closetext
 	winlosstext JessieJames3BeatenText, 0
@@ -96,6 +98,8 @@ RocketScript_YoureBrokeNorth:
 
 RocketScript_BattleNorth:
 	writetext RocketText_SaidNo
+	promptbutton
+	farwritetext TeamRocketMottoText
 	waitbutton
 	closetext
 	winlosstext JessieJames3BeatenText, 0
@@ -243,41 +247,6 @@ RocketText_AllYouGot:
 RocketText_SaidNo:
 	text "Hee hee hee…"
 	line "In that case…"
-
-	para "JESSIE: Prepare"
-	line "for trouble!"
-
-	para "JAMES: Make it"
-	line "double!"
-
-	para "To protect the"
-	line "world from"
-	cont "devastation!"
-
-	para "To unite all"
-	line "peoples within"
-	cont "our nation!"
-
-	para "To denounce the"
-	line "evils of truth"
-	cont "and love!"
-
-	para "To extend our"
-	line "reach to the"
-	cont "stars above!"
-
-	para "JESSIE: JESSIE!"
-	line "JAMES: JAMES!"
-
-	para "TEAM ROCKET! Blast"
-	line "off at the speed"
-	cont "of light!"
-
-	para "Surrender now or"
-	line "prepare to fight!"
-
-	para "MEOWTH: MEOWTH!"
-	line "That's right!"
 	done
 
 JessieJames3BeatenText:
