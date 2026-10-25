@@ -48,7 +48,7 @@ TrainerPicnickerErin1:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, ERIN1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -104,9 +104,6 @@ TrainerPicnickerErin1:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
