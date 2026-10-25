@@ -72,9 +72,8 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 8 ; # items
+	db 7 ; # items
 	db CHARCOAL
-	db TM_FALSE_SWIPE
 	db POKE_BALL
 	db POTION
 	db SUPER_POTION
@@ -149,8 +148,8 @@ MartGoldenrod5F:
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
+	db TM_FALSE_SWIPE
 	db TM_SELFDESTRUCT
-	db TM_THIEF
 	db -1 ; end
 
 MartUnderground:
