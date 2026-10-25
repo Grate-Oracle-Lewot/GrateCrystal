@@ -207,7 +207,7 @@ Route22HouseJessieScript:
 	writetext Route22HouseJessieBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES3
+	loadtrainer JESSIE, JAMES4
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
@@ -229,7 +229,7 @@ Route22HouseJamesScript:
 	writetext Route22HouseJamesBeforeText
 	waitbutton
 	winlosstext Route22HouseJessieJamesBeatenText, 0
-	loadtrainer JESSIE, JAMES3
+	loadtrainer JESSIE, JAMES4
 	startbattle
 	reloadmapafterbattle
 	setflag ENGINE_DAILY_MOVE_TUTOR
