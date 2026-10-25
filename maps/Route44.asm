@@ -67,7 +67,7 @@ TrainerBirdKeeperVance1:
 	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, VANCE1
-	scall Route44RegisteredNumber
+	callstd RegisteredNumberScript
 	sjump Route44NumberAcceptedM
 
 .WantsBattle:
@@ -138,9 +138,6 @@ Route44RematchM:
 Route44GiftM:
 	jumpstd GiftMScript
 
-Route44RegisteredNumber:
-	jumpstd RegisteredNumberScript
-
 VancePackFull:
 	setevent EVENT_VANCE_CARBOS
 Route44PackFullM:
@@ -187,7 +184,7 @@ TrainerFisherWilton1:
 	ifequal PHONE_CONTACTS_FULL, Route44PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route44NumberDeclinedM
 	gettrainername STRING_BUFFER_3, FISHER, WILTON1
-	scall Route44RegisteredNumber
+	callstd RegisteredNumberScript
 	sjump Route44NumberAcceptedM
 
 .WantsBattle:
