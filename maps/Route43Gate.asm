@@ -53,7 +53,7 @@ RocketScript_BattleSouth:
 	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
-	sjump RocketScript_ShakeDownSouth_AfterBattle
+	sjump RocketScript_AfterBattleSouth
 
 RocketScript_TollSouth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
@@ -63,11 +63,16 @@ RocketScript_TollSouth:
 RocketScript_ShakeDownSouth:
 	promptbutton
 	closetext
-RocketScript_ShakeDownSouth_AfterBattle:
 	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassSouth
 	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassSouth
 	setscene SCENE_FINISHED
 	special RestartMapMusic
+	end
+
+RocketScript_AfterBattleSouth:
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassSouth
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassSouth
+	setscene SCENE_FINISHED
 	end
 
 RocketScript_Northbound:
@@ -97,7 +102,7 @@ RocketScript_BattleNorth:
 	loadtrainer JESSIE, JAMES3
 	startbattle
 	reloadmapafterbattle
-	sjump RocketScript_ShakeDownNorth_AfterBattle
+	sjump RocketScript_AfterBattleNorth
 
 RocketScript_TollNorth:
 	takemoney YOUR_MONEY, ROUTE43GATE_TOLL
@@ -107,11 +112,16 @@ RocketScript_TollNorth:
 RocketScript_ShakeDownNorth:
 	promptbutton
 	closetext
-RocketScript_ShakeDownNorth_AfterBattle:
 	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassNorth
 	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassNorth
 	setscene SCENE_FINISHED
 	special RestartMapMusic
+	end
+
+RocketScript_AfterBattleNorth:
+	applymovement ROUTE43GATE_JAMES, Rocket2Script_LetsYouPassNorth
+	applymovement ROUTE43GATE_JESSIE, Rocket1Script_LetsYouPassNorth
+	setscene SCENE_FINISHED
 	end
 
 RocketScript_Jessie:
