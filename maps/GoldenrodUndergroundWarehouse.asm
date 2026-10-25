@@ -68,13 +68,13 @@ TrainerGruntMHyuck2:
 	closetext
 	end
 
-TrainerJessieJames3:
-	trainer JESSIE, JAMES3, EVENT_BEAT_JESSIE_JAMES_3, JessieJames3SeenText, JessieJames3BeatenText, 0, .Script
+TrainerJessieJames4:
+	trainer JESSIE, JAMES4, EVENT_BEAT_JESSIE_JAMES_3, JessieJames4SeenText, JessieJames4BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext JessieJames3AfterBattleText
+	writetext JessieJames4AfterBattleText
 	waitbutton
 	closetext
 	end
@@ -168,7 +168,7 @@ GruntMHyuck2AfterBattleText:
 	cont "I'll remember you!"
 	done
 
-JessieJames3SeenText:
+JessieJames4SeenText:
 	text "JESSIE: You again?"
 
 	para "Prepare for"
@@ -199,13 +199,13 @@ JessieJames3SeenText:
 	cont "nevermore!"
 	done
 
-JessieJames3BeatenText:
+JessieJames4BeatenText:
 	text "Looks like TEAM"
 	line "ROCKET's blasting"
 	cont "off again!"
 	done
 
-JessieJames3AfterBattleText:
+JessieJames4AfterBattleText:
 	text "JESSIE: Fine then,"
 	line "go talk to the"
 	cont "DIRECTOR."
@@ -284,7 +284,7 @@ GoldenrodUndergroundWarehouse_MapEvents:
 	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntMWare1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntMHyuck2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 18, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntMTrickster, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  9,  6, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerJessieJames3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  9,  6, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerJessieJames4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 10,  6, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundWarehouseJamesScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundWarehouseDirectorScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundWarehouseMaxEther, EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_MAX_ETHER
