@@ -164,7 +164,7 @@ TrainerCamperTodd1:
 	jumpstd AskNumber2MScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
@@ -256,7 +256,7 @@ TrainerPicnickerGina1:
 	jumpstd AskNumber2FScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
