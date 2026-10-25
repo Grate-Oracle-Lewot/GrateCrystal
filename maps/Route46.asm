@@ -106,7 +106,7 @@ TrainerPicnickerErin1:
 	jumpstd AskNumber2FScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
