@@ -222,7 +222,7 @@ TrainerFisherRalph1:
 	jumpstd AskNumber2MScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberMScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
@@ -326,7 +326,7 @@ TrainerPicnickerLiz1:
 	jumpstd AskNumber2FScript
 
 .RegisteredNumber:
-	jumpstd RegisteredNumberFScript
+	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
