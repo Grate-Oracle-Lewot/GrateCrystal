@@ -31,7 +31,7 @@ StdScripts::
 	add_stdscript BugContestResultsScript
 	add_stdscript AskNumber1MScript
 	add_stdscript AskNumber2MScript
-	add_stdscript RegisteredNumberMScript
+	add_stdscript RegisteredNumberScript
 	add_stdscript NumberAcceptedMScript
 	add_stdscript NumberDeclinedMScript
 	add_stdscript PhoneFullMScript
@@ -41,7 +41,6 @@ StdScripts::
 	add_stdscript RematchGiftMScript
 	add_stdscript AskNumber1FScript
 	add_stdscript AskNumber2FScript
-	add_stdscript RegisteredNumberFScript
 	add_stdscript NumberAcceptedFScript
 	add_stdscript NumberDeclinedFScript
 	add_stdscript PhoneFullFScript
@@ -647,8 +646,8 @@ AskNumber2MScript:
 	farwritetext ParryAskNumber2Text
 	end
 
-RegisteredNumberMScript:
-	farwritetext RegisteredNumber1Text
+RegisteredNumberScript:
+	farwritetext RegisteredNumberText
 	playsound SFX_REGISTER_PHONE_NUMBER
 	waitsfx
 	promptbutton
@@ -1161,13 +1160,6 @@ AskNumber2FScript:
 	end
 .Erin:
 	farwritetext ErinAskNumber2Text
-	end
-
-RegisteredNumberFScript:
-	farwritetext RegisteredNumber2Text
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	promptbutton
 	end
 
 NumberAcceptedFScript:
