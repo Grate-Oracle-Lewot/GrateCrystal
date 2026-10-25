@@ -87,7 +87,7 @@ TrainerBirdKeeperJose:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -126,9 +126,6 @@ TrainerBirdKeeperJose:
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
@@ -192,7 +189,7 @@ TrainerCooltrainerfReena:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -224,9 +221,6 @@ TrainerCooltrainerfReena:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
