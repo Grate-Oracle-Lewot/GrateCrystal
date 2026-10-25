@@ -112,7 +112,7 @@ TrainerCamperTodd1:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, CAMPER, TODD1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -163,9 +163,6 @@ TrainerCamperTodd1:
 .AskNumber2:
 	jumpstd AskNumber2MScript
 
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 
@@ -202,7 +199,7 @@ TrainerPicnickerGina1:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, GINA1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -254,9 +251,6 @@ TrainerPicnickerGina1:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
