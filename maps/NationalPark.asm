@@ -103,7 +103,7 @@ TrainerSchoolboyJack:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -148,9 +148,6 @@ TrainerSchoolboyJack:
 .AskNumber2:
 	jumpstd AskNumber2MScript
 
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
-
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
 
@@ -194,7 +191,7 @@ TrainerPokefanfBeverly:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEFANF, BEVERLY
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -210,9 +207,6 @@ TrainerPokefanfBeverly:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
