@@ -55,7 +55,7 @@ TrainerCooltrainermGaven:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERM, GAVEN1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedMScript
 
@@ -87,9 +87,6 @@ TrainerCooltrainermGaven:
 
 .AskNumber2:
 	jumpstd AskNumber2MScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
@@ -134,7 +131,7 @@ TrainerCooltrainerfBeth:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, BETH1
-	scall .RegisteredNumber
+	callstd RegisteredNumberScript
 .NumberAccepted:
 	jumpstd NumberAcceptedFScript
 
@@ -166,9 +163,6 @@ TrainerCooltrainerfBeth:
 
 .AskNumber2:
 	jumpstd AskNumber2FScript
-
-.RegisteredNumber:
-	jumpstd RegisteredNumberScript
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
