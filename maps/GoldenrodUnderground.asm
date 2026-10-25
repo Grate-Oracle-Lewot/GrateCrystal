@@ -12,6 +12,8 @@ GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
 	const GOLDENRODUNDERGROUND_GRANNY
 	const GOLDENRODUNDERGROUND_ROCKER
 	const GOLDENRODUNDERGROUND_POKE_BALL
+	const GOLDENRODUNDERGROUND_JESSIE
+	const GOLDENRODUNDERGROUND_JAMES
 	const GOLDENRODUNDERGROUND_ROCKET
 
 GoldenrodUnderground_MapScripts:
@@ -384,6 +386,61 @@ GoldenrodUndergroundMoveDeleterScript:
 	special MoveDeletion
 	sjump GoldenrodUnderground_EndText
 
+JessieJames2Subroutine1:
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
+	opentext
+	writetext JessieJames2BeforeBattleText1
+	waitbutton
+	closetext
+	end
+
+GoldenrodUndergroundJessieScript:
+	scall JessieJames2Subroutine1
+	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JESSIE, 5
+	faceplayer
+	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JAMES, 5
+	turnobject GOLDENRODUNDERGROUND_JAMES, UP
+	sjump JessieJames2Subroutine2
+
+GoldenrodUndergroundJamesScript:
+	scall JessieJames2Subroutine1
+	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JAMES, 5
+	faceplayer
+	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JESSIE, 5
+	turnobject GOLDENRODUNDERGROUND_JESSIE, UP
+	; fallthrough
+
+JessieJames2Subroutine2:
+	opentext
+	writetext JessieJames2BeforeBattleText2
+	promptbutton
+	farwritetext TeamRocketMottoText
+	waitbutton
+	closetext
+	winlosstext JessieJames2BeatenText, 0
+	loadtrainer JESSIE, JAMES2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
+	opentext
+	writetext JessieJames2AfterBattleText1
+	promptbutton
+	verbosegiveitem TM_THIEF, 5
+	writetext JessieJames2AfterBattleText2
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear GOLDENRODUNDERGROUND_JESSIE
+	disappear GOLDENRODUNDERGROUND_JAMES
+	pause 10
+	playsound SFX_RUN
+	waitsfx
+	pause 10
+	special FadeInQuickly
+	end
+
 GoldenrodUndergroundCoinCase:
 	itemball COIN_CASE
 
@@ -489,6 +546,70 @@ PokemaniacDonaldAfterBattleText:
 
 	para "like HOENN and"
 	line "UNOVA, though."
+	done
+
+JessieJames2BeforeBattleText1:
+	text "JESSIE: Yes, but"
+	line "even if we steal"
+
+	para "the coins, we need"
+	line "something to put"
+	cont "them in."
+
+	para "JAMES: Why don't we"
+	line "just steal the"
+	cont "prizes?"
+
+	para "MEOWTH: Heads up,"
+	line "you knuckleheads!"
+	done
+
+JessieJames2BeforeBattleText2:
+	text "JESSIE: The twerp"
+	line "from the WELL?"
+
+	para "JAMES: We're"
+	line "cornered…"
+
+	para "I mean, YOU'RE"
+	line "cornered!"
+	done
+
+JessieJames2BeatenText:
+	text "Looks like TEAM"
+	line "ROCKET's blasting"
+	cont "off again!"
+	done
+
+JessieJames2AfterBattleText1:
+	text "JESSIE: Kids these"
+	line "days…"
+
+	para "No respect for"
+	line "your visual"
+	cont "superiors!"
+
+	para "JAMES: Fine, take"
+	line "that COIN CASE."
+
+	para "But that makes you"
+	line "a thief, like us!"
+
+	para "Here, I'll prove"
+	line "it!"
+	done
+
+JessieJames2AfterBattleText2:
+	text "JESSIE: You're giv-"
+	line "ing gifts to the"
+	cont "enemy?"
+
+	para "JAMES: Well, when"
+	line "you put it like"
+	cont "that…"
+
+	para "MEOWTH: Let's scram"
+	line "already!"
 	done
 
 GruntMBouncerSeenText:
@@ -642,6 +763,8 @@ GoldenrodUndergroundNoEntryText:
 	line "THIS POINT"
 	done
 
+
+
 GoldenrodUnderground_MapEvents:
 	def_warp_events
 	warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
@@ -671,4 +794,6 @@ GoldenrodUnderground_MapEvents:
 	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
 	object_event  7, 11, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundMoveDeleterScript, EVENT_GOLDENROD_UNDERGROUND_MOVE_DELETER
 	object_event 19,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
+	object_event 19,  8, SPRITE_JESSIE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, GoldenrodUndergroundJessieScript, EVENT_GOLDENROD_UNDERGROUND_JESSIE_JAMES
+	object_event 18,  9, SPRITE_JAMES, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, GoldenrodUndergroundJamesScript, EVENT_GOLDENROD_UNDERGROUND_JESSIE_JAMES
 	object_event 17,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntMBouncer, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
