@@ -955,6 +955,7 @@ BattleAnim_Blizzard:
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
+	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 32
 	anim_obj ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
 	anim_wait 128
