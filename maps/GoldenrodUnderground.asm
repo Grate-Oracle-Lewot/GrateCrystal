@@ -430,16 +430,15 @@ JessieJames2Subroutine2:
 	writetext JessieJames2AfterBattleText2
 	waitbutton
 	closetext
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
+	special FadeOutPalettes
 	disappear GOLDENRODUNDERGROUND_JESSIE
 	disappear GOLDENRODUNDERGROUND_JAMES
 	pause 10
 	playsound SFX_RUN
 	waitsfx
 	pause 10
+	special FadeInPalettes
 	special RestartMapMusic
-	special FadeInQuickly
 	end
 
 GoldenrodUndergroundCoinCase:
