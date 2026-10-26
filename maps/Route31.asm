@@ -50,7 +50,7 @@ TrainerBugCatcherWade1:
 	ifequal PHONE_CONTACTS_FULL, .PhoneFullSTD
 	ifequal PHONE_CONTACT_REFUSED, .DeclinedNumberSTD
 	gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1
-	scall .RegisterNumberSTD
+	callstd RegisteredNumberScript
 	sjump .AcceptedNumberSTD
 
 .WadeRematch:
@@ -123,9 +123,6 @@ TrainerBugCatcherWade1:
 
 .AskAgainSTD:
 	jumpstd AskNumber2MScript
-
-.RegisterNumberSTD:
-	jumpstd RegisteredNumberScript
 
 .DeclinedNumberSTD:
 	jumpstd NumberDeclinedMScript
