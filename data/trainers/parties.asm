@@ -4399,6 +4399,7 @@ JugglerGroup:
 	db 15, EXEGGCUTE
 	db 16, JIGGLYPUFF
 	db 17, KOFFING
+	db 18, NATU
 	db -1 ; end
 
 	; JUGGLER (2)
@@ -4407,6 +4408,7 @@ JugglerGroup:
 	db 24, EXEGGCUTE
 	db 25, JIGGLYPUFF
 	db 26, KOFFING
+	db 27, NATU
 	db -1 ; end
 
 	; JUGGLER (3)
@@ -4415,6 +4417,7 @@ JugglerGroup:
 	db 34, EXEGGCUTE
 	db 35, JIGGLYPUFF
 	db 36, KOFFING
+	db 37, NATU
 	db -1 ; end
 
 	; JUGGLER (4)
@@ -4434,10 +4437,9 @@ JugglerGroup:
 
 	; JUGGLER (6)
 	db "IRVING@", TRAINERTYPE_NORMAL
-	db 50, VOLTORB
-	db 50, EXEGGCUTE
-	db 50, JIGGLYPUFF
-	db 50, KOFFING
+	db 50, PRIMEAPE
+	db 50, GOLEM
+	db 50, FORRETRESS
 	db -1 ; end
 
 	; JUGGLER (7)
