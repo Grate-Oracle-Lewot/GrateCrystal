@@ -438,6 +438,7 @@ JessieJames2Subroutine2:
 	playsound SFX_RUN
 	waitsfx
 	pause 10
+	special RestartMapMusic
 	special FadeInQuickly
 	end
 
