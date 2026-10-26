@@ -559,7 +559,7 @@ JessieJames2BeforeBattleText1:
 
 	para "JAMES: Why don't we"
 	line "just steal the"
-	cont "prizes?"
+	cont "prizes instead?"
 
 	para "MEOWTH: Heads up,"
 	line "you knuckleheads!"
@@ -597,7 +597,7 @@ JessieJames2AfterBattleText1:
 	line "a thief, like us!"
 
 	para "Here, I'll prove"
-	line "it!"
+	line "it to you!"
 	done
 
 JessieJames2AfterBattleText2:
