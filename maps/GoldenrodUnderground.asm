@@ -398,6 +398,7 @@ GoldenrodUndergroundJessieScript:
 
 GoldenrodUndergroundJamesScript:
 	scall JessieJames2Subroutine1
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JAMES, 5
 	faceplayer
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JESSIE, 5
