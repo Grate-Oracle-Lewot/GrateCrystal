@@ -372,12 +372,12 @@ MartCeladon4F2:
 	db HARD_STONE
 	db SILVERPOWDER
 	db BLACKGLASSES
+	db DRAGON_SCALE
 	db METAL_COAT
-	db TRIDENT
 	db -1 ; end
 
 MartCeladon4F3:
-	db 10 ; # items
+	db 9 ; # items
 	db CHARCOAL
 	db MYSTIC_WATER
 	db MIRACLE_SEED
@@ -386,8 +386,7 @@ MartCeladon4F3:
 	db NEVERMELTICE
 	db SPELL_TAG
 	db POLKADOT_BOW
-	db DRAGON_FANG
-	db DRAGON_SCALE
+	db TRIDENT
 	db -1 ; end
 
 MartCeladon5F1:
