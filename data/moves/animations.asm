@@ -961,7 +961,9 @@ BattleAnim_Blizzard:
 	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 32
 	anim_sound 16, 2, SFX_WHIRLWIND
-	anim_wait 96
+	anim_wait 32
+	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_wait 64
 	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
