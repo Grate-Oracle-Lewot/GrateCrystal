@@ -595,8 +595,8 @@ JessieJames2AfterBattleText1:
 	para "But that makes you"
 	line "a thief, like us!"
 
-	para "Here, I'll prove"
-	line "it to you!"
+	para "Here's your badge"
+	line "of dishonor!"
 	done
 
 JessieJames2AfterBattleText2:
