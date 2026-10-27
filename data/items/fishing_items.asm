@@ -1,8 +1,7 @@
 FishingItemTable:
 	db 1, BLACK_PEARL
-	db 1, DRAGON_FANG
-	db 2, DRAGON_SCALE
-	db 3, STAR_PIECE
+	db 1, DRAGON_SCALE
+	db 2, STAR_PIECE
 	db 4, WATER_STONE
 	db 4, TRIDENT
 	db 8, MYSTIC_WATER
