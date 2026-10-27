@@ -18,8 +18,8 @@ RuinsOfAlphHoOhItemRoomSilverBerry:
 RuinsOfAlphHoOhItemRoomSacredAsh:
 	itemball SACRED_ASH
 
-RuinsOfAlphHoOhItemRoomDragonFang:
-	itemball DRAGON_FANG
+RuinsOfAlphHoOhItemRoomDragonScale:
+	itemball DRAGON_SCALE
 
 RuinsOfAlphHoOhItemRoomAncientReplica:
 	jumptext RuinsOfAlphHoOhItemRoomAncientReplicaText
@@ -45,4 +45,4 @@ RuinsOfAlphHoOhItemRoom_MapEvents:
 	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomBerryJuice, EVENT_PICKED_UP_BERRY_JUICE_FROM_HO_OH_ITEM_ROOM
 	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSilverBerry, EVENT_PICKED_UP_SILVER_BERRY_FROM_HO_OH_ITEM_ROOM
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_SILVER, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSacredAsh, EVENT_PICKED_UP_SACRED_ASH_FROM_HO_OH_ITEM_ROOM
-	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomDragonFang, EVENT_PICKED_UP_DRAGON_FANG_FROM_HO_OH_ITEM_ROOM
+	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomDragonScale, EVENT_PICKED_UP_DRAGON_SCALE_FROM_HO_OH_ITEM_ROOM
