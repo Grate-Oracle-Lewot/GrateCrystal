@@ -427,7 +427,7 @@ JessieJames2Subroutine2:
 	special FadeOutPalettes
 	disappear GOLDENRODUNDERGROUND_JESSIE
 	disappear GOLDENRODUNDERGROUND_JAMES
-	pause 10
+	pause 5
 	playsound SFX_RUN
 	waitsfx
 	pause 10
