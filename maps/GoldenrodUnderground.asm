@@ -221,8 +221,6 @@ OlderHaircutBrotherScript:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	sjump .then
-
 .then
 	takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE
 	special PlaceMoneyTopRight
@@ -298,8 +296,6 @@ YoungerHaircutBrotherScript:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	sjump .then
-
 .then
 	takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE
 	special PlaceMoneyTopRight
@@ -387,15 +383,13 @@ GoldenrodUndergroundMoveDeleterScript:
 	sjump GoldenrodUnderground_EndText
 
 JessieJames2Subroutine1:
-	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
 	writetext JessieJames2BeforeBattleText1
-	waitbutton
-	closetext
-	end
+	sjump GoldenrodUnderground_EndText
 
 GoldenrodUndergroundJessieScript:
 	scall JessieJames2Subroutine1
+	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JESSIE, 5
 	faceplayer
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JAMES, 5
@@ -407,7 +401,7 @@ GoldenrodUndergroundJamesScript:
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JAMES, 5
 	faceplayer
 	showemote EMOTE_SHOCK, GOLDENRODUNDERGROUND_JESSIE, 5
-	turnobject GOLDENRODUNDERGROUND_JESSIE, UP
+	turnobject GOLDENRODUNDERGROUND_JESSIE, LEFT
 	; fallthrough
 
 JessieJames2Subroutine2:
@@ -420,7 +414,6 @@ JessieJames2Subroutine2:
 	winlosstext JessieJames2BeatenText, 0
 	loadtrainer JESSIE, JAMES2
 	startbattle
-	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_JESSIE_JAMES_ENCOUNTER
 	opentext
