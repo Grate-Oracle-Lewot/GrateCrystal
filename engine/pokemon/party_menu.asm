@@ -778,6 +778,10 @@ PartyMenuSelect:
 	call PlaySFX
 	jp WaitSFX
 
+LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX_WritePartyMenuTilemap_PrintPartyMenuText::
+	call LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX
+	; fallthrough
+
 WritePartyMenuTilemap_PrintPartyMenuText::
 	call WritePartyMenuTilemap
 	jr PrintPartyMenuText
