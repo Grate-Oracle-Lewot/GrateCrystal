@@ -852,6 +852,10 @@ ToWhichPKMNString:
 YouHaveNoPKMNString:
 	db "You have no <PK><MN>!@"
 
+WritePartyMenuTilemap_PrintPartyMenuActionText::
+	call WritePartyMenuTilemap
+	; fallthrough
+
 PrintPartyMenuActionText:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
