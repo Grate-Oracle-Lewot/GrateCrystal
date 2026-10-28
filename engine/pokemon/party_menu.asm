@@ -654,7 +654,7 @@ LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuBGPal7_InitPartyMenuGFX::
 	farcall InitPartyMenuBGPal7
 	jr InitPartyMenuGFX
 
-LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX:
+LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX::
 	call LoadPartyMenuGFX
 	call InitPartyMenuWithCancel
 	; fallthrough
@@ -778,18 +778,13 @@ PartyMenuSelect:
 	call PlaySFX
 	jp WaitSFX
 
-LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX_WritePartyMenuTilemap_PrintPartyMenuText::
-	call LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX
-	; fallthrough
-
-WritePartyMenuTilemap_PrintPartyMenuText::
-	call WritePartyMenuTilemap
-	jr PrintPartyMenuText
-
-InitPartyMenuLayout:
+InitPartyMenuLayout::
 	call LoadPartyMenuGFX
 	call InitPartyMenuWithCancel
 	call InitPartyMenuGFX
+	; fallthrough
+
+WritePartyMenuTilemap_PrintPartyMenuText::
 	call WritePartyMenuTilemap
 	; fallthrough
 
