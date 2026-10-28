@@ -146,7 +146,7 @@
 	const GAME_BOY_PC  ; 8a
 	const X_SP_DEFEND  ; 8b
 	const METAL_COAT   ; 8c
-	const DRAGON_FANG  ; 8d
+	const TERA_ORB     ; 8d
 	const HEDGER       ; 8e
 	const LEFTOVERS    ; 8f
 	const FLOATIE      ; 90
