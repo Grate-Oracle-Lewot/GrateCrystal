@@ -154,7 +154,7 @@ ItemEffects:
 	dw GameBoyPCEffect     ; GAME_BOY_PC
 	dw XItemEffect         ; X_SP_DEFEND
 	dw EvoStoneEffect      ; METAL_COAT
-	dw NoEffect            ; DRAGON_FANG
+	dw TeraOrbEffect       ; TERA_ORB
 	dw HedgerEffect        ; HEDGER
 	dw NoEffect            ; LEFTOVERS
 	dw FloatieEffect       ; FLOATIE
