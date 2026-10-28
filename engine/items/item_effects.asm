@@ -1743,7 +1743,7 @@ UseItem_SelectMon:
 	ret
 
 ChooseMonToUseItemOn:
-	farcall LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX_WritePartyMenuTilemap_PrintPartyMenuText
+	farcall InitPartyMenuLayout
 	call WaitBGMap
 	call SetPalettes
 	call DelayFrame
