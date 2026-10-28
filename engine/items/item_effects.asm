@@ -3005,3 +3005,49 @@ JediRobeEffect:
 	ld b, $4
 	ld a, $2
 	ret
+
+TeraOrbEffect:
+	ld hl, wBattleMonDVs
+	ld a, [hl]
+	and %0011
+	ld b, a
+	ld a, [hli]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+	ld b, a
+	ld a, [hl]
+	swap a
+	and %0001
+	add b
+	inc a
+	cp UNUSED_TYPES
+	jr c, .got_type
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.got_type
+	ld b, a
+	ld a, [wBattleMonType1]
+	cp b
+	jr nz, .good
+	ld a, [wBattleMonType2]
+	cp b
+	jr z, .fail
+.good
+	ld a, b
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a
+	ld [wNamedObjectIndex], a
+	predef GetTypeName
+	call UseItemText
+	ld hl, TeraOrbText
+	call PrintText
+	jp WaitPressAorB_BlinkCursor
+
+.fail
+	jp WontHaveAnyEffect_NotUsedMessage
+
+TeraOrbText:
+	text_far _TeraOrbText
+	text_end
