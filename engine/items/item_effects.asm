@@ -2303,10 +2303,6 @@ UseRod:
 	farcall FishFunction
 	ret
 
-ItemfinderEffect:
-	farcall ItemFinder
-	jp UseDisposableItem
-
 GameBoyPCEffect:
 	farcall GameBoyPCFunction
 	ret
@@ -2580,8 +2576,9 @@ SacredAshEffect:
 	ret nz
 	jr UseDisposableItem
 
-NoEffect:
-	jp IsntTheTimeMessage
+ItemfinderEffect:
+	farcall ItemFinder
+	jr UseDisposableItem
 
 Play_SFX_FULL_HEAL:
 	push de
@@ -2645,6 +2642,7 @@ CantUseOnEggMessage:
 	ld hl, ItemCantUseOnEggText
 	jr CantUseItemMessage
 
+NoEffect:
 IsntTheTimeMessage:
 	ld hl, ItemOakWarningText
 	jr CantUseItemMessage
