@@ -278,11 +278,12 @@ MartCerulean:
 	db -1 ; end
 
 MartJeweler:
-	db 4 ; # items
+	db 5 ; # items
 	db FABERGE_EGG
 	db CATCH_CHARM
 	db AMULET_COIN
 	db BRIGHTPOWDER
+	db TERA_ORB
 	db -1 ; end
 
 MartVermilion:
