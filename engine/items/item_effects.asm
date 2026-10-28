@@ -3005,6 +3005,10 @@ JediRobeEffect:
 	ret
 
 TeraOrbEffect:
+	ld a, [wBattleMonSpecies]
+	cp UNOWN
+	jr z, .fail
+
 	ld hl, wBattleMonDVs
 	ld a, [hl]
 	and %0011
