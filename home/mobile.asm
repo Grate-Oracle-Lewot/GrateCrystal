@@ -121,6 +121,13 @@ MobileTimer::
 	pop af
 	reti
 
+Function3f7c::
+	call MenuBoxCoord2Tile
+	call GetMenuBoxDims
+	dec b
+	dec c
+	; fallthrough
+
 Function3eea::
 	push hl
 	push bc
@@ -205,13 +212,6 @@ MobileHome_PlaceBox:
 	ld de, SCREEN_WIDTH
 	add hl, de
 	ret
-
-Function3f7c::
-	call MenuBoxCoord2Tile
-	call GetMenuBoxDims
-	dec b
-	dec c
-	jp Function3eea
 
 Function3f88::
 	ld hl, wDecompressScratch
