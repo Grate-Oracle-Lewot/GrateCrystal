@@ -602,7 +602,7 @@ PokeBallEffect:
 	call GetPokemonName
 
 	call YesNoBox
-	jp c, .return_from_capture
+	jr c, .jp_return_from_capture
 
 	ld a, [wPartyCount]
 	dec a
@@ -627,6 +627,7 @@ PokeBallEffect:
 	ld de, wStringBuffer1
 	call InitName
 
+.jp_return_from_capture:
 	jp .return_from_capture
 
 .SendToPC:
