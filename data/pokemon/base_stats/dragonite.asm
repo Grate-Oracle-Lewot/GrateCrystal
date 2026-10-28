@@ -6,7 +6,7 @@
 	db DRAGON, FLYING ; type
 	db 42 ; catch rate
 	db 218 ; base exp
-	db DRAGON_SCALE, PEARL ; items
+	db DRAGON_SCALE, TERA_ORB ; items
 	db GENDER_F50 ; gender ratio
 	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dragonite/front.dimensions"
