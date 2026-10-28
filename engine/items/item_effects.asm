@@ -1743,11 +1743,7 @@ UseItem_SelectMon:
 	ret
 
 ChooseMonToUseItemOn:
-	farcall LoadPartyMenuGFX
-	farcall InitPartyMenuWithCancel
-	farcall InitPartyMenuGFX
-	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuText
+	farcall LoadPartyMenuGFX_InitPartyMenuWithCancel_InitPartyMenuGFX_WritePartyMenuTilemap_PrintPartyMenuText
 	call WaitBGMap
 	call SetPalettes
 	call DelayFrame
@@ -1763,8 +1759,7 @@ ItemActionText:
 	push hl
 	push de
 	push bc
-	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuActionText
+	farcall WritePartyMenuTilemap_PrintPartyMenuActionText
 	call WaitBGMap
 	call SetPalettes
 	call DelayFrame
