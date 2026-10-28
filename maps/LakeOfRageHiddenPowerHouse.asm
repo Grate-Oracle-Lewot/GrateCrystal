@@ -11,20 +11,31 @@ HiddenPowerGuy:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TM10_HIDDEN_POWER
-	iftrue .AlreadyGotItem
+	iftrue .AlreadyGotTMs
 	writetext HiddenPowerGuyText1
 	promptbutton
 	verbosegiveitem TM_HIDDEN_POWER, 5
-	iffalse .Done
+	iffalse .PackFull
 	setevent EVENT_GOT_TM10_HIDDEN_POWER
 	writetext HiddenPowerGuyText2
-	waitbutton
+	promptbutton
+.AlreadyGotTMs:
+	checkevent EVENT_GOT_TERA_ORBS_FROM_HIDDEN_POWER_GUY
+	iftrue .AlreadyGotOrbs
+	writetext HiddenPowerGuyText3
+	promptbutton
+	verbosegiveitem TERA_ORB, 10
+	iffalse .PackFull
+	setevent EVENT_GOT_TERA_ORBS_FROM_HIDDEN_POWER_GUY
+.AlreadyGotOrbs:
+	writetext HiddenPowerGuyText4
+	waittbutton
 	closetext
 	end
-.AlreadyGotItem:
-	writetext HiddenPowerGuyText3
+
+.PackFull:
+	writetext HiddenPowerGuyText_PackFull
 	waitbutton
-.Done:
 	closetext
 	end
 
@@ -76,7 +87,37 @@ HiddenPowerGuyText2:
 	done
 
 HiddenPowerGuyText3:
-	text "I am meditating…"
+	text "I have more to"
+	line "share with you!"
+
+	para "Take these, as"
+	line "well!"
+	done
+
+HiddenPowerGuyText4:
+	text "Those musterious"
+	line "orbs can change a"
+
+	para "#MON's type to"
+	line "that of its HIDDEN"
+	cont "POWER…"
+
+	para "Worry not! It is"
+	line "only a temporary"
+	cont "change…"
+
+	para "Timing is crucial"
+	line "for how you use"
+	cont "this power…"
+	done
+
+HiddenPowerGuyText_PackFull:
+	text "You have no room"
+	line "for these gifts…"
+
+	para "You must clear"
+	line "your PACK as you"
+	cont "would your mind…"
 	done
 
 SupernerdDaveSeenText:
