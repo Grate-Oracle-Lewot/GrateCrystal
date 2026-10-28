@@ -295,19 +295,3 @@ GetNickname::
 	pop bc
 	pop hl
 	ret
-
-GetMonTypeIndex::
-	; type in a
-	and TYPE_MASK
-	cp CURSE_TYPE
-	jr z, .handle_curse
-	cp UNUSED_TYPES
-	jr c, .done
-	sub UNUSED_TYPES_END - UNUSED_TYPES
-	jr .done
-
-.handle_curse:
-	ld a, CURSE_TYPE_PALETTE
-.done:
-	ld c, a
-	ret
