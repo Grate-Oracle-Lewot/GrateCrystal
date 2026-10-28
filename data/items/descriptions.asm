@@ -141,7 +141,7 @@ ItemDescriptions:
 	dw GameBoyPCDesc
 	dw XSpDefendDesc
 	dw MetalCoatDesc
-	dw DragonFangDesc
+	dw TeraOrbDesc
 	dw HedgerDesc
 	dw LeftoversDesc
 	dw FloatieDesc
@@ -819,9 +819,9 @@ MetalCoatDesc:
 	db   "Powers up steel-"
 	next "type moves. (HOLD)@"
 
-DragonFangDesc:
-	db   "Powers up dragon-"
-	next "type moves. (HOLD)@"
+TeraOrbDesc:
+	db   "Changes user's type"
+	next "to its hidden one.@"
 
 HedgerDesc:
 	db   "Cuts trees without"
@@ -848,8 +848,8 @@ SilverBerryDesc:
 	next "hitting 0. (HOLD)@"
 
 DragonScaleDesc:
-	db   "Evolves certain"
-	next "#MON. (HOLD)@"
+	db   "Powers up dragon-"
+	next "type moves. (HOLD)@"
 
 TimerBallDesc:
 	db   "Works better the"
