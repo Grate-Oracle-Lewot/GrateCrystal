@@ -6,7 +6,7 @@
 	db DRAGON, DRAGON ; type
 	db 45 ; catch rate
 	db 67 ; base exp
-	db DRAGON_FANG, DRAGON_SCALE ; items
+	db PEARL, DRAGON_SCALE ; items
 	db GENDER_F50 ; gender ratio
 	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dratini/front.dimensions"
