@@ -48,6 +48,7 @@ ItemNameOrder::
 	db X_EVADE
 	db DIRE_HIT
 	db GUARD_SPEC
+	db TERA_ORB
 
 	db RARE_CANDY
 	db PP_UP
@@ -103,7 +104,7 @@ ItemNameOrder::
 	db POISON_BARB
 	db TWISTEDSPOON
 	db SPELL_TAG
-	db DRAGON_FANG
+	db DRAGON_SCALE
 	db POLKADOT_BOW
 	db TRIDENT
 
@@ -111,7 +112,6 @@ ItemNameOrder::
 	db BONE
 	db LEEK
 	db LUCKY_PUNCH
-	db DRAGON_SCALE
 
 	db NUGGET
 	db PEARL
