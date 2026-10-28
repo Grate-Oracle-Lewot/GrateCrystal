@@ -3010,25 +3010,7 @@ TeraOrbEffect:
 	jr z, .fail
 
 	ld hl, wBattleMonDVs
-	ld a, [hl]
-	and %0011
-	ld b, a
-	ld a, [hli]
-	and %0011 << 4
-	swap a
-	add a
-	add a
-	or b
-	ld b, a
-	ld a, [hl]
-	swap a
-	and %0001
-	add b
-	inc a
-	cp UNUSED_TYPES
-	jr c, .got_type
-	add UNUSED_TYPES_END - UNUSED_TYPES
-.got_type
+	call GetHiddenPowerType
 	ld b, a
 	ld a, [wBattleMonType1]
 	cp b
