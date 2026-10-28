@@ -6,7 +6,7 @@
 	db DRAGON, DRAGON ; type
 	db 44 ; catch rate
 	db 144 ; base exp
-	db PEARL, DRAGON_SCALE ; items
+	db DRAGON_SCALE, PEARL ; items
 	db GENDER_F50 ; gender ratio
 	db 21 ; step cycles to hatch
 	INCBIN "gfx/pokemon/dragonair/front.dimensions"
