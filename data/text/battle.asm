@@ -1189,3 +1189,11 @@ TookOnTypeText:
 	text_ram wStringBuffer1
 	text "-type!"
 	autodone
+
+_TeraOrbText:
+	text "<TARGET>"
+	line "transformed into"
+	cont "the @"
+	text_ram wStringBuffer1
+	text "-type!"
+	done
