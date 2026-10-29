@@ -1722,10 +1722,10 @@ HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 32, SEADRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 3, LEER
-	db 8, SMOKESCREEN
-	db 15, WATER_GUN
-	db 22, TWISTER
+	db 3, SMOKESCREEN
+	db 8, WATER_GUN
+	db 15, TWISTER
+	db 22, SLUDGE
 	db 29, BUBBLEBEAM
 	db 32, DRAGON_PULSE
 	db 36, AGILITY
@@ -1739,11 +1739,12 @@ SeadraEvosAttacks:
 	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 3, LEER
-	db 8, SMOKESCREEN
-	db 15, WATER_GUN
-	db 22, TWISTER
+	db 3, SMOKESCREEN
+	db 8, WATER_GUN
+	db 15, TWISTER
+	db 22, SLUDGE
 	db 29, BUBBLEBEAM
+	db 31, LEER
 	db 35, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
@@ -3518,11 +3519,12 @@ HoundoomEvosAttacks:
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
-	db 3, LEER
-	db 8, SMOKESCREEN
-	db 15, WATER_GUN
-	db 22, TWISTER
+	db 3, SMOKESCREEN
+	db 8, WATER_GUN
+	db 15, TWISTER
+	db 22, SLUDGE
 	db 29, BUBBLEBEAM
+	db 31, LEER
 	db 35, DRAGON_PULSE
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
