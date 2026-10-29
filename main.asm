@@ -713,3 +713,8 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 SECTION "Voltorb Flip", ROMX
 
 INCLUDE "engine/games/voltorb_flip.asm"
+
+
+SECTION "Enemy Tera Matchups", ROMX
+
+INCLUDE "engine/battle/ai/tera.asm"
