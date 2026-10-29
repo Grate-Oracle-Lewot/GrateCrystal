@@ -3033,5 +3033,5 @@ TeraOrbEffect:
 	jp WontHaveAnyEffect_NotUsedMessage
 
 TeraOrbText:
-	text_far TookOnTypeText
+	text_far _TeraOrbText
 	text_end
