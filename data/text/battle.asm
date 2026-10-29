@@ -1197,3 +1197,11 @@ _TeraOrbText:
 	text_ram wStringBuffer1
 	text "-type!"
 	done
+
+_EnemyTeraOrbText:
+	text "<TARGET>"
+	line "transformed into"
+	scroll "the @"
+	text_ram wStringBuffer1
+	text "-type!"
+	autodone
