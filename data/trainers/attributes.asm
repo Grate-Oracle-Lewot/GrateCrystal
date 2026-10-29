@@ -57,7 +57,7 @@ TrainerClassAttributes:
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
 
 ; A.D.
-	db FULL_HEAL, FULL_RESTORE ; items
+	db FULL_RESTORE, TERA_ORB ; items
 	db 30 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_SETUP | AI_CAUTIOUS | AI_IMMUNITIES | AI_RISKY | AI_AGGRESSIVE | AI_SMART
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
@@ -201,7 +201,7 @@ TrainerClassAttributes:
 	dw NO_AI
 
 ; Kabubones
-	db NO_ITEM, NO_ITEM ; items
+	db TERA_ORB, TERA_ORB ; items
 	db 42 ; base reward
 	dw NO_AI
 	dw NO_AI
