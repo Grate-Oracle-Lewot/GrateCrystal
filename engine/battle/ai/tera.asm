@@ -3,18 +3,18 @@ CheckEnemyTeraMatchups::
 ; returns nc if enemy's Tera Orb would improve its type matchup against current player mon
 
 ; advantage checks preserve d
-  farcall CheckPlayerTypeAdvantage
-  jr c, .no
-  farcall CheckEnemyTypeAdvantage
-  jr nc, .no
+	farcall CheckPlayerTypeAdvantage
+	jr c, .no
+	farcall CheckEnemyTypeAdvantage
+	jr nc, .no
 
-  ld a, d
-  ld b, a
+	ld a, d
+	ld b, a
 	farcall AI_CheckEnemyAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
-  ret
+	ret
 
 .no
-  scf
-  ret
+	scf
+	ret
