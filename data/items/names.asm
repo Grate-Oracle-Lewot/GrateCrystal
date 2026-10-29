@@ -140,7 +140,7 @@ ItemNames::
 	li "GAME BOY PC"
 	li "X SP.DEFEND"
 	li "METAL COAT"
-	li "DRAGON FANG"
+	li "TERA ORB"
 	li "HEDGER"
 	li "LEFTOVERS"
 	li "FLOATIE"
