@@ -68,7 +68,7 @@ ReadTrainerParty:
 	ld d, h
 	ld e, l
 	call ReadTrainerPartyPieces
-	jp ComputeTrainerReward
+	jr ComputeTrainerReward
 
 .cal1
 	ld a, BANK(sMysteryGiftTrainer)
@@ -81,12 +81,32 @@ ReadTrainerParty:
 	ld de, sMysteryGiftTrainer
 	call ReadTrainerPartyPieces
 	call CloseSRAM
-	jp ComputeTrainerReward
+	jr ComputeTrainerReward
 
 .no_mystery_gift_trainer
 	call CloseSRAM
 	ld a, [wOtherTrainerClass]
 	jr .not_cal1
+
+ComputeTrainerReward:
+	ld hl, hProduct
+	xor a
+	ld [hli], a
+	ld [hli], a ; hMultiplicand + 0
+	ld [hli], a ; hMultiplicand + 1
+	ld a, [wEnemyTrainerBaseReward]
+	ld [hli], a ; hMultiplicand + 2
+	ld a, [wCurPartyLevel]
+	ld [hl], a ; hMultiplier
+	call Multiply
+	ld hl, wBattleReward
+	xor a
+	ld [hli], a
+	ldh a, [hProduct + 2]
+	ld [hli], a
+	ldh a, [hProduct + 3]
+	ld [hl], a
+	ret
 
 ReadTrainerPartyPieces:
 	ld h, d
@@ -292,26 +312,6 @@ ReadTrainerPartyPieces:
 .no_stat_recalc
 
 	jp .loop
-
-ComputeTrainerReward:
-	ld hl, hProduct
-	xor a
-	ld [hli], a
-	ld [hli], a ; hMultiplicand + 0
-	ld [hli], a ; hMultiplicand + 1
-	ld a, [wEnemyTrainerBaseReward]
-	ld [hli], a ; hMultiplicand + 2
-	ld a, [wCurPartyLevel]
-	ld [hl], a ; hMultiplier
-	call Multiply
-	ld hl, wBattleReward
-	xor a
-	ld [hli], a
-	ldh a, [hProduct + 2]
-	ld [hli], a
-	ldh a, [hProduct + 3]
-	ld [hl], a
-	ret
 
 Battle_GetTrainerName::
 	ld a, [wInBattleTowerBattle]
