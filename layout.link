@@ -63,7 +63,6 @@ ROMX $0d
 	"Effect Commands"
 ROMX $0e
 	"Enemy Trainers"
-	"Map Blocks 4"
 ROMX $0f
 	"Battle Core"
 ROMX $10
@@ -313,6 +312,8 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $79
 	"Map Scripts 26"
+ROMX $7a
+	"Map Blocks 4"
 ROMX $7b
 	"Battle Tower Text"
 	"Extra Songs 4"
