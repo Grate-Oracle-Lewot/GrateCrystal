@@ -56,7 +56,6 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
 - Run at bike speed by holding B (including while Surfing); brake on Cycling Road by holding B
 - Greatly increased pack and PC item space, including a separate "Fruit" pocket for Berries and Apricorns
 - Berry and Apricorn trees now randomly give 2-6 at a time, and phone contacts who give Berries always give 5
-- Apricorns, in addition to being Kurt's ingredients, now also trigger a 1-stage stat boost when held, with the stat depending on the color (but they can't be used outright like X items)
 - Room for 30 phone contacts in the Pokégear, and you can get my phone number to hear stupid anecdotes
 - While TMs are still single-use, you get 5 copies at a time when received via gifts or field items
 - Special encounters for all legendary Pokémon, all of which respawn after beating the League if you didn't catch them the first time
@@ -259,6 +258,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - New key items obtained throughout the game that can perform the out-of-battle functions of HM moves without the need for the move, all usable with Select (but you still need the corresponding badge)
 - New fishing rod, the Odd Rod, hooks rare Pokémon like Omanyte and Kabuto
 - New held items that each completely prevent a specific status condition (these will not block Sleep with Rest, but will block Confusion with Thrash/Outrage/Petal Dance)
+- Apricorns, in addition to being Kurt's ingredients, now also trigger a 1-stage stat boost when held, with the stat depending on the color (but they can't be used outright like X items)
+- Tera Orbs appear as single-use items; rather than full-on Terastallization, they simply change a Pokémon's type to that of its Hidden Power, lasting only until it switches out or the battle ends
 - "Hardhat," a new held item which prevents recoil damage, as well as crash damage from [Hi] Jump Kick
 - "Catch Charm," named after Gen VIII's Catching Charm, here a Pokémon held item that increases catching chance
 - The Big Pearl is now called the Black Pearl, and it extends any weather move used by the holder to 8 turns
