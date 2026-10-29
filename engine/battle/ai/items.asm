@@ -379,7 +379,7 @@ AI_Items:
 	jr z, .TeraRandom
 	call AICheckEnemyHalfHP
 	jr nc, .TeraFail2
-	farcall CheckEnemyTeraMatchups
+	call CheckEnemyTeraMatchups
 	jr c, .TeraFail2
 	call CheckGoodItemTurn
 	jr c, .TeraUse
@@ -545,11 +545,21 @@ CheckGoodItemTurn:
 ; c = enemy faster
 	jp AICompareSpeed
 
-AIUsedItemSound:
-	push de
-	ld de, SFX_FULL_HEAL
-	call PlaySFX
-	pop de
+CheckEnemyTeraMatchups:
+; assumes enemy's Hidden Power type is already calc'd and stored in d
+; returns nc if enemy's Tera Orb would improve its type matchup against current player mon
+
+; advantage checks preserve d
+	call CheckPlayerTypeAdvantage
+	jr c, AI_SetCarryFlag
+	call CheckEnemyTypeAdvantage
+	jr nc, AI_SetCarryFlag
+
+	ld a, d
+	ld b, a
+	farcall AI_CheckEnemyAdvantage
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
 	ret
 
 CalcEnemyHiddenPowerType:
@@ -571,6 +581,13 @@ EnemyUsedTeraOrb:
 EnemyTeraOrbText:
 	text_far _EnemyTeraOrbText
 	text_end
+
+AIUsedItemSound:
+	push de
+	ld de, SFX_FULL_HEAL
+	call PlaySFX
+	pop de
+	ret
 
 EnemyUsedXAccuracy:
 	call AIUsedItemSound
