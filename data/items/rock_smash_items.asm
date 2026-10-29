@@ -2,6 +2,7 @@ RockSmashItemTable:
 	db 1, OLD_AMBER
 	db 1, DOME_FOSSIL
 	db 1, HELIX_FOSSIL
+	db 1, TERA_ORB
 	db 2, MAX_REVIVE
 	db 2, MAX_ELIXER
 	db 4, ELIXER
