@@ -29,7 +29,7 @@ HiddenPowerGuy:
 	setevent EVENT_GOT_TERA_ORBS_FROM_HIDDEN_POWER_GUY
 .AlreadyGotOrbs:
 	writetext HiddenPowerGuyText4
-	waittbutton
+	waitbutton
 	closetext
 	end
 
