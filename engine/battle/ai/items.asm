@@ -426,8 +426,8 @@ AI_Items:
 
 .20Not50:
 	call AI_80_20
-	jr nc, AI_SetCarryFlag
-	jr AI_ClearCarryFlag
+	jp nc, AI_SetCarryFlag
+	jp AI_ClearCarryFlag
 
 .HyperPotion:
 	call .HealItem
