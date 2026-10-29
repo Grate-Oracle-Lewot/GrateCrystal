@@ -244,11 +244,20 @@ AI_TryItem:
 	bit SUBSTATUS_PERISH, a
 	jr nz, AI_ClearCarryFlag2
 
+; skip type advantage check if trainer has Tera Orbs
+	ld a, [wEnemyTrainerItem1]
+	cp TERA_ORB
+	jr .skip_advantage_check
+	ld a, [wEnemyTrainerItem2]
+	cp TERA_ORB
+	jr .skip_advantage_check
+
 ; if player has type advantage against enemy mon, don't use items on it
 ; mostly exists for when multiple mons are at the highest level
 	call CheckPlayerTypeAdvantage
 	ret nc
 
+.skip_advantage_check
 ; set carry if current mon is highest-leveled one in party
 	ld a, [wOTPartyCount]
 	ld d, a
@@ -368,10 +377,10 @@ AI_Items:
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr z, .TeraRandom
-	call CheckPlayerTypeAdvantage
-	jr c, .TeraFail2
-	call CheckEnemyTypeAdvantage
+	call AICheckEnemyHalfHP
 	jr nc, .TeraFail2
+	farcall CheckEnemyTeraMatchups
+	jr c, .TeraFail2
 	call CheckGoodItemTurn
 	jr c, .TeraUse
 .TeraRandom
@@ -406,9 +415,9 @@ AI_Items:
 	jp AI_ClearCarryFlag
 
 .HealItem:
-	farcall AICheckEnemyHalfHP
+	call AICheckEnemyHalfHP
 	ret c ; AI_SetCarryFlag
-	farcall AICheckEnemyQuarterHP
+	call AICheckEnemyQuarterHP
 	jp nc, AI_ClearCarryFlag
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
@@ -417,14 +426,14 @@ AI_Items:
 
 .20Not50:
 	call AI_80_20
-	jp nc, AI_SetCarryFlag
-	jp AI_ClearCarryFlag
+	jr nc, AI_SetCarryFlag
+	jr AI_ClearCarryFlag
 
 .HyperPotion:
 	call .HealItem
 	ret c ; AI_SetCarryFlag
 	call EnemyUsedHyperPotion
-	jp AI_ClearCarryFlag
+	jr AI_ClearCarryFlag
 
 .SuperPotion:
 	call .HealItem
