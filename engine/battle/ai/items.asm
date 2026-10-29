@@ -557,6 +557,13 @@ CheckEnemyTeraMatchups:
 
 	ld a, d
 	ld b, a
+	farcall AI_CheckPlayerAdvantage
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr nc, AI_SetCarryFlag
+
+	ld a, d
+	ld b, a
 	farcall AI_CheckEnemyAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
