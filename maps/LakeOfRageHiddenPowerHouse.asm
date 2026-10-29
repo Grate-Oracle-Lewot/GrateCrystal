@@ -24,7 +24,7 @@ HiddenPowerGuy:
 	iftrue .AlreadyGotOrbs
 	writetext HiddenPowerGuyText3
 	promptbutton
-	verbosegiveitem TERA_ORB, 10
+	verbosegiveitem TERA_ORB, 5
 	iffalse .PackFull
 	setevent EVENT_GOT_TERA_ORBS_FROM_HIDDEN_POWER_GUY
 .AlreadyGotOrbs:
