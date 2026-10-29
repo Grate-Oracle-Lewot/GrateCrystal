@@ -107,7 +107,7 @@ MartGoldenrod2F2:
 	db -1 ; end
 
 MartGoldenrod3F:
-	db 8 ; # items
+	db 9 ; # items
 	db X_ATTACK
 	db X_DEFEND
 	db X_SPECIAL
@@ -116,6 +116,7 @@ MartGoldenrod3F:
 	db DIRE_HIT
 	db GUARD_SPEC
 	db X_ACCURACY
+	db TERA_ORB
 	db -1 ; end
 
 MartGoldenrod3F2:
@@ -278,12 +279,11 @@ MartCerulean:
 	db -1 ; end
 
 MartJeweler:
-	db 5 ; # items
+	db 4 ; # items
 	db FABERGE_EGG
 	db CATCH_CHARM
 	db AMULET_COIN
 	db BRIGHTPOWDER
-	db TERA_ORB
 	db -1 ; end
 
 MartVermilion:
@@ -401,7 +401,7 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 9 ; # items
+	db 10 ; # items
 	db X_ATTACK
 	db X_DEFEND
 	db X_SPECIAL
@@ -411,6 +411,7 @@ MartCeladon5F2:
 	db X_EVADE
 	db DIRE_HIT
 	db GUARD_SPEC
+	db TERA_ORB
 	db -1 ; end
 
 MartFuchsia:
