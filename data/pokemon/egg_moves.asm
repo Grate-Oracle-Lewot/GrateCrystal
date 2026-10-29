@@ -410,7 +410,6 @@ KangaskhanEggMoves:
 	db -1 ; end
 
 HorseaEggMoves:
-	db SLUDGE
 	db FLAIL
 	db DISABLE
 	db DRAGON_RAGE
