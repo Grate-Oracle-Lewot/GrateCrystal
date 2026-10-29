@@ -561,6 +561,8 @@ CheckEnemyTeraMatchups:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
 	jr nc, AI_SetCarryFlag
+	cp EFFECTIVE
+	jr c, AI_ClearCarryFlag
 
 	ld a, d
 	ld b, a
