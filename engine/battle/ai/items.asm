@@ -294,23 +294,24 @@ AI_Items:
 	dbw X_SPEED,      .XSpeed
 	dbw X_SPECIAL,    .XSpecial
 	dbw X_SP_DEFEND,  .XSpDefend
+	dbw TERA_ORB,     .TeraOrb
 	db -1 ; end
 
 .FullHeal:
 	call .Status
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedFullHeal
 	jr AI_ClearCarryFlag2
 
 .Frankenberry:
 	call .Status
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedFrankenberry
 	jr AI_ClearCarryFlag2
 
 .OldGateau:
 	call .Status
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedOldGateau
 	jr AI_ClearCarryFlag2
 
@@ -337,13 +338,53 @@ AI_Items:
 	cp 4
 	jr c, .FailToxicCheck
 	call AI_50_50
-	jp c, AI_ClearCarryFlag
+	ret nc ; AI_ClearCarryFlag
 
 .FailToxicCheck:
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
 	jp z, AI_SetCarryFlag
 	jp AI_ClearCarryFlag
+
+.TeraOrb:
+	ld a, [wEnemyMonSpecies]
+	cp UNOWN
+	jp z, AI_SetCarryFlag
+	push de
+	push bc
+	call CalcEnemyHiddenPowerType
+	ld d, a
+	ld a, [wEnemyMonType1]
+	cp d
+	jr nz, .TeraGood
+	ld a, [wEnemyMonType2]
+	cp d
+	jr z, .TeraFail1
+.TeraGood
+	pop bc
+	ld a, [bc]
+	bit ALWAYS_USE_F, a
+	jr nz, .TeraUse
+	ld a, [bc]
+	bit CONTEXT_USE_F, a
+	jr z, .TeraRandom
+	call CheckPlayerTypeAdvantage
+	jr c, .TeraFail2
+	call CheckEnemyTypeAdvantage
+	jr nc, .TeraFail2
+	call CheckGoodItemTurn
+	jr c, .TeraUse
+.TeraRandom
+	call AI_90_10
+	jr nc, .TeraFail2
+.TeraUse
+	pop de
+	jp AI_ClearCarryFlag
+.TeraFail1
+	pop bc
+.TeraFail2
+	pop de
+	jp AI_SetCarryFlag
 
 .FullRestore:
 	call .HealItem
@@ -352,7 +393,7 @@ AI_Items:
 	bit CONTEXT_USE_F, a
 	jp z, AI_SetCarryFlag
 	call .Status
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 
 .UseFullRestore:
 	call EnemyUsedFullRestore
@@ -360,21 +401,19 @@ AI_Items:
 
 .MaxPotion:
 	call .HealItem
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedMaxPotion
 	jp AI_ClearCarryFlag
 
 .HealItem:
 	farcall AICheckEnemyHalfHP
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	farcall AICheckEnemyQuarterHP
 	jp nc, AI_ClearCarryFlag
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, .20Not50
-	call AI_50_50
-	jp c, AI_ClearCarryFlag
-	jp AI_SetCarryFlag
+	jp AI_50_50 ; c/nc
 
 .20Not50:
 	call AI_80_20
@@ -383,67 +422,67 @@ AI_Items:
 
 .HyperPotion:
 	call .HealItem
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedHyperPotion
 	jp AI_ClearCarryFlag
 
 .SuperPotion:
 	call .HealItem
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedSuperPotion
-	jp AI_ClearCarryFlag
+	jr AI_ClearCarryFlag
 
 .SpringWater:
 	call .HealItem
-	jp c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedSpringWater
-	jp AI_ClearCarryFlag
+	jr AI_ClearCarryFlag
 
 .XAccuracy:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXAccuracy
 	jr AI_ClearCarryFlag
 
 .GuardSpec:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedGuardSpec
 	jr AI_ClearCarryFlag
 
 .DireHit:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedDireHit
 	jr AI_ClearCarryFlag
 
 .XAttack:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXAttack
 	jr AI_ClearCarryFlag
 
 .XDefend:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXDefend
 	jr AI_ClearCarryFlag
 
 .XSpeed:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXSpeed
 	jr AI_ClearCarryFlag
 
 .XSpecial:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXSpecial
 	jr AI_ClearCarryFlag
 
 .XSpDefend:
 	call .XItem
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	call EnemyUsedXSpDefend
 	jr AI_ClearCarryFlag
 
@@ -457,13 +496,11 @@ AI_Items:
 	and a
 	jr nz, .notfirstturnout
 	call AI_50_50
-	jr c, AI_SetCarryFlag
+	ret c ; AI_SetCarryFlag
 	ld a, [bc]
 	bit CONTEXT_USE_F, a
 	jr nz, AI_ClearCarryFlag
-	call AI_50_50
-	jr c, AI_SetCarryFlag
-	jr AI_ClearCarryFlag
+	jp AI_50_50 ; c/nc
 
 .notfirstturnout
 	call AI_80_20
@@ -505,6 +542,26 @@ AIUsedItemSound:
 	call PlaySFX
 	pop de
 	ret
+
+CalcEnemyHiddenPowerType:
+	ld hl, wEnemyMonDVs
+	jp GetHiddenPowerType
+
+EnemyUsedTeraOrb:
+	call AIUsedItemSound
+	ld a, TERA_ORB
+	call PrintText_UsedItemOn_AND_AIUpdateHUD
+	call CalcEnemyHiddenPowerType
+	ld [wEnemyMonType1], a
+	ld [wEnemyMonType2], a
+	ld [wNamedObjectIndex], a
+	predef GetTypeName
+	ld hl, EnemyTeraOrbText
+	jp PrintText
+
+EnemyTeraOrbText:
+	text_far _EnemyTeraOrbText
+	text_end
 
 EnemyUsedXAccuracy:
 	call AIUsedItemSound
