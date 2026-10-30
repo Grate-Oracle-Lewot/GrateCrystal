@@ -381,10 +381,7 @@ AI_Items:
 	jr nc, .TeraFail2
 	call CheckEnemyTeraMatchups
 	jr c, .TeraFail2
-	call CheckGoodItemTurn
-	jr c, .TeraUse
-	call AI_50_50
-	jr c, .TeraUse
+	jr .TeraUse
 .TeraRandom
 	call AI_80_20
 	jr nc, .TeraFail2
