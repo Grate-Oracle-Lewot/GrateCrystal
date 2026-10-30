@@ -576,7 +576,10 @@ CalcEnemyHiddenPowerType:
 	jp GetHiddenPowerType
 
 EnemyUsedTeraOrb:
-	call AIUsedItemSound
+	push de
+	ld de, SFX_SHARPEN
+	call PlaySFX
+	pop de
 	ld a, TERA_ORB
 	call PrintText_UsedItemOn_AND_AIUpdateHUD
 	call CalcEnemyHiddenPowerType
