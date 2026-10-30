@@ -3024,7 +3024,14 @@ TeraOrbEffect:
 	ld [wBattleMonType2], a
 	ld [wNamedObjectIndex], a
 	predef GetTypeName
-	call UseItemText
+	ld hl, ItemUsedText
+	call PrintText
+	push de
+	ld de, SFX_SHARPEN
+	call WaitPlaySFX
+	pop de
+	call WaitPressAorB_BlinkCursor
+	call UseDisposableItem
 	ld hl, TeraOrbText
 	call PrintText
 	jp WaitPressAorB_BlinkCursor
