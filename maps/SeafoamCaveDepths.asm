@@ -58,7 +58,7 @@ SeafoamCaveDepthsLewotScript:
 	special ReloadSpritesNoPalettes
 	pause 10
 	appear SEAFOAMCAVEDEPTHS_OAK2
-	playsound SFX_PSYBEAM
+	playsound SFX_THIEF_2
 	waitsfx
 	special FadeInQuickly
 	turnobject SEAFOAMCAVEDEPTHS_OAK1, DOWN
