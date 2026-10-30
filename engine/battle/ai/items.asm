@@ -383,7 +383,7 @@ AI_Items:
 	jr c, .TeraFail2
 	call CheckGoodItemTurn
 	jr c, .TeraUse
-	call AI_70_30
+	call AI_50_50
 	jr c, .TeraUse
 .TeraRandom
 	call AI_80_20
