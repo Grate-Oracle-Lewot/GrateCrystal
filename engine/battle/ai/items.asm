@@ -404,6 +404,7 @@ AI_Items:
 	jr nc, .TeraFail2
 .TeraUse
 	pop de
+	call EnemyUsedTeraOrb
 	jp AI_ClearCarryFlag
 .TeraFail1
 	pop bc
