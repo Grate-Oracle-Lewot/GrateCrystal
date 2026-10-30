@@ -26,8 +26,8 @@ CheckPlayerMoveTypeMatchups:
 
 	inc hl
 	call GetMoveByte
-	ld hl, wEnemyMonType
-	call CheckTypeMatchup
+	ld b, a
+	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
  	jr z, .neutral
