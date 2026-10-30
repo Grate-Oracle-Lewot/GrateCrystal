@@ -383,8 +383,10 @@ AI_Items:
 	jr c, .TeraFail2
 	call CheckGoodItemTurn
 	jr c, .TeraUse
+	call AI_70_30
+	jr c, .TeraUse
 .TeraRandom
-	call AI_90_10
+	call AI_80_20
 	jr nc, .TeraFail2
 .TeraUse
 	pop de
@@ -556,21 +558,48 @@ CheckEnemyTeraMatchups:
 	call CheckEnemyTypeAdvantage
 	jr nc, AI_SetCarryFlag
 
+	ld a, [wEnemyMonType1]
+	ld [wEnemyBackupType1], a
+	ld a, [wEnemyMonType2]
+	ld [wEnemyBackupType2], a
 	ld a, d
+	ld [wEnemyMonType1], a
+	ld [wEnemyMonType2], a
+
+	call CheckPlayerTypeAdvantage
+	jr nc, .no
+
+	ld a, [wLastPlayerMove]
+	and a
+	jr z, .yes
+	push bc
+	dec a
+	ld hl, Moves + MOVE_TYPE
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	and TYPE_MASK
 	ld b, a
 	farcall AI_CheckPlayerAdvantage
+	pop bc
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
-	jr nc, AI_SetCarryFlag
-	cp EFFECTIVE
-	jr c, AI_ClearCarryFlag
+	jr nc, .no
 
-	ld a, d
-	ld b, a
-	farcall AI_CheckEnemyAdvantage
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1
-	ret
+.yes
+	ld a, [wEnemyBackupType1]
+	ld [wEnemyMonType1], a
+	ld a, [wEnemyBackupType2]
+	ld [wEnemyMonType2], a
+	jr AI_ClearCarryFlag
+
+.no
+	ld a, [wEnemyBackupType1]
+	ld [wEnemyMonType1], a
+	ld a, [wEnemyBackupType2]
+	ld [wEnemyMonType2], a
+	jr AI_SetCarryFlag
 
 CalcEnemyHiddenPowerType:
 	ld hl, wEnemyMonDVs
