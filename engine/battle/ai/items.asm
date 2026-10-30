@@ -247,10 +247,10 @@ AI_TryItem:
 ; skip type advantage check if trainer has Tera Orbs
 	ld a, [wEnemyTrainerItem1]
 	cp TERA_ORB
-	jr .skip_advantage_check
+	jr z, .skip_advantage_check
 	ld a, [wEnemyTrainerItem2]
 	cp TERA_ORB
-	jr .skip_advantage_check
+	jr z, .skip_advantage_check
 
 ; if player has type advantage against enemy mon, don't use items on it
 ; mostly exists for when multiple mons are at the highest level
