@@ -379,22 +379,6 @@ AI_Items:
 	jr z, .TeraRandom
 	call AICheckEnemyHalfHP
 	jr nc, .TeraFail2
-	ld a, [wLastPlayerMove]
-	and a
-	jr z, .TeraSkip
-	push bc
-	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	farcall AI_CheckPlayerAdvantage
-	pop bc
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1
-	jr nc, .TeraFail2
-.TeraSkip
 	call CheckEnemyTeraMatchups
 	jr c, .TeraFail2
 	call CheckGoodItemTurn
