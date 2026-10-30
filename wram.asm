@@ -609,9 +609,7 @@ wEnemyFutureSightSpAtk:: dw
 wPlayerRageCounter:: db
 wEnemyRageCounter:: db
 
-wBeatUpHitAtLeastOnce::
-wEnemyPotentialTeraType::
-	db
+wBeatUpHitAtLeastOnce:: db
 
 wPlayerTrappingMove:: db
 wEnemyTrappingMove:: db
