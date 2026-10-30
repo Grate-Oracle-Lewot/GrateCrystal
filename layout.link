@@ -130,6 +130,7 @@ ROMX $2b
 	"Map Blocks 2"
 ROMX $2c
 	"Map Blocks 3"
+	"Map Blocks 4"
 ROMX $2d
 	"Tileset Data 5"
 ROMX $2e
@@ -312,8 +313,6 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $79
 	"Map Scripts 26"
-ROMX $7a
-	"Map Blocks 4"
 ROMX $7b
 	"Battle Tower Text"
 	"Extra Songs 4"
