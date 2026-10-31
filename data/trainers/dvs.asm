@@ -49,7 +49,7 @@ TrainerClassDVs:
 	dn  8,  9, 11,  8 ; BIRD_KEEPER
 	dn  8,  9,  9,  8 ; FISHER
 	dn  8, 13,  9,  8 ; HIKER
-	dn 11, 10, 11, 10 ; BIKER
+	dn 11, 10, 15, 10 ; BIKER
 	dn 10,  9,  9,  8 ; FIREBREATHER
 	dn  8,  9,  9, 12 ; PSYCHIC_T
 	dn 12,  9,  9,  8 ; BLACKBELT_T
