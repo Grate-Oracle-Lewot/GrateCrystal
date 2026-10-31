@@ -313,6 +313,8 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $79
 	"Map Scripts 26"
+ROMX $7a
+	"Extra Songs 3"
 ROMX $7b
 	"Battle Tower Text"
 	"Extra Songs 4"
