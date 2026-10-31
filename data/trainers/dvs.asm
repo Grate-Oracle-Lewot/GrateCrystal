@@ -41,7 +41,7 @@ TrainerClassDVs:
 	dn 14, 13, 13, 14 ; CAL
 	dn 13, 14, 14, 13 ; CAL_F
 	dn 12, 13, 13, 12 ; MYSTIC
-	dn 10,  9, 10,  9 ; ELDER
+	dn 10,  9, 10, 10 ; ELDER
 	dn  6,  5,  5,  6 ; OLD MAN
 	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
@@ -49,7 +49,7 @@ TrainerClassDVs:
 	dn  8,  9, 11,  8 ; BIRD_KEEPER
 	dn  8,  9,  9,  8 ; FISHER
 	dn  8, 13,  9,  8 ; HIKER
-	dn  8,  9, 11,  8 ; BIKER
+	dn 11, 10, 11, 10 ; BIKER
 	dn 10,  9,  9,  8 ; FIREBREATHER
 	dn  8,  9,  9, 12 ; PSYCHIC_T
 	dn 12,  9,  9,  8 ; BLACKBELT_T
