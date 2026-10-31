@@ -57,7 +57,7 @@ TrainerClassDVs:
 	dn  8,  7, 15,  8 ; JUGGLER
 	dn 10,  8,  9, 11 ; SCIENTIST
 	dn  8,  9,  9,  8 ; SUPER_NERD
-	dn  8,  9,  9,  8 ; POKEMANIAC
+	dn 10, 11, 10, 10 ; POKEMANIAC
 	dn  6, 11,  9,  8 ; GENTLEMAN
 	dn  6,  7,  7, 14 ; ENGINEER
 	dn  8,  9,  9,  8 ; GUITARIST
