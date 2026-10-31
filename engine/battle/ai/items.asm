@@ -605,7 +605,7 @@ CalcEnemyHiddenPowerType:
 EnemyUsedTeraOrb:
 	push de
 	ld de, SFX_SHARPEN
-	call PlaySFX
+	call WaitPlaySFX
 	pop de
 	ld a, TERA_ORB
 	call PrintText_UsedItemOn_AND_AIUpdateHUD
@@ -624,7 +624,7 @@ EnemyTeraOrbText:
 AIUsedItemSound:
 	push de
 	ld de, SFX_FULL_HEAL
-	call PlaySFX
+	call WaitPlaySFX
 	pop de
 	ret
 
