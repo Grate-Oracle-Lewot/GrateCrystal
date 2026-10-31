@@ -41,7 +41,7 @@ TrainerClassDVs:
 	dn 14, 13, 13, 14 ; CAL
 	dn 13, 14, 14, 13 ; CAL_F
 	dn 12, 13, 13, 12 ; MYSTIC
-	dn  8,  9,  9, 10 ; ELDER
+	dn 10,  9, 10,  9 ; ELDER
 	dn  6,  5,  5,  6 ; OLD MAN
 	dn  6,  5,  5,  6 ; YOUNGSTER
 	dn  6,  7,  7,  6 ; SCHOOLBOY
