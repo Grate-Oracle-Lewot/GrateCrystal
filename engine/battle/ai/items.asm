@@ -596,7 +596,7 @@ CheckEnemyTeraMatchups:
 	ld [wEnemyMonType1], a
 	ld a, [wEnemyBackupType2]
 	ld [wEnemyMonType2], a
-	jr AI_SetCarryFlag
+	jp AI_SetCarryFlag
 
 CalcEnemyHiddenPowerType:
 	ld hl, wEnemyMonDVs
