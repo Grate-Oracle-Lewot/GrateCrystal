@@ -36,12 +36,11 @@ GoldenrodDeptStore3FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore3FSuperNerdText:
-	text "I, I, I'm really"
-	line "impatient!"
+	text "Why're they called"
+	line "TERA ORBS?"
 
-	para "I use X SPEED in"
-	line "battle to speed up"
-	cont "my #MON."
+	para "Are they, like…"
+	line "terrible?"
 	done
 
 GoldenrodDeptStore3FRockerText:
