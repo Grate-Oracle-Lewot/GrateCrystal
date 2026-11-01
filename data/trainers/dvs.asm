@@ -39,7 +39,7 @@ TrainerClassDVs:
 	dn 12, 13,  9, 10 ; COOLTRAINER_M
 	dn 11, 12, 12,  9 ; COOLTRAINER_F
 	dn 14, 13, 13, 14 ; CAL
-	dn 13, 14, 14, 13 ; CAL_F
+	dn 15, 14, 14, 13 ; CAL_F
 	dn 12, 13, 13, 12 ; MYSTIC
 	dn 10,  9, 10, 10 ; ELDER
 	dn  6,  5,  5,  6 ; OLD MAN
