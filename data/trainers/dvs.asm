@@ -27,7 +27,7 @@ TrainerClassDVs:
 	dn 14, 13, 13, 14 ; WILL
 	dn 14, 13, 13, 14 ; BRUNO
 	dn 13, 14, 14, 13 ; LORELEI
-	dn 13, 14, 14, 13 ; AGATHA
+	dn 13, 13, 14, 15 ; AGATHA
 	dn 15, 14, 14, 14 ; CHAMPION
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 14, 15, 15, 14 ; RED
