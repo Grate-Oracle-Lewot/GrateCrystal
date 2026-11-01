@@ -555,6 +555,7 @@ CheckEnemyTeraMatchups:
 	call CheckEnemyTypeAdvantage
 	jr nc, AI_SetCarryFlag
 
+; back up the enemy's type, then change it to its hidden type for matchup checks
 	ld a, [wEnemyMonType1]
 	ld [wEnemyBackupType1], a
 	ld a, [wEnemyMonType2]
@@ -566,31 +567,60 @@ CheckEnemyTeraMatchups:
 	call CheckPlayerTypeAdvantage
 	jr nc, .no
 
-	ld a, [wLastPlayerMove]
+	ld a, [wPlayerUsedMoves]
 	and a
 	jr z, .yes
+
+; based on CheckPlayerMoveTypeMatchups
+	push hl
+	push de
 	push bc
+	ld hl, wPlayerUsedMoves
+	ld d, NUM_MOVES
+	ld e, 0
+.loop
+	ld a, [hli]
+	and a
+	jr z, .pop_yes
+	push hl
 	dec a
-	ld hl, Moves + MOVE_TYPE
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	and TYPE_MASK
+	ld hl, Moves + MOVE_POWER
+	call GetMoveAttr
+	and a
+	jr z, .next
+	inc hl
+	call GetMoveByte
 	ld b, a
 	farcall AI_CheckPlayerAdvantage
-	pop bc
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
-	jr nc, .no
+	jr nc, .pop_no
+	jr .pop_yes
 
+.next
+	pop hl
+	dec d
+	jr nz, .loop
+	jr .done
+
+.pop_yes
+	pop hl
+.done
+	pop bc
+	pop de
+	pop hl
 .yes
 	ld a, [wEnemyBackupType1]
 	ld [wEnemyMonType1], a
 	ld a, [wEnemyBackupType2]
 	ld [wEnemyMonType2], a
-	jr AI_ClearCarryFlag
+	jp AI_ClearCarryFlag
 
+.pop_no
+	pop hl
+	pop bc
+	pop de
+	pop hl
 .no
 	ld a, [wEnemyBackupType1]
 	ld [wEnemyMonType1], a
