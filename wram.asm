@@ -9,7 +9,7 @@ INCLUDE "vram.asm"
 SECTION "Stack", WRAM0
 
 wStackBottom::
-	ds $105 - 1
+	ds $109 - 1
 wStackTop::
 	ds 1
 
@@ -24,8 +24,6 @@ wAudio::
 for n, 1, NUM_CHANNELS + 1
 wChannel{d:n}:: channel_struct wChannel{d:n}
 endr
-
-	ds 1
 
 wCurTrackDuty:: db
 wCurTrackVolumeEnvelope:: db
@@ -88,8 +86,6 @@ wUnusedMusicF9Flag:: db
 wSFXPriority::
 ; if nonzero, turn off music when playing sfx
 	db
-
-	ds 1
 
 wChannel1JumpCondition:: db
 wChannel2JumpCondition:: db
@@ -168,8 +164,6 @@ wMovementObject::
 wMovementDataBank:: db
 wMovementDataAddress:: dw
 wIndexedMovement2Pointer:: dw
-
-	ds 2
 
 wMovementByteWasControlSwitch:: db
 
