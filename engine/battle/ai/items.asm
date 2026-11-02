@@ -583,11 +583,11 @@ CheckEnemyTeraMatchups:
 	push hl
 	dec a
 	ld hl, Moves + MOVE_POWER
-	call GetMoveAttr
+	call AI_GetMoveAttr
 	and a
 	jr z, .next
 	inc hl
-	call GetMoveByte
+	call AI_GetMoveByte
 	ld b, a
 	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
@@ -625,6 +625,19 @@ CheckEnemyTeraMatchups:
 CalcEnemyHiddenPowerType:
 	ld hl, wEnemyMonDVs
 	jp GetHiddenPowerType
+
+AI_GetMoveByte:
+	ld a, BANK(Moves)
+	jp GetFarByte
+
+AI_GetMoveAttr:
+; Assuming hl = Moves + x, return attribute x of move a.
+	push bc
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	call AI_GetMoveByte
+	pop bc
+	ret
 
 EnemyUsedTeraOrb:
 	push de
