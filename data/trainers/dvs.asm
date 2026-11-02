@@ -60,7 +60,7 @@ TrainerClassDVs:
 	dn 10, 11, 10, 10 ; POKEMANIAC       TERA ELECTRIC
 	dn  6, 11,  9,  8 ; GENTLEMAN        n/a
 	dn  6,  7,  7, 14 ; ENGINEER         n/a
-	dn  8,  9,  9,  8 ; GUITARIST        n/a
+	dn  9, 10,  9,  8 ; GUITARIST        TERA STEEL
 	dn 10,  9,  7,  8 ; OFFICER          n/a
 	dn  8,  9,  9,  8 ; BURGLAR          n/a
 	dn  6,  7,  7,  6 ; GAMBLER          n/a
