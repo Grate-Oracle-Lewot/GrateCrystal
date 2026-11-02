@@ -379,15 +379,14 @@ AI_Items:
 	jr z, .TeraRandom
 	call AICheckEnemyHalfHP
 	jr nc, .TeraFail2
-	call CheckEnemyTeraMatchups ; pop de
-	jp c, AI_SetCarryFlag ; fail
-	jr .TeraUse2
+	call CheckEnemyTeraMatchups
+	jr c, .TeraFail2
+	jr .TeraUse
 .TeraRandom
 	call AI_80_20
 	jr nc, .TeraFail2
-.TeraUse1
+.TeraUse
 	pop de
-.TeraUse2
 	call EnemyUsedTeraOrb
 	jp AI_ClearCarryFlag
 .TeraFail1
@@ -552,9 +551,9 @@ CheckEnemyTeraMatchups:
 
 ; advantage checks preserve d
 	call CheckPlayerTypeAdvantage
-	jr c, .de_no
+	jr c, AI_SetCarryFlag
 	call CheckEnemyTypeAdvantage
-	jr nc, .de_no
+	jr nc, AI_SetCarryFlag
 
 ; back up the enemy's type, then change it to its hidden type for matchup checks
 	ld a, [wEnemyMonType1]
@@ -564,8 +563,6 @@ CheckEnemyTeraMatchups:
 	ld a, d
 	ld [wEnemyMonType1], a
 	ld [wEnemyMonType2], a
-
-	pop de
 
 	call CheckPlayerTypeAdvantage
 	jr nc, .no
@@ -619,12 +616,7 @@ CheckEnemyTeraMatchups:
 	ld [wEnemyMonType1], a
 	ld a, [wEnemyBackupType2]
 	ld [wEnemyMonType2], a
-.set
 	jp AI_SetCarryFlag
-
-.de_no
-	pop de
-	jr .set
 
 .next
 	pop hl
