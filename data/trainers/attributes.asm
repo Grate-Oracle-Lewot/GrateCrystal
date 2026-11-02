@@ -195,7 +195,7 @@ TrainerClassAttributes:
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
 
 ; Aerobones
-	db NO_ITEM, NO_ITEM ; items
+	db TERA_ORB, TERA_ORB ; items
 	db 0 ; base reward
 	dw NO_AI
 	dw NO_AI
@@ -207,7 +207,7 @@ TrainerClassAttributes:
 	dw NO_AI
 
 ; Missingno T
-	db NO_ITEM, NO_ITEM ; items
+	db TERA_ORB, TERA_ORB ; items
 	db 1 ; base reward
 	dw NO_AI
 	dw NO_AI
