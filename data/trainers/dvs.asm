@@ -33,9 +33,9 @@ TrainerClassDVs:
 	dn 14, 15, 15, 14 ; RED              n/a
 	dn 12, 13, 13, 12 ; RIVAL1           n/a
 	dn 12, 13, 13, 12 ; RIVAL2           n/a
-	dn 15,  0,  0,  0 ; AEROBONES        n/a
+	dn 15,  0,  0,  0 ; AEROBONES        TERA PSYCHIC
 	dn 15, 14, 14, 14 ; KABUBONES        TERA DRAGON
-	dn  0,  0,  0,  0 ; MISSINGNO_T      n/a
+	dn  0,  0,  0,  0 ; MISSINGNO_T      TERA FIGHTING
 	dn 12, 13,  9, 10 ; COOLTRAINER_M    n/a
 	dn 11, 12, 12,  9 ; COOLTRAINER_F    n/a
 	dn 14, 13, 13, 14 ; CAL              n/a
