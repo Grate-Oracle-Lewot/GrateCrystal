@@ -362,15 +362,15 @@ AI_Items:
 	push de
 	push bc
 	call CalcEnemyHiddenPowerType
+	pop bc
 	ld d, a
 	ld a, [wEnemyMonType1]
 	cp d
 	jr nz, .TeraGood
 	ld a, [wEnemyMonType2]
 	cp d
-	jr z, .TeraFail1
+	jr z, .TeraFail
 .TeraGood
-	pop bc
 	ld a, [bc]
 	bit ALWAYS_USE_F, a
 	jr nz, .TeraUse
@@ -378,20 +378,18 @@ AI_Items:
 	bit CONTEXT_USE_F, a
 	jr z, .TeraRandom
 	call AICheckEnemyHalfHP
-	jr nc, .TeraFail2
+	jr nc, .TeraFail
 	call CheckEnemyTeraMatchups
-	jr c, .TeraFail2
+	jr c, .TeraFail
 	jr .TeraUse
 .TeraRandom
 	call AI_80_20
-	jr nc, .TeraFail2
+	jr nc, .TeraFail
 .TeraUse
 	pop de
 	call EnemyUsedTeraOrb
 	jp AI_ClearCarryFlag
-.TeraFail1
-	pop bc
-.TeraFail2
+.TeraFail
 	pop de
 	jp AI_SetCarryFlag
 
