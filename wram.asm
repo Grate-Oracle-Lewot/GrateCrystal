@@ -9,7 +9,7 @@ INCLUDE "vram.asm"
 SECTION "Stack", WRAM0
 
 wStackBottom::
-	ds $109 - 1
+	ds $10a - 1
 wStackTop::
 	ds 1
 
