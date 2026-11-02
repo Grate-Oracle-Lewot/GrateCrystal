@@ -594,6 +594,10 @@ CheckEnemyTeraMatchups:
 	cp EFFECTIVE + 1
 	pop hl
 	jr nc, .pop_no
+.next
+	pop hl
+	dec d
+	jr nz, .loop
 .pop_yes
 	pop bc
 	pop de
@@ -615,12 +619,6 @@ CheckEnemyTeraMatchups:
 	ld a, [wEnemyBackupType2]
 	ld [wEnemyMonType2], a
 	jp AI_SetCarryFlag
-
-.next
-	pop hl
-	dec d
-	jr nz, .loop
-	jr .pop_yes
 
 CalcEnemyHiddenPowerType:
 	ld hl, wEnemyMonDVs
