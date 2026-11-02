@@ -9,7 +9,7 @@ INCLUDE "vram.asm"
 SECTION "Stack", WRAM0
 
 wStackBottom::
-	ds $100 - 1
+	ds $105 - 1
 wStackTop::
 	ds 1
 
@@ -78,8 +78,6 @@ wMusicFade::
 	db
 wMusicFadeCount:: db
 wMusicFadeID:: dw
-
-	ds 5
 
 wCryPitch:: dw
 wCryLength:: dw
