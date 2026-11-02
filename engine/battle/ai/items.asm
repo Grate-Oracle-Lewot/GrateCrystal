@@ -594,8 +594,8 @@ CheckEnemyTeraMatchups:
 	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
-	jr nc, .pop_no
 	pop hl
+	jr nc, .pop_no
 .pop_yes
 	pop bc
 	pop de
@@ -608,7 +608,6 @@ CheckEnemyTeraMatchups:
 	jp AI_ClearCarryFlag
 
 .pop_no
-	pop hl
 	pop bc
 	pop de
 	pop hl
