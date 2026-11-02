@@ -357,7 +357,7 @@ TrainerClassAttributes:
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | ALWAYS_USE
 
 ; Guitarist
-	db NO_ITEM, NO_ITEM ; items
+	db TERA_ORB, NO_ITEM ; items
 	db 13 ; base reward
 	dw AI_BASIC | AI_STATUS | AI_SETUP | AI_CAUTIOUS | AI_TYPES | AI_IMMUNITIES
 	dw SWITCH_SOMETIMES | CONTEXT_USE
