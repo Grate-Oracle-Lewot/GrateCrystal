@@ -26,6 +26,7 @@ CheckPlayerMoveTypeMatchups:
 
 	inc hl
 	call GetMoveByte
+	and TYPE_MASK
 	ld b, a
 	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
