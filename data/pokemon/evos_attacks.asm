@@ -1071,10 +1071,10 @@ GeodudeEvosAttacks:
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 26, ROCK_POLISH
-	db 31, POWER_GEM
+	db 31, SUBMISSION
 	db 36, ROCK_SLIDE
 	db 41, EARTHQUAKE
-	db 44, ROCK_WRECKER
+	db 46, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -1088,10 +1088,10 @@ GolemEvosAttacks:
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 27, ROCK_POLISH
-	db 34, POWER_GEM
+	db 34, SUBMISSION
 	db 41, ROCK_SLIDE
 	db 48, EARTHQUAKE
-	db 52, ROCK_WRECKER
+	db 55, ROCK_WRECKER
 	db 0 ; no more level-up moves
 
 PonytaEvosAttacks:
