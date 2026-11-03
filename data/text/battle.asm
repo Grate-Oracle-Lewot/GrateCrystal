@@ -1199,7 +1199,7 @@ _TeraOrbText:
 	done
 
 _EnemyTeraOrbText:
-	text "<TARGET>"
+	text "<USER>"
 	line "transformed into"
 	scroll "the @"
 	text_ram wStringBuffer1
