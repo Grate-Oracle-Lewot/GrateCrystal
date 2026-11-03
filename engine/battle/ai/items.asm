@@ -1,4 +1,5 @@
 AI_SwitchOrTryItem:
+	; start with carry flag cleared
 	and a
 
 	ld a, [wBattleMode]
@@ -165,6 +166,9 @@ AI_TryItem:
 	ret nc
 
 .skip_level_check
+	; reset carry flag
+	and a
+
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
