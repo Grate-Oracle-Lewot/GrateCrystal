@@ -491,6 +491,7 @@ wEffectCarryover:: db
 ; 3 FLOAT_MISS: Ground-type attack missed a floatmon (different text)
 ; 4 PROTECT_MISS: attack missed due to target Protecting (different text)
 ; 5-7 unused
+	ds 1
 
 wCurPlayerMove:: db
 wCurEnemyMove::  db
@@ -500,14 +501,15 @@ wLinkBattleRNCount::
 	db
 
 wEnemyItemState:: db
+wMoveCheckArrayAddr:: dw
 wCurEnemyMoveNum:: db
 
 wEnemyHPAtTimeOfPlayerSwitch:: dw
 wPayDayMoney:: ds 3
 
-	ds 1
 wEnemyBackupType1:: db
 wEnemyBackupType2:: db
+	ds 1
 wEnemyBackupDVs:: dw ; used when enemy is transformed
 wAlreadyDisobeyed:: db
 
@@ -526,6 +528,7 @@ wAlreadyFailed:: db
 wBattleParticipantsIncludingFainted:: db
 wBattleLowHealthAlarm:: db
 wPlayerMinimized:: db
+
 wPlayerScreens::
 ; bit
 ; 0 spikes
@@ -549,8 +552,6 @@ wEnemySafeguardCount:: db
 wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
 wEnemyFutureSightCount:: db
-
-wMoveCheckArrayAddr:: dw
 
 wBattleWeather::
 ; 00 normal
