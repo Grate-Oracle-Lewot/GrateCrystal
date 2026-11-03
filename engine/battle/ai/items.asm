@@ -359,6 +359,7 @@ AI_Items:
 	ld a, [wEnemyMonSpecies]
 	cp UNOWN
 	jp z, AI_SetCarryFlag
+	push hl
 	push de
 	push bc
 	call CalcEnemyHiddenPowerType
@@ -387,10 +388,12 @@ AI_Items:
 	jr nc, .TeraFail
 .TeraUse
 	pop de
+	pop hl
 	call EnemyUsedTeraOrb
 	jp AI_ClearCarryFlag
 .TeraFail
 	pop de
+	pop hl
 	jp AI_SetCarryFlag
 
 .FullRestore:
