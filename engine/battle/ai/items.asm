@@ -166,9 +166,6 @@ AI_TryItem:
 	ret nc
 
 .skip_level_check
-	; reset carry flag
-	and a
-
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
