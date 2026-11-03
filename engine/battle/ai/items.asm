@@ -588,6 +588,7 @@ CheckEnemyTeraMatchups:
 	jr z, .next
 	inc hl
 	call AI_GetMoveByte
+	and TYPE_MASK
 	ld b, a
 	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
