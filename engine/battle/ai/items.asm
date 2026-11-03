@@ -1,5 +1,4 @@
 AI_SwitchOrTryItem:
-	; start with carry flag cleared
 	and a
 
 	ld a, [wBattleMode]
