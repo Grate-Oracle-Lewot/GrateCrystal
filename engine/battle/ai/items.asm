@@ -359,7 +359,6 @@ AI_Items:
 	ld a, [wEnemyMonSpecies]
 	cp UNOWN
 	jp z, AI_SetCarryFlag
-	push hl
 	push de
 	push bc
 	call CalcEnemyHiddenPowerType
@@ -388,12 +387,10 @@ AI_Items:
 	jr nc, .TeraFail
 .TeraUse
 	pop de
-	pop hl
 	call EnemyUsedTeraOrb
 	jp AI_ClearCarryFlag
 .TeraFail
 	pop de
-	pop hl
 	jp AI_SetCarryFlag
 
 .FullRestore:
@@ -595,7 +592,6 @@ CheckEnemyTeraMatchups:
 	farcall AI_CheckPlayerAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE + 1
-	pop hl
 	jr nc, .pop_no
 .next
 	pop hl
@@ -613,6 +609,7 @@ CheckEnemyTeraMatchups:
 	jp AI_ClearCarryFlag
 
 .pop_no
+	pop hl
 	pop bc
 	pop de
 	pop hl
