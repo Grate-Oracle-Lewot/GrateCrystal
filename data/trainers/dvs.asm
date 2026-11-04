@@ -17,7 +17,7 @@ TrainerClassDVs:
 	dn 13, 14, 14, 13 ; KAREN            TERA GHOST
 	dn 12, 11, 11, 12 ; BROCK            n/a
 	dn 11, 12, 12, 11 ; MISTY            n/a
-	dn 12, 11, 11, 12 ; LT_SURGE         n/a
+	dn 12, 12, 11, 12 ; LT_SURGE         TERA FLYING
 	dn 11, 12, 12, 11 ; ERIKA            n/a
 	dn 11, 12, 12, 11 ; JANINE           n/a
 	dn 11, 12, 12, 11 ; SABRINA          n/a
