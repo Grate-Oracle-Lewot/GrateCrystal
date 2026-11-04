@@ -1323,6 +1323,7 @@ BattleCommand_Stab:
 
 AI_CheckPlayerAdvantage::
 	ld a, b
+SwitchCheckAdvantage:
 	ld hl, wEnemyMonType1
 	jr CheckTypeMatchup
 
