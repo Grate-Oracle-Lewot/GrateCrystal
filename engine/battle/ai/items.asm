@@ -584,8 +584,8 @@ CheckEnemyTeraMatchups:
 	dec a
 	ld hl, Moves + MOVE_POWER
 	call AI_GetMoveAttr
-	and a
-	jr z, .next
+	cp 2
+	jr c, .next
 	inc hl
 	call AI_GetMoveByte
 	and TYPE_MASK
