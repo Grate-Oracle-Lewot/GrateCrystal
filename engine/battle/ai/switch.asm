@@ -27,8 +27,7 @@ CheckPlayerMoveTypeMatchups:
 	inc hl
 	call GetMoveByte
 	and TYPE_MASK
-	ld b, a
-	farcall AI_CheckPlayerAdvantage
+	call SwitchCheckAdvantage
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
  	jr z, .neutral
