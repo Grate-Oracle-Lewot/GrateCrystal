@@ -344,7 +344,7 @@ Prize TMs:
 
 (Some of the following improvements are now available [in this tutorial](https://github.com/pret/pokecrystal/wiki/Improve-the-enemy-trainer-AI).)
 
-- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They also have additional item logic that considers type matchups, Fly/Dig, Perish Song, etc.
+- In addition to using items on their highest-level Pokémon, trainers will now use items on their last remaining Pokémon. They also have additional item logic that considers type matchups, Fly/Dig, Perish Song, etc. Tera Orbs are a viable enemy item, with accompanying logic.
 
 - Trainers will now switch out their Pokémon... like, ever, but also intelligently, based on factors such as remaining HP, volatile status conditions, and player and AI stat increases and decreases, with variations in this behavior depending on trainer class. This code was adapted from Lunatic Crystal by GetKosiorekt.
 
