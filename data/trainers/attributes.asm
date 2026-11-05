@@ -195,19 +195,19 @@ TrainerClassAttributes:
 	dw SWITCH_SOMETIMES | SWITCH_STATUS | CONTEXT_USE
 
 ; Aerobones
-	db PARK_BALL, PARK_BALL ; items
+	db CPU_RANDOM_ITEM, CPU_RANDOM_ITEM ; items
 	db 0 ; base reward
 	dw NO_AI
 	dw NO_AI
 
 ; Kabubones
-	db PARK_BALL, PARK_BALL ; items
+	db CPU_RANDOM_ITEM, CPU_RANDOM_ITEM ; items
 	db 42 ; base reward
 	dw NO_AI
 	dw NO_AI
 
 ; Missingno T
-	db PARK_BALL, PARK_BALL ; items
+	db CPU_RANDOM_ITEM, CPU_RANDOM_ITEM ; items
 	db 1 ; base reward
 	dw NO_AI
 	dw NO_AI
