@@ -287,23 +287,24 @@ AI_ClearCarryFlag2:
 	ret
 
 AI_Items:
-	dbw FULL_RESTORE, .FullRestore
-	dbw MAX_POTION,   .MaxPotion
-	dbw HYPER_POTION, .HyperPotion
-	dbw SUPER_POTION, .SuperPotion
-	dbw SPRING_WATER, .SpringWater
-	dbw X_ACCURACY,   .XAccuracy
-	dbw FULL_HEAL,    .FullHeal
-	dbw FRANKENBERRY, .Frankenberry
-	dbw OLD_GATEAU,   .OldGateau
-	dbw GUARD_SPEC,   .GuardSpec
-	dbw DIRE_HIT,     .DireHit
-	dbw X_ATTACK,     .XAttack
-	dbw X_DEFEND,     .XDefend
-	dbw X_SPEED,      .XSpeed
-	dbw X_SPECIAL,    .XSpecial
-	dbw X_SP_DEFEND,  .XSpDefend
-	dbw TERA_ORB,     .TeraOrb
+	dbw FULL_RESTORE,    .FullRestore
+	dbw MAX_POTION,      .MaxPotion
+	dbw HYPER_POTION,    .HyperPotion
+	dbw SUPER_POTION,    .SuperPotion
+	dbw SPRING_WATER,    .SpringWater
+	dbw X_ACCURACY,      .XAccuracy
+	dbw FULL_HEAL,       .FullHeal
+	dbw FRANKENBERRY,    .Frankenberry
+	dbw OLD_GATEAU,      .OldGateau
+	dbw GUARD_SPEC,      .GuardSpec
+	dbw DIRE_HIT,        .DireHit
+	dbw X_ATTACK,        .XAttack
+	dbw X_DEFEND,        .XDefend
+	dbw X_SPEED,         .XSpeed
+	dbw X_SPECIAL,       .XSpecial
+	dbw X_SP_DEFEND,     .XSpDefend
+	dbw TERA_ORB,        .TeraOrb
+	dbw CPU_RANDOM_ITEM, .Roulette
 	db -1 ; end
 
 .FullHeal:
@@ -354,6 +355,24 @@ AI_Items:
 	and 1 << FRZ | SLP
 	jp z, AI_SetCarryFlag
 	jp AI_ClearCarryFlag
+
+.Roulette:
+	call Random
+	cp 256 / 8 * 1
+	jp c, .XAttack
+	cp 256 / 8 * 2
+	jp c, .XDefend
+	cp 256 / 8 * 3
+	jp c, .XSpeed
+	cp 256 / 8 * 4
+	jp c, .XSpecial
+	cp 256 / 8 * 5
+	jp c, .XSpDefend
+	cp 256 / 8 * 6
+	jp c, .DireHit
+	cp 256 / 8 * 7
+	jp c, .GuardSpec
+	; fallthrough
 
 .TeraOrb:
 	ld a, [wEnemyMonSpecies]
