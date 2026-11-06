@@ -2087,17 +2087,17 @@ BattleTowerLi:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 8, 9, 9, 10 ; DVs
+	dn 10, 9, 10, 10 ; DVs
 	db 40, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 345 ; HP
-	bigdw 345 ; Max HP
-	bigdw 294 ; Atk
+	bigdw 341 ; HP
+	bigdw 341 ; Max HP
+	bigdw 298 ; Atk
 	bigdw 216 ; Def
-	bigdw 226 ; Spd
+	bigdw 228 ; Spd
 	bigdw 288 ; SAtk
 	bigdw 228 ; SDef
 	db "VICTREEBEL@"
@@ -2113,17 +2113,17 @@ BattleTowerLi:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 8, 9, 9, 10 ; DVs
+	dn 10, 9, 10, 10 ; DVs
 	db 16, 8, 16, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 335 ; HP
-	bigdw 335 ; Max HP
-	bigdw 244 ; Atk
+	bigdw 331 ; HP
+	bigdw 331 ; Max HP
+	bigdw 248 ; Atk
 	bigdw 276 ; Def
-	bigdw 186 ; Spd
+	bigdw 188 ; Spd
 	bigdw 268 ; SAtk
 	bigdw 288 ; SDef
 	db "BELLOSSOM@@"
@@ -2139,17 +2139,17 @@ BattleTowerLi:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 8, 9, 9, 10 ; DVs
+	dn 10, 9, 10, 10 ; DVs
 	db 32, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 322 ; HP
-	bigdw 322 ; Max HP
-	bigdw 184 ; Atk
+	bigdw 318 ; HP
+	bigdw 318 ; Max HP
+	bigdw 188 ; Atk
 	bigdw 186 ; Def
-	bigdw 226 ; Spd
+	bigdw 228 ; Spd
 	bigdw 260 ; SAtk
 	bigdw 280 ; SDef
 	db "NOCTOWL@@@@"
