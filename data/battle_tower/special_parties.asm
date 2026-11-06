@@ -1257,16 +1257,16 @@ BattleTowerLtSurge:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 12, 11, 11, 12 ; DVs
+	dn 12, 12, 11, 12 ; DVs
 	db 40, 24, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 325 ; HP
-	bigdw 325 ; Max HP
+	bigdw 317 ; HP
+	bigdw 317 ; Max HP
 	bigdw 298 ; Atk
-	bigdw 214 ; Def
+	bigdw 216 ; Def
 	bigdw 290 ; Spd
 	bigdw 282 ; SAtk
 	bigdw 262 ; SDef
@@ -1283,16 +1283,16 @@ BattleTowerLtSurge:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 12, 11, 11, 12 ; DVs
+	dn 12, 12, 11, 12 ; DVs
 	db 8, 24, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 305 ; HP
-	bigdw 305 ; Max HP
+	bigdw 297 ; HP
+	bigdw 297 ; Max HP
 	bigdw 224 ; Atk
-	bigdw 300 ; Def
+	bigdw 302 ; Def
 	bigdw 222 ; Spd
 	bigdw 344 ; SAtk
 	bigdw 248 ; SDef
@@ -1309,16 +1309,16 @@ BattleTowerLtSurge:
 	bigdw 65535
 	bigdw 65535
 	bigdw 65535
-	dn 12, 11, 11, 12 ; DVs
+	dn 12, 12, 11, 12 ; DVs
 	db 8, 24, 16, 8 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 435 ; HP
-	bigdw 435 ; Max HP
+	bigdw 427 ; HP
+	bigdw 427 ; Max HP
 	bigdw 208 ; Atk
-	bigdw 206 ; Def
+	bigdw 208 ; Def
 	bigdw 224 ; Spd
 	bigdw 244 ; SAtk
 	bigdw 244 ; SDef
