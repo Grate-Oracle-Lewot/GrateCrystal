@@ -2485,7 +2485,7 @@ LedybaEvosAttacks:
 	db 1, SUPERSONIC
 	db 8, MACH_PUNCH
 	db 8, AGILITY
-	db 15, SWIFT
+	db 15, MIRROR_COAT
 	db 22, LIGHT_SCREEN
 	db 22, REFLECT
 	db 22, SAFEGUARD
@@ -2504,7 +2504,7 @@ LedianEvosAttacks:
 	db 1, SUPERSONIC
 	db 8, MACH_PUNCH
 	db 8, AGILITY
-	db 15, SWIFT
+	db 15, MIRROR_COAT
 	db 24, LIGHT_SCREEN
 	db 24, REFLECT
 	db 24, SAFEGUARD
