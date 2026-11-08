@@ -117,12 +117,11 @@ BattleCommand_FutureSight:
 	pop de
 	xor a
 	ld [wAttackMissed], a
-	jr .Done
+	ret
 
 .Failed:
 	pop bc
 	call ResetDamage
 	call AnimateFailedMove
 	call PrintButItFailed
-.Done:
 	jp EndMoveEffect
