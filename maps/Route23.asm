@@ -24,6 +24,9 @@ IndigoPlateauSign:
 LoungeSign:
 	jumptext LoungeSignText
 
+Route23HiddenTeraOrb:
+	hiddenitem TERA_ORB, EVENT_ROUTE_23_HIDDEN_TERA_ORB
+
 Route23BlackBeltText:
 	text "I hope our #MON"
 	line "LEAGUE never gets"
@@ -69,8 +72,8 @@ Route23_MapEvents:
 	def_warp_events
 	warp_event  9,  5, INDIGO_PLATEAU_POKECENTER_1F, 1
 	warp_event 10,  5, INDIGO_PLATEAU_POKECENTER_1F, 2
-	warp_event  9, 31, VICTORY_ROAD, 10
-	warp_event 10, 31, VICTORY_ROAD, 10
+	warp_event  9, 55, VICTORY_ROAD, 10
+	warp_event 10, 55, VICTORY_ROAD, 10
 	warp_event 15, 21, LOUNGE_1F, 1
 
 	def_coord_events
@@ -78,6 +81,7 @@ Route23_MapEvents:
 	def_bg_events
 	bg_event 11,  7, BGEVENT_READ, IndigoPlateauSign
 	bg_event 13, 21, BGEVENT_READ, LoungeSign
+	bg_event  9, 33, BGEVENT_ITEM, Route23HiddenTeraOrb
 
 	def_object_events
 	object_event  9, 16, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route23BlackBeltScript, -1
