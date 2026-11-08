@@ -1953,7 +1953,7 @@ FutureSight:
 	usedmovetext
 	doturn
 	futuresight
-	damagecalc
+	damagecalc ; skip here if last turn
 	damagevariation
 	moveanimnosub
 	applydamage
