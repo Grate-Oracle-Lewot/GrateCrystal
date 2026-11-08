@@ -11,27 +11,6 @@ BattleCommand_CheckFutureSight:
 	ret nz
 
 	ld [hl], 0
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .player
-
-; .enemy
-	ld a, [wEnemyMonLevel]
-	ld [wEnemyFutureSightLevel], a
-	ld a, [wEnemyMonSpclAtk]
-	ld [wEnemyFutureSightSpAtk], a
-	ld a, [wEnemyMonSpclAtk + 1]
-	ld [wEnemyFutureSightSpAtk + 1], a
-	jr .end
-
-.player
-	ld a, [wBattleMonLevel]
-	ld [wPlayerFutureSightLevel], a
-	ld a, [wBattleMonSpclAtk]
-	ld [wPlayerFutureSightSpAtk], a
-	ld a, [wBattleMonSpclAtk + 1]
-	ld [wPlayerFutureSightSpAtk + 1], a
-.end
 	ld b, futuresight_command
 	jp SkipToBattleCommand
 
@@ -64,6 +43,37 @@ BattleCommand_FutureSight:
 	ld hl, ForesawAttackText
 	call StdBattleTextbox
 	call BattleCommand_RaiseSub
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+; .enemy
+	ld a, [wEnemyMonLevel]
+	ld [wEnemyFutureSightLevel], a
+	ld a, [wEnemyMonSpclAtk]
+	ld [wEnemyFutureSightSpAtk], a
+	ld a, [wEnemyMonSpclAtk + 1]
+	ld [wEnemyFutureSightSpAtk + 1], a
+	jr .Done
+
+.player
+	ld a, [wBattleMonLevel]
+	ld [wPlayerFutureSightLevel], a
+	ld a, [wBattleMonSpclAtk]
+	ld [wPlayerFutureSightSpAtk], a
+	ld a, [wBattleMonSpclAtk + 1]
+	ld [wPlayerFutureSightSpAtk + 1], a
+	jr .Done
+
+.Failed:
+	pop bc
+	call FutureSightFailed
+.Done:
+	jp EndMoveEffect
+
+BattleCommand_FutureSightStats:
+; Return move power d, user level e, target defense c and user attack b.
+
 	call ResetDamage
 	ldh a, [hBattleTurn]
 	and a
@@ -115,10 +125,4 @@ BattleCommand_FutureSight:
 	pop de
 	xor a
 	ld [wAttackMissed], a
-	jr .Done
-
-.Failed:
-	pop bc
-	call FutureSightFailed
-.Done:
-	jp EndMoveEffect
+	ret
