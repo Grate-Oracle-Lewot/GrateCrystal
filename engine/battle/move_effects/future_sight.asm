@@ -119,8 +119,6 @@ BattleCommand_FutureSight:
 
 .Failed:
 	pop bc
-	call ResetDamage
-	call AnimateFailedMove
-	call PrintButItFailed
+	call FutureSightFailed
 .Done:
 	jp EndMoveEffect
