@@ -6274,6 +6274,10 @@ ArenaTrap:
 	ld hl, CantEscapeNowText
 	jp StdBattleTextbox
 
+FutureSightFailed:
+	call ResetDamage
+	; fallthrough
+
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
