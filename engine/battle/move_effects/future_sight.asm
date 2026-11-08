@@ -7,8 +7,6 @@ BattleCommand_CheckFutureSight:
 .ok
 
 	ld a, [hl]
-	and a
-	ret z
 	cp 1
 	ret nz
 
