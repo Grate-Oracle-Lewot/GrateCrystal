@@ -151,6 +151,7 @@ BattleCommandPointers:
 	dw BattleCommand_MirrorCoat
 	dw BattleCommand_CheckFutureSight
 	dw BattleCommand_FutureSight
+	dw BattleCommand_FutureSightStats
 	dw BattleCommand_DoubleMinimizeDamage
 	dw BattleCommand_SkipSunCharge
 	dw BattleCommand_StartHail
