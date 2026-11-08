@@ -151,31 +151,32 @@ ENDM
 	command mirrorcoat              ; 90
 	command checkfuturesight        ; 91
 	command futuresight             ; 92
-	command doubleminimizedamage    ; 93
-	command skipsuncharge           ; 94
-	command starthail               ; 95
-	command beatup                  ; 96
-	command ragedamage              ; 97
-	command resettypematchup        ; 98
-	command allstatsup              ; 99
-	command bidefailtext            ; 9a
-	command raisesubnoanim          ; 9b
-	command lowersubnoanim          ; 9c
-	command beatupfailtext          ; 9d
-	command clearmissdamage         ; 9e
-	command movedelay               ; 9f
-	command moveanim                ; a0
-	command tristatuschance         ; a1
-	command supereffectivelooptext  ; a2
-	command startloop               ; a3
-	command curl                    ; a4
-	command undergroundflyer        ; a5
-	command checkcontact            ; a6
-	command doubledamageifhit       ; a7
-	command conversion              ; a8
-	command eggbomb                 ; a9
-	command doublehelditemdamage    ; aa
-	command spiderweb               ; ab
+	command futuresightstats        ; 93
+	command doubleminimizedamage    ; 94
+	command skipsuncharge           ; 95
+	command starthail               ; 96
+	command beatup                  ; 97
+	command ragedamage              ; 98
+	command resettypematchup        ; 99
+	command allstatsup              ; 9a
+	command bidefailtext            ; 9b
+	command raisesubnoanim          ; 9c
+	command lowersubnoanim          ; 9d
+	command beatupfailtext          ; 9e
+	command clearmissdamage         ; 9f
+	command movedelay               ; a0
+	command moveanim                ; a1
+	command tristatuschance         ; a2
+	command supereffectivelooptext  ; a3
+	command startloop               ; a4
+	command curl                    ; a5
+	command undergroundflyer        ; a6
+	command checkcontact            ; a7
+	command doubledamageifhit       ; a8
+	command conversion              ; a9
+	command eggbomb                 ; aa
+	command doublehelditemdamage    ; ab
+	command spiderweb               ; ac
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
