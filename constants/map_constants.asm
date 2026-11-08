@@ -215,7 +215,7 @@ ENDM
 	endgroup
 
 	newgroup INDIGO                                         ; group 14
-	map_const ROUTE_23,                                    10, 18 ;  1
+	map_const ROUTE_23,                                    10, 30 ;  1
 	map_const LOUNGE_1F,                                   10,  9 ;  2
 	map_const LOUNGE_2F,                                   10,  9 ;  3
 	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  4
