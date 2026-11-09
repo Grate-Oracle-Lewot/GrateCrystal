@@ -77,19 +77,17 @@ BattleCommand_FutureSightFix:
 
 ; .Enemy:
 	ld a, [wEnemyFutureSightSpAtk]
-	push af
+	ld b, a
 	ld a, [wEnemyFutureSightLevel]
 	jr .End
 
 .Player:
 	ld a, [wPlayerFutureSightSpAtk]
-	push af
+	ld b, a
 	ld a, [wPlayerFutureSightLevel]
 .End:
 	ld e, a
 	ld d, FUTURE_SIGHT_BASE_POWER
-	pop af
-	ld b, a
 	xor a
 	ld [wAttackMissed], a
 	ld [wCriticalHit], a
