@@ -483,7 +483,7 @@ OmanyteEggMoves:
 	db KINESIS
 	db SLAM
 	db ROCK_POLISH
-	db WRAP
+	db SUBMISSION
 	db HAZE
 	db -1 ; end
 
