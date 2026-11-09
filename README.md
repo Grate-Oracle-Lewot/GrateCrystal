@@ -250,6 +250,8 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - When Sweet Scent is used outside of battle, the wild Pokémon encountered will have its level set to the level of the first Pokémon in your party plus or minus 2 (accounting for underflow or overflow). This is inspired by Polished Crystal's Sweet Honey.
 
+- Pay Day's money yield is now Base Power x 2 + Level, rather than Level x 2. The same effect is given to Power Gem, meaning that Power Gem yields more money than Pay Day even when used by a Pokémon at the same level, due to its higher base power.
+
 ## Items
 - Press Start in the Pack to sort items by type (even during battle)
 - Along with "give" and "take" in the Pokémon item menu, you can now "swap," which switches the held items of two Pokémon, even if one's not holding anything
