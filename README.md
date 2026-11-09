@@ -268,7 +268,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 - Everstone now also has the effect of Eviolite, boosting defenses of unevolved holders in addition to preventing them from evolving
 - King's Rock now adds its flinch chance to all damaging moves, even ones with secondary effects (the exceptions being Future Sight and moves that already have a flinch chance)
 - Lucky Punch works for Blissey as well as Chansey, and it and the Stick/Leek can now stack with other crit rate boosts instead of locking in a flat 2-stage boost; Dire Hit is now separate from Focus Energy, allowing both to stack (for the chance to crit at each boost stage, see https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/master/data/battle/critical_hit_chances.asm)
-- Leftovers now won't heal the holder if its last used move was Struggle, helping to prevent endless battles
+- Leftovers now won't heal the holder if their last used move was Struggle, helping to prevent endless battles
 - Sacred Ash can be used even if no party Pokémon are currently fainted
 - Gold Berry now heals 42 HP instead of 30, and Berry Juice now heals 1/4 of max HP and activates when held like Berries
 - Most Berries and some other items renamed for flavor (but not to the Gen III+ Berry names)
