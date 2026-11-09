@@ -196,7 +196,7 @@ Check all changes under https://github.com/Grate-Oracle-Lewot/GrateCrystal/blob/
 
 - Nightmare now inflicts both Sleep and the Nightmare status all in one turn. Since this is powerful, it now has low accuracy, but if the target is already asleep, the Nightmare status will be inflicted without fail, just like how the move worked before.
 
-- Future Sight now calculates damage with the user's Sp.Atk at the time of use, but the target's Sp.Def when it hits. It also never misses, even against Fly, Dig, Protect, etc.
+- Future Sight now calculates damage with the user's Sp.Atk at the time of use, but the target's Sp.Def when it hits. It also never misses, even against Fly, Dig, Protect, etc. (the idea being that the user foresaw those protections and worked around them).
 
 - Hidden Power always has a base power of 70; the type still changes based on DVs, but it can now be Fairy type.
 
