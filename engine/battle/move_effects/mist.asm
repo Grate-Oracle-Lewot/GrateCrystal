@@ -9,5 +9,4 @@ BattleCommand_Mist:
 	jp StdBattleTextbox
 
 .already_mist
-	call AnimateFailedMove
-	jp PrintButItFailed
+	jp BattleEffect_ButItFailed
