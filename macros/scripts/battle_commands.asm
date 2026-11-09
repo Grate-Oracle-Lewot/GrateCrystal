@@ -150,8 +150,8 @@ ENDM
 	command doubleundergrounddamage ; 8f
 	command mirrorcoat              ; 90
 	command checkfuturesight        ; 91
-	command futuresight             ; 92
-	command futuresightfix          ; 93
+	command startfuturesight        ; 92
+	command finishfuturesight       ; 93
 	command doubleminimizedamage    ; 94
 	command skipsuncharge           ; 95
 	command starthail               ; 96
