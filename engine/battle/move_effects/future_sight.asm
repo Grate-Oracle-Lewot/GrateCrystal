@@ -96,6 +96,7 @@ BattleCommand_FutureSightFix:
 	ld a, [wEnemyFutureSightLevel]
 	jr .End
 
+.Player:
 	ld hl, wEnemyMonSpclDef
 	ld a, [hli]
 	ld b, a
