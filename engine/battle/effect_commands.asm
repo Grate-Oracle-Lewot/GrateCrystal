@@ -2957,7 +2957,7 @@ HitSelfInConfusion:
 	ret
 
 BattleCommand_DamageCalc:
-; Return a damage value for move power d, player level e, enemy defense c and player attack b.
+; Return a damage value for move power d, user level e, target defense c and user attack b.
 
 ; Return 1 if successful, else 0.
 
