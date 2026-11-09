@@ -54,6 +54,8 @@ BattleCommand_FutureSight:
 	ld [wEnemyFutureSightSpAtk], a
 	ld a, [wEnemyMonLevel]
 	ld [wEnemyFutureSightLevel], a
+	ld a, [wCriticalHit]
+	ld [wEnemyFutureSightCritical], a
 	jr .Done
 
 .player
@@ -61,6 +63,8 @@ BattleCommand_FutureSight:
 	ld [wPlayerFutureSightSpAtk], a
 	ld a, [wBattleMonLevel]
 	ld [wPlayerFutureSightLevel], a
+	ld a, [wCriticalHit]
+	ld [wPlayerFutureSightCritical], a
 	jr .Done
 
 .Failed:
@@ -76,12 +80,16 @@ BattleCommand_FutureSightFix:
 	jr z, .Player
 
 ; .Enemy:
+	ld a, [wEnemyFutureSightCritical]
+	ld [wCriticalHit], a
 	ld a, [wEnemyFutureSightSpAtk]
 	ld b, a
 	ld a, [wEnemyFutureSightLevel]
 	jr .End
 
 .Player:
+	ld a, [wPlayerFutureSightCritical]
+	ld [wCriticalHit], a
 	ld a, [wPlayerFutureSightSpAtk]
 	ld b, a
 	ld a, [wPlayerFutureSightLevel]
@@ -90,7 +98,6 @@ BattleCommand_FutureSightFix:
 	ld d, FUTURE_SIGHT_BASE_POWER
 	xor a
 	ld [wAttackMissed], a
-	ld [wCriticalHit], a
 	push bc
 	push de
 	call BattleCommand_DamageStats
