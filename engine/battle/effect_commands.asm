@@ -3048,7 +3048,7 @@ ConfusionDamageCalc:
 	and a
 	jr nz, .DoneItem
 
-; Struggle isn't boosted by Pink Bow
+; Certain moves don't get item boosts
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	cp FUTURE_SIGHT
