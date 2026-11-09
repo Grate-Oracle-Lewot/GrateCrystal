@@ -15,6 +15,7 @@ BattleCommand_CheckFutureSight:
 	jp SkipToBattleCommand
 
 BattleCommand_FutureSight:
+	push bc
 	call CheckUserIsCharging
 	jr nz, .AlreadyChargingFutureSight
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -43,38 +44,33 @@ BattleCommand_FutureSight:
 	ld hl, ForesawAttackText
 	call StdBattleTextbox
 	call BattleCommand_RaiseSub
+	pop bc
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .player
 
 ; .enemy
+	ld a, b
+	ld [wEnemyFutureSightSpAtk], a
 	ld a, [wEnemyMonLevel]
 	ld [wEnemyFutureSightLevel], a
-	ld a, [wEnemyMonSpclAtk]
-	ld [wEnemyFutureSightSpAtk], a
-	ld a, [wEnemyMonSpclAtk + 1]
-	ld [wEnemyFutureSightSpAtk + 1], a
 	jr .Done
 
 .player
+	ld a, b
+	ld [wPlayerFutureSightSpAtk], a
 	ld a, [wBattleMonLevel]
 	ld [wPlayerFutureSightLevel], a
-	ld a, [wBattleMonSpclAtk]
-	ld [wPlayerFutureSightSpAtk], a
-	ld a, [wBattleMonSpclAtk + 1]
-	ld [wPlayerFutureSightSpAtk + 1], a
 	jr .Done
 
 .Failed:
+	pop bc
 	pop bc
 	call FutureSightFailed
 .Done:
 	jp EndMoveEffect
 
-BattleCommand_FutureSightStats:
-; Return move power d, user level e, target defense c and user attack b.
-
-	call ResetDamage
+BattleCommand_FutureSightFix:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .Player
@@ -94,11 +90,11 @@ BattleCommand_FutureSightStats:
 	rl b
 
 .enemy_ok
-	ld hl, wEnemyFutureSightSpAtk
+	ld a, [wEnemyFutureSightSpAtk]
+	push af
 	ld a, [wEnemyFutureSightLevel]
 	jr .End
 
-.Player:
 	ld hl, wEnemyMonSpclDef
 	ld a, [hli]
 	ld b, a
@@ -113,16 +109,20 @@ BattleCommand_FutureSightStats:
 	rl b
 
 .player_ok
-	ld hl, wPlayerFutureSightSpAtk
+	ld a, [wPlayerFutureSightSpAtk]
+	push af
 	ld a, [wPlayerFutureSightLevel]
 
 .End:
 	ld e, a
-	ld d, FUTURE_SIGHT_BASE_POWER
 	push de
 	call UnevolvedEviolite
 	call TruncateHL_BC
 	pop de
+	ld d, FUTURE_SIGHT_BASE_POWER
+	pop af
+	ld b, a
 	xor a
 	ld [wAttackMissed], a
+	ld [wCriticalHit], a
 	ret
