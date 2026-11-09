@@ -29,5 +29,4 @@ BattleCommand_BellyDrum:
 	jp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	jp BattleEffect_ButItFailed
