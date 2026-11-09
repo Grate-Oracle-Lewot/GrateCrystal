@@ -1954,8 +1954,8 @@ FutureSight:
 	doturn
 	critical
 	damagestats
-	futuresight
-	futuresightfix
+	startfuturesight
+	finishfuturesight
 	damagecalc
 	damagevariation
 	moveanimnosub
