@@ -1960,6 +1960,7 @@ FutureSight:
 	damagevariation
 	moveanimnosub
 	applydamage
+	criticaltext
 	checkfaint
 	buildopponentrage
 	endmove
