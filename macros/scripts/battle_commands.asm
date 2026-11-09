@@ -151,7 +151,7 @@ ENDM
 	command mirrorcoat              ; 90
 	command checkfuturesight        ; 91
 	command futuresight             ; 92
-	command futuresightstats        ; 93
+	command futuresightfix          ; 93
 	command doubleminimizedamage    ; 94
 	command skipsuncharge           ; 95
 	command starthail               ; 96
