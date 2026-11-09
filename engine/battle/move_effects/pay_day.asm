@@ -10,7 +10,11 @@ BattleCommand_PayDay:
 	ld a, [wEnemyMonLevel]
 .ok
 
-	add a
+	ld b, a
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	add a ; twice move power
+	add b ; can overflow if level > 100
 	ld hl, wPayDayMoney + 2
 	add [hl]
 	ld [hld], a
