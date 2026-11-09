@@ -1952,8 +1952,9 @@ FutureSight:
 	checkobedience
 	usedmovetext
 	doturn
+	damagestats
 	futuresight
-	futuresightstats
+	futuresightfix
 	damagecalc
 	damagevariation
 	moveanimnosub
