@@ -1952,6 +1952,7 @@ FutureSight:
 	checkobedience
 	usedmovetext
 	doturn
+	critical
 	damagestats
 	futuresight
 	futuresightfix
