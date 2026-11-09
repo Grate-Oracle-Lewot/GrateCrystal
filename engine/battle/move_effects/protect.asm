@@ -64,7 +64,6 @@ ProtectChance:
 .failed
 	xor a
 	ld [de], a
-	call AnimateFailedMove
-	call PrintButItFailed
+	call BattleEffect_ButItFailed
 	scf
 	ret
