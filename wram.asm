@@ -599,8 +599,8 @@ wBackupEnemyMonBaseStats:: ds NUM_STATS
 wBackupEnemyMonCatchRate:: db
 wBackupEnemyMonBaseExp:: db
 
-wPlayerFutureSightDamage:: db
-wEnemyFutureSightDamage:: db
+wPlayerFutureSightSpAtk:: db
+wEnemyFutureSightSpAtk:: db
 	ds 2
 wPlayerRageCounter:: db
 wEnemyRageCounter:: db
