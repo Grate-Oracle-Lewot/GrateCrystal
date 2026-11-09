@@ -74,8 +74,7 @@ BattleCommand_Curse:
 	jp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	jp BattleEffect_ButItFailed
 
 .cantraise
 ; Can't raise either stat.
