@@ -71,60 +71,33 @@ BattleCommand_FutureSight:
 	jp EndMoveEffect
 
 BattleCommand_FutureSightFix:
-	call ResetDamage
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .Player
 
 ; .Enemy:
-	ld hl, wBattleMonSpclDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-
-	call SandstormSpDefBoost
-
-	ld a, [wPlayerScreens]
-	bit SCREENS_LIGHT_SCREEN, a
-	jr z, .enemy_ok
-	sla c
-	rl b
-
-.enemy_ok
 	ld a, [wEnemyFutureSightSpAtk]
 	push af
 	ld a, [wEnemyFutureSightLevel]
 	jr .End
 
 .Player:
-	ld hl, wEnemyMonSpclDef
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-
-	call SandstormSpDefBoost
-
-	ld a, [wEnemyScreens]
-	bit SCREENS_LIGHT_SCREEN, a
-	jr z, .player_ok
-	sla c
-	rl b
-
-.player_ok
 	ld a, [wPlayerFutureSightSpAtk]
 	push af
 	ld a, [wPlayerFutureSightLevel]
-
 .End:
 	ld e, a
-	push de
-	call UnevolvedEviolite
-	call TruncateHL_BC
-	pop de
 	ld d, FUTURE_SIGHT_BASE_POWER
 	pop af
 	ld b, a
 	xor a
 	ld [wAttackMissed], a
 	ld [wCriticalHit], a
+	push bc
+	push de
+	call BattleCommand_DamageStats
+	ld a, c
+	pop de
+	pop bc
+	ld c, a
 	ret
