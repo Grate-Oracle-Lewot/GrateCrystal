@@ -14,7 +14,10 @@ BattleCommand_PayDay:
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVarAddr
 	add a ; twice move power
-	add b ; can overflow if level > 100
+	jr c, .max
+	add b ; plus level
+	jr c, .max
+.no_overflow
 	ld hl, wPayDayMoney + 2
 	add [hl]
 	ld [hld], a
@@ -26,3 +29,7 @@ BattleCommand_PayDay:
 .done
 	ld hl, CoinsScatteredText
 	jp StdBattleTextbox
+
+.max
+	ld a, $ff
+	jr .no_overflow
