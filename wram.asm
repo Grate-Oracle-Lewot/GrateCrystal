@@ -600,8 +600,9 @@ wBackupEnemyMonCatchRate:: db
 wBackupEnemyMonBaseExp:: db
 
 wPlayerFutureSightSpAtk:: db
+wPlayerFutureSightCritical:: db
 wEnemyFutureSightSpAtk:: db
-	ds 2
+wEnemyFutureSightCritical:: db
 wPlayerRageCounter:: db
 wEnemyRageCounter:: db
 
