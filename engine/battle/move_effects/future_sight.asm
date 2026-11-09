@@ -71,6 +71,7 @@ BattleCommand_FutureSight:
 	jp EndMoveEffect
 
 BattleCommand_FutureSightFix:
+	call ResetDamage
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .Player
