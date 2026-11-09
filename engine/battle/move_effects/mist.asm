@@ -2,11 +2,8 @@ BattleCommand_Mist:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	bit SUBSTATUS_MIST, [hl]
-	jr nz, .already_mist
+	jp nz, BattleEffect_ButItFailed
 	set SUBSTATUS_MIST, [hl]
 	call AnimateCurrentMove
 	ld hl, MistText
 	jp StdBattleTextbox
-
-.already_mist
-	jp BattleEffect_ButItFailed
