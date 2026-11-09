@@ -150,8 +150,8 @@ BattleCommandPointers:
 	dw BattleCommand_DoubleUndergroundDamage
 	dw BattleCommand_MirrorCoat
 	dw BattleCommand_CheckFutureSight
-	dw BattleCommand_FutureSight
-	dw BattleCommand_FutureSightFix
+	dw BattleCommand_StartFutureSight
+	dw BattleCommand_FinishFutureSight
 	dw BattleCommand_DoubleMinimizeDamage
 	dw BattleCommand_SkipSunCharge
 	dw BattleCommand_StartHail
