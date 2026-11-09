@@ -14,7 +14,7 @@ BattleCommand_CheckFutureSight:
 	ld b, futuresight_command
 	jp SkipToBattleCommand
 
-BattleCommand_FutureSight:
+BattleCommand_StartFutureSight:
 	push bc
 	call CheckUserIsCharging
 	jr nz, .AlreadyChargingFutureSight
@@ -74,7 +74,7 @@ BattleCommand_FutureSight:
 .Done:
 	jp EndMoveEffect
 
-BattleCommand_FutureSightFix:
+BattleCommand_FinishFutureSight:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .Player
