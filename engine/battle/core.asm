@@ -1425,6 +1425,11 @@ HandleLeftovers:
 	cp HELD_LEFTOVERS
 	ret nz
 
+	ld a, BATTLE_VARS_LAST_MOVE
+	call GetBattleVar
+	cp STRUGGLE
+	ret z
+
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
