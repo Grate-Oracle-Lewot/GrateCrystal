@@ -4350,6 +4350,7 @@ BattleAnim_MetalClaw:
 	anim_ret
 
 BattleAnim_VitalThrow:
+	anim_if_param_equal $1, .remove
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_VITAL_THROW, $0, BG_EFFECT_USER, $0
@@ -4369,6 +4370,11 @@ BattleAnim_VitalThrow:
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG, 132, 56, $0
 	anim_wait 16
+	anim_if_param_equal $0, .done
+.remove
+	anim_bgeffect ANIM_BG_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
+	anim_wait 64
+.done
 	anim_ret
 
 BattleAnim_Synthesis:
