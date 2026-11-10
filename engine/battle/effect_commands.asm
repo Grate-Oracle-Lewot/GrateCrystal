@@ -4958,7 +4958,7 @@ BattleCommand_ForceSwitch:
 	cp b
 	jr nc, .wild_force_flee
 .missed
-	jp BattleEffect_ButItFailed
+	jp ForceSwitchFailed
 
 .wild_force_flee
 	call UpdateBattleMonInParty
@@ -5048,7 +5048,7 @@ BattleCommand_ForceSwitch:
 	cp b
 	jr nc, .wild_succeed_playeristarget
 .player_miss
-	jp BattleEffect_ButItFailed
+	jp ForceSwitchFailed
 
 .wild_succeed_playeristarget
 	call UpdateBattleMonInParty
@@ -5125,6 +5125,9 @@ BattleCommand_ForceSwitch:
 
 	ld hl, FledInFearText
 	cp ROAR
+	jr z, .do_text
+	ld hl, ThrownAwayText
+	cp VITAL_THROW
 	jr z, .do_text
 	ld hl, BlownAwayText
 .do_text
@@ -6276,6 +6279,12 @@ ArenaTrap:
 
 FutureSightFailed:
 	call ResetDamage
+	jr BattleEffect_ButItFailed
+
+ForceSwitchFailed:
+	ld a, [wPlayerMoveStructAnimation]
+	cp VITAL_THROW
+	ret z
 	; fallthrough
 
 BattleEffect_ButItFailed:
