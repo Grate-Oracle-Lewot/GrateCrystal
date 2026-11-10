@@ -796,6 +796,11 @@ BlownAwayText:
 	line "was blown away!"
 	autodone
 
+ThrownAwayText:
+	text "<TARGET>"
+	line "was thrown away!"
+	autodone
+
 PlayerHitTimesText:
 	text "Hit @"
 	text_decimal wPlayerDamageTaken, 1, 1
