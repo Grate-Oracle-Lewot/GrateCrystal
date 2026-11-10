@@ -273,7 +273,7 @@ Moves:
 	move SWEET_SCENT,  EFFECT_EVASION_DOWN,        0, GRASS,        STATUS,   100 percent,     40,   0
 	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,        PHYSICAL,  80 percent + 1, 15,  30 percent + 1
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,        PHYSICAL, 100 percent,     30,  10 percent + 1
-	move VITAL_THROW,  EFFECT_ALWAYS_HIT,         75, FIGHTING,     PHYSICAL, 100 percent,     15,   0
+	move VITAL_THROW,  EFFECT_VITAL_THROW,        70, FIGHTING,     PHYSICAL, 100 percent,     10, 100 percent
 	move U_TURN,       EFFECT_U_TURN,             70, BUG,          PHYSICAL, 100 percent,     15,   0
 	move SYNTHESIS,    EFFECT_SYNTHESIS,           0, GRASS,        STATUS,   100 percent,      5,   0
 	move METAL_SOUND,  EFFECT_SP_DEF_DOWN_2,       0, STEEL,        STATUS,   100 percent,     20,   0
