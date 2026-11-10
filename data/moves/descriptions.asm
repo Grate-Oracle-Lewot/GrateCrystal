@@ -1121,8 +1121,8 @@ MetalClawDescription:
 	next "up user's ATTACK.@"
 
 VitalThrowDescription:
-	db   "Moves second, but"
-	next "never misses.@"
+	db   "Hits and switches"
+	next "the foe out.@"
 
 UTurnDescription:
 	db   "Attacks and swit-"
