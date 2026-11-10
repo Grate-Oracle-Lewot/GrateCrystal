@@ -184,12 +184,16 @@ MartOlivine:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 9 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
-	db FULL_HEAL
 	db REVIVE
+	db FULL_HEAL
+	db BUGWORT
+	db SOOTFOOTROOT
+	db VIVICHOKE
+	db OLD_GATEAU
 	db -1 ; end
 
 MartMahogany1:
