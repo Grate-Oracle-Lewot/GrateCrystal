@@ -148,4 +148,5 @@ MoveEffectsPointers:
 	dw Conversion
 	dw EggBomb
 	dw SpiderWeb
+	dw VitalThrow
 	assert_table_length NUM_MOVE_EFECTS
