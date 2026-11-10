@@ -1118,8 +1118,8 @@ MetalClawDescriptionScrunched:
 	feed "up user's ATTACK.@"
 
 VitalThrowDescriptionScrunched:
-	db   "Moves second, but"
-	feed "never misses.@"
+	db   "Hits and switches"
+	feed "the foe out.@"
 
 UTurnDescriptionScrunched:
 	db   "Attacks and swit-"
