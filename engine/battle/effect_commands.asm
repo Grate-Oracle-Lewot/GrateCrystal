@@ -3048,11 +3048,9 @@ ConfusionDamageCalc:
 	and a
 	jr nz, .DoneItem
 
-; Certain moves don't get item boosts
+; Struggle doesn't get the boost
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
-	cp FUTURE_SIGHT
-	jr z, .DoneItem
 	cp STRUGGLE
 	jr z, .DoneItem
 
