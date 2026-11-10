@@ -2134,3 +2134,25 @@ SpiderWeb:
 	doturn
 	spiderweb
 	endmove
+
+VitalThrow:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkcontact
+	checkfaint
+	forceswitch
+	buildopponentrage
+	kingsrock
+	endmove
