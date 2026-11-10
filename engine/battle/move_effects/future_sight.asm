@@ -11,7 +11,7 @@ BattleCommand_CheckFutureSight:
 	ret nz
 
 	ld [hl], 0
-	ld b, futuresight_command
+	ld b, startfuturesight_command
 	jp SkipToBattleCommand
 
 BattleCommand_StartFutureSight:
