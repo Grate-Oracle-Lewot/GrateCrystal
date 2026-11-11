@@ -310,30 +310,24 @@ ContestScore:
 	; DVs
 	ld a, [wContestMonDVs + 0]
 	ld b, a
-	and %0010
-	add a
-	add a
+	and %1111
 	ld c, a
 
 	swap b
 	ld a, b
-	and %0010
-	add a
+	and %1111
 	add c
 	ld d, a
 
 	ld a, [wContestMonDVs + 1]
 	ld b, a
-	and %0010
+	and %1111
 	ld c, a
 
 	swap b
 	ld a, b
-	and %0010
-	srl a
+	and %1111
 	add c
-	add c
-	add d
 	add d
 
 	call .AddContestStat
