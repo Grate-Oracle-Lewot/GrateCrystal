@@ -415,6 +415,7 @@ Prize TMs:
 - Female players retain their female sprites in the Link Trade and Battle rooms
 - Press B in wild battles to instantly move the cursor over the Run option (taken from Polished Crystal)
 - Text edits, often humorous (or so I'd like to think)
+- In the unedited Bug-Catching Contest, you get up to 29 points based on DVs, favoring a shiny Pokémon. Since I changed which DVs result in a shiny, the contest score now simply tallies DVs as points, then cuts the tally in half, resulting in a total of up to 30 points for DVs, so basically the same range, just calculated differently. (The HP DV isn't a factor, since it's calculated based on the other DVs anyway.)
 
 # Minor Edits
 
