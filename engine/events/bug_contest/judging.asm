@@ -330,6 +330,9 @@ ContestScore:
 	add c
 	add d
 
+	; halve the total DV tally
+	srl a
+
 	call .AddContestStat
 
 	; Remaining HP / 8
