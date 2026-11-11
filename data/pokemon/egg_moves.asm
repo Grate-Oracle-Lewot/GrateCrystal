@@ -701,8 +701,8 @@ HoppipEggMoves:
 AipomEggMoves:
 	db HYPER_VOICE
 	db BEAT_UP
-	db TRIPLE_KICK
 	db COUNTER
+	db VITAL_THROW
 	db SLAM
 	db BIND
 	db -1 ; end
@@ -958,7 +958,7 @@ SmoochumEggMoves:
 	db -1 ; end
 
 ElekidEggMoves:
-	db SUBMISSION
+	db VITAL_THROW
 	db KARATE_CHOP
 	db BARRIER
 	db ROLLING_KICK
@@ -967,7 +967,7 @@ ElekidEggMoves:
 	db -1 ; end
 
 MagbyEggMoves:
-	db KARATE_CHOP
+	db LOW_KICK
 	db BARRIER
 	db SCREECH
 	db EARTH_POWER
