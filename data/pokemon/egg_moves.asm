@@ -270,8 +270,8 @@ SlowpokeEggMoves:
 
 FarfetchDEggMoves:
 	db MIRROR_MOVE
-	db QUICK_ATTACK
 	db REVERSAL
+	db VITAL_THROW
 	db BONE_CLUB
 	db BONEMERANG
 	db BONE_RUSH
