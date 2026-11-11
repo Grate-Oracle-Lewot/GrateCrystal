@@ -4372,6 +4372,7 @@ BattleAnim_VitalThrow:
 	anim_wait 16
 	anim_if_param_equal $0, .done
 .remove
+	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_bgeffect ANIM_BG_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
 	anim_wait 64
 .done
