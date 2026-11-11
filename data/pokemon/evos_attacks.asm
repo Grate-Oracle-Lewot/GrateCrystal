@@ -1646,7 +1646,7 @@ RhyhornEvosAttacks:
 	db 31, SCARY_FACE
 	db 37, ROCK_SLIDE
 	db 41, TAKE_DOWN
-	db 49, IRON_TAIL
+	db 49, VITAL_THROW
 	db 55, ROCK_WRECKER
 	db 60, HORN_DRILL
 	db 0 ; no more level-up moves
@@ -1661,7 +1661,7 @@ RhydonEvosAttacks:
 	db 31, SCARY_FACE
 	db 37, ROCK_SLIDE
 	db 43, TAKE_DOWN
-	db 54, IRON_TAIL
+	db 54, VITAL_THROW
 	db 65, ROCK_WRECKER
 	db 72, HORN_DRILL
 	db 0 ; no more level-up moves
