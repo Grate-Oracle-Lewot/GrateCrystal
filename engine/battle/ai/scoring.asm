@@ -1097,6 +1097,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_AVALANCHE,        AI_Smart_Avalanche
 	dbw EFFECT_CONVERSION,       AI_Smart_Conversion
 	dbw EFFECT_SPIDER_WEB,       AI_Smart_SpiderWeb
+	dbw EFFECT_VITAL_THROW,      AI_Smart_ForceSwitch
 	db -1 ; end
 
 AI_Smart_Nightmare:
@@ -1773,8 +1774,8 @@ AI_Smart_BatonPass:
 	jr AI_Smart_SwitchMoves
 
 AI_Smart_ForceSwitch:
-; Whirlwind, Roar.
-; The AI_Basic layer dismisses these moves if the player has only one Pokemon [remaining].
+; Whirlwind, Roar, Vital Throw.
+; The AI_Basic layer dismisses Whirlwind and Roar, but not Vital Throw, if the player has only one Pokemon [remaining].
 
 ; If the player doesn't have Spikes around them, merge into AI_Smart_SwitchMoves, skipping enemy Spikes check.
 	ld a, [wPlayerScreens]
