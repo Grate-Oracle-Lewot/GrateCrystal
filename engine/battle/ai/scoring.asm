@@ -2607,6 +2607,48 @@ AI_Smart_HealBell:
 	dec [hl]
 	ret
 
+AI_Smart_PriorityHit:
+; If enemy is faster than player, give no special treatment to priority moves.
+	call AICompareSpeed
+	ret c
+
+; Dismiss this move if the player is flying or underground.
+	ld a, [wPlayerSubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jp nz, AIDismissMove
+
+; Highly encourage this move if it will KO the player.
+	ld a, 1
+	ldh [hBattleTurn], a
+	push hl
+	farcall EnemyAttackDamage_DamageCalc_Stab
+	pop hl
+	ld a, [wCurDamage + 1]
+	ld c, a
+	ld a, [wCurDamage]
+	ld b, a
+	ld a, [wBattleMonHP + 1]
+	cp c
+	ld a, [wBattleMonHP]
+	sbc b
+	jr c, AI_Smart_Highly_Encourage
+
+; If Fly, Dig or Sky Attack was the player's last used move...
+	ld a, [wLastPlayerCounterMove]
+	cp FLY
+	jr z, .couldGo
+	cp DIG
+	jr z, .couldGo
+	cp SKY_ATTACK
+	ret nz
+
+.couldGo
+; ...try to predict if the player will use it again this turn.
+	call AI_50_50
+	ret c
+	dec [hl]
+	ret
+
 AI_Smart_MeanLook:
 ; The AI_Basic layer dismisses Mean Look if it's already in effect.
 ; The AI_Status layer dismisses Mean Look if the player is Ghost-type and therefore immune.
@@ -2644,32 +2686,6 @@ AI_Smart_MeanLook:
 .encourage
 	call AI_80_20
 	ret c
-	jr AI_Smart_Highly_Encourage
-
-AI_Smart_PriorityHit:
-	call AICompareSpeed
-	ret c
-
-; Dismiss this move if the player is flying or underground.
-	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	jp nz, AIDismissMove
-
-; Highly encourage this move if it will KO the player.
-	ld a, 1
-	ldh [hBattleTurn], a
-	push hl
-	farcall EnemyAttackDamage_DamageCalc_Stab
-	pop hl
-	ld a, [wCurDamage + 1]
-	ld c, a
-	ld a, [wCurDamage]
-	ld b, a
-	ld a, [wBattleMonHP + 1]
-	cp c
-	ld a, [wBattleMonHP]
-	sbc b
-	ret nc
 	; fallthrough
 
 AI_Smart_Highly_Encourage:
