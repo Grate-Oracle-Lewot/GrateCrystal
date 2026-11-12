@@ -7,6 +7,7 @@
 NUM_POKEGEAR_CARDS EQU const_value
 
 PHONE_DISPLAY_HEIGHT EQU 4
+PHONE_REMATCH_ICON_TILE EQU $5e ; the last two tiles of gfx/pokegear/pokegear.png
 
 ; PokegearJumptable.Jumptable indexes
 	const_def
