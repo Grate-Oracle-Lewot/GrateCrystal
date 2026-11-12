@@ -34,7 +34,7 @@ MapTrainers_Place::
 
 	call MapTrainers_Sort
 	call MapTrainers_Page
-	jmp MapTrainers_ShowTurn
+	jp MapTrainers_ShowTurn
 
 MapTrainers_AddContact:
 ; in: c = a PHONE_* contact
