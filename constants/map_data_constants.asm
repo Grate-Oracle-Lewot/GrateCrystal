@@ -25,7 +25,7 @@ MAP_LENGTH EQU _RS
 	const GATE
 	const INDOOR
 	const CAVE
-	const FOREST
+	const ROOFTOP
 	const DUNGEON
 NUM_ENVIRONMENTS EQU const_value - 1
 
