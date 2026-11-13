@@ -332,6 +332,14 @@ CopyWarpData::
 	scf
 	ret
 
+CheckOutdoorMap::
+	cp TOWN
+	ret z
+	cp ROUTE
+	ret z
+	cp ROOFTOP
+	ret
+
 LoadMapAttributes::
 	call LoadMapAttributes_Optimization
 	xor a ; do not skip object events
