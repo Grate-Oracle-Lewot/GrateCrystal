@@ -123,9 +123,8 @@ CheckUpdatePlayerSprite:
 	call GetMapEnvironment
 	cp INDOOR
 	jr z, .no_biking
-	cp DUNGEON
-	jr z, .no_biking
-	jr .nope
+	cp ROOFTOP
+	jr c, .nope
 .no_biking
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
