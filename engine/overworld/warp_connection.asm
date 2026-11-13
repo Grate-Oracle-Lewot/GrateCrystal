@@ -424,14 +424,6 @@ GetMapScreenCoords::
 	ld [wMetatileStandingX], a
 	ret
 
-CheckOutdoorMap:
-	cp TOWN
-	ret z
-	cp ROUTE
-	ret z
-	cp ROOFTOP
-	ret
-
 CheckIndoorMap:
 	cp GATE
 	ret z
