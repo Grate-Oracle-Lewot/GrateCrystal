@@ -7,7 +7,7 @@ EnvironmentColorsPointers:
 	dw .IndoorColors  ; GATE
 	dw .IndoorColors  ; INDOOR
 	dw .DungeonColors ; CAVE
-	dw .DungeonColors ; FOREST
+	dw .IndoorColors  ; ROOFTOP
 	dw .DungeonColors ; DUNGEON
 	assert_table_length NUM_ENVIRONMENTS + 1
 
@@ -25,7 +25,7 @@ EnvironmentColorsPointers:
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $07 ; dark
 
 .IndoorColors:
-	db $20, $21, $22, $23, $24, $25, $26, $07 ; morn
+	db $00, $01, $02, $0f, $04, $05, $06, $07 ; morn
 	db $20, $21, $22, $23, $24, $25, $26, $07 ; day
 	db $10, $11, $12, $13, $14, $15, $16, $07 ; nite
 	db $18, $19, $1a, $1b, $1c, $1d, $1e, $07 ; dark
