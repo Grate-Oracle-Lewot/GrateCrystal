@@ -820,8 +820,8 @@ MetalCoatDesc:
 	next "type moves. (HOLD)@"
 
 TeraOrbDesc:
-	db   "Changes user's type"
-	next "to its hidden one.@"
+	db   "Changes a #MON's"
+	next "type. (1 BTL)@"
 
 HedgerDesc:
 	db   "Cuts trees without"
