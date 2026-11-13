@@ -165,15 +165,15 @@ EnterMapWarp:
 
 .SaveDigWarp:
 	call GetMapEnvironment
-	cp GATE
-	ret nc
+	call CheckOutdoorMap
+	ret nz
 	ld a, [wNextMapGroup]
 	ld b, a
 	ld a, [wNextMapNumber]
 	ld c, a
 	call GetAnyMapEnvironment
-	cp GATE
-	ret c
+	call CheckIndoorMap
+	ret nz
 
 ; MOUNT_MOON_SQUARE and TIN_TOWER_ROOF are outdoor maps within indoor maps.
 ; Dig and Escape Rope should not take you to them.
@@ -198,15 +198,15 @@ EnterMapWarp:
 
 .SetSpawn:
 	call GetMapEnvironment
-	cp GATE
-	ret nc
+	call CheckOutdoorMap
+	ret nz
 	ld a, [wNextMapGroup]
 	ld b, a
 	ld a, [wNextMapNumber]
 	ld c, a
 	call GetAnyMapEnvironment
-	cp GATE
-	ret c
+	call CheckIndoorMap
+	ret nz
 	ld a, [wNextMapGroup]
 	ld b, a
 	ld a, [wNextMapNumber]
@@ -422,4 +422,22 @@ GetMapScreenCoords::
 	ld a, [wXCoord]
 	and 1
 	ld [wMetatileStandingX], a
+	ret
+
+CheckOutdoorMap:
+	cp TOWN
+	ret z
+	cp ROUTE
+	ret z
+	cp ROOFTOP
+	ret
+
+CheckIndoorMap:
+	cp GATE
+	ret z
+	cp INDOOR
+	ret z
+	cp CAVE
+	ret z
+	cp DUNGEON
 	ret
