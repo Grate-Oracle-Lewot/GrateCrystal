@@ -670,8 +670,8 @@ FlyFunction:
 	call CheckBadge
 	jr c, .nostormbadge
 	call GetMapEnvironment
-	cp GATE
-	jr nc, .indoors
+	call CheckOutdoorMap
+	jr nz, .indoors
 
 	xor a
 	ldh [hMapAnims], a
@@ -1032,8 +1032,8 @@ TeleportFunction:
 
 .TryTeleport:
 	call GetMapEnvironment
-	cp GATE
-	jr nc, .nope
+	call CheckOutdoorMap
+	jr nz, .nope
 
 	ld a, [wLastSpawnMapGroup]
 	ld d, a
