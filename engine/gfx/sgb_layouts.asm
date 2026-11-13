@@ -458,8 +458,6 @@ SGBLayoutJumptable:
 	jr z, .cave
 	cp DUNGEON
 	jr z, .cave
-	cp FOREST
-	jr z, .forest
 	ld a, [wMapGroup]
 	ld e, a
 	ld d, 0
@@ -478,10 +476,6 @@ SGBLayoutJumptable:
 
 .cave
 	ld a, PREDEFPAL_DUNGEONS
-	ret
-
-.forest
-	ld a, PREDEFPAL_VERMILION
 	ret
 
 INCLUDE "data/maps/sgb_roof_pal_inds.asm"
