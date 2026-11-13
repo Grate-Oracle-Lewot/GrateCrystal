@@ -915,7 +915,9 @@ EscapeRopeOrDig:
 .CheckCanDig:
 	call GetMapEnvironment
 	cp CAVE
-	jr nc, .incave
+	jr z, .incave
+	cp DUNGEON
+	jr z, .incave
 .fail
 	ld a, $2
 	ret
@@ -2015,8 +2017,6 @@ BikeFunction:
 	cp INDOOR
 	jr c, .ok
 	cp CAVE
-	jr z, .ok
-	cp FOREST
 	jr nz, .nope
 
 .ok
