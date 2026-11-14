@@ -1,5 +1,5 @@
 	object_const_def
-	const GOLDENRODDEPTSTOREROOF_CLERK
+	const GOLDENRODDEPTSTOREROOF_OFFICER
 	const GOLDENRODDEPTSTOREROOF_POKEFAN_F
 	const GOLDENRODDEPTSTOREROOF_FISHER
 	const GOLDENRODDEPTSTOREROOF_TWIN
@@ -37,7 +37,7 @@ GoldenrodDeptStoreRoof_MapScripts:
 	setevent EVENT_GOLDENROD_SALE_ON
 	endcallback
 
-GoldenrodDeptStoreRoofClerkScript:
+GoldenrodDeptStoreRoofOfficerScript:
 	opentext
 	pokemart MARTTYPE_ROOFTOP, 0
 	closetext
@@ -211,7 +211,7 @@ GoldenrodDeptStoreRoof_MapEvents:
 	bg_event  3,  0, BGEVENT_UP, PokeDollVendingMachine
 
 	def_object_events
-	object_event  1,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofClerkScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  1,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofOfficerScript, EVENT_GOLDENROD_SALE_OFF
 	object_event 10,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanFScript, -1
 	object_event  2,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofFisherScript, -1
 	object_event  3,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTwinScript, EVENT_GOLDENROD_SALE_ON
