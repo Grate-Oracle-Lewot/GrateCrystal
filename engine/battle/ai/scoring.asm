@@ -2232,8 +2232,7 @@ AI_Smart_Avalanche:
 	cp EFFECT_MIRROR_COAT
 	jr z, .continue
 
-; Don't encourage if player's last move was non-damaging.
-; If damaging, encourage and continue to possible discouragement.
+; If player's last move was damaging, encourage this move. Continue regardless.
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	jr z, .continue
