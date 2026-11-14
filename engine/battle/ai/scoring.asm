@@ -2213,13 +2213,15 @@ AI_Smart_Acrobatics_FlameWheel:
 	ret
 
 AI_Smart_Avalanche:
-; Encourage this move if the player's last used move was a damaging move. Continue regardless.
+; If the player didn't use a move last turn, skip possible encouragement.
 	ld a, [wLastPlayerCounterMove]
 	and a
 	jr z, .continue
 
 	call AIGetMoveAttributes
 
+; Don't encourage if the player's last move was OHKO or Counter/Mirror Coat.
+; We don't check if power = 1 here because that would also catch things like level damage, which we're okay with.
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_OHKO
 	jr z, .continue
@@ -2230,6 +2232,8 @@ AI_Smart_Avalanche:
 	cp EFFECT_MIRROR_COAT
 	jr z, .continue
 
+; Don't encourage if player's last move was non-damaging.
+; If damaging, encourage and continue to possible discouragement.
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
 	jr z, .continue
