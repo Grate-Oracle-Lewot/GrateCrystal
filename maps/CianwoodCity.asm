@@ -125,7 +125,7 @@ CianwoodCitySailor:
 	iftrue .CheckBalls
 	checkevent EVENT_GOT_SUPER_ROD
 	iftrue .CheckBalls
-	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
 	iftrue .CheckBalls
 	setval TENTACOOL
 	special MonCheck
