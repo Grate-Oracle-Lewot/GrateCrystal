@@ -3,8 +3,8 @@
 	const ROUTE19_SWIMMER_GUY1
 	const ROUTE19_SWIMMER_GUY2
 	const ROUTE19_SWIMMER_GUY3
-	const ROUTE19_FISHER1
-	const ROUTE19_FISHER2
+	const ROUTE19_SAILOR
+	const ROUTE19_FISHER
 
 Route19_MapScripts:
 	def_scene_scripts
@@ -63,24 +63,24 @@ TrainerSwimmermTucker:
 	writetext SwimmermTuckerAfterBattleText
 	sjump Route19_EndText
 
-Route19Fisher1Script:
+Route19SailorScript:
 	faceplayer
 	opentext
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .RocksCleared
-	writetext Route19Fisher1Text
+	writetext Route19SailorText
 	sjump Route19_EndText
 
 .RocksCleared:
-	writetext Route19Fisher1Text_RocksCleared
+	writetext Route19SailorText_RocksCleared
 	sjump Route19_EndText
 
-Route19Fisher2Script:
+Route19FisherScript:
 	faceplayer
 	opentext
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .RocksCleared
-	writetext Route19Fisher2Text
+	writetext Route19FisherText
 	sjump Route19_EndText
 
 .RocksCleared:
@@ -88,17 +88,17 @@ Route19Fisher2Script:
 	iftrue .After
 	loadtrainer FISHER, FISCHER
 	encountermusic
-	writetext Route19Fisher2SeenText
+	writetext Route19FisherSeenText
 	waitbutton
 	closetext
-	winlosstext Route19Fisher2BeatenText, 0
+	winlosstext Route19FisherBeatenText, 0
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FISHER_FISCHER
 	end
 
 .After
-	writetext Route19Fisher2Text_RocksCleared
+	writetext Route19FisherText_RocksCleared
 	sjump Route19_EndText
 
 Route19Sign:
@@ -189,7 +189,7 @@ SwimmermJeromeAfterBattleText:
 	cont "love the sea."
 	done
 
-Route19Fisher1Text:
+Route19SailorText:
 	text "Sorry. This road"
 	line "is closed for"
 	cont "construction."
@@ -201,12 +201,12 @@ Route19Fisher1Text:
 	line "from PALLET TOWN."
 	done
 
-Route19Fisher1Text_RocksCleared:
+Route19SailorText_RocksCleared:
 	text "I'm all sweaty."
 	line "Time for a swim!"
 	done
 
-Route19Fisher2Text:
+Route19FisherText:
 	text "Who knows how long"
 	line "it would take to"
 	cont "move this boulder…"
@@ -216,17 +216,17 @@ Route19Fisher2Text:
 	cont "stand here!"
 	done
 
-Route19Fisher2SeenText:
+Route19FisherSeenText:
 	text "Now that the road"
 	line "is clear, how"
 	cont "about a battle?"
 	done
 
-Route19Fisher2BeatenText:
+Route19FisherBeatenText:
 	text "That's fishy…"
 	done
 
-Route19Fisher2Text_RocksCleared:
+Route19FisherText_RocksCleared:
 	text "The roadwork is"
 	line "finally finished."
 
@@ -266,5 +266,5 @@ Route19_MapEvents:
 	object_event 13, 28, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermHarold, -1
 	object_event 11, 17, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermJerome, -1
 	object_event  8, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
-	object_event  9,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
-	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
+	object_event  9,  5, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19SailorScript, -1
+	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19FisherScript, -1
