@@ -18,7 +18,7 @@ CinnabarPokecenter1F_MapScripts:
 	iftrue .CheckBalls
 	checkevent EVENT_GOT_SUPER_ROD
 	iftrue .CheckBalls
-	checkevent EVENT_ODD_ROD_SAND_FROM_KATE
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
 	iftrue .CheckBalls
 .Appear:
 	appear CINNABARPOKECENTER1F_SAILOR
