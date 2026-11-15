@@ -56,6 +56,7 @@ CinnabarGroupSprites:
 	db SPRITE_SWIMMER_GIRL
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
+	db SPRITE_SAILOR
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_OFFICER
