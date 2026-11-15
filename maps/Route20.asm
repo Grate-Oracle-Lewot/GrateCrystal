@@ -3,31 +3,76 @@
 	const ROUTE20_SWIMMER_GIRL2
 	const ROUTE20_SWIMMER_GUY
 	const ROUTE20_GENTLEMAN
+	const ROUTE20_SAILOR
 
 Route20_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .ClearRocks
-	callback MAPCALLBACK_OBJECTS, .CheckAD
+	callback MAPCALLBACK_OBJECTS, .SailorAndAD
 
 .ClearRocks:
 	setevent EVENT_CINNABAR_ROCKS_CLEARED
 	endcallback
 
-.CheckAD:
+.SailorAndAD:
 	appear ROUTE20_GENTLEMAN
 	checkevent EVENT_FOUND_PERCY_ON_ROUTE_4
 	iftrue .NextCheck
-	endcallback
+	sjump .Sailor
 
 .NextCheck:
 	checkevent EVENT_FOUND_LUCAS_ON_CYCLING_ROAD
 	iftrue .DisappearAD
-	endcallback
+	sjump .Sailor
 
 .DisappearAD:
 	disappear ROUTE20_GENTLEMAN
+.Sailor:
+	disappear ROUTE20_SAILOR
+	checkevent EVENT_GOT_WATER_STONE_FROM_BILLS_GRANDPA
+	iftrue .Done
+	checkevent EVENT_GOT_OLD_ROD
+	iftrue .CheckBalls
+	checkevent EVENT_GOT_GOOD_ROD
+	iftrue .CheckBalls
+	checkevent EVENT_GOT_SUPER_ROD
+	iftrue .CheckBalls
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
+	iftrue .CheckBalls
+.Appear:
+	appear ROUTE20_SAILOR
+	endcallback
+
+.CheckBalls:
+	checkitem MASTER_BALL
+	iftrue .Done
+	checkitem ULTRA_BALL
+	iftrue .Done
+	checkitem GREAT_BALL
+	iftrue .Done
+	checkitem TIMER_BALL
+	iftrue .Done
+	checkitem DUSK_BALL
+	iftrue .Done
+	checkitem HEAVY_BALL
+	iftrue .Done
+	checkitem LEVEL_BALL
+	iftrue .Done
+	checkitem LURE_BALL
+	iftrue .Done
+	checkitem HASTE_BALL
+	iftrue .Done
+	checkitem FRIEND_BALL
+	iftrue .Done
+	checkitem MOON_BALL
+	iftrue .Done
+	checkitem LOVE_BALL
+	iftrue .Done
+	checkitem POKE_BALL
+	iffalse .Appear
+.Done:
 	endcallback
 
 TrainerSwimmerfNicole:
@@ -78,6 +123,28 @@ Route20ADScript:
 	writetext Route20ADText2
 	waitbutton
 	closetext
+	end
+
+Route20SailorScript:
+	faceplayer
+	opentext
+	writetext Route20SailorText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 10
+	playsound SFX_CALL
+	waitsfx
+	playsound SFX_CALL
+	waitsfx
+	pause 20
+	playsound SFX_BOAT
+	waitsfx
+	pause 30
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	warp VERMILION_PORT, 7, 10
 	end
 
 CinnabarGymSign:
@@ -173,6 +240,13 @@ Route20ADText2:
 	line "drift."
 	done
 
+Route20SailorText:
+	text "Marooned, are ye?"
+
+	para "I'll call the"
+	line "rescue party."
+	done
+
 CinnabarGymSignText:
 	text "What does this"
 	line "sign say?"
@@ -196,3 +270,4 @@ Route20_MapEvents:
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
 	object_event 30,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route20ADScript, EVENT_ROUTE_20_A_D
+	object_event 35,  9, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route20SailorScript, EVENT_ROUTE_20_SAILOR
