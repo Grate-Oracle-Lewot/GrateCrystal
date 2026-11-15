@@ -336,14 +336,14 @@ TrainerCooltrainerfIrene:
 .Script:
 	endifjustbattled
 	opentext
-	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
-	iftrue .GotSoftSand
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
+	iftrue .GotOddRod
 	writetext CooltrainerfIreneAfterText1
 	waitbutton
 	closetext
 	end
 
-.GotSoftSand:
+.GotOddRod:
 	writetext CooltrainerfIreneAfterText2
 	waitbutton
 	closetext
@@ -355,14 +355,14 @@ TrainerCooltrainerfJenn:
 .Script:
 	endifjustbattled
 	opentext
-	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
-	iftrue .GotSoftSand
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
+	iftrue .GotOddRod
 	writetext CooltrainerfJennAfterText1
 	waitbutton
 	closetext
 	end
 
-.GotSoftSand:
+.GotOddRod:
 	writetext CooltrainerfJennAfterText2
 	waitbutton
 	closetext
@@ -373,20 +373,20 @@ TrainerCooltrainerfKate:
 
 .Script:
 	opentext
-	checkevent EVENT_GOT_SOFT_SAND_FROM_KATE
-	iftrue .GotSoftSand
-	writetext CooltrainerfKateOfferSoftSandText
+	checkevent EVENT_GOT_ODD_ROD_FROM_KATE
+	iftrue .GotOddRod
+	writetext CooltrainerfKateOfferOddRodText
 	promptbutton
 	verbosegiveitem ODD_ROD
 	iffalse .BagFull
-	setevent EVENT_GOT_SOFT_SAND_FROM_KATE
+	setevent EVENT_GOT_ODD_ROD_FROM_KATE
 	writetext CooltrainerfKateOddRodText
 	waitbutton
 	closetext
 	showemote EMOTE_FISH, ROUTE34_COOLTRAINER_F3, 15
 	end
 
-.GotSoftSand:
+.GotOddRod:
 	writetext CooltrainerfKateAfterText
 	waitbutton
 .BagFull:
@@ -616,7 +616,7 @@ CooltrainerfKateBeatenText:
 	line "believe I lost."
 	done
 
-CooltrainerfKateOfferSoftSandText:
+CooltrainerfKateOfferOddRodText:
 	text "KATE: You're too"
 	line "strong. I didn't"
 	cont "stand a chance."
