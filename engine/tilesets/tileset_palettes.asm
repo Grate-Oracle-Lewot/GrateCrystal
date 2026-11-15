@@ -9,7 +9,7 @@ LoadSpecialMapPalette:
 	cp TILESET_RADIO_TOWER
 	jr z, .radio_tower
 	cp TILESET_MANSION
-	jr z, .mansion_mobile
+	jr z, .mansion
 	cp TILESET_SPINNERS
 	jr z, .spinners
 	cp TILESET_BATTLE_TOWER_INSIDE
@@ -40,7 +40,7 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.mansion_mobile
+.mansion
 	call LoadMansionPalette
 	scf
 	ret
@@ -63,44 +63,41 @@ LoadHousePalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
 	ld hl, HousePalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-HousePalette:
-INCLUDE "gfx/tilesets/house.pal"
+	jr LoadEightPalettes
 
 LoadPokeComPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
 	ld hl, PokeComPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-PokeComPalette:
-INCLUDE "gfx/tilesets/pokecom_center.pal"
+	jr LoadEightPalettes
 
 LoadIcePathPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
 	ld hl, IcePathPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
-IcePathPalette:
-INCLUDE "gfx/tilesets/ice_path.pal"
+	jr LoadEightPalettes
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
 	ld hl, RadioTowerPalette
+	; fallthrough
+
+LoadEightPalettes:
 	ld bc, 8 palettes
 	jp FarCopyWRAM
 
-RadioTowerPalette:
-INCLUDE "gfx/tilesets/radio_tower.pal"
+LoadSpinnersPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, SpinnersPalette
+	jr LoadEightPalettes
 
-MansionPalette1:
-INCLUDE "gfx/tilesets/mansion_1.pal"
+LoadBattleTowerInsidePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, BattleTowerInsidePalette
+	jr LoadEightPalettes
 
 LoadMansionPalette:
 	ld a, BANK(wBGPals1)
@@ -124,25 +121,26 @@ LoadMansionPalette:
 	ld bc, 1 palettes
 	jp FarCopyWRAM
 
+HousePalette:
+INCLUDE "gfx/tilesets/house.pal"
+
+PokeComPalette:
+INCLUDE "gfx/tilesets/pokecom_center.pal"
+
+IcePathPalette:
+INCLUDE "gfx/tilesets/ice_path.pal"
+
+RadioTowerPalette:
+INCLUDE "gfx/tilesets/radio_tower.pal"
+
+MansionPalette1:
+INCLUDE "gfx/tilesets/mansion_1.pal"
+
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
 
-LoadSpinnersPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, SpinnersPalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
-
 SpinnersPalette:
 INCLUDE "gfx/tilesets/spinners.pal"
-
-LoadBattleTowerInsidePalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, BattleTowerInsidePalette
-	ld bc, 8 palettes
-	jp FarCopyWRAM
 
 BattleTowerInsidePalette:
 INCLUDE "gfx/tilesets/battle_tower_inside.pal"
