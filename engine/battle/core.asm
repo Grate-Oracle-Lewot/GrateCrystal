@@ -4845,11 +4845,6 @@ CheckDanger:
 	ld [wLowHealthAlarm], a
 	ret
 
-.no_danger
-	xor a
-	ld [wLowHealthAlarm], a
-	ret
-
 PrintPlayerHUD:
 	ld de, wBattleMonNickname
 	hlcoord 10, 7
