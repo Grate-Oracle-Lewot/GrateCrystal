@@ -201,9 +201,6 @@ Route35NationalParkGatePlayerApproachOfficer1Movement:
 Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement:
 	step RIGHT
 	step UP
-	step UP
-	step_end
-
 Route35NationalParkGatePlayerEnterParkMovement:
 	step UP
 	step_end
