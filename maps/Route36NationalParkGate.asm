@@ -599,9 +599,8 @@ Route36NationalParkGateOfficer1ContestIsOverText:
 	done
 
 Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
-	text "Some #MON can"
-	line "only be seen in"
-	cont "the PARK."
+	text "The PARK contains"
+	line "some rare #MON."
 	done
 
 BugCatchingContestant1BText:
