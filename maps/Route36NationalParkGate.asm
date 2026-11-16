@@ -1,15 +1,15 @@
 	object_const_def
 	const ROUTE36NATIONALPARKGATE_OFFICER1
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER1
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER2
-	const ROUTE36NATIONALPARKGATE_ROCKER
+	const ROUTE36NATIONALPARKGATE_BUG_CATCHER1
+	const ROUTE36NATIONALPARKGATE_SCHOOLBOY
+	const ROUTE36NATIONALPARKGATE_YOUNGSTER
+	const ROUTE36NATIONALPARKGATE_PICNICKER
+	const ROUTE36NATIONALPARKGATE_CAMPER
+	const ROUTE36NATIONALPARKGATE_BUG_CATCHER2
+	const ROUTE36NATIONALPARKGATE_BUG_CATCHER3
 	const ROUTE36NATIONALPARKGATE_POKEFAN_M
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER3
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER4
-	const ROUTE36NATIONALPARKGATE_LASS
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER5
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER6
-	const ROUTE36NATIONALPARKGATE_YOUNGSTER7
+	const ROUTE36NATIONALPARKGATE_BUG_CATCHER4
+	const ROUTE36NATIONALPARKGATE_ROCKER
 	const ROUTE36NATIONALPARKGATE_OFFICER2
 
 Route36NationalParkGate_MapScripts:
@@ -92,43 +92,43 @@ Route36NationalParkGate_MapScripts:
 .CopyContestants:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
 	iftrue .Not1
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER1
+	appear ROUTE36NATIONALPARKGATE_
 .Not1:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
 	iftrue .Not2
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER2
+	appear ROUTE36NATIONALPARKGATE_
 .Not2:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
 	iftrue .Not3
-	appear ROUTE36NATIONALPARKGATE_ROCKER
+	appear ROUTE36NATIONALPARKGATE_
 .Not3:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
 	iftrue .Not4
-	appear ROUTE36NATIONALPARKGATE_POKEFAN_M
+	appear ROUTE36NATIONALPARKGATE_
 .Not4:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
 	iftrue .Not5
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER3
+	appear ROUTE36NATIONALPARKGATE_
 .Not5:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
 	iftrue .Not6
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER4
+	appear ROUTE36NATIONALPARKGATE_
 .Not6:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
 	iftrue .Not7
-	appear ROUTE36NATIONALPARKGATE_LASS
+	appear ROUTE36NATIONALPARKGATE_
 .Not7:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
 	iftrue .Not8
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER5
+	appear ROUTE36NATIONALPARKGATE_
 .Not8:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
 	iftrue .Not9
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER6
+	appear ROUTE36NATIONALPARKGATE_
 .Not9:
 	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
 	iftrue .Not10
-	appear ROUTE36NATIONALPARKGATE_YOUNGSTER7
+	appear ROUTE36NATIONALPARKGATE_
 .Not10:
 	special UpdateSprites
 	end
@@ -293,124 +293,124 @@ Route36NationalParkGateOfficerScript:
 Route36ParkGate_DayToText:
 	jumpstd DayToTextScript
 
-BugCatchingContestant1BScript:
+BugCatchingContestantDonScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant1BText
+	writetext BugCatchingContestantDonText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant1BStillCompetingText
+	writetext BugCatchingContestantDonStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant2BScript:
+BugCatchingContestantKippScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant2BText
+	writetext BugCatchingContestantKippText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant2BStillCompetingText
+	writetext BugCatchingContestantKippStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant3BScript:
+BugCatchingContestantSamuelScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant3BText
+	writetext BugCatchingContestantSamuelText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant3BStillCompetingText
+	writetext BugCatchingContestantSamuelStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant4BScript:
+BugCatchingContestantCindyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant4BText
+	writetext BugCatchingContestantCindyText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant4BStillCompetingText
+	writetext BugCatchingContestantCindyStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant5BScript:
+BugCatchingContestantBarryScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant5BText
+	writetext BugCatchingContestantBarryText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant5BStillCompetingText
+	writetext BugCatchingContestantBarryStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant6BScript:
+BugCatchingContestantBennyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant6BText
+	writetext BugCatchingContestantBennyText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant6BStillCompetingText
+	writetext BugCatchingContestantBennyStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant7BScript:
+BugCatchingContestantJoshScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant7BText
+	writetext BugCatchingContestantJoshText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant7BStillCompetingText
+	writetext BugCatchingContestantJoshStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant8BScript:
+BugCatchingContestantWilliamScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant8BText
+	writetext BugCatchingContestantWilliamText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant8BStillCompetingText
+	writetext BugCatchingContestantWilliamStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant9BScript:
+BugCatchingContestantEdScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant9BText
+	writetext BugCatchingContestantEdText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant9BStillCompetingText
+	writetext BugCatchingContestantEdStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestant10BScript:
+BugCatchingContestantNickScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestant10BText
+	writetext BugCatchingContestantNickText
 	sjump BugContest_EndText
 
 .StillCompeting:
-	writetext BugCatchingContestant10BStillCompetingText
+	writetext BugCatchingContestantNickStillCompetingText
 	sjump BugContest_EndText
 
 Route36NationalParkGatePlayerWaitWithContestantsMovement:
@@ -603,13 +603,13 @@ Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
 	line "some rare #MON."
 	done
 
-BugCatchingContestant1BText:
+BugCatchingContestantDonText:
 	text "DON: Wow, you beat"
 	line "me. You're pretty"
 	cont "good."
 	done
 
-BugCatchingContestant1BStillCompetingText:
+BugCatchingContestantDonStillCompetingText:
 	text "DON: Luck plays a"
 	line "big part in this."
 
@@ -618,68 +618,54 @@ BugCatchingContestant1BStillCompetingText:
 	cont "appear."
 	done
 
-BugCatchingContestant2BText:
-	text "ED: I envy you."
-	line "I just couldn't"
-	cont "do it this time."
+BugCatchingContestantKippText:
+	text "KIPP: Could you"
+	line "give me some tips?"
+
+	para "I want to study"
+	line "your style."
 	done
 
-BugCatchingContestant2BStillCompetingText:
-	text "ED: Maybe you win"
-	line "with big #MON?"
+BugCatchingContestantKippStillCompetingText:
+	text "KIPP: I study a"
+	line "lot, but that's"
+
+	para "not good enough to"
+	line "win."
 	done
 
-BugCatchingContestant3BText:
-	text "NICK: Since you"
-	line "beat me, here's a"
-	cont "tip."
-
-	para "Register a ROD to"
-	line "SELECT to fish in"
-	cont "the fountain!"
+BugCatchingContestantSamuelText:
+	text "SAMUEL: Next time,"
+	line "I'm going to win."
 	done
 
-BugCatchingContestant3BStillCompetingText:
-	text "NICK: Maybe you"
-	line "get a higher score"
-
-	para "for a #MON of"
-	line "an unusual color."
+BugCatchingContestantSamuelStillCompetingText:
+	text "SAMUEL: Darn."
+	line "I thought I would"
+	cont "score higher…"
 	done
 
-BugCatchingContestant4BText:
-	text "WILLIAM: You're"
-	line "the winner? What"
-	cont "did you catch?"
+BugCatchingContestantCindyText:
+	text "CINDY: You won?"
+	line "That's great!"
+
+	para "Do you feel like"
+	line "looking for bug"
+	cont "#MON with me?"
 	done
 
-BugCatchingContestant4BStillCompetingText:
-	text "WILLIAM: Well, I'm"
-	line "satisfied because"
-
-	para "I caught a #MON"
-	line "that I wanted."
+BugCatchingContestantCindyStillCompetingText:
+	text "CINDY: I really"
+	line "love bug #MON!"
 	done
 
-BugCatchingContestant5BText:
-	text "BENNY: Congrats!"
-	line "You have earned my"
-	cont "respect!"
-	done
-
-BugCatchingContestant5BStillCompetingText:
-	text "BENNY: I caught a"
-	line "SCYTHER before,"
-	cont "but I didn't win."
-	done
-
-BugCatchingContestant6BText:
+BugCatchingContestantBarryText:
 	text "BARRY: That #-"
 	line "MON you caught…"
 	cont "it's awesome!"
 	done
 
-BugCatchingContestant6BStillCompetingText:
+BugCatchingContestantBarryStillCompetingText:
 	text "BARRY: It's easier"
 	line "to win if you get"
 
@@ -691,57 +677,71 @@ BugCatchingContestant6BStillCompetingText:
 	cont "other points."
 	done
 
-BugCatchingContestant7BText:
-	text "CINDY: You won?"
-	line "That's great!"
-
-	para "Do you feel like"
-	line "looking for bug"
-	cont "#MON with me?"
+BugCatchingContestantBennyText:
+	text "BENNY: Congrats!"
+	line "You have earned my"
+	cont "respect!"
 	done
 
-BugCatchingContestant7BStillCompetingText:
-	text "CINDY: I really"
-	line "love bug #MON!"
+BugCatchingContestantBennyStillCompetingText:
+	text "BENNY: I caught a"
+	line "SCYTHER before,"
+	cont "but I didn't win."
 	done
 
-BugCatchingContestant8BText:
+BugCatchingContestantJoshText:
 	text "JOSH: I… I can't"
 	line "believe I lost at"
 	cont "bug-catching…"
 	done
 
-BugCatchingContestant8BStillCompetingText:
+BugCatchingContestantJoshStillCompetingText:
 	text "JOSH: I heard that"
 	line "somebody won with"
 	cont "a CATERPIE!"
 	done
 
-BugCatchingContestant9BText:
-	text "SAMUEL: Next time,"
-	line "I'm going to win."
+BugCatchingContestantWilliamText:
+	text "WILLIAM: You're"
+	line "the winner? What"
+	cont "did you catch?"
 	done
 
-BugCatchingContestant9BStillCompetingText:
-	text "SAMUEL: Darn."
-	line "I thought I would"
-	cont "score higher…"
+BugCatchingContestantWilliamStillCompetingText:
+	text "WILLIAM: Well, I'm"
+	line "satisfied because"
+
+	para "I caught a #MON"
+	line "that I wanted."
 	done
 
-BugCatchingContestant10BText:
-	text "KIPP: Could you"
-	line "give me some tips?"
-
-	para "I want to study"
-	line "your style."
+BugCatchingContestantEdText:
+	text "ED: I envy you."
+	line "I just couldn't"
+	cont "do it this time."
 	done
 
-BugCatchingContestant10BStillCompetingText:
-	text "KIPP: I study a"
-	line "lot, but that's"
+BugCatchingContestantEdStillCompetingText:
+	text "ED: Maybe you win"
+	line "with big #MON?"
+	done
 
-	para "not good enough to"
-	line "win."
+BugCatchingContestantNickText:
+	text "NICK: Since you"
+	line "beat me, here's a"
+	cont "tip."
+
+	para "Register a ROD to"
+	line "SELECT to fish in"
+	cont "the fountain!"
+	done
+
+BugCatchingContestantNickStillCompetingText:
+	text "NICK: Maybe you"
+	line "get a higher score"
+
+	para "for a #MON of"
+	line "an unusual color."
 	done
 
 Route36NationalParkGateOfficer1WellHoldPrizeText:
@@ -778,14 +778,14 @@ Route36NationalParkGate_MapEvents:
 
 	def_object_events
 	object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36OfficerScriptContest, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	object_event  2,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1BScript, EVENT_BUG_CATCHING_CONTESTANT_1B
-	object_event  4,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2BScript, EVENT_BUG_CATCHING_CONTESTANT_2B
-	object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3BScript, EVENT_BUG_CATCHING_CONTESTANT_3B
-	object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant4BScript, EVENT_BUG_CATCHING_CONTESTANT_4B
-	object_event  2,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant5BScript, EVENT_BUG_CATCHING_CONTESTANT_5B
-	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant6BScript, EVENT_BUG_CATCHING_CONTESTANT_6B
-	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant7BScript, EVENT_BUG_CATCHING_CONTESTANT_7B
-	object_event  4,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant8BScript, EVENT_BUG_CATCHING_CONTESTANT_8B
-	object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant9BScript, EVENT_BUG_CATCHING_CONTESTANT_9B
-	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10BScript, EVENT_BUG_CATCHING_CONTESTANT_10B
+	object_event  2,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantDonScript, EVENT_BUG_CATCHING_CONTESTANT_1B
+	object_event  6,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantKippScript, EVENT_BUG_CATCHING_CONTESTANT_2B
+	object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantSamuelScript, EVENT_BUG_CATCHING_CONTESTANT_3B
+	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantCindyScript, EVENT_BUG_CATCHING_CONTESTANT_4B
+	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBarryScript, EVENT_BUG_CATCHING_CONTESTANT_5B
+	object_event  2,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBennyScript, EVENT_BUG_CATCHING_CONTESTANT_6B
+	object_event  4,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantJoshScript, EVENT_BUG_CATCHING_CONTESTANT_7B
+	object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantWilliamScript, EVENT_BUG_CATCHING_CONTESTANT_8B
+	object_event  4,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantEdScript, EVENT_BUG_CATCHING_CONTESTANT_9B
+	object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantNickScript, EVENT_BUG_CATCHING_CONTESTANT_10B
 	object_event  3,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36NationalParkGateOfficerScript, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
