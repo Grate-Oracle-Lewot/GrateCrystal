@@ -4837,18 +4837,32 @@ CheckDanger:
 	ld a, [wBattleLowHealthAlarm]
 	and a
 	ret nz
-	ld a, [wPlayerHPPal]
-	cp HP_RED
-	jr z, .danger
+
+; Check if HP is 1/8 or less
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	sla c
+	rl b
+	sla c
+	rl b
+	sla c
+	rl b
+	inc hl
+	inc hl
+	ld a, [hld]
+	cp c
+	ld a, [hl]
+	sbc b
+	jr c, .no_danger
+.danger
+	ld hl, wLowHealthAlarm
+	set DANGER_ON_F, [hl]
+	ret
 
 .no_danger
 	xor a
 	ld [wLowHealthAlarm], a
-	ret
-
-.danger
-	ld hl, wLowHealthAlarm
-	set DANGER_ON_F, [hl]
 	ret
 
 PrintPlayerHUD:
