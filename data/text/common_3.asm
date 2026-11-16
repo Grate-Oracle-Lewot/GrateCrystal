@@ -1449,6 +1449,11 @@ _TimeAskOkayText::
 	line "is that OK?"
 	done
 
+_FlyDigCantCatchText::
+	text "You can't reach the"
+	line "#MON right now!"
+	prompt
+
 _NuzlockeCantCatchText::
 	text "Catching is now"
 	line "forbidden here!"
