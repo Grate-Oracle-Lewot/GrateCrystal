@@ -21,6 +21,7 @@ BugCatchingContestant1AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant1AText
+NationalParkBugContest_EndText:
 	waitbutton
 	closetext
 	end
@@ -29,73 +30,55 @@ BugCatchingContestant2AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant2AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant3AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant3AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant4AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant4AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant5AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant5AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant6AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant6AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant7AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant7AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant8AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant8AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant9AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant9AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 BugCatchingContestant10AScript:
 	faceplayer
 	opentext
 	writetext BugCatchingContestant10AText
-	waitbutton
-	closetext
-	end
+	sjump NationalParkBugContest_EndText
 
 NationalParkBugContestRelaxationSquareSign:
 	jumptext NationalParkBugContestRelaxationSquareText
@@ -154,11 +137,15 @@ BugCatchingContestant5AText:
 	done
 
 BugCatchingContestant6AText:
-	text "BARRY: You should"
-	line "weaken bug #MON"
+	text "BARRY: Weakening"
+	line "#MON makes them"
 
-	para "first, then throw"
-	line "a BALL."
+	para "easier to catch,"
+	line "but you get a"
+
+	para "higher score if"
+	line "they have more HP"
+	cont "remaining."
 	done
 
 BugCatchingContestant7AText:
