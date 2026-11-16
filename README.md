@@ -374,7 +374,9 @@ Prize TMs:
 ## Miscellaneous
 - If you're playing with hard level caps on, Pokémon will no longer gain any experience while in the Daycare, but they will still be able to breed. Conversely, if you turn level caps off, walk around to give Daycare Pokémon experience, and turn hard caps back on, they may exceed the current cap. This is the best I could do given the cap toggle and how Daycare experience and leveling work, so please forgive me.
 - Until you've cleared out Team Rocket's hideout in Mahogany Town, any would-be Magikarp encounter at the Lake of Rage becomes a Gyarados with all 0 DVs (representing the negative effects of the forced evolution). Encounters that are generated as Gyarados in the first place have normal, randomized DVs (or perfect DVs for the Red Gyarados).
-- You can now fish (but not Surf) in the National Park's fountain, including during the Bug-Catching Contest. Only Bug-types will be fished up during the Contest regardless of Rod type, and can be entered in the Contest. However, since you can't access the Pack during the Contest, you must have a Rod registered to Select in order to do this.
+- You can now fish (but not Surf) in the National Park's fountain, including during the Bug-Catching Contest. Only Bug-types will be fished up during the Contest regardless of Rod type, and can be entered in the Contest. However, since you can't access the Pack during the Contest, you must have a Rod registered to Select in order to do this. The contest is also scored differently:
+  - Old Score: Max HP * 4 + Current HP / 8 + Attack + Defense + Speed + Sp.Attack + Sp.Defense + 1pt for any held item + DV bonus favoring a shiny
+  - New Score: Max HP + Current HP + Attack + Defense + Speed + Sp.Attack + Sp.Defense + 1pt for any held item + (255 - Catch Rate)
 - Cianwood City and Cinnabar Island each have a sailor who attempts to prevent Surf softlocks
 - Sleep now lasts from 1 to 5 turns both in and outside the Battle Tower (0-3 for Flying types)
 - Just like how Pokémon can't be Frozen during Harsh Sunlight, they now can't be Burned during Rain
@@ -415,7 +417,6 @@ Prize TMs:
 - Female players retain their female sprites in the Link Trade and Battle rooms
 - Press B in wild battles to instantly move the cursor over the Run option (taken from Polished Crystal)
 - Text edits, often humorous (or so I'd like to think)
-- In the unedited Bug-Catching Contest, you get up to 29 points based on DVs, favoring a shiny Pokémon. Since I changed which DVs result in a shiny, the contest score now simply tallies DVs as points, then cuts the tally in half, resulting in a total of up to 30 points for DVs, so basically the same range, just calculated differently. (The HP DV isn't a factor, since it's calculated based on the other DVs anyway.)
 
 # Minor Edits
 
