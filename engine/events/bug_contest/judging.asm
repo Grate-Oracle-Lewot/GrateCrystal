@@ -273,7 +273,8 @@ ComputeAIContestantScores:
 	ret
 
 ContestScore:
-; Determine the player's score in the Bug Catching Contest.
+; Determine the player's score in the Bug-Catching Contest.
+; Assumes no individual stat value will exceed 255.
 
 	xor a
 	ldh [hProduct], a
@@ -312,6 +313,14 @@ ContestScore:
 	sub b
 	call .AddContestStat
 
+	; Whether it has a status
+	ld a, [wContestMonStatus]
+	and a
+	jr nz, .continue
+	ld a, 5
+	call .AddContestStat
+
+.continue
 	; Whether it's holding an item
 	ld a, [wContestMonItem]
 	and a
