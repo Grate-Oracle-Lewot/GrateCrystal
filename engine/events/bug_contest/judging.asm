@@ -22,7 +22,20 @@ _BugContestJudging:
 	call GetPokemonName
 	ld hl, ContestJudging_FirstPlaceText
 	call PrintText
-	jp BugContest_GetPlayersResult
+	; fallthrough
+
+BugContest_GetPlayersResult:
+	ld hl, wBugContestThirdPlaceWinnerID
+	ld de, -BUG_CONTESTANT_SIZE
+	ld b, 3 ; 3rd, 2nd, or 1st
+.loop
+	ld a, [hl]
+	cp BUG_CONTEST_PLAYER
+	ret z
+	add hl, de
+	dec b
+	jr nz, .loop
+	ret
 
 ContestJudging_FirstPlaceText:
 	text_far _ContestJudging_FirstPlaceText
@@ -124,15 +137,12 @@ LoadContestantName:
 
 INCLUDE "data/events/bug_contest_winners.asm"
 
-BugContest_GetPlayersResult:
-	ld hl, wBugContestThirdPlaceWinnerID
-	ld de, -BUG_CONTESTANT_SIZE
-	ld b, 3 ; 3rd, 2nd, or 1st
+ClearContestResults:
+	ld hl, wBugContestResults
+	ld b, wBugContestWinnersEnd - wBugContestResults
+	xor a
 .loop
-	ld a, [hl]
-	cp BUG_CONTEST_PLAYER
-	ret z
-	add hl, de
+	ld [hli], a
 	dec b
 	jr nz, .loop
 	ret
@@ -149,17 +159,7 @@ BugContest_JudgeContestants:
 	ld [hli], a
 	ldh a, [hProduct + 1]
 	ld [hl], a
-	jp DetermineContestWinners
-
-ClearContestResults:
-	ld hl, wBugContestResults
-	ld b, wBugContestWinnersEnd - wBugContestResults
-	xor a
-.loop
-	ld [hli], a
-	dec b
-	jr nz, .loop
-	ret
+	; fallthrough
 
 DetermineContestWinners:
 	ld de, wBugContestTempScore
@@ -176,7 +176,7 @@ DetermineContestWinners:
 	ld bc, BUG_CONTESTANT_SIZE
 	call CopyBytes
 	ld hl, wBugContestFirstPlaceWinnerID
-	jp CopyTempContestant
+	jr CopyTempContestant
 
 .not_first_place
 	ld de, wBugContestTempScore
@@ -189,7 +189,7 @@ DetermineContestWinners:
 	ld bc, BUG_CONTESTANT_SIZE
 	call CopyBytes
 	ld hl, wBugContestSecondPlaceWinnerID
-	jp CopyTempContestant
+	jr CopyTempContestant
 
 .not_second_place
 	ld de, wBugContestTempScore
@@ -198,7 +198,7 @@ DetermineContestWinners:
 	call CompareBytes
 	ret c
 	ld hl, wBugContestThirdPlaceWinnerID
-	jp CopyTempContestant
+	; fallthrough
 
 CopyTempContestant:
 ; Could've just called CopyBytes.
