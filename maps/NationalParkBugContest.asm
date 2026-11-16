@@ -114,9 +114,9 @@ BugCatchingContestant2AText:
 	done
 
 BugCatchingContestant3AText:
-	text "NICK: I'm raising"
-	line "fast #MON for"
-	cont "battles."
+	text "NICK: My #MON's"
+	line "job is to take"
+	cont "hits, not attack."
 	done
 
 BugCatchingContestant4AText:
