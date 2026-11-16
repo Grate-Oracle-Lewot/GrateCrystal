@@ -220,7 +220,7 @@ BugContest_EndText:
 
 Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	iftrue .Sunstone
+	iftrue .SunStone
 	checkevent EVENT_CONTEST_OFFICER_HAS_MOON_STONE
 	iftrue .MoonStone
 	checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
@@ -230,7 +230,7 @@ Route36Officer_ContestHasConcluded:
 	writetext Route36NationalParkGateOfficer1ContestIsOverText
 	sjump BugContest_EndText
 
-.Sunstone:
+.SunStone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
 	checkevent EVENT_WON_HEDGER_FROM_BUG_CONTEST
@@ -293,120 +293,120 @@ Route36NationalParkGateOfficerScript:
 Route36ParkGate_DayToText:
 	jumpstd DayToTextScript
 
-BugCatchingContestantDonScript:
+BugCatchingContestantDonJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantDonText
+	writetext BugCatchingContestantDonCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantDonStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantKippScript:
+BugCatchingContestantKippJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantKippText
+	writetext BugCatchingContestantKippCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantKippStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantSamuelScript:
+BugCatchingContestantSamuelJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantSamuelText
+	writetext BugCatchingContestantSamuelCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantSamuelStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantCindyScript:
+BugCatchingContestantCindyJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantCindyText
+	writetext BugCatchingContestantCindyCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantCindyStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantBarryScript:
+BugCatchingContestantBarryJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantBarryText
+	writetext BugCatchingContestantBarryCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantBarryStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantBennyScript:
+BugCatchingContestantBennyJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantBennyText
+	writetext BugCatchingContestantBennyCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantBennyStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantJoshScript:
+BugCatchingContestantJoshJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantJoshText
+	writetext BugCatchingContestantJoshCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantJoshStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantWilliamScript:
+BugCatchingContestantWilliamJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantWilliamText
+	writetext BugCatchingContestantWilliamCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantWilliamStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantEdScript:
+BugCatchingContestantEdJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantEdText
+	writetext BugCatchingContestantEdCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
 	writetext BugCatchingContestantEdStillCompetingText
 	sjump BugContest_EndText
 
-BugCatchingContestantNickScript:
+BugCatchingContestantNickJudgingScript:
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iffalse .StillCompeting
-	writetext BugCatchingContestantNickText
+	writetext BugCatchingContestantNickCongratulationsText
 	sjump BugContest_EndText
 
 .StillCompeting:
@@ -603,7 +603,7 @@ Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText:
 	line "some rare #MON."
 	done
 
-BugCatchingContestantDonText:
+BugCatchingContestantDonCongratulationsText:
 	text "DON: Wow, you beat"
 	line "me. You're pretty"
 	cont "good."
@@ -618,7 +618,7 @@ BugCatchingContestantDonStillCompetingText:
 	cont "appear."
 	done
 
-BugCatchingContestantKippText:
+BugCatchingContestantKippCongratulationsText:
 	text "KIPP: Could you"
 	line "give me some tips?"
 
@@ -634,7 +634,7 @@ BugCatchingContestantKippStillCompetingText:
 	line "win."
 	done
 
-BugCatchingContestantSamuelText:
+BugCatchingContestantSamuelCongratulationsText:
 	text "SAMUEL: Next time,"
 	line "I'm going to win."
 	done
@@ -645,7 +645,7 @@ BugCatchingContestantSamuelStillCompetingText:
 	cont "score higher…"
 	done
 
-BugCatchingContestantCindyText:
+BugCatchingContestantCindyCongratulationsText:
 	text "CINDY: You won?"
 	line "That's great!"
 
@@ -659,7 +659,7 @@ BugCatchingContestantCindyStillCompetingText:
 	line "love bug #MON!"
 	done
 
-BugCatchingContestantBarryText:
+BugCatchingContestantBarryCongratulationsText:
 	text "BARRY: That #-"
 	line "MON you caught…"
 	cont "it's awesome!"
@@ -677,7 +677,7 @@ BugCatchingContestantBarryStillCompetingText:
 	cont "other points."
 	done
 
-BugCatchingContestantBennyText:
+BugCatchingContestantBennyCongratulationsText:
 	text "BENNY: Congrats!"
 	line "You have earned my"
 	cont "respect!"
@@ -689,7 +689,7 @@ BugCatchingContestantBennyStillCompetingText:
 	cont "but I didn't win."
 	done
 
-BugCatchingContestantJoshText:
+BugCatchingContestantJoshCongratulationsText:
 	text "JOSH: I… I can't"
 	line "believe I lost at"
 	cont "bug-catching…"
@@ -701,7 +701,7 @@ BugCatchingContestantJoshStillCompetingText:
 	cont "a CATERPIE!"
 	done
 
-BugCatchingContestantWilliamText:
+BugCatchingContestantWilliamCongratulationsText:
 	text "WILLIAM: You're"
 	line "the winner? What"
 	cont "did you catch?"
@@ -715,7 +715,7 @@ BugCatchingContestantWilliamStillCompetingText:
 	line "that I wanted."
 	done
 
-BugCatchingContestantEdText:
+BugCatchingContestantEdCongratulationsText:
 	text "ED: I envy you."
 	line "I just couldn't"
 	cont "do it this time."
@@ -726,7 +726,7 @@ BugCatchingContestantEdStillCompetingText:
 	line "with big #MON?"
 	done
 
-BugCatchingContestantNickText:
+BugCatchingContestantNickCongratulationsText:
 	text "NICK: Since you"
 	line "beat me, here's a"
 	cont "tip."
@@ -778,14 +778,14 @@ Route36NationalParkGate_MapEvents:
 
 	def_object_events
 	object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36OfficerScriptContest, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	object_event  2,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantDonScript, EVENT_BUG_CATCHING_CONTESTANT_1B
-	object_event  6,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantKippScript, EVENT_BUG_CATCHING_CONTESTANT_2B
-	object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantSamuelScript, EVENT_BUG_CATCHING_CONTESTANT_3B
-	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantCindyScript, EVENT_BUG_CATCHING_CONTESTANT_4B
-	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBarryScript, EVENT_BUG_CATCHING_CONTESTANT_5B
-	object_event  2,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBennyScript, EVENT_BUG_CATCHING_CONTESTANT_6B
-	object_event  4,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantJoshScript, EVENT_BUG_CATCHING_CONTESTANT_7B
-	object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantWilliamScript, EVENT_BUG_CATCHING_CONTESTANT_8B
-	object_event  4,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantEdScript, EVENT_BUG_CATCHING_CONTESTANT_9B
-	object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantNickScript, EVENT_BUG_CATCHING_CONTESTANT_10B
+	object_event  2,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantDonJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_1B
+	object_event  6,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantKippJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_2B
+	object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantSamuelJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_3B
+	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantCindyJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_4B
+	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBarryJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_5B
+	object_event  2,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBennyJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_6B
+	object_event  4,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantJoshJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_7B
+	object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantWilliamJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_8B
+	object_event  4,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantEdJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_9B
+	object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantNickJudgingScript, EVENT_BUG_CATCHING_CONTESTANT_10B
 	object_event  3,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36NationalParkGateOfficerScript, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
