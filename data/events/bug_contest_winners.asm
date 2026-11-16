@@ -1,5 +1,6 @@
 BugContestantPointers:
 	table_width 2, BugContestantPointers
+	; entries lower down the list will win a tie
 	dw BugContestant_BugCatcherDon ; this reverts back to the player
 	dw BugContestant_BugCatcherDon
 	dw BugContestant_SchoolboyKipp
