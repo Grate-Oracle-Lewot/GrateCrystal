@@ -1397,10 +1397,10 @@ endc
 	; nite
 	db 9, ODDISH
 	db 12, ODDISH
-	db 8, VENONAT
-	db 10, VENONAT
 	db 8, PSYDUCK
 	db 10, PSYDUCK
+	db 8, VENONAT
+	db 10, VENONAT
 	db 13, EXEGGCUTE
 	db 6, CHANSEY
 	end_grass_wildmons
