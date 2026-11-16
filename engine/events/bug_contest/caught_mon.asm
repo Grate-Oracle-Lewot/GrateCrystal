@@ -10,14 +10,6 @@ BugContest_SetCaughtContestMon:
 	ret c
 
 .firstcatch
-	call .generatestats
-	ld a, [wTempEnemyMonSpecies]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	ld hl, .ContestCaughtMonText
-	jp PrintText
-
-.generatestats
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -29,7 +21,14 @@ BugContest_SetCaughtContestMon:
 	xor a
 	ld [wMonType], a
 	ld hl, wContestMon
-	jp GeneratePartyMonStats
+	call GeneratePartyMonStats
+	ld a, [wEnemyMonCatchRate]
+	ld [wContestMonUnused], a
+	ld a, [wTempEnemyMonSpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	ld hl, .ContestCaughtMonText
+	jp PrintText
 
 .ContestCaughtMonText:
 	text_far _ContestCaughtMonText
