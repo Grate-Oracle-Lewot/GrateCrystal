@@ -285,17 +285,15 @@ ContestScore:
 
 	; Tally the following:
 
-	; Max HP * 4
-	ld a, [wContestMonMaxHP + 1]
-	call .AddContestStat
-	ld a, [wContestMonMaxHP + 1]
-	call .AddContestStat
-	ld a, [wContestMonMaxHP + 1]
-	call .AddContestStat
+	; Max HP
 	ld a, [wContestMonMaxHP + 1]
 	call .AddContestStat
 
-	; Stats
+	; Remaining HP
+	ld a, [wContestMonHP + 1]
+	call .AddContestStat
+
+	; Other stats
 	ld a, [wContestMonAttack  + 1]
 	call .AddContestStat
 	ld a, [wContestMonDefense + 1]
@@ -307,40 +305,11 @@ ContestScore:
 	ld a, [wContestMonSpclDef + 1]
 	call .AddContestStat
 
-	; DVs
-	ld a, [wContestMonDVs + 0]
+	; 255 - catch rate
+	ld a, [wContestMonUnused]
 	ld b, a
-	and %1111
-	ld c, a
-
-	swap b
-	ld a, b
-	and %1111
-	add c
-	ld d, a
-
-	ld a, [wContestMonDVs + 1]
-	ld b, a
-	and %1111
-	ld c, a
-
-	swap b
-	ld a, b
-	and %1111
-	add c
-	add d
-
-	; halve the total DV tally
-	srl a
-
-	call .AddContestStat
-
-	; Remaining HP / 8
-	ld a, [wContestMonHP + 1]
-	rrca
-	rrca
-	rrca
-	and %00011111
+	ld a, $FF
+	sub b
 	call .AddContestStat
 
 	; Whether it's holding an item
