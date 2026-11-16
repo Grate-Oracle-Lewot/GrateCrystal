@@ -2566,9 +2566,8 @@ CheckEnemyTrainerDefeated:
 	ret
 
 HandleEnemySwitch:
-	ld hl, wEnemyHPPal
 	ld e, HP_BAR_LENGTH_PX
-	call UpdateHPPal
+	call UpdateEnemyHPPal
 	call WaitBGMap
 	farcall EnemySwitch_TrainerHud
 	ld a, [wLinkMode]
