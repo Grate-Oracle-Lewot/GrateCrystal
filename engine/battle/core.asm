@@ -4841,8 +4841,13 @@ CheckDanger:
 	jr z, .danger
 
 .no_danger
-	xor a
-	ld [wLowHealthAlarm], a
+	ld hl, wLowHealthAlarm
+	res DANGER_ON_F, [hl]
+	ret
+
+.danger
+	ld hl, wLowHealthAlarm
+	set DANGER_ON_F, [hl]
 	ret
 
 PrintPlayerHUD:
