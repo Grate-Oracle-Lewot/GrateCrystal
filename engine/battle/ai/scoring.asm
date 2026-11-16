@@ -2611,10 +2611,6 @@ AI_Smart_HealBell:
 	ret
 
 AI_Smart_PriorityHit:
-; If enemy is faster than player, give no special treatment to priority moves.
-	call AICompareSpeed
-	ret c
-
 ; Dismiss this move if the player is flying or underground.
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -2636,7 +2632,11 @@ AI_Smart_PriorityHit:
 	sbc b
 	jr c, AI_Smart_Highly_Encourage
 
-; If Fly, Dig or Sky Attack was the player's last used move...
+; If the player is faster than the enemy...
+	call AICompareSpeed
+	ret c
+
+; ...and Fly, Dig or Sky Attack was the player's last used move...
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
 	jr z, .couldGo
