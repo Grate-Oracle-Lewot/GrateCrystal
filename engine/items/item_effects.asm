@@ -215,6 +215,10 @@ PokeBallEffect:
 	bit GIFT_ONLY, a
 	jr nz, .gift_only
 
+	ld a, [wEnemySubStatus3]
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .fly_dig
+
 	farcall NuzlockeCheckAreaFlag
 	ld a, [wScriptVar]
 	and a
@@ -230,6 +234,11 @@ PokeBallEffect:
 
 .gift_only
 	ld hl, GiftOnlyCantCatchText
+	call PrintText
+	jr .not_used
+
+.fly_dig
+	ld hl, FlyDigCantCatchText
 	call PrintText
 	jr .not_used
 
@@ -2691,6 +2700,10 @@ NuzlockeCantCatchText:
 
 GiftOnlyCantCatchText:
 	text_far _GiftOnlyCantCatchText
+	text_end
+
+FlyDigCantCatchText:
+	text_far _FlyDigCantCatchText
 	text_end
 
 ItemUsedText:
