@@ -1,14 +1,14 @@
 	object_const_def
-	const NATIONALPARKBUGCONTEST_YOUNGSTER1
-	const NATIONALPARKBUGCONTEST_YOUNGSTER2
-	const NATIONALPARKBUGCONTEST_ROCKER
+	const NATIONALPARKBUGCONTEST_BUG_CATCHER1
+	const NATIONALPARKBUGCONTEST_SCHOOLBOY
+	const NATIONALPARKBUGCONTEST_YOUNGSTER
+	const NATIONALPARKBUGCONTEST_PICNICKER
+	const NATIONALPARKBUGCONTEST_CAMPER
+	const NATIONALPARKBUGCONTEST_BUG_CATCHER2
+	const NATIONALPARKBUGCONTEST_BUG_CATCHER3
 	const NATIONALPARKBUGCONTEST_POKEFAN_M
-	const NATIONALPARKBUGCONTEST_YOUNGSTER3
-	const NATIONALPARKBUGCONTEST_YOUNGSTER4
-	const NATIONALPARKBUGCONTEST_LASS
-	const NATIONALPARKBUGCONTEST_YOUNGSTER5
-	const NATIONALPARKBUGCONTEST_YOUNGSTER6
-	const NATIONALPARKBUGCONTEST_YOUNGSTER7
+	const NATIONALPARKBUGCONTEST_BUG_CATCHER4
+	const NATIONALPARKBUGCONTEST_ROCKER
 	const NATIONALPARKBUGCONTEST_POKE_BALL1
 	const NATIONALPARKBUGCONTEST_POKE_BALL2
 
@@ -17,67 +17,67 @@ NationalParkBugContest_MapScripts:
 
 	def_callbacks
 
-BugCatchingContestant1AScript:
+BugCatchingContestantDonScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant1AText
+	writetext BugCatchingContestantDonText
 NationalParkBugContest_EndText:
 	waitbutton
 	closetext
 	end
 
-BugCatchingContestant2AScript:
+BugCatchingContestantKippScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant2AText
+	writetext BugCatchingContestantKippText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant3AScript:
+BugCatchingContestantSamuelScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant3AText
+	writetext BugCatchingContestantSamuelText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant4AScript:
+BugCatchingContestantCindyScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant4AText
+	writetext BugCatchingContestantCindyText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant5AScript:
+BugCatchingContestantBarryScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant5AText
+	writetext BugCatchingContestantBarryText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant6AScript:
+BugCatchingContestantBennyScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant6AText
+	writetext BugCatchingContestantBennyText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant7AScript:
+BugCatchingContestantJoshScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant7AText
+	writetext BugCatchingContestantJoshText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant8AScript:
+BugCatchingContestantWilliamScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant8AText
+	writetext BugCatchingContestantWilliamText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant9AScript:
+BugCatchingContestantEdScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant9AText
+	writetext BugCatchingContestantEdText
 	sjump NationalParkBugContest_EndText
 
-BugCatchingContestant10AScript:
+BugCatchingContestantNickScript:
 	faceplayer
 	opentext
-	writetext BugCatchingContestant10AText
+	writetext BugCatchingContestantNickText
 	sjump NationalParkBugContest_EndText
 
 NationalParkBugContestRelaxationSquareSign:
@@ -101,42 +101,38 @@ NationalParkBugContestHiddenFullHeal:
 NationalParkBugContestTrashcan:
 	jumpstd TrashCanScript
 
-BugCatchingContestant1AText:
+BugCatchingContestantDonText:
 	text "DON: I'm going to"
 	line "win! Don't bother"
 	cont "me."
 	done
 
-BugCatchingContestant2AText:
-	text "ED: My PARASECT"
-	line "puts #MON to"
-	cont "sleep with SPORE."
+BugCatchingContestantKippText:
+	text "KIPP: I've studied"
+	line "about bug #MON"
+	cont "a lot."
+
+	para "I'm going to win"
+	line "for sure."
 	done
 
-BugCatchingContestant3AText:
-	text "NICK: My #MON's"
-	line "job is to take"
-	cont "hits, not attack."
+BugCatchingContestantSamuelText:
+	text "SAMUEL: If you've"
+	line "got the time to"
+
+	para "chat, go find some"
+	line "bug #MON."
 	done
 
-BugCatchingContestant4AText:
-	text "WILLIAM: I'm not"
-	line "concerned about"
-	cont "winning."
+BugCatchingContestantCindyText:
+	text "CINDY: I love bug"
+	line "#MON."
 
-	para "I'm just looking"
-	line "for rare #MON."
+	para "I guess you must"
+	line "like them too."
 	done
 
-BugCatchingContestant5AText:
-	text "BENNY: Ssh! You'll"
-	line "scare off SCYTHER."
-
-	para "I'll talk to you"
-	line "later."
-	done
-
-BugCatchingContestant6AText:
+BugCatchingContestantBarryText:
 	text "BARRY: Weakening"
 	line "#MON makes them"
 
@@ -148,15 +144,15 @@ BugCatchingContestant6AText:
 	cont "remaining."
 	done
 
-BugCatchingContestant7AText:
-	text "CINDY: I love bug"
-	line "#MON."
+BugCatchingContestantBennyText:
+	text "BENNY: Ssh! You'll"
+	line "scare off SCYTHER."
 
-	para "I guess you must"
-	line "like them too."
+	para "I'll talk to you"
+	line "later."
 	done
 
-BugCatchingContestant8AText:
+BugCatchingContestantJoshText:
 	text "JOSH: I've been"
 	line "collecting bug"
 
@@ -167,21 +163,25 @@ BugCatchingContestant8AText:
 	line "going to lose!"
 	done
 
-BugCatchingContestant9AText:
-	text "SAMUEL: If you've"
-	line "got the time to"
+BugCatchingContestantWilliamText:
+	text "WILLIAM: I'm not"
+	line "concerned about"
+	cont "winning."
 
-	para "chat, go find some"
-	line "bug #MON."
+	para "I'm just looking"
+	line "for rare #MON."
 	done
 
-BugCatchingContestant10AText:
-	text "KIPP: I've studied"
-	line "about bug #MON"
-	cont "a lot."
+BugCatchingContestantEdText:
+	text "ED: My PARASECT"
+	line "puts #MON to"
+	cont "sleep with SPORE."
+	done
 
-	para "I'm going to win"
-	line "for sure."
+BugCatchingContestantNickText:
+	text "NICK: My #MON's"
+	line "job is to take"
+	cont "hits, not attack."
 	done
 
 NationalParkBugContestRelaxationSquareText:
@@ -235,15 +235,15 @@ NationalParkBugContest_MapEvents:
 	bg_event 30, 40, BGEVENT_READ, NationalParkBugContestTrashcan
 
 	def_object_events
-	object_event 19, 29, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1AScript, EVENT_BUG_CATCHING_CONTESTANT_1A
-	object_event 28, 22, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2AScript, EVENT_BUG_CATCHING_CONTESTANT_2A
-	object_event  9, 18, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3AScript, EVENT_BUG_CATCHING_CONTESTANT_3A
-	object_event  7, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant4AScript, EVENT_BUG_CATCHING_CONTESTANT_4A
-	object_event 23,  9, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant5AScript, EVENT_BUG_CATCHING_CONTESTANT_5A
-	object_event 27, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant6AScript, EVENT_BUG_CATCHING_CONTESTANT_6A
-	object_event  7, 23, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant7AScript, EVENT_BUG_CATCHING_CONTESTANT_7A
-	object_event 11, 27, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant8AScript, EVENT_BUG_CATCHING_CONTESTANT_8A
-	object_event 16,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant9AScript, EVENT_BUG_CATCHING_CONTESTANT_9A
-	object_event 17, 34, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10AScript, EVENT_BUG_CATCHING_CONTESTANT_10A
+	object_event 19, 29, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantDonScript, EVENT_BUG_CATCHING_CONTESTANT_1A
+	object_event 17, 34, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantKippScript, EVENT_BUG_CATCHING_CONTESTANT_2A
+	object_event 16,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantSamuelScript, EVENT_BUG_CATCHING_CONTESTANT_3A
+	object_event  7, 23, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantCindyScript, EVENT_BUG_CATCHING_CONTESTANT_4A
+	object_event 27, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBarryScript, EVENT_BUG_CATCHING_CONTESTANT_5A
+	object_event 23,  9, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantBennyScript, EVENT_BUG_CATCHING_CONTESTANT_6A
+	object_event 11, 27, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantJoshScript, EVENT_BUG_CATCHING_CONTESTANT_7A
+	object_event  7, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantWilliamScript, EVENT_BUG_CATCHING_CONTESTANT_8A
+	object_event 28, 22, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantEdScript, EVENT_BUG_CATCHING_CONTESTANT_9A
+	object_event  9, 18, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestantNickScript, EVENT_BUG_CATCHING_CONTESTANT_10A
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestTMDig, EVENT_NATIONAL_PARK_TM_DIG
