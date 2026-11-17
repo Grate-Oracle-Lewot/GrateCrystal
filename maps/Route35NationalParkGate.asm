@@ -117,11 +117,15 @@ Route35NationalParkGate_OkayToProceed:
 Route35NationalParkGate_NuzlockeASM:
 	ld a, [wOptions2]
 	bit NUZLOCKE, a
-	jr z, .false
+	jr z, .check_gift
+.true
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
 
+.check_gift
+	bit GIFT_ONLY, a
+	jr nz, .true
 .false
 	xor a
 	ld [wScriptVar], a
