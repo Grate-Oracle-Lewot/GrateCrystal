@@ -577,7 +577,11 @@ In both cases, the maximum number is limited by the size of a byte. (That's 256,
 
 # Why aren't you using newbox?
 
-To be honest, it's because I keep seeing people having (small but significant) bugs with it. Additionally, it discourages you from abusing the Game Boy PC for healing =P
+It's a combination if it being a complicated edit, me being unreasonably paranoid about minor bugs and design issues with it, and the vanilla PC system's clunkiness deterring you from abusing the Game Boy PC for free healing.
+
+# Why no toggle for the Physical/Special split?
+
+Movepools and enemy movesets were designed with the split in mind. Besides that, I would have to do something about the Physical/Special/Status icons on multiple move info screens, and it was enough of a headache to get those to work in the first place.
 
 # Why not unique icons for every Pokémon?
 
