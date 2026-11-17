@@ -143,6 +143,8 @@ Route36OfficerScriptContest:
 	opentext
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route36Officer_ContestHasConcluded
+	callasm Route36NationalParkGate_NuzlockeASM
+	iftrue Route36NationalParkGateOfficerNuzlockeNoContest
 	scall Route36ParkGate_DayToText
 	writetext Route36NationalParkGateOfficer1AskToParticipateText
 	yesorno
@@ -218,6 +220,12 @@ BugContest_EndText:
 	closetext
 	end
 
+Route36NationalParkGate_NuzlockeASM:
+	ld a, [wOptions2]
+	and NUZLOCKE
+	ld [wScriptVar], a
+	ret
+
 Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	iftrue .SunStone
@@ -281,6 +289,9 @@ Route36Officer_ContestHasConcluded:
 
 _ContestNotOn:
 	jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
+
+Route36NationalParkGateOfficerNuzlockeNoContest:
+	jumptextfaceplayer Route35NationalParkGateOfficerNuzlockeNoContestText
 
 Route36NationalParkGateOfficerScript:
 	faceplayer
@@ -418,6 +429,18 @@ Route36NationalParkGatePlayerWaitWithContestantsMovement:
 	big_step RIGHT
 	turn_head UP
 	step_end
+
+Route36NationalParkGateOfficerNuzlockeNoContestText:
+	text "I'm sorry. If you"
+	line "want to enter the"
+
+	para "Bug-Catching Cont-"
+	line "est, you must have"
+
+	para "catching set to"
+	line "“normal” in your"
+	cont "options menu."
+	done
 
 Route36NationalParkGateOfficer1AskToParticipateText:
 	text "Today's @"
