@@ -44,6 +44,7 @@ This is an edit of the pret community's "pokecrystal" disassembly on GitHub—in
     - No exceptions for shinies. Play at your own risk.
     - This mode does nothing about Pokémon "dying." It only restricts catching. Release or box them at your own discretion.
     - Since the mode can be switched off at any time, you can disable it to, say, catch an HM user to avoid softlocks. However, new encounters are used up even while the mode is turned off.
+    - You can't enter the Bug-Catching Contest while the mode is on. However, turning off the mode and playing the Contest will not use up your encounter for the National Park.
 - Deleting your save file is now a simple option in the opening menu, and changing the clock is now a simple option in the Pokégear
 - Nayru62's advanced Pokédex shows base stats, learnsets, encounter rates, and much more
 - New Pokédex entries for every Pokémon
