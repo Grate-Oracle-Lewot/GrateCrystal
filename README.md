@@ -639,7 +639,7 @@ TriteHexagon - demixes for Cynthia and Miror B. battles, Gen III contest and Div
 
 Mmmmmmmmmmmmmmmmm - demixes for HGSS Routes 24 and 47
 
-The3Element05 - graphics for Font #2
+The3Element05 - graphics for Font #2, and some general support
 
 WhoaMan - some characters in Font #4
 
