@@ -222,7 +222,14 @@ BugContest_EndText:
 
 Route36NationalParkGate_NuzlockeASM:
 	ld a, [wOptions2]
-	and NUZLOCKE
+	bit NUZLOCKE, a
+	jr z, .false
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+.false
+	xor a
 	ld [wScriptVar], a
 	ret
 
@@ -291,7 +298,8 @@ _ContestNotOn:
 	jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 
 Route36NationalParkGateOfficerNuzlockeNoContest:
-	jumptextfaceplayer Route35NationalParkGateOfficerNuzlockeNoContestText
+	writetext Route35NationalParkGateOfficerNuzlockeNoContestText
+	sjump BugContest_EndText
 
 Route36NationalParkGateOfficerScript:
 	faceplayer
