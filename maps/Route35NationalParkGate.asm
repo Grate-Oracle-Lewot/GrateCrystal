@@ -82,6 +82,8 @@ Route35OfficerScriptContest:
 	opentext
 	checkflag ENGINE_DAILY_BUG_CONTEST
 	iftrue Route35NationalParkGate_ContestIsOver
+	callasm Route35NationalParkGate_NuzlockeASM
+	iftrue Route35NationalParkGateOfficerNuzlockeNoContest
 	scall Route35NationalParkGate_GetDayOfWeek
 	writetext Route35NationalParkGateOfficer1AskToParticipateText
 	yesorno
@@ -111,6 +113,12 @@ Route35NationalParkGate_OkayToProceed:
 	special SelectRandomBugContestContestants
 	warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47
 	end
+
+Route35NationalParkGate_NuzlockeASM:
+	ld a, [wOptions2]
+	and NUZLOCKE
+	ld [wScriptVar], a
+	ret
 
 Route35NationalParkGate_EnterContest:
 	readvar VAR_FACING
@@ -176,6 +184,9 @@ Route35NationalParkGate_ContestIsOver:
 Route35NationalParkGate_NoContestToday:
 	jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText
 
+Route35NationalParkGateOfficerNuzlockeNoContest:
+	jumptextfaceplayer Route35NationalParkGateOfficerNuzlockeNoContestText
+
 Route35NationalParkGateOfficerScript:
 	faceplayer
 	opentext
@@ -204,6 +215,18 @@ Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement:
 Route35NationalParkGatePlayerEnterParkMovement:
 	step UP
 	step_end
+
+Route35NationalParkGateOfficerNuzlockeNoContestText:
+	text "I'm sorry. If you"
+	line "want to enter the"
+
+	para "Bug-Catching Cont-"
+	line "est, you must have"
+
+	para "catching set to"
+	line "“normal” in your"
+	cont "options menu."
+	done
 
 Route35NationalParkGateOfficer1AskToParticipateText:
 	text "Today's @"
