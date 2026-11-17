@@ -80,19 +80,21 @@ ArnieBugContestText:
 	text "About the Bug-"
 	line "Catching Contest…"
 
-	para "It helps to catch"
-	line "a stronger #-"
-	cont "MON, of course,"
+	para "Catching a high-"
+	line "level #MON isn't"
+	cont "enough."
 
-	para "but they also give"
-	line "you more points if"
+	para "You get a bonus"
+	line "for #MON that"
 
-	para "the #MON has a"
-	line "lot of HP left."
+	para "are more likely to"
+	line "break out, like"
 
-	para "It's harder to"
-	line "catch then, but I"
+	para "SCYTHER, PINSIR,"
+	line "HERACROSS, and"
+	cont "BUTTERFREE."
 
-	para "guess that's the"
-	line "point."
+	para "That can totally"
+	line "eclipse the stat-"
+	cont "based score!"
 	done
