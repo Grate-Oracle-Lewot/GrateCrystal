@@ -1751,12 +1751,12 @@ BattleAnim_Bind:
 	anim_obj ANIM_OBJ_BIND2, 132, 56, $0
 	anim_wait 8
 	anim_obj ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 60
+	anim_wait 30
 	anim_sound 0, 1, SFX_BIND
 	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
-	anim_wait 96
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Wrap:
@@ -1767,12 +1767,12 @@ BattleAnim_Wrap:
 	anim_obj ANIM_OBJ_BIND1, 132, 56, $0
 	anim_wait 8
 	anim_obj ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 60
+	anim_wait 30
 	anim_sound 0, 1, SFX_BIND
 	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
-	anim_wait 96
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Confusion:
