@@ -270,7 +270,7 @@ SSAquaCantFindGranddaughterText:
 	done
 
 SSAquaEntertainedGranddaughterText:
-	text "<PLAY_G>, was it?"
+	text "<PLAYER>, was it?"
 	line "I heard you enter-"
 	cont "tained my grand-"
 	cont "daughter."
