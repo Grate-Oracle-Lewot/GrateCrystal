@@ -54,7 +54,7 @@ VanceLookingForwardText:
 	done
 
 VanceHurryHurryText:
-	text "Oh, <PLAY_G>!"
+	text "Oh, <PLAYER>!"
 	line "Hurry, hurry!"
 
 	para "@"
