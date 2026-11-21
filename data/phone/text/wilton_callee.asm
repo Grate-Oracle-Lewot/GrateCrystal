@@ -4,7 +4,7 @@ WiltonAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Ah, <PLAY_G>."
+	para "Ah, <PLAYER>."
 	done
 
 WiltonAnswerPhoneDayText:
@@ -13,7 +13,7 @@ WiltonAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Ah, <PLAY_G>, is"
+	para "Ah, <PLAYER>, is"
 	line "it?"
 	done
 
@@ -24,7 +24,7 @@ WiltonAnswerPhoneNiteText:
 	text "…"
 
 	para "Ah, if it isn't"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 	done
 
 WiltonGreetText:
