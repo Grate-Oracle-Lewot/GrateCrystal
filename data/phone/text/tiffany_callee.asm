@@ -4,7 +4,7 @@ TiffanyAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "Oh, <PLAY_G>."
+	para "Oh, <PLAYER>."
 	line "Good morning."
 	done
 
@@ -14,7 +14,7 @@ TiffanyAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "Oh, <PLAY_G>."
+	para "Oh, <PLAYER>."
 	line "Hello."
 	done
 
@@ -24,12 +24,12 @@ TiffanyAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "Oh, <PLAY_G>, good"
+	para "Oh, <PLAYER>, good"
 	line "evening."
 	done
 
 TiffanyGreetText:
-	text "Is this <PLAY_G>?"
+	text "Is this <PLAYER>?"
 
 	para "Good morning. This"
 	line "is @"
@@ -38,7 +38,7 @@ TiffanyGreetText:
 	done
 
 TiffanyGreetDayText:
-	text "Is this <PLAY_G>?"
+	text "Is this <PLAYER>?"
 
 	para "Hi, it's @"
 	text_ram wStringBuffer3
@@ -46,7 +46,7 @@ TiffanyGreetDayText:
 	done
 
 TiffanyGreetNiteText:
-	text "Is this <PLAY_G>?"
+	text "Is this <PLAYER>?"
 
 	para "Good evening. This"
 	line "is @"
