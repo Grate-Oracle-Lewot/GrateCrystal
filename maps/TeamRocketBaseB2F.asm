@@ -663,7 +663,7 @@ RocketBaseLancePostBattleText:
 	done
 
 RocketBaseLancePowerOffText:
-	text "Sorry, <PLAY_G>."
+	text "Sorry, <PLAYER>."
 	line "I saw how well you"
 
 	para "were doing, so I"
@@ -702,7 +702,7 @@ RockerBaseLanceElectrodeFaintText:
 	para "makes me feel"
 	line "guilty."
 
-	para "<PLAY_G>, let's"
+	para "<PLAYER>, let's"
 	line "split the job."
 	done
 
@@ -751,7 +751,7 @@ RocketBaseLanceWhirlpoolText:
 	done
 
 RocketBaseLanceMonMasterText:
-	text "<PLAY_G>…"
+	text "<PLAYER>…"
 
 	para "The journey to be-"
 	line "coming the #MON"
@@ -793,7 +793,7 @@ LanceHealsText1:
 	done
 
 LanceHealsText2:
-	text "LANCE: <PLAY_G>,"
+	text "LANCE: <PLAYER>,"
 	line "let's give it our"
 	cont "best for #MON."
 	done
