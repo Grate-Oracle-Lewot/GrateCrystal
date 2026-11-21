@@ -84,7 +84,7 @@ TullyNoItemText:
 TullyForwardText:
 	text "Yup, TULLY here…"
 
-	para "<PLAY_G>? What?"
+	para "<PLAYER>? What?"
 	line "You're lost?"
 
 	para "Our battle will be"
