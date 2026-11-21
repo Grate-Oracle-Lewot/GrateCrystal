@@ -315,7 +315,7 @@ RadioTower5FRocketBossAfterText:
 	done
 
 RadioTower5FDirectorThankYouText:
-	text "DIRECTOR: <PLAY_G>,"
+	text "DIRECTOR: <PLAYER>,"
 	line "thank you!"
 
 	para "Your courageous"
@@ -374,7 +374,7 @@ RadioTower5FDirectorDescribeClearBellText:
 
 RadioTower5FDirectorText:
 	text "DIRECTOR: Hello,"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 
 	para "You know, I love"
 	line "#MON."
