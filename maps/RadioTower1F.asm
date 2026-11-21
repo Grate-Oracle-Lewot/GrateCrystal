@@ -414,7 +414,7 @@ GruntMRadio1SeenText:
 	line "get to experience"
 
 	para "the true terror of"
-	line "<TEAM ROCKET>!"
+	line "<TEAM_ROCKET>!"
 
 	para "We'll show you"
 	line "how scary we are!"
