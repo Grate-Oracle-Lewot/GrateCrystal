@@ -513,9 +513,9 @@ RadioTower2FBuenaJoinTheShowText:
 	para "What was your name"
 	line "again?"
 
-	para "…<PLAY_G>, OK!"
+	para "…<PLAYER>, OK!"
 
-	para "Come on, <PLAY_G>."
+	para "Come on, <PLAYER>."
 	line "Join the show."
 	done
 
@@ -527,7 +527,7 @@ RadioTower2FBuenaEveryoneSayPasswordText:
 	line "shout out today's"
 
 	para "password for"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 	done
 
 RadioTower2FBuenaComeBackAfterListeningText:
@@ -571,7 +571,7 @@ RadioTower2FBuenaThanksForComingText:
 	text "BUENA: Yup! Our"
 	line "contestant was"
 
-	para "<PLAY_G>."
+	para "<PLAYER>."
 	line "Thanks for coming!"
 
 	para "I hope all you"
@@ -629,7 +629,7 @@ RadioTower2FBuenaOfferPhoneNumberText:
 	cont "{d:BLUE_CARD_POINT_CAP} points, but…"
 
 	para "You came by so"
-	line "often, <PLAY_G>."
+	line "often, <PLAYER>."
 
 	para "I'll make you a"
 	line "special deal!"
@@ -639,7 +639,7 @@ RadioTower2FBuenaOfferPhoneNumberText:
 	done
 
 RadioTower2FBuenaOfferNumberAgainText:
-	text "BUENA: <PLAY_G>,"
+	text "BUENA: <PLAYER>,"
 	line "do you want to"
 
 	para "register my phone"
@@ -663,7 +663,7 @@ RadioTower2FBuenaSadRejectedText:
 	done
 
 RadioTower2FBuenaYourPhoneIsFullText:
-	text "BUENA: <PLAY_G>,"
+	text "BUENA: <PLAYER>,"
 	line "your phone list"
 
 	para "has no room left"
