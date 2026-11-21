@@ -3,7 +3,7 @@
 ; Control characters (see home/text.asm)
 
 	charmap "<NULL>",    $00
-	charmap "<PLAY_G>",  $14 ; "<PLAYER>くん" or "<PLAYER>ちゃん"; same as "<PLAYER>" in English
+	charmap "<TEAM_ROCKET>", $14 ; "TEAM ROCKET"
 	charmap "<MOBILE>",  $15
 	charmap "<CR>",      $16
 	charmap "¯",         $1f ; soft linebreak
