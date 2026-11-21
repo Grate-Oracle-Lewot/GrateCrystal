@@ -232,44 +232,44 @@ else
 endc
 ENDM
 
-	dict "<MOBILE>",  MobileScriptChar
-	dict "<LINE>",    LineChar
-	dict "<NEXT>",    NextLineChar
-	dict "<CR>",      CarriageReturnChar
-	dict "<NULL>",    NullChar
-	dict "<SCROLL>",  _ContTextNoPause
-	dict "<_CONT>",   _ContText
-	dict "<PARA>",    Paragraph
-	dict "<ATPRA>",   AutoParagraph
-	dict "<MOM>",     PrintMomsName
-	dict "<PLAYER>",  PrintPlayerName
-	dict "<RIVAL>",   PrintRivalName
-	dict "<ROUTE>",   PlaceJPRoute
-	dict "<WATASHI>", PlaceWatashi
-	dict "<KOKO_WA>", PlaceKokoWa
-	dict "<RED>",     PrintRedsName
-	dict "<GREEN>",   PrintGreensName
-	dict "#",         PlacePOKe
-	dict "<PC>",      PCChar
-	dict "<ROCKET>",  RocketChar
-	dict "<TM>",      TMChar
-	dict "<TRAINER>", TrainerChar
-	dict "<KOUGEKI>", PlaceKougeki
-	dict "<LF>",      LineFeedChar
-	dict "<CONT>",    ContText
-	dict "<……>",      SixDotsChar
-	dict "<DONE>",    DoneText
-	dict "<ATDNE>",   AutoDoneText
-	dict "<PROMPT>",  PromptText
-	dict "<PKMN>",    PlacePKMN
-	dict "<POKE>",    PlacePOKE
-	dict "%",         NextChar
-	dict "¯",         " "
-	dict "<DEXEND>",  PlaceDexEnd
-	dict "<TARGET>",  PlaceMoveTargetsName
-	dict "<USER>",    PlaceMoveUsersName
-	dict "<ENEMY>",   PlaceEnemysName
-	dict "<PLAY_G>",  PlaceGenderedPlayerName
+	dict "<MOBILE>",      MobileScriptChar
+	dict "<LINE>",        LineChar
+	dict "<NEXT>",        NextLineChar
+	dict "<CR>",          CarriageReturnChar
+	dict "<NULL>",        NullChar
+	dict "<SCROLL>",      _ContTextNoPause
+	dict "<_CONT>",       _ContText
+	dict "<PARA>",        Paragraph
+	dict "<ATPRA>",       AutoParagraph
+	dict "<MOM>",         PrintMomsName
+	dict "<PLAYER>",      PrintPlayerName
+	dict "<RIVAL>",       PrintRivalName
+	dict "<ROUTE>",       PlaceJPRoute
+	dict "<WATASHI>",     PlaceWatashi
+	dict "<KOKO_WA>",     PlaceKokoWa
+	dict "<RED>",         PrintRedsName
+	dict "<GREEN>",       PrintGreensName
+	dict "#",             PlacePOKe
+	dict "<PC>",          PCChar
+	dict "<ROCKET>",      RocketChar
+	dict "<TM>",          TMChar
+	dict "<TRAINER>",     TrainerChar
+	dict "<KOUGEKI>",     PlaceKougeki
+	dict "<LF>",          LineFeedChar
+	dict "<CONT>",        ContText
+	dict "<……>",          SixDotsChar
+	dict "<DONE>",        DoneText
+	dict "<ATDNE>",       AutoDoneText
+	dict "<PROMPT>",      PromptText
+	dict "<PKMN>",        PlacePKMN
+	dict "<POKE>",        PlacePOKE
+	dict "%",             NextChar
+	dict "¯",             " "
+	dict "<DEXEND>",      PlaceDexEnd
+	dict "<TARGET>",      PlaceMoveTargetsName
+	dict "<USER>",        PlaceMoveUsersName
+	dict "<ENEMY>",       PlaceEnemysName
+	dict "<TEAM_ROCKET>", TeamRocketChar
 	; fallthrough
 
 	ld [hli], a
@@ -288,18 +288,19 @@ PrintRivalName:  print_name wRivalName
 PrintRedsName:   print_name wRedsName
 PrintGreensName: print_name wGreensName
 
-TrainerChar:  print_name TrainerCharText
-TMChar:       print_name TMCharText
-PCChar:       print_name PCCharText
-RocketChar:   print_name RocketCharText
-PlacePOKe:    print_name PlacePOKeText
-PlaceKougeki: print_name KougekiText
-SixDotsChar:  print_name SixDotsCharText
-PlacePKMN:    print_name PlacePKMNText
-PlacePOKE:    print_name PlacePOKEText
-PlaceJPRoute: print_name PlaceJPRouteText
-PlaceWatashi: print_name PlaceWatashiText
-PlaceKokoWa:  print_name PlaceKokoWaText
+TrainerChar:     print_name TrainerCharText
+TMChar:          print_name TMCharText
+PCChar:          print_name PCCharText
+RocketChar:      print_name RocketCharText
+PlacePOKe:       print_name PlacePOKeText
+PlaceKougeki:    print_name KougekiText
+SixDotsChar:     print_name SixDotsCharText
+PlacePKMN:       print_name PlacePKMNText
+PlacePOKE:       print_name PlacePOKEText
+PlaceJPRoute:    print_name PlaceJPRouteText
+PlaceWatashi:    print_name PlaceWatashiText
+PlaceKokoWa:     print_name PlaceKokoWaText
+TeamRocketChar:  print_name TeamRocketCharText
 
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
@@ -357,19 +358,6 @@ PlaceEnemysName::
 
 .linkbattle
 	ld de, wOTClassName
-	jr PlaceCommandCharacter
-
-PlaceGenderedPlayerName::
-	push de
-	ld de, wPlayerName
-	call PlaceString
-	ld h, b
-	ld l, c
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	ld de, KunSuffixText
-	jr z, PlaceCommandCharacter
-	ld de, ChanSuffixText
 	; fallthrough
 
 PlaceCommandCharacter::
@@ -379,22 +367,23 @@ PlaceCommandCharacter::
 	pop de
 	jp NextChar
 
-TMCharText::       db "TM@"
-TrainerCharText::  db "TRAINER@"
-PCCharText::       db "PC@"
-RocketCharText::   db "ROCKET@"
-PlacePOKeText::    db "POKé@"
-KougekiText::      db "こうげき@"
-SixDotsCharText::  db "……@"
-EnemyText::        db "Enemy @"
-PlacePKMNText::    db "<PK><MN>@"
-PlacePOKEText::    db "<PO><KE>@"
-String_Space::     db " @"
-PlaceJPRouteText:: db "ばん　どうろ@"
-PlaceWatashiText:: db "わたし@"
-PlaceKokoWaText::  db "ここは@"
+TMCharText::         db "TM@"
+TrainerCharText::    db "TRAINER@"
+PCCharText::         db "PC@"
+RocketCharText::     db "ROCKET@"
+TeamRocketCharText:: db "TEAM ROCKET@"
+PlacePOKeText::      db "POKé@"
+KougekiText::        db "こうげき@"
+SixDotsCharText::    db "……@"
+EnemyText::          db "Enemy @"
+PlacePKMNText::      db "<PK><MN>@"
+PlacePOKEText::      db "<PO><KE>@"
+String_Space::       db " @"
+PlaceJPRouteText::   db "ばん　どうろ@"
+PlaceWatashiText::   db "わたし@"
+PlaceKokoWaText::    db "ここは@"
 KunSuffixText:: ; no suffixes in English
-ChanSuffixText::   db "@"
+ChanSuffixText::     db "@"
 
 CarriageReturnChar::
 	pop hl
