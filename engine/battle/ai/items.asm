@@ -296,6 +296,7 @@ AI_Items:
 	dbw FULL_HEAL,       .FullHeal
 	dbw FRANKENBERRY,    .Frankenberry
 	dbw OLD_GATEAU,      .OldGateau
+	dbw STARDUST,        .Stardust
 	dbw GUARD_SPEC,      .GuardSpec
 	dbw DIRE_HIT,        .DireHit
 	dbw X_ATTACK,        .XAttack
@@ -323,6 +324,12 @@ AI_Items:
 	call .Status
 	ret c ; AI_SetCarryFlag
 	call EnemyUsedOldGateau
+	jr AI_ClearCarryFlag2
+
+.Stardust:
+	call .Status
+	ret c ; AI_SetCarryFlag
+	call EnemyUsedStardust
 	jr AI_ClearCarryFlag2
 
 .Status:
@@ -734,6 +741,11 @@ EnemyUsedFrankenberry:
 EnemyUsedOldGateau:
 	call StatusHealDoubleCall
 	ld a, OLD_GATEAU
+	jr PrintText_UsedItemOn_AND_AIUpdateHUD
+
+EnemyUsedStardust:
+	call StatusHealDoubleCall
+	ld a, STARDUST
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedMaxPotion:
