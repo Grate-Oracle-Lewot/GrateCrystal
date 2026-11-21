@@ -98,7 +98,7 @@ OaksLabTrashcan:
 	jumpstd TrashCanScript
 
 OakWelcomeKantoText:
-	text "OAK: Ah, <PLAY_G>!"
+	text "OAK: Ah, <PLAYER>!"
 	line "It's good of you"
 
 	para "to come all this"
@@ -136,7 +136,7 @@ OakOpenMtSilverText:
 	line "assessment of you."
 
 	para "Tell you what,"
-	line "<PLAY_G>. I'll make"
+	line "<PLAYER>. I'll make"
 
 	para "arrangements so"
 	line "that you can go to"
@@ -156,7 +156,7 @@ OakOpenMtSilverText:
 
 	para "we can make an"
 	line "exception in your"
-	cont "case, <PLAY_G>."
+	cont "case, <PLAYER>."
 
 	para "Go up to INDIGO"
 	line "PLATEAU. You can"
@@ -199,7 +199,7 @@ OakYesKantoBadgesText:
 	line "for you."
 
 	para "Keep trying hard,"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 	done
 
 OaksAssistant1Text:
