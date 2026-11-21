@@ -651,15 +651,9 @@ GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion:
 GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive:
 	hiddenitem REVIVE, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE
 
-UndergroundSilverApproachMovement1:
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
 UndergroundSilverApproachMovement2:
 	step DOWN
+UndergroundSilverApproachMovement1:
 	step DOWN
 	step LEFT
 	step LEFT
@@ -813,7 +807,7 @@ GruntMUnder3BeatenText:
 GruntMUnder3AfterBattleText:
 	text "You must have ice"
 	line "in your veins to"
-	cont "diss TEAM ROCKET."
+	cont "diss <TEAM_ROCKET>."
 	done
 
 BurglarDuncanSeenText:
@@ -855,11 +849,6 @@ BurglarEddieAfterBattleText:
 	line "down there."
 	done
 
-SwitchRoomText_Switch1:
-	text "It's labeled"
-	line "SWITCH 1."
-	done
-
 GruntF4SeenText:
 	text "Are you lost? No,"
 	line "you can't be."
@@ -882,14 +871,9 @@ GruntF4AfterBattleText:
 	cont "See if I care!"
 	done
 
-SwitchRoomText_OffTurnOn:
-	text "It's OFF."
-	line "Turn it ON?"
-	done
-
-SwitchRoomText_OnTurnOff:
-	text "It's ON."
-	line "Turn it OFF?"
+SwitchRoomText_Switch1:
+	text "It's labeled"
+	line "SWITCH 1."
 	done
 
 SwitchRoomText_Switch2:
@@ -905,6 +889,16 @@ SwitchRoomText_Switch3:
 SwitchRoomText_Emergency:
 	text "It's labeled"
 	line "EMERGENCY."
+	done
+
+SwitchRoomText_OffTurnOn:
+	text "It's OFF."
+	line "Turn it ON?"
+	done
+
+SwitchRoomText_OnTurnOff:
+	text "It's ON."
+	line "Turn it OFF?"
 	done
 
 GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
