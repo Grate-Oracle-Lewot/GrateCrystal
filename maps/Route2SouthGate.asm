@@ -28,7 +28,7 @@ Route2SouthGateOfficerText:
 	done
 
 Route2SouthGateScientistText:
-	text "Are you <PLAY_G>?"
+	text "Are you <PLAYER>?"
 
 	para "I work as PROF."
 	line "OAK's AIDE."
