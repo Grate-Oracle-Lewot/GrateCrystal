@@ -250,7 +250,7 @@ ExecutiveF2AfterBattleText:
 	line "won't appreciate"
 
 	para "the magnificence"
-	line "of <TEAM ROCKET>."
+	line "of <TEAM_ROCKET>."
 
 	para "That's too bad."
 	line "I really admire"
@@ -278,7 +278,7 @@ RadioTower5FRocketBossBeforeText:
 	para "No one will be"
 	line "able to challenge"
 
-	para "<TEAM ROCKET> when"
+	para "<TEAM_ROCKET> when"
 	line "#MON only obey"
 	cont "us!"
 
@@ -349,7 +349,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	line "ECRUTEAK…"
 
 	para "In fact, I heard"
-	line "<TEAM ROCKET> saying"
+	line "<TEAM_ROCKET> saying"
 
 	para "something was"
 	line "happening at the"
