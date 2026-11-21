@@ -89,7 +89,7 @@ RalphItemText:
 	para "Heh, they're some"
 	line "kind of feisty!"
 
-	para "<PLAY_G>, you have"
+	para "<PLAYER>, you have"
 	line "to see this rare"
 
 	para "sight! Get ready"
