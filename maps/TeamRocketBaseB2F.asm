@@ -564,7 +564,7 @@ RocketBaseBossFThrashText:
 	cont "the loose."
 
 	para "It's harmful to"
-	line "TEAM ROCKET's"
+	line "<TEAM ROCKET>'s"
 	cont "pride, you see."
 
 	para "However strong you"
@@ -600,7 +600,7 @@ RocketBaseBossDontMeddleText:
 	line "show you how wrong"
 
 	para "it is to meddle"
-	line "with TEAM ROCKET!"
+	line "with <TEAM ROCKET>!"
 	done
 
 RocketBaseBossWinText:
@@ -610,7 +610,7 @@ RocketBaseBossWinText:
 	para "It's too bad."
 
 	para "If you were to"
-	line "join TEAM ROCKET,"
+	line "join <TEAM ROCKET>,"
 
 	para "you could become"
 	line "an EXECUTIVE."
@@ -635,7 +635,7 @@ RocketBaseBossRetreatText:
 	para "You'll come to"
 	line "appreciate TEAM"
 
-	para "ROCKET's true"
+	para "<ROCKET>'s true"
 	line "power soon enough."
 
 	para "Enjoy yourself"
@@ -806,7 +806,7 @@ GruntMBase2_1SeenText:
 	line "It has to have a"
 
 	para "password that only"
-	line "TEAM ROCKET knows."
+	line "<TEAM ROCKET> knows."
 	done
 
 GruntMBase2_1BeatenText:
@@ -815,7 +815,7 @@ GruntMBase2_1BeatenText:
 
 GruntMBase2_1AfterBattleText:
 	text "Heh, I'm just a"
-	line "GRUNT."
+	line "<GRUNT>."
 
 	para "I don't know the"
 	line "password. Too bad"
