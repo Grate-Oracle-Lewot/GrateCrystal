@@ -142,7 +142,7 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockBoulderBadgeText:
-	text "BROCK: <PLAY_G>,"
+	text "BROCK: <PLAYER>,"
 	line "thanks. I enjoyed"
 
 	para "battling you, even"
