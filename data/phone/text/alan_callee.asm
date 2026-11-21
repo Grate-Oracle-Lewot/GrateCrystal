@@ -3,7 +3,7 @@ AlanAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Is this <PLAY_G>?"
+	para "Is this <PLAYER>?"
 	line "Good morning!"
 	done
 
@@ -12,7 +12,7 @@ AlanAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Is that <PLAY_G>?"
+	para "Is that <PLAYER>?"
 	done
 
 AlanAnswerPhoneNiteText:
@@ -20,7 +20,7 @@ AlanAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "!"
 
-	para "Is that <PLAY_G>?"
+	para "Is that <PLAYER>?"
 	line "Good evening!"
 	done
 
@@ -46,7 +46,7 @@ AlanGreetNiteText:
 	done
 
 AlanGenericText:
-	text "<PLAY_G>, are you"
+	text "<PLAYER>, are you"
 	line "raising your"
 	cont "#MON properly?"
 
