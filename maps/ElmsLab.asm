@@ -1681,7 +1681,7 @@ AfterCyndaquilMovement:
 endc
 
 ElmText_Intro:
-	text "ELM: <PLAY_G>!"
+	text "ELM: <PLAYER>!"
 	line "There you are!"
 
 	para "I needed your help"
@@ -1712,7 +1712,7 @@ ElmText_Intro:
 	done
 
 ElmText_Accepted:
-	text "Thanks, <PLAY_G>!"
+	text "Thanks, <PLAYER>!"
 
 	para "You're a great"
 	line "help!"
@@ -1762,7 +1762,7 @@ ElmText_MissionFromMrPokemon:
 	para "Wait!"
 	line "I know!"
 
-	para "<PLAY_G>, can you"
+	para "<PLAYER>, can you"
 	line "go in our place?"
 	done
 
@@ -1775,7 +1775,7 @@ ElmText_ChooseAPokemon:
 
 	para "You'll be that"
 	line "#MON's first"
-	cont "partner, <PLAY_G>!"
+	cont "partner, <PLAYER>!"
 
 	para "Go on. Pick one!"
 	done
@@ -2251,7 +2251,7 @@ ElmDirectionsText2:
 	done
 
 ElmDirectionsText3:
-	text "<PLAY_G>, I'm"
+	text "<PLAYER>, I'm"
 	line "counting on you!"
 	done
 
@@ -2288,7 +2288,7 @@ ElmsLabHealingMachineText2:
 	done
 
 ElmAfterTheftText1:
-	text "ELM: <PLAY_G>, this"
+	text "ELM: <PLAYER>, this"
 	line "is terrible…"
 
 	para "Oh, yes, what was"
@@ -2321,7 +2321,7 @@ ElmAfterTheftText5:
 	para "PROF.OAK gave you"
 	line "a #DEX?"
 
-	para "<PLAY_G>, is that"
+	para "<PLAYER>, is that"
 	line "true? Th-that's"
 	cont "incredible!"
 
@@ -2330,7 +2330,7 @@ ElmAfterTheftText5:
 	cont "tial of people as"
 	cont "trainers."
 
-	para "Wow, <PLAY_G>. You"
+	para "Wow, <PLAYER>. You"
 	line "may have what it"
 
 	para "takes to become"
@@ -2350,7 +2350,7 @@ ElmAfterTheftText5:
 	done
 
 ElmAfterTheftText6:
-	text "…<PLAY_G>. The"
+	text "…<PLAYER>. The"
 	line "road to the"
 
 	para "championship will"
@@ -2370,7 +2370,7 @@ ElmStudyingEggText:
 	done
 
 ElmAideHasEggText:
-	text "ELM: <PLAY_G>?"
+	text "ELM: <PLAYER>?"
 	line "Didn't you meet my"
 	cont "assistant?"
 
@@ -2391,7 +2391,7 @@ ElmWaitingEggHatchText:
 	done
 
 ElmThoughtEggHatchedText:
-	text "<PLAY_G>? I thought"
+	text "<PLAYER>? I thought"
 	line "the EGG hatched."
 
 	para "Where is the"
@@ -2399,7 +2399,7 @@ ElmThoughtEggHatchedText:
 	done
 
 ShowElmTogepiText1:
-	text "ELM: <PLAY_G>, you"
+	text "ELM: <PLAYER>, you"
 	line "look great!"
 	done
 
@@ -2423,7 +2423,7 @@ ShowElmTogepiText3:
 	done
 
 ElmGiveEverstoneText1:
-	text "Thanks, <PLAY_G>!"
+	text "Thanks, <PLAYER>!"
 	line "You're helping"
 
 	para "unravel #MON"
@@ -2453,7 +2453,7 @@ ElmGiveEverstoneText2:
 	done
 
 ElmText_CallYou:
-	text "ELM: <PLAY_G>, I'll"
+	text "ELM: <PLAYER>, I'll"
 	line "call you if any-"
 	cont "thing comes up."
 	done
@@ -2473,7 +2473,7 @@ AideText_AfterTheft:
 	done
 
 ElmGiveMasterBallText1:
-	text "ELM: Hi, <PLAY_G>!"
+	text "ELM: Hi, <PLAYER>!"
 	line "Thanks to you, my"
 
 	para "research is going"
@@ -2502,11 +2502,11 @@ ElmGiveMasterBallText2:
 	line "make much better"
 
 	para "use of it than I"
-	line "can, <PLAY_G>!"
+	line "can, <PLAYER>!"
 	done
 
 ElmGiveTicketText1:
-	text "ELM: <PLAY_G>!"
+	text "ELM: <PLAYER>!"
 	line "There you are!"
 
 	para "I called because I"
@@ -2525,7 +2525,7 @@ ElmGiveTicketText2:
 	line "from OLIVINE CITY."
 
 	para "But you knew that"
-	line "already, <PLAY_G>."
+	line "already, <PLAYER>."
 
 	para "After all, you've"
 	line "traveled all over"
@@ -2536,7 +2536,7 @@ ElmGiveTicketText2:
 	done
 
 AideText_GiveYouPotion:
-	text "<PLAY_G>, I want"
+	text "<PLAYER>, I want"
 	line "you to have this"
 	cont "for your errand."
 	done
@@ -2560,7 +2560,7 @@ AideText_TheftTestimony:
 	done
 
 AideText_GiveYouBalls:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 
 	para "If you're going to"
 	line "complete your"
