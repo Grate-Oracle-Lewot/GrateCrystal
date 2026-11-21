@@ -571,7 +571,7 @@ JessieJames2BeforeBattleText2:
 
 JessieJames2BeatenText:
 	text "Looks like TEAM"
-	line "ROCKET's blasting"
+	line "<ROCKET>'s blasting"
 	cont "off again!"
 	done
 
@@ -756,8 +756,6 @@ GoldenrodUndergroundNoEntryText:
 	text "NO ENTRY BEYOND"
 	line "THIS POINT"
 	done
-
-
 
 GoldenrodUnderground_MapEvents:
 	def_warp_events
