@@ -83,7 +83,7 @@ BethLetsBattleAgainSometimeText:
 	done
 
 BethReminderText:
-	text "Um… <PLAY_G>?"
+	text "Um… <PLAYER>?"
 	line "What's wrong?"
 
 	para "Did you forget our"
