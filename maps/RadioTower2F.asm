@@ -384,7 +384,7 @@ RadioTower2FBlackBelt2Text:
 
 GruntMRadio2_1SeenText:
 	text "Three years ago,"
-	line "<TEAM ROCKET> was"
+	line "<TEAM_ROCKET> was"
 	cont "forced to disband."
 
 	para "But we're making a"
@@ -422,7 +422,7 @@ GruntMRadio2_2AfterBattleText:
 	done
 
 GruntMSpecialistSeenText:
-	text "We're <TEAM ROCKET>,"
+	text "We're <TEAM_ROCKET>,"
 	line "the exploiters of"
 	cont "#MON!"
 
