@@ -94,7 +94,7 @@ JoseHaventGottenItemYetText:
 	done
 
 JoseReminderText:
-	text "<PLAY_G>, could you"
+	text "<PLAYER>, could you"
 	line "hurry over?"
 
 	para "FARFETCH'D is"
