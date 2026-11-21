@@ -4,7 +4,7 @@ ErinAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh. Hi, <PLAY_G>!"
+	para "Oh. Hi, <PLAYER>!"
 	line "Good morning!"
 	done
 
@@ -14,7 +14,7 @@ ErinAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh, hi, <PLAY_G>!"
+	para "Oh, hi, <PLAYER>!"
 	line "Yahoo!"
 	done
 
@@ -24,11 +24,11 @@ ErinAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh, hi, <PLAY_G>!"
+	para "Oh, hi, <PLAYER>!"
 	done
 
 ErinGreetText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 
 	para "It's @"
 	text_ram wStringBuffer3
@@ -37,7 +37,7 @@ ErinGreetText:
 	done
 
 ErinGreetDayText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 
 	para "It's @"
 	text_ram wStringBuffer3
@@ -46,7 +46,7 @@ ErinGreetDayText:
 	done
 
 ErinGreetNiteText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 
 	para "It's @"
 	text_ram wStringBuffer3
