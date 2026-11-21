@@ -172,7 +172,7 @@ RadioTower3FGymGuideText_Rockets:
 	cont "beloved partners."
 
 	para "It's terrible how"
-	line "TEAM ROCKET is"
+	line "<TEAM ROCKET> is"
 
 	para "trying to control"
 	line "#MON."
@@ -191,7 +191,7 @@ RadioTower3FGymGuideText:
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:
-	text "The TEAM ROCKET"
+	text "The <TEAM ROCKET>"
 	line "boss has locked"
 	cont "himself in."
 
@@ -240,7 +240,7 @@ GruntMRadio3_1SeenText:
 
 	para "I'm to crush any-"
 	line "one who challenges"
-	cont "TEAM ROCKET!"
+	cont "<TEAM ROCKET>!"
 	done
 
 GruntMRadio3_1BeatenText:
