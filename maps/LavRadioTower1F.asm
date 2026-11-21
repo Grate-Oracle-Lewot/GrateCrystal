@@ -274,7 +274,7 @@ LavRadioTower1FGentlemanText:
 
 LavRadioTower1FGentlemanText_ReturnedMachinePart:
 	text "Ah! So you're the"
-	line "<PLAY_G> who solved"
+	line "<PLAYER> who solved"
 
 	para "the POWER PLANT's"
 	line "problem?"
