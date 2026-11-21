@@ -1,5 +1,5 @@
 RalphAnswerPhoneText:
-	text "Yes? Ah, <PLAY_G>."
+	text "Yes? Ah, <PLAYER>."
 
 	para "You're courteous"
 	line "enough to state"
@@ -9,7 +9,7 @@ RalphAnswerPhoneText:
 	done
 
 RalphAnswerPhoneDayText:
-	text "Yes? Ah, <PLAY_G>."
+	text "Yes? Ah, <PLAYER>."
 
 	para "You're courteous"
 	line "enough to state"
@@ -19,7 +19,7 @@ RalphAnswerPhoneDayText:
 	done
 
 RalphAnswerPhoneNiteText:
-	text "Yes? Ah, <PLAY_G>."
+	text "Yes? Ah, <PLAYER>."
 
 	para "You're courteous"
 	line "enough to state"
