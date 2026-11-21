@@ -181,7 +181,7 @@ MahoganyMart1FLanceDragoniteHyperBeamText:
 
 MahoganyMart1FLanceRadioText:
 	text "What took you,"
-	line "<PLAY_G>?"
+	line "<PLAYER>?"
 
 	para "Just as I thought,"
 	line "that strange radio"
@@ -196,7 +196,7 @@ MahoganyMart1FLanceStairsText:
 	done
 
 MahoganyMart1FLanceSplitUpText:
-	text "LANCE: <PLAY_G>, we"
+	text "LANCE: <PLAYER>, we"
 	line "should split up to"
 
 	para "check this place."
