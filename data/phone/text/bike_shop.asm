@@ -1,5 +1,5 @@
 BikeShopPhoneCallerText:
-	text "Hi, <PLAY_G>!"
+	text "Hi, <PLAYER>!"
 	line "Our BICYCLE sales"
 
 	para "have gone through"
