@@ -201,7 +201,7 @@ JessieJames4SeenText:
 
 JessieJames4BeatenText:
 	text "Looks like TEAM"
-	line "ROCKET's blasting"
+	line "<ROCKET>'s blasting"
 	cont "off again!"
 	done
 
@@ -232,7 +232,7 @@ DirectorIntroText:
 	line "there?"
 
 	para "Taken over by TEAM"
-	line "ROCKET?"
+	line "<ROCKET>?"
 
 	para "Here. Take this"
 	line "CARD KEY."
