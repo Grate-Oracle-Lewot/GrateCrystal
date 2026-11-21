@@ -67,7 +67,7 @@ SilphCo3FClerkText:
 	para "was considered a"
 	line "security hazard"
 
-	para "after TEAM ROCKET"
+	para "after <TEAM_ROCKET>"
 	line "took us over…"
 
 	para "Sigh…"
