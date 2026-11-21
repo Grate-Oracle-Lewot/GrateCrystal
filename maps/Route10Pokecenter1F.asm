@@ -66,7 +66,7 @@ Route10Pokecenter1FGymGuideText:
 	done
 
 Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
-	text "I hear TEAM ROCKET"
+	text "I hear <TEAM_ROCKET>"
 	line "got back together"
 
 	para "in JOHTO but fell"
