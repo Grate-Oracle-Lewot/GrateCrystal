@@ -79,7 +79,7 @@ WadeBugCatchingContestBeforeText:
 	line "today."
 
 	para "Are you going,"
-	line "<PLAY_G>?"
+	line "<PLAYER>?"
 
 	para "I hear you can win"
 	line "an item that lets"
@@ -96,7 +96,7 @@ WadeBugCatchingContestAfterText:
 	line "today."
 
 	para "Are you going,"
-	line "<PLAY_G>?"
+	line "<PLAYER>?"
 
 	para "I'm trying to make"
 	line "up my mind."
