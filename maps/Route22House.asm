@@ -505,7 +505,7 @@ Route22HouseGiovanniBeforeText:
 
 	para "I was once the"
 	line "head of TEAM"
-	cont "ROCKET."
+	cont "<ROCKET>."
 
 	para "I heard the radio"
 	line "message from JOH-"
