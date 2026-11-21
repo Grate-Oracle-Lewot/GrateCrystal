@@ -249,7 +249,7 @@ TrainerClassAttributes:
 	dw SWITCH_SOMETIMES | SWITCH_STATUS
 
 ; Old Man
-	db NO_ITEM, NO_ITEM ; items
+	db OLD_GATEAU, NO_ITEM ; items
 	db 10 ; base reward
 	dw AI_BASIC | AI_CAUTIOUS | AI_TYPES | AI_IMMUNITIES | AI_RISKY
 	dw SWITCH_RARELY | CONTEXT_USE
