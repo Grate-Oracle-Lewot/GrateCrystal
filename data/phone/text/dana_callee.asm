@@ -4,7 +4,7 @@ DanaAnswerPhoneText:
 	text " on the"
 	line "line."
 
-	para "Hey! It's <PLAY_G>!"
+	para "Hey! It's <PLAYER>!"
 	done
 
 DanaAnswerPhoneDayText:
@@ -14,7 +14,7 @@ DanaAnswerPhoneDayText:
 	line "line."
 
 	para "I know!"
-	line "It's <PLAY_G>!"
+	line "It's <PLAYER>!"
 	done
 
 DanaAnswerPhoneNiteText:
@@ -23,12 +23,12 @@ DanaAnswerPhoneNiteText:
 	text " on the"
 	line "line."
 
-	para "<PLAY_G>?"
+	para "<PLAYER>?"
 	line "What's up?"
 	done
 
 DanaGreetText:
-	text "Uh, <PLAY_G>?"
+	text "Uh, <PLAYER>?"
 
 	para "It's me!"
 	line "It's me, @"
@@ -37,7 +37,7 @@ DanaGreetText:
 	done
 
 DanaGreetDayText:
-	text "Uh, <PLAY_G>?"
+	text "Uh, <PLAYER>?"
 
 	para "It's me!"
 	line "It's me, @"
@@ -46,7 +46,7 @@ DanaGreetDayText:
 	done
 
 DanaGreetNiteText:
-	text "Uh, <PLAY_G>?"
+	text "Uh, <PLAYER>?"
 
 	para "It's me!"
 	line "It's me, @"
