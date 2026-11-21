@@ -309,7 +309,7 @@ GruntMWell2AfterBattleText:
 	cont "POKETAILS?"
 
 	para "It's tough being a"
-	line "<ROCKET> GRUNT!"
+	line "<ROCKET> <GRUNT>!"
 	done
 
 GruntMWell3SeenText:
