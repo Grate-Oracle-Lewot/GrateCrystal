@@ -53,7 +53,7 @@ IrwinPhoneFullText:
 	done
 
 IrwinRematchText:
-	text "<PLAY_G>, you're"
+	text "<PLAYER>, you're"
 	line "here!"
 
 	para "I'm ready to"
