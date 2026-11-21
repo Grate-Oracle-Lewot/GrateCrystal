@@ -87,7 +87,7 @@ MagazineBookshelfText:
 	done
 
 TeamRocketOathText:
-	text "TEAM ROCKET OATH"
+	text "<TEAM ROCKET> OATH"
 
 	para "Steal #MON for"
 	line "profit!"
@@ -97,7 +97,7 @@ TeamRocketOathText:
 
 	para "All #MON exist"
 	line "for the glory of"
-	cont "TEAM ROCKET!"
+	cont "<TEAM ROCKET>!"
 	done
 
 TeamRocketMottoText:
@@ -126,7 +126,7 @@ TeamRocketMottoText:
 	para "JESSIE: JESSIE!"
 	line "JAMES: JAMES!"
 
-	para "TEAM ROCKET! Blast"
+	para "<TEAM ROCKET>! Blast"
 	line "off at the speed"
 	cont "of light!"
 
