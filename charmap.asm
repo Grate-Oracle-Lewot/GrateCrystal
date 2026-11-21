@@ -32,7 +32,7 @@
 	charmap "<USER>",    $5a
 	charmap "<PC>",      $5b ; "PC"
 	charmap "<TM>",      $5c ; "TM"
-	charmap "<TRAINER>", $5d ; "TRAINER"
+	charmap "<GRUNT>",   $5d ; "GRUNT"
 	charmap "<ROCKET>",  $5e ; "ROCKET"
 	charmap "<DEXEND>",  $5f
 	charmap "<ATPRA>",   $60 ; autopara
