@@ -72,7 +72,7 @@ TiffanyItsAwfulText:
 	para "It's awful."
 	line "My CLEFAIRY…"
 
-	para "Huh? <PLAY_G>?"
+	para "Huh? <PLAYER>?"
 
 	para "Oh, sorry! I was"
 	line "in a hurry, and I…"
