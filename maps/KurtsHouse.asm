@@ -451,12 +451,12 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	line "have to wait."
 
 	para "Do you know TEAM"
-	line "ROCKET? Ah, don't"
+	line "<ROCKET>? Ah, don't"
 
 	para "worry. I'll tell"
 	line "you anyhow."
 
-	para "TEAM ROCKET's an"
+	para "<TEAM_ROCKET>'s an"
 	line "evil gang that"
 
 	para "uses #MON for"
