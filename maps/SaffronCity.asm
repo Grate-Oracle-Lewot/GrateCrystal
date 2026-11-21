@@ -168,7 +168,7 @@ SaffronCityCooltrainerFText:
 	cont "merchandise."
 
 	para "In the past, TEAM"
-	line "ROCKET wanted the"
+	line "<ROCKET> wanted the"
 
 	para "company because of"
 	line "that."
@@ -263,7 +263,7 @@ SaffronGymSignText:
 	line "#MON GYM"
 	cont "LEADER: SABRINA"
 
-	para "The Master of"
+	para "Puppetmaster of"
 	line "Psychic #MON!"
 	done
 
