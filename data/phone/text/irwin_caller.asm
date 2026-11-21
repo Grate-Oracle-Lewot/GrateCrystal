@@ -6,7 +6,7 @@ IrwinHangUpText:
 	done
 
 IrwinRocketTakeoverRumorText:
-	text "<PLAY_G>, have you"
+	text "<PLAYER>, have you"
 	line "heard?"
 
 	para "GOLDENROD's RADIO"
@@ -20,7 +20,7 @@ IrwinRocketTakeoverRumorText:
 	done
 
 IrwinPlainBadgeGossipText:
-	text "<PLAY_G>, I heard!"
+	text "<PLAYER>, I heard!"
 
 	para "You defeated that"
 	line "WHITNEY?"
@@ -62,7 +62,7 @@ IrwinJasmineReturnedGossipText:
 	para "LIGHTHOUSE, didn't"
 	line "you?"
 
-	para "<PLAY_G>, I wish"
+	para "<PLAYER>, I wish"
 	line "you'd come see me"
 
 	para "when I'm sick in"
@@ -115,7 +115,7 @@ IrwinEliteFourGossipText:
 	line "lady who looked a"
 
 	para "lot like you,"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 
 	para "What? That lady"
 	line "was your mom?"
@@ -141,7 +141,7 @@ IrwinVermilionCityGossipText:
 	line "I saw!"
 
 	para "You striding onto"
-	line "a ship, <PLAY_G>!"
+	line "a ship, <PLAYER>!"
 
 	para "I can't get over"
 	line "how good you look"
@@ -189,7 +189,7 @@ IrwinSnorlaxGossipText:
 	done
 
 IrwinMarshBadgeGossipText:
-	text "<PLAY_G>, I heard!"
+	text "<PLAYER>, I heard!"
 
 	para "You're kicking up"
 	line "a mighty ruckus"
@@ -209,7 +209,7 @@ IrwinMtSilverGossipText:
 	cont "the place."
 
 	para "It just makes me"
-	line "sigh, <PLAY_G>."
+	line "sigh, <PLAYER>."
 
 	para "How did you get so"
 	line "strong?"
@@ -271,7 +271,7 @@ IrwinSoMuchToChatAboutText:
 	done
 
 IrwinBattleRematchText:
-	text "<PLAY_G>, I want"
+	text "<PLAYER>, I want"
 	line "to battle you!"
 
 	para "Remember where I"
