@@ -314,7 +314,7 @@ LanceGetPasswordText:
 	line "are known only to"
 	cont "a few ROCKETS."
 
-	para "That ROCKET there"
+	para "That <ROCKET> there"
 	line "very graciously"
 	cont "told me so."
 
@@ -369,7 +369,7 @@ ExecutiveM1BeforeText:
 	line "GIOVANNI."
 
 	para "Since disbanding"
-	line "TEAM ROCKET three"
+	line "<TEAM ROCKET> three"
 
 	para "years ago, he has"
 	line "been in training."
@@ -477,7 +477,7 @@ ScientistRossSeenText:
 	line "SILPH, but now I"
 
 	para "run research for"
-	line "TEAM ROCKET."
+	line "<TEAM ROCKET>."
 
 	para "A meddlesome child"
 	line "like you needs to"
