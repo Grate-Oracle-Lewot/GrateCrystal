@@ -384,7 +384,7 @@ RadioTower2FBlackBelt2Text:
 
 GruntMRadio2_1SeenText:
 	text "Three years ago,"
-	line "TEAM ROCKET was"
+	line "<TEAM ROCKET> was"
 	cont "forced to disband."
 
 	para "But we're making a"
@@ -422,7 +422,7 @@ GruntMRadio2_2AfterBattleText:
 	done
 
 GruntMSpecialistSeenText:
-	text "We're TEAM ROCKET,"
+	text "We're <TEAM ROCKET>,"
 	line "the exploiters of"
 	cont "#MON!"
 
@@ -592,8 +592,8 @@ RadioTower2FBuenaCardIsFullText:
 	text "BUENA: Your BLUE"
 	line "CARD's full."
 
-	para "Trade it in for a"
-	line "fabulous prize!"
+	para "Trade in some"
+	line "points already!"
 	done
 
 RadioTower2FBuenaTuneInAfterSixText:
