@@ -4,7 +4,7 @@ LizAnswerPhoneText:
 	text_start
 	line "speaking."
 
-	para "Oh, <PLAY_G>."
+	para "Oh, <PLAYER>."
 	line "Good morning."
 	done
 
@@ -14,7 +14,7 @@ LizAnswerPhoneDayText:
 	text_start
 	line "speaking."
 
-	para "Oh, <PLAY_G>."
+	para "Oh, <PLAYER>."
 	line "How are you?"
 	done
 
@@ -24,13 +24,13 @@ LizAnswerPhoneNiteText:
 	text_start
 	line "speaking."
 
-	para "Oh, <PLAY_G>."
+	para "Oh, <PLAYER>."
 	line "Good evening."
 	done
 
 LizGreetText:
 	text "Good morning,"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 
 	para "This is @"
 	text_ram wStringBuffer3
@@ -39,7 +39,7 @@ LizGreetText:
 	done
 
 LizGreetDayText:
-	text "Hi, <PLAY_G>."
+	text "Hi, <PLAYER>."
 	line "This is @"
 	text_ram wStringBuffer3
 	text "."
@@ -50,7 +50,7 @@ LizGreetDayText:
 
 LizGreetNiteText:
 	text "Good evening,"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 
 	para "This is @"
 	text_ram wStringBuffer3
