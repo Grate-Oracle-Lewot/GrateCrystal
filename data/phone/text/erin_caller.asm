@@ -57,7 +57,7 @@ ErinWorkingHardText:
 	done
 
 ErinComeBattleText:
-	text "Oh, <PLAY_G>!"
+	text "Oh, <PLAYER>!"
 	line "Come battle ERIN!"
 
 	para "I'll be waiting on"
