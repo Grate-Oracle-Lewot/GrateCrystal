@@ -188,7 +188,7 @@ KurtLeaveSlowpokeWellText:
 	text "KURT: Way to go,"
 	line "<PLAYER>!"
 
-	para "<TEAM ROCKET> has"
+	para "<TEAM_ROCKET> has"
 	line "taken off."
 
 	para "My back's better"
@@ -222,7 +222,7 @@ JessieJames1SeenText:
 	para "JESSIE: JESSIE!"
 	line "JAMES: JAMES!"
 
-	para "<TEAM ROCKET>! Blast"
+	para "<TEAM_ROCKET>! Blast"
 	line "off at the speed"
 	cont "of light!"
 
@@ -240,7 +240,7 @@ JessieJames1AfterBattleText:
 	text "JESSIE: Yeah, the"
 	line "boss disbanded"
 
-	para "<TEAM ROCKET> three"
+	para "<TEAM_ROCKET> three"
 	line "years ago after a"
 
 	para "twerp like you"
@@ -294,7 +294,7 @@ GruntMWell2SeenText:
 	line "POKETAILS?"
 
 	para "If we obeyed you,"
-	line "<TEAM ROCKET>'s rep"
+	line "<TEAM_ROCKET>'s rep"
 	cont "would be ruined!"
 	done
 
