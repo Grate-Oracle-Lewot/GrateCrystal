@@ -13,10 +13,10 @@ IrwinRocketTakeoverRumorText:
 	line "TOWER has been"
 
 	para "taken over by TEAM"
-	line "ROCKET!"
+	line "<ROCKET>!"
 
 	para "…Um… What's TEAM"
-	line "ROCKET?"
+	line "<ROCKET>?"
 	done
 
 IrwinPlainBadgeGossipText:
@@ -74,13 +74,13 @@ IrwinRocketHideoutGossipText:
 	line "I heard!"
 
 	para "You smashed TEAM"
-	line "ROCKET's hideout!"
+	line "<ROCKET>'s hideout!"
 
 	para "You're like a"
 	line "movie hero, even!"
 
 	para "But um… What was"
-	line "TEAM ROCKET?"
+	line "<TEAM_ROCKET>?"
 	done
 
 IrwinRadioTowerGossipText:
