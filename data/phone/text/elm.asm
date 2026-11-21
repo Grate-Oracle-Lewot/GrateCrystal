@@ -173,13 +173,13 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	line "radio broadcasts."
 
 	para "They were talking"
-	line "about <TEAM ROCKET>."
+	line "about <TEAM_ROCKET>."
 
 	para "<PLAYER>, do you"
 	line "know anything"
 	cont "about it?"
 
-	para "Maybe <TEAM ROCKET>"
+	para "Maybe <TEAM_ROCKET>"
 	line "has returned. No,"
 
 	para "that just can't"
