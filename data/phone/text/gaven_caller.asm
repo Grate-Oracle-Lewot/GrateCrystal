@@ -75,7 +75,7 @@ GavenHangUpNotThursdayText:
 	done
 
 GavenReminderText:
-	text "<PLAY_G>, why"
+	text "<PLAYER>, why"
 	line "aren't you here?"
 
 	para "I'll take you down"
