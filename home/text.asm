@@ -253,7 +253,7 @@ ENDM
 	dict "<PC>",          PCChar
 	dict "<ROCKET>",      RocketChar
 	dict "<TM>",          TMChar
-	dict "<TRAINER>",     TrainerChar
+	dict "<GRUNT>",       GruntChar
 	dict "<KOUGEKI>",     PlaceKougeki
 	dict "<LF>",          LineFeedChar
 	dict "<CONT>",        ContText
@@ -288,7 +288,7 @@ PrintRivalName:  print_name wRivalName
 PrintRedsName:   print_name wRedsName
 PrintGreensName: print_name wGreensName
 
-TrainerChar:     print_name TrainerCharText
+GruntChar:       print_name GruntCharText
 TMChar:          print_name TMCharText
 PCChar:          print_name PCCharText
 RocketChar:      print_name RocketCharText
@@ -368,7 +368,7 @@ PlaceCommandCharacter::
 	jp NextChar
 
 TMCharText::         db "TM@"
-TrainerCharText::    db "TRAINER@"
+GruntCharText::      db "GRUNT@"
 PCCharText::         db "PC@"
 RocketCharText::     db "ROCKET@"
 TeamRocketCharText:: db "TEAM ROCKET@"
