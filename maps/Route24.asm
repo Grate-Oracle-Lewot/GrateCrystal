@@ -163,7 +163,7 @@ Route24JessieSeen1Text:
 	para "It's rude to bother"
 	line "people, you know!"
 
-	para "…Huh? TEAM ROCKET?"
+	para "…Huh? <TEAM ROCKET>?"
 	line "Never heard of it!"
 
 	para "… … …"
@@ -186,7 +186,7 @@ Route24JamesSeen1Text:
 	cont "it, darling?"
 
 	para "What's that? TEAM"
-	line "ROCKET?"
+	line "<ROCKET>?"
 
 	para "I'm afraid I'm not"
 	line "familiar!"
@@ -232,7 +232,7 @@ Route24JessieAfterBattleText:
 
 	para "You still haven't"
 	line "seen the last of"
-	cont "TEAM ROCKET!"
+	cont "<TEAM ROCKET>!"
 
 	para "Come on, JAMES!"
 	line "We're leaving!"
@@ -260,7 +260,7 @@ Route24JamesAfterBattleText3:
 	line "searching for the"
 	cont "boss!"
 
-	para "TEAM ROCKET will"
+	para "<TEAM ROCKET> will"
 	line "never give up!"
 
 	para "JAMES: If you say"
