@@ -91,7 +91,7 @@ SilphCo6FReceptionist1Text:
 	text "This guy was such"
 	line "a coward when TEAM"
 
-	para "ROCKET took over"
+	para "<ROCKET> took over"
 	line "our building."
 	done
 
