@@ -4,7 +4,7 @@ ArnieAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "…Huh, <PLAY_G>? Yo!"
+	para "…Huh, <PLAYER>? Yo!"
 	done
 
 ArnieAnswerPhoneDayText:
@@ -13,7 +13,7 @@ ArnieAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "…Huh, <PLAY_G>? Yo!"
+	para "…Huh, <PLAYER>? Yo!"
 	done
 
 ArnieAnswerPhoneNiteText:
@@ -22,7 +22,7 @@ ArnieAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "…Huh, <PLAY_G>? Yo!"
+	para "…Huh, <PLAYER>? Yo!"
 	done
 
 ArnieGreetText:
@@ -32,7 +32,7 @@ ArnieGreetText:
 	text " calling."
 
 	para "What are you up"
-	line "to, <PLAY_G>?"
+	line "to, <PLAYER>?"
 	done
 
 ArnieGreetDayText:
@@ -42,7 +42,7 @@ ArnieGreetDayText:
 	text " calling."
 
 	para "Where are you now,"
-	line "<PLAY_G>?"
+	line "<PLAYER>?"
 	done
 
 ArnieGreetNiteText:
@@ -52,7 +52,7 @@ ArnieGreetNiteText:
 	text " calling."
 
 	para "Are you awake now,"
-	line "<PLAY_G>?"
+	line "<PLAYER>?"
 	done
 
 ArnieGenericText:
