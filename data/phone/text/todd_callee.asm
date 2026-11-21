@@ -4,7 +4,7 @@ ToddAnswerPhoneText:
 	text_ram wStringBuffer3
 	text " speaking."
 
-	para "Hey, <PLAY_G>!"
+	para "Hey, <PLAYER>!"
 	done
 
 ToddAnswerPhoneDayText:
@@ -14,7 +14,7 @@ ToddAnswerPhoneDayText:
 	text " speaking."
 
 	para "This must be"
-	line "<PLAY_G>."
+	line "<PLAYER>."
 	done
 
 ToddAnswerPhoneNiteText:
@@ -23,7 +23,7 @@ ToddAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text " speaking."
 
-	para "Ah, <PLAY_G>!"
+	para "Ah, <PLAYER>!"
 	done
 
 ToddGreetText:
@@ -32,7 +32,7 @@ ToddGreetText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "<PLAY_G>, right?"
+	para "<PLAYER>, right?"
 	done
 
 ToddGreetDayText:
@@ -41,7 +41,7 @@ ToddGreetDayText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "<PLAY_G>, what are"
+	para "<PLAYER>, what are"
 	line "you doing?"
 	done
 
@@ -51,7 +51,7 @@ ToddGreetNiteText:
 	text_ram wStringBuffer3
 	text "."
 
-	para "<PLAY_G>, sorry to"
+	para "<PLAYER>, sorry to"
 	line "call you so late."
 	done
 
