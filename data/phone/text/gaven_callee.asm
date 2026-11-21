@@ -4,7 +4,7 @@ GavenAnswerPhoneText:
 	text_ram wStringBuffer3
 	text " speaking…"
 
-	para "Hi, <PLAY_G>!"
+	para "Hi, <PLAYER>!"
 	line "Good morning!"
 	done
 
@@ -14,7 +14,7 @@ GavenAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text " speaking…"
 
-	para "Hi, <PLAY_G>!"
+	para "Hi, <PLAYER>!"
 	done
 
 GavenAnswerPhoneNiteText:
@@ -23,12 +23,12 @@ GavenAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text " speaking…"
 
-	para "Hi, <PLAY_G>!"
+	para "Hi, <PLAYER>!"
 	line "Good evening!"
 	done
 
 GavenGreetText:
-	text "<PLAY_G>, good"
+	text "<PLAYER>, good"
 	line "morning!"
 
 	para "It's me, @"
@@ -38,7 +38,7 @@ GavenGreetText:
 	done
 
 GavenGreetDayText:
-	text "Hi, <PLAY_G>!"
+	text "Hi, <PLAYER>!"
 
 	para "It's me, @"
 	text_ram wStringBuffer3
@@ -47,7 +47,7 @@ GavenGreetDayText:
 	done
 
 GavenGreetNiteText:
-	text "<PLAY_G>, good"
+	text "<PLAYER>, good"
 	line "evening!"
 
 	para "It's me, @"
