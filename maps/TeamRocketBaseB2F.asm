@@ -412,6 +412,8 @@ RocketBaseGruntApproachesPlayerMovement:
 	big_step UP
 	big_step UP
 	big_step LEFT
+RocketBaseBossFBattlesPlayerMovement:
+RocketBaseGruntBattlesLanceMovement:
 	big_step LEFT
 	step_end
 
@@ -433,11 +435,6 @@ RocketBaseBossFHitMovement:
 RocketBaseBossFFacesPlayerMovement:
 	slow_step DOWN
 	turn_head LEFT
-	step_end
-
-RocketBaseBossFBattlesPlayerMovement:
-RocketBaseGruntBattlesLanceMovement:
-	big_step LEFT
 	step_end
 
 RocketBaseGruntProtectsBossFMovement:
@@ -564,7 +561,7 @@ RocketBaseBossFThrashText:
 	cont "the loose."
 
 	para "It's harmful to"
-	line "<TEAM ROCKET>'s"
+	line "<TEAM_ROCKET>'s"
 	cont "pride, you see."
 
 	para "However strong you"
@@ -600,7 +597,7 @@ RocketBaseBossDontMeddleText:
 	line "show you how wrong"
 
 	para "it is to meddle"
-	line "with <TEAM ROCKET>!"
+	line "with <TEAM_ROCKET>!"
 	done
 
 RocketBaseBossWinText:
@@ -610,7 +607,7 @@ RocketBaseBossWinText:
 	para "It's too bad."
 
 	para "If you were to"
-	line "join <TEAM ROCKET>,"
+	line "join <TEAM_ROCKET>,"
 
 	para "you could become"
 	line "an EXECUTIVE."
@@ -806,7 +803,7 @@ GruntMBase2_1SeenText:
 	line "It has to have a"
 
 	para "password that only"
-	line "<TEAM ROCKET> knows."
+	line "<TEAM_ROCKET> knows."
 	done
 
 GruntMBase2_1BeatenText:
