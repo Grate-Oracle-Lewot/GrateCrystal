@@ -2,7 +2,7 @@ BuenaPhoneMorningAnswerText:
 	text "Hi, this is BUENA…"
 
 	para "Oh! Good morning,"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 
 	para "I'm kind of foggy"
 	line "in the morning…"
@@ -10,7 +10,7 @@ BuenaPhoneMorningAnswerText:
 
 BuenaPhoneDayAnswerText:
 	text "Hi, this is BUENA…"
-	line "Oh! Hi, <PLAY_G>!"
+	line "Oh! Hi, <PLAYER>!"
 
 	para "Do you tune into"
 	line "BUENA's show?"
@@ -35,7 +35,7 @@ BuenaPhoneMidnightAnswerText:
 
 BuenaPhoneNiteAnswerText:
 	text "Hi, this is BUENA…"
-	line "Oh! Hi, <PLAY_G>!"
+	line "Oh! Hi, <PLAYER>!"
 
 	para "I just got off"
 	line "work. "
@@ -45,7 +45,7 @@ BuenaPhoneNiteAnswerText:
 	done
 
 BuenaPhoneMorningText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 	line "Hi, it's BUENA!"
 
 	para "I got up early, so"
@@ -53,7 +53,7 @@ BuenaPhoneMorningText:
 	done
 
 BuenaPhoneDayText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 	line "Hi, it's BUENA!"
 
 	para "I needed someone"
@@ -61,7 +61,7 @@ BuenaPhoneDayText:
 	done
 
 BuenaPhoneMidnightText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 	line "Hi, it's BUENA!"
 
 	para "I'm just on my"
@@ -69,7 +69,7 @@ BuenaPhoneMidnightText:
 	done
 
 BuenaPhoneNiteText:
-	text "<PLAY_G>!"
+	text "<PLAYER>!"
 	line "Hi, it's BUENA!"
 
 	para "I couldn't sleep,"
@@ -77,7 +77,7 @@ BuenaPhoneNiteText:
 	done
 
 BuenaPhoneRocketText:
-	text "Oh. Hi, <PLAY_G>!"
+	text "Oh. Hi, <PLAYER>!"
 
 	para "You are how?"
 
@@ -90,7 +90,7 @@ BuenaPhoneRocketText:
 	para "The RADIO TOWER is"
 	line "in deep trouble!"
 
-	para "<PLAY_G>, you'd"
+	para "<PLAYER>, you'd"
 	line "better be careful!"
 	done
 
@@ -141,7 +141,7 @@ BuenaPhoneReceptionistText:
 	done
 
 BuenaPhoneLuckyNumberShowText:
-	text "Tell me, <PLAY_G>."
+	text "Tell me, <PLAYER>."
 	line "Have you ever won"
 
 	para "a prize on the"
@@ -230,7 +230,7 @@ BuenaPhoneGotAColdText:
 	done
 
 BuenaPhoneRadioCardQuestionsText:
-	text "Hey, <PLAY_G>."
+	text "Hey, <PLAYER>."
 	line "You won that RADIO"
 
 	para "CARD by beating"
@@ -316,7 +316,7 @@ BuenaPhoneRadioTowerDirectorText:
 	done
 
 BuenaPhoneWhenDoYouRelaxText:
-	text "<PLAY_G>, tell me."
+	text "<PLAYER>, tell me."
 
 	para "When do you relax"
 	line "the most?"
@@ -348,7 +348,7 @@ BuenaPhoneWhenDoYouRelaxText:
 	done
 
 BuenaPhoneStarterPokemonText:
-	text "<PLAY_G>, what was"
+	text "<PLAYER>, what was"
 	line "the first #MON"
 	cont "you ever caught?"
 
@@ -406,7 +406,7 @@ BuenaPhoneCompanyVacationText:
 	para "I'd much rather go"
 	line "to the beach!"
 
-	para "<PLAY_G>, I hope"
+	para "<PLAYER>, I hope"
 	line "you have enough"
 
 	para "fun for both of us"
@@ -456,7 +456,7 @@ BuenaPhoneGoingShoppingText:
 	para "STORE has a sale"
 	line "on when we go…"
 
-	para "<PLAY_G>, maybe we"
+	para "<PLAYER>, maybe we"
 	line "can hook up too!"
 
 	para "Catch you later!"
@@ -485,7 +485,7 @@ BuenaPhoneFavoriteSlotMachineAnswerText:
 	done
 
 BuenaPhonePokegearAnswerText:
-	text "Hey, <PLAY_G>. You"
+	text "Hey, <PLAYER>. You"
 	line "use your #GEAR"
 
 	para "to listen to the"
