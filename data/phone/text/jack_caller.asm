@@ -181,7 +181,7 @@ JackHeardSomeGreatTipsText:
 	done
 
 JackReminderText:
-	text "Hey, <PLAY_G>!"
+	text "Hey, <PLAYER>!"
 
 	para "Do you remember"
 	line "your promise?"
