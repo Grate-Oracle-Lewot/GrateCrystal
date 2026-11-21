@@ -91,6 +91,7 @@ VioletPokecenter1FYoungsterScript:
 
 MovementData_AideWalksStraightOutOfPokecenter:
 	step DOWN
+MovementData_AideFinishesLeavingPokecenter:
 	step DOWN
 	step DOWN
 	step DOWN
@@ -98,12 +99,6 @@ MovementData_AideWalksStraightOutOfPokecenter:
 
 MovementData_AideWalksLeftToExitPokecenter:
 	step LEFT
-	step DOWN
-	step_end
-
-MovementData_AideFinishesLeavingPokecenter:
-	step DOWN
-	step DOWN
 	step DOWN
 	step_end
 
@@ -170,7 +165,7 @@ VioletPokecenter1FGentlemanText:
 	text "It was around"
 	line "three years ago."
 
-	para "TEAM ROCKET was up"
+	para "<TEAM_ROCKET> was up"
 	line "to no good with"
 	cont "#MON."
 
