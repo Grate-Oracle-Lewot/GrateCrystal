@@ -4,7 +4,7 @@ JoseAnswerPhoneText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh, <PLAY_G>?"
+	para "Oh, <PLAYER>?"
 	line "Good morning!"
 	done
 
@@ -14,7 +14,7 @@ JoseAnswerPhoneDayText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh, <PLAY_G>? Hi!"
+	para "Oh, <PLAYER>? Hi!"
 	done
 
 JoseAnswerPhoneNiteText:
@@ -23,12 +23,12 @@ JoseAnswerPhoneNiteText:
 	text_ram wStringBuffer3
 	text "…"
 
-	para "Oh, <PLAY_G>?"
+	para "Oh, <PLAYER>?"
 	line "Good evening!"
 	done
 
 JoseGreetText:
-	text "Oh, <PLAY_G>?"
+	text "Oh, <PLAYER>?"
 
 	para "Tweet! Yeah, it's"
 	line "me, @"
@@ -37,7 +37,7 @@ JoseGreetText:
 	done
 
 JoseGreetDayText:
-	text "Oh, <PLAY_G>?"
+	text "Oh, <PLAYER>?"
 
 	para "Tweet! Yeah, it's"
 	line "me, @"
@@ -46,7 +46,7 @@ JoseGreetDayText:
 	done
 
 JoseGreetNiteText:
-	text "Oh, <PLAY_G>?"
+	text "Oh, <PLAYER>?"
 
 	para "Tweet! Yeah, it's"
 	line "me, @"
