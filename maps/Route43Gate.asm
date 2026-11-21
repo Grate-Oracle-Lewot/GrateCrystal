@@ -277,7 +277,7 @@ RocketText_James:
 OfficerText_FoundTM:
 	text "I got chased from"
 	line "my post by those"
-	cont "<TEAM ROCKET> thugs."
+	cont "<TEAM_ROCKET> thugs."
 
 	para "They left these"
 	line "TMs behind."
