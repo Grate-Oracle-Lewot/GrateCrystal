@@ -93,7 +93,7 @@ GinaHaventFoundAnythingYetText:
 	done
 
 GinaReminderText:
-	text "Oh, <PLAY_G>!"
+	text "Oh, <PLAYER>!"
 	line "How soon can I"
 
 	para "expect to see you"
