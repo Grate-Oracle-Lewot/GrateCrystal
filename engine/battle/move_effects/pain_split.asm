@@ -27,7 +27,7 @@ BattleCommand_PainSplit:
 	call ResetDamage
 	hlcoord 2, 2
 	predef AnimateHPBar
-	farcall _UpdateBattleHuds
+	call UpdateBattleHuds
 
 	ld hl, SharedPainText
 	jp StdBattleTextbox
