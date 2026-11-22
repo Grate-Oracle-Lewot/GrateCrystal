@@ -130,13 +130,7 @@ RefreshBattleHuds::
 	jp WaitBGMap
 
 UpdateBattleHuds::
-	farcall DrawPlayerHUD
-	ld hl, wPlayerHPPal
-	call SetHPPal
-	farcall DrawEnemyHUD
-	ld hl, wEnemyHPPal
-	call SetHPPal
-	farcall FinishBattleAnim
+	farcall _UpdateBattleHuds
 	ret
 
 INCLUDE "home/battle_vars.asm"
