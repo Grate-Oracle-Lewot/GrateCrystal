@@ -7170,6 +7170,11 @@ Call_PlayBattleAnim:
 	call WaitBGMap
 	predef_jump PlayBattleAnim
 
+_UpdateBattleHuds::
+	call UpdatePlayerHUD
+	call UpdateEnemyHUD
+	; fallthrough
+
 FinishBattleAnim:
 	push af
 	push bc
