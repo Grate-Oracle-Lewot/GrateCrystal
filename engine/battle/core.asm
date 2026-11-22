@@ -4916,10 +4916,6 @@ PrintPlayerHUD:
 	ld [hl], "<FLOAT>"
 	ret
 
-_UpdateBattleHuds::
-	call UpdatePlayerHUD
-	; fallthrough
-
 UpdateEnemyHUD::
 	push hl
 	push de
