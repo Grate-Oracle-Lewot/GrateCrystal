@@ -1524,7 +1524,7 @@ endc
 	def_grass_wildmons DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, DIGLETT
+	db 23, ZUBAT
 	db 6, DIGLETT
 	db 10, DIGLETT
 	db 23, DIGLETT
@@ -1540,7 +1540,7 @@ else
 	db 34, DUGTRIO
 endc
 	; day
-	db 2, DIGLETT
+	db 19, ZUBAT
 	db 6, DIGLETT
 	db 10, DIGLETT
 	db 14, DIGLETT
@@ -1556,16 +1556,20 @@ else
 	db 26, DUGTRIO
 endc
 	; nite
-	db 5, DIGLETT
+if DEF(_LITTLE_CUP)
+	db 22, ZUBAT
 	db 10, DIGLETT
 	db 15, DIGLETT
 	db 30, DIGLETT
-if DEF(_LITTLE_CUP)
 	db 30, DIGLETT
 	db 34, DIGLETT
 	db 38, DIGLETT
 	db 42, DIGLETT
 else
+	db 22, GOLBAT
+	db 10, DIGLETT
+	db 15, DIGLETT
+	db 30, DIGLETT
 	db 30, DUGTRIO
 	db 34, DUGTRIO
 	db 38, DUGTRIO
