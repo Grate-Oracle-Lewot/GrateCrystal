@@ -118,24 +118,24 @@ DidntUseSquirtbottleScript:
 	closetext
 	end
 
-Route36RockSmashGuyScript:
+Route36CutGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
-	iftrue .AlreadyGotRockSmash
+	checkevent EVENT_GOT_HM01_CUT
+	iftrue .AlreadyGotCut
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
-	writetext RockSmashGuyText1
+	writetext Route36CutGuyText1
 	sjump Route36_EndText
 
 .ClearedSudowoodo:
-	writetext RockSmashGuyText2
+	writetext Route36CutGuyText2
 	promptbutton
-	verbosegiveitem HM_ROCK_SMASH
+	verbosegiveitem HM_CUT
 	iffalse DidntUseSquirtbottleScript
-	setevent EVENT_GOT_TM08_ROCK_SMASH
-.AlreadyGotRockSmash:
-	writetext RockSmashGuyText3
+	setevent EVENT_GOT_HM01_CUT
+.AlreadyGotCut:
+	writetext Route36CutGuyText3
 	sjump Route36_EndText
 
 Route36LassScript:
@@ -401,18 +401,16 @@ FloriaText2:
 	line "bottle…"
 	done
 
-RockSmashGuyText1:
-	text "If only that tree"
-	line "were a rock, my"
+Route36CutGuyText1:
+	text "I tried using CUT"
+	line "on that tree, but"
+	cont "it didn't work."
 
-	para "#MON's trusty"
-	line "ROCK SMASH would"
-
-	para "have it cleared in"
-	line "no time!"
+	para "What is it made"
+	line "of, rock?"
 	done
 
-RockSmashGuyText2:
+Route36CutGuyText2:
 	text "Did you clear that"
 	line "wretched tree?"
 
@@ -421,19 +419,24 @@ RockSmashGuyText2:
 	cont "have this."
 	done
 
-RockSmashGuyText3:
+Route36CutGuyText3:
 	text "That happens to be"
-	line "ROCK SMASH."
+	line "CUT."
 
-	para "You can shatter"
-	line "rocks with just a"
+	para "You can use it to"
+	line "get rid of pesky"
 
-	para "single well-aimed"
-	line "smack."
+	para "trees that block"
+	line "your path…"
 
-	para "You don't need a"
-	line "BADGE to use it,"
-	cont "either!"
+	para "When they're not"
+	line "SUDOWOODO."
+
+	para "But you'll need a"
+	line "HIVEBADGE to use"
+
+	para "it outside of"
+	line "battle."
 	done
 
 Route36LassText:
