@@ -9,11 +9,10 @@
 	const ILEXFOREST_COOLTRAINER_M1
 	const ILEXFOREST_COOLTRAINER_M2
 	const ILEXFOREST_FRUIT_TREE
+	const ILEXFOREST_ROCK
 	const ILEXFOREST_POKE_BALL1
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
-	const ILEXFOREST_POKE_BALL4
-	const ILEXFOREST_POKE_BALL5
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -349,12 +348,12 @@ IlexForestFarfetchdScript:
 IlexForestCharcoalMasterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM01_CUT
-	iftrue .AlreadyGotCut
+	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	iftrue .AlreadyGotRockSmash
 	writetext Text_CharcoalMasterIntro
 	promptbutton
-	verbosegiveitem HM_CUT
-	setevent EVENT_GOT_HM01_CUT
+	verbosegiveitem HM_ROCK_SMASH
+	setevent EVENT_GOT_TM08_ROCK_SMASH
 	writetext Text_CharcoalMasterOutro
 	waitbutton
 	closetext
@@ -366,7 +365,7 @@ IlexForestCharcoalMasterScript:
 	clearevent EVENT_CHARCOAL_KILN_BOSS
 	end
 
-.AlreadyGotCut:
+.AlreadyGotRockSmash:
 	writetext Text_CharcoalMasterTalkAfter
 	waitbutton
 	closetext
@@ -428,20 +427,23 @@ IlexForestLassScript:
 IlexForestFruitTree:
 	fruittree FRUITTREE_ILEX_FOREST
 
+IlexForestRock:
+	jumpstd SmashRockScript
+
 IlexForestRevive:
 	itemball REVIVE
-
-IlexForestXAttack:
-	itemball X_ATTACK
-
-IlexForestAntidote:
-	itemball ANTIDOTE
 
 IlexForestEther:
 	itemball ETHER
 
 IlexForestGoldLeaf:
 	itemball GOLD_LEAF
+
+IlexForestHiddenXAttack:
+	hiddenitem X_ATTACK, EVENT_ILEX_FOREST_HIDDEN_X_ATTACK
+
+IlexForestHiddenAntidote:
+	hiddenitem ANTIDOTE, EVENT_ILEX_FOREST_HIDDEN_ANTIDOTE
 
 IlexForestHiddenEther:
 	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
@@ -820,17 +822,19 @@ Text_CharcoalMasterIntro:
 	done
 
 Text_CharcoalMasterOutro:
-	text "That's the CUT HM."
-	line "Teach that to a"
+	text "Huh? You expected"
+	line "CUT?"
 
-	para "#MON to clear"
-	line "small trees."
+	para "I need that to"
+	line "make CHARCOAL,"
+	cont "kid!"
 
-	para "Of course, you"
-	line "have to have the"
+	para "But if you teach"
+	line "ROCK SMASH to a"
 
-	para "GYM BADGE from"
-	line "AZALEA to use it."
+	para "#MON, you can"
+	line "get through the"
+	cont "FOREST."
 	done
 
 Text_CharcoalMasterTalkAfter:
@@ -1024,6 +1028,8 @@ IlexForest_MapEvents:
 
 	def_bg_events
 	bg_event  3, 17, BGEVENT_READ, IlexForestSignpost
+	bg_event  9, 17, BGEVENT_ITEM, IlexForestHiddenXAttack
+	bg_event 17,  7, BGEVENT_ITEM, IlexForestHiddenAntidote
 	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
 	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
@@ -1041,8 +1047,7 @@ IlexForest_MapEvents:
 	object_event  6, 44, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermErick, -1
 	object_event  0,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAndy, -1
 	object_event 25, 21, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestFruitTree, -1
+	object_event  8, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestRock, -1
 	object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE
-	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
-	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 24, 42, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestGoldLeaf, EVENT_ILEX_FOREST_GOLD_LEAF
