@@ -203,9 +203,10 @@ NUM_TREEMON_SETS EQU const_value
 	const ROCKMON_SET_STRONG   ; 2
 	const ROCKMON_SET_HOT      ; 3
 	const ROCKMON_SET_COLD     ; 4
-	const ROCKMON_SET_MOUNTAIN ; 5
-	const ROCKMON_SET_BEACH    ; 6
-	const ROCKMON_SET_GATE     ; 7
+	const ROCKMON_SET_FOREST   ; 5
+	const ROCKMON_SET_MOUNTAIN ; 6
+	const ROCKMON_SET_BEACH    ; 7
+	const ROCKMON_SET_GATE     ; 8
 NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
