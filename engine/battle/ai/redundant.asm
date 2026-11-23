@@ -181,14 +181,12 @@ AI_Redundant:
 .SpeedUp:
 	ld a, [wEnemySpdLevel]
 	ld bc, wEnemySpeed
-	; fallthrough
-
 .Stat_Up:
 	cp MAX_STAT_LEVEL
-	jp nc, .Redundant
+	jr nc, .Redundant
 	ld a, [bc]
 	cp LOW(MAX_STAT_VALUE)
-	jp nz, .NotRedundant
+	jr nz, .NotRedundant
 	inc bc
 	ld a, [bc]
 	cp HIGH(MAX_STAT_VALUE)
@@ -205,7 +203,7 @@ AI_Redundant:
 	jr .NotRedundant
 
 .ForceSwitch:
-	farcall AICheckLastPlayerMon
+	call AICheckLastPlayerMon
 	jr z, .Redundant
 	jr .NotRedundant
 
@@ -233,12 +231,12 @@ AI_Redundant:
 	jr .NotRedundant
 
 .BatonPass:
-	farcall AICheckLastEnemyMon
+	call AICheckLastEnemyMon
 	jr c, .Redundant
 	jr .NotRedundant
 
 .Heal:
-	farcall AICheckEnemyMaxHP
+	call AICheckEnemyMaxHP
 	jr nc, .NotRedundant
 
 .Redundant:
