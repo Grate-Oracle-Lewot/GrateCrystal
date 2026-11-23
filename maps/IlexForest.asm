@@ -400,7 +400,7 @@ TrainerBugCatcherWayne:
 	end
 
 TrainerCooltrainerfEnid:
-	trainer COOLTRAINERF, ENID, EVENT_BEAT_COOLTRAINERM_ENID, CooltrainerfEnidSeenText, CooltrainerfEnidBeatenText, 0, .Script
+	trainer COOLTRAINERF, ENID, EVENT_BEAT_COOLTRAINERF_ENID, CooltrainerfEnidSeenText, CooltrainerfEnidBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
