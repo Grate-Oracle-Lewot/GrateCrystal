@@ -202,6 +202,7 @@ RockSmashMons::
 	dw RockMonSet_Strong
 	dw RockMonSet_Hot
 	dw RockMonSet_Cold
+	dw RockMonSet_Forest
 	dw RockMonSet_Mountain
 	dw RockMonSet_Beach
 	dw RockMonSet_Gate
@@ -284,6 +285,13 @@ else
 	db 10, DUNSPARCE,  25
 endc
 	db 10, SWINUB,     25
+	db -1
+
+RockMonSet_Forest:
+	db 40, EKANS,      10
+	db 30, GEODUDE,    10
+	db 20, PARAS,      10
+	db 10, SLOWPOKE,   10
 	db -1
 
 RockMonSet_Mountain:
