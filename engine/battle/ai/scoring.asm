@@ -1,6 +1,9 @@
 AIScoring: ; used only for BANK(AIScoring)
 
 
+INCLUDE "engine/battle/ai/redundant.asm"
+
+
 AI_Basic:
 ; Skip Perish Song check if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
@@ -45,7 +48,7 @@ AI_Basic:
 	push hl
 	push de
 	push bc
-	farcall AI_Redundant
+	call AI_Redundant
 	pop bc
 	pop de
 	pop hl
