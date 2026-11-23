@@ -1103,12 +1103,14 @@ AI_Smart_EffectHandlers:
 AI_Smart_Nightmare:
 ; The AI_Basic layer dismisses Nightmare if the player has a Substitute or already has a Nightmare.
 
-; Dismiss this move if the player has any status other than sleep.
 	ld a, [wBattleMonStatus]
 	and a
 	jr z, .no_status
-	and SLP
-	jp z, AIDismissMove
+
+; Dismiss this move if the player has any status other than sleep.
+	ld a, [wBattleMonStatus]
+	and ~SLP
+	jp nz, AIDismissMove
 
 ; If the player is asleep, 90% chance to encourage this move if the enemy is faster than the player, and 45% if slower.
 	jr AI_Smart_DreamEater
@@ -1123,6 +1125,7 @@ AI_Smart_Nightmare:
 
 AI_Smart_Sleep:
 ; 50% chance to dismiss sleep inducing moves if the player's held item immunizes against them.
+; 50% chance to skip possible encouragement if the player is Flying-type.
 ; 90% chance to greatly encourage sleep inducing moves if the enemy has either Dream Eater or Nightmare.
 ; 50% chance to greatly encourage sleep inducing moves otherwise.
 
@@ -1139,6 +1142,18 @@ AI_Smart_Sleep:
 	jp AIDismissMove
 
 .skip_immune
+	ld a, [wBattleMonType1]
+	cp FLYING
+	jr z, .maybe_ret
+	ld a, [wBattleMonType2]
+	cp FLYING
+	jr nz, .skip_flying
+
+.maybe_ret
+	call AI_50_50
+	ret c
+
+.skip_flying
 	ld b, EFFECT_DREAM_EATER
 	call AIHasMoveEffect
 	jr c, AI_Smart_DreamEater
