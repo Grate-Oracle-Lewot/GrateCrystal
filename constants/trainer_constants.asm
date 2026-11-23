@@ -189,7 +189,6 @@ KRIS EQU __trainer_class__
 	const GAVEN1
 	const GAVEN2
 	const GAVEN3
-	const ERICK
 	const ANDY
 	const TYLER
 	const AARON
@@ -218,6 +217,7 @@ KRIS EQU __trainer_class__
 	const BETH1
 	const BETH2
 	const BETH3
+	const ENID
 	const LOIS
 	const GWEN
 	const EMMA
