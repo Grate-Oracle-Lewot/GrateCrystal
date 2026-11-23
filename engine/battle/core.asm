@@ -1692,7 +1692,7 @@ HandleDefrost:
 	ld hl, wPartyMon1Status
 	call GetPartyLocation
 	ld [hl], 0
-	call UpdateBattleHuds
+	call _UpdateBattleHuds
 	call SetEnemyTurn
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
@@ -1719,7 +1719,7 @@ HandleDefrost:
 	ld [hl], 0
 .wild
 
-	call UpdateBattleHuds
+	call _UpdateBattleHuds
 	call SetPlayerTurn
 	ld hl, DefrostedOpponentText
 	jp StdBattleTextbox
@@ -2173,7 +2173,7 @@ SubtractHPFromMon::
 
 UpdateHPBarBattleHuds:
 	call UpdateHPBar
-	jp UpdateBattleHuds
+	jp _UpdateBattleHuds
 
 UpdateHPBar:
 	hlcoord 10, 9
@@ -2931,13 +2931,6 @@ ForcePlayerMonChoice:
 	and a
 	ld c, a
 	ret
-
-SwitchReloadBackpic_Etc:
-	call SwitchReloadBackpic
-	call CloseWindow
-	call GetMemSGBLayout
-	call SetPalettes
-	jp UpdateBattleHuds
 
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
@@ -5089,7 +5082,7 @@ BattleMenu:
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox
-	call UpdateBattleHuds
+	call _UpdateBattleHuds
 	call EmptyBattleTextbox_LoadTilemapToTempTilemap
 .ok
 
@@ -7166,9 +7159,15 @@ Call_PlayBattleAnim:
 	call WaitBGMap
 	predef_jump PlayBattleAnim
 
+SwitchReloadBackpic_Etc:
+	call SwitchReloadBackpic
+	call CloseWindow
+	call GetMemSGBLayout
+	call SetPalettes
+	; fallthrough
+
 _UpdateBattleHuds::
-	call UpdatePlayerHUD
-	call UpdateEnemyHUD
+	call UpdateBattleHUDs
 	; fallthrough
 
 FinishBattleAnim:
