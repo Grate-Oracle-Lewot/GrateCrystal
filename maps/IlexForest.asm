@@ -4,10 +4,10 @@
 	const ILEXFOREST_BLACK_BELT
 	const ILEXFOREST_ROCKER
 	const ILEXFOREST_KURT
-	const ILEXFOREST_LASS
+	const ILEXFOREST_LASS1
 	const ILEXFOREST_FISHING_GURU
-	const ILEXFOREST_COOLTRAINER_M1
-	const ILEXFOREST_COOLTRAINER_M2
+	const ILEXFOREST_LASS2
+	const ILEXFOREST_COOLTRAINER_M
 	const ILEXFOREST_FRUIT_TREE
 	const ILEXFOREST_ROCK
 	const ILEXFOREST_POKE_BALL1
@@ -399,13 +399,13 @@ TrainerBugCatcherWayne:
 	closetext
 	end
 
-TrainerCooltrainermErick:
-	trainer COOLTRAINERM, ERICK, EVENT_BEAT_COOLTRAINERM_ERICK, CooltrainermErickSeenText, CooltrainermErickBeatenText, 0, .Script
+TrainerCooltrainerfEnid:
+	trainer COOLTRAINERF, ENID, EVENT_BEAT_COOLTRAINERM_ENID, CooltrainerfEnidSeenText, CooltrainerfEnidBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainermErickAfterBattleText
+	writetext CooltrainerfEnidAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -973,7 +973,7 @@ BugCatcherWayneAfterBattleText:
 	line "he has on him…"
 	done
 
-CooltrainermErickSeenText:
+CooltrainerfEnidSeenText:
 	text "I'm searching for"
 	line "the forest's pro-"
 	cont "tector."
@@ -982,11 +982,11 @@ CooltrainermErickSeenText:
 	line "strong #MON!"
 	done
 
-CooltrainermErickBeatenText:
+CooltrainerfEnidBeatenText:
 	text "Drat!"
 	done
 
-CooltrainermErickAfterBattleText:
+CooltrainerfEnidAfterBattleText:
 	text "No matter how"
 	line "powerful the"
 
@@ -1044,7 +1044,7 @@ IlexForest_MapEvents:
 	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
 	object_event 12,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
-	object_event  6, 44, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermErick, -1
+	object_event  6, 44, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfEnid, -1
 	object_event  0,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermAndy, -1
 	object_event 25, 21, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestFruitTree, -1
 	object_event  8, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestRock, -1
