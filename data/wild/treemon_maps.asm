@@ -37,6 +37,7 @@ TreeMonMaps:
 
 RockMonMaps:
 	treemon_map ROUTE_3,                       ROCKMON_SET_MOUNTAIN
+	treemon_map ILEX_FOREST,                   ROCKMON_SET_FOREST
 	treemon_map ROUTE_40,                      ROCKMON_SET_BEACH
 	treemon_map BURNED_TOWER_1F,               ROCKMON_SET_HOT
 	treemon_map CIANWOOD_CITY,                 ROCKMON_SET_BEACH
