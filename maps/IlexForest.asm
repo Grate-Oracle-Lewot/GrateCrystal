@@ -506,7 +506,7 @@ IlexForestShrineScript:
 	pause 20
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	setevent EVENT_FOUGHT_CELEBI
-	disappear ILEXFOREST_LASS
+	disappear ILEXFOREST_LASS1
 	special CelebiShrineEvent
 if DEF(_LITTLE_CUP)
 	loadwildmon HOPPIP, 30
