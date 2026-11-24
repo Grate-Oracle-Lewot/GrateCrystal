@@ -3659,7 +3659,7 @@ AI_Smart_Conversion:
 
 	ld a, BANK(Moves)
 	call GetFarByte
-	and TYPE_MASK
+;	and TYPE_MASK is not needed since BattleCheckTypeMatchup masks it later
 	ld [wPlayerMoveStruct + MOVE_TYPE], a
 
 	xor a
