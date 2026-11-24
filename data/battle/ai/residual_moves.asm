@@ -1,6 +1,7 @@
 ; AI_CAUTIOUS has a 90% chance to discourage these moves after the enemy Pokemon's first turn on the field.
 
 ResidualMoves:
+	db SUPERSONIC
 	db MIST
 	db POISONPOWDER
 	db STUN_SPORE
