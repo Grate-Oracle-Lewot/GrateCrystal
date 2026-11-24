@@ -2588,14 +2588,14 @@ UnevolvedEviolite:
 	ret
 
 BattleCommand_DamageStats:
-	call ResetDamage
-
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, EnemyAttackDamage
 	; fallthrough
 
 PlayerAttackDamage:
+	call ResetDamage
+
 ; Return move power d, player level e, enemy defense c and player attack b.
 
 	ld hl, wPlayerMoveStructPower
@@ -2677,6 +2677,8 @@ PlayerAttackDamage:
 	ret
 
 EnemyAttackDamage:
+	call ResetDamage
+
 ; No damage dealt with 0 power.
 	ld hl, wEnemyMoveStructPower
 	ld a, [hli] ; hl = wEnemyMoveStructType
