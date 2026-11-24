@@ -489,8 +489,6 @@ I haven't done absolutely everything in both of those, but most. The main takeaw
 
 # Known Bugs & Issues
 
-- The low health alarm only goes off when it feels like it. I will attempt to solve this, but I don't know how.
-
 - U-Turn doesn't switch in link battles. (It still does damage.) I would like it to work, but I can't figure it out, so for now it just doesn't even try, thus preventing desynchronization.
 
 - Nayru's dex currently does not show fishing encounters. This is because I added a fourth rod, which the dex branches don't account for, and I can't quite figure out how to code it myself. For now it's framed as fishing appealing to people who want some mystery in their encounters, but if I can get some help I'll make it work.
