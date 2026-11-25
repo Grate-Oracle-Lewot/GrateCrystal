@@ -3553,9 +3553,9 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "BENNY@", TRAINERTYPE_NORMAL
-	db 12, WEEDLE
+	db 12, VENONAT
 	db 12, METAPOD
-	db 12, BEEDRILL
+	db 12, KAKUNA
 	db -1 ; end
 
 	; BUG_CATCHER (13)
