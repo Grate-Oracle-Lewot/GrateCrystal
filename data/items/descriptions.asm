@@ -484,7 +484,7 @@ GoodRodDesc:
 	next "#MON by water.@"
 
 SilverLeafDesc:
-	db   "A silver leaf."
+	db   "A silvery leaf."
 	next "Collector's item?@"
 
 SuperRodDesc:
