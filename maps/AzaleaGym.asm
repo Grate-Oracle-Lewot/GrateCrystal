@@ -242,26 +242,21 @@ BugsyText_BugMonsAreDeep:
 	done
 
 BugCatcherBennySeenText:
-	text "Bug #MON evolve"
-	line "young. So they get"
-
-	para "stronger that much"
-	line "faster."
+	text "Don't underestimate"
+	line "creepy-crawlies!"
 	done
 
 BugCatcherBennyBeatenText:
-	text "Just evolving"
-	line "isn't enough!"
+	text "I underestimated"
+	line "you!"
 	done
 
 BugCatcherBennyAfterBattleText:
-	text "BEEDRILL can fly"
-	line "even though it's"
-	cont "not a flying type."
+	text "Some bug #MON"
+	line "evolve early."
 
-	para "EARTHQUAKE won't"
-	line "hit it, but MUD-"
-	cont "SLAP will!"
+	para "Others have to"
+	line "train longer."
 	done
 
 BugCatcherAlSeenText:
@@ -302,9 +297,13 @@ BugCatcherJoshBeatenText:
 	done
 
 BugCatcherJoshAfterBattleText:
-	text "I guess I should"
-	line "teach them better"
-	cont "moves…"
+	text "BEEDRILL can fly"
+	line "even though it's"
+	cont "not a flying type."
+
+	para "EARTHQUAKE won't"
+	line "hit it, but MUD-"
+	cont "SLAP will!"
 	done
 
 TwinsAmyandmay1SeenText:
