@@ -129,6 +129,15 @@ AI_TryItem:
 	and a
 	ret nz
 
+; no items in first Rival battle
+	ld a, [wOtherTrainerClass]
+	cp RIVAL1
+	jr nz, .not_rival1
+	ld a, [wOtherTrainerID]
+	cp RIVAL1_1_TOTODILE + 1
+	ret c
+.not_rival1
+
 ; check if trainer class has items
 	ld a, [wEnemyTrainerItem1]
 	ld b, a
@@ -288,8 +297,7 @@ AI_ClearCarryFlag2:
 
 AI_Items:
 	dbw FULL_RESTORE,    .FullRestore
-	dbw MAX_POTION,      .MaxPotion
-	dbw HYPER_POTION,    .HyperPotion
+	dbw CPU_POTION,      .CPUPotion
 	dbw SUPER_POTION,    .SuperPotion
 	dbw SPRING_WATER,    .SpringWater
 	dbw X_ACCURACY,      .XAccuracy
@@ -432,10 +440,10 @@ AI_Items:
 	call EnemyUsedFullRestore
 	jp AI_ClearCarryFlag
 
-.MaxPotion:
+.CPUPotion:
 	call .HealItem
 	ret c ; AI_SetCarryFlag
-	call EnemyUsedMaxPotion
+	call EnemyUsedCPUPotion
 	jp AI_ClearCarryFlag
 
 .HealItem:
@@ -450,13 +458,7 @@ AI_Items:
 
 .20Not50:
 	call AI_80_20
-	jp nc, AI_SetCarryFlag
-	jp AI_ClearCarryFlag
-
-.HyperPotion:
-	call .HealItem
-	ret c ; AI_SetCarryFlag
-	call EnemyUsedHyperPotion
+	jr nc, AI_SetCarryFlag
 	jr AI_ClearCarryFlag
 
 .SuperPotion:
@@ -748,6 +750,25 @@ EnemyUsedStardust:
 	ld a, STARDUST
 	jr PrintText_UsedItemOn_AND_AIUpdateHUD
 
+EnemyUsedCPUPotion:
+	ld a, [wEnemyMonMaxHP]
+	and a
+	jr nz, EnemyUsedMaxPotion
+
+	ld a, [wEnemyMonMaxHP + 1]
+	cp HP_HEAL_HYPER_POTION + 2
+	jr nc, EnemyUsedMaxPotion
+
+	cp HP_HEAL_SUPER_POTION + 2
+	jr nc, EnemyUsedHyperPotion
+
+	cp HP_HEAL_POTION + 2
+	jr nc, EnemyUsedSuperPotion
+
+	ld a, POTION
+	ld b, HP_HEAL_POTION
+	jr EnemyPotionContinue
+
 EnemyUsedMaxPotion:
 	ld a, MAX_POTION
 	ld [wCurEnemyItem], a
@@ -780,6 +801,11 @@ FullRestoreContinue:
 	ld [wEnemyMonHP], a
 	jr EnemyPotionFinish
 
+EnemyUsedHyperPotion:
+	ld a, HYPER_POTION
+	ld b, HP_HEAL_HYPER_POTION
+	jr EnemyPotionContinue
+
 EnemyUsedSpringWater:
 	ld a, SPRING_WATER
 	jr SpringWaterContinue
@@ -789,12 +815,7 @@ EnemyUsedSuperPotion:
 	; fallthrough
 
 SpringWaterContinue:
-	ld b, 50
-	jr EnemyPotionContinue
-
-EnemyUsedHyperPotion:
-	ld a, HYPER_POTION
-	ld b, 200
+	ld b, HP_HEAL_SUPER_POTION
 	; fallthrough
 
 EnemyPotionContinue:
