@@ -84,6 +84,7 @@ DarkCaveVioletEntrance_MapEvents:
 	warp_event 11,  7, DARK_CAVE_VIOLET_ENTRANCE, 5
 	warp_event 15, 27, DARK_CAVE_VIOLET_ENTRANCE, 4
 	warp_event  8, 29, DARK_CAVE_VIOLET_ENTRANCE, 1
+	warp_event 16, 26, DARK_CAVE_2F, 3
 
 	def_coord_events
 
