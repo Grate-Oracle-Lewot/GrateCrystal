@@ -3280,6 +3280,7 @@ HeracrossEvosAttacks:
 	db 25, TAKE_DOWN
 	db 30, VITAL_THROW
 	db 35, SWORDS_DANCE
+	db 40, IRON_HEAD
 	db 45, REVERSAL
 	db 50, MEGAHORN
 	db 55, SKULL_BASH
