@@ -837,7 +837,7 @@ INCLUDE "data/battle/ai/stall_moves.asm"
 AI_Aggressive:
 ; Discourage all damaging moves but the one that does the most damage.
 ; If no damaging move deals damage to the player, no move will be discouraged.
-; Run by both AI_AGGRESSIVE and AI_AGGRESSIVE_2. Using both will do all of this twice, with separate damage rolls.
+; Run by both AI_AGGRESSIVE and AI_OVERTHINK. Using both will do all of this twice, with separate damage rolls.
 
 ; Discourage stall moves if the enemy has only one Pokemon [remaining].
 	call AICheckLastEnemyMon
