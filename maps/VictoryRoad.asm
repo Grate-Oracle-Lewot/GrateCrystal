@@ -4,6 +4,7 @@
 	const VICTORYROAD_GRANNY
 	const VICTORYROAD_SCIENTIST
 	const VICTORYROAD_COOLTRAINER_M
+	const VICTORYROAD_SUPER_NERD
 	const VOCTORYROAD_BOULDER
 	const VICTORYROAD_POKE_BALL1
 	const VICTORYROAD_POKE_BALL2
@@ -158,6 +159,17 @@ TrainerCooltrainermSteve:
 	endifjustbattled
 	opentext
 	writetext CooltrainermSteveAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerJugglerElton:
+	trainer JUGGLER, ELTON, EVENT_BEAT_JUGGLER_ELTON, JugglerEltonSeenText, JugglerEltonBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext JugglerEltonAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -331,6 +343,24 @@ CooltrainermSteveAfterBattleText:
 	line "such a cool name."
 	done
 
+JugglerEltonSeenText:
+	text "What goes up must"
+	line "come down!"
+
+	para "(I'm talking about"
+	line "your win streak.)"
+	done
+
+JugglerEltonBeatenText:
+	text "I got that back-"
+	line "wards!"
+	done
+
+JugglerEltonAfterBattleText:
+	text "It's hard to juggle"
+	line "while battling."
+	done
+
 VictoryRoad_MapEvents:
 	def_warp_events
 	warp_event  9, 67, VICTORY_ROAD_GATE, 5
@@ -359,6 +389,7 @@ VictoryRoad_MapEvents:
 	object_event 13, 35, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumChell, -1
 	object_event 13, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistHeinz, -1
 	object_event  4, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermSteve, -1
+	object_event 11, 65, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerElton, -1
 	object_event 14, 50, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadBoulder, -1
 	object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE
 	object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE
