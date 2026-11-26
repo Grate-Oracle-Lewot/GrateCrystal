@@ -819,9 +819,9 @@ ShuckleEggMoves:
 HeracrossEggMoves:
 	db BIDE
 	db LOW_KICK
+	db SILVER_WIND
 	db WING_ATTACK
 	db SEISMIC_TOSS
-	db IRON_HEAD
 	db -1 ; end
 
 SneaselEggMoves:
