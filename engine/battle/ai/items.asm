@@ -1,6 +1,4 @@
 AI_SwitchOrTryItem:
-	and a
-
 	ld a, [wBattleMode]
 	dec a
 	ret z
@@ -134,7 +132,7 @@ AI_TryItem:
 	cp RIVAL1
 	jr nz, .not_rival1
 	ld a, [wOtherTrainerID]
-	cp RIVAL1_1_TOTODILE + 1
+	cp RIVAL1_2_CHIKORITA
 	ret c
 .not_rival1
 
