@@ -1034,11 +1034,13 @@ _BuenaRadioMidnightText8::
 	done
 
 _BuenaRadioMidnightText9::
-	text "I'm outta here!"
+	text_start
+	line "I'm outta here!"
 	done
 
 _BuenaRadioMidnightText10::
-	text "…"
+	text_start
+	line "…"
 	done
 
 _BuenaOffTheAirText::
