@@ -1,4 +1,7 @@
 AI_SwitchOrTryItem:
+; clear carry flag (dec doesn't affect carry)
+	and a
+
 	ld a, [wBattleMode]
 	dec a
 	ret z
