@@ -4427,14 +4427,14 @@ JugglerGroup:
 	db 44, HERACROSS
 	db -1 ; end
 
-	; JUGGLER (4)
+	; JUGGLER (5)
 	db "FRITZ@", TRAINERTYPE_NORMAL
 	db 49, MR__MIME
 	db 49, MAGMAR
 	db 49, MACHOKE
 	db -1 ; end
 
-	; JUGGLER (5)
+	; JUGGLER (6)
 	db "HORTON@", TRAINERTYPE_NORMAL
 	db 40, ELECTRODE
 	db 44, ELECTRODE
@@ -4442,21 +4442,21 @@ JugglerGroup:
 	db 60, ELECTRODE
 	db -1 ; end
 
-	; JUGGLER (6)
+	; JUGGLER (7)
 	db "IRVING@", TRAINERTYPE_NORMAL
 	db 50, PRIMEAPE
 	db 50, GOLEM
 	db 50, FORRETRESS
 	db -1 ; end
 
-	; JUGGLER (7)
+	; JUGGLER (8)
 	db "DALTON@", TRAINERTYPE_NORMAL
 	db 50, RATICATE
 	db 50, STANTLER
 	db 50, GIRAFARIG
 	db -1 ; end
 
-	; JUGGLER (8)
+	; JUGGLER (9)
 	db "CYAN@", TRAINERTYPE_NORMAL
 	db 66, DUGTRIO
 	db 66, MAGNETON
