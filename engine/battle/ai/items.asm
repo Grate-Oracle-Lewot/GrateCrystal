@@ -136,7 +136,7 @@ AI_TryItem:
 	jr nz, .not_rival1
 	ld a, [wOtherTrainerID]
 	cp RIVAL1_2_CHIKORITA
-	ret c
+	jr c, .dont_use
 .not_rival1
 
 ; check if trainer class has items
@@ -186,7 +186,7 @@ AI_TryItem:
 .loop
 	ld de, wEnemyTrainerItem1
 	ld a, [hl]
-	and a
+	and a ; clear carry
 	inc a
 	ret z
 
