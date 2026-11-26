@@ -461,6 +461,7 @@ KRIS EQU __trainer_class__
 	const IRWIN1
 	const IRWIN2
 	const IRWIN3
+	const ELTON
 	const FRITZ
 	const HORTON
 	const IRVING
