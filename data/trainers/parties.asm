@@ -4421,6 +4421,13 @@ JugglerGroup:
 	db -1 ; end
 
 	; JUGGLER (4)
+	db "ELTON@", TRAINERTYPE_NORMAL
+	db 42, SCYTHER
+	db 43, PINSIR
+	db 44, HERACROSS
+	db -1 ; end
+
+	; JUGGLER (4)
 	db "FRITZ@", TRAINERTYPE_NORMAL
 	db 49, MR__MIME
 	db 49, MAGMAR
