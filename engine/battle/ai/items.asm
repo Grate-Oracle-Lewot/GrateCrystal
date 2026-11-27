@@ -2,21 +2,24 @@ AI_SwitchOrTryItem:
 ; clear carry flag (dec doesn't affect carry)
 	and a
 
+; make sure we're in a trainer battle
 	ld a, [wBattleMode]
 	dec a
 	ret z
 
+; no items in link mode
 	ld a, [wLinkMode]
 	and a
 	ret nz
 
+; carry is clear on return from this
 	farcall CheckEnemyLockedIn
 	ret nz
 
 	call CheckEnemyTrapped
 	jp nz, AI_TryItem
 
-	; always load the first trainer class in wTrainerClass for Battle Tower trainers
+; always load the first trainer class in wTrainerClass for Battle Tower trainers
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -138,6 +141,7 @@ AI_TryItem:
 	cp RIVAL1_2_CHIKORITA
 	jr c, .dont_use
 .not_rival1
+	; carry is by elimination clear here
 
 ; check if trainer class has items
 	ld a, [wEnemyTrainerItem1]
@@ -265,7 +269,7 @@ AI_TryItem:
 ; if player has type advantage against enemy mon, don't use items on it
 ; mostly exists for when multiple mons are at the highest level
 	call CheckPlayerTypeAdvantage
-	ret nc
+	ret nc ; AI_ClearCarryFlag2
 
 .skip_advantage_check
 ; set carry if current mon is highest-leveled one in party
