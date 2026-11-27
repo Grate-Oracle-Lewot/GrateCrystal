@@ -141,7 +141,7 @@ AI_TryItem:
 	cp RIVAL1_2_CHIKORITA
 	jr c, .dont_use
 .not_rival1
-	; carry is by elimination clear here
+	and a ; re-clear carry in case we jr nz'd here
 
 ; check if trainer class has items
 	ld a, [wEnemyTrainerItem1]
